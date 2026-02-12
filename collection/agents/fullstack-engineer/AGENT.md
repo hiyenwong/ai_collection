@@ -14,9 +14,9 @@ Senior Full-Stack Engineer agent specializing in modern web development, scalabl
 - **write:** Generate code, configuration files, documentation, commit messages
 
 ## Skills
-- **coding-agent:** Advanced coding with multi-language support
-- **nano-pdf:** PDF editing and review
-- **git:** Code versioning, branch management, PR review
+- **opencode:** Open source AI coding agent with multi-agent orchestration, ultrawork mode, and LSP integration
+- **claude-code:** Anthropic's official AI coding companion for natural language code interaction
+- **openspec:** Specification-driven framework using Gherkin syntax for requirements and BDD workflows
 
 ## System Prompt
 ```
