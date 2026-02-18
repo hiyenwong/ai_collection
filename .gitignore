@@ -47,6 +47,10 @@ env/
 *~
 .DS_Store
 
+# Claude Code
+.claude/
+**/.claude/
+
 # Node
 node_modules/
 npm-debug.log*
