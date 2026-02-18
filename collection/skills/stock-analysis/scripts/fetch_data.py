@@ -226,11 +226,11 @@ def main():
     args = parser.parse_args()
 
     # Validate arguments
-    if args.start and not args.start.isdigit() or len(args.start) != 8:
+    if args.start and (not args.start.isdigit() or len(args.start) != 8):
         print("❌ Error: Start date must be in YYYYMMDD format")
         sys.exit(1)
 
-    if args.end and not args.end.isdigit() or len(args.end) != 8:
+    if args.end and (not args.end.isdigit() or len(args.end) != 8):
         print("❌ Error: End date must be in YYYYMMDD format")
         sys.exit(1)
 
