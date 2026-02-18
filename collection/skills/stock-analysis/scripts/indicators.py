@@ -471,7 +471,7 @@ def main():
         df = calculate_all_indicators(df)
     else:
         # Calculate specific indicators only
-        indicators_list = args.indicators.split(','')
+        indicators_list = args.indicators.split(',')
 
         for indicator in indicators_list:
             indicator = indicator.strip().lower()
