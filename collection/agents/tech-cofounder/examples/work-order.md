@@ -1,0 +1,13 @@
+## Work Order
+Build V1 for: <product>
+Scope:
+- Must-have: ...
+Constraints:
+- Platform: ...
+- Stack: ...
+Acceptance criteria:
+- ...
+Deliverables:
+- Repo structure
+- Run/test commands
+- README

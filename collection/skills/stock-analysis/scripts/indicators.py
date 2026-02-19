@@ -12,8 +12,9 @@ Usage:
 
 import argparse
 import sys
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 
 def calculate_ma(df: pd.DataFrame, periods: list = [5, 10, 20, 30, 60, 120]) -> pd.DataFrame:

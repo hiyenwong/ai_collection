@@ -10,14 +10,14 @@ Usage:
 """
 
 import argparse
-import sys
 import os
+import sys
 from datetime import datetime
 
 try:
-    import pandas as pd
-    import matplotlib.pyplot as plt
     import matplotlib.dates as mdates
+    import matplotlib.pyplot as plt
+    import pandas as pd
     from matplotlib.font_manager import FontProperties
 
     # Set Chinese font

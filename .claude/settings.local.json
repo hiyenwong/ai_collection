@@ -4,7 +4,17 @@
       "Bash(gh pr view:*)",
       "Bash(gh auth:*)",
       "Bash(git checkout:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(gh pr list --state open)",
+      "Bash(git commit:*)",
+      "Bash(git push -u origin feat/update-claude-md)",
+      "Bash(gh pr create --title \"feat: update CLAUDE.md with tech stack and existing agents\" --body \"## Summary\n\n更新 CLAUDE.md 文件，添加：\n\n1. **技术栈和常用命令**\n   - Conda 环境管理\n   - uv 包管理器\n   - ruff linting 和格式化\n   - pytest 测试命令\n\n2. **语言和通信规范**\n   - 使用中文（简体中文）回复用户\n\n3. **现有代理和技能概览**\n   - 4 个代理的表格（fullstack-engineer、tech-cofounder、research-agent、stock-analyst）\n   - 5 个技能的表格（opencode、claude-code、openspec、akshare、stock-analysis）\n\n4. **项目结构深度解析**\n   - 关键文件说明\n   - 目录组织规范\n   - 常见任务操作指南\n\n5. **新增 .claudeignore 文件**\n   - 排除不必要的文件（依赖、构建产物、日志、IDE文件等）\n\n6. **更新 .gitignore**\n   - 添加 .claude/ 目录忽略规则\")",
+      "Skill(agent-browser)",
+      "WebSearch",
+      "Bash(agent-browser --proxy http://127.0.0.1:7890 open \"https://www.bing.com/search?q=opencode+AI+agent+news&cc=us\")",
+      "Bash(agent-browser wait --load networkidle)",
+      "Bash(agent-browser screenshot --annotate)",
+      "Bash(curl -x http://127.0.0.1:7890 -I https://github.com/code-yeongyu/oh-my-opencode)"
     ]
   }
 }

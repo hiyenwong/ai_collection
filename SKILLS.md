@@ -432,6 +432,42 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Bond market, forex, cryptocurrency data
   - Options, movies, news, ESG ratings
 
+### Stock Analysis
+- **Location:** `collection/skills/stock-analysis/`
+- **Purpose:** Comprehensive stock technical analysis with indicators, scoring, and visualization
+- **Triggers:** stock analysis, 股票分析, technical analysis, 技术分析, stock indicators, kdj, macd, rsi, boll
+- **Tools:** exec (Python), read, write
+- **Key Features:**
+  - Calculate technical indicators (MA, MACD, KDJ, RSI, BOLL, etc.)
+  - Model-based scoring with weighted components
+  - Chart generation (K-line, indicators)
+  - Single stock and multi-stock comparison
+  - Markdown analysis reports
+
+### Skill Extractor
+- **Location:** `collection/skills/skill-extractor/`
+- **Purpose:** Meta-skill that identifies and extracts reusable skill patterns from conversations
+- **Triggers:** 提炼技能, 提取 skill, 生成技能, skill extractor, create skill from conversation
+- **Tools:** write, read, glob, memory
+- **Key Features:**
+  - Auto-detection of recurring patterns
+  - Manual extraction trigger
+  - Generates standard SKILL.md files
+  - Red-highlighted suggestions with user confirmation
+  - Cross-session memory integration
+
+### Skill RAG Indexer
+- **Location:** `collection/skills/skill-rag-indexer/`
+- **Purpose:** RAG indexer for semantic search and intelligent recommendation of local skill documentation
+- **Triggers:** skill rag search, search skills, find skill, recommend skill, 搜索技能, 推荐技能, 技能索引
+- **Tools:** exec (TypeScript CLI), read, write, glob
+- **Key Features:**
+  - Semantic search using natural language
+  - Task-based skill recommendations
+  - Knowledge base management
+  - Local-first with zero external dependencies
+  - Multi-language support (Chinese/English)
+
 ---
 
 See: [skills-collection](https://github.com/your-org/skills-collection) repository for more example skills.

@@ -1,76 +1,237 @@
-# AI Collection
+# OpenClaw AI Collection
 
-A curated collection of OpenClaw agents and skills for AI assistants.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
+[![Agents](https://img.shields.io/badge/Agents-4-blue.svg)](./collection/agents/)
+[![Skills](https://img.shields.io/badge/Skills-6-purple.svg)](./collection/skills/)
+[![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-## Overview
+一个精选的 **OpenClaw** 代理和技能集合，为 AI 助手提供强大的扩展能力。
 
-This repository serves as a knowledge base and showcase for OpenClaw's agent and skill ecosystem. It documents agents and skills that extend OpenClaw's capabilities, making them easy to discover, understand, and use.
+## 目录
 
-## What's Inside
+- [概述](#概述)
+- [特性](#特性)
+- [代理](#代理)
+- [技能](#技能)
+- [快速开始](#快速开始)
+- [贡献](#贡献)
+- [许可证](#许可证)
 
-- **Agents**: Autonomous AI agents that can perform complex tasks using OpenClaw's `sessions_spawn` system
-- **Skills**: Reusable capability packages that define specialized behaviors and tools
+## 概述
 
-## Structure
+本仓库是 OpenClaw 代理和技能生态系统的知识库和展示中心。它记录了扩展 OpenClaw 能力的代理和技能，使它们易于发现、理解和使用。
+
+### 什么是 OpenClaw？
+
+OpenClaw 是一个灵活的 AI 代理框架，支持：
+- 多渠道接入（飞书、Telegram、WhatsApp 等）
+- 可扩展的技能系统
+- 通过 `sessions_spawn` 实现的自主子代理
+
+### 什么是代理 (Agents)？
+
+**代理**是执行特定任务的自主 AI 助手，运行在隔离会话中，可以使用不同的模型和工具。
+
+### 什么是技能 (Skills)？
+
+**技能**是定义专门行为和工具的可复用能力包，通过关键词自动激活。
+
+## 特性
+
+- 🚀 **即插即用**: 代理和技能可立即使用
+- 📚 **文档完善**: 每个组件都有详细的文档
+- 🔄 **持续更新**: 定期添加新的代理和技能
+- 🤝 **社区驱动**: 欢迎社区贡献
+- 🧪 **测试验证**: 自动化验证确保质量
+
+## 代理
+
+| 代理 | 功能 | 模型 | 状态 |
+|------|------|------|------|
+| [Fullstack Engineer](collection/agents/fullstack-engineer/) | 全栈工程师，现代 Web 开发 | Opus 4.5 / Sonnet 4.6 | ✅ |
+| [Stock Analyst](collection/agents/stock-analyst/) | 股票分析师，金融数据分析 | Sonnet 4.5 | ✅ |
+| [Tech Co-Founder](collection/agents/tech-cofounder/) | 技术联合创始人，产品构建 | Sonnet 4.5 | ✅ |
+| [Research Agent](collection/agents/research-agent/) | 研究专家，深度调研 | Opus 4.5 | ✅ |
+
+## 技能
+
+| 技能 | 功能 | 触发关键词 | 状态 |
+|------|------|-----------|------|
+| [OpenCode](collection/skills/opencode/) | 开源 AI 编程，多代理编排 | opencode, ultrawork | ✅ |
+| [Claude Code](collection/skills/claude-code/) | Anthropic 官方编程助手 | claude-code | ✅ |
+| [OpenSpec](collection/skills/openspec/) | 规格驱动开发，Gherkin 语法 | openspec, gherkin | ✅ |
+| [AkShare](collection/skills/akshare/) | 中国金融数据接口 | stock data, akshare | ✅ |
+| [Stock Analysis](collection/skills/stock-analysis/) | 股票技术分析 | 股票分析, technical indicators | ✅ |
+| [Skill Extractor](collection/skills/skill-extractor/) | 从对话提炼技能 | 提炼技能, skill extractor | ✅ |
+
+## 快速开始
+
+### 安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/hiyenwong/ai_collection.git
+cd ai_collection
+
+# 查看可用内容
+ls collection/agents/    # 可用代理
+ls collection/skills/    # 可用技能
+```
+
+### 使用代理
+
+```python
+# 通过 sessions_spawn 启动代理
+sessions_spawn(
+    task="分析股票数据并生成报告",
+    agentId="stock-analyst",
+    model="claude-sonnet-4.5"
+)
+```
+
+### 使用技能
+
+技能会通过关键词自动激活：
+
+```
+User: "帮我进行股票分析"
+AI: [检测到 "股票分析" 关键词，激活 stock-analysis 技能]
+```
+
+### 添加新代理
+
+1. 在 `collection/agents/your-agent-name/` 创建目录
+2. 复制 `templates/agent-template.md` 模板
+3. 填写代理详情和能力
+4. 添加示例和使用说明
+5. 更新 [AGENTS.md](./AGENTS.md)
+
+### 添加新技能
+
+1. 在 `collection/skills/your-skill-name/` 创建目录
+2. 复制 `templates/skill-template.md` 模板
+3. 定义技能描述、触发词和行为
+4. 添加参考文档、示例和脚本
+5. 更新 [SKILLS.md](./SKILLS.md)
+
+## 项目结构
 
 ```
 ai_collection/
-├── README.md              # This file
-├── AGENTS.md              # Agent documentation overview
-├── SKILLS.md              # Skill documentation overview
-├── docs/                  # General documentation
-│   ├── agents/            # Agent guides and best practices
-│   ├── skills/            # Skill guides and best practices
-│   └── integration/       # Integration docs
-├── collection/            # Collected agents and skills
-│   ├── agents/            # Agent packages
-│   └── skills/            # Skill packages
-├── templates/             # Templates for creating new items
-├── resources/             # External resources and links
-└── .gitignore            # Git ignore rules
+├── README.md              # 本文件
+├── AGENTS.md              # 代理文档总览
+├── SKILLS.md              # 技能文档总览
+├── INDEX.md               # 分类索引
+├── CONTRIBUTING.md        # 贡献指南
+├── CONTRIBUTING_CN.md     # 贡献指南（中文）
+├── CLAUDE.md              # Claude Code 项目说明
+├── STRUCTURE.md           # 项目结构说明
+│
+├── docs/                  # 通用文档
+│   ├── agents/            # 代理指南和最佳实践
+│   ├── skills/            # 技能指南和最佳实践
+│   └── integration/       # 集成文档
+│
+├── collection/            # 收集的代理和技能
+│   ├── agents/            # 代理包
+│   └── skills/            # 技能包
+│
+├── templates/             # 创建新项目的模板
+│   ├── agent-template.md
+│   └── skill-template.md
+│
+├── scripts/               # 工具脚本
+│   └── validate_skill.py  # 技能验证脚本
+│
+└── .github/workflows/     # CI/CD 配置
+    └── validate.yml
 ```
 
-## Documentation
+## 文档
 
-- [Agent Overview](./AGENTS.md) - Learn about OpenClaw agents
-- [Skill Overview](./SKILLS.md) - Learn about OpenClaw skills
-- [Agent Creation Guide](./docs/agents/creation-guide.md) - How to create agents
-- [Skill Creation Guide](./docs/skills/creation-guide.md) - How to create skills
+- [代理概述](./AGENTS.md) - 了解 OpenClaw 代理
+- [技能概述](./SKILLS.md) - 了解 OpenClaw 技能
+- [分类索引](./INDEX.md) - 按类别浏览
+- [代理创建指南](./docs/agents/creation-guide.md) - 如何创建代理
+- [技能创建指南](./docs/skills/creation-guide.md) - 如何创建技能
+- [集成文档](./docs/integration/agents-skills.md) - 代理和技能如何协作
 
-## Quick Start
+## 技术栈
 
-### Adding a New Agent
+- **AI 模型**: Claude (Opus, Sonnet, Haiku)
+- **框架**: OpenClaw
+- **编程语言**: Python, JavaScript/TypeScript
+- **工具**: Git, npm, uv, ruff, pytest
 
-1. Create a new directory in `collection/agents/your-agent-name/`
-2. Copy the agent template from `templates/agent-template.md`
-3. Fill in the agent details and capabilities
-4. Add examples and usage instructions
-5. Update the main [AGENTS.md](./AGENTS.md) file
+## 开发规范
 
-### Adding a New Skill
+- 使用 `uv` 管理 Python 依赖
+- 使用 `ruff` 进行代码检查和格式化
+- 使用 `pytest` 进行测试
+- 遵循 Conventional Commits 规范
 
-1. Create a new directory in `collection/skills/your-skill-name/`
-2. Copy the skill template from `templates/skill-template.md`
-3. Define the skill's description, triggers, and behavior
-4. Add references, examples, and scripts
-5. Update the main [SKILLS.md](./SKILLS.md) file
+## 贡献
 
-## Contributing
+欢迎贡献！请查看[贡献指南](./CONTRIBUTING.md)了解详情。
 
-Contributions are welcome! Please see the [Contributing Guidelines](./CONTRIBUTING.md) for details.
+### 贡献方式
 
-## About OpenClaw
+- 添加新的代理或技能
+- 改进文档
+- 报告问题
+- 提出功能建议
 
-OpenClaw is a flexible AI agent framework that supports multiple channels (Feishu, Telegram, WhatsApp, etc.), extensible skills, and autonomous sub-agents through its `sessions_spawn` system.
+### 快速贡献
 
-- **OpenClaw Docs**: https://docs.openclaw.ai
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feat/AmazingFeature`)
+3. 提交更改 (`git commit -m 'feat: add amazing feature'`)
+4. 推送到分支 (`git push origin feat/AmazingFeature`)
+5. 创建 Pull Request
+
+## 路线图
+
+### V1 (已完成) ✅
+- 基础代理和技能集合
+- 文档和模板
+- 验证脚本
+
+### V2 (进行中) 🚧
+- 更多领域代理
+- 技能市场
+- 性能优化
+
+### V3 (规划中) 📋
+- Web UI
+- CLI 工具
+- 包管理器
+
+## 关于 OpenClaw
+
+OpenClaw 是一个灵活的 AI 代理框架，支持多渠道、可扩展技能和自主子代理。
+
+- **OpenClaw 文档**: https://docs.openclaw.ai
 - **GitHub**: https://github.com/openclaw/openclaw
-- **Community**: https://discord.com/invite/clawd
+- **社区**: https://discord.com/invite/clawd
 
-## License
+## 许可证
 
-This repository is MIT licensed. Individual agents and skills may have their own licenses.
+本仓库采用 MIT 许可证。个别代理和技能可能有各自的许可证。
+
+## 致谢
+
+感谢所有为本项目做出贡献的开发者！
+
+## 联系方式
+
+- GitHub Issues: [提交问题](https://github.com/hiyenwong/ai_collection/issues)
+- Email: hiyenwong@gmail.com
+- Discord: [OpenClaw 社区](https://discord.gg/clawd)
 
 ---
 
-Maintained by the OpenClaw community 🤖
+由 OpenClaw 社区维护 🤖
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hiyenwong/ai_collection&type=Date)](https://star-history.com/#hiyenwong/ai-collection&Date)
