@@ -1,0 +1,158 @@
+name: Validate Skills & Agents
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate-skills:
+    name: Validate Skills
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate all skills
+        run: |
+          python scripts/validate_skill.py || exit 1
+
+      - name: Check markdown links
+        run: |
+          pip install mlc
+          mlc --ignore collection/ --exclude ".*\.github\.com.*" .
+
+  lint-python:
+    name: Lint Python Scripts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Run ruff check
+        run: |
+          ruff check collection/ scripts/
+
+      - name: Run ruff format check
+        run: |
+          ruff format --check collection/ scripts/
+
+  check-structure:
+    name: Check Project Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          missing=0
+
+          # Required root files
+          for file in README.md AGENTS.md SKILLS.md CONTRIBUTING.md; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing: $file"
+              missing=1
+            fi
+          done
+
+          # Check collection structure
+          if [ ! -d "collection/agents" ]; then
+            echo "❌ Missing: collection/agents/"
+            missing=1
+          fi
+
+          if [ ! -d "collection/skills" ]; then
+            echo "❌ Missing: collection/skills/"
+            missing=1
+          fi
+
+          # Check templates
+          if [ ! -d "templates" ]; then
+            echo "❌ Missing: templates/"
+            missing=1
+          fi
+
+          exit $missing
+
+      - name: Check agent documentation
+        run: |
+          for agent_dir in collection/agents/*/; do
+            if [ ! -f "${agent_dir}AGENT.md" ]; then
+              echo "❌ Agent missing AGENT.md: $agent_dir"
+              exit 1
+            fi
+          done
+
+      - name: Check skill documentation
+        run: |
+          for skill_dir in collection/skills/*/; do
+            if [ ! -f "${skill_dir}SKILL.md" ]; then
+              echo "❌ Skill missing SKILL.md: $skill_dir"
+              exit 1
+            fi
+          done
+
+  spell-check:
+    name: Spell Check Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pyspell
+        run: pip install pyspellchecker
+
+      - name: Run spell check
+        run: |
+          python -c "
+          from spellchecker import SpellChecker
+          import re
+          import sys
+
+          spell = SpellChecker()
+          exclude_words = {
+              'github', 'claude', 'anthropic', 'opencode', 'openspec',
+              'akshare', 'sonnet', 'opus', 'haiku', 'json', 'yaml',
+              'docker', 'kubernetes', 'redis', 'postgresql', 'mongodb'
+          }
+
+          # Check markdown files
+          for md_file in ['README.md', 'AGENTS.md', 'SKILLS.md']:
+              try:
+                  with open(md_file, 'r') as f:
+                      content = f.read()
+                      # Extract words (alphanumeric, 3+ chars)
+                      words = re.findall(r'\b[a-zA-Z]{3,}\b', content.lower())
+                      # Filter out excluded words
+                      words = [w for w in words if w not in exclude_words]
+                      # Find misspelled
+                      misspelled = spell.unknown(words)
+                      if misspelled:
+                          print(f'Possible typos in {md_file}:', list(misspelled)[:10])
+              except FileNotFoundError:
+                  pass
+          "
