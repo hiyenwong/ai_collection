@@ -75,6 +75,7 @@
 | 技能 | 描述 | 激活词 |
 |------|------|--------|
 | [Skill Extractor](collection/skills/skill-extractor/) | 从对话提炼技能 | 提炼技能, skill extractor |
+| [Skill RAG Indexer](collection/skills/skill-rag-indexer/) | RAG 索引器，语义搜索 | skill rag search, 搜索技能 |
 
 ### 按工具分类
 
@@ -82,7 +83,10 @@
 
 - AkShare
 - Stock Analysis
-- Skill Extractor
+
+#### TypeScript / Node.js
+
+- Skill RAG Indexer
 
 #### Git 操作
 
@@ -93,6 +97,7 @@
 
 - OpenSpec
 - Skill Extractor
+- Skill RAG Indexer
 
 ---
 
@@ -113,6 +118,7 @@
 #规格 #BDD #测试 #文档
 #金融 #股票 #数据 #API #中国
 #元技能 #提炼 #自动化
+#RAG #搜索 #索引 #推荐
 ```
 
 ---
@@ -154,10 +160,25 @@
 
 ### 2026-02-19
 
+**代理:**
 - 新增: Tech Co-Founder 代理
-- 新增: Skill Extractor 技能
-- 更新: AGENTS.md 添加完整代理列表
-- 更新: SKILLS.md 添加完整技能列表
+- 新增: Stock Analyst 代理
+
+**技能:**
+- 新增: Skill Extractor 元技能
+- 新增: Skill RAG Indexer 语义搜索
+- 完善: Stock Analysis 技能文档和示例
+
+**文档:**
+- 新增: INDEX.md 分类索引
+- 新增: 中文版贡献指南
+- 新增: GitHub Actions CI/CD
+- 新增: 技能验证脚本
+- 新增: 各代理/技能使用示例
+
+**工具:**
+- 新增: validate_skill.py 验证脚本
+- 新增: GitHub Actions 工作流
 
 ---
 
