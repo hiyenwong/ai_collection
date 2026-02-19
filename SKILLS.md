@@ -456,6 +456,18 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Red-highlighted suggestions with user confirmation
   - Cross-session memory integration
 
+### Skill RAG Indexer
+- **Location:** `collection/skills/skill-rag-indexer/`
+- **Purpose:** RAG indexer for semantic search and intelligent recommendation of local skill documentation
+- **Triggers:** skill rag search, search skills, find skill, recommend skill, 搜索技能, 推荐技能, 技能索引
+- **Tools:** exec (TypeScript CLI), read, write, glob
+- **Key Features:**
+  - Semantic search using natural language
+  - Task-based skill recommendations
+  - Knowledge base management
+  - Local-first with zero external dependencies
+  - Multi-language support (Chinese/English)
+
 ---
 
 See: [skills-collection](https://github.com/your-org/skills-collection) repository for more example skills.
