@@ -24,6 +24,7 @@
 |------|------|---------|
 | [Fullstack Engineer](collection/agents/fullstack-engineer/) | 高级全栈工程师 | 完整的 Web 应用开发、架构设计 |
 | [Tech Co-Founder](collection/agents/tech-cofounder/) | 技术联合创始人 | 产品原型、快速开发、文档优先 |
+| [Algorithm Engineer](collection/agents/algorithm-engineer/) | 算法工程师 | 算法设计与实现、模型优化、复杂问题求解 |
 
 #### 数据分析
 
@@ -41,6 +42,7 @@
 | Fullstack Engineer | 复杂架构设计 |
 | Research Agent | 深度研究 |
 | Stock Analyst | 复杂金融分析 |
+| Algorithm Engineer | 算法设计与复杂问题求解 |
 
 #### Sonnet 4.5/4.6（通用任务）
 
@@ -109,6 +111,7 @@
 #开发 #全栈 #后端 #前端 #架构
 #数据分析 #股票 #金融 #研究 #调研
 #产品 #原型 #快速开发 #文档
+#算法 #机器学习 #深度学习 #优化
 ```
 
 ### 技能标签
@@ -135,6 +138,8 @@
 | 进行深度研究 | Research Agent |
 | 编写规格文档 | OpenSpec |
 | 提炼新技能 | Skill Extractor |
+| 实现复杂算法 | Algorithm Engineer |
+| 开发 ML 模型 | Algorithm Engineer |
 
 ---
 
@@ -163,6 +168,7 @@
 **代理:**
 - 新增: Tech Co-Founder 代理
 - 新增: Stock Analyst 代理
+- 新增: Algorithm Engineer 代理 |
 
 **技能:**
 - 新增: Skill Extractor 元技能
