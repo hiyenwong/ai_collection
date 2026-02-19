@@ -2,7 +2,7 @@
 AGENTS.md
 MEMORY.md
 USER.md
-SOUL.md
+# SOUL.md  # Removed - we track SOUL.md for agents in collection/agents/
 IDENTITY.md
 TOOLS.md
 HEARTBEAT.md
