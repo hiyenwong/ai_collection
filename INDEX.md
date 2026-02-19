@@ -163,12 +163,20 @@
 
 ## 最新更新
 
-### 2026-02-19
+### 2026-02-20
+
+**集成:**
+- 新增: OpenCode + Claude Code 完整集成指南
+- 新增: 代理配置模板 (opencode-config.json)
+- 新增: Claude Code 代理上下文模板
+- 更新: opencode 和 claude-code 技能的集成说明
+- 支持: 所有 5 个代理和 7 个技能的一键安装
 
 **代理:**
 - 新增: Tech Co-Founder 代理
 - 新增: Stock Analyst 代理
-- 新增: Algorithm Engineer 代理 |
+- 新增: Algorithm Engineer 代理
+- 新增: 所有代理的 SOUL.md 灵魂宣言
 
 **技能:**
 - 新增: Skill Extractor 元技能

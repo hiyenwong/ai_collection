@@ -441,6 +441,150 @@ Result: Clear explanation of middleware architecture with examples
 - **opencode:** Open source coding agent with plugin system
 - **obsidian:** For documentation and note-taking in code projects
 
+## OpenClaw AI Collection Integration
+
+Claude Code works seamlessly with the **OpenClaw AI Collection** - a curated set of specialized agents and skills that extend your coding capabilities with domain expertise and specialized workflows.
+
+### Available Agents for Enhanced Coding
+
+| Agent | Specialization | When to Invoke |
+|-------|----------------|----------------|
+| **fullstack-engineer** | Senior full-stack development | "使用 fullstack-engineer 构建完整应用" |
+| **algorithm-engineer** | Algorithms & ML | "Use algorithm-engineer for this optimization" |
+| **tech-cofounder** | Product & MVP building | "Use tech-cofounder for rapid prototyping" |
+| **stock-analyst** | Financial data & trading | "Use stock-analyst for trading algorithms" |
+| **research-agent** | Deep research & documentation | "Use research-agent for technical documentation" |
+
+### Complementary Skills
+
+| Skill | Purpose | Activation Keywords |
+|-------|---------|-------------------|
+| **openspec** | Spec-driven development | openspec, gherkin, BDD |
+| **skill-extractor** | Create skills from patterns | 提炼技能, extract skill |
+| **skill-rag-indexer** | Semantic skill search | 搜索技能, skill search |
+| **stock-analysis** | Technical indicators | 股票分析, MACD, KDJ |
+
+### Using AI Collection with Claude Code
+
+#### Method 1: Agent Context
+
+Create a `.claude/AGENTS.md` file to inject agent expertise:
+
+```markdown
+# Default Agent Configuration
+
+For specialized tasks, reference these agents:
+
+## Fullstack Engineer
+Location: /path/to/collection/agents/fullstack-engineer/
+Use for: Complete web applications, architecture design
+
+## Algorithm Engineer
+Location: /path/to/collection/agents/algorithm-engineer/
+Use for: Complex algorithms, optimization, ML models
+
+## Tech Co-Founder
+Location: /path/to/collection/agents/tech-cofounder/
+Use for: MVP development, product planning
+
+## Research Agent
+Location: /path/to/collection/agents/research-agent/
+Use for: Documentation, research, technical investigation
+```
+
+#### Method 2: Direct Invocation
+
+```
+Use the fullstack-engineer approach to build this React application with TypeScript, Tailwind, and Supabase.
+```
+
+Claude Code will incorporate the agent's methodology and best practices.
+
+#### Method 3: Skill Combination
+
+```
+First use openspec to define the requirements in Gherkin syntax, then implement them using testing best practices.
+```
+
+Combines spec-driven development with TDD methodology.
+
+### Example Workflows
+
+#### Full-Stack Development
+```
+Use fullstack-engineer to build a task management SaaS with:
+- React + TypeScript frontend
+- Node.js + Express backend
+- PostgreSQL database
+- JWT authentication
+- Real-time updates with Socket.io
+```
+
+#### Algorithm Optimization
+```
+Use algorithm-engineer to optimize the sorting algorithm in src/utils/sort.js:
+- Analyze current complexity
+- Propose O(n log n) alternative
+- Implement with proper testing
+- Benchmark improvements
+```
+
+#### Product Building
+```
+Use tech-cofounder to rapidly build an MVP for:
+- AI writing assistant
+- 2-week timeline
+- Claude API integration
+- Supabase backend
+- Deploy on Vercel
+```
+
+#### Documentation Generation
+```
+Use research-agent to create comprehensive documentation for the API:
+- Endpoint descriptions
+- Authentication flow
+- Rate limiting info
+- Code examples
+- Error handling
+```
+
+### Quick Reference Commands
+
+| Task | Command |
+|------|---------|
+| **Full-stack app** | "Use fullstack-engineer approach" |
+| **Algorithm work** | "Use algorithm-engineer optimization" |
+| **MVP development** | "Use tech-cofounder rapid build" |
+| **Documentation** | "Use research-agent investigation" |
+| **Stock/finance** | "Use stock-analyst data analysis" |
+| **Spec definition** | "Use openspec gherkin syntax" |
+| **Skill creation** | "Use skill-extractor to extract skill" |
+
+### Installation Path
+
+The OpenClaw AI Collection is available at:
+- **GitHub:** https://github.com/hiyenwong/ai_collection
+- **Local:** `/path/to/ai_collection`
+
+To use with Claude Code:
+1. Ensure collection is accessible locally
+2. Reference agents/skills in your prompts
+3. Or create `.claude/AGENTS.md` with agent references
+4. Use activation keywords to trigger specialized behavior
+
+### Benefits of Integration
+
+- **Domain Expertise**: Specialized knowledge for specific fields
+- **Proven Methodologies**: Battle-tested workflows and best practices
+- **Efficiency**: Skip trial-and-error, use proven approaches
+- **Consistency**: Standardized code quality and patterns
+- **Extensibility**: Easy to add new specialized capabilities
+
+---
+
+*For more information, see the [AI Collection README](https://github.com/hiyenwong/ai_collection)*
+
 ## Notes
 
 - Claude Code uses your existing Claude subscription

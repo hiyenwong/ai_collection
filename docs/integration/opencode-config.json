@@ -1,0 +1,62 @@
+{
+  "agents": {
+    "fullstack_engineer": {
+      "model": "anthropic/claude-opus-4.5",
+      "temperature": 0.1,
+      "maxTokens": 200000,
+      "systemPrompt": "You are a Fullstack Engineer. Read collection/agents/fullstack-engineer/AGENT.md for complete context.",
+      "description": "Senior full-stack engineer for web applications",
+      "skills": ["react", "typescript", "nodejs", "database"]
+    },
+    "algorithm_engineer": {
+      "model": "anthropic/claude-opus-4.5",
+      "temperature": 0.1,
+      "maxTokens": 200000,
+      "systemPrompt": "You are an Algorithm Engineer. Read collection/agents/algorithm-engineer/AGENT.md for complete context.",
+      "description": "Algorithm specialist for ML and optimization",
+      "skills": ["python", "cpp", "numpy", "pytorch"]
+    },
+    "tech_cofounder": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "temperature": 0.3,
+      "maxTokens": 200000,
+      "systemPrompt": "You are a Tech Co-Founder (Builder). Read collection/agents/tech-cofounder/AGENT.md for complete context.",
+      "description": "Technical co-founder for product building",
+      "skills": ["product", "mvp", "startup", "agile"]
+    },
+    "research_agent": {
+      "model": "anthropic/claude-opus-4.5",
+      "temperature": 0.2,
+      "maxTokens": 200000,
+      "systemPrompt": "You are a Research Agent. Read collection/agents/research-agent/AGENT.md for complete context.",
+      "description": "Research specialist for deep investigation",
+      "skills": ["research", "documentation", "analysis"]
+    },
+    "stock_analyst": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "temperature": 0.2,
+      "maxTokens": 200000,
+      "systemPrompt": "You are a Stock Analyst. Read collection/agents/stock-analyst/AGENT.md for complete context.",
+      "description": "Stock analyst for financial data and trading",
+      "skills": ["finance", "trading", "python", "akshare"]
+    }
+  },
+  "skills": [
+    "openspec",
+    "skill-extractor",
+    "skill-rag-indexer",
+    "stock-analysis",
+    "akshare",
+    "claude-code"
+  ],
+  "ultrawork": {
+    "enabled": true,
+    "parallelAgents": 3,
+    "autoContinue": true
+  },
+  "lsp": {
+    "enabled": true,
+    "timeout": 30000
+  },
+  "collectionPath": "/Users/hiyenwong/projects/ai_projects/ai_collection"
+}

@@ -532,6 +532,105 @@ Result: Clean refactoring without manual search/replace
 - **coding-agent:** Generic coding agent
 - **obsidian:** For documentation
 
+## OpenClaw AI Collection Integration
+
+OpenCode can work seamlessly with the **OpenClaw AI Collection** - a curated set of specialized agents and skills that extend your coding capabilities.
+
+### Available Agents in the Collection
+
+| Agent | Purpose | When to Use |
+|-------|---------|-------------|
+| **fullstack-engineer** | Senior full-stack development | Complete web applications, architecture |
+| **algorithm-engineer** | Algorithm design & ML | Complex algorithms, data structures, ML models |
+| **stock-analyst** | Financial data analysis | Stock analysis, trading strategies |
+| **research-agent** | Deep research | Market research, technical investigations |
+| **tech-cofounder** | Product building | MVP development, rapid prototyping |
+
+### Available Skills in the Collection
+
+| Skill | Purpose | Activation |
+|-------|---------|-----------|
+| **openspec** | Spec-driven development | Gherkin syntax, BDD requirements |
+| **skill-extractor** | Extract skills from conversation | "提炼技能", "extract skill" |
+| **skill-rag-indexer** | Semantic skill search | "搜索技能", "skill search" |
+| **stock-analysis** | Technical stock analysis | "股票分析", MACD, KDJ |
+| **akshare** | Chinese financial data | Stock market, futures data |
+
+### Integrating with OpenCode
+
+Add these agents to your `.opencode/oh-my-opencode.json` configuration:
+
+```json
+{
+  "agents": {
+    "sisyphus": {
+      "model": "anthropic/claude-opus-4.5",
+      "systemPrompt": "Read /path/to/collection/agents/fullstack-engineer/AGENT.md"
+    },
+    "algorithm_engineer": {
+      "model": "anthropic/claude-opus-4.5",
+      "systemPrompt": "Read /path/to/collection/agents/algorithm-engineer/AGENT.md"
+    },
+    "research_agent": {
+      "model": "anthropic/claude-opus-4.5",
+      "systemPrompt": "Read /path/to/collection/agents/research-agent/AGENT.md"
+    },
+    "stock_analyst": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /path/to/collection/agents/stock-analyst/AGENT.md"
+    },
+    "tech_cofounder": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /path/to/collection/agents/tech-cofounder/AGENT.md"
+    }
+  },
+  "skills": [
+    "openspec",
+    "skill-extractor",
+    "skill-rag-indexer"
+  ]
+}
+```
+
+### Example: Using Specialized Agent with OpenCode
+
+```
+Use the algorithm-engineer agent to optimize the sorting algorithm in this file ultrawork
+```
+
+This loads the algorithm-engineer's expertise while leveraging OpenCode's orchestration.
+
+### Example: Combining Skills
+
+```
+Use openspec to define the requirements, then implement with ultrawork
+```
+
+First defines behavior with Gherkin syntax, then implements with full validation.
+
+### Installation Path
+
+The OpenClaw AI Collection is available at:
+- **GitHub:** https://github.com/hiyenwong/ai_collection
+- **Local:** `/path/to/ai_collection`
+
+To integrate:
+1. Clone or download the collection
+2. Reference agent/skill paths in your OpenCode config
+3. Use activation keywords to trigger specialized behavior
+
+### Quick Reference
+
+**Algorithm task:** "Use algorithm-engineer for this"
+**Full-stack app:** "Use fullstack-engineer with ultrawork"
+**Stock analysis:** "Use stock-analyst for financial data"
+**Research task:** "Use research-agent for market analysis"
+**Product build:** "Use tech-cofounder for MVP"
+
+---
+
+*For more information, see the [AI Collection README](https://github.com/hiyenwong/ai_collection)*
+
 ## Notes
 
 - Ultrawork is the magic word - just add "ultrawork" or "ulw" to enable
