@@ -17,7 +17,6 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-
 # Required sections for SKILL.md
 REQUIRED_SECTIONS = [
     "# Skill Name",
