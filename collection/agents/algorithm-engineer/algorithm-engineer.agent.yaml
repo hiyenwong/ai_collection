@@ -33,6 +33,9 @@ skills:
     - C++
     - numpy
     - torch
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
 triggers:
   keywords:
     - design algorithm

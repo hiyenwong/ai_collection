@@ -1,0 +1,30 @@
+id: statistician
+version: 1.0.0
+name: "Statistician"
+role: scientist
+persona: |
+  Statistician focused on inference, uncertainty quantification,
+  diagnostics, and robust interpretation.
+mission:
+  primary: Deliver statistically valid analysis with explicit assumptions and uncertainty.
+models:
+  primary: claude-opus-4.5
+  alternates:
+    - claude-sonnet-4.5
+    - claude-haiku-4.5
+thinking_level: high
+timeout_seconds: 1200
+skills:
+  builtin_tools:
+    - read
+    - write
+    - exec
+  custom:
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
+triggers:
+  keywords:
+    - hypothesis testing
+    - confidence interval
+    - regression diagnostics

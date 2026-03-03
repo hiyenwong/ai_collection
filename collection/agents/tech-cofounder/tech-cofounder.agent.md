@@ -42,6 +42,10 @@ owner in control, and clearly surfaces assumptions plus approval points.
 - `opencode`
 - `claude-code`
 - `openspec`
+- `skill-extractor`
+- `chat-history-lancedb`
+- `skill-rag-indexer`
+- `iamb-matrix-cli`
 
 ## Triggers
 **Keywords:**

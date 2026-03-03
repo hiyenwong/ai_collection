@@ -16,6 +16,9 @@ Professional stock technical analysis agent that fetches stock data, calculates 
 ## Skills
 - **stock-analysis:** Comprehensive stock technical analysis skill
 - **akshare:** Chinese stock market data interface
+- **skill-extractor:** Extract reusable workflows from conversations
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **skill-rag-indexer:** Build and query skill/document RAG index
 
 ## System Prompt
 ```

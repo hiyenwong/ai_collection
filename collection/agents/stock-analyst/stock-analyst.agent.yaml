@@ -29,6 +29,9 @@ skills:
   custom:
     - stock-analysis
     - akshare
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
 triggers:
   keywords:
     - analyze stock

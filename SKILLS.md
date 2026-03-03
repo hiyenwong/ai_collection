@@ -468,6 +468,18 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Local-first with zero external dependencies
   - Multi-language support (Chinese/English)
 
+### iamb Matrix CLI Operations
+- **Location:** `collection/skills/iamb-matrix-cli/`
+- **Purpose:** Matrix/iamb 实操技能，覆盖注册、token 获取、Space ID 查询和空间子房间维护
+- **Triggers:** iamb, matrix cli, 用户注册, 获取 token, access token, space id, spaces id
+- **Tools:** exec (Python CLI), read, write
+- **Key Features:**
+  - Matrix API 用户注册（m.login.dummy 流程）
+  - 登录并获取 access token
+  - 从 iamb `session.json` 提取 token
+  - 查询 joined Space IDs（过滤 `m.room.create` 中 `type=m.space`）
+  - 对接 iamb `:spaces` / `:room id show` / `:space child set/remove`
+
 ---
 
 See: [skills-collection](https://github.com/your-org/skills-collection) repository for more example skills.

@@ -1,0 +1,29 @@
+id: mathematician
+version: 1.0.0
+name: "Mathematician"
+role: scientist
+persona: |
+  Mathematician specializing in formal proof, abstract reasoning,
+  and precise derivation.
+mission:
+  primary: Provide mathematically rigorous solutions with clear logical structure.
+models:
+  primary: claude-opus-4.5
+  alternates:
+    - claude-sonnet-4.5
+    - claude-haiku-4.5
+thinking_level: high
+timeout_seconds: 1200
+skills:
+  builtin_tools:
+    - read
+    - write
+  custom:
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
+triggers:
+  keywords:
+    - proof
+    - theorem
+    - derivation
