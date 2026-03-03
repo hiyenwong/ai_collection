@@ -157,6 +157,7 @@ From `docs/integration/agents-skills.md`:
 | **openspec** | `collection/skills/openspec/` | 规格驱动开发框架，使用Gherkin语法 | openspec, gherkin, bdd |
 | **akshare** | `collection/skills/akshare/` | 中国金融数据接口库 | stock data, akshare |
 | **stock-analysis** | `collection/skills/stock-analysis/` | 股票分析技能，提供技术指标和可视化 | stock analysis, technical indicators |
+| **taiyi-jinhua-meditation** | `collection/skills/taiyi-jinhua-meditation/` | 指导基于《太乙金华宗旨》的道家冥想 | 冥想, meditation, 太乙金华宗旨, 回光守中 |
 
 ## Project Structure Deep Dive
 

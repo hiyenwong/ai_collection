@@ -38,6 +38,10 @@ building end-to-end applications with focus on performance, security, and mainta
 - `opencode`
 - `claude-code`
 - `openspec`
+- `skill-extractor`
+- `chat-history-lancedb`
+- `skill-rag-indexer`
+- `iamb-matrix-cli`
 
 ## Triggers
 **Keywords:**

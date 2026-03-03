@@ -448,6 +448,17 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
 - **Location:** `collection/skills/skill-extractor/`
 - **Purpose:** Meta-skill that identifies and extracts reusable skill patterns from conversations
 - **Triggers:** 提炼技能, 提取 skill, 生成技能, skill extractor, create skill from conversation
+
+### Taiyi Jinhua Meditation
+- **Location:** `collection/skills/taiyi-jinhua-meditation/`
+- **Purpose:** 指导用户学习和实践基于《太乙金华宗旨》的道家冥想与回光守中法法门
+- **Triggers:** 冥想, meditation, 太乙金华宗旨, 回光守中, 打坐, 吕洞宾冥想
+- **Tools:** read, write
+- **Key Features:**
+  - 核心概念讲解 (天心、元神识神)
+  - 回光守中冥想实践引导
+  - 差谬纠正与体会交流
+  - 冥想日记记录
 - **Tools:** write, read, glob, memory
 - **Key Features:**
   - Auto-detection of recurring patterns
@@ -467,6 +478,18 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Knowledge base management
   - Local-first with zero external dependencies
   - Multi-language support (Chinese/English)
+
+### iamb Matrix CLI Operations
+- **Location:** `collection/skills/iamb-matrix-cli/`
+- **Purpose:** Matrix/iamb 实操技能，覆盖注册、token 获取、Space ID 查询和空间子房间维护
+- **Triggers:** iamb, matrix cli, 用户注册, 获取 token, access token, space id, spaces id
+- **Tools:** exec (Python CLI), read, write
+- **Key Features:**
+  - Matrix API 用户注册（m.login.dummy 流程）
+  - 登录并获取 access token
+  - 从 iamb `session.json` 提取 token
+  - 查询 joined Space IDs（过滤 `m.room.create` 中 `type=m.space`）
+  - 对接 iamb `:spaces` / `:room id show` / `:space child set/remove`
 
 ---
 

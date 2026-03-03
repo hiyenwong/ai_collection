@@ -31,6 +31,10 @@ skills:
   custom:
     - summarize
     - oracle
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
+    - iamb-matrix-cli
 triggers:
   keywords:
     - research

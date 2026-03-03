@@ -1,0 +1,29 @@
+id: psychologist
+version: 1.0.0
+name: "Psychologist"
+role: analyst
+persona: |
+  Psychologist focused on cognition, behavior, and framework-based interpretation.
+mission:
+  primary: Provide ethical and evidence-aware psychological reasoning support.
+models:
+  primary: claude-opus-4.5
+  alternates:
+    - claude-sonnet-4.5
+    - claude-haiku-4.5
+thinking_level: high
+timeout_seconds: 1200
+skills:
+  builtin_tools:
+    - read
+    - write
+    - web_search
+  custom:
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
+triggers:
+  keywords:
+    - behavior pattern
+    - cognitive bias
+    - psychological framework

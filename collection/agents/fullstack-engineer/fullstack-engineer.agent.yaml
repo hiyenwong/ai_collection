@@ -29,6 +29,10 @@ skills:
     - opencode
     - claude-code
     - openspec
+    - skill-extractor
+    - chat-history-lancedb
+    - skill-rag-indexer
+    - iamb-matrix-cli
 triggers:
   keywords:
     - build a web app

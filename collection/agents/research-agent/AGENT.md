@@ -19,6 +19,10 @@ An autonomous research agent that investigates topics, gathers information from 
 ## Skills
 - **summarize:** Content summarization and synthesis
 - **oracle:** Advanced reasoning and critical analysis
+- **skill-extractor:** Extract reusable workflows from conversations
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **iamb-matrix-cli:** Matrix/iamb operations for registration, token retrieval, and space ID workflows
 
 ## System Prompt
 ```

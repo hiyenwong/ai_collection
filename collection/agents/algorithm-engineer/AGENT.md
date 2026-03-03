@@ -22,6 +22,9 @@ Algorithm Engineer agent specializing in algorithm design, implementation, optim
 - **C++:** High-performance algorithm implementation
 - **numpy:** Numerical computing and vectorization
 - **torch:** PyTorch deep learning implementation
+- **skill-extractor:** Extract reusable workflows from conversations
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **skill-rag-indexer:** Build and query skill/document RAG index
 
 ## System Prompt
 

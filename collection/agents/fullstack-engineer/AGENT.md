@@ -17,6 +17,10 @@ Senior Full-Stack Engineer agent specializing in modern web development, scalabl
 - **opencode:** Open source AI coding agent with multi-agent orchestration, ultrawork mode, and LSP integration
 - **claude-code:** Anthropic's official AI coding companion for natural language code interaction
 - **openspec:** Specification-driven framework using Gherkin syntax for requirements and BDD workflows
+- **skill-extractor:** Extract reusable workflows from conversations
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **iamb-matrix-cli:** Matrix/iamb operations for registration, token retrieval, and space ID workflows
 
 ## System Prompt
 ```

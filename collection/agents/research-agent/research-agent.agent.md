@@ -40,6 +40,10 @@ in academic-style research, fact verification, and synthesis of complex informat
 **Custom Skills:**
 - `summarize`
 - `oracle`
+- `skill-extractor`
+- `chat-history-lancedb`
+- `skill-rag-indexer`
+- `iamb-matrix-cli`
 
 ## Triggers
 **Keywords:**
