@@ -1,6 +1,6 @@
 ---
 name: akshare
-description: Access Chinese financial market data via AkShare Python library. Use when user needs to fetch stock market data (A-shares, Hong Kong stocks, US stocks), futures data, fund data, macro economic indicators, bond data, foreign exchange, cryptocurrency, and other financial data from China. Trigger keywords: "股票数据", "期货数据", "基金数据", "宏观经济", "股票行情", "行情查询", "金融数据", "A股", "港股", "美股", "akshare".
+description: "Access Chinese financial market data via AkShare Python library. Use when user needs to fetch stock market data (A-shares, Hong Kong stocks, US stocks), futures data, fund data, macro economic indicators, bond data, foreign exchange, cryptocurrency, and other financial data from China. Trigger keywords: 股票数据, 期货数据, 基金数据, 宏观经济, 股票行情, 行情查询, 金融数据, A股, 港股, 美股, akshare."
 ---
 
 # AkShare - Chinese Financial Data Interface

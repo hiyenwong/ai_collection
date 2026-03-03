@@ -1,3 +1,8 @@
+---
+name: stock-analysis
+description: Comprehensive stock technical analysis system for fetching data, calculating indicators (KDJ, MACD, RSI, BOLL), generating visualizations and reports. Use when user asks about stock analysis, 股票分析, technical analysis, 技术分析, k-line, or stock scoring.
+---
+
 # Stock Analysis
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: claude-code
+description: Anthropic's official AI-powered coding companion. Use when user wants to run claude-code CLI, needs help with code using Anthropic's Claude, or mentions claude-code, anthropic coding, claude cli, or claude terminal.
+---
+
 # Claude Code
 
 ## Description

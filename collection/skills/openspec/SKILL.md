@@ -1,3 +1,8 @@
+---
+name: openspec
+description: Specification-driven development framework using Gherkin syntax. Use when user mentions openspec, open spec, spec-driven, gherkin, BDD, given-when-then, or needs to define requirements in structured human-readable format.
+---
+
 # OpenSpec
 
 ## Description
