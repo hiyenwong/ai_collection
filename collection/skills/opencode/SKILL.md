@@ -1,3 +1,8 @@
+---
+name: opencode
+description: Open source AI coding agent with multi-agent orchestration and ultrawork mode. Use when user mentions opencode, open code, oh-my-opencode, ultrawork, ulw, or needs an AI coding agent with background tasks and LSP integration.
+---
+
 # OpenCode + Oh My OpenCode
 
 ## Description
