@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
-[![Agents](https://img.shields.io/badge/Agents-4-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-6-purple.svg)](./collection/skills/)
+[![Agents](https://img.shields.io/badge/Agents-19-blue.svg)](./collection/agents/)
+[![Skills](https://img.shields.io/badge/Skills-12-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -54,6 +54,21 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [Stock Analyst](collection/agents/stock-analyst/) | 股票分析师，金融数据分析 | Sonnet 4.5 | ✅ |
 | [Tech Co-Founder](collection/agents/tech-cofounder/) | 技术联合创始人，产品构建 | Sonnet 4.5 | ✅ |
 | [Research Agent](collection/agents/research-agent/) | 研究专家，深度调研 | Opus 4.5 | ✅ |
+| [Algorithm Engineer](collection/agents/algorithm-engineer/) | 算法工程师，算法设计与优化 | Opus 4.5 | ✅ |
+| [Applied Scientist](collection/agents/applied-scientist/) | 应用科学家，科学原理转化实践 | Opus 4.5 | ✅ |
+| [Biologist](collection/agents/biologist/) | 生物学家，生物系统与实验推理 | Opus 4.5 | ✅ |
+| [Computational Scientist](collection/agents/computational-scientist/) | 计算科学家，数值建模与仿真 | Opus 4.5 | ✅ |
+| [Computer Network Scientist](collection/agents/computer-network-scientist/) | 计算机网络科学家，网络架构与协议分析 | Opus 4.5 | ✅ |
+| [Economist](collection/agents/economist/) | 经济学家，宏观/微观经济分析 | Opus 4.5 | ✅ |
+| [Geneticist](collection/agents/geneticist/) | 遗传学家，遗传机制与变异分析 | Opus 4.5 | ✅ |
+| [Linguist](collection/agents/linguist/) | 语言学家，语言结构与语义分析 | Opus 4.5 | ✅ |
+| [Logician](collection/agents/logician/) | 逻辑学家，形式逻辑与论证验证 | Opus 4.5 | ✅ |
+| [Mathematician](collection/agents/mathematician/) | 数学家，形式推理与定理证明 | Opus 4.5 | ✅ |
+| [Neuroscientist](collection/agents/neuroscientist/) | 神经科学家，神经机制与研究综合 | Opus 4.5 | ✅ |
+| [Philosopher](collection/agents/philosopher/) | 哲学家，概念分析与伦理推理 | Opus 4.5 | ✅ |
+| [Population Dynamics Scientist](collection/agents/population-dynamics-scientist/) | 种群动力学科学家，群体行为建模 | Opus 4.5 | ✅ |
+| [Psychologist](collection/agents/psychologist/) | 心理学家，认知行为分析 | Opus 4.5 | ✅ |
+| [Statistician](collection/agents/statistician/) | 统计学家，统计推断与不确定性量化 | Opus 4.5 | ✅ |
 
 ## 技能
 
@@ -65,6 +80,12 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [AkShare](collection/skills/akshare/) | 中国金融数据接口 | stock data, akshare | ✅ |
 | [Stock Analysis](collection/skills/stock-analysis/) | 股票技术分析 | 股票分析, technical indicators | ✅ |
 | [Skill Extractor](collection/skills/skill-extractor/) | 从对话提炼技能 | 提炼技能, skill extractor | ✅ |
+| [Chat History LanceDB](collection/skills/chat-history-lancedb/) | 基于 LanceDB 的对话历史与向量搜索 | chat history, lancedb | ✅ |
+| [Copilot CLI](collection/skills/copilot-cli/) | GitHub Copilot CLI 终端代理 | copilot cli, github copilot | ✅ |
+| [Iamb Matrix CLI](collection/skills/iamb-matrix-cli/) | Matrix 协议 CLI 操作 | iamb, matrix cli | ✅ |
+| [Skill RAG Indexer](collection/skills/skill-rag-indexer/) | 技能文档 RAG 索引与语义搜索 | skill rag, search skills | ✅ |
+| [Taiyi Jinhua Meditation](collection/skills/taiyi-jinhua-meditation/) | 基于《太乙金华宗旨》的道家冥想指导 | 冥想, meditation, 回光守中 | ✅ |
+| [Teach Cofounder](collection/skills/teach-cofounder/) | 苏格拉底式技术导师，深度原理教学 | teach me, mentor me | ✅ |
 
 ## 快速开始
 
