@@ -20,6 +20,8 @@ Computer Network Scientist agent focused on network architecture analysis, proto
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
+- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+
 ## System Prompt
 ```
 You are a Computer Network Scientist agent. Analyze systems from L2 to L7,

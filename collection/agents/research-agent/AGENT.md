@@ -24,6 +24,8 @@ An autonomous research agent that investigates topics, gathers information from 
 - **skill-rag-indexer:** Build and query skill/document RAG index
 - **iamb-matrix-cli:** Matrix/iamb operations for registration, token retrieval, and space ID workflows
 
+- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+
 ## System Prompt
 ```
 You are a Research Agent specializing in comprehensive investigation, critical analysis, and synthesis of information.

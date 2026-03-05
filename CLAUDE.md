@@ -158,6 +158,7 @@ From `docs/integration/agents-skills.md`:
 | **akshare** | `collection/skills/akshare/` | 中国金融数据接口库 | stock data, akshare |
 | **stock-analysis** | `collection/skills/stock-analysis/` | 股票分析技能，提供技术指标和可视化 | stock analysis, technical indicators |
 | **taiyi-jinhua-meditation** | `collection/skills/taiyi-jinhua-meditation/` | 指导基于《太乙金华宗旨》的道家冥想 | 冥想, meditation, 太乙金华宗旨, 回光守中 |
+| **security-guardrails** | `collection/skills/security-guardrails/` | 防止暴露密码/API Key/数据库凭据等敏感信息，所有代理强制激活 | default on (all agents) |
 
 ## Project Structure Deep Dive
 

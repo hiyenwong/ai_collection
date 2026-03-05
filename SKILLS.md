@@ -479,6 +479,18 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Local-first with zero external dependencies
   - Multi-language support (Chinese/English)
 
+### Security Guardrails
+- **Location:** `collection/skills/security-guardrails/`
+- **Purpose:** 强制性基础安全层，防止所有代理在响应中暴露密码、API Key、数据库凭据、私钥、Token 等敏感信息
+- **Triggers:** 所有代理默认激活 (default on for all agents)
+- **Tools:** read, write
+- **Key Features:**
+  - 敏感信息分类检测（密码/API Key/连接串/私钥）
+  - 自动脱敏与占位符替换
+  - 文件读取安全过滤
+  - 拒绝输出明文凭据的防护
+  - 面向用户的安全实践引导
+
 ### iamb Matrix CLI Operations
 - **Location:** `collection/skills/iamb-matrix-cli/`
 - **Purpose:** Matrix/iamb 实操技能，覆盖注册、token 获取、Space ID 查询和空间子房间维护
