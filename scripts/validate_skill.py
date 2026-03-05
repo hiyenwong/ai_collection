@@ -15,7 +15,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 # Required sections for SKILL.md
 REQUIRED_SECTIONS = [
@@ -44,6 +44,27 @@ OPTIONAL_SECTIONS = [
 ]
 
 
+def _parse_frontmatter(content: str) -> tuple[Optional[dict], str]:
+    """Parse YAML frontmatter from markdown content.
+
+    Returns:
+        Tuple of (frontmatter_dict or None, content_without_frontmatter).
+    """
+    if not content.startswith("---"):
+        return None, content
+    end = content.find("\n---", 3)
+    if end == -1:
+        return None, content
+    fm_text = content[3:end].strip()
+    rest = content[end + 4:]
+    fm: dict = {}
+    for line in fm_text.splitlines():
+        if ":" in line:
+            key, _, val = line.partition(":")
+            fm[key.strip()] = val.strip().strip('"').strip("'")
+    return fm, rest
+
+
 class SkillValidator:
     """Validator for SKILL.md files."""
 
@@ -61,6 +82,7 @@ class SkillValidator:
             return False
 
         content = self.skill_md.read_text(encoding="utf-8")
+        self._frontmatter, self._body = _parse_frontmatter(content)
 
         # Check required sections
         self._check_sections(content)
@@ -81,23 +103,53 @@ class SkillValidator:
 
     def _check_sections(self, content: str) -> None:
         """Check for required sections."""
-        found_sections = set()
-
-        # Extract all headers
-        headers = re.findall(r'^#{1,3}\s+(.+)$', content, re.MULTILINE)
+        # Extract all markdown headers (text after the # markers)
+        headers = re.findall(r'^#{1,6}\s+(.+)$', content, re.MULTILINE)
         found_sections = set(headers)
+
+        # Build a set of lowercase header texts for lookup
+        headers_lower = {h.lower() for h in found_sections}
+
+        # Frontmatter keys available as fallback sources
+        fm = self._frontmatter or {}
+        fm_keys_lower = {k.lower() for k in fm}
+
+        def _section_present(required: str) -> bool:
+            """Check if a required section is satisfied by markdown or frontmatter."""
+            # Strip leading '#' and whitespace to get the bare section name
+            pattern = re.sub(r'^#+\s*', '', required).lower()
+
+            # Special case: '# Skill Name' → any H1 header is acceptable
+            if required == "# Skill Name":
+                has_h1 = any(
+                    re.match(r'^#\s', line)
+                    for line in content.splitlines()
+                )
+                if has_h1:
+                    return True
+                # fallback: frontmatter 'name' field
+                return "name" in fm_keys_lower
+
+            # Check markdown headers
+            if any(pattern in h for h in headers_lower):
+                return True
+
+            # Fallback: check YAML frontmatter keys
+            # e.g. 'description' satisfies '## Description'
+            if pattern.replace(" ", "_") in fm_keys_lower or pattern in fm_keys_lower:
+                return True
+
+            return False
 
         # Check required sections
         for required in REQUIRED_SECTIONS:
-            # Match loosely - just check if the section exists
-            required_pattern = required.replace("# ", "").replace("## ", "")
-            if not any(required_pattern.lower() in h.lower() for h in found_sections):
+            if not _section_present(required):
                 self.errors.append(f"Missing required section: {required}")
 
         # Report optional sections found
         for optional in OPTIONAL_SECTIONS:
-            optional_pattern = optional.replace("## ", "")
-            if any(optional_pattern.lower() in h.lower() for h in found_sections):
+            optional_pattern = re.sub(r'^#+\s*', '', optional).lower()
+            if any(optional_pattern in h for h in headers_lower):
                 self.info.append(f"Has optional section: {optional}")
 
     def _check_format(self, content: str) -> None:
@@ -149,7 +201,7 @@ class SkillValidator:
             return
 
         tools_text = match.group(1)
-        tools = re.findall(r'^-\s*(\w+)', tools_text, re.MULTILINE)
+        tools = re.findall(r'^-\s*`?(\w+)`?', tools_text, re.MULTILINE)
 
         if len(tools) == 0:
             self.errors.append("No tools listed in Tools Used section")

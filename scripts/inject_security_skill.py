@@ -18,7 +18,9 @@ for agent in sorted(agents):
         skipped.append(f"{agent} (already has it)")
         continue
     if "## System Prompt" in content:
-        content = content.replace("## System Prompt", skill_line + "\n## System Prompt", 1)
+        content = content.replace(
+            "## System Prompt", skill_line + "\n## System Prompt", 1
+        )
         with open(agent_md, "w") as f:
             f.write(content)
         updated.append(agent)
