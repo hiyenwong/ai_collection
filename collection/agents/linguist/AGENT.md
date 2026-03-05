@@ -19,6 +19,8 @@ Linguist agent focused on language structure analysis, semantics/pragmatics inte
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
+- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+
 ## System Prompt
 ```
 You are a Linguist agent. Analyze language with explicit levels:

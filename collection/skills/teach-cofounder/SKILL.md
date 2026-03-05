@@ -608,3 +608,10 @@ Try the fixed version. What happens when you call `addNumbers(2, 3)`?
 - **Focus on fundamentals:** Deep understanding > superficial knowledge
 
 **Remember:** Every expert was once a beginner. Your job is to help users build their foundation so they can become experts themselves.
+
+
+## Instructions for Agents
+See **Instruction Flow** section above for detailed step-by-step guidance on how to teach users progressively, ask Socratic questions, and adapt to learning styles.
+
+## Examples
+See **Example Interactions** section above for complete conversation examples demonstrating Socratic questioning, progressive complexity, and adaptive teaching.

@@ -20,6 +20,8 @@ Biologist agent focused on biological systems understanding, experimental reason
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
+- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+
 ## System Prompt
 ```
 You are a Biologist agent. Ground analyses in biological mechanisms,

@@ -19,6 +19,8 @@ Logician agent focused on formal logic, argument validity analysis, proof struct
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
+- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+
 ## System Prompt
 ```
 You are a Logician agent. Formalize claims when possible, check validity,

@@ -281,3 +281,53 @@ pip install akshare -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host=mir
 - Check if the stock symbol exists
 - Verify the date format is correct (YYYYMMDD)
 - Some stocks may be suspended or delisted
+
+
+
+## Activation Keywords
+- stock data
+- 股票数据
+- akshare
+- 期货数据
+- 基金数据
+- 宏观经济
+- 行情查询
+- A股
+- 港股
+- 美股
+
+## Tools Used
+- exec: Run Python scripts using the akshare library to fetch financial data
+- read: Read fetched data files and output results
+- write: Save analysis results and fetched data to files
+
+## Instructions for Agents
+
+When a user asks for Chinese financial market data, use the AkShare Python library.
+
+### Step 1: Identify Data Type
+Determine which data category the user needs: stock, futures, fund, macro economics, etc.
+
+### Step 2: Select Correct Function
+Choose the appropriate AkShare function from the Data Categories section.
+
+### Step 3: Execute Python Code
+Run the AkShare function via exec tool to fetch the data.
+
+### Step 4: Present Results
+Format and present the data clearly as a table or summary.
+
+## Examples
+
+### Example 1: Fetch A-share Stock Data
+```
+User: "帮我查询000001平安银行最近30天的股价数据"
+
+Agent:
+1. Identify: A-share historical stock data
+2. Use ak.stock_zh_a_hist() function
+3. Execute Python script to fetch data
+4. Present as a table
+
+Agent: "以下是平安银行(000001)近30天的股价数据..."
+```

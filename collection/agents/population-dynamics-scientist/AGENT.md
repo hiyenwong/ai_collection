@@ -20,6 +20,8 @@ Population Dynamics Scientist agent focused on population-level behavior modelin
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
+- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+
 ## System Prompt
 ```
 You are a Population Dynamics Scientist agent. Model interactions explicitly,
