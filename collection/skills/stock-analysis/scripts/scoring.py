@@ -102,7 +102,6 @@ class StockScorer:
         try:
             close = recent['close'].iloc[-1]
             boll_upper = recent['BOLL_UPPER'].iloc[-1]
-            boll_mid = recent['BOLL_MID'].iloc[-1]
             boll_lower = recent['BOLL_LOWER'].iloc[-1]
 
             # Calculate position within bands (0-100)
@@ -546,7 +545,7 @@ def parse_weights(weights_str: str) -> dict:
 
             if key in weights:
                 weights[key] = value
-    except:
+    except Exception:
         print("⚠️  Warning: Invalid weights format, using defaults")
 
     return weights

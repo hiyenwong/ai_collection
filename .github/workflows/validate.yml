@@ -25,9 +25,16 @@ jobs:
           python scripts/validate_skill.py || exit 1
 
       - name: Check markdown links
-        run: |
-          pip install mlc
-          mlc --ignore collection/ --exclude ".*\.github\.com.*" .
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-path collection/
+            --exclude 'github\.com'
+            --exclude 'docs\.openclaw\.ai'
+            --exclude 'discord\.gg'
+            '**/*.md'
+          fail: true
 
   lint-python:
     name: Lint Python Scripts

@@ -12,10 +12,8 @@ Usage:
 import argparse
 import os
 import sys
-from datetime import datetime
 
 try:
-    import matplotlib.dates as mdates
     import matplotlib.pyplot as plt
     import pandas as pd
     from matplotlib.font_manager import FontProperties
@@ -286,7 +284,7 @@ class StockVisualizer:
 
     def plot_composite(self, df: pd.DataFrame, output_path: str):
         """Plot composite dashboard with multiple panels."""
-        print(f"📊 Generating composite dashboard...")
+        print("📊 Generating composite dashboard...")
 
         if len(df) < 30:
             print("⚠️  Warning: Insufficient data for composite chart")

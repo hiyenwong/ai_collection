@@ -41,7 +41,7 @@ def _extract_system_prompt(content: str) -> str:
     # Fallback 2: whole document is the system prompt (no System Prompt section)
     # Strip the first H1 title line and use the rest
     lines = content.splitlines()
-    body_lines = [l for l in lines if not l.startswith("# ")]
+    body_lines = [line for line in lines if not line.startswith("# ")]
     body = "\n".join(body_lines).strip()
     return body if body else ""
 
@@ -53,7 +53,7 @@ def _extract_purpose(content: str) -> str:
         if match:
             text = match.group(1).strip()
             # Strip markdown bold/bullet formatting and take first meaningful line
-            lines = [re.sub(r"\*\*|^[-*]\s*", "", l).strip() for l in text.splitlines() if l.strip() and not l.startswith("#")]
+            lines = [re.sub(r"\*\*|^[-*]\s*", "", ln).strip() for ln in text.splitlines() if ln.strip() and not ln.startswith("#")]
             if lines:
                 return " ".join(lines[:2])  # max 2 lines
     return ""
