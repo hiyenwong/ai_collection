@@ -15,7 +15,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 
 # Required sections for SKILL.md
 REQUIRED_SECTIONS = [
@@ -56,7 +56,7 @@ def _parse_frontmatter(content: str) -> tuple[Optional[dict], str]:
     if end == -1:
         return None, content
     fm_text = content[3:end].strip()
-    rest = content[end + 4:]
+    rest = content[end + 4 :]
     fm: dict = {}
     for line in fm_text.splitlines():
         if ":" in line:
@@ -104,7 +104,7 @@ class SkillValidator:
     def _check_sections(self, content: str) -> None:
         """Check for required sections."""
         # Extract all markdown headers (text after the # markers)
-        headers = re.findall(r'^#{1,6}\s+(.+)$', content, re.MULTILINE)
+        headers = re.findall(r"^#{1,6}\s+(.+)$", content, re.MULTILINE)
         found_sections = set(headers)
 
         # Build a set of lowercase header texts for lookup
@@ -117,14 +117,11 @@ class SkillValidator:
         def _section_present(required: str) -> bool:
             """Check if a required section is satisfied by markdown or frontmatter."""
             # Strip leading '#' and whitespace to get the bare section name
-            pattern = re.sub(r'^#+\s*', '', required).lower()
+            pattern = re.sub(r"^#+\s*", "", required).lower()
 
             # Special case: '# Skill Name' → any H1 header is acceptable
             if required == "# Skill Name":
-                has_h1 = any(
-                    re.match(r'^#\s', line)
-                    for line in content.splitlines()
-                )
+                has_h1 = any(re.match(r"^#\s", line) for line in content.splitlines())
                 if has_h1:
                     return True
                 # fallback: frontmatter 'name' field
@@ -148,67 +145,85 @@ class SkillValidator:
 
         # Report optional sections found
         for optional in OPTIONAL_SECTIONS:
-            optional_pattern = re.sub(r'^#+\s*', '', optional).lower()
+            optional_pattern = re.sub(r"^#+\s*", "", optional).lower()
             if any(optional_pattern in h for h in headers_lower):
                 self.info.append(f"Has optional section: {optional}")
 
     def _check_format(self, content: str) -> None:
         """Check format compliance."""
-        lines = content.split('\n')
+        lines = content.split("\n")
 
         # Check for very long lines
         for i, line in enumerate(lines, 1):
             if len(line) > 120:
-                self.warnings.append(f"Line {i} exceeds 120 characters ({len(line)} chars)")
+                self.warnings.append(
+                    f"Line {i} exceeds 120 characters ({len(line)} chars)"
+                )
 
         # Check for proper code blocks
-        code_blocks = re.findall(r'```(\w*)', content)
+        code_blocks = re.findall(r"```(\w*)", content)
         if not code_blocks:
             self.warnings.append("No code blocks found - examples may need code blocks")
 
     def _check_activation_keywords(self, content: str) -> None:
         """Check activation keywords section."""
         # Find Activation Keywords section
-        match = re.search(r'## Activation Keywords\s*\n(.*?)(?=\n##|\Z)', content, re.DOTALL)
+        match = re.search(
+            r"## Activation Keywords\s*\n(.*?)(?=\n##|\Z)", content, re.DOTALL
+        )
         if not match:
             return
 
         keywords_text = match.group(1)
-        keywords = re.findall(r'^-\s*(.+)$', keywords_text, re.MULTILINE)
+        keywords = re.findall(r"^-\s*(.+)$", keywords_text, re.MULTILINE)
 
         if len(keywords) < 3:
-            self.warnings.append(f"Only {len(keywords)} activation keywords - recommend 5-10")
+            self.warnings.append(
+                f"Only {len(keywords)} activation keywords - recommend 5-10"
+            )
 
         # Check for common pitfalls
         generic_keywords = ["help", "do", "make", "create", "get"]
         for kw in keywords:
             kw_lower = kw.strip().lower()
             if kw_lower in generic_keywords:
-                self.errors.append(f"Too generic keyword: '{kw}' - use specific phrases")
+                self.errors.append(
+                    f"Too generic keyword: '{kw}' - use specific phrases"
+                )
 
         # Check for variety
         if len(keywords) > 0:
-            has_chinese = any(re.search(r'[\u4e00-\u9fff]', kw) for kw in keywords)
-            has_english = any(re.search(r'[a-zA-Z]', kw) for kw in keywords)
+            has_chinese = any(re.search(r"[\u4e00-\u9fff]", kw) for kw in keywords)
+            has_english = any(re.search(r"[a-zA-Z]", kw) for kw in keywords)
 
             if not has_chinese and not has_english:
-                self.warnings.append("Consider adding both Chinese and English keywords")
+                self.warnings.append(
+                    "Consider adding both Chinese and English keywords"
+                )
 
     def _check_tools(self, content: str) -> None:
         """Check Tools Used section."""
-        match = re.search(r'## Tools Used\s*\n(.*?)(?=\n##|\Z)', content, re.DOTALL)
+        match = re.search(r"## Tools Used\s*\n(.*?)(?=\n##|\Z)", content, re.DOTALL)
         if not match:
             return
 
         tools_text = match.group(1)
-        tools = re.findall(r'^-\s*`?(\w+)`?', tools_text, re.MULTILINE)
+        tools = re.findall(r"^-\s*`?(\w+)`?", tools_text, re.MULTILINE)
 
         if len(tools) == 0:
             self.errors.append("No tools listed in Tools Used section")
 
         valid_tools = [
-            "exec", "read", "write", "edit", "glob", "grep",
-            "memory", "web_search", "web_fetch", "bash"
+            "exec",
+            "read",
+            "write",
+            "edit",
+            "glob",
+            "grep",
+            "memory",
+            "web_search",
+            "web_fetch",
+            "bash",
         ]
 
         for tool in tools:
@@ -217,7 +232,7 @@ class SkillValidator:
 
     def _check_examples(self, content: str) -> None:
         """Check Examples section."""
-        match = re.search(r'## Examples\s*\n(.*?)(?=\n##|\Z)', content, re.DOTALL)
+        match = re.search(r"## Examples\s*\n(.*?)(?=\n##|\Z)", content, re.DOTALL)
         if not match:
             return
 
@@ -279,14 +294,10 @@ def validate_all_skills(skills_dir: Path) -> Dict[str, SkillValidator]:
 def main():
     parser = argparse.ArgumentParser(description="Validate OpenClaw skills")
     parser.add_argument(
-        "--skill",
-        type=str,
-        help="Specific skill to validate (default: all skills)"
+        "--skill", type=str, help="Specific skill to validate (default: all skills)"
     )
     parser.add_argument(
-        "--fix",
-        action="store_true",
-        help="Auto-fix issues if possible (experimental)"
+        "--fix", action="store_true", help="Auto-fix issues if possible (experimental)"
     )
 
     args = parser.parse_args()

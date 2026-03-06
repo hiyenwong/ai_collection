@@ -1,5 +1,3 @@
-import re
-
 AKSHARE_APPEND = """
 
 ## Activation Keywords
@@ -68,7 +66,7 @@ with open(akshare_path, "r") as f:
     content = f.read()
 # Strip any partial duplicates from previous failed attempts
 if "## Activation Keywords" in content:
-    content = content[:content.index("## Activation Keywords")].rstrip()
+    content = content[: content.index("## Activation Keywords")].rstrip()
 with open(akshare_path, "w") as f:
     f.write(content + "\n" + AKSHARE_APPEND)
 print("akshare: done")
