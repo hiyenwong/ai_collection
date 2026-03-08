@@ -72,24 +72,24 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 
 ## 技能
 
-| 技能 | 功能 | 触发关键词 | 状态 |
-|------|------|-----------|------|
-| [OpenCode](collection/skills/opencode/) | 开源 AI 编程，多代理编排 | opencode, ultrawork | ✅ |
-| [Claude Code](collection/skills/claude-code/) | Anthropic 官方编程助手 | claude-code | ✅ |
-| [OpenSpec](collection/skills/openspec/) | 规格驱动开发，Gherkin 语法 | openspec, gherkin | ✅ |
-| [AkShare](collection/skills/akshare/) | 中国金融数据接口 | stock data, akshare | ✅ |
-| [Stock Analysis](collection/skills/stock-analysis/) | 股票技术分析 | 股票分析, technical indicators | ✅ |
-| [Skill Extractor](collection/skills/skill-extractor/) | 从对话提炼技能 | 提炼技能, skill extractor | ✅ |
-| [Chat History LanceDB](collection/skills/chat-history-lancedb/) | 基于 LanceDB 的对话历史与向量搜索 | chat history, lancedb | ✅ |
-| [Copilot CLI](collection/skills/copilot-cli/) | GitHub Copilot CLI 终端代理 | copilot cli, github copilot | ✅ |
-| [Iamb Matrix CLI](collection/skills/iamb-matrix-cli/) | Matrix 协议 CLI 操作 | iamb, matrix cli | ✅ |
-| [Skill RAG Indexer](collection/skills/skill-rag-indexer/) | 技能文档 RAG 索引与语义搜索 | skill rag, search skills | ✅ |
-| [Taiyi Jinhua Meditation](collection/skills/taiyi-jinhua-meditation/) | 基于《太乙金华宗旨》的道家冥想指导 | 冥想, meditation, 回光守中 | ✅ |
-| [Teach Cofounder](collection/skills/teach-cofounder/) | 苏格拉底式技术导师，深度原理教学 | teach me, mentor me | ✅ |
-| [Security Guardrails](collection/skills/security-guardrails/) | 安全防护，防止密码/API Key 等敏感信息泄露 | 所有代理默认激活 | ✅ |
-| [ICE Review](collection/skills/ice-review/) | ICE 策略跨任务知识提炼与自我进化 | ICE review, 任务回顾, 知识巩固 | ✅ |
-| [Memory Retrieval](collection/skills/memory-retrieval/) | 基于 MemRL 的两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
-| [Self-Challenge](collection/skills/self-challenge/) | 基于 Agent0 的双代理自我挑战进化机制 | self challenge, 自我挑战, 能力测试 | ✅ |
+| 技能 | 版本 | 功能 | 触发关键词 | 状态 |
+|------|------|------|-----------|------|
+| [Claude Code](collection/skills/claude-code/) | v2.1.71 | Anthropic 官方编程助手，支持 /loop、cron 调度 | claude-code | ✅ |
+| [OpenCode](collection/skills/opencode/) | v1.2.21 | 开源 AI 编程，多代理编排，ultrawork 模式 | opencode, ultrawork | ✅ |
+| [Copilot CLI](collection/skills/copilot-cli/) | v1.0.2 🎉 | GitHub Copilot CLI 终端代理，GA 正式版 | copilot cli, github copilot | ✅ |
+| [OpenSpec](collection/skills/openspec/) | - | 规格驱动开发，Gherkin 语法 | openspec, gherkin | ✅ |
+| [AkShare](collection/skills/akshare/) | - | 中国金融数据接口 | stock data, akshare | ✅ |
+| [Stock Analysis](collection/skills/stock-analysis/) | - | 股票技术分析 | 股票分析, technical indicators | ✅ |
+| [Skill Extractor](collection/skills/skill-extractor/) | - | 从对话提炼技能 | 提炼技能, skill extractor | ✅ |
+| [Chat History LanceDB](collection/skills/chat-history-lancedb/) | - | 基于 LanceDB 的对话历史与向量搜索 | chat history, lancedb | ✅ |
+| [Iamb Matrix CLI](collection/skills/iamb-matrix-cli/) | - | Matrix 协议 CLI 操作 | iamb, matrix cli | ✅ |
+| [Skill RAG Indexer](collection/skills/skill-rag-indexer/) | - | 技能文档 RAG 索引与语义搜索 | skill rag, search skills | ✅ |
+| [Taiyi Jinhua Meditation](collection/skills/taiyi-jinhua-meditation/) | - | 基于《太乙金华宗旨》的道家冥想指导 | 冥想, meditation, 回光守中 | ✅ |
+| [Teach Cofounder](collection/skills/teach-cofounder/) | - | 苏格拉底式技术导师，深度原理教学 | teach me, mentor me | ✅ |
+| [Security Guardrails](collection/skills/security-guardrails/) | - | 安全防护，防止密码/API Key 等敏感信息泄露 | 所有代理默认激活 | ✅ |
+| [ICE Review](collection/skills/ice-review/) | - | ICE 策略跨任务知识提炼与自我进化 | ICE review, 任务回顾, 知识巩固 | ✅ |
+| [Memory Retrieval](collection/skills/memory-retrieval/) | - | 基于 MemRL 的两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
+| [Self-Challenge](collection/skills/self-challenge/) | - | 基于 Agent0 的双代理自我挑战进化机制 | self challenge, 自我挑战, 能力测试 | ✅ |
 
 ## 快速开始
 
