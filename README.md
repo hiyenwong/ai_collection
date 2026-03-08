@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-19-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-12-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-16-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -86,6 +86,10 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [Skill RAG Indexer](collection/skills/skill-rag-indexer/) | 技能文档 RAG 索引与语义搜索 | skill rag, search skills | ✅ |
 | [Taiyi Jinhua Meditation](collection/skills/taiyi-jinhua-meditation/) | 基于《太乙金华宗旨》的道家冥想指导 | 冥想, meditation, 回光守中 | ✅ |
 | [Teach Cofounder](collection/skills/teach-cofounder/) | 苏格拉底式技术导师，深度原理教学 | teach me, mentor me | ✅ |
+| [Security Guardrails](collection/skills/security-guardrails/) | 安全防护，防止密码/API Key 等敏感信息泄露 | 所有代理默认激活 | ✅ |
+| [ICE Review](collection/skills/ice-review/) | ICE 策略跨任务知识提炼与自我进化 | ICE review, 任务回顾, 知识巩固 | ✅ |
+| [Memory Retrieval](collection/skills/memory-retrieval/) | 基于 MemRL 的两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
+| [Self-Challenge](collection/skills/self-challenge/) | 基于 Agent0 的双代理自我挑战进化机制 | self challenge, 自我挑战, 能力测试 | ✅ |
 
 ## 快速开始
 

@@ -491,6 +491,42 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - 拒绝输出明文凭据的防护
   - 面向用户的安全实践引导
 
+### ICE Review
+- **Location:** `collection/skills/ice-review/`
+- **Purpose:** 跨任务自我进化技能，基于 ICE (Investigate-Consolidate-Exploit) 策略进行任务回顾和知识提取
+- **Triggers:** ICE review, ICE 回顾, 任务回顾, task review, 知识巩固
+- **Tools:** read, write, edit, memory_search, memory_get
+- **Key Features:**
+  - 三阶段回顾流程（调查→巩固→利用）
+  - 从任务中提取可复用模式
+  - 更新 MEMORY.md 和知识库
+  - 创建新 skills 或工作流程
+  - 来源：arXiv:2401.13996
+
+### Memory Retrieval
+- **Location:** `collection/skills/memory-retrieval/`
+- **Purpose:** 两阶段记忆检索，基于 MemRL 论文实现语义匹配 + 效用过滤的高质量记忆检索
+- **Triggers:** 记忆检索, memory retrieval, 查找知识, find knowledge, 两阶段检索
+- **Tools:** memory_search, memory_get, read, write
+- **Key Features:**
+  - 第一阶段：语义匹配获取候选记忆
+  - 第二阶段：效用评分过滤和排序
+  - 解决稳定性-可塑性困境
+  - 效用追踪（成功率、最近使用、相关性）
+  - 来源：arXiv:2601.03192
+
+### Self-Challenge
+- **Location:** `collection/skills/self-challenge/`
+- **Purpose:** 自我挑战机制，基于 Agent0 论文实现双代理竞争模型驱动能力扩展
+- **Triggers:** 自我挑战, self challenge, 能力测试, capability test, 挑战任务
+- **Tools:** exec, read, write, memory_search, sessions_spawn
+- **Key Features:**
+  - Curriculum Agent 设计挑战
+  - Executor Agent 执行挑战
+  - 能力评估和知识提取
+  - 渐进式难度提升
+  - 来源：arXiv:2511.16043
+
 ### iamb Matrix CLI Operations
 - **Location:** `collection/skills/iamb-matrix-cli/`
 - **Purpose:** Matrix/iamb 实操技能，覆盖注册、token 获取、Space ID 查询和空间子房间维护

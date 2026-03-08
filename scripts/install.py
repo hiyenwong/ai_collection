@@ -27,6 +27,7 @@ SKILLS_DST = Path.home() / ".claude" / "skills"
 # Agent installation
 # ---------------------------------------------------------------------------
 
+
 def _extract_system_prompt(content: str) -> str:
     """Extract content inside the first fenced code block after '## System Prompt'.
     Falls back to full document content (after the title) if no such section exists.
@@ -41,7 +42,7 @@ def _extract_system_prompt(content: str) -> str:
     # Fallback 2: whole document is the system prompt (no System Prompt section)
     # Strip the first H1 title line and use the rest
     lines = content.splitlines()
-    body_lines = [l for l in lines if not l.startswith("# ")]
+    body_lines = [line for line in lines if not line.startswith("# ")]
     body = "\n".join(body_lines).strip()
     return body if body else ""
 
@@ -53,7 +54,11 @@ def _extract_purpose(content: str) -> str:
         if match:
             text = match.group(1).strip()
             # Strip markdown bold/bullet formatting and take first meaningful line
-            lines = [re.sub(r"\*\*|^[-*]\s*", "", l).strip() for l in text.splitlines() if l.strip() and not l.startswith("#")]
+            lines = [
+                re.sub(r"\*\*|^[-*]\s*", "", ln).strip()
+                for ln in text.splitlines()
+                if ln.strip() and not ln.startswith("#")
+            ]
             if lines:
                 return " ".join(lines[:2])  # max 2 lines
     return ""
@@ -68,7 +73,9 @@ def _extract_tools(content: str) -> list[str]:
     return list(dict.fromkeys(tools))  # deduplicate, preserve order
 
 
-def install_agent(agent_dir: Path, dst: Path, dry_run: bool = False) -> tuple[bool, str]:
+def install_agent(
+    agent_dir: Path, dst: Path, dry_run: bool = False
+) -> tuple[bool, str]:
     """Convert AGENT.md → flat .md file and write to dst.
 
     Args:
@@ -95,7 +102,9 @@ def install_agent(agent_dir: Path, dst: Path, dry_run: bool = False) -> tuple[bo
     if not system_prompt:
         return False, f"{name}: could not extract system prompt"
 
-    tools_yaml = "\n".join(f"  - {t}" for t in tools) if tools else "  - read\n  - write"
+    tools_yaml = (
+        "\n".join(f"  - {t}" for t in tools) if tools else "  - read\n  - write"
+    )
 
     flat_md = f"""---
 name: "{name}"
@@ -189,7 +198,9 @@ def _add_frontmatter(skill_md: Path, name: str, description: str) -> None:
     skill_md.write_text(frontmatter + content, encoding="utf-8")
 
 
-def install_skill(skill_dir: Path, dst: Path, dry_run: bool = False) -> tuple[bool, str]:
+def install_skill(
+    skill_dir: Path, dst: Path, dry_run: bool = False
+) -> tuple[bool, str]:
     """Copy skill directory to dst, adding frontmatter if missing.
 
     Args:
@@ -222,7 +233,10 @@ def install_skill(skill_dir: Path, dst: Path, dry_run: bool = False) -> tuple[bo
             fm_name, fm_desc = SKILL_DESCRIPTIONS[name]
             _add_frontmatter(installed_md, fm_name, fm_desc)
         else:
-            return True, f"Installed skill → {out_dir} (⚠️  frontmatter missing, add manually)"
+            return (
+                True,
+                f"Installed skill → {out_dir} (⚠️  frontmatter missing, add manually)",
+            )
 
     return True, f"Installed skill → {out_dir}"
 
@@ -231,12 +245,15 @@ def install_skill(skill_dir: Path, dst: Path, dry_run: bool = False) -> tuple[bo
 # Main
 # ---------------------------------------------------------------------------
 
+
 def main() -> None:
     """Entry point."""
     parser = argparse.ArgumentParser(description="Install OpenClaw agents and skills")
     parser.add_argument("--agents", action="store_true", help="Install agents only")
     parser.add_argument("--skills", action="store_true", help="Install skills only")
-    parser.add_argument("--dry-run", action="store_true", help="Preview without writing")
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Preview without writing"
+    )
     args = parser.parse_args()
 
     do_agents = args.agents or not args.skills
@@ -245,7 +262,7 @@ def main() -> None:
     ok = err = 0
 
     if do_agents:
-        print(f"\n{'='*50}")
+        print(f"\n{'=' * 50}")
         print("Installing Agents → ~/.copilot/agents/")
         print("=" * 50)
         for agent_dir in sorted(AGENTS_SRC.iterdir()):
@@ -260,7 +277,7 @@ def main() -> None:
                 err += 1
 
     if do_skills:
-        print(f"\n{'='*50}")
+        print(f"\n{'=' * 50}")
         print("Installing Skills → ~/.claude/skills/")
         print("=" * 50)
         for skill_dir in sorted(SKILLS_SRC.iterdir()):
@@ -274,7 +291,7 @@ def main() -> None:
             else:
                 err += 1
 
-    print(f"\n{'='*50}")
+    print(f"\n{'=' * 50}")
     prefix = "[dry-run] " if args.dry_run else ""
     print(f"{prefix}Done: {ok} succeeded, {err} failed")
     if args.dry_run:
