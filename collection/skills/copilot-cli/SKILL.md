@@ -1,7 +1,41 @@
+---
+name: copilot-cli
+version: v1.0.2
+last_updated: 2026-03-08
+description: GitHub Copilot CLI - Terminal-native AI coding agent with autopilot mode, plan mode, and delegated tasks. Use when user mentions copilot cli, copilot terminal, or copilot autopilot.
+---
+
 # Copilot CLI
 
 ## Description
 GitHub Copilot CLI is a terminal-native agent experience that lets you chat with GitHub Copilot directly in your shell to plan, edit, run, and review code. It understands repository context, GitHub issues/PRs, and can automate multi-step workflows (autopilot, plan mode, delegated tasks) while keeping you in control of every command.
+
+## Version Status
+
+**Skill Version:** v1.0.2 (2026-03-08) 🎉 **GA Release!**  
+**Latest Release:** [Check GitHub](https://github.com/github/copilot-cli/releases/latest)
+
+### Version Check (Important!)
+
+When activating this skill, **always check the installed version**:
+
+```bash
+copilot --version
+```
+
+**If version differs from skill version (v1.0.2):**
+
+| 情况 | 建议 |
+|------|------|
+| 安装版本 < v1.0.2 | ⚠️ 建议更新: `copilot update` |
+| 安装版本 > v1.0.2 | ℹ️ 您的版本更新，本技能可能需要更新 |
+
+**v1.0.2 更新内容 (GA):**
+- 🎉 Copilot CLI 正式发布 (GA)!
+- `exit` 命令关闭 CLI
+- `ask_user` 表单支持 Enter 键提交
+- Hook 配置支持 `command` 字段跨平台别名
+- 修复 `meta+control` 按键处理
 
 ## Activation Keywords
 - copilot cli

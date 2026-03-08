@@ -314,7 +314,7 @@ You can create specialized variants of agents:
 
 - [OpenClaw Sessions API](https://docs.openclaw.ai/sessions)
 - [OpenClaw Agent Configuration](https://docs.openclaw.ai/agents/config)
-- [Claude Model Comparison](https://claude.com/models)
+- [Claude Model Comparison](https://docs.anthropic.com/en/docs/about-claude/models/overview)
 
 ---
 

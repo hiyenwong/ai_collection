@@ -7,256 +7,249 @@
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-一个精选的 **OpenClaw** 代理和技能集合，为 AI 助手提供强大的扩展能力。
+**[中文文档](./README_CN.md)** | **English**
 
-## 目录
+A curated collection of **OpenClaw** agents and skills that provide powerful extensions for AI assistants.
 
-- [概述](#概述)
-- [特性](#特性)
-- [代理](#代理)
-- [技能](#技能)
-- [快速开始](#快速开始)
-- [贡献](#贡献)
-- [许可证](#许可证)
+## Table of Contents
 
-## 概述
+- [Overview](#overview)
+- [Features](#features)
+- [Agents](#agents)
+- [Skills](#skills)
+- [Quick Start](#quick-start)
+- [Contributing](#contributing)
+- [License](#license)
 
-本仓库是 OpenClaw 代理和技能生态系统的知识库和展示中心。它记录了扩展 OpenClaw 能力的代理和技能，使它们易于发现、理解和使用。
+## Overview
 
-### 什么是 OpenClaw？
+This repository serves as a knowledge base and showcase for the OpenClaw agent and skill ecosystem. It documents agents and skills that extend OpenClaw's capabilities, making them easy to discover, understand, and use.
 
-OpenClaw 是一个灵活的 AI 代理框架，支持：
-- 多渠道接入（飞书、Telegram、WhatsApp 等）
-- 可扩展的技能系统
-- 通过 `sessions_spawn` 实现的自主子代理
+### What is OpenClaw?
 
-### 什么是代理 (Agents)？
+OpenClaw is a flexible AI agent framework that supports:
+- Multi-channel access (Feishu, Telegram, WhatsApp, etc.)
+- Extensible skill system
+- Autonomous sub-agents via `sessions_spawn`
 
-**代理**是执行特定任务的自主 AI 助手，运行在隔离会话中，可以使用不同的模型和工具。
+### What are Agents?
 
-### 什么是技能 (Skills)？
+**Agents** are autonomous AI assistants that execute specific tasks in isolated sessions, using different models and tools.
 
-**技能**是定义专门行为和工具的可复用能力包，通过关键词自动激活。
+### What are Skills?
 
-## 特性
+**Skills** are reusable capability packages that define specialized behaviors and tools, automatically activated by keywords.
 
-- 🚀 **即插即用**: 代理和技能可立即使用
-- 📚 **文档完善**: 每个组件都有详细的文档
-- 🔄 **持续更新**: 定期添加新的代理和技能
-- 🤝 **社区驱动**: 欢迎社区贡献
-- 🧪 **测试验证**: 自动化验证确保质量
+## Features
 
-## 代理
+- 🚀 **Plug and Play**: Agents and skills work out of the box
+- 📚 **Well Documented**: Every component has detailed documentation
+- 🔄 **Regular Updates**: New agents and skills added regularly
+- 🤝 **Community Driven**: Community contributions welcome
+- 🧪 **Tested**: Automated validation ensures quality
 
-| 代理 | 功能 | 模型 | 状态 |
-|------|------|------|------|
-| [Fullstack Engineer](collection/agents/fullstack-engineer/) | 全栈工程师，现代 Web 开发 | Opus 4.5 / Sonnet 4.6 | ✅ |
-| [Stock Analyst](collection/agents/stock-analyst/) | 股票分析师，金融数据分析 | Sonnet 4.5 | ✅ |
-| [Tech Co-Founder](collection/agents/tech-cofounder/) | 技术联合创始人，产品构建 | Sonnet 4.5 | ✅ |
-| [Research Agent](collection/agents/research-agent/) | 研究专家，深度调研 | Opus 4.5 | ✅ |
-| [Algorithm Engineer](collection/agents/algorithm-engineer/) | 算法工程师，算法设计与优化 | Opus 4.5 | ✅ |
-| [Applied Scientist](collection/agents/applied-scientist/) | 应用科学家，科学原理转化实践 | Opus 4.5 | ✅ |
-| [Biologist](collection/agents/biologist/) | 生物学家，生物系统与实验推理 | Opus 4.5 | ✅ |
-| [Computational Scientist](collection/agents/computational-scientist/) | 计算科学家，数值建模与仿真 | Opus 4.5 | ✅ |
-| [Computer Network Scientist](collection/agents/computer-network-scientist/) | 计算机网络科学家，网络架构与协议分析 | Opus 4.5 | ✅ |
-| [Economist](collection/agents/economist/) | 经济学家，宏观/微观经济分析 | Opus 4.5 | ✅ |
-| [Geneticist](collection/agents/geneticist/) | 遗传学家，遗传机制与变异分析 | Opus 4.5 | ✅ |
-| [Linguist](collection/agents/linguist/) | 语言学家，语言结构与语义分析 | Opus 4.5 | ✅ |
-| [Logician](collection/agents/logician/) | 逻辑学家，形式逻辑与论证验证 | Opus 4.5 | ✅ |
-| [Mathematician](collection/agents/mathematician/) | 数学家，形式推理与定理证明 | Opus 4.5 | ✅ |
-| [Neuroscientist](collection/agents/neuroscientist/) | 神经科学家，神经机制与研究综合 | Opus 4.5 | ✅ |
-| [Philosopher](collection/agents/philosopher/) | 哲学家，概念分析与伦理推理 | Opus 4.5 | ✅ |
-| [Population Dynamics Scientist](collection/agents/population-dynamics-scientist/) | 种群动力学科学家，群体行为建模 | Opus 4.5 | ✅ |
-| [Psychologist](collection/agents/psychologist/) | 心理学家，认知行为分析 | Opus 4.5 | ✅ |
-| [Statistician](collection/agents/statistician/) | 统计学家，统计推断与不确定性量化 | Opus 4.5 | ✅ |
+## Agents
 
-## 技能
+| Agent | Function | Model | Status |
+|-------|----------|-------|--------|
+| [Fullstack Engineer](collection/agents/fullstack-engineer/) | Full-stack engineer for modern web development | Opus 4.5 / Sonnet 4.6 | ✅ |
+| [Stock Analyst](collection/agents/stock-analyst/) | Stock analyst for financial data analysis | Sonnet 4.5 | ✅ |
+| [Tech Co-Founder](collection/agents/tech-cofounder/) | Technical co-founder for product building | Sonnet 4.5 | ✅ |
+| [Research Agent](collection/agents/research-agent/) | Research specialist for deep investigation | Opus 4.5 | ✅ |
+| [Algorithm Engineer](collection/agents/algorithm-engineer/) | Algorithm engineer for design and optimization | Opus 4.5 | ✅ |
+| [Applied Scientist](collection/agents/applied-scientist/) | Applied scientist for scientific principles | Opus 4.5 | ✅ |
+| [Biologist](collection/agents/biologist/) | Biologist for biological systems and experiments | Opus 4.5 | ✅ |
+| [Computational Scientist](collection/agents/computational-scientist/) | Computational scientist for numerical modeling | Opus 4.5 | ✅ |
+| [Mathematician](collection/agents/mathematician/) | Mathematician for formal reasoning and proofs | Opus 4.5 | ✅ |
+| [Neuroscientist](collection/agents/neuroscientist/) | Neuroscientist for neural mechanisms | Opus 4.5 | ✅ |
+| [Philosopher](collection/agents/philosopher/) | Philosopher for conceptual analysis | Opus 4.5 | ✅ |
+| [Psychologist](collection/agents/psychologist/) | Psychologist for cognitive behavior analysis | Opus 4.5 | ✅ |
+| [Statistician](collection/agents/statistician/) | Statistician for statistical inference | Opus 4.5 | ✅ |
 
-| 技能 | 功能 | 触发关键词 | 状态 |
-|------|------|-----------|------|
-| [OpenCode](collection/skills/opencode/) | 开源 AI 编程，多代理编排 | opencode, ultrawork | ✅ |
-| [Claude Code](collection/skills/claude-code/) | Anthropic 官方编程助手 | claude-code | ✅ |
-| [OpenSpec](collection/skills/openspec/) | 规格驱动开发，Gherkin 语法 | openspec, gherkin | ✅ |
-| [AkShare](collection/skills/akshare/) | 中国金融数据接口 | stock data, akshare | ✅ |
-| [Stock Analysis](collection/skills/stock-analysis/) | 股票技术分析 | 股票分析, technical indicators | ✅ |
-| [Skill Extractor](collection/skills/skill-extractor/) | 从对话提炼技能 | 提炼技能, skill extractor | ✅ |
-| [Chat History LanceDB](collection/skills/chat-history-lancedb/) | 基于 LanceDB 的对话历史与向量搜索 | chat history, lancedb | ✅ |
-| [Copilot CLI](collection/skills/copilot-cli/) | GitHub Copilot CLI 终端代理 | copilot cli, github copilot | ✅ |
-| [Iamb Matrix CLI](collection/skills/iamb-matrix-cli/) | Matrix 协议 CLI 操作 | iamb, matrix cli | ✅ |
-| [Skill RAG Indexer](collection/skills/skill-rag-indexer/) | 技能文档 RAG 索引与语义搜索 | skill rag, search skills | ✅ |
-| [Taiyi Jinhua Meditation](collection/skills/taiyi-jinhua-meditation/) | 基于《太乙金华宗旨》的道家冥想指导 | 冥想, meditation, 回光守中 | ✅ |
-| [Teach Cofounder](collection/skills/teach-cofounder/) | 苏格拉底式技术导师，深度原理教学 | teach me, mentor me | ✅ |
-| [Security Guardrails](collection/skills/security-guardrails/) | 安全防护，防止密码/API Key 等敏感信息泄露 | 所有代理默认激活 | ✅ |
-| [ICE Review](collection/skills/ice-review/) | ICE 策略跨任务知识提炼与自我进化 | ICE review, 任务回顾, 知识巩固 | ✅ |
-| [Memory Retrieval](collection/skills/memory-retrieval/) | 基于 MemRL 的两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
-| [Self-Challenge](collection/skills/self-challenge/) | 基于 Agent0 的双代理自我挑战进化机制 | self challenge, 自我挑战, 能力测试 | ✅ |
+[View all 19 agents →](./collection/agents/)
 
-## 快速开始
+## Skills
 
-### 安装
+| Skill | Version | Function | Triggers | Status |
+|-------|---------|----------|----------|--------|
+| [Claude Code](collection/skills/claude-code/) | v2.1.71 | Anthropic's official coding companion with /loop, cron scheduling | claude-code | ✅ |
+| [OpenCode](collection/skills/opencode/) | v1.2.21 | Open source AI coding agent with ultrawork mode | opencode, ultrawork | ✅ |
+| [Copilot CLI](collection/skills/copilot-cli/) | v1.0.2 🎉 | GitHub Copilot CLI terminal agent, GA release! | copilot cli, github copilot | ✅ |
+| [OpenSpec](collection/skills/openspec/) | - | Specification-driven development with Gherkin syntax | openspec, gherkin | ✅ |
+| [AkShare](collection/skills/akshare/) | - | Chinese financial data interface | stock data, akshare | ✅ |
+| [Stock Analysis](collection/skills/stock-analysis/) | - | Stock technical analysis with indicators | stock analysis, technical indicators | ✅ |
+| [Skill Extractor](collection/skills/skill-extractor/) | - | Extract reusable skills from conversations | skill extractor | ✅ |
+| [Security Guardrails](collection/skills/security-guardrails/) | - | Security protection against sensitive data leakage | Default for all agents | ✅ |
+| [ICE Review](collection/skills/ice-review/) | - | Cross-task knowledge extraction with ICE strategy | ICE review, task review | ✅ |
+| [Memory Retrieval](collection/skills/memory-retrieval/) | - | Two-stage memory retrieval with utility filtering | memory retrieval | ✅ |
+| [Self-Challenge](collection/skills/self-challenge/) | - | Dual-agent self-challenge for capability expansion | self challenge | ✅ |
+
+[View all 16 skills →](./collection/skills/)
+
+### Version Check Feature
+
+Each coding skill now includes **automatic version detection**. When your installed version differs from the documented version, you'll receive update suggestions with new feature highlights.
+
+```
+⚠️ Version Mismatch Detected
+
+Your version: v2.0.50
+Skill version: v2.1.71
+
+Suggested action: npm update -g @anthropic-ai/claude-code
+
+New features in v2.1.71:
+  • /loop command - recurring prompts
+  • Cron scheduling tools
+  • Voice push-to-talk keybinding
+```
+
+## Quick Start
+
+### Installation
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/hiyenwong/ai_collection.git
 cd ai_collection
 
-# 查看可用内容
-ls collection/agents/    # 可用代理
-ls collection/skills/    # 可用技能
+# View available content
+ls collection/agents/    # Available agents
+ls collection/skills/    # Available skills
 ```
 
-### 使用代理
+### Using Agents
 
 ```python
-# 通过 sessions_spawn 启动代理
+# Start an agent via sessions_spawn
 sessions_spawn(
-    task="分析股票数据并生成报告",
+    task="Analyze stock data and generate a report",
     agentId="stock-analyst",
     model="claude-sonnet-4.5"
 )
 ```
 
-### 使用技能
+### Using Skills
 
-技能会通过关键词自动激活：
+Skills are automatically activated by keywords:
 
 ```
-User: "帮我进行股票分析"
-AI: [检测到 "股票分析" 关键词，激活 stock-analysis 技能]
+User: "Help me with stock analysis"
+AI: [Detects "stock analysis" keyword, activates stock-analysis skill]
 ```
 
-### 添加新代理
+### Adding a New Agent
 
-1. 在 `collection/agents/your-agent-name/` 创建目录
-2. 复制 `templates/agent-template.md` 模板
-3. 填写代理详情和能力
-4. 添加示例和使用说明
-5. 更新 [AGENTS.md](./AGENTS.md)
+1. Create directory at `collection/agents/your-agent-name/`
+2. Copy `templates/agent-template.md`
+3. Fill in agent details and capabilities
+4. Add examples and usage instructions
+5. Update [AGENTS.md](./AGENTS.md)
 
-### 添加新技能
+### Adding a New Skill
 
-1. 在 `collection/skills/your-skill-name/` 创建目录
-2. 复制 `templates/skill-template.md` 模板
-3. 定义技能描述、触发词和行为
-4. 添加参考文档、示例和脚本
-5. 更新 [SKILLS.md](./SKILLS.md)
+1. Create directory at `collection/skills/your-skill-name/`
+2. Copy `templates/skill-template.md`
+3. Define skill description, triggers, and behavior
+4. Add references, examples, and scripts
+5. Update [SKILLS.md](./SKILLS.md)
 
-## 项目结构
+## Project Structure
 
 ```
 ai_collection/
-├── README.md              # 本文件
-├── AGENTS.md              # 代理文档总览
-├── SKILLS.md              # 技能文档总览
-├── INDEX.md               # 分类索引
-├── CONTRIBUTING.md        # 贡献指南
-├── CONTRIBUTING_CN.md     # 贡献指南（中文）
-├── CLAUDE.md              # Claude Code 项目说明
-├── STRUCTURE.md           # 项目结构说明
+├── README.md              # This file (English)
+├── README_CN.md           # Chinese documentation
+├── AGENTS.md              # Agent documentation index
+├── SKILLS.md              # Skill documentation index
+├── INDEX.md               # Category index
+├── CONTRIBUTING.md        # Contribution guide
 │
-├── docs/                  # 通用文档
-│   ├── agents/            # 代理指南和最佳实践
-│   ├── skills/            # 技能指南和最佳实践
-│   └── integration/       # 集成文档
+├── docs/                  # General documentation
+│   ├── agents/            # Agent guides and best practices
+│   ├── skills/            # Skill guides and best practices
+│   └── integration/       # Integration documentation
 │
-├── collection/            # 收集的代理和技能
-│   ├── agents/            # 代理包
-│   └── skills/            # 技能包
+├── collection/            # Collected agents and skills
+│   ├── agents/            # Agent packages
+│   └── skills/            # Skill packages
 │
-├── templates/             # 创建新项目的模板
+├── templates/             # Templates for new items
 │   ├── agent-template.md
 │   └── skill-template.md
 │
-├── scripts/               # 工具脚本
-│   └── validate_skill.py  # 技能验证脚本
-│
-└── .github/workflows/     # CI/CD 配置
-    └── validate.yml
+└── scripts/               # Utility scripts
+    └── validate_skill.py
 ```
 
-## 文档
+## Documentation
 
-- [代理概述](./AGENTS.md) - 了解 OpenClaw 代理
-- [技能概述](./SKILLS.md) - 了解 OpenClaw 技能
-- [分类索引](./INDEX.md) - 按类别浏览
-- [代理创建指南](./docs/agents/creation-guide.md) - 如何创建代理
-- [技能创建指南](./docs/skills/creation-guide.md) - 如何创建技能
-- [集成文档](./docs/integration/agents-skills.md) - 代理和技能如何协作
+- [Agents Overview](./AGENTS.md) - Learn about OpenClaw agents
+- [Skills Overview](./SKILLS.md) - Learn about OpenClaw skills
+- [Category Index](./INDEX.md) - Browse by category
+- [Agent Creation Guide](./docs/agents/creation-guide.md) - How to create agents
+- [Skill Creation Guide](./docs/skills/creation-guide.md) - How to create skills
 
-## 技术栈
+## Tech Stack
 
-- **AI 模型**: Claude (Opus, Sonnet, Haiku)
-- **框架**: OpenClaw
-- **编程语言**: Python, JavaScript/TypeScript
-- **工具**: Git, npm, uv, ruff, pytest
+- **AI Models**: Claude (Opus, Sonnet, Haiku)
+- **Framework**: OpenClaw
+- **Languages**: Python, JavaScript/TypeScript
+- **Tools**: Git, npm, uv, ruff, pytest
 
-## 开发规范
+## Contributing
 
-- 使用 `uv` 管理 Python 依赖
-- 使用 `ruff` 进行代码检查和格式化
-- 使用 `pytest` 进行测试
-- 遵循 Conventional Commits 规范
+Contributions are welcome! Please see the [Contributing Guide](./CONTRIBUTING.md) for details.
 
-## 贡献
+### Quick Contribution
 
-欢迎贡献！请查看[贡献指南](./CONTRIBUTING.md)了解详情。
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feat/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feat/AmazingFeature`)
+5. Create a Pull Request
 
-### 贡献方式
+## Roadmap
 
-- 添加新的代理或技能
-- 改进文档
-- 报告问题
-- 提出功能建议
+### V1 (Completed) ✅
+- Basic agent and skill collection
+- Documentation and templates
+- Validation scripts
 
-### 快速贡献
+### V2 (In Progress) 🚧
+- More domain agents
+- Skill marketplace
+- Performance optimization
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feat/AmazingFeature`)
-3. 提交更改 (`git commit -m 'feat: add amazing feature'`)
-4. 推送到分支 (`git push origin feat/AmazingFeature`)
-5. 创建 Pull Request
-
-## 路线图
-
-### V1 (已完成) ✅
-- 基础代理和技能集合
-- 文档和模板
-- 验证脚本
-
-### V2 (进行中) 🚧
-- 更多领域代理
-- 技能市场
-- 性能优化
-
-### V3 (规划中) 📋
+### V3 (Planned) 📋
 - Web UI
-- CLI 工具
-- 包管理器
+- CLI tools
+- Package manager
 
-## 关于 OpenClaw
+## About OpenClaw
 
-OpenClaw 是一个灵活的 AI 代理框架，支持多渠道、可扩展技能和自主子代理。
+OpenClaw is a flexible AI agent framework supporting multi-channel access, extensible skills, and autonomous sub-agents.
 
-- **OpenClaw 文档**: https://docs.openclaw.ai
+- **Documentation**: https://docs.openclaw.ai
 - **GitHub**: https://github.com/openclaw/openclaw
-- **社区**: https://discord.com/invite/clawd
+- **Community**: https://discord.com/invite/clawd
 
-## 许可证
+## License
 
-本仓库采用 MIT 许可证。个别代理和技能可能有各自的许可证。
+This repository is licensed under MIT License. Individual agents and skills may have their own licenses.
 
-## 致谢
+## Acknowledgments
 
-感谢所有为本项目做出贡献的开发者！
+Thanks to all developers who have contributed to this project!
 
-## 联系方式
+## Contact
 
-- GitHub Issues: [提交问题](https://github.com/hiyenwong/ai_collection/issues)
+- GitHub Issues: [Submit an issue](https://github.com/hiyenwong/ai_collection/issues)
 - Email: hiyenwong@gmail.com
-- Discord: [OpenClaw 社区](https://discord.gg/clawd)
+- Discord: [OpenClaw Community](https://discord.gg/clawd)
 
 ---
 
-由 OpenClaw 社区维护 🤖
+Maintained by the OpenClaw Community 🤖
 
 [![Star History Chart](https://api.star-history.com/svg?repos=hiyenwong/ai_collection&type=Date)](https://star-history.com/#hiyenwong/ai-collection&Date)

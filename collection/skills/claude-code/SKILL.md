@@ -1,5 +1,7 @@
 ---
 name: claude-code
+version: v2.1.71
+last_updated: 2026-03-08
 description: Anthropic's official AI-powered coding companion. Use when user wants to run claude-code CLI, needs help with code using Anthropic's Claude, or mentions claude-code, anthropic coding, claude cli, or claude terminal.
 ---
 
@@ -7,6 +9,33 @@ description: Anthropic's official AI-powered coding companion. Use when user wan
 
 ## Description
 Anthropic's official AI-powered coding companion. A command-line tool that integrates with your Claude subscription and helps you write, debug, and understand code with natural language commands.
+
+## Version Status
+
+**Skill Version:** v2.1.71 (2026-03-08)
+**Latest Release:** [Check GitHub](https://github.com/anthropics/claude-code/releases/latest)
+
+### Version Check
+When user activates this skill, check their installed version:
+```bash
+claude-code --version
+```
+
+**If version differs from skill version (v2.1.71):**
+- ⚠️ If older: Suggest updating with `npm update -g @anthropic-ai/claude-code`
+- ℹ️ If newer: Note that skill may need updating to reflect new features
+
+### Update Prompt Template
+```
+⚠️ Your Claude Code version ({installed_version}) differs from this skill's documented version (v2.1.71).
+
+{installed_version < v2.1.71}:
+  建议更新: npm update -g @anthropic-ai/claude-code
+  新功能包括: /loop 命令、cron 调度、语音按键重绑定等
+
+{installed_version > v2.1.71}:
+  您的版本更新，本技能文档可能需要更新以反映新功能。
+```
 
 ## Activation Keywords
 - claude-code
@@ -235,6 +264,59 @@ export ANTHROPIC_API_KEY="your-api-key"
 ```
 
 ## Advanced Features
+
+### /loop Command (New in v2.1.71)
+Run a prompt or slash command on a recurring interval:
+
+```bash
+# Check deployment every 5 minutes
+/loop 5m check the deploy status
+
+# Run tests every 30 seconds
+/loop 30s run the test suite
+
+# Monitor logs every minute
+/loop 1m show recent error logs
+```
+
+**Interval formats:**
+- `30s` - 30 seconds
+- `5m` - 5 minutes
+- `1h` - 1 hour
+
+### Cron Scheduling (New in v2.1.71)
+Schedule recurring prompts within a session:
+
+```javascript
+// In claude.json or .clauderc
+{
+  "cron": {
+    "jobs": [
+      {
+        "schedule": "0 9 * * *",  // Every day at 9 AM
+        "prompt": "Check for outdated dependencies"
+      },
+      {
+        "schedule": "0 */6 * * *",  // Every 6 hours
+        "prompt": "Run the test suite and report failures"
+      }
+    ]
+  }
+}
+```
+
+### Voice Push-to-Talk Keybinding (New in v2.1.71)
+Rebindable voice activation key in `keybindings.json`:
+
+```json
+{
+  "voice": {
+    "pushToTalk": "space"  // Default: space
+  }
+}
+```
+
+**Note:** Modifier+letter combos like `meta+k` have zero typing interference.
 
 ### MCP (Model Context Protocol)
 Extend Claude Code with MCPs:
