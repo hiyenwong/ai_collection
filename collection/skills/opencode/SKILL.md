@@ -1,5 +1,7 @@
 ---
 name: opencode
+version: v1.2.21
+last_updated: 2026-03-08
 description: Open source AI coding agent with multi-agent orchestration and ultrawork mode. Use when user mentions opencode, open code, oh-my-opencode, ultrawork, ulw, or needs an AI coding agent with background tasks and LSP integration.
 ---
 
@@ -7,6 +9,33 @@ description: Open source AI coding agent with multi-agent orchestration and ultr
 
 ## Description
 Open source AI coding agent with a powerful plugin system. Oh My OpenCode transforms OpenCode into a full-fledged agent harness with multi-agent orchestration, background tasks, LSP integration, and "ultrawork" mode for relentless task completion.
+
+## Version Status
+
+**Skill Version:** v1.2.21 (2026-03-08)  
+**Latest Release:** [Check GitHub](https://github.com/anomalyco/opencode/releases/latest)
+
+### Version Check (Important!)
+
+When activating this skill, **always check the installed version**:
+
+```bash
+opencode --version
+```
+
+**If version differs from skill version (v1.2.21):**
+
+| 情况 | 建议 |
+|------|------|
+| 安装版本 < v1.2.21 | ⚠️ 建议更新: `opencode update` 或重新安装 |
+| 安装版本 > v1.2.21 | ℹ️ 您的版本更新，本技能可能需要更新 |
+
+**v1.2.21 更新内容:**
+- 修复 Windows Git Bash/MSYS2/Cygwin 路径解析
+- 修复 PTY session 句柄泄漏
+- 新增项目 git init API
+- 提升 share 加载速度
+- TUI 修复 /export 切换
 
 ## Activation Keywords
 - opencode
