@@ -1,0 +1,306 @@
+{
+  "2401.13996": {
+    "title": "ICE Strategy",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "cross-task", "investigate-consolidate-exploit"],
+    "utility": 0.9,
+    "skillCreated": "ice-review",
+    "lastAccessed": "2026-03-08"
+  },
+  "2502.02062": {
+    "title": "E-SPL",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "system-prompt", "RL", "declarative-procedural"],
+    "utility": 0.9,
+    "skillCreated": "system-prompt-evolution",
+    "lastAccessed": "2026-03-08"
+  },
+  "2504.01990": {
+    "title": "Foundation Agents",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["brain-inspired", "architecture", "perception-memory-reasoning-action"],
+    "utility": 0.8,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-08"
+  },
+  "2505.22954": {
+    "title": "Darwin Gödel Machine",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "open-ended", "agent-archive"],
+    "utility": 0.85,
+    "skillCreated": "agent-archive",
+    "lastAccessed": "2026-03-08"
+  },
+  "2506.11442": {
+    "title": "ReVeal",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "self-verification", "code-generation"],
+    "utility": 0.9,
+    "skillCreated": "self-verification",
+    "lastAccessed": "2026-03-08"
+  },
+  "2510.08002": {
+    "title": "Learning on the Job",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "experience-driven", "long-horizon"],
+    "utility": 0.75,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-08"
+  },
+  "2511.16043": {
+    "title": "Agent0",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "zero-data", "self-challenge"],
+    "utility": 0.85,
+    "skillCreated": "self-challenge",
+    "lastAccessed": "2026-03-08"
+  },
+  "2601.03192": {
+    "title": "MemRL",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "memory-retrieval", "runtime-RL"],
+    "utility": 0.9,
+    "skillCreated": "memory-retrieval",
+    "lastAccessed": "2026-03-08"
+  },
+  "2602.14697": {
+    "title": "E-SPL (Evolutionary System Prompt Learning)",
+    "file": "self-evolution-2026-03-06.md",
+    "keywords": ["self-evolution", "system-prompt", "RL"],
+    "utility": 0.9,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.03561": {
+    "title": "Memex(RL)",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["long-horizon", "indexed-memory", "experience-memory"],
+    "utility": 0.85,
+    "skillCreated": "indexed-memory",
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.03628": {
+    "title": "From Spark to Fire",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["multi-agent", "error-cascade", "collaboration"],
+    "utility": 0.8,
+    "skillCreated": "error-cascade-defense",
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.03635": {
+    "title": "MACC",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["multi-agent", "collaborative-competition", "verification"],
+    "utility": 0.75,
+    "skillCreated": "competitive-verification",
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.02958": {
+    "title": "RAPO",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["retrieval-augmented", "policy-optimization", "exploration"],
+    "utility": 0.75,
+    "skillCreated": "strategy-exploration",
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.02462": {
+    "title": "FT-Dojo",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["autonomous-fine-tuning", "self-improvement"],
+    "utility": 0.7,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.01711": {
+    "title": "Agents Learn Their Runtime",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["tool-learning", "runtime-semantics", "interpreter-persistence"],
+    "utility": 0.7,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.02369": {
+    "title": "Expanding LLM Agent Boundaries",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["strategy-guided", "exploration", "boundary-expansion"],
+    "utility": 0.8,
+    "skillCreated": "strategy-exploration",
+    "lastAccessed": "2026-03-08"
+  },
+  "2602.13398": {
+    "title": "SuperLocalMemory",
+    "file": "self-evolution-2026-03-07.md",
+    "keywords": ["multi-agent-memory", "trust-defense", "privacy-preserving"],
+    "utility": 0.8,
+    "skillCreated": "trust-scoring",
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.00001": {
+    "title": "SERP - Self-Evolutionary RePlanning",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["embodied-navigation", "runtime-evolution", "replanning"],
+    "utility": 0.85,
+    "skillCreated": "self-evolutionary-replanning",
+    "lastAccessed": "2026-03-08"
+  },
+  "2603.00002": {
+    "title": "AutoSkill - Experience-Driven Skill Self-Evolution",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["lifelong-learning", "skill-evolution", "experience-driven"],
+    "utility": 0.9,
+    "skillCreated": "autoskill-experience",
+    "lastAccessed": "2026-03-08"
+  },
+  "2602.00003": {
+    "title": "The Auton Agentic AI Framework",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["agentic-ai", "framework", "architecture-mismatch"],
+    "utility": 0.75,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-08"
+  },
+  "2602.00004": {
+    "title": "ST-EVO - Multi-Agent Communication Topologies",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["multi-agent", "communication-topology", "spatio-temporal"],
+    "utility": 0.8,
+    "skillCreated": "st-evo-topology",
+    "lastAccessed": "2026-03-08"
+  },
+  "2602.00005": {
+    "title": "Live-Evo - Online Evolution of Agentic Memory",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["online-evolution", "memory", "continuous-feedback"],
+    "utility": 0.9,
+    "skillCreated": "live-evo-memory",
+    "lastAccessed": "2026-03-08"
+  },
+  "2602.00006": {
+    "title": "ATLAS - Self-Evolutionary Research Agent",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["research-agent", "multi-llm", "task-distributed"],
+    "utility": 0.8,
+    "skillCreated": "atlas-research-agent",
+    "lastAccessed": "2026-03-08"
+  },
+  "2601.00007": {
+    "title": "CASTER - Multi-Agent Orchestration Routing",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["multi-agent", "routing", "cost-performance"],
+    "utility": 0.85,
+    "skillCreated": "caster-routing",
+    "lastAccessed": "2026-03-08"
+  },
+  "2601.00008": {
+    "title": "Learn Like Humans - Meta-cognitive Reflection",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["meta-cognitive", "reflection", "self-improvement"],
+    "utility": 0.95,
+    "skillCreated": "meta-cognitive-reflection",
+    "lastAccessed": "2026-03-08"
+  },
+  "2512.00009": {
+    "title": "Remember Me, Refine Me - Procedural Memory",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["procedural-memory", "experience-driven", "dynamic-memory"],
+    "utility": 0.9,
+    "skillCreated": "procedural-memory",
+    "lastAccessed": "2026-03-08"
+  },
+  "2510.00010": {
+    "title": "Self-Improving LLM Agents at Test-Time",
+    "file": "self-evolution-2026-03-08.md",
+    "keywords": ["test-time", "self-improvement", "information-redundancy"],
+    "utility": 0.85,
+    "skillCreated": "test-time-improvement",
+    "lastAccessed": "2026-03-08"
+  },
+  "2511.20333": {
+    "title": "NNGPT - Rethinking AutoML with LLMs",
+    "file": "self-evolution-2026-03-09.md",
+    "keywords": ["automl", "neural-architecture-search", "nn-rag", "self-improvement"],
+    "utility": 0.9,
+    "skillCreated": "automl-nngpt",
+    "lastAccessed": "2026-03-09"
+  },
+  "2509.20490": {
+    "title": "InfiAgent/RadAgents - Pyramid Agent Framework",
+    "file": "self-evolution-2026-03-09.md",
+    "keywords": ["pyramid-agent", "modular-pipeline", "multi-agent", "medical-imaging"],
+    "utility": 0.8,
+    "skillCreated": "pyramid-agent",
+    "lastAccessed": "2026-03-09"
+  },
+  "2602.10001": {
+    "title": "Agentic Hives - Self-Organizing Multi-Agent Systems",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["self-organizing", "multi-agent", "equilibrium", "endogenous-cycles"],
+    "utility": 0.85,
+    "skillCreated": "self-organizing-agents",
+    "lastAccessed": "2026-03-10"
+  },
+  "2602.10002": {
+    "title": "SE-Search - Self-Evolving Search Agent",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["self-evolving", "search-agent", "memory", "dense-reward"],
+    "utility": 0.85,
+    "skillCreated": "self-evolving-search",
+    "lastAccessed": "2026-03-10"
+  },
+  "2602.10003": {
+    "title": "Towards Autonomous Memory Agents",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["autonomous", "memory-agents", "long-horizon"],
+    "utility": 0.8,
+    "skillCreated": "autonomous-memory",
+    "lastAccessed": "2026-03-10"
+  },
+  "2602.10004": {
+    "title": "Agent Skills for Large Language Models",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["agent-skills", "architecture", "acquisition", "security"],
+    "utility": 0.95,
+    "skillCreated": "agent-skill-architecture",
+    "lastAccessed": "2026-03-10"
+  },
+  "2512.10005": {
+    "title": "Audited Skill-Graph Self-Improvement",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["skill-graph", "self-improvement", "verifiable-rewards", "experience-synthesis"],
+    "utility": 0.9,
+    "skillCreated": "skill-graph-improvement",
+    "lastAccessed": "2026-03-10"
+  },
+  "2602.10006": {
+    "title": "Self-evolving Embodied AI",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["embodied-ai", "self-evolution", "active-perception"],
+    "utility": 0.8,
+    "skillCreated": "embodied-self-evolution",
+    "lastAccessed": "2026-03-10"
+  },
+  "2601.10007": {
+    "title": "Agentic Evolution is the Path to Evolving LLMs",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["agentic-evolution", "llm-evolution", "scaling"],
+    "utility": 0.85,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-10"
+  },
+  "2602.10008": {
+    "title": "From Prompt-Response to Goal-Directed Systems",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["goal-directed", "architecture", "agentic-ai"],
+    "utility": 0.8,
+    "skillCreated": "goal-directed-architecture",
+    "lastAccessed": "2026-03-10"
+  },
+  "2601.10009": {
+    "title": "Prompt Injection Attacks on Agentic Coding Assistants",
+    "file": "self-evolution-2026-03-10.md",
+    "keywords": ["security", "prompt-injection", "coding-assistants"],
+    "utility": 0.75,
+    "skillCreated": null,
+    "lastAccessed": "2026-03-10"
+  }
+}
