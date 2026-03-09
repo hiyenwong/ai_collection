@@ -1,3 +1,8 @@
+---
+name: skill-rag-indexer
+description: "RAG indexer for local skill documents with semantic search and intelligent skill recommendation."
+---
+
 # Skill RAG Indexer
 
 ## Description

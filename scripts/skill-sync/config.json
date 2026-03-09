@@ -1,0 +1,54 @@
+{
+  "source": "~/projects/ai_projects/ai_collection/collection/skills",
+  "targets": [
+    {
+      "name": "openclaw",
+      "path": "~/.agents/skills",
+      "format": "openclaw",
+      "mode": "symlink",
+      "enabled": true
+    },
+    {
+      "name": "claude-code",
+      "path": "~/.claude/commands",
+      "format": "claude",
+      "mode": "copy",
+      "converter": "claude.py",
+      "enabled": true
+    },
+    {
+      "name": "opencode",
+      "path": "~/.config/opencode/skills",
+      "format": "opencode",
+      "mode": "copy",
+      "converter": "opencode.py",
+      "enabled": true
+    },
+    {
+      "name": "cursor",
+      "path": "~/.cursor/skills",
+      "format": "openclaw",
+      "mode": "symlink",
+      "enabled": false
+    },
+    {
+      "name": "gemini",
+      "path": "~/.gemini/antigravity/skills",
+      "format": "openclaw",
+      "mode": "symlink",
+      "enabled": false
+    }
+  ],
+  "sync": {
+    "auto": false,
+    "interval": 3600,
+    "onGitChange": true,
+    "lastSyncFile": "~/.openclaw/workspace/memory/skill-sync-state.json"
+  },
+  "exclude": [
+    ".git",
+    "__pycache__",
+    "*.pyc",
+    ".DS_Store"
+  ]
+}

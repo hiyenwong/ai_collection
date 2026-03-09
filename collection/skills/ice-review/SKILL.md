@@ -1,3 +1,8 @@
+---
+name: ice-review
+description: "ICE review workflow for consolidating knowledge from completed tasks into reusable memory and future leverage."
+---
+
 # ICE Review Process
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: memory-retrieval
+description: "Two-stage memory retrieval skill using semantic matching and utility filtering for higher-quality recall."
+---
+
 # Two-Stage Memory Retrieval
 
 ## Description

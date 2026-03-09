@@ -1,3 +1,8 @@
+---
+name: skill-extractor
+description: "Meta-skill that extracts reusable skill patterns from conversations and generates standard SKILL.md files."
+---
+
 # Skill Extractor
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: self-challenge
+description: "Self-evolution skill that uses dual-agent challenge design and execution to expand capabilities over time."
+---
+
 # Self-Challenge Mechanism
 
 ## Description
