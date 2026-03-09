@@ -150,6 +150,22 @@ SKILL_DESCRIPTIONS: dict[str, tuple[str, str]] = {
         "retrieval and space management beyond iamb native commands. Use when user mentions "
         "iamb or matrix cli.",
     ),
+    "meta-cognitive-reflection": (
+        "meta-cognitive-reflection",
+        "Meta-cognitive reflection framework for self-improvement based on reasoning review, "
+        "error analysis, and learning strategy adjustment. Use when user wants structured "
+        "reflection or self-improvement.",
+    ),
+    "memory-retrieval": (
+        "memory-retrieval",
+        "Two-stage memory retrieval skill using semantic matching and utility filtering for "
+        "higher-quality recall. Use when user asks to search memory or retrieve prior knowledge.",
+    ),
+    "security-guardrails": (
+        "security-guardrails",
+        "Mandatory security guardrails that prevent secrets, credentials, and sensitive tokens "
+        "from appearing in outputs or files. Apply as a baseline security layer for all agents.",
+    ),
     "copilot-cli": (
         "copilot-cli",
         "GitHub Copilot CLI terminal agent for planning, editing, running and reviewing code "
@@ -161,11 +177,21 @@ SKILL_DESCRIPTIONS: dict[str, tuple[str, str]] = {
         "retrieval. Use when user needs to persist chat history, search past conversations, "
         "or mentions lancedb chat history.",
     ),
+    "self-challenge": (
+        "self-challenge",
+        "Self-evolution skill that uses dual-agent challenge design and execution to expand "
+        "capabilities over time. Use when user wants a capability challenge or self-test.",
+    ),
     "teach-cofounder": (
         "teach-cofounder",
         "Senior technical mentor skill that teaches through Socratic guidance, deep principle "
         "explanation, and progressive learning. Use when user says teach me, mentor me, "
         "or wants to learn a technical concept.",
+    ),
+    "ice-review": (
+        "ice-review",
+        "ICE review workflow for consolidating knowledge from completed tasks into reusable "
+        "memory and future leverage. Use when user wants a structured post-task review.",
     ),
     "taiyi-jinhua-meditation": (
         "taiyi-jinhua-meditation",

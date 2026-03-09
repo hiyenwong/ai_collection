@@ -1,3 +1,8 @@
+---
+name: chat-history-lancedb
+description: "LanceDB-based chat history system with message storage, semantic search, and RAG context retrieval."
+---
+
 # Chat History LanceDB
 
 ## Description

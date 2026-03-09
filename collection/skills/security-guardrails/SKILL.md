@@ -1,3 +1,8 @@
+---
+name: security-guardrails
+description: "Mandatory security guardrails that prevent secrets, credentials, and sensitive tokens from appearing in outputs or files."
+---
+
 # Security Guardrails (安全防护)
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: iamb-matrix-cli
+description: "Matrix CLI operations for iamb including account registration, token retrieval, and Space management."
+---
+
 # iamb Matrix CLI Operations
 
 ## Description

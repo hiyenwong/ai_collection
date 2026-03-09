@@ -1,3 +1,8 @@
+---
+name: taiyi-jinhua-meditation
+description: "Taoist meditation guidance based on Taiyi Jinhua Zongzhi and return-light inner cultivation practice."
+---
+
 # 太乙金华宗旨冥想 (Taiyi Jinhua Meditation)
 
 ## Description

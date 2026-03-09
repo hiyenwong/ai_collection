@@ -1,3 +1,8 @@
+---
+name: teach-cofounder
+description: "Senior technical mentor skill for teaching through principles, Socratic guidance, and progressive learning."
+---
+
 # Teach Co-Founder
 
 ## Description
