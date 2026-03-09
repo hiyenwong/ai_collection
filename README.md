@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-19-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-16-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-25-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -174,6 +174,10 @@ ai_collection/
 │   ├── agents/            # Agent packages
 │   └── skills/            # Skill packages
 │
+├── knowledge/             # AI learning knowledge base
+│   ├── arxiv/             # arXiv paper learning notes (38 papers)
+│   └── skills/            # Learned skills documentation
+│
 ├── templates/             # Templates for new items
 │   ├── agent-template.md
 │   └── skill-template.md
@@ -181,6 +185,31 @@ ai_collection/
 └── scripts/               # Utility scripts
     └── validate_skill.py
 ```
+
+## Knowledge Base
+
+The `knowledge/` directory contains AI self-evolution learning materials:
+
+### arXiv Papers (38 papers)
+
+Topics covered:
+- **Self-evolving agents** - Darwin Gödel Machine, Agent0, NNGPT
+- **Memory systems** - MemRL, Memex(RL), Live-Evo
+- **Meta-cognition** - Learn Like Humans, ICE Strategy
+- **Multi-agent systems** - CASTER, Agentic Hives, ST-EVO
+- **Skill architecture** - Agent Skills for LLMs, Audited Skill-Graph
+
+### Skills Converted (29 skills)
+
+Papers converted to practical OpenClaw skills:
+- `meta-cognitive-reflection` - Pre/during/post task reflection
+- `memory-retrieval` - Two-stage memory with utility filtering
+- `self-challenge` - Dual-agent capability expansion
+- `ice-review` - Cross-task knowledge extraction
+- `indexed-memory` - Long-horizon task memory
+- And more...
+
+See [knowledge/arxiv/index.json](./knowledge/arxiv/index.json) for the full paper index.
 
 ## Documentation
 
