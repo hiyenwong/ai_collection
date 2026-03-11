@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-19-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-25-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-30-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -83,8 +83,14 @@ OpenClaw is a flexible AI agent framework that supports:
 | [ICE Review](collection/skills/ice-review/) | - | Cross-task knowledge extraction with ICE strategy | ICE review, task review | ✅ |
 | [Memory Retrieval](collection/skills/memory-retrieval/) | - | Two-stage memory retrieval with utility filtering | memory retrieval | ✅ |
 | [Self-Challenge](collection/skills/self-challenge/) | - | Dual-agent self-challenge for capability expansion | self challenge | ✅ |
+| [Cursor Rules Importer](collection/skills/cursor-rules-importer/) | - | Import cursor.directory rules into AgentSkills | cursor rules import, .cursorrules | ✅ |
+| [React Components](collection/skills/react-components/) | - | React component architecture and best practices | react component, react hooks | ✅ |
+| [Accessibility WCAG](collection/skills/accessibility-wcag/) | - | WCAG 2.2 accessibility compliance and patterns | accessibility, wcag, a11y, aria | ✅ |
+| [Chrome Extension](collection/skills/chrome-extension/) | - | Chrome extension development with Manifest V3 | chrome extension, manifest v3 | ✅ |
+| [Electron TypeScript](collection/skills/electron-typescript/) | - | Electron desktop app development with TypeScript | electron, desktop app, ipc | ✅ |
+| [Frontend Best Practices](collection/skills/frontend-best-practices/) | - | Senior front-end developer guidance for React/Next.js | frontend, react, nextjs, tailwindcss | ✅ |
 
-[View all 16 skills →](./collection/skills/)
+[View all 30 skills →](./collection/skills/)
 
 ### Version Check Feature
 
