@@ -30,6 +30,7 @@ jobs:
           args: >-
             --no-progress
             --exclude-path collection/
+            --exclude-path knowledge/
             --exclude 'github\.com'
             --exclude 'docs\.openclaw\.ai'
             --exclude 'discord\.gg'
