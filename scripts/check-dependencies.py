@@ -590,7 +590,7 @@ def install_dependency(dep: Dependency, system: SystemInfo, dry_run: bool = Fals
         
         # Check for externally-managed-environment error
         if "externally-managed-environment" in result.stderr or "--break-system-packages" in result.stderr:
-            print_warning(f"System Python is externally managed. Trying alternative methods...")
+            print_warning("System Python is externally managed. Trying alternative methods...")
             
             # Try with --break-system-packages flag
             alt_cmd = cmd.replace("pip3 install", "pip3 install --break-system-packages")
@@ -641,7 +641,6 @@ def print_dependency_status(dep: Dependency):
     status_icon = "✅" if dep.installed else ("⚠️ " if dep.optional else "❌")
     status_color = Colors.GREEN if dep.installed else (Colors.YELLOW if dep.optional else Colors.RED)
     
-    status_text = "installed" if dep.installed else ("optional" if dep.optional else "missing")
     version_info = f" ({dep.version_installed})" if dep.version_installed else ""
     req_info = f" [required: {dep.version_required}]" if dep.version_required and not dep.installed else ""
     

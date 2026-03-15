@@ -297,8 +297,8 @@ class StockVisualizer:
             date = pd.to_datetime(df.iloc[i]["date"])
             open_price = df.iloc[i]["open"]
             close_price = df.iloc[i]["close"]
-            high_price = df.iloc[i]["high"]
-            low_price = df.iloc[i]["low"]
+            _high_price = df.iloc[i]["high"]
+            _low_price = df.iloc[i]["low"]
 
             color = self.up_color if close_price >= open_price else self.down_color
             ax1.bar(
@@ -382,8 +382,8 @@ class StockVisualizer:
             date = pd.to_datetime(df.iloc[i]["date"])
             open_price = df.iloc[i]["open"]
             close_price = df.iloc[i]["close"]
-            high_price = df.iloc[i]["high"]
-            low_price = df.iloc[i]["low"]
+            _high_price = df.iloc[i]["high"]
+            _low_price = df.iloc[i]["low"]
 
             color = self.up_color if close_price >= open_price else self.down_color
             ax1.bar(

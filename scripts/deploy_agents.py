@@ -10,9 +10,7 @@ Usage:
 
 import argparse
 import json
-import os
 import shutil
-import subprocess
 import sys
 from pathlib import Path
 import yaml
@@ -201,9 +199,9 @@ def deploy_agents(agent_ids: list[str]) -> bool:
             agents_info.append(info)
     
     if agents_info:
-        print(f"\n⚙️  Updating OpenClaw config...")
+        print("\n⚙️  Updating OpenClaw config...")
         if update_openclaw_config(agents_info):
-            print("\n✅ Deployed {len(agents_info)} agents")
+            print(f"\n✅ Deployed {len(agents_info)} agents")
             print("   Run: openclaw gateway restart")
             return True
     
