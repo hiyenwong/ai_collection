@@ -196,7 +196,7 @@ def fetch_rule_from_url(url: str) -> Optional[CursorRule]:
     """Fetch a rule from cursor.directory URL."""
     # This is a placeholder - actual implementation would use browser tool
     # or API if available
-    print(f"Note: Direct URL fetching requires browser automation.")
+    print("Note: Direct URL fetching requires browser automation.")
     print(f"URL: {url}")
     return None
 
@@ -269,7 +269,7 @@ def main():
     skill = convert_rule_to_skill(rule)
     save_skill(skill, args.output)
     
-    print(f"\n📋 Skill Details:")
+    print("\n📋 Skill Details:")
     print(f"   Name: {skill.name}")
     print(f"   Description: {skill.description[:100]}...")
     

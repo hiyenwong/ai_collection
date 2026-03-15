@@ -16,7 +16,6 @@ import sys
 try:
     import matplotlib.pyplot as plt
     import pandas as pd
-    from matplotlib.font_manager import FontProperties
 
     # Set Chinese font
     plt.rcParams["font.sans-serif"] = ["SimHei", "Arial Unicode MS", "DejaVu Sans"]

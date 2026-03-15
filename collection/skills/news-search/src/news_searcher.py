@@ -292,7 +292,7 @@ class NewsAPISource(NewsSource):
                 try:
                     config = json.loads(config_path.read_text())
                     self.api_key = config.get("newsapi")
-                except:
+                except Exception:
                     pass
     
     def search(self, query: str, lang: str = "zh", days: int = 7, limit: int = 20) -> SearchResult:
