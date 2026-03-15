@@ -12,7 +12,7 @@ from pathlib import Path
 def convert(skill_path: Path) -> str:
     """
     转换 skill 到 Claude Code 格式
-    
+
     Claude Code commands 是简单的 .md 文件，
     不需要 frontmatter，直接使用内容部分。
     """

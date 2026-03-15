@@ -12,7 +12,7 @@ from pathlib import Path
 def convert(skill_path: Path) -> str:
     """
     转换 skill 到 OpenCode 格式
-    
+
     OpenCode 使用 AGENTS.md 作为指令文件，
     格式与 SKILL.md 类似，但需要调整一些语法。
     """

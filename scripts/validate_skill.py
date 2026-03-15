@@ -212,8 +212,10 @@ class SkillValidator:
         # - `exec`
         # - exec
         # - **exec**: description
-        tools = re.findall(r"^-\s*(?:`(\w+)`|(\*\*\w+\*\*)|(\w+))", tools_text, re.MULTILINE)
-        tools = [t[0] or t[1].strip('*') if t[1] else t[2] for t in tools if any(t)]
+        tools = re.findall(
+            r"^-\s*(?:`(\w+)`|(\*\*\w+\*\*)|(\w+))", tools_text, re.MULTILINE
+        )
+        tools = [t[0] or t[1].strip("*") if t[1] else t[2] for t in tools if any(t)]
 
         if len(tools) == 0:
             self.errors.append("No tools listed in Tools Used section")

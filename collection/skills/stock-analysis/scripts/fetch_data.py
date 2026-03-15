@@ -17,8 +17,13 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 
-def fetch_stock_data(code: str, period: int = 60, adjust: str = "qfq",
-                   start_date: str = None, end_date: str = None) -> pd.DataFrame:
+def fetch_stock_data(
+    code: str,
+    period: int = 60,
+    adjust: str = "qfq",
+    start_date: str = None,
+    end_date: str = None,
+) -> pd.DataFrame:
     """
     Fetch stock data from AkShare.
 
@@ -72,7 +77,7 @@ def fetch_stock_data(code: str, period: int = 60, adjust: str = "qfq",
             period="daily",
             start_date=start_date,
             end_date=end_date,
-            adjust=adjust
+            adjust=adjust,
         )
 
         if df.empty:
@@ -81,29 +86,29 @@ def fetch_stock_data(code: str, period: int = 60, adjust: str = "qfq",
 
         # Rename columns for consistency
         column_mapping = {
-            '日期': 'date',
-            '开盘': 'open',
-            '收盘': 'close',
-            '最高': 'high',
-            '最低': 'low',
-            '成交量': 'volume',
-            '成交额': 'amount',
-            '振幅': 'amplitude',
-            '涨跌幅': 'change_pct',
-            '涨跌额': 'change_amount',
-            '换手率': 'turnover'
+            "日期": "date",
+            "开盘": "open",
+            "收盘": "close",
+            "最高": "high",
+            "最低": "low",
+            "成交量": "volume",
+            "成交额": "amount",
+            "振幅": "amplitude",
+            "涨跌幅": "change_pct",
+            "涨跌额": "change_amount",
+            "换手率": "turnover",
         }
 
         df = df.rename(columns=column_mapping)
 
         # Convert date to datetime
-        df['date'] = pd.to_datetime(df['date'])
+        df["date"] = pd.to_datetime(df["date"])
 
         # Sort by date (ascending)
-        df = df.sort_values('date').reset_index(drop=True)
+        df = df.sort_values("date").reset_index(drop=True)
 
         # Basic validation
-        required_cols = ['date', 'open', 'high', 'low', 'close', 'volume']
+        required_cols = ["date", "open", "high", "low", "close", "volume"]
         missing_cols = [col for col in required_cols if col not in df.columns]
         if missing_cols:
             print(f"⚠️  Warning: Missing columns: {missing_cols}")
@@ -135,7 +140,7 @@ def save_to_csv(df: pd.DataFrame, code: str, output_dir: str = "."):
     filepath = f"{output_dir}/{filename}"
 
     try:
-        df.to_csv(filepath, index=False, encoding='utf-8-sig')
+        df.to_csv(filepath, index=False, encoding="utf-8-sig")
         print(f"✅ Data saved to: {filepath}")
     except Exception as e:
         print(f"❌ Error saving data: {e}")
@@ -146,82 +151,69 @@ def print_summary(df: pd.DataFrame):
     if df.empty:
         return
 
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("📊 DATA SUMMARY")
-    print("="*50)
+    print("=" * 50)
 
     print(f"\nStock Code: {df.iloc[-1]['close']:.2f} (latest)")
     print(f"Date Range: {df['date'].min()} to {df['date'].max()}")
     print(f"Total Records: {len(df)}")
 
-    print(f"\n{'Date':<12} {'Open':>10} {'High':>10} {'Low':>10} {'Close':>10} {'Volume':>12}")
+    print(
+        f"\n{'Date':<12} {'Open':>10} {'High':>10} {'Low':>10} {'Close':>10} {'Volume':>12}"
+    )
     print("-" * 74)
 
     # Show last 10 records
     for _, row in df.tail(10).iterrows():
-        print(f"{row['date'].strftime('%Y-%m-%d'):<12} "
-              f"{row['open']:>10.2f} {row['high']:>10.2f} "
-              f"{row['low']:>10.2f} {row['close']:>10.2f} "
-              f"{row['volume']:>12,.0f}")
+        print(
+            f"{row['date'].strftime('%Y-%m-%d'):<12} "
+            f"{row['open']:>10.2f} {row['high']:>10.2f} "
+            f"{row['low']:>10.2f} {row['close']:>10.2f} "
+            f"{row['volume']:>12,.0f}"
+        )
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="Fetch stock data from AkShare",
-        formatter_class=argparse.RawDescriptionHelpFormatter
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
     parser.add_argument(
-        '--code',
-        type=str,
-        required=True,
-        help='Stock code (e.g., 600519)'
+        "--code", type=str, required=True, help="Stock code (e.g., 600519)"
     )
 
     parser.add_argument(
-        '--period',
+        "--period",
         type=int,
         default=60,
-        help='Number of trading days to fetch (default: 60)'
+        help="Number of trading days to fetch (default: 60)",
     )
 
     parser.add_argument(
-        '--adjust',
+        "--adjust",
         type=str,
-        default='qfq',
-        choices=['qfq', 'hfq', ''],
-        help='Price adjustment (default: qfq)'
+        default="qfq",
+        choices=["qfq", "hfq", ""],
+        help="Price adjustment (default: qfq)",
     )
 
+    parser.add_argument("--start", type=str, help="Start date in YYYYMMDD format")
+
+    parser.add_argument("--end", type=str, help="End date in YYYYMMDD format")
+
     parser.add_argument(
-        '--start',
+        "--output",
         type=str,
-        help='Start date in YYYYMMDD format'
+        default=".",
+        help="Output directory for CSV file (default: current directory)",
     )
 
-    parser.add_argument(
-        '--end',
-        type=str,
-        help='End date in YYYYMMDD format'
-    )
+    parser.add_argument("--summary", action="store_true", help="Print data summary")
 
     parser.add_argument(
-        '--output',
-        type=str,
-        default='.',
-        help='Output directory for CSV file (default: current directory)'
-    )
-
-    parser.add_argument(
-        '--summary',
-        action='store_true',
-        help='Print data summary'
-    )
-
-    parser.add_argument(
-        '--quiet',
-        action='store_true',
-        help='Suppress output (for scripting)'
+        "--quiet", action="store_true", help="Suppress output (for scripting)"
     )
 
     args = parser.parse_args()
@@ -241,7 +233,7 @@ def main():
         period=args.period,
         adjust=args.adjust,
         start_date=args.start,
-        end_date=args.end
+        end_date=args.end,
     )
 
     # Save to CSV

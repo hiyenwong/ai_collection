@@ -52,7 +52,9 @@ def load_config() -> dict:
     for target in config["targets"]:
         target["path"] = os.path.expanduser(target["path"])
     if "lastSyncFile" in config["sync"]:
-        config["sync"]["lastSyncFile"] = os.path.expanduser(config["sync"]["lastSyncFile"])
+        config["sync"]["lastSyncFile"] = os.path.expanduser(
+            config["sync"]["lastSyncFile"]
+        )
     return config
 
 
@@ -153,14 +155,16 @@ def collect_all_skills(config: dict) -> Dict[str, Dict[str, dict]]:
     return all_skills
 
 
-def merge_skills(all_skills: Dict[str, Dict[str, dict]], master: Optional[str] = None) -> Dict[str, dict]:
+def merge_skills(
+    all_skills: Dict[str, Dict[str, dict]], master: Optional[str] = None
+) -> Dict[str, dict]:
     """
     合并所有平台的 skills
-    
+
     Args:
         all_skills: 所有平台的 skills
         master: 主导平台名称，如果指定则以此平台为准
-    
+
     Returns:
         合并后的 skills {skill_name: skill_info}
     """
@@ -197,12 +201,12 @@ def merge_skills(all_skills: Dict[str, Dict[str, dict]], master: Optional[str] =
 def copy_skill(source: Path, dest: Path, mode: str = "copy") -> bool:
     """
     复制或链接 skill 到目标位置
-    
+
     Args:
         source: 源 skill 目录
         dest: 目标 skill 目录
         mode: "copy" 或 "symlink"
-    
+
     Returns:
         是否成功
     """
@@ -228,15 +232,17 @@ def copy_skill(source: Path, dest: Path, mode: str = "copy") -> bool:
         return False
 
 
-def convert_skill(skill_path: Path, target_format: str, converter: Optional[str]) -> Optional[str]:
+def convert_skill(
+    skill_path: Path, target_format: str, converter: Optional[str]
+) -> Optional[str]:
     """
     转换 skill 格式
-    
+
     Args:
         skill_path: skill 目录路径
         target_format: 目标格式
         converter: 转换器脚本名
-    
+
     Returns:
         转换后的内容（如果需要）
     """
@@ -273,7 +279,7 @@ def sync_to_target(
 ) -> int:
     """
     同步 skills 到目标平台
-    
+
     Returns:
         同步成功数量
     """
@@ -297,7 +303,9 @@ def sync_to_target(
 
         if target.get("converter"):
             # 需要格式转换
-            converted = convert_skill(skill_source, target["format"], target["converter"])
+            converted = convert_skill(
+                skill_source, target["format"], target["converter"]
+            )
             if converted:
                 # 写入转换后的内容
                 skill_dest.mkdir(parents=True, exist_ok=True)

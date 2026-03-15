@@ -67,7 +67,9 @@ def fix_skill_md(skill_path: Path) -> bool:
             # Customize the section for this skill
             customized = section_content.replace("<skill-name>", skill_name)
             customized = customized.replace("<keyword-1>", f"{skill_name}")
-            customized = customized.replace("<keyword-2>", f"{skill_name.replace('-', ' ')}")
+            customized = customized.replace(
+                "<keyword-2>", f"{skill_name.replace('-', ' ')}"
+            )
 
             # Find the best place to insert (after last ## section or at end)
             sections = list(re.finditer(r"^## .+", content, re.MULTILINE))
@@ -83,7 +85,9 @@ def fix_skill_md(skill_path: Path) -> bool:
                     insert_pos = last_section.end() + next_section.start()
                 else:
                     insert_pos = len(content)
-                content = content[:insert_pos] + "\n" + customized + content[insert_pos:]
+                content = (
+                    content[:insert_pos] + "\n" + customized + content[insert_pos:]
+                )
             else:
                 content = content + "\n" + customized
 

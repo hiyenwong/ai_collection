@@ -17,14 +17,16 @@ import numpy as np
 import pandas as pd
 
 
-def calculate_ma(df: pd.DataFrame, periods: list = [5, 10, 20, 30, 60, 120]) -> pd.DataFrame:
+def calculate_ma(
+    df: pd.DataFrame, periods: list = [5, 10, 20, 30, 60, 120]
+) -> pd.DataFrame:
     """Calculate Moving Averages."""
     print(f"📥 Calculating MA for periods: {periods}")
     for period in periods:
         if len(df) >= period:
-            df[f'MA{period}'] = df['close'].rolling(window=period).mean()
+            df[f"MA{period}"] = df["close"].rolling(window=period).mean()
         else:
-            df[f'MA{period}'] = np.nan
+            df[f"MA{period}"] = np.nan
     return df
 
 
@@ -33,9 +35,9 @@ def calculate_ema(df: pd.DataFrame, periods: list = [12, 26]) -> pd.DataFrame:
     print(f"📥 Calculating EMA for periods: {periods}")
     for period in periods:
         if len(df) >= period:
-            df[f'EMA{period}'] = df['close'].ewm(span=period, adjust=False).mean()
+            df[f"EMA{period}"] = df["close"].ewm(span=period, adjust=False).mean()
         else:
-            df[f'EMA{period}'] = np.nan
+            df[f"EMA{period}"] = np.nan
     return df
 
 
@@ -44,40 +46,41 @@ def calculate_boll(df: pd.DataFrame, n: int = 20, m: int = 2) -> pd.DataFrame:
     print(f"📥 Calculating Bollinger Bands (N={n}, M={m})")
     if len(df) >= n:
         # Middle band = MA(n)
-        df['BOLL_MID'] = df['close'].rolling(window=n).mean()
+        df["BOLL_MID"] = df["close"].rolling(window=n).mean()
 
         # Standard deviation
-        df['BOLL_STD'] = df['close'].rolling(window=n).std()
+        df["BOLL_STD"] = df["close"].rolling(window=n).std()
 
         # Upper and lower bands
-        df['BOLL_UPPER'] = df['BOLL_MID'] + (df['BOLL_STD'] * m)
-        df['BOLL_LOWER'] = df['BOLL_MID'] - (df['BOLL_STD'] * m)
+        df["BOLL_UPPER"] = df["BOLL_MID"] + (df["BOLL_STD"] * m)
+        df["BOLL_LOWER"] = df["BOLL_MID"] - (df["BOLL_STD"] * m)
     else:
-        df['BOLL_MID'] = np.nan
-        df['BOLL_STD'] = np.nan
-        df['BOLL_UPPER'] = np.nan
-        df['BOLL_LOWER'] = np.nan
+        df["BOLL_MID"] = np.nan
+        df["BOLL_STD"] = np.nan
+        df["BOLL_UPPER"] = np.nan
+        df["BOLL_LOWER"] = np.nan
 
     return df
 
 
-def calculate_macd(df: pd.DataFrame, fast: int = 12, slow: int = 26,
-                  signal: int = 9) -> pd.DataFrame:
+def calculate_macd(
+    df: pd.DataFrame, fast: int = 12, slow: int = 26, signal: int = 9
+) -> pd.DataFrame:
     """Calculate MACD (Moving Average Convergence Divergence)."""
     print(f"📥 Calculating MACD (fast={fast}, slow={slow}, signal={signal})")
 
     # Calculate EMAs
-    df['EMA_FAST'] = df['close'].ewm(span=fast, adjust=False).mean()
-    df['EMA_SLOW'] = df['close'].ewm(span=slow, adjust=False).mean()
+    df["EMA_FAST"] = df["close"].ewm(span=fast, adjust=False).mean()
+    df["EMA_SLOW"] = df["close"].ewm(span=slow, adjust=False).mean()
 
     # MACD line = EMA(fast) - EMA(slow)
-    df['MACD_DIF'] = df['EMA_FAST'] - df['EMA_SLOW']
+    df["MACD_DIF"] = df["EMA_FAST"] - df["EMA_SLOW"]
 
     # Signal line = EMA of MACD
-    df['MACD_DEA'] = df['MACD_DIF'].ewm(span=signal, adjust=False).mean()
+    df["MACD_DEA"] = df["MACD_DIF"].ewm(span=signal, adjust=False).mean()
 
     # Histogram = MACD - Signal
-    df['MACD_BAR'] = df['MACD_DIF'] - df['MACD_DEA']
+    df["MACD_BAR"] = df["MACD_DIF"] - df["MACD_DEA"]
 
     return df
 
@@ -89,7 +92,7 @@ def calculate_rsi(df: pd.DataFrame, periods: list = [6, 12, 24]) -> pd.DataFrame
     for period in periods:
         if len(df) >= period + 1:
             # Calculate price change
-            delta = df['close'].diff()
+            delta = df["close"].diff()
 
             # Separate gains and losses
             gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
@@ -97,32 +100,33 @@ def calculate_rsi(df: pd.DataFrame, periods: list = [6, 12, 24]) -> pd.DataFrame
 
             # Calculate RS and RSI
             rs = gain / loss
-            df[f'RSI{period}'] = 100 - (100 / (1 + rs))
+            df[f"RSI{period}"] = 100 - (100 / (1 + rs))
         else:
-            df[f'RSI{period}'] = np.nan
+            df[f"RSI{period}"] = np.nan
 
     return df
 
 
-def calculate_kdj(df: pd.DataFrame, n: int = 9, m1: int = 3,
-                  m2: int = 3) -> pd.DataFrame:
+def calculate_kdj(
+    df: pd.DataFrame, n: int = 9, m1: int = 3, m2: int = 3
+) -> pd.DataFrame:
     """Calculate KDJ (Stochastic Oscillator)."""
     print(f"📥 Calculating KDJ (N={n}, M1={m1}, M2={m2})")
 
     if len(df) >= n:
         # Calculate RSV (Raw Stochastic Value)
-        low_min = df['low'].rolling(window=n).min()
-        high_max = df['high'].rolling(window=n).max()
-        rsv = (df['close'] - low_min) / (high_max - low_min) * 100
+        low_min = df["low"].rolling(window=n).min()
+        high_max = df["high"].rolling(window=n).max()
+        rsv = (df["close"] - low_min) / (high_max - low_min) * 100
 
         # Calculate K, D, J
-        df['KDJ_K'] = rsv.ewm(com=m1, adjust=False).mean()
-        df['KDJ_D'] = df['KDJ_K'].ewm(com=m2, adjust=False).mean()
-        df['KDJ_J'] = 3 * df['KDJ_K'] - 2 * df['KDJ_D']
+        df["KDJ_K"] = rsv.ewm(com=m1, adjust=False).mean()
+        df["KDJ_D"] = df["KDJ_K"].ewm(com=m2, adjust=False).mean()
+        df["KDJ_J"] = 3 * df["KDJ_K"] - 2 * df["KDJ_D"]
     else:
-        df['KDJ_K'] = np.nan
-        df['KDJ_D'] = np.nan
-        df['KDJ_J'] = np.nan
+        df["KDJ_K"] = np.nan
+        df["KDJ_D"] = np.nan
+        df["KDJ_J"] = np.nan
 
     return df
 
@@ -133,24 +137,22 @@ def calculate_cci(df: pd.DataFrame, period: int = 14) -> pd.DataFrame:
 
     if len(df) >= period:
         # Typical price (TP)
-        tp = (df['high'] + df['low'] + df['close']) / 3
-        df['CCI_TP'] = tp
+        tp = (df["high"] + df["low"] + df["close"]) / 3
+        df["CCI_TP"] = tp
 
         # MA of TP
         ma_tp = tp.rolling(window=period).mean()
-        df['CCI_MA'] = ma_tp
+        df["CCI_MA"] = ma_tp
 
         # Mean absolute deviation
-        mad = tp.rolling(window=period).apply(
-            lambda x: np.abs(x - x.mean()).mean()
-        )
+        mad = tp.rolling(window=period).apply(lambda x: np.abs(x - x.mean()).mean())
 
         # CCI = (TP - MA(TP)) / (0.015 * MAD)
-        df['CCI'] = (tp - ma_tp) / (0.015 * mad)
+        df["CCI"] = (tp - ma_tp) / (0.015 * mad)
     else:
-        df['CCI_TP'] = np.nan
-        df['CCI_MA'] = np.nan
-        df['CCI'] = np.nan
+        df["CCI_TP"] = np.nan
+        df["CCI_MA"] = np.nan
+        df["CCI"] = np.nan
 
     return df
 
@@ -161,10 +163,10 @@ def calculate_bias(df: pd.DataFrame, periods: list = [6, 12, 24]) -> pd.DataFram
 
     for period in periods:
         if len(df) >= period:
-            ma = df['close'].rolling(window=period).mean()
-            df[f'BIAS{period}'] = (df['close'] - ma) / ma * 100
+            ma = df["close"].rolling(window=period).mean()
+            df[f"BIAS{period}"] = (df["close"] - ma) / ma * 100
         else:
-            df[f'BIAS{period}'] = np.nan
+            df[f"BIAS{period}"] = np.nan
 
     return df
 
@@ -174,11 +176,11 @@ def calculate_wr(df: pd.DataFrame, period: int = 14) -> pd.DataFrame:
     print(f"📥 Calculating WR (period={period})")
 
     if len(df) >= period:
-        high_max = df['high'].rolling(window=period).max()
-        low_min = df['low'].rolling(window=period).min()
-        df['WR'] = (high_max - df['close']) / (high_max - low_min) * -100
+        high_max = df["high"].rolling(window=period).max()
+        low_min = df["low"].rolling(window=period).min()
+        df["WR"] = (high_max - df["close"]) / (high_max - low_min) * -100
     else:
-        df['WR'] = np.nan
+        df["WR"] = np.nan
 
     return df
 
@@ -188,13 +190,13 @@ def calculate_obv(df: pd.DataFrame) -> pd.DataFrame:
     print("📥 Calculating OBV")
 
     # Calculate price change
-    price_change = df['close'].diff()
+    price_change = df["close"].diff()
 
     # OBV = OBV_prev + volume if price > price_prev else -volume
-    obv_value = np.where(price_change > 0, df['volume'], -df['volume'])
+    obv_value = np.where(price_change > 0, df["volume"], -df["volume"])
 
     # Cumulative OBV
-    df['OBV'] = obv_value.cumsum()
+    df["OBV"] = obv_value.cumsum()
 
     return df
 
@@ -205,20 +207,20 @@ def calculate_vr(df: pd.DataFrame, period: int = 24) -> pd.DataFrame:
 
     if len(df) >= period:
         # Calculate price change
-        price_change = df['close'].diff()
+        price_change = df["close"].diff()
 
         # Separate volume for up and down days
-        up_volume = df['volume'].where(price_change > 0, 0)
-        down_volume = df['volume'].where(price_change < 0, 0)
+        up_volume = df["volume"].where(price_change > 0, 0)
+        down_volume = df["volume"].where(price_change < 0, 0)
 
         # Sum over period
         up_volume_sum = up_volume.rolling(window=period).sum()
         down_volume_sum = down_volume.rolling(window=period).sum()
 
         # VR = (up_volume_sum / down_volume_sum) * 100
-        df['VR'] = (up_volume_sum / down_volume_sum).replace([np.inf, -np.inf], 0) * 100
+        df["VR"] = (up_volume_sum / down_volume_sum).replace([np.inf, -np.inf], 0) * 100
     else:
-        df['VR'] = np.nan
+        df["VR"] = np.nan
 
     return df
 
@@ -228,9 +230,9 @@ def calculate_mom(df: pd.DataFrame, period: int = 10) -> pd.DataFrame:
     print(f"📥 Calculating MOM (period={period})")
 
     if len(df) >= period:
-        df['MOM'] = df['close'] - df['close'].shift(period)
+        df["MOM"] = df["close"] - df["close"].shift(period)
     else:
-        df['MOM'] = np.nan
+        df["MOM"] = np.nan
 
     return df
 
@@ -240,9 +242,11 @@ def calculate_roc(df: pd.DataFrame, period: int = 12) -> pd.DataFrame:
     print(f"📥 Calculating ROC (period={period})")
 
     if len(df) >= period:
-        df['ROC'] = (df['close'] - df['close'].shift(period)) / df['close'].shift(period) * 100
+        df["ROC"] = (
+            (df["close"] - df["close"].shift(period)) / df["close"].shift(period) * 100
+        )
     else:
-        df['ROC'] = np.nan
+        df["ROC"] = np.nan
 
     return df
 
@@ -253,8 +257,8 @@ def calculate_arbr(df: pd.DataFrame, n: int = 26) -> pd.DataFrame:
 
     if len(df) >= n:
         # Calculate high-low and close-open
-        hl = df['high'] - df['low']
-        co = df['close'] - df['open']
+        hl = df["high"] - df["low"]
+        co = df["close"] - df["open"]
 
         # Sum over N days
         ar = (co.where(co > 0, 0)).rolling(window=n).sum()
@@ -262,11 +266,11 @@ def calculate_arbr(df: pd.DataFrame, n: int = 26) -> pd.DataFrame:
         hl_sum = hl.rolling(window=n).sum()
 
         # AR and BR
-        df['AR'] = ar / hl_sum * 100
-        df['BR'] = br / hl_sum * 100
+        df["AR"] = ar / hl_sum * 100
+        df["BR"] = br / hl_sum * 100
     else:
-        df['AR'] = np.nan
-        df['BR'] = np.nan
+        df["AR"] = np.nan
+        df["BR"] = np.nan
 
     return df
 
@@ -277,24 +281,24 @@ def calculate_cr(df: pd.DataFrame, period: int = 26) -> pd.DataFrame:
 
     if len(df) >= period:
         # Calculate mid-point
-        mid_point = (df['high'] + df['low']) / 2
+        mid_point = (df["high"] + df["low"]) / 2
 
         # Compare close to mid-point over N days
-        up_days = (df['close'] > mid_point).rolling(window=period).sum()
+        up_days = (df["close"] > mid_point).rolling(window=period).sum()
 
         # CR = (up_days / N) * 100
-        df['CR'] = up_days / period * 100
+        df["CR"] = up_days / period * 100
     else:
-        df['CR'] = np.nan
+        df["CR"] = np.nan
 
     return df
 
 
 def calculate_all_indicators(df: pd.DataFrame) -> pd.DataFrame:
     """Calculate all technical indicators."""
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("📊 CALCULATING ALL TECHNICAL INDICATORS")
-    print("="*50 + "\n")
+    print("=" * 50 + "\n")
 
     # Trend indicators
     df = calculate_ma(df)
@@ -320,7 +324,9 @@ def calculate_all_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df = calculate_cr(df)
 
     print("\n✅ All indicators calculated!")
-    print(f"   Total indicators: {len(df.columns) - len(df.columns[:7])}")  # Subtract basic columns
+    print(
+        f"   Total indicators: {len(df.columns) - len(df.columns[:7])}"
+    )  # Subtract basic columns
 
     return df
 
@@ -333,7 +339,7 @@ def load_data(input_file: str) -> pd.DataFrame:
         df = pd.read_csv(input_file)
 
         # Check required columns
-        required_cols = ['date', 'open', 'high', 'low', 'close', 'volume']
+        required_cols = ["date", "open", "high", "low", "close", "volume"]
         missing_cols = [col for col in required_cols if col not in df.columns]
 
         if missing_cols:
@@ -356,7 +362,7 @@ def save_data(df: pd.DataFrame, output_file: str):
         return
 
     try:
-        df.to_csv(output_file, index=False, encoding='utf-8-sig')
+        df.to_csv(output_file, index=False, encoding="utf-8-sig")
         print(f"✅ Indicators saved to: {output_file}")
         print(f"   Total columns: {len(df.columns)}")
     except Exception as e:
@@ -368,12 +374,12 @@ def print_summary(df: pd.DataFrame):
     if df.empty:
         return
 
-    print("\n" + "="*50)
+    print("\n" + "=" * 50)
     print("📊 INDICATORS SUMMARY")
-    print("="*50)
+    print("=" * 50)
 
     # Get last non-NaN row
-    last_row = df.dropna(subset=['MA5', 'MACD_DIF', 'RSI12']).iloc[-1]
+    last_row = df.dropna(subset=["MA5", "MACD_DIF", "RSI12"]).iloc[-1]
 
     print(f"\n📅 Latest Date: {last_row['date']}")
     print(f"💰 Close Price: {last_row['close']:.2f}\n")
@@ -416,47 +422,40 @@ def print_summary(df: pd.DataFrame):
 def main():
     parser = argparse.ArgumentParser(
         description="Calculate technical indicators from stock data",
-        formatter_class=argparse.RawDescriptionHelpFormatter
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
     parser.add_argument(
-        '--input',
+        "--input", type=str, required=True, help="Input CSV file with stock data"
+    )
+
+    parser.add_argument(
+        "--output",
         type=str,
-        required=True,
-        help='Input CSV file with stock data'
+        default="indicators.csv",
+        help="Output CSV file for indicators (default: indicators.csv)",
     )
 
     parser.add_argument(
-        '--output',
+        "--indicators",
         type=str,
-        default='indicators.csv',
-        help='Output CSV file for indicators (default: indicators.csv)'
+        default="all",
+        help="Comma-separated list of indicators (default: all)",
     )
 
     parser.add_argument(
-        '--indicators',
-        type=str,
-        default='all',
-        help='Comma-separated list of indicators (default: all)'
+        "--summary", action="store_true", help="Print indicators summary"
     )
 
     parser.add_argument(
-        '--summary',
-        action='store_true',
-        help='Print indicators summary'
-    )
-
-    parser.add_argument(
-        '--quiet',
-        action='store_true',
-        help='Suppress output (for scripting)'
+        "--quiet", action="store_true", help="Suppress output (for scripting)"
     )
 
     args = parser.parse_args()
 
     # Validate input file
     try:
-        open(args.input, 'r')
+        open(args.input, "r")
     except FileNotFoundError:
         print(f"❌ Error: Input file not found: {args.input}")
         sys.exit(1)
@@ -468,44 +467,44 @@ def main():
         sys.exit(1)
 
     # Calculate indicators
-    if args.indicators == 'all':
+    if args.indicators == "all":
         df = calculate_all_indicators(df)
     else:
         # Calculate specific indicators only
-        indicators_list = args.indicators.split(',')
+        indicators_list = args.indicators.split(",")
 
         for indicator in indicators_list:
             indicator = indicator.strip().lower()
 
-            if indicator == 'ma':
+            if indicator == "ma":
                 df = calculate_ma(df)
-            elif indicator == 'ema':
+            elif indicator == "ema":
                 df = calculate_ema(df)
-            elif indicator == 'boll':
+            elif indicator == "boll":
                 df = calculate_boll(df)
-            elif indicator == 'macd':
+            elif indicator == "macd":
                 df = calculate_macd(df)
-            elif indicator == 'rsi':
+            elif indicator == "rsi":
                 df = calculate_rsi(df)
-            elif indicator == 'kdj':
+            elif indicator == "kdj":
                 df = calculate_kdj(df)
-            elif indicator == 'cci':
+            elif indicator == "cci":
                 df = calculate_cci(df)
-            elif indicator == 'bias':
+            elif indicator == "bias":
                 df = calculate_bias(df)
-            elif indicator == 'wr':
+            elif indicator == "wr":
                 df = calculate_wr(df)
-            elif indicator == 'obv':
+            elif indicator == "obv":
                 df = calculate_obv(df)
-            elif indicator == 'vr':
+            elif indicator == "vr":
                 df = calculate_vr(df)
-            elif indicator == 'mom':
+            elif indicator == "mom":
                 df = calculate_mom(df)
-            elif indicator == 'roc':
+            elif indicator == "roc":
                 df = calculate_roc(df)
-            elif indicator == 'arbr':
+            elif indicator == "arbr":
                 df = calculate_arbr(df)
-            elif indicator == 'cr':
+            elif indicator == "cr":
                 df = calculate_cr(df)
             else:
                 print(f"⚠️  Unknown indicator: {indicator}")
@@ -520,5 +519,5 @@ def main():
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())
