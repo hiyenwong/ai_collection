@@ -136,3 +136,36 @@ onKeyDown={(e) => {
 - [ ] Errors are announced to screen readers
 - [ ] Modals trap focus
 - [ ] Touch targets are at least 24x24px
+## Activation Keywords
+
+- `accessibility-wcag`
+- `accessibility-wcag`
+- `accessibility wcag`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

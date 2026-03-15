@@ -204,3 +204,24 @@ Integrate results
 
 - OpenClaw Agent Documentation
 - ACP Harness Documentation
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

@@ -144,3 +144,36 @@ ipcMain.handle('execute-command', (event, command) => {
 3. Structure your project to clearly separate the main process, renderer processes, and preload scripts
 4. Write comprehensive tests and maintain clear documentation for long-term maintenance
 5. Leverage Electron's built-in features and extend functionality using established patterns
+## Activation Keywords
+
+- `electron-typescript`
+- `electron-typescript`
+- `electron typescript`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

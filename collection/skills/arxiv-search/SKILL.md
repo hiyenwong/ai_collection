@@ -391,3 +391,23 @@ pip install httpx xmltodict
 - Good for cutting-edge research
 - Check citation count on Google Scholar for impact
 - Use Semantic Scholar API for additional metadata
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

@@ -124,3 +124,36 @@ if not validation.valid:
 - `ice-review` - 任务后回顾验证过程
 - `self-challenge` - 生成验证测试用例
 - `memory-retrieval` - 检索历史验证经验
+## Activation Keywords
+
+- `self-verification`
+- `self-verification`
+- `self verification`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

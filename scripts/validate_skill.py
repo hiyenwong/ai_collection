@@ -208,7 +208,12 @@ class SkillValidator:
             return
 
         tools_text = match.group(1)
-        tools = re.findall(r"^-\s*`?(\w+)`?", tools_text, re.MULTILINE)
+        # Support multiple formats:
+        # - `exec`
+        # - exec
+        # - **exec**: description
+        tools = re.findall(r"^-\s*(?:`(\w+)`|(\*\*\w+\*\*)|(\w+))", tools_text, re.MULTILINE)
+        tools = [t[0] or t[1].strip('*') if t[1] else t[2] for t in tools if any(t)]
 
         if len(tools) == 0:
             self.errors.append("No tools listed in Tools Used section")
@@ -221,9 +226,19 @@ class SkillValidator:
             "glob",
             "grep",
             "memory",
+            "memory_search",
+            "memory_get",
             "web_search",
             "web_fetch",
             "bash",
+            "browser",
+            "sessions_spawn",
+            "sessions_list",
+            "sessions_send",
+            "agents_list",
+            "chat",
+            "read_file",
+            "write_file",
         ]
 
         for tool in tools:

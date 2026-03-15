@@ -85,3 +85,36 @@ pip install feedparser httpx beautifulsoup4 newspaper3k
 - 与 `stock-analysis` 配合：搜索股票相关新闻
 - 与 `akshare` 配合：获取财经新闻影响分析
 - 与 `teach-cofounder` 配合：解释新闻背景知识
+## Activation Keywords
+
+- `news-search`
+- `news-search`
+- `news search`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

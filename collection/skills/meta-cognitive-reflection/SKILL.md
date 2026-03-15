@@ -300,3 +300,37 @@ description: "Meta-cognitive reflection framework for self-improvement based on 
 ## 更新日志
 
 - **2026-03-08** - 初始创建，基于 Learn Like Humans 论文
+
+## Activation Keywords
+
+- `meta-cognitive-reflection`
+- `meta-cognitive-reflection`
+- `meta cognitive reflection`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

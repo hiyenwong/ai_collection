@@ -218,3 +218,36 @@ jq 'to_entries | map(select(.value.utility < 0.5))' knowledge/skills/index.json
 - [ ] 应用 ice-review 技能
 - [ ] 参考 E-SPL 论文优化系统提示
 ```
+## Activation Keywords
+
+- `indexed-memory`
+- `indexed-memory`
+- `indexed memory`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

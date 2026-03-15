@@ -208,3 +208,23 @@ python scripts/batch_import.py --rules react-component-catalog,accessibility-gua
 - Consider merging similar rules into one skill
 - Add project-specific customizations after import
 - Keep skills under 500 lines (use references/ for detailed content)
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

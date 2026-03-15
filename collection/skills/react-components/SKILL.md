@@ -98,3 +98,36 @@ ComponentName/
 3. **Use TypeScript** - Proper type definitions
 4. **Memoize expensive computations** - useMemo, useCallback
 5. **Handle cleanup** - AbortController for async operations
+## Activation Keywords
+
+- `react-components`
+- `react-components`
+- `react components`
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>

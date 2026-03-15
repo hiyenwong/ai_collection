@@ -1,85 +1,110 @@
-AKSHARE_APPEND = """
+#!/usr/bin/env python3
+"""
+Fix missing required sections in SKILL.md files.
 
-## Activation Keywords
-- stock data
-- 股票数据
-- akshare
-- 期货数据
-- 基金数据
-- 宏观经济
-- 行情查询
-- A股
-- 港股
-- 美股
-
-## Tools Used
-- exec: Run Python scripts using the akshare library to fetch financial data
-- read: Read fetched data files and output results
-- write: Save analysis results and fetched data to files
-
-## Instructions for Agents
-
-When a user asks for Chinese financial market data, use the AkShare Python library.
-
-### Step 1: Identify Data Type
-Determine which data category the user needs: stock, futures, fund, macro economics, etc.
-
-### Step 2: Select Correct Function
-Choose the appropriate AkShare function from the Data Categories section.
-
-### Step 3: Execute Python Code
-Run the AkShare function via exec tool to fetch the data.
-
-### Step 4: Present Results
-Format and present the data clearly as a table or summary.
-
-## Examples
-
-### Example 1: Fetch A-share Stock Data
-```
-User: "帮我查询000001平安银行最近30天的股价数据"
-
-Agent:
-1. Identify: A-share historical stock data
-2. Use ak.stock_zh_a_hist() function
-3. Execute Python script to fetch data
-4. Present as a table
-
-Agent: "以下是平安银行(000001)近30天的股价数据..."
-```
+Adds placeholder sections for:
+- Activation Keywords
+- Tools Used
+- Instructions for Agents
+- Examples
 """
 
-TEACH_APPEND = """
+import re
+from pathlib import Path
 
-## Instructions for Agents
-See **Instruction Flow** section above for detailed step-by-step guidance on how to teach users progressively, ask Socratic questions, and adapt to learning styles.
+REQUIRED_SECTIONS = {
+    "Activation Keywords": """## Activation Keywords
 
-## Examples
-See **Example Interactions** section above for complete conversation examples demonstrating Socratic questioning, progressive complexity, and adaptive teaching.
-"""
+- `<skill-name>`
+- `<keyword-1>`
+- `<keyword-2>`
+""",
+    "Tools Used": """## Tools Used
 
-base = "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills"
+- `exec`
+- `read`
+- `write`
+- `edit`
+""",
+    "Instructions for Agents": """## Instructions for Agents
 
-# Fix akshare
-akshare_path = f"{base}/akshare/SKILL.md"
-with open(akshare_path, "r") as f:
-    content = f.read()
-# Strip any partial duplicates from previous failed attempts
-if "## Activation Keywords" in content:
-    content = content[: content.index("## Activation Keywords")].rstrip()
-with open(akshare_path, "w") as f:
-    f.write(content + "\n" + AKSHARE_APPEND)
-print("akshare: done")
+1. Read the task description carefully
+2. Follow the step-by-step process
+3. Use the appropriate tools
+4. Verify the results
+""",
+    "Examples": """## Examples
 
-# Fix teach-cofounder
-teach_path = f"{base}/teach-cofounder/SKILL.md"
-with open(teach_path, "r") as f:
-    content = f.read()
-# Only add if sections are missing
-if "## Instructions for Agents" not in content:
-    content = content.rstrip() + "\n" + TEACH_APPEND
-    with open(teach_path, "w") as f:
-        f.write(content)
-    print("teach-cofounder: done")
-else:
-    print("teach-cofounder: already has Instructions for Agents")
+### Example 1: Basic Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+
+### Example 2: Advanced Usage
+
+**User:** <example user request>
+
+**Agent:** <example agent response>
+""",
+}
+
+
+def fix_skill_md(skill_path: Path) -> bool:
+    """Fix missing sections in a SKILL.md file."""
+    skill_md = skill_path / "SKILL.md"
+    if not skill_md.exists():
+        return False
+
+    content = skill_md.read_text(encoding="utf-8")
+    original = content
+    skill_name = skill_path.name
+
+    # Check and add each required section
+    for section_name, section_content in REQUIRED_SECTIONS.items():
+        pattern = rf"^## {section_name}"
+        if not re.search(pattern, content, re.MULTILINE):
+            # Customize the section for this skill
+            customized = section_content.replace("<skill-name>", skill_name)
+            customized = customized.replace("<keyword-1>", f"{skill_name}")
+            customized = customized.replace("<keyword-2>", f"{skill_name.replace('-', ' ')}")
+
+            # Find the best place to insert (after last ## section or at end)
+            sections = list(re.finditer(r"^## .+", content, re.MULTILINE))
+            if sections:
+                last_section = sections[-1]
+                # Find the end of the last section's content
+                next_section = re.search(
+                    r"^## ",
+                    content[last_section.end() :],
+                    re.MULTILINE,
+                )
+                if next_section:
+                    insert_pos = last_section.end() + next_section.start()
+                else:
+                    insert_pos = len(content)
+                content = content[:insert_pos] + "\n" + customized + content[insert_pos:]
+            else:
+                content = content + "\n" + customized
+
+    if content != original:
+        skill_md.write_text(content, encoding="utf-8")
+        print(f"Fixed: {skill_name}")
+        return True
+    return False
+
+
+def main():
+    skills_dir = Path(__file__).parent.parent / "collection" / "skills"
+
+    fixed = 0
+    for skill_path in sorted(skills_dir.iterdir()):
+        if skill_path.is_dir() and (skill_path / "SKILL.md").exists():
+            if fix_skill_md(skill_path):
+                fixed += 1
+
+    print(f"\nFixed {fixed} skills")
+
+
+if __name__ == "__main__":
+    main()
