@@ -15,7 +15,6 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
-from typing import Optional
 import yaml
 
 
@@ -159,7 +158,7 @@ def deploy_agent(agent_id: str) -> bool:
         return False
     
     # Get agent info
-    info = get_agent_info(agent_path)
+    _ = get_agent_info(agent_path)
     
     # Create workspace
     workspace = create_workspace(agent_id)
@@ -173,14 +172,14 @@ def deploy_agent(agent_id: str) -> bool:
     agent_md = agent_path / "AGENT.md"
     if agent_md.exists():
         shutil.copy(agent_md, agent_dir / "AGENT.md")
-        print(f"  📄 Copied AGENT.md")
+        print("  📄 Copied AGENT.md")
     
     # Copy SOUL.md if exists
     soul_md = agent_path / "soul.md"
     if soul_md.exists():
         target = workspace / "SOUL.md"
         shutil.copy(soul_md, target)
-        print(f"  📄 Copied SOUL.md to workspace")
+        print("  📄 Copied SOUL.md to workspace")
     
     return True
 
@@ -194,7 +193,7 @@ def deploy_agents(agent_ids: list[str]) -> bool:
         agent_path = AGENTS_DIR / agent_id
         
         if not agent_path.exists():
-            print(f"  ❌ Agent not found")
+            print("  ❌ Agent not found")
             continue
         
         if deploy_agent(agent_id):
@@ -204,8 +203,8 @@ def deploy_agents(agent_ids: list[str]) -> bool:
     if agents_info:
         print(f"\n⚙️  Updating OpenClaw config...")
         if update_openclaw_config(agents_info):
-            print(f"\n✅ Deployed {len(agents_info)} agents")
-            print(f"   Run: openclaw gateway restart")
+            print("\n✅ Deployed {len(agents_info)} agents")
+            print("   Run: openclaw gateway restart")
             return True
     
     return False
