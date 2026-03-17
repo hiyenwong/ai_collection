@@ -5,7 +5,45 @@ description: 无限视界随机系统分析方法论。核心思想：使用加�
 
 # 无限视界随机分析
 
+## Description
+
 处理无限时间跨度的随机优化问题，解决传统方法无法处理的长期决策。
+
+## Activation Keywords
+
+- 无限视界
+- 随机系统
+- BSVIE
+- 倒向随机 Volterra 积分方程
+- 长期决策
+- infinite horizon
+- stochastic control
+- discounted problem
+
+## Tools Used
+
+- exec
+- read
+- write
+
+## Instructions for Agents
+
+当用户处理无限视界随机问题时：
+
+1. **选择加权空间**：根据问题类型选择指数/多项式权重
+2. **建立 BSVIE**：将问题转化为倒向随机 Volterra 积分方程
+3. **计算 Resolvent**：使用 Neumann 级数求解 Resolvent kernel
+4. **截断近似**：选择合适的截断时间 T_max
+5. **测度变换**：必要时使用 Girsanov 定理变换概率测度
+
+## Examples
+
+User: 我需要对一个永续债券定价，时间跨度是无限的。
+
+Agent: 永续债券定价是典型的无限视界问题。建议：
+1. 使用指数权重 ρ(t) = e^{-βt} 确保积分收敛
+2. 将现金流建模为 BSVIE，利用 Resolvent kernel 解耦长期依赖
+3. 截断时间选择 T_max = -ln(tol)/β，平衡精度和计算成本
 
 ## 核心思想
 

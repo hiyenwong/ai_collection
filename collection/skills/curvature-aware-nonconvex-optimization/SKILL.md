@@ -5,7 +5,46 @@ description: 曲率感知的非凸优化方法论。核心思想：将二阶几�
 
 # 曲率感知非凸优化
 
+## Description
+
 将二阶几何障碍显式写进目标函数，利用曲率信息指导优化方向，解决鞍点停滞问题。
+
+## Activation Keywords
+
+- 非凸优化
+- 鞍点逃逸
+- 曲率感知
+- CRGD
+- 信赖域
+- 二阶方法
+- Hessian-aware
+- escape saddle point
+- non-convex optimization
+
+## Tools Used
+
+- exec
+- read
+- write
+
+## Instructions for Agents
+
+当用户遇到非凸优化或鞍点问题时：
+
+1. **诊断问题**：判断是否存在鞍点停滞（梯度小但非极小点）
+2. **选择方法**：根据问题规模选择 CRGD、信赖域或 Hessian-free 方法
+3. **实现曲率估计**：推荐 Hessian-vector product 方法
+4. **调参指导**：根据问题特性推荐曲率正则化强度和阈值
+5. **验证逃逸**：确认优化器成功离开鞍点区域
+
+## Examples
+
+User: 我的神经网络训练在某个 loss 值卡住了，梯度很小但 loss 不低。
+
+Agent: 这可能是鞍点停滞。建议使用曲率感知方法：
+1. 计算 Hessian 最小特征值，确认是否存在负曲率方向
+2. 如果存在负曲率，沿负特征向量方向添加扰动逃逸鞍点
+3. 可以使用 PyTorch 的 `torch.autograd.grad` 实现 Hessian-vector product
 
 ## 核心思想
 

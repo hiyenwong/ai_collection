@@ -6,7 +6,49 @@ license: MIT
 
 # Declarative Self-Improvement
 
+## Description
+
 基于 CORTEX 论文的声明式自我改进框架，让 Agent 通过目标驱动的方式持续进化。
+
+## Activation Keywords
+
+- 自我改进
+- self-improvement
+- 目标驱动
+- goal-driven improvement
+- 声明式进化
+- declarative evolution
+- 改进循环
+- improvement loop
+
+## Tools Used
+
+- exec
+- read
+- write
+
+## Instructions for Agents
+
+使用声明式自我改进时遵循以下流程：
+
+1. **声明目标**：明确"要达成什么"而非"怎么做"
+2. **设定指标**：为每个目标定义可衡量的指标和约束
+3. **探索策略**：自主探索多种改进路径
+4. **验证改进**：通过安全性、有效性、约束验证
+5. **保留或丢弃**：验证通过的改进保留，失败的丢弃并记录经验
+
+## Examples
+
+User: 我想让 Agent 自动提升代码质量，怎么设定目标？
+
+Agent: 使用声明式方式定义改进目标：
+```yaml
+goals:
+  - name: 提高代码质量
+    metrics: [错误率, 可读性评分, 测试覆盖率]
+    constraints: [不破坏现有功能, 不增加复杂度]
+```
+Agent 会自主探索如何达成目标，每次改进都经过验证后才保留。
 
 ## 核心理念
 
