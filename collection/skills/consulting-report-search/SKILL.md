@@ -12,6 +12,8 @@ description: >-
 
 Search and question-answering skill for consulting reports, industry reports, and market research reports. By default, it prioritizes free iResearch reports, uses the iResearch list API for primary recall, then uses QuestMobile public reports as the secondary source. Results must always show iResearch first and QuestMobile second. The search workflow now supports deeper QuestMobile pagination and grouped output rendering, so mixed-source results can be shown as fixed source sections with iResearch first.
 
+Within each source, the default ranking mode is now newest-first, then relevance. The default sort direction is descending, so newer reports appear before older ones. If needed, agents can switch to relevance-first with an explicit CLI flag, or override the direction explicitly.
+
 ## Activation Keywords
 
 - 咨询报告搜索
@@ -45,10 +47,18 @@ No extra third-party packages are required. The script uses only the Python stan
 
 ```bash
 python collection/skills/consulting-report-search/scripts/iresearch_report_search.py \
-  search "AI营销" --pages 6 --limit 5 --grouped --format markdown
+  search "AI营销" --pages 6 --limit 5 --sort-by recency --sort-order desc --grouped --format markdown
 ```
 
 Fetch multiple pages from the iResearch free report feed, then pull multiple QuestMobile pages from its public article-list API. Final ranking must still keep all iResearch matches ahead of QuestMobile matches, and grouped output should render iResearch as the first section and QuestMobile as the second section.
+
+By default, results are sorted by publish time first and relevance second within each source. The default sort direction is `desc`. Use `--sort-by relevance` only when the user explicitly prefers stronger keyword matching over freshness.
+
+Markdown output also shows the active sort mode and any active `--since` filter at the top of the result block.
+
+Every returned report should explicitly include a report link. In structured output, use the `report_link` field. In Markdown output, show a `Report Link` line for each report.
+
+When both sources have matches, the mixed-source search keeps iResearch first and reserves a small number of trailing slots for QuestMobile so the secondary-source reports are still visible.
 
 ### Fetch Report Details
 
@@ -74,10 +84,12 @@ Use this to inspect the recent free-report pool before deciding which reports to
 
 ```bash
 python collection/skills/consulting-report-search/scripts/iresearch_report_search.py \
-  search "AI应用层" --pages 8 --limit 12 --grouped --format json
+  search "AI应用层" --pages 8 --limit 12 --sort-by recency --sort-order desc --since 2025-01-01 --grouped --format json
 ```
 
 Use grouped output when you need a stable source-layered rendering format. This keeps iResearch and QuestMobile separated instead of interleaving them in a single list.
+
+Use `--since` when the user explicitly wants only recent reports, for example limiting the result window to 2025 and later.
 
 ## Instructions for Agents
 
@@ -105,7 +117,10 @@ Execution requirements:
 
 - Fetch at least 3 to 6 pages by default so the search is not limited to page 1
 - Present iResearch matches first in the final answer
+- Rank results within each source by newest publication time first, then relevance, with `--sort-order desc` as the default unless the user explicitly asks for a different order
+- Include a report link for every returned report; do not return bare titles without a clickable destination
 - If the user specifies an industry, add `--industry`
+- If the user wants only newer reports, add `--since YYYY-MM-DD`
 - Use QuestMobile only as the secondary source after iResearch results have been gathered
 - Prefer `--grouped` when the answer contains both iResearch and QuestMobile results
 
@@ -115,7 +130,7 @@ If iResearch results are too sparse, or if the user asks for broader coverage, u
 
 ```bash
 python collection/skills/consulting-report-search/scripts/iresearch_report_search.py \
-  search "<query>" --pages 6 --limit 8 --format json
+  search "<query>" --pages 6 --limit 8 --sort-by recency --sort-order desc --format json
 ```
 
 Rules for QuestMobile usage:
@@ -123,6 +138,7 @@ Rules for QuestMobile usage:
 - Never place QuestMobile above iResearch in the final result order
 - Use QuestMobile to fill gaps or broaden topical coverage
 - When both sources match, present them in separate source layers rather than mixing them together
+- In mixed-source result lists, keep QuestMobile after all iResearch entries while still reserving a few slots so QuestMobile results remain visible
 - Use multiple QuestMobile pages when broader coverage is needed instead of relying on the default landing page only
 
 ### Step 4: Pull Detail Evidence for QA
@@ -226,6 +242,9 @@ If the user asks for exact findings but only summary/catalog are available:
 --page-size 12
 --limit 5
 --industry 广告营销
+--sort-by recency
+--sort-order desc
+--since 2025-01-01
 --include-images
 --no-questmobile
 --grouped
@@ -245,7 +264,7 @@ If the user asks for exact findings but only summary/catalog are available:
 1. Search first, then answer. Do not give industry conclusions before locating reports.
 2. Put iResearch results in the first section and QuestMobile in the second section. Use grouped output when both sources are present.
 3. Ground factual claims in the summary, catalog, chart catalog, or article intro instead of over-inferring.
-4. When recommending several reports, rank iResearch first, then rank within each source by relevance and recency.
+4. When recommending several reports, rank iResearch first, then rank within each source by recency and relevance by default. Keep `--sort-order desc` unless the user explicitly wants the oldest reports first. Use `--sort-by relevance` only when freshness is less important than lexical match.
 
 ## Examples
 

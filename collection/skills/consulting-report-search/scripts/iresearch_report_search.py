@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Callable
+from datetime import datetime
 import json
 import re
 import sys
@@ -183,11 +184,20 @@ def build_questmobile_list_url(
 
 def tokenize(query: str) -> list[str]:
     """Split a search query into ranking tokens."""
-    tokens = [
+    base_tokens = [
         clean_text(value) for value in re.split(r"[\s,，、/]+", query) if value.strip()
     ]
-    if not tokens:
+    if not base_tokens:
         return [clean_text(query)]
+
+    tokens: list[str] = []
+    for token in base_tokens:
+        if token and token not in tokens:
+            tokens.append(token)
+        for segment in re.findall(r"[A-Za-z0-9]+|[\u4e00-\u9fff]+", token):
+            normalized_segment = clean_text(segment)
+            if normalized_segment and normalized_segment not in tokens:
+                tokens.append(normalized_segment)
     return tokens
 
 
@@ -217,6 +227,65 @@ def score_report(query: str, report: ReportSummary) -> int:
             score += 4
     score += min(report.views // 5000, 8)
     return score
+
+
+def published_at_sort_key(value: str) -> tuple[int, int, int, int, int, int]:
+    """Convert a published_at string into a descending-friendly datetime tuple."""
+    normalized = clean_text(value)
+    if not normalized:
+        return (0, 0, 0, 0, 0, 0)
+
+    for fmt in ("%Y/%m/%d %H:%M:%S", "%Y/%m/%d", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d"):
+        try:
+            parsed = datetime.strptime(normalized, fmt)
+        except ValueError:
+            continue
+        return (
+            parsed.year,
+            parsed.month,
+            parsed.day,
+            parsed.hour,
+            parsed.minute,
+            parsed.second,
+        )
+
+    numbers = [int(part) for part in re.findall(r"\d+", normalized)]
+    padded = (numbers + [0, 0, 0, 0, 0, 0])[:6]
+    return tuple(padded)  # type: ignore[return-value]
+
+
+def parse_cli_datetime(value: str) -> tuple[int, int, int, int, int, int]:
+    """Parse a CLI date or datetime string into a sortable tuple."""
+    normalized = clean_text(value)
+    if not normalized:
+        raise ValueError("Date value cannot be empty")
+
+    for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y-%m-%d %H:%M:%S", "%Y/%m/%d %H:%M:%S"):
+        try:
+            parsed = datetime.strptime(normalized, fmt)
+        except ValueError:
+            continue
+        return (
+            parsed.year,
+            parsed.month,
+            parsed.day,
+            parsed.hour,
+            parsed.minute,
+            parsed.second,
+        )
+    raise ValueError(
+        "Unsupported date format. Use YYYY-MM-DD, YYYY/MM/DD, YYYY-MM-DD HH:MM:SS, or YYYY/MM/DD HH:MM:SS"
+    )
+
+
+def should_include_report(
+    published_at: str,
+    since: tuple[int, int, int, int, int, int] | None,
+) -> bool:
+    """Return whether a report passes the optional since-date filter."""
+    if since is None:
+        return True
+    return published_at_sort_key(published_at) >= since
 
 
 def extract_match(pattern: str, html: str) -> str | None:
@@ -378,6 +447,9 @@ def search_reports(
     limit: int,
     industry: str | None = None,
     include_questmobile: bool = True,
+    sort_by: str = "recency",
+    sort_order: str = "desc",
+    since: str | None = None,
 ) -> list[dict[str, Any]]:
     """Search reports, always ordering iResearch ahead of QuestMobile."""
     reports = list_iresearch_reports(pages=pages, page_size=page_size)
@@ -385,9 +457,12 @@ def search_reports(
         reports.extend(list_questmobile_reports(pages=pages, page_size=page_size))
 
     normalized_industry = clean_text(industry or "").lower()
+    since_filter = parse_cli_datetime(since) if since else None
     scored_results: list[dict[str, Any]] = []
     for report in reports:
         if normalized_industry and normalized_industry not in report.industry.lower():
+            continue
+        if not should_include_report(report.published_at, since_filter):
             continue
         score = score_report(query, report)
         if score <= 0:
@@ -397,24 +472,60 @@ def search_reports(
         result["source_priority"] = SOURCE_PRIORITY[report.source]
         scored_results.append(result)
 
-    scored_results.sort(
-        key=lambda item: (
-            -item["source_priority"],
-            item["score"],
-            item["published_at"],
-            item["views"],
-        ),
-        reverse=True,
-    )
-    scored_results.sort(
-        key=lambda item: (
-            item["source_priority"],
-            -item["score"],
-            item["published_at"],
-            item["views"],
+    def recency_key(item: dict[str, Any]) -> tuple[int, int, int, int, int, int]:
+        return published_at_sort_key(item["published_at"])
+
+    def relevance_key(item: dict[str, Any]) -> int:
+        return int(item["score"])
+
+    def views_key(item: dict[str, Any]) -> int:
+        return int(item["views"])
+
+    reverse_sort = sort_order == "desc"
+
+    if sort_by == "recency":
+        scored_results.sort(
+            key=lambda item: (
+                recency_key(item),
+                relevance_key(item),
+                views_key(item),
+            ),
+            reverse=reverse_sort,
         )
+    else:
+        scored_results.sort(
+            key=lambda item: (
+                relevance_key(item),
+                recency_key(item),
+                views_key(item),
+            ),
+            reverse=reverse_sort,
+        )
+    scored_results.sort(key=lambda item: item["source_priority"])
+
+    if limit <= 0:
+        return []
+
+    iresearch_results = [
+        item for item in scored_results if item["source"] == IRESEARCH_SOURCE
+    ]
+    questmobile_results = [
+        item for item in scored_results if item["source"] == QUESTMOBILE_SOURCE
+    ]
+
+    if not include_questmobile or not questmobile_results:
+        return scored_results[:limit]
+
+    if not iresearch_results:
+        return questmobile_results[:limit]
+
+    reserved_questmobile = min(len(questmobile_results), max(1, limit // 4))
+    reserved_questmobile = min(reserved_questmobile, max(0, limit - 1))
+    primary_limit = max(1, limit - reserved_questmobile)
+
+    return (
+        iresearch_results[:primary_limit] + questmobile_results[:reserved_questmobile]
     )
-    return scored_results[:limit]
 
 
 def group_reports_by_source(
@@ -677,9 +788,27 @@ def fetch_report_detail(
     )
 
 
-def render_report_list_markdown(reports: list[dict[str, Any]]) -> str:
+def with_report_link(payload: dict[str, Any]) -> dict[str, Any]:
+    """Add a stable report_link field to a serialized report payload."""
+    enriched = dict(payload)
+    enriched["report_link"] = enriched.get("detail_url") or ""
+    return enriched
+
+
+def render_report_list_markdown(
+    reports: list[dict[str, Any]],
+    sort_by: str | None = None,
+    sort_order: str | None = None,
+    since: str | None = None,
+) -> str:
     """Render report summaries as Markdown."""
     lines = ["# Report Search Results", ""]
+    if sort_by and sort_order:
+        lines.append(f"- Sort: {sort_by} ({sort_order})")
+    if since:
+        lines.append(f"- Since: {since}")
+    if len(lines) > 2:
+        lines.append("")
     for index, report in enumerate(reports, start=1):
         lines.extend(
             [
@@ -692,6 +821,7 @@ def render_report_list_markdown(reports: list[dict[str, Any]]) -> str:
                 f"- Views: {report['views']}",
                 f"- Score: {report.get('score', 0)}",
                 f"- Keywords: {', '.join(report['keywords']) if report['keywords'] else 'None'}",
+                f"- Report Link: {report['report_link']}",
                 f"- Detail URL: {report['detail_url']}",
                 f"- Online Read: {report['online_read_url'] or 'N/A'}",
                 f"- Summary: {report['summary']}",
@@ -703,9 +833,18 @@ def render_report_list_markdown(reports: list[dict[str, Any]]) -> str:
 
 def render_grouped_report_list_markdown(
     grouped_reports: dict[str, list[dict[str, Any]]],
+    sort_by: str | None = None,
+    sort_order: str | None = None,
+    since: str | None = None,
 ) -> str:
     """Render search results grouped by source with iResearch first."""
     lines = ["# Report Search Results", ""]
+    if sort_by and sort_order:
+        lines.append(f"- Sort: {sort_by} ({sort_order})")
+    if since:
+        lines.append(f"- Since: {since}")
+    if len(lines) > 2:
+        lines.append("")
     section_titles = {
         IRESEARCH_SOURCE: "iResearch Reports",
         QUESTMOBILE_SOURCE: "QuestMobile Reports",
@@ -726,6 +865,7 @@ def render_grouped_report_list_markdown(
                     f"- Views: {report['views']}",
                     f"- Score: {report.get('score', 0)}",
                     f"- Keywords: {', '.join(report['keywords']) if report['keywords'] else 'None'}",
+                    f"- Report Link: {report['report_link']}",
                     f"- Detail URL: {report['detail_url']}",
                     f"- Online Read: {report['online_read_url'] or 'N/A'}",
                     f"- Summary: {report['summary']}",
@@ -750,6 +890,7 @@ def render_report_detail_markdown(report: ReportDetail) -> str:
         f"- Page Count: {report.page_count if report.page_count is not None else 'Unknown'}",
         f"- Chart Count: {report.chart_count if report.chart_count is not None else 'Unknown'}",
         f"- Price: {report.price or 'Unknown'}",
+        f"- Report Link: {report.detail_url}",
         f"- Detail URL: {report.detail_url}",
         f"- Online Read: {report.online_read_url or 'N/A'}",
         f"- Keywords: {', '.join(report.keywords) if report.keywords else 'None'}",
@@ -806,6 +947,22 @@ def build_parser() -> argparse.ArgumentParser:
     search_parser.add_argument("--limit", type=int, default=5)
     search_parser.add_argument("--industry")
     search_parser.add_argument(
+        "--sort-by",
+        choices=("recency", "relevance"),
+        default="recency",
+        help="Sort within each source by recency first or relevance first",
+    )
+    search_parser.add_argument(
+        "--sort-order",
+        choices=("desc", "asc"),
+        default="desc",
+        help="Sort direction within each source; default is descending",
+    )
+    search_parser.add_argument(
+        "--since",
+        help="Only include reports published on or after this date",
+    )
+    search_parser.add_argument(
         "--no-questmobile",
         action="store_true",
         help="Disable QuestMobile as the secondary source",
@@ -837,7 +994,7 @@ def main() -> int:
     try:
         if args.command == "list":
             report_list = [
-                asdict(report)
+                with_report_link(asdict(report))
                 for report in list_iresearch_reports(
                     pages=args.pages,
                     page_size=args.page_size,
@@ -851,25 +1008,43 @@ def main() -> int:
             )
             return 0
         if args.command == "search":
-            search_results = search_reports(
-                query=args.query,
-                pages=args.pages,
-                page_size=args.page_size,
-                limit=args.limit,
-                industry=args.industry,
-                include_questmobile=not args.no_questmobile,
-            )
+            search_results = [
+                with_report_link(report)
+                for report in search_reports(
+                    query=args.query,
+                    pages=args.pages,
+                    page_size=args.page_size,
+                    limit=args.limit,
+                    industry=args.industry,
+                    include_questmobile=not args.no_questmobile,
+                    sort_by=args.sort_by,
+                    sort_order=args.sort_order,
+                    since=args.since,
+                )
+            ]
             if args.grouped or args.format == "markdown":
                 grouped_results = group_reports_by_source(search_results)
                 if args.format == "json":
                     print(json.dumps(grouped_results, ensure_ascii=False, indent=2))
                 else:
-                    print(render_grouped_report_list_markdown(grouped_results))
+                    print(
+                        render_grouped_report_list_markdown(
+                            grouped_results,
+                            sort_by=args.sort_by,
+                            sort_order=args.sort_order,
+                            since=args.since,
+                        )
+                    )
                 return 0
             output_payload(
                 search_results,
                 args.format,
-                render_markdown=render_report_list_markdown,
+                render_markdown=lambda reports: render_report_list_markdown(
+                    reports,
+                    sort_by=args.sort_by,
+                    sort_order=args.sort_order,
+                    since=args.since,
+                ),
             )
             return 0
         if args.command == "detail":
@@ -881,7 +1056,13 @@ def main() -> int:
                 include_images=args.include_images,
             )
             if args.format == "json":
-                print(json.dumps(asdict(report_detail), ensure_ascii=False, indent=2))
+                print(
+                    json.dumps(
+                        with_report_link(asdict(report_detail)),
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                )
             else:
                 print(render_report_detail_markdown(report_detail))
             return 0
