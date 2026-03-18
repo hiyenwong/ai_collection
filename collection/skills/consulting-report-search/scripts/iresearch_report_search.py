@@ -23,7 +23,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 IRESEARCH_API_URL = "https://www.iresearch.com.cn/api/products/GetReportList"
-IRESEARCH_DEFAULT_LAST_ID = "freport.4695"
+IRESEARCH_DEFAULT_LAST_ID = ""
 QUESTMOBILE_LIST_URL = "https://www.questmobile.com.cn/research/reports/"
 QUESTMOBILE_ARTICLE_LIST_URL = (
     "https://www.questmobile.com.cn/api/v2/report/article-list"
@@ -923,6 +923,15 @@ def output_payload(
     print(render_markdown(payload))
 
 
+def warn_if_debug_last_id(last_id: str) -> None:
+    """Warn when the deprecated debug-only last_id cursor is used explicitly."""
+    if clean_text(last_id):
+        print(
+            "Warning: --last-id is deprecated for normal usage and should only be used for debugging older iResearch cursor windows.",
+            file=sys.stderr,
+        )
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Build the CLI parser."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -934,7 +943,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     list_parser.add_argument("--pages", type=int, default=1)
     list_parser.add_argument("--page-size", type=int, default=12)
-    list_parser.add_argument("--last-id", default=IRESEARCH_DEFAULT_LAST_ID)
+    list_parser.add_argument(
+        "--last-id",
+        default=IRESEARCH_DEFAULT_LAST_ID,
+        help=argparse.SUPPRESS,
+    )
     list_parser.add_argument("--format", choices=("json", "markdown"), default="json")
 
     search_parser = subparsers.add_parser(
@@ -981,7 +994,11 @@ def build_parser() -> argparse.ArgumentParser:
     detail_parser.add_argument("identifier")
     detail_parser.add_argument("--pages", type=int, default=8)
     detail_parser.add_argument("--page-size", type=int, default=12)
-    detail_parser.add_argument("--last-id", default=IRESEARCH_DEFAULT_LAST_ID)
+    detail_parser.add_argument(
+        "--last-id",
+        default=IRESEARCH_DEFAULT_LAST_ID,
+        help=argparse.SUPPRESS,
+    )
     detail_parser.add_argument("--include-images", action="store_true")
     detail_parser.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
@@ -993,6 +1010,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.command == "list":
+            warn_if_debug_last_id(args.last_id)
             report_list = [
                 with_report_link(asdict(report))
                 for report in list_iresearch_reports(
@@ -1048,6 +1066,7 @@ def main() -> int:
             )
             return 0
         if args.command == "detail":
+            warn_if_debug_last_id(args.last_id)
             report_detail = fetch_report_detail(
                 identifier=args.identifier,
                 pages=args.pages,

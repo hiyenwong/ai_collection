@@ -91,6 +91,8 @@ Use grouped output when you need a stable source-layered rendering format. This 
 
 Use `--since` when the user explicitly wants only recent reports, for example limiting the result window to 2025 and later.
 
+The hidden `--last-id` cursor parameter is deprecated for normal use and should only be used for debugging historical iResearch cursor windows.
+
 ## Instructions for Agents
 
 ### Step 1: Classify the Request
@@ -121,6 +123,7 @@ Execution requirements:
 - Include a report link for every returned report; do not return bare titles without a clickable destination
 - If the user specifies an industry, add `--industry`
 - If the user wants only newer reports, add `--since YYYY-MM-DD`
+- Do not use `--last-id` in normal workflows; it is a deprecated debug-only cursor override
 - Use QuestMobile only as the secondary source after iResearch results have been gathered
 - Prefer `--grouped` when the answer contains both iResearch and QuestMobile results
 
@@ -256,6 +259,7 @@ If the user asks for exact findings but only summary/catalog are available:
 - This skill prioritizes iResearch free reports and uses QuestMobile public reports as secondary coverage
 - It does not cover private content that requires login or payment
 - iResearch detail pages reliably expose the summary, catalog, chart catalog, and online reader entry point
+- The hidden `--last-id` override can intentionally force older iResearch windows, so it should be treated as a debug-only compatibility flag
 - QuestMobile search coverage depends on the public `article-list` API remaining stable
 - The online reader is an image stream rather than structured text, so page-by-page verification is more expensive
 
