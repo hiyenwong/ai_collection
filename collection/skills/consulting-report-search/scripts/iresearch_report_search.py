@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Search and inspect consulting reports from iResearch and QuestMobile.
 
-This script provides three subcommands:
+This script provides four subcommands:
 
 - list: fetch the latest iResearch free reports
 - search: search iResearch first, then QuestMobile as a secondary source
 - detail: fetch a report detail page from either source and extract evidence
+- answer: answer a question conservatively using one report's public evidence
 """
 
 from __future__ import annotations
@@ -24,6 +25,12 @@ from urllib.request import Request, urlopen
 
 IRESEARCH_API_URL = "https://www.iresearch.com.cn/api/products/GetReportList"
 IRESEARCH_DEFAULT_LAST_ID = ""
+IRESEARCH_DEFAULT_PAGE_SIZE = 100
+IRESEARCH_MAX_BATCH_SIZE = 50
+SEARCH_DEFAULT_PAGES = 8
+SEARCH_DEFAULT_LIMIT = 20
+SEARCH_AUTO_MAX_PAGES = 20
+SEARCH_AUTO_PAGE_STEP = 2
 QUESTMOBILE_LIST_URL = "https://www.questmobile.com.cn/research/reports/"
 QUESTMOBILE_ARTICLE_LIST_URL = (
     "https://www.questmobile.com.cn/api/v2/report/article-list"
@@ -83,10 +90,29 @@ class ReportDetail:
     detail_url: str
     online_read_url: str | None
     summary: str
+    interpretation: str
+    evidence_boundary: str
+    outline_sections: list[str]
     catalog: str
     chart_catalog: str
     viewer_images: list[str]
     keywords: list[str]
+
+
+@dataclass(slots=True)
+class ReportAnswer:
+    """Grounded answer generated from public report evidence."""
+
+    source: str
+    report_id: str
+    title: str
+    question: str
+    answer: str
+    evidence: list[str]
+    evidence_boundary: str
+    report_link: str
+    online_read_url: str | None
+    verification_links: list[str]
 
 
 def clean_text(value: str) -> str:
@@ -105,6 +131,285 @@ def html_to_text(fragment: str) -> str:
     fragment = re.sub(r"<[^>]+>", "", fragment)
     lines = [clean_text(line) for line in fragment.splitlines()]
     return "\n".join(line for line in lines if line)
+
+
+def first_sentences(text: str, limit: int = 2) -> str:
+    """Return the first few sentences from a block of text."""
+    normalized = clean_text(text)
+    if not normalized:
+        return ""
+    parts = [
+        part.strip()
+        for part in re.split(r"(?<=[。！？!?；;])", normalized)
+        if part.strip()
+    ]
+    if not parts:
+        return normalized
+    return "".join(parts[:limit]).strip()
+
+
+def extract_outline_sections(catalog: str, limit: int = 8) -> list[str]:
+    """Extract structured outline lines from a public catalog block."""
+    sections: list[str] = []
+    for line in [clean_text(item) for item in catalog.splitlines() if clean_text(item)]:
+        if line in {"报告摘要", "目录"}:
+            continue
+        if not re.match(r"^([0-9]+(\.[0-9]+)*|[一二三四五六七八九十]+)[\s、.]", line):
+            continue
+        if line not in sections:
+            sections.append(line)
+        if len(sections) >= limit:
+            break
+    return sections
+
+
+def summarize_outline_sections(outline_sections: list[str], limit: int = 4) -> str:
+    """Summarize the first few outline sections for natural-language output."""
+    selected = [clean_text(item) for item in outline_sections if clean_text(item)][
+        :limit
+    ]
+    return "；".join(selected)
+
+
+def chart_catalog_lines(chart_catalog: str) -> list[str]:
+    """Split a chart catalog block into clean individual lines."""
+    return [clean_text(item) for item in chart_catalog.splitlines() if clean_text(item)]
+
+
+def select_relevant_lines(query: str, lines: list[str], limit: int = 4) -> list[str]:
+    """Pick the most query-relevant public lines while preserving deterministic output."""
+    if not lines:
+        return []
+
+    query_text = clean_text(query).lower()
+    query_tokens = [token.lower() for token in tokenize(query) if clean_text(token)]
+    scored: list[tuple[int, int, str]] = []
+    for index, line in enumerate(lines):
+        line_lower = line.lower()
+        score = 0
+        if query_text and query_text in line_lower:
+            score += 10
+        for token in query_tokens:
+            if token and token in line_lower:
+                score += 3
+        scored.append((score, index, line))
+
+    relevant = [item for item in scored if item[0] > 0]
+    if relevant:
+        relevant.sort(key=lambda item: (-item[0], item[1]))
+        return [item[2] for item in relevant[:limit]]
+    return lines[:limit]
+
+
+def contains_any(text: str, patterns: tuple[str, ...]) -> bool:
+    """Return whether any pattern appears in normalized text."""
+    normalized = clean_text(text).lower()
+    return any(pattern.lower() in normalized for pattern in patterns)
+
+
+def build_interpretation(
+    source: str,
+    title: str,
+    summary: str,
+    outline_sections: list[str],
+    chart_catalog: str,
+    keywords: list[str],
+) -> str:
+    """Build a conservative interpretation grounded in public detail evidence."""
+    intro = first_sentences(summary, limit=2)
+    outline_summary = summarize_outline_sections(outline_sections, limit=4)
+    parts: list[str] = []
+
+    if intro:
+        parts.append(f"从公开简介看，这份报告的核心内容是：{intro}")
+    elif title:
+        parts.append(f"从标题看，这份报告聚焦于“{title}”相关议题。")
+
+    if outline_summary:
+        parts.append(f"从公开目录看，内容重点覆盖：{outline_summary}。")
+
+    if keywords:
+        parts.append("公开关键词包括：" + "、".join(keywords[:6]) + "。")
+
+    if chart_catalog:
+        parts.append(
+            "图表目录也显示，报告包含一定的数据图表支撑，但具体数值仍需回看原页。"
+        )
+
+    if not parts:
+        parts.append(
+            f"当前这份 {source} 报告公开可见的信息有限，因此解读需要保持保守。"
+        )
+
+    return " ".join(parts).strip()
+
+
+def build_report_answer(report: ReportDetail, question: str) -> ReportAnswer:
+    """Answer a user question conservatively using only public report evidence."""
+    normalized_question = clean_text(question)
+    outline_lines = [
+        clean_text(item) for item in report.outline_sections if clean_text(item)
+    ]
+    chart_lines = chart_catalog_lines(report.chart_catalog)
+    relevant_outline = select_relevant_lines(
+        normalized_question, outline_lines, limit=5
+    )
+    relevant_charts = select_relevant_lines(normalized_question, chart_lines, limit=4)
+    intro = first_sentences(report.summary, limit=2)
+
+    evidence: list[str] = []
+    if intro:
+        evidence.append(f"报告简介：{intro}")
+    if relevant_outline:
+        evidence.append("公开目录：" + "；".join(relevant_outline))
+    if relevant_charts:
+        evidence.append("图表目录：" + "；".join(relevant_charts))
+    elif report.chart_catalog:
+        evidence.append("图表目录：公开页面显示该报告包含图表目录。")
+
+    if contains_any(
+        normalized_question,
+        ("发布时间", "什么时候", "哪年", "日期", "何时发布", "发布于"),
+    ):
+        answer = f"这份报告公开页面标注的发布时间是 {report.published_at or '未标注'}。"
+    elif contains_any(
+        normalized_question,
+        ("作者", "谁写", "来源", "机构", "发布方", "哪家"),
+    ):
+        answer = f"这份报告公开页面显示的作者或发布机构是 {report.author or '未标注'}，来源为 {report.source}。"
+    elif contains_any(
+        normalized_question,
+        ("链接", "地址", "在线阅读", "原文", "pdf", "报告链接", "怎么看"),
+    ):
+        online_read = report.online_read_url or "当前未提供在线阅读链接"
+        answer = f"报告详情页链接是 {report.detail_url}。在线阅读入口是 {online_read}。"
+    elif contains_any(
+        normalized_question,
+        ("目录", "章节", "结构", "分几部分", "覆盖哪些", "包含哪些部分"),
+    ):
+        if relevant_outline:
+            answer = (
+                "从公开目录看，这份报告主要覆盖：" + "；".join(relevant_outline) + "。"
+            )
+        elif report.catalog:
+            answer = (
+                "公开页面可以确认这份报告包含目录结构，但当前未提取出稳定的章节摘要。"
+            )
+        else:
+            answer = "当前公开页面没有暴露足够稳定的目录结构，暂时只能确认它存在详情页与摘要信息。"
+    elif contains_any(
+        normalized_question,
+        (
+            "图表",
+            "数据",
+            "案例",
+            "指标",
+            "多少",
+            "几%",
+            "规模",
+            "增速",
+            "渗透率",
+            "份额",
+            "排名",
+            "数值",
+        ),
+    ):
+        if relevant_charts:
+            answer = (
+                "公开页面能确认这份报告包含与该问题相关的数据图表线索，例如："
+                + "；".join(relevant_charts)
+                + "。但脚本当前不对页面图片做 OCR，所以还不能直接给出精确数值，仍需回到在线阅读页或 viewer_images 做人工核验。"
+            )
+        elif report.chart_catalog:
+            answer = (
+                "公开页面能确认这份报告含有图表目录，说明报告内部存在数据图表支撑。"
+                "不过当前可见证据不足以直接回答具体数值问题，仍需回看原始页面。"
+            )
+        else:
+            answer = (
+                "当前公开简介和目录不足以支持精确数据回答。"
+                "如果你要的是具体数值、比例或排名，需要回到原报告页面逐页核验。"
+            )
+    elif contains_any(
+        normalized_question,
+        ("适合谁", "面向谁", "谁应该看", "适合哪些人", "受众", "读者"),
+    ):
+        focus_terms = [term for term in [report.industry, *report.keywords[:3]] if term]
+        focus_text = "、".join(focus_terms) if focus_terms else report.title
+        answer = f"从标题、行业和公开目录看，这份报告更适合关注 {focus_text} 的研究、战略、产品、市场或投资相关人员阅读。"
+    elif contains_any(
+        normalized_question,
+        (
+            "讲什么",
+            "主要讲",
+            "说什么",
+            "核心观点",
+            "总结",
+            "摘要",
+            "核心内容",
+            "怎么看",
+        ),
+    ):
+        answer = report.interpretation
+    else:
+        answer_parts: list[str] = []
+        if intro:
+            answer_parts.append(f"基于公开简介，目前能确认的是：{intro}")
+        if relevant_outline:
+            answer_parts.append(
+                "从公开目录看，相关内容主要落在：" + "；".join(relevant_outline) + "。"
+            )
+        elif outline_lines:
+            answer_parts.append(
+                "从公开目录看，报告整体覆盖：" + "；".join(outline_lines[:4]) + "。"
+            )
+        if relevant_charts and contains_any(
+            normalized_question, ("数据", "图表", "证据")
+        ):
+            answer_parts.append(
+                "相关图表线索包括：" + "；".join(relevant_charts) + "。"
+            )
+        if not answer_parts:
+            answer_parts.append(
+                "当前公开页面能支持的回答有限，暂时只能确认该报告的标题、基础元数据和部分目录结构。"
+            )
+        answer_parts.append("如需精确页内结论，请回到在线阅读页继续核验。")
+        answer = " ".join(answer_parts)
+
+    verification_links = report.viewer_images[:5] if report.viewer_images else []
+    if not evidence:
+        evidence.append("当前答案主要来自公开详情页的基础元数据。")
+
+    return ReportAnswer(
+        source=report.source,
+        report_id=report.report_id,
+        title=report.title,
+        question=normalized_question,
+        answer=answer,
+        evidence=evidence,
+        evidence_boundary=report.evidence_boundary,
+        report_link=report.detail_url,
+        online_read_url=report.online_read_url,
+        verification_links=verification_links,
+    )
+
+
+def build_evidence_boundary(source: str, has_viewer_images: bool) -> str:
+    """Explain what the current interpretation is grounded on."""
+    if source == IRESEARCH_SOURCE:
+        if has_viewer_images:
+            return (
+                "当前解读主要基于公开的报告简介、meta description、目录、图表目录，以及在线浏览页暴露的页面图片链接。"
+                "脚本当前不会对页面图片做 OCR，因此涉及具体页内数据或精确表述时，仍应回到 viewer_images 对应页面进行人工核验。"
+            )
+        return (
+            "当前解读主要基于公开的报告简介、meta description、目录和图表目录。"
+            "在没有进一步检查页面图片的情况下，结论应限制在这些公开可见部分能够支持的范围内。"
+        )
+    return (
+        "当前解读主要基于公开的导语、元数据区块、标题结构以及页面中暴露的图片。"
+        "它应被视为基于公开页面的解读，而不是对完整报告正文的逐页通读。"
+    )
 
 
 def decode_html(data: bytes) -> str:
@@ -162,6 +467,26 @@ def build_questmobile_detail_url(news_id: int) -> str:
     return f"https://www.questmobile.com.cn/research/report/{news_id}"
 
 
+def normalize_report_link(url: str | None) -> str:
+    """Normalize and validate a public report link."""
+    value = clean_text(url or "")
+    if not value:
+        return ""
+    if value.startswith("//"):
+        return f"https:{value}"
+    if value.startswith("http://") or value.startswith("https://"):
+        return value
+    return ""
+
+
+def require_report_link(url: str | None) -> str:
+    """Require a valid public report link and raise when it is missing."""
+    normalized = normalize_report_link(url)
+    if not normalized:
+        raise ValueError("Report link is required and cannot be empty")
+    return normalized
+
+
 def build_questmobile_list_url(
     page_no: int,
     page_size: int,
@@ -201,9 +526,40 @@ def tokenize(query: str) -> list[str]:
     return tokens
 
 
+def extract_years(text: str) -> list[int]:
+    """Extract distinct 4-digit years from text in appearance order."""
+    years: list[int] = []
+    for match in re.findall(r"(?<!\d)((?:19|20)\d{2})(?!\d)", clean_text(text)):
+        year = int(match)
+        if year not in years:
+            years.append(year)
+    return years
+
+
+def non_year_query_tokens(query: str) -> list[str]:
+    """Return non-year ranking tokens from a query."""
+    query_year_tokens = {str(year) for year in extract_years(query)}
+    return [
+        token for token in tokenize(query) if token.lower() not in query_year_tokens
+    ]
+
+
+def has_strong_title_topic_match(results: list[dict[str, Any]], query: str) -> bool:
+    """Return whether at least one result title strongly matches the non-year topic tokens."""
+    topic_tokens = [clean_text(token).lower() for token in non_year_query_tokens(query)]
+    if not topic_tokens:
+        return True
+    for item in results:
+        title = clean_text(str(item.get("title") or "")).lower()
+        if title and all(token in title for token in topic_tokens):
+            return True
+    return False
+
+
 def score_report(query: str, report: ReportSummary) -> int:
     """Compute a simple lexical relevance score for a report."""
     query_text = clean_text(query).lower()
+    query_years = {str(year) for year in extract_years(query)}
     title = report.title.lower()
     summary = report.summary.lower()
     industry = report.industry.lower()
@@ -217,15 +573,21 @@ def score_report(query: str, report: ReportSummary) -> int:
         score += 12
     for token in tokenize(query):
         token_lower = token.lower()
+        is_year_token = token_lower in query_years
+        title_weight = 4 if is_year_token else 12
+        keyword_weight = 3 if is_year_token else 7
+        industry_weight = 2 if is_year_token else 6
+        summary_weight = 2 if is_year_token else 4
         if token_lower in title:
-            score += 12
+            score += title_weight
         if token_lower in keyword_blob:
-            score += 7
+            score += keyword_weight
         if token_lower in industry:
-            score += 6
+            score += industry_weight
         if token_lower in summary:
-            score += 4
-    score += min(report.views // 5000, 8)
+            score += summary_weight
+    if score > 0:
+        score += min(report.views // 5000, 8)
     return score
 
 
@@ -332,7 +694,7 @@ def report_from_iresearch_item(item: dict[str, Any]) -> ReportSummary:
         views=int(item.get("views") or 0),
         keywords=[clean_text(value) for value in item.get("Keyword") or [] if value],
         price=int(item.get("Price") or 0),
-        detail_url=item.get("VisitUrl") or "",
+        detail_url=normalize_report_link(item.get("VisitUrl")),
         online_read_url=build_iresearch_viewer_url(news_id),
     )
 
@@ -344,13 +706,27 @@ def list_iresearch_reports(
     fee: int = 0,
     date: str = "",
 ) -> list[ReportSummary]:
-    """Fetch multiple pages of the iResearch free report feed."""
+    """Fetch multiple pages of the iResearch free report feed.
+
+    The public API conceptually uses large page sizes, but the live endpoint
+    currently fails at 100 items in a single request. To keep a logical
+    page-size of 100 while remaining compatible, the script transparently
+    splits large fetches into multiple 50-item backend requests.
+    """
     reports: list[ReportSummary] = []
     seen_ids: set[str] = set()
     cursor = last_id
-    for _ in range(pages):
+    remaining_items = max(0, pages * page_size)
+
+    while remaining_items > 0:
+        request_page_size = min(IRESEARCH_MAX_BATCH_SIZE, remaining_items)
         payload = fetch_json(
-            build_iresearch_list_url(cursor, page_size, fee=fee, date=date)
+            build_iresearch_list_url(
+                cursor,
+                request_page_size,
+                fee=fee,
+                date=date,
+            )
         )
         if payload.get("Status") != "success":
             raise RuntimeError(f"Unexpected API status: {payload.get('Status')!r}")
@@ -358,12 +734,15 @@ def list_iresearch_reports(
         if not batch:
             break
         for report in batch:
+            if not report.detail_url:
+                continue
             if report.report_id in seen_ids:
                 continue
             reports.append(report)
             seen_ids.add(report.report_id)
         cursor = batch[-1].report_id
-        if len(batch) < page_size:
+        remaining_items -= len(batch)
+        if len(batch) < request_page_size:
             break
     return reports
 
@@ -430,6 +809,8 @@ def list_questmobile_reports(
         if not batch:
             break
         for report in batch:
+            if not report.detail_url:
+                continue
             if report.news_id in seen_ids:
                 continue
             reports.append(report)
@@ -438,6 +819,90 @@ def list_questmobile_reports(
         if total_pages is not None and page_no >= total_pages:
             break
     return reports
+
+
+def build_scored_results(
+    query: str,
+    reports: list[ReportSummary],
+    normalized_industry: str,
+    since_filter: tuple[int, int, int, int, int, int] | None,
+) -> list[dict[str, Any]]:
+    """Filter and score report summaries into serializable search results."""
+    scored_results: list[dict[str, Any]] = []
+    for report in reports:
+        if normalized_industry and normalized_industry not in report.industry.lower():
+            continue
+        if not should_include_report(report.published_at, since_filter):
+            continue
+        score = score_report(query, report)
+        if score <= 0:
+            continue
+        result = asdict(report)
+        result["score"] = score
+        result["source_priority"] = SOURCE_PRIORITY[report.source]
+        scored_results.append(result)
+    return scored_results
+
+
+def sort_scored_results(
+    scored_results: list[dict[str, Any]],
+    query: str,
+    sort_by: str,
+    sort_order: str,
+) -> list[dict[str, Any]]:
+    """Sort scored results within a source by the configured strategy."""
+
+    def recency_key(item: dict[str, Any]) -> tuple[int, int, int, int, int, int]:
+        return published_at_sort_key(item["published_at"])
+
+    def relevance_key(item: dict[str, Any]) -> int:
+        return int(item["score"])
+
+    def views_key(item: dict[str, Any]) -> int:
+        return int(item["views"])
+
+    query_years = extract_years(query)
+
+    def title_year_key(item: dict[str, Any]) -> tuple[int, int]:
+        title_years = extract_years(str(item.get("title") or ""))
+        matched_years = [year for year in title_years if year in query_years]
+        return (
+            max(matched_years, default=0),
+            max(title_years, default=0),
+        )
+
+    reverse_sort = sort_order == "desc"
+    sorted_results = list(scored_results)
+    if query_years:
+        sorted_results.sort(
+            key=lambda item: (
+                title_year_key(item),
+                relevance_key(item),
+                recency_key(item),
+            ),
+            reverse=True,
+        )
+        return sorted_results
+
+    if sort_by == "recency":
+        sorted_results.sort(
+            key=lambda item: (
+                recency_key(item),
+                relevance_key(item),
+                views_key(item),
+            ),
+            reverse=reverse_sort,
+        )
+    else:
+        sorted_results.sort(
+            key=lambda item: (
+                relevance_key(item),
+                recency_key(item),
+                views_key(item),
+            ),
+            reverse=reverse_sort,
+        )
+    return sorted_results
 
 
 def search_reports(
@@ -452,80 +917,87 @@ def search_reports(
     since: str | None = None,
 ) -> list[dict[str, Any]]:
     """Search reports, always ordering iResearch ahead of QuestMobile."""
-    reports = list_iresearch_reports(pages=pages, page_size=page_size)
-    if include_questmobile:
-        reports.extend(list_questmobile_reports(pages=pages, page_size=page_size))
-
-    normalized_industry = clean_text(industry or "").lower()
-    since_filter = parse_cli_datetime(since) if since else None
-    scored_results: list[dict[str, Any]] = []
-    for report in reports:
-        if normalized_industry and normalized_industry not in report.industry.lower():
-            continue
-        if not should_include_report(report.published_at, since_filter):
-            continue
-        score = score_report(query, report)
-        if score <= 0:
-            continue
-        result = asdict(report)
-        result["score"] = score
-        result["source_priority"] = SOURCE_PRIORITY[report.source]
-        scored_results.append(result)
-
-    def recency_key(item: dict[str, Any]) -> tuple[int, int, int, int, int, int]:
-        return published_at_sort_key(item["published_at"])
-
-    def relevance_key(item: dict[str, Any]) -> int:
-        return int(item["score"])
-
-    def views_key(item: dict[str, Any]) -> int:
-        return int(item["views"])
-
-    reverse_sort = sort_order == "desc"
-
-    if sort_by == "recency":
-        scored_results.sort(
-            key=lambda item: (
-                recency_key(item),
-                relevance_key(item),
-                views_key(item),
-            ),
-            reverse=reverse_sort,
-        )
-    else:
-        scored_results.sort(
-            key=lambda item: (
-                relevance_key(item),
-                recency_key(item),
-                views_key(item),
-            ),
-            reverse=reverse_sort,
-        )
-    scored_results.sort(key=lambda item: item["source_priority"])
-
     if limit <= 0:
         return []
 
-    iresearch_results = [
-        item for item in scored_results if item["source"] == IRESEARCH_SOURCE
-    ]
-    questmobile_results = [
-        item for item in scored_results if item["source"] == QUESTMOBILE_SOURCE
-    ]
+    normalized_industry = clean_text(industry or "").lower()
+    since_filter = parse_cli_datetime(since) if since else None
 
-    if not include_questmobile or not questmobile_results:
-        return scored_results[:limit]
+    iresearch_reports = list_iresearch_reports(pages=pages, page_size=page_size)
+    iresearch_results = build_scored_results(
+        query,
+        iresearch_reports,
+        normalized_industry,
+        since_filter,
+    )
+    fetched_pages = pages
+    last_cursor = iresearch_reports[-1].report_id if iresearch_reports else ""
+
+    query_has_years = bool(extract_years(query))
+    query_has_topic_tokens = bool(non_year_query_tokens(query))
+
+    while iresearch_reports and fetched_pages < SEARCH_AUTO_MAX_PAGES:
+        enough_results = len(iresearch_results) >= limit
+        enough_topic_precision = not (
+            query_has_years
+            and query_has_topic_tokens
+            and not has_strong_title_topic_match(iresearch_results, query)
+        )
+        if enough_results and enough_topic_precision:
+            break
+
+        extra_pages = min(SEARCH_AUTO_PAGE_STEP, SEARCH_AUTO_MAX_PAGES - fetched_pages)
+        extra_reports = list_iresearch_reports(
+            pages=extra_pages,
+            page_size=page_size,
+            last_id=last_cursor,
+        )
+        if not extra_reports:
+            break
+        iresearch_results.extend(
+            build_scored_results(
+                query,
+                extra_reports,
+                normalized_industry,
+                since_filter,
+            )
+        )
+        iresearch_reports = extra_reports
+        last_cursor = extra_reports[-1].report_id
+        fetched_pages += extra_pages
+        if len(extra_reports) < extra_pages * page_size:
+            break
+
+    iresearch_results = sort_scored_results(
+        iresearch_results,
+        query,
+        sort_by,
+        sort_order,
+    )
+
+    if not include_questmobile or len(iresearch_results) >= limit:
+        return iresearch_results[:limit]
+
+    questmobile_results = sort_scored_results(
+        build_scored_results(
+            query,
+            list_questmobile_reports(pages=pages, page_size=page_size),
+            normalized_industry,
+            since_filter,
+        ),
+        query,
+        sort_by,
+        sort_order,
+    )
 
     if not iresearch_results:
         return questmobile_results[:limit]
 
-    reserved_questmobile = min(len(questmobile_results), max(1, limit // 4))
-    reserved_questmobile = min(reserved_questmobile, max(0, limit - 1))
-    primary_limit = max(1, limit - reserved_questmobile)
+    if len(iresearch_results) >= limit:
+        return iresearch_results[:limit]
 
-    return (
-        iresearch_results[:primary_limit] + questmobile_results[:reserved_questmobile]
-    )
+    remaining_slots = max(0, limit - len(iresearch_results))
+    return iresearch_results + questmobile_results[:remaining_slots]
 
 
 def group_reports_by_source(
@@ -604,7 +1076,9 @@ def fetch_iresearch_detail(
         page_size=page_size,
         last_id=last_id,
     )
-    html = fetch_html(summary.detail_url)
+    detail_url = require_report_link(summary.detail_url)
+    html = fetch_html(detail_url)
+    meta_summary = extract_match(r'<meta name="description" content="([^"]+)"', html)
     source_block = extract_match(r"来源：\s*([^<]+?)\s+\d{4}/\d{1,2}/\d{1,2}", html)
     published_at = extract_match(
         r"来源：\s*[^<]+?\s+(\d{4}/\d{1,2}/\d{1,2}\s+\d{1,2}:\d{2}:\d{2})",
@@ -629,6 +1103,12 @@ def fetch_iresearch_detail(
     viewer_images = (
         extract_iresearch_viewer_images(summary.news_id) if include_images else []
     )
+    public_summary = (
+        extract_iresearch_section(html, "报告简介") or meta_summary or summary.summary
+    )
+    catalog = extract_iresearch_section(html, "目录")
+    chart_catalog = extract_iresearch_section(html, "图表目录")
+    outline_sections = extract_outline_sections(catalog)
     return ReportDetail(
         source=IRESEARCH_SOURCE,
         report_id=summary.report_id,
@@ -645,11 +1125,24 @@ def fetch_iresearch_detail(
         if chart_count_text and chart_count_text.isdigit()
         else None,
         price=price,
-        detail_url=summary.detail_url,
+        detail_url=detail_url,
         online_read_url=online_read_url or summary.online_read_url,
-        summary=extract_iresearch_section(html, "报告简介") or summary.summary,
-        catalog=extract_iresearch_section(html, "目录"),
-        chart_catalog=extract_iresearch_section(html, "图表目录"),
+        summary=public_summary,
+        interpretation=build_interpretation(
+            IRESEARCH_SOURCE,
+            summary.title,
+            public_summary,
+            outline_sections,
+            chart_catalog,
+            summary.keywords,
+        ),
+        evidence_boundary=build_evidence_boundary(
+            IRESEARCH_SOURCE,
+            has_viewer_images=bool(viewer_images),
+        ),
+        outline_sections=outline_sections,
+        catalog=catalog,
+        chart_catalog=chart_catalog,
         viewer_images=viewer_images,
         keywords=summary.keywords,
     )
@@ -745,6 +1238,8 @@ def fetch_questmobile_detail(identifier: str, include_images: bool) -> ReportDet
     body_html = html[body_anchor:] if body_anchor != -1 else html
     body_html = re.sub(r'\sinnerhtml="[^"]*"', "", body_html)
     chart_catalog = extract_questmobile_chart_catalog(body_html)
+    summary_text = intro or meta_summary or ""
+    outline_sections = extract_questmobile_catalog(body_html).splitlines()
     return ReportDetail(
         source=QUESTMOBILE_SOURCE,
         report_id=f"qm.{news_id}",
@@ -759,7 +1254,22 @@ def fetch_questmobile_detail(identifier: str, include_images: bool) -> ReportDet
         price=None,
         detail_url=detail_url,
         online_read_url=detail_url,
-        summary=intro or meta_summary or "",
+        summary=summary_text,
+        interpretation=build_interpretation(
+            QUESTMOBILE_SOURCE,
+            title,
+            summary_text,
+            [clean_text(item) for item in outline_sections if clean_text(item)],
+            chart_catalog,
+            keywords,
+        ),
+        evidence_boundary=build_evidence_boundary(
+            QUESTMOBILE_SOURCE,
+            has_viewer_images=include_images,
+        ),
+        outline_sections=[
+            clean_text(item) for item in outline_sections if clean_text(item)
+        ],
         catalog=extract_questmobile_catalog(body_html),
         chart_catalog=chart_catalog,
         viewer_images=extract_questmobile_images(body_html) if include_images else [],
@@ -791,7 +1301,7 @@ def fetch_report_detail(
 def with_report_link(payload: dict[str, Any]) -> dict[str, Any]:
     """Add a stable report_link field to a serialized report payload."""
     enriched = dict(payload)
-    enriched["report_link"] = enriched.get("detail_url") or ""
+    enriched["report_link"] = require_report_link(enriched.get("detail_url"))
     return enriched
 
 
@@ -898,6 +1408,15 @@ def render_report_detail_markdown(report: ReportDetail) -> str:
         "## Summary",
         report.summary or "",
         "",
+        "## Interpretation",
+        report.interpretation or "",
+        "",
+        "## Evidence Boundary",
+        report.evidence_boundary or "",
+        "",
+        "## Outline Sections",
+        "\n".join(report.outline_sections) if report.outline_sections else "",
+        "",
         "## Catalog",
         report.catalog or "",
         "",
@@ -906,6 +1425,31 @@ def render_report_detail_markdown(report: ReportDetail) -> str:
     ]
     if report.viewer_images:
         lines.extend(["", "## Viewer Images", *report.viewer_images])
+    return "\n".join(lines).strip()
+
+
+def render_report_answer_markdown(report_answer: ReportAnswer) -> str:
+    """Render a grounded report answer as Markdown."""
+    lines = [
+        f"# {report_answer.title}",
+        "",
+        f"- Source: {report_answer.source}",
+        f"- Report ID: {report_answer.report_id}",
+        f"- Question: {report_answer.question}",
+        f"- Report Link: {report_answer.report_link}",
+        f"- Online Read: {report_answer.online_read_url or 'N/A'}",
+        "",
+        "## Answer",
+        report_answer.answer,
+        "",
+        "## Evidence",
+        *(f"- {item}" for item in report_answer.evidence),
+        "",
+        "## Evidence Boundary",
+        report_answer.evidence_boundary,
+    ]
+    if report_answer.verification_links:
+        lines.extend(["", "## Verification Links", *report_answer.verification_links])
     return "\n".join(lines).strip()
 
 
@@ -942,7 +1486,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="List the latest iResearch free reports",
     )
     list_parser.add_argument("--pages", type=int, default=1)
-    list_parser.add_argument("--page-size", type=int, default=12)
+    list_parser.add_argument(
+        "--page-size", type=int, default=IRESEARCH_DEFAULT_PAGE_SIZE
+    )
     list_parser.add_argument(
         "--last-id",
         default=IRESEARCH_DEFAULT_LAST_ID,
@@ -955,9 +1501,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Search iResearch first and QuestMobile second",
     )
     search_parser.add_argument("query")
-    search_parser.add_argument("--pages", type=int, default=6)
-    search_parser.add_argument("--page-size", type=int, default=12)
-    search_parser.add_argument("--limit", type=int, default=5)
+    search_parser.add_argument("--pages", type=int, default=SEARCH_DEFAULT_PAGES)
+    search_parser.add_argument(
+        "--page-size", type=int, default=IRESEARCH_DEFAULT_PAGE_SIZE
+    )
+    search_parser.add_argument("--limit", type=int, default=SEARCH_DEFAULT_LIMIT)
     search_parser.add_argument("--industry")
     search_parser.add_argument(
         "--sort-by",
@@ -981,6 +1529,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Disable QuestMobile as the secondary source",
     )
     search_parser.add_argument(
+        "--iresearch-only",
+        action="store_true",
+        help="Use only iResearch results and disable QuestMobile fallback",
+    )
+    search_parser.add_argument(
         "--grouped",
         action="store_true",
         help="Group results by source with iResearch first and QuestMobile second",
@@ -993,7 +1546,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     detail_parser.add_argument("identifier")
     detail_parser.add_argument("--pages", type=int, default=8)
-    detail_parser.add_argument("--page-size", type=int, default=12)
+    detail_parser.add_argument(
+        "--page-size", type=int, default=IRESEARCH_DEFAULT_PAGE_SIZE
+    )
     detail_parser.add_argument(
         "--last-id",
         default=IRESEARCH_DEFAULT_LAST_ID,
@@ -1001,6 +1556,24 @@ def build_parser() -> argparse.ArgumentParser:
     )
     detail_parser.add_argument("--include-images", action="store_true")
     detail_parser.add_argument("--format", choices=("json", "markdown"), default="json")
+
+    answer_parser = subparsers.add_parser(
+        "answer",
+        help="Answer a question using public evidence from one report detail page",
+    )
+    answer_parser.add_argument("identifier")
+    answer_parser.add_argument("question")
+    answer_parser.add_argument("--pages", type=int, default=8)
+    answer_parser.add_argument(
+        "--page-size", type=int, default=IRESEARCH_DEFAULT_PAGE_SIZE
+    )
+    answer_parser.add_argument(
+        "--last-id",
+        default=IRESEARCH_DEFAULT_LAST_ID,
+        help=argparse.SUPPRESS,
+    )
+    answer_parser.add_argument("--include-images", action="store_true")
+    answer_parser.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1034,7 +1607,9 @@ def main() -> int:
                     page_size=args.page_size,
                     limit=args.limit,
                     industry=args.industry,
-                    include_questmobile=not args.no_questmobile,
+                    include_questmobile=not (
+                        args.no_questmobile or args.iresearch_only
+                    ),
                     sort_by=args.sort_by,
                     sort_order=args.sort_order,
                     since=args.since,
@@ -1084,6 +1659,21 @@ def main() -> int:
                 )
             else:
                 print(render_report_detail_markdown(report_detail))
+            return 0
+        if args.command == "answer":
+            warn_if_debug_last_id(args.last_id)
+            report_detail = fetch_report_detail(
+                identifier=args.identifier,
+                pages=args.pages,
+                page_size=args.page_size,
+                last_id=args.last_id,
+                include_images=args.include_images,
+            )
+            report_answer = build_report_answer(report_detail, args.question)
+            if args.format == "json":
+                print(json.dumps(asdict(report_answer), ensure_ascii=False, indent=2))
+            else:
+                print(render_report_answer_markdown(report_answer))
             return 0
     except Exception as error:
         print(f"Error: {error}", file=sys.stderr)
