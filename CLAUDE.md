@@ -157,6 +157,7 @@ From `docs/integration/agents-skills.md`:
 | **openspec** | `collection/skills/openspec/` | 规格驱动开发框架，使用Gherkin语法 | openspec, gherkin, bdd |
 | **akshare** | `collection/skills/akshare/` | 中国金融数据接口库 | stock data, akshare |
 | **stock-analysis** | `collection/skills/stock-analysis/` | 股票分析技能，提供技术指标和可视化 | stock analysis, technical indicators |
+| **consulting-report-search** | `collection/skills/consulting-report-search/` | 咨询/行业报告搜索与问答，优先使用艾瑞咨询免费报告 | 咨询报告搜索, 行业报告问答, 艾瑞报告, iresearch report |
 | **taiyi-jinhua-meditation** | `collection/skills/taiyi-jinhua-meditation/` | 指导基于《太乙金华宗旨》的道家冥想 | 冥想, meditation, 太乙金华宗旨, 回光守中 |
 | **security-guardrails** | `collection/skills/security-guardrails/` | 防止暴露密码/API Key/数据库凭据等敏感信息，所有代理强制激活 | default on (all agents) |
 
@@ -207,7 +208,7 @@ collection/
 2. 定义具体的激活关键词（避免通用词汇）
 3. 编写详细的分步指令
 4. 添加错误处理策略
-5. 更新 `SKILLS.md` 索引
+5. 更新 `SKILLS.md` 索引，并在需要时同步 `CLAUDE.md` 中的技能清单
 
 #### Working with Python Scripts
 

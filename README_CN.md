@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-19-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-16-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-38-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -78,13 +78,14 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [OpenSpec](collection/skills/openspec/) | - | 规格驱动开发，Gherkin 语法 | openspec, gherkin | ✅ |
 | [AkShare](collection/skills/akshare/) | - | 中国金融数据接口 | stock data, akshare | ✅ |
 | [Stock Analysis](collection/skills/stock-analysis/) | - | 股票技术分析，指标计算与可视化 | 股票分析, technical indicators | ✅ |
+| [Consulting Report Search](collection/skills/consulting-report-search/) | - | 咨询/行业报告搜索与问答，优先 iResearch，其次 QuestMobile | 咨询报告搜索, 艾瑞报告, 市场研究报告 | ✅ |
 | [Skill Extractor](collection/skills/skill-extractor/) | - | 从对话提炼可复用技能 | 提炼技能, skill extractor | ✅ |
 | [Security Guardrails](collection/skills/security-guardrails/) | - | 安全防护，防止敏感信息泄露 | 所有代理默认激活 | ✅ |
 | [ICE Review](collection/skills/ice-review/) | - | ICE 策略跨任务知识提炼与自我进化 | ICE review, 任务回顾 | ✅ |
 | [Memory Retrieval](collection/skills/memory-retrieval/) | - | 两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
 | [Self-Challenge](collection/skills/self-challenge/) | - | 双代理自我挑战进化机制 | self challenge, 自我挑战 | ✅ |
 
-[查看全部 16 个技能 →](./collection/skills/)
+[查看全部 38 个技能 →](./collection/skills/)
 
 ### 版本检测功能
 
@@ -136,6 +137,9 @@ sessions_spawn(
 ```
 User: "帮我进行股票分析"
 AI: [检测到 "股票分析" 关键词，激活 stock-analysis 技能]
+
+User: "帮我搜索 AI 营销相关咨询报告，优先艾瑞"
+AI: [检测到咨询报告搜索意图，激活 consulting-report-search 技能]
 ```
 
 ### 添加新代理

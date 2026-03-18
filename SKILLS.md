@@ -175,6 +175,7 @@ Get specific types of information:
 - `weather`: Weather and forecasts
 - `summarize`: Summarize content
 - `model-usage`: Model usage statistics
+- `consulting-report-search`: Search and answer over consulting and market research reports, prioritizing iResearch free reports
 
 ## When to Create a Skill
 
