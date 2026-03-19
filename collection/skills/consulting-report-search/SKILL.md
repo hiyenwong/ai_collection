@@ -10,7 +10,7 @@ description: >-
 
 ## Description
 
-Search and question-answering skill for consulting reports, industry reports, and market research reports. By default, it prioritizes free iResearch reports, uses the iResearch list API for primary recall, then uses QuestMobile public reports as the secondary source. Results must always show iResearch first and QuestMobile second. The search workflow now supports deeper QuestMobile pagination and grouped output rendering, so mixed-source results can be shown as fixed source sections with iResearch first.
+Search, question-answering, and insight-generation skill for consulting reports, industry reports, and market research reports. By default, it prioritizes free iResearch reports, uses the iResearch list API for primary recall, then uses several public iResearch index pages as native quantitative snapshot sources, and finally uses QuestMobile public reports as a later fallback source. Results must always show iResearch formal reports first. When formal reports are not enough, iResearch index snapshots should come before QuestMobile because they are still native iResearch data products. The skill is intended not only to retrieve sources but also to behave like a lightweight consulting analyst: identify the real decision question, ask a small number of clarifying questions when scope is vague, reason from first principles, and then synthesize market insight, industry structure, and future-trend hypotheses from the evidence set.
 
 Within each source, the default ranking mode is now newest-first, then relevance. The default sort direction is descending, so newer reports appear before older ones. If needed, agents can switch to relevance-first with an explicit CLI flag, or override the direction explicitly. If the user query itself contains a year such as `2024`, `2025`, or `2026`, ranking should instead prioritize year signals in the report title first, then report relevance, then publication time, and all three dimensions should be treated in descending order.
 
@@ -28,9 +28,12 @@ Within each source, the default ranking mode is now newest-first, then relevance
 ## Tools Used
 
 - exec: Run the bundled script to fetch iResearch and QuestMobile search results and detail pages
+- exec: Run the bundled script to fetch iResearch and QuestMobile search results, detail pages, and iResearch index snapshots
 - read: Load the skill reference file for source behavior, encoding notes, and parsing rules
 - write: Save search results or answer drafts when needed
 - browser or web search tools: Use browser-based or available web-search capability when both primary sources fail to return reports
+
+When public index pages are involved, agents should prefer mining the page's own request API, JS bundle, or network data source before relying on brittle rendered-text extraction.
 
 ## Installation
 
@@ -53,7 +56,17 @@ python collection/skills/consulting-report-search/scripts/iresearch_report_searc
   search "AI营销" --pages 8 --limit 20 --sort-by recency --sort-order desc --grouped --format markdown
 ```
 
-Fetch multiple pages from the iResearch free report feed, then pull multiple QuestMobile pages from its public article-list API only as fallback coverage. The default search depth is now 8 pages of iResearch results with a logical page size of 100, so the script starts from a much larger newest-first window before falling back. If the initial iResearch window still does not produce enough relevant matches, the script now automatically expands the iResearch search deeper, up to 20 logical pages in total, before QuestMobile is allowed to fill remaining slots. Final ranking must still keep all iResearch matches ahead of QuestMobile matches, and grouped output should render iResearch as the first section and QuestMobile as the second section.
+Fetch multiple pages from the iResearch free report feed, then use public iResearch index pages as native data-snapshot supplements, and only then pull QuestMobile pages as later fallback coverage. The default search depth is now 8 pages of iResearch results with a logical page size of 100, so the script starts from a much larger newest-first window before falling back. If the initial iResearch window still does not produce enough relevant matches, the script now automatically expands the iResearch search deeper, up to 20 logical pages in total, before later-source filling is allowed. Final ranking must still keep iResearch formal reports first.
+
+The script also includes several public iResearch index pages as data-snapshot sources:
+
+- `AI应用指数 AI APP Index`
+- `移动APP指数 Mobile App Index`
+- `网络广告指数 Online Advertising Index`
+- `移动设备指数 Mobile Device Index`
+- `视频媒体内容指数 Media Video Index`
+
+These are not formal reports. Treat them as quantitative snapshot pages that can supplement report analysis when the user needs market rankings, app/device/video popularity, ad投入强度, or AI-app leaderboard context.
 
 By default, results are sorted by publish time first and relevance second within each source. The default sort direction is `desc`. Use `--sort-by relevance` only when the user explicitly prefers stronger keyword matching over freshness.
 
@@ -63,7 +76,11 @@ Markdown output also shows the active sort mode and any active `--since` filter 
 
 Every returned report should explicitly include a report link. This is a hard requirement. In structured output, use the `report_link` field. In Markdown output, show a `Report Link` line for each report. If a source item does not have a valid public report link, it should be dropped from list/search output instead of being returned as a bare title.
 
-When both sources have matches, the mixed-source search now tries to fill the requested result window with as many relevant iResearch reports as possible first. If the initial newest window is not enough, it automatically keeps paging deeper into iResearch before QuestMobile is used. QuestMobile should only fill the remaining slots when iResearch alone still cannot satisfy the requested result count.
+When multiple source types have matches, the mixed-source search now tries to fill the requested result window with as many relevant iResearch formal reports as possible first. If the initial newest window is not enough, it automatically keeps paging deeper into iResearch before later-source filling begins. After formal reports, iResearch index snapshots should fill the remaining slots before QuestMobile.
+
+When the query itself clearly asks for an index, leaderboard, heat list, coverage-rate view, or other indicator-style snapshot, the matching iResearch index page should be promoted before the default recency-first fallback is applied. This avoids burying the right snapshot behind newer but less relevant formal reports or unrelated index pages.
+
+If formal reports are still insufficient, the search flow can surface iResearch index snapshots before QuestMobile. These index pages should be presented as `index snapshot` data sources rather than mislabeled as reports.
 
 If the user explicitly wants only iResearch, use `--iresearch-only`. This is the preferred flag for pure iResearch report collection workflows; `--no-questmobile` remains available as a lower-level compatibility switch.
 
@@ -97,6 +114,25 @@ The answer mode should:
 - keep the evidence boundary visible
 - include report and online-reading links for manual verification
 
+### Generate Market and Industry Insight
+
+```bash
+python collection/skills/consulting-report-search/scripts/iresearch_report_search.py \
+  insight "AI营销" --pages 8 --sort-by recency --sort-order desc --format markdown
+```
+
+Use `insight` when the user wants market judgement, industry structure analysis, competitive signals, or future-trend observation rather than a raw list of reports.
+
+The insight mode should:
+
+- search iResearch reports first, then use iResearch index snapshots as quantitative support
+- actively keep relevant iResearch index snapshots in the candidate set even when enough formal reports already exist
+- keep index cross-signals narrow and domain-aware rather than mixing every available index page into the same insight
+- fetch a small set of detail pages from the strongest candidates
+- synthesize an executive summary, market judgement, market signals, industry structure, competitive landscape, growth drivers, risk watchpoints, and future trends
+- keep all conclusions tied to explicit evidence and report links
+- clearly state the evidence boundary so trend conclusions remain conservative
+
 ### Browse Recent Free Reports
 
 ```bash
@@ -121,6 +157,19 @@ The hidden `--last-id` cursor parameter is deprecated for normal use and should 
 
 ## Instructions for Agents
 
+### Step 0: Clarify the Real Client Intent
+
+Before searching, decide whether the user is actually asking for report retrieval or for a business judgement that reports should support.
+
+If the request is broad, ambiguous, or decision-oriented, ask 1 to 3 targeted follow-up questions instead of jumping straight into a result dump. Preferred clarification axes are:
+
+- the decision to support, for example strategy, investment, product direction, or channel allocation
+- scope, for example market, region, industry segment, customer group, or competitor set
+- time horizon, for example current snapshot, yearly trend, or forward-looking view
+- desired output, for example report list, benchmark table, grounded answer, or market insight memo
+
+If the user does not answer and the query is still actionable, explicitly state the assumed framing and proceed.
+
 ### Step 1: Classify the Request
 
 First determine whether the user wants:
@@ -129,8 +178,13 @@ First determine whether the user wants:
 - Topic filtering or comparison
 - QA grounded in one or more reports
 - Lead collection for relevant reports
+- Market insight or trend analysis
 
 If the request involves industry status, trends, market size, cases, figures, or charts, start with iResearch by default.
+
+If the request explicitly asks for market judgement, industry structure, competition, growth direction, or future trends, prefer the dedicated `insight` flow instead of returning only raw search results.
+
+When the user sounds like an internal client rather than a librarian, restate the problem in consulting language before execution, for example: current market state, structural drivers, competitive pattern, growth constraints, and implications for the user's decision.
 
 ### Step 2: Search iResearch Free Reports First
 
@@ -147,6 +201,7 @@ Execution requirements:
 - If relevant iResearch matches are still insufficient, automatically expand deeper up to 20 logical pages before falling back to QuestMobile
 - Present iResearch matches first in the final answer
 - Prefer returning as many relevant iResearch reports as possible before using QuestMobile to fill any remaining slots
+- Use iResearch index snapshots only after formal report sources when the user needs public ranking or indicator-style data support
 - If the query contains a year, prioritize title-year signals first, then relevance, then publication time, all in descending order
 - Rank results within each source by newest publication time first, then relevance, with `--sort-order desc` as the default unless the user explicitly asks for a different order
 - Include a report link for every returned report; do not return bare titles without a clickable destination
@@ -154,7 +209,8 @@ Execution requirements:
 - If the user specifies an industry, add `--industry`
 - If the user wants only newer reports, add `--since YYYY-MM-DD`
 - Do not use `--last-id` in normal workflows; it is a deprecated debug-only cursor override
-- Use QuestMobile only as the secondary source after iResearch results have been gathered
+- Use iResearch index snapshots before QuestMobile when the user needs public leaderboard or indicator-style data
+- Use QuestMobile only after iResearch reports and iResearch index snapshots have been considered
 - Use `--iresearch-only` when the user explicitly wants only iResearch reports
 - Prefer `--grouped` when the answer contains both iResearch and QuestMobile results
 
@@ -226,7 +282,66 @@ For iResearch specifically, the preferred interpretation stack is:
 3. `outline_sections` extracted from the public catalog
 4. online reader image links for manual page-level verification when needed
 
-### Step 5: State the Evidence Boundary Clearly
+### Step 5: Build Insight Through Cross-Source Reasoning
+
+If the user wants market, industry, or future-trend insight, use the dedicated analysis flow:
+
+```bash
+python collection/skills/consulting-report-search/scripts/iresearch_report_search.py \
+  insight "<query>" --pages 8 --format json
+```
+
+Reasoning framework:
+
+1. Use formal iResearch reports as the primary explanatory layer
+2. Use iResearch index snapshots as the primary quantitative-signal layer
+3. Use QuestMobile only as a secondary supplement when the first two layers are insufficient
+4. Start from first principles: define the object being analyzed, the unit of competition, the growth mechanism, the constraint or bottleneck, and the observable metric that reflects each one
+5. Separate observed facts, causal interpretation, business implication, and future-looking judgement instead of mixing them together
+6. Prefer conservative trend hypotheses such as "值得继续跟踪" or "更可能出现" instead of absolute prediction language
+
+Recommended internal analysis scaffold:
+
+- `What is the real market object?` category, scenario, budget pool, user demand, or channel
+- `What are the core drivers?` technology, user behavior, distribution, regulation, or ROI
+- `What is the structure?` upstream, downstream, platform, brand, entrant, incumbent
+- `What is changing?` demand intensity, ranking, growth rate, concentration, or conversion efficiency
+- `What follows for the client?` monitor, enter, avoid, re-segment, or validate further
+
+When the user's question is still too broad for a responsible judgement, pause and ask a narrow follow-up such as:
+
+- 你更关心市场空间、竞争格局、投放效率，还是头部玩家榜单？
+- 你要看的是中国市场整体，还是某个具体赛道或细分客户群？
+- 你希望输出的是报告清单，还是一个可以直接用于决策讨论的 insight 摘要？
+
+The insight answer should normally include:
+
+- `primary_signal_source`
+- `secondary_signal_source`
+- `executive_summary`
+- `market_judgement`
+- `market_signals`
+- `industry_structure`
+- `competitive_landscape`
+- `growth_drivers`
+- `risk_watchpoints`
+- `future_trends`
+- `evidence`
+- `evidence_boundary`
+- `analyzed_items`
+
+When relevant iResearch index snapshots match the topic, the insight flow should keep at least one snapshot-style source in the evidence set whenever possible, instead of relying only on formal report summaries.
+
+Cross-signal rules should be conservative. Prefer a primary matched snapshot plus at most one adjacent snapshot type when it genuinely helps interpretation. For example:
+
+- device-oriented queries should prefer `device`, optionally `app`
+- video-content queries should prefer `video`, optionally `app`
+- ad-investment queries should prefer `ad`, optionally `app`
+- AI-application queries should prefer `ai`, optionally `app`
+
+Do not mix unrelated index pages into the same insight only because they are available.
+
+### Step 6: State the Evidence Boundary Clearly
 
 If only the summary, catalog, and chart catalog are available, restrict the answer to:
 
@@ -242,7 +357,7 @@ Do not convert the table of contents into claimed report conclusions. If the use
 - Provide the online reader link
 - Use reader-page image links for page-by-page verification if needed
 
-### Step 6: Expand Only When iResearch Is Not Enough
+### Step 7: Expand Only When iResearch Is Not Enough
 
 Use other sources only when:
 
@@ -259,12 +374,22 @@ If both iResearch and QuestMobile return no usable reports, switch to web search
 
 When web search finds a concrete report page URL, feed that URL back into the normal detail flow when possible instead of summarizing the search snippet alone.
 
+For public dashboards or index pages, do not default to scraping rendered HTML text. Preferred data-source order is:
+
+1. the page's own public request API
+2. JS bundle or inline script that reveals endpoint names and payload structure
+3. rendered DOM text extraction
+4. generic web search fallback
+
+If the page exposes a stable request API, use that API as the primary extraction path and keep HTML parsing only as a fallback.
+
 When expanding, present sources in separate layers:
 
 1. iResearch reports
-2. QuestMobile reports
-3. Web-search discovered report pages
-4. Other public sources
+2. iResearch index snapshots
+3. QuestMobile reports
+4. Web-search discovered report pages
+5. Other public sources
 
 Do not mix secondary sources into the first section.
 
@@ -328,7 +453,8 @@ If the user asks for exact findings but only summary/catalog are available:
 
 ## Limitations
 
-- This skill prioritizes iResearch free reports and uses QuestMobile public reports as secondary coverage
+- This skill prioritizes iResearch free reports, then iResearch index snapshots, and only then uses QuestMobile public reports as later fallback coverage
+- The iResearch index pages are public snapshot dashboards, not full reports, so they should be framed as data snapshots rather than report conclusions
 - It does not cover private content that requires login or payment
 - iResearch detail pages reliably expose the summary, catalog, chart catalog, and online reader entry point
 - The hidden `--last-id` override can intentionally force older iResearch windows, so it should be treated as a debug-only compatibility flag
@@ -342,6 +468,10 @@ If the user asks for exact findings but only summary/catalog are available:
 3. Ground factual claims in the summary, catalog, chart catalog, or article intro instead of over-inferring.
 4. When recommending several reports, rank iResearch first, then rank within each source by recency and relevance by default. Keep `--sort-order desc` unless the user explicitly wants the oldest reports first. Use `--sort-by relevance` only when freshness is less important than lexical match.
 5. If both built-in sources fail, do not stop at "no results". Run a web-search fallback with `site:` constraints to recover concrete report pages.
+6. For market-insight tasks, do not jump directly from one title to a trend conclusion. First assemble at least one explanatory source and, when available, one quantitative snapshot source, then state the judgement and its evidence boundary separately.
+7. In insight mode, explicitly separate four analytical layers: current structure, competition, growth drivers, and risk watchpoints. Do not compress all analysis into a single generic trend paragraph.
+8. Behave like a consulting analyst rather than a search box: when the ask is underspecified, use a few targeted clarifying questions to narrow the decision context before concluding.
+9. For public web data extraction, prefer the page's own request API and network model over brittle HTML heuristics.
 
 ## Examples
 
@@ -372,6 +502,21 @@ Agent Process:
 5. If a valid report URL is found, pass it back through the detail workflow or present it as a fallback-discovered report
 
 Agent: The direct source APIs did not return a usable report for this query, so I will fall back to web search using report-focused site filters and return any concrete report pages I can verify.
+```
+
+### Example 4: Generate Market Insight
+
+```text
+User: I need to understand the market situation, industry structure, and future trend of AI marketing.
+
+Agent Process:
+1. Run the insight flow for "AI营销"
+2. Let formal iResearch reports provide the explanatory layer
+3. Let iResearch index snapshots provide quantitative or leaderboard-style support when available
+4. Summarize the current market judgement, industry structure, and future trend watchpoints
+5. Explicitly state which parts are observed evidence and which parts are conservative forward-looking judgement
+
+Agent: I will synthesize iResearch reports and available iResearch index snapshots to produce a structured market insight for AI marketing, including current judgement, industry structure, future trends, and evidence boundaries.
 ```
 
 ### Example 2: Answer a Question Grounded in a Report
