@@ -59,7 +59,13 @@ def _to_builtin(value: Any) -> Any:
 
 
 class MockResponse:
-    def __init__(self, success: bool, data: Any, error: str = "", extra: Optional[Dict[str, Any]] = None):
+    def __init__(
+        self,
+        success: bool,
+        data: Any,
+        error: str = "",
+        extra: Optional[Dict[str, Any]] = None,
+    ):
         self.success = success
         self.data = data
         self.error = error
@@ -189,18 +195,38 @@ def fetch_history(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="使用 thsdk 获取股票历史 K 线数据")
-    parser.add_argument("--code", required=True, help="证券代码，例如 SZ300033 或 USZA300033")
+    parser.add_argument(
+        "--code", required=True, help="证券代码，例如 SZ300033 或 USZA300033"
+    )
     parser.add_argument(
         "--interval",
         default="day",
-        choices=("1m", "5m", "15m", "30m", "60m", "120m", "day", "week", "month", "quarter", "year"),
+        choices=(
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "60m",
+            "120m",
+            "day",
+            "week",
+            "month",
+            "quarter",
+            "year",
+        ),
         help="K 线周期",
     )
-    parser.add_argument("--adjust", default="", choices=("", "forward", "backward"), help="复权方式")
-    parser.add_argument("--count", type=int, default=30, help="返回条数，-1 表示尽可能多")
+    parser.add_argument(
+        "--adjust", default="", choices=("", "forward", "backward"), help="复权方式"
+    )
+    parser.add_argument(
+        "--count", type=int, default=30, help="返回条数，-1 表示尽可能多"
+    )
     parser.add_argument("--start", type=parse_datetime, help="开始时间，支持 ISO 格式")
     parser.add_argument("--end", type=parse_datetime, help="结束时间，支持 ISO 格式")
-    parser.add_argument("--mock", action="store_true", help="使用内置假数据，不连接 thsdk")
+    parser.add_argument(
+        "--mock", action="store_true", help="使用内置假数据，不连接 thsdk"
+    )
     parser.add_argument("--pretty", action="store_true", help="格式化输出 JSON")
     return parser
 

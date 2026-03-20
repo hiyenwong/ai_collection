@@ -7,7 +7,6 @@ import json
 import sys
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = ROOT / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
@@ -21,7 +20,9 @@ def main() -> int:
     code = "SZ300033"
 
     print("# Realtime depth example")
-    realtime_payload = fetch_realtime.fetch_realtime(code, mode="depth", client=fetch_realtime.MockTHS())
+    realtime_payload = fetch_realtime.fetch_realtime(
+        code, mode="depth", client=fetch_realtime.MockTHS()
+    )
     print(json.dumps(realtime_payload, ensure_ascii=False, indent=2))
 
     print("\n# Historical K-line example")

@@ -58,7 +58,13 @@ def _to_builtin(value: Any) -> Any:
 
 
 class MockResponse:
-    def __init__(self, success: bool, data: Any, error: str = "", extra: Optional[Dict[str, Any]] = None):
+    def __init__(
+        self,
+        success: bool,
+        data: Any,
+        error: str = "",
+        extra: Optional[Dict[str, Any]] = None,
+    ):
         self.success = success
         self.data = data
         self.error = error
@@ -94,8 +100,18 @@ class MockTHS:
         return MockResponse(
             True,
             [
-                {"时间": "2026-03-18 09:30:00+08:00", "价格": 317.98, "成交量": 23300, "总金额": 7408934},
-                {"时间": "2026-03-18 09:31:00+08:00", "价格": 318.14, "成交量": 126600, "总金额": 40116357},
+                {
+                    "时间": "2026-03-18 09:30:00+08:00",
+                    "价格": 317.98,
+                    "成交量": 23300,
+                    "总金额": 7408934,
+                },
+                {
+                    "时间": "2026-03-18 09:31:00+08:00",
+                    "价格": 318.14,
+                    "成交量": 126600,
+                    "总金额": 40116357,
+                },
             ],
             extra={"代码": ths_code, "ServerDelay": 0},
         )
@@ -115,7 +131,9 @@ def create_client(use_mock: bool = False):
     return THS()
 
 
-def fetch_realtime(code: str, mode: str = "depth", client: Any = None) -> Dict[str, Any]:
+def fetch_realtime(
+    code: str, mode: str = "depth", client: Any = None
+) -> Dict[str, Any]:
     owns_client = client is None
     client = client or create_client(False)
 
@@ -143,14 +161,18 @@ def fetch_realtime(code: str, mode: str = "depth", client: Any = None) -> Dict[s
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="使用 thsdk 获取股票实时行情数据")
-    parser.add_argument("--code", required=True, help="证券代码，例如 SZ300033 或 USZA300033")
+    parser.add_argument(
+        "--code", required=True, help="证券代码，例如 SZ300033 或 USZA300033"
+    )
     parser.add_argument(
         "--mode",
         choices=("depth", "intraday"),
         default="depth",
         help="depth 为五档盘口，intraday 为分时序列",
     )
-    parser.add_argument("--mock", action="store_true", help="使用内置假数据，不连接 thsdk")
+    parser.add_argument(
+        "--mock", action="store_true", help="使用内置假数据，不连接 thsdk"
+    )
     parser.add_argument("--pretty", action="store_true", help="格式化输出 JSON")
     return parser
 

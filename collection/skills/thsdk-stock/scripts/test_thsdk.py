@@ -9,7 +9,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parent
 
 
@@ -43,12 +42,16 @@ def main() -> int:
     realtime = load_module("fetch_realtime.py", "fetch_realtime")
     history = load_module("fetch_history.py", "fetch_history")
 
-    realtime_payload = realtime.fetch_realtime("SZ300033", mode="depth", client=realtime.MockTHS())
+    realtime_payload = realtime.fetch_realtime(
+        "SZ300033", mode="depth", client=realtime.MockTHS()
+    )
     assert_true(realtime_payload["code"] == "SZ300033", "实时行情返回的 code 不正确")
     assert_true(realtime_payload["mode"] == "depth", "实时行情返回的 mode 不正确")
     assert_true(len(realtime_payload["records"]) == 1, "实时行情 mock 数据条数不正确")
 
-    intraday_payload = realtime.fetch_realtime("SZ300033", mode="intraday", client=realtime.MockTHS())
+    intraday_payload = realtime.fetch_realtime(
+        "SZ300033", mode="intraday", client=realtime.MockTHS()
+    )
     assert_true(len(intraday_payload["records"]) == 2, "分时 mock 数据条数不正确")
 
     history_payload = history.fetch_history(
@@ -65,7 +68,9 @@ def main() -> int:
     realtime_cli = run_cli("scripts/fetch_realtime.py", "--code", "SZ300033", "--mock")
     assert_true(realtime_cli["code"] == "SZ300033", "实时 CLI 输出不正确")
 
-    history_cli = run_cli("scripts/fetch_history.py", "--code", "SZ300033", "--mock", "--count", "1")
+    history_cli = run_cli(
+        "scripts/fetch_history.py", "--code", "SZ300033", "--mock", "--count", "1"
+    )
     assert_true(len(history_cli["records"]) == 1, "历史 CLI 输出条数不正确")
 
     print("All thsdk-stock tests passed.")
