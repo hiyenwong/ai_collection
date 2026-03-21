@@ -199,3 +199,29 @@ def analyze_causal_kernel(gp_model, time_delays):
 - **arXiv：** 1705.05603
 - **效用评分：** 0.96
 - **学习日期：** 2026-03-21
+## Activation Keywords
+
+- 脑网络分析
+- 神经科学方法
+- 计算神经科学
+- 脑连接建模
+
+## Tools Used
+
+- **read**: Read skill documentation and references
+- **exec**: Run analysis scripts and data processing
+- **web_fetch**: Fetch papers and resources
+
+## Instructions for Agents
+
+1. Read the skill documentation carefully
+2. Understand the methodology and key concepts
+3. Apply the techniques to the specific problem
+4. Document results and insights
+
+## Examples
+
+```python
+# Example usage of the skill methodology
+# Refer to the Technical Implementation section for details
+```
