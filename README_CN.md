@@ -256,4 +256,10 @@ OpenClaw 是一个灵活的 AI 代理框架，支持多渠道、可扩展技能�
 
 由 OpenClaw 社区维护 🤖
 
-[![Star History Chart](https://api.star-history.com/svg?repos=hiyenwong/ai_collection&type=Date)](https://star-history.com/#hiyenwong/ai-collection&Date)
+<a href="https://www.star-history.com/?repos=hiyenwong%2Fai_collection&type=date&legend=top-left">
+ <picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&theme=dark&legend=top-left" />
+ <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&legend=top-left" />
+ <img alt="Star History Chart" src="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&legend=top-left" />
+ </picture>
+</a>

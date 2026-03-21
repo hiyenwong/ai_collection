@@ -291,4 +291,10 @@ Thanks to all developers who have contributed to this project!
 
 Maintained by the OpenClaw Community 🤖
 
-[![Star History Chart](https://api.star-history.com/svg?repos=hiyenwong/ai_collection&type=Date)](https://star-history.com/#hiyenwong/ai-collection&Date)
+<a href="https://www.star-history.com/?repos=hiyenwong%2Fai_collection&type=date&legend=top-left">
+ <picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&theme=dark&legend=top-left" />
+ <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&legend=top-left" />
+ <img alt="Star History Chart" src="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&legend=top-left" />
+ </picture>
+</a>
