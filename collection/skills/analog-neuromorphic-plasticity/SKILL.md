@@ -194,6 +194,54 @@ if __name__ == "__main__":
    - 精度-速度权衡分析
    - 混合模拟-数字架构设计
 
+## Activation Keywords
+- 神经形态计算
+- 突触可塑性
+- 钙动力学
+- STC假说
+- BrainScaleS
+- 脉冲神经网络
+- analog neuromorphic
+- synaptic plasticity
+- calcium dynamics
+- spiking neural network
+- SNN
+
+## Tools Used
+- Python
+- NumPy
+- Matplotlib
+- BrainScaleS-2（硬件）
+
+## Instructions for Agents
+1. 确认是否需要模拟突触可塑性规则
+2. 选择合适的钙动力学参数（tau_ca, theta_p, theta_d）
+3. 实现钙离子浓度追踪
+4. 根据STC假说计算权重变化
+5. 如需硬件部署，考虑整数运算约束和随机舍入
+6. 使用STDP协议验证可塑性规则正确性
+
+## Examples
+```python
+# 创建钙基可塑性规则
+plasticity = CalciumPlasticityRule(
+    tau_ca=50.0,    # 钙衰减时间常数
+    theta_p=1.0,    # LTP阈值
+    theta_d=0.5     # LTD阈值
+)
+
+# 模拟STDP协议
+pre_spikes = np.zeros(200, dtype=bool)
+post_spikes = np.zeros(200, dtype=bool)
+pre_spikes[100] = True
+post_spikes[110] = True  # 突触后脉冲滞后10ms
+
+# 计算钙浓度和权重变化
+calcium = plasticity.calcium_dynamics(pre_spikes, post_spikes)
+weight_change = plasticity.compute_weight_change(calcium)
+print(f"权重变化: {weight_change}")
+```
+
 ## 参考文献
 
 - arXiv:2412.02515 - Multi-timescale synaptic plasticity on analog neuromorphic hardware

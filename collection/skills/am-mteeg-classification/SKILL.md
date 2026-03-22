@@ -163,6 +163,49 @@ class AM_MTEEG(nn.Module):
 2. **关联记忆** - 模拟海马体的情景记忆机制
 3. **波形重建** - 提供分类决策的可视化解释
 
+## Activation Keywords
+- EEG分类
+- 多任务学习
+- 关联记忆
+- associative memory
+- 跨个体BCI
+- 海马体启发
+- hippocampus-inspired
+- 脉冲神经网络
+- SNN
+
+## Tools Used
+- Python
+- PyTorch
+- NumPy
+- SciPy
+
+## Instructions for Agents
+1. 确认任务类型是否为EEG分类或脑机接口相关
+2. 检查数据格式（通道数、时间点数、类别数）
+3. 根据数据规模选择合适的模型参数（神经元数量、潜在维度）
+4. 实现脉冲神经群体模块进行特征编码
+5. 使用双向关联记忆进行分类
+6. 如需跨个体迁移，启用任务适配器
+
+## Examples
+```python
+# 使用AM-MTEEG进行EEG分类
+model = AM_MTEEG(
+    n_channels=64,
+    n_timepoints=1000,
+    n_classes=4,
+    n_tasks=10
+)
+
+# 前向传播
+eeg_data = torch.randn(32, 64, 1000)  # batch, channels, timepoints
+logits, reconstructed, spikes = model(eeg_data, task_id=0)
+
+# 分类预测
+predictions = logits.argmax(dim=1)
+```
+
 ## 参考文献
 
 - Paper: arXiv:2409.18375

@@ -263,6 +263,54 @@ print(f"预测状态: {'音乐刺激驾驶' if prediction == 1 else '基线驾�
 print(f"置信度: {max(probability):.2%}")
 ```
 
+## Activation Keywords
+- 脑机音乐接口
+- 运动控制检测
+- EEG机器学习
+- 高阶脑网络
+- 交互熵
+- BCMI
+- motor control detection
+- higher-order network
+- cross-information entropy
+- 驾驶疲劳检测
+
+## Tools Used
+- Python
+- NumPy
+- SciPy
+- scikit-learn
+- PyTorch（可选）
+
+## Instructions for Agents
+1. 确认任务涉及EEG分析或运动控制检测
+2. 预处理EEG数据（滤波、去噪）
+3. 构建高阶脑网络（二阶和三阶连接）
+4. 计算交叉信息熵作为连接强度
+5. 提取网络特征（均值、标准差、Phi值）
+6. 使用SVM或其他分类器进行状态分类
+
+## Examples
+```python
+# 构建高阶脑网络
+network_builder = HigherOrderBrainNetwork(n_channels=64)
+
+# 模拟EEG数据
+eeg_data = np.random.randn(64, 5000)  # 64通道，5000采样点
+
+# 构建网络
+network = network_builder.build_higher_order_network(eeg_data)
+
+# 提取特征
+features = network_builder.extract_features(network)
+print(f"网络特征: {features}")
+
+# 分类预测
+classifier = MotionControlClassifier()
+# classifier.fit(training_data, training_labels)
+# prediction = classifier.predict(test_eeg)
+```
+
 ## 参考文献
 
 - arXiv:2603.15208 - BCMI-Driven Motion Control Detection: EEG-Based Machine Learning and Interaction Entropy for High-Order Brain Networks

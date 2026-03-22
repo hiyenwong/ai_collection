@@ -363,6 +363,50 @@ plt.tight_layout()
 plt.savefig('frequency_selectivity.png')
 ```
 
+## Activation Keywords
+- 突触可塑性
+- 短时程可塑性
+- 突触前
+- 信息论
+- Tsodyks-Markram
+- 学习规则
+- temporal coding
+- STP
+- synaptic plasticity
+- presynaptic
+- Fisher信息
+
+## Tools Used
+- Python
+- NumPy
+- Matplotlib
+- SciPy
+
+## Instructions for Agents
+1. 确认任务涉及短时程可塑性或时序编码
+2. 初始化Tsodyks-Markram突触参数（U, D, F）
+3. 实现脉冲处理和状态更新
+4. 计算Fisher信息以评估突触敏感性
+5. 应用联合学习规则优化权重和释放概率
+6. 如需频率选择性分析，使用FrequencyPhaseSelector
+
+## Examples
+```python
+# 创建STP学习器
+learner = AssociativeSTPLearner(n_synapses=100)
+
+# 模拟学习过程
+for t in range(1000):
+    # 突触前活动（带时序结构）
+    pre_activity = np.random.poisson(5, 100) * (1 + 0.5 * np.sin(2 * np.pi * t / 100))
+    # 突触后响应
+    post_activity = np.dot(learner.weights, pre_activity) / 100
+    # 应用学习规则
+    learner.fisher_learning_rule(pre_activity, post_activity)
+
+print(f"权重: 均值={learner.weights.mean():.3f}")
+```
+
 ## 参考文献
 
 - arXiv:2601.10397 - Reshaping Neural Representation via Associative, Presynaptic Short-Term Plasticity

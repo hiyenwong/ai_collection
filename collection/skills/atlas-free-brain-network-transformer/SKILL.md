@@ -450,6 +450,59 @@ trainer = AtlasFreeBNTTrainer(model)
 # trainer.train_epoch(dataloader, epoch=1)
 ```
 
+## Activation Keywords
+- 脑网络
+- 脑图谱
+- 个体化分区
+- fMRI分析
+- 脑网络Transformer
+- BrainGNN
+- Graphormer
+- 无图谱分析
+- atlas-free
+- brain parcellation
+- BNT
+
+## Tools Used
+- Python
+- PyTorch
+- NumPy
+- SciPy
+- scikit-learn
+- NetworkX
+- NiBabel
+
+## Instructions for Agents
+1. 确认任务是否为脑网络分析或fMRI数据处理
+2. 从个体fMRI数据计算体素功能连接
+3. 使用谱聚类或K-means生成个体化脑分区
+4. 提取ROI特征并计算功能连接矩阵
+5. 构建Brain Network Transformer模型
+6. 进行分类或回归任务（性别、年龄、疾病诊断）
+
+## Examples
+```python
+# 初始化个体化分区器
+parcellator = IndividualizedParcellation(n_regions=200, method='spectral')
+
+# 从fMRI数据生成分区（需要脑掩模）
+# parcellation, labels = parcellator.generate_parcellation(fmri_data, mask)
+
+# 初始化BNT模型
+model = BrainNetworkTransformer(
+    n_rois=200,
+    d_model=128,
+    n_heads=8,
+    n_layers=6
+)
+
+# 前向传播
+roi_features = torch.randn(16, 200, 200)  # batch, n_rois, n_features
+adj_matrix = (torch.rand(16, 200, 200) > 0.5).float()
+embeddings = model(roi_features, adj_matrix)
+print(f"受试者嵌入维度: {embeddings.shape}")
+```
+
 ## 参考文献
 
 - arXiv:2510.03306 - Atlas-free Brain Network Transformer
