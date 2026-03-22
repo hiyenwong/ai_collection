@@ -519,7 +519,7 @@ def example_usage():
 if __name__ == "__main__":
     model, outputs = example_usage()
     
-    ## Activation Keywords
+## Activation Keywords
 - DECOLLE
 - 脉冲神经网络
 - 突触可塑性
