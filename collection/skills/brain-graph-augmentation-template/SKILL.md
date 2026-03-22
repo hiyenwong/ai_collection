@@ -611,6 +611,49 @@ if __name__ == "__main__":
 - **图结构保持**：确保拓扑合理性
 - **指标平衡**：提升整体分类性能
 
+## Activation Keywords
+- 脑图增强
+- 数据增强
+- 单样本学习
+- 连接脑模板
+- CBT
+- 图GAN
+- Alzheimer分类
+- brain graph augmentation
+- one-shot learning
+- gGAN
+
+## Tools Used
+- numpy
+- pytorch
+- torch_geometric
+- scipy
+- sklearn
+
+## Instructions for Agents
+1. 理解CBT（连接脑模板）的核心概念：从多个受试者图生成代表性模板
+2. 掌握GraphGAN架构：生成器和判别器的对抗训练
+3. 应用单样本学习增强策略：从单一模板生成多样化样本
+4. 评估增强效果：比较有无增强的分类性能
+5. 注意类别条件生成，保持标签一致性
+
+## Examples
+```python
+# 使用示例
+from brain_graph_augmentation import ConnectionalBrainTemplate, GraphGAN
+
+# 1. 计算CBT模板
+cbt = ConnectionalBrainTemplate(num_nodes=50)
+template = cbt.compute_cbt(graph_list, labels)
+
+# 2. 训练GraphGAN
+gan = GraphGAN(num_nodes=50, latent_dim=100)
+train_graphgan(real_graphs, labels, num_epochs=200)
+
+# 3. 生成增强数据
+augmented = augment_from_template(template, generator, num_augmented=100, class_label=0)
+```
+
 ## 参考文献
 
 - arXiv:2212.07790 - Population Template-Based Brain Graph Augmentation for Improving One-Shot Learning Classification

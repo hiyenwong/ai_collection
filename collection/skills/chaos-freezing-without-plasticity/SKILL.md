@@ -382,6 +382,50 @@ def prediction_task(rnn, time_series, prediction_horizon=10, dt=0.1):
 - 混沌计算与冻结计算
 - 时序信息处理
 
+## Activation Keywords
+- 混沌冻结
+- Onsager反应
+- 神经网络稳定性
+- 混沌抑制
+- RNN动力学
+- chaos freezing
+- Onsager reaction
+- gradient dynamics
+- 吸引子网络
+- Lyapunov指数
+
+## Tools Used
+- numpy
+- scipy
+
+## Instructions for Agents
+1. 理解Onsager反应项机制：引入η·(∂H/∂x)使动力学趋向梯度形式
+2. 计算Lyapunov指数：正的最大Lyapunov指数表示混沌
+3. 分析混沌到有序的相变：通过调节η参数
+4. 应用记忆回忆任务：测试冻结动力学的模式恢复能力
+5. 注意不需要突触可塑性即可实现稳定性
+
+## Examples
+```python
+# 使用示例
+from chaos_freezing import ChaosFreezingRNN, compute_lyapunov_exponent
+
+# 1. 创建RNN
+rnn = ChaosFreezingRNN(n_neurons=100, g=1.5, eta=0.1)
+
+# 2. 模拟混沌动力学
+initial_state = np.random.randn(100)
+t, states_chaos = rnn.simulate(initial_state, (0, 100), use_onsager=False)
+
+# 3. 模拟冻结动力学
+rnn.eta = 1.0  # 增加Onsager强度
+t, states_frozen = rnn.simulate(initial_state, (0, 100), use_onsager=True)
+
+# 4. 计算Lyapunov指数
+lyap = compute_lyapunov_exponent(states_frozen, rnn)
+print(f"最大Lyapunov指数: {lyap[0]:.4f}")
+```
+
 ## 参考文献
 
 - Huang, H. (2025). "Freezing chaos without synaptic plasticity" Phys. Rev. E 112, 044227, arXiv:2503.08069

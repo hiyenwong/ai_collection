@@ -319,6 +319,55 @@ def compute_criticality_metrics(states, n_nodes):
 - 音乐治疗参数优化
 - 听觉障碍诊断
 
+## Activation Keywords
+- 音乐感知
+- 脑网络
+- 听觉刺激
+- 神经同步
+- FitzHugh-Nagumo
+- gamma同步
+- music perception
+- brain network
+- auditory stimulus
+- 相位动力学
+- 频率响应
+
+## Tools Used
+- numpy
+- scipy
+
+## Instructions for Agents
+1. 理解FHN模型：简化的神经元兴奋性模型
+2. 创建听觉刺激：生成频率和振幅可控的正弦信号
+3. 计算同步指数：Kuramoto序参量
+4. 分析频率响应：不同频率刺激下的网络响应
+5. 注意Gamma频段（30-100 Hz）对音乐处理的重要性
+
+## Examples
+```python
+# 使用示例
+from music_perception_brain_network import FitzHughNagumoNetwork, generate_auditory_stimulus
+
+# 1. 创建网络
+network = FitzHughNagumoNetwork(
+    n_nodes=10,
+    connectivity_matrix=connectivity,
+    epsilon=0.08
+)
+
+# 2. 生成听觉刺激
+def stimulus(t):
+    return generate_auditory_stimulus(t, frequency=10.0, amplitude=1.0, n_nodes=10)
+
+# 3. 模拟
+initial_state = np.random.randn(20) * 0.1
+t, states = network.simulate(initial_state, (0, 100), external_input_func=stimulus)
+
+# 4. 计算同步指数
+sync_index = compute_synchronization_index(states, n_nodes=10)
+print(f"平均同步指数: {sync_index.mean():.4f}")
+```
+
 ## 参考文献
 
 - Sawicki, J. et al. (2025). "From empirical brain networks towards modeling music perception" arXiv:2504.07721

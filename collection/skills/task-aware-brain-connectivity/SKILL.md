@@ -427,6 +427,53 @@ if __name__ == "__main__":
 | beta | 0.1 | 对比损失权重 |
 | n_layers | 3 | GNN层数 |
 
+## Activation Keywords
+- 有效连接
+- 脑网络
+- fMRI分析
+- DAG学习
+- 图神经网络
+- task-aware connectivity
+- brain network
+- effective connectivity
+- TBDS
+- 对比学习
+- 因果推断
+
+## Tools Used
+- pytorch
+- torch_geometric
+- numpy
+
+## Instructions for Agents
+1. 理解DAG学习：将时间序列转换为有向无环图
+2. 掌握DAG约束：h(A) = trace(e^{A○A}) - n = 0时无环
+3. 实现对比正则化：拉近同类、推远异类样本
+4. 应用GNN编码器：提取图级别嵌入
+5. 注意任务感知优化：连接学习与预测任务联合
+
+## Examples
+```python
+# 使用示例
+from task_aware_brain_connectivity import TBDSModel, train_tbds
+
+# 1. 创建模型
+model = TBDSModel(
+    n_rois=100,
+    time_steps=200,
+    hidden_dim=64,
+    n_classes=2
+)
+
+# 2. 前向传播
+outputs = model(fmri_data, labels)
+print(f"分类损失: {outputs['losses']['cls_loss'].item():.4f}")
+print(f"DAG约束: {outputs['losses']['dag_loss'].item():.4f}")
+
+# 3. 训练
+model = train_tbds(model, train_loader, val_loader, epochs=100)
+```
+
 ## 参考文献
 
 - Yu, Y., et al. (2022). Learning Task-Aware Effective Brain Connectivity for fMRI Analysis with Graph Neural Networks.

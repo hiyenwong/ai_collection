@@ -563,6 +563,59 @@ if __name__ == "__main__":
 - **隐私保护**：数据不出医院
 - **多轨迹联合**：单一模型预测多种模态
 
+## Activation Keywords
+- 婴儿脑发育
+- 脑连接预测
+- 联邦学习
+- 图神经网络
+- 多轨迹预测
+- 数据稀缺
+- infant brain
+- federated learning
+- trajectory prediction
+- GNN
+- 纵向分析
+- 隐私保护
+
+## Tools Used
+- pytorch
+- torch_geometric
+- numpy
+- sklearn
+
+## Instructions for Agents
+1. 理解联邦学习架构：数据保留在本地，只聚合模型参数
+2. 掌握多轨迹编码：处理多种模态（T1-w、T2-w、DTI）
+3. 实现两步插补：KNN预补全+回归器精炼
+4. 应用辅助正则化：利用纵向数据的完整轨迹
+5. 注意隐私保护：模型参数聚合而非数据共享
+
+## Examples
+```python
+# 使用示例
+from federated_brain_trajectory_gnn import FedGmTE_Net, FederatedServer
+
+# 1. 创建模型
+model = FedGmTE_Net(
+    num_nodes=50,
+    input_dim=10,
+    hidden_dim=64,
+    num_trajectories=3
+)
+
+# 2. 创建联邦服务器
+server = FederatedServer(model, num_clients=5)
+
+# 3. 注册客户端（医院）
+for i in range(5):
+    client = FederatedClient(i, model, local_data)
+    server.register_client(client)
+
+# 4. 执行联邦训练
+for round_idx in range(10):
+    server.federated_round()
+```
+
 ## 参考文献
 
 - arXiv:2401.01383 - Predicting Infant Brain Connectivity with Federated Multi-Trajectory GNNs

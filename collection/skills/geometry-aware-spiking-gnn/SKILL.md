@@ -630,6 +630,54 @@ for epoch in range(100):
         print(f"Epoch {epoch}: Loss = {result['loss_dict']['total_loss']:.4f}")
 ```
 
+## Activation Keywords
+- 脉冲神经网络
+- 图神经网络
+- 黎曼流形
+- 曲率感知
+- 能量效率
+- spiking neural network
+- graph neural network
+- Riemannian manifold
+- curvature-aware
+- GSG
+- 双曲嵌入
+- 球面嵌入
+
+## Tools Used
+- pytorch
+- numpy
+
+## Instructions for Agents
+1. 理解黎曼嵌入：将节点投影到欧几里得、双曲、球面流形
+2. 掌握流形脉冲神经元：在弯曲空间中建模膜电位演化
+3. 计算测地距离：在流形上测量节点间距离
+4. 应用曲率注意力：根据流形曲率调制注意力权重
+5. 注意混合流形池：加权组合不同流形的嵌入
+
+## Examples
+```python
+# 使用示例
+from geometry_aware_spiking_gnn import GeometryAwareSpikingGNN
+
+# 1. 创建模型
+model = GeometryAwareSpikingGNN(
+    n_features=64,
+    hidden_dim=128,
+    n_classes=10,
+    n_layers=3,
+    n_heads=4
+)
+
+# 2. 前向传播
+result = model(x, adj_matrix, labels)
+print(f"嵌入维度: {result['embeddings'].shape}")
+print(f"流形权重: {result['manifold_weights']}")
+
+# 3. 计算损失
+print(f"总损失: {result['loss_dict']['total_loss']:.4f}")
+```
+
 ## 参考文献
 
 - arXiv:2508.06793 - Geometry-Aware Spiking Graph Neural Network

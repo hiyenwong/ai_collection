@@ -212,6 +212,52 @@ class EDT_PA(nn.Module):
 - **进化步数**: 扩散迭代次数（2-5）
 - **样条阶数**: KAN 的样条阶数（3-5）
 
+## Activation Keywords
+- 脑连接组
+- 最优传输
+- optimal transport
+- 结构-功能对齐
+- 高阶依赖
+- brain connectome
+- EDT-PA
+- KAN网络
+- Sinkhorn算法
+- 疾病分类
+
+## Tools Used
+- pytorch
+- numpy
+- scipy
+
+## Instructions for Agents
+1. 理解最优传输对齐：使用Sinkhorn算法对齐SC和FC
+2. 掌握可进化图扩散：动态捕获脑区高阶依赖
+3. 实现KAN节点聚合：使用B-样条函数进行非线性变换
+4. 计算传输成本：量化SC-FC对齐的代价
+5. 注意正则化系数对传输计划的影响
+
+## Examples
+```python
+# 使用示例
+from evolvable_graph_diffusion_ot import EDT_PA, OptimalTransportAlignment
+
+# 1. 创建模型
+model = EDT_PA(
+    n_regions=100,
+    n_features=64,
+    hidden_dim=128,
+    n_classes=2
+)
+
+# 2. 前向传播
+logits, transport_cost = model(sc_matrix, fc_matrix)
+print(f"传输成本: {transport_cost.item():.4f}")
+
+# 3. 最优传输对齐
+ot_align = OptimalTransportAlignment(n_regions=100, regularization=0.1)
+aligned_fc, cost = ot_align.align_sc_fc(sc_matrix, fc_matrix)
+```
+
 ## 参考文献
 
 - Paper: arXiv:2509.16238

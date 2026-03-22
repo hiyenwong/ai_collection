@@ -519,6 +519,52 @@ def example_usage():
 if __name__ == "__main__":
     model, outputs = example_usage()
     
+    ## Activation Keywords
+- DECOLLE
+- 脉冲神经网络
+- 突触可塑性
+- 局部学习
+- 神经形态计算
+- 在线学习
+- spiking neural network
+- synaptic plasticity
+- neuromorphic computing
+- 合成梯度
+
+## Tools Used
+- pytorch
+- numpy
+- torchvision
+
+## Instructions for Agents
+1. 理解DECOLLE核心思想：使用合成梯度实现局部学习
+2. 掌握LIF神经元模型：膜电位更新和脉冲生成
+3. 实现合成梯度预测器：预测下游梯度，打破时间依赖
+4. 应用泊松编码：将连续数据转换为脉冲序列
+5. 注意局部损失的计算：每层独立计算损失
+
+## Examples
+```python
+# 使用示例
+from decolle_snn import DECOLLENetwork, poisson_encode
+
+# 1. 创建网络
+model = DECOLLENetwork(
+    in_features=784,
+    hidden_features=[256, 128, 64],
+    n_classes=10
+)
+
+# 2. 泊松编码
+data = torch.randn(8, 784)
+spikes = poisson_encode(data, time_steps=20)
+
+# 3. 前向传播
+outputs = model(spikes, target)
+print(f"总损失: {outputs['total_loss'].item():.4f}")
+print(f"局部损失: {outputs['local_loss'].item():.4f}")
+```
+
     print("\n" + "="*60)
     print("MNIST训练示例（需要下载MNIST数据集）")
     print("="*60)

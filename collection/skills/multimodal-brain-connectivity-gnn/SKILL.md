@@ -314,6 +314,60 @@ if __name__ == "__main__":
 - 需要Glasser Altas配准
 - 支持3T和7T MRI数据
 
+## Activation Keywords
+- 多模态融合
+- 脑连接
+- fMRI
+- DTI
+- sMRI
+- 图神经网络
+- 功能连接
+- 结构连接
+- multimodal fusion
+- brain connectivity
+- functional connectivity
+- structural connectivity
+- Glasser Atlas
+
+## Tools Used
+- pytorch
+- torch_geometric
+- numpy
+- nibabel
+- nilearn
+
+## Instructions for Agents
+1. 理解三种模态：fMRI（功能）、DTI（结构）、sMRI（解剖）
+2. 掌握Glasser Atlas配准：360个皮层区域的一致划分
+3. 实现连接掩码学习：差异加权神经连接
+4. 应用图注意力网络：聚合多模态特征
+5. 注意可解释性：提取模态重要性和连接重要性
+
+## Examples
+```python
+# 使用示例
+from multimodal_brain_connectivity_gnn import MultimodalBrainGNN
+
+# 1. 创建模型
+model = MultimodalBrainGNN(
+    num_regions=360,
+    hidden_dim=128,
+    output_dim=10
+)
+
+# 2. 前向传播
+prediction, importance = model(
+    fmri_data, dti_data, smri_data,
+    fc_matrix, sc_matrix,
+    return_importance=True
+)
+
+# 3. 查看模态重要性
+print(f"fMRI重要性: {importance['fmri_importance'].mean():.3f}")
+print(f"DTI重要性: {importance['dti_importance'].mean():.3f}")
+print(f"sMRI重要性: {importance['smri_importance'].mean():.3f}")
+```
+
 ## 参考文献
 
 - arXiv:2408.14254 - Integrated Brain Connectivity Analysis with fMRI, DTI, and sMRI

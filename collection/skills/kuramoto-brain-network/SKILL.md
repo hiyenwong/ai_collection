@@ -463,14 +463,55 @@ def example_analysis():
     return analyzer, K, labels, metrics
 
 
-if __name__ == "__main__":
-    # 运行示例
-    analyzer, K, labels, metrics = example_analysis()
-    
-    print("\n" + "="*50)
-    print("催产素效应模拟")
-    print("="*50)
-    
-    results = simulate_oxytocin_effect(n_rois=50)
-    print(f"同步性变化: {results['sync_change']:.4f}")
-    print(f"耦合变异性变化: {results['community_comparison']['coupling_variance_change']}")
+## Activation Keywords
+- Kuramoto模型
+- 脑网络
+- 相位耦合
+- 同步性
+- 神经调节
+- 催产素
+- oxytocin
+- phase coupling
+- synchronization
+- brain network dynamics
+- 序参量
+- 社区检测
+
+## Tools Used
+- numpy
+- scipy
+- networkx
+- sklearn
+
+## Instructions for Agents
+1. 理解Kuramoto模型：振荡器相位动力学方程
+2. 计算序参量：r(t) = |1/N * sum exp(i*theta_j)|
+3. 提取相位：使用Hilbert变换从fMRI信号提取瞬时相位
+4. 估计耦合强度：基于相位差统计推断
+5. 分析催产素效应：FPN同步增加，DMN同步降低
+
+## Examples
+```python
+# 使用示例
+from kuramoto_brain_network import KuramotoModel, BrainNetworkKuramotoAnalyzer
+
+# 1. 创建Kuramoto模型
+params = KuramotoParameters(n_oscillators=50, K=1.0)
+model = KuramotoModel(params, connectivity_matrix)
+
+# 2. 模拟
+t, theta = model.simulate(initial_phase)
+
+# 3. 计算序参量
+r, psi = model.compute_order_parameter(theta)
+print(f"同步指数: {r.mean():.4f}")
+
+# 4. 脑网络分析
+analyzer = BrainNetworkKuramotoAnalyzer(fmri_data)
+phase = analyzer.extract_phase()
+K = analyzer.estimate_coupling_strength(phase)
+```
+
+## 参考文献
+
+- arXiv:2105.08288 - Kuramoto model based analysis reveals oxytocin effects on brain network dynamics

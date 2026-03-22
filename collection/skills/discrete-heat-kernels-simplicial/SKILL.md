@@ -519,6 +519,49 @@ if coherent:
         print(f"\nt={t}: 连贯边比例 = {result['coherence_ratio']:.2%}")
 ```
 
+## Activation Keywords
+- 热核
+- 单纯复形
+- 高阶网络
+- 拓扑数据分析
+- Hodge拉普拉斯
+- 脑网络分析
+- 环检测
+- heat kernel
+- simplicial complex
+- higher-order network
+- Hodge Laplacian
+- 图信号处理
+
+## Tools Used
+- numpy
+- scipy
+- networkx
+
+## Instructions for Agents
+1. 理解单纯复形结构：从顶点到边、三角形、高维结构的层次
+2. 掌握Hodge拉普拉斯算子：L_k = ∂_k^T ∂_k + ∂_{k+1} ∂_{k+1}^T
+3. 计算离散热核：H_k(t) = exp(-t L_k)
+4. 应用热扩散平滑：在k-单纯形上平滑信号
+5. 注意零特征空间对应k阶同调群
+
+## Examples
+```python
+# 使用示例
+from discrete_heat_kernels import BrainNetworkSimplicialAnalysis
+
+# 1. 创建分析器
+analyzer = BrainNetworkSimplicialAnalysis(threshold=0.5, max_dim=2)
+
+# 2. 分析高阶结构
+results = analyzer.analyze_higher_order_structure(connectivity_matrix)
+print(f"单纯形数量: {results['n_simplices']}")
+print(f"Betti数: {results['betti_numbers']}")
+
+# 3. 信号平滑
+smoothed_signal = analyzer.smooth_network_signal(connectivity, signal, k=0, t=1.0)
+```
+
 ## 参考文献
 
 - arXiv:2509.16908 - Discrete Heat Kernels on Simplicial Complexes and Its Application to Functional Brain Networks

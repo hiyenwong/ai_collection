@@ -549,6 +549,54 @@ def example_state_transition():
     return trajectory
 
 
+## Activation Keywords
+- 脑网络可控性
+- 控制理论
+- 结构连接
+- 控制能量
+- 平均可控性
+- 模态可控性
+- controllability
+- control theory
+- structural brain network
+- 能量景观
+
+## Tools Used
+- numpy
+- scipy
+- networkx
+- matplotlib
+
+## Instructions for Agents
+1. 理解线性动力学模型：x(t+1) = Ax(t) + Bu(t)
+2. 计算平均可控性：驱动系统到附近状态的能力
+3. 计算模态可控性：驱动系统到远距离状态的能力
+4. 计算控制能量：实现状态转移所需的最小能量
+5. 分析可控性权衡：平均可控性与模态可控性的负相关关系
+
+## Examples
+```python
+# 使用示例
+from brain_network_controllability import BrainNetworkControllability, generate_modular_network
+
+# 1. 生成模块化脑网络
+A = generate_modular_network(n_nodes=50, n_modules=5)
+
+# 2. 创建可控性分析器
+analyzer = BrainNetworkControllability(A)
+
+# 3. 完整分析
+results = analyzer.full_analysis()
+print(f"平均可控性: mean={results['average_controllability'].mean():.4f}")
+print(f"模态可控性: mean={results['modal_controllability'].mean():.4f}")
+
+# 4. 状态转移控制
+x0 = np.zeros(50)
+xf = np.zeros(50)
+xf[15:20] = 1.0
+energy = analyzer.minimum_control_energy(x0, xf)
+```
+
 if __name__ == "__main__":
     analyzer, results = example_analysis()
     print("\n" + "="*60)

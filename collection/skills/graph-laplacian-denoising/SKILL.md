@@ -246,6 +246,50 @@ def brain_state_classification(fc_matrices_1, fc_matrices_2, use_denoising=True)
 3. **窗口大小**: 实时应用建议 500-1000 样本
 4. **连接度量**: PLV 适合相位同步，wPLI 更抗体积传导干扰
 
+## Activation Keywords
+- 脑连接去噪
+- 图拉普拉斯
+- Laplacian denoising
+- 功能连接
+- FC denoising
+- J-divergence
+- 图信号处理
+- BCI
+- 脑状态分类
+- EEG分析
+
+## Tools Used
+- numpy
+- scipy
+- sklearn
+
+## Instructions for Agents
+1. 理解图拉普拉斯表示：L = D - W 或归一化形式
+2. 掌握谱去噪：保留低频分量，去除高频噪声
+3. 计算Jensen散度：量化两个拉普拉斯矩阵的差异
+4. 应用脑状态分类：使用谱特征进行SVM分类
+5. 注意归一化拉普拉斯在脑网络分析中的优势
+
+## Examples
+```python
+# 使用示例
+from graph_laplacian_denoising import compute_graph_laplacian, graph_laplacian_denoising
+
+# 1. 计算图拉普拉斯
+L = compute_graph_laplacian(fc_matrix, normalized=True)
+
+# 2. 去噪
+L_denoised, eigenvalues, eigenvectors = graph_laplacian_denoising(L, noise_level=0.1)
+
+# 3. 计算Jensen散度
+from graph_laplacian_denoising import laplacian_j_divergence
+J, contributions = laplacian_j_divergence(L1, L2)
+print(f"Jensen散度: {J:.4f}")
+
+# 4. 脑状态分类
+accuracy, std = brain_state_classification(fc_matrices_1, fc_matrices_2, use_denoising=True)
+```
+
 ## 参考文献
 
 - Paper: arXiv:2012.11240

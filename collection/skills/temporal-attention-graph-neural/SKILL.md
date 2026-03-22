@@ -328,6 +328,55 @@ if __name__ == "__main__":
 - 灵长类感觉运动皮层记录
 - DishBrain平台生物神经元数据
 
+## Activation Keywords
+- 神经动力学
+- 时变连接
+- 图神经网络
+- TAVRNN
+- 神经群体
+- 行为解码
+- neuronal dynamics
+- time-varying connectivity
+- graph neural network
+- temporal attention
+- 变分推断
+- 脑机接口
+
+## Tools Used
+- pytorch
+- torch_geometric
+- numpy
+
+## Instructions for Agents
+1. 理解时变邻接矩阵：A(t)表示t时刻的神经连接
+2. 掌握变分图学习器：学习连接的概率分布
+3. 实现时序注意力：捕捉长程时间依赖
+4. 计算KL散度：正则化潜在分布
+5. 注意单单元级别可解释性
+
+## Examples
+```python
+# 使用示例
+from temporal_attention_graph_neural import TAVRNN
+
+# 1. 创建模型
+model = TAVRNN(
+    num_neurons=100,
+    hidden_dim=64,
+    latent_dim=32,
+    num_heads=4
+)
+
+# 2. 前向传播
+outputs = model(x_sequence)
+print(f"行为预测: {outputs['behavior_pred'].shape}")
+print(f"分类logits: {outputs['classify_logits'].shape}")
+print(f"KL损失: {outputs['kl_loss'].item():.4f}")
+
+# 3. 查看学习的图结构
+print(f"学习的时间变化图数量: {len(outputs['graphs'])}")
+```
+
 ## 参考文献
 
 - arXiv:2410.00665 - Graph-Based Representation Learning of Neuronal Dynamics and Behavior

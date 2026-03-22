@@ -402,6 +402,49 @@ def compute_topological_complexity(persistence_stats):
 - 评估持续同调在脑科学中的适用性
 - 开发更鲁棒的高阶交互检测方法
 
+## Activation Keywords
+- 高阶结构
+- 持续同调
+- 单纯复形
+- 脑网络拓扑
+- higher-order interactions
+- persistent homology
+- simplicial complex
+- Betti数
+- 拓扑数据分析
+
+## Tools Used
+- numpy
+- scipy
+- gudhi
+- ripser
+- networkx
+
+## Instructions for Agents
+1. 理解单纯复形概念：从点到边、三角形、四面体的层次结构
+2. 掌握Hodge拉普拉斯算子：用于高阶结构的谱分析
+3. 计算Betti数：量化不同维度的拓扑特征
+4. 分析持续同调：追踪拓扑特征的诞生和消失
+5. 注意高阶结构难以检测的原因：稀疏性递减、阈值敏感性
+
+## Examples
+```python
+# 使用示例
+from brain_higher_order import SimplicialComplex, compute_betti_numbers
+
+# 1. 从功能连接构建单纯复形
+sc = SimplicialComplex()
+sc.build_from_correlation_matrix(corr_matrix, threshold_range=[0.3, 0.9])
+
+# 2. 计算Betti数
+betti = compute_betti_numbers(sc, max_dim=4)
+print(f"Betti_0 (连通分量): {betti[0]}")
+print(f"Betti_1 (环): {betti[1]}")
+
+# 3. 分析高阶交互
+results = analyze_higher_order_interactions(fmri_data, n_timepoints, n_nodes)
+```
+
 ## 参考文献
 
 - Chung, M.K. et al. (2025). "From Density to Void: Brain Networks and Higher-Order Structures" arXiv:2503.14700

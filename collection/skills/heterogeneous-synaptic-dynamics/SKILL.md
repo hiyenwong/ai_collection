@@ -322,6 +322,54 @@ if __name__ == "__main__":
 | tau_rec | 100-2000 ms | 抑制恢复时间 |
 | param_std | 0.1-0.3 | 异质性程度 |
 
+## Activation Keywords
+- 突触动力学
+- 异质性建模
+- 突触可塑性
+- 突触传输
+- 计算神经科学
+- synaptic dynamics
+- heterogeneous synapses
+- computational neuroscience
+- STP
+- STDP
+- Tsodyks-Markram
+
+## Tools Used
+- numpy
+- scipy
+
+## Instructions for Agents
+1. 理解四个建模维度：连接性、传输、可塑性、异质性
+2. 掌握Tsodyks-Markram模型：短时程可塑性的经典框架
+3. 实现参数异质性：为每个突触添加参数变异性
+4. 计算突触电导：使用双指数模型
+5. 注意大规模网络模拟的计算效率
+
+## Examples
+```python
+# 使用示例
+from heterogeneous_synaptic_dynamics import SynapticNetwork, SynapticParameters, generate_connectivity_matrix
+
+# 1. 创建参数
+params = SynapticParameters(
+    tau_rise=0.5,
+    tau_decay=5.0,
+    U=0.5,
+    param_std=0.2
+)
+
+# 2. 生成连接矩阵
+connectivity = generate_connectivity_matrix(n_neurons=100, p_local=0.3)
+
+# 3. 创建突触网络
+network = SynapticNetwork(100, params, connectivity, heterogeneity=True)
+
+# 4. 模拟
+results = network.simulate(t_span, spike_trains)
+print(f"平均权重: {np.mean([w[-1] for w in results['weights'].values()]):.3f}")
+```
+
 ## 参考文献
 
 - Tsodyks, M. V., & Markram, H. (1997). The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability.

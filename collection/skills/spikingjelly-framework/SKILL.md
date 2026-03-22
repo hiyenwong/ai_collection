@@ -192,6 +192,54 @@ loihi.export_model(
 3. **阈值设置**: v_threshold 影响稀疏性和精度平衡
 4. **批处理**: 使用 `functional.reset_net()` 在每个批次后重置状态
 
+## Activation Keywords
+- 脉冲神经网络
+- SNN
+- SpikingJelly
+- spiking neural network
+- 神经形态计算
+- neuromorphic computing
+- LIF神经元
+- 代理梯度
+- ANN-to-SNN转换
+- DVS数据集
+
+## Tools Used
+- pytorch
+- spikingjelly
+- numpy
+
+## Instructions for Agents
+1. 理解LIF神经元：膜电位更新、脉冲生成、状态重置
+2. 掌握代理梯度：解决脉冲函数不可微的问题
+3. 实现ANN-to-SNN转换：将训练好的ANN转为SNN
+4. 处理神经形态数据集：DVS Gesture、N-MNIST等
+5. 注意时间步选择：T=4-8通常足够
+
+## Examples
+```python
+# 使用示例
+from spikingjelly.activation_based import neuron, layer, functional
+
+# 1. 构建SNN
+class SNNNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc1 = layer.Linear(784, 256)
+        self.lif1 = neuron.LIFNode(tau=2.0)
+        self.fc2 = layer.Linear(256, 10)
+        self.lif2 = neuron.LIFNode(tau=2.0)
+    
+    def forward(self, x, T=4):
+        for t in range(T):
+            out = self.lif1(self.fc1(x))
+            out = self.lif2(self.fc2(out))
+        return out
+
+# 2. 训练后重置状态
+functional.reset_net(model)
+```
+
 ## 参考资源
 
 - [SpikingJelly 文档](https://spikingjelly.readthedocs.io/)

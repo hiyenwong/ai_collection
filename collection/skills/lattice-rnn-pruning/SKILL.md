@@ -497,6 +497,51 @@ class ContinuousLatticePruner:
 - 生物神经网络简化
 - 突触修剪机制研究
 
+## Activation Keywords
+- RNN剪枝
+- 格剪枝
+- 偏序集
+- 依赖格
+- 不可约元
+- 网络压缩
+- lattice pruning
+- poset
+- meet irreducible
+- 模型压缩
+- 结构剪枝
+
+## Tools Used
+- numpy
+- pytorch
+
+## Instructions for Agents
+1. 理解偏序集建模：神经元作为元素，连接定义偏序
+2. 构建依赖格：从偏序集计算下集
+3. 识别meet不可约元：关键神经元，剪枝时必须保留
+4. 计算神经元重要性：基于权重幅度和连接度
+5. 注意保留功能连接性，而非仅基于幅度剪枝
+
+## Examples
+```python
+# 使用示例
+from lattice_rnn_pruning import PosetRNN, MeetIrreduciblePruner
+
+# 1. 创建RNN和偏序集
+rnn = PosetRNN(n_hidden=100)
+rnn.build_dependency_relation()
+
+# 2. 创建剪枝器
+pruner = MeetIrreduciblePruner(trained_rnn)
+
+# 3. 识别关键神经元
+irreducibles, importance = pruner.identify_meet_irreducibles()
+print(f"关键神经元数量: {len(irreducibles)}")
+
+# 4. 执行剪枝
+W_pruned, kept_neurons, irreducibles = pruner.prune(target_sparsity=0.5)
+print(f"保留神经元: {len(kept_neurons)}/{100}")
+```
+
 ## 参考文献
 
 - Sengupta, R. et al. (2025). "Lattice-Based Pruning in Recurrent Neural Networks via Poset Modeling" arXiv:2502.16525

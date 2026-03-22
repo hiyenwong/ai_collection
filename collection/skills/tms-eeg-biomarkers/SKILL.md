@@ -641,6 +641,52 @@ class TMSEEGQualityControl:
 - 新TMS设备验证
 - EEG系统比较
 
+## Activation Keywords
+- TMS-EEG
+- 生物标志物
+- 可靠性
+- 有效性
+- 信效度
+- TMS biomarkers
+- reliability
+- validity
+- TMS-EEG analysis
+- ICC
+- TEP
+- 临床研究
+
+## Tools Used
+- numpy
+- scipy
+- sklearn
+
+## Instructions for Agents
+1. 理解三类可靠性：内部（重复测量）、外部（跨实验室）、测试-重测
+2. 计算ICC（组内相关系数）：评估测量一致性
+3. 提取TEP成分：N15、P30、N45、P60、N100、P180
+4. 计算Gamma功率：TMS后的Gamma振荡是重要标志物
+5. 注意质量阈值：ICC > 0.75、SNR > 3.0、最小50试次
+
+## Examples
+```python
+# 使用示例
+from tms_eeg_biomarkers import TMSEEGReliability, TMSEEGBiomarkers
+
+# 1. 可靠性评估
+reliability = TMSEEGReliability()
+icc = reliability.intraclass_correlation(data)  # data: (n_subjects, n_sessions)
+print(f"ICC(2,1): {icc['ICC(2,1)']:.4f}")
+print(f"解释: {icc['interpretation']}")
+
+# 2. 提取TEP
+biomarkers = TMSEEGBiomarkers(fs=1000)
+tep = biomarkers.extract_tms_evoked_potential(eeg_data, tms_onset)
+amplitude = biomarkers.compute_tep_amplitude(tep, component='N100')
+
+# 3. 计算Gamma功率
+gamma_power = biomarkers.compute_gamma_power(tep)
+```
+
 ## 参考文献
 
 - Parmigiani, S. et al. (2022). "Reliability and validity of TMS-EEG biomarkers" arXiv:2207.08456

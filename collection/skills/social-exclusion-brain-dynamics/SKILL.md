@@ -340,6 +340,53 @@ def create_roi_masks(fmri_img, roi_definitions, radius=8):
 3. **交叉验证** - 预测模型需要严格的交叉验证
 4. **行为关联** - 神经测量必须与实际行为相关联
 
+## Activation Keywords
+- 社会排斥
+- social exclusion
+- 脑动力学
+- 社会行为预测
+- 心智化网络
+- mentalizing network
+- 社会疼痛
+- Cyberball
+- 功能连接
+- 从众行为
+
+## Tools Used
+- numpy
+- scipy
+- sklearn
+- nilearn
+
+## Instructions for Agents
+1. 理解Cyberball范式：虚拟抛球任务操纵社会排斥体验
+2. 识别关键脑网络：心智化网络（mPFC, TPJ, Precuneus）和社会疼痛网络（ACC, AI）
+3. 计算功能连接差异：排斥期与包容期的连接变化
+4. 应用机器学习预测：使用全局连接预测行为一致性
+5. 注意交叉验证：严格的预测模型评估
+
+## Examples
+```python
+# 使用示例
+from social_exclusion_brain_dynamics import SocialConformityPredictor, compute_exclusion_inclusion_diff
+
+# 1. 计算连接差异
+diff_matrix, significant_connections = compute_exclusion_inclusion_diff(
+    fc_exclusion, fc_inclusion,
+    mentalizing_rois, social_pain_rois
+)
+
+# 2. 创建预测器
+predictor = SocialConformityPredictor(n_folds=10)
+
+# 3. 预测行为一致性
+predictions, correlation = predictor.fit_predict(X_features, conformity_scores)
+print(f"预测相关性: {correlation:.4f}")
+
+# 4. 特征重要性
+importance = predictor.get_feature_importance(X_features, conformity_scores)
+```
+
 ## 参考文献
 
 - Paper: arXiv:1710.00869
