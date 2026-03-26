@@ -1,7 +1,7 @@
 ---
 name: claude-code
-version: v2.1.71
-last_updated: 2026-03-08
+version: v2.1.84
+last_updated: 2026-03-27
 description: Anthropic's official AI-powered coding companion. Use when user wants to run claude-code CLI, needs help with code using Anthropic's Claude, or mentions claude-code, anthropic coding, claude cli, or claude terminal.
 ---
 
@@ -12,28 +12,28 @@ Anthropic's official AI-powered coding companion. A command-line tool that integ
 
 ## Version Status
 
-**Skill Version:** v2.1.71 (2026-03-08)
+**Skill Version:** v2.1.84 (2026-03-27)
 **Latest Release:** [Check GitHub](https://github.com/anthropics/claude-code/releases/latest)
 
 ### Version Check
 When user activates this skill, check their installed version:
 ```bash
-claude-code --version
+claude --version
 ```
 
-**If version differs from skill version (v2.1.71):**
+**If version differs from skill version (v2.1.84):**
 - ⚠️ If older: Suggest updating with `npm update -g @anthropic-ai/claude-code`
 - ℹ️ If newer: Note that skill may need updating to reflect new features
 
 ### Update Prompt Template
 ```
-⚠️ Your Claude Code version ({installed_version}) differs from this skill's documented version (v2.1.71).
+⚠️ Your Claude Code version ({installed_version}) differs from this skill's documented version (v2.1.84).
 
-{installed_version < v2.1.71}:
+{installed_version < v2.1.84}:
   建议更新: npm update -g @anthropic-ai/claude-code
-  新功能包括: /loop 命令、cron 调度、语音按键重绑定等
+  新功能包括: PowerShell Tool、Transcript Search、TaskCreated Hook 等
 
-{installed_version > v2.1.71}:
+{installed_version > v2.1.84}:
   您的版本更新，本技能文档可能需要更新以反映新功能。
 ```
 
@@ -44,6 +44,8 @@ claude-code --version
 - anthropic coding
 - claude cli
 - claude terminal
+- claude --allow-dangerously-skip-permissions
+- claude --enable-auto-mode
 
 ## Tools Used
 - exec: Run claude-code CLI
@@ -61,12 +63,12 @@ npm install -g @anthropic-ai/claude-code
 
 ### Verify Installation
 ```bash
-claude-code --version
+claude --version
 ```
 
 ### Authentication
 ```bash
-claude-code auth
+claude auth
 ```
 Follow the instructions to sign in with your Claude account.
 
@@ -76,7 +78,7 @@ Follow the instructions to sign in with your Claude account.
 cd /path/to/project
 
 # Start Claude Code
-claude-code
+claude
 ```
 
 ## Usage Patterns
@@ -265,7 +267,60 @@ export ANTHROPIC_API_KEY="your-api-key"
 
 ## Advanced Features
 
-### /loop Command (New in v2.1.71)
+### 🆕 Latest Features (v2.1.84, 2026-03-26)
+
+#### PowerShell Tool (Windows Preview)
+Windows 用户可以使用 PowerShell 工具：
+```bash
+# 在 managed-settings.json 中启用
+{
+  "tools": {
+    "bash": true,
+    "powershell": true  // 预览功能
+  }
+}
+```
+
+#### Transcript Search (历史搜索)
+在会话历史中搜索：
+- 按 `Ctrl+O` 进入 transcript mode
+- 按 `/` 开始搜索
+- 按 `n/N` 浏览匹配项
+
+#### Environment Variables (新环境变量)
+```bash
+# 自定义模型支持检测
+ANTHROPIC_DEFAULT_OPUS_MODEL_SUPPORTS=1
+ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTS=1
+ANTHROPIC_DEFAULT_HAIKU_MODEL_SUPPORTS=1
+
+# 流式空闲超时（默认 90s）
+CLAUDE_STREAM_IDLE_TIMEOUT_MS=90000
+
+# 清理子进程环境变量中的敏感信息
+CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1
+```
+
+#### New Hooks
+- **TaskCreated**: 任务创建时触发
+- **WorktreeCreate**: 支持 HTTP 类型
+- **CwdChanged**: 工作目录改变时触发
+- **FileChanged**: 文件改变时触发
+
+#### Idle-Return Prompt
+75 分钟无操作后，系统会提示使用 `/clear` 清理上下文，减少不必要的 token 重新缓存。
+
+#### Deep Links 改进
+`claude-cli://` 链接现在会在首选终端中打开，而不是随机选择。
+
+#### Managed Settings 增强
+```bash
+# drop-in 目录支持
+~/.claude/managed-settings.d/
+```
+多个团队可以独立部署策略片段，按字母顺序合并。
+
+### /loop Command (v2.1.71+)
 Run a prompt or slash command on a recurring interval:
 
 ```bash
