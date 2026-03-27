@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-108-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-109-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -96,8 +96,9 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Stochastic Synaptic Plasticity](collection/skills/stochastic-synaptic-plasticity/) | - | Stochastic models of neural synaptic plasticity with STDP rules | synaptic plasticity, STDP, plasticity kernel, Hebbian learning | ✅ |
 | [Generative Brain Dynamics Models](collection/skills/generative-brain-dynamics-models/) | - | Generative models of brain dynamics review framework | brain dynamics, generative model, neural dynamics, computational neuroscience | ✅ |
 | [Delay-Adaptive SNN Classifier](collection/skills/delay-adaptive-snn-classifier/) | - | Delay-adaptive spiking neural network classifier with conformal prediction reliability guarantees | SNN early stopping, delay-adaptive, conformal prediction | ✅ |
+| [Noisy SNN Learning](collection/skills/noisy-snn-learning/) | - | Noise-driven spiking neural network learning framework exploiting noise as computational resource | noisy SNN, noise-driven learning, NSNN, NDL | ✅ |
 
-[View all 108 skills →](./collection/skills/)
+[View all 109 skills →](./collection/skills/)
 
 ### Version Check Feature
 
