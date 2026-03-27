@@ -160,5 +160,39 @@ def cornn_train(
 - recurrent neural network
 - neural dynamics inference
 
+## Tools Used
+- numpy
+- cvxpy
+
+## Instructions for Agents
+1. 准备神经数据：确保数据格式为 (时间步, 神经元)
+2. 配置隐藏维度和正则化参数
+3. 调用 cornn_train 函数进行训练
+4. 分析返回的权重矩阵和动力学推断结果
+5. 验证训练速度和准确性
+
+## Examples
+```python
+# 使用示例
+from cornn_convex_rnn_optimization import cornn_train
+import numpy as np
+
+# 1. 生成模拟神经数据
+T, n_neurons = 1000, 50
+neural_data = np.random.randn(T, n_neurons)
+
+# 2. 训练 RNN
+result = cornn_train(
+    neural_data,
+    hidden_dim=32,
+    regularization=0.01
+)
+
+# 3. 查看结果
+print(f"递归权重: {result['W_rec'].shape}")
+print(f"输入权重: {result['W_in'].shape}")
+print(f"动力学轨迹: {result['dynamics'].shape}")
+```
+
 ## 参考文献
 - Dinc, F., et al. (2023). "Convex optimization of recurrent neural networks for rapid inference of neural dynamics" NeurIPS 2023
