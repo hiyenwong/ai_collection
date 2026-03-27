@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-110-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-111-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -98,8 +98,9 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Delay-Adaptive SNN Classifier](collection/skills/delay-adaptive-snn-classifier/) | - | Delay-adaptive spiking neural network classifier with conformal prediction reliability guarantees | SNN early stopping, delay-adaptive, conformal prediction | ✅ |
 | [Noisy SNN Learning](collection/skills/noisy-snn-learning/) | - | Noise-driven spiking neural network learning framework exploiting noise as computational resource | noisy SNN, noise-driven learning, NSNN, NDL | ✅ |
 | [Spiking Mode Neural Networks](collection/skills/spiking-mode-neural-networks/) | - | Spiking mode-based neural networks with Hopfield decomposition for reduced training cost | spiking mode, Hopfield decomposition, neural manifold | ✅ |
+| [Neural Code Dynamics Analysis](collection/skills/neural-code-dynamics-analysis/) | - | Neural code dynamics analysis framework combining computational neuroscience, machine learning and critical brain theory | neural code, critical brain, representation manifold, representational drift | ✅ |
 
-[View all 110 skills →](./collection/skills/)
+[View all 111 skills →](./collection/skills/)
 
 ### Version Check Feature
 
