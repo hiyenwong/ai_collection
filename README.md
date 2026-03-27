@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-112-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-113-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -100,8 +100,9 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Spiking Mode Neural Networks](collection/skills/spiking-mode-neural-networks/) | - | Spiking mode-based neural networks with Hopfield decomposition for reduced training cost | spiking mode, Hopfield decomposition, neural manifold | ✅ |
 | [Neural Code Dynamics Analysis](collection/skills/neural-code-dynamics-analysis/) | - | Neural code dynamics analysis framework combining computational neuroscience, machine learning and critical brain theory | neural code, critical brain, representation manifold, representational drift | ✅ |
 | [Linear Structure-Function Coupling](collection/skills/linear-structure-function-coupling/) | - | Linear generative framework for brain structure-function coupling predicting FC from SC | structure-function coupling, structural connectivity, functional connectivity, integrator hub | ✅ |
+| [STDP Bernoulli Message Passing](collection/skills/stdp-bernoulli-message-passing/) | - | STDP-driven Bernoulli message passing spiking neural networks for Bayesian inference | STDP message passing, Bayesian inference, Bernoulli message, factor graph | ✅ |
 
-[View all 112 skills →](./collection/skills/)
+[View all 113 skills →](./collection/skills/)
 
 ### Version Check Feature
 
