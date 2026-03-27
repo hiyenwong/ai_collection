@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-114-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-115-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -102,8 +102,9 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Linear Structure-Function Coupling](collection/skills/linear-structure-function-coupling/) | - | Linear generative framework for brain structure-function coupling predicting FC from SC | structure-function coupling, structural connectivity, functional connectivity, integrator hub | ✅ |
 | [STDP Bernoulli Message Passing](collection/skills/stdp-bernoulli-message-passing/) | - | STDP-driven Bernoulli message passing spiking neural networks for Bayesian inference | STDP message passing, Bayesian inference, Bernoulli message, factor graph | ✅ |
 | [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
+| [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
 
-[View all 114 skills →](./collection/skills/)
+[View all 115 skills →](./collection/skills/)
 
 ### Version Check Feature
 
