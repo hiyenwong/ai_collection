@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
-[![Agents](https://img.shields.io/badge/Agents-19-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-38-purple.svg)](./collection/skills/)
+[![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
+[![Skills](https://img.shields.io/badge/Skills-107-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -90,8 +90,13 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Chrome Extension](collection/skills/chrome-extension/) | - | Chrome extension development with Manifest V3 | chrome extension, manifest v3 | ✅ |
 | [Electron TypeScript](collection/skills/electron-typescript/) | - | Electron desktop app development with TypeScript | electron, desktop app, ipc | ✅ |
 | [Frontend Best Practices](collection/skills/frontend-best-practices/) | - | Senior front-end developer guidance for React/Next.js | frontend, react, nextjs, tailwindcss | ✅ |
+| [Neural Connectivity Matrix Viewer](collection/skills/neural-connectivity-matrix-viewer/) | - | Interactive 3D brain connectivity matrix visualization for EEG/MEG/fMRI | brain connectivity, matrix visualization, neural connectivity | ✅ |
+| [Potassium Current Gain Control](collection/skills/potassium-current-gain-control/) | - | A-type potassium current mediated neuron gain control mechanism | IA current, gain control, divisive inhibition, subtractive inhibition | ✅ |
+| [RNN Task Degradation Analysis](collection/skills/rnn-task-degradation-analysis/) | - | RNN weight initialization, solution diversity and degradation analysis | RNN initialization, degradation analysis, graceful degradation | ✅ |
+| [Stochastic Synaptic Plasticity](collection/skills/stochastic-synaptic-plasticity/) | - | Stochastic models of neural synaptic plasticity with STDP rules | synaptic plasticity, STDP, plasticity kernel, Hebbian learning | ✅ |
+| [Generative Brain Dynamics Models](collection/skills/generative-brain-dynamics-models/) | - | Generative models of brain dynamics review framework | brain dynamics, generative model, neural dynamics, computational neuroscience | ✅ |
 
-[View all 38 skills →](./collection/skills/)
+[View all 107 skills →](./collection/skills/)
 
 ### Version Check Feature
 
