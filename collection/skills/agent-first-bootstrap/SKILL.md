@@ -2,7 +2,7 @@
 
 ## Description
 
-Agent-First Project Bootstrap is a comprehensive toolkit for initializing software projects using the Agent-First methodology. Based on OpenAI's "Harness Engineering" principles, this skill guides teams through a structured interview process to establish project structure, coding conventions, and agent workflows before any code is written.
+Agent-First Project Bootstrap is a toolkit for initializing software projects using the Agent-First methodology. Based on OpenAI's "Harness Engineering" principles, this skill guides teams through structured interviews to establish project structure, coding conventions, and agent workflows before any code is written.
 
 **Key Features:**
 - Interactive 4-phase project interview
@@ -19,13 +19,11 @@ Agent-First Project Bootstrap is a comprehensive toolkit for initializing softwa
 
 ## Tools Used
 
-| Tool | Purpose |
-|------|---------|
-| `exec` | Run agent-bootstrap CLI commands |
-| `write` | Generate project files and configurations |
-| `read` | Read existing project configuration |
-| `edit` | Modify generated templates |
-| `browser` | Open documentation links |
+- exec: Run agent-bootstrap CLI commands
+- write: Generate project files and configurations
+- read: Read existing project configuration
+- edit: Modify generated templates
+- browser: Open documentation links
 
 ## Instructions for Agents
 
