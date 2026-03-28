@@ -1,5 +1,68 @@
 # Agent-First Project Bootstrap
 
+## Description
+
+Agent-First Project Bootstrap is a comprehensive toolkit for initializing software projects using the Agent-First methodology. Based on OpenAI's "Harness Engineering" principles, this skill guides teams through a structured interview process to establish project structure, coding conventions, and agent workflows before any code is written.
+
+**Key Features:**
+- Interactive 4-phase project interview
+- Automatic generation of AGENTS.md (~100 lines)
+- Support for multiple AI coding tools (Codex, Claude Code, Copilot, Qwen)
+- Repository structure and documentation scaffolding
+- CI/CD configuration generation
+
+**Benefits:**
+- 10x faster development velocity
+- Consistent agent-readable codebase
+- Self-documenting project structure
+- Reduced human bottleneck through agent-to-agent review
+
+## Tools Used
+
+| Tool | Purpose |
+|------|---------|
+| `exec` | Run agent-bootstrap CLI commands |
+| `write` | Generate project files and configurations |
+| `read` | Read existing project configuration |
+| `edit` | Modify generated templates |
+| `browser` | Open documentation links |
+
+## Instructions for Agents
+
+When using this skill, follow these steps:
+
+1. **Check if project already initialized**
+   - Look for existing AGENTS.md
+   - Check for .agent-bootstrap.json
+
+2. **Run interactive interview**
+   - Execute `agent-bootstrap init`
+   - Guide user through 4 phases
+
+3. **Generate artifacts**
+   - Create AGENTS.md (~100 lines)
+   - Create docs/ structure
+   - Create tool-specific configs (CLAUDE.md, COPILOT.md)
+
+4. **Validate structure**
+   - Run `agent-bootstrap validate`
+   - Ensure all required files exist
+
+5. **Document decisions**
+   - Save interview responses
+   - Track changes to project configuration
+
+**Workflow:**
+```
+User Request → Check Existing → Run Interview → Generate Artifacts → Validate → Confirm
+```
+
+**Constraints:**
+- Always generate AGENTS.md with less than 200 lines
+- Use pointers to docs/ instead of inline documentation
+- Include all supported tools in configuration
+- Ensure CI workflow is generated
+
 ## Overview
 
 **Source:** OpenAI "Harness Engineering" + Best Practices
