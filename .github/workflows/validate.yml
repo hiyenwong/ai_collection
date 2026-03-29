@@ -35,6 +35,7 @@ jobs:
             --exclude 'docs\.openclaw\.ai'
             --exclude 'discord\.gg'
             --exclude 'api\.star-history\.com'
+            --exclude 'openai\.com'
             '**/*.md'
           fail: true
 
