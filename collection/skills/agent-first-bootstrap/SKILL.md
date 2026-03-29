@@ -2,70 +2,19 @@
 
 ## Description
 
-Agent-First Project Bootstrap is a toolkit for initializing software projects using the Agent-First methodology. Based on OpenAI's "Harness Engineering" principles, this skill guides teams through structured interviews to establish project structure, coding conventions, and agent workflows before any code is written.
+A comprehensive toolkit for initializing projects with Agent-First methodology. Enables seamless integration with multiple AI coding tools (Codex, Claude Code, Qwen Code, GitHub Copilot, Gemini CLI) by generating structured documentation, architecture guides, and tool-specific configuration files.
 
 **Key Features:**
-- Interactive 4-phase project interview
-- Automatic generation of AGENTS.md (~100 lines)
-- Support for multiple AI coding tools (Codex, Claude Code, Copilot, Qwen)
-- Repository structure and documentation scaffolding
-- CI/CD configuration generation
-
-**Benefits:**
-- 10x faster development velocity
-- Consistent agent-readable codebase
-- Self-documenting project structure
-- Reduced human bottleneck through agent-to-agent review
-
-## Tools Used
-
-- exec: Run agent-bootstrap CLI commands
-- write: Generate project files and configurations
-- read: Read existing project configuration
-- edit: Modify generated templates
-- browser: Open documentation links
-
-## Instructions for Agents
-
-When using this skill, follow these steps:
-
-1. **Check if project already initialized**
-   - Look for existing AGENTS.md
-   - Check for .agent-bootstrap.json
-
-2. **Run interactive interview**
-   - Execute `agent-bootstrap init`
-   - Guide user through 4 phases
-
-3. **Generate artifacts**
-   - Create AGENTS.md (~100 lines)
-   - Create docs/ structure
-   - Create tool-specific configs (CLAUDE.md, COPILOT.md)
-
-4. **Validate structure**
-   - Run `agent-bootstrap validate`
-   - Ensure all required files exist
-
-5. **Document decisions**
-   - Save interview responses
-   - Track changes to project configuration
-
-**Workflow:**
-```
-User Request → Check Existing → Run Interview → Generate Artifacts → Validate → Confirm
-```
-
-**Constraints:**
-- Always generate AGENTS.md with less than 200 lines
-- Use pointers to docs/ instead of inline documentation
-- Include all supported tools in configuration
-- Ensure CI workflow is generated
+- Interactive project interview protocol
+- Automatic generation of AGENTS.md and tool-specific configs
+- Validation checklist for Agent-First readiness
+- Support for 5 AI coding tools
 
 ## Overview
 
 **Source:** OpenAI "Harness Engineering" + Best Practices
 **Purpose:** Initialize projects with Agent-First methodology
-**Supports:** Codex, Claude Code, Qwen Code, GitHub Copilot
+**Supports:** Codex, Claude Code, Qwen Code, GitHub Copilot, Gemini CLI
 
 ## Activation Keywords
 
@@ -100,6 +49,7 @@ agent-bootstrap init --tool codex
 agent-bootstrap init --tool claude
 agent-bootstrap init --tool qwen
 agent-bootstrap init --tool copilot
+agent-bootstrap init --tool gemini
 ```
 
 ---
@@ -256,6 +206,7 @@ project/
 ├── AGENTS.md              # ~100 lines, table of contents
 ├── CLAUDE.md              # Claude Code specific (optional)
 ├── COPILOT.md             # GitHub Copilot specific (optional)
+├── GEMINI.md              # Gemini CLI specific (optional)
 ├── docs/
 │   ├── design/            # Design documents
 │   │   ├── README.md      # Index of all designs
@@ -315,6 +266,69 @@ Agent-First project. See AGENTS.md for conventions.
 - Use structured logging
 - Write tests for new code
 - Keep files under 300 lines
+
+## Architecture
+See docs/architecture/README.md
+```
+
+#### Gemini CLI (GEMINI.md)
+
+```markdown
+# Gemini CLI Instructions
+
+## Project Context
+This project follows Agent-First methodology.
+Read AGENTS.md first, then docs/architecture/README.md.
+
+## ReAct Workflow
+Gemini CLI uses Reason-and-Act loop:
+1. **Reason**: Understand the task and plan approach
+2. **Act**: Execute file operations, shell commands, web fetch
+3. **Iterate**: Refine based on results
+
+## Available Tools
+- `read_file` / `write_file` - File operations
+- `run_shell_command` - Execute shell commands
+- `web_fetch` - Fetch web content
+- `google_web_search` - Search the web
+- `save_memory` - Persist context across sessions
+
+## MCP Server Integration
+Gemini CLI supports MCP servers for extended capabilities.
+Configure in `~/.gemini-cli/config.json`:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
+    }
+  }
+}
+```
+
+## Workflow
+1. Read AGENTS.md for project context
+2. Check docs/design/ for domain details
+3. Use `read_file` to understand existing code
+4. Plan changes following layer architecture
+5. Use `write_file` to implement
+6. Run tests via `run_shell_command`
+7. Iterate until tests pass
+
+## Constraints
+- Max file size: 300 lines
+- Test coverage: >80%
+- Use structured logging
+- Follow naming conventions in AGENTS.md
+
+## Extensions
+Install useful extensions:
+```bash
+gemini-cli extension install @google/gemini-cli-extension-filesystem
+gemini-cli extension install @google/gemini-cli-extension-web
+```
 
 ## Architecture
 See docs/architecture/README.md
@@ -422,6 +436,7 @@ Created:
   ✓ AGENTS.md
   ✓ CLAUDE.md
   ✓ COPILOT.md
+  ✓ GEMINI.md
   ✓ docs/design/README.md
   ✓ docs/architecture/README.md
   ✓ docs/quality/domains.md
@@ -453,7 +468,7 @@ Checking Agent-First readiness...
 ✓ docs/architecture/ exists
 ✓ docs/quality/ exists
 ✓ docs/plans/ exists
-✓ CLAUDE.md or COPILOT.md exists
+✓ CLAUDE.md, COPILOT.md, or GEMINI.md exists
 ✓ .github/workflows/ exists
 ✓ Test framework configured
 
@@ -509,6 +524,66 @@ Ensure:
 ```bash
 # Initialize with Qwen
 qwen-code "Build Users domain" --agents-md AGENTS.md
+```
+
+### Gemini CLI
+
+```bash
+# Initialize with Gemini CLI
+gemini-cli "Build the Users domain based on docs/design/users.md"
+
+# Gemini CLI ReAct workflow:
+# 1. Read AGENTS.md and GEMINI.md for context
+# 2. Use read_file to check docs/design/users.md
+# 3. Use read_file to understand existing code
+# 4. Plan approach following layer architecture
+# 5. Use write_file to implement changes
+# 6. Use run_shell_command to run tests
+# 7. Iterate until all tests pass
+
+# MCP server integration
+gemini-cli --mcp-config ~/.gemini-cli/mcp-config.json "Build Users domain"
+
+# Example ReAct session
+$ gemini-cli
+
+> Build the Users domain following AGENTS.md
+
+[Reason]: I need to read AGENTS.md first, then docs/design/users.md,
+          understand the layer architecture, and plan implementation.
+
+[Act]: read_file AGENTS.md
+       read_file docs/design/users.md
+       read_file src/users/types.ts
+
+[Reason]: I see the Users domain needs Types, Repo, and Service layers.
+          Let me start with Types layer following existing patterns.
+
+[Act]: write_file src/users/types/User.ts
+       write_file src/users/types/UserRepository.ts
+
+[Reason]: Now I need to implement the Repo layer with database operations.
+
+[Act]: write_file src/users/repo/UserRepo.ts
+
+[Reason]: Let me run tests to verify my implementation.
+
+[Act]: run_shell_command npm test -- --grep "Users"
+
+[Result]: Tests passed! Coverage: 85%
+
+[Reason]: All tests pass with >80% coverage. Let me add more tests
+          for edge cases.
+
+[Act]: write_file tests/users/UserRepo.test.ts
+
+[Reason]: Final verification.
+
+[Act]: run_shell_command npm test
+
+[Result]: All tests pass! Users domain complete.
+
+> Done! Users domain implemented following AGENTS.md architecture.
 ```
 
 ---
@@ -654,5 +729,56 @@ Types → Config → Repo → Service → Runtime → UI
 
 ---
 
+## Tools Used
+
+- `exec` - Run agent-bootstrap CLI commands
+- `write` - Create AGENTS.md, GEMINI.md, docs structure
+- `read` - Read existing project files for context
+- `edit` - Modify generated configs
+- `web_fetch` - Fetch Gemini CLI documentation
+- `web_search` - Search for AI tool best practices
+
+---
+
+## Instructions for Agents
+
+### When User Requests Bootstrap
+
+1. **Ask clarifying questions** (if not provided):
+   - What AI tool will be used? (codex, claude, copilot, gemini, qwen)
+   - What is the project domain?
+   - What are the core features?
+
+2. **Generate project structure:**
+   - Create AGENTS.md with architecture overview
+   - Create tool-specific config (CLAUDE.md, GEMINI.md, etc.)
+   - Create docs/design/, docs/architecture/, docs/quality/
+   - Create .github/workflows/ci.yml
+
+3. **Validate structure:**
+   - Run agent-bootstrap validate (if available)
+   - Check all required files exist
+
+4. **Report to user:**
+   - List created files
+   - Provide next steps
+
+### For Gemini CLI Specific
+
+1. Include GEMINI.md with ReAct workflow instructions
+2. Document MCP server integration options
+3. List available tools (read_file, write_file, run_shell_command)
+4. Provide extension installation examples
+
+### For Other Tools
+
+- Claude Code: CLAUDE.md with self-review workflow
+- GitHub Copilot: COPILOT.md with @workspace instructions
+- Codex: Direct AGENTS.md integration
+- Qwen Code: Similar to Codex approach
+
+---
+
 **Created:** 2026-03-28
+**Updated:** 2026-03-29 (Added Gemini CLI support)
 **Purpose:** Universal Agent-First project bootstrap tool
