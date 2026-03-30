@@ -1,3 +1,8 @@
+---
+name: dgcl-brain-network-construction
+description: DGCL Brain Network Construction
+---
+
 # DGCL Brain Network Construction
 
 **Source:** arXiv:2407.18329v1 (July 2024)

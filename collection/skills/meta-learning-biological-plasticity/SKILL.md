@@ -1,3 +1,8 @@
+---
+name: meta-learning-biological-plasticity
+description: Meta-Learning Biologically Plausible Plasticity Rules
+---
+
 # Meta-Learning Biologically Plausible Plasticity Rules
 
 **Source:** arXiv:2210.16414v5 (February 2023)

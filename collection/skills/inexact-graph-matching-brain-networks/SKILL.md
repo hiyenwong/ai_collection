@@ -1,3 +1,8 @@
+---
+name: inexact-graph-matching-brain-networks
+description: Inexact Graph Matching for Brain Networks
+---
+
 # Inexact Graph Matching for Brain Networks
 
 ## Description

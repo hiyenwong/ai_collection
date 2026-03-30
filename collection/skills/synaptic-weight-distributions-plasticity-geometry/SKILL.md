@@ -1,3 +1,8 @@
+---
+name: synaptic-weight-distributions-plasticity-geometry
+description: Synaptic Weight Distributions and Plasticity Geometry
+---
+
 # Synaptic Weight Distributions and Plasticity Geometry
 
 ## Description

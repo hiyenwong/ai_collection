@@ -1,3 +1,8 @@
+---
+name: neural-emulator-theory
+description: Neural Emulator Theory
+---
+
 # Neural Emulator Theory
 
 **Source:** arXiv:2405.13394v1 (May 2024)

@@ -1,3 +1,8 @@
+---
+name: seizure-suppression-hub-stimulation
+description: Seizure Suppression via Brain Network Hub Stimulation
+---
+
 # Seizure Suppression via Brain Network Hub Stimulation
 
 ## Description

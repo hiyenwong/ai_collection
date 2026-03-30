@@ -1,3 +1,8 @@
+---
+name: multi-plasticity-synergy-snn
+description: Multi-Plasticity Synergy for SNN Training
+---
+
 # Multi-Plasticity Synergy for SNN Training
 
 ## Description

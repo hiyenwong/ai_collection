@@ -1,3 +1,8 @@
+---
+name: gtas-generative-spike-train-model
+description: GTaS Generative Spike Train Model
+---
+
 # GTaS Generative Spike Train Model
 
 **Source:** arXiv:1305.4160v1 (May 2013)

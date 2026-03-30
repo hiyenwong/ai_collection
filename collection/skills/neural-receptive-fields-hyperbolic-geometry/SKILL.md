@@ -1,3 +1,8 @@
+---
+name: neural-receptive-fields-hyperbolic-geometry
+description: Neural Receptive Fields via Hyperbolic Geometry
+---
+
 # Neural Receptive Fields via Hyperbolic Geometry
 
 **Source:** arXiv:2509.25453v2 (January 2026)

@@ -1,3 +1,8 @@
+---
+name: gyralnet-subnetwork-partitioning
+description: GyralNet Subnetwork Partitioning
+---
+
 # GyralNet Subnetwork Partitioning
 
 **Source:** arXiv:2503.19823v2 (March 2025)

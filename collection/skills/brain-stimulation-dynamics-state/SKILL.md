@@ -1,3 +1,8 @@
+---
+name: brain-stimulation-dynamics-state
+description: Brain Stimulation Effects on Network Dynamics
+---
+
 # Brain Stimulation Effects on Network Dynamics
 
 **Source:** arXiv:2002.00094v2 (February 2020)

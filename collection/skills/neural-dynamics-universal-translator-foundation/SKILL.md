@@ -1,3 +1,8 @@
+---
+name: neural-dynamics-universal-translator-foundation
+description: Neural Dynamics Universal Translator
+---
+
 # Neural Dynamics Universal Translator
 
 ## Description

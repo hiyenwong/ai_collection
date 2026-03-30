@@ -1,3 +1,8 @@
+---
+name: reverse-engineering-brain-control-nodes
+description: Reverse Engineering Brain Control Nodes
+---
+
 # Reverse Engineering Brain Control Nodes
 
 **Source:** arXiv:2404.16357v1 (April 2024)

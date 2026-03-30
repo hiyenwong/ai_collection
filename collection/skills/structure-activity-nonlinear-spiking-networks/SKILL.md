@@ -1,3 +1,8 @@
+---
+name: structure-activity-nonlinear-spiking-networks
+description: Structure-Activity in Nonlinear Spiking Networks
+---
+
 # Structure-Activity in Nonlinear Spiking Networks
 
 **Source:** arXiv:1610.03828v3 (October 2016, PLoS Comp Bio 2017)

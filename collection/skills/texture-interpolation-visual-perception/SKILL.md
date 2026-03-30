@@ -1,3 +1,8 @@
+---
+name: texture-interpolation-visual-perception
+description: Texture Interpolation for Visual Perception
+---
+
 # Texture Interpolation for Visual Perception
 
 **Source:** arXiv:2006.03698v2 (NeurIPS 2020)

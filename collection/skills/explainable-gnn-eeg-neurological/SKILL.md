@@ -1,3 +1,8 @@
+---
+name: explainable-gnn-eeg-neurological
+description: Explainable GNN for EEG Neurological Evaluation
+---
+
 # Explainable GNN for EEG Neurological Evaluation
 
 **Source:** arXiv:2410.07199v1 (September 2024)

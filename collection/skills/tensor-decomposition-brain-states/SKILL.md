@@ -1,3 +1,8 @@
+---
+name: tensor-decomposition-brain-states
+description: Tensor Decomposition for Dynamic Brain Network States
+---
+
 # Tensor Decomposition for Dynamic Brain Network States
 
 **Source:** arXiv:1410.0446v1 (October 2014)

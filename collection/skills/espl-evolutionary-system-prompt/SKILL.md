@@ -1,3 +1,8 @@
+---
+name: espl-evolutionary-system-prompt
+description: E-SPL: Evolutionary System Prompt Learning
+---
+
 # E-SPL: Evolutionary System Prompt Learning
 
 **Source:** arXiv:2602.14697v3 (February 2026)

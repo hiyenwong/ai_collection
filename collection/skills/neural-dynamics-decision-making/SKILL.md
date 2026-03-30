@@ -1,3 +1,8 @@
+---
+name: neural-dynamics-decision-making
+description: Neural Dynamics Decision-Making Models
+---
+
 # Neural Dynamics Decision-Making Models
 
 ## Description
