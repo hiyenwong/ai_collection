@@ -1,3 +1,8 @@
+---
+name: agent-first-bootstrap
+description: Initialize projects with Agent-First methodology. Supports Codex, Claude Code, Qwen Code, GitHub Copilot, Gemini CLI. Generates AGENTS.md, tool-specific configs, and documentation structure.
+---
+
 # Agent-First Project Bootstrap
 
 ## Description
