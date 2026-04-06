@@ -386,6 +386,67 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
 
 ## Available Skills
 
+### Quantum Finance Skills
+
+#### Quantum Finance
+- **Location:** `collection/skills/quantum-finance/`
+- **Purpose:** Quantum computing applications in finance: portfolio optimization, option pricing, risk management
+- **Triggers:** quantum finance, quantum portfolio, quantum Monte Carlo, QAOA portfolio, 量子金融
+
+#### Quantum Portfolio Optimization
+- **Location:** `collection/skills/quantum-portfolio-optimization/`
+- **Purpose:** QAOA and quantum annealing for portfolio optimization with higher-order moments
+- **Triggers:** quantum portfolio, QAOA optimization, quantum annealing portfolio
+
+#### Quantum Finance Analysis
+- **Location:** `collection/skills/quantum-finance-analysis/`
+- **Purpose:** Comprehensive quantum finance analysis with QUBO formulation, Monte Carlo methods
+- **Triggers:** quantum finance analysis, QUBO, quantum risk metrics
+
+#### Quantum Knowledge Graph
+- **Location:** `collection/skills/quantum-knowledge-graph/`
+- **Purpose:** Quantum-enhanced knowledge graph using QNLP and quantum semantic modeling
+- **Triggers:** quantum knowledge graph, QKG, QNLP, 量子知识图谱
+
+#### Quantum Game Theory Economics
+- **Location:** `collection/skills/quantum-game-theory-economics/`
+- **Purpose:** Quantum game theory applications in economics, non-Nashian equilibria
+- **Triggers:** quantum game theory, quantum Nash, quantum auction
+
+### Neuroscience + Quantum Skills
+
+#### Brain Connectivity Analysis
+- **Location:** `collection/skills/brain-connectivity-analysis/`
+- **Purpose:** Brain network connectivity analysis using knowledge graph tools
+- **Triggers:** brain connectivity, 脑连接, brain network, 脑网络, neural connectivity
+
+#### Brain-Inspired NCA
+- **Location:** `collection/skills/brain-inspired-nca/`
+- **Purpose:** Brain-inspired Neural Cellular Automata for morphological computation
+- **Triggers:** brain NCA, neural cellular automata, bio-inspired computation
+
+#### Quantized SNN Hardware Optimization
+- **Location:** `collection/skills/quantized-snn-hardware-optimization/`
+- **Purpose:** Integer-state SNN quantization and hardware acceleration techniques
+- **Triggers:** quantized SNN, hardware SNN, neuromorphic optimization
+
+#### Quantum Neural Hybrid
+- **Location:** `collection/skills/quantum-neural-hybrid/`
+- **Purpose:** Hybrid classical-quantum neural network development
+- **Triggers:** quantum neural network, QNN, hybrid quantum-classical, VQC
+
+### Research Skills
+
+#### Research Skill Extractor
+- **Location:** `collection/skills/research-skill-extractor/`
+- **Purpose:** Meta-skill that extracts reusable patterns from research papers
+- **Triggers:** extract skill from paper, research skill mining, 论文技能提炼
+
+#### Agentic Portfolio Management
+- **Location:** `collection/skills/agentic-portfolio-management/`
+- **Purpose:** Multi-agent architecture for institutional asset management
+- **Triggers:** agentic portfolio, multi-agent investment, autonomous portfolio
+
 ### OpenCode + Oh My OpenCode
 - **Location:** `collection/skills/opencode/`
 - **Purpose:** Open source AI coding agent with multi-agent orchestration and ultrawork mode
