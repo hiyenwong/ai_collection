@@ -1,5 +1,7 @@
 ---
 name: quantum-portfolio-optimization
+version: v1.0.0
+last_updated: 2026-04-06
 description: Quantum computing methods for portfolio optimization - QAOA, quantum annealing, quantum Monte Carlo for financial risk analytics, option pricing, and derivative valuation. Use when: (1) User asks about quantum finance, quantum portfolio, quantum investment, (2) Discussing quantum algorithms in finance, (3) Analyzing quantum advantage in financial computations, (4) Implementing quantum-based risk management or derivative pricing, (5) User mentions QAOA, quantum annealing, quantum Monte Carlo in financial context.
 ---
 

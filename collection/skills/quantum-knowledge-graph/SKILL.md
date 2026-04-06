@@ -1,5 +1,7 @@
 ---
 name: quantum-knowledge-graph
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Quantum-enhanced knowledge graph integration using QNLP, quantum superposition/entanglement for semantic relationship modeling, and encoding KGs as quantum states for quantum computing tasks."
 ---
 

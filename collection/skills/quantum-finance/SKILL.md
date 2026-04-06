@@ -1,5 +1,7 @@
 ---
 name: quantum-finance
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Quantum computing applications in finance: portfolio optimization, option pricing, risk management, and financial simulations using quantum algorithms (QAOA, quantum annealing, quantum Monte Carlo, amplitude estimation). Use for quantum finance research, NISQ-era financial applications, and quantum advantage analysis in derivatives/derivatives pricing."
 ---
 

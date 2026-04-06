@@ -1,5 +1,7 @@
 ---
 name: quantum-game-theory-economics
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Quantum game theory applications in economics and decision science. Use when analyzing quantum strategies in games, Nash equilibrium in quantum games, quantum entanglement in decision theory, quantum coins, quantum auctions, quantum bargaining. Keywords: quantum game theory, quantum economics, Nash equilibrium quantum, quantum strategy, quantum decision theory, quantum games, Bell inequality economics, quantum auction, quantum bargaining, 量子博弈, 量子经济学."
 ---
 

@@ -1,5 +1,7 @@
 ---
 name: quantum-neural-hybrid
+version: v1.0.0
+last_updated: 2026-04-06
 description: Hybrid classical-quantum neural network development skill. Provides workflows for transfer learning, quantum error mitigation, and noise-resistant quantum neural networks. Use when working with quantum machine learning (QML), variational quantum circuits (VQC), quantum-classical hybrid architectures, or implementing quantum neural networks on NISQ devices. Supports PennyLane, Qiskit, and other quantum ML frameworks.
 ---
 

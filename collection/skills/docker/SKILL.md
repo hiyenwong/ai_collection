@@ -1,6 +1,8 @@
 ---
 name: docker
-description: "Docker container management skill. Build, run, manage containers, images, networks, and volumes. Use for containerization, Docker Compose, multi-container apps, and DevOps tasks. Keywords: docker, container, docker-compose, image, volume, network, containerization."
+version: v1.0.0
+last_updated: 2026-04-06
+description: Docker container management skill. Build, run, manage containers, images, networks, and volumes. Use for containerization, Docker Compose, multi-container apps, and DevOps tasks.
 ---
 
 # Docker

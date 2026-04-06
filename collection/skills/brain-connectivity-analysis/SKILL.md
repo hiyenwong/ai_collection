@@ -1,5 +1,7 @@
 ---
 name: brain-connectivity-analysis
+version: v1.0.0
+last_updated: 2026-04-06
 description: Brain network connectivity analysis using knowledge graph tools. Analyze brain connectivity patterns, neural networks, and graph-based brain models. Use when working with brain graphs, connectivity matrices, neural network analysis, or integrating neuroscience papers into knowledge graphs. Supports PageRank for important nodes, Louvain community detection, and similarity search for related research.
 ---
 

@@ -1,5 +1,7 @@
 ---
 name: quantum-finance-analysis
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Quantum computing applications in finance and economics. Use when analyzing quantum portfolio optimization, quantum Monte Carlo for risk, quantum game theory, option pricing with quantum algorithms. Keywords: quantum finance, quantum portfolio, quantum Monte Carlo, quantum risk, quantum economics, quantum game theory, QAOA portfolio, quantum annealing finance."
 ---
 

@@ -1,5 +1,7 @@
 ---
 name: agentic-portfolio-management
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Agentic AI framework for portfolio management using multi-agent collaboration, competitive method evaluation, and meta-learning. Implements the architecture from 'The Self Driving Portfolio' paper (arxiv 2604.02279). Use when: (1) Building automated investment systems, (2) Designing agent-based portfolio optimization, (3) Creating multi-agent decision frameworks, (4) Implementing adaptive financial AI systems, (5) Developing autonomous asset allocation pipelines."
 ---
 

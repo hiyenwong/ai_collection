@@ -14,7 +14,8 @@
       "Bash(agent-browser --proxy http://127.0.0.1:7890 open \"https://www.bing.com/search?q=opencode+AI+agent+news&cc=us\")",
       "Bash(agent-browser wait --load networkidle)",
       "Bash(agent-browser screenshot --annotate)",
-      "Bash(curl -x http://127.0.0.1:7890 -I https://github.com/code-yeongyu/oh-my-opencode)"
+      "Bash(curl -x http://127.0.0.1:7890 -I https://github.com/code-yeongyu/oh-my-opencode)",
+      "Bash(gh run:*)"
     ]
   }
 }

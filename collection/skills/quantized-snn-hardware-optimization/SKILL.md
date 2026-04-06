@@ -1,5 +1,7 @@
 ---
 name: quantized-snn-hardware-optimization
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Quantized Spiking Neural Network Hardware Optimization - techniques for integer-state SNNs, hardware acceleration, and energy-efficient neuromorphic computing. Activation: quantized SNN, hardware SNN, neuromorphic optimization, energy-efficient spiking network, integer-state SNN, SNN quantization."
 ---
 

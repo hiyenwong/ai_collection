@@ -1,5 +1,7 @@
 ---
 name: research-skill-extractor
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Meta-skill that extracts reusable skill patterns from research papers (arxiv), scientific workflows, and knowledge graph analysis. Activates when analyzing papers for skill patterns, creating skills from research methodologies, or mining patterns from scientific literature. Keywords: extract skill from paper, research skill mining, 论文技能提炼, paper to skill, arxiv skill extractor."
 ---
 
@@ -72,6 +74,8 @@ Generate skill template:
 ```markdown
 ---
 name: [skill-name]
+version: v1.0.0
+last_updated: 2026-04-06
 description: [What it does + when to use]
 ---
 

@@ -1,5 +1,7 @@
 ---
 name: brain-inspired-nca
+version: v1.0.0
+last_updated: 2026-04-06
 description: Brain-inspired Neural Cellular Automata for morphogenesis and motor control. Extends traditional NCA with brain-like topologies and long-range connections beyond Moore neighborhood. Use for: (1) Morphogenesis simulation and pattern formation, (2) Motor control systems, (3) Bio-inspired self-organizing systems, (4) Complex topology cellular automata research. Triggered by: BraiNCA, neural cellular automata, brain-inspired CA, morphogenesis NCA, bio-inspired self-organization.
 ---
 
