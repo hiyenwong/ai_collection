@@ -24,6 +24,23 @@ description: "AI Safety assessment framework based on International AI Safety Re
 - read: Read documentation and assessment templates
 - write: Generate safety assessment reports
 
+## Instructions for Agents
+
+### Step 1: Define Assessment Scope
+Identify the AI system type (LLM, multimodal, agent), deployment context, and stakeholder interests.
+
+### Step 2: Evaluate Capabilities
+Assess the system across five dimensions: Reasoning, Knowledge, Interaction, Generation, and Agency.
+
+### Step 3: Identify Risks
+Map potential harms from misuse, malfunction, systemic risks, and autonomy risks with severity ratings.
+
+### Step 4: Review Safety Measures
+Evaluate pre-deployment, deployment, and post-deployment safety layers for completeness.
+
+### Step 5: Generate Report
+Compile findings into a comprehensive safety assessment report with recommendations.
+
 ---
 
 ## Assessment Framework Structure
