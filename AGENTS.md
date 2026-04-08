@@ -260,6 +260,14 @@ sessions_spawn(
 - **Tools:** web_search, web_fetch, memory, read, write
 - **Output:** Comprehensive research reports with sources
 
+### Tech Researcher
+- **Location:** `collection/agents/tech-researcher/`
+- **Purpose:** 科技趋势追踪与AI前沿研究
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** web_search, web_fetch, read, write
+- **Focus:** AI大模型、神经科学、算法架构、科技创业
+- **Output:** 前沿论文解读、技术趋势分析、可执行学习建议
+
 ### Neuroscientist
 - **Location:** `collection/agents/neuroscientist/`
 - **Purpose:** Neuroscience research synthesis, neural mechanism analysis, and experiment design support
