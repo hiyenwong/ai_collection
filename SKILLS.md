@@ -615,3 +615,175 @@ See: [skills-collection](https://github.com/your-org/skills-collection) reposito
   - 多代理协调、记忆管理、架构设计等分类
   - 相关基准和资源索引
   - 最新趋势分析
+
+### Agent Memory Forgetting
+- **Location:** `collection/skills/agent-memory-forgetting/`
+- **Purpose:** 自适应记忆遗忘框架，解决长时程对话代理的记忆累积和假记忆传播问题
+- **Triggers:** agent memory, memory forgetting, long-horizon agent, 记忆遗忘
+- **Tools:** read, write
+- **Key Features:**
+  - 相关性导向评分（recency/frequency/semantic）
+  - 有界优化防止记忆膨胀
+  - 结构化遗忘机制
+  - 来源：arXiv:2604.02280
+
+### Agentic Control Memory (SCRAT)
+- **Location:** `collection/skills/agentic-control-memory/`
+- **Purpose:** SCRAT框架：耦合控制、结构化记忆和可验证行动的代理AI设计
+- **Triggers:** SCRAT, agentic control, structured memory, verifiable action
+- **Tools:** read, write
+- **Key Features:**
+  - 层级部分观测控制模型
+  - 结构化情景记忆
+  - 观察者-信念状态
+  - 来源：arXiv:2604.03201
+
+### Agentic Portfolio
+- **Location:** `collection/skills/agentic-portfolio/`
+- **Purpose:** 多代理架构设计，包含专业化角色、批评投票机制和元代理自改进
+- **Triggers:** agentic portfolio, multi-agent architecture, meta-agent, 投资组合代理
+- **Tools:** read, write, exec
+- **Key Features:**
+  - 50+专业化代理角色
+  - 批评投票周期
+  - 元代理自改进循环
+  - 政策文档治理
+  - 来源：arXiv:2604.02279
+
+### Chart Visual Reasoning (Chart-RL)
+- **Location:** `collection/skills/chart-visual-reasoning/`
+- **Purpose:** RL增强VLM图表理解，4B模型超越8B基座模型
+- **Triggers:** chart reasoning, chart-RL, VLM chart, 图表理解
+- **Tools:** read, write
+- **Key Features:**
+  - 策略优化强化学习
+  - LoRA参数高效微调
+  - 单GPU配置可行
+  - 推理延迟降低3.4倍
+  - 来源：arXiv:2604.03157 (KDD 2026)
+
+### Efficient Reasoning BCR
+- **Location:** `collection/skills/efficient-reasoning-bcr/`
+- **Purpose:** Batched Contextual Reinforcement实现高效推理，减少Token消耗
+- **Triggers:** efficient reasoning, BCR, token reduction, reasoning optimization
+- **Tools:** read, write
+- **Key Features:**
+  - 任务缩放定律发现
+  - 免费午餐现象（N=1时减少15.8%-62.6%Token）
+  - 隐式Token预算约束
+  - 避免显式长度惩罚的优化崩溃
+  - 来源：arXiv:2604.02322
+
+### Emotion Steering Vectors
+- **Location:** `collection/skills/emotion-steering-vectors/`
+- **Purpose:** LLM情绪控制：Valence-Arousal子空间发现和行为调控
+- **Triggers:** emotion steering, VA subspace, emotion control, 情绪控制
+- **Tools:** read, write
+- **Key Features:**
+  - VA子空间圆几何结构
+  - 双向控制拒绝/迎合行为
+  - 跨架构通用性
+  - 来源：arXiv:2604.03147
+
+### Hierarchical Agent Search
+- **Location:** `collection/skills/hierarchical-agent-search/`
+- **Purpose:** 层级并行代理框架用于Web信息检索，3-5倍加速
+- **Triggers:** hierarchical search, parallel agent, web information seeking
+- **Tools:** web_search, web_fetch, read, write
+- **Key Features:**
+  - Host-Manager-Worker三层架构
+  - 上下文隔离防止饱和
+  - 错误遏制停止级联传播
+  - 开源实现：github.com/agent-on-the-fly/InfoSeeker
+  - 来源：arXiv:2604.02971
+
+### LLM Confidence BAS
+- **Location:** `collection/skills/llm-confidence-bas/`
+- **Purpose:** Behavioral Alignment Score：决策理论置信度评估指标
+- **Triggers:** BAS, confidence evaluation, behavioral alignment, 置信度评估
+- **Tools:** read, write
+- **Key Features:**
+  - 弃权感知决策度量
+  - 不对称惩罚（优先避免过度自信错误）
+  - 关联校准与决策最优行为
+  - 来源：arXiv:2604.03216
+
+### LLM Interaction Awareness
+- **Location:** `collection/skills/llm-interaction-awareness/`
+- **Purpose:** 用户轮生成探针：测量LLM交互意识超越任务准确率
+- **Triggers:** interaction awareness, user-turn generation, conversation quality
+- **Tools:** read, write
+- **Key Features:**
+  - 交互意识与任务准确率解耦
+  - 潜在意识通过温度采样揭示
+  - 后训练可针对交互意识优化
+  - 来源：arXiv:2604.02315
+
+### Membership Inference Transfer
+- **Location:** `collection/skills/membership-inference-transfer/`
+- **Purpose:** LT-MIA：跨架构可迁移成员推断攻击
+- **Triggers:** membership inference, MIA, privacy attack, 隐私攻击
+- **Tools:** read, write
+- **Key Features:**
+  - 记忆化不变签名检测
+  - 跨Transformer/Mamba/RWKV架构迁移
+  - 自然语言训练迁移到代码域
+  - 开源：github.com/JetBrains-Research/learned-mia
+  - 来源：arXiv:2604.03199
+
+### Multi-Agent Formalization
+- **Location:** `collection/skills/multi-agent-formalization/`
+- **Purpose:** 多代理系统自动教科书形式化，500+页代数组合学→Lean
+- **Triggers:** textbook formalization, Lean, multi-agent collaboration
+- **Tools:** read, write, exec
+- **Key Features:**
+  - 30K Claude代理并行协作
+  - 一周完成130K行Lean代码
+  - 推理成本媲美专家薪资
+  - 来源：arXiv:2604.03071
+
+### Multi-Agent Recommenders
+- **Location:** `collection/skills/multi-agent-recommenders/`
+- **Purpose:** MAVRS多代理视频推荐系统架构和演进
+- **Triggers:** MAVRS, video recommender, multi-agent recommendation
+- **Tools:** read, write
+- **Key Features:**
+  - Video Understanding/Reasoning/Memory/Feedback/Explainability代理
+  - 协作模式分类（短视频/长视频/通用）
+  - 开放挑战：可扩展性/多模态/激励对齐
+  - 来源：arXiv:2604.02211 (WSDM 2026)
+
+### RAG Contextual Enrichment
+- **Location:** `collection/skills/rag-contextual-enrichment/`
+- **Purpose:** LLM上下文增强技术谱系：ICL→RAG→GraphRAG→CausalRAG
+- **Triggers:** RAG, GraphRAG, CausalRAG, contextual enrichment
+- **Tools:** read, write, web_fetch
+- **Key Features:**
+  - 增强谱系分类（结构化程度递增）
+  - 部署决策框架
+  - 因果结构检索
+  - 来源：arXiv:2604.03174
+
+### Reflective Context Learning
+- **Location:** `collection/skills/reflective-context-learning/`
+- **Purpose:** RCL统一框架：上下文空间的优化原语
+- **Triggers:** RCL, reflective learning, context optimization, 上下文优化
+- **Tools:** read, write
+- **Key Features:**
+  - Reflection + Mutation两阶段
+  - 批处理/信用分配/辅助损失优化原语
+  - 失败回放/分组rollout方差减少
+  - 开源：github.com/nvassilyev/RCL
+  - 来源：arXiv:2604.03189 (COLM under review)
+
+### Role-Based LLM Framework
+- **Location:** `collection/skills/role-based-llm-framework/`
+- **Purpose:** 角色基LLM框架：专业化角色减少幻觉提升域任务准确性
+- **Triggers:** role-based LLM, structured extraction, domain specialization
+- **Tools:** read, write
+- **Key Features:**
+  - Analyst/Specialist/Expert角色分工
+  - 结构化域知识嵌入提示
+  - 工作流模仿专家分析模式
+  - 透明可解释输出
+  - 来源：arXiv:2604.01529
