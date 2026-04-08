@@ -142,6 +142,51 @@ Extracted skill components:
 - **Workflow**: Define topology → Parameter encoding → Training
 - **Domain**: Computational physics, quantum ML
 
+## Instructions for Agents
+
+### Step 1: Select Candidate Papers
+Query kg.db for high-PageRank papers; filter for recent submissions with novel methodology keywords.
+
+### Step 2: Analyze for Patterns
+For each paper extract: core method name, novelty vs prior work, applicability scope, implementation feasibility, and tool dependencies.
+
+### Step 3: Generate Skill Template
+Create skill template with: name, description, activation keywords, tools used, workflow steps, examples.
+
+### Step 4: Validate and Confirm
+Check reusability, actionability, non-duplication; present to user for confirmation before creating files.
+
+### Step 5: Save Skill
+Write SKILL.md to `collection/skills/<skill-name>/`; update SKILLS.md index; link paper to skill in kg.db.
+
+## Examples
+
+### Example 1: Extract Skill from Methodology Paper
+
+```
+User: "Extract a skill from this quantum finance paper"
+
+Agent:
+1. Read paper abstract and methodology sections
+2. Identify core pattern: QUBO portfolio optimization
+3. Generate skill template with activation keywords
+4. Present to user for review
+5. Create SKILL.md file on confirmation
+```
+
+### Example 2: Batch Pattern Mining
+
+```
+User: "Mine skill patterns from top 5 papers in the knowledge graph"
+
+Agent:
+1. Run PageRank on kg.db to find top 5 papers
+2. Analyze each for extractable patterns
+3. Identify viable skill candidates
+4. Present candidates with skill templates
+5. Create approved skills on user confirmation
+```
+
 ## Integration with Knowledge Graph
 
 Store extracted patterns in kg.db:

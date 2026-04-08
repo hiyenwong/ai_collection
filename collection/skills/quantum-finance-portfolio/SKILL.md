@@ -132,7 +132,7 @@ sqlite3 kg.db "SELECT name, properties FROM kg_entities WHERE entity_type='paper
 - arxiv 2502.02125: QRNG VaR/CVaR
 - Springer 10.1186/s40854-025-00751-6: 量子金融综述
 
-## Example Usage
+## Examples
 
 ### Example 1: 资产聚类
 ```

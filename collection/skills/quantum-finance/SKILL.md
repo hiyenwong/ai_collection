@@ -105,7 +105,7 @@ For detailed algorithm specifications, see:
 - [QMC.md](references/QMC.md) - Quantum Monte Carlo methods
 - [GAMES.md](references/GAMES.md) - Quantum game theory foundations
 
-## Example Usage
+## Examples
 
 ### Example 1: Portfolio Optimization Analysis
 ```

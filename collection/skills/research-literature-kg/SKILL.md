@@ -172,6 +172,52 @@ CREATE TABLE kg_relations (
 - Check vector dimensions match (384)
 - Re-generate mismatched vectors
 
+## Instructions for Agents
+
+### Step 1: Define Research Scope
+Identify primary topic, secondary topic, and search keywords from user request.
+
+### Step 2: Collect Literature
+Search arxiv API with category and keyword filters; parse title, authors, abstract, arxiv_id.
+
+### Step 3: Build Knowledge Graph
+Initialize kg.db if needed; add papers as entities; store JSON metadata.
+
+### Step 4: Generate Embeddings and Analyze
+Generate 384-dim embeddings via `all-MiniLM-L6-v2`; run PageRank and Louvain algorithms.
+
+### Step 5: Extract Patterns and Report
+Use skill-extractor to identify reusable patterns; output Research Literature KG Report.
+
+## Examples
+
+### Example 1: Build Brain Research KG
+
+```
+User: "Build a knowledge graph from recent brain connectivity papers"
+
+Agent:
+1. Search arxiv: cat:q-bio.NC AND all:brain connectivity, max 10 results
+2. Add papers to kg.db with metadata
+3. Generate vector embeddings
+4. Run PageRank to find most influential papers
+5. Run Louvain to detect research clusters
+6. Output report with top papers and patterns
+```
+
+### Example 2: Semantic Search in Research
+
+```
+User: "Find quantum finance papers related to portfolio optimization"
+
+Agent:
+1. Initialize search query: "quantum portfolio optimization"
+2. Fetch papers from arxiv quant-ph category
+3. Add to kg.db and generate embeddings
+4. Run similarity search for related papers
+5. Report top matches with similarity scores
+```
+
 ## Related Skills
 
 - `arxiv-search`: Paper search details

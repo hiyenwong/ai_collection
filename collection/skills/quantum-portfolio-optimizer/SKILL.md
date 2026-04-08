@@ -143,6 +143,23 @@ def hybrid_portfolio_optimization(returns, covariance, params):
 - quantum annealing portfolio
 - higher-order portfolio
 
+## Instructions for Agents
+
+### Step 1: Formulate Problem as QUBO
+Convert portfolio optimization to binary variables; encode returns and covariance as QUBO matrix.
+
+### Step 2: Select Algorithm
+Choose based on problem size: QAOA (small), Quantum Annealing/D-Wave (medium-large), Hybrid VQE (practical).
+
+### Step 3: Handle Constraints
+Add cardinality, turnover, and budget constraints as penalty terms in the QUBO formulation.
+
+### Step 4: Execute and Post-Process
+Run quantum optimization, decode binary solution to asset weights, validate constraint compliance.
+
+### Step 5: Report Results
+Return selected assets, allocation weights, expected return, risk, and Sharpe ratio.
+
 ## Error Handling
 
 ### QUBO Conversion Issues

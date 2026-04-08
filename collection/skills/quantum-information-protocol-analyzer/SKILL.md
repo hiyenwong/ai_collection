@@ -272,6 +272,46 @@ INSERT INTO kg_vectors (entity_id, embedding)
 VALUES (protocol_id, embedding_blob)
 ```
 
+## Instructions for Agents
+
+### Step 1: Identify Protocol Type
+Read the paper and classify: QKD, Secret Sharing, Digital Signature, Teleportation, or Error Correction.
+
+### Step 2: Extract Protocol Components
+For each protocol extract: input requirements, process steps, output metrics, security assumptions, and implementation challenges.
+
+### Step 3: Analyze Security
+Document information-theoretic security bounds, composability properties, and attack resistance (individual, collective, coherent).
+
+### Step 4: Generate Analysis Report
+Output a structured report using the Output Format template above.
+
+## Examples
+
+### Example 1: QKD Paper Analysis
+
+```
+User: "Analyze this BB84 decoy-state QKD paper"
+
+Agent:
+1. Identify protocol type: Prepare-and-Measure QKD with decoy states
+2. Extract: qubit encoding, decoy pulse rates, key rate formula
+3. Analyze security: photon-number-splitting attack resistance
+4. Report: key rate ~10 Mbps, distance up to 200 km, QBER threshold 11%
+```
+
+### Example 2: Secret Sharing Protocol
+
+```
+User: "Analyze quantum secret sharing scheme for 3-party access structure"
+
+Agent:
+1. Classify as Quantum Secret Sharing protocol
+2. Extract: entangled state preparation, distribution, reconstruction procedure
+3. Verify: unauthorized subsets get zero information
+4. Output protocol specification and security analysis
+```
+
 ## Best Practices
 
 1. **Prioritize security analysis**: Quantum protocols are primarily security tools

@@ -22,6 +22,13 @@ Skill for analyzing quantum computing applications in financial problems.
 - 量子投资组合
 - 量子蒙特卡洛
 
+## Tools Used
+
+- `exec`: Run Python quantum finance analysis scripts
+- `read`: Load research papers and knowledge graph data
+- `web_search`: Search arxiv for quantum finance papers
+- `sqlite3`: Query kg.db for related papers and patterns
+
 ## Key Research Areas
 
 ### 1. Portfolio Optimization
@@ -180,6 +187,32 @@ FROM kg_relations r
 JOIN kg_entities e1 ON r.source_id=e1.id 
 JOIN kg_entities e2 ON r.target_id=e2.id 
 WHERE e1.name LIKE '%quantum%finance%'
+```
+
+## Examples
+
+### Example 1: Analyze Portfolio Optimization Paper
+
+```
+User: "Analyze quantum portfolio optimization methods for a 30-asset portfolio"
+
+Agent:
+1. Identify method: QAOA with higher-order moments
+2. Extract QUBO formulation from paper
+3. Assess NISQ feasibility (~30-60 qubits needed)
+4. Report implementation outline using Qiskit/Cirq
+```
+
+### Example 2: Compare Quantum Risk Methods
+
+```
+User: "Compare quantum Monte Carlo vs classical VaR estimation"
+
+Agent:
+1. Search kg.db for quantum Monte Carlo risk papers
+2. Extract quadratic speedup claims and resource estimates
+3. Compare with classical baseline performance
+4. Report quantum advantage threshold conditions
 ```
 
 ## Related Skills

@@ -193,6 +193,34 @@ From recent papers (2604.01722v1, 2604.02234v1):
 - **skill-creator**: Create specialized quantum skills
 - **arxiv-search**: Search quantum papers on arxiv
 
+## Examples
+
+### Example 1: QKD Protocol with Encoding Conversion
+
+```
+User: "Design a QKD protocol that supports both polarization and time-bin encoding"
+
+Agent:
+1. Identify heterogeneous network topology
+2. Select polarization for short-distance segments, time-bin for long-distance
+3. Define encoding conversion mechanism at intermediate nodes
+4. Specify security verification and error threshold parameters
+5. Output complete protocol design document
+```
+
+### Example 2: Topology-Hiding Protocol
+
+```
+User: "设计一个拓扑隐藏的量子密钥分发方案"
+
+Agent:
+1. Identify topology privacy requirement
+2. Apply graph-signature zero-knowledge proof pattern
+3. Design multi-path certification without topology revelation
+4. Specify quantum network configuration
+5. Validate security properties and feasibility
+```
+
 ## Notes
 
 - Quantum protocols require both theoretical analysis and practical feasibility

@@ -333,6 +333,35 @@ class MetaAgent:
 - **quantum-portfolio-optimization**: Quantum algorithms for portfolio problems
 - **stock-analysis**: Technical analysis of individual stocks
 
+## Examples
+
+### Example 1: Full Pipeline Execution
+
+```
+User: "Run a complete agentic portfolio management cycle for our equity fund"
+
+Agent:
+1. Load IPS constraints (risk tolerance, asset limits)
+2. Initialize 50 specialized agents
+3. Generate CMA from macro and factor agents
+4. Run 20+ competing construction methods
+5. Execute critique and voting cycle
+6. Return final allocation with compliance report
+```
+
+### Example 2: Meta-Learning Update
+
+```
+User: "Update portfolio agents based on last quarter's performance"
+
+Agent:
+1. Compare forecast returns vs realized returns
+2. Identify underperforming agents
+3. Update code and prompts for weak agents
+4. Research agent proposes new construction methods
+5. Report on improvements made
+```
+
 ## Notes
 
 - This framework is for institutional-scale portfolio management

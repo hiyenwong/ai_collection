@@ -130,15 +130,47 @@ def encode_kg_to_quantum_state(kg_triples):
 - [IBM Quantum](https://quantum-computing.ibm.com/)
 - [Neo4j LLM KG Builder](https://neo4j.com/labs/genaiecosystem/)
 
-## Example Usage
+## Instructions for Agents
+
+### Step 1: Construct Knowledge Graph
+Extract entities and relations from the paper/corpus and store in kg.db using sqlite3 or kg_tool.
+
+### Step 2: Encode to Quantum State
+Convert KG triples to numerical representation, then encode as quantum state vectors using classical preprocessing.
+
+### Step 3: Apply QNLP Enhancement
+Use quantum superposition to represent multi-meaning entities; encode strong correlations as quantum entanglement.
+
+### Step 4: Run Quantum Processing
+Execute quantum circuit on IBM Quantum simulator or real hardware; extract semantic analysis results.
+
+### Step 5: Report Findings
+Summarize semantic relationships, clusters, and quantum-enhanced insights.
+
+## Examples
+
+### Example 1: Paper Semantic Analysis
 
 ```
 User: "用量子知识图谱分析这篇论文的语义关系"
 
-Agent Process:
+Agent:
 1. 提取论文实体和关系
 2. 存储到 kg.db
 3. 使用 QNLP 生成量子语义嵌入
 4. 编码为量子态
-5. 分析量子叠加态语义关系
+5. 分析量子叠加态语义关系，输出报告
+```
+
+### Example 2: Financial Knowledge Graph
+
+```
+User: "Build a quantum knowledge graph for quantum finance papers"
+
+Agent:
+1. Collect quantum finance papers from kg.db
+2. Extract entities: algorithms, assets, methods
+3. Encode KG as quantum state for similarity queries
+4. Use QNLP to find semantically related concepts
+5. Visualize quantum-enhanced knowledge structure
 ```

@@ -1,85 +1,120 @@
 ---
 name: quantum-algorithm-framework-designer
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: "Design and implement quantum algorithm frameworks for specific problem domains. Structure quantum circuits, define hybrid classical-quantum pipelines, and create reusable quantum algorithm templates. Use when: (1) Designing new quantum algorithms for optimization or simulation, (2) Creating framework scaffolding for QAOA/VQE/QMC applications, (3) Structuring hybrid quantum-classical pipelines, (4) Implementing quantum subroutines for specific problem types."
 ---
 
 # Quantum Algorithm Framework Designer
 
-## Overview
+Design and implement quantum algorithm frameworks for specific problem domains.
 
-[TODO: 1-2 sentences explaining what this skill enables]
+## Activation Keywords
 
-## Structuring This Skill
+- quantum algorithm framework
+- quantum circuit design
+- QAOA framework
+- VQE framework
+- quantum algorithm implementation
+- hybrid quantum pipeline
+- quantum subroutine design
+- 量子算法框架
+- 量子电路设计
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Tools Used
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" → "Reading" → "Creating" → "Editing"
-- Structure: ## Overview → ## Workflow Decision Tree → ## Step 1 → ## Step 2...
+- `exec`: Run Qiskit/PennyLane quantum circuit scripts
+- `read`: Load problem specifications and quantum library docs
+- `write`: Generate quantum algorithm framework code and documentation
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" → "Merge PDFs" → "Split PDFs" → "Extract Text"
-- Structure: ## Overview → ## Quick Start → ## Task Category 1 → ## Task Category 2...
+## Core Framework Patterns
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" → "Colors" → "Typography" → "Features"
-- Structure: ## Overview → ## Guidelines → ## Specifications → ## Usage...
+### Pattern 1: QAOA Framework
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" → numbered capability list
-- Structure: ## Overview → ## Core Capabilities → ### 1. Feature → ### 2. Feature...
+```python
+def qaoa_framework(problem_hamiltonian, n_layers=3):
+    """
+    QAOA framework structure:
+    1. Problem encoding: H_problem = QUBO/Ising
+    2. Mixer Hamiltonian: H_mixer = Σ X_i
+    3. Circuit: alternating problem/mixer unitaries
+    4. Optimization: minimize <ψ|H_problem|ψ>
+    """
+    circuit = QuantumCircuit(n_qubits)
+    # Initial state: equal superposition
+    circuit.h(range(n_qubits))
+    # QAOA layers
+    for _ in range(n_layers):
+        apply_problem_unitary(circuit, gamma)
+        apply_mixer_unitary(circuit, beta)
+    return circuit
+```
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+### Pattern 2: VQE Framework
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+```python
+def vqe_framework(hamiltonian, ansatz_type="hardware_efficient"):
+    """
+    VQE framework structure:
+    1. Ansatz: parameterized quantum circuit
+    2. Measurement: expectation value of H
+    3. Classical optimization: minimize energy
+    """
+    ansatz = create_ansatz(ansatz_type, n_qubits, n_layers)
+    optimizer = SPSA(maxiter=300)
+    vqe = VQE(ansatz, optimizer, quantum_instance)
+    return vqe.compute_minimum_eigenvalue(hamiltonian)
+```
 
-## [TODO: Replace with the first main section based on chosen structure]
+### Pattern 3: Hybrid Classical-Quantum Pipeline
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+```
+Input Data → Classical Preprocessing → Quantum Encoding
+→ Quantum Circuit Execution → Measurement → Classical Postprocessing → Output
+```
+
+## Instructions for Agents
+
+### Step 1: Identify Problem Type
+Classify the target problem: combinatorial optimization (→ QAOA), eigenvalue problem (→ VQE), sampling (→ QMC), or simulation.
+
+### Step 2: Select Algorithm Framework
+Choose appropriate framework and determine: qubit requirements, circuit depth, classical optimizer, error mitigation needs.
+
+### Step 3: Design Circuit Architecture
+Define: encoding layer, variational/problem layers, measurement operators, and entanglement structure.
+
+### Step 4: Implement Framework
+Generate Python code using Qiskit/PennyLane; include parameter initialization, circuit construction, and optimization loop.
+
+### Step 5: Validate Framework
+Test on small instances with known solutions; benchmark vs classical baselines; report resource requirements.
+
+## Examples
+
+### Example 1: QAOA for Graph Coloring
+
+```
+User: "Design a QAOA framework for graph 3-coloring"
+
+Agent:
+1. Encode 3-coloring as QUBO: penalty for same-color adjacent nodes
+2. Define QAOA circuit: problem unitary from QUBO, mixer from X gates
+3. Implement 3-layer QAOA with COBYLA optimizer
+4. Test on 5-node graph; report approximation ratio
+```
+
+### Example 2: VQE Molecular Simulation
+
+```
+User: "Create a VQE framework for H2 molecule ground state energy"
+
+Agent:
+1. Map H2 Hamiltonian to Pauli operators (Jordan-Wigner)
+2. Design hardware-efficient ansatz (4 qubits, 2 layers)
+3. Set up SPSA optimizer with 300 iterations
+4. Run VQE and report ground state energy vs FCI reference
+```
 
 ## Resources
 
-This skill includes example resource directories that demonstrate how to organize different types of bundled resources:
-
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
-
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
-
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
-
-**Note:** Scripts may be executed without loading into context, but can still be read by Claude for patching or environment adjustments.
-
-### references/
-Documentation and reference material intended to be loaded into context to inform Claude's process and thinking.
-
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
-
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Claude should reference while working.
-
-### assets/
-Files not intended to be loaded into context, but rather used within the output Claude produces.
-
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
-
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
-
----
-
-**Any unneeded directories can be deleted.** Not every skill requires all three types of resources.
+- `references/`: Quantum algorithm implementation guides
+- Related: `quantum-portfolio-optimizer`, `quantum-neural-hybrid`

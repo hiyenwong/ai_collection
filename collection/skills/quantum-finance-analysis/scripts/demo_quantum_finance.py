@@ -44,15 +44,9 @@ class HybridQuantumPortfolio:
             最优权重分配
         """
         
-        # Step 1: 经典预处理
-        n_assets = len(assets)
-        target_return = np.mean(returns)
-        
         # Step 2: QUBO 形式化（如使用量子）
         if self.use_quantum:
-            qubo_matrix = self._formulate_qubo(
-                returns, cov_matrix, risk_tolerance
-            )
+            self._formulate_qubo(returns, cov_matrix, risk_tolerance)
             # 这里应调用量子求解器（QAOA/VQE）
             # weights = self._quantum_solve(qubo_matrix)
             weights = self._classical_solve(returns, cov_matrix)
@@ -79,8 +73,6 @@ class HybridQuantumPortfolio:
         
         Q = Σ (variance) - μ (return) + λ (constraints)
         """
-        n = len(returns)
-        
         # QUBO 矩阵构建
         Q = risk_tol * cov_matrix - (1 - risk_tol) * np.diag(returns)
         

@@ -7,6 +7,17 @@ description: Brain-inspired Neural Cellular Automata for morphogenesis and motor
 
 # Brain-Inspired Neural Cellular Automata (BraiNCA)
 
+## Activation Keywords
+
+- BraiNCA
+- neural cellular automata
+- brain-inspired CA
+- morphogenesis NCA
+- bio-inspired self-organization
+- brain-inspired cellular automata
+- 脑启发细胞自动机
+- long-range NCA connections
+
 ## Overview
 
 BraiNCA extends traditional Neural Cellular Automata by incorporating brain-like topologies with long-range connections and complex network structures, moving beyond simple Moore neighborhoods. This enables morphogenesis simulation, motor control, and self-organizing systems that better mimic biological neural development processes.
@@ -154,6 +165,24 @@ def motor_control_simulation(target_pattern):
 - `exec`: Run Python scripts for NCA simulation
 - `write`: Create simulation scripts and results
 - `read`: Load topology configurations and parameters
+
+## Instructions for Agents
+
+### Step 1: Define Topology
+Create brain-inspired network: add local Moore-neighborhood connections, then add sparse long-range connections (1% probability) mimicking white matter tracts.
+
+### Step 2: Configure Update Rules
+Define `brain_nca_update()` with weighted combination of local (0.8) and long-range (0.2) inputs, applying sigmoid activation.
+
+### Step 3: Select Application
+- Morphogenesis: initialize pattern, run 100 steps, visualize formation
+- Motor control: define target pattern, train weights iteratively
+
+### Step 4: Run and Evaluate
+Execute simulation steps; monitor convergence; visualize state at regular intervals.
+
+### Step 5: Report Results
+Summarize topology metrics, convergence behavior, and comparison with standard NCA.
 
 ## Examples
 

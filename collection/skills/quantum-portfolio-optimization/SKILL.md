@@ -7,6 +7,45 @@ description: Quantum computing methods for portfolio optimization - QAOA, quantu
 
 # Quantum Portfolio Optimization
 
+## Activation Keywords
+
+- quantum portfolio optimization
+- quantum finance
+- quantum investment
+- QAOA portfolio
+- quantum annealing finance
+- quantum Monte Carlo risk
+- quantum option pricing
+- 量子投资组合优化
+- 量子金融
+- quantum derivative pricing
+
+## Tools Used
+
+- `exec`: Run Qiskit/D-Wave quantum optimization scripts
+- `read`: Load financial data and quantum circuit configurations
+- `web_search`: Search arxiv for latest quantum finance papers
+- `sqlite3`: Query kg.db for related papers
+
+## Instructions for Agents
+
+### Step 1: Identify Financial Problem
+Classify the problem: portfolio optimization, VaR estimation, option pricing, or risk management.
+
+### Step 2: Select Quantum Method
+- Portfolio (small): QAOA on gate-based quantum computer
+- Portfolio (large): Quantum Annealing (D-Wave)
+- Risk/derivatives: Quantum Monte Carlo (amplitude estimation)
+
+### Step 3: Formulate as QUBO (if applicable)
+Encode: `min Σ(-μᵢxᵢ) + λΣ(σᵢⱼxᵢxⱼ)` with constraint penalty terms.
+
+### Step 4: Execute and Post-Process
+Run quantum algorithm; decode binary solution; validate constraints; refine with classical optimizer.
+
+### Step 5: Report Results
+Compare quantum vs classical performance; report quantum advantage threshold; provide implementation guidance.
+
 ## Overview
 
 Quantum computing approaches for financial portfolio optimization, risk analytics, and derivative pricing. Leverages quantum algorithms (QAOA, quantum annealing, quantum Monte Carlo) to achieve speedups over classical methods.
@@ -151,21 +190,32 @@ Key papers in knowledge graph (kg.db):
 4. **Validate**: Test results against classical baselines
 5. **Scale gradually**: Begin with small portfolios, expand
 
-## Example Workflow
+## Examples
 
-```markdown
-User: "Use quantum computing to optimize a portfolio with 50 assets, 
-      considering skewness and kurtosis"
+### Example 1: Higher-Order Portfolio Optimization
 
-Agent Process:
-1. Identify method: QAOA with higher-order moments
-2. Encode problem:
-   - Hamiltonian: H = Σ(wi·ri) - λ·Σ(wi²·σ²) + γ·Σ(wi³·s) - δ·Σ(wi⁴·k)
-   - Constraints: budget (Σwi=1), cardinality (max 20 assets)
-3. Implement QAOA circuit (p=3 layers)
-4. Execute on quantum simulator/hardware
-5. Decode optimal weights
-6. Report performance metrics
+```
+User: "Use quantum computing to optimize a portfolio with 50 assets considering skewness and kurtosis"
+
+Agent:
+1. Identify method: QAOA with higher-order moments (arxiv:2509.01496)
+2. Formulate QUBO with skewness/kurtosis terms
+3. Implement QAOA circuit (p=3 layers, ~50-60 qubits)
+4. Execute on quantum simulator
+5. Decode optimal weights; report expected return and Sharpe ratio
+```
+
+### Example 2: Quantum Monte Carlo VaR
+
+```
+User: "Estimate portfolio VaR using quantum Monte Carlo"
+
+Agent:
+1. Encode portfolio loss distribution as quantum state
+2. Apply quantum amplitude estimation (quadratic speedup)
+3. Extract 95% VaR and CVaR estimates
+4. Compare with classical Monte Carlo baseline
+5. Report resource requirements for quantum advantage
 ```
 
 ## Related Skills
