@@ -604,3 +604,14 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
 ---
 
 See: [skills-collection](https://github.com/your-org/skills-collection) repository for more example skills.
+
+### arXiv Paper Tracker
+- **Location:** `collection/skills/arxiv-paper-tracker/`
+- **Purpose:** 追踪和引用 AI Agent 系统相关的高价值 arXiv 论文，包含多代理协调、记忆管理、代理架构和评估方法等
+- **Triggers:** arxiv paper, agent paper, multi-agent coordination, memory management, agent architecture, evaluation methods
+- **Tools:** web_search, web_fetch, read
+- **Key Features:**
+  - 高价值论文快速参考（utility >= 0.85）
+  - 多代理协调、记忆管理、架构设计等分类
+  - 相关基准和资源索引
+  - 最新趋势分析
