@@ -24,6 +24,23 @@ Discover unexpected research connections across disciplines using knowledge grap
 - `read`: Load skill references
 - `write`: Save analysis results
 
+## Instructions for Agents
+
+### Step 1: Run PageRank Analysis
+Execute `kg_tool pagerank kg.db` to identify the most influential research entities.
+
+### Step 2: Detect Communities
+Run `kg_tool louvain kg.db` to find research clusters and communities.
+
+### Step 3: Find Cross-Domain Connections
+Use `kg_tool similar kg.db <entity_id> 5` to discover high-similarity connections across domains.
+
+### Step 4: Analyze Patterns
+Compare results from different algorithms to identify interdisciplinary bridges.
+
+### Step 5: Report Findings
+Summarize unexpected connections and suggest interdisciplinary research opportunities.
+
 ## Quick Workflow
 
 ### 1. Identify Important Nodes

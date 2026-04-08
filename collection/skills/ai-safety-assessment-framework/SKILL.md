@@ -161,6 +161,54 @@ For detailed frameworks and templates, see:
 
 ---
 
+## Examples
+
+### Example 1: LLM Safety Assessment
+
+```
+User: "Assess the safety of our customer service chatbot"
+
+Agent:
+1. Define scope: Customer-facing LLM for support tickets
+2. Capability profile:
+   - Reasoning: High (multi-turn dialogue)
+   - Knowledge: Medium (product-specific)
+   - Interaction: High (direct user contact)
+   - Generation: Medium (text responses)
+   - Agency: Low (no tool access)
+3. Risk matrix:
+   - Misinformation: Medium likelihood, Medium severity
+   - Data leakage: Low likelihood, High severity
+   - Social manipulation: Low likelihood, Medium severity
+4. Safety gap analysis:
+   - Current: Output filtering, rate limiting
+   - Gap: No adversarial testing
+   - Recommendation: Add red-teaming protocol
+5. Generate report with findings and recommendations
+```
+
+### Example 2: AI Agent Risk Evaluation
+
+```
+User: "Evaluate risks for our new coding assistant with file system access"
+
+Agent:
+1. Define scope: AI agent with file read/write capabilities
+2. Capability profile:
+   - Agency: High (file system access)
+   - Interaction: High (IDE integration)
+   - Reasoning: High (code analysis)
+3. Risk matrix:
+   - Unauthorized file access: Medium likelihood, High severity
+   - Code injection: Medium likelihood, Critical severity
+   - Data exfiltration: Low likelihood, Critical severity
+4. Safety measures needed:
+   - Sandboxed execution environment
+   - Permission-based access controls
+   - Audit logging for all file operations
+5. Generate comprehensive safety assessment
+```
+
 ## Resources
 
 - [International AI Safety Report 2026](https://internationalaisafetyreport.org)

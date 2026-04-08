@@ -147,6 +147,51 @@ Benefits:
 - `write`: Document physics-guided architectures
 - `edit`: Modify attention configurations
 
+## Instructions for Agents
+
+### Step 1: Identify Physical Process
+Determine the physical dynamics (diffusion, wave propagation, etc.) relevant to the sequence data.
+
+### Step 2: Design Physics Bias
+Create heat-kernel or physics-derived bias matrix encoding the physical process.
+
+### Step 3: Modify Attention
+Augment standard attention with physics bias: `softmax(QK^T + H) V`.
+
+### Step 4: Validate Physics
+Ensure the model satisfies physical constraints (conservation, causality, stability).
+
+### Step 5: Train and Deploy
+Train with physics-augmented loss, deploy for scientific prediction tasks.
+
+## Examples
+
+### Example 1: Heat Equation Prediction
+
+```
+User: "Build a Transformer to predict heat diffusion"
+
+Agent:
+1. Identify: Heat equation dynamics ∂u/∂t = α∇²u
+2. Design: Heat-kernel attention bias H = exp(-||x_i - x_j||²/4τ)
+3. Modify: Attention = softmax(QK^T + H) V
+4. Validate: Check energy conservation and stability
+5. Train: On temperature field sequences
+```
+
+### Example 2: Wave Propagation Modeling
+
+```
+User: "Model wave propagation with physics-aware Transformer"
+
+Agent:
+1. Identify: Wave equation dynamics
+2. Design: Wave-kernel attention with causality mask
+3. Modify: Implement physics-guided attention layers
+4. Validate: Ensure wave speed and dispersion match physics
+5. Deploy: For seismic or acoustic wave prediction
+```
+
 ## Activation Keywords
 
 - physics-guided transformer

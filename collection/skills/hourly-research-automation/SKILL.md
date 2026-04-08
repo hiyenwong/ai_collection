@@ -34,6 +34,61 @@ This skill orchestrates the entire hourly research process:
 - **kg_tool**: Graph algorithms (PageRank, Louvain, similarity search)
 - **cron**: Schedule hourly execution
 
+## Instructions for Agents
+
+### Step 1: Determine Today's Topic
+Run `weekly_topics.py` to get the current day's research theme and quantum keywords.
+
+### Step 2: Search ArXiv
+Execute `arxiv_search.py` with topic-specific keywords plus quantum mechanics terms.
+
+### Step 3: Import Papers
+Run `import_papers_to_kg.py` to add papers to the knowledge graph with embeddings.
+
+### Step 4: Analyze Graph
+Use kg_tool commands (stats, pagerank, louvain) to analyze the knowledge graph structure.
+
+### Step 5: Extract Patterns
+Identify recurring research patterns from graph analysis results.
+
+### Step 6: Create Skills
+Use skill-extractor and skill-creator to generate new skills from discovered patterns.
+
+### Step 7: Record Results
+Update memory file with execution details, papers imported, and skills created.
+
+## Examples
+
+### Example 1: Monday Neuroscience Research
+
+```
+Cron triggers hourly research task:
+
+Agent:
+1. Run weekly_topics.py → "今日主题: 神经科学"
+2. Search arxiv for "brain network, neural dynamics, quantum mechanics"
+3. Import 5 papers to kg.db
+4. Run pagerank → Entity 343 most influential
+5. Run louvain → Identify 3 research clusters
+6. Extract pattern: "spiking neural networks + brain connectivity"
+7. Create skill: brain-connectivity-analysis
+8. Update memory file with results
+```
+
+### Example 2: Manual Research Execution
+
+```
+User: "Run research task now for medicine topic"
+
+Agent:
+1. Override weekday → Medicine
+2. Search arxiv for "medical imaging, drug discovery, quantum"
+3. Import papers and generate embeddings
+4. Analyze with PageRank and Louvain
+5. Report top papers and research clusters
+6. Suggest skill creation opportunities
+```
+
 ## Research Workflow
 
 ### Step 1: Get Today's Topic

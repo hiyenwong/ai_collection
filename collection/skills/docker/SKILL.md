@@ -28,6 +28,27 @@ Docker container management for building, running, and managing containers.
 - `write` - Create Dockerfiles, compose files
 - `edit` - Modify Docker configurations
 
+## Instructions for Agents
+
+### Step 1: Analyze Requirements
+Understand what the user needs: containerize an app, run a service, debug a container, or manage Docker resources.
+
+### Step 2: Check Environment
+Verify Docker is installed and running: `docker --version` and `docker ps`.
+
+### Step 3: Select Approach
+Choose the appropriate method:
+- Single container: Use `docker run` with proper flags
+- Multi-container: Create `docker-compose.yml`
+- Build custom image: Write Dockerfile
+- Debug: Use `docker logs`, `docker exec`, or `docker inspect`
+
+### Step 4: Execute Commands
+Run Docker commands with proper error handling and user confirmation for destructive operations.
+
+### Step 5: Verify and Report
+Confirm the container/service is running correctly and report status to user.
+
 ## Workflow Decision Tree
 
 ```

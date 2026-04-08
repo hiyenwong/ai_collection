@@ -26,6 +26,52 @@ Research assistant for quantum computing applications in machine learning and fi
 - `web_search`: Search for quantum ML papers
 - `sqlite3`: Query knowledge graph (kg.db)
 
+## Instructions for Agents
+
+### Step 1: Search Quantum ML Literature
+Use arxiv API to find recent papers on quantum machine learning topics.
+
+### Step 2: Import to Knowledge Graph
+Add papers to kg.db with proper entity types and relationships.
+
+### Step 3: Analyze Graph Structure
+Run PageRank and Louvain to identify important topics and research clusters.
+
+### Step 4: Extract Patterns
+Identify recurring concepts, algorithms, and applications from the analysis.
+
+### Step 5: Generate Insights
+Summarize findings and suggest new research directions or skill creation opportunities.
+
+## Examples
+
+### Example 1: Quantum Portfolio Optimization Research
+
+```
+User: "Research quantum methods for portfolio optimization"
+
+Agent:
+1. Search arxiv for "quantum portfolio optimization"
+2. Import 10 relevant papers to kg.db
+3. Run pagerank → QAOA papers most influential
+4. Run louvain → 3 research clusters identified
+5. Extract pattern: QAOA + VQE hybrid approaches trending
+6. Suggest: Create quantum-portfolio-optimizer skill
+```
+
+### Example 2: Quantum Neural Network Survey
+
+```
+User: "Survey quantum neural network architectures"
+
+Agent:
+1. Search arxiv for "quantum neural network"
+2. Import papers from 2024-2025
+3. Analyze with kg_tool: find top authors, key techniques
+4. Identify patterns: variational circuits, quantum kernels
+5. Report: Current state and future directions
+```
+
 ## Workflow
 
 ### Step 1: Search Literature
