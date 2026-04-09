@@ -103,7 +103,7 @@ def _find_section_position(content: str, section_name: str) -> Optional[int]:
     pattern = re.compile(rf"^{re.escape(section_name)}\s*$", re.MULTILINE)
     match = pattern.search(content)
     if match:
-        return content[:match.start()].count("\n") + 1
+        return content[: match.start()].count("\n") + 1
     return None
 
 
@@ -164,8 +164,6 @@ def fix_skill(skill_path: Path) -> bool:
         return False
 
     # Add missing sections
-    # Find a good position to insert (after the main content, before Resources/Notes/etc.)
-    insert_positions = []
 
     # Determine insertion order and positions
     # We want to insert sections in the correct order
@@ -181,7 +179,9 @@ def fix_skill(skill_path: Path) -> bool:
             sections_to_add.append(f"\n{section}\n{section_content}")
 
     # Find insertion point: after existing sections but before Resources/Notes
-    optional_sections_pattern = r"\n(## Resources|## Notes|## References|## Related Skills|## Limitations)"
+    optional_sections_pattern = (
+        r"\n(## Resources|## Notes|## References|## Related Skills|## Limitations)"
+    )
     optional_match = re.search(optional_sections_pattern, body)
 
     if optional_match:
@@ -264,7 +264,7 @@ def main():
         else:
             print(f"⚠️  Skill directory not found: {skill_name}")
 
-    print(f"\n{'='*50}")
+    print(f"\n{'=' * 50}")
     print(f"Summary: Fixed {fixed_count} skills, skipped {skipped_count}")
 
     # Re-run validation
