@@ -121,3 +121,27 @@ P_unfolded[i,j,k]  # Full detail
 - arXiv:2604.06895v1 - "Markov Chains and Random Walks with Memory on Hypergraphs: A Tensor-Based Approach"
 - Carletti et al. (2020) - Random walks on hypergraphs
 - Battiston et al. (2020) - Networks beyond pairwise interactions
+
+## Activation Keywords
+
+- hypergraph
+- Markov chains
+- memory
+- tensor
+- higher-order networks
+- complex systems
+
+## Tools Used
+
+- read
+- write
+- exec
+
+## Instructions for Agents
+
+Use this skill for modeling complex systems with group interactions and memory effects. Apply the tensor-based higher-order Markov chain framework for hypergraph analysis.
+
+## Examples
+
+User: Help me with Hypergraph Markov Memory
+Agent: [Activates hypergraph-markov-memory skill and follows the instructions above]

@@ -253,3 +253,26 @@ process action:list
 ---
 
 *Related: coding-agent skill, acp-router skill*
+
+## Activation Keywords
+
+- codex session
+- openai codex
+- codex manager
+- codex CLI
+- session monitor
+
+## Tools Used
+
+- exec
+- read
+- write
+
+## Instructions for Agents
+
+Use this skill to manage and monitor OpenAI Codex CLI sessions. Read session logs in JSONL format, track session state, and provide status summaries.
+
+## Examples
+
+User: Help me with Codex Session Manager
+Agent: [Activates codex-session-manager skill and follows the instructions above]

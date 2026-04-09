@@ -196,3 +196,26 @@ ML manages complexity by:
 4. Trading exactness for tractability
 
 The key insight: ML works when complex systems have simpler statistical structure than their full dynamics.
+
+## Activation Keywords
+
+- complexity theory
+- ML foundations
+- computational limits
+- approximation theory
+- learning theory
+- algorithmic complexity
+
+## Tools Used
+
+- read
+- write
+
+## Instructions for Agents
+
+Use this skill for analyzing machine learning models through a computational complexity lens. Apply dimensionality reduction, pattern abstraction, and approximation frameworks.
+
+## Examples
+
+User: Help me with Ml Complexity Management
+Agent: [Activates ml-complexity-management skill and follows the instructions above]

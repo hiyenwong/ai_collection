@@ -279,3 +279,27 @@ Multiprotocol IoT synchronization:
 5. On-demand sensing paradigm
 
 Key insight: **Cross-protocol synchronization enables coordinated IoT systems with optimized power consumption.**
+
+## Activation Keywords
+
+- IoT time sync
+- heterogeneous protocols
+- BLE Zigbee WiFi synchronization
+- distributed timing
+- sensor networks
+- multiprotocol
+
+## Tools Used
+
+- exec
+- read
+- write
+
+## Instructions for Agents
+
+Use this skill for IoT time synchronization across heterogeneous wireless protocols (BLE, Zigbee, WiFi, LoRa). Apply the master-slave hierarchical sync framework to coordinate timing.
+
+## Examples
+
+User: Help me with Iot Multiprotocol Sync
+Agent: [Activates iot-multiprotocol-sync skill and follows the instructions above]

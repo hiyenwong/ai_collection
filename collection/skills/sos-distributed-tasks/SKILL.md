@@ -106,3 +106,27 @@ t>0: ✗ iff graph disconnected
 - arXiv:2604.06920v1 - "On the Decidability of Distributed Tasks with Output Sets under Asynchrony and Any Number of Crashes"
 - FLP (1985) - Consensus impossibility
 - Borowsky & Gafni (1993) - Set agreement
+
+## Activation Keywords
+
+- distributed tasks
+- decidability
+- crash failures
+- consensus
+- set agreement
+- asynchronous
+- SOS tasks
+
+## Tools Used
+
+- read
+- write
+
+## Instructions for Agents
+
+Use this skill for analyzing distributed task solvability in asynchronous systems with crash failures. Apply decidability theory to determine if a given SOS task can be solved under specific fault models.
+
+## Examples
+
+User: Help me with Sos Distributed Tasks
+Agent: [Activates sos-distributed-tasks skill and follows the instructions above]

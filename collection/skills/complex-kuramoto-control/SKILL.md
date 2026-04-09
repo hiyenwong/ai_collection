@@ -95,3 +95,27 @@ dz/dt = iωz - K*(z_j - z_i)  # Now design control for z
 - arXiv:2604.07249v1 - "Complex-Valued Kuramoto Networks: A Unified Control-Theoretic Framework"
 - Kuramoto, Y. (1984) - Original model
 - Acebrón et al. (2005) - Kuramoto review
+
+## Activation Keywords
+
+- Kuramoto
+- synchronization
+- complex-valued control
+- oscillator networks
+- phase locking
+- sliding-mode control
+
+## Tools Used
+
+- read
+- write
+- exec
+
+## Instructions for Agents
+
+Use this skill when designing synchronization controllers for coupled oscillator networks. Apply the complex-valued Kuramoto extension and sliding-mode control framework to achieve phase locking.
+
+## Examples
+
+User: Help me with Complex Kuramoto Control
+Agent: [Activates complex-kuramoto-control skill and follows the instructions above]

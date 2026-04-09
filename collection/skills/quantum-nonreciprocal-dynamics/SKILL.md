@@ -238,3 +238,25 @@ Interaction-mediated non-reciprocal dynamics:
 5. Enables directional quantum state transfer and synchronization
 
 Key insight: **Non-reciprocity is a natural consequence of dense packing, not an engineered property.**
+
+## Activation Keywords
+
+- quantum reservoir engineering
+- open quantum systems
+- non-reciprocal dynamics
+- quantum synchronization
+- dissipative coupling
+
+## Tools Used
+
+- read
+- write
+
+## Instructions for Agents
+
+Use this skill for analyzing non-reciprocal dynamics in open quantum systems. Apply the reservoir engineering paradigm and exactly solvable models for quantum synchronization design.
+
+## Examples
+
+User: Help me with Quantum Nonreciprocal Dynamics
+Agent: [Activates quantum-nonreciprocal-dynamics skill and follows the instructions above]

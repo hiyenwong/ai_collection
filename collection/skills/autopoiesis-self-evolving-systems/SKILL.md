@@ -82,3 +82,26 @@ When designing self-evolving systems:
 
 - arXiv:2604.07144v1 - "Autopoiesis: A Self-Evolving System Paradigm for LLM Serving Under Runtime Dynamics"
 - Original biological concept: Maturana & Varela (1973)
+
+## Activation Keywords
+
+- autopoiesis
+- self-evolving
+- policy evolution
+- online synthesis
+- runtime adaptation
+- living code
+
+## Tools Used
+
+- read
+- write
+
+## Instructions for Agents
+
+Use this skill to design self-evolving systems that continuously rewrite their own policies. Follow the autopoiesis paradigm: observe runtime dynamics → synthesize updated policy with LLM → deploy new policy → repeat.
+
+## Examples
+
+User: Help me with Autopoiesis Self Evolving Systems
+Agent: [Activates autopoiesis-self-evolving-systems skill and follows the instructions above]
