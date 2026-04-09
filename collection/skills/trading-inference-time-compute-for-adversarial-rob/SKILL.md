@@ -1,0 +1,65 @@
+# trading-inference-time-compute-for-adversarial-rob - Trading inference-time compute for adversarial robustness
+
+## Description
+
+Trading Inference-Time Compute for Adversarial Robustness
+
+**Source:** https://openai.com/index/trading-inference-time-compute-for-adversarial-robustness
+**Date:** Wed, 22 Jan 2025 10:00:00 GMT
+**Category:** OpenAI Research
+
+## Activation Keywords
+
+- trading inference-time compute for adversarial robustness
+- openai trading-inference-time-compute-for-adversarial-rob
+- trading inference time compute for adversarial rob
+
+## Core Concepts
+
+### Key Points
+
+- Extract from OpenAI research paper
+- See original paper for detailed methodology
+
+## Step-by-Step Instructions
+
+### 1. Background
+
+```python
+# Research background
+# See original paper: https://openai.com/index/trading-inference-time-compute-for-adversarial-robustness
+```
+
+### 2. Implementation
+
+```python
+# Implementation details
+# Refer to OpenAI's official implementation
+```
+
+## Tools Used
+
+- `read` - Read research papers
+- `web_fetch` - Fetch online resources
+- `exec` - Run implementation code
+
+## Example Use Cases
+
+### 1. Basic Usage
+
+```python
+# Example usage based on research
+```
+
+## Related Skills
+
+- Other OpenAI research skills
+
+## References
+
+- https://openai.com/index/trading-inference-time-compute-for-adversarial-robustness
+
+---
+
+**Created:** 2026-03-29 14:25
+**Author:** Aerial (from OpenAI Research)
