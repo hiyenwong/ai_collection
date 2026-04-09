@@ -17,7 +17,8 @@
       "Bash(curl -x http://127.0.0.1:7890 -I https://github.com/code-yeongyu/oh-my-opencode)",
       "Bash(gh run:*)",
       "Bash(python scripts/validate_skill.py)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(ruff format:*)"
     ]
   }
 }
