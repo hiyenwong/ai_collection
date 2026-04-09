@@ -174,17 +174,61 @@ sessions_spawn(
 
 ## Session JSONL Format
 
-Each line is a JSON object:
+Codex uses a structured event format:
 
 ```json
 {
-  "role": "user|assistant|system",
-  "content": "...",
-  "session_id": "uuid",
-  "timestamp": "ISO8601",
-  "tool_calls": [...],  // if any
-  "tool_results": [...]  // if any
+  "timestamp": "2026-04-07T14:14:09.273Z",
+  "type": "session_meta|event_msg|response_item",
+  "payload": {
+    // type-specific content
+  }
 }
+```
+
+### Event Types
+
+| Type | Description | Key Payload Fields |
+|------|-------------|---------------------|
+| `session_meta` | Session initialization | `id` (session UUID), `cwd`, `cli_version`, `model_provider`, `git.branch`, `git.commit_hash` |
+| `event_msg` | Events like task_started | `type` (event type), `turn_id` |
+| `response_item` | Messages | `type` ("message"), `role` ("developer"|"user"|"assistant"), `content` (array of input_text) |
+
+### Extract Session Info
+
+```python
+import json
+from pathlib import Path
+
+def parse_codex_session(jsonl_path):
+    """Parse Codex session and extract key info."""
+    with open(jsonl_path) as f:
+        lines = [json.loads(line) for line in f]
+    
+    # Find session_meta
+    meta = next((l for l in lines if l.get('type') == 'session_meta'), None)
+    
+    # Find all response_items
+    messages = [l for l in lines if l.get('type') == 'response_item']
+    
+    # Count by role
+    roles = {}
+    for msg in messages:
+        role = msg.get('payload', {}).get('role', 'unknown')
+        roles[role] = roles.get(role, 0) + 1
+    
+    return {
+        'session_id': meta.get('payload', {}).get('id', 'unknown') if meta else 'unknown',
+        'cwd': meta.get('payload', {}).get('cwd', 'unknown') if meta else 'unknown',
+        'branch': meta.get('payload', {}).get('git', {}).get('branch', 'unknown') if meta else 'unknown',
+        'cli_version': meta.get('payload', {}).get('cli_version', 'unknown') if meta else 'unknown',
+        'total_events': len(lines),
+        'message_count': len(messages),
+        'roles': roles,
+        'filename': jsonl_path.name,
+        'date': jsonl_path.name.split('T')[0].replace('rollout-', ''),
+        'time': jsonl_path.name.split('T')[1].split('-')[0] if 'T' in jsonl_path.name else ''
+    }
 ```
 
 ## Monitoring Running Sessions
