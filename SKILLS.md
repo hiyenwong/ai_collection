@@ -787,3 +787,27 @@ See: [skills-collection](https://github.com/your-org/skills-collection) reposito
   - 工作流模仿专家分析模式
   - 透明可解释输出
   - 来源：arXiv:2604.01529
+
+---
+
+## Complete Skill Index
+
+以上仅列出部分精选 skills。本项目共包含 **551 个 skills**，按 **14 个分类**组织。
+
+完整分类索引请查看 [INDEX.md](./INDEX.md)，由 `scripts/scan_skills.py` 自动生成。
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| Neuroscience | 237 | 脑网络、SNN、突触可塑性、EEG/fMRI |
+| AI Reasoning & Training | 119 | LLM 推理、RL、扩散模型、缩放定律 |
+| AI Agent Systems | 41 | 多代理、自我进化、代理组合 |
+| AI Safety & Evaluation | 29 | 红队、对抗攻击、公平性、偏见 |
+| General AI | 29 | 机器人、探索、元学习 |
+| OpenAI Research | 28 | GPT 系列、Dota 2、DALL-E |
+| Coding & Development | 23 | opencode, claude-code, copilot-cli |
+| Quantum Computing | 11 | 量子金融、知识图谱、神经混合 |
+| Finance | 10 | akshare, stock-analysis |
+| Data Analysis | 8 | 知识图谱、RAG、GNN |
+| Meta Skills | 8 | 技能提炼、ICE 回顾、记忆检索 |
+| Domain Tools | 6 | 咨询报告、冥想、iamb |
+| Systems Engineering | 2 | IoT 多协议同步 |

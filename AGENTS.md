@@ -304,6 +304,48 @@ sessions_spawn(
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
 - **Tools:** read, write
 
+### Algorithm Engineer
+- **Location:** `collection/agents/algorithm-engineer/`
+- **Purpose:** Algorithm design, implementation, optimization, and machine learning model development
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** exec, read, write, edit, process
+
+### Data Engineer
+- **Location:** `collection/agents/data-engineer/`
+- **Purpose:** Data pipelines, ETL processes, database optimization, and data warehouse architecture
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** exec, read, write
+
+### ML Engineer
+- **Location:** `collection/agents/ml-engineer/`
+- **Purpose:** Model development, training, optimization, and deployment for production ML systems
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** exec, read, write, edit
+
+### Physicist
+- **Location:** `collection/agents/physicist/`
+- **Purpose:** Physics modeling, quantum computing, condensed matter physics, and theoretical physics
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** read, write, exec
+
+### Prompt Engineer
+- **Location:** `collection/agents/prompt-engineer/`
+- **Purpose:** Prompt design, optimization, and evaluation using CoT, ToT, Few-shot techniques
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** read, write, exec
+
+### Quantitative Analyst
+- **Location:** `collection/agents/quantitative-analyst/`
+- **Purpose:** Quantitative trading strategies, financial modeling, risk management, and derivatives pricing
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** exec (Python), read, write
+
+### Security Engineer
+- **Location:** `collection/agents/security-engineer/`
+- **Purpose:** Cybersecurity, penetration testing, security auditing, and vulnerability analysis
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Tools:** exec, read, write
+
 ### Philosopher
 - **Location:** `collection/agents/philosopher/`
 - **Purpose:** Conceptual analysis, argument mapping, and ethical reasoning

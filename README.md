@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
-[![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-115-purple.svg)](./collection/skills/)
+[![Agents](https://img.shields.io/badge/Agents-26-blue.svg)](./collection/agents/)
+[![Skills](https://img.shields.io/badge/Skills-551-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -53,8 +53,8 @@ OpenClaw is a flexible AI agent framework that supports:
 | Agent | Function | Model | Status |
 |-------|----------|-------|--------|
 | [Fullstack Engineer](collection/agents/fullstack-engineer/) | Full-stack engineer for modern web development | Opus 4.5 / Sonnet 4.6 | ✅ |
-| [Stock Analyst](collection/agents/stock-analyst/) | Stock analyst for financial data analysis | Sonnet 4.5 | ✅ |
 | [Tech Co-Founder](collection/agents/tech-cofounder/) | Technical co-founder for product building | Sonnet 4.5 | ✅ |
+| [Stock Analyst](collection/agents/stock-analyst/) | Stock analyst for financial data analysis | Sonnet 4.5 | ✅ |
 | [Research Agent](collection/agents/research-agent/) | Research specialist for deep investigation | Opus 4.5 | ✅ |
 | [Algorithm Engineer](collection/agents/algorithm-engineer/) | Algorithm engineer for design and optimization | Opus 4.5 | ✅ |
 | [Applied Scientist](collection/agents/applied-scientist/) | Applied scientist for scientific principles | Opus 4.5 | ✅ |
@@ -62,49 +62,46 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Computational Scientist](collection/agents/computational-scientist/) | Computational scientist for numerical modeling | Opus 4.5 | ✅ |
 | [Mathematician](collection/agents/mathematician/) | Mathematician for formal reasoning and proofs | Opus 4.5 | ✅ |
 | [Neuroscientist](collection/agents/neuroscientist/) | Neuroscientist for neural mechanisms | Opus 4.5 | ✅ |
+| [Physicist](collection/agents/physicist/) | Physicist for physics research and modeling | Opus 4.5 | ✅ |
 | [Philosopher](collection/agents/philosopher/) | Philosopher for conceptual analysis | Opus 4.5 | ✅ |
 | [Psychologist](collection/agents/psychologist/) | Psychologist for cognitive behavior analysis | Opus 4.5 | ✅ |
 | [Statistician](collection/agents/statistician/) | Statistician for statistical inference | Opus 4.5 | ✅ |
+| [Data Engineer](collection/agents/data-engineer/) | Data engineer for pipelines and infrastructure | Opus 4.5 | ✅ |
+| [ML Engineer](collection/agents/ml-engineer/) | ML engineer for model development | Opus 4.5 | ✅ |
+| [Quantitative Analyst](collection/agents/quantitative-analyst/) | Quantitative analyst for financial modeling | Opus 4.5 | ✅ |
+| [Tech Researcher](collection/agents/tech-researcher/) | Tech researcher for AI frontiers | Opus 4.5 | ✅ |
+| [Security Engineer](collection/agents/security-engineer/) | Security engineer for system security | Opus 4.5 | ✅ |
+| [Prompt Engineer](collection/agents/prompt-engineer/) | Prompt engineer for LLM optimization | Opus 4.5 | ✅ |
+| [Computer Network Scientist](collection/agents/computer-network-scientist/) | Computer network architecture analysis | Opus 4.5 | ✅ |
+| [Economist](collection/agents/economist/) | Economic analysis and policy evaluation | Opus 4.5 | ✅ |
+| [Geneticist](collection/agents/geneticist/) | Genetic mechanism interpretation | Opus 4.5 | ✅ |
+| [Linguist](collection/agents/linguist/) | Language structure analysis | Opus 4.5 | ✅ |
+| [Logician](collection/agents/logician/) | Formal logic reasoning | Opus 4.5 | ✅ |
+| [Population Dynamics Scientist](collection/agents/population-dynamics-scientist/) | Population dynamics modeling | Opus 4.5 | ✅ |
 
-[View all 19 agents →](./collection/agents/)
+[View all 26 agents →](./collection/agents/)
 
 ## Skills
 
-| Skill | Version | Function | Triggers | Status |
-|-------|---------|----------|----------|--------|
-| [Claude Code](collection/skills/claude-code/) | v2.1.71 | Anthropic's official coding companion with /loop, cron scheduling | claude-code | ✅ |
-| [OpenCode](collection/skills/opencode/) | v1.2.21 | Open source AI coding agent with ultrawork mode | opencode, ultrawork | ✅ |
-| [Copilot CLI](collection/skills/copilot-cli/) | v1.0.2 🎉 | GitHub Copilot CLI terminal agent, GA release! | copilot cli, github copilot | ✅ |
-| [OpenSpec](collection/skills/openspec/) | - | Specification-driven development with Gherkin syntax | openspec, gherkin | ✅ |
-| [AkShare](collection/skills/akshare/) | - | Chinese financial data interface | stock data, akshare | ✅ |
-| [Stock Analysis](collection/skills/stock-analysis/) | - | Stock technical analysis with indicators | stock analysis, technical indicators | ✅ |
-| [Consulting Report Search](collection/skills/consulting-report-search/) | - | Consulting and market research report search with iResearch-first ranking and QuestMobile secondary coverage | consulting report search, iresearch report, market research report | ✅ |
-| [Skill Extractor](collection/skills/skill-extractor/) | - | Extract reusable skills from conversations | skill extractor | ✅ |
-| [Security Guardrails](collection/skills/security-guardrails/) | - | Security protection against sensitive data leakage | Default for all agents | ✅ |
-| [ICE Review](collection/skills/ice-review/) | - | Cross-task knowledge extraction with ICE strategy | ICE review, task review | ✅ |
-| [Memory Retrieval](collection/skills/memory-retrieval/) | - | Two-stage memory retrieval with utility filtering | memory retrieval | ✅ |
-| [Self-Challenge](collection/skills/self-challenge/) | - | Dual-agent self-challenge for capability expansion | self challenge | ✅ |
-| [Cursor Rules Importer](collection/skills/cursor-rules-importer/) | - | Import cursor.directory rules into AgentSkills | cursor rules import, .cursorrules | ✅ |
-| [React Components](collection/skills/react-components/) | - | React component architecture and best practices | react component, react hooks | ✅ |
-| [Accessibility WCAG](collection/skills/accessibility-wcag/) | - | WCAG 2.2 accessibility compliance and patterns | accessibility, wcag, a11y, aria | ✅ |
-| [Chrome Extension](collection/skills/chrome-extension/) | - | Chrome extension development with Manifest V3 | chrome extension, manifest v3 | ✅ |
-| [Electron TypeScript](collection/skills/electron-typescript/) | - | Electron desktop app development with TypeScript | electron, desktop app, ipc | ✅ |
-| [Frontend Best Practices](collection/skills/frontend-best-practices/) | - | Senior front-end developer guidance for React/Next.js | frontend, react, nextjs, tailwindcss | ✅ |
-| [Neural Connectivity Matrix Viewer](collection/skills/neural-connectivity-matrix-viewer/) | - | Interactive 3D brain connectivity matrix visualization for EEG/MEG/fMRI | brain connectivity, matrix visualization, neural connectivity | ✅ |
-| [Potassium Current Gain Control](collection/skills/potassium-current-gain-control/) | - | A-type potassium current mediated neuron gain control mechanism | IA current, gain control, divisive inhibition, subtractive inhibition | ✅ |
-| [RNN Task Degradation Analysis](collection/skills/rnn-task-degradation-analysis/) | - | RNN weight initialization, solution diversity and degradation analysis | RNN initialization, degradation analysis, graceful degradation | ✅ |
-| [Stochastic Synaptic Plasticity](collection/skills/stochastic-synaptic-plasticity/) | - | Stochastic models of neural synaptic plasticity with STDP rules | synaptic plasticity, STDP, plasticity kernel, Hebbian learning | ✅ |
-| [Generative Brain Dynamics Models](collection/skills/generative-brain-dynamics-models/) | - | Generative models of brain dynamics review framework | brain dynamics, generative model, neural dynamics, computational neuroscience | ✅ |
-| [Delay-Adaptive SNN Classifier](collection/skills/delay-adaptive-snn-classifier/) | - | Delay-adaptive spiking neural network classifier with conformal prediction reliability guarantees | SNN early stopping, delay-adaptive, conformal prediction | ✅ |
-| [Noisy SNN Learning](collection/skills/noisy-snn-learning/) | - | Noise-driven spiking neural network learning framework exploiting noise as computational resource | noisy SNN, noise-driven learning, NSNN, NDL | ✅ |
-| [Spiking Mode Neural Networks](collection/skills/spiking-mode-neural-networks/) | - | Spiking mode-based neural networks with Hopfield decomposition for reduced training cost | spiking mode, Hopfield decomposition, neural manifold | ✅ |
-| [Neural Code Dynamics Analysis](collection/skills/neural-code-dynamics-analysis/) | - | Neural code dynamics analysis framework combining computational neuroscience, machine learning and critical brain theory | neural code, critical brain, representation manifold, representational drift | ✅ |
-| [Linear Structure-Function Coupling](collection/skills/linear-structure-function-coupling/) | - | Linear generative framework for brain structure-function coupling predicting FC from SC | structure-function coupling, structural connectivity, functional connectivity, integrator hub | ✅ |
-| [STDP Bernoulli Message Passing](collection/skills/stdp-bernoulli-message-passing/) | - | STDP-driven Bernoulli message passing spiking neural networks for Bayesian inference | STDP message passing, Bayesian inference, Bernoulli message, factor graph | ✅ |
-| [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
-| [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
+551 skills organized into 14 categories. Browse the full index: [INDEX.md](./INDEX.md)
 
-[View all 115 skills →](./collection/skills/)
+| Category | Count | Highlights |
+|----------|-------|-----------|
+| Neuroscience | 237 | brain-connectivity, snn, synaptic plasticity, EEG/fMRI |
+| AI Reasoning & Training | 119 | LLM reasoning, RL, diffusion models, scaling laws |
+| AI Agent Systems | 41 | multi-agent, self-evolution, agentic portfolio |
+| AI Safety & Evaluation | 29 | red-teaming, adversarial, fairness, bias |
+| General AI | 29 | robotics, exploration, meta-learning, sim-to-real |
+| OpenAI Research | 28 | GPT series, Dota 2, DALL-E, procedural generation |
+| Coding & Development | 23 | opencode, claude-code, copilot-cli, codex |
+| Quantum Computing | 11 | quantum finance, knowledge graph, neural hybrid |
+| Finance | 10 | akshare, stock-analysis, portfolio management |
+| Data Analysis | 8 | knowledge graphs, RAG, graph neural networks |
+| Meta Skills | 8 | skill-extractor, ICE review, memory retrieval |
+| Domain Tools | 6 | consulting reports, meditation, iamb matrix |
+| Systems Engineering | 2 | IoT multiprotocol sync |
+
+[View full skill index in INDEX.md →](./INDEX.md)
 
 ### Version Check Feature
 
@@ -269,9 +266,9 @@ Contributions are welcome! Please see the [Contributing Guide](./CONTRIBUTING.md
 - Validation scripts
 
 ### V2 (In Progress) 🚧
-- More domain agents
-- Skill marketplace
-- Performance optimization
+- Full skill index (551 skills categorized into 14 groups)
+- Skill scan and classification tooling
+- Improved discoverability via INDEX.md
 
 ### V3 (Planned) 📋
 - Web UI

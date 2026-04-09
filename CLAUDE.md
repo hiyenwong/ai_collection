@@ -141,14 +141,23 @@ From `docs/integration/agents-skills.md`:
 
 ### Agents in this Collection
 
+> 共 26 个 agents，完整列表见 [AGENTS.md](./AGENTS.md) 或 [INDEX.md](./INDEX.md)
+
 | Agent | Location | Purpose | Key Skills |
 |-------|----------|---------|-----------|
 | **fullstack-engineer** | `collection/agents/fullstack-engineer/` | 高级全栈工程师，专注于现代Web开发、可扩展架构和生产级代码 | opencode, claude-code, openspec |
 | **tech-cofounder** | `collection/agents/tech-cofounder/` | 技术联合创始人，提供创业项目的技术战略和执行指导 | - |
 | **research-agent** | `collection/agents/research-agent/` | 研究专家，用于深度调研和信息综合 | - |
 | **stock-analyst** | `collection/agents/stock-analyst/` | 股票分析师，专注于金融数据分析 | akshare, stock-analysis |
+| **algorithm-engineer** | `collection/agents/algorithm-engineer/` | 算法设计与优化，机器学习模型开发 | - |
+| **data-engineer** | `collection/agents/data-engineer/` | 数据管道、ETL、数据库优化 | - |
+| **ml-engineer** | `collection/agents/ml-engineer/` | 模型开发、训练、优化和部署 | - |
+| **security-engineer** | `collection/agents/security-engineer/` | 网络安全、渗透测试、漏洞分析 | - |
+| **prompt-engineer** | `collection/agents/prompt-engineer/` | 提示词设计、优化和评估 | - |
 
 ### Skills in this Collection
+
+> 共 551 个 skills，按 14 个分类组织，完整索引见 [INDEX.md](./INDEX.md)
 
 | Skill | Location | Purpose | Activation Keywords |
 |-------|----------|---------|-------------------|
