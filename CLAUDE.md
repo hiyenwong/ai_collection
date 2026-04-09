@@ -227,6 +227,32 @@ collection/
 - 通过 `ruff check --fix` 进行 linting
 - 通过 `ruff format` 进行格式化
 
+#### CLI Tool
+
+使用 `scripts/cli.py` 管理项目：
+```bash
+# 创建新 agent
+python scripts/cli.py create agent my-agent --purpose "描述"
+
+# 创建新 skill
+python scripts/cli.py create skill my-skill --description "描述" --keywords "kw1,kw2"
+
+# 列出 agents/skills
+python scripts/cli.py list agents
+python scripts/cli.py list skills --category finance
+
+# 扫描 skills
+python scripts/cli.py scan --json -o output.json
+
+# 验证 skills
+python scripts/cli.py validate --skill stock-analysis
+python scripts/cli.py validate  # 验证全部
+```
+- 使用类型提示
+- 使用 Google 风格文档字符串
+- 通过 `ruff check --fix` 进行 linting
+- 通过 `ruff format` 进行格式化
+
 ## References
 
 - **OpenClaw Docs**: https://docs.openclaw.ai

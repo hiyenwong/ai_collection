@@ -160,6 +160,11 @@ AI: [Detects consulting report search intent, activates consulting-report-search
 
 ### Adding a New Agent
 
+Use the CLI scaffolding tool:
+```bash
+python scripts/cli.py create agent my-agent-name
+```
+Or manually:
 1. Create directory at `collection/agents/your-agent-name/`
 2. Copy `templates/agent-template.md`
 3. Fill in agent details and capabilities
@@ -168,6 +173,11 @@ AI: [Detects consulting report search intent, activates consulting-report-search
 
 ### Adding a New Skill
 
+Use the CLI scaffolding tool:
+```bash
+python scripts/cli.py create skill my-skill-name
+```
+Or manually:
 1. Create directory at `collection/skills/your-skill-name/`
 2. Copy `templates/skill-template.md`
 3. Define skill description, triggers, and behavior
@@ -203,7 +213,9 @@ ai_collection/
 │   └── skill-template.md
 │
 └── scripts/               # Utility scripts
-    └── validate_skill.py
+    ├── cli.py              # CLI scaffolding tool
+    ├── scan_skills.py      # Skill scanner and classifier
+    └── validate_skill.py   # Skill validation
 ```
 
 ## Knowledge Base
@@ -265,14 +277,16 @@ Contributions are welcome! Please see the [Contributing Guide](./CONTRIBUTING.md
 - Documentation and templates
 - Validation scripts
 
-### V2 (In Progress) 🚧
+### V2 (Completed) ✅
 - Full skill index (551 skills categorized into 14 groups)
-- Skill scan and classification tooling
+- Skill scan and classification tooling (`scripts/scan_skills.py`)
 - Improved discoverability via INDEX.md
+- Complete agent listing (26 agents with full documentation)
+- Automated validation (ruff lint/format + skill validation in CI)
 
-### V3 (Planned) 📋
+### V3 (In Progress) 🚧
+- CLI scaffolding tool for agent/skill creation
 - Web UI
-- CLI tools
 - Package manager
 
 ## About OpenClaw
