@@ -300,7 +300,7 @@ def main() -> None:
         print(f"Total skills: {len(results)}")
         print(f"Skills with activation keywords: {with_keywords}")
         print(f"Skills with subdirectories (examples/refs/scripts): {with_subs}")
-        print(f"\nCategories:")
+        print("\nCategories:")
         for cat, count in categories.most_common():
             print(f"  {cat}: {count}")
 
