@@ -1,6 +1,6 @@
 ---
 name: brainnet-classification-toolbox
-description: MATLAB toolbox for brain network construction and classification. Includes static/dynamic connectivity methods, connectome feature extraction, dimensionality reduction, parameter optimization, and interpretable machine learning for diagnosis.
+description: 'MATLAB toolbox for brain network construction and classification. Includes static/dynamic connectivity methods, connectome feature extraction, dimensionality reduction, parameter optimization, and interpretable machine learning for diagnosis.'
 ---
 
 # BrainNetClass: Brain Network Classification Toolbox
@@ -437,6 +437,28 @@ function metrics = compute_all_metrics(predicted, actual)
                  (metrics.precision + metrics.sensitivity);
 end
 ```
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply brainnet-classification-toolbox?
+
+**Agent:** I'll help you understand and apply brainnet-classification-toolbox...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for brainnet-classification-toolbox?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

@@ -292,6 +292,20 @@ def stage2_amplify(model, train_prompts):
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply score-llm-self-correction?
+
+**Agent:** I'll help you understand and apply score-llm-self-correction...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for score-llm-self-correction?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2409.12917

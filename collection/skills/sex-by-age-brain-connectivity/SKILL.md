@@ -1,7 +1,7 @@
 ---
 arxiv_id: 1801.01577v1
 utility: 0.88
-tags: [sex differences, brain connectivity, resting-state, age effects, PACE, hierarchical modularity, fMRI]
+tags: '[sex differences, brain connectivity, resting-state, age effects, PACE, hierarchical modularity, fMRI]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ Zhan et al. (2018) 提出 PACE 算法并研究性别-年龄差异：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| PACE Algorithm | Hierarchical modularity |
-| Dual Formulation | Positive/negative edges |
-| F1000/HCP Data | Validation datasets |
-| Statistical Testing | Age-stratified analysis |
+- `Component` - Analysis component
+- `PACE Algorithm` - Analysis component
+- `Dual Formulation` - Analysis component
+- `F1000/HCP Data` - Analysis component
+- `Statistical Testing` - Analysis component
+
 
 ## Key Findings
 
@@ -220,6 +220,30 @@ correlations = clinical_correlates(connectivity[:, :10, :10].mean(axis=(1,2)), s
 | Simple concepts | Global probabilistic thinking |
 | Ignored age interaction | Age-stratified analysis |
 | Separate analysis | Integrated clinical correlates |
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply sex-by-age-brain-connectivity?
+
+**Agent:** I'll help you understand and apply sex-by-age-brain-connectivity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for sex-by-age-brain-connectivity?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

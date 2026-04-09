@@ -245,6 +245,20 @@ class MM_DiT(nn.Module):
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply dual-diffusion-unified?
+
+**Agent:** I'll help you understand and apply dual-diffusion-unified...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for dual-diffusion-unified?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2501.00289

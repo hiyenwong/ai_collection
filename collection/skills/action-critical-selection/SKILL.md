@@ -1,6 +1,6 @@
 ---
 name: action-critical-selection
-description: 行动关键选择技能，通过对比成功行动与次优替代方案来理解"为什么"而非仅"做什么"。触发词：行动选择、决策质量、行动对比、关键训练。
+description: '行动关键选择技能，通过对比成功行动与次优替代方案来理解"为什么"而非仅"做什么"。触发词：行动选择、决策质量、行动对比、关键训练。'
 ---
 
 # Action Critical Selection - 行动关键选择
@@ -148,3 +148,36 @@ ACT 方法：
 **来源论文：** arXiv:2603.08706 - Agentic Critical Training
 **效用评分：** 0.95
 **创建日期：** 2026-03-14
+## Activation Keywords
+
+- action-critical-selection
+- action-critical-selection 技能
+- action-critical-selection skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply action-critical-selection?
+
+**Agent:** I'll help you understand and apply action-critical-selection...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for action-critical-selection?
+
+**Agent:** Let me search for the latest research and best practices...

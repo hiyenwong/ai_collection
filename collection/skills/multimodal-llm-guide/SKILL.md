@@ -208,6 +208,20 @@ for batch in instruction_data:
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply multimodal-llm-guide?
+
+**Agent:** I'll help you understand and apply multimodal-llm-guide...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for multimodal-llm-guide?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2411.06284

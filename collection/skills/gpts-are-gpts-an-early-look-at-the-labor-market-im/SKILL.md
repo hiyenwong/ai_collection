@@ -2,8 +2,6 @@
 
 ## Description
 
-
-
 **Source:** https://openai.com/index/gpts-are-gpts
 **Date:** Fri, 17 Mar 2023 07:00:00 GMT
 **Category:** OpenAI Research
@@ -50,6 +48,28 @@
 ```python
 # Example usage based on research
 ```
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply gpts-are-gpts-an-early-look-at-the-labor-market-im?
+
+**Agent:** I'll help you understand and apply gpts-are-gpts-an-early-look-at-the-labor-market-im...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for gpts-are-gpts-an-early-look-at-the-labor-market-im?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

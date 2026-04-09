@@ -296,6 +296,20 @@ def fix_bug(model, buggy_code, error_message):
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply llm-code-generation-survey?
+
+**Agent:** I'll help you understand and apply llm-code-generation-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for llm-code-generation-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2503.01245

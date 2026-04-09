@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2101.09352v1
 utility: 0.88
-tags: [EEG, epilepsy, extremal dependence, brain connectivity, seizure detection, Gamma-band]
+tags: '[EEG, epilepsy, extremal dependence, brain connectivity, seizure detection, Gamma-band]'
 created: 2026-03-31
 ---
 
@@ -33,12 +33,12 @@ Huser et al. (2021) 提出 Conex-Connect：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Extreme Value Theory | Tail dependence modeling |
-| Conditional Dependence | Reference channel conditioning |
-| Spectral Decomposition | Gamma-band extraction |
-| EEG Processing | Multi-channel analysis |
+- `Component` - Analysis component
+- `Extreme Value Theory` - Analysis component
+- `Conditional Dependence` - Analysis component
+- `Spectral Decomposition` - Analysis component
+- `EEG Processing` - Analysis component
+
 
 ## Key Concepts
 
@@ -167,6 +167,30 @@ print(f"Average change: {np.mean(results['change']):.3f}")
 2. **发作前稳定** - 条件依赖高且稳定
 3. **发作后混乱** - 连接弱且模式混乱
 4. **焦点驱动** - 癫痫焦点主导全脑连接
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply conex-connect-eeg-extremal?
+
+**Agent:** I'll help you understand and apply conex-connect-eeg-extremal...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for conex-connect-eeg-extremal?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

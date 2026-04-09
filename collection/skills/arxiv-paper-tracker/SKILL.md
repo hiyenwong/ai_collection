@@ -1,14 +1,10 @@
 ---
 name: arxiv-paper-tracker
 description: 'Track high-utility arXiv papers in AI agent systems. Use when needing quick reference to important recent papers on multi-agent coordination, memory management, agent architecture, and evaluation methods.'
-metadata:
-  {
-    "openclaw":
-      {
-        "emoji": "📚",
-        "tags": ["research", "arxiv", "agents", "papers", "tracking"],
-      },
-  }
+metadata: 
+"openclaw": 
+"emoji": "📚",
+"tags": '["research", "arxiv", "agents", "papers", "tracking"],'
 ---
 
 # arXiv Paper Tracker
@@ -134,3 +130,36 @@ web_fetch url:"https://github.com/VoltAgent/awesome-ai-agent-papers"
 Last updated: 2026-04-03 22:00 (Asia/Shanghai)
 Papers analyzed: 188 submissions from Fri, 3 Apr 2026
 High-utility count: 5 papers (utility >= 0.85)
+## Activation Keywords
+
+- arxiv-paper-tracker
+- arxiv-paper-tracker 技能
+- arxiv-paper-tracker skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply arxiv-paper-tracker?
+
+**Agent:** I'll help you understand and apply arxiv-paper-tracker...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for arxiv-paper-tracker?
+
+**Agent:** Let me search for the latest research and best practices...

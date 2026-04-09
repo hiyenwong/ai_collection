@@ -112,6 +112,34 @@ def gradient_regularised_rnn_pipeline(fmri_data, wm_task):
 - Working memory task modelling
 - Analysing fixed point stability in RNNs
 
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply gradient-regularised-rnn?
+
+**Agent:** I'll help you understand and apply gradient-regularised-rnn...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for gradient-regularised-rnn?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## Related Skills
 
 - `kuramoto-brain-network` - Oscillator-based brain modelling

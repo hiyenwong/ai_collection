@@ -357,3 +357,38 @@ def classify_neuron_type(prc):
 ---
 
 _此技能基于 Ermentrout 的经典工作，建立神经动力学与神经编码的理论联系_
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- prc-sta-neural-coding
+- prc-sta-neural-coding 技能
+- prc-sta-neural-coding skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply prc-sta-neural-coding?
+
+**Agent:** I'll help you understand and apply prc-sta-neural-coding...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for prc-sta-neural-coding?
+
+**Agent:** Let me search for the latest research and best practices...

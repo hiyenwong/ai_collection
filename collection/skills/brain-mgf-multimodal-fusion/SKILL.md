@@ -104,3 +104,38 @@ EEG-fMRI 融合、多模态图融合、Brain-MGF、psilocybin 脑连接、迷幻
 - 相关技能：`multimodal-brain-connectivity-gnn`（多模态融合）
 - 相关技能：`gnn-transformer-fusion`（GNN-Transformer 融合）
 - 论文链接：https://arxiv.org/abs/2511.18325
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- brain-mgf-multimodal-fusion
+- brain-mgf-multimodal-fusion 技能
+- brain-mgf-multimodal-fusion skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply brain-mgf-multimodal-fusion?
+
+**Agent:** I'll help you understand and apply brain-mgf-multimodal-fusion...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for brain-mgf-multimodal-fusion?
+
+**Agent:** Let me search for the latest research and best practices...

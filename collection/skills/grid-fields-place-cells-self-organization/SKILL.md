@@ -1,7 +1,7 @@
 ---
 arxiv_id: 1503.07707v2
 utility: 0.88
-tags: [grid cells, place cells, hippocampus, entorhinal cortex, synaptic plasticity, BCM rule, self-organization]
+tags: '[grid cells, place cells, hippocampus, entorhinal cortex, synaptic plasticity, BCM rule, self-organization]'
 created: 2026-03-31
 ---
 
@@ -33,11 +33,11 @@ Stepanyuk (2015) 提出了一个基于突触可塑性的网格场自组织模型
 
 ## Tools Used
 
-| Plasticity Rule | Function |
-|-----------------|----------|
-| BCM Rule | Associative synaptic modification |
-| Homeostatic | Weight normalization/bounds |
-| PCA-like extraction | High principal components from PC activity |
+- `Plasticity Rule` - Analysis component
+- `BCM Rule` - Analysis component
+- `Homeostatic` - Analysis component
+- `PCA-like extraction` - Analysis component
+
 
 ## Neural Architecture
 
@@ -109,6 +109,30 @@ class GridFieldSelfOrganization:
             self.W = self.homeostatic(self.W)
             self.theta = 0.1 * np.mean(r**2)  # sliding threshold
 ```
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply grid-fields-place-cells-self-organization?
+
+**Agent:** I'll help you understand and apply grid-fields-place-cells-self-organization...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for grid-fields-place-cells-self-organization?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

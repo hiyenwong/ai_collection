@@ -51,6 +51,28 @@ Deep learning is an empirical science, and the quality of a group’s infrastruc
 # Example usage based on research
 ```
 
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply infrastructure-for-deep-learning?
+
+**Agent:** I'll help you understand and apply infrastructure-for-deep-learning...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for infrastructure-for-deep-learning?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## Related Skills
 
 - Other OpenAI research skills

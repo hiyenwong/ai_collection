@@ -2,10 +2,10 @@
 name: temporal-bcggcn-brain-network
 version: 1.0.0
 last_updated: 2026-03-26
-description: Temporal Brain Category Graph Convolutional Network for schizophrenia diagnosis using dynamic functional connectivity from rs-fMRI data.
+description: 'Temporal Brain Category Graph Convolutional Network for schizophrenia diagnosis using dynamic functional connectivity from rs-fMRI data.'
 source: arXiv:2304.01347v4
 utility: 0.93
-tags: [brain network, fmri, connectivity, schizophrenia, dynamic functional connectivity, GCN]
+tags: '[brain network, fmri, connectivity, schizophrenia, dynamic functional connectivity, GCN]'
 ---
 
 # Temporal-BCGCN Brain Network Analysis
@@ -205,3 +205,36 @@ config = {
 - 动态功能连接分析
 - rs-fMRI 图像分析
 - 脑网络异常检测
+## Activation Keywords
+
+- temporal-bcggcn-brain-network
+- temporal-bcggcn-brain-network 技能
+- temporal-bcggcn-brain-network skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply temporal-bcggcn-brain-network?
+
+**Agent:** I'll help you understand and apply temporal-bcggcn-brain-network...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for temporal-bcggcn-brain-network?
+
+**Agent:** Let me search for the latest research and best practices...

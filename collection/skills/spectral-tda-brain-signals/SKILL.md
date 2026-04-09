@@ -1,6 +1,6 @@
 ---
 name: spectral-tda-brain-signals
-description: Analyze brain connectivity using spectral Topological Data Analysis (STDA). Apply coherence-based filtration across frequency bands. Generate spectral landscapes for frequency-specific topological features.
+description: 'Analyze brain connectivity using spectral Topological Data Analysis (STDA). Apply coherence-based filtration across frequency bands. Generate spectral landscapes for frequency-specific topological features.'
 ---
 
 # Spectral TDA for Brain Signals
@@ -601,6 +601,28 @@ plt.colorbar()
 plt.title('Alpha Band Coherence')
 plt.show()
 ```
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply spectral-tda-brain-signals?
+
+**Agent:** I'll help you understand and apply spectral-tda-brain-signals...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for spectral-tda-brain-signals?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

@@ -311,6 +311,20 @@ class CoconutModel(nn.Module):
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply coconut-continuous-thought?
+
+**Agent:** I'll help you understand and apply coconut-continuous-thought...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for coconut-continuous-thought?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2412.06769

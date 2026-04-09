@@ -215,6 +215,36 @@ def find_paths(adj_matrix, start, end, max_length=5):
 | Granger Causality | Yes | Yes | Limited |
 | Neuro-PC | Yes | Yes | Yes |
 
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply neuro-pc-causal-connectivity?
+
+**Agent:** I'll help you understand and apply neuro-pc-causal-connectivity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for neuro-pc-causal-connectivity?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## Related Skills
 
 - **ccep-causal-brain-network** - CCEP causal connectivity

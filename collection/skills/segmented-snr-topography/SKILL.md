@@ -1,6 +1,6 @@
 ---
 name: segmented-snr-topography
-description: 分段SNR地形图可视化神经动力学方法论。结合数据驱动的噪声区间评估和高级SNR可视化，改进EEG-BCI性能。适用于P300检测、EEG信号质量评估、自适应BCI系统。触发词：SNR地形图、P300检测、EEG信号质量、噪声区间、BCI优化、signal-to-noise ratio、neural dynamics、P300。
+description: '分段SNR地形图可视化神经动力学方法论。结合数据驱动的噪声区间评估和高级SNR可视化，改进EEG-BCI性能。适用于P300检测、EEG信号质量评估、自适应BCI系统。触发词：SNR地形图、P300检测、EEG信号质量、噪声区间、BCI优化、signal-to-noise ratio、neural dynamics、P300。'
 user-invocable: true
 ---
 
@@ -164,3 +164,36 @@ class SegmentedSNRTopography:
 ## 参考文献
 
 - arXiv:2509.18599 - From Noise to Insight: Visualizing Neural Dynamics with Segmented SNR Topographies
+## Activation Keywords
+
+- segmented-snr-topography
+- segmented-snr-topography 技能
+- segmented-snr-topography skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply segmented-snr-topography?
+
+**Agent:** I'll help you understand and apply segmented-snr-topography...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for segmented-snr-topography?
+
+**Agent:** Let me search for the latest research and best practices...

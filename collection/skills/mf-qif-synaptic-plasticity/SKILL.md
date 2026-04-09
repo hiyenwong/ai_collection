@@ -2,10 +2,10 @@
 name: mf-qif-synaptic-plasticity
 version: 1.0.0
 last_updated: 2026-03-26
-description: Mean-field approximations for networks of spiking neurons with short-term synaptic plasticity, enabling macroscopic analysis of neural dynamics.
+description: 'Mean-field approximations for networks of spiking neurons with short-term synaptic plasticity, enabling macroscopic analysis of neural dynamics.'
 source: arXiv:2101.06057v2
 utility: 0.93
-tags: [mean-field, spiking neurons, QIF, synaptic plasticity, neural mass model]
+tags: '[mean-field, spiking neurons, QIF, synaptic plasticity, neural mass model]'
 ---
 
 # Mean-Field QIF Networks with Short-Term Synaptic Plasticity
@@ -347,3 +347,36 @@ def validate_mean_field(mf_model, spiking_network, duration):
 - 麻醉状态分析
 - 癫痫发作建模
 - 短时程可塑性研究
+## Activation Keywords
+
+- mf-qif-synaptic-plasticity
+- mf-qif-synaptic-plasticity 技能
+- mf-qif-synaptic-plasticity skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply mf-qif-synaptic-plasticity?
+
+**Agent:** I'll help you understand and apply mf-qif-synaptic-plasticity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for mf-qif-synaptic-plasticity?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -1,6 +1,6 @@
 ---
 name: seizure-detection-connectivity
-description: "基于有效脑连接和深度模块化神经网络的癫痫检测框架。整合图论、因果分析和深度学习进行 EEG 信号分类。"
+description: '基于有效脑连接和深度模块化神经网络的癫痫检测框架。整合图论、因果分析和深度学习进行 EEG 信号分类。'
 ---
 
 # Seizure Detection Connectivity
@@ -242,7 +242,6 @@ class DeepModularNeuralNetwork(nn.Module):
         
         return output
 
-
 class EBCModule(nn.Module):
     """
     单个 EBC 类型的处理模块
@@ -293,7 +292,6 @@ class EBCModule(nn.Module):
         
         return features
 
-
 class GraphConvLayer(nn.Module):
     """
     图卷积层
@@ -324,7 +322,6 @@ class GraphConvLayer(nn.Module):
         node_features = torch.matmul(normalized_adj, self.weight) + self.bias
         
         return node_features
-
 
 class FrequencyAttention(nn.Module):
     """
@@ -415,7 +412,6 @@ def seizure_detection_pipeline(eeg_raw, sampling_rate=256):
     
     return prediction, confidence
 
-
 def preprocess_eeg(eeg_raw, sampling_rate):
     """
     EEG 预处理
@@ -477,7 +473,6 @@ def compute_graph_metrics(connectivity_matrix, threshold=0.1):
     }
     
     return metrics
-
 
 def compute_small_worldness(G, n_random=100):
     """
@@ -620,6 +615,20 @@ generate_report(results, output='seizure_analysis_report.pdf')
 | 1909.03091 | Seizure Detection Framework | 本论文 |
 | 2401.05343 | Spectral TDA of Brain Signals | 拓扑分析 |
 | 2107.03220 | Joint Brain Network Embedding | 脑网络嵌入 |
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply seizure-detection-connectivity?
+
+**Agent:** I'll help you understand and apply seizure-detection-connectivity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for seizure-detection-connectivity?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

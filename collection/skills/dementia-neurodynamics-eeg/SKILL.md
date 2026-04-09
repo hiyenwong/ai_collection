@@ -1,6 +1,6 @@
 ---
 name: dementia-neurodynamics-eeg
-description: 痴呆症脑网络神经动力学EEG分析方法论。通过频谱功率、Lyapunov指数、相位同步区分阿尔茨海默病（AD）和额颞叶痴呆（FTD）。适用于痴呆症诊断、脑网络分析。触发词：痴呆症、阿尔茨海默、FTD、EEG、脑网络、neurodynamics。
+description: '痴呆症脑网络神经动力学EEG分析方法论。通过频谱功率、Lyapunov指数、相位同步区分阿尔茨海默病（AD）和额颞叶痴呆（FTD）。适用于痴呆症诊断、脑网络分析。触发词：痴呆症、阿尔茨海默、FTD、EEG、脑网络、neurodynamics。'
 user-invocable: true
 ---
 
@@ -74,3 +74,36 @@ def compute_plv(eeg1, eeg2):
 ## 参考文献
 
 - arXiv:2507.08728
+## Activation Keywords
+
+- dementia-neurodynamics-eeg
+- dementia-neurodynamics-eeg 技能
+- dementia-neurodynamics-eeg skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply dementia-neurodynamics-eeg?
+
+**Agent:** I'll help you understand and apply dementia-neurodynamics-eeg...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for dementia-neurodynamics-eeg?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -280,6 +280,20 @@ class ContinuousBatcher:
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply efficient-llm-inference-survey?
+
+**Agent:** I'll help you understand and apply efficient-llm-inference-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for efficient-llm-inference-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2404.14294

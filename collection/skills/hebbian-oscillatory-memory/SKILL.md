@@ -181,6 +181,36 @@ def measure_capacity(N, alpha_range=np.linspace(0.05, 0.3, 10)):
 3. **Oscillation-gated learning:** Theta rhythm gates memory encoding
 4. **Capacity limits:** Similar to Hopfield networks
 
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply hebbian-oscillatory-memory?
+
+**Agent:** I'll help you understand and apply hebbian-oscillatory-memory...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for hebbian-oscillatory-memory?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## Related Skills
 
 - **stdp-bernoulli-message-passing** - STDP learning rules

@@ -1,6 +1,6 @@
 ---
 name: ml-complexity-management
-description: "Computational complexity lens for understanding how ML manages complex systems. Based on arxiv:2604.07233 'How Does Machine Learning Manage Complexity?' by Lance Fortnow. Use when analyzing ML's ability to model complex systems, understanding complexity bounds, P/poly-computable distributions, or when asked 'how does ML handle complexity?', 'ML complexity theory', 'computable distributions in ML'."
+description: 'Computational complexity lens for understanding how ML manages complex systems. Based on arxiv:2604.07233 'How Does Machine Learning Manage Complexity?' by Lance Fortnow. Use when analyzing ML's ability to model complex systems, understanding complexity bounds, P/poly-computable distributions, or when asked 'how does ML handle complexity?', 'ML complexity theory', 'computable distributions in ML'.'
 ---
 
 # ML Complexity Management
@@ -113,6 +113,40 @@ Use when:
 **Full Paper**: arXiv:2604.07233 - "How Does Machine Learning Manage Complexity?" by Lance Fortnow (2026-04-08)
 
 **Key Quote**: "Machine learning models are often trained on data drawn from sampleable or more complex distributions, a far wider range of distributions than just computable ones. By focusing on computable distributions, machine learning models can better manage complexity via probability."
+
+## Activation Keywords
+
+- ml-complexity-management
+- ml-complexity-management 技能
+- ml-complexity-management skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply ml-complexity-management?
+
+**Agent:** I'll help you understand and apply ml-complexity-management...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for ml-complexity-management?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

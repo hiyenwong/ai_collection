@@ -1,6 +1,6 @@
 ---
 name: beta-synchrony-cognitive-ergonomics
-description: Beta同步认知人体工程学分析方法论。通过颞-顶叶Beta相位同步性解码工作记忆状态，评估BCI认知负荷。适用于脑机接口状态识别、环境照明优化、低维EEG系统设计。触发词：Beta同步、认知人体工程学、BCI、工作记忆、相位聚类、颞顶叶、cognitive ergonomics、beta synchrony、working memory。
+description: 'Beta同步认知人体工程学分析方法论。通过颞-顶叶Beta相位同步性解码工作记忆状态，评估BCI认知负荷。适用于脑机接口状态识别、环境照明优化、低维EEG系统设计。触发词：Beta同步、认知人体工程学、BCI、工作记忆、相位聚类、颞顶叶、cognitive ergonomics、beta synchrony、working memory。'
 user-invocable: true
 ---
 
@@ -174,3 +174,36 @@ class BetaSynchronyClassifier:
 ## 参考文献
 
 - arXiv:2512.17775 - How Light Shapes Memory: Beta Synchrony in the Temporal-Parietal Cortex
+## Activation Keywords
+
+- beta-synchrony-cognitive-ergonomics
+- beta-synchrony-cognitive-ergonomics 技能
+- beta-synchrony-cognitive-ergonomics skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply beta-synchrony-cognitive-ergonomics?
+
+**Agent:** I'll help you understand and apply beta-synchrony-cognitive-ergonomics...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for beta-synchrony-cognitive-ergonomics?
+
+**Agent:** Let me search for the latest research and best practices...

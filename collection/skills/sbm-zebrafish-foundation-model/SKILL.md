@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2510.27366v1
 utility: 0.88
-tags: [zebrafish, foundation model, whole-brain, neural dynamics, behavior, sparse attention, SBM]
+tags: '[zebrafish, foundation model, whole-brain, neural dynamics, behavior, sparse attention, SBM]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ Fatehmanesh et al. (2025) 提出 SBM：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Sparse Attention | Scalable whole-brain modeling |
-| Factorized Attention | Neurons × Time decomposition |
-| Behavior Head | Permutation-invariant behavior prediction |
-| Gradient Synthesis | Neural pattern generation |
+- `Component` - Analysis component
+- `Sparse Attention` - Analysis component
+- `Factorized Attention` - Analysis component
+- `Behavior Head` - Analysis component
+- `Gradient Synthesis` - Analysis component
+
 
 ## Architecture
 
@@ -268,6 +268,30 @@ pattern = synthesis.synthesize(target_behavior_idx=2, stimuli=stimuli)
 | 行为解码 | 从神经活动预测行为 |
 | 模式合成 | 生成目标行为的神经模式 |
 | 机制探索 | 行为引导的神经现象研究 |
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply sbm-zebrafish-foundation-model?
+
+**Agent:** I'll help you understand and apply sbm-zebrafish-foundation-model...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for sbm-zebrafish-foundation-model?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

@@ -115,7 +115,6 @@ class EDT_PA(nn.Module):
         
         return logits, aligned_features, transport_cost
 
-
 class EvolvableModelingBlock(nn.Module):
     """
     可演化建模块：动态捕捉高阶依赖
@@ -161,7 +160,6 @@ class EvolvableModelingBlock(nn.Module):
         output = F.relu(normalized + self.residual(features))
         
         return output
-
 
 class GraphDiffusion(nn.Module):
     """
@@ -221,7 +219,6 @@ class GraphDiffusion(nn.Module):
         
         return normalized
 
-
 class PatternSpecificAlignment(nn.Module):
     """
     模式特定对齐：使用最优传输对齐结构-功能表示
@@ -272,7 +269,6 @@ class PatternSpecificAlignment(nn.Module):
         
         return cost
 
-
 class OptimalTransportSolver(nn.Module):
     """
     最优传输求解器
@@ -311,7 +307,6 @@ class OptimalTransportSolver(nn.Module):
         
         return transport_plan
 
-
 class KANAggregator(nn.Module):
     """
     Kolmogorov-Arnold 网络用于节点聚合
@@ -343,7 +338,6 @@ class KANAggregator(nn.Module):
         graph_features = self.pool(h)
         
         return graph_features
-
 
 class KANLayer(nn.Module):
     """
@@ -403,7 +397,6 @@ class KANLayer(nn.Module):
             basis[:, :, i] = torch.exp(-torch.abs(x - knot))
         
         return basis
-
 
 class GlobalMeanPool(nn.Module):
     """
@@ -493,3 +486,38 @@ def train_edt_pa(model, dataloader, epochs=100, lr=1e-3, ot_weight=0.1):
 ---
 
 _此技能基于 EDT-PA 框架，用于脑连接组建模和疾病分类_
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- edt-pa-brain-connectome
+- edt-pa-brain-connectome 技能
+- edt-pa-brain-connectome skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply edt-pa-brain-connectome?
+
+**Agent:** I'll help you understand and apply edt-pa-brain-connectome...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for edt-pa-brain-connectome?
+
+**Agent:** Let me search for the latest research and best practices...

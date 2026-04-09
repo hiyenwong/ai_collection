@@ -165,3 +165,38 @@ Gödel Agent 是一个自引用代理框架，实现递归式自我改进。通�
 **创建时间：** 2026-03-15
 **论文来源：** arXiv:2410.xxxxx (ACL 2025)
 **代码：** https://github.com/Arvid-pku/Godel_Agent
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- godel-self-improvement
+- godel-self-improvement 技能
+- godel-self-improvement skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply godel-self-improvement?
+
+**Agent:** I'll help you understand and apply godel-self-improvement...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for godel-self-improvement?
+
+**Agent:** Let me search for the latest research and best practices...

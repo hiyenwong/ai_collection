@@ -1,6 +1,6 @@
 ---
 name: kuramoto-control-theory
-description: "Unified control-theoretic framework for complex-valued Kuramoto networks. Based on arxiv:2604.07249 'Complex-Valued Kuramoto Networks: A Unified Control-Theoretic Framework' by Giordano et al. Use when analyzing Kuramoto network synchronization, phase locking control, switched feedforward control, sliding-mode control for oscillators, or when asked 'Kuramoto control', 'oscillator synchronization', 'phase locking design', 'complex-valued Kuramoto'."
+description: 'Unified control-theoretic framework for complex-valued Kuramoto networks. Based on arxiv:2604.07249 'Complex-Valued Kuramoto Networks: A Unified Control-Theoretic Framework' by Giordano et al. Use when analyzing Kuramoto network synchronization, phase locking control, switched feedforward control, sliding-mode control for oscillators, or when asked 'Kuramoto control', 'oscillator synchronization', 'phase locking design', 'complex-valued Kuramoto'.'
 ---
 
 # Kuramoto Control Theory
@@ -152,6 +152,40 @@ Ensures all phases lock to ω_target in finite time.
 | Heterogeneity | May fail | Handles easily |
 | Convergence | Asymptotic | Finite-time achievable |
 | Frequency locking | Emergent | Prescribed achievable |
+
+## Activation Keywords
+
+- kuramoto-control-theory
+- kuramoto-control-theory 技能
+- kuramoto-control-theory skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply kuramoto-control-theory?
+
+**Agent:** I'll help you understand and apply kuramoto-control-theory...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for kuramoto-control-theory?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

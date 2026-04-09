@@ -312,6 +312,20 @@ class CostAwareWorkflow:
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply aflow-agentic-workflow-generation?
+
+**Agent:** I'll help you understand and apply aflow-agentic-workflow-generation...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for aflow-agentic-workflow-generation?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2410.10762

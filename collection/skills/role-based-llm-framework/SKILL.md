@@ -1,6 +1,6 @@
 ---
 name: role-based-llm-framework
-description: Implement role-based multi-agent LLM frameworks for complex domain tasks. Use when extracting structured information from diverse documents, building domain-specific agent teams, or reducing hallucinations through role specialization. Based on arXiv:2604.01529 - A Role-Based LLM Framework for Structured Information Extraction from Healthy Food Policies.
+description: 'Implement role-based multi-agent LLM frameworks for complex domain tasks. Use when extracting structured information from diverse documents, building domain-specific agent teams, or reducing hallucinations through role specialization. Based on arXiv:2604.01529 - A Role-Based LLM Framework for Structured Information Extraction from Healthy Food Policies.'
 ---
 
 # Role-Based LLM Framework
@@ -108,3 +108,36 @@ Tested against baselines (zero-shot, few-shot, CoT) using Llama-3.3-70B:
 ## Paper Reference
 
 arXiv:2604.01529 - "A Role-Based LLM Framework for Structured Information Extraction from Healthy Food Policies" (Apr 2026)
+## Activation Keywords
+
+- role-based-llm-framework
+- role-based-llm-framework 技能
+- role-based-llm-framework skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply role-based-llm-framework?
+
+**Agent:** I'll help you understand and apply role-based-llm-framework...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for role-based-llm-framework?
+
+**Agent:** Let me search for the latest research and best practices...

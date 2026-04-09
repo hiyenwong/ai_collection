@@ -1,6 +1,6 @@
 ---
 name: snn-complexity-classification
-description: 脉冲神经网络复杂度分类方法论。使用Lempel-Ziv复杂度（LZC）评估SNN分类性能，比较不同神经元模型（LIF、元神经元、Levy-Baxter）和学习规则（STDP、tempotron）。适用于生物信号处理、SNN架构选择、脉冲序列分析。触发词：脉冲神经网络、SNN、Lempel-Ziv复杂度、神经元模型、STDP、LIF、spiking neural network、complexity classification。
+description: '脉冲神经网络复杂度分类方法论。使用Lempel-Ziv复杂度（LZC）评估SNN分类性能，比较不同神经元模型（LIF、元神经元、Levy-Baxter）和学习规则（STDP、tempotron）。适用于生物信号处理、SNN架构选择、脉冲序列分析。触发词：脉冲神经网络、SNN、Lempel-Ziv复杂度、神经元模型、STDP、LIF、spiking neural network、complexity classification。'
 user-invocable: true
 ---
 
@@ -100,7 +100,6 @@ class SNNComplexityEvaluator:
             return abs(means[0] - means[1]) / (np.std(means) + 1e-10)
         return 0
 
-
 class LIFNeuron:
     """Leaky Integrate-and-Fire神经元"""
     
@@ -153,3 +152,36 @@ class LIFNeuron:
 ## 参考文献
 
 - arXiv:2509.06970 - Impact of Neuron Models on Spiking Neural Networks performance
+## Activation Keywords
+
+- snn-complexity-classification
+- snn-complexity-classification 技能
+- snn-complexity-classification skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply snn-complexity-classification?
+
+**Agent:** I'll help you understand and apply snn-complexity-classification...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for snn-complexity-classification?
+
+**Agent:** Let me search for the latest research and best practices...

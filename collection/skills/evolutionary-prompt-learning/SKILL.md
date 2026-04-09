@@ -1,6 +1,6 @@
 ---
 name: evolutionary-prompt-learning
-description: 进化式系统提示学习技能，联合改进模型上下文和权重。声明性知识在提示，程序性知识在权重。触发词：提示进化、系统提示优化、E-SPL。
+description: '进化式系统提示学习技能，联合改进模型上下文和权重。声明性知识在提示，程序性知识在权重。触发词：提示进化、系统提示优化、E-SPL。'
 ---
 
 # Evolutionary Prompt Learning - 进化式提示学习
@@ -208,3 +208,36 @@ E-SPL 方法：
 **来源论文：** arXiv:2602.14697 - Evolutionary System Prompt Learning
 **效用评分：** 0.95
 **创建日期：** 2026-03-14
+## Activation Keywords
+
+- evolutionary-prompt-learning
+- evolutionary-prompt-learning 技能
+- evolutionary-prompt-learning skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply evolutionary-prompt-learning?
+
+**Agent:** I'll help you understand and apply evolutionary-prompt-learning...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for evolutionary-prompt-learning?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -357,6 +357,28 @@ print(f"DAN within-network: {network_result['dan_within']:.3f}")
 print(f"DMN within-network: {network_result['dmn_within']:.3f}")
 ```
 
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply boldsimnet-task-resting-fmri?
+
+**Agent:** I'll help you understand and apply boldsimnet-task-resting-fmri...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for boldsimnet-task-resting-fmri?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## Related Skills
 
 - `entropy-brain-connectivity-paths` - Entropy as connectivity indicators

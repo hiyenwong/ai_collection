@@ -102,3 +102,38 @@
 - 相关技能：`spikingjelly-framework`（SNN 框架）
 - 相关技能：`decolle-snn-learning`（局部学习）
 - 论文链接：https://arxiv.org/abs/2403.12574
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- eas-snn-event-detection
+- eas-snn-event-detection 技能
+- eas-snn-event-detection skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply eas-snn-event-detection?
+
+**Agent:** I'll help you understand and apply eas-snn-event-detection...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for eas-snn-event-detection?
+
+**Agent:** Let me search for the latest research and best practices...

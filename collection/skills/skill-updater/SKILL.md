@@ -1,6 +1,6 @@
 ---
 name: skill-updater
-description: 自动更新 AI 编码工具技能（Claude Code, OpenCode, Copilot CLI）。检查官方文档、GitHub releases、博客更新，使用 Claude Code 提炼技能，同步到 ai_collection 项目。
+description: '自动更新 AI 编码工具技能（Claude Code, OpenCode, Copilot CLI）。检查官方文档、GitHub releases、博客更新，使用 Claude Code 提炼技能，同步到 ai_collection 项目。'
 ---
 
 # Skill Updater
@@ -146,3 +146,36 @@ python3 ~/.openclaw/scripts/skill-updater.py log --days 7
 - skill-extractor: 技能提取
 - claude-code: Claude Code CLI
 - github: GitHub 操作
+## Activation Keywords
+
+- skill-updater
+- skill-updater 技能
+- skill-updater skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply skill-updater?
+
+**Agent:** I'll help you understand and apply skill-updater...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for skill-updater?
+
+**Agent:** Let me search for the latest research and best practices...

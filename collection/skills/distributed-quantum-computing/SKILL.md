@@ -1,16 +1,12 @@
 ---
 name: distributed-quantum-computing
 description: 'Distributed Quantum Computing architecture and patterns. Apply when designing multi-QPU systems, quantum communication protocols, or scaling quantum computing beyond single device limitations.'
-metadata:
-  {
-    "openclaw":
-      {
-        "emoji": "⏛",
-        "source": "arxiv:2212.10609,arxiv:2404.01265",
-        "authors": ["Caleffi et al.", "Barral et al."],
-        "year": 2024,
-      },
-  }
+metadata: 
+"openclaw": 
+"emoji": "⏛",
+"source": "arxiv:2212.10609,arxiv:2404.01265",
+"authors": ["Caleffi et al.", "Barral et al."],
+"year": 2024,
 ---
 
 # Distributed Quantum Computing
@@ -151,3 +147,36 @@ OpenClaw's distributed agent architecture parallels DQC:
 ---
 
 *Sources: arxiv:2212.10609 (Caleffi et al., 2024), arxiv:2404.01265 (Barral et al., 2024)*
+## Activation Keywords
+
+- distributed-quantum-computing
+- distributed-quantum-computing 技能
+- distributed-quantum-computing skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply distributed-quantum-computing?
+
+**Agent:** I'll help you understand and apply distributed-quantum-computing...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for distributed-quantum-computing?
+
+**Agent:** Let me search for the latest research and best practices...

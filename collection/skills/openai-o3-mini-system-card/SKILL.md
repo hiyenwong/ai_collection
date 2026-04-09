@@ -51,6 +51,28 @@ This report outlines the safety work carried out for the OpenAI o3-mini model, i
 # Example usage based on research
 ```
 
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply openai-o3-mini-system-card?
+
+**Agent:** I'll help you understand and apply openai-o3-mini-system-card...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for openai-o3-mini-system-card?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## Related Skills
 
 - Other OpenAI research skills

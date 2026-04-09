@@ -102,3 +102,38 @@ BACE、行为自适应连接、相位特异性连接、有向脑连接、LFP 连
 - 相关技能：`task-aware-brain-connectivity`（任务感知连接）
 - 相关技能：`gp-cake-brain-connectivity`（因果核方法）
 - 论文链接：https://arxiv.org/abs/2510.20831
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- bace-behavior-adaptive-connectivity
+- bace-behavior-adaptive-connectivity 技能
+- bace-behavior-adaptive-connectivity skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply bace-behavior-adaptive-connectivity?
+
+**Agent:** I'll help you understand and apply bace-behavior-adaptive-connectivity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for bace-behavior-adaptive-connectivity?
+
+**Agent:** Let me search for the latest research and best practices...

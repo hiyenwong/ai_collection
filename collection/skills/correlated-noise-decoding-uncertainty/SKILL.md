@@ -98,3 +98,38 @@
 - 相关技能：`task-aware-brain-connectivity`（任务相关分析）
 - 相关技能：`gp-cake-brain-connectivity`（有效连接）
 - 论文链接：https://arxiv.org/abs/1708.04860
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- correlated-noise-decoding-uncertainty
+- correlated-noise-decoding-uncertainty 技能
+- correlated-noise-decoding-uncertainty skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply correlated-noise-decoding-uncertainty?
+
+**Agent:** I'll help you understand and apply correlated-noise-decoding-uncertainty...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for correlated-noise-decoding-uncertainty?
+
+**Agent:** Let me search for the latest research and best practices...

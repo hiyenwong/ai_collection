@@ -1,6 +1,6 @@
 ---
 name: h2learn-snn-accelerator
-description: High-efficiency hardware accelerator for BPTT-based Spiking Neural Network training. Design LUT-based processing elements, dual-sparsity-aware backward engine, and pipeline optimization. Achieve 7.38x area saving, 10.20x speedup vs GPU.
+description: 'High-efficiency hardware accelerator for BPTT-based Spiking Neural Network training. Design LUT-based processing elements, dual-sparsity-aware backward engine, and pipeline optimization. Achieve 7.38x area saving, 10.20x speedup vs GPU.'
 ---
 
 # H2Learn: SNN Training Accelerator
@@ -648,6 +648,28 @@ print(f"Final loss: {results['final_loss']}")
 - Sparse computation → 5.25-7.12x energy saving
 - Binary operations → Reduced power consumption
 - Pipeline efficiency → Minimized idle cycles
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply h2learn-snn-accelerator?
+
+**Agent:** I'll help you understand and apply h2learn-snn-accelerator...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for h2learn-snn-accelerator?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

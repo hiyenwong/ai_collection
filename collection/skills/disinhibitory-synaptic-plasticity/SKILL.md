@@ -1,6 +1,6 @@
 ---
 name: disinhibitory-synaptic-plasticity
-description: Model dis-inhibitory neuronal circuits that control synaptic plasticity sign. Bridge functional error-modulated learning with Hebbian plasticity through adaptive control theory. Predict inhibitory modulation effects on excitatory plasticity.
+description: 'Model dis-inhibitory neuronal circuits that control synaptic plasticity sign. Bridge functional error-modulated learning with Hebbian plasticity through adaptive control theory. Predict inhibitory modulation effects on excitatory plasticity.'
 ---
 
 # Dis-inhibitory Synaptic Plasticity Control
@@ -619,6 +619,28 @@ results = predictor.test_predictions()
 print(f"Blocking enhances LTP: {results['blocking_enhances_LTP']}")
 print(f"Enhancement suppresses LTP: {results['enhancement_suppresses_LTP']}")
 ```
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply disinhibitory-synaptic-plasticity?
+
+**Agent:** I'll help you understand and apply disinhibitory-synaptic-plasticity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for disinhibitory-synaptic-plasticity?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

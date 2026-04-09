@@ -1,6 +1,6 @@
 ---
 name: computational-taste-perception
-description: 计算味觉感知方法论。混合神经元模型结合Hodgkin-Huxley生物物理保真度和Izhikevich脉冲神经元计算效率，模拟味觉传导通路。适用于味觉受体建模、脉冲神经网络、多尺度学习。触发词：味觉感知、脉冲神经网络、Hodgkin-Huxley、Izhikevich、味觉受体、STDP、taste perception、spiking neural network、gustatory。
+description: '计算味觉感知方法论。混合神经元模型结合Hodgkin-Huxley生物物理保真度和Izhikevich脉冲神经元计算效率，模拟味觉传导通路。适用于味觉受体建模、脉冲神经网络、多尺度学习。触发词：味觉感知、脉冲神经网络、Hodgkin-Huxley、Izhikevich、味觉受体、STDP、taste perception、spiking neural network、gustatory。'
 user-invocable: true
 ---
 
@@ -260,3 +260,36 @@ class HybridTasteNetwork:
 ## 参考文献
 
 - arXiv:2510.00010 - Computational Advances in Taste Perception: From Ion Channels to Neural Coding
+## Activation Keywords
+
+- computational-taste-perception
+- computational-taste-perception 技能
+- computational-taste-perception skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply computational-taste-perception?
+
+**Agent:** I'll help you understand and apply computational-taste-perception...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for computational-taste-perception?
+
+**Agent:** Let me search for the latest research and best practices...

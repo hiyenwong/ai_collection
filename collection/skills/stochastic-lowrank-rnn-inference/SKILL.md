@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2406.16749v5
 utility: 0.88
-tags: [low-rank RNN, variational SMC, neural dynamics inference, fixed points, latent dynamics, computational neuroscience]
+tags: '[low-rank RNN, variational SMC, neural dynamics inference, fixed points, latent dynamics, computational neuroscience]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ Pals et al. (NeurIPS 2024) 提出随机低秩 RNN 推断方法：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Low-Rank RNN | Interpretable dynamics |
-| Variational SMC | Stochastic fitting |
-| Fixed Point Finder | Polynomial complexity |
-| Latent Extraction | Dimension reduction |
+- `Component` - Analysis component
+- `Low-Rank RNN` - Analysis component
+- `Variational SMC` - Analysis component
+- `Fixed Point Finder` - Analysis component
+- `Latent Extraction` - Analysis component
+
 
 ## Architecture
 
@@ -250,6 +250,30 @@ print(f"Found {len(fixed_points)} fixed points")
 | Interpretability | Low | High |
 | Latent dimension | n | r << n |
 | Biological relevance | Limited | High |
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply stochastic-lowrank-rnn-inference?
+
+**Agent:** I'll help you understand and apply stochastic-lowrank-rnn-inference...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for stochastic-lowrank-rnn-inference?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

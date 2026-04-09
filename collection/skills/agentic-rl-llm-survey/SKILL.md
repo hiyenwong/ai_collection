@@ -232,6 +232,20 @@ def agentic_reward(action, outcome, plan):
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply agentic-rl-llm-survey?
+
+**Agent:** I'll help you understand and apply agentic-rl-llm-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for agentic-rl-llm-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2509.02547

@@ -140,7 +140,6 @@ class DeepGraphNormalizer(nn.Module):
         
         return cbt
 
-
 def evaluate_cbt(cbt, population_graphs, criteria=['centeredness', 'reproducibility']):
     """
     Evaluate CBT quality
@@ -195,6 +194,34 @@ def evaluate_cbt(cbt, population_graphs, criteria=['centeredness', 'reproducibil
 - **DGN outperforms** other methods on centeredness, reproducibility, and topology preservation
 - Multi-view integration superior to single-view averaging
 - Essential for capturing population heterogeneity
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply multigraph-brain-integration?
+
+**Agent:** I'll help you understand and apply multigraph-brain-integration...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for multigraph-brain-integration?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

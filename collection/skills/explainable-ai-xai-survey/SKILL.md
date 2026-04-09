@@ -270,6 +270,20 @@ class VLMExplainer:
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply explainable-ai-xai-survey?
+
+**Agent:** I'll help you understand and apply explainable-ai-xai-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for explainable-ai-xai-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2501.09967

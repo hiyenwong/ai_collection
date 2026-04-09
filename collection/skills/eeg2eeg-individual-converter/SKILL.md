@@ -103,3 +103,38 @@ EEG 转换器、个体间 EEG、EEG2EEG、跨个体 EEG、individual EEG convert
 - 相关技能：`eeg-foundation-model`（EEG 基础模型）
 - 相关技能：`eeg-brain-connectivity-bci`（EEG BCI）
 - 论文链接：https://arxiv.org/abs/2304.10736
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- eeg2eeg-individual-converter
+- eeg2eeg-individual-converter 技能
+- eeg2eeg-individual-converter skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply eeg2eeg-individual-converter?
+
+**Agent:** I'll help you understand and apply eeg2eeg-individual-converter...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for eeg2eeg-individual-converter?
+
+**Agent:** Let me search for the latest research and best practices...

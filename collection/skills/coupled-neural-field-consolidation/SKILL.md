@@ -1,6 +1,6 @@
 ---
 name: coupled-neural-field-consolidation
-description: Model memory consolidation using coupled neural fields with hippocampus-neocortex interactions, neurogenesis, and distance-dependent synaptic plasticity. Based on Standard Consolidation Theory.
+description: 'Model memory consolidation using coupled neural fields with hippocampus-neocortex interactions, neurogenesis, and distance-dependent synaptic plasticity. Based on Standard Consolidation Theory.'
 ---
 
 # Coupled Neural Field Model for Memory Consolidation
@@ -380,7 +380,6 @@ def encode_memory_pattern(space_size, n_points, pattern_positions):
     
     return pattern
 
-
 def create_hippocampus_pattern(space_size_small, pattern_positions):
     """
     Create hippocampal memory pattern (smaller distances).
@@ -393,7 +392,6 @@ def create_hippocampus_pattern(space_size_small, pattern_positions):
         pattern: Hippocampal pattern
     """
     return encode_memory_pattern(space_size_small, 100, pattern_positions)
-
 
 def create_neocortex_pattern(space_size_large, pattern_positions):
     """
@@ -565,7 +563,6 @@ def analyze_consolidation_results(results):
     
     return analysis
 
-
 def check_neocortical_independence(system):
     """
     Check if neocortex can retrieve without hippocampus.
@@ -671,6 +668,28 @@ print(f"Hippocampus learning rate: {hippo_learning_rate}")
 print(f"Neocortex learning rate: {neo_learning_rate}")
 # Expected: Hippocampus >> Neocortex
 ```
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply coupled-neural-field-consolidation?
+
+**Agent:** I'll help you understand and apply coupled-neural-field-consolidation...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for coupled-neural-field-consolidation?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

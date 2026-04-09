@@ -2,8 +2,6 @@
 
 ## Description
 
-
-
 **Source:** https://openai.com/index/asymmetric-actor-critic-for-image-based-robot-learning
 **Date:** Wed, 18 Oct 2017 07:00:00 GMT
 **Category:** OpenAI Research
@@ -50,6 +48,28 @@
 ```python
 # Example usage based on research
 ```
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply asymmetric-actor-critic-for-image-based-robot-lear?
+
+**Agent:** I'll help you understand and apply asymmetric-actor-critic-for-image-based-robot-lear...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for asymmetric-actor-critic-for-image-based-robot-lear?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

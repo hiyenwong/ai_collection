@@ -108,7 +108,6 @@ class NeuralDecoderDNN(nn.Module):
         logits = self.classifier(features)
         return logits
 
-
 def train_and_transfer(train_animal_data, test_animal_data, num_classes):
     """
     Train DNN on one animal and transfer to others
@@ -173,6 +172,34 @@ def train_and_transfer(train_animal_data, test_animal_data, num_classes):
 1. **Distinct Encoding** - Natural vs artificial objects encoded differently
 2. **Consistency** - Neural code similar across animals
 3. **Generalization** - DNN trained on one animal works on others
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply dnn-neural-decoding?
+
+**Agent:** I'll help you understand and apply dnn-neural-decoding...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for dnn-neural-decoding?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

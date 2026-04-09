@@ -1,6 +1,6 @@
 ---
 name: brainstratify-speech-decoding
-description: BrainStratify颅内神经动力学语音解码方法论。从粗到细的解耦框架，通过空间上下文引导的时空建模识别功能组，使用解耦乘积量化(DPQ)分离神经动力学。适用于sEEG/ECoG语音解码、BCI语音接口。触发词：语音解码、BrainStratify、sEEG、ECoG、神经解耦、speech decoding、intracranial、BCI。
+description: 'BrainStratify颅内神经动力学语音解码方法论。从粗到细的解耦框架，通过空间上下文引导的时空建模识别功能组，使用解耦乘积量化(DPQ)分离神经动力学。适用于sEEG/ECoG语音解码、BCI语音接口。触发词：语音解码、BrainStratify、sEEG、ECoG、神经解耦、speech decoding、intracranial、BCI。'
 user-invocable: true
 ---
 
@@ -80,7 +80,6 @@ class DecoupledProductQuantization(nn.Module):
         
         return torch.cat(reconstructed, dim=-1)
 
-
 class BrainStratify(nn.Module):
     """BrainStratify 框架"""
     
@@ -150,3 +149,36 @@ class BrainStratify(nn.Module):
 ## 参考文献
 
 - arXiv:2505.20480 - BrainStratify: Coarse-to-Fine Disentanglement of Intracranial Neural Dynamics
+## Activation Keywords
+
+- brainstratify-speech-decoding
+- brainstratify-speech-decoding 技能
+- brainstratify-speech-decoding skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply brainstratify-speech-decoding?
+
+**Agent:** I'll help you understand and apply brainstratify-speech-decoding...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for brainstratify-speech-decoding?
+
+**Agent:** Let me search for the latest research and best practices...

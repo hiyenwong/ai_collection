@@ -316,6 +316,20 @@ class ConflictResolver:
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply human-ai-teaming-survey?
+
+**Agent:** I'll help you understand and apply human-ai-teaming-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for human-ai-teaming-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2504.05755

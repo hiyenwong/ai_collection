@@ -73,7 +73,6 @@ ENABLED_PROVIDERS = [
     'antigravity'
 ]
 
-
 def run_codexbar(provider, format='json'):
     """
     运行 codexbar 获取使用量
@@ -97,7 +96,6 @@ def run_codexbar(provider, format='json'):
     except Exception as e:
         return {'error': str(e), 'provider': provider}
 
-
 def get_all_usage(exclude=EXCLUDED_PROVIDERS):
     """
     获取所有启用的 AI 使用量（排除指定提供商）
@@ -117,7 +115,6 @@ def get_all_usage(exclude=EXCLUDED_PROVIDERS):
             results[provider] = {'status': 'error', 'message': usage.get('error')}
 
     return results
-
 
 def format_usage_report(results):
     """
@@ -155,7 +152,6 @@ def format_usage_report(results):
     report.append("\n" + "=" * 50)
     return "\n".join(report)
 
-
 def check_usage_alert(results, threshold=80):
     """
     检查使用量是否超过阈值
@@ -175,7 +171,6 @@ def check_usage_alert(results, threshold=80):
                         })
 
     return alerts
-
 
 def main():
     """
@@ -211,7 +206,6 @@ def main():
                 print("\n⚠️ 使用量警告:")
                 for alert in alerts:
                     print(f"  {alert['alert']}")
-
 
 if __name__ == '__main__':
     main()
@@ -305,3 +299,38 @@ codexbar usage --provider copilot --status
 ---
 
 _此技能用于监控非百炼 AI 的使用情况，帮助管理 AI 资源_
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- ai-usage-monitor
+- ai-usage-monitor 技能
+- ai-usage-monitor skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply ai-usage-monitor?
+
+**Agent:** I'll help you understand and apply ai-usage-monitor...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for ai-usage-monitor?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -147,7 +147,6 @@ class MEGfMRIEncodingModel(nn.Module):
         
         return outputs
 
-
 class TemporalEncoding(nn.Module):
     """
     时间位置编码
@@ -164,7 +163,6 @@ class TemporalEncoding(nn.Module):
     
     def forward(self, seq_len):
         return self.pe[:seq_len]
-
 
 class ForwardModelMEG(nn.Module):
     """
@@ -183,7 +181,6 @@ class ForwardModelMEG(nn.Module):
         returns: [batch, time, n_sensors]
         """
         return torch.matmul(source_activity, self.lead_field.T)
-
 
 class ForwardModelfMRI(nn.Module):
     """
@@ -413,3 +410,38 @@ def validate_with_ecog(model, ecog_data, stimulus):
 ---
 
 _此技能基于 Transformer 编码模型，实现毫秒-毫米级脑活动估计_
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- meg-fmri-transformer-encoding
+- meg-fmri-transformer-encoding 技能
+- meg-fmri-transformer-encoding skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply meg-fmri-transformer-encoding?
+
+**Agent:** I'll help you understand and apply meg-fmri-transformer-encoding...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for meg-fmri-transformer-encoding?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -287,6 +287,20 @@ def plan_with_world_model(model, goal, initial_state, horizon=50):
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply world-models-survey?
+
+**Agent:** I'll help you understand and apply world-models-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for world-models-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2411.14499

@@ -1,6 +1,6 @@
 ---
 name: core-periphery-state-space
-description: 核心-边缘状态空间模型方法论。使用Mamba选择性状态空间模型线性复杂度捕获脑网络长程依赖，CP-MoE专家混合学习连接模式。适用于功能连接组分类、fMRI分析。触发词：核心-边缘、状态空间模型、Mamba、功能连接、core-periphery、state space model、fMRI classification。
+description: '核心-边缘状态空间模型方法论。使用Mamba选择性状态空间模型线性复杂度捕获脑网络长程依赖，CP-MoE专家混合学习连接模式。适用于功能连接组分类、fMRI分析。触发词：核心-边缘、状态空间模型、Mamba、功能连接、core-periphery、state space model、fMRI classification。'
 user-invocable: true
 ---
 
@@ -72,7 +72,6 @@ class CPSSM(nn.Module):
         
         return combined
 
-
 class MambaBlock(nn.Module):
     """简化版 Mamba SSM"""
     
@@ -98,7 +97,6 @@ class MambaBlock(nn.Module):
         
         return self.proj_out(torch.stack(outputs, dim=1))
 
-
 class CorePeripheryRouter(nn.Module):
     """核心-边缘路由器"""
     
@@ -109,7 +107,6 @@ class CorePeripheryRouter(nn.Module):
     def forward(self, x):
         """识别核心/边缘节点"""
         return torch.softmax(self.classifier(x.mean(dim=1)), dim=-1)
-
 
 class Expert(nn.Module):
     """单个专家网络"""
@@ -158,3 +155,36 @@ class Expert(nn.Module):
 ## 参考文献
 
 - arXiv:2503.14655 - Core-Periphery Principle Guided State Space Model
+## Activation Keywords
+
+- core-periphery-state-space
+- core-periphery-state-space 技能
+- core-periphery-state-space skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply core-periphery-state-space?
+
+**Agent:** I'll help you understand and apply core-periphery-state-space...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for core-periphery-state-space?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -279,6 +279,20 @@ class GFMRAG:
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply graph-rag-knowledge-graph?
+
+**Agent:** I'll help you understand and apply graph-rag-knowledge-graph...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for graph-rag-knowledge-graph?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2501.00309

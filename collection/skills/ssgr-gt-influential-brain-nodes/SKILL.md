@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2409.11174v1
 utility: 0.88
-tags: [influential nodes, brain networks, self-supervised, graph transformer, multimodal fusion, rich-club]
+tags: '[influential nodes, brain networks, self-supervised, graph transformer, multimodal fusion, rich-club]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ Kang et al. (2024) 提出 SSGR-GT 框架：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Graph-Transformer | Local + global features |
-| Self-Supervised Learning | Data-driven representation |
-| Graph Reconstruction | Node importance extraction |
-| Multimodal Fusion | Functional + structural |
+- `Component` - Analysis component
+- `Graph-Transformer` - Analysis component
+- `Self-Supervised Learning` - Analysis component
+- `Graph Reconstruction` - Analysis component
+- `Multimodal Fusion` - Analysis component
+
 
 ## Architecture
 
@@ -300,6 +300,30 @@ i_nodes, importance = identify_influential_nodes(model, func_data, struct_data)
 
 print(f"Top 10 I-nodes: {i_nodes[:10]}")
 ```
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply ssgr-gt-influential-brain-nodes?
+
+**Agent:** I'll help you understand and apply ssgr-gt-influential-brain-nodes...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for ssgr-gt-influential-brain-nodes?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

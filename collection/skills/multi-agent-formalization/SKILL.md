@@ -64,3 +64,38 @@
 ## Further Reading
 - Full paper: https://arxiv.org/abs/2604.03071
 - PDF: https://arxiv.org/pdf/2604.03071
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- multi-agent-formalization
+- multi-agent-formalization 技能
+- multi-agent-formalization skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply multi-agent-formalization?
+
+**Agent:** I'll help you understand and apply multi-agent-formalization...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for multi-agent-formalization?
+
+**Agent:** Let me search for the latest research and best practices...

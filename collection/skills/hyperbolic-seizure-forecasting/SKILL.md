@@ -506,3 +506,38 @@ class SeizurePredictionPipeline:
 ---
 
 _此技能基于双曲嵌入方法，用于癫痫发作预测的生物标志物开发_
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- hyperbolic-seizure-forecasting
+- hyperbolic-seizure-forecasting 技能
+- hyperbolic-seizure-forecasting skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply hyperbolic-seizure-forecasting?
+
+**Agent:** I'll help you understand and apply hyperbolic-seizure-forecasting...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for hyperbolic-seizure-forecasting?
+
+**Agent:** Let me search for the latest research and best practices...

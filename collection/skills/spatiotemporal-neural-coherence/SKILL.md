@@ -1,6 +1,6 @@
 ---
 name: spatiotemporal-neural-coherence
-description: 时空神经一致性解码方法论。使用 EEG 和光流特征构建预测性神经动力学的时空表征。适用于视觉语言处理的神经解码、预测推理分析。触发词：神经解码、预测推理、视觉语言、EEG 分析、光流特征、neural decoding、predictive inference、visual language。
+description: '时空神经一致性解码方法论。使用 EEG 和光流特征构建预测性神经动力学的时空表征。适用于视觉语言处理的神经解码、预测推理分析。触发词：神经解码、预测推理、视觉语言、EEG 分析、光流特征、neural decoding、predictive inference、visual language。'
 user-invocable: true
 ---
 
@@ -226,3 +226,36 @@ def extract_optical_flow(frames):
 
 - arXiv:2512.20929 - Decoding Predictive Inference in Visual Language Processing via Spatiotemporal Neural Coherence
 - NeurIPS 2025 Workshop: Foundation Models for the Brain and Body
+## Activation Keywords
+
+- spatiotemporal-neural-coherence
+- spatiotemporal-neural-coherence 技能
+- spatiotemporal-neural-coherence skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply spatiotemporal-neural-coherence?
+
+**Agent:** I'll help you understand and apply spatiotemporal-neural-coherence...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for spatiotemporal-neural-coherence?
+
+**Agent:** Let me search for the latest research and best practices...

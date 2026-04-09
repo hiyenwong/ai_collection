@@ -96,3 +96,38 @@ EEG 基础模型、预训练 EEG、EEG foundation model、LCM、Large Cognition 
 - 相关技能：`spikingjelly-framework`（SNN 实现）
 - 相关技能：`eeg-brain-connectivity-bci`（BCI 应用）
 - 论文链接：https://arxiv.org/abs/2502.17464
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- eeg-foundation-model
+- eeg-foundation-model 技能
+- eeg-foundation-model skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply eeg-foundation-model?
+
+**Agent:** I'll help you understand and apply eeg-foundation-model...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for eeg-foundation-model?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -1,6 +1,6 @@
 ---
 name: brain-network-joint-embedding
-description: "基于图神经网络的结构-功能脑网络联合嵌入方法，用于心理疾病诊断。整合多模态脑成像数据，使用对比学习进行特征融合。"
+description: '基于图神经网络的结构-功能脑网络联合嵌入方法，用于心理疾病诊断。整合多模态脑成像数据，使用对比学习进行特征融合。'
 ---
 
 # Brain Network Joint Embedding
@@ -139,7 +139,6 @@ def init_node_features(adj_matrix, k=3):
     
     return node_features
 
-
 def compute_clustering_coefficient(adj_matrix):
     """
     计算聚类系数
@@ -171,7 +170,6 @@ def compute_clustering_coefficient(adj_matrix):
             clustering[i] = 2 * triangles / (k * (k - 1))
     
     return clustering
-
 
 def compute_local_efficiency(adj_matrix):
     """
@@ -271,7 +269,6 @@ class BrainGNN(nn.Module):
         
         return output
 
-
 class GNNLayer(nn.Module):
     """
     图神经网络层
@@ -324,7 +321,6 @@ class GNNLayer(nn.Module):
         
         return output
 
-
 def compute_attention_weights(node_features, adj_matrix, attention_net):
     """
     计算注意力权重
@@ -350,7 +346,6 @@ def compute_attention_weights(node_features, adj_matrix, attention_net):
     attention = attention / (attention.sum(dim=-1, keepdim=True) + 1e-8)
     
     return attention
-
 
 def attention_pooling(node_features, adj_matrix):
     """
@@ -572,7 +567,6 @@ def train_model(train_loader, val_loader, model, optimizer, n_epochs=100, device
         print(f"Epoch {epoch+1}/{n_epochs}, Loss: {total_loss:.4f}, Val Acc: {val_acc:.4f}")
     
     return model
-
 
 def evaluate(data_loader, model, device):
     """
@@ -797,6 +791,20 @@ generate_diagnostic_report(results)
 | 2107.03220 | Joint Brain Network Embedding | 本论文 |
 | 2404.10031 | ELSA for Brain Networks | 分层脑网络 |
 | 2401.05343 | Spectral TDA of Brain Signals | 拓扑分析 |
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply brain-network-joint-embedding?
+
+**Agent:** I'll help you understand and apply brain-network-joint-embedding...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for brain-network-joint-embedding?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

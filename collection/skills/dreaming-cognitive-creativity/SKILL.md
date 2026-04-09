@@ -1,6 +1,6 @@
 ---
 name: dreaming-cognitive-creativity
-description: "研究做梦的认知功能：记忆整合、情绪处理与创造性机制。基于神经科学论文，探索梦境如何促进创造性思维。"
+description: 研究做梦的认知功能：记忆整合、情绪处理与创造性机制。基于神经科学论文，探索梦境如何促进创造性思维。
 ---
 
 # Dreaming Cognitive Creativity
@@ -487,6 +487,20 @@ solutions = apply_insights(problem, creative_insights)
 | 2209.05002 | Attractor landscape of working memory | 0.87 | 工作记忆 |
 | 1706.06914 | Hippocampal Spike-Timing | 0.85 | 海马体 |
 | 2509.10891 | Causal Emergence of Consciousness | 0.87 | 意识涌现 |
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply dreaming-cognitive-creativity?
+
+**Agent:** I'll help you understand and apply dreaming-cognitive-creativity...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for dreaming-cognitive-creativity?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

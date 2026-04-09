@@ -1,6 +1,6 @@
 ---
 name: seizure-risk-forecasting
-description: 癫痫发作风险预测方法论。将iEEG功能脑网络嵌入低维欧氏空间，定义无量纲生物标志物区分发作间期和发作前期。适用于癫痫发作预测、iEEG分析。触发词：癫痫预测、seizure forecasting、preictal。
+description: '癫痫发作风险预测方法论。将iEEG功能脑网络嵌入低维欧氏空间，定义无量纲生物标志物区分发作间期和发作前期。适用于癫痫发作预测、iEEG分析。触发词：癫痫预测、seizure forecasting、preictal。'
 user-invocable: true
 ---
 
@@ -48,3 +48,36 @@ class SeizureRiskForecaster:
 ## 参考文献
 
 - arXiv:2505.00856
+## Activation Keywords
+
+- seizure-risk-forecasting
+- seizure-risk-forecasting 技能
+- seizure-risk-forecasting skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply seizure-risk-forecasting?
+
+**Agent:** I'll help you understand and apply seizure-risk-forecasting...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for seizure-risk-forecasting?
+
+**Agent:** Let me search for the latest research and best practices...

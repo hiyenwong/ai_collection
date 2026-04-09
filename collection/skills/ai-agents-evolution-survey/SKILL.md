@@ -90,6 +90,20 @@ Environment Input → Perception → Planning → Tool Use → Action
 
 ---
 
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply ai-agents-evolution-survey?
+
+**Agent:** I'll help you understand and apply ai-agents-evolution-survey...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for ai-agents-evolution-survey?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2503.12687

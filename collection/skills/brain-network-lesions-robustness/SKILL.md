@@ -1,7 +1,7 @@
 ---
 arxiv_id: 0704.0392v1
 utility: 0.88
-tags: [brain network, robustness, lesions, scale-free, hub nodes, cortical connectivity, network analysis]
+tags: '[brain network, robustness, lesions, scale-free, hub nodes, cortical connectivity, network analysis]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ Kaiser et al. (2007) 通过网络分析方法研究脑网络鲁棒性：
 
 ## Tools Used
 
-| Analysis | Purpose |
-|----------|---------|
-| Node removal | Assess critical nodes |
-| Edge removal | Identify bottleneck connections |
-| Network comparison | Scale-free vs random vs small-world |
-| Structural decay | Robustness quantification |
+- `Analysis` - Analysis component
+- `Node removal` - Analysis component
+- `Edge removal` - Analysis component
+- `Network comparison` - Analysis component
+- `Structural decay` - Analysis component
+
 
 ## Key Findings
 
@@ -166,6 +166,30 @@ comparison = analyzer.compare_with_benchmark(
 | Hub vulnerability | Stroke damage prediction |
 | Bottleneck connections | Surgical planning |
 | Scale-free robustness | Network recovery potential |
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply brain-network-lesions-robustness?
+
+**Agent:** I'll help you understand and apply brain-network-lesions-robustness...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for brain-network-lesions-robustness?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

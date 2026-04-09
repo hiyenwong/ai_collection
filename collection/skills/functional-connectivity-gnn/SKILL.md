@@ -180,6 +180,36 @@ class FCGNN(torch.nn.Module):
 | `discrete-heat-kernels-simplicial` | Topological methods |
 | `graph-laplacian-denoising` | Graph spectral methods |
 
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply functional-connectivity-gnn?
+
+**Agent:** I'll help you understand and apply functional-connectivity-gnn...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for functional-connectivity-gnn?
+
+**Agent:** Let me search for the latest research and best practices...
+
 ## References
 
 - Paper: https://arxiv.org/abs/2508.05786

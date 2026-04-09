@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2102.04312v1
 utility: 0.88
-tags: [Cartesian Genetic Programming, synaptic plasticity, evolutionary learning, PCA, plasticity rules, neuromodulation]
+tags: '[Cartesian Genetic Programming, synaptic plasticity, evolutionary learning, PCA, plasticity rules, neuromodulation]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ Mettler et al. (2021) 提出 "Evolving-to-Learn" 方法：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Cartesian Genetic Programming | Rule evolution |
-| Fitness Evaluation | Task performance |
-| Plasticity Rule | Synaptic modification |
-| PCA Task | Example application |
+- `Component` - Analysis component
+- `Cartesian Genetic Programming` - Analysis component
+- `Fitness Evaluation` - Analysis component
+- `Plasticity Rule` - Analysis component
+- `PCA Task` - Analysis component
+
 
 ## Architecture
 
@@ -212,6 +212,30 @@ print("Oja rule: Δw = pre * post - post² * w")
 2. **数据适应** - 规则适应训练数据结构
 3. **可解释性** - CGP 产生人类可读规则
 4. **生物合理** - 可加入约束保证生物合理性
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply evolving-plasticity-rules-cgp?
+
+**Agent:** I'll help you understand and apply evolving-plasticity-rules-cgp...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for evolving-plasticity-rules-cgp?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

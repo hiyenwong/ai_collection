@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2005.05784v2
 utility: 0.88
-tags: [Alzheimer, MEG, graph embedding, disease progression, brain networks, GNN, MCI prediction]
+tags: '[Alzheimer, MEG, graph embedding, disease progression, brain networks, GNN, MCI prediction]'
 created: 2026-03-31
 ---
 
@@ -33,12 +33,12 @@ Xu et al. (2020) 提出 MG2G（Multiple Graph Gaussian embedding）：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Graph Neural Network | Network feature learning |
-| Gaussian Embedding | Latent distribution modeling |
-| MEG Connectivity | Functional brain networks |
-| Classifier | Downstream prediction tasks |
+- `Component` - Analysis component
+- `Graph Neural Network` - Analysis component
+- `Gaussian Embedding` - Analysis component
+- `MEG Connectivity` - Analysis component
+- `Classifier` - Analysis component
+
 
 ## Architecture
 
@@ -175,6 +175,30 @@ classifier = predict_mci_conversion(embeddings, mci_labels)
 | MCI→AD Prediction | ~85% accuracy |
 | Early AD Detection | ~80% sensitivity |
 | Region Identification | Significant in temporal lobe |
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply graph-gaussian-embedding-alzheimer-meg?
+
+**Agent:** I'll help you understand and apply graph-gaussian-embedding-alzheimer-meg...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for graph-gaussian-embedding-alzheimer-meg?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

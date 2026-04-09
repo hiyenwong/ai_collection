@@ -106,3 +106,38 @@
 - 相关技能：`decolle-snn-learning`（局部学习）
 - 相关技能：`bio-neuron-snn-learning`（生物神经元学习）
 - 论文链接：https://arxiv.org/abs/2507.16937
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Activation Keywords
+
+- fractional-order-snn
+- fractional-order-snn 技能
+- fractional-order-snn skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply fractional-order-snn?
+
+**Agent:** I'll help you understand and apply fractional-order-snn...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for fractional-order-snn?
+
+**Agent:** Let me search for the latest research and best practices...

@@ -1,16 +1,12 @@
 ---
 name: llm-decision-centric-design
 description: 'Decision-Centric framework for LLM systems that separates decision signals from action policies. Apply this when designing LLM control flow, routing, adaptive inference, or building diagnosable agent systems.'
-metadata:
-  {
-    "openclaw":
-      {
-        "emoji": "🎯",
-        "source": "arxiv:2604.00414",
-        "authors": ["Wei Sun"],
-        "year": 2026,
-      },
-  }
+metadata: 
+"openclaw": 
+"emoji": "🎯",
+"source": "arxiv:2604.00414",
+"authors": ["Wei Sun"],
+"year": 2026,
 ---
 
 # Decision-Centric Design for LLM Systems
@@ -112,3 +108,36 @@ OpenClaw's skill routing and tool selection can benefit from this framework:
 ---
 
 *Source: arxiv:2604.00414 - Wei Sun, 2026*
+## Activation Keywords
+
+- llm-decision-centric-design
+- llm-decision-centric-design 技能
+- llm-decision-centric-design skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply llm-decision-centric-design?
+
+**Agent:** I'll help you understand and apply llm-decision-centric-design...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for llm-decision-centric-design?
+
+**Agent:** Let me search for the latest research and best practices...

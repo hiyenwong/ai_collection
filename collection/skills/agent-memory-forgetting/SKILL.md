@@ -1,6 +1,6 @@
 ---
 name: agent-memory-forgetting
-description: Implement adaptive memory forgetting for autonomous AI agents. Use when building long-horizon conversational agents, managing agent memory growth, preventing false memory propagation, or implementing relevance-guided memory scoring. Based on arXiv:2604.02280 - Novel Memory Forgetting Techniques for Autonomous AI Agents.
+description: 'Implement adaptive memory forgetting for autonomous AI agents. Use when building long-horizon conversational agents, managing agent memory growth, preventing false memory propagation, or implementing relevance-guided memory scoring. Based on arXiv:2604.02280 - Novel Memory Forgetting Techniques for Autonomous AI Agents.'
 ---
 
 # Agent Memory Forgetting
@@ -66,3 +66,36 @@ When implementing agent memory forgetting:
 ## Paper Reference
 
 arXiv:2604.02280 - "Novel Memory Forgetting Techniques for Autonomous AI Agents: Balancing Relevance and Efficiency" (Apr 2026)
+## Activation Keywords
+
+- agent-memory-forgetting
+- agent-memory-forgetting 技能
+- agent-memory-forgetting skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply agent-memory-forgetting?
+
+**Agent:** I'll help you understand and apply agent-memory-forgetting...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for agent-memory-forgetting?
+
+**Agent:** Let me search for the latest research and best practices...

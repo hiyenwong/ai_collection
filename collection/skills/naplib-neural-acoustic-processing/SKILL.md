@@ -1,7 +1,7 @@
 ---
 arxiv_id: 2304.01799v1
 utility: 0.88
-tags: [neural acoustic, Python, data processing, auditory neuroscience, preprocessing, feature extraction]
+tags: '[neural acoustic, Python, data processing, auditory neuroscience, preprocessing, feature extraction]'
 created: 2026-03-31
 ---
 
@@ -34,12 +34,12 @@ naplib-python 提供统一解决方案：
 
 ## Tools Used
 
-| Component | Function |
-|-----------|----------|
-| Data Structure | Unified format for neural/stimuli data |
-| Preprocessing | Filtering, normalization, artifact removal |
-| Feature Extraction | Spectral, temporal features |
-| Analysis | Statistical and visualization tools |
+- `Component` - Analysis component
+- `Data Structure` - Analysis component
+- `Preprocessing` - Analysis component
+- `Feature Extraction` - Analysis component
+- `Analysis` - Analysis component
+
 
 ## Installation
 
@@ -281,6 +281,30 @@ analysis.plot_heatmap(data)
 | 多模态 | 手动同步 | 内置支持 |
 | 可复现性 | 低 | 高 |
 | 学习曲线 | 陡峭 | 平缓 |
+
+## Description
+Framework from arXiv papers. See paper reference for details.
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply naplib-neural-acoustic-processing?
+
+**Agent:** I'll help you understand and apply naplib-neural-acoustic-processing...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for naplib-neural-acoustic-processing?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

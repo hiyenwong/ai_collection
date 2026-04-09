@@ -1,6 +1,6 @@
 ---
 name: two-trace-stdp-model
-description: Two-trace model for spike-timing-dependent plasticity (STDP). Model NMDA receptor activation and Ca2+ concentration traces. Reproduce pairwise STDP rules and triplet nonlinearities. Bridge phenomenological rules and detailed models.
+description: 'Two-trace model for spike-timing-dependent plasticity (STDP). Model NMDA receptor activation and Ca2+ concentration traces. Reproduce pairwise STDP rules and triplet nonlinearities. Bridge phenomenological rules and detailed models.'
 ---
 
 # Two-Trace STDP Model
@@ -100,6 +100,34 @@ class TwoTraceSTDP:
             
         return dw
 ```
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply two-trace-stdp-model?
+
+**Agent:** I'll help you understand and apply two-trace-stdp-model...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for two-trace-stdp-model?
+
+**Agent:** Let me search for the latest research and best practices...
 
 ## References
 

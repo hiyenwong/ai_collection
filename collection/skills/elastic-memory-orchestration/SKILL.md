@@ -1,6 +1,6 @@
 ---
 name: elastic-memory-orchestration
-description: 弹性记忆编排技能，解决长程任务中的静态认知、刚性工作流依赖和低效上下文使用问题。触发词：弹性记忆、记忆编排、长期记忆、上下文管理。
+description: '弹性记忆编排技能，解决长程任务中的静态认知、刚性工作流依赖和低效上下文使用问题。触发词：弹性记忆、记忆编排、长期记忆、上下文管理。'
 ---
 
 # Elastic Memory Orchestration - 弹性记忆编排
@@ -215,3 +215,36 @@ Day N:
 **来源论文：** AutoAgent - Evolving Cognition and Elastic Memory Orchestration
 **效用评分：** 0.95
 **创建日期：** 2026-03-14
+## Activation Keywords
+
+- elastic-memory-orchestration
+- elastic-memory-orchestration 技能
+- elastic-memory-orchestration skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+
+1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
+2. **Search for Information**: Use web_search to find relevant papers or documentation.
+3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
+4. **Provide Results**: Summarize findings and actionable recommendations.
+5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** How can I apply elastic-memory-orchestration?
+
+**Agent:** I'll help you understand and apply elastic-memory-orchestration...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for elastic-memory-orchestration?
+
+**Agent:** Let me search for the latest research and best practices...
