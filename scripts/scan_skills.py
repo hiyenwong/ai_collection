@@ -18,81 +18,354 @@ from typing import Any
 # Category classification rules: (keyword_list, category_name)
 CATEGORY_RULES: list[tuple[list[str], str]] = [
     # Coding / development
-    (["opencode", "claude-code", "copilot", "openspec", "cursor", "react", "electron",
-      "chrome-extension", "frontend", "docker", "spring-boot", "codex", "gemini-cli",
-      "harness-engineering", "swe-bench", "swe-ci"], "coding"),
+    (
+        [
+            "opencode",
+            "claude-code",
+            "copilot",
+            "openspec",
+            "cursor",
+            "react",
+            "electron",
+            "chrome-extension",
+            "frontend",
+            "docker",
+            "spring-boot",
+            "codex",
+            "gemini-cli",
+            "harness-engineering",
+            "swe-bench",
+            "swe-ci",
+        ],
+        "coding",
+    ),
     # Finance
-    (["stock", "akshare", "finance", "portfolio", "quantum-finance", "quantum-portfolio",
-      "thsdk", "trading", "quantitative"], "finance"),
+    (
+        [
+            "stock",
+            "akshare",
+            "finance",
+            "portfolio",
+            "quantum-finance",
+            "quantum-portfolio",
+            "thsdk",
+            "trading",
+            "quantitative",
+        ],
+        "finance",
+    ),
     # Quantum computing (exclude quantum-finance which goes to finance)
-    (["quantum-knowledge", "quantum-game", "quantum-neural", "quantum-protocol",
-      "quantum-algorithm", "quantum-information", "quantum-ml", "quantum-eeg",
-      "distributed-quantum", "quantum-nonreciprocal"], "quantum"),
+    (
+        [
+            "quantum-knowledge",
+            "quantum-game",
+            "quantum-neural",
+            "quantum-protocol",
+            "quantum-algorithm",
+            "quantum-information",
+            "quantum-ml",
+            "quantum-eeg",
+            "distributed-quantum",
+            "quantum-nonreciprocal",
+        ],
+        "quantum",
+    ),
     # Neuroscience / brain
-    (["brain", "neural", "snn", "synaptic", "spike", "neuro", "eeg", "fmri", "meg",
-      "connectome", "dendritic", "kuramoto", "seizure", "stdp", "hebbian", "hopfield",
-      "nca", "potassium", "attractor", "plasticity", "cognitive", "bcmi", "bold",
-      "tms", "dementia", "autism", "schizophrenia", "alzheimer"], "neuroscience"),
+    (
+        [
+            "brain",
+            "neural",
+            "snn",
+            "synaptic",
+            "spike",
+            "neuro",
+            "eeg",
+            "fmri",
+            "meg",
+            "connectome",
+            "dendritic",
+            "kuramoto",
+            "seizure",
+            "stdp",
+            "hebbian",
+            "hopfield",
+            "nca",
+            "potassium",
+            "attractor",
+            "plasticity",
+            "cognitive",
+            "bcmi",
+            "bold",
+            "tms",
+            "dementia",
+            "autism",
+            "schizophrenia",
+            "alzheimer",
+        ],
+        "neuroscience",
+    ),
     # AI agents / systems
-    (["agent", "agentic", "multi-agent", "delegation", "coordination", "autopoiesis",
-      "evolving", "self-evolution", "godel-self", "espl", "competitive-self",
-      "emergent-tool", "hierarchical-agent"], "ai-agents"),
+    (
+        [
+            "agent",
+            "agentic",
+            "multi-agent",
+            "delegation",
+            "coordination",
+            "autopoiesis",
+            "evolving",
+            "self-evolution",
+            "godel-self",
+            "espl",
+            "competitive-self",
+            "emergent-tool",
+            "hierarchical-agent",
+        ],
+        "ai-agents",
+    ),
     # AI reasoning / training
-    (["reasoning", "rl", "reinforcement", "mcmc", "attention", "scaling", "scaling-law",
-      "generative", "diffusion", "gan", "vae", "normalization", "dropout", "pruning",
-      "蒸馏", "training", "inference", "llm", "language-model", "transformer",
-      "gpt", "token", "consistency-model", "clip", "efficient", "bcvareta",
-      "claude", "sonnet", "opus", "haiku"], "ai-reasoning"),
+    (
+        [
+            "reasoning",
+            "rl",
+            "reinforcement",
+            "mcmc",
+            "attention",
+            "scaling",
+            "scaling-law",
+            "generative",
+            "diffusion",
+            "gan",
+            "vae",
+            "normalization",
+            "dropout",
+            "pruning",
+            "蒸馏",
+            "training",
+            "inference",
+            "llm",
+            "language-model",
+            "transformer",
+            "gpt",
+            "token",
+            "consistency-model",
+            "clip",
+            "efficient",
+            "bcvareta",
+            "claude",
+            "sonnet",
+            "opus",
+            "haiku",
+        ],
+        "ai-reasoning",
+    ),
     # AI safety / evaluation
-    (["safety", "red-team", "adversarial", "bias", "fairness", "privacy",
-      "robust", "alignment", "guardrails", "injection", "honest", "verifiable",
-      "prover-verifier", "political-bias", "truthful", "membership-inference",
-      "evaluating", "mle-bench", "simpleqa", "indqa", "evmbench",
-      "cognitive-dark"], "ai-safety"),
+    (
+        [
+            "safety",
+            "red-team",
+            "adversarial",
+            "bias",
+            "fairness",
+            "privacy",
+            "robust",
+            "alignment",
+            "guardrails",
+            "injection",
+            "honest",
+            "verifiable",
+            "prover-verifier",
+            "political-bias",
+            "truthful",
+            "membership-inference",
+            "evaluating",
+            "mle-bench",
+            "simpleqa",
+            "indqa",
+            "evmbench",
+            "cognitive-dark",
+        ],
+        "ai-safety",
+    ),
     # Meta-skills
-    (["skill-extractor", "skill-rag", "skill-creator", "skill-updater", "find-skills",
-      "ice-review", "memory-retrieval", "self-challenge", "indexed-memory",
-      "meta-cognitive", "declarative-self"], "meta-skills"),
+    (
+        [
+            "skill-extractor",
+            "skill-rag",
+            "skill-creator",
+            "skill-updater",
+            "find-skills",
+            "ice-review",
+            "memory-retrieval",
+            "self-challenge",
+            "indexed-memory",
+            "meta-cognitive",
+            "declarative-self",
+        ],
+        "meta-skills",
+    ),
     # Security tools
-    (["security-engineer", "security-guardrails", "prompt-injection-defense"], "security"),
+    (
+        ["security-engineer", "security-guardrails", "prompt-injection-defense"],
+        "security",
+    ),
     # OpenAI research papers
-    (["openai-", "openai_", "gpt-2", "gpt-4", "gpt-5", "dota-2", "dalle",
-      "jukebox", "point-e", "musenet", "sora", "retro-contest", "procgen",
-      "roboschool", "gym", "universe", "webgpt", "image-gpt", "scaling-kubernetes",
-      "whisper", "spinning-up", "o1-mini", "o3-mini"], "openai-research"),
+    (
+        [
+            "openai-",
+            "openai_",
+            "gpt-2",
+            "gpt-4",
+            "gpt-5",
+            "dota-2",
+            "dalle",
+            "jukebox",
+            "point-e",
+            "musenet",
+            "sora",
+            "retro-contest",
+            "procgen",
+            "roboschool",
+            "gym",
+            "universe",
+            "webgpt",
+            "image-gpt",
+            "scaling-kubernetes",
+            "whisper",
+            "spinning-up",
+            "o1-mini",
+            "o3-mini",
+        ],
+        "openai-research",
+    ),
     # Data analysis tools
-    (["data-engineer", "sqlite-knowledge-graph", "sqlite-kg", "rag", "graph-rag",
-      "knowledge-graph", "research-literature", "hypergraph", "lancedb",
-      "chat-history"], "data-analysis"),
+    (
+        [
+            "data-engineer",
+            "sqlite-knowledge-graph",
+            "sqlite-kg",
+            "rag",
+            "graph-rag",
+            "knowledge-graph",
+            "research-literature",
+            "hypergraph",
+            "lancedb",
+            "chat-history",
+        ],
+        "data-analysis",
+    ),
     # Domain tools / integration
-    (["feishu", "apple-", "iamb", "matrix", "sonos", "weather", "news",
-      "consulting-report", "arxiv-search", "arxiv-paper", "openai-research-monitor",
-      "hourly-research", "autoresearch", "news-search", "taiyi", "meditation"], "domain-tools"),
+    (
+        [
+            "feishu",
+            "apple-",
+            "iamb",
+            "matrix",
+            "sonos",
+            "weather",
+            "news",
+            "consulting-report",
+            "arxiv-search",
+            "arxiv-paper",
+            "openai-research-monitor",
+            "hourly-research",
+            "autoresearch",
+            "news-search",
+            "taiyi",
+            "meditation",
+        ],
+        "domain-tools",
+    ),
     # General AI topics (catch broader research topics)
-    (["robot", "sim-to-real", "imitation-learning", "montezuma", "minecraft",
-      "exploration", "curiosity", "meta-learning", "evolution", "gamepad",
-      "domain-randomization", "dexterity", "rubik", "theorem", "math",
-      "world-model", "simulator", "physics"], "general-ai"),
+    (
+        [
+            "robot",
+            "sim-to-real",
+            "imitation-learning",
+            "montezuma",
+            "minecraft",
+            "exploration",
+            "curiosity",
+            "meta-learning",
+            "evolution",
+            "gamepad",
+            "domain-randomization",
+            "dexterity",
+            "rubik",
+            "theorem",
+            "math",
+            "world-model",
+            "simulator",
+            "physics",
+        ],
+        "general-ai",
+    ),
     # IoT / systems
     (["iot"], "systems-engineering"),
     # Additional coverage for uncategorized items
-    (["tripartite-synapse", "hysteresis", "gyralnet", "subnetwork",
-      "trajectory-controlled"], "neuroscience"),
-    (["policy-gradient", "hindsight-experience", "reinforcement",
-      "variance-reduction", "option-discovery", "curriculum-learning",
-      "opponent-learning"], "ai-reasoning"),
+    (
+        [
+            "tripartite-synapse",
+            "hysteresis",
+            "gyralnet",
+            "subnetwork",
+            "trajectory-controlled",
+        ],
+        "neuroscience",
+    ),
+    (
+        [
+            "policy-gradient",
+            "hindsight-experience",
+            "reinforcement",
+            "variance-reduction",
+            "option-discovery",
+            "curriculum-learning",
+            "opponent-learning",
+        ],
+        "ai-reasoning",
+    ),
     (["accessibility-wcag", "a11y"], "coding"),
-    (["infinite-horizon", "stochastic-analysis", "stochastic-momentum",
-      "admm"], "ai-reasoning"),
-    (["pixelcnn", "variational-lossy", "texture-interpolation",
-      "nonlinear-computation", "deep-linear", "visual-perception",
-      "understanding-the-source"], "ai-reasoning"),
-    (["research-agenda", "evals-drive", "interpretable-and-pedagogical",
-      "requests-for-research", "teaching-models", "self-verification",
-      "interdisciplinary-discovery", "reflection-driven",
-      "prediction-and-control-with-temporal"], "ai-safety"),
-    (["infrastructure", "ml-complexity", "distributed-tasks",
-      "teach-cofounder", "international-2018-results"], "general-ai"),
+    (
+        ["infinite-horizon", "stochastic-analysis", "stochastic-momentum", "admm"],
+        "ai-reasoning",
+    ),
+    (
+        [
+            "pixelcnn",
+            "variational-lossy",
+            "texture-interpolation",
+            "nonlinear-computation",
+            "deep-linear",
+            "visual-perception",
+            "understanding-the-source",
+        ],
+        "ai-reasoning",
+    ),
+    (
+        [
+            "research-agenda",
+            "evals-drive",
+            "interpretable-and-pedagogical",
+            "requests-for-research",
+            "teaching-models",
+            "self-verification",
+            "interdisciplinary-discovery",
+            "reflection-driven",
+            "prediction-and-control-with-temporal",
+        ],
+        "ai-safety",
+    ),
+    (
+        [
+            "infrastructure",
+            "ml-complexity",
+            "distributed-tasks",
+            "teach-cofounder",
+            "international-2018-results",
+        ],
+        "general-ai",
+    ),
 ]
 
 
@@ -104,7 +377,7 @@ def parse_frontmatter(content: str) -> tuple[dict[str, str], str]:
     if end == -1:
         return {}, content
     fm_text = content[3:end].strip()
-    rest = content[end + 4:]
+    rest = content[end + 4 :]
     fm: dict[str, str] = {}
     for line in fm_text.splitlines():
         if ":" in line:
@@ -126,9 +399,7 @@ def extract_activation_keywords(content: str) -> list[str]:
         keywords.extend(k.strip() for k in kw_match.group(1).split(",") if k.strip())
 
     # Check markdown body for Activation Keywords section
-    match = re.search(
-        r"## Activation Keywords\s*\n(.*?)(?=\n##|\Z)", body, re.DOTALL
-    )
+    match = re.search(r"## Activation Keywords\s*\n(.*?)(?=\n##|\Z)", body, re.DOTALL)
     if match:
         kws = re.findall(r"^-\s*(.+)$", match.group(1), re.MULTILINE)
         keywords.extend(k.strip() for k in kws if k.strip())
@@ -181,9 +452,7 @@ def extract_description(content: str, max_len: int = 120) -> str:
                     return desc[: idx + len(sep)]
             return desc[:max_len] + "..."
     # Try Description section
-    match = re.search(
-        r"## Description\s*\n+(.*?)(?:\n\n|\n##|\Z)", body, re.DOTALL
-    )
+    match = re.search(r"## Description\s*\n+(.*?)(?:\n\n|\n##|\Z)", body, re.DOTALL)
     if match:
         desc = match.group(1).strip().replace("\n", " ")
         # Remove markdown bold markers
@@ -252,17 +521,19 @@ def scan_skills(skills_dir: Path) -> list[dict[str, Any]]:
         category = classify_skill(skill_path.name, content)
         subdirs = has_subdirs(skill_path)
 
-        results.append({
-            "name": skill_path.name,
-            "title": title,
-            "description": description,
-            "category": category,
-            "keywords": keywords[:10],  # Limit to first 10
-            "has_examples": subdirs["examples"],
-            "has_references": subdirs["references"],
-            "has_scripts": subdirs["scripts"],
-            "has_assets": subdirs["assets"],
-        })
+        results.append(
+            {
+                "name": skill_path.name,
+                "title": title,
+                "description": description,
+                "category": category,
+                "keywords": keywords[:10],  # Limit to first 10
+                "has_examples": subdirs["examples"],
+                "has_references": subdirs["references"],
+                "has_scripts": subdirs["scripts"],
+                "has_assets": subdirs["assets"],
+            }
+        )
 
     return results
 
@@ -292,9 +563,18 @@ def main() -> None:
     else:
         # Print summary
         categories = Counter(r["category"] for r in results)
-        with_subs = sum(1 for r in results if any(
-            [r["has_examples"], r["has_references"], r["has_scripts"], r["has_assets"]]
-        ))
+        with_subs = sum(
+            1
+            for r in results
+            if any(
+                [
+                    r["has_examples"],
+                    r["has_references"],
+                    r["has_scripts"],
+                    r["has_assets"],
+                ]
+            )
+        )
         with_keywords = sum(1 for r in results if r["keywords"])
 
         print(f"Total skills: {len(results)}")
