@@ -281,11 +281,19 @@ class GFMRAG:
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply graph-rag-knowledge-graph?
+**User:** I need to apply GraphRAG: Retrieval-Augmented Generation with Knowledge Graphs to my analysis.
 
-**Agent:** I'll help you understand and apply graph-rag-knowledge-graph...
+**Agent:** I'll help you apply graph-rag-knowledge-graph. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

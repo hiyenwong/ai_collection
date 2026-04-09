@@ -102,7 +102,9 @@
 - 相关技能：`spike-image-decoder`（脉冲解码）
 - 论文链接：https://arxiv.org/abs/2306.12045
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+TeCoS-LVM - Temporal Conditioning Spiking Latent Variable Models
+
 ## Activation Keywords
 
 - tecos-lvm-spiking-model
@@ -116,20 +118,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 脉冲神经元输出
+
+### Step 2: 时间条件操作
+
+### Step 3: 自然范式
+
+### Step 4: 潜变量模型构建
+
+### Step 5: 时间条件设计
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply tecos-lvm-spiking-model?
+**User:** I need to apply TeCoS-LVM - Temporal Conditioning Spiking Latent Variable Models to my analysis.
 
-**Agent:** I'll help you understand and apply tecos-lvm-spiking-model...
+**Agent:** I'll help you apply tecos-lvm-spiking-model. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

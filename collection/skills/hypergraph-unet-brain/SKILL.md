@@ -198,20 +198,38 @@ class HUNet(nn.Module):
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Hypergraph Encoder
+
+### Step 2: Hypergraph Decoder
+
+### Step 3: Skip Connections
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- Brain network embedding and classification
+- When high-order relationships matter
+- Multi-scale feature learning
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply hypergraph-unet-brain?
+**User:** I need to apply Hypergraph U-Net for Brain Graph Embedding to my analysis.
 
-**Agent:** I'll help you understand and apply hypergraph-unet-brain...
+**Agent:** I'll help you apply hypergraph-unet-brain. First, let me understand your specific use case...
+
+**Context:** Problem: High-Order Relationships
+
+### Example 2: Advanced Scenario
+
+**User:** Brain network embedding and classification
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

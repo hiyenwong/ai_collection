@@ -112,7 +112,9 @@ Loss = α * behavioral_loss + β * CDM_process_loss + γ * introspection_loss
 ```
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+SKILL.md - Cognitive Dark Matter AI Evaluation
+
 ## Tools Used
 
 - `read` - Read documentation and references
@@ -120,20 +122,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Identify CDM Domains
+
+### Step 2: Design Complementary Data Types
+
+### Step 3: Measure CDM Signals
+
+### Step 4: Train on Cognitive Process
+
+### Step 5: Evaluate Jaggedness
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply cognitive-dark-matter-ai-evaluation?
+**User:** I need to apply SKILL.md - Cognitive Dark Matter AI Evaluation to my analysis.
 
-**Agent:** I'll help you understand and apply cognitive-dark-matter-ai-evaluation...
+**Agent:** I'll help you apply cognitive-dark-matter-ai-evaluation. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

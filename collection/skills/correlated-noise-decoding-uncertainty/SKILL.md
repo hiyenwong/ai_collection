@@ -99,7 +99,9 @@
 - 相关技能：`gp-cake-brain-connectivity`（有效连接）
 - 论文链接：https://arxiv.org/abs/1708.04860
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Correlated Noise Decoding Uncertainty
+
 ## Activation Keywords
 
 - correlated-noise-decoding-uncertainty
@@ -113,20 +115,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 相关噪声的重要性
+
+### Step 2: 调谐依赖相关性
+
+### Step 3: 概率性输出
+
+### Step 4: 噪声相关性估计
+
+### Step 5: 解码模型构建
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply correlated-noise-decoding-uncertainty?
+**User:** I need to apply Correlated Noise Decoding Uncertainty to my analysis.
 
-**Agent:** I'll help you understand and apply correlated-noise-decoding-uncertainty...
+**Agent:** I'll help you apply correlated-noise-decoding-uncertainty. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

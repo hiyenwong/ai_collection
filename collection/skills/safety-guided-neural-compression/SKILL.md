@@ -301,11 +301,19 @@ def compress_transformer(model, train_loader, val_loader):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply safety-guided-neural-compression?
+**User:** I need to apply Safety-Guided Neural Network Compression to my analysis.
 
-**Agent:** I'll help you understand and apply safety-guided-neural-compression...
+**Agent:** I'll help you apply safety-guided-neural-compression. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Deploying to resource-constrained devices
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

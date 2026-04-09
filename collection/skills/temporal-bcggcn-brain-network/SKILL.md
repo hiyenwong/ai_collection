@@ -218,20 +218,33 @@ config = {
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 左半球更严重受损
+
+### Step 2: 关键脑区
+
+### Step 3: Understand the Request
+
+### Step 4: Search for Information
+
+### Step 5: Apply the Framework
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply temporal-bcggcn-brain-network?
+**User:** I need to apply Temporal-BCGCN Brain Network Analysis to my analysis.
 
-**Agent:** I'll help you understand and apply temporal-bcggcn-brain-network...
+**Agent:** I'll help you apply temporal-bcggcn-brain-network. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

@@ -191,7 +191,9 @@ def train_on_imbalanced_data(network, data, labels, epochs=100):
 | Biological plausibility | Spike-triggered local updates |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+SKILL.md - Spiking Generative Networks with Short-Term Plasticity
+
 ## Tools Used
 
 - `read` - Read documentation and references
@@ -199,20 +201,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Define Spiking Network with STP
+
+### Step 2: Configure STP Dynamics
+
+### Step 3: Energy-Based Learning
+
+### Step 4: Training Procedure
+
+### Step 5: Sampling/Generation
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply spiking-generative-networks-stp?
+**User:** I need to apply SKILL.md - Spiking Generative Networks with Short-Term Plasticity to my analysis.
 
-**Agent:** I'll help you understand and apply spiking-generative-networks-stp...
+**Agent:** I'll help you apply spiking-generative-networks-stp. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

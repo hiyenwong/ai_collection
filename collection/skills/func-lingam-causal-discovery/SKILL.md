@@ -104,7 +104,9 @@
 - 相关技能：`gp-cake-brain-connectivity`（因果核方法）
 - 论文链接：https://arxiv.org/abs/2401.09641
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Func-LiNGAM - 函数型线性非高斯无环因果发现模型
+
 ## Activation Keywords
 
 - func-lingam-causal-discovery
@@ -118,20 +120,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 无限维扩展
+
+### Step 2: 理论保证
+
+### Step 3: 稀疏处理
+
+### Step 4: 数据预处理
+
+### Step 5: 功能性主成分分析
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply func-lingam-causal-discovery?
+**User:** I need to apply Func-LiNGAM - 函数型线性非高斯无环因果发现模型 to my analysis.
 
-**Agent:** I'll help you understand and apply func-lingam-causal-discovery...
+**Agent:** I'll help you apply func-lingam-causal-discovery. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

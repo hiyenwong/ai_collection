@@ -327,7 +327,9 @@ def analyze_topology_comparison(results):
 
 _此技能基于 IDC 方法分析 Hopfield 型神经网络在不同拓扑结构上的时序复杂性_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Hopfield Temporal Complexity on Network Topologies
+
 ## Activation Keywords
 
 - hopfield-temporal-complexity
@@ -341,20 +343,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 联想记忆建模
+
+### Step 2: 神经复杂性
+
+### Step 3: 状态转换分析
+
+### Step 4: 拓扑影响
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply hopfield-temporal-complexity?
+**User:** I need to apply Hopfield Temporal Complexity on Network Topologies to my analysis.
 
-**Agent:** I'll help you understand and apply hopfield-temporal-complexity...
+**Agent:** I'll help you apply hopfield-temporal-complexity. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

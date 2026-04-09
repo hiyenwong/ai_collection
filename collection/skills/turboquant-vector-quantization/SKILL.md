@@ -343,20 +343,38 @@ Search latency: Near zero
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Understand the Request
+
+### Step 2: Search for Information
+
+### Step 3: Apply the Framework
+
+### Step 4: Provide Results
+
+### Step 5: Verify Accuracy
+
+### When to Apply
+- LLM KV cache compression
+- Vector database indexing
+- Nearest neighbor search
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply turboquant-vector-quantization?
+**User:** I need to apply TurboQuant: Near-Optimal Vector Quantization for AI Efficiency to my analysis.
 
-**Agent:** I'll help you understand and apply turboquant-vector-quantization...
+**Agent:** I'll help you apply turboquant-vector-quantization. First, let me understand your specific use case...
+
+**Context:** Problem: Memory Wall in AI
+
+### Example 2: Advanced Scenario
+
+**User:** LLM KV cache compression
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

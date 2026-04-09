@@ -112,20 +112,33 @@ arXiv:2604.02279 - "The Self Driving Portfolio: Agentic Architecture for Institu
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Specialization
+
+### Step 2: Competition
+
+### Step 3: Critique
+
+### Step 4: Voting
+
+### Step 5: Self-improvement
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply agentic-portfolio?
+**User:** I need to apply Agentic Architecture for Complex Workflows to my analysis.
 
-**Agent:** I'll help you understand and apply agentic-portfolio...
+**Agent:** I'll help you apply agentic-portfolio. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

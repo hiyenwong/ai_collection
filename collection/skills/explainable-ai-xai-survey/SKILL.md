@@ -272,11 +272,19 @@ class VLMExplainer:
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply explainable-ai-xai-survey?
+**User:** I need to apply Explainable AI (XAI) Comprehensive Survey to my analysis.
 
-**Agent:** I'll help you understand and apply explainable-ai-xai-survey...
+**Agent:** I'll help you apply explainable-ai-xai-survey. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

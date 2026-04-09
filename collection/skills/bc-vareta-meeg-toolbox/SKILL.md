@@ -43,7 +43,9 @@ BC-VARETA 1.0 是一个用于 MEEG (MEG/EEG) 源活动和连接性估计的工�
 
 _此技能用于 MEEG 源连接性分析的第三代工具箱_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+BC-VARETA - MEEG Source Connectivity Analysis Toolbox
+
 ## Activation Keywords
 
 - bc-vareta-meeg-toolbox
@@ -57,20 +59,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 源活动估计
+
+### Step 2: 连接性分析
+
+### Step 3: 验证基准
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply bc-vareta-meeg-toolbox?
+**User:** I need to apply BC-VARETA - MEEG Source Connectivity Analysis Toolbox to my analysis.
 
-**Agent:** I'll help you understand and apply bc-vareta-meeg-toolbox...
+**Agent:** I'll help you apply bc-vareta-meeg-toolbox. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

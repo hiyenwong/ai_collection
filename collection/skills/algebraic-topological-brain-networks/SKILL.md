@@ -178,7 +178,9 @@ def aggregate_networks(subject_networks):
    - Statistical significance testing
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+SKILL.md - Algebraic Topological Brain Network Comparison
+
 ## Tools Used
 
 - `read` - Read documentation and references
@@ -186,20 +188,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Construct Networks from Each Modality
+
+### Step 2: Build Filtration for Each Network
+
+### Step 3: Compute Persistent Homology
+
+### Step 4: Compare Networks via Persistence Diagrams
+
+### Step 5: Extract Aggregated Network
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply algebraic-topological-brain-networks?
+**User:** I need to apply SKILL.md - Algebraic Topological Brain Network Comparison to my analysis.
 
-**Agent:** I'll help you understand and apply algebraic-topological-brain-networks...
+**Agent:** I'll help you apply algebraic-topological-brain-networks. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

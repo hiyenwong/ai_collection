@@ -72,7 +72,9 @@ Based on **principle of near-decomposability:**
 - Full paper: https://arxiv.org/abs/2604.02971
 - PDF: https://arxiv.org/pdf/2604.02971
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+SKILL.md - Hierarchical Parallel Agent Framework for Web Search
+
 ## Activation Keywords
 
 - hierarchical-agent-search
@@ -86,20 +88,38 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Host:
+
+### Step 2: Managers:
+
+### Step 3: Workers:
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- Large-scale information synthesis
+- Many heterogeneous sources
+- High-latency tolerance unacceptable
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply hierarchical-agent-search?
+**User:** I need to apply SKILL.md - Hierarchical Parallel Agent Framework for Web Search to my analysis.
 
-**Agent:** I'll help you understand and apply hierarchical-agent-search...
+**Agent:** I'll help you apply hierarchical-agent-search. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Large-scale information synthesis
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

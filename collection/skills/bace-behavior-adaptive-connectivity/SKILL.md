@@ -103,7 +103,9 @@ BACE、行为自适应连接、相位特异性连接、有向脑连接、LFP 连
 - 相关技能：`gp-cake-brain-connectivity`（因果核方法）
 - 论文链接：https://arxiv.org/abs/2510.20831
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+BACE - Behavior-Adaptive Connectivity Estimation
+
 ## Activation Keywords
 
 - bace-behavior-adaptive-connectivity
@@ -117,20 +119,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 区域时间编码器
+
+### Step 2: 相位特定邻接矩阵
+
+### Step 3: 预测目标训练
+
+### Step 4: 数据准备
+
+### Step 5: 模型配置
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply bace-behavior-adaptive-connectivity?
+**User:** I need to apply BACE - Behavior-Adaptive Connectivity Estimation to my analysis.
 
-**Agent:** I'll help you understand and apply bace-behavior-adaptive-connectivity...
+**Agent:** I'll help you apply bace-behavior-adaptive-connectivity. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

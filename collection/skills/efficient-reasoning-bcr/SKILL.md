@@ -107,20 +107,33 @@ arXiv:2604.02322 - "Batched Contextual Reinforcement: A Task-Scaling Law for Eff
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Implicit budget > explicit penalties
+
+### Step 2: Self-regulated efficiency
+
+### Step 3: Stable training
+
+### Step 4: Training
+
+### Step 5: Reward
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply efficient-reasoning-bcr?
+**User:** I need to apply Efficient Reasoning via Batched Contextual Reinforcement to my analysis.
 
-**Agent:** I'll help you understand and apply efficient-reasoning-bcr...
+**Agent:** I'll help you apply efficient-reasoning-bcr. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

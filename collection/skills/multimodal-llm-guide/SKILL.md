@@ -210,11 +210,19 @@ for batch in instruction_data:
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply multimodal-llm-guide?
+**User:** I need to apply Multimodal LLMs Comprehensive Guide to my analysis.
 
-**Agent:** I'll help you understand and apply multimodal-llm-guide...
+**Agent:** I'll help you apply multimodal-llm-guide. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

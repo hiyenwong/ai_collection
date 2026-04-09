@@ -234,11 +234,19 @@ def agentic_reward(action, outcome, plan):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply agentic-rl-llm-survey?
+**User:** I need to apply Agentic Reinforcement Learning for LLMs to my analysis.
 
-**Agent:** I'll help you understand and apply agentic-rl-llm-survey...
+**Agent:** I'll help you apply agentic-rl-llm-survey. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Multi-step reasoning tasks
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

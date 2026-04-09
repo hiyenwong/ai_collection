@@ -40,7 +40,6 @@ Tognoli et al. (2021) 提出脑协调动力学框架：
 - `Metastability` - Analysis component
 - `EEG/MEG Processing` - Analysis component
 
-
 ## Key Concepts
 
 ### Coordination Dynamics
@@ -172,22 +171,42 @@ print(f"Number of pattern switches: {len(switches)}")
 | Epilepsy | Excessive synchronization |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Brain Spatiotemporal Patterns Blueprint
+
+**Key Concepts:**
+- **Metastability**：系统在多个吸引子间游走
+- **Phase Synchrony**：相位同步模式
+- **Pattern Switching**：模式切换动力学
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 数据准备与预处理
+
+### Step 2: 相位同步分析
+
+### Step 3: Metastability 分析
+
+### Step 4: 模式切换检测
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply brain-spatiotemporal-patterns-blueprint?
+**User:** I need to apply Brain Spatiotemporal Patterns Blueprint to my analysis.
 
-**Agent:** I'll help you understand and apply brain-spatiotemporal-patterns-blueprint...
+**Agent:** I'll help you apply brain-spatiotemporal-patterns-blueprint. First, let me understand your specific use case...
+
+**Context:** **Metastability**：系统在多个吸引子间游走
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

@@ -358,7 +358,9 @@ def classify_neuron_type(prc):
 
 _此技能基于 Ermentrout 的经典工作，建立神经动力学与神经编码的理论联系_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Neural Dynamics to Neural Coding: PRC-STA Relationship
+
 ## Activation Keywords
 
 - prc-sta-neural-coding
@@ -372,20 +374,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Hodgkin-Huxley 模型
+
+### Step 2: 小鼠嗅球神经元
+
+### Step 3: 桥接两个范式
+
+### Step 4: 预测能力
+
+### Step 5: 统一框架
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply prc-sta-neural-coding?
+**User:** I need to apply Neural Dynamics to Neural Coding: PRC-STA Relationship to my analysis.
 
-**Agent:** I'll help you understand and apply prc-sta-neural-coding...
+**Agent:** I'll help you apply prc-sta-neural-coding. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

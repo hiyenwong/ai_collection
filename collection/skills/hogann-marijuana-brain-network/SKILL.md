@@ -506,7 +506,9 @@ def visualize_craving_brain_map(model, fmri_data, atlas_coords, save_path):
 
 _此技能基于 HOGANN 方法，用于分析大麻使用者的脑网络渴望模式_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+HOGANN - High-Order Graph Attention for Marijuana Brain Networks
+
 ## Activation Keywords
 
 - hogann-marijuana-brain-network
@@ -520,20 +522,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 成瘾脑网络分析
+
+### Step 2: 渴望模式检测
+
+### Step 3: 功能连接异常
+
+### Step 4: 认知影响评估
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply hogann-marijuana-brain-network?
+**User:** I need to apply HOGANN - High-Order Graph Attention for Marijuana Brain Networks to my analysis.
 
-**Agent:** I'll help you understand and apply hogann-marijuana-brain-network...
+**Agent:** I'll help you apply hogann-marijuana-brain-network. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

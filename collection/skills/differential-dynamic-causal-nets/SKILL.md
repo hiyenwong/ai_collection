@@ -361,20 +361,25 @@ print(f"Connectivity disruption: {analysis['connectivity_disruption']:.1%}")
 ```
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Construct Jansen-Rit Local Model
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply differential-dynamic-causal-nets?
+**User:** I need to apply differential-dynamic-causal-nets - Differential Dynamic Causal Nets: Model Construction, Identification and Group Comparisons to my analysis.
 
-**Agent:** I'll help you understand and apply differential-dynamic-causal-nets...
+**Agent:** I'll help you apply differential-dynamic-causal-nets. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

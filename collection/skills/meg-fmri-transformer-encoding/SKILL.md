@@ -411,7 +411,9 @@ def validate_with_ecog(model, ecog_data, stimulus):
 
 _此技能基于 Transformer 编码模型，实现毫秒-毫米级脑活动估计_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Naturalistic MEG-fMRI Encoding Model for High Spatiotemporal Resolution
+
 ## Activation Keywords
 
 - meg-fmri-transformer-encoding
@@ -425,20 +427,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 高分辨率脑映射
+
+### Step 2: 源定位
+
+### Step 3: 跨模态预测
+
+### Step 4: 临床应用
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply meg-fmri-transformer-encoding?
+**User:** I need to apply Naturalistic MEG-fMRI Encoding Model for High Spatiotemporal Resolution to my analysis.
 
-**Agent:** I'll help you understand and apply meg-fmri-transformer-encoding...
+**Agent:** I'll help you apply meg-fmri-transformer-encoding. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

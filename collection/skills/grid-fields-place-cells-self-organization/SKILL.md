@@ -38,7 +38,6 @@ Stepanyuk (2015) 提出了一个基于突触可塑性的网格场自组织模型
 - `Homeostatic` - Analysis component
 - `PCA-like extraction` - Analysis component
 
-
 ## Neural Architecture
 
 ```
@@ -111,22 +110,45 @@ class GridFieldSelfOrganization:
 ```
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Grid Fields Place Cells Self-Organization
+
+**Key Concepts:**
+- 理解大脑如何编码空间信息是一个核心问题：
+- Grid cells（网格细胞）如何形成六边形空间场？
+- Place cells（位置细胞）如何指导网格细胞发育？
+- 突触可塑性如何驱动空间编码网络的
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 初始化 Place Cells 网络
+
+### Step 2: 配置 BCM 可塑性规则
+
+### Step 3: 添加 Homeostatic 约束
+
+### Step 4: 模拟导航学习
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply grid-fields-place-cells-self-organization?
+**User:** I need to apply Grid Fields Place Cells Self-Organization to my analysis.
 
-**Agent:** I'll help you understand and apply grid-fields-place-cells-self-organization...
+**Agent:** I'll help you apply grid-fields-place-cells-self-organization. First, let me understand your specific use case...
+
+**Context:** 理解大脑如何编码空间信息是一个核心问题：
+- Grid cells（网格细胞）如何形成六边形空间场？
+- Place cells（位置细胞）如何指导网格细胞发育
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

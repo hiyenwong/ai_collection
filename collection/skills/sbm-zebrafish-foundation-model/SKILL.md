@@ -40,7 +40,6 @@ Fatehmanesh et al. (2025) 提出 SBM：
 - `Behavior Head` - Analysis component
 - `Gradient Synthesis` - Analysis component
 
-
 ## Architecture
 
 ```
@@ -270,22 +269,48 @@ pattern = synthesis.synthesize(target_behavior_idx=2, stimuli=stimuli)
 | 机制探索 | 行为引导的神经现象研究 |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Zebrafish Whole-Brain Foundation Model (SBM)
+
+**Key Concepts:**
+- 全脑神经动力学建模的挑战：
+- 单神经元分辨率难以扩展到全脑
+- 现有模型忽略行为输出
+- PCA/conv 方法遗漏长程非线性交互
+- 缺乏行为引导的神经模式探索
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 稀疏注意力机制
+
+### Step 2: 因式分解注意力（神经元×时间）
+
+### Step 3: 行为预测头
+
+### Step 4: 神经模式合成
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply sbm-zebrafish-foundation-model?
+**User:** I need to apply Zebrafish Whole-Brain Foundation Model (SBM) to my analysis.
 
-**Agent:** I'll help you understand and apply sbm-zebrafish-foundation-model...
+**Agent:** I'll help you apply sbm-zebrafish-foundation-model. First, let me understand your specific use case...
+
+**Context:** 全脑神经动力学建模的挑战：
+- 单神经元分辨率难以扩展到全脑
+- 现有模型忽略行为输出
+- PCA/conv 方法遗漏长程非线性交互
+- 缺乏行为引导的神经模式
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

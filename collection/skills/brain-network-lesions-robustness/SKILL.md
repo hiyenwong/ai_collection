@@ -40,7 +40,6 @@ Kaiser et al. (2007) 通过网络分析方法研究脑网络鲁棒性：
 - `Network comparison` - Analysis component
 - `Structural decay` - Analysis component
 
-
 ## Key Findings
 
 | Network Type | Robustness | Failure Mode |
@@ -168,22 +167,46 @@ comparison = analyzer.compare_with_benchmark(
 | Scale-free robustness | Network recovery potential |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Brain Network Lesions Robustness
+
+**Key Concepts:**
+- 理解脑网络的结构特性与功能关系：
+- 脑网络如何抵抗损伤？
+- 哪些节点/连接对系统鲁棒性至关重要？
+- 不同网络拓扑（small-world, scale-free, random）的鲁棒性差异？
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 构建连接矩阵
+
+### Step 2: 节点删除仿真
+
+### Step 3: 边删除仿真
+
+### Step 4: Hub 节点识别
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply brain-network-lesions-robustness?
+**User:** I need to apply Brain Network Lesions Robustness to my analysis.
 
-**Agent:** I'll help you understand and apply brain-network-lesions-robustness...
+**Agent:** I'll help you apply brain-network-lesions-robustness. First, let me understand your specific use case...
+
+**Context:** 理解脑网络的结构特性与功能关系：
+- 脑网络如何抵抗损伤？
+- 哪些节点/连接对系统鲁棒性至关重要？
+- 不同网络拓扑（small-world, scale-f
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

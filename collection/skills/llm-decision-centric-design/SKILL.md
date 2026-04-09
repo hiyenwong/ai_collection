@@ -121,20 +121,33 @@ OpenClaw's skill routing and tool selection can benefit from this framework:
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Attribution
+
+### Step 2: Modular improvement
+
+### Step 3: Constraint enforcement
+
+### Step 4: Sequential decisions
+
+### Step 5: Inspectability
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply llm-decision-centric-design?
+**User:** I need to apply Decision-Centric Design for LLM Systems to my analysis.
 
-**Agent:** I'll help you understand and apply llm-decision-centric-design...
+**Agent:** I'll help you apply llm-decision-centric-design. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

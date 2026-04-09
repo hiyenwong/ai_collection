@@ -294,11 +294,19 @@ def stage2_amplify(model, train_prompts):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply score-llm-self-correction?
+**User:** I need to apply SCoRe: Self-Correction via Reinforcement Learning to my analysis.
 
-**Agent:** I'll help you understand and apply score-llm-self-correction...
+**Agent:** I'll help you apply score-llm-self-correction. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

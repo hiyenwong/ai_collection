@@ -40,7 +40,6 @@ Zhan et al. (2018) 提出 PACE 算法并研究性别-年龄差异：
 - `F1000/HCP Data` - Analysis component
 - `Statistical Testing` - Analysis component
 
-
 ## Key Findings
 
 ### Sex-by-Age Interaction
@@ -222,22 +221,48 @@ correlations = clinical_correlates(connectivity[:, :10, :10].mean(axis=(1,2)), s
 | Separate analysis | Integrated clinical correlates |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Sex-by-Age Brain Connectivity Analysis
+
+**Key Concepts:**
+- 脑连接研究中的性别差异问题：
+- 传统研究忽视性别-年龄交互效应
+- 负边（anti-correlations）处理不一致
+- 缺乏全局概率性分析框架
+- 临床症状与连接差异的关系不明
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 概率相关社区估计
+
+### Step 2: 对偶公式化（正负边）
+
+### Step 3: 年龄分层分析
+
+### Step 4: 临床症状关联
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply sex-by-age-brain-connectivity?
+**User:** I need to apply Sex-by-Age Brain Connectivity Analysis to my analysis.
 
-**Agent:** I'll help you understand and apply sex-by-age-brain-connectivity...
+**Agent:** I'll help you apply sex-by-age-brain-connectivity. First, let me understand your specific use case...
+
+**Context:** 脑连接研究中的性别差异问题：
+- 传统研究忽视性别-年龄交互效应
+- 负边（anti-correlations）处理不一致
+- 缺乏全局概率性分析框架
+- 临床
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

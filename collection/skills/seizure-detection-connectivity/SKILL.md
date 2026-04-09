@@ -618,11 +618,19 @@ generate_report(results, output='seizure_analysis_report.pdf')
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply seizure-detection-connectivity?
+**User:** I need to apply Seizure Detection Connectivity to my analysis.
 
-**Agent:** I'll help you understand and apply seizure-detection-connectivity...
+**Agent:** I'll help you apply seizure-detection-connectivity. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

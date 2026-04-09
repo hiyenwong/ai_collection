@@ -490,11 +490,19 @@ solutions = apply_insights(problem, creative_insights)
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply dreaming-cognitive-creativity?
+**User:** I need to apply Dreaming Cognitive Creativity to my analysis.
 
-**Agent:** I'll help you understand and apply dreaming-cognitive-creativity...
+**Agent:** I'll help you apply dreaming-cognitive-creativity. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

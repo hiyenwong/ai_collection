@@ -40,7 +40,6 @@ Pals et al. (NeurIPS 2024) 提出随机低秩 RNN 推断方法：
 - `Fixed Point Finder` - Analysis component
 - `Latent Extraction` - Analysis component
 
-
 ## Architecture
 
 ```
@@ -252,22 +251,48 @@ print(f"Found {len(fixed_points)} fixed points")
 | Biological relevance | Limited | High |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Stochastic Low-Rank RNN Inference
+
+**Key Concepts:**
+- 从神经数据推断动力系统面临的挑战：
+- 高维神经数据难以解释
+- 传统 RNN 难以拟合随机系统
+- 固定点分析计算成本高（指数级）
+- 模型可解释性与拟合质量难以兼顾
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 低秩 RNN 定义
+
+### Step 2: 变分序贯蒙特卡洛
+
+### Step 3: 固定点分析（多项式复杂度）
+
+### Step 4: 训练流程
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply stochastic-lowrank-rnn-inference?
+**User:** I need to apply Stochastic Low-Rank RNN Inference to my analysis.
 
-**Agent:** I'll help you understand and apply stochastic-lowrank-rnn-inference...
+**Agent:** I'll help you apply stochastic-lowrank-rnn-inference. First, let me understand your specific use case...
+
+**Context:** 从神经数据推断动力系统面临的挑战：
+- 高维神经数据难以解释
+- 传统 RNN 难以拟合随机系统
+- 固定点分析计算成本高（指数级）
+- 模型可解释性与拟合质量
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

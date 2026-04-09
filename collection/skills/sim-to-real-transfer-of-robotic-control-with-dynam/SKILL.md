@@ -50,20 +50,25 @@
 ```
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Background
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply sim-to-real-transfer-of-robotic-control-with-dynam?
+**User:** I need to apply sim-to-real-transfer-of-robotic-control-with-dynam - Sim-to-real transfer of robotic control with dynamics randomization to my analysis.
 
-**Agent:** I'll help you understand and apply sim-to-real-transfer-of-robotic-control-with-dynam...
+**Agent:** I'll help you apply sim-to-real-transfer-of-robotic-control-with-dynam. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

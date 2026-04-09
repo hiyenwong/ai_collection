@@ -150,20 +150,38 @@ pip install -e .
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Spatiotemporal Modeling
+
+### Step 2: Behavioral Disentanglement
+
+### Step 3: End-to-End Learning
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- Analyzing widefield calcium imaging data
+- Working with functional ultrasound imaging
+- Need to disentangle behavioral relevance
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply sbind-spatiotemporal-imaging?
+**User:** I need to apply SBIND: Spatiotemporal Brain Imaging Neural Dynamics to my analysis.
 
-**Agent:** I'll help you understand and apply sbind-spatiotemporal-imaging...
+**Agent:** I'll help you apply sbind-spatiotemporal-imaging. First, let me understand your specific use case...
+
+**Context:** Problem: High-Dimensional Neural Imaging
+
+### Example 2: Advanced Scenario
+
+**User:** Analyzing widefield calcium imaging data
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

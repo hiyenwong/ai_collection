@@ -356,7 +356,9 @@ BrainGB 的实验推荐：
 
 _此技能基于 BrainGB 基准工具包，用于标准化脑网络 GNN 分析_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+BrainGB - Brain Network Analysis Benchmark with GNNs
+
 ## Activation Keywords
 
 - braingb-benchmark
@@ -370,20 +372,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: GNN 类型
+
+### Step 2: 层数
+
+### Step 3: 节点特征
+
+### Step 4: 池化方法
+
+### Step 5: 数据增强
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply braingb-benchmark?
+**User:** I need to apply BrainGB - Brain Network Analysis Benchmark with GNNs to my analysis.
 
-**Agent:** I'll help you understand and apply braingb-benchmark...
+**Agent:** I'll help you apply braingb-benchmark. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

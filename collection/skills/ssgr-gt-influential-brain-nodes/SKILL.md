@@ -40,7 +40,6 @@ Kang et al. (2024) 提出 SSGR-GT 框架：
 - `Graph Reconstruction` - Analysis component
 - `Multimodal Fusion` - Analysis component
 
-
 ## Architecture
 
 ```
@@ -302,22 +301,48 @@ print(f"Top 10 I-nodes: {i_nodes[:10]}")
 ```
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Self-Supervised Graph Transformer Brain Networks
+
+**Key Concepts:**
+- 脑网络影响力节点（I-nodes）识别的挑战：
+- 传统方法依赖图论先验知识
+- 可能忽视脑网络的内在特性
+- 缺乏自监督学习方法
+- 多模态融合困难
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: Graph-Transformer 编码器
+
+### Step 2: 自监督图重建
+
+### Step 3: 多模态融合
+
+### Step 4: 训练与评估
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply ssgr-gt-influential-brain-nodes?
+**User:** I need to apply Self-Supervised Graph Transformer Brain Networks to my analysis.
 
-**Agent:** I'll help you understand and apply ssgr-gt-influential-brain-nodes...
+**Agent:** I'll help you apply ssgr-gt-influential-brain-nodes. First, let me understand your specific use case...
+
+**Context:** 脑网络影响力节点（I-nodes）识别的挑战：
+- 传统方法依赖图论先验知识
+- 可能忽视脑网络的内在特性
+- 缺乏自监督学习方法
+- 多模态融合困难
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

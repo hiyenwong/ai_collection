@@ -109,7 +109,9 @@
 - 相关技能：`federated-brain-trajectory-gnn`（联邦学习）
 - 论文链接：https://arxiv.org/abs/2110.11238
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+One Representative-Shot Brain Connectivity Learning
+
 ## Activation Keywords
 
 - one-representative-shot-brain
@@ -123,20 +125,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: CBT 构建
+
+### Step 2: GNN 训练
+
+### Step 3: 分类/预测
+
+### Step 4: 迁移应用
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply one-representative-shot-brain?
+**User:** I need to apply One Representative-Shot Brain Connectivity Learning to my analysis.
 
-**Agent:** I'll help you understand and apply one-representative-shot-brain...
+**Agent:** I'll help you apply one-representative-shot-brain. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

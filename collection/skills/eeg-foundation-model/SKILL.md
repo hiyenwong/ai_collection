@@ -97,7 +97,9 @@ EEG 基础模型、预训练 EEG、EEG foundation model、LCM、Large Cognition 
 - 相关技能：`eeg-brain-connectivity-bci`（BCI 应用）
 - 论文链接：https://arxiv.org/abs/2502.17464
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+EEG Foundation Model - Large Cognition Model (LCM)
+
 ## Activation Keywords
 
 - eeg-foundation-model
@@ -111,20 +113,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Transformer 主干
+
+### Step 2: 时间-光谱注意力
+
+### Step 3: 自监督预训练
+
+### Step 4: 数据准备
+
+### Step 5: 预训练阶段
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply eeg-foundation-model?
+**User:** I need to apply EEG Foundation Model - Large Cognition Model (LCM) to my analysis.
 
-**Agent:** I'll help you understand and apply eeg-foundation-model...
+**Agent:** I'll help you apply eeg-foundation-model. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

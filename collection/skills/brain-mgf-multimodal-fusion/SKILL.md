@@ -105,7 +105,9 @@ EEG-fMRI 融合、多模态图融合、Brain-MGF、psilocybin 脑连接、迷幻
 - 相关技能：`gnn-transformer-fusion`（GNN-Transformer 融合）
 - 论文链接：https://arxiv.org/abs/2511.18325
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Brain-MGF - Multimodal Graph Fusion for EEG-fMRI
+
 ## Activation Keywords
 
 - brain-mgf-multimodal-fusion
@@ -119,20 +121,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 图构建
+
+### Step 2: 图卷积
+
+### Step 3: 自适应 Softmax 门控
+
+### Step 4: 模态图构建
+
+### Step 5: 图卷积嵌入
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply brain-mgf-multimodal-fusion?
+**User:** I need to apply Brain-MGF - Multimodal Graph Fusion for EEG-fMRI to my analysis.
 
-**Agent:** I'll help you understand and apply brain-mgf-multimodal-fusion...
+**Agent:** I'll help you apply brain-mgf-multimodal-fusion. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

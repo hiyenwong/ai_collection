@@ -107,7 +107,9 @@
 - 相关技能：`bio-neuron-snn-learning`（生物神经元学习）
 - 论文链接：https://arxiv.org/abs/2507.16937
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Fractional-order Spiking Neural Network (f-SNN)
+
 ## Activation Keywords
 
 - fractional-order-snn
@@ -121,20 +123,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 模型选择
+
+### Step 2: 动力学定义
+
+### Step 3: 训练
+
+### Step 4: 评估
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply fractional-order-snn?
+**User:** I need to apply Fractional-order Spiking Neural Network (f-SNN) to my analysis.
 
-**Agent:** I'll help you understand and apply fractional-order-snn...
+**Agent:** I'll help you apply fractional-order-snn. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

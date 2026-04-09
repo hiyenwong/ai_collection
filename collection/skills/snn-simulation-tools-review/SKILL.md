@@ -40,7 +40,6 @@ Brette et al. (2007) 提供了全面的 SNN 仿真工具综述：
 - `NEST` - Analysis component
 - `Brian` - Analysis component
 
-
 ## Integration Strategies
 
 ### Clock-Driven
@@ -97,22 +96,44 @@ run(1*second)
 ```
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+SNN Simulation Tools Review
+
+**Key Concepts:**
+- 选择合适的 SNN 仿真工具是一个复杂的决策问题：
+- 多种仿真策略（clock-driven vs event-driven）
+- 不同神经元模型（Hodgkin-Huxley vs integra
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 确定模型需求
+
+### Step 2: 评估精度要求
+
+### Step 3: 基准测试
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply snn-simulation-tools-review?
+**User:** I need to apply SNN Simulation Tools Review to my analysis.
 
-**Agent:** I'll help you understand and apply snn-simulation-tools-review...
+**Agent:** I'll help you apply snn-simulation-tools-review. First, let me understand your specific use case...
+
+**Context:** 选择合适的 SNN 仿真工具是一个复杂的决策问题：
+- 多种仿真策略（clock-driven vs event-driven）
+- 不同神经元模型（Hodgk
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

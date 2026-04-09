@@ -143,20 +143,33 @@ High-utility count: 5 papers (utility >= 0.85)
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Multi-agent coordination is mainstream
+
+### Step 2: Memory management maturing
+
+### Step 3: Production architectures emerging
+
+### Step 4: Evaluation expanding
+
+### Step 5: Self-improvement mechanisms
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply arxiv-paper-tracker?
+**User:** I need to apply arXiv Paper Tracker to my analysis.
 
-**Agent:** I'll help you understand and apply arxiv-paper-tracker...
+**Agent:** I'll help you apply arxiv-paper-tracker. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

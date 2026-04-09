@@ -190,20 +190,38 @@ SWE-CI reveals how well agents can:
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Understand evolving requirements
+
+### Step 2: Maintain code quality
+
+### Step 3: Handle complexity
+
+### Step 4: Iterate effectively
+
+### Step 5: Understand the Request
+
+### When to Apply
+- Evaluating LLM agents on code maintenance
+- Benchmarking code generation tools
+- Research on software evolution
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply swe-ci-benchmark?
+**User:** I need to apply SWE-CI: CI-Based Code Maintenance Evaluation to my analysis.
 
-**Agent:** I'll help you understand and apply swe-ci-benchmark...
+**Agent:** I'll help you apply swe-ci-benchmark. First, let me understand your specific use case...
+
+**Context:** Problem: Static vs Dynamic Evaluation
+
+### Example 2: Advanced Scenario
+
+**User:** Evaluating LLM agents on code maintenance
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

@@ -180,20 +180,38 @@ def train_and_transfer(train_animal_data, test_animal_data, num_classes):
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Distinct Encoding
+
+### Step 2: Consistency
+
+### Step 3: Generalization
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- Decoding stimuli from neural population responses
+- Investigating neural coding principles
+- Transfer learning across animals/subjects
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply dnn-neural-decoding?
+**User:** I need to apply Deep Neural Network for Neural Response Decoding to my analysis.
 
-**Agent:** I'll help you understand and apply dnn-neural-decoding...
+**Agent:** I'll help you apply dnn-neural-decoding. First, let me understand your specific use case...
+
+**Context:** Problem: Neural Response Decoding
+
+### Example 2: Advanced Scenario
+
+**User:** Decoding stimuli from neural population responses
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

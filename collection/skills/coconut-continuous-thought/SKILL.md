@@ -313,11 +313,19 @@ class CoconutModel(nn.Module):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply coconut-continuous-thought?
+**User:** I need to apply Coconut: Chain of Continuous Thought to my analysis.
 
-**Agent:** I'll help you understand and apply coconut-continuous-thought...
+**Agent:** I'll help you apply coconut-continuous-thought. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex planning tasks
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

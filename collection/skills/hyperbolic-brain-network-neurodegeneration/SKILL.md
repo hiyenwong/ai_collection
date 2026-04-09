@@ -265,7 +265,9 @@ def identify_affected_regions(scores, node_labels, threshold_percentile=95):
 
 _此技能基于双曲几何嵌入方法，用于神经退行性疾病的脑网络分析_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Hyperbolic Brain Network Embedding for Neurodegeneration Detection
+
 ## Activation Keywords
 
 - hyperbolic-brain-network-neurodegeneration
@@ -279,20 +281,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 阿尔茨海默病检测
+
+### Step 2: 疾病进展监测
+
+### Step 3: 生物标志物
+
+### Step 4: 网络分析
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply hyperbolic-brain-network-neurodegeneration?
+**User:** I need to apply Hyperbolic Brain Network Embedding for Neurodegeneration Detection to my analysis.
 
-**Agent:** I'll help you understand and apply hyperbolic-brain-network-neurodegeneration...
+**Agent:** I'll help you apply hyperbolic-brain-network-neurodegeneration. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

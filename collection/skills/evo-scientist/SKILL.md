@@ -120,7 +120,9 @@ EvoScientist 是一个进化的多代理 AI 科学家框架，通过持久记忆
 **创建时间：** 2026-03-15
 **论文来源：** arXiv:2603.08127
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+SKILL.md - EvoScientist: Multi-Agent Evolving AI Scientists
+
 ## Activation Keywords
 
 - evo-scientist
@@ -134,20 +136,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Researcher Agent:
+
+### Step 2: Engineer Agent:
+
+### Step 3: Evolution Manager Agent:
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply evo-scientist?
+**User:** I need to apply SKILL.md - EvoScientist: Multi-Agent Evolving AI Scientists to my analysis.
 
-**Agent:** I'll help you understand and apply evo-scientist...
+**Agent:** I'll help you apply evo-scientist. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

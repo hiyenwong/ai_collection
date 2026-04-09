@@ -40,7 +40,6 @@ Mettler et al. (2021) 提出 "Evolving-to-Learn" 方法：
 - `Plasticity Rule` - Analysis component
 - `PCA Task` - Analysis component
 
-
 ## Architecture
 
 ```
@@ -214,22 +213,48 @@ print("Oja rule: Δw = pre * post - post² * w")
 4. **生物合理** - 可加入约束保证生物合理性
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Evolving Plasticity Rules CGP
+
+**Key Concepts:**
+- 突触可塑性规则的设计面临挑战：
+- 手工设计规则依赖先验知识
+- 生物合理性难以保证
+- 规则的可解释性与性能难以兼顾
+- 不同任务需要不同的可塑性规则
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 定义可塑性规则基因型
+
+### Step 2: 适应度评估（PCA 任务）
+
+### Step 3: 进化循环
+
+### Step 4: 规则解释
+
+### Step 5: 自动发现有效规则
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply evolving-plasticity-rules-cgp?
+**User:** I need to apply Evolving Plasticity Rules CGP to my analysis.
 
-**Agent:** I'll help you understand and apply evolving-plasticity-rules-cgp...
+**Agent:** I'll help you apply evolving-plasticity-rules-cgp. First, let me understand your specific use case...
+
+**Context:** 突触可塑性规则的设计面临挑战：
+- 手工设计规则依赖先验知识
+- 生物合理性难以保证
+- 规则的可解释性与性能难以兼顾
+- 不同任务需要不同的可塑性规则
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

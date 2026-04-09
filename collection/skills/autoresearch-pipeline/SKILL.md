@@ -186,7 +186,9 @@ class SkillAutoresearch:
 5. **Report Responsibly** - Ethical disclosure for security findings
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Autoresearch Pipeline for AI Safety Research
+
 ## Tools Used
 
 - `read` - Read documentation and references
@@ -194,20 +196,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Start from existing implementations
+
+### Step 2: LLM agent iteration
+
+### Step 3: Quantitative evaluation
+
+### Step 4: Discover new algorithms
+
+### Step 5: Skill Optimization
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply autoresearch-pipeline?
+**User:** I need to apply Autoresearch Pipeline for AI Safety Research to my analysis.
 
-**Agent:** I'll help you understand and apply autoresearch-pipeline...
+**Agent:** I'll help you apply autoresearch-pipeline. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

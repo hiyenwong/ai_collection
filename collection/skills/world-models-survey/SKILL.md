@@ -289,11 +289,19 @@ def plan_with_world_model(model, goal, initial_state, horizon=50):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply world-models-survey?
+**User:** I need to apply World Models: Understanding and Prediction Survey to my analysis.
 
-**Agent:** I'll help you understand and apply world-models-survey...
+**Agent:** I'll help you apply world-models-survey. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

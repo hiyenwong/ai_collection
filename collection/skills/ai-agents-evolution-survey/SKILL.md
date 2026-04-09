@@ -92,11 +92,19 @@ Environment Input → Perception → Planning → Tool Use → Action
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply ai-agents-evolution-survey?
+**User:** I need to apply AI Agents: Evolution, Architecture, and Applications to my analysis.
 
-**Agent:** I'll help you understand and apply ai-agents-evolution-survey...
+**Agent:** I'll help you apply ai-agents-evolution-survey. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

@@ -183,20 +183,38 @@ class NonlinearFusionModule(nn.Module):
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: EEG Graph Construction
+
+### Step 2: fMRI Graph Construction
+
+### Step 3: Joint Representation
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- Simultaneously acquired EEG-fMRI data
+- Need spatiotemporal brain dynamics
+- Multimodal brain analysis
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply multimodal-joint-graph-eeg-fmri?
+**User:** I need to apply Multimodal Joint Graph Representation EEG-fMRI to my analysis.
 
-**Agent:** I'll help you understand and apply multimodal-joint-graph-eeg-fmri...
+**Agent:** I'll help you apply multimodal-joint-graph-eeg-fmri. First, let me understand your specific use case...
+
+**Context:** Problem: Multimodal Brain Analysis
+
+### Example 2: Advanced Scenario
+
+**User:** Simultaneously acquired EEG-fMRI data
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

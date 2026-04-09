@@ -52,20 +52,25 @@ We’re developing a blueprint for evaluating the risk that a large language mod
 ```
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Background
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply building-an-early-warning-system-for-llm-aided-bio?
+**User:** I need to apply building-an-early-warning-system-for-llm-aided-bio - Building an early warning system for LLM-aided biological threat creation to my analysis.
 
-**Agent:** I'll help you understand and apply building-an-early-warning-system-for-llm-aided-bio...
+**Agent:** I'll help you apply building-an-early-warning-system-for-llm-aided-bio. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

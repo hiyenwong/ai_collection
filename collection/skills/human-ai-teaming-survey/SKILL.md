@@ -318,11 +318,19 @@ class ConflictResolver:
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply human-ai-teaming-survey?
+**User:** I need to apply Human-AI Teaming: A Review and Outlook to my analysis.
 
-**Agent:** I'll help you understand and apply human-ai-teaming-survey...
+**Agent:** I'll help you apply human-ai-teaming-survey. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

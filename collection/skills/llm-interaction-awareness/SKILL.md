@@ -85,20 +85,33 @@ arXiv:2604.02315 - "User Turn Generation as a Probe of Interaction Awareness in 
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Interaction awareness ≠ task accuracy
+
+### Step 2: Latent awareness
+
+### Step 3: Decoupled dimensions
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply llm-interaction-awareness?
+**User:** I need to apply LLM Interaction Awareness to my analysis.
 
-**Agent:** I'll help you understand and apply llm-interaction-awareness...
+**Agent:** I'll help you apply llm-interaction-awareness. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

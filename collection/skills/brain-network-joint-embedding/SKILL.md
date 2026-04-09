@@ -794,11 +794,19 @@ generate_diagnostic_report(results)
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply brain-network-joint-embedding?
+**User:** I need to apply Brain Network Joint Embedding to my analysis.
 
-**Agent:** I'll help you understand and apply brain-network-joint-embedding...
+**Agent:** I'll help you apply brain-network-joint-embedding. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

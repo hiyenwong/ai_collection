@@ -125,20 +125,38 @@ class FusionSearchlight:
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Pharmacological Prediction
+
+### Step 2: Clinical Brain State Classification
+
+### Step 3: Multi-modal Integration
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- Analyzing resting-state fMRI with multiple metrics
+- Need to integrate complementary information
+- Brain state classification tasks
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply fusion-searchlight-fmri?
+**User:** I need to apply Fusion Searchlight for rs-fMRI Data Integration to my analysis.
 
-**Agent:** I'll help you understand and apply fusion-searchlight-fmri...
+**Agent:** I'll help you apply fusion-searchlight-fmri. First, let me understand your specific use case...
+
+**Context:** Problem: Independent Metric Analysis
+
+### Example 2: Advanced Scenario
+
+**User:** Analyzing resting-state fMRI with multiple metrics
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

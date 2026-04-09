@@ -166,7 +166,9 @@ Gödel Agent 是一个自引用代理框架，实现递归式自我改进。通�
 **论文来源：** arXiv:2410.xxxxx (ACL 2025)
 **代码：** https://github.com/Arvid-pku/Godel_Agent
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+SKILL.md - Gödel Agent: Self-Referential Self-Improvement
+
 ## Activation Keywords
 
 - godel-self-improvement
@@ -180,20 +182,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 渐进式改进
+
+### Step 2: 可验证性
+
+### Step 3: 可回滚性
+
+### Step 4: 核心稳定
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply godel-self-improvement?
+**User:** I need to apply SKILL.md - Gödel Agent: Self-Referential Self-Improvement to my analysis.
 
-**Agent:** I'll help you understand and apply godel-self-improvement...
+**Agent:** I'll help you apply godel-self-improvement. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

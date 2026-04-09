@@ -181,20 +181,38 @@ class PTGBDownstream(nn.Module):
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Understand the Request
+
+### Step 2: Search for Information
+
+### Step 3: Apply the Framework
+
+### Step 4: Provide Results
+
+### Step 5: Verify Accuracy
+
+### When to Apply
+- Brain network analysis with limited labels
+- Transfer learning across ROI systems
+- Multi-site neuroimaging studies
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply ptgb-brain-network-pretraining?
+**User:** I need to apply PTGB: Pre-Train Graph Neural Networks for Brain Network Analysis to my analysis.
 
-**Agent:** I'll help you understand and apply ptgb-brain-network-pretraining...
+**Agent:** I'll help you apply ptgb-brain-network-pretraining. First, let me understand your specific use case...
+
+**Context:** Problem: Limited Labeled Brain Network Data
+
+### Example 2: Advanced Scenario
+
+**User:** Brain network analysis with limited labels
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

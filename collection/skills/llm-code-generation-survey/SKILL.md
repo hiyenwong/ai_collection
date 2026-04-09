@@ -298,11 +298,19 @@ def fix_bug(model, buggy_code, error_message):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply llm-code-generation-survey?
+**User:** I need to apply LLM Code Generation Survey to my analysis.
 
-**Agent:** I'll help you understand and apply llm-code-generation-survey...
+**Agent:** I'll help you apply llm-code-generation-survey. First, let me understand your specific use case...
+
+**Context:** Code Completion
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

@@ -300,7 +300,9 @@ codexbar usage --provider copilot --status
 
 _此技能用于监控非百炼 AI 的使用情况，帮助管理 AI 资源_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+AI Usage Monitor - 非百炼 AI 使用检测
+
 ## Activation Keywords
 
 - ai-usage-monitor
@@ -314,20 +316,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Understand the Request
+
+### Step 2: Search for Information
+
+### Step 3: Apply the Framework
+
+### Step 4: Provide Results
+
+### Step 5: Verify Accuracy
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply ai-usage-monitor?
+**User:** I need to apply AI Usage Monitor - 非百炼 AI 使用检测 to my analysis.
 
-**Agent:** I'll help you understand and apply ai-usage-monitor...
+**Agent:** I'll help you apply ai-usage-monitor. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

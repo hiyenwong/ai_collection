@@ -300,7 +300,9 @@ def interpret_neural_dynamics(lvm, diffusion_model, neural_data, factor_idx):
 
 _此技能基于 BeNeDiff 方法，用于探索行为相关的解耦神经动力学_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+BeNeDiff - Behavior-Relevant Neural Dynamics with Diffusion Models
+
 ## Activation Keywords
 
 - benediff-behavior-neural-diffusion
@@ -314,20 +316,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: 神经行为解码
+
+### Step 2: 潜在因子解释
+
+### Step 3: 行为生成
+
+### Step 4: 神经表征分析
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply benediff-behavior-neural-diffusion?
+**User:** I need to apply BeNeDiff - Behavior-Relevant Neural Dynamics with Diffusion Models to my analysis.
 
-**Agent:** I'll help you understand and apply benediff-behavior-neural-diffusion...
+**Agent:** I'll help you apply benediff-behavior-neural-diffusion. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

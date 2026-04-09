@@ -219,20 +219,38 @@ class DASTGCN(nn.Module):
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: Graph Structure Learning Module
+
+### Step 2: Spatio-temporal Graph Convolution
+
+### Step 3: Supervised Learning Framework
+
+### Step 4: Understand the Request
+
+### Step 5: Search for Information
+
+### When to Apply
+- fMRI analysis with dynamic connectivity
+- When pre-defined graphs are insufficient
+- Phenotype prediction from functional scans
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply dast-gcn-fmri?
+**User:** I need to apply DAST-GCN: Dynamic Adaptive Spatio-temporal Graph Convolution for fMRI to my analysis.
 
-**Agent:** I'll help you understand and apply dast-gcn-fmri...
+**Agent:** I'll help you apply dast-gcn-fmri. First, let me understand your specific use case...
+
+**Context:** Problem: Static Graph Limitations
+
+### Example 2: Advanced Scenario
+
+**User:** fMRI analysis with dynamic connectivity
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

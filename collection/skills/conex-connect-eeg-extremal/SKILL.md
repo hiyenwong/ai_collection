@@ -39,7 +39,6 @@ Huser et al. (2021) 提出 Conex-Connect：
 - `Spectral Decomposition` - Analysis component
 - `EEG Processing` - Analysis component
 
-
 ## Key Concepts
 
 ### Extremal Dependence
@@ -169,22 +168,42 @@ print(f"Average change: {np.mean(results['change']):.3f}")
 4. **焦点驱动** - 癫痫焦点主导全脑连接
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Conex-Connect EEG Extremal Connectivity
+
+**Key Concepts:**
+- 高依赖 → 连接紧密
+- 低依赖 → 独立/弱连接
+- 混乱模式 → 发作后状态
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: EEG 预处理与频带分解
+
+### Step 2: 极值依赖估计
+
+### Step 3: 条件极值依赖
+
+### Step 4: 癫痫发作分析
+
+### Step 5: Gamma 波段最重要
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply conex-connect-eeg-extremal?
+**User:** I need to apply Conex-Connect EEG Extremal Connectivity to my analysis.
 
-**Agent:** I'll help you understand and apply conex-connect-eeg-extremal...
+**Agent:** I'll help you apply conex-connect-eeg-extremal. First, let me understand your specific use case...
+
+**Context:** 高依赖 → 连接紧密
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

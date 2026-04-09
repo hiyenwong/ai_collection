@@ -146,7 +146,9 @@ theta_ltd = 0.3      # LTD 阈值
 
 _此技能基于 BrainScaleS-2 神经形态硬件平台的突触可塑性实现方法_
 ## Description
-Framework from arXiv papers. See paper reference for details.
+
+Multi-timescale Analog Neuromorphic Plasticity
+
 ## Activation Keywords
 
 - multi-timescale-analog-plasticity
@@ -160,20 +162,33 @@ Framework from arXiv papers. See paper reference for details.
 - `web_fetch` - Fetch paper or documentation
 
 ## Instructions for Agents
+Follow these steps when applying this skill:
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+### Step 1: STDP 协议
+
+### Step 2: 成对脉冲协议
+
+### Step 3: 四脉冲协议
+
+### Step 4: 爆发协议
+
+### Step 5: 加速仿真
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply multi-timescale-analog-plasticity?
+**User:** I need to apply Multi-timescale Analog Neuromorphic Plasticity to my analysis.
 
-**Agent:** I'll help you understand and apply multi-timescale-analog-plasticity...
+**Agent:** I'll help you apply multi-timescale-analog-plasticity. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

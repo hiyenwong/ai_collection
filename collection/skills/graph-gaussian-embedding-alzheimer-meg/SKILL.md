@@ -39,7 +39,6 @@ Xu et al. (2020) 提出 MG2G（Multiple Graph Gaussian embedding）：
 - `MEG Connectivity` - Analysis component
 - `Classifier` - Analysis component
 
-
 ## Architecture
 
 ```
@@ -177,22 +176,46 @@ classifier = predict_mci_conversion(embeddings, mci_labels)
 | Region Identification | Significant in temporal lobe |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Graph Gaussian Embedding Alzheimer Prediction
+
+**Key Concepts:**
+- 阿尔茨海默病（AD）早期诊断和进展预测面临挑战：
+- 脑网络变化细微且异质
+- 高维网络特征难以直接使用
+- MCI 患者转化预测准确率低
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: MEG 网络构建
+
+### Step 2: 图高斯嵌入
+
+### Step 3: 多图集成
+
+### Step 4: MCI 转化预测
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply graph-gaussian-embedding-alzheimer-meg?
+**User:** I need to apply Graph Gaussian Embedding Alzheimer Prediction to my analysis.
 
-**Agent:** I'll help you understand and apply graph-gaussian-embedding-alzheimer-meg...
+**Agent:** I'll help you apply graph-gaussian-embedding-alzheimer-meg. First, let me understand your specific use case...
+
+**Context:** 阿尔茨海默病（AD）早期诊断和进展预测面临挑战：
+- 脑网络变化细微且异质
+- 高维网络特征难以直接使用
+- MCI 患者转化预测准确率低
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

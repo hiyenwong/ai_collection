@@ -40,7 +40,6 @@ El-Yaagoubi et al. (2024) 提出 CBTR 方法：
 - `TDA` - Analysis component
 - `EEG` - Analysis component
 
-
 ## Architecture
 
 ```
@@ -246,22 +245,47 @@ plot_hierarchical_change(results, channel_names)
 | Harmonic | Global structure |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Causality-Based Topological Ranking (CBTR)
+
+**Key Concepts:**
+- 传统拓扑数据分析（TDA）方法的局限：
+- Persistent Homology 依赖对称距离度量
+- 无法捕捉有向动力学（有效连接）
+- 难以识别脑区的层次结构
+- 癫痫发作时的层次变化难以量化
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 因果推断评估有效连接
+
+### Step 2: Hodge 分解
+
+### Step 3: CBTR 完整流程
+
+### Step 4: 可视化层次变化
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply cbtr-causality-topological-ranking?
+**User:** I need to apply Causality-Based Topological Ranking (CBTR) to my analysis.
 
-**Agent:** I'll help you understand and apply cbtr-causality-topological-ranking...
+**Agent:** I'll help you apply cbtr-causality-topological-ranking. First, let me understand your specific use case...
+
+**Context:** 传统拓扑数据分析（TDA）方法的局限：
+- Persistent Homology 依赖对称距离度量
+- 无法捕捉有向动力学（有效连接）
+- 难以识别脑区的层次
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

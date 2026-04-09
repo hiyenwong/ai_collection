@@ -247,11 +247,19 @@ class MM_DiT(nn.Module):
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply dual-diffusion-unified?
+**User:** I need to apply Dual Diffusion: Unified Image Generation and Understanding to my analysis.
 
-**Agent:** I'll help you understand and apply dual-diffusion-unified...
+**Agent:** I'll help you apply dual-diffusion-unified. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

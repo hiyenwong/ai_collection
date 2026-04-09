@@ -282,11 +282,19 @@ class ContinuousBatcher:
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply efficient-llm-inference-survey?
+**User:** I need to apply Efficient LLM Inference Survey to my analysis.
 
-**Agent:** I'll help you understand and apply efficient-llm-inference-survey...
+**Agent:** I'll help you apply efficient-llm-inference-survey. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

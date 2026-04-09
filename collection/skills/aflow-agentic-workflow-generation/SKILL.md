@@ -314,11 +314,19 @@ class CostAwareWorkflow:
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply aflow-agentic-workflow-generation?
+**User:** I need to apply AFlow: Automating Agentic Workflow Generation to my analysis.
 
-**Agent:** I'll help you understand and apply aflow-agentic-workflow-generation...
+**Agent:** I'll help you apply aflow-agentic-workflow-generation. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex multi-step tasks
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 

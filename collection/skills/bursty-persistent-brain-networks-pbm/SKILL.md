@@ -38,7 +38,6 @@ Fransson (2016) 提出了 Point-Based Method (PBM)：
 - `PBM` - Analysis component
 - `Temporal Graph Theory` - Analysis component
 
-
 ## Key Concepts
 
 ### Bursty vs Persistent Connectivity
@@ -140,22 +139,42 @@ class PointBasedConnectivity:
 | Within RSN | Persistent | Stable coherence |
 
 ## Description
-Framework from arXiv papers. See paper reference for details.
-## Instructions for Agents
 
-1. **Understand the Request**: Analyze what the user needs related to this skill's domain.
-2. **Search for Information**: Use web_search to find relevant papers or documentation.
-3. **Apply the Framework**: Follow the methodology described in the skill's key concepts.
-4. **Provide Results**: Summarize findings and actionable recommendations.
-5. **Verify Accuracy**: Cross-check key facts before presenting to user.
+Bursty Persistent Brain Networks (PBM)
+
+**Key Concepts:**
+- --------|-----------------|---------|
+- network integration |
+- network coherence |
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 预处理 fMRI 数据
+
+### Step 2: 单时间点连接估计
+
+### Step 3: Bursty 检测
+
+### Step 4: Persistency 估计
+
+### Step 5: Understand the Request
 
 ## Examples
 
-### Example 1: Basic Usage
+### Example 1: Basic Application
 
-**User:** How can I apply bursty-persistent-brain-networks-pbm?
+**User:** I need to apply Bursty Persistent Brain Networks (PBM) to my analysis.
 
-**Agent:** I'll help you understand and apply bursty-persistent-brain-networks-pbm...
+**Agent:** I'll help you apply bursty-persistent-brain-networks-pbm. First, let me understand your specific use case...
+
+**Context:** --------|-----------------|---------|
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
 
 ### Example 2: Advanced Application
 
