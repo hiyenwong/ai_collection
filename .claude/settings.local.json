@@ -18,7 +18,8 @@
       "Bash(gh run:*)",
       "Bash(python scripts/validate_skill.py)",
       "Bash(python:*)",
-      "Bash(ruff format:*)"
+      "Bash(ruff format:*)",
+      "Bash(ruff check:*)"
     ]
   }
 }
