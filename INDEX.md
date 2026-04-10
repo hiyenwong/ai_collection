@@ -72,6 +72,14 @@
 | [AkShare](collection/skills/akshare/) | 中国金融数据接口 | stock data, akshare |
 | [Stock Analysis](collection/skills/stock-analysis/) | 股票技术分析 | 股票分析, technical indicators |
 
+#### 神经科学与计算神经科学
+
+| 技能 | 描述 | 激活词 |
+|------|------|--------|
+| [Meta-Learning Brain Decoding](collection/skills/meta-learning-brain-decoding/) | 元学习脑解码，跨被试零样本适应 | brain decoding, meta-learning, fMRI |
+| [Neuromodulation CPG Control](collection/skills/neuromodulation-cpg-control/) | 神经调制CPG控制，节律模式切换 | CPG, neuromodulation, rhythmic patterns |
+| [Cartesian Cut Agentic AI](collection/skills/cartesian-cut-agentic-ai/) | 智能体AI架构，笛卡尔分割与集成控制 | Cartesian cut, agentic AI, brain-inspired |
+
 #### 元技能
 
 | 技能 | 描述 | 激活词 |
@@ -122,6 +130,8 @@
 #金融 #股票 #数据 #API #中国
 #元技能 #提炼 #自动化
 #RAG #搜索 #索引 #推荐
+#神经科学 #脑解码 #计算神经科学 #CPG #神经调制
+#智能体架构 #脑启发AI #fMRI #视觉重建
 ```
 
 ---
@@ -162,6 +172,14 @@
 ---
 
 ## 最新更新
+
+### 2026-04-11
+
+**神经科学与AI技能:**
+- 新增: Meta-Learning Brain Decoding - 训练-free跨被试脑解码 (arXiv:2604.08537)
+- 新增: Neuromodulation CPG Control - 神经调制节律控制 (arXiv:2604.08312)
+- 新增: Cartesian Cut Agentic AI - 智能体控制架构 (arXiv:2604.07745)
+- 来源: 2026年4月最新arXiv神经科学论文
 
 ### 2026-02-20
 
@@ -206,4 +224,4 @@
 
 ---
 
-*索引最后更新: 2026-02-19*
+*索引最后更新: 2026-04-11*
