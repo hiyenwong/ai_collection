@@ -308,7 +308,9 @@ def validate_all_skills(skills_dir: Path) -> Dict[str, SkillValidator]:
             # Check if this is a parent directory with sub-skills
             subdirs = [d for d in skill_path.iterdir() if d.is_dir()]
             if subdirs and all((d / "SKILL.md").exists() for d in subdirs):
-                print(f"⏭️  Skipping parent directory with sub-skills: {skill_path.name}")
+                print(
+                    f"⏭️  Skipping parent directory with sub-skills: {skill_path.name}"
+                )
                 continue
 
         validator = SkillValidator(skill_path)
