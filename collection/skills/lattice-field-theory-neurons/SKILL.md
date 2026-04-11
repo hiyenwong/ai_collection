@@ -202,6 +202,69 @@ def analyze_spike_rasters(rasters, bin_size=1):
 - Franchini, S., & Bardella, G. (2026). Lattice Field Theory for a network of real neurons. *LATTICE 2025*.
 - Bardella et al. (2024). Entropy 26 (6), 495.
 
+## Activation Keywords
+- lattice field theory neuroscience
+- lattice neural field
+- neural field theory
+- statistical mechanics neuroscience
+- maximum entropy neural models
+- brain-computer interface LFT
+- chronic multi-site recordings
+- lattice-based neural modeling
+
+## Tools Used
+- `exec`: Run Python lattice field theory simulation scripts
+- `read`: Load spike raster data and research papers
+- `write`: Save model parameters and analysis results
+
+## Instructions for Agents
+
+When working with lattice field theory for neuroscience:
+
+1. **Identify the data type**:
+   - Multi-neuron spike raster data
+   - Chronic multi-site recordings
+   - Time-bin smoothed data
+
+2. **Fit LFT model**:
+   - Initialize lattice neural field model
+   - Fit model parameters to data
+   - Extract physical quantities (free energy, entropy, specific heat)
+
+3. **Analyze results**:
+   - Examine phase transitions
+   - Study thermodynamic limits
+   - Validate against experimental data
+
+4. **Apply to BCIs**:
+   - Customize for chronic recordings
+   - Real-time inference if needed
+
+## Examples
+
+### Example 1: LFT Model Fitting
+```
+User: "使用 LFT 拟合多神经元尖峰数据"
+
+Agent:
+1. 确认数据类型: 多神经元尖峰光栅数据
+2. 初始化 LFT 模型 (晶格大小、时间步长)
+3. 拟合模型参数
+4. 提取物理量 (自由能、熵、比热)
+5. 输出结果和统计分析
+```
+
+### Example 2: BCI Application
+```
+User: "将 LFT 应用于慢性多部位记录的脑机接口"
+
+Agent:
+1. 确认应用类型: 慢性多部位记录
+2. 选择 LFT 模型参数
+3. 适配 BCI 实时需求
+4. 输出解码协议和性能估计
+```
+
 ## Related
 
 - [[maximum-entropy-models]]

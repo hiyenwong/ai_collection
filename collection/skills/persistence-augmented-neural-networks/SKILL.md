@@ -356,6 +356,72 @@ class GraphPersistenceAugmentation(PersistenceAugmentation):
 
 - Wang, E. X., Nigmetov, A., & Morozov, D. (2026). Persistence-Augmented Neural Networks.
 
+## Activation Keywords
+- persistence-augmented neural networks
+- persistence data augmentation
+- topological data augmentation
+- persistent homology augmentation
+- Morse-Smale complex augmentation
+- topological neural networks
+- persistence-based features
+- topological data analysis ML
+
+## Tools Used
+- `exec`: Run Python persistence augmentation scripts
+- `read`: Load image/graph data and research papers
+- `write`: Save augmented datasets and model results
+
+## Instructions for Agents
+
+When working with persistence-augmented neural networks:
+
+1. **Identify the data type**:
+   - Image data: use ImagePersistenceAugmentation
+   - Graph data: use GraphPersistenceAugmentation
+
+2. **Apply augmentation framework**:
+   - Step 1: Compute scalar field
+   - Step 2: Build Morse-Smale complex
+   - Step 3: Compute persistence
+   - Step 4: Encode topological features
+   - Step 5: Generate augmented sample
+
+3. **Select implementation**:
+   - For images: use gradient magnitude as scalar field
+   - For graphs: use node centrality or features
+   - Consider multi-scale encoding for complex data
+
+4. **Train with augmented data**:
+   - Use topological features as additional channels
+   - Combine with original data features
+   - Evaluate on validation set
+
+## Examples
+
+### Example 1: Image Augmentation
+```
+User: "使用持久性方法对图像进行数据增强"
+
+Agent:
+1. 确认数据类型: 图像数据
+2. 使用 ImagePersistenceAugmentation
+3. 计算梯度幅值作为标量场
+4. 构建 Morse-Smale 复形
+5. 输出带拓扑特征的增强图像
+```
+
+### Example 2: Graph Analysis
+```
+User: "对图数据进行持久性增强"
+
+Agent:
+1. 确认数据类型: 图数据
+2. 使用 GraphPersistenceAugmentation
+3. 使用节点中心性作为标量场
+4. 构建 Vietoris-Rips 过滤
+5. 输出带拓扑特征的图
+```
+
 ## Related
 
 - [[topological-data-analysis]]

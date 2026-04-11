@@ -138,6 +138,66 @@ class InContextBrainDecoder:
 - Nan, M., Yu, M., Mai, W., et al. (2026). Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding. *CVPR 2026*.
 - GitHub: https://github.com/ezacngm/brainCodec
 
+## Activation Keywords
+- cross-subject brain decoding
+- training-free fMRI decoding
+- in-context brain decoding
+- zero-shot neural decoding
+- subject-independent brain decoding
+- meta-learning brain decoding
+- brain decoding from fMRI
+- visual reconstruction
+
+## Tools Used
+- `exec`: Run Python in-context brain decoding scripts
+- `read`: Load fMRI data files and model outputs
+- `write`: Save decoded results and visualizations
+
+## Instructions for Agents
+
+When working with in-context brain decoding or cross-subject fMRI analysis:
+
+1. **Identify the data type**:
+   - fMRI data with visual stimuli
+   - Pre-trained visual backbone (CLIP, DINO, etc.)
+
+2. **Apply two-stage framework**:
+   - Stage 1: Context construction for encoder estimation
+   - Stage 2: Cross-voxel context for decoding
+
+3. **Select implementation**:
+   - Use brainCodec library for standard pipeline
+   - Customize for specific brain regions if needed
+
+4. **Validate results**:
+   - Check cross-subject generalization
+   - Verify reconstruction quality
+
+## Examples
+
+### Example 1: Cross-Subject Decoding
+```
+User: "使用 in-context 方法进行跨个体 fMRI 脑解码"
+
+Agent:
+1. 确认数据类型: fMRI 数据和视觉刺激配对
+2. 使用两阶段分层推理方法
+3. 执行 Stage 1: 构建每个体素的上下文
+4. 执行 Stage 2: 跨体素聚合解码
+5. 输出重建的刺激图像
+```
+
+### Example 2: Model Selection
+```
+User: "选择合适的跨个体脑解码方法"
+
+Agent:
+1. 确认先决条件: fMRI 数据、预训练视觉骨干网络
+2. 推荐使用 meta-trained encoder-decoder 模型
+3. 提供阶段 1 和阶段 2 的实现框架
+4. 输出方法比较和推荐
+```
+
 ## Related
 
 - [[brain-decoding]]

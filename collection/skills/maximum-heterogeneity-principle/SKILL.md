@@ -213,6 +213,72 @@ class ComputeCluster(DistributedProductionSystem):
 
 - Artis, G., Akarca, D., & Achterberg, J. (2026). The Principle of Maximum Heterogeneity Optimises Productivity in Distributed Production Systems Across Biology, Economics, and Computing.
 
+## Activation Keywords
+- maximum heterogeneity principle
+- maximum heterogeneity productivity
+- heterogeneous production systems
+- neural coding heterogeneity
+- ecosystem productivity heterogeneity
+- heterogeneous computing optimization
+- distributed systems heterogeneity
+- max heterogeneity principle
+
+## Tools Used
+- `exec`: Run Python maximum heterogeneity analysis scripts
+- `read`: Load research papers and system data
+- `write`: Save optimization results and design recommendations
+
+## Instructions for Agents
+
+When working with maximum heterogeneity principle or distributed systems:
+
+1. **Identify the domain**:
+   - Neuroscience: neural tuning diversity
+   - Computing: hardware processor diversity
+   - Economics: worker specialization
+   - Ecology: species trait diversity
+
+2. **Apply design principles**:
+   - Push toward maximum viable diversity
+   - Respect environmental constraints
+   - Consider topology/communication structure
+   - Apply recursively at nested levels
+
+3. **Optimize for target metric**:
+   - Neuroscience: Information encoding
+   - Computing: Compute throughput
+   - Economics: Productivity/GDP
+   - Ecology: Ecosystem productivity
+
+4. **Evaluate tradeoffs**:
+   - Heterogeneity vs. coordination overhead
+   - Specialization vs. flexibility
+   - Diversity vs. system complexity
+
+## Examples
+
+### Example 1: Neural Circuit Design
+```
+User: "设计具有最大异质性的神经环路"
+
+Agent:
+1. 识别域: 神经科学，感觉编码优化
+2. 计算神经元调制曲线多样性
+3. 应用最大异质性原则
+4. 输出环路设计和性能分析
+```
+
+### Example 2: Heterogeneous Cluster
+```
+User: "优化异构计算集群的资源分配"
+
+Agent:
+1. 识别域: 计算，异构硬件
+2. 分析处理器多样性与吞吐量关系
+3. 应用最大异质性原则
+4. 输出资源分配方案
+```
+
 ## Related
 
 - [[distributed-systems]]

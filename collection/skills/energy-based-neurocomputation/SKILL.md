@@ -329,3 +329,69 @@ def passivity_based_controller(system, port_variables):
 - [[associative-memory]]
 - [[neural-optimization]]
 - [[control-theory]]
+
+## Activation Keywords
+- energy-based neurocomputation
+- energy-based dynamical systems
+- Hopfield networks
+- Boltzmann machines
+- associative memory
+- neural optimization
+- control-theoretic neural networks
+- energy-shaped control
+- passivity-based control
+
+## Tools Used
+- `exec`: Run Python energy-based computation scripts
+- `read`: Load research papers and documentation
+- `write`: Save optimization results and control designs
+
+## Instructions for Agents
+
+When working with energy-based neurocomputation or related topics:
+
+1. **Identify the problem type**:
+   - Memory systems → Hopfield/Boltzmann networks
+   - Optimization → Energy landscape optimization
+   - Learning → Unsupervised representation learning
+   - Control → Energy shaping or passivity-based control
+
+2. **Select the appropriate model**:
+   - Standard Hopfield for basic associative memory
+   - Dense Associative Memory for higher capacity
+   - Oscillator networks for large-scale optimization
+   - Proximal-descent for constrained reconstruction
+
+3. **Implement the dynamics**:
+   - Define energy function for the system
+   - Implement gradient dynamics or sampling
+   - Apply control law if needed
+
+4. **Validate results**:
+   - Check energy landscape properties
+   - Verify convergence to minima
+   - assess robustness to noise
+
+## Examples
+
+### Example 1: Memory System Design
+```
+User: "设计一个高容量联想记忆系统"
+
+Agent:
+1. 问题类型: 联想记忆，高容量需求
+2. 选择模型: Dense Associative Memory (多项式能量)
+3. 实现存储和检索 dynamics
+4. 输出: 神经网络参数和性能分析
+```
+
+### Example 2: Optimization Problem
+```
+User: "用能量ベース的方法解决组合优化问题"
+
+Agent:
+1. 问题类型: 组合优化
+2. 选择模型: Oscillator Network
+3. 编码问题到耦合矩阵
+4. 输出: 解决方案和收敛分析
+```
