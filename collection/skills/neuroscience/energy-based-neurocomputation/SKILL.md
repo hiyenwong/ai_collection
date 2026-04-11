@@ -1,104 +1,51 @@
 ---
 name: energy-based-neurocomputation
-description: "Energy-based dynamical systems framework for neurocomputation, learning, and optimization at the intersection of control theory, neuroscience, and machine learning."
+description: "Energy-based dynamical systems framework for neurocomputation, learning, and optimization. Activation: neuroscience, energy-based-models, dynamical-systems."
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: [neuroscience, brain-network, neural-dynamics, computational-neuroscience]
+    tags: ['neuroscience', 'energy-based-models', 'dynamical-systems', 'optimization', 'learning']
     source_paper: "Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization (arXiv:2604.05042v1)"
     citations: 0
-    published: 2026-04-06
+    published: "2026-04-06"
     category: neuroscience
 ---
 
-# Energy-Based Dynamical Models for Neurocomputation
+# Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization
 
 ## Overview
-
-Energy-based dynamical systems framework for neurocomputation, learning, and optimization at the intersection of control theory, neuroscience, and machine learning.
-
-This skill is based on research from arXiv:2604.05042v1 published on 2026-04-06.
-
-## Source Paper
-
-**Title:** Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization  
-**Authors:** Arthur N. Montanari, Francesco Bullo, Dmitry Krotov, Adilson E. Motter  
-**arXiv:** [2604.05042v1](https://arxiv.org/abs/2604.05042v1)  
-**PDF:** [Download](https://arxiv.org/pdf/2604.05042v1)  
-**Published:** 2026-04-06  
-**Citations:** 0  
-**Category:** neuroscience
-
-## Abstract
-
 Recent advances at the intersection of control theory, neuroscience, and machine learning have revealed novel mechanisms by which dynamical systems perform computation. These advances encompass a wide range of conceptual, mathematical, and computational ideas, with applications for model learning and training, memory retrieval, data-driven control, and optimization. This tutorial focuses on neuro-inspired approaches to computation that aim to improve scalability, robustness, and energy efficiency across such tasks, bridging the gap between artificial and biological systems. Particular emphasis is placed on energy-based dynamical models that encode information through gradient flows and energy landscapes. We begin by reviewing classical formulations, such as continuous-time Hopfield network
 
-## Key Contributions
+## Source Paper
+- **Title**: Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization
+- **Authors**: Arthur N. Montanari, Francesco Bullo, Dmitry Krotov, Adilson E. Motter
+- **arXiv**: [2604.05042v1](https://arxiv.org/abs/2604.05042v1)
+- **Published**: 2026-04-06
+- **Category**: neurons and cognition
 
-1. **Novel Methodology:** Advanced techniques for neuroscience analysis
-2. **Practical Applications:** Real-world implementation strategies
-3. **Theoretical Insights:** Computational neuroscience foundations
-
-## Activation Keywords
-
-- - energy based
-- dynamical systems
-- neurocomputation
-- control theory
-- optimization
-- neural computation
-- dynamical model
-
-## Implementation Pattern
-
-```python
-# Example implementation based on paper methodology
-# Note: This is a conceptual implementation
-# Refer to the original paper for complete details
-
-def analyze_brain_data(data, method="energy_based_neurocomputation"):
-    """
-    Apply Energy-Based Dynamical Models for Neurocomputation methodology
-    
-    Args:
-        data: Neural recording data (EEG, fMRI, calcium imaging, etc.)
-        method: Analysis method to apply
-    
-    Returns:
-        Analysis results
-    """
-    # Implementation based on paper
-    pass
-```
+## Key Concepts
+- Research methodology and approach
+- Theoretical framework
+- Practical applications
+- Implementation details
 
 ## Applications
-
-- Brain-computer interfaces (BCI)
+- Neuroscience research
+- Brain-computer interfaces
 - Neural signal processing
-- Cognitive neuroscience research
 - Computational modeling
-- Medical diagnosis support
-
-## Limitations
-
-- Based on specific experimental conditions from the paper
-- May require adaptation for different data types
-- Computational requirements depend on implementation
 
 ## References
+- [Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization](https://arxiv.org/abs/2604.05042v1)
 
-- Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization. Arthur N. Montanari, Francesco Bullo, Dmitry Krotov, Adilson E. Motter. arXiv:2604.05042v1, 2026-04-06.
+## Related Topics
+- Neuroscience
+- Brain networks
+- Neural dynamics
+- Computational neuroscience
 
-## Related Skills
+---
 
-- Other neuroscience skills in the collection
-- Brain network analysis tools
-- Neural dynamics modeling
-
-## See Also
-
-- arXiv:2604.05042v1
-- Computational Neuroscience resources
-- Brain connectivity analysis methods
+_Last updated: 2026-04-06_
