@@ -1,212 +1,153 @@
 ---
 name: decentralized-optimization-smtpp
-description: Stochastic Momentum Tracking Push-Pull for Decentralized Optimization over Directed Graphs. Handle asymmetric communication and high variance in distributed optimization.
+description: "Stochastic Momentum Tracking Push-Pull (SMTPP) for decentralized optimization over directed graphs. Addresses asymmetric communication and stochastic gradient variance in distributed machine learning."
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: [decentralized-optimization, momentum-tracking, directed-graphs, stochastic-gradient, distributed-learning]
-    source_paper: "Stochastic Momentum Tracking Push-Pull for Decentralized Optimization over Directed Graphs (arXiv:2604.08219)"
-    citations: 0
-    category: optimization and control
+    tags: [decentralized-optimization, distributed-machine-learning, push-pull, directed-graphs, stochastic-momentum, consensus]
+    source_paper: "Stochastic Momentum Tracking Push-Pull for Decentralized Optimization over Directed Graphs (arXiv:2604.08219v1)"
+    authors: "Wenqi Fan, Yiwei Liao, Qing Xu, Bin Guo, Songyi Dian"
+    published: "2026-04-09"
+    category: "optimization and control"
 ---
 
-# SMTPP: Decentralized Optimization over Directed Graphs
+# Stochastic Momentum Tracking Push-Pull for Decentralized Optimization
 
 ## Overview
 
-This skill provides the Stochastic Momentum Tracking Push-Pull (SMTPP) algorithm for decentralized optimization over directed graphs. It addresses challenges of asymmetric communication and high variance in stochastic gradients that cause oscillations and hinder convergence.
+This skill implements the Stochastic Momentum Tracking Push-Pull (SMTPP) algorithm for decentralized optimization over directed graphs. The method addresses two key challenges in distributed machine learning: asymmetric communication patterns and high variance in stochastic gradients.
 
 ## Core Concepts
 
-### Decentralized Optimization
-- **Setting**: Multiple agents collaborate without central coordinator
-- **Challenge**: Communication asymmetry in directed graphs
-- **Objective**: Minimize global objective using local information
+### 1. Decentralized Optimization
+- **Setting**: Multiple agents cooperatively optimize a global objective
+- **Challenge**: No central coordinator, limited communication
+- **Approach**: Local computation + neighbor communication
+
+### 2. Directed Graph Communication
+- **Problem**: Communication may be asymmetric
+- **Solution**: Push-Pull mechanism for information diffusion
+- **Benefit**: Works on arbitrary directed topologies
+
+### 3. Momentum Tracking
+- **Issue**: Stochastic gradients have high variance
+- **Solution**: Track momentum across the network
+- **Result**: Faster convergence and stable optimization
+
+## Mathematical Framework
 
 ### SMTPP Algorithm
-- **Momentum Tracking**: Track momentum term instead of raw stochastic gradients
-- **Push-Pull**: Combine push (out-neighbors) and pull (in-neighbors) communication
-- **Variance Reduction**: Mitigate stochastic gradient variance
+```
+At each agent i and iteration k:
+
+1. Local gradient:
+   g_i^k = ∇f_i(x_i^k; ξ_i^k)
+
+2. Momentum tracking:
+   y_i^(k+1) = Σ_j A_ij y_j^k + g_i^(k+1) - g_i^k
+
+3. Push-Pull update:
+   x_i^(k+1) = Σ_j B_ij x_j^k - α y_i^(k+1)
+
+4. Momentum update:
+   m_i^(k+1) = β m_i^k + (1-β) y_i^(k+1)
+```
 
 ## Implementation Pattern
 
 ```python
 import numpy as np
-from typing import List, Dict, Tuple, Callable
-from dataclasses import dataclass
-
-@dataclass
-class Agent:
-    id: int
-    neighbors_out: List[int]  # Out-neighbors (push targets)
-    neighbors_in: List[int]   # In-neighbors (pull sources)
-    weight_out: Dict[int, float]  # Weights for out-neighbors
-    weight_in: Dict[int, float]   # Weights for in-neighbors
+from typing import List, Callable, Tuple
+import networkx as nx
 
 class SMTPPOptimizer:
     """
-    Stochastic Momentum Tracking Push-Pull optimizer
-    for decentralized optimization over directed graphs
+    Stochastic Momentum Tracking Push-Pull Optimizer
     """
     
-    def __init__(self, agents: List[Agent], 
-                 learning_rate: float = 0.01,
-                 momentum: float = 0.9,
-                 beta: float = 0.9):
-        self.agents = agents
-        self.lr = learning_rate
-        self.momentum = momentum
-        self.beta = beta
+    def __init__(
+        self,
+        n_agents: int,
+        learning_rate: float = 0.01,
+        momentum: float = 0.9,
+        graph: nx.DiGraph = None
+    ):
+        self.n_agents = n_agents
+        self.alpha = learning_rate
+        self.beta = momentum
+        self.graph = graph or self._create_default_graph(n_agents)
+        self.A, self.B = self._build_mixing_matrices()
         
-        # State variables for each agent
-        self.x = {}  # Parameters
-        self.v = {}  # Momentum term
-        self.y = {}  # Auxiliary variable for push-pull
-        self.m = {}  # Momentum tracking variable
+    def _build_mixing_matrices(self) -> Tuple[np.ndarray, np.ndarray]:
+        """Build row-stochastic A and column-stochastic B matrices"""
+        n = self.n_agents
+        A = np.zeros((n, n))
+        B = np.zeros((n, n))
         
-    def initialize(self, init_fn: Callable[[int], np.ndarray]):
-        """
-        Initialize agent states
-        
-        Args:
-            init_fn: Function that takes agent_id and returns initial parameters
-        """
-        for agent in self.agents:
-            self.x[agent.id] = init_fn(agent.id)
-            dim = self.x[agent.id].shape
-            self.v[agent.id] = np.zeros(dim)
-            self.y[agent.id] = np.zeros(dim)
-            self.m[agent.id] = np.zeros(dim)
-    
-    def step(self, gradients: Dict[int, np.ndarray]):
-        """
-        Perform one SMTPP iteration
-        
-        Args:
-            gradients: Dict mapping agent_id to stochastic gradient
-        """
-        # Step 1: Update momentum tracking variable
-        for agent in self.agents:
-            grad = gradients[agent.id]
-            self.m[agent.id] = self.beta * self.m[agent.id] + grad
-        
-        # Step 2: Push step - send information to out-neighbors
-        push_messages = {}
-        for agent in self.agents:
-            push_messages[agent.id] = {
-                'x': self.x[agent.id],
-                'm': self.m[agent.id],
-                'y': self.y[agent.id]
-            }
-        
-        # Step 3: Pull step - aggregate from in-neighbors
-        x_new = {}
-        y_new = {}
-        
-        for agent in self.agents:
-            # Aggregate x from in-neighbors (pull)
-            x_agg = np.zeros_like(self.x[agent.id])
-            for neighbor in agent.neighbors_in:
-                weight = agent.weight_in.get(neighbor, 1.0 / len(agent.neighbors_in))
-                x_agg += weight * push_messages[neighbor]['x']
+        for i in range(n):
+            out_neighbors = list(self.graph.successors(i))
+            if len(out_neighbors) == 0:
+                out_neighbors = [i]
             
-            # Update momentum
-            self.v[agent.id] = self.momentum * self.v[agent.id] + self.m[agent.id]
+            for j in out_neighbors:
+                A[i, j] = 1.0 / len(out_neighbors)
             
-            # Update parameters
-            x_new[agent.id] = x_agg - self.lr * self.v[agent.id]
+            in_neighbors = list(self.graph.predecessors(i))
+            if len(in_neighbors) == 0:
+                in_neighbors = [i]
             
-            # Update auxiliary variable y (push-pull)
-            y_agg = np.zeros_like(self.y[agent.id])
-            for neighbor in agent.neighbors_in:
-                weight = agent.weight_in.get(neighbor, 1.0 / len(agent.neighbors_in))
-                y_agg += weight * push_messages[neighbor]['y']
+            for j in in_neighbors:
+                B[j, i] = 1.0 / len(in_neighbors)
+        
+        return A, B
+    
+    def step(self, local_gradients: List[np.ndarray]) -> List[np.ndarray]:
+        """Execute one SMTPP iteration"""
+        new_agents = []
+        
+        for i in range(self.n_agents):
+            agent = self.agents[i]
+            g_new = local_gradients[i]
             
-            y_new[agent.id] = y_agg + self.x[agent.id] - x_new[agent.id]
+            # Momentum tracking
+            y_new = sum(self.A[i, j] * self.agents[j].y for j in range(self.n_agents))
+            y_new += g_new - agent.grad_old
+            
+            # Push-Pull update
+            x_new = sum(self.B[i, j] * self.agents[j].x for j in range(self.n_agents))
+            x_new -= self.alpha * y_new
+            
+            # Momentum update
+            m_new = self.beta * agent.m + (1 - self.beta) * y_new
+            
+            new_agents.append(AgentState(x=x_new, y=y_new, m=m_new, grad_old=g_new))
         
-        # Update state
-        self.x = x_new
-        self.y = y_new
-    
-    def get_average_params(self) -> np.ndarray:
-        """Compute average parameters across all agents"""
-        params = [self.x[agent.id] for agent in self.agents]
-        return np.mean(params, axis=0)
-    
-    def compute_consensus_error(self) -> float:
-        """
-        Compute consensus error (variance of parameters across agents)
-        Lower is better - indicates agents agree on solution
-        """
-        avg = self.get_average_params()
-        errors = [np.linalg.norm(self.x[agent.id] - avg) for agent in self.agents]
-        return np.mean(errors)
-
-def create_ring_graph(n_agents: int) -> List[Agent]:
-    """
-    Create a directed ring graph for testing
-    Each agent connects to next 2 agents
-    """
-    agents = []
-    for i in range(n_agents):
-        neighbors_out = [(i + 1) % n_agents, (i + 2) % n_agents]
-        neighbors_in = [(i - 1) % n_agents, (i - 2) % n_agents]
-        
-        weight_out = {j: 0.5 for j in neighbors_out}
-        weight_in = {j: 0.5 for j in neighbors_in}
-        
-        agents.append(Agent(
-            id=i,
-            neighbors_out=neighbors_out,
-            neighbors_in=neighbors_in,
-            weight_out=weight_out,
-            weight_in=weight_in
-        ))
-    
-    return agents
-
-# Usage Example
-n_agents = 10
-agents = create_ring_graph(n_agents)
-optimizer = SMTPPOptimizer(agents, learning_rate=0.01, momentum=0.9)
-optimizer.initialize(lambda i: np.random.randn(5))
-
-# Training loop
-for iteration in range(100):
-    # Compute stochastic gradients (example)
-    gradients = {i: np.random.randn(5) for i in range(n_agents)}
-    optimizer.step(gradients)
-    
-    if iteration % 10 == 0:
-        consensus = optimizer.compute_consensus_error()
-        print(f"Iteration {iteration}: Consensus error = {consensus:.4f}")
+        self.agents = new_agents
+        return [agent.x for agent in self.agents]
 ```
 
 ## Key Insights
 
-1. **Momentum Tracking**: Tracking momentum instead of raw gradients reduces variance
-2. **Push-Pull Mechanism**: Handles asymmetric communication in directed graphs
-3. **Convergence**: Provable convergence under standard assumptions
-4. **Robustness**: Mitigates oscillations caused by high gradient variance
+1. **Asymmetric Communication**: Push-Pull mechanism handles directed graphs
 
-## Best Practices
+2. **Variance Reduction**: Momentum tracking reduces stochastic gradient variance
 
-- Use momentum parameter β ∈ [0.9, 0.99] for tracking
-- Ensure graph is strongly connected for convergence
-- Tune learning rate based on problem conditioning
-- Monitor consensus error as convergence diagnostic
+3. **Consensus**: Agents converge to consensus despite using only local information
+
+4. **Scalability**: Communication only with neighbors makes it scalable
+
+## Applications
+
+- Federated learning with heterogeneous clients
+- Sensor network optimization
+- Multi-robot coordination
+- Distributed training in data centers
 
 ## References
 
-- Fan, W., Liao, Y., Xu, Q., Guo, B., & Dian, S. (2025). Stochastic Momentum Tracking Push-Pull for Decentralized Optimization over Directed Graphs. arXiv:2604.08219.
-
-## Trigger Words
-
-- decentralized optimization
-- smtpp
-- directed graphs
-- momentum tracking
-- push-pull algorithm
-- distributed learning
+- Original Paper: Stochastic Momentum Tracking Push-Pull for Decentralized Optimization over Directed Graphs
+- arXiv: https://arxiv.org/abs/2604.08219v1
+- Authors: Wenqi Fan, Yiwei Liao, Qing Xu, Bin Guo, Songyi Dian
+- Published: 2026-04-09
