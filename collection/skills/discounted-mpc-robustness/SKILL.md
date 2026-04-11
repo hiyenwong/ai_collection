@@ -291,65 +291,20 @@ def verify_stability(x, V_f, κ, α_c, L, ε):
 - **Discounted optimal control**: RL connections
 - **Lyapunov stability**: Value function as Lyapunov function
 
-## Activation Keywords
-- MPC robustness analysis
-- plant-model mismatch effects
-- discounted infinite-horizon control
-- model uncertainty in optimal control
-- stability under model errors
-- data-driven surrogate models
-- robust MPC
-- discounted MPC
-- infinite-horizon control
-- model mismatch
+## References
 
-## Instructions for Agents
+1. **Paper**: Moldenhauer et al., "Discounted MPC and infinite-horizon optimal control under plant-model mismatch" (arXiv:2604.08521v1, April 2026)
+2. **Related**: [8] Data-driven MPC with kernel EDMD
+3. **Related**: [18] MPC stability via relaxed DP
+4. **Related**: [22] Discounted optimal control stability
 
-When analyzing MPC robustness or discounted optimal control:
+## Open Questions
 
-1. **Identify the problem type**:
-   - Robustness under mismatch → Stability and suboptimality bounds
-   - Data-driven surrogate → Mismatch estimation
-   - Discounted costs → RL applications
-
-2. **Evaluate stability conditions**:
-   - Check cost controllability (α_c)
-   - Verify Lipschitz continuity of surrogate
-   - Confirm horizon length or discount factor sufficient
-
-3. **Apply the framework**:
-   - Define plant vs surrogate model
-   - Compute proportional mismatch |f-g|_S
-   - Apply Lyapunov function V_f for stability analysis
-
-4. **Report findings**:
-   - Stability guarantees
-   - Suboptimality bounds
-   - Practical limitations
-
-## Examples
-
-### Example 1: Robustness Analysis
-```
-User: "分析 MPC 在 50 步 horizon 下的鲁棒性"
-
-Agent:
-1. 识别问题: MPC robustness under plant-model mismatch
-2. 检查 stability conditions (α_c, L, horizon)
-3. 应用 Lyapunov function V_f 进行验证
-4. 输出: 稳定性保证和 suboptimality bound
-```
-
-### Example 2: Data-Driven Control
-```
-User: "使用 Kernel EDMD 进行数据驱动控制"
-
-Agent:
-1. 识别问题: Surrogate model from system identification
-2. 计算 mismatch |f-g|_S
-3. 验证 cost controllability
-4. 输出: 控制策略和理论保证
-```
+1. **Non-quadratic costs**: Extension to general stage costs?
+2. **Stochastic systems**: Noise handling in framework?
+3. **State constraints**: Incorporate constraint satisfaction?
+4. **Non-proportional mismatch**: Other mismatch measures?
+5. **Adaptive horizon**: Horizon adjustment based on mismatch?
 
 ## Tools Used
 
