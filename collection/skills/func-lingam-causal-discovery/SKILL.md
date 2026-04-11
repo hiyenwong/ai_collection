@@ -1,0 +1,155 @@
+# Func-LiNGAM - 函数型线性非高斯无环因果发现模型
+
+## Overview
+
+扩展传统 LiNGAM 到函数空间，处理无限维数据（如 fMRI、EEG 时间序列）的因果发现方法。通过功能性主成分分析优化坐标，识别多变量函数间的因果关系。适用于脑有效连接分析。
+
+**来源论文：** arXiv:2401.09641 - Functional Linear Non-Gaussian Acyclic Model for Causal Discovery
+
+## 触发词
+
+因果发现、LiNGAM、Func-LiNGAM、脑有效连接、非高斯因果、functional causal discovery、brain effective connectivity、causal discovery fMRI、causal discovery EEG
+
+## 核心方法
+
+### 方法论扩展
+
+| 传统 LiNGAM | Func-LiNGAM |
+|------------|-------------|
+| 有限维变量 | 无限维函数 |
+| 离散数据 | 函数型数据 |
+| 单一时间点 | 时间序列/曲线 |
+
+### 关键创新
+
+1. **无限维扩展**：将变量概念扩展到向量和函数
+2. **理论保证**：在希尔伯特空间中证明因果关系的可识别性
+3. **稀疏处理**：通过功能性主成分分析 (FPCA) 优化坐标
+
+## 使用场景
+
+### 适用情况
+
+- fMRI 脑有效连接分析
+- EEG 因果网络发现
+- 时间序列因果推断
+- 多变量函数型数据因果分析
+
+### 数据要求
+
+- 非高斯分布数据
+- 时间序列或函数型数据
+- 多变量观测样本
+
+## 实施步骤
+
+1. **数据预处理**
+   - 将时间序列表示为函数型数据
+   - 检验非高斯性假设
+
+2. **功能性主成分分析**
+   - 提取主成分坐标
+   - 降维处理稀疏时间点
+
+3. **因果结构学习**
+   - 应用扩展 LiNGAM 算法
+   - 识别因果顺序和连接强度
+
+4. **结果验证**
+   - 检验因果图无环性
+   - 评估连接显著性
+
+## 技术细节
+
+### 可识别性条件
+
+- 非高斯随机向量/函数
+- 无环图结构
+- 希尔伯特空间中的正则性条件
+
+### 算法流程
+
+```
+输入：多变量时间序列数据
+1. 函数化表示 → 转换为函数型数据
+2. FPCA → 提取主成分坐标
+3. 扩展 LiNGAM → 学习因果结构
+输出：因果 DAG + 连接强度
+```
+
+## 与其他方法对比
+
+| 方法 | 数据类型 | 因果方向 | 理论保证 |
+|------|---------|---------|---------|
+| Func-LiNGAM | 函数型 | ✅ 可识别 | ✅ 希尔伯特空间 |
+| 传统 LiNGAM | 向量型 | ✅ 可识别 | ✅ 有限维 |
+| Granger 因果 | 时间序列 | ❌ 仅预测 | ⚠️ 弱 |
+| PC 算法 | 向量型 | ❌ 部分识别 | ⚠️ 条件依赖 |
+
+## 工具使用
+
+- `exec`: 运行 Python/R 实现
+- `read`: 查看配置文件
+- `web_fetch`: 获取论文补充材料
+
+## 注意事项
+
+- 需要非高斯性假设
+- 函数化表示影响结果质量
+- 计算复杂度随维度增加
+
+## 扩展阅读
+
+- 相关技能：`hermes-brain-connectivity`（脑连接分析）
+- 相关技能：`gp-cake-brain-connectivity`（因果核方法）
+- 论文链接：https://arxiv.org/abs/2401.09641
+## Description
+
+Func-LiNGAM - 函数型线性非高斯无环因果发现模型
+
+## Activation Keywords
+
+- func-lingam-causal-discovery
+- func-lingam-causal-discovery 技能
+- func-lingam-causal-discovery skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 无限维扩展
+
+### Step 2: 理论保证
+
+### Step 3: 稀疏处理
+
+### Step 4: 数据预处理
+
+### Step 5: 功能性主成分分析
+
+## Examples
+
+### Example 1: Basic Application
+
+**User:** I need to apply Func-LiNGAM - 函数型线性非高斯无环因果发现模型 to my analysis.
+
+**Agent:** I'll help you apply func-lingam-causal-discovery. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for func-lingam-causal-discovery?
+
+**Agent:** Let me search for the latest research and best practices...

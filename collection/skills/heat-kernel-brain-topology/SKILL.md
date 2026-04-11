@@ -1,0 +1,154 @@
+# Heat Kernel Brain Network Topology
+
+## Overview
+
+使用热核（Heat Kernel）捕获复杂网络中热扩散过程的动态分析方法。应用于结构脑网络，定义量化能量流变化的新特征，用于脑网络拓扑分类和疾病研究。
+
+**来源论文：** arXiv:1603.06790 - Characterising brain network topologies: a dynamic analysis approach using heat kernels
+
+## 触发词
+
+热核脑网络、heat kernel brain、脑网络热扩散、能量流特征、brain network topology、heat diffusion network、动态网络分析
+
+## 核心方法
+
+### 热核建模
+
+- 将脑连接建模为热扩散过程
+- 捕获信息传输的动态特性
+- 量化网络拓扑变化
+
+### 关键特征
+
+1. **能量流变化**：热核定义的扩散特征
+2. **拓扑敏感性**：对网络结构变化敏感
+3. **判别能力**：区分不同群体网络
+
+### 应用
+
+- 合成网络分析（不同密度、随机化）
+- 临床早产儿数据
+- 疾病对脑结构的影响
+
+## 使用场景
+
+### 适用情况
+
+- 结构脑网络分类
+- 疾病对脑架构影响研究
+- 网络拓扑动态分析
+- 信息传输建模
+
+### 数据要求
+
+- 结构脑网络（连接矩阵）
+- 群体标签（疾病/健康）
+
+## 实施步骤
+
+1. **网络构建**
+   - 从 DTI 等构建结构连接
+   - 构建加权/无权图
+
+2. **热核计算**
+   - 选择扩散时间尺度
+   - 计算热核矩阵
+
+3. **特征提取**
+   - 提取能量流特征
+   - 计算拓扑指标
+
+4. **分类分析**
+   - 群体间差异检验
+   - 机器学习分类
+
+## 技术细节
+
+### 热核定义
+
+```
+H_t = exp(-tL)
+```
+其中 L 是图的拉普拉斯矩阵，t 是扩散时间。
+
+### 特征类型
+
+- 节点级能量分布
+- 全局扩散特征
+- 时间演化模式
+
+## 与其他方法对比
+
+| 方法 | 动态信息 | 扩散建模 | 拓扑敏感 |
+|------|---------|---------|---------|
+| 热核 | ✅ | ✅ | ✅ |
+| 静态连接 | ❌ | ❌ | ⚠️ |
+| 图理论指标 | ❌ | ❌ | ✅ |
+
+## 工具使用
+
+- `exec`: 运行 Python 实现
+- `read`: 查看网络配置
+- `web_fetch`: 获取论文代码
+
+## 注意事项
+
+- 扩散时间 t 需要选择
+- 网络大小影响计算复杂度
+- 连接权重归一化重要
+
+## 扩展阅读
+
+- 相关技能：`discrete-heat-kernels-simplicial`（单纯形热核）
+- 相关技能：`graph-laplacian-denoising`（图拉普拉斯去噪）
+- 论文链接：https://arxiv.org/abs/1603.06790
+## Description
+
+Heat Kernel Brain Network Topology
+
+## Activation Keywords
+
+- heat-kernel-brain-topology
+- heat-kernel-brain-topology 技能
+- heat-kernel-brain-topology skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: 能量流变化
+
+### Step 2: 拓扑敏感性
+
+### Step 3: 判别能力
+
+### Step 4: 网络构建
+
+### Step 5: 热核计算
+
+## Examples
+
+### Example 1: Basic Application
+
+**User:** I need to apply Heat Kernel Brain Network Topology to my analysis.
+
+**Agent:** I'll help you apply heat-kernel-brain-topology. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for heat-kernel-brain-topology?
+
+**Agent:** Let me search for the latest research and best practices...

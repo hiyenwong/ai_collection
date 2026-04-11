@@ -1,0 +1,148 @@
+# EEG Foundation Model - Large Cognition Model (LCM)
+
+## Overview
+
+基于 Transformer 的 EEG 预训练基础模型方法论。通过大规模自监督学习捕获通用 EEG 表示，支持跨数据集和跨任务的泛化。适用于认知状态解码、疾病分类和神经反馈系统。
+
+**来源论文：** arXiv:2502.17464 - Large Cognition Model: Towards Pretrained EEG Foundation Model
+
+## 触发词
+
+EEG 基础模型、预训练 EEG、EEG foundation model、LCM、Large Cognition Model、EEG 预训练、EEG 迁移学习、EEG 泛化
+
+## 核心方法
+
+### 架构设计
+
+1. **Transformer 主干**：处理原始 EEG 信号
+2. **时间-光谱注意力**：集成时间和频谱注意力机制
+3. **自监督预训练**：大规模无标注数据学习通用表示
+
+### 关键特性
+
+- **跨数据集泛化**：无需预训练即可超越部分现有 EEG 通用模型
+- **跨任务泛化**：支持认知状态解码、疾病分类、神经反馈
+- **高效微调**：预训练表示支持快速适应下游任务
+
+## 使用场景
+
+### 适用情况
+
+- EEG 认知状态解码
+- 神经疾病分类（癫痫、ADHD 等）
+- 脑机接口信号处理
+- 神经反馈系统开发
+- 跨受试者 EEG 分析
+
+### 数据要求
+
+- 原始 EEG 信号或预处理特征
+- 支持多种采集设备和采样率
+- 标注数据稀缺时特别有效
+
+## 实施步骤
+
+1. **数据准备**
+   - 收集多源 EEG 数据集
+   - 标准化预处理流程
+   - 构建时间-光谱表示
+
+2. **预训练阶段**
+   - 使用自监督学习目标
+   - 在大规模 EEG 数据上训练
+   - 学习通用表示
+
+3. **微调阶段**
+   - 添加任务特定头
+   - 在下游任务数据上微调
+   - 评估泛化性能
+
+## 技术细节
+
+### 注意力机制
+
+- **时间注意力**：捕获 EEG 时间动态
+- **光谱注意力**：捕获频率特征
+- **融合策略**：并行或串行集成
+
+### 预训练策略
+
+- 掩码信号重建
+- 对比学习
+- 跨模态对齐（如有辅助数据）
+
+## 与其他方法对比
+
+| 方法 | 跨数据集泛化 | 跨任务泛化 | 标注需求 |
+|------|-------------|-----------|---------|
+| LCM | ✅ 强 | ✅ 强 | 低 |
+| 传统 CNN | ❌ 弱 | ❌ 弱 | 高 |
+| EEGNet | ⚠️ 中等 | ❌ 弱 | 中等 |
+
+## 工具使用
+
+- `web_fetch`: 获取论文详细内容
+- `exec`: 运行 Python/PyTorch 实现代码
+- `read`: 查看预处理配置文件
+
+## 注意事项
+
+- EEG 信号变异性大，需注意数据标准化
+- 预训练数据质量影响泛化能力
+- 下游任务微调可能需要少量标注数据
+
+## 扩展阅读
+
+- 相关技能：`spikingjelly-framework`（SNN 实现）
+- 相关技能：`eeg-brain-connectivity-bci`（BCI 应用）
+- 论文链接：https://arxiv.org/abs/2502.17464
+## Description
+
+EEG Foundation Model - Large Cognition Model (LCM)
+
+## Activation Keywords
+
+- eeg-foundation-model
+- eeg-foundation-model 技能
+- eeg-foundation-model skill
+
+## Tools Used
+
+- `read` - Read documentation and references
+- `web_search` - Search for related information
+- `web_fetch` - Fetch paper or documentation
+
+## Instructions for Agents
+Follow these steps when applying this skill:
+
+### Step 1: Transformer 主干
+
+### Step 2: 时间-光谱注意力
+
+### Step 3: 自监督预训练
+
+### Step 4: 数据准备
+
+### Step 5: 预训练阶段
+
+## Examples
+
+### Example 1: Basic Application
+
+**User:** I need to apply EEG Foundation Model - Large Cognition Model (LCM) to my analysis.
+
+**Agent:** I'll help you apply eeg-foundation-model. First, let me understand your specific use case...
+
+**Context:** Apply the methodology
+
+### Example 2: Advanced Scenario
+
+**User:** Complex analysis scenario
+
+**Agent:** Based on the methodology, I'll guide you through the advanced application...
+
+### Example 2: Advanced Application
+
+**User:** What are the key considerations for eeg-foundation-model?
+
+**Agent:** Let me search for the latest research and best practices...
