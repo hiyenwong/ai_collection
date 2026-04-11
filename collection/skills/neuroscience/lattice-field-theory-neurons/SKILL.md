@@ -1,105 +1,81 @@
 ---
 name: lattice-field-theory-neurons
-description: "Simplified Lattice Field Theory (LFT) framework for modeling experimental recordings from Brain-Computer Interfaces and neural population dynamics."
+description: Simplified Lattice Field Theory (LFT) framework for interpreting Brain-Computer Interface recordings. Modifies Maximum Entropy models to account for time evolution, interpreting neural dynamics through Free Energy principle (FEP). Activation: lattice field theory, LFT neural networks, maximum entropy neural model, free energy principle.
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: [neuroscience, brain-network, neural-dynamics, computational-neuroscience]
-    source_paper: "Lattice Field Theory for a network of real neurons (arXiv:2604.05251v1)"
+    tags: [neuroscience, lattice-field-theory, brain-computer-interface, maximum-entropy, free-energy-principle]
+    source_paper: "Lattice Field Theory for a network of real neurons (arXiv:2604.05251)"
     citations: 0
-    published: 2026-04-06
-    category: neuroscience
+    related_skills: [brain-connectivity-analysis, neural-dynamics-analysis]
 ---
 
-# Lattice Field Theory Framework for Neural Networks
+# Lattice Field Theory for Neural Networks
 
 ## Overview
+This skill implements a simplified Lattice Field Theory (LFT) framework that interprets experimental recordings from Brain-Computer Interfaces (BCIs) in a physically grounded way. The method modifies Maximum Entropy models for neural networks to incorporate time evolution, interpreting neural dynamics through the Free Energy Principle (FEP).
 
-Simplified Lattice Field Theory (LFT) framework for modeling experimental recordings from Brain-Computer Interfaces and neural population dynamics.
+## Core Concepts
 
-This skill is based on research from arXiv:2604.05251v1 published on 2026-04-06.
+### 1. Lattice Field Theory (LFT) Framework
+- **Purpose**: Interpret spike raster data from chronic multi-site BCIs
+- **Foundation**: Maximum Entropy models extended with temporal dynamics
+- **Interpretation**: Alternative formulation of Free Energy Principle
 
-## Source Paper
+### 2. Maximum Entropy Model Extension
+- Traditional models capture static correlations
+- LFT adds time evolution as a fundamental constraint
+- Enables dynamic interpretation of neural population activity
 
-**Title:** Lattice Field Theory for a network of real neurons  
-**Authors:** Simone Franchini, Giampiero Bardella  
-**arXiv:** [2604.05251v1](https://arxiv.org/abs/2604.05251v1)  
-**PDF:** [Download](https://arxiv.org/pdf/2604.05251v1)  
-**Published:** 2026-04-06  
-**Citations:** 0  
-**Category:** neuroscience
-
-## Abstract
-
-In a recent paper [Bardella et al., Entropy 26 (6), 495 (2024)] we introduced a simplified Lattice Field Theory (LFT) framework that allows experimental recordings from major Brain-Computer Interfaces (BCIs) to be interpreted in a simple and physically grounded way. From a neuroscience point of view, our method modifies the Maximum Entropy model for neural networks so that also the time evolution of the system is taken into account and it can be interpreted as another version of the Free Energy principle (FEP). This framework is naturally tailored to interpret recordings from chronic multi-site BCIs, especially spike rasters from measurements of single neuron activity.
-
-## Key Contributions
-
-1. **Novel Methodology:** Advanced techniques for neuroscience analysis
-2. **Practical Applications:** Real-world implementation strategies
-3. **Theoretical Insights:** Computational neuroscience foundations
-
-## Activation Keywords
-
-- - lattice field theory
-- lft
-- neural population
-- brain computer interface
-- bci
-- field theory
-- neural dynamics
-- computational neuroscience
+### 3. Free Energy Principle Connection
+- Neural activity minimizes variational free energy
+- Provides normative framework for neural computation
+- Connects to predictive coding and Bayesian brain hypotheses
 
 ## Implementation Pattern
 
 ```python
-# Example implementation based on paper methodology
-# Note: This is a conceptual implementation
-# Refer to the original paper for complete details
+import numpy as np
+from scipy.special import softmax
 
-def analyze_brain_data(data, method="lattice_field_theory_neurons"):
+class LatticeFieldTheoryNN:
     """
-    Apply Lattice Field Theory Framework for Neural Networks methodology
-    
-    Args:
-        data: Neural recording data (EEG, fMRI, calcium imaging, etc.)
-        method: Analysis method to apply
-    
-    Returns:
-        Analysis results
+    Lattice Field Theory framework for neural network analysis
+    Interprets spike raster data using maximum entropy with temporal dynamics
     """
-    # Implementation based on paper
-    pass
+    
+    def __init__(self, n_neurons, temperature=1.0):
+        self.n_neurons = n_neurons
+        self.T = temperature
+        self.J = np.zeros((n_neurons, n_neurons))
+        self.h = np.zeros(n_neurons)
+        
+    def free_energy(self, state):
+        E = -0.5 * np.dot(state, np.dot(self.J, state)) - np.dot(self.h, state)
+        p = (state + 1) / 2
+        S = -np.sum(p * np.log(p + 1e-10) + (1-p) * np.log(1-p + 1e-10))
+        return E - self.T * S
+    
+    def learn_from_spikes(self, spike_raster, learning_rate=0.01):
+        empirical_corr = np.corrcoef(spike_raster.T)
+        self.J += learning_rate * (empirical_corr - self.J)
+        self.h += learning_rate * (np.mean(spike_raster, axis=0) - self.h)
+    
+    def predict_next_state(self, current_state, dt=0.1):
+        force = np.dot(self.J, current_state) + self.h
+        noise = np.random.normal(0, np.sqrt(2 * self.T * dt), self.n_neurons)
+        next_state = current_state + dt * force + noise
+        return np.where(next_state > 0, 1, 0)
 ```
 
 ## Applications
-
-- Brain-computer interfaces (BCI)
-- Neural signal processing
-- Cognitive neuroscience research
-- Computational modeling
-- Medical diagnosis support
-
-## Limitations
-
-- Based on specific experimental conditions from the paper
-- May require adaptation for different data types
-- Computational requirements depend on implementation
+1. BCI Data Interpretation
+2. Neural Dynamics Modeling
+3. Free Energy Principle Validation
 
 ## References
-
-- Lattice Field Theory for a network of real neurons. Simone Franchini, Giampiero Bardella. arXiv:2604.05251v1, 2026-04-06.
-
-## Related Skills
-
-- Other neuroscience skills in the collection
-- Brain network analysis tools
-- Neural dynamics modeling
-
-## See Also
-
-- arXiv:2604.05251v1
-- Computational Neuroscience resources
-- Brain connectivity analysis methods
+- Bardella et al., Entropy 26 (6), 495 (2024)
+- arXiv:2604.05251
+- Friston, K. (2010). The free-energy principle

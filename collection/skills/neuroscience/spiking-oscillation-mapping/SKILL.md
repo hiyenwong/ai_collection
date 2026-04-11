@@ -1,51 +1,70 @@
 ---
 name: spiking-oscillation-mapping
-description: "Analyze and map oscillatory states in balanced spiking networks with multiple time scales. Activation: neuroscience, spiking-networks, oscillations."
+description: Analyze and map oscillatory states in balanced spiking neural networks. Characterizes transitions between silent, asynchronous-irregular, and oscillatory states based on synaptic and temporal parameters. Activation: spiking network oscillation, regime mapping, balanced network.
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: ['neuroscience', 'spiking-networks', 'oscillations', 'dynamics', 'regime-mapping']
-    source_paper: "Regime Mapping of Oscillatory States in Balanced Spiking Networks with Multiple Time Scales (arXiv:2604.04770v1)"
+    tags: [neuroscience, spiking-neural-networks, oscillation, balanced-network, regime-mapping]
+    source_paper: "Regime Mapping of Oscillatory States in Balanced Spiking Networks (arXiv:2604.04770)"
     citations: 0
-    published: "2026-04-06"
-    category: neuroscience
 ---
 
-# Regime Mapping of Oscillatory States in Balanced Spiking Networks with Multiple Time Scales
+# Spiking Network Oscillation Regime Mapping
 
 ## Overview
-Balanced spiking networks can transition between silent, asynchronous-irregular, and oscillatory states depending on interacting synaptic and temporal time scales, while their joint parameter structure remains incompletely characterized. In this work, we systematically map how postsynaptic decay (τs), conduction delay (d), and plasticity rate (λp) jointly shape oscillatory regimes in recurrent leaky integrate-and-fire networks. By combining Brian2 simulations across the (τs, d, λp) space with a coarse Hopf-reference boundary, we construct regime maps that directly visualize SIL-AI-OSC transitions and corresponding spectral prominence landscapes. The mapped results show that increasing λp expands oscillatory regions toward shorter τs and moderate-to-long delays, while prominence maps identi
+Systematic mapping of oscillatory regimes in balanced spiking neural networks. Characterizes how postsynaptic decay, conduction delay, and plasticity rate jointly shape transitions between silent, asynchronous-irregular (AI), and oscillatory (OSC) states.
 
-## Source Paper
-- **Title**: Regime Mapping of Oscillatory States in Balanced Spiking Networks with Multiple Time Scales
-- **Authors**: Tsung-Han Kuo, Tzu-Chia Tung
-- **arXiv**: [2604.04770v1](https://arxiv.org/abs/2604.04770v1)
-- **Published**: 2026-04-06
-- **Category**: neurons and cognition
+## Core Concepts
+- Balanced Spiking Networks
+- Oscillatory States (SILENT, AI, SI, OSC)
+- Parameter Space Exploration
 
-## Key Concepts
-- Research methodology and approach
-- Theoretical framework
-- Practical applications
-- Implementation details
+## Implementation Pattern
+
+```python
+import numpy as np
+
+class SpikingNetworkRegimeMapper:
+    def __init__(self, N_exc=4000, N_inh=1000):
+        self.N_exc = N_exc
+        self.N_inh = N_inh
+        
+    def analyze_dynamics(self, spike_times, duration=1000):
+        if len(spike_times) < 10:
+            return {'regime': 'SILENT', 'firing_rate': 0}
+        
+        firing_rate = len(spike_times) / (self.N * duration / 1000)
+        
+        # Population activity binning
+        bin_size = 5  # ms
+        bins = np.arange(0, duration + bin_size, bin_size)
+        pop_activity, _ = np.histogram(spike_times, bins=bins)
+        
+        # Coefficient of variation
+        isi = np.diff(spike_times)
+        cv_isi = np.std(isi) / np.mean(isi) if len(isi) > 1 else 0
+        
+        # Fano factor
+        fano = np.var(pop_activity) / np.mean(pop_activity) if np.mean(pop_activity) > 0 else 0
+        
+        # Classify regime
+        if firing_rate < 0.1:
+            regime = 'SILENT'
+        elif fano < 1.5 and cv_isi > 0.8:
+            regime = 'AI'
+        else:
+            regime = 'OSC'
+            
+        return {'regime': regime, 'firing_rate': firing_rate, 'cv': cv_isi}
+```
 
 ## Applications
-- Neuroscience research
-- Brain-computer interfaces
-- Neural signal processing
-- Computational modeling
+- Cortical Dynamics Modeling
+- Neuromorphic Computing
+- Clinical Neuroscience
 
 ## References
-- [Regime Mapping of Oscillatory States in Balanced Spiking Networks with Multiple Time Scales](https://arxiv.org/abs/2604.04770v1)
-
-## Related Topics
-- Neuroscience
-- Brain networks
-- Neural dynamics
-- Computational neuroscience
-
----
-
-_Last updated: 2026-04-06_
+- arXiv:2604.04770
+- Brunel (2000)

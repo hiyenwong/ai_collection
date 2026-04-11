@@ -1,104 +1,71 @@
 ---
 name: eeg-cnn-autoencoder
-description: "Computer vision approaches combining Convolutional Neural Networks and Adversarial Autoencoders for EEG image classification in neuroscience applications."
+description: Computer vision approach for EEG classification using Convolutional Neural Networks and Adversarial Autoencoders. Converts EEG signals to 2D topographic images for motor cortex activity classification. Activation: eeg classification, cnn autoencoder, brain activity decoding, eeg topogram.
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: [neuroscience, brain-network, neural-dynamics, computational-neuroscience]
-    source_paper: "Convolutional Neural Network and Adversarial Autoencoder in EEG images classification (arXiv:2604.04313v1)"
+    tags: [neuroscience, eeg, cnn, autoencoder, computer-vision, motor-cortex]
+    source_paper: "Convolutional Neural Network and Adversarial Autoencoder in EEG images classification (arXiv:2604.04313)"
     citations: 0
-    published: 2026-04-05
-    category: neuroscience
 ---
 
-# CNN and Adversarial Autoencoder for EEG Classification
+# EEG Classification with CNN and Adversarial Autoencoder
 
 ## Overview
+This skill implements a computer vision approach for EEG signal classification. Raw EEG signals are converted to 2D topographic images (EEG topograms), then classified using CNN and Adversarial Autoencoders for supervised and semi-supervised learning.
 
-Computer vision approaches combining Convolutional Neural Networks and Adversarial Autoencoders for EEG image classification in neuroscience applications.
-
-This skill is based on research from arXiv:2604.04313v1 published on 2026-04-05.
-
-## Source Paper
-
-**Title:** Convolutional Neural Network and Adversarial Autoencoder in EEG images classification  
-**Authors:** Albert Nasybullin, Semen Kurkin  
-**arXiv:** [2604.04313v1](https://arxiv.org/abs/2604.04313v1)  
-**PDF:** [Download](https://arxiv.org/pdf/2604.04313v1)  
-**Published:** 2026-04-05  
-**Citations:** 0  
-**Category:** neuroscience
-
-## Abstract
-
-In this paper, we consider applying computer vision algorithms for the classification problem one faces in neuroscience during EEG data analysis. Our approach is to apply a combination of computer vision and neural network methods to solve human brain activity classification problems during hand movement. We pre-processed raw EEG signals and generated 2D EEG topograms. Later, we developed supervised and semi-supervised neural networks to classify different motor cortex activities.
-
-## Key Contributions
-
-1. **Novel Methodology:** Advanced techniques for neuroscience analysis
-2. **Practical Applications:** Real-world implementation strategies
-3. **Theoretical Insights:** Computational neuroscience foundations
-
-## Activation Keywords
-
-- - eeg classification
-- cnn
-- adversarial autoencoder
-- computer vision
-- eeg image
-- neural classification
-- brain signal
+## Core Concepts
+- EEG Topogram Generation
+- Convolutional Neural Networks for spatial feature extraction
+- Adversarial Autoencoder for semi-supervised learning
 
 ## Implementation Pattern
 
 ```python
-# Example implementation based on paper methodology
-# Note: This is a conceptual implementation
-# Refer to the original paper for complete details
+import torch
+import torch.nn as nn
+import numpy as np
+from scipy.interpolate import griddata
 
-def analyze_brain_data(data, method="eeg_cnn_autoencoder"):
-    """
-    Apply CNN and Adversarial Autoencoder for EEG Classification methodology
-    
-    Args:
-        data: Neural recording data (EEG, fMRI, calcium imaging, etc.)
-        method: Analysis method to apply
-    
-    Returns:
-        Analysis results
-    """
-    # Implementation based on paper
-    pass
+class EEGTopogramConverter:
+    def __init__(self, electrode_positions, grid_size=(32, 32)):
+        self.positions = electrode_positions
+        self.grid_size = grid_size
+        
+    def to_topogram(self, eeg_signal):
+        points = np.array([self.positions[ch] for ch in eeg_signal.keys()])
+        values = np.array(list(eeg_signal.values()))
+        grid_x, grid_y = np.mgrid[min(points[:,0]):max(points[:,0]):self.grid_size[0]*1j,
+                                  min(points[:,1]):max(points[:,1]):self.grid_size[1]*1j]
+        topogram = griddata(points, values, (grid_x, grid_y), method='cubic')
+        return np.nan_to_num(topogram, nan=np.mean(values))
+
+class EEG_CNN(nn.Module):
+    def __init__(self, num_classes=4):
+        super().__init__()
+        self.conv1 = nn.Conv2d(1, 32, 3, padding=1)
+        self.conv2 = nn.Conv2d(32, 64, 3, padding=1)
+        self.conv3 = nn.Conv2d(64, 128, 3, padding=1)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.fc1 = nn.Linear(128 * 4 * 4, 256)
+        self.fc2 = nn.Linear(256, num_classes)
+        
+    def forward(self, x):
+        x = self.pool(torch.relu(self.conv1(x)))
+        x = self.pool(torch.relu(self.conv2(x)))
+        x = self.pool(torch.relu(self.conv3(x)))
+        x = x.view(x.size(0), -1)
+        x = torch.relu(self.fc1(x))
+        return self.fc2(x)
 ```
 
 ## Applications
-
-- Brain-computer interfaces (BCI)
-- Neural signal processing
-- Cognitive neuroscience research
-- Computational modeling
-- Medical diagnosis support
-
-## Limitations
-
-- Based on specific experimental conditions from the paper
-- May require adaptation for different data types
-- Computational requirements depend on implementation
+- Motor Imagery Classification
+- Brain-Computer Interfaces
+- Neurofeedback
 
 ## References
-
-- Convolutional Neural Network and Adversarial Autoencoder in EEG images classification. Albert Nasybullin, Semen Kurkin. arXiv:2604.04313v1, 2026-04-05.
-
-## Related Skills
-
-- Other neuroscience skills in the collection
-- Brain network analysis tools
-- Neural dynamics modeling
-
-## See Also
-
-- arXiv:2604.04313v1
-- Computational Neuroscience resources
-- Brain connectivity analysis methods
+- arXiv:2604.04313
+- Schirrmeister et al. (2017)

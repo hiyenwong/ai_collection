@@ -1,51 +1,61 @@
 ---
 name: in-context-brain-decoding
-description: "Meta-learning approach for training-free cross-subject brain decoding using in-context learning. Activation: neuroscience, brain-decoding, meta-learning."
+description: Meta-learning approach for training-free cross-subject brain decoding from fMRI. Uses in-context learning to adapt to new subjects without fine-tuning, addressing neural representation variability. Activation: brain decoding, meta-learning, in-context learning, cross-subject fmri.
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: ['neuroscience', 'brain-decoding', 'meta-learning', 'bci', 'cross-subject']
-    source_paper: "Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding (arXiv:2604.08537v1)"
+    tags: [neuroscience, meta-learning, brain-decoding, fmri, cross-subject]
+    source_paper: "Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding (arXiv:2604.08537)"
     citations: 0
-    published: "2026-04-09"
-    category: neuroscience
 ---
 
-# Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
+# In-Context Meta-Learning for Brain Decoding
 
 ## Overview
-Visual decoding from brain signals is a key challenge at the intersection of computer vision and neuroscience, requiring methods that bridge neural representations and computational models of vision. A field-wide goal is to achieve generalizable, cross-subject models. A major obstacle towards this goal is the substantial variability in neural representations across individuals, which has so far required training bespoke models or fine-tuning separately for each subject. To address this challenge, we introduce a meta-optimized approach for semantic visual decoding from fMRI that generalizes to novel subjects without any fine-tuning. By simply conditioning on a small set of image-brain activation examples from the new individual, our model rapidly infers their unique neural encoding patterns
+Meta-optimized approach for semantic visual decoding from fMRI that generalizes to novel subjects without fine-tuning. By conditioning on a small set of image-brain activation examples, the model rapidly infers unique neural encoding patterns.
 
-## Source Paper
-- **Title**: Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
-- **Authors**: Mu Nan, Muquan Yu, Weijian Mai, Jacob S. Prince, Hossein Adeli, Rui Zhang, Jiahang Cao, Benjamin Becker, John A. Pyles, Margaret M. Henderson, Chunfeng Song, Nikolaus Kriegeskorte, Michael J. Tarr, Xiaoqing Hu, Andrew F. Luo
-- **arXiv**: [2604.08537v1](https://arxiv.org/abs/2604.08537v1)
-- **Published**: 2026-04-09
-- **Category**: neurons and cognition
+## Core Concepts
+- Cross-Subject Variability Challenge
+- Meta-Learning (Learning to Learn)
+- In-Context Learning with cross-attention
 
-## Key Concepts
-- Research methodology and approach
-- Theoretical framework
-- Practical applications
-- Implementation details
+## Implementation Pattern
+
+```python
+import torch
+import torch.nn as nn
+
+class InContextBrainDecoder(nn.Module):
+    def __init__(self, brain_dim=10000, image_dim=512, hidden_dim=1024, n_context=8):
+        super().__init__()
+        self.brain_encoder = nn.Sequential(
+            nn.Linear(brain_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim), nn.ReLU()
+        )
+        self.image_encoder = nn.Sequential(
+            nn.Linear(image_dim, hidden_dim), nn.ReLU()
+        )
+        self.cross_attention = nn.MultiheadAttention(hidden_dim, 8, batch_first=True)
+        self.decoder = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, image_dim)
+        )
+    
+    def forward(self, query_brain, context_brains, context_images):
+        query = self.brain_encoder(query_brain).unsqueeze(1)
+        context_b = self.brain_encoder(context_brains)
+        context_i = self.image_encoder(context_images)
+        attended, _ = self.cross_attention(query, context_b, context_i)
+        return self.decoder(attended.squeeze(1))
+```
 
 ## Applications
-- Neuroscience research
-- Brain-computer interfaces
-- Neural signal processing
-- Computational modeling
+- Visual Decoding from fMRI
+- Cross-Subject Studies
+- Rapid BCI Calibration
 
 ## References
-- [Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](https://arxiv.org/abs/2604.08537v1)
-
-## Related Topics
-- Neuroscience
-- Brain networks
-- Neural dynamics
-- Computational neuroscience
-
----
-
-_Last updated: 2026-04-09_
+- arXiv:2604.08537
+- Tsimpoukelli et al. (2021)
