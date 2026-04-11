@@ -80,6 +80,12 @@
 | [Neuromodulation CPG Control](collection/skills/neuromodulation-cpg-control/) | 神经调制CPG控制，节律模式切换 | CPG, neuromodulation, rhythmic patterns |
 | [Cartesian Cut Agentic AI](collection/skills/cartesian-cut-agentic-ai/) | 智能体AI架构，笛卡尔分割与集成控制 | Cartesian cut, agentic AI, brain-inspired |
 
+#### 系统工程与控制理论
+
+| 技能 | 描述 | 激活词 |
+|------|------|--------|
+| [MPC Plant-Model Mismatch](mpc-plant-model-mismatch.skill) | MPC植物-模型失配下的稳定性分析，鲁棒控制理论 | MPC, plant-model mismatch, stability, robust control |
+
 #### 元技能
 
 | 技能 | 描述 | 激活词 |
@@ -174,6 +180,10 @@
 ## 最新更新
 
 ### 2026-04-11
+
+**系统工程与控制理论:**
+- 新增: MPC Plant-Model Mismatch - MPC稳定性分析与植物-模型失配鲁棒控制 (arXiv:2604.08521)
+- 来源: arXiv系统工程论文定时任务
 
 **神经科学与AI技能:**
 - 新增: Meta-Learning Brain Decoding - 训练-free跨被试脑解码 (arXiv:2604.08537)
