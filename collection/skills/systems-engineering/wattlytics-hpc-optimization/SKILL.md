@@ -1,210 +1,264 @@
 ---
 name: wattlytics-hpc-optimization
-description: "Wattlytics web platform for co-optimizing performance, energy, and Total Cost of Ownership (TCO) in GPU-accelerated HPC clusters. Enables informed design and operational decisions for computational efficiency."
+description: "Wattlytics: Co-optimizing performance, energy, and TCO in HPC clusters. Interactive web platform for decision support in GPU-accelerated computing system design and operation. Activation: HPC optimization, energy-performance tradeoff, TCO analysis, cluster decision support."
 version: 1.0.0
 author: Research Synthesis
 license: MIT
 metadata:
   hermes:
-    tags: [hpc, energy-efficiency, tco-optimization, gpu-clusters, performance-tuning, wattlytics]
-    source_paper: "Wattlytics: A Web Platform for Co-Optimizing Performance, Energy, and TCO in HPC Clusters (arXiv:2604.08182v1)"
-    authors: "Ayesha Afzal, Georg Hager, Gerhard Wellein"
-    published: "2026-04-09"
-    category: "distributed computing"
+    tags: [hpc-optimization, energy-efficiency, tco-analysis, gpu-computing, performance-modeling]
+    source_paper: "Wattlytics: A Web Platform for Co-Optimizing Performance, Energy, and TCO in HPC Clusters (arXiv:2604.08182)"
+    citations: 0
+    category: systems-engineering
 ---
 
-# Wattlytics: Co-Optimizing Performance, Energy, and TCO in HPC Clusters
+# Wattlytics: HPC Cluster Optimization
 
 ## Overview
 
-This skill implements the Wattlytics framework for co-optimizing performance, energy consumption, and Total Cost of Ownership (TCO) in GPU-accelerated High-Performance Computing (HPC) clusters.
+The escalating computational demands and energy footprint of GPU-accelerated computing systems complicate informed design and operational decisions. Wattlytics is an interactive, browser-based decision-support system that co-optimizes performance, energy consumption, and total cost of ownership (TCO) for HPC clusters.
 
 ## Core Concepts
 
-### 1. Multi-Objective Optimization
-- **Dimensions**: Performance, Energy, Cost
-- **Challenge**: These objectives often conflict
-- **Solution**: Pareto-optimal trade-off analysis
+### Multi-Objective Optimization
+- **Performance**: Minimize time-to-solution
+- **Energy**: Minimize power consumption
+- **TCO**: Minimize total cost of ownership
+- **Trade-offs**: Balance competing objectives
 
-### 2. TCO Modeling
-- **Components**: Hardware, energy, cooling, maintenance
-- **Time Horizon**: Multi-year operational costs
-- **Metrics**: $/FLOP, $/solution, energy efficiency
+### Performance Modeling
+- **Application Characteristics**: Compute intensity, memory patterns
+- **Hardware Modeling**: CPU, GPU, memory, interconnect
+- **Scalability Analysis**: Strong and weak scaling
 
-### 3. GPU-Aware Optimization
-- **Characteristics**: High throughput, high power consumption
-- **Considerations**: Utilization, memory bandwidth, thermal limits
-- **Strategies**: Dynamic frequency scaling, job scheduling
+### Decision Support
+- **Interactive Exploration**: Visualize trade-offs
+- **Configuration Recommendations**: Optimal hardware/software choices
+- **What-If Analysis**: Evaluate hypothetical scenarios
 
-## Mathematical Framework
-
-### TCO Model
-```
-TCO = C_capital + Σ_t (C_energy(t) + C_cooling(t) + C_maintenance(t))
-
-Where:
-- C_capital: Initial hardware investment
-- C_energy(t): Energy cost at time t
-- C_cooling(t): Cooling cost at time t
-- C_maintenance(t): Maintenance cost at time t
-```
-
-### GPU Power Model
-```
-P_gpu = P_static + P_dynamic
-
-Where:
-- P_static: Static power (memory, idle circuits)
-- P_dynamic = C × V² × f × A (dynamic power)
-```
-
-## Implementation Pattern
+## Implementation
 
 ```python
 import numpy as np
 from typing import Dict, List, Tuple, Optional
 from dataclasses import dataclass
-from enum import Enum
-
-class OptimizationTarget(Enum):
-    PERFORMANCE = "performance"
-    ENERGY = "energy"
-    TCO = "tco"
-    BALANCED = "balanced"
 
 @dataclass
-class ClusterConfig:
-    n_nodes: int
-    gpus_per_node: int
-    gpu_model: str
-    cpu_model: str
-    memory_per_node_gb: float
-    interconnect: str
+class HardwareConfig:
+    cpu_cores: int
+    cpu_freq_ghz: float
+    gpu_count: int
+    gpu_memory_gb: float
+    memory_gb: float
+    interconnect_bw_gbps: float
+    power_idle_w: float
+    power_max_w: float
+    cost_per_node_usd: float
 
 @dataclass
-class WorkloadProfile:
+class ApplicationProfile:
     name: str
-    compute_intensity: float
-    memory_bandwidth_gb_s: float
-    gpu_utilization: float
-    scaling_efficiency: float
+    compute_intensity: float  # FLOPs per byte
+    memory_footprint_gb: float
+    communication_pattern: str  # 'point-to-point', 'collective', 'none'
+    scaling_efficiency: float  # Parallel efficiency
+    
+class PerformanceModel:
+    def __init__(self, hardware: HardwareConfig, app: ApplicationProfile):
+        self.hw = hardware
+        self.app = app
+        
+    def compute_performance(self, num_nodes: int) -> float:
+        # Peak compute performance (TFLOP/s)
+        cpu_flops = self.hw.cpu_cores * self.hw.cpu_freq_ghz * 16  # AVX-512
+        gpu_flops = self.hw.gpu_count * 20  # Approximate GPU TFLOP/s
+        total_flops = (cpu_flops + gpu_flops) * num_nodes
+        
+        # Memory bandwidth limit
+        mem_bw_tbps = self.hw.memory_gb * 0.1  # Approximate
+        mem_limited_flops = mem_bw_tbps * 1e3 * self.app.compute_intensity
+        
+        # Actual performance is min of compute and memory limited
+        perf = min(total_flops, mem_limited_flops)
+        
+        # Apply scaling efficiency
+        if num_nodes > 1:
+            efficiency = self.app.scaling_efficiency ** np.log2(num_nodes)
+            perf *= efficiency
+        
+        return perf
+    
+    def compute_time(self, problem_size: float, num_nodes: int) -> float:
+        perf = self.compute_performance(num_nodes)
+        return problem_size / (perf * 1e12)  # seconds
+    
+    def compute_power(self, utilization: float = 0.8) -> float:
+        idle = self.hw.power_idle_w
+        max_p = self.hw.power_max_w
+        return idle + utilization * (max_p - idle)
+    
+    def compute_energy(self, problem_size: float, num_nodes: int) -> float:
+        time = self.compute_time(problem_size, num_nodes)
+        power = self.compute_power()
+        return power * time * num_nodes / 3600  # kWh
+
+
+class TCOModel:
+    def __init__(self, hardware: HardwareConfig, 
+                 electricity_cost_per_kwh: float = 0.12,
+                 lifetime_years: float = 4):
+        self.hw = hardware
+        self.electricity_cost = electricity_cost_per_kwh
+        self.lifetime = lifetime_years
+        
+    def compute_capital_cost(self, num_nodes: int) -> float:
+        return self.hw.cost_per_node_usd * num_nodes
+    
+    def compute_operational_cost(self, annual_energy_kwh: float) -> float:
+        energy_cost = annual_energy_kwh * self.electricity_cost * self.lifetime
+        # Add maintenance (10% of capital per year)
+        maintenance = self.hw.cost_per_node_usd * 0.1 * self.lifetime
+        return energy_cost + maintenance
+    
+    def compute_tco(self, num_nodes: int, annual_energy_kwh: float) -> float:
+        capital = self.compute_capital_cost(num_nodes)
+        operational = self.compute_operational_cost(annual_energy_kwh)
+        return capital + operational
+
 
 class WattlyticsOptimizer:
-    """Wattlytics: HPC Cluster Performance-Energy-TCO Optimizer"""
+    def __init__(self, 
+                 hardware_options: List[HardwareConfig],
+                 application: ApplicationProfile,
+                 problem_size: float,
+                 constraints: Dict):
+        self.hw_options = hardware_options
+        self.app = application
+        self.problem_size = problem_size
+        self.constraints = constraints
+        
+    def optimize(self, objective: str = "balanced") -> List[Dict]:
+        results = []
+        
+        for hw in self.hw_options:
+            for num_nodes in range(1, self.constraints.get('max_nodes', 100)):
+                perf_model = PerformanceModel(hw, self.app)
+                tco_model = TCOModel(hw)
+                
+                time = perf_model.compute_time(self.problem_size, num_nodes)
+                energy = perf_model.compute_energy(self.problem_size, num_nodes)
+                tco = tco_model.compute_tco(num_nodes, energy * 8760 / time if time > 0 else 0)
+                
+                # Check constraints
+                if time > self.constraints.get('max_time', float('inf')):
+                    continue
+                if energy > self.constraints.get('max_energy', float('inf')):
+                    continue
+                if tco > self.constraints.get('max_budget', float('inf')):
+                    continue
+                
+                results.append({
+                    'hardware': hw,
+                    'num_nodes': num_nodes,
+                    'time': time,
+                    'energy': energy,
+                    'tco': tco,
+                    'score': self._compute_score(time, energy, tco, objective)
+                })
+        
+        results.sort(key=lambda x: x['score'])
+        return results
     
-    def __init__(
-        self,
-        cluster_config: ClusterConfig,
-        energy_price: Dict,
-        hardware_costs: Dict[str, float]
-    ):
-        self.config = cluster_config
-        self.energy_price = energy_price
-        self.hardware_costs = hardware_costs
-        self.gpu_power_models = self._init_gpu_power_models()
+    def _compute_score(self, time: float, energy: float, tco: float, objective: str) -> float:
+        if objective == "performance":
+            return time
+        elif objective == "energy":
+            return energy
+        elif objective == "cost":
+            return tco
+        else:  # balanced
+            # Normalize and combine
+            return time * 0.4 + energy * 0.3 + tco * 0.3
     
-    def _init_gpu_power_models(self) -> Dict[str, callable]:
-        """Initialize GPU power consumption models"""
-        return {
-            'A100': lambda util: 55 + 345 * util,
-            'H100': lambda util: 65 + 635 * util,
-            'V100': lambda util: 45 + 205 * util,
-        }
+    def get_pareto_frontier(self, results: List[Dict]) -> List[Dict]:
+        pareto = []
+        for r in results:
+            dominated = False
+            for other in results:
+                if (other['time'] <= r['time'] and 
+                    other['energy'] <= r['energy'] and 
+                    other['tco'] <= r['tco'] and
+                    (other['time'] < r['time'] or 
+                     other['energy'] < r['energy'] or 
+                     other['tco'] < r['tco'])):
+                    dominated = True
+                    break
+            if not dominated:
+                pareto.append(r)
+        return pareto
+
+
+# Example usage
+def example_optimization():
+    # Hardware configurations
+    configs = [
+        HardwareConfig(
+            cpu_cores=64, cpu_freq_ghz=2.5,
+            gpu_count=4, gpu_memory_gb=80,
+            memory_gb=512, interconnect_bw_gbps=200,
+            power_idle_w=200, power_max_w=2000,
+            cost_per_node_usd=50000
+        ),
+        HardwareConfig(
+            cpu_cores=32, cpu_freq_ghz=3.0,
+            gpu_count=2, gpu_memory_gb=40,
+            memory_gb=256, interconnect_bw_gbps=100,
+            power_idle_w=150, power_max_w=1200,
+            cost_per_node_usd=25000
+        )
+    ]
     
-    def estimate_power_consumption(
-        self,
-        workload: WorkloadProfile,
-        n_nodes_active: int,
-        gpu_frequency_mhz: Optional[float] = None
-    ) -> Dict[str, float]:
-        """Estimate power consumption for configuration"""
-        gpu_model = self.config.gpu_model
-        gpus_per_node = self.config.gpus_per_node
-        
-        if gpu_model in self.gpu_power_models:
-            gpu_power_per_gpu = self.gpu_power_models[gpu_model](
-                workload.gpu_utilization
-            )
-        else:
-            gpu_power_per_gpu = 50 + 300 * workload.gpu_utilization
-        
-        if gpu_frequency_mhz:
-            freq_ratio = gpu_frequency_mhz / 1000
-            gpu_power_per_gpu *= freq_ratio ** 3
-        
-        total_gpu_power = gpu_power_per_gpu * gpus_per_node * n_nodes_active
-        total_cpu_power = total_gpu_power * 0.2
-        total_memory_power = 50 * n_nodes_active
-        total_network_power = 30 * n_nodes_active
-        
-        pue = 1.2
-        total_it_power = total_gpu_power + total_cpu_power + total_memory_power + total_network_power
-        total_facility_power = total_it_power * pue
-        
-        return {
-            'gpu_power': total_gpu_power,
-            'cpu_power': total_cpu_power,
-            'memory_power': total_memory_power,
-            'network_power': total_network_power,
-            'it_power': total_it_power,
-            'facility_power': total_facility_power,
-            'pue': pue
-        }
+    # Application profile
+    app = ApplicationProfile(
+        name="Deep Learning Training",
+        compute_intensity=50.0,
+        memory_footprint_gb=100,
+        communication_pattern="collective",
+        scaling_efficiency=0.85
+    )
     
-    def calculate_tco(
-        self,
-        workload: WorkloadProfile,
-        operational_years: int = 3,
-        utilization_rate: float = 0.8
-    ) -> Dict[str, float]:
-        """Calculate Total Cost of Ownership"""
-        node_cost = self.hardware_costs.get('node', 50000)
-        total_capital = node_cost * self.config.n_nodes
-        
-        hours_per_year = 8760 * utilization_rate
-        power = self.estimate_power_consumption(workload, self.config.n_nodes)
-        annual_energy_kwh = power['facility_power'] * hours_per_year / 1000
-        
-        avg_rate = self.energy_price.get('base_rate', 0.10)
-        annual_energy_cost = annual_energy_kwh * avg_rate
-        annual_cooling_cost = annual_energy_cost * 0.1
-        annual_maintenance = total_capital * 0.07
-        
-        total_operational = (annual_energy_cost + annual_cooling_cost + annual_maintenance) * operational_years
-        total_tco = total_capital + total_operational
-        
-        return {
-            'capital_cost': total_capital,
-            'annual_energy_cost': annual_energy_cost,
-            'annual_cooling_cost': annual_cooling_cost,
-            'annual_maintenance': annual_maintenance,
-            'total_operational': total_operational,
-            'total_tco': total_tco,
-            'tco_per_year': total_tco / operational_years
-        }
+    # Optimize
+    optimizer = WattlyticsOptimizer(
+        configs, app, problem_size=1e18,
+        constraints={'max_nodes': 50, 'max_time': 3600}
+    )
+    
+    results = optimizer.optimize(objective="balanced")
+    pareto = optimizer.get_pareto_frontier(results)
+    
+    print("Pareto-optimal configurations:")
+    for r in pareto[:5]:
+        print(f"  Nodes: {r['num_nodes']}, Time: {r['time']:.1f}s, "
+              f"Energy: {r['energy']:.1f}kWh, TCO: ${r['tco']/1e6:.2f}M")
+
+
+if __name__ == "__main__":
+    example_optimization()
 ```
 
 ## Key Insights
 
-1. **Holistic Optimization**: Simultaneously optimizing performance, energy, and TCO
-
-2. **Workload-Aware**: Different workloads have different optimal configurations
-
-3. **Frequency Scaling**: Dynamic GPU frequency adjustment provides energy savings
-
-4. **Scaling Efficiency**: Understanding parallel efficiency for right-sizing clusters
+1. **Multi-Objective Trade-offs**: Performance, energy, and cost are often in tension
+2. **Application-Aware**: Optimal configuration depends heavily on workload characteristics
+3. **Interactive Exploration**: Visual tools help navigate complex trade-off spaces
 
 ## Applications
 
-- AI/ML training infrastructure planning
-- HPC cluster design and procurement
-- Cloud cost optimization
-- Green computing initiatives
+- HPC cluster procurement
+- Cloud instance selection
+- Workload scheduling
+- Energy-aware computing
 
 ## References
 
-- Original Paper: Wattlytics: A Web Platform for Co-Optimizing Performance, Energy, and TCO in HPC Clusters
-- arXiv: https://arxiv.org/abs/2604.08182v1
-- Authors: Ayesha Afzal, Georg Hager, Gerhard Wellein
-- Published: 2026-04-09
-- Platform: https://wattlytics.de
+- Afzal, A., Hager, G., & Wellein, G. (2026). Wattlytics: A Web Platform for Co-Optimizing Performance, Energy, and TCO in HPC Clusters. arXiv:2604.08182.
