@@ -280,14 +280,71 @@ class IntegratedAgent:
 - Categories: cs.AI, q-bio.NC
 - Authors: Tim Sainburg, Caleb Weinreb
 
-## Trigger Words
+## Activation Keywords
 
-Use this skill when encountering:
-- "Cartesian cut in AI"
-- "agentic AI architecture"
-- "brain-inspired AI design"
-- "LLM agent control"
-- "integrated vs Cartesian agency"
-- "agent autonomy robustness tradeoff"
-- "neuroscience inspired AI agents"
-- "control architecture LLM agents"
+- Cartesian cut in AI
+- agentic AI architecture
+- brain-inspired AI design
+- LLM agent control
+- integrated vs Cartesian agency
+- agent autonomy robustness tradeoff
+- neuroscience inspired AI agents
+- control architecture LLM agents
+- Cartesian agency
+- integrated agency
+- LLM agent design
+
+## Tools Used
+
+- `read`: Read research papers and documentation
+- `exec`: Run Python code for agent architecture analysis
+- `write`: Save design patterns and implementation results
+- `edit`: Modify agent architecture specifications
+
+## Instructions for Agents
+
+When analyzing or designing agentic AI systems using the Cartesian cut framework:
+
+1. **Identify the control pattern**:
+   - Bounded Services: Narrow scope, limited tools
+   - Cartesian Agents: Rich interface, extensible tools
+   - Integrated Agents: Prediction and control coupled
+
+2. **Evaluate design tradeoffs**:
+   - Autonomy vs. robustness
+   - Oversight vs. emergence
+   - Implementation complexity vs. capabilities
+
+3. **Apply neuroscience insights**:
+   - Layered feedback controllers
+   - Prediction embedded in control
+   - Distributed representation
+
+4. **Select implementation approach** based on requirements:
+   - Safety-critical systems → Bounded Services
+   - General-purpose → Cartesian Agents
+   - Adaptive behavior → Integrated Agents
+
+## Examples
+
+### Example 1: Choose Control Pattern
+```
+User: "帮我设计一个智能客服系统的控制架构"
+
+Agent:
+1. 识别需求: 客服任务scope较窄，但需要extensible工具
+2. 选择模式: Cartesian Agent - rich interface with extensible tools
+3. 应用设计模式: 使用多模态接口(stateful)维持separation
+4. 输出: 完整的agent specification with Cartesian split
+```
+
+### Example 2: Analyze Existing System
+```
+User: "分析Devin的控制架构属于哪种模式"
+
+Agent:
+1. 识别Devin的特点: tight integration, emergent behavior
+2. 分析模式: Integrated Agent - tight coupling of predictor/controller
+3. 对比其他模式: prints design tradeoffs for comparison
+4. 输出: 架构分析报告 with pattern classification
+```

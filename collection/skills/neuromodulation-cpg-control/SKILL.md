@@ -156,13 +156,64 @@ Demonstrated on quadrupedal gait control:
 - Paper: https://arxiv.org/abs/2604.08312
 - Categories: math.DS, q-bio.NC
 
-## Trigger Words
+## Activation Keywords
+- central pattern generator control
+- neuromodulation rhythmic patterns
+- CPG gait transitions
+- neuronal degeneracy motor control
+- fixed connectivity CPG
+- rhythmic pattern switching
+- bifurcation theory neuroscience
+- CPG control
+- neuromodulation neuroscience
 
-Use this skill when encountering:
-- "central pattern generator control"
-- "neuromodulation rhythmic patterns"
-- "CPG gait transitions"
-- "neuronal degeneracy motor control"
-- "fixed connectivity CPG"
-- "rhythmic pattern switching"
-- "bifurcation theory neuroscience"
+## Tools Used
+- `read`: Read research papers and documentation
+- `exec`: Run Python simulations of CPG networks
+- `write`: Save control results and gait transition analyses
+- `glob`: Find related research materials
+
+## Instructions for Agents
+
+When working with central pattern generator (CPG) control or neuromodulation:
+
+1. **Identify the problem type**:
+   - Gait transitions → Neuromodulatory controller
+   - Rhythmic pattern generation → CPG network design
+   - Motor control → Neuromodulation-based control
+
+2. **Select control architecture**:
+   - Fixed connectivity → Neuromodulation-based reconfiguration
+   - Dynamic patterns → Adaptive feedback gain space
+
+3. **Implement neuromodulatory controller**:
+   - Match symmetry of target gait
+   - Use low-dimensional feedback gains
+   - Apply equivariant bifurcation theory
+
+4. **Validate results**:
+   - Check gait transition reliability
+   - Verify robustness across degenerate networks
+
+## Examples
+
+### Example 1: Gait Transition Design
+```
+User: "帮我设计四足机器人的步态转换系统"
+
+Agent:
+1. 识别需求: 固定连接性，需要快速步态转换
+2. 选择模式: Neuromodulation CPG Control
+3. 应用对称性匹配: neuromodulatory topology → target gait symmetry
+4. 输出: 转换协议和控制参数
+```
+
+### Example 2: Analysis of Biological CPG
+```
+User: "分析节肢动物运动神经系统的CPG机制"
+
+Agent:
+1. 识别神经系统特征: 固定连接性，需要快速适应
+2. 应用 neuromodulation 理论: 解释步态切换机制
+3. 输出: 神经生物学分析报告 with CPG model
+```

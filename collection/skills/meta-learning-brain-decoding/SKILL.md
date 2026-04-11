@@ -106,12 +106,54 @@ decoded_stimulus = meta_model.decode(decoding_context)
 - Code: https://github.com/ezacngm/brainCodec
 - Accepted to CVPR 2026
 
-## Trigger Words
+## Activation Keywords
+- cross-subject brain decoding
+- training-free fMRI decoding
+- meta-learning neuroscience
+- in-context brain decoding
+- zero-shot neural decoding
+- subject-independent brain decoding
+- brain decoding from fMRI
+- visual reconstruction
 
-Use this skill when encountering:
-- "cross-subject brain decoding"
-- "training-free fMRI decoding"
-- "meta-learning neuroscience"
-- "in-context brain decoding"
-- "zero-shot neural decoding"
-- "subject-independent brain decoding"
+## Tools Used
+- exec: Run Python scripts for meta-learning brain decoding
+- read: Read fMRI data files and model outputs
+- write: Save decoded results and visualizations
+
+## Instructions for Agents
+
+When a user asks about cross-subject brain decoding or meta-learning for fMRI analysis:
+
+1. **Identify the data type**: Determine if user has fMRI data with visual stimuli
+2. **Select the stage**: Identify if user needs encoder estimation (Stage 1) or decoding (Stage 2)
+3. **Execute Python code**: Run the appropriate meta-learning script
+4. **Present results**: Format decoded stimuli or model outputs clearly
+
+## Examples
+
+### Example 1: Cross-Subject Brain Decoding
+```
+User: "帮我用 meta-learning 方法对跨个体 fMRI 数据进行脑解码"
+
+Agent:
+1. 确认数据类型: fMRI 数据和视觉刺激配对
+2. 使用两阶段分层推理方法
+3. 执行 Stage 1: 构建每个体素的上下文
+4. 执行 Stage 2: 跨体素聚合解码
+5. 输出重建的刺激图像或神经表征
+
+Agent: "以下是使用 meta-learning 方法解码的视觉重建结果..."
+```
+
+### Example 2: Model Selection
+```
+User: "如何选择 meta-learning brain decoding 的模型？"
+
+Agent:
+1. 确认先决条件: fMRI 数据、预训练视觉骨干网络
+2. 推荐使用 meta-trained encoder-decoder 模型
+3. 提供阶段 1 和阶段 2 的实现框架
+
+Agent: "推荐使用 brainCodec 项目中的预训练模型..."
+```
