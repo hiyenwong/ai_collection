@@ -1,12 +1,58 @@
 ---
 name: density-driven-multi-agent-control-v2
-description: "Stochastic Density-Driven Optimal Control (D²OC) for multi-agent systems. Decentralized non-uniform area coverage using Wasserstein distance minimization with convergence guarantees for stochastic LTI dynamics. Activation: density-driven control, multi-agent coverage, Wasserstein distance, optimal transport, swarm robotics."
+description: "Stochastic Density-Driven Optimal Control (D²OC) for multi-agent systems. Decentralized non-uniform area coverage using Wasserstein distance minimization with convergence guarantees for stochastic LTI dynamics."
 category: systems-engineering
 ---
 
 # Stochastic Density-Driven Optimal Control (D²OC) for Multi-Agent Systems
 
-基于论文 "Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems" (Lee, 2026) 的方法论技能。
+## Description
+
+基于论文 "Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems" (Lee, 2026) 的方法论技能。解决多智能体系统的**去中心化非均匀区域覆盖问题**，通过严格的拉格朗日框架桥接个体智能体动力学与集体分布匹配。
+
+将分布匹配重新表述在最优传输(OT)框架下，以Wasserstein距离作为运行成本，确保时间平均经验分布在随机LTI动力学下收敛到非参数化目标密度。
+
+## Activation Keywords
+
+- density-driven control
+- D²OC
+- multi-agent coverage
+- Wasserstein distance
+- optimal transport
+- swarm robotics
+- decentralized control
+- area coverage
+- 密度驱动控制
+- 多智能体覆盖
+- 最优传输
+- 群体机器人
+
+## Tools Used
+
+- read: Read paper and implementation reference
+- write: Generate Python implementation code
+- exec: Run coverage simulation experiments
+- web_search: Find related optimal transport research
+
+## Instructions for Agents
+
+When a user asks about decentralized multi-agent area coverage:
+
+1. **Problem characterization**: Identify if it's non-uniform area coverage with stochastic dynamics
+2. **Explain the approach**: Compare with existing methods (grass-mowing, SMC, Eulerian PDE, mean-field)
+3. **Walk through the three-stage framework**:
+   - Stage 1: Local Wasserstein distance minimization via MPC
+   - Stage 2: Reachability-aware target selection
+   - Stage 3: Decentralized barycenter weight update
+4. **Provide implementation code**: Use the Python code templates in this skill
+5. **Parameter tuning**: Guide on prediction horizon, sample count, communication radius selection
+
+## Examples
+
+```
+User: How do I coordinate a swarm of drones for area coverage with non-uniform density requirements?
+Agent: Using Stochastic Density-Driven Optimal Control (D²OC), we can solve this with decentralized MPC and Wasserstein distance minimization...
+```
 
 ## 核心思想
 

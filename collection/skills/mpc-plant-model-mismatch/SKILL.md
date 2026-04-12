@@ -1,11 +1,55 @@
 ---
 name: mpc-plant-model-mismatch
 description: "Model Predictive Control stability analysis under plant-model mismatch. Covers discounted/infinite-horizon optimal control, suboptimality bounds, and robustness guarantees. Use for: MPC design, control system robustness analysis, plant-model mismatch tolerance, stability proofs, optimal control with surrogate models."
+category: control-theory
 ---
 
 # MPC Stability under Plant-Model Mismatch
 
-Unified framework for analyzing MPC and infinite-horizon optimal control stability when using surrogate models.
+## Description
+
+Unified framework for analyzing MPC (Model Predictive Control) and infinite-horizon optimal control stability when using surrogate models. Provides:
+- Exponential stability guarantees under proportional mismatch bounds
+- Suboptimality bounds for closed-loop cost
+- Uniform robustness across horizon lengths (longer horizons don't require smaller mismatch tolerance)
+- Practical design checklist for MPC engineers
+
+## Activation Keywords
+
+- MPC plant-model mismatch
+- model predictive control robustness
+- discounted MPC
+- infinite-horizon optimal control
+- stability analysis
+- surrogate model control
+- 模型预测控制
+- 模型不匹配
+- 鲁棒控制
+
+## Tools Used
+
+- read: Read control theory papers and derivations
+- write: Generate MPC implementation code
+- exec: Run simulation to verify stability bounds
+- web_search: Find related control theory references
+
+## Instructions for Agents
+
+When a user asks about MPC robustness under plant-model mismatch:
+
+1. **Problem setup**: Help the user define the real plant vs. surrogate model mismatch bounds
+2. **Check stability conditions**: Verify continuity, cost-controllability, and mismatch magnitude
+3. **Apply the checklist**: Walk through the MPC design checklist
+4. **Calculate bounds**: Compute suboptimality bounds based on mismatch magnitude
+5. **Parameter selection**: Guide on horizon length and discount factor selection
+6. **Reference theory**: Point to the theorems and proofs for deeper understanding
+
+## Examples
+
+```
+User: Does MPC stability hold when my model has plant-model mismatch?
+Agent: Using the MPC Plant-Model Mismatch framework, we can analyze this. If your mismatch is bounded by proportional bounds and the cost-controllability condition holds, exponential stability is guaranteed even for longer prediction horizons...
+```
 
 ## Core Theory
 

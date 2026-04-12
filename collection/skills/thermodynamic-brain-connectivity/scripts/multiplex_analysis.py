@@ -378,7 +378,7 @@ def main():
     synaptic, extrasynaptic = generate_example_data(n_nodes=50)
     node_labels = [f"neuron_{i}" for i in range(50)]
     
-    print(f"\nInput data:")
+    print("\nInput data:")
     print(f"  Synaptic connections: {np.sum(synaptic > 0.1)} non-zero")
     print(f"  Extrasynaptic connections: {np.sum(extrasynaptic > 0.1)} non-zero")
     
@@ -387,17 +387,17 @@ def main():
     results = analyzer.analyze_multiplex(synaptic, extrasynaptic, node_labels)
     
     # Print results
-    print(f"\nCommunication Regimes:")
+    print("\nCommunication Regimes:")
     for regime, nodes in results['regimes'].items():
         print(f"  {regime.value}: {len(nodes)} nodes")
     
-    print(f"\nThermodynamic Properties (Synaptic Layer):")
+    print("\nThermodynamic Properties (Synaptic Layer):")
     thermo = results['synaptic_thermodynamics']
     print(f"  Entropy: {thermo.entropy:.3f}")
     print(f"  Free Energy: {thermo.free_energy:.3f}")
     print(f"  Temperature: {thermo.temperature:.3f}")
     
-    print(f"\nMultiplex Metrics:")
+    print("\nMultiplex Metrics:")
     metrics = results['multiplex_metrics']
     print(f"  Participation Coefficient: {metrics['participation_coefficient']:.3f}")
     print(f"  Inter-layer Mutual Info: {metrics['inter_layer_mutual_info']:.3f}")

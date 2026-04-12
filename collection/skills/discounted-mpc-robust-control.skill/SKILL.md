@@ -1,12 +1,52 @@
 ---
 name: discounted-mpc-robust-control
-description: "Discounted Model Predictive Control (MPC) robustness analysis under plant-model mismatch. Unified framework for stability and suboptimality guarantees with discounted/undiscounted costs, finite/infinite horizons. Activation: discounted MPC, plant-model mismatch, robust control, infinite-horizon optimal control."
-category: systems-engineering
+description: "Discounted Model Predictive Control (MPC) robustness analysis under plant-model mismatch. Unified framework for stability and suboptimality guarantees with discounted/undiscounted costs, finite/infinite horizons."
+category: control-theory
 ---
 
 # Discounted MPC Robust Control Under Plant-Model Mismatch
 
-基于论文 "Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality" (Moldenhauer et al., 2026) 的方法论技能。
+## Description
+
+基于论文 "Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality" (Moldenhauer et al., 2026) 的方法论技能。研究在使用代理模型(surrogate model)求解MPC和无限视界最优控制时，当代理模型与真实系统(plant)存在不匹配情况下的闭环稳定性和次优性。
+
+基于二次成本的统一框架分析有限和无限视界问题，涵盖折扣和非折扣场景。提供指数稳定性保证和次优性边界。关键发现：**鲁棒性保证不随预测视界增加而恶化，更大的N不需要更小的模型不匹配容忍度。
+
+## Activation Keywords
+
+- discounted MPC
+- plant-model mismatch
+- robust MPC
+- infinite-horizon optimal control
+- 折扣MPC
+- 模型不匹配
+- 鲁棒模型预测控制
+- 无限视界控制
+
+## Tools Used
+
+- read: Read control theory papers and proofs
+- write: Generate Python implementation code
+- exec: Run numerical simulations to verify stability
+- web_search: Find related MPC robustness literature
+
+## Instructions for Agents
+
+When a user asks about robust MPC with plant-model mismatch:
+
+1. **Problem characterization**: Identify the real plant dynamics and surrogate model
+2. **Check assumptions**: Verify Lipschitz continuity, B-cost-controllability, and proportional mismatch bound
+3. **Estimate mismatch bound: Calculate the |f-g|_S mismatch bound from data
+4. **Compute stability condition**: Calculate the A parameter and check if A < 1
+5. **Parameter tuning**: Guide selection of discount factor γ and horizon length N
+6. **Design controller**: Use the provided Python templates to implement
+
+## Examples
+
+```
+User: Can MPC still be stable when my model doesn't perfectly match the real system?
+Agent: Using the Discounted MPC Robust Control framework, we can analyze this. If your model mismatch satisfies the proportional bound and B-cost-controllability holds, exponential stability is still guaranteed with an explicit suboptimality bound...
+```
 
 ## 核心思想
 

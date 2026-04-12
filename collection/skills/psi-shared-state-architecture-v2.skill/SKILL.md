@@ -1,12 +1,56 @@
 ---
 name: psi-shared-state-architecture-v2
-description: "PSI (Persistent Shared Interface): Shared-state architecture for coherent AI-generated instruments in personal AI agents. Transforms isolated AI-generated modules into persistent, connected, chat-complementary artifacts through a shared personal-context bus. Activation: PSI, shared state, personal AI, AI-generated instruments, coherent computing, context bus."
-category: systems-engineering
+description: "PSI (Persistent Shared Interface): Shared-state architecture for coherent AI-generated instruments in personal AI agents. Transforms isolated AI-generated modules into persistent, connected, chat-complementary artifacts through a shared personal-context bus."
+category: ai-architecture
 ---
 
 # PSI: Shared-State Architecture for Coherent AI-Generated Instruments
 
+## Description
+
 基于论文 "PSI: Shared State as the Missing Layer for Coherent AI-Generated Instruments in Personal AI Agents" (Wang et al., 2026) 的方法论技能。
+
+个人AI工具现在可以从自然语言请求生成，但它们在创建后往往保持孤立。PSI是一个**共享状态架构**，将独立生成的模块转变为**连贯的工具(instruments)**：持久、连接、与聊天互补的工件，可通过GUI和通用聊天代理访问。
+
+通过将当前状态和写回功能发布到共享的个人上下文总线，模块实现跨模块推理和跨接口的同步操作，解决个人数据碎片化问题。
+
+## Activation Keywords
+
+- PSI
+- shared state
+- persistent shared interface
+- personal AI
+- AI-generated instruments
+- coherent computing
+- context bus
+- 共享状态架构
+- 个人AI
+- 上下文总线
+
+## Tools Used
+
+- read: Read architecture documentation and design patterns
+- write: Generate architecture code and module definitions
+- edit: Refine existing module interfaces
+- web_search: Find related architecture patterns
+
+## Instructions for Agents
+
+When a user asks about designing personal AI agents with coherent cross-module interaction:
+
+1. **Problem diagnosis**: Identify if the issue is data/state fragmentation across isolated AI modules
+2. **Explain the core insight**: Compare with existing systems (chat-only, isolated GUI, etc.)
+3. **Guide architecture design**: Help implement the PSI shared personal-context bus
+4. **Define instrument interfaces**: Show how modules should expose state and write-back capabilities
+5. **Design interaction patterns**: Explain how chat complements GUI-based persistent instruments
+6. **Reference comparison table**: Use the comparison with existing systems to illustrate advantages
+
+## Examples
+
+```
+User: How do I build a personal AI that can combine data from my health app, calendar, and location services?
+Agent: Using the PSI (Persistent Shared Interface) architecture, we can design a shared-state layer where each instrument publishes its state and write-back capabilities to a personal context bus, enabling coherent cross-module reasoning...
+```
 
 ## 核心思想
 

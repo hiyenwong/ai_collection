@@ -8,8 +8,7 @@ Core implementation for inferring governing equations of complex networked syste
 import numpy as np
 import torch
 import torch.nn as nn
-from scipy.sparse import csr_matrix
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Optional
 
 
 class SIGN(nn.Module):
@@ -98,7 +97,6 @@ class SIGN(nn.Module):
         
         # Compute messages
         h_src = h[src]
-        h_dst = h[dst]
         messages = self.message_fn(torch.cat([h_src, e], dim=-1))
         
         # Aggregate messages to nodes
