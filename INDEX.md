@@ -84,7 +84,7 @@
 
 | 技能 | 描述 | 激活词 |
 |------|------|--------|
-| [MPC Plant-Model Mismatch](mpc-plant-model-mismatch.skill) | MPC植物-模型失配下的稳定性分析，鲁棒控制理论 | MPC, plant-model mismatch, stability, robust control |
+| [MPC Plant-Model Mismatch](collection/skills/mpc-plant-model-mismatch/) | MPC植物-模型失配下的稳定性分析，鲁棒控制理论 | MPC, plant-model mismatch, stability, robust control |
 
 #### 元技能
 
