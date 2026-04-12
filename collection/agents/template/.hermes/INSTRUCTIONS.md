@@ -1,0 +1,44 @@
+# Hermes Agent Instructions
+
+This agent is designed to work with Hermes Agent. Follow these instructions when using this agent with Hermes:
+
+1. **Agent Name**: {agent_name}
+2. **Purpose**: {agent_purpose}
+3. **Key Tools**: {tool_list}
+
+## Architecture
+
+Hermes Agent uses this agent as a specialized worker. The agent should:
+
+1. **Read the AGENT.md file** for context
+2. **Read soul.md** for personality and voice
+3. **Follow task instructions** from the planner
+
+## Integration
+
+This agent is part of the AI Collection. To integrate:
+
+```bash
+# The agent is available at:
+/path/to/ai_collection/collection/agents/{agent_name}/
+
+# Add to Hermes config:
+{
+  "agents": {
+    "{agent_name}": {
+      "system_prompt": "Read /path/to/ai_collection/collection/agents/{agent_name}/AGENT.md"
+    }
+  }
+}
+```
+
+## Best Practices
+
+1. **Always read AGENT.md first** for context
+2. **Use soul.md** to maintain consistent personality
+3. **Check examples/** for task patterns
+4. **Use read/write tools** for file operations
+
+---
+
+*For more information, see the AI Collection README*
