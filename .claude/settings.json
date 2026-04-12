@@ -1,0 +1,43 @@
+{
+  "agents": {
+    "default": {
+      "model": "anthropic/claude-sonnet-4.5"
+    },
+    "fullstack-engineer": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/fullstack-engineer/AGENT.md"
+    },
+    "algorithm-engineer": {
+      "model": "anthropic/claude-opus-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/algorithm-engineer/AGENT.md"
+    },
+    "research-agent": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/research-agent/AGENT.md"
+    },
+    "stock-analyst": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/stock-analyst/AGENT.md"
+    },
+    "tech-cofounder": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/tech-cofounder/AGENT.md"
+    },
+    "neuroscientist": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/neuroscientist/AGENT.md"
+    },
+    "physicist": {
+      "model": "anthropic/claude-sonnet-4.5",
+      "systemPrompt": "Read /Users/hiyenwong/ai_github/ai_collection/collection/agents/physicist/AGENT.md"
+    }
+  },
+  "skills": [
+    "skim",
+    "claude-code",
+    "openclaw",
+    "skill-extractor",
+    "skill-rag-indexer"
+  ],
+  "defaultSkill": "skim"
+}

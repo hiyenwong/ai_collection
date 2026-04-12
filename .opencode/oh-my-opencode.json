@@ -1,0 +1,16 @@
+{
+  "agents": {
+    "sisyphus": {
+      "model": "anthropic/claude-sonnet-4.5"
+    }
+  },
+  "skills": [
+    "typescript",
+    "react",
+    "testing",
+    "opencode",
+    "claude-code",
+    "skill-extractor",
+    "skill-rag-indexer"
+  ]
+}
