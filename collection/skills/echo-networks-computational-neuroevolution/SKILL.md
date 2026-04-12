@@ -189,3 +189,28 @@ def matrix_recombination(parent1_matrix, parent2_matrix, alpha=0.5):
 - Kroos, C., & Küch, F. (2026). Introducing Echo Networks for Computational Neuroevolution. arXiv:2604.08204.
 - Accepted for AMLDS 2026 (International Conference on Advanced Machine Learning and Data Science)
 - DOI: 10.1145/3795095.3805158
+
+## Description
+
+This skill provides specialized capabilities for its domain.
+
+## Tools Used
+
+- read: Read files
+- write: Write files
+- exec: Execute commands
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance
+
+## Examples
+
+```
+User: How do I use this skill?
+Agent: I'll help you with this skill...
+```

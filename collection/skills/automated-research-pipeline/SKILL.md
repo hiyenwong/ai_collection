@@ -337,3 +337,12 @@ Based on successful execution for systems engineering research:
 - 47 papers searched, 3 skills created
 - Papers from math.OC, eess.SY categories
 - Skills: discounted-mpc-robust-control, density-driven-multi-agent-control, nonlinear-mas-optimal-control
+
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance

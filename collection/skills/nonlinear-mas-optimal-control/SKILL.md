@@ -369,3 +369,12 @@ run_platooning(vehicles, controller, safety_distance=2.0)
 - Broader applicability than existing methods
 - Both leaderless and leader-follower cases supported
 - MPC enhancement for complex nonlinearities
+
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance

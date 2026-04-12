@@ -248,3 +248,28 @@ def compute_control(A, B, C, x, Q_bar, R, H, r):
 - Weight matrix `R` controls input penalty
 - Noise covariance affects convergence bound
 - Communication range determines coordination level
+
+## Description
+
+This skill provides specialized capabilities for its domain.
+
+## Activation Keywords
+
+- keyword1
+- keyword2
+- keyword3
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance
+
+## Examples
+
+```
+User: How do I use this skill?
+Agent: I'll help you with this skill...
+```

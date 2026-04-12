@@ -336,3 +336,22 @@ def evaluate_parser(parser, documents, agent_tasks):
 - **meta-cognitive-tool-optimization**: For deciding when to use document parsing
 - **claude-code**: For implementing parsing scripts
 - **skill-extractor**: For extracting patterns from documents
+
+## Description
+
+This skill provides specialized capabilities for its domain.
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance
+
+## Examples
+
+```
+User: How do I use this skill?
+Agent: I'll help you with this skill...
+```

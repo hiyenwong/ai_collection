@@ -221,3 +221,12 @@ mpc = DistributedMPC(
 - Framework applies to both discounted and undiscounted MPC
 - Uniform robustness guarantees are a key advantage
 - Suitable for safety-critical control applications
+
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance

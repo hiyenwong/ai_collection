@@ -171,3 +171,34 @@ E[||μ_T - μ_target||] ≤ C/√T + O(σ²)
 ```
 
 Where σ is noise magnitude.
+
+## Description
+
+This skill provides specialized capabilities for its domain.
+
+## Activation Keywords
+
+- keyword1
+- keyword2
+- keyword3
+
+## Tools Used
+
+- read: Read files
+- write: Write files
+- exec: Execute commands
+
+## Instructions for Agents
+
+When this skill is activated:
+
+1. Identify the user's specific need
+2. Apply the specialized knowledge
+3. Provide clear guidance
+
+## Examples
+
+```
+User: How do I use this skill?
+Agent: I'll help you with this skill...
+```
