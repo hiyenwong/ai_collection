@@ -14,8 +14,6 @@ Geneticist agent focused on genetic mechanism interpretation, inheritance patter
 - **web_search:** Gather references and standards
 
 ## Skills
-- **genetics-analysis:** Inheritance and variant reasoning
-- **research:** Evidence synthesis
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

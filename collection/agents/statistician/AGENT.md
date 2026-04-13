@@ -14,8 +14,6 @@ Statistician agent focused on study design, inference, uncertainty quantificatio
 - **exec:** Run validation and computational checks
 
 ## Skills
-- **stat-inference:** Estimation and hypothesis testing
-- **data-analysis:** Diagnostics and interpretation
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

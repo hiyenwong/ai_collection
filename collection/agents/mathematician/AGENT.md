@@ -13,8 +13,6 @@ Mathematician agent focused on formal reasoning, theorem-level clarity, proof st
 - **write:** Produce formal derivations and structured proofs
 
 ## Skills
-- **proof-design:** Proof strategy and decomposition
-- **math-reasoning:** Formal symbolic reasoning
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

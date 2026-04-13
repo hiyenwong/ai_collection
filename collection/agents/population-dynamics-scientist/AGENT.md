@@ -14,8 +14,6 @@ Population Dynamics Scientist agent focused on population-level behavior modelin
 - **exec:** Validate model assumptions with simple simulations
 
 ## Skills
-- **dynamics-modeling:** Population-level modeling
-- **scenario-analysis:** Intervention and forecast comparison
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

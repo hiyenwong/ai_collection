@@ -17,8 +17,6 @@ An autonomous research agent that investigates topics, gathers information from 
 - **write:** Save reports and findings to files
 
 ## Skills
-- **summarize:** Content summarization and synthesis
-- **oracle:** Advanced reasoning and critical analysis
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

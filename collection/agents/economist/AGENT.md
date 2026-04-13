@@ -14,8 +14,6 @@ Economist agent focused on macro/microeconomic analysis, policy impact evaluatio
 - **web_search:** Gather policy and market references
 
 ## Skills
-- **economic-analysis:** Market and policy reasoning
-- **research:** Reference-backed synthesis
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

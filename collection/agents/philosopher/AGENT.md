@@ -13,8 +13,6 @@ Philosopher agent focused on conceptual analysis, argument mapping, ethical reas
 - **write:** Build structured argument trees and critiques
 
 ## Skills
-- **argument-analysis:** Logic and premise mapping
-- **ethics-reasoning:** Value-sensitive evaluation
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

@@ -14,8 +14,6 @@ Biologist agent focused on biological systems understanding, experimental reason
 - **web_search:** Gather up-to-date references
 
 ## Skills
-- **bio-analysis:** Biological process interpretation
-- **research:** Literature synthesis
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

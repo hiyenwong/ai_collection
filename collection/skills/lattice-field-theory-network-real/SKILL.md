@@ -50,7 +50,35 @@ class LatticeFieldTheoryNetworkReal:
 ## 参考文献
 - Simone Franchini, Giampiero Bardella. "Lattice Field Theory for a network of real neurons". arXiv:2604.05251v1, 2026.
 
-## 激活关键词
-- lattice field theory network real
-- Lattice Field
+## Activation Keywords
+- lattice field theory neurons
+- Lattice Field Theory neural
+- LFT brain network
+- 脑网络格场论
+- Maximum Entropy neural network
+- Free Energy Principle BCI
 - neuro 脑网络连接性分析
+
+## Description
+A Lattice Field Theory (LFT) framework for interpreting experimental recordings from Brain-Computer Interfaces (BCIs). It modifies the Maximum Entropy model for neural networks to account for time evolution, interpretable as a version of the Free Energy Principle (FEP), tailored for chronic multi-site BCIs and spike raster data.
+
+## Tools Used
+- read
+- web_search
+- exec
+
+## Instructions for Agents
+1. When the user asks about lattice field theory applied to neuroscience or BCI data, explain the LFT framework and its connection to the Free Energy Principle.
+2. Describe how the framework interprets spike raster recordings from multi-site BCIs in a physically grounded way.
+3. Explain the relationship to the Maximum Entropy model and how time evolution is incorporated.
+4. Help users apply the framework to their neural recording data.
+5. Reference [Bardella et al., Entropy 26 (6), 495 (2024)] and arXiv:2604.05251v1 for technical details.
+
+## Examples
+**Example 1: Framework explanation**
+User: "How can lattice field theory be applied to neural data?"
+Agent: Explains the LFT framework, its physical grounding, and how it interprets BCI recordings.
+
+**Example 2: BCI data analysis**
+User: "I have spike raster data from a multi-site BCI. How do I apply this method?"
+Agent: Guides the user through the LFT analysis pipeline for chronic multi-site BCI recordings.

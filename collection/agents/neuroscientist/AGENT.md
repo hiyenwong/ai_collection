@@ -14,8 +14,6 @@ Neuroscientist agent focused on neuroscience research synthesis, brain systems a
 - **web_search:** Gather recent neuroscience references
 
 ## Skills
-- **research:** Literature review and synthesis
-- **analysis:** Hypothesis framing and comparison
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

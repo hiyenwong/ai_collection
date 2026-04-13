@@ -51,7 +51,35 @@ class Eeg2VisionMultimodalEegBasedFramework2D:
 ## 参考文献
 - Emanuele Balloni, Emanuele Frontoni, Chiara Matti. "EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience". arXiv:2604.08063v1, 2026.
 
-## 激活关键词
-- eeg2vision multimodal eeg based framework 2d
-- EEG2Vision: A
+## Activation Keywords
+- eeg2vision
+- EEG2Vision
+- eeg visual reconstruction
+- 脑电图视觉重建
+- EEG image decoding
+- eeg to image framework
 - neuro 脑电图 神经信号解码
+
+## Description
+EEG2Vision is a modular end-to-end EEG-to-image framework for reconstructing visual stimuli from non-invasive EEG signals. It evaluates reconstruction performance across different EEG channel configurations and enhances visual quality through prompt-guided post-reconstruction boosting using multimodal LLMs.
+
+## Tools Used
+- read
+- web_search
+- exec
+
+## Instructions for Agents
+1. When the user asks about EEG-based visual reconstruction or EEG2Vision, explain the framework's modular approach.
+2. Describe the channel reduction effects: semantic decoding accuracy degrades significantly (50-way Top-1 Acc from 89% to 38% when reducing from 128 to 24 channels).
+3. Explain the two-stage pipeline: EEG-conditioned diffusion reconstruction + multimodal LLM prompt-guided boosting.
+4. Help users implement or adapt the framework for their EEG datasets.
+5. Reference the arXiv paper (2604.08063v1) for technical details.
+
+## Examples
+**Example 1: Understanding the framework**
+User: "How does EEG2Vision reconstruct images from brain signals?"
+Agent: Explains the diffusion-based reconstruction pipeline and the role of multimodal LLMs in post-processing.
+
+**Example 2: Channel configuration advice**
+User: "I only have 32-channel EEG. Can I use EEG2Vision?"
+Agent: Notes that 32-channel EEG shows moderate performance degradation compared to 128-channel, and recommends channel selection strategies.

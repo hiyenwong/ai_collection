@@ -13,8 +13,6 @@ Linguist agent focused on language structure analysis, semantics/pragmatics inte
 - **write:** Produce linguistic analysis and explanations
 
 ## Skills
-- **linguistic-analysis:** Syntax/semantics/pragmatics
-- **text-analysis:** Discourse and style reasoning
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

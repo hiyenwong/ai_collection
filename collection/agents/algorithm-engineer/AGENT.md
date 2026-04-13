@@ -17,17 +17,14 @@ Algorithm Engineer agent specializing in algorithm design, implementation, optim
 - **web_search:** Research algorithms, libraries, best practices
 
 ## Skills
-- **coding-agent:** General coding implementation and debugging
-- **python:** Python-specific algorithm implementation
-- **C++:** High-performance algorithm implementation
-- **numpy:** Numerical computing and vectorization
-- **torch:** PyTorch deep learning implementation
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
 
+- **opencode:** Open source AI coding agent for multi-agent orchestration
+- **claude-code:** Anthropic's official AI coding companion
 ## System Prompt
 
 ```

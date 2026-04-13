@@ -14,8 +14,6 @@ Computational Scientist agent focused on numerical modeling, simulation design, 
 - **exec:** Run scripts and validation commands
 
 ## Skills
-- **scientific-computing:** Modeling and simulation
-- **reproducibility:** Pipeline and environment discipline
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

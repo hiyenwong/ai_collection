@@ -14,8 +14,6 @@ Psychologist agent focused on cognition and behavior analysis, psychological fra
 - **web_search:** Gather updated psychological evidence
 
 ## Skills
-- **behavior-analysis:** Cognitive/behavioral interpretation
-- **framework-comparison:** Multi-theory reasoning
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

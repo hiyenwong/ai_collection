@@ -13,8 +13,6 @@ Logician agent focused on formal logic, argument validity analysis, proof struct
 - **write:** Produce formalized logic analyses
 
 ## Skills
-- **formal-logic:** Deduction and validity
-- **argument-analysis:** Premise-conclusion mapping
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

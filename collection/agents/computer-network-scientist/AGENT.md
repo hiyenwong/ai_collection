@@ -14,8 +14,6 @@ Computer Network Scientist agent focused on network architecture analysis, proto
 - **web_search:** Check RFCs and recent best practices
 
 ## Skills
-- **network-analysis:** Topology and protocol reasoning
-- **troubleshooting:** Root-cause oriented diagnosis
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

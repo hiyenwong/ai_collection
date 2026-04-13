@@ -14,8 +14,6 @@ Applied Scientist agent focused on turning scientific principles into practical 
 - **exec:** Validate assumptions with executable checks
 
 ## Skills
-- **experiment-design:** Iterative validation
-- **solution-engineering:** Practical implementation framing
 - **skill-extractor:** Extract reusable workflows from conversations
 - **chat-history-lancedb:** Persist and retrieve chat context with vector search
 - **skill-rag-indexer:** Build and query skill/document RAG index

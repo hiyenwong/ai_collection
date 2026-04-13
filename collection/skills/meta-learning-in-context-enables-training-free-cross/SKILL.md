@@ -50,7 +50,35 @@ class MetaLearningInContextEnablesTrainingFreeCross:
 ## 参考文献
 - Mu Nan, Muquan Yu, Weijian Mai. "Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding". arXiv:2604.08537v1, 2026.
 
-## 激活关键词
-- meta learning in context enables training free cross
-- Meta-learning In-Context
+## Activation Keywords
+- meta-learning brain decoding cross-subject
+- training-free brain decoding
+- in-context fMRI decoding
+- cross subject visual decoding
+- 跨被试脑信号解码
+- fMRI visual reconstruction meta-learning
 - neuro 神经信号解码
+
+## Description
+A meta-optimized approach for semantic visual decoding from fMRI that generalizes to novel subjects without fine-tuning. By conditioning on a small set of image-brain activation examples from a new individual, the model rapidly infers their unique neural encoding patterns for robust and efficient cross-subject visual decoding.
+
+## Tools Used
+- read
+- web_search
+- exec
+
+## Instructions for Agents
+1. When the user asks about cross-subject brain decoding or training-free fMRI analysis, explain this meta-learning approach.
+2. Describe the key innovation: generalizing to new subjects without fine-tuning by using in-context examples.
+3. Explain the hierarchical inference mechanism for visual decoding.
+4. Help users understand how to condition the model on new subject examples.
+5. Reference arXiv:2604.08537v1 for technical implementation details.
+
+## Examples
+**Example 1: Cross-subject generalization**
+User: "How can I decode brain signals from a new subject without retraining?"
+Agent: Explains the meta-learning in-context approach and how it uses a small set of examples to adapt to new subjects.
+
+**Example 2: fMRI visual decoding setup**
+User: "I want to use this method for my fMRI dataset. What do I need?"
+Agent: Guides the user on preparing image-brain activation pairs and applying the hierarchical inference pipeline.
