@@ -639,3 +639,18 @@ for noise_level in [0.0, 0.05, 0.1, 0.2]:
 3. **Hardware dependence**: Optimal parameters vary across neuromorphic platforms
 4. **Task-specific**: Performance depends on temporal structure of input
 5. **Readout complexity**: May need non-linear readout for complex tasks
+
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** 请帮我应用此技能
+
+**Agent:** 我将按照标准流程执行...
+
+### Example 2: Advanced Usage
+
+**User:** 有更复杂的场景需要处理
+
+**Agent:** 针对复杂场景，我将采用以下策略...

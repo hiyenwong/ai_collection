@@ -683,3 +683,18 @@ visualize_connectivity(W_true, W_final)
 3. **Tune hyperparameters**: Adjust `lambda_sparse` and `gc_threshold` for desired sparsity
 4. **Validate results**: Compare with known connectivity if available
 5. **Visualize**: Use connectivity matrix viewers to inspect results
+
+
+## Examples
+
+### Example 1: Basic Usage
+
+**User:** 请帮我应用此技能
+
+**Agent:** 我将按照标准流程执行...
+
+### Example 2: Advanced Usage
+
+**User:** 有更复杂的场景需要处理
+
+**Agent:** 针对复杂场景，我将采用以下策略...
