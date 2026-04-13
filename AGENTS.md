@@ -231,118 +231,188 @@ sessions_spawn(
 
 ## Available Agents in This Collection
 
-### Fullstack Engineer
-- **Location:** `collection/agents/fullstack-engineer/`
-- **Purpose:** Senior full-stack engineer focused on modern web development, scalable architecture, and production-grade code
-- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.6 (alternative)
-- **Key Skills:** opencode, claude-code, openspec
-- **Tools:** exec, read, write, edit, process, git, npm, uv, python
+### Algorithm Engineer
+- **Location:** `collection/agents/algorithm-engineer/`
+- **Purpose:** Algorithm design, implementation, optimization, and ML model development with focus on complexity analysis and performance
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick snippets)
+- **Key Skills:** opencode, claude-code, arxiv-search, autoresearch-pipeline, docker
+- **Tools:** exec, read, write, git, web_search
 
-### Stock Analyst
-- **Location:** `collection/agents/stock-analyst/`
-- **Purpose:** Stock analyst focused on financial data analysis and market insights
-- **Model:** claude-sonnet-4.5 (primary) / claude-opus-4.5 (complex analysis)
-- **Key Skills:** akshare, stock-analysis
-- **Tools:** exec (Python), read, write
-
-### Tech Co-Founder (Builder)
-- **Location:** `collection/agents/tech-cofounder/`
-- **Purpose:** Technical co-founder that builds real products based on work orders
-- **Model:** claude-sonnet-4.5 (balanced) / claude-opus-4.5 (complex tasks)
-- **Key Skills:** opencode, claude-code
-- **Tools:** Full development stack (exec, read, write, edit, git, npm, etc.)
-- **Workflow:** Plan → Implement in Stages → Polish → Handoff
-
-### Research Agent
-- **Location:** `collection/agents/research-agent/`
-- **Purpose:** Research specialist for deep investigation and information synthesis
-- **Model:** claude-opus-4.5 (primary) for complex research
-- **Tools:** web_search, web_fetch, memory, read, write
-- **Output:** Comprehensive research reports with sources
-
-### Neuroscientist
-- **Location:** `collection/agents/neuroscientist/`
-- **Purpose:** Neuroscience research synthesis, neural mechanism analysis, and experiment design support
+### Applied Scientist
+- **Location:** `collection/agents/applied-scientist/`
+- **Purpose:** Practical science-driven solution design with experiment iteration
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
-- **Tools:** read, write, web_search
-
-### Computer Network Scientist
-- **Location:** `collection/agents/computer-network-scientist/`
-- **Purpose:** Computer network architecture and protocol behavior analysis with troubleshooting focus
-- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
-- **Tools:** read, write, web_search
-
-### Computational Scientist
-- **Location:** `collection/agents/computational-scientist/`
-- **Purpose:** Computational modeling, simulation workflows, and reproducible scientific computing
-- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** opencode, claude-code, arxiv-search, autoresearch-pipeline, research-literature-kg
 - **Tools:** read, write, exec
 
 ### Biologist
 - **Location:** `collection/agents/biologist/`
 - **Purpose:** Biological mechanism interpretation and experiment design reasoning
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, autoresearch-pipeline, research-literature-kg, opencode, claude-code
 - **Tools:** read, write, web_search
 
-### Statistician
-- **Location:** `collection/agents/statistician/`
-- **Purpose:** Statistical inference, diagnostics, uncertainty quantification, and robust interpretation
+### Computational Scientist
+- **Location:** `collection/agents/computational-scientist/`
+- **Purpose:** Computational modeling, simulation workflows, and reproducible scientific computing
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** opencode, claude-code, arxiv-search, autoresearch-pipeline, docker
 - **Tools:** read, write, exec
 
-### Mathematician
-- **Location:** `collection/agents/mathematician/`
-- **Purpose:** Formal proof-oriented reasoning and structured mathematical derivation
+### Computer Network Scientist
+- **Location:** `collection/agents/computer-network-scientist/`
+- **Purpose:** Computer network architecture and protocol behavior analysis with troubleshooting focus
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
-- **Tools:** read, write
+- **Key Skills:** arxiv-search, docker, cps-security-anomaly-detection
+- **Tools:** read, write, web_search
 
-### Philosopher
-- **Location:** `collection/agents/philosopher/`
-- **Purpose:** Conceptual analysis, argument mapping, and ethical reasoning
-- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
-- **Tools:** read, write
+### Data Engineer
+- **Location:** `collection/agents/data-engineer/`
+- **Purpose:** Data pipeline design, ETL workflows, and data architecture with production-grade reliability
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick SQL)
+- **Key Skills:** opencode, claude-code, openspec, docker, skill-extractor, security-guardrails
+- **Tools:** exec, read, write
 
 ### Economist
 - **Location:** `collection/agents/economist/`
 - **Purpose:** Economic analysis, policy impact evaluation, and market reasoning
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** akshare, consulting-report-search, arxiv-search, news-search, quantum-game-theory-economics, opencode, claude-code
+- **Tools:** read, write, web_search
+
+### Fullstack Engineer
+- **Location:** `collection/agents/fullstack-engineer/`
+- **Purpose:** Senior full-stack engineer focused on modern web development, scalable architecture, and production-grade code
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick snippets)
+- **Key Skills:** opencode, claude-code, openspec, docker, spring-boot, react-components, chrome-extension
+- **Tools:** exec, read, write, edit, process, git, npm, uv, python
+
+### Geneticist
+- **Location:** `collection/agents/geneticist/`
+- **Purpose:** Genetic mechanism interpretation and inheritance/variant reasoning
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, autoresearch-pipeline, research-literature-kg, opencode, claude-code
 - **Tools:** read, write, web_search
 
 ### Linguist
 - **Location:** `collection/agents/linguist/`
 - **Purpose:** Language structure analysis, semantics/pragmatics interpretation, and cross-linguistic comparison
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, autoresearch-pipeline, research-literature-kg
 - **Tools:** read, write
 
 ### Logician
 - **Location:** `collection/agents/logician/`
 - **Purpose:** Formal logic reasoning, validity checks, and consistency analysis
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, autoresearch-pipeline, opencode, claude-code
 - **Tools:** read, write
 
-### Applied Scientist
-- **Location:** `collection/agents/applied-scientist/`
-- **Purpose:** Practical science-driven solution design with experiment iteration
+### Mathematician
+- **Location:** `collection/agents/mathematician/`
+- **Purpose:** Formal proof-oriented reasoning and structured mathematical derivation
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
-- **Tools:** read, write, exec
+- **Key Skills:** arxiv-search, autoresearch-pipeline, opencode, claude-code
+- **Tools:** read, write
 
-### Geneticist
-- **Location:** `collection/agents/geneticist/`
-- **Purpose:** Genetic mechanism interpretation and inheritance/variant reasoning
+### ML Engineer
+- **Location:** `collection/agents/ml-engineer/`
+- **Purpose:** Machine learning system design, training pipelines, model evaluation, and deployment
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick debugging)
+- **Key Skills:** opencode, claude-code, openspec, arxiv-search, autoresearch-pipeline, docker
+- **Tools:** exec, read, write
+
+### Neuroscientist
+- **Location:** `collection/agents/neuroscientist/`
+- **Purpose:** Neuroscience research synthesis, neural mechanism analysis, and experiment design support
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** neuroscience, neuroscience-research-method, arxiv-neuroscience-research-monitor, brain-connectivity-analysis, computational-neuroscience-models, tda-neuroscience, arxiv-search, opencode, claude-code
 - **Tools:** read, write, web_search
+
+### Philosopher
+- **Location:** `collection/agents/philosopher/`
+- **Purpose:** Conceptual analysis, argument mapping, and ethical reasoning
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, consulting-report-search, autoresearch-pipeline
+- **Tools:** read, write
+
+### Physicist
+- **Location:** `collection/agents/physicist/`
+- **Purpose:** Physics problem solving, simulation, numerical analysis, and scientific computing
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick formulas)
+- **Key Skills:** opencode, claude-code, openspec, arxiv-search, autoresearch-pipeline
+- **Tools:** exec, read, write
 
 ### Population Dynamics Scientist
 - **Location:** `collection/agents/population-dynamics-scientist/`
 - **Purpose:** Group/population interaction modeling and scenario-based dynamics analysis
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, opencode, claude-code, autoresearch-pipeline, docker
 - **Tools:** read, write, exec
+
+### Prompt Engineer
+- **Location:** `collection/agents/prompt-engineer/`
+- **Purpose:** Prompt design, optimization, and systematic evaluation for LLM applications
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick tests)
+- **Key Skills:** opencode, claude-code, openspec, skill-extractor, skill-creator, skill-updater, find-skills
+- **Tools:** exec, read, write
 
 ### Psychologist
 - **Location:** `collection/agents/psychologist/`
 - **Purpose:** Cognition/behavior analysis and framework-based psychological reasoning
 - **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, consulting-report-search, autoresearch-pipeline, research-literature-kg
 - **Tools:** read, write, web_search
+
+### Quantitative Analyst
+- **Location:** `collection/agents/quantitative-analyst/`
+- **Purpose:** Quantitative modeling, backtesting, financial data analysis, and trading strategy development
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick calculations)
+- **Key Skills:** opencode, claude-code, akshare, stock-analysis, thsdk-stock, quantum-finance, quantum-portfolio-optimization, news-search
+- **Tools:** exec, read, write
+
+### Research Agent
+- **Location:** `collection/agents/research-agent/`
+- **Purpose:** Research specialist for deep investigation and information synthesis
+- **Model:** claude-opus-4.5 (primary) for complex research
+- **Key Skills:** arxiv-search, arxiv-paper-tracker, autoresearch-pipeline, news-search, consulting-report-search, research-literature-kg, openai-research-monitor
+- **Tools:** web_search, web_fetch, memory, read, write
+
+### Security Engineer
+- **Location:** `collection/agents/security-engineer/`
+- **Purpose:** Security analysis, vulnerability assessment, penetration testing guidance, and secure code review
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative) / claude-haiku-4.5 (quick checks)
+- **Key Skills:** opencode, claude-code, security-guardrails, cps-security-anomaly-detection, data-poisoning-control-security, prompt-injection-defense
+- **Tools:** exec, read, write
+
+### Statistician
+- **Location:** `collection/agents/statistician/`
+- **Purpose:** Statistical inference, diagnostics, uncertainty quantification, and robust interpretation
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** opencode, claude-code, akshare, arxiv-search, autoresearch-pipeline
+- **Tools:** read, write, exec
+
+### Stock Analyst
+- **Location:** `collection/agents/stock-analyst/`
+- **Purpose:** Stock analyst focused on financial data analysis, technical indicators, and market insights
+- **Model:** claude-sonnet-4.5 (primary) / claude-opus-4.5 (complex analysis)
+- **Key Skills:** stock-analysis, akshare, thsdk-stock, quantum-finance, news-search, consulting-report-search, opencode, claude-code
+- **Tools:** exec (Python), read, write
+
+### Tech Co-Founder (Builder)
+- **Location:** `collection/agents/tech-cofounder/`
+- **Purpose:** Technical co-founder that builds real products based on work orders
+- **Model:** claude-sonnet-4.5 (balanced) / claude-opus-4.5 (complex tasks)
+- **Key Skills:** opencode, claude-code, consulting-report-search, news-search, arxiv-search, quantum-game-theory-economics
+- **Tools:** Full development stack (exec, read, write, edit, git, npm, etc.)
+- **Workflow:** Plan → Implement in Stages → Polish → Handoff
+
+### Tech Researcher
+- **Location:** `collection/agents/tech-researcher/`
+- **Purpose:** 科技趋势追踪与AI前沿研究 — tracks AI/tech trends, interprets papers, and synthesizes frontier research
+- **Model:** claude-opus-4.5 (primary) / claude-sonnet-4.5 (alternative)
+- **Key Skills:** arxiv-search, arxiv-paper-tracker, autoresearch-pipeline, news-search, consulting-report-search, openai-research-monitor, neuroscience
+- **Tools:** web_search, web_fetch, read, write
 
 ## Troubleshooting
 
