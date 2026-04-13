@@ -18,6 +18,9 @@ Philosopher agent focused on conceptual analysis, argument mapping, ethical reas
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **consulting-report-search:** Search consulting and industry reports (iResearch, McKinsey, etc.)
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
 
 ## System Prompt
 ```

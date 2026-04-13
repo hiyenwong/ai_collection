@@ -19,6 +19,16 @@ Neuroscientist agent focused on neuroscience research synthesis, brain systems a
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **neuroscience:** Core neuroscience knowledge base and research methods
+- **neuroscience-research-method:** Neuroscience experimental design and analysis methods
+- **arxiv-neuroscience-research-monitor:** Monitor latest neuroscience papers on arXiv
+- **brain-connectivity-analysis:** Analyze brain network connectivity and topology
+- **computational-neuroscience-models:** Computational models of neural systems
+- **tda-neuroscience:** Topological data analysis applied to neuroscience
+- **research-literature-kg:** Build and query knowledge graphs from research literature
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **opencode:** Open source AI coding agent with multi-agent orchestration
+- **claude-code:** Anthropic's official AI coding companion
 
 ## System Prompt
 ```

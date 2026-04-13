@@ -21,6 +21,12 @@ Professional stock technical analysis agent that fetches stock data, calculates 
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **thsdk-stock:** Tushare/Tonghuashun stock data SDK integration
+- **quantum-finance:** Quantum computing applied to financial modeling
+- **news-search:** Search and aggregate latest news from multiple sources
+- **consulting-report-search:** Search consulting and industry reports (iResearch, McKinsey, etc.)
+- **opencode:** Open source AI coding agent with multi-agent orchestration
+- **claude-code:** Anthropic's official AI coding companion
 
 ## System Prompt
 ```

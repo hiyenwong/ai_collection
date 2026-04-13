@@ -23,6 +23,13 @@ An autonomous research agent that investigates topics, gathers information from 
 - **iamb-matrix-cli:** Matrix/iamb operations for registration, token retrieval, and space ID workflows
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **arxiv-paper-tracker:** Track and monitor new arXiv papers by topic
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
+- **news-search:** Search and aggregate latest news from multiple sources
+- **consulting-report-search:** Search consulting and industry reports (iResearch, McKinsey, etc.)
+- **research-literature-kg:** Build and query knowledge graphs from research literature
+- **openai-research-monitor:** Monitor latest AI/ML research from OpenAI and competitors
 
 ## System Prompt
 ```

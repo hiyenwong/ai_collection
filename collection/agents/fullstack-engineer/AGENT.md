@@ -23,6 +23,10 @@ Senior Full-Stack Engineer agent specializing in modern web development, scalabl
 - **iamb-matrix-cli:** Matrix/iamb operations for registration, token retrieval, and space ID workflows
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **docker:** Docker container management for reproducible environments
+- **spring-boot:** Spring Boot backend service development
+- **react-components:** React component library and frontend patterns
+- **chrome-extension:** Chrome browser extension development
 
 ## System Prompt
 ```

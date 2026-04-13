@@ -17,6 +17,13 @@ Prompt Engineering specialist focused on designing, optimizing, and evaluating p
 - **opencode:** Multi-agent orchestration for complex prompt workflows
 - **claude-code:** AI coding companion for prompt automation
 - **openspec:** Specification-driven prompt development
+- **skill-extractor:** Extract reusable workflows from conversations
+- **skill-creator:** Create new skills from agent interactions
+- **skill-updater:** Update and refine existing skill definitions
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **find-skills:** Discover and recommend relevant skills for tasks
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **security-guardrails:** Prevent exposure of sensitive credentials and API keys
 
 ## System Prompt
 ```

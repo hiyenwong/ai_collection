@@ -19,6 +19,9 @@ Computer Network Scientist agent focused on network architecture analysis, proto
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **docker:** Docker container management for reproducible environments
+- **cps-security-anomaly-detection:** Cyber-Physical Systems security and anomaly detection
 
 ## System Prompt
 ```

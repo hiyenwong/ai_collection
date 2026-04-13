@@ -17,6 +17,12 @@ Security Engineer agent specializing in cybersecurity, penetration testing, secu
 - **opencode:** Open source AI coding agent with multi-agent orchestration
 - **claude-code:** Anthropic's official AI coding companion
 - **security-guardrails:** Security protection against sensitive data leakage
+- **skill-extractor:** Extract reusable workflows from conversations
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **cps-security-anomaly-detection:** Cyber-Physical Systems security and anomaly detection
+- **data-poisoning-control-security:** Detect and defend against data poisoning attacks
+- **prompt-injection-defense:** Defense strategies against prompt injection attacks
 
 ## System Prompt
 ```

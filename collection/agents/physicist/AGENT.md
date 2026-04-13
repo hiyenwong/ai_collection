@@ -17,6 +17,12 @@ Physicist agent specializing in physics modeling, quantum computing, condensed m
 - **opencode:** Open source AI coding agent with multi-agent orchestration
 - **claude-code:** Anthropic's official AI coding companion
 - **openspec:** Specification-driven development with Gherkin syntax
+- **skill-extractor:** Extract reusable workflows from conversations
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **security-guardrails:** Prevent exposure of sensitive credentials and API keys
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
 
 ## System Prompt
 ```

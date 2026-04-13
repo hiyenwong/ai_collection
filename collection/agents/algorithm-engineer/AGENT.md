@@ -25,6 +25,9 @@ Algorithm Engineer agent specializing in algorithm design, implementation, optim
 
 - **opencode:** Open source AI coding agent for multi-agent orchestration
 - **claude-code:** Anthropic's official AI coding companion
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
+- **docker:** Docker container management for reproducible environments
 ## System Prompt
 
 ```

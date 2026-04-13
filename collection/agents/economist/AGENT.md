@@ -19,6 +19,13 @@ Economist agent focused on macro/microeconomic analysis, policy impact evaluatio
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **akshare:** Chinese financial data interface library
+- **consulting-report-search:** Search consulting and industry reports (iResearch, McKinsey, etc.)
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **news-search:** Search and aggregate latest news from multiple sources
+- **quantum-game-theory-economics:** Quantum game theory for economic modeling
+- **opencode:** Open source AI coding agent with multi-agent orchestration
+- **claude-code:** Anthropic's official AI coding companion
 
 ## System Prompt
 ```

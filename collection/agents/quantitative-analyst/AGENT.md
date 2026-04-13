@@ -18,6 +18,14 @@ Quantitative Analyst agent specializing in quantitative trading strategies, fina
 - **claude-code:** Anthropic's official AI coding companion
 - **akshare:** Chinese financial data interface
 - **stock-analysis:** Stock technical analysis with indicators
+- **skill-extractor:** Extract reusable workflows from conversations
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **security-guardrails:** Prevent exposure of sensitive credentials and API keys
+- **thsdk-stock:** Tushare/Tonghuashun stock data SDK integration
+- **quantum-finance:** Quantum computing applied to financial modeling
+- **quantum-portfolio-optimization:** Quantum algorithm-based portfolio optimization
+- **news-search:** Search and aggregate latest news from multiple sources
 
 ## System Prompt
 ```

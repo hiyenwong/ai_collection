@@ -19,6 +19,10 @@ Psychologist agent focused on cognition and behavior analysis, psychological fra
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **consulting-report-search:** Search consulting and industry reports (iResearch, McKinsey, etc.)
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
+- **research-literature-kg:** Build and query knowledge graphs from research literature
 
 ## System Prompt
 ```

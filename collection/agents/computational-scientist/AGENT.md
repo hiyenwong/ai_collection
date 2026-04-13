@@ -19,6 +19,11 @@ Computational Scientist agent focused on numerical modeling, simulation design, 
 - **skill-rag-indexer:** Build and query skill/document RAG index
 
 - **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information
+- **opencode:** Open source AI coding agent with multi-agent orchestration
+- **claude-code:** Anthropic's official AI coding companion
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
+- **docker:** Docker container management for reproducible environments
 
 ## System Prompt
 ```

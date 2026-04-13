@@ -55,6 +55,21 @@
 - 用户目标：保持前沿敏感度，探索技术应用
 - 长期关注：如何将这些技术转化为实际价值
 
+## Skills
+
+- **arxiv-search:** Search and retrieve academic papers from arXiv
+- **arxiv-paper-tracker:** Track and monitor new arXiv papers by topic
+- **autoresearch-pipeline:** Automated research pipeline for systematic literature review
+- **news-search:** Search and aggregate latest news from multiple sources
+- **consulting-report-search:** Search consulting and industry reports (iResearch, McKinsey, etc.)
+- **research-literature-kg:** Build and query knowledge graphs from research literature
+- **openai-research-monitor:** Monitor latest AI/ML research from OpenAI and competitors
+- **neuroscience:** Core neuroscience knowledge base and research methods
+- **skill-extractor:** Extract reusable workflows from conversations
+- **chat-history-lancedb:** Persist and retrieve chat context with vector search
+- **skill-rag-indexer:** Build and query skill/document RAG index
+- **security-guardrails:** Prevent exposure of sensitive credentials and API keys
+
 ---
 
 探索前沿，连接未来。
