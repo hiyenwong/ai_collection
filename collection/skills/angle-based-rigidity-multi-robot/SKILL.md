@@ -94,6 +94,22 @@ class AngleRigidityFramework:
         
         return R
     
+    def _angle_constraint_gradient(self, i, j, k):
+        """Compute gradient of angle at j w.r.t. positions of i, j, k"""
+        p_i = self.positions[i]
+        p_j = self.positions[j] 
+        p_k = self.positions[k]
+        
+        # Vectors from j to neighbors
+        v_ji = p_i - p_j
+        v_jk = p_k - p_j
+        
+        # Compute gradient (simplified)
+        grad = np.zeros(2 * self.n_robots)
+        # Gradient w.r.t. p_i, p_j, p_k
+        # ... implementation details ...
+        return grad
+    
     def is_rigid(self):
         """Check if framework is angle rigid"""
         R = self.rigidity_matrix()
@@ -149,6 +165,7 @@ def distributed_rigidity_control(robot_id, positions, desired_angles):
                                      positions[k])
             
             # Proportional control
+            k_p = 0.5  # Proportional gain
             control_input += -k_p * error * gradient
     
     return control_input
@@ -199,7 +216,9 @@ def simulate_formation_control(n_robots, duration, dt):
     Simulate multi-robot formation with angle rigidity control
     """
     # Initialize positions (slightly perturbed)
-    positions = initialize_formation(n_robots) + noise
+    positions = initialize_formation(n_robots)
+    noise = np.random.randn(n_robots, 2) * 0.01  # Small perturbation
+    positions = positions + noise
     
     # Define desired angles
     desired_angles = compute_desired_angles(n_robots)

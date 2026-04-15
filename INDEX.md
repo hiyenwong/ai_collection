@@ -85,6 +85,8 @@
 | 技能 | 描述 | 激活词 |
 |------|------|--------|
 | [MPC Plant-Model Mismatch](collection/skills/mpc-plant-model-mismatch/) | MPC植物-模型失配下的稳定性分析，鲁棒控制理论 | MPC, plant-model mismatch, stability, robust control |
+| [Data Poisoning Informativity](collection/skills/data-poisoning-informativity-observability/) | 数据投毒攻击与可观性分析，不变性攻击合成 | data poisoning, observability attack, cyber security |
+| [Angle-based Rigidity](collection/skills/angle-based-rigidity-multi-robot/) | 角度刚性多机器人编队控制，分布式定位与刚性保持 | angle rigidity, multi-robot, formation control |
 
 #### 元技能
 
@@ -179,6 +181,13 @@
 
 ## 最新更新
 
+### 2026-04-15
+
+**系统工程与控制理论:**
+- 新增: Data Poisoning Informativity - 数据投毒攻击与可观性分析 (arXiv:2604.11657)
+- 新增: Angle-based Rigidity - 角度刚性多机器人编队控制 (arXiv:2604.11754)
+- 来源: 系统工程学定时研究任务
+
 ### 2026-04-11
 
 **系统工程与控制理论:**
@@ -234,4 +243,4 @@
 
 ---
 
-*索引最后更新: 2026-04-11*
+*索引最后更新: 2026-04-15*
