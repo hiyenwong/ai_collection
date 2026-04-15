@@ -156,3 +156,47 @@ ai_assistant = AgenticAICoach(industrial_reactor)
 - Lingua Franca
 - deterministic execution
 - cyber-physical systems
+
+## Tools Used
+
+- `read`
+- `write`
+- `edit`
+
+## Instructions for Agents
+
+1. **Understand Requirements**: Identify the need for deterministic execution in HITL CPS
+2. **Design Reactors**: Create reactor components with proper inputs, outputs, and reactions
+3. **Implement Control Logic**: Use AgenticAICoach class for AI-powered decision making
+4. **Ensure Determinism**: Verify logical-time determinism guarantees
+5. **Test Thoroughly**: Validate in simulation before deployment
+
+## Examples
+
+**User**: "Create a deterministic human-in-the-loop driving coach system"
+
+**Agent**: I'll help you create a deterministic HITL driving coach using the reactor model.
+
+```python
+from dataclasses import dataclass
+from typing import List, Dict, Any, Optional
+from enum import Enum
+import time
+
+class EventType(Enum):
+    HUMAN_INPUT = "human_input"
+    AI_DECISION = "ai_decision"
+    PHYSICAL_STATE = "physical_state"
+
+# Initialize reactor-based driving system
+driving_system = AgenticReactor("driving_coach")
+ai_coach = AgenticAICoach(driving_system)
+
+# Process human driver input with deterministic guarantees
+def process_drive_event(event):
+    if event.event_type == EventType.HUMAN_INPUT:
+        return ai_coach.handle_human_input(event.payload)
+    return ai_coach.validate_decision(event.payload)
+```
+
+The system guarantees deterministic execution regardless of human or AI unpredictability.

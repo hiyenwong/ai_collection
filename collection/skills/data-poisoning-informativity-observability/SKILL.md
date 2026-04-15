@@ -229,6 +229,39 @@ if vulnerable:
 - automated-cps-testing-act
 - control-systems
 
+## Examples
+
+**User**: "Analyze power grid data for potential data poisoning vulnerabilities in observability analysis"
+
+**Agent**: I'll perform a security assessment of your power grid data against data poisoning attacks on observability.
+
+```python
+# 1. Load sensor data
+grid_data = load_sensor_data('power_grid.csv')
+
+# 2. Check observability informativity
+observable = check_observability(grid_data)
+print(f"System observable: {observable}")
+
+# 3. Test against attack transformations
+vulnerabilities = []
+for T in generate_test_transformations():
+    compromised_data = T @ grid_data
+    compromised_observable = check_observability(compromised_data)
+    if observable != compromised_observable:
+        vulnerabilities.append(T)
+        alert(f"Vulnerability detected with transformation {T}")
+
+# 4. Assess vulnerability level
+if len(vulnerabilities) > 0:
+    print(f"Found {len(vulnerabilities)} potential attack vectors")
+    deploy_redundancy_measures()
+else:
+    print("No vulnerabilities detected with tested transformations")
+```
+
+This defensive analysis helps identify and mitigate data poisoning risks before attackers exploit them.
+
 ## Implementation Notes
 
 1. **Ethical Considerations**: This methodology is for defensive analysis

@@ -361,6 +361,43 @@ for t in range(timesteps):
 - multi-agent-systems
 - robotics
 
+## Examples
+
+**User**: "Create a formation control system for 4 warehouse robots using angle rigidity"
+
+**Agent**: I'll design an angle-based rigidity control system for your warehouse robots.
+
+```python
+import numpy as np
+
+# Define 4-robot square formation
+positions = np.array([
+    [0, 0],    # Robot 0
+    [1, 0],    # Robot 1
+    [1, 1],    # Robot 2
+    [0, 1]     # Robot 3
+])
+
+# Angle constraints (at vertex, between neighbors)
+angle_constraints = [
+    (3, 0, 1, np.pi/2),  # Angle at robot 0 between 3 and 1
+    (0, 1, 2, np.pi/2),  # Angle at robot 1 between 0 and 2
+    (1, 2, 3, np.pi/2),  # Angle at robot 2 between 1 and 3
+    (2, 3, 0, np.pi/2),  # Angle at robot 3 between 2 and 0
+]
+
+# Verify formation rigidity
+framework = AngleRigidityFramework(positions, angle_constraints)
+print(f"Formation is rigid: {framework.is_rigid()}")
+
+# Deploy distributed control
+for robot_id in range(4):
+    controller = RobotController(robot_id, angle_constraints)
+    controller.update()  # Each robot runs locally
+```
+
+This maintains the square formation using only angle measurements, no distance sensors required.
+
 ## Notes
 
 - Works with directed sensing graphs
