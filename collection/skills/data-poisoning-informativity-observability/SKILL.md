@@ -159,8 +159,69 @@ def power_system_observability(grid_data):
 
 - **Paper**: Data Poisoning Attacks on Informativity for Observability: Invariance-Based Synthesis
 - **Authors**: Iori Takaki, Ahmet Cetinkaya, Hideaki Ishii
-- **arXiv**: 2604.11657 (2026-04-13)
+- **arXiv**: [2604.11657](https://arxiv.org/abs/2604.11657) (2026-04-13)
 - **Category**: eess.SY (Systems and Control)
+
+## Tools Used
+
+- Python 3.x with NumPy, SciPy
+- CVXPY (for convex optimization)
+- Control systems toolbox (optional)
+
+## Instructions for Agents
+
+### Defensive Analysis Workflow
+
+1. **Load Data**: Import time-series data from sensors
+2. **Check Informativity**: Verify data contains enough information for observability analysis
+3. **Test Transformations**: Apply various linear transformations to test robustness
+4. **Validate Results**: Cross-check with redundant data sources
+5. **Document Findings**: Record any anomalies or vulnerabilities
+
+### Security Assessment Steps
+
+```python
+# 1. Load sensor data
+data = load_sensor_data('power_grid.csv')
+
+# 2. Check observability informativity
+observable = check_observability(data)
+
+# 3. Test against attack transformations
+for T in generate_test_transformations():
+    compromised_data = T @ data
+    compromised_observable = check_observability(compromised_data)
+    if observable != compromised_observable:
+        alert(f"Vulnerability detected with transformation {T}")
+
+# 4. Implement defense
+if vulnerable:
+    deploy_redundancy_measures()
+```
+
+## Error Handling
+
+### Analysis Failures
+
+1. **Rank Deficiency**: Data matrix is rank-deficient
+   - **Cause**: Insufficient sensor diversity
+   - **Solution**: Add more sensors or collect longer time series
+
+2. **Non-Invertible Transformation**: T is singular
+   - **Cause**: Poorly conditioned data
+   - **Solution**: Regularization or data preprocessing
+
+3. **Numerical Instability**: LMI solver fails
+   - **Cause**: Badly scaled problem
+   - **Solution**: Normalize data matrices
+
+### Defense Failures
+
+1. **Redundancy Mismatch**: Multiple sensors disagree
+   - **Action**: Use voting mechanism or median filter
+   
+2. **False Positives**: Legitimate data flagged as attack
+   - **Action**: Adjust detection thresholds
 
 ## Related Skills
 

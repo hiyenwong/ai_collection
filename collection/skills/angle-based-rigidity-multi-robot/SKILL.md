@@ -298,8 +298,61 @@ class RobotController:
 
 - **Paper**: Angle-based Localization and Rigidity Maintenance Control for Multi-Robot Networks
 - **Authors**: J. Francisco Presenza, Leonardo J. Colombo, Juan I. Giribet et al.
-- **arXiv**: 2604.11754 (2026-04-13)
+- **arXiv**: [2604.11754](https://arxiv.org/abs/2604.11754) (2026-04-13)
 - **Category**: eess.SY (Systems and Control)
+
+## Tools Used
+
+- Python 3.x with NumPy
+- Matplotlib (for visualization)
+- ROS/ROS2 (optional, for robot deployment)
+
+## Instructions for Agents
+
+### Step-by-Step Implementation
+
+1. **Define Formation**: Create initial robot positions and angle constraints
+2. **Check Rigidity**: Verify the framework is angle rigid using rigidity matrix
+3. **Implement Control**: Deploy distributed control law on each robot
+4. **Run Simulation**: Test in simulator before hardware deployment
+5. **Deploy**: Transfer to physical robots
+
+### Example Workflow
+
+```python
+# 1. Define formation
+positions = np.array([[0,0], [1,0], [1,1], [0,1]])
+constraints = [(3,0,1,np.pi/2), (0,1,2,np.pi/2), ...]
+
+# 2. Check rigidity
+framework = AngleRigidityFramework(positions, constraints)
+assert framework.is_rigid(), "Formation not rigid!"
+
+# 3. Run control loop
+for t in range(timesteps):
+    for robot_id in range(n_robots):
+        velocity = distributed_rigidity_control(robot_id, positions, constraints)
+        update_position(robot_id, velocity)
+```
+
+## Error Handling
+
+### Common Issues
+
+1. **Collinear Robots**: When three robots are collinear, angle is undefined
+   - **Solution**: Add small perturbation to positions
+   
+2. **Non-Rigid Formation**: Framework can flex
+   - **Solution**: Add more angle constraints or robots
+   
+3. **Disconnected Graph**: Sensing graph is not connected
+   - **Solution**: Ensure minimum spanning tree in sensing topology
+
+### Safety Considerations
+
+- Always validate rigidity before deployment
+- Use soft constraints to prevent collision
+- Monitor convergence in simulation first
 
 ## Related Skills
 
