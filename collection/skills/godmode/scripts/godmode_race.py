@@ -200,12 +200,18 @@ def score_response(content, query):
 
     # LENGTH SCORING
     length = len(content)
-    if length < 200:     score += 10
-    elif length < 500:   score += 30
-    elif length < 1000:  score += 50
-    elif length < 2000:  score += 70
-    elif length < 4000:  score += 85
-    else:                score += 95
+    if length < 200:
+        score += 10
+    elif length < 500:
+        score += 30
+    elif length < 1000:
+        score += 50
+    elif length < 2000:
+        score += 70
+    elif length < 4000:
+        score += 85
+    else:
+        score += 95
 
     # Hedge penalty (-30 each)
     score -= hedge_count * 30

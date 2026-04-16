@@ -9,7 +9,6 @@ import sys
 import re
 import subprocess
 from datetime import datetime
-from urllib.parse import urljoin
 
 # Configuration
 OBSIDIAN_PATH = os.environ.get('OBSIDIAN_VAULT', '/Users/hiyenwong/obsdian/Documents/OpenAI Research')
@@ -30,7 +29,7 @@ if not PROXY:
                 PROXY = f'http://127.0.0.1:{test_port}'
                 print(f'Detected working proxy: {PROXY}')
                 break
-        except:
+        except Exception:
             pass
 
 if not PROXY:
@@ -255,7 +254,7 @@ type: daily-update
     print(f'Created daily update: {filename}')
 
 def main():
-    print(f'Fetching AI Research updates...')
+    print('Fetching AI Research updates...')
     print(f'Time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     
     research_url = 'openai.com/research'

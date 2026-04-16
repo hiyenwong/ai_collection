@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E402, F821
 """
 Auto-Jailbreak Pipeline
 
@@ -609,7 +610,7 @@ def auto_jailbreak(model=None, base_url=None, api_key=None,
 
         # Try with system prompt + prefill combined
         if verbose:
-            print(f"  [RETRY] Adding prefill messages...")
+            print("  [RETRY] Adding prefill messages...")
         msgs = _build_messages(
             system_prompt=system_prompt,
             prefill=STANDARD_PREFILL,
