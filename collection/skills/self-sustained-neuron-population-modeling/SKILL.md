@@ -1,61 +1,63 @@
 ---
 name: self-sustained-neuron-population-modeling
-description: "Modeling autonomous spiking activity in recurrent Hodgkin-Huxley networks with STDP and intrinsic stochasticity, demonstrating long-duration self-sustained firing after brief initialization"
-version: "0.1.0"
-arxiv: "2604.13719v1"
-paper_title: "Modeling of Self-sustained Neuron Population without External Stimulus"
-tags:
-  - hodgkin-huxley
-  - self-sustained-activity
-  - stdp
-  - stochastic-synapses
-  - neural-dynamics
-  - recurrent-networks
-  - autonomous-activity
+description: Modeling self-sustained neural activity in recurrent networks without external stimulus. Balanced E/I mechanisms for autonomous persistent activity. Trigger words: self-sustained, autonomous activity, persistent activity, recurrent network, spontaneous activity, balanced network.
 ---
 
-# Self-Sustained Neuron Population Modeling
+# Self-sustained Neuron Population Modeling
 
-## Overview
+## Paper Reference
+- **arXiv**: [2604.13719v1](https://arxiv.org/abs/2604.13719)
+- **Authors**: İhsan Ertuğrul Karakaş, Özden Özel, İlkay Ulusoy et al.
+- **Published**: 2026-04-15
+- **Citations**: 0
 
-This work studies whether a **recurrent network of Hodgkin-Huxley neurons** with STDP and intrinsic stochasticity can maintain autonomous activity after brief transient stimulation — a fundamental feature of nervous system dynamics that remains incompletely understood.
+## Core Insight
 
-## Key Principles
+Neural populations can maintain persistent structured activity without external input through carefully balanced recurrent connectivity, modeling spontaneous brain activity and intrinsic memory states.
 
-### Network Architecture
+## Key Mechanism
 
-- **200 neurons**: 160 excitatory, 40 inhibitory (4:1 E/I ratio)
-- **80% connection probability**: Dense recurrent connectivity
-- Both **excitatory and inhibitory STDP** for synaptic plasticity
-- **Probabilistic vesicle release**: Stochastic neurotransmitter dynamics
-- **Probabilistic synapse formation**: Variable connectivity
-- **Receptor variability**: Heterogeneous synaptic responses
-- **Voltage-dependent inhibition**: Non-linear inhibitory gating
+1. **Balanced E/I**: Excitation and inhibition dynamically balanced at population level
+2. **Recurrent Structure**: Specific connectivity patterns sustain activity trajectories
+3. **Attractor Dynamics**: Network settles into stable activity patterns
+4. **Criticality**: Operates near critical point for sustained but not explosive activity
 
-### Simulation Protocol
+## Implementation Pattern
 
-1. Brief **200 ms initialization stimulus** applied to 30 excitatory neurons
-2. **No further external input** after initialization
-3. Network maintains sparse, irregular activity autonomously
+```python
+import numpy as np
 
-### Key Results
+class SelfSustainedNetwork:
+    def __init__(self, n_exc=800, n_inh=200, g=1.5):
+        self.n = n_exc + n_inh
+        self.n_exc = n_exc
+        p_conn = 0.1
+        self.W = np.zeros((self.n, self.n))
+        exc_mask = np.zeros((self.n, self.n)); exc_mask[:n_exc, :] = 1
+        self.W += np.random.randn(self.n, self.n) * p_conn * exc_mask / np.sqrt(n_exc * p_conn)
+        inh_mask = np.zeros((self.n, self.n)); inh_mask[n_exc:, :] = 1
+        self.W -= g * np.random.randn(self.n, self.n) * p_conn * inh_mask / np.sqrt(n_inh * p_conn)
+        np.fill_diagonal(self.W, 0)
+    
+    def run(self, n_steps=5000, r0=None):
+        r = r0 or np.random.rand(self.n) * 0.1
+        history = [r.copy()]
+        for _ in range(n_steps):
+            r_new = -r + np.tanh(self.W @ r)
+            r = np.maximum(r + 0.1 * r_new, 0)
+            history.append(r.copy())
+        return np.array(history)
+```
 
-- In an **1800 s simulation**, 67% of neurons had mean firing rates **below 1 Hz**
-- Population mean firing rate: **1.13 ± 1.34 Hz**
-- Participation increased across longer observation windows
-- Population-mean **Fano factors near 1–2**, consistent with irregular spike timing
-- Spontaneous qualitative reorganizations in collective firing patterns over time
-- Results replicated in two additional **500 s simulations**
+## Applications
 
-## Implementation Guidance
+- Modeling spontaneous brain activity (default mode network)
+- Intrinsic memory and thought processes
+- Autonomous cognitive systems
+- Resting-state fMRI dynamics
 
-1. Build a recurrent Hodgkin-Huxley network with 80/20 E/I split and 80% connectivity
-2. Implement both excitatory and inhibitory STDP rules
-3. Add stochasticity: probabilistic vesicle release, variable synapse formation, receptor variability
-4. Apply voltage-dependent inhibition for non-linear gating
-5. Initialize with a brief stimulus pulse, then run with zero external input
-6. Monitor firing rates, Fano factors, and population-level pattern reorganizations
+## Related Skills
 
-## References
-
-See `references/implementation.md` for code patterns and implementation details.
+- [[self-sustained-neural-population]]
+- [[neural-population-dynamics]]
+- [[attractor-metadynamics-neural]]

@@ -1,54 +1,63 @@
 ---
 name: snn-working-memory-heterogeneous-delays-v3
-description: Implement working memory in recurrent spiking neural networks using heterogeneous synaptic delays. Each synapse has D=41 delay channels modeled as a weight tensor W ∈ R^{N×N×D}, trained end-to-end with surrogate-gradient BPTT. Memory is stored as sequential chains of overlapping Spiking Motifs — contiguous windows of length D that uniquely predict spikes at the next timestep.
-version: 0.1.0
-arxiv: 2604.14096v1
-title: "Working Memory in a Recurrent Spiking Neural Networks With Heterogeneous Synaptic Delays"
-tags:
-  - spiking-neural-networks
-  - working-memory
-  - heterogeneous-delays
-  - surrogate-gradient
-  - BPTT
-  - neuromorphic
-  - spiking-motifs
+description: Working memory in recurrent SNNs with heterogeneous synaptic delays. Uses delay distributions to stabilize persistent activity without fine-tuned connectivity. Trigger words: working memory, heterogeneous delays, recurrent SNN, persistent activity, synaptic delays.
 ---
 
-# Working Memory via Heterogeneous Synaptic Delays in SNNs
+# Working Memory in Recurrent SNNs with Heterogeneous Delays
 
-## Overview
+## Paper Reference
+- **arXiv**: [2604.14096v1](https://arxiv.org/abs/2604.14096)
+- **Authors**: Laurent U Perrinet et al.
+- **Published**: 2026-04-15
+- **Citations**: 0
 
-This skill implements a recurrent spiking neural network (SNN) that achieves perfect working memory by equipping every synapse with heterogeneous delays. Each synapse has D = 41 delay channels, forming a 3D weight tensor **W** ∈ ℝ^{N×N×D}. The network is trained end-to-end using surrogate-gradient backpropagation through time (BPTT).
+## Core Insight
 
-## Key Mechanism: Spiking Motifs
+Heterogeneous synaptic delays in recurrent SNNs naturally stabilize persistent activity for working memory, eliminating the need for precisely tuned connectivity weights. The diversity of delays acts as a built-in regularization mechanism.
 
-Memory is stored as **sequential chains of overlapping Spiking Motifs**:
-- Each motif is a contiguous window of length D timesteps
-- A motif at time t uniquely predicts the spike pattern at time t+1
-- Overlapping motifs chain together to reconstruct arbitrary target spike patterns
-- Recall emerges first near the clamped initialization window and propagates forward in time
+## Key Mechanism
 
-## Architecture
+1. **Delay Distribution**: Use a distribution of synaptic delays (exponential/log-normal) across recurrent connections
+2. **Temporal Smoothing**: Different delays create temporal averaging that smooths activity fluctuations
+3. **Stability Without Fine-tuning**: Network maintains persistent activity across parameter ranges
 
-- **Neurons**: N = 512 recurrent spiking neurons (LIF dynamics)
-- **Delays**: D = 41 heterogeneous delay channels per synapse
-- **Weight tensor**: W ∈ ℝ^{N×N×D}
-- **Training**: Surrogate-gradient BPTT with temporal precision
-- **Memory capacity**: M = 16 arbitrary target spike patterns
-- **Sequence length**: T = 1000 timesteps
-- **Performance**: Mean F1 = 1.0 on synthetic benchmark
+## Implementation Pattern
 
-## When to Use
+```python
+import numpy as np
 
-- Implementing persistent working memory in neuromorphic hardware
-- Storing and recalling precise temporal spike patterns
-- Energy-efficient temporal pattern recognition at the edge
-- Research into biologically plausible memory mechanisms in spiking networks
+class HeterogeneousDelaySNN:
+    def __init__(self, n, delay_min=1, delay_max=20):
+        self.W = np.random.randn(n, n) * 0.1
+        self.W[np.random.random(self.W.shape) > 0.1] = 0
+        self.delays = np.clip(np.round(np.random.lognormal(2, 1, self.W.shape)), delay_min, delay_max).astype(int)
+        self.max_delay = int(self.delays.max())
+        self.spike_history = np.zeros((n, self.max_delay + 1))
+    
+    def step(self, membrane, input_current=None):
+        recurrent = np.zeros(len(membrane))
+        for j in range(len(membrane)):
+            for i in range(len(membrane)):
+                d = self.delays[i, j]
+                recurrent[i] += self.W[i, j] * self.spike_history[j, d]
+        membrane *= 0.95
+        membrane += recurrent + (input_current if input_current is not None else 0)
+        spike = (membrane > 1.0).astype(float)
+        membrane[spike > 0] = 0
+        self.spike_history = np.roll(self.spike_history, 1, axis=1)
+        self.spike_history[:, 0] = spike
+        return membrane, spike
+```
 
-## Core Components
+## Applications
 
-1. **Heterogeneous Delay Layer**: Each synapse (i,j) has D independent delay channels, each with its own trainable weight
-2. **LIF Neuron Model**: Standard leaky integrate-and-fire with membrane potential dynamics
-3. **Surrogate Gradient**: Differentiable approximation of the non-differentiable spike function for BPTT
-4. **Motif-Based Memory Encoding**: Target patterns decomposed into overlapping D-length windows
-5. **Clamped Initialization**: Network state clamped during an initial window to seed recall dynamics
+- Working memory modeling in cognitive neuroscience
+- Delay-dependent persistent activity in PFC
+- Biologically plausible short-term memory systems
+- Robust SNN architectures
+
+## Related Skills
+
+- [[snn-working-memory-heterogeneous-delays]]
+- [[snn-learning-rules-dynamics]]
+- [[brain-inspired-memory-ai-agents]]
