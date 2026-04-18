@@ -1,75 +1,13 @@
 ---
 name: quantized-snn-hardware-optimization
-version: v2.0.0
-last_updated: 2026-04-18
+version: v1.0.0
+last_updated: 2026-04-06
 description: "Quantized Spiking Neural Network Hardware Optimization - techniques for integer-state SNNs, hardware acceleration, and energy-efficient neuromorphic computing. Activation: quantized SNN, hardware SNN, neuromorphic optimization, energy-efficient spiking network, integer-state SNN, SNN quantization."
 ---
 
 # Quantized SNN Hardware Optimization
 
 Skill for optimizing Spiking Neural Networks (SNNs) through quantization and hardware acceleration techniques.
-
-## Activation Keywords
-
-- quantized SNN
-- hardware SNN
-- neuromorphic optimization
-- energy-efficient spiking network
-- integer-state SNN
-- SNN quantization
-- FPGA neuromorphic
-- 量化脉冲神经网络
-- 神经形态硬件优化
-
-## Tools Used
-
-- `exec`: Run Python SNN quantization and simulation scripts
-- `read`: Load SNN model configurations and hardware specs
-- `write`: Generate optimized SNN code and hardware mapping reports
-
-## Instructions for Agents
-
-### Step 1: Assess Quantization Requirements
-Identify target hardware (FPGA/ASIC/GPU) and acceptable accuracy trade-off; choose bit width (4/8/16).
-
-### Step 2: Quantize Network Components
-Apply `quantize_weights()` and `quantize_membrane()` to convert continuous SNN to integer-state representation.
-
-### Step 3: Implement Event-Driven Processing
-Use `process_spikes_event_driven()` to exploit temporal sparsity; update only on spike events.
-
-### Step 4: Map to Hardware
-Select strategy: FPGA (parallel neuron groups), ASIC (crossbar arrays), or GPU (batch processing).
-
-### Step 5: Evaluate and Report
-Measure spike efficiency, energy per spike, throughput/watt; report accuracy drop vs energy savings.
-
-## Examples
-
-### Example 1: 8-bit SNN Quantization
-
-```
-User: "Quantize my SNN model for edge deployment with minimal accuracy loss"
-
-Agent:
-1. Analyze model: identify weight and membrane potential ranges
-2. Apply 8-bit quantization (~3-5% accuracy drop, ~60% energy savings)
-3. Implement batch normalization before quantization
-4. Validate on test set; report accuracy and energy metrics
-```
-
-### Example 2: FPGA Neuromorphic Mapping
-
-```
-User: "Map quantized SNN to FPGA for real-time sensory processing"
-
-Agent:
-1. Apply 8-bit quantization to all layers
-2. Design parallel neuron groups for FPGA pipeline
-3. Implement event-driven spike routing with pipeline
-4. Estimate throughput/watt and latency
-5. Generate optimized hardware configuration
-```
 
 ## Core Concepts
 
