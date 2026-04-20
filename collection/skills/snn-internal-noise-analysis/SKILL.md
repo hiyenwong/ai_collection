@@ -1,66 +1,72 @@
 ---
 name: snn-internal-noise-analysis
-description: Analysis of additive and multiplicative internal noise in spiking neural networks. Identifies critical noise mechanisms and provides practical robustness strategies including sigmoid-based pre-filtering.
+description: Analysis of internal noise mechanisms in Spiking Neural Networks including additive and multiplicative noise effects
 version: 1.0.0
-arxiv: 2604.13612v1
-tags:
-  - spiking-neural-networks
-  - noise-analysis
-  - robustness
-  - leaky-integrate-and-fire
-  - multiplicative-noise
-  - input-preprocessing
+author: Research Synthesis
+license: MIT
+metadata:
+  hermes:
+    tags: [snn, internal-noise, robustness, hardware, lif-neurons]
+    source_paper: "General aspects of internal noise in spiking neural networks (arXiv:2604.13612)"
+    authors: "I. D. Kolesnikov, D. A. Maksimov, V. M. Moskvitin, N. Semenova"
+    published: "2026-04-15"
+    category: "neuroscience"
 ---
 
 # SNN Internal Noise Analysis
 
 ## Overview
+Examines additive and multiplicative noise impact on LIF neurons and trained SNNs across processing stages. Critical for understanding SNN robustness and hardware implementations.
 
-This skill provides methods for analyzing and mitigating the effects of internal noise in spiking neural networks. It covers additive and multiplicative noise at different stages of neural processing and identifies practical strategies for improving SNN robustness.
+## Key Concepts
 
-## Key Findings
+### Additive Noise
+- Membrane potential fluctuations
+- Thermal noise in hardware
+- Background synaptic noise
 
-1. **Most detrimental noise**: Multiplicative noise applied to the membrane potential causes the largest accuracy degradation by suppressing membrane potentials toward large negative values, effectively silencing neuronal activity
-2. **Best defense**: A sigmoid-based input pre-filter that shifts inputs to a strictly positive range effectively counters multiplicative membrane noise
-3. **With pre-filtering**: Additive noise in the input current becomes the dominant source of degradation; other noise configurations reduce accuracy by no more than 1%, even at high noise intensity
-4. **Common vs uncommon noise**: SNNs exhibit greater robustness to common (shared) noise across neuron populations in hidden layers
+### Multiplicative Noise
+- Synaptic weight variability
+- Parameter mismatch in neuromorphic chips
+- Gain modulation
 
-## Noise Injection Points
+## Implementation Pattern
 
-| Stage | Noise Type | Effect | Severity |
-|-------|-----------|--------|----------|
-| Input current | Additive | Moderate degradation | Medium |
-| Input current | Multiplicative | Significant degradation | High |
-| Membrane potential | Additive | Moderate degradation | Medium |
-| Membrane potential | Multiplicative | **Severe degradation** (silences neurons) | **Critical** |
-| Output spikes | Additive | Minimal impact | Low |
-| Output spikes | Multiplicative | Moderate degradation | Medium |
+```python
+import numpy as np
 
-## Practical Recommendations
+class NoisyLIF:
+    def __init__(self, tau=0.02, additive_sigma=0.1, mult_sigma=0.05):
+        self.tau = tau
+        self.additive_sigma = additive_sigma
+        self.mult_sigma = mult_sigma
+        self.v = 0.0
 
-1. **Always use sigmoid-based pre-filtering** to ensure strictly positive input range
-2. **Prioritize input current noise robustness** after pre-filtering (it becomes the dominant failure mode)
-3. **Exploit common noise correlation** — SNNs are more robust to shared noise than independent noise
-4. **Monitor membrane potential distributions** for signs of suppression toward large negative values
+    def step(self, input_current, dt=0.001):
+        additive_noise = np.random.normal(0, self.additive_sigma)
+        mult_noise = 1 + np.random.normal(0, self.mult_sigma)
 
-## Implementation Guide
+        dv = dt / self.tau * (-self.v + input_current * mult_noise + additive_noise)
+        self.v += dv
 
-See `references/implementation.md` for detailed code patterns including:
-- LIF neuron with configurable noise injection
-- Additive and multiplicative noise at all stages
-- Sigmoid-based input pre-filtering
-- Common vs uncommon noise comparison
-- Robustness evaluation framework
+        if self.v >= 1.0:
+            self.v = 0.0
+            return 1
+        return 0
+```
 
-## Usage
-
-This skill is applicable when:
-- Training SNNs in noisy environments (neuromorphic hardware, biological interfaces)
-- Analyzing robustness of spiking architectures
-- Designing noise-resilient input preprocessing pipelines
-- Studying noise effects in computational neuroscience models
+## Applications
+- Hardware SNN design
+- Robustness analysis
+- Neuromorphic chip validation
 
 ## References
+- General aspects of internal noise in spiking neural networks
+- Authors: I. D. Kolesnikov, D. A. Maksimov, V. M. Moskvitin, N. Semenova
+- arXiv: 2604.13612 (2026-04-15)
 
-- **Paper**: "General aspects of internal noise in spiking neural networks"
-- **arXiv**: 2604.13612v1
+## Activation
+- snn internal noise
+- noise analysis
+- hardware robustness
+- 脉冲噪声分析
