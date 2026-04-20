@@ -565,3 +565,38 @@ for desc in descriptions:
 - **Paper (AudioGen)**: https://arxiv.org/abs/2209.15352
 - **HuggingFace**: https://huggingface.co/facebook/musicgen-small
 - **Demo**: https://huggingface.co/spaces/facebook/MusicGen
+
+## Activation Keywords
+
+- "audiocraft-audio-generation"
+- "audiocraft audio generation"
+- "use audiocraft audio generation"
+- "audiocraft audio generation help"
+- "audiocraft audio generation tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Audiocraft Audio Generation usage
+```
+User: "Help me with audiocraft audio generation"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed audiocraft audio generation assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

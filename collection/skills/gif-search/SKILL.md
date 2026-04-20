@@ -84,3 +84,38 @@ Each result has multiple formats under `.media_formats`:
 - URL-encode the query: spaces as `+`, special chars as `%XX`
 - For sending in chat, `tinygif` URLs are lighter weight
 - GIF URLs can be used directly in markdown: `![alt](url)`
+
+## Activation Keywords
+
+- "gif-search"
+- "gif search"
+- "use gif search"
+- "gif search help"
+- "gif search tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Gif Search usage
+```
+User: "Help me with gif search"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed gif search assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

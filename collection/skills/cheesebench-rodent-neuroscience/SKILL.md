@@ -55,3 +55,38 @@ def run_cheesebench(model, task_id=None):
 
 - Original paper: arXiv:2604.13661v1
 - Published: 2026-04-15
+
+## Activation Keywords
+
+- "cheesebench-rodent-neuroscience"
+- "cheesebench rodent neuroscience"
+- "use cheesebench rodent neuroscience"
+- "cheesebench rodent neuroscience help"
+- "cheesebench rodent neuroscience tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Cheesebench Rodent Neuroscience usage
+```
+User: "Help me with cheesebench rodent neuroscience"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed cheesebench rodent neuroscience assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

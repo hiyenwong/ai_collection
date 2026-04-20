@@ -59,3 +59,38 @@ class AutoregressiveFlowMatcher(nn.Module):
 - [[neural-dynamics-universal-translator]]
 - [[probabilistic-prediction-neural-dynamics]]
 - [[generative-brain-dynamics-models]]
+
+## Activation Keywords
+
+- "neural-dynamics-autoregressive-flow-matching-v2"
+- "neural dynamics autoregressive flow matching v2"
+- "use neural dynamics autoregressive flow matching v2"
+- "neural dynamics autoregressive flow matching v2 help"
+- "neural dynamics autoregressive flow matching v2 tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Neural Dynamics Autoregressive Flow Matching V2 usage
+```
+User: "Help me with neural dynamics autoregressive flow matching v2"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed neural dynamics autoregressive flow matching v2 assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -244,3 +244,38 @@ if __name__ == "__main__":
 - User wants to "sync skills to GitHub"
 - User requests "push skills to collection"
 - Periodic sync of new Hermes skills to central repository
+
+## Activation Keywords
+
+- "skill-collection-sync"
+- "collection sync"
+- "use collection sync"
+- "collection sync help"
+- "collection sync tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Collection Sync usage
+```
+User: "Help me with collection sync"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed collection sync assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

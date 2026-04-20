@@ -454,5 +454,37 @@ config = PPOConfig(
   - "Group Relative Policy Optimization" (GRPO, 2024)
 - Examples: https://github.com/huggingface/trl/tree/main/examples/scripts
 
+## Activation Keywords
 
+- "fine-tuning-with-trl"
+- "fine tuning with trl"
+- "use fine tuning with trl"
+- "fine tuning with trl help"
+- "fine tuning with trl tool"
 
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Fine Tuning With Trl usage
+```
+User: "Help me with fine tuning with trl"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed fine tuning with trl assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

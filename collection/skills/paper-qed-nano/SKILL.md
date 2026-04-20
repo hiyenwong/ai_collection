@@ -52,3 +52,38 @@ Small models (4B parameters) can achieve competitive Olympiad-level mathematical
 
 ## Tags
 `small-models` `reasoning` `mathematics` `rl-training` `distillation` `inference-optimization` `proof-generation`
+
+## Activation Keywords
+
+- "paper-qed-nano"
+- "paper qed nano"
+- "use paper qed nano"
+- "paper qed nano help"
+- "paper qed nano tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Paper Qed Nano usage
+```
+User: "Help me with paper qed nano"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed paper qed nano assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

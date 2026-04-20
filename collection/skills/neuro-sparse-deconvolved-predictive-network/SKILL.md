@@ -154,3 +154,38 @@ def full_pipeline(observed_signal, response_kernel, n_components=64):
 2. **Cross-Validation**: Split data into training/test sets, validate prediction accuracy on held-out data.
 3. **Biological Plausibility**: Check that recovered neural activity respects known physiological constraints (firing rates, refractory periods).
 4. **Comparison with Alternative Methods**: Compare against Wiener deconvolution, Richardson-Lucy, and total variation regularized deconvolution.
+
+## Activation Keywords
+
+- "neuro-sparse-deconvolved-predictive-network"
+- "neuro sparse deconvolved predictive network"
+- "use neuro sparse deconvolved predictive network"
+- "neuro sparse deconvolved predictive network help"
+- "neuro sparse deconvolved predictive network tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Neuro Sparse Deconvolved Predictive Network usage
+```
+User: "Help me with neuro sparse deconvolved predictive network"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed neuro sparse deconvolved predictive network assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

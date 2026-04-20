@@ -128,3 +128,38 @@ Prefer `AuiIf` for new code. Primitive `.If` components still exist but are depr
 **Styles not applying**
 - Primitives are unstyled by default
 - Add `className` and style with your app's Tailwind/CSS system
+
+## Activation Keywords
+
+- "primitives"
+- "primitives"
+- "use primitives"
+- "primitives help"
+- "primitives tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Primitives usage
+```
+User: "Help me with primitives"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed primitives assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

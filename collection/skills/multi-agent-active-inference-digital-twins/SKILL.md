@@ -69,3 +69,30 @@ Minimize expected free energy, balancing:
 - arXiv: https://arxiv.org/abs/2604.12657
 - Authors: Francesco Maria Mancinelli, Matteo Torzoni, Domenico Maisto, Francesco Donnarumma, Alberto Corigliano, Giovanni Pezzulo, Andrea Manzoni
 - Published: 2026-04-14
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Multi Agent Active Inference Digital Twins usage
+```
+User: "Help me with multi agent active inference digital twins"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed multi agent active inference digital twins assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

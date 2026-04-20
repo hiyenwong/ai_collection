@@ -34,3 +34,38 @@ open "http://arxiv.org/abs/2604.14989"
 ---
 *Auto-generated from arXiv paper tracker*
 *Generated: 2026-04-19 22:10*
+
+## Activation Keywords
+
+- "drrtl-autonomous-agentic-rtl-optimization-through"
+- "drrtl autonomous agentic rtl optimization through"
+- "use drrtl autonomous agentic rtl optimization through"
+- "drrtl autonomous agentic rtl optimization through help"
+- "drrtl autonomous agentic rtl optimization through tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Drrtl Autonomous Agentic Rtl Optimization Through usage
+```
+User: "Help me with drrtl autonomous agentic rtl optimization through"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed drrtl autonomous agentic rtl optimization through assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

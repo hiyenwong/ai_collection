@@ -169,3 +169,38 @@ uv run "$SCRIPT" restart-run-all --path <notebook.ipynb> --save-outputs --compac
 The script has a 30-second default timeout per execution. For long-running
 operations, pass `--timeout 120`. Use generous timeouts (60+) for initial
 setup or heavy computation.
+
+## Activation Keywords
+
+- "jupyter-live-kernel"
+- "jupyter live kernel"
+- "use jupyter live kernel"
+- "jupyter live kernel help"
+- "jupyter live kernel tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Jupyter Live Kernel usage
+```
+User: "Help me with jupyter live kernel"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed jupyter live kernel assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -58,3 +58,38 @@ GitHub: https://github.com/jackyoung27/s0-tuning
 
 arXiv:2604.01168 - "S0 Tuning: Zero-Overhead Adaptation of Hybrid Recurrent-Attention Models" by Jack Young.
 Submitted: April 1, 2026
+
+## Activation Keywords
+
+- "s0-tuning"
+- "s0 tuning"
+- "use s0 tuning"
+- "s0 tuning help"
+- "s0 tuning tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic S0 Tuning usage
+```
+User: "Help me with s0 tuning"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed s0 tuning assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

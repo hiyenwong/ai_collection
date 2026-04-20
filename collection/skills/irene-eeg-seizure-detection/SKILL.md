@@ -331,3 +331,38 @@
    331|
    332|- eeg seizure detection, information bottleneck EEG, dynamic graph EEG, IRENE, graph masked autoencoder EEG, seizure propagation, inter-patient variability EEG
    333|
+
+## Activation Keywords
+
+- "irene-eeg-seizure-detection"
+- "irene eeg seizure detection"
+- "use irene eeg seizure detection"
+- "irene eeg seizure detection help"
+- "irene eeg seizure detection tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Irene Eeg Seizure Detection usage
+```
+User: "Help me with irene eeg seizure detection"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed irene eeg seizure detection assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

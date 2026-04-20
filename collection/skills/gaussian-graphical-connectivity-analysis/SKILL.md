@@ -278,3 +278,30 @@ def ad_connectivity_analysis(ad_fmri, control_fmri, roi_labels):
 - graphical lasso, glasso, CLIME, TIGER
 - alzheimer disease connectivity, brain network estimation
 - 高斯图模型, 功能连接分析, 精度矩阵
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Gaussian Graphical Connectivity Analysis usage
+```
+User: "Help me with gaussian graphical connectivity analysis"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed gaussian graphical connectivity analysis assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

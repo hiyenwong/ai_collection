@@ -386,3 +386,38 @@ high_value = [p for p in papers if score_paper(p['title'], p['summary']) >= 0.85
 | < 0.60 | Minimal | Skip unless specific interest |
 
 Adjust keyword weights based on your specific domain focus.
+
+## Activation Keywords
+
+- "arxiv"
+- "arxiv"
+- "use arxiv"
+- "arxiv help"
+- "arxiv tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Arxiv usage
+```
+User: "Help me with arxiv"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed arxiv assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

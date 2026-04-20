@@ -59,3 +59,38 @@ Errors traced to:
 
 ## Tags
 `llm-evaluation` `benchmark` `mathematical-modeling` `comprehension-gap` `execution-gap` `stage-wise-evaluation` `expert-validation`
+
+## Activation Keywords
+
+- "paper-llm-eval"
+- "paper llm eval"
+- "use paper llm eval"
+- "paper llm eval help"
+- "paper llm eval tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Paper Llm Eval usage
+```
+User: "Help me with paper llm eval"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed paper llm eval assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

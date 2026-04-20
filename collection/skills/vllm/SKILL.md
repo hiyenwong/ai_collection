@@ -363,5 +363,37 @@ Supported platforms: NVIDIA (primary), AMD ROCm, Intel GPUs, TPUs
 - Paper: "Efficient Memory Management for Large Language Model Serving with PagedAttention" (SOSP 2023)
 - Community: https://discuss.vllm.ai
 
+## Activation Keywords
 
+- "serving-llms-vllm"
+- "serving llms vllm"
+- "use serving llms vllm"
+- "serving llms vllm help"
+- "serving llms vllm tool"
 
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Serving Llms Vllm usage
+```
+User: "Help me with serving llms vllm"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed serving llms vllm assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

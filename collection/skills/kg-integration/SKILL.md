@@ -254,3 +254,16 @@ The kg_tool.py script provides Python functions that can be called from Hermes. 
 - Graph traversal for related entities
 - Automatic agent delegation suggestions
 - Skill learning from conversations
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps

@@ -113,3 +113,38 @@ class AstrocyteNeuralField:
 - 星形胶质细胞
 - 神经场模型
 - 工作记忆
+
+## Activation Keywords
+
+- "astrocyte-resource-diffusion-neural-fields"
+- "astrocyte resource diffusion neural fields"
+- "use astrocyte resource diffusion neural fields"
+- "astrocyte resource diffusion neural fields help"
+- "astrocyte resource diffusion neural fields tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Astrocyte Resource Diffusion Neural Fields usage
+```
+User: "Help me with astrocyte resource diffusion neural fields"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed astrocyte resource diffusion neural fields assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

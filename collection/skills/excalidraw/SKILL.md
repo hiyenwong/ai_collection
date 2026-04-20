@@ -191,4 +191,37 @@ See `references/colors.md` for full color tables. Quick reference:
 - For dark mode diagrams, see `references/dark-mode.md`
 - For larger examples, see `references/examples.md`
 
+## Activation Keywords
 
+- "excalidraw"
+- "excalidraw"
+- "use excalidraw"
+- "excalidraw help"
+- "excalidraw tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Excalidraw usage
+```
+User: "Help me with excalidraw"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed excalidraw assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

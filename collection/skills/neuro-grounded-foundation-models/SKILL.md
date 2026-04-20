@@ -28,3 +28,38 @@ def neural_alignment_loss(model_features, neural_features):
     model_c, neural_c = cca.fit_transform(model_features, neural_features)
     return -np.corrcoef(model_c.flatten(), neural_c.flatten())[0, 1]
 ```
+
+## Activation Keywords
+
+- "neuro-grounded-foundation-models"
+- "neuro grounded foundation models"
+- "use neuro grounded foundation models"
+- "neuro grounded foundation models help"
+- "neuro grounded foundation models tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Neuro Grounded Foundation Models usage
+```
+User: "Help me with neuro grounded foundation models"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed neuro grounded foundation models assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -787,3 +787,17 @@ Types → Config → Repo → Service → Runtime → UI
 **Created:** 2026-03-28
 **Updated:** 2026-03-29 (Added Gemini CLI support)
 **Purpose:** Universal Agent-First project bootstrap tool
+
+## Examples
+
+### Basic Agent First Bootstrap usage
+```
+User: "Help me with agent first bootstrap"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed agent first bootstrap assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

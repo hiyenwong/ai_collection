@@ -82,3 +82,38 @@ class BrainDigitalTwin:
 - neuro-neuromorphic systems
 - 脑数字孪生
 - 执行语义
+
+## Activation Keywords
+
+- "brain-digital-twins-execution-semantics"
+- "brain digital twins execution semantics"
+- "use brain digital twins execution semantics"
+- "brain digital twins execution semantics help"
+- "brain digital twins execution semantics tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Brain Digital Twins Execution Semantics usage
+```
+User: "Help me with brain digital twins execution semantics"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed brain digital twins execution semantics assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

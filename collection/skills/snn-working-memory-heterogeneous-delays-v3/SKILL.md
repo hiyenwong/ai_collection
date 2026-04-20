@@ -307,3 +307,24 @@ Where L is the motif length (typically D).
 
 _Last updated: 2026-04-20_
 _v3: Enhanced with detailed D=41 delay tensor architecture analysis, end-to-end training methodology, working memory emergence mechanism, performance metrics, and comparison to previous approaches._
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Snn Working Memory Heterogeneous Delays V3 usage
+```
+User: "Help me with snn working memory heterogeneous delays v3"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed snn working memory heterogeneous delays v3 assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

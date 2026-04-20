@@ -140,3 +140,30 @@ def preprocess_eeg_visual_tracking(eeg_raw, gaze_data, stimulus_motion):
 - match-mismatch decoder
 - visual attention BCI
 - retinotopic EEG
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Eccentricity Confound Eeg Based Visual Attention Decoding usage
+```
+User: "Help me with eccentricity confound eeg based visual attention decoding"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed eccentricity confound eeg based visual attention decoding assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

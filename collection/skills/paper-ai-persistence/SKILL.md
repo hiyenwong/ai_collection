@@ -54,3 +54,38 @@ Current AI systems are fundamentally short-sighted collaborators - optimized for
 
 ## Tags
 `human-ai-interaction` `persistence` `skill-acquisition` `educational-ai` `experimental-findings` `design-implications` `long-term-learning`
+
+## Activation Keywords
+
+- "paper-ai-persistence"
+- "paper ai persistence"
+- "use paper ai persistence"
+- "paper ai persistence help"
+- "paper ai persistence tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Paper Ai Persistence usage
+```
+User: "Help me with paper ai persistence"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed paper ai persistence assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -396,3 +396,38 @@ Paper: "Gaslight, Gatekeep, V1-V3: Early Visual Cortex Alignment Shields Vision-
 - **Date**: 2026-04-15
 - **Authors**: Arya Shah, Vaibhav Tripathi, Mayank Singh, Chaklam Silpasuwanchai
 - **Categories**: cs.CV, cs.AI
+
+## Activation Keywords
+
+- "vlm-visual-cortex-alignment-robustness"
+- "vlm visual cortex alignment robustness"
+- "use vlm visual cortex alignment robustness"
+- "vlm visual cortex alignment robustness help"
+- "vlm visual cortex alignment robustness tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Vlm Visual Cortex Alignment Robustness usage
+```
+User: "Help me with vlm visual cortex alignment robustness"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed vlm visual cortex alignment robustness assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

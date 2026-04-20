@@ -53,3 +53,38 @@ This work investigates how the **structure of the environment itself** influence
 ## References
 
 See `references/implementation.md` for code patterns and implementation details.
+
+## Activation Keywords
+
+- "attention-cognitive-flexibility"
+- "attention cognitive flexibility"
+- "use attention cognitive flexibility"
+- "attention cognitive flexibility help"
+- "attention cognitive flexibility tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Attention Cognitive Flexibility usage
+```
+User: "Help me with attention cognitive flexibility"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed attention cognitive flexibility assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

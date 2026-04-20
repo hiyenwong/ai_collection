@@ -76,3 +76,30 @@ This skill is based on the research paper "Thermodynamic connectivity reveals fu
 This skill was automatically generated from arXiv research as part of the neuroscience literature review workflow. For the most up-to-date information, refer to the original paper.
 
 _Last updated: 2026-04-02_
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Thermodynamic Brain Connectivity usage
+```
+User: "Help me with thermodynamic brain connectivity"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed thermodynamic brain connectivity assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

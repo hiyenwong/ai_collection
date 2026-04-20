@@ -629,3 +629,24 @@ See the full example in the conversation history. Key sections:
 - Improved error messages with troubleshooting guidance
 - Added multiple jina.ai service endpoints for redundancy
 - Updated troubleshooting section with proxy debugging steps
+
+## Activation Keywords
+
+- "ai-research-tracker"
+- "ai research tracker"
+- "use ai research tracker"
+- "ai research tracker help"
+- "ai research tracker tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps

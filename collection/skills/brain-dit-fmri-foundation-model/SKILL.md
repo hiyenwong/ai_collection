@@ -44,3 +44,38 @@ Brain-DiT is a universal fMRI foundation model that uses **metadata-conditioned 
 - Demographic prediction from brain imaging (age, sex)
 - Multi-dataset fMRI harmonization
 - Studying brain state transitions and neural dynamics
+
+## Activation Keywords
+
+- "brain-dit-fmri-foundation-model"
+- "brain dit fmri foundation model"
+- "use brain dit fmri foundation model"
+- "brain dit fmri foundation model help"
+- "brain dit fmri foundation model tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Brain Dit Fmri Foundation Model usage
+```
+User: "Help me with brain dit fmri foundation model"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed brain dit fmri foundation model assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

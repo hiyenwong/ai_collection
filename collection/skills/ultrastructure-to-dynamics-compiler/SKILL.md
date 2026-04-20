@@ -96,3 +96,38 @@ EM 数据提供结构信息，但功能参数需要推断。使用文献先验�
 
 ---
 *Generated on 2026-04-18*
+
+## Activation Keywords
+
+- "ultrastructure-to-dynamics-compiler"
+- "ultrastructure to dynamics compiler"
+- "use ultrastructure to dynamics compiler"
+- "ultrastructure to dynamics compiler help"
+- "ultrastructure to dynamics compiler tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Ultrastructure To Dynamics Compiler usage
+```
+User: "Help me with ultrastructure to dynamics compiler"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed ultrastructure to dynamics compiler assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

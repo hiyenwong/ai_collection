@@ -43,3 +43,38 @@ open http://arxiv.org/pdf/2604.13654.pdf
 
 ---
 *Auto-generated from arXiv on 2026-04-17*
+
+## Activation Keywords
+
+- "vision-and-language-navigation-for-uavs-progress-c"
+- "vision and language navigation for uavs progress c"
+- "use vision and language navigation for uavs progress c"
+- "vision and language navigation for uavs progress c help"
+- "vision and language navigation for uavs progress c tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Vision And Language Navigation For Uavs Progress C usage
+```
+User: "Help me with vision and language navigation for uavs progress c"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed vision and language navigation for uavs progress c assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

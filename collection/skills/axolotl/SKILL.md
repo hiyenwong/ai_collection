@@ -158,4 +158,37 @@ To refresh this skill with updated documentation:
 1. Re-run the scraper with the same configuration
 2. The skill will be rebuilt with the latest information
 
+## Activation Keywords
 
+- "axolotl"
+- "axolotl"
+- "use axolotl"
+- "axolotl help"
+- "axolotl tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Axolotl usage
+```
+User: "Help me with axolotl"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed axolotl assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

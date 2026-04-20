@@ -67,3 +67,38 @@ class NoiseAnalyzer:
 - [[snn-internal-noise-analysis]]
 - [[noisy-snn-learning]]
 - [[general-aspects-internal-noise-spiking]]
+
+## Activation Keywords
+
+- "snn-internal-noise-analysis-v2"
+- "snn internal noise analysis v2"
+- "use snn internal noise analysis v2"
+- "snn internal noise analysis v2 help"
+- "snn internal noise analysis v2 tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Snn Internal Noise Analysis V2 usage
+```
+User: "Help me with snn internal noise analysis v2"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed snn internal noise analysis v2 assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -81,3 +81,30 @@ class EMBER:
 - Authors: William Savage
 - Published: 2026-04-14
 - arXiv: https://arxiv.org/abs/2604.12167v1
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Ember Hybrid Snn Llm Architecture usage
+```
+User: "Help me with ember hybrid snn llm architecture"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed ember hybrid snn llm architecture assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

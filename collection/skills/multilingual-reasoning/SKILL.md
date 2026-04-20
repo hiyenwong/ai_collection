@@ -65,3 +65,38 @@ When building multilingual reasoning systems:
 
 arXiv:2604.04720 - "What Makes Good Multilingual Reasoning?" by Dayeon Ki, Kevin Duh, Marine Carpuat.
 Submitted: April 6, 2026
+
+## Activation Keywords
+
+- "multilingual-reasoning"
+- "multilingual reasoning"
+- "use multilingual reasoning"
+- "multilingual reasoning help"
+- "multilingual reasoning tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Multilingual Reasoning usage
+```
+User: "Help me with multilingual reasoning"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed multilingual reasoning assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

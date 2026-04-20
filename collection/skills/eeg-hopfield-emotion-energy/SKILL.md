@@ -81,3 +81,38 @@ class EmotionEnergyLandscape:
 ## Related Skills
 
 - eeg-hopfield-emotion-energy, neural-dynamics-decision-making, kuramoto-brain-network
+
+## Activation Keywords
+
+- "eeg-hopfield-emotion-energy"
+- "eeg hopfield emotion energy"
+- "use eeg hopfield emotion energy"
+- "eeg hopfield emotion energy help"
+- "eeg hopfield emotion energy tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Eeg Hopfield Emotion Energy usage
+```
+User: "Help me with eeg hopfield emotion energy"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed eeg hopfield emotion energy assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

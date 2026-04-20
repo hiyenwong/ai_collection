@@ -43,3 +43,38 @@ open http://arxiv.org/pdf/2604.15082.pdf
 
 ---
 *Auto-generated from arXiv on 2026-04-17*
+
+## Activation Keywords
+
+- "autonomous-evolution-of-eda-tools-multi-agent-self"
+- "autonomous evolution of eda tools multi agent self"
+- "use autonomous evolution of eda tools multi agent self"
+- "autonomous evolution of eda tools multi agent self help"
+- "autonomous evolution of eda tools multi agent self tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Autonomous Evolution Of Eda Tools Multi Agent Self usage
+```
+User: "Help me with autonomous evolution of eda tools multi agent self"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed autonomous evolution of eda tools multi agent self assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -124,3 +124,29 @@ def characterize_noise_regime(spike_times):
 **Authors:** I. D. Kolesnikov, D. A. Maksimov, V. M. Moskvitin et al.
 **Link:** https://arxiv.org/abs/2604.13612v1
 
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic General Aspects Internal Noise Spiking Neural usage
+```
+User: "Help me with general aspects internal noise spiking neural"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed general aspects internal noise spiking neural assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

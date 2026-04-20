@@ -81,3 +81,30 @@ class EEGVisualAttentionDecoder:
 ## Activation Keywords
 
 - brain-computer interface, visual attention, eeg
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Eccentricity Confound Eeg Visual Attention Decoding usage
+```
+User: "Help me with eccentricity confound eeg visual attention decoding"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed eccentricity confound eeg visual attention decoding assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -428,3 +428,38 @@ python server.py --model model-q4_k_m.gguf --loader llama.cpp --n-gpu-layers 35
 - **Pre-quantized Models**: https://huggingface.co/TheBloke
 - **GGUF Converter**: https://huggingface.co/spaces/ggml-org/gguf-my-repo
 - **License**: MIT
+
+## Activation Keywords
+
+- "gguf-quantization"
+- "gguf quantization"
+- "use gguf quantization"
+- "gguf quantization help"
+- "gguf quantization tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Gguf Quantization usage
+```
+User: "Help me with gguf quantization"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed gguf quantization assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

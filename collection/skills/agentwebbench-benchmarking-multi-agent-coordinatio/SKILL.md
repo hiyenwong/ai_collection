@@ -34,3 +34,38 @@ open "http://arxiv.org/abs/2604.10938"
 ---
 *Auto-generated from arXiv paper tracker*
 *Generated: 2026-04-19 22:10*
+
+## Activation Keywords
+
+- "agentwebbench-benchmarking-multi-agent-coordinatio"
+- "agentwebbench benchmarking multi agent coordinatio"
+- "use agentwebbench benchmarking multi agent coordinatio"
+- "agentwebbench benchmarking multi agent coordinatio help"
+- "agentwebbench benchmarking multi agent coordinatio tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Agentwebbench Benchmarking Multi Agent Coordinatio usage
+```
+User: "Help me with agentwebbench benchmarking multi agent coordinatio"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed agentwebbench benchmarking multi agent coordinatio assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -128,3 +128,38 @@ def persistence_diagram(adjacency, max_scale=1.0, num_scales=50):
 - [[brain-higher-order-structures]]
 - [[tda-neuroscience]]
 - [[motif-based-filtrations-persistent-homology-framework-graph]]
+
+## Activation Keywords
+
+- "topological-sensitivity-connectome-constraints"
+- "topological sensitivity connectome constraints"
+- "use topological sensitivity connectome constraints"
+- "topological sensitivity connectome constraints help"
+- "topological sensitivity connectome constraints tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Topological Sensitivity Connectome Constraints usage
+```
+User: "Help me with topological sensitivity connectome constraints"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed topological sensitivity connectome constraints assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

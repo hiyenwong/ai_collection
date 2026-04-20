@@ -82,3 +82,38 @@ This skill is applicable when:
 
 - **Paper**: "Adaptive Spiking Neurons for Vision and Language Modeling"
 - **arXiv**: 2604.12365v1
+
+## Activation Keywords
+
+- "adaptive-spiking-neurons-asn"
+- "adaptive spiking neurons asn"
+- "use adaptive spiking neurons asn"
+- "adaptive spiking neurons asn help"
+- "adaptive spiking neurons asn tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Adaptive Spiking Neurons Asn usage
+```
+User: "Help me with adaptive spiking neurons asn"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed adaptive spiking neurons asn assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -104,3 +104,38 @@ class NeuralDynamicsAFM:
 - flow matching
 - 神经动力学预测
 - 自回归流匹配
+
+## Activation Keywords
+
+- "neural-dynamics-autoregressive-flow-matching"
+- "neural dynamics autoregressive flow matching"
+- "use neural dynamics autoregressive flow matching"
+- "neural dynamics autoregressive flow matching help"
+- "neural dynamics autoregressive flow matching tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Neural Dynamics Autoregressive Flow Matching usage
+```
+User: "Help me with neural dynamics autoregressive flow matching"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed neural dynamics autoregressive flow matching assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

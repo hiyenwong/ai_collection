@@ -435,3 +435,24 @@ done
 curl -sL "https://r.jina.ai/http://docs.example.com/api/reference" 2>&1 | \
   grep -A 10 -B 2 "endpoint\|parameter" > api_snippets.txt
 ```
+
+## Activation Keywords
+
+- "web-content-extraction"
+- "web content extraction"
+- "use web content extraction"
+- "web content extraction help"
+- "web content extraction tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps

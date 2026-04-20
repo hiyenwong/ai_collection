@@ -215,3 +215,38 @@ def heterophily_dynamics(N, T, gamma=0.1, epsilon=0.01, beta=1.0):
 - multi-agent-density-control: 多智能体密度控制
 
 _Last updated: 2026-04-15_
+
+## Activation Keywords
+
+- "heterophily-synergistic-interdependencies"
+- "heterophily synergistic interdependencies"
+- "use heterophily synergistic interdependencies"
+- "heterophily synergistic interdependencies help"
+- "heterophily synergistic interdependencies tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Heterophily Synergistic Interdependencies usage
+```
+User: "Help me with heterophily synergistic interdependencies"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed heterophily synergistic interdependencies assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -271,3 +271,38 @@ render(
 - Use Heading for section titles, Divider to separate sections, Badge for status, KeyValue for labeled data, Card for bordered groups.
 - Use Tabs for multi-view UIs with visible conditions on child content.
 - Use Sparkline for inline trends and BarChart for comparing values.
+
+## Activation Keywords
+
+- "ink"
+- "ink"
+- "use ink"
+- "ink help"
+- "ink tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Ink usage
+```
+User: "Help me with ink"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed ink assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

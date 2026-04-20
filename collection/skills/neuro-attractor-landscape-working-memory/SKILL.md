@@ -182,3 +182,38 @@ def analyze_ring_attractor(neural_data, n_angles=360):
 2. **Cross-Task Generalization**: Verify that the same attractor structure appears across different task conditions.
 3. **Model Predictions**: Use the learned dynamics to predict neural activity during novel conditions.
 4. **Comparison with Lesion Data**: Predict how removing specific neural populations affects attractor stability, compare with experimental lesion studies.
+
+## Activation Keywords
+
+- "neuro-attractor-landscape-working-memory"
+- "neuro attractor landscape working memory"
+- "use neuro attractor landscape working memory"
+- "neuro attractor landscape working memory help"
+- "neuro attractor landscape working memory tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Neuro Attractor Landscape Working Memory usage
+```
+User: "Help me with neuro attractor landscape working memory"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed neuro attractor landscape working memory assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -109,3 +109,38 @@ class SNNWorkingMemory:
 - recurrent spiking networks
 - 脉冲神经网络工作记忆
 - 异质突触延迟
+
+## Activation Keywords
+
+- "snn-working-memory-heterogeneous-delays"
+- "snn working memory heterogeneous delays"
+- "use snn working memory heterogeneous delays"
+- "snn working memory heterogeneous delays help"
+- "snn working memory heterogeneous delays tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Snn Working Memory Heterogeneous Delays usage
+```
+User: "Help me with snn working memory heterogeneous delays"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed snn working memory heterogeneous delays assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

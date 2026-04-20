@@ -41,3 +41,38 @@ def data_driven_reachability(U, Y, horizon, perturbation_bound=0.01):
     uncertainty = perturbation_bound * np.linalg.norm(alpha)
     return reachable, uncertainty
 ```
+
+## Activation Keywords
+
+- "data-driven-reachability-matrix-perturbation"
+- "data driven reachability matrix perturbation"
+- "use data driven reachability matrix perturbation"
+- "data driven reachability matrix perturbation help"
+- "data driven reachability matrix perturbation tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Data Driven Reachability Matrix Perturbation usage
+```
+User: "Help me with data driven reachability matrix perturbation"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed data driven reachability matrix perturbation assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

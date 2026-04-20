@@ -59,3 +59,29 @@ See related skills in ai_collection for complementary methodologies.
 **Authors:** Evan Gibson Smith, Jacob Whitehill, Fatemeh Ganji
 **Link:** https://arxiv.org/abs/2604.14487v1
 
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Quantization Spiking Neural Networks Beyond Accuracy usage
+```
+User: "Help me with quantization spiking neural networks beyond accuracy"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed quantization spiking neural networks beyond accuracy assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

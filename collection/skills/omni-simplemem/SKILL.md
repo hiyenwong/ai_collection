@@ -160,3 +160,38 @@ Four key properties:
 - **MemGPT**: OS-inspired memory hierarchies (Packer et al., 2023)
 - **A-Mem**: LLM-directed memory reorganization (Xu et al., 2025a)
 - **MemVerse**: Episodic-semantic with multimodal knowledge graphs (Liu et al., 2025)
+
+## Activation Keywords
+
+- "omni-simplemem"
+- "omni simplemem"
+- "use omni simplemem"
+- "omni simplemem help"
+- "omni simplemem tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Omni Simplemem usage
+```
+User: "Help me with omni simplemem"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed omni simplemem assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

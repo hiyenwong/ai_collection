@@ -342,3 +342,38 @@ if __name__ == "__main__":
 - **Examples**: https://github.com/modal-labs/modal-examples
 - **Pricing**: https://modal.com/pricing
 - **Discord**: https://discord.gg/modal
+
+## Activation Keywords
+
+- "modal-serverless-gpu"
+- "modal serverless gpu"
+- "use modal serverless gpu"
+- "modal serverless gpu help"
+- "modal serverless gpu tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Modal Serverless Gpu usage
+```
+User: "Help me with modal serverless gpu"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed modal serverless gpu assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

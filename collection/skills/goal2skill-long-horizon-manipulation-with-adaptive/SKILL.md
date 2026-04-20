@@ -43,3 +43,38 @@ open http://arxiv.org/pdf/2604.13942.pdf
 
 ---
 *Auto-generated from arXiv on 2026-04-17*
+
+## Activation Keywords
+
+- "goal2skill-long-horizon-manipulation-with-adaptive"
+- "goal2skill long horizon manipulation with adaptive"
+- "use goal2skill long horizon manipulation with adaptive"
+- "goal2skill long horizon manipulation with adaptive help"
+- "goal2skill long horizon manipulation with adaptive tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Goal2Skill Long Horizon Manipulation With Adaptive usage
+```
+User: "Help me with goal2skill long horizon manipulation with adaptive"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed goal2skill long horizon manipulation with adaptive assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -267,3 +267,38 @@ for I in [1e-6, 2e-6, 5e-6, 10e-6]:
 - snn-quantized-dynamics-integer: 量化SNN整数动力学
 
 _Last updated: 2026-04-15_
+
+## Activation Keywords
+
+- "spiking-memristor-multimodal"
+- "spiking memristor multimodal"
+- "use spiking memristor multimodal"
+- "spiking memristor multimodal help"
+- "spiking memristor multimodal tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Spiking Memristor Multimodal usage
+```
+User: "Help me with spiking memristor multimodal"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed spiking memristor multimodal assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

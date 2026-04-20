@@ -571,5 +571,37 @@ When this skill is loaded:
 
 This skill is designed for **expert-level implementation**. Beginners should start with supervised fine-tuning before attempting GRPO.
 
+## Activation Keywords
 
+- "grpo-rl-training"
+- "grpo rl training"
+- "use grpo rl training"
+- "grpo rl training help"
+- "grpo rl training tool"
 
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Grpo Rl Training usage
+```
+User: "Help me with grpo rl training"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed grpo rl training assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

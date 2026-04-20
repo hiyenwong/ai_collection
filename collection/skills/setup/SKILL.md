@@ -102,3 +102,38 @@ For issues not covered by the reference files, use the docs website:
 
 1. **Fetch the index**: `https://www.assistant-ui.com/llms.txt` — compact table of contents
 2. **Fetch specific pages**: Append `.mdx` to the docs URL, e.g. `https://www.assistant-ui.com/docs/runtimes/ai-sdk.mdx`
+
+## Activation Keywords
+
+- "setup"
+- "setup"
+- "use setup"
+- "setup help"
+- "setup tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Setup usage
+```
+User: "Help me with setup"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed setup assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

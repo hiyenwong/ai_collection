@@ -79,5 +79,37 @@ To refresh this skill with updated documentation:
 
 <!-- Trigger re-upload 1763621536 -->
 
+## Activation Keywords
 
+- "unsloth"
+- "unsloth"
+- "use unsloth"
+- "unsloth help"
+- "unsloth tool"
 
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Unsloth usage
+```
+User: "Help me with unsloth"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed unsloth assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

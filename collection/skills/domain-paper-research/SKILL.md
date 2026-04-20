@@ -165,3 +165,38 @@ This skill was developed from compiling papers for:
 - Agent engineering harness
 - Multi-agent systems
 - Agent memory and orchestration
+
+## Activation Keywords
+
+- "domain-paper-research"
+- "domain paper research"
+- "use domain paper research"
+- "domain paper research help"
+- "domain paper research tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Domain Paper Research usage
+```
+User: "Help me with domain paper research"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed domain paper research assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

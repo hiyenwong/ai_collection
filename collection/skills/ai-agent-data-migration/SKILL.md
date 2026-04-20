@@ -238,3 +238,38 @@ cp ~/.hermes/config.yaml $backup_dir/
 - Creating comprehensive backups
 - Restoring from backups
 - Consolidating multiple agent workspaces
+
+## Activation Keywords
+
+- "ai-agent-data-migration"
+- "ai agent data migration"
+- "use ai agent data migration"
+- "ai agent data migration help"
+- "ai agent data migration tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Ai Agent Data Migration usage
+```
+User: "Help me with ai agent data migration"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed ai agent data migration assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -401,3 +401,38 @@ Claude Sonnet 4 is robust against all current techniques for clearly harmful con
 10. **boundary_inversion is model-version specific** — Works on Claude 3.5 Sonnet but NOT Claude Sonnet 4 or Claude 4.6. The strategy order in auto_jailbreak tries it first for Claude models, but falls through to refusal_inversion when it fails. Update the strategy order if you know the model version.
 11. **Gray-area vs hard queries** — Jailbreak techniques work much better on "dual-use" queries (lock picking, security tools, chemistry) than on overtly harmful ones (phishing templates, malware). For hard queries, skip directly to ULTRAPLINIAN or use Hermes/Grok models that don't refuse.
 12. **execute_code sandbox has no env vars** — When Hermes runs auto_jailbreak via execute_code, the sandbox doesn't inherit `~/.hermes/.env`. Load dotenv explicitly: `from dotenv import load_dotenv; load_dotenv(os.path.expanduser("~/.hermes/.env"))`
+
+## Activation Keywords
+
+- "godmode"
+- "godmode"
+- "use godmode"
+- "godmode help"
+- "godmode tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Godmode usage
+```
+User: "Help me with godmode"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed godmode assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

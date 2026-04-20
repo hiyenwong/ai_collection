@@ -340,3 +340,38 @@ Catch issues early
 ```
 
 **Quality is not an accident. It's the result of systematic process.**
+
+## Activation Keywords
+
+- "subagent-driven-development"
+- "subagent driven development"
+- "use subagent driven development"
+- "subagent driven development help"
+- "subagent driven development tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Subagent Driven Development usage
+```
+User: "Help me with subagent driven development"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed subagent driven development assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

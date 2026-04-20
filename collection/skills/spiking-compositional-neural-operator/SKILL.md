@@ -426,3 +426,30 @@ nuclear PDE, neutron diffusion, edge AI physics
 - SCNO represents a paradigm shift from monolithic PDE surrogates to composable, energy-efficient physics libraries
 - The "foundation model" vision: a growing library of spiking operator blocks deployable on neuromorphic hardware for real-time multiphysics simulation at the edge
 - The correction network enables incremental addition of new PDE physics without any forgetting of previously learned operators
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Spiking Compositional Neural Operator usage
+```
+User: "Help me with spiking compositional neural operator"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed spiking compositional neural operator assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

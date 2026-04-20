@@ -58,3 +58,30 @@ Memory is fundamental to social interaction, enabling humans to recall meaningfu
 ---
 
 *Generated from arXiv paper on 2026-04-17*
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Human Inspired Context Selective Multimodal Memory Social Robots usage
+```
+User: "Help me with human inspired context selective multimodal memory social robots"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed human inspired context selective multimodal memory social robots assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

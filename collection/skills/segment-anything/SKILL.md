@@ -501,3 +501,38 @@ mask_generator = SamAutomaticMaskGenerator(
 - **Demo**: https://segment-anything.com
 - **SAM 2 (Video)**: https://github.com/facebookresearch/segment-anything-2
 - **HuggingFace**: https://huggingface.co/facebook/sam-vit-huge
+
+## Activation Keywords
+
+- "segment-anything-model"
+- "segment anything model"
+- "use segment anything model"
+- "segment anything model help"
+- "segment anything model tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Segment Anything Model usage
+```
+User: "Help me with segment anything model"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed segment anything model assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

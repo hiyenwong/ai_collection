@@ -70,3 +70,38 @@ class NoisyLIF:
 - noise analysis
 - hardware robustness
 - 脉冲噪声分析
+
+## Activation Keywords
+
+- "snn-internal-noise-analysis"
+- "snn internal noise analysis"
+- "use snn internal noise analysis"
+- "snn internal noise analysis help"
+- "snn internal noise analysis tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Snn Internal Noise Analysis usage
+```
+User: "Help me with snn internal noise analysis"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed snn internal noise analysis assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

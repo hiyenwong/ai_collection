@@ -104,3 +104,30 @@ The dual-timescale memory mechanism:
 ## Notes
 
 This skill was created as part of automated neuroscience research workflow from arXiv papers.
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Dual Timescale Memory Spiking Neuron Astrocyte Network Efficient usage
+```
+User: "Help me with dual timescale memory spiking neuron astrocyte network efficient"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed dual timescale memory spiking neuron astrocyte network efficient assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -213,3 +213,38 @@ Then hold B to speed through attack animations and text.
 - Dialog detection via RAM is unreliable — verify with screenshots
 - Save BEFORE risky encounters
 - The tunnel URL changes each time you restart it
+
+## Activation Keywords
+
+- "pokemon-player"
+- "pokemon player"
+- "use pokemon player"
+- "pokemon player help"
+- "pokemon player tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Pokemon Player usage
+```
+User: "Help me with pokemon player"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed pokemon player assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

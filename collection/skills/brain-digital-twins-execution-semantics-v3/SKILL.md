@@ -95,3 +95,38 @@ class BrainDigitalTwin:
 - individualized brain representation
 - 脑数字孪生
 - 执行语义
+
+## Activation Keywords
+
+- "brain-digital-twins-execution-semantics-v3"
+- "brain digital twins execution semantics v3"
+- "use brain digital twins execution semantics v3"
+- "brain digital twins execution semantics v3 help"
+- "brain digital twins execution semantics v3 tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Brain Digital Twins Execution Semantics V3 usage
+```
+User: "Help me with brain digital twins execution semantics v3"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed brain digital twins execution semantics v3 assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

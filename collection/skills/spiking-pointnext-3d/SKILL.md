@@ -84,3 +84,38 @@ Energy-efficient 3D point cloud processing methodology using Spiking Neural Netw
 - PointNeXt: Revisiting PointNet++ with improved training
 - Spiking neural networks for computer vision
 - Neuromorphic computing architectures
+
+## Activation Keywords
+
+- "spiking-pointnext-3d"
+- "spiking pointnext 3d"
+- "use spiking pointnext 3d"
+- "spiking pointnext 3d help"
+- "spiking pointnext 3d tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Spiking Pointnext 3D usage
+```
+User: "Help me with spiking pointnext 3d"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed spiking pointnext 3d assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

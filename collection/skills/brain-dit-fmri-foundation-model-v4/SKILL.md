@@ -64,3 +64,38 @@ class BrainDiT(nn.Module):
 - [[brain-dit-universal-multi-state]]
 - [[brain-dit-fmri-foundation-model]]
 - [[multimodal-brain-connectivity-gnn]]
+
+## Activation Keywords
+
+- "brain-dit-fmri-foundation-model-v4"
+- "brain dit fmri foundation model v4"
+- "use brain dit fmri foundation model v4"
+- "brain dit fmri foundation model v4 help"
+- "brain dit fmri foundation model v4 tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Brain Dit Fmri Foundation Model V4 usage
+```
+User: "Help me with brain dit fmri foundation model v4"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed brain dit fmri foundation model v4 assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

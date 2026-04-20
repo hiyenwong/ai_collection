@@ -135,3 +135,38 @@ for i in range(n_models):
 - existence denial attacks
 - two-turn adversarial prompts
 - capitulation rate measurement
+
+## Activation Keywords
+
+- "vlm-visual-cortex-sycophancy"
+- "vlm visual cortex sycophancy"
+- "use vlm visual cortex sycophancy"
+- "vlm visual cortex sycophancy help"
+- "vlm visual cortex sycophancy tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Vlm Visual Cortex Sycophancy usage
+```
+User: "Help me with vlm visual cortex sycophancy"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed vlm visual cortex sycophancy assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

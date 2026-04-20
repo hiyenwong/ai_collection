@@ -102,3 +102,38 @@ def model_state_transition(model, from_state, to_state, n_steps=20):
 3. Verify temporal consistency in state transitions
 4. Assess cross-site generalization performance
 5. Evaluate clinical/biological plausibility of generated states
+
+## Activation Keywords
+
+- "brain-dit-universal-multi-state"
+- "brain dit universal multi state"
+- "use brain dit universal multi state"
+- "brain dit universal multi state help"
+- "brain dit universal multi state tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Brain Dit Universal Multi State usage
+```
+User: "Help me with brain dit universal multi state"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed brain dit universal multi state assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -67,3 +67,38 @@ python3 SKILL_DIR/scripts/find_nearby.py --near "90210" --type pharmacy --json
 - For "open now" requests: check the `hours` field in results, cross-reference with `web_search` for accuracy since OSM hours aren't always complete
 - Zip codes alone can be ambiguous globally — prompt the user for country/state if results look wrong
 - The script uses OpenStreetMap data which is community-maintained; coverage varies by region
+
+## Activation Keywords
+
+- "find-nearby"
+- "find nearby"
+- "use find nearby"
+- "find nearby help"
+- "find nearby tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Find Nearby usage
+```
+User: "Help me with find nearby"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed find nearby assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

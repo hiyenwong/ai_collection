@@ -64,3 +64,38 @@ class TaskFlexibleNetwork:
 - transfer learning
 - 认知灵活性
 - 任务结构注意
+
+## Activation Keywords
+
+- "attention-task-structure-cognitive-flexibility"
+- "attention task structure cognitive flexibility"
+- "use attention task structure cognitive flexibility"
+- "attention task structure cognitive flexibility help"
+- "attention task structure cognitive flexibility tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Attention Task Structure Cognitive Flexibility usage
+```
+User: "Help me with attention task structure cognitive flexibility"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed attention task structure cognitive flexibility assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

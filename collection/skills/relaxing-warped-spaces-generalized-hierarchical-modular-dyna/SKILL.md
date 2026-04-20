@@ -54,3 +54,30 @@ Related skills and approaches in the domain.
 ## Notes
 
 This skill was created from arXiv paper 2604.10606v1 as part of automated neuroscience research workflow.
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Relaxing Warped Spaces Generalized Hierarchical Modular Dyna usage
+```
+User: "Help me with relaxing warped spaces generalized hierarchical modular dyna"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed relaxing warped spaces generalized hierarchical modular dyna assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

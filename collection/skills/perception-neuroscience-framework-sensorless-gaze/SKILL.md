@@ -109,3 +109,30 @@ class SensorlessGazeFollower:
 - Paper: arXiv:2604.10699 (2026-04-12)
 - Related: gaze cell models in superior temporal sulcus (STS)
 - Related: head-direction cell literature
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Perception Neuroscience Framework Sensorless Gaze usage
+```
+User: "Help me with perception neuroscience framework sensorless gaze"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed perception neuroscience framework sensorless gaze assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

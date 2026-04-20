@@ -43,3 +43,38 @@ open http://arxiv.org/pdf/2604.15309.pdf
 
 ---
 *Auto-generated from arXiv on 2026-04-17*
+
+## Activation Keywords
+
+- "mm-webagent-a-hierarchical-multimodal-web-agent-fo"
+- "mm webagent a hierarchical multimodal web agent fo"
+- "use mm webagent a hierarchical multimodal web agent fo"
+- "mm webagent a hierarchical multimodal web agent fo help"
+- "mm webagent a hierarchical multimodal web agent fo tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Mm Webagent A Hierarchical Multimodal Web Agent Fo usage
+```
+User: "Help me with mm webagent a hierarchical multimodal web agent fo"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed mm webagent a hierarchical multimodal web agent fo assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

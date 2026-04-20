@@ -89,3 +89,30 @@ def llm_neural_classifier(signal_data, model_config):
 ## References
 - Computational Neuroscience in the Era of Large Language Models: A Review (arXiv:2604.11975)
 - Related: brain-dit-fmri-foundation-model, meta-learning-in-context-brain-decoding
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Computational Neuroscience In Llm Era usage
+```
+User: "Help me with computational neuroscience in llm era"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed computational neuroscience in llm era assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

@@ -99,3 +99,38 @@ End-to-end visibility and governance:
 - Authors: Saikat Ray, Adam Briggs
 - Date: February 2026
 - Document: Universal Orchestrator — Governing AI Agents, Bots, and Humans at Scale
+
+## Activation Keywords
+
+- "universal-orchestrator-gartner"
+- "universal orchestrator gartner"
+- "use universal orchestrator gartner"
+- "universal orchestrator gartner help"
+- "universal orchestrator gartner tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Universal Orchestrator Gartner usage
+```
+User: "Help me with universal orchestrator gartner"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed universal orchestrator gartner assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```

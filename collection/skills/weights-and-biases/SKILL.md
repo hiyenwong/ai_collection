@@ -590,4 +590,37 @@ print(f"Share this URL: {run.url}")
 - `references/artifacts.md` - Data and model versioning patterns
 - `references/integrations.md` - Framework-specific examples
 
+## Activation Keywords
 
+- "weights-and-biases"
+- "weights and biases"
+- "use weights and biases"
+- "weights and biases help"
+- "weights and biases tool"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify user's intent and specific requirements
+2. Gather necessary context from files or user input
+3. Execute appropriate actions using available tools
+4. Provide clear results and suggest next steps
+
+## Examples
+
+### Basic Weights And Biases usage
+```
+User: "Help me with weights and biases"
+→ Understand requirements → Execute actions → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed weights and biases assistance"
+→ Clarify scope → Provide comprehensive solution → Follow up
+```
