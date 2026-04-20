@@ -1,128 +1,130 @@
 ---
 name: topological-sensitivity-connectome-constraints
-description: Topological sensitivity analysis framework for connectome-constrained neural network models. Uses persistent homology and topology-preserving perturbations to identify circuit-level invariants that govern neural dynamics.
-tags: [topology, connectome, sensitivity, persistent-homology, neural-circuits]
-category: computational-neuroscience
-created: 2026-04-19
+description: Topological sensitivity analysis of connectome-constrained neural networks. Studies how network topology affects dynamical behavior and sensitivity to perturbations in brain connectome models. Applicable to robust brain dynamics analysis and lesion studies.
+version: 1.0.0
+author: Research Synthesis
+license: MIT
+metadata:
+  hermes:
+    tags: [brain-network, topology, connectome, sensitivity-analysis, neural-dynamics]
 ---
 
-# Topological Sensitivity Analysis in Connectome-Constrained Models
+# Topological Sensitivity Connectome Constraints
 
 ## Overview
-Systematic analysis of topological constraints in connectome-constrained neural networks using persistent homology and sensitivity analysis. Identifies circuit-level invariants that determine neural dynamics and computational capabilities.
+Methodology for analyzing how brain network topology constrains neural dynamics and determines sensitivity to perturbations. Combines topological data analysis (TDA) with connectome-constrained neural modeling to understand structure-function relationships.
 
-## Key Concepts
+## Core Concepts
 
-### 1. Connectome-Constrained Models
-- Neural networks constrained by empirical connectivity matrices
-- Drosophila connectome-based circuit models
-- Topology-preserving vs. weight-preserving perturbations
-- Identifying which topological features are computationally necessary
+### Topological Constraints
+- **Connectome topology**: Structural wiring patterns constrain possible dynamics
+- **Persistent homology**: Topological features at multiple scales
+- **Simplicial complexes**: Higher-order interactions beyond pairwise connectivity
+- **Topological invariants**: Features preserved under continuous deformation
 
-### 2. Persistent Homology Analysis
-- Topological data analysis (TDA) on neural circuits
-- Betti numbers as topological invariants
-- Persistence diagrams of neural activity manifolds
-- Tracking topological features across spatial/temporal scales
+### Sensitivity Analysis
+- **Structural perturbation**: How changes in connectivity affect dynamics
+- **Functional sensitivity**: How topology determines response to stimulation
+- **Robustness analysis**: Identifying critical vs. redundant connections
+- **Lesion simulation**: Virtual lesion studies on connectome models
 
-### 3. Sensitivity Analysis Framework
-- Topology-preserving perturbations: rewire while maintaining degree distribution
-- Weight-preserving perturbations: shuffle weights while maintaining topology
-- Quantifying impact on neural dynamics and computational performance
-- Identifying "sensitive" subcircuits vs. robust topological features
+### Key Metrics
+- **Betti numbers**: Count of topological holes at each dimension
+- **Persistence diagrams**: Birth-death of topological features across scales
+- **Euler characteristic**: Alternating sum of Betti numbers
+- **Topological similarity**: Distance between connectivity patterns
 
-### 4. Circuit-Level Invariants
-- Motif-based topological invariants (feedforward loops, feedback cycles)
-- Higher-order topological structures (cliques, cavities)
-- Rich-club organization and its computational role
-- Small-world properties and information flow
+## Implementation
 
-## Methodology
-
-### Step 1: Connectome Data Preparation
 ```python
 import numpy as np
-import networkx as nx
+from scipy.spatial.distance import pdist, squareform
 
-# Load connectome matrix
-connectome = np.load('connectome.npy')
-G = nx.from_numpy_array(connectome)
-
-# Compute topological properties
-clustering = nx.clustering(G)
-path_lengths = dict(nx.all_pairs_shortest_path_length(G))
-motifs = find_network_motifs(G)
-```
-
-### Step 2: Persistent Homology Computation
-```python
-from gudhi import RipsComplex
-
-# Build weighted graph for filtration
-rips = RipsComplex(edges=weighted_edges, max_edge_length=max_weight)
-tree = rips.create_simplex_tree(max_dimension=3)
-tree.persistence()
-
-# Extract persistence diagrams
-diagrams = tree.persistence_diagrams()
-```
-
-### Step 3: Perturbation Analysis
-```python
-def topology_preserving_perturbation(adj_matrix, n_rewire):
-    # Rewire edges while preserving degree distribution via double-edge swaps
-    G = nx.from_numpy_array(adj_matrix)
-    for _ in range(n_rewire):
-        edges = list(G.edges())
-        e1, e2 = random.sample(edges, 2)
-        G = double_edge_swap_safe(G, e1, e2)
-    return nx.to_numpy_array(G)
-
-def weight_preserving_perturbation(adj_matrix):
-    # Shuffle weights while maintaining topology
-    nonzero_mask = adj_matrix != 0
-    weights = adj_matrix[nonzero_mask].copy()
-    np.random.shuffle(weights)
-    perturbed = np.zeros_like(adj_matrix)
-    perturbed[nonzero_mask] = weights
-    return perturbed
-```
-
-### Step 4: Sensitivity Quantification
-```python
-def compute_sensitivity(original_dynamics, perturbed_dynamics):
-    correlation = np.corrcoef(
-        original_dynamics.flatten(),
-        perturbed_dynamics.flatten()
-    )[0, 1]
+def compute_weighted_clique_complex(adjacency, threshold):
+    """Build weighted clique complex from adjacency matrix."""
+    n = adjacency.shape[0]
+    cliques = {0: list(range(n)), 1: [], 2: [], 3: []}
     
-    orig_persistence = compute_persistence(original_dynamics)
-    pert_persistence = compute_persistence(perturbed_dynamics)
-    bottleneck_dist = wasserstein_distance(orig_persistence, pert_persistence)
+    # 0-simplices (nodes)
+    # 1-simplices (edges)
+    for i in range(n):
+        for j in range(i+1, n):
+            if adjacency[i, j] > threshold:
+                cliques[1].append((i, j))
     
-    return {
-        'activity_correlation': correlation,
-        'topological_distance': bottleneck_dist,
-        'sensitivity_score': (1 - correlation) * bottleneck_dist
-    }
+    # 2-simplices (triangles)
+    for edge1 in cliques[1]:
+        for edge2 in cliques[1]:
+            if edge1[0] != edge2[0] and edge1[1] != edge2[1]:
+                triangle = tuple(sorted(set(edge1) | set(edge2)))
+                if len(triangle) == 3:
+                    if all(adjacency[triangle[i], triangle[j]] > threshold 
+                           for i in range(3) for j in range(i+1, 3)):
+                        if triangle not in cliques[2]:
+                            cliques[2].append(triangle)
+    
+    return cliques
+
+def betti_numbers_from_cliques(cliques):
+    """Compute Betti numbers from clique counts."""
+    counts = [len(cliques[k]) for k in sorted(cliques.keys())]
+    
+    # Euler characteristic
+    euler = sum((-1)**k * counts[k] for k in range(len(counts)))
+    
+    # Betti numbers (simplified)
+    b0 = 1  # Connected components
+    b1 = counts[1] - counts[0] + b0  # Loops
+    b2 = counts[2] - counts[1] + b0 - b1  # Voids
+    
+    return {'b0': b0, 'b1': max(0, b1), 'b2': max(0, b2)}
+
+def topological_sensitivity(adjacency, perturbation_strength=0.1):
+    """Measure topological sensitivity to structural perturbations."""
+    n = adjacency.shape[0]
+    
+    # Original topology
+    original_cliques = compute_weighted_clique_complex(adjacency, np.mean(adjacency))
+    original_betti = betti_numbers_from_cliques(original_cliques)
+    
+    # Perturbed topology
+    noise = np.random.randn(n, n) * perturbation_strength
+    perturbed = adjacency + noise
+    perturbed_cliques = compute_weighted_clique_complex(perturbed, np.mean(perturbed))
+    perturbed_betti = betti_numbers_from_cliques(perturbed_cliques)
+    
+    # Sensitivity = change in Betti numbers
+    sensitivity = {}
+    for k in ['b0', 'b1', 'b2']:
+        sensitivity[k] = abs(perturbed_betti[k] - original_betti[k])
+    
+    return sensitivity
+
+def persistence_diagram(adjacency, max_scale=1.0, num_scales=50):
+    """Compute approximate persistence diagram."""
+    thresholds = np.linspace(0, max_scale, num_scales)
+    betti_history = []
+    
+    for t in thresholds:
+        cliques = compute_weighted_clique_complex(adjacency, t)
+        betti = betti_numbers_from_cliques(cliques)
+        betti_history.append(betti)
+    
+    return betti_history
 ```
 
 ## Applications
-- Identify computationally essential circuit motifs
-- Design robust neural network architectures
-- Understand structure-function relationships in brain circuits
-- Guide targeted interventions (lesion studies, stimulation)
-
-## Key Metrics
-- **Topological sensitivity index**: How much dynamics change per unit topological perturbation
-- **Persistent homology stability**: Robustness of topological features to noise
-- **Circuit invariance score**: Fraction of topological features preserved across perturbations
-
-## Related Skills
-- `brain-higher-order-structures` - Higher-order brain network analysis
-- `brain-connectivity-analysis` - Brain network connectivity analysis
-- `neural-dynamics-universal-translator` - Neural dynamics translation
-- `tda-neuroscience` - Topological data analysis in neuroscience
+- **Lesion studies**: Predict effects of structural damage on brain function
+- **Brain stimulation**: Identifying robust vs. sensitive stimulation targets
+- **Neurodegenerative diseases**: Understanding topology-driven vulnerability
+- **Developmental disorders**: Topological differences in atypical connectomes
 
 ## References
-- arXiv:2604.15493 - Topological sensitivity analysis in connectome-constrained models
+- Petri, G. et al. (2014). Homological scaffolds of brain functional networks. Journal of The Royal Society Interface.
+- Sizemore, A. et al. (2019). Cliques and cavities in the human connectome. Journal of Computational Neuroscience.
+
+## Related
+- [[brain-network-topology]]
+- [[brain-higher-order-structures]]
+- [[tda-neuroscience]]
+- [[motif-based-filtrations-persistent-homology-framework-graph]]
