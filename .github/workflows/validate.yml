@@ -114,7 +114,23 @@ jobs:
       - name: Check skill documentation
         run: |
           for skill_dir in collection/skills/*/; do
+            # Skip parent directories that only contain sub-skills
             if [ ! -f "${skill_dir}SKILL.md" ]; then
+              # Check if this is a parent directory with sub-skills
+              subdirs=$(find "${skill_dir}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
+              if [ -n "$subdirs" ]; then
+                has_skill_md=0
+                for subdir in $subdirs; do
+                  if [ -f "${subdir}/SKILL.md" ]; then
+                    has_skill_md=1
+                    break
+                  fi
+                done
+                if [ $has_skill_md -eq 1 ]; then
+                  echo "⏭️  Skipping parent directory: $skill_dir"
+                  continue
+                fi
+              fi
               echo "❌ Skill missing SKILL.md: $skill_dir"
               exit 1
             fi
