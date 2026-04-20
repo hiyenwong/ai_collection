@@ -35,33 +35,80 @@ def gws(*args: str) -> None:
     """Call gws via the bridge and exit with its return code."""
     result = subprocess.run(
         [PYTHON, str(BRIDGE)] + list(args),
-        env={**os.environ, "HERMES_HOME": os.environ.get("HERMES_HOME", str(Path.home() / ".hermes"))},
+        env={
+            **os.environ,
+            "HERMES_HOME": os.environ.get("HERMES_HOME", str(Path.home() / ".hermes")),
+        },
     )
     sys.exit(result.returncode)
 
 
 # -- Gmail --
 
+
 def gmail_search(args):
-    cmd = ["gmail", "+triage", "--query", args.query, "--max", str(args.max), "--format", "json"]
+    cmd = [
+        "gmail",
+        "+triage",
+        "--query",
+        args.query,
+        "--max",
+        str(args.max),
+        "--format",
+        "json",
+    ]
     gws(*cmd)
+
 
 def gmail_get(args):
     gws("gmail", "+read", "--id", args.message_id, "--headers", "--format", "json")
 
+
 def gmail_send(args):
-    cmd = ["gmail", "+send", "--to", args.to, "--subject", args.subject, "--body", args.body, "--format", "json"]
+    cmd = [
+        "gmail",
+        "+send",
+        "--to",
+        args.to,
+        "--subject",
+        args.subject,
+        "--body",
+        args.body,
+        "--format",
+        "json",
+    ]
     if args.cc:
         cmd += ["--cc", args.cc]
     if args.html:
         cmd.append("--html")
     gws(*cmd)
 
+
 def gmail_reply(args):
-    gws("gmail", "+reply", "--message-id", args.message_id, "--body", args.body, "--format", "json")
+    gws(
+        "gmail",
+        "+reply",
+        "--message-id",
+        args.message_id,
+        "--body",
+        args.body,
+        "--format",
+        "json",
+    )
+
 
 def gmail_labels(args):
-    gws("gmail", "users", "labels", "list", "--params", json.dumps({"userId": "me"}), "--format", "json")
+    gws(
+        "gmail",
+        "users",
+        "labels",
+        "list",
+        "--params",
+        json.dumps({"userId": "me"}),
+        "--format",
+        "json",
+    )
+
 
 def gmail_modify(args):
     body = {}
@@ -70,33 +117,47 @@ def gmail_modify(args):
     if args.remove_labels:
         body["removeLabelIds"] = args.remove_labels.split(",")
     gws(
-        "gmail", "users", "messages", "modify",
-        "--params", json.dumps({"userId": "me", "id": args.message_id}),
-        "--json", json.dumps(body),
-        "--format", "json",
+        "gmail",
+        "users",
+        "messages",
+        "modify",
+        "--params",
+        json.dumps({"userId": "me", "id": args.message_id}),
+        "--json",
+        json.dumps(body),
+        "--format",
+        "json",
     )
 
 
 # -- Calendar --
 
+
 def calendar_list(args):
     if args.start or args.end:
         # Specific date range — use raw Calendar API for precise timeMin/timeMax
         from datetime import datetime, timedelta, timezone as tz
+
         now = datetime.now(tz.utc)
         time_min = args.start or now.isoformat()
         time_max = args.end or (now + timedelta(days=7)).isoformat()
         gws(
-            "calendar", "events", "list",
-            "--params", json.dumps({
-                "calendarId": args.calendar,
-                "timeMin": time_min,
-                "timeMax": time_max,
-                "maxResults": args.max,
-                "singleEvents": True,
-                "orderBy": "startTime",
-            }),
-            "--format", "json",
+            "calendar",
+            "events",
+            "list",
+            "--params",
+            json.dumps(
+                {
+                    "calendarId": args.calendar,
+                    "timeMin": time_min,
+                    "timeMax": time_max,
+                    "maxResults": args.max,
+                    "singleEvents": True,
+                    "orderBy": "startTime",
+                }
+            ),
+            "--format",
+            "json",
         )
     else:
         # No date range — use +agenda helper (defaults to 7 days)
@@ -105,13 +166,19 @@ def calendar_list(args):
             cmd += ["--calendar", args.calendar]
         gws(*cmd)
 
+
 def calendar_create(args):
     cmd = [
-        "calendar", "+insert",
-        "--summary", args.summary,
-        "--start", args.start,
-        "--end", args.end,
-        "--format", "json",
+        "calendar",
+        "+insert",
+        "--summary",
+        args.summary,
+        "--start",
+        args.start,
+        "--end",
+        args.end,
+        "--format",
+        "json",
     ]
     if args.location:
         cmd += ["--location", args.location]
@@ -124,90 +191,137 @@ def calendar_create(args):
         cmd += ["--calendar", args.calendar]
     gws(*cmd)
 
+
 def calendar_delete(args):
     gws(
-        "calendar", "events", "delete",
-        "--params", json.dumps({"calendarId": args.calendar, "eventId": args.event_id}),
-        "--format", "json",
+        "calendar",
+        "events",
+        "delete",
+        "--params",
+        json.dumps({"calendarId": args.calendar, "eventId": args.event_id}),
+        "--format",
+        "json",
     )
 
 
 # -- Drive --
 
+
 def drive_search(args):
     query = args.query if args.raw_query else f"fullText contains '{args.query}'"
     gws(
-        "drive", "files", "list",
-        "--params", json.dumps({
-            "q": query,
-            "pageSize": args.max,
-            "fields": "files(id,name,mimeType,modifiedTime,webViewLink)",
-        }),
-        "--format", "json",
+        "drive",
+        "files",
+        "list",
+        "--params",
+        json.dumps(
+            {
+                "q": query,
+                "pageSize": args.max,
+                "fields": "files(id,name,mimeType,modifiedTime,webViewLink)",
+            }
+        ),
+        "--format",
+        "json",
     )
 
 
 # -- Contacts --
 
+
 def contacts_list(args):
     gws(
-        "people", "people", "connections", "list",
-        "--params", json.dumps({
-            "resourceName": "people/me",
-            "pageSize": args.max,
-            "personFields": "names,emailAddresses,phoneNumbers",
-        }),
-        "--format", "json",
+        "people",
+        "people",
+        "connections",
+        "list",
+        "--params",
+        json.dumps(
+            {
+                "resourceName": "people/me",
+                "pageSize": args.max,
+                "personFields": "names,emailAddresses,phoneNumbers",
+            }
+        ),
+        "--format",
+        "json",
     )
 
 
 # -- Sheets --
 
+
 def sheets_get(args):
     gws(
-        "sheets", "+read",
-        "--spreadsheet", args.sheet_id,
-        "--range", args.range,
-        "--format", "json",
+        "sheets",
+        "+read",
+        "--spreadsheet",
+        args.sheet_id,
+        "--range",
+        args.range,
+        "--format",
+        "json",
     )
+
 
 def sheets_update(args):
     values = json.loads(args.values)
     gws(
-        "sheets", "spreadsheets", "values", "update",
-        "--params", json.dumps({
-            "spreadsheetId": args.sheet_id,
-            "range": args.range,
-            "valueInputOption": "USER_ENTERED",
-        }),
-        "--json", json.dumps({"values": values}),
-        "--format", "json",
+        "sheets",
+        "spreadsheets",
+        "values",
+        "update",
+        "--params",
+        json.dumps(
+            {
+                "spreadsheetId": args.sheet_id,
+                "range": args.range,
+                "valueInputOption": "USER_ENTERED",
+            }
+        ),
+        "--json",
+        json.dumps({"values": values}),
+        "--format",
+        "json",
     )
+
 
 def sheets_append(args):
     values = json.loads(args.values)
     gws(
-        "sheets", "+append",
-        "--spreadsheet", args.sheet_id,
-        "--json-values", json.dumps(values),
-        "--format", "json",
+        "sheets",
+        "+append",
+        "--spreadsheet",
+        args.sheet_id,
+        "--json-values",
+        json.dumps(values),
+        "--format",
+        "json",
     )
 
 
 # -- Docs --
 
+
 def docs_get(args):
     gws(
-        "docs", "documents", "get",
-        "--params", json.dumps({"documentId": args.doc_id}),
-        "--format", "json",
+        "docs",
+        "documents",
+        "get",
+        "--params",
+        json.dumps({"documentId": args.doc_id}),
+        "--format",
+        "json",
     )
 
 
 # -- CLI parser (backward-compatible interface) --
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Google Workspace API for Hermes Agent (gws backend)")
+    parser = argparse.ArgumentParser(
+        description="Google Workspace API for Hermes Agent (gws backend)"
+    )
     sub = parser.add_subparsers(dest="service", required=True)
 
     # --- Gmail ---
@@ -229,7 +343,9 @@ def main():
     p.add_argument("--body", required=True)
     p.add_argument("--cc", default="")
     p.add_argument("--html", action="store_true", help="Send body as HTML")
-    p.add_argument("--thread-id", default="", help="Thread ID (unused with gws, kept for compat)")
+    p.add_argument(
+        "--thread-id", default="", help="Thread ID (unused with gws, kept for compat)"
+    )
     p.set_defaults(func=gmail_send)
 
     p = gmail_sub.add_parser("reply")
@@ -243,7 +359,9 @@ def main():
     p = gmail_sub.add_parser("modify")
     p.add_argument("message_id")
     p.add_argument("--add-labels", default="", help="Comma-separated label IDs to add")
-    p.add_argument("--remove-labels", default="", help="Comma-separated label IDs to remove")
+    p.add_argument(
+        "--remove-labels", default="", help="Comma-separated label IDs to remove"
+    )
     p.set_defaults(func=gmail_modify)
 
     # --- Calendar ---
@@ -279,7 +397,9 @@ def main():
     p = drv_sub.add_parser("search")
     p.add_argument("query")
     p.add_argument("--max", type=int, default=10)
-    p.add_argument("--raw-query", action="store_true", help="Use query as raw Drive API query")
+    p.add_argument(
+        "--raw-query", action="store_true", help="Use query as raw Drive API query"
+    )
     p.set_defaults(func=drive_search)
 
     # --- Contacts ---

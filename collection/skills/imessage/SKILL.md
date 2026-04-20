@@ -100,3 +100,34 @@ imsg chats --limit 20 --json | jq '.[] | select(.displayName | contains("Mom"))'
 # 3. Send after confirmation
 imsg send --to "+1555123456" --text "I'll be late"
 ```
+
+## Activation Keywords
+
+- "imessage", "text", "sms", "message", "send message", "text message"
+
+## Tools Used
+
+- `Bash` - Execute imsg commands
+- `Read` - Parse JSON output
+
+## Instructions for Agents
+
+1. Check if user has imsg installed: `which imsg`
+2. List recent chats to find recipient: `imsg chats --limit 20 --json`
+3. Confirm recipient and message content with user
+4. Send message using appropriate service (iMessage or SMS)
+5. Verify message was sent
+
+## Examples
+
+### Send a text message
+```
+User: "Text John that I'm running late"
+→ Find chat → Confirm → imsg send --to "+1234567890" --text "I'm running late"
+```
+
+### View recent chats
+```
+User: "Show my recent iMessage conversations"
+→ imsg chats --limit 10 --json
+```

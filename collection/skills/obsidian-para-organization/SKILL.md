@@ -63,3 +63,36 @@ Vault/
 - Always add to existing notes when relevant
 - Use MOC for high-level navigation
 - Tag consistently for filtering
+
+## Activation Keywords
+
+- "obsidian", "PARA", "organize notes", "vault organization", "note structure"
+
+## Tools Used
+
+- `Read` - Read existing notes
+- `Write` - Create and update notes
+- `Glob` - Find notes by pattern
+- `Grep` - Search note content
+
+## Instructions for Agents
+
+1. Assess current vault structure if it exists
+2. Create PARA directory structure if missing
+3. Create core templates (Daily, Project, Paper, Meeting)
+4. Set up MOC (Map of Content) as navigation hub
+5. Guide user on workflow and best practices
+
+## Examples
+
+### Organize existing vault
+```
+User: "Organize my Obsidian vault with PARA method"
+→ Check existing structure → Create directories → Create templates → Set up MOC
+```
+
+### Create project note
+```
+User: "Create a new project note for my research"
+→ Create in 02-Projects/ → Use Project template → Link to MOC
+```

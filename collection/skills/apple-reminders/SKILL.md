@@ -96,3 +96,34 @@ Accepted by `--due` and date filters:
 1. When user says "remind me", clarify: Apple Reminders (syncs to phone) vs agent cronjob alert
 2. Always confirm reminder content and due date before creating
 3. Use `--json` for programmatic parsing
+
+## Activation Keywords
+
+- "reminder", "reminders", "todo", "task", "Apple Reminders", "remind me to"
+
+## Tools Used
+
+- `Bash` - Execute remindctl commands
+- `Read` - Parse JSON output
+
+## Instructions for Agents
+
+1. Check if user has remindctl installed: `remindctl status`
+2. Parse user's reminder request (title, due date, list)
+3. Confirm details with user before creating
+4. Execute appropriate remindctl command
+5. Verify creation by listing reminders
+
+## Examples
+
+### Create a reminder
+```
+User: "Remind me to call mom tomorrow"
+→ remindctl add --title "Call mom" --due tomorrow
+```
+
+### List today's reminders
+```
+User: "What are my reminders for today?"
+→ remindctl today --json
+```

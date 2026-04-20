@@ -13,8 +13,10 @@ Usage:
     python extract_marker.py document.pdf --json        # Structured output
     python extract_marker.py document.pdf --use_llm     # LLM-boosted accuracy
 """
+
 import sys
 import os
+
 
 def convert(path, output_dir=None, output_format="markdown", use_llm=False):
     from marker.converters.pdf import PdfConverter
@@ -27,35 +29,52 @@ def convert(path, output_dir=None, output_format="markdown", use_llm=False):
 
     config_parser = ConfigParser(config_dict)
     models = create_model_dict()
-    converter = PdfConverter(config=config_parser.generate_config_dict(), artifact_dict=models)
+    converter = PdfConverter(
+        config=config_parser.generate_config_dict(), artifact_dict=models
+    )
     rendered = converter(path)
 
     if output_format == "json":
         import json
-        print(json.dumps({
-            "markdown": rendered.markdown,
-            "metadata": rendered.metadata if hasattr(rendered, "metadata") else {},
-        }, indent=2, ensure_ascii=False))
+
+        print(
+            json.dumps(
+                {
+                    "markdown": rendered.markdown,
+                    "metadata": rendered.metadata
+                    if hasattr(rendered, "metadata")
+                    else {},
+                },
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
     else:
         print(rendered.markdown)
 
     # Save images if output_dir specified
     if output_dir and hasattr(rendered, "images") and rendered.images:
         from pathlib import Path
+
         Path(output_dir).mkdir(parents=True, exist_ok=True)
         for name, img_data in rendered.images.items():
             img_path = os.path.join(output_dir, name)
             with open(img_path, "wb") as f:
                 f.write(img_data)
-        print(f"\nSaved {len(rendered.images)} image(s) to {output_dir}/", file=sys.stderr)
+        print(
+            f"\nSaved {len(rendered.images)} image(s) to {output_dir}/", file=sys.stderr
+        )
 
 
 def check_requirements():
     """Check disk space before installing."""
     import shutil
+
     free_gb = shutil.disk_usage("/").free / (1024**3)
     if free_gb < 5:
-        print(f"⚠️  Only {free_gb:.1f}GB free. marker-pdf needs ~5GB for PyTorch + models.")
+        print(
+            f"⚠️  Only {free_gb:.1f}GB free. marker-pdf needs ~5GB for PyTorch + models."
+        )
         print("Use pymupdf instead (scripts/extract_pymupdf.py) or free up disk space.")
         sys.exit(1)
     print(f"✓ {free_gb:.1f}GB free — sufficient for marker-pdf")

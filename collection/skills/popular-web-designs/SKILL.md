@@ -205,3 +205,36 @@ Match the design to the content:
 - **Premium / luxury:** Apple, BMW, Stripe, Superhuman, Revolut
 - **Data-dense / dashboards:** Sentry, Kraken, Cohere, ClickHouse
 - **Monospace / terminal aesthetic:** Ollama, OpenCode, x.ai, VoltAgent
+
+## Activation Keywords
+
+- "design like", "looks like", "styled like", "landing page", "web design", "UI design"
+- "stripe style", "linear design", "vercel look", "dashboard design"
+
+## Tools Used
+
+- `skill_view` - Load design templates
+- `Write` - Generate HTML/CSS files
+- `Read` - Reference template files
+
+## Instructions for Agents
+
+1. Identify user's design preference from keywords
+2. Load appropriate template: `skill_view(name="popular-web-designs", file_path="templates/<site>.md")`
+3. Extract design tokens (colors, typography, spacing)
+4. Generate HTML with embedded CSS using design system
+5. Use `browser_vision` to verify visual result if needed
+
+## Examples
+
+### Create Stripe-style landing page
+```
+User: "Create a landing page that looks like Stripe"
+→ skill_view template "stripe.md" → Extract design tokens → Generate HTML
+```
+
+### Build dashboard UI
+```
+User: "Build a dashboard with Linear's dark theme"
+→ skill_view template "linear.md" → Apply color palette → Create components
+```

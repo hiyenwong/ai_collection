@@ -280,3 +280,39 @@ tests exist, tests pass, no regressions.
 - **No test framework found** — skip regression check, reviewer verdict still runs
 - **Lint tools not installed** — skip that check silently, don't fail
 - **Auto-fix introduces new issues** — counts as a new failure, cycle continues
+
+## Activation Keywords
+
+- "review code", "verify changes", "pre-commit check", "code review", "commit", "push"
+
+## Tools Used
+
+- `Bash` - Run git commands and linters
+- `Read` - Check file contents
+- `Grep` - Security scanning patterns
+- `delegate_task` - Independent reviewer subagent
+
+## Instructions for Agents
+
+1. Get git diff of staged changes
+2. Run static security scan (secrets, injection, eval)
+3. Run baseline tests and linting
+4. Perform self-review checklist
+5. Spawn independent reviewer subagent
+6. Evaluate all results
+7. If failures, run auto-fix loop (max 2 cycles)
+8. If passed, commit with `[verified]` prefix
+
+## Examples
+
+### Verify before commit
+```
+User: "Review my changes before I commit"
+→ git diff --cached → Security scan → Tests → Reviewer subagent → Report results
+```
+
+### Full verification pipeline
+```
+User: "I'm done with the feature, verify and commit"
+→ Complete Steps 1-8 → Auto-fix if needed → Commit with [verified] prefix
+```

@@ -22,7 +22,8 @@
       "Bash(ruff check:*)",
       "WebFetch(domain:github.com)",
       "Bash(awk '{print $NF}')",
-      "Bash(echo \"Exit code: $?\")"
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(gh pr *)"
     ]
   }
 }

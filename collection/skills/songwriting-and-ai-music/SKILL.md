@@ -287,3 +287,38 @@ Style can drift in extensions — restate genre/mood when extending.
 - Don't be precious about rules. If a line breaks meter but hits
   harder, keep it. The feeling is what matters. Craft serves art,
   not the other way around.
+
+## Activation Keywords
+
+- "song", "music", "lyrics", "suno", "AI music", "songwriting", "compose", "parody"
+
+## Tools Used
+
+- `WebFetch` - Research song structures and references
+- `Write` - Create lyrics and song documentation
+- `Read` - Reference existing songs for parody
+
+## Instructions for Agents
+
+1. Identify user's goal: original song, parody, or adaptation
+2. Choose appropriate song structure from Section 1
+3. Apply rhyme, meter, and sound principles from Section 2
+4. Craft emotional arc following Section 3 guidance
+5. Write lyrics using techniques from Section 4
+6. Build Suno style description following Section 6
+7. Add metatags to lyrics for performance direction
+8. Provide complete prompt for Suno AI generation
+
+## Examples
+
+### Write original song
+```
+User: "Write a song about coding"
+→ Select structure → Craft lyrics → Build style description → Add metatags
+```
+
+### Create parody
+```
+User: "Parody 'Bohemian Rhapsody' as a song about debugging"
+→ Map original structure → Match syllables/stress → Write parody lyrics
+```
