@@ -1,3 +1,8 @@
+---
+name: video-generation-models-as-world-simulators---vide
+description: Skill for AI agent capabilities
+---
+
 # video-generation-models-as-world-simulators - Video generation models as world simulators
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: eas-snn---event-based-detection-with-adaptive-samp
+description: Skill for AI agent capabilities
+---
+
 # EAS-SNN - Event-based Detection with Adaptive Sampling SNN
 
 ## Overview

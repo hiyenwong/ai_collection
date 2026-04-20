@@ -1,3 +1,8 @@
+---
+name: better-exploration-with-parameter-noise---better-e
+description: Skill for AI agent capabilities
+---
+
 # better-exploration-with-parameter-noise - Better exploration with parameter noise
 
 ## Description

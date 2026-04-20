@@ -1,3 +1,8 @@
+---
+name: evaluating-large-language-models-trained-on-code--
+description: Skill for AI agent capabilities
+---
+
 # evaluating-large-language-models-trained-on-code - Evaluating large language models trained on code
 
 ## Description

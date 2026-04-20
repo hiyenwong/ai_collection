@@ -1,3 +1,8 @@
+---
+name: improving-verifiability-in-ai-development---improv
+description: Skill for AI agent capabilities
+---
+
 # improving-verifiability-in-ai-development - Improving verifiability in AI development
 
 ## Description

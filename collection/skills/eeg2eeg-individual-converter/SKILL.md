@@ -1,3 +1,8 @@
+---
+name: eeg2eeg---individual-to-individual-eeg-converter
+description: Skill for AI agent capabilities
+---
+
 # EEG2EEG - Individual-to-Individual EEG Converter
 
 ## Overview

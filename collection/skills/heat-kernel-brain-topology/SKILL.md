@@ -1,3 +1,8 @@
+---
+name: heat-kernel-brain-network-topology
+description: Skill for AI agent capabilities
+---
+
 # Heat Kernel Brain Network Topology
 
 ## Overview

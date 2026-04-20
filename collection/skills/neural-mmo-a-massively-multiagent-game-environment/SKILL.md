@@ -1,3 +1,8 @@
+---
+name: neural-mmo-a-massively-multiagent-game-environment
+description: Skill for AI agent capabilities
+---
+
 # neural-mmo-a-massively-multiagent-game-environment - Neural MMO: A massively multiagent game environment
 
 ## Description

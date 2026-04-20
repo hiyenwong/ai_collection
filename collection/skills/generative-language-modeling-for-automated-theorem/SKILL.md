@@ -1,3 +1,8 @@
+---
+name: generative-language-modeling-for-automated-theorem
+description: Skill for AI agent capabilities
+---
+
 # generative-language-modeling-for-automated-theorem - Generative language modeling for automated theorem proving
 
 ## Description

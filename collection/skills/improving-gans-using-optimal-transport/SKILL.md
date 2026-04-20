@@ -1,3 +1,8 @@
+---
+name: improving-gans-using-optimal-transport---improving
+description: Skill for AI agent capabilities
+---
+
 # improving-gans-using-optimal-transport - Improving GANs using optimal transport
 
 ## Description

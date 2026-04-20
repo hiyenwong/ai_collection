@@ -1,3 +1,8 @@
+---
+name: ucb-exploration-via-q-ensembles---ucb-exploration-
+description: Skill for AI agent capabilities
+---
+
 # ucb-exploration-via-q-ensembles - UCB exploration via Q-ensembles
 
 ## Description

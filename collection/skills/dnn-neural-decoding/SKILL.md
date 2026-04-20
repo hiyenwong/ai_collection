@@ -1,3 +1,8 @@
+---
+name: deep-neural-network-for-neural-response-decoding
+description: **Source:** arXiv:1911.05479 (IJCNN 2019)
+---
+
 # Deep Neural Network for Neural Response Decoding
 
 **Source:** arXiv:1911.05479 (IJCNN 2019)

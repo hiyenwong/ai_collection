@@ -1,3 +1,8 @@
+---
+name: a-connection-between-generative-adversarial-networ
+description: Skill for AI agent capabilities
+---
+
 # a-connection-between-generative-adversarial-networ - A connection between generative adversarial networks, inverse reinforcement learning, and energy-based models
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: scaling-kubernetes-to-7500-nodes---scaling-kuberne
+description: Skill for AI agent capabilities
+---
+
 # scaling-kubernetes-to-7500-nodes - Scaling Kubernetes to 7,500 nodes
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: universe---universe
+description: Skill for AI agent capabilities
+---
+
 # universe - Universe
 
 ## Description

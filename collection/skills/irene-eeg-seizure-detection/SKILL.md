@@ -1,3 +1,8 @@
+---
+name: irene-eeg-seizure-detection
+description: Skill for AI agent capabilities
+---
+
      1|---
      2|name: irene-eeg-seizure-detection
      3|version: v1.0.0

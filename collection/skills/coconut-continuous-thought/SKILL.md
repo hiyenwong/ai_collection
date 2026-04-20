@@ -1,3 +1,8 @@
+---
+name: coconut-chain-of-continuous-thought
+description: Skill for AI agent capabilities
+---
+
 # Coconut: Chain of Continuous Thought
 
 ## Description

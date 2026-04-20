@@ -1,3 +1,8 @@
+---
+name: neurograph---brain-connectomics-graph-ml-benchmark
+description: Skill for AI agent capabilities
+---
+
 # NeuroGraph - Brain Connectomics Graph ML Benchmarks
 
 ## Overview

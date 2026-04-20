@@ -1,3 +1,8 @@
+---
+name: gpt-2-6-month-follow-up---gpt-2-6-month-follow-up
+description: Skill for AI agent capabilities
+---
+
 # gpt-2-6-month-follow-up - GPT-2: 6-month follow-up
 
 ## Description

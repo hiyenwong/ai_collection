@@ -1,3 +1,8 @@
+---
+name: transfer-from-simulation-to-real-world-through-lea
+description: Skill for AI agent capabilities
+---
+
 # transfer-from-simulation-to-real-world-through-lea - Transfer from simulation to real world through learning deep inverse dynamics model
 
 ## Description

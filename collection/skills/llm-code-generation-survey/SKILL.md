@@ -1,3 +1,8 @@
+---
+name: llm-code-generation-survey
+description: Skill for AI agent capabilities
+---
+
 # LLM Code Generation Survey
 
 ## Description

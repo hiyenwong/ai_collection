@@ -1,3 +1,8 @@
+---
+name: extensions-and-limitations-of-the-neural-gpu---ext
+description: Skill for AI agent capabilities
+---
+
 # extensions-and-limitations-of-the-neural-gpu - Extensions and limitations of the neural GPU
 
 ## Description

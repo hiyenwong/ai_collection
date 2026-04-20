@@ -1,3 +1,8 @@
+---
+name: on-first-order-meta-learning-algorithms---on-first
+description: Skill for AI agent capabilities
+---
+
 # on-first-order-meta-learning-algorithms - On first-order meta-learning algorithms
 
 ## Description

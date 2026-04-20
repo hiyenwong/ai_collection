@@ -1,3 +1,8 @@
+---
+name: clip-connecting-text-and-images---clip-connecting-
+description: Skill for AI agent capabilities
+---
+
 # clip-connecting-text-and-images - CLIP: Connecting text and images
 
 ## Description

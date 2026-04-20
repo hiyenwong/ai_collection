@@ -1,3 +1,8 @@
+---
+name: te-vids---time-evolving-visual-dynamical-system
+description: **来源论文：** arXiv:2408.07908 - Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Neural Activity
+---
+
 # TE-ViDS - Time-Evolving Visual Dynamical System
 
 **来源论文：** arXiv:2408.07908 - Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Neural Activity

@@ -1,3 +1,8 @@
+---
+name: improving-instruction-hierarchy-in-frontier-llms--
+description: Skill for AI agent capabilities
+---
+
 # improving-instruction-hierarchy-in-frontier-llms - Improving instruction hierarchy in frontier LLMs
 
 ## Description

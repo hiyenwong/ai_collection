@@ -1,3 +1,8 @@
+---
+name: evaluating-chain-of-thought-monitorability---evalu
+description: Skill for AI agent capabilities
+---
+
 # evaluating-chain-of-thought-monitorability - Evaluating chain-of-thought monitorability
 
 ## Description

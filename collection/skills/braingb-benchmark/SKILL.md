@@ -1,3 +1,8 @@
+---
+name: braingb---brain-network-analysis-benchmark-with-gn
+description: **来源论文：** arXiv:2204.07054 - BrainGB: A Benchmark for Brain Network Analysis with Graph Neural Networks
+---
+
 # BrainGB - Brain Network Analysis Benchmark with GNNs
 
 **来源论文：** arXiv:2204.07054 - BrainGB: A Benchmark for Brain Network Analysis with Graph Neural Networks

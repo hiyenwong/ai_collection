@@ -1,3 +1,8 @@
+---
+name: evaluating-ais-ability-to-perform-scientific-resea
+description: Skill for AI agent capabilities
+---
+
 # evaluating-ais-ability-to-perform-scientific-resea - Evaluating AI’s ability to perform scientific research tasks
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: scaling-laws-for-neural-language-models---scaling-
+description: Skill for AI agent capabilities
+---
+
 # scaling-laws-for-neural-language-models - Scaling laws for neural language models
 
 ## Description

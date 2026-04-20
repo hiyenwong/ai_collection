@@ -1,3 +1,8 @@
+---
+name: competitive-self-play---competitive-self-play
+description: Skill for AI agent capabilities
+---
+
 # competitive-self-play - Competitive self-play
 
 ## Description

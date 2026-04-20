@@ -1,3 +1,8 @@
+---
+name: fusion-searchlight-for-rs-fmri-data-integration
+description: **Source:** arXiv:2412.10161
+---
+
 # Fusion Searchlight for rs-fMRI Data Integration
 
 **Source:** arXiv:2412.10161

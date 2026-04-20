@@ -1,3 +1,8 @@
+---
+name: eeg-foundation-model---large-cognition-model-(lcm)
+description: Skill for AI agent capabilities
+---
+
 # EEG Foundation Model - Large Cognition Model (LCM)
 
 ## Overview

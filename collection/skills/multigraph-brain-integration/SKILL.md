@@ -1,3 +1,8 @@
+---
+name: multigraph-integration-for-brain-connectivity-mapp
+description: **Source:** arXiv:2204.05110
+---
+
 # Multigraph Integration for Brain Connectivity Mapping
 
 **Source:** arXiv:2204.05110

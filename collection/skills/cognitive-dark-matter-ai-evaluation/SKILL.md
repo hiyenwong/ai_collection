@@ -1,3 +1,8 @@
+---
+name: skill.md---cognitive-dark-matter-ai-evaluation
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Cognitive Dark Matter AI Evaluation
 
 ## Activation Keywords

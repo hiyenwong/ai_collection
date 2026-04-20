@@ -1,3 +1,8 @@
+---
+name: robust-adversarial-inputs---robust-adversarial-inp
+description: Skill for AI agent capabilities
+---
+
 # robust-adversarial-inputs - Robust adversarial inputs
 
 ## Description

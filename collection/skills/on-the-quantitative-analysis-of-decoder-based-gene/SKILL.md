@@ -1,3 +1,8 @@
+---
+name: on-the-quantitative-analysis-of-decoder-based-gene
+description: Skill for AI agent capabilities
+---
+
 # on-the-quantitative-analysis-of-decoder-based-gene - On the quantitative analysis of decoder-based generative models
 
 ## Description

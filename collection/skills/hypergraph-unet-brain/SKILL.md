@@ -1,3 +1,8 @@
+---
+name: hypergraph-u-net-for-brain-graph-embedding
+description: **Source:** arXiv:2008.13118
+---
+
 # Hypergraph U-Net for Brain Graph Embedding
 
 **Source:** arXiv:2008.13118

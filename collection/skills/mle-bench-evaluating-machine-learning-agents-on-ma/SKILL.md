@@ -1,3 +1,8 @@
+---
+name: mle-bench-evaluating-machine-learning-agents-on-ma
+description: Skill for AI agent capabilities
+---
+
 # mle-bench-evaluating-machine-learning-agents-on-ma - MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering
 
 ## Description

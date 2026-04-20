@@ -1,3 +1,8 @@
+---
+name: self-organization-of-microcircuits-in-neural-netwo
+description: **Source:** arXiv:1411.3956
+---
+
 # Self-Organization of Microcircuits in Neural Networks
 
 **Source:** arXiv:1411.3956

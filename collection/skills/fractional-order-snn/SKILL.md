@@ -1,3 +1,8 @@
+---
+name: fractional-order-spiking-neural-network-(f-snn)
+description: Skill for AI agent capabilities
+---
+
 # Fractional-order Spiking Neural Network (f-SNN)
 
 ## Overview

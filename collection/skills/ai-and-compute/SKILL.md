@@ -1,3 +1,8 @@
+---
+name: ai-and-compute---ai-and-compute
+description: Skill for AI agent capabilities
+---
+
 # ai-and-compute - AI and compute
 
 ## Description

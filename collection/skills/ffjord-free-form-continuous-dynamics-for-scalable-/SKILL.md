@@ -1,3 +1,8 @@
+---
+name: ffjord-free-form-continuous-dynamics-for-scalable-
+description: Skill for AI agent capabilities
+---
+
 # ffjord-free-form-continuous-dynamics-for-scalable- - FFJORD: Free-form continuous dynamics for scalable reversible generative models
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: understanding-neural-networks-through-sparse-circu
+description: Skill for AI agent capabilities
+---
+
 # understanding-neural-networks-through-sparse-circu - Understanding neural networks through sparse circuits
 
 ## Description

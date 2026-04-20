@@ -1,3 +1,8 @@
+---
+name: prediction-and-control-with-temporal-segment-model
+description: Skill for AI agent capabilities
+---
+
 # prediction-and-control-with-temporal-segment-model - Prediction and control with temporal segment models
 
 ## Description

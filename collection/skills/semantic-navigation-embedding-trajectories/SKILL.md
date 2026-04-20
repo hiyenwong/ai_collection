@@ -1,3 +1,8 @@
+---
+name: semantic-navigation-embedding-trajectories---chara
+description: Skill for AI agent capabilities
+---
+
 # semantic-navigation-embedding-trajectories - Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space
 
 ## Description

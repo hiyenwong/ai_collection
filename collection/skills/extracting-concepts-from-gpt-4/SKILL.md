@@ -1,3 +1,8 @@
+---
+name: extracting-concepts-from-gpt-4---extracting-concep
+description: Skill for AI agent capabilities
+---
+
 # extracting-concepts-from-gpt-4 - Extracting Concepts from GPT-4
 
 ## Description

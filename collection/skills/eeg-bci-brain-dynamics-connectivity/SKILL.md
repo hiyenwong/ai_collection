@@ -1,3 +1,8 @@
+---
+name: eeg-brain-connectivity-for-bci-dynamics-study
+description: **来源论文：** arXiv:2007.11674 - Using EEG-based brain connectivity for the study of brain dynamics in brain-computer interfaces
+---
+
 # EEG Brain Connectivity for BCI Dynamics Study
 
 **来源论文：** arXiv:2007.11674 - Using EEG-based brain connectivity for the study of brain dynamics in brain-computer interfaces

@@ -1,3 +1,8 @@
+---
+name: human-ai-teaming-a-review-and-outlook
+description: Skill for AI agent capabilities
+---
+
 # Human-AI Teaming: A Review and Outlook
 
 ## Description

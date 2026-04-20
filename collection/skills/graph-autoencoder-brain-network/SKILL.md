@@ -1,3 +1,8 @@
+---
+name: graph-autoencoders-for-brain-network-embedding
+description: **Source:** arXiv:2107.12838
+---
+
 # Graph Autoencoders for Brain Network Embedding
 
 **Source:** arXiv:2107.12838

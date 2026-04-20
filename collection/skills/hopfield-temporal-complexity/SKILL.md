@@ -1,3 +1,8 @@
+---
+name: hopfield-temporal-complexity-on-network-topologies
+description: **来源论文：** arXiv:2406.12895 - Temporal Complexity of a Hopfield-Type Neural Model in Random and Scale-Free Graphs
+---
+
 # Hopfield Temporal Complexity on Network Topologies
 
 **来源论文：** arXiv:2406.12895 - Temporal Complexity of a Hopfield-Type Neural Model in Random and Scale-Free Graphs

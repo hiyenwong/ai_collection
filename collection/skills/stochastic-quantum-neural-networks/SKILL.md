@@ -1,3 +1,8 @@
+---
+name: skill.md---stochastic-quantum-neural-networks
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Stochastic Quantum Neural Networks
 
 ## Activation Keywords

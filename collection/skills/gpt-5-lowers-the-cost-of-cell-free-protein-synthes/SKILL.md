@@ -1,3 +1,8 @@
+---
+name: gpt-5-lowers-the-cost-of-cell-free-protein-synthes
+description: Skill for AI agent capabilities
+---
+
 # gpt-5-lowers-the-cost-of-cell-free-protein-synthes - GPT-5 lowers the cost of cell-free protein synthesis
 
 ## Description

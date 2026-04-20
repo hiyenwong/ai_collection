@@ -1,3 +1,8 @@
+---
+name: skill.md---neuro-pc-causal-functional-connectivity
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Neuro-PC Causal Functional Connectivity
 
 ## Activation Keywords

@@ -1,3 +1,8 @@
+---
+name: introducing-triton-open-source-gpu-programming-for
+description: Skill for AI agent capabilities
+---
+
 # introducing-triton-open-source-gpu-programming-for - Introducing Triton: Open-source GPU programming for neural networks
 
 ## Description

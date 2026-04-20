@@ -1,3 +1,8 @@
+---
+name: aflow-automating-agentic-workflow-generation
+description: Skill for AI agent capabilities
+---
+
 # AFlow: Automating Agentic Workflow Generation
 
 ## Description

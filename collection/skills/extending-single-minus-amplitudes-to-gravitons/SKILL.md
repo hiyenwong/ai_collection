@@ -1,3 +1,8 @@
+---
+name: extending-single-minus-amplitudes-to-gravitons---e
+description: Skill for AI agent capabilities
+---
+
 # extending-single-minus-amplitudes-to-gravitons - Extending single-minus amplitudes to gravitons
 
 ## Description

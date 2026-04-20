@@ -1,3 +1,8 @@
+---
+name: autism-eeg-dynamical-systems-analysis
+description: Skill for AI agent capabilities
+---
+
 # Autism EEG Dynamical Systems Analysis
 
 ## Overview

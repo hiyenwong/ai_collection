@@ -1,3 +1,8 @@
+---
+name: sbind-spatiotemporal-brain-imaging-neural-dynamics
+description: **Source:** arXiv:2509.18507 (ICML 2025)
+---
+
 # SBIND: Spatiotemporal Brain Imaging Neural Dynamics
 
 **Source:** arXiv:2509.18507 (ICML 2025)

@@ -1,3 +1,8 @@
+---
+name: openai-o1-system-card---openai-o1-system-card
+description: Skill for AI agent capabilities
+---
+
 # openai-o1-system-card - OpenAI o1 System Card
 
 ## Description

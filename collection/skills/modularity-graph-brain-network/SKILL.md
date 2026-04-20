@@ -1,3 +1,8 @@
+---
+name: modularity-graph-for-brain-functional-networks
+description: **来源论文：** arXiv:2406.15155 - Introducing the modularity graph: an application to brain functional networks
+---
+
 # Modularity Graph for Brain Functional Networks
 
 **来源论文：** arXiv:2406.15155 - Introducing the modularity graph: an application to brain functional networks

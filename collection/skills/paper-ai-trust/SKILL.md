@@ -1,3 +1,8 @@
+---
+name: skill.md---ai-trust-os-enterprise-ai-governance-fr
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - AI Trust OS: Enterprise AI Governance Framework
 
 ## Paper Reference

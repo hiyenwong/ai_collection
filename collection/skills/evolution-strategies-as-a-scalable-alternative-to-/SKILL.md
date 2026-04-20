@@ -1,3 +1,8 @@
+---
+name: evolution-strategies-as-a-scalable-alternative-to-
+description: Skill for AI agent capabilities
+---
+
 # evolution-strategies-as-a-scalable-alternative-to- - Evolution strategies as a scalable alternative to reinforcement learning
 
 ## Description

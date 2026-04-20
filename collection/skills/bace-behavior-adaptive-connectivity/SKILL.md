@@ -1,3 +1,8 @@
+---
+name: bace---behavior-adaptive-connectivity-estimation
+description: Skill for AI agent capabilities
+---
+
 # BACE - Behavior-Adaptive Connectivity Estimation
 
 ## Overview

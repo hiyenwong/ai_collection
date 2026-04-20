@@ -1,3 +1,8 @@
+---
+name: equivalence-between-policy-gradients-and-soft-q-le
+description: Skill for AI agent capabilities
+---
+
 # equivalence-between-policy-gradients-and-soft-q-le - Equivalence between policy gradients and soft Q-learning
 
 ## Description

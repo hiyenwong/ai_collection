@@ -1,3 +1,8 @@
+---
+name: computer-using-agent---computer-using-agent
+description: Skill for AI agent capabilities
+---
+
 # computer-using-agent - Computer-Using Agent
 
 ## Description

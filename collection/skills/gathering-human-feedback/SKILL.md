@@ -1,3 +1,8 @@
+---
+name: gathering-human-feedback---gathering-human-feedbac
+description: Skill for AI agent capabilities
+---
+
 # gathering-human-feedback - Gathering human feedback
 
 ## Description

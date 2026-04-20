@@ -1,3 +1,8 @@
+---
+name: bc-vareta---meeg-source-connectivity-analysis-tool
+description: **来源论文：** arXiv:1810.11212 - Third Generation MEEG Source Connectivity Analysis Toolbox (BC-VARETA 1.0) and Validation Benchmark
+---
+
 # BC-VARETA - MEEG Source Connectivity Analysis Toolbox
 
 **来源论文：** arXiv:1810.11212 - Third Generation MEEG Source Connectivity Analysis Toolbox (BC-VARETA 1.0) and Validation Benchmark

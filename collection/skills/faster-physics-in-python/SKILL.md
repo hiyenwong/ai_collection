@@ -1,3 +1,8 @@
+---
+name: faster-physics-in-python---faster-physics-in-pytho
+description: Skill for AI agent capabilities
+---
+
 # faster-physics-in-python - Faster physics in Python
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: trading-inference-time-compute-for-adversarial-rob
+description: Skill for AI agent capabilities
+---
+
 # trading-inference-time-compute-for-adversarial-rob - Trading inference-time compute for adversarial robustness
 
 ## Description

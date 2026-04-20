@@ -1,3 +1,8 @@
+---
+name: tecos-lvm---temporal-conditioning-spiking-latent-v
+description: Skill for AI agent capabilities
+---
+
 # TeCoS-LVM - Temporal Conditioning Spiking Latent Variable Models
 
 ## Overview

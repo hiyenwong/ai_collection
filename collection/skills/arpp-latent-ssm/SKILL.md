@@ -1,3 +1,8 @@
+---
+name: arpp-latent-ssm---autoregressive-point-process-to-
+description: Skill for AI agent capabilities
+---
+
 # arpp-latent-ssm - Autoregressive Point Process to Latent SSM
 
 ## Description

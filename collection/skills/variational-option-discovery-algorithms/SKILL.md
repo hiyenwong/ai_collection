@@ -1,3 +1,8 @@
+---
+name: variational-option-discovery-algorithms---variatio
+description: Skill for AI agent capabilities
+---
+
 # variational-option-discovery-algorithms - Variational option discovery algorithms
 
 ## Description

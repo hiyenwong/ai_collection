@@ -1,3 +1,8 @@
+---
+name: reasoning-models-struggle-to-control-their-chains-
+description: Skill for AI agent capabilities
+---
+
 # reasoning-models-struggle-to-control-their-chains- - Reasoning models struggle to control their chains of thought, and that’s good
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: emergent-tool-use-from-multi-agent-interaction---e
+description: Skill for AI agent capabilities
+---
+
 # emergent-tool-use-from-multi-agent-interaction - Emergent tool use from multi-agent interaction
 
 ## Description

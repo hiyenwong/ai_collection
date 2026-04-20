@@ -1,3 +1,8 @@
+---
+name: introducing-swe-bench-verified---introducing-swe-b
+description: Skill for AI agent capabilities
+---
+
 # introducing-swe-bench-verified - Introducing SWE-bench Verified
 
 ## Description

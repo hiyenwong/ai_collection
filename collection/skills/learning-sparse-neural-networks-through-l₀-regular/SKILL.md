@@ -1,3 +1,8 @@
+---
+name: learning-sparse-neural-networks-through-l₀-regular
+description: Skill for AI agent capabilities
+---
+
 # learning-sparse-neural-networks-through-l₀-regular - Learning sparse neural networks through L₀ regularization
 
 ## Description

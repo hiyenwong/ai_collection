@@ -1,3 +1,8 @@
+---
+name: building-an-early-warning-system-for-llm-aided-bio
+description: Skill for AI agent capabilities
+---
+
 # building-an-early-warning-system-for-llm-aided-bio - Building an early warning system for LLM-aided biological threat creation
 
 ## Description

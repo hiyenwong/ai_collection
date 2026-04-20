@@ -1,3 +1,8 @@
+---
+name: sora-2-is-here---sora-2-is-here
+description: Skill for AI agent capabilities
+---
+
 # sora-2-is-here - Sora 2 is here
 
 ## Description

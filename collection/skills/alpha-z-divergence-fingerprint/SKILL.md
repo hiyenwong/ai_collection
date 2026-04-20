@@ -1,3 +1,8 @@
+---
+name: skill.md---alpha-z-divergence-brain-connectivity-f
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Alpha-Z Divergence Brain Connectivity Fingerprint
 
 ## Activation Keywords

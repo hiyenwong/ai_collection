@@ -1,3 +1,8 @@
+---
+name: skill.md---gnn-brain-connectivity-with-gnnexplaine
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - GNN Brain Connectivity with GNNExplainer
 
 ## Activation Keywords

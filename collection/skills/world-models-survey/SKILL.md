@@ -1,3 +1,8 @@
+---
+name: world-models-understanding-and-prediction-survey
+description: Skill for AI agent capabilities
+---
+
 # World Models: Understanding and Prediction Survey
 
 ## Description

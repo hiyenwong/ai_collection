@@ -1,3 +1,8 @@
+---
+name: naturalistic-meg-fmri-encoding-model-for-high-spat
+description: **来源论文：** arXiv:2510.09415 - Estimating Brain Activity with High Spatial and Temporal Resolution using a Naturalistic MEG-fMRI Encoding Model
+---
+
 # Naturalistic MEG-fMRI Encoding Model for High Spatiotemporal Resolution
 
 **来源论文：** arXiv:2510.09415 - Estimating Brain Activity with High Spatial and Temporal Resolution using a Naturalistic MEG-fMRI Encoding Model

@@ -1,3 +1,8 @@
+---
+name: skill.md---learned-transfer-membership-inference-a
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Learned Transfer Membership Inference Attack (LT-MIA)
 
 ## Paper Reference

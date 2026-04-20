@@ -1,3 +1,8 @@
+---
+name: openai-five-benchmark-results---openai-five-benchm
+description: Skill for AI agent capabilities
+---
+
 # openai-five-benchmark-results - OpenAI Five Benchmark: Results
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: multimodal-joint-graph-representation-eeg-fmri
+description: **Source:** arXiv:2201.08747
+---
+
 # Multimodal Joint Graph Representation EEG-fMRI
 
 **Source:** arXiv:2201.08747

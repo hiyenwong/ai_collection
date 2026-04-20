@@ -1,3 +1,8 @@
+---
+name: reinforcement-learning-with-prediction-based-rewar
+description: Skill for AI agent capabilities
+---
+
 # reinforcement-learning-with-prediction-based-rewar - Reinforcement learning with prediction-based rewards
 
 ## Description

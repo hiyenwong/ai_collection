@@ -1,3 +1,8 @@
+---
+name: a-research-agenda-for-assessing-the-economic-impac
+description: Skill for AI agent capabilities
+---
+
 # a-research-agenda-for-assessing-the-economic-impac - A research agenda for assessing the economic impacts of code generation models
 
 ## Description

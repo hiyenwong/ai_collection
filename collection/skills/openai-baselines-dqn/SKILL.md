@@ -1,3 +1,8 @@
+---
+name: openai-baselines-dqn---openai-baselines-dqn
+description: Skill for AI agent capabilities
+---
+
 # openai-baselines-dqn - OpenAI Baselines: DQN
 
 ## Description

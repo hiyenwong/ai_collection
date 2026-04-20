@@ -1,3 +1,8 @@
+---
+name: quantifying-generalization-in-reinforcement-learni
+description: Skill for AI agent capabilities
+---
+
 # quantifying-generalization-in-reinforcement-learni - Quantifying generalization in reinforcement learning
 
 ## Description

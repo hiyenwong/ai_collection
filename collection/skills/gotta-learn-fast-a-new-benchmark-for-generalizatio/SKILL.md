@@ -1,3 +1,8 @@
+---
+name: gotta-learn-fast-a-new-benchmark-for-generalizatio
+description: Skill for AI agent capabilities
+---
+
 # gotta-learn-fast-a-new-benchmark-for-generalizatio - Gotta Learn Fast: A new benchmark for generalization in RL
 
 ## Description

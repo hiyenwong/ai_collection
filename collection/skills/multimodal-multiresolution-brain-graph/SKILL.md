@@ -1,3 +1,8 @@
+---
+name: skill.md---multimodal-multiresolution-brain-graph-
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Multimodal Multiresolution Brain Graph Integration
 
 ## Activation Keywords

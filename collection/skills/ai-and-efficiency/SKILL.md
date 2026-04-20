@@ -1,3 +1,8 @@
+---
+name: ai-and-efficiency---ai-and-efficiency
+description: Skill for AI agent capabilities
+---
+
 # ai-and-efficiency - AI and efficiency
 
 ## Description

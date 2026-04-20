@@ -1,3 +1,8 @@
+---
+name: how-evals-drive-the-next-chapter-in-ai-for-busines
+description: Skill for AI agent capabilities
+---
+
 # how-evals-drive-the-next-chapter-in-ai-for-busines - How evals drive the next chapter in AI for businesses
 
 ## Description

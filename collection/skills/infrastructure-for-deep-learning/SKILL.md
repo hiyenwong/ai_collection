@@ -1,3 +1,8 @@
+---
+name: infrastructure-for-deep-learning---infrastructure-
+description: Skill for AI agent capabilities
+---
+
 # infrastructure-for-deep-learning - Infrastructure for deep learning
 
 ## Description

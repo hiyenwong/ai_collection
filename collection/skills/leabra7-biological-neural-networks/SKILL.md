@@ -1,3 +1,8 @@
+---
+name: skill.md---leabra7-biologically-realistic-neural-n
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Leabra7 Biologically Realistic Neural Networks
 
 ## Activation Keywords

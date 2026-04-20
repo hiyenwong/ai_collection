@@ -1,3 +1,8 @@
+---
+name: solving-rubiks-cube-with-a-robot-hand---solving-ru
+description: Skill for AI agent capabilities
+---
+
 # solving-rubiks-cube-with-a-robot-hand - Solving Rubik’s Cube with a robot hand
 
 ## Description

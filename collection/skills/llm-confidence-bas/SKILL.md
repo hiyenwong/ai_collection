@@ -1,3 +1,8 @@
+---
+name: skill.md---behavioral-alignment-score-(bas)-for-ll
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Behavioral Alignment Score (BAS) for LLM Confidence
 
 ## Paper Reference

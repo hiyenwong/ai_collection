@@ -1,3 +1,8 @@
+---
+name: spam-detection-in-the-physical-world---spam-detect
+description: Skill for AI agent capabilities
+---
+
 # spam-detection-in-the-physical-world - Spam detection in the physical world
 
 ## Description

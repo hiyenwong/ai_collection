@@ -1,3 +1,8 @@
+---
+name: exploration-a-study-of-count-based-exploration-for
+description: Skill for AI agent capabilities
+---
+
 # exploration-a-study-of-count-based-exploration-for - #Exploration: A study of count-based exploration for deep reinforcement learning
 
 ## Description

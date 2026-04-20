@@ -1,3 +1,8 @@
+---
+name: why-language-models-hallucinate---why-language-mod
+description: Skill for AI agent capabilities
+---
+
 # why-language-models-hallucinate - Why language models hallucinate
 
 ## Description

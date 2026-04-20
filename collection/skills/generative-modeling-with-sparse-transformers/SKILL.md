@@ -1,3 +1,8 @@
+---
+name: generative-modeling-with-sparse-transformers---gen
+description: Skill for AI agent capabilities
+---
+
 # generative-modeling-with-sparse-transformers - Generative modeling with sparse transformers
 
 ## Description

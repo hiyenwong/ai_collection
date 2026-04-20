@@ -1,3 +1,8 @@
+---
+name: democratic-inputs-to-ai---democratic-inputs-to-ai
+description: Skill for AI agent capabilities
+---
+
 # democratic-inputs-to-ai - Democratic inputs to AI
 
 ## Description

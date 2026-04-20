@@ -1,3 +1,8 @@
+---
+name: synaptic-filter---learning-as-filtering
+description: Skill for AI agent capabilities
+---
+
 # Synaptic Filter - Learning as Filtering
 
 ## Overview

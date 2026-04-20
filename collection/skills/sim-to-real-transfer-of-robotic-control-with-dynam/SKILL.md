@@ -1,3 +1,8 @@
+---
+name: sim-to-real-transfer-of-robotic-control-with-dynam
+description: Skill for AI agent capabilities
+---
+
 # sim-to-real-transfer-of-robotic-control-with-dynam - Sim-to-real transfer of robotic control with dynamics randomization
 
 ## Description

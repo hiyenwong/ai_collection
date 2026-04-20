@@ -1,3 +1,8 @@
+---
+name: self-evolution-safety-constraints
+description: Skill for AI agent capabilities
+---
+
 # Self-Evolution Safety Constraints
 
 ## Overview

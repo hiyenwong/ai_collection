@@ -1,3 +1,8 @@
+---
+name: webgpt-improving-the-factual-accuracy-of-language-
+description: Skill for AI agent capabilities
+---
+
 # webgpt-improving-the-factual-accuracy-of-language- - WebGPT: Improving the factual accuracy of language models through web browsing
 
 ## Description

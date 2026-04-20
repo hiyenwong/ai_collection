@@ -1,3 +1,8 @@
+---
+name: autoresearch-pipeline-for-ai-safety-research
+description: Skill for AI agent capabilities
+---
+
 # Autoresearch Pipeline for AI Safety Research
 
 ## Overview

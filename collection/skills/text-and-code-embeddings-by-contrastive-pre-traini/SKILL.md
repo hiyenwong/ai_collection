@@ -1,3 +1,8 @@
+---
+name: text-and-code-embeddings-by-contrastive-pre-traini
+description: Skill for AI agent capabilities
+---
+
 # text-and-code-embeddings-by-contrastive-pre-traini - Text and code embeddings by contrastive pre-training
 
 ## Description

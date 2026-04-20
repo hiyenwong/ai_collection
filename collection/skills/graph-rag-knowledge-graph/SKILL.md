@@ -1,3 +1,8 @@
+---
+name: graphrag-retrieval-augmented-generation-with-knowl
+description: Skill for AI agent capabilities
+---
+
 # GraphRAG: Retrieval-Augmented Generation with Knowledge Graphs
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: self-supervised-neural-circuit-discovery-with-gnn
+description: **Source:** arXiv:2509.17174 (NeurIPS 2025)
+---
+
 # Self-Supervised Neural Circuit Discovery with GNN
 
 **Source:** arXiv:2509.17174 (NeurIPS 2025)

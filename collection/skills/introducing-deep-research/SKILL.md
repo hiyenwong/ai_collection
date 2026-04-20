@@ -1,3 +1,8 @@
+---
+name: introducing-deep-research---introducing-deep-resea
+description: Skill for AI agent capabilities
+---
+
 # introducing-deep-research - Introducing deep research
 
 ## Description

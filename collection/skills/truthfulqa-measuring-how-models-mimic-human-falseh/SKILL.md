@@ -1,3 +1,8 @@
+---
+name: truthfulqa-measuring-how-models-mimic-human-falseh
+description: Skill for AI agent capabilities
+---
+
 # truthfulqa-measuring-how-models-mimic-human-falseh - TruthfulQA: Measuring how models mimic human falsehoods
 
 ## Description

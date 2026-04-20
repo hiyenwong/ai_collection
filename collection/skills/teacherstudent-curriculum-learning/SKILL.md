@@ -1,3 +1,8 @@
+---
+name: teacherstudent-curriculum-learning---teacher–stude
+description: Skill for AI agent capabilities
+---
+
 # teacherstudent-curriculum-learning - Teacher–student curriculum learning
 
 ## Description

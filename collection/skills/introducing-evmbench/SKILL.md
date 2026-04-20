@@ -1,3 +1,8 @@
+---
+name: introducing-evmbench---introducing-evmbench
+description: Skill for AI agent capabilities
+---
+
 # introducing-evmbench - Introducing EVMbench
 
 ## Description

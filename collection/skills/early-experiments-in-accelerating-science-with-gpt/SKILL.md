@@ -1,3 +1,8 @@
+---
+name: early-experiments-in-accelerating-science-with-gpt
+description: Skill for AI agent capabilities
+---
+
 # early-experiments-in-accelerating-science-with-gpt - Early experiments in accelerating science with GPT-5
 
 ## Description

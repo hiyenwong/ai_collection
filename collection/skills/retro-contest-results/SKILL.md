@@ -1,3 +1,8 @@
+---
+name: retro-contest-results---retro-contest-results
+description: Skill for AI agent capabilities
+---
+
 # retro-contest-results - Retro Contest: Results
 
 ## Description

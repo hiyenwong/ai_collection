@@ -1,3 +1,8 @@
+---
+name: gamepad-a-learning-environment-for-theorem-proving
+description: Skill for AI agent capabilities
+---
+
 # gamepad-a-learning-environment-for-theorem-proving - GamePad: A learning environment for theorem proving
 
 ## Description

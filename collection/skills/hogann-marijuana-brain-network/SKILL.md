@@ -1,3 +1,8 @@
+---
+name: hogann---high-order-graph-attention-for-marijuana-
+description: **来源论文：** arXiv:2403.00033 - Spatial Craving Patterns in Marijuana Users: Insights from fMRI Brain Connectivity Analysis with High-Order Graph Attention Neural Networks
+---
+
 # HOGANN - High-Order Graph Attention for Marijuana Brain Networks
 
 **来源论文：** arXiv:2403.00033 - Spatial Craving Patterns in Marijuana Users: Insights from fMRI Brain Connectivity Analysis with High-Order Graph Attention Neural Networks

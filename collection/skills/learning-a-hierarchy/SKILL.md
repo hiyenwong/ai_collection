@@ -1,3 +1,8 @@
+---
+name: learning-a-hierarchy---learning-a-hierarchy
+description: Skill for AI agent capabilities
+---
+
 # learning-a-hierarchy - Learning a hierarchy
 
 ## Description

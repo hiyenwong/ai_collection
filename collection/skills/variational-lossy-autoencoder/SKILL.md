@@ -1,3 +1,8 @@
+---
+name: variational-lossy-autoencoder---variational-lossy-
+description: Skill for AI agent capabilities
+---
+
 # variational-lossy-autoencoder - Variational lossy autoencoder
 
 ## Description

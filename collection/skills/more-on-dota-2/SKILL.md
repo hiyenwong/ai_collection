@@ -1,3 +1,8 @@
+---
+name: more-on-dota-2---more-on-dota-2
+description: Skill for AI agent capabilities
+---
+
 # more-on-dota-2 - More on Dota 2
 
 ## Description

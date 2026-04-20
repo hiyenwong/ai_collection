@@ -1,3 +1,8 @@
+---
+name: learning-montezumas-revenge-from-a-single-demonstr
+description: Skill for AI agent capabilities
+---
+
 # learning-montezumas-revenge-from-a-single-demonstr - Learning Montezuma’s Revenge from a single demonstration
 
 ## Description

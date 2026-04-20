@@ -1,3 +1,8 @@
+---
+name: understanding-the-source-of-what-we-see-and-hear-o
+description: Skill for AI agent capabilities
+---
+
 # understanding-the-source-of-what-we-see-and-hear-o - Understanding the source of what we see and hear online
 
 ## Description

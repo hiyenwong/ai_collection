@@ -1,3 +1,8 @@
+---
+name: understanding-the-capabilities-limitations-and-soc
+description: Skill for AI agent capabilities
+---
+
 # understanding-the-capabilities-limitations-and-soc - Understanding the capabilities, limitations, and societal impact of large language models
 
 ## Description

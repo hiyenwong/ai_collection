@@ -1,3 +1,8 @@
+---
+name: multi-timescale-analog-neuromorphic-plasticity
+description: **来源论文：** arXiv:2412.02515 - Multi-timescale synaptic plasticity on analog neuromorphic hardware
+---
+
 # Multi-timescale Analog Neuromorphic Plasticity
 
 **来源论文：** arXiv:2412.02515 - Multi-timescale synaptic plasticity on analog neuromorphic hardware

@@ -1,3 +1,8 @@
+---
+name: weight-normalization-a-simple-reparameterization-t
+description: Skill for AI agent capabilities
+---
+
 # weight-normalization-a-simple-reparameterization-t - Weight normalization: A simple reparameterization to accelerate training of deep neural networks
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: learning-to-play-minecraft-with-video-pretraining-
+description: Skill for AI agent capabilities
+---
+
 # learning-to-play-minecraft-with-video-pretraining - Learning to play Minecraft with Video PreTraining
 
 ## Description

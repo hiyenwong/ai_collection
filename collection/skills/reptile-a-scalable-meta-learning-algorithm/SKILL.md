@@ -1,3 +1,8 @@
+---
+name: reptile-a-scalable-meta-learning-algorithm---repti
+description: Skill for AI agent capabilities
+---
+
 # reptile-a-scalable-meta-learning-algorithm - Reptile: A scalable meta-learning algorithm
 
 ## Description

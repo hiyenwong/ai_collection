@@ -1,3 +1,8 @@
+---
+name: leanattention-scalable-decode-phase-attention
+description: Skill for AI agent capabilities
+---
+
 # LeanAttention: Scalable Decode-Phase Attention
 
 ## Overview

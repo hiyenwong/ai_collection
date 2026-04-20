@@ -1,3 +1,8 @@
+---
+name: openai-and-los-alamos-national-laboratory-announce
+description: Skill for AI agent capabilities
+---
+
 # openai-and-los-alamos-national-laboratory-announce - OpenAI and Los Alamos National Laboratory announce research partnership
 
 ## Description

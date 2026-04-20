@@ -1,3 +1,8 @@
+---
+name: large-scale-study-of-curiosity-driven-learning---l
+description: Skill for AI agent capabilities
+---
+
 # large-scale-study-of-curiosity-driven-learning - Large-scale study of curiosity-driven learning
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: generative-models---generative-models
+description: Skill for AI agent capabilities
+---
+
 # generative-models - Generative models
 
 ## Description

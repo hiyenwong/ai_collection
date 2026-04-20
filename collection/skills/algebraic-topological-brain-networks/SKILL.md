@@ -1,3 +1,8 @@
+---
+name: skill.md---algebraic-topological-brain-network-com
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Algebraic Topological Brain Network Comparison
 
 ## Activation Keywords

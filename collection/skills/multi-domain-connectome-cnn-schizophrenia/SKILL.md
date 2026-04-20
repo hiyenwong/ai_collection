@@ -1,3 +1,8 @@
+---
+name: multi-domain-connectome-cnn-for-schizophrenia-eeg-
+description: **来源论文：** arXiv:1903.08858 - Classification of EEG-Based Brain Connectivity Networks in Schizophrenia Using a Multi-Domain Connectome Convolutional Neural Network
+---
+
 # Multi-Domain Connectome CNN for Schizophrenia EEG Classification
 
 **来源论文：** arXiv:1903.08858 - Classification of EEG-Based Brain Connectivity Networks in Schizophrenia Using a Multi-Domain Connectome Convolutional Neural Network

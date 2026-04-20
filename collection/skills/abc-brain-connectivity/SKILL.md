@@ -1,3 +1,8 @@
+---
+name: attributes-informed-brain-connectivity-(abc)-model
+description: **Source:** arXiv:2304.01345
+---
+
 # Attributes-informed Brain Connectivity (ABC) Model
 
 **Source:** arXiv:2304.01345

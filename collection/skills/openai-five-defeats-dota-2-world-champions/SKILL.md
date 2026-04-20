@@ -1,3 +1,8 @@
+---
+name: openai-five-defeats-dota-2-world-champions---opena
+description: Skill for AI agent capabilities
+---
+
 # openai-five-defeats-dota-2-world-champions - OpenAI Five defeats Dota 2 world champions
 
 ## Description

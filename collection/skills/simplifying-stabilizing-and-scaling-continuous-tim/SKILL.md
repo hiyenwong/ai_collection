@@ -1,3 +1,8 @@
+---
+name: simplifying-stabilizing-and-scaling-continuous-tim
+description: Skill for AI agent capabilities
+---
+
 # simplifying-stabilizing-and-scaling-continuous-tim - Simplifying, stabilizing, and scaling continuous-time consistency models
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: learning-concepts-with-energy-functions---learning
+description: Skill for AI agent capabilities
+---
+
 # learning-concepts-with-energy-functions - Learning concepts with energy functions
 
 ## Description

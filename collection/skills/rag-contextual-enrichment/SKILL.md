@@ -1,3 +1,8 @@
+---
+name: skill.md---contextual-enrichment-in-llms-(rag-evol
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Contextual Enrichment in LLMs (RAG Evolution)
 
 ## Paper Reference

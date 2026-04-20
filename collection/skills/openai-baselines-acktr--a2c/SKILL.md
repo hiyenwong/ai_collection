@@ -1,3 +1,8 @@
+---
+name: openai-baselines-acktr--a2c---openai-baselines-ack
+description: Skill for AI agent capabilities
+---
+
 # openai-baselines-acktr--a2c - OpenAI Baselines: ACKTR & A2C
 
 ## Description

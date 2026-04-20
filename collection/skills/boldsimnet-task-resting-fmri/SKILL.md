@@ -1,3 +1,8 @@
+---
+name: boldsimnet-task-resting-fmri---boldsimnet-examinin
+description: Skill for AI agent capabilities
+---
+
 # boldsimnet-task-resting-fmri - BOLDSimNet: Examining Brain Network Similarity between Task and Resting-State fMRI
 
 ## Description

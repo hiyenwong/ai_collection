@@ -1,3 +1,8 @@
+---
+name: learning-policy-representations-in-multiagent-syst
+description: Skill for AI agent capabilities
+---
+
 # learning-policy-representations-in-multiagent-syst - Learning policy representations in multiagent systems
 
 ## Description

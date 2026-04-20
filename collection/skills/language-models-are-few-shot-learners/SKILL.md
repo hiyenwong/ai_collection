@@ -1,3 +1,8 @@
+---
+name: language-models-are-few-shot-learners---language-m
+description: Skill for AI agent capabilities
+---
+
 # language-models-are-few-shot-learners - Language models are few-shot learners
 
 ## Description

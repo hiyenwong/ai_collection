@@ -1,3 +1,8 @@
+---
+name: dota-2---dota-2
+description: Skill for AI agent capabilities
+---
+
 # dota-2 - Dota 2
 
 ## Description

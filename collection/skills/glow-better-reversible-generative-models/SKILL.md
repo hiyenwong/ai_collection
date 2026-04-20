@@ -1,3 +1,8 @@
+---
+name: glow-better-reversible-generative-models---glow-be
+description: Skill for AI agent capabilities
+---
+
 # glow-better-reversible-generative-models - Glow: Better reversible generative models
 
 ## Description

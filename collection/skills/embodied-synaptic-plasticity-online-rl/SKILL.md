@@ -1,3 +1,8 @@
+---
+name: embodied-synaptic-plasticity-with-online-reinforce
+description: **来源论文：** arXiv:2003.01431 - Embodied Synaptic Plasticity with Online Reinforcement learning
+---
+
 # Embodied Synaptic Plasticity with Online Reinforcement Learning
 
 **来源论文：** arXiv:2003.01431 - Embodied Synaptic Plasticity with Online Reinforcement learning

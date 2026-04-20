@@ -1,3 +1,8 @@
+---
+name: domain-randomization-and-generative-models-for-rob
+description: Skill for AI agent capabilities
+---
+
 # domain-randomization-and-generative-models-for-rob - Domain randomization and generative models for robotic grasping
 
 ## Description

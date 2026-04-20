@@ -1,3 +1,8 @@
+---
+name: efficient-training-of-language-models-to-fill-in-t
+description: Skill for AI agent capabilities
+---
+
 # efficient-training-of-language-models-to-fill-in-t - Efficient training of language models to fill in the middle
 
 ## Description

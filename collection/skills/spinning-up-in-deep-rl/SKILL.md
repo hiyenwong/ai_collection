@@ -1,3 +1,8 @@
+---
+name: spinning-up-in-deep-rl---spinning-up-in-deep-rl
+description: Skill for AI agent capabilities
+---
+
 # spinning-up-in-deep-rl - Spinning Up in Deep RL
 
 ## Description

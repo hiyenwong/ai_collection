@@ -1,3 +1,8 @@
+---
+name: hindsight-experience-replay---hindsight-experience
+description: Skill for AI agent capabilities
+---
+
 # hindsight-experience-replay - Hindsight Experience Replay
 
 ## Description

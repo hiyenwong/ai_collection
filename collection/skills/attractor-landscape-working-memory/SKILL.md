@@ -1,3 +1,8 @@
+---
+name: skill.md---attractor-landscape-working-memory
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Attractor Landscape Working Memory
 
 ## Activation Keywords

@@ -1,3 +1,8 @@
+---
+name: kg-integration---knowledge-graph-integration-for-h
+description: Skill for AI agent capabilities
+---
+
 # kg-integration - Knowledge Graph Integration for Hermes
 
 ## Description

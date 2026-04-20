@@ -1,3 +1,8 @@
+---
+name: third-person-imitation-learning---third-person-imi
+description: Skill for AI agent capabilities
+---
+
 # third-person-imitation-learning - Third-person imitation learning
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: gemini-cli
+description: **Source:** Google AI Gemini CLI
+---
+
 # Gemini CLI
 
 **Source:** Google AI Gemini CLI

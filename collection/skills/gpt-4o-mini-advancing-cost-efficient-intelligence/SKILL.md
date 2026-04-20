@@ -1,3 +1,8 @@
+---
+name: gpt-4o-mini-advancing-cost-efficient-intelligence-
+description: Skill for AI agent capabilities
+---
+
 # gpt-4o-mini-advancing-cost-efficient-intelligence - GPT-4o mini: advancing cost-efficient intelligence
 
 ## Description

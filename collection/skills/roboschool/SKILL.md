@@ -1,3 +1,8 @@
+---
+name: roboschool---roboschool
+description: Skill for AI agent capabilities
+---
+
 # roboschool - Roboschool
 
 ## Description

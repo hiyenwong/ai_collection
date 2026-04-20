@@ -1,3 +1,8 @@
+---
+name: generalizing-from-simulation---generalizing-from-s
+description: Skill for AI agent capabilities
+---
+
 # generalizing-from-simulation - Generalizing from simulation
 
 ## Description

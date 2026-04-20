@@ -1,3 +1,8 @@
+---
+name: dalle-2-pre-training-mitigations---dall·e-2-pre-tr
+description: Skill for AI agent capabilities
+---
+
 # dalle-2-pre-training-mitigations - DALL·E 2 pre-training mitigations
 
 ## Description

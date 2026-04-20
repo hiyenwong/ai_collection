@@ -1,3 +1,8 @@
+---
+name: brain-mgf---multimodal-graph-fusion-for-eeg-fmri
+description: Skill for AI agent capabilities
+---
+
 # Brain-MGF - Multimodal Graph Fusion for EEG-fMRI
 
 ## Overview

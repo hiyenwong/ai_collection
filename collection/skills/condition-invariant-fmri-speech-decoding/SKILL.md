@@ -1,3 +1,8 @@
+---
+name: condition-invariant-fmri-speech-decoding
+description: Skill for AI agent capabilities
+---
+
 # Condition-Invariant fMRI Speech Decoding
 
 ## Overview

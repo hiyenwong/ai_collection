@@ -1,3 +1,8 @@
+---
+name: ai-agents-evolution,-architecture,-and-application
+description: Skill for AI agent capabilities
+---
+
 # AI Agents: Evolution, Architecture, and Applications
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: how-ai-training-scales---how-ai-training-scales
+description: Skill for AI agent capabilities
+---
+
 # how-ai-training-scales - How AI training scales
 
 ## Description

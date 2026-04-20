@@ -1,3 +1,8 @@
+---
+name: point-e-a-system-for-generating-3d-point-clouds-fr
+description: Skill for AI agent capabilities
+---
+
 # point-e-a-system-for-generating-3d-point-clouds-fr - Point-E: A system for generating 3D point clouds from complex prompts
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: multimodal-llms-comprehensive-guide
+description: Skill for AI agent capabilities
+---
+
 # Multimodal LLMs Comprehensive Guide
 
 ## Description

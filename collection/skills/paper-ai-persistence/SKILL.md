@@ -1,3 +1,8 @@
+---
+name: skill.md---ai-assistance-and-persistence-effects
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - AI Assistance and Persistence Effects
 
 ## Paper Reference

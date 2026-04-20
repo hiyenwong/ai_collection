@@ -1,3 +1,8 @@
+---
+name: introducing-indqa---introducing-indqa
+description: Skill for AI agent capabilities
+---
+
 # introducing-indqa - Introducing IndQA
 
 ## Description

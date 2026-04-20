@@ -1,3 +1,8 @@
+---
+name: agentic-reinforcement-learning-for-llms
+description: Skill for AI agent capabilities
+---
+
 # Agentic Reinforcement Learning for LLMs
 
 ## Description

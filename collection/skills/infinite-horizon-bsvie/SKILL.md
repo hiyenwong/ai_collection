@@ -1,3 +1,8 @@
+---
+name: skill.md---infinite-horizon-bsvie-solver
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Infinite-Horizon BSVIE Solver
 
 ## Activation Keywords

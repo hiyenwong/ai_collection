@@ -1,3 +1,8 @@
+---
+name: jukebox---jukebox
+description: Skill for AI agent capabilities
+---
+
 # jukebox - Jukebox
 
 ## Description

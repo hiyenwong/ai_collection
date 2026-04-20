@@ -1,3 +1,8 @@
+---
+name: interpretable-and-pedagogical-examples---interpret
+description: Skill for AI agent capabilities
+---
+
 # interpretable-and-pedagogical-examples - Interpretable and pedagogical examples
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: learning-dexterity---learning-dexterity
+description: Skill for AI agent capabilities
+---
+
 # learning-dexterity - Learning dexterity
 
 ## Description

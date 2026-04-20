@@ -1,3 +1,8 @@
+---
+name: measuring-ais-capability-to-accelerate-biological-
+description: Skill for AI agent capabilities
+---
+
 # measuring-ais-capability-to-accelerate-biological- - Measuring AI’s capability to accelerate biological research
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: asymmetric-actor-critic-for-image-based-robot-lear
+description: Skill for AI agent capabilities
+---
+
 # asymmetric-actor-critic-for-image-based-robot-lear - Asymmetric actor critic for image-based robot learning
 
 ## Description

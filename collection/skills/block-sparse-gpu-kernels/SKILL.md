@@ -1,3 +1,8 @@
+---
+name: block-sparse-gpu-kernels---block-sparse-gpu-kernel
+description: Skill for AI agent capabilities
+---
+
 # block-sparse-gpu-kernels - Block-sparse GPU kernels
 
 ## Description

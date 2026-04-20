@@ -1,3 +1,8 @@
+---
+name: benediff---behavior-relevant-neural-dynamics-with-
+description: **来源论文：** arXiv:2410.09614 - Exploring Behavior-Relevant and Disentangled Neural Dynamics with Generative Diffusion Models
+---
+
 # BeNeDiff - Behavior-Relevant Neural Dynamics with Diffusion Models
 
 **来源论文：** arXiv:2410.09614 - Exploring Behavior-Relevant and Disentangled Neural Dynamics with Generative Diffusion Models

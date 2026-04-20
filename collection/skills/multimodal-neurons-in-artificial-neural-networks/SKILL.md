@@ -1,3 +1,8 @@
+---
+name: multimodal-neurons-in-artificial-neural-networks--
+description: Skill for AI agent capabilities
+---
+
 # multimodal-neurons-in-artificial-neural-networks - Multimodal neurons in artificial neural networks
 
 ## Description

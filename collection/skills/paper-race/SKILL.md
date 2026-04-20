@@ -1,3 +1,8 @@
+---
+name: skill.md---race-fine-grained-llm-text-detection
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - RACE: Fine-Grained LLM Text Detection
 
 ## Paper Reference

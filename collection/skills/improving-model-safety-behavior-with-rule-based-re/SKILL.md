@@ -1,3 +1,8 @@
+---
+name: improving-model-safety-behavior-with-rule-based-re
+description: Skill for AI agent capabilities
+---
+
 # improving-model-safety-behavior-with-rule-based-re - Improving Model Safety Behavior with Rule-Based Rewards
 
 ## Description

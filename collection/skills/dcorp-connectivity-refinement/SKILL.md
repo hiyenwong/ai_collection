@@ -1,3 +1,8 @@
+---
+name: differentiable-connectivity-refinement-for-brain-n
+description: **Source:** arXiv:2405.18658
+---
+
 # Differentiable Connectivity Refinement for Brain Networks
 
 **Source:** arXiv:2405.18658

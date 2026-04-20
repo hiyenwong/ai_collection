@@ -1,3 +1,8 @@
+---
+name: discovering-types-for-entity-disambiguation---disc
+description: Skill for AI agent capabilities
+---
+
 # discovering-types-for-entity-disambiguation - Discovering types for entity disambiguation
 
 ## Description

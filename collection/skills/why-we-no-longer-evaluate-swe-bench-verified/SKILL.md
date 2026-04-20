@@ -1,3 +1,8 @@
+---
+name: why-we-no-longer-evaluate-swe-bench-verified---why
+description: Skill for AI agent capabilities
+---
+
 # why-we-no-longer-evaluate-swe-bench-verified - Why we no longer evaluate SWE-bench Verified
 
 ## Description

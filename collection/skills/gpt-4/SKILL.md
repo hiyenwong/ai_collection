@@ -1,3 +1,8 @@
+---
+name: gpt-4---gpt-4
+description: Skill for AI agent capabilities
+---
+
 # gpt-4 - GPT-4
 
 ## Description

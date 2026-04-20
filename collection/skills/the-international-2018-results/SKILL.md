@@ -1,3 +1,8 @@
+---
+name: the-international-2018-results---the-international
+description: Skill for AI agent capabilities
+---
+
 # the-international-2018-results - The International 2018: Results
 
 ## Description

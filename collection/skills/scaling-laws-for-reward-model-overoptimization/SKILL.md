@@ -1,3 +1,8 @@
+---
+name: scaling-laws-for-reward-model-overoptimization---s
+description: Skill for AI agent capabilities
+---
+
 # scaling-laws-for-reward-model-overoptimization - Scaling laws for reward model overoptimization
 
 ## Description

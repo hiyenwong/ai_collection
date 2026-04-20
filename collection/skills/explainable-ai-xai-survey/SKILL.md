@@ -1,3 +1,8 @@
+---
+name: explainable-ai-(xai)-comprehensive-survey
+description: Skill for AI agent capabilities
+---
+
 # Explainable AI (XAI) Comprehensive Survey
 
 ## Description

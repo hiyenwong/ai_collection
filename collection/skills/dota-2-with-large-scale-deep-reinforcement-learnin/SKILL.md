@@ -1,3 +1,8 @@
+---
+name: dota-2-with-large-scale-deep-reinforcement-learnin
+description: Skill for AI agent capabilities
+---
+
 # dota-2-with-large-scale-deep-reinforcement-learnin - Dota 2 with large scale deep reinforcement learning
 
 ## Description

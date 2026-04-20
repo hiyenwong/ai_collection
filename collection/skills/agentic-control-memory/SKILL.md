@@ -1,3 +1,8 @@
+---
+name: skill.md---agentic-control,-memory-&-verifiable-ac
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Agentic Control, Memory & Verifiable Action (SCRAT)
 
 ## Paper Reference

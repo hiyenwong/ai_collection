@@ -1,3 +1,8 @@
+---
+name: image-gpt---image-gpt
+description: Skill for AI agent capabilities
+---
+
 # image-gpt - Image GPT
 
 ## Description

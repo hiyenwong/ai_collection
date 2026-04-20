@@ -1,3 +1,8 @@
+---
+name: skill.md---heavy-tailed-weight-distribution-emerge
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Heavy-Tailed Weight Distribution Emergence
 
 ## Activation Keywords

@@ -1,3 +1,8 @@
+---
+name: introducing-whisper---introducing-whisper
+description: Skill for AI agent capabilities
+---
+
 # introducing-whisper - Introducing Whisper
 
 ## Description

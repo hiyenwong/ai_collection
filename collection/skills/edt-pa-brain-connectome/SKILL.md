@@ -1,3 +1,8 @@
+---
+name: edt-pa---evolvable-graph-diffusion-optimal-transpo
+description: **来源论文：** arXiv:2509.16238 - Evolvable Graph Diffusion Optimal Transport with Pattern-Specific Alignment for Brain Connectome Modeling
+---
+
 # EDT-PA - Evolvable Graph Diffusion Optimal Transport for Brain Connectome
 
 **来源论文：** arXiv:2509.16238 - Evolvable Graph Diffusion Optimal Transport with Pattern-Specific Alignment for Brain Connectome Modeling

@@ -1,3 +1,8 @@
+---
+name: openai-o3-mini-system-card---openai-o3-mini-system
+description: Skill for AI agent capabilities
+---
+
 # openai-o3-mini-system-card - OpenAI o3-mini System Card
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: turboquant-near-optimal-vector-quantization-for-ai
+description: **Source:** arXiv:2504.19874 (ICLR 2026) + Google Research Blog
+---
+
 # TurboQuant: Near-Optimal Vector Quantization for AI Efficiency
 
 **Source:** arXiv:2504.19874 (ICLR 2026) + Google Research Blog

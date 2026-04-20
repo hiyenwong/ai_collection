@@ -1,3 +1,8 @@
+---
+name: improved-techniques-for-training-consistency-model
+description: Skill for AI agent capabilities
+---
+
 # improved-techniques-for-training-consistency-model - Improved Techniques for Training Consistency Models
 
 ## Description

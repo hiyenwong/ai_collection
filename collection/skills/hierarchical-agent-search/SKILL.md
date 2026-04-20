@@ -1,3 +1,8 @@
+---
+name: skill.md---hierarchical-parallel-agent-framework-f
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Hierarchical Parallel Agent Framework for Web Search
 
 ## Paper Reference

@@ -1,3 +1,8 @@
+---
+name: teaching-models-to-express-their-uncertainty-in-wo
+description: Skill for AI agent capabilities
+---
+
 # teaching-models-to-express-their-uncertainty-in-wo - Teaching models to express their uncertainty in words
 
 ## Description

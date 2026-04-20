@@ -1,3 +1,8 @@
+---
+name: learning-to-cooperate-compete-and-communicate---le
+description: Skill for AI agent capabilities
+---
+
 # learning-to-cooperate-compete-and-communicate - Learning to cooperate, compete, and communicate
 
 ## Description

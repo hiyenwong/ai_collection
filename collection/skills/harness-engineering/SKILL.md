@@ -1,3 +1,8 @@
+---
+name: harness-engineering-agent-first-development
+description: Skill for AI agent capabilities
+---
+
 # Harness Engineering: Agent-First Development
 
 ## Overview

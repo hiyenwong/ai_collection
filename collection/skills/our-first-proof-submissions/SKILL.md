@@ -1,3 +1,8 @@
+---
+name: our-first-proof-submissions---our-first-proof-subm
+description: Skill for AI agent capabilities
+---
+
 # our-first-proof-submissions - Our First Proof submissions
 
 ## Description

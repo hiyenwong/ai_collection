@@ -1,3 +1,8 @@
+---
+name: ingredients-for-robotics-research---ingredients-fo
+description: Skill for AI agent capabilities
+---
+
 # ingredients-for-robotics-research - Ingredients for robotics research
 
 ## Description

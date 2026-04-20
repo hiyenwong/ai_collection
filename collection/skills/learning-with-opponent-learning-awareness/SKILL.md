@@ -1,3 +1,8 @@
+---
+name: learning-with-opponent-learning-awareness---learni
+description: Skill for AI agent capabilities
+---
+
 # learning-with-opponent-learning-awareness - Learning with opponent-learning awareness
 
 ## Description

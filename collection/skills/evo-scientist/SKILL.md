@@ -1,3 +1,8 @@
+---
+name: skill.md---evoscientist-multi-agent-evolving-ai-sc
+description: ---
+---
+
 # SKILL.md - EvoScientist: Multi-Agent Evolving AI Scientists
 
 ---

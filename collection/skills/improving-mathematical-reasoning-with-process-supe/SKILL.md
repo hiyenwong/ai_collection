@@ -1,3 +1,8 @@
+---
+name: improving-mathematical-reasoning-with-process-supe
+description: Skill for AI agent capabilities
+---
+
 # improving-mathematical-reasoning-with-process-supe - Improving mathematical reasoning with process supervision
 
 ## Description

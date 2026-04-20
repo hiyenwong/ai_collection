@@ -1,3 +1,8 @@
+---
+name: emergence-of-grounded-compositional-language-in-mu
+description: Skill for AI agent capabilities
+---
+
 # emergence-of-grounded-compositional-language-in-mu - Emergence of grounded compositional language in multi-agent populations
 
 ## Description

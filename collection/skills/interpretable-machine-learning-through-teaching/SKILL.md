@@ -1,3 +1,8 @@
+---
+name: interpretable-machine-learning-through-teaching---
+description: Skill for AI agent capabilities
+---
+
 # interpretable-machine-learning-through-teaching - Interpretable machine learning through teaching
 
 ## Description

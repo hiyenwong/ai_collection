@@ -1,3 +1,8 @@
+---
+name: skill.md---valence-arousal-subspace-for-llm-emotio
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Valence-Arousal Subspace for LLM Emotion Control
 
 ## Paper Reference

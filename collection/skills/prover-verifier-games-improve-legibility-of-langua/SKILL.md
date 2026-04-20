@@ -1,3 +1,8 @@
+---
+name: prover-verifier-games-improve-legibility-of-langua
+description: Skill for AI agent capabilities
+---
+
 # prover-verifier-games-improve-legibility-of-langua - Prover-Verifier Games improve legibility of language model outputs
 
 ## Description

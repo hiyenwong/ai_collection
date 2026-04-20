@@ -1,3 +1,8 @@
+---
+name: differential-dynamic-causal-nets---differential-dy
+description: Skill for AI agent capabilities
+---
+
 # differential-dynamic-causal-nets - Differential Dynamic Causal Nets: Model Construction, Identification and Group Comparisons
 
 ## Description

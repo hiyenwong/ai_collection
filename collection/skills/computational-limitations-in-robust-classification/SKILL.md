@@ -1,3 +1,8 @@
+---
+name: computational-limitations-in-robust-classification
+description: Skill for AI agent capabilities
+---
+
 # computational-limitations-in-robust-classification - Computational limitations in robust classification and win-win results
 
 ## Description

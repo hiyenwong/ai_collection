@@ -1,3 +1,8 @@
+---
+name: quasicriticality---human-neural-dynamics-across-li
+description: **来源论文：** arXiv:2209.02592 - Quasicriticality explains variability of human neural dynamics across life span
+---
+
 # Quasicriticality - Human Neural Dynamics Across Life Span
 
 **来源论文：** arXiv:2209.02592 - Quasicriticality explains variability of human neural dynamics across life span

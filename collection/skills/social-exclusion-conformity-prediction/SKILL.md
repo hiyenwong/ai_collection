@@ -1,3 +1,8 @@
+---
+name: social-exclusion-brain-dynamics-and-behavioral-con
+description: **来源论文：** arXiv:1710.00869 - Global Brain Dynamics During Social Exclusion Predict Subsequent Behavioral Conformity
+---
+
 # Social Exclusion Brain Dynamics and Behavioral Conformity
 
 **来源论文：** arXiv:1710.00869 - Global Brain Dynamics During Social Exclusion Predict Subsequent Behavioral Conformity

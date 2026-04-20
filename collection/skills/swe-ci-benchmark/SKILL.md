@@ -1,3 +1,8 @@
+---
+name: swe-ci-ci-based-code-maintenance-evaluation
+description: **Source:** arXiv:2603.03823
+---
+
 # SWE-CI: CI-Based Code Maintenance Evaluation
 
 **Source:** arXiv:2603.03823

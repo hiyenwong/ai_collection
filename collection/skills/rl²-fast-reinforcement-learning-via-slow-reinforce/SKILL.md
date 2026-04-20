@@ -1,3 +1,8 @@
+---
+name: rl²-fast-reinforcement-learning-via-slow-reinforce
+description: Skill for AI agent capabilities
+---
+
 # rl²-fast-reinforcement-learning-via-slow-reinforce - RL²: Fast reinforcement learning via slow reinforcement learning
 
 ## Description

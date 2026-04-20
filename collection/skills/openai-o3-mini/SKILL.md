@@ -1,3 +1,8 @@
+---
+name: openai-o3-mini---openai-o3-mini
+description: Skill for AI agent capabilities
+---
+
 # openai-o3-mini - OpenAI o3-mini
 
 ## Description

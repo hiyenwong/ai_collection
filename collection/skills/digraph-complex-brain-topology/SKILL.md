@@ -1,3 +1,8 @@
+---
+name: digraph-based-complexes-for-brain-network-analysis
+description: **来源论文：** arXiv:2409.09862 - Towards a Quantitative Theory of Digraph-Based Complexes and its Applications in Brain Network Analysis
+---
+
 # Digraph-Based Complexes for Brain Network Analysis
 
 **来源论文：** arXiv:2409.09862 - Towards a Quantitative Theory of Digraph-Based Complexes and its Applications in Brain Network Analysis

@@ -1,3 +1,8 @@
+---
+name: plan-online-learn-offline-efficient-learning-and-e
+description: Skill for AI agent capabilities
+---
+
 # plan-online-learn-offline-efficient-learning-and-e - Plan online, learn offline: Efficient learning and exploration via model-based control
 
 ## Description

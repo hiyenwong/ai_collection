@@ -1,3 +1,8 @@
+---
+name: stochastic-neural-networks-for-hierarchical-reinfo
+description: Skill for AI agent capabilities
+---
+
 # stochastic-neural-networks-for-hierarchical-reinfo - Stochastic Neural Networks for hierarchical reinforcement learning
 
 ## Description

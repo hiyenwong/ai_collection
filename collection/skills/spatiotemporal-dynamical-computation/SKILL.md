@@ -1,3 +1,8 @@
+---
+name: spatiotemporal-dynamical-computation---a-spatiotem
+description: Skill for AI agent capabilities
+---
+
 # spatiotemporal-dynamical-computation - A Spatiotemporal Perspective on Dynamical Computation in Neural Information Processing Systems
 
 ## Description

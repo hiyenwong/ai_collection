@@ -1,3 +1,8 @@
+---
+name: learning-to-communicate---learning-to-communicate
+description: Skill for AI agent capabilities
+---
+
 # learning-to-communicate - Learning to communicate
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: requests-for-research-20---requests-for-research-2
+description: Skill for AI agent capabilities
+---
+
 # requests-for-research-20 - Requests for Research 2.0
 
 ## Description

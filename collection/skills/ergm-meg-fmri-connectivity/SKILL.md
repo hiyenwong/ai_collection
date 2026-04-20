@@ -1,3 +1,8 @@
+---
+name: meg-fmri-exponential-random-graph-modeling
+description: **来源论文：** arXiv:1805.12005 - Combined MEG and fMRI Exponential Random Graph Modeling for inferring functional Brain Connectivity
+---
+
 # MEG-fMRI Exponential Random Graph Modeling
 
 **来源论文：** arXiv:1805.12005 - Combined MEG and fMRI Exponential Random Graph Modeling for inferring functional Brain Connectivity

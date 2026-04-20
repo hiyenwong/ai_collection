@@ -1,3 +1,8 @@
+---
+name: skill.md---gödel-agent-self-referential-self-impro
+description: ---
+---
+
 # SKILL.md - Gödel Agent: Self-Referential Self-Improvement
 
 ---

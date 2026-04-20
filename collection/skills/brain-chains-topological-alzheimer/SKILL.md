@@ -1,3 +1,8 @@
+---
+name: brain-chains---topological-signatures-for-alzheime
+description: Skill for AI agent capabilities
+---
+
 # Brain Chains - Topological Signatures for Alzheimer's
 
 ## Overview

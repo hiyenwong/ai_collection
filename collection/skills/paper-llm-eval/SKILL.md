@@ -1,3 +1,8 @@
+---
+name: skill.md---llm-mathematical-contest-evaluation-fra
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - LLM Mathematical Contest Evaluation Framework
 
 ## Paper Reference

@@ -1,3 +1,8 @@
+---
+name: consistency-models---consistency-models
+description: Skill for AI agent capabilities
+---
+
 # consistency-models - Consistency Models
 
 ## Description

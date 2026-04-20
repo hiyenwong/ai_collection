@@ -1,3 +1,8 @@
+---
+name: unsupervised-sentiment-neuron---unsupervised-senti
+description: Skill for AI agent capabilities
+---
+
 # unsupervised-sentiment-neuron - Unsupervised sentiment neuron
 
 ## Description

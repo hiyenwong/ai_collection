@@ -1,3 +1,8 @@
+---
+name: skill.md---spectral-dcm-brain-connectivity-genetic
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Spectral DCM Brain Connectivity Genetics
 
 ## Activation Keywords

@@ -1,3 +1,8 @@
+---
+name: deep-double-descent---deep-double-descent
+description: Skill for AI agent capabilities
+---
+
 # deep-double-descent - Deep double descent
 
 ## Description

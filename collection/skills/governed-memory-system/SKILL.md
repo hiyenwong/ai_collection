@@ -1,3 +1,8 @@
+---
+name: governed-memory-system
+description: Skill for AI agent capabilities
+---
+
 # Governed Memory System
 
 ## Overview

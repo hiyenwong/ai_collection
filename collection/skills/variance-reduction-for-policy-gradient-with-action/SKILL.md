@@ -1,3 +1,8 @@
+---
+name: variance-reduction-for-policy-gradient-with-action
+description: Skill for AI agent capabilities
+---
+
 # variance-reduction-for-policy-gradient-with-action - Variance reduction for policy gradient with action-dependent factorized baselines
 
 ## Description

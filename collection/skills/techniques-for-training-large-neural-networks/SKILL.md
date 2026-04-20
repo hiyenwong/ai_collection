@@ -1,3 +1,8 @@
+---
+name: techniques-for-training-large-neural-networks---te
+description: Skill for AI agent capabilities
+---
+
 # techniques-for-training-large-neural-networks - Techniques for training large neural networks
 
 ## Description

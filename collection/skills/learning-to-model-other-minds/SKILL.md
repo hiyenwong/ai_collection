@@ -1,3 +1,8 @@
+---
+name: learning-to-model-other-minds---learning-to-model-
+description: Skill for AI agent capabilities
+---
+
 # learning-to-model-other-minds - Learning to model other minds
 
 ## Description

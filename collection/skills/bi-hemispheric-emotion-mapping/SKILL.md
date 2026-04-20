@@ -1,3 +1,8 @@
+---
+name: bi-hemispheric-neural-model-for-emotion-mapping
+description: **来源论文：** arXiv:2507.12625 - Mapping Emotions in the Brain: A Bi-Hemispheric Neural Model with Explainable Deep Learning
+---
+
 # Bi-Hemispheric Neural Model for Emotion Mapping
 
 **来源论文：** arXiv:2507.12625 - Mapping Emotions in the Brain: A Bi-Hemispheric Neural Model with Explainable Deep Learning

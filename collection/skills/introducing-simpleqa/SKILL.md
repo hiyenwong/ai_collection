@@ -1,3 +1,8 @@
+---
+name: introducing-simpleqa---introducing-simpleqa
+description: Skill for AI agent capabilities
+---
+
 # introducing-simpleqa - Introducing SimpleQA
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: procgen-benchmark---procgen-benchmark
+description: Skill for AI agent capabilities
+---
+
 # procgen-benchmark - Procgen Benchmark
 
 ## Description

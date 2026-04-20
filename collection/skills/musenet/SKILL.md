@@ -1,3 +1,8 @@
+---
+name: musenet---musenet
+description: Skill for AI agent capabilities
+---
+
 # musenet - MuseNet
 
 ## Description

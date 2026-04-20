@@ -1,3 +1,8 @@
+---
+name: inside-our-approach-to-the-model-spec---inside-our
+description: Skill for AI agent capabilities
+---
+
 # inside-our-approach-to-the-model-spec - Inside our approach to the Model Spec
 
 ## Description

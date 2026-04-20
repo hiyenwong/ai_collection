@@ -1,3 +1,8 @@
+---
+name: evaluating-fairness-in-chatgpt---evaluating-fairne
+description: Skill for AI agent capabilities
+---
+
 # evaluating-fairness-in-chatgpt - Evaluating fairness in ChatGPT
 
 ## Description

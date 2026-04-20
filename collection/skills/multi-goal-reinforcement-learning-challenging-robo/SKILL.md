@@ -1,3 +1,8 @@
+---
+name: multi-goal-reinforcement-learning-challenging-robo
+description: Skill for AI agent capabilities
+---
+
 # multi-goal-reinforcement-learning-challenging-robo - Multi-Goal Reinforcement Learning: Challenging robotics environments and request for research
 
 ## Description

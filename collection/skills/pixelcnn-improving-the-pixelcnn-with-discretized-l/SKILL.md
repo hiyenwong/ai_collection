@@ -1,3 +1,8 @@
+---
+name: pixelcnn-improving-the-pixelcnn-with-discretized-l
+description: Skill for AI agent capabilities
+---
+
 # pixelcnn-improving-the-pixelcnn-with-discretized-l - PixelCNN++: Improving the PixelCNN with discretized logistic mixture likelihood and other modifications
 
 ## Description

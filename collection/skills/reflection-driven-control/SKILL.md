@@ -1,3 +1,8 @@
+---
+name: reflection-driven-control
+description: Skill for AI agent capabilities
+---
+
 # Reflection-Driven Control
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: skill.md---qed-nano-small-model-mathematical-reaso
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - QED-Nano: Small Model Mathematical Reasoning
 
 ## Paper Reference

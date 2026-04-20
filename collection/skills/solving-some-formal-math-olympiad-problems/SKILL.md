@@ -1,3 +1,8 @@
+---
+name: solving-some-formal-math-olympiad-problems---solvi
+description: Skill for AI agent capabilities
+---
+
 # solving-some-formal-math-olympiad-problems - Solving (some) formal math olympiad problems
 
 ## Description

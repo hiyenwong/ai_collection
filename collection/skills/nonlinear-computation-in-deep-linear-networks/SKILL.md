@@ -1,3 +1,8 @@
+---
+name: nonlinear-computation-in-deep-linear-networks---no
+description: Skill for AI agent capabilities
+---
+
 # nonlinear-computation-in-deep-linear-networks - Nonlinear computation in deep linear networks
 
 ## Description

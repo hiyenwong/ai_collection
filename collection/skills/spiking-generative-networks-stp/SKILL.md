@@ -1,3 +1,8 @@
+---
+name: skill.md---spiking-generative-networks-with-short-
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Spiking Generative Networks with Short-Term Plasticity
 
 ## Activation Keywords

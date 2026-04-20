@@ -1,3 +1,8 @@
+---
+name: correlated-noise-decoding-uncertainty
+description: Skill for AI agent capabilities
+---
+
 # Correlated Noise Decoding Uncertainty
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: defining-and-evaluating-political-bias-in-llms---d
+description: Skill for AI agent capabilities
+---
+
 # defining-and-evaluating-political-bias-in-llms - Defining and evaluating political bias in LLMs
 
 ## Description

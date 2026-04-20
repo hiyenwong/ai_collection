@@ -1,3 +1,8 @@
+---
+name: skill.md---multicoding-neural-information-transfer
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Multicoding Neural Information Transfer
 
 ## Activation Keywords

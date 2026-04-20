@@ -1,3 +1,8 @@
+---
+name: ptgb-pre-train-graph-neural-networks-for-brain-net
+description: **Source:** arXiv:2305.14376 (CHIL 2023)
+---
+
 # PTGB: Pre-Train Graph Neural Networks for Brain Network Analysis
 
 **Source:** arXiv:2305.14376 (CHIL 2023)

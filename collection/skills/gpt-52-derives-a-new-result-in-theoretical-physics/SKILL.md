@@ -1,3 +1,8 @@
+---
+name: gpt-52-derives-a-new-result-in-theoretical-physics
+description: Skill for AI agent capabilities
+---
+
 # gpt-52-derives-a-new-result-in-theoretical-physics - GPT-5.2 derives a new result in theoretical physics
 
 ## Description

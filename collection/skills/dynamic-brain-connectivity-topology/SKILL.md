@@ -1,3 +1,8 @@
+---
+name: skill.md---dynamic-brain-connectivity-topology-ima
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Dynamic Brain Connectivity Topology Imaging
 
 ## Activation Keywords

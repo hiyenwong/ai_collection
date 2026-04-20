@@ -1,3 +1,8 @@
+---
+name: solving-math-word-problems---solving-math-word-pro
+description: Skill for AI agent capabilities
+---
+
 # solving-math-word-problems - Solving math word problems
 
 ## Description

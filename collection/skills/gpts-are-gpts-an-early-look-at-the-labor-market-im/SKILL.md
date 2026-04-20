@@ -1,3 +1,8 @@
+---
+name: gpts-are-gpts-an-early-look-at-the-labor-market-im
+description: Skill for AI agent capabilities
+---
+
 # gpts-are-gpts-an-early-look-at-the-labor-market-im - GPTs are GPTs: An early look at the labor market impact potential of large language models
 
 ## Description

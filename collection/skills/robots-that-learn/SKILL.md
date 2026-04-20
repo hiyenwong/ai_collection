@@ -1,3 +1,8 @@
+---
+name: robots-that-learn---robots-that-learn
+description: Skill for AI agent capabilities
+---
+
 # robots-that-learn - Robots that learn
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: learning-to-reason-with-llms---learning-to-reason-
+description: Skill for AI agent capabilities
+---
+
 # learning-to-reason-with-llms - Learning to reason with LLMs
 
 ## Description

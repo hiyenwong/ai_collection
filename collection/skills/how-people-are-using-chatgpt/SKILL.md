@@ -1,3 +1,8 @@
+---
+name: how-people-are-using-chatgpt---how-people-are-usin
+description: Skill for AI agent capabilities
+---
+
 # how-people-are-using-chatgpt - How people are using ChatGPT
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: dynamic-gated-neuron-spiking-neural-networks
+description: Skill for AI agent capabilities
+---
+
 # Dynamic Gated Neuron Spiking Neural Networks
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: vor-spiking-cerebellar-robot-control
+description: Skill for AI agent capabilities
+---
+
 # VOR Spiking Cerebellar Robot Control
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: advancing-red-teaming-with-people-and-ai---advanci
+description: Skill for AI agent capabilities
+---
+
 # advancing-red-teaming-with-people-and-ai - Advancing red teaming with people and AI
 
 ## Description

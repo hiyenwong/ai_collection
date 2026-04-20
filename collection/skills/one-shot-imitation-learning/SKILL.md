@@ -1,3 +1,8 @@
+---
+name: one-shot-imitation-learning---one-shot-imitation-l
+description: Skill for AI agent capabilities
+---
+
 # one-shot-imitation-learning - One-shot imitation learning
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: meta-learning-for-wrestling---meta-learning-for-wr
+description: Skill for AI agent capabilities
+---
+
 # meta-learning-for-wrestling - Meta-learning for wrestling
 
 ## Description

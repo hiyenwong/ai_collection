@@ -1,3 +1,8 @@
+---
+name: openai-research-monitor---openai-research-自动监控与技能创
+description: Skill for AI agent capabilities
+---
+
 # openai-research-monitor - OpenAI Research 自动监控与技能创建
 
 ## Description

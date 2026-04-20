@@ -1,3 +1,8 @@
+---
+name: hypergraph-attention-spatio-temporal-brain-network
+description: Skill for AI agent capabilities
+---
+
 # Hypergraph Attention Spatio-Temporal Brain Network
 
 ## Overview

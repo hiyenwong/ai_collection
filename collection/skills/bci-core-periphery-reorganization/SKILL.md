@@ -1,3 +1,8 @@
+---
+name: bci-learning-core-periphery-reorganization
+description: **来源论文：** arXiv:2010.13459 - BCI learning induces core-periphery reorganization in M/EEG multiplex brain networks
+---
+
 # BCI Learning Core-Periphery Reorganization
 
 **来源论文：** arXiv:2010.13459 - BCI learning induces core-periphery reorganization in M/EEG multiplex brain networks

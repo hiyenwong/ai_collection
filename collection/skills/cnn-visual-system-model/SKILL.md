@@ -1,3 +1,8 @@
+---
+name: cnn-as-visual-system-model
+description: Skill for AI agent capabilities
+---
+
 # CNN as Visual System Model
 
 ## Overview

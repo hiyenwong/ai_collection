@@ -1,3 +1,8 @@
+---
+name: graph-laplacian-denoising-for-brain-connectivity-s
+description: **来源论文：** arXiv:2012.11240 - Improving J-divergence of brain connectivity states by graph Laplacian denoising
+---
+
 # Graph Laplacian Denoising for Brain Connectivity States
 
 **来源论文：** arXiv:2012.11240 - Improving J-divergence of brain connectivity states by graph Laplacian denoising

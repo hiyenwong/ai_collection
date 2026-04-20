@@ -1,3 +1,8 @@
+---
+name: dual-diffusion-unified-image-generation-and-unders
+description: Skill for AI agent capabilities
+---
+
 # Dual Diffusion: Unified Image Generation and Understanding
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: openai-o1-system-card-external-testers-acknowledge
+description: Skill for AI agent capabilities
+---
+
 # openai-o1-system-card-external-testers-acknowledge - OpenAI o1 System Card External Testers Acknowledgements
 
 ## Description

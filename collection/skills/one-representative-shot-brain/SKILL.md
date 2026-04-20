@@ -1,3 +1,8 @@
+---
+name: one-representative-shot-brain-connectivity-learnin
+description: Skill for AI agent capabilities
+---
+
 # One Representative-Shot Brain Connectivity Learning
 
 ## Overview

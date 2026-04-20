@@ -1,3 +1,8 @@
+---
+name: brainnpt---brain-network-pre-trained-transformer
+description: Skill for AI agent capabilities
+---
+
 # BrainNPT - Brain Network Pre-trained Transformer
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: openai-five---openai-five
+description: Skill for AI agent capabilities
+---
+
 # openai-five - OpenAI Five
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: efficient-llm-inference-survey
+description: Skill for AI agent capabilities
+---
+
 # Efficient LLM Inference Survey
 
 ## Description

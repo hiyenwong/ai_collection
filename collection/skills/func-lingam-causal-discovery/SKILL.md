@@ -1,3 +1,8 @@
+---
+name: func-lingam---函数型线性非高斯无环因果发现模型
+description: Skill for AI agent capabilities
+---
+
 # Func-LiNGAM - 函数型线性非高斯无环因果发现模型
 
 ## Overview

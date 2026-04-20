@@ -1,3 +1,8 @@
+---
+name: codex-cli
+description: **Source:** OpenAI Codex CLI
+---
+
 # Codex CLI
 
 **Source:** OpenAI Codex CLI

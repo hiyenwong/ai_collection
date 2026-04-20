@@ -1,3 +1,8 @@
+---
+name: score-self-correction-via-reinforcement-learning
+description: Skill for AI agent capabilities
+---
+
 # SCoRe: Self-Correction via Reinforcement Learning
 
 ## Description

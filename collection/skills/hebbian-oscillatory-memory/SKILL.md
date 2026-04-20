@@ -1,3 +1,8 @@
+---
+name: skill.md---hebbian-imprinting-in-oscillatory-neura
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Hebbian Imprinting in Oscillatory Neural Networks
 
 ## Activation Keywords

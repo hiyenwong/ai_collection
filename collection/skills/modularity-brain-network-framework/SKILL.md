@@ -1,3 +1,8 @@
+---
+name: skill.md---modularity-maximization-brain-network-a
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Modularity Maximization Brain Network Analysis
 
 ## Activation Keywords

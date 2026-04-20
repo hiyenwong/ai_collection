@@ -1,3 +1,8 @@
+---
+name: connectomediffuser-generative-ai-for-brain-network
+description: **Source:** arXiv:2505.22683
+---
+
 # ConnectomeDiffuser: Generative AI for Brain Network Construction
 
 **Source:** arXiv:2505.22683

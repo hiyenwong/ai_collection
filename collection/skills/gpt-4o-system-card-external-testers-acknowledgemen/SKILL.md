@@ -1,3 +1,8 @@
+---
+name: gpt-4o-system-card-external-testers-acknowledgemen
+description: Skill for AI agent capabilities
+---
+
 # gpt-4o-system-card-external-testers-acknowledgemen - GPT-4o System Card External Testers Acknowledgements
 
 ## Description

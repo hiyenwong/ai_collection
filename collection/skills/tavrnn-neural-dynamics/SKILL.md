@@ -1,3 +1,8 @@
+---
+name: tavrnn---temporal-attention-variational-graph-rnn
+description: **来源论文：** arXiv:2410.00665 - Graph-Based Representation Learning of Neuronal Dynamics and Behavior
+---
+
 # TAVRNN - Temporal Attention Variational Graph RNN
 
 **来源论文：** arXiv:2410.00665 - Graph-Based Representation Learning of Neuronal Dynamics and Behavior

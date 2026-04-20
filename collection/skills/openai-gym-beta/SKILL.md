@@ -1,3 +1,8 @@
+---
+name: openai-gym-beta---openai-gym-beta
+description: Skill for AI agent capabilities
+---
+
 # openai-gym-beta - OpenAI Gym Beta
 
 ## Description

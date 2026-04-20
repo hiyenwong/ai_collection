@@ -1,3 +1,8 @@
+---
+name: gpt-2-15b-release---gpt-2-1.5b-release
+description: Skill for AI agent capabilities
+---
+
 # gpt-2-15b-release - GPT-2: 1.5B release
 
 ## Description

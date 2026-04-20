@@ -1,3 +1,8 @@
+---
+name: skill.md---reflective-context-learning-(rcl)
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Reflective Context Learning (RCL)
 
 ## Paper Reference

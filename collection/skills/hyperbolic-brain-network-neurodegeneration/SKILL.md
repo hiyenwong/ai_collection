@@ -1,3 +1,8 @@
+---
+name: hyperbolic-brain-network-embedding-for-neurodegene
+description: **来源论文：** arXiv:2407.16589 - Hyperbolic embedding of brain networks detects regions disrupted by neurodegeneration in Alzheimer's disease
+---
+
 # Hyperbolic Brain Network Embedding for Neurodegeneration Detection
 
 **来源论文：** arXiv:2407.16589 - Hyperbolic embedding of brain networks detects regions disrupted by neurodegeneration in Alzheimer's disease

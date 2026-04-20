@@ -1,3 +1,8 @@
+---
+name: implicit-generation-and-generalization-methods-for
+description: Skill for AI agent capabilities
+---
+
 # implicit-generation-and-generalization-methods-for - Implicit generation and generalization methods for energy-based models
 
 ## Description

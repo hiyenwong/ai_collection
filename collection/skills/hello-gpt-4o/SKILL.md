@@ -1,3 +1,8 @@
+---
+name: hello-gpt-4o---hello-gpt-4o
+description: Skill for AI agent capabilities
+---
+
 # hello-gpt-4o - Hello GPT-4o
 
 ## Description

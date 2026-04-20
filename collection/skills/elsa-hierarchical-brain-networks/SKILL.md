@@ -1,3 +1,8 @@
+---
+name: elsa-hierarchical-brain-networks---emergent-langua
+description: Skill for AI agent capabilities
+---
+
 # elsa-hierarchical-brain-networks - Emergent Language Symbolic Autoencoder (ELSA) with Weak Supervision to Model Hierarchical Brain Networks
 
 ## Description

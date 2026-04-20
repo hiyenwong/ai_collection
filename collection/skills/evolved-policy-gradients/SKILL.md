@@ -1,3 +1,8 @@
+---
+name: evolved-policy-gradients---evolved-policy-gradient
+description: Skill for AI agent capabilities
+---
+
 # evolved-policy-gradients - Evolved Policy Gradients
 
 ## Description

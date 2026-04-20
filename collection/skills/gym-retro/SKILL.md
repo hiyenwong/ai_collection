@@ -1,3 +1,8 @@
+---
+name: gym-retro---gym-retro
+description: Skill for AI agent capabilities
+---
+
 # gym-retro - Gym Retro
 
 ## Description

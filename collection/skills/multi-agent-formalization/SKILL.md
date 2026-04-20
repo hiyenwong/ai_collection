@@ -1,3 +1,8 @@
+---
+name: skill.md---automatic-textbook-formalization-via-mu
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Automatic Textbook Formalization via Multi-Agent Systems
 
 ## Paper Reference

@@ -1,3 +1,8 @@
+---
+name: some-considerations-on-learning-to-explore-via-met
+description: Skill for AI agent capabilities
+---
+
 # some-considerations-on-learning-to-explore-via-met - Some considerations on learning to explore via meta-reinforcement learning
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: neural-dynamics-to-neural-coding-prc-sta-relations
+description: **来源论文：** arXiv:0707.0245 - Relating Neural Dynamics to Neural Coding
+---
+
 # Neural Dynamics to Neural Coding: PRC-STA Relationship
 
 **来源论文：** arXiv:0707.0245 - Relating Neural Dynamics to Neural Coding

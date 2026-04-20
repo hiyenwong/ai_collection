@@ -1,3 +1,8 @@
+---
+name: functional-connectivity-graph-neural-networks-(fcg
+description: Skill for AI agent capabilities
+---
+
 # Functional Connectivity Graph Neural Networks (FCGNN)
 
 ## Overview

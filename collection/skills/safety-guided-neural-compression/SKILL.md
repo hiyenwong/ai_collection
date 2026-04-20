@@ -1,3 +1,8 @@
+---
+name: safety-guided-neural-network-compression
+description: Skill for AI agent capabilities
+---
+
 # Safety-Guided Neural Network Compression
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: reasoning-memory-in-llms-optimizing-sampling-infer
+description: **Source:** arXiv:2412.01885
+---
+
 # Reasoning Memory in LLMs: Optimizing Sampling Inference
 
 **Source:** arXiv:2412.01885

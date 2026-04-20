@@ -1,3 +1,8 @@
+---
+name: gradient-regularised-rnn-for-brain-hierarchy
+description: **Source:** arXiv:2511.02722
+---
+
 # Gradient-Regularised RNN for Brain Hierarchy
 
 **Source:** arXiv:2511.02722

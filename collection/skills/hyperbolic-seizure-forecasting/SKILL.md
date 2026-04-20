@@ -1,3 +1,8 @@
+---
+name: hyperbolic-brain-network-embedding-for-seizure-for
+description: **来源论文：** arXiv:2406.10184 - Hyperbolic embedding of brain networks as a tool for epileptic seizures forecasting
+---
+
 # Hyperbolic Brain Network Embedding for Seizure Forecasting
 
 **来源论文：** arXiv:2406.10184 - Hyperbolic embedding of brain networks as a tool for epileptic seizures forecasting

@@ -1,3 +1,8 @@
+---
+name: hierarchical-text-conditional-image-generation-wit
+description: Skill for AI agent capabilities
+---
+
 # hierarchical-text-conditional-image-generation-wit - Hierarchical text-conditional image generation with CLIP latents
 
 ## Description

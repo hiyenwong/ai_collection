@@ -1,3 +1,8 @@
+---
+name: skill.md---k-partite-differential-brain-connectivi
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - K-Partite Differential Brain Connectivity
 
 ## Activation Keywords

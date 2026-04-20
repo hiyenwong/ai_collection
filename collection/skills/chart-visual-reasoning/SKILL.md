@@ -1,3 +1,8 @@
+---
+name: skill.md---chart-rl-rl-for-vlm-visual-reasoning
+description: Skill for AI agent capabilities
+---
+
 # SKILL.md - Chart-RL: RL for VLM Visual Reasoning
 
 ## Paper Reference

@@ -1,3 +1,8 @@
+---
+name: openai-microscope---openai-microscope
+description: Skill for AI agent capabilities
+---
+
 # openai-microscope - OpenAI Microscope
 
 ## Description

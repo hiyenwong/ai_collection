@@ -1,3 +1,8 @@
+---
+name: better-language-models-and-their-implications---be
+description: Skill for AI agent capabilities
+---
+
 # better-language-models-and-their-implications - Better language models and their implications
 
 ## Description

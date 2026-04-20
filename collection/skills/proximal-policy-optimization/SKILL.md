@@ -1,3 +1,8 @@
+---
+name: proximal-policy-optimization---proximal-policy-opt
+description: Skill for AI agent capabilities
+---
+
 # proximal-policy-optimization - Proximal Policy Optimization
 
 ## Description

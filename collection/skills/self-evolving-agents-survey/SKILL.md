@@ -1,3 +1,8 @@
+---
+name: self-evolving-ai-agents-survey-framework
+description: Skill for AI agent capabilities
+---
+
 # Self-Evolving AI Agents Survey Framework
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: a-holistic-approach-to-undesired-content-detection
+description: Skill for AI agent capabilities
+---
+
 # a-holistic-approach-to-undesired-content-detection - A Holistic Approach to Undesired Content Detection in the Real World
 
 ## Description

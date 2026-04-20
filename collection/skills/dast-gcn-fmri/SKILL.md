@@ -1,3 +1,8 @@
+---
+name: dast-gcn-dynamic-adaptive-spatio-temporal-graph-co
+description: **Source:** arXiv:2109.12517 (MLCN 2021)
+---
+
 # DAST-GCN: Dynamic Adaptive Spatio-temporal Graph Convolution for fMRI
 
 **Source:** arXiv:2109.12517 (MLCN 2021)

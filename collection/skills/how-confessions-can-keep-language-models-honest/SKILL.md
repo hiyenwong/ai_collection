@@ -1,3 +1,8 @@
+---
+name: how-confessions-can-keep-language-models-honest---
+description: Skill for AI agent capabilities
+---
+
 # how-confessions-can-keep-language-models-honest - How confessions can keep language models honest
 
 ## Description

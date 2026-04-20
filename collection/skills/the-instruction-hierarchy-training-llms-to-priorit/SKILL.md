@@ -1,3 +1,8 @@
+---
+name: the-instruction-hierarchy-training-llms-to-priorit
+description: Skill for AI agent capabilities
+---
+
 # the-instruction-hierarchy-training-llms-to-priorit - The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions
 
 ## Description

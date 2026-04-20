@@ -1,3 +1,8 @@
+---
+name: sparse-deconvolved-predictive-network
+description: **Source:** arXiv:1310.6547
+---
+
 # Sparse Deconvolved Predictive Network
 
 **Source:** arXiv:1310.6547

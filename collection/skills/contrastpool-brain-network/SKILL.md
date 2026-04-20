@@ -1,3 +1,8 @@
+---
+name: contrastpool---contrastive-graph-pooling-for-brain
+description: Skill for AI agent capabilities
+---
+
 # ContrastPool - Contrastive Graph Pooling for Brain Networks
 
 ## Overview
