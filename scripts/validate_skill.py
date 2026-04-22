@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 # Required sections for SKILL.md
+# Required sections for SKILL.md
 REQUIRED_SECTIONS = [
     "# Skill Name",
     "## Description",
@@ -26,6 +27,19 @@ REQUIRED_SECTIONS = [
     "## Instructions for Agents",
     "## Examples",
 ]
+
+# Paper-based skills have different structure
+PAPER_SKILL_INDICATORS = [
+    "arXiv ID:",
+    "**arXiv ID:**",
+    "## Abstract",
+    "## Key Contributions",
+]
+
+
+def is_paper_skill(content: str) -> bool:
+    """Check if this is a paper-based skill (arXiv research paper)."""
+    return any(indicator in content for indicator in PAPER_SKILL_INDICATORS)
 
 # Optional sections
 OPTIONAL_SECTIONS = [
@@ -84,6 +98,11 @@ class SkillValidator:
         content = self.skill_md.read_text(encoding="utf-8")
         self._frontmatter, self._body = _parse_frontmatter(content)
 
+        # Check if this is a paper-based skill (different validation rules)
+        if is_paper_skill(content):
+            self.info.append("Paper-based skill (arXiv research) - using relaxed validation")
+            return self._validate_paper_skill(content)
+
         # Check required sections
         self._check_sections(content)
 
@@ -98,6 +117,39 @@ class SkillValidator:
 
         # Check examples
         self._check_examples(content)
+
+        return len(self.errors) == 0
+
+    def _validate_paper_skill(self, content: str) -> bool:
+        """Validate a paper-based skill (arXiv research paper)."""
+        # Paper skills need:
+        # - YAML frontmatter with name and description
+        # - arXiv ID
+        # - Abstract or Key Contributions
+
+        if not self._frontmatter:
+            self.errors.append("Missing YAML frontmatter")
+            return False
+
+        if "name" not in self._frontmatter:
+            self.errors.append("Missing 'name' in frontmatter")
+
+        if "description" not in self._frontmatter:
+            self.errors.append("Missing 'description' in frontmatter")
+
+        # Check for arXiv ID
+        if "arXiv ID:" not in content and "**arXiv ID:**" not in content:
+            self.warnings.append("Missing arXiv ID")
+
+        # Check for abstract or key contributions
+        has_abstract = "## Abstract" in content
+        has_contributions = "## Key Contributions" in content
+
+        if not (has_abstract or has_contributions):
+            self.warnings.append("Missing Abstract or Key Contributions section")
+
+        # Check format (line length)
+        self._check_format(content)
 
         return len(self.errors) == 0
 

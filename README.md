@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
-[![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-118-purple.svg)](./collection/skills/)
+[![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
+[![Skills](https://img.shields.io/badge/Skills-950-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -66,7 +66,7 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Psychologist](collection/agents/psychologist/) | Psychologist for cognitive behavior analysis | Opus 4.5 | ✅ |
 | [Statistician](collection/agents/statistician/) | Statistician for statistical inference | Opus 4.5 | ✅ |
 
-[View all 19 agents →](./collection/agents/)
+[View all 27 agents →](./collection/agents/)
 
 ## Skills
 
@@ -104,7 +104,7 @@ OpenClaw is a flexible AI agent framework that supports:
 | [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
 | [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
 
-[View all 115 skills →](./collection/skills/)
+[View all 950 skills →](./collection/skills/)
 
 ### Version Check Feature
 
