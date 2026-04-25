@@ -1,0 +1,172 @@
+---
+name: discounted-mpc-robust-control
+description: "Discounted Model Predictive Control (MPC) and infinite-horizon optimal control under plant-model mismatch. Provides exponential stability and suboptimality guarantees with robustness analysis. Unified quadratic cost framework covering both finite and infinite horizon scenarios. Key insight: larger horizons do not require smaller model mismatch. Activation: discounted MPC, plant-model mismatch, robust control, MPC stability, infinite-horizon control, suboptimality bounds."
+---
+
+# Discounted MPC and Robust Control Under Plant-Model Mismatch
+
+Unified framework for analyzing Model Predictive Control (MPC) and infinite-horizon optimal control when the surrogate model differs from the real plant.
+
+## Core Concepts
+
+### Plant-Model Mismatch
+When the optimization model (surrogate) differs from the actual system (plant):
+- **State mismatch**: Model states deviate from true plant states
+- **Dynamics mismatch**: Model equations don't capture true dynamics
+- **Cost mismatch**: Surrogate cost differs from true cost
+
+### Key Assumptions
+1. **Mismatch bounds**: Plant-model difference proportional to states and controls
+2. **Equilibrium preservation**: Origin remains an equilibrium under mismatch
+3. **Continuity**: Model and cost functions are continuous
+4. **Cost controllability**: System is stabilizable with finite cost
+
+## Theoretical Framework
+
+### Quadratic Cost Formulation
+Unified analysis using quadratic costs covers:
+- **Finite-horizon MPC**: Standard receding horizon control
+- **Infinite-horizon**: Long-term optimal control
+- **Discounted scenarios**: Future costs weighted by discount factor γ < 1
+- **Undiscounted scenarios**: γ = 1, all time steps equally weighted
+
+### Stability Guarantees
+
+**Exponential Stability**: Under continuity and cost-controllability assumptions:
+- Closed-loop system is exponentially stable
+- Stability region depends on horizon length and discount factor
+- Robustness guarantees are **uniform** over horizon length
+
+**Key Insight**: Larger horizons do NOT require successively smaller plant-model mismatch.
+
+### Suboptimality Bounds
+
+The closed-loop cost satisfies:
+```
+J_closed_loop ≤ J_optimal_surrogate + ε
+```
+
+Where ε depends on:
+- Horizon length N
+- Discount factor γ
+- Plant-model mismatch bound δ
+
+**Tradeoff Analysis**:
+| Parameter | Effect on Stability | Effect on Suboptimality |
+|-----------|---------------------|------------------------|
+| Longer horizon | Larger stability region | Better optimality |
+| Smaller discount (γ→1) | More conservative | Better long-term performance |
+| Smaller mismatch δ | Guaranteed stability | Better performance |
+
+## Practical Applications
+
+### When to Use This Framework
+
+1. **Learning-based MPC**: Using learned dynamics models
+2. **Approximate models**: Simplified models for real-time computation
+3. **Adaptive control**: Models updated online
+4. **Multi-fidelity optimization**: Using cheap surrogate models
+
+### Implementation Guidelines
+
+**Step 1: Characterize Mismatch**
+```python
+# Estimate mismatch bound δ
+# δ should bound ||f_plant(x,u) - f_model(x,u)||
+# Typically: δ = max over operating range
+```
+
+**Step 2: Choose Horizon and Discount**
+```python
+# Longer horizons improve performance but increase computation
+# Discount factor γ ∈ (0,1) trades off short vs long-term
+# Typical: γ = 0.95 to 0.99
+```
+
+**Step 3: Verify Assumptions**
+- Check continuity of dynamics
+- Verify cost controllability
+- Ensure origin is equilibrium
+
+**Step 4: Compute Stability Region**
+```python
+# Stability region depends on:
+# - Horizon length N
+# - Discount factor γ
+# - Mismatch bound δ
+# - Cost function properties
+```
+
+## Activation Keywords
+
+- discounted MPC
+- plant-model mismatch
+- MPC stability
+- robust control
+- infinite-horizon optimal control
+- surrogate model control
+- model predictive control robustness
+
+## Related Papers
+
+- **arXiv:2604.08521**: "Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality" by Moldenhauer et al.
+- Submitted to 65th IEEE Conference on Decision and Control
+
+## Mathematical Notation
+
+| Symbol | Meaning |
+|--------|---------|
+| x | State vector |
+| u | Control input |
+| f_plant | True plant dynamics |
+| f_model | Surrogate model dynamics |
+| γ | Discount factor (0 < γ ≤ 1) |
+| N | Prediction horizon |
+| δ | Plant-model mismatch bound |
+| J | Cost function |
+
+## References
+
+1. Moldenhauer, R.H., Worthmann, K., Postoyan, R., Nešić, D., & Granzotto, M. (2026). Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality. arXiv:2604.08521 [math.OC].
+
+## Tools Used
+
+- `execute_code`: For computing stability regions and suboptimality bounds
+- `read_file`: For loading system models
+- `write_file`: For saving control policies
+
+## Example Usage
+
+```python
+# Example: Analyzing MPC robustness for a simple system
+
+import numpy as np
+
+def analyze_mpc_robustness(plant_dynamics, model_dynamics, 
+                           horizon, discount, cost_function):
+    """
+    Analyze MPC stability under plant-model mismatch.
+    
+    Args:
+        plant_dynamics: True system dynamics f_plant(x,u)
+        model_dynamics: Surrogate model f_model(x,u)
+        horizon: Prediction horizon N
+        discount: Discount factor gamma
+        cost_function: Stage cost l(x,u)
+    
+    Returns:
+        stability_region: Set of stable initial conditions
+        suboptimality_bound: Upper bound on cost increase
+    """
+    # 1. Compute mismatch bound
+    # 2. Verify assumptions
+    # 3. Calculate stability region
+    # 4. Compute suboptimality bound
+    pass
+```
+
+## Error Handling
+
+- **Assumption violation**: If continuity or controllability fails, stability cannot be guaranteed
+- **Large mismatch**: May require shorter horizons or more discounting
+- **Computational limits**: Long horizons may be infeasible for real-time control

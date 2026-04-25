@@ -12,6 +12,7 @@ description: "VaCoAl (Vague Coincident Algorithm) - hyperdimensional computing o
 - **arXiv**: 2604.11665v3
 - **Published**: 2026-04-13
 - **Categories**: cs.NE (Neural and Evolutionary Computing), cs.AI
+- **Updated in collection**: 2026-04-18
 
 ## Overview
 

@@ -115,3 +115,12 @@ def characterize_noise_regime(spike_times):
 - neuromorphic noise
 - spike timing jitter
 - stochastic SNN
+
+
+## Latest Research Updates
+
+### arXiv:2604.13612v1 (2026-04-15)
+**Title:** General aspects of internal noise in spiking neural networks
+**Authors:** I. D. Kolesnikov, D. A. Maksimov, V. M. Moskvitin et al.
+**Link:** https://arxiv.org/abs/2604.13612v1
+

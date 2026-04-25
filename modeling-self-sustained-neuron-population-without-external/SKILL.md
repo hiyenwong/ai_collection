@@ -1,13 +1,13 @@
 ---
 name: modeling-self-sustained-neuron-population-without-external
-description: "Modeling self-sustained neuron populations without external stimulus. Demonstrates how recurrent networks maintain persistent activity through internal dynamics alone. Explores mechanisms of sustained firing in absence of external drive. Activation: self-sustained activity, recurrent neural networks, persistent activity, population dynamics, spontaneous activity"
+description: "Methodology for modeling self-sustained neural activity in recurrent networks without external input. Based on Hodgkin-Huxley networks with STDP and intrinsic stochasticity. Use when: modeling autonomous neural activity, studying persistent activity mechanisms, simulating biophysical neural networks, investigating spontaneous activity patterns, or designing recurrent networks with plasticity."
 ---
 
-# Self-Sustained Neuron Population Modeling
+# Modeling Self-Sustained Neural Activity Without External Stimulus
 
 ## Overview
 
-Research on modeling self-sustained neuron populations that maintain persistent activity **without any external stimulus**. Demonstrates how recurrent network architectures sustain ongoing neural dynamics through internal connectivity and feedback mechanisms alone, providing insights into working memory, spontaneous brain activity, and baseline cortical dynamics.
+Self-sustained neural activity without ongoing external input is a fundamental property of nervous systems. This skill provides methodology for building and analyzing biophysical recurrent networks that maintain autonomous activity after brief transient stimulation.
 
 ## Source Paper
 
@@ -15,61 +15,72 @@ Research on modeling self-sustained neuron populations that maintain persistent 
 - **Authors**: İhsan Ertuğrul Karakaş, Özden Özel, İlkay Ulusoy, Orhan Murat Koçak
 - **arXiv**: 2604.13719v1
 - **Published**: 2026-04-15
-- **Categories**: N/A
-- **PDF**: https://arxiv.org/pdf/2604.13719v1
+- **Categories**: cs.NE, q-bio.NC
 
-## Core Concepts
+## Core Mechanism
 
-### Self-Sustained Activity Mechanisms
+Self-sustained activity emerges from three factors:
+1. **Recurrent connectivity** — 80% connection probability enables reverberating activity
+2. **STDP** — Both excitatory and inhibitory STDP maintain weight distributions supporting sustained firing
+3. **Intrinsic stochasticity** — Probabilistic vesicle release, synapse formation, receptor variability
 
-1. **Recurrent excitation**: Neurons excite each other through feedback loops
-2. **Balanced inhibition**: Inhibition prevents runaway excitation
-3. **Network structure**: Specific connectivity patterns sustain activity patterns
-4. **Intrinsic dynamics**: Individual neuron properties contribute to stability
+## Network Parameters
 
-### Implementation
+```
+Excitatory neurons: 160 (80%)
+Inhibitory neurons: 40 (20%)
+Connection probability: 80%
+Neuron model: Hodgkin-Huxley
+Initialization: 200ms stimulus to 30 excitatory neurons
+Post-init: NO external input
+```
+
+## Key Results
+
+| Metric | Value | Interpretation |
+|--------|-------|---------------|
+| Mean firing rate | 1.13 ± 1.34 Hz | Sparse irregular firing |
+| Neurons < 1 Hz | 67% | Dominant sparse regime |
+| Fano factor | 1-2 | Irregular spike timing |
+| Simulation | 1800 s | Long-duration persistence |
+
+## Implementation
 
 ```python
 import numpy as np
 
 class SelfSustainedNetwork:
-    """E-I balanced recurrent network with self-sustained activity."""
-    
-    def __init__(self, n_exc=800, n_inh=200, conn_prob=0.1):
-        self.n_exc, self.n_inh = n_exc, n_inh
-        self.W_ee = self._sparse(n_exc, n_exc, conn_prob, mean=0.5)
-        self.W_ei = self._sparse(n_exc, n_inh, conn_prob, mean=0.5)
-        self.W_ie = self._sparse(n_inh, n_exc, conn_prob, mean=-1.0)
-        self.W_ii = self._sparse(n_inh, n_inh, conn_prob, mean=-0.5)
-        self.r_exc = np.zeros(n_exc)
-        self.r_inh = np.zeros(n_inh)
-    
-    def _sparse(self, r, c, p, mean=0, std=0.1):
-        W = np.random.normal(mean, std, (r, c))
-        W[np.random.random((r, c)) > p] = 0
-        return W
-    
-    def step(self, dt=1e-3):
-        # NO external input - purely self-sustained
-        inp_e = self.W_ee @ self.r_exc + self.W_ie.T @ self.r_inh
-        inp_i = self.W_ei.T @ self.r_exc + self.W_ii @ self.r_inh
-        self.r_exc += (-self.r_exc + np.maximum(0, inp_e)) * dt / 0.02
-        self.r_inh += (-self.r_inh + np.maximum(0, inp_i)) * dt / 0.01
-        return np.maximum(self.r_exc, 0), np.maximum(self.r_inh, 0)
+    def __init__(self, n_exc=160, n_inh=40, p_conn=0.8):
+        self.N = n_exc + n_inh
+        self.W = np.random.binomial(1, p_conn, (self.N, self.N))
+        np.fill_diagonal(self.W, 0)
+        self.p_release = 0.5
+        
+    def initialize(self):
+        """200ms brief stimulus, then no further input."""
+        pass
+        
+    def apply_stdp(self, dt, A_plus=0.01, A_minus=-0.012, tau=20.0):
+        if dt > 0:
+            return A_plus * np.exp(-dt / tau)
+        return A_minus * np.exp(dt / tau)
+        
+    def analyze(self, spike_trains, duration_ms):
+        rates = [len(s) / (duration_ms / 1000) for s in spike_trains]
+        return {
+            'mean_rate': np.mean(rates),
+            'sparse_fraction': sum(1 for r in rates if r < 1.0) / len(rates),
+            'fano': np.var(rates) / np.mean(rates) if np.mean(rates) > 0 else 0
+        }
 ```
 
-## Applications
+## Critical Design Requirements
 
-- **Working memory models**: Persistent activity as memory substrate
-- **Resting-state fMRI**: Understanding spontaneous brain activity
-- **Neuromorphic computing**: Low-power always-on neural circuits
-- **Epilepsy modeling**: Pathological sustained activity
+- STDP is essential (without it, activity dies or becomes epileptic)
+- Stochasticity prevents synchronization
+- 80/20 E/I ratio maintains stable dynamics
+- Brief initialization only — then zero external drive
 
 ## Activation Keywords
 
-- self-sustained activity
-- persistent neural activity
-- recurrent network dynamics
-- spontaneous activity
-- E-I balance
-- population dynamics
+- self-sustained activity, autonomous neural activity, persistent activity, Hodgkin-Huxley recurrent, spontaneous activity

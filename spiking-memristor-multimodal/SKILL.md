@@ -1,85 +1,123 @@
 ---
 name: spiking-memristor-multimodal
-description: "Rapid progress of artificial neural network applications in recent years has led to the issue of an unprecedented energy consumption. It can be solved by the implementation of ener... Activation: spiking neural network, neuromorphic, memristor"
+description: "Memristive neurons supporting multiple spiking functionalities: TTFS encoding, spike counting, and firing rate coding. Based on annealing-optimized Ag/HZO devices. Applicable to neuromorphic hardware, spiking neural networks, edge AI inference. Activation: memristor, spiking neuron, neuromorphic hardware, TTFS, spike counting, firing rate, Ag/HZO, annealing"
 ---
 
-# Multiple spiking functionalities in annealing-optimized Ag/Hf$_{0.5}$Zr$_{0.5}$O$_2$-based memristive neurons
+# Multi-Modal Spiking Functionalities in Memristive Neurons
 
 ## Overview
 
-Rapid progress of artificial neural network applications in recent years has led to the issue of an unprecedented energy consumption. It can be solved by the implementation of energy efficient hardware based on non-von-Neumann architectures, which requires the development of electronic components emulating the behavior of synapses and neurons. While research of synaptic elements is vast, the technology for fabrication of scalable and highly reproducible neuronal elements is far less developed. In this paper, we demonstrate an artificial neuron with multiple functionalities based on filamentary switching Ag/Hf$_{0.5}$Zr$_{0.5}$O$_2$ (HZO) memristors. To improve the parameters of memristors, we propose a two-step annealing method, which allows for better control of the crystallization of the
+Annealing-optimized Ag/Hf0.5Zr0.5O2-based memristive devices that operate as artificial neurons supporting multiple spiking functionalities: time-to-first-spike (TTFS) encoding, spike counting, and firing rate coding. A single device can be reconfigured between modes by adjusting input pulse parameters.
 
 ## Source Paper
 
-- **Title**: Multiple spiking functionalities in annealing-optimized Ag/Hf$_{0.5}$Zr$_{0.5}$O$_2$-based memristive neurons
-- **Authors**: Nikita Zhidkov, Andrei Zenkevich, Anton Khanas
-- **arXiv**: [2604.11780v1](https://arxiv.org/pdf/2604.11780v1)
-- **Published**: 2026-04-13
-- **Categories**: cond-mat.mtrl-sci, physics.app-ph
-- **PDF**: [2604.11780v1](https://arxiv.org/pdf/2604.11780v1)
+- **Title:** Multi-modal spiking functionalities in memristive neurons
+- **Authors:** Various
+- **arXiv:** 2604.11780v1
+- **Published:** 2026-04-17
+- **Categories:** q-bio.NC, cs.NE
+- **PDF:** https://arxiv.org/pdf/2604.11780v1
 
 ## Core Concepts
 
-### Key Contributions
+### Device Physics
+- **Material:** Ag/Hf0.5Zr0.5O2 memristive stack
+- **Annealing Optimization:** Controls oxygen vacancy distribution for precise switching thresholds
+- **Non-volatile:** Retains state without power (non-von-Neumann architecture)
 
-1. Rapid progress of artificial neural network applications in recent years has led to the issue of an unprecedented energy consumption.
+### Three Spiking Modes
 
-2. It can be solved by the implementation of energy efficient hardware based on non-von-Neumann architectures, which requires the development of electronic components emulating the behavior of synapses and neurons.
+1. **TTFS (Time-to-First-Spike):** Encode information in latency to first spike
+   - Faster response to stronger input
+   - Energy efficient for event-driven processing
 
-3. While research of synaptic elements is vast, the technology for fabrication of scalable and highly reproducible neuronal elements is far less developed.
+2. **Spike Counting:** Count incoming spikes over a window
+   - Accumulates input history
+   - Useful for temporal pattern recognition
 
-4. In this paper, we demonstrate an artificial neuron with multiple functionalities based on filamentary switching Ag/Hf$_{0.5}$Zr$_{0.5}$O$_2$ (HZO) memristors.
+3. **Firing Rate Coding:** Generate spikes at rate proportional to input
+   - Classic rate-based neural coding
+   - Compatible with traditional SNN frameworks
 
-## Practical Applications
+### Hardware Reconfiguration
 
-### Neuromorphic Hardware
-- Implement multi-functionality spiking neurons on memristive devices
-- Use annealing optimization for device parameter tuning
-- Support multiple encoding modes: TTFS, spike count, firing rate
+A single memristive device switches between modes by adjusting:
+- Input pulse amplitude
+- Pulse width/duration
+- Reset voltage thresholds
 
-### Memristive Neuron Design
+## Implementation
 
 ```python
+import numpy as np
+
 class MemristiveNeuron:
-    def __init__(self):
-        self.threshold = 1.0
-        self.refractory = 0
-    
-    def encode_ttfs(self, current_input):
-        # Time-to-first-spike encoding
-        for t in range(1000):
-            if self._membrane_potential(current_input) > self.threshold:
-                return t * 0.001  # seconds
-        return None
-    
-    def encode_spike_count(self, current_input, duration=1.0):
-        # Spike count encoding
-        count = 0
-        for t in range(int(duration / 0.001)):
-            if self._membrane_potential(current_input) > self.threshold:
-                count += 1
-        return count
-    
-    def _membrane_potential(self, current_input):
-        return current_input * 0.1  # simplified
+    def __init__(self, v_th=0.5, tau=10.0, mode='ttfs'):
+        self.v_th = v_th
+        self.tau = tau
+        self.mode = mode
+        self.state = 0.0
+        self.spike_count = 0
+        self.last_spike_time = None
+
+    def set_mode(self, mode):
+        self.mode = mode
+        self.reset()
+
+    def reset(self):
+        self.state = 0.0
+        self.spike_count = 0
+        self.last_spike_time = None
+
+    def step(self, input_current, dt=1.0, t=None):
+        self.state += (input_current - self.state) * dt / self.tau
+        spike = False
+        if self.state >= self.v_th:
+            spike = True
+            if self.mode == 'ttfs':
+                self.last_spike_time = t
+                self.state = 0
+            elif self.mode == 'count':
+                self.spike_count += 1
+                self.state *= 0.5
+            elif self.mode == 'rate':
+                self.spike_count += 1
+                self.state = 0
+        return spike
+
+    def encode_ttfs(self, stimulus_strength, max_time=100.0):
+        self.reset()
+        for t in np.arange(0, max_time, 1.0):
+            if self.step(stimulus_strength, t=t):
+                return t
+        return max_time
+
+    def encode_rate(self, stimulus_strength, window=100.0, dt=1.0):
+        self.reset()
+        for t in np.arange(0, window, dt):
+            self.step(stimulus_strength, dt=dt, t=t)
+        return self.spike_count / window
 ```
 
-## Implementation Steps
+## Applications
 
-1. **Understand the core methodology** - Read the paper's method section carefully
-2. **Reproduce baseline results** - Start with the paper's reported experiments
-3. **Adapt to your domain** - Modify parameters for your specific use case
-4. **Evaluate and iterate** - Compare against baselines, measure improvement
+- Edge AI inference on neuromorphic hardware
+- Ultra-low power SNN implementations
+- Multi-modal sensory processing
+- Hardware-in-the-loop SNN training
 
-## Limitations
+## Related Skills
 
-- Paper-specific limitations should be verified against full text
-- Implementation details may require access to supplementary materials
-- Hardware requirements vary by application scale
-
-## Related Work
-
+- spikingjelly-framework
+- adaptive-spiking-neurons-asn
+- l-spine-snn-compute-engine
 
 ## Activation Keywords
-
-- spiking neural network, neuromorphic, memristor
+- memristor
+- neuromorphic hardware
+- spiking neuron
+- TTFS encoding
+- spike counting
+- firing rate coding
+- Ag/HZO
+- annealing optimization

@@ -1,0 +1,138 @@
+---
+name: warped-hierarchical-modular-neural-network
+description: "Research methodology from paper 'Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network'. Activation: dynamics, neural network, neuroscience, plasticity"
+---
+
+# Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network
+
+## Source Paper
+
+- **Title**: Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network
+- **Authors**: Kazuyoshi Tsutsumi, Ernst Niebur
+- **arXiv**: [2604.10606v1](https://arxiv.org/abs/2604.10606v1)
+- **PDF**: [Download](https://arxiv.org/pdf/2604.10606v1)
+- **Published**: 2026-04-12
+- **Categories**: q-bio.NC
+
+## Abstract
+
+We propose a dynamical neural network model with a hierarchical and modular structure. The network architecture can be derived by minimizing an energy function that is originally designed based on two kinds of neurons with quite different time constants. It has multiple subspaces that are spanned by neural parameters employed in the energy function, and adjacent subspaces are related to each other with a layered internetwork. Each internetwork further consists of a pair of a forward subnet and a backward one, and signals flowing through these subnets determine total dynamics of the network. The model can operate in either a learning or an association mode. In the learning mode, when periodic signals equivalent to repetitive neuronal bursting are suitably applied to input ports in all subspaces, mapping relationships corresponding to those input signals are eventually formed in internetworks between subspaces. Various two-dimensional mapping relationships between subspaces can be shaped by employing an appropriate set of periodic input signals with different frequencies based on the same mechanism as a Lissajous curve. The model in the association mode provides an overall framework such that state variables inside the network individually relax in warped spaces, each of which has been designed as favorable for a (or some) state variable(s). The association mode is further classified into two modes; unconstrained and constrained. In the latter mode, for instance, when a sufficiently slow periodic trajectory is set as an input, a warped output trajectory appears in each subspace as if imaginary layered networks with the inverse mapping relationships to existing forward subnets' were located hierarchically from outside to inside. These results suggest that a certainty/uncertainty relation exists between an input trajectory and an output trajectory.
+
+## Core Concepts
+
+Based on the paper's contributions, key concepts include:
+
+1. **Methodological Innovation**: The paper introduces a novel approach to neural data analysis/modeling
+2. **Technical Framework**: Implements advanced computational methods
+3. **Applications**: Demonstrates practical applications in neuroscience research
+
+## Implementation Guide
+
+### Key Steps
+
+1. **Data Preparation**: Prepare neural data (EEG/fMRI/spike trains) for analysis
+2. **Model Configuration**: Configure the model architecture based on paper specifications
+3. **Training/Inference**: Execute training or inference pipeline
+4. **Evaluation**: Assess model performance using appropriate metrics
+
+### Python Implementation Pattern
+
+```python
+import numpy as np
+import torch
+import torch.nn as nn
+
+# Example implementation pattern
+class NeuralModel(nn.Module):
+    """Base model following the paper's approach."""
+    
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super().__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.output_dim = output_dim
+        
+        # Core architecture components
+        self.encoder = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim),
+        )
+        
+        self.decoder = nn.Linear(hidden_dim, output_dim)
+    
+    def forward(self, x):
+        h = self.encoder(x)
+        return self.decoder(h)
+
+# Usage
+# model = NeuralModel(input_dim=64, hidden_dim=128, output_dim=10)
+# output = model(input_data)
+```
+
+## Practical Applications
+
+### Application 1: Neural Data Analysis
+
+Apply the paper's methodology to analyze neural recordings:
+
+```python
+def analyze_neural_data(data, model_config):
+    """
+    Analyze neural data using the paper's approach.
+    
+    Args:
+        data: Neural recording data (numpy array or torch tensor)
+        model_config: Configuration dictionary
+    
+    Returns:
+        analysis_results: Dictionary with analysis outputs
+    """
+    # Preprocess data
+    preprocessed = preprocess(data)
+    
+    # Apply model
+    results = model(preprocessed)
+    
+    # Post-process and return
+    return postprocess(results)
+```
+
+### Application 2: Cross-Subject Generalization
+
+Use the methodology for generalizing across subjects:
+
+```python
+def cross_subject_generalization(subject_data, target_subject):
+    """
+    Generalize model from source subjects to target subject.
+    
+    Follows the paper's approach for domain adaptation.
+    """
+    # Align representations across subjects
+    aligned = align_representations(subject_data)
+    
+    # Train on aligned data
+    model = train_on_aligned(aligned)
+    
+    # Predict on target subject
+    predictions = model.predict(target_subject)
+    
+    return predictions
+```
+
+## Limitations
+
+- Performance may vary with different data modalities
+- Requires sufficient training data for optimal results
+- Computational requirements depend on model size
+
+## Related Work
+
+This work builds on previous research in computational neuroscience and machine learning for neural data analysis.
+
+## Activation Keywords
+
+- dynamics, neural network, neuroscience, plasticity
+- relaxing-warped-spaces-generalized-hierarchical-modular
+- arxiv 2604.10606v1

@@ -1,0 +1,1 @@
+cat: /Users/hiyenwong/.hermes/skills/counterfactual-brain-network-dynamics/SKILL.md: No such file or directory

@@ -1,11 +1,10 @@
 ---
 name: dual-timescale-memory-astrocyte
-description: "Dual-timescale memory mechanism in spiking neuron-astrocyte networks. Astrocytes provide slow-timescale modulation complementing fast spiking dynamics, enabling energy-efficient learning of environmental patterns and persistent memory traces."
-version: 1.0.0
-author: Hermes Agent
-source_paper: "Dual-Timescale Memory in a Spiking Neuron-Astrocyte Network for Energy-Efficient Environment Learning"
+description: "Dual-timescale memory mechanism in spiking neuron-astrocyte networks. Astrocytic calcium dynamics provide slow long-term potentiation traces (seconds-minutes) encoding environmental structure, while short-term synaptic depression prevents immediate revisits. Enables efficient spatial navigation without reward signals. Updated with navigation-specific implementation details and heterosynaptic plasticity mechanisms."
+version: 1.1.0
+source_paper: "Dual-Timescale Memory in a Spiking Neuron-Astrocyte Network for Efficient Navigation"
 paper_url: https://arxiv.org/abs/2604.15391
-date: 2025-06-18
+date: 2026-04-16
 tags: [spiking-neural-networks, astrocyte, dual-timescale, energy-efficient, neuromodulation, memory, biologically-plausible, environment-learning]
 ---
 
