@@ -1,6 +1,5 @@
 import urllib.request
 import xml.etree.ElementTree as ET
-import json
 
 queries = [
     "all:neuroscience+AND+all:brain+network",

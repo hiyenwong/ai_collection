@@ -1,252 +1,313 @@
-# ai_collection
+# OpenClaw AI Collection
 
-Automated skills collection from arXiv research.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
+[![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
+[![Skills](https://img.shields.io/badge/Skills-966-purple.svg)](./collection/skills/)
+[![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-**Last Updated:** 2026-04-17 18:05
+**[中文文档](./README_CN.md)** | **English**
 
-**Total Skills:**      195
+A curated collection of **OpenClaw** agents and skills that provide powerful extensions for AI assistants.
 
-**New Skills (This Run):**
-- eeg-ieeg-bridge-bci
-- retina-gap-junction-defense
-- neural-encoding-evaluation-ground-truth
+## Table of Contents
 
-**Recent Additions:**
-- eeg-ieeg-bridge-bci (April 17, 2026)
-- retina-gap-junction-defense (April 17, 2026)
-- neural-encoding-evaluation-ground-truth (April 17, 2026)
-- systems-engineering-apr14-2026 (April 14, 2026)
-- advanced-control-systems-2026 (April 2026)
-- modern-systems-engineering-patterns (April 2026)
-- distributed-systems-ai-engineering-2026 (April 2026)
+- [Overview](#overview)
+- [Features](#features)
+- [Agents](#agents)
+- [Skills](#skills)
+- [Quick Start](#quick-start)
+- [Contributing](#contributing)
+- [License](#license)
 
-**All Skills:**
-- active-bayesian-sensor-attack-recovery
-- administrative-decentralization-edge-cloud-multi-a
-- advanced-control-systems-2026
-- agentic-human-in-the-loop-cps
-- ai-systems-engineering-v-model
-- aligned-agents-biased-swarm-measuring
-- anomaly-detection-dynamical-systems
-- arxiv-neuroscience-research-monitor
-- async-delta-modulator-bmi
-- asynchronous-quantum-distributed-computing
-- automated-cps-testing-act
-- auto-configured-networks-forecasting
-- bandwidth-reduction-methods-packetized-mpc
-- bandwidth-reduction-packetized-mpc
-- beyond-stochastic-exploration-what
-- bleg-llm-brain-graph-enhancer
-- bleg-llm-functions-as-powerful
-- bleg-llm-functions-powerful-fmri
-- brain-fmri-llm-graph
-- brain-inspired-memory-ai-agents
-- brain-learning-non-ideal-factors
-- brain-meta-learning-in-context-decoding
-- brain-network-controllability
-- brain-network-topology
-- brain-neuromorphic
-- brain-omnifunctional-foundation-model
-- brain-organoid-molecular-communication
-- brain-to-speech-synthesis
-- brain-to-speech-transformer-reconstruction
-- brain3d-eeg-decoding
-- brain3d-eeg-multimodal
-- calcium-foundation-model
-- can-llms-deobfuscate-binary
-- causal-brain-network-inference
-- causal-inference-effective-connectivity
-- city-scale-visibility-graph-analysis
-- coflow-scheduling-ocs
-- cognisnn-random-graph
-- computational-neuroscience-models
-- contraction-theory-control-optimization
-- convergent-representations-linguistic-constructions
-- convolutional-neural-network-adversarial-autoencoder
-- counterfactual-brain-network-dynamics
-- cps-security-anomaly-detection
-- cpsos-resilience-dynamics
-- dag-based-cft-consensus
-- data-driven-moving-horizon-estimation
-- data-poisoning-control-security
-- decentralized-opinion-integrated-decision-making-unsignalize
-- decentralized-stochastic-momentum-admm
-- density-driven-multi-agent-control
-- density-driven-optimal-control-convergence-guarant
-- density-driven-optimal-control-convergence-guarantees
-- density-driven-optimal-control
-- discounted-mpc-infinite-horizon-optimal-control
-- discounted-mpc-robust-control
-- distributed-bilevel-macroscopic-optimization
-- distributed-bilevel-mas-optimization
-- distributed-systems-ai-engineering-2026
-- dnn-internal-noise-analysis
-- dream-simulation
-- dynamics-foundation-model-calcium
-- edge-cloud-multi-agent-decentralization
-- eeg-cnn-autoencoder
-- eeg-hopfield-emotion-energy
-- eeg-ieeg-bridge-bci
-- eeg2vision-multimodal-eeg-based-framework-2d
-- eeg2vision-multimodal-eeg-based-framework-visual
-- eeg2vision-multimodal-reconstruction
-- efficient-uniform-feasible-set-sampling
-- empirical-study-multi-agent-collaboration-automated
-- energy-based-neurocomputation
-- existence-quadratic-control-lyapunov-functions
-- finite-step-invariant-sets-hybrid-systems
-- finite-time-reachability-constrained-partially-unc
-- finite-time-reachability-partial-control
-- gemst-multidimensional-grouping-snn
-- gemst-spiking-transformer
-- generative-ai-brain-mapping
-- graph-laplacian-denoising
-- grouped-spiking-transformer-gemmst
-- heterophily-synergistic-interdependencies
-- hierarchical-mesh-transformers-brain
-- improved-convergence-decentralized-stochastic
-- in-context-brain-decoding
-- information-theory-neural-coding
-- integer-state-dynamics-quantized-spiking-neural
-- integer-state-dynamics
-- interpretable-electrophysiological-features-resting-state-ee
-- karma-mechanisms-decentralised-cooperative
-- koopman-representation-learning
-- kuramoto-phase-encoding
-- lattice-field-theory-network-real
-- lattice-field-theory-neural-networks
-- lattice-field-theory
-- learning-coordinate-over-networks
-- learning-focus-csi-free-hierarchical-marl
-- legodiffusion-micro-serving-text-to-image-diffusio
-- linear-feedback-controller-homogeneous-polynomial
-- llm-agent-externalization
-- llm-binary-deobfuscation
-- logact-agentic-reliability
-- logact-enabling-agentic-reliability
-- lti-systems-ode-solutions
-- m3d-bfs-multi-stage-dynamic-fusion-strategy
-- m3d-bfs-multimodal-brain-network
-- maximum-heterogeneity-principle
-- meta-cognitive-tool-optimization
-- meta-learning-brain-decoding
-- meta-learning-in-context-brain-decoding-v2
-- meta-learning-in-context-brain-decoding
-- meta-learning-in-context-enables-training-free-cross
-- modern-systems-engineering-2026
-- modern-systems-engineering-patterns
-- mpc-game-controllers-misspecification
-- multi-agent-llm-peer-preservation
-- multi-orft-diffusion-planning
-- multi-robot-rigidity-control
-- multimodal-brain-foundation-model
-- multimodal-higher-order-brain-networks
-- neural-convergent-representation
-- neural-decoding-llm
-- neural-dynamics-autoregressive-flow-matching
-- neural-dynamics-criticality
-- neural-encoding-evaluation-ground-truth
-- neural-population-decoding
-- neurobiological-craving-signature
-- neuromodulation-cpg-control
-- neuromodulation-rhythmic-pattern-control
-- neuromorphic-aer-encoder-design
-- neuromorphic-low-power-ai
-- neuroscience-of-transformers
-- neuroscience-research-method
-- nl-cps-kubernetes-control
-- nl-cps-reinforcement-learning-based-kubernetes-con
-- nl-cps-reinforcement-learning-based-kubernetes-control
-- nl-cps-reinforcement-learning-based-kubernetes
-- non-equilibrium-continual-learning
-- online-intention-prediction-control-informed-learning
-- open-access-multi-modal
-- parallelized-hierarchical-connectome-spatiotempora
-- persistence-augmented-neural-networks
-- physics-aligned-simulation-deformable
-- physics-infused-video-generation
-- plasticity-enhanced-mamoe
-- post-selection-free
-- privacy-aware-networked-control
-- probabilistic-cbf-subgaussian
-- product-designer-agent
-- psi-shared-state-architecture
-- reduced-mass-orbital-ai-inference
-- retina-gap-junction-defense
-- robust-adaptive-backstepping-impedance-control
-- robust-spiking-reservoir
-- safe-large-scale-robust-nonlinear-mpc
-- scheduling-coflows-multi-core-ocs
-- shift-stretch-nmf-brain
-- skill-moo-multi-objective-optimization
-- snn-multimodal-brain
-- snn-neuromorphic-fpga
-- snn-quantized-dynamics-integer
-- snn-reconstruction-autapse
-- snn-self-adaptation-robustness-capacity
-- sparse-neural-connectivity-recovery
-- spike-ptsd-a
-- spiking-connectome-hierarchical-state-space
-- spiking-neural-network-training
-- spiking-oscillation-mapping
-- spiking-reservoir-robustness
-- spiking-transformer-gemst
-- stability-sensitivity-analysis-objective-misspecif
-- staflow-eeg-decoding
-- stochastic-momentum-tracking-push-pull
-- sumo-whole-body-locomanipulation
-- system-resilience-design-patterns
-- systems-engineering-apr14-2026
-- taming-gpu-underutilization-static
-- task-aware-brain-connectivity
-- tda-neuroscience
-- temporal-attention-graph-neural
-- temporal-neural-processes-action-prediction
-- the-physical-basis
-- theater-mind-llms-cognitive
-- thermocoherent-neural-dynamics
-- thermodynamic-connectivity-extrasynaptic
-- topological-connectome-sensitivity
-- triple-loop-memory-consolidation
-- unified-control-theoretic-framework-saddle-point-dynamics
-- unified-saddle-point-control
-- ven-speed-accuracy-tradeoff
-- von-economo-fast-lane-hypothesis
-- von-economo-neurons-speed-accuracy
-- wattlytics-hpc-optimization
-- wattlytics-web-platform-co-optimizing
-- wta-spiking-transformer-language
+## Overview
 
-*Last updated: 2026-04-18 - 2 new neuroscience skills added*
+This repository serves as a knowledge base and showcase for the OpenClaw agent and skill ecosystem. It documents agents and skills that extend OpenClaw's capabilities, making them easy to discover, understand, and use.
 
+### What is OpenClaw?
 
-### New Skills Added (2026-04-19)
+OpenClaw is a flexible AI agent framework that supports:
+- Multi-channel access (Feishu, Telegram, WhatsApp, etc.)
+- Extensible skill system
+- Autonomous sub-agents via `sessions_spawn`
 
-- [atp-hysteresis-tripartite-synapse](atp-hysteresis-tripartite-synapse/SKILL.md)
-- [adaptive-control-neuroscience-snn](adaptive-control-neuroscience-snn/SKILL.md)
-- [brain-criticality-griffiths-phase](brain-criticality-griffiths-phase/SKILL.md)
-- [spiking-neural-networks-hodgkin-huxley](spiking-neural-networks-hodgkin-huxley/SKILL.md)
-- [snn-working-memory-heterogeneous-delays-v2](snn-working-memory-heterogeneous-delays-v2/SKILL.md)
+### What are Agents?
 
-#
+**Agents** are autonomous AI assistants that execute specific tasks in isolated sessions, using different models and tools.
 
-## Latest Additions (2026-04-20)
+### What are Skills?
 
-- **brain-dit-universal-multi-state**: Brain-DiT universal multi-state fMRI foundation model methodology. Processes fMRI, EEG, MEG, ECoG with unified architect...
-- **yana-neuromorphic-simulation**: GPU-accelerated neuromorphic simulation methodology with thousands of neurons on a single GPU. Enables large-scale spiki...
-- **beyond-llms-sparser-brain-models**: Brain-inspired models that are sparser and more efficient than large language models. Draws from neuroscience to build c...
-- **okannet-brain-tumor-segmentation**: OKANNet: Optimized KAN-based architecture for brain tumor segmentation from MRI. Uses Kolmogorov-Arnold Networks for imp...
+**Skills** are reusable capability packages that define specialized behaviors and tools, automatically activated by keywords.
 
-## Updated Skills (2026-04-20)
+## Features
 
-- **dream-simulation**: Updated with latest paper references
-- **meta-learning-in-context-brain-decoding-v3**: Updated with latest paper references
+- 🚀 **Plug and Play**: Agents and skills work out of the box
+- 📚 **Well Documented**: Every component has detailed documentation
+- 🔄 **Regular Updates**: New agents and skills added regularly
+- 🤝 **Community Driven**: Community contributions welcome
+- 🧪 **Tested**: Automated validation ensures quality
 
-### Latest Additions (2026-04-20)
+## Agents
 
-| Skill | Source Paper | Date | Category |
-|-------|-------------|------|----------|
-| dual-timescale-neuron-astrocyte-memory | Dual-Timescale Memory in Spiking Neuron-Astrocyte Network | 2026-04-20 | Neuromorphic / SNN / Neuroscience |
-| convolution-delay-recurrent-snn | Convolution and Delay Learning in Recurrent Spiking Neural Networks | 2026-04-20 | Neuromorphic / SNN / Neuroscience |
-| neuromorphic-parameter-estimation-power-converter | Neuromorphic Parameter Estimation for Power Converter Health Monitoring | 2026-04-20 | Neuromorphic / SNN / Neuroscience |
-| ml-neural-mechanisms-motivated-behavior | Machine Learning Approaches to Uncover Neural Mechanisms of Motivated Behavior | 2026-04-20 | Neuromorphic / SNN / Neuroscience |
+| Agent | Function | Model | Status |
+|-------|----------|-------|--------|
+| [Fullstack Engineer](collection/agents/fullstack-engineer/) | Full-stack engineer for modern web development | Opus 4.5 / Sonnet 4.6 | ✅ |
+| [Stock Analyst](collection/agents/stock-analyst/) | Stock analyst for financial data analysis | Sonnet 4.5 | ✅ |
+| [Tech Co-Founder](collection/agents/tech-cofounder/) | Technical co-founder for product building | Sonnet 4.5 | ✅ |
+| [Research Agent](collection/agents/research-agent/) | Research specialist for deep investigation | Opus 4.5 | ✅ |
+| [Algorithm Engineer](collection/agents/algorithm-engineer/) | Algorithm engineer for design and optimization | Opus 4.5 | ✅ |
+| [Applied Scientist](collection/agents/applied-scientist/) | Applied scientist for scientific principles | Opus 4.5 | ✅ |
+| [Biologist](collection/agents/biologist/) | Biologist for biological systems and experiments | Opus 4.5 | ✅ |
+| [Computational Scientist](collection/agents/computational-scientist/) | Computational scientist for numerical modeling | Opus 4.5 | ✅ |
+| [Mathematician](collection/agents/mathematician/) | Mathematician for formal reasoning and proofs | Opus 4.5 | ✅ |
+| [Neuroscientist](collection/agents/neuroscientist/) | Neuroscientist for neural mechanisms | Opus 4.5 | ✅ |
+| [Philosopher](collection/agents/philosopher/) | Philosopher for conceptual analysis | Opus 4.5 | ✅ |
+| [Psychologist](collection/agents/psychologist/) | Psychologist for cognitive behavior analysis | Opus 4.5 | ✅ |
+| [Statistician](collection/agents/statistician/) | Statistician for statistical inference | Opus 4.5 | ✅ |
+
+[View all 27 agents →](./collection/agents/)
+
+## Skills
+
+| Skill | Version | Function | Triggers | Status |
+|-------|---------|----------|----------|--------|
+| [Claude Code](collection/skills/claude-code/) | v2.1.71 | Anthropic's official coding companion with /loop, cron scheduling | claude-code | ✅ |
+| [OpenCode](collection/skills/opencode/) | v1.2.21 | Open source AI coding agent with ultrawork mode | opencode, ultrawork | ✅ |
+| [Copilot CLI](collection/skills/copilot-cli/) | v1.0.2 🎉 | GitHub Copilot CLI terminal agent, GA release! | copilot cli, github copilot | ✅ |
+| [OpenSpec](collection/skills/openspec/) | - | Specification-driven development with Gherkin syntax | openspec, gherkin | ✅ |
+| [AkShare](collection/skills/akshare/) | - | Chinese financial data interface | stock data, akshare | ✅ |
+| [Stock Analysis](collection/skills/stock-analysis/) | - | Stock technical analysis with indicators | stock analysis, technical indicators | ✅ |
+| [Consulting Report Search](collection/skills/consulting-report-search/) | - | Consulting and market research report search with iResearch-first ranking and QuestMobile secondary coverage | consulting report search, iresearch report, market research report | ✅ |
+| [Skill Extractor](collection/skills/skill-extractor/) | - | Extract reusable skills from conversations | skill extractor | ✅ |
+| [Security Guardrails](collection/skills/security-guardrails/) | - | Security protection against sensitive data leakage | Default for all agents | ✅ |
+| [ICE Review](collection/skills/ice-review/) | - | Cross-task knowledge extraction with ICE strategy | ICE review, task review | ✅ |
+| [Memory Retrieval](collection/skills/memory-retrieval/) | - | Two-stage memory retrieval with utility filtering | memory retrieval | ✅ |
+| [Self-Challenge](collection/skills/self-challenge/) | - | Dual-agent self-challenge for capability expansion | self challenge | ✅ |
+| [Cursor Rules Importer](collection/skills/cursor-rules-importer/) | - | Import cursor.directory rules into AgentSkills | cursor rules import, .cursorrules | ✅ |
+| [React Components](collection/skills/react-components/) | - | React component architecture and best practices | react component, react hooks | ✅ |
+| [Accessibility WCAG](collection/skills/accessibility-wcag/) | - | WCAG 2.2 accessibility compliance and patterns | accessibility, wcag, a11y, aria | ✅ |
+| [Chrome Extension](collection/skills/chrome-extension/) | - | Chrome extension development with Manifest V3 | chrome extension, manifest v3 | ✅ |
+| [Electron TypeScript](collection/skills/electron-typescript/) | - | Electron desktop app development with TypeScript | electron, desktop app, ipc | ✅ |
+| [Frontend Best Practices](collection/skills/frontend-best-practices/) | - | Senior front-end developer guidance for React/Next.js | frontend, react, nextjs, tailwindcss | ✅ |
+| [Neural Connectivity Matrix Viewer](collection/skills/neural-connectivity-matrix-viewer/) | - | Interactive 3D brain connectivity matrix visualization for EEG/MEG/fMRI | brain connectivity, matrix visualization, neural connectivity | ✅ |
+| [Potassium Current Gain Control](collection/skills/potassium-current-gain-control/) | - | A-type potassium current mediated neuron gain control mechanism | IA current, gain control, divisive inhibition, subtractive inhibition | ✅ |
+| [RNN Task Degradation Analysis](collection/skills/rnn-task-degradation-analysis/) | - | RNN weight initialization, solution diversity and degradation analysis | RNN initialization, degradation analysis, graceful degradation | ✅ |
+| [Stochastic Synaptic Plasticity](collection/skills/stochastic-synaptic-plasticity/) | - | Stochastic models of neural synaptic plasticity with STDP rules | synaptic plasticity, STDP, plasticity kernel, Hebbian learning | ✅ |
+| [Generative Brain Dynamics Models](collection/skills/generative-brain-dynamics-models/) | - | Generative models of brain dynamics review framework | brain dynamics, generative model, neural dynamics, computational neuroscience | ✅ |
+| [Delay-Adaptive SNN Classifier](collection/skills/delay-adaptive-snn-classifier/) | - | Delay-adaptive spiking neural network classifier with conformal prediction reliability guarantees | SNN early stopping, delay-adaptive, conformal prediction | ✅ |
+| [Noisy SNN Learning](collection/skills/noisy-snn-learning/) | - | Noise-driven spiking neural network learning framework exploiting noise as computational resource | noisy SNN, noise-driven learning, NSNN, NDL | ✅ |
+| [Spiking Mode Neural Networks](collection/skills/spiking-mode-neural-networks/) | - | Spiking mode-based neural networks with Hopfield decomposition for reduced training cost | spiking mode, Hopfield decomposition, neural manifold | ✅ |
+| [Neural Code Dynamics Analysis](collection/skills/neural-code-dynamics-analysis/) | - | Neural code dynamics analysis framework combining computational neuroscience, machine learning and critical brain theory | neural code, critical brain, representation manifold, representational drift | ✅ |
+| [Linear Structure-Function Coupling](collection/skills/linear-structure-function-coupling/) | - | Linear generative framework for brain structure-function coupling predicting FC from SC | structure-function coupling, structural connectivity, functional connectivity, integrator hub | ✅ |
+| [STDP Bernoulli Message Passing](collection/skills/stdp-bernoulli-message-passing/) | - | STDP-driven Bernoulli message passing spiking neural networks for Bayesian inference | STDP message passing, Bayesian inference, Bernoulli message, factor graph | ✅ |
+| [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
+| [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
+
+[View all 966 skills →](./collection/skills/)
+
+### Version Check Feature
+
+Each coding skill now includes **automatic version detection**. When your installed version differs from the documented version, you'll receive update suggestions with new feature highlights.
+
+```
+⚠️ Version Mismatch Detected
+
+Your version: v2.0.50
+Skill version: v2.1.71
+
+Suggested action: npm update -g @anthropic-ai/claude-code
+
+New features in v2.1.71:
+  • /loop command - recurring prompts
+  • Cron scheduling tools
+  • Voice push-to-talk keybinding
+```
+
+## Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/hiyenwong/ai_collection.git
+cd ai_collection
+
+# View available content
+ls collection/agents/    # Available agents
+ls collection/skills/    # Available skills
+```
+
+### Using Agents
+
+```python
+# Start an agent via sessions_spawn
+sessions_spawn(
+    task="Analyze stock data and generate a report",
+    agentId="stock-analyst",
+    model="claude-sonnet-4.5"
+)
+```
+
+### Using Skills
+
+Skills are automatically activated by keywords:
+
+```
+User: "Help me with stock analysis"
+AI: [Detects "stock analysis" keyword, activates stock-analysis skill]
+
+User: "Help me search consulting reports about AI marketing, prioritize iResearch"
+AI: [Detects consulting report search intent, activates consulting-report-search skill]
+```
+
+### Adding a New Agent
+
+1. Create directory at `collection/agents/your-agent-name/`
+2. Copy `templates/agent-template.md`
+3. Fill in agent details and capabilities
+4. Add examples and usage instructions
+5. Update [AGENTS.md](./AGENTS.md)
+
+### Adding a New Skill
+
+1. Create directory at `collection/skills/your-skill-name/`
+2. Copy `templates/skill-template.md`
+3. Define skill description, triggers, and behavior
+4. Add references, examples, and scripts
+5. Update [SKILLS.md](./SKILLS.md)
+
+## Project Structure
+
+```
+ai_collection/
+├── README.md              # This file (English)
+├── README_CN.md           # Chinese documentation
+├── AGENTS.md              # Agent documentation index
+├── SKILLS.md              # Skill documentation index
+├── INDEX.md               # Category index
+├── CONTRIBUTING.md        # Contribution guide
+│
+├── docs/                  # General documentation
+│   ├── agents/            # Agent guides and best practices
+│   ├── skills/            # Skill guides and best practices
+│   └── integration/       # Integration documentation
+│
+├── collection/            # Collected agents and skills
+│   ├── agents/            # Agent packages
+│   └── skills/            # Skill packages
+│
+├── knowledge/             # AI learning knowledge base
+│   ├── arxiv/             # arXiv paper learning notes (38 papers)
+│   └── skills/            # Learned skills documentation
+│
+├── templates/             # Templates for new items
+│   ├── agent-template.md
+│   └── skill-template.md
+│
+└── scripts/               # Utility scripts
+    └── validate_skill.py
+```
+
+## Knowledge Base
+
+The `knowledge/` directory contains AI self-evolution learning materials:
+
+### arXiv Papers (38 papers)
+
+Topics covered:
+- **Self-evolving agents** - Darwin Gödel Machine, Agent0, NNGPT
+- **Memory systems** - MemRL, Memex(RL), Live-Evo
+- **Meta-cognition** - Learn Like Humans, ICE Strategy
+- **Multi-agent systems** - CASTER, Agentic Hives, ST-EVO
+- **Skill architecture** - Agent Skills for LLMs, Audited Skill-Graph
+
+### Skills Converted (29 skills)
+
+Papers converted to practical OpenClaw skills:
+- `meta-cognitive-reflection` - Pre/during/post task reflection
+- `memory-retrieval` - Two-stage memory with utility filtering
+- `self-challenge` - Dual-agent capability expansion
+- `ice-review` - Cross-task knowledge extraction
+- `indexed-memory` - Long-horizon task memory
+- And more...
+
+See [knowledge/arxiv/index.json](./knowledge/arxiv/index.json) for the full paper index.
+
+## Documentation
+
+- [Agents Overview](./AGENTS.md) - Learn about OpenClaw agents
+- [Skills Overview](./SKILLS.md) - Learn about OpenClaw skills
+- [Category Index](./INDEX.md) - Browse by category
+- [Agent Creation Guide](./docs/agents/creation-guide.md) - How to create agents
+- [Skill Creation Guide](./docs/skills/creation-guide.md) - How to create skills
+
+## Tech Stack
+
+- **AI Models**: Claude (Opus, Sonnet, Haiku)
+- **Framework**: OpenClaw
+- **Languages**: Python, JavaScript/TypeScript
+- **Tools**: Git, npm, uv, ruff, pytest
+
+## Contributing
+
+Contributions are welcome! Please see the [Contributing Guide](./CONTRIBUTING.md) for details.
+
+### Quick Contribution
+
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feat/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feat/AmazingFeature`)
+5. Create a Pull Request
+
+## Roadmap
+
+### V1 (Completed) ✅
+- Basic agent and skill collection
+- Documentation and templates
+- Validation scripts
+
+### V2 (In Progress) 🚧
+- More domain agents
+- Skill marketplace
+- Performance optimization
+
+### V3 (Planned) 📋
+- Web UI
+- CLI tools
+- Package manager
+
+## About OpenClaw
+
+OpenClaw is a flexible AI agent framework supporting multi-channel access, extensible skills, and autonomous sub-agents.
+
+- **Documentation**: https://docs.openclaw.ai
+- **GitHub**: https://github.com/openclaw/openclaw
+- **Community**: https://discord.com/invite/clawd
+
+## License
+
+This repository is licensed under MIT License. Individual agents and skills may have their own licenses.
+
+## Acknowledgments
+
+Thanks to all developers who have contributed to this project!
+
+## Contact
+
+- GitHub Issues: [Submit an issue](https://github.com/hiyenwong/ai_collection/issues)
+- Email: hiyenwong@gmail.com
+- Discord: [OpenClaw Community](https://discord.gg/clawd)
+
+---
+
+Maintained by the OpenClaw Community 🤖
+
+<a href="https://www.star-history.com/?repos=hiyenwong%2Fai_collection&type=date&legend=top-left">
+ <picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&theme=dark&legend=top-left" />
+ <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&legend=top-left" />
+ <img alt="Star History Chart" src="https://api.star-history.com/image?repos=hiyenwong/ai_collection&type=date&legend=top-left" />
+ </picture>
+</a>
