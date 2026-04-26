@@ -83,3 +83,38 @@ Files not intended to be loaded into context, but rather used within the output 
 ---
 
 **Any unneeded directories can be deleted.** Not every skill requires all three types of resources.
+
+## Activation Keywords
+
+- "brain-inspired-cellular-automata"
+- "brain inspired cellular automata"
+- "use brain inspired cellular automata"
+- "brain inspired cellular automata help"
+- "brain inspired cellular automata analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Brain Inspired Cellular Automata
+2. Gather relevant context from files or user input
+3. Apply Brain Inspired Cellular Automata methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with brain inspired cellular automata"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Brain Inspired Cellular Automata assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

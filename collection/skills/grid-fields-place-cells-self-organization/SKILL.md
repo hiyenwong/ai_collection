@@ -1,8 +1,10 @@
 ---
+name: grid-fields-place-cells-self-organization
 arxiv_id: 1503.07707v2
 utility: 0.88
 tags: '[grid cells, place cells, hippocampus, entorhinal cortex, synaptic plasticity, BCM rule, self-organization]'
 created: 2026-03-31
+description: "Grid Fields Place Cells Self-Organization"
 ---
 
 # Grid Fields Place Cells Self-Organization

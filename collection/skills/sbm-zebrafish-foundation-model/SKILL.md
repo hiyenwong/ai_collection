@@ -1,8 +1,10 @@
 ---
+name: sbm-zebrafish-foundation-model
 arxiv_id: 2510.27366v1
 utility: 0.88
 tags: '[zebrafish, foundation model, whole-brain, neural dynamics, behavior, sparse attention, SBM]'
 created: 2026-03-31
+description: "Zebrafish Whole-Brain Foundation Model (SBM)"
 ---
 
 # Zebrafish Whole-Brain Foundation Model (SBM)

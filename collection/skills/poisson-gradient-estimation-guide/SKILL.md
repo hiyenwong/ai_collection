@@ -6,6 +6,7 @@ tags: [poisson, gradient-estimation, latent-variable, computational-neuroscience
 activation_keywords: [Poisson, gradient estimation, latent variable, firing rate, spike train, Gumbel-SoftMax, EAT]
 created: 2026-04-24
 source: arXiv:2602.03896
+description: "Hitchhiker's Guide to Poisson Gradient Estimation"
 ---
 
 # Hitchhiker's Guide to Poisson Gradient Estimation

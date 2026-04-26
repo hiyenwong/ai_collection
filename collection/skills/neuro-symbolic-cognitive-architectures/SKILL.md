@@ -110,3 +110,30 @@ class NeuroSymbolicLayer:
 - Global Workspace Theory (Baars, 1988)
 - Neural Symbolic AI survey (Garcez et al.)
 - arXiv April 2026 papers on neuro-symbolic cognition
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Neuro Symbolic Cognitive Architectures
+2. Gather relevant context from files or user input
+3. Apply Neuro Symbolic Cognitive Architectures methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with neuro symbolic cognitive architectures"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Neuro Symbolic Cognitive Architectures assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

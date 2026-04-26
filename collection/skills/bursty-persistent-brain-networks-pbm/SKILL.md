@@ -1,8 +1,10 @@
 ---
+name: bursty-persistent-brain-networks-pbm
 arxiv_id: 1601.03236v1
 utility: 0.88
 tags: '[dynamic functional connectivity, fMRI, point-based method, brain networks, resting-state, temporal dynamics]'
 created: 2026-03-31
+description: "Bursty Persistent Brain Networks (PBM)"
 ---
 
 # Bursty Persistent Brain Networks (PBM)

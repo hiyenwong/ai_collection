@@ -152,3 +152,38 @@ Use the separation principle for stable equilibrium-based neural networks (Deep 
 This skill was created from automated neuroscience research workflow on 2026-04-19.
 Paper provides rigorous theoretical framework for nonlinear control of neural networks
 with guaranteed stability through contraction theory and separation principles.
+
+## Activation Keywords
+
+- "nonlinear-separation-principle"
+- "nonlinear separation principle"
+- "use nonlinear separation principle"
+- "nonlinear separation principle help"
+- "nonlinear separation principle analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Nonlinear Separation Principle
+2. Gather relevant context from files or user input
+3. Apply Nonlinear Separation Principle methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with nonlinear separation principle"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Nonlinear Separation Principle assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

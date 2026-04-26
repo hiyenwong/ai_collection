@@ -48,3 +48,38 @@ First EEG foundation model specifically designed for the motor imagery (MI) BCI 
 
 ## Activation Triggers
 motor imagery, EEG, foundation model, BCI, MI classification, channel template, pretraining, self-supervised
+
+## Activation Keywords
+
+- "mirepnet-eeg-motor-imagery-foundation"
+- "mirepnet eeg motor imagery foundation"
+- "use mirepnet eeg motor imagery foundation"
+- "mirepnet eeg motor imagery foundation help"
+- "mirepnet eeg motor imagery foundation analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Mirepnet Eeg Motor Imagery Foundation
+2. Gather relevant context from files or user input
+3. Apply Mirepnet Eeg Motor Imagery Foundation methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with mirepnet eeg motor imagery foundation"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Mirepnet Eeg Motor Imagery Foundation assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

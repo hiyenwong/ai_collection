@@ -67,3 +67,38 @@ class AstrocyteWorkingMemory:
 - atp-hysteresis-tripartite-synapse
 - astrocyte-resource-diffusion-neural-fields
 - dual-timescale-memory-spiking-neuron-astrocyte-network-efficient
+
+## Activation Keywords
+
+- "astrocyte-mediated-working-memory"
+- "astrocyte mediated working memory"
+- "use astrocyte mediated working memory"
+- "astrocyte mediated working memory help"
+- "astrocyte mediated working memory analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Astrocyte Mediated Working Memory
+2. Gather relevant context from files or user input
+3. Apply Astrocyte Mediated Working Memory methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with astrocyte mediated working memory"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Astrocyte Mediated Working Memory assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

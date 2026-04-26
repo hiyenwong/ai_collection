@@ -6,6 +6,7 @@ source: arXiv:2603.16885v1
 categories: [eess.SP, cs.CL, cs.HC, cs.LG]
 status: active
 trigger: eeg, diffusion, forecasting, language model, BCI, semantic conditioning, Langevin dynamics, zero-shot, neural dynamics
+description: "DECODE: Dual-Enhanced Conditioned Diffusion for EEG Forecasting"
 ---
 
 # DECODE: Dual-Enhanced Conditioned Diffusion for EEG Forecasting

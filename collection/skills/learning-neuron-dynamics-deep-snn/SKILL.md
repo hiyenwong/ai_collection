@@ -134,3 +134,30 @@ def train_dynamics_model(model, data, optimizer, epochs=1000):
 - Neural ODEs (Chen et al., 2018)
 - System identification for neuroscience
 - Deep learning for dynamical systems surveys
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Learning Neuron Dynamics Deep Snn
+2. Gather relevant context from files or user input
+3. Apply Learning Neuron Dynamics Deep Snn methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with learning neuron dynamics deep snn"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Learning Neuron Dynamics Deep Snn assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

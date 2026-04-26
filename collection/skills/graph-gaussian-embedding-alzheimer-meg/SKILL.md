@@ -1,8 +1,10 @@
 ---
+name: graph-gaussian-embedding-alzheimer-meg
 arxiv_id: 2005.05784v2
 utility: 0.88
 tags: '[Alzheimer, MEG, graph embedding, disease progression, brain networks, GNN, MCI prediction]'
 created: 2026-03-31
+description: "Graph Gaussian Embedding Alzheimer Prediction"
 ---
 
 # Graph Gaussian Embedding Alzheimer Prediction

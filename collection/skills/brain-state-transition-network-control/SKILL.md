@@ -103,3 +103,38 @@ def _matrix_exp(M):
 - [[brain-network-topology]]
 - [[neural-dynamics-criticality]]
 - [[brain-stimulation-dynamics-state]]
+
+## Activation Keywords
+
+- "brain-state-transition-network-control"
+- "brain state transition network control"
+- "use brain state transition network control"
+- "brain state transition network control help"
+- "brain state transition network control analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Brain State Transition Network Control
+2. Gather relevant context from files or user input
+3. Apply Brain State Transition Network Control methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with brain state transition network control"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Brain State Transition Network Control assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

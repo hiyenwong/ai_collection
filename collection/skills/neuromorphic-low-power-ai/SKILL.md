@@ -196,3 +196,30 @@ def analog_aware_training(model):
 - **arXiv**: 2604.04727v1
 - **Categories**: cs.AR, cs.AI
 - **Date**: 2026-04-06
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Neuromorphic Low Power Ai
+2. Gather relevant context from files or user input
+3. Apply Neuromorphic Low Power Ai methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with neuromorphic low power ai"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Neuromorphic Low Power Ai assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

@@ -6,6 +6,7 @@ source: arXiv:2603.10489v1
 categories: [q-bio.NC, cs.AI, cs.LG]
 status: active
 trigger: neural dynamics, RNN, embedding, motor cortex, multi-task, fixed points, eigenspectrum, monkey reaching, hierarchical model
+description: "JEDI: Jointly Embedded Inference of Neural Dynamics"
 ---
 
 # JEDI: Jointly Embedded Inference of Neural Dynamics

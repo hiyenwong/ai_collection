@@ -1,8 +1,10 @@
 ---
+name: cbtr-causality-topological-ranking
 arxiv_id: 2407.13514v1
 utility: 0.88
 tags: '[topological data analysis, seizure, effective connectivity, Hodge decomposition, causal inference, EEG, brain hierarchy]'
 created: 2026-03-31
+description: "Causality-Based Topological Ranking (CBTR)"
 ---
 
 # Causality-Based Topological Ranking (CBTR)

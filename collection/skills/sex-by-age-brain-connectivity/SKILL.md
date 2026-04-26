@@ -1,8 +1,10 @@
 ---
+name: sex-by-age-brain-connectivity
 arxiv_id: 1801.01577v1
 utility: 0.88
 tags: '[sex differences, brain connectivity, resting-state, age effects, PACE, hierarchical modularity, fMRI]'
 created: 2026-03-31
+description: "Sex-by-Age Brain Connectivity Analysis"
 ---
 
 # Sex-by-Age Brain Connectivity Analysis

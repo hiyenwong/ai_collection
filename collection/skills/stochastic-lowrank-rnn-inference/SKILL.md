@@ -1,8 +1,10 @@
 ---
+name: stochastic-lowrank-rnn-inference
 arxiv_id: 2406.16749v5
 utility: 0.88
 tags: '[low-rank RNN, variational SMC, neural dynamics inference, fixed points, latent dynamics, computational neuroscience]'
 created: 2026-03-31
+description: "Stochastic Low-Rank RNN Inference"
 ---
 
 # Stochastic Low-Rank RNN Inference

@@ -1,8 +1,10 @@
 ---
+name: neural-simulator-openai-gym-bridge
 arxiv_id: 1709.05650v1
 utility: 0.88
 tags: '[NEST, OpenAI Gym, reinforcement learning, actor-critic, SNN, simulator, RL benchmark]'
 created: 2026-03-31
+description: "Neural Simulator OpenAI Gym Bridge"
 ---
 
 # Neural Simulator OpenAI Gym Bridge

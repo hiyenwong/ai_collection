@@ -426,3 +426,38 @@ diminishing accuracy returns after ~4–6 steps.  The paper recommends:
   deep learning with spiking neural networks." *GitHub*, 2021.
 
 - **TensorRT**: NVIDIA TensorRT Documentation, Developer Zone, 2024.
+
+## Activation Keywords
+
+- "vs-wno-variable-spiking-wavelet"
+- "vs wno variable spiking wavelet"
+- "use vs wno variable spiking wavelet"
+- "vs wno variable spiking wavelet help"
+- "vs wno variable spiking wavelet analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Vs Wno Variable Spiking Wavelet
+2. Gather relevant context from files or user input
+3. Apply Vs Wno Variable Spiking Wavelet methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with vs wno variable spiking wavelet"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Vs Wno Variable Spiking Wavelet assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

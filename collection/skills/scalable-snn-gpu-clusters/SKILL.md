@@ -79,3 +79,38 @@ class ScalableSNNSimulator:
 - **Title**: Scalable SNN Simulation Framework for GPU Clusters
 - **arXiv**: Latest findings 2026
 - **Categories**: cs.NE, cs.DC
+
+## Activation Keywords
+
+- "scalable-snn-gpu-clusters"
+- "scalable snn gpu clusters"
+- "use scalable snn gpu clusters"
+- "scalable snn gpu clusters help"
+- "scalable snn gpu clusters analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Scalable Snn Gpu Clusters
+2. Gather relevant context from files or user input
+3. Apply Scalable Snn Gpu Clusters methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with scalable snn gpu clusters"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Scalable Snn Gpu Clusters assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

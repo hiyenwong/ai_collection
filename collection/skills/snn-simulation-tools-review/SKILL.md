@@ -1,8 +1,10 @@
 ---
+name: snn-simulation-tools-review
 arxiv_id: q-bio/0611089
 utility: 0.88
 tags: '[SNN, simulation, review, Hodgkin-Huxley, integrate-and-fire, NEURON, NEST, Brian]'
 created: 2026-03-31
+description: "SNN Simulation Tools Review"
 ---
 
 # SNN Simulation Tools Review

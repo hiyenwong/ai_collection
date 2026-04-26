@@ -1,4 +1,5 @@
 ---
+name: spiking-transformer-gemst
 title: Ge²mS-T Spiking Vision Transformer
 category: neuroscience
 tags:
@@ -14,6 +15,7 @@ authors:
   - Shenghao Xie
   - Kang Chen
 date: "2026-04-10"
+description: "Ge²mS-T: Multi-Dimensional Grouping for Ultra-High Energy Efficiency in Spiking Transformer"
 ---
 
 ## Description

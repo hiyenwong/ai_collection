@@ -1,8 +1,10 @@
 ---
+name: brain-network-lesions-robustness
 arxiv_id: 0704.0392v1
 utility: 0.88
 tags: '[brain network, robustness, lesions, scale-free, hub nodes, cortical connectivity, network analysis]'
 created: 2026-03-31
+description: "Brain Network Lesions Robustness"
 ---
 
 # Brain Network Lesions Robustness

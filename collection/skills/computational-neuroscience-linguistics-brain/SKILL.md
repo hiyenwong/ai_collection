@@ -6,6 +6,7 @@ tags: [linguistics, computational-neuroscience, brain-language, LLM, neural-mode
 activation_keywords: [linguistics, brain language, computational neuroscience language, LLM brain, neural linguistic, Chomsky]
 created: 2026-04-24
 source: arXiv:2602.08275
+description: "Linguistics and Human Brain: Computational Neuroscience Perspective"
 ---
 
 # Linguistics and Human Brain: Computational Neuroscience Perspective

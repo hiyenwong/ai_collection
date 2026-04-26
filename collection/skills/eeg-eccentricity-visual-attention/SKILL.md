@@ -63,3 +63,30 @@ Previous free-viewing studies couldn't distinguish whether neural tracking refle
 - match-mismatch decoding
 - temporal response function
 - attention decoding
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Eeg Eccentricity Visual Attention
+2. Gather relevant context from files or user input
+3. Apply Eeg Eccentricity Visual Attention methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with eeg eccentricity visual attention"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Eeg Eccentricity Visual Attention assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

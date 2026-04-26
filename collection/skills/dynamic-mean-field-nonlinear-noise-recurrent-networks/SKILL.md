@@ -6,6 +6,7 @@ tags: [mean-field-theory, recurrent-networks, nonlinear-noise, Ornstein-Uhlenbec
 activation_keywords: [mean field, dynamic mean field, recurrent network, nonlinear noise, OU process, lognormal closure, bifurcation]
 created: 2026-04-24
 source: arXiv:2601.15462
+description: "Dynamic Mean Field Theories for Nonlinear Noise in Recurrent Neuronal Networks"
 ---
 
 # Dynamic Mean Field Theories for Nonlinear Noise in Recurrent Neuronal Networks

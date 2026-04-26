@@ -1,4 +1,5 @@
 ---
+name: ven-speed-accuracy-tradeoff
 title: Von Economo Neurons Speed-Accuracy Tradeoff
 category: neuroscience
 tags:
@@ -13,6 +14,7 @@ arxiv: "2604.09229"
 authors:
   - Esila Keskin
 date: "2026-04-10"
+description: "The Fast Lane Hypothesis: Von Economo Neurons Implement a Biological Speed-Accuracy Tradeoff"
 ---
 
 ## Description

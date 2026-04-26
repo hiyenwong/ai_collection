@@ -348,3 +348,38 @@ V_Opt = 200×N(0.587) - 70×e^(-0.075)×N(-0.452) ≈ 142.8亿
 - HRI 框架原始方法论（AI领域版本）
 - GE 2017 年 10-K 年报
 - Schneider / Honeywell / Siemens 公开财报与分析师估算
+
+## Activation Keywords
+
+- "hri-hedged-revenue-index"
+- "hri hedged revenue index"
+- "use hri hedged revenue index"
+- "hri hedged revenue index help"
+- "hri hedged revenue index analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Hri Hedged Revenue Index
+2. Gather relevant context from files or user input
+3. Apply Hri Hedged Revenue Index methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with hri hedged revenue index"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Hri Hedged Revenue Index assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

@@ -61,3 +61,30 @@ Brain foundation models exhibit significant batch effects in their embeddings ac
 - multi-site deployment
 - neuroimaging harmonization
 - clinical brain AI
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Brain Foundation Batch Effects
+2. Gather relevant context from files or user input
+3. Apply Brain Foundation Batch Effects methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with brain foundation batch effects"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Brain Foundation Batch Effects assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

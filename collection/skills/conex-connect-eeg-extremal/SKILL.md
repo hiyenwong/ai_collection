@@ -1,8 +1,10 @@
 ---
+name: conex-connect-eeg-extremal
 arxiv_id: 2101.09352v1
 utility: 0.88
 tags: '[EEG, epilepsy, extremal dependence, brain connectivity, seizure detection, Gamma-band]'
 created: 2026-03-31
+description: "Conex-Connect EEG Extremal Connectivity"
 ---
 
 # Conex-Connect EEG Extremal Connectivity

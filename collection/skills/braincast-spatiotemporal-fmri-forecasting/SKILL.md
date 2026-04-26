@@ -6,6 +6,7 @@ source: arXiv:2603.13361v1
 categories: [cs.CV, cs.AI, stat.ML]
 status: active
 trigger: fmri, forecasting, brain network, time series, spatio-temporal, HCP, functional connectivity, ROI, whole-brain
+description: "BrainCast: Spatio-Temporal Forecasting Model for Whole-Brain fMRI Time Series Prediction"
 ---
 
 # BrainCast: Spatio-Temporal Forecasting Model for Whole-Brain fMRI Time Series Prediction

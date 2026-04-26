@@ -48,3 +48,38 @@ Applies topological data analysis (TDA) to study neural population activity in t
 
 ## Activation Triggers
 zigzag persistence, topological data analysis, TDA, neural coding, cubical complex, persistence landscape, visual cortex, time-varying stimuli, Sensorium
+
+## Activation Keywords
+
+- "zigzag-persistence-neural-time-varying"
+- "zigzag persistence neural time varying"
+- "use zigzag persistence neural time varying"
+- "zigzag persistence neural time varying help"
+- "zigzag persistence neural time varying analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Zigzag Persistence Neural Time Varying
+2. Gather relevant context from files or user input
+3. Apply Zigzag Persistence Neural Time Varying methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with zigzag persistence neural time varying"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Zigzag Persistence Neural Time Varying assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

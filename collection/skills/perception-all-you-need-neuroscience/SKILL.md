@@ -136,3 +136,30 @@ def educational_gaze_sequence(topic):
 ## Activation Keywords
 
 - sensorless gaze, gaze following, human robot interaction, low cost hri, neuroscience framework, joint attention, child robot interaction
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Perception All You Need Neuroscience
+2. Gather relevant context from files or user input
+3. Apply Perception All You Need Neuroscience methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with perception all you need neuroscience"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Perception All You Need Neuroscience assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

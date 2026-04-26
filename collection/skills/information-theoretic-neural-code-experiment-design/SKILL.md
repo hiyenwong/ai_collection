@@ -48,3 +48,38 @@ Framework for optimizing experimental task design to distinguish between two com
 
 ## Activation Triggers
 neural coding, probabilistic population code, neural sampling, Bayesian brain, information theory, KL divergence, experimental design, likelihood vs posterior, uncertainty coding
+
+## Activation Keywords
+
+- "information-theoretic-neural-code-experiment-design"
+- "information theoretic neural code experiment design"
+- "use information theoretic neural code experiment design"
+- "information theoretic neural code experiment design help"
+- "information theoretic neural code experiment design analysis"
+
+## Tools Used
+
+- `Read` - Read existing files and documentation
+- `Write` - Create new files and documentation
+- `Bash` - Execute commands when needed
+
+## Instructions for Agents
+
+1. Identify the user's specific question or task related to Information Theoretic Neural Code Experiment Design
+2. Gather relevant context from files or user input
+3. Apply Information Theoretic Neural Code Experiment Design methodology to address the request
+4. Provide clear results with actionable insights
+
+## Examples
+
+### Basic usage
+```
+User: "Help me with information theoretic neural code experiment design"
+→ Understand requirements → Apply methodology → Provide results
+```
+
+### Advanced usage
+```
+User: "I need detailed Information Theoretic Neural Code Experiment Design assistance"
+→ Clarify scope → Execute analysis → Present findings
+```

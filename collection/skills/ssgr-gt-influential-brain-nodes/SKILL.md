@@ -1,8 +1,10 @@
 ---
+name: ssgr-gt-influential-brain-nodes
 arxiv_id: 2409.11174v1
 utility: 0.88
 tags: '[influential nodes, brain networks, self-supervised, graph transformer, multimodal fusion, rich-club]'
 created: 2026-03-31
+description: "Self-Supervised Graph Transformer Brain Networks"
 ---
 
 # Self-Supervised Graph Transformer Brain Networks

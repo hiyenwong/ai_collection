@@ -1,8 +1,10 @@
 ---
+name: evolving-plasticity-rules-cgp
 arxiv_id: 2102.04312v1
 utility: 0.88
 tags: '[Cartesian Genetic Programming, synaptic plasticity, evolutionary learning, PCA, plasticity rules, neuromodulation]'
 created: 2026-03-31
+description: "Evolving Plasticity Rules CGP"
 ---
 
 # Evolving Plasticity Rules CGP

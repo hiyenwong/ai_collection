@@ -1,8 +1,10 @@
 ---
+name: brain-spatiotemporal-patterns-blueprint
 arxiv_id: 2106.00637v1
 utility: 0.88
 tags: '[spatiotemporal patterns, coordination dynamics, EEG, brain connectivity, metastability, brain dynamics]'
 created: 2026-03-31
+description: "Brain Spatiotemporal Patterns Blueprint"
 ---
 
 # Brain Spatiotemporal Patterns Blueprint

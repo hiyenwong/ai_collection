@@ -1,8 +1,10 @@
 ---
+name: naplib-neural-acoustic-processing
 arxiv_id: 2304.01799v1
 utility: 0.88
 tags: '[neural acoustic, Python, data processing, auditory neuroscience, preprocessing, feature extraction]'
 created: 2026-03-31
+description: "naplib-python Neural Acoustic Processing"
 ---
 
 # naplib-python Neural Acoustic Processing
