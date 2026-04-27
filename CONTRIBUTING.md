@@ -29,6 +29,14 @@ We welcome contributions in the following areas:
 - Add real-world usage examples
 - Create new templates for common use cases
 
+### 6. Plugin Marketplace Improvements
+- Improve plugin discovery and documentation
+- Suggest new plugin domains
+- Enhance marketplace metadata in `_INDEX.json`
+- Submit feedback on the marketplace experience
+
+**Note:** New agents and skills are automatically included in the plugin marketplace after merging to main. See [Marketplace Documentation](./docs/marketplace/) for details.
+
 ## Getting Started
 
 ### 1. Fork and Clone

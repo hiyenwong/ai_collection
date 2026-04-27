@@ -29,6 +29,14 @@
 - 添加真实使用场景的示例
 - 为常见用例创建新模板
 
+### 6. 插件 Marketplace 改进
+- 改进插件发现和文档
+- 建议新的插件领域
+- 增强 `_INDEX.json` 中的 marketplace 元数据
+- 提交关于 marketplace 使用体验的反馈
+
+**注意：** 新代理和新技能在合并到 main 后会自动包含在插件 Marketplace 中。更多详情请参见 [Marketplace 文档](./docs/marketplace/)。
+
 ## 快速开始
 
 ### 1. Fork 并克隆

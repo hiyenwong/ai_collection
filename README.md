@@ -15,6 +15,7 @@ A curated collection of **OpenClaw** agents and skills that provide powerful ext
 
 - [Overview](#overview)
 - [Features](#features)
+- [Plugin Marketplace](#plugin-marketplace)
 - [Agents](#agents)
 - [Skills](#skills)
 - [Quick Start](#quick-start)
@@ -47,6 +48,27 @@ OpenClaw is a flexible AI agent framework that supports:
 - 🔄 **Regular Updates**: New agents and skills added regularly
 - 🤝 **Community Driven**: Community contributions welcome
 - 🧪 **Tested**: Automated validation ensures quality
+
+## Plugin Marketplace
+
+Install agents and skills directly from Claude Code using the **Plugin Marketplace**:
+
+```bash
+# Add the marketplace
+/plugin marketplace add hiyenwong/ai_collection
+
+# Install specific plugins (choose by domain)
+/plugin install openclaw-core@openclaw-ai-collection              # Core agents & meta-skills
+/plugin install openclaw-neuroscience@openclaw-ai-collection      # Brain science & SNNs
+/plugin install openclaw-coding@openclaw-ai-collection            # Development tools
+/plugin install openclaw-data@openclaw-ai-collection              # Data science & ML
+/plugin install openclaw-research@openclaw-ai-collection          # Applied science
+```
+
+**New to the marketplace?** See the complete implementation guide:
+- 📖 [Marketplace Overview](docs/marketplace/README.md)
+- 🎯 [Quick Start](docs/marketplace/QUICKSTART.md)
+- 🔧 [Troubleshooting](docs/marketplace/TROUBLESHOOTING.md)
 
 ## Agents
 
@@ -126,7 +148,17 @@ New features in v2.1.71:
 
 ## Quick Start
 
-### Installation
+### Installation via Plugin Marketplace (Recommended)
+
+```bash
+# Add the marketplace
+/plugin marketplace add hiyenwong/ai_collection
+
+# Install the plugin you need
+/plugin install openclaw-core@openclaw-ai-collection
+```
+
+### Manual Installation
 
 ```bash
 # Clone the repository
