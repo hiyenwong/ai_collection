@@ -23,7 +23,8 @@
       "WebFetch(domain:github.com)",
       "Bash(awk '{print $NF}')",
       "Bash(echo \"Exit code: $?\")",
-      "Bash(gh pr *)"
+      "Bash(gh pr *)",
+      "Bash(xargs ls *)"
     ]
   }
 }
