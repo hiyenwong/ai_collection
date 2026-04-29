@@ -1,275 +1,372 @@
 ---
 name: density-driven-optimal-control
-description: "Density-Driven Optimal Control (D²OC) for multi-agent systems - optimal transport-based coverage control with Wasserstein distance minimization. Use when: (1) multi-agent coverage problems, (2) optimal transport in control systems, (3) Wasserstein distance applications, (4) stochastic MPC for swarms, (5) decentralized area coverage, (6) density matching problems."
+description: "Density-Driven Optimal Control (D²OC) for multi-agent systems. Analytical framework for decentralized non-uniform area coverage with convergence guarantees for stochastic LTI systems. Use when: (1) Designing density-based multi-agent control systems, (2) Solving optimal coverage problems with formal guarantees, (3) Implementing decentralized control for robotic swarms, (4) Developing resource-constrained area coverage missions, (5) Analyzing convergence of stochastic multi-agent dynamics. Activation: density-driven control, D2OC, multi-agent coverage, optimal control, density tracking, LTI systems."
 ---
 
 # Density-Driven Optimal Control (D²OC)
 
-A rigorous Lagrangian framework for non-uniform area coverage in stochastic multi-agent systems using optimal transport theory.
+## Overview
 
-## Core Concept
+This skill provides methodology for **Density-Driven Optimal Control** - a framework that synthesizes density-based control with optimal control theory for multi-agent systems. The approach enables decentralized non-uniform area coverage with formal convergence guarantees, avoiding expensive spatial discretization while scaling linearly with the number of agents.
 
-D²OC reformulates multi-agent coverage as an optimal transport problem, minimizing Wasserstein distance between agent distribution and target density in a stochastic MPC-like formulation.
+**Key Innovation**: Instead of computationally heavy Eulerian PDE solvers or heuristic planning, this framework derives closed-form analytical solutions for the optimal control problem with provable convergence properties.
 
-**Key Innovation**: Bridges individual agent dynamics with collective distribution matching via optimal transport, with formal convergence guarantees under noise.
+## When to Use This Skill
 
-## Problem Setup
+### Primary Use Cases
 
-### Stochastic LTI Dynamics
+1. **Decentralized Area Coverage**: Designing multi-agent systems for non-uniform coverage missions with spatial priority maps
+2. **Resource-Constrained Missions**: When computational resources are limited and real-time control synthesis is required
+3. **Formal Guarantee Requirements**: When convergence guarantees and error bounds are critical (e.g., safety-critical applications)
+4. **Scalable Swarm Control**: Systems where the number of agents varies or grows
+5. **Stochastic Environment Control**: Operating under uncertainty with known statistical properties
 
-Each agent follows:
+### Domain Applications
+
+| Domain | Application |
+|--------|-------------|
+| **Robotics** | Search and rescue, environmental monitoring, precision agriculture |
+| **Autonomous Systems** | Drone swarms, underwater vehicles, ground robot teams |
+| **Cyber-Physical Systems** | Sensor networks, distributed actuation, surveillance |
+| **Logistics** | Warehouse automation, delivery coordination |
+
+## Theoretical Foundation
+
+### Problem Formulation
+
+Given:
+- **N** agents with LTI dynamics: `ẋᵢ(t) = Axᵢ(t) + Buᵢ(t) + wᵢ(t)`
+- **Target density** ρ*(x): desired spatial distribution
+- **Current density** ρ(x,t): agent distribution
+
+Objective:
+Minimize density mismatch: `J = ∫∫ (ρ(x,t) - ρ*(x))² dx dt`
+
+### Key Components
+
+#### 1. Density Mismatch Metric
 ```
-x_{k+1}^i = A_i x_k^i + B_i u_k^i + w_k^i, w_k^i ~ N(0, Σ_i,w)
-y_k^i = C_i x_k^i + v_k^i, v_k^i ~ N(0, Σ_i,v)
+D(t) = ∫ (ρ(x,t) - ρ*(x))² dx
 ```
+Measures the difference between current agent distribution and target distribution.
 
+#### 2. Optimal Control Law
+For LTI systems, the analytical solution yields:
+```
+uᵢ*(t) = -R⁻¹BᵀP(xᵢ(t) - x̄ᵢ(t))
+```
 where:
-- `x_k^i ∈ R^n`: state
-- `u_k^i ∈ R^m`: control input  
-- `y_k^i ∈ R^d`: output
-- Process & measurement noise: Gaussian
+- `P` solves the algebraic Riccati equation
+- `x̄ᵢ(t)` is the target position derived from density gradient
 
-### Wasserstein Distance
+#### 3. Convergence Guarantees
+Under stochastic LTI dynamics with bounded noise, the framework provides:
+- **Mean-square convergence**: E[‖ρ(t) - ρ*‖²] → 0 as t → ∞
+- **Exponential rate**: Convergence with known decay rate λ
+- **Robustness bounds**: Maximum steady-state error under disturbances
 
-**2-Wasserstein distance** (Kantorovich problem):
-```
-W_2(ρ, ν) = min_π ∑_{i,j} π_ij ||y_i - q_j||²
-```
-subject to mass conservation constraints.
+## Workflow
 
-### Distributions
+### Step 1: Define the Coverage Problem
 
-- **Empirical distribution**: `ρ_k = 1/(k+1)na ∑_{t=0}^k ∑_{i=1}^{na} δ_{y_t^i}`
-- **Reference distribution**: `ν = 1/N ∑_{j=1}^N δ_{q_j}`
+**Input Requirements**:
+- Target spatial density ρ*(x) (continuous or discrete representation)
+- Agent dynamics model (LTI parameters A, B)
+- Environment boundaries and constraints
+- Agent count N and initial positions
 
-**Objective**: Minimize `W_2(ρ_k, ν)` over finite time.
+**Key Questions**:
+- What spatial distribution needs to be achieved?
+- What are the agent movement constraints?
+- Is the environment static or dynamic?
 
-## Three-Stage Framework
+### Step 2: Formulate the Optimal Control Problem
 
-### Stage 1: Local Target Selection & Optimal Control
-
-At each time step:
-1. Select local targets `{q_j}` based on proximity & remaining weight
-2. Compute control minimizing local Wasserstein distance
-3. Subject to dynamic & input constraints
-
-**Control Objective**:
-```
-min_{U_k|H^i} J(U_k|H^i) = E[∑_{h=r}^{H+r-1} (W_{k+h}^i)²] + ||U_k|H^i||_R²
-```
-
-### Stage 2: Weight Update
-
-After movement:
-- Solve local Wasserstein distance
-- Update sample weights (reduce recently covered)
-- Encourage under-explored areas
-
-### Stage 3: Weight Sharing
-
-- Exchange weights within communication range
-- Min-weight consensus: select smallest weight per sample
-- Enhance coordination, reduce redundancy
-
-## Optimal Control Law
-
-### Quadratic Reformulation
-
-**Proposition 1**: Expected squared Wasserstein cost reformulates as quadratic form:
-```
-E[∑_h (W_{k+h}^i)²] = E[||Ω_{k|r:H}^i (Y_{k|r:H}^i - Q̄_{k|r:H}^i)||²] + const
-```
-
-where `Q̄` is weighted barycenter of local targets.
-
-### Matrix Definitions
-
+**Mathematical Setup**:
 ```python
-# Control influence matrix (relative degree r)
-Θ_i = [
-    [C_i A^{r-1}_i B_i,  0,          ..., 0         ],
-    [C_i A^r_i B_i,      C_i A^{r-1}_i B_i, ..., 0 ],
+# Define system matrices
+A = ...  # State transition matrix
+B = ...  # Control input matrix
+Q = ...  # State cost (density mismatch weight)
+R = ...  # Control effort weight
+
+# Solve Riccati equation for optimal gain
+P = solve_algebraic_riccati(A, B, Q, R)
+K = np.linalg.inv(R) @ B.T @ P
+```
+
+**Parameter Selection Guidelines**:
+- **Q matrix**: Larger values prioritize density tracking accuracy
+- **R matrix**: Larger values penalize aggressive control inputs
+- Trade-off between coverage quality and energy efficiency
+
+### Step 3: Derive Target Positions from Density
+
+**Density-to-Position Mapping**:
+```python
+def density_to_target_positions(rho_star, N):
+    """
+    Convert target density to agent target positions.
+    
+    Args:
+        rho_star: Target density function or grid
+        N: Number of agents
+    
+    Returns:
+        target_positions: Array of shape (N, dim)
+    """
+    # Method 1: Lloyd's algorithm (centroidal Voronoi tessellation)
+    # Method 2: Gradient descent on density potential
+    # Method 3: Sampling from probability distribution
     ...
-]
-
-# Free response matrix  
-Φ_i = [(C_i A^r_i)^T, ..., (C_i A^{r+H-1}_i)^T]^T
-
-# Output prediction
-Y_{k|H}^i = Φ_i x_k^i + Θ_i U_{k|H}^i
 ```
 
-### Optimal Control (Theorem 1)
+**Implementation Options**:
+1. **Lloyd's Algorithm**: Iterative centroid computation
+2. **Gradient Flow**: Follow density gradient ascent
+3. **Importance Sampling**: Sample proportional to density
 
+### Step 4: Implement Decentralized Control
+
+**Control Synthesis**:
+```python
+def compute_optimal_control(x_i, x_target_i, K):
+    """
+    Compute optimal control input for agent i.
+    
+    Args:
+        x_i: Current position
+        x_target_i: Target position from density
+        K: Optimal gain matrix
+    
+    Returns:
+        u_i: Control input
+    """
+    error = x_i - x_target_i
+    u_i = -K @ error
+    return u_i
 ```
-U_k|H^i* = -(Θ_i^T Ω Θ_i + R)^{-1} Θ_i^T Ω (Φ_i x_k^i - Q̄_{k|r:H}^i)
+
+**Decentralization Strategy**:
+- Each agent computes its own target based on local density information
+- No global coordination required after initialization
+- Communication only needed for density map updates (if dynamic)
+
+### Step 5: Verify Convergence Properties
+
+**Theoretical Verification**:
+1. Check LTI dynamics assumption holds
+2. Verify noise bounds match stochastic analysis assumptions
+3. Validate density representation accuracy
+
+**Empirical Verification**:
+```python
+def verify_convergence(trajectories, rho_star, threshold=0.01):
+    """
+    Verify empirical convergence of the system.
+    
+    Args:
+        trajectories: Agent position history
+        rho_star: Target density
+        threshold: Convergence threshold
+    
+    Returns:
+        converged: Boolean
+        final_error: Steady-state density mismatch
+    """
+    final_positions = trajectories[-1]
+    rho_final = estimate_density(final_positions)
+    error = np.mean((rho_final - rho_star)**2)
+    return error < threshold, error
 ```
 
-**Properties**:
-- Strictly convex (unique solution)
-- Closed-form (efficient computation)
-- Accounts for noise via expectation
+## Advanced Topics
 
-## Convergence Guarantee
+### Non-Uniform Density Tracking
 
-### Reachability Analysis
+For time-varying target densities:
+```python
+def time_varying_target(t):
+    """Define time-varying density target."""
+    # Example: Moving coverage window
+    center = initial_center + velocity * t
+    return gaussian_density(center, sigma)
 
-**Key Result**: Empirical distribution converges to bounded neighborhood of target:
+# Update control law with time derivative
+u_i = -K @ (x_i - x_target_i(t)) + feedforward_term
 ```
-lim_{k→∞} W_2(ρ_k, ν) ≤ ε + δ_noise
+
+### Handling Obstacles and Constraints
+
+**Barrier Function Approach**:
+```python
+def obstacle_barrier(x, obstacle_center, radius):
+    """Compute barrier function for obstacle avoidance."""
+    distance = np.linalg.norm(x - obstacle_center)
+    if distance < radius:
+        return float('inf')
+    return -np.log(distance - radius)
+
+# Modified control with barrier constraints
+u_safe = project_to_safe_set(u_optimal, barriers)
 ```
 
-where:
-- `ε`: Control performance bound
-- `δ_noise`: Noise-induced deviation
+### Multi-Scale Coverage
 
-### Requirements
+For hierarchical coverage (macro + micro):
+```python
+# Macro-level: Cluster assignment
+cluster_assignments = cluster_agents_by_density(N_clusters)
 
-**Assumptions**:
-1. `(A_i, B_i)` completely controllable
-2. `A_i` marginally stable (eigenvalues ≤ 1)
-3. Bounded noise covariance
+# Micro-level: Intra-cluster density control
+for cluster in clusters:
+    u_cluster = density_driven_control(cluster.agents, cluster.local_density)
+```
 
-### Proof Structure
+## Implementation Examples
 
-1. **Reachable set characterization**: Define feasible agent positions
-2. **Transport plan existence**: Show optimal matching exists
-3. **Bounded tracking error**: Wasserstein distance remains bounded
-4. **Time-averaged convergence**: Empirical distribution approaches target
-
-## Implementation
-
-### Algorithm
+### Example 1: 2D Area Coverage with Drone Swarm
 
 ```python
-# D2OC Algorithm
-for each agent i:
-    # Stage 1: Local control
-    S_k^i = select_local_targets(y_k^i, weights, reachable_set)
-    Q̄_k^i = compute_barycenter(S_k^i, π)
-    U_k^i* = compute_optimal_control(A_i, B_i, C_i, x_k^i, Q̄_k^i)
+import numpy as np
+from scipy.linalg import solve_continuous_are
+
+# System parameters
+n_agents = 20
+A = np.zeros((2, 2))  # Double integrator
+B = np.eye(2)
+Q = np.eye(2) * 10    # High priority on position accuracy
+R = np.eye(2) * 0.1   # Moderate control cost
+
+# Solve Riccati equation
+P = solve_continuous_are(A, B, Q, R)
+K = np.linalg.inv(R) @ B.T @ P
+
+# Define target density (e.g., Gaussian centered at origin)
+def target_density(x):
+    return np.exp(-np.sum(x**2) / (2 * 5**2))
+
+# Initialize agents
+agent_positions = np.random.uniform(-10, 10, (n_agents, 2))
+
+# Simulation loop
+dt = 0.01
+for t in range(1000):
+    # Compute target positions from density
+    target_positions = sample_from_density(target_density, n_agents)
     
-    # Apply control
-    x_{k+1}^i = A_i x_k^i + B_i U_k^i* + w_k^i
-    
-    # Stage 2: Weight update
-    weights = update_weights(y_{k+1}^i, targets)
-    
-    # Stage 3: Share weights
-    weights = consensus_with_neighbors(weights)
+    # Compute control for each agent
+    for i in range(n_agents):
+        error = agent_positions[i] - target_positions[i]
+        control = -K @ error
+        agent_positions[i] += control * dt
 ```
 
-### Local Target Selection
+### Example 2: Environmental Monitoring with Sensor Network
 
 ```python
-def select_targets(agent_pos, targets, weights, reachable_set):
-    """Select targets within reachable set, prioritizing high weights"""
-    candidates = []
-    for j, q_j in enumerate(targets):
-        if is_reachable(agent_pos, q_j, reachable_set):
-            candidates.append((j, weights[j], distance(agent_pos, q_j)))
+# Time-varying target density based on pollution measurements
+def pollution_density(x, t, sensor_readings):
+    """Dynamic density based on real-time sensor data."""
+    base_density = uniform_density(x)
+    for reading in sensor_readings:
+        if reading.timestamp > t - dt:
+            # Increase density near high pollution areas
+            distance = np.linalg.norm(x - reading.location)
+            base_density += gaussian(distance, reading.value)
+    return base_density
+
+# Adaptive control loop
+while monitoring:
+    current_readings = get_sensor_data()
+    rho_star = lambda x: pollution_density(x, current_time, current_readings)
     
-    # Sort by weight (descending) and distance (ascending)
-    candidates.sort(key=lambda x: (-x[1], x[2]))
-    return candidates[:M_i]  # Select M_i targets
+    # Recompute targets and controls
+    targets = density_to_positions(rho_star, n_agents)
+    controls = [compute_optimal_control(pos, tgt, K) 
+                for pos, tgt in zip(agent_positions, targets)]
 ```
 
-### Optimal Control Computation
+## Comparison with Alternative Approaches
 
-```python
-def compute_control(A, B, C, x, Q_bar, R, H, r):
-    """Compute optimal control minimizing Wasserstein cost"""
-    # Build matrices
-    Theta = build_theta_matrix(A, B, C, H, r)
-    Phi = build_phi_matrix(A, C, H, r)
-    Omega = build_omega_matrix(transport_weights)
-    
-    # Predicted output
-    Y_pred = Phi @ x + Theta @ U
-    
-    # Optimal control
-    U_star = -inv(Theta.T @ Omega @ Theta + R) @ Theta.T @ Omega @ (Phi @ x - Q_bar)
-    
-    return U_star[:m]  # First time step control
-```
-
-## Applications
-
-### Coverage Tasks
-
-1. **Search & rescue**: Prioritized area coverage
-2. **Environmental monitoring**: Sensor deployment
-3. **Infrastructure inspection**: Targeted inspection paths
-4. **Smart farming**: Precision agriculture
-5. **Planetary exploration**: Resource-constrained missions
-
-### Key Advantages
-
-- **Decentralized**: No global coordinator needed
-- **Robust**: Handles noise & uncertainty
-- **Optimal**: Wasserstein minimization (not heuristic)
-- **Scalable**: Lagrangian approach avoids curse of dimensionality
-- **Guaranteed**: Formal convergence analysis
-
-## Comparison to Alternatives
-
-| Method | Approach | Guarantees | Computational Cost |
-|--------|----------|------------|-------------------|
-| **D²OC** | Lagrangian + MPC | Convergence + bounded error | Medium (per-agent) |
-| SMC [1,2] | Ergodic control | Ergodicity as t→∞ | Low |
-| Eulerian OT [3,4] | PDE-based | Convergence | High (curse of dim) |
-| Mean-field SB [5] | Gaussian mixtures | Limited (parametric) | Very high |
-| Heuristic D²C [6,7] | Lagrangian | None | Low |
+| Approach | Computation | Scalability | Guarantees | Flexibility |
+|----------|-------------|-------------|------------|-------------|
+| **D²OC (This Skill)** | Closed-form | O(N) linear | ✓ Formal | High |
+| Eulerian PDE Solvers | Heavy grid-based | O(M²) grid | ✓ Formal | Medium |
+| Voronoi-based | Lloyd iteration | O(N log N) | ~ Empirical | Medium |
+| Potential Fields | Gradient descent | O(N) | ✗ None | Low |
+| Heuristic Planning | Sampling-based | O(N²) | ✗ None | High |
 
 ## References
 
-1. **Paper**: Kooktae Lee, "Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems" (arXiv:2604.08495v1, April 2026)
-2. **Code**: See `references/implementation_details.md` for detailed algorithms
-3. **Examples**: See `references/applications.md` for use cases
+### Core Paper
+- **Lee, K. (2026)**. "Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems." arXiv:2604.08495v1.
 
-## Related Concepts
+### Related Work
+- Cortés, J., et al. (2004). Coverage control for mobile sensing networks.
+- Schwager, M., et al. (2009). Decentralized, adaptive coverage control.
+- Liu, Y., et al. (2018). Density-aware robotic systems.
 
-- **Optimal Transport**: Wasserstein distance, Kantorovich problem
-- **Stochastic MPC**: Model predictive control under uncertainty
-- **Multi-Agent Systems**: Decentralized control, consensus
-- **Reachability Analysis**: Reachable sets, bounded control
-- **Density Control**: Distribution matching, coverage optimization
+### Mathematical Background
+- Linear Quadratic Regulator (LQR) theory
+- Voronoi tessellations and coverage
+- Stochastic stability analysis
+- Optimal transport theory
 
-## Tools Used
+## Tools and Resources
 
-- `exec`: Run Python implementations
-- `read`: Load reference files
-- `write`: Save control results
+### Required Libraries
+```python
+# Core numerical computing
+numpy >= 1.20.0
+scipy >= 1.7.0
 
-## Notes
+# Optional for visualization
+matplotlib >= 3.4.0
+plotly >= 5.0.0
 
-- Relative degree `r` determines control delay
-- Horizon `H` balances performance vs computation
-- Weight matrix `R` controls input penalty
-- Noise covariance affects convergence bound
-- Communication range determines coordination level
-
-## Description
-
-This skill provides specialized capabilities for its domain.
-
-## Activation Keywords
-
-- keyword1
-- keyword2
-- keyword3
-
-## Instructions for Agents
-
-When this skill is activated:
-
-1. Identify the user's specific need
-2. Apply the specialized knowledge
-3. Provide clear guidance
-
-## Examples
-
+# Optional for ROS integration
+rospy >= 1.15.0
 ```
-User: How do I use this skill?
-Agent: I'll help you with this skill...
-```
+
+### Visualization Tools
+See `references/visualization_examples.md` for plotting density evolution, agent trajectories, and convergence metrics.
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue**: Slow convergence
+- **Check**: Are Q and R matrices appropriately tuned?
+- **Solution**: Increase Q for faster response, decrease R to allow larger controls
+
+**Issue**: Oscillations around target
+- **Check**: Is the system properly damped?
+- **Solution**: Add velocity feedback or reduce proportional gain
+
+**Issue**: Density estimation errors
+- **Check**: Is the kernel density estimator bandwidth appropriate?
+- **Solution**: Use adaptive bandwidth or increase agent count
+
+**Issue**: Agents cluster in local optima
+- **Check**: Is the density landscape multi-modal?
+- **Solution**: Use simulated annealing or multi-start initialization
+
+## Extensions and Future Work
+
+### Potential Enhancements
+- Nonlinear system extensions via feedback linearization
+- Learning-based density estimation from data
+- Game-theoretic formulations for competitive scenarios
+- Hybrid discrete-continuous coverage problems
+
+### Research Opportunities
+- Tightening convergence rate bounds
+- Asynchronous and event-triggered control
+- Communication-constrained implementations
+- Real-world deployment case studies
+
+---
+
+_Last updated: 2026-04-14_
+_Source: arXiv:2604.08495v1 (April 2026)_

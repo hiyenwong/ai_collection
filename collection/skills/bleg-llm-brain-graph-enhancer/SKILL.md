@@ -1,125 +1,115 @@
 ---
 name: bleg-llm-brain-graph-enhancer
-description: "Graph Neural Networks (GNNs) have been widely used in diverse brain network analysis tasks based on preprocessed functional magnetic resonance imaging (fMRI) data. However, their performances are cons... Activation: LLM, fMRI, graph neural network, brain network, neuroimaging"
+description: "BLEG: LLM-Enhanced Brain Graph Analysis methodology. Integrates GNN-based fMRI analysis with LLM-generated knowledge graphs as priors for enhanced brain connectivity modeling. Updated with v2 paper details (arXiv:2604.07361v2)."
+activation_keywords: ["brain graph", "llm enhanced", "fMRI", "knowledge graph", "functional connectivity", "BLEG", "brain network", "GNN", "LLM prior", "graph neural network", "brain LLM-enhanced graph"]
 ---
 
-# BLEG: LLM Functions as Powerful fMRI Graph-Enhancer for Brain Network Analysis
+# BLEG: LLM-Enhanced Brain Graph Analysis
 
 ## Overview
 
-Graph Neural Networks (GNNs) have been widely used in diverse brain network analysis tasks based on preprocessed functional magnetic resonance imaging (fMRI) data. However, their performances are constrained due to high feature sparsity and inherent limitations of domain knowledge. We propose BLEG (Brain LLM-Enhanced Graph), a novel framework that leverages LLMs to enhance fMRI-based brain network analysis by encoding anatomical and functional region descriptions.
+**Paper**: "BLEG: LLM Functions as Powerful fMRI Graph-Enhancer for Brain Network Analysis" (arXiv:2604.07361v2, Apr 2026)
+**Authors**: Rui Dong, Zitong Wang, Jiaxing Li
 
-## Source Paper
+**Core Idea**: Bridge GNN-based fMRI analysis with LLM-generated knowledge. Traditional fMRI GNNs use only numerical FC matrices as priors, missing semantic neuroscience knowledge. BLEG uses LLMs to extract brain region descriptions from literature, encode them as structured knowledge graphs, and integrate with numerical FC data for enhanced classification.
 
-- **Title**: BLEG: LLM Functions as Powerful fMRI Graph-Enhancer for Brain Network Analysis
-- **Authors**: Rui Dong, Zitong Wang, Jiaxing Li
-- **arXiv**: 2604.07361v1
-- **Published**: 2026-04-01
-- **Category**: cs.LG
-- **PDF**: https://arxiv.org/pdf/2604.07361v1
+## Key Technical Contributions
 
-## Key Innovation
+### 1. Knowledge Graph Construction via LLM
 
-LLM-enhanced features for brain network graph analysis
+- **Step 1**: LLM extracts brain region descriptions from neuroscience literature for each ROI (e.g., AAL-116 atlas)
+- **Step 2**: LLM extracts triplets (head, relation, tail) from descriptions
+- **Step 3**: Filter to retain only triplets containing two brain regions (intra-brain connections)
+- **Step 4**: Encode triplets using BGE-M3 embeddings (1024-dim)
 
-## Core Concepts
+### 2. LLM-Enhanced Graph Construction
 
-### Problem Addressed
-The paper tackles fundamental challenges in brain signal analysis and network dynamics, proposing novel solutions that advance the state-of-the-art in computational neuroscience.
+- Build two adjacency matrices:
+  - **KG-based (AG)**: `A^G_{i,j} = cosine(E_i, E_j)` where E_i, E_j are BGE-M3 embeddings of brain regions
+  - **Functional (AF)**: FC matrix from fMRI time-series correlations (Pearson correlation)
+- Fuse into multi-relational graph: nodes = brain regions, edges = {KG semantic similarity, FC functional connectivity}
 
-### Methodology
-- **Approach**: LLM-enhanced features for brain network graph analysis
-- **Key Techniques**: Deep learning, neural signal processing, network analysis
-- **Validation**: Experimental evaluation on real-world neuroimaging datasets
+### 3. Multi-Relational Graph Attention Network (MR-GAT)
 
-### Contributions
-1. Novel framework for brain data analysis
-2. Improved accuracy and generalization
-3. Practical applicability for neuroimaging research
+- Processes multi-relational brain graphs (KG + FC edge types)
+- Relation-specific attention weights for different edge types
+- Hierarchical feature aggregation across relations
+- Outperforms standard GNNs by leveraging complementary information from both semantic (KG) and numerical (FC) sources
 
-## Practical Applications
+### 4. Results
 
-### Primary Application
-LLM-enhanced features for brain network graph analysis
+| Dataset | Task | BLEG Accuracy | Best Baseline |
+|---------|------|---------------|---------------|
+| ABIDE | ASD classification | **74.17%** | BrainGNN 66.82% |
+| ADHD-200 | ADHD classification | **77.54%** | DiffPool 72.63% |
+| SWU4 | Dyslexia classification | **77.61%** | GAT 70.25% |
 
-### Use Cases
-1. **Neuroscience Research**: Understanding brain structure and function
-2. **Clinical Applications**: Medical diagnosis and monitoring
-3. **Brain-Computer Interfaces**: Neural signal decoding and control
+Outperforms all baselines (BrainGNN, GCN, GAT, DiffPool, TopKPool) across all three benchmarks.
 
-### Implementation Considerations
-- Requires domain expertise in neuroscience and machine learning
-- May need specialized neuroimaging equipment
-- Computational resources for training models
-- Careful validation across diverse datasets
+## Implementation Guidelines
 
-## Technical Details
+### Prerequisites
+- fMRI time-series data preprocessed to FC matrices
+- Brain atlas definitions (AAL-116 or similar ROI parcellation)
+- Access to LLM API (GPT-4o or equivalent for triplet extraction)
+- BGE-M3 embedding model for encoding brain region descriptions
 
-### Input/Output
-- **Input**: Brain signals (fMRI, EEG, structural MRI, connectomes)
-- **Output**: Decoded representations, network analyses, connectivity patterns
+### Pipeline Steps
+1. **Literature Mining**: For each ROI, prompt LLM to generate neuroscience descriptions
+2. **Triplet Extraction**: Use LLM to extract (region_A, relation, region_B) triplets
+3. **Embedding**: Encode region descriptions with BGE-M3 → 1024-dim vectors
+4. **KG Adjacency**: Compute cosine similarity matrix A^G
+5. **FC Adjacency**: Compute Pearson correlation matrix A^F from fMRI data
+6. **MR-GAT Training**: Train multi-relational GAT with {A^G, A^F} as edge types
+7. **Classification**: Node/graph-level classification for disease diagnosis
 
-### Key Advantages
-- State-of-the-art performance
-- Physically grounded interpretation
-- Cross-subject/dataset generalization
-- Integration with existing analysis pipelines
+### Code Framework
+```python
+import torch
+from transformers import AutoModel, AutoTokenizer
+import torch_geometric as pyg
 
-## Related Work
+# Step 1: LLM-based knowledge extraction
+# Prompt: "Describe the functional role of brain region {ROI_name} in neuroscience literature"
 
-This work builds upon and extends:
-- Deep learning for neuroimaging
-- Network neuroscience approaches
-- Multimodal data fusion
-- Topological data analysis
+# Step 2: BGE-M3 encoding
+model_name = "BAAI/bge-m3"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+encoder = AutoModel.from_pretrained(model_name)
 
-## Limitations and Future Work
+# Step 3: Multi-relational graph construction
+A_KG = cosine_similarity(region_embeddings)  # Semantic edges
+A_FC = pearson_correlation(fmri_timeseries)   # Functional edges
 
-- Validation on limited datasets
-- Generalization to diverse populations
-- Real-time computational requirements
-- Clinical translation challenges
+# Step 4: MR-GAT architecture
+# - Two edge types: KG_similarity, FC_correlation
+# - Relation-specific attention
+# - Hierarchical aggregation
+```
+
+## Key Insights
+
+1. **Semantic + Numerical Fusion**: KG edges provide neuroscience-grounded priors that complement purely data-driven FC matrices
+2. **LLM as Knowledge Extractor**: LLMs can systematically mine literature for structured brain connectivity knowledge
+3. **Cross-Disease Generalization**: BLEG improves performance across ASD, ADHD, and dyslexia classification
+4. **Interpretability**: KG edges provide human-readable explanations for GNN predictions
+5. **Atlas Agnostic**: Method works with any ROI parcellation (AAL, Harvard-Oxford, etc.)
+
+## Pitfalls
+
+1. **LLM Hallucination**: Triplet extraction may produce spurious connections; validate against known neuroscience literature
+2. **Embedding Dimensionality**: BGE-M3 outputs 1024-dim; ensure compatibility with GNN input dimensions
+3. **KG Sparsity**: Not all ROI pairs have semantic relations; handle missing edges gracefully
+4. **FC Noise**: fMRI FC matrices are noisy; consider regularization or thresholding
+5. **Computational Cost**: LLM-based KG construction is expensive; precompute and cache
+6. **Multi-Relational GNN Complexity**: MR-GAT requires careful hyperparameter tuning for each relation type
+
+## Version History
+
+- **v1** (2026-04-01): Initial paper publication
+- **v2** (2026-04-13): Updated version with additional experimental results and analysis
 
 ## References
 
-- Rui Dong et al. (2026). "BLEG: LLM Functions as Powerful fMRI Graph-Enhancer for Brain Network Analysis." arXiv:2604.07361v1.
-
-## Activation Keywords
-
-- LLM, fMRI, graph neural network, brain network, neuroimaging
-- computational neuroscience
-- neuroimaging
-- brain network analysis
-
----
-*Generated from arXiv paper on 2026-04-13*
-
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...
+- Original Paper: arXiv:2604.07361v2
+- Related: `brain-graph-neural`, `gnn-transformer-fusion`, `explainable-gnn-eeg-neurological`, `magnet-brain-structure-function-gnn`

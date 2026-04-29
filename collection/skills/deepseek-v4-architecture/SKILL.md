@@ -153,38 +153,3 @@ mHC + attention RMSNorm already prevent logit explosion.
 5. **Wave-based EP scheduling** hides all communication under computation when C/B threshold met
 6. **FP4 for inference + FP4→FP8 for training** is a clean mixed-precision strategy
 7. Conservative architecture choices (many validated tricks) may be necessary for stability at scale, even if complex
-
-## Activation Keywords
-
-- "deepseek-v4-architecture"
-- "deepseek v4 architecture"
-- "use deepseek v4 architecture"
-- "deepseek v4 architecture help"
-- "deepseek v4 architecture analysis"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify the user's specific question or task related to Deepseek V4 Architecture
-2. Gather relevant context from files or user input
-3. Apply Deepseek V4 Architecture methodology to address the request
-4. Provide clear results with actionable insights
-
-## Examples
-
-### Basic usage
-```
-User: "Help me with deepseek v4 architecture"
-→ Understand requirements → Apply methodology → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed Deepseek V4 Architecture assistance"
-→ Clarify scope → Execute analysis → Present findings
-```

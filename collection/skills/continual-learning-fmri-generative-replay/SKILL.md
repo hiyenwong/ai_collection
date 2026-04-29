@@ -1,69 +1,74 @@
 ---
 name: continual-learning-fmri-generative-replay
-description: "Functional connectivity-aware generative replay framework for continual learning of brain disorder diagnosis from fMRI data without catastrophic forgetting. Activation: Multi-disorder diagnosis, Adaptive BCI systems."
+description: "Continual learning framework for fMRI-based brain disorder diagnosis using functional connectivity matrices generative replay. Use when building clinical ML systems that need to learn from sequential multi-site fMRI data without catastrophic forgetting. Covers structure-aware VAE for FC matrix synthesis, multi-level knowledge distillation, and hierarchical contextual bandit replay sampling. Trigger keywords: continual learning fMRI, brain disorder diagnosis, functional connectivity, generative replay, catastrophic forgetting, multi-site fMRI, MDD, schizophrenia, autism."
 ---
 
-# Continual Learning for fMRI Brain Disorder Diagnosis via Generative Replay
+# Continual Learning for fMRI-Based Brain Disorder Diagnosis
 
-> Functional connectivity-aware generative replay framework for continual learning of brain disorder diagnosis from fMRI data without catastrophic forgetting.
+## Key Finding (arXiv 2604.14259v1, April 2026)
 
-## Metadata
-- **Source**: arXiv:2604.14259v1
-- **Authors**: Qianyu Chen, Shujian Yu
-- **Published**: 2026-04-15
-- **Categories**: q-bio.TO, cs.LG, eess.IV
+First continual learning framework specifically for fMRI-based brain disorder diagnosis across heterogeneous clinical sites. Uses structure-aware VAE to generate realistic FC matrices for replay, preventing catastrophic forgetting when training on sequential multi-site data.
 
-## Core Methodology
+## Problem
 
-### Key Innovation
-### Core Method
-Generative replay with functional connectivity awareness:
+- Clinical fMRI data arrives sequentially from different institutions
+- Standard models suffer catastrophic forgetting when trained on new sites
+- Privacy regulations prevent full multi-site data pooling
+- Existing methods: single-site training or full access (unrealistic)
 
-1. **FC-Aware Generator**: Generates synthetic fMRI data preserving functional connectivity patterns
-2. **Experience Replay**: Stores and replays representative examples from previous tasks
-3. **Modular Architecture**: Task-specific adapters that don't interfere
-4. **Regularization**: EWC or similar regularization preventing weight drift
+## Framework: FORGE
 
-### Technical Framework
-- **Generator**: VAE or GAN conditioned on functional connectivity matrices
-- **Feature Extractor**: Graph neural network for FC representation
-- **Classifier**: Task-specific classification heads
-- **Memory Buffer**: Experience replay buffer with importance sampling
+### 1. Structure-Aware Variational Autoencoder
+- Generates realistic FC matrices for patient and control groups
+- Preserves brain network topology in synthetic samples
+- Enables replay without storing original data (privacy-preserving)
 
-## Implementation Guide
+### 2. Multi-Level Knowledge Distillation
+- Aligns predictions between new-site model and replayed samples
+- Aligns graph representations across sites
+- Maintains knowledge from previous sites while learning new ones
 
-### Prerequisites
-### Prerequisites
-- PyTorch or TensorFlow
-- Nilearn for fMRI processing
-- PyTorch Geometric for GNNs
-- fMRI datasets for multiple disorders
+### 3. Hierarchical Contextual Bandit
+- Adaptive replay sampling strategy
+- Selects most informative past samples for replay
+- Balances memory efficiency with knowledge retention
 
-### Step-by-Step
-1. **Preprocess fMRI**: Compute FC matrices
-2. **Build Generator**: Train VAE/GAN on FC patterns
-3. **Initialize Model**: Set up modular classification architecture
-4. **Continual Training**: 
-   - Train on Task 1
-   - Generate synthetic data for Task 1 while training Task 2
-   - Combine real and synthetic data
-5. **Evaluate**: Test on all tasks sequentially
+## Datasets & Disorders
 
-### Applications
-- Multi-disorder diagnosis
-- Adaptive BCI systems
-- Longitudinal studies
-- Rare disease learning
+- **MDD** (Major Depressive Disorder)
+- **SZ** (Schizophrenia)
+- **ASD** (Autism Spectrum Disorder)
+- Multi-site heterogeneous data
 
-## Pitfalls
-- Generator quality limits performance
-- Computational cost increases with tasks
-- May suffer from mode collapse
+## Methodology Steps
 
-## Related Skills
-- neuroscience-research-method
-- brain-connectivity-analysis
-- spiking-neural-networks
+1. **Train VAE** on current site's FC matrices
+2. **Generate replay samples** for previous site groups
+3. **Knowledge distillation** from old model to new model
+4. **Adaptive sampling** via contextual bandit for efficient replay
+5. **Joint training** on new data + replayed samples
 
-## References
-- arXiv: https://arxiv.org/abs/2604.14259v1
+## Key Advantages
+
+- Privacy-preserving (no raw data storage)
+- Handles heterogeneous site distributions
+- Substantially outperforms baselines in forgetting mitigation
+- Applicable to any FC-matrix-based disorder diagnosis
+
+## Code
+
+https://github.com/4me808/FORGE
+
+## Activation Keywords
+
+- continual learning fMRI
+- brain disorder diagnosis
+- functional connectivity
+- generative replay
+- catastrophic forgetting
+- multi-site fMRI
+- MDD diagnosis
+- schizophrenia detection
+- autism detection
+- FC matrix synthesis
+- FORGE framework

@@ -1,117 +1,49 @@
 ---
 name: developmental-minimal-neural-circuits
-description: Developmental generation of minimal neural circuits from structure-function relationships. Shows how network structure performs computation through developmental processes. Trigger words: developmental neural circuits, structure computation, minimal circuits, neural wiring, structure-function.
+description: "Cortical neurogenesis simulation from stem cell to 85 neurons/200K synapses. Developmental rules from mouse transcriptomic data create domain-general topology achieving 90%+ MNIST after one epoch. Activation: neurogenesis, developmental circuits, cortical simulation, structural priors."
 ---
 
-# Developmental Minimal Neural Circuits
+# Structure as Computation: Developmental Generation of Minimal Neural Circuits
 
-## Paper Reference
-- **arXiv**: [2604.15143v1](https://arxiv.org/abs/2604.15143)
-- **Authors**: Duan Zhou et al.
-- **Published**: 2026-04-16
-- **Citations**: 0
+> arXiv:2604.15143 — Duan Zhou
 
-## Core Insight
+## Metadata
+- **Source**: arXiv:2604.15143
+- **Authors**: Duan Zhou
+- **Published**: 2025-04
+- **Relevance**: high
+- **URL**: https://arxiv.org/abs/2604.15143
 
-Neural circuit structure itself encodes computation. Through developmental processes that grow and prune connections based on functional demands, minimal circuits emerge performing complex computations with few neurons but highly specific connectivity.
+## Core Methodology
 
-## Key Mechanism
+### Key Innovation
+This work simulates the developmental process of cortical neurogenesis, initiating from a single stem cell and governed by gene regulatory rules derived from mouse single-cell transcriptomic data. The developmental process spontaneously generates a heterogeneous population of 5,000 cells, yet yields only 85 mature neurons - merely 1.7% of the total population. These 85 neurons form a densely interconnected core of 200,400 synapses, corresponding to an average degree of 4,715 per neuron. At itera
 
-1. **Structure IS Computation**: Wiring pattern, not just weights, determines function
-2. **Developmental Growth**: Circuits grow through activity-dependent processes
-3. **Minimal Sufficiency**: Smallest circuit that performs a task is optimal
-4. **Emergent Specialization**: Specific connectivity patterns emerge for specific computations
+### Technical Framework
+tion zero, this minimal circuit performs at chance level on MNIST. However, after a single epoch of standard training, accuracy surges to over 90% - a gain exceeding 80 percentage points - with typical runs falling in the 89-94% range depending on developmental stochasticity. The identical circuit, without any architectural modification or data augmentation, achieves 40.53% on CIFAR-10 after one epoch. These findings demonstrate that developmental rules sculpt a domain-general topological substrate exceptionally amenable to rapid learning, suggesting that biological developmental processes inherently encode powerful structural priors for efficient computation.
 
-## Implementation Pattern
+## Implementation Guide
 
-```python
-import numpy as np
+### Prerequisites
+- Python environment with scientific computing libraries
+- Access to paper's supplementary materials at https://arxiv.org/abs/2604.15143
 
-class DevelopmentalCircuit:
-    def __init__(self, n_max=50):
-        self.n_max = n_max
-        self.active_neurons = 2
-        self.adjacency = np.zeros((n_max, n_max))
-        self.neuron_types = np.zeros(n_max)
-    
-    def developmental_step(self, input_pattern, target_output, lr=0.01):
-        n = self.active_neurons
-        activity = self._run(input_pattern)
-        output = activity[-1]
-        error = target_output - output
-        for i in range(n):
-            for j in range(n):
-                if self.adjacency[i,j] != 0:
-                    self.adjacency[i,j] += lr * activity[i] * activity[j] * np.sign(error)
-        self.adjacency[np.abs(self.adjacency) < 0.001] = 0
-        if np.abs(error) > 0.5 and self.active_neurons < self.n_max:
-            self._add_neuron()
-        return np.abs(error)
-    
-    def _run(self, inp, steps=50):
-        n = self.active_neurons
-        activity = np.zeros(n); activity[:len(inp)] = inp
-        for _ in range(steps):
-            activity = 0.9 * activity + 0.1 * np.tanh(self.adjacency[:n,:n] @ activity)
-        return activity
-    
-    def _add_neuron(self):
-        idx = self.active_neurons
-        self.neuron_types[idx] = np.random.choice([0, 1])
-        for j in range(idx):
-            if np.random.random() < 0.1:
-                s = 1 if self.neuron_types[idx] == 0 else -1
-                self.adjacency[idx, j] = s * np.random.random() * 0.1
-            if np.random.random() < 0.1:
-                s = 1 if self.neuron_types[j] == 0 else -1
-                self.adjacency[j, idx] = s * np.random.random() * 0.1
-        self.active_neurons += 1
-```
+### Step-by-Step
+1. Read the full paper at https://arxiv.org/abs/2604.15143
+2. Identify the core algorithm/framework from the methodology section
+3. Implement the key components as described in the paper
+4. Validate using the paper's reported benchmarks
 
 ## Applications
+- Neuroscience research
+- Computational neuroscience
+- Neural network design and optimization
 
-- Understanding developmental brain wiring
-- Minimal circuit design for specific computations
-- Neural architecture search inspired by development
-- Neurodevelopmental disorder modeling
+## Pitfalls
+- Results may be preliminary (preprint)
+- Reproducibility depends on availability of code/data
 
 ## Related Skills
-
-- [[developmental-minimal-neural-circuits]]
-- [[brain-inspired-neural-cellular-automata]]
-- [[morphsnn-structural-plasticity]]
-
-## Activation Keywords
-
-- "developmental-minimal-neural-circuits"
-- "developmental minimal neural circuits"
-- "use developmental minimal neural circuits"
-- "developmental minimal neural circuits help"
-- "developmental minimal neural circuits tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Developmental Minimal Neural Circuits usage
-```
-User: "Help me with developmental minimal neural circuits"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed developmental minimal neural circuits assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- computational-neuroscience-models
+- neural-population-dynamics
+- spiking-neural-network-training

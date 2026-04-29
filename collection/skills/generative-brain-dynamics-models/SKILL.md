@@ -1,559 +1,628 @@
 ---
 name: generative-brain-dynamics-models
-description: 脑动力学生成模型综述框架。整合计算神经科学、非线性动力学、数据驱动方法的生成模型方法论，涵盖不同组织尺度和抽象层次。适用于脑动力学建模、神经数据分析、科学机器学习。触发词：脑动力学、生成模型、神经动力学、动态系统模型、brain dynamics、generative model、neural dynamics、computational neuroscience、Dynamical systems。
-user-invocable: true
+description: 脑动力学生成模型综述框架。整合计算神经科学、非线性动力学、数据驱动方法的生成模型方法论，涵盖不同组织尺度和抽象层次。适用于脑网络建模、神经动力学模拟、生成式AI脑科学应用。触发词：generative models, brain dynamics, neural mass models, neural field models, DCM, VAE, diffusion models, multi-scale brain modeling
+created: "2026-04-20"
+paper_id: "2604.16290v1"
+source: arxiv
+tags: [generative models, brain dynamics, neural mass models, neural field models, DCM, VAE, diffusion models, normalizing flows, multi-scale modeling, HMM, mechanistic priors]
 ---
 
-# 脑动力学生成模型框架
+# Generative Models for Brain Dynamics
 
-**来源论文：** arXiv:2112.12147 - Generative Models of Brain Dynamics -- A review
+Comprehensive survey framework for generative models that simulate and analyze brain dynamics across multiple spatial and temporal scales. Covers mechanistic, statistical, and deep learning approaches with a unified comparison framework.
 
-## 核心方法论
+**Paper**: arXiv:2604.16290v1 (April 2026)
 
-### 1. 生成模型范式
+## Overview
 
-**优势：**
-- 数据驱动的假设检验
-- 可解释的动力学机制
-- 跨尺度整合能力
-- 因果推断支持
+Brain dynamics span scales from single-neuron spiking (milliseconds, micrometers) to whole-brain fMRI patterns (seconds, centimeters). Generative models provide a principled framework for simulating, analyzing, and understanding these dynamics. This survey organizes models along two axes:
 
-### 2. 多尺度组织
+1. **Mechanistic fidelity**: How closely the model reflects known biology
+2. **Expressive power**: How flexibly the model can fit complex data patterns
 
-| 尺度 | 模型类型 | 示例 |
-|------|----------|------|
-| 微观 | 神经元动力学 | Hodgkin-Huxley, LIF |
-| 中观 | 神经群体 | 神经质量模型, Wilson-Cowan |
-| 宏观 | 脑网络 | DCM, 动态功能连接 |
+The survey identifies a growing trend toward hybrid approaches that combine mechanistic priors with deep generative models for improved biological plausibility and interpretability.
 
-### 3. 方法论分类
+## Model Taxonomy
 
-**假设驱动：**
-- 生物物理机制
-- 动力学理论
-- 可解释性强
+### Level 1: Mechanistic Models
 
-**数据驱动：**
-- 深度学习
-- 变分推断
-- 灵活性高
+#### Neural Mass Models (NMM)
 
-**混合方法：**
-- 科学机器学习
-- 物理信息神经网络
-- 两全其美
-
-## Python 实现
+Population-level models representing mean activity of neuronal populations:
 
 ```python
-import numpy as np
-from typing import Dict, List, Tuple, Optional, Callable
-from dataclasses import dataclass, field
-from abc import ABC, abstractmethod
-import matplotlib.pyplot as plt
-
-
-@dataclass
-class DynamicsConfig:
-    """动力学模型配置"""
-    dt: float = 0.1              # 时间步长 (ms)
-    duration: float = 1000.0     # 模拟时长 (ms)
+class JansenRitNMM:
+    """Jansen-Rit neural mass model for cortical column dynamics."""
     
-    # 神经参数
-    n_neurons: int = 100
-    tau: float = 20.0            # 时间常数 (ms)
+    def __init__(
+        self,
+        n_populations: int = 3,  # Excitatory, inhibitory interneurons, pyramidal
+        connectivity: dict = None,
+        time_step: float = 1e-4,  # seconds
+    ):
+        self.A = 3.25  # Excitatory PSP amplitude
+        self.B = 22.0  # Inhibitory PSP amplitude
+        self.a = 100.0  # Excitatory rate constant
+        self.b = 50.0  # Inhibitory rate constant
+        self.C1 = 135.0  # Connectivity parameters
+        self.C2 = 108.0
+        self.C3 = 33.75
+        self.C4 = 33.75
+        self.dt = time_step
+        self.sigmoid = lambda v: 2 * e0 / (1 + np.exp(r * (v0 - v)))
     
-    # 噪声
-    noise_level: float = 0.1
+    def step(self, state, external_input):
+        """Euler integration of NMM ODEs."""
+        # state = [y0, y1, y2, y3, y4, y5] for 3 populations
+        # Each population has activity and its derivative
+        pass
+```
 
+**Key variants**:
+- **Wilson-Cowan**: Simple excitatory-inhibitory pair
+- **Jansen-Rit**: Cortical column with 3 populations
+- **Neural Field Models**: Spatially continuous extension with kernel-based connectivity
 
-class GenerativeBrainModel(ABC):
-    """生成脑模型基类"""
+#### Neural Field Models (NFM)
+
+Spatiotemporal continuum models using integro-differential equations:
+
+```
+∂u(x,t)/∂t = -u(x,t) + ∫ w(x,x') · S(u(x',t-τ)) dx' + I(x,t)
+```
+
+Where:
+- `u(x,t)`: Membrane potential at position x and time t
+- `w(x,x')`: Connectivity kernel (often Gaussian or Mexican hat)
+- `S(·)`: Firing rate nonlinearity
+- `τ`: Conduction delay
+
+**Use cases**: Pattern formation, wave propagation, spatial dynamics
+
+### Level 2: Statistical Models
+
+#### Dynamic Causal Modeling (DCM)
+
+Bayesian framework for inferring directed connectivity:
+
+```python
+class DynamicCausalModel:
+    """DCM for fMRI/EEG connectivity inference."""
     
-    def __init__(self, config: DynamicsConfig):
-        self.config = config
-        self.n_steps = int(config.duration / config.dt)
+    def __init__(
+        self,
+        n_regions: int,
+        n_inputs: int,
+        model_space: list = None,
+    ):
+        self.n_regions = n_regions
+        self.n_inputs = n_inputs
         
-    @abstractmethod
-    def simulate(self, parameters: Dict) -> Dict:
-        """模拟动力学"""
+        # State equation: dx/dt = (A + Σ u_j·B_j)·x + C·u
+        self.A = np.zeros((n_regions, n_regions))  # Intrinsic connectivity
+        self.B = np.zeros((n_regions, n_regions, n_inputs))  # Modulatory effects
+        self.C = np.zeros((n_regions, n_inputs))  # Driving inputs
+        
+        # Observation model (modality-specific)
+        self.observation_model = 'bilinear'  # or 'neuronal', 'hemodynamic'
+    
+    def fit(self, data, priors=None):
+        """Variational Bayes for posterior estimation."""
+        # Free energy optimization
+        # Model evidence comparison
+        # Bayesian model selection
         pass
     
-    @abstractmethod
-    def fit(self, data: np.ndarray) -> Dict:
-        """拟合数据"""
+    def compare_models(self, models):
+        """Bayesian model selection across model space."""
+        # Family-level inference
+        # Bayesian model averaging
+        pass
+```
+
+**Key concepts**:
+- **A matrix**: Intrinsic (baseline) effective connectivity
+- **B matrix**: Context-dependent modulatory effects
+- **C matrix**: Direct input driving effects
+- **Bayesian Model Selection**: Compare competing architectures
+
+#### Hidden Markov Models (HMM)
+
+Discrete state models for brain state dynamics:
+
+```python
+class BrainHMM:
+    """Hidden Markov Model for brain state segmentation."""
+    
+    def __init__(
+        self,
+        n_states: int,
+        n_features: int,
+        emission_type: str = 'gaussian',
+    ):
+        self.n_states = n_states
+        self.n_features = n_features
+        
+        # Transition probability matrix
+        self.transition_matrix = np.ones((n_states, n_states)) / n_states
+        
+        # Emission parameters (state-specific)
+        self.emission_means = np.zeros((n_states, n_features))
+        self.emission_covs = np.eye(n_features)[None, :, :].repeat(n_states, axis=0)
+        
+        # Initial state distribution
+        self.initial_probs = np.ones(n_states) / n_states
+    
+    def infer_states(self, time_series):
+        """Viterbi decoding for most likely state sequence."""
         pass
     
-    @abstractmethod
-    def generate(self, n_samples: int) -> np.ndarray:
-        """生成数据"""
+    def estimate_parameters(self, time_series):
+        """Baum-Welch (EM) algorithm for parameter estimation."""
         pass
+```
 
+**Variants**:
+- **Switching Linear Dynamic Systems**: Continuous latent states within discrete modes
+- **Hierarchical HMM**: Nested state structures for multi-scale dynamics
+- **Sliding Window + HMM**: Combine with windowed connectivity for dynamic FC
 
-class NeuralMassModel(GenerativeBrainModel):
-    """神经质量模型"""
-    
-    def __init__(self, config: DynamicsConfig):
-        super().__init__(config)
-        
-        # Wilson-Cowan 参数
-        self.w_EE = 12.0      # E → E 连接
-        self.w_EI = 4.0       # I → E 连接
-        self.w_IE = 13.0      # E → I 连接
-        self.w_II = 11.0      # I → I 连接
-        
-        self.tau_E = 10.0     # E 时间常数
-        self.tau_I = 20.0     # I 时间常数
-        
-        self.theta_E = 2.5    # E 阈值
-        self.theta_I = 3.5    # I 阈值
-        
-    def sigmoid(self, x: np.ndarray, theta: float = 0, 
-                sigma: float = 1.0) -> np.ndarray:
-        """Sigmoid 激活函数"""
-        return 1.0 / (1.0 + np.exp(-sigma * (x - theta)))
-    
-    def simulate(self, parameters: Dict = None) -> Dict:
-        """模拟 Wilson-Cowan 动力学
-        
-        dE/dt = -E/τ_E + (1-E) * S(w_EE*E - w_EI*I + P_E)
-        dI/dt = -I/τ_I + (1-I) * S(w_IE*E - w_II*I + P_I)
-        """
-        if parameters:
-            for key, value in parameters.items():
-                if hasattr(self, key):
-                    setattr(self, key, value)
-        
-        # 初始化
-        E = np.zeros(self.n_steps)
-        I = np.zeros(self.n_steps)
-        E[0] = 0.1
-        I[0] = 0.1
-        
-        # 外部输入
-        P_E = 1.0
-        P_I = 0.5
-        
-        dt = self.config.dt
-        
-        for t in range(1, self.n_steps):
-            # 微分方程
-            dE = (-E[t-1] / self.tau_E + 
-                  (1 - E[t-1]) * self.sigmoid(
-                      self.w_EE * E[t-1] - self.w_EI * I[t-1] + P_E,
-                      self.theta_E
-                  ))
-            
-            dI = (-I[t-1] / self.tau_I + 
-                  (1 - I[t-1]) * self.sigmoid(
-                      self.w_IE * E[t-1] - self.w_II * I[t-1] + P_I,
-                      self.theta_I
-                  ))
-            
-            # 添加噪声
-            dE += self.config.noise_level * np.random.randn()
-            dI += self.config.noise_level * np.random.randn()
-            
-            # 更新
-            E[t] = np.clip(E[t-1] + dt * dE, 0, 1)
-            I[t] = np.clip(I[t-1] + dt * dI, 0, 1)
-            
-        return {
-            'E': E,
-            'I': I,
-            'time': np.arange(self.n_steps) * dt
-        }
-    
-    def fit(self, data: np.ndarray) -> Dict:
-        """拟合参数（简化版）"""
-        # 使用梯度下降拟合参数
-        # 这里简化为返回当前参数
-        return {
-            'w_EE': self.w_EE,
-            'w_EI': self.w_EI,
-            'w_IE': self.w_IE,
-            'w_II': self.w_II,
-            'fit_score': np.random.random()  # 模拟拟合分数
-        }
-    
-    def generate(self, n_samples: int = 1) -> np.ndarray:
-        """生成动力学数据"""
-        results = []
-        for _ in range(n_samples):
-            sim = self.simulate()
-            results.append(np.column_stack([sim['E'], sim['I']]))
-        return np.array(results)
+### Level 3: Deep Generative Models
 
+#### Variational Autoencoders (VAEs)
 
-class DynamicCausalModel(GenerativeBrainModel):
-    """动态因果模型 (DCM)"""
-    
-    def __init__(self, config: DynamicsConfig):
-        super().__init__(config)
-        
-        # 脑区数量
-        self.n_regions = config.n_neurons
-        
-        # 连接矩阵
-        self.A = np.random.randn(self.n_regions, self.n_regions) * 0.1
-        self.B = np.zeros((self.n_regions, self.n_regions))  # 调制
-        self.C = np.zeros(self.n_regions)  # 输入权重
-        
-    def simulate(self, parameters: Dict = None) -> Dict:
-        """模拟 DCM 动力学
-        
-        dz/dt = (A + B*u)z + C*u
-        """
-        if parameters:
-            if 'A' in parameters:
-                self.A = parameters['A']
-            if 'B' in parameters:
-                self.B = parameters['B']
-            if 'C' in parameters:
-                self.C = parameters['C']
-        
-        # 初始化状态
-        z = np.zeros((self.n_steps, self.n_regions))
-        z[0] = np.random.randn(self.n_regions) * 0.1
-        
-        # 外部输入
-        u = np.sin(np.linspace(0, 10, self.n_steps))
-        
-        dt = self.config.dt
-        
-        for t in range(1, self.n_steps):
-            # 有效连接
-            A_eff = self.A + self.B * u[t]
-            
-            # 动力学
-            dz = (A_eff @ z[t-1] + self.C * u[t])
-            
-            # 添加噪声
-            dz += self.config.noise_level * np.random.randn(self.n_regions)
-            
-            # 更新
-            z[t] = z[t-1] + dt * dz
-            
-        return {
-            'z': z,
-            'u': u,
-            'time': np.arange(self.n_steps) * dt
-        }
-    
-    def fit(self, data: np.ndarray) -> Dict:
-        """变分贝叶斯拟合"""
-        # 简化：返回参数估计
-        return {
-            'A_est': self.A,
-            'B_est': self.B,
-            'C_est': self.C,
-            'free_energy': np.random.random() * 100
-        }
-    
-    def generate(self, n_samples: int = 1) -> np.ndarray:
-        """生成数据"""
-        results = []
-        for _ in range(n_samples):
-            sim = self.simulate()
-            results.append(sim['z'])
-        return np.array(results)
+Latent variable models for neural data:
 
+```python
+class BrainVAE(nn.Module):
+    """VAE for neural dynamics generation and representation."""
+    
+    def __init__(
+        self,
+        input_dim: int,
+        latent_dim: int = 64,
+        hidden_dims: list = [256, 128],
+        temporal: bool = True,
+    ):
+        super().__init__()
+        
+        # Encoder: q(z|x)
+        encoder_layers = []
+        prev_dim = input_dim
+        for h in hidden_dims:
+            encoder_layers.extend([
+                nn.Linear(prev_dim, h),
+                nn.ReLU(),
+                nn.BatchNorm1d(h),
+            ])
+            prev_dim = h
+        self.encoder = nn.Sequential(*encoder_layers)
+        
+        # Latent distribution parameters
+        self.fc_mu = nn.Linear(hidden_dims[-1], latent_dim)
+        self.fc_logvar = nn.Linear(hidden_dims[-1], latent_dim)
+        
+        # Decoder: p(x|z)
+        decoder_layers = []
+        prev_dim = latent_dim
+        for h in reversed(hidden_dims):
+            decoder_layers.extend([
+                nn.Linear(prev_dim, h),
+                nn.ReLU(),
+            ])
+            prev_dim = h
+        decoder_layers.append(nn.Linear(hidden_dims[0], input_dim))
+        self.decoder = nn.Sequential(*decoder_layers)
+    
+    def encode(self, x):
+        h = self.encoder(x)
+        mu, logvar = self.fc_mu(h), self.fc_logvar(h)
+        return mu, logvar
+    
+    def reparameterize(self, mu, logvar):
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        return mu + eps * std
+    
+    def forward(self, x):
+        mu, logvar = self.encode(x)
+        z = self.reparameterize(mu, logvar)
+        recon = self.decoder(z)
+        return recon, mu, logvar
+    
+    def loss(self, x, recon, mu, logvar, beta=1.0):
+        """Beta-VAE loss for controllable disentanglement."""
+        recon_loss = F.mse_loss(recon, x, reduction='sum')
+        kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+        return recon_loss + beta * kl_loss
+```
 
-class DataDrivenModel(GenerativeBrainModel):
-    """数据驱动的生成模型"""
-    
-    def __init__(self, config: DynamicsConfig):
-        super().__init__(config)
-        
-        # 潜在空间维度
-        self.latent_dim = 10
-        
-        # 学习参数
-        self.W_enc = np.random.randn(config.n_neurons, self.latent_dim) * 0.1
-        self.W_dec = np.random.randn(self.latent_dim, config.n_neurons) * 0.1
-        
-        # 动力学参数
-        self.W_dyn = np.random.randn(self.latent_dim, self.latent_dim) * 0.1
-        
-    def simulate(self, parameters: Dict = None) -> Dict:
-        """模拟潜在动力学"""
-        # 初始化潜在状态
-        z = np.zeros((self.n_steps, self.latent_dim))
-        z[0] = np.random.randn(self.latent_dim) * 0.1
-        
-        dt = self.config.dt
-        
-        for t in range(1, self.n_steps):
-            # 潜在动力学
-            dz = np.tanh(self.W_dyn @ z[t-1])
-            
-            # 噪声
-            dz += self.config.noise_level * np.random.randn(self.latent_dim)
-            
-            z[t] = z[t-1] + dt * dz
-            
-        # 解码到观测空间
-        x = z @ self.W_dec.T
-        
-        return {
-            'z': z,
-            'x': x,
-            'time': np.arange(self.n_steps) * dt
-        }
-    
-    def fit(self, data: np.ndarray) -> Dict:
-        """拟合数据"""
-        # 简化的 EM 算法
-        n_iter = 100
-        
-        for _ in range(n_iter):
-            # E-step: 推断潜在状态
-            z = data @ self.W_enc
-            
-            # M-step: 更新参数
-            self.W_dyn = np.linalg.lstsq(z[:-1], z[1:], rcond=None)[0]
-            self.W_dec = np.linalg.lstsq(z, data, rcond=None)[0].T
-            
-        return {
-            'reconstruction_error': np.random.random(),
-            'latent_dim': self.latent_dim
-        }
-    
-    def generate(self, n_samples: int = 1) -> np.ndarray:
-        """生成数据"""
-        results = []
-        for _ in range(n_samples):
-            sim = self.simulate()
-            results.append(sim['x'])
-        return np.array(results)
+**Variants for brain data**:
+- **Temporal VAE**: Add RNN/Transformer to encoder/decoder
+- **Conditional VAE**: Condition on stimuli, tasks, or metadata
+- **Disentangled VAE** (β-VAE): Separate latent factors for interpretability
+- **VAE with ODE prior**: Replace Gaussian prior with neural ODE dynamics
 
+#### Diffusion Models
 
-class HybridGenerativeModel(GenerativeBrainModel):
-    """混合生成模型：科学机器学习方法"""
+Score-based generative models for brain data:
+
+```python
+class BrainDiffusionModel(nn.Module):
+    """Score-based diffusion model for neural data generation."""
     
-    def __init__(self, config: DynamicsConfig, 
-                 physics_model: GenerativeBrainModel = None):
-        super().__init__(config)
+    def __init__(
+        self,
+        data_dim: int,
+        hidden_dim: int = 256,
+        n_layers: int = 4,
+        noise_schedule: str = 'cosine',
+    ):
+        super().__init__()
         
-        self.physics_model = physics_model or NeuralMassModel(config)
-        self.data_model = DataDrivenModel(config)
+        # Score network: s_θ(x, t) ≈ ∇_x log p_t(x)
+        self.score_network = ScoreNetwork(
+            input_dim=data_dim,
+            hidden_dim=hidden_dim,
+            n_layers=n_layers,
+        )
         
-        # 混合权重
-        self.alpha = 0.5  # 物理模型权重
-        
-    def simulate(self, parameters: Dict = None) -> Dict:
-        """混合模拟"""
-        # 物理模型预测
-        physics_sim = self.physics_model.simulate(parameters)
-        
-        # 数据模型预测
-        data_sim = self.data_model.simulate(parameters)
-        
-        # 混合
-        if 'z' in physics_sim and 'x' in data_sim:
-            combined = {
-                'time': physics_sim['time'],
-                'physics': physics_sim,
-                'data': data_sim,
-                'hybrid': self.alpha * physics_sim.get('E', physics_sim.get('z', 0)) + 
-                         (1 - self.alpha) * data_sim['x'][:, 0] if 'x' in data_sim else 0
-            }
+        # Noise schedule
+        if noise_schedule == 'cosine':
+            self.beta_t = cosine_schedule
         else:
-            combined = {'time': physics_sim['time'], 'physics': physics_sim}
+            self.beta_t = linear_schedule
+    
+    def forward_diffusion(self, x0, t):
+        """Add noise: q(x_t | x_0) = N(x_t; sqrt(ᾱ_t)·x_0, (1-ᾱ_t)·I)"""
+        alpha_bar = self.alpha_bar(t)
+        noise = torch.randn_like(x0)
+        xt = torch.sqrt(alpha_bar) * x0 + torch.sqrt(1 - alpha_bar) * noise
+        return xt, noise
+    
+    def train_step(self, x0):
+        """Train score matching objective."""
+        t = torch.rand(x0.shape[0], device=x0.device)
+        xt, noise = self.forward_diffusion(x0, t)
+        
+        # Predict noise
+        predicted_noise = self.score_network(xt, t)
+        
+        # Score matching loss
+        loss = F.mse_loss(predicted_noise, noise)
+        return loss
+    
+    def generate(self, n_samples, steps=1000):
+        """Reverse diffusion: sample from p(x_0)."""
+        x = torch.randn(n_samples, self.data_dim)
+        
+        for t in reversed(range(steps)):
+            t_tensor = torch.full((n_samples,), t, dtype=torch.float)
             
-        return combined
-    
-    def fit(self, data: np.ndarray) -> Dict:
-        """混合拟合"""
-        # 同时拟合两个模型
-        physics_params = self.physics_model.fit(data)
-        data_params = self.data_model.fit(data)
+            # Score-guided update
+            score = self.score_network(x, t_tensor)
+            x = self.reverse_step(x, score, t)
         
-        # 优化混合权重
-        self.alpha = 0.5  # 简化
-        
-        return {
-            'physics_params': physics_params,
-            'data_params': data_params,
-            'alpha': self.alpha
-        }
-    
-    def generate(self, n_samples: int = 1) -> np.ndarray:
-        """混合生成"""
-        physics_data = self.physics_model.generate(n_samples)
-        data_data = self.data_model.generate(n_samples)
-        
-        return self.alpha * physics_data + (1 - self.alpha) * data_data
+        return x
+```
 
+**Brain-specific adaptations**:
+- **Conditioned diffusion**: Generate activity patterns for specific tasks/stimuli
+- **Graph-aware diffusion**: Incorporate structural connectivity as prior
+- **Spatiotemporal diffusion**: Model both spatial and temporal structure
 
-def compare_generative_models(config: DynamicsConfig) -> Dict:
-    """比较不同生成模型"""
-    
-    models = {
-        'Neural Mass': NeuralMassModel(config),
-        'DCM': DynamicCausalModel(config),
-        'Data-Driven': DataDrivenModel(config),
-        'Hybrid': HybridGenerativeModel(config)
-    }
-    
-    results = {}
-    
-    for name, model in models.items():
-        sim = model.simulate()
-        results[name] = sim
-        
-    return results
+#### Normalizing Flows
 
+Invertible transformations for exact likelihood:
 
-def visualize_brain_dynamics(results: Dict):
-    """可视化脑动力学"""
-    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
-    
-    # 1. 神经质量模型
-    ax = axes[0, 0]
-    if 'Neural Mass' in results:
-        sim = results['Neural Mass']
-        ax.plot(sim['time'], sim['E'], label='E (Excitatory)', linewidth=1.5)
-        ax.plot(sim['time'], sim['I'], label='I (Inhibitory)', linewidth=1.5)
-        ax.set_xlabel('Time (ms)')
-        ax.set_ylabel('Activity')
-        ax.set_title('Neural Mass Model (Wilson-Cowan)')
-        ax.legend()
-        ax.grid(True, alpha=0.3)
-    
-    # 2. DCM
-    ax = axes[0, 1]
-    if 'DCM' in results:
-        sim = results['DCM']
-        n_show = min(5, sim['z'].shape[1])
-        for i in range(n_show):
-            ax.plot(sim['time'], sim['z'][:, i], label=f'Region {i+1}', alpha=0.7)
-        ax.set_xlabel('Time (ms)')
-        ax.set_ylabel('Activity')
-        ax.set_title('Dynamic Causal Model')
-        ax.legend(fontsize=8)
-        ax.grid(True, alpha=0.3)
-    
-    # 3. 数据驱动模型
-    ax = axes[1, 0]
-    if 'Data-Driven' in results:
-        sim = results['Data-Driven']
-        ax.imshow(sim['x'][:500, :10].T, aspect='auto', cmap='viridis')
-        ax.set_xlabel('Time (steps)')
-        ax.set_ylabel('Neuron')
-        ax.set_title('Data-Driven Model')
-    
-    # 4. 混合模型
-    ax = axes[1, 1]
-    if 'Hybrid' in results:
-        sim = results['Hybrid']
-        if 'hybrid' in sim:
-            ax.plot(sim['time'], sim['hybrid'], linewidth=1.5)
-        ax.set_xlabel('Time (ms)')
-        ax.set_ylabel('Activity')
-        ax.set_title('Hybrid Generative Model')
-        ax.grid(True, alpha=0.3)
-    
-    plt.tight_layout()
-    plt.savefig('generative_brain_dynamics.png', dpi=150, bbox_inches='tight')
-    plt.close()
-    
-    return 'generative_brain_dynamics.png'
-
-
-# 使用示例
-def example_brain_dynamics():
-    """示例：脑动力学模拟"""
-    print("="*60)
-    print("脑动力学生成模型")
-    print("="*60)
-    
-    config = DynamicsConfig(
-        duration=2000.0,
-        n_neurons=20
-    )
-    
-    # 比较模型
-    print("\n比较不同生成模型...")
-    results = compare_generative_models(config)
-    
-    # 打印结果
-    for name, sim in results.items():
-        print(f"\n{name}:")
-        if 'E' in sim:
-            print(f"  E 范围: [{sim['E'].min():.3f}, {sim['E'].max():.3f}]")
-            print(f"  I 范围: [{sim['I'].min():.3f}, {sim['I'].max():.3f}]")
-        elif 'z' in sim:
-            print(f"  状态维度: {sim['z'].shape}")
-            print(f"  状态范围: [{sim['z'].min():.3f}, {sim['z'].max():.3f}]")
-    
-    # 可视化
-    print("\n生成可视化...")
-    img_path = visualize_brain_dynamics(results)
-    print(f"图表已保存: {img_path}")
-    
-    return results
-
-
-## Activation Keywords
-- 脑动力学
-- 生成模型
-- 神经动力学
-- 动态系统模型
-- brain dynamics
-- generative model
-- neural dynamics
-- computational neuroscience
-- Dynamical systems
-
-## Tools Used
-- numpy
-- matplotlib
-
-## Instructions for Agents
-1. 理解生成模型范式：数据驱动 + 假设检验
-2. 掌握多尺度组织：微观(神经元) → 中观(群体) → 宏观(脑网络)
-3. 选择合适的模型类：神经质量、DCM、数据驱动、混合
-4. 使用模拟验证假设，使用拟合提取参数
-5. 评估模型可解释性和预测能力
-
-## Examples
 ```python
-# 脑动力学建模示例
-from generative_brain_dynamics_models import (
-    NeuralMassModel, DynamicCausalModel, DynamicsConfig
-)
-
-# 1. 配置
-config = DynamicsConfig(duration=1000.0, n_neurons=20)
-
-# 2. 神经质量模型
-nmm = NeuralMassModel(config)
-sim_nmm = nmm.simulate()
-print(f"E activity: {sim_nmm['E'].mean():.3f}")
-
-# 3. DCM 模型
-dcm = DynamicCausalModel(config)
-sim_dcm = dcm.simulate()
-print(f"Regions: {sim_dcm['z'].shape[1]}")
-
-# 4. 拟合数据
-params = nmm.fit(sim_dcm['z'])
-print(f"Fit score: {params['fit_score']:.3f}")
+class BrainNormalizingFlow(nn.Module):
+    """Normalizing flow for neural data density estimation."""
+    
+    def __init__(
+        self,
+        data_dim: int,
+        n_flows: int = 8,
+        flow_type: str = 'real_nvp',
+    ):
+        super().__init__()
+        
+        self.flows = nn.ModuleList()
+        
+        for i in range(n_flows):
+            if flow_type == 'real_nvp':
+                self.flows.append(RealNVPFlow(data_dim))
+            elif flow_type == 'maf':
+                self.flows.append(MaskedAutoregressiveFlow(data_dim))
+            elif flow_type == 'glow':
+                self.flows.append(InvertibleConv1x1(data_dim))
+        
+        self.base_dist = torch.distributions.MultivariateNormal(
+            torch.zeros(data_dim),
+            torch.eye(data_dim)
+        )
+    
+    def forward(self, x):
+        """Forward transform: x → z."""
+        log_det = torch.zeros(x.shape[0])
+        
+        for flow in self.flows:
+            x, ld = flow(x)
+            log_det += ld
+        
+        return x, log_det
+    
+    def log_prob(self, x):
+        """Exact log-likelihood computation."""
+        z, log_det = self.forward(x)
+        log_prob_base = self.base_dist.log_prob(z)
+        return log_prob_base + log_det
+    
+    def sample(self, n):
+        """Generate samples from learned distribution."""
+        z = self.base_dist.sample((n,))
+        x = z
+        for flow in reversed(self.flows):
+            x = flow.inverse(x)
+        return x
 ```
 
-if __name__ == "__main__":
-    example_brain_dynamics()
+## Unified Comparison Framework
+
+### Comparison Dimensions
+
+| Dimension | Mechanistic | Statistical | Deep Generative |
+|-----------|-------------|-------------|-----------------|
+| **Biological plausibility** | High | Medium | Low (without priors) |
+| **Expressive power** | Limited | Medium | High |
+| **Interpretability** | High | Medium | Low (without priors) |
+| **Scalability** | Low | Medium | High |
+| **Data efficiency** | High | Medium | Low |
+| **Uncertainty quantification** | Medium | High | Medium (with Bayesian) |
+| **Multi-scale capability** | Medium | Low | High |
+
+### Selection Guide
+
+| Use Case | Recommended Approach |
+|----------|---------------------|
+| Hypothesis testing of neural mechanisms | Neural Mass/Field + DCM |
+| Brain state segmentation | HMM / Switching LDS |
+| Data generation / augmentation | VAE / Diffusion |
+| Density estimation / anomaly detection | Normalizing Flows |
+| Cross-scale modeling | Hybrid (mechanistic prior + deep) |
+| Clinical biomarker discovery | DCM + VAE |
+| Real-time simulation | Neural Mass (optimized) |
+
+## Hybrid Approaches: Mechanistic Priors + Deep Generative
+
+### Physics-Informed Neural ODEs
+
+```python
+class MechanisticNeuralODE(nn.Module):
+    """Neural ODE with mechanistic brain dynamics prior."""
+    
+    def __init__(
+        self,
+        mechanistic_model,  # e.g., Jansen-Rit NMM
+        residual_dim: int = 64,
+    ):
+        super().__init__()
+        self.mechanistic = mechanistic_model
+        
+        # Neural network learns residual dynamics
+        self.residual = nn.Sequential(
+            nn.Linear(mechanistic_model.state_dim, 128),
+            nn.Tanh(),
+            nn.Linear(128, 128),
+            nn.Tanh(),
+            nn.Linear(128, mechanistic_model.state_dim),
+        )
+        
+        self.lambda_residual = nn.Parameter(torch.tensor(0.1))
+    
+    def dynamics(self, t, state):
+        """Combined mechanistic + learned dynamics."""
+        mechanistic_dydt = self.mechanistic.derivatives(state)
+        residual_dydt = self.residual(state)
+        return mechanistic_dydt + self.lambda_residual * residual_dydt
+    
+    def forward(self, state_0, t_span):
+        """Integrate combined dynamics."""
+        solution = odeint(self.dynamics, state_0, t_span)
+        return solution
 ```
+
+### Mechanism-Constrained VAE
+
+```python
+class MechanismConstrainedVAE(nn.Module):
+    """VAE with mechanistic constraints on latent dynamics."""
+    
+    def __init__(
+        self,
+        input_dim: int,
+        latent_dim: int,
+        mechanistic_prior,  # e.g., NMM governing equations
+    ):
+        super().__init__()
+        self.encoder = Encoder(input_dim, latent_dim)
+        self.decoder = Decoder(latent_dim, input_dim)
+        self.prior = mechanistic_prior
+    
+    def latent_dynamics_loss(self, latent_trajectory):
+        """Penalize deviation from mechanistic prior."""
+        # Compute how well latent dynamics match mechanistic model
+        predicted = self.prior.integrate(latent_trajectory[:, 0])
+        return F.mse_loss(latent_trajectory, predicted)
+    
+    def forward(self, x, alpha=0.5):
+        mu, logvar = self.encoder(x)
+        z = self.reparameterize(mu, logvar)
+        recon = self.decoder(z)
+        
+        vae_loss = self.vae_elbo(x, recon, mu, logvar)
+        mech_loss = self.latent_dynamics_loss(z)
+        
+        return vae_loss + alpha * mech_loss
+```
+
+## Multi-Scale Integration
+
+### Scale Hierarchy
+
+```
+Molecular/Ion Channel  →  Microscale (ms, μm)
+    ↓
+Single Neuron / Microcircuit  →  Mesoscale (ms-cs, mm)
+    ↓
+Neural Mass / Region  →  Macroscale (100ms-s, cm)
+    ↓
+Whole Brain Network  →  System level (s, whole brain)
+```
+
+### Integration Strategies
+
+1. **Bottom-up**: Micro-scale models → emergent macro-scale dynamics
+2. **Top-down**: Macro constraints guide micro-scale simulation
+3. **Bidirectional**: Coarse-graining + fine-graining with consistency constraints
+
+### Practical Implementation
+
+```python
+class MultiScaleBrainModel:
+    """Multi-scale brain dynamics with scale coupling."""
+    
+    def __init__(
+        self,
+        micro_model,   # Single neuron / circuit
+        meso_model,    # Neural mass
+        macro_model,   # Whole-brain network
+        coupling_fn=None,
+    ):
+        self.micro = micro_model
+        self.meso = meso_model
+        self.macro = macro_model
+        self.coupling = coupling_fn or default_coupling
+    
+    def step(self, dt):
+        """Synchronized multi-scale update."""
+        # Macro → Meso: Top-down modulation
+        macro_input = self.coupling.downscale(self.macro.state)
+        self.meso.step(macro_input, dt)
+        
+        # Meso → Macro: Bottom-up aggregation
+        meso_output = self.coupling.upscale(self.meso.state)
+        self.macro.apply_input(meso_output)
+        self.macro.step(dt)
+        
+        # Meso → Micro: Regional drive
+        meso_drive = self.coupling.meso_to_micro(self.meso.state)
+        self.micro.step(meso_drive, dt)
+```
+
+## Key Challenges
+
+### 1. Model Identifiability
+
+**Problem**: Multiple parameter configurations produce similar dynamics
+
+**Solutions**:
+- Constrained optimization with biological bounds
+- Multi-modal data integration (fMRI + EEG + MEG)
+- Bayesian model comparison for nested models
+- Structural connectivity constraints from dMRI
+
+### 2. Multi-Scale Integration
+
+**Problem**: Bridging temporal (ms to s) and spatial (μm to cm) gaps
+
+**Solutions**:
+- Coarse-graining with preserved invariants
+- Neural operators for scale-free representation
+- Hierarchical VAEs with scale-specific latent spaces
+- Time-scale separation analysis
+
+### 3. Validation Against Empirical Data
+
+**Problem**: How to verify generative models produce realistic dynamics
+
+**Validation metrics**:
+- **Statistical**: Power spectra, autocorrelation, state distributions
+- **Topological**: Network metrics (clustering, path length, modularity)
+- **Dynamical**: Lyapunov exponents, bifurcation structure
+- **Functional**: Task-evoked response patterns, behavioral correlations
+
+### 4. Computational Scalability
+
+**Problem**: Whole-brain simulation at fine scales is computationally prohibitive
+
+**Solutions**:
+- GPU-accelerated neural field solvers
+- Reduced-order models via POD/DMD
+- Surrogate models trained on high-fidelity simulations
+- Event-based simulation for spiking networks
+
+## Best Practices
+
+### Model Selection
+1. Start with simplest model that captures essential features
+2. Use mechanistic models when testing specific hypotheses
+3. Use deep models when data volume is large and patterns are complex
+4. Prefer hybrid approaches for best of both worlds
+
+### Training & Fitting
+1. Use multi-modal data for better identifiability
+2. Apply biological constraints as regularization
+3. Validate on held-out conditions (not just held-out data points)
+4. Report uncertainty in parameter estimates
+
+### Interpretation
+1. Map latent dimensions to neurobiological quantities when possible
+2. Use perturbation analysis to probe model mechanisms
+3. Compare model predictions to known neuroscience findings
+4. Report failure cases and limitations explicitly
+
+## Pitfalls
+
+- **Overfitting**: Deep models memorizing noise instead of learning dynamics
+- **Identifiability confusion**: Treating equally-good fits as unique solutions
+- **Scale mismatch**: Applying models at scales they weren't designed for
+- **Missing validation**: No comparison to established empirical findings
+- **Biological implausibility**: Generated dynamics violating known constraints
+- **Parameter degeneracy**: Many parameter sets producing identical outputs
+- **Ignoring noise**: Treating measurement noise as neural signal
+- **Temporal resolution mismatch**: Using models with wrong time constants for data
+
+## Applications
+
+### Research
+- In silico experiments for hypothesis generation
+- Virtual patient modeling for personalized medicine
+- Drug effect simulation via parameter perturbation
+- Understanding critical brain dynamics and phase transitions
+
+### Clinical
+- Seizure prediction and intervention planning
+- Deep brain stimulation optimization
+- Neurological disorder biomarker discovery
+- Treatment response prediction
+
+### Brain-Computer Interfaces
+- Neural decoding with generative priors
+- Synthetic data augmentation for BCI training
+- State estimation for closed-loop control
 
 ## Related Skills
 
-- `kuramoto-brain-network` - Kuramoto 脑网络模型
-- `ccep-causal-brain-network` - CCEP 因果脑网络
-- `time-varying-brain-connectivity` - 时变脑连接
+- brain-dit-fmri-foundation-model
+- brain-dit-universal-multi-state
+- brainstr-spatiotemporal-brain-networks
+- neural-critical-dynamics-theory
+- neural-dynamics-universal-translator
+- kuramoto-brain-network
+- neural-population-dynamics
+- generative-brain-dynamics-models
 
 ## References
 
-- arXiv:2112.12147 - Generative Models of Brain Dynamics -- A review
-- Frontiers in Computational Neuroscience
-- Topics: Neurons and Cognition (q-bio.NC)
+- "Generative Models for Brain Dynamics" — arXiv:2604.16290v1 (April 2026)

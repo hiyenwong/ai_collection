@@ -1,110 +1,62 @@
 ---
 name: ember-hybrid-snn-llm-architecture
-description: EMBER hybrid cognitive architecture combining LLM reasoning with biologically-inspired spiking neural network memory. Uses experience-modulated plasticity for autonomous cognitive behavior.
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [spiking-neural-network, llm, cognitive-architecture, hybrid, memory, neuromorphic]
-    source_paper: "EMBER: Autonomous Cognitive Behaviour from Learned Spiking Neural Network Dynamics in a Hybrid LLM Architecture (arXiv:2604.12167v1)"
+category: neuroscience
+description: EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) - hybrid cognitive architecture combining LLM reasoning with learned SNN dynamics for autonomous cognitive behavior.
+trigger: ember architecture, hybrid llm snn, experience modulated reasoning, autonomous cognitive behavior, emergent reasoning, biologically inspired llm
 ---
 
-# EMBER: Hybrid SNN-LLM Cognitive Architecture
+# EMBER: Hybrid LLM-SNN Cognitive Architecture
+
+## Paper
+- **Title**: EMBER: Autonomous Cognitive Behaviour from Learned Spiking Neural Network Dynamics in a Hybrid LLM Architecture
+- **Author**: William Savage
+- **Date**: April 14, 2026
+- **arXiv**: 2604.12167v1
 
 ## Overview
-EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) reorganizes the LLM-memory relationship by replacing traditional retrieval-augmented generation with a learned spiking neural network (SNN) that provides autonomous, self-modulating memory dynamics. The SNN encodes experiences as attractor states and uses biologically-plausible plasticity rules to autonomously consolidate and retrieve memories during generation.
+EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) reorganizes the relationship between LLMs and memory by integrating learned spiking neural network dynamics as a biologically-inspired memory and reasoning system.
 
-## Core Concepts
+## Architecture
 
-### Architecture
-- **LLM as Reasoner**: The LLM handles language understanding and generation
-- **SNN as Memory**: A recurrent spiking network stores experiences as dynamical attractors
-- **Experience Modulation**: Interactions trigger Hebbian-like updates in the SNN, enabling autonomous memory formation without explicit training
-
-### Key Mechanisms
-1. **Encoding**: Text experiences mapped to SNN initial conditions via embedding projection
-2. **Dynamics**: SNN evolves autonomously, retrieving related memories through attractor dynamics
-3. **Plasticity**: Synaptic weights update during interaction via local learning rules
-4. **Modulation**: LLM receives SNN state as additional context, influencing generation
-
-### Advantages Over RAG
-- No explicit retrieval step needed -- memory emerges from network dynamics
-- Continual learning without catastrophic forgetting via attractor separation
-- Biologically-inspired consolidation (similar to hippocampal-neocortical memory systems)
-- Autonomous behavior without explicit prompting for memory recall
-
-## Implementation Pattern
-```python
-class EMBER:
-    def __init__(self, llm, snn, embedding_dim=768, snn_size=256):
-        self.llm = llm
-        self.snn = snn  # Recurrent spiking network
-        self.encoder = nn.Linear(embedding_dim, snn_size)  # Text to SNN state
-        
-    def encode_experience(self, text):
-        embedding = self.llm.get_embedding(text)
-        initial_state = self.encoder(embedding)
-        return initial_state
-    
-    def snn_dynamics(self, initial_state, timesteps=50):
-        state = initial_state
-        for _ in range(timesteps):
-            spikes = self.snn.step(state)
-            state = self.snn.update(state, spikes)
-        return state
-    
-    def plasticity_update(self, state, context):
-        delta_w = torch.outer(state, context)
-        self.snn.weights += 0.01 * delta_w
-    
-    def generate(self, prompt, context_history):
-        for ctx in context_history:
-            state = self.encode_experience(ctx)
-            memory = self.snn_dynamics(state)
-            self.plasticity_update(memory, state)
-        snn_context = self.snn.get_current_state()
-        return self.llm.generate(prompt + str(snn_context))
+### Hybrid Design
 ```
+┌─────────────────────────────────────────────────┐
+│                    EMBER                         │
+├─────────────────────┬───────────────────────────┤
+│    LLM (Reasoning)   │    SNN (Memory/Dynamics)  │
+│                     │                           │
+│  - Language         │  - Experience storage      │
+│  - Logic            │  - Temporal dynamics       │
+│  - Abstraction      │  - Pattern recognition     │
+│                     │  - Energy efficiency       │
+├─────────────────────┴───────────────────────────┤
+│           Experience Modulation Layer             │
+│  - Bidirectional information flow                │
+│  - SNN dynamics influence LLM reasoning           │
+│  - LLM outputs modulate SNN plasticity           │
+└─────────────────────────────────────────────────┘
+```
+
+### Key Innovations
+1. **SNN as dynamic memory** instead of static context window
+2. **Learned dynamics** that emerge from experience
+3. **Biologically-inspired** information processing
+4. **Energy-efficient** compared to pure LLM approaches
+5. **Autonomous cognitive behavior** through experience modulation
+
+### Experience Modulation
+- Past experiences shape SNN connectivity
+- SNN dynamics provide context to LLM reasoning
+- Emergent behavior from interaction between systems
+- Continuous learning without catastrophic forgetting
 
 ## Applications
-- Autonomous AI agents with persistent memory
-- Continual learning systems without catastrophic forgetting
-- Brain-inspired cognitive architectures
-- Neuromorphic computing implementations
+- Autonomous agents
+- Continual learning systems
+- Energy-efficient AI
+- Cognitive architectures
 
-## Activation Keywords
-- EMBER architecture, hybrid SNN LLM, spiking neural network memory, cognitive architecture, experience-modulated memory, autonomous cognitive behavior, biologically-inspired memory, neuromorphic LLM, 混合 SNN LLM 架构, 脉冲神经网络记忆
-
-## References
-- EMBER: Autonomous Cognitive Behaviour from Learned Spiking Neural Network Dynamics in a Hybrid LLM Architecture
-- Authors: William Savage
-- Published: 2026-04-14
-- arXiv: https://arxiv.org/abs/2604.12167v1
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Ember Hybrid Snn Llm Architecture usage
-```
-User: "Help me with ember hybrid snn llm architecture"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed ember hybrid snn llm architecture assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+## Related Skills
+- ember-autonomous-cognitive-behaviour-learned-spiking
+- context-selective-multimodal-memory
+- triple-loop-memory-consolidation

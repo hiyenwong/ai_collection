@@ -1,134 +1,110 @@
 ---
 name: brain-inspired-capture-visual-decoding
-description: Neuromimetic perceptual simulation paradigm for visual decoding from neurophysiological signals. Emulates Human Visual System (HVS) processing with dynamic transformations and MI-guided blur regulation for brain-to-image retrieval.
+description: >
+  Brain-Inspired Capture (BI-Cap) methodology for visual decoding from neurophysiological signals.
+  Neuromimetic perceptual simulation paradigm emulating Human Visual System (HVS) processing pipeline
+  to align neural and visual modalities for brain-computer interfaces.
+  Trigger: brain-inspired capture, bi-cap, visual decoding, 视觉解码, brain-computer interface,
+  neural-to-visual, neurophysiological signal decoding, neuromimetic simulation, HVS emulation.
 version: 1.0.0
-author: Research Synthesis
-license: MIT
 metadata:
   hermes:
-    tags: [brain-decoding, visual-decoding, BCI, neuromimetic, HVS, brain-to-image, zero-shot-retrieval]
+    tags: [bci, visual-decoding, neuroscience, neuromimetic, hvs]
     source_paper: "Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation for Visual Decoding (arXiv:2604.17927)"
-    authors: "Feixue Shao, Guangze Shi, Xueyu Liu et al."
-    published: "2026-04-20"
+    paper_date: "2026-04-20"
+    score: 33
 ---
 
 # Brain-Inspired Capture (BI-Cap) for Visual Decoding
 
 ## Overview
 
-BI-Cap addresses the systematic and stochastic gaps between neural and visual modalities by emulating Human Visual System (HVS) processing. It constructs a neuromimetic pipeline with biologically plausible transformations and introduces evidence-driven latent space representations to handle neural activity non-stationarity.
+BI-Cap addresses the systematic and stochastic gaps between neural signals and visual representations in BCIs by emulating the Human Visual System's (HVS) computational mechanisms rather than directly mapping neural activity to pixel space.
 
-## Core Concepts
+## Core Paradigm
 
-### Neuromimetic Pipeline
+Instead of direct neural→image mapping, BI-Cap constructs a neuromimetic pipeline that mirrors biological visual processing stages, creating an intermediate representation space that both modalities can bridge naturally.
 
-Four biologically plausible transformations that simulate HVS processing:
+## Neuromimetic Pipeline Stages
 
-1. **Dynamic Transformation**: Time-varying neural signal processing
-2. **Static Transformation**: Spatial feature extraction mimicking V1-V4 hierarchy
-3. **Adaptive Processing**: MI-guided dynamic blur regulation
-4. **Uncertainty Modeling**: Evidence-driven latent representation
+### Stage 1: Low-Level Feature Extraction
 
-### Mutual Information-Guided Dynamic Blur Regulation
+Mimics retinal and LGN processing:
 
 ```python
-import numpy as np
-from scipy.ndimage import gaussian_filter
-
-def compute_mutual_information(x, y, n_bins=32):
-    """Estimate mutual information using histogram-based method."""
-    hist_xy, _, _ = np.histogram2d(x, y, bins=n_bins)
-    prob_xy = hist_xy / np.sum(hist_xy)
-    prob_x = np.sum(prob_xy, axis=1)
-    prob_y = np.sum(prob_xy, axis=0)
-    
-    mi = 0
-    for i in range(n_bins):
-        for j in range(n_bins):
-            if prob_xy[i, j] > 0:
-                mi += prob_xy[i, j] * np.log(prob_xy[i, j] / (prob_x[i] * prob_y[j] + 1e-10) + 1e-10)
-    return mi
-
-def mi_guided_blur_regulation(neural_features, visual_features):
-    """
-    Regulate blur dynamically based on mutual information between
-    neural and visual features, simulating adaptive visual processing.
-    """
-    mi = compute_mutual_information(neural_features.flatten(), visual_features.flatten())
-    
-    # Higher MI -> sharper (less blur), lower MI -> more blur
-    blur_sigma = max(0.1, 5.0 - mi * 2.0)
-    
-    return gaussian_filter(visual_features, sigma=blur_sigma)
+def retinal_processing(neural_signal):
+    """Simulate early visual pathway processing."""
+    # Edge detection (retinal ganglion cells)
+    edges = apply_gabor_filters(neural_signal)
+    # Contrast normalization (lateral geniculate)
+    contrast = normalize_contrast(edges)
+    return contrast
 ```
 
-### Evidence-Driven Latent Space
+### Stage 2: Intermediate Representation
+
+Mimics V1-V4 cortical processing:
 
 ```python
-class EvidenceDrivenLatentSpace:
-    """
-    Models uncertainty in neural activity to ensure robust embeddings.
-    """
-    
-    def __init__(self, latent_dim=256):
-        self.latent_dim = latent_dim
-        
-    def encode(self, neural_data):
-        """
-        Encode neural data into latent space with uncertainty modeling.
-        Uses evidence-based weighting for robustness.
-        """
-        # Compute evidence (reliability) from neural data
-        evidence = self._compute_evidence(neural_data)
-        
-        # Weighted encoding
-        weighted_data = neural_data * evidence
-        
-        # Project to latent space
-        latent = self._project(weighted_data)
-        
-        return latent, evidence
-    
-    def _compute_evidence(self, data):
-        """Compute evidence/reliability from signal-to-noise ratio."""
-        signal_power = np.mean(data ** 2, axis=0)
-        noise_power = np.var(data, axis=0)
-        snr = signal_power / (noise_power + 1e-10)
-        
-        # Sigmoid mapping to [0, 1]
-        evidence = 1.0 / (1.0 + np.exp(-snr))
-        return evidence
-    
-    def _project(self, data):
-        """Linear projection to latent space."""
-        # PCA or learned projection
-        from sklearn.decomposition import PCA
-        pca = PCA(n_components=self.latent_dim)
-        return pca.fit_transform(data)
+def cortical_processing(signal):
+    """Simulate V1-V4 hierarchical processing."""
+    # Orientation selectivity
+    orientations = extract_orientations(signal)
+    # Color processing
+    color_channels = process_color_channels(signal)
+    # Motion detection
+    motion = detect_motion_patterns(signal)
+    return combine_features(orientations, color_channels, motion)
 ```
 
-## Key Results
+### Stage 3: Perceptual Simulation
 
-- **Zero-shot brain-to-image retrieval** across two public benchmarks
-- **Relative gains**: 9.2% and 8.0% over state-of-the-art methods
-- **Code released**: https://github.com/flysnow1024/BI-Cap
+Generate visual content that matches the neuromimetic intermediate representation:
+
+```python
+def perceptual_synthesis(intermediate_rep, diffusion_model):
+    """Use diffusion model to synthesize visual output."""
+    # Condition diffusion model on neuromimetic features
+    synthesized = diffusion_model.sample(
+        condition=intermediate_rep,
+        guidance_strength=7.5
+    )
+    return synthesized
+```
+
+## Key Design Principles
+
+1. **Biological plausibility**: Each stage maps to known HVS mechanisms
+2. **Modality bridging**: Intermediate space reduces neural-visual gap
+3. **Evidence-driven**: Grounded in neurophysiological evidence
+4. **Hierarchical processing**: Respects the feedforward hierarchy of visual cortex
+
+## Architecture Overview
+
+```
+Neural Signal → [Retinal Model] → [LGN Model] → [V1-V4 Models] → [IT Cortex]
+                                                                    ↓
+                    Image ← [Diffusion Generator] ← [Perceptual Space]
+```
+
+## Comparison with Direct Mapping
+
+| Aspect | Direct Mapping | BI-Cap |
+|--------|---------------|--------|
+| Modality gap | Large | Reduced via intermediate space |
+| Biological grounding | None | HVS-inspired |
+| Interpretability | Low | High (each stage maps to biology) |
+| Generalization | Poor | Better (shared biological priors) |
 
 ## Applications
 
-- Brain-computer interfaces for visual communication
-- Neural prosthetics for visual restoration
-- Cognitive neuroscience research
-- Neurological disorder assessment
+- Brain-computer interfaces for communication
+- Visual prosthetics
+- Neuroimaging-based content reconstruction
+- Cognitive neuroscience research tools
 
 ## References
 
-- Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation for Visual Decoding
-- Authors: Feixue Shao, Guangze Shi, Xueyu Liu et al.
-- arXiv: 2604.17927
-- Published: 2026-04-20
-- Categories: cs.CV, cs.AI
-
-## Related Skills
-- [[eeg2vision-multimodal-eeg-framework-2d-visual]]
-- [[meta-learning-in-context-brain-decoding-v4]]
-- [[brain-dit-fmri-foundation-model-v4]]
+- BI-Cap paper: arXiv:2604.17927 (2026-04-20)
+- HVS processing: Hubel & Wiesel (1962), receptive fields
+- Neural decoding: Naselaris et al. (2011), encoding/decoding models

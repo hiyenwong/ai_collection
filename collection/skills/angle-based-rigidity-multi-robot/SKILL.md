@@ -94,22 +94,6 @@ class AngleRigidityFramework:
         
         return R
     
-    def _angle_constraint_gradient(self, i, j, k):
-        """Compute gradient of angle at j w.r.t. positions of i, j, k"""
-        p_i = self.positions[i]
-        p_j = self.positions[j] 
-        p_k = self.positions[k]
-        
-        # Vectors from j to neighbors
-        v_ji = p_i - p_j
-        v_jk = p_k - p_j
-        
-        # Compute gradient (simplified)
-        grad = np.zeros(2 * self.n_robots)
-        # Gradient w.r.t. p_i, p_j, p_k
-        # ... implementation details ...
-        return grad
-    
     def is_rigid(self):
         """Check if framework is angle rigid"""
         R = self.rigidity_matrix()
@@ -165,7 +149,6 @@ def distributed_rigidity_control(robot_id, positions, desired_angles):
                                      positions[k])
             
             # Proportional control
-            k_p = 0.5  # Proportional gain
             control_input += -k_p * error * gradient
     
     return control_input
@@ -216,9 +199,7 @@ def simulate_formation_control(n_robots, duration, dt):
     Simulate multi-robot formation with angle rigidity control
     """
     # Initialize positions (slightly perturbed)
-    positions = initialize_formation(n_robots)
-    noise = np.random.randn(n_robots, 2) * 0.01  # Small perturbation
-    positions = positions + noise
+    positions = initialize_formation(n_robots) + noise
     
     # Define desired angles
     desired_angles = compute_desired_angles(n_robots)
@@ -298,61 +279,8 @@ class RobotController:
 
 - **Paper**: Angle-based Localization and Rigidity Maintenance Control for Multi-Robot Networks
 - **Authors**: J. Francisco Presenza, Leonardo J. Colombo, Juan I. Giribet et al.
-- **arXiv**: [2604.11754](https://arxiv.org/abs/2604.11754) (2026-04-13)
+- **arXiv**: 2604.11754 (2026-04-13)
 - **Category**: eess.SY (Systems and Control)
-
-## Tools Used
-
-- Python 3.x with NumPy
-- Matplotlib (for visualization)
-- ROS/ROS2 (optional, for robot deployment)
-
-## Instructions for Agents
-
-### Step-by-Step Implementation
-
-1. **Define Formation**: Create initial robot positions and angle constraints
-2. **Check Rigidity**: Verify the framework is angle rigid using rigidity matrix
-3. **Implement Control**: Deploy distributed control law on each robot
-4. **Run Simulation**: Test in simulator before hardware deployment
-5. **Deploy**: Transfer to physical robots
-
-### Example Workflow
-
-```python
-# 1. Define formation
-positions = np.array([[0,0], [1,0], [1,1], [0,1]])
-constraints = [(3,0,1,np.pi/2), (0,1,2,np.pi/2), ...]
-
-# 2. Check rigidity
-framework = AngleRigidityFramework(positions, constraints)
-assert framework.is_rigid(), "Formation not rigid!"
-
-# 3. Run control loop
-for t in range(timesteps):
-    for robot_id in range(n_robots):
-        velocity = distributed_rigidity_control(robot_id, positions, constraints)
-        update_position(robot_id, velocity)
-```
-
-## Error Handling
-
-### Common Issues
-
-1. **Collinear Robots**: When three robots are collinear, angle is undefined
-   - **Solution**: Add small perturbation to positions
-   
-2. **Non-Rigid Formation**: Framework can flex
-   - **Solution**: Add more angle constraints or robots
-   
-3. **Disconnected Graph**: Sensing graph is not connected
-   - **Solution**: Ensure minimum spanning tree in sensing topology
-
-### Safety Considerations
-
-- Always validate rigidity before deployment
-- Use soft constraints to prevent collision
-- Monitor convergence in simulation first
 
 ## Related Skills
 
@@ -360,43 +288,6 @@ for t in range(timesteps):
 - control-systems
 - multi-agent-systems
 - robotics
-
-## Examples
-
-**User**: "Create a formation control system for 4 warehouse robots using angle rigidity"
-
-**Agent**: I'll design an angle-based rigidity control system for your warehouse robots.
-
-```python
-import numpy as np
-
-# Define 4-robot square formation
-positions = np.array([
-    [0, 0],    # Robot 0
-    [1, 0],    # Robot 1
-    [1, 1],    # Robot 2
-    [0, 1]     # Robot 3
-])
-
-# Angle constraints (at vertex, between neighbors)
-angle_constraints = [
-    (3, 0, 1, np.pi/2),  # Angle at robot 0 between 3 and 1
-    (0, 1, 2, np.pi/2),  # Angle at robot 1 between 0 and 2
-    (1, 2, 3, np.pi/2),  # Angle at robot 2 between 1 and 3
-    (2, 3, 0, np.pi/2),  # Angle at robot 3 between 2 and 0
-]
-
-# Verify formation rigidity
-framework = AngleRigidityFramework(positions, angle_constraints)
-print(f"Formation is rigid: {framework.is_rigid()}")
-
-# Deploy distributed control
-for robot_id in range(4):
-    controller = RobotController(robot_id, angle_constraints)
-    controller.update()  # Each robot runs locally
-```
-
-This maintains the square formation using only angle measurements, no distance sensors required.
 
 ## Notes
 

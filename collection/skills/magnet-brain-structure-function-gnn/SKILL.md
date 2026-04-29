@@ -1,97 +1,250 @@
 ---
 name: magnet-brain-structure-function-gnn
-description: Multi-Scale Adaptive Graph Network (MAGNet) for learning structural-functional brain representations. Models structure-function coupling for cognitive insight.
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [brain-network, structure-function, graph-attention, cognitive-insight, gnn, neuroimaging]
-    source_paper: "Learning Structural-Functional Brain Representations through Multi-Scale Adaptive Graph Attention for Cognitive Insight (arXiv:2603.29967v1)"
+description: "Multi-scale Adaptive Graph Network (MAGNet) for learning structural-functional brain representations. Transformer-style GNN that adaptively learns structure-function interactions from multi-modal brain imaging (sMRI, fMRI). Use for: brain disorder diagnosis, cognitive state prediction, Alzheimer's detection, brain connectivity analysis. Activation keywords: MAGNet, brain structure-function, graph neural network, brain imaging, fMRI, sMRI, cognitive insight, brain disorder diagnosis."
 ---
 
-# MAGNet: Multi-Scale Adaptive Graph for Brain Structure-Function
+# MAGNet: Multi-Scale Adaptive Graph Network for Brain Structure-Function Learning
+
+MAGNet is a Transformer-style graph neural network framework that adaptively learns interactions between brain structure and function from multi-modal imaging data.
 
 ## Overview
-MAGNet (Multi-scale Adaptive Graph Network) learns joint structural-functional brain representations through adaptive graph attention. By modeling how structural connectivity constrains and enables functional dynamics across multiple spatial scales, the framework provides cognitive insights into brain organization.
 
-## Core Concepts
+Understanding how brain structure and function interact is key to explaining intelligence. MAGNet addresses the challenge of modeling these complementary aspects jointly:
 
-### Multi-Scale Architecture
-- **Local Scale**: Regional connectivity patterns within brain modules
-- **Mesoscale**: Inter-module connectivity and hub regions
-- **Global Scale**: Whole-brain integration and small-world topology
+- **Structural Connectome**: Captures anatomical connectivity between brain regions
+- **Functional Connectome**: Captures dynamic activity correlations
+- **Multi-Scale Learning**: Extracts features at multiple scales using adaptive attention
+
+## Core Architecture
+
+### Source-Based Morphometry (SBM)
+- Extracts inter-regional morphological features from structural MRI
+- Captures structural covariation patterns across brain regions
+- Provides structural prior for functional analysis
 
 ### Adaptive Graph Attention
-- Attention weights adapt based on both structural and functional features
-- Learns which structural connections are most relevant for functional prediction
-- Dynamic re-weighting across scales
+- Multi-head attention mechanism over brain regions
+- Learns dynamic importance weights for structural-functional coupling
+- Captures both local and global connectivity patterns
 
-### Structure-Function Coupling
-- Structural connectome (from DTI) as graph scaffold
-- Functional connectome (from fMRI) as node dynamics
-- Coupling strength varies by region and cognitive state
+### Multi-Scale Feature Learning
+- Hierarchical feature extraction at multiple spatial scales
+- Aggregates information from micro to macro brain organization
+- Enables comprehensive brain state representation
 
-## Implementation Pattern
+## Implementation
+
+### Data Preprocessing
+
 ```python
-class MAGNet(nn.Module):
-    def __init__(self, n_regions, n_scales=3, hidden_dim=128):
-        super().__init__()
-        self.scales = nn.ModuleList([
-            ScaleAttention(n_regions, hidden_dim, scale_factor=2**i)
-            for i in range(n_scales)
-        ])
-        self.fusion = nn.Linear(hidden_dim * n_scales, hidden_dim)
-        self.decoder = nn.Linear(hidden_dim, n_regions)
+import numpy as np
+import torch
+from torch_geometric.data import Data
+
+def preprocess_brain_data(sMRI_path, fMRI_path, atlas):
+    """Preprocess multi-modal brain imaging data."""
+    # Load and parcellate sMRI
+    sMRI_data = load_nifti(sMRI_path)
+    structural_features = extract_sbm_features(sMRI_data, atlas)
     
-    def forward(self, structural_conn, functional_signals):
-        scale_features = []
-        for scale_module in self.scales:
-            feat = scale_module(structural_conn, functional_signals)
-            scale_features.append(feat)
-        fused = torch.cat(scale_features, dim=-1)
-        fused = self.fusion(fused).relu()
-        return self.decoder(fused)
+    # Load and parcellate fMRI
+    fMRI_data = load_nifti(fMRI_path)
+    functional_features = extract_functional_connectivity(fMRI_data, atlas)
+    
+    # Build adjacency matrix from structural connectivity
+    adj_matrix = build_structural_adjacency(structural_features)
+    edge_index = dense_to_sparse(adj_matrix)
+    
+    # Create PyG Data object
+    data = Data(
+        x=torch.tensor(functional_features, dtype=torch.float),
+        edge_index=edge_index,
+        structural_attr=torch.tensor(structural_features, dtype=torch.float)
+    )
+    
+    return data
+```
+
+### MAGNet Model
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.nn import GATConv, global_mean_pool
+
+class MAGNet(nn.Module):
+    """Multi-Scale Adaptive Graph Network for brain analysis."""
+    
+    def __init__(self, in_channels, hidden_channels=128, out_channels=2,
+                 num_heads=4, num_layers=3):
+        super().__init__()
+        
+        self.num_layers = num_layers
+        
+        # Initial projection
+        self.node_encoder = nn.Linear(in_channels, hidden_channels)
+        self.structural_encoder = nn.Linear(in_channels, hidden_channels)
+        
+        # Multi-scale GAT layers
+        self.convs = nn.ModuleList()
+        self.structural_fusion = nn.ModuleList()
+        
+        for i in range(num_layers):
+            self.convs.append(
+                GATConv(hidden_channels, hidden_channels // num_heads,
+                       heads=num_heads, concat=True, dropout=0.1)
+            )
+            self.structural_fusion.append(
+                nn.Sequential(
+                    nn.Linear(hidden_channels * 2, hidden_channels),
+                    nn.ReLU(),
+                    nn.Dropout(0.1)
+                )
+            )
+        
+        # Multi-scale pooling
+        self.scale_weights = nn.Parameter(torch.ones(num_layers))
+        
+        # Classification head
+        self.classifier = nn.Sequential(
+            nn.Linear(hidden_channels * num_layers, hidden_channels),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(hidden_channels, out_channels)
+        )
+        
+    def forward(self, data):
+        """Forward pass."""
+        x, edge_index = data.x, data.edge_index
+        s_attr = data.structural_attr
+        
+        # Encode features
+        x = F.relu(self.node_encoder(x))
+        s = F.relu(self.structural_encoder(s_attr))
+        
+        # Multi-scale feature extraction
+        multi_scale_features = []
+        
+        for i in range(self.num_layers):
+            # Graph attention
+            x = self.convs[i](x, edge_index)
+            x = F.relu(x)
+            
+            # Fuse structural information
+            x_fused = torch.cat([x, s], dim=-1)
+            x = self.structural_fusion[i](x_fused)
+            
+            multi_scale_features.append(x)
+        
+        # Adaptive scale aggregation
+        scale_weights = F.softmax(self.scale_weights, dim=0)
+        aggregated = torch.cat([
+            multi_scale_features[i] * scale_weights[i]
+            for i in range(self.num_layers)
+        ], dim=-1)
+        
+        # Global pooling
+        if hasattr(data, 'batch'):
+            pooled = global_mean_pool(aggregated, data.batch)
+        else:
+            pooled = aggregated.mean(dim=0, keepdim=True)
+        
+        # Classification
+        out = self.classifier(pooled)
+        
+        return out
+```
+
+### Training
+
+```python
+def train_magnet(model, train_loader, val_loader, epochs=100, lr=1e-3):
+    """Train MAGNet model."""
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-5)
+    criterion = nn.CrossEntropyLoss()
+    
+    best_val_acc = 0
+    
+    for epoch in range(epochs):
+        # Training
+        model.train()
+        train_loss = 0
+        train_correct = 0
+        
+        for data in train_loader:
+            optimizer.zero_grad()
+            out = model(data)
+            loss = criterion(out, data.y)
+            loss.backward()
+            optimizer.step()
+            
+            train_loss += loss.item()
+            pred = out.argmax(dim=1)
+            train_correct += (pred == data.y).sum().item()
+        
+        # Validation
+        model.eval()
+        val_correct = 0
+        
+        with torch.no_grad():
+            for data in val_loader:
+                out = model(data)
+                pred = out.argmax(dim=1)
+                val_correct += (pred == data.y).sum().item()
+        
+        val_acc = val_correct / len(val_loader.dataset)
+        
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            torch.save(model.state_dict(), 'best_magnet.pt')
+        
+        if epoch % 10 == 0:
+            print(f"Epoch {epoch}: Val Acc={val_acc:.4f}")
+    
+    return best_val_acc
 ```
 
 ## Applications
-- Brain structure-function coupling analysis
-- Cognitive trait prediction from neuroimaging
-- Brain network biomarker discovery
-- Personalized neuroscience
 
-## Activation Keywords
-- structure-function brain coupling, multi-scale brain network, adaptive graph attention brain, MAGNet brain model, structural connectome analysis, 脑结构功能耦合, 多尺度脑网络
+### Alzheimer's Disease Detection
+- Classify AD vs. healthy controls
+- Uses structural MRI for morphological features
+- Uses fMRI for functional connectivity
 
-## References
-- Learning Structural-Functional Brain Representations through Multi-Scale Adaptive Graph Attention for Cognitive Insight
-- Authors: Badhan Mazumder, Sir-Lord Wiafe, Aline Kotoski, Vince D. Calhoun, Dong Hye Ye
-- Published: 2026-03-31
-- arXiv: https://arxiv.org/abs/2603.29967v1
+### Cognitive State Prediction
+- Predict cognitive scores from brain imaging
+- Multi-task learning for different cognitive domains
 
-## Tools Used
+### Brain Disorder Diagnosis
+- Generalizable across different neurological conditions
+- Transfer learning from large datasets
 
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
+## Key Features
 
-## Instructions for Agents
+1. **Adaptive Attention**: Learns dynamic importance of connections
+2. **Multi-Scale**: Captures brain organization at multiple levels
+3. **Structure-Function Fusion**: Combines complementary information
+4. **Interpretable**: Attention weights reveal important brain regions
 
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
+## Data Requirements
 
-## Examples
+- **sMRI**: T1-weighted structural MRI
+- **fMRI**: Resting-state or task-based functional MRI
+- **Atlas**: Brain parcellation (e.g., AAL, Desikan-Killiany)
 
-### Basic Magnet Brain Structure Function Gnn usage
-```
-User: "Help me with magnet brain structure function gnn"
-→ Understand requirements → Execute actions → Provide results
-```
+## Performance
 
-### Advanced usage
-```
-User: "I need detailed magnet brain structure function gnn assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- State-of-the-art on ADNI dataset for Alzheimer's detection
+- Improved generalization across different scanners/sites
+- Robust to missing modalities
+
+## Reference
+
+- Paper: "Learning Structural-Functional Brain Representations through Multi-Scale Adaptive Graph Attention for Cognitive Insight" (arXiv:2603.29967v1, March 2026)
+
+## Tools
+
+- PyTorch and PyTorch Geometric
+- Nilearn for neuroimaging preprocessing
+- ANTs or FSL for image registration

@@ -65,38 +65,3 @@ Comprehensive taxonomy and analysis of learning algorithms for Spiking Neural Ne
 3. Validate biological plausibility against neuroscientific data
 4. Test scalability to deeper architectures
 5. Evaluate robustness to noise and parameter variations
-
-## Activation Keywords
-
-- "snn-learning-survey"
-- "snn learning survey"
-- "use snn learning survey"
-- "snn learning survey help"
-- "snn learning survey tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Snn Learning Survey usage
-```
-User: "Help me with snn learning survey"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed snn learning survey assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```

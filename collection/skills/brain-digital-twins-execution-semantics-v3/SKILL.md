@@ -1,132 +1,96 @@
 ---
 name: brain-digital-twins-execution-semantics-v3
-description: Framework for brain digital twins centered on execution semantics, bridging computational brain models to executable representations for personalized medicine
-version: 1.0.0
-author: Research Synthesis
-license: MIT
+description: "Brain digital twins execution semantics framework bridging computational brain models to executable digital twins with proper execution semantics. Enables individualized brain representations, neuro-neuromorphic systems, and clinical intervention prediction. Activation: brain digital twin, execution semantics, neuromorphic, clinical prediction, personalized medicine, brain model, neuro-engineering"
 metadata:
   hermes:
-    tags: [brain-digital-twins, execution-semantics, personalized-medicine, computational-modeling]
     source_paper: "From Brain Models to Executable Digital Twins: Execution Semantics and Neuro-Neuromorphic Systems (arXiv:2604.13574)"
-    authors: "Alexandre Muzy"
-    published: "2026-04-15"
-    category: "neuroscience"
+    tags: [brain-digital-twin, execution-semantics, neuromorphic, clinical]
 ---
 
 # Brain Digital Twins Execution Semantics Framework
 
 ## Overview
-This methodology bridges computational brain models to executable digital twins with proper execution semantics, enabling individualized brain representations. The framework addresses the gap between theoretical brain models and their practical deployment as personalized digital twins.
+
+This methodology provides a formal framework for bridging computational brain models to executable digital twins with proper execution semantics. It enables individualized brain representations that can predict responses to clinical interventions, bridging the gap between abstract neural models and practical clinical applications.
+
+Source: arXiv:2604.13574 (2026-04-15)
+
+## Updated 2026-04-20: Physically Constrained Executability
+
+The survey introduces **physically constrained executability** as a unifying perspective for brain digital twin development. Key updates from the latest version:
+
+### Executability Framework
+- Models must satisfy physical constraints to be truly executable
+- Bridges the gap between abstract mathematical models and runnable simulations
+- Defines criteria for what makes a brain model "executable" vs. merely descriptive
+- Neuro-neuromorphic systems as a pathway to executable brain twins
+
+### Survey Contributions
+1. **Unified Perspective**: Physically constrained executability as organizing principle
+2. **Model Taxonomy**: Classification of brain models by executability level
+3. **Implementation Roadmap**: From computational models to executable digital twins
+4. **Clinical Translation Pathway**: How executability enables personalized medicine
+
+## Core Framework
+
+**Three-Level Architecture**:
+1. **Computational Model**: Mathematical description of neural dynamics
+2. **Execution Semantics**: Formal specification of how the model runs
+3. **Digital Twin**: Individualized instance with patient-specific parameters
 
 ## Key Concepts
 
 ### Execution Semantics
-- Formal definition of how brain models execute over time
-- State transitions and temporal dynamics representation
-- Mapping between biological processes and computational states
+- Defines how brain model states evolve over time
+- Specifies interaction protocols between model components
+- Ensures reproducible and verifiable simulations
 
-### Individualized Brain Representation
-- Patient-specific parameter calibration
-- Multi-scale modeling from cellular to network level
-- Integration of structural and functional connectivity data
-
-### Digital Twin Architecture
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  Biological     │    │  Computational  │    │  Clinical       │
-│  Brain Model    │───→│  Execution      │───→│  Application    │
-│  (Patient Data) │    │  Semantics      │    │  (Treatment)    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+### Individualization Pipeline
+1. **Baseline model**: Generic brain network architecture
+2. **Parameter fitting**: Patient-specific data (EEG, fMRI)
+3. **Validation**: Cross-check with clinical observations
+4. **Prediction**: Simulate intervention outcomes
 
 ## Implementation Pattern
 
 ```python
-class BrainDigitalTwin:
-    """Executable brain digital twin with proper execution semantics."""
-    
-    def __init__(self, patient_data, model_config):
-        self.state = self.initialize_state(patient_data)
-        self.dynamics = self.load_dynamics(model_config)
-        self.execution_context = ExecutionContext()
-    
-    def step(self, dt=1.0):
-        """Execute one time step with proper semantics."""
-        # 1. Evaluate current state
-        current_state = self.state.copy()
+from abc import ABC, abstractmethod
+
+class BrainDigitalTwin(ABC):
+    def __init__(self, patient_data):
+        self.parameters = self.fit_parameters(patient_data)
+        self.state = self.initialize_state()
         
-        # 2. Apply dynamics (differential equations)
-        derivatives = self.dynamics(current_state)
-        
-        # 3. Update state (numerical integration)
-        new_state = self.integrate(current_state, derivatives, dt)
-        
-        # 4. Validate execution semantics
-        self.execution_context.validate_transition(current_state, new_state)
-        
-        # 5. Record execution trace
-        self.execution_context.record(current_state, new_state, dt)
-        
-        self.state = new_state
-        return new_state
-    
-    def calibrate(self, clinical_observations):
-        """Calibrate model to patient-specific data."""
-        # Parameter estimation using clinical data
+    @abstractmethod
+    def step(self, intervention=None, dt=1.0):
+        """Execute one simulation step with optional intervention"""
         pass
+    
+    @abstractmethod
+    def predict_intervention(self, intervention_type, parameters):
+        """Predict response to clinical intervention"""
+        pass
+
+class NeuromorphicTwin(BrainDigitalTwin):
+    def __init__(self, patient_data, hardware_config):
+        super().__init__(patient_data)
+        self.hardware = hardware_config
+        
+    def deploy_to_hardware(self):
+        """Map digital twin to neuromorphic hardware"""
+        mapping = self.optimize_mapping(self.parameters)
+        return NeuromorphicDeployment(mapping)
 ```
 
 ## Applications
-- Personalized treatment planning
-- Surgical intervention simulation
-- Drug response prediction
-- Disease progression modeling
 
-## References
-- From Brain Models to Executable Digital Twins: Execution Semantics and Neuro-Neuromorphic Systems
-- Authors: Alexandre Muzy
-- arXiv: 2604.13574 (2026-04-15)
+- Personalized epilepsy treatment planning
+- Deep brain stimulation parameter optimization
+- Neurodegenerative disease progression prediction
+- Neuro-neuromorphic system design
 
-## Activation
-- brain digital twins
-- execution semantics
-- personalized brain modeling
-- computational brain models
-- individualized brain representation
-- 脑数字孪生
-- 执行语义
+## Related Skills
 
-## Activation Keywords
-
-- "brain-digital-twins-execution-semantics-v3"
-- "brain digital twins execution semantics v3"
-- "use brain digital twins execution semantics v3"
-- "brain digital twins execution semantics v3 help"
-- "brain digital twins execution semantics v3 tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Brain Digital Twins Execution Semantics V3 usage
-```
-User: "Help me with brain digital twins execution semantics v3"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed brain digital twins execution semantics v3 assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- [[brain-dit-fmri-foundation-model-v4]]
+- [[brain-inspired-memory-ai-agents]]
+- [[neural-digital-twins-bci]]

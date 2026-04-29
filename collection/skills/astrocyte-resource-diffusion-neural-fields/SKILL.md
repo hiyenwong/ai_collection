@@ -1,150 +1,134 @@
 ---
 name: astrocyte-resource-diffusion-neural-fields
-description: Astrocytic resource diffusion stabilizes persistent activity in neural field models, bridging metabolic support and neural circuit models
+description: "Coupled astrocyte-neural field model for studying how glial metabolic support stabilizes persistent activity. Astrocytic resource diffusion provides spatially distributed energy buffering that prevents runaway excitation. Activation: astrocyte diffusion, neural field, persistent activity, metabolic support, glial-neuronal coupling."
 version: 1.0.0
-author: Research Synthesis
-license: MIT
 metadata:
   hermes:
-    tags: [astrocytes, neural-fields, working-memory, metabolic-support, persistent-activity]
-    source_paper: "Astrocytic resource diffusion stabilizes persistent activity in neural fields (arXiv:2604.10036)"
-    authors: "Noah Palmer, Heather L. Cihak, Daniele Avitabile, Zachary P. Kilpatrick"
-    published: "2026-04-11"
-    category: "neuroscience"
+    source_paper: "Astrocytic resource diffusion stabilizes persistent activity (arXiv:2604.10036)"
+    tags: [neuroscience, astrocyte, neural-field, persistent-activity, diffusion]
 ---
 
-# Astrocyte Resource Diffusion in Neural Fields
+# Astrocytic Resource Diffusion Stabilizes Persistent Activity
+
+## Source Paper
+- **Title**: Astrocytic resource diffusion stabilizes persistent activity
+- **arXiv**: 2604.10036
+- **PDF**: https://arxiv.org/pdf/2604.10036
 
 ## Overview
-This paper introduces astrocyte network support into spatially extended neural circuit models, demonstrating how astrocytic resource diffusion stabilizes working memory persistent activity. It bridges the gap between metabolic support mechanisms and neural circuit dynamics.
 
-## Key Concepts
+Persistent neural activity underlying working memory requires sustained synaptic transmission, yet the metabolic and neurotransmitter support provided by astrocytes is rarely modeled. This paper introduces a **coupled astrocyte-neural field model** showing how astrocytic resource diffusion stabilizes persistent activity through spatially distributed energy buffering.
+
+## Core Concepts
 
 ### Astrocyte-Neuron Metabolic Coupling
-- Astrocytes provide metabolic support to neurons
-- Resource diffusion across astrocyte network
-- Stabilization of persistent activity states
+- Astrocytes supply energy metabolites (lactate) to active neurons
+- Resource diffusion creates spatial energy gradients
+- Active regions receive preferential metabolic support
+- Prevents metabolic collapse during sustained activity
 
-### Neural Field Model with Astrocytic Support
-```
-Neural Field (Activity u) <---> Astrocyte Network (Resources r)
-                                      |
-                               Diffusion Process
-```
+### Neural Field with Resource Constraints
+- Traditional neural fields assume unlimited energy supply
+- This model couples neural activity dynamics with resource diffusion
+- Resource depletion creates activity-dependent inhibition
+- Spatial coupling through astrocytic network (gap junctions)
+
+### Stabilization Mechanism
+1. Persistent activity increases local metabolic demand
+2. Astrocytic diffusion supplies resources from neighboring regions
+3. Resource availability limits maximum sustainable activity
+4. Prevents runaway excitation without explicit inhibitory circuits
 
 ## Implementation Pattern
 
 ```python
 import numpy as np
-from scipy.ndimage import gaussian_filter
 
 class AstrocyteNeuralField:
-    """Neural field model with astrocytic resource diffusion."""
+    """Coupled astrocyte-neural field model."""
     
-    def __init__(self, grid_size=100, dx=0.1, dt=0.01):
-        self.grid_size = grid_size
+    def __init__(self, n_grid=64, dx=1.0, diffusion_coeff=0.1):
+        self.n = n_grid
         self.dx = dx
-        self.dt = dt
-        self.u = np.zeros(grid_size)  # Neural activity
-        self.r = np.ones(grid_size)   # Astrocytic resources
-        self.w = self._mexican_hat_kernel()
-    
-    def _mexican_hat_kernel(self):
-        """Excitatory center, inhibitory surround kernel."""
-        x = np.linspace(-1, 1, self.grid_size)
-        w_excite = np.exp(-x**2 / 0.1)
-        w_inhibit = 0.5 * np.exp(-x**2 / 0.5)
-        return w_excite - w_inhibit
-    
-    def step(self, stimulus=None):
-        """One time step of coupled dynamics."""
-        synaptic_input = np.convolve(self.u, self.w, mode='same') * self.dx
-        modulated_input = synaptic_input * self.r
         
-        du = -self.u + np.tanh(modulated_input)
-        if stimulus is not None:
-            du += stimulus
-        self.u += self.dt * du
+        # Neural activity
+        self.u = np.zeros(n_grid)
         
-        # Astrocytic resource dynamics
-        consumption = self.u * self.r
-        diffusion = gaussian_filter(self.r, sigma=2) - self.r
-        dr = -consumption + 0.1 * diffusion + 0.01 * (1 - self.r)
-        self.r += self.dt * dr
+        # Astrocytic resources
+        self.r = np.ones(n_grid)  # Normalized resource level
+        
+        # Parameters
+        self.D = diffusion_coeff  # Diffusion coefficient
+        self.tau_r = 10.0  # Resource recovery time
+        self.r_production = 0.1  # Baseline production rate
+        
+        # Neural field kernel (Mexican hat)
+        x = np.arange(n_grid) * dx
+        self.kernel = self._make_kernel(x)
+    
+    def _make_kernel(self, x):
+        """Mexican hat connectivity kernel."""
+        sigma_exc = 2.0
+        sigma_inh = 4.0
+        w_exc = 1.0
+        w_inh = 0.5
+        return (w_exc * np.exp(-x**2 / (2*sigma_exc**2)) - 
+                w_inh * np.exp(-x**2 / (2*sigma_inh**2)))
+    
+    def laplacian(self, field):
+        """Discrete Laplacian for diffusion."""
+        return np.roll(field, -1) - 2*field + np.roll(field, 1)
+    
+    def step(self, external=0.0, dt=0.01):
+        """One simulation step."""
+        # Neural field update (resource-modulated)
+        convolved = np.convolve(self.u, self.kernel, mode='same')
+        # Activity limited by available resources
+        effective_u = self.u * self.r
+        du = -self.u + np.tanh(convolved * effective_u) + external
+        
+        # Resource diffusion and consumption
+        dr = self.D * self.laplacian(self.r) / self.dx**2
+        dr -= 0.1 * self.u * self.r  # Consumption by activity
+        dr += (1 - self.r) / self.tau_r  # Recovery
+        
+        # Euler integration
+        self.u += dt * du
+        self.r += dt * dr
+        
         self.r = np.clip(self.r, 0, 1)
         
         return self.u.copy(), self.r.copy()
     
-    def simulate_working_memory(self, stimulus_duration=100):
-        """Simulate working memory with astrocytic stabilization."""
-        history = {'u': [], 'r': []}
+    def stimulate(self, position, amplitude, duration, dt=0.01):
+        """Apply localized stimulation and observe persistent activity."""
+        history_u = []
+        history_r = []
         
-        for t_idx in range(stimulus_duration):
-            stimulus = np.exp(-((np.arange(self.grid_size) - 50) ** 2) / 10)
-            u, r = self.step(stimulus)
-            history['u'].append(u)
-            history['r'].append(r)
+        for t in np.arange(0, duration, dt):
+            ext = np.zeros(self.n)
+            if t < 1.0:  # 1 second stimulus
+                ext[position] = amplitude
+            u, r = self.step(external=ext, dt=dt)
+            history_u.append(u.copy())
+            history_r.append(r.copy())
         
-        for t_idx in range(200):
-            u, r = self.step()
-            history['u'].append(u)
-            history['r'].append(r)
-        
-        return history
+        return np.array(history_u), np.array(history_r)
 ```
+
+## Key Findings
+- Astrocytic diffusion extends the range of stable persistent activity
+- Resource-limited regime prevents pathological synchronization
+- Spatial energy gradients emerge naturally from activity patterns
+- Model predicts experimentally testable metabolic signatures
 
 ## Applications
-- Working memory modeling
-- Metabolic-neural interaction studies
-- Neurodegenerative disease modeling
-- Brain energy metabolism research
+- **Working memory modeling**: Metabolically constrained persistent activity
+- **Seizure prediction**: Resource depletion as early warning
+- **Neuromorphic design**: Bio-inspired energy management
+- **Neurovascular coupling**: Predicting BOLD fMRI signals
 
-## References
-- Astrocytic resource diffusion stabilizes persistent activity in neural fields
-- Authors: Noah Palmer, Heather L. Cihak, Daniele Avitabile, Zachary P. Kilpatrick
-- arXiv: 2604.10036 (2026-04-11)
-
-## Activation
-- astrocyte resource diffusion
-- neural field models
-- working memory stabilization
-- metabolic support
-- persistent activity
-- 星形胶质细胞
-- 神经场模型
-- 工作记忆
-
-## Activation Keywords
-
-- "astrocyte-resource-diffusion-neural-fields"
-- "astrocyte resource diffusion neural fields"
-- "use astrocyte resource diffusion neural fields"
-- "astrocyte resource diffusion neural fields help"
-- "astrocyte resource diffusion neural fields tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Astrocyte Resource Diffusion Neural Fields usage
-```
-User: "Help me with astrocyte resource diffusion neural fields"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed astrocyte resource diffusion neural fields assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+## Related Skills
+- [[dual-timescale-neuron-astrocyte-memory]]
+- [[neural-dynamics-criticality]]
+- [[brain-network-controllability]]

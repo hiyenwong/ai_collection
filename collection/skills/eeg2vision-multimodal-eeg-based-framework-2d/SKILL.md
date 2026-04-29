@@ -1,85 +1,70 @@
 ---
 name: eeg2vision-multimodal-eeg-based-framework-2d
-description: "Reconstructing visual stimuli from non-invasive electroencephalography (EEG) remains challenging due to its low spatial resolution and high noise, par... Activation: 脑电图 (EEG) 信号处理, 神经信号解码"
+description: "... Activation: EEG, brain signal, electroencephalography, vision, visual reconstruction, image generation, multimodal fusion, multi-stage, sample-adaptive"
 ---
 
 # EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience
 
-## 概述
-Reconstructing visual stimuli from non-invasive electroencephalography (EEG) remains challenging due to its low spatial resolution and high noise, particularly under realistic low-density electrode configurations. To address this, we present EEG2Vision, a modular, end-to-end EEG-to-image framework that systematically evaluates reconstruction performance across different EEG resolutions (128, 64, 32, and 24 channels) and enhances visual quality through a prompt-guided post-reconstruction boosting mechanism. Starting from EEG-conditioned diffusion reconstruction, the boosting stage uses a multimodal large language model to extract semantic descriptions and leverages image-to-image diffusion to refine geometry and perceptual coherence while preserving EEG-grounded structure. Our experiments show that semantic decoding accuracy degrades significantly with channel reduction (e.g., 50-way Top-1 Acc from 89% to 38%), while reconstruction quality slight decreases (e.g., FID from 76.77 to 80.51
+## Overview
 
-## 来源论文
-- **标题**: EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience
-- **作者**: Emanuele Balloni, Emanuele Frontoni, Chiara Matti
+
+
+## Source Paper
+
+- **Title**: EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience
+- **Authors**: Emanuele Balloni, Emanuele Frontoni, Chiara Matti, Marina Paolanti, Roberto Pierdicca et al.
 - **arXiv**: 2604.08063v1
-- **发布日期**: 2026-04-09
-- **类别**: None
+- **Published**: 2026-04-09
+- **Category**: N/A
+- **PDF**: https://arxiv.org/pdf/2604.08063v1
 
-## 核心概念
-1. 脑电图 (EEG) 信号处理
-2. 神经信号解码
+## Key Concepts
 
-## 应用价值
-- 神经科学研究
-- 脑机接口开发
-- 计算神经科学建模
-- 神经信号分析
+### Main Contributions
+1. Novel methodology for brain signal analysis and decoding
+2. Integration of advanced neural network architectures
+3. Experimental validation on real-world datasets
 
-## 实现要点
-```python
-# 基于论文方法的示例实现框架
-import numpy as np
+### Technical Approach
+- Leverages deep learning for neural signal processing
+- Combines domain knowledge with machine learning techniques
+- Focuses on practical applicability and generalization
 
-class Eeg2VisionMultimodalEegBasedFramework2D:
-    def __init__(self):
-        pass
-    
-    def process(self, neural_data):
-        """
-        处理神经数据
-        
-        Args:
-            neural_data: 神经信号数据 (EEG, fMRI, spike trains)
-        
-        Returns:
-            processed: 处理后的特征表示
-        """
-        # 实现论文中的核心方法
-        return neural_data
-```
+## Practical Applications
 
-## 参考文献
-- Emanuele Balloni, Emanuele Frontoni, Chiara Matti. "EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience". arXiv:2604.08063v1, 2026.
+### Use Cases
+1. **Brain-Computer Interfaces**: Real-time neural signal decoding
+2. **Medical Diagnosis**: Automated analysis of brain activity patterns
+3. **Neuroscience Research**: Understanding neural mechanisms
+
+### Implementation Considerations
+- Requires domain expertise in neuroscience
+- May need specialized hardware (EEG, fMRI equipment)
+- Computational resources for model training
+
+## Related Work
+
+This work builds upon recent advances in:
+- Deep learning for neuroscience applications
+- Multimodal signal processing and fusion
+- Brain network analysis and connectivity
+
+## Limitations
+
+- Experimental validation may be dataset-specific
+- Generalization across subjects requires further study
+- Computational complexity for real-time applications
+
+## References
+
+- Emanuele Balloni et al. (2026). "EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience." arXiv:2604.08063v1.
 
 ## Activation Keywords
-- eeg2vision
-- EEG2Vision
-- eeg visual reconstruction
-- 脑电图视觉重建
-- EEG image decoding
-- eeg to image framework
-- neuro 脑电图 神经信号解码
 
-## Description
-EEG2Vision is a modular end-to-end EEG-to-image framework for reconstructing visual stimuli from non-invasive EEG signals. It evaluates reconstruction performance across different EEG channel configurations and enhances visual quality through prompt-guided post-reconstruction boosting using multimodal LLMs.
+- EEG, brain signal, electroencephalography, vision, visual reconstruction, image generation, multimodal fusion, multi-stage, sample-adaptive
+- neuroscience research
+- brain signal analysis
+- neural decoding
 
-## Tools Used
-- read
-- web_search
-- exec
-
-## Instructions for Agents
-1. When the user asks about EEG-based visual reconstruction or EEG2Vision, explain the framework's modular approach.
-2. Describe the channel reduction effects: semantic decoding accuracy degrades significantly (50-way Top-1 Acc from 89% to 38% when reducing from 128 to 24 channels).
-3. Explain the two-stage pipeline: EEG-conditioned diffusion reconstruction + multimodal LLM prompt-guided boosting.
-4. Help users implement or adapt the framework for their EEG datasets.
-5. Reference the arXiv paper (2604.08063v1) for technical details.
-
-## Examples
-**Example 1: Understanding the framework**
-User: "How does EEG2Vision reconstruct images from brain signals?"
-Agent: Explains the diffusion-based reconstruction pipeline and the role of multimodal LLMs in post-processing.
-
-**Example 2: Channel configuration advice**
-User: "I only have 32-channel EEG. Can I use EEG2Vision?"
-Agent: Notes that 32-channel EEG shows moderate performance degradation compared to 128-channel, and recommends channel selection strategies.
+---
+*Generated from arXiv paper on 2026-04-12*

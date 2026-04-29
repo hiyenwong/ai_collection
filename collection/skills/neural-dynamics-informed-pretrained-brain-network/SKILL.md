@@ -6,7 +6,6 @@ source: arXiv:2603.07524v1
 categories: [cs.LG, cs.AI]
 status: active
 trigger: personalized, brain functional network, pre-trained, neural dynamics, brain parcellation, heterogeneous, virtual modulation, abnormal circuit
-description: "Neural Dynamics-Informed Pre-trained Framework for Personalized Brain Functional Network Construction"
 ---
 
 # Neural Dynamics-Informed Pre-trained Framework for Personalized Brain Functional Network Construction

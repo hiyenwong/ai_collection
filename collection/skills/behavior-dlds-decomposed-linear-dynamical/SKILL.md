@@ -6,7 +6,6 @@ source: arXiv:2603.05612v1
 categories: [q-bio.NC, cs.LG, stat.AP, stat.ML]
 status: active
 trigger: LDS, linear dynamical systems, behavior, decomposition, zebrafish, neural population, latent dynamics, subsystem, large-scale recording
-description: "Behavior-dLDS: Decomposed Linear Dynamical Systems for Neural Activity Constrained by Behavior"
 ---
 
 # Behavior-dLDS: Decomposed Linear Dynamical Systems for Neural Activity Constrained by Behavior

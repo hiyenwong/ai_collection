@@ -6,7 +6,6 @@ tags: [neuromodulator, credit-assignment, spiking-neural-network, reinforcement-
 activation_keywords: [neuromodulator, credit assignment, diffusion, temporal credit, spiking network learning, volume transmission]
 created: 2026-04-24
 source: arXiv:2603.08949
-description: "Neuromodulator Diffusion for Temporal Credit Assignment"
 ---
 
 # Neuromodulator Diffusion for Temporal Credit Assignment

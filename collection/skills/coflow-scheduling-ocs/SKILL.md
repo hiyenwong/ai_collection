@@ -1,110 +1,134 @@
 ---
 name: coflow-scheduling-ocs
-description: Coflow Scheduling in Multi-Core Optical Circuit Switching Networks with Performance Guarantees
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: ['coflow', 'optical-circuit-switching', 'data-center', 'scheduling', 'distributed-systems', 'networking']
-    source_paper: "Scheduling Coflows in Multi-Core OCS Networks with Performance Guarantee (arXiv:2604.08242v1)"
-    citations: 0
-    category: systems-engineering
+description: Coflow Scheduling in Multi-Core Optical Circuit Switching Networks with Performance Guarantee. Optimize parallel data flow coordination in distributed systems using optical circuit switching. Use for data center network optimization, coflow scheduling, and distributed job completion time reduction.
 ---
 
 # Coflow Scheduling in Multi-Core OCS Networks
 
+This skill implements approximation algorithms for coflow scheduling in multi-core Optical Circuit Switching (OCS) data center networks with provable performance guarantees.
+
 ## Overview
-Coflow provides a key application-layer abstraction for capturing communication patterns in distributed systems. Modern data centers employ multiple independent optical circuit switching (OCS) cores operating concurrently to meet massive bandwidth demands. This paper addresses coflow scheduling in multi-core OCS fabrics, extending beyond single-core and electrical packet switching (EPS) approaches.
 
-## Core Concepts
-- **Coflow Abstraction**: Application-level communication pattern representation
-- **Multi-Core OCS**: Multiple independent optical circuit switching cores
-- **Performance Guarantees**: Bounded completion times for coflow scheduling
-- **Circuit Switching**: Optical circuits for high-bandwidth, low-latency communication
-- **Job Completion Time**: Optimizing end-to-end application performance
+Coflow provides an application-layer abstraction for capturing communication patterns, enabling efficient coordination of parallel data flows to reduce job completion times in distributed systems. Modern data centers employ multiple independent OCS cores operating concurrently to meet massive bandwidth demands.
 
-## Implementation Pattern
-```python
-# Coflow Scheduling for Multi-Core OCS Networks
-from dataclasses import dataclass
-from typing import List, Dict
+**Key Features:**
+- Multi-core OCS network scheduling
+- Cross-core flow assignment optimization
+- Provable worst-case performance guarantees
+- Trace-driven validation with real workloads
 
-@dataclass
-class Flow:
-    src: int
-    dst: int
-    size: int
+## When to Use This Skill
 
-@dataclass  
-class Coflow:
-    id: int
-    flows: List[Flow]
-    arrival_time: float
+- Data center network optimization
+- Distributed job scheduling with communication patterns
+- Optical circuit switching network management
+- Coflow-aware resource allocation
 
-class MultiCoreOCSScheduler:
-    def __init__(self, num_cores: int, core_capacity: float):
-        self.num_cores = num_cores
-        self.core_capacity = core_capacity
-        self.circuit_duration = 10e-6
-    
-    def schedule_coflow(self, coflow: Coflow) -> Dict[int, List]:
-        schedule = {i: [] for i in range(self.num_cores)}
-        sorted_flows = sorted(coflow.flows, key=lambda f: f.size, reverse=True)
-        
-        for i, flow in enumerate(sorted_flows):
-            core_id = i % self.num_cores
-            duration = flow.size / (self.core_capacity / 8)
-            start_time = self._find_earliest_slot(core_id, flow, duration)
-            schedule[core_id].append((flow, start_time, duration))
-        
-        return schedule
+## Problem Challenges
+
+### Cross-Core Coupling
+- Traffic assignment across heterogeneous cores
+- Inter-core coordination complexity
+
+### Per-Core OCS Constraints
+- **Port Exclusivity**: Each port can support at most one circuit at a time
+- **Reconfiguration Delay**: Circuit setup time overhead
+- **Not-All-Stop Model**: One circuit's reconfiguration doesn't interrupt others
+
+## Algorithm Framework
+
+### Joint Optimization
+
+```
+Cross-Core Flow Assignment
+         ↓
+Per-Core Circuit Scheduling
+         ↓
+Minimize Weighted Coflow Completion Time (CCT)
 ```
 
-## Key Insights
-- Coflow abstraction captures application communication patterns
-- Multi-core OCS requires new scheduling approaches beyond single-core
-- Performance guarantees require careful circuit allocation
-- Optical circuit setup time impacts scheduling decisions
+### Approximation Algorithm
 
-## Applications
-- Data center networks
-- High-performance computing
-- Distributed machine learning training
-- Big data analytics platforms
+1. **Flow Assignment**: Distribute flows across available cores
+2. **Circuit Scheduling**: Schedule circuits within each core
+3. **Performance Guarantee**: Provable worst-case bound
+
+### Key Results
+
+- Approximation ratio for multi-core OCS
+- Extends to multi-core EPS (Electrical Packet Switching)
+- Reduces weighted CCT and tail CCT
+
+## Implementation Guide
+
+### Input
+
+- Coflow set with flow sizes and endpoints
+- Number of OCS cores
+- Port configuration per core
+- Reconfiguration delay
+
+### Algorithm Steps
+
+1. **Parse** coflow requests and network topology
+2. **Assign** flows to appropriate cores
+3. **Schedule** circuits considering reconfiguration delays
+4. **Output** completion times and resource allocation
+
+### Performance Metrics
+
+| Metric | Description |
+|--------|-------------|
+| Weighted CCT | Total weighted coflow completion time |
+| Tail CCT | 95th/99th percentile completion time |
+| Approximation Ratio | Worst-case performance bound |
+
+## Validation Results
+
+Trace-driven simulations using **Facebook workloads** demonstrate:
+- Effective reduction in weighted CCT
+- Improved tail CCT performance
+- Practical applicability to production workloads
 
 ## References
-- Scheduling Coflows in Multi-Core OCS Networks with Performance Guarantee (arXiv:2604.08242v1)
-- arXiv: https://arxiv.org/abs/2604.08242v1
 
+**Paper**: Scheduling Coflows in Multi-Core OCS Networks with Performance Guarantee
+- **Authors**: Xin Wang, Hong Shen, Hui Tian, Dong Wang
+- **arXiv**: 2604.08242
+- **Date**: 2026-04-09
+- **Categories**: cs.DC
 
-## Description
+## Related Skills
 
-This skill provides specialized capabilities for its domain.
+- `bandwidth-reduction-packetized-mpc`: Bandwidth reduction for packetized MPC
+- `distributed-system-resiliency`: Resilience patterns for distributed systems
 
-## Activation Keywords
-
-- keyword1
-- keyword2
-- keyword3
-
-## Tools Used
-
-- read: Read files
-- write: Write files
-- exec: Execute commands
 
 ## Instructions for Agents
 
-When this skill is activated:
+使用此技能时遵循以下流程：
 
-1. Identify the user's specific need
-2. Apply the specialized knowledge
-3. Provide clear guidance
+1. **理解问题**：分析输入需求和约束条件
+2. **选择方法**：根据场景选择合适的技术方案
+3. **执行操作**：按照方法论实施具体步骤
+4. **验证结果**：检查结果是否符合预期
 
 ## Examples
 
-```
-User: How do I use this skill?
-Agent: I'll help you with this skill...
-```
+### Example 1: Basic Usage
+
+**User:** 请帮我应用此技能
+
+**Agent:** 我将按照标准流程执行...
+
+### Example 2: Advanced Usage
+
+**User:** 有更复杂的场景需要处理
+
+**Agent:** 针对复杂场景，我将采用以下策略...
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`

@@ -1,5 +1,4 @@
 ---
-name: neuro-planner-llm-brain-interfaces
 title: LLM-Assisted Brain Stimulation Planning (Neuro-Planner)
 description: LLM-assisted transcranial electrical stimulation (tES) montage design using iterative reasoning. Applies LLM chain-of-thought reasoning to propose, simulate, evaluate, and refine brain stimulation montages with FEM-based E-field simulation feedback loop.
 activation: "brain stimulation planning, LLM tES, montage optimization, tDCS design, transcranial stimulation, computational neuromodulation, Neuro-Planner"

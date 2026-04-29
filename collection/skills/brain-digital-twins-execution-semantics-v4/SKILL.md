@@ -1,116 +1,37 @@
 ---
 name: brain-digital-twins-execution-semantics-v4
-description: Brain digital twins execution semantics framework bridging computational brain models to executable digital twins. Provides formal semantics for brain model execution, validation, and deployment. Trigger words: brain digital twin, execution semantics, brain model execution, digital twin, computational brain.
+category: ai_collection
+description: "Brain digital twins execution semantics survey bridging computational brain models to executable dynamical systems. Unifies DEVS formalism with neuro-neuromorphic platforms for multi-scale brain simulation. arXiv:2604.13574."
+arxiv_id: "2604.13574"
+date: 2026-04-19
+authors: Alexandre Muzy
 ---
 
-# Brain Digital Twins: Execution Semantics Framework
+# Brain Digital Twins Execution Semantics Framework
 
-## Paper Reference
-- **arXiv**: [2604.13574v1](https://arxiv.org/abs/2604.13574)
-- **Authors**: Alexandre Muzy et al.
-- **Published**: 2026-04-15
-- **Citations**: 0
+## Overview
+Brain digital twins aim to provide faithful, individualized computational representations of brains as dynamical systems, enabling mechanistic understanding and supporting prediction of clinical interventions. Based on arXiv:2604.13574 (2026-04-19). Current approaches remain fragmented across data pipelines, model classes, temporal scales, and simulation platforms. This paper bridges computational brain models to executable dynamical systems using execution semantics and the Discrete Event System Specification (DEVS) formalism.
 
-## Core Insight
+## Key Contributions
+1. **Execution Semantics Framework**: Formal bridge from brain models to executable digital twins
+2. **DEVS Formalism Integration**: Discrete Event System Specification for multi-scale brain simulation
+3. **Neuro-Neuromorphic Systems**: Unified framework spanning biological and artificial neural systems
+4. **Multi-Scale Integration**: Connects molecular, cellular, circuit, and systems-level models
 
-Brain digital twins require formal execution semantics to bridge computational models with real-world deployment. This framework defines how brain models are instantiated, executed, validated, and updated with patient-specific data.
-
-## Key Mechanism
-
-1. **Model Specification**: Formal description of brain model structure and dynamics
-2. **Execution Semantics**: Rules for model execution including time stepping and data flow
-3. **Patient-specific Calibration**: Mapping model parameters to individual data
-4. **Validation Pipeline**: Comparing model predictions with clinical measurements
-5. **Update Mechanism**: How twins evolve with new data
-
-## Implementation Pattern
-
-```python
-import numpy as np
-from dataclasses import dataclass
-from enum import Enum
-
-class ModelType(Enum):
-    RATE = "rate"
-    SPIKING = "spiking"
-    MEAN_FIELD = "mean_field"
-
-@dataclass
-class BrainModelSpec:
-    model_type: ModelType
-    n_regions: int
-    connectivity: np.ndarray
-    parameters: dict
-
-class BrainDigitalTwin:
-    def __init__(self, patient_id, spec):
-        self.patient_id = patient_id
-        self.spec = spec
-        self.state = np.zeros(spec.n_regions)
-        self.history = []
-    
-    def execute(self, n_steps, dt=1.0):
-        for _ in range(n_steps):
-            W = self.spec.connectivity
-            p = self.spec.parameters
-            tau, gain = p.get('tau', 10.0), p.get('gain', 1.0)
-            ds = (-self.state + np.tanh(gain * W @ self.state)) / tau
-            self.state = self.state + dt * ds
-            self.history.append(self.state.copy())
-        return np.array(self.history)
-    
-    def validate(self, empirical):
-        from scipy.stats import pearsonr
-        predicted = np.array(self.history)
-        corr, p_val = pearsonr(predicted.flatten(), empirical.flatten())
-        return corr
-```
+## Core Framework
+- Brain models as dynamical systems with formal execution semantics
+- DEVS provides compositional, hierarchical simulation capabilities
+- Enables cross-platform reproducibility and interoperability
+- Supports clinical intervention prediction and mechanistic understanding
 
 ## Applications
-
-- Personalized medicine for neurological disorders
-- Surgical planning (DBS, tumor resection)
-- Drug effect prediction
-- Clinical trial simulation
-- Brain stimulation optimization
+- Personalized brain modeling for clinical applications
+- Cross-platform brain simulation reproducibility
+- Multi-scale integration of neural models
+- Neuromorphic hardware validation against biological data
+- Clinical intervention prediction and treatment planning
 
 ## Related Skills
-
-- [[brain-digital-twins-execution-semantics]]
-- [[neural-digital-twins-bci]]
-- [[brain-dit-fmri-foundation-model]]
-
-## Activation Keywords
-
-- "brain-digital-twins-execution-semantics-v4"
-- "brain digital twins execution semantics v4"
-- "use brain digital twins execution semantics v4"
-- "brain digital twins execution semantics v4 help"
-- "brain digital twins execution semantics v4 tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Brain Digital Twins Execution Semantics V4 usage
-```
-User: "Help me with brain digital twins execution semantics v4"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed brain digital twins execution semantics v4 assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- brain-dit-universal-multi-state
+- computational-neuroscience-in-llm-era
+- neural-dynamics-universal-translator

@@ -386,48 +386,92 @@ class SwarmCoordinator:
 - **监控**: Prometheus, Grafana
 - **测试**: Chaos Engineering, Jepsen
 
+## 最新研究更新 (2026年4月)
+
+### Pattern 7: Distributed State Estimation with Unknown Inputs
+**Source**: arXiv:2604.11588
+
+**Pattern**: Distributed Unknown Input Observer (DUIO)
+- **Problem**: Large-scale systems with local unknown inputs
+- **Solution**: 
+  - Each node estimates maximal locally reconstructible state
+  - Distributed optimization fuses partial estimates
+  - Explicit error bound based on communication iterations
+  - Normalization for curvature anisotropy
+- **Key Insight**: Collaborative distributed optimization enables state estimation with unknown inputs
+
+### Pattern 8: Deep Learning for Sequential Decision Making
+**Source**: arXiv:2604.11507
+
+**Pattern**: Learning-Optimization Integration
+- **Core Premise**: Deep learning complements OR/MS
+- **Framework**:
+  - Deep learning: adaptability and scalable approximation
+  - OR/MS: structural rigor for constraints and uncertainty
+- **Architectures**: Feedforward networks, LSTMs, Transformers, Deep RL
+- **Applications**: Supply chains, healthcare, agriculture, energy, autonomous systems
+
+### Pattern 9: Active Bayesian Security Framework
+**Source**: arXiv:2604.11410
+
+**Pattern**: Active Bayesian Inference for Attack Detection
+- **Problem**: Sensor false data injection in cyber-physical systems
+- **Solution**:
+  - Model perception as bipartite graphs
+  - Bayesian network for compromised sensor inference
+  - Active probing maximizes distinguishability
+  - Selective sensor disabling
+- **Key Insight**: Active probing using nonlinearities improves detection
+
+### Pattern 10: Density-Based Multi-Agent Control
+**Source**: arXiv:2604.11353
+
+**Pattern**: Leader-Follower Density Control
+- **Problem**: Large-scale MAS with interacting followers
+- **Approach**: PDE-based macroscopic framework
+- **Components**:
+  - Feasibility conditions with phase transitions
+  - Feedback law with explicit basin of attraction
+  - Captures flocking and collision avoidance
+- **Key Insight**: Sharp feasibility thresholds exist
+
+### Pattern 11: Complex System Stability Revisited
+**Source**: arXiv:2604.11555
+
+**Pattern**: Modern Stability Criteria
+- **Challenge**: Complexity-stability debate
+- **Approach**: Beyond random matrix theory
+- **Insight**: Detailed mechanism understanding without broad conclusions
+
+### Pattern 12: Emergence via Transport Geometry
+**Source**: arXiv:2604.11481
+
+**Pattern**: Transport Geometry Framework
+- **Framework**: Phase-space + transport geometry + information theory
+- **Key Elements**:
+  - Lagrangian-Eulerian transport map
+  - Density amplification via deformation Jacobian
+  - Landau-Ginzburg description
+- **Insight**: Entropy depends on description level
+
 ## 参考论文
 
+### 经典著作
 1. "Resilience Engineering: Concepts and Precepts" - Hollnagel et al.
 2. "Designing Distributed Systems" - Brendan Burns
 3. "Feedback Systems: An Introduction for Scientists and Engineers" - Åström & Murray
 4. "Complexity: The Emerging Science at the Edge of Order and Chaos" - Mitchell Waldrop
 
+### 最新研究 (2026年4月)
+1. Zhao et al. "Distributed State Estimation for Discrete-Time Systems With Unknown Inputs" - arXiv:2604.11588
+2. Buyuktahtakin "Deep Learning for Sequential Decision Making under Uncertainty" - arXiv:2604.11507
+3. Andersson & Dán "Active Bayesian Inference for Robust Control under Sensor Attacks" - arXiv:2604.11410
+4. Di Lorenzo et al. "Leader-Follower Density Control of Multi-Agent Systems" - arXiv:2604.11353
+5. Thorne "Will a Large Complex System be Stable? Revisited" - arXiv:2604.11555
+6. Kitaura "Emergence of Complex Structures" - arXiv:2604.11481
+
 ---
 
 **创建时间**: 2025-01-12
-**版本**: 1.0
-
-
-## Activation Keywords
-
-- modern systems engineering patterns
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...
+**更新时间**: 2026-04-14
+**版本**: 2.0

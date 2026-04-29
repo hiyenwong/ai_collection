@@ -70,41 +70,10 @@ description: "... Activation: systems engineering, control"
 
 - Shaoxuan Cui, Qi Zhao, Guanlin Li et al.. (2026). "Linear Feedback Controller for Homogeneous Polynomial Systems." arXiv:2604.08721v1.
 
-## Description
-
-Research skill based on arXiv paper: Linear Feedback Controller for Homogeneous Polynomial Systems. Provides knowledge-based guidance for researchers and engineers working in this domain.
-
-## Activation Keywords
-
+## 激活关键词
 - control systems
 - distributed systems
 - optimal control
-- *技能基于论文生成于 2026-04-13*
-
-## Tools Used
-
-- read: Access research papers and documentation
-- web_search: Search for related literature and implementations
-- exec: Run simulation or analysis scripts if needed
-
-## Instructions for Agents
-
-1. When the user asks about topics related to this skill's domain, explain the core concepts from the paper.
-2. Reference the source paper (arXiv:2604.08721v1) for technical details.
-3. Help users understand and apply the methods described.
-4. Suggest related literature and implementation approaches when applicable.
-5. Provide code examples or pseudocode if the user needs implementation guidance.
-
-## Examples
-
-**Example 1: Concept explanation**
-User: "Explain the main contribution of this paper."
-Agent: Summarizes the key innovations and theoretical contributions from the paper.
-
-**Example 2: Implementation guidance**
-User: "How can I implement this method?"
-Agent: Provides implementation steps based on the paper's methodology, referencing arXiv:2604.08721v1.
-
 
 ---
 *技能基于论文生成于 2026-04-13*

@@ -1,5 +1,4 @@
 ---
-name: spiking-transformer-gemst
 title: Ge²mS-T Spiking Vision Transformer
 category: neuroscience
 tags:
@@ -15,18 +14,7 @@ authors:
   - Shenghao Xie
   - Kang Chen
 date: "2026-04-10"
-description: "Ge²mS-T: Multi-Dimensional Grouping for Ultra-High Energy Efficiency in Spiking Transformer"
 ---
-
-## Description
-
-基于论文 'Spiking Transformer with Gated Multi-head Attention' 的神经科学研究方法论。
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
 
 # Ge²mS-T: Multi-Dimensional Grouping for Ultra-High Energy Efficiency in Spiking Transformer
 
@@ -136,37 +124,3 @@ Use when working with:
 ## References
 
 Zecheng Hao, Shenghao Xie, Kang Chen. "Ge²mS-T: Multi-Dimensional Grouping for Ultra-High Energy Efficiency in Spiking Transformer." arXiv:2604.08894, 2026.
-
-
-## Activation Keywords
-
-- spiking transformer gemst
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...

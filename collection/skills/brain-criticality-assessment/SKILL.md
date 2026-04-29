@@ -1,181 +1,126 @@
 ---
 name: brain-criticality-assessment
-description: "Critical assessment framework for the brain criticality hypothesis. Evaluates evidence for and against criticality using multi-modal empirical data and identifies methodological issues. Activation: brain criticality, criticality assessment, multi-modal neuroimaging, methodological validation."
+description: Critical assessment methodology for evaluating the brain criticality hypothesis using rigorous statistical and computational approaches. Use for analyzing criticality in neural systems, avalanche dynamics, and evaluating claims of critical brain states. Keywords: criticality, neural avalanches, brain networks, critical states, statistical mechanics, power laws.
 ---
 
-# Brain Criticality Assessment Framework
+# A Critical Assessment of the Brain Criticality Hypothesis
 
-> Systematic evaluation of the brain criticality hypothesis using theoretical analysis and multi-modal empirical data, identifying methodological issues and proposing framework to distinguish true from apparent criticality.
+> Rigorous methodological framework for evaluating claims of criticality in brain dynamics, distinguishing true critical states from apparent power-law behavior in neural avalanches.
 
 ## Metadata
-- **Source**: arXiv:2604.21071
-- **Authors**: Elena K. Smith, Robert J. Taylor, Maria Garcia
+- **Source**: arXiv:2604.21071v1
+- **Authors**: Computational neuroscience researchers
 - **Published**: 2026-04-22
-- **Category**: q-bio.NC
+- **Category**: Computational Neuroscience, Statistical Physics
 
 ## Core Methodology
 
-### Criticality Hypothesis Background
-The brain criticality hypothesis suggests that neural networks operate near a critical point, explaining observed neuronal avalanches and power-law distributions in neural activity.
+### The Criticality Hypothesis
+The brain criticality hypothesis suggests that neural networks operate near critical points, balancing stability and flexibility through power-law distributed avalanche dynamics.
 
-### Challenges to the Hypothesis
-1. **Finite-size effects**: Small system size can mimic critical behavior
-2. **Sampling biases**: Recording limitations affect observed distributions
-3. **Alternative explanations**: Non-critical mechanisms can produce similar patterns
-4. **Thermodynamic definition**: What constitutes "true" criticality in neural systems?
+### Assessment Framework
+1. **Statistical Validation**
+   - Rigorous power-law fitting with goodness-of-fit tests
+   - Comparison against alternative distributions (exponential, log-normal)
+   - Finite-size scaling analysis
 
-### Multi-Modal Data Integration
-- **Electrophysiology**: Single-unit and multi-unit recordings
-- **fMRI**: Blood-oxygen-level-dependent signals
-- **Calcium Imaging**: Population activity measures
-- **Theory**: Statistical mechanics approaches
+2. **Dynamic Measures**
+   - Branching ratio estimation
+   - Susceptibility and correlation length
+   - Temporal correlation analysis
 
-### Methodological Issues Identified
+3. **Control Analysis**
+   - Surrogate data methods
+   - Comparison to explicitly non-critical models
+   - Parameter space exploration
 
-#### 1. Finite-Size Effects
-Small neural populations cannot exhibit true critical phenomena
-- Criticality requires thermodynamic limit (N → ∞)
-- Observed power laws may be artifact of finite sampling
-- System size scaling tests needed
-
-#### 2. Sampling Biases
-- Electrode placement affects observed avalanches
-- Temporal resolution limits event detection
-- Spatial undersampling of large neural populations
-
-#### 3. Statistical Analysis Problems
-- Power-law fitting methods vary in accuracy
-- Log-binning introduces artifacts
-- Alternative distributions not adequately tested
+### Key Innovations
+- **Methodological Rigor**: Distinguishes true criticality from apparent power-law behavior
+- **Multi-modal Validation**: Combines multiple statistical tests for robust assessment
+- **Model Comparison**: Systematic comparison against alternative hypotheses
 
 ## Implementation Guide
 
-### Framework for Distinguishing True vs Apparent Criticality
+### Prerequisites
+- Python with powerlaw library
+- Neural spike data or LFP recordings
+- Statistical analysis tools (SciPy, NumPy)
 
-#### Step 1: Multi-Scale Analysis
+### Step-by-Step
+
+1. **Detect Neural Avalanches**
 ```python
-def multi_scale_criticality_analysis(data, scales):
-    """
-    Analyze criticality signatures across multiple scales.
+import numpy as np
+
+def detect_avalanches(spike_times, bin_size, threshold):
+    """Detect neural avalanches from spike data."""
+    # Bin spike times
+    max_time = spike_times.max()
+    bins = np.arange(0, max_time + bin_size, bin_size)
+    activity, _ = np.histogram(spike_times, bins)
     
-    Args:
-        data: Neural activity data (spikes, calcium, BOLD)
-        scales: List of spatial/temporal scales to analyze
+    # Detect avalanches (contiguous suprathreshold periods)
+    avalanches = []
+    in_avalanche = False
+    current_size = 0
     
-    Returns:
-        scale_results: Dictionary of criticality measures per scale
-    """
-    results = {}
-    for scale in scales:
-        # Detect avalanches at this scale
-        avalanches = detect_avalanches(data, scale)
-        
-        # Fit power-law distributions
-        alpha, xmin, p_value = fit_power_law(avalanches['sizes'])
-        
-        # Compute branching ratio
-        branching_ratio = compute_branching_ratio(avalanches)
-        
-        # Test criticality indicators
-        results[scale] = {
-            'power_law_exponent': alpha,
-            'xmin': xmin,
-            'goodness_of_fit': p_value,
-            'branching_ratio': branching_ratio,
-            'is_critical_like': (abs(branching_ratio - 1) < 0.1 and 
-                                p_value > 0.1)
-        }
-    return results
+    for act in activity:
+        if act > threshold:
+            in_avalanche = True
+            current_size += act
+        elif in_avalanche:
+            avalanches.append(current_size)
+            in_avalanche = False
+            current_size = 0
+    
+    return avalanches
 ```
 
-#### Step 2: Finite-Size Scaling
+2. **Fit and Test Power-Law Distribution**
 ```python
-def finite_size_scaling_analysis(dataset_by_size):
-    """
-    Test if criticality signatures improve with system size.
-    
-    Args:
-        dataset_by_size: Dict[int, np.array] - data for different population sizes
-    
-    Returns:
-        scaling_exponent: Finite-size scaling exponent
-        is_true_criticality: Boolean assessment
-    """
-    criticality_scores = []
-    sizes = sorted(dataset_by_size.keys())
-    
-    for size in sizes:
-        data = dataset_by_size[size]
-        score = assess_criticality(data)
-        criticality_scores.append(score)
-    
-    # True criticality: signatures should improve with size
-    # Apparent criticality: signatures remain constant or degrade
-    scaling_exponent = compute_scaling_exponent(sizes, criticality_scores)
-    
-    # Positive scaling suggests true criticality
-    is_true_criticality = scaling_exponent > threshold
-    
-    return scaling_exponent, is_true_criticality
-```
+import powerlaw
 
-#### Step 3: Alternative Model Comparison
-```python
-def compare_alternative_models(avalanche_data):
-    """
-    Compare power-law fit against alternative distributions.
+def assess_criticality(avalanche_sizes):
+    """Assess whether avalanche sizes follow power-law distribution."""
+    # Fit power-law
+    fit = powerlaw.Fit(avalanche_sizes, discrete=True)
     
-    Args:
-        avalanche_data: Observed avalanche sizes/durations
+    # Compare against alternative distributions
+    R_exp, p_exp = fit.distribution_compare('power_law', 'exponential')
+    R_lognorm, p_lognorm = fit.distribution_compare('power_law', 'lognormal')
     
-    Returns:
-        comparison_results: Model comparison statistics
-    """
-    from scipy import stats
-    
-    # Fit multiple models
-    models = {
-        'power_law': fit_power_law(avalanche_data),
-        'exponential': fit_exponential(avalanche_data),
-        'log_normal': fit_log_normal(avalanche_data),
-        'truncated_power_law': fit_truncated_power_law(avalanche_data)
+    return {
+        'alpha': fit.alpha,
+        'xmin': fit.xmin,
+        'power_law_vs_exp_R': R_exp,
+        'power_law_vs_exp_p': p_exp,
+        'is_power_law': R_exp > 0 and p_exp < 0.05
     }
-    
-    # Compare using AIC/BIC
-    comparison = {}
-    for name, fit in models.items():
-        comparison[name] = {
-            'aic': fit.aic,
-            'bic': fit.bic,
-            'likelihood': fit.log_likelihood
-        }
-    
-    # Statistical tests
-    # Vuong's test for non-nested model comparison
-    best_model = min(comparison, key=lambda x: comparison[x]['aic'])
-    
-    return comparison, best_model
+```
+
+3. **Calculate Branching Ratio**
+```python
+def calculate_branching_ratio(activity):
+    """Estimate branching ratio (average descendants per ancestor)."""
+    correlations = np.correlate(activity[:-1], activity[1:], mode='valid')
+    branching_ratio = correlations.mean() / activity[:-1].var()
+    return branching_ratio
 ```
 
 ## Applications
-- Neural Criticality Analysis: Rigorous testing of criticality claims
-- Multi-Modal Neuroimaging: Cross-validation across recording methods
-- Theoretical Neuroscience: Grounding criticality in statistical mechanics
-- Statistical Methodology: Improved analysis techniques for neural data
+- **Neural Data Analysis**: Assess criticality claims in experimental recordings
+- **Model Validation**: Test computational models for critical behavior
+- **Clinical Research**: Investigate criticality changes in neurological disorders
+- **Theoretical Studies**: Evaluate predictions of critical brain theories
 
 ## Pitfalls
-- True thermodynamic criticality may not exist in finite brains
-- Different modalities measure different aspects of activity
-- Comparison with non-biological systems requires caution
-- Publication bias toward positive criticality findings
+- **Finite Size Effects**: Small systems may show apparent criticality spuriously
+- **Sampling Bias**: Inadequate sampling can mimic power-law distributions
+- **Multiple Comparisons**: Testing many conditions increases false positive rate
+- **Causal Interpretation**: Statistical criticality doesn't imply functional importance
 
 ## Related Skills
-- hierarchical-critical-brain-dynamics
-- neural-critical-dynamics-theory
 - griffiths-phase-brain-criticality
-- optimal-griffiths-phase-brain-criticality
-
-## References
-- Smith et al. (2026). A Critical Assessment of the Brain Criticality Hypothesis. arXiv:2604.21071
-- Beggs & Plenz (2003). Neuronal avalanches in neocortical circuits
-- Touboul & Destexhe (2010). Can Power-Law Scaling and Neuronal Avalanches Arise from Stochastic Dynamics?
+- neutral-theory-neural-dynamics
+- neural-critical-dynamics-theory
+- complex-system-robustness-collapse

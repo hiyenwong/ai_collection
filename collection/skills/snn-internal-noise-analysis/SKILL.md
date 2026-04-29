@@ -1,107 +1,149 @@
 ---
 name: snn-internal-noise-analysis
-description: Analysis of internal noise mechanisms in Spiking Neural Networks including additive and multiplicative noise effects
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [snn, internal-noise, robustness, hardware, lif-neurons]
-    source_paper: "General aspects of internal noise in spiking neural networks (arXiv:2604.13612)"
-    authors: "I. D. Kolesnikov, D. A. Maksimov, V. M. Moskvitin, N. Semenova"
-    published: "2026-04-15"
-    category: "neuroscience"
+version: v1.0.0
+last_updated: 2026-04-19
+description: Comprehensive analysis of internal noise mechanisms in Spiking Neural Networks (SNNs). Identifies additive vs multiplicative noise impacts, optimal pre-filtering strategies, and common vs uncommon noise robustness. Applicable to SNN robustness design, neuromorphic hardware deployment, noise-aware training. Trigger: SNN noise, spiking neural network noise, internal noise, multiplicative noise, additive noise, SNN robustness, neuromorphic noise
 ---
 
 # SNN Internal Noise Analysis
 
-## Overview
-Examines additive and multiplicative noise impact on LIF neurons and trained SNNs across processing stages. Critical for understanding SNN robustness and hardware implementations.
+## Description
 
-## Key Concepts
+Systematic analysis of internal noise mechanisms in Spiking Neural Networks (SNNs), covering additive and multiplicative noise at different processing stages, noise robustness patterns, and practical mitigation strategies.
 
-### Additive Noise
-- Membrane potential fluctuations
-- Thermal noise in hardware
-- Background synaptic noise
+Based on: "General aspects of internal noise in spiking neural networks", arXiv:2604.13612 (2026)
 
-### Multiplicative Noise
-- Synaptic weight variability
-- Parameter mismatch in neuromorphic chips
-- Gain modulation
+## Noise Sources in SNNs
 
-## Implementation Pattern
+### Processing Stages Affected
+
+1. **Input Current**: Additive noise on incoming signals
+2. **Membrane Potential**: Additive or multiplicative noise on voltage
+3. **Spike Generation**: Noise during threshold comparison and spike emission
+
+### Noise Types
+
+```python
+# Additive noise
+V_noisy = V_clean + ε_add
+
+# Multiplicative noise  
+V_noisy = V_clean * (1 + ε_mult)
+```
+
+## Key Findings
+
+### Critical Noise Mechanism
+
+| Noise Configuration | Impact on Accuracy | Mechanism |
+|---------------------|-------------------|-----------|
+| **Multiplicative on membrane** | Most detrimental | Suppresses potentials to large negative values, silencing neurons |
+| Additive on input current | Moderate (when pre-filtered) | Becomes dominant after other mitigations |
+| Additive on membrane | Low (≤1% degradation) | Minor disruption |
+| Multiplicative on input | Low (≤1% degradation) | Manageable |
+
+### Pre-Filtering Strategy
+
+**Sigmoid-based input pre-filter** performs best:
+```python
+def sigmoid_filter(inputs, k=1.0, shift=0.0):
+    """Shift inputs to strictly positive range."""
+    return 1.0 / (1.0 + np.exp(-k * (inputs - shift)))
+```
+
+- Shifts inputs to strictly positive range
+- Eliminates membrane potential silencing effect
+- Enables additive input noise to become the only significant noise source
+
+### Common vs Uncommon Noise
+
+| Noise Type | SNN Robustness |
+|------------|---------------|
+| Common (correlated across neurons) | Higher robustness |
+| Uncommon (independent per neuron) | Lower robustness |
+
+SNNs are more resilient to correlated noise patterns.
+
+## Practical Guidelines
+
+### For SNN Design
+
+1. **Prioritize membrane potential stability** - this is the most vulnerable stage
+2. **Implement input pre-filtering** - sigmoid filter recommended
+3. **Design for common noise tolerance** - exploit inherent robustness
+
+### For Neuromorphic Deployment
+
+1. **Hardware noise characterization** - identify which noise type dominates
+2. **Pre-filter sensor inputs** - shift to positive range before encoding
+3. **Monitor membrane potential distribution** - detect silencing effects early
+
+### Training Recommendations
+
+```python
+# Noise-aware training strategy
+def noise_aware_training(model, data, noise_config):
+    """
+    Train SNN with explicit noise modeling.
+    
+    Args:
+        model: SNN architecture
+        data: Training data
+        noise_config: Dictionary specifying noise types and intensities
+    """
+    # Apply pre-filtering
+    filtered_data = sigmoid_filter(data)
+    
+    # Add calibrated noise during training
+    for batch in filtered_data:
+        noisy_batch = apply_noise(batch, noise_config)
+        model.train_step(noisy_batch)
+```
+
+## Evaluation Protocol
+
+1. Test each noise source independently
+2. Vary noise intensity systematically (σ = 0.01 to 0.5)
+3. Measure accuracy degradation curves
+4. Identify the breaking point for each noise type
+5. Test pre-filtering effectiveness
+
+## Reference Implementation
 
 ```python
 import numpy as np
 
-class NoisyLIF:
-    def __init__(self, tau=0.02, additive_sigma=0.1, mult_sigma=0.05):
-        self.tau = tau
-        self.additive_sigma = additive_sigma
-        self.mult_sigma = mult_sigma
-        self.v = 0.0
-
-    def step(self, input_current, dt=0.001):
-        additive_noise = np.random.normal(0, self.additive_sigma)
-        mult_noise = 1 + np.random.normal(0, self.mult_sigma)
-
-        dv = dt / self.tau * (-self.v + input_current * mult_noise + additive_noise)
-        self.v += dv
-
-        if self.v >= 1.0:
-            self.v = 0.0
-            return 1
-        return 0
+class SNNNoiseAnalyzer:
+    def __init__(self, noise_intensity=0.1):
+        self.noise_intensity = noise_intensity
+    
+    def add_input_noise(self, current):
+        """Additive noise on input current."""
+        return current + np.random.normal(0, self.noise_intensity, current.shape)
+    
+    def add_membrane_noise_additive(self, voltage):
+        """Additive noise on membrane potential."""
+        return voltage + np.random.normal(0, self.noise_intensity, voltage.shape)
+    
+    def add_membrane_noise_multiplicative(self, voltage):
+        """Multiplicative noise on membrane potential - MOST CRITICAL."""
+        noise = np.random.normal(0, self.noise_intensity, voltage.shape)
+        return voltage * (1 + noise)
+    
+    def analyze_noise_impact(self, model, data, noise_type):
+        """Systematically evaluate noise impact on model accuracy."""
+        baseline_acc = model.evaluate(data)
+        noisy_acc = model.evaluate(self.apply_noise(data, noise_type))
+        return {
+            "baseline": baseline_acc,
+            "noisy": noisy_acc,
+            "degradation": baseline_acc - noisy_acc
+        }
 ```
 
-## Applications
-- Hardware SNN design
-- Robustness analysis
-- Neuromorphic chip validation
+## Summary
 
-## References
-- General aspects of internal noise in spiking neural networks
-- Authors: I. D. Kolesnikov, D. A. Maksimov, V. M. Moskvitin, N. Semenova
-- arXiv: 2604.13612 (2026-04-15)
-
-## Activation
-- snn internal noise
-- noise analysis
-- hardware robustness
-- 脉冲噪声分析
-
-## Activation Keywords
-
-- "snn-internal-noise-analysis"
-- "snn internal noise analysis"
-- "use snn internal noise analysis"
-- "snn internal noise analysis help"
-- "snn internal noise analysis tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Snn Internal Noise Analysis usage
-```
-User: "Help me with snn internal noise analysis"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed snn internal noise analysis assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- **Most dangerous noise**: Multiplicative on membrane potential → silences neurons
+- **Best mitigation**: Sigmoid pre-filtering → shifts inputs positive
+- **After mitigation**: Additive input noise is the remaining concern
+- **SNN advantage**: More robust to common/correlated noise than independent noise

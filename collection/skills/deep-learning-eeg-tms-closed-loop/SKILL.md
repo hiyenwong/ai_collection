@@ -1,5 +1,4 @@
 ---
-name: deep-learning-eeg-tms-closed-loop
 title: Deep Learning EEG-TMS Closed-Loop System
 description: Closed-loop deep learning framework combining real-time EEG monitoring with TMS stimulation. Uses DL models to predict optimal TMS parameters from brain state with <50ms latency for real-time adaptive neuromodulation.
 activation: "EEG-TMS closed-loop, deep learning TMS, real-time brain stimulation, adaptive neuromodulation"

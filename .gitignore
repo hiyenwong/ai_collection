@@ -87,8 +87,23 @@ htmlcov/
 *.db
 *.sqlite
 *.sqlite3
+dump.rdb
 
 # Skill/Agent Specific
 references/local/
 examples/output/
 scripts/output/
+
+# Skill sync artifacts (do NOT commit at repo root)
+/*.skill
+/SKILL.md
+/_INDEX.json
+/skill-scan-results.json
+/ad-console.txt
+/paper.json
+/skill_data.json
+**/*.bak
+**/*.backup
+
+# Stale summary docs
+/MIGRATION_SUMMARY.md

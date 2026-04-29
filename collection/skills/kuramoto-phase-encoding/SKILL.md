@@ -1,123 +1,52 @@
 ---
-name: kuramoto-phase-encoding-v3
-description: "Kuramoto Oscillatory Phase Encoding (KoPE) for neuro-inspired synchronization in Vision Transformers. Enhances learning efficiency through oscillatory phase dynamics. Activation: Kuramoto phase encoding, oscillatory synchronization, neuro-inspired ViT, Kuramoto振荡相位编码, 神经同步机制."
-arxiv_id: 2604.07904
+name: kuramoto-phase-encoding
+category: neuroscience
+description: Kuramoto Oscillatory Phase Encoding (KoPE) - neuro-inspired synchronization mechanism for improved learning efficiency. Uses oscillator synchronization dynamics for feature binding and temporal coordination.
+trigger: kuramoto phase encoding, kope, oscillator synchronization, neuro-inspired learning, phase encoding, feature binding
 ---
 
 # Kuramoto Oscillatory Phase Encoding (KoPE)
 
-## Description
+## Paper
+- **Title**: Kuramoto Oscillatory Phase Encoding: Neuro-inspired Synchronization for Improved Learning Efficiency
+- **Authors**: Mingqing Xiao, Yansen Wang, Dongqi Han, Caihua Shan, Dongsheng Li
+- **Date**: April 9, 2026
+- **arXiv**: 2604.07904v1
 
-时空神经动力学和振荡同步在生物信息处理中起着重要作用，被认为支持特征绑定等灵活的协调机制。然而，大多数深度学习架构仅通过激活值表示和传播信息，忽略了速率和相位的联合动力学。
+## Overview
+KoPE uses Kuramoto oscillator dynamics for phase-based neural encoding, leveraging oscillatory synchronization for feature binding and temporal coordination in learning systems.
 
-本文提出 Kuramoto 振荡相位编码（KoPE），将相位作为额外的演化状态引入 Vision Transformers，通过神经启发的同步机制提升学习效率。
+## Core Mechanism
 
-## Core Methodology
-
-### 1. Kuramoto Oscillator Model
-基于 Kuramoto 模型引入相位状态：
+### Kuramoto Model
 ```
-dθᵢ/dt = ωᵢ + Σⱼ Kᵢⱼ sin(θⱼ - θᵢ) + Iᵢ
-```
-其中 ωᵢ 为自然频率，Kᵢⱼ 为耦合强度，Iᵢ 为外部输入。
+dθ_i/dt = ω_i + (K/N) Σ_j sin(θ_j - θ_i) + I_i(t)
 
-### 2. Phase Encoding Integration
-- 将相位变量与激活值并行处理
-- 在注意力机制中整合相位信息
-- 实现基于相位的特征绑定
-
-### 3. Synchronization Mechanism
-- 局部相位同步
-- 全局频率协调
-- 层级相位组织
-
-## Key Advantages
-
-1. **Biological Plausibility**
-   - 模拟大脑中的振荡现象
-   - 符合神经科学发现
-   - 支持特征绑定假设
-
-2. **Enhanced Learning**
-   - 更快的收敛速度
-   - 更好的泛化性能
-   - 改善的表示学习
-
-3. **Energy Efficiency**
-   - 基于相位的计算
-   - 稀疏激活模式
-   - 事件驱动处理
-
-## Activation Keywords
-- Kuramoto phase encoding
-- oscillatory synchronization
-- neuro-inspired ViT
-- Kuramoto振荡相位编码
-- 神经同步机制
-- phase-based neural network
-- oscillatory neural dynamics
-
-## Implementation
-
-### Phase State Initialization
-```python
-# 初始化相位状态
-phase = torch.zeros(batch_size, num_patches)
-frequency = torch.randn(num_patches) * freq_std + freq_mean
+where:
+  θ_i = phase of oscillator i
+  ω_i = natural frequency
+  K = coupling strength
+  I_i(t) = input stimulus
 ```
 
-### Phase Update
-```python
-# Kuramoto 相位更新
-coupling = torch.sum(K * torch.sin(phase.unsqueeze(1) - phase.unsqueeze(0)), dim=1)
-phase += dt * (frequency + coupling + input_phase)
-```
+### Phase Encoding
+- **Feature binding**: Related features synchronize in phase
+- **Temporal coordination**: Oscillators provide clock-like coordination
+- **Energy efficiency**: Phase encoding uses minimal energy
+- **Robustness**: Synchronization is noise-tolerant
 
-### Attention with Phase
-```python
-# 结合相位的注意力
-attention_scores = query @ key.T + phase_coupling(phase_q, phase_k)
-```
+### Key Innovations
+1. **Phase-based representation** instead of rate-based
+2. **Synchronization dynamics** for feature binding
+3. **Learning efficiency** improvement over standard approaches
+4. **Biological plausibility** matches observed neural oscillations
+
+## Applications
+- Spiking neural networks
+- Temporal sequence learning
+- Feature binding in vision
+- Neuromorphic computing
 
 ## Related Skills
-- kuramoto-phase-encoding
-- kuramoto-phase-encoding-v2
-- kuramoto-brain-network
-- kuramoto-control-theory
-
-## References
-- arXiv: 2604.07904
-- Paper: Kuramoto Oscillatory Phase Encoding: Neuro-inspired Synchronization for Improved Learning Efficiency
-- PDF: https://arxiv.org/pdf/2604.07904
-
-_Last updated: 2026-04-13_
-
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...
+- complex-kuramoto-control
+- spiking-oscillation-mapping

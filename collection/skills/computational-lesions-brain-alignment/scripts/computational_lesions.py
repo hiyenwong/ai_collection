@@ -10,7 +10,7 @@ Reference: arXiv:2604.10627v1
 import numpy as np
 import torch
 import torch.nn as nn
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 import copy
 from sklearn.linear_model import Ridge
 import matplotlib.pyplot as plt
@@ -342,7 +342,7 @@ class LesionExperiment:
         # Shared core effect
         ax = axes[0]
         langs = list(effects['shared_core_reduction'].keys())
-        reductions = [effects['shared_core_reduction'][lang] for lang in langs]
+        reductions = [effects['shared_core_reduction'][l] for l in langs]
         ax.bar(langs, reductions)
         ax.set_ylabel('Correlation Reduction')
         ax.set_title('Shared Core Lesion Effect')
@@ -363,7 +363,7 @@ class LesionExperiment:
         ax.set_xticks(range(len(test_langs)))
         ax.set_yticks(range(len(lesion_langs)))
         ax.set_xticklabels(test_langs)
-        ax.set_yticklabels([f"{lang} lesion" for lang in lesion_langs])
+        ax.set_yticklabels([f"{l} lesion" for l in lesion_langs])
         ax.set_title('Language-Specific Lesion Effects')
         plt.colorbar(im, ax=ax, label='Correlation Reduction')
         

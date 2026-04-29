@@ -3,12 +3,6 @@ name: convergent-representations-linguistic-constructions
 description: "Convergent representations of linguistic constructions in human and artificial neural systems. Analyzes alignment between biological brain activity (EEG) and artificial neural language models (RNNs, Transformers) in processing Argument Structure Constructions. Activation: linguistic constructions, ASC, brain-language alignment, EEG language, construction grammar, convergent representations."
 ---
 
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
 # Convergent Representations of Linguistic Constructions
 
 基于论文 "Convergent Representations of Linguistic Constructions in Human and Artificial Neural Systems" (arXiv:2603.29617v1, 2026-03-31)
@@ -324,26 +318,3 @@ class ConstructionBasedDecoder:
 - Authors: Pegah Ramezani, Thomas Kinfe, Andreas Maier, et al.
 - Published: 2026-03-31
 - Keywords: q-bio.NC, cs.AI, cs.CL
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...

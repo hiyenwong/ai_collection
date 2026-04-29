@@ -6,7 +6,6 @@ source: arXiv:2603.18035v1
 categories: [cs.LG]
 status: active
 trigger: epilepsy, seizure, mean field game, Koopman operator, reservoir computing, EEG, PLV, graph Laplacian, brain control, neuromodulation
-description: "Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics via GK-MFG"
 ---
 
 # Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics via GK-MFG

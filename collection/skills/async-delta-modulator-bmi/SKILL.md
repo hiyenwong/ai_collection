@@ -1,167 +1,125 @@
 ---
 name: async-delta-modulator-bmi
-description: "Asynchronous delta modulator for spike encoding in event-driven brain-machine interfaces. Neuromorphic front-end converting analog biopotentials into ON/OFF spikes for SNN-compatible decoding. 65nm CMOS implementation with 60.73 nJ/spike energy consumption. Activation: asynchronous delta modulator, spike encoding, brain-machine interface, neuromorphic front-end, event-driven BMI, SNN encoder."
+description: "Asynchronous Delta Modulation (ADM) for spike encoding in event-driven Brain-Machine Interfaces. Converts analog biopotentials into discrete ON/OFF spikes for SNN-compatible neural recording in 65nm CMOS. Activation: async delta modulator, spike encoding BMI, event-driven neural recording, neuromorphic front-end, asynchronous ADC"
 ---
 
-# Asynchronous Delta Modulator for Spike Encoding in Event-Driven Brain-Machine Interface
+# Asynchronous Delta Modulator for Spike Encoding in Event-Driven Brain-Machine Interfaces
 
-## Paper Information
+## Overview
+
+This methodology presents an **Asynchronous Delta Modulator (ADM)** as a spike encoder for event-driven neural recording, implemented in 65nm CMOS. The ADM converts continuous analog biopotential signals (EEG, ECoG, neural spikes) into discrete, asynchronous ON and OFF spike trains that are natively compatible with Spiking Neural Networks (SNNs) for real-time decoding in closed-loop BMI systems.
+
+## Source Paper
 
 - **Title:** An Asynchronous Delta Modulator for Spike Encoding in Event-Driven Brain-Machine Interface
-- **Authors:** Kaushik Lakshmiramanan, Vineeta Nair, Ching-Yi Lin, Sheng-Yu Peng, Sahil Shah
-- **arXiv ID:** 2604.08758
-- **Published:** April 9, 2026
-- **Categories:** eess.SY (Systems and Control)
-- **PDF:** https://arxiv.org/pdf/2604.08758
+- **Authors:** Kaushik Lakshmiramanan, Vineeta Nair, Ching-Yi Lin et al.
+- **arXiv:** 2604.08758v2
+- **Published:** 2026-04-09
+- **Categories:** eess.SY, cs.NE
 
-## Abstract
+## Core Concepts
 
-This paper presents the design and implementation of an asynchronous delta modulator as a spike encoder for event-driven neural recording in a 65nm CMOS process. The proposed neuromorphic front-end converts analog signals into discrete, asynchronous ON and OFF spikes, effectively compressing continuous biopotentials into spike trains compatible with spiking neural networks (SNNs). Its asynchronous operation enables seamless integration with neuromorphic architectures for real-time decoding in closed-loop brain-machine interfaces (BMIs).
+### Asynchronous Delta Modulation (ADM)
 
-## Key Contributions
+Unlike conventional ADCs that sample at fixed rates, ADM operates **asynchronously** -- it generates events (spikes) only when the input signal crosses a threshold relative to its previous value:
 
-1. **Asynchronous Delta Modulator Design**
-   - Novel spike encoding mechanism for neural signals
-   - Asynchronous ON/OFF spike generation
-   - Compatible with spiking neural networks
+- **ON spike**: Input exceeds reference + threshold (signal rising)
+- **OFF spike**: Input drops below reference - threshold (signal falling)
+- **No output**: Signal stays within deadband (power saving)
 
-2. **Hardware Implementation**
-   - 65nm CMOS process fabrication
-   - Compact pixel area: 73.45 μm × 73.64 μm
-   - Energy efficient: 60.73 nJ/spike
+### Key Advantages
 
-3. **Performance Metrics**
-   - F1-score: 80% compared to behavioral model
-   - Real-time operation capability
-   - Seamless neuromorphic integration
+1. **Data compression**: Continuous biopotentials -> sparse spike trains (10-100x reduction)
+2. **Event-driven processing**: Computation only when events occur (ultra-low power)
+3. **SNN-native output**: Spike trains directly feed into neuromorphic decoders
+4. **Closed-loop compatible**: Low latency enables real-time BMI control
 
-## Technical Approach
+## Implementation
 
-### Architecture
+```python
+import numpy as np
+
+class AsynchronousDeltaModulator:
+    """Software model of Asynchronous Delta Modulator for spike encoding."""
+    
+    def __init__(self, threshold=0.01, initial_value=0.0):
+        self.threshold = threshold
+        self.reference = initial_value
+        self.spike_times = []
+        self.spike_types = []  # +1 for ON, -1 for OFF
+        
+    def encode(self, signal, timestamps):
+        """Encode continuous signal into asynchronous spike train."""
+        self.spike_times = []
+        self.spike_types = []
+        self.reference = signal[0]
+        
+        for t, val in zip(timestamps, signal):
+            diff = val - self.reference
+            
+            if diff > self.threshold:
+                self.spike_times.append(t)
+                self.spike_types.append(+1)
+                self.reference += self.threshold
+            elif diff < -self.threshold:
+                self.spike_times.append(t)
+                self.spike_types.append(-1)
+                self.reference -= self.threshold
+        
+        return np.array(self.spike_times), np.array(self.spike_types)
+    
+    def decode(self, spike_times, spike_types):
+        """Reconstruct signal from spike train (for validation)."""
+        reconstructed = []
+        current_value = 0.0
+        
+        for st, sp in zip(spike_times, spike_types):
+            if sp == +1:
+                current_value += self.threshold
+            else:
+                current_value -= self.threshold
+            reconstructed.append((st, current_value))
+        
+        return reconstructed
+
+
+def encode_eeg_to_spikes(eeg_signal, sampling_rate=1000, threshold=50e-6):
+    """Convert EEG signal to spike train using ADM."""
+    timestamps = np.arange(len(eeg_signal)) / sampling_rate
+    adm = AsynchronousDeltaModulator(threshold=threshold)
+    spike_times, spike_types = adm.encode(eeg_signal, timestamps)
+    
+    events = []
+    for i, (t, tp) in enumerate(zip(spike_times, spike_types)):
+        events.append((t, 0, tp))
+    
+    return events
 ```
-Analog Biopotential Input
-    ↓
-Asynchronous Delta Modulator
-    ↓
-ON/OFF Spike Train Output
-    ↓
-Spiking Neural Network (SNN)
-```
 
-### Key Features
-- **Event-driven operation:** Only generates spikes when signal changes
-- **Asynchronous encoding:** No global clock required
-- **SNN compatibility:** Direct integration with neuromorphic systems
-- **Low power:** Optimized for implantable/wearable devices
+## Practical Applications
 
-### Signal Processing Pipeline
-1. **Signal Acquisition:** Raw analog biopotential recording
-2. **Delta Modulation:** Convert amplitude changes to spike timing
-3. **Spike Encoding:** Generate ON/OFF events based on signal derivatives
-4. **SNN Decoding:** Process spike trains for real-time BMI control
-
-## Applications
-
-### Brain-Machine Interfaces
-- **Neural prosthetics:** Real-time motor control
-- **Sensory restoration:** Visual/auditory prosthetics
-- **Closed-loop neurofeedback:** Therapeutic applications
-
-### Neuromorphic Computing
-- **Edge neural interfaces:** Ultra-low power processing
-- **Event-based sensing:** Bio-inspired signal acquisition
-- **Real-time decoding:** Latency-critical applications
-
-### Medical Devices
-- **Implantable neural recorders:** Chronic monitoring
-- **Wearable EEG systems:** Portable brain-computer interfaces
-- **Neurorehabilitation:** Closed-loop therapy devices
-
-## Implementation Details
-
-### CMOS Specifications
-- **Process:** 65nm CMOS
-- **Energy per spike:** 60.73 nJ
-- **Pixel dimensions:** 73.45 μm × 73.64 μm
-- **Validation:** Silicon measurement results
-
-### Performance Comparison
-| Metric | Value |
-|--------|-------|
-| Energy/spike | 60.73 nJ |
-| F1-score | 80% |
-| Area | 5,404 μm² |
-| Process | 65nm CMOS |
-
-## Advantages
-
-1. **Energy Efficiency:** Event-driven operation reduces power consumption
-2. **Bandwidth Compression:** Spike encoding compresses continuous signals
-3. **SNN Compatibility:** Direct interface with neuromorphic processors
-4. **Scalability:** Compact design enables high-density arrays
-5. **Real-time Operation:** Asynchronous processing eliminates clock latency
+- Real-time neural decoding for prosthetic control
+- Adaptive DBS (Deep Brain Stimulation) triggering
+- Implantable neural recording systems
+- Wearable EEG/BCI headsets
 
 ## Limitations
 
-- F1-score of 80% indicates room for improvement
-- Requires specialized CMOS fabrication
-- Behavioral model validation needed for different signal types
-- Integration complexity with existing BMI systems
-
-## Future Directions
-
-- Higher resolution spike encoding
-- Multi-channel array implementations
-- Integration with commercial neuromorphic chips
-- Clinical validation studies
+- Threshold selection trades off between compression and fidelity
+- Reconstruction quality depends on signal dynamics
+- 65nm CMOS implementation has area/power trade-offs
 
 ## References
 
-- Lakshmiramanan et al. (2026). "An Asynchronous Delta Modulator for Spike Encoding in Event-Driven Brain-Machine Interface." arXiv:2604.08758.
+- Lakshmiramanan, K., Nair, V., Lin, C.-Y. et al. (2026). "An Asynchronous Delta Modulator for Spike Encoding in Event-Driven Brain-Machine Interface." arXiv:2604.08758v2.
 
 ## Activation Keywords
 
-- asynchronous delta modulator
-- spike encoding
-- brain-machine interface
+- async delta modulator
+- spike encoding BMI
+- event-driven neural recording
 - neuromorphic front-end
-- event-driven BMI
-- SNN encoder
-- neural signal processing
-- CMOS neuromorphic
-- real-time decoding
-- closed-loop BMI
-
----
-*Generated from arXiv paper on 2026-04-13*
-*Category: Neuromorphic Engineering / Brain-Machine Interfaces*
-
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...
+- asynchronous ADC
+- 异步增量调制
+- 脑机接口脉冲编码
+- 事件驱动神经记录

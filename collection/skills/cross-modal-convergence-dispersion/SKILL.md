@@ -1,304 +1,520 @@
 ---
 name: cross-modal-convergence-dispersion
-description: "Generalized Procrustes Algorithm for measuring intra-modal representational convergence at single-stimulus level; intra-modal dispersion modulates cross-modal alignment."
-version: "1.0"
-paper_id: "2604.21836"
-arxiv_url: "https://arxiv.org/abs/2604.21836"
-authors: "Eghbal A. Hosseini, Brian Cheung, Evelina Fedorenko, Alex H. Williams"
-published: "2026-04-23"
-categories:
-  - q-bio.NC
-tags:
-  - cross-modal-alignment
-  - intra-modal-dispersion
-  - procrustes-analysis
-  - vision-language-models
-  - representational-convergence
-  - multi-modal
+description: "Measuring cross-modal neural network convergence using single-stimulus intra-modal dispersion. Generalized Procrustes Algorithm for quantifying how stimuli with low intra-modal dispersion elicit higher cross-modal alignment. Activation triggers: cross-modal convergence, neural network alignment, vision-language alignment, representational similarity."
 ---
 
-# Cross-Modal Convergence via Intra-Modal Dispersion
+# Modulating Cross-Modal Convergence with Single-Stimulus, Intra-Modal Dispersion
 
-> Measuring representational convergence at the single-stimulus level using Generalized Procrustes Algorithm; discovering that low intra-modal dispersion predicts higher cross-modal alignment.
+> A methodology based on the Generalized Procrustes Algorithm to measure how intra-modal representational convergence at the single-stimulus level modulates cross-modal alignment between vision and language models.
 
 ## Metadata
-- **Source**: arXiv:2604.21836
+- **Source**: arXiv:2604.21836v1
 - **Authors**: Eghbal A. Hosseini, Brian Cheung, Evelina Fedorenko, Alex H. Williams
 - **Published**: 2026-04-23
+- **Category**: Representation Learning, Multi-Modal AI, Neural Network Analysis
 
 ## Core Methodology
 
-### Key Innovation
+### Problem Statement
+Neural networks exhibit remarkable representational convergence:
+- Across diverse architectures
+- Across training objectives
+- Even across data modalities
 
-Neural networks show remarkable representational convergence across architectures, training objectives, and even data modalities. However, it was unclear how individual stimuli elicit convergent representations. This work introduces:
+This convergence predicts alignment with brain representations. However, it's unclear how **individual stimuli** elicit convergent representations across networks.
 
-1. **Single-stimulus convergence measurement** using Generalized Procrustes Algorithm
-2. **Intra-modal dispersion** as a measure of representational agreement within a modality
-3. **Discovery**: Low intra-modal dispersion (high agreement among vision models) elicits significantly higher cross-modal alignment (up to 2x)
+**Key Question**: An image can be perceived in multiple ways and expressed differently using words. What determines when different networks converge on similar representations?
 
-### Technical Framework
+### Key Finding
+**Intra-modal dispersion strongly modulates cross-modal convergence.**
 
-**Step 1: Generalized Procrustes Analysis (GPA)**
-- Align representational spaces across models within a modality
-- Remove rotation/reflection differences
-- Preserve distances for valid comparison
+Stimuli with **low intra-modal dispersion** (high agreement among vision models) elicit significantly higher cross-modal alignment than stimuli with high dispersion.
 
-**Step 2: Intra-Modal Dispersion Computation**
-- For each stimulus, compute representational variance across models
-- Low dispersion = high agreement among models
-- High dispersion = models disagree on stimulus representation
+### Hypothesis
+Representational convergence arises from learning the underlying structure of the environment in similar ways. When vision models agree on how to represent a stimulus (low dispersion), that stimulus is more likely to align with language model representations.
 
-**Step 3: Stimulus Selection**
-- Select stimuli based on intra-modal dispersion levels
-- Create matched sets with high vs. low dispersion
+## Methodology: Generalized Procrustes Analysis
 
-**Step 4: Cross-Modal Alignment Measurement**
-- Measure alignment between vision and language models
-- Compare alignment for low vs. high dispersion stimuli
-- Generalize across different model pairings
+### Intra-Modal Dispersion
 
-**Step 5: Analysis**
-- Correlation between intra-modal and cross-modal measures
-- Robustness to stimulus selection criteria
-- Generalization across model architectures
+**Concept**: Measure how much vision models disagree about a single stimulus.
+
+```
+Vision Model A → Representation r_A(stimulus_i)
+Vision Model B → Representation r_B(stimulus_i)
+Vision Model C → Representation r_C(stimulus_i)
+
+Intra-Modal Dispersion = variance([r_A, r_B, r_C]) after alignment
+```
+
+**Low dispersion**: All vision models represent the stimulus similarly
+**High dispersion**: Vision models have different representations
+
+### Cross-Modal Convergence
+
+**Concept**: Measure alignment between vision and language models for the same stimulus.
+
+```
+Vision Model → Representation r_V(stimulus_i)
+Language Model → Representation r_L(text_description_i)
+
+Cross-Modal Alignment = similarity(r_V, r_L)
+```
+
+### The Relationship
+
+```
+Low Intra-Modal Dispersion ──────→ High Cross-Modal Alignment
+        ↓                                    ↓
+Vision models agree              Vision-language models align
+        ↓                                    ↓
+Clear, unambiguous               Consistent representation
+visual structure                 across modalities
+
+High Intra-Modal Dispersion ──────→ Low Cross-Modal Alignment
+        ↓                                    ↓
+Vision models disagree           Vision-language models misalign
+        ↓                                    ↓
+Ambiguous or complex             Inconsistent representation
+visual content                   across modalities
+```
+
+### Generalized Procrustes Algorithm
+
+**Purpose**: Align representations from different models for fair comparison.
+
+```python
+# Standard Procrustes Problem
+Given: Two matrices X, Y (representations from two models)
+Find: Orthogonal Q, translation b, scale s minimizing:
+      ||s * X * Q + b - Y||²
+
+# Generalized Procrustes (for multiple models)
+Given: Matrices X₁, X₂, ..., Xₙ (representations from n models)
+Find: Transformations for each minimizing:
+      Σᵢ ||transform(Xᵢ) - consensus||²
+```
 
 ## Implementation Guide
 
 ### Prerequisites
-- Pre-trained vision models (e.g., DINOv2, CLIP, supervised ResNet)
-- Language models (e.g., GPT, BERT variants)
-- Stimulus dataset with paired images and text descriptions
-
-### Step-by-Step
-
 ```python
-# 1. Extract features from vision models
-vision_features = {}
-for model_name, model in vision_models.items():
-    vision_features[model_name] = extract_features(model, stimuli_images)
+# Core dependencies
+numpy
+scipy
+scikit-learn
+torch
 
-# 2. Extract features from language models
-language_features = {}
-for model_name, model in language_models.items():
-    language_features[model_name] = extract_features(model, stimuli_texts)
-
-# 3. Apply Generalized Procrustes Analysis
-from scipy.spatial import procrustes
-
-# Align vision model spaces
-aligned_vision = generalized_procrustes_analysis(vision_features)
-
-# Align language model spaces  
-aligned_language = generalized_procrustes_analysis(language_features)
-
-# 4. Compute intra-modal dispersion
-dispersion_scores = {}
-for stimulus_idx in range(num_stimuli):
-    # Variance across vision models for this stimulus
-    vision_reps = [aligned_vision[m][stimulus_idx] for m in vision_models]
-    dispersion_scores[stimulus_idx] = compute_dispersion(vision_reps)
-
-# 5. Select stimuli by dispersion level
-low_dispersion_stimuli = select_by_dispersion(dispersion_scores, percentile=25)
-high_dispersion_stimuli = select_by_dispersion(dispersion_scores, percentile=75)
-
-# 6. Measure cross-modal alignment
-cross_modal_alignment = {}
-for vision_model in vision_models:
-    for language_model in language_models:
-        # Alignment for low dispersion stimuli
-        low_alignment = compute_alignment(
-            aligned_vision[vision_model][low_dispersion_stimuli],
-            aligned_language[language_model][low_dispersion_stimuli]
-        )
-        # Alignment for high dispersion stimuli
-        high_alignment = compute_alignment(
-            aligned_vision[vision_model][high_dispersion_stimuli],
-            aligned_language[language_model][high_dispersion_stimuli]
-        )
-        cross_modal_alignment[(vision_model, language_model)] = {
-            'low_dispersion': low_alignment,
-            'high_dispersion': high_alignment
-        }
-
-# 7. Analyze modulation effect
-for pair, scores in cross_modal_alignment.items():
-    modulation = scores['low_dispersion'] / scores['high_dispersion']
-    print(f"{pair}: {modulation:.2f}x higher alignment for low dispersion")
+# For model access
+timm          # Vision models
+transformers  # Language models
 ```
 
-### Code Example
+### Step 1: Extract Representations
 
 ```python
+import torch
 import numpy as np
-from scipy.spatial.distance import cdist
+from transformers import CLIPModel, CLIPProcessor
+import timm
+
+class RepresentationExtractor:
+    """
+    Extract representations from vision and language models.
+    """
+    def __init__(self, device='cuda'):
+        self.device = device
+        
+        # Load multiple vision models
+        self.vision_models = {
+            'resnet50': timm.create_model('resnet50', pretrained=True, num_classes=0).to(device),
+            'vit': timm.create_model('vit_base_patch16_224', pretrained=True, num_classes=0).to(device),
+            'dino': timm.create_model('vit_base_patch16_224_dino', pretrained=True, num_classes=0).to(device),
+            'deit': timm.create_model('deit_base_patch16_224', pretrained=True, num_classes=0).to(device),
+        }
+        
+        # Load language model (CLIP for vision-language alignment)
+        self.clip = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
+        self.clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+        
+        for model in self.vision_models.values():
+            model.eval()
+        self.clip.eval()
+    
+    def extract_vision_representations(self, image):
+        """
+        Extract representations from multiple vision models.
+        
+        Args:
+            image: Preprocessed image tensor [1, 3, 224, 224]
+        
+        Returns:
+            representations: Dict of {model_name: feature_vector}
+        """
+        representations = {}
+        
+        with torch.no_grad():
+            for name, model in self.vision_models.items():
+                features = model(image.to(self.device))
+                representations[name] = features.cpu().numpy()
+        
+        return representations
+    
+    def extract_language_representation(self, text):
+        """
+        Extract text representation from CLIP.
+        
+        Args:
+            text: String description
+        
+        Returns:
+            representation: Text feature vector
+        """
+        inputs = self.clip_processor(text=[text], return_tensors="pt", padding=True)
+        
+        with torch.no_grad():
+            text_features = self.clip.get_text_features(**inputs)
+        
+        return text_features.cpu().numpy()
+    
+    def extract_clip_vision(self, image):
+        """Extract vision representation from CLIP."""
+        inputs = self.clip_processor(images=image, return_tensors="pt")
+        
+        with torch.no_grad():
+            vision_features = self.clip.get_image_features(**inputs)
+        
+        return vision_features.cpu().numpy()
+```
+
+### Step 2: Generalized Procrustes Analysis
+
+```python
 from scipy.linalg import orthogonal_procrustes
+from scipy.spatial.distance import cosine
 
-def generalized_procrustes_analysis(features_dict, max_iter=100, tol=1e-5):
+def procrustes_alignment(X, Y):
     """
-    Apply Generalized Procrustes Analysis to align multiple representational spaces.
+    Align Y to X using orthogonal Procrustes.
     
-    Parameters:
-    -----------
-    features_dict : dict
-        Mapping from model names to feature matrices (n_stimuli x n_features)
-    max_iter : int
-        Maximum iterations
-    tol : float
-        Convergence tolerance
-        
+    Args:
+        X: Reference representation [n_samples, n_features]
+        Y: Target representation [n_samples, n_features]
+    
     Returns:
-    --------
-    aligned_features : dict
-        Aligned feature matrices
+        Y_aligned: Aligned Y
+        R: Orthogonal rotation matrix
     """
-    model_names = list(features_dict.keys())
-    n_models = len(model_names)
-    n_stimuli = list(features_dict.values())[0].shape[0]
-    
-    # Initialize with original features
-    aligned = {name: features.copy() for name, features in features_dict.items()}
-    
-    # Iterative alignment to mean configuration
-    for iteration in range(max_iter):
-        # Compute current mean configuration
-        mean_config = np.mean([aligned[name] for name in model_names], axis=0)
-        
-        # Align each model to mean
-        max_change = 0
-        for name in model_names:
-            # Orthogonal Procrustes: find optimal rotation
-            R, _ = orthogonal_procrustes(aligned[name], mean_config)
-            new_aligned = aligned[name] @ R
-            
-            change = np.linalg.norm(new_aligned - aligned[name])
-            max_change = max(max_change, change)
-            
-            aligned[name] = new_aligned
-        
-        if max_change < tol:
-            break
-    
-    return aligned
+    R, _ = orthogonal_procrustes(Y, X)
+    Y_aligned = Y @ R
+    return Y_aligned, R
 
-def compute_intra_modal_dispersion(aligned_features, metric='euclidean'):
+
+def generalized_procrustes(representations_dict, max_iter=100, tol=1e-6):
+    """
+    Align multiple representations using Generalized Procrustes Analysis.
+    
+    Args:
+        representations_dict: Dict of {model_name: representation_matrix}
+        max_iter: Maximum iterations
+        tol: Convergence tolerance
+    
+    Returns:
+        aligned_reps: Dict of aligned representations
+        consensus: Consensus (mean) representation
+    """
+    model_names = list(representations_dict.keys())
+    n_models = len(model_names)
+    n_samples = representations_dict[model_names[0]].shape[0]
+    
+    # Normalize each representation
+    normalized = {}
+    for name, rep in representations_dict.items():
+        # Center and scale
+        rep_centered = rep - rep.mean(axis=0)
+        rep_scaled = rep_centered / np.linalg.norm(rep_centered, axis=1, keepdims=True)
+        normalized[name] = rep_scaled
+    
+    # Initialize consensus as mean
+    consensus = np.mean(list(normalized.values()), axis=0)
+    
+    # Iterative alignment
+    for iteration in range(max_iter):
+        aligned = {}
+        
+        for name, rep in normalized.items():
+            # Align to consensus
+            aligned_rep, _ = procrustes_alignment(consensus, rep)
+            aligned[name] = aligned_rep
+        
+        # Update consensus
+        new_consensus = np.mean(list(aligned.values()), axis=0)
+        
+        # Check convergence
+        diff = np.linalg.norm(new_consensus - consensus)
+        if diff < tol:
+            break
+        
+        consensus = new_consensus
+    
+    return aligned, consensus
+
+
+def compute_intra_modal_dispersion(aligned_representations):
     """
     Compute intra-modal dispersion for each stimulus.
     
-    Parameters:
-    -----------
-    aligned_features : dict
-        Aligned feature matrices from GPA
-    metric : str
-        Distance metric for dispersion computation
-        
+    Args:
+        aligned_representations: Dict of aligned rep matrices [n_stimuli, n_features]
+    
     Returns:
-    --------
-    dispersion : array
-        Dispersion score for each stimulus (higher = more disagreement)
+        dispersion: [n_stimuli] vector of dispersion values
     """
-    model_names = list(aligned_features.keys())
-    n_stimuli = aligned_features[model_names[0]].shape[0]
+    # Stack representations: [n_models, n_stimuli, n_features]
+    reps_stack = np.stack(list(aligned_representations.values()), axis=0)
     
-    dispersion = np.zeros(n_stimuli)
-    
-    for i in range(n_stimuli):
-        # Collect representations from all models for this stimulus
-        reps = np.array([aligned_features[name][i] for name in model_names])
-        
-        # Compute pairwise distances
-        distances = cdist(reps, reps, metric=metric)
-        
-        # Dispersion = mean pairwise distance (excluding diagonal)
-        mask = ~np.eye(len(model_names), dtype=bool)
-        dispersion[i] = distances[mask].mean()
+    # Compute variance across models for each stimulus
+    dispersion = np.var(reps_stack, axis=0).mean(axis=1)
     
     return dispersion
+```
 
-def measure_cross_modal_alignment(vision_features, language_features, 
-                                   stimuli_indices, method='cca'):
+### Step 3: Measure Cross-Modal Alignment
+
+```python
+def compute_cross_modal_alignment(vision_reps, language_reps, metric='cosine'):
     """
-    Measure alignment between vision and language representations.
+    Compute cross-modal alignment for each stimulus.
     
-    Parameters:
-    -----------
-    vision_features : array
-        Vision model features for selected stimuli
-    language_features : array
-        Language model features for selected stimuli
-    method : str
-        Alignment method ('cca', 'rsa', 'linear_cka')
-        
+    Args:
+        vision_reps: Vision representations [n_stimuli, n_features]
+        language_reps: Language representations [n_stimuli, n_features]
+        metric: Similarity metric ('cosine' or 'euclidean')
+    
     Returns:
-    --------
-    alignment_score : float
-        Alignment magnitude
+        alignment: [n_stimuli] vector of alignment scores
     """
-    v_sub = vision_features[stimuli_indices]
-    l_sub = language_features[stimuli_indices]
-    
-    if method == 'cca':
-        from sklearn.cross_decomposition import CCA
-        cca = CCA(n_components=min(v_sub.shape[1], l_sub.shape[1]))
-        v_c, l_c = cca.fit_transform(v_sub, l_sub)
-        # Return mean canonical correlation
-        return np.mean([np.corrcoef(v_c[:, i], l_c[:, i])[0, 1] 
-                       for i in range(v_c.shape[1])])
-    
-    elif method == 'rsa':
-        # Representational similarity analysis
-        rdm_v = 1 - np.corrcoef(v_sub)
-        rdm_l = 1 - np.corrcoef(l_sub)
-        from scipy.stats import spearmanr
-        return spearmanr(rdm_v[np.triu_indices_from(rdm_v, k=1)],
-                        rdm_l[np.triu_indices_from(rdm_l, k=1)])[0]
-    
-    elif method == 'linear_cka':
-        # Centered Kernel Alignment
-        v_centered = v_sub - v_sub.mean(axis=0)
-        l_centered = l_sub - l_sub.mean(axis=0)
+    if metric == 'cosine':
+        # Cosine similarity
+        vision_norm = vision_reps / (np.linalg.norm(vision_reps, axis=1, keepdims=True) + 1e-8)
+        language_norm = language_reps / (np.linalg.norm(language_reps, axis=1, keepdims=True) + 1e-8)
         
-        hsic = np.trace(v_centered @ v_centered.T @ l_centered @ l_centered.T)
-        norm_v = np.linalg.norm(v_centered @ v_centered.T, 'fro')
-        norm_l = np.linalg.norm(l_centered @ l_centered.T, 'fro')
+        # Element-wise cosine similarity for corresponding stimuli
+        alignment = np.sum(vision_norm * language_norm, axis=1)
+    else:
+        # Negative Euclidean distance (higher = more aligned)
+        diff = vision_reps - language_reps
+        alignment = -np.linalg.norm(diff, axis=1)
+    
+    return alignment
+```
+
+### Step 4: Analyze Relationship
+
+```python
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def analyze_dispersion_alignment_relationship(intra_modal_dispersion,
+                                               cross_modal_alignment,
+                                               bins=5):
+    """
+    Analyze how intra-modal dispersion modulates cross-modal alignment.
+    
+    Args:
+        intra_modal_dispersion: [n_stimuli] dispersion values
+        cross_modal_alignment: [n_stimuli] alignment values
+        bins: Number of dispersion bins
+    
+    Returns:
+        analysis_results: Dict with statistics and binned results
+    """
+    # Compute correlation
+    correlation, p_value = stats.pearsonr(intra_modal_dispersion, cross_modal_alignment)
+    
+    # Bin by dispersion
+    percentiles = np.percentile(intra_modal_dispersion, 
+                                 np.linspace(0, 100, bins + 1))
+    
+    binned_results = []
+    for i in range(bins):
+        lower = percentiles[i]
+        upper = percentiles[i + 1]
         
-        return hsic / (norm_v * norm_l)
+        mask = (intra_modal_dispersion >= lower) & (intra_modal_dispersion < upper)
+        mean_alignment = np.mean(cross_modal_alignment[mask])
+        std_alignment = np.std(cross_modal_alignment[mask])
+        
+        binned_results.append({
+            'dispersion_range': (lower, upper),
+            'mean_alignment': mean_alignment,
+            'std_alignment': std_alignment,
+            'n_stimuli': mask.sum()
+        })
+    
+    return {
+        'correlation': correlation,
+        'p_value': p_value,
+        'binned_results': binned_results
+    }
+
+
+def visualize_relationship(intra_modal_dispersion, cross_modal_alignment,
+                          model_names=None):
+    """
+    Create visualization of the dispersion-alignment relationship.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # Scatter plot
+    ax1 = axes[0]
+    ax1.scatter(intra_modal_dispersion, cross_modal_alignment, alpha=0.5)
+    ax1.set_xlabel('Intra-Modal Dispersion')
+    ax1.set_ylabel('Cross-Modal Alignment')
+    ax1.set_title('Dispersion vs Alignment')
+    
+    # Add trend line
+    z = np.polyfit(intra_modal_dispersion, cross_modal_alignment, 1)
+    p = np.poly1d(z)
+    ax1.plot(np.sort(intra_modal_dispersion), 
+             p(np.sort(intra_modal_dispersion)), 
+             "r--", alpha=0.8)
+    
+    # Binned bar plot
+    ax2 = axes[1]
+    analysis = analyze_dispersion_alignment_relationship(
+        intra_modal_dispersion, cross_modal_alignment
+    )
+    
+    means = [b['mean_alignment'] for b in analysis['binned_results']]
+    stds = [b['std_alignment'] for b in analysis['binned_results']]
+    labels = [f"{b['dispersion_range'][0]:.3f}-{b['dispersion_range'][1]:.3f}" 
+              for b in analysis['binned_results']]
+    
+    ax2.bar(range(len(means)), means, yerr=stds)
+    ax2.set_xticks(range(len(means)))
+    ax2.set_xticklabels(labels, rotation=45)
+    ax2.set_xlabel('Intra-Modal Dispersion Range')
+    ax2.set_ylabel('Mean Cross-Modal Alignment')
+    ax2.set_title('Alignment by Dispersion Quartile')
+    
+    plt.tight_layout()
+    return fig, analysis
+```
+
+### Step 5: Complete Analysis Pipeline
+
+```python
+def analyze_cross_modal_convergence(stimuli, text_descriptions, images):
+    """
+    Complete pipeline for analyzing cross-modal convergence.
+    
+    Args:
+        stimuli: List of stimulus identifiers
+        text_descriptions: List of text descriptions (parallel to stimuli)
+        images: List of image tensors (parallel to stimuli)
+    
+    Returns:
+        results: Dict with all analysis results
+    """
+    # Initialize extractor
+    extractor = RepresentationExtractor()
+    
+    # Extract vision representations from multiple models
+    print("Extracting vision representations...")
+    vision_reps = {name: [] for name in extractor.vision_models.keys()}
+    
+    for img in images:
+        reps = extractor.extract_vision_representations(img)
+        for name, rep in reps.items():
+            vision_reps[name].append(rep[0])  # [0] to remove batch dim
+    
+    # Convert to matrices
+    vision_matrices = {name: np.stack(reps) for name, reps in vision_reps.items()}
+    
+    # Extract language representations
+    print("Extracting language representations...")
+    language_reps = []
+    for text in text_descriptions:
+        rep = extractor.extract_language_representation(text)
+        language_reps.append(rep[0])
+    language_matrix = np.stack(language_reps)
+    
+    # Generalized Procrustes for vision models
+    print("Aligning vision representations...")
+    aligned_vision, vision_consensus = generalized_procrustes(vision_matrices)
+    
+    # Compute intra-modal dispersion
+    print("Computing intra-modal dispersion...")
+    intra_modal_dispersion = compute_intra_modal_dispersion(aligned_vision)
+    
+    # Compute cross-modal alignment
+    print("Computing cross-modal alignment...")
+    # Use one vision model (e.g., DINOv2) for cross-modal comparison
+    cross_modal_alignment = compute_cross_modal_alignment(
+        aligned_vision['dino'], 
+        language_matrix
+    )
+    
+    # Analyze relationship
+    print("Analyzing dispersion-alignment relationship...")
+    analysis = analyze_dispersion_alignment_relationship(
+        intra_modal_dispersion, 
+        cross_modal_alignment
+    )
+    
+    # Visualize
+    fig, detailed_analysis = visualize_relationship(
+        intra_modal_dispersion, 
+        cross_modal_alignment,
+        list(extractor.vision_models.keys())
+    )
+    
+    return {
+        'intra_modal_dispersion': intra_modal_dispersion,
+        'cross_modal_alignment': cross_modal_alignment,
+        'correlation': analysis['correlation'],
+        'p_value': analysis['p_value'],
+        'binned_analysis': analysis['binned_results'],
+        'figure': fig
+    }
 ```
 
 ## Applications
 
-### Vision-Language Model Evaluation
-- Identify which stimuli show strongest cross-modal alignment
-- Understand when visual and linguistic representations converge
-- Evaluate model robustness across stimulus types
+1. **Model Selection** - Choose stimuli that maximize cross-modal alignment
+2. **Dataset Curation** - Filter ambiguous stimuli that reduce alignment
+3. **Brain Alignment** - Predict which stimuli will align with neural recordings
+4. **Multi-Modal Training** - Design better vision-language pretraining datasets
+5. **Interpretability** - Understand what makes stimuli "alignable" across modalities
 
-### Multi-Modal Transfer Learning
-- Select training data with low intra-modal dispersion for better transfer
-- Understand which concepts transfer well across modalities
-- Design better multi-modal pretraining strategies
+## Key Findings
 
-### Neural Network Interpretability
-- Study representational convergence at single-stimulus level
-- Identify stimuli that elicit consistent vs. divergent representations
-- Map the structure of learned representations
-
-### Brain-Model Alignment
-- Compare multi-modal alignment patterns in brains and models
-- Understand how humans represent concepts across modalities
-- Develop better models of cross-modal cognition
+- **Up to 2x improvement**: Low dispersion stimuli show 2x higher cross-modal alignment
+- **Robust effect**: Generalizes across different vision-language model pairings
+- **Interpretable**: High dispersion = ambiguous/complex content; Low dispersion = clear structure
 
 ## Pitfalls
 
-- **Procrustes limitations**: GPA removes rotation/reflection but assumes isotropic scaling; may not capture all geometric relationships
-- **Stimulus selection bias**: Careful matching needed when comparing high vs. low dispersion sets
-- **Model architecture effects**: Results may vary with different model families; test generalization
-- **Computational cost**: GPA is iterative and can be expensive for large model sets
-- **Interpretation**: Low dispersion ≠ "better" representation; reflects model agreement, not ground truth
+1. **Model Selection** - Results depend on which vision models are compared
+2. **Procrustes Limitations** - Orthogonal transformations may not capture all alignment types
+3. **Stimulus Selection Bias** - Care needed to avoid circular reasoning
+4. **Computational Cost** - Multiple forward passes required
+5. **Dimensionality** - High-dimensional representations may need dimensionality reduction
 
 ## Related Skills
 
-- `brain-alignment-patterns-analysis` - Brain-model alignment evaluation
-- `cross-modal-convergence` - Multi-modal representational convergence
-- `umwelt-representation-hypothesis` - Ecological constraints on alignment
-- `rsa-representational-similarity` - Representational similarity analysis
-- `generalized-procrustes-analysis` - GPA methodology reference
+- vlm-visual-cortex-alignment - Vision-language model brain alignment
+- brain-llm-key-neurons-grammar - Brain-LLM analogy
+- meta-learning-in-context-brain-decoding - Cross-subject brain decoding
+
+## References
+
+```bibtex
+@article{hosseini2026crossmodal,
+  title={Modulating Cross-Modal Convergence with Single-Stimulus, Intra-Modal Dispersion},
+  author={Hosseini, Eghbal A. and Cheung, Brian and Fedorenko, Evelina and Williams, Alex H.},
+  journal={arXiv preprint arXiv:2604.21836},
+  year={2026}
+}
+```

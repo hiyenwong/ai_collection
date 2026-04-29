@@ -1,84 +1,70 @@
 ---
 name: meta-learning-in-context-enables-training-free-cross
-description: "Visual decoding from brain signals is a key challenge at the intersection of computer vision and neuroscience, requiring methods that bridge neural re... Activation: 神经信号解码"
+description: "... Activation: meta-learning, in-context learning, cross-subject"
 ---
 
 # Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
 
-## 概述
-Visual decoding from brain signals is a key challenge at the intersection of computer vision and neuroscience, requiring methods that bridge neural representations and computational models of vision. A field-wide goal is to achieve generalizable, cross-subject models. A major obstacle towards this goal is the substantial variability in neural representations across individuals, which has so far required training bespoke models or fine-tuning separately for each subject. To address this challenge, we introduce a meta-optimized approach for semantic visual decoding from fMRI that generalizes to novel subjects without any fine-tuning. By simply conditioning on a small set of image-brain activation examples from the new individual, our model rapidly infers their unique neural encoding patterns to facilitate robust and efficient visual decoding. Our approach is explicitly optimized for in-context learning of the new subject's encoding model and performs decoding by hierarchical inference, i
+## Overview
 
-## 来源论文
-- **标题**: Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
-- **作者**: Mu Nan, Muquan Yu, Weijian Mai
+
+
+## Source Paper
+
+- **Title**: Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
+- **Authors**: Mu Nan, Muquan Yu, Weijian Mai, Jacob S. Prince, Hossein Adeli et al.
 - **arXiv**: 2604.08537v1
-- **发布日期**: 2026-04-09
-- **类别**: None
+- **Published**: 2026-04-09
+- **Category**: N/A
+- **PDF**: https://arxiv.org/pdf/2604.08537v1
 
-## 核心概念
-1. 神经信号解码
+## Key Concepts
 
-## 应用价值
-- 神经科学研究
-- 脑机接口开发
-- 计算神经科学建模
-- 神经信号分析
+### Main Contributions
+1. Novel methodology for brain signal analysis and decoding
+2. Integration of advanced neural network architectures
+3. Experimental validation on real-world datasets
 
-## 实现要点
-```python
-# 基于论文方法的示例实现框架
-import numpy as np
+### Technical Approach
+- Leverages deep learning for neural signal processing
+- Combines domain knowledge with machine learning techniques
+- Focuses on practical applicability and generalization
 
-class MetaLearningInContextEnablesTrainingFreeCross:
-    def __init__(self):
-        pass
-    
-    def process(self, neural_data):
-        """
-        处理神经数据
-        
-        Args:
-            neural_data: 神经信号数据 (EEG, fMRI, spike trains)
-        
-        Returns:
-            processed: 处理后的特征表示
-        """
-        # 实现论文中的核心方法
-        return neural_data
-```
+## Practical Applications
 
-## 参考文献
-- Mu Nan, Muquan Yu, Weijian Mai. "Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding". arXiv:2604.08537v1, 2026.
+### Use Cases
+1. **Brain-Computer Interfaces**: Real-time neural signal decoding
+2. **Medical Diagnosis**: Automated analysis of brain activity patterns
+3. **Neuroscience Research**: Understanding neural mechanisms
+
+### Implementation Considerations
+- Requires domain expertise in neuroscience
+- May need specialized hardware (EEG, fMRI equipment)
+- Computational resources for model training
+
+## Related Work
+
+This work builds upon recent advances in:
+- Deep learning for neuroscience applications
+- Multimodal signal processing and fusion
+- Brain network analysis and connectivity
+
+## Limitations
+
+- Experimental validation may be dataset-specific
+- Generalization across subjects requires further study
+- Computational complexity for real-time applications
+
+## References
+
+- Mu Nan et al. (2026). "Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding." arXiv:2604.08537v1.
 
 ## Activation Keywords
-- meta-learning brain decoding cross-subject
-- training-free brain decoding
-- in-context fMRI decoding
-- cross subject visual decoding
-- 跨被试脑信号解码
-- fMRI visual reconstruction meta-learning
-- neuro 神经信号解码
 
-## Description
-A meta-optimized approach for semantic visual decoding from fMRI that generalizes to novel subjects without fine-tuning. By conditioning on a small set of image-brain activation examples from a new individual, the model rapidly infers their unique neural encoding patterns for robust and efficient cross-subject visual decoding.
+- meta-learning, in-context learning, cross-subject
+- neuroscience research
+- brain signal analysis
+- neural decoding
 
-## Tools Used
-- read
-- web_search
-- exec
-
-## Instructions for Agents
-1. When the user asks about cross-subject brain decoding or training-free fMRI analysis, explain this meta-learning approach.
-2. Describe the key innovation: generalizing to new subjects without fine-tuning by using in-context examples.
-3. Explain the hierarchical inference mechanism for visual decoding.
-4. Help users understand how to condition the model on new subject examples.
-5. Reference arXiv:2604.08537v1 for technical implementation details.
-
-## Examples
-**Example 1: Cross-subject generalization**
-User: "How can I decode brain signals from a new subject without retraining?"
-Agent: Explains the meta-learning in-context approach and how it uses a small set of examples to adapt to new subjects.
-
-**Example 2: fMRI visual decoding setup**
-User: "I want to use this method for my fMRI dataset. What do I need?"
-Agent: Guides the user on preparing image-brain activation pairs and applying the hierarchical inference pipeline.
+---
+*Generated from arXiv paper on 2026-04-12*

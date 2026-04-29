@@ -1,117 +1,127 @@
 ---
 name: density-driven-multi-agent-control
-description: Stochastic Density-Driven Optimal Control (D²OC) for Multi-Agent Systems
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: ['multi-agent', 'optimal-control', 'density-control', 'coverage', 'wasserstein', 'mpc']
-    source_paper: "Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems (arXiv:2604.08495v1)"
-    citations: 0
-    category: systems-engineering
+description: Stochastic Density-Driven Optimal Control (D²OC) for multi-agent systems. Implements decentralized non-uniform area coverage using Lagrangian framework with Wasserstein distance minimization. Use for multi-agent coverage control, swarm robotics coordination, and distributed optimization with convergence guarantees.
 ---
 
 # Density-Driven Optimal Control for Multi-Agent Systems
 
+This skill implements the Stochastic Density-Driven Optimal Control (D²OC) framework for multi-agent systems, providing a rigorous Lagrangian approach to decentralized non-uniform area coverage problems.
+
 ## Overview
-This paper addresses decentralized non-uniform area coverage for multi-agent systems, critical for missions with high spatial priority and resource constraints. Unlike density-based methods relying on computationally heavy Eulerian PDE solvers or heuristic planning, D²OC proposes a rigorous Lagrangian framework bridging individual agent dynamics and collective distribution matching.
 
-## Core Concepts
-- **Density-Driven Control**: Controlling multi-agent systems through density matching
-- **Wasserstein Distance**: Metric for comparing target and actual agent distributions
-- **Stochastic MPC**: Model Predictive Control with stochastic dynamics
-- **Lagrangian Framework**: Agent-centric approach vs Eulerian PDE methods
-- **Non-Uniform Coverage**: Spatially varying coverage requirements
+D²OC bridges the gap between individual agent dynamics and collective distribution matching by formulating a stochastic MPC-like problem that minimizes the Wasserstein distance as a running cost. The approach ensures time-averaged empirical distribution converges to a non-parametric target density under stochastic LTI dynamics.
 
-## Implementation Pattern
-```python
-# Density-Driven Optimal Control (D²OC) Framework
-import numpy as np
+**Key Features:**
+- Decentralized non-uniform area coverage
+- Formal convergence guarantees via reachability analysis
+- Bounded tracking error under process and measurement noise
+- Outperforms heuristic methods in optimality and consistency
 
-class DensityDrivenOptimalControl:
-    def __init__(self, n_agents, target_density_fn, workspace_bounds):
-        self.n_agents = n_agents
-        self.target_density = target_density_fn
-        self.bounds = workspace_bounds
-        self.agent_positions = np.zeros((n_agents, 2))
-    
-    def wasserstein_distance(self, agent_pos, grid_resolution=50):
-        x = np.linspace(self.bounds[0][0], self.bounds[0][1], grid_resolution)
-        y = np.linspace(self.bounds[1][0], self.bounds[1][1], grid_resolution)
-        X, Y = np.meshgrid(x, y)
-        target = self.target_density(X, Y)
-        target = target / target.sum()
-        
-        # Empirical agent density
-        agent_density = np.zeros_like(target)
-        for pos in agent_pos:
-            dist = np.sqrt((X - pos[0])**2 + (Y - pos[1])**2)
-            agent_density += np.exp(-dist**2 / (2 * 0.1**2))
-        
-        agent_density = agent_density / agent_density.sum()
-        return np.sum(np.abs(target - agent_density))
-    
-    def compute_control(self, agent_pos, horizon=10, dt=0.1):
-        controls = np.zeros((self.n_agents, 2))
-        epsilon = 0.01
-        
-        for i in range(self.n_agents):
-            current_w = self.wasserstein_distance(agent_pos)
-            for dim in range(2):
-                agent_pos[i, dim] += epsilon
-                perturbed_w = self.wasserstein_distance(agent_pos)
-                agent_pos[i, dim] -= epsilon
-                gradient = (perturbed_w - current_w) / epsilon
-                controls[i, dim] = -0.5 * gradient
-        
-        return controls
+## When to Use This Skill
+
+- Multi-agent area coverage with spatial priority
+- Resource-constrained swarm missions
+- Decentralized coordination requiring convergence guarantees
+- Distribution matching problems in robotics
+
+## Core Methodology
+
+### Problem Formulation
+
+The D²OC framework addresses:
+- **Agent Dynamics**: Stochastic Linear Time-Invariant (LTI) systems
+- **Objective**: Minimize Wasserstein distance between empirical and target distributions
+- **Control**: Stochastic MPC-like formulation
+
+### Mathematical Framework
+
+```
+Wasserstein Distance as Running Cost
+  ↓
+Time-Averaged Empirical Distribution
+  ↓
+Convergence to Target Density
+  ↓
+Bounded Tracking Error (via Reachability Analysis)
 ```
 
-## Key Insights
-- Density-based control bridges individual and collective behavior
-- Wasserstein distance provides rigorous distribution matching metric
-- Lagrangian approach is computationally efficient vs PDE methods
-- Stochastic MPC handles uncertainty in agent dynamics
+### Key Results
+
+- **Convergence Guarantee**: Formal proof via reachability analysis
+- **Noise Robustness**: Bounded error under process/measurement noise
+- **Decentralized**: Distributed computation without central coordination
+
+## Implementation Guide
+
+### Prerequisites
+
+- Multi-agent system with LTI dynamics
+- Target density function (non-parametric)
+- Process and measurement noise models
+
+### Algorithm Steps
+
+1. **Initialize** agent positions and target density
+2. **Compute** Wasserstein distance between current empirical distribution and target
+3. **Solve** stochastic MPC problem with Wasserstein cost
+4. **Apply** control inputs to each agent
+5. **Iterate** until convergence
+
+### Parameters
+
+| Parameter | Description | Typical Range |
+|-----------|-------------|---------------|
+| N | Number of agents | 10-1000 |
+| T | Time horizon | 10-100 steps |
+| σ_process | Process noise std | 0.01-0.1 |
+| σ_measurement | Measurement noise std | 0.01-0.1 |
 
 ## Applications
-- Environmental monitoring
-- Search and rescue operations
-- Precision agriculture
-- Surveillance and patrolling
+
+- **Search and Rescue**: Prioritized area coverage
+- **Environmental Monitoring**: Non-uniform sensor placement
+- **Warehouse Robotics**: Distributed task allocation
+- **Agricultural Drones**: Crop monitoring with variable priority
 
 ## References
-- Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems (arXiv:2604.08495v1)
-- arXiv: https://arxiv.org/abs/2604.08495v1
 
+**Paper**: Density-Driven Optimal Control: Convergence Guarantees for Stochastic LTI Multi-Agent Systems
+- **Authors**: Kooktae Lee
+- **arXiv**: 2604.08495
+- **Date**: 2026-04-09
+- **Categories**: math.OC, cs.MA, cs.RO
 
-## Description
+## Related Skills
 
-This skill provides specialized capabilities for its domain.
+- `multi-agent-density-control`: Related density-based control methods
+- `decentralized-optimization-smtpp`: Stochastic momentum tracking for distributed optimization
 
-## Activation Keywords
-
-- keyword1
-- keyword2
-- keyword3
-
-## Tools Used
-
-- read: Read files
-- write: Write files
-- exec: Execute commands
 
 ## Instructions for Agents
 
-When this skill is activated:
+使用此技能时遵循以下流程：
 
-1. Identify the user's specific need
-2. Apply the specialized knowledge
-3. Provide clear guidance
+1. **理解问题**：分析输入需求和约束条件
+2. **选择方法**：根据场景选择合适的技术方案
+3. **执行操作**：按照方法论实施具体步骤
+4. **验证结果**：检查结果是否符合预期
 
 ## Examples
 
-```
-User: How do I use this skill?
-Agent: I'll help you with this skill...
-```
+### Example 1: Basic Usage
+
+**User:** 请帮我应用此技能
+
+**Agent:** 我将按照标准流程执行...
+
+### Example 2: Advanced Usage
+
+**User:** 有更复杂的场景需要处理
+
+**Agent:** 针对复杂场景，我将采用以下策略...
+
+## Tools Used
+
+- `exec`
+- `read`
+- `write`

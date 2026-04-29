@@ -1,455 +1,235 @@
 ---
 name: spiking-compositional-neural-operator
-description: >
-  SCNO (Spiking Compositional Neural Operator) — modular neuromorphic
-  architecture combining spiking neurons with compositional neural operators
-  for energy-efficient, incremental PDE solving.
+description: "Spiking Compositional Neural Operator (SCNO) - 模块化脉冲神经算子架构，用于PDE求解。通过组合基础微分算子块解决耦合PDE，实现零遗忘模块化扩展。适用于科学计算、PDE代理模型、神经形态计算、核工程仿真。Activation: spiking neural operator, compositional, PDE solving, modular neural network, DeepONet, zero-forgetting, neuromorphic computing"
 version: 1.0.0
-author: Hermes Agent (cron)
-date: 2026-04-20
-tags:
-  - neural-operators
-  - spiking-neural-networks
-  - PDE-solving
-  - neuromorphic-computing
-  - compositional-learning
-  - energy-efficient-ML
-  - nuclear-engineering
-  - continual-learning
-activation_keywords:
-  - spiking neural operator
-  - SCNO
-  - compositional PDE solving
-  - 脉冲神经算子
-  - 神经形态计算
-  - neuromorphic foundation model
-license: MIT
+metadata:
+  hermes:
+    tags: [spiking, neural-operator, PDE, modular, zero-forgetting, compositional]
+    source_paper: "SCNO: Spiking Compositional Neural Operator -- Towards a Neuromorphic Foundation Model for Nuclear PDE Solving (arXiv:2604.11625)"
+    authors: "Samrendra Roy, Souvik Chakraborty, Rizwan-uddin, Syed Bahauddin Alam"
+    published: "2026-04-13"
 ---
 
 # Spiking Compositional Neural Operator (SCNO)
 
-A modular neuromorphic architecture combining spiking neural networks with compositional neural operators for energy-efficient, incremental PDE solving.
-
 ## Overview
 
-SCNO (Spiking Compositional Neural Operator) is the **first compositional spiking neural operator** and the **first proof-of-concept for modular neuromorphic PDE solving** with built-in forgetting-free expansion. It addresses three critical limitations of traditional neural operators:
+SCNO is a **modular spiking neural operator architecture** that solves partial differential equations (PDEs) by composing small specialized blocks, each trained on a single elementary differential operator. This approach addresses three key limitations of existing neural operators: monolithic training, GPU dependency, and catastrophic forgetting when adding new physics.
 
-1. **Monolithic training** — Each PDE requires a separate full model; SCNO composes reusable blocks instead
-2. **High energy consumption** — GPU-intensive inference; SCNO uses spike-based event-driven computation
-3. **Catastrophic forgetting** — Adding new physics requires full retraining; SCNO enables zero-forgetting incremental expansion
+**Source Paper**: arXiv:2604.11625 (2026-04-13)
 
-The architecture maintains a **library of small spiking neural operator blocks**, each trained on a single elementary differential operator (convection, diffusion, reaction). A lightweight **input-conditioned aggregator** composes these blocks to solve coupled PDEs not seen during individual block training. A small **correction network** learns cross-coupling residuals while keeping all blocks and the aggregator frozen, preserving zero-forgetting by construction.
+## Core Concepts
 
-Evaluated on **8 PDE families** including 5 coupled systems and a nuclear-relevant 1-group neutron diffusion equation, achieving lowest error with correction while maintaining significant energy savings.
+### 1. Modular Operator Library
+SCNO maintains a library of small spiking neural operator blocks:
+- **Convection block**: Handles transport/advection terms
+- **Diffusion block**: Handles diffusive processes
+- **Reaction block**: Handles reactive/source terms
 
-## Core Architecture
+Each block is trained independently on its corresponding elementary operator.
 
-### Three-Level Modular Design
-
+### 2. Input-Conditioned Aggregator
+A lightweight aggregator composes the pre-trained blocks to solve coupled PDEs not seen during individual block training:
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    SCNO Architecture                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Input: (a, p, BC) ──► Encoder ──► Latent Features         │
-│                                                             │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐          │
-│  │ Block A     │  │ Block B     │  │ Block C     │  ← Library│
-│  │ (Convection)│  │ (Diffusion) │  │ (Reaction)  │          │
-│  │  SNN-based  │  │  SNN-based  │  │  SNN-based  │          │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘          │
-│         │                │                │                  │
-│         ▼                ▼                ▼                  │
-│  ┌─────────────────────────────────────────────┐            │
-│  │       Input-Conditioned Aggregator          │            │
-│  │  (Lightweight MLP / Attention-based)        │            │
-│  │  Computes weights for each block            │            │
-│  └─────────────────────┬───────────────────────┘            │
-│                        ▼                                    │
-│              ┌─────────────────────┐                        │
-│              │  Correction Network │  ← Small MLP           │
-│              │  (Cross-coupling)   │     Trained separately │
-│              └────────┬────────────┘     Blocks frozen       │
-│                       ▼                                     │
-│                  Output: u(x, t)                            │
-└─────────────────────────────────────────────────────────────┘
+f_total = Σ_i w_i(x) · block_i(input)
 ```
+where weights `w_i(x)` are conditioned on the input PDE characteristics.
 
-### Component Details
+### 3. Correction Network for Cross-Coupling
+A small correction network learns cross-coupling residuals between blocks:
+- All base blocks remain **frozen** during correction training
+- Preserves zero-forgetting property by construction
+- Only 95K trainable parameters vs 462K for monolithic baseline
 
-#### 1. Spiking Neural Operator Blocks
+### 4. Zero-Forgetting Modular Expansion
+New physics can be added by training a new block without retraining existing ones:
+- Existing blocks are frozen
+- Only correction network needs updating
+- No catastrophic forgetting
 
-Each block encodes one elementary differential operator using **Leaky Integrate-and-Fire (LIF) spiking neurons**:
+## Implementation
+
+### SCNO Architecture
 
 ```python
 import torch
 import torch.nn as nn
 
-class LIFNeuron:
-    """Leaky Integrate-and-Fire spiking neuron for SCNO blocks."""
-
-    def __init__(self, threshold=1.0, leak=0.8, dt=1.0):
-        self.threshold = threshold
-        self.leak = leak  # membrane potential decay factor
-        self.dt = dt
-
-    def forward(self, x, T=10):
-        """
-        Run spiking simulation for T timesteps.
-
-        Args:
-            x: Input tensor (batch, features, ...)
-            T: Number of simulation timesteps
-
-        Returns:
-            spike_output: Accumulated spike count normalized by T
-            spike_rate:   Average firing rate per neuron
-        """
-        mem = torch.zeros_like(x)  # membrane potential
-        spike_count = torch.zeros_like(x)
-
-        for t in range(T):
-            mem = self.leak * mem + x  # leaky integration
-
-            # Spike when membrane potential crosses threshold
-            spike = (mem >= self.threshold).float()
-
-            # Reset membrane potential after spike (soft reset)
-            mem = mem - spike * self.threshold
-
-            spike_count = spike_count + spike
-
-        return spike_count / T  # normalized rate coding
-```
-
-#### 2. Spiking Operator Block Definition
-
-```python
 class SpikingOperatorBlock(nn.Module):
-    """A single SCNO block for one elementary operator."""
-
-    def __init__(self, operator_type, hidden_dim=64, T=10):
+    """Single spiking neural operator block for one elementary operator."""
+    
+    def __init__(self, in_dim=2, hidden_dim=64, out_dim=1, num_spiking_layers=3):
         super().__init__()
-        self.operator_type = operator_type
-        self.T = T  # simulation timesteps
-
-        # Encoding: lift input to higher-dimensional latent space
-        self.encoder = nn.Sequential(
-            nn.Linear(in_dim, hidden_dim),
-            nn.LayerNorm(hidden_dim)
-        )
-
-        # Spiking processing layers (LIF neurons between linear transforms)
-        self.lif = LIFNeuron(threshold=1.0, leak=0.8)
+        self.encoder = nn.Linear(in_dim, hidden_dim)
         self.spiking_layers = nn.ModuleList([
-            nn.Sequential(
-                nn.Linear(hidden_dim, hidden_dim),
-                # LIF activation applied in forward pass
-            ) for _ in range(num_layers)
+            SpikingLIF(hidden_dim) for _ in range(num_spiking_layers)
         ])
-
-        # Projection: decode back to solution space
         self.decoder = nn.Linear(hidden_dim, out_dim)
-
-        # Block-specific bias for the operator type
-        self.operator_bias = nn.Parameter(torch.zeros(out_dim))
-
-    def forward(self, x):
+        
+    def forward(self, x, timesteps=10):
         h = self.encoder(x)
-
         for layer in self.spiking_layers:
-            h_lin = layer[:1](h)  # linear part
-            h = self.lif(h_lin, T=self.T)  # spiking activation
+            h = layer(h, timesteps)
+        return self.decoder(h)
 
-        out = self.decoder(h) + self.operator_bias
-        return out
-```
 
-#### 3. Input-Conditioned Aggregator
-
-```python
 class InputConditionedAggregator(nn.Module):
-    """
-    Lightweight aggregator that computes adaptive weights
-    for composing spiking blocks based on input conditions.
-    """
-
-    def __init__(self, num_blocks, hidden_dim=32):
+    """Lightweight aggregator that composes blocks based on input."""
+    
+    def __init__(self, num_blocks, in_dim, hidden_dim=32):
         super().__init__()
-        self.num_blocks = num_blocks
-
-        self.weight_network = nn.Sequential(
-            nn.Linear(cond_dim, hidden_dim),
-            nn.GELU(),
+        self.weight_net = nn.Sequential(
+            nn.Linear(in_dim, hidden_dim),
+            nn.ReLU(),
             nn.Linear(hidden_dim, num_blocks),
-            nn.Softmax(dim=-1)  # normalized composition weights
+            nn.Softmax(dim=-1)  # Normalized block weights
         )
+        
+    def forward(self, x):
+        return self.weight_net(x)  # [batch, num_blocks]
 
-    def forward(self, block_outputs, conditions):
-        """
-        Args:
-            block_outputs: List of outputs from each spiking block
-            conditions: Input-conditioning features (PDE params, BCs)
 
-        Returns:
-            Composed output: weighted sum of block outputs
-        """
-        weights = self.weight_network(conditions)  # (batch, num_blocks)
-
-        composed = torch.zeros_like(block_outputs[0])
-        for i, block_out in enumerate(block_outputs):
-            composed = composed + weights[:, i:i+1] * block_out
-
-        return composed, weights
-```
-
-#### 4. Correction Network (Zero-Forgetting Expansion)
-
-```python
 class CorrectionNetwork(nn.Module):
-    """
-    Small MLP that learns cross-coupling residuals
-    between spiking blocks.
-
-    Key property: All blocks + aggregator remain FROZEN.
-    Only this small network is trained for new PDEs.
-    """
-
-    def __init__(self, hidden_dim=32):
+    """Small network for learning cross-coupling residuals."""
+    
+    def __init__(self, in_dim=2, hidden_dim=32, out_dim=1):
         super().__init__()
         self.net = nn.Sequential(
-            nn.Linear(in_dim * 2, hidden_dim),
-            nn.GELU(),
+            nn.Linear(in_dim, hidden_dim),
+            nn.ReLU(),
             nn.Linear(hidden_dim, hidden_dim),
-            nn.GELU(),
+            nn.ReLU(),
             nn.Linear(hidden_dim, out_dim)
         )
+        
+    def forward(self, x):
+        return self.net(x)
 
-    def forward(self, x, composed_output):
-        """
-        Learns the residual: true_solution - composed_output
-        capturing inter-operator coupling effects.
-        """
-        correction_input = torch.cat([x, composed_output], dim=-1)
-        return self.net(correction_input)
-```
 
-#### 5. Full SCNO Assembly
-
-```python
 class SCNO(nn.Module):
-    """
-    Spiking Compositional Neural Operator.
-
-    Full assembly: blocks + aggregator + correction.
-    """
-
-    def __init__(self, block_library, num_blocks, correction_enabled=True):
+    """Spiking Compositional Neural Operator."""
+    
+    def __init__(self, operator_types=['convection', 'diffusion', 'reaction'],
+                 in_dim=2, out_dim=1):
         super().__init__()
-        self.block_library = nn.ModuleDict(block_library)
-        self.aggregator = InputConditionedAggregator(num_blocks)
-        self.correction_enabled = correction_enabled
-
-        if correction_enabled:
-            self.correction = CorrectionNetwork()
-
-    def forward(self, input_field, parameters, boundary_conditions):
-        """
-        Args:
-            input_field:     Spatial/temporal input function a(x)
-            parameters:      PDE parameters (coefficients, etc.)
-            boundary_conditions: BC specification
-
-        Returns:
-            Solution field u(x, t)
-        """
-        # Encode conditioning
-        conditions = self.encode_conditions(parameters, boundary_conditions)
-
-        # Run each spiking block independently
+        
+        # Modular operator library
+        self.blocks = nn.ModuleDict({
+            op: SpikingOperatorBlock(in_dim, hidden_dim=64, out_dim=out_dim)
+            for op in operator_types
+        })
+        
+        # Aggregator
+        num_blocks = len(operator_types)
+        self.aggregator = InputConditionedAggregator(num_blocks, in_dim)
+        
+        # Correction network
+        self.correction = CorrectionNetwork(in_dim, hidden_dim=32, out_dim=out_dim)
+        
+    def forward(self, x, use_correction=True, timesteps=10):
+        # Get block outputs
         block_outputs = []
-        for block_name, block in self.block_library.items():
-            block_out = block(input_field)
-            block_outputs.append(block_out)
-
-        # Compose with learned weights
-        composed, weights = self.aggregator(block_outputs, conditions)
-
-        # Apply correction for cross-coupling residuals
-        if self.correction_enabled:
-            correction = self.correction(input_field, composed)
-            output = composed + correction
-        else:
-            output = composed
-
-        return output, weights
+        for block in self.blocks.values():
+            block_outputs.append(block(x, timesteps))
+        
+        block_outputs = torch.stack(block_outputs, dim=-1)  # [batch, out, num_blocks]
+        
+        # Aggregate
+        weights = self.aggregator(x)  # [batch, num_blocks]
+        aggregated = torch.sum(block_outputs * weights.unsqueeze(-2), dim=-1)
+        
+        # Add correction
+        if use_correction:
+            aggregated = aggregated + self.correction(x)
+        
+        return aggregated
+    
+    def freeze_blocks(self):
+        """Freeze all operator blocks for zero-forgetting training."""
+        for block in self.blocks.values():
+            for param in block.parameters():
+                param.requires_grad = False
+        for param in self.aggregator.parameters():
+            param.requires_grad = False
 ```
 
-## Implementation Pattern
-
-### Two-Phase Training Strategy
+### Training Pipeline
 
 ```python
-def train_scno():
-    """
-    Phase 1: Train individual blocks on elementary operators.
-    Phase 2: Train aggregator + correction on coupled systems.
-    """
-
-    # === PHASE 1: Block Training ===
-    # Each block trained independently on its operator
-    for block_name, block_data in elementary_datasets.items():
-        block = block_library[block_name]
-
-        for epoch in range(num_epochs):
-            # Train ONLY this block on its specific operator
-            # (e.g., pure convection equation, pure diffusion)
-            loss = compute_loss(
-                block(input_field),
-                ground_truth
-            )
-            loss.backward()
-            optimizer.step()
-
-    # === PHASE 2: Aggregator Training ===
-    # Freeze all blocks, train only aggregator
-    for block in block_library.values():
-        for param in block.parameters():
-            param.requires_grad = False
-
-    for epoch in range(num_epochs):
-        composed_output, weights = aggregator(block_outputs, conditions)
-        loss = compute_loss(composed_output, target)
-        loss.backward()
-        aggregator_optimizer.step()
-
-    # === PHASE 3: Correction Training (Incremental) ===
-    # Add new PDE system → freeze everything, train only correction
-    for param in block_library.parameters():
-        param.requires_grad = False
-    for param in aggregator.parameters():
-        param.requires_grad = False
-
-    for epoch in range(num_epochs):
-        correction = correction_network(input_field, composed)
-        final_output = composed + correction
-        loss = compute_loss(final_output, coupled_target)
-        loss.backward()
-        correction_optimizer.step()
-```
-
-### Key Design Principles
-
-| Principle | Mechanism | Benefit |
-|-----------|-----------|---------|
-| **Modularity** | Each block handles one elementary operator | Reuse across PDE families |
-| **Sparsity** | LIF neurons fire only when threshold crossed | Sparse computation, low energy |
-| **Compositionality** | Aggregator learns to weight block outputs | Generalize to unseen coupled PDEs |
-| **Zero-forgetting** | Correction trained with blocks frozen | Add new physics without retraining |
-| **Incremental** | Library grows; old blocks never modified | Continual learning by design |
-
-## Energy Efficiency
-
-SCNO achieves energy efficiency through multiple mechanisms:
-
-1. **Event-driven computation** — LIF neurons consume compute only when spikes occur
-2. **Sparse activation** — Typical spiking rates 10-30% vs 100% dense ANN activation
-3. **Small block size** — Each block is compact; only relevant blocks activate per PDE
-4. **Neuromorphic deployment** — Compatible with Loihi, TrueNorth, SpiNNaker chips
-5. **Correction efficiency** — Small correction MLP vs full retraining of monolithic model
-
-```
-Energy Estimate:
-┌─────────────────────────┬───────────────┐
-│ Approach                │ Relative Cost │
-├─────────────────────────┼───────────────┤
-│ Monolithic FNO (GPU)    │     1.00x     │
-│ SCNO without correction │     0.15x     │
-│ SCNO with correction    │     0.18x     │
-├─────────────────────────┼───────────────┤
-│ ~5-7x energy reduction                 │
-└─────────────────────────┴───────────────┘
+def train_scno_modular():
+    """Two-phase training for SCNO."""
+    
+    # Phase 1: Train individual blocks
+    for op_name, block in model.blocks.items():
+        train_single_block(block, operator_data[op_name])
+    
+    # Phase 2: Freeze blocks, train aggregator + correction
+    model.freeze_blocks()
+    train_aggregator_and_correction(
+        model.aggregator, 
+        model.correction, 
+        coupled_pde_data
+    )
 ```
 
 ## Applications
 
-- **Nuclear engineering**: 1-group neutron diffusion equation, reactor physics
-- **Multiphysics simulation**: Coupled convection-diffusion-reaction systems
-- **Climate modeling**: Atmospheric transport PDEs
-- **Fluid dynamics**: Navier-Stokes surrogates
-- **Materials science**: Phase-field equations
-- **Edge computing**: Real-time PDE solving on neuromorphic hardware
-- **Scientific foundation models**: Build reusable physics libraries
+### 1. Nuclear Engineering
+- 1-group neutron diffusion equation solving
+- Multi-physics coupled simulations
+- Real-time reactor analysis
 
-## Activation Keywords
+### 2. Scientific Computing
+- PDE surrogate modeling
+- Multi-physics problems (convection-diffusion-reaction)
+- Real-time simulation for control systems
 
-### English
-```
-spiking neural operator, SCNO, compositional PDE solving,
-neural operator, spiking neural network, LIF neuron,
-neuromorphic computing, leaky integrate-and-fire,
-modular neural operator, incremental learning,
-zero-forgetting, PDE surrogate, physics-informed ML,
-energy-efficient ML, neural PDE solver,
-convection-diffusion-reaction, correction network,
-input-conditioned aggregator, sparse activation,
-neuromorphic foundation model, continual learning PDE,
-nuclear PDE, neutron diffusion, edge AI physics
-```
+### 3. Neuromorphic Hardware
+- Deploy on spiking neuromorphic chips
+- Energy-efficient PDE solving at edge
+- Real-time physics simulation on low-power devices
 
-### Chinese
-```
-脉冲神经算子, SCNO, 组合式偏微分方程求解,
-神经算子, 脉冲神经网络, LIF神经元,
-神经形态计算, 泄漏积分发放,
-模块化神经算子, 增量学习,
-零遗忘, PDE代理模型, 物理信息机器学习,
-节能机器学习, 神经PDE求解器,
-对流扩散反应, 校正网络,
-输入条件聚合器, 稀疏激活,
-神经形态基础模型, 持续学习PDE,
-核工程PDE, 中子扩散, 边缘AI物理
-```
+## Performance
+
+| Metric | SCNO | Monolithic Spiking DeepONet | ANN DeepONet |
+|--------|------|----------------------------|--------------|
+| Parameters | 95K | 462K | Varies |
+| Coupled PDE accuracy | Best (4/5 cases) | Up to 62% worse | Up to 65% worse |
+| Forgetting | Zero | N/A | N/A |
+| Modularity | Yes | No | No |
+
+## Key Advantages
+
+1. **Parameter efficiency**: 5x fewer trainable parameters than monolithic
+2. **Zero-forgetting**: Add new physics without retraining
+3. **Compositional generalization**: Solve unseen coupled PDEs
+4. **Neuromorphic compatibility**: Spiking components for energy-efficient deployment
+
+## Limitations
+
+- Requires pre-training individual operator blocks
+- Correction network capacity limits coupling complexity
+- Currently validated on 1D/2D problems
 
 ## References
 
-- **Paper**: Roy, S., Chakraborty, S., et al. (2026). "SCNO: Spiking Compositional Neural Operator — Towards a Neuromorphic Foundation Model for Nuclear PDE Solving." arXiv:2604.11625v1.
-- **arXiv**: https://arxiv.org/abs/2604.11625
-- **PDF**: https://arxiv.org/pdf/2604.11625
-- **Semantic Scholar**: https://www.semanticscholar.org/paper/SCNO:-Spiking-Compositional-Neural-Operator-Towards-Roy-Chakraborty/c7acf14c393cc654955b5402b377fd9e9f4513d4
-- **Related**: Fourier Neural Operator (FNO) — Li et al., 2020
-- **Related**: Neural Operators for PDEs — Kovachki et al., 2023
-- **Related**: Spiking Neural Networks — Tavanaei et al., 2019
+- Roy, S. et al. (2026). "SCNO: Spiking Compositional Neural Operator -- Towards a Neuromorphic Foundation Model for Nuclear PDE Solving." arXiv:2604.11625.
 
-## Notes
+## Activation Keywords
 
-- SCNO represents a paradigm shift from monolithic PDE surrogates to composable, energy-efficient physics libraries
-- The "foundation model" vision: a growing library of spiking operator blocks deployable on neuromorphic hardware for real-time multiphysics simulation at the edge
-- The correction network enables incremental addition of new PDE physics without any forgetting of previously learned operators
+- spiking compositional neural operator
+- SCNO
+- modular PDE solving
+- neural operator
+- zero-forgetting
+- DeepONet spiking
+- neuromorphic PDE
+- operator learning
+- 脉冲神经算子
+- 模块化PDE求解
 
-## Tools Used
+## Related Skills
 
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Spiking Compositional Neural Operator usage
-```
-User: "Help me with spiking compositional neural operator"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed spiking compositional neural operator assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- [[spiking-neural-network-analysis]]
+- [[learning-neuron-dynamics-deep-snn]]
+- [[data-driven-moving-horizon-estimation]]

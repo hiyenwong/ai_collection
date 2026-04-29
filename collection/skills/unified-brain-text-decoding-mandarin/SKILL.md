@@ -6,7 +6,6 @@ source: arXiv:2603.12628v1
 categories: [q-bio.NC, cs.AI, eess.SP]
 status: active
 trigger: brain-to-text, speech decoding, Mandarin, Chinese, LLM, production, perception, cross-modal, syllable, neural decoding
-description: "Unified Brain-to-Text Decoding Across Speech Production and Perception in Mandarin Chinese"
 ---
 
 # Unified Brain-to-Text Decoding Across Speech Production and Perception in Mandarin Chinese

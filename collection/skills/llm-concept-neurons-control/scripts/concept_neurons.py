@@ -10,7 +10,7 @@ Reference: arXiv:2604.11802v1
 import numpy as np
 import torch
 import torch.nn as nn
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 from sklearn.linear_model import LogisticRegression
 from collections import defaultdict
 

@@ -46,38 +46,3 @@ Deep learning framework for modeling nonlinear neural dynamics underlying behavi
 
 ## Activation Triggers
 neural dynamics, behavioral modeling, input-driven, RNN, motor cortex, disentanglement, neural population, recurrent dynamics
-
-## Activation Keywords
-
-- "braid-input-driven-neural-behavioral-dynamics"
-- "braid input driven neural behavioral dynamics"
-- "use braid input driven neural behavioral dynamics"
-- "braid input driven neural behavioral dynamics help"
-- "braid input driven neural behavioral dynamics analysis"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify the user's specific question or task related to Braid Input Driven Neural Behavioral Dynamics
-2. Gather relevant context from files or user input
-3. Apply Braid Input Driven Neural Behavioral Dynamics methodology to address the request
-4. Provide clear results with actionable insights
-
-## Examples
-
-### Basic usage
-```
-User: "Help me with braid input driven neural behavioral dynamics"
-→ Understand requirements → Apply methodology → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed Braid Input Driven Neural Behavioral Dynamics assistance"
-→ Clarify scope → Execute analysis → Present findings
-```

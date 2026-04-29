@@ -1,288 +1,167 @@
 ---
 name: maximum-heterogeneity-principle
-description: The Principle of Maximum Heterogeneity - distributed production systems optimize performance through increasing heterogeneity. Applies to biology, economics, neuroscience, and computing.
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [distributed-systems, heterogeneity, optimization, neuroscience, economics, biology, computing, universal-principle]
-    source_paper: "The Principle of Maximum Heterogeneity Optimises Productivity in Distributed Production Systems (arXiv:2604.07602)"
-    authors: "Guillhem Artis, Danyal Akarca, Jascha Achterberg"
-    published: "2026-04-08"
+description: "The Principle of Maximum Heterogeneity optimizes productivity in distributed production systems across biology, economics, neuroscience, and computing. Reveals convergence of complex phenomena onto simple underlying design principles. Activation: maximum heterogeneity, distributed production system, system heterogeneity, agent diversity optimization."
 ---
 
 # Principle of Maximum Heterogeneity
 
-A unifying principle stating that distributed production systems optimize performance through increasing heterogeneity, with applications across biology, economics, neuroscience, and computing.
+Cross-disciplinary framework capturing how agent heterogeneity, resource constraints, communication topology, and task structure jointly determine productivity in distributed systems.
 
 ## Overview
 
-The world is full of systems of distributed agents collaborating and competing in complex ways:
-- **Economics**: Firms and workers specialize within economies
-- **Neuroscience**: Neurons adapt their tuning across brain circuits  
-- **Ecology**: Species compete and coexist within ecosystems
+Distributed systems across fields (economies, brain circuits, ecosystems) show similar patterns of specialization and productivity. This framework unifies these findings through the Distributed Production System model, revealing that a small set of underlying laws generates complex dynamics observed across biology, economics, neuroscience, and computing.
 
-The **Principle of Maximum Heterogeneity** reveals that these diverse phenomena across fields can be captured by one simple joint cross-disciplinary model.
+## Core Principle
 
-## The Principle
+**Principle of Maximum Heterogeneity:**
 
-> **Any distributed production system optimizing for performance will converge on an increasingly heterogeneous configuration.**
+> Any distributed production system optimizing for performance will converge on an increasingly heterogeneous configuration; environmental demands place an upper bound on the degree of heterogeneity required; and the communication topology determines the spatial scale over which heterogeneity spreads.
 
-### Key Components
+## Model Components
 
-1. **Agent Heterogeneity**: Variability in agent capabilities and specializations
-2. **Resource Constraints**: Limited resources drive competition
-3. **Communication Topology**: Network structure determines interaction patterns
-4. **Task Structure**: Nature of production tasks
+### 1. Agent Heterogeneity
+```
+Agents have different:
+- Capabilities/production functions
+- Resource requirements
+- Specializations
+- Efficiency profiles
+```
 
-### Constraints
+### 2. Resource Constraints
+```
+Total resources are limited:
+- Capital/labor in economies
+- Energy/metabolism in brains
+- Nutrients in ecosystems
+- Compute in AI systems
+```
 
-- **Environmental demands** place an upper bound on required heterogeneity
-- **Communication topology** determines the spatial scale over which heterogeneity spreads
-- The principle applies **recursively** across all layers of nested production systems
+### 3. Communication Topology
+```
+Network structure determines:
+- Information flow
+- Coordination efficiency
+- Specialization scale
+- Emergent patterns
+```
+
+### 4. Task Structure
+```
+Task characteristics:
+- Complexity
+- Divisibility
+- Interdependencies
+- Environmental demands
+```
 
 ## Mathematical Framework
 
-### Distributed Production System Model
+### Productivity Function
+```
+P = f(H, R, T, C)
 
-```python
-class DistributedProductionSystem:
-    """
-    General model for distributed production systems
-    """
-    def __init__(self, n_agents, task_structure, topology):
-        self.n_agents = n_agents
-        self.agents = self.initialize_agents()
-        self.task_structure = task_structure
-        self.topology = topology  # Communication graph
-        
-    def initialize_agents(self):
-        """Initialize agents with heterogeneous capabilities"""
-        return [Agent(capabilities=self.sample_capabilities()) 
-                for _ in range(self.n_agents)]
-    
-    def compute_productivity(self):
-        """
-        Compute system productivity
-        
-        Productivity = f(heterogeneity, resource_allocation, topology)
-        """
-        heterogeneity = self.measure_heterogeneity()
-        allocation = self.resource_allocation()
-        coordination = self.coordination_efficiency()
-        
-        return self.production_function(heterogeneity, allocation, coordination)
-    
-    def optimize_heterogeneity(self):
-        """
-        Find optimal heterogeneity level
-        
-        max_h: environmental constraints
-        topology_scale: spatial scale from communication topology
-        """
-        # Principle: Increase heterogeneity until constraint
-        optimal_heterogeneity = min(
-            self.environmental_constraint(),
-            self.topology_limit()
-        )
-        
-        return self.adjust_heterogeneity(optimal_heterogeneity)
-    
-    def measure_heterogeneity(self):
-        """Measure degree of agent heterogeneity"""
-        capabilities = [a.capabilities for a in self.agents]
-        return statistical_dispersion(capabilities)
+Where:
+- H: Heterogeneity measure
+- R: Resource availability
+- T: Task complexity
+- C: Communication efficiency
 ```
 
-### Domain-Specific Instantiations
-
-#### Neuroscience: Neural Tuning
-
-```python
-class NeuralCircuit(DistributedProductionSystem):
-    """
-    Neural circuit as distributed production system
-    """
-    def __init__(self, n_neurons, sensory_modality):
-        super().__init__(
-            n_agents=n_neurons,
-            task_structure=sensory_modality,
-            topology=self.neural_topology()
-        )
-        
-    def neural_topology(self):
-        """Brain connectivity structure"""
-        # Small-world, hierarchical, etc.
-        return ConnectivityGraph(type='small_world')
-    
-    def measure_heterogeneity(self):
-        """Tuning curve diversity"""
-        tuning_curves = [n.tuning_curve for n in self.agents]
-        return tuning_curve_diversity(tuning_curves)
-    
-    def production_function(self, heterogeneity, allocation, coordination):
-        """
-        Neural coding efficiency
-        
-        Higher heterogeneity → better coverage of stimulus space
-        But limited by noise and connectivity
-        """
-        coding_efficiency = self.coverage_quality(heterogeneity)
-        noise_penalty = self.noise_term(allocation)
-        binding_cost = self.coordination_cost(coordination)
-        
-        return coding_efficiency - noise_penalty - binding_cost
+### Optimal Heterogeneity
+```
+H* = argmax_H P(H, R, T, C)
+subject to: R >= R_min(H)
+           C >= C_min(H, T)
 ```
 
-#### Computing: AI Systems
-
-```python
-class ComputeCluster(DistributedProductionSystem):
-    """
-    Compute cluster as distributed production system
-    """
-    def __init__(self, n_nodes, workload_type):
-        super().__init__(
-            n_agents=n_nodes,
-            task_structure=workload_type,
-            topology=self.compute_topology()
-        )
-        
-    def compute_topology(self):
-        """Network topology (fat-tree, dragonfly, etc.)"""
-        return NetworkTopology(type='fat_tree')
-    
-    def measure_heterogeneity(self):
-        """Hardware/software diversity"""
-        configs = [node.configuration for node in self.agents]
-        return configuration_diversity(configs)
-    
-    def production_function(self, heterogeneity, allocation, coordination):
-        """
-        Compute throughput
-        
-        Heterogeneity enables specialization but adds overhead
-        """
-        throughput = self.parallel_throughput(heterogeneity)
-        efficiency = self.resource_efficiency(allocation)
-        overhead = self.coordination_overhead(coordination)
-        
-        return throughput * efficiency - overhead
+### Recursive Application
+```
+The principle applies at all nested levels:
+- Economy → Firms → Workers
+- Brain → Areas → Neurons
+- Ecosystem → Species → Individuals
+- AI Cluster → Nodes → Cores
 ```
 
-## Cross-Domain Insights
-
-| Domain | Agents | Heterogeneity | Performance Metric |
-|--------|--------|---------------|-------------------|
-| **Economics** | Firms/workers | Specialization | Productivity/GDP |
-| **Neuroscience** | Neurons | Tuning diversity | Information encoding |
-| **Ecology** | Species | Trait diversity | Ecosystem productivity |
-| **Computing** | Processors | Hardware diversity | Compute throughput |
-
-## Applications
-
-### Neuroscience
-- Understanding sensory coding optimization
-- Predicting neural circuit organization
-- Designing brain-computer interfaces
-
-### Computing
-- Optimizing heterogeneous compute clusters
-- Designing specialized AI accelerators
-- Resource allocation in distributed systems
+## Domain Applications
 
 ### Economics
-- Understanding trade specialization
-- Labor market dynamics
-- Innovation ecosystems
+- **Trade Specialization**: Comparative advantage drives heterogeneous firm capabilities
+- **Labor Markets**: Worker specialization optimizes productivity
+- **Supply Chains**: Heterogeneous suppliers maximize efficiency
 
-### Biology
-- Ecosystem resilience
-- Biodiversity-productivity relationships
-- Evolutionary optimization
+### Neuroscience
+- **Neural Tuning**: Neurons adapt their tuning across brain circuits
+- **Representations**: Balanced representations emerge from sensory coding
+- **Specialization**: Different areas develop distinct functional profiles
 
-## Design Principles
+### Ecology
+- **Biodiversity**: Species diversity sustains ecosystem productivity
+- **Niche Partitioning**: Heterogeneous resource use maximizes carrying capacity
+- **Stability**: Diversity increases system resilience
 
-1. **Increase Heterogeneity**: Push toward maximum viable diversity
-2. **Respect Constraints**: Environmental demands set upper bounds
-3. **Topology Matters**: Communication structure determines heterogeneity scale
-4. **Recursive Application**: Apply at all nested system levels
+### Computing/AI
+- **Hardware Design**: Heterogeneous compute units (CPU/GPU/TPU)
+- **Model Ensembles**: Diverse models improve robustness
+- **Distributed Training**: Specialized workers for different tasks
+- **Neuromorphic Systems**: Event-driven, heterogeneous processing
 
-## References
+## Design Implications
 
-- Artis, G., Akarca, D., & Achterberg, J. (2026). The Principle of Maximum Heterogeneity Optimises Productivity in Distributed Production Systems Across Biology, Economics, and Computing.
+### For Compute Systems
+```python
+def design_heterogeneous_system(environment_demands):
+    """
+    Apply Principle of Maximum Heterogeneity to AI compute design.
+    """
+    # Assess environmental demands
+    task_complexity = measure_complexity(environment_demands)
+    resource_budget = get_available_resources()
+    
+    # Determine optimal heterogeneity
+    optimal_diversity = calculate_max_heterogeneity(
+        task_complexity, resource_budget
+    )
+    
+    # Design communication topology
+    topology = design_topology(optimal_diversity)
+    
+    # Allocate heterogeneous resources
+    components = allocate_heterogeneous(optimal_diversity, topology)
+    
+    return System(components, topology)
+```
+
+### Key Design Rules
+1. **Maximize Heterogeneity**: Within resource constraints
+2. **Match Environment**: Upper bound from environmental demands
+3. **Optimize Topology**: Communication structure determines heterogeneity scale
+4. **Apply Recursively**: At all nested system levels
+
+## Predictive Value
+
+The framework enables:
+- **Performance Prediction**: Given system heterogeneity and topology
+- **Optimal Design**: What heterogeneity degree maximizes productivity
+- **Failure Analysis**: When insufficient heterogeneity causes inefficiency
+- **Cross-Domain Insights**: Lessons from one domain applied to another
 
 ## Activation Keywords
+
 - maximum heterogeneity principle
-- maximum heterogeneity productivity
-- heterogeneous production systems
-- neural coding heterogeneity
-- ecosystem productivity heterogeneity
-- heterogeneous computing optimization
-- distributed systems heterogeneity
-- max heterogeneity principle
+- distributed production system
+- system heterogeneity
+- agent diversity optimization
+- cross-disciplinary system design
+- heterogeneous agent systems
+- specialization optimization
+- nested system design
 
-## Tools Used
-- `exec`: Run Python maximum heterogeneity analysis scripts
-- `read`: Load research papers and system data
-- `write`: Save optimization results and design recommendations
+## Source
 
-## Instructions for Agents
-
-When working with maximum heterogeneity principle or distributed systems:
-
-1. **Identify the domain**:
-   - Neuroscience: neural tuning diversity
-   - Computing: hardware processor diversity
-   - Economics: worker specialization
-   - Ecology: species trait diversity
-
-2. **Apply design principles**:
-   - Push toward maximum viable diversity
-   - Respect environmental constraints
-   - Consider topology/communication structure
-   - Apply recursively at nested levels
-
-3. **Optimize for target metric**:
-   - Neuroscience: Information encoding
-   - Computing: Compute throughput
-   - Economics: Productivity/GDP
-   - Ecology: Ecosystem productivity
-
-4. **Evaluate tradeoffs**:
-   - Heterogeneity vs. coordination overhead
-   - Specialization vs. flexibility
-   - Diversity vs. system complexity
-
-## Examples
-
-### Example 1: Neural Circuit Design
-```
-User: "设计具有最大异质性的神经环路"
-
-Agent:
-1. 识别域: 神经科学，感觉编码优化
-2. 计算神经元调制曲线多样性
-3. 应用最大异质性原则
-4. 输出环路设计和性能分析
-```
-
-### Example 2: Heterogeneous Cluster
-```
-User: "优化异构计算集群的资源分配"
-
-Agent:
-1. 识别域: 计算，异构硬件
-2. 分析处理器多样性与吞吐量关系
-3. 应用最大异质性原则
-4. 输出资源分配方案
-```
-
-## Related
-
-- [[distributed-systems]]
-- [[neural-coding]]
-- [[economic-theory]]
-- [[ecosystem-dynamics]]
-- [[heterogeneous-computing]]
+- **Paper**: The Principle of Maximum Heterogeneity Optimises Productivity in Distributed Production Systems Across Biology, Economics, and Computing
+- **Authors**: Guillhem Artis, Danyal Akarca, Jascha Achterberg
+- **arXiv**: 2604.07602v1
+- **Categories**: cs.NE, cs.CE, q-bio.NC
+- **Date**: 2026-04-08

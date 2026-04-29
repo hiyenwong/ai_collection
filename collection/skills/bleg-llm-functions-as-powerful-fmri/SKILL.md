@@ -1,173 +1,216 @@
 ---
 name: bleg-llm-functions-as-powerful-fmri
-description: "BLEG methodology using LLMs as enhancer for brain network analysis via GNNs. LLM-augmented fMRI graph data with instruction tuning for coarsened alignment between textual and graph representations. Activation: LLM, fMRI, brain network, GNN, graph neural network, brain graph analysis"
+description: "BLEG (Brain LLM Enhanced Graph) - using Large Language Models as fMRI graph enhancers for brain network analysis. LLM-augmented GNNs for sparse neurograph learning. Keywords: LLM, fMRI, brain network, GNN, graph enhancement, multimodal fusion."
 ---
 
-# BLEG: LLM Functions as Powerful fMRI Graph-Enhancer
+# BLEG: LLM Functions as Powerful fMRI Graph-Enhancer for Brain Network Analysis
 
-> LLM-enhanced brain graph analysis methodology that uses LLMs as enhancers (not fine-tuned components) to boost GNN performance on fMRI brain network tasks through augmented textual representations and coarsened alignment.
+> A framework that leverages Large Language Models to enhance Graph Neural Networks for brain network analysis, addressing feature sparsity and knowledge limitations in traditional neurograph approaches.
 
 ## Metadata
 - **Source**: arXiv:2604.07361
 - **Authors**: Rui Dong, Zitong Wang, Jiaxing Li, et al.
 - **Published**: 2026-04-01
-- **Categories**: cs.LG
+- **Category**: Computer Vision and Pattern Recognition (cs.CV), Quantitative Methods (q-bio.QM)
 
 ## Core Methodology
 
-### Key Innovation
-Brain network analysis with GNNs faces:
-- High feature sparsity in fMRI data
-- Limited domain knowledge in uni-modal neurographs
-- Cost-prohibitive LLM fine-tuning for direct integration
+### Motivation
 
-BLEG's solution:
-- Uses LLMs as **enhancers**, not tunable components
-- Augments fMRI graphs with LLM-generated textual representations
-- Coarsened alignment between LM and GNN logits
-- Task-specific adapter after GNN
+Graph Neural Networks (GNNs) for brain network analysis face two fundamental challenges:
 
-### Technical Framework
+1. **Feature sparsity**: fMRI-derived node features are high-dimensional but information-sparse
+2. **Domain knowledge limitations**: GNNs lack neuroscientific priors about brain organization
 
-#### Three-Stage Pipeline
-1. **LLM Text Augmentation**: Prompt LLM to generate descriptive texts for fMRI graph nodes/regions
-2. **LLM-LM Instruction Tuning**: Train lightweight language model on augmented texts
-3. **GNN Training with Alignment**: Train GNN with alignment loss to LM representations
+Large Language Models (LLMs) offer:
+- Rich semantic representations
+- Implicit neuroscientific knowledge from training corpora
+- Natural language reasoning about brain functions
 
-#### LLM as Enhancer (Not Component)
-- LLM generates initial textual descriptions of brain regions
-- No gradient flows to LLM (cost-effective)
-- LLM-LM is tuned (much smaller than LLM)
-- GNN is standard trainable component
+### BLEG Framework Architecture
 
-#### Coarsened Alignment
-- Alignment loss between LM and GNN logits
-- Ensures graph and text representations are semantically consistent
-- Task-specific adapter refines final predictions
+#### Stage 1: LLM-Based Graph Enhancement
+
+For each brain region (graph node), BLEG generates enhanced features:
+
+```
+Input: ROI name (e.g., "superior temporal gyrus")
+LLM Query: "What are the functional characteristics of [ROI]? 
+            What cognitive processes does it support?"
+LLM Output: Semantic description → Embedding vector
+Enhanced Feature: Concatenate fMRI feature + LLM embedding
+```
+
+#### Stage 2: Cross-Modal Fusion
+
+Combines fMRI time series and LLM semantics:
+
+```
+Node Features:
+├── fMRI-derived: [BOLD signal statistics, connectivity patterns]
+├── LLM-derived: [Functional ontology, anatomical description]
+└── Fused: Cross-attention between modalities
+```
+
+#### Stage 3: Knowledge-Guided GNN
+
+LLM-generated knowledge guides the message passing:
+
+```python
+# Traditional GNN
+h_v = AGGREGATE({h_u for u in N(v)})
+
+# Knowledge-guided GNN
+functional_similarity = LLM_similarity(v, u)
+h_v = AGGREGATE({h_u * functional_similarity for u in N(v)})
+```
+
+### Key Innovations
+
+#### 1. Neuro-semantic Embeddings
+LLMs encode brain regions into semantic space:
+- Regions with similar functions cluster together
+- Captures hierarchical brain organization
+- Provides interpretable features
+
+#### 2. Dynamic Knowledge Injection
+At inference time, BLEG can:
+- Query LLM for patient-specific explanations
+- Generate natural language predictions
+- Provide evidence-based reasoning
+
+#### 3. Zero-Shot Transfer
+LLM knowledge enables:
+- Transfer to unseen brain disorders
+- Adaptation to new imaging protocols
+- Generalization across populations
 
 ## Implementation Guide
 
 ### Prerequisites
-- Pretrained LLM (e.g., GPT, LLaMA) via API or local
-- GNN framework (PyTorch Geometric, DGL)
-- fMRI preprocessing pipeline
-- Brain atlas (AAL, Schaefer, etc.)
+- Pretrained LLM (GPT-4, Llama, or similar)
+- fMRI preprocessing pipeline (FSL, AFNI, or nipype)
+- PyTorch Geometric or DGL for GNNs
+- Brain parcellation atlas (AAL, Schaefer, or Destrieux)
 
 ### Step-by-Step
 
-1. **LLM Text Augmentation**
+1. **Prepare fMRI Graphs**
    ```python
-   def augment_graph_with_llm(graph, llm_client):
-       """Generate textual descriptions for brain regions"""
-       augmented_texts = {}
-       
-       for node_id, node_features in graph.nodes.items():
-           # Create prompt based on region properties
-           region_name = get_region_name(node_id)  # e.g., "Prefrontal Cortex"
-           prompt = f"""Describe the functional role of the {region_name} 
-           in brain networks based on its connectivity patterns: 
-           {format_connectivity(node_features)}"""
-           
-           # Query LLM
-           response = llm_client.generate(prompt)
-           augmented_texts[node_id] = response
-       
-       return augmented_texts
-   ```
-
-2. **LLM-LM Instruction Tuning**
-   ```python
-   class LLM_LM(nn.Module):
-       """Lightweight language model for brain region texts"""
-       def __init__(self, base_model_name="distilbert"):
-           self.encoder = AutoModel.from_pretrained(base_model_name)
-           self.projector = nn.Linear(hidden_dim, embed_dim)
-       
-       def forward(self, texts):
-           tokens = self.tokenizer(texts, return_tensors="pt", padding=True)
-           outputs = self.encoder(**tokens)
-           pooled = outputs.last_hidden_state[:, 0]  # CLS token
-           return self.projector(pooled)
+   from nilearn.connectome import ConnectivityMeasure
    
-   # Training
-   for batch in dataloader:
-       texts, labels = batch
-       text_embeds = llm_lm(texts)
-       loss = contrastive_loss(text_embeds, labels)
-       loss.backward()
-       optimizer.step()
+   # Extract time series from ROIs
+   time_series = extract_timeseries(fmri_img, atlas)
+   
+   # Compute connectivity matrix
+   correlation_measure = ConnectivityMeasure(kind='correlation')
+   connectivity = correlation_measure.fit_transform([time_series])[0]
+   
+   # Create graph
+   G = create_graph_from_connectivity(connectivity, atlas_labels)
    ```
 
-3. **GNN with Alignment**
+2. **Generate LLM Embeddings**
    ```python
-   class BLEGModel(nn.Module):
-       def __init__(self, gnn, llm_lm, adapter):
-           self.gnn = gnn  # Standard GNN (GCN, GAT, etc.)
-           self.llm_lm = llm_lm  # Frozen or low-LR
-           self.adapter = adapter  # Task-specific head
+   from transformers import AutoModel, AutoTokenizer
+   
+   model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+   tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+   
+   def get_llm_embedding(roi_name):
+       prompt = f"Brain region: {roi_name}. Function:"
+       inputs = tokenizer(prompt, return_tensors="pt")
+       outputs = model(**inputs)
+       embedding = outputs.last_hidden_state.mean(dim=1)
+       return embedding
+   
+   # Generate for all ROIs
+   llm_features = torch.stack([get_llm_embedding(roi) for roi in atlas_labels])
+   ```
+
+3. **Create BLEG Model**
+   ```python
+   import torch.nn as nn
+   import torch_geometric.nn as gnn
+   
+   class BLEG(nn.Module):
+       def __init__(self, n_rois, fmri_dim, llm_dim, hidden_dim, num_classes):
+           super().__init__()
+           
+           # Feature fusion
+           self.fusion = nn.Sequential(
+               nn.Linear(fmri_dim + llm_dim, hidden_dim),
+               nn.ReLU(),
+               nn.Dropout(0.3)
+           )
+           
+           # GNN layers
+           self.conv1 = gnn.GCNConv(hidden_dim, hidden_dim)
+           self.conv2 = gnn.GCNConv(hidden_dim, hidden_dim)
+           
+           # Classification
+           self.classifier = nn.Linear(hidden_dim, num_classes)
        
-       def forward(self, graph, texts, return_alignment=False):
-           # GNN branch
-           graph_embeds = self.gnn(graph.x, graph.edge_index)
+       def forward(self, fmri_feat, llm_feat, edge_index):
+           # Cross-modal fusion
+           x = torch.cat([fmri_feat, llm_feat], dim=-1)
+           x = self.fusion(x)
            
-           # LM branch (frozen or minimal updates)
-           with torch.no_grad():
-               text_embeds = self.llm_lm(texts)
+           # Graph convolution
+           x = self.conv1(x, edge_index).relu()
+           x = self.conv2(x, edge_index)
            
-           # Coarsened alignment loss
-           if return_alignment:
-               # Project to same space
-               graph_proj = self.gnn_projector(graph_embeds)
-               text_proj = self.text_projector(text_embeds)
-               alignment_loss = F.mse_loss(graph_proj, text_proj)
+           # Readout
+           x = gnn.global_mean_pool(x, batch)
            
-           # Task prediction via adapter
-           combined = combine(graph_embeds, text_embeds)
-           prediction = self.adapter(combined)
-           
-           return prediction, alignment_loss if return_alignment else prediction
+           return self.classifier(x)
    ```
 
-4. **Training**
+4. **Knowledge-Guided Message Passing**
    ```python
-   for epoch in range(num_epochs):
-       for graph, texts, labels in train_loader:
-           pred, align_loss = model(graph, texts, return_alignment=True)
-           task_loss = criterion(pred, labels)
-           
-           # Combined loss
-           total_loss = task_loss + lambda_align * align_loss
-           total_loss.backward()
-           
-           # Different learning rates: freeze LLM-LM, train GNN and adapter
-           optimizer.step()
+   class KnowledgeGuidedGNN(nn.Module):
+       def __init__(self, llm_similarity_matrix):
+           self.llm_sim = llm_similarity_matrix  # Precomputed
+       
+       def message(self, x_j, edge_index_i, edge_index_j, size_i):
+           # Weight messages by LLM functional similarity
+           sim = self.llm_sim[edge_index_i, edge_index_j]
+           return x_j * sim.view(-1, 1)
    ```
 
-### Performance Results
-- Superior performance on multiple brain network datasets
-- Cost-effective (no LLM fine-tuning)
-- Extensive experiments confirm methodology
+### Training Configuration
+- Learning rate: 1e-4 with Adam
+- Batch size: 8-16 (whole-brain graphs are large)
+- Dropout: 0.3-0.5
+- Early stopping based on validation AUC
 
 ## Applications
-- Brain network classification
-- Neurodegenerative disease diagnosis
-- fMRI-based biomarker discovery
-- Multi-modal brain data integration
-- Cost-effective LLM-enhanced neuroscience
+
+- **Disease classification**: Alzheimer's, Parkinson's, depression
+- **Cognitive state prediction**: Task decoding, mind-wandering detection
+- **Brain age estimation**: Biological aging markers
+- **Treatment response prediction**: Personalized medicine
 
 ## Pitfalls
-- LLM API costs for initial text generation (one-time)
-- Quality of augmentation depends on LLM prompting
-- Alignment may be challenging for very sparse graphs
-- Requires paired graph-text data
-- LLM-LM architecture needs careful selection
+
+1. **LLM hallucination**: Generated descriptions may be inaccurate
+2. **Atlas dependency**: Performance varies with parcellation choice
+3. **Computational cost**: LLM inference for each ROI is expensive
+4. **Temporal resolution**: Static LLM embeddings miss dynamic brain states
+5. **Interpretability gap**: LLM reasoning may not align with neuroscience
 
 ## Related Skills
 - brain-graph-neural
-- brain-higher-order-structures
-- llm-brain-alignment-creative-thinking
-- magnet-brain-structure-function-gnn
+- llm-neuroscience-applications
+- multimodal-brain-fusion
+- functional-connectivity-analysis
 
-## References
-- Paper: https://arxiv.org/abs/2604.07361
-- Code: https://github.com/KamonRiderDR/BLEG
+## Citation
+```bibtex
+@article{dong2026bleg,
+  title={BLEG: LLM Functions as Powerful fMRI Graph-Enhancer for Brain Network Analysis},
+  author={Dong, Rui and Wang, Zitong and Li, Jiaxing and others},
+  journal={arXiv preprint arXiv:2604.07361},
+  year={2026}
+}
+```

@@ -1,67 +1,101 @@
 ---
 name: brain-dit-fmri-foundation-model-v6
-description: "Universal multi-state fMRI foundation model with metadata-conditioned diffusion pretraining. Trained on 349,898 sessions across resting, task, naturalistic, disease, and sleep states. Uses Diffusion Transformer (DiT) for multi-scale representations. Triggers: fMRI, foundation model, diffusion, DiT, brain states, metadata-conditioned."
+category: ai_collection
+description: "Brain-DiT v6: Universal multi-state fMRI foundation model with metadata-conditioned pretraining (2026-04-14). Extends v5 with 34 datasets, metadata-conditioned pretraining, unified multi-state representation."
+tags: ["fmri", "foundation model", "brain-dit", "multi-state", "diffusion transformer", "neuroimaging"]
+source: "arXiv:2604.12683 (2026-04-14)"
+authors: "Junfeng Xia, Wenhao Ye, Xuanye Pan, Xinke Shen, Mo Wang, Quanying Liu"
+version: "v6"
 ---
 
-# Brain-DiT: Universal Multi-state fMRI Foundation Model
+# Brain-DiT v6: Universal Multi-state fMRI Foundation Model
 
-> Universal multi-state fMRI foundation model with metadata-conditioned diffusion pretraining.
+## Overview
+Brain-DiT is a universal multi-state fMRI foundation model pretrained on 34 diverse datasets with metadata-conditioned pretraining. It addresses limitations of previous fMRI models that rely on limited brain states and mismatched pretraining tasks.
 
-## Metadata
-- **Source**: arXiv:2604.12683v1
-- **Published**: 2026
-- **Category**: ai_collection/neuroscience
+## Key Innovations
 
-## Core Methodology
+### 1. Multi-state Pretraining
+- **34 datasets** covering diverse brain states (resting, task, clinical populations)
+- **Metadata-conditioned** pretraining to handle heterogeneous data sources
+- Unified representation learning across brain states
 
-### Key Innovation
-Metadata-conditioned diffusion pretraining; Diffusion Transformer (DiT) architecture; multi-scale representation learning; 349,898 sessions from 24 datasets
+### 2. Diffusion Transformer Architecture
+- **DiT (Diffusion Transformer)** backbone for fMRI data modeling
+- Handles spatiotemporal patterns in brain activity
+- Generates realistic fMRI data through diffusion process
 
-### Technical Framework
-This methodology provides a novel approach to brain-dit.
+### 3. Generalized Representations
+- Learns **generalized representations** across diverse brain states
+- Overcomes limitations of state-specific models
+- Enables transfer learning across different neuroimaging paradigms
 
-## Implementation Guide
+## Technical Details
 
-### Prerequisites
-- PyTorch or TensorFlow for model implementation
-- Neuromorphic hardware SDK (for deployment)
-- Relevant datasets for validation
+### Architecture
+- **Backbone**: Diffusion Transformer (DiT)
+- **Input**: fMRI volumes (4D spatiotemporal data)
+- **Conditioning**: Metadata (scan parameters, task type, population)
+- **Training**: Masked diffusion pretraining
 
-### Step-by-Step
-1. Set up the base architecture
-2. Implement the key components
-3. Train/evaluate on target tasks
-4. Deploy to target hardware (if applicable)
-
-### Code Example
-```python
-# Conceptual implementation
-# See paper for complete details
-import torch
-import torch.nn as nn
-
-class Implementation(nn.Module):
-    def __init__(self):
-        super().__init__()
-        # Initialize components
-        pass
-    
-    def forward(self, x):
-        # Forward pass
-        return x
-```
+### Pretraining Strategy
+- **Multi-dataset** aggregation (34 datasets)
+- **Metadata-conditioned** learning to handle heterogeneity
+- **Unified** representation space for all brain states
 
 ## Applications
-- ADNI classification, age/sex prediction, brain disorder diagnosis, cross-state analysis
-- Research in computational neuroscience
-- Brain-computer interfaces
 
-## Pitfalls
-- Hardware-specific optimizations may limit portability
-- Training requires specialized datasets
-- May need hyperparameter tuning for new tasks
+### Primary Uses
+1. **fMRI data generation** - realistic synthetic brain activity
+2. **Cross-state transfer** - apply knowledge across different brain states
+3. **Brain decoding** - decode cognitive states from fMRI patterns
+4. **Clinical analysis** - identify disease-specific patterns
+5. **Data augmentation** - generate training data for downstream tasks
+
+### Downstream Tasks
+- Brain state classification
+- Disease biomarker discovery
+- Cognitive task decoding
+- Functional connectivity analysis
+- Individual fingerprinting
+
+## Comparison with Previous Versions
+
+| Feature | v1-v4 | v5 | v6 |
+|---------|-------|----|----|
+| Datasets | Limited | Expanded | 34 datasets |
+| Conditioning | None | Basic | Full metadata |
+| Brain States | Single | Multiple | Universal |
+| Pretraining | Task-specific | Multi-task | Unified |
+
+## Implementation Considerations
+
+### Data Requirements
+- Access to multiple fMRI datasets (34+ recommended)
+- Metadata standardization (BIDS format preferred)
+- Quality control across heterogeneous sources
+
+### Computational Requirements
+- GPU cluster for pretraining (DiT is compute-intensive)
+- Large storage for multi-dataset aggregation
+- Efficient data loading for 4D fMRI volumes
+
+### Key Challenges
+- **Heterogeneity**: Different scanners, protocols, populations
+- **Metadata quality**: Incomplete or inconsistent metadata
+- **Domain shift**: Cross-site variability
+- **Scale**: 34 datasets require significant compute
 
 ## Related Skills
-- brain-dit-fmri-foundation-model
-- snn-learning-survey
-- neuromorphic-low-power-ai
+- `brain-dit-fmri-foundation-model-v5`
+- `brain-dit-universal-multi-state`
+- `brain-foundation-model-batch-effects`
+- `multimodal-brain-connectivity-gnn`
+- `bleg-llm-brain-graph-enhancer`
+
+## Trigger Words
+brain-dit, fmri foundation model, multi-state pretraining, diffusion transformer, metadata-conditioned, neuroimaging foundation model, brain decoding, 34 datasets, universal fMRI
+
+## References
+- arXiv:2604.12683 (2026-04-14)
+- Authors: Junfeng Xia, Wenhao Ye, Xuanye Pan, Xinke Shen, Mo Wang, Quanying Liu

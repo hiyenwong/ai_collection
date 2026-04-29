@@ -1,25 +1,33 @@
 ---
 name: neural-population-decoding
-description: "Methods for decoding neural population activity and analyzing latent dynamics. Covers dimensionality reduction, manifold analysis, and decoding algorithms. Activation: neural decoding, population coding, manifold, latent dynamics, dimensionality reduction."
+description: "Methods for decoding neural population activity and analyzing spatial working memory representations. Covers state-space modeling, low-dimensional dynamics, neural manifold analysis, and population coding strategies."
+activation_keywords: ["neural population", "population decoding", "spatial working memory", "neural manifold", "state-space model", "low-dimensional dynamics", "population activity", "working memory decoding", "neural dynamics", "dimensionality reduction"]
 ---
 
-# Neural Population Decoding and Encoding
+# Neural Population Decoding and Spatial Working Memory Analysis
 
 ## Overview
 
-Neural population decoding extracts information from collective activity of neuron ensembles. This skill covers dimensionality reduction, manifold identification, and decoding algorithms.
+Methods for decoding neural population activity and analyzing spatial working memory representations. Covers state-space modeling, low-dimensional dynamics, neural manifold analysis, and population coding strategies.
+
+**New Paper (Apr 2026)**: "Neural Population Decoding of Spatial Working Memory" (arXiv:2604.08311v1)
+- Decodes spatial working memory from neural population activity using state-space modeling
+- Identifies stable attractor states maintaining spatial information during delay periods
+- Analyzes geometry of neural state space representations
 
 ## Key Concepts
 
 ### Population Coding
-
 Information distributed across many neurons:
 - **Rate coding**: Information in firing rates
 - **Temporal coding**: Information in spike timing
+- **Population coding**: Information encoded collectively, not in single neurons
 
-### Dimensionality Reduction
+### Low-Dimensional Manifolds
+High-dimensional neural activity lies on low-dimensional manifolds that capture task-relevant structure while filtering out noise.
 
-High-dimensional neural activity lives on low-dimensional manifolds.
+### Attractor Dynamics
+Working memory maintained in stable attractor states — neural activity patterns that are self-sustaining during memory delay periods.
 
 ## Methodology
 
@@ -47,7 +55,7 @@ def preprocess_spikes(spike_times, bin_size=0.02):
     return rates
 ```
 
-### PCA
+### Dimensionality Reduction
 
 ```python
 from sklearn.decomposition import PCA
@@ -90,45 +98,52 @@ class KalmanFilterDecoder:
         return states
 ```
 
+### Spatial Working Memory Decoding Pipeline (New Paper)
+
+```python
+# Step 1: Extract trial-aligned population activity
+# neural_data: n_neurons x n_time x n_trials
+
+# Step 2: Dimensionality reduction (PCA or GPFA)
+pca = PCA(n_components=10)
+latent = pca.fit_transform(neural_data.reshape(n_neurons, -1).T)
+
+# Step 3: Train decoder for spatial targets
+from sklearn.linear_model import Ridge
+decoder = Ridge(alpha=1.0)
+decoder.fit(latent[train], spatial_targets[train])
+
+# Step 4: Evaluate and analyze attractor dynamics
+predictions = decoder.predict(latent[test])
+# Analyze stability of latent trajectories during delay period
+```
+
+## Key Findings from Latest Research
+
+1. **Low-Dimensional Structure**: High-dimensional neural activity lies on low-dimensional manifolds
+2. **Attractor Dynamics**: Working memory maintained in stable attractor states during delay
+3. **Population Coding**: Information distributed across many neurons, not single-cell tuning
+4. **Temporal Evolution**: Neural trajectories evolve systematically during memory maintenance
+5. **Cross-Region Differences**: Prefrontal cortex vs. parietal cortex show distinct coding strategies
+6. **Decoding Accuracy**: Scales with population size and dimensionality of representation
+
+## Pitfalls
+
+1. **Overfitting**: High-dimensional neural data prone to overfitting; use cross-validation rigorously
+2. **Dimensionality Selection**: Too few components lose information; too many capture noise
+3. **Trial Variability**: Neural responses vary across trials; account for this in analysis
+4. **Behavioral Confounds**: Ensure decoded signals reflect memory, not motor preparation
+5. **Population Size**: Decoding accuracy depends on number of recorded neurons
+6. **Temporal Alignment**: Precise alignment to task events is critical for trajectory analysis
+
 ## References
 
+- "Neural Population Decoding of Spatial Working Memory" (arXiv:2604.08311v1, 2026)
 - Cunningham, J. P., & Yu, B. M. (2014). Dimensionality reduction for large-scale neural recordings. *Nature Neuroscience*, 17(11), 1500-1509.
 - Gallego, J. A., et al. (2017). Neural manifolds for the control of movement. *Neuron*, 94(5), 978-984.
 
-## Activation Keywords
-
-- neural decoding
-- population coding
-- manifold
-- latent dynamics
-- dimensionality reduction
-
-
-## Instructions for Agents
-
-使用此技能时遵循以下流程：
-
-1. **理解问题**：分析输入需求和约束条件
-2. **选择方法**：根据场景选择合适的技术方案
-3. **执行操作**：按照方法论实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
+## Related Skills
+- `snn-working-memory-heterogeneous-delays-v3`
+- `blend-behavior-guided-neural`
+- `jedi-neural-dynamics-inference`
+- `neural-dynamics-universal-translator`

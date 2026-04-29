@@ -6,7 +6,6 @@ source: arXiv:2603.25959v1
 categories: [eess.SY]
 status: active
 trigger: firing rate, model predictive control, MPC, planning, sparse network, inverted pendulum, contraction theory, biological plausibility, neural dynamics
-description: "Firing Rate Neural Network Implementations of Model Predictive Control"
 ---
 
 # Firing Rate Neural Network Implementations of Model Predictive Control

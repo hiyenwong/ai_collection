@@ -12,6 +12,7 @@ description: "VaCoAl (Vague Coincident Algorithm) - hyperdimensional computing o
 - **arXiv**: 2604.11665v3
 - **Published**: 2026-04-13
 - **Categories**: cs.NE (Neural and Evolutionary Computing), cs.AI
+- **Updated in collection**: 2026-04-18
 
 ## Overview
 
@@ -320,30 +321,3 @@ def demonstrate_emergent_stdp():
 - binding problem
 - catastrophic forgetting
 - compositional generalisation
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Vacoul Hdc Sram Cam Ai usage
-```
-User: "Help me with vacoul hdc sram cam ai"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed vacoul hdc sram cam ai assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```

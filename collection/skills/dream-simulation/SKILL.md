@@ -246,40 +246,21 @@ dream_params = {
 
 5. Akhavan, N. et al. (2026). "A Data-Driven Measure of REM Sleep Propensity for Human and Rodent Sleep." *arXiv:2604.01252*
 
+6. **(NEW)** "A large corpus of lucid and non-lucid dream reports." *arXiv:2603.26992* — 大规模清醒梦语料库，可用于改进梦境叙事生成的真实性和多样性。
+
+7. **(NEW)** "Learning to Forget: Sleep-Inspired Memory Consolidation for Resolving Proactive Interference in LLMs (SleepGate)." *arXiv:2603.14517* — 受睡眠依赖记忆巩固启发的 LLM KV 缓存管理机制，与 Agent 梦境记忆整合原理一致。
+
+8. **(NEW)** Delanois, J.E. et al. (2026). "Slumbering to Precision: Enhancing Artificial Neural Network Calibration Through Sleep-like Processes (SRC)." *arXiv:2603.07867* — Bazhenov 团队的睡眠重放巩固方法，REM 睡眠通过增加稀疏性改善记忆表示。
+
+9. **(NEW)** "Why the Brain Consolidates: Predictive Forgetting for Optimal Generalization." *arXiv:2603.04688* — 记忆巩固的"预测性遗忘"理论框架，解释海马体-新皮层依赖转移。
+
+---
+
+## 最新更新日志
+
+- **2026-04-20**: 新增 4 篇近期论文引用（REM 定量测量、清醒梦语料库、SleepGate、SRC 睡眠重放、预测性遗忘理论）
+- **2026-04-20**: 修复论文监控脚本的解析错误（之前 6 个类别全部检查失败）
+
 ---
 
 *梦境模拟器 v1.0 | 基于神经科学研究构建*
-
-
-## Activation Keywords
-
-- dream simulation
-
-## Tools Used
-
-- `exec`
-- `read`
-- `write`
-
-
-## Instructions for Agents
-
-1. **理解需求**：分析用户请求的具体场景
-2. **选择方法**：根据上下文选择合适的技术方案
-3. **执行操作**：按照技能描述实施具体步骤
-4. **验证结果**：检查结果是否符合预期
-
-
-## Examples
-
-### Example 1: Basic Usage
-
-**User:** 请帮我应用此技能
-
-**Agent:** 我将按照标准流程执行...
-
-### Example 2: Advanced Usage
-
-**User:** 有更复杂的场景需要处理
-
-**Agent:** 针对复杂场景，我将采用以下策略...

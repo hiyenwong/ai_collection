@@ -1,87 +1,109 @@
 ---
 name: eeg2vision-multimodal-eeg-based-framework-2d-visual
-description: "Reconstructing visual stimuli from non-invasive electroencephalography (EEG) remains challenging due to its low spatial resolution and high noise, particularly under realistic low-density electrode co... Activation: brain, eeg"
+description: "Multimodal EEG-to-image reconstruction framework using diffusion models. Reconstructs 2D visual stimuli from EEG signals. Activation: eeg2vision, eeg image reconstruction, eeg visual decoding, brain-to-image, eeg-to-image"
 ---
 
-# EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction
+# EEG2Vision: Multimodal EEG-Based Framework for 2D Visual Reconstruction
 
 ## Overview
 
-Reconstructing visual stimuli from non-invasive electroencephalography (EEG) remains challenging due to its low spatial resolution and high noise, particularly under realistic low-density electrode configurations. To address this, we present EEG2Vision, a modular, end-to-end EEG-to-image framework that systematically evaluates reconstruction performance across different EEG resolutions (128, 64, 32, and 24 channels) and enhances visual quality through a prompt-guided post-reconstruction boosting
+EEG2Vision is a multimodal framework for reconstructing 2D visual stimuli from non-invasive electroencephalography (EEG) signals. It leverages diffusion models and cross-modal alignment to translate brain activity into visual representations.
 
 ## Source Paper
 
-- **Title**: EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction
-- **Authors**: Unknown
-- **arXiv**: 2604.08063v1
-- **Published**: 2026-04-09
-- **Categories**: cs.CV, cs.AI
-- **PDF**: https://arxiv.org/pdf/2604.08063v1
-- **Abstract URL**: https://arxiv.org/abs/2604.08063v1
+- **Title:** EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction in Cognitive Neuroscience
+- **arXiv: 2604.08063v1
+- **Date:** 2026-04-09
+- **Authors:** Emanuele Balloni, Emanuele Frontoni, Chiara Matti et al.
+- **PDF: https://arxiv.org/pdf/2604.08063v1
 
-## Key Concepts
+## Core Concepts
 
-### Core Contributions
+### EEG Feature Extraction
+- Raw EEG signals to band power features (delta, theta, alpha, beta, gamma)
+- Spatial filtering using CSP (Common Spatial Patterns) or Laplacian
+- Temporal feature aggregation across fixation windows
 
-1. Novel approach to neural computation based on the paper's methodology
-2. Addresses fundamental challenges in neural signal processing and interpretation
-3. Provides framework for understanding neural dynamics and information processing
+### Cross-Modal Alignment
+- EEG features to latent space alignment with visual features
+- CLIP-based image-text embeddings as bridge modality
+- Contrastive learning for EEG-image feature matching
 
-### Methodology
+### Diffusion-Based Reconstruction
+- Text-to-image diffusion models (Stable Diffusion) as backbone
+- EEG-conditioned latent diffusion for visual reconstruction
+- Prompt-guided enhancement using decoded semantic categories
 
-The paper proposes a novel approach detailed in the abstract and full text. Key methodological elements include:
-- Neural signal processing and feature extraction
-- Computational modeling of neural dynamics
-- Evaluation and validation against empirical data
+## Workflow
 
-## Practical Applications
+EEG Recording to Feature Extraction to Latent Alignment to Diffusion Reconstruction to Image Output
 
-- **Neural Decoding**: Reconstructing stimuli or cognitive states from neural signals
-- **Brain-Computer Interfaces**: Translating neural activity into control signals
-- **Computational Neuroscience**: Modeling and understanding neural circuit function
-- **Neurotechnology**: Developing tools for neural signal analysis and interpretation
+### Step 1: Preprocessing
 
-## Implementation Notes
+```python
+import mne
+import numpy as np
 
-For implementation details, refer to the full paper at: https://arxiv.org/pdf/2604.08063v1
+def preprocess_eeg(raw_data, sfreq=250):
+    raw_data.filter(1, 45, method='iir')
+    epochs = mne.Epochs(raw_data, events, tmin=0, tmax=1.0)
+    ica = mne.preprocessing.ICA(n_components=20)
+    ica.fit(epochs)
+    ica.exclude = [0, 1]
+    clean = ica.apply(epochs)
+    return clean
+```
 
-Key implementation considerations:
-- Ensure proper preprocessing of neural data
-- Validate model assumptions against empirical data
-- Consider computational requirements for large-scale applications
-- Account for individual variability in neural signals
+### Step 2: Feature Extraction
 
-## References
+```python
+def extract_eeg_features(epochs):
+    freq_bands = {'delta': (1, 4), 'theta': (4, 8), 'alpha': (8, 13), 'beta': (13, 30), 'gamma': (30, 45)}
+    features = []
+    for band, (low, high) in freq_bands.items():
+        power = epochs.compute_psd(method='welch', fmin=low, fmax=high).get_data()
+        features.append(power.mean(axis=-1))
+    return np.concatenate(features, axis=1)
+```
 
-- Unknown et al. (2026). "EEG2Vision: A Multimodal EEG-Based Framework for 2D Visual Reconstruction" arXiv:2604.08063v1.
+### Step 3: Cross-Modal Mapping
+
+```python
+import torch
+
+class EEGToCLIPMapper(torch.nn.Module):
+    def __init__(self, eeg_dim, clip_dim=512):
+        super().__init__()
+        self.encoder = torch.nn.Sequential(
+            torch.nn.Linear(eeg_dim, 1024),
+            torch.nn.ReLU(),
+            torch.nn.Linear(1024, clip_dim),
+            torch.nn.LayerNorm(clip_dim)
+        )
+    def forward(self, eeg_features):
+        return self.encoder(eeg_features)
+```
+
+## Applications
+
+- BCI Communication: Decode visual imagery for locked-in patients
+- Dream Recording: Reconstruct visual content during sleep
+- Neuroscience Research: Study visual processing pathways
+- Cognitive Assessment: Evaluate visual memory and perception
+
+## Limitations
+
+- Spatial resolution limited by EEG (compared to fMRI/ECoG)
+- Requires individual subject calibration
+- Reconstruction quality depends on training data alignment
+- Currently limited to 2D images
+
+## Related Skills
+
+- eeg2vision-multimodal-eeg-framework-v2
+- brain-dit-fmri-foundation-model
+- meta-learning-in-context-brain-decoding
 
 ## Activation Keywords
 
-- noise, eeg
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Eeg2Vision Multimodal Eeg Based Framework 2D Visual usage
-```
-User: "Help me with eeg2vision multimodal eeg based framework 2d visual"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed eeg2vision multimodal eeg based framework 2d visual assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- eeg2vision, eeg image reconstruction, eeg visual decoding, brain to image, eeg to image, visual reconstruction
