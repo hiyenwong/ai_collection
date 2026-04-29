@@ -24,7 +24,10 @@
       "Bash(awk '{print $NF}')",
       "Bash(echo \"Exit code: $?\")",
       "Bash(gh pr *)",
-      "Bash(xargs ls *)"
+      "Bash(xargs ls *)",
+      "Bash(git fetch *)",
+      "Bash(git status *)",
+      "Bash(git pull *)"
     ]
   }
 }
