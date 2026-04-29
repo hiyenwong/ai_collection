@@ -11,7 +11,7 @@ Reference: arXiv:2604.11780v1
 
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import List, Tuple, Optional
+from typing import Optional
 from dataclasses import dataclass
 
 
@@ -273,19 +273,19 @@ def compare_encoding_modes():
     # TTFS encoding
     ttfs_values = [t for t in results['ttfs'] if t is not None]
     if ttfs_values:
-        print(f"\n1. TTFS Encoding:")
+        print("\n1. TTFS Encoding:")
         print(f"   Range: {min(ttfs_values)*1000:.1f} - {max(ttfs_values)*1000:.1f} ms")
         print(f"   Neurons responding: {len(ttfs_values)}/{n_neurons}")
     
     # Spike count encoding
     counts = results['spike_counts']
-    print(f"\n2. Spike Count Encoding:")
+    print("\n2. Spike Count Encoding:")
     print(f"   Range: {min(counts)} - {max(counts)} spikes")
     print(f"   Average: {np.mean(counts):.1f} spikes")
     
     # Firing rate encoding
     rates = results['firing_rates']
-    print(f"\n3. Firing Rate Encoding:")
+    print("\n3. Firing Rate Encoding:")
     print(f"   Range: {min(rates):.1f} - {max(rates):.1f} Hz")
     print(f"   Average: {np.mean(rates):.1f} Hz")
     
@@ -294,7 +294,7 @@ def compare_encoding_modes():
     count_corr = np.corrcoef(stimulus, counts)[0,1]
     rate_corr = np.corrcoef(stimulus, rates)[0,1]
     
-    print(f"\nStimulus-response correlation:")
+    print("\nStimulus-response correlation:")
     print(f"   TTFS: {ttfs_corr:.3f}")
     print(f"   Count: {count_corr:.3f}")
     print(f"   Rate: {rate_corr:.3f}")

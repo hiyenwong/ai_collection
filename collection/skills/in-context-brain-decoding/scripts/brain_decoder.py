@@ -13,7 +13,7 @@ refer to the official implementation at https://github.com/ezacngm/brainCodec
 import numpy as np
 import torch
 import torch.nn as nn
-from typing import List, Tuple, Dict, Optional
+from typing import List, Tuple, Dict
 
 
 class BrainEncoder(nn.Module):
@@ -325,7 +325,7 @@ if __name__ == "__main__":
     
     # Initialize model
     model = MetaBrainDecoder(visual_dim, brain_dim)
-    print(f"\nModel initialized:")
+    print("\nModel initialized:")
     print(f"  Visual dimension: {visual_dim}")
     print(f"  Brain dimension: {brain_dim}")
     print(f"  Total parameters: {sum(p.numel() for p in model.parameters()):,}")

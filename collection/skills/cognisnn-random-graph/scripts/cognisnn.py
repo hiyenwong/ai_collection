@@ -14,7 +14,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import List, Tuple, Optional, Dict
+from typing import List
 from collections import defaultdict
 import networkx as nx
 
@@ -500,7 +500,7 @@ def example_usage():
         connection_prob=0.1
     )
     
-    print(f"\nModel created:")
+    print("\nModel created:")
     print(f"  Neurons: {len(model.neurons)}")
     print(f"  Connections: {model.adj_mask.sum().item():.0f}")
     print(f"  Parameters: {sum(p.numel() for p in model.parameters()):,}")
@@ -509,7 +509,7 @@ def example_usage():
     test_input = torch.randn(4, input_size)
     output, spikes = model(test_input, timesteps=10)
     
-    print(f"\nTest forward pass:")
+    print("\nTest forward pass:")
     print(f"  Input: {test_input.shape}")
     print(f"  Output: {output.shape}")
     print(f"  Spike activity: {sum(s.sum().item() for s in spikes):.0f} spikes")

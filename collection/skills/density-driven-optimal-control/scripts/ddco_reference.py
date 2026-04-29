@@ -11,7 +11,6 @@ Usage:
 
 import numpy as np
 from scipy.linalg import solve_continuous_are
-from scipy.spatial import Voronoi, voronoi_plot_2d
 import matplotlib.pyplot as plt
 from typing import Callable, Tuple, Optional
 import argparse
@@ -326,7 +325,7 @@ def main():
         dt=0.01
     )
     
-    print(f"\nConfiguration:")
+    print("\nConfiguration:")
     print(f"  Agents: {args.agents}")
     print(f"  Workspace: [{-args.area}, {args.area}]")
     print(f"  Duration: {args.time}s")
@@ -338,7 +337,7 @@ def main():
     d3 = gaussian_density(np.array([0, 0]), 3.0)
     target_density = mixture_density([d1, d2, d3], [0.3, 0.3, 0.4])
     
-    print(f"\nTarget density: 3-component Gaussian mixture")
+    print("\nTarget density: 3-component Gaussian mixture")
     
     # Initialize agents randomly
     initial_states = np.random.uniform(-args.area, args.area, (args.agents, 2))
@@ -356,7 +355,7 @@ def main():
     initial_mismatch = ddco.compute_density_mismatch(initial_states, target_density)
     final_mismatch = ddco.compute_density_mismatch(states_history[-1], target_density)
     
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"  Initial density mismatch: {initial_mismatch:.4f}")
     print(f"  Final density mismatch: {final_mismatch:.4f}")
     print(f"  Reduction: {(1 - final_mismatch/initial_mismatch)*100:.1f}%")

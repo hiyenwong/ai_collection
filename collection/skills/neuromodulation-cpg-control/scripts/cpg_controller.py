@@ -11,10 +11,7 @@ arXiv: 2604.08312
 """
 
 import numpy as np
-from scipy.integrate import odeint
-from scipy.linalg import expm
-import matplotlib.pyplot as plt
-from typing import Callable, Tuple, List, Optional
+from typing import Callable, List, Optional
 
 
 class CPGNeuron:
@@ -410,7 +407,7 @@ def example_usage():
     
     results = controller.sequence_transitions(patterns, dwell_time=2.0)
     
-    print(f"\nTransition results:")
+    print("\nTransition results:")
     for i, (from_p, to_p, success) in enumerate(
         zip(patterns[:-1], patterns[1:], results), 1
     ):

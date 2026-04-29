@@ -9,8 +9,8 @@ import asyncio
 import hashlib
 import time
 from collections import defaultdict
-from typing import Set, Dict, List, Optional
-from dataclasses import dataclass, field
+from typing import Set, Dict, List
+from dataclasses import dataclass
 
 @dataclass
 class DAGNode:
@@ -145,8 +145,7 @@ async def demo():
     # R2 proposes command 3
     hash3 = await nodes["R2"].propose(b"Read balance: Alice")
     
-    print("
-=== Simulating Acknowledgments ===")
+    print("\n=== Simulating Acknowledgments ===")
     
     # Simulate replicas acknowledging proposals
     for node_hash in [hash1, hash2, hash3]:
@@ -156,8 +155,7 @@ async def demo():
     # Wait for commits
     await asyncio.sleep(0.1)
     
-    print("
-=== DAG State ===")
+    print("\n=== DAG State ===")
     for r_id, node in nodes.items():
         print(f"{r_id}: {len(node.dag.nodes)} nodes, {len(node.committed)} committed")
 
