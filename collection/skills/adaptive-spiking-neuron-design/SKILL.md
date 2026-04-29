@@ -62,3 +62,33 @@ Spiking Neural Networks (SNNs), as the third generation of neural networks, offe
 - **Published**: 2026-04-14
 - **Authors**: Chenlin Zhou, Sihang Guo, Jiaqi Wang
 - **Categories**: cs.NE
+
+
+## Tools Used
+
+- `read` - 读取相关文件和资料
+- `write` - 创建实现代码
+- `exec` - 运行实验和验证
+
+
+## Instructions for Agents
+
+1. 阅读技能内容，理解核心方法论
+2. 根据用户需求提供相应的技术指导
+3. 结合实际应用场景给出建议
+4. 如需代码实现，参考核心贡献部分的方法
+
+
+## Examples
+
+### Example 1: 基本概念理解
+
+**User:** 什么是 Adaptive Spiking Neuron Design?
+
+**Agent:** Adaptive Spiking Neuron Design 是一种计算方法...
+
+### Example 2: 实际应用
+
+**User:** 如何在项目中使用这个方法?
+
+**Agent:** 你可以按照以下步骤应用...

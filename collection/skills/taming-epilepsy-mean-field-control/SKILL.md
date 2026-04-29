@@ -6,7 +6,9 @@ source: arXiv:2603.18035v1
 categories: [cs.LG]
 status: active
 trigger: epilepsy, seizure, mean field game, Koopman operator, reservoir computing, EEG, PLV, graph Laplacian, brain control, neuromodulation
+description: Skill for taming epilepsy mean field control
 ---
+
 
 # Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics via GK-MFG
 
@@ -87,3 +89,33 @@ The framework integrates two key computational paradigms for seizure suppression
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- taming-epilepsy-mean-field-control
+- taming epilepsy mean
+- taming epilepsy mean field control
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Taming Epilepsy Mean Field Control
+
+**Agent:** Taming Epilepsy Mean Field Control 是关于...

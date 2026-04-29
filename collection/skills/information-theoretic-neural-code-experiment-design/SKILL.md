@@ -48,3 +48,33 @@ Framework for optimizing experimental task design to distinguish between two com
 
 ## Activation Triggers
 neural coding, probabilistic population code, neural sampling, Bayesian brain, information theory, KL divergence, experimental design, likelihood vs posterior, uncertainty coding
+
+
+## Activation Keywords
+
+- information-theoretic-neural-code-experiment-design
+- information theoretic neural
+- information theoretic neural code experiment design
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Information Theoretic Neural Code Experiment Design
+
+**Agent:** Information Theoretic Neural Code Experiment Design 是关于...

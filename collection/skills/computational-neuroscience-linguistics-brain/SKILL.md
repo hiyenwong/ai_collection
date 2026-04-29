@@ -6,7 +6,9 @@ tags: [linguistics, computational-neuroscience, brain-language, LLM, neural-mode
 activation_keywords: [linguistics, brain language, computational neuroscience language, LLM brain, neural linguistic, Chomsky]
 created: 2026-04-24
 source: arXiv:2602.08275
+description: Skill for computational neuroscience linguistics brain
 ---
+
 
 # Linguistics and Human Brain: Computational Neuroscience Perspective
 
@@ -46,3 +48,33 @@ Fudong Zhang, Bo Chai, Yujie Wu, Wai Ting Siok, Nizhuan Wang
 
 ## References
 - arXiv:2602.08275 (2026-02-09)
+
+
+## Activation Keywords
+
+- computational-neuroscience-linguistics-brain
+- computational neuroscience linguistics
+- computational neuroscience linguistics brain
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Computational Neuroscience Linguistics Brain
+
+**Agent:** Computational Neuroscience Linguistics Brain 是关于...

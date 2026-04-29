@@ -1,20 +1,17 @@
 ---
 title: Omnifunctional Foundation Model for Brain Signals (Brain-OF)
 description: Universal multi-state foundation model processing fMRI, EEG, MEG, and ECoG in a single architecture with cross-modal representation learning and shared latent space for multi-modal brain decoding.
-activation: "brain foundation model, omnifunctional brain model, multi-modal neuroimaging, cross-modal brain decoding"
+activation: brain foundation model, omnifunctional brain model, multi-modal neuroimaging, cross-modal brain decoding
 categories: ["neuroscience", "foundation-model", "multimodal", "fMRI", "EEG", "MEG", "ECoG"]
 trigger_keywords: ["Brain-OF", "omnifunctional foundation model", "multi-modal brain model", "cross-modal neuroimaging", "fMRI EEG MEG", "unified brain foundation", "brain signal foundation", "multi-state brain decoding", "shared latent brain", "cross-modal brain representation"]
-related_skills:
-  - brain-dit-fmri-foundation-model
-  - brain-mri-foundation-clinical
-  - brain-foundation-model-batch-effects
-  - eeg-foundation-model-adapters
-  - meta-learning-in-context-brain-decoding
-source_paper: "Brain-OF: Omnifunctional Foundation Model for Brain Signals"
-source_url: "https://arxiv.org/abs/2604.14940"
+related_skills: 
+source_paper: Brain-OF: Omnifunctional Foundation Model for Brain Signals
+source_url: https://arxiv.org/abs/2604.14940
 created: 2026-04-19
 version: 1.0
+name: brain-omnifunctional-foundation-model
 ---
+
 
 # Brain-OF: Omnifunctional Foundation Model for Brain Signals
 
@@ -203,3 +200,33 @@ class BrainTaskModel(nn.Module):
 - Continual learning for incremental modality addition
 - Federated learning across institutions
 - Clinical validation in multi-center trials
+
+
+## Activation Keywords
+
+- brain-omnifunctional-foundation-model
+- brain omnifunctional foundation
+- brain omnifunctional foundation model
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Brain Omnifunctional Foundation Model
+
+**Agent:** Brain Omnifunctional Foundation Model 是关于...

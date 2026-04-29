@@ -297,3 +297,33 @@ for epoch in range(num_epochs):
 
 - See [references/paper-details.md](references/paper-details.md) for full paper analysis
 - See [references/implementation-examples.py](references/implementation-examples.py) for code
+
+
+## Activation Keywords
+
+- magnet-brain-structure-function
+- magnet brain structure
+- magnet brain structure function
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Magnet Brain Structure Function
+
+**Agent:** Magnet Brain Structure Function 是关于...

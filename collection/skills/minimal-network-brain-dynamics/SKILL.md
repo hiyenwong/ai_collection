@@ -97,3 +97,33 @@ def minimal_network_dynamics(SC, empirical_FC, n_nodes,
 - Sparsity threshold choice significantly affects results
 - Directional connectivity often lost in undirected models
 - Empirical FC noise can misguide pruning decisions
+
+
+## Activation Keywords
+
+- minimal-network-brain-dynamics
+- minimal network brain
+- minimal network brain dynamics
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Minimal Network Brain Dynamics
+
+**Agent:** Minimal Network Brain Dynamics 是关于...

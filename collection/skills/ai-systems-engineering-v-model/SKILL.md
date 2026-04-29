@@ -206,3 +206,33 @@ Data → Feature Engineering → Training → Evaluation → Model Registry → 
 - `cps-security-anomaly-detection` - CPS security considerations
 - `contraction-theory-control-optimization` - Control theory for AI systems
 - `modern-systems-engineering-patterns` - General systems engineering patterns
+
+
+## Activation Keywords
+
+- ai-systems-engineering-v-model
+- systems engineering model
+- ai systems engineering v model
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Ai Systems Engineering V Model
+
+**Agent:** Ai Systems Engineering V Model 是关于...

@@ -6,7 +6,9 @@ source: arXiv:2603.05612v1
 categories: [q-bio.NC, cs.LG, stat.AP, stat.ML]
 status: active
 trigger: LDS, linear dynamical systems, behavior, decomposition, zebrafish, neural population, latent dynamics, subsystem, large-scale recording
+description: Skill for behavior dlds decomposed linear dynamical
 ---
+
 
 # Behavior-dLDS: Decomposed Linear Dynamical Systems for Neural Activity Constrained by Behavior
 
@@ -88,3 +90,33 @@ b-dLDS disentangles simultaneously recorded neural subsystems to identify how la
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- behavior-dlds-decomposed-linear-dynamical
+- behavior dlds decomposed
+- behavior dlds decomposed linear dynamical
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Behavior Dlds Decomposed Linear Dynamical
+
+**Agent:** Behavior Dlds Decomposed Linear Dynamical 是关于...

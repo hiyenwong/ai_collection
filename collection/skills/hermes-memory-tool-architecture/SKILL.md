@@ -163,3 +163,33 @@ Note: Header/separator only in system prompt rendering. File storage is pure §-
 - **fsync**: `fs.fsyncSync(fd)` after write
 - **Encoding**: UTF-8 throughout
 - **The rest**: Direct 1:1 translation possible
+
+
+## Activation Keywords
+
+- hermes-memory-tool-architecture
+- hermes memory tool
+- hermes memory tool architecture
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Hermes Memory Tool Architecture
+
+**Agent:** Hermes Memory Tool Architecture 是关于...

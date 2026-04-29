@@ -84,3 +84,26 @@ class SelfSustainedNetwork:
 ## Activation Keywords
 
 - self-sustained activity, autonomous neural activity, persistent activity, Hodgkin-Huxley recurrent, spontaneous activity
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Modeling Self Sustained Neuron Population Without External
+
+**Agent:** Modeling Self Sustained Neuron Population Without External 是关于...

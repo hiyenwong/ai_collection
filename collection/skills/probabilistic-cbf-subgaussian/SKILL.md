@@ -107,3 +107,33 @@ Numerical experiments demonstrate:
 - `control-barrier-functions`: General CBF methodologies
 - `safety-critical-control`: Safety-critical control systems
 - `stochastic-control`: Stochastic control frameworks
+
+
+## Activation Keywords
+
+- probabilistic-cbf-subgaussian
+- probabilistic cbf subgaussian
+- probabilistic cbf subgaussian
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Probabilistic Cbf Subgaussian
+
+**Agent:** Probabilistic Cbf Subgaussian 是关于...

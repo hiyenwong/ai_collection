@@ -60,3 +60,33 @@ EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) reorganize
 - ember-autonomous-cognitive-behaviour-learned-spiking
 - context-selective-multimodal-memory
 - triple-loop-memory-consolidation
+
+
+## Activation Keywords
+
+- ember-hybrid-snn-llm-architecture
+- ember hybrid snn
+- ember hybrid snn llm architecture
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Ember Hybrid Snn Llm Architecture
+
+**Agent:** Ember Hybrid Snn Llm Architecture 是关于...

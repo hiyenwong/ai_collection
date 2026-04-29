@@ -67,3 +67,33 @@ class AstrocyteWorkingMemory:
 - atp-hysteresis-tripartite-synapse
 - astrocyte-resource-diffusion-neural-fields
 - dual-timescale-memory-spiking-neuron-astrocyte-network-efficient
+
+
+## Activation Keywords
+
+- astrocyte-mediated-working-memory
+- astrocyte mediated working
+- astrocyte mediated working memory
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Astrocyte Mediated Working Memory
+
+**Agent:** Astrocyte Mediated Working Memory 是关于...

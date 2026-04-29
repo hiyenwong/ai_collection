@@ -79,3 +79,33 @@ class ScalableSNNSimulator:
 - **Title**: Scalable SNN Simulation Framework for GPU Clusters
 - **arXiv**: Latest findings 2026
 - **Categories**: cs.NE, cs.DC
+
+
+## Activation Keywords
+
+- scalable-snn-gpu-clusters
+- scalable snn gpu
+- scalable snn gpu clusters
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Scalable Snn Gpu Clusters
+
+**Agent:** Scalable Snn Gpu Clusters 是关于...

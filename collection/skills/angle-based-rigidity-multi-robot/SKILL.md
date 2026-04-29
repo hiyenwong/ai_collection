@@ -294,3 +294,26 @@ class RobotController:
 - Works with directed sensing graphs
 - Body-frame measurements (no global coordinates needed)
 - First equivalence proof between angle and bearing rigidity
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Angle Based Rigidity Multi Robot
+
+**Agent:** Angle Based Rigidity Multi Robot 是关于...

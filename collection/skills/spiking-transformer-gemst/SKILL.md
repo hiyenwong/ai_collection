@@ -1,20 +1,14 @@
 ---
 title: Ge²mS-T Spiking Vision Transformer
 category: neuroscience
-tags:
-  - spiking-neural-networks
-  - vision-transformers
-  - energy-efficiency
-  - S-ViT
-  - neuromorphic-computing
-  - multi-dimensional-grouping
-arxiv: "2604.08894"
-authors:
-  - Zecheng Hao
-  - Shenghao Xie
-  - Kang Chen
-date: "2026-04-10"
+tags: 
+arxiv: 2604.08894
+authors: 
+date: 2026-04-10
+name: spiking-transformer-gemst
+description: Skill for spiking transformer gemst
 ---
+
 
 # Ge²mS-T: Multi-Dimensional Grouping for Ultra-High Energy Efficiency in Spiking Transformer
 
@@ -124,3 +118,33 @@ Use when working with:
 ## References
 
 Zecheng Hao, Shenghao Xie, Kang Chen. "Ge²mS-T: Multi-Dimensional Grouping for Ultra-High Energy Efficiency in Spiking Transformer." arXiv:2604.08894, 2026.
+
+
+## Activation Keywords
+
+- spiking-transformer-gemst
+- spiking transformer gemst
+- spiking transformer gemst
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Spiking Transformer Gemst
+
+**Agent:** Spiking Transformer Gemst 是关于...

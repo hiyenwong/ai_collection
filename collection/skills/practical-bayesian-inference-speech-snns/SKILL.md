@@ -204,3 +204,26 @@ def analyze_loss_landscape(model, input_data, target, resolution=100):
 ## Activation Keywords
 
 - bayesian snn, uncertainty quantification, speech spiking neural network, loss landscape smoothing, spiking neural network bayesian inference, surrogate gradient, monte carlo dropout
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Practical Bayesian Inference Speech Snns
+
+**Agent:** Practical Bayesian Inference Speech Snns 是关于...

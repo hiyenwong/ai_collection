@@ -6,7 +6,9 @@ source: arXiv:2603.12628v1
 categories: [q-bio.NC, cs.AI, eess.SP]
 status: active
 trigger: brain-to-text, speech decoding, Mandarin, Chinese, LLM, production, perception, cross-modal, syllable, neural decoding
+description: Skill for unified brain text decoding mandarin
 ---
+
 
 # Unified Brain-to-Text Decoding Across Speech Production and Perception in Mandarin Chinese
 
@@ -90,3 +92,33 @@ The framework decodes Mandarin Chinese speech from neural signals across both pr
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- unified-brain-text-decoding-mandarin
+- unified brain text
+- unified brain text decoding mandarin
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Unified Brain Text Decoding Mandarin
+
+**Agent:** Unified Brain Text Decoding Mandarin 是关于...

@@ -66,3 +66,26 @@ Text-guided Diffusion Transformer (ADP-DiT) generates realistic multi-modal fMRI
 - multi-modal fMRI synthesis
 - fMRI data augmentation
 - neuroimaging generation
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Alzheimer Dit Fmri
+
+**Agent:** Alzheimer Dit Fmri 是关于...

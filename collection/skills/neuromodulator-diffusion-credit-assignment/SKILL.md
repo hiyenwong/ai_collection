@@ -6,7 +6,9 @@ tags: [neuromodulator, credit-assignment, spiking-neural-network, reinforcement-
 activation_keywords: [neuromodulator, credit assignment, diffusion, temporal credit, spiking network learning, volume transmission]
 created: 2026-04-24
 source: arXiv:2603.08949
+description: Skill for neuromodulator diffusion credit assignment
 ---
+
 
 # Neuromodulator Diffusion for Temporal Credit Assignment
 
@@ -49,3 +51,33 @@ Joao Barretto-Bittar, Anna Levina, Emmanouil Giannakakis, Roxana Zeraati
 
 ## References
 - arXiv:2603.08949 (2026-03-09)
+
+
+## Activation Keywords
+
+- neuromodulator-diffusion-credit-assignment
+- neuromodulator diffusion credit
+- neuromodulator diffusion credit assignment
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Neuromodulator Diffusion Credit Assignment
+
+**Agent:** Neuromodulator Diffusion Credit Assignment 是关于...

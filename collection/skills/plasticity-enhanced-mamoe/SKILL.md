@@ -134,3 +134,33 @@ Simulations with mobile users and 3GPP-style channels show:
 - `multi-agent-llm-peer-preservation`: Peer-preservation in multi-agent LLM systems
 - `decentralized-optimization-smtpp`: Decentralized stochastic optimization
 - `multi-agent-clinical-reasoning`: Multi-agent framework for clinical reasoning
+
+
+## Activation Keywords
+
+- plasticity-enhanced-mamoe
+- plasticity enhanced mamoe
+- plasticity enhanced mamoe
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Plasticity Enhanced Mamoe
+
+**Agent:** Plasticity Enhanced Mamoe 是关于...

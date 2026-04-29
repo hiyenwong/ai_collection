@@ -153,3 +153,33 @@ mHC + attention RMSNorm already prevent logit explosion.
 5. **Wave-based EP scheduling** hides all communication under computation when C/B threshold met
 6. **FP4 for inference + FP4→FP8 for training** is a clean mixed-precision strategy
 7. Conservative architecture choices (many validated tricks) may be necessary for stability at scale, even if complex
+
+
+## Activation Keywords
+
+- deepseek-v4-architecture
+- deepseek architecture
+- deepseek v4 architecture
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Deepseek V4 Architecture
+
+**Agent:** Deepseek V4 Architecture 是关于...

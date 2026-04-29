@@ -6,7 +6,9 @@ tags: [poisson, gradient-estimation, latent-variable, computational-neuroscience
 activation_keywords: [Poisson, gradient estimation, latent variable, firing rate, spike train, Gumbel-SoftMax, EAT]
 created: 2026-04-24
 source: arXiv:2602.03896
+description: Skill for poisson gradient estimation guide
 ---
+
 
 # Hitchhiker's Guide to Poisson Gradient Estimation
 
@@ -54,3 +56,40 @@ Michael Ibrahim, Hanqi Zhao, Eli Sennesh, Zhi Li, Anqi Wu
 
 ## References
 - arXiv:2602.03896 (2026-02-03)
+
+
+## Tools Used
+
+- `read` - 读取相关文件和资料
+- `write` - 创建实现代码
+- `exec` - 运行实验和验证
+
+
+## Instructions for Agents
+
+1. 阅读技能内容，理解核心方法论
+2. 根据用户需求提供相应的技术指导
+3. 结合实际应用场景给出建议
+4. 如需代码实现，参考核心贡献部分的方法
+
+
+## Examples
+
+### Example 1: 基本概念理解
+
+**User:** 什么是 Poisson Gradient Estimation Guide?
+
+**Agent:** Poisson Gradient Estimation Guide 是一种计算方法...
+
+### Example 2: 实际应用
+
+**User:** 如何在项目中使用这个方法?
+
+**Agent:** 你可以按照以下步骤应用...
+
+
+## Activation Keywords
+
+- poisson-gradient-estimation-guide
+- poisson gradient estimation
+- poisson gradient estimation guide

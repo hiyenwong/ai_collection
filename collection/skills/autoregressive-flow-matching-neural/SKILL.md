@@ -223,3 +223,33 @@ def predict_with_uncertainty(model, sensory_input, n_future=50, n_samples=500):
 
 - Paper: 2604.11178 "Probabilistic Prediction of Neural Dynamics via Autoregressive Flow Matching"
 - 相关：Flow Matching, Continuous Normalizing Flows, Neural Dynamics Forecasting
+
+
+## Activation Keywords
+
+- autoregressive-flow-matching-neural
+- autoregressive flow matching
+- autoregressive flow matching neural
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Autoregressive Flow Matching Neural
+
+**Agent:** Autoregressive Flow Matching Neural 是关于...

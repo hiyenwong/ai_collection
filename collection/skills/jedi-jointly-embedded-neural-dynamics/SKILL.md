@@ -6,7 +6,9 @@ source: arXiv:2603.10489v1
 categories: [q-bio.NC, cs.AI, cs.LG]
 status: active
 trigger: neural dynamics, RNN, embedding, motor cortex, multi-task, fixed points, eigenspectrum, monkey reaching, hierarchical model
+description: Skill for jedi jointly embedded neural dynamics
 ---
+
 
 # JEDI: Jointly Embedded Inference of Neural Dynamics
 
@@ -88,3 +90,33 @@ JEDI is a hierarchical model that captures neural dynamics across tasks and cont
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- jedi-jointly-embedded-neural-dynamics
+- jedi jointly embedded
+- jedi jointly embedded neural dynamics
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Jedi Jointly Embedded Neural Dynamics
+
+**Agent:** Jedi Jointly Embedded Neural Dynamics 是关于...

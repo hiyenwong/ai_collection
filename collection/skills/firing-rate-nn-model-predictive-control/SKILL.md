@@ -6,7 +6,9 @@ source: arXiv:2603.25959v1
 categories: [eess.SY]
 status: active
 trigger: firing rate, model predictive control, MPC, planning, sparse network, inverted pendulum, contraction theory, biological plausibility, neural dynamics
+description: Skill for firing rate nn model predictive control
 ---
+
 
 # Firing Rate Neural Network Implementations of Model Predictive Control
 
@@ -88,3 +90,33 @@ Translates model predictive controllers into firing rate neural networks, offeri
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- firing-rate-nn-model-predictive-control
+- firing rate model
+- firing rate nn model predictive control
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Firing Rate Nn Model Predictive Control
+
+**Agent:** Firing Rate Nn Model Predictive Control 是关于...

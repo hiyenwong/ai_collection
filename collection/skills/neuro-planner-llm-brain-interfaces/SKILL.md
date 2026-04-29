@@ -1,18 +1,17 @@
 ---
 title: LLM-Assisted Brain Stimulation Planning (Neuro-Planner)
 description: LLM-assisted transcranial electrical stimulation (tES) montage design using iterative reasoning. Applies LLM chain-of-thought reasoning to propose, simulate, evaluate, and refine brain stimulation montages with FEM-based E-field simulation feedback loop.
-activation: "brain stimulation planning, LLM tES, montage optimization, tDCS design, transcranial stimulation, computational neuromodulation, Neuro-Planner"
+activation: brain stimulation planning, LLM tES, montage optimization, tDCS design, transcranial stimulation, computational neuromodulation, Neuro-Planner
 categories: ["neuroscience", "brain-stimulation", "LLM", "neuromodulation", "clinical"]
 trigger_keywords: ["LLM brain stimulation", "tES montage", "transcranial electrical stimulation", "tDCS optimization", "tACS design", "FEM E-field", "computational neuromodulation", "brain stimulation planning", "neuro-planner", "CoT stimulation"]
-related_skills:
-  - brain-dit-fmri-foundation-model
-  - deep-learning-eeg-tms-closed-loop
-  - brain-state-transition-network-control
-source_paper: "Neuro-Planner: Leveraging LLM Iterative Reasoning to Propose Brain Stimulation Montages"
-source_url: "https://arxiv.org/abs/2604.14951"
+related_skills: 
+source_paper: Neuro-Planner: Leveraging LLM Iterative Reasoning to Propose Brain Stimulation Montages
+source_url: https://arxiv.org/abs/2604.14951
 created: 2026-04-19
 version: 1.0
+name: neuro-planner-llm-brain-interfaces
 ---
+
 
 # Neuro-Planner: LLM-Assisted Brain Stimulation Planning
 
@@ -168,3 +167,33 @@ class NeuroPlanner:
 - Personalized protocols based on individual brain anatomy
 - Automated safety verification pipeline
 - Clinical validation through controlled trials
+
+
+## Activation Keywords
+
+- neuro-planner-llm-brain-interfaces
+- neuro planner llm
+- neuro planner llm brain interfaces
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Neuro Planner Llm Brain Interfaces
+
+**Agent:** Neuro Planner Llm Brain Interfaces 是关于...

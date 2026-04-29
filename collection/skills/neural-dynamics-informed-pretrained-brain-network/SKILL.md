@@ -6,7 +6,9 @@ source: arXiv:2603.07524v1
 categories: [cs.LG, cs.AI]
 status: active
 trigger: personalized, brain functional network, pre-trained, neural dynamics, brain parcellation, heterogeneous, virtual modulation, abnormal circuit
+description: Skill for neural dynamics informed pretrained brain network
 ---
+
 
 # Neural Dynamics-Informed Pre-trained Framework for Personalized Brain Functional Network Construction
 
@@ -89,3 +91,33 @@ The framework challenges dominant brain functional network construction methods 
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- neural-dynamics-informed-pretrained-brain-network
+- neural dynamics informed
+- neural dynamics informed pretrained brain network
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Neural Dynamics Informed Pretrained Brain Network
+
+**Agent:** Neural Dynamics Informed Pretrained Brain Network 是关于...

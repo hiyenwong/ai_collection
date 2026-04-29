@@ -338,3 +338,33 @@ def hodge_decomposition(flow, laplacian):
 
 - See [references/paper-details.md](references/paper-details.md) for full paper analysis
 - See [references/topology-basics.md](references/topology-basics.md) for TDA background
+
+
+## Activation Keywords
+
+- higher-order-brain-networks-tsp
+- higher order brain
+- higher order brain networks tsp
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Higher Order Brain Networks Tsp
+
+**Agent:** Higher Order Brain Networks Tsp 是关于...

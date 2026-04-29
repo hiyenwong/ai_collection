@@ -46,3 +46,33 @@ Deep learning framework for modeling nonlinear neural dynamics underlying behavi
 
 ## Activation Triggers
 neural dynamics, behavioral modeling, input-driven, RNN, motor cortex, disentanglement, neural population, recurrent dynamics
+
+
+## Activation Keywords
+
+- braid-input-driven-neural-behavioral-dynamics
+- braid input driven
+- braid input driven neural behavioral dynamics
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Braid Input Driven Neural Behavioral Dynamics
+
+**Agent:** Braid Input Driven Neural Behavioral Dynamics 是关于...

@@ -48,3 +48,33 @@ First EEG foundation model specifically designed for the motor imagery (MI) BCI 
 
 ## Activation Triggers
 motor imagery, EEG, foundation model, BCI, MI classification, channel template, pretraining, self-supervised
+
+
+## Activation Keywords
+
+- mirepnet-eeg-motor-imagery-foundation
+- mirepnet eeg motor
+- mirepnet eeg motor imagery foundation
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Mirepnet Eeg Motor Imagery Foundation
+
+**Agent:** Mirepnet Eeg Motor Imagery Foundation 是关于...

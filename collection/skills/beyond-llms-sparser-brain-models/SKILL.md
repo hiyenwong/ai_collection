@@ -117,3 +117,33 @@ Sparse activation enables orders-of-magnitude energy reduction.
 - [[sparse-gradient-plasticity]] - Sparse gradient implementations
 - [[neuromorphic-low-power-ai]] - Neuromorphic energy efficiency
 - [[mistake-gated-continual-learning]] - Energy-efficient continual learning
+
+
+## Activation Keywords
+
+- beyond-llms-sparser-brain-models
+- beyond llms sparser
+- beyond llms sparser brain models
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Beyond Llms Sparser Brain Models
+
+**Agent:** Beyond Llms Sparser Brain Models 是关于...

@@ -169,3 +169,33 @@ def mi_guided_dynamic_blur(brain_signal, image, sigma_range=(0.1, 5.0)):
 
 - Paper: 2604.17927 "Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation for Visual Decoding"
 - 相关工作：EEG2Vision, Brain-Diffuser, Mind's Eye
+
+
+## Activation Keywords
+
+- brain-inspired-capture-evidencedriven-neuromimetic-perceptual
+- brain inspired capture
+- brain inspired capture evidencedriven neuromimetic perceptual
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Brain Inspired Capture Evidencedriven Neuromimetic Perceptual
+
+**Agent:** Brain Inspired Capture Evidencedriven Neuromimetic Perceptual 是关于...

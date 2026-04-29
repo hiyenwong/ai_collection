@@ -6,7 +6,9 @@ source: arXiv:2603.13361v1
 categories: [cs.CV, cs.AI, stat.ML]
 status: active
 trigger: fmri, forecasting, brain network, time series, spatio-temporal, HCP, functional connectivity, ROI, whole-brain
+description: Skill for braincast spatiotemporal fmri forecasting
 ---
+
 
 # BrainCast: Spatio-Temporal Forecasting Model for Whole-Brain fMRI Time Series Prediction
 
@@ -89,3 +91,33 @@ BrainCast formulates whole-brain fMRI time series forecasting as a multivariate 
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- braincast-spatiotemporal-fmri-forecasting
+- braincast spatiotemporal fmri
+- braincast spatiotemporal fmri forecasting
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Braincast Spatiotemporal Fmri Forecasting
+
+**Agent:** Braincast Spatiotemporal Fmri Forecasting 是关于...

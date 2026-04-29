@@ -1,20 +1,17 @@
 ---
 title: Deep Learning EEG-TMS Closed-Loop System
 description: Closed-loop deep learning framework combining real-time EEG monitoring with TMS stimulation. Uses DL models to predict optimal TMS parameters from brain state with <50ms latency for real-time adaptive neuromodulation.
-activation: "EEG-TMS closed-loop, deep learning TMS, real-time brain stimulation, adaptive neuromodulation"
+activation: EEG-TMS closed-loop, deep learning TMS, real-time brain stimulation, adaptive neuromodulation
 categories: ["neuroscience", "closed-loop", "TMS", "EEG", "deep-learning", "neuromodulation"]
 trigger_keywords: ["EEG TMS closed-loop", "deep learning TMS", "adaptive stimulation", "real-time neuromodulation", "closed-loop brain stimulation", "EEG-guided TMS", "TMS parameter optimization", "real-time brain state", "personalized TMS", "adaptive TMS protocol"]
-related_skills:
-  - neuro-planner-llm-brain-interfaces
-  - brain-dit-fmri-foundation-model
-  - eeg-foundation-model-adapters
-  - eeg-brain-connectivity-bci
-  - brain-state-transition-network-control
-source_paper: "Deep Learning EEG-TMS Closed-Loop System"
-source_url: "https://arxiv.org/abs/2604.15099"
+related_skills: 
+source_paper: Deep Learning EEG-TMS Closed-Loop System
+source_url: https://arxiv.org/abs/2604.15099
 created: 2026-04-19
 version: 1.0
+name: deep-learning-eeg-tms-closed-loop
 ---
+
 
 # Deep Learning EEG-TMS Closed-Loop System
 
@@ -247,3 +244,33 @@ class RealTimeEngine:
 - Federated learning across clinical sites
 - Automated protocol discovery
 - Combination with pharmacological interventions
+
+
+## Activation Keywords
+
+- deep-learning-eeg-tms-closed-loop
+- deep learning eeg
+- deep learning eeg tms closed loop
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Deep Learning Eeg Tms Closed Loop
+
+**Agent:** Deep Learning Eeg Tms Closed Loop 是关于...

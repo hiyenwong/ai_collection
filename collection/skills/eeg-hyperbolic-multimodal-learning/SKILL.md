@@ -356,3 +356,33 @@ for epoch in range(num_epochs):
 
 - See [references/paper-details.md](references/paper-details.md) for full paper analysis
 - See [references/hyperbolic-geometry.md](references/hyperbolic-geometry.md) for math background
+
+
+## Activation Keywords
+
+- eeg-hyperbolic-multimodal-learning
+- eeg hyperbolic multimodal
+- eeg hyperbolic multimodal learning
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Eeg Hyperbolic Multimodal Learning
+
+**Agent:** Eeg Hyperbolic Multimodal Learning 是关于...

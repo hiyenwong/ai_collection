@@ -128,3 +128,33 @@ class DarkSignalModel:
 - Glial and neuromodulatory signals have slow dynamics, easy to confound with drift
 - Subthreshold activity estimation requires strong model assumptions
 - Distinguishing dark signals from measurement artifacts is non-trivial
+
+
+## Activation Keywords
+
+- dark-signals-brain-network
+- dark signals brain
+- dark signals brain network
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Dark Signals Brain Network
+
+**Agent:** Dark Signals Brain Network 是关于...

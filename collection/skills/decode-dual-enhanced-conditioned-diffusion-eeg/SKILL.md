@@ -6,7 +6,9 @@ source: arXiv:2603.16885v1
 categories: [eess.SP, cs.CL, cs.HC, cs.LG]
 status: active
 trigger: eeg, diffusion, forecasting, language model, BCI, semantic conditioning, Langevin dynamics, zero-shot, neural dynamics
+description: Skill for decode dual enhanced conditioned diffusion eeg
 ---
+
 
 # DECODE: Dual-Enhanced Conditioned Diffusion for EEG Forecasting
 
@@ -88,3 +90,33 @@ DECODE unifies semantic guidance from natural language with temporal dynamics fr
 ## Relevance to Other Skills
 
 This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
+
+
+## Activation Keywords
+
+- decode-dual-enhanced-conditioned-diffusion-eeg
+- decode dual enhanced
+- decode dual enhanced conditioned diffusion eeg
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Decode Dual Enhanced Conditioned Diffusion Eeg
+
+**Agent:** Decode Dual Enhanced Conditioned Diffusion Eeg 是关于...

@@ -348,3 +348,33 @@ V_Opt = 200×N(0.587) - 70×e^(-0.075)×N(-0.452) ≈ 142.8亿
 - HRI 框架原始方法论（AI领域版本）
 - GE 2017 年 10-K 年报
 - Schneider / Honeywell / Siemens 公开财报与分析师估算
+
+
+## Activation Keywords
+
+- hri-hedged-revenue-index
+- hri hedged revenue
+- hri hedged revenue index
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Hri Hedged Revenue Index
+
+**Agent:** Hri Hedged Revenue Index 是关于...

@@ -53,3 +53,33 @@ Open-source MATLAB toolbox for end-to-end MEG/EEG analysis with unified GUI. Int
 
 ## Activation Triggers
 EEG toolbox, MEG toolbox, source localization, FieldTrip, Brainstorm, EEGLAB, MATLAB, neuroimaging pipeline, connectivity analysis
+
+
+## Activation Keywords
+
+- mle-toolbox-eeg-meg-analysis
+- mle toolbox eeg
+- mle toolbox eeg meg analysis
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Mle Toolbox Eeg Meg Analysis
+
+**Agent:** Mle Toolbox Eeg Meg Analysis 是关于...

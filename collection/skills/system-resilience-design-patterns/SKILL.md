@@ -496,3 +496,33 @@ class ResilienceMetrics:
 
 **创建时间**: 2025-01-12
 **版本**: 1.0
+
+
+## Activation Keywords
+
+- system-resilience-design-patterns
+- system resilience design
+- system resilience design patterns
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 System Resilience Design Patterns
+
+**Agent:** System Resilience Design Patterns 是关于...

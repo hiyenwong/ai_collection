@@ -426,3 +426,33 @@ diminishing accuracy returns after ~4–6 steps.  The paper recommends:
   deep learning with spiking neural networks." *GitHub*, 2021.
 
 - **TensorRT**: NVIDIA TensorRT Documentation, Developer Zone, 2024.
+
+
+## Activation Keywords
+
+- vs-wno-variable-spiking-wavelet
+- wno variable spiking
+- vs wno variable spiking wavelet
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Vs Wno Variable Spiking Wavelet
+
+**Agent:** Vs Wno Variable Spiking Wavelet 是关于...

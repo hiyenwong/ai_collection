@@ -34,11 +34,15 @@ PAPER_SKILL_INDICATORS = [
     "**arXiv ID:**",
     "## Abstract",
     "## Key Contributions",
+    "## Core Contributions",
     # Extended indicators for research paper skills from various sources
     "arXiv:",          # matches "arXiv:2604.xxxxx" and "Source: arXiv:..."
     "arxiv.org",       # matches arxiv.org URLs
     "source_paper:",   # matches YAML frontmatter source_paper key
     "触发词:",          # Chinese "activation keywords" hint in description
+    "references:",     # YAML frontmatter references key (for paper-based skills)
+    "核心论点",         # Chinese "core arguments"
+    "核心贡献",         # Chinese "key contributions"
 ]
 
 

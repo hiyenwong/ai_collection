@@ -186,3 +186,33 @@ class WorkingMemoryRSNN(nn.Module):
 
 - Paper: 2604.14096 "Working Memory in a Recurrent Spiking Neural Network with Heterogeneous Delays"
 - 相关：SNN Working Memory, Delay Learning, Surrogate Gradient Methods
+
+
+## Activation Keywords
+
+- working-memory-recurrent-spiking-neural-networks
+- working memory recurrent
+- working memory recurrent spiking neural networks
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Working Memory Recurrent Spiking Neural Networks
+
+**Agent:** Working Memory Recurrent Spiking Neural Networks 是关于...

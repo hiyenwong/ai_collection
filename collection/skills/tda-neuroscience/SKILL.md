@@ -105,3 +105,33 @@ pgdt.plot_persistence_diagram(persistence)
 ---
 *技能生成时间: 2026-04-12*
 *来源: 自动化神经科学研究工作流*
+
+
+## Activation Keywords
+
+- tda-neuroscience
+- tda neuroscience
+- tda neuroscience
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Tda Neuroscience
+
+**Agent:** Tda Neuroscience 是关于...

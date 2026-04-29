@@ -6,7 +6,9 @@ tags: [mean-field-theory, recurrent-networks, nonlinear-noise, Ornstein-Uhlenbec
 activation_keywords: [mean field, dynamic mean field, recurrent network, nonlinear noise, OU process, lognormal closure, bifurcation]
 created: 2026-04-24
 source: arXiv:2601.15462
+description: Skill for dynamic mean field nonlinear noise recurrent networks
 ---
+
 
 # Dynamic Mean Field Theories for Nonlinear Noise in Recurrent Neuronal Networks
 
@@ -54,3 +56,33 @@ Shoshana Chipman, Brent Doiron
 
 ## References
 - arXiv:2601.15462 (2026-01-21)
+
+
+## Activation Keywords
+
+- dynamic-mean-field-nonlinear-noise-recurrent-networks
+- dynamic mean field
+- dynamic mean field nonlinear noise recurrent networks
+
+
+## Tools Used
+
+- `read` - 读取技能文档
+- `write` - 创建输出
+- `exec` - 执行相关命令
+
+
+## Instructions for Agents
+
+1. 理解技能的核心方法论
+2. 根据用户问题提供针对性回答
+3. 遵循最佳实践
+
+
+## Examples
+
+### Example 1: 基本查询
+
+**User:** 请解释 Dynamic Mean Field Nonlinear Noise Recurrent Networks
+
+**Agent:** Dynamic Mean Field Nonlinear Noise Recurrent Networks 是关于...
