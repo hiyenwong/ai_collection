@@ -446,3 +446,13 @@ Deep Neural Network-guided Particle Swarm Optimization for dynamic environments.
 - **arXiv**: 2604.20679
 - **Keywords**: hippocampus, CA3, auto-associative memory, biologically detailed, learning
 
+
+
+## Latest Update: 2026-05-01
+
+New skills added from arXiv evening scan:
+- [[synthetic-biological-intelligence]] - Synthetic Biological Intelligence (arXiv:2604.27933)
+- [[contextual-agentic-memory-memo]] - Contextual Agentic Memory Memo vs True Memory (arXiv:2604.27707)
+- [[hydrogel-neural-interface-coassembly]] - Hydrogel Neural Interface Co-Assembly (arXiv:2604.23945)
+
+**Total skills**: 238
