@@ -1,3 +1,49 @@
+## May 2, 2026 - Neuroscience Research (Cron Job)
+
+### EdgeSpike: SNNs for Low-Power Edge IoT Sensing
+- [[edgespike-edge-iot-snn]] - Co-designed SNN framework for autonomous low-power sensing in edge IoT (arXiv:2604.27004)
+  - Hybrid surrogate-gradient + direct-encoding training, hardware-aware NAS, event-driven runtime
+  - 31x energy reduction on neuromorphic hardware, 6.1x on Cortex-M
+  - Deployed on Loihi 2, SpiNNaker 2, ARM Cortex-M across 5 sensing tasks
+  - **Activation**: spiking neural network, SNN, edge IoT, neuromorphic, Loihi, SpiNNaker, low-power, surrogate gradient
+
+### Physical Foundation Models: Fixed Hardware Neural Networks
+- [[physical-foundation-models]] - Hardware where neural networks are realized directly via physical dynamics (arXiv:2604.27911)
+  - Advocates for PFMs operating at physical design level for ~10^12 parameter models
+  - Orders-of-magnitude advantages in energy efficiency, speed, parameter density
+  - Discusses optical 3D nanostructured glass, nanoelectronics, and other physical platforms
+  - **Activation**: physical foundation model, hardware neural network, optical computing, nanoelectronics, physical dynamics
+
+### NeuroRing: Multi-FPGA SNN Accelerator
+- [[neuroring-multi-fpga-snn]] - Scalable SNN accelerator via bidirectional ring topology on FPGAs (arXiv:2604.28059)
+  - Stream-dataflow architecture, HLS implementation, NEST simulator integration
+  - Real-time factor 0.83 for full-scale cortical microcircuit, meaningful strong/weak scaling
+  - Accepted at Euro-Par 2026
+  - **Activation**: NeuroRing, FPGA, SNN accelerator, stream-dataflow, ring topology, NEST simulator, cortical microcircuit
+
+### Agentic Behavioral Modeling: AI Agents for Cognitive Science
+- [[agentic-behavioral-modeling]] - Framework treating AI agents as generative hypotheses about cognitive mechanisms (arXiv:2604.27894)
+  - Formalizes task-agent-data systems as joint probability models
+  - Derives conditional log-likelihoods for behavioral inference
+  - Shows equivalence between Rescorla-Wagner learning and Bayesian inference in symmetric bandits
+  - **Activation**: agentic behavioral modeling, ABM, cognitive science, behavioral inference, Rescorla-Wagner, Bayesian
+
+### Multisensory Learning & Memory Engram Recruitment
+- [[multisensory-learning-engram-recruitment]] - How multisensory learning recruits visual neurons into olfactory memory engrams (arXiv:2604.28007)
+  - Drosophila study: combining colors and odours improved memory for both modalities
+  - DPM neurons bridge between modality-selective KC streams via serotonergic signaling
+  - Broadening of engram improves memory performance after multisensory learning
+  - **Activation**: multisensory learning, memory engram, mushroom body, Kenyon cells, DPM neurons, Drosophila
+
+### Attractor FCM: Gradient Descent-Based Fuzzy Cognitive Maps
+- [[attractor-fcm-gradient-descent]] - Physics-constrained Jacobian FCM with attractor dynamics and residual memory (arXiv:2604.27947)
+  - Gradient descent (not Hebbian) with Newton's method for fixed point attractor finding
+  - Residual memory, BPTT, fixed point anchor, causal mask filtering
+  - Adaptive landscape control prevents premature convergence to local minima
+  - **Activation**: attractor FCM, fuzzy cognitive map, gradient descent, physics-constrained, Jacobian, Newton's method
+
+---
+
 ## April 24, 2026 - Neuroscience Research (Cron Job)
 
 ### BrainCast: Spatio-Temporal fMRI Forecasting
@@ -456,3 +502,9 @@ New skills added from arXiv evening scan:
 - [[hydrogel-neural-interface-coassembly]] - Hydrogel Neural Interface Co-Assembly (arXiv:2604.23945)
 
 **Total skills**: 238
+
+
+## New - 2026-05-02
+
+- [[llm-eeg-graph-refinement]] - LLM as Clinical Graph Structure Refiner for EEG seizure diagnosis (arXiv:2604.28178, IJCAI-ECAI 2026)
+
