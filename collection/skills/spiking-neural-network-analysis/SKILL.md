@@ -78,6 +78,14 @@ Common SNN patterns:
 - **temporal dynamics** - Time-series processing
 - **low-latency** - Fast inference
 
+## Instructions for Agents
+
+Follow these steps to analyze SNN papers:
+1. Identify the user's task type (search, pattern extraction, knowledge graph analysis, or report generation)
+2. Use the Workflow Decision Tree to select the appropriate path
+3. Execute the Core Commands in order
+4. Present results using the format shown in Usage Examples
+
 ## Usage Examples
 
 ### Example 1: Basic Analysis

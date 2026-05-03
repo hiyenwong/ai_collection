@@ -80,6 +80,40 @@ For quantum brain model simulations:
 python3 ~/.openclaw/skills/quantum-neuromorphic-computing/scripts/quantum_brain_simulation.py --model lmg --feedback synaptic
 ```
 
+## Instructions for Agents
+
+Follow the workflow in order:
+
+1. **Knowledge Retrieval**: Search the knowledge graph for relevant quantum neuromorphic papers
+2. **Analysis**: Run the quantum cognition analysis script on retrieved papers
+3. **Simulation**: Use the quantum brain simulation script for LMG model experiments
+4. **Documentation**: Save results and reference key papers for the user
+
+## Examples
+
+### Example 1: Quantum Brain Model Analysis
+
+```
+User: "分析量子脑模型中的突触反馈机制"
+
+Execute:
+1. Search kg.db for "quantum brain model synaptic feedback"
+2. Get paper details for LMG model papers
+3. Run quantum_cognition_analysis.py on relevant papers
+4. Summarize phase transition findings
+```
+
+### Example 2: Quantum Neuromorphic Simulation
+
+```
+User: "模拟量子神经形态计算的相变"
+
+Execute:
+1. Run quantum_brain_simulation.py --model lmg --feedback synaptic
+2. Analyze the phase transition output
+3. Explain the ferromagnetic/paramagnetic states
+```
+
 ## Key Research Papers
 
 From knowledge graph analysis (kg.db):

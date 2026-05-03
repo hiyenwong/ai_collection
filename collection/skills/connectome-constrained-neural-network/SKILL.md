@@ -658,3 +658,44 @@ def evaluate_connectome_constraints(model, test_data):
 - connectome constrained neural network
 - wiring efficiency
 - brain graph neural network
+
+## Tools Used
+
+- `read` - Read connectome data files and research papers
+- `write` - Save analysis results and model configurations
+- `exec` - Run Python scripts for connectome-constrained neural network training
+
+## Instructions for Agents
+
+Follow these steps when helping users with connectome-constrained neural networks:
+
+1. **Identify the constraint type**: Structural connectivity, wiring cost, or connectome-based graph
+2. **Load connectome data**: Use provided data loaders for brain connectivity matrices
+3. **Build the architecture**: Apply connectome constraints to neural network layers
+4. **Train and evaluate**: Run training with connectome-aware architecture
+
+## Examples
+
+### Example 1: Connectome-Constrained Network
+
+```
+User: "构建基于连接组约束的神经网络"
+
+Execute:
+1. Load connectome structural connectivity matrix
+2. Build connectome-constrained layer
+3. Wire into full network architecture
+4. Train with wiring cost regularization
+```
+
+### Example 2: Connectome GNN
+
+```
+User: "用连接组数据做脑图神经网络分析"
+
+Execute:
+1. Load connectome graph data
+2. Build GNN with connectome adjacency matrix
+3. Run training for target task
+4. Evaluate with connectome-specific metrics
+```

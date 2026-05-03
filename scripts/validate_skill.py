@@ -36,19 +36,20 @@ PAPER_SKILL_INDICATORS = [
     "## Key Contributions",
     "## Core Contributions",
     # Extended indicators for research paper skills from various sources
-    "arXiv:",          # matches "arXiv:2604.xxxxx" and "Source: arXiv:..."
-    "arxiv.org",       # matches arxiv.org URLs
-    "source_paper:",   # matches YAML frontmatter source_paper key
-    "触发词:",          # Chinese "activation keywords" hint in description
-    "references:",     # YAML frontmatter references key (for paper-based skills)
-    "核心论点",         # Chinese "core arguments"
-    "核心贡献",         # Chinese "key contributions"
+    "arXiv:",  # matches "arXiv:2604.xxxxx" and "Source: arXiv:..."
+    "arxiv.org",  # matches arxiv.org URLs
+    "source_paper:",  # matches YAML frontmatter source_paper key
+    "触发词:",  # Chinese "activation keywords" hint in description
+    "references:",  # YAML frontmatter references key (for paper-based skills)
+    "核心论点",  # Chinese "core arguments"
+    "核心贡献",  # Chinese "key contributions"
 ]
 
 
 def is_paper_skill(content: str) -> bool:
     """Check if this is a paper-based skill (arXiv research paper)."""
     return any(indicator in content for indicator in PAPER_SKILL_INDICATORS)
+
 
 # Optional sections
 OPTIONAL_SECTIONS = [
@@ -109,7 +110,9 @@ class SkillValidator:
 
         # Check if this is a paper-based skill (different validation rules)
         if is_paper_skill(content):
-            self.info.append("Paper-based skill (arXiv research) - using relaxed validation")
+            self.info.append(
+                "Paper-based skill (arXiv research) - using relaxed validation"
+            )
             return self._validate_paper_skill(content)
 
         # Check required sections
