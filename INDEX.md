@@ -508,3 +508,12 @@ New skills added from arXiv evening scan:
 
 - [[llm-eeg-graph-refinement]] - LLM as Clinical Graph Structure Refiner for EEG seizure diagnosis (arXiv:2604.28178, IJCAI-ECAI 2026)
 
+
+---
+
+## 2026-05-03 Evening
+
+- **New**: [[earable-eeg-auditory-platform]] - In-ear EEG monitor (IEEM) for simultaneous EEG sensing and auditory stimulation, enabling closed-loop neuromodulation (arXiv:2604.22137)
+- **Session coverage**: 96%+ of recent papers
+- **Total**: 1671 skills
+
