@@ -27,7 +27,8 @@
       "Bash(xargs ls *)",
       "Bash(git fetch *)",
       "Bash(git status *)",
-      "Bash(git pull *)"
+      "Bash(git pull *)",
+      "Bash(gh api *)"
     ]
   }
 }
