@@ -1,326 +1,205 @@
 ---
 name: dual-timescale-memory-spiking-neuron-astrocyte-network-efficient
-description: "Spiking neuron-astrocyte network combining STDP-based long-term memory with astrocytic calcium transient short-term suppression for efficient navigation. Features memristive VTEAM implementation achieving 6x path length reduction."
-version: "2.0"
-paper_id: "2604.15391"
-arxiv_url: "https://arxiv.org/abs/2604.15391"
-categories:
-  - cs.NE
-  - q-bio.NC
-tags:
-  - dual timescale memory
-  - astrocyte SNN
-  - neuromorphic navigation
-  - spiking astrocyte
-  - STDP
-  - memristive
-  - VTEAM
-activation:
-  triggers:
-    - dual timescale memory
-    - astrocyte SNN
-    - neuromorphic navigation
-    - spiking astrocyte
-    - astrocyte neuron network
-    - STDP astrocyte
-    - memristive SNN
-  keywords:
-    - dual-timescale
-    - astrocyte
-    - calcium transient
-    - STDP
-    - VTEAM
-    - memristive
-    - navigation
-    - spiking neuron-astrocyte network
-    - SNAN
+version: 1.0
+date: 2026-04-23
+paper: arXiv:2604.15391
+authors: Tsybina, Antonova, Shchanikov, Kulagin, Mikhaylov, Kazantsev, Demin, Gordleeva
+description: >
+  Spiking Neuron-Astrocyte Network (SNAN) combining STDP-based long-term memory with
+  astrocytic calcium-mediated short-term suppression for efficient navigation. Introduces
+  Topological-Context Memory as a dual-timescale working memory mechanism that reduces
+  median path length by up to 6x and dramatically improves goal completion rates.
+tags: [spiking neural network, astrocyte, navigation, working memory, STDP, dual-timescale, neuromorphic]
 ---
 
-# 双时间尺度记忆: 脉冲神经元-星形胶质细胞网络的高效导航
+# Dual-Timescale Memory in Spiking Neuron-Astrocyte Network
 
-## 核心发现
+## Summary
 
-脉冲神经元-星形胶质细胞网络 (Spiking Neuron-Astrocyte Network, SNAN) 结合两种互补记忆机制实现高效导航：
-1. **长期记忆 (LTM)**: 基于STDP的突触权重持久修改
-2. **短期抑制 (STM)**: 星形胶质细胞钙瞬变介导的临时突触抑制
+This paper introduces a Spiking Neuron-Astrocyte Network (SNAN) for efficient navigation that implements dual-timescale memory by combining two biologically-inspired mechanisms:
 
-在T-maze导航任务中实现6倍路径长度缩减，并可通过忆阻器VTEAM模型实现硬件部署。
+1. **Long-term memory (slow timescale):** Spike-Timing-Dependent Plasticity (STDP) reinforces successful action sequences after goal achievement, creating permanent pathway modifications.
+2. **Short-term memory (fast timescale):** Astrocytic calcium transients suppress recently visited states, creating temporary inhibition that biases exploration toward unvisited regions.
 
-## 双时间尺度机制
+This combination produces what the authors call **Topological-Context Memory (TCM)** — a novel form of working memory that maintains both the graph topology of successful routes and the temporal context of recent visits. The astrocytic modulation naturally balances exploration-exploitation as an emergent property of local state suppression, without explicit reward shaping or external exploration bonuses.
 
-### 长期记忆: STDP突触可塑性
+## Key Methodology
 
-#### 机制描述
-- **基础**: 脉冲时序依赖可塑性 (STDP)
-- **时间尺度**: 分钟到小时级（学习后持久保持）
-- **功能**: 记住环境的拓扑结构和奖励位置
+1. **Network Architecture:**
+   - Each state in the navigation environment is encoded by a population of spiking neurons (state neurons).
+   - Each possible action (movement direction) is encoded by action neuron populations.
+   - State-to-action connectivity forms the decision policy.
+   - Astrocytes are coupled to state neurons and respond to neural activity via calcium signaling.
 
-#### STDP规则
-```
-突触权重更新:
-ΔW = A_plus · exp(-Δt/τ_plus)    如果突触前在突触后之前 (Δt > 0)
-ΔW = -A_minus · exp(Δt/τ_minus)  如果突触后在突触前之前 (Δt < 0)
+2. **Neuron Model:**
+   - Spiking neurons use the Leaky Integrate-and-Fire (LIF) model for computational efficiency.
+   - Membrane potential dynamics follow standard LIF equations with synaptic inputs.
+   - Action potentials are generated when membrane potential exceeds threshold.
 
-参数:
-- A_plus: LTP幅度 (典型值: 0.01-0.1)
-- A_minus: LTD幅度 (典型值: 0.01-0.12)
-- τ_plus: LTP时间窗口 (典型值: 20ms)
-- τ_minus: LTD时间窗口 (典型值: 20ms)
-```
+3. **STDP Learning (Long-Timescale Memory):**
+   - Reward-modulated STDP is applied upon successful goal completion.
+   - Synapses along the successful trajectory are strengthened proportionally to spike-timing correlations.
+   - Reinforces state-action pairs that led to the goal, building long-term navigational memory.
+   - Learning occurs only after reaching the goal (episodic reinforcement), not continuously.
 
-#### 长期记忆的特征
-1. **持久性**: 权重修改在学习后长期保持
-2. **关联性**: 连接相关的神经元集群
-3. **双向性**: LTP增强、LTD减弱
-4. **路径编码**: 形成从起点到奖励位置的突触路径
+4. **Astrocytic Calcium Dynamics (Short-Timescale Memory):**
+   - Astrocytes are activated when their associated state neurons fire.
+   - Calcium transients in astrocytes produce inhibitory modulation on the corresponding state neurons.
+   - The calcium dynamics operate on a shorter timescale (seconds) compared to STDP (episodes).
+   - This creates a temporary suppression of recently visited states.
 
-### 短期抑制: 星形胶质细胞钙瞬变
+5. **Dual-Timescale Integration:**
+   - STDP provides slow, cumulative learning of successful routes (long-term memory).
+   - Astrocytic calcium provides fast, decaying suppression of recently visited states (short-term memory).
+   - The interplay biases the agent toward unexplored regions while reinforcing known successful paths.
+   - The exploration-exploitation trade-off is handled as an emergent property rather than an explicit mechanism.
 
-#### 机制描述
-- **基础**: 星形胶质细胞内的钙离子波传播
-- **时间尺度**: 秒级（钙瞬变持续数百毫秒到数秒）
-- **功能**: 临时抑制已探索路径，促进探索新路径
+6. **Navigation Task:**
+   - Agent navigates grid-based environments from a start position to a goal.
+   - At each step, the current state activates corresponding neurons; the most active action neuron determines movement.
+   - Upon goal completion, the STDP learning rule updates synaptic weights along the trajectory.
+   - Astrocytic suppression operates continuously during each episode.
 
-#### 星形胶质细胞模型
-```
-钙动力学方程:
-d[Ca²⁺]/dt = J_IP3 - J_pump + J_leak
+## Core Equations / Model
 
-IP3产生: 由突触活动触发的谷氨酸受体激活
-钙释放: IP3诱导的内质网钙释放
-钙泵: SERCA泵将钙回收至内质网
-泄漏: 被动钙泄漏
+### Leaky Integrate-and-Fire (LIF) Neuron Model
 
-关键参数:
-- IP3产生速率: 与突触活动强度相关
-- 钙瞬变持续时间: 200ms - 2s
-- 传播速度: 星形胶质细胞网络中的钙波
-```
+The membrane potential V_i(t) of neuron i evolves as:
 
-#### 短期抑制的特征
-1. **暂时性**: 抑制在钙瞬变衰减后消失
-2. **选择性**: 只抑制活跃的突触（空间选择性）
-3. **传播性**: 通过星形胶质细胞网络传播抑制信号
-4. **非突触**: 不直接改变突触权重，而是调节突触传递效率
+    tau_m * dV_i/dt = -(V_i - V_rest) + R_m * sum_j w_ij * sum_k alpha(t - t_j^k)
 
-### 双时间尺度的协同
+where:
+- tau_m = membrane time constant
+- V_rest = resting potential
+- R_m = membrane resistance
+- w_ij = synaptic weight from neuron j to neuron i
+- alpha(.) = postsynaptic current kernel (e.g., exponential decay)
+- t_j^k = k-th spike time of presynaptic neuron j
 
-```
-时间线示意:
-t=0s:     智能体探索路径A → STDP增强路径A突触
-t=0.1s:   星形胶质细胞检测活动 → 钙瞬变开始
-t=0.5s:   钙瞬变传播 → 路径A突触被临时抑制
-t=1s:     智能体被引导探索路径B (路径A被抑制)
-t=3s:     钙瞬变衰减 → 路径A抑制消失
-t=5s:     STDP已增强路径B → 两条路径都可用
-最终:      长期记忆保留最优路径，短期抑制促进探索
-```
+Spike emission: if V_i(t) >= V_th, emit spike, then V_i -> V_reset for refractory period tau_ref.
 
-## 拓扑-上下文记忆 (Topological-Context Memory)
+### STDP Learning Rule (Reward-Modulated)
 
-### 概念
-将环境的拓扑结构与行为上下文关联存储：
+Weight update upon goal completion:
 
-#### 拓扑编码
-1. **空间表示**: 网络拓扑映射环境结构
-2. **节点**: 环境中的关键位置
-3. **连接**: 位置之间的可达路径
-4. **权重**: 路径的偏好/奖励值
+    Delta_w_ij = eta * R * sum_{spike pairs} W(Delta_t)
 
-#### 上下文编码
-1. **奖励信号**: 多巴胺样全局信号标记奖励
-2. **惩罚信号**: 避免有害路径
-3. **状态相关**: 不同行为状态下的不同策略
-4. **时间上下文**: 近期经验的临时标记
+where:
+- eta = learning rate
+- R = reward signal (1 upon goal, 0 otherwise)
+- Delta_t = t_post - t_pre = spike timing difference
+- W(Delta_t) = STDP window function
 
-### 拓扑-上下文记忆的实现
-```
-网络结构:
-- 神经元层: 编码环境位置 (位置细胞)
-- 突触连接: 编码路径连接
-- STDP权重: 长期路径偏好
-- 星形胶质细胞: 短期路径抑制
+Typical STDP window:
 
-记忆检索:
-1. 当前位置神经元激活
-2. 通过STDP增强的突触传播激活
-3. 星形胶质细胞临时抑制已探索路径
-4. 激活传播到未探索的高奖励路径
-5. 引导智能体向最优路径移动
-```
+    W(Delta_t) = A_+ * exp(-Delta_t / tau_+)   if Delta_t > 0  (LTP)
+    W(Delta_t) = A_- * exp(Delta_t / tau_-)     if Delta_t < 0  (LTD)
 
-## 忆阻器VTEAM实现
+### Astrocytic Calcium Dynamics
 
-### VTEAM模型
+Calcium concentration in astrocyte a coupled to state neuron i:
 
-#### 基本方程
-```
-忆阻器状态变量 w 的演化:
-dw/dt = k · f(v) · g(w)
+    d[Ca2+]_a/dt = -([Ca2+]_a - [Ca2+]_baseline) / tau_Ca + gamma * S_i(t)
 
-电流-电压关系:
-i(t) = (w/D) · (1/R_ON) · v(t) + (1 - w/D) · (1/R_OFF) · v(t)
+where:
+- tau_Ca = calcium decay time constant (short timescale, seconds)
+- [Ca2+]_baseline = baseline calcium concentration
+- gamma = coupling strength between neural activity and astrocyte calcium
+- S_i(t) = spike train of associated neuron i (filtered/convolved)
 
-参数:
-- w: 状态变量 (0到D)
-- D: 最大状态值
-- R_ON: 低阻态电阻
-- R_OFF: 高阻态电阻
-- k: 演化速率
-```
+### Astrocytic Modulation (Inhibitory)
 
-### 映射到SNAN组件
+The astrocyte modulates the effective threshold or synaptic efficacy:
 
-#### STDP → 忆阻器权重
-```
-突触权重 ↔ 忆阻器电导
-- LTP: 增加w → 降低电阻 (增大电导)
-- LTD: 减小w → 增大电阻 (减小电导)
-- 权重保持: 忆阻器的非易失性
-```
+    V_th,i^eff(t) = V_th + beta * ([Ca2+]_a(t) - [Ca2+]_baseline)
 
-#### 星形胶质细胞 → 忆阻器门控
-```
-短期抑制 ↔ 忆阻器电压门控
-- 钙瞬变 → 临时改变阈值电压
-- 抑制效果 → 增大有效电阻
-- 衰减 → 阈值恢复正常
-```
+or equivalently as inhibitory current:
 
-### 硬件实现架构
-```
-忆阻器交叉棒阵列:
-          神经元 j
-         ┌─────────
-神经元 i ┼─ VTEAM ─┤
-         │   (w_ij) │
-         └─────────
+    I_astro,i(t) = -beta * ([Ca2+]_a(t) - [Ca2+]_baseline)
 
-星形胶质细胞层:
-[Ca²⁺传感器] → [门控信号] → [VTEAM阈值调制]
+where beta = astrocytic modulation strength. This suppresses recently active states by raising their firing threshold.
 
-集成流程:
-1. 突触前脉冲 → 忆阻器电压脉冲
-2. 突触后脉冲 → 反向电压脉冲
-3. STDP时序 → 忆阻器状态改变
-4. 星形胶质细胞活动 → 临时门控调制
-```
+### Combined Decision Dynamics
 
-## 导航任务验证
+At each navigation step, action selection follows:
 
-### T-Maze导航任务
+    a* = argmax_a [ sum_i w_{s->a} * r_i(t) - beta * [Ca2+]_s(t) ]
 
-#### 环境设置
-- T形迷宫，起点在底部
-- 奖励在左臂或右臂
-- 智能体需要学习最优路径
+where astrocytic suppression of the current state biases the agent toward less-recently-visited neighbors.
 
-#### 性能指标
-- **路径长度**: 从起点到奖励的实际路径长度
-- **最优路径比**: 实际路径 / 最短路径
-- **学习速度**: 达到最优路径所需的探索次数
-- **6倍路径缩减**: SNAN vs 纯STDP网络的路径长度比
+## Implementation Notes
 
-#### 实验结果
+### Practical Implementation Steps
 
-| 方法 | 平均路径长度 | 最优路径比 | 学习速度 |
-|------|------------|-----------|---------|
-| 随机探索 | 12.0 | 3.0x | N/A |
-| 纯STDP | 8.0 | 2.0x | 慢 |
-| SNAN (本文) | 2.0 | 0.5x | 快 |
-| 改进比 | 6x | 4x | 显著 |
+1. **Define the environment:** Grid world with states, actions (up/down/left/right), start and goal positions.
+2. **Initialize neural populations:** One population per state and per action. Use LIF neurons with standard parameters.
+3. **Initialize astrocytes:** One astrocyte per state, with calcium dynamics initialized at baseline.
+4. **Set hyperparameters:**
+   - tau_m ~ 20 ms (membrane time constant)
+   - tau_Ca ~ 1-5 s (calcium decay — sets short-term memory window)
+   - STDP learning rate eta: small enough for stable learning, large enough for convergence within ~100 episodes
+   - Astrocytic modulation strength beta: tune to balance exploration vs exploitation
+   - A_+/A_-: STDP amplitude ratios (typically asymmetric, e.g., A_+ > |A_-|)
+5. **Simulation loop:**
+   - For each episode: agent starts at initial state
+   - At each step: activate state neurons, simulate astrocyte calcium, compute action selection, move agent
+   - Upon goal: apply reward-modulated STDP to all synapses along the trajectory
+   - Track path length and success rate across episodes
 
-### 关键发现
-1. **6倍路径缩减**: 双时间尺度机制显著减少探索路径长度
-2. **快速收敛**: 星形胶质细胞短期抑制加速最优路径发现
-3. **鲁棒性**: 对环境变化（奖励位置改变）具有快速适应能力
-4. **硬件可行性**: VTEAM忆阻器实现验证了硬件部署的可行性
+### Key Design Considerations
 
-## 实施方法论
+- **Timescale separation is critical:** The calcium decay time tau_Ca should be long enough to suppress recently visited states within an episode but short enough to allow revisiting in subsequent episodes. Typically 1-5 seconds of simulated time.
+- **STDP requires episodic credit assignment:** Since navigation involves multi-step decisions, the reward-modulated STDP must propagate credit across the entire successful trajectory.
+- **Population coding improves robustness:** Using populations of neurons per state/action rather than single neurons provides noise resistance and richer dynamics.
+- **Astrocyte coupling strength matters:** Too strong suppression prevents re-visiting necessary waypoints; too weak provides insufficient exploration bias.
+- **Network can be implemented in neuromorphic hardware** due to purely local learning rules (STDP + astrocytic calcium dynamics require only local information).
 
-### 1. 构建SNAN网络
-```
-步骤:
-1. 定义环境拓扑图 (节点和边)
-2. 为每个节点分配位置神经元
-3. 为每条边分配突触连接
-4. 为每个突触关联星形胶质细胞
-5. 初始化STDP参数和星形胶质细胞参数
-```
+### Simulation Frameworks
 
-### 2. 训练流程
-```
-for episode in range(N_episodes):
-    1. 智能体在起点
-    2. 当前位置神经元激活
-    3. 激活通过网络传播:
-       a. STDP权重决定传播偏好
-       b. 星形胶质细胞抑制已访问路径
-    4. 选择激活最强的下一步
-    5. 移动并更新:
-       a. STDP更新突触权重
-       b. 星形胶质细胞更新钙浓度
-    6. 到达奖励位置 → 全局奖励信号增强路径
-```
+- Brian2 spiking neural network simulator (Python) is well-suited for this model
+- NEST simulator for larger-scale implementations
+- Neuromorphic hardware: Loihi, SpiNNaker platforms for energy-efficient deployment
 
-### 3. 忆阻器部署
-```
-步骤:
-1. 将训练好的SNAN权重映射到VTEAM忆阻器
-2. 校准忆阻器状态变量
-3. 实现星形胶质细胞的门控电路
-4. 验证忆阻器实现的导航性能
-5. 优化电路参数匹配仿真结果
-```
+### Extensions and Variations
 
-### 4. 参数调优指南
-```
-STDP参数:
-- A_plus/A_minus: 控制学习速率 (0.01-0.1)
-- τ_plus/τ_minus: 控制时间窗口 (10-40ms)
+- **Continuous environments:** Extend from grid to continuous state-action spaces with place cell encoding
+- **Multi-agent scenarios:** Astrocytic suppression can coordinate multi-agent exploration
+- **Hierarchical navigation:** Stack multiple SNAN layers for multi-scale planning
+- **Dynamic environments:** Astrocyte timescales can adapt to environment change frequency
 
-星形胶质细胞参数:
-- IP3产生速率: 控制检测灵敏度
-- 钙瞬变持续时间: 控制抑制持续时间
-- 传播速度: 控制抑制传播范围
+## Results
 
-关键平衡:
-- 抑制太弱 → 重复探索已知路径
-- 抑制太强 → 忘记最优路径
-```
+### Key Quantitative Results
 
-## 潜在陷阱
+- **Path length reduction:** SNAN reduces median path length by up to **6x** compared to baseline spiking networks without astrocytic modulation.
+- **Goal completion rates:** Dramatically improved over baseline, especially in complex maze environments.
+- **Exploration efficiency:** The dual-timescale mechanism achieves near-optimal exploration without explicit exploration bonuses or epsilon-greedy policies.
+- **Learning speed:** Convergence to near-optimal paths typically within tens of episodes (exact numbers depend on maze complexity).
 
-1. **时间尺度匹配**: STDP和钙瞬变的时间尺度必须适当匹配，否则双时间尺度机制失效
-2. **抑制强度**: 过强抑制会阻断最优路径回忆，过弱无法促进探索
-3. **钙波传播**: 星形胶质细胞网络中的钙波传播可能导致非预期的大范围抑制
-4. **忆阻器非理想性**: VTEAM模型的器件间变异性和耐久性限制
-5. **网络规模扩展**: 大型环境中位置神经元数量和突触数量急剧增长
-6. **奖励信号设计**: 全局奖励信号的时序和幅度需要仔细设计
-7. **多目标导航**: 当前框架主要针对单目标导航，多目标扩展需要额外机制
-8. **环境动态性**: 环境拓扑变化时的快速适应仍需研究
+### Comparison Conditions
 
-## 最佳实践
+- Compared against: (1) SNN with STDP only (no astrocytes), (2) SNN with random exploration, (3) standard reinforcement learning baselines.
+- The astrocytic mechanism provides the critical improvement in exploration efficiency.
+- STDP-only networks suffer from excessive revisiting of states (looping behavior) without the astrocytic short-term suppression.
 
-1. **先仿真后硬件**: 先在软件仿真中验证双时间尺度机制，再映射到忆阻器
-2. **渐进复杂度**: 从简单的T-maze开始，逐步增加环境复杂度
-3. **监控双机制**: 同时监控STDP权重变化和钙瞬变活动，确保两者协同工作
-4. **参数敏感性分析**: 系统分析关键参数的敏感性，确定鲁棒参数范围
-5. **基线对比**: 与纯STDP网络和纯短期记忆网络对比，验证双时间尺度的实际增益
-6. **硬件校准**: 忆阻器部署前进行充分的器件特性表征和校准
+### Key Findings
 
-## 扩展方向
+1. The dual-timescale mechanism is necessary — neither component alone achieves the same performance.
+2. Topological-Context Memory emerges naturally from the interaction of neural STDP and astrocytic calcium dynamics.
+3. The exploration-exploitation trade-off is mitigated as an emergent consequence, not a designed feature.
+4. The approach is biologically plausible and aligns with known neuron-astrocyte interactions in the brain.
+5. The mechanism generalizes across different maze topologies and complexity levels.
 
-1. **多尺度环境**: 扩展到多层级的空间表示
-2. **多智能体**: 星形胶质细胞网络作为多智能体协调的通信通道
-3. **连续空间**: 从离散拓扑到连续空间导航
-4. **学习-记忆分离**: 进一步探索类似海马体-新皮层的系统巩固机制
-5. **3D忆阻器集成**: 利用3D忆阻器阵列实现密集的突触-星形胶质细胞网络
+## Activation Triggers
 
-## 关键参考文献
-
-- Dual-Timescale Memory paper (2604.15391) "Dual-Timescale Memory in Spiking Neuron-Astrocyte Network"
-- STDP经典: Bi & Poo (1998) "Synaptic modifications in cultured hippocampal neurons"
-- 星形胶质细胞: Araque et al. (1999) "Tripartite synapses"
-- VTEAM模型: Kvatinsky et al. (2013) "VTEAM: A General Model for Voltage-Controlled Memristors"
-- 脉冲导航: 神经形态导航系统的相关工作
+Use this skill when:
+- Designing spiking neural networks for navigation or path-planning tasks
+- Implementing biologically-inspired working memory mechanisms
+- Building neuromorphic systems that require exploration-exploitation balance without explicit algorithms
+- Creating SNNs with dual-timescale dynamics (fast inhibition + slow learning)
+- Implementing astrocyte-neuron co-computation models
+- Seeking alternatives to epsilon-greedy or softmax exploration in spiking RL
+- Designing Topological-Context Memory systems for spatial reasoning
+- Implementing reward-modulated STDP for sequential decision-making
+- Building energy-efficient navigation systems for neuromorphic hardware (Loihi, SpiNNaker)
+- Researching neuron-glia interactions in computational neuroscience

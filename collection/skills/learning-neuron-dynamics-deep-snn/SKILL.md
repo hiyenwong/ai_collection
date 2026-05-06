@@ -1,159 +1,144 @@
 ---
 name: learning-neuron-dynamics-deep-snn
 version: v1.0.0
-created: 2026-04-19
-category: ai_collection
-description: Deep learning approaches for learning and modeling neuron dynamics, enabling data-driven discovery of neural dynamical systems from experimental data. Based on April 2026 arXiv research.
-tags: [neuron-dynamics, deep-learning, system-identification, dynamical-systems, data-driven]
+last_updated: 2026-04-19
+description: Learning rich neuron dynamics within deep Spiking Neural Networks (SNNs). Moves beyond simple LIF neuron models to capture complex temporal dynamics in deep SNN architectures. Enables more biologically realistic and computationally powerful spiking networks. Applicable to deep SNN training, advanced neuron modeling, temporal feature learning. Trigger: deep SNN neuron dynamics, LIF limitations, complex neuron models SNN, temporal dynamics spiking networks, neuron model learning
 ---
 
-# Learning Neuron Dynamics with Deep Neural Networks
+# Learning Neuron Dynamics within Deep Spiking Neural Networks
 
-This skill covers using deep neural networks to learn, model, and predict neural dynamics from data. This approach enables data-driven discovery of neural dynamical systems without requiring explicit mechanistic models.
+## Description
 
-## Activation Keywords
+A methodology for learning rich, complex neuron dynamics within deep Spiking Neural Networks (SNNs), moving beyond the limitations of simple Leaky Integrate-and-Fire (LIF) neuron models. Deep SNNs constrained to simple neuron models cannot capture the rich temporal dynamics observed in biological neurons, limiting their computational power.
 
-- learning neuron dynamics
-- neural system identification
-- data-driven neural modeling
-- deep learning dynamical systems
-- neural ODE
-- neuron dynamics prediction
-- data-driven neuroscience
+Based on: "Learning Neuron Dynamics within Deep Spiking Neural Networks" (arXiv:2510.07341, October 2025)
 
-## Core Concepts
+## Problem
 
-### 1. Problem Formulation
+- Standard deep SNNs use simple LIF neuron models
+- LIF cannot capture rich temporal dynamics of biological neurons
+- Limited expressivity restricts SNN performance on complex tasks
+- Need trainable neuron dynamics that adapt to task requirements
 
-Given neural activity data (spike trains, calcium imaging, voltage recordings), learn a dynamical system:
+## Approach
 
-```
-dx/dt = f(x, u; θ)  where f is a neural network
-```
+Learn neuron dynamics as part of the network training process, rather than fixing them to predefined models. Key idea: parameterize neuron dynamics flexibly and optimize them end-to-end alongside synaptic weights.
 
-- **x**: Neural state (voltages, firing rates, hidden variables)
-- **u**: External inputs (stimuli, currents)
-- **θ**: Learned parameters
-
-### 2. Architecture Choices
-
-| Architecture | Best For | Advantages | Limitations |
-|-------------|----------|------------|-------------|
-| Neural ODE | Continuous dynamics | Interpretable, continuous | Slow training |
-| LSTM/GRU | Temporal sequences | Handles irregular sampling | Black box |
-| Reservoir Computing | Real-time prediction | Fast training | Limited expressivity |
-| SSM (State Space) | Long sequences | Efficient, scalable | Linear assumptions |
-| Transformer | Complex dependencies | Attention mechanism | Data hungry |
-
-### 3. Key Research Findings (April 2026)
-
-**Deep Learning for Neural Dynamics**:
-- Neural networks can accurately predict complex neuron dynamics
-- Outperform traditional mechanistic models on held-out data
-- Can discover latent variables not directly observable
-- Enable simulation-based inference for parameter estimation
-
-**Data-Driven Model Discovery**:
-- Symbolic regression on learned neural dynamics recovers interpretable equations
-- Hybrid approaches: neural networks + known biophysical constraints
-- Transfer learning across neuron types and experimental conditions
-
-### 4. Implementation Framework
+### Trainable Neuron Dynamics
 
 ```python
-import torch
-import torch.nn as nn
-
-class NeuralDynamicsModel(nn.Module):
-    """Learn neural dynamics from data."""
+class TrainableNeuron(nn.Module):
+    """Neuron with learnable dynamics parameters."""
     
-    def __init__(self, state_dim, input_dim, hidden_dim=128):
+    def __init__(self):
         super().__init__()
-        self.dynamics = nn.Sequential(
-            nn.Linear(state_dim + input_dim, hidden_dim),
-            nn.Tanh(),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.Tanh(),
-            nn.Linear(hidden_dim, state_dim)
-        )
+        # Learnable time constants
+        self.tau_mem = nn.Parameter(torch.tensor(10.0))
+        self.tau_syn = nn.Parameter(torch.tensor(5.0))
+        
+        # Learnable threshold dynamics
+        self.threshold = nn.Parameter(torch.tensor(1.0))
+        self.threshold_decay = nn.Parameter(torch.tensor(0.5))
+        
+        # Learnable reset mechanism
+        self.reset_value = nn.Parameter(torch.tensor(0.0))
     
-    def forward(self, x, u, dt=0.001):
-        """Euler integration step."""
-        dx = self.dynamics(torch.cat([x, u], dim=-1))
-        return x + dx * dt
-    
-    def simulate(self, x0, u_sequence, dt=0.001):
-        """Simulate dynamics from initial condition."""
-        trajectory = [x0]
-        x = x0
-        for u in u_sequence:
-            x = self.forward(x, u, dt)
-            trajectory.append(x)
-        return torch.stack(trajectory)
+    def forward(self, input_current, prev_state):
+        membrane, threshold, syn_current = prev_state
+        
+        # Synaptic dynamics (learnable)
+        syn_current = syn_current * (1 - 1/self.tau_syn) + input_current
+        
+        # Membrane dynamics (learnable)
+        membrane = membrane * (1 - 1/self.tau_mem) + syn_current
+        
+        # Spike generation
+        spike = (membrane > threshold).float()
+        
+        # Adaptive threshold
+        threshold = threshold * (1 - self.threshold_decay) + spike
+        
+        # Reset
+        membrane = membrane * (1 - spike) + self.reset_value * spike
+        
+        return spike, (membrane, threshold, syn_current)
+```
 
-# Training loop
-def train_dynamics_model(model, data, optimizer, epochs=1000):
-    """Train on observed neural trajectories."""
+### Key Innovations
+
+1. **Learnable time constants**: Membrane and synaptic time constants optimized per layer or per neuron
+2. **Adaptive thresholds**: Dynamic thresholds that adjust based on activity
+3. **Flexible reset mechanisms**: Beyond simple reset-to-zero
+4. **Multi-timescale dynamics**: Capture both fast and slow neural processes
+
+## Training Strategy
+
+### Surrogate Gradient Approach
+
+```python
+class MultiTimescaleSurrogate(torch.autograd.Function):
+    """Surrogate gradient for multi-timescale neuron dynamics."""
+    
+    @staticmethod
+    def forward(ctx, input_val, threshold):
+        ctx.save_for_backward(input_val, threshold)
+        return (input_val > threshold).float()
+    
+    @staticmethod
+    def backward(ctx, grad_output):
+        input_val, threshold = ctx.saved_tensors
+        # Smooth gradient around threshold
+        diff = input_val - threshold
+        sigma = 0.5
+        grad_input = grad_output * torch.exp(-diff**2 / (2 * sigma**2))
+        return grad_input, None
+```
+
+### End-to-End Training
+
+```python
+def train_deep_snn_with_learnable_neurons(model, data, epochs=100):
+    """
+    Train deep SNN with learnable neuron dynamics.
+    
+    All neuron parameters are optimized alongside synaptic weights.
+    """
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    
     for epoch in range(epochs):
-        x0, u_seq, x_target = data.sample_trajectory()
-        x_pred = model.simulate(x0, u_seq)
-        loss = F.mse_loss(x_pred, x_target)
-        
-        # Optional: Add biophysical regularization
-        loss += lambda_reg * biophysical_penalty(model)
-        
         optimizer.zero_grad()
+        
+        # Forward through SNN with learnable neurons
+        spikes = model(data)
+        
+        # Compute loss
+        loss = criterion(spikes, targets)
+        
+        # Backprop through surrogate gradients
         loss.backward()
         optimizer.step()
 ```
 
-### 5. Evaluation Metrics
+## Benefits Over Fixed LIF
 
-1. **Prediction Accuracy**: MSE on held-out trajectories
-2. **Long-term Stability**: Does simulation remain bounded?
-3. **Qualitative Behavior**: Do learned dynamics match known neural phenomena?
-4. **Generalization**: Performance on novel stimuli/conditions
-5. **Interpretability**: Can we extract meaningful equations?
+| Aspect | Fixed LIF | Learnable Neuron Dynamics |
+|--------|-----------|--------------------------|
+| Time constants | Fixed | Optimized per layer/neuron |
+| Threshold | Static | Adaptive during inference |
+| Reset | Hard reset | Smooth/learnable |
+| Expressivity | Limited | Rich temporal dynamics |
+| Task adaptation | None | Automatic |
 
-## Related Skills
+## Applications
 
-- `pinn-neuronal-parameter-estimation` - PINNs for neuron models
-- `neural-dynamics-universal-translator` - Dynamics translation
-- `neural-population-dynamics` - Population analysis
-- `snn-learning-survey` - SNN learning rules
+- **Temporal sequence processing**: Better capture of temporal patterns
+- **Speech/audio recognition**: Exploit multi-timescale dynamics
+- **Neuromorphic deployment**: Hardware-aware neuron optimization
+- **Biological plausibility**: More realistic neuron behavior
 
-## Pitfalls
+## Design Guidelines
 
-1. **Overfitting**: Neural networks can memorize training trajectories
-2. **Extrapolation**: Poor performance outside training distribution
-3. **Identifiability**: Different parameter sets can produce similar dynamics
-4. **Numerical Stability**: Stiff dynamics require careful integration
-
-## Resources
-
-- Neural ODEs (Chen et al., 2018)
-- System identification for neuroscience
-- Deep learning for dynamical systems surveys
-
-
-## Tools Used
-
-- `read` - 读取技能文档
-- `write` - 创建输出
-- `exec` - 执行相关命令
-
-
-## Instructions for Agents
-
-1. 理解技能的核心方法论
-2. 根据用户问题提供针对性回答
-3. 遵循最佳实践
-
-
-## Examples
-
-### Example 1: 基本查询
-
-**User:** 请解释 Learning Neuron Dynamics Deep Snn
-
-**Agent:** Learning Neuron Dynamics Deep Snn 是关于...
+1. Start with LIF parameters as initialization
+2. Allow dynamics to specialize per layer (early layers faster, later layers slower)
+3. Use surrogate gradients compatible with learnable dynamics
+4. Regularize extreme parameter values to maintain stability

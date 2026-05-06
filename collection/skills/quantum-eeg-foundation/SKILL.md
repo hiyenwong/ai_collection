@@ -5,23 +5,6 @@ description: Quantum-enhanced EEG signal analysis and neural network foundation 
 
 # Quantum EEG Foundation
 
-## Activation Keywords
-
-- quantum EEG
-- QEEGNet
-- quantum brain signal
-- quantum BCI
-- quantum neural EEG
-- quantum-classical EEG
-- quantum neuroscience
-
-## Tools Used
-
-- `exec`: Run quantum circuit simulations and EEG processing
-- `read`: Load EEG data and quantum circuit configurations
-- `write`: Create quantum-classical hybrid model code
-- `edit`: Modify EEGNet and quantum layer parameters
-
 ## Overview
 
 Enables quantum-enhanced EEG signal analysis through hybrid quantum-classical neural networks. Combines quantum computing advantages with established EEGNet architectures for improved encoding of complex, high-dimensional brain signals. Based on QEEGNet (arXiv:2407.19214) research pattern.
@@ -207,51 +190,6 @@ def batch_quantum_processing(model, eeg_batch):
         quantum_out = model.quantum(sample, model.q_weights)
         results.append(quantum_out)
     return torch.stack(results)
-```
-
-## Instructions for Agents
-
-### Step 1: Load EEG Data
-Read EEG recordings and preprocess (filtering, normalization, epoching).
-
-### Step 2: Setup Quantum Backend
-Initialize PennyLane or Qiskit with appropriate quantum device (simulator or hardware).
-
-### Step 3: Build Hybrid Model
-Combine EEGNet backbone with quantum encoding layer for feature extraction.
-
-### Step 4: Train Model
-Train hybrid model with EEG classification or regression task.
-
-### Step 5: Evaluate and Deploy
-Validate on test data, optimize for real-time BCI deployment.
-
-## Examples
-
-### Example 1: Motor Imagery BCI
-
-```
-User: "Build a quantum-enhanced BCI for motor imagery classification"
-
-Agent:
-1. Load motor imagery EEG dataset (left vs right hand)
-2. Setup PennyLane with 4-qubit device
-3. Build QEEGNet: EEGNet + variational quantum circuit
-4. Train on labeled motor imagery data
-5. Evaluate: 85% accuracy, faster than classical EEGNet
-```
-
-### Example 2: Sleep Stage Detection
-
-```
-User: "Create quantum-classical model for sleep stage classification"
-
-Agent:
-1. Load overnight EEG recordings
-2. Design quantum layer for spectral feature extraction
-3. Build hybrid model with temporal attention
-4. Train on 5-class sleep stage labels
-5. Deploy for real-time sleep monitoring
 ```
 
 ## Key Research Findings

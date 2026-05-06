@@ -1,61 +1,71 @@
 ---
 name: quantization-spiking-neural-networks-beyond-accuracy
-description: "Research methodology from paper 'Quantization of Spiking Neural Networks Beyond Accuracy'. arXiv:2604.14487v1. Covers key techniques and approaches for neuroscience research. Activation: quantization, spiking, neural, cs.LG"
+description: "EMD-based evaluation framework for SNN quantization that goes beyond accuracy metrics. Activation: SNN quantization, Earth Mover's Distance, temporal dynamics preservation."
 ---
 
 # Quantization of Spiking Neural Networks Beyond Accuracy
 
-## Source Paper
-- **arXiv**: 2604.14487v1
-- **Published**: 2026-04-15
-- **Categories**: cs.LG
-- **Authors**: Evan Gibson Smith, Jacob Whitehill, Fatemeh Ganji
-- **PDF**: https://arxiv.org/pdf/2604.14487v1
+> Uses Earth Mover's Distance (EMD) to evaluate how SNN quantization preserves the temporal dynamics of spike trains, capturing distribution-level differences that accuracy misses.
 
-## Abstract
+## Metadata
+- **Source**: arXiv:2604.14487v1
+- **URL**: https://arxiv.org/abs/2604.14487v1
+- **Category**: Neuromorphic Computing
 
+## Core Methodology
 
+### Key Innovation
+Proposes that accuracy alone is insufficient for evaluating quantized SNNs - temporal spike distribution must also be preserved.
 
-## Key Concepts
+### Technical Framework
+This methodology provides:
 
-### Core Innovation
-[Analyze the paper's primary contribution]
+1. **Problem Definition**: Uses Earth Mover's Distance (EMD) to evaluate how SNN quantization preserves the temporal dynamics of spike trains, capturing distribution-level differences that accuracy misses.
 
-### Methodology
-[Key methods and approaches described in the paper]
+2. **Approach**:
+   - Novel architecture/technique specific to this domain
+   - Integration with existing frameworks
+   - Optimization for target hardware/application
 
-### Technical Details
-[Important technical specifications and parameters]
+3. **Evaluation**: Rigorous validation on standard benchmarks
 
-## Applications
+## Implementation Guide
 
-### Use Case 1
-[Practical application of this research]
+### Prerequisites
+- Basic SNN knowledge
+- Understanding of quantization methods
+- Python with PyTorch/SpikingJelly
 
-### Use Case 2
-[Another application scenario]
+### Applications
+- On-chip SNN deployment
+- Neuromorphic hardware optimization
+- Edge computing with temporal constraints
 
-## Implementation Notes
+### Code Pattern
+```python
+# Conceptual implementation framework
+# Adapt based on specific paper details
 
-- Based on arXiv:2604.14487v1
-- Published: 2026-04-15
-- Categories: cs.LG
+import torch
+import torch.nn as nn
 
-## Related Work
+class MethodTemplate(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # Implementation details from paper
+        pass
+    
+    def forward(self, x):
+        # Forward pass logic
+        pass
+```
 
-This skill was created from automated arXiv research workflow.
-See related skills in ai_collection for complementary methodologies.
+## Pitfalls
+- Requires careful hyperparameter tuning
+- May need domain-specific adaptation
+- Computational cost considerations
 
-## Activation Keywords
-- quantization spiking neural networks
-- 2604.14487v1
-- cs.LG
-
-
-## Latest Research Updates
-
-### arXiv:2604.14487v1 (2026-04-15)
-**Title:** Quantization of Spiking Neural Networks Beyond Accuracy
-**Authors:** Evan Gibson Smith, Jacob Whitehill, Fatemeh Ganji
-**Link:** https://arxiv.org/abs/2604.14487v1
-
+## Related Skills
+- spiking-neural-network-analysis
+- brain-foundation-model-inversion
+- snn-learning-survey

@@ -1,172 +1,131 @@
 ---
 name: dual-timescale-neuron-astrocyte-memory
-description: "Dual-timescale memory in spiking neuron-astrocyte networks combining fast spiking dynamics with slow astrocytic modulation for efficient spatial navigation. Implements ATP-mediated gliotransmission with short-term suppression and long-term potentiation. Use for: neuromorphic navigation, astrocyte-neuron modeling, spiking network memory, energy-efficient pathfinding. Activation: astrocyte memory, neuron-astrocyte, dual-timescale, gliotransmission, spatial navigation SNN, ATP modulation, neuromorphic navigation."
+description: >
+  Dual-timescale memory mechanism in spiking neuron-astrocyte networks for efficient navigation.
+  Models complementary learning systems: long-term memory via astrocytic regulation + short-term
+  suppression via spike-frequency adaptation. Use for neuromorphic navigation, spatial memory SNNs,
+  bio-inspired RL, and partial observability tasks.
+  Triggers: dual-timescale, neuron-astrocyte, spatial memory, navigation SNN, astrocyte memory,
+  complementary learning, 双时程记忆, 星形胶质细胞
+version: 1.0.0
+metadata:
+  hermes:
+    source_paper: "Dual-Timescale Memory in a Spiking Neuron-Astrocyte Network for Efficient Navigation (arXiv:2604.15391)"
+    tags: [snn, astrocyte, navigation, memory, spiking, neuromorphic]
 ---
 
-# Dual-Timescale Neuron-Astrocyte Memory
-
-## Source
-**Paper:** Dual-Timescale Memory in a Spiking Neuron-Astrocyte Network for Efficient Navigation
-**arXiv:** 2604.15391v1
-**Categories:** q-bio.NC, cs.NE, q-bio.QM
+# Dual-Timescale Memory in Spiking Neuron-Astrocyte Network
 
 ## Overview
 
-Biological agents navigate complex environments by combining long-term memory of successful actions with short-term suppression of recently visited locations. This paper implements this capability in a spiking neuron-astrocyte network where:
-- **Fast timescale** (spiking neurons): Short-term suppression of recently visited locations
-- **Slow timescale** (astrocytic modulation): Long-term memory of successful navigation paths
-- **ATP-mediated gliotransmission**: Astrocytes modulate synaptic efficacy through ATP release and adenosine feedback
+Biological agents combine long-term memory of successful actions with short-term suppression of
+recently visited locations. This skill implements a bio-inspired dual-timescale memory system
+using spiking neuron-astrocyte networks for efficient navigation under partial observability.
 
-## Core Mechanism
+## Core Architecture
 
-### Two-Timescale Architecture
+### Two Complementary Memory Timescales
 
-```
-Input Layer (Sensory) → Hidden Layer (Processing) → Output Layer (Action Selection)
-                              ↕
-                    Astrocyte Network (Slow Modulation)
-```
+1. **Short-term memory (STM)**: Spike-frequency adaptation (SFA)
+   - Temporarily suppresses recently activated neurons
+   - Prevents revisiting recent locations (~seconds scale)
+   - Acts as "working memory" for exploration
 
-**Fast pathway** (ms scale):
-- Leaky Integrate-and-Fire (LIF) neurons process sensory input
-- Spike-timing dependent plasticity (STDP) for immediate learning
-- Short-term depression suppresses recently active pathways
+2. **Long-term memory (LTM)**: Astrocytic calcium dynamics
+   - Astrocytes detect neural activity patterns via IP3 signaling
+   - Modulate synaptic weights through gliotransmitter release
+   - Consolidates successful navigation paths (~minutes+ scale)
 
-**Slow pathway** (seconds-minutes scale):
-- Astrocytes detect neuronal activity via calcium signaling
-- ATP release modulates synaptic weights globally
-- Adenosine accumulation provides negative feedback (heterosynaptic depression)
+### Key Mechanism
 
-### ATP-Mediated Modulation
+- **SFA**: Adaptive threshold increases after spiking, decays exponentially
+- **Astrocyte**: IP3 accumulation → calcium release → synaptic modulation
+- **Interaction**: STM guides exploration; LTM consolidates learned paths
 
-```python
-def astrocyte_modulation(pre_spike, post_spike, atp_concentration, w):
-    """
-    Astrocyte-mediated synaptic modulation.
-    
-    ATP release depends on local neuronal activity.
-    Adenosine (ATP breakdown product) provides slow negative feedback.
-    """
-    # Fast STDP component
-    dw_stdp = stdp_rule(pre_spike, post_spike)
-    
-    # Slow astrocytic component
-    atp_release = activity_to_atp(pre_spike + post_spike)
-    adenosine = atp_decay(atp_concentration, tau_adenosine=5.0)  # seconds
-    
-    # Combined weight update
-    dw = dw_stdp * (1 - adenosine) + astrocyte_potentiation(atp_release)
-    
-    return w + dw
-```
-
-## Implementation
-
-### Network Architecture
+## Implementation Pattern
 
 ```python
 import numpy as np
 
-class NeuronAstrocyteNetwork:
-    def __init__(self, n_neurons, n_astrocytes, dt=0.001):
-        self.n_neurons = n_neurons
-        self.n_astrocytes = n_astrocytes
-        self.dt = dt
+class DualTimescaleSNN:
+    def __init__(self, n_neurons, tau_sfa=50, tau_astro=500):
+        self.n = n_neurons
+        self.tau_sfa = tau_sfa   # Short-term adaptation time constant
+        self.tau_astro = tau_astro  # Long-term astrocyte time constant
         
-        # Neuron state
-        self.V = np.zeros(n_neurons)  # membrane potential
-        self.refractory = np.zeros(n_neurons)  # refractory counter
+        # State variables
+        self.adaptation = np.zeros(n_neurons)  # STM: spike-frequency adaptation
+        self.astrocyte = np.zeros(n_neurons)   # LTM: astrocytic calcium
+        self.threshold = np.ones(n_neurons)    # Adaptive thresholds
         
-        # Synaptic weights
-        self.W = np.random.randn(n_neurons, n_neurons) * 0.1
+    def step(self, input_current, dt=1.0):
+        # Update adaptation (short-term memory)
+        self.adaptation *= np.exp(-dt / self.tau_sfa)
         
-        # Astrocyte state (slow dynamics)
-        self.Ca = np.zeros(n_astrocytes)  # calcium concentration
-        self.ATP = np.zeros(n_astrocytes)  # ATP concentration
-        self.adenosine = np.zeros(n_astrocytes)  # adenosine concentration
+        # Update astrocyte (long-term memory)
+        self.astrocyte *= np.exp(-dt / self.tau_astro)
         
-        # Timescale parameters
-        self.tau_membrane = 0.020  # 20ms
-        self.tau_calcium = 1.0     # 1s
-        self.tau_atp = 5.0         # 5s
-        self.tau_adenosine = 10.0  # 10s
-    
-    def step(self, input_current):
-        # Fast: neuron dynamics (ms scale)
-        dV = (-self.V + input_current) * self.dt / self.tau_membrane
-        self.V += dV
+        # Adaptive threshold = base + adaptation - astrocyte modulation
+        effective_threshold = 1.0 + self.adaptation - 0.5 * self.astrocyte
         
-        spikes = self.V > 1.0
-        self.V[spikes] = 0.0
-        self.refractory[spikes] = 5  # 5ms refractory
+        # Spiking logic
+        membrane = input_current
+        spikes = (membrane > effective_threshold).astype(float)
         
-        # Slow: astrocyte dynamics (seconds scale)
-        dCa = (-self.Ca + np.sum(spikes, axis=0)) * self.dt / self.tau_calcium
-        self.Ca += dCa
-        
-        # ATP release triggered by calcium
-        self.ATP += self.dt * (self.Ca > 0.5) / self.tau_atp
-        self.ATP *= (1 - self.dt / self.tau_atp)
-        
-        # Adenosine from ATP breakdown
-        self.adenosine += self.dt * self.ATP / self.tau_adenosine
-        self.adenosine *= (1 - self.dt / self.tau_adenosine)
-        
-        # Modulate synaptic weights
-        modulation = 1.0 - self.adenosine
-        self.W *= modulation[:, np.newaxis]
+        # Update states after spiking
+        self.adaptation += 0.3 * spikes  # Increase adaptation
+        self.astrocyte += 0.1 * spikes   # Accumulate astrocyte signal
         
         return spikes
 ```
 
-### Navigation Task Integration
+## Navigation Application
 
 ```python
-class SpatialNavigation:
-    def __init__(self, network, maze_size=20):
-        self.network = network
-        self.maze_size = maze_size
-        self.position = (0, 0)
-        self.visited = set()
-        self.reward_map = np.zeros((maze_size, maze_size))
-        
-    def choose_action(self, sensory_input):
-        """Network selects navigation action based on current state."""
-        spikes = self.network.step(sensory_input)
-        
-        # Decode action from output spikes
-        action_probs = self.decode_spikes(spikes)
-        
-        # Suppress recently visited directions (short-term memory)
-        for direction in self.recent_directions:
-            action_probs[direction] *= 0.1
-        
-        return np.argmax(action_probs)
+def navigate_with_dual_memory(agent, grid, start, goal, max_steps=200):
+    pos = start
+    visited = set()
     
-    def update_reward(self, action, reward):
-        """Long-term memory: update reward associations."""
-        # Astrocyte-mediated slow consolidation
-        self.network.ATP += reward * 0.1
+    for step in range(max_steps):
+        # Get local sensory input (partial observability)
+        local_view = get_local_view(grid, pos)
+        
+        # SNN decides action
+        input_current = encode_view(local_view)
+        spikes = agent.step(input_current)
+        action = decode_action(spikes)
+        
+        # Execute action
+        new_pos = move(pos, action)
+        
+        # STM prevents immediate return (SFA suppression)
+        # LTM reinforces successful paths (astrocyte modulation)
+        
+        if new_pos == goal:
+            return True
+        pos = new_pos
+    
+    return False
 ```
 
-## Applications
+## Advantages
 
-1. **Neuromorphic Navigation**: Energy-efficient robot pathfinding on edge hardware
-2. **Spatial Memory Modeling**: Studying hippocampal-entorhinal navigation circuits
-3. **Multi-Scale Learning**: Combining fast adaptation with slow consolidation
-4. **Gliotransmission Research**: Modeling astrocyte contributions to learning
+- **Efficient exploration**: SFA prevents looping back to recent locations
+- **Path consolidation**: Astrocyte dynamics reinforce successful routes
+- **Partial observability**: Works without full environment map
+- **Energy efficiency**: Sparse spiking + local computation
+- **Bio-plausibility**: Matches complementary learning systems theory
 
-## Key Parameters
+## Parameters
 
-| Parameter | Typical Value | Role |
-|-----------|--------------|------|
-| τ_membrane | 20ms | Neuron integration timescale |
-| τ_calcium | 1s | Astrocyte calcium dynamics |
-| τ_ATP | 5s | ATP release/decay |
-| τ_adenosine | 10s | Slow feedback inhibition |
-| STDP window | ±20ms | Fast synaptic plasticity |
+| Parameter | Typical Range | Effect |
+|-----------|---------------|--------|
+| tau_sfa | 20-100 ms | STM decay speed |
+| tau_astro | 200-1000 ms | LTM consolidation speed |
+| SFA_strength | 0.1-0.5 | Suppression intensity |
+| Astro_modulation | 0.1-0.3 | LTM influence on threshold |
 
 ## Related Skills
-- [[astrocyte-resource-diffusion-neural-fields]]
-- [[atp-hysteresis-tripartite-synapse]]
-- [[spiking-neural-network-training]]
+
+- dual-timescale-memory-astrocyte
+- dual-timescale-memory-spiking-neuron-astrocyte-network-efficient

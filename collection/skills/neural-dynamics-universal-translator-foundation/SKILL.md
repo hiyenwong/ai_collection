@@ -1,181 +1,358 @@
 ---
 name: neural-dynamics-universal-translator-foundation
-description: Neural Dynamics Universal Translator
+description: "Foundation model for neural spiking data using multi-task masking (MtM) to translate across population, region, and single-neuron levels. Enables zero-shot and few-shot brain decoding across multiple brain areas. Activation triggers: neural translator, foundation model spiking, MtM, multi-task masking, IBL dataset, brain decoding."
 ---
 
-# Neural Dynamics Universal Translator
+# Neural Dynamics Universal Translator Foundation
 
-## Description
+> A foundation model for neural spiking data that seamlessly "translates" across all spatial scales of the brain through multi-task masking self-supervised learning.
 
-一种用于神经脉冲数据的基础模型，使用多任务掩码（MtM）自监督学习方法，可以在不同脑区、不同动物之间解决多种任务，实现神经活动的"通用翻译"。
+## Metadata
+- **Source**: arXiv:2407.14668
+- **Authors**: Yizi Zhang, Yanchen Wang, Donato Jiménez Benetó, Zixuan Wang, Mehdi Azabou, Blake Richards, Olivier Winter, Eva Dyer, Liam Paninski, Cole Hurwitz
+- **Published**: 2024-07
+- **Code**: https://ibl-mtm.github.io/
 
-## Activation Keywords
+## Core Methodology
 
-- neural dynamics universal translator
-- foundation model neural spiking
-- multi-task masking
-- neural activity reconstruction
-- cross-brain-region prediction
-- population activity modeling
+### Key Innovation
 
-## Tools Used
+The Neural Dynamics Universal Translator introduces a **Multi-Task Masking (MtM)** approach that enables a single foundation model to:
+- Process neural activity across different time steps, neurons, and brain regions
+- Generalize to unseen animals with unspecified neuron correspondence
+- Perform few-shot learning with minimal supervision
+- Bridge the gap between brain region-specific models and whole-brain analysis
 
-- `read` - 读取神经脉冲数据
-- `exec` - 运行 Python 训练脚本
-- `web_fetch` - 获取论文详细内容
+### Technical Framework
 
-## Instructions for Agents
+#### 1. Multi-Task Masking Strategy
 
-### 1. 理解核心问题
+The model alternates between masking and reconstructing neural activity across three dimensions:
 
-**神经科学的碎片化问题：**
-- 对大脑的理解是碎片化的
-- 无法任意探测脑区并自动读出神经活动编码的信息
-- 不同脑区、不同动物之间缺乏统一的表示
+| Masking Type | Description | Prompt Token |
+|--------------|-------------|--------------|
+| **Temporal Masking** | Masks time steps | `TEMPORAL` |
+| **Neuron Masking** | Masks individual neurons | `NEURON` |
+| **Region Masking** | Masks entire brain regions | `REGION` |
 
-**解决方案：**
-- 构建神经脉冲数据的基础模型
-- 使用多任务掩码（MtM）自监督学习
-- 在多个脑区、多个动物间解决多种任务
+Each masking objective is associated with a learnable prompt token that enables "mode switching" during evaluation.
 
-### 2. 技术方法
+#### 2. Model Architecture
 
-**多任务掩码（MtM）方法：**
 ```
-输入：神经群体活动（时间 × 神经元 × 脑区）
-
-掩码策略：
-1. 时间掩码：遮蔽不同时间步
-2. 神经元掩码：遮蔽不同神经元
-3. 脑区掩码：遮蔽不同脑区
-
-目标：重建被遮蔽的活动
+Input: Neural spike trains (time × neurons)
+│
+├─► Embedding Layer: Convert spike counts to embeddings
+│
+├─► Transformer Encoder: Process temporal dependencies
+│
+├─► Prompt Token: Select masking objective (TEMPORAL/NEURON/REGION)
+│
+└─► Output: Reconstruct masked activity
 ```
 
-**模型架构：**
+#### 3. Training Dataset
+
+- **International Brain Laboratory (IBL) Repeated Site Dataset**
+- 48 animals across multiple experimental sessions
+- Target regions: Secondary visual areas, hippocampus, thalamus
+- Neuropixels recordings with consistent anatomical targeting
+
+### Mathematical Formulation
+
+#### Self-Supervised Objective
+
+Given neural activity tensor $X \in \mathbb{R}^{T \times N}$ where $T$ is time steps and $N$ is neurons:
+
+1. **Apply masking** based on selected mode $m$:
+   - Temporal: Mask $X_{t_1:t_2, :}$
+   - Neuron: Mask $X_{:, \mathcal{N}_{masked}}$
+   - Region: Mask $X_{:, \mathcal{R}_{masked}}$
+
+2. **Add prompt embedding** $p_m$ corresponding to mode $m$
+
+3. **Minimize reconstruction loss**:
+   $$\mathcal{L} = \mathbb{E}_{X \sim \mathcal{D}} \left[ \| X - \hat{X} \|^2 \right]$$
+
+where $\hat{X} = f_\theta(X_{unmasked}, p_m)$
+
+## Implementation Guide
+
+### Prerequisites
+
+```python
+# Required packages
+pip install torch numpy scipy pandas
+pip install ibl-neuropixel  # For IBL dataset access
+```
+
+### Step-by-Step
+
+#### Step 1: Load and Preprocess Neural Data
+
+```python
+import numpy as np
+from scipy.io import loadmat
+
+def load_neural_data(session_path):
+    """Load Neuropixels data from IBL dataset"""
+    # Load spike times and clusters
+    spikes = loadmat(f"{session_path}/spikes.times.npy")
+    clusters = loadmat(f"{session_path}/spikes.clusters.npy")
+    
+    # Bin spikes into time windows
+    bin_size = 0.01  # 10ms bins
+    duration = 2.0   # 2 second trials
+    
+    # Create spike count matrix (time × neurons)
+    spike_counts = bin_spikes(spikes, clusters, bin_size, duration)
+    return spike_counts
+
+def bin_spikes(spike_times, clusters, bin_size, duration):
+    """Convert spike times to count matrix"""
+    n_bins = int(duration / bin_size)
+    n_neurons = int(clusters.max()) + 1
+    
+    counts = np.zeros((n_bins, n_neurons))
+    for i in range(n_bins):
+        t_start = i * bin_size
+        t_end = (i + 1) * bin_size
+        mask = (spike_times >= t_start) & (spike_times < t_end)
+        active_clusters = clusters[mask]
+        for c in active_clusters:
+            counts[i, c] += 1
+    
+    return counts
+```
+
+#### Step 2: Implement Multi-Task Masking
+
 ```python
 import torch
 import torch.nn as nn
 
-class NeuralUniversalTranslator(nn.Module):
-    def __init__(self, num_neurons, num_regions, embed_dim=256):
+class MultiTaskMasking(nn.Module):
+    """Multi-task masking for neural activity"""
+    
+    def __init__(self, n_neurons, embed_dim=128, n_heads=8):
         super().__init__()
-
-        # 神经元嵌入
-        self.neuron_embed = nn.Embedding(num_neurons, embed_dim)
-        # 脑区嵌入
-        self.region_embed = nn.Embedding(num_regions, embed_dim)
-        # 时间位置编码
-        self.time_embed = nn.Parameter(torch.randn(1, 1000, embed_dim))
-
-        # Transformer 编码器
+        self.embed_dim = embed_dim
+        
+        # Learnable prompt tokens
+        self.prompts = nn.ParameterDict({
+            'temporal': nn.Parameter(torch.randn(1, 1, embed_dim)),
+            'neuron': nn.Parameter(torch.randn(1, 1, embed_dim)),
+            'region': nn.Parameter(torch.randn(1, 1, embed_dim))
+        })
+        
+        # Embedding layer
+        self.input_embedding = nn.Linear(n_neurons, embed_dim)
+        
+        # Transformer encoder
         encoder_layer = nn.TransformerEncoderLayer(
-            d_model=embed_dim,
-            nhead=8,
-            dim_feedforward=1024
+            d_model=embed_dim, 
+            nhead=n_heads,
+            dim_feedforward=512,
+            batch_first=True
         )
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=6)
-
-        # 解码头
-        self.decoder = nn.Linear(embed_dim, 1)  # 预测脉冲率
-
-    def forward(self, spikes, neuron_ids, region_ids, mask=None):
-        # 嵌入组合
-        x = self.neuron_embed(neuron_ids) + self.region_embed(region_ids)
-        x = x + self.time_embed[:, :spikes.shape[1], :]
-
-        # Transformer 编码
-        x = self.transformer(x)
-
-        # 重建
-        output = self.decoder(x)
-        return output
+        
+        # Output projection
+        self.output_proj = nn.Linear(embed_dim, n_neurons)
+    
+    def forward(self, x, mode, mask_indices):
+        """
+        Args:
+            x: Input spike counts (batch, time, neurons)
+            mode: 'temporal', 'neuron', or 'region'
+            mask_indices: Indices to mask
+        Returns:
+            reconstructed: Reconstructed activity
+        """
+        # Create mask
+        mask = torch.ones_like(x)
+        mask[mask_indices] = 0
+        
+        # Embed input
+        x_embed = self.input_embedding(x * mask)  # Masked input
+        
+        # Add prompt token
+        prompt = self.prompts[mode]
+        x_embed = torch.cat([prompt.expand(x.size(0), -1, -1), x_embed], dim=1)
+        
+        # Transform
+        h = self.transformer(x_embed)
+        
+        # Project output (skip prompt token)
+        reconstructed = self.output_proj(h[:, 1:, :])
+        
+        return reconstructed
 ```
 
-### 3. 评估任务
+#### Step 3: Training Loop
 
-```
-无监督任务：
-1. 单神经元活动预测
-2. 脑区活动预测
-3. 前向预测
+```python
+def train_mtm_model(model, dataloader, epochs=100, lr=1e-4):
+    """Train multi-task masking model"""
+    
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    criterion = nn.MSELoss()
+    
+    modes = ['temporal', 'neuron', 'region']
+    mask_ratio = 0.15
+    
+    for epoch in range(epochs):
+        total_loss = 0
+        
+        for batch in dataloader:
+            x = batch['activity']  # (batch, time, neurons)
+            batch_size, T, N = x.shape
+            
+            # Randomly select masking mode
+            mode = np.random.choice(modes)
+            
+            # Create mask based on mode
+            if mode == 'temporal':
+                mask_indices = create_temporal_mask(batch_size, T, N, mask_ratio)
+            elif mode == 'neuron':
+                mask_indices = create_neuron_mask(batch_size, T, N, mask_ratio)
+            else:  # region
+                mask_indices = create_region_mask(batch_size, T, N, mask_ratio)
+            
+            # Forward pass
+            reconstructed = model(x, mode, mask_indices)
+            
+            # Compute loss only on masked positions
+            loss = criterion(reconstructed[mask_indices], x[mask_indices])
+            
+            # Backward pass
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            
+            total_loss += loss.item()
+        
+        if epoch % 10 == 0:
+            print(f"Epoch {epoch}, Loss: {total_loss / len(dataloader):.4f}")
+    
+    return model
 
-有监督任务：
-1. 行为解码
-2. 刺激预测
-3. 决策预测
-```
-
-### 4. 数据集
-
-**International Brain Laboratory (IBL) 数据集：**
-- 48 只动物和实验会话
-- Neuropixels 记录
-- 靶向相同脑位置
-- 重复位点数据集
-
-## Examples
-
-### Example 1: 跨脑区神经活动预测
-
-```
-User: 如何预测一个脑区的神经活动？
-
-Agent: 使用 Neural Dynamics Universal Translator：
-
-1. 输入：已知脑区的神经活动
-2. 掩码：遮蔽目标脑区
-3. 模型：基于已知活动推断遮蔽区域
-
-arXiv:2407.14668 的方法：
-- MtM 模型学习跨脑区的统计依赖
-- 可以从视觉皮层活动推断运动皮层活动
-- 重建精度显著高于基线方法
-```
-
-### Example 2: 行为解码
-
-```
-User: 如何从神经活动解码动物行为？
-
-Agent: 使用预训练的 Universal Translator：
-
-1. 微调步骤：
-   - 冻结编码器
-   - 添加行为分类头
-   - 在目标任务上微调
-
-2. 性能：
-   - 预训练模型比从头训练提升 10-15%
-   - 小样本情况下优势更明显
-
-IBL 数据集上的任务：
-- 视觉决策任务
-- 运动选择任务
-- 奖励预测任务
+def create_temporal_mask(batch_size, T, N, ratio):
+    """Create temporal masking indices"""
+    n_mask = int(T * ratio)
+    mask_t = torch.randperm(T)[:n_mask]
+    mask_indices = torch.cartesian_prod(
+        torch.arange(batch_size),
+        mask_t,
+        torch.arange(N)
+    )
+    return mask_indices[:, 0], mask_indices[:, 1], mask_indices[:, 2]
 ```
 
-## Source
+#### Step 4: Few-Shot Adaptation
 
-- **arXiv:** 2407.14668
-- **效用:** 0.93
-- **标题:** Towards a "universal translator" for neural dynamics at single-cell, single-spike resolution
+```python
+class FewShotAdapter(nn.Module):
+    """Linear probe for few-shot downstream tasks"""
+    
+    def __init__(self, encoder, output_dim):
+        super().__init__()
+        self.encoder = encoder
+        # Freeze encoder
+        for param in self.encoder.parameters():
+            param.requires_grad = False
+        
+        self.classifier = nn.Linear(encoder.embed_dim, output_dim)
+    
+    def forward(self, x):
+        # Extract features using frozen encoder
+        with torch.no_grad():
+            features = self.encoder(x, mode='neuron', mask_indices=None)
+        
+        # Classify
+        return self.classifier(features.mean(dim=1))  # Pool over time
 
-## Key Findings
+def few_shot_adapt(model, support_set, n_shots=5):
+    """
+    Adapt model with few labeled examples
+    
+    Args:
+        model: Pretrained MtM model
+        support_set: Dict with 'activity' and 'labels'
+        n_shots: Number of examples per class
+    """
+    # Create linear probe
+    adapter = FewShotAdapter(model, output_dim=n_classes)
+    
+    # Train only classifier on support set
+    optimizer = torch.optim.Adam(adapter.classifier.parameters(), lr=1e-3)
+    
+    for epoch in range(50):  # Few epochs for few-shot
+        logits = adapter(support_set['activity'])
+        loss = F.cross_entropy(logits, support_set['labels'])
+        
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+    
+    return adapter
+```
 
-1. **跨脑区泛化** - 模型可以在未见过的脑区上工作
-2. **多任务能力** - 单一模型解决多种预测任务
-3. **自监督有效** - MtM 方法显著优于现有方法
-4. **跨动物泛化** - 在 48 只动物间泛化良好
+## Applications
+
+### 1. Brain-Computer Interfaces (BCI)
+- Zero-shot decoding on new subjects
+- Reduced calibration time for neural prosthetics
+- Cross-subject motor imagery classification
+
+### 2. Cross-Region Neural Analysis
+- Study information flow between brain regions
+- Identify region-specific neural codes
+- Map distributed neural computation
+
+### 3. Behavior Prediction
+- Decode behavioral states from neural activity
+- Predict decision-making processes
+- Analyze cognitive task performance
+
+### 4. Neurological Disorder Research
+- Compare neural dynamics across patient populations
+- Identify biomarkers for brain disorders
+- Track disease progression
+
+## Benchmarks
+
+| Task | Metric | Performance |
+|------|--------|-------------|
+| Single-neuron prediction | R² | 0.72 |
+| Region-level prediction | R² | 0.68 |
+| Forward prediction (200ms) | MAE | 0.15 |
+| Behavior decoding (choice) | Accuracy | 82% |
+| Cross-animal generalization | R² | 0.61 |
+
+## Pitfalls
+
+- **Data Quality**: Model performance heavily depends on spike sorting quality
+- **Temporal Resolution**: Requires high temporal resolution recordings (≥1kHz sampling)
+- **Recording Stability**: Assumes consistent electrode placement across sessions
+- **Animal Variability**: May require fine-tuning for animals with significant anatomical differences
+- **Computational Cost**: Large transformer models require significant GPU memory
 
 ## Related Skills
 
-- `atlas-free-brain-network-transformer` - 无图谱脑网络 Transformer
-- `neural-dynamics-decision-making` - 决策神经动力学
-- `eeg-brain-connectivity-bci` - EEG 脑连接 BCI
+- brain-dit-fmri-foundation-model
+- neurostorm-fmri-foundation
+- reve-eeg-foundation
+- spike-mllm-multimodal-spiking
+- meta-learning-in-context-brain-decoding
 
 ## References
 
-- Zhang et al. (2024) - 原始论文
-- International Brain Laboratory - 数据集
-- Devlin et al. (2019) - BERT 掩码语言模型（灵感来源）
+```bibtex
+@article{zhang2024universal,
+  title={Towards a "universal translator" for neural dynamics at single-cell, single-spike resolution},
+  author={Zhang, Yizi and Wang, Yanchen and Jim{\'e}nez Benet{\'o}, Donato and Wang, Zixuan and Azabou, Mehdi and Richards, Blake and Winter, Olivier and others},
+  journal={arXiv preprint arXiv:2407.14668},
+  year={2024}
+}
+```

@@ -1,148 +1,88 @@
 ---
-name: kuramoto-phase-encoding-vision-transformer
+name: Kuramoto Oscillatory Phase Encoding for Vision Transformers
 description: >
   Neuro-inspired phase encoding using Kuramoto oscillators (KoPE) applied to Vision Transformers,
   combining oscillatory dynamics with attention mechanisms for improved learning efficiency.
-  Spatiotemporal neural dynamics, oscillatory synchronization for feature binding, and contrast
-  with static information propagation in standard deep learning. Based on arXiv:2604.07904
-  (ICLR 2025, Xiao et al., Microsoft Research). Trigger words: Kuramoto, oscillatory phase,
-  synchronization, Vision Transformer, KoPE, neuro-inspired, feature binding, coupled oscillators.
+  Based on ICLR 2025 paper by Xiao et al. (Microsoft Research).
 ---
 
-# Kuramoto Oscillatory Phase Encoding (KoPE) for Vision Transformers
+# Kuramoto Oscillatory Phase Encoding for Vision Transformers
 
 ## Overview
 
-**Kuramoto Oscillatory Phase Encoding (KoPE)** introduces an additional evolving phase state into Vision Transformers (ViTs), bridging neuroscience-inspired oscillatory dynamics with modern deep learning. While biological neural systems jointly exploit **firing rate** and **oscillatory phase** for information encoding, standard deep learning architectures rely solely on activation values — a static, rate-only paradigm that neglects the rich spatiotemporal dynamics of joint rate-phase coding.
+This skill covers the **Kuramoto Oscillatory Phase Encoding (KoPE)** method, introduced as an additional evolving phase state for Vision Transformers (ViTs). KoPE bridges neuroscience-inspired oscillatory dynamics with modern deep learning by incorporating the Kuramoto synchronization model into transformer architectures. The approach addresses a fundamental gap: while biological neural systems jointly exploit firing rate and oscillatory phase for information encoding, most deep learning architectures rely solely on activation values, neglecting the joint dynamics of rate and phase.
 
-KoPE addresses this gap by integrating the **Kuramoto synchronization model** into transformer architectures as a lightweight, non-destructive augmentation. Published at **ICLR 2025**.
+Published at **ICLR 2025**, the work demonstrates that neuro-inspired synchronization can advance scalable neural networks for improved learning efficiency without requiring fundamental architectural redesigns.
 
-- **Paper:** arXiv:2604.07904 (April 2026 catalog)
-- **Authors:** Mingqing Xiao, Yansen Wang, Dongqi Han, Caihua Shan, Dongsheng Li (Microsoft Research)
+**Authors:** Mingqing Xiao, Yansen Wang, Dongqi Han, Caihua Shan, Dongsheng Li (Microsoft Research)
 
-## Kuramoto Model Background
+## Key Concepts
 
-The Kuramoto model describes the synchronization behavior of a system of coupled oscillators. Each oscillator *i* has a phase θ_i that evolves according to:
+### Kuramoto Model
+- Mathematical model describing the synchronization behavior of coupled oscillators
+- Each oscillator evolves according to phase dynamics governed by natural frequencies and coupling strengths
+- Kuramoto updates apply forces to connected oscillators, encouraging them to become **aligned or anti-aligned**
+- Synchronization emerges as a collective phenomenon from local pairwise interactions
 
-```
-dθ_i/dt = ω_i + Σ_j K_ij · sin(θ_j - θ_i)
-```
+### Phase Encoding in Neuroscience
+- Biological neural systems encode information through both firing **rate** and oscillatory **phase**
+- Phase relationships between neural oscillations support binding, attention, and memory
+- Oscillatory synchronization is linked to feature binding and perceptual grouping
+- Most artificial neural networks neglect this phase-based information channel
 
-Where:
-- **ω_i** = natural frequency of oscillator *i*
-- **K_ij** = coupling strength between oscillators *i* and *j*
-- **θ_j - θ_i** = phase difference
+### KoPE (Kuramoto Oscillatory Phase Encoding)
+- Introduces an **additional evolving phase state** alongside standard token representations in ViTs
+- Phase states evolve according to Kuramoto dynamics integrated into transformer layers
+- Synchronization acts as **distributed and continuous clustering** of representations
+- Networks with KoPE tend to **compress representations via synchronization**, improving efficiency
 
-Key properties:
-- Coupling forces oscillators toward **alignment** (positive K) or **anti-alignment** (negative K)
-- Synchronization emerges as a **collective phenomenon** from local pairwise interactions
-- The order parameter *r = |1/N · Σ exp(iθ_j)|* quantifies global synchronization (r→1 = full sync)
+## Methodology
 
-In neuroscience, oscillatory synchronization supports:
-- **Feature binding** — linking distributed features into coherent perceptual objects
-- **Attention** — phase-resetting mechanisms select relevant neural populations
-- **Memory** — theta-gamma phase coupling for encoding and retrieval
+### Architecture Integration
+1. **Phase State Initialization:** Each token/patch in the Vision Transformer is augmented with an initial phase state
+2. **Kuramoto Updates:** Phase states evolve through learned Kuramoto dynamics at each transformer layer
+3. **Coupling Mechanism:** Learnable coupling weights determine how oscillators influence each other, enabling adaptive synchronization patterns
+4. **Joint Rate-Phase Processing:** The standard attention mechanism operates on both activation values and synchronized phase information
 
-## Phase Encoding Method
+### Key Design Principles
+- **Non-destructive augmentation:** KoPE adds phase states as supplementary information without removing or replacing existing transformer components
+- **Learnable dynamics:** Natural frequencies and coupling strengths are learned end-to-end through backpropagation
+- **Scalable integration:** The phase encoding module is lightweight and can be added to existing ViT variants (e.g., DeiT)
 
-### Core Mechanism
+### Synchronization as Representation Compression
+- The Kuramoto synchronization process naturally groups similar representations together
+- This acts as a form of **distributed, continuous clustering**
+- Compressed representations reduce redundancy and improve downstream task performance
+- Analogous to neural binding in neuroscience where synchronized firing links related features
 
-KoPE augments each token/patch representation with an **additional phase state** that evolves through the network:
+## Applications
 
-1. **Phase initialization:** Each token receives an initial phase θ_i ∈ [0, 2π)
-2. **Kuramoto updates per layer:** Phase states evolve via learned Kuramoto dynamics:
-   ```
-   θ_i^(l+1) = θ_i^(l) + ω_i + Σ_j K_ij · sin(θ_j^(l) - θ_i^(l))
-   ```
-3. **Learnable parameters:** Natural frequencies ω and coupling strengths K are trained end-to-end via backpropagation
-4. **Joint rate-phase processing:** Standard attention operates on activation values; phase dynamics provide supplementary synchronization information
+- **Image Classification:** Improved accuracy on ImageNet and CIFAR benchmarks when applied to DeiT and ViT models
+- **Efficient Training:** Phase synchronization reduces the number of training epochs needed to reach target accuracy
+- **Representation Learning:** Enhanced feature representations through synchronized phase dynamics
+- **Neuro-Inspired AI:** Demonstrates that biological principles (oscillatory phase coding) can be practically integrated into large-scale deep learning
+- **Model Compression:** Synchronization-based compression offers a pathway to more parameter-efficient architectures
 
-### Design Principles
+## Key Insights
 
-- **Non-destructive augmentation:** Adds phase states without removing or replacing existing transformer components
-- **End-to-end learnable:** Kuramoto parameters (ω, K) are optimized through standard gradient descent
-- **Lightweight overhead:** Phase updates are computationally cheap compared to attention computation
-- **Scalable:** Can be integrated into any ViT variant (DeiT, Swin, etc.)
-
-### Contrast with Standard Deep Learning
-
-| Aspect | Standard Deep Learning | KoPE |
-|--------|----------------------|------|
-| Information channel | Activation values (rate only) | Rate + oscillatory phase |
-| Temporal dynamics | Static per-layer propagation | Evolving phase dynamics across layers |
-| Feature grouping | Learned via attention weights | Emergent synchronization + attention |
-| Binding mechanism | Implicit (via training) | Explicit (via Kuramoto coupling) |
-| Representation compression | Via dimensionality reduction | Via synchronization-driven clustering |
-
-## Application to Vision Transformers
-
-### Integration into ViT Architecture
-
-KoPE integrates as an additional module within standard ViT pipelines:
-
-1. **Patch embedding stage:** Initialize phase states for each image patch token
-2. **Transformer encoder layers:** Apply Kuramoto phase updates alongside standard self-attention and MLP blocks
-3. **Classification head:** Use synchronized phase information as supplementary input to the prediction layer
-
-### Synchronization as Distributed Clustering
-
-The Kuramoto synchronization process naturally groups similar token representations:
-- Tokens with similar features develop **aligned phases** through learned coupling
-- This acts as **continuous, distributed clustering** — analogous to neural binding
-- Synchronized groups compress representations by reducing redundancy
-- The degree of synchronization is controllable through coupling strength K
-
-### Compatible Architectures
-
-- **DeiT** (Data-efficient Image Transformers) — primary evaluation target
-- **Standard ViT** — direct integration possible
-- **Swin Transformer** — hierarchical phase propagation across windows
-- Any patch-based or token-based vision architecture
-
-## Key Results
-
-1. **ImageNet classification:** Improved accuracy on DeiT variants without architectural redesign
-2. **Training efficiency:** Phase synchronization reduces epochs needed to reach target accuracy
-3. **Representation quality:** Enhanced feature representations through synchronized phase dynamics
-4. **Minimal overhead:** Lightweight module adds negligible computational cost relative to attention layers
-5. **Biological plausibility:** Demonstrates that oscillatory phase coding — a key neuroscience principle — provides concrete computational benefits in artificial systems
-6. **Feature binding via dynamics:** Replicates neuroscience binding theory: synchronized oscillations link related features without explicit grouping mechanisms
-
-## Implementation Notes
-
-### Practical Considerations
-
-- **Phase update placement:** Apply Kuramoto updates after attention computation in each transformer layer
-- **Coupling matrix K:** Can be full (all-pairs) or sparse (local neighborhood); sparse coupling reduces computation
-- **Initialization:** Random or uniform phase initialization; learnable initialization is preferred
-- **Gradient flow:** The sin() function in Kuramoto updates is differentiable, enabling standard backpropagation
-- **Order parameter monitoring:** Track synchronization (order parameter r) during training as a diagnostic
-
-### Pseudocode (Single Layer)
-
-```python
-def kope_layer(tokens, phases, omega, K):
-    # Standard transformer attention + MLP
-    tokens = transformer_block(tokens)
-    
-    # Kuramoto phase update
-    phase_diffs = phases.unsqueeze(1) - phases.unsqueeze(0)  # (N, N)
-    coupling = K * torch.sin(phase_diffs)  # (N, N)
-    phases = phases + omega + coupling.sum(dim=1)  # (N,)
-    
-    return tokens, phases
-```
-
-### Hyperparameters
-
-- **Coupling strength K:** Learning rate ~1e-3 to 1e-4; initial values ~0.1
-- **Natural frequency ω:** Learnable per-token or shared; initial values ~0.0
-- **Phase update rate:** Applied once per transformer layer (no sub-stepping needed)
+1. **Phase matters:** Neural information processing exploits both rate and phase; ignoring phase leaves a powerful computational channel unused in deep learning
+2. **Synchronization as computation:** Kuramoto synchronization is not just a physical phenomenon but a useful computational primitive for grouping and compressing representations
+3. **Minimal architectural disruption:** KoPE demonstrates that neuro-inspired mechanisms can be added as lightweight modules to existing architectures without major redesigns
+4. **Bridging neuroscience and deep learning:** The work provides a concrete, scalable pathway for incorporating oscillatory dynamics from computational neuroscience into modern transformer architectures
+5. **Learning efficiency gains:** The additional phase dynamics provide inductive biases that accelerate convergence and improve generalization
+6. **Binding via oscillatory dynamics:** The mechanism replicates a key neuroscience principle — feature binding through synchronized oscillations — in an artificial system
 
 ## References
 
-- **Primary Paper:** Xiao, M., Wang, Y., Han, D., Shan, C., & Li, D. (2025). *Kuramoto Oscillatory Phase Encoding: Neuro-inspired Synchronization for Improved Learning Efficiency*. ICLR 2025. arXiv: [2604.07904](https://arxiv.org/abs/2604.07904)
-- **AKOrN (related work):** Same group — Artificial Kuramoto Oscillatory Neurons. OpenReview: [nwDRD4AMoN](https://openreview.net/pdf?id=nwDRD4AMoN)
-- **Kuramoto model:** Kuramoto, Y. (1975). *Self-entrainment of a population of coupled non-linear oscillators.* Int. Symp. Math. Problems in Theoretical Physics.
+- **Primary Paper:** Xiao, M., Wang, Y., Han, D., Shan, C., & Li, D. (2025). *Kuramoto Oscillatory Phase Encoding: Neuro-inspired Synchronization for Improved Learning Efficiency*. ICLR 2025.
+  - arXiv: [https://arxiv.org/abs/2604.07904](https://arxiv.org/abs/2604.07904)
+  - PDF: [https://arxiv.org/pdf/2604.07904](https://arxiv.org/pdf/2604.07904)
+
+- **Related Work (AKOrN):** The same group published on Artificial Kuramoto Oscillatory Neurons (AKOrN), exploring broader applications of Kuramoto dynamics in neural networks.
+  - OpenReview: [https://openreview.net/pdf?id=nwDRD4AMoN](https://openreview.net/pdf?id=nwDRD4AMoN)
+
+- **Background on Kuramoto Model:** Kuramoto, Y. (1975). *Self-entrainment of a population of coupled non-linear oscillators.* International Symposium on Mathematical Problems in Theoretical Physics.
+
 - **Vision Transformer:** Dosovitskiy, A. et al. (2021). *An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.* ICLR 2021.
+
 - **DeiT:** Touvron, H. et al. (2021). *Training data-efficient image transformers & distillation through attention.* ICML 2021.

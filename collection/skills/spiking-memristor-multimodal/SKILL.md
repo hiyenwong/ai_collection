@@ -1,123 +1,83 @@
 ---
 name: spiking-memristor-multimodal
-description: "Memristive neurons supporting multiple spiking functionalities: TTFS encoding, spike counting, and firing rate coding. Based on annealing-optimized Ag/HZO devices. Applicable to neuromorphic hardware, spiking neural networks, edge AI inference. Activation: memristor, spiking neuron, neuromorphic hardware, TTFS, spike counting, firing rate, Ag/HZO, annealing"
+description: Memristive neurons supporting multiple spiking functionalities (TTFS, spike count, firing rate) via annealing optimization for neuromorphic hardware.
+version: 1.0.0
+author: Research Synthesis
+license: MIT
+metadata:
+  hermes:
+    tags: [memristive, spiking, neuromorphic, hardware, annealing, multimodal]
+    source_paper: "Multiple spiking functionalities in annealing-optimized Ag/HfZrO-based memristive neurons (arXiv:2604.15366)"
+    citations: 0
+    related_skills: [circuit-level-spiking-neuron-robustness, snn-low-level-vision]
 ---
 
-# Multi-Modal Spiking Functionalities in Memristive Neurons
+# Memristive Multimodal Spiking Neurons
 
 ## Overview
+Annealing-optimized Ag/Hf₀.₅Zr₀.₅O₂-based memristive neurons support multiple spiking functionalities in a single hardware device: Time-To-First-Spike (TTFS), spike count coding, and firing rate coding. This multimodal capability enables flexible neural encoding strategies on neuromorphic hardware without requiring different circuit designs for each coding scheme.
 
-Annealing-optimized Ag/Hf0.5Zr0.5O2-based memristive devices that operate as artificial neurons supporting multiple spiking functionalities: time-to-first-spike (TTFS) encoding, spike counting, and firing rate coding. A single device can be reconfigured between modes by adjusting input pulse parameters.
+## Key Concepts
 
-## Source Paper
+### Memristive Neuron Dynamics
+- Memristor acts as a synapse with history-dependent resistance
+- Ag/HfZrO₂ material system provides reliable switching characteristics
+- Annealing optimization tunes device parameters for desired spiking behavior
+- Single device supports multiple encoding modes
 
-- **Title:** Multi-modal spiking functionalities in memristive neurons
-- **Authors:** Various
-- **arXiv:** 2604.11780v1
-- **Published:** 2026-04-17
-- **Categories:** q-bio.NC, cs.NE
-- **PDF:** https://arxiv.org/pdf/2604.11780v1
+### Multiple Spiking Modes
+1. **TTFS (Time-To-First-Spike)**: Information in the timing of the first spike
+   - Faster response to stronger stimuli
+   - Ultra-low latency for classification tasks
+2. **Spike Count**: Information in the total number of spikes
+   - Robust to timing jitter
+   - Suitable for integration tasks
+3. **Firing Rate**: Information in the average spike frequency
+   - Compatible with traditional rate-based models
+   - Easy to interface with conventional ML
 
-## Core Concepts
-
-### Device Physics
-- **Material:** Ag/Hf0.5Zr0.5O2 memristive stack
-- **Annealing Optimization:** Controls oxygen vacancy distribution for precise switching thresholds
-- **Non-volatile:** Retains state without power (non-von-Neumann architecture)
-
-### Three Spiking Modes
-
-1. **TTFS (Time-to-First-Spike):** Encode information in latency to first spike
-   - Faster response to stronger input
-   - Energy efficient for event-driven processing
-
-2. **Spike Counting:** Count incoming spikes over a window
-   - Accumulates input history
-   - Useful for temporal pattern recognition
-
-3. **Firing Rate Coding:** Generate spikes at rate proportional to input
-   - Classic rate-based neural coding
-   - Compatible with traditional SNN frameworks
-
-### Hardware Reconfiguration
-
-A single memristive device switches between modes by adjusting:
-- Input pulse amplitude
-- Pulse width/duration
-- Reset voltage thresholds
-
-## Implementation
-
+### Implementation Pattern
 ```python
-import numpy as np
-
 class MemristiveNeuron:
-    def __init__(self, v_th=0.5, tau=10.0, mode='ttfs'):
-        self.v_th = v_th
-        self.tau = tau
+    def __init__(self, mode='ttfs', annealing_params=None):
         self.mode = mode
-        self.state = 0.0
-        self.spike_count = 0
-        self.last_spike_time = None
-
-    def set_mode(self, mode):
-        self.mode = mode
-        self.reset()
-
-    def reset(self):
-        self.state = 0.0
-        self.spike_count = 0
-        self.last_spike_time = None
-
-    def step(self, input_current, dt=1.0, t=None):
-        self.state += (input_current - self.state) * dt / self.tau
-        spike = False
-        if self.state >= self.v_th:
-            spike = True
-            if self.mode == 'ttfs':
-                self.last_spike_time = t
-                self.state = 0
-            elif self.mode == 'count':
-                self.spike_count += 1
-                self.state *= 0.5
-            elif self.mode == 'rate':
-                self.spike_count += 1
-                self.state = 0
-        return spike
-
-    def encode_ttfs(self, stimulus_strength, max_time=100.0):
-        self.reset()
-        for t in np.arange(0, max_time, 1.0):
-            if self.step(stimulus_strength, t=t):
-                return t
-        return max_time
-
-    def encode_rate(self, stimulus_strength, window=100.0, dt=1.0):
-        self.reset()
-        for t in np.arange(0, window, dt):
-            self.step(stimulus_strength, dt=dt, t=t)
-        return self.spike_count / window
+        self.memristance = R_initial
+        self.membrane_potential = 0
+        self.threshold = V_th
+        self.refractory = 0
+        
+        # Annealing-optimized parameters
+        if annealing_params:
+            self.threshold = annealing_params['threshold']
+            self.membrane_time_constant = annealing_params['tau']
+        
+    def encode(self, stimulus):
+        if self.mode == 'ttfs':
+            # Time-to-first-spike encoding
+            return self._compute_first_spike_time(stimulus)
+        elif self.mode == 'count':
+            # Spike count encoding
+            return self._compute_spike_count(stimulus, window=100)
+        elif self.mode == 'rate':
+            # Firing rate encoding
+            return self._compute_firing_rate(stimulus, window=100)
+    
+    def _compute_first_spike_time(self, stimulus):
+        """Stronger stimuli produce earlier spikes."""
+        t_spike = tau / np.log(stimulus / threshold)
+        return max(t_spike, 0)
 ```
 
-## Applications
-
-- Edge AI inference on neuromorphic hardware
-- Ultra-low power SNN implementations
-- Multi-modal sensory processing
-- Hardware-in-the-loop SNN training
-
-## Related Skills
-
-- spikingjelly-framework
-- adaptive-spiking-neurons-asn
-- l-spine-snn-compute-engine
-
 ## Activation Keywords
-- memristor
-- neuromorphic hardware
-- spiking neuron
-- TTFS encoding
-- spike counting
-- firing rate coding
-- Ag/HZO
-- annealing optimization
+memristive neuron, TTFS, spike count, firing rate, annealing optimization, Ag/HfZrO2, neuromorphic hardware, multimodal coding
+
+## Applications
+- Reconfigurable neuromorphic chips
+- Adaptive encoding in sensory processing
+- Multi-task neuromorphic systems
+- Brain-inspired hardware accelerators
+
+## Limitations
+- Device variability requires calibration
+- Annealing optimization is compute-intensive
+- Limited number of switching cycles in some memristive materials

@@ -128,23 +128,6 @@ Potential applications:
 - [Application 2]
 ```
 
-## Instructions for Agents
-
-### Step 1: Search for Intersection Papers
-Use arxiv-search with queries like "quantum neural network", "neural network field theory", "topological quantum machine learning".
-
-### Step 2: Extract Cross-Disciplinary Concepts
-For each paper, identify: quantum concepts used (entanglement, superposition), neural architecture details, and mathematical framework (field theory, topology).
-
-### Step 3: Map Correspondences
-Create quantum ↔ neural correspondence map; identify physical interpretations and computational advantages.
-
-### Step 4: Identify Applications
-List potential applications: variational quantum eigensolvers, quantum error correction networks, quantum state tomography.
-
-### Step 5: Generate Report
-Output a structured Research Summary using the template above.
-
 ## Related Skills
 
 - **quantum-knowledge-graph**: Quantum information retrieval

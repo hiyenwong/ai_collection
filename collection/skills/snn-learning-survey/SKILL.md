@@ -1,67 +1,103 @@
 ---
 name: snn-learning-survey
-description: Comprehensive survey of Spiking Neural Network learning algorithms. Classification of Hebbian, gradient-based, reward-based, and bio-inspired learning methods with computational efficiency vs. biological plausibility analysis.
-category: neuroscience
-tags: [spiking neural network, SNN, learning algorithms, survey, Hebbian, gradient-based, surrogate gradient, bio-inspired]
-created: 2026-04-18
-source: "A Survey on Spiking Neural Network: Learning Algorithms"
-arxiv: https://arxiv.org/abs/2504.13817
+description: 脉冲神经网络学习规则综合分析技能。涵盖无监督（STDP及变体）、监督（代理梯度）、强化学习及混合学习范式。提供SNN训练方法选择指南、关键参数配置和性能比较。适用于脉冲神经网络、神经形态计算、低功耗AI、事件驱动系统。触发词：SNN learning rules, STDP, surrogate gradient, neuromorphic computing, spiking neural network training, 脉冲神经网络学习
+version: 1.0.0
+metadata:
+  hermes:
+    tags: [neuroscience, spiking-neural-network, learning-rules, neuromorphic, training-methods]
+    source_paper: "Learning rules in Spiking Neural Networks: A comprehensive survey (arXiv:2604.16060)"
+    published: "2026-04-19"
 ---
 
-# SNN Learning Algorithms Survey
+# SNN Learning Rules Survey
 
 ## Overview
-Comprehensive taxonomy and analysis of learning algorithms for Spiking Neural Networks (SNNs), covering bio-inspired, gradient-based, and hybrid approaches.
 
-## Learning Algorithm Classification
+脉冲神经网络学习规则综合指南。涵盖四大类学习方法及其在神经形态硬件上的实现。
 
-### 1. Bio-Inspired Learning
-- **Hebbian Learning**: Correlation-based weight updates (Δw = η·x_pre·x_post)
-- **STDP**: Spike-Timing Dependent Plasticity with temporal windows
-- **Homeostatic Plasticity**: Maintains network stability through activity regulation
-- **Synaptic Scaling**: Global weight adjustment for homeostasis
+## Learning Rule Categories
 
-### 2. Gradient-Based Learning
-- **BPTT**: Backpropagation Through Time for temporal sequences
-- **Surrogate Gradients**: Smooth approximations for non-differentiable spikes
-- **e-prop**: Eligibility propagation for online learning
-- **DECOLLE**: Deep Continuous Local Learning with local gradients
+### 1. Unsupervised Learning (STDP-based)
+```python
+def stdp_update(pre_spike, post_spike, weight, lr=0.01, 
+                A_plus=0.1, A_minus=-0.12, tau_plus=20, tau_minus=20):
+    """标准STDP更新规则"""
+    if pre_spike and post_spike:
+        # 时间依赖的权重更新
+        dt = post_spike.time - pre_spike.time
+        if dt > 0:  # 前突触先于后突触
+            delta_w = A_plus * torch.exp(-dt / tau_plus)
+        else:
+            delta_w = A_minus * torch.exp(dt / tau_minus)
+        weight = weight + lr * delta_w
+    return weight.clamp(0, 1)
+```
 
-### 3. Reward-Based Learning
-- **Three-factor rules**: Pre × Post × Reward modulation
-- **Actor-Critic**: Value-based reinforcement learning in SNNs
-- **Policy Gradient**: Direct policy optimization with spiking neurons
+**STDP Variants:**
+- Pair-based STDP: 标准脉冲对更新
+- Triplet STDP: 考虑前/后脉冲三重态
+- Voltage-based STDP: 加入膜电位依赖
+- Reward-modulated STDP: 结合多巴胺信号
 
-### 4. Hybrid Approaches
-- **ANN-to-SNN conversion**: Train ANN, convert to SNN for inference
-- **Direct training**: Train SNN directly with surrogate gradients
-- **Neuromodulated learning**: Combine bio-inspired and gradient methods
+### 2. Supervised Learning (Surrogate Gradient)
+```python
+class SurrogateSpike(torch.autograd.Function):
+    """代理梯度函数 - 使脉冲可微"""
+    @staticmethod
+    def forward(ctx, x, alpha=1.0):
+        ctx.save_for_backward(x)
+        ctx.alpha = alpha
+        return (x > 0).float()
+    
+    @staticmethod
+    def backward(ctx, grad_output):
+        x, = ctx.saved_tensors
+        # 使用分段线性替代导数
+        alpha = ctx.alpha
+        grad_input = grad_output * alpha * torch.relu(1 - torch.abs(x))
+        return grad_input, None
 
-## Comparison Framework
+# 使用示例
+spike = SurrogateSpike.apply(membrane_potential, alpha=2.0)
+```
 
-| Criterion | Bio-Inspired | Gradient-Based | Reward-Based |
-|-----------|-------------|----------------|--------------|
-| Biological plausibility | High | Low | Medium |
-| Computational efficiency | High | Medium | Medium |
-| Task performance | Medium | High | High |
-| Temporal credit assignment | Limited | Excellent | Good |
-| Online learning capability | Excellent | Limited | Good |
+### 3. Reinforcement Learning for SNNs
+```python
+class R_SNN(nn.Module):
+    """奖励调制的脉冲神经网络"""
+    def __init__(self, input_dim, hidden_dim, output_dim):
+        super().__init__()
+        self.fc = nn.Linear(input_dim, hidden_dim)
+        self.out = nn.Linear(hidden_dim, output_dim)
+        self.eligibility_trace = torch.zeros(hidden_dim, output_dim)
+        
+    def forward(self, x, reward=0):
+        # 计算资格迹
+        eligibility = torch.outer(self.spike_trace, self.output_trace)
+        self.eligibility_trace = 0.9 * self.eligibility_trace + eligibility
+        
+        # 奖励调制更新
+        if reward != 0:
+            self.fc.weight += reward * self.eligibility_trace * 0.01
+```
 
-## Practical Guidelines
-- Use bio-inspired for unsupervised feature learning
-- Use gradient-based for supervised tasks requiring high accuracy
-- Use reward-based for reinforcement learning scenarios
-- Consider hybrid approaches for best of both worlds
+## Rule Selection Guide
 
-## Key Challenges
-- Temporal credit assignment in spiking networks
-- Balancing biological plausibility with computational efficiency
-- Handling vanishing gradients in deep SNNs
-- Designing effective surrogate gradient functions
+| 场景 | 推荐方法 | 理由 |
+|------|---------|------|
+| 无标签数据 | STDP | 自组织学习，无需标注 |
+| 分类任务 | 代理梯度 | 端到端训练，精度高 |
+| 在线学习 | 奖励调制STDP | 适应动态环境 |
+| 低功耗部署 | 二值SNN + STDP | 硬件友好 |
 
-## Verification Steps
-1. Benchmark learning algorithm on standard temporal tasks
-2. Compare computational efficiency across methods
-3. Validate biological plausibility against neuroscientific data
-4. Test scalability to deeper architectures
-5. Evaluate robustness to noise and parameter variations
+## Key Parameters
+
+| 参数 | 典型范围 | 影响 |
+|------|---------|------|
+| 学习率 | 0.001-0.1 | 收敛速度和稳定性 |
+| 时间窗口τ | 10-50ms | 时间依赖性强度 |
+| 代理梯度α | 1-5 | 梯度传播质量 |
+| 膜电位阈值 | 0.5-1.5 | 脉冲发放频率 |
+
+## References
+- Comprehensive survey of SNN learning rules. arXiv:2604.16060

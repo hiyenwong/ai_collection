@@ -1,156 +1,94 @@
 ---
 name: warped-hierarchical-modular-neural-network
-description: "Hierarchical modular dynamical neural network architecture with warped spaces. Energy-based design with multi-timescale neurons, layered internetworks, and geometric structure for robust learning. Applicable to: neural architecture design, hierarchical learning, modular networks, energy-based models, dynamical systems. Activation: warped space, hierarchical neural network, modular neural network, energy function neural dynamics, multi-timescale neurons, warped hierarchical model"
+description: "Relaxing Warped Spaces — generalized hierarchical and modular dynamical neural networks. Uses warped hierarchical modular structure for efficient representation learning and dynamical neural processing. Applicable to neuromorphic computing, hierarchical representation learning, dynamical neural networks. 触发词: warped spaces, hierarchical modular, dynamical neural network, representation learning, neural dynamics"
 ---
 
 # Warped Hierarchical Modular Neural Network
 
-Research methodology from paper 'Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network'
+## Description
 
-## Source Paper
+Dynamical neural network model with warped hierarchical and modular structure for efficient representation learning. Based on research on "Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network."
 
-- **Title**: Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network
-- **arXiv**: 2604.10606v1
-- **Categories**: q-bio.NC (Quantitative Biology - Neurons and Cognition)
-- **Date**: 2026-04-14
+## Key Concepts
 
-## Overview
+### Warped Spaces
+- Non-Euclidean representation spaces that capture hierarchical relationships
+- Enables more efficient encoding of structured data
+- Warping transforms adapt to data topology
 
-A novel dynamical neural network model with hierarchical and modular structure derived from energy minimization principles. The architecture features:
-- Two types of neurons with different time constants (fast/slow dynamics)
-- Multiple subspaces spanned by neural parameters
-- Layered internetworks connecting adjacent subspaces
-- Forward and backward subnet pairs within each internetwork
-- Geometric warping of parameter spaces
+### Hierarchical Modularity
+- Multi-scale organization from local to global processing
+- Modular structure enables specialized computation
+- Cross-module communication through bottleneck representations
 
-## Core Architecture
+### Dynamical Neural Processing
+- State-space formulation of neural computation
+- Temporal dynamics as core computational mechanism
+- Stability analysis through dynamical systems theory
 
-### Energy-Based Design
+## Activation Keywords
 
-The network architecture is derived by minimizing an energy function:
+- warped spaces
+- hierarchical modular neural network
+- dynamical neural network
+- representation learning
+- neural dynamics
+- non-Euclidean representations
+- multi-scale neural processing
 
-$$E(\\theta) = \\sum_{i} E_{fast}(\\theta_i^{fast}) + \\sum_{j} E_{slow}(\\theta_j^{slow}) + \\sum_{k} E_{coupling}(\\theta_k^{internetwork})$$
+## Workflow
 
-Where:
-- **Fast neurons**: Handle immediate input processing and local feature extraction
-- **Slow neurons**: Maintain global context and long-term state
-- **Internetwork coupling**: Connects subspaces at different hierarchical levels
-
-### Hierarchical Subspace Structure
-
-```
-Level N (Global Context)
-    ↑↓ Internetwork (forward + backward)
-Level N-1 (Abstract Features)
-    ↑↓ Internetwork (forward + backward)
-Level N-2 (Local Features)
-    ↑↓ Internetwork (forward + backward)
-Level 0 (Input/Output)
-```
-
-Each internetwork consists of:
-- **Forward subnet**: Propagates information upward through hierarchy
-- **Backward subnet**: Propagates predictions/errors downward
-
-## Key Contributions
-
-1. **Multi-timescale dynamics**: Different neuron types operating at different temporal scales
-2. **Energy-based architecture**: Network structure emerges from energy minimization
-3. **Modular hierarchy**: Self-organized modular structure within global hierarchy
-4. **Warped geometry**: Parameter spaces are non-Euclidean, enabling efficient representation
-5. **Bidirectional internetworks**: Both feedforward and feedback pathways at each level
-
-## Implementation Pattern
+### Step 1: Define Warped Space Structure
 
 ```python
 import numpy as np
-from typing import List, Tuple
 
-class WarpedHierarchicalNetwork:
-    """
-    Hierarchical modular neural network with warped spaces.
-    Multi-timescale dynamics with energy-based architecture.
-    """
-
-    def __init__(self, n_levels: int, n_fast: int, n_slow: int):
-        self.n_levels = n_levels
-        self.n_fast = n_fast
-        self.n_slow = n_slow
-        self.fast_neurons = [np.zeros(n_fast) for _ in range(n_levels)]
-        self.slow_neurons = [np.zeros(n_slow) for _ in range(n_levels)]
-        self.forward_weights = [
-            np.random.randn(n_fast, n_fast) * 0.1 for _ in range(n_levels - 1)
-        ]
-        self.backward_weights = [
-            np.random.randn(n_slow, n_slow) * 0.1 for _ in range(n_levels - 1)
-        ]
-        self.coupling_weights = [
-            np.random.randn(n_fast, n_slow) * 0.01 for _ in range(n_levels)
-        ]
-        self.tau_fast = 1.0
-        self.tau_slow = 10.0
-
-    def energy(self, inputs: List[np.ndarray]) -> float:
-        """Compute total energy of the network state."""
-        E = 0.0
-        for level in range(self.n_levels):
-            E += 0.5 * np.dot(self.fast_neurons[level], self.fast_neurons[level])
-            E += 0.5 * np.dot(self.slow_neurons[level], self.slow_neurons[level])
-            E += np.dot(self.fast_neurons[level],
-                        self.coupling_weights[level] @ self.slow_neurons[level])
-        return E
-
-    def step(self, inputs: List[np.ndarray], dt: float = 0.01) -> None:
-        """One integration step of network dynamics."""
-        for level in range(self.n_levels):
-            d_fast = -self.fast_neurons[level] / self.tau_fast
-            if level > 0:
-                d_fast += self.forward_weights[level-1] @ self.fast_neurons[level-1]
-            if level < self.n_levels - 1:
-                d_fast += self.backward_weights[level] @ self.slow_neurons[level+1]
-            d_fast += inputs[level]
-            d_fast -= self.coupling_weights[level] @ self.slow_neurons[level]
-            d_slow = -self.slow_neurons[level] / self.tau_slow
-            d_slow += self.coupling_weights[level].T @ self.fast_neurons[level]
-            self.fast_neurons[level] += dt * d_fast
-            self.slow_neurons[level] += dt * d_slow
-
-    def run(self, inputs: List[np.ndarray], n_steps: int = 100) -> Tuple[List, List]:
-        """Run network dynamics and return trajectory."""
-        fast_trajectory = []
-        slow_trajectory = []
-        for _ in range(n_steps):
-            self.step(inputs)
-            fast_trajectory.append([n.copy() for n in self.fast_neurons])
-            slow_trajectory.append([n.copy() for n in self.slow_neurons])
-        return fast_trajectory, slow_trajectory
+# Warped metric for hierarchical space
+def warped_distance(x1, x2, warp_params):
+    """Compute distance in warped space."""
+    diff = x1 - x2
+    # Apply warp transformation
+    warped = warp_params @ diff
+    return np.linalg.norm(warped)
 ```
 
-## Practical Applications
+### Step 2: Build Hierarchical Modular Architecture
 
-### 1. Hierarchical Feature Learning
-Use the warped hierarchical network for multi-level feature extraction:
-- Level 0: edges -> Level 1: shapes -> Level 2: objects -> Level 3: scenes
+```python
+def create_hierarchical_modules(n_modules, neurons_per_module):
+    """Create multi-scale modular architecture."""
+    modules = []
+    for i in range(n_modules):
+        # Local processing within module
+        module = {
+            'neurons': neurons_per_module[i],
+            'connections': np.random.randn(neurons_per_module[i], neurons_per_module[i]) * 0.1,
+            'scale': 2**i  # Exponential scale hierarchy
+        }
+        modules.append(module)
+    return modules
+```
 
-### 2. Multi-Timescale Sequence Processing
-Fast neurons track immediate input; slow neurons maintain context over longer timescales.
+### Step 3: Implement Dynamics
 
-## Limitations
+```python
+def neural_dynamics(state, modules, dt=0.01):
+    """Forward dynamics with hierarchical processing."""
+    new_state = state.copy()
+    for module in modules:
+        # Local dynamics within module
+        local_update = module['connections'] @ state
+        new_state += dt * local_update
+    return new_state
+```
 
-1. Energy minimization assumption requires well-defined energy function
-2. Timescale separation assumes clear separation between fast and slow dynamics
-3. Scalability: large hierarchies may require careful initialization
-4. Training: the paper does not specify learning rules for weight updates
+## Applications
 
-## Related Work
+1. **Hierarchical representation learning** — capturing multi-scale structure
+2. **Neuromorphic computing** — efficient temporal processing
+3. **Dynamical neural networks** — state-space neural computation
+4. **Multi-scale feature extraction** — from local to global features
 
-- Energy-based models: LeCun et al., "A Tutorial on Energy-Based Learning"
-- Hierarchical predictive coding: Friston, "The free-energy principle"
-- Multi-timescale RNNs: Jaeger, "Echo State Networks"
-- Neural ODEs: Chen et al., "Neural Ordinary Differential Equations"
+## References
 
-## Research Notes
-
-This skill was created from automated neuroscience research workflow on 2026-04-19.
-Paper provides theoretical framework for hierarchical modular neural networks
-with geometric structure derived from energy minimization principles.
+- arXiv:2604.10606 — Relaxing in Warped Spaces: Generalized Hierarchical and Modular Dynamical Neural Network

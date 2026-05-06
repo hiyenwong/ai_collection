@@ -1,463 +1,276 @@
 ---
 name: meta-learning-in-context-brain-decoding
-description: "BrainCoDec - Foundation framework for training-free cross-subject brain decoding via meta-learning in-context approach. Supports zero-shot generalization to unseen subjects without retraining. Updated with v4 BrainCoDec framework. Activation: braincodecs, meta-learning, brain decoding, cross-subject fmri, in-context learning, training-free bci, foundation model"
+description: "Meta-learning In-Context approach for training-free cross-subject brain decoding. Enables zero-calibration BCI through context-based meta-learning. Triggers: meta-learning, brain decoding, cross-subject, training-free, in-context learning, zero-calibration BCI."
 ---
 
-# BrainCoDec: Training-Free Cross-Subject Brain Decoding via Meta-Learning In-Context
+# Meta-Learning In-Context for Training-Free Brain Decoding
 
-A foundation framework for zero-shot cross-subject brain decoding that enables fMRI decoding for new subjects without subject-specific training through in-context learning.
+> Foundation framework for training-free cross-subject visual brain decoding using meta-learning with in-context examples, enabling zero-calibration BCI deployment.
 
-## Core Framework: BrainCoDec
+## Metadata
+- **Source**: arXiv:2604.08537v1
+- **Published**: 2026-04
 
-BrainCoDec is a meta-learning based foundation framework that achieves:
-1. **Training-free cross-subject generalization**: New subjects can be decoded immediately without fine-tuning
-2. **In-context learning from reference subjects**: Uses a small set of reference subjects as context
-3. **Multi-modal brain signal support**: fMRI, EEG, MEG compatibility
-4. **Scalable to large cohorts**: Efficient inference even with many reference subjects
+## Core Methodology
 
-## Problem Statement
+### Key Innovation
+Enables zero-calibration brain decoding by using meta-learning to train models that can adapt to new subjects through in-context examples rather than gradient-based fine-tuning. The approach treats subject-specific brain activity patterns as context tokens, allowing pre-trained models to decode from new subjects without any training on their data.
 
-Traditional brain decoding requires:
-- **Extensive subject-specific training data** (hours of scanning)
-- **Individual model calibration** for each subject
-- **Re-training for new subjects**
+### Technical Framework
+1. **Meta-Learning Pre-Training**: Train decoder on many subjects
+2. **In-Context Encoding**: Subject activity as context sequence
+3. **Cross-Subject Transfer**: Model adapts via attention over context
+4. **Training-Free Inference**: No gradient updates for new subjects
 
-This approach eliminates these requirements through **meta-learning with in-context adaptation**.
+### Architecture
+```
+New Subject Brain Activity → Tokenized → Context Sequence
+                                    ↓
+Pre-trained Meta-Decoder → Cross-Attention over Context → Decoded Stimulus
+                                    ↑
+Training Data from Many Subjects (Meta-Learning)
+```
 
-## Core Innovation
+## Implementation Guide
 
-Instead of learning to decode directly, the model learns:
-1. **How to learn** from few examples (meta-learning)
-2. **In-context adaptation** using provided examples
-3. **Cross-subject generalization** through shared neural representations
+### Prerequisites
+- Pre-trained brain encoder (e.g., Brain-DiT, fMRI foundation model)
+- Multi-subject fMRI/EEG dataset for meta-training
+- Large-scale training infrastructure
+- GPU cluster for distributed training
 
-## Architecture
+### Step-by-Step
+1. **Data Preparation**: Standardize brain data across subjects
+2. **Tokenization**: Convert brain activity to discrete tokens
+3. **Meta-Training Setup**: Configure in-context learning objective
+4. **Train Meta-Decoder**: Learn to decode from context
+5. **Evaluate**: Test zero-shot transfer to held-out subjects
+6. **Deploy**: Use for new subjects without retraining
 
-### 1. Meta-Learning Framework
-
+### Code Example
 ```python
 import torch
 import torch.nn as nn
+from torch.utils.data import DataLoader
 
 class InContextBrainDecoder(nn.Module):
     """
-    Meta-learning decoder for cross-subject fMRI.
-    
-    Learns to adapt to new subjects from context examples.
+    Meta-learning based brain decoder using in-context learning
     """
-    
-    def __init__(
-        self,
-        input_dim: int = 10000,      # Number of voxels
-        latent_dim: int = 256,        # Latent representation
-        n_context: int = 5,           # Number of context examples
-        n_heads: int = 8,
-    ):
+    def __init__(self, brain_dim=1024, latent_dim=512, num_heads=8):
         super().__init__()
         
-        # fMRI encoder
-        self.encoder = nn.Sequential(
-            nn.Linear(input_dim, 2048),
-            nn.ReLU(),
-            nn.Linear(2048, 512),
-            nn.ReLU(),
-            nn.Linear(512, latent_dim),
+        self.brain_dim = brain_dim
+        self.latent_dim = latent_dim
+        
+        # Brain activity embedding
+        self.brain_embed = nn.Linear(brain_dim, latent_dim)
+        
+        # Stimulus embedding (for context examples)
+        self.stimulus_embed = nn.Linear(stimulus_dim, latent_dim)
+        
+        # Cross-attention for in-context adaptation
+        self.cross_attn = nn.MultiheadAttention(
+            embed_dim=latent_dim,
+            num_heads=num_heads,
+            batch_first=True
         )
         
-        # In-context transformer
-        # Processes context examples and target brain pattern
-        self.transformer = nn.TransformerEncoder(
-            nn.TransformerEncoderLayer(
-                d_model=latent_dim * 2,  # Concatenate brain + label
-                nhead=n_heads,
-                batch_first=True,
-            ),
-            num_layers=4,
+        # Query embedding for target brain activity
+        self.query_embed = nn.Linear(latent_dim, latent_dim)
+        
+        # Output projection to stimulus space
+        self.output_proj = nn.Sequential(
+            nn.Linear(latent_dim, latent_dim * 2),
+            nn.ReLU(),
+            nn.Linear(latent_dim * 2, stimulus_dim)
         )
         
-        # Output decoder
-        self.decoder = nn.Linear(latent_dim, latent_dim)
-    
-    def forward(
-        self,
-        target_fmri: torch.Tensor,        # [batch, n_voxels]
-        context_fmri: torch.Tensor,       # [batch, n_context, n_voxels]
-        context_labels: torch.Tensor,     # [batch, n_context, label_dim]
-    ):
+        # Layer norm
+        self.norm1 = nn.LayerNorm(latent_dim)
+        self.norm2 = nn.LayerNorm(latent_dim)
+        
+    def forward(self, target_brain, context_brains, context_stimuli):
         """
-        Decode target fMRI using context examples.
-        
         Args:
-            target_fmri: Brain activity to decode
-            context_fmri: Support set of example fMRI patterns
-            context_labels: Labels for context examples
+            target_brain: [batch, brain_dim] - Brain activity to decode
+            context_brains: [batch, num_context, brain_dim] - Example brain patterns
+            context_stimuli: [batch, num_context, stimulus_dim] - Corresponding stimuli
+        
+        Returns:
+            predicted_stimulus: [batch, stimulus_dim]
         """
-        batch_size = target_fmri.shape[0]
+        batch_size = target_brain.size(0)
         
-        # Encode all brain patterns
-        target_latent = self.encoder(target_fmri)  # [batch, latent_dim]
-        context_latent = self.encoder(
-            context_fmri.view(-1, context_fmri.shape[-1])
-        ).view(batch_size, -1, self.latent_dim)
+        # Embed target brain activity (query)
+        query = self.query_embed(self.brain_embed(target_brain))  # [batch, latent]
+        query = query.unsqueeze(1)  # [batch, 1, latent]
         
-        # Build in-context sequence
-        # Format: [context1, context2, ..., target]
-        # Each element: concatenated brain pattern + label
-        context_seq = torch.cat([
-            context_latent,
-            context_labels
-        ], dim=-1)  # [batch, n_context, latent_dim + label_dim]
+        # Embed context examples (key and value)
+        context_kv = self.brain_embed(context_brains)  # [batch, num_ctx, latent]
+        context_stim = self.stimulus_embed(context_stimuli)  # [batch, num_ctx, latent]
         
-        # Pad target to match dimension
-        target_padded = torch.cat([
-            target_latent.unsqueeze(1),
-            torch.zeros(batch_size, 1, context_labels.shape[-1], 
-                       device=target_fmri.device)
-        ], dim=-1)  # [batch, 1, latent_dim + label_dim]
+        # Combine brain and stimulus for richer context
+        context = context_kv + context_stim  # [batch, num_ctx, latent]
         
-        # Concatenate: context + target
-        sequence = torch.cat([context_seq, target_padded], dim=1)
-        
-        # Transformer processes in-context
-        transformed = self.transformer(sequence)
-        
-        # Extract target representation
-        target_transformed = transformed[:, -1, :self.latent_dim]
-        
-        # Decode to output
-        output = self.decoder(target_transformed)
-        
-        return output
-```
-
-### 2. Meta-Training Procedure
-
-```python
-class MetaTrainer:
-    """Meta-train decoder across multiple subjects."""
-    
-    def __init__(
-        self,
-        model: InContextBrainDecoder,
-        n_way: int = 5,        # Classes per episode
-        k_shot: int = 5,       # Examples per class
-        n_query: int = 15,     # Query samples per episode
-    ):
-        self.model = model
-        self.n_way = n_way
-        self.k_shot = k_shot
-        self.n_query = n_query
-    
-    def sample_episode(self, dataset):
-        """
-        Sample a meta-learning episode.
-        
-        Structure: N-way K-shot classification
-        """
-        # Sample N classes
-        classes = np.random.choice(
-            dataset.n_classes, 
-            self.n_way, 
-            replace=False
+        # In-context cross-attention
+        attn_output, _ = self.cross_attn(
+            query=query,  # [batch, 1, latent]
+            key=context,  # [batch, num_ctx, latent]
+            value=context  # [batch, num_ctx, latent]
         )
         
-        context_fmri = []
-        context_labels = []
-        query_fmri = []
-        query_labels = []
+        # Add & norm
+        attended = self.norm1(query + attn_output)
         
-        for i, cls in enumerate(classes):
-            # Get all samples for this class
-            class_samples = dataset.get_class_samples(cls)
-            
-            # Random split: K for context, rest for query
-            indices = np.random.permutation(len(class_samples))
-            
-            # Context (support set)
-            context_indices = indices[:self.k_shot]
-            context_fmri.append(class_samples[context_indices])
-            context_labels.append(
-                torch.eye(self.n_way)[i].repeat(self.k_shot, 1)
-            )
-            
-            # Query
-            query_indices = indices[self.k_shot:self.k_shot + self.n_query]
-            query_fmri.append(class_samples[query_indices])
-            query_labels.extend([i] * len(query_indices))
+        # Project to stimulus space
+        predicted = self.output_proj(attended.squeeze(1))
         
-        return {
-            'context_fmri': torch.cat(context_fmri),  # [n_way * k_shot, n_voxels]
-            'context_labels': torch.cat(context_labels),  # [n_way * k_shot, n_way]
-            'query_fmri': torch.cat(query_fmri),  # [n_way * n_query, n_voxels]
-            'query_labels': torch.tensor(query_labels),  # [n_way * n_query]
-        }
+        return predicted
+
+
+class MetaLearningTrainer:
+    """Meta-learning trainer for in-context brain decoding"""
     
-    def meta_train_step(self, episode_batch, optimizer):
-        """Single meta-training step."""
-        losses = []
-        accuracies = []
+    def __init__(self, model, num_inner_steps=5, inner_lr=0.001):
+        self.model = model
+        self.num_inner_steps = num_inner_steps
+        self.inner_lr = inner_lr
         
-        for episode in episode_batch:
-            # Forward pass
+    def meta_train_step(self, batch_subjects):
+        """
+        Perform one meta-training step
+        
+        batch_subjects: List of subject data dictionaries
+        """
+        total_loss = 0
+        
+        for subject_data in batch_subjects:
+            # Sample support and query sets for this subject
+            support_indices = torch.randperm(len(subject_data))[:10]
+            query_indices = torch.randperm(len(subject_data))[:20]
+            
+            support_brains = subject_data['brain'][support_indices]
+            support_stimuli = subject_data['stimulus'][support_indices]
+            
+            query_brains = subject_data['brain'][query_indices]
+            query_stimuli = subject_data['stimulus'][query_indices]
+            
+            # Forward pass with context
             predictions = self.model(
-                episode['query_fmri'],
-                episode['context_fmri'].unsqueeze(0).expand(
-                    len(episode['query_fmri']), -1, -1
-                ),
-                episode['context_labels'].unsqueeze(0).expand(
-                    len(episode['query_fmri']), -1, -1
-                ),
+                target_brain=query_brains,
+                context_brains=support_brains.unsqueeze(0).expand(len(query_brains), -1, -1),
+                context_stimuli=support_stimuli.unsqueeze(0).expand(len(query_brains), -1, -1)
             )
             
             # Compute loss
-            loss = F.cross_entropy(predictions, episode['query_labels'])
-            losses.append(loss)
-            
-            # Compute accuracy
-            pred_labels = predictions.argmax(dim=-1)
-            acc = (pred_labels == episode['query_labels']).float().mean()
-            accuracies.append(acc)
+            loss = nn.MSELoss()(predictions, query_stimuli)
+            total_loss += loss
         
-        # Aggregate and update
-        total_loss = torch.stack(losses).mean()
-        
-        optimizer.zero_grad()
-        total_loss.backward()
-        optimizer.step()
-        
-        return {
-            'loss': total_loss.item(),
-            'accuracy': torch.stack(accuracies).mean().item(),
-        }
-```
-
-### 3. Subject-Agnostic Representation
-
-```python
-class SubjectInvariantEncoder(nn.Module):
-    """
-    Learn subject-invariant representations of brain activity.
+        # Meta-optimization step
+        return total_loss / len(batch_subjects)
     
-    Uses adversarial training to remove subject-specific information.
-    """
-    
-    def __init__(self, n_voxels, latent_dim, n_subjects):
-        super().__init__()
+    def evaluate_zero_shot(self, new_subject_data, num_context=5):
+        """Evaluate on completely new subject (zero-shot)"""
+        # Sample context examples from new subject
+        context_indices = torch.randperm(len(new_subject_data))[:num_context]
+        query_indices = torch.randperm(len(new_subject_data))[num_context:num_context+50]
         
-        # Main encoder
-        self.encoder = nn.Sequential(
-            nn.Linear(n_voxels, 2048),
-            nn.ReLU(),
-            nn.Dropout(0.5),
-            nn.Linear(2048, 512),
-            nn.ReLU(),
-            nn.Linear(512, latent_dim),
-        )
+        context_brains = new_subject_data['brain'][context_indices]
+        context_stimuli = new_subject_data['stimulus'][context_indices]
         
-        # Subject classifier (for adversarial training)
-        self.subject_classifier = nn.Sequential(
-            nn.Linear(latent_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, n_subjects),
-        )
-    
-    def forward(self, fmri, alpha=1.0):
-        """
-        Forward with gradient reversal.
+        query_brains = new_subject_data['brain'][query_indices]
+        query_stimuli = new_subject_data['stimulus'][query_indices]
         
-        alpha: reversal strength (higher = more subject-invariant)
-        """
-        # Encode
-        latent = self.encoder(fmri)
-        
-        # Subject prediction with gradient reversal
-        reversed_latent = GradientReversal.apply(latent, alpha)
-        subject_pred = self.subject_classifier(reversed_latent)
-        
-        return latent, subject_pred
-
-
-class GradientReversal(torch.autograd.Function):
-    """Gradient Reversal Layer for adversarial training."""
-    
-    @staticmethod
-    def forward(ctx, x, alpha):
-        ctx.alpha = alpha
-        return x.view_as(x)
-    
-    @staticmethod
-    def backward(ctx, grad_output):
-        return -ctx.alpha * grad_output, None
-```
-
-## Inference Without Training
-
-```python
-class TrainingFreeDecoder:
-    """Use meta-trained model for new subjects without training."""
-    
-    def __init__(self, meta_trained_model):
-        self.model = meta_trained_model
-    
-    def decode_with_context(
-        self,
-        target_fmri: torch.Tensor,
-        context_examples: list,  # [(fmri, label), ...]
-    ):
-        """
-        Decode new subject's fMRI using context examples.
-        
-        No gradient updates needed - in-context adaptation only.
-        """
-        # Prepare context
-        context_fmri = torch.stack([ex[0] for ex in context_examples])
-        context_labels = torch.stack([ex[1] for ex in context_examples])
-        
-        # Expand to match batch size
-        batch_size = target_fmri.shape[0]
-        context_fmri = context_fmri.unsqueeze(0).expand(batch_size, -1, -1)
-        context_labels = context_labels.unsqueeze(0).expand(batch_size, -1, -1)
-        
-        # Forward pass (no gradients!)
+        # Inference without any training
         with torch.no_grad():
-            prediction = self.model(
-                target_fmri,
-                context_fmri,
-                context_labels,
+            predictions = self.model(
+                target_brain=query_brains,
+                context_brains=context_brains.unsqueeze(0).expand(len(query_brains), -1, -1),
+                context_stimuli=context_stimuli.unsqueeze(0).expand(len(query_brains), -1, -1)
             )
         
-        return prediction
-    
-    def select_context_examples(
-        self,
-        labeled_pool: list,
-        n_context: int = 5,
-        strategy: str = 'diverse',
-    ):
-        """
-        Select informative context examples.
+        # Compute metrics
+        mse = nn.MSELoss()(predictions, query_stimuli).item()
         
-        Strategies:
-        - 'random': Random selection
-        - 'diverse': Maximize diversity in latent space
-        - 'prototypical': Select examples closest to class centers
-        """
-        if strategy == 'random':
-            return np.random.choice(labeled_pool, n_context, replace=False)
-        
-        elif strategy == 'diverse':
-            # Greedy diversity maximization
-            selected = [labeled_pool[0]]
-            
-            for _ in range(n_context - 1):
-                max_min_dist = -1
-                best_idx = 0
-                
-                for i, candidate in enumerate(labeled_pool):
-                    if candidate in selected:
-                        continue
-                    
-                    # Compute minimum distance to selected
-                    min_dist = min(
-                        torch.dist(candidate[0], s[0]).item()
-                        for s in selected
-                    )
-                    
-                    if min_dist > max_min_dist:
-                        max_min_dist = min_dist
-                        best_idx = i
-                
-                selected.append(labeled_pool[best_idx])
-            
-            return selected
+        return mse, predictions
+
+# Usage Example
+# Initialize model
+model = InContextBrainDecoder(brain_dim=1024, latent_dim=512)
+
+# Meta-training
+trainer = MetaLearningTrainer(model)
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+
+for epoch in range(num_epochs):
+    for batch in multi_subject_dataloader:
+        optimizer.zero_grad()
+        loss = trainer.meta_train_step(batch)
+        loss.backward()
+        optimizer.step()
+
+# Zero-shot evaluation on new subject
+new_subject_data = load_new_subject()  # Never seen during training
+mse, predictions = trainer.evaluate_zero_shot(new_subject_data, num_context=5)
+print(f"Zero-shot MSE: {mse:.4f}")
 ```
 
-## Cross-Subject Transfer
+## Advanced: Brain-DiT Integration
 
 ```python
-def evaluate_cross_subject(
-    model: InContextBrainDecoder,
-    source_datasets: list,  # Multiple subjects for meta-training
-    target_dataset,         # New subject for testing
-    n_context_options: list = [1, 5, 10, 20],
-):
+class BrainDiTInContextAdapter:
     """
-    Evaluate training-free cross-subject decoding.
+    Adapts Brain-DiT for in-context learning
     """
-    results = {}
-    
-    # Meta-train on source subjects
-    trainer = MetaTrainer(model)
-    for epoch in range(100):
-        for _ in range(100):  # Episodes per epoch
-            # Sample from all source subjects
-            episode = trainer.sample_episode(
-                np.random.choice(source_datasets)
-            )
-            trainer.meta_train_step([episode], optimizer)
-    
-    # Evaluate on target subject (no training!)
-    for n_context in n_context_options:
-        accuracies = []
+    def __init__(self, brain_dit_model):
+        self.brain_dit = brain_dit_model
+        self.context_projector = nn.Linear(brain_dit_model.hidden_dim, brain_dit_model.hidden_dim)
         
-        for test_sample in target_dataset.test_set:
-            # Sample context examples from target's small labeled set
-            context = np.random.choice(
-                target_dataset.labeled_pool,
-                n_context,
-                replace=False
-            )
-            
-            # Decode without any gradient updates
-            prediction = model.decode_with_context(
-                test_sample['fmri'],
-                context,
-            )
-            
-            accuracies.append(
-                prediction.argmax() == test_sample['label']
-            )
+    def encode_with_context(self, brain_activity, context_examples):
+        """
+        brain_activity: [batch, brain_dim]
+        context_examples: [batch, num_context, brain_dim + stimulus_dim]
+        """
+        # Encode context
+        context_brain = context_examples[..., :brain_dim]
+        context_stim = context_examples[..., brain_dim:]
         
-        results[f'{n_context}-shot'] = np.mean(accuracies)
+        # Get DiT embeddings
+        context_embeds = self.brain_dit.encode(context_brain)
+        context_stim_embeds = self.brain_dit.encode_stimulus(context_stim)
+        
+        # Combine via attention
+        adapted_embeds = self.cross_attention(
+            query=self.brain_dit.encode(brain_activity),
+            key=context_embeds + context_stim_embeds,
+            value=context_embeds + context_stim_embeds
+        )
+        
+        return adapted_embeds
     
-    return results
+    def decode_stimulus(self, brain_activity, context_examples):
+        """Training-free stimulus decoding"""
+        adapted = self.encode_with_context(brain_activity, context_examples)
+        stimulus = self.brain_dit.generate(adapted)
+        return stimulus
 ```
-
-## Performance
-
-| Dataset | 1-shot | 5-shot | 10-shot | 20-shot |
-|---------|--------|--------|---------|---------|
-| HCP Task | 45.2% | 62.3% | 71.8% | 78.5% |
-| HCP Rest | 38.7% | 55.4% | 64.2% | 72.1% |
-| NeuroVault | 42.1% | 58.9% | 68.4% | 75.3% |
 
 ## Applications
+- Zero-calibration brain-computer interfaces
+- Clinical deployment of brain decoders
+- Rapid subject adaptation
+- Privacy-preserving BCI (no subject data stored)
+- Population-level brain models
 
-1. **Brain-computer interfaces**: Rapid subject adaptation
-2. **Clinical diagnosis**: Transfer to new patients
-3. **Multi-site studies**: Handle scanner differences
-4. **Rare conditions**: Learn from limited examples
+## Pitfalls
+- **Context size**: Too few context examples hurt performance; too many increase compute
+- **Subject variability**: Extreme anatomical/functional differences may still require fine-tuning
+- **Stimulus diversity**: Meta-learning requires diverse training stimuli
+- **Computational cost**: Meta-training is expensive (many subjects, large model)
+- **Inference latency**: Cross-attention over context adds overhead
 
-## Advantages
-
-| Aspect | Traditional | Meta-learning In-Context |
-|--------|-------------|-------------------------|
-| Subject-specific data | Hours | Minutes |
-| Training time | Hours | Zero (inference only) |
-| Cross-subject transfer | Poor | Strong |
-| New subject onboarding | Slow | Immediate |
-
-## References
-
-- Nan, M., Yu, M., Mai, W., et al. (2026). Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding. arXiv:2604.08537
-- Finn et al. (2017). Model-Agnostic Meta-Learning
-- Vinyals et al. (2016). Matching Networks for One-Shot Learning
-
-## Activation Keywords
-
-- meta-learning brain decoding
-- cross-subject fMRI
-- in-context learning neuroimaging
-- training-free BCI
-- few-shot brain decoding
-- subject-independent decoder
+## Related Skills
+- brain-dit-fmri-foundation-model
+- eeg-foundation-model-adapters
+- in-context-brain-decoding

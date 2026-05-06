@@ -24,23 +24,6 @@ Discover unexpected research connections across disciplines using knowledge grap
 - `read`: Load skill references
 - `write`: Save analysis results
 
-## Instructions for Agents
-
-### Step 1: Run PageRank Analysis
-Execute `kg_tool pagerank kg.db` to identify the most influential research entities.
-
-### Step 2: Detect Communities
-Run `kg_tool louvain kg.db` to find research clusters and communities.
-
-### Step 3: Find Cross-Domain Connections
-Use `kg_tool similar kg.db <entity_id> 5` to discover high-similarity connections across domains.
-
-### Step 4: Analyze Patterns
-Compare results from different algorithms to identify interdisciplinary bridges.
-
-### Step 5: Report Findings
-Summarize unexpected connections and suggest interdisciplinary research opportunities.
-
 ## Quick Workflow
 
 ### 1. Identify Important Nodes
@@ -67,7 +50,7 @@ Finds entities with high vector similarity (>0.8 = strong connection).
 - Vector similarity: Cross-domain bridges
 
 ### 5. Extract Insights
-Document findings in memory file.
+Document findings in `memory/YYYY-MM-DD.md`.
 
 ## When to Use
 
@@ -82,13 +65,18 @@ Document findings in memory file.
 - Neuroscience-quantum bridges
 - AI-physics intersections
 
+## References
+
+- **kg_tool usage**: See [references/kg-tool-guide.md](references/kg-tool-guide.md)
+- **Analysis patterns**: See [references/analysis-patterns.md](references/analysis-patterns.md)
+
 ## Best Practices
 
 1. **Start with PageRank** - Find influential nodes first
 2. **Check multiple entities** - Don't rely on single similarity search
 3. **Threshold >0.8** - Strong connections typically have >0.8 similarity
 4. **Cross-reference communities** - Compare Louvain results with similarity
-5. **Document patterns** - Always save findings
+5. **Document patterns** - Always save to memory/
 
 ## Examples
 
@@ -113,8 +101,21 @@ kg_tool similar kg.db 9 5
 # Insight: Quantum cryptography linked to neuroscience
 ```
 
+## Integration with Research Workflow
+
+This skill integrates with:
+- `arxiv-search`: Find papers to add to KG
+- `skill-extractor`: Extract patterns from discoveries
+- `weekly_topics.py`: Daily research automation
+
 ## Limitations
 
 - Requires kg.db with vectors (640+ embeddings)
 - Similarity search needs entity with existing vector
 - Database may be locked during concurrent writes
+
+## Notes
+
+- Part of hourly research automation workflow
+- Works best with sqlite-knowledge-graph
+- Use proxy for arXiv searches: http://127.0.0.1:7890

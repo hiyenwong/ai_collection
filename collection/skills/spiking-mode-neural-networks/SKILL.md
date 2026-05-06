@@ -524,16 +524,6 @@ if __name__ == "__main__":
 - `delay-adaptive-snn-classifier` - 延迟自适应 SNN
 - `multi-plasticity-snn-training` - 多重可塑性 SNN 训练
 
-
-## Latest Paper Reference
-
-- **Title:** Working Memory in a Recurrent Spiking Neural Networks With Heterogeneous Synaptic Delays
-- **arXiv:** 2604.14096
-- **Published:** 2026-04-15
-- **Categories:** q-bio.NC
-- **Authors:** Laurent U Perrinet
-- **PDF:** https://arxiv.org/pdf/2604.14096
-
 ## References
 
 - arXiv:2310.14621 - Spiking mode-based neural networks

@@ -1,148 +1,170 @@
 ---
 name: neural-critical-dynamics-theory
 version: v1.0.0
-created: 2026-04-19
-category: ai_collection
-description: Critical dynamics in neural networks - analyzing phase transitions, criticality, and dynamical regimes for optimal information processing. Based on April 2026 research.
-tags: [criticality, phase-transition, neural-dynamics, information-processing, chaos]
+last_updated: 2026-04-19
+description: Theory of critical dynamics and information processing in neural networks. Neural systems at critical points exhibit optimal information processing, maximal dynamic range, and power-law distributed avalanches. Provides methods for identifying, analyzing, and exploiting critical regimes in both biological and artificial neural networks. Applicable to critical brain hypothesis, neural avalanche analysis, optimal computation regimes. Trigger: neural criticality, critical dynamics, neural avalanches, power law neural activity, edge of chaos neural networks
 ---
 
-# Neural Critical Dynamics Theory
+# Critical Dynamics and Information Processing in Neural Networks
 
-Critical dynamics theory examines how neural networks operate at the boundary between order and chaos, where computational capacity is maximized. This framework connects statistical physics, dynamical systems, and neural computation.
+## Description
 
-## Activation Keywords
+A comprehensive theoretical framework for understanding how neural networks operating at critical points achieve optimal information processing capabilities. Critical dynamics are characterized by power-law distributed neural avalanches, maximal dynamic range, long-range correlations, and optimal computational capacity.
 
-- critical dynamics
-- phase transition neural
-- edge of chaos
-- neural criticality
-- dynamical regime
-- order chaos transition
-- neural phase transition
-- critical brain hypothesis
+Based on: "Critical Dynamics and Information Processing in Neural Networks" (arXiv:2506.20978, June 2025)
 
-## Core Concepts
+## Critical Point Theory
 
-### 1. The Criticality Hypothesis
+### What is Criticality?
 
-Neural systems operating near critical points exhibit:
-- **Maximal dynamic range**: Ability to respond to wide range of inputs
-- **Optimal information transmission**: Balance between stability and flexibility
-- **Long-range correlations**: Scale-free activity patterns
-- **Computational richness**: Rich repertoire of dynamical behaviors
+A neural network is at a critical point when it sits at the phase transition between ordered and chaotic regimes:
 
-### 2. Phase Transition Indicators
+- **Ordered regime**: Activity quickly dies out, limited computational capacity
+- **Chaotic regime**: Activity explodes, unstable and unpredictable
+- **Critical regime**: Activity persists with rich dynamics, optimal for computation
 
-| Indicator | Ordered Phase | Critical Point | Chaotic Phase |
-|-----------|--------------|----------------|---------------|
-| Lyapunov exponent | < 0 | ≈ 0 | > 0 |
-| Correlation length | Short | Infinite (diverges) | Short |
-| Avalanche distribution | Exponential | Power-law | Exponential |
-| Information capacity | Low | Maximal | Low (noisy) |
-| Sensitivity | Low | High | Too high |
-
-### 3. Measuring Criticality in Neural Networks
+### Identifying Critical Dynamics
 
 ```python
-def compute_lyapunov_spectrum(network, trajectory, epsilon=1e-5):
-    """Compute largest Lyapunov exponent for neural dynamics."""
-    # Perturb initial state slightly
-    x1 = network.initial_state
-    x2 = x1 + epsilon
+class CriticalityAnalyzer:
+    """Analyze whether a neural system operates at criticality."""
     
-    divergence_rates = []
-    for t in range(num_steps):
-        x1 = network.step(x1)
-        x2 = network.step(x2)
-        distance = np.linalg.norm(x2 - x1)
-        divergence_rates.append(np.log(distance / epsilon) / dt)
+    def __init__(self):
+        pass
     
-    # Largest Lyapunov exponent
-    lambda_max = np.mean(divergence_rates[-num_steps//2:])
-    return lambda_max
-
-def detect_power_law_avalanches(activity, threshold=0.1):
-    """Detect neuronal avalanches and test for power-law distribution."""
-    avalanches = segment_into_avalanches(activity, threshold)
-    sizes = [len(av) for av in avalanches]
+    def neural_avalanche_analysis(self, spike_train):
+        """
+        Detect neural avalanches and test for power-law distribution.
+        
+        An avalanche is a cascade of activity between periods of silence.
+        """
+        avalanches = self._detect_avalanches(spike_train)
+        
+        # Avalanche size distribution
+        sizes = [len(avalanche) for avalanche in avalanches]
+        
+        # Fit power law: P(s) ~ s^(-tau)
+        tau, log_likelihood, KS_stat = self._fit_power_law(sizes)
+        
+        return {
+            "power_law_exponent": tau,
+            "goodness_of_fit": KS_stat,
+            "is_critical": KS_stat < 0.1  # Critical if power law fits well
+        }
     
-    # Fit power law: P(s) ~ s^(-alpha)
-    alpha, log_likelihood = fit_power_law(sizes)
+    def branching_parameter(self, activity):
+        """
+        Compute the branching parameter sigma.
+        
+        sigma = 1: critical
+        sigma < 1: subcritical (ordered)
+        sigma > 1: supercritical (chaotic)
+        """
+        # Ratio of activity in consecutive time bins
+        sigma = np.mean(activity[1:]) / np.mean(activity[:-1])
+        return sigma
     
-    # Test goodness of fit
-    p_value = ks_test_power_law(sizes, alpha)
-    
-    return {
-        'exponent': alpha,
-        'is_power_law': p_value > 0.05,
-        'sizes': sizes
-    }
+    def susceptibility(self, network, perturbation_size=0.01):
+        """
+        Measure network response to small perturbations.
+        At criticality, susceptibility diverges.
+        """
+        response = self._measure_response(network, perturbation_size)
+        return response / perturbation_size
 ```
 
-### 4. Critical Dynamics in Different Network Types
+## Information Processing at Criticality
 
-**Recurrent Neural Networks**:
-- Initialize near edge of chaos (spectral radius ≈ 1.0)
-- Gated units (LSTM/GRU) shift critical boundaries
-- Reservoir computing explicitly uses critical dynamics
+### Key Advantages
 
-**Spiking Neural Networks**:
-- Branching parameter σ ≈ 1 indicates criticality
-- Synaptic plasticity can self-organize to critical point
-- Homeostatic mechanisms maintain critical regime
+1. **Maximal dynamic range**: Response to stimuli spans the widest range
+2. **Optimal information transmission**: Mutual information is maximized
+3. **Long-range correlations**: Activity patterns span multiple scales
+4. **Computational richness**: Largest repertoire of distinct activity patterns
+5. **Balanced stability-flexibility**: Stable enough to store, flexible enough to compute
 
-**Deep Feedforward Networks**:
-- Signal propagation depth depends on initialization
-- Critical initialization enables training of very deep networks
-- Mean field theory predicts phase boundaries
+### Measuring Computational Capacity
 
-### 5. Practical Applications
+```python
+def computational_capacity(network, input_data):
+    """
+    Quantify the computational capacity of a network.
+    Higher at criticality.
+    """
+    # Count distinct activity patterns in response to different inputs
+    patterns = set()
+    for inp in input_data:
+        activity = network.run(inp)
+        patterns.add(hash_activity(activity))
+    
+    return len(patterns) / len(input_data)  # Pattern diversity ratio
 
-1. **Network Initialization**: Choose parameters near critical regime
-2. **Regularization**: Push network toward criticality for better generalization
-3. **Architecture Search**: Criticality as architecture selection criterion
-4. **Interpretability**: Critical networks have interpretable dynamics
+def memory_capacity(network, max_delay=100):
+    """
+    Measure how far back the network can remember inputs.
+    """
+    capacities = []
+    for delay in range(1, max_delay):
+        # Test if network state at time t contains info about input at t-delay
+        cap = mutual_information(network.states, network.inputs[:, :-delay])
+        capacities.append(cap)
+    return np.sum(capacities)
+```
 
-## Related Skills
+## Tuning Networks to Criticality
 
-- `griffiths-phase-brain-criticality` - Griffiths phase in brain
-- `neural-dynamics-universal-translator` - Dynamics translation
-- `spiking-oscillation-mapping` - SNN oscillation analysis
-- `energy-based-neurocomputation` - Energy landscape analysis
+### Self-Organized Criticality
 
-## Pitfalls
+```python
+class SelfOrganizingCriticalNetwork:
+    """
+    Network that self-organizes to critical point without parameter tuning.
+    """
+    
+    def __init__(self, n_neurons):
+        self.weights = torch.randn(n_neurons, n_neurons) * 0.1
+        self.threshold = 1.0
+    
+    def homeostatic_plasticity(self, activity, target_rate=0.1):
+        """
+        Adjust thresholds to maintain target firing rate.
+        Drives network toward criticality.
+        """
+        error = activity.mean() - target_rate
+        self.threshold += learning_rate * error
+    
+    def synaptic_scaling(self, activity, target_activity=1.0):
+        """
+        Scale synaptic weights to maintain target activity level.
+        """
+        scale = target_activity / (activity.std() + 1e-8)
+        self.weights *= scale
+```
 
-1. **Finite-size effects**: Power laws are approximate in finite networks
-2. **Multiple critical points**: Different observables may peak at different parameter values
-3. **Temporal scale dependence**: Criticality depends on observation timescale
-4. **Measurement artifacts**: Binning and thresholding affect avalanche detection
+### Branching Process Parameter Control
 
-## Key Papers (April 2026)
+```python
+def tune_to_criticality(network, target_sigma=1.0, steps=1000):
+    """
+    Adjust network parameters to achieve critical dynamics (sigma=1).
+    """
+    for step in range(steps):
+        # Run network
+        activity = network.run(input_data)
+        
+        # Measure branching parameter
+        sigma = analyzer.branching_parameter(activity)
+        
+        # Adjust gain to move toward criticality
+        if sigma > target_sigma:
+            network.gain *= 0.99  # Reduce gain
+        else:
+            network.gain *= 1.01  # Increase gain
+```
 
-- "Learning Neuron Dynamics: Deep Neural Networks..." - Deep learning for dynamical systems
-- "Connectivity distributions in large neural populations" - Structural determinants of dynamics
-- Survey on computational neuroscience and critical dynamics
+## Applications
 
-
-## Tools Used
-
-- `read` - 读取技能文档
-- `write` - 创建输出
-- `exec` - 执行相关命令
-
-
-## Instructions for Agents
-
-1. 理解技能的核心方法论
-2. 根据用户问题提供针对性回答
-3. 遵循最佳实践
-
-
-## Examples
-
-### Example 1: 基本查询
-
-**User:** 请解释 Neural Critical Dynamics Theory
-
-**Agent:** Neural Critical Dynamics Theory 是关于...
+- **Brain-inspired AI**: Design networks with biological critical dynamics
+- **Neuromorphic computing**: Exploit critical regimes for efficient computation
+- **Neuroscience**: Test critical brain hypothesis
+- **Reservoir computing**: Optimize reservoirs at criticality

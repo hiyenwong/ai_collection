@@ -1,292 +1,145 @@
 ---
 name: brain-digital-twins-execution-semantics
-description: "Brain digital twins execution semantics framework bridging neuroscience models and neuromorphic computing. Provides methodology for creating executable digital twins of brain networks with formal execution semantics, supporting mechanistic understanding and clinical prediction. Activation: brain digital twin, execution semantics, neuro-neuromorphic, brain modeling, computational neuroscience."
+description: "Brain digital twins execution semantics framework bridging computational modeling and neurobiological dynamics. Covers physically constrained executability, end-to-end workflow preservation, and neuromorphic implementation. Activation: brain digital twins, execution semantics, neuro-neuromorphic, computational neuroscience."
 ---
 
 # Brain Digital Twins: Execution Semantics and Neuro-Neuromorphic Systems
 
-## Description
+> Survey introducing physically constrained executability as a unifying perspective for brain digital twins across data pipelines, model classes, temporal scales, and computing platforms.
 
-Framework for creating executable digital twins of brain networks with formal execution semantics. This methodology bridges neuroscience models and neuromorphic computing, enabling faithful computational representations of brains as dynamical systems for mechanistic understanding and clinical intervention prediction.
+## Metadata
+- **Source**: arXiv:2604.13574
+- **Published**: 2026-04-15
+- **Categories**: cs.CE, cs.NE
 
-Based on research from arXiv:2604.13574v1 - "From Brain Models to Executable Digital Twins: Execution Semantics and Neuro-Neuromorphic Systems" by Alexandre Muzy.
+## Core Methodology
 
-## Activation Keywords
+### Key Innovation
+Brain digital twins require faithful, individualized computational representations of brains as dynamical systems. This work introduces **physically constrained executability** - a unifying framework for comparing approaches at the level of execution state persistence, event permissions (simulation, measurement, actuation), and temporal/causal coupling to neurobiological dynamics.
 
-- brain digital twin
-- execution semantics
-- neuro-neuromorphic
-- brain modeling
-- computational neuroscience
-- neural simulation
-- brain dynamics
-- executable brain model
-- 脑数字孪生
-- 神经执行语义
+### Technical Framework
 
-## Tools Used
+1. **Execution State Persistence**
+   - State must remain persistent across the end-to-end workflow
+   - Transitions between data pipelines, models, and platforms must preserve execution semantics
 
-- `write`: Create execution semantics specifications
-- `read`: Load existing brain models
-- `exec`: Run simulation frameworks
-- `patch`: Modify model configurations
+2. **Event Permissibility**
+   - Define which events can update the execution state
+   - Simulation, measurement, and actuation have different constraints
+   - Temporal coupling strength varies by event type
 
-## Core Concepts
+3. **Cross-Scale Integration**
+   - Bridge multiple temporal scales: from milliseconds (spiking) to days (plasticity)
+   - Connect model classes: from detailed biophysical to abstract population models
+   - Unify computing platforms: from CPU/GPU to neuromorphic hardware
 
-### 1. Brain Digital Twin Definition
+4. **Physically Constrained Executability**
+   - Ensures models respect biological constraints at runtime
+   - Prevents physically implausible state transitions
+   - Maintains causality in closed-loop scenarios
 
-A brain digital twin is a faithful, individualized computational representation of a brain as a dynamical system that:
-- Captures mechanistic properties of neural dynamics
-- Enables prediction of responses to interventions
-- Supports clinical decision-making
-- Maintains formal execution semantics for reproducibility
+## Implementation Guide
 
-### 2. Execution Semantics Framework
+### Prerequisites
+- Understanding of dynamical systems and differential equations
+- Familiarity with neural mass models, spiking networks, or mean-field approaches
+- Access to brain imaging data (MRI, fMRI, EEG)
 
-The execution semantics provides:
-- **Formal specification**: Mathematical description of state transitions
-- **Operational semantics**: Step-by-step execution rules
-- **Time model**: Discrete or continuous time evolution
-- **Event handling**: Spikes, synaptic transmissions, modulatory signals
-- **State management**: Neuron states, synaptic weights, network topology
+### Step-by-Step
 
-### 3. Neuro-Neuromorphic Bridge
-
-Connection between neuroscience models and neuromorphic hardware:
-- **Model translation**: Convert biological models to hardware-compatible formats
-- **Fidelity preservation**: Maintain dynamical properties during translation
-- **Efficiency optimization**: Leverage neuromorphic hardware acceleration
-- **Validation**: Verify hardware implementation matches model behavior
-
-## Implementation Methodology
-
-### Step 1: Model Specification
-
-Define the brain model components:
+1. **Define Execution State**
 
 ```python
-# Brain digital twin specification template
-brain_model = {
-    "neurons": {
-        "count": N,
-        "types": ["excitatory", "inhibitory"],
-        "dynamics": "leaky_integrate_fire",  # or other neuron model
-        "parameters": {
-            "tau_m": 20.0,      # membrane time constant (ms)
-            "v_rest": -70.0,    # resting potential (mV)
-            "v_thresh": -55.0,  # threshold potential (mV)
-            "v_reset": -70.0,   # reset potential (mV)
-        }
-    },
-    "synapses": {
-        "connectivity": "random",  # or "small_world", "scale_free"
-        "density": 0.1,
-        "weights": {
-            "distribution": "normal",
-            "mean": 0.5,
-            "std": 0.1
-        },
-        "delays": {
-            "distribution": "uniform",
-            "min": 1.0,
-            "max": 5.0
-        }
-    },
-    "execution": {
-        "time_step": 0.1,      # simulation time step (ms)
-        "duration": 1000.0,    # total simulation time (ms)
-        "integration_method": "euler"  # or "rk4"
-    }
+# Example: State representation
+state = {
+    'neural_activity': np.array([...]),  # Current firing rates
+    'synaptic_weights': np.array([...]),  # Connectivity
+    'time': t,  # Current simulation time
+    'events': queue  # Pending events
 }
 ```
 
-### Step 2: Execution Semantics Definition
-
-Define formal execution rules:
+2. **Implement Event Loop**
 
 ```python
-# Execution semantics for spiking neural network
+while running:
+    # 1. Check for external events
+    event = check_sensors()  # Measurement
+    
+    # 2. Update state based on permitted events
+    if event.type == 'measurement':
+        state = update_with_measurement(state, event)
+    elif event.type == 'simulation_step':
+        state = integrate_dynamics(state, dt)
+    
+    # 3. Apply physical constraints
+    state = apply_constraints(state)
+    
+    # 4. Actuate if needed
+    if should_actuate(state):
+        send_control_signal(state)
+```
+
+3. **Cross-Platform Portability**
+   - Abstract execution semantics from hardware-specific implementations
+   - Use standardized interfaces (e.g., PyNN, NESTML)
+   - Verify equivalent behavior across platforms
+
+### Code Example
+
+```python
 class BrainDigitalTwin:
-    def __init__(self, specification):
-        self.neurons = self.initialize_neurons(specification)
-        self.synapses = self.initialize_synapses(specification)
-        self.time = 0.0
-        self.spike_history = []
+    """
+    Executable brain digital twin with physically constrained semantics
+    """
+    def __init__(self, model_params, constraints):
+        self.state = self.initialize_state(model_params)
+        self.constraints = constraints  # Physical/biological limits
+        self.event_queue = PriorityQueue()
     
     def step(self, dt):
-        """Execute one time step with formal semantics."""
-        # 1. Update neuron states
-        for neuron in self.neurons:
-            neuron.update_membrane_potential(dt)
+        """Execute one timestep with event processing"""
+        # Process pending events
+        while self.event_queue.peek().time <= self.state.time:
+            event = self.event_queue.pop()
+            self.state = self.handle_event(event)
         
-        # 2. Detect spikes
-        spikes = [n for n in self.neurons if n.v >= n.v_thresh]
+        # Integrate dynamics
+        self.state = self.integrate(self.state, dt)
         
-        # 3. Propagate spikes through synapses
-        for spike in spikes:
-            targets = self.synapses.get_targets(spike.id)
-            for target in targets:
-                delay = self.synapses.get_delay(spike.id, target)
-                weight = self.synapses.get_weight(spike.id, target)
-                self.schedule_spike(target, weight, delay)
+        # Apply constraints
+        self.state = self.apply_constraints(self.state)
         
-        # 4. Reset spiking neurons
-        for spike in spikes:
-            spike.reset()
-        
-        # 5. Deliver scheduled spikes
-        self.deliver_scheduled_spikes()
-        
-        self.time += dt
-        return self.get_state()
+        return self.state
     
-    def get_state(self):
-        """Return current system state for validation."""
-        return {
-            "time": self.time,
-            "membrane_potentials": [n.v for n in self.neurons],
-            "recent_spikes": self.spike_history[-100:]
-        }
-```
-
-### Step 3: Neuromorphic Translation
-
-Translate to neuromorphic hardware:
-
-```python
-# Translation to neuromorphic hardware (e.g., Loihi, SpiNNaker)
-def translate_to_neuromorphic(brain_model, target_platform="loihi"):
-    """Translate brain model to neuromorphic hardware configuration."""
-    
-    if target_platform == "loihi":
-        config = {
-            "neuron_model": "CUBA_LIF",  # Current-based LIF
-            "compartments": brain_model["neurons"]["count"],
-            "synaptic_traces": True,
-            "learning_rule": None  # or "STDPLearn" for plasticity
-        }
-    elif target_platform == "spinnaker":
-        config = {
-            "neuron_model": "IF_curr_exp",
-            "timestep": brain_model["execution"]["time_step"],
-            "runtime": brain_model["execution"]["duration"]
-        }
-    
-    return config
-```
-
-### Step 4: Validation and Calibration
-
-Validate the digital twin against biological data:
-
-```python
-def validate_digital_twin(simulation_results, biological_data):
-    """Validate simulation against experimental data."""
-    
-    metrics = {
-        "firing_rates": compare_firing_rates(
-            simulation_results["spike_times"],
-            biological_data["spike_times"]
-        ),
-        "correlations": compare_correlation_structure(
-            simulation_results["spike_trains"],
-            biological_data["spike_trains"]
-        ),
-        "synchrony": compare_synchrony_measures(
-            simulation_results["population_activity"],
-            biological_data["population_activity"]
+    def apply_constraints(self, state):
+        """Ensure physically plausible state"""
+        # Enforce firing rate bounds
+        state.rates = np.clip(state.rates, 0, self.constraints['max_rate'])
+        
+        # Maintain synaptic weight limits
+        state.weights = np.clip(
+            state.weights,
+            self.constraints['min_weight'],
+            self.constraints['max_weight']
         )
-    }
-    
-    return metrics
+        
+        return state
 ```
 
-## Usage Patterns
+## Applications
+- **Clinical Prediction**: Forecasting intervention outcomes in neurological disorders
+- **Closed-Loop Neurostimulation**: Real-time adaptive brain-computer interfaces
+- **Drug Discovery**: Virtual testing of neuropharmacological interventions
+- **Neuromorphic Computing**: Translating brain models to efficient hardware implementations
 
-### Pattern 1: Create Brain Digital Twin from Specification
-
-```python
-# Load patient-specific brain model
-specification = load_brain_model("patient_001.json")
-
-# Create executable digital twin
-twin = BrainDigitalTwin(specification)
-
-# Run simulation
-results = twin.simulate(duration=1000.0, dt=0.1)
-
-# Analyze results
-analysis = analyze_dynamics(results)
-```
-
-### Pattern 2: Clinical Prediction
-
-```python
-# Model therapeutic intervention
-intervention = {
-    "type": "stimulation",
-    "target": "prefrontal_cortex",
-    "frequency": 10.0,  # Hz
-    "amplitude": 1.5    # mA
-}
-
-# Predict response
-prediction = twin.predict_response(intervention)
-```
-
-### Pattern 3: Neuromorphic Deployment
-
-```python
-# Translate to neuromorphic hardware
-hardware_config = translate_to_neuromorphic(specification, "loihi")
-
-# Deploy and run
-deploy_to_neuromorphic(hardware_config)
-results = run_neuromorphic_simulation(duration=1000.0)
-```
-
-## Error Handling
-
-### Simulation Instability
-
-If simulation becomes unstable:
-1. Reduce time step (dt)
-2. Check for unrealistic parameter values
-3. Verify synaptic weights are within stable range
-4. Consider using exponential Euler integration
-
-### Translation Errors
-
-If neuromorphic translation fails:
-1. Verify neuron model compatibility
-2. Check synaptic delay ranges
-3. Ensure weight precision within hardware limits
-4. Validate network size against hardware capacity
-
-### Validation Failures
-
-If validation against biological data fails:
-1. Review model parameter calibration
-2. Check for missing biological features
-3. Consider additional neuron types
-4. Validate input stimuli match experimental conditions
-
-## References
-
-- Muzy, A. (2026). From Brain Models to Executable Digital Twins: Execution Semantics and Neuro-Neuromorphic Systems. arXiv:2604.13574v1.
-- Brette, R., & Gerstner, W. (2005). Adaptive exponential integrate-and-fire model. Journal of Neurophysiology.
-- Davies, M., et al. (2018). Loihi: A neuromorphic manycore processor with on-chip learning. IEEE Micro.
+## Pitfalls
+- **State Synchronization**: Keeping digital and biological states aligned requires careful handling of measurement noise and model drift
+- **Temporal Scale Mismatch**: Fast spiking dynamics vs. slow plasticity create numerical stability challenges
+- **Platform Dependencies**: Execution semantics may not perfectly translate across CPU/GPU/neuromorphic platforms
+- **Validation Gap**: Without ground truth, verifying "correct" execution semantics is difficult
 
 ## Related Skills
-
-- `spiking-neural-network-analysis`: For SNN-specific analysis
-- `neural-dynamics-universal-translator`: For cross-model translation
-- `neuroscience`: General neuroscience research methods
-
-## Implementation Notes
-
-- Execution semantics must be formally specified for reproducibility
-- Time step selection balances accuracy and computational cost
-- Neuromorphic translation requires platform-specific knowledge
-- Validation requires access to appropriate biological data
-- Consider using established frameworks like Brian2, NEST, or PyNN
+- brain-dit-fmri-foundation-model
+- brain-foundation-model-inversion
+- neurocybernetic-large-scale-neuroscience

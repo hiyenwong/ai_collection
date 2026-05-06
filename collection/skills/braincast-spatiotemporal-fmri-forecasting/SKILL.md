@@ -1,123 +1,223 @@
 ---
 name: braincast-spatiotemporal-fmri-forecasting
-version: 1.0.0
-created: 2026-04-24
-source: arXiv:2603.13361v1
-categories: [cs.CV, cs.AI, stat.ML]
-status: active
-trigger: fmri, forecasting, brain network, time series, spatio-temporal, HCP, functional connectivity, ROI, whole-brain
-description: Skill for braincast spatiotemporal fmri forecasting
+description: "BrainCast methodology for spatio-temporal forecasting of whole-brain fMRI time series. Uses dual-branch architecture with ST-CausalConv for spatial decoding and ST-Mixer for temporal prediction. Activation: fMRI forecasting, brain time series prediction, spatio-temporal brain modeling."
 ---
 
+# BrainCast: Spatio-Temporal Forecasting for Whole-Brain fMRI
 
-# BrainCast: Spatio-Temporal Forecasting Model for Whole-Brain fMRI Time Series Prediction
+> BrainCast is a novel spatio-temporal forecasting framework specifically designed for whole-brain fMRI time series prediction, addressing the challenge of short clinical scan durations.
 
-**arXiv**: [2603.13361v1](https://arxiv.org/abs/2603.13361v1)
-**Authors**: Yunlong Gao, Jinbo Yang, Li Xiao, Haiye Huo, Yang Ji et al. (8 authors)
-**Published**: 2026-03-09
-**Categories**: cs.CV, cs.AI, stat.ML
+## Metadata
+- **Source**: arXiv:2603.13361v1
+- **Authors**: Yunlong Gao, Jinbo Yang, Li Xiao, et al.
+- **Published**: 2026-03-09
+- **Category**: Computational Neuroscience, fMRI Analysis, Time Series Forecasting
 
-## Overview
+## Core Methodology
 
-Functional magnetic resonance imaging (fMRI) enables noninvasive investigation of brain function, while short clinical scan durations, arising from human and non-human factors, usually lead to reduced data quality and limited statistical power for neuroimaging research. In this paper, we propose BrainCast, a novel spatio-temporal forecasting framework specifically tailored for whole-brain fMRI time series forecasting, to extend informative fMRI time series without additional data acquisition. It formulates fMRI time series forecasting as a multivariate time series prediction task and jointly models temporal dynamics within regions of interest (ROIs) and spatial interactions across ROIs. Specifically, BrainCast integrates a Spatial Interaction Awareness module to characterize inter-ROI dependencies via embedding every ROI time series as a token, a Temporal Feature Refinement module to capture intrinsic neural dynamics within each ROI by enhancing both low- and high-energy temporal components of fMRI time series at the ROI level, and a Spatio-temporal Pattern Alignment module to combine spatial and temporal representations for producing informative whole-brain features. Experimental results on resting-state and task fMRI datasets from the Human Connectome Project demonstrate the superiority of BrainCast over state-of-the-art time series forecasting baselines. Moreover, fMRI time series extended by BrainCast improve downstream cognitive ability prediction, highlighting the clinical and neuroscientific impact brought by whole-brain fMRI time series forecasting in scenarios with restricted scan durations.
+### Problem Addressed
+Clinical fMRI scans often have short durations due to human factors (patient comfort) and non-human factors (scanner availability), leading to:
+- Reduced data quality
+- Limited statistical power
+- Incomplete brain state characterization
 
-## Methodology
+### Key Innovation
+BrainCast introduces a **dual-branch architecture** that decouples spatial and temporal processing:
 
-### Core Architecture: BrainCast
+1. **ST-CausalConv Branch**: Captures spatial dependencies through causal convolutions
+2. **ST-Mixer Branch**: Models temporal dynamics using MLP-based mixing
 
-BrainCast formulates whole-brain fMRI time series forecasting as a multivariate time series prediction task, jointly modeling:
-- **Temporal dynamics** within regions of interest (ROIs)
-- **Spatial interactions** across ROIs
+### Architecture Components
 
-### Three Key Modules
+```
+Input: Short fMRI time series (T timesteps × N voxels)
+    ↓
+┌─────────────────────────────────────────┐
+│  Spatial Branch (ST-CausalConv)         │
+│  - Causal convolution for spatial       │
+│    dependency modeling                  │
+│  - Preserves temporal causality         │
+└─────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────┐
+│  Temporal Branch (ST-Mixer)             │
+│  - MLP-based mixing across time         │
+│  - Captures long-range temporal         │
+│    dependencies                         │
+└─────────────────────────────────────────┘
+                    ↓
+         Fusion & Prediction
+                    ↓
+Output: Extended fMRI time series
+```
 
-1. **Spatial Interaction Awareness (SIA) Module**
-   - Embeds every ROI time series as a token
-   - Characterizes inter-ROI dependencies via attention mechanisms
-   - Captures whole-brain functional connectivity patterns
+## Implementation Guide
 
-2. **Temporal Feature Refinement (TFR) Module**
-   - Captures intrinsic neural dynamics within each ROI
-   - Enhances both low-energy and high-energy temporal components of fMRI time series
-   - Operates at ROI level for fine-grained temporal modeling
+### Prerequisites
+- Python 3.8+
+- PyTorch or TensorFlow
+- Nilearn or Nibabel for fMRI data handling
+- NumPy, SciPy for numerical operations
 
-3. **Spatio-temporal Pattern Alignment (SPA) Module**
-   - Combines spatial and temporal representations
-   - Produces informative whole-brain features for forecasting
-   - Aligns multi-scale representations for prediction
+### Step-by-Step Implementation
 
-### Training & Evaluation
-- Trained and evaluated on Human Connectome Project (HCP) data
-- Both resting-state and task fMRI datasets
-- Demonstrated superiority over SOTA time series forecasting baselines
-- Extended fMRI time series improve downstream cognitive ability prediction
+#### Step 1: Data Preprocessing
+```python
+import nibabel as nib
+import numpy as np
+from nilearn import image
+
+# Load fMRI data
+fmri_img = nib.load('brain_fmri.nii.gz')
+fmri_data = fmri_img.get_fdata()  # Shape: (X, Y, Z, T)
+
+# Reshape to (voxels, time)
+n_voxels = np.prod(fmri_data.shape[:3])
+fmri_2d = fmri_data.reshape(n_voxels, -1)  # Shape: (N_voxels, T_timesteps)
+
+# Normalize
+fmri_normalized = (fmri_2d - fmri_2d.mean(axis=1, keepdims=True)) / (
+    fmri_2d.std(axis=1, keepdims=True) + 1e-8
+)
+```
+
+#### Step 2: ST-CausalConv (Spatial Branch)
+```python
+import torch
+import torch.nn as nn
+
+class STCausalConv(nn.Module):
+    """Spatial branch with causal convolution"""
+    def __init__(self, n_voxels, hidden_dim=256, kernel_size=3):
+        super().__init__()
+        self.causal_conv = nn.Conv1d(
+            in_channels=n_voxels,
+            out_channels=hidden_dim,
+            kernel_size=kernel_size,
+            padding=kernel_size - 1,  # Causal padding
+            dilation=1
+        )
+        self.activation = nn.ReLU()
+        
+    def forward(self, x):
+        # x: (batch, n_voxels, time)
+        out = self.causal_conv(x)
+        # Remove future information (causal)
+        out = out[:, :, :-self.causal_conv.padding[0]]
+        return self.activation(out)
+```
+
+#### Step 3: ST-Mixer (Temporal Branch)
+```python
+class STMixer(nn.Module):
+    """Temporal branch with MLP mixing"""
+    def __init__(self, time_steps, hidden_dim=256):
+        super().__init__()
+        self.temporal_mlp = nn.Sequential(
+            nn.Linear(time_steps, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU()
+        )
+        
+    def forward(self, x):
+        # x: (batch, n_voxels, time)
+        # Transpose for temporal mixing: (batch, n_voxels, time)
+        out = self.temporal_mlp(x)
+        return out
+```
+
+#### Step 4: Full BrainCast Model
+```python
+class BrainCast(nn.Module):
+    """Complete BrainCast model"""
+    def __init__(self, n_voxels, input_time, output_time, hidden_dim=256):
+        super().__init__()
+        self.spatial_branch = STCausalConv(n_voxels, hidden_dim)
+        self.temporal_branch = STMixer(input_time, hidden_dim)
+        
+        # Fusion and prediction
+        self.fusion = nn.Sequential(
+            nn.Linear(hidden_dim * 2, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, output_time)
+        )
+        
+    def forward(self, x):
+        # x: (batch, n_voxels, input_time)
+        spatial_feat = self.spatial_branch(x)
+        temporal_feat = self.temporal_branch(x)
+        
+        # Global average pooling
+        spatial_feat = spatial_feat.mean(dim=1)  # (batch, hidden_dim)
+        temporal_feat = temporal_feat.mean(dim=1)  # (batch, hidden_dim)
+        
+        # Fusion
+        combined = torch.cat([spatial_feat, temporal_feat], dim=1)
+        prediction = self.fusion(combined)
+        
+        return prediction  # (batch, output_time)
+```
+
+#### Step 5: Training
+```python
+def train_braincast(model, train_loader, epochs=100, lr=1e-3):
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    criterion = nn.MSELoss()
+    
+    for epoch in range(epochs):
+        model.train()
+        total_loss = 0
+        
+        for batch_input, batch_target in train_loader:
+            # batch_input: (batch, n_voxels, input_time)
+            # batch_target: (batch, n_voxels, output_time)
+            
+            optimizer.zero_grad()
+            
+            # Predict for each voxel
+            predictions = []
+            for v in range(batch_input.shape[1]):
+                voxel_input = batch_input[:, v:v+1, :]  # (batch, 1, input_time)
+                pred = model(voxel_input)  # (batch, output_time)
+                predictions.append(pred)
+            
+            pred_tensor = torch.stack(predictions, dim=1)  # (batch, n_voxels, output_time)
+            loss = criterion(pred_tensor, batch_target)
+            
+            loss.backward()
+            optimizer.step()
+            total_loss += loss.item()
+        
+        if epoch % 10 == 0:
+            print(f"Epoch {epoch}: Loss = {total_loss / len(train_loader):.4f}")
+```
 
 ## Applications
 
-- **Clinical Scan Extension**: Extend short clinical fMRI scans without additional acquisition time
-- **Cognitive Ability Prediction**: Improve downstream prediction from extended time series
-- **Data Augmentation**: Generate realistic fMRI data for training other models
-- **Missing Data Imputation**: Fill gaps in interrupted fMRI recordings
+1. **Clinical fMRI Enhancement**: Extend short scan durations for better statistical power
+2. **Resting-State Analysis**: Predict long-range temporal dependencies in resting-state data
+3. **Task fMRI Completion**: Forecast task-related activation beyond scan duration
+4. **Brain-Computer Interfaces**: Generate extended brain state representations
 
-## Technical Details
+## Pitfalls
 
-### Input Specifications
-- Neural signal modality and format appropriate to the methodology
-- Sampling rate and temporal resolution requirements vary by application
-- Spatial resolution depends on recording technique (EEG, fMRI, neural recording)
+- **Spatial Complexity**: Whole-brain fMRI has high dimensionality (~100K voxels); consider ROI-based analysis or dimensionality reduction
+- **Temporal Dependencies**: Causal structure must be preserved; avoid data leakage from future timesteps
+- **Normalization**: fMRI data requires careful normalization due to scanner and subject variability
+- **Computational Cost**: Training on whole-brain data is memory-intensive; use gradient accumulation or patch-based training
 
-### Output Specifications
-- Task-specific output format (forecasting, generation, control, decoding)
-- Confidence/uncertainty estimates where applicable
-- Interpretable representations for neuroscientific analysis
+## Related Skills
+- brain-dit-fmri-foundation-model
+- eeg-fmri-spatiotemporal-neural-frames
+- brain-digital-twins-execution-semantics
 
-### Computational Requirements
-- GPU recommended for training deep learning components
-- Memory requirements scale with data dimensionality
-- Real-time inference feasible for control and BCI applications
-
-## Limitations & Considerations
-
-- Model performance depends on data quality, quantity, and preprocessing
-- Generalization across subjects, recording setups, and tasks may be limited
-- Interpretability vs. performance trade-offs should be evaluated
-- Biological plausibility assumptions should be validated experimentally
-
-## References
-
-- Original paper: arXiv:2603.13361v1 (2026-03-09)
-- Tested on relevant neuroscience datasets as described in the paper
-
-## Relevance to Other Skills
-
-This methodology complements existing skills in brain signal processing, neural dynamics modeling, and computational neuroscience. Related skills include neural dynamics analysis, brain network construction, and neural decoding frameworks.
-
-
-## Activation Keywords
-
-- braincast-spatiotemporal-fmri-forecasting
-- braincast spatiotemporal fmri
-- braincast spatiotemporal fmri forecasting
-
-
-## Tools Used
-
-- `read` - 读取技能文档
-- `write` - 创建输出
-- `exec` - 执行相关命令
-
-
-## Instructions for Agents
-
-1. 理解技能的核心方法论
-2. 根据用户问题提供针对性回答
-3. 遵循最佳实践
-
-
-## Examples
-
-### Example 1: 基本查询
-
-**User:** 请解释 Braincast Spatiotemporal Fmri Forecasting
-
-**Agent:** Braincast Spatiotemporal Fmri Forecasting 是关于...
+## Citation
+```bibtex
+@article{gao2026braincast,
+  title={BrainCast: A Spatio-Temporal Forecasting Model for Whole-Brain fMRI Time Series Prediction},
+  author={Gao, Yunlong and Yang, Jinbo and Xiao, Li and others},
+  journal={arXiv preprint arXiv:2603.13361},
+  year={2026}
+}
+```

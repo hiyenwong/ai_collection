@@ -1,12 +1,16 @@
 ---
 name: distributed-quantum-computing
 description: 'Distributed Quantum Computing architecture and patterns. Apply when designing multi-QPU systems, quantum communication protocols, or scaling quantum computing beyond single device limitations.'
-metadata: 
-"openclaw": 
-"emoji": "⏛",
-"source": "arxiv:2212.10609,arxiv:2404.01265",
-"authors": ["Caleffi et al.", "Barral et al."],
-"year": 2024,
+metadata:
+  {
+    "openclaw":
+      {
+        "emoji": "⏛",
+        "source": "arxiv:2212.10609,arxiv:2404.01265",
+        "authors": ["Caleffi et al.", "Barral et al."],
+        "year": 2024,
+      },
+  }
 ---
 
 # Distributed Quantum Computing
@@ -147,49 +151,3 @@ OpenClaw's distributed agent architecture parallels DQC:
 ---
 
 *Sources: arxiv:2212.10609 (Caleffi et al., 2024), arxiv:2404.01265 (Barral et al., 2024)*
-## Activation Keywords
-
-- distributed-quantum-computing
-- distributed-quantum-computing 技能
-- distributed-quantum-computing skill
-
-## Tools Used
-
-- `read` - Read documentation and references
-- `web_search` - Search for related information
-- `web_fetch` - Fetch paper or documentation
-
-## Instructions for Agents
-Follow these steps when applying this skill:
-
-### Step 1: Understand the Request
-
-### Step 2: Search for Information
-
-### Step 3: Apply the Framework
-
-### Step 4: Provide Results
-
-### Step 5: Verify Accuracy
-
-## Examples
-
-### Example 1: Basic Application
-
-**User:** I need to apply Distributed Quantum Computing to my analysis.
-
-**Agent:** I'll help you apply distributed-quantum-computing. First, let me understand your specific use case...
-
-**Context:** Apply the methodology
-
-### Example 2: Advanced Scenario
-
-**User:** Complex analysis scenario
-
-**Agent:** Based on the methodology, I'll guide you through the advanced application...
-
-### Example 2: Advanced Application
-
-**User:** What are the key considerations for distributed-quantum-computing?
-
-**Agent:** Let me search for the latest research and best practices...

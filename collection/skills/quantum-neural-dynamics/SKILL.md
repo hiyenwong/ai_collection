@@ -5,24 +5,6 @@ description: "Analyze quantum neural networks (QNNs), quantum-inspired neural ar
 
 # Quantum Neural Dynamics Analysis
 
-## Activation Keywords
-
-- quantum neural network
-- QNN
-- quantum-inspired neural
-- quantum dynamics
-- quantum-neuroscience
-- quantum error mitigation
-- quantum simulation
-- hybrid quantum-classical
-
-## Tools Used
-
-- `read`: Load research papers and QNN implementations
-- `write`: Document analysis results and patterns
-- `exec`: Run quantum circuit simulations
-- `web_search`: Find related quantum ML papers
-
 ## Overview
 
 Analyze research at the intersection of quantum computing and neuroscience, focusing on quantum neural networks (QNNs), quantum-inspired architectures, and quantum dynamics inference from neural data.
@@ -46,23 +28,6 @@ Analyze research at the intersection of quantum computing and neuroscience, focu
 - Quantum dynamics inference from neural data
 - Quantum Ising machines for optimization
 - Neural projected quantum dynamics
-
-## Instructions for Agents
-
-### Step 1: Classify Paper
-Identify which category the paper belongs to: QNN Training, Hybrid Architecture, Quantum-Inspired, Quantum Simulation, or Error Mitigation.
-
-### Step 2: Extract Technical Approach
-Identify the core method, architecture, or algorithm proposed in the paper.
-
-### Step 3: Analyze Key Contributions
-Determine what is novel and significant about this research.
-
-### Step 4: Identify Research Gaps
-Find limitations or areas for future work mentioned in the paper.
-
-### Step 5: Update Knowledge Graph
-Add paper to kg.db with extracted patterns and relationships.
 
 ## Analysis Workflow
 

@@ -1,497 +1,445 @@
 ---
 name: jedi-neural-dynamics-inference
-description: JEDI联合嵌入神经动力学推断框架。通过学习RNN权重的共享嵌入空间，捕获跨任务和上下文的神经动力学，从有限、噪声、高维的神经记录中识别任务特定的动力学规则。适用于多任务神经动力学分析、运动皮层记录、神经群体动态建模。触发词：神经动力学、RNN嵌入、多任务学习、群体神经、neural dynamics、population dynamics、recurrent neural network、embedding、multi-task。
-user-invocable: true
+description: "JEDI: Jointly Embedded Inference of Neural Dynamics - learning shared embeddings of RNN weights to infer neural population dynamics across tasks and contexts. Triggers: neural dynamics inference, RNN embedding, meta-learning, neural population, cross-task generalization."
 ---
 
 # JEDI: Jointly Embedded Inference of Neural Dynamics
 
-联合嵌入神经动力学推断框架
+> A meta-learning framework that learns shared embeddings of RNN weights to infer neural population dynamics across different tasks and contexts, enabling identification of task-specific dynamical rules from limited, noisy neural data.
 
-## 核心方法论
+## Metadata
+- **Source**: arXiv:2603.10489v1
+- **Authors**: Aniruddh Galgali, Saurabh Vyas, Vivek Jayaram, et al.
+- **Published**: 2026-03-11
+- **Institution**: Carnegie Mellon University, University of Washington, Columbia University
 
-**来源：** arXiv:2603.10489
-**效用：** 0.92
+## Core Methodology
 
-### 问题背景
+### Key Innovation
+Animal brains flexibly achieve diverse behavioral tasks using a single neural network with shared anatomical structure. JEDI (Jointly Embedded Inference of Neural Dynamics) formalizes this biological insight by learning a shared latent space of recurrent neural network (RNN) weights. This enables: (1) identifying task-specific dynamical motifs from limited neural recordings, (2) inferring latent dynamics in novel tasks without retraining, and (3) predicting neural responses under novel stimulus conditions.
 
-动物大脑使用单个神经网络灵活高效地完成多种行为任务。从神经记录中识别任务特定的动力学规则面临挑战：
+### Theoretical Framework
 
-| 挑战 | 描述 |
-|------|------|
-| 数据有限 | 实验记录通常有限 |
-| 噪声高 | 神经记录噪声大 |
-| 高维度 | 群体神经元维度高 |
-| 部分观测 | 只能访问部分脑状态 |
+#### Problem Formulation
+Given:
+- Neural recordings {Xᵗ} from multiple tasks t ∈ {1,...,T}
+- Task descriptions or context variables {cᵗ}
+- Limited data per task (few trials)
 
-现有 RNN 方法局限于单一任务，难以跨行为条件泛化。
+Goal: Infer the underlying dynamical system for each task:
+```
+ẋ = f(x, u; θᵗ) + noise
+where θᵗ are task-specific parameters
+```
 
-### JEDI 核心创新
+#### Joint Embedding Approach
+Instead of learning each task independently, JEDI learns:
+```
+θᵗ = decoder(zᵗ)  where zᵗ ∈ R^d (low-dimensional embedding)
+```
 
-**分层模型**：学习 RNN 权重的共享嵌入空间
+All tasks share the same decoder, but have unique embeddings zᵗ.
 
-| 组件 | 功能 |
-|------|------|
-| **嵌入层** | 学习任务/上下文特定的嵌入向量 |
-| **RNN 权重生成器** | 从嵌入生成 RNN 权重 |
-| **动力学模型** | 捕获神经群体动态 |
+#### Neural Architecture
 
-### 实现框架
-
+**Encoder Network** (weights → embedding):
 ```python
-import torch
-import torch.nn as nn
-from typing import Dict, List, Tuple, Optional
-import numpy as np
-
-class JEDIModel(nn.Module):
-    """
-    JEDI: Jointly Embedded Inference of Neural Dynamics
+class WeightEncoder(nn.Module):
+    """Encode RNN weights into latent embedding"""
     
-    核心思想：
-    1. 学习任务/上下文的嵌入向量
-    2. 从嵌入生成 RNN 权重
-    3. RNN 捕获神经动力学
-    """
-    
-    def __init__(
-        self,
-        n_neurons: int,
-        hidden_dim: int = 64,
-        embedding_dim: int = 32,
-        n_tasks: int = 10,
-        dt: float = 0.01
-    ):
+    def __init__(self, weight_dim, latent_dim):
         super().__init__()
-        
-        self.n_neurons = n_neurons
-        self.hidden_dim = hidden_dim
-        self.embedding_dim = embedding_dim
-        self.dt = dt
-        
-        # 任务嵌入
-        self.task_embeddings = nn.Embedding(n_tasks, embedding_dim)
-        
-        # 从嵌入生成 RNN 权重的网络
-        self.weight_generator = nn.Sequential(
-            nn.Linear(embedding_dim, 128),
+        # Weight encoder
+        self.encoder = nn.Sequential(
+            nn.Linear(weight_dim, 512),
             nn.ReLU(),
-            nn.Linear(128, hidden_dim * (n_neurons + hidden_dim + 1))
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Linear(256, latent_dim * 2)  # μ and σ
+        )
+    
+    def forward(self, weights):
+        """
+        Args:
+            weights: flattened RNN parameters
+        Returns:
+            z_mean, z_std: latent distribution parameters
+        """
+        out = self.encoder(weights)
+        z_mean = out[:, :latent_dim]
+        z_std = F.softplus(out[:, latent_dim:]) + 1e-4
+        return z_mean, z_std
+```
+
+**Decoder Network** (embedding → dynamics):
+```python
+class DynamicsDecoder(nn.Module):
+    """Decode latent embedding into RNN dynamics"""
+    
+    def __init__(self, latent_dim, state_dim, input_dim, hidden_dim):
+        super().__init__()
+        self.latent_dim = latent_dim
+        self.state_dim = state_dim
+        
+        # Generate RNN parameters from latent code
+        self.w_hh_generator = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, state_dim * state_dim)
         )
         
-        # 输出层
-        self.output_layer = nn.Linear(hidden_dim, n_neurons)
+        self.w_xh_generator = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, state_dim * input_dim)
+        )
         
-    def generate_rnn_weights(
-        self,
-        task_id: int
-    ) -> Dict[str, torch.Tensor]:
+        self.b_h_generator = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, state_dim)
+        )
+    
+    def generate_rnn_params(self, z):
+        """Generate RNN weight matrices from latent code"""
+        W_hh = self.w_hh_generator(z).view(-1, self.state_dim, self.state_dim)
+        W_xh = self.w_xh_generator(z).view(-1, self.state_dim, self.input_dim)
+        b_h = self.b_h_generator(z)
+        return W_hh, W_xh, b_h
+    
+    def forward(self, z, x, u):
         """
-        从任务嵌入生成 RNN 权重
-        
-        参数:
-            task_id: 任务 ID
-            
-        返回:
-            权重字典 (W_in, W_rec, b_rec)
+        Args:
+            z: latent embedding (batch, latent_dim)
+            x: current state (batch, state_dim)
+            u: input (batch, input_dim)
+        Returns:
+            dx: state update
         """
-        # 获取任务嵌入
-        embedding = self.task_embeddings(torch.tensor([task_id]))
+        W_hh, W_xh, b_h = self.generate_rnn_params(z)
         
-        # 生成权重
-        weights_flat = self.weight_generator(embedding)
+        # RNN dynamics: dx/dt = -x + tanh(W_hh @ x + W_xh @ u + b_h)
+        dx = -x + torch.tanh(
+            torch.bmm(W_hh, x.unsqueeze(-1)).squeeze(-1) +
+            torch.bmm(W_xh, u.unsqueeze(-1)).squeeze(-1) +
+            b_h
+        )
+        return dx
+```
+
+### Training Objective
+
+#### Evidence Lower Bound (ELBO)
+```
+L = E_q(z|weights)[log p(data|z)] - β * KL(q(z|weights) || p(z))
+```
+
+Where:
+- First term: reconstruction accuracy (predicted vs. actual neural activity)
+- Second term: KL divergence keeping embeddings close to prior
+- β: regularization coefficient (β-VAE approach)
+
+#### Contrastive Task Loss
+To encourage task-discriminative embeddings:
+```python
+def contrastive_task_loss(embeddings, task_labels, temperature=0.1):
+    """
+    InfoNCE loss for task discrimination
+    
+    Args:
+        embeddings: (batch, latent_dim)
+        task_labels: (batch,) integer task identifiers
+    """
+    # Normalize embeddings
+    embeddings = F.normalize(embeddings, dim=1)
+    
+    # Compute similarity matrix
+    similarity = torch.matmul(embeddings, embeddings.t()) / temperature
+    
+    # Mask out self-similarity
+    mask = torch.eye(len(embeddings), device=embeddings.device).bool()
+    similarity = similarity.masked_fill(mask, -float('inf'))
+    
+    # Positive pairs: same task
+    task_mask = task_labels.unsqueeze(0) == task_labels.unsqueeze(1)
+    task_mask = task_mask & ~mask  # Exclude diagonal
+    
+    # Contrastive loss
+    loss = 0
+    for i in range(len(embeddings)):
+        pos_sim = similarity[i][task_mask[i]].mean()
+        neg_sim = similarity[i][~task_mask[i]].mean()
+        loss -= torch.log(torch.exp(pos_sim) / 
+                         (torch.exp(pos_sim) + torch.exp(neg_sim)))
+    
+    return loss / len(embeddings)
+```
+
+## Implementation Guide
+
+### Prerequisites
+- Python 3.8+
+- PyTorch 1.10+
+- NumPy, SciPy for data handling
+- scikit-learn for preprocessing
+
+### Step-by-Step: Training JEDI
+
+1. **Data Preparation**
+```python
+import numpy as np
+import torch
+from torch.utils.data import Dataset
+
+class NeuralDynamicsDataset(Dataset):
+    """Dataset for neural population recordings across tasks"""
+    
+    def __init__(self, recordings, task_labels, trial_info):
+        """
+        Args:
+            recordings: List of (time, neurons) arrays, one per trial
+            task_labels: Task identifier for each trial
+            trial_info: Dict with condition, stimulus, etc.
+        """
+        self.recordings = recordings
+        self.task_labels = task_labels
+        self.trial_info = trial_info
         
-        # 解析权重
-        hidden = self.hidden_dim
-        input_size = self.n_neurons
-        
-        W_in_end = hidden * input_size
-        W_rec_end = W_in_end + hidden * hidden
-        
-        W_in = weights_flat[:, :W_in_end].view(hidden, input_size)
-        W_rec = weights_flat[:, W_in_end:W_rec_end].view(hidden, hidden)
-        b_rec = weights_flat[:, W_rec_end:].view(hidden)
-        
+        # Bin data and compute firing rates
+        self.binned_data = []
+        for rec in recordings:
+            # Bin at 20ms
+            bin_size = 20
+            n_bins = len(rec) // bin_size
+            binned = rec[:n_bins * bin_size].reshape(n_bins, bin_size, -1)
+            firing_rates = binned.mean(axis=1)  # (n_bins, neurons)
+            self.binned_data.append(firing_rates)
+    
+    def __len__(self):
+        return len(self.binned_data)
+    
+    def __getitem__(self, idx):
         return {
-            'W_in': W_in,
-            'W_rec': W_rec,
-            'b_rec': b_rec
+            'activity': torch.tensor(self.binned_data[idx], dtype=torch.float32),
+            'task': torch.tensor(self.task_labels[idx], dtype=torch.long),
+            'length': len(self.binned_data[idx])
         }
-    
-    def forward(
-        self,
-        neural_data: torch.Tensor,
-        task_id: int
-    ) -> torch.Tensor:
-        """
-        前向传播
-        
-        参数:
-            neural_data: 神经数据 (batch, time, n_neurons)
-            task_id: 任务 ID
-            
-        返回:
-            预测的神经活动 (batch, time, n_neurons)
-        """
-        batch_size, seq_len, _ = neural_data.shape
-        
-        # 生成任务特定权重
-        weights = self.generate_rnn_weights(task_id)
-        W_in = weights['W_in']
-        W_rec = weights['W_rec']
-        b_rec = weights['b_rec']
-        
-        # 初始化隐藏状态
-        h = torch.zeros(batch_size, self.hidden_dim, device=neural_data.device)
-        
-        outputs = []
-        for t in range(seq_len):
-            # RNN 更新
-            x_t = neural_data[:, t, :]
-            h = torch.tanh(x_t @ W_in.T + h @ W_rec.T + b_rec)
-            
-            # 输出
-            out = self.output_layer(h)
-            outputs.append(out)
-        
-        outputs = torch.stack(outputs, dim=1)
-        return outputs
-    
-    def get_task_embedding(self, task_id: int) -> torch.Tensor:
-        """获取任务嵌入向量"""
-        with torch.no_grad():
-            return self.task_embeddings(torch.tensor([task_id])).squeeze(0)
+```
 
+2. **JEDI Model Definition**
+```python
+import torch.nn as nn
+import torch.nn.functional as F
 
-class JEDITrainer:
-    """
-    JEDI 训练器
-    """
+class JEDI(nn.Module):
+    """Jointly Embedded Inference of Neural Dynamics"""
     
-    def __init__(
-        self,
-        model: JEDIModel,
-        lr: float = 1e-3,
-        weight_decay: float = 1e-5
-    ):
-        self.model = model
-        self.optimizer = torch.optim.Adam(
-            model.parameters(),
-            lr=lr,
-            weight_decay=weight_decay
-        )
+    def __init__(self, n_neurons, latent_dim, rnn_hidden_dim, n_tasks):
+        super().__init__()
+        self.n_neurons = n_neurons
+        self.latent_dim = latent_dim
+        self.rnn_hidden_dim = rnn_hidden_dim
+        
+        # Weight encoder (infers dynamics from data)
+        weight_dim = rnn_hidden_dim * rnn_hidden_dim + rnn_hidden_dim * n_neurons + rnn_hidden_dim
+        self.encoder = WeightEncoder(weight_dim, latent_dim)
+        
+        # Dynamics decoder (generates RNN from latent code)
+        self.decoder = DynamicsDecoder(latent_dim, rnn_hidden_dim, n_neurons, 256)
+        
+        # Observation model (neural firing rates)
+        self.observation = nn.Linear(rnn_hidden_dim, n_neurons)
     
-    def train_epoch(
-        self,
-        data_loader: torch.utils.data.DataLoader,
-        task_ids: List[int]
-    ) -> float:
+    def forward(self, neural_data, task_id=None):
         """
-        训练一个 epoch
-        
-        参数:
-            data_loader: 数据加载器
-            task_ids: 任务 ID 列表
-            
-        返回:
-            平均损失
+        Args:
+            neural_data: (batch, time, neurons)
+            task_id: (batch,) optional task labels
+        Returns:
+            predicted_activity, z_mean, z_std, z_sample
         """
-        self.model.train()
-        total_loss = 0.0
+        batch_size, time_steps, _ = neural_data.shape
         
-        for batch_idx, (neural_data, task_id) in enumerate(data_loader):
-            self.optimizer.zero_grad()
+        # Infer latent embedding from data
+        # (In practice, amortized inference or variational approach)
+        z_mean, z_std, z_sample = self.infer_latent(neural_data)
+        
+        # Generate RNN parameters
+        W_hh, W_xh, b_h = self.decoder.generate_rnn_params(z_sample)
+        
+        # Run dynamics forward
+        h = torch.zeros(batch_size, self.rnn_hidden_dim, device=neural_data.device)
+        predicted_rates = []
+        
+        for t in range(time_steps):
+            # Input at time t
+            u = neural_data[:, t, :]  # (batch, neurons)
             
-            # 前向传播
-            predictions = self.model(neural_data, task_id)
+            # RNN update
+            dh = -h + torch.tanh(
+                torch.bmm(W_hh, h.unsqueeze(-1)).squeeze(-1) +
+                torch.bmm(W_xh, u.unsqueeze(-1)).squeeze(-1) +
+                b_h
+            )
+            h = h + 0.05 * dh  # Euler integration
             
-            # 计算损失（MSE）
-            loss = nn.MSELoss()(predictions, neural_data)
+            # Predict firing rates
+            rates = F.softplus(self.observation(h))
+            predicted_rates.append(rates)
+        
+        predicted_activity = torch.stack(predicted_rates, dim=1)
+        
+        return predicted_activity, z_mean, z_std, z_sample
+    
+    def infer_latent(self, neural_data):
+        """Infer latent embedding from neural data"""
+        # Amortized inference: encode statistics of data
+        data_mean = neural_data.mean(dim=1)  # (batch, neurons)
+        data_std = neural_data.std(dim=1)
+        
+        # Simple MLP encoder
+        stats = torch.cat([data_mean, data_std], dim=1)
+        h = F.relu(self.inference_mlp(stats))
+        
+        z_mean = self.z_mean_layer(h)
+        z_std = F.softplus(self.z_std_layer(h)) + 1e-4
+        
+        # Reparameterization
+        eps = torch.randn_like(z_std)
+        z_sample = z_mean + eps * z_std
+        
+        return z_mean, z_std, z_sample
+```
+
+3. **Training Loop**
+```python
+def train_jedi(model, train_loader, n_epochs=500, lr=1e-3):
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=50)
+    
+    for epoch in range(n_epochs):
+        total_loss = 0
+        total_recon = 0
+        total_kl = 0
+        
+        for batch in train_loader:
+            neural_data = batch['activity']
+            task_labels = batch['task']
             
-            # 反向传播
+            # Forward pass
+            predicted, z_mean, z_std, z_sample = model(neural_data, task_labels)
+            
+            # Reconstruction loss
+            recon_loss = F.poisson_nll_loss(
+                predicted, neural_data, log_input=False, reduction='mean'
+            )
+            
+            # KL divergence
+            kl_loss = -0.5 * torch.sum(
+                1 + torch.log(z_std.pow(2)) - z_mean.pow(2) - z_std.pow(2)
+            ) / len(neural_data)
+            
+            # Contrastive task loss
+            contrastive_loss = contrastive_task_loss(z_sample, task_labels)
+            
+            # Total loss
+            loss = recon_loss + 0.01 * kl_loss + 0.1 * contrastive_loss
+            
+            # Backward
+            optimizer.zero_grad()
             loss.backward()
-            self.optimizer.step()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
             
             total_loss += loss.item()
+            total_recon += recon_loss.item()
+            total_kl += kl_loss.item()
         
-        return total_loss / len(data_loader)
+        scheduler.step(total_loss)
+        
+        if epoch % 50 == 0:
+            print(f"Epoch {epoch}: Loss={total_loss/len(train_loader):.4f}, "
+                  f"Recon={total_recon/len(train_loader):.4f}, "
+                  f"KL={total_kl/len(train_loader):.4f}")
     
-    def extract_dynamics(
-        self,
-        task_id: int
-    ) -> Dict:
-        """
-        提取任务特定的动力学特征
-        
-        返回:
-            动力学特征（固定点、特征值等）
-        """
-        self.model.eval()
-        
-        with torch.no_grad():
-            weights = self.model.generate_rnn_weights(task_id)
-            W_rec = weights['W_rec']
-            
-            # 计算特征值（揭示动力学）
-            eigenvalues = torch.linalg.eigvals(W_rec)
-            
-            # 找固定点（近似）
-            # 固定点满足 h = tanh(W_rec @ h + b)
-            # 这里使用简单迭代
-            h = torch.zeros(self.model.hidden_dim)
-            for _ in range(100):
-                h_new = torch.tanh(h @ W_rec.T + weights['b_rec'])
-                if torch.norm(h_new - h) < 1e-6:
-                    break
-                h = h_new
-            
-            return {
-                'eigenvalues': eigenvalues.numpy(),
-                'fixed_point': h.numpy(),
-                'spectral_radius': torch.max(torch.abs(eigenvalues)).item()
-            }
-
-
-class MultiTaskDynamicsAnalyzer:
-    """
-    多任务动力学分析器
-    """
-    
-    def __init__(self, model: JEDIModel):
-        self.model = model
-    
-    def analyze_shared_structure(
-        self,
-        task_ids: List[int]
-    ) -> Dict:
-        """
-        分析跨任务共享结构
-        
-        参数:
-            task_ids: 任务 ID 列表
-            
-        返回:
-            共享结构分析结果
-        """
-        embeddings = []
-        dynamics = []
-        
-        for task_id in task_ids:
-            emb = self.model.get_task_embedding(task_id)
-            embeddings.append(emb.numpy())
-            
-            dyn = JEDITrainer(self.model).extract_dynamics(task_id)
-            dynamics.append(dyn)
-        
-        embeddings = np.array(embeddings)
-        
-        # 计算嵌入相似性
-        from sklearn.metrics.pairwise import cosine_similarity
-        similarity = cosine_similarity(embeddings)
-        
-        return {
-            'embeddings': embeddings,
-            'similarity_matrix': similarity,
-            'dynamics': dynamics
-        }
-    
-    def find_task_relationships(
-        self,
-        task_ids: List[int],
-        task_names: List[str]
-    ) -> List[Dict]:
-        """
-        发现任务间关系
-        
-        返回:
-            任务关系列表
-        """
-        analysis = self.analyze_shared_structure(task_ids)
-        similarity = analysis['similarity_matrix']
-        
-        relationships = []
-        n = len(task_ids)
-        
-        for i in range(n):
-            for j in range(i + 1, n):
-                if similarity[i, j] > 0.7:  # 高相似阈值
-                    relationships.append({
-                        'task1': task_names[i],
-                        'task2': task_names[j],
-                        'similarity': similarity[i, j],
-                        'relationship': 'shared_dynamics'
-                    })
-        
-        return relationships
-    
-    def visualize_embedding_space(
-        self,
-        task_ids: List[int],
-        task_names: List[str]
-    ):
-        """
-        可视化嵌入空间
-        """
-        import matplotlib.pyplot as plt
-        from sklearn.decomposition import PCA
-        
-        embeddings = []
-        for task_id in task_ids:
-            emb = self.model.get_task_embedding(task_id)
-            embeddings.append(emb.numpy())
-        
-        embeddings = np.array(embeddings)
-        
-        # PCA 降维
-        pca = PCA(n_components=2)
-        embeddings_2d = pca.fit_transform(embeddings)
-        
-        # 绘图
-        plt.figure(figsize=(10, 8))
-        plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1], s=100)
-        
-        for i, name in enumerate(task_names):
-            plt.annotate(name, (embeddings_2d[i, 0], embeddings_2d[i, 1]))
-        
-        plt.xlabel('PC1')
-        plt.ylabel('PC2')
-        plt.title('Task Embedding Space')
-        plt.savefig('jedi_embedding_space.png')
-        plt.close()
-
-
-def infer_neural_dynamics(
-    neural_data: np.ndarray,
-    task_ids: List[int],
-    n_neurons: int,
-    n_epochs: int = 100
-) -> Dict:
-    """
-    从神经数据推断动力学
-    
-    参数:
-        neural_data: 神经数据列表 [(time, n_neurons), ...]
-        task_ids: 任务 ID 列表
-        n_neurons: 神经元数量
-        n_epochs: 训练轮数
-        
-    返回:
-        推断结果
-    """
-    # 创建模型
-    n_tasks = max(task_ids) + 1
-    model = JEDIModel(n_neurons=n_neurons, n_tasks=n_tasks)
-    trainer = JEDITrainer(model)
-    
-    # 准备数据
-    dataset = []
-    for i, (data, task_id) in enumerate(zip(neural_data, task_ids)):
-        tensor = torch.tensor(data, dtype=torch.float32).unsqueeze(0)
-        dataset.append((tensor, task_id))
-    
-    data_loader = torch.utils.data.DataLoader(
-        dataset,
-        batch_size=1,
-        shuffle=True
-    )
-    
-    # 训练
-    for epoch in range(n_epochs):
-        loss = trainer.train_epoch(data_loader, task_ids)
-        if epoch % 10 == 0:
-            print(f"Epoch {epoch}: Loss = {loss:.6f}")
-    
-    # 提取动力学
-    dynamics = {}
-    for task_id in set(task_ids):
-        dynamics[task_id] = trainer.extract_dynamics(task_id)
-    
-    return {
-        'model': model,
-        'dynamics': dynamics,
-        'embeddings': {
-            task_id: model.get_task_embedding(task_id).numpy()
-            for task_id in set(task_ids)
-        }
-    }
+    return model
 ```
 
-## 应用场景
-
-### 1. 多任务神经动力学分析
-- 跨任务共享结构发现
-- 任务特定动力学提取
-
-### 2. 运动皮层记录分析
-- 猴子到达任务
-- 运动控制动力学
-
-### 3. 神经群体建模
-- 高维神经记录
-- 低维动力学提取
-
-## 方法优势
-
-| 优势 | 说明 |
-|------|------|
-| **跨任务泛化** | 单一模型处理多任务 |
-| **可扩展** | 适用于任意大规模数据集 |
-| **可解释** | 反向工程揭示动力学机制 |
-| **统一模型** | 单一框架捕获所有条件 |
-
-## Activation Keywords
-- 神经动力学
-- RNN嵌入
-- 多任务学习
-- 群体神经
-- neural dynamics
-- population dynamics
-- recurrent neural network
-- embedding
-- multi-task
-- fixed points
-
-## Tools Used
-- torch
-- numpy
-- scikit-learn
-
-## Instructions for Agents
-1. 理解分层嵌入：任务嵌入 → RNN 权重
-2. 掌握动力学分析：特征值、固定点
-3. 注意权重生成：从嵌入到权重矩阵
-4. 分析共享结构：跨任务嵌入相似性
-5. 应用场景：多任务神经记录分析
-
-## Examples
+4. **Cross-Task Inference**
 ```python
-# 使用示例
-from jedi_neural_dynamics_inference import JEDIModel, JEDITrainer, MultiTaskDynamicsAnalyzer
-
-# 1. 创建模型
-model = JEDIModel(n_neurons=100, n_tasks=5)
-
-# 2. 训练
-trainer = JEDITrainer(model)
-for epoch in range(100):
-    loss = trainer.train_epoch(data_loader, task_ids)
-
-# 3. 提取动力学
-dynamics = trainer.extract_dynamics(task_id=0)
-print(f"特征值: {dynamics['eigenvalues']}")
-print(f"谱半径: {dynamics['spectral_radius']}")
-
-# 4. 分析共享结构
-analyzer = MultiTaskDynamicsAnalyzer(model)
-structure = analyzer.analyze_shared_structure([0, 1, 2, 3, 4])
-
-# 5. 发现任务关系
-relationships = analyzer.find_task_relationships(
-    task_ids=[0, 1, 2, 3, 4],
-    task_names=['reach', 'grasp', 'hold', 'release', 'withdraw']
-)
+def infer_new_task(model, new_task_data, n_steps=100):
+    """Infer latent dynamics for a new, unseen task"""
+    
+    # Optimize task-specific embedding
+    z = nn.Parameter(torch.randn(1, model.latent_dim))
+    optimizer = torch.optim.Adam([z], lr=0.01)
+    
+    for step in range(n_steps):
+        optimizer.zero_grad()
+        
+        # Generate dynamics from z
+        predicted = model.generate_from_z(z, new_task_data.shape[1])
+        
+        # Compute reconstruction loss
+        loss = F.poisson_nll_loss(predicted, new_task_data, log_input=False)
+        
+        loss.backward()
+        optimizer.step()
+    
+    return z.detach()
 ```
 
-## 参考文献
-- Jamkhandi, A.G., et al. (2026). "JEDI: Jointly Embedded Inference of Neural Dynamics" arXiv:2603.10489
-- Sussillo, D., & Barak, O. (2013). "Opening the black box: low-dimensional dynamics in high-dimensional recurrent neural networks" Neural Computation
+## Applications
+
+### 1. Multi-Task Brain-Computer Interfaces
+- **Task identification**: Infer which task subject is performing from neural activity
+- **Adaptive decoding**: Adjust decoder based on inferred task context
+- **Error detection**: Identify when subject switches tasks unexpectedly
+
+### 2. Cognitive Neuroscience
+- **Task representation**: Understand how brain represents different cognitive tasks
+- **Mental flexibility**: Study how brain switches between task sets
+- **Working memory**: Infer maintenance dynamics across different memory tasks
+
+### 3. Computational Psychiatry
+- **Cognitive flexibility deficits**: Model reduced task-switching in disorders
+- **Biomarker discovery**: Identify aberrant neural dynamics signatures
+- **Treatment monitoring**: Track changes in neural flexibility with intervention
+
+### 4. Brain-Inspired AI
+- **Meta-learning**: Transfer learning strategies across related tasks
+- **Continual learning**: Prevent catastrophic forgetting through shared representations
+- **Few-shot adaptation**: Rapid adaptation to new tasks with limited data
+
+## Pitfalls
+
+### Identifiability Issues
+- **Problem**: Multiple RNN parameterizations can produce similar dynamics
+- **Solution**: Add regularization favoring simple solutions; use observational constraints
+
+### Limited Data Per Task
+- **Problem**: Few trials per task make inference unreliable
+- **Solution**: Strong priors from other tasks; hierarchical Bayesian approach; data augmentation
+
+### Non-Stationarity
+- **Problem**: Neural dynamics drift over time (learning, fatigue)
+- **Solution**: Include time as a covariate; online adaptation of embeddings
+
+### Causal Interpretation
+- **Problem**: Correlation between tasks doesn't imply shared mechanisms
+- **Solution**: Validate with perturbation experiments; lesion studies in silico
+
+## Related Skills
+- meta-learning-in-context-brain-decoding: Meta-learning for brain decoding
+- neural-population-dynamics: Neural population dynamics analysis
+- attractor-metadynamics-neural: Attractor landscape evolution in neural networks
+
+## References
+```bibtex
+@article{galgali2026jedi,
+  title={JEDI: Jointly Embedded Inference of Neural Dynamics},
+  author={Galgali, Aniruddh and Vyas, Saurabh and Jayaram, Vivek and others},
+  journal={arXiv preprint arXiv:2603.10489},
+  year={2026}
+}
+```

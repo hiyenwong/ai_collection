@@ -1,138 +1,115 @@
 ---
 name: perception-neuroscience-framework-sensorless-gaze
-description: Neuroscience framework for sensorless gaze-following in Human-Robot Interaction (HRI). Grounds robot attention in biological visual mechanisms (retinotopic maps, dorsal/ventral streams, gaze cells, head-direction cells) without requiring gaze sensors. Triggers: sensorless gaze, robot gaze-following, HRI attention, visual attention robotics, neuroscience HRI, gaze prediction, biological vision robotics, retinotopic robotics.
+description: >
+  Neuroscience framework for sensorless gaze-following in HRI. Exploits the brain's convexity prior 
+  (hollow-face illusion) to create perceived mutual gaze without sensors, power, or computation. 
+  Grounded in STS gaze processing, convexity prior, and predictive processing hierarchy.
+  Use when: human-robot interaction, gaze-following design, low-cost robotics, perceptual illusions 
+  in HRI, neuroscience-inspired design, child-robot interaction.
+  Trigger: sensorless gaze, hollow-face illusion, gaze-following HRI, convexity prior, 
+  low-cost robot design, perception-based interaction, 无传感器凝视, 空心脸错觉.
+version: 1.0.0
+author: Research Synthesis (arXiv:2604.09829)
+license: MIT
+metadata:
+  hermes:
+    tags: [HRI, gaze-following, neuroscience, convexity-illusion, low-cost-robotics, perception]
+    source_paper: "Perception Is All You Need: A Neuroscience Framework for Low Cost Sensorless Gaze in HRI (arXiv:2604.09829)"
 ---
 
-# Sensorless Gaze-Following in HRI: A Neuroscience Framework
+# Sensorless Gaze-Following via Neuroscience Framework
 
 ## Overview
 
-A neuroscience-grounded framework enabling robots to infer and follow human gaze without dedicated gaze-tracking sensors. The system leverages biological visual processing principles — retinotopic mapping, dorsal/ventral stream processing, and neural gaze cell models — to predict where humans are looking based on head pose and environmental context.
+A sub-dollar cardboard robot design that exploits the human brain's own gaze computation pipeline 
+in reverse — making the viewer's perceptual system the robot's "actuator" with zero sensors, 
+zero power, zero computation, and zero privacy concerns.
 
-**Source Paper**: "Perception All You Need? Neuroscience Framework for Sensorless Gaze-Following in HRI" (arXiv:2604.10699, 2026-04-12)
+## Neuroscience Foundation
 
-## Biological Grounding
+Three converging mechanisms explain why concave eye sockets with painted pupils produce 
+perceived mutual gaze from any viewing angle:
 
-### Visual Processing Pathways
+### 1. Superior Temporal Sulcus (STS) Gaze Processing
+- Distributed face processing network computes gaze direction
+- STS is specialized for interpreting eye direction
+- Brain assumes eyes are convex (protruding outward)
 
-| Pathway | Function | Robot Equivalent |
-|---------|----------|-----------------|
-| Dorsal stream ("where") | Spatial attention, motion | Head pose → spatial map |
-| Ventral stream ("what") | Object recognition | Object detection pipeline |
-| Retinotopic mapping | Visual field organization | Attention heatmap generation |
-| Gaze cells (STS) | Gaze direction encoding | Head pose → gaze vector |
-| Head-direction cells | Orientation encoding | Robot orientation tracking |
+### 2. High-Precision Convexity Prior
+- Brain strongly expects faces to be convex
+- Causes the "hollow-face illusion" — concave faces perceived as convex
+- When face appears convex, painted pupils appear to track viewer
 
-### Core Mechanism
+### 3. Predictive Processing Hierarchy
+- Top-down face knowledge overrides bottom-up depth signals
+- Prior expectation of convex face > actual concave geometry
+- Results in perceived mutual gaze from any angle
 
-1. **Input**: RGB camera → head pose estimation
-2. **Retinotopic projection**: Map head direction to visual field coordinates
-3. **Ventral stream integration**: Combine with detected objects in scene
-4. **Attention heatmap**: Generate probability distribution over possible gaze targets
-5. **Robot response**: Orient robot attention toward predicted target
+## Design Principle
 
-## Key Contributions
+```
+Concave Eye Socket + Painted Pupil
+         ↓
+Viewer's Brain Applies Convexity Prior
+         ↓
+Brain Perceives Convex Face with Forward-Looking Eyes
+         ↓
+Perception: "The robot is looking at me"
+         ↓
+Mutual gaze achieved — no sensors, no code, no power
+```
 
-1. **Sensorless approach**: No eye tracker or gaze camera needed
-2. **Neuroscience-grounded**: Direct mapping from biological mechanisms
-3. **Computational model**: Formal retinotopic projection functions
-4. **HRI application**: Natural joint attention in human-robot interaction
-5. **Testable predictions**: Framework generates falsifiable hypotheses
+## Design Constraints (from Perceptual Science)
 
-## Implementation Pattern
+| Parameter | Constraint | Rationale |
+|-----------|------------|-----------|
+| Socket depth | Sufficient concavity | Strong hollow-face illusion |
+| Pupil placement | Center of concave region | Appears to track from all angles |
+| Lighting | Even illumination | Avoids depth cues that break illusion |
+| Viewing distance | Typical interaction range | Within illusion effectiveness zone |
+
+## Boundary Conditions
+
+### Will Succeed
+- Typical child-adult interaction distances
+- Normal lighting conditions
+- Neurotypical observers
+- Standard viewing angles
+
+### May Fail
+- Very young children (developing face processing)
+- Clinical populations with face processing differences
+- Extreme viewing angles (geometric limits)
+- Strong directional lighting (reveals concavity)
+
+## Applications
+- Scalable child-robot interaction programs
+- Educational robotics at population scale
+- Low-cost social robotics research
+- Privacy-sensitive environments
+- Resource-limited settings
+
+## Implementation Template
 
 ```python
-import numpy as np
-
-class SensorlessGazeFollower:
-    """Neuroscience-grounded sensorless gaze-following for HRI."""
-    
-    def __init__(self, fov=(60, 40), resolution=(32, 32)):
-        self.retinotopic_map = self._build_retinotopic_map(fov, resolution)
-        self.gaze_vector = None
-        self.attention_heatmap = None
-    
-    def _build_retinotopic_map(self, fov, resolution):
-        """Build retinotopic coordinate mapping."""
-        # Cortical magnification: foveal over-representation
-        x = np.linspace(-fov[0]/2, fov[0]/2, resolution[0])
-        y = np.linspace(-fov[1]/2, fov[1]/2, resolution[1])
-        return np.meshgrid(x, y)
-    
-    def estimate_gaze(self, head_pose, scene_objects):
-        """Predict gaze target from head pose and scene."""
-        # Dorsal stream: spatial projection
-        gaze_direction = self._project_head_to_gaze(head_pose)
-        
-        # Ventral stream: object-based attention
-        object_salience = self._compute_object_salience(scene_objects, gaze_direction)
-        
-        # Retinotopic integration
-        self.attention_heatmap = self._integrate_retinotopic(
-            gaze_direction, object_salience
-        )
-        
-        return self.attention_heatmap
-    
-    def _project_head_to_gaze(self, head_pose):
-        """Map head pose to gaze direction (STS gaze cell model)."""
-        # Gaze = head_pose + eye_offset (learned prior)
-        return head_pose
-    
-    def _compute_object_salience(self, objects, gaze_dir):
-        """Ventral stream: object relevance to gaze direction."""
-        # Objects within gaze cone get higher salience
-        pass
-    
-    def _integrate_retinotopic(self, gaze_dir, salience):
-        """Combine dorsal and ventral streams in retinotopic space."""
-        # Weighted combination
-        pass
+# Design parameters (from paper)
+GAZE_DESIGN = {
+    "socket_depth": "concave, ~2-3cm depth",
+    "pupil_diameter": "1-2cm, centered in socket",
+    "face_width": "child-appropriate scale (~15cm)",
+    "material": "cardboard or 3D printed",
+    "cost": "< $1 USD",
+    "sensors_required": False,
+    "power_required": False,
+    "privacy_risk": "None"
+}
 ```
 
 ## Activation Keywords
-
-- sensorless gaze, gaze-following, HRI attention, visual attention
-- retinotopic mapping, dorsal ventral stream, neuroscience robotics
-- joint attention, human-robot interaction, gaze prediction
-- 无传感器注视跟随, 机器人注意力, 神经科学HRI
-
-## Applications
-
-- Natural human-robot interaction
-- Assistive robotics for social engagement
-- Autism therapy robots
-- Attention-aware service robots
+- sensorless gaze, hollow-face illusion, gaze-following HRI
+- convexity prior, low-cost robotics, neuroscience design
+- 无传感器凝视, 空心脸错觉, 凝视跟随
 
 ## References
-
-- Paper: arXiv:2604.10699 (2026-04-12)
-- Related: gaze cell models in superior temporal sulcus (STS)
-- Related: head-direction cell literature
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Perception Neuroscience Framework Sensorless Gaze usage
-```
-User: "Help me with perception neuroscience framework sensorless gaze"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed perception neuroscience framework sensorless gaze assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```
+- Mason Kadem. "Perception Is All You Need: A Neuroscience Framework for Low Cost Sensorless Gaze 
+  in HRI." arXiv:2604.09829

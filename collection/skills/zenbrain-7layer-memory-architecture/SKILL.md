@@ -1,178 +1,100 @@
 ---
 name: zenbrain-7layer-memory-architecture
-description: "ZenBrain: A Neuroscience-Inspired 7-Layer Memory Architecture for Autonomous AI Systems (arXiv:2604.23878). Multi-layer memory system inspired by hippocampal consolidation, forgetting, and reconsolidation principles for AI agents. Activation: zenbrain, 7-layer memory, hippocampal-inspired AI, neuroscience memory architecture, autonomous AI memory, memory consolidation AI."
+description: "ZenBrain: Neuroscience-Inspired 7-Layer Memory Architecture for Autonomous AI Systems. Seven-layer hierarchical memory with 15 integrated neuroscience models. Activation triggers: memory architecture, multi-layer memory, neuroscience-inspired AI, hippocampal consolidation, episodic memory, semantic memory, procedural memory."
 ---
 
-# ZenBrain: 7-Layer Neuroscience-Inspired Memory Architecture
+# ZenBrain: Neuroscience-Inspired 7-Layer Memory Architecture
 
-## Overview
+> A multi-layer memory architecture for autonomous AI agents integrating seven memory layers (working, short-term, episodic, semantic, procedural, core, cross-context) orchestrated by 15 neuroscience models, achieving 20.7% F1 improvement over flat baselines.
 
-ZenBrain is a multi-layer memory architecture for autonomous AI systems that bridges the gap between system-engineering memory approaches (virtual-memory paging, flat LLM storage, Zettelkasten notes) and neuroscience principles of memory consolidation, forgetting, and reconsolidation.
+## Metadata
+- **Source**: arXiv:2604.23878
+- **Authors**: Alexander Bering
+- **Published**: 2026-04-26
+- **Conference**: NeurIPS 2026 Main Track Submission
 
-## Core Concept
+## Core Methodology
 
-Unlike existing AI agent memory systems that rely on engineering metaphors, ZenBrain integrates principles from a century of empirical memory research:
+### Memory Layer Hierarchy
+ZenBrain implements a seven-layer memory architecture based on neuroscience models of human memory:
 
-1. **Memory Consolidation**: Transfer from short-term to long-term storage
-2. **Selective Forgetting**: Pattern-specific memory decay and pruning
-3. **Memory Reconsolidation**: Dynamic memory updating during retrieval
+| Layer | Function | Biological Inspiration |
+|-------|----------|----------------------|
+| Working | Immediate task context | Prefrontal cortex working memory |
+| Short-term | Temporary storage | Hippocampal early consolidation |
+| Episodic | Event sequences | Hippocampal episode encoding |
+| Semantic | Factual knowledge | Neocortical semantic memory |
+| Procedural | Skills/habits | Striatum procedural memory |
+| Core | Identity/persistent | vmPFC core self-representation |
+| Cross-context | Transfer/generalization | Anterior cingulate integration |
 
-## The 7-Layer Architecture
+### Core Algorithmic Components
 
-| Layer | Name | Function | Neuroscience Analog |
-|-------|------|----------|---------------------|
-| 1 | **Sensory Buffer** | Immediate sensory input capture | Sensory cortex |
-| 2 | **Working Memory** | Active manipulation and rehearsal | Prefrontal cortex |
-| 3 | **Episodic Buffer** | Event-specific temporary storage | Hippocampus (short-term) |
-| 4 | **Semantic Cache** | Structured knowledge retrieval | Parahippocampal cortex |
-| 5 | **Consolidated Memory** | Long-term stable storage | Neocortical networks |
-| 6 | **Reconsolidation Layer** | Memory updating during retrieval | Hippocampal-neocortical dialogue |
-| 7 | **Metamemory System** | Self-awareness of memory states | Prefrontal monitoring |
+#### Nine Foundational Algorithms
+1. **Two-Factor Synaptic Model**: Plasticity based on pre/post-synaptic activity
+2. **vmPFC-coupled FSRS**: Forgetting-optimized spaced repetition
+3. **Simulation-Selection Sleep**: Offline memory consolidation
+4. **Bayesian Confidence**: Uncertainty-weighted memory retrieval
+5. **Neuromodulator Engine**: Dopamine/serotonin/norepinephrine/acetylcholine channels
+6. **Reconsolidation Engine**: Prediction-error gated memory updates
+7. **TripleCopyMemory**: Divergent decay with multiple memory traces
+8. **PriorityMap**: Four-dimensional attention with amygdala fast-path
+9. **StabilityProtector**: NogoA/HDAC3 analog for memory protection
+10. **MetacognitiveMonitor**: Bias detection and correction
 
-## Key Mechanisms
+#### Performance Results
+- **LoCoMo Benchmark**: +20.7% F1 vs flat baseline (p<0.005)
+- **MemoryArena**: +19.5% vs baseline (p=0.015)
+- **LongMemEval-500**: Highest mean rank across all system-judge cells
+- **Three-judge mean**: J=0.545 vs letta=0.485, a-mem=0.414, mem0=0.394
+- **Simulation-Selection Sleep**: 37% stability improvement, 47.4% storage reduction
+- **TripleCopyMemory Retention**: S(t)=0.912 at 30 days
+- **PriorityMap Performance**: NDCG@10=0.997
 
-### 1. Consolidation Pipeline
+## Implementation Guide
 
-```python
-class ConsolidationPipeline:
-    """
-    Implements memory transfer from hippocampal-like to neocortical-like storage
-    """
-    def consolidate(self, episodic_memory: Memory) -> ConsolidatedMemory:
-        # Pattern separation in episodic buffer
-        separated_patterns = self.pattern_separation(episodic_memory)
-        
-        # Slow-wave replay for stabilization
-        replayed_patterns = self.slow_wave_replay(separated_patterns)
-        
-        # Systems consolidation to neocortical networks
-        consolidated = self.systems_consolidation(replayed_patterns)
-        
-        return consolidated
+### System Architecture
+```
+ZenBrain Memory System
+├── Working Memory Layer (capacity-limited, attention-gated)
+├── Short-term Memory Layer (minutes to hours retention)
+├── Episodic Memory Layer (event sequences with temporal indices)
+├── Semantic Memory Layer (structured knowledge graph)
+├── Procedural Memory Layer (condition-action rules)
+├── Core Memory Layer (persistent identity vectors)
+└── Cross-context Memory Layer (transfer learning bridge)
+
+Controllers:
+├── Neuromodulator Engine (4-channel: DA, 5HT, NE, ACh)
+├── Reconsolidation Engine (prediction-error gated)
+├── Sleep Consolidation (simulation-selection)
+├── Metacognitive Monitor (bias detection)
+└── Stability Protector (NogoA/HDAC3 mechanism)
 ```
 
-### 2. Forgetting Mechanism
-
-```python
-class NeuroscienceForgetting:
-    """
-    Implements biologically plausible forgetting curves
-    """
-    def __init__(self):
-        self.ebbinghaus_curve = EbbinghausCurve()
-        self.interference_tracker = InterferenceTracker()
-    
-    def should_retain(self, memory: Memory, time_since_access: float) -> bool:
-        # Ebbinghaus forgetting curve
-        retention = self.ebbinghaus_curve.retention_probability(
-            time_since_access,
-            memory.repetition_count,
-            memory.saliency_score
-        )
-        
-        # Interference-based forgetting
-        interference = self.interference_tracker.calculate(memory)
-        
-        return retention * (1 - interference) > self.threshold
-```
-
-### 3. Reconsolidation Protocol
-
-```python
-class ReconsolidationProtocol:
-    """
-    Updates memories during retrieval with new contextual information
-    """
-    def reconsolidate(self, retrieved_memory: Memory, 
-                     current_context: Context) -> Memory:
-        # Labilize the memory (make it temporarily malleable)
-        labile_memory = self.labilize(retrieved_memory)
-        
-        # Integrate new contextual information
-        updated = self.contextual_update(labile_memory, current_context)
-        
-        # Restabilize with new trace
-        return self.restabilize(updated)
-```
-
-## Implementation Framework
-
-### Memory State Transitions
-
-```
-[Input] → Sensory Buffer → Working Memory → Episodic Buffer
-                                           ↓
-                              [Retrieval] ← Semantic Cache
-                                           ↓
-Consolidated Memory ← Systems Consolidation ← Reconsolidation Layer
-                                           ↓
-                                    Metamemory System
-```
-
-### Integration Points
-
-1. **LLM Agent Integration**: ZenBrain serves as the memory substrate for LLM-based agents
-2. **Event Processing**: Streaming memory updates from agent interactions
-3. **Retrieval Augmentation**: Context-aware memory retrieval for reasoning
+### Key Design Principles
+1. **Multi-timescale retention**: Different decay rates per layer
+2. **Prediction-error learning**: Reconsolidation gated by surprise
+3. **Neuromodulation**: Context-dependent memory modulation
+4. **Sleep consolidation**: Offline optimization via simulation
+5. **Metacognition**: Self-monitoring for bias and drift
 
 ## Applications
+- Long-context LLM agent memory systems
+- Personalized AI assistants with persistent identity
+- Multi-session learning agents
+- Autonomous systems requiring stable long-term memory
+- Research platforms for testing memory architectures
 
-### 1. Autonomous AI Agents
-
-- Long-term personal assistant memory
-- Cross-session task continuity
-- Personalized interaction patterns
-
-### 2. Knowledge Management Systems
-
-- Dynamic knowledge base updating
-- Semantic drift tracking
-- Concept relationship evolution
-
-### 3. Cognitive Simulations
-
-- Modeling human-like memory phenomena
-- Testing memory theories
-- Educational memory training tools
-
-## Advantages Over Traditional Approaches
-
-| Aspect | Traditional (Vector DB) | ZenBrain |
-|--------|------------------------|----------|
-| Forgetting | Manual deletion | Natural decay curves |
-| Updates | Overwrite | Reconsolidation |
-| Organization | Static indexing | Dynamic consolidation |
-| Metamemory | None | Self-awareness layer |
-| Decay Modeling | Expiration dates | Ebbinghaus + Interference |
-
-## Research Background
-
-Based on empirical findings from:
-- Hippocampal-neocortical dialogue theory (McClelland et al.)
-- Memory reconsolidation research (Nader et al.)
-- Forgetting curve studies (Ebbinghaus, Averell & Heathcote)
-- Metamemory research (Nelson & Narens)
-
-## References
-
-- Bering, A. (2026). ZenBrain: A Neuroscience-Inspired 7-Layer Memory Architecture for Autonomous AI Systems. arXiv:2604.23878
-- Squire, L. R., & Alvarez, P. (1995). Retrograde amnesia and memory consolidation
-- Nader, K., et al. (2000). Memory reconsolidation
-- McClelland, J. L., et al. (1995). Why there are complementary learning systems
-
-## Activation Keywords
-
-- zenbrain
-- 7-layer memory architecture
-- hippocampal-inspired AI
-- neuroscience memory architecture
-- autonomous AI memory
-- memory consolidation AI
-- reconsolidation AI
-- metamemory system
+## Pitfalls
+- 15-algorithm system has high complexity - careful tuning required
+- Sleep simulation adds computational overhead
+- Multi-layer routing introduces latency vs flat systems
+- Ablation studies show 9/15 algorithms become critical under stress
+- Requires careful calibration of neuromodulator channels
 
 ## Related Skills
-
+- agent-memory-framework
 - brain-inspired-memory-ai-agents
-- ember-hybrid-snn-llm-architecture
-- smartvector-neuroscience-embeddings-rag
+- dual-timescale-memory-spiking-neuron-astrocyte
+- agent-memory-management

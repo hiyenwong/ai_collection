@@ -39,12 +39,16 @@ Complete workflow for academic research using knowledge graphs with sqlite-knowl
 
 ```bash
 # Required files
-- kg.db: SQLite knowledge graph database
-- kg_tool: Rust binary for KG operations (pagerank, louvain, search)
+- kg.db: SQLite knowledge graph database at /Users/hiyenwong/wiki/kg.db (symlink to workspace kg.db)
+- kg_tool: Rust binary at scripts/kg_tool/target/release/kg_tool
 
-# Python dependencies (install if needed)
-pip install numpy
+# Weekly topics (for scheduled research)
+- scripts/weekly_topics.py — outputs daily topic and keywords
 ```
+
+## Actual Schema & Tool Reference
+
+**See `references/operational-notes.md`** for the current database schema, kg_tool commands, arxiv access patterns, and operational details. This file is kept up-to-date with each session's findings.
 
 ## Usage Patterns
 
@@ -74,176 +78,85 @@ Run algorithms on existing KG data:
 
 ## Instructions for Agents
 
-### Step 1: Paper Acquisition
+**First**: Read `references/operational-notes.md` for current DB schema, kg_tool commands, and access patterns.
+
+### Step 1: Get Today's Topic
+
+```bash
+cd /Users/hiyenwong/.openclaw/workspace && python3 scripts/weekly_topics.py
+```
+
+Output gives weekday number, topic name, and keywords for targeted search.
+
+### Step 2: Paper Acquisition
 
 Search papers from multiple sources:
 
 ```python
-# Use web_search for arxiv papers
-keywords = ["neural network", "brain connectivity", "spiking neural network"]
+# Use web_search for arxiv papers (direct arxiv API/browsing is blocked)
+keywords = ["quantum computing", "machine learning", "distributed systems"]
 for kw in keywords:
-    papers = web_search(f"arxiv {kw} 2026", count=10)
+    papers = web_search(f"arxiv {kw} 2025", count=5)
 ```
 
-**Important**: arxiv API requires proxy. Use web_search instead of direct curl to arxiv API.
-
-### Step 2: Prepare Import Script
-
-Create Python script to import papers:
-
-```python
-# scripts/import_papers.py template
-PAPERS = [
-    {
-        "arxiv_id": "2603.xxxxx",
-        "title": "...",
-        "abstract": "...",
-        "category": "cs.NE",
-        "keywords": ["keyword1", "keyword2"]
-    }
-]
-
-# Import to arxiv_papers table
-# Import to kg_entities table (entity_type='paper')
-# Create keyword entities (entity_type='keyword')
-# Create HAS_KEYWORD relations
-```
+**IMPORTANT (2026-05)**: `web_extract` blocks ALL arxiv URLs. Use `browser_navigate` + `browser_snapshot` to read paper abstracts from arxiv pages.
 
 ### Step 3: Import to KG
 
-Execute import script:
+Two options:
 
+**Option A — kg_tool**:
 ```bash
-python3 scripts/import_papers.py
+cd /Users/hiyenwong/.openclaw/workspace
+scripts/kg_tool/target/release/kg_tool import-paper --title "Paper Title" --url "https://arxiv.org/abs/XXXX.XXXXX" --abstract "..." --authors "Name1, Name2"
+```
+
+**Option B — Direct SQL** (when more control needed):
+```bash
+sqlite3 kg.db "INSERT OR IGNORE INTO kg_entities (title, url, content, authors, published_date, category, source) VALUES ('Title', 'URL', 'abstract', 'Authors', 'date', 'category', 'arxiv');"
 ```
 
 ### Step 4: Generate Embeddings
 
-Create embeddings for KG entities:
-
-```python
-# scripts/generate_embeddings.py
-# Use consistent dimension (256 recommended)
-# Generate from: name + keywords
-# Store in kg_vectors table
-```
-
 ```bash
-python3 scripts/generate_embeddings.py
+scripts/kg_tool/target/release/kg_tool generate-embeddings
 ```
+
+Generates embeddings for entities missing vectors. No parameters needed.
 
 ### Step 5: Run Graph Algorithms
 
-Use kg_tool for analysis:
-
 ```bash
 # PageRank - find important papers
-kg_tool pagerank kg.db
+scripts/kg_tool/target/release/kg_tool pagerank --limit 15
 
-# Stats - check KG state
-kg_tool stats kg.db
+# Vector search
+scripts/kg_tool/target/release/kg_tool search --query "quantum machine learning" --limit 10
 
-# List entities
-kg_tool list kg.db
+# Community detection (Louvain)
+scripts/kg_tool/target/release/kg_tool communities --limit 10
+
+# Stats
+scripts/kg_tool/target/release/kg_tool stats
 ```
 
-### Step 6: Vector Similarity Search
-
-Create and run vector search:
-
-```python
-# scripts/vector_search.py
-queries = ["spiking neural network", "brain connectivity"]
-for q in queries:
-    # Calculate cosine similarity
-    # Return top_k results
-```
+### Step 6: Add Relationships
 
 ```bash
-python3 scripts/vector_search.py
+sqlite3 kg.db "INSERT OR IGNORE INTO kg_relationships (source_id, target_id, relationship_type, weight) VALUES (source_id, target_id, 'related_to', 0.9);"
 ```
 
-### Step 7: Pattern Analysis
+### Step 7: Pattern Analysis & Skill Creation
 
-Analyze top papers from PageRank and vector search:
+Analyze top papers from PageRank and vector search. Extract reusable patterns. Create skills using `skill_manage(action='create')` or write SKILL.md directly.
 
-1. Read abstracts of high-PageRank papers
-2. Identify common themes in vector search clusters
-3. Extract reusable patterns (methods, workflows, architectures)
+### Step 8: Record Results
 
-### Step 8: Skill Extraction
-
-Use skill-extractor pattern:
-
-1. Identify domain-specific patterns from papers
-2. Document workflow steps
-3. List activation keywords
-4. Specify tools used
-
-### Step 9: Skill Creation
-
-Create SKILL.md following skill-creator guidelines:
-
-```markdown
----
-name: extracted-skill-name
-description: "Clear description with activation triggers"
----
-
-# [Skill Name]
-
-[Concise instructions, examples, error handling]
-```
-
-### Step 10: Record Results
-
-Update memory/YYYY-MM-DD.md:
-
-```markdown
-## KG Research Summary
-
-**Papers Imported**: X new papers
-**KG Stats**: X entities, X relations
-**Top PageRank**: [list top papers]
-**Vector Search Results**: [relevant clusters]
-**Skills Extracted**: [skill names]
-```
+Save summary to `memory/YYYY-MM-DD.md`.
 
 ## Database Schema
 
-### kg_entities
-```sql
-CREATE TABLE kg_entities (
-    id INTEGER PRIMARY KEY,
-    entity_type TEXT NOT NULL,  -- 'paper', 'keyword', 'author', etc.
-    name TEXT NOT NULL,
-    properties TEXT,  -- JSON with keywords, category, etc.
-    created_at INTEGER,
-    updated_at INTEGER
-);
-```
-
-### kg_relations
-```sql
-CREATE TABLE kg_relations (
-    id INTEGER PRIMARY KEY,
-    source_id INTEGER NOT NULL,
-    target_id INTEGER NOT NULL,
-    rel_type TEXT NOT NULL,  -- 'HAS_KEYWORD', 'CITES', 'AUTHORED_BY'
-    weight REAL DEFAULT 1.0,
-    properties TEXT
-);
-```
-
-### kg_vectors
-```sql
-CREATE TABLE kg_vectors (
-    entity_id INTEGER PRIMARY KEY,
-    vector BLOB NOT NULL,  -- numpy float32 array
-    dimension INTEGER NOT NULL,
-    created_at INTEGER
-);
-```
+**See `references/operational-notes.md`** — the schema documented here was based on an older version and is no longer accurate. The operational notes file has the current schema verified from the running database.
 
 ## Example Papers to Import
 
@@ -261,6 +174,9 @@ Typical research paper structure:
 
 ## Error Handling
 
+### Critical Operational Pitfalls
+See [references/pitfalls.md](references/pitfalls.md) for confirmed issues: arxiv API 429 rate limiting, web_extract blocked on arxiv.org, kg_tool DB path, and import command details.
+
 ### Embedding Dimension Mismatch
 
 ```
@@ -273,10 +189,11 @@ If embeddings have different dimensions:
 ### Louvain Algorithm Failure
 
 ```
-If Louvain fails:
-1. Check kg_relations weight column type (should be REAL, not BLOB)
-2. Use alternative: manual clustering via vector similarity
-3. Group entities by keyword relations instead
+If Louvain/community detection fails:
+1. kg_tool v2.0 uses Union-Find connected components (not true Louvain)
+2. Check kg_relations weight column type — some rows store blob data, not REAL
+   kg_tool now handles this by converting non-float weights to 1.0
+3. Use communities command as fallback: kg_tool communities --limit 10
 ```
 
 ### Arxiv API Timeout
@@ -298,8 +215,8 @@ If arxiv API fails:
 
 ## Resources
 
-- **kg_tool**: `/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool`
-- **kg.db**: `/Users/hiyenwong/.openclaw/workspace/kg.db`
+- **kg_tool**: `/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool` (v2.0)
+- **kg.db**: `/Users/hiyenwong/wiki/kg.db` ← CORRECT PATH (not ~/.openclaw/workspace/kg.db)
 - **skill-extractor**: Use for pattern extraction
 - **skill-creator**: Use for skill creation
 
@@ -312,8 +229,6 @@ If arxiv API fails:
 
 ## Notes
 
-- This workflow is designed for automated hourly research
-- Proxy required for arxiv API (use web_search as alternative)
-- Embeddings are hash-based (upgrade to sentence-transformers for production)
-- KG algorithms require Rust kg_tool binary
-- Always test new skills after creation
+- **Empty tables removed (2026-05-04):** `kg_hyperedges`, `kg_hyperedge_entities`, `kg_turboquant_cache` — all had 0 rows, cleaned up with VACUUM
+- **Embeddings:** Hash-based (SHA-256 seeded PRNG), deterministic but not semantic. For production use sentence-transformers.
+- **kg_tool v2.0:** Full rewrite (was placeholder). Implements real PageRank, Union-Find communities, FTS search, auto-embedding.

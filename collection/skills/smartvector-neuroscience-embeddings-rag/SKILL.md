@@ -1,251 +1,435 @@
 ---
 name: smartvector-neuroscience-embeddings-rag
-description: "SmartVector: Self-aware vector embeddings for RAG with temporal awareness, confidence decay, and relational awareness. Neuroscience-inspired framework based on hippocampal-neocortical memory consolidation. Activation: smartvector, self-aware embeddings, temporal RAG, confidence-weighted retrieval."
+description: "Self-aware vector embeddings for RAG with neuroscience-inspired temporal weighting, confidence scoring, and relational knowledge. SmartVector framework addressing version drift and temporal inconsistency in retrieval systems. Keywords: SmartVector, self-aware embeddings, RAG, temporal knowledge, vector embeddings, neuroscience, retrieval-augmented generation."
 ---
 
-# SmartVector: Self-Aware Embeddings for RAG
+# SmartVector: Self-Aware Vector Embeddings for RAG
 
-> Self-aware vector embeddings for Retrieval-Augmented Generation with temporal awareness, confidence decay, and relational awareness—modeled on hippocampal-neocortical memory consolidation.
+> Neuroscience-inspired framework for temporal, confidence-weighted, and relational knowledge in retrieval-augmented generation systems.
 
 ## Metadata
-- **Source**: arXiv:2604.20598
+- **Source**: arXiv:2604.20598v1
 - **Authors**: Naizhong Xu
 - **Published**: 2026-04-22
-- **Category**: cs.CL, cs.AI, cs.LG
+- **Categories**: cs.IR, cs.CL, cs.DB, cs.LG
 
 ## Core Methodology
 
 ### Problem Statement
-Modern RAG systems treat embeddings as **static, context-free artifacts**:
-- No temporal awareness (when created)
-- No confidence tracking (trustworthiness)
-- No relational knowledge (dependencies)
-- Result: Only 58% accuracy on versioned technical queries
 
-### Solution: SmartVector Framework
-Augments dense embeddings with three explicit properties:
+Modern RAG systems treat vector embeddings as static, context-free artifacts, leading to critical limitations:
+- **Version drift**: Conventional RAG achieves only 58% accuracy on versioned technical queries
+- **Temporal inconsistency**: Retrieval returns semantically similar but temporally invalid content
+- **Missing context**: Embeddings lack awareness of creation time, source trustworthiness, and dependencies
 
-#### 1. Temporal Awareness
-- **Creation timestamp**: When knowledge was encoded
-- **Validity window**: Temporal scope of applicability
-- **Version tracking**: Evolution of concepts over time
+### Key Innovation
 
-#### 2. Confidence Decay
-- **Source reliability**: Provenance-based confidence
-- **Ebbinghaus decay**: Forgetting curve modeling
-- **Access reinforcement**: Usage-based strength
-- **Feedback reconsolidation**: Correction learning
+SmartVector introduces three self-awareness dimensions inspired by neuroscience principles:
 
-#### 3. Relational Awareness
-- **Dependency edges**: Knowledge graph connections
-- **Contradiction detection**: Logical inconsistency
-- **Propagation updates**: Graph neural network messages
+1. **Temporal Awareness**
+   - Timestamp encoding in embedding space
+   - Version-aware retrieval scoring
+   - Temporal decay functions for outdated knowledge
 
-### Memory Lifecycle (5 Stages)
+2. **Confidence Weighting**
+   - Source reliability scoring
+   - Uncertainty quantification
+   - Confidence-weighted retrieval aggregation
+
+3. **Relational Knowledge**
+   - Inter-embedding dependency tracking
+   - Knowledge graph integration
+   - Contextual relationship preservation
+
+### Technical Framework
+
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  SMARTVECTOR MEMORY LIFECYCLE                               │
-├─────────────────────────────────────────────────────────────┤
-│  1. ENCODING  → Raw text → Dense embedding + metadata       │
-│  2. CONSOLIDATION → Short-term → Long-term storage          │
-│  3. RETRIEVAL  → 4-signal scoring + ranking                 │
-│  4. RECONSOLIDATION → Update confidence & relationships      │
-│  5. FORGETTING  → Prune low-value, stale knowledge          │
-└─────────────────────────────────────────────────────────────┘
+SmartVector Architecture
+├── Input Layer
+│   ├── Document text
+│   ├── Metadata (timestamp, source, version)
+│   └── Relational context
+├── Embedding Generation
+│   ├── Base embedding (standard vector)
+│   ├── Temporal encoding (time-aware component)
+│   ├── Confidence score (uncertainty quantification)
+│   └── Relational links (dependency graph)
+└── Retrieval Interface
+    ├── Temporal filtering
+    ├── Confidence weighting
+    └── Relational traversal
 ```
 
 ## Implementation Guide
 
-### SmartVector Data Structure
-```python
-from dataclasses import dataclass
-from datetime import datetime
-from typing import List, Dict, Optional
+### Prerequisites
 
-@dataclass
-class SmartVector:
-    """
-    Self-aware vector embedding with neuroscience-inspired properties
-    """
-    # Core embedding
-    embedding: List[float]        # Dense vector representation
-    
-    # Temporal awareness
-    created_at: datetime          # Creation timestamp
-    valid_until: Optional[datetime] # Expiration timestamp
-    version: str                  # Knowledge version
-    
-    # Confidence scoring
-    initial_confidence: float     # Source-based confidence [0,1]
-    decay_rate: float            # Ebbinghaus decay parameter
-    access_count: int            # Usage frequency
-    last_accessed: datetime      # Recency tracking
-    
-    # Relational knowledge
-    dependencies: List[str]       # Upstream knowledge IDs
-    dependents: List[str]        # Downstream knowledge IDs
-    contradictions: List[str]    # Conflicting knowledge IDs
-    
-    @property
-    def current_confidence(self) -> float:
-        """
-        Calculate live confidence score
-        """
-        # Time decay (Ebbinghaus)
-        time_delta = (datetime.now() - self.created_at).days
-        decay = self.decay_rate ** time_delta
-        
-        # Access reinforcement (logarithmic)
-        reinforcement = np.log(1 + self.access_count) / 10
-        
-        # Recency bonus
-        recency = 1 / (1 + (datetime.now() - self.last_accessed).days)
-        
-        return min(1.0, self.initial_confidence * decay * 
-                  (1 + reinforcement) * (0.5 + 0.5 * recency))
+```python
+# Required libraries
+pip install numpy scikit-learn torch transformers
+pip install faiss-cpu  # or faiss-gpu for GPU acceleration
 ```
 
-### Four-Signal Retrieval Scoring
+### Step-by-Step Implementation
+
+#### 1. Temporal Encoding Layer
+
 ```python
-class SmartRetriever:
+import torch
+import torch.nn as nn
+import numpy as np
+from datetime import datetime
+
+class TemporalEncoder(nn.Module):
     """
-    Replace pure cosine similarity with 4-signal scoring
+    Encode temporal information into embedding space.
+    Uses sinusoidal positional encoding adapted for timestamps.
     """
-    
-    def score(self, query: SmartVector, candidate: SmartVector) -> float:
+    def __init__(self, embedding_dim: int, max_period: float = 10000.0):
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.max_period = max_period
+        
+    def encode_timestamp(self, timestamp: datetime) -> torch.Tensor:
         """
-        Calculate composite relevance score
+        Encode a timestamp as a temporal vector.
+        
+        Args:
+            timestamp: Document creation/update time
+            
+        Returns:
+            Temporal encoding vector
         """
-        # Signal 1: Semantic relevance
-        semantic = cosine_similarity(
-            query.embedding, 
-            candidate.embedding
+        # Convert to Unix timestamp
+        unix_time = timestamp.timestamp()
+        
+        # Create sinusoidal encoding (similar to Transformer position encoding)
+        freqs = torch.exp(
+            torch.arange(0, self.embedding_dim, 2) * 
+            -(np.log(self.max_period) / self.embedding_dim)
         )
         
-        # Signal 2: Temporal validity
-        temporal = self._temporal_score(query, candidate)
+        time_tensor = torch.tensor([unix_time])
+        temporal_encoding = torch.zeros(self.embedding_dim)
         
-        # Signal 3: Live confidence
-        confidence = candidate.current_confidence
+        temporal_encoding[0::2] = torch.sin(time_tensor * freqs)
+        temporal_encoding[1::2] = torch.cos(time_tensor * freqs)
         
-        # Signal 4: Relational importance
-        relational = self._graph_centrality(candidate)
-        
-        # Weighted combination
-        return (0.4 * semantic + 
-                0.2 * temporal + 
-                0.3 * confidence + 
-                0.1 * relational)
-    
-    def _temporal_score(self, query, candidate) -> float:
-        """
-        Check temporal compatibility
-        """
-        if candidate.valid_until and query.created_at > candidate.valid_until:
-            return 0.0  # Expired knowledge
-        
-        # Prefer knowledge from similar time periods
-        time_diff = abs((query.created_at - candidate.created_at).days)
-        return np.exp(-time_diff / 365)  # Exponential decay
-    
-    def _graph_centrality(self, candidate) -> float:
-        """
-        Relational importance in knowledge graph
-        """
-        degree = len(candidate.dependencies) + len(candidate.dependents)
-        return min(1.0, degree / 10)  # Normalized
+        return temporal_encoding
 ```
 
-### Background Consolidation Agent
+#### 2. Confidence Scoring Module
+
 ```python
-class ConsolidationAgent:
+class ConfidenceScorer(nn.Module):
     """
-    Background process for contradiction detection and graph updates
+    Quantify embedding confidence based on source reliability
+    and content quality.
     """
-    
-    def consolidate(self, new_knowledge: SmartVector):
+    def __init__(self, embedding_dim: int, num_sources: int):
+        super().__init__()
+        self.source_embeddings = nn.Embedding(num_sources, embedding_dim // 4)
+        self.quality_mlp = nn.Sequential(
+            nn.Linear(embedding_dim + embedding_dim // 4, embedding_dim // 2),
+            nn.ReLU(),
+            nn.Linear(embedding_dim // 2, 1),
+            nn.Sigmoid()
+        )
+        
+    def forward(self, 
+                content_embedding: torch.Tensor,
+                source_id: int,
+                quality_signals: dict) -> torch.Tensor:
         """
-        Process new knowledge into long-term memory
+        Compute confidence score for an embedding.
+        
+        Args:
+            content_embedding: Base document embedding
+            source_id: Source identifier
+            quality_signals: Dictionary of quality metrics
+            
+        Returns:
+            Confidence score (0-1)
         """
-        # Step 1: Detect contradictions
-        contradictions = self._find_contradictions(new_knowledge)
+        source_emb = self.source_embeddings(torch.tensor([source_id]))
+        combined = torch.cat([content_embedding, source_emb.squeeze()], dim=-1)
+        confidence = self.quality_mlp(combined)
+        return confidence
+```
+
+#### 3. SmartVector Store
+
+```python
+import faiss
+from typing import List, Dict, Tuple
+import numpy as np
+
+class SmartVectorStore:
+    """
+    Vector store with temporal and confidence-aware retrieval.
+    """
+    def __init__(self, embedding_dim: int, temporal_dim: int = 64):
+        self.embedding_dim = embedding_dim
+        self.temporal_dim = temporal_dim
+        self.total_dim = embedding_dim + temporal_dim + 1  # +1 for confidence
         
-        # Step 2: Build dependency edges
-        dependencies = self._extract_dependencies(new_knowledge)
+        # FAISS index for efficient similarity search
+        self.index = faiss.IndexFlatIP(self.total_dim)  # Inner product for cosine similarity
         
-        # Step 3: Propagate updates
-        for dep in dependencies:
-            self._propagate_update(dep, new_knowledge)
+        # Metadata storage
+        self.metadata: List[Dict] = []
         
-        # Step 4: Flag for review if contradictions found
-        if contradictions:
-            self._flag_contradiction(new_knowledge, contradictions)
-    
-    def _propagate_update(self, target_id: str, source: SmartVector):
+    def add_document(self,
+                     embedding: np.ndarray,
+                     temporal_encoding: np.ndarray,
+                     confidence: float,
+                     metadata: Dict):
         """
-        Graph neural network-style message passing
+        Add a document with SmartVector components.
+        
+        Args:
+            embedding: Base document embedding
+            temporal_encoding: Temporal encoding vector
+            confidence: Confidence score (0-1)
+            metadata: Additional document metadata
         """
-        target = self.vector_store.get(target_id)
+        # Concatenate components
+        smart_vector = np.concatenate([
+            embedding,
+            temporal_encoding[:self.temporal_dim],
+            [confidence]
+        ])
         
-        # Update target's confidence based on source
-        message = source.current_confidence * 0.1
-        target.initial_confidence = min(1.0, 
-            target.initial_confidence + message)
+        # Normalize for cosine similarity
+        smart_vector = smart_vector / np.linalg.norm(smart_vector)
         
-        # Cascade to dependents
-        for dependent_id in target.dependents:
-            self._propagate_update(dependent_id, target)
+        # Add to index
+        self.index.add(smart_vector.reshape(1, -1))
+        self.metadata.append(metadata)
+        
+    def search(self,
+               query_embedding: np.ndarray,
+               query_timestamp: datetime = None,
+               k: int = 10,
+               temporal_weight: float = 0.3,
+               confidence_weight: float = 0.2) -> List[Tuple[int, float, Dict]]:
+        """
+        Search with temporal and confidence weighting.
+        
+        Args:
+            query_embedding: Query vector
+            query_timestamp: Reference time for temporal scoring
+            k: Number of results
+            temporal_weight: Weight for temporal relevance
+            confidence_weight: Weight for confidence scoring
+            
+        Returns:
+            List of (index, score, metadata) tuples
+        """
+        # Prepare query vector
+        if query_timestamp:
+            temporal_enc = self._encode_query_time(query_timestamp)
+        else:
+            temporal_enc = np.zeros(self.temporal_dim)
+            
+        # Query with neutral confidence (will be adjusted in scoring)
+        query_vector = np.concatenate([
+            query_embedding,
+            temporal_enc,
+            [0.5]  # Neutral confidence for query
+        ])
+        query_vector = query_vector / np.linalg.norm(query_vector)
+        
+        # Search
+        scores, indices = self.index.search(
+            query_vector.reshape(1, -1),
+            k * 2  # Retrieve more for re-ranking
+        )
+        
+        # Re-rank with temporal and confidence weighting
+        results = []
+        for idx, score in zip(indices[0], scores[0]):
+            if idx < 0:
+                continue
+                
+            meta = self.metadata[idx]
+            
+            # Calculate temporal relevance
+            if query_timestamp and 'timestamp' in meta:
+                temporal_score = self._calculate_temporal_relevance(
+                    query_timestamp, meta['timestamp']
+                )
+            else:
+                temporal_score = 1.0
+                
+            # Get confidence from stored vector
+            confidence = self._get_stored_confidence(idx)
+            
+            # Combined score
+            final_score = (
+                score * (1 - temporal_weight - confidence_weight) +
+                temporal_score * temporal_weight +
+                confidence * confidence_weight
+            )
+            
+            results.append((int(idx), float(final_score), meta))
+            
+        # Sort by final score and return top k
+        results.sort(key=lambda x: x[1], reverse=True)
+        return results[:k]
+        
+    def _encode_query_time(self, timestamp: datetime) -> np.ndarray:
+        """Encode query timestamp for temporal comparison."""
+        # Similar to TemporalEncoder.encode_timestamp but for numpy
+        unix_time = timestamp.timestamp()
+        freqs = np.exp(
+            np.arange(0, self.temporal_dim, 2) * 
+            -(np.log(10000.0) / self.temporal_dim)
+        )
+        
+        encoding = np.zeros(self.temporal_dim)
+        encoding[0::2] = np.sin(unix_time * freqs)
+        encoding[1::2] = np.cos(unix_time * freqs)
+        
+        return encoding / np.linalg.norm(encoding)
+        
+    def _calculate_temporal_relevance(self, 
+                                      query_time: datetime, 
+                                      doc_time: datetime) -> float:
+        """
+        Calculate temporal relevance based on time difference.
+        Newer documents get higher scores, but not exponentially.
+        """
+        time_diff = abs((query_time - doc_time).total_seconds())
+        # Exponential decay with 30-day half-life
+        return np.exp(-time_diff / (30 * 24 * 3600))
+        
+    def _get_stored_confidence(self, idx: int) -> float:
+        """Extract confidence from stored vector."""
+        # Reconstruct vector to get confidence
+        vector = faiss.vector_to_array(self.index.reconstruct(int(idx)))
+        return float(vector[-1])
+```
+
+#### 4. Complete RAG Pipeline
+
+```python
+from transformers import AutoTokenizer, AutoModel
+import torch
+
+class SmartVectorRAG:
+    """
+    Complete RAG system using SmartVector embeddings.
+    """
+    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModel.from_pretrained(model_name)
+        
+        self.temporal_encoder = TemporalEncoder(embedding_dim=384)
+        self.confidence_scorer = ConfidenceScorer(embedding_dim=384, num_sources=10)
+        self.vector_store = SmartVectorStore(embedding_dim=384)
+        
+    def embed_document(self, 
+                       text: str,
+                       timestamp: datetime,
+                       source_id: int,
+                       metadata: Dict) -> np.ndarray:
+        """
+        Create SmartVector embedding for a document.
+        
+        Args:
+            text: Document content
+            timestamp: Creation time
+            source_id: Source identifier
+            metadata: Additional metadata
+            
+        Returns:
+            SmartVector components
+        """
+        # Generate base embedding
+        inputs = self.tokenizer(text, return_tensors="pt", truncation=True, max_length=512)
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+        
+        # Mean pooling
+        base_embedding = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
+        
+        # Generate temporal encoding
+        temporal_enc = self.temporal_encoder.encode_timestamp(timestamp).numpy()
+        
+        # Calculate confidence
+        content_emb = torch.tensor(base_embedding)
+        confidence = self.confidence_scorer(
+            content_emb, source_id, {}
+        ).item()
+        
+        # Add to store
+        self.vector_store.add_document(
+            base_embedding, temporal_enc, confidence, metadata
+        )
+        
+        return base_embedding
+        
+    def query(self, 
+              query_text: str,
+              query_time: datetime = None,
+              k: int = 5) -> List[Dict]:
+        """
+        Query the RAG system.
+        
+        Args:
+            query_text: Query string
+            query_time: Reference time (default: now)
+            k: Number of results
+            
+        Returns:
+            List of retrieved documents with scores
+        """
+        if query_time is None:
+            query_time = datetime.now()
+            
+        # Embed query
+        inputs = self.tokenizer(query_text, return_tensors="pt", truncation=True)
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+        query_emb = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
+        
+        # Search
+        results = self.vector_store.search(
+            query_emb, query_time, k=k
+        )
+        
+        return [
+            {
+                'index': idx,
+                'score': score,
+                'metadata': meta
+            }
+            for idx, score, meta in results
+        ]
 ```
 
 ## Applications
 
-### 1. Versioned Knowledge Systems
-- **Technical Documentation**: Version-aware retrieval
-- **API Documentation**: Deprecation handling
-- **Legal Documents**: Amendment tracking
-- **Medical Guidelines**: Protocol versioning
+- **Version-aware technical documentation retrieval**
+- **Time-sensitive knowledge bases**
+- **Multi-source information fusion with reliability weighting**
+- **Temporal knowledge graph construction**
+- **Longitudinal document analysis**
 
-### 2. Agent Memory Systems
-- **Long-term Memory**: Persistent agent knowledge
-- **Episodic Memory**: Event tracking
-- **Working Memory**: Dynamic context
-- **Forgetting**: Memory management
+## Pitfalls
 
-### 3. Enterprise Knowledge Bases
-- **Multi-source Integration**: Confidence weighting
-- **Knowledge Evolution**: Temporal reasoning
-- **Contradiction Handling**: Conflict resolution
-- **Compliance**: Audit trails
-
-## Performance Results
-
-### Benchmark Results (258 vectors, 138 queries)
-| Metric | Cosine RAG | SmartVector | Improvement |
-|--------|------------|-------------|-------------|
-| Top-1 Accuracy | 31.0% | 62.0% | **+100%** |
-| Stale Answer Rate | 35.0% | 13.3% | **-62%** |
-| Expected Calibration Error | 0.470 | 0.244 | **-48%** |
-| Re-embedding Cost | 100% | 23% | **-77%** |
-
-### Robustness
-- Tested at contradiction-injection rates: 0% to 75%
-- Stable performance across all conditions
+- Temporal encoding assumes linear time; may not handle branching versions well
+- Confidence scoring requires calibrated source reliability estimates
+- Additional storage overhead for temporal and confidence components
+- Query-time temporal weighting requires careful tuning
 
 ## Related Skills
-- `brain-inspired-memory-ai-agents`
-- `agent-memory-framework`
-- `agent-memory-management`
-- `memory-retrieval`
-- `fsfm-selective-forgetting-agent-memory`
+
+- brain-inspired-memory-ai-agents: Brain-inspired memory systems
+- meta-learning-in-context-brain-decoding: Meta-learning approaches
+- attention-task-structure-cognitive-flexibility: Attention mechanisms
 
 ## References
-- Xu, N. (2026). Self-Aware Vector Embeddings for Retrieval-Augmented Generation: A Neuroscience-Inspired Framework. arXiv:2604.20598.
-- Teyler, T.J. & DiScenna, P. (1986). The hippocampal memory indexing theory.
-- Ebbinghaus, H. (1885). Memory: A contribution to experimental psychology.
 
-## Implementation Status
-- [x] Framework design
-- [x] Reference implementation
-- [x] Synthetic benchmark validation
-- [ ] Production-scale deployment
-- [ ] Multi-modal extension
+Xu, N. (2026). Self-Aware Vector Embeddings for Retrieval-Augmented Generation: A Neuroscience-Inspired Framework for Temporal, Confidence-Weighted, and Relational Knowledge. arXiv:2604.20598v1.

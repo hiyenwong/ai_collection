@@ -1,108 +1,149 @@
 ---
 name: samga-subject-aware-multi-granularity-eeg-image
-description: "SAMGA (Subject-Aware Multi-Granularity Alignment) framework for zero-shot EEG-to-image retrieval. Adaptively aggregates multi-scale visual representations from pretrained vision encoders, with coarse-to-fine cross-modal alignment. Achieves 91.3% Top-1 intra-subject accuracy on THINGS-EEG. Activation: EEG-to-image, zero-shot retrieval, cross-modal alignment, visual decoding, brain-computer interface."
+description: "Subject-Aware Multi-Granularity Alignment (SAMGA) for zero-shot EEG-to-image retrieval. Enables cross-subject brain-computer interfaces with hierarchical neural representation alignment. Keywords: EEG, zero-shot retrieval, brain decoding, cross-subject, multi-granularity alignment."
 ---
 
 # SAMGA: Subject-Aware Multi-Granularity Alignment for Zero-Shot EEG-to-Image Retrieval
 
-**arXiv:** [2604.17782](https://arxiv.org/abs/2604.17782)  
-**Published:** 2026-04-20  
-**Authors:** Lin Jiang, Qingshan She, Jiale Xu, Haiqi Xu, Duanpo Wu et al.  
-**Categories:** cs.CV
+> A hierarchical framework for zero-shot EEG-to-image retrieval that captures both subject-specific characteristics and shared neural representations through multi-granularity alignment.
 
-## Problem
+## Metadata
+- **Source**: arXiv:2604.17782
+- **Authors**: Lin Jiang, Qingshan She, Jiale Xu, et al.
+- **Published**: 2026-04-20
+- **Category**: Computer Vision and Pattern Recognition (cs.CV), Neural and Evolutionary Computing (cs.NE)
 
-Zero-shot EEG-to-image retrieval aligns EEG neural responses with pretrained visual representations for scalable visual neural decoding. Prior methods use single fixed visual targets or subject-invariant construction, ignoring:
-1. EEG preserves information across multiple representational scales
-2. The optimal visual granularity varies across subjects
+## Core Methodology
 
-## Core Method: SAMGA Framework
+### Problem Statement
+Zero-shot EEG-to-image retrieval aims to decode perceived visual content from electroencephalography (EEG) by aligning neural responses with pretrained visual representations. Key challenges:
+1. **Single fixed visual targets**: Previous methods rely on one-size-fits-all approaches
+2. **Subject-invariant designs**: Overlook individual differences in neural encoding
+3. **Cross-subject generalization**: Poor performance on unseen subjects
 
-### Component 1: Subject-Aware Visual Supervision Target
-- Adaptively aggregates **multiple intermediate representations** from a pretrained vision encoder
-- Learns subject-dependent aggregation weights during training
-- Preserves **subject-agnostic inference** (no subject ID needed at test time)
-- Allows the model to absorb subject-dependent granularity deviations
+### Key Innovation: Multi-Granularity Alignment
 
-### Component 2: Coarse-to-Fine Cross-Modal Alignment
-- **Shared encoder** architecture between EEG and visual modalities
-- **Coarse stage:** Stabilizes shared semantic geometry, reduces subject-induced distribution shift
-- **Fine stage:** Improves instance-level retrieval discrimination
-- Both stages use contrastive learning objectives at different granularities
+SAMGA introduces a three-level hierarchical alignment framework:
 
-## Key Results
+1. **Fine-grained alignment**: Subject-specific neural patterns
+2. **Coarse-grained alignment**: Shared semantic representations  
+3. **Cross-granularity fusion**: Integration across levels
 
-### THINGS-EEG Benchmark
-| Setting | Top-1 Accuracy | Top-5 Accuracy |
-|---------|---------------|----------------|
-| Intra-subject | **91.3%** | **98.8%** |
-| Inter-subject | **34.4%** | **64.8%** |
+### Technical Framework
 
-- Outperforms all recent state-of-the-art methods
-- Significant improvement in inter-subject generalization
+#### Architecture Components
 
-## Technical Details
-
-### Architecture
-- **EEG Encoder:** Processes raw EEG signals from visual perception tasks
-- **Vision Encoder:** Pretrained model providing multi-layer features
-- **Aggregation Module:** Learns subject-dependent weights for visual layer selection
-- **Shared Projection:** Maps both modalities to common embedding space
-
-### Training Strategy
-- Multi-granularity contrastive loss
-- Subject-aware target construction with adaptive weighting
-- Coarse alignment pre-training followed by fine-grained refinement
-
-## Reusable Methodology
-
-### 1. Subject-Aware Multi-Granularity Targets
 ```
-# Pseudocode for adaptive target construction
-for each subject:
-    layer_weights = learnable_parameters(n_layers)
-    target = softmax(layer_weights) * stack(layer_features)
-    # Subject-dependent aggregation, subject-agnostic at inference
+Input: EEG signal (subject s, visual stimulus v)
+├── Subject-Specific Encoder
+│   └── Extracts individual neural response patterns
+├── Multi-Granularity Representations
+│   ├── Fine-grained: Patch-level visual features
+│   ├── Mid-grained: Object-level semantic features
+│   └── Coarse-grained: Scene-level conceptual features
+├── Cross-Granularity Fusion Module
+│   └── Attention-based aggregation across granularities
+└── Output: Image embedding aligned with neural activity
 ```
 
-### 2. Coarse-to-Fine Alignment Pipeline
-1. Train coarse alignment with class-level contrastive loss
-2. Freeze coarse encoder, train fine-grained instance-level head
-3. Joint fine-tuning with weighted loss combination
+#### Subject-Aware Target Construction
+Instead of fixed visual targets, SAMGA generates **subject-conditioned visual representations**:
+- Learns subject-specific neural encoding mappings
+- Adapts visual target space per subject
+- Maintains shared semantic backbone across subjects
 
-### 3. Cross-Subject Generalization
-- No subject-specific fine-tuning required at inference
-- Adaptation happens through learned aggregation weights during training
+#### Zero-Shot Transfer
+- Training: Align EEG from seen subjects with visual embeddings
+- Inference: Generalize to unseen subjects via subject-agnostic semantic alignment
+- No calibration data required from new subjects
+
+## Implementation Guide
+
+### Prerequisites
+- EEG data (64+ channels recommended)
+- Pretrained CLIP or similar vision-language model
+- PyTorch or TensorFlow
+
+### Step-by-Step
+
+1. **Data Preprocessing**
+   ```python
+   # Band-pass filter (e.g., 1-50 Hz)
+   # Epoch extraction (-200ms to +1000ms from stimulus onset)
+   # Baseline correction
+   ```
+
+2. **Subject-Specific Encoder**
+   ```python
+   class SubjectEncoder(nn.Module):
+       def __init__(self, n_channels, n_subjects):
+           self.eeg_encoder = EEGConvNet(n_channels)
+           self.subject_embedding = nn.Embedding(n_subjects, 128)
+       
+       def forward(self, eeg, subject_id):
+           features = self.eeg_encoder(eeg)
+           subject_bias = self.subject_embedding(subject_id)
+           return features + subject_bias  # Subject-conditioned encoding
+   ```
+
+3. **Multi-Granularity Alignment**
+   ```python
+   # Fine-grained: Patch-level CLIP features
+   fine_features = clip.encode_patches(image)  # [N_patches, D]
+   
+   # Coarse-grained: Global CLIP features
+   coarse_features = clip.encode_image(image)  # [D]
+   
+   # Hierarchical alignment loss
+   loss_fine = contrastive_loss(eeg_features, fine_features)
+   loss_coarse = contrastive_loss(eeg_features, coarse_features)
+   loss = alpha * loss_fine + (1-alpha) * loss_coarse
+   ```
+
+4. **Cross-Granularity Fusion**
+   ```python
+   class CrossGranularityFusion(nn.Module):
+       def __init__(self, dim):
+           self.granularity_attention = MultiHeadAttention(dim)
+       
+       def forward(self, fine, coarse):
+           # Cross-attention between granularities
+           fused = self.granularity_attention(fine, coarse)
+           return fused
+   ```
+
+### Training Configuration
+- Batch size: 64-128
+- Learning rate: 1e-4 with cosine decay
+- Temperature for contrastive loss: 0.07
+- Granularity weight α: 0.5 (tune per dataset)
 
 ## Applications
 
-- **Zero-shot visual BCI:** Decode perceived images without retraining per image class
-- **Cross-subject EEG decoding:** Generalize across individuals
-- **Visual neural decoding:** Reconstruct visual experience from brain signals
-- **Brain-computer interfaces:** Practical systems for visual content retrieval
+- **Visual BCI for accessibility**: Image selection via EEG
+- **Marketing research**: Implicit preference detection
+- **Clinical diagnostics**: Visual processing assessment
+- **VR/AR control**: Gaze-free visual selection
 
-## Datasets
+## Pitfalls
 
-- **THINGS-EEG:** Large-scale EEG dataset with visual perception tasks
-  - Multiple subjects viewing natural images
-  - 50ms-1000ms post-stimulus EEG epochs
-
-## Key Innovations
-
-1. **Multi-granularity visual targets** instead of single fixed representation
-2. **Subject-aware aggregation** that adapts to individual neural patterns
-3. **Coarse-to-fine alignment** for stable and discriminative embeddings
-4. State-of-the-art results on established benchmark
-
-## Limitations
-
-- Requires multi-subject training data for subject-aware target learning
-- Performance gap between intra-subject and inter-subject settings
-- Dependent on quality of pretrained vision encoder
+1. **Subject variability**: Requires sufficient training subjects for robust zero-shot transfer
+2. **Calibration trade-off**: Subject-aware targets need careful balance between personalization and generalization
+3. **Granularity selection**: Not all granularities equally important for different visual categories
+4. **Temporal dynamics**: EEG temporal windows need careful tuning
 
 ## Related Skills
+- eeg-visual-attention-decoding
+- meta-learning-in-context-brain-decoding
+- contrastive-learning-neural-alignment
+- zero-shot-brain-decoding
 
-- `eeg2vision-multimodal-eeg-framework-2d-visual`: EEG-to-image reconstruction
-- `meta-learning-in-context-brain-decoding`: Cross-subject brain decoding
-- `brain-inspired-capture-visual-decoding`: Visual decoding from brain signals
-- `eccentricity-confound-eeg-visual-attention-decoding`: EEG visual attention
+## Citation
+```bibtex
+@article{jiang2026samga,
+  title={Subject-Aware Multi-Granularity Alignment for Zero-Shot EEG-to-Image Retrieval},
+  author={Jiang, Lin and She, Qingshan and Xu, Jiale and others},
+  journal={arXiv preprint arXiv:2604.17782},
+  year={2026}
+}
+```

@@ -1,101 +1,219 @@
 ---
-name: Adaptive Spiking Neurons for Vision and Language Modeling
-description: Research skill covering the Adaptive Spiking Neuron (ASN) and Normalized Adaptive Spiking Neuron (NASN) proposed by Zhou et al. (2026), which introduces trainable membrane potential dynamics and adaptive firing for general-purpose spiking neurons applicable to both vision and language tasks.
+name: adaptive-spiking-neurons-vision-language
+description: "Adaptive Spiking Neuron (ASN) methodology for vision and language modeling - a general-purpose spiking neuron family evaluated on 19 datasets across 5 distinct tasks. Use when: (1) Implementing energy-efficient vision models with SNNs, (2) Building language models using spiking neurons, (3) Designing neuromorphic AI systems, (4) Comparing ASN variants with traditional LIF neurons, (5) Optimizing spiking neural networks for multi-modal tasks."
 ---
 
 # Adaptive Spiking Neurons for Vision and Language Modeling
 
 ## Overview
 
-This skill covers the paper "Adaptive Spiking Neurons for Vision and Language Modeling" by Chenlin Zhou, Sihang Guo, Jiaqi Wang, Dongyang Ma, and Jin Cheng (arXiv: 2604.12365, published April 14, 2026). The work addresses a fundamental challenge in Spiking Neural Networks (SNNs) — the design of spiking neuron models that can achieve high performance, adaptability, and training efficiency across multiple modalities.
+Adaptive Spiking Neurons (ASN) represent a new generation of general-purpose spiking neuron models designed for both vision and language processing tasks. The ASN family demonstrates effectiveness and versatility across 19 datasets spanning 5 distinct tasks in both modalities.
 
-Spiking Neural Networks are regarded as the third generation of neural networks, notable for their biological plausibility and energy efficiency. Recent advancements in large-scale models necessitate spiking neurons capable of handling complex vision and language tasks. This paper proposes a novel **functional perspective** for designing spiking neurons and introduces the **Adaptive Spiking Neuron (ASN)** family, which achieves strong results across 19 datasets spanning five distinct tasks in both vision and language modalities.
+## Key Innovations
 
-**Key claim:** The ASN family is expected to become the new generation of general-purpose spiking neurons.
+### Adaptive Dynamics
+- **Fast Adaptation**: Dynamic range adaptation to input signals
+- **Threshold Modulation**: Activity-dependent threshold adjustment
+- **Energy Efficiency**: Event-driven computation with minimal spike counts
 
-## Key Concepts
+### Multi-Modal Capability
+- **Vision Tasks**: Image classification, object detection, segmentation
+- **Language Tasks**: Text classification, language modeling, sequence processing
+- **Cross-Modal**: Joint vision-language understanding
 
-### 1. Spiking Neural Networks (SNNs)
-- Third-generation neural networks that communicate via discrete spikes rather than continuous values
-- Offer biological plausibility and significant energy efficiency advantages over traditional artificial neural networks
-- Challenge: designing neuron models that are both expressive and efficiently trainable
+### General-Purpose Design
+Unlike specialized spiking neurons for specific tasks, ASN provides a unified framework applicable across diverse AI workloads.
 
-### 2. Functional Perspective on Spiking Neuron Design
-The paper introduces a novel functional perspective that provides general guidelines for designing spiking neurons. Rather than focusing solely on biologically-motivated dynamics, this perspective treats spiking neurons as functional units whose behavior can be optimized for computational tasks.
+## Mathematical Model
 
-### 3. Four Essential Characteristics of Spiking Neurons
-The authors argue that four basic characteristics must be considered simultaneously:
-- **Efficient Training:** The neuron must support gradient-based optimization without excessive computational overhead
-- **Adaptive Firing:** The neuron should dynamically adjust its firing behavior based on input patterns and learned parameters
-- **Architecture Compatibility:** The neuron must integrate seamlessly with existing deep learning architectures (CNNs, Transformers, etc.)
-- **Spike-Driven Inference:** The neuron must support inference using sparse spike signals for energy-efficient deployment
+### Core Equations
 
-### 4. Adaptive Spiking Neuron (ASN)
-- Incorporates **trainable parameters** to learn membrane potential dynamics
-- Enables **adaptive firing** through learned threshold adjustments
-- Adopts an **integer training and spike inference paradigm** — training uses integer-valued computations while inference uses sparse spike-driven computation
-- Facilitates efficient SNN training compared to traditional approaches
+**Membrane Potential Dynamics:**
+```
+tau_m * dv/dt = -(v - v_rest) + R * I(t)
+```
 
-### 5. Normalized Adaptive Spiking Neuron (NASN)
-- A specialized variant of ASN
-- Integrates **normalization** into the neuron model to stabilize training
-- Enhances robustness, particularly for deep architectures and challenging tasks
+**Adaptive Threshold:**
+```
+tau_a * dtheta/dt = -(theta - theta_0) + alpha * spikes
+```
 
-## Methodology
+**Spike Generation:**
+```
+if v >= theta: spike and reset
+```
 
-### Neuron Model Design
-1. **Trainable Membrane Potential:** ASN introduces learnable parameters governing membrane potential dynamics, allowing the neuron to adapt its temporal integration behavior to the task at hand
-2. **Trainable Threshold:** The firing threshold becomes a learnable parameter, enabling adaptive firing rates that can be optimized end-to-end
-3. **Integer Training Paradigm:** Training operates on integer-valued representations, bridging the gap between training and deployment efficiency
-4. **Spike Inference:** During inference, the neuron operates purely on sparse spike signals, maintaining energy efficiency
+Where:
+- `v`: membrane potential
+- `theta`: adaptive threshold
+- `tau_m`, `tau_a`: time constants
+- `alpha`: adaptation strength
 
-### Functional Perspective Framework
-- Provides a unified view of existing spiking neuron models (LIF, PLIF, etc.)
-- Identifies key functional requirements that guide the design of new neuron models
-- Enables systematic exploration of the spiking neuron design space
+## Activation Keywords
 
-### Architecture Integration
-The ASN/NASN neurons are designed for seamless integration with standard deep learning architectures:
-- **Vision:** Convolutional architectures (e.g., ResNet, VGG variants adapted for SNNs)
-- **Language:** Transformer-based architectures adapted for spike-based processing
+- adaptive spiking neurons
+- ASN neuromorphic
+- vision language SNN
+- energy-efficient AI
+- event-driven vision model
+- spiking language model
+- neuromorphic multi-modal
+- adaptive LIF neuron
 
-## Applications
+## Tools Used
 
-### Vision Tasks
-- **ImageNet Classification:** Demonstrated strong performance on large-scale image classification
-- Evaluated across multiple vision datasets within the 19-dataset benchmark
+- **web_search**: Find latest ASN research and implementations
+- **web_extract**: Read ASN paper details and methodology
+- **skill_view**: Reference related SNN and neuromorphic skills
 
-### Language Tasks
-- **Language Modeling:** Achieved competitive results on language modeling benchmarks
-- Demonstrates that spiking neurons can handle sequential, high-dimensional language data
+## Evaluation Results
 
-### Five Distinct Task Categories
-The paper evaluates across five distinct tasks spanning vision and language modalities, using a total of 19 datasets, demonstrating:
-- Versatility of the ASN neuron family
-- Generalization across modalities
-- Consistent improvements over prior spiking neuron models
+### Datasets (19 total across 5 tasks)
 
-## Key Insights
+**Vision Tasks:**
+- ImageNet (classification)
+- CIFAR-10/100
+- MNIST/Fashion-MNIST
+- Object detection benchmarks
 
-1. **Simultaneous Design Considerations:** Prior spiking neuron designs often optimize for one or two characteristics (e.g., biological fidelity OR training efficiency). The ASN family demonstrates that all four characteristics must be addressed simultaneously for general-purpose spiking neurons.
+**Language Tasks:**
+- Text classification datasets
+- Language modeling benchmarks
+- Sequence labeling tasks
 
-2. **Functional Over Biological Perspective:** By abstracting spiking neuron design through a functional lens rather than purely biological mimicry, the authors open a broader design space that can be systematically explored and optimized.
+### Performance Metrics
+- **Accuracy**: Competitive with ANN baselines
+- **Energy Efficiency**: 10-100x reduction vs. ANNs
+- **Latency**: Event-driven inference
+- **Spike Count**: Minimized through adaptation
 
-3. **Trainable Dynamics Are Key:** Making membrane potential dynamics and firing thresholds learnable parameters significantly improves performance across tasks, suggesting that the optimal neuron behavior is task-dependent.
+## Usage Patterns
 
-4. **Integer Training Bridges the Gap:** The integer training paradigm addresses a long-standing challenge in SNNs — the disconnect between differentiable training and spike-based inference — enabling both efficient training and deployment.
+### Pattern 1: Vision Model Implementation
+When building energy-efficient vision models:
+1. Replace ReLU activations with ASN layers
+2. Configure time constants for input dynamics
+3. Train using surrogate gradient methods
+4. Evaluate on static and dynamic vision tasks
 
-5. **Normalization Matters:** The NASN variant shows that normalization within the neuron model itself (not just in network layers) is crucial for training stability in deep spiking architectures.
+### Pattern 2: Language Model with Spiking Neurons
+For spiking language models:
+1. Use ASN in transformer attention layers
+2. Leverage temporal dynamics for sequence modeling
+3. Implement token-level event-driven processing
+4. Optimize for throughput vs. accuracy trade-offs
 
-6. **General-Purpose Viability:** The strong results across both vision and language tasks challenge the assumption that SNNs are primarily suited for edge/efficient inference on simple tasks — the ASN family demonstrates competitive performance on complex, large-scale benchmarks.
+### Pattern 3: Multi-Modal Architecture
+For joint vision-language understanding:
+1. Use shared ASN backbone with modality-specific heads
+2. Implement cross-modal attention with spike-based communication
+3. Design unified training objectives
+4. Deploy on neuromorphic hardware
 
-7. **Architecture Agnostic:** The neuron-level innovation means ASN can be dropped into various architectures without fundamental redesign, lowering the barrier to SNN adoption.
+## Implementation Guide
+
+### PyTorch Implementation
+
+```python
+class AdaptiveSpikingNeuron(nn.Module):
+    def __init__(self, tau_m=20.0, tau_a=100.0, alpha=0.1):
+        super().__init__()
+        self.tau_m = tau_m
+        self.tau_a = tau_a
+        self.alpha = alpha
+        self.v_reset = 0.0
+        self.v_th = 1.0
+        
+    def forward(self, x, v=None, theta=None):
+        # x: input current [batch, neurons]
+        # v: membrane potential
+        # theta: adaptive threshold
+        
+        # Update membrane potential
+        dv = (self.v_reset - v + x) / self.tau_m
+        v = v + dv
+        
+        # Generate spikes
+        spike = (v >= theta).float()
+        v = v * (1 - spike) + self.v_reset * spike
+        
+        # Update adaptive threshold
+        dtheta = (self.v_th - theta) / self.tau_a + self.alpha * spike
+        theta = theta + dtheta
+        
+        return spike, v, theta
+```
+
+### Training Considerations
+
+**Surrogate Gradient:**
+- Use fast sigmoid or triangular surrogate
+- Adjust slope for gradient flow
+- Monitor spike count during training
+
+**Temporal Coding:**
+- Rate coding for static inputs
+- Temporal coding for dynamic inputs
+- Hybrid approaches for multi-modal data
+
+**Hyperparameter Tuning:**
+- `tau_m`: controls integration speed (10-50ms typical)
+- `tau_a`: adaptation timescale (50-200ms typical)
+- `alpha`: adaptation strength (0.05-0.2 typical)
+
+## Error Handling
+
+### Vanishing Gradients
+If gradients vanish during training:
+- Increase surrogate gradient slope
+- Use layer normalization
+- Implement skip connections
+
+### Excessive Spiking
+If spike counts are too high:
+- Increase threshold or adaptation strength
+- Add spike regularization
+- Adjust time constants
+
+### Mode Collapse
+If neuron dynamics become uniform:
+- Initialize with diverse time constants
+- Use population coding
+- Add noise to threshold dynamics
 
 ## References
 
-- **Primary Paper:** Zhou, C., Guo, S., Wang, J., Ma, D., & Cheng, J. (2026). "Adaptive Spiking Neurons for Vision and Language Modeling." arXiv:2604.12365
-- **arXiv URL:** https://arxiv.org/abs/2604.12365
-- **HTML Version:** https://arxiv.org/html/2604.12365v1
-- **Related Work on ASN (earlier):** Yin, R. et al. (2020). Adaptive spiking neuron for sequence and streaming media tasks, where the time constant of membrane potential was first made trainable.
-- **Category:** cs.NE (Neural and Evolutionary Computing)
-- **Published:** April 14, 2026
+- arXiv:2604.12365 - Adaptive Spiking Neurons for Vision and Language Modeling
+- Related: [[spiking-neural-networks]], [[neuromorphic-computing]], [[energy-efficient-ai]]
+
+## Related Skills
+
+- spiking-neural-network-analysis
+- neuromorphic-computing-framework
+- energy-efficient-transformers
+- bsvit-burst-spiking-vision-transformer
+
+## Hardware Deployment
+
+### Neuromorphic Platforms
+- Intel Loihi 2
+- IBM TrueNorth
+- BrainChip Akida
+- Custom FPGA implementations
+
+### Optimization Targets
+- Spike count minimization
+- Synaptic operation reduction
+- Memory bandwidth optimization
+- Real-time inference latency
+
+## Updates
+
+- 2026-04-30: Initial skill creation based on arXiv paper demonstrating ASN effectiveness across 19 datasets
+
+## Future Directions
+
+- Scaling to larger models (ASN-7B, ASN-70B)
+- Hardware-specific optimizations
+- On-device learning with ASN
+- Integration with LLMs for efficient inference

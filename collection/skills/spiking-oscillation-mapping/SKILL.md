@@ -1,81 +1,241 @@
 ---
 name: spiking-oscillation-mapping
-description: Spiking-phase adaptive temporal encoding (SPATE) for quantum machine learning - mapping oscillatory/spiking dynamics to quantum state preparation. Combines spiking neural dynamics with quantum feature encoding for time-series QML. Activation: spiking quantum machine learning, oscillation encoding, temporal quantum encoding, spike-phase mapping, quantum neural dynamics
+description: "Analyze and map oscillatory states in balanced spiking neural networks (SNN). Identify regime transitions (silent, asynchronous-irregular, oscillatory) based on synaptic and temporal time scales. Activation: spiking oscillation, SNN regime mapping, balanced network dynamics, oscillatory state analysis."
 ---
 
-# Spiking-Phase Adaptive Temporal Encoding for Quantum ML
+# Spiking Oscillation Mapping
 
-## Overview
-Based on paper: [SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning](https://arxiv.org/abs/2604.11022) (arXiv:2604.11022).
+Map oscillatory regimes in balanced spiking neural networks based on time scale interactions.
 
-Most quantum machine learning (QML) pipelines rely on static encodings such as angle and amplitude maps. SPATE (Spiking-Phase Adaptive Temporal Encoding) maps oscillatory dynamics of spiking neural signals to quantum feature encoding, utilizing temporal dynamics properties to adaptively prepare quantum states through spike-phase information.
+## Background
+
+Balanced spiking networks exhibit three regimes:
+1. **Silent** - No sustained activity
+2. **Asynchronous-Irregular (AI)** - Poisson-like spiking
+3. **Oscillatory** - Periodic population activity
+
+Regime depends on **interacting time scales**:
+- Postsynaptic decay (τ_s)
+- Membrane potential decay (τ_m)
+- Refractory period (τ_ref)
 
 ## Core Concepts
 
-### Limitations of Static QML Encodings
-- **Angle encoding**: maps values to rotation angles, ignores temporal information
-- **Amplitude encoding**: requires normalization, loses absolute scale
-- **Problem**: static encodings cannot capture oscillations, frequency, and phase relationships in time series
+### 1. Time Scale Interactions
 
-### Spiking-Phase Encoding
-1. **Phase mapping**: map oscillatory phase from time series to quantum gate rotations
-2. **Adaptive timing**: adjust encoding time windows based on signal frequency
-3. **Spike-driven**: use spike events as triggers for quantum state preparation
-4. **Information retention**: simultaneously preserves amplitude, frequency, and phase
-
-### SPATE Architecture
-```
-Input Time Series -> Oscillation Detection -> Phase Extraction ->
-Quantum Gate Mapping -> State Preparation -> QML Circuit
-```
-
-## Implementation
+Network dynamics governed by relative time scales:
 
 ```python
-import numpy as np
-from scipy.signal import hilbert, find_peaks
+# Time scale ratios determine regime
+alpha = tau_s / tau_m      # Synaptic vs membrane
+beta = tau_ref / tau_m     # Refractory vs membrane
+gamma = tau_s / tau_ref    # Synaptic vs refractory
 
-class SpikingPhaseEncoder:
-    def __init__(self, n_qubits=4, encoding_window=1.0):
-        self.n_qubits = n_qubits
-
-    def extract_phase(self, signal):
-        analytic = hilbert(signal)
-        return np.angle(analytic), np.abs(analytic)
-
-    def detect_spikes(self, signal, threshold=2.0):
-        peaks, _ = find_peaks(signal, height=threshold)
-        return peaks
-
-    def encode_to_quantum_angles(self, signal, fs=1000):
-        phase, amplitude = self.extract_phase(signal)
-        spikes = self.detect_spikes(signal)
-        window_size = len(signal) // self.n_qubits
-        angles = []
-        for i in range(self.n_qubits):
-            s, e = i * window_size, (i+1) * window_size
-            angles.append(np.mean(phase[s:e]))           # RX
-            angles.append(np.mean(amplitude[s:e]) / (np.max(amplitude)+1e-10) * np.pi)  # RY
-            n_spikes = np.sum((spikes >= s) & (spikes < e))
-            angles.append(n_spikes * np.pi / (window_size/fs + 1))  # RZ
-        return np.array(angles).reshape(self.n_qubits, 3)
+# Regime boundaries
+def get_regime(alpha, beta, gamma):
+    if gamma > threshold_high:
+        return "oscillatory"
+    elif gamma < threshold_low and alpha < threshold:
+        return "silent"
+    else:
+        return "asynchronous_irregular"
 ```
 
-## Applications
-1. **Quantum Time-Series Classification**: QML-enhanced classification of EEG/MEG neural signals
-2. **Financial Time Series**: quantum-enhanced market prediction
-3. **Sensor Data Processing**: quantum feature extraction for oscillatory signals
-4. **Hybrid Quantum-Classical Neuromorphic Systems**: direct encoding of SNN output to quantum states
+### 2. Oscillatory State Detection
 
-## Advantages
-| Method | Temporal Info | Phase Info | Adaptive | Spike Compatible |
-|--------|--------------|------------|----------|-----------------|
-| Angle  | No | No | No | No |
-| Amplitude | No | No | No | No |
-| SPATE  | Yes | Yes | Yes | Yes |
+Detect oscillation from spike train statistics:
 
-## References
-- arXiv:2604.11022 - SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
+```python
+def detect_oscillation(spike_counts, time_window):
+    # Compute population rate
+    rate = spike_counts / time_window
+    
+    # Autocorrelation reveals oscillation
+    autocorr = compute_autocorrelation(rate)
+    
+    # Peaks in autocorr indicate periodicity
+    peaks = find_peaks(autocorr)
+    
+    if len(peaks) > 1:
+        oscillation_freq = extract_frequency(autocorr, peaks)
+        return "oscillatory", oscillation_freq
+    else:
+        return "asynchronous_irregular", None
+```
 
-## Activation Keywords
-- spiking quantum ML, phase encoding, temporal quantum encoding, SPATE, oscillation mapping, quantum feature engineering
+### 3. Regime Mapping
+
+Systematically explore parameter space:
+
+```python
+def map_regime_space(tau_s_range, tau_m_range, tau_ref_range):
+    regimes = {}
+    
+    for tau_s in tau_s_range:
+        for tau_m in tau_m_range:
+            for tau_ref in tau_ref_range:
+                # Run simulation
+                spikes = run_simulation(tau_s, tau_m, tau_ref)
+                
+                # Classify regime
+                regime, freq = detect_oscillation(spikes)
+                
+                # Store result
+                key = (tau_s, tau_m, tau_ref)
+                regimes[key] = {"regime": regime, "freq": freq}
+    
+    return regimes
+```
+
+### 4. Balanced Network Model
+
+Base network structure:
+
+```python
+class BalancedSpikingNetwork:
+    def __init__(self, N_exc, N_inh, tau_s, tau_m, tau_ref):
+        self.exc_neurons = ExcitatoryPopulation(N_exc, tau_m, tau_ref)
+        self.inh_neurons = InhibitoryPopulation(N_inh, tau_m, tau_ref)
+        self.synapses = Synapses(tau_s)
+        
+        # Balance: EI ratio ~4:1 for stability
+        self.EI_ratio = 4
+    
+    def simulate(self, duration, input_rate):
+        # External drive
+        exc_input = PoissonInput(input_rate)
+        
+        # Recurrent dynamics
+        for t in range(duration):
+            exc_spikes = self.exc_neurons.update(exc_input, self.inh_neurons)
+            inh_spikes = self.inh_neurons.update(exc_spikes)
+            
+            # Balanced inhibition prevents runaway excitation
+            self.synapses.update(exc_spikes, inh_spikes)
+```
+
+## Implementation Guidelines
+
+### When to Use
+
+1. **SNN stability analysis** - Understanding network dynamics
+2. **Parameter tuning** - Finding optimal time scales for target regime
+3. **Oscillation control** - Designing networks for rhythmic computation
+4. **Regime transitions** - Studying state switching
+
+### Key Parameters
+
+| Parameter | Range | Effect |
+|-----------|-------|--------|
+| τ_s | 5-100 ms | Synaptic integration window |
+| τ_m | 10-50 ms | Membrane leakage |
+| τ_ref | 2-10 ms | Spike refractory period |
+| EI_ratio | 3-5 | Excitatory/inhibitory balance |
+
+### Regime Characteristics
+
+| Regime | Rate | Autocorrelation | Spike Pattern |
+|--------|------|-----------------|---------------|
+| Silent | ~0 | Flat | No sustained activity |
+| AI | Irregular | Exponential decay | Poisson-like |
+| Oscillatory | Periodic | Periodic peaks | Synchronized bursts |
+
+## Analysis Tools
+
+### Visualization
+
+```python
+# Plot regime map
+def plot_regime_map(regimes):
+    import matplotlib.pyplot as plt
+    
+    # Create 2D slice of parameter space
+    tau_s_vals = sorted(set(k[0] for k in regimes.keys()))
+    tau_ref_vals = sorted(set(k[2] for k in regimes.keys()))
+    
+    # Color-coded regime plot
+    colors = {"oscillatory": "red", "AI": "green", "silent": "blue"}
+    
+    for key, data in regimes.items():
+        color = colors[data["regime"]]
+        plt.scatter(key[0], key[2], c=color)
+    
+    plt.xlabel("τ_s (ms)")
+    plt.ylabel("τ_ref (ms)")
+    plt.title("Regime Map")
+```
+
+### Transition Detection
+
+```python
+# Find regime boundaries
+def find_transitions(regimes):
+    transitions = []
+    
+    # Scan parameter space
+    for param1 in regimes:
+        for param2 in get_neighbors(param1):
+            if regimes[param1]["regime"] != regimes[param2]["regime"]:
+                # Boundary between regimes
+                transition_point = (param1, param2)
+                transitions.append(transition_point)
+    
+    return transitions
+```
+
+## Related Concepts
+
+- **Balanced Networks**: Excitatory-inhibitory equilibrium
+- **Asynchronous Irregular State**: Poisson-like spiking regime
+- **Neural Oscillations**: Population-level rhythmic activity
+- **Time Scale Separation**: Multiple temporal dynamics
+
+## Resources
+
+- Paper: "Regime Mapping of Oscillatory States in Balanced Spiking Networks" (2604.04770v1)
+- SNN simulation frameworks: Brian2, NEST, BindsNET
+
+## Usage Examples
+
+### Example: Parameter Optimization
+
+```python
+# Find parameters for desired regime
+def optimize_for_regime(target_regime="oscillatory", target_freq=40):
+    best_params = None
+    
+    for tau_s in range(10, 100, 5):
+        for tau_ref in range(2, 10):
+            regime, freq = simulate_and_classify(tau_s, tau_ref)
+            
+            if regime == target_regime and abs(freq - target_freq) < 5:
+                best_params = (tau_s, tau_ref)
+                break
+    
+    return best_params
+```
+
+### Example: Regime Analysis
+
+```python
+# Analyze network dynamics
+def analyze_snn_dynamics(network):
+    spikes = network.simulate(duration=5000)
+    
+    regime, freq = detect_oscillation(spikes)
+    
+    report = {
+        "regime": regime,
+        "frequency": freq,
+        "mean_rate": compute_mean_rate(spikes),
+        "fano_factor": compute_fano(spikes),
+        "cv ISI": compute_cv(spikes)
+    }
+    
+    return report
+```
+
+---
+
+**Source**: arxiv paper 2604.04770v1 - "Regime Mapping of Oscillatory States in Balanced Spiking Networks"
+**Created**: 2026-04-07 by research-skill-creation-hourly cron job

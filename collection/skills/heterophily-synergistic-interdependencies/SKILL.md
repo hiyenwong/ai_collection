@@ -1,77 +1,58 @@
 ---
 name: heterophily-synergistic-interdependencies
-description: "Heterophily as a generative mechanism for self-organized synergistic interdependencies. Reveals how heterophily induces high-order dependencies while weakening pairwise dependencies through geometric constraints. For adaptive systems, neuroscience, complex networks. Activation: heterophily, synergistic interdependencies, self-organization, high-order dependencies, adaptive systems."
+description: Heterophily as a generative mechanism for self-organized synergistic interdependencies in adaptive networks. Explains how heterophily induces higher-order dependencies while weakening pairwise dependencies, enabling robust collective behavior. Trigger words: heterophily, synergistic interdependencies, adaptive networks, higher-order dependencies, self-organization, network dynamics, collective behavior.
+version: 1.0.0
+author: Research Synthesis
+license: MIT
+metadata:
+  hermes:
+    source_paper: "Heterophily as a generative mechanism for self-organized synergistic interdependencies (arXiv:2604.11545)"
+    citations: 0
+    published: "2026-04-13"
+    tags: [network-science, heterophily, higher-order, self-organization, complex-systems, dynamics]
 ---
 
-# Heterophily as Generative Mechanism for Synergistic Interdependencies
+# Heterophily and Synergistic Interdependencies
 
-Heterophily as a generative mechanism for self-organized synergistic interdependencies in adaptive systems.
+## Overview
 
-## Core Insight
+Heterophily (preference for dissimilar connections) acts as a generative mechanism for self-organized synergistic interdependencies in adaptive networks. This skill provides the theoretical framework and computational methods for analyzing how heterophily induces higher-order dependencies while weakening pairwise dependencies.
 
-Understanding what and how causal dynamical mechanisms generate collective phenomena is a central challenge in complexity science. 
+## Core Concepts
 
-Key findings:
-- **Heterophily** is the minimal local adaptive mechanism for synergistic interdependencies
-- Heterophily induces **high-order dependencies** through geometric constraints
-- Simultaneously **weakens pairwise dependencies**
-- These dual effects together underpin synergy
+- **Heterophily**: Tendency of nodes to connect to dissimilar others
+- **Synergistic Interdependencies**: Higher-order interactions that cannot be reduced to pairwise effects
+- **Self-Organization**: Emergence of complex network structures from local rules
 
-## Theoretical Model
-
-### Spin-Glass-like Model with Adaptive Couplings
+## Implementation
 
 ```python
-class HeterophilySynergyModel:
-    def __init__(self, N, heterophily_strength=0.1):
-        self.N = N
-        self.J = np.random.randn(N, N) * 0.1
-        self.s = np.random.choice([-1, 1], N)
-        self.eta = heterophily_strength
-        
-    def update_spins(self, temperature=1.0):
-        for i in range(self.N):
-            h_i = np.dot(self.J[i, :], self.s)
-            prob = 1 / (1 + np.exp(-2 * h_i / temperature))
-            self.s[i] = 1 if np.random.random() < prob else -1
-    
-    def update_couplings_heterophily(self):
-        for i in range(self.N):
-            for j in range(i+1, self.N):
-                delta_J = -self.eta * self.s[i] * self.s[j]
-                self.J[i, j] += delta_J
-                self.J[j, i] += delta_J
-                self.J[i, j] = np.clip(self.J[i, j], -1, 1)
-                self.J[j, i] = self.J[i, j]
+import numpy as np
+from itertools import combinations
+
+def compute_heterophily_index(network, node_attributes):
+    edges = network.edges()
+    heterophilous = sum(1 for i, j in edges if node_attributes[i] != node_attributes[j])
+    return heterophilous / len(edges) if edges else 0
+
+def analyze_higher_order_dependencies(network, node_attributes, order=3):
+    dependencies = {}
+    for combo in combinations(network.nodes(), order):
+        joint_entropy = compute_joint_entropy(network, combo, node_attributes)
+        pairwise_sum = sum(compute_pairwise_entropy(network, (i, j), node_attributes)
+                          for i, j in combinations(combo, 2))
+        synergy = joint_entropy - pairwise_sum
+        dependencies[combo] = synergy
+    return dependencies
 ```
-
-## Key Findings
-
-1. **Heterophily is minimal mechanism**: The simplest local adaptive rule sufficient to generate synergy
-2. **Dual effect**:
-   - Weakens pairwise dependencies (reduces pairwise correlations)
-   - Induces high-order dependencies (enhances group-level correlations)
-3. **Geometric constraints are key**: Configurations selected by heterophily are constrained by system geometry
-4. **Robustness**: Mechanism persists in large systems, robust to parameter heterogeneity and noise
 
 ## Applications
 
-- **Neuroscience**: Understanding synergy mechanisms in brain information integration
-- **Social networks**: Designing network interventions for constructive dialogue
-- **Ecosystems**: Understanding biodiversity maintenance mechanisms
-- **Distributed computing**: Designing collaborative distributed algorithms
+- Brain network analysis
+- Social network dynamics
+- Multi-agent system coordination
+- Complex system resilience analysis
 
 ## Activation Keywords
 
-- heterophily
-- synergistic interdependencies
-- self-organization
-- high-order dependencies
-- adaptive systems
-- information decomposition
-
-## References
-
-- **Paper**: Heterophily as a generative mechanism for self-organized synergistic interdependencies (arXiv:2604.11545v1)
-- **Authors**: Enrico Caprioglio, Luc Berthouze
-- **Published**: April 2026
+heterophily, synergistic interdependencies, adaptive networks, higher-order dependencies, self-organization, network dynamics, collective behavior

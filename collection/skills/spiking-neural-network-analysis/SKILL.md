@@ -40,7 +40,7 @@ User Request → Identify Task Type
 
 ```bash
 # Search knowledge graph
-sqlite3 /Users/hiyenwong/.openclaw/workspace/kg.db \
+sqlite3 /Users/hiyenwong/wiki/kg.db \
   "SELECT id, name FROM kg_entities WHERE name LIKE '%spiking%' OR name LIKE '%neuromorphic%'"
 ```
 
@@ -48,7 +48,7 @@ sqlite3 /Users/hiyenwong/.openclaw/workspace/kg.db \
 
 ```bash
 # Get paper properties (keywords, topics, category)
-sqlite3 /Users/hiyenwong/.openclaw/workspace/kg.db \
+sqlite3 /Users/hiyenwong/wiki/kg.db \
   "SELECT id, name, properties FROM kg_entities WHERE entity_type='paper' AND name LIKE '%spiking%'"
 ```
 
@@ -56,16 +56,13 @@ sqlite3 /Users/hiyenwong/.openclaw/workspace/kg.db \
 
 ```bash
 # PageRank
-/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool pagerank \
-  --db /Users/hiyenwong/.openclaw/workspace/kg.db
+/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool pagerank --limit 10
 
-# Louvain community detection
-/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool louvain \
-  --db /Users/hiyenwong/.openclaw/workspace/kg.db
+# Community detection
+/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool communities --limit 10
 
-# Vector similarity
-/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool similar \
-  --db /Users/hiyenwong/.openclaw/workspace/kg.db <entity_id>
+# Search
+/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool search --query "spiking neural" --limit 10
 ```
 
 ### Step 4: Extract Technical Patterns
@@ -77,14 +74,6 @@ Common SNN patterns:
 - **backpropagation-free** - No backpropagation
 - **temporal dynamics** - Time-series processing
 - **low-latency** - Fast inference
-
-## Instructions for Agents
-
-Follow these steps to analyze SNN papers:
-1. Identify the user's task type (search, pattern extraction, knowledge graph analysis, or report generation)
-2. Use the Workflow Decision Tree to select the appropriate path
-3. Execute the Core Commands in order
-4. Present results using the format shown in Usage Examples
 
 ## Usage Examples
 
@@ -154,6 +143,6 @@ Execute:
 
 ## Resources
 
-- Knowledge Graph: `/Users/hiyenwong/.openclaw/workspace/kg.db`
+- Knowledge Graph: `/Users/hiyenwong/wiki/kg.db`
 - KG Tool: `/Users/hiyenwong/.openclaw/workspace/scripts/kg_tool/target/release/kg_tool`
 - Daily Research: `memory/2026-04-06.md`

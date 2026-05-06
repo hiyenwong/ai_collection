@@ -1,103 +1,94 @@
 ---
 name: self-sustained-neuron-population
-description: Modeling self-sustained neural activity in recurrent networks without external stimuli. Covers dynamical systems analysis, attractor states, and autonomous neural dynamics. Activation: self-sustained, autonomous neural activity, recurrent network dynamics, attractor states, internal neural dynamics.
+description: "Modeling self-sustained neural activity in recurrent networks without external input. Hodgkin-Huxley neurons with STDP and stochasticity maintain autonomous sparse firing for 1800+ seconds after brief initialization. Use when studying autonomous brain dynamics, self-sustained activity, spontaneous neural reorganization, or biologically plausible network simulation."
 version: 1.0.0
 metadata:
   hermes:
     source_paper: "Modeling of Self-sustained Neuron Population without External Stimulus (arXiv:2604.13719)"
-    tags: [computational-neuroscience, recurrent-networks, attractor-dynamics, self-sustained]
+    tags: [neuroscience, self-sustained, hodgkin-huxley, stdp, autonomous-activity]
 ---
 
 # Self-Sustained Neuron Population Modeling
 
 ## Overview
-Methodology for modeling populations of neurons that maintain activity autonomously without requiring external stimuli. This is fundamental to understanding working memory, persistent activity, and intrinsic brain dynamics.
 
-## Source Paper
-- **Title:** Modeling of Self-sustained Neuron Population without External Stimulus
-- **arXiv:** 2604.13719v1
-- **Authors:** İhsan Ertuğrul Karakaş, Özden Özel, İlkay Ulusoy, Orhan Murat Koçak
-- **Published:** 2026-04-15
+Self-sustained neural activity in the absence of ongoing external input is a fundamental feature of nervous system dynamics. Recurrent Hodgkin-Huxley networks with plastic and stochastic synapses sustain long-duration autonomous activity in a sparse firing regime after brief (200ms) initialization.
 
-## Core Concepts
+## Core Mechanism
 
-### Self-Sustained Activity
-Neural populations that maintain elevated firing rates without continuous external input. Key mechanisms:
-- **Recurrent excitation:** Positive feedback loops within the network
-- **Balance of excitation/inhibition:** Preventing runaway activity
-- **Attractor dynamics:** Stable fixed points in state space
+A recurrent network of 200 neurons (160 excitatory, 40 inhibitory) with 80% connection probability maintains autonomous activity through:
+- Excitatory and inhibitory STDP
+- Probabilistic vesicle release
+- Probabilistic synapse formation
+- Receptor variability
+- Voltage-dependent inhibition
 
-### Dynamical Systems Framework
-```
-dx/dt = -x + W*f(x) + I_ext
-```
-Where:
-- x: neural state vector
-- W: recurrent weight matrix
-- f: activation function
-- I_ext: external input (can be zero for self-sustained)
+## Key Results
 
-### Key Analysis Methods
-1. **Fixed point analysis:** Find states where dx/dt = 0
-2. **Linear stability:** Eigenvalues of Jacobian at fixed points
-3. **Bifurcation analysis:** How behavior changes with parameters
-4. **Mean-field reduction:** Population-level dynamics
+| Parameter | Value |
+|-----------|-------|
+| Network size | 200 neurons (160E + 40I) |
+| Connection probability | 80% |
+| Duration sustained | 1800+ seconds |
+| Mean firing rate | 1.13 ± 1.34 Hz |
+| Neurons < 1 Hz | 67% |
+| Fano factor | 1-2 |
 
-## Implementation
+## Implementation Pattern
 
 ```python
 import numpy as np
 
 class SelfSustainedNetwork:
-    def __init__(self, n_neurons, connection_prob=0.1, g=1.5):
-        self.n = n_neurons
-        W = np.random.randn(n_neurons, n_neurons) * g / np.sqrt(n_neurons)
-        mask = np.random.random((n_neurons, n_neurons)) < connection_prob
-        self.W = W * mask
-        self.tau = 10.0
+    """Recurrent HH network with STDP maintaining autonomous activity."""
+    
+    def __init__(self, n_excitatory=160, n_inhibitory=40, conn_prob=0.8):
+        self.n_total = n_excitatory + n_inhibitory
+        self.n_exc = n_excitatory
+        self.n_inh = n_inhibitory
+        self.conn_prob = conn_prob
+        
+        # Initialize connectivity
+        self.weights = self._init_connectivity()
+        
+    def _init_connectivity(self):
+        """Probabilistic synapse formation."""
+        W = np.zeros((self.n_total, self.n_total))
+        mask = np.random.random(W.shape) < self.conn_prob
+        W[mask] = np.random.normal(0, 1, size=mask.sum())
+        return W
+    
+    def apply_stdp(self, pre_spike, post_spike):
+        """Excitatory and inhibitory STDP rules."""
+        # Asymmetric STDP window
+        pass
+    
+    def initialize(self, duration_ms=200, target_neurons=30):
+        """Brief transient stimulation to subset of excitatory neurons."""
+        pass
+    
+    def run_autonomous(self, duration_s=1800):
+        """Run without any external input."""
+        # Monitor sparse, irregular activity
+        # Track Fano factors, participation rates
+        pass
 
-    def dynamics(self, x, I_ext=None):
-        # Rate model dynamics
-        if I_ext is None:
-            I_ext = np.zeros_like(x)
-        f_x = np.maximum(x, 0)
-        dx = (-x + self.W @ f_x + I_ext) / self.tau
-        return dx
-
-    def find_fixed_points(self, n_init=100):
-        # Find stable fixed points via gradient descent
-        fixed_points = []
-        for _ in range(n_init):
-            x = np.random.randn(self.n) * 0.1
-            for _ in range(10000):
-                dx = self.dynamics(x)
-                x = x + 0.01 * dx
-                if np.linalg.norm(dx) < 1e-6:
-                    fixed_points.append(x.copy())
-                    break
-        return fixed_points
-
-    def simulate(self, x0, I_ext=None, T=1000, dt=0.1):
-        # Simulate network dynamics
-        if I_ext is None:
-            I_ext = np.zeros(self.n)
-        t_steps = int(T / dt)
-        history = np.zeros((t_steps, self.n))
-        x = x0.copy()
-        for i in range(t_steps):
-            history[i] = x
-            dx = self.dynamics(x, I_ext)
-            x = x + dt * dx
-        return history
+# Usage: initialize then run autonomous
+net = SelfSustainedNetwork()
+net.initialize(duration_ms=200, target_neurons=30)
+activity = net.run_autonomous(duration_s=1800)
+# Network maintains sparse firing without external drive
 ```
 
 ## Applications
-- Working memory modeling
-- Persistent activity in prefrontal cortex
-- Autonomous neural computation
-- Baseline activity maintenance
 
-## Related
-- [[working-memory-heterogeneous-delays]]
-- [[attractor-metadynamics-neural]]
-- [[computational-neuroscience-models]]
+- **Autonomous brain dynamics modeling**: Study self-sustained cortical activity
+- **Spontaneous reorganization**: Track qualitative changes in collective firing patterns
+- **Neuromorphic systems**: Low-power always-on neural computation
+- **Epilepsy research**: Understand transition between sparse and synchronized states
+
+## References
+
+- Original paper: arXiv:2604.13719v1
+- Authors: Karakaş, Özel, Ulusoy, Koçak
+- Published: 2026-04-15

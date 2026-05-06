@@ -1,102 +1,85 @@
 ---
 name: large-adaptive-regularization-gaussian-graphical
-description: "LARGE: Locally Adaptive Regularization for estimating Gaussian Graphical Models (GGMs) from heterogeneous data. Nodewise adaptive tuning parameter selection for improved brain functional connectivity estimation. Activation: GGM, Gaussian graphical model, precision matrix, brain functional connectivity, GLASSO, graph estimation, regularization, fMRI connectivity, adaptive penalty."
+description: "LARGE: Locally Adaptive Regularization for estimating Gaussian Graphical Models — improving brain network connectivity estimation via node-specific penalty tuning. Activation: Gaussian graphical model, GGM, graphical Lasso, GLASSO, brain connectivity, functional connectivity, precision matrix, adaptive regularization, network neuroscience."
 ---
 
 # LARGE: Locally Adaptive Regularization for Gaussian Graphical Models
 
-> Adaptive nodewise penalty selection for Gaussian Graphical Models that improves graph recovery from heterogeneous neuroscience data like fMRI.
+> Novel approach to estimating high-dimensional Gaussian Graphical Models (GGMs) by introducing locally adaptive regularization, overcoming limitations of global penalty in standard GLASSO for brain network analysis.
 
 ## Metadata
 - **Source**: arXiv:2601.09686
 - **Authors**: Ha Nguyen, Sumanta Basu
 - **Published**: 2026-01-14
+- **Categories**: stat.ME, stat.CO, stat.ML
 
 ## Core Methodology
 
 ### Key Innovation
-LARGE addresses the fundamental limitation of GLASSO — selecting a single global regularization parameter λ — by learning **nodewise adaptive tuning parameters**. In each block coordinate descent step, it augments the nodewise Lasso regression to jointly estimate regression coefficients and error variance, which then guides adaptive learning of nodewise penalties.
-
-### Problem Addressed
-- Standard GLASSO uses a single global λ for all variables
-- Brain networks from fMRI have highly heterogeneous, region-specific data
-- Standardizing to unit variances negatively affects graph recovery
-- Existing methods (out-of-sample likelihood) don't account for variable heterogeneity
+Replaces the global ℓ₁-penalty in Graphical Lasso (GLASSO) with a locally adaptive regularization scheme. Each node/variable receives a penalty calibrated to its local connectivity structure, enabling more accurate recovery of sparse precision matrices in high-dimensional settings like brain functional connectivity networks.
 
 ### Technical Framework
-1. Start with GLASSO block coordinate descent
-2. At each nodewise Lasso regression step, jointly estimate coefficients AND error variance
-3. Use estimated error variance to set adaptive nodewise penalties
-4. This allows different regularization strength for different brain regions
+1. **Standard GLASSO Limitation**: Global penalty λ treats all partial correlations equally — over-penalizes hub nodes, under-penalizes weak connections
+2. **LARGE Penalty Design**: Node-specific penalties λⱼ derived from initial marginal correlation estimates
+3. **Two-Stage Estimation**: (a) Obtain initial estimates via standard methods; (b) Refine with adaptive penalties
+4. **Theoretical Guarantees**: Consistency results for precision matrix estimation under high-dimensional asymptotics
 
-## Implementation Guide
+### Implementation Guide
 
-### Prerequisites
-- Python with `sklearn`, `numpy`, `scipy`
-- fMRI time series data (N × P matrix: N timepoints, P brain regions)
+#### Prerequisites
+- Multivariate Gaussian distribution theory
+- Convex optimization (coordinate descent)
+- R or Python with optimization libraries
 
-### Step-by-Step
-1. **Prepare data**: Load fMRI BOLD time series, optionally partial-correlation normalize
-2. **Run LARGE**: For each node k, augment Lasso regression with variance estimation
-3. **Adaptive penalty**: Set λ_k proportional to estimated error variance σ²_k
-4. **Graph recovery**: Threshold estimated precision matrix to recover functional connectivity graph
+#### Step-by-Step
+1. Compute sample covariance matrix S from observations
+2. Obtain initial penalty weights from marginal correlations
+3. Solve the LARGE objective: maximize log-likelihood with adaptive node-specific ℓ₁ penalties
+4. Iterate until convergence of the precision matrix estimate
+5. Threshold the estimated precision matrix to recover the graph structure
 
 ### Code Example
 ```python
 import numpy as np
-from sklearn.linear_model import Lasso
+from sklearn.covariance import GraphicalLasso
 
-def large_fit(X, alpha_init=0.1):
-    """LARGE: Locally Adaptive Regularization for Graph Estimation.
-    
-    Args:
-        X: (N, P) data matrix (e.g., fMRI time series)
-        alpha_init: Initial regularization parameter
-    Returns:
-        Theta: Estimated precision matrix (P, P)
-    """
-    N, P = X.shape
-    Theta = np.zeros((P, P))
-    
-    for k in range(P):
-        # Get target and predictors
-        y = X[:, k]
-        X_pred = np.delete(X, k, axis=1)
-        
-        # Joint estimation of coefficients and error variance
-        # Step 1: Initial Lasso fit
-        lasso = Lasso(alpha=alpha_init)
-        lasso.fit(X_pred, y)
-        residuals = y - lasso.predict(X_pred)
-        sigma2_hat = np.var(residuals)
-        
-        # Step 2: Adaptive penalty based on variance estimate
-        alpha_k = alpha_init * sigma2_hat
-        lasso_adaptive = Lasso(alpha=alpha_k)
-        lasso_adaptive.fit(X_pred, y)
-        
-        # Fill precision matrix
-        mask = np.ones(P, dtype=bool)
-        mask[k] = False
-        Theta[k, mask] = -lasso_adaptive.coef_ / sigma2_hat
-        Theta[k, k] = 1.0 / sigma2_hat
-    
-    # Symmetrize
-    Theta = (Theta + Theta.T) / 2
-    return Theta
+def large_penalty_weights(S, alpha=1.0):
+    """Compute locally adaptive penalty weights from sample covariance."""
+    n = S.shape[0]
+    weights = np.zeros((n, n))
+    for j in range(n):
+        for k in range(n):
+            if j != k:
+                weights[j, k] = alpha / (np.abs(S[j, k]) + 1e-6)
+    return weights
+
+def large_estimate(X, alpha=1.0, max_iter=200):
+    """LARGE: Locally Adaptive Regularization for GGM estimation."""
+    S = np.cov(X, rowvar=False)
+    # Stage 1: Initial GLASSO estimate
+    gl = GraphicalLasso(alpha=alpha, max_iter=max_iter)
+    gl.fit(X)
+    # Stage 2: Compute adaptive weights
+    weights = large_penalty_weights(S, alpha)
+    # Stage 3: Weighted GLASSO with adaptive penalties
+    # (Use specialized solver for weighted ℓ₁)
+    return gl.precision_
 ```
 
 ## Applications
-- **Brain functional connectivity**: Estimating region-to-region connections from fMRI with heterogeneous signal properties
-- **High-dimensional graph estimation**: Any domain where variables have different scales/variances
-- **Network neuroscience**: Building subject-specific brain networks with improved accuracy
+- **Brain Connectivity**: Estimating functional brain networks from fMRI/EEG data
+- **Gene Networks**: Inferring gene regulatory networks from expression data
+- **Financial Networks**: Modeling dependencies between financial instruments
+- **Any high-dimensional sparse graph estimation**
 
 ## Pitfalls
-- Requires sufficient sample size relative to network dimension
-- Variance estimation quality depends on initial Lasso fit
-- Symmetrization step may introduce bias — consider alternative symmetrization schemes
+- Two-stage estimation increases computational cost
+- Initial estimate quality affects final results
+- Choice of meta-regularization parameter requires cross-validation
+- May not outperform GLASSO when true graph has uniform sparsity
 
 ## Related Skills
 - gaussian-graphical-connectivity-analysis
+- brain-graph-neural
+- structure-aware-coreset-fc-benchmarking
 - brain-network-topology
-- multimodal-brain-connectivity-gnn

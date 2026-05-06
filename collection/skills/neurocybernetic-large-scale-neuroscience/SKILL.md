@@ -1,541 +1,263 @@
 ---
 name: neurocybernetic-large-scale-neuroscience
-description: "Integrative neurocybernetic modeling framework for large-scale neuroscience. Unifies fragmented modeling efforts across experiments, species, and brain regions through common computational principles. Keywords: neurocybernetics, large-scale neuroscience, integrative modeling, cross-species, unified framework."
+description: "Integrative neurocybernetic modeling framework for large-scale neuroscience. Unifies diverse neural datasets across animals, brain areas, and behaviors through cybernetic principles. Addresses fragmentation in computational neuroscience. Keywords: neurocybernetics, large-scale neuroscience, integrative modeling, cross-species, unified framework."
 ---
 
-# Integrative Neurocybernetic Modeling for Large-Scale Neuroscience
+# Integrative Neurocybernetic Modeling in the Era of Large-Scale Neuroscience
 
-> A unified framework that integrates fragmented modeling efforts across large-scale neuroscience datasets, enabling cross-experiment, cross-species, and cross-brain-region analysis through common neurocybernetic principles.
+> Framework for unifying fragmented large-scale neuroscience datasets through integrative neurocybernetic modeling principles across species and experimental contexts.
 
 ## Metadata
 - **Source**: arXiv:2604.23903v1
-- **Authors**: Il Memming Park, Ayesha Vermani, Gonzalo G. de Polavieja, Giacomo Indiveri, Timothy E. J. Behrens, Valerio Mante, Surya Ganguli
+- **Authors**: Il Memming Park, Ayesha Vermani, Gonzalo G. de Polavieja, et al.
 - **Published**: 2026-04-26
-- **Category**: Computational Neuroscience / Systems Neuroscience
 
 ## Core Methodology
 
-### Key Innovation
-Large-scale neuroscience generates rich datasets across animals, brain areas, and behavioral contexts, but modeling remains fragmented across isolated experiments. This work introduces an **Integrative Neurocybernetic Framework** that:
+### The Fragmentation Problem
 
-1. Identifies common computational motifs across diverse neural systems
-2. Provides unified mathematical formalisms for neural dynamics
-3. Enables transfer of insights across experiments and species
-4. Builds cumulative, reproducible models of brain function
+Large-scale neuroscience generates rich datasets but modeling remains fragmented:
+- **Across animals**: Different species, brain sizes, architectures
+- **Across brain areas**: Specialized circuits with different dynamics
+- **Across behaviors**: Task-specific vs. spontaneous activity
+- **Across modalities**: Electrophysiology, imaging, behavior
 
-### Technical Framework
-
-#### 1. Neurocybernetic Primitives
-
-The framework identifies fundamental building blocks:
+### Neurocybernetic Integration Framework
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│              NEUROCYBERNETIC PRIMITIVES                      │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  1. DYNAMICAL SYSTEMS                                        │
-│     • Fixed-point attractors → Working memory               │
-│     • Limit cycles → Oscillations, rhythms                  │
-│     • Chaotic dynamics → Flexible computation               │
-│                                                              │
-│  2. INFORMATION PROCESSING                                   │
-│     • Prediction → Kalman filters, Bayesian inference       │
-│     • Control → Optimal control, RL                         │
-│     • Learning → Gradient descent, Hebbian plasticity       │
-│                                                              │
-│  3. NETWORK ARCHITECTURES                                    │
-│     • Feedforward → Feature extraction                      │
-│     • Recurrent → Temporal integration, memory              │
-│     • Lateral inhibition → Winner-take-all, normalization   │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-#### 2. Unified Mathematical Formalism
-
-All neural systems are modeled as:
-
-```
-dx/dt = f(x, u, θ) + noise
-
-y = g(x, φ)
-
-Where:
-- x: Neural state (firing rates, voltages, etc.)
-- u: Inputs (sensory, contextual)
-- θ: Network parameters (weights, time constants)
-- y: Observable outputs (spikes, BOLD, behavior)
-- φ: Observation model parameters
-```
-
-#### 3. Cross-Domain Mapping
-
-```
-Species A Experiment 1          Species B Experiment 2
-        │                              │
-        ▼                              ▼
-   ┌─────────┐                    ┌─────────┐
-   │  Data   │                    │  Data   │
-   └────┬────┘                    └────┬────┘
-        │                              │
-        ▼                              ▼
-   ┌─────────┐                    ┌─────────┐
-   │  Fit    │                    │  Fit    │
-   │  Model  │                    │  Model  │
-   └────┬────┘                    └────┬────┘
-        │                              │
-        └──────────┬───────────────────┘
-                   │
-                   ▼
-           ┌─────────────┐
-           │  EXTRACT    │
-           │  PRIMITIVES │
-           └──────┬──────┘
-                  │
-                  ▼
-           ┌─────────────┐
-           │  UNIFIED    │
-           │  FRAMEWORK  │
-           └─────────────┘
-```
-
-#### 4. Hierarchical Model Composition
-
-```python
-class NeurocyberneticModel:
-    """
-    Composable neurocybernetic model.
-    """
-    
-    def __init__(self, primitives):
-        self.primitives = primitives  # List of building blocks
-        self.connectivity = None      # How primitives connect
-        
-    def compose(self, architecture):
-        """
-        Compose primitives into full model.
-        
-        Args:
-            architecture: Graph defining connections
-        """
-        self.connectivity = architecture
-        
-    def forward(self, inputs, context):
-        """
-        Run model forward in time.
-        
-        Args:
-            inputs: Sensory/external inputs
-            context: Task/internal context
-        """
-        # Propagate through composed model
-        pass
+┌────────────────────────────────────────────────────────────────┐
+│           INTEGRATIVE NEUROCYBERNETIC MODELING                 │
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│   Animal A ←──┐                                                │
+│   (Mouse)     │                                                │
+│               ├──→ Unified State Space ←── Control Theory ───→ │
+│   Animal B ←──┤      Representation          Principles       │
+│   (Primate)   │                                                │
+│               ├──→ Cross-Species         ←── Behavioral ────→  │
+│   Animal C ←──┘      Latent Dynamics         Constraints       │
+│   (Human)                                                      │
+│                                                                │
+│   ┌─────────────────────────────────────────────────────────┐  │
+│   │  Task Context 1    Task Context 2    Spontaneous        │  │
+│   │       ↓                 ↓               ↓               │  │
+│   │   Unified Neural State Space with Shared Dynamics       │  │
+│   └─────────────────────────────────────────────────────────┘  │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
 ```
 
 ## Implementation Guide
 
-### Prerequisites
-- Python 3.8+ with PyTorch/JAX
-- Multi-experiment neural datasets
-- Cross-species data (optional but valuable)
-- Behavioral/task data
+### Core Components
 
-### Step-by-Step Implementation
+#### 1. State Space Unification
 
-#### Step 1: Data Harmonization
-```python
-import numpy as np
-import pandas as pd
-from typing import Dict, List
-
-class NeuroDataHarmonizer:
-    """
-    Harmonize neural data across experiments and species.
-    """
-    
-    def __init__(self):
-        self.normalization_params = {}
-        
-    def harmonize(self, datasets: Dict[str, np.ndarray], 
-                  metadata: Dict) -> Dict[str, np.ndarray]:
-        """
-        Normalize and align datasets.
-        
-        Args:
-            datasets: Dict of {dataset_name: neural_data}
-            metadata: Info about each dataset
-            
-        Returns:
-            harmonized: Normalized datasets
-        """
-        harmonized = {}
-        
-        for name, data in datasets.items():
-            # Z-score normalization per dataset
-            mean = np.mean(data, axis=0)
-            std = np.std(data, axis=0) + 1e-8
-            
-            harmonized[name] = (data - mean) / std
-            self.normalization_params[name] = {'mean': mean, 'std': std}
-        
-        return harmonized
-    
-    def align_temporal_resolution(self, datasets, target_rate):
-        """
-        Resample all datasets to common temporal resolution.
-        """
-        from scipy import signal
-        
-        aligned = {}
-        for name, data in datasets.items():
-            # Resampling logic here
-            aligned[name] = signal.resample(data, target_rate)
-        
-        return aligned
-```
-
-#### Step 2: Primitive Library
 ```python
 import torch
 import torch.nn as nn
 
-class AttractorDynamics(nn.Module):
+class NeurocyberneticStateSpace(nn.Module):
     """
-    Fixed-point attractor dynamics primitive.
+    Unified state space model for cross-species neural dynamics
     """
-    
-    def __init__(self, n_neurons, n_attractors):
+    def __init__(self, latent_dim=64, n_species=3):
         super().__init__()
-        self.n_neurons = n_neurons
-        self.n_attractors = n_attractors
         
-        # Attractor states
-        self.attractors = nn.Parameter(torch.randn(n_attractors, n_neurons))
+        self.latent_dim = latent_dim
+        self.n_species = n_species
         
-        # Basin of attraction parameters
-        self.basin_width = nn.Parameter(torch.ones(n_attractors))
+        # Species-specific encoders (handle different input dimensions)
+        self.species_encoders = nn.ModuleList([
+            nn.Linear(input_dim, latent_dim) 
+            for input_dim in [100, 200, 500]  # Mouse, Primate, Human
+        ])
         
-    def forward(self, x, dt=0.01):
+        # Shared dynamics (species-agnostic)
+        self.dynamics = nn.GRUCell(latent_dim, latent_dim)
+        
+        # Species-specific decoders
+        self.species_decoders = nn.ModuleList([
+            nn.Linear(latent_dim, output_dim)
+            for output_dim in [100, 200, 500]
+        ])
+        
+        # Control inputs (behavioral context)
+        self.control_encoder = nn.Linear(control_dim, latent_dim)
+    
+    def encode(self, neural_activity, species_id):
         """
-        Update state toward nearest attractor.
+        Encode species-specific activity to unified state space
         
         Args:
-            x: [batch, n_neurons] current state
-            dt: Time step
-            
+            neural_activity: Raw neural recordings
+            species_id: 0=mouse, 1=primate, 2=human
+        
         Returns:
-            dx: State update
+            Unified latent state
         """
-        # Distance to each attractor
-        distances = torch.cdist(x, self.attractors)  # [batch, n_attractors]
-        
-        # Softmin for smooth attraction
-        weights = torch.softmax(-distances / self.basin_width, dim=-1)
-        
-        # Weighted pull toward attractors
-        target = weights @ self.attractors  # [batch, n_neurons]
-        
-        # Dynamics: dx/dt = -γ(x - target)
-        dx = -0.1 * (x - target)
-        
-        return dx * dt
-
-
-class PredictiveCoding(nn.Module):
-    """
-    Predictive coding/primitive for inference.
-    """
-    
-    def __init__(self, n_inputs, n_latent, n_layers=2):
-        super().__init__()
-        
-        self.n_latent = n_latent
-        
-        # Inference network (bottom-up)
-        self.inference = nn.Sequential(
-            nn.Linear(n_inputs, 128),
-            nn.ReLU(),
-            nn.Linear(128, n_latent * 2)  # Mean and log-var
+        return torch.relu(
+            self.species_encoders[species_id](neural_activity)
         )
-        
-        # Generation network (top-down)
-        layers = []
-        for i in range(n_layers):
-            layers.extend([
-                nn.Linear(n_latent if i == 0 else 128, 128),
-                nn.ReLU()
-            ])
-        layers.append(nn.Linear(128, n_inputs))
-        self.generation = nn.Sequential(*layers)
-        
-    def forward(self, sensory_input, prior=None):
-        """
-        Perform predictive coding inference.
-        
-        Args:
-            sensory_input: Observed data
-            prior: Prior on latent variables
-            
-        Returns:
-            posterior: Inferred latent distribution
-            prediction: Reconstructed input
-            precision: Prediction error precision
-        """
-        # Inference: q(z | x)
-        inf_out = self.inference(sensory_input)
-        mean, logvar = inf_out.chunk(2, dim=-1)
-        
-        # Prediction: p(x | z)
-        z = mean + torch.randn_like(mean) * torch.exp(0.5 * logvar)
-        prediction = self.generation(z)
-        
-        # Prediction error
-        error = sensory_input - prediction
-        precision = torch.exp(-torch.mean(error**2, dim=-1, keepdim=True))
-        
-        return {
-            'latent_mean': mean,
-            'latent_std': torch.exp(0.5 * logvar),
-            'prediction': prediction,
-            'error': error,
-            'precision': precision
-        }
-
-
-class ReinforcementLearningPrimitive(nn.Module):
-    """
-    RL-based action selection primitive.
-    """
     
-    def __init__(self, n_states, n_actions, gamma=0.99):
-        super().__init__()
-        
-        self.n_actions = n_actions
-        self.gamma = gamma
-        
-        # Value function
-        self.value_net = nn.Linear(n_states, 1)
-        
-        # Policy
-        self.policy_net = nn.Sequential(
-            nn.Linear(n_states, 64),
-            nn.ReLU(),
-            nn.Linear(64, n_actions),
-            nn.Softmax(dim=-1)
-        )
-        
-    def forward(self, state, reward=None):
+    def dynamics_step(self, state, control_input):
         """
-        Select action and update value estimates.
+        Apply shared dynamics with behavioral control
         
         Args:
-            state: Current state representation
-            reward: Received reward (None for inference)
-            
+            state: Current latent state
+            control_input: Behavioral/task context
+        
         Returns:
-            action: Selected action
-            value: Estimated state value
+            Next state
         """
-        value = self.value_net(state)
-        action_probs = self.policy_net(state)
-        
-        if self.training:
-            action = torch.multinomial(action_probs, 1)
-        else:
-            action = torch.argmax(action_probs, dim=-1)
-        
-        return action, value, action_probs
+        control_effect = self.control_encoder(control_input)
+        combined_input = state + control_effect
+        next_state = self.dynamics(combined_input, state)
+        return next_state
 ```
 
-#### Step 3: Model Composition
+#### 2. Cross-Species Transfer Learning
+
 ```python
-class IntegrativeNeurocyberneticModel(nn.Module):
+class CrossSpeciesTransfer:
     """
-    Full integrative model composed of primitives.
+    Transfer knowledge across species using aligned latent spaces
     """
+    def __init__(self, model):
+        self.model = model
+        self.alignment_loss = nn.MSELoss()
     
-    def __init__(self, config):
-        super().__init__()
-        
-        # Load primitives based on configuration
-        self.primitives = nn.ModuleDict()
-        
-        if 'attractor' in config['primitives']:
-            self.primitives['attractor'] = AttractorDynamics(
-                config['n_neurons'],
-                config['n_attractors']
-            )
-        
-        if 'predictive_coding' in config['primitives']:
-            self.primitives['predictive_coding'] = PredictiveCoding(
-                config['n_inputs'],
-                config['n_latent']
-            )
-        
-        if 'reinforcement_learning' in config['primitives']:
-            self.primitives['rl'] = ReinforcementLearningPrimitive(
-                config['n_states'],
-                config['n_actions']
-            )
-        
-        # Cross-primitive connectivity
-        self.cross_primitive = nn.Linear(
-            sum(p.n_neurons for p in self.primitives.values()),
-            config['n_neurons']
-        )
-        
-    def forward(self, inputs, state, context):
+    def align_species(self, source_data, target_data, source_id, target_id):
         """
-        Run integrative model.
+        Align neural representations across species
         
-        Args:
-            inputs: Sensory inputs
-            state: Current neural state
-            context: Task/behavioral context
+        Strategy: Map both to unified latent space, minimize distance
+        for corresponding behaviors
+        """
+        # Encode both species to latent space
+        source_latent = self.model.encode(source_data, source_id)
+        target_latent = self.model.encode(target_data, target_id)
+        
+        # Alignment loss: corresponding states should be close
+        alignment_loss = self.alignment_loss(source_latent, target_latent)
+        
+        return alignment_loss
+    
+    def transfer_model(self, source_species, target_species, task_data):
+        """
+        Transfer learned dynamics from source to target species
+        """
+        # Freeze shared dynamics
+        for param in self.model.dynamics.parameters():
+            param.requires_grad = False
+        
+        # Train only target species decoder on new task
+        target_decoder = self.model.species_decoders[target_species]
+        optimizer = torch.optim.Adam(target_decoder.parameters())
+        
+        for batch in task_data:
+            latent = self.model.encode(batch.input, target_species)
+            next_latent = self.model.dynamics_step(latent, batch.control)
+            predicted = target_decoder(next_latent)
             
-        Returns:
-            new_state: Updated neural state
-            outputs: Model outputs (predictions, actions, etc.)
-        """
-        outputs = {}
-        primitive_states = []
-        
-        # Run each primitive
-        if 'attractor' in self.primitives:
-            attractor_update = self.primitives['attractor'](state)
-            primitive_states.append(attractor_update)
-        
-        if 'predictive_coding' in self.primitives:
-            pc_out = self.primitives['predictive_coding'](inputs)
-            outputs['predictive_coding'] = pc_out
-            primitive_states.append(pc_out['latent_mean'])
-        
-        if 'rl' in self.primitives:
-            action, value, probs = self.primitives['rl'](state, context.get('reward'))
-            outputs['rl'] = {'action': action, 'value': value, 'policy': probs}
-        
-        # Integrate primitive outputs
-        if primitive_states:
-            combined = torch.cat(primitive_states, dim=-1)
-            integration = self.cross_primitive(combined)
-            new_state = state + 0.1 * integration
-        else:
-            new_state = state
-        
-        return new_state, outputs
+            loss = nn.MSELoss()(predicted, batch.target)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
 ```
 
-#### Step 4: Cross-Experiment Analysis
+#### 3. Behavioral Context Integration
+
 ```python
-def analyze_cross_experiment(models, datasets):
+class BehavioralContextEncoder:
     """
-    Compare fitted models across experiments.
+    Encode behavioral/task context as control signals
+    """
+    def __init__(self, n_behaviors=10, latent_dim=64):
+        self.behavior_embedding = nn.Embedding(n_behaviors, latent_dim)
+        self.continuous_encoder = nn.Linear(n_continuous_features, latent_dim)
+    
+    def encode(self, behavior_id=None, continuous_features=None):
+        """
+        Encode behavioral context into control signal
+        
+        Args:
+            behavior_id: Discrete behavior class
+            continuous_features: Continuous behavior variables (velocity, etc.)
+        """
+        control = torch.zeros(latent_dim)
+        
+        if behavior_id is not None:
+            control += self.behavior_embedding(behavior_id)
+        
+        if continuous_features is not None:
+            control += self.continuous_encoder(continuous_features)
+        
+        return control
+```
+
+### Training Pipeline
+
+```python
+def train_integrative_model(model, datasets, epochs=100):
+    """
+    Train on multi-species, multi-task datasets
     
     Args:
-        models: Dict of fitted models per experiment
-        datasets: Dict of datasets per experiment
-        
-    Returns:
-        comparison: Cross-experiment analysis results
+        model: NeurocyberneticStateSpace model
+        datasets: List of (neural_data, behavior, species_id) tuples
     """
-    results = {
-        'shared_primitives': [],
-        'experiment_specific': [],
-        'transfer_performance': {}
-    }
-    
-    # Identify shared computational primitives
-    for prim_name in models[list(models.keys())[0]].primitives.keys():
-        # Compare parameter distributions
-        params = [m.primitives[prim_name].state_dict() 
-                  for m in models.values()]
-        
-        # Statistical comparison
-        similarity = compute_parameter_similarity(params)
-        
-        if similarity > 0.7:
-            results['shared_primitives'].append(prim_name)
-        else:
-            results['experiment_specific'].append(prim_name)
-    
-    # Test transfer learning
-    for train_exp, test_exp in itertools.product(models.keys(), repeat=2):
-        if train_exp != test_exp:
-            performance = test_transfer(
-                models[train_exp], 
-                datasets[test_exp]
-            )
-            results['transfer_performance'][f"{train_exp}->{test_exp}"] = performance
-    
-    return results
-```
-
-### Complete Workflow Example
-```python
-"""
-Complete workflow for integrative neurocybernetic modeling.
-"""
-
-# 1. Load multi-experiment data
-experiments = {
-    'rodent_pfc': load_rodent_data('prefrontal_cortex'),
-    'primate_it': load_primate_data('inferotemporal'),
-    'human_fmri': load_human_data('fmri_multi_task')
-}
-
-# 2. Harmonize data
-harmonizer = NeuroDataHarmonizer()
-aligned_data = harmonizer.harmonize(experiments)
-
-# 3. Fit models per experiment
-models = {}
-for exp_name, data in aligned_data.items():
-    config = infer_optimal_config(data)
-    model = IntegrativeNeurocyberneticModel(config)
-    
-    # Train
     optimizer = torch.optim.Adam(model.parameters())
-    train_integrative_model(model, data, optimizer)
     
-    models[exp_name] = model
-
-# 4. Cross-experiment analysis
-comparison = analyze_cross_experiment(models, aligned_data)
-
-print(f"Shared primitives: {comparison['shared_primitives']}")
-print(f"Transfer performance: {comparison['transfer_performance']}")
-
-# 5. Build unified model
-unified = build_unified_model(models, comparison['shared_primitives'])
+    for epoch in range(epochs):
+        total_loss = 0
+        
+        for neural_data, behavior, species_id in datasets:
+            # Encode to unified space
+            state = model.encode(neural_data, species_id)
+            
+            # Apply dynamics with behavioral control
+            control = model.control_encoder(behavior)
+            next_state = model.dynamics_step(state, control)
+            
+            # Decode and compute loss
+            predicted = model.species_decoders[species_id](next_state)
+            reconstruction_loss = nn.MSELoss()(predicted, neural_data)
+            
+            # Add smoothness prior on dynamics
+            smoothness_loss = torch.mean((next_state - state) ** 2)
+            
+            loss = reconstruction_loss + 0.1 * smoothness_loss
+            
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            
+            total_loss += loss.item()
 ```
 
 ## Applications
 
-- **Comparative Neuroscience**: Identify conserved computations across species
-- **Meta-Analysis**: Synthesize findings from multiple studies
-- **Transfer Learning**: Apply insights from one experiment to another
-- **Theory Building**: Develop cumulative models of brain function
+- **Cross-Species Generalization**: Transfer insights from animal models to humans
+- **Unified Theories**: Develop theories applicable across brain sizes
+- **Comparative Neuroscience**: Systematic comparison of neural dynamics
+- **Reduced Models**: Identify minimal sufficient circuit motifs
 
 ## Pitfalls
 
-1. **Oversimplification**: Primitives may miss important biological details
-2. **Dataset Quality**: Garbage in, garbage out
-3. **Species Differences**: Homologous circuits may serve different functions
-4. **Causal Interpretation**: Correlation does not imply conserved mechanism
+- **Homologous Structures**: Not all brain regions are directly comparable
+- **Scale Differences**: Different numbers of neurons, synapses
+- **Behavioral Gaps**: Different behavioral repertoires across species
+- **Measurement Incompatibility**: Different recording technologies
 
 ## Related Skills
-- brain-digital-twins-execution-semantics
-- neural-dynamics-decision-making
-- agent-memory-framework
-- neuroscience-of-transformers
+- neuroai-beyond-bridging-neuroscience-ai
+- triple-configuration-brain-network-rnn
+- omnimouse-brain-model-scaling
+- brain-dit-fmri-foundation-model
 
 ## References
-```bibtex
-@article{park2026neurocybernetic,
-  title={Integrative neurocybernetic modeling in the era of large-scale neuroscience},
-  author={Park, Il Memming and Vermani, Ayesha and de Polavieja, Gonzalo G. and Indiveri, Giacomo and Behrens, Timothy E. J. and Mante, Valerio and Ganguli, Surya},
-  journal={arXiv preprint arXiv:2604.23903},
-  year={2026}
-}
-```
+- Park et al. (2026) Integrative neurocybernetic modeling, arXiv:2604.23903
+- Churchland et al. (2012) Neural population dynamics during reaching
+- Kording et al. (2018) Ten simple rules for structuring papers

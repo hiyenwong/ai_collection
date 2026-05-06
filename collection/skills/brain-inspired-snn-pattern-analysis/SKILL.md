@@ -15,27 +15,6 @@ description: "分析 Spiking Neural Networks (SNN) 和脑启发计算论文，�
 - 神经形态计算分析
 - extract SNN implementation pattern
 
-## Tools Used
-
-- `exec`: Run kg_tool CLI for knowledge graph queries
-- `read`: Load paper abstracts and SNN implementation references
-- `write`: Save extracted patterns and code templates
-- `sqlite3`: Query kg.db for related SNN papers
-
-## Instructions for Agents
-
-### Step 1: Identify Core Innovation
-Read paper and extract: network architecture (LIF/VLIF/Izhikevich), learning rule (STDP/Forward-Forward), application domain, and key novelty.
-
-### Step 2: Extract Pattern
-Structure the pattern as: name, category (Architecture/Learning Rule/Optimization/Application), key concepts, implementation hint.
-
-### Step 3: Generate Code Template
-Create minimal Python/PyTorch code framework based on the pattern.
-
-### Step 4: Output Analysis
-Format output using the `## 🧠 SNN Pattern Analysis` template with paper title, core innovation, pattern template, and implementation notes.
-
 ## Workflow
 
 ### Step 1: Paper Analysis
@@ -90,32 +69,6 @@ class [PatternName]:
 ### Implementation Notes
 - [关键实现要点]
 - [注意事项]
-```
-
-## Examples
-
-### Example 1: Analyze SNN Paper Pattern
-
-```
-User: "Extract the SNN pattern from this energy-efficient medical AI paper"
-
-Agent:
-1. Read paper: identifies Energy-Efficient SNN + medical AI domain
-2. Extracts pattern: LIF neurons, event-driven computation, sparse activation
-3. Generates code template for energy-efficient SNN class
-4. Outputs formatted analysis with implementation notes
-```
-
-### Example 2: Find Related Patterns in KG
-
-```
-User: "分析知识图谱中的SNN模式"
-
-Agent:
-1. Query kg.db for SNN-related papers
-2. Run PageRank to find most influential papers
-3. Extract patterns from top 3 papers
-4. Output pattern table and code templates
 ```
 
 ## Resources

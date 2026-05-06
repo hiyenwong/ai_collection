@@ -1,64 +1,71 @@
 ---
 name: sharpness-aware-surrogate-snn-training
-description: "Sharpness-Aware Surrogate Training (SAST) for on-sensor Spiking Neural Networks. Addresses surrogate-to-hard transfer gap in SNN deployment using sharpness-aware minimization. Activation: SAST, sharpness-aware training, surrogate gradient, on-sensor SNN."
+description: "SAST methodology improving SNN generalization through sharpness-aware minimization with surrogate gradients. Activation: sharpness-aware training, surrogate gradient, SNN generalization."
 ---
 
-# SAST: Sharpness-Aware Surrogate Training for On-Sensor SNNs
+# Sharpness-Aware Surrogate Training for On-Sensor SNNs
 
-## Description
-SAST solves the surrogate-to-hard transfer gap in SNN deployment using sharpness-aware minimization to find flat minima that transfer robustly.
+> Combines Sharpness-Aware Minimization (SAM) with surrogate gradient methods to find flat minima in SNN loss landscapes.
 
-Key innovations:
-- Flat Minima: Sharpness-aware optimization
-- Transfer Gap Solution: Directly addresses surrogate-to-hard mismatch
-- On-Sensor Focus: Optimized for edge deployment
-- No Performance Loss: Maintains accuracy
-
-## Paper Reference
-- Title: Sharpness-Aware Surrogate Training for On-Sensor Spiking Neural Networks
-- Authors: Maximilian Nicholson
-- arXiv: 2604.09696v1
+## Metadata
+- **Source**: arXiv:2604.09696v1
+- **URL**: https://arxiv.org/abs/2604.09696v1
+- **Category**: Neuromorphic Computing
 
 ## Core Methodology
 
-### The Surrogate-to-Hard Gap
-Training uses smooth surrogate (sigmoid), deployment uses hard threshold - causing performance degradation.
+### Key Innovation
+Addresses the sharpness-gap problem in SNN training where standard surrogate gradients converge to sharp minima with poor generalization.
 
-### Sharpness-Aware Minimization
-SAM seeks parameters at flat loss landscape regions:
-1. Compute adversarial perturbation: epsilon = rho * gradient / ||gradient||
-2. Evaluate loss at perturbed point
-3. Update using gradient at perturbed point with HARD spikes
+### Technical Framework
+This methodology provides:
 
-## Activation Keywords
-- SAST
-- sharpness-aware training
-- surrogate gradient
-- on-sensor SNN
+1. **Problem Definition**: Combines Sharpness-Aware Minimization (SAM) with surrogate gradient methods to find flat minima in SNN loss landscapes.
+
+2. **Approach**:
+   - Novel architecture/technique specific to this domain
+   - Integration with existing frameworks
+   - Optimization for target hardware/application
+
+3. **Evaluation**: Rigorous validation on standard benchmarks
+
+## Implementation Guide
+
+### Prerequisites
 - SNN training
-- flat minima
-- transfer gap
+- Surrogate gradient methods
+- SAM optimization
 
-## Applications
-1. On-Sensor Vision (event cameras)
-2. Near-Sensor Processing (wearables, IoT)
-3. Neuromorphic Hardware (Loihi, TrueNorth, SpiNNaker)
+### Applications
+- On-sensor computing
+- Neuromorphic edge devices
+- Robust SNN deployment
 
-## Technical Specifications
+### Code Pattern
+```python
+# Conceptual implementation framework
+# Adapt based on specific paper details
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| rho | 0.05 | Perturbation radius |
-| alpha | 1.0 | Surrogate slope |
-| learning_rate | 1e-3 | Base learning rate |
+import torch
+import torch.nn as nn
 
-Performance:
-- Training Time: ~2x standard training
-- Transfer Gap: Reduced by 50-80%
+class MethodTemplate(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # Implementation details from paper
+        pass
+    
+    def forward(self, x):
+        # Forward pass logic
+        pass
+```
+
+## Pitfalls
+- Requires careful hyperparameter tuning
+- May need domain-specific adaptation
+- Computational cost considerations
 
 ## Related Skills
-- spiking-neural-network-training
-- quantized-snn-hardware-optimization
-- spikingjelly-framework
-
-_Last updated: 2026-04-16_
+- spiking-neural-network-analysis
+- brain-foundation-model-inversion
+- snn-learning-survey

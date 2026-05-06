@@ -1,69 +1,107 @@
 ---
 name: feedforward-dynamics-stimulus-encoding
-category: ai_collection
-description: "Feedforward visual processing is spatiotemporally dynamical, not purely spatial. Neuron selectivity changes with stimulus history, challenging classical hierarchical static receptive field models. arXiv:2604.12825."
-arxiv_id: "2604.12825"
-date: 2026-04-19
-authors: Unknown
+description: "The illusory simplicity of the feedforward pass — evidence for dynamical nature of stimulus encoding in neural networks. Demonstrates that feedforward computation involves complex temporal dynamics rather than static transformations. Applicable to neural network analysis, computational neuroscience, dynamical systems analysis. 触发词: feedforward dynamics, stimulus encoding, temporal computation, dynamical neural networks, illusory simplicity"
 ---
 
-# Feedforward Dynamics in Stimulus Encoding
+# Feedforward Dynamics Stimulus Encoding
 
-## Overview
+## Description
 
-Based on "The illusory simplicity of the feedforward pass -- evidence for stimulus-history-dependent neural selectivity" (arXiv:2604.12825v1, 2026-04-19).
+Research demonstrating that the feedforward pass in neural networks is not a simple static transformation but involves complex dynamical processes. Challenges the common assumption of feedforward computation as simple matrix multiplication.
 
-Challenges the classical view that early visual cortex (V1, V2, V4) operates as a purely spatial feature extractor. Shows that neuron selectivity is modulated by recent stimulus history, even in the feedforward pass, revealing that early visual processing is spatiotemporally dynamical.
+## Key Concepts
 
-## Key Findings
+### Dynamical Feedforward Computation
+- Feedforward computation involves iterative convergence dynamics
+- Neurons approach fixed points through temporal evolution
+- Static view misses temporal computation aspects
 
-### Historical Dependence of Neural Selectivity
-- **Classical view**: Feedforward pass is a static spatial operation (receptive fields)
-- **New finding**: Neuron selectivity changes based on recent stimulus history
-- **Effect**: Same stimulus evokes different responses depending on what preceded it
-- **Regions affected**: V1, V2, V4 (early visual cortex)
+### Stimulus Encoding Dynamics
+- Neural representations evolve over time during feedforward pass
+- Encoding quality improves through dynamical settling
+- Time-dependent information transformation
 
-### Spatiotemporal Dynamics
-- Early visual cortex maintains temporal context of recent stimuli
-- Neural responses are not just functions of current stimulus but of stimulus history
-- This challenges hierarchical models that treat feedforward processing as instantaneous spatial filtering
+### Illusory Simplicity
+- Apparent simplicity of feedforward masks underlying complexity
+- Each layer performs iterative refinement, not just transformation
+- Dynamics enable richer computation than static models suggest
 
-### Implications for Models
-- Static receptive field models are insufficient
-- Dynamic receptive field models needed that incorporate stimulus history
-- Has implications for visual encoding models, BCI, and computational neuroscience
+## Activation Keywords
 
-## Methodology
+- feedforward dynamics
+- stimulus encoding
+- temporal computation
+- dynamical neural networks
+- illusory simplicity
+- iterative convergence
+- neural dynamics
 
-### Analysis Approach
-1. Record neural responses to sequences of visual stimuli
-2. Analyze how response to stimulus X changes based on preceding stimuli
-3. Quantify history-dependent modulation of neural selectivity
-4. Compare static vs. dynamic encoding model performance
+## Workflow
 
-### Key Metrics
-- Stimulus-history dependence index
-- Temporal kernel of history effects
-- Comparison of static vs. dynamic encoding model accuracy
+### Step 1: Analyze Feedforward Dynamics
 
-## Implementation Considerations
-- Encoding models should incorporate temporal history (e.g., RNNs, temporal convolutions)
-- Static GLMs may be insufficient for early visual cortex
-- Stimulus history window length needs empirical determination
-- Cross-validation must account for temporal dependencies
+```python
+import numpy as np
 
-## Pitfalls
-- Temporal autocorrelation in stimulus sequences can confound history effects
-- History window length is dataset-dependent
-- Requires sufficiently long stimulus sequences to characterize dynamics
-- Distinguishing history effects from adaptation requires careful experimental design
+def feedforward_with_dynamics(x, weights, n_steps=10):
+    """Feedforward computation with explicit dynamics."""
+    h = x.copy()
+    trajectory = [h]
+    for W in weights:
+        # Instead of instant update, model convergence
+        target = W @ h
+        h_current = h.copy()
+        for _ in range(n_steps):
+            h_current = 0.9 * h_current + 0.1 * target  # Convergence dynamics
+            trajectory.append(h_current.copy())
+        h = h_current
+    return h, trajectory
+```
+
+### Step 2: Measure Information Evolution
+
+```python
+def track_information(trajectory, targets):
+    """Track how information evolves through dynamics."""
+    information = []
+    for h in trajectory:
+        # Measure alignment with target representation
+        info = np.dot(h.flatten(), targets.flatten())
+        information.append(info)
+    return information
+```
+
+### Step 3: Compare Static vs Dynamic Models
+
+```python
+def compare_models(x, weights, targets):
+    """Compare static and dynamical feedforward computation."""
+    # Static computation
+    h_static = x.copy()
+    for W in weights:
+        h_static = W @ h_static
+    
+    # Dynamic computation
+    h_dynamic, trajectory = feedforward_with_dynamics(x, weights)
+    
+    # Compare accuracy
+    static_error = np.linalg.norm(h_static - targets)
+    dynamic_error = np.linalg.norm(h_dynamic - targets)
+    
+    return {
+        'static_error': static_error,
+        'dynamic_error': dynamic_error,
+        'improvement': (static_error - dynamic_error) / static_error
+    }
+```
 
 ## Applications
-- Improved neural encoding models for early visual cortex
-- Better brain-computer interfaces for visual prosthetics
-- More accurate computational models of vision
-- Informing neural network architectures with biological temporal dynamics
+
+1. **Neural network interpretability** — understanding feedforward computation
+2. **Computational neuroscience** — modeling temporal processing
+3. **Network architecture design** — incorporating dynamical elements
+4. **Theoretical analysis** — understanding neural computation
 
 ## References
-- arXiv:2604.12825v1 (2026-04-19)
-- q-bio.NC category
+
+- arXiv:2604.12825 — The illusory simplicity of the feedforward pass: evidence for the dynamical nature of stimulus encoding

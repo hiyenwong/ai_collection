@@ -1,207 +1,184 @@
 ---
 name: discounted-mpc-robust-control
-description: Discounted Model Predictive Control (MPC) and infinite-horizon optimal control under plant-model mismatch. Provides unified framework for analyzing closed-loop stability and suboptimality when using surrogate models that differ from real plants. Based on April 2026 research by Moldenhauer et al. Use when working with MPC robustness analysis, model mismatch scenarios, discount factor optimization, or stability guarantees in control systems.
+description: "Discounted Model Predictive Control (MPC) and infinite-horizon optimal control under plant-model mismatch. Unified framework for stability and suboptimality analysis with robustness guarantees. Use for: robust MPC, plant-model mismatch handling, discounted optimal control, stability analysis, surrogate model control. Activation: discounted MPC, plant-model mismatch, robust MPC, infinite-horizon control, suboptimality analysis."
 ---
 
-# Discounted MPC and Infinite-Horizon Optimal Control Under Plant-Model Mismatch
+# Discounted MPC Robust Control
 
-Based on the paper "Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality" (Moldenhauer, Worthmann, Postoyan et al., 2026).
+基于论文 "Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality" (arXiv:2604.08521v1, 2026) 的鲁棒控制方法论。
 
-## Core Contributions
+## 核心贡献
 
-This methodology studies closed-loop stability and suboptimality for MPC and infinite-horizon optimal control when the surrogate model differs from the real plant. Key innovations include:
+该论文提出了一个统一的框架，用于分析在模型-植物不匹配情况下折扣MPC和无限时域最优控制的闭环稳定性和次优性。
 
-1. **Unified Analysis Framework**: Stability-suboptimality trade-off analysis based on quadratic lower bounds
-2. **Discount Factor Optimization**: Proves existence of optimal discount factor balancing stability and suboptimality
-3. **No Full Model Knowledge Required**: Only requires bounds on model differences, not complete system identification
+### 主要创新点
 
-## Methodology Framework
+1. **统一分析框架**: 基于二次成本分析有限和无限时域问题，涵盖折扣和非折扣场景
+2. **鲁棒性保证**: 在状态和控制的植物-模型不匹配边界比例假设下，保证原点的指数稳定性
+3. **次优性界限**: 提供闭环成本的次优性界限，恢复替代模型的最优成本
+4. **权衡关系**: 揭示时域长度、折扣和植物-模型不匹配之间的权衡关系
 
-### 1. Problem Setup
+## 理论基础
 
-**System Dynamics**:
-- Real system: $x_{k+1} = f(x_k, u_k)$
-- Surrogate model: $x_{k+1} = \hat{f}(x_k, u_k)$
+### 问题设置
 
-Where $f$ and $\hat{f}$ differ (plant-model mismatch).
-
-**Objective**: Design controller using surrogate model, but apply to real system.
-
-### 2. Discounted MPC Formulation
-
-**Discounted Cost Function**:
-$$J_N(x, u) = \sum_{k=0}^{N-1} \gamma^k \ell(x_k, u_k) + \gamma^N V_f(x_N)$$
-
-Where:
-- $\gamma \in (0, 1]$ is the discount factor
-- $\ell$ is the stage cost
-- $V_f$ is the terminal cost
-- $N$ is the prediction horizon
-
-**Key Insight**: 
-- Smaller $\gamma$ → Better stability (more robust to model mismatch)
-- Larger $\gamma$ → Better performance (closer to optimal)
-
-### 3. Stability Analysis
-
-**Assumptions**:
-- Model difference between surrogate and real system is bounded
-- Cost function satisfies quadratic lower bound condition
-
-**Stability Guarantee**:
-There exists a discount factor threshold $\gamma^*$ such that for all $\gamma \in (\gamma^*, 1]$, the closed-loop system is asymptotically stable.
-
-### 4. Suboptimality Analysis
-
-**Performance Loss Upper Bound**:
-$$J_\infty^{CL}(x) - J_\infty^*(x) \leq \Delta(\gamma)$$
-
-Where $\Delta(\gamma)$ is a function of discount factor that can be computed explicitly.
-
-## Implementation Steps
-
-### Step 1: Model Mismatch Quantification
-
-Evaluate the difference between surrogate model and real system:
-
-```python
-def model_mismatch_bound(f_real, f_model, state_space, input_space):
-    """
-    Compute upper bound on model difference
-    
-    Args:
-        f_real: Real system dynamics
-        f_model: Surrogate model dynamics  
-        state_space: State space
-        input_space: Input space
-    
-    Returns:
-        epsilon: Upper bound on model difference
-    """
-    max_error = 0
-    for x in state_space.samples():
-        for u in input_space.samples():
-            error = norm(f_real(x, u) - f_model(x, u))
-            max_error = max(max_error, error)
-    return max_error
+考虑离散时间非线性系统:
+```
+x_{k+1} = f(x_k, u_k)  # 真实植物
 ```
 
-### Step 2: Stability Constraint Computation
-
-Compute minimum discount factor based on model mismatch:
-
-```python
-def compute_gamma_min(L_cost, L_model, epsilon, delta):
-    """
-    Compute minimum discount factor ensuring stability
-    
-    Args:
-        L_cost: Lipschitz constant of cost function
-        L_model: Lipschitz constant of model
-        epsilon: Upper bound on model difference
-        delta: Stability margin
-    
-    Returns:
-        gamma_min: Minimum discount factor
-    """
-    # Derived from quadratic lower bound conditions
-    gamma_min = 1 - delta / (L_cost * epsilon * L_model)
-    return max(0.5, gamma_min)  # Ensure gamma > 0.5
+使用替代模型进行预测:
+```
+x_{k+1} = f_hat(x_k, u_k)  # 替代模型
 ```
 
-### Step 3: Discount Factor Optimization
+### 植物-模型不匹配假设
 
-Find optimal balance between stability and performance:
-
-```python
-def optimize_discount_factor(f_real, f_model, cost_fn, horizon, gamma_candidates):
-    """
-    Optimize discount factor through simulation
-    
-    Args:
-        f_real: Real system
-        f_model: Surrogate model
-        cost_fn: Cost function
-        horizon: Prediction horizon
-        gamma_candidates: List of candidate discount factors
-    
-    Returns:
-        optimal_gamma: Optimal discount factor
-    """
-    best_gamma = None
-    best_performance = float('inf')
-    
-    for gamma in gamma_candidates:
-        # Simulate closed-loop performance
-        performance = simulate_closed_loop(f_real, f_model, cost_fn, horizon, gamma)
-        
-        # Check stability
-        if is_stable(f_real, f_model, cost_fn, horizon, gamma):
-            if performance < best_performance:
-                best_performance = performance
-                best_gamma = gamma
-    
-    return best_gamma
+假设存在常数 ε_f, ε_V 使得:
+```
+||f(x,u) - f_hat(x,u)|| ≤ ε_f * ||(x,u)||
 ```
 
-### Step 4: MPC Controller Implementation
+### 折扣成本函数
 
-Implement MPC based on optimized discount factor:
-
-```python
-class DiscountedMPC:
-    def __init__(self, model, cost_fn, terminal_cost, horizon, gamma):
-        self.model = model
-        self.cost_fn = cost_fn
-        self.terminal_cost = terminal_cost
-        self.N = horizon
-        self.gamma = gamma
-    
-    def solve(self, x0):
-        """
-        Solve discounted MPC optimization problem
-        
-        Args:
-            x0: Current state
-        
-        Returns:
-            u0: Optimal control input
-        """
-        # Build optimization problem
-        # Stage cost (with discount)
-        # Terminal cost (with discount)
-        # Solve
-        pass
+```
+J_N(x, u) = Σ_{k=0}^{N-1} γ^k * l(x_k, u_k) + γ^N * V_f(x_N)
 ```
 
-## Key Formulas and Theorems
+其中 γ ∈ (0,1] 是折扣因子
 
-### Theorem 1: Stability Guarantee
+## 稳定性保证
 
-**Conditions**:
-- Cost function $\ell$ satisfies $\ell(x,u) \geq \alpha(||x||)$ where $\alpha$ is a $K_\infty$ function
-- Model difference is bounded: $||f(x,u) - \hat{f}(x,u)|| \leq \epsilon$
+### 定理1: 指数稳定性
 
-**Conclusion**: There exists $\gamma^* < 1$ such that for all $\gamma \in (\gamma^*, 1]$, the closed-loop system is asymptotically stable.
+在以下条件下:
+1. 成本可控性 (cost-controllability)
+2. 模型连续性
+3. 终端成本V_f是控制李雅普诺夫函数
 
-### Theorem 2: Suboptimality Upper Bound
+闭环系统在原点是指数稳定的。
 
-Under Theorem 1 conditions, infinite-horizon performance loss satisfies:
+### 鲁棒性特性
 
-$$J_\infty^{CL}(x) - J_\infty^*(x) \leq \frac{\epsilon \cdot L_\ell \cdot L_f}{1 - \gamma}$$
+鲁棒性保证在时域长度上是均匀的，意味着:
+- 更大的时域不需要连续更小的植物-模型不匹配
+- 稳定性裕度与时域长度无关
 
-Where $L_\ell$ and $L_f$ are Lipschitz constants for cost and system dynamics.
+## 次优性分析
 
-## Comparison with Existing Methods
+### 性能界限
 
-| Method | Advantages | Disadvantages | Applicable Scenarios |
-|--------|-----------|---------------|---------------------|
-| **Discounted MPC** | Explicit handling of model mismatch; Few tunable parameters | May be conservative | Model difference known but cannot be eliminated |
-| Tube MPC | Guaranteed constraint satisfaction | Computationally complex; Conservative | Safety-critical systems |
-| Stochastic MPC | Handles random uncertainty | Requires probabilistic model | Significant random disturbances |
-| Learning MPC | Online adaptation | Requires continuous learning | Data-rich scenarios |
-| Robust MPC | Handles bounded disturbances | Usually too conservative | Disturbances with known bounds |
+闭环成本 J_cl 满足:
+```
+J_cl ≤ J_opt + Δ
+```
 
-## References
+其中:
+- J_opt 是替代模型的最优成本
+- Δ 是与植物-模型不匹配相关的附加项
 
-Moldenhauer, R. H., Worthmann, K., Postoyan, R., et al. (2026). "Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality." arXiv:2604.08521.
+### 折扣因子的影响
+
+折扣因子 γ 影响:
+1. 稳定性区域大小
+2. 次优性界限的紧致性
+3. 对模型不匹配的敏感度
+
+## 实际应用
+
+### 场景1: 基于学习的MPC
+
+当使用神经网络学习系统动力学时:
+```python
+# 学习得到的替代模型
+f_hat = learned_dynamics(x, u)
+
+# 应用折扣MPC
+mpc = DiscountedMPC(
+    model=f_hat,
+    discount=0.95,
+    horizon=N,
+    mismatch_bound=ε_f
+)
+```
+
+### 场景2: 自适应控制
+
+在系统参数变化时:
+```python
+# 在线模型更新
+f_hat = update_model(estimates)
+
+# 保持稳定性保证
+mpc.update_model(f_hat, mismatch_bound=new_bound)
+```
+
+### 场景3: 多速率控制
+
+当模型在不同时间尺度上运行时:
+```python
+# 慢速模型更新
+f_hat_slow = slow_update(x, u)
+
+# 快速MPC执行
+mpc = DiscountedMPC(
+    model=f_hat_slow,
+    discount=0.9,  # 较低折扣适应模型老化
+    horizon=N_fast
+)
+```
+
+## 设计指南
+
+### 参数选择
+
+1. **折扣因子 γ**:
+   - 接近1: 长期性能优先，对不匹配更敏感
+   - 较小: 短期性能优先，更鲁棒
+   - 推荐: 0.9-0.99
+
+2. **时域长度 N**:
+   - 与稳定性保证无关
+   - 影响计算复杂度
+   - 根据实时约束选择
+
+3. **植物-模型不匹配界限**:
+   - 通过系统辨识或学习误差估计
+   - 保守估计保证稳定性
+
+### 实现注意事项
+
+1. **终端成本设计**: 确保V_f是控制李雅普诺夫函数
+2. **约束处理**: 考虑不匹配对约束满足的影响
+3. **实时性**: 折扣降低了对长时域的需求
+
+## 与其他方法比较
+
+| 方法 | 鲁棒性 | 计算复杂度 | 适用场景 |
+|------|--------|-----------|----------|
+| 标准MPC | 低 | 中 | 精确模型 |
+| Tube MPC | 高 | 高 | 有界不确定性 |
+| **折扣MPC** | 中 | 中 | 模型不匹配 |
+| 鲁棒MPC | 高 | 高 | 最坏情况保证 |
+
+## 激活关键词
+
+- discounted MPC
+- plant-model mismatch
+- robust MPC
+- infinite-horizon control
+- suboptimality analysis
+- surrogate model control
+- 折扣MPC
+- 模型不匹配
+- 鲁棒控制
+
+## 相关技能
+
+- `advanced-control-systems-2026`: 更广泛的控制系统方法论
+- `mpc-stability-suboptimality`: MPC稳定性和次优性分析
+- `system-resilience-design-patterns`: 系统弹性设计模式
+
+## 参考文献
+
+Moldenhauer, R.H., Worthmann, K., Postoyan, R., Nešić, D., & Granzotto, M. (2026). Discounted MPC and infinite-horizon optimal control under plant-model mismatch: Stability and suboptimality. arXiv:2604.08521v1.

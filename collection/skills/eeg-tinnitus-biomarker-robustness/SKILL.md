@@ -1,229 +1,223 @@
 ---
 name: eeg-tinnitus-biomarker-robustness
-description: "EEG-based tinnitus biomarker identification methodology robust to cross-subject and cross-platform variation. Uses deep neural networks for spectral-temporal feature extraction. Keywords: tinnitus, EEG, biomarker, deep learning, cross-subject robustness, cross-platform."
+description: "EEG-based tinnitus biomarker identification methodology with cross-dataset generalization. Uses microstate analysis and Koopman operator analysis via DMD to extract robust neural signatures. Focuses on Koopman eigenvalue magnitude for oscillation stability. Applications: clinical diagnostics, cross-platform tinnitus detection. Triggers: tinnitus biomarker, EEG microstate, Koopman EEG, cross-dataset generalization"
 ---
 
-# EEG Tinnitus Biomarker Robustness
+# EEG-Based Tinnitus Biomarker Robust to Cross-Subject and Cross-Platform Variation
 
-> Deep learning framework for identifying reliable EEG biomarkers of tinnitus that are robust to cross-subject and cross-platform variations.
+> A methodology for identifying robust EEG-based tinnitus biomarkers using microstate analysis and Koopman operator dynamics, with emphasis on cross-dataset generalization through Koopman eigenvalue magnitude features.
 
 ## Metadata
 - **Source**: arXiv:2604.22116
-- **Authors**: Adyant Balaji, Abhinav Uppal, Min Suk Lee, Yuchen Xu, Akihiro Matsuoka, Gert Cauwenberghs
+- **Authors**: Adyant Balaji, Abhinav Uppal, Min Suk Lee, Yuchen Xu, et al.
 - **Published**: 2026-04-23
-- **Category**: q-bio.NC (Quantitative Biology - Neurons and Cognition)
+- **Category**: Neuroscience, Clinical Neurophysiology
 
 ## Core Methodology
 
-### Problem Background
-Tinnitus is a prevalent auditory condition characterized by persistent ringing or buzzing sounds in the ears. It lacks objective biomarkers, making diagnosis and treatment monitoring challenging. EEG provides a non-invasive method for investigating neural dynamics associated with tinnitus.
-
 ### Key Innovation
-This work addresses the critical challenge of biomarker reliability by developing deep learning-based spectral-temporal features that maintain consistency across:
-- Different subjects (cross-subject robustness)
-- Different EEG recording platforms and devices (cross-platform robustness)
+This work addresses the critical challenge of cross-dataset generalization for EEG-based tinnitus biomarkers. The methodology combines **microstate analysis** (quasi-stable topographic configurations) with **Koopman operator analysis** (Dynamic Mode Decomposition) to identify robust neural signatures that generalize across different EEG platforms and populations.
 
 ### Technical Framework
-1. **EEG Data Collection**: Resting-state EEG recordings from tinnitus patients and healthy controls
-2. **Deep Neural Network**: Architecture for learning discriminative spectral-temporal representations
-3. **Feature Extraction**: Automatic learning of biomarker features from raw EEG signals
-4. **Robustness Validation**: Cross-subject and cross-platform generalization testing
 
-## Applications
-- **Clinical Diagnosis**: Objective tinnitus detection and severity assessment
-- **Treatment Monitoring**: Tracking therapeutic intervention effectiveness
-- **BCI Development**: Integrating tinnitus state detection into brain-computer interfaces
-- **Research Tool**: Standardized biomarker for tinnitus neuroscience studies
+#### 1. Microstate Analysis
+- **Purpose**: Characterize quasi-stable topographic configurations in EEG
+- **Features Extracted**:
+  - Transition probability matrices
+  - State duration statistics
+- **Significance**: Captures large-scale brain network dynamics associated with tinnitus
+
+#### 2. Koopman Operator Analysis via DMD
+- **Approach**: Apply Dynamic Mode Decomposition (DMD) to dimensionality-reduced EEG data
+- **Key Features**:
+  - **Koopman eigenvalue magnitude**: Encodes oscillation stability (ρ̄ = 0.685, generalizes well)
+  - **Koopman eigenvalue phase**: Encodes oscillation frequency (ρ̄ = 1.583, does not generalize)
+- **Insight**: Altered oscillatory decay rates constitute more robust tinnitus biomarkers than frequency shifts
+
+#### 3. Cross-Dataset Generalization Framework
+- **Validation**: Linear SVM trained on one dataset, tested on another
+- **Robustness Metric**: Wasserstein-distance consistency analysis
+- **Result**: PCA-based Koopman features outperform microstate-derived features for cross-dataset discrimination
 
 ## Implementation Guide
 
 ### Prerequisites
 - Python 3.8+
-- PyTorch or TensorFlow
-- MNE-Python for EEG processing
-- scikit-learn for evaluation
+- Libraries: MNE-Python, PyDMD, scikit-learn, scipy, numpy
 
-### Data Preprocessing
+### Step-by-Step Implementation
+
+#### Step 1: Preprocess EEG Data
 ```python
 import mne
 import numpy as np
 
-# Load resting-state EEG data
-raw = mne.io.read_raw_edf('eeg_recording.edf', preload=True)
-
-# Bandpass filter (typical EEG range)
-raw.filter(1, 100)
-
-# Extract epochs for analysis
-events = mne.make_fixed_length_events(raw, duration=2.0)
-epochs = mne.Epochs(raw, events, tmin=0, tmax=2.0, baseline=None)
-
-# Get data array
-X = epochs.get_data()  # Shape: (n_epochs, n_channels, n_times)
+# Load resting-state EEG
+def preprocess_eeg(eeg_file, sfreq=500, l_freq=1, h_freq=40):
+    """Preprocess resting-state EEG for biomarker extraction."""
+    raw = mne.io.read_raw_fif(eeg_file, preload=True)
+    raw.filter(l_freq=l_freq, h_freq=h_freq)
+    raw.set_eeg_reference('average')
+    return raw.get_data()
 ```
 
-### Deep Learning Architecture
+#### Step 2: Microstate Analysis
 ```python
-import torch
-import torch.nn as nn
+from sklearn.cluster import KMeans
 
-class TinnitusBiomarkerNet(nn.Module):
-    """Deep neural network for tinnitus biomarker extraction"""
-    
-    def __init__(self, n_channels=64, n_times=500):
-        super().__init__()
-        
-        # Spectral-temporal feature extraction
-        self.spectral_conv = nn.Sequential(
-            nn.Conv2d(1, 32, kernel_size=(1, 25), padding=(0, 12)),
-            nn.BatchNorm2d(32),
-            nn.ReLU(),
-            nn.MaxPool2d((1, 4))
-        )
-        
-        self.temporal_conv = nn.Sequential(
-            nn.Conv2d(32, 64, kernel_size=(n_channels, 1)),
-            nn.BatchNorm2d(64),
-            nn.ReLU()
-        )
-        
-        self.classifier = nn.Sequential(
-            nn.Flatten(),
-            nn.Linear(64 * (n_times // 4), 128),
-            nn.ReLU(),
-            nn.Dropout(0.5),
-            nn.Linear(128, 2)  # Binary: tinnitus vs control
-        )
-    
-    def forward(self, x):
-        x = x.unsqueeze(1)  # Add channel dim
-        x = self.spectral_conv(x)
-        x = self.temporal_conv(x)
-        return self.classifier(x)
-```
-
-### Cross-Subject Robustness Strategy
-```python
-from sklearn.model_selection import LeaveOneGroupOut
-from sklearn.metrics import accuracy_score, roc_auc_score
-
-def evaluate_cross_subject_robustness(X, y, subject_ids):
+def extract_microstates(eeg_data, n_states=4, n_runs=10):
     """
-    Evaluate model generalization across different subjects
+    Extract microstates using modified K-means clustering.
     
     Args:
-        X: EEG data (n_samples, n_channels, n_times)
-        y: Labels (n_samples,)
-        subject_ids: Subject identifier for each sample
+        eeg_data: Channels x Time array
+        n_states: Number of microstates (typically 4)
+        n_runs: Number of random initializations
+    
+    Returns:
+        microstate_maps: Prototype topographies
+        labels: Time-series microstate labels
+        features: Transition probabilities and durations
     """
-    logo = LeaveOneGroupOut()
-    accuracies = []
-    aucs = []
+    # Global field power for segmentation
+    gfp = np.std(eeg_data, axis=0)
     
-    for train_idx, test_idx in logo.split(X, y, groups=subject_ids):
-        X_train, X_test = X[train_idx], X[test_idx]
-        y_train, y_test = y[train_idx], y[test_idx]
-        
-        # Train and evaluate
-        model = TinnitusBiomarkerNet()
-        # ... training code ...
-        
-        y_pred = model.predict(X_test)
-        accuracies.append(accuracy_score(y_test, y_pred))
-        aucs.append(roc_auc_score(y_test, y_pred))
+    # Modified K-means clustering
+    best_maps = None
+    best_score = -np.inf
     
-    return np.mean(accuracies), np.mean(aucs)
+    for _ in range(n_runs):
+        kmeans = KMeans(n_clusters=n_states, random_state=42)
+        labels = kmeans.fit_predict(eeg_data.T)
+        
+        # Calculate features
+        transitions = np.zeros((n_states, n_states))
+        for i in range(len(labels)-1):
+            transitions[labels[i], labels[i+1]] += 1
+        transitions = transitions / transitions.sum(axis=1, keepdims=True)
+        
+        # State durations
+        durations = []
+        current_state = labels[0]
+        duration = 1
+        for label in labels[1:]:
+            if label == current_state:
+                duration += 1
+            else:
+                durations.append(duration)
+                current_state = label
+                duration = 1
+        
+        # Store best solution
+        if np.sum(kmeans.inertia_) > best_score:
+            best_score = np.sum(kmeans.inertia_)
+            best_maps = kmeans.cluster_centers_
+    
+    return best_maps, labels, {'transitions': transitions, 'durations': durations}
 ```
 
-### Cross-Platform Robustness
+#### Step 3: Koopman Operator Analysis (DMD)
 ```python
-def normalize_across_platforms(data_dict):
+from pydmd import DMD
+from sklearn.decomposition import PCA
+
+def extract_koopman_features(eeg_data, n_components=20, dmd_rank=10):
     """
-    Normalize EEG data from different recording platforms
+    Extract Koopman operator features using DMD on PCA-reduced data.
     
     Args:
-        data_dict: Dictionary with platform names as keys, EEG data as values
+        eeg_data: Channels x Time array
+        n_components: Number of PCA components
+        dmd_rank: Rank for DMD truncation
+    
+    Returns:
+        eigenvalue_magnitudes: |λ| (stability indicator)
+        eigenvalue_phases: arg(λ) (frequency indicator)
+        modes: Koopman modes
     """
-    normalized_data = {}
+    # PCA dimensionality reduction
+    pca = PCA(n_components=n_components)
+    data_reduced = pca.fit_transform(eeg_data.T).T  # Components x Time
     
-    for platform, data in data_dict.items():
-        # Platform-specific normalization
-        # Adjust for sampling rate differences
-        # Standardize channel configurations
-        # Handle different reference schemes
-        
-        normalized_data[platform] = standardize_eeg(data, platform)
+    # DMD on PCA-reduced data
+    dmd = DMD(svd_rank=dmd_rank)
+    dmd.fit(data_reduced[:, :-1], data_reduced[:, 1:])
     
-    return normalized_data
-
-def standardize_eeg(data, platform):
-    """Platform-specific standardization"""
-    if platform == 'emotiv':
-        # Emotiv-specific preprocessing
-        data = resample(data, target_fs=128)
-    elif platform == 'neuroscan':
-        # Neuroscan-specific preprocessing  
-        data = resample(data, target_fs=128)
-        data = re_reference(data, ref='average')
+    # Extract eigenvalues
+    eigenvalues = dmd.eigs
+    magnitudes = np.abs(eigenvalues)
+    phases = np.angle(eigenvalues)
     
-    # Common normalization
-    data = (data - np.mean(data)) / np.std(data)
-    return data
+    return {
+        'magnitudes': magnitudes,
+        'phases': phases,
+        'modes': dmd.modes,
+        'explained_variance': pca.explained_variance_ratio_
+    }
 ```
 
-## Key Findings
+#### Step 4: Cross-Dataset Classification
+```python
+from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
+from scipy.stats import wasserstein_distance
 
-### Biomarker Characteristics
-- **Spectral Features**: Altered power in specific frequency bands (alpha, beta, gamma)
-- **Temporal Dynamics**: Changes in temporal patterns of neural oscillations
-- **Spatial Distribution**: Characteristic topographic patterns across scalp electrodes
+def evaluate_cross_dataset_generalization(
+    features_dataset1, labels_dataset1,
+    features_dataset2, labels_dataset2
+):
+    """
+    Evaluate cross-dataset generalization using Wasserstein distance.
+    
+    Returns:
+        accuracy: Classification accuracy
+        wasserstein_rho: Wasserstein distance consistency metric
+    """
+    # Standardize features
+    scaler = StandardScaler()
+    X1 = scaler.fit_transform(features_dataset1)
+    X2 = scaler.transform(features_dataset2)
+    
+    # Train SVM on dataset 1
+    svm = SVC(kernel='linear', C=1.0)
+    svm.fit(X1, labels_dataset1)
+    
+    # Test on dataset 2
+    accuracy = svm.score(X2, labels_dataset2)
+    
+    # Calculate Wasserstein distance consistency
+    w_distances = []
+    for feature_idx in range(X1.shape[1]):
+        w_distances.append(wasserstein_distance(X1[:, feature_idx], X2[:, feature_idx]))
+    wasserstein_rho = np.mean(w_distances)
+    
+    return {
+        'accuracy': accuracy,
+        'wasserstein_rho': wasserstein_rho,
+        'w_distances': w_distances
+    }
+```
 
-### Robustness Results
-- High classification accuracy maintained across different subjects
-- Consistent performance across different EEG recording platforms
-- Reliable discrimination between tinnitus and control groups
+## Applications
+- **Clinical Diagnostics**: Objective tinnitus assessment in clinical settings
+- **Cross-Platform Biomarkers**: EEG biomarkers that generalize across different EEG systems
+- **Neuroplasticity Research**: Understanding altered oscillatory dynamics in tinnitus
+- **Treatment Monitoring**: Tracking changes in neural signatures post-intervention
 
 ## Pitfalls
-
-### Data Quality Issues
-- **Artifacts**: Eye movements, muscle activity can contaminate EEG signals
-- **Solution**: Robust artifact rejection and ICA-based cleaning
-
-### Individual Variability
-- **Brain Anatomy**: Individual differences in cortical anatomy affect EEG patterns
-- **Solution**: Subject-independent feature learning and normalization
-
-### Platform Differences
-- **Sampling Rates**: Different devices use different sampling frequencies
-- **Electrode Configurations**: Variable electrode layouts and numbers
-- **Reference Schemes**: Different reference montages affect signal characteristics
-- **Solution**: Standardized preprocessing pipeline and platform-agnostic feature learning
-
-## Evaluation Metrics
-```python
-from sklearn.metrics import (
-    accuracy_score, precision_score, recall_score, f1_score,
-    roc_auc_score, confusion_matrix, classification_report
-)
-
-def comprehensive_evaluation(y_true, y_pred, y_prob):
-    """Comprehensive biomarker evaluation"""
-    metrics = {
-        'accuracy': accuracy_score(y_true, y_pred),
-        'precision': precision_score(y_true, y_pred),
-        'recall': recall_score(y_true, y_pred),
-        'f1': f1_score(y_true, y_pred),
-        'auc': roc_auc_score(y_true, y_prob),
-        'confusion_matrix': confusion_matrix(y_true, y_pred)
-    }
-    return metrics
-```
+- **Dataset Alignment**: Ensure consistent preprocessing across datasets (sampling rate, montage)
+- **Subject Variability**: Age and hearing loss covariates may affect generalization
+- **PCA Component Selection**: Optimal n_components varies with dataset characteristics
+- **DMD Rank Selection**: Too low rank loses dynamics; too high introduces noise
+- **Microstate Number**: Standard 4 microstates may need adjustment for specific populations
 
 ## Related Skills
-- eeg-visual-attention-decoding
-- eeg-brain-connectivity-bci
-- eeg-hopfield-emotion-energy
-- eeg-foundation-model-adapters
+- eeg-biomarker-robustness-cross-population
+- geometric-brain-dynamics-mapping
+- brain-dit-fmri-foundation-model
 
-## References
-- arXiv:2604.22116 - Resting-State EEG Biomarkers of Tinnitus Robust to Cross-Subject and Cross-Platform Variation
+## Key Insights
+1. **Koopman eigenvalue magnitudes (decay rates)** generalize better than phases (frequencies)
+2. **PCA-based Koopman features** outperform microstate features for cross-dataset discrimination
+3. **Wasserstein distance** provides interpretable robustness quantification
+4. The methodology suggests altered **oscillatory stability** rather than frequency shifts are the robust neural signature of tinnitus

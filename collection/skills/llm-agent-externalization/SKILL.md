@@ -1,390 +1,330 @@
 ---
 name: llm-agent-externalization
-description: "Externalization in LLM Agents - unified review of memory, skills, protocols and harness engineering. Agent capabilities externalized into cognitive artifacts for reliability and composability. Use for: agent architecture, LLM agent design, externalized memory, agent skills, agent protocols, cognitive artifacts. Activation: agent externalization, LLM agent architecture, agent memory externalization, agent skills, agent harness, cognitive artifacts."
+description: "Design LLM agent systems using the externalization framework from cognitive artifacts theory (Norman). Covers memory externalization (state across time), skills externalization (procedural expertise), protocol externalization (interaction structure), and harness engineering (unification layer). Use when architecting multi-tool LLM agents, building agent frameworks, designing memory/skills/protocol systems, or unifying agent components. Keywords: agent externalization, cognitive artifacts, memory system, skill system, protocol system, harness engineering, agent architecture, Norman theory, LLM agent design, tool use patterns."
 ---
 
-# Externalization in LLM Agents
+# LLM Agent Externalization Framework
 
-Unified review of how LLM agents externalize capabilities into memory stores, reusable skills, interaction protocols, and harness engineering.
+Design LLM agent systems using the externalization paradigm: transform internal cognitive burdens into structured external artifacts. Grounded in Norman's cognitive artifacts theory (1991, 1993) and unified by Zhou et al. (arXiv: 2604.08224).
 
-## Overview
+## Core Theory
 
-Large language model (LLM) agents are increasingly built less by changing model weights than by reorganizing the runtime around them. Capabilities that earlier systems expected the model to recover internally are now **externalized** into:
+**Externalization Principle**: Offload cognitive work from the LLM's internal context into structured external systems. Each system transforms a specific type of cognitive burden:
 
-1. **Memory Stores**: Persistent external memory
-2. **Reusable Skills**: Composable capability modules
-3. **Interaction Protocols**: Structured communication patterns
-4. **Harness Engineering**: Runtime infrastructure
+| System | Externalizes | Cognitive Burden | Artifact Type |
+|--------|-------------|-----------------|---------------|
+| Memory | State across time | Context window limits, forgetting | Records, embeddings, graphs |
+| Skills | Procedural expertise | Prompt engineering, step planning | Tools, functions, modules |
+| Protocols | Interaction structure | Coordination overhead, ambiguity | APIs, schemas, workflows |
+| Harness | Integration complexity | Cross-system orchestration | Orchestrator, router, loop |
 
-Drawing on the idea of **cognitive artifacts**, this framework argues that agent infrastructure transforms hard cognitive tasks into tractable engineering problems.
+## 1. Memory Systems (Externalized State)
 
-## Core Concepts
+Memory transforms the LLM's transient context into persistent, searchable, and evolvable state.
 
-### Cognitive Artifacts
+### Memory Taxonomy
 
-**Definition**: External representations that support cognitive processes.
+| Type | Timescale | Granularity | Storage | Use Case |
+|------|-----------|-------------|---------|----------|
+| Episodic | Session | Turn-level | Conversation log | Current task context |
+| Semantic | Long-term | Fact-level | Vector DB / KG | Knowledge accumulation |
+| Procedural | Permanent | Action-level | Skill registry | Learned behaviors |
+| Meta | Cross-session | System-level | Config / prompt | Agent self-knowledge |
 
-```
-Internal Cognition (Model Weights) → External Artifacts (Runtime)
-
-Examples:
-- Mental arithmetic → Calculator (external computation)
-- Memory recall → Notes/Database (external storage)
-- Planning → Calendar/Project management (external organization)
-```
-
-### The Externalization Shift
+### Memory Operations
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    AGENT ARCHITECTURE EVOLUTION                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   EARLY AGENTS              →           MODERN AGENTS           │
-│   (Model-Centric)                       (Externalization-Centric)│
-│                                                                  │
-│   ┌──────────────┐                      ┌──────────────┐        │
-│   │   LLM Core   │                      │   LLM Core   │        │
-│   │              │                      │   (Thin)     │        │
-│   │  All logic   │                      │              │        │
-│   │  All memory  │                      └──────┬───────┘        │
-│   │  All skills  │                             │                │
-│   └──────────────┘              ┌──────────────┼──────────────┐ │
-│                                 │              │              │ │
-│                          ┌──────┴──────┐ ┌────┴────┐ ┌──────┴┐│
-│                          │   Memory    │ │ Skills  │ │Harness││
-│                          │   Store     │ │ Module  │ │Engine ││
-│                          └─────────────┘ └─────────┘ └───────┘│
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+[Write] → Encode context → Store with metadata
+[Read]  → Retrieve by query → Rank by relevance → Inject into context
+[Update] → Detect staleness → Merge/replace → Version control
+[Forget] → Prune low-value → Compress → Archive
 ```
 
-## Four Pillars of Externalization
+### Design Patterns
 
-### 1. Memory Stores
-
-**Purpose**: Extend limited context window with persistent external memory.
-
+**Pattern A: Hierarchical Memory**
 ```
-Types of External Memory:
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│  Working Memory          Short-term storage during task     │
-│  │                                                          │
-│  ├── Context Window      Model's native attention           │
-│  └── Scratchpad          Temporary computation space        │
-│                                                             │
-│  Reference Memory        Long-term knowledge storage        │
-│  │                                                          │
-│  ├── Vector Store        Semantic search (RAG)              │
-│  ├── Knowledge Graph     Structured relationships           │
-│  └── Document Cache      Raw text retrieval                 │
-│                                                             │
-│  Episodic Memory         Past interactions and experiences  │
-│  │                                                          │
-│  ├── Conversation History Previous turns                    │
-│  ├── Session State       Current task context               │
-│  └── User Profile        Preferences and patterns           │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+Working Memory (in-context, immediate)
+    ↓
+Short-term Memory (session cache, recent turns)
+    ↓
+Long-term Memory (persistent DB, semantic index)
+    ↓
+Archive (cold storage, compressed summaries)
 ```
 
-**Key Insight**: Memory externalization converts "recall from weights" (hard) to "retrieve from store" (tractable).
-
-### 2. Reusable Skills
-
-**Purpose**: Package capabilities as composable, testable modules.
-
+**Pattern B: Dual-Path Memory**
 ```
-Skill Structure:
-┌─────────────────────────────────────────────────────────────┐
-│  Skill: Code Execution                                       │
-├─────────────────────────────────────────────────────────────┤
-│  Interface:                                                  │
-│    - Input: code (str), language (str)                       │
-│    - Output: result (dict)                                   │
-│    - Errors: TimeoutError, SyntaxError, SecurityError        │
-│                                                              │
-│  Implementation:                                             │
-│    - Sandbox environment                                     │
-│    - Resource limits (CPU, memory, time)                     │
-│    - Security policies                                       │
-│                                                              │
-│  Examples:                                                   │
-│    - execute_python("print('hello')")                        │
-│    - execute_bash("ls -la")                                  │
-│                                                              │
-│  Tests:                                                      │
-│    - Unit tests for each language                            │
-│    - Security test cases                                     │
-│    - Performance benchmarks                                  │
-└─────────────────────────────────────────────────────────────┘
+Fast Path: Semantic similarity → Top-k retrieval → Inject
+Slow Path: Reasoning over memory → Graph traversal → Synthesize
 ```
 
-**Benefits**:
-- **Composability**: Skills combine into workflows
-- **Testability**: Each skill independently verified
-- **Reusability**: Use across different agents
-- **Observability**: Clear boundaries for monitoring
+**Pattern C: Memory-Aware Prompting**
+- Dynamically adjust memory injection based on context budget
+- Prioritize high-importance, high-recency entries
+- Compress older memories into summaries before injection
 
-### 3. Interaction Protocols
+### Pitfalls
 
-**Purpose**: Structure communication between agents and with users.
+- **Over-retrieval**: Injecting too many memories dilutes signal; cap at 5-10 entries
+- **Stale memory**: Without TTL or decay, outdated facts cause errors
+- **Memory bloat**: Unbounded growth degrades retrieval quality; implement pruning
+- **Context fragmentation**: Disconnected memory shards lose coherence; maintain linkage
+
+## 2. Skills Systems (Externalized Expertise)
+
+Skills transform procedural knowledge—normally encoded in prompts—into executable, discoverable modules.
+
+### Skill Architecture
 
 ```
-Protocol Layers:
-┌─────────────────────────────────────────────────────────────┐
-│  Application Layer    Task-specific protocols               │
-│  │                                                          │
-│  ├── Tool Use         Structured function calling           │
-│  ├── Planning         Goal decomposition protocols          │
-│  └── Collaboration    Multi-agent coordination              │
-│                                                             │
-│  Session Layer        Conversation management               │
-│  │                                                          │
-│  ├── Turn-taking      Who speaks when                       │
-│  ├── Context passing  State transfer between turns          │
-│  └── Clarification    Ambiguity resolution                  │
-│                                                             │
-│  Transport Layer      Message delivery                      │
-│  │                                                          │
-│  ├── Schema           Structured message formats            │
-│  ├── Validation       Input/output checking                 │
-│  └── Error handling   Recovery from failures                │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+Skill Registry
+├── Discovery (search, list, match by description)
+├── Selection (relevance scoring, context-aware ranking)
+├── Execution (invoke with structured input/output)
+└── Composition (chain, parallel, conditional)
 ```
 
-**Example - Tool Use Protocol**:
+### Skill Design Principles
+
+1. **Single Responsibility**: Each skill solves one class of problem
+2. **Structured I/O**: Define explicit input schemas and output contracts
+3. **Self-Documenting**: Name, description, and usage examples enable LLM discovery
+4. **Composable**: Skills chain via shared data formats, not implicit state
+
+### Skill Lifecycle
+
+```
+Create → Register → Discover → Select → Execute → Evaluate → Update/Retire
+```
+
+### Design Patterns
+
+**Pattern A: Tool-Function Mapping**
 ```python
-# Structured tool invocation
-{
-    "thought": "I need to search for information",
-    "action": "web_search",
-    "arguments": {"query": "latest AI research"},
-    "expected_result": "list of papers"
-}
-
-# Structured response
-{
-    "observation": "Found 5 papers...",
-    "result": [...],
-    "status": "success"
+skill = {
+    "name": "csv_analyzer",
+    "description": "Analyze CSV data: summary stats, correlations, distributions",
+    "input_schema": {"file_path": "str", "analysis_type": "enum[summary, correlation, distribution]"},
+    "output_schema": {"result": "str", "charts": "list[ImageRef]", "insights": "list[str]"},
+    "implementation": "scripts/csv_analyzer.py"
 }
 ```
 
-### 4. Harness Engineering
-
-**Purpose**: Runtime infrastructure that makes externalized components reliable.
-
+**Pattern B: Skill Hierarchy**
 ```
-Harness Components:
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│  Orchestration                                               │
-│  ├── Workflow engine         Execute skill sequences        │
-│  ├── State machine           Manage agent lifecycle         │
-│  └── Event handling          React to triggers              │
-│                                                             │
-│  Resilience                                                  │
-│  ├── Retry logic             Handle transient failures      │
-│  ├── Circuit breakers        Prevent cascade failures       │
-│  └── Fallbacks               Graceful degradation           │
-│                                                             │
-│  Observability                                               │
-│  ├── Logging                 Record actions and decisions   │
-│  ├── Metrics                 Performance measurement        │
-│  └── Tracing                 End-to-end request tracking    │
-│                                                             │
-│  Security                                                    │
-│  ├── Sandboxing              Isolate untrusted code         │
-│  ├── Policy enforcement      Apply safety constraints       │
-│  └── Audit logging           Compliance tracking            │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+Domain Skills
+├── Data Skills (load, transform, analyze, visualize)
+├── Code Skills (generate, debug, refactor, test)
+├── Research Skills (search, synthesize, cite, compare)
+└── Communication Skills (summarize, translate, format, critique)
 ```
 
-## Design Principles
+**Pattern C: Dynamic Skill Loading**
+- Load only skills relevant to current task
+- Lazy-load heavy skills on first use
+- Cache recently-used skills in warm state
 
-### 1. Separation of Concerns
+### Pitfalls
 
-```
-Model Responsibility          Runtime Responsibility
-─────────────────────         ─────────────────────
-Pattern matching              State management
-Text generation               Tool orchestration
-Reasoning (in-context)        Long-term memory
-Language understanding        Protocol enforcement
-```
+- **Skill bloat**: Too many registered skills increase selection overhead; maintain focused registries
+- **Ambiguous descriptions**: Poor descriptions cause mis-selection; use concrete examples
+- **Tight coupling**: Skills that depend on each other create fragile chains; use shared schemas
+- **State leakage**: Skills mutating global state cause unpredictable behavior; enforce isolation
 
-### 2. Composability
+## 3. Protocol Systems (Externalized Interaction)
 
-```
-Small Skills → Workflows → Complex Tasks
+Protocols transform ad-hoc agent interactions into structured, verifiable, and reproducible exchanges.
 
-Example:
-  read_file → analyze_content → write_summary
-  
-  [Skill]     [Skill]          [Skill]
-     │            │                │
-     └────────────┴────────────────┘
-                  │
-            [Workflow: Document Analysis]
-```
+### Protocol Layers
 
-### 3. Testability
+| Layer | Concern | Example |
+|-------|---------|---------|
+| Syntax | Message format | JSON schema, XML, protobuf |
+| Semantics | Meaning of operations | CRUD verbs, intent types |
+| Pragmatics | Context and state | Session IDs, turn counters |
+| Meta-Protocol | Protocol about protocols | Negotiation, fallback, escalation |
 
-```
-Externalized Component:
-┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│   Input     │─────→│  Component  │─────→│   Output    │
-│  (known)    │      │  (isolated) │      │ (verifiable)│
-└─────────────┘      └─────────────┘      └─────────────┘
+### Protocol Design Patterns
 
-Can test:
-- Unit tests for each skill
-- Integration tests for workflows
-- Property-based tests for protocols
+**Pattern A: Request-Response Protocol**
+```json
+{
+  "protocol_version": "1.0",
+  "session_id": "sess_abc123",
+  "turn": 3,
+  "sender": "agent_orchestrator",
+  "receiver": "skill_executor",
+  "intent": "execute",
+  "payload": {"skill_name": "csv_analyzer", "params": {"file": "data.csv"}},
+  "constraints": {"timeout_ms": 30000, "max_retries": 2}
+}
 ```
 
-### 4. Observability
+**Pattern B: Multi-Agent Handshake**
+```
+Agent A → Broadcast: "I need data analysis"
+Agent B → Respond: "I can help, my capabilities: [list]"
+Agent A → Select: "You're chosen. Here's the context"
+Agent B → Execute: "Here are the results"
+Agent A → Acknowledge: "Received, integrating"
+```
+
+**Pattern C: Error Recovery Protocol**
+```
+On failure:
+  1. Classify error (transient vs. permanent)
+  2. Retry with backoff (if transient)
+  3. Escalate to supervisor (if permanent)
+  4. Fallback to alternative skill (if available)
+  5. Report to user (if all else fails)
+```
+
+### Pitfalls
+
+- **Protocol drift**: Unversioned protocols cause silent incompatibilities; always version
+- **Over-specification**: Too rigid protocols limit agent flexibility; allow extensibility
+- **Missing error paths**: Protocols without failure handling cascade into system failures
+- **Hidden assumptions**: Implicit protocol requirements cause integration bugs; document everything
+
+## 4. Harness Engineering (Unification Layer)
+
+The harness is the meta-system that coordinates memory, skills, and protocols into a coherent agent. It is the "operating system" for LLM agents.
+
+### Harness Architecture
 
 ```
-Externalized systems enable:
-- Clear input/output boundaries
-- Explicit state transitions
-- Measurable performance
-- Debuggable failures
+┌─────────────────────────────────────────┐
+│              HARNESS LAYER               │
+├──────────┬──────────┬───────────────────┤
+│  Router  │ Planner  │    State Manager  │
+├──────────┴──────────┴───────────────────┤
+│          Execution Loop                  │
+│  Input → Parse → Plan → Execute → Output │
+├──────────┬──────────┬───────────────────┤
+│  Memory  │  Skills  │    Protocols       │
+│  System  │  System  │    System          │
+└──────────┴──────────┴───────────────────┘
 ```
 
-## Implementation Patterns
+### Harness Components
 
-### Pattern 1: Memory-Augmented Agent
+**Router**: Directs incoming requests to appropriate skill/memory/protocol
+- Intent classification → Skill matching → Confidence scoring
+- Fallback: escalate to planner or human
+
+**Planner**: Decomposes complex tasks into executable steps
+- Task decomposition → Dependency resolution → Execution ordering
+- Re-plan on failure or unexpected results
+
+**State Manager**: Maintains execution context across components
+- Track active skills, memory state, protocol sessions
+- Checkpoint/restore for long-running tasks
+
+### Execution Loop Patterns
+
+**Pattern A: ReAct-style Loop**
+```python
+while not task_complete:
+    thought = plan(current_state, goal)
+    action = select_skill(thought)
+    observation = execute(action)
+    update_state(observation)
+```
+
+**Pattern B: Hierarchical Planning**
+```
+Top-level: decompose task into subgoals
+Mid-level: plan skill sequences for each subgoal
+Low-level: execute individual skill invocations
+```
+
+**Pattern C: Reflective Loop**
+```
+Act → Observe → Reflect → Re-plan → Act (improved)
+```
+
+### Design Principles
+
+1. **Separation of Concerns**: Harness orchestrates; skills execute; memory stores; protocols communicate
+2. **Observability**: Log all decisions, skill calls, memory accesses for debugging
+3. **Graceful Degradation**: When a component fails, fall back to simpler alternatives
+4. **Bounded Context**: Each component has clear responsibility boundaries
+
+## Practical Implementation
+
+### Quick Start: Minimal Agent
 
 ```python
-class MemoryAugmentedAgent:
-    def __init__(self, llm, memory_store):
+class ExternalizedAgent:
+    def __init__(self, llm, memory, skill_registry, protocol):
         self.llm = llm
-        self.memory = memory_store
-    
-    def run(self, task):
-        # 1. Retrieve relevant context
-        context = self.memory.retrieve(task)
-        
-        # 2. Augment prompt
-        prompt = f"Context: {context}\nTask: {task}"
-        
-        # 3. Generate with LLM
-        response = self.llm.generate(prompt)
-        
-        # 4. Store interaction
-        self.memory.store(task, response)
-        
-        return response
-```
-
-### Pattern 2: Skill-Based Agent
-
-```python
-class SkillBasedAgent:
-    def __init__(self, llm, skills):
-        self.llm = llm
-        self.skills = {s.name: s for s in skills}
-    
-    def execute(self, intent):
-        # 1. Select skill
-        skill_name = self.select_skill(intent)
-        skill = self.skills[skill_name]
-        
-        # 2. Extract parameters
-        params = self.extract_params(intent, skill)
-        
-        # 3. Execute skill
-        result = skill.execute(**params)
-        
-        return result
-```
-
-### Pattern 3: Protocol-Driven Agent
-
-```python
-class ProtocolDrivenAgent:
-    def __init__(self, llm, protocol):
-        self.llm = llm
+        self.memory = memory
+        self.skills = skill_registry
         self.protocol = protocol
-        self.state = "idle"
     
-    def interact(self, message):
-        # 1. Validate message against protocol
-        if not self.protocol.validate(message, self.state):
-            return self.protocol.error_response()
+    def run(self, user_input):
+        # 1. Retrieve relevant memory
+        context = self.memory.retrieve(user_input)
         
-        # 2. Process message
-        response = self.llm.generate(message)
+        # 2. Plan with LLM
+        plan = self.llm.plan(user_input, context)
         
-        # 3. Update state
-        self.state = self.protocol.next_state(self.state, message)
+        # 3. Select and execute skills
+        for step in plan.steps:
+            skill = self.skills.select(step.intent)
+            result = self.protocol.execute(skill, step.params)
+            self.memory.write(step, result)
         
-        return response
+        # 4. Synthesize response
+        return self.llm.synthesize(user_input, self.memory.read_recent())
 ```
 
-## Comparison: Internal vs External
+### Integration Checklist
 
-| Aspect | Internal (Model-Centric) | External (Runtime-Centric) |
-|--------|-------------------------|---------------------------|
-| Memory | Context window only | Unlimited external stores |
-| Skills | Prompt engineering | Composable modules |
-| Reliability | Best effort | Guaranteed by harness |
-| Testing | End-to-end only | Unit + integration |
-| Observability | Black box | White box |
-| Updates | Retrain model | Update runtime |
-| Cost | Inference only | Infrastructure + inference |
+- [ ] Memory: persistent store with retrieval, update, and pruning
+- [ ] Skills: registry with structured I/O, discovery, and isolation
+- [ ] Protocols: versioned message format with error handling
+- [ ] Harness: execution loop with planning, routing, and state tracking
+- [ ] Observability: logging, metrics, and debugging interfaces
+- [ ] Testing: unit tests for skills, integration tests for harness
 
-## Practical Implications
+## Best Practices Summary
 
-### For Agent Developers
+| Principle | Do | Don't |
+|-----------|----|-------|
+| Memory | Prune aggressively, version entries | Inject everything, forget to expire |
+| Skills | Keep focused, document well | Create mega-tools, vague descriptions |
+| Protocols | Version, handle errors | Implicit assumptions, no failure paths |
+| Harness | Separate concerns, observe everything | Monolithic design, blind execution |
+| General | Start minimal, iterate based on usage | Over-engineer upfront, ignore user patterns |
 
-1. **Design for externalization from the start**
-2. **Invest in harness engineering**
-3. **Build composable skills**
-4. **Implement clear protocols**
+## Applications
 
-### For System Architects
-
-1. **Separate model and runtime concerns**
-2. **Design observable boundaries**
-3. **Plan for failure modes**
-4. **Consider operational costs**
-
-### For Researchers
-
-1. **Study externalization patterns**
-2. **Develop new harness components**
-3. **Create skill libraries**
-4. **Design standard protocols**
-
-## References
-
-- **Paper**: "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering" by Zhou et al. (arXiv:2604.08224v1, 2026)
-- **Authors**: Chenyu Zhou, Huacan Chai, Wenteng Chen, et al.
-- **Categories**: cs.SE (Software Engineering), cs.MA (Multi-Agent Systems)
+- Multi-tool LLM agent design (coding assistants, research agents)
+- Enterprise agent platforms (customer service, data analysis)
+- Multi-agent collaboration systems (agent swarms, role-based agents)
+- Agent framework evaluation and comparison
+- Cognitive architecture design for AI systems
 
 ## Related Skills
 
-- **logact-agentic-reliability**: Shared log architecture for agent reliability
-- **psi-shared-state-architecture**: PSI shared-state for personal AI agents
-- **agent-memory-framework**: Memory-augmented AI agents
-- **skill-creator**: Creating effective agent skills
+- `agent-memory-framework`: Memory-augmented agents with RL optimization
+- `agent-memory-management`: Memory lifecycle and retrieval patterns
+- `agent-collaboration-protocol`: Multi-agent interaction patterns
+- `skill-creator`: Guide for creating effective skills
+- `skill-extractor`: Extract skill patterns from conversations
 
-## Activation Keywords
+## References
 
-- agent externalization
-- LLM agent architecture
-- agent memory externalization
-- agent skills
-- agent harness
-- cognitive artifacts
-- agent runtime
-- externalized capabilities
-- agent infrastructure
-- composable agents
+- **Externalization in LLM Agents** (arXiv: 2604.08224) — Zhou et al., April 2026. Shanghai Jiao Tong University, Sun Yat-Sen University, CMU, OPPO.
+- **Cognitive Artifacts** (Norman, 1991, 1993) — Foundation theory for externalizing cognitive work into designed artifacts.
+- **ReAct** (Yao et al., 2022) — Reasoning and acting loop for LLM agents.
+- **Toolformer** (Schick et al., 2023) — LLMs that learn to use tools.
+
+## Notes
+
+- The externalization framework provides a principled vocabulary for agent design decisions
+- Each externalization axis (memory, skills, protocols) can be designed independently and integrated via the harness
+- The harness layer is where most agent frameworks differentiate—the choice of execution loop, routing strategy, and state management defines agent behavior
+- Start with minimal externalization; add complexity only when the cognitive burden justifies it

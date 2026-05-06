@@ -1,182 +1,105 @@
 ---
 name: ember-hybrid-snn-llm-cognitive-architecture
-description: EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) hybrid cognitive architecture combining LLM reasoning with learned SNN dynamics for autonomous cognitive behavior
-tags: [hybrid-architecture, snn, llm, cognitive, autonomous, experience-modulated, biologically-inspired]
-related_skills: [ember-autonomous-cognitive-behaviour, neuroscience-of-transformers, snn-performance-analysis]
+description: "EMBER hybrid cognitive architecture combining LLM reasoning with persistent biologically-grounded SNN memory substrate. Autonomous cognitive behavior via STDP-based lateral propagation."
 ---
 
 # EMBER: Hybrid SNN-LLM Cognitive Architecture
 
-EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) is a hybrid cognitive architecture that combines the reasoning capabilities of Large Language Models (LLMs) with the energy-efficient, dynamics-rich processing of Spiking Neural Networks (SNNs) for autonomous cognitive behavior.
+Methodology from paper: "EMBER: Autonomous Cognitive Behaviour from Learned Spiking Neural Network Dynamics in a Hybrid LLM Architecture" (arXiv:2604.12167, 2026-04-14)
 
-## Architecture Overview
+## Core Concept
 
-### Three-Layer Design
+EMBER (Experience-Modulated Biologically-inspired Emergent Reasoning) reorganizes the LLM-memory relationship:
 
-1. **LLM Reasoning Layer**: High-level planning, abstract reasoning, language understanding
-2. **SNN Dynamics Layer**: Low-level sensory processing, pattern recognition, temporal dynamics
-3. **Experience Modulation Layer**: Mediates between LLM and SNN, learns from interactions
+**Traditional**: LLM + retrieval tools
+**EMBER**: LLM as replaceable reasoning engine within persistent SNN substrate
 
-### Key Innovations
+## Architecture
 
-- **Bi-directional Communication**: LLM ↔ SNN information flow
-- **Experience Modulation**: Learned gating based on interaction history
-- **Emergent Behavior**: Complex behaviors emerge from simple component interactions
-- **Energy Efficiency**: SNN handles routine processing, LLM invoked only when needed
+### SNN Substrate (220,000 neurons)
+- **Spike-Timing-Dependent Plasticity (STDP)**: Online learning
+- **Four-Layer Hierarchy**:
+  1. Sensory layer
+  2. Concept layer  
+  3. Category layer
+  4. Meta-pattern layer
+- **E/I Balance**: Inhibitory-excitatory balance mechanisms
+- **Reward-Modulated Learning**: Associative learning with reinforcement
 
-## Component Specifications
+### Text Encoding
+**Z-score Standardized Top-K Population Code**:
+- Dimension-independent by construction
+- 82.2% discrimination retention across embedding sizes
+- Converts embeddings to sparse population codes
 
-### LLM Layer
-- **Role**: Abstract reasoning, planning, language generation
-- **Activation**: Triggered by novelty detection or complex decision points
-- **Interface**: Text-based prompts and responses
-- **Optimization**: Fine-tuned for cognitive task coordination
+## Key Innovation: Autonomous Action
 
-### SNN Layer
-- **Role**: Sensory processing, pattern recognition, temporal dynamics
-- **Architecture**: Recurrent spiking network with learned dynamics
-- **Training**: Surrogate gradient backpropagation
-- **Features**: 
-  - Event-driven processing
-  - Temporal memory through recurrent connections
-  - Energy-efficient inference
+### STDP Lateral Propagation
+- **Idle Operation**: Continuous internal dynamics
+- **Autonomous Triggering**: SNN determines when to act
+- **Association Surfacing**: Learned associations fire laterally
+- **LLM Integration**: LLM selects action type and generates content
 
-### Experience Modulation
-- **Mechanism**: Learned attention over interaction history
-- **Function**: Routes information between LLM and SNN layers
-- **Learning**: Reinforcement learning from task success
-- **Adaptation**: Dynamic routing based on task complexity
+### Real-World Example
+- 8-hour idle period → learned person-topic associations fired
+- System autonomously initiated contact with user
+- No external prompting or scripted triggers
 
-## Implementation Framework
+## Performance
 
-### Core Classes
-```python
-class EMBERArchitecture:
-    def __init__(self, llm_model, snn_model, modulator):
-        self.llm = llm_model
-        self.snn = snn_model
-        self.modulator = modulator
-        self.experience_buffer = []
-    
-    def process_input(self, sensory_input, context=None):
-        # SNN processes sensory input
-        snn_features = self.snn.forward(sensory_input)
-        
-        # Modulator decides routing
-        route_decision = self.modulator(snn_features, context)
-        
-        if route_decision['need_llm']:
-            # Generate LLM prompt from SNN features
-            prompt = self._generate_prompt(snn_features, context)
-            llm_response = self.llm.generate(prompt)
-            return self._integrate_response(llm_response, snn_features)
-        else:
-            # SNN handles directly
-            return self.snn.decode(snn_features)
-    
-    def update_experience(self, input_data, output, success_metric):
-        self.experience_buffer.append({
-            'input': input_data,
-            'output': output,
-            'success': success_metric
-        })
-        self.modulator.update(self.experience_buffer)
-```
-
-### SNN Dynamics Learning
-```python
-class LearnedSNN:
-    def __init__(self, n_neurons, connectivity):
-        self.neurons = AdaptiveLIFNode(n_neurons)
-        self.weights = nn.Linear(n_neurons, n_neurons)
-        self.readout = nn.Linear(n_neurons, n_output)
-    
-    def forward(self, input_spikes, timesteps):
-        hidden_states = []
-        for t in range(timesteps):
-            x = self.weights(input_spikes[t]) if t == 0 else self.weights(hidden_states[-1])
-            h = self.neurons(x)
-            hidden_states.append(h)
-        return self.readout(torch.stack(hidden_states).mean(dim=0))
-```
-
-## Training Pipeline
-
-### Phase 1: SNN Pre-training
-1. Train SNN on sensory processing tasks
-2. Learn temporal dynamics from sequential data
-3. Optimize for energy efficiency
-
-### Phase 2: Modulator Training
-1. Initialize with heuristic routing rules
-2. Train with reinforcement learning
-3. Learn when to invoke LLM vs SNN processing
-
-### Phase 3: End-to-End Fine-tuning
-1. Joint training of all components
-2. Experience replay from buffer
-3. Continual learning from interactions
+- **Learning Speed**: First SNN-triggered action after only 7 conversations (14 messages) from clean start
+- **Discrimination**: 82.2% retention across embedding dimensionalities
+- **Autonomy**: True self-directed behavior without explicit triggers
 
 ## Applications
 
-### Autonomous Agents
-- Robot control with energy-efficient perception
-- Decision-making with adaptive reasoning depth
-- Learning from environmental interactions
+- **Autonomous Agents**: Self-directed AI assistants
+- **Proactive Systems**: Anticipating user needs
+- **Long-Term Memory**: Persistent associative memory
+- **Cognitive Architectures**: Biologically-inspired AI
 
-### Cognitive Assistants
-- Context-aware information processing
-- Adaptive response generation
-- Personalized interaction patterns
+## Implementation Notes
 
-### Research Tools
-- Neuroscience-inspired AI experiments
-- Cognitive architecture prototyping
-- Human-AI interaction studies
-
-## Key Benefits
-
-1. **Energy Efficiency**: SNN handles routine tasks, LLM only when needed
-2. **Adaptability**: Experience modulation enables continuous improvement
-3. **Transparency**: SNN dynamics provide interpretable processing
-4. **Scalability**: Architecture scales from simple to complex tasks
-5. **Biological Plausibility**: Inspired by brain's hierarchical processing
-
-## Performance Characteristics
-
-| Metric | Pure LLM | EMBER | Improvement |
-|--------|----------|-------|-------------|
-| Energy Usage | 100% | 15-30% | 3-7x reduction |
-| Response Time | High | Low-Medium | 2-5x faster |
-| Adaptability | Fixed | Dynamic | Continuous learning |
-| Interpretability | Low | Medium-High | SNN dynamics visible |
-
-## Integration with Existing Systems
-
-### LLM Integration
-- Compatible with any LLM API
-- Prompt engineering for cognitive tasks
-- Response parsing for action generation
-
-### SNN Frameworks
-- SpikingJelly for PyTorch integration
-- Norse for JAX compatibility
-- Lava for Intel Loihi deployment
-
-### Deployment Options
-- Cloud: LLM in cloud, SNN on edge
-- Edge: Both components on device
-- Hybrid: Distributed processing
-
-## Research Directions
-
-1. **Optimal Routing**: Learning when to use which component
-2. **Experience Compression**: Efficient memory of past interactions
-3. **Multi-agent EMBER**: Coordination between multiple EMBER instances
-4. **Neuroscience Validation**: Comparison with biological cognitive processes
-5. **Safety Mechanisms**: Ensuring reliable behavior in critical applications
+```python
+class EMBERArchitecture:
+    def __init__(self, llm_engine, snn_config):
+        self.llm = llm_engine  # Replaceable reasoning engine
+        self.snn = SpikingNeuralNetwork(snn_config)
+        self.encoder = ZScoreTopKEncoder()
+        
+    def encode_input(self, text):
+        """Convert text to SNN population code"""
+        embedding = self.llm.embed(text)
+        normalized = (embedding - embedding.mean()) / embedding.std()
+        top_k_indices = torch.topk(normalized.abs(), k=K).indices
+        population_code = torch.zeros_like(embedding)
+        population_code[top_k_indices] = normalized[top_k_indices]
+        return population_code
+        
+    def process_conversation(self, messages):
+        for msg in messages:
+            code = self.encode_input(msg['content'])
+            self.snn.inject_spikes(code)
+        
+        self.snn.run_steps(duration='idle_period')
+        
+        if self.snn.detect_strong_association():
+            associations = self.snn.retrieve_active_associations()
+            action = self.llm.generate_action(associations)
+            return action
+        return None
+```
 
 ## References
-- arXiv:2604.16402v1 (2026-04-19)
-- Related: Ember SNN-LLM architecture papers
-- Related: Hybrid cognitive architectures literature
+
+- Savage, W. (2026). EMBER: Autonomous Cognitive Behaviour from Learned Spiking Neural Network Dynamics in a Hybrid LLM Architecture. arXiv:2604.12167.
+- arXiv: https://arxiv.org/abs/2604.12167
+
+## Activation Keywords
+
+- EMBER architecture
+- hybrid SNN LLM
+- autonomous cognitive behavior
+- STDP lateral propagation
+- biologically-grounded memory
+- proactive AI agents

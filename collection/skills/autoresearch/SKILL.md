@@ -171,66 +171,6 @@ When user wakes up / returns:
 3. **Notable discoveries**
 4. **Recommendations for next steps**
 
-## Tools Used
-
-- `exec`: Run training scripts, git operations, log parsing
-- `read`: Read training code, results.tsv, README
-- `write`: Update results.tsv, commit messages
-- `bash`: Run `uv run train.py`, `git commit`, `git reset`
-
-## Instructions for Agents
-
-### Step 1: Setup Phase
-1. Agree on run tag (e.g., `apr5`), create branch `autoresearch/<tag>`
-2. Read in-scope files (train.py, README.md); verify data exists
-3. Initialize `results.tsv` with header row; confirm setup with user
-
-### Step 2: Baseline Run
-Run initial training to establish baseline: `uv run train.py > run.log 2>&1`
-Parse metrics (`val_bpb`, `val_loss`, `peak_vram_mb`) and record in results.tsv.
-
-### Step 3: Autonomous Loop (run forever until interrupted)
-1. Analyze results.tsv to identify patterns and next experiment idea
-2. Modify train.py with focused experimental change
-3. Commit: `git add -A && git commit -m "experiment: <description>"`
-4. Run training: `uv run train.py > run.log 2>&1`
-5. Evaluate: compare val_bpb vs previous best
-6. If improved: KEEP (advance branch); if worse: DISCARD (`git reset --hard HEAD~1`)
-7. Log result to results.tsv; REPEAT
-
-### Step 4: Summary on Return
-When interrupted or user returns: report experiments run, best result, key insights, recommendations.
-
-## Examples
-
-### Example 1: Overnight ML Experiments
-
-```
-User: "Run autoresearch on nanogpt overnight"
-
-Agent:
-1. Sets up branch autoresearch/apr5
-2. Runs baseline: val_bpb = 1.023
-3. Tries LR=0.02: val_bpb = 1.015 → KEEP
-4. Tries depth=16: val_bpb = 1.008 → KEEP
-5. Tries GeLU: val_bpb = 1.010 → DISCARD
-6. Continues indefinitely until manually stopped
-
-User returns to: 127 experiments, best val_bpb 0.987
-```
-
-### Example 2: Vision Model Optimization
-
-```
-User: "Start autoresearch on my ViT training code for 3 hours"
-
-Agent:
-1. Sets up branch autoresearch/vit-apr5
-2. Runs baseline on train.py
-3. Experiments with: batch size, LR schedule, augmentation
-4. After 3 hours: summarizes top 5 improvements found
-```
-
 ## Error Handling
 
 ### Crashes

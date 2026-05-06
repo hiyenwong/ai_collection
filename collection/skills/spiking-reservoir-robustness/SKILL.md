@@ -405,8 +405,6 @@ class MNISTTemporalTask:
 
 ## References
 
-- **arXiv:2604.10534** (2026-04-11): Spiking Reservoir Computing Robustness - Latest advances in spiking reservoir robustness techniques.
-
 - Paper: "Bridging Theory and Practice in Crafting Robust Spiking Reservoirs" (arXiv:2604.06395v1, 2026)
 - Maass et al. (2002): Real-time computing without stable states
 - Jaeger (2001): The "echo state" approach to analyzing and training recurrent neural networks

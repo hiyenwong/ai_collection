@@ -222,68 +222,12 @@ Benefits:
 - **PINNs** (Raissi et al. 2019): Physics-informed neural networks
 - **Equivariant NN** (Cohen & Welling 2016): Group theory in architectures
 
-## Activation Keywords
-
-- physics-guided neural network
-- PGNN
-- physics-informed ML
-- physics-embedded NN
-- scientific ML
-- physics constraints
-- conservation law neural network
-- differential equation NN
-
 ## Tools Used
 
 - `exec`: Run physics simulations, solve ODEs
 - `read`: Load physical equations, domain knowledge
 - `write`: Document physics-guided architectures
 - `edit`: Modify network configurations
-
-## Instructions for Agents
-
-### Step 1: Identify Physical Laws
-Determine which physical constraints (equations, symmetries, conservation laws) must be satisfied.
-
-### Step 2: Choose Integration Level
-Select constraint type: soft (loss term), hard (architecture), or embedded (computational graph).
-
-### Step 3: Design Architecture
-Modify network layers to embed physical constraints directly into the forward pass.
-
-### Step 4: Implement and Test
-Build the network and validate against analytical solutions or known physical behavior.
-
-### Step 5: Iterate and Optimize
-Adjust constraint strength, add regularization if needed, balance physics accuracy with learning flexibility.
-
-## Examples
-
-### Example 1: Conservation Law Network
-
-```
-User: "Design a neural network that conserves energy for a physical system"
-
-Agent:
-1. Identify: Energy conservation is the key constraint
-2. Choose: Hard constraint via symplectic architecture
-3. Design: Symplectic integrator layers that conserve energy by construction
-4. Test: Compare against Hamiltonian dynamics
-5. Result: Network learns while exactly conserving energy
-```
-
-### Example 2: PDE-Embedded Network
-
-```
-User: "Create a network that solves the wave equation"
-
-Agent:
-1. Identify: Wave equation ∂²u/∂t² = c²∇²u must be satisfied
-2. Choose: Embedded constraint in computational graph
-3. Design: Layer that implements finite difference scheme in forward pass
-4. Test: Validate against analytical wave solutions
-5. Result: Network outputs are guaranteed to satisfy wave equation
-```
 
 ## Error Handling
 

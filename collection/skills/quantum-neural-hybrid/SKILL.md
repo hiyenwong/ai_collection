@@ -7,46 +7,6 @@ description: Hybrid classical-quantum neural network development skill. Provides
 
 # Quantum Neural Hybrid
 
-## Activation Keywords
-
-- quantum neural hybrid
-- hybrid quantum classical network
-- variational quantum circuit
-- quantum machine learning
-- QML
-- NISQ neural network
-- quantum transfer learning
-- quantum error mitigation
-- 量子神经混合
-- 量子机器学习
-
-## Tools Used
-
-- `exec`: Run PennyLane/Qiskit quantum circuit scripts
-- `read`: Load training code, pre-trained weights, quantum circuit configs
-- `write`: Save hybrid model code and results
-
-## Instructions for Agents
-
-### Step 1: Identify QML Task Type
-Classify the request: Transfer Learning, Error Mitigation, Noise-Robust Training, or General QNN development.
-
-### Step 2: Design Hybrid Architecture
-- Prepare classical network (load pre-trained model if applicable)
-- Design variational quantum circuit (n_qubits, n_layers, entanglement)
-- Connect classical output to quantum input via adapter layer
-
-### Step 3: Train
-- For transfer learning: freeze classical layers, train quantum params only
-- For error mitigation: generate echo evolution data, train neural mitigator
-- For noise-robust: inject noise during training, use noise-aware loss
-
-### Step 4: Validate
-Test on both simulator and (if available) real quantum hardware; compare with classical baseline.
-
-### Step 5: Report Results
-Report accuracy, training convergence, noise sensitivity, and resource requirements.
-
 ## Overview
 
 Enables development of hybrid classical-quantum neural networks for quantum machine learning on NISQ (Noisy Intermediate-Scale Quantum) devices. Combines classical deep learning with variational quantum circuits for enhanced computational capabilities.

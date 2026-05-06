@@ -1,6 +1,6 @@
 ---
 name: kuramoto-control-theory
-description: 'Unified control-theoretic framework for complex-valued Kuramoto networks. Based on arxiv:2604.07249 'Complex-Valued Kuramoto Networks: A Unified Control-Theoretic Framework' by Giordano et al. Use when analyzing Kuramoto network synchronization, phase locking control, switched feedforward control, sliding-mode control for oscillators, or when asked 'Kuramoto control', 'oscillator synchronization', 'phase locking design', 'complex-valued Kuramoto'.'
+description: "Unified control-theoretic framework for complex-valued Kuramoto networks. Based on arxiv:2604.07249 'Complex-Valued Kuramoto Networks: A Unified Control-Theoretic Framework' by Giordano et al. Use when analyzing Kuramoto network synchronization, phase locking control, switched feedforward control, sliding-mode control for oscillators, or when asked 'Kuramoto control', 'oscillator synchronization', 'phase locking design', 'complex-valued Kuramoto'."
 ---
 
 # Kuramoto Control Theory
@@ -152,53 +152,6 @@ Ensures all phases lock to ω_target in finite time.
 | Heterogeneity | May fail | Handles easily |
 | Convergence | Asymptotic | Finite-time achievable |
 | Frequency locking | Emergent | Prescribed achievable |
-
-## Activation Keywords
-
-- kuramoto-control-theory
-- kuramoto-control-theory 技能
-- kuramoto-control-theory skill
-
-## Tools Used
-
-- `read` - Read documentation and references
-- `web_search` - Search for related information
-- `web_fetch` - Fetch paper or documentation
-
-## Instructions for Agents
-Follow these steps when applying this skill:
-
-### Step 1: Understand the Request
-
-### Step 2: Search for Information
-
-### Step 3: Apply the Framework
-
-### Step 4: Provide Results
-
-### Step 5: Verify Accuracy
-
-## Examples
-
-### Example 1: Basic Application
-
-**User:** I need to apply Kuramoto Control Theory to my analysis.
-
-**Agent:** I'll help you apply kuramoto-control-theory. First, let me understand your specific use case...
-
-**Context:** Valued Kuramoto Model
-
-### Example 2: Advanced Scenario
-
-**User:** Complex analysis scenario
-
-**Agent:** Based on the methodology, I'll guide you through the advanced application...
-
-### Example 2: Advanced Application
-
-**User:** What are the key considerations for kuramoto-control-theory?
-
-**Agent:** Let me search for the latest research and best practices...
 
 ## Related Skills
 

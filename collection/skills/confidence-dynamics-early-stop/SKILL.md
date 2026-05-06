@@ -20,7 +20,7 @@ description: "早停策略技能 - 利用中间答案的置信度动态来决定
 - **置信度稳定阈值**: 当置信度达到稳定状态且足够高时，停止推理
 - **无训练集成**: 不需要额外训练，可直接集成到现有模型
 
-## 激活关键词 / Activation Keywords
+## 激活关键词
 
 - 早停
 - early stop
@@ -32,7 +32,7 @@ description: "早停策略技能 - 利用中间答案的置信度动态来决定
 - CoDE-Stop
 - 置信度早停
 
-## 工具使用 / Tools Used
+## 工具使用
 
 - exec: 运行推理脚本，监控置信度
 - read: 加载模型配置和置信度阈值
@@ -194,38 +194,3 @@ def evaluate_early_stop(dataset, model):
 - **多模态推理**: 扩展到视觉+文本推理
 - **分布式推理**: 在多步推理中分布式应用早停
 - **动态阈值**: 根据任务难度自适应调整阈值
-
-## Instructions for Agents
-
-Follow these steps when implementing confidence dynamics early stopping:
-
-1. **Understand the reasoning task**: Identify the model type and reasoning task
-2. **Configure confidence monitoring**: Set up the confidence tracking mechanism
-3. **Apply early stopping**: Use the threshold and stability criteria from this skill
-4. **Validate**: Compare early-stopped results with full-length reasoning
-
-## Examples
-
-### Example 1: Basic Early Stopping
-
-```
-User: "用置信度动态来早停长推理过程"
-
-Execute:
-1. Set up confidence monitoring on the reasoning model
-2. Configure threshold (default 0.90) and stability window (default 5)
-3. Run inference with early stopping enabled
-4. Report savings (tokens saved, time reduced) and accuracy impact
-```
-
-### Example 2: Threshold Tuning
-
-```
-User: "调整早停的置信度阈值"
-
-Execute:
-1. Run inference on a small validation set
-2. Analyze confidence curves for correct vs incorrect trajectories
-3. Adjust threshold based on precision-speed tradeoff
-4. Document the optimal threshold for this task
-```

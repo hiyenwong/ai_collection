@@ -1,47 +1,251 @@
 ---
 name: meta-cognitive-tool-optimization
 description: "Meta-cognitive framework for optimizing tool use in agentic multimodal models - deliberate tool invocation vs internal reasoning arbitration. Use when designing agents that need to decide between using external tools or internal knowledge. Activation: meta-cognitive tool use, deliberate tool invocation, tool arbitration, agentic multimodal models, tool vs reasoning, blind tool invocation."
-paper_source:
-  title: "Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models"
-  arxiv_id: "2604.08545"
-  authors: ["Shilin Yan", "Jintao Tong", "Hongwei Xue", "Yicheng Xiao", "Dongyang Liu", "Wenqi Shao", "Yu Qiao", "Ping Luo"]
-  category: "cs.AI"
-  published: "2026-04-09"
-domain: "AI Systems / Agent Design"
 ---
 
 # Meta-Cognitive Tool Optimization
 
-A framework for cultivating deliberate tool-use policies in agentic multimodal models, enabling agents to arbitrate between leveraging internal knowledge and querying external utilities.
+基于论文 "Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models" (arXiv:2604.08545v1, 2026) 的元认知工具优化方法论。
 
-## Core Problem
+## 核心问题
 
-Current agentic multimodal models suffer from a **meta-cognitive deficit**:
-- **Blind tool invocation**: Agents reflexively execute tools even when queries are resolvable from raw visual context
-- **Latency costs**: Unnecessary tool calls introduce significant delays
-- **Error accumulation**: Each tool invocation introduces potential failure points
-- **No arbitration mechanism**: Agents cannot discern when to use tools vs. internal reasoning
+当前的Agentic多模态模型存在严重的**元认知缺陷**: 它们难以仲裁是利用内部知识还是查询外部工具。
 
-## The Solution: Deliberate Tool-Use Framework
+### 病理行为: 盲目工具调用
 
-A meta-cognitive training approach that teaches agents to:
-1. **Assess** whether a query requires external tools
-2. **Arbitrate** between internal knowledge and tool invocation
-3. **Execute** deliberately chosen actions
-4. **Learn** from tool-use decisions
+- 即使查询可以从原始视觉上下文中解决，也会反射性地执行工具
+- 导致严重的延迟瓶颈
+- 注入额外噪声，破坏合理推理
 
-## When to Use
+### 现有方法的困境
 
-Use this skill when:
-- Building agentic multimodal models with tool-use capabilities
-- Designing agents that need to decide between external API calls and internal reasoning
-- Optimizing latency by reducing unnecessary tool invocations
-- Implementing meta-cognitive layers in AI agents
-- Training agents for deliberate vs. reflexive behavior
-- Evaluating tool-use efficiency in agent systems
-- Addressing blind tool invocation problems
+强化学习协议尝试通过惩罚工具使用的标量化奖励来缓解:
+- **激进惩罚**: 抑制必要的工具使用
+- **温和惩罚**: 在优势归一化期间完全被准确性奖励的方差淹没
 
-## Activation Keywords
+→ 这是一个不可调和的优化困境
+
+## HDPO框架
+
+### 核心思想
+
+**HDPO (Hybrid Decoupled Policy Optimization)** 将工具效率从竞争的标量目标重新框架为**严格条件目标**。
+
+通过避免奖励标量化，HDPO维护两个正交优化通道:
+1. **准确性通道**: 最大化任务正确性
+2. **效率通道**: 仅在准确轨迹内通过条件优势估计强制执行执行经济性
+
+### 解耦架构
+
+```
+┌─────────────────────────────────────────┐
+│           Task Input                    │
+│    (Query + Visual Context)             │
+└─────────────────┬───────────────────────┘
+                  │
+        ┌─────────▼─────────┐
+        │  Decision Layer   │
+        │  (Tool or Not?)   │
+        └─────────┬─────────┘
+                  │
+    ┌─────────────┼─────────────┐
+    ▼             ▼             ▼
+┌───────┐    ┌────────┐    ┌─────────┐
+│Internal│    │  Tool  │    │ Combined│
+│Reasoning│   │  Call  │    │  Path   │
+└────┬───┘    └───┬────┘    └────┬────┘
+     │            │              │
+     └────────────┼──────────────┘
+                  ▼
+        ┌─────────────────┐
+        │  Result Output  │
+        └─────────────────┘
+```
+
+### 条件优势估计
+
+仅在准确轨迹内估计效率优势:
+```
+A_efficiency(s,a) = Q(s,a) - V(s)  if trajectory is correct
+                    0               otherwise
+```
+
+这自然诱导一个**认知课程**:
+1. 首先掌握任务解决
+2. 然后细化自我依赖
+
+## 实现方法
+
+### 训练流程
+
+```python
+class HDPOTrainer:
+    def train_step(self, batch):
+        # 分离两个优化通道
+        
+        # 1. 准确性通道
+        accuracy_loss = self.compute_accuracy_loss(
+            predictions=batch.predictions,
+            targets=batch.targets
+        )
+        
+        # 2. 效率通道 (仅在准确轨迹上)
+        correct_mask = (batch.predictions == batch.targets)
+        efficiency_loss = self.compute_efficiency_loss(
+            tool_calls=batch.tool_calls,
+            advantages=batch.advantages,
+            mask=correct_mask  # 关键: 仅使用准确轨迹
+        )
+        
+        # 组合 (无标量权重)
+        total_loss = accuracy_loss + efficiency_loss
+        
+        return total_loss
+```
+
+### 推理时决策
+
+```python
+class MetisAgent:
+    def decide_tool_use(self, query, visual_context):
+        """决定是否使用工具"""
+        
+        # 评估内部解决能力
+        internal_confidence = self.assess_internal_capability(
+            query, visual_context
+        )
+        
+        # 元认知决策
+        if internal_confidence > self.threshold:
+            # 使用内部知识
+            return self.internal_reasoning(query, visual_context)
+        else:
+            # 调用外部工具
+            return self.tool_invocation(query)
+```
+
+## 关键结果
+
+### 性能提升
+
+- **工具调用减少**: 数量级降低
+- **推理准确性**: 同时提高
+- **延迟降低**: 显著减少响应时间
+
+### 认知课程效应
+
+训练过程中观察到的自然学习阶段:
+1. **早期**: 频繁使用工具，高准确性
+2. **中期**: 开始识别内部可解决的情况
+3. **后期**: 精确的工具使用，高效率
+
+## 应用场景
+
+### 场景1: 视觉问答
+
+```
+问题: "图片中有几个人?"
+
+盲目工具调用:
+→ 调用对象检测API (延迟 + 成本)
+
+元认知决策:
+→ 评估: 简单计数问题
+→ 决策: 使用内部视觉理解
+→ 直接回答: "3个人"
+```
+
+### 场景2: 知识检索
+
+```
+问题: "法国的首都是什么?"
+
+盲目工具调用:
+→ 调用搜索引擎 (不必要的延迟)
+
+元认知决策:
+→ 评估: 内部知识充足
+→ 决策: 直接回答
+→ 回答: "巴黎"
+```
+
+### 场景3: 复杂计算
+
+```
+问题: "计算这张发票的总金额"
+
+元认知决策:
+→ 评估: 需要精确计算
+→ 决策: 调用计算器工具
+→ 使用工具: 确保准确性
+```
+
+## 设计原则
+
+### 1. 分离优化目标
+
+不要将多个目标合并为单一标量奖励:
+```python
+# 不好的做法
+reward = accuracy - alpha * tool_calls  # 标量化
+
+# 好的做法
+accuracy_objective = maximize_accuracy()
+efficiency_objective = minimize_tools(only_when_correct=True)
+```
+
+### 2. 条件学习
+
+仅在成功轨迹上学习效率:
+- 确保不牺牲准确性
+- 避免负迁移
+- 自然课程学习
+
+### 3. 元认知评估
+
+开发内部能力评估机制:
+- 置信度估计
+- 知识边界识别
+- 动态阈值调整
+
+### 4. 渐进专业化
+
+允许模型逐步发展专业化:
+- 早期广泛探索
+- 后期精确执行
+- 持续自我改进
+
+## 评估指标
+
+### 主要指标
+
+1. **工具调用率**: 每任务平均工具调用次数
+2. **准确率**: 任务解决正确率
+3. **效率-准确性权衡**: 帕累托前沿
+4. **延迟**: 端到端响应时间
+
+### 分析维度
+
+```python
+metrics = {
+    "tool_invocation_rate": tool_calls / total_queries,
+    "accuracy": correct_answers / total_queries,
+    "unnecessary_tools": unnecessary_calls / total_calls,
+    "missed_tools": missed_necessary_calls / necessary_calls,
+    "average_latency": total_time / total_queries
+}
+```
+
+## 与现有方法比较
+
+| 方法 | 工具减少 | 准确性保持 | 训练稳定性 |
+|------|----------|-----------|-----------|
+| 基线 | - | ✓ | ✓ |
+| 标量惩罚 | ✓ | ✗ | ✗ |
+| 硬约束 | ✓✓ | ✗✗ | ✓ |
+| **HDPO** | ✓✓ | ✓ | ✓ |
+
+## 激活关键词
 
 - meta-cognitive tool use
 - deliberate tool invocation
@@ -49,487 +253,17 @@ Use this skill when:
 - agentic multimodal models
 - tool vs reasoning
 - blind tool invocation
-- tool-use optimization
-- meta-cognition in AI
+- HDPO
 - 元认知工具使用
-- 工具调用决策
-- 代理工具优化
+- 工具调用优化
+- 认知课程
 
-## Core Concepts
+## 相关技能
 
-### 1. The Meta-Cognitive Deficit
+- `psi-shared-state-architecture`: PSI共享状态架构
+- `llm-decision-centric-design`: LLM决策中心设计
+- `agent-memory-framework`: Agent记忆框架
 
-```
-Traditional Agent Behavior:
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Query     │────→│   Agent     │────→│   Tool      │
-│  (Image +   │     │  (Reflexive │     │  (Always    │
-│   Question) │     │   Invoke)   │     │   Called)   │
-└─────────────┘     └─────────────┘     └─────────────┘
+## 参考文献
 
-Problem: Tool invoked even when answer is obvious from image!
-```
-
-### 2. Deliberate Tool-Use Policy
-
-```
-Meta-Cognitive Agent:
-┌─────────────┐     ┌─────────────────┐     ┌─────────────┐
-│   Query     │────→│  Meta-Cognitive │────→│   Tool      │
-│  (Image +   │     │   Arbitration   │     │  (Conditional│
-│   Question) │     │  (Assess First) │     │   Call)     │
-└─────────────┘     └─────────────────┘     └─────────────┘
-         │                  │
-         │                  ↓ (if needed)
-         │           ┌─────────────┐
-         └──────────→│   Internal  │
-                     │   Reasoning │
-                     │   (Direct   │
-                     │   Answer)   │
-                     └─────────────┘
-
-Benefit: Tool only called when necessary!
-```
-
-### 3. Decision Framework
-
-```python
-class ToolUseDecision:
-    """Represents the decision to use tools or internal reasoning."""
-    
-    USE_TOOL = "use_tool"
-    USE_INTERNAL = "use_internal"
-    UNCERTAIN = "uncertain"
-    
-    def __init__(self, decision: str, confidence: float, reasoning: str):
-        self.decision = decision
-        self.confidence = confidence
-        self.reasoning = reasoning
-```
-
-## Implementation Patterns
-
-### Pattern 1: Meta-Cognitive Assessment
-
-```python
-class MetaCognitiveArbitrator:
-    """Arbitrates between tool use and internal reasoning."""
-    
-    def __init__(self, model, tools_available: list):
-        self.model = model
-        self.tools = tools_available
-        self.confidence_threshold = 0.7
-    
-    def assess_need_for_tools(
-        self, 
-        query: str, 
-        visual_context: Optional[Image],
-        available_tools: list
-    ) -> ToolUseDecision:
-        """
-        Assess whether tools are needed for this query.
-        
-        Args:
-            query: User's question or request
-            visual_context: Optional image context
-            available_tools: List of available tools
-        
-        Returns:
-            ToolUseDecision with decision and confidence
-        """
-        # Construct assessment prompt
-        assessment_prompt = self._build_assessment_prompt(
-            query, visual_context, available_tools
-        )
-        
-        # Get model's self-assessment
-        assessment = self.model.generate(
-            assessment_prompt,
-            output_schema={
-                "needs_tool": "bool",
-                "confidence": "float",
-                "reasoning": "str"
-            }
-        )
-        
-        # Make decision based on confidence
-        if assessment["confidence"] >= self.confidence_threshold:
-            if assessment["needs_tool"]:
-                return ToolUseDecision(
-                    ToolUseDecision.USE_TOOL,
-                    assessment["confidence"],
-                    assessment["reasoning"]
-                )
-            else:
-                return ToolUseDecision(
-                    ToolUseDecision.USE_INTERNAL,
-                    assessment["confidence"],
-                    assessment["reasoning"]
-                )
-        else:
-            return ToolUseDecision(
-                ToolUseDecision.UNCERTAIN,
-                assessment["confidence"],
-                assessment["reasoning"]
-            )
-    
-    def _build_assessment_prompt(
-        self, 
-        query: str, 
-        visual_context: Optional[Image],
-        tools: list
-    ) -> str:
-        """Build prompt for meta-cognitive assessment."""
-        return f"""
-You are a meta-cognitive arbitrator for an AI agent. Your task is to decide 
-whether this query requires external tools or can be answered from the 
-available context.
-
-Query: {query}
-
-Available Tools:
-{self._format_tools(tools)}
-
-{'Visual Context: [Image provided]' if visual_context else 'No visual context'}
-
-Instructions:
-1. Analyze whether the query can be answered from the visual context alone
-2. Determine if any available tool is necessary to answer accurately
-3. Consider: Would a human need external information to answer this?
-
-Respond with:
-- needs_tool: true if external tool is necessary, false if answerable from context
-- confidence: 0.0-1.0 confidence in your assessment
-- reasoning: Brief explanation of your decision
-        """
-```
-
-### Pattern 2: Deliberate Tool-Use Training
-
-```python
-class DeliberateToolUseTrainer:
-    """Trains agents for deliberate tool-use policies."""
-    
-    def __init__(self, base_model, tool_set: list):
-        self.model = base_model
-        self.tools = tool_set
-        self.training_data = []
-    
-    def generate_training_examples(self, scenarios: list) -> list:
-        """
-        Generate training examples with deliberate tool-use labels.
-        
-        Args:
-            scenarios: List of (query, context, optimal_decision) tuples
-        
-        Returns:
-            Training examples with meta-cognitive labels
-        """
-        examples = []
-        
-        for query, context, optimal in scenarios:
-            example = {
-                "query": query,
-                "context": context,
-                "available_tools": self._format_tool_descriptions(),
-                "meta_cognitive_assessment": {
-                    "needs_tool": optimal["needs_tool"],
-                    "confidence": optimal["confidence"],
-                    "reasoning": optimal["reasoning"]
-                },
-                "action": optimal["action"]
-            }
-            examples.append(example)
-        
-        return examples
-    
-    def train_with_curriculum(self, examples: list, epochs: int = 3):
-        """
-        Train model with curriculum learning for deliberate tool use.
-        
-        Phase 1: Clear-cut examples (obvious tool/no-tool cases)
-        Phase 2: Ambiguous examples (borderline cases)
-        Phase 3: Full distribution
-        """
-        # Sort by confidence (clear-cut first)
-        sorted_examples = sorted(
-            examples, 
-            key=lambda x: abs(x["meta_cognitive_assessment"]["confidence"] - 0.5),
-            reverse=True
-        )
-        
-        # Curriculum phases
-        phase_size = len(sorted_examples) // 3
-        phases = [
-            sorted_examples[:phase_size],  # Clear-cut
-            sorted_examples[phase_size:2*phase_size],  # Medium
-            sorted_examples[2*phase_size:]  # Ambiguous
-        ]
-        
-        for phase_idx, phase_examples in enumerate(phases):
-            print(f"Training Phase {phase_idx + 1}: {len(phase_examples)} examples")
-            self._train_phase(phase_examples, epochs)
-    
-    def _train_phase(self, examples: list, epochs: int):
-        """Train on a specific curriculum phase."""
-        for epoch in range(epochs):
-            for example in examples:
-                # Train meta-cognitive assessment
-                self._train_assessment(example)
-                # Train action execution
-                self._train_action(example)
-    
-    def _train_assessment(self, example: dict):
-        """Train meta-cognitive assessment capability."""
-        # Implementation: Fine-tune on assessment prediction
-        pass
-    
-    def _train_action(self, example: dict):
-        """Train action execution capability."""
-        # Implementation: Fine-tune on action execution
-        pass
-```
-
-### Pattern 3: Tool-Use Evaluation
-
-```python
-class ToolUseEvaluator:
-    """Evaluates tool-use efficiency and correctness."""
-    
-    def __init__(self):
-        self.metrics = {
-            "unnecessary_tool_calls": 0,
-            "missed_tool_calls": 0,
-            "correct_arbitration": 0,
-            "total_queries": 0,
-            "latency_savings_ms": 0
-        }
-    
-    def evaluate_decision(
-        self,
-        query: str,
-        context: dict,
-        agent_decision: ToolUseDecision,
-        ground_truth: str  # "tool_needed" or "internal_sufficient"
-    ) -> dict:
-        """
-        Evaluate a single tool-use decision.
-        
-        Args:
-            query: The user query
-            context: Available context (visual, textual)
-            agent_decision: Agent's decision
-            ground_truth: Correct decision
-        
-        Returns:
-            Evaluation metrics for this decision
-        """
-        self.metrics["total_queries"] += 1
-        
-        result = {
-            "correct": False,
-            "type": None,
-            "latency_impact_ms": 0
-        }
-        
-        # Check decision correctness
-        if ground_truth == "tool_needed":
-            if agent_decision.decision == ToolUseDecision.USE_TOOL:
-                self.metrics["correct_arbitration"] += 1
-                result["correct"] = True
-                result["type"] = "correct_tool_use"
-            else:
-                self.metrics["missed_tool_calls"] += 1
-                result["type"] = "missed_tool_call"
-                # Estimate error from not using tool
-                result["error"] = "failed_to_retrieve_necessary_info"
-        
-        else:  # ground_truth == "internal_sufficient"
-            if agent_decision.decision == ToolUseDecision.USE_INTERNAL:
-                self.metrics["correct_arbitration"] += 1
-                result["correct"] = True
-                result["type"] = "correct_internal_reasoning"
-                # Calculate latency savings
-                result["latency_impact_ms"] = -self._estimate_tool_latency()
-                self.metrics["latency_savings_ms"] += result["latency_impact_ms"]
-            else:
-                self.metrics["unnecessary_tool_calls"] += 1
-                result["type"] = "unnecessary_tool_call"
-                result["latency_impact_ms"] = self._estimate_tool_latency()
-        
-        return result
-    
-    def get_summary(self) -> dict:
-        """Get evaluation summary."""
-        total = self.metrics["total_queries"]
-        if total == 0:
-            return {}
-        
-        return {
-            "accuracy": self.metrics["correct_arbitration"] / total,
-            "unnecessary_tool_rate": self.metrics["unnecessary_tool_calls"] / total,
-            "missed_tool_rate": self.metrics["missed_tool_calls"] / total,
-            "avg_latency_savings_ms": self.metrics["latency_savings_ms"] / total,
-            "total_queries": total
-        }
-    
-    def _estimate_tool_latency(self) -> int:
-        """Estimate average tool call latency in milliseconds."""
-        return 500  # Typical API call latency
-```
-
-### Pattern 4: Confidence-Based Arbitration
-
-```python
-class ConfidenceBasedArbitrator:
-    """Uses confidence scores for tool-use decisions."""
-    
-    def __init__(self, thresholds: dict = None):
-        self.thresholds = thresholds or {
-            "high_confidence": 0.8,
-            "medium_confidence": 0.5,
-            "low_confidence": 0.3
-        }
-    
-    def decide(
-        self,
-        internal_confidence: float,
-        tool_confidence: float,
-        query_complexity: float
-    ) -> ToolUseDecision:
-        """
-        Decide based on confidence scores.
-        
-        Args:
-            internal_confidence: Confidence in internal reasoning (0-1)
-            tool_confidence: Confidence that tool would help (0-1)
-            query_complexity: Estimated complexity (0-1)
-        
-        Returns:
-            ToolUseDecision
-        """
-        # High internal confidence → use internal
-        if internal_confidence >= self.thresholds["high_confidence"]:
-            return ToolUseDecision(
-                ToolUseDecision.USE_INTERNAL,
-                internal_confidence,
-                "High confidence in internal reasoning"
-            )
-        
-        # Low internal confidence + high tool confidence → use tool
-        if (internal_confidence < self.thresholds["medium_confidence"] and 
-            tool_confidence >= self.thresholds["high_confidence"]):
-            return ToolUseDecision(
-                ToolUseDecision.USE_TOOL,
-                tool_confidence,
-                "Low internal confidence, high tool utility"
-            )
-        
-        # Medium confidence → consider complexity
-        if query_complexity > 0.7:
-            return ToolUseDecision(
-                ToolUseDecision.USE_TOOL,
-                tool_confidence * query_complexity,
-                "Complex query benefits from tool"
-            )
-        
-        # Default to internal for simple queries
-        return ToolUseDecision(
-            ToolUseDecision.USE_INTERNAL,
-            internal_confidence,
-            "Default to internal for simple queries"
-        )
-```
-
-## Training Methodology
-
-### Step 1: Data Collection
-
-Collect examples with ground truth labels:
-```python
-# Example training instance
-training_example = {
-    "query": "What is the capital of France?",
-    "visual_context": None,
-    "ground_truth": {
-        "needs_tool": False,
-        "reasoning": "Common knowledge, no tool needed"
-    }
-}
-```
-
-### Step 2: Meta-Cognitive Fine-Tuning
-
-Fine-tune the base model to predict:
-1. Whether tools are needed (binary)
-2. Confidence in the decision (0-1)
-3. Reasoning for the decision (text)
-
-### Step 3: Reinforcement Learning
-
-Use RL to optimize for:
-- Accuracy (correct tool-use decisions)
-- Efficiency (minimize unnecessary calls)
-- Latency (faster responses when possible)
-
-### Step 4: Evaluation
-
-Test on held-out scenarios measuring:
-- Tool-use accuracy
-- Latency reduction
-- Error rate
-
-## Key Metrics
-
-| Metric | Description | Target |
-|--------|-------------|--------|
-| Arbitration Accuracy | % of correct tool/internal decisions | >90% |
-| Unnecessary Tool Rate | % of tool calls that were unnecessary | <10% |
-| Missed Tool Rate | % of queries needing tools but not called | <5% |
-| Latency Savings | Average time saved per query | >200ms |
-| Confidence Calibration | Alignment of confidence with accuracy | >0.8 |
-
-## Benefits
-
-1. **Reduced Latency**: Skip unnecessary tool calls
-2. **Lower Costs**: Fewer API calls to external services
-3. **Better UX**: Faster responses for simple queries
-4. **Higher Reliability**: Fewer potential failure points
-5. **More Natural**: Agents behave more like deliberate humans
-
-## Comparison
-
-| Aspect | Reflexive Tool Use | Deliberate Tool Use |
-|--------|-------------------|---------------------|
-| Latency | High (always calls) | Low (selective) |
-| Cost | High | Optimized |
-| Errors | More (unnecessary calls) | Fewer |
-| User Experience | Slower | Faster |
-| Intelligence | Lower | Higher (meta-cognitive) |
-
-## Related Concepts
-
-- **Tool Learning**: Training agents to use tools effectively
-- **Meta-Learning**: Learning to learn / learning to decide
-- **Active Learning**: Selective information gathering
-- **Cost-Sensitive Learning**: Optimizing for computational cost
-- **Reinforcement Learning from Human Feedback (RLHF)**: Training for human preferences
-
-## References
-
-- Yan, S., Tong, J., Xue, H., et al. (2026). "Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models." arXiv:2604.08545
-
-## Tools Used
-
-- `execute_code`: Implementation and testing
-- `web_search`: Related research
-- `read_file`: Load training data
-- `write_file`: Save models and results
-
-## Notes
-
-- The key insight: agents should "think before they act" (invoke tools)
-- Meta-cognition is the missing layer in current agent architectures
-- Confidence calibration is crucial for reliable arbitration
-- Training data should include both obvious and edge cases
-- Evaluation should measure both accuracy and efficiency
+Yan, S., Tong, J., Xue, H., Tang, X., Wang, Y., Shi, K., Zhang, G., Li, R., & Zou, Y. (2026). Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models. arXiv:2604.08545v1.

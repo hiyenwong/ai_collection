@@ -1,271 +1,251 @@
 ---
 name: neuron-photonic-spiking-laser
-description: "Neuron Surface Emitting Laser (NeuronSEL) - Neuromorphic photonics hardware for optical spiking neural networks. Single-stack multi-junction VCSEL with Negative Differential Resistance (NDR) enabling multiple neuronal features: refractory periods, excitatory/inhibitory inputs, spike bursting. Activation: photonic neuron, NeuronSEL, neuromorphic photonics, optical spiking, VCSEL neuron."
+description: "Photonic spiking neurons using multi-junction VCSELs (NeuronSEL) with negative differential resistance. Neuromorphic photonics for ultra-fast optical information processing. Triggers: photonic neuron, VCSEL, neuromorphic photonics, spiking laser, optical computing."
 ---
 
-# NeuronSEL: Photonic Spiking Neuron Hardware
+# Neuron Surface Emitting Laser (NeuronSEL): Photonic Spiking Neurons
 
-## Description
-The Neuron Surface-Emitting Laser (NeuronSEL) is a compact, multi-junction Vertical-Cavity Surface Emitting Laser (VCSEL) that delivers optical and electrical neural-like spiking emission under solitary operation. It exhibits nonlinear Negative Differential Resistance (NDR), enabling multiple neuronal features essential for neuromorphic photonic systems.
+> Compact, scalable photonic spiking neurons using multi-junction Vertical Cavity Surface Emitting Lasers (VCSELs) exhibiting negative differential resistance and diverse neuro-mimetic spiking regimes.
 
-## Core Innovation
+## Metadata
+- **Source**: arXiv:2604.12893v1
+- **Authors**: Maria Duque-Gijon, Joshua Robertson, Dafydd Owen-Newns, et al.
+- **Published**: 2026-04-14
+- **Institution**: University of Strathclyde, University of Manchester
 
-### Single-Stack Photonic Neuron
-Unlike previous approaches requiring complex external components:
-- **All-in-one device**: Laser + modulation + detection in single VCSEL
-- **Solitary operation**: No external optical feedback needed
-- **Compact form factor**: Standard semiconductor fabrication
-- **Scalable**: Array-compatible VCSEL technology
+## Core Methodology
 
-### Negative Differential Resistance (NDR)
+### Key Innovation
+NeuronSEL introduces a compact photonic neuron architecture based on solitary multi-junction VCSELs that generate neuro-mimetic optical spikes through intrinsic negative differential resistance (NDR). Unlike previous approaches requiring external electrical circuits or multiple coupled devices, NeuronSEL achieves all spiking regimes—Class I/II excitability, bursting, mixed-mode oscillations, and chaotic firing—within a single laser device, enabling highly scalable and energy-efficient neuromorphic photonic systems.
+
+### Physical Mechanism
+
+#### Multi-Junction VCSEL Structure
 ```
-I-V Characteristic:
-    ↑ Current
-    │    ╭────╮
-    │   ╱      ╲____  ← NDR region (negative slope)
-    │  ╱              
-    │ ╱
-    └────────────────→ Voltage
+[DBR Mirror] - [Active Region 1] - [Tunnel Junction] - [Active Region 2] - [DBR Mirror]
+              ↓                      ↓                    ↓
+         Gain section           Current control        Modulation section
+```
+
+#### Negative Differential Resistance
+The series connection of two active regions creates an S-shaped current-voltage characteristic:
+- **Low current state**: Only Active Region 1 lases
+- **Transition region**: Negative differential resistance as carrier distribution redistributes
+- **High current state**: Both regions lase, increased optical output
+
+This NDR enables excitable dynamics analogous to biological neuron's voltage-gated ion channels.
+
+#### Spiking Generation
+```
+Input current pulse → Charge accumulation → Threshold crossing → 
+Fast optical spike emission → Refractory period → Reset
+```
+
+### Spiking Regimes
+
+| Regime | Characteristics | Application |
+|--------|----------------|-------------|
+| **Class I** | Continuous firing rate increase with input strength | Rate coding, analog computation |
+| **Class II** | Discontinuous onset of firing at threshold | Event detection, coincidence detection |
+| **Bursting** | Packets of spikes separated by quiescence | Packet coding, feature binding |
+| **Mixed-Mode** | Alternating single spikes and bursts | Multiplexed coding |
+| **Chaotic** | Irregular, aperiodic spike trains | Reservoir computing, random number generation |
+
+### Device Characteristics
+- **Size**: < 100 μm diameter
+- **Power consumption**: 1-10 mW
+- **Spike duration**: ~100 ps (picoseconds)
+- **Refractory period**: ~1 ns
+- **Speed**: 1000× faster than biological neurons
+- **Wavelength**: 850-980 nm (GaAs quantum wells)
+
+## Implementation Guide
+
+### Prerequisites
+- Optical testing setup: fast photodetectors (>10 GHz), oscilloscope
+- Current drivers: high-bandwidth (>1 GHz), low noise
+- Temperature control: thermoelectric cooler, ±0.01°C stability
+- Optical coupling: lensed fibers, micropositioning stages
+
+### Step-by-Step: Device Characterization
+
+1. **DC Characterization**
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def characterize_neuronsel(device, current_range):
+    """Measure L-I curve and identify NDR region"""
+    currents = np.linspace(0, current_range, 1000)
+    voltages = []
+    optical_powers = []
     
-The NDR region creates:
-- Bistability (two stable states)
-- Excitability (spike generation)
-- Self-sustained oscillations
-```
-
-### Neuronal Features Demonstrated
-
-| Feature | Implementation | Application |
-|---------|---------------|-------------|
-| Refractory period | Carrier recovery time | Realistic spike timing |
-| Excitatory input | Optical injection | Synaptic integration |
-| Inhibitory input | Electrical modulation | Inhibition mechanisms |
-| Spike bursting | Multiple NDR transitions | Burst coding |
-| Threshold adaptation | Temperature effects | Gain modulation |
-
-## Device Physics
-
-### Multi-Junction VCSEL Structure
-```
-NeuronSEL Cross-Section:
-
-    ┌─────────────────────┐
-    │    Top Mirror (DBR) │
-    ├─────────────────────┤
-    │   Active Region 1   │ ← Gain medium
-    ├─────────────────────┤
-    │   Tunnel Junction   │ ← NDR source
-    ├─────────────────────┤
-    │   Active Region 2   │ ← Additional gain
-    ├─────────────────────┤
-    │  Bottom Mirror (DBR)│
-    └─────────────────────┘
+    for I in currents:
+        device.set_current(I)
+        time.sleep(0.01)  # Settling time
+        voltages.append(device.read_voltage())
+        optical_powers.append(device.read_optical_power())
     
-Key: Multiple active regions + tunnel junction = NDR
-```
-
-### Operating Modes
-
-#### Mode 1: Excitable (Single Spikes)
-```python
-# Single spike generation
-bias_current = I_baseline  # Below threshold
-perturbation = delta_I     # Input pulse
-
-if I_total > I_threshold:
-    emit_optical_spike()
-    enter_refractory_period(tau_ref)
-```
-
-#### Mode 2: Oscillatory (Periodic Spiking)
-```python
-# Self-sustained oscillations
-bias_current = I_osc       # In NDR region
-
-while True:
-    emit_optical_spike()
-    wait(tau_recovery)     # Carrier recovery
-    # No external trigger needed
-```
-
-#### Mode 3: Bursting (Multiple Spikes)
-```python
-# Burst generation
-bias_current = I_burst     # Higher in NDR region
-
-spike_count = 0
-while in_burst:
-    emit_optical_spike()
-    spike_count += 1
-    if spike_count >= burst_size:
-        longer_recovery()
-        break
-```
-
-## Characteristics
-
-### Electrical Characteristics
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| Threshold current | 1.5 mA | Room temperature |
-| Operating voltage | 2-3 V | Multi-junction |
-| NDR region | 2.5-3.0 V | Negative slope |
-| Maximum modulation | 10 GHz | Bandwidth limit |
-
-### Optical Characteristics
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| Wavelength | 850 nm | GaAs-based |
-| Output power | 1-5 mW | Per device |
-| Spectral width | <0.1 nm | Single-mode |
-| Beam divergence | 15° | Circular |
-
-### Temporal Characteristics
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| Spike duration | 100 ps | Optical pulse |
-| Refractory period | 1-10 ns | Tunable |
-| Jitter | <1 ps | Timing precision |
-| Energy per spike | 1-10 fJ | Ultra-low power |
-
-## Integration Approaches
-
-### 1. Photonic Integrated Circuit (PIC)
-```python
-# On-chip photonic neural network
-class PhotonicNeuralNetwork:
-    def __init__(self, n_neurons):
-        self.neurons = [NeuronSEL() for _ in range(n_neurons)]
-        self.waveguides = MeshNetwork(n_neurons)
-        self.detectors = Photodetectors(n_neurons)
+    # Find NDR region (dV/dI < 0)
+    differential_resistance = np.diff(voltages) / np.diff(currents)
+    ndr_start = np.where(differential_resistance < 0)[0][0]
     
-    def simulate(self, inputs, duration):
-        for t in range(duration):
-            # Neurons emit spikes
-            spikes = [n.step() for n in self.neurons]
-            
-            # Optical routing
-            optical_signals = self.waveguides.route(spikes)
-            
-            # Detection and feedback
-            currents = self.detectors.convert(optical_signals)
-            
-            # Update neuron inputs
-            for n, i in zip(self.neurons, currents):
-                n.receive_input(i)
+    return {
+        'I': currents,
+        'V': voltages,
+        'P_opt': optical_powers,
+        'NDR_region': (currents[ndr_start], currents[ndr_start+100])
+    }
 ```
 
-### 2. Free-Space Optical System
+2. **Spiking Response Measurement**
 ```python
-# Free-space interconnect for larger networks
-class FreeSpacePNN:
-    def __init__(self, array_size):
-        self.neuron_array = VCSELArray(array_size)
-        self.optical_interconnect = DMD_SLM()  # Spatial light modulator
-        self.detector_array = SPADArray(array_size)
+def measure_spiking_response(device, pulse_amplitudes, pulse_width=100e-12):
+    """Map input-output relationship for different spiking regimes"""
+    results = {}
     
-    def propagate(self):
-        # Emission
-        optical_field = self.neuron_array.emit()
+    for amp in pulse_amplitudes:
+        # Apply current pulse
+        device.pulse_current(amp, pulse_width)
         
-        # Weighted interconnection
-        modulated = self.optical_interconnect.modulate(optical_field, weights)
+        # Capture optical response
+        response = device.capture_optical_trace(duration=10e-9)
         
-        # Detection
-        photocurrents = self.detector_array.detect(modulated)
+        # Analyze spiking pattern
+        spike_times = detect_spikes(response, threshold=0.5)
         
-        return photocurrents
-```
-
-## Synaptic Integration
-
-### Optical Synapses
-```
-Weight Implementation:
-
-Input spike ──→ [Attenuator/Amplifier] ──→ Weighted spike
-                (Variable optical attenuator)
-                
-OR
-
-Input spike ──→ [Ring Resonator] ──→ Wavelength-selective weight
-                (Tunable coupling)
-```
-
-### Electrical Synapses
-```python
-# CMOS-compatible approach
-class ElectricalSynapse:
-    def __init__(self):
-        self.weight = Memristor()  # Or SRAM cell
-        self. integrator = Capacitor()
+        results[amp] = {
+            'trace': response,
+            'spike_times': spike_times,
+            'spike_count': len(spike_times),
+            'firing_rate': len(spike_times) / 10e-9
+        }
     
-    def process(self, input_spike):
-        charge = self.weight.read() * input_spike.charge
-        self.integrator.accumulate(charge)
-        return self.integrator.voltage
+    return results
+
+def detect_spikes(trace, threshold):
+    """Detect spike times from optical trace"""
+    above_threshold = trace > threshold * np.max(trace)
+    crossings = np.diff(above_threshold.astype(int)) > 0
+    return np.where(crossings)[0] * trace['dt']
+```
+
+3. **Neuromorphic Synapse Implementation**
+```python
+class PhotonicSynapse:
+    """Optical synapse using SOA or MZM"""
+    
+    def __init__(self, weight=1.0, delay=1e-9):
+        self.weight = weight
+        self.delay = delay
+        self.soa_gain = 10 ** (weight / 10)  # Convert dB to linear
+    
+    def process(self, input_spike_train):
+        """Apply weighted delay to spike train"""
+        output = []
+        for spike_time in input_spike_train:
+            if self.weight > 0:  # Excitatory
+                output.append({
+                    'time': spike_time + self.delay,
+                    'amplitude': self.soa_gain
+                })
+            else:  # Inhibitory - requires interferometric setup
+                output.append({
+                    'time': spike_time + self.delay,
+                    'amplitude': -abs(self.soa_gain),
+                    'phase_shift': np.pi
+                })
+        return output
+```
+
+4. **Simple SNN with NeuronSEL**
+```python
+class NeuronSELLayer:
+    """Layer of NeuronSEL devices"""
+    
+    def __init__(self, n_neurons, connectivity_matrix):
+        self.neurons = [NeuronSELDevice() for _ in range(n_neurons)]
+        self.connectivity = connectivity_matrix
+        self.synaptic_weights = np.random.randn(n_neurons, n_neurons) * 0.1
+    
+    def simulate_step(self, input_currents, dt=1e-12):
+        """Simulate one timestep"""
+        # Update each neuron
+        for i, neuron in enumerate(self.neurons):
+            # Sum synaptic inputs
+            synaptic_input = sum(
+                self.synaptic_weights[j, i] * spike 
+                for j, spike in enumerate(self.last_spikes)
+            )
+            
+            # Total input current
+            I_total = input_currents[i] + synaptic_input
+            
+            # Update neuron state
+            neuron.step(I_total, dt)
+            
+            # Check for spike
+            if neuron.voltage > neuron.threshold:
+                self.spike_times[i].append(self.current_time)
+                self.last_spikes[i] = 1
+                neuron.reset()
+            else:
+                self.last_spikes[i] = 0
+        
+        self.current_time += dt
 ```
 
 ## Applications
 
-### 1. Optical Neural Networks
-- Image classification at speed of light
-- Reservoir computing with photonic neurons
-- Spike-based optical computing
+### 1. Ultra-Fast Optical Neural Networks
+- **Inference acceleration**: 1000× speedup over electronic SNNs
+- **High-frequency signal processing**: RF spectrum analysis, radar
+- **Real-time video processing**: Frame rates >100 kHz
 
-### 2. Sensing and LIDAR
-- Neuromorphic event-based cameras
-- Spike-encoded depth sensing
-- Adaptive sensing with plasticity
+### 2. Optical Reservoir Computing
+- **Time series prediction**: Chaotic systems, financial data
+- **Speech recognition**: Ultra-fast phoneme classification
+- **Optical channel equalization**: Compensation for fiber dispersion
 
-### 3. Communication Systems
-- Spike-based optical communication
-- Neuromorphic signal processing
-- Optical pattern recognition
+### 3. Spike-Based Optical Computing
+- **Event-based vision**: DVS camera processing at optical speeds
+- **Neuromorphic sensing**: Lidar, radar signal processing
+- **Optical AI accelerators**: Matrix-vector multiplication in photonics
 
-### 4. Brain-Computer Interfaces
-- Optical neural recording
-- Bidirectional neural interfaces
-- Closed-loop neurostimulation
+### 4. Secure Communications
+- **Chaotic encryption**: Physical layer security through chaotic carriers
+- **Spike-based coding**: Covert optical communications
+- **Random number generation**: True randomness from quantum noise
 
-## Performance Comparison
+## Pitfalls
 
-| Platform | Speed | Energy/Op | Scalability | Integration |
-|----------|-------|-----------|-------------|-------------|
-| NeuronSEL | 10 GHz | ~1 fJ | High | PIC |
-| CMOS neuron | 100 MHz | ~1 pJ | Very High | Standard |
-| Memristor | 1 MHz | ~10 fJ | Medium | Emerging |
-| Biological | 1 kHz | ~1 fJ | Very High | N/A |
+### Thermal Stability
+- **Problem**: NDR characteristics are temperature-sensitive
+- **Solution**: Active temperature control; calibrate for operating temperature; use feedback stabilization
 
-## Fabrication Considerations
+### Variability Between Devices
+- **Problem**: Manufacturing tolerances cause parameter spread
+- **Solution**: On-chip calibration circuits; adaptive learning rules; device selection/binning
 
-### Material Systems
-- **GaAs/AlGaAs**: 850 nm operation, mature technology
-- **InP/InGaAsP**: 1550 nm telecom wavelength
-- **GaN**: Visible light, bio-compatible
+### Optical Crosstalk
+- **Problem**: Light coupling between closely spaced devices
+- **Solution**: Optical isolation trenches; angled emission; wavelength multiplexing
 
-### Integration Challenges
-1. Thermal management (multi-junction heating)
-2. Electrical isolation (independent biasing)
-3. Optical coupling (efficient light extraction)
-4. Yield optimization (uniform NDR characteristics)
-
-## References
-
-- **Paper**: Neuron Surface Emitting Laser (NeuronSEL): Spiking Regimes and Negative Differential Resistance in Solitary Multi-junction VCSELs (arXiv:2604.12893, 2026)
-- **Authors**: Maria Duque-Gijon, Joshua Robertson, Dafydd Owen-Newns, et al.
-- **Key innovation**: Single-device photonic neuron with NDR
-
-## Activation Keywords
-- photonic neuron
-- NeuronSEL
-- neuromorphic photonics
-- optical spiking
-- VCSEL neuron
-- photonic neural network
-- NDR laser
+### Electrical Interconnect Bottleneck
+- **Problem**: Electrical I/O limits system bandwidth
+- **Solution**: All-optical networks; wavelength routing; on-chip integration with silicon photonics
 
 ## Related Skills
-- spiking-memristor-multimodal: Memristive spiking neurons
-- neuromorphic-aer-encoder-design: AER encoder for neuromorphic systems
-- robust-spiking-reservoir: Photonic reservoir computing
+- vo2-mott-oscillator-spiking-neurons: VO2 Mott oscillators for spiking neurons
+- neuromorphic-photonic-reservoir: Quantum photonic reservoir computing
+- event-driven-neuromorphic-transceiver: Event-driven optical communications
+
+## References
+```bibtex
+@article{duquegijon2026neuronsel,
+  title={Neuron Surface Emitting Laser (NeuronSEL): Spiking Regimes and Negative Differential Resistance in Solitary Multi-junction VCSELs},
+  author={Duque-Gijon, Maria and Robertson, Joshua and Owen-Newns, Dafydd and others},
+  journal={arXiv preprint arXiv:2604.12893},
+  year={2026}
+}
+```

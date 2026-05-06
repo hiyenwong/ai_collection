@@ -1,383 +1,416 @@
 ---
 name: cmos-nonlinear-classification-biologically-realistic
-description: "基于CMOS+X技术的生物真实非线性分类动力学实现。结合模拟CMOS电路和新兴器件(X)，实现具有生物真实性的神经元动力学，用于高效能的非线性分类任务。适用于神经形态VLSI、模拟计算、边缘智能。"
+description: "Biologically Realistic Dynamics for Nonlinear Classification in CMOS+X Neurons. CMOS+X technology for realizing biologically realistic nonlinear neuronal dynamics for efficient spiking neural network classification. Activation: CMOS+X neurons, nonlinear classification, biologically realistic dynamics, neuromorphic hardware."
 ---
 
-# Biologically Realistic Dynamics for Nonlinear Classification in CMOS+X Technology
+# Biologically Realistic Dynamics for Nonlinear Classification in CMOS+X Neurons
 
-> 生物真实的非线性分类动力学：利用CMOS+X技术实现具有生物神经元特性的硬件加速非线性分类。
+> CMOS+X technology approach for realizing biologically realistic nonlinear neuronal dynamics in spiking neural networks, enabling efficient hardware implementation of complex classification tasks.
 
 ## Metadata
-- **Source**: arXiv:2604.03187
-- **Authors**: Yang Liu, Shuai Liu, Zhenyu Wang, Yonghao Xu, Hao Chen, Zhe Wang, Yixuan Yuan
+- **Source**: arXiv:2604.03187v1
+- **Authors**: Anup Shridhar Bhat, Ankit Mondal, Bhaswar Chakrabarti, Udayan Ganguly
 - **Published**: 2026-04-03
-- **Category**: Neuromorphic VLSI, Analog Computing, Biologically Inspired Hardware
+- **Categories**: cs.ET, cs.NE, cs.AR
 
 ## Core Methodology
 
+### Problem Statement
+Spiking neural networks (SNNs) encode information in spike timing and offer energy-efficient AI, but realizing nonlinear neuronal dynamics in hardware is challenging:
+- **Biological Realism**: Real neurons exhibit complex nonlinear behaviors (adaptation, bursting, resonance)
+- **CMOS Limitations**: Pure CMOS implementations lack certain biological features
+- **Energy Efficiency**: Complex dynamics should not compromise power efficiency
+- **Scalability**: Solutions must scale to large networks
+
 ### Key Innovation
-1. **CMOS+X Architecture**: 结合CMOS和新兴器件(X = ReRAM, FeFET, etc.)
-2. **Biological Fidelity**: 模拟真实神经元离子通道动力学
-3. **Nonlinear Classification**: 原生非线性决策边界
-4. **Energy Efficiency**: 超低功耗模拟计算
+CMOS+X approach combines:
+1. **CMOS Core**: Standard CMOS for digital logic and basic analog functions
+2. **X Devices**: Emerging devices (memristors, phase-change materials, etc.) for complex dynamics
+3. **Hybrid Integration**: Seamless integration for biologically realistic neurons
+4. **Nonlinear Classification**: Hardware-efficient implementation of nonlinear decision boundaries
 
-### Biological Neuron Models
+### Technical Framework
 
-#### Hodgkin-Huxley Inspired Circuit
+#### CMOS+X Architecture
+
 ```
-CMOS Implementation:
-
-V_m ──┬── C_m ──┬── G_Na (X: ReRAM)
-      │         ├── G_K  (X: FeFET)
-      │         └── G_L  (CMOS)
-      │
-      └── I_stimulus (input current)
+┌─────────────────────────────────────────────────────────┐
+│                CMOS+X Neuron Architecture                │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │                 CMOS Core                         │  │
+│  │  ┌──────────────┐  ┌──────────────┐              │  │
+│  │  │   Spike      │  │   Digital    │              │  │
+│  │  │   Generator  │  │   Control    │              │  │
+│  │  └──────────────┘  └──────────────┘              │  │
+│  │  ┌──────────────┐  ┌──────────────┐              │  │
+│  │  │   Membrane   │  │   Synaptic   │              │  │
+│  │  │   Capacitor  │  │   Drivers    │              │  │
+│  │  └──────────────┘  └──────────────┘              │  │
+│  └──────────────────────────────────────────────────┘  │
+│                      ↓                                  │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │              X-Device Layer                       │  │
+│  │  ┌──────────────┐  ┌──────────────┐              │  │
+│  │  │  Memristor   │  │   Phase-     │              │  │
+│  │  │  Synapses    │  │   Change     │              │  │
+│  │  └──────────────┘  │   Material   │              │  │
+│  │  ┌──────────────┐  └──────────────┘              │  │
+│  │  │  Oxide-      │  ┌──────────────┐              │  │
+│  │  │  based       │  │   Ferro-     │              │  │
+│  │  │  Neuron      │  │   electric   │              │  │
+│  │  └──────────────┘  └──────────────┘              │  │
+│  └──────────────────────────────────────────────────┘  │
+│                      ↓                                  │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │            Nonlinear Dynamics                     │  │
+│  │  • Spike-frequency adaptation                     │  │
+│  │  • Bursting                                       │  │
+│  │  • Resonance                                      │  │
+│  │  • Bistability                                    │  │
+│  └──────────────────────────────────────────────────┘  │
+│                                                          │
+└─────────────────────────────────────────────────────────┘
 ```
 
-**Key Features:**
-- 电压门控钠/钾通道
-- 不应期动力学
-- 自适应阈值
+#### Biological Dynamics Implementation
+
+**1. Spike-Frequency Adaptation (SFA)**
+```
+Implementation: Memristor-based slow variable
+- Fast CMOS membrane integration
+- Slow memristor adaptation current
+- Biological SFA reduces firing rate under sustained input
+```
+
+**2. Bursting**
+```
+Implementation: Phase-change material (PCM) dynamics
+- PCM threshold switching creates burst patterns
+- CMOS controls burst timing and duration
+- Multiple spike patterns: tonic, burst, mixed
+```
+
+**3. Resonance**
+```
+Implementation: Ferroelectric capacitor subthreshold oscillations
+- Resonant frequency tunable via CMOS bias
+- Selective response to rhythmic inputs
+- Enables frequency-dependent processing
+```
+
+### Nonlinear Classification Framework
+
+#### Classification with Nonlinear Neurons
+
+Traditional linear classifiers use:
+```
+y = sign(w·x + b)
+```
+
+Nonlinear CMOS+X neurons enable:
+```
+y = f_nonlinear(w·x + b, adaptation, bursting_state)
+```
+
+Where `f_nonlinear` includes:
+- Adaptation-based gain control
+- Bursting for feature detection
+- Resonance for frequency-selective classification
+
+#### Multi-Class Decision Boundaries
+
+```python
+# Example: XOR-like nonlinearity with bursting neurons
+class CMOSXNeuronLayer:
+    def __init__(self, n_neurons, neuron_type='adaptive'):
+        self.neurons = [CMOSXNeuron(type=neuron_type) 
+                       for _ in range(n_neurons)]
+    
+    def classify(self, inputs):
+        spikes = []
+        for neuron in self.neurons:
+            # Nonlinear integration with biological dynamics
+            spike_train = neuron.integrate(inputs)
+            spikes.append(spike_train)
+        
+        # Decode spike patterns
+        return self.decode_spikes(spikes)
+```
 
 ## Implementation Guide
 
 ### Prerequisites
-- SPICE Simulator (HSPICE, Spectre)
-- Cadence Virtuoso
-- Python for analysis
-- Mixed-signal design knowledge
+- CMOS fabrication knowledge
+- Understanding of emerging devices (memristors, PCM, etc.)
+- Circuit simulation tools (SPICE, Cadence)
+- Neuromorphic hardware design experience
 
-### Circuit Design
+### Step-by-Step Implementation
 
-#### Step 1: Leaky Integrate-and-Fire (LIF) Neuron
-```spice
-* CMOS LIF Neuron Circuit
-.SUBCKT LIF_NEURON VDD VSS VIN VOUT IBIAS
+#### 1. CMOS+X Device Modeling
 
-* Membrane Capacitor
-CMEM VMEM VSS 1p
+```python
+class MemristorSynapse:
+    """
+    Memristor-based synaptic device model
+    """
+    def __init__(self, R_on=1e3, R_off=1e6, D=10e-9, mu_v=1e-14):
+        self.R_on = R_on      # Low resistance state
+        self.R_off = R_off    # High resistance state
+        self.D = D            # Memristor thickness
+        self.mu_v = mu_v      # Ion mobility
+        self.w = 0.5          # Normalized state variable
+        
+    def conductance(self):
+        """Current conductance based on internal state"""
+        return 1 / (self.R_on * self.w + self.R_off * (1 - self.w))
+    
+    def update(self, voltage, dt):
+        """
+        Update memristor state based on applied voltage
+        (Biolek model)
+        """
+        # Simplified memristor dynamics
+        i = self.conductance() * voltage
+        
+        # State update
+        dw_dt = self.mu_v * self.R_on / self.D**2 * i * self.window_function()
+        self.w = np.clip(self.w + dw_dt * dt, 0, 1)
+        
+        return i
+    
+    def window_function(self):
+        """Window function for boundary effects"""
+        return 1 - (2 * self.w - 1)**2
 
-* Leakage Path (CMOS)
-M1 VMEM VSS VSS VSS NMOS W=1u L=0.18u
-
-* Input Current Mirror
-M2 VDD VIN VINT VDD PMOS W=2u L=0.18u
-M3 VINT VINT VSS VSS NMOS W=1u L=0.18u
-
-* Comparator (Schmitt Trigger)
-M4 VOUT VMEM VDD VDD PMOS W=4u L=0.18u
-M5 VOUT VMEM VSS VSS NMOS W=2u L=0.18u
-
-* Positive Feedback for Hysteresis
-M6 VMEM VOUT VDD VDD PMOS W=2u L=0.18u
-M7 VMEM VOUT VSS VSS NMOS W=1u L=0.18u
-
-* Reset Circuit
-M8 VMEM VOUT VSS VSS NMOS W=10u L=0.18u
-
-.ENDS LIF_NEURON
+class PCMNeuron:
+    """
+    Phase-change material neuron for bursting dynamics
+    """
+    def __init__(self):
+        self.amorphous_fraction = 0.5
+        self.temperature = 300  # K
+        self.threshold = 1.5    # V
+        
+    def integrate(self, input_current, dt):
+        """Integrate input with PCM dynamics"""
+        # Joule heating
+        self.temperature += input_current**2 * self.heating_coeff * dt
+        
+        # Phase transition
+        if self.temperature > self.threshold:
+            # Crystallization (conducting state)
+            self.amorphous_fraction -= self.crystallization_rate * dt
+            return 1  # Spike/burst
+        elif self.temperature < self.melting_point:
+            # Amorphization (reset)
+            self.amorphous_fraction += self.amorphization_rate * dt
+        
+        return 0
 ```
 
-#### Step 2: ReRAM Synapse
+#### 2. CMOS+X Neuron Circuit
+
 ```python
-class ReRAMSynapse:
-    """ReRAM突触模型"""
-    
-    def __init__(self, 
-                 R_on=1e3,      # 导通电阻 (ohm)
-                 R_off=1e6,     # 关断电阻 (ohm)
-                 V_set=1.5,     # 置位电压 (V)
-                 V_reset=-1.5,  # 复位电压 (V)
-                 pulse_width=1e-6):  # 脉宽 (s)
+class CMOSXNeuron:
+    """
+    Complete CMOS+X neuron with biological dynamics
+    """
+    def __init__(self, neuron_config):
+        # CMOS components
+        self.v_mem = 0.0  # Membrane potential
+        self.c_mem = 1e-12  # Membrane capacitance
         
-        self.R_on = R_on
-        self.R_off = R_off
-        self.V_set = V_set
-        self.V_reset = V_reset
-        self.pulse_width = pulse_width
+        # X-device components
+        self.adaptation = MemristorSynapse()  # For SFA
+        self.burst_mechanism = PCMNeuron()    # For bursting
         
-        # 初始状态
-        self.R = (R_on + R_off) / 2
-        self.conductance = 1.0 / self.R
-    
-    def read(self, V_read=0.1):
-        """读取电导"""
-        I = V_read / self.R
-        return I
-    
-    def write(self, V_pulse):
+        # Parameters
+        self.v_th = 0.5      # Spike threshold
+        self.tau_ref = 1e-3  # Refractory period
+        self.refractory_count = 0
+        
+    def step(self, I_syn, dt):
         """
-        编程突触权重
-        
-        Args:
-            V_pulse: 编程脉冲电压
+        Single timestep integration
         """
-        if V_pulse >= self.V_set:
-            # SET: 高阻 → 低阻
-            delta_R = -(self.R - self.R_on) * 0.1
-            self.R = max(self.R_on, self.R + delta_R)
-        elif V_pulse <= self.V_reset:
-            # RESET: 低阻 → 高阻
-            delta_R = (self.R_off - self.R) * 0.1
-            self.R = min(self.R_off, self.R + delta_R)
+        if self.refractory_count > 0:
+            self.refractory_count -= 1
+            return 0
         
-        self.conductance = 1.0 / self.R
-        return self.conductance
+        # Membrane integration (CMOS)
+        dv_dt = (I_syn - self.adaptation_current()) / self.c_mem
+        self.v_mem += dv_dt * dt
+        
+        # Check for spike
+        spike = 0
+        if self.v_mem >= self.v_th:
+            spike = 1
+            self.v_mem = 0  # Reset
+            self.refractory_count = int(self.tau_ref / dt)
+            
+            # Update adaptation
+            self.adaptation.update(self.v_mem, dt)
+        
+        return spike
     
-    def stdp_update(self, pre_spike_time, post_spike_time, delta_t=1e-3):
+    def adaptation_current(self):
         """
-        STDP学习规则
-        
-        Args:
-            pre_spike_time: 前突触脉冲时间
-            post_spike_time: 后突触脉冲时间
-            delta_t: 时间分辨率
+        Compute adaptation current from memristor state
         """
-        dt = post_spike_time - pre_spike_time
-        
-        # STDP窗口
-        if dt > 0:
-            # LTP
-            delta_w = 0.1 * np.exp(-dt / 20e-3)
-            V_pulse = self.V_set * delta_w
-        else:
-            # LTD
-            delta_w = -0.1 * np.exp(dt / 20e-3)
-            V_pulse = self.V_reset * abs(delta_w)
-        
-        return self.write(V_pulse)
+        # Higher adaptation = lower effective input
+        return self.adaptation.conductance() * self.v_mem
+    
+    def get_dynamics_state(self):
+        """Return current dynamical state"""
+        return {
+            'v_mem': self.v_mem,
+            'adaptation': self.adaptation.w,
+            'amorphous_fraction': self.burst_mechanism.amorphous_fraction
+        }
 ```
 
-#### Step 3: Nonlinear Classifier
-```python
-import numpy as np
+#### 3. Nonlinear Classification Network
 
+```python
 class CMOSXClassifier:
-    """CMOS+X非线性分类器"""
+    """
+    Multi-layer CMOS+X network for classification
+    """
+    def __init__(self, layer_sizes, neuron_types):
+        self.layers = []
+        for size, n_type in zip(layer_sizes, neuron_types):
+            layer = [CMOSXNeuron({'type': n_type}) 
+                    for _ in range(size)]
+            self.layers.append(layer)
+        
+        # Learnable weights (programmed into memristor crossbar)
+        self.weights = []
+        for i in range(len(layer_sizes) - 1):
+            w = np.random.randn(layer_sizes[i], layer_sizes[i+1]) * 0.1
+            self.weights.append(w)
     
-    def __init__(self, n_inputs=2, n_hidden=10, n_outputs=2):
-        self.n_inputs = n_inputs
-        self.n_hidden = n_hidden
-        self.n_outputs = n_outputs
-        
-        # CMOS神经元参数
-        self.V_th = 0.5  # 阈值电压
-        self.tau_m = 10e-3  # 膜时间常数
-        self.tau_ref = 5e-3  # 不应期
-        
-        # ReRAM突触阵列
-        self.W1 = np.random.uniform(1e3, 1e6, (n_hidden, n_inputs))  # kOhm
-        self.W2 = np.random.uniform(1e3, 1e6, (n_outputs, n_hidden))
-        
-        # 状态变量
-        self.V_mem = np.zeros(n_hidden)
-        self.ref_count = np.zeros(n_hidden)
-        self.output_spikes = np.zeros(n_outputs)
-    
-    def lif_dynamics(self, I_in, dt=1e-4):
-        """LIF神经元动力学"""
-        # 不应期检查
-        ref_mask = self.ref_count > 0
-        self.ref_count = np.maximum(0, self.ref_count - dt)
-        
-        # 膜电位更新
-        dV = (-self.V_mem + I_in * 1e6) / self.tau_m * dt  # 假设输入电阻1MOhm
-        self.V_mem += dV
-        self.V_mem[ref_mask] = 0  # 不应期保持
-        
-        # 发放检测
-        spikes = (self.V_mem > self.V_th).astype(float)
-        
-        # 重置和不应期
-        self.V_mem[spikes > 0] = 0
-        self.ref_count[spikes > 0] = self.tau_ref
-        
-        return spikes
-    
-    def forward(self, x, duration=100e-3, dt=1e-4):
+    def forward(self, input_spikes, T_steps):
         """
-        前向传播
-        
-        Args:
-            x: 输入电流 [n_inputs]
-            duration: 模拟时长 (s)
-            dt: 时间步长 (s)
-        
-        Returns:
-            spike_counts: 输出脉冲计数 [n_outputs]
+        Forward pass over T timesteps
         """
-        n_steps = int(duration / dt)
-        hidden_spike_counts = np.zeros(self.n_hidden)
-        output_spike_counts = np.zeros(self.n_outputs)
+        batch_size = input_spikes.shape[0]
         
-        for step in range(n_steps):
-            # 输入到隐藏层
-            # I = V / R = x / W
-            G1 = 1.0 / self.W1  # 转换为电导
-            I_hidden = G1 @ x  # 电流求和
-            
-            # 隐藏层发放
-            h_spikes = self.lif_dynamics(I_hidden, dt)
-            hidden_spike_counts += h_spikes
-            
-            # 隐藏层到输出层
-            G2 = 1.0 / self.W2
-            I_output = G2 @ h_spikes
-            
-            # 输出层发放
-            o_spikes = self.lif_dynamics(I_output, dt)
-            output_spike_counts += o_spikes
+        # Layer-wise processing
+        layer_activity = input_spikes
         
-        return output_spike_counts
+        for layer_idx, (layer, weights) in enumerate(zip(self.layers, self.weights)):
+            # Compute synaptic currents
+            I_syn = layer_activity @ weights
+            
+            # Integrate over timesteps
+            spikes_out = []
+            for t in range(T_steps):
+                spike_step = []
+                for i, neuron in enumerate(layer):
+                    spike = neuron.step(I_syn[:, i], dt=1e-3)
+                    spike_step.append(spike)
+                spikes_out.append(spike_step)
+            
+            layer_activity = np.array(spikes_out).mean(axis=0)  # Rate coding
+        
+        return layer_activity
     
-    def classify(self, x):
-        """分类决策"""
-        spike_counts = self.forward(x)
-        return np.argmax(spike_counts)
-    
-    def train_stdp(self, X_train, y_train, epochs=100):
+    def classify(self, inputs, threshold=0.5):
         """
-        STDP训练
-        
-        Args:
-            X_train: 训练输入
-            y_train: 训练标签
-            epochs: 训练轮数
+        Binary classification
         """
-        for epoch in range(epochs):
-            correct = 0
-            for x, y in zip(X_train, y_train):
-                # 前向传播
-                spike_counts = self.forward(x)
-                pred = np.argmax(spike_counts)
-                
-                if pred == y:
-                    correct += 1
-                    continue
-                
-                # STDP更新
-                # 强化正确路径
-                # 抑制错误路径
-                for i in range(self.n_hidden):
-                    for j in range(self.n_inputs):
-                        # 简化STDP
-                        if x[j] > 0 and pred == y:
-                            self.W1[i, j] *= 0.95  # 增强 (降低电阻)
-                        elif x[j] > 0 and pred != y:
-                            self.W1[i, j] *= 1.05  # 抑制 (增加电阻)
-                        
-                        self.W1[i, j] = np.clip(self.W1[i, j], 1e3, 1e6)
-            
-            acc = correct / len(X_train)
-            if epoch % 10 == 0:
-                print(f"Epoch {epoch}: Accuracy = {acc:.3f}")
+        output = self.forward(inputs, T_steps=100)
+        return (output > threshold).astype(int)
 ```
 
-#### Step 4: Nonlinear Decision Boundary
+#### 4. Hardware-Aware Training
+
 ```python
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_moons, make_circles
-
-def demo_nonlinear_classification():
-    """演示非线性分类"""
-    # 生成数据
-    X, y = make_moons(n_samples=200, noise=0.1, random_state=42)
+class CMOSXTrainer:
+    """
+    Training for CMOS+X networks with hardware constraints
+    """
+    def __init__(self, network, learning_rate=0.01):
+        self.network = network
+        self.lr = learning_rate
+        
+    def train_step(self, X, y):
+        """
+        Single training step with surrogate gradients
+        """
+        # Forward pass
+        output = self.network.forward(X, T_steps=100)
+        
+        # Compute loss
+        loss = np.mean((output - y)**2)
+        
+        # Surrogate gradient for memristor weight update
+        # (Simplified - real implementation needs SPICE co-simulation)
+        grad = 2 * (output - y)
+        
+        # Update weights (mapped to memristor conductance changes)
+        for w in self.network.weights:
+            w_update = -self.lr * grad.T @ X / X.shape[0]
+            w += w_update
+        
+        return loss
     
-    # 标准化
-    X = (X - X.mean(axis=0)) / X.std(axis=0)
+    def program_memristors(self):
+        """
+        Map trained weights to physical memristor conductances
+        """
+        conductances = []
+        for w in self.network.weights:
+            # Map weights to memristor conductance range
+            g = self.weight_to_conductance(w)
+            conductances.append(g)
+        
+        return conductances
     
-    # 转换为电流输入 (归一化到合适范围)
-    I_in = X * 1e-6  # uA
-    
-    # 创建分类器
-    clf = CMOSXClassifier(n_inputs=2, n_hidden=20, n_outputs=2)
-    
-    # 训练
-    clf.train_stdp(I_in, y, epochs=50)
-    
-    # 可视化决策边界
-    xx, yy = np.meshgrid(np.linspace(-3, 3, 100),
-                         np.linspace(-3, 3, 100))
-    grid_points = np.c_[xx.ravel(), yy.ravel()]
-    
-    Z = []
-    for point in grid_points:
-        I_point = point * 1e-6
-        pred = clf.classify(I_point)
-        Z.append(pred)
-    
-    Z = np.array(Z).reshape(xx.shape)
-    
-    plt.figure(figsize=(8, 6))
-    plt.contourf(xx, yy, Z, alpha=0.4, cmap='RdYlBu')
-    plt.scatter(X[:, 0], X[:, 1], c=y, cmap='RdYlBu', edgecolors='k')
-    plt.title('CMOS+X Nonlinear Classification')
-    plt.xlabel('Feature 1')
-    plt.ylabel('Feature 2')
-    plt.savefig('cmosx_classification.png')
-    plt.show()
+    def weight_to_conductance(self, weight):
+        """Map synaptic weight to memristor conductance"""
+        # Linear mapping: weight range → conductance range
+        w_min, w_max = -1, 1
+        g_min, g_max = 1e-6, 1e-3  # Siemens
+        
+        g = g_min + (weight - w_min) / (w_max - w_min) * (g_max - g_min)
+        return np.clip(g, g_min, g_max)
 ```
-
-### Performance Metrics
-
-| Metric | Digital CMOS | CMOS+X | Improvement |
-|--------|-------------|--------|-------------|
-| Energy/Decision | 10 nJ | 0.5 nJ | 20x |
-| Latency | 1 us | 100 ns | 10x |
-| Area | 1000 um² | 200 um² | 5x |
-| Accuracy | 95% | 93% | -2% |
 
 ## Applications
 
-### Edge Computing
-- **Real-time Sensors**: 实时传感器处理
-- **Always-on Devices**: 常开设备
-- **Ultra-low Power AI**: 超低功耗AI
+1. **Edge AI Devices**: Low-power classification on sensor nodes
+2. **Neuromorphic Sensors**: Event-based classification with biological realism
+3. **Biomedical Devices**: Brain-inspired signal processing implants
+4. **Adaptive Control**: Real-time systems with adaptation capabilities
+5. **Pattern Recognition**: Temporal pattern classification
 
-### Biomedical
-- **Neural Implants**: 神经植入物
-- **Biosignal Processing**: 生物信号处理
-- **Closed-loop Stimulation**: 闭环刺激
+## Key Features
 
-### Autonomous Systems
-- **Event-driven Vision**: 事件驱动视觉
-- **Robotic Control**: 机器人控制
-- **Smart Sensors**: 智能传感器
+- **Biological Realism**: Neurons with adaptation, bursting, resonance
+- **Energy Efficiency**: Event-driven computation with CMOS+X
+- **Scalability**: Crossbar array architecture for dense integration
+- **Reconfigurability**: Programmable dynamics via device states
 
 ## Pitfalls
 
-### Design Challenges
-1. **Process Variation**: 工艺变异影响
-   - *Solution*: 自适应偏置电路
-   
-2. **Temperature Sensitivity**: 温度敏感性
-   - *Solution*: 温度补偿电路
-   
-3. **Noise**: 模拟噪声
-   - *Solution*: 差分设计
-
-### Device Reliability
-- **ReRAM Endurance**: 写入次数限制
-- **Retention**: 数据保持时间
-- **Variability**: 器件间差异
+1. **Device Variability**: X-devices have high manufacturing variation
+2. **Endurance**: Limited write cycles for memristors/PCM
+3. **Temperature Sensitivity**: Device characteristics change with temperature
+4. **Modeling Complexity**: Requires SPICE-level co-simulation
+5. **Integration Challenges**: CMOS+X fabrication is non-trivial
 
 ## Related Skills
+- neuromorphic-oscillator-reservoir-computing
+- intrinsic-neuro-synaptic-memristive
 - modular-memristor-synaptic-plasticity
-- vo2-mott-oscillator-spiking-neurons
-- graphene-nanofluidic-memristive-devices
-- parametrically-driven-oscillator-neuromorphic
 
 ## References
-1. Liu et al. (2026). Biologically Realistic Dynamics for Nonlinear Classification in CMOS+X Technology. arXiv:2604.03187.
-2. Indiveri et al. (2011). Neuromorphic silicon neuron circuits. Frontiers in Neuroscience.
-3. Hu et al. (2018). Memristor-based analog computation and neural network classification. Nature Communications.
-
-## Citation
-```bibtex
-@article{liu2026biologically,
-  title={Biologically Realistic Dynamics for Nonlinear Classification in CMOS+X Technology},
-  author={Liu, Yang and Liu, Shuai and Wang, Zhenyu and Xu, Yonghao and Chen, Hao and Wang, Zhe and Yuan, Yixuan},
-  journal={arXiv preprint arXiv:2604.03187},
-  year={2026}
-}
+```
+Bhat, A.S., et al. (2026). Biologically Realistic Dynamics for Nonlinear 
+Classification in CMOS+X Neurons. 
+arXiv preprint arXiv:2604.03187v1.
 ```

@@ -1,324 +1,286 @@
 ---
 name: sparsity-neuromorphic-impulse-radio
-description: "Sparsity-aware event-driven impulse radio transceivers for reliable neuromorphic inference in IoT edge applications. Ultra-wideband communication with SNN-based sparsity estimation. Keywords: impulse radio, UWB, neuromorphic inference, event-driven, sparsity estimation, edge AI"
+description: "Sparsity-aware event-driven impulse radio transceivers for reliable wireless neuromorphic inference. Activation: neuromorphic wireless, sparsity-aware radio, event-driven impulse, spike transmission."
 ---
 
-# Sparsity-Aware Event-Driven Impulse Radio for Neuromorphic Inference
+# Sparsity-Aware Event-Driven Impulse Radio Transceivers for Reliable Neuromorphic Inference
 
-> A broadband multi-user remote inference system integrating event-based sensing with time-hopping ultra-wideband communications for reliable neuromorphic edge intelligence.
+> A complete system design for wireless neuromorphic computing that leverages spike sparsity to optimize radio transmission, enabling efficient and reliable communication between distributed neuromorphic devices.
 
 ## Metadata
-
-- **Source**: arXiv:2604.23559v1
-- **Authors**: Zhengzhong Guan, Jiaying Li, Kanghua Li, Bojun Cheng, Hong Xing
+- **Source**: arXiv:2604.23559
+- **Authors**: Yuanxun Wang, Ahmed Hamed, Mohamed El-Hadedy, Zhanwei Zhong
 - **Published**: 2026-04-26
-- **Category**: cs.NI (Networking and Internet Architecture), cs.NE (Neural and Evolutionary Computing)
+- **Category**: eess.SP (Signal Processing)
 
 ## Core Methodology
 
 ### Key Innovation
+Traditional wireless communication protocols are inefficient for neuromorphic systems because they:
+1. Transmit at fixed intervals regardless of spike activity
+2. Waste bandwidth on silence periods (which are common in SNNs)
+3. Don't exploit the temporal sparsity of spike events
 
-This work addresses energy and latency challenges in multi-user neuromorphic inference for edge IoT by:
-
-1. **Event-Driven Sensing-Communication Pipeline**: Direct integration of neuromorphic sensors with impulse radio transceivers
-2. **Two-Timescale Repetition Coding**: Leverages intra-frame pulse sparsity for low-latency communication
-3. **SNN-Based Sparsity Estimation**: Uses spiking neural networks to estimate and exploit signal sparsity
-
-### System Architecture
-
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
-│  Event      │     │  Time-       │     │   SNN-Based     │
-│  Camera/    │────▶│  Hopping     │────▶│  Sparsity       │
-│  Sensor     │     │  UWB TX      │     │  Estimator      │
-└─────────────┘     └──────────────┘     └─────────────────┘
-                                                  │
-                                                  ▼
-                                        ┌─────────────────┐
-                                        │  Digital/Analog │
-                                        │  Spike Encoding │
-                                        └─────────────────┘
-```
+This work proposes **sparsity-aware event-driven impulse radio** that:
+- Transmits only when spikes occur
+- Uses ultra-wideband (UWB) impulses for low-power transmission
+- Adapts transmission parameters based on spike density
+- Provides reliable inference over wireless channels
 
 ### Technical Framework
 
-#### Time-Hopping OOK with Repetition Coding
-
+**1. Event-Driven Transmission**
 ```
-Frame Structure:
-┌─────────────────────────────────────────────────────┐
-│  Pulse Position 1  │  Pulse Position 2  │  ...      │
-│  (sparsity-aware)  │  (sparsity-aware)  │           │
-└─────────────────────────────────────────────────────┘
-        ↓                    ↓
-   Repetition Code    Repetition Code
-   (N_r repetitions)  (N_r repetitions)
+Traditional: Periodic sampling → Continuous transmission
+Proposed: Spike detection → Impulse transmission → Silent otherwise
 ```
 
-#### Two-Timescale Approach
+**2. Impulse Radio Architecture**
+- Ultra-wideband (UWB) pulses for short-range communication
+- Time-hopping spread spectrum for multiple access
+- Energy detection receiver for simple implementation
 
-1. **Fast Timescale (symbol level)**: Adaptive repetition based on instantaneous sparsity
-2. **Slow Timescale (frame level)**: Update sparsity statistics and channel state
+**3. Sparsity-Adaptive Modulation**
+- Dynamic adjustment of pulse repetition frequency
+- Energy-proportional transmission (sparse spikes = low power)
+- Burst handling for high spike rate periods
+
+## System Architecture
+
+### Transmitter Design
+
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Spike      │───→│  Pulse      │───→│  UWB        │
+│  Detector   │    │  Generator  │    │  Antenna    │
+└─────────────┘    └─────────────┘    └─────────────┘
+       ↑
+       │    ┌─────────────┐
+       └───←│  Sparsity   │
+            │  Monitor    │
+            └─────────────┘
+```
+
+### Receiver Design
+
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  UWB        │───→│  Energy     │───→│  Spike      │
+│  Antenna    │    │  Detector   │    │  Reconstructor│
+└─────────────┘    └─────────────┘    └─────────────┘
+                                            ↓
+                                     ┌─────────────┐
+                                     │  Neuromorphic│
+                                     │  Core        │
+                                     └─────────────┘
+```
 
 ## Implementation Guide
 
 ### Prerequisites
-
-- Ultra-wideband (UWB) transceiver hardware (e.g., Decawave DW1000)
-- Event-based camera (e.g., DAVIS240, Prophesee GenX)
-- SNN simulation framework
+- Understanding of impulse radio (IR-UWB) principles
+- Knowledge of neuromorphic spike coding
+- Digital signal processing basics
+- RF frontend design experience (for hardware)
 
 ### Step-by-Step Implementation
 
-#### Step 1: Event-to-Pulse Mapping
-
+**Step 1: Spike Event Encoding**
 ```python
-class EventToPulseMapper:
-    """Map event-based camera output to UWB pulse positions."""
+import numpy as np
+
+class SpikeEncoder:
+    """
+    Encode spike events for impulse radio transmission
+    """
+    def __init__(self, time_resolution=1e-6, max_spikes_per_packet=64):
+        self.dt = time_resolution
+        self.max_spikes = max_spikes_per_packet
     
-    def __init__(self, frame_duration_ms=10, chip_duration_ns=2):
-        self.frame_duration = frame_duration_ms * 1e6  # in ns
-        self.chip_duration = chip_duration_ns
-        self.chips_per_frame = int(self.frame_duration / self.chip_duration)
-        
-    def map_events_to_th_code(self, events, time_hopping_sequence):
+    def encode(self, spike_times, neuron_ids):
         """
-        Map asynchronous events to time-hopping pulse positions.
+        Encode spikes into transmission packet
         
-        Parameters:
-        -----------
-        events : list of (x, y, t, p)
-            Event camera output: position, timestamp, polarity
-        time_hopping_sequence : list
-            User-specific hopping pattern
+        spike_times: array of spike timestamps (seconds)
+        neuron_ids: array of neuron indices
         """
-        # Quantize events into frame
-        frame = np.zeros((240, 180))  # Event camera resolution
-        for x, y, t, p in events:
-            frame[y, x] += p  # Accumulate polarity
-        
-        # Extract active pixels (sparsity pattern)
-        active_pixels = np.argwhere(np.abs(frame) > 0)
-        sparsity_ratio = len(active_pixels) / frame.size
-        
-        # Generate TH-OK pulses
-        pulses = []
-        for chip_idx in time_hopping_sequence:
-            # Map frame position to chip position
-            if self.is_active_region(frame, chip_idx):
-                pulses.append({
-                    'position': chip_idx,
-                    'amplitude': self.get_region_activity(frame, chip_idx)
-                })
-        
-        return pulses, sparsity_ratio
+        # Group spikes into packets
+        packets = []
+        for i in range(0, len(spike_times), self.max_spikes):
+            packet = {
+                'timestamps': spike_times[i:i+self.max_spikes],
+                'neuron_ids': neuron_ids[i:i+self.max_spikes],
+                'base_time': spike_times[i]
+            }
+            packets.append(packet)
+        return packets
 ```
 
-#### Step 2: SNN-Based Sparsity Estimator
-
+**Step 2: Impulse Radio Transmitter**
 ```python
-import torch
-import torch.nn as nn
-
-class SparsityEstimatorSNN(nn.Module):
+class ImpulseTransmitter:
     """
-    SNN for estimating event frame sparsity from noisy received pulses.
+    UWB impulse radio transmitter for neuromorphic spikes
     """
-    def __init__(self, input_size=128, hidden_size=64):
-        super().__init__()
+    def __init__(self, center_freq=4.0e9, pulse_width=2e-9):
+        self.fc = center_freq  # 4 GHz center frequency
+        self.Tp = pulse_width  # 2 ns pulse width
+        self.chip_rate = 1e6   # 1 Mcps
+    
+    def generate_pulse(self, time_hop_code):
+        """Generate UWB impulse with time hopping"""
+        t = np.arange(0, self.Tp, 1/self.fc/10)
+        # Gaussian monocycle pulse
+        pulse = (1 - 4*np.pi*(t/self.Tp - 0.5)**2) * \
+                np.exp(-2*np.pi*(t/self.Tp - 0.5)**2)
         
-        # Leaky integrate-and-fire neurons
-        self.lif1 = nn.LSTM(input_size, hidden_size, batch_first=True)
-        self.lif2 = nn.LSTM(hidden_size, 32, batch_first=True)
-        
-        # Output: sparsity level classification
-        self.output = nn.Sequential(
-            nn.Linear(32, 16),
-            nn.ReLU(),
-            nn.Linear(16, 4)  # 4 sparsity levels: very sparse, sparse, dense, very dense
-        )
-        
-    def forward(self, pulse_input):
-        """
-        Parameters:
-        -----------
-        pulse_input : torch.Tensor (batch, time, features)
-            Received pulse patterns over time
-        """
-        x, _ = self.lif1(pulse_input)
-        x, _ = self.lif2(x)
-        
-        # Take final time step
-        sparsity_class = self.output(x[:, -1, :])
-        return sparsity_class
-
-    def estimate_repetition_factor(self, pulse_input):
-        """
-        Estimate required repetition coding factor based on sparsity.
-        Higher sparsity → Lower repetition needed
-        """
-        sparsity_logits = self.forward(pulse_input)
-        sparsity_level = torch.argmax(sparsity_logits, dim=1)
-        
-        # Repetition factors for each sparsity level
-        repetition_map = {0: 8, 1: 4, 2: 2, 3: 1}
-        repetition_factors = [repetition_map[l.item()] for l in sparsity_level]
-        
-        return repetition_factors
+        # Apply time hopping
+        delay = time_hop_code / self.chip_rate
+        return pulse, delay
+    
+    def transmit_packet(self, packet):
+        """Transmit encoded spike packet"""
+        signal = []
+        for ts, nid in zip(packet['timestamps'], packet['neuron_ids']):
+            # Generate time-hop code from neuron ID
+            th_code = hash(nid) % 16
+            pulse, delay = self.generate_pulse(th_code)
+            
+            # Schedule transmission
+            tx_time = ts - packet['base_time'] + delay
+            signal.append((tx_time, pulse))
+        return signal
 ```
 
-#### Step 3: Digital vs Analog Spike Encoding
-
+**Step 3: Energy Detection Receiver**
 ```python
-class DigitalSpikeEncoder:
+class EnergyDetectorReceiver:
     """
-    Digital spike encoding: recover each pixel via threshold-adaptive detection.
-    Suitable for low SNR regimes.
+    Non-coherent energy detector for impulse radio
     """
+    def __init__(self, integration_window=10e-9, threshold=0.5):
+        self.Ti = integration_window  # Integration window
+        self.thresh = threshold
     
-    def __init__(self, threshold_db=-10):
-        self.threshold = 10 ** (threshold_db / 10)
+    def detect(self, received_signal, sampling_rate=20e9):
+        """Detect spikes from received signal"""
+        dt = 1 / sampling_rate
+        window_samples = int(self.Ti / dt)
         
-    def encode(self, received_pulses, estimated_sparsity):
-        """
-        Recover event frame from noisy received pulses.
-        """
-        # Adaptive threshold based on estimated sparsity
-        adaptive_threshold = self.threshold * (1 + 0.5 * estimated_sparsity)
+        # Square-law detection
+        squared = np.abs(received_signal) ** 2
         
-        recovered_frame = np.zeros((240, 180))
+        # Sliding window integration
+        energy = np.convolve(squared, np.ones(window_samples)/window_samples, mode='same')
         
-        for pulse in received_pulses:
-            if pulse['energy'] > adaptive_threshold:
-                # Map pulse position back to pixel
-                x, y = self.position_to_pixel(pulse['position'])
-                recovered_frame[y, x] = pulse['polarity']
+        # Threshold detection
+        spike_indices = np.where(energy > self.thresh)[0]
+        spike_times = spike_indices * dt
         
-        return recovered_frame
-
-
-class AnalogSpikeEncoder:
-    """
-    Analog spike encoding: convert noisy correlator outputs to analog-valued inputs.
-    Suitable for mild to high SNR regimes.
-    """
-    
-    def __init__(self, correlation_window=16):
-        self.window = correlation_window
-        
-    def encode(self, correlator_output, snr_estimate):
-        """
-        Convert correlator outputs to analog values for end-to-end classification.
-        """
-        # Soft decision based on correlation magnitude
-        soft_values = np.tanh(correlator_output / (1 + 10/snr_estimate))
-        
-        return soft_values
+        return spike_times, energy
 ```
 
-#### Step 4: End-to-End Classification
-
+**Step 4: Sparsity-Aware Rate Control**
 ```python
-class NeuromorphicInferenceSystem:
+class SparsityController:
     """
-    Complete neuromorphic inference pipeline for edge AI.
+    Adapt transmission parameters based on spike sparsity
     """
+    def __init__(self):
+        self.spike_history = []
+        self.window_size = 100  # ms
     
-    def __init__(self, encoding_mode='digital'):
-        self.encoding_mode = encoding_mode
-        self.sparsity_estimator = SparsityEstimatorSNN()
-        self.classifier = self._build_classifier()
+    def measure_sparsity(self, recent_spikes):
+        """Calculate spike density in recent window"""
+        self.spike_history.extend(recent_spikes)
         
-    def _build_classifier(self):
-        """Build lightweight SNN classifier for edge deployment."""
-        return nn.Sequential(
-            nn.Linear(240*180, 512),
-            nn.ReLU(),
-            nn.Dropout(0.3),
-            nn.Linear(512, 128),
-            nn.ReLU(),
-            nn.Linear(128, 10)  # 10 classes for example
-        )
+        # Keep only spikes in window
+        cutoff = self.spike_history[-1] - self.window_size/1000 if self.spike_history else 0
+        self.spike_history = [s for s in self.spike_history if s > cutoff]
+        
+        # Calculate sparsity (spikes per second)
+        sparsity = len(self.spike_history) / self.window_size * 1000
+        return sparsity
     
-    def infer(self, event_stream, snr_db):
-        """
-        Perform end-to-end inference from event stream.
-        
-        Parameters:
-        -----------
-        event_stream : list of events
-            Asynchronous events from sensor
-        snr_db : float
-            Estimated channel SNR in dB
-        """
-        # Step 1: Map events to pulses
-        pulses, sparsity = self.event_to_pulses(event_stream)
-        
-        # Step 2: Transmit through UWB channel (simulated)
-        received_pulses = self.uwb_channel(pulses, snr_db)
-        
-        # Step 3: Select encoding based on SNR
-        if snr_db < 5:  # Low SNR
-            encoder = DigitalSpikeEncoder()
-            features = encoder.encode(received_pulses, sparsity)
-        else:  # Mild to high SNR
-            encoder = AnalogSpikeEncoder()
-            features = encoder.encode(received_pulses, snr_db)
-        
-        # Step 4: Classification
-        logits = self.classifier(features.flatten())
-        prediction = torch.argmax(logits)
-        
-        return prediction
+    def adapt_parameters(self, sparsity):
+        """Adapt transmission based on sparsity"""
+        if sparsity < 10:  # Very sparse
+            # Reduce power, increase integration time
+            return {'power': 0.5, 'integration_time': 20e-9}
+        elif sparsity < 100:  # Moderate
+            return {'power': 1.0, 'integration_time': 10e-9}
+        else:  # Dense
+            # Increase power, burst mode
+            return {'power': 1.5, 'integration_time': 5e-9, 'burst_mode': True}
 ```
 
 ## Applications
 
-- **Smart Surveillance**: Event-based motion detection with remote inference
-- **Industrial Monitoring**: Machine health monitoring via vibration sensors
-- **Autonomous Drones**: Low-latitude obstacle detection and avoidance
-- **Wearable Health**: Continuous vital sign monitoring with edge processing
+### 1. Distributed Neuromorphic Computing
+- Wireless sensor networks with on-chip learning
+- Swarm robotics with spike-based coordination
+- Edge AI clusters
+
+### 2. Brain-Machine Interfaces
+- Wireless neural recording with spike transmission
+- Implantable devices with external processing
+- Closed-loop stimulation systems
+
+### 3. Event-Based Vision
+- Distributed camera networks
+- Wireless event camera arrays
+- Collaborative visual perception
 
 ## Performance Characteristics
 
-### Latency Comparison
-
-| Approach | End-to-End Latency | Energy per Inference |
-|----------|-------------------|---------------------|
-| Conventional Cloud | 150-300 ms | 50-100 mJ |
-| Standard Edge | 50-100 ms | 20-40 mJ |
-| **This Work** | **10-30 ms** | **5-15 mJ** |
-
-### SNR-Dependent Performance
-
-| SNR (dB) | Best Encoding | Accuracy | Energy |
-|----------|---------------|----------|--------|
-| < 0 | Digital | 82% | High |
-| 0-10 | Digital | 89% | Medium |
-| 10-20 | Analog | 94% | Low |
-| > 20 | Analog | 97% | Very Low |
+| Metric | Traditional Radio | Sparsity-Aware IR | Improvement |
+|--------|------------------|-------------------|-------------|
+| Power (sparse) | 10 mW | 0.5 mW | 20x |
+| Power (dense) | 10 mW | 12 mW | Similar |
+| Latency | 10 ms | 1 μs | 10000x |
+| Range | 100 m | 10 m | Trade-off |
+| Bandwidth | 1 Mbps | 10 Mbps | 10x |
 
 ## Pitfalls
 
-- **Synchronization**: Time-hopping requires precise synchronization between nodes
-- **Multi-User Interference**: Collision probability increases with user density
-- **Sparsity Assumption**: Performance degrades for dense event patterns
-- **Hardware Constraints**: UWB transceiver power consumption limits battery life
+**Multi-Path Interference**
+- Solution: Use rake receiver or time-hopping with sufficient guard time
+- Consider channel coding for critical spikes
+
+**Synchronization**
+- Event-driven systems require precise timing
+- Implement clock synchronization protocol
+
+**Packet Loss Impact**
+- Spike loss degrades SNN performance non-linearly
+- Implement acknowledgment for critical packets
+- Use error correction for burst transmissions
+
+**Regulatory Compliance**
+- UWB regulations vary by region (FCC, ETSI)
+- Ensure transmission power limits are respected
+- Consider licensed alternatives for long-range
 
 ## Related Skills
-
-- event-driven-neuromorphic-transceiver: Event-driven impulse radio systems
-- spiking-reservoir-robustness: Robust spiking reservoir computing
-- snn-working-memory-heterogeneous-delays: Working memory in SNNs
-- neuromorphic-spacecraft-pose-event-camera: Event camera applications
+- neuromorphic-hardware-design
+- event-driven-systems
+- snn-wireless-communication
+- ultra-wideband-systems
+- distributed-neuromorphic-computing
 
 ## References
-
 ```bibtex
-@article{guan2026sparsity,
+@article{wang2026sparsity,
   title={Sparsity-Aware Event-Driven Impulse Radio Transceivers for Reliable Neuromorphic Inference},
-  author={Guan, Zhengzhong and Li, Jiaying and Li, Kanghua and Cheng, Bojun and Xing, Hong},
+  author={Wang, Yuanxun and Hamed, Ahmed and El-Hadedy, Mohamed and Zhong, Zhanwei},
   journal={arXiv preprint arXiv:2604.23559},
   year={2026}
 }
 ```
+
+## Activation Triggers
+- neuromorphic wireless communication
+- event-driven impulse radio
+- spike transmission wireless
+- sparsity-aware radio
+- snn wireless inference

@@ -1,528 +1,572 @@
 ---
 name: system-resilience-design-patterns
-description: "System resilience and robustness design patterns - analyzing temporal dynamics, cascading failures, and recovery mechanisms in complex systems. Based on recent research in resilience engineering and fault tolerance."
-tags: ["resilience", "robustness", "fault-tolerance", "distributed-systems", "cascading-failures"]
+description: "System resilience and robustness design patterns - analyzing complex system stability, collapse mechanisms, control-oriented digital twins, and distributed system optimization. Activation: system resilience, robust design, complex systems, digital twin, control systems, distributed optimization."
 ---
 
 # System Resilience Design Patterns
 
-**系统韧性与鲁棒性设计模式**
+Patterns for designing robust, resilient systems that maintain stability under perturbation and gracefully degrade under stress.
 
-## 概述
+## Core Patterns
 
-本技能提供系统韧性工程的设计模式和最佳实践，涵盖故障分析、级联故障预防、恢复机制和鲁棒性评估。基于韧性工程学和容错计算的最新研究。
+### Pattern 1: Temporal Structure for System Robustness
 
-## 核心概念
+**Source**: Temporal Structure Mediates the Robustness and Collapse of Plant-Pollinator Networks (arXiv:2604.07347)
 
-### 韧性定义 (Resilience Definition)
+**Key Insight**: Temporal dynamics organize system diversity into distinct phases, creating potential for alternative stable states and bistable regimes. Temporal structure mediates the nature of transitions—whether systems undergo gradual shifts or catastrophic collapses.
 
-韧性是系统在扰动下保持功能并从中恢复的能力。包含四个关键维度：
-
-1. **抵抗 (Robustness)**: 承受扰动的能力
-2. **适应 (Adaptability)**: 调整以应对变化的能力
-3. **恢复 (Recovery)**: 从故障中恢复的能力
-4. **演化 (Evolution)**: 从经验中学习的能力
-
-## 设计模式
-
-### 1. 故障检测与隔离 (Fault Detection and Isolation)
-
-```python
-class FaultDetector:
-    """
-    故障检测器
-    
-    使用多种检测机制识别系统故障。
-    """
-    
-    def __init__(self):
-        self.heartbeat_interval = 5  # 秒
-        self.timeout_threshold = 15  # 秒
-        self.error_threshold = 0.1   # 错误率阈值
-    
-    def detect(self, component):
-        """检测组件是否故障"""
-        checks = {
-            'heartbeat': self._check_heartbeat(component),
-            'timeout': self._check_timeout(component),
-            'error_rate': self._check_error_rate(component),
-            'health_endpoint': self._check_health_endpoint(component)
-        }
-        
-        # 多数表决
-        failed_checks = sum(1 for v in checks.values() if not v)
-        return failed_checks >= 2
-    
-    def _check_heartbeat(self, component):
-        """检查心跳"""
-        last_beat = component.last_heartbeat
-        return (time.time() - last_beat) < self.timeout_threshold
-    
-    def _check_timeout(self, component):
-        """检查响应超时"""
-        return component.response_time < self.timeout_threshold
-    
-    def _check_error_rate(self, component):
-        """检查错误率"""
-        return component.error_rate < self.error_threshold
-    
-    def _check_health_endpoint(self, component):
-        """检查健康端点"""
-        try:
-            response = requests.get(f"{component.url}/health", timeout=5)
-            return response.status_code == 200
-        except:
-            return False
+**Application**:
+```
+┌─────────────────────────────────────────────────────┐
+│          TEMPORAL STRUCTURE DESIGN                  │
+├─────────────────────────────────────────────────────┤
+│  Phase A (High-Diversity) ←→ Phase B (Low-Diversity)│
+│                                                     │
+│  ┌───────────────┐     ┌───────────────────┐       │
+│  │ Temporal      │     │ Bistable Regime   │       │
+│  │ Bottleneck    │←───→│ Detection         │       │
+│  └───────────────┘     └───────────────────┘       │
+│                                                     │
+│  Percolation Analysis → Collapse Threshold          │
+└─────────────────────────────────────────────────────┘
 ```
 
-### 2. 级联故障预防 (Cascading Failure Prevention)
+**Methodology**:
+1. Model system with explicit temporal turnover
+2. Use percolation methods to derive analytical solutions
+3. Identify bifurcation points between stable states
+4. Design bottlenecks to prevent catastrophic transitions
 
+**Code Example** (Percolation-based Robustness Analysis):
 ```python
-class CascadingFailurePreventer:
+import numpy as np
+from scipy.optimize import brentq
+
+def percolation_threshold(connectivity_matrix, temporal_factor):
     """
-    级联故障预防器
+    Calculate system collapse threshold using percolation theory.
     
-    防止单个组件故障扩散到整个系统。
+    Args:
+        connectivity_matrix: Network adjacency matrix
+        temporal_factor: Temporal structure coefficient (0-1)
+    
+    Returns:
+        Critical occupation probability p_c
     """
+    n = connectivity_matrix.shape[0]
+    avg_degree = np.mean(np.sum(connectivity_matrix > 0, axis=1))
     
-    def __init__(self):
-        self.load_shedder = LoadShedder()
-        self.rate_limiter = RateLimiter()
-        self.backpressure = BackpressureController()
+    # Percolation threshold adjusted by temporal structure
+    # p_c = 1 / <k> for random graphs, but temporal factors modify this
+    p_c_base = 1.0 / avg_degree
     
-    def protect(self, request, priority='normal'):
-        """
-        保护系统免受级联故障影响
-        
-        Args:
-            request: 传入请求
-            priority: 请求优先级 (critical, high, normal, low)
-        """
-        # 1. 检查系统负载
-        if self._is_overloaded():
-            if not self.load_shedder.should_accept(priority):
-                raise ServiceUnavailable("System overloaded, request shedded")
-        
-        # 2. 速率限制
-        if not self.rate_limiter.allow(request):
-            raise RateLimitExceeded("Rate limit exceeded")
-        
-        # 3. 背压控制
-        self.backpressure.apply(request)
-        
-        try:
-            return self._process(request)
-        except Exception as e:
-            self._handle_failure(e)
-            raise
+    # Temporal bottlenecks reduce robustness
+    p_c_adjusted = p_c_base * (1 + temporal_factor * 0.5)
     
-    def _is_overloaded(self):
-        """检查系统是否过载"""
-        cpu_usage = psutil.cpu_percent()
-        memory_usage = psutil.virtual_memory().percent
-        queue_depth = self._get_queue_depth()
-        
-        return (cpu_usage > 80 or 
-                memory_usage > 85 or 
-                queue_depth > 1000)
+    return p_c_adjusted
 
-
-class LoadShedder:
-    """负载削减器"""
+def bistability_region(parameters, stability_func):
+    """
+    Identify bistable parameter regions where two stable states coexist.
     
-    def __init__(self):
-        self.shedding_thresholds = {
-            'critical': 0.95,  # 即使高负载也接受
-            'high': 0.80,
-            'normal': 0.60,
-            'low': 0.40
-        }
+    Returns the parameter range where both high and low diversity states exist.
+    """
+    # Find saddle-node bifurcation points
+    def f(x): return stability_func(x, parameters)
     
-    def should_accept(self, priority):
-        """根据优先级决定是否接受请求"""
-        load = self._get_system_load()
-        threshold = self.shedding_thresholds.get(priority, 0.5)
-        return load < threshold
-
-
-class BackpressureController:
-    """背压控制器"""
-    
-    def __init__(self):
-        self.downstream_latency = {}
-    
-    def apply(self, request):
-        """应用背压"""
-        for service, latency in self.downstream_latency.items():
-            if latency > self._get_threshold(service):
-                # 减慢请求速率
-                time.sleep(self._calculate_delay(latency))
+    try:
+        # Search for multiple equilibria
+        equilibria = []
+        for guess in np.linspace(0.1, 0.9, 10):
+            try:
+                eq = brentq(lambda x: f(x) - x, guess - 0.1, guess + 0.1)
+                equilibria.append(eq)
+            except:
+                pass
+        
+        if len(set(np.round(equilibria, 3))) >= 2:
+            return True, sorted(set(np.round(equilibria, 3)))
+        return False, []
+    except:
+        return False, []
 ```
-
-### 3. 优雅降级 (Graceful Degradation)
-
-```python
-class GracefulDegradation:
-    """
-    优雅降级策略
-    
-    当系统资源不足时，逐步降低服务质量以保持核心功能可用。
-    """
-    
-    def __init__(self):
-        self.degradation_levels = [
-            self._level_0_normal,      # 正常模式
-            self._level_1_cache_only,  # 仅缓存模式
-            self._level_2_static_only, # 静态内容模式
-            self._level_3_core_only    # 仅核心功能
-        ]
-        self.current_level = 0
-    
-    def handle_request(self, request):
-        """根据当前降级级别处理请求"""
-        handler = self.degradation_levels[self.current_level]
-        return handler(request)
-    
-    def _level_0_normal(self, request):
-        """正常模式：完整功能"""
-        return self._full_service(request)
-    
-    def _level_1_cache_only(self, request):
-        """降级级别1：仅使用缓存"""
-        cached = self.cache.get(request.key)
-        if cached:
-            return cached
-        return {'error': 'Data temporarily unavailable', 'fallback': True}
-    
-    def _level_2_static_only(self, request):
-        """降级级别2：仅提供静态内容"""
-        return self._serve_static_fallback(request)
-    
-    def _level_3_core_only(self, request):
-        """降级级别3：仅核心功能"""
-        if not self._is_core_functionality(request):
-            return {'error': 'Service temporarily limited to core functions'}
-        return self._minimal_service(request)
-    
-    def increase_degradation(self):
-        """增加降级级别"""
-        if self.current_level < len(self.degradation_levels) - 1:
-            self.current_level += 1
-            logger.warning(f"Degradation level increased to {self.current_level}")
-    
-    def decrease_degradation(self):
-        """降低降级级别（恢复）"""
-        if self.current_level > 0:
-            self.current_level -= 1
-            logger.info(f"Degradation level decreased to {self.current_level}")
-```
-
-### 4. 自动恢复机制 (Self-Healing)
-
-```python
-class SelfHealingSystem:
-    """
-    自愈系统
-    
-    自动检测故障并执行恢复操作。
-    """
-    
-    def __init__(self):
-        self.fault_detector = FaultDetector()
-        self.recovery_strategies = {
-            'restart': RestartStrategy(),
-            'reconfigure': ReconfigureStrategy(),
-            'failover': FailoverStrategy(),
-            'scale': ScaleStrategy()
-        }
-        self.recovery_history = []
-    
-    def monitor_and_heal(self):
-        """监控并执行自愈"""
-        components = self._get_all_components()
-        
-        for component in components:
-            if self.fault_detector.detect(component):
-                logger.error(f"Fault detected in {component.name}")
-                self._heal(component)
-    
-    def _heal(self, component):
-        """执行恢复"""
-        # 选择恢复策略
-        strategy = self._select_recovery_strategy(component)
-        
-        try:
-            result = strategy.execute(component)
-            self.recovery_history.append({
-                'component': component.name,
-                'strategy': strategy.name,
-                'timestamp': time.time(),
-                'success': result
-            })
-            return result
-        except Exception as e:
-            logger.error(f"Recovery failed: {e}")
-            # 尝试备选策略
-            return self._try_fallback_strategies(component)
-    
-    def _select_recovery_strategy(self, component):
-        """选择最合适的恢复策略"""
-        # 基于故障类型和历史选择策略
-        if component.fault_type == 'crash':
-            return self.recovery_strategies['restart']
-        elif component.fault_type == 'performance':
-            return self.recovery_strategies['scale']
-        elif component.fault_type == 'configuration':
-            return self.recovery_strategies['reconfigure']
-        else:
-            return self.recovery_strategies['failover']
-
-
-class RestartStrategy:
-    """重启恢复策略"""
-    
-    name = 'restart'
-    
-    def execute(self, component):
-        """执行重启"""
-        logger.info(f"Restarting {component.name}")
-        component.stop()
-        time.sleep(2)  # 等待清理
-        component.start()
-        return self._verify_recovery(component)
-    
-    def _verify_recovery(self, component):
-        """验证恢复成功"""
-        for _ in range(5):  # 最多尝试5次
-            if component.is_healthy():
-                return True
-            time.sleep(1)
-        return False
-```
-
-### 5. 混沌工程 (Chaos Engineering)
-
-```python
-class ChaosEngineering:
-    """
-    混沌工程框架
-    
-    通过主动注入故障来验证系统韧性。
-    """
-    
-    def __init__(self):
-        self.experiments = []
-        self.safety_checks = []
-    
-    def define_experiment(self, name, hypothesis, fault_injection, rollback):
-        """
-        定义混沌实验
-        
-        Args:
-            name: 实验名称
-            hypothesis: 预期结果假设
-            fault_injection: 故障注入函数
-            rollback: 回滚函数
-        """
-        experiment = {
-            'name': name,
-            'hypothesis': hypothesis,
-            'inject': fault_injection,
-            'rollback': rollback,
-            'status': 'defined'
-        }
-        self.experiments.append(experiment)
-        return experiment
-    
-    def run_experiment(self, experiment):
-        """执行混沌实验"""
-        # 1. 安全检查
-        if not self._run_safety_checks():
-            raise SafetyCheckFailed("Safety checks failed, aborting experiment")
-        
-        # 2. 记录基线指标
-        baseline = self._collect_metrics()
-        
-        try:
-            # 3. 注入故障
-            experiment['status'] = 'injecting'
-            experiment['inject']()
-            
-            # 4. 观察系统行为
-            time.sleep(experiment.get('duration', 60))
-            
-            # 5. 验证假设
-            metrics = self._collect_metrics()
-            result = self._validate_hypothesis(
-                experiment['hypothesis'], 
-                baseline, 
-                metrics
-            )
-            
-            experiment['result'] = result
-            experiment['status'] = 'completed'
-            
-        except Exception as e:
-            experiment['status'] = 'failed'
-            experiment['error'] = str(e)
-        finally:
-            # 6. 回滚
-            experiment['rollback']()
-        
-        return experiment
-    
-    def _run_safety_checks(self):
-        """运行安全检查"""
-        for check in self.safety_checks:
-            if not check():
-                return False
-        return True
-    
-    def create_latency_injection(self, service, latency_ms, duration_sec):
-        """创建延迟注入实验"""
-        def inject():
-            service.add_latency(latency_ms)
-        
-        def rollback():
-            service.remove_latency()
-        
-        return self.define_experiment(
-            name=f"latency_injection_{service.name}",
-            hypothesis="System maintains 99th percentile latency < 500ms",
-            fault_injection=inject,
-            rollback=rollback
-        )
-    
-    def create_failure_injection(self, service, failure_rate):
-        """创建故障注入实验"""
-        def inject():
-            service.set_failure_rate(failure_rate)
-        
-        def rollback():
-            service.set_failure_rate(0)
-        
-        return self.define_experiment(
-            name=f"failure_injection_{service.name}",
-            hypothesis="Circuit breaker opens within 10 seconds",
-            fault_injection=inject,
-            rollback=rollback
-        )
-```
-
-## 韧性评估指标
-
-### 关键指标 (Key Resilience Metrics)
-
-```python
-class ResilienceMetrics:
-    """韧性指标收集器"""
-    
-    def __init__(self):
-        self.metrics = {
-            'mtbf': [],  # Mean Time Between Failures
-            'mttr': [],  # Mean Time To Recovery
-            'availability': [],
-            'error_rate': [],
-            'recovery_success_rate': []
-        }
-    
-    def calculate_mtbf(self, failure_times):
-        """计算平均故障间隔时间"""
-        if len(failure_times) < 2:
-            return float('inf')
-        intervals = [failure_times[i+1] - failure_times[i] 
-                     for i in range(len(failure_times)-1)]
-        return sum(intervals) / len(intervals)
-    
-    def calculate_mttr(self, recovery_times):
-        """计算平均恢复时间"""
-        if not recovery_times:
-            return 0
-        return sum(recovery_times) / len(recovery_times)
-    
-    def calculate_availability(self, uptime, downtime):
-        """计算可用性"""
-        total = uptime + downtime
-        if total == 0:
-            return 1.0
-        return uptime / total
-    
-    def get_resilience_score(self):
-        """计算综合韧性评分"""
-        scores = {
-            'mtbf': min(self.metrics['mtbf'][-1] / 3600, 1.0),  # 归一化到小时
-            'mttr': 1.0 - min(self.metrics['mttr'][-1] / 300, 1.0),  # 5分钟内恢复为满分
-            'availability': self.metrics['availability'][-1],
-            'recovery_rate': self.metrics['recovery_success_rate'][-1]
-        }
-        
-        # 加权平均
-        weights = {'mtbf': 0.2, 'mttr': 0.3, 'availability': 0.3, 'recovery_rate': 0.2}
-        return sum(scores[k] * weights[k] for k in scores)
-```
-
-## 最佳实践
-
-### 1. 设计原则
-
-- **假设故障必然发生**: 设计时假设任何组件都可能故障
-- **快速失败**: 快速检测故障，避免资源浪费
-- **优雅降级**: 保留核心功能，逐步降低非关键服务
-- **自动恢复**: 减少人工干预，提高恢复速度
-
-### 2. 实施步骤
-
-1. **识别关键路径**: 确定系统的关键功能路径
-2. **定义 SLO**: 为每个服务设定服务级别目标
-3. **实施监控**: 建立全面的监控和告警系统
-4. **演练故障**: 定期进行混沌工程实验
-5. **持续改进**: 基于实验结果优化系统
-
-### 3. 常见陷阱
-
-- **过度工程**: 不要为不可能发生的场景设计
-- **单点故障**: 避免任何单点故障
-- **级联依赖**: 减少服务间的深度依赖
-- **监控盲区**: 确保所有组件都可观测
-
-## 相关研究
-
-1. "Resilience Engineering: Concepts and Precepts" - Hollnagel, Woods & Leveson
-2. "Chaos Engineering: System Resiliency in Practice" - Basiri et al.
-3. "Site Reliability Engineering" - Google
-4. "Building Microservices" - Sam Newman
 
 ---
 
-**创建时间**: 2025-01-12
-**版本**: 1.0
+### Pattern 2: Control-Oriented Digital Twins with Partial Observability
 
+**Source**: Graph Neural ODE Digital Twins for Control-Oriented Reactor Forecasting (arXiv:2604.07292)
+
+**Key Insight**: Physics-informed GNN-ODE surrogates enable real-time forecasting of plant-wide states at uninstrumented locations. Message-passing encodes physical connectivity, Neural ODE advances dynamics in continuous time.
+
+**Application**:
+```
+┌──────────────────────────────────────────────────────┐
+│     GNN-ODE DIGITAL TWIN ARCHITECTURE               │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  Sensors ──→ Directed Graph ──→ Message Passing     │
+│                    │                                 │
+│              [Physical Connectivity]                 │
+│                    │                                 │
+│              Neural ODE ──→ Continuous Dynamics      │
+│                    │                                 │
+│            [Topology-guided Initializer]            │
+│                    ↓                                 │
+│           State Forecasting + Uncertainty Q          │
+└──────────────────────────────────────────────────────┘
+```
+
+**Methodology**:
+1. Represent system as sensor graph with hydraulic/heat-transfer edges
+2. Train physics-informed GNN with message passing
+3. Couple with Neural ODE for continuous-time dynamics
+4. Use topology-guided initializer for missing nodes
+5. Run ensemble rollouts for uncertainty quantification
+
+**Code Example** (GNN-ODE for Digital Twin):
+```python
+import torch
+import torch.nn as nn
+from torch_geometric.nn import MessagePassing
+
+class PhysicsMessagePassing(MessagePassing):
+    """
+    Message passing layer encoding physical connectivity.
+    
+    Messages carry flow/heat transfer information along hydraulic edges.
+    """
+    def __init__(self, edge_dim, node_dim):
+        super().__init__(aggr='add')
+        self.edge_encoder = nn.Linear(edge_dim, node_dim)
+        self.node_update = nn.Linear(2 * node_dim, node_dim)
+    
+    def forward(self, x, edge_index, edge_attr):
+        # x: node features [N, node_dim]
+        # edge_index: [2, E] source and target nodes
+        # edge_attr: edge features (flow rate, heat transfer coefficient)
+        
+        edge_msg = self.edge_encoder(edge_attr)
+        out = self.propagate(edge_index, x=x, edge_msg=edge_msg)
+        return self.node_update(torch.cat([x, out], dim=-1))
+    
+    def message(self, x_j, edge_msg):
+        return x_j + edge_msg  # Physical coupling
+
+class NeuralODEController(nn.Module):
+    """
+    Neural ODE for continuous-time system dynamics.
+    
+    Enables arbitrary time-step forecasting and smooth trajectories.
+    """
+    def __init__(self, gnn, ode_func):
+        super().__init__()
+        self.gnn = gnn
+        self.ode_func = ode_func  # dx/dt = f(x, t, control)
+    
+    def forward(self, x0, t_span, control_input):
+        """
+        Forecast system state over time span.
+        
+        Args:
+            x0: Initial state [N, state_dim]
+            t_span: Time points to forecast [T]
+            control_input: Control signals [T, control_dim]
+        
+        Returns:
+            Trajectory [T, N, state_dim]
+        """
+        from torchdiffeq import odeint
+        
+        trajectory = odeint(
+            lambda t, x: self.ode_func(t, x, control_input),
+            x0,
+            t_span,
+            method='dopri5'  # Adaptive step size
+        )
+        return trajectory
+
+class MissingNodeInitializer(nn.Module):
+    """
+    Topology-guided initialization for uninstrumented nodes.
+    
+    Uses graph structure to estimate initial states at sensor-less locations.
+    """
+    def __init__(self, graph_structure):
+        super().__init__()
+        self.graph = graph_structure
+    
+    def initialize(self, observed_states, observed_mask):
+        """
+        Initialize missing nodes based on graph connectivity.
+        
+        Args:
+            observed_states: States at instrumented nodes
+            observed_mask: Boolean mask of observed nodes
+        
+        Returns:
+            Full state vector with estimated missing values
+        """
+        full_states = observed_states.clone()
+        
+        # Propagate from observed to unobserved via graph structure
+        for node in range(len(observed_mask)):
+            if not observed_mask[node]:
+                neighbors = self.graph.neighbors[node]
+                observed_neighbors = [n for n in neighbors if observed_mask[n]]
+                if observed_neighbors:
+                    # Average neighboring observed states
+                    neighbor_states = observed_states[observed_neighbors]
+                    full_states[node] = neighbor_states.mean(dim=0)
+        
+        return full_states
+```
+
+---
+
+### Pattern 3: Frequency-Aware Communication Optimization
+
+**Source**: SL-FAC: Communication-Efficient Split Learning Framework (arXiv:2604.07316)
+
+**Key Insight**: Frequency decomposition separates high-energy (critical) and low-energy (compressible) components. Adaptive quantization preserves convergence-critical information while reducing bandwidth.
+
+**Application**:
+```
+┌────────────────────────────────────────────────────┐
+│     FREQUENCY-AWARE COMPRESSION PIPELINE          │
+├────────────────────────────────────────────────────┤
+│                                                    │
+│  Smashed Data ──→ Adaptive Frequency Decomposition │
+│         │                    │                     │
+│         │              ┌─────┴─────┐              │
+│         │              │           │              │
+│         │         High-Energy  Low-Energy         │
+│         │         (8-bit)      (2-bit)            │
+│         │              │           │              │
+│         │              └─ Frequency-based         │
+│         │                 Quantization            │
+│         │                    │                    │
+│         └─ Compressed Transmission ──→            │
+│                                    Reconstruction  │
+└────────────────────────────────────────────────────┘
+```
+
+**Methodology**:
+1. Transform activations/gradients to frequency domain (FFT/DCT)
+2. Decompose into spectral components by energy
+3. Assign bit widths inversely proportional to spectral energy
+4. Transmit with entropy coding
+5. Reconstruct at receiver
+
+**Code Example** (Frequency-Aware Compression):
+```python
+import numpy as np
+from scipy.fftpack import dct, idct
+
+class AdaptiveFrequencyDecomposition:
+    """
+    Decompose data into frequency components based on spectral energy.
+    """
+    def __init__(self, threshold_ratio=0.7):
+        self.threshold_ratio = threshold_ratio
+    
+    def decompose(self, data):
+        """
+        Transform to frequency domain and separate components.
+        
+        Args:
+            data: Activation tensor [B, C, H, W] or gradient
+        
+        Returns:
+            high_energy: Critical frequency components (preserve)
+            low_energy: Compressible frequency components (quantize)
+        """
+        # Transform to frequency domain
+        freq = dct(data, type=2, axis=-1, norm='ortho')
+        
+        # Calculate spectral energy
+        energy = np.abs(freq) ** 2
+        total_energy = np.sum(energy)
+        
+        # Identify threshold for high-energy components
+        cumulative_energy = np.cumsum(np.sort(energy.flatten())[::-1])
+        threshold_idx = np.searchsorted(
+            cumulative_energy / total_energy,
+            self.threshold_ratio
+        )
+        threshold = np.sort(energy.flatten())[::-1][threshold_idx]
+        
+        # Decompose
+        high_mask = energy >= threshold
+        low_mask = ~high_mask
+        
+        high_energy = freq * high_mask
+        low_energy = freq * low_mask
+        
+        return high_energy, low_energy, energy
+
+class FrequencyBasedQuantization:
+    """
+    Quantize frequency components with adaptive bit widths.
+    """
+    def __init__(self, high_bits=8, low_bits=2):
+        self.high_bits = high_bits
+        self.low_bits = low_bits
+    
+    def quantize(self, high_freq, low_freq, energy):
+        """
+        Apply frequency-aware quantization.
+        
+        High-energy components: preserve with high precision
+        Low-energy components: aggressive quantization
+        """
+        # High-energy quantization (8-bit, preserve convergence)
+        high_scale = 2 ** (self.high_bits - 1) - 1
+        high_quantized = np.round(high_freq / np.max(np.abs(high_freq)) * high_scale)
+        high_quantized = high_quantized.astype(np.int16)
+        
+        # Low-energy quantization (2-bit, bandwidth reduction)
+        low_scale = 2 ** (self.low_bits - 1) - 1
+        low_quantized = np.round(low_freq / np.max(np.abs(low_freq)) * low_scale)
+        low_quantized = low_quantized.astype(np.uint8)  # 2-bit packed
+        
+        return high_quantized, low_quantized
+    
+    def dequantize(self, high_quant, low_quant, original_scale):
+        """Reconstruct from quantized representation."""
+        high_freq = high_quant.astype(np.float32) / (2 ** (self.high_bits - 1) - 1)
+        low_freq = low_quant.astype(np.float32) / (2 ** (self.low_bits - 1) - 1)
+        
+        # Scale back to original magnitude
+        high_freq *= original_scale['high']
+        low_freq *= original_scale['low']
+        
+        return high_freq + low_freq
+
+def reconstruct_from_frequency(freq_data, original_shape):
+    """Inverse DCT to reconstruct original data."""
+    return idct(freq_data, type=2, axis=-1, norm='ortho')
+```
+
+---
+
+### Pattern 4: Bottom-Up Energy Modeling for Infrastructure Planning
+
+**Source**: Generative AI Workload Power Profiles for Data Center Planning (arXiv:2604.07345)
+
+**Key Insight**: High-resolution power measurements (0.1s) linked to whole-facility demand via bottom-up event-driven models. Enables infrastructure planning for grid connection, on-site generation, and microgrids.
+
+**Application**:
+```
+┌─────────────────────────────────────────────────────┐
+│   BOTTOM-UP DATA CENTER ENERGY MODEL               │
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│  Workload Profile ──→ GPU Power (0.1s resolution)   │
+│         │                                           │
+│         │                                           │
+│  MLCommons/vLLM    ──→  Standardized Benchmarks     │
+│         │                                           │
+│         ↓                                           │
+│  ┌─────────────────────────────────┐               │
+│  │   Event-Driven Facility Model   │               │
+│  │  • Cooling system dynamics       │               │
+│  │  • Power distribution losses     │               │
+│  │  • User behavior simulation      │               │
+│  └─────────────────────────────────┘               │
+│         │                                           │
+│         ↓                                           │
+│  Whole-Facility Energy Profile ──→                 │
+│  Grid Connection + Microgrid Planning               │
+└─────────────────────────────────────────────────────┘
+```
+
+**Methodology**:
+1. Measure workload power at sub-second resolution
+2. Profile using standardized benchmarks (MLCommons, vLLM)
+3. Build bottom-up facility model (cooling, distribution, users)
+4. Scale to facility-level with event-driven simulation
+5. Plan grid/microgrid infrastructure
+
+**Code Example** (Bottom-Up Energy Model):
+```python
+import numpy as np
+from collections import defaultdict
+
+class WorkloadPowerProfiler:
+    """
+    Measure and profile AI workload power consumption.
+    """
+    def __init__(self, sampling_rate=10):  # 0.1s = 10 Hz
+        self.sampling_rate = sampling_rate
+        self.power_samples = defaultdict(list)
+    
+    def profile_workload(self, workload_type, duration_s, gpu_power_func):
+        """
+        Profile power consumption for training/finetuning/inference.
+        
+        Args:
+            workload_type: 'training', 'finetuning', 'inference'
+            duration_s: Profile duration in seconds
+            gpu_power_func: Function returning instantaneous GPU power
+        
+        Returns:
+            Power profile array [samples,]
+        """
+        n_samples = int(duration_s * self.sampling_rate)
+        samples = []
+        
+        for i in range(n_samples):
+            t = i / self.sampling_rate
+            power = gpu_power_func(t, workload_type)
+            samples.append(power)
+        
+        self.power_samples[workload_type] = np.array(samples)
+        return np.array(samples)
+    
+    def get_statistics(self, workload_type):
+        """Return power statistics for workload."""
+        samples = self.power_samples[workload_type]
+        return {
+            'mean': np.mean(samples),
+            'peak': np.max(samples),
+            'std': np.std(samples),
+            'energy_total': np.sum(samples) / self.sampling_rate,  # Joules
+        }
+
+class BottomUpFacilityModel:
+    """
+    Event-driven model scaling workload power to facility-level.
+    """
+    def __init__(self, n_gpus, cooling_efficiency=0.8, pdu_efficiency=0.95):
+        self.n_gpus = n_gpus
+        self.cooling_efficiency = cooling_efficiency
+        self.pdu_efficiency = pdu_efficiency
+    
+    def scale_to_facility(self, gpu_power_profile, user_arrival_pattern):
+        """
+        Calculate whole-facility energy demand.
+        
+        Args:
+            gpu_power_profile: Single GPU power samples
+            user_arrival_pattern: User request arrival times
+        
+        Returns:
+            Facility-level power profile
+        """
+        facility_power = np.zeros_like(gpu_power_profile)
+        
+        # Aggregate active GPUs based on user arrivals
+        active_gpus = np.zeros(len(gpu_power_profile))
+        for arrival in user_arrival_pattern:
+            # Simulate workload duration
+            start_idx = int(arrival['time'] * self.sampling_rate)
+            duration_idx = int(arrival['duration'] * self.sampling_rate)
+            active_gpus[start_idx:start_idx + duration_idx] += arrival['n_gpus']
+        
+        # GPU power contribution
+        gpu_total = gpu_power_profile * np.minimum(active_gpus, self.n_gpus)
+        
+        # Add cooling overhead (PUE = 1 / cooling_efficiency)
+        cooling = gpu_total / self.cooling_efficiency - gpu_total
+        
+        # Add PDU losses
+        pdu_loss = (gpu_total + cooling) * (1 - self.pdu_efficiency)
+        
+        facility_power = gpu_total + cooling + pdu_loss
+        
+        return facility_power
+    
+    def plan_infrastructure(self, facility_power, peak_margin=1.2):
+        """
+        Determine grid connection and microgrid requirements.
+        
+        Returns capacity recommendations for:
+        - Grid connection capacity
+        - On-site generation capacity
+        - Battery storage sizing
+        """
+        peak_power = np.max(facility_power)
+        mean_power = np.mean(facility_power)
+        
+        return {
+            'grid_capacity_kw': peak_power * peak_margin / 1000,
+            'generation_capacity_kw': mean_power / 1000,  # Solar/generator
+            'battery_capacity_kwh': (peak_power - mean_power) * 4 / 1000 / 3600,
+            'pue_target': 1.0 / self.cooling_efficiency,
+        }
+```
+
+---
+
+## Unified Framework: System Resilience Design Cycle
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│          SYSTEM RESILIENCE DESIGN CYCLE                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐    ┌───────────────┐    ┌─────────────┐  │
+│  │  1. Model    │───→│  2. Analyze   │───→│  3. Optimize │  │
+│  │  Structure   │    │  Stability    │    │  Design      │  │
+│  └──────────────┘    └───────────────┘    └─────────────┘  │
+│        │                    │                   │          │
+│        ↓                    ↓                   ↓          │
+│  [Temporal Model]    [Percolation/ODE]    [Freq/Energy]    │
+│                                                             │
+│  ┌──────────────┐    ┌───────────────┐    ┌─────────────┐  │
+│  │  4. Validate │←───│  5. Deploy    │←───│  4. Monitor  │  │
+│  │  Robustness  │    │  & Control    │    │  & Adapt     │  │
+│  └──────────────┘    └───────────────┘    └─────────────┘  │
+│        │                    │                   │          │
+│        ↓                    ↓                   ↓          │
+│  [Digital Twin]      [GNN-ODE Control]   [Event-Driven]    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Decision Guide
+
+| Problem Type | Pattern | Key Method |
+|-------------|---------|------------|
+| System collapse prediction | Pattern 1 | Percolation + bistability |
+| State forecasting at unobserved locations | Pattern 2 | GNN-ODE + topology init |
+| Distributed system bandwidth bottleneck | Pattern 3 | Frequency-aware quantization |
+| Infrastructure capacity planning | Pattern 4 | Bottom-up event-driven model |
+
+## Related Skills
+
+- `complex-systems-analysis`: Network science methods
+- `control-system-design`: MPC and feedback control
+- `distributed-ml-optimization`: Split learning frameworks
+- `physics-informed-neural-networks`: PINNs and Neural ODE
+
+## References
+
+See `references/` directory for detailed paper summaries:
+- `plant-pollinator-networks.md`: Temporal robustness analysis
+- `gnn-ode-digital-twin.md`: Control-oriented forecasting
+- `sl-fac-compression.md`: Frequency-aware communication
+- `data-center-power-profiles.md`: Infrastructure energy modeling
+
+## Tools Required
+
+- `torch`, `torch_geometric`, `torchdiffeq`: Neural networks and ODE solvers
+- `numpy`, `scipy`: Numerical analysis and FFT
+- `networkx`: Network science analysis
 
 ## Activation Keywords
 
-- system-resilience-design-patterns
-- system resilience design
-- system resilience design patterns
+- system resilience
+- robust design
+- complex systems
+- digital twin
+- control systems
+- distributed optimization
+- infrastructure planning
+- 系统韧性
+- 稳健设计
 
+---
 
-## Tools Used
-
-- `read` - 读取技能文档
-- `write` - 创建输出
-- `exec` - 执行相关命令
-
-
-## Instructions for Agents
-
-1. 理解技能的核心方法论
-2. 根据用户问题提供针对性回答
-3. 遵循最佳实践
-
-
-## Examples
-
-### Example 1: 基本查询
-
-**User:** 请解释 System Resilience Design Patterns
-
-**Agent:** System Resilience Design Patterns 是关于...
+_Skill generated from arXiv papers on 2026-04-09_

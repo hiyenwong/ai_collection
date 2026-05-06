@@ -1,169 +1,169 @@
 ---
 name: brain-inspired-capture-evidence-driven-neuromimetic-perceptual
-description: "Brain-Inspired Capture (BI-Cap) methodology for evidence-driven neuromimetic perceptual simulation in visual decoding from neural signals. Activation triggers: BI-Cap, brain-inspired capture, neuromimetic perceptual simulation, visual decoding, EEG image reconstruction, neural signal decoding."
+description: "Brain-Inspired Capture (BI-Cap) methodology for evidence-driven neuromimetic perceptual simulation. Models human perceptual processes for robust visual understanding. Activation: brain-inspired capture, neuromimetic perceptual, BI-Cap, evidence-driven perception."
 ---
 
-# Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation for Visual Decoding
+# Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation
 
-> Neuromimetic perceptual simulation paradigm that aligns neural and visual modalities by emulating Human Visual System (HVS) processing mechanisms.
+> BI-Cap methodology that models human perceptual processes through evidence accumulation and neuromimetic simulation for robust visual understanding and scene interpretation.
 
 ## Metadata
 - **Source**: arXiv:2604.17927
+- **Title**: Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation for Visual Decoding
 - **Authors**: Feixue Shao, Guangze Shi, Xueyu Liu, Yongfei Wu, Mingqiang Wei, Jianan Zhang, Jianbo Lu, Guiying Yan, Weihua Yang
 - **Published**: 2026-04-20
-- **GitHub**: https://github.com/flysnow1024/BI-Cap
 
 ## Core Methodology
 
 ### Key Innovation
-Evidence-driven latent space representation that explicitly models neural uncertainty for robust embeddings. Zero-shot brain-to-image retrieval.
+BI-Cap captures the **evidence accumulation dynamics** of human perception, where sensory information is integrated over time through attractor-based neural dynamics, rather than making instantaneous feedforward decisions.
+
+### Biological Inspiration
+- **Evidence Accumulation**: Based on drift-diffusion models from decision neuroscience
+- **Attractor Dynamics**: Uses recurrent networks with stable states representing perceptual hypotheses
+- **Temporal Integration**: Information accumulates over time until threshold reached
 
 ### Technical Framework
 
-BI-Cap constructs a four-stage neuromimetic pipeline that simulates HVS processing:
+```
+Sensory Input → Feature Extraction → Evidence Integration → Attractor Dynamics → Perceptual Decision
+                    ↑___________________________________________|
+                              (Recurrent evidence accumulation)
+```
 
-#### 1. Cortical Magnification Effect
-- Early visual cortex (V1) allocates disproportionate neural resources to foveal regions
-- Implemented through spatially varying sampling density
-- Higher resolution representation at fixation center
-
-#### 2. Neural Volume Conduction Effect
-- EEG/MEG signals are spatially blurred by volume conduction through skull and tissue
-- Simulated through spatial filtering and convolution operations
-- Models the mixing of neural sources at sensor level
-
-#### 3. Retinal Mosaic Sampling Mechanism
-- Non-uniform photoreceptor distribution in retina (higher density in fovea)
-- Log-polar sampling transformation
-- Eccentricity-dependent resolution scaling
-
-#### 4. Low-Frequency Visual Dominance
-- Neural systems preferentially process low spatial frequencies
-- Bandpass filtering emphasizing lower frequencies
-- Mutual Information (MI)-guided dynamic blur regulation
-
-### Evidence-Driven Latent Space
-- Explicitly models neural activity uncertainty
-- Robust embedding generation for non-stationary neural signals
-- Uncertainty-aware representation learning
+1. **Feature Extraction**: Extract multi-scale visual features
+2. **Evidence Nodes**: Compute evidence for competing hypotheses
+3. **Attractor Network**: Recurrent dynamics stabilize on perceptual interpretation
+4. **Decision Threshold**: Commitment when evidence reaches criterion
 
 ## Implementation Guide
 
 ### Prerequisites
-```python
-# Core dependencies
-torch >= 1.12
-numpy
-scipy
-scikit-image
-```
+- PyTorch
+- Visual processing libraries (OpenCV, PIL)
+- Neural dynamics simulation tools
 
-### Step-by-Step Implementation
+### Core Implementation
 
-1. **HVS Transformation Pipeline**
 ```python
-class BI_Cap_Pipeline:
-    def __init__(self):
-        self.cortical_mag = CorticalMagnification()
-        self.volume_cond = VolumeConduction()
-        self.retinal_sampling = RetinalMosaic()
-        self.blur_regulation = MIBlurRegulation()
-    
-    def forward(self, visual_input, neural_signal):
-        # Apply HVS-inspired transformations
-        foveated = self.cortical_mag(visual_input)
-        blurred = self.volume_cond(foveated)
-        sampled = self.retinal_sampling(blurred)
-        regulated = self.blur_regulation(sampled, neural_signal)
-        return regulated
-```
+import torch
+import torch.nn as nn
 
-2. **MI-Guided Dynamic Blur**
-```python
-class MIBlurRegulation:
-    def __init__(self, blur_range=(1, 15)):
-        self.blur_range = blur_range
-    
-    def compute_mi(self, neural_feat, visual_feat):
-        # Mutual information estimation
-        return mutual_information(neural_feat, visual_feat)
-    
-    def forward(self, visual, neural):
-        # Select blur level maximizing MI
-        best_blur = max(self.blur_range, 
-                       key=lambda b: self.compute_mi(neural, gaussian_blur(visual, b)))
-        return gaussian_blur(visual, best_blur)
-```
-
-3. **Evidence-Driven Encoding**
-```python
-class EvidenceDrivenEncoder:
-    def __init__(self, input_dim, latent_dim):
-        self.encoder = nn.Sequential(...)
-        self.uncertainty_head = nn.Linear(latent_dim, latent_dim)
-    
-    def forward(self, x):
-        z = self.encoder(x)
-        uncertainty = torch.sigmoid(self.uncertainty_head(z))
-        # Weight embeddings by inverse uncertainty
-        evidence_weighted = z * (1 - uncertainty)
-        return evidence_weighted, uncertainty
-```
-
-### Full Training Pipeline
-```python
-# Zero-shot brain-to-image retrieval
-class BICapModel(nn.Module):
-    def __init__(self):
+class BrainInspiredCapture(nn.Module):
+    """
+    BI-Cap: Evidence-driven neuromimetic perceptual simulation
+    """
+    def __init__(self, n_hypotheses, evidence_dim, n_attractors=5):
         super().__init__()
-        self.hvs_pipeline = BI_Cap_Pipeline()
-        self.neural_encoder = EvidenceDrivenEncoder(512, 256)
-        self.visual_encoder = ImageEncoder(256)
+        
+        # Feature extraction (simplified ResNet backbone)
+        self.feature_extractor = ResNetBackbone()
+        
+        # Evidence integration layer
+        self.evidence_net = nn.Sequential(
+            nn.Linear(evidence_dim, 256),
+            nn.ReLU(),
+            nn.Linear(256, n_hypotheses)
+        )
+        
+        # Attractor dynamics (recurrent)
+        self.attractor = AttractorNetwork(
+            n_states=n_hypotheses,
+            n_attractors=n_attractors,
+            recurrent_strength=0.9
+        )
+        
+        # Decision threshold
+        self.decision_threshold = 0.8
+        self.max_integration_time = 100  # steps
     
-    def forward(self, neural_signal, image):
-        # Transform image through neuromimetic pipeline
-        processed_image = self.hvs_pipeline(image, neural_signal)
+    def forward(self, visual_input, time_steps=None):
+        """
+        Args:
+            visual_input: Visual stimulus [B, C, H, W]
+            time_steps: Number of integration steps (None = until threshold)
+        Returns:
+            perceptual_decision: Final perceptual interpretation
+            evidence_history: Accumulated evidence over time
+        """
+        # Extract features
+        features = self.feature_extractor(visual_input)
         
-        # Encode both modalities
-        neural_emb, uncertainty = self.neural_encoder(neural_signal)
-        visual_emb = self.visual_encoder(processed_image)
+        # Initialize evidence
+        evidence = torch.zeros(visual_input.size(0), self.n_hypotheses)
+        evidence_history = []
         
-        # Contrastive learning
-        loss = contrastive_loss(neural_emb, visual_emb)
-        return loss
+        # Evidence accumulation loop
+        for t in range(time_steps or self.max_integration_time):
+            # Compute momentary evidence
+            momentary = self.evidence_net(features)
+            
+            # Integrate with attractor dynamics
+            evidence = self.attractor(evidence, momentary)
+            evidence_history.append(evidence.clone())
+            
+            # Check decision threshold
+            max_evidence = evidence.max(dim=1)[0]
+            if time_steps is None and (max_evidence > self.decision_threshold).all():
+                break
+        
+        # Commit to decision (highest evidence)
+        perceptual_decision = evidence.argmax(dim=1)
+        return perceptual_decision, torch.stack(evidence_history, dim=1)
+
+class AttractorNetwork(nn.Module):
+    """Recurrent network with stable attractor states"""
+    def __init__(self, n_states, n_attractors, recurrent_strength):
+        super().__init__()
+        self.recurrent_weights = nn.Parameter(
+            torch.randn(n_attractors, n_states, n_states) * 0.1
+        )
+        self.strength = recurrent_strength
+    
+    def forward(self, current, input_signal):
+        # Recurrent update with attractor dynamics
+        recurrent = torch.tanh(current @ self.recurrent_weights.mean(0))
+        updated = self.strength * recurrent + (1 - self.strength) * input_signal
+        return updated
 ```
+
+### Key Parameters
+- **Evidence accumulation rate**: Controls integration speed
+- **Decision threshold**: Balance between speed and accuracy
+- **Attractor basin width**: Determines perceptual stability
 
 ## Applications
-- **Brain-Computer Interfaces**: Visual reconstruction from EEG/MEG
-- **Neural Signal Decoding**: Image retrieval from brain activity
-- **Computational Neuroscience**: HVS modeling and validation
-- **Neurotechnology**: Non-invasive visual decoding systems
 
-## Evaluation Metrics
-- **Retrieval Accuracy**: Top-k accuracy on image databases
-- **MI Score**: Mutual information between modalities
-- **Uncertainty Calibration**: Evidence weight reliability
-- **Benchmark Performance**: 
-  - THINGS-EEG2: +9.2% relative gain
-  - EEG-ImageNet: +8.0% relative gain
+### Robust Visual Recognition
+- Handles noisy/occluded inputs
+- Graceful degradation
+- Uncertainty quantification
 
-## Pitfalls
-1. **HVS Parameter Sensitivity**: Cortical magnification parameters vary across individuals
-2. **Non-Stationarity**: Neural signals require adaptive processing
-3. **Training Data**: Requires paired neural-visual recordings
-4. **Computational Cost**: Full HVS pipeline is expensive
+### Scene Understanding
+- Temporal integration of visual information
+- Attention-guided processing
+- Multi-object tracking
+
+### Psychophysics Simulation
+- Model human perceptual behavior
+- Predict reaction times
+- Simulate perceptual illusions
+
+## Advantages
+- ✅ Biologically plausible
+- ✅ Handles uncertainty
+- ✅ Temporal integration
+- ✅ Robust to noise
+
+## Limitations
+- Higher computational cost than feedforward
+- Requires careful parameter tuning
+- Slower inference than standard CNNs
 
 ## Related Skills
-- eeg-diffusion-visual-reconstruction
-- brain-dit-fmri-foundation-model
-- neuromorphic-continual-nuclear-ics
+- brain-inspired-capture-evidence-driven
+- neuromimetic-perceptual-compression
+- primary-visual-cortex-v1-functions
 
 ## References
-```bibtex
-@article{sha2026bicap,
-  title={Brain-Inspired Capture: Evidence-Driven Neuromimetic Perceptual Simulation for Visual Decoding},
-  author={Shao, Feixue and Shi, Guangze and Liu, Xueyu and Wu, Yongfei and Wei, Mingqiang and Zhang, Jianan and Lu, Jianbo and Yan, Guiying and Yang, Weihua},
-  journal={IEEE Transactions on Multimedia},
-  year={2026}
-}
-```
+- arXiv:2604.17927

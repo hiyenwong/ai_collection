@@ -1,135 +1,161 @@
 ---
 name: neuro-symbolic-cognitive-architectures
 version: v1.0.0
-created: 2026-04-19
-category: ai_collection
-description: Neuro-symbolic cognitive architectures integrating neural representation with symbolic reasoning for human-like cognitive capabilities. Based on April 2026 arXiv research survey.
-tags: [neuro-symbolic, cognitive-architecture, reasoning, hybrid-ai, consciousness]
+last_updated: 2026-04-19
+description: Neural-Symbolic Cognitive Architectures combining neural networks with symbolic reasoning for interpretable, robust AI systems. Enables explicit knowledge representation, logical inference, and learning from both data and rules. Applicable to reasoning systems, knowledge-intensive tasks, interpretable AI. Trigger: neuro-symbolic AI, symbolic reasoning neural networks, interpretable reasoning, knowledge representation learning, neural-symbolic integration
 ---
 
-# Neuro-Symbolic Cognitive Architectures
+# Neural-Symbolic Cognitive Architectures for Reasoning and Learning
 
-Neuro-symbolic approaches combine neural network representation learning with symbolic reasoning systems to achieve robust, interpretable, and generalizable AI. Recent research (April 2026) demonstrates their potential for modeling human-like cognition.
+## Description
 
-## Activation Keywords
+A framework for building cognitive architectures that integrate neural networks with symbolic reasoning systems. These architectures combine the learning capabilities of neural networks with the explicit reasoning and interpretability of symbolic systems, enabling AI systems that can learn from both data and rules while providing transparent, explainable decisions.
 
-- neuro-symbolic
-- cognitive architecture
-- symbolic reasoning neural
-- neuro-symbolic AI
-- hybrid reasoning system
-- cognitive AI
-- symbolic neural integration
-- cognitive modeling
+Based on: "Neural-Symbolic Cognitive Architectures for Reasoning and Learning" (arXiv:2603.02762, March 2026)
 
-## Core Concepts
+## Core Architecture
 
-### 1. Dual-Process Integration
-- **System 1 (Neural)**: Fast, intuitive pattern recognition
-- **System 2 (Symbolic)**: Slow, deliberate logical reasoning
-- **Bridge**: Bidirectional translation between neural activations and symbolic representations
-
-### 2. Architecture Patterns
-
-| Pattern | Description | Use Case |
-|---------|-------------|----------|
-| Neural-to-Symbolic | Extract symbolic rules from neural activations | Rule extraction, explanation |
-| Symbolic-to-Neural | Compile symbolic knowledge into neural weights | Knowledge injection |
-| Co-Processing | Parallel neural and symbolic streams with alignment | Complex reasoning tasks |
-| Hierarchical | Neural perception → symbolic reasoning → neural action | Cognitive agents |
-
-### 3. Key Research Findings (April 2026)
-
-**Conscious AI via Neuro-Symbolic Integration**:
-- Global Workspace Theory (GWT) as architectural blueprint
-- Unconscious processes handled by neural networks (vision, speech)
-- Conscious access via symbolic workspace for broadcasting
-- Enables self-awareness and metacognition
-
-**Robust Neuro-Symbolic Reasoning**:
-- Frameworks integrating neural perception with formal logic
-- Guaranteed logical consistency while maintaining learning capability
-- Applications: theorem proving, program synthesis, scientific discovery
-
-### 4. Implementation Approaches
+### Three-Layer Design
 
 ```python
-# Pattern: Symbolic constraint layer on neural output
-class NeuroSymbolicLayer:
-    def __init__(self, neural_net, symbolic_constraints):
-        self.neural = neural_net
-        self.constraints = symbolic_constraints  # Logic rules
+class NeuroSymbolicArchitecture:
+    """
+    Three-layer neural-symbolic cognitive architecture:
+    1. Perception Layer: Neural networks for raw input processing
+    2. Symbolic Layer: Logic engine for reasoning with symbols
+    3. Integration Layer: Bidirectional mapping between neural and symbolic
+    """
     
-    def forward(self, x):
-        neural_output = self.neural(x)
-        # Project neural output onto constraint manifold
-        return self.constraints.project(neural_output)
+    def __init__(self):
+        # Neural perception
+        self.perception = NeuralEncoder()
+        
+        # Symbolic reasoning engine
+        self.reasoner = SymbolicReasoner()
+        
+        # Neural-symbolic interface
+        self.neural_to_symbolic = GroundingModule()
+        self.symbolic_to_neural = UnGroundingModule()
     
-    def train(self, x, y):
-        # Differentiable constraint satisfaction
-        output = self.forward(x)
-        loss = task_loss(output, y) + constraint_violation(output)
-        return loss
+    def forward(self, input_data):
+        # 1. Perception: raw input to features
+        features = self.perception(input_data)
+        
+        # 2. Grounding: features to symbols
+        symbols = self.neural_to_symbolic(features)
+        
+        # 3. Symbolic reasoning
+        inferred_symbols = self.reasoner(symbols)
+        
+        # 4. Un-grounding: symbols back to features
+        output = self.symbolic_to_neural(inferred_symbols)
+        
+        return output
 ```
 
-### 5. Cognitive Architecture Blueprint
+### Key Components
 
+1. **Grounding Module**: Maps neural activations to discrete symbols
+2. **Symbolic Reasoner**: Applies logical rules to inferred symbols
+3. **Un-Grounding Module**: Maps symbolic results back to neural representations
+
+## Reasoning Mechanisms
+
+### Rule-Based Inference
+
+```python
+class SymbolicReasoner:
+    """
+    Symbolic reasoning engine with differentiable logic.
+    Supports both hard logical constraints and soft probabilistic inference.
+    """
+    
+    def __init__(self, rules):
+        self.rules = rules  # List of logical rules
+        self.knowledge_base = KnowledgeGraph()
+    
+    def infer(self, symbols):
+        """Apply logical rules to derive new facts."""
+        # Populate knowledge base
+        self.knowledge_base.update(symbols)
+        
+        # Apply inference rules
+        derived_facts = []
+        for rule in self.rules:
+            if rule.matches(self.knowledge_base):
+                derived_facts.extend(rule.apply(self.knowledge_base))
+        
+        return derived_facts
 ```
-┌─────────────────────────────────────────────────┐
-│              Conscious Workspace                 │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐         │
-│  │Working  │  │Attention│  │Memory   │         │
-│  │Memory   │←→│Mechanism│←→│Buffer   │         │
-│  └─────────┘  └─────────┘  └─────────┘         │
-└──────────────────────┬──────────────────────────┘
-                       │
-         ┌─────────────┼─────────────┐
-         ▼             ▼             ▼
-   ┌──────────┐ ┌──────────┐ ┌──────────┐
-   │Perception│ │Reasoning │ │  Action   │
-   │ (Neural) │ │(Symbolic)│ │ (Neural)  │
-   └──────────┘ └──────────┘ └──────────┘
+
+### Differentiable Logic Programming
+
+```python
+class DifferentiableLogic:
+    """
+    Logic programming with differentiable semantics.
+    Enables end-to-end training through symbolic reasoning.
+    """
+    
+    @staticmethod
+    def AND(a, b):
+        return torch.min(a, b)
+    
+    @staticmethod
+    def OR(a, b):
+        return torch.max(a, b)
+    
+    @staticmethod
+    def NOT(a):
+        return 1.0 - a
+    
+    @staticmethod
+    def IMPLIES(a, b):
+        return torch.max(1.0 - a, b)
 ```
 
-## Related Skills
+## Training Strategies
 
-- `agent-memory-framework` - Memory systems integration
-- `context-selective-multimodal-memory` - Human-inspired memory
-- `triple-loop-memory-consolidation` - Memory consolidation
-- `brain-inspired-intelligence-paradigm` - Brain-inspired AI
+### Joint Neural-Symbolic Training
 
-## Pitfalls
+```python
+def train_neuro_symbolic(model, data, rules, epochs=100):
+    """
+    Train with both data-driven loss and rule-based constraints.
+    """
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        
+        # Data-driven loss
+        predictions = model(data.inputs)
+        data_loss = F.cross_entropy(predictions, data.labels)
+        
+        # Symbolic constraint loss
+        symbols = model.ground(predictions)
+        rule_satisfaction = model.reasoner.check_rules(symbols, rules)
+        constraint_loss = 1.0 - rule_satisfaction
+        
+        # Combined loss
+        total_loss = data_loss + lambda_constraint * constraint_loss
+        total_loss.backward()
+        optimizer.step()
+```
 
-1. **Symbol Grounding Problem**: Neural features may not map cleanly to symbolic concepts
-2. **Differentiability Gap**: Symbolic operations are often non-differentiable
-3. **Scalability**: Symbolic reasoning can be computationally expensive
-4. **Rule Extraction**: Extracting interpretable rules from large neural nets is ill-posed
+## Applications
 
-## Resources
+- **Scientific reasoning**: Combine empirical data with domain knowledge
+- **Medical diagnosis**: Integrate patient data with medical knowledge bases
+- **Legal reasoning**: Apply legal rules to case facts
+- **Education**: Teach AI systems with both examples and explanations
 
-- Global Workspace Theory (Baars, 1988)
-- Neural Symbolic AI survey (Garcez et al.)
-- arXiv April 2026 papers on neuro-symbolic cognition
+## Benefits
 
-
-## Tools Used
-
-- `read` - 读取技能文档
-- `write` - 创建输出
-- `exec` - 执行相关命令
-
-
-## Instructions for Agents
-
-1. 理解技能的核心方法论
-2. 根据用户问题提供针对性回答
-3. 遵循最佳实践
-
-
-## Examples
-
-### Example 1: 基本查询
-
-**User:** 请解释 Neuro Symbolic Cognitive Architectures
-
-**Agent:** Neuro Symbolic Cognitive Architectures 是关于...
+| Feature | Pure Neural | Pure Symbolic | Neuro-Symbolic |
+|---------|------------|---------------|----------------|
+| Learning from data | ✓ | ✗ | ✓ |
+| Explicit reasoning | ✗ | ✓ | ✓ |
+| Interpretability | Low | High | High |
+| Robustness to noise | High | Low | High |
+| Generalization | Statistical | Logical | Both |

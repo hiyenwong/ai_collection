@@ -113,38 +113,3 @@ class BurstyPersistentNetwork:
 2. **Cross-Frequency Coupling**: Check if bursty events couple with slower oscillations
 3. **Perturbation Response**: Apply controlled perturbations and measure recovery dynamics
 4. **Model Comparison**: Compare PBN predictions with alternative models (Hawkes processes, Markov models)
-
-## Activation Keywords
-
-- "neuro-bursty-persistent-networks"
-- "neuro bursty persistent networks"
-- "use neuro bursty persistent networks"
-- "neuro bursty persistent networks help"
-- "neuro bursty persistent networks tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
-## Instructions for Agents
-
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
-
-## Examples
-
-### Basic Neuro Bursty Persistent Networks usage
-```
-User: "Help me with neuro bursty persistent networks"
-→ Understand requirements → Execute actions → Provide results
-```
-
-### Advanced usage
-```
-User: "I need detailed neuro bursty persistent networks assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
-```

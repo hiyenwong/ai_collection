@@ -26,53 +26,6 @@ Research skill for exploring the intersection of quantum computing and neuroscie
 - `read`: Load paper abstracts, skill references
 - `write`: Create research summaries, notes
 
-## Instructions for Agents
-
-### Step 1: Search Papers
-Use web_search to find recent quantum neuroscience papers on arxiv.
-
-### Step 2: Analyze Architecture
-Identify whether paper focuses on QNN, quantum SNN, or quantum cognitive models.
-
-### Step 3: Extract Key Concepts
-Pull out core algorithms, architectures, and experimental results.
-
-### Step 4: Update Knowledge Graph
-Add papers and concepts to kg.db with proper relationships.
-
-### Step 5: Generate Summary
-Create research summary highlighting key findings and trends.
-
-## Examples
-
-### Example 1: Quantum SNN Research
-
-```
-User: "Find papers on quantum spiking neural networks"
-
-Agent:
-1. Search: "quantum spiking neural network" on arxiv
-2. Analyze: 3 recent papers found
-3. Extract: Quantum neurons with spiking dynamics
-4. Key finding: Quantum entanglement enhances synchronization
-5. Update kg.db with papers and patterns
-6. Report: Current state of quantum SNN research
-```
-
-### Example 2: Quantum Brain-Inspired Computing
-
-```
-User: "Research quantum brain-inspired architectures"
-
-Agent:
-1. Search for quantum neuromorphic computing papers
-2. Analyze: Quantum reservoir computing approaches
-3. Extract: Quantum oscillator-based associative memory
-4. Compare with classical neuromorphic systems
-5. Generate research summary
-6. Suggest: Potential skill creation opportunities
-```
-
 ## Core Concepts
 
 ### Quantum Neural Networks (QNN)
@@ -137,7 +90,7 @@ Key research directions:
 3. Quantum coherence for memory capacity
 4. Quantum entanglement for distributed computation
 
-## Key Papers
+## Key Papers (from kg.db)
 
 ### Top Quantum Neuroscience Papers
 
@@ -199,6 +152,14 @@ Quantum Synapse:
 - **spikingjelly-framework**: Spiking neural network implementation
 - **quantum-machine-learning**: Quantum ML general
 - **brain-network-analysis**: Brain connectivity analysis
+
+## Knowledge Graph Integration
+
+Use kg.db for:
+- Paper similarity search via vectors
+- PageRank for importance ranking
+- Louvain for community detection
+- BFS for paper relationships
 
 ## Limitations
 

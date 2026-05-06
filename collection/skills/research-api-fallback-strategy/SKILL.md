@@ -15,6 +15,7 @@ How to continue automated research workflows when external APIs (arXiv, Semantic
 - Scheduled cron jobs with failed API calls
 - Rate limiting blocks requests
 - **Model provider HTTP 429 "Insufficient balance"** — the cron job's LLM provider has no remaining credits, causing every request to fail. This is different from API rate limiting: the service works but the account is empty. Diagnose by reading cron output: `cat ~/.hermes/cron/output/<job_id>/<latest>.md | grep -i "balance\|recharge"`
+- **Hermes Agent security scanner blocks** — commands using `curl | python3` pipes or `http://` URLs get blocked with `[HIGH]` security warnings. The API may be fine but the agent environment prevents execution. Fix: use `https://` URLs, write Python to a file first (no curl|python3 pipes), and use `urllib.parse.quote()` for URL encoding.
 
 ## Fallback Strategy
 
@@ -211,6 +212,7 @@ When `curl` to `export.arxiv.org` times out (direct AND with `--proxy`), `web_se
 - `web_search("spiking neural network 2026 new research paper")` → returns Nature, IEEE, arXiv, Frontiers results
 - `web_search("brain inspired computing neuromorphic 2026 latest")` → returns industry reports + academic papers
 - Combine with `session_search` to recover past cron session paper findings
+- `web_search("arxiv quantum computing machine learning 2026")` → returns arXiv abstract pages with IDs extractable from URLs
 
 ### What does NOT work
 - `web_extract()` **blocks arxiv.org and nature.com URLs** — returns "Blocked: URL targets a private or internal network address"
@@ -229,6 +231,19 @@ When presenting results, combine:
 2. `session_search` cron history (past automated research)
 3. Existing skill knowledge base (if relevant skills exist)
 
+### Proven Query Patterns for arxiv Fallback
+
+When the arxiv API (`export.arxiv.org/api/query`) is completely unreachable (confirmed: timeouts on both direct and `--proxy` connections, even at 20s timeout):
+
+| Pattern | Example | Works? |
+|---------|---------|--------|
+| `site:arxiv.org <topic> <year>` | `site:arxiv.org quantum neural network 2025 2026` | ✅ Returns arxiv abstract pages |
+| `site:arxiv.org/abs <topic>` | `site:arxiv.org/abs spiking transformer` | ✅ Direct abstract links |
+| `site:arxiv.org/html <topic>` | `site:arxiv.org/html quantum deep learning` | ✅ Returns HTML-rendered papers |
+| `site:arxiv.org/pdf <topic>` | `site:arxiv.org/pdf brain network` | ⚠️ Often returns PDF download links only |
+
+**Key finding**: `web_search` with `site:arxiv.org` reliably returns paper titles, abstracts, and URLs even when the arxiv API is completely down. Extract arxiv IDs from returned URLs (e.g., `2511.01253`) and use the `kg_tool import-paper` command directly.
+
 ## Activation Keywords
 
 - api fallback
@@ -241,10 +256,22 @@ When presenting results, combine:
 
 ## Related Skills
 
-- `arxiv-search` - Primary paper search
+- `arxiv-search` - Primary paper search (note: arXiv API may return HTTP 429, use web_search fallback)
 - `skill-creator` - Skill creation workflow
 - `skill-extractor` - Pattern extraction
 - `autoresearch` - Autonomous research loops
+
+## Knowledge Graph Integration (kg_tool)
+
+When research succeeds, import papers into the knowledge graph for later analysis.
+See [references/kg-tool-usage.md](references/kg-tool-usage.md) for the complete CLI reference.
+
+### Quick workflow after successful search:
+1. `kg_tool import-paper --title "..." --url "..." --abstract "..."`
+2. `kg_tool generate-embeddings` (only needed if new entities lack vectors)
+3. `kg_tool pagerank --limit 10` — find most important papers
+4. `kg_tool search --query "topic" --limit 10` — vector similarity search
+5. `kg_tool communities --limit 10` — find research clusters
 
 ## Tools Used
 

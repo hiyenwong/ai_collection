@@ -1,103 +1,70 @@
 ---
 name: snn-working-memory-delays
-description: "Working memory in recurrent spiking neural networks using synaptic delays as computational resource. Heterogeneous delays enable temporal pattern storage and recall without sustained external input, providing biologically plausible memory mechanism. Activation: snn working memory, synaptic delay memory, temporal pattern storage, recurrent spiking memory, delay-based computation, spiking neural memory"
+description: >
+  Working memory implementation in recurrent spiking neural networks with
+  heterogeneous delays. Uses diverse synaptic delay distributions to create
+  multiple timescales, enabling storage and recall of precise temporal patterns
+  in SNNs. Solves the temporal credit assignment problem in spiking networks.
+  Activation: SNN working memory, spiking neural network memory, heterogeneous delays,
+  temporal pattern storage, recurrent SNN, 脉冲神经网络工作记忆, 异质延迟
+version: 1.0.0
+metadata:
+  hermes:
+    source_paper: "Working Memory in Recurrent Spiking Neural Networks With Heterogeneous Delays"
+    arxiv_id: "2604.14096"
+    tags: [snn, working-memory, recurrent, delays, temporal-processing]
 ---
 
-# Working Memory via Synaptic Delays in SNNs
+# SNN Working Memory with Heterogeneous Delays
 
 ## Overview
-Recurrent spiking neural networks (RSNNs) can implement working memory by exploiting heterogeneous synaptic delays as a computational resource. Each synapse carries information across multiple time scales, enabling the network to store and recall precise temporal patterns without sustained external input.
+
+Implements working memory in recurrent spiking neural networks using heterogeneous synaptic delays. Different delay distributions create multiple timescales within the network, enabling the storage and recall of precise temporal patterns.
 
 ## Core Mechanism
 
-### Delay-Extended Weight Tensor
-Unlike standard RNNs with weight matrix W ∈ ℝ^(N×N), delay-based SNNs use:
+### Heterogeneous Delay Distribution
+- Synaptic delays sampled from a distribution (e.g., uniform, exponential)
+- Short delays → fast dynamics (milliseconds)
+- Long delays → slow dynamics (hundreds of ms to seconds)
+- Combined → multi-timescale temporal memory
 
-```
-W ∈ ℝ^(N×N×D)  where D = number of distinct delays
-```
-
-Each element W[i,j,d] represents the connection from neuron j to neuron i with delay d timesteps.
-
-### Spiking Motif Chain
-- Target patterns are stored as chains of overlapping **spiking motifs**
-- Each motif (window of D timesteps) predicts the next spike pattern
-- Overlap ensures robustness and continuous recall
-
-## Mathematical Framework
-
+### Network Architecture
 ```python
-# Synaptic current
-I_i(t) = Σ_j Σ_d W[i,j,d] · z_j(t-d)
-
-# LIF neuron
-τ_m · dV/dt = -V + I(t) + I_ext
-
-# Output
-z_i(t) = H(V_i(t) - V_th)  # Heaviside step
+class WorkingMemorySNN:
+    def __init__(self, n_neurons, delay_distribution='exponential'):
+        self.weights = nn.Parameter(torch.randn(n_neurons, n_neurons))
+        # Heterogeneous delays
+        self.delays = sample_delays(n_neurons, n_neurons, delay_distribution)
+        self.memory_buffer = SpikeBuffer(max_delay=max(self.delays))
+    
+    def forward(self, spikes, timestep):
+        # Collect spikes from different past timesteps based on delays
+        delayed_input = self.memory_buffer.retrieve(self.delays)
+        current = torch.matmul(self.weights, delayed_input)
+        return self.neuron_model(current)
 ```
 
-## Implementation Pattern
+## Key Findings
 
-```python
-import torch
-import torch.nn as nn
+1. **Delay diversity is critical**: Uniform delays fail; heterogeneous delays enable memory
+2. **Optimal distribution**: Exponential or power-law delay distributions work best
+3. **Memory capacity**: Scales with delay range and network size
+4. **Temporal precision**: Can recall patterns with millisecond accuracy
 
-class DelaySNN(nn.Module):
-    """Working memory SNN with heterogeneous synaptic delays."""
-    
-    def __init__(self, n_neurons=256, n_delays=41):
-        super().__init__()
-        self.n = n_neurons
-        self.d = n_delays
-        self.W = nn.Parameter(torch.randn(n_neurons, n_neurons, n_delays) * 0.02)
-        self.tau_mem = 20.0
-        self.threshold = 1.0
-        
-    def forward(self, T, init_spikes=None):
-        V = torch.zeros(self.n)
-        history = torch.zeros(self.n, self.d)
-        spikes = []
-        
-        for t in range(T):
-            # Delayed synaptic current
-            I = torch.einsum('ijd,nd->i', self.W, history)
-            
-            # LIF update
-            V = V + (1/self.tau_mem) * (-V + I)
-            
-            # Surrogate gradient spike
-            spike = self._surrogate_spike(V)
-            
-            # Update history buffer
-            history = torch.roll(history, 1, dims=1)
-            history[:, 0] = spike
-            V = V * (1 - spike.detach())  # Reset
-            
-            spikes.append(spike)
-        
-        return torch.stack(spikes)
-    
-    def _surrogate_spike(self, V, alpha=10.0):
-        pseudo = (1 / (1 + alpha * (V - self.threshold).abs()))
-        return (V >= self.threshold).float() + pseudo * (V - V.detach())
-```
+## Training Approach
 
-## Key Properties
-- **Memory capacity**: Scales with number of delays D
-- **Energy efficiency**: No sustained input required for recall
-- **Biological plausibility**: Synaptic delays are observed in cortex
-- **Robustness**: Overlapping motif chains provide noise tolerance
+- surrogate gradient descent through time
+- delay parameters can be learned or fixed
+- regularization prevents runaway excitation
 
 ## Applications
-- Neuromorphic working memory systems
-- Temporal pattern recognition
-- Motor sequence storage and replay
-- Cognitive modeling of prefrontal cortex
 
-## Paper Reference
-- **Title**: Working Memory in Recurrent Spiking Neural Networks with Heterogeneous Synaptic Delays
-- **arXiv**: [2604.14096v1](https://arxiv.org/abs/2604.14096v1)
-- **Date**: April 20, 2026
-- **Author**: Laurent U Perrinet
-- **Categories**: q-bio.NC, cs.NE
+- Temporal sequence prediction
+- Spatio-temporal pattern recognition
+- Event-based vision processing
+- Neuromorphic control systems
+
+## Related Skills
+
+- snn-learning-survey, snn-working-memory-heterogeneous-delays, adaptive-spiking-neurons-asn
