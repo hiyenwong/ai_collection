@@ -35,7 +35,7 @@ class QuantumCounter:
         - O = oracle
         """
         # Oracle application
-        marked_state = self.oracle(state)
+        self.oracle(state)
         
         # Inversion about average
         avg = np.mean(state)

@@ -7,7 +7,7 @@ Usage:
 """
 
 import numpy as np
-from typing import Callable, Tuple, Optional, List
+from typing import Callable, Tuple, List
 
 
 class BarrenPlateauDetector:

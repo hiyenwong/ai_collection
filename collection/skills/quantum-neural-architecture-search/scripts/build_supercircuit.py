@@ -8,7 +8,7 @@ candidate architectures, enabling efficient evaluation without re-training.
 
 import pennylane as qml
 import numpy as np
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 class SuperCircuit:
     """

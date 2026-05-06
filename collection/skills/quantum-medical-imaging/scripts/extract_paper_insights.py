@@ -104,10 +104,10 @@ def main():
         text = paper_path.read_text()
     else:
         # For PDF, would need pdfplumber - just note this
-        print(f"Note: PDF extraction requires pdfplumber. Reading as text...")
+        print("Note: PDF extraction requires pdfplumber. Reading as text...")
         try:
             text = paper_path.read_text()
-        except:
+        except Exception:
             text = ""
     
     insights = extract_paper_insights(text)

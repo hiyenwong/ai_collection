@@ -12,7 +12,7 @@ import numpy as np
 import json
 import sys
 import re
-from typing import List, Dict, Tuple
+from typing import List, Dict
 
 def pauli_matrices():
     """Return Pauli matrices."""
@@ -70,10 +70,6 @@ def estimate_lie_rank(generators: List[np.ndarray], max_iter: int = 20) -> int:
     
     if not generators:
         return 0
-    
-    # Start with generators
-    current_set = list(generators)
-    seen_shapes = set()
     
     # Simplified rank estimation: just count generators for now
     # Real implementation would compute commutators iteratively

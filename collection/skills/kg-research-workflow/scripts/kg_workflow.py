@@ -20,7 +20,7 @@ def run_workflow():
     
     # Step 1: Import papers
     print("\n[Step 1] Importing papers...")
-    imported = import_papers()
+    import_papers()
     
     # Step 2: Generate embeddings
     print("\n[Step 2] Generating embeddings...")

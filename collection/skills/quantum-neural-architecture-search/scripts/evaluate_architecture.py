@@ -9,9 +9,7 @@ Three-objective evaluation:
 """
 
 import numpy as np
-import pennylane as qml
-from typing import Dict, List
-from sklearn.model_selection import cross_val_score
+from typing import Dict, List, Tuple
 from sklearn.metrics import accuracy_score
 
 class ArchitectureEvaluator:
@@ -69,7 +67,7 @@ class ArchitectureEvaluator:
         weights = self.supercircuit.sample_weights(architecture)
         
         # Build circuit
-        circuit = self.supercircuit.build_circuit(architecture, features)
+        self.supercircuit.build_circuit(architecture, features)
         
         # Forward pass (batch processing)
         predictions = []

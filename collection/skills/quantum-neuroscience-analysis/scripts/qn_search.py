@@ -5,8 +5,6 @@ Quantum Neuroscience Knowledge Graph Search
 """
 
 import subprocess
-import sys
-import json
 from pathlib import Path
 
 KG_TOOL = Path.home() / ".openclaw/workspace/scripts/kg_tool/target/release/kg_tool"
@@ -88,7 +86,7 @@ def generate_report(search_results: dict, top_entities: list, communities: dict)
     
     # 概述
     total_entities = sum(len(v) for v in search_results.values())
-    report += f"## 概述\n"
+    report += "## 概述\n"
     report += f"- 搜索关键词数: {len(QUANTUM_NEURO_KEYWORDS)}\n"
     report += f"- 相关实体数: {total_entities}\n"
     report += f"- 社区数: {len(set(communities.values()))}\n\n"

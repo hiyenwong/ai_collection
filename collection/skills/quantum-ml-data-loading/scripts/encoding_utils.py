@@ -7,7 +7,6 @@ Compatible with Qiskit and PennyLane.
 """
 
 import numpy as np
-from typing import Optional, Union
 
 try:
     from qiskit import QuantumCircuit

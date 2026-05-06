@@ -7,9 +7,8 @@ quantum circuit architectures balancing accuracy, efficiency, and
 cutting overhead.
 """
 
-import numpy as np
 from typing import Dict, List, Tuple, Callable
-from deap import base, creator, tools, algorithms
+from deap import base, creator, tools
 import random
 
 class QNASOptimizer:

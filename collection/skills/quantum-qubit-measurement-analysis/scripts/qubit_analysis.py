@@ -6,7 +6,7 @@ in fluxonium qubit systems.
 """
 
 import numpy as np
-from typing import Dict, Tuple, Optional
+from typing import Dict, Tuple
 
 
 class FluxoniumAnalyzer:

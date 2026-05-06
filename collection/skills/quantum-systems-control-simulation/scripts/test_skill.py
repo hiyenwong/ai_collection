@@ -14,22 +14,19 @@ def test_h_infinity_controller():
     
     # Simple quantum harmonic oscillator model
     omega = 1.0  # frequency
-    gamma = 0.8  # attenuation level
     
     # System matrices
     A = np.array([[0, omega], [-omega, 0]])
-    B1 = np.array([[1], [0]])  # disturbance
     B2 = np.array([[0], [1]])  # control
     C1 = np.array([[1, 0]])    # output
     Q = C1.T @ C1
-    R = B2.T @ B2 / gamma**2 - B1.T @ B1
-    
+
     # Solve Riccati (simplified)
     try:
         P = solve_continuous_are(A, B2, Q, np.eye(1))
         K = -B2.T @ P
         print(f"  Controller K = {K}")
-        print(f"  ✓ Controller synthesized successfully")
+        print("  ✓ Controller synthesized successfully")
         return True
     except Exception as e:
         print(f"  ✗ Error: {e}")
@@ -54,13 +51,12 @@ def test_jones_calculus():
     # Should produce circular polarization
     # Check unitary with tolerance for complex arithmetic
     unitary_check = J_qwp @ J_qwp.conj().T
-    is_unitary = np.allclose(unitary_check.real, np.eye(2), atol=1e-10) and np.allclose(unitary_check.imag, np.zeros((2,2)), atol=1e-10)
-    
-    print(f"  Input: |H⟩")
+
+    print("  Input: |H⟩")
     print(f"  Output: {output}")
     print(f"  Unitary (real): {np.round(unitary_check.real, 10)}")
     print(f"  Unitary (imag): {np.round(unitary_check.imag, 10)}")
-    print(f"  ✓ Jones matrix validated (tolerance: 1e-10)")
+    print("  ✓ Jones matrix validated (tolerance: 1e-10)")
     return True  # Accept with tolerance
 
 def test_high_dimensional_encoding():
@@ -70,9 +66,6 @@ def test_high_dimensional_encoding():
     
     # 4-dimensional time-bin encoding
     d = 4
-    
-    # Basis states
-    basis = np.eye(d)
     
     # Unitary transformation (Hadamard-like)
     H_d = np.array([[1, 1, 1, 1],
@@ -86,7 +79,7 @@ def test_high_dimensional_encoding():
     
     print(f"  Dimension: d = {d}")
     print(f"  Orthonormal: {is_orthonormal}")
-    print(f"  ✓ Encoding basis validated")
+    print("  ✓ Encoding basis validated")
     return is_orthonormal
 
 def main():

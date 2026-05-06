@@ -56,7 +56,7 @@ def test_references_exist():
     ref_path = os.path.join(os.path.dirname(__file__), '..', 'references', 'sources.md')
     
     if not os.path.exists(ref_path):
-        print(f"FAIL: references/sources.md not found")
+        print("FAIL: references/sources.md not found")
         return False
     
     with open(ref_path) as f:
