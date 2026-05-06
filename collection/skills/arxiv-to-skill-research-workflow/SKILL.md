@@ -71,9 +71,7 @@ detailed_snapshot = browser_snapshot(full=True)
 
 **CRITICAL (2026-05-05)**: arXiv search forms are BROKEN — `/search/?query=...` returns HTTP 400 Bad Request and `/search/advanced` returns "Whoops! Something went wrong" even with valid parameters. Do NOT waste time on arXiv search pages. **Only category listing pages work reliably**: `/list/{category}/recent` (e.g., `/list/q-bio.NC/recent`, `/list/cs.NE/recent`).
 
-**CRITICAL (2026-05-02)**: JS extraction on category listing pages (`/list/{category}/recent`) is **UNRELIABLE** — the dt/dd DOM structure produces garbled output due to page structure differences. For category pages, use `browser_snapshot(full=True)` and parse the text output directly — it contains all paper titles, IDs, authors, and subjects in structured text format.
-
-**CRITICAL (2026-05-02)**: JS extraction on category listing pages (`/list/{category}/recent`) is **UNRELIABLE** — the dt/dd DOM structure produces garbled output due to page structure differences. For category pages, use `browser_snapshot(full=True)` and parse the text output directly — it contains all paper titles, IDs, authors, and subjects in structured text format.
+**CRITICAL (2026-05-07)**: JS extraction on category listing pages (`/list/{category}/recent`) with dt/dd selectors returns **empty strings** for titles and authors — the `dd.childNodes[0].textContent` is empty in the DOM. Do NOT use JS extraction on category pages at all. Use `browser_snapshot(full=True)` which correctly captures all paper titles, IDs, authors, and subjects as structured text. JS extraction is ONLY reliable on `/search/?query=...` pages (li.arxiv-result elements), but even that can be intermittent — always verify results.
 
 **CRITICAL (2026-05-06)**: JS extraction on search result pages (`/search/?query=...`) is **INTERMITTENTLY UNRELIABLE**. The `li.arxiv-result` DOM sometimes produces incorrect titles or empty fields. When it works, the improved recipe below extracts IDs, titles, authors, AND abstracts — but fallback to `browser_snapshot(full=True)` if results look garbled. Category pages (`/list/{category}/recent`) remain the most reliable method.
 
@@ -84,7 +82,7 @@ detailed_snapshot = browser_snapshot(full=True)
   const papers = [];
   results.forEach(li => {
     const idEl = li.querySelector('a[href*="abs/"]');
-    const id = idEl ? idEl.textContent.trim().replace('arXiv:','').trim() : '';
+    const id = idEl ? idEl.href.split('/').pop() : '';
     const allP = li.querySelectorAll('p');
     let title = '', authors = '', abstract = '';
     allP.forEach(p => {
@@ -104,7 +102,7 @@ detailed_snapshot = browser_snapshot(full=True)
 
 **FALLBACK METHOD: Python urllib** — Only if browser navigation fails (rare):
 
-**CRITICAL: Use `execute_code` with Python `urllib.request` — `web_extract` returns EMPTY content for arXiv `/abs/` URLs and "Blocked" for `/pdf/` URLs. `terminal` (curl) also unreliable.**
+**CRITICAL: Use `execute_code` with Python `urllib.request` — `web_extract` was historically unreliable for arXiv `/abs/` URLs but **now works reliably** (verified 2026-05-06). Use `web_extract` first; fall back to `urllib` only if it returns empty/blocked content.**
 
 ```python
 from hermes_tools import terminal
@@ -283,7 +281,7 @@ Before creating, check if a skill already exists:
 ### Step 5: Create Hermes Skills
 
 **PREFERRED: `skill_manage(action="create")`** — auto-creates directories, validates structure.
-**ALTERNATIVE: `write_file`** directly at `~/.hermes/skills/<skill-name>/SKILL.md` — reliable, direct.
+**ALTERNATIVE: `write_file`** directly at `/Users/hiyenwong/.openclaw/workspace/ai_collection/<skill-name>/SKILL.md` — reliable, direct. The ai_collection is at `.openclaw/workspace/ai_collection/`, NOT `~/.hermes/skills/ai_collection/`.
 **ALTERNATIVE: `delegate_task`** — works for parallel skill creation when multiple skills needed simultaneously (confirmed working 2026-05-05). Provide the target skill path and full SKILL.md content in the task context.
 
 For each new skill, create a SKILL.md with this structure:
@@ -365,7 +363,17 @@ Step-by-step technical description.
 
 ### Step 6: Update Obsidian Wiki
 
-**Multi-domain organization** (2026-05-04): When researching non-neuroscience domains (e.g., quantum computing), create separate folder structures rather than mixing into ai_collection:
+**Vault paths to check** (in priority order):
+1. `/Users/hiyenwong/obsidian_notes/neuroscience/` — neuroscience weekly reports (Chinese format)
+2. `OBSIDIAN_VAULT_PATH` env var
+3. `/Users/hiyenwong/Documents/Obsidian Vault` — default fallback
+4. `/Users/hiyenwong/Workspace/obsidian/` — alternative workspace
+
+**Weekly Chinese Report Format** (established pattern at `/Users/hiyenwong/obsidian_notes/neuroscience/神经科学研究周报-YYYY-MM-DD.md`):
+- YAML frontmatter: `date`, `type: weekly-report`, `area: neuroscience`, `source: arxiv`
+- Sections: 概览 (overview with stats), 精选论文 (detailed paper analysis, 6-7 papers), 其他值得关注论文 (3-4 shorter summaries), 本周技能更新汇总 (table), 趋势观察 (6 numbered trends)
+- Each paper entry: arXiv ID, date, category, authors, 研究问题, 核心贡献, 关键发现/方法学, 对应技能
+- Language: Chinese for report content, English for technical terms, code, and equations
 - `Quantum Computing Research/Quantum Computing Index.md` — domain index
 - `Skills/Quantum/<skill-name>.md` — domain-specific skill notes
 - `Research Logs/Quantum Computing Research - YYYY-MM-DD.md` — daily logs
@@ -442,6 +450,10 @@ See full guide in: `~/.hermes/skills/ai_collection/<skill-name>/SKILL.md`
 
 **CRITICAL**: Do NOT insert daily rows into the Statistics table (2-column) — it will corrupt the MOC layout. Always target the Sessions table (4-column with `| Date | Papers | New Skills | Key Themes |` header).
 
+## Support Files
+
+- **references/arxiv-browser-parsing-patterns.md** — Confirmed parsing patterns for arXiv browser_snapshot output on category and search pages (updated 2026-05-06)
+
 ## Key Learnings (from production runs)
 
 ### ai_collection CI Validation (2026-05-04)
@@ -468,10 +480,11 @@ The CI pipeline (`validate.yml`) enforces strict validation on new skills. See `
 
 ### Common Pitfalls
 1. **delegate_task for skill creation**: Does NOT work reliably — use `skill_manage(action="create")` (preferred, auto-creates directories) or `write_file` directly
-2. **arXiv rate limits**: Worsened significantly (2026-04 observed). Use 5s delays between queries, reduce `max_results` to 15, add `User-Agent` header, 60s timeout, SSL verification disabled. Some query patterns permanently fail (429) — implement 3 retries with 10s exponential backoff. If first query fails, remaining queries may still succeed. **2026-05 update**: All 5 queries in a single batch can hit 429 simultaneously. Use `wait = 4 * (attempt + 1)` (4s, 8s, 12s) between retries. When ALL queries are rate-limited, wait 60+ seconds before retrying the entire batch.
+2. **arXiv rate limits**: Worsened significantly (2026-04+). **Minimum 15-second delay** between sequential API queries is required — 5-second delays produce consistent 429 errors. For cron/bulk scans: use `time.sleep(15)` between queries. If using Python `httpx` in `execute_code`, add 15s delay AND `timeout=30`. If rate-limited, switch to browser-based scraping (see Step 1 browser method). Some query patterns may permanently fail during high-traffic periods — implement 3 retries with 30s backoff, then fall back to broader queries or browser navigation.. **2026-05 update**: All 5 queries in a single batch can hit 429 simultaneously. Use `wait = 4 * (attempt + 1)` (4s, 8s, 12s) between retries. When ALL queries are rate-limited, wait 60+ seconds before retrying the entire batch.
 3. **web_extract "Blocked" error**: `web_extract` consistently returns "Blocked: URL targets a private or internal network" for arXiv URLs since 2026-05. This is a new failure mode beyond rate limits. When this happens, use `browser_navigate` + `browser_snapshot` + `browser_console` (JS extraction) instead — this is the most reliable method for arXiv content
 4. **`httpx` in `execute_code` returns empty responses INTERMITTENTLY**: `httpx.get()` against arXiv API from within `execute_code` sandbox sometimes returns 0-byte responses (no error, just empty) — but it ALSO works reliably on many sessions (2026-05-05: full data for 11 papers). Always try `httpx` first (fastest when it works), but have `web_search` → `terminal` + `curl` + HTTPS fallback ready. If `httpx` response length < 100, immediately switch to fallback.
 4. **curl requires HTTPS for arXiv API**: Terminal `curl` to `http://export.arxiv.org/api/query` triggers security scan approval prompt. Always use `https://export.arxiv.org/api/query` to avoid interactive approval blocking cron jobs.
+3. **arXiv search URL 400 errors**: The `/search/?query=...` endpoint frequently returns "400 Bad Request" for complex multi-term queries. Category listing pages (`/list/{category}/recent`) are **always more reliable** — use them as the primary discovery method. Only use search pages for targeted keyword exploration when category pages don't surface relevant papers.
 3. **Deduplication**: Papers appear in multiple keyword searches; dedupe by arXiv ID
 4. **execute_code state persistence**: State does NOT persist between `execute_code` calls. Save intermediate data to `/tmp/` files (e.g., `papers_data.json`, `paper_details.json`) and reload in subsequent calls. Without this, accumulated search results will be lost between steps.
 4. **Vault path**: Always check env var first; don't hardcode
@@ -486,7 +499,7 @@ The CI pipeline (`validate.yml`) enforces strict validation on new skills. See `
 13. **Empty search results**: If queries return 0 papers in target date range, expand search to all recent papers regardless of date and filter post-hoc.
 - **Standalone neuroscience skills fully synced** (2026-05-05): All neuroscience standalone skills have been synced to ai_collection (0 remaining). Earlier notes about "~130 pending neuroscience skills" are obsolete. The 142 remaining standalone skills are non-neuroscience (devops, quantum, control systems, web dev, etc.).
 - **Leverage cached search results**: Previous cron runs may have saved papers to `/tmp/` files (e.g., `/tmp/arxiv_papers.json`, `/tmp/neuro_papers_v3.json`). If arXiv API is rate-limited or failing, scan `/tmp/*.json` for existing paper data before attempting new queries — this can save significant time and avoid API blocks.
-15. **Coverage detection via title normalization**: When checking if papers are already covered, normalize both paper titles AND skill names by removing punctuation, lowercasing, and splitting into word sets. Check for intersection of 2+ common words between title and skill name for robust matching across naming conventions. **CAUTION at 700+ skills**: Word-overlap matching produces false positives (e.g., ShiftLIF paper matched to `neuron-photonic-spiking-laser` because both share 'spiking' + 'neural' keywords). Always do a second pass with exact keyword matching (e.g., `shiftlif` in skill name → `shiftlif-power-of-two-quantization`). Priority order: (1) exact arXiv ID match in existing skill, (2) exact keyword match (unique term from title present in skill name), (3) word-overlap matching.
+15. **Coverage detection via title normalization**: When checking if papers are already covered, normalize both paper titles AND skill names by removing punctuation, lowercasing, and splitting into word sets. Check for intersection of 2+ common words between title and skill name for robust matching across naming conventions. **CRITICAL FIX (2026-05-06)**: At 700+ skills, word-overlap alone returns FALSE 0% coverage because paper titles use natural language while skill names use abbreviated hyphenated identifiers. MUST implement a second tier: regex keyword mapping (paper title patterns → skill names) to catch these mismatches. Without Tier 2, coverage check reports 0% even when 100% of papers are covered. **CAUTION at 700+ skills**: Word-overlap matching produces false positives (e.g., ShiftLIF paper matched to `neuron-photonic-spiking-laser` because both share 'spiking' + 'neural' keywords). Always do a second pass with exact keyword matching (e.g., `shiftlif` in skill name → `shiftlif-power-of-two-quantization`). Priority order: (1) exact arXiv ID match in existing skill, (2) exact keyword match (unique term from title present in skill name), (3) word-overlap matching.
 16. **Paper scoring for selection**: Implement relevance scoring based on keyword frequency weighted by importance. Example scoring for neuroscience:
     ```python
     keywords = {'spiking neural network': 5, 'brain network': 4, 'neural dynamics': 4}
@@ -514,7 +527,10 @@ Skills created in one don't appear in the other. `skill_manage(action='create')`
 19. **Same-day category scan coverage**: Scanning q-bio.NC or cs.NE category pages on the day of submission (or within 1-2 days) produces much lower coverage rates (~40-50%) compared to delayed scans (~80-100%). This is expected — same-day scans catch papers before any previous session has filtered them. A low coverage rate on a same-day scan does NOT indicate collection regression; it indicates the scan is catching genuinely fresh papers.
 20. **Large file timeouts** (2026-05-05): `execute_code` times out at 300s on large Obsidian files (>50KB, 800+ lines). `read_file` with `limit`/`offset` pagination is slow on large files. **Solution**: Use `patch` for targeted updates — read only the relevant section via `read_file` with small `limit` (10-30 lines), then patch. For statistics updates, read just the frontmatter and first 20 lines. Never load the entire MOC or INDEX.md in a single `execute_code` call.
 21. **Browser timeout on arXiv search URL** (2026-05-05): `browser_navigate` to `https://arxiv.org/search/?query=...` can timeout at 60s. **Solution**: Prefer category listing pages (`/list/{category}/recent`) which are faster and more reliable. If search page is needed, reduce `size=25` and retry once on timeout.
-22. **Two-tier coverage matching required** (2026-05-05): Word-overlap matching alone misses 15-25% of existing skills due to acronym mismatches (e.g., "UniBCI" vs "unibci-") and short titles (e.g., "Attractor FCM" vs "attractor-fcm-gradient-descent"). Use direct substring/acronym matching as Tier 1, word overlap as Tier 2. See updated Coverage Analysis section.
+18. **Skip evaluation criteria**: At high coverage rates (85%+), not every uncovered paper warrants a skill. Skip papers that are: (a) too narrow/specific (e.g., single-dataset validation), (b) conceptually overlapping with existing skills (e.g., new Hamiltonian method when energy-based/physics-guided skills exist), (c) review/perspective papers with no extractable methodology. Document skip reasons in the daily research note.
+19. **cs.NE domain drift** (2026-05 observed): cs.NE category increasingly publishes LLM-related papers (evolutionary optimization, jailbreak generation, explainability) rather than neuroscience-focused work. When scanning cs.NE, filter aggressively — only papers with SNN, neural dynamics, brain-inspired, or neuroscience keywords warrant analysis. Expect 30-50% of cs.NE papers to be non-neuroscience at scale. See `references/cs-ne-domain-drift.md` for detailed analysis and filtering code.
+19. **Standalone sync via SKILL.md keyword scanning**: At 700+ skills, name-based matching alone misses standalone skills. Scan `~/.hermes/skills/<skill>/SKILL.md` content for neuroscience-related keywords (neural, brain, spiking, eeg, fmri, synaptic, neuromorphic, oscillation, attractor, hebbian, plasticity, astrocyte, memristive) to find skills that should be synced to ai_collection. Name matching found 0 candidates; keyword scanning found 2 (equation-free-digital-twins, quantum-medical-ai).
+20. **Coverage sweet spot at 700-800 skills**: At this scale, coverage typically runs 80-95%. New skills still emerge from interdisciplinary boundaries (math.DS → neuroscience, cs.NE → computer vision, quantum → medical). The standalone sync pipeline (checking for neuroscience keywords in standalone SKILL.md files) becomes as valuable as new paper monitoring.
 
 ### Cron Execution Output Format
 
@@ -560,10 +576,12 @@ When running as a scheduled cron job, format the final report for automatic deli
 ### Typical Output
 - **Early phase** (<30 skills): 7-10 new skills per session from ~35 candidate papers
 - **Mature phase** (90-160 skills): Expect 0-3 new skills per session; high coverage rate (90%+) is normal — selective approach justified
-- **Highly mature phase** (160+ skills): 98%+ coverage expected; focus on interdisciplinary boundaries and emerging niches
+- **Ultra-mature phase** (700+ skills, 2026-05-06): Coverage fluctuates 60-100% session-to-session despite high baseline. Core q-bio.NC and cs.NE neuroscience papers are 100% covered. New skills emerge exclusively from cross-domain papers (physics.bio-ph, math.DS) at interdisciplinary boundaries. Workflow is a monitoring/verification system, not a skill generator. Expect 0-1 new skills per session.
+- **Ultra-mature phase** (700+ skills): 100% coverage of core neuroscience papers from q-bio.NC and cs.NE is the baseline expectation. New skills emerge only from truly novel paradigm-shifting papers or cross-domain intersections (e.g., quantum-brain, novel Neuro-AI frameworks). Standalone sync (catching up remaining skills) and skip evaluation become the primary value extraction activities. The workflow is now a monitoring/verification system rather than a skill-generation pipeline.
 - **Extreme maturity phase** (700+ skills): 80-90% coverage typical when scanning multiple categories, because q-bio.NC and cs.NE include non-neuroscience papers (HCI, optimization, multi-agent) that correctly get skipped. All neuroscience-relevant papers ARE covered. Sessions confirm comprehensive coverage and document trends rather than finding new skills. Consider reducing scan frequency to weekly.
 - **Extreme maturity phase** (400+ skills): 100% coverage on core topics likely. Primary value extraction shifts from new skill creation to (a) syncing standalone skills to ai_collection (~269 neuroscience-related pending at 477 skills), and (b) monitoring interdisciplinary boundaries for cross-domain opportunities. arXiv search pages may return 400 errors or timeout — use category page scraping only.
 - **Extreme maturity phase** (400+ skills): 90-100% coverage normal; skip evaluation with documented justification is the primary value activity. Expect 0-1 new skills per session. Focus on: (a) identifying interdisciplinary boundaries not yet covered, (b) monitoring research trends for emerging methodologies, (c) tracking hardware/neuromorphic device developments. All skipped papers require explicit reasoning (too narrow, conceptually overlapping, review-only).
+- **Ultra-mature phase** (700+ skills): 100% coverage of core neuroscience papers from q-bio.NC and cs.NE is the baseline expectation. New skills emerge only from truly novel paradigm-shifting papers or cross-domain intersections (e.g., quantum-brain, novel Neuro-AI frameworks). Standalone sync and skip evaluation are the primary value extraction activities. The workflow is now a monitoring/verification system rather than a skill-generation pipeline. Example (2026-05-06): 61 papers scanned, 100% coverage, 0 new skills, 2 synced.
 - **Mature collection example** (2026-04-27): 45 papers scanned, 2 from last 7 days, 1 existing skill found, 1 new skill created — successful session with 50% coverage
 - **Zero-new-skills session** (2026-04-29): 58 papers scanned, 4 recent papers analyzed, 100% existing coverage — successful session demonstrating collection maturity at scale
 - **High-coverage niche discovery** (2026-04-29 evening): 77 papers scanned (5 keywords), 67 recent papers, 83% coverage (5/6 papers already covered), 1 high-value skill created (brain-foundation-model-inversion). Demonstrates that even with high coverage, novel research directions (brain foundation model inversion) still emerge from interdisciplinary boundaries.
@@ -575,8 +593,9 @@ When running as a scheduled cron job, format the final report for automatic deli
 - Daily research note with full analysis
 - Updated INDEX and MOC files
 - **Collection maturity signal**: When >90% of papers have existing skills, the collection is near saturation — consider expanding keyword scope or adding new domains
-- **2026-05-06 cron evening**: 57 papers scanned across 2 categories (25 q-bio.NC + 32 cs.NE), 75.4% overall coverage (43/57), 100% neuroscience-relevant coverage. 0 new skills created, 3 synced from standalone to ai_collection (bosonic-grid-states-qec, ice-review, quantum-ml-certification). 14 uncovered papers all rejected — optimization benchmarks, toy projects, reviews, non-neuroscience. At 738 skills, collection at extreme maturity; dual-metric reporting essential for accurate assessment.
 - **Extreme maturity signal**: When >98% coverage achieved, focus exclusively on interdisciplinary boundaries and emerging research directions at the intersection of covered domains
+- **Saturation signal** (780+ skills): At this scale, value extraction is almost entirely from standalone-to-ai_collection syncs rather than new paper analysis. All q-bio.NC neuroscience papers are covered. cs.NE shows significant domain drift toward LLM/optimization topics — filter cs.NE results to SNN/neuroscience-relevant papers only. Browser-only discovery is the exclusive viable method; arXiv API is permanently rate-limited for automated queries.
+- **Ultra-maturity signal**: When 100% coverage is sustained across both q-bio.NC and cs.NE categories (700+ skills), the workflow becomes a monitoring system. New skills emerge only from truly paradigm-shifting papers. The value of each session shifts from skill generation to: (a) verifying collection currency, (b) syncing remaining standalone skills, (c) tracking research trends, and (d) identifying genuinely novel interdisciplinary intersections.
 - **Ultra-mature phase** (500+ skills): At this scale, nearly ALL papers in core neuroscience categories (q-bio.NC, cs.NE) are already covered. The primary value extraction activities are:
   1. **Standalone-to-ai_collection sync** (batch of 25-30 per session) — check for standalone neuroscience skills not yet copied to ai_collection
   2. **Skip evaluation** — filter out non-methodology papers (optimization algorithms, hardware tools, review-only papers)
@@ -623,10 +642,12 @@ The ai_collection has reached mature phase with N+ skills covering major researc
 - [ ] MOC updated with zero-new-skills session entry
 - [ ] Skill mappings documented for each analyzed paper
 - [ ] Research trends identified and recorded
-- [ ] Recommendations for coverage expansion provided
+- **Recommendations for coverage expansion provided
 ### Collection Statistics Verification
 
-**Always verify INDEX.md count matches filesystem** — INDEX.md has been observed to drift by 220+ skills (477 vs 697 actual). The count in INDEX.md is NOT authoritative; always compute from filesystem.
+**Authoritative counting**: Use Python for definitive skill count:
+
+### Collection Statistics Verification
 
 **Authoritative counting**: Use Python for definitive skill count:
 ```python
@@ -635,7 +656,20 @@ count = sum(1 for item in os.listdir(skill_dir)
             and os.path.exists(os.path.join(skill_dir, item, "SKILL.md")))
 ```
 
+**At 700+ skills, coverage analysis is critical** — see `references/coverage-analysis-mature.md` for current patterns, skip criteria, and tool reliability status.
+
 **Automated rebuild**: Use `references/index-rebuild-utility.py` to fix INDEX.md count drift automatically. Run it as part of every session's verification step.
+
+### False Uncovered Rate at Extreme Maturity
+
+At 700+ skills, automated title-based coverage matching becomes **conservative** — not deficient. A session may report 70-80% coverage, but detailed review of the "uncovered" papers typically reveals they're all already covered:
+
+- **Why it happens**: The 2+ word intersection heuristic misses papers that use different terminology for the same methodology. E.g., "Neural Computation Without Slots: K-winner MHN" → covered by `kernel-hopfield-associative-memory`; "Optimal Griffiths Phase" → covered by `griffiths-phase-brain-criticality`
+- **Action**: Don't inflate skill count by creating redundant skills from false-positives. Review each "uncovered" paper's abstract via `browser_navigate` to `https://arxiv.org/abs/XXXX.XXXXX` before deciding to create
+- **Rule of thumb**: At 700+ skills, expect 0 new skills from routine scans. Value extraction shifts to: (a) confirming coverage, (b) tracking research trends, (c) documenting skip reasons
+- **Skip categories confirmed**: Experimental-only papers (e.g., optogenetics with embedded hardware but no computational methodology), too-narrow single-dataset validation, conceptually overlapping with existing umbrella skills
+
+*2026-05-07 cron v3*: 13 papers scanned (q-bio.NC + cs.NE browser category pages), 100% coverage (9/9 neuroscience papers covered by 779 existing skills), 0 new skills created. 4 non-neuroscience papers correctly skipped (LLM optimization, jailbreaks, explainability, AGI architecture). Key learning: at 779 skills, standalone-to-ai_collection sync (154 pending) is now the primary growth avenue alongside new paper monitoring. Browser category scraping remains most reliable discovery method. Notable trends: Neuro-AI tooling maturation (NeuralSet), SNN theoretical foundations (Rademacher bounds), geometric dynamical systems (cusped singularities, Lyapunov modes).
 
 ### Coverage Rate Variability
 
@@ -678,9 +712,19 @@ When scanning broad categories like cs.NE (which includes optimization, evolutio
 
 ### New Session Examples
 
-*2026-05-06 early morning cron*: 26 papers scanned (q-bio.NC + cs.NE + 2 keyword searches via browser_console JS extraction), 0 new skills, 96.2% coverage (25/26), 1 paper skipped (Minecraft neuromorphic navigation — toy environment, methodology already covered). Key workflow: **parallel `browser_navigate` calls** for q-bio.NC and cs.NE simultaneously (both pages load concurrently), then `browser_snapshot` for text parsing on category pages + `browser_console` JS extraction on search result pages. Coverage check included **both ai_collection (738) and standalone skills (889 total)** for comprehensive matching. At 738+ skills, 96% coverage is the new normal for extreme maturity — zero new skills per session is expected and healthy.
+*2026-05-06 afternoon cron*: 95 papers scanned (2 keyword searches: "neuroscience brain network" + "spiking neural network computational neuroscience"), 71.6% automated coverage (68/95), 0 new skills. Key insight: all 8 substantive "uncovered" papers confirmed as covered by existing skills after detailed abstract review. Demonstrates that at 758 skills, the automated coverage rate underestimates true coverage. Value at this stage: trend tracking, coverage confirmation, skip documentation.
 
 *2026-05-02 cron v2*: 21 papers scanned across 4 domains
+
+*2026-05-02 cron v2*: 21 papers scanned across 4 domains
+
+*2026-05-06 evening cron v3*: 13 papers scanned (q-bio.NC + cs.NE + web_search), 92.3% coverage (12/13), 1 new skill created (`neuromechanical-locomotion-dynamics` from physics.bio-ph). The uncovered paper was an interdisciplinary neuromechanics paper combining spectral mode representations, Helmholtz-Nambu decompositions, and Bayesian inference for neural-to-behavior mapping (C. elegans). Demonstrates that at 773 skills, novel skills emerge from non-traditional neuroscience categories (physics.bio-ph) at the neural-behavior interface. All core q-bio.NC and cs.NE papers covered. Key papers: NeuralSet (covered), SBTG circuit inference (covered), S2-Net oscillatory SNN (covered), R-RNNs (covered), SNN Rademacher bounds (covered).
+
+*2026-05-06 evening cron v2*: 13 papers scanned (q-bio.NC + cs.NE + web_search), 100% coverage, 0 new skills. All papers covered: NeuralSet, cusped singularities/MMO, SBTG, EEG biomarkers (review), S2-Net, R-RNNs, Lyapunov modes, SNN theory, GeoDynamics, JEDI, ODEBrain. At 770 skills, all core neuroscience categories saturated — no novel skills warranted.
+
+*2026-05-06 evening cron*: 61 papers scanned (q-bio.NC 23 + cs.NE 38), 100% coverage, 0 new skills, 2 synced. Collection now acts as a monitoring/verification system.
+
+*2026-05-07 cron v4*: 45 papers scanned (q-bio.NC: 23, cs.NE: 22 neuroscience-relevant), 91.1% coverage (41/45), 0 new skills, 0 standalone to sync (neuroscience standalone backlog cleared). 4 papers skipped: theoretical math (cusped singularities MMO), review-only (EEG/EMG regeneration), AGI theory (hierarchical automata), eye-tracking (reading gaze). Key trends: SNN theoretical foundations (Rademacher bounds, ShiftLIF), bio-inspired continual learning (MPCS, NORACL, FADE), Neuro-AI tooling (NeuralSet), Free Energy Principle in MoE routing. Demonstrates that at 779 skills with zero standalone backlog, the workflow is purely verification/monitoring — skip evaluation quality and trend identification are the primary value outputs.
 
 *2026-05-02 cron v2*: 21 papers scanned across 4 domains (brain network, neural dynamics, SNN, computational neuroscience), 86% coverage (18/21), 0 new skills created, 1 synced (`geometric-brain-dynamics-mapping-v7` from standalone to ai_collection). Key workflow: `execute_code` with `httpx` returned empty responses for arXiv API → fallback to `web_search` for discovery → `terminal` with `curl` + HTTPS for full XML parsing → Python dedup/skill coverage check → `shutil.copytree` for standalone-to-ai_collection sync → patch Obsidian wiki. 3 papers skipped: too narrow (JASTAP), conceptually overlapping (Hamiltonian brain dynamics), review-only (linguistics). Demonstrates that at 255 skills, sync and skip decisions become as important as creation. Key learning: `httpx` in `execute_code` sandbox can return 0-byte responses for arXiv API even with HTTPS — use `web_search` as first pass, then `terminal` + `curl` for reliable XML retrieval.
 
@@ -724,7 +768,17 @@ arXiv search pages (`/search/?query=...`) have degraded significantly:
 
 *2026-05-05 early cron*: 14 papers scanned (q-bio.NC: 9, cs.NE: 5 neuroscience-relevant), 100% coverage, 0 new skills, 1 synced (`kernel-hopfield-attractor-geometry` from standalone to ai_collection). Key workflow: browser category scraping → Python coverage check with 3+ word intersection → standalone-to-ai_collection sync → Obsidian wiki update. 1 paper skipped: distributed consensus optimization (non-neuroscience, cs.MA cross-list). At 715 skills, collection has reached extreme maturity — sync operations and skip evaluation are the primary value extraction activities. Coverage matching with 3+ word intersection achieved perfect accuracy across all 14 papers. Key learning: cs.NE cross-lists from cs.MA, cs.LG often contain non-neuroscience papers (distributed systems, optimization) — explicitly skip papers without brain/neural/SNN/cognitive content.
 
-*2026-05-06 morning cron*: 44 papers scanned (q-bio.NC: 17, cs.NE: 7, keyword search: 20), 69.0% coverage (29/42 analyzable), 0 new skills, 2 skipped (review paper, gaming/navigation). Key finding: at 756 skills, simple normalization yields ~50% but adding a `specific_mappings` dict (key phrase → skill name) brings coverage to 69% with high accuracy. The remaining "uncovered" papers were mostly generic q-bio.NC titles without abstracts that couldn't be reliably matched. Multi-source scanning increases total papers but decreases per-paper match rate due to generic titles. Key learning: when coverage drops below 70% at extreme maturity, it's usually due to generic category titles, not actual collection gaps — focus on analyzable papers with abstracts.
+*2026-05-03 afternoon cron*: 12 papers scanned (q-bio.NC + cs.NE browser), 100% coverage (12/12). 0 new skills created. 29 standalone neuroscience skills synced to ai_collection (bringing total to 372). 183 standalone skills remain. Notable papers: multisensory engram recruitment, agentic behavioral modeling, IC-based encoding, Physical Foundation Models, NeuroRing SNN scaling, genetic/environmental connectome architecture. Key insight: at 372 skills, browser category scraping alone is sufficient (no API needed) since all papers are covered. Standalone sync batch approach (30 per session) is effective for catching up.
+
+*2026-05-07 cron v5*: 12 papers scanned (q-bio.NC: 5, cs.NE: 7 via browser — arXiv API 429 on ALL queries), 0 new skills, 83.3% coverage (10/12 covered). 3 standalone skills synced (congestion-aware-axonal-delay-snn, neural-lyapunov-verification, oscillatory-snn-time-delayed-coordination). 2 papers skipped (LLM optimization, not neuroscience). Key insight: at 782 skills, value extraction is almost entirely from standalone-to-ai_collection syncs. All neuroscience papers from q-bio.NC latest submissions are covered. cs.NE shows increasing domain drift toward LLM/optimization topics — future sessions should filter cs.NE results to neuroscience-relevant papers only. Browser-only discovery is now the exclusive viable method; arXiv API is permanently rate-limited for automated queries.
+
+*2026-05-07 cron*: 44 papers scanned (25 search + 23 q-bio.NC + 38 cs.NE, deduplicated to 44 unique), 100% coverage (44/44), 0 new skills, 0 standalone sync needed. Collection at 773 ai_collection skills. Key finding: at this extreme maturity level, every paper from both major neuroscience categories AND keyword search maps to existing skills — NeuralSet, SBTG, S2-Net, ODEM, symmetry-protected Lyapunov modes, SNN Rademacher bounds, Hebbian fast weights, etc. The JS extraction recipe was improved: use `idEl.href.split('/').pop()` instead of `textContent` for clean arXiv ID extraction. Workflow confirmed: 3-source browser scanning (search + q-bio.NC + cs.NE) → Python coverage normalization → abstract verification for borderline cases → Obsidian daily note + MOC update. 3 papers skipped: 1 review (EEG/EMG biomarkers), 1 AGI conceptual, 1 LLM security (EvoJail).
+
+*2026-05-06 cron (web_search-first)*: 12 high-value papers identified via 3 `web_search` queries (no arXiv API, no browser scraping). 7 new skills created: universal-brain-dynamics (UBD framework, r>0.9 fMRI prediction), combinatorial-complex-brain-fmri (O-information higher-order networks), hyperbolic-brain-gnn (Lorentz model for hierarchical brain networks), brain-like-neuron-network (self-evolving LuminaNet), manifold-eeg-foundation (Riemannian VAE + geometric Transformer), brain-scale-snn-simulation (42% HPC speed-up), local-plasticity-learning (no-backprop statistical mechanics). 1 existing skill updated (neural-dynamics-autoregressive-flow-matching). Key learning: `web_search` with site:arxiv.org queries + `web_extract` on /abs/ URLs is now the most efficient workflow — bypasses API rate limits and browser scraping complexity entirely. Total ai_collection skills: 24.
+
+*2026-05-06 evening cron*: 61 papers scanned (23 q-bio.NC + 38 cs.NE via browser), 11 examined in detail, 100% coverage (11/11), 0 new skills, 2 standalone synced (quantum-classical-hybrid-imaging, rl-temporal-logic). Collection at 772 skills. Key finding: at this scale, every neuroscience paper from both major categories maps to existing methodology skills — NeuralSet framework, SBTG circuit inference, S2-Net oscillatory SNN, ODEM predictive coding, HGF robust updates, agentic behavioral modeling, heteroclinic neural fields, quantum brain hypothesis, unified graph-dynamics, Lyapunov equivariant RNNs, SNN generalization bounds, FC-guided BCI. The workflow is now primarily a monitoring/verification exercise rather than skill generation. Only 2 neuroscience-adjacent standalone skills remain unsynced out of 139 total standalone.
+
+*2026-05-06 cron*: 53 papers scanned (q-bio.NC + cs.NE browser + SNN search), 88.7% coverage (47/53), 2 new skills created (cusped-singularity-mmo-analysis from math.DS cross-list, hebbian-fast-weights-vit from cs.NE), 2 synced (equation-free-digital-twins, quantum-medical-ai via keyword scanning). Key learning: arXiv `/search/?query=...` URL returns 400 for complex queries — category pages remain most reliable. Standalone keyword scanning (reading SKILL.md content for neural/brain/spiking keywords) found 2 sync candidates that name matching missed. 4 papers skipped: 1 review (EEG/EMG biomarkers), 2 non-neuroscience (LLM optimization), 1 too narrow (SNN radiation testing).
 
 ### Partial Rate Limit Resilience
 

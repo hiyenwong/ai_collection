@@ -98,6 +98,77 @@ Level 3: Full quantum network
 - Gate latency compensation
 - Distributed algorithm complexity
 
+### Pattern 4: RL-based Robust Quantum Control (2025-2026 research)
+
+Three complementary approaches for robust quantum control under noise and model uncertainty:
+
+**RLfD (Reinforcement Learning from Demonstration)**:
+- Problem: Model-free RL needs excessive quantum system interaction; model-based RL suffers from model bias.
+- Solution: Use model-generated control sequences as demonstrations to warm-start RL training.
+- Benefit: Faster convergence, stable training, avoids model bias in final policy.
+- Reference: Li & Fan et al., npj Quantum Information (2025).
+
+**Adaptive Feedback Control (RL + Kalman Filter)**:
+- Problem: NISQ device parameters drift; static QAOA parameters perform poorly.
+- Solution: Combine RL for adaptive parameter tuning with Kalman filters for noise estimation.
+- Benefit: Dynamic adjustment to time-varying noise without recalibration pauses.
+- Reference: "Adaptive and Robust Feedback-Based Quantum Optimization" (Springer, 2025).
+
+**Polynomial Global Optimization**:
+- Problem: Quantum control problems are nonconvex with dense local extrema.
+- Solution: Formulate as polynomial optimization for certified global optimality.
+- Reference: "Globally Optimal Control of Quantum Dynamics" (Phys. Rev. Research, 2025).
+
+### Pattern 5: Hardware Co-Design for Quantum Control
+
+- Problem: Classical control hardware imperfections (crosstalk, beam leakage) degrade quantum operations.
+- Solution: Design control software aware of and compensating for hardware-specific imperfections.
+- Key insight: Joint optimization of control algorithms and hardware calibration parameters.
+- Reference: "Hardware Co-Designed Intelligent Quantum Control Framework" (arXiv:2504.11737).
+
+### Pattern 6: Formal Verification for QEC Fault-Tolerance
+
+- Problem: QECC implementations may have subtle fault-tolerance violations not caught by simulation.
+- Solution: Use quantum symbolic execution to formally verify fault-tolerance properties.
+- Key insight: Encode fault-tolerance within the language of quantum programs for automatic verification.
+- Reference: "Verifying Fault-Tolerance of Quantum Error Correction Codes" (arXiv:2501.14380).
+
+### Pattern 7: Ultra-High-Rate QEC Architectures
+
+- Problem: QEC decoding throughput is a bottleneck for practical fault-tolerant quantum computing.
+- Solution: Reconfigurable architectures for ultra-high-rate quantum error correction.
+- Reference: "Towards Ultra-High-Rate Quantum Error Correction" (arXiv:2604.16209).
+
+## Implementation Checklist
+
+When designing a robust quantum control system:
+
+1. **Noise characterization**: Identify dominant noise sources (dephasing, amplitude damping, crosstalk)
+2. **Control strategy selection**:
+   - Model available? → Model-based RL with RLfD warm-start
+   - No model? → Model-free RL with demonstration data
+   - Real-time drift? → Adaptive feedback (RL + Kalman filter)
+3. **Verification strategy**:
+   - Gate-level: Symbolic execution for fault-tolerance verification
+   - System-level: Hardware co-design with calibration-aware control
+4. **Optimization method**:
+   - Small scale: Gradient-based (GRAPE, CRAB)
+   - Nonconvex landscape: Polynomial optimization for global solutions
+   - NISQ devices: Adaptive feedback with noise mitigation
+5. **Architecture design**:
+   - Characterize classical-quantum boundary for each subtask
+   - Design hybrid interface with minimal overhead
+
+## Error Handling
+
+| Error Type | Detection | Recovery |
+|-----------|-----------|----------|
+| Model bias | Compare model-based vs model-free RL performance | Switch to RLfD or model-free approach |
+| Hardware crosstalk | Fidelity drop on multi-qubit gates | Apply co-designed compensation pulses |
+| Noise drift | Calibration metrics deviate from baseline | Trigger adaptive recalibration |
+| Local optima trap | Multiple runs converge to different fidelities | Use polynomial optimization or global search |
+| QEC failure | Logical error rate exceeds threshold | Verify fault-tolerance via symbolic execution |
+
 ## Tools Used
 
 - exec: Run quantum simulation tools (Qiskit, Cirq, QuTiP)

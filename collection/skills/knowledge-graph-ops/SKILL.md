@@ -5,7 +5,9 @@ description: >
   /Users/hiyenwong/.openclaw/workspace/kg.db. Use when importing papers,
   generating embeddings, running PageRank/community detection, or querying
   the research knowledge graph. Covers the kg_tool CLI and raw SQLite
+  approaches. NOTE: ~/wiki/kg.db is a symlink to the workspace kg.db —
   approaches. WARNING: kg_tool has a schema mismatch — see references.
+  NOTE: vectors contain mixed dimensions (256-dim and 384-dim) — see Vector Format.
 ---
 
 # Knowledge Graph Operations
@@ -41,11 +43,11 @@ For reliable search, use raw SQLite `LIKE` queries on `kg_entities.title` and
 `kg_entities.content` instead. `search` returns empty more often than expected;
 when it does, fall back to direct SQL queries.
 
-## ⚠️ Workspace kg.db Schema
+## ⚠️ Database Identity
 
-The workspace knowledge graph at `/Users/hiyenwong/.openclaw/workspace/kg.db`
-has a DIFFERENT schema. Do NOT use kg_tool to write to it.
-Use Python/SQLite directly. See below for workspace import patterns.
+`~/wiki/kg.db` is a **symlink** to `~/.openclaw/workspace/kg.db` — they are the same database.
+Both `kg_tool` (which targets `~/wiki/kg.db`) and direct Python/SQLite (targeting workspace path)
+operate on the SAME data. Use whichever is convenient.
 
 ## Working Schema
 
@@ -57,21 +59,30 @@ kg_relationships (id, source_id, target_id, relationship_type, weight, created_a
 
 ### Vector Format
 
+### Vector Format
+
 All vectors in kg_vectors are stored as **raw float32 BLOBs**, 256 dimensions (1024 bytes each). No JSON-encoded or mixed-format vectors remain.
+
+**⚠️ Mixed dimensions (2026-05-07)**: The database contains some 384-dim vectors (1536 bytes) created by sessions using a different embedding function. Always derive dimension from blob length: `dim = len(vdata) // 4` rather than hardcoding 256.
+
+**⚠️ sqlite3 BLOB-as-string**: sqlite3 may return `vector_data` as `str` instead of `bytes`. Convert with `vdata.encode('latin-1')` before `struct.unpack`.
 
 ```python
 import struct
 
 def parse_vector(vdata):
-    """Parse 256-dim float32 vector from kg_vectors BLOB."""
-    return list(struct.unpack('256f', vdata))
+    """Parse float32 vector from kg_vectors BLOB. Handles both str/bytes."""
+    if isinstance(vdata, str):
+        vdata = vdata.encode('latin-1')
+    dim = len(vdata) // 4
+    return struct.unpack(f'{dim}f', vdata)
 
 def vector_to_blob(vector):
     """Convert list of floats to float32 BLOB for kg_vectors."""
-    return struct.pack('256f', *vector)
+    return struct.pack(f'{len(vector)}f', *vector)
 ```
 
-When generating new vectors, use 256 dimensions:
+When generating new vectors, use **256 dimensions** to match the established schema:
 ```python
 vec = generate_embedding(text, dim=256)
 vec_bytes = struct.pack('256f', *vec)
@@ -129,47 +140,67 @@ function reads either.
 
 ## Creating Relationships Between Papers
 
-When importing new papers, create relationships with existing entities based on keyword overlap:
+When importing new papers, create relationships with existing entities based on keyword overlap.
+For the full batch-creation script (tested on 410 entities, creates ~1,800 relationships),
+## Creating Relationships Between Papers
+
+When importing new papers, create relationships based on **category match** OR **high keyword overlap**:
 
 ```python
-# Get existing entities
-c.execute("SELECT id, title, content FROM kg_entities WHERE id NOT IN ({new_ids})")
-existing = c.fetchall()
+STOP_WORDS = {'the', 'a', 'an', 'is', 'are', 'was', 'were', 'for', 'and', 'of',
+    'in', 'to', 'with', 'on', 'by', 'from', 'at', 'that', 'this', 'it', 'as'}
 
-# Build keyword map for new papers
+def keywords(text):
+    return {w for w in (text or '').lower().split() if w not in STOP_WORDS and len(w) > 2}
+
+# Build keyword map
 keywords_map = {}
-for eid, title, content in new_entities:
-    text = (title + ' ' + (content or '')).lower()
-    keywords_map[eid] = set(text.split())
+for eid, title, content, cat in all_entities:
+    keywords_map[eid] = (keywords(title + ' ' + (content or '')), cat)
 
-for eid, title, content in existing:
-    text = (title + ' ' + (content or '')).lower()
-    words = set(text.split())
-    for new_eid, new_words in keywords_map.items():
-        overlap = len(new_words & words)
-        if overlap > 3:
-            weight = min(0.9, overlap / 20.0)
+for eid1, (kw1, cat1) in keywords_map.items():
+    for eid2, (kw2, cat2) in keywords_map.items():
+        if eid1 >= eid2:
+            continue
+        overlap = len(kw1 & kw2)
+        # Connect if same category OR very high overlap (>8 words)
+        if cat1 and cat1 == cat2:
+            weight = min(0.9, overlap / 15.0)
+            rel_type = 'same_category'
+        elif overlap > 8:
+            weight = min(0.7, overlap / 25.0)
             rel_type = 'related_to'
-            # Cross-domain detection
-            if any(w in title.lower() for w in ['quantum']) and \
-               any(w in title.lower() for w in ['neural', 'brain', 'spiking']):
-                rel_type = 'cross_domain'
-                weight += 0.1
+        else:
+            continue
+        # Cross-domain detection
+        if cat1 != cat2 and any(w in kw1 for w in {'quantum'}) and \
+           any(w in kw2 for w in {'neural', 'brain', 'spiking'}):
+            rel_type = 'cross_domain'
+            weight = min(0.9, weight + 0.2)
+        try:
             c.execute("INSERT INTO kg_relationships (source_id, target_id, relationship_type, weight) VALUES (?,?,?,?)",
-                (min(new_eid, eid), max(new_eid, eid), rel_type, round(weight, 2)))
+                (eid1, eid2, rel_type, round(weight, 2)))
+        except sqlite3.IntegrityError:
+            pass
 ```
 
 ## Deduplication Before Import
 
+**URL-based dedup is more reliable than title-based** (titles may vary slightly between sources; URLs are canonical):
+
 ```python
-# Check existing titles (case-insensitive)
-c.execute("SELECT title FROM kg_entities")
-existing_titles = {row[0].lower().strip() for row in c.fetchall()}
+# Preferred: URL-based dedup (canonical, avoids title variation false positives)
+c.execute("SELECT url FROM kg_entities WHERE url IS NOT NULL AND url != ''")
+existing_urls = {row[0].lower().strip() for row in c.fetchall()}
 
 new_papers = []
 for p in papers:
-    if p['title'].lower().strip() not in existing_titles:
+    if p['url'].lower().strip() not in existing_urls:
         new_papers.append(p)
+
+# Fallback: title-based dedup (only if URLs unavailable)
+c.execute("SELECT title FROM kg_entities")
+existing_titles = {row[0].lower().strip() for row in c.fetchall()}
 ```
 
 ## Vector Similarity Search
@@ -196,19 +227,23 @@ def search(query_text, limit=8):
 ## Hourly Research Cron Pipeline
 
 For the recurring hourly research workflow (topic rotation + arXiv + Anthropic + KG analysis), see [references/hourly-research-cron.md](references/hourly-research-cron.md). Covers the full pipeline from `weekly_topics.py` through KG analysis to report generation.
+See [references/medical-quantum-session-notes.md](references/medical-quantum-session-notes.md) for Medicine+Quantum session results, successful web_search query patterns, and community detection observations.
 
 ## Common Pitfalls
 
+- **RELATIONSHIP EXPLOSION (2026-05-07)**: The keyword-overlap approach with threshold >3 creates O(n²) relationships. With 417 entities, this produced 117,805 relationships — a nearly complete graph. PageRank becomes less discriminative, and community detection collapses to one giant cluster. **Fixes**: (a) Raise threshold to >8, (b) Remove stop words before splitting, (c) Only connect papers within same category, or (d) Cap relationships per entity. For batch imports, prefer `overlap > 8` and category-matching over raw keyword overlap.
+- **Community detection collapse**: With dense relationships from keyword overlap, Louvain/label-propagation produces one giant community (415/417 papers observed). This is expected with the current relationship strategy. For meaningful clustering, use sparse relationships (category-matching only, or high overlap threshold) or sentence-transformer embeddings.
+- **ArXiv API rate limiting (CONFIRMED 2026-05-07)**: Even with `http://127.0.0.1:7890` proxy, `curl` to `export.arxiv.org/api/query` returns "Rate exceeded." immediately. `web_search` remains the only reliable arXiv discovery method. When you need full metadata, `web_search` + extraction is more reliable than the arXiv API.
 - **ArXiv URL encoding**: When using `urllib.request` with arXiv API, spaces in query params cause `http.client.InvalidURL`. Always use `urllib.parse.quote(query)` before constructing the URL. Pattern: `f'http://export.arxiv.org/api/query?search_query=all:%22{quote(query)}%22'`
 - **Vector format** (RESOLVED 2026-05-06): All vectors are now binary float32 256-dim. No JSON-encoded vectors remain. Use `struct.unpack('256f', vdata)` directly.
 - **Pipe-to-interpreter blocked**: Security guardrail blocks `curl ... | python3`. Always save curl output to a file first, then run python on the file. Pattern: `curl -o /tmp/arxiv.xml "https://..." && python3 parse.py /tmp/arxiv.xml`.
-- **arXiv API with httpx**: Use `https://` (not `http://`) and add retry logic with `time.sleep(3.5)` between requests. arXiv returns 429 aggressively. With httpx, use `timeout=30` and retry on 429 with exponential backoff.
+- **arXiv API with httpx**: Use `https://` (not `http://`) — the API returns 301 redirect from http. With httpx, use `follow_redirects=True` or `https://` directly. Add retry logic with `time.sleep(3.5)` between requests. arXiv returns 429 aggressively. With httpx, use `timeout=30` and retry on 429 with exponential backoff.
 - **Vector type mismatch** (RESOLVED): All vectors are now binary float32. No TEXT vectors remain.
+- **sqlite3 BLOB-as-string**: When reading `kg_vectors.vector_data` from SQLite, the column may be returned as Python `str` instead of `bytes`. This causes `struct.unpack` to fail with "a bytes-like object is required". Fix: `if isinstance(vdata, str): vdata = vdata.encode('latin-1')` before unpacking.
 - **Dimension**: All vectors are 256-dim. Filter with `len(np.frombuffer(vb, np.float32)) == 256` before dot product.
 - **kg_tool creates wrong tables**: It uses `kg_relations` not `kg_relationships`, and `entity_type/name/properties` not `title/url/content`.
-- **kg_tool is symlink-compatible**: `~/wiki/kg.db` is a symlink to workspace `kg.db` (verified 2026-05-05). The tool reads correct entity counts but its search function has limited matching — it works for some queries but returns empty for others. Use SQL LIKE for reliable search. The tool's `pagerank`, `communities`, `generate-embeddings`, and `stats` commands work reliably with the workspace schema.
-- **Hash-based vectors are not semantic**: Cosine similarity scores are consistently low (0.05-0.26). Good for deterministic keyword matching, not true semantic search. Louvain community detection produces mostly singleton communities — expected behavior with hash vectors. For real clustering, use sentence-transformer embeddings.
-- **arXiv fetch**: `web_extract` blocks arxiv.org URLs as "private/internal network." Use `web_search` for discovery (works reliably), then `curl -x http://127.0.0.1:7890 "https://export.arxiv.org/api/query?id_list=..."` for full metadata. **arXiv API is aggressively rate-limited** — returns "Rate exceeded." on most requests even with proxy. `sleep 4` is NOT enough; use `sleep 10` minimum. When rate-limited, fall back to `web_search` which has no rate limits. Never pipe curl output directly to Python — save to file first (security guardrail blocks pipe-to-interpreter).
+- **kg_tool search unreliable**: `kg_tool search --query "..."` returns empty for most queries, even valid ones. **Use raw SQL LIKE queries instead**: `sqlite3 kg.db "SELECT id, title FROM kg_entities WHERE lower(title) LIKE '%quantum%'"`. The tool's `pagerank`, `communities`, `generate-embeddings`, and `stats` commands work reliably.
+- **arXiv fetch**: `web_extract` blocks arxiv.org URLs as "private/internal network." Use `web_search` for discovery (works reliably), then `curl -x http://127.0.0.1:7890 "https://export.arxiv.org/api/query?id_list=..."` for full metadata. **arXiv API is aggressively rate-limited** — returns "Rate exceeded." on most requests even with proxy. `sleep 4` is NOT enough; use `sleep 10` minimum. **curl with proxy can also fully timeout (60s)** — if curl times out even with proxy, the API is completely inaccessible for that session. When rate-limited or timed-out, fall back to `web_search` which has no rate limits. `web_search` with `site:arxiv.org` query returns structured data (title, description/abstract, url) sufficient for direct KG import without needing the arXiv API at all. Never pipe curl output directly to Python — save to file first (security guardrail blocks pipe-to-interpreter).
 - **Edge tuple unpacking**: `kg_relationships` has 3 columns (source_id, target_id, weight). Unpack as `for src, tgt, w in edges` not `for src, tgt in edges`.
 - **Reading paper content when web_extract blocks**: Use `browser_navigate` + `browser_snapshot` for arxiv URLs. See [references/hourly-research-cron.md](references/hourly-research-cron.md) for the full fallback chain.
 - **Vector corruption recovery**: If you get `ValueError: buffer size must be a multiple of element size` when loading vectors, existing vectors are corrupted or mixed-format. Fix by regenerating all vectors with consistent format:
@@ -226,3 +261,5 @@ For the recurring hourly research workflow (topic rotation + arXiv + Anthropic +
       c.execute("INSERT INTO kg_vectors (entity_id, vector_data) VALUES (?,?)", (eid, vec_bytes))
   conn.commit()
   ```
+- **sqlite3 BLOB returned as str**: `sqlite3` may return BLOB columns as Python `str` instead of `bytes` depending on version/connection. Always check: `if isinstance(vb, str): vb = vb.encode('latin-1')` before `struct.unpack`.
+- **Variable vector dimensions**: Don't assume all vectors are 256-dim. Check `n_dims = len(vb) // 4` and use `struct.unpack(f'{n_dims}f', vb)`. Guard with `if len(vb) % 4 != 0: continue`.
