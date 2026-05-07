@@ -1,3 +1,17 @@
+## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Scheduling Entanglement Flows in Multi-channel Quantum Networks
+- [[quantum-network-scheduling]] - Resource allocation for entanglement distribution in multi-channel quantum networks with heterogeneous links, queuing, and retry mechanisms (arXiv: 2605.04767)
+  - Core: Multi-channel quantum network architecture with user-centric entanglement request handling
+  - Key: Dynamic Efficient, LQF, WLQF algorithms for channel/processor assignment; heterogeneous link characterization
+  - **Activation**: quantum network scheduling, entanglement flow allocation, multi-channel quantum network, entanglement distribution, quantum resource scheduling, 量子网络调度
+
+### SpinTune: Improving the Reliability of Quantum Sensor Networks
+- [[quantum-sensor-reliability]] - RL-optimized dynamical decoupling pulse sequences to mitigate environmental decoherence in quantum sensor networks (arXiv: 2605.04416)
+  - Core: Reinforcement learning for adaptive DD sequence optimization based on real-time noise characterization
+  - Key: Bridges quantum sensors with hybrid quantum-classical HPC pipelines; addresses non-stationary noise environments
+  - **Activation**: quantum sensor reliability, SpinTune, dynamical decoupling optimization, quantum decoherence mitigation, RL quantum control, quantum-classical sensing
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### SNNF: An SNN-based Near-Sensor Noise Filter for Dynamic Vision Sensors
