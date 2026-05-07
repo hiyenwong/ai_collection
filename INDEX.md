@@ -1,3 +1,23 @@
+## 2026-05-07 - Systems Engineering + Quantum Mechanics (Cron Job - Hourly)
+
+### TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments
+- [[tscg-tool-schema-optimization]] - Convert JSON tool schemas into token-efficient structured text for reliable small-model (4B-14B) agent tool use, achieving 84.4% accuracy vs 0% at 20 tools (arXiv: 2605.04107)
+  - Core: Eight composable operators transform JSON schemas into LLM-friendly text with >=51% token compression
+  - Key: Protocol mismatch between JSON and LLM interpretation causes most tool-use failures; structured text restores accuracy
+  - **Activation**: tool schema optimization, JSON schema LLM, agent tool use, MCP tool schema, small model agent, TSCG, token-efficient schemas
+
+### Safety by Invariance, Liveness through Refinement: Heterogeneous Contract Framework for Co-Design of Layered Control
+- [[safety-liveness-control-contracts]] - Hierarchical layered control architecture combining safety via invariance (continuous-time) with liveness via refinement (discrete-time) using assume-guarantee contracts (arXiv: 2605.04222)
+  - Core: Heterogeneous assume-guarantee framework with vertical refinement and timing-compatibility between control layers
+  - Key: MPC planner + ISS low-level controller + reference-governor bridge validated on Hybrid Energy Storage System
+  - **Activation**: layered control architecture, safety liveness decomposition, assume-guarantee contracts, MPC planning, input-to-state stability, reference governor, hybrid control
+
+### Multiparameter Function Estimation for General Hamiltonians
+- [[multiparameter-hamiltonian-estimation]] - Ultimate quantum limit and estimation protocol for any function of parameters in general Hamiltonians, reducing multiparameter problem to optimized single-parameter Cramér-Rao bound (arXiv: 2605.04136)
+  - Core: Tight quantum bound for estimating functions of multiple parameters coupled to non-commuting generators
+  - Key: Unifies and extends previous works, providing general framework for optimal function estimation in quantum systems
+  - **Activation**: multiparameter estimation, quantum Cramér-Rao bound, Hamiltonian parameter estimation, quantum sensing, non-commuting generators
+
 ## 2026-05-07 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Intelligent Optimal Control of Rydberg Gates with Incremental-Update Deep Reinforcement Learning
