@@ -1,3 +1,11 @@
+## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job - 3rd Run)
+
+### On Quantum Indeterminacy
+- [[geometric-quantum-indeterminacy]] - Geometric formulation of quantum indeterminacy from convex geometry in phase space and symplectic topology, deriving uncertainty inequalities without statistical descriptors (arXiv: 2605.01103)
+  - Core: Quantum states as convex bodies in phase space; symplectic capacity c(Ω) >= h/2 replaces variance-based uncertainty
+  - Key: John ellipsoid method gives principal uncertainties; Gromov non-squeezing theorem as geometric origin of Heisenberg principle
+  - **Activation**: quantum indeterminacy, geometric uncertainty, symplectic capacity, phase space geometry, convex quantum, uncertainty relations derivation, symplectic topology quantum, Mahler volume quantum
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Neural Manifolds as Crystallized Embeddings: A Synthesis of FEP, GS, and Hebbian Plasticity
