@@ -1,4 +1,36 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### Dissociating Spatial Frequency Reliance from Adversarial Robustness in Neurally Guided DCNNs
+- [[neurally-guided-adversarial-robustness]] - Neural alignment's adversarial robustness stems from representational structure, not spatial frequency bias; LSF/human-channel steering fails to match alignment gains (arXiv: 2605.04443)
+  - Core: Dissociation experiment shows frequency bias ≠ robustness mechanism; representational geometry is key
+  - Key: Human channel + LSF bias impairs robustness; RSA reveals alignment captures higher-order properties
+  - **Activation**: neural alignment robustness, adversarial DCNN defense, spatial frequency analysis, ventral stream modeling, brain-inspired CNN robustness
+
+### phys-MCP: Control Plane for Heterogeneous Physical Neural Networks
+- [[phys-mcp-physical-neural-networks]] - Substrate-aware orchestration for PNNs (molecular, chemical, biological, photonic, memristive, mechanical) with capability models, lifecycle semantics, telemetry, digital-twin bindings, and wetware API (arXiv: 2605.04256)
+  - Core: Unified control plane exposing heterogeneous physical neural substrates as discoverable resources
+  - Key: Cortical Labs wetware adapter validated; runtime-aware matching + telemetry recovery across backends
+  - **Activation**: phys-MCP, physical neural network orchestration, wetware computing, substrate-aware control, neuromorphic edge computing
+
 ## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
+
+### Lottery BP: Unlocking Quantum Error Decoding at Scale
+- [[lottery-bp-decoding]] - Randomized belief propagation improves quantum decoding accuracy by 2-8 orders of magnitude for topological codes, with PolyQec architecture reducing OSD calls by 3-5 orders (arXiv: 2605.00038)
+  - Core: Lottery BP introduces randomness during BP decoding to break error degeneracy in QLDPC codes
+  - Key: Syndrome vote pre-processing compresses multi-round measurements; PolyQec = local BP + global OSD hierarchy
+  - **Activation**: quantum error correction decoding, belief propagation randomized, QLDPC scalable decoding, PolyQec architecture, syndrome voting, topological code decoding
+
+### Hyperspectral Anomaly Detection Using Einstein Fuzzy Computing and Quantum Neural Network
+- [[hyfu-had-quantum-fuzzy]] - Hybrid quantum-fuzzy framework for hyperspectral anomaly detection using Einstein fuzzy computing and quantum defuzzifier, achieving state-of-the-art performance (arXiv: 2605.04388)
+  - Core: Multi-criteria decision framework combining classical fuzzy rules (Einstein sum/product) with lightweight quantum defuzzifier
+  - Key: Einstein fuzzy operations provide smoother transitions than min-max; quantum defuzzifier processes aggregated fuzzy features
+  - **Activation**: hyperspectral anomaly detection, Einstein fuzzy computing, quantum neural network, fuzzy multi-criteria decision, quantum defuzzifier, remote sensing
+
+### Construction and Decoding of Quantum Margulis Codes
+- [[quantum-margulis-codes]] - New QLDPC codes from Margulis construction via 2BGA framework, decodable with linear-complexity min-sum decoder unlike BB codes requiring OSD (arXiv: 2503.03936)
+  - Core: Margulis codes break Tanner graph group symmetry, mitigating error degeneracy for efficient min-sum decoding
+  - Key: Girth-controlled construction (6 or 8); 2-8 orders magnitude better error floor than BB codes
+  - **Activation**: quantum Margulis codes, QLDPC code design, min-sum quantum decoding, 2BGA framework, girth-controlled codes, quantum error correction codes
 
 ### Quantum metrology of mixed states via purification
 - [[quantum-statistical-metrology]] - Purification-based strategies achieve optimal QCRB and HCRB bounds for multi-parameter quantum estimation, resolving open question about mixed state precision limits (arXiv: 2605.03975)
