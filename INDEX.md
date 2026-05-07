@@ -1,3 +1,23 @@
+## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### A Factor-Graph Formulation of CSS Syndrome Decoding: Joint BP and Four-State BP
+- [[css-factor-graph-decoding]] - CSS量子纠错综合征解码的因子图方法，支持Joint BP和Four-State BP算法 (arXiv: 2605.05132)
+  - Core: CSS码的X/Z分量通过耦合Tanner图联合解码，形成二元因子图
+  - Key: Four-State BP显式捕获X-Z错误相关性；Joint BP可并行化但假设独立性
+  - **Activation**: CSS decoding, factor graph, belief propagation, quantum error correction, syndrome decoding, Joint BP, Four-State BP
+
+### Neural-powered unit disk graph embedding: qubits connectivity for some QUBO problems
+- [[neural-graph-embedding-qubo]] - 用神经网络解决量子退火器的QUBO图嵌入问题 (arXiv: 2605.04736)
+  - Core: 神经网络学习QUBO问题到量子硬件的minor embedding映射
+  - Key: 相比经典minorminer更适合重复相似问题类型；需要经典嵌入作为备份验证
+  - **Activation**: QUBO embedding, quantum annealing, graph embedding, neural embedding, minor embedding, D-Wave mapping
+
+### Dephasing Effects on the Dynamical Evolution of Quantum Correlations and Coherence in Neutrino Oscillations
+- [[quantum-dephasing-dynamics]] - 退相干对量子关联和相干性动力学影响的分析方法 (arXiv: 2605.05015)
+  - Core: 使用quantum steering、对数负性和l1范数相干性三个互补指标分析退相干
+  - Key: Quantum steering可在有限时间内突然消失；退相干速率取决于初始态结构
+  - **Activation**: quantum dephasing, decoherence analysis, quantum steering, logarithmic negativity, coherence measures
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### TRIBE v2: A Foundation Model of Vision, Audition, and Language for In-Silico Neuroscience
