@@ -1,3 +1,23 @@
+## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
+
+### Towards sample-optimal learning of bosonic Gaussian quantum states
+- [[bosonic-gaussian-state-learning]] - Sharp sample complexity bounds for learning n-mode Gaussian states: Omega(n^3/epsilon^2) for Gaussian measurements, non-Gaussian required for passive states (arXiv: 2603.18136)
+  - Core: Lower/upper bounds on copies needed to learn Gaussian states to epsilon trace distance; adaptivity indispensable for energy-independent scaling
+  - Key: Non-Gaussian measurements provably required for optimal passive state learning; Gaussian measurements nearly optimal for pure states
+  - **Activation**: bosonic Gaussian state learning, quantum state tomography sample complexity, continuous-variable quantum learning, Gaussian measurement bounds, passive Gaussian state, quantum state estimation efficiency
+
+### Finite steps optimise dissipation in stochastically controlled quantum systems
+- [[stochastic-quantum-dissipation]] - Thermodynamic cost analysis reveals weak Gaussian noise induces dissipation growing linearly with step count, establishing optimal N* trade-off (arXiv: 2605.04681)
+  - Core: Stochastic control noise accumulates linearly across steps, creating optimal step count minimizing total dissipation
+  - Key: Conventional 'more steps = better' fails under noise; D_total = D_deterministic + sigma^2 * k * N
+  - **Activation**: quantum dissipation, stochastic quantum control, step-equilibration thermodynamics, quantum thermodynamic cost, Gaussian noise quantum control, finite-step quantum optimization
+
+### Quantum Error Correction Exploiting Quantum Spatial Distribution and Gauge Symmetry
+- [[quantum-spatial-error-correction]] - QEC using spin-position superposition and gauge symmetry, resilient to spin/position decoherence and joint dephasing with nearest-neighbor interactions only (arXiv: 2604.25747)
+  - Core: 3+2 particle nested square encoding Shor's code; gauge symmetry protects against unified noise model
+  - Key: Modular vertical/horizontal stacking with local interactions; supports logical Hadamard, Toffoli, quantum adder
+  - **Activation**: quantum spatial distribution QEC, gauge symmetry error correction, spin-position superposition QEC, nested square quantum code, Shor code spatial extension, stabilizer measurement spatial
+
 ## 2026-05-08 - Neuroscience Research (Cron Job v6)
 
 ### Collection Status Update
