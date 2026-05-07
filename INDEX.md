@@ -6,6 +6,21 @@
   - Key: Predicts N ≥ 2d+1 embedding threshold; contraction strength tracks fidelity; psychometric functions emerge from embedding quality
   - **Activation**: neural manifold, crystallized embedding, free energy principle, generalized synchronization, Hebbian plasticity, reservoir computing, Takens theorem
 
+## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job - 2nd Run)
+
+### Probabilistic and approximate universal quantum purification machines
+- [[quantum-purification-machines]] - Impossibility of universal probabilistic exact purification from finite copies; rank obstruction theorem; optimal approximate purification with analytical error bounds (arXiv: 2604.06325)
+  - Core: Purifying two states of different rank with non-zero probability requires non-linear positive map — fundamental quantum obstruction
+  - Key: Approximate setting derives analytical expressions for minimum average error; general upper bound tight in specific regimes
+  - **Activation**: quantum purification, Stinespring dilation, probabilistic quantum transformation, quantum state purification impossibility, approximate quantum purification
+
+### Integral Means Spectrum for the Random Riemann Zeta Function
+- [[random-riemann-zeta-spectrum]] - Proves Kraetzer's 30-year conjecture: integral means spectrum of random zeta primitive matches universal spectrum of univalent functions via Gaussian multiplicative chaos (arXiv: 2603.26507)
+  - Core: Random zeta-function models asymptotic statistics of vertical shifts; primitive's spectrum almost surely equals Kraetzer's universal form
+  - Key: Connects analytic number theory to GMC (Kahane 40 years ago) and conformal geometry; same spectrum as whole-plane SLE(κ=6)
+  - **Activation**: random Riemann zeta, integral means spectrum, Kraetzer conjecture, Gaussian multiplicative chaos, analytic number theory, Bagchi random zeta
+
+
 ## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
 
 ### Quantum Prediction of Transport Dynamics in Discretized State Spaces
