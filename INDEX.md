@@ -1,3 +1,18 @@
+## 2026-05-07 - Systems Engineering + Quantum (Cron Job)
+
+### Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder
+- [[fpga-quantum-error-decoder]] - FPGA-based real-time QEC decoding with 124ns NN inference and 550ns closed-loop latency for surface-code error correction on superconducting processors (arXiv: 2605.04892)
+  - Core: Hardware-integrated FPGA NN decoder achieving deterministic 550ns closed-loop QEC latency
+  - Cross-domain: Combines quantum error correction, FPGA hardware design, and real-time control systems
+  - Key metric: 124ns NN decoding within 1.25μs QEC cycle, enables mid-circuit feedback for non-Clifford gates
+  - **Activation**: FPGA QEC decoder, real-time quantum error correction, low-latency syndrome decoding, hardware integrated QEC
+
+### ELVIS: Ensemble-Calibrated Latent Imagination for Long-Horizon Visual MPC
+- Systems engineering paper on model predictive control with ensemble uncertainty estimation for visual RL (arXiv: 2605.04709)
+  - Core: GMM-MPPI replaces unimodal MPPI for multi-hypothesis long-horizon planning in latent space
+  - Key: UCB-gated lambda-return adaptively trades bootstrapping vs look-ahead to limit compounding error
+  - **Activation**: visual MPC, model predictive control, ensemble calibration, Dreamer RSSM
+
 ## 2026-05-07 - Neuroscience Research (Cron Job)
 
 ### Personalized Spiking Neural Networks with Ferroelectric Synapses for EEG Signal Processing
