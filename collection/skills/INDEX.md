@@ -1,3 +1,25 @@
+## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 23:00)
+
+### SpinTune: RL-Based Quantum Sensor Network Reliability
+- [[spintune-quantum-sensor-reliability]] - 强化学习优化动态解耦脉冲序列提升量子传感器网络可靠性 (arXiv: 2605.04416)
+  - 核心要点: 使用RL代理学习环境噪声谱并自适应选择最优DD脉冲序列，替代固定CPMG/XY序列
+  - 核心要点: 实现量子-经典混合计算管道，量子传感器测量+经典RL优化DD序列+实时自适应噪声
+  - **Activation**: spintune, quantum sensor reliability, dynamical decoupling optimization, DD pulse sequence, quantum decoherence mitigation, 量子传感器可靠性
+
+### Neural-Powered Qubit Embedding for Quantum Annealing
+- [[neural-qubit-embedding]] - 神经网络解决量子退火器QUBO问题的图嵌入/minor embedding问题 (arXiv: 2605.04736)
+  - 核心要点: 使用GNN学习QUBO问题图表示，通过匹配层将逻辑变量分配到硬件量子比特，构建链式连接
+  - 核心要点: 单位盘图建模硬件连接性，优化链长和连通性平衡，避免链重叠
+  - **Activation**: qubit embedding, quantum annealer embedding, QUBO mapping, minor graph embedding, unit disk graph, quantum annealing connectivity
+
+### Factor-Graph CSS Syndrome Decoding for Quantum Error Correction
+- [[css-syndrome-decoding]] - 基于因子图的CSS码综合征解码，联合BP与四态BP算法 (arXiv: 2605.05132)
+  - 核心要点: 将CSS码后验概率建模为二元因子图，两个Tanner图通过每个量子比特的联合先验耦合
+  - 核心要点: 四态BP跟踪完整Pauli分布{I,X,Z,Y}，比独立X/Z解码更准确地处理Y=XZ相关性
+  - **Activation**: css syndrome decoding, quantum error correction decoding, factor graph decoding, belief propagation QEC, Tanner graph quantum, CSS码译码
+
+---
+
 ## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 13:00)
 
 ### QBalance: Multi-Objective Quantum Workflow Optimization
