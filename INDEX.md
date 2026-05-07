@@ -1,3 +1,20 @@
+
+## 2026-05-07 - Systems Engineering Research (Cron Job)
+
+### A Delta-Aware Orchestration Framework for Scalable Multi-Agent Edge Computing
+- [[delta-aware-multi-agent-orchestration]] - DAOEF framework for scalable multi-agent edge computing with differential neural caching, criticality-based action space pruning, and learned hardware affinity matching (arXiv: 2604.20129)
+    - Differential Neural Caching achieves 72% hit ratio (2.1x improvement) with <2% accuracy loss
+    - Criticality-Based Action Space Pruning reduces O(n²) to O(n log n) coordination complexity
+    - 1.45x multiplicative gain, 62% latency reduction at 200 agents, 62% energy savings
+  - **Activation**: multi-agent orchestration, edge computing, delta caching, action space pruning, synergistic collapse, DAOEF
+
+### A Domain-Driven Design Simulator for Business Logic-Rich Microservice Systems
+- [[ddd-microservice-simulator]] - DDD microservice simulator for shift-left validation of transactional patterns (Sagas, TCC) across deployment topologies (arXiv: 2605.01159)
+    - Isolates business logic from communication/transactional infrastructure for pre-production validation
+    - Supports Sagas and TCC transactional models with seamless topology transitions
+    - Deterministic environment for evaluating consistency guarantees and network constraints
+  - **Activation**: microservice simulation, domain-driven design, saga pattern, TCC, distributed transactions, shift-left validation
+
 ## 2026-05-07 - Systems Engineering + Quantum (Cron Job)
 
 **Coverage Analysis**: 5 papers scanned (eess.SY + quant-ph), **100% coverage** (5/5 already covered by existing skills). Zero new skills created — collection maturity demonstrated.
