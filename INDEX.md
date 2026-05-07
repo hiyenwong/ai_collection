@@ -1,3 +1,22 @@
+## 2026-05-07 - OpenAI Research (Cron Job)
+
+### OpenAI GPT-5 System Card
+- [[openai-gpt-5-system-card]] - GPT-5 unified system architecture with reasoning router, safe-completions, and deliberative alignment (arXiv:2601.03267)
+  - Three-component architecture: fast model, deep reasoning model, real-time router
+  - Router trained on user switching behavior, preference rates, and correctness signals
+  - Safe-completions for content safety; precautionary High capability classification
+  - Key improvements: reduced hallucinations, better instruction following, minimized sycophancy
+  - **Activation**: gpt-5, system card, unified model, router, safe-completions, deliberative alignment
+
+### OpenAI o1 System Card
+- [[openai-o1-system-card]] - o1 chain-of-thought reasoning and deliberative alignment via large-scale RL (arXiv:2412.16720)
+  - Trained with large-scale reinforcement learning for chain-of-thought reasoning
+  - Deliberative alignment: models reason about safety policies in context
+  - State-of-the-art on safety benchmarks; improved adversarial robustness
+  - **Activation**: o1, chain of thought, deliberative alignment, reasoning model, reinforcement learning safety
+
+---
+
 ## May 2, 2026 - Neuroscience Research (Cron Job)
 
 ### EdgeSpike: SNNs for Low-Power Edge IoT Sensing

@@ -1,97 +1,84 @@
 ---
-name: openai-o1-system-card---openai-o1-system-card
-description: Skill for AI agent capabilities
+name: openai-o1-system-card
+description: o1 chain-of-thought reasoning and deliberative alignment methodology - RL-based reasoning training for improved safety
+tags: [alignment, safety, reasoning, chain-of-thought, RL, system-card]
+trigger: o1, chain of thought, deliberative alignment, reasoning model, reinforcement learning safety
+version: 1.0
+created: 2026-05-07
 ---
 
-# openai-o1-system-card - OpenAI o1 System Card
+# OpenAI o1 System Card Methodology
 
-## Description
+## Overview
 
-This report outlines the safety work carried out prior to releasing OpenAI o1 and o1-mini, including external red teaming and frontier risk evaluations according to our Preparedness Framework.
+The o1 model series represents OpenAI's approach to training models with advanced reasoning capabilities through large-scale reinforcement learning. This methodology focuses on using chain-of-thought reasoning not just for performance, but as a foundation for improved safety and robustness.
 
-**Source:** https://openai.com/index/openai-o1-system-card
-**Date:** Thu, 05 Dec 2024 10:00:00 GMT
-**Category:** OpenAI Research
+Source: arXiv:2412.16720 (Revised April 30, 2026)
 
-## Activation Keywords
+## Core Training Methodology
 
-- openai o1 system card
-- openai openai-o1-system-card
-- openai o1 system card
+### 1. Large-Scale Reinforcement Learning
 
-## Core Concepts
+o1 is trained with **large-scale reinforcement learning** specifically to develop chain-of-thought reasoning capabilities. This differs from standard supervised fine-tuning by:
 
-### Key Points
+- Learning through trial and error on complex reasoning tasks
+- Developing internal reasoning strategies rather than mimicking human demonstrations
+- Generalizing reasoning patterns across diverse problem domains
 
-- Extract from OpenAI research paper
-- See original paper for detailed methodology
+### 2. Chain of Thought as Reasoning Infrastructure
 
-## Step-by-Step Instructions
+The model's chain-of-thought reasoning serves dual purposes:
 
-### 1. Background
+1. **Performance**: Better problem-solving on complex tasks
+2. **Safety**: Enables deliberative alignment (see below)
 
-```python
-# Research background
-# See original paper: https://openai.com/index/openai-o1-system-card
-```
+### 3. Deliberative Alignment
 
-### 2. Implementation
+A key innovation of o1 is **deliberative alignment**:
 
-```python
-# Implementation details
-# Refer to OpenAI's official implementation
-```
+- Models can reason about safety policies **in context** when responding to potentially unsafe prompts
+- Rather than simple pattern matching, the model deliberates about policy compliance
+- This leads to more nuanced and context-aware safety responses
 
-## Tools Used
+## Safety Improvements
 
-- `read` - Read research papers
-- `web_fetch` - Fetch online resources
-- `exec` - Run implementation code
+### Benchmark Performance
 
-## Example Use Cases
+o1 demonstrates state-of-the-art performance on safety benchmarks:
 
-### 1. Basic Usage
+- **Illicit Advice Generation**: Reduced generation of harmful instructions
+- **Stereotyping**: Minimized stereotypical content generation
+- **Ungrounded Content**: Reduced fabrication and hallucination
 
-```python
-# Example usage based on research
-```
+### Adversarial Robustness
 
-## Instructions for Agents
-Follow these steps when applying this skill:
+- **Significant improvements** in resistance to adversarial prompts
+- **Better jailbreak resistance** compared to previous models
+- The reasoning capability allows the model to recognize and resist manipulation attempts
 
-### Step 1: Background
+## Methodology Extraction
 
-## Examples
+### When to Apply This Pattern
 
-### Example 1: Basic Application
+1. **Safety-Critical Applications**: When model safety is paramount
+2. **Complex Reasoning Tasks**: When chain-of-thought improves both performance and safety
+3. **Adversarial Environments**: When the model may face deliberate manipulation attempts
 
-**User:** I need to apply openai-o1-system-card - OpenAI o1 System Card to my analysis.
+### Implementation Considerations
 
-**Agent:** I'll help you apply openai-o1-system-card. First, let me understand your specific use case...
+1. **Training Scale**: Requires significant computational resources for RL training
+2. **Evaluation Complexity**: Need comprehensive safety benchmarks
+3. **Policy Design**: Safety policies must be well-defined and consistent for deliberative alignment
 
-**Context:** Apply the methodology
+## Key Takeaways
 
-### Example 2: Advanced Scenario
+1. **Reasoning + Safety Synergy**: Advanced reasoning capabilities can directly improve safety, not just performance
+2. **Deliberative Over Pattern-Based**: Context-aware reasoning about policies outperforms simple safety filters
+3. **RL for Reasoning**: Reinforcement learning is effective for developing genuine reasoning capabilities
+4. **Precautionary Classification**: Even without definitive evidence of risk, precautionary safeguards are appropriate
 
-**User:** Complex analysis scenario
+## Related Patterns
 
-**Agent:** Based on the methodology, I'll guide you through the advanced application...
-
-### Example 2: Advanced Application
-
-**User:** What are the key considerations for openai-o1-system-card?
-
-**Agent:** Let me search for the latest research and best practices...
-
-## Related Skills
-
-- Other OpenAI research skills
-
-## References
-
-- https://openai.com/index/openai-o1-system-card
-
----
-
-**Created:** 2026-03-29 14:25
-**Author:** Aerial (from OpenAI Research)
+- [[openai-gpt-5-system-card]] - GPT-5's unified model architecture
+- [[instruction-following]] - InstructGPT's instruction following methodology
+- [[learning-to-summarize-with-human-feedback]] - RLHF foundations for preference learning
