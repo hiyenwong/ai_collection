@@ -1,3 +1,17 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
+- [[think-aloud-cognitive-model-discovery]] - Using think-aloud verbal traces as process-level constraints for LLM-based cognitive model discovery, shifting from explicit comparator to integrated utility models for 69.4% of participants (arXiv: 2605.05091)
+  - Core: Think-aloud data resolves under-determination in behavioral-only model discovery
+  - Key: Process-level language enables identification of mechanisms not recoverable from behavior alone
+  - **Activation**: think-aloud model discovery, cognitive model AI, verbal protocol analysis, LLM cognitive modeling, process-level constraints, risky decision model, automated model discovery
+
+### Interpreting V1 Population Activity via Image-Neural Latent Representation Alignment
+- [[dina-v1-population-activity-interpretation]] - Dual-Tower Image-Neural Alignment (DINA) framework for interpretable V1 population analysis, revealing decoding relies on coarse low-level structure rather than semantic information (arXiv: 2605.04309)
+  - Core: Contrastive learning aligns visual stimuli and V1 responses in shared latent space at intermediate feature map level
+  - Key: Sparse subsets of strongly responsive neurons dominate feature reconstruction; multiple spatially distributed image regions contribute
+  - **Activation**: DINA, V1 interpretation, image neural alignment, visual decoding, calcium imaging analysis, population level visual computation, contrastive neural alignment
+
 ## 2026-05-08 - Systems Engineering + Quantum (Cron Job)
 
 ### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
