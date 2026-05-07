@@ -1,5 +1,17 @@
 ## 2026-05-07 - Neuroscience Research (Cron Job)
 
+### Noise-Accelerated Kramers Escape and Coherence Resonance in a 5D Neural Manifold
+- [[noise-accelerated-kramers-neural-manifold]] - Bounded multiplicative channel noise actively reshapes neural excitability via triphasic transitions: stochastic awakening (subthreshold Kramers escape), coherence resonance (near Hopf bifurcation), and noise-accelerated escape (suprathreshold irregular bursting) (arXiv: 2605.04088)
+  - Core: Full-truncation semi-implicit Euler scheme for domain-preserving integration of multiplicative noise in 5D Hodgkin-Huxley cortical pacemaker model
+  - Key: Extreme multiplicative noise (sparse channel populations) transforms regular pacing into pathological hyperexcitability via noise-accelerated escape from hyperpolarized slow manifold
+  - **Activation**: Kramers escape, coherence resonance, channel noise, multiplicative noise, neural excitability, Hodgkin-Huxley, stochastic resonance, pathological hyperexcitability, Feller boundary, Hopf bifurcation
+
+### Neural Manifolds as Crystallized Embeddings
+- [[neural-manifolds-crystallized-embeddings]] - Neural manifolds emerge developmentally through three interacting processes: dynamical contraction (free energy minimization), generalized synchronization (reservoir embedding), and Hebbian plasticity crystallizing embedded manifolds into recurrent connectivity (arXiv: 2605.04200)
+  - Core: Synthesizes free energy principle, reservoir computing embedding theorems, and contraction theory of Hebbian networks to explain head-direction, grid-cell, and visual manifold formation
+  - Key: Mature neural manifolds are not genetically prespecified but developmental products; testable predictions include dimensional thresholds for topological recovery and input-statistics-dependent attractor geometry
+  - **Activation**: neural manifold, crystallized embedding, free energy principle, generalized synchronization, Hebbian plasticity, attractor network, head-direction cells, grid cells, developmental neuroscience
+
 ### A foundation model of vision, audition, and language for in-silico neuroscience
 - [[tribe-v2-trimodal-foundation-model]] - Tri-modal (video/audio/language) foundation model predicting human brain activity across 1000+ hours of fMRI from 720 subjects, superseding linear encoding models with several-fold accuracy improvements and enabling in-silico experimentation (arXiv: 2605.04326)
   - Core: Unified tri-modal encoder maps to voxel-wise fMRI predictions with cross-subject generalization
