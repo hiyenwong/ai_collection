@@ -1,4 +1,22 @@
 
+## 2026-05-07 - Neuroscience Research (Cron Job - 09:00)
+
+### From Cortical Synchronous Rhythm to Brain Inspired Learning Mechanism: An Oscillatory Spiking Neural Network with Time-Delayed Coordination
+- [[s2-net-oscillatory-spiking-synchronization]] - Spiking-by-Synchronization Neural Network (S2-Net) using rhythmic timing as control mechanism for efficient information processing across neural decoding, signal processing, temporal binding and semantic reasoning (arXiv: 2605.01656)
+  - Proposes brain-inspired learning primitive where cognition-level neural synchrony emerges through iterative bottom-up and top-down interactions
+  - Models partial/transient synchronization (not global phase locking) using time-delayed coordination formulation
+  - Each system parcel modeled as spiking neuron with predefined connectivity scaffold and finite memory window
+  - **Activation**: S2-Net, spiking-by-synchronization, oscillatory SNN, time-delayed coordination, cortical synchronous rhythm, brain-inspired learning, 脉冲同步神经网络
+
+### Spike-driven Large Language Model
+- [[spike-driven-large-language-model-sdllm]] - Eliminates dense matrix multiplications in billion-parameter LLMs through sparse additions using gamma-SQP encoding, achieving 7x energy reduction and +4.2% accuracy (arXiv: 2604.16475)
+  - Gamma-SQP two-step spike encoding aligns quantization with model's semantic space
+  - Bidirectional symmetric quantization and membrane potential clipping reduce firing rate by 2x
+  - Designed for event-driven neuromorphic chip deployment
+  - **Activation**: SDLLM, spike-driven LLM, gamma-SQP encoding, sparse addition LLM, neuromorphic LLM, 脉冲驱动大语言模型
+
+**Coverage Analysis**: 50+ papers scanned from arXiv search (spiking neural network, brain network, neural dynamics), **2 new skills created** from S2-Net and SDLLM papers (neuroscience + AI intersection).
+
 ## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 09:00)
 
 ### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
