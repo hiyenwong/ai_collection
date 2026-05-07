@@ -18,6 +18,12 @@
   - Key: 124ns NN decoding + 426ns overhead enables real-time Pauli-frame corrections for fault-tolerant quantum computing
   - **Activation**: FPGA QEC decoder, real-time quantum error correction, low-latency syndrome decoding, hardware integrated QEC, surface code FPGA
 
+### Universally Robust Control of Open Quantum Systems
+- [[universally-robust-quantum-control]] - Noise-agnostic quantum control framework achieving >99% fidelity without prior noise characterization, provably robust against arbitrary Markovian noise (arXiv: 2508.07379)
+  - Core: Dynamical modification of system-environment coupling through control drives, with coupling-independent noise sensitivity metric
+  - Key: Orders-of-magnitude error suppression vs target-only approaches, hardware-agnostic across superconducting circuits, trapped ions, and solid-state qubits
+  - **Activation**: robust quantum control, noise-agnostic control, open quantum systems, decoherence mitigation, quantum noise suppression, fault-tolerant quantum control, 鲁棒量子控制
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
