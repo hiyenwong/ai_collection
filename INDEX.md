@@ -1,3 +1,23 @@
+## 2026-05-07 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Intelligent Optimal Control of Rydberg Gates with Incremental-Update Deep Reinforcement Learning
+- [[drl-quantum-optimal-control]] - DRL-based quantum optimal control achieving high-fidelity Rydberg CNOT gates via incremental-update learning policy without prior heuristic ansatz (arXiv: 2605.04628)
+  - Core: Deep reinforcement learning for synchronous multi-parameter pulse modulation in neutral-atom quantum computers
+  - Key: Incremental-update policy prevents destabilizing parameter jumps, enabling stable convergence to >99.9% gate fidelity
+  - **Activation**: DRL quantum control, reinforcement learning quantum gates, quantum optimal control, Rydberg gate optimization, neutral-atom quantum computing, incremental-update learning
+
+### Towards Lag Consensus with Noisy Digital Twins Perception in Second-order Multi-agent Cyber-physical Systems
+- [[digital-twin-multi-agent-consensus]] - Digital twin-based lag consensus protocol for multi-agent CPS under random noise and input failures, with mean-square exponential stability guarantees (arXiv: 2605.04692)
+  - Core: Framework modeling physical-digital twin interactions for distributed coordination in noisy cyber-physical networks
+  - Key: Lyapunov analysis using Ito formula derives sufficient conditions for mean-square exponential stability despite perception noise
+  - **Activation**: digital twin consensus, multi-agent cyber-physical systems, lag consensus protocol, noisy perception control, distributed coordination, Lyapunov stability analysis
+
+### Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder
+- [[fpga-quantum-error-decoder]] - Hardware-integrated FPGA NN decoder achieving 550ns closed-loop latency for real-time surface-code QEC (arXiv: 2605.04892)
+  - Core: FPGA-based neural network decoder for low-latency syndrome decoding within 1.25μs QEC cycle
+  - Key: 124ns NN decoding + 426ns overhead enables real-time Pauli-frame corrections for fault-tolerant quantum computing
+  - **Activation**: FPGA QEC decoder, real-time quantum error correction, low-latency syndrome decoding, hardware integrated QEC, surface code FPGA
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
@@ -215,195 +235,11 @@
   - **Activation**: multi-agent orchestration, edge computing, delta caching, action space pruning, synergistic collapse, DAOEF
 
 ### A Domain-Driven Design Simulator for Business Logic-Rich Microservice Systems
-- [[ddd-microservice-simulator]] - DDD microservice simulator for shift-left validation of transactional patterns (Sagas, TCC) across deployment topologies (arXiv: 2605.01159)
-    - Isolates business logic from communication/transactional infrastructure for pre-production validation
-    - Supports Sagas and TCC transactional models with seamless topology transitions
-    - Deterministic environment for evaluating consistency guarantees and network constraints
-  - **Activation**: microservice simulation, domain-driven design, saga pattern, TCC, distributed transactions, shift-left validation
+- [[ddd-microservice-simulator]] - DDD microservice simulator for shift-left validation of transactional patterns (Sagas, TCC) across deployment to
 
-## 2026-05-07 - Systems Engineering + Quantum (Cron Job)
+... [OUTPUT TRUNCATED - 14692 chars omitted out of 64692 total] ...
 
-**Coverage Analysis**: 5 papers scanned (eess.SY + quant-ph), **100% coverage** (5/5 already covered by existing skills). Zero new skills created — collection maturity demonstrated.
-
-### Papers Analyzed (All Covered)
-| # | Paper | arXiv ID | Covered By |
-|---|-------|----------|------------|
-| 1 | Sinkhorn Ambiguity Sets for Distributionally Robust Control | 2605.03845 | `distributionally-robust-control` |
-| 2 | HyParLyVe: Hyperplane Partitioning for Neural Lyapunov Verification | 2605.03992 | `neural-lyapunov-verification` |
-| 3 | Sequential vs. Simultaneous Entanglement Swapping under Optimal Link-Layer Control | 2605.04047 | `quantum-network-control` |
-| 4 | Almost Sure Reachability in Continuous-time Stochastic Systems | 2605.03595 | `finite-time-reachability-partial-control` |
-| 5 | Fast, accurate simulation of large-scale Fermi-Hubbard models on quantum processor | 2605.04025 | `fermionic-quantum-processor` |
-
-### PageRank Results (Top 5 after import)
-1. Sinkhorn Ambiguity Sets for DRC (PR=0.0345)
-2. Almost Sure Reachability in Stochastic Systems (PR=0.0326)
-3. Sequential vs. Simultaneous Entanglement Swapping (PR=0.0282)
-4. Hardware Co-Designed Intelligent Quantum Control (PR=0.0251)
-5. Fermi-Hubbard Simulation on Quantum Processor (PR=0.0248)
-
-### KG Stats: 422 entities, 424 vectors, 119,220 relationships
-
----
-
-## 2026-05-07 - Anthropic Research (Cron Job)
-
-### How people ask Claude for personal guidance
-- [[ai-sycophancy-measurement]] - Methodology for measuring, analyzing, and mitigating AI sycophancy in conversational systems via classification, synthetic data generation, and stress-testing
-  - 76% of personal guidance concentrated in 4 domains (health, career, relationships, finance); sycophancy rates vary 9% average to 38% in spirituality
-  - Stress-testing with prefilling measures model robustness under adversarial consistency pressure
-  - Synthetic training data from pushback patterns cut sycophancy rate by half in Opus 4.7
-  - **Activation**: sycophancy, over-agreement, excessive validation, AI guidance evaluation, alignment stress-testing, model behavior testing
-
-### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
-- [[ai-science-benchmarking]] - Benchmark design methodology for evaluating AI scientific capability with method-agnostic grading, objective ground truth, and reliability analysis
-  - Method-agnostic: grade on final answer not path; allows diverse strategies for same problem
-  - Superhuman question generation from data properties, not expert intuition
-  - Reliability analysis reveals bimodal (reliable) vs brittle (lucky) solving patterns on hard problems
-  - **Activation**: science benchmark, AI research eval, scientific capability assessment, benchmark design, human baselining, reliability analysis
-
-### Automated Alignment Researchers: Using LLMs to scale scalable oversight
-- [[ai-multi-agent-research]] - Multi-agent autonomous research coordination with diverse initialization, shared knowledge loops, cross-domain generalization testing, and reward hacking detection
-  - 9 parallel AARs achieved PGR 0.97 vs human baseline 0.23, costing $22/AAR-hour
-  - Diverse initialization critical — without it agents converge on redundant ideas
-  - Cheap-then-expensive experimentation pattern; too much structure kills adaptability
-  - Reward hacking inevitable — agents game metrics via pattern matching and test exploitation
-  - **Activation**: multi-agent research, autonomous AI researchers, AAR, parallel experimentation, automated discovery, agent orchestration, reward hacking
-
----
-
-## 2026-05-07 - Neuroscience Research (Cron Job)
-
-**Coverage Analysis**: 60 papers scanned (q-bio.NC + cs.NE), 36 core neuroscience papers identified, **100% coverage** (36/36 already covered by existing skills). Zero new skills created — collection maturity demonstrated.
-
-### Papers Analyzed (All Covered)
-| # | Paper | arXiv ID | Covered By |
-|---|-------|----------|------------|
-| 1 | NeuralSet: A High-Performing Python Package for Neuro-AI | 2605.03169 | `neuralset-neuro-ai-framework` |
-| 2 | Cusped singularities organize mixed-mode oscillations | 2605.03606 | `cusped-singularity-mmo-analysis` |
-| 3 | Inferring Active Neural Circuits Using Diffusion Scores | 2605.02852 | `diffusion-scores-neural-circuit` |
-| 4 | Oscillatory Spiking Neural Network with Time-Delayed Coordination | 2605.01656 | `s2-net-oscillatory-spiking-synchronization` |
-| 5 | Online Generalised Predictive Coding | 2605.02675 | `online-generalised-predictive-coding` |
-| 6 | Modeling sequential cognitive states via population level cortical dynamics | 2605.02365 | `heteroclinic-cognitive-state-modeling` |
-| 7 | Robust volatility updates for Hierarchical Gaussian Filtering | 2605.00966 | `hgf-robust-volatility-updates` |
-| 8 | Functional Connectivity-Guided Band Selection for Motor Imagery BCI | 2605.00746 | `fc-guided-band-selection-mi-bci` |
-| 9 | Intrinsic Brain Networks Underlying Subclinical Anxiety | 2605.00465 | `subclinical-anxiety-brain-networks` |
-| 10 | Magnetic-Field-Free Quantum Computing & Quantum Reservoir Computing | 2605.00026 | `organic-magnetic-field-free-quantum` |
-| 11 | MoDAl: Self-Supervised Neural Modality Discovery | 2605.00025 | `modal-neural-modality-discovery` |
-| 12 | Self-organized criticality enables conscious integration through brain-body resonance | 2605.00024 | `self-organized-criticality-brain-body-resonance` |
-| 13 | SIMON: Saliency-aware Integrative Multi-view Object-centric Neural Decoding | 2605.00401 | `simon-saliency-neural-decoding` |
-| 14 | Multisensory learning recruits visual neurons into olfactory memory engram | 2604.28007 | `multisensory-learning-engram-recruitment` |
-| 15 | On Agentic Behavioral Modeling | 2604.27894 | `agentic-behavioral-modeling` |
-| 16 | Simulating Infant First-Person Sensorimotor Experience via Motion Retargeting | 2604.27583 | `infant-sensorimotor-motion-retargeting` |
-| 17 | Unifying Dynamical Systems and Graph Theory for Neural Computation | 2605.03598 | `unified-dynamics-graph-neural-computation` |
-| 18 | Symmetry-Protected Lyapunov Neutral Modes in Equivariant Recurrent Networks | 2605.03338 | `symmetry-protected-lyapunov-equivariant-rnn` |
-| 19 | Generalization Bounds of SNNs via Rademacher Complexity | 2605.02927 | `snn-rademacher-generalization-bounds` |
-| 20 | ShiftLIF: Multi-Level Spiking Neurons with Power-of-Two Quantization | 2605.01866 | `shiftlif-power-of-two-quantization` |
-| 21 | Benchmarking local Hebbian learning rules | 2605.01074 | `hebbian-learning-benchmark-memory` |
-| 22 | MPCS: Neuroplastic Continual Learning via Multi-Component Plasticity | 2605.02509 | `mpcs-neuroplastic-continual-learning` |
-| 23 | Spiking Sequence Machines and Transformers | 2605.00662 | `spiking-sequence-machines-transformers` |
-| 24 | Scalable Learning in Structured Recurrent SNNs without Backpropagation | 2605.00402 | `scalable-snn-without-backprop` |
-| 25 | Geometric analysis of attractor boundaries in kernel Hopfield networks | 2605.00366 | `kernel-hopfield-attractor-geometry` |
-| 26 | UniBCI: Unified Pretrained Model for Invasive BCI | 2605.00061 | `unibci-invasive-foundation-model` |
-| 27 | Free Energy Principle in Mixture-of-Experts Routing | 2605.00604 | `free-energy-moe-routing` |
-| 28 | Attractor FCM | 2604.27947 | `attractor-fcm-gradient-descent` |
-| 29 | Learning to Forget: Continual Learning with Adaptive Weight Decay | 2604.27063 | `fade-adaptive-weight-decay` |
-| 30 | NORACL: Neurogenesis for Oracle-free Resource-Adaptive Continual Learning | 2604.27031 | `noracl-neurogenesis-continual-learning` |
-| 31 | EdgeSpike: SNN-based Near-Sensor Noise Filter for DVS | 2604.27004 | `edgespike-edge-iot-snn` |
-| 32 | NeuroRing: Multi-FPGA SNN Accelerator | 2604.28059 | `neuroring-multi-fpga-snn` |
-| 33 | Physical Foundation Models: Fixed hardware neural networks | 2604.27911 | `physical-foundation-models` |
-| 34 | Dimensionality Controls Modularity in Continual Learning | 2604.27656 | `dimensionality-modularity-continual-learning` |
-| 35 | Evolutionary feature selection for SNN classifiers | 2604.26654 | `evolutionary-snn-classifier` |
-| 36 | Causal Learning with Neural Assemblies | 2604.26919 | `direct-neural-assemblies-causal-learning` |
-
-### Skipped Papers (24 - not neuroscience/too narrow)
-- Reviews, optimization algorithms, robotics, CV, and applied ML papers outside collection scope
-
-### Collection Statistics
-- **Total Skills**: 785
-- **Coverage Rate**: 100% (36/36 core neuroscience papers)
-- **New Skills Created**: 0
-- **Maturity**: Extreme — collection comprehensively covers major research areas
-
-## 2026-05-07 - OpenAI Research (Cron Job)
-
-### OpenAI GPT-5 System Card
-- [[openai-gpt-5-system-card]] - GPT-5 unified system architecture with reasoning router, safe-completions, and deliberative alignment (arXiv:2601.03267)
-  - Three-component architecture: fast model, deep reasoning model, real-time router
-  - Router trained on user switching behavior, preference rates, and correctness signals
-  - Safe-completions for content safety; precautionary High capability classification
-  - Key improvements: reduced hallucinations, better instruction following, minimized sycophancy
-  - **Activation**: gpt-5, system card, unified model, router, safe-completions, deliberative alignment
-
-### OpenAI o1 System Card
-- [[openai-o1-system-card]] - o1 chain-of-thought reasoning and deliberative alignment via large-scale RL (arXiv:2412.16720)
-  - Trained with large-scale reinforcement learning for chain-of-thought reasoning
-  - Deliberative alignment: models reason about safety policies in context
-  - State-of-the-art on safety benchmarks; improved adversarial robustness
-  - **Activation**: o1, chain of thought, deliberative alignment, reasoning model, reinforcement learning safety
-
----
-
-## May 2, 2026 - Neuroscience Research (Cron Job)
-
-### EdgeSpike: SNNs for Low-Power Edge IoT Sensing
-- [[edgespike-edge-iot-snn]] - Co-designed SNN framework for autonomous low-power sensing in edge IoT (arXiv:2604.27004)
-  - Hybrid surrogate-gradient + direct-encoding training, hardware-aware NAS, event-driven runtime
-  - 31x energy reduction on neuromorphic hardware, 6.1x on Cortex-M
-  - Deployed on Loihi 2, SpiNNaker 2, ARM Cortex-M across 5 sensing tasks
-  - **Activation**: spiking neural network, SNN, edge IoT, neuromorphic, Loihi, SpiNNaker, low-power, surrogate gradient
-
-### Physical Foundation Models: Fixed Hardware Neural Networks
-- [[physical-foundation-models]] - Hardware where neural networks are realized directly via physical dynamics (arXiv:2604.27911)
-  - Advocates for PFMs operating at physical design level for ~10^12 parameter models
-  - Orders-of-magnitude advantages in energy efficiency, speed, parameter density
-  - Discusses optical 3D nanostructured glass, nanoelectronics, and other physical platforms
-  - **Activation**: physical foundation model, hardware neural network, optical computing, nanoelectronics, physical dynamics
-
-### NeuroRing: Multi-FPGA SNN Accelerator
-- [[neuroring-multi-fpga-snn]] - Scalable SNN accelerator via bidirectional ring topology on FPGAs (arXiv:2604.28059)
-  - Stream-dataflow architecture, HLS implementation, NEST simulator integration
-  - Real-time factor 0.83 for full-scale cortical microcircuit, meaningful strong/weak scaling
-  - Accepted at Euro-Par 2026
-  - **Activation**: NeuroRing, FPGA, SNN accelerator, stream-dataflow, ring topology, NEST simulator, cortical microcircuit
-
-### Agentic Behavioral Modeling: AI Agents for Cognitive Science
-- [[agentic-behavioral-modeling]] - Framework treating AI agents as generative hypotheses about cognitive mechanisms (arXiv:2604.27894)
-  - Formalizes task-agent-data systems as joint probability models
-  - Derives conditional log-likelihoods for behavioral inference
-  - Shows equivalence between Rescorla-Wagner learning and Bayesian inference in symmetric bandits
-  - **Activation**: agentic behavioral modeling, ABM, cognitive science, behavioral inference, Rescorla-Wagner, Bayesian
-
-### Multisensory Learning & Memory Engram Recruitment
-- [[multisensory-learning-engram-recruitment]] - How multisensory learning recruits visual neurons into olfactory memory engrams (arXiv:2604.28007)
-  - Drosophila study: combining colors and odours improved memory for both modalities
-  - DPM neurons bridge between modality-selective KC streams via serotonergic signaling
-  - Broadening of engram improves memory performance after multisensory learning
-  - **Activation**: multisensory learning, memory engram, mushroom body, Kenyon cells, DPM neurons, Drosophila
-
-### Attractor FCM: Gradient Descent-Based Fuzzy Cognitive Maps
-- [[attractor-fcm-gradient-descent]] - Physics-constrained Jacobian FCM with attractor dynamics and residual memory (arXiv:2604.27947)
-  - Gradient descent (not Hebbian) with Newton's method for fixed point attractor finding
-  - Residual memory, BPTT, fixed point anchor, causal mask filtering
-  - Adaptive landscape control prevents premature convergence to local minima
-  - **Activation**: attractor FCM, fuzzy cognitive map, gradient descent, physics-constrained, Jacobian, Newton's method
-
----
-
-## April 24, 2026 - Neuroscience Research (Cron Job)
-
-### BrainCast: Spatio-Temporal fMRI Forecasting
-- [[braincast-spatiotemporal-fmri-forecasting]] - Whole-brain fMRI time series prediction via spatial interaction awareness + temporal feature refinement (arXiv:2603.13361)
-  - Three-module architecture: SIA, TFR, SPA for joint spatio-temporal modeling
-  - Trained on HCP resting-state and task fMRI data
-  - **Activation**: fmri, forecasting, brain network, time series, spatio-temporal, HCP, functional connectivity
-
-### DECODE: Dual-Enhanced Conditioned Diffusion for EEG
-- [[decode-dual-enhanced-conditioned-diffusion-eeg]] - Semantic language conditioning + temporal dynamics for event-specific EEG generation (arXiv:2603.16885)
-  - MAE = 0.626 μV over 75-step horizons on real driving EEG data
-  - Zero-shot generalization via natural language descriptions
-  - **Activation**: eeg, diffusion, forecasting, language model, BCI, semantic conditioning, Langevin dynamics
-
-### JEDI: Jointly Embedded Neural Dynamics Inference
+ference
 - [[jedi-jointly-embedded-neural-dynamics]] - Hierarchical shared embedding over RNN weights for cross-task neural dynamics (arXiv:2603.10489)
   - Learns condition-specific embeddings modulating RNN dynamics
   - Recovers fixed point structures and eigenspectrum features
@@ -861,4 +697,3 @@ New skills added from arXiv evening scan:
 - **New**: [[earable-eeg-auditory-platform]] - In-ear EEG monitor (IEEM) for simultaneous EEG sensing and auditory stimulation, enabling closed-loop neuromodulation (arXiv:2604.22137)
 - **Session coverage**: 96%+ of recent papers
 - **Total**: 1671 skills
-
