@@ -1,3 +1,12 @@
+## 2026-05-08 - Neuroscience Research (Cron Job v6)
+
+### Collection Status Update
+- **36 papers scanned** across 2 keyword searches (neuroscience brain network, spiking neural network computational)
+- **94.4% coverage** (34/36 papers covered by existing skills)
+- **0 new skills created** — collection at extreme maturity
+- **2 papers skipped**: CNN+AAE EEG classification (too narrow), Neuroscience of Transformers (conceptual overlap)
+- **Key trends**: SNN theoretical foundations, efficient SNN hardware, SNN+LLM convergence, non-differentiable training via optimal transport
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### TRIBE v2: Tri-Modal Foundation Model for In-Silico Neuroscience
