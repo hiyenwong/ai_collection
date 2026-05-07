@@ -1,3 +1,29 @@
+## 2026-05-07 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Distributed Quantum Error Correction with Bivariate Bicycle Codes in a Modular Architecture
+- [[distributed-quantum-error-correction]] - Distributed qLDPC/bivariate bicycle codes across modular quantum processors using Bell-pair star networks for inter-processor connectivity, enabling scalable FTQC with BP+OSD decoding (arXiv: 2605.04663)
+  - Core: Partition [[144,12,12]] BB code across 4-12 modular processors with all-to-all internal connectivity
+  - Key: Higher encoding rate than surface codes; star network topology for Bell pair distribution; inter-processor noise scaling analysis
+  - **Activation**: distributed quantum error correction, qLDPC codes, bivariate bicycle codes, modular quantum computing, star network quantum, BP+OSD decoding, BB code partitioning
+
+### Dimeric Perylene-Bisimide Organic Molecules: Fractional-Time Control of Quantum Resources
+- [[fractional-time-quantum-control]] - Fractional-order Schrödinger equation for controlling quantum correlations (coherence, entanglement, nonlocality) in dimeric organic molecules via memory effects and relaxation dynamics (arXiv: 2605.05109)
+  - Core: Caputo fractional derivatives model memory effects in quantum resource dynamics
+  - Key: Fractional order τ controls coherence decay, entanglement preservation, and nonlocality — enables tunable quantum resource management
+  - **Activation**: fractional-time quantum control, quantum correlations, fractional Schrödinger equation, molecular quantum resources, quantum coherence control
+
+### Geometrical Control of Topology with Orbital Angular Momentum Modes
+- [[geometrical-topological-control]] - Geometric control of topological phases in 1D staggered lattices using orbital angular momentum states, enabling topology switching via angular tuning with protected edge states (arXiv: 2605.05002)
+  - Core: Creutz ladder model in synthetic dimension; topological regime switching via angle tuning
+  - Key: Band inversion and winding number calculations predict topologically protected edge states; photonic waveguide implementation
+  - **Activation**: geometrical topology control, orbital angular momentum, topological phases, Creutz ladder, band inversion, photonic waveguides
+
+### Polarization-Controlled Photon Mode Switching and Photon-Magnon Coupling
+- [[polarization-photon-magnon-coupling]] - Polarization-selective photon-magnon coupling in planar cavity-magnonic platform with angular tunability of coupling strength through resonator orientation (arXiv: 2605.05018)
+  - Core: ELCR resonator orientation controls switching between orthogonal photon modes
+  - Key: g_31 coupling from 56.5 to 98 MHz via 0°-60° rotation; transition at 25.7° for hybridized modes
+  - **Activation**: photon-magnon coupling, polarization switching, cavity magnonics, YIG thin film, angular tunability, ELCR resonator
+
 ## 2026-05-07 - Neuroscience Research (Cron Job)
 
 ### A foundation model of vision, audition, and language for in-silico neuroscience
