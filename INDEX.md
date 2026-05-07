@@ -12,6 +12,18 @@
   - Key: V1 decoding driven by coarse low-level visual structure; sparse neuron subsets dominate feature reconstruction
   - **Activation**: DINA, V1 population activity, image-neural alignment, contrastive framework, calcium imaging decoding, visual computation
 
+### ShiftLIF: Efficient Multi-Level Spiking Neurons with Power-of-Two Quantization
+- [[shiftlif-power-of-two-quantization]] - Multi-level spiking neuron with learnable-scale power-of-two quantization, absorbing scale into weights for strict accumulate-only inference (arXiv: 2605.01866)
+  - Core: Reformulates burst spiking as saturated uniform quantization with learnable scale per layer, adapted to membrane-potential statistics
+  - Key: ReLSG-ET surrogate gradient sustains flow across burst intervals; scale absorbed into weights preserves hardware efficiency
+  - **Activation**: ShiftLIF, power-of-two quantization, learnable quantization scale, multi-level spiking neurons, burst SNN quantization, ReLSG-ET
+
+### Scalable Learning in Structured Recurrent SNNs Without Backpropagation
+- [[scalable-snn-without-backprop]] - Structured multi-layer recurrent SNN with local plasticity, WTA teaching signals, and random broadcast alignment — no backprop or surrogate gradients (arXiv: 2605.00402)
+  - Core: Locally dense recurrent layers + sparse small-world long-range projections; WTA competition + three-factor learning rules with eligibility traces
+  - Key: Fixed long-range connectivity preserves routing efficiency and hardware scalability; purely local synaptic updates
+  - **Activation**: SNN without backprop, local plasticity, structured recurrent SNN, WTA teaching signal, broadcast alignment, three-factor learning
+
 ## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### A Factor-Graph Formulation of CSS Syndrome Decoding: Joint BP and Four-State BP
