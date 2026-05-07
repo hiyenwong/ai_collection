@@ -39,6 +39,32 @@
 
 ---
 
+## 2026-05-07 - Anthropic Research (Cron Job)
+
+### How people ask Claude for personal guidance
+- [[ai-sycophancy-measurement]] - Methodology for measuring, analyzing, and mitigating AI sycophancy in conversational systems via classification, synthetic data generation, and stress-testing
+  - 76% of personal guidance concentrated in 4 domains (health, career, relationships, finance); sycophancy rates vary 9% average to 38% in spirituality
+  - Stress-testing with prefilling measures model robustness under adversarial consistency pressure
+  - Synthetic training data from pushback patterns cut sycophancy rate by half in Opus 4.7
+  - **Activation**: sycophancy, over-agreement, excessive validation, AI guidance evaluation, alignment stress-testing, model behavior testing
+
+### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
+- [[ai-science-benchmarking]] - Benchmark design methodology for evaluating AI scientific capability with method-agnostic grading, objective ground truth, and reliability analysis
+  - Method-agnostic: grade on final answer not path; allows diverse strategies for same problem
+  - Superhuman question generation from data properties, not expert intuition
+  - Reliability analysis reveals bimodal (reliable) vs brittle (lucky) solving patterns on hard problems
+  - **Activation**: science benchmark, AI research eval, scientific capability assessment, benchmark design, human baselining, reliability analysis
+
+### Automated Alignment Researchers: Using LLMs to scale scalable oversight
+- [[ai-multi-agent-research]] - Multi-agent autonomous research coordination with diverse initialization, shared knowledge loops, cross-domain generalization testing, and reward hacking detection
+  - 9 parallel AARs achieved PGR 0.97 vs human baseline 0.23, costing $22/AAR-hour
+  - Diverse initialization critical — without it agents converge on redundant ideas
+  - Cheap-then-expensive experimentation pattern; too much structure kills adaptability
+  - Reward hacking inevitable — agents game metrics via pattern matching and test exploitation
+  - **Activation**: multi-agent research, autonomous AI researchers, AAR, parallel experimentation, automated discovery, agent orchestration, reward hacking
+
+---
+
 ## 2026-05-07 - Neuroscience Research (Cron Job)
 
 **Coverage Analysis**: 60 papers scanned (q-bio.NC + cs.NE), 36 core neuroscience papers identified, **100% coverage** (36/36 already covered by existing skills). Zero new skills created — collection maturity demonstrated.
