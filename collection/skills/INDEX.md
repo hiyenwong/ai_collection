@@ -1,4 +1,10 @@
-## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job)
+## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 13:00)
+
+### QBalance: Multi-Objective Quantum Workflow Optimization
+- [[qbalance-quantum-workflow-optimization]] - 多目标量子工作流优化方法论，系统化NISQ编译/噪声抑制/误差缓解策略选择 (arXiv: 2605.02966)
+  - 核心要点: 将NISQ工作流建模为有限多目标策略选择问题，涵盖加权目标函数、非支配Pareto选择、生存乘积误差代理、贝叶斯候选排序
+  - 核心要点: QBalance提供可复现编排模型，集成Qiskit pass-manager/SABRE/ZNE/动态解耦，但bandit仅排序不减少评估次数
+  - **Activation**: qbalance, quantum workflow optimization, NISQ strategy selection, quantum compilation multi-objective, quantum error mitigation
 
 ### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
 - [[constraint-preserving-quantum-optimization]] - 约束保持量子优化方法论，XY混合器与Trotter化绝热演进 (arXiv: 2605.02465)
