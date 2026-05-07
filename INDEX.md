@@ -1,4 +1,13 @@
 
+## 2026-05-07 - Quantum Computing Research (Cron Job)
+
+### FTPrimitiveBench: A Benchmark Suite For Logical Computation Under Hardware-Motivated and Biased Noise Models
+- [[ft-primitive-bench]] - Systematic benchmarking of QEC protocols under hardware-motivated noise models (arXiv: 2605.04049)
+  - Extends memory benchmarks to active logical computation (lattice surgery, Hadamard, phase gate)
+  - Structured noise (Pauli bias, measurement bias, spatial non-uniformity) affects primitives in qualitatively distinct ways
+  - Enables reproducible comparative studies of QEC protocols and decoders for hardware-aware co-design
+  - **Activation**: fault-tolerant benchmarking, QEC benchmarking, logical primitive analysis, hardware-motivated noise, noisy stabilizer simulation, surface code benchmark, lattice surgery benchmark
+
 ## 2026-05-07 - Systems Engineering Research (Cron Job)
 
 ### A Delta-Aware Orchestration Framework for Scalable Multi-Agent Edge Computing
