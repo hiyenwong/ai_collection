@@ -1,4 +1,17 @@
-## 2026-05-08 - Number Theory + Quantum Mechanics (Cron Job)
+## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
+
+### Quantum Prediction of Transport Dynamics in Discretized State Spaces
+- [[quantum-bayesian-state-estimation]] - Gate-based quantum algorithm for Bayesian state estimation using Fokker-Planck equation with Wick rotation for unitary diffusion propagation (arXiv: 2604.24161)
+  - Core: Probability density encoded in quantum amplitudes; QFT-based drift (exact) + Wick-rotated diffusion (unitary surrogate)
+  - Key: Exponential state space scaling; drift exactly reproducible in amplitude space; diffusion requires nonlinear→unitary mapping via Wick rotation
+  - **Activation**: quantum Bayesian estimation, Fokker-Planck quantum, Wick rotation diffusion, quantum Fourier state estimation, quantum filtering, Bayesian transport dynamics
+
+### Towards sample-optimal learning of bosonic Gaussian quantum states
+- [[quantum-gaussian-state-learning]] - Sharp sample complexity bounds for learning n-mode Gaussian states: Omega(n^3/epsilon^2) for Gaussian measurements, non-Gaussian measurements required for passive states (arXiv: 2603.18136)
+  - Core: Lower/upper bounds on copies needed to learn Gaussian states to epsilon trace distance; adaptivity indispensable for energy-independent scaling
+  - Key: Non-Gaussian measurements provably required for optimal passive state learning; Wigner-TV distance bounds enable phase-space sampling approach
+  - **Activation**: quantum state tomography, bosonic Gaussian states, quantum learning theory, sample complexity bounds, quantum sensing benchmarking, Wigner distribution learning
+
 
 ### Factoring 2048-bit RSA Integers with a Half-Million-Qubit Modular Atomic Processor
 - [[modular-quantum-shor-compilation]] - Distributed compilation of Shor's algorithm on modular atomic processors, achieving 2048-bit RSA factoring with only 16% time overhead vs single-module (arXiv: 2605.03951)
