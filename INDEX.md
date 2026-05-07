@@ -1,3 +1,11 @@
+## 2026-05-08 - Number Theory + Quantum Mechanics (Cron Job)
+
+### Factoring 2048-bit RSA Integers with a Half-Million-Qubit Modular Atomic Processor
+- [[modular-quantum-shor-compilation]] - Distributed compilation of Shor's algorithm on modular atomic processors, achieving 2048-bit RSA factoring with only 16% time overhead vs single-module (arXiv: 2605.03951)
+  - Core: End-to-end distributed compilation balancing inter-module Bell pair communication rate with intra-module clock rate
+  - Key: Half-million qubit CPU-inspired architecture; 10^5 Bell pairs/sec comm rate; 1ms measurement time; blueprint for scaling other large modular algorithms
+  - **Activation**: modular quantum processor, distributed Shor algorithm, RSA quantum factoring, quantum compilation distributed, half-million qubit, inter-module communication quantum, Shor algorithm scaling
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
