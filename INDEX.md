@@ -1,5 +1,19 @@
 ## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
 
+### Quantum metrology of mixed states via purification
+- [[quantum-statistical-metrology]] - Purification-based strategies achieve optimal QCRB and HCRB bounds for multi-parameter quantum estimation, resolving open question about mixed state precision limits (arXiv: 2605.03975)
+  - Core: Mixed state quantum metrology via purification; QCRB and HCRB achievable through purified system measurements
+  - Key: Any mixed state estimation reduces to equivalent pure state problem; optimal precision bounds proven achievable
+  - **Activation**: quantum metrology, quantum estimation, cramér-rao bound, quantum statistics, purification strategy, holevo bound, quantum state discrimination
+
+### Optimal Error Exponents for Composite Sequential Quantum Hypothesis Testing
+- [[quantum-statistical-metrology]] - Sequential quantum hypothesis testing with composite alternatives achieves optimal error exponents via convex optimization (arXiv: 2605.04915)
+  - Core: Distinguishing null quantum state from convex set of alternatives with minimal measurements
+  - Key: Error exponent analysis for quantum state discrimination; sequential measurement optimization
+  - **Activation**: quantum hypothesis testing, sequential quantum testing, quantum state discrimination, error exponents, composite alternatives
+
+## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
+
 ### Towards sample-optimal learning of bosonic Gaussian quantum states
 - [[bosonic-gaussian-state-learning]] - Sharp sample complexity bounds for learning n-mode Gaussian states: Omega(n^3/epsilon^2) for Gaussian measurements, non-Gaussian required for passive states (arXiv: 2603.18136)
   - Core: Lower/upper bounds on copies needed to learn Gaussian states to epsilon trace distance; adaptivity indispensable for energy-independent scaling
