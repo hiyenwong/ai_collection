@@ -1,3 +1,25 @@
+## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job)
+
+### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
+- [[constraint-preserving-quantum-optimization]] - 约束保持量子优化方法论，XY混合器与Trotter化绝热演进 (arXiv: 2605.02465)
+  - 核心要点: 约束局域性决定XY混合器有效性 - 全局约束用Pauli-X，局部分块用XY混合器
+  - 核心要点: Trotter误差取决于单个约束结构而非总问题规模，TAE+结构感知混合器设计提供鲁棒替代方案
+  - **Activation**: quantum optimization constraints, XY-mixer, Trotterized adiabatic, constraint-preserving quantum, QAOA constraints
+
+### Hardware-Efficient Quantum Optimization for Transportation Networks
+- [[quantum-transportation-optimization]] - 硬件高效交通网络量子优化，AQC-QAOA混合方法 (arXiv: 2604.26175)
+  - 核心要点: AQC压缩绝热演进前段为浅电路+变分层，减少双量子门深度同时保持可行解发现率
+  - 核心要点: 量子算法作为交通决策工作流中的候选生成器，标准QAOA有效利用AQC初始化
+  - **Activation**: quantum transportation, AQC-QAOA, compressed adiabatic evolution, quantum vehicle routing, hardware-efficient quantum
+
+### Quantum Subgroup Discovery for Network Security
+- [[quantum-subgroup-discovery]] - 量子增强子群发现用于网络安全和可解释入侵检测 (arXiv: 2604.27153)
+  - 核心要点: 首次将子群发现表述为QUBO优化，QAOA在IBM硬件上求解，发现独特子群达99.6%精度
+  - 核心要点: NISQ缩放边界确立 - QAOA在10-20量子比特有效，25+比特噪声主导信号
+  - **Activation**: quantum subgroup discovery, quantum intrusion detection, QAOA network security, WRAcc optimization, NISQ scaling boundary
+
+---
+
 ## April 26, 2026 - Neuroscience Research Update (Cron Job - Late Morning)
 
 ### New Skills from arXiv Research (3 papers)
