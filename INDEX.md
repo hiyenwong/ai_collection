@@ -1,3 +1,11 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### SNNF: An SNN-based Near-Sensor Noise Filter for Dynamic Vision Sensors
+- [[snnf-near-sensor-dvs-noise-filter]] - Hardware-efficient BA noise filtering using EBBI + single-layer SNN, achieving AUC 0.89 with ~11% memory of state-of-the-art (arXiv: 2605.01937)
+  - Core: Event-Based Binary Image (1-bit/pixel) + parallel memory architecture + single-layer SNN classifier
+  - Key: 29 Meps throughput, 1.47 nJ/event energy, 65nm ASIC 44.4 Meps at 1.48 mW power
+  - **Activation**: SNNF, DVS noise filter, event-based binary image, background activity noise, near-sensor computing, dynamic vision sensor, EBBI, spatiotemporal filter, neuromorphic vision
+
 ## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Efficient pulse-level implementations of multi-controlled gates in trapped-ion systems
