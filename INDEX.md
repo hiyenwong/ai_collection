@@ -24,6 +24,12 @@
   - Key: Orders-of-magnitude error suppression vs target-only approaches, hardware-agnostic across superconducting circuits, trapped ions, and solid-state qubits
   - **Activation**: robust quantum control, noise-agnostic control, open quantum systems, decoherence mitigation, quantum noise suppression, fault-tolerant quantum control, 鲁棒量子控制
 
+### Operating a Bistable Qubit
+- [[adaptive-bistable-qubit-control]] - Adaptive 1-bit feedback protocol for operating bistable qubits with FPGA controller, achieving 77% error reduction and ~136kHz estimation bandwidth (arXiv: 2605.03187)
+  - Core: Single-shot measurement-based Bayesian frequency estimation for TLS-induced bistable qubits
+  - Key: Information-theoretically minimal (1 bit) feedback protocol enables real-time adaptive control for large qubit arrays
+  - **Activation**: bistable qubit, TLS mitigation, 1-bit feedback, adaptive qubit control, FPGA quantum control, frequency estimation, Ramsey beating suppression, qubit instability
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
