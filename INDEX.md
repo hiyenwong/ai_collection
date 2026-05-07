@@ -1,3 +1,11 @@
+## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Efficient pulse-level implementations of multi-controlled gates in trapped-ion systems
+- [[quantum-control-engineering]] - Pulse-level optimization for multi-controlled gates using Cirac-Zoller scheme, reducing RSB-pulse cost from O(L log L) to O(L) (arXiv: 2605.04654)
+  - Core: Exploit RSB pulse sign freedom + pulse cancellation for efficient gate sequences
+  - Key: Ancilla-free N-controlled gates with O(N) RSB pulses; deterministic QEC closed-loop < 550ns; dynamic decoder scheduling cuts logical error rate by 52.6%
+  - **Activation**: quantum control engineering, pulse optimization, trapped-ion control, Cirac-Zoller scheme, QEC scheduling, FPGA quantum decoder, thermodynamic control, 量子控制
+
 ## 2026-05-07 - Neuroscience Research (Cron Job)
 
 ### A Universal Space of Brain Dynamics for Unveiling Cognitive Transitions and Individual Differences
