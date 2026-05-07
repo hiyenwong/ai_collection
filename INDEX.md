@@ -1,3 +1,17 @@
+## 2026-05-07 - Neuroscience Research (Cron Job)
+
+### A foundation model of vision, audition, and language for in-silico neuroscience
+- [[tribe-v2-multimodal-brain-foundation]] - Tri-modal (video, audio, language) foundation model predicting human brain activity across 1000+ hours of fMRI from 720 subjects, enabling in-silico experimentation (arXiv: 2605.04326)
+  - Core: Unified vision-audio-language encoder trained on massive fMRI dataset, supersedes linear encoding models
+  - Key: Several-fold improvement in brain response prediction for novel stimuli, tasks, and subjects
+  - **Activation**: TRIBE, tri-modal foundation model, in-silico neuroscience, multimodal brain prediction, video-audio-language fMRI, brain encoding model
+
+### A Generalized Framework of Antisymmetric Polyspectral Indices for Identifying High-Order Neural Interactions
+- [[antisymmetric-polyspectral-neural-interactions]] - Antisymmetric cross-polyspectral indices quantifying cross-frequency coupling while being intrinsically robust to volume conduction artifacts (arXiv: 2605.04636)
+  - Core: General family of antisymmetric indices that cancel instantaneous mixing contributions
+  - Key: Reveals higher-order neural dependencies in EEG that elude standard analytical approaches; enables personalized mTMS protocols
+  - **Activation**: antisymmetric polyspectral, cross-frequency coupling, high-order neural interactions, volume conduction robust, bispectral analysis, mTMS protocol
+
 ## 2026-05-07 - Systems Engineering + Quantum (Cron Job)
 
 ### Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder
