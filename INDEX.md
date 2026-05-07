@@ -1,3 +1,12 @@
+## 2026-05-07 - Neuroscience Research (Cron Job)
+
+### A Universal Space of Brain Dynamics for Unveiling Cognitive Transitions and Individual Differences
+- [[universal-brain-dynamics-space]] - Constructs a data-driven universal space for brain activity integrating spatial and temporal properties (arXiv: 2605.02936)
+  - Universal space U jointly encodes spatial (physical wiring) and temporal (brain function) properties
+  - Model-derived Jacobian matrix quantifies local dynamics with fMRI prediction r > 0.9 across 8 states, 963 subjects (HCP)
+  - Reveals ISF mechanisms, dynamic SFC analysis, cognitive transition trajectories, and individual differences
+  - **Activation**: universal brain dynamics, UBD, Jacobian matrix, structure-function coupling, cognitive transitions, individual differences, infra-slow fluctuation, brain dynamics space
+
 ## 2026-05-07 - Systems Engineering + Quantum Mechanics (Cron Job - Hourly)
 
 ### TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments
