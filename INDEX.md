@@ -1,3 +1,17 @@
+## 2026-05-07 - Neuroscience Research (Cron Job)
+
+### A foundation model of vision, audition, and language for in-silico neuroscience
+- [[tribe-v2-trimodal-foundation-model]] - Tri-modal (video/audio/language) foundation model predicting human brain activity across 1000+ hours of fMRI from 720 subjects, superseding linear encoding models with several-fold accuracy improvements and enabling in-silico experimentation (arXiv: 2605.04326)
+  - Core: Unified tri-modal encoder maps to voxel-wise fMRI predictions with cross-subject generalization
+  - Key: Recovers decades of empirical neuroscience findings; reveals multisensory integration topography via interpretable latents
+  - **Activation**: TRIBE v2, brain foundation model, in-silico neuroscience, multi-modal brain prediction, fMRI encoding model, multisensory integration, tri-modal neural model
+
+### A Generalized Framework of Antisymmetric Polyspectral Indices for Identifying High-Order Neural Interactions
+- [[antisymmetric-polyspectral-neural-interactions]] - General family of antisymmetric cross-polyspectral indices quantifying genuine N-way harmonic dependencies (f_N = Σf_i) in neural data, intrinsically robust to volume conduction, enabling personalized multi-site TMS protocols (arXiv: 2605.04636)
+  - Core: Antisymmetry operator cancels zero-lag volume conduction artifacts; generalizes from bicoherence to arbitrary N-way interactions
+  - Key: Validated on simulated cubic nonlinearities and empirical EEG; reveals higher-order dependencies invisible to standard metrics
+  - **Activation**: polyspectral analysis, cross-frequency coupling, high-order neural interactions, volume conduction robust, antispectral indices, EEG higher-order analysis, multi-frequency coupling, mTMS protocol design
+
 ## 2026-05-07 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Distributed Quantum Error Correction with Bivariate Bicycle Codes in a Modular Architecture
