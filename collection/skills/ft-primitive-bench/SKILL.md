@@ -1,105 +1,161 @@
 ---
 name: ft-primitive-bench
-description: "FTPrimitiveBench methodology for fault-tolerant quantum computing benchmarking. Provides systematic approach for evaluating QEC protocols under hardware-motivated noise models including Pauli bias, measurement bias, and spatio-temporal non-uniformity. Use when: (1) analyzing fault-tolerant quantum computing performance, (2) benchmarking QEC codes under realistic noise, (3) comparing decoders for surface code, (4) studying logical primitive operations (memory, lattice surgery, Hadamard, phase gate), (5) hardware-aware quantum architecture co-design, (6) noisy stabilizer simulation workflows."
+description: >
+  Fault-tolerant quantum benchmarking methodology using FTPrimitiveBench framework.
+  Systematic benchmarking of quantum error-correcting codes under hardware-motivated
+  noise models (Pauli bias, measurement bias, spatial/temporal non-uniformity).
+  Supports logical primitives: memory, lattice surgery, transversal Hadamard, phase gate.
+  Enables hardware-aware co-design of fault-tolerant quantum architectures.
+  Activation: fault-tolerant benchmark, quantum benchmarking, FTPrimitiveBench,
+  hardware-motivated noise, logical primitive benchmark, QEC benchmark,
+  noise model specification, surface code primitives, quantum error correction testing,
+  容错量子基准测试, 量子误差纠正基准
 ---
 
-# FTPrimitiveBench - Fault-Tolerant Primitive Benchmarking
+# FTPrimitiveBench: Fault-Tolerant Quantum Benchmarking
 
-Systematic benchmarking methodology for studying how logical primitives interact with hardware-motivated noise in fault-tolerant quantum computing.
+Systematic methodology for benchmarking quantum error-correcting codes under
+hardware-motivated noise models, enabling reproducible comparative studies of
+QEC protocols and hardware-aware co-design.
 
-## Core Concept
+## Core Concepts
 
-FTPrimitiveBench standardizes the link between noise-model specification and logical primitive construction. It extends memory-only benchmarks to **active logical computation**, where the interaction between noise structure and primitive implementation matters.
+### Noise Model Taxonomy
 
-**Key Insight**: Structured noise (Pauli bias, measurement bias, spatial non-uniformity) affects logical primitives in qualitatively distinct ways, shaped by the interplay between noise model, primitive type, and decoder choice.
+| Noise Family | Description | Hardware Origin |
+|-------------|-------------|-----------------|
+| **Pauli Bias** | Asymmetric X/Y/Z error rates | Physical gate implementations |
+| **Measurement Bias** | Different error rates for different measurement outcomes | Readout hardware |
+| **Spatial Non-uniformity** | Position-dependent error rates | Device fabrication variations |
+| **Spatio-temporal** | Time-varying spatial correlations | Environmental fluctuations |
 
-## Noise Model Families
+### Logical Primitives
 
-### 1. Pauli Bias
-- Asymmetric rates for X, Y, Z errors
-- Common in superconducting qubits (dephasing dominant)
-- Can be exploited by biased-noise codes (XZZX surface code)
+| Primitive | Operation | Significance |
+|-----------|-----------|--------------|
+| **Logical Memory** | Store logical qubit over time | Baseline coherence test |
+| **Lattice Surgery** | Merge/split logical qubits | Two-qubit operations |
+| **Transversal Hadamard** | Logical H gate | Clifford gate set |
+| **Logical Phase Gate** | S gate via lattice surgery | Non-Clifford extension |
 
-### 2. Measurement Bias
-- Different error rates for measurement vs gate operations
-- Critical for syndrome extraction fidelity
-- Affects lattice surgery and flag-qubit protocols
+## Benchmarking Workflow
 
-### 3. Spatial/Spatio-temporal Non-uniformity
-- Position-dependent error rates across qubit array
-- Time-correlated errors (drift, crosstalk)
-- Captures real device heterogeneity
+### Step 1: Noise Model Specification
 
-## Logical Primitives
+Define structured noise that reflects target hardware:
 
-| Primitive | Description | Key Sensitivity |
-|-----------|-------------|-----------------|
-| Logical Memory | Idling code for duration T | Noise correlations, decoder thresholds |
-| Lattice Surgery | Merge/split logical qubits | Measurement errors, boundary noise |
-| Transversal Hadamard | Logical H via transversal gates | Pauli bias asymmetry |
-| Logical Phase (S) | Phase gate via lattice surgery | Combined gate + measurement errors |
+```python
+# Example: Pauli-biased noise model
+noise_spec = {
+    "type": "pauli_bias",
+    "bias_ratio": {"X": 0.01, "Y": 0.001, "Z": 0.1},  # Z-biased
+    "correlation_length": 0,  # Independent errors
+}
 
-## Workflow
+# Example: Spatial non-uniformity
+noise_spec = {
+    "type": "spatial",
+    "base_rate": 0.001,
+    "variation": 0.5,  # 50% variation across device
+    "correlation_length": 3,  # Errors correlated within 3 qubits
+}
+```
 
-### Step 1: Define Noise Model
-Specify hardware-motivated noise parameters:
-- Pauli error rates (pX, pY, pZ)
-- Measurement error rate (pM)
-- Spatial variation function f(x,y)
-- Temporal correlation model
+### Step 2: Primitive Construction
 
-### Step 2: Select Primitives
-Choose logical primitives to benchmark based on target architecture:
-- Memory-only: baseline code performance
-- Active computation: include lattice surgery, logical gates
+Build the circuit for each logical primitive at target code distance:
 
-### Step 3: Choose Decoder
-Select decoder appropriate for noise structure:
-- MWPM (minimum-weight perfect matching)
-- Union-Find decoder
-- Neural network decoder
-- Custom decoder exploiting noise bias
+```python
+# Parameters
+code_distance = 5
+num_rounds = 10
+primitive = "logical_memory"  # or "lattice_surgery", "transversal_hadamard", "phase_gate"
 
-### Step 4: Run Simulation
-Execute noisy stabilizer simulation at HPC scale:
-- Vary code distance d
-- Measure logical error rate pL
-- Track error propagation through primitives
+# Construct stabilizer circuit for the primitive
+circuit = build_primitive_circuit(
+    code_type="surface_code",
+    distance=code_distance,
+    primitive=primitive,
+    rounds=num_rounds
+)
+```
 
-### Step 5: Analyze Results
-Compare logical error rates across:
-- Different noise models
-- Different primitives
-- Different decoders
-- Code distances and depths
+### Step 3: Noisy Simulation
 
-## Hardware-Aware Co-Design Principles
+Run HPC-scale stabilizer simulation with specified noise:
 
-1. **Noise-adapted codes**: Choose codes matching hardware bias (e.g., XZZX for dephasing-dominant devices)
-2. **Decoder selection**: Match decoder to noise structure (biased-noise decoders for biased channels)
-3. **Primitive scheduling**: Order operations to minimize exposure to dominant noise
-4. **Threshold estimation**: Compute thresholds under realistic noise, not uniform depolarizing
+```python
+# Monte Carlo simulation
+results = simulate_noisy(
+    circuit=circuit,
+    noise_model=noise_spec,
+    num_shots=10000,
+    decoder="mwpm"  # Minimum Weight Perfect Matching
+)
 
-## Key Findings from Paper
+# Extract logical error rate
+logical_error_rate = results["logical_error_rate"]
+confidence_interval = results["confidence_interval"]
+```
 
-- Structured noise affects primitives in **qualitatively distinct** ways
-- Uniform depolarizing model fails to capture real device behavior
-- Noise-primitive-decoder interaction determines logical error rate
-- Results extend beyond memory benchmarks to active computation
+### Step 4: Analysis
 
-## Code Reference
+Compare results across noise models and primitives:
 
-Official implementation: https://github.com/kan-shuwen/FTPrimitiveBench (verify URL from paper)
+```python
+# Key analysis: structured noise affects primitives differently
+analysis = {
+    "noise_primitive_interaction": compare_across_primitives(results),
+    "decoder_sensitivity": compare_decoders(results),
+    "hardware_co_design": identify_optimal_code_distance(results),
+}
+```
 
-## Activation Keywords
-- ft-primitive-bench
-- fault-tolerant benchmarking
-- QEC benchmarking
-- logical primitive analysis
-- hardware-motivated noise
-- noisy stabilizer simulation
-- surface code benchmark
-- lattice surgery benchmark
-- quantum error correction evaluation
-- 容错量子计算基准测试
-- 量子纠错码评估
+## Key Findings from Research
+
+1. **Structured noise affects primitives qualitatively differently** - memory benchmarks
+   alone cannot predict performance of active logical computation
+2. **Noise-primitive-decoder interplay matters** - the optimal decoder depends on
+   both the noise structure and which primitive is being executed
+3. **Hardware-aware co-design is essential** - uniform depolarizing noise models
+   miss opportunities for joint code-hardware optimization
+4. **Benchmarks must extend beyond memory** - lattice surgery and gate operations
+   reveal failure modes invisible to memory-only testing
+
+## Integration with Existing Skills
+
+- **quantum-error-correction-methods**: QEC code selection and analysis
+- **quantum-fault-tolerance-benchmark**: Hardware-modeled fault tolerance evaluation
+- **quantum-ml-patterns**: ML-assisted decoder design
+- **systems-engineering**: Systematic methodology and reproducibility
+
+## Usage Examples
+
+### Basic Benchmark Run
+```
+使用 FTPrimitiveBench 在表面码上测试逻辑内存和晶格手术的基准性能
+```
+
+### Hardware Co-design
+```
+基于 Pauli 偏置噪声模型，设计最优的表面码距离和解码器组合
+```
+
+### Noise Model Comparison
+```
+比较均匀去极化噪声和结构化噪声对量子逻辑门的影响
+```
+
+## Pitfalls
+
+- **Uniform depolarizing is insufficient** - it misses structured error correlations
+  present in real hardware
+- **Memory-only benchmarks are incomplete** - they don't capture gate operation failures
+- **Decoder choice matters** - different decoders perform differently under structured noise
+- **Simulation scale is critical** - HPC-scale simulation needed for realistic distances
+
+## Resources
+
+- GitHub: https://github.com/ShuwenKan/FTPrimitiveBench
+- arXiv: 2605.04049 - "FTPrimitiveBench: A Benchmark Suite For Logical Computation
+  Under Hardware-Motivated and Biased Noise Models"

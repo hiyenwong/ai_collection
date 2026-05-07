@@ -1,3 +1,12 @@
+## 2026-05-08 - Systems Engineering + Quantum (Cron Job)
+
+### FTPrimitiveBench: A Benchmark Suite For Logical Computation Under Hardware-Motivated and Biased Noise Models
+- [[ft-primitive-bench]] - 容错量子计算基准测试方法，系统化评估量子纠错码在硬件驱动噪声模型下的表现 (arXiv: 2605.04049)
+  - 结构化噪声（Pauli偏置、测量偏置、空间/时空非均匀性）对量子逻辑原语的影响各不相同
+  - 仅靠逻辑内存基准测试不足以预测活跃逻辑计算的性能
+  - 噪声-原语-解码器交互决定最优容错架构设计
+  - **Activation**: fault-tolerant benchmark, quantum benchmarking, FTPrimitiveBench, hardware-motivated noise, QEC benchmark, 容错量子基准测试
+
 ## 2026-05-07 - Neuroscience Research (Cron Job)
 
 ### Noise-Accelerated Kramers Escape and Coherence Resonance in a 5D Neural Manifold
