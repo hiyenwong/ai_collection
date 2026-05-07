@@ -1,3 +1,11 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### TRIBE v2: A Foundation Model of Vision, Audition, and Language for In-Silico Neuroscience
+- [[tribe-v2-foundation-model]] - Tri-modal (video+audio+text) foundation model predicting human fMRI across 1,000+ hours / 720 subjects; enables zero-shot brain response prediction and in-silico experimentation (arXiv: 2605.04326)
+  - Core: Transformer encoder maps pretrained AI embeddings (DINOv2, Whisper, LLM) to high-resolution fMRI, outperforming linear FIR baselines by 2-4x
+  - Key: Recovers classic neuroscience findings in-silico (FFA, PPA, VWFA, Broca's area); ICA reveals 5 interpretable functional networks; maps multisensory integration topography
+  - **Activation**: TRIBE v2, brain foundation model, fMRI encoding model, in-silico neuroscience, multi-modal brain prediction, neural encoding, Meta AI neuroscience, Algonauts, tri-modal brain model
+
 ## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Scheduling Entanglement Flows in Multi-channel Quantum Networks
