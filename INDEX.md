@@ -6,6 +6,12 @@
   - Key: Half-million qubit CPU-inspired architecture; 10^5 Bell pairs/sec comm rate; 1ms measurement time; blueprint for scaling other large modular algorithms
   - **Activation**: modular quantum processor, distributed Shor algorithm, RSA quantum factoring, quantum compilation distributed, half-million qubit, inter-module communication quantum, Shor algorithm scaling
 
+### Grokability in Five Inequalities
+- [[ai-math-discovery]] - AI-assisted mathematical discovery methodology using LLM collaboration to generate and verify new inequalities (arXiv: 2605.05193)
+  - Core: Human-LLM workflow for conjecture generation, verification, and publication of mathematical inequalities
+  - Key: 5 new results including Gaussian perimeter bounds, moment comparison, autoconvolution, Sidon sets, Szarek's inequality; systematic verification checklist; prompt templates for math collaboration
+  - **Activation**: AI math discovery, Grokability, mathematical conjecture, inequality bound, AI-assisted proof, 数学发现, AI数学, 不等式
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
