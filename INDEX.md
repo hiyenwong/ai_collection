@@ -1,5 +1,17 @@
 ## 2026-05-08 - Systems Engineering + Quantum (Cron Job)
 
+### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
+- [[multi-objective-quantum-workflow]] - 多目标量子工作流优化方法，结合编译策略选择、噪声抑制和误差缓解，使用生存率乘积代理和贝叶斯候选排序导航组合策略空间 (arXiv: 2605.02966)
+  - 核心：将量子编译、噪声抑制和误差缓解建模为有限多目标策略选择问题
+  - 关键：生存率乘积代理提供轻量级排名，贝叶斯线性代理实现探索-利用权衡
+  - 扩展：动作空间工程结合动作掩码策略，使RL路由在DQC架构中训练效率提升35%
+  - **Activation**: quantum workflow, quantum compilation optimization, multi-objective quantum, QBalance, quantum error mitigation strategy, NISQ workflow, quantum circuit routing, 量子工作流优化
+
+### Action-Space Engineering for Reinforcement Learning-Based Circuit Routing in Distributed Quantum Systems
+- 相关论文：RL-based quantum circuit routing with action-space engineering and action-masking (arXiv: 2605.02389)
+  - 状态依赖的动作空间设计 + 有效动作掩码策略减少10-100倍有效动作空间
+  - 在分布式量子计算架构中实现35%的执行时间相对减少
+
 ### FTPrimitiveBench: A Benchmark Suite For Logical Computation Under Hardware-Motivated and Biased Noise Models
 - [[ft-primitive-bench]] - 容错量子计算基准测试方法，系统化评估量子纠错码在硬件驱动噪声模型下的表现 (arXiv: 2605.04049)
   - 结构化噪声（Pauli偏置、测量偏置、空间/时空非均匀性）对量子逻辑原语的影响各不相同
