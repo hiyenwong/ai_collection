@@ -1,3 +1,19 @@
+## 2026-05-07 - Neuroscience Research (Cron Job)
+
+### Personalized Spiking Neural Networks with Ferroelectric Synapses for EEG Signal Processing
+- [[ferroelectric-snn-eeg]] - 铁电突触SNN在EEG信号处理中的个性化部署 (arXiv: 2601.00020)
+  - 铁电忆阻突触硬件支持低开销的自适应学习
+  - 混合精度训练策略：数字梯度累积 + 阈值触发编程事件
+  - 被试特异性迁移学习仅需重训练最后层即可实现个性化
+  - **Activation**: ferroelectric SNN, memristive EEG, neuromorphic BCI, personalized SNN, device-aware training
+
+### Behavior-dLDS: A decomposed linear dynamical systems model for neural activity partially constrained by behavior
+- [[behavior-decomposed-lds]] - 将神经活动分解为行为相关和内部计算子系统 (arXiv: 2603.05612)
+  - b-dLDS模型区分行为驱动和内部并行计算的神经动力学
+  - 扩展到数万神经元规模，应用于斑马鱼后脑位置稳态行为记录
+  - 揭示行为相关动态连接网络中的不对称性
+  - **Activation**: behavior-dLDS, decomposed LDS, neural dynamics decomposition, brain-wide recordings, latent dynamics
+
 
 ## 2026-05-07 - Neuroscience Research (Cron Job - 09:00)
 
