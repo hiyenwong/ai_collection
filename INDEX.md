@@ -1,4 +1,51 @@
 
+## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 09:00)
+
+### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
+- [[quantum-compilation-workflow]] - Multi-objective quantum compilation workflow with Pareto-optimal strategy selection, Bayesian linear surrogate ranking, and survival-product error proxy (arXiv: 2605.02966)
+  - Multi-objective optimization over compilation, noise suppression, and error-mitigation strategies
+  - Pareto front analysis with non-dominated selection rule for strategy ranking
+  - Bayesian linear surrogate model for expensive strategy evaluation with uncertainty quantification
+  - Survival-product error proxy for fast fidelity estimation
+  - **Activation**: quantum compilation workflow, QBalance pattern, quantum strategy selection, 量子编译工作流, quantum noise mitigation, multi-objective quantum optimization
+
+**Coverage Analysis**: 10 papers scanned from arxiv RSS (quant-ph), **1 new skill created** from QBalance paper (systems engineering + quantum intersection).
+
+### Other Papers Analyzed (No new skills - existing coverage)
+| # | Paper | arXiv ID | Covered By |
+|---|-------|----------|------------|
+| 1 | Phase-Reference Control of Steady-State Entanglement | 2605.03978 | `quantum-control-framework` |
+| 2 | Analytical two-pulse control of universal single-qubit gates | 2605.03461 | `quantum-robust-control` |
+| 3 | A Critical Comment on Entropy Computing | 2605.03612 | `quantum-systems-engineering` |
+| 4 | Operating a bistable qubit | 2605.03187 | `quantum-error-correction-methods` |
+| 5 | Exchange-Only Silicon Spin Qubits | 2605.03056 | `quantum-hardware` |
+| 6 | Rigorous error bounds for dissipative thermal state prep | 2605.03011 | `distributionally-robust-control` |
+| 7 | Universal qutrit control in asymmetric-top molecules | 2605.03468 | `quantum-control-framework` |
+| 8 | Ensemble Engineering for Quantum Measurements | 2605.03729 | `quantum-systems-engineering` |
+| 9 | Factoring 2048-bit RSA with half-million-qubit processor | 2605.03951 | `quantum-algorithms` |
+| 10 | Magic states optimization analysis | 2411.01880 | `quantum-optimization-qaoa` |
+
+### Vector Similarity Search (Top 3 for "quantum control systems")
+1. Universal qutrit control in asymmetric-top molecules (sim=0.5417)
+2. Universal Error Correction for Distributed Quantum Computing (sim=0.5160)
+3. Learning high-accuracy error decoding for quantum processors (sim=0.5051)
+
+### PageRank Results (Top 5)
+1. Quantum computing and AI: status and perspectives (PR=0.009590)
+2. Quantum Circuit-Based Learning Models (PR=0.008616)
+3. Macroscopic Quantum Phenomena - 2025 Nobel Prize (PR=0.004669)
+4. The Grand Challenge of Quantum Applications (PR=0.004434)
+5. Qubit-Based Framework for QML (PR=0.004161)
+
+### Research Clusters (Community Detection)
+- Quantum Optimization & Compilation: 26 papers
+- Quantum Error Correction: 14 papers
+- Quantum Control: 8 papers
+- Qubit Hardware: 8 papers
+- Quantum Information Theory: 6 papers
+
+### KG Stats: 434 entities, 436 vectors, 2074 relationships
+
 ## 2026-05-07 - Quantum Computing Research (Cron Job)
 
 ### FTPrimitiveBench: A Benchmark Suite For Logical Computation Under Hardware-Motivated and Biased Noise Models
