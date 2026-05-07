@@ -38,6 +38,18 @@
   - Key: Sparse subsets of strongly responsive neurons dominate feature reconstruction; multiple spatially distributed image regions contribute
   - **Activation**: DINA, V1 interpretation, image neural alignment, visual decoding, calcium imaging analysis, population level visual computation, contrastive neural alignment
 
+### Unifying Dynamical Systems and Graph Theory to Mechanistically Understand Computation in Neural Networks
+- [[unifying-dynamics-graph-neural-computation]] - Introduces resolvent-RNNs (R-RNNs) that constrain multi-hop pathways to induce temporal sparsity matching task structure, outperforming L1 regularization under strong regularization with stronger sparsity-function alignment (arXiv: 2605.03598)
+  - Core: Models RNNs as graphs; decomposing multi-hop pathways by hop length reveals temporal information routing patterns
+  - Key: L1 penalizes single-hop structure; R-RNNs penalize pathway strength via resolvent (I-γW)⁻¹, inducing task-matched temporal sparsity
+  - **Activation**: resolvent-RNN, R-RNN, multi-hop pathway, temporal sparsity, graph neural computation, dynamical systems graph theory, pathway regularization, structure-function neural network
+
+### Online Continual Learning on Intel Loihi 2 via a Co-designed Spiking Neural Network
+- [[clp-snn-loihi2-continual-learning]] - CLP-SNN achieves 113× lower latency (0.33ms) and 6,600× lower energy (0.05mJ) than edge-GPU for rehearsal-free online continual learning on Loihi 2 neuromorphic hardware (arXiv: 2511.01553)
+  - Core: Self-normalizing local learning rule + spike-driven neural state machine for autonomous on-chip learning without replay buffers
+  - Key: Gains decompose into algorithmic efficiency (~14.5×) and neuromorphic co-design (~295× energy) via event-driven learning and sparse graded-spike communication
+  - **Activation**: CLP-SNN, Loihi 2 continual learning, neuromorphic edge AI, spike-driven learning, self-normalizing SNN, local learning rule, rehearsal-free continual learning
+
 ## 2026-05-08 - Systems Engineering + Quantum (Cron Job)
 
 ### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
