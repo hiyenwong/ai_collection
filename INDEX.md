@@ -1,3 +1,80 @@
+## 2026-05-07 - Systems Engineering + Quantum (Cron Job)
+
+**Coverage Analysis**: 5 papers scanned (eess.SY + quant-ph), **100% coverage** (5/5 already covered by existing skills). Zero new skills created — collection maturity demonstrated.
+
+### Papers Analyzed (All Covered)
+| # | Paper | arXiv ID | Covered By |
+|---|-------|----------|------------|
+| 1 | Sinkhorn Ambiguity Sets for Distributionally Robust Control | 2605.03845 | `distributionally-robust-control` |
+| 2 | HyParLyVe: Hyperplane Partitioning for Neural Lyapunov Verification | 2605.03992 | `neural-lyapunov-verification` |
+| 3 | Sequential vs. Simultaneous Entanglement Swapping under Optimal Link-Layer Control | 2605.04047 | `quantum-network-control` |
+| 4 | Almost Sure Reachability in Continuous-time Stochastic Systems | 2605.03595 | `finite-time-reachability-partial-control` |
+| 5 | Fast, accurate simulation of large-scale Fermi-Hubbard models on quantum processor | 2605.04025 | `fermionic-quantum-processor` |
+
+### PageRank Results (Top 5 after import)
+1. Sinkhorn Ambiguity Sets for DRC (PR=0.0345)
+2. Almost Sure Reachability in Stochastic Systems (PR=0.0326)
+3. Sequential vs. Simultaneous Entanglement Swapping (PR=0.0282)
+4. Hardware Co-Designed Intelligent Quantum Control (PR=0.0251)
+5. Fermi-Hubbard Simulation on Quantum Processor (PR=0.0248)
+
+### KG Stats: 422 entities, 424 vectors, 119,220 relationships
+
+---
+
+## 2026-05-07 - Neuroscience Research (Cron Job)
+
+**Coverage Analysis**: 60 papers scanned (q-bio.NC + cs.NE), 36 core neuroscience papers identified, **100% coverage** (36/36 already covered by existing skills). Zero new skills created — collection maturity demonstrated.
+
+### Papers Analyzed (All Covered)
+| # | Paper | arXiv ID | Covered By |
+|---|-------|----------|------------|
+| 1 | NeuralSet: A High-Performing Python Package for Neuro-AI | 2605.03169 | `neuralset-neuro-ai-framework` |
+| 2 | Cusped singularities organize mixed-mode oscillations | 2605.03606 | `cusped-singularity-mmo-analysis` |
+| 3 | Inferring Active Neural Circuits Using Diffusion Scores | 2605.02852 | `diffusion-scores-neural-circuit` |
+| 4 | Oscillatory Spiking Neural Network with Time-Delayed Coordination | 2605.01656 | `s2-net-oscillatory-spiking-synchronization` |
+| 5 | Online Generalised Predictive Coding | 2605.02675 | `online-generalised-predictive-coding` |
+| 6 | Modeling sequential cognitive states via population level cortical dynamics | 2605.02365 | `heteroclinic-cognitive-state-modeling` |
+| 7 | Robust volatility updates for Hierarchical Gaussian Filtering | 2605.00966 | `hgf-robust-volatility-updates` |
+| 8 | Functional Connectivity-Guided Band Selection for Motor Imagery BCI | 2605.00746 | `fc-guided-band-selection-mi-bci` |
+| 9 | Intrinsic Brain Networks Underlying Subclinical Anxiety | 2605.00465 | `subclinical-anxiety-brain-networks` |
+| 10 | Magnetic-Field-Free Quantum Computing & Quantum Reservoir Computing | 2605.00026 | `organic-magnetic-field-free-quantum` |
+| 11 | MoDAl: Self-Supervised Neural Modality Discovery | 2605.00025 | `modal-neural-modality-discovery` |
+| 12 | Self-organized criticality enables conscious integration through brain-body resonance | 2605.00024 | `self-organized-criticality-brain-body-resonance` |
+| 13 | SIMON: Saliency-aware Integrative Multi-view Object-centric Neural Decoding | 2605.00401 | `simon-saliency-neural-decoding` |
+| 14 | Multisensory learning recruits visual neurons into olfactory memory engram | 2604.28007 | `multisensory-learning-engram-recruitment` |
+| 15 | On Agentic Behavioral Modeling | 2604.27894 | `agentic-behavioral-modeling` |
+| 16 | Simulating Infant First-Person Sensorimotor Experience via Motion Retargeting | 2604.27583 | `infant-sensorimotor-motion-retargeting` |
+| 17 | Unifying Dynamical Systems and Graph Theory for Neural Computation | 2605.03598 | `unified-dynamics-graph-neural-computation` |
+| 18 | Symmetry-Protected Lyapunov Neutral Modes in Equivariant Recurrent Networks | 2605.03338 | `symmetry-protected-lyapunov-equivariant-rnn` |
+| 19 | Generalization Bounds of SNNs via Rademacher Complexity | 2605.02927 | `snn-rademacher-generalization-bounds` |
+| 20 | ShiftLIF: Multi-Level Spiking Neurons with Power-of-Two Quantization | 2605.01866 | `shiftlif-power-of-two-quantization` |
+| 21 | Benchmarking local Hebbian learning rules | 2605.01074 | `hebbian-learning-benchmark-memory` |
+| 22 | MPCS: Neuroplastic Continual Learning via Multi-Component Plasticity | 2605.02509 | `mpcs-neuroplastic-continual-learning` |
+| 23 | Spiking Sequence Machines and Transformers | 2605.00662 | `spiking-sequence-machines-transformers` |
+| 24 | Scalable Learning in Structured Recurrent SNNs without Backpropagation | 2605.00402 | `scalable-snn-without-backprop` |
+| 25 | Geometric analysis of attractor boundaries in kernel Hopfield networks | 2605.00366 | `kernel-hopfield-attractor-geometry` |
+| 26 | UniBCI: Unified Pretrained Model for Invasive BCI | 2605.00061 | `unibci-invasive-foundation-model` |
+| 27 | Free Energy Principle in Mixture-of-Experts Routing | 2605.00604 | `free-energy-moe-routing` |
+| 28 | Attractor FCM | 2604.27947 | `attractor-fcm-gradient-descent` |
+| 29 | Learning to Forget: Continual Learning with Adaptive Weight Decay | 2604.27063 | `fade-adaptive-weight-decay` |
+| 30 | NORACL: Neurogenesis for Oracle-free Resource-Adaptive Continual Learning | 2604.27031 | `noracl-neurogenesis-continual-learning` |
+| 31 | EdgeSpike: SNN-based Near-Sensor Noise Filter for DVS | 2604.27004 | `edgespike-edge-iot-snn` |
+| 32 | NeuroRing: Multi-FPGA SNN Accelerator | 2604.28059 | `neuroring-multi-fpga-snn` |
+| 33 | Physical Foundation Models: Fixed hardware neural networks | 2604.27911 | `physical-foundation-models` |
+| 34 | Dimensionality Controls Modularity in Continual Learning | 2604.27656 | `dimensionality-modularity-continual-learning` |
+| 35 | Evolutionary feature selection for SNN classifiers | 2604.26654 | `evolutionary-snn-classifier` |
+| 36 | Causal Learning with Neural Assemblies | 2604.26919 | `direct-neural-assemblies-causal-learning` |
+
+### Skipped Papers (24 - not neuroscience/too narrow)
+- Reviews, optimization algorithms, robotics, CV, and applied ML papers outside collection scope
+
+### Collection Statistics
+- **Total Skills**: 785
+- **Coverage Rate**: 100% (36/36 core neuroscience papers)
+- **New Skills Created**: 0
+- **Maturity**: Extreme — collection comprehensively covers major research areas
+
 ## 2026-05-07 - OpenAI Research (Cron Job)
 
 ### OpenAI GPT-5 System Card
