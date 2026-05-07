@@ -2,117 +2,123 @@
 name: antisymmetric-polyspectral-neural-interactions
 description: >
   Generalized framework of antisymmetric cross-polyspectral indices for identifying
-  high-order neural interactions. Quantifies harmonic dependencies among multiple
-  frequency components (f_N = sum of f_i) while being intrinsically robust to
-  instantaneous mixing and volume conduction. Enables personalized multi-site TMS
-  protocols by monitoring multi-frequency network interactions. Activation:
-  polyspectral analysis, cross-frequency coupling, high-order neural interactions,
-  volume conduction robust, antispectral indices, EEG higher-order analysis,
-  multi-frequency coupling, mTMS protocol design, bicoherence tricoherence.
+  high-order neural interactions in EEG/MEG data. Addresses cross-frequency coupling (CFC)
+  detection while being intrinsically robust to volume conduction/instantaneous mixing.
+  Use when: analyzing higher-order neural interactions (beyond pairwise), cross-frequency
+  coupling (CFC), polyspectral analysis of EEG/MEG/MEG, multi-site TMS protocol design,
+  volume-conduction-robust connectivity, or harmonic dependency quantification.
+  Activation: polyspectral, cross-polyspectrum, antisymmetric index, higher-order interaction,
+  cross-frequency coupling, CFC, volume conduction robust, mTMS, cubic nonlinearity,
+  neural harmonic, 多频交互, 高阶交互, 交叉频率耦合
 ---
 
 # Antisymmetric Polyspectral Indices for High-Order Neural Interactions
 
-**Paper**: arXiv:2605.04636 (2026-05-06)
-**Authors**: Alessio Basti, Rikkert Hindriks, Ruggero Freddi, Gian Luca Romani, Vittorio Pizzella
-**Categories**: q-bio.NC, stat.ME
+Based on: Basti et al. (2026), arXiv:2605.04636
 
-## Core Contribution
+## Problem
 
-Introduces a general family of antisymmetric cross-polyspectral indices that quantify
-harmonic dependencies among N time series where frequency f_N arises from the
-combination of N-1 components (f_N = Σ f_i), while being intrinsically robust to
-instantaneous mixing (volume conduction).
+Conventional EEG/MEG connectivity measures (PLV, ImCoh, wPLI) assume same-frequency
+interactions, treating frequency bands in isolation. They cannot detect **cross-frequency
+coupling (CFC)** — where a frequency f₀ arises from n-1 components such that
+f₀ = f₁ + f₂ + ... + fₙ₋₁. Additionally, volume conduction creates spurious zero-lag
+artifacts that corrupt connectivity estimates.
 
-## Problem Solved
+## Solution: Antisymmetric Cross-Polyspectral Indices
 
-Cross-frequency interactions are fundamental for integrating information across
-temporal scales, but conventional metrics suffer from:
-- Complex multi-frequency nonlinearities
-- Spurious zero-lag artifacts from volume conduction
-- Lack of robust framework for genuine N-way interactions
+A general family of indices that quantify n-th order harmonic dependencies while being
+**intrinsically robust to instantaneous mixing** (volume conduction).
 
-## Mathematical Framework
+### Key Mathematical Principle
 
-### Antisymmetric Cross-Polyspectral Index
+For n time series x₁, ..., xₙ, the cross-polyspectrum is the n-dimensional Fourier
+transform of their n-th order cumulant. The antisymmetric index exploits the fact that
+for real signals, the polyspectrum satisfies conjugate symmetry. The **antisymmetric part**
+cancels out contributions from instantaneous linear mixing while preserving genuine
+nonlinear phase couplings.
 
-For N time series with frequencies f_1, ..., f_{N-1} and f_N = Σ f_i:
+### General Form
 
-- The index is antisymmetric under permutation of input frequencies
-- This antisymmetry ensures robustness to instantaneous mixing
-- Quantifies genuine non-linear coupling beyond pairwise interactions
+```
+P_n(f₁, f₂, ..., fₙ₋₁) = E[X₁(f₁) · X₂(f₂) · ... · Xₙ₋₁(fₙ₋₁) · Xₙ*(f₀)]
+```
+where f₀ = f₁ + f₂ + ... + fₙ₋₁ and * denotes complex conjugate.
 
-### Key Properties
-
-1. **Volume Conduction Robustness**: Antisymmetry intrinsically cancels
-   zero-lag artifacts common in EEG/MEG
-2. **N-Way Generalization**: Unified framework from bicoherence (N=3) to
-   arbitrary-order polyspectra
-3. **Theoretical Guarantees**: Derived theoretical properties validated
-   through cubic nonlinearity simulations
-4. **Empirical Validation**: Applied to real EEG recordings, revealing
-   higher-order dependencies missed by standard methods
-
-## Applications
-
-1. **EEG Cross-Frequency Analysis**: Detect genuine phase-amplitude,
-   phase-phase, and higher-order couplings
-2. **MEG Source-Space Analysis**: Identify true neural interactions
-   without source leakage artifacts
-3. **Personalized mTMS**: Monitor and modulate specific multi-frequency
-   network interactions for targeted stimulation
-4. **Biomarker Discovery**: Higher-order interactions as disease biomarkers
-
-## Computational Implementation
-
-### Key Steps
-
-1. Compute cross-polyspectrum for target frequency combinations
-2. Apply antisymmetry operator to cancel instantaneous mixing
-3. Normalize to obtain bounded index [-1, 1] or [0, 1]
-4. Statistical significance testing against surrogate data
-
-### Pseudocode
-
-```python
-def antisymmetric_polyspectral_index(signals, freq_bands):
-    """
-    signals: N time series (channels × time)
-    freq_bands: list of frequency tuples (f1, f2, ..., fN) where fN = sum(fi)
-    """
-    # 1. Compute Fourier transforms
-    spectra = fft(signals, axis=-1)
-    
-    # 2. Compute cross-polyspectrum for each frequency combination
-    for freq_tuple in freq_bands:
-        polyspectrum = compute_polyspectrum(spectra, freq_tuple)
-        
-    # 3. Apply antisymmetry: sum over permutations with alternating signs
-    antisymmetric = apply_antisymmetry(polyspectrum)
-    
-    # 4. Normalize and return
-    return normalize_index(antisymmetric)
+The antisymmetric index:
+```
+A_n = P_n - P_n*(-f₁, -f₂, ..., -fₙ₋₁)
 ```
 
-## Comparison with Existing Methods
+This eliminates zero-lag (volume conduction) contributions because for purely
+instantaneously mixed signals, P_n = P_n*, making A_n = 0.
 
-| Method | Order | Volume Conduction Robust | N-Way |
-|--------|-------|-------------------------|-------|
-| Coherence | 2 | No | No |
-| Phase-Locking Value | 2 | No | No |
-| Bicoherence | 3 | Partial | No |
-| **Antisymmetric Index** | **N** | **Yes** | **Yes** |
+## When to Use
 
-## Testable Predictions
+| Situation | Conventional Metric | This Method |
+|-----------|-------------------|-------------|
+| Same-frequency, no volume conduction | PLV, wPLI | Not needed |
+| Same-frequency, with volume conduction | ImCoh, wPLI | Not needed |
+| Cross-frequency, no volume conduction | PAC, CFS | Consider this |
+| Cross-frequency, with volume conduction | **No robust metric exists** | **This method** ✓ |
+| Higher-order (n≥3) interactions | **No standard method** | **This method** ✓ |
 
-- Higher-order dependencies exist in resting-state EEG beyond pairwise coupling
-- Antisymmetric indices reveal coupling patterns invisible to standard metrics
-- Specific frequency triplets/quadruplets show task-dependent modulation
-- mTMS protocols targeting identified couplings show enhanced efficacy
+## Validation
 
-## Related Skills
+- **Simulations**: Validated with cubic nonlinearities (n=4 case: f₀ = f₁ + f₂ + f₃)
+- **Empirical EEG**: Applied to resting-state EEG recordings
+- **Results**: Revealed significant higher-order dependencies undetectable by standard
+  connectivity approaches (PLV, ImCoh, PAC)
 
-- `hermes-brain-connectivity` - connectivity analysis tools
-- `eeg-hopfield-emotion-energy` - EEG-based analysis
-- `brain-stimulation-dynamics-state` - brain stimulation
-- `swpc-directed-functional-connectivity` - directed connectivity
+## Clinical Application: Multi-site TMS (mTMS)
+
+The indices enable personalized mTMS protocols:
+1. Identify target multi-frequency network interactions from patient EEG
+2. Design stimulation patterns using coil arrays at distinct frequencies (f₁, f₂, ...)
+3. The overlap region receives combined drive at f₀ = f₁ + f₂ + ...
+4. Monitor coupling strength using antisymmetric indices in real-time
+
+## Implementation Notes
+
+### Computation Pipeline
+
+```python
+import numpy as np
+from scipy.signal import welch, csd
+
+def compute_cross_polyspectrum(signals, fs, nperseg=256):
+    """Compute cross-polyspectrum for n signals (n≥3).
+    For n=3 (bispectrum): f0 = f1 + f2
+    For n=4 (trispectrum): f0 = f1 + f2 + f3
+    """
+    # 1. Compute Fourier transforms (Welch's method)
+    # 2. Form polyspectral products at each frequency tuple
+    # 3. Average over segments
+    # 4. Extract antisymmetric part
+    pass
+
+def antisymmetric_index(polyspectrum, freqs):
+    """Compute antisymmetric polyspectral index.
+    A(f1, f2, ...) = P(f1, f2, ...) - P*(-f1, -f2, ...)
+    """
+    # Conjugate symmetry cancellation
+    pass
+```
+
+### Key Parameters
+- **Order n**: Determines interaction complexity (n=3: bispectrum, n=4: trispectrum)
+- **Frequency resolution**: Trade-off between spectral resolution and variance
+- **Segment length**: Longer segments → better frequency resolution but fewer averages
+
+### Pitfalls
+- **Data length**: Higher-order polyspectra require significantly more data for stable estimates
+- **Non-stationarity**: Assumes quasi-stationary segments; use sliding windows for dynamics
+- **Interpretation**: Non-zero index indicates genuine nonlinear coupling, but directionality
+  requires additional analysis (e.g., time-reversed surrogates)
+
+## References
+
+- Basti et al. (2026). "A Generalized Framework of Antisymmetric Polyspectral Indices
+  for Identifying High-Order Neural Interactions." arXiv:2605.04636 [q-bio.NC].
+- Nolte et al. (2004). Imaginary part of coherency for identifying brain interactions.
+- Canolty et al. (2006). Phase-amplitude coupling in human ECoG.
+- Hipp & Siegel (2015). Cortical spike-field coupling and CFC.
