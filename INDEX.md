@@ -186,6 +186,13 @@
   - **Activation**: SDLLM, spike-driven LLM, gamma-SQP encoding, sparse addition LLM, neuromorphic LLM, 脉冲驱动大语言模型
 
 **Coverage Analysis**: 50+ papers scanned from arXiv search (spiking neural network, brain network, neural dynamics), **2 new skills created** from S2-Net and SDLLM papers (neuroscience + AI intersection).
+### CTM-AI: A Blueprint for General AI Inspired by a Model of Consciousness
+- [[ctm-ai-consciousness-blueprint]] - Conscious Turing Machine-inspired general AI combining formal consciousness theory with foundation models; processor selection-integration-exchange achieves SOTA on MUStARD (72.28) and UR-FUNNY (72.13), 10+ point gains on StableToolBench/WebArena-Lite (arXiv: 2605.04097)
+  - Core: Global workspace bottleneck with enormous processor pool (specialized experts + general learners) selected, integrated, and exchanged per task
+  - Key: Formal CTM consciousness model provides mathematical foundation; adaptive learners develop expertise through experience
+  - **Activation**: CTM-AI, Conscious Turing Machine, consciousness-inspired AI, global workspace AI, multi-processor architecture, Blum consciousness model
+
+
 
 ## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 09:00)
 
