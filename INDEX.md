@@ -1,3 +1,17 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### TRIBE v2: Tri-Modal Foundation Model for In-Silico Neuroscience
+- [[tribe-v2-trimodal-foundation-model]] - Tri-modal (video, audio, language) foundation model predicting human brain activity across 1,000+ hours of fMRI, 720 subjects (arXiv: 2605.04326)
+  - Core: Unified tri-modal foundation model superseding linear encoding models with several-fold accuracy improvements
+  - Key: Enables in-silico experimentation; reveals fine-grained topography of multisensory integration via interpretable latent features
+  - **Activation**: TRIBE v2, brain foundation model, in-silico neuroscience, multi-modal brain prediction, fMRI encoding, multisensory integration
+
+### CTM-AI: Blueprint for General AI Inspired by Consciousness Model
+- [[ctm-ai-consciousness-blueprint]] - Combines Conscious Turing Machine with foundation models for general AI; SOTA on MUStARD/UR-FUNNY, 10+ point gains on tool-using tasks (arXiv: 2605.04097)
+  - Core: Processor selection, integration, and exchange mechanisms inspired by formal consciousness theory
+  - Key: Enormous processor pool (specialized + general-purpose); dynamic information integration for flexible problem solving
+  - **Activation**: CTM-AI, Conscious Turing Machine, consciousness-inspired AI, global workspace, processor selection, general AI blueprint
+
 ## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job - 3rd Run)
 
 ### On Quantum Indeterminacy
