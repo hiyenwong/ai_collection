@@ -1,3 +1,11 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### Neural Manifolds as Crystallized Embeddings: A Synthesis of FEP, GS, and Hebbian Plasticity
+- [[neural-manifolds-crystallized-embeddings]] - Theoretical synthesis uniting Free Energy Principle, Generalized Synchronization, and Hebbian Plasticity to explain how cortical neural manifolds emerge as crystallized embeddings (arXiv: 2605.04200)
+  - Core: Generalized synchronization in contractive recurrent circuits embeds sensory manifolds into neural state space without explicit Bayesian computation
+  - Key: Predicts N ≥ 2d+1 embedding threshold; contraction strength tracks fidelity; psychometric functions emerge from embedding quality
+  - **Activation**: neural manifold, crystallized embedding, free energy principle, generalized synchronization, Hebbian plasticity, reservoir computing, Takens theorem
+
 ## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
 
 ### Quantum Prediction of Transport Dynamics in Discretized State Spaces
