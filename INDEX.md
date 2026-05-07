@@ -63,10 +63,10 @@
   - **Activation**: DINA, V1 population activity, image-neural alignment, contrastive framework, calcium imaging decoding, visual computation
 
 ### ShiftLIF: Efficient Multi-Level Spiking Neurons with Power-of-Two Quantization
-- [[shiftlif-power-of-two-quantization]] - Multi-level spiking neuron with learnable-scale power-of-two quantization, absorbing scale into weights for strict accumulate-only inference (arXiv: 2605.01866)
-  - Core: Reformulates burst spiking as saturated uniform quantization with learnable scale per layer, adapted to membrane-potential statistics
-  - Key: ReLSG-ET surrogate gradient sustains flow across burst intervals; scale absorbed into weights preserves hardware efficiency
-  - **Activation**: ShiftLIF, power-of-two quantization, learnable quantization scale, multi-level spiking neurons, burst SNN quantization, ReLSG-ET
+- [[shiftlif-power-of-two-quantization]] - Multi-level spiking neuron using logarithmic power-of-two quantization for multiplier-free edge sensing SNNs (arXiv: 2605.01866)
+  - Core: Maps membrane potentials to logarithmically spaced power-of-two spike levels {0, 2⁻ᴷ, ..., 2⁰}, matching membrane distribution with bit-shift computation
+  - Key: 89.34% avg accuracy across 10 datasets (4 modalities); K=2-3 optimal; energy ≈ binary LIF, significantly better than INT-LIF
+  - **Activation**: ShiftLIF, logarithmic power-of-two quantization, multi-level spiking neurons, edge sensing SNN, bit-shift SNN, continuous sensing, wireless/acoustic/motion
 
 ### Scalable Learning in Structured Recurrent SNNs Without Backpropagation
 - [[scalable-snn-without-backprop]] - Structured multi-layer recurrent SNN with local plasticity, WTA teaching signals, and random broadcast alignment — no backprop or surrogate gradients (arXiv: 2605.00402)
