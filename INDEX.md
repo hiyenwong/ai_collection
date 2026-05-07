@@ -1,3 +1,17 @@
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
+- [[think-aloud-cognitive-model-discovery]] - Using think-aloud verbal traces as additional constraints for LLM-based cognitive model discovery, achieving 69.4% structural model shifts and improved predictive accuracy (arXiv: 2605.05091)
+  - Core: LLM discovers cognitive models constrained by both behavioral data AND think-aloud verbal protocols
+  - Key: Process-level language data systematically shifts models from Explicit Comparator to Integrated Utility class; resolves behavioral under-determination
+  - **Activation**: think-aloud, cognitive model discovery, verbal protocol, automated model discovery, LLM cognitive modeling, process-level data
+
+### DINA: Dual-Tower Image-Neural Alignment for V1 Population Activity Interpretation
+- [[dina-v1-population-activity-interpretation]] - Contrastive dual-tower framework aligning visual stimuli and V1 population responses at intermediate feature map level for interpretable decoding (arXiv: 2605.04309)
+  - Core: Joint training of image and neural towers projecting into shared latent space with contrastive alignment
+  - Key: V1 decoding driven by coarse low-level visual structure; sparse neuron subsets dominate feature reconstruction
+  - **Activation**: DINA, V1 population activity, image-neural alignment, contrastive framework, calcium imaging decoding, visual computation
+
 ## 2026-05-08 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### A Factor-Graph Formulation of CSS Syndrome Decoding: Joint BP and Four-State BP

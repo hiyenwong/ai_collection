@@ -1,160 +1,118 @@
 ---
 name: dina-v1-population-activity-interpretation
-description: >
-  Dual-Tower Image-Neural Alignment (DINA) framework for interpreting V1 population activity.
-  Uses contrastive learning to align visual stimuli and V1 responses in shared latent space at
-  intermediate feature map level. Enables accurate neural-based decoding while revealing that
-  decoding relies on coarse low-level visual structure rather than semantic information.
-  Use when: V1 population analysis, calcium imaging interpretation, neural decoding,
-  image-neural alignment, visual computation analysis, two-photon data analysis.
-  arXiv:2605.04309
-  Activation: DINA, V1 interpretation, image neural alignment, visual decoding, calcium imaging analysis,
-  population level visual computation, contrastive neural alignment, two-photon V1
+description: "DINA (Dual-Tower Image-Neural Alignment) framework for interpretable contrastive analysis of V1 population activity. Aligns visual stimuli and V1 responses in shared latent space at intermediate feature map level. Activation: DINA, V1 population activity, image-neural alignment, contrastive framework, calcium imaging decoding, visual computation."
 ---
 
-# DINA: Dual-Tower Image-Neural Alignment for V1 Interpretation
+# DINA: Dual-Tower Image-Neural Alignment for V1 Population Activity Interpretation
 
-**Paper**: Wang, Gao, Qin, Wu, Zhou, Zhao (2026). "Interpreting V1 Population Activity via Image-Neural Latent Representation Alignment"
-**arXiv**: [2605.04309](https://arxiv.org/abs/2605.04309)
-**Categories**: cs.NE (Neural and Evolutionary Computing)
+> An interpretable contrastive framework that jointly trains dual-tower architecture aligning visual stimuli and V1 population responses in shared latent space, enabling both accurate decoding and direct access to interpretable feature maps.
 
-## Problem
+## Metadata
+- **Source**: arXiv:2605.04309
+- **Authors**: Xin Wang, Zhuangzhi Gao, Hongyi Qin, Zhongli Wu, Feixiang Zhou, He Zhao
+- **Published**: 2026-05-05
+- **Domain**: Computational Neuroscience + Visual Processing
 
-Alignment-based approaches for decoding visual stimuli from brain activity have improved accuracy,
-but provide **limited insight into the neural computations** that produce these improvements.
-Black-box decoding doesn't reveal *what* features the brain is using.
+## Core Methodology
 
-## Solution: DINA Framework
+### Key Innovation
+Traditional alignment-based approaches improve decoding accuracy from brain activity but provide **limited insight** into the neural computations underlying these improvements. DINA addresses this gap by training a **dual-tower architecture** that aligns visual stimuli and V1 population responses at the level of **intermediate feature maps** (not just final representations), enabling both accurate decoding AND direct access to interpretable computational mechanisms.
 
-**Dual-Tower Image-Neural Alignment (DINA)** is an interpretable contrastive framework that jointly
-trains a dual-tower architecture aligning visual stimuli and V1 population responses in a shared
-latent space at the level of **intermediate feature maps**.
+### Technical Framework
 
-### Architecture
+1. **Dual-Tower Architecture**:
+   - **Image Tower**: Processes visual stimuli through hierarchical feature extraction
+   - **Neural Tower**: Processes V1 population activity through parallel architecture
+   - Both towers project into a **shared latent space** at intermediate feature map level
 
-```
-Image Tower                    Neural Tower
-┌─────────────┐               ┌─────────────┐
-│  Input Image │               │  V1 Activity │
-│  (stimulus)  │               │  (2P imaging)│
-└──────┬──────┘               └──────┬──────┘
-       │                             │
-       ▼                             ▼
-┌─────────────┐               ┌─────────────┐
-│ CNN Encoder  │               │ Neural       │
-│ (biologically│               │ Encoder      │
-│  motivated)  │               │ (MLP/linear) │
-└──────┬──────┘               └──────┬──────┘
-       │                             │
-       ▼                             ▼
-┌─────────────────────────────────────┐
-│    Shared Latent Space              │
-│  (intermediate feature maps)        │
-│                                     │
-│  Contrastive Loss:                  │
-│  - Match image↔neural pairs         │
-│  - Reject mismatched pairs          │
-└─────────────────────────────────────┘
-```
+2. **Contrastive Alignment**:
+   - Positive pairs: (image, corresponding V1 response) are pulled together
+   - Negative pairs: mismatched image-response pairs are pushed apart
+   - Alignment occurs at **multiple levels** of the feature hierarchy
 
-## Key Findings
+3. **Interpretability Mechanism**:
+   - Access to intermediate feature maps reveals **which visual features** drive neural responses
+   - Enables analysis of spatial regions contributing to alignment
+   - Identifies sparse subsets of strongly responsive neurons
 
-1. **Coarse Structure Dominates**: Decoding performance is primarily supported by **coarse, low-level
-   visual structure**, not semantic category information or fine-grained details
-2. **Spatially Distributed Features**: Alignable feature maps emerge from **multiple spatially distributed
-   image regions**, capturing both shape and texture cues
-3. **Sparse Neural Coding**: Feature reconstruction is dominated by **sparse subsets of strongly
-   responsive neurons** and their functional interactions
-4. **Interpretable Feature Access**: Direct access to feature maps enables principled probing of
-   computational mechanisms
+### Key Findings (Mouse V1 Two-Photon Calcium Imaging)
+- Decoding performance primarily supported by **coarse, low-level visual structure** (not semantic category or fine-grained details)
+- Alignable feature maps emerge from **multiple spatially distributed image regions**
+- Both **shape and texture cues** captured by alignable features
+- Features predominantly reconstructed by **sparse subsets of strongly responsive neurons** and their functional interactions
 
-## When to Use DINA
+## Implementation Guide
 
-| Task | Traditional Encoding | DINA |
-|------|---------------------|------|
-| Decoding accuracy | Good | **Better or equal** |
-| Understanding computation | Black box | **Feature-level interpretation** ✓ |
-| Identifying relevant features | Indirect | **Direct feature access** ✓ |
-| Sparse neuron analysis | Manual | **Automated identification** ✓ |
-| Cross-modal alignment | Separate models | **Unified shared space** ✓ |
+### Prerequisites
+- Large-scale two-photon calcium imaging data from V1
+- Corresponding visual stimuli (natural images)
+- PyTorch or similar deep learning framework
+- GPU for contrastive training
 
-## Implementation Pipeline
+### Step-by-Step
+1. **Preprocess Neural Data**: Denoise and normalize calcium traces, extract population activity vectors
+2. **Preprocess Visual Data**: Extract multi-scale visual features (edges, textures, shapes)
+3. **Build Dual Towers**: Design parallel architectures for image and neural processing
+4. **Define Contrastive Loss**: InfoNCE or similar contrastive objective for paired alignment
+5. **Train Jointly**: Optimize both towers simultaneously with shared latent space projection
+6. **Extract Feature Maps**: Access intermediate representations for interpretability analysis
+7. **Analyze Spatial Contributions**: Map which image regions drive neural alignment
+8. **Identify Key Neurons**: Find sparse subsets of neurons most responsible for alignment
 
-### Step 1: Data Preparation
-- **Neural data**: Two-photon calcium imaging from V1 (or other modalities)
-- **Stimuli**: Natural images, gratings, or other visual inputs
-- **Preprocessing**: ΔF/F calculation, trial averaging, neuron selection
-
-### Step 2: Dual-Tower Architecture
+### Code Sketch
 ```python
-# Conceptual architecture
-class DINA(nn.Module):
-    def __init__(self, image_encoder, neural_encoder, latent_dim):
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class DINATower(nn.Module):
+    """Dual-tower architecture for image-neural alignment."""
+    
+    def __init__(self, image_dim, neural_dim, latent_dim):
         super().__init__()
-        # Biologically motivated image encoder (e.g., VGG-like)
-        self.image_tower = image_encoder
-        # Neural encoder (maps population activity to latent space)
-        self.neural_tower = neural_encoder
-        # Projection to shared space
-        self.image_proj = nn.Linear(image_feat_dim, latent_dim)
-        self.neural_proj = nn.Linear(neural_dim, latent_dim)
-
+        self.image_tower = nn.Sequential(
+            nn.Linear(image_dim, 512),
+            nn.ReLU(),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Linear(256, latent_dim)
+        )
+        self.neural_tower = nn.Sequential(
+            nn.Linear(neural_dim, 512),
+            nn.ReLU(),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Linear(256, latent_dim)
+        )
+    
     def forward(self, images, neural_responses):
-        img_feat = self.image_proj(self.image_tower(images))
-        neural_feat = self.neural_proj(self.neural_tower(neural_responses))
-        # L2 normalize for contrastive loss
-        return F.normalize(img_feat), F.normalize(neural_feat)
-
-    def contrastive_loss(self, img_feat, neural_feat, temperature=0.07):
-        # InfoNCE / NT-Xent loss
-        logits = img_feat @ neural_feat.T / temperature
-        labels = torch.arange(len(img_feat))
-        return F.cross_entropy(logits, labels)
+        img_features = self.image_tower(images)
+        neural_features = self.neural_tower(neural_responses)
+        return img_features, neural_features
+    
+    def contrastive_loss(self, img_features, neural_features, temperature=0.07):
+        # InfoNCE loss
+        similarities = torch.matmul(img_features, neural_features.T) / temperature
+        labels = torch.arange(len(img_features), device=img_features.device)
+        return F.cross_entropy(similarities, labels)
 ```
-
-### Step 3: Training
-- **Contrastive objective**: Match image-neural pairs, reject mismatches
-- **Intermediate feature alignment**: Align at feature map level (not just final output)
-- **Regularization**: Sparse coding constraints to reflect biological sparsity
-
-### Step 4: Interpretation Analysis
-1. **Feature importance**: Which feature maps contribute most to alignment?
-2. **Image regions**: What parts of images drive alignable features?
-3. **Neuron subsets**: Which neurons are most responsible for feature reconstruction?
-4. **Functional interactions**: How do neuron groups interact to encode features?
-
-## Key Insights for V1 Computation
-
-- V1 encoding relies on **low-level structure** (edges, textures, coarse patterns)
-- **Semantic information** is NOT the primary driver of V1 decoding
-- **Sparse coding**: Small subsets of neurons dominate feature representation
-- **Distributed processing**: Multiple image regions contribute to single feature maps
-
-## Validation and Evaluation
-
-- **Decoding accuracy**: Compare with baseline encoding models
-- **Cross-validation**: Test on held-out stimuli and subjects
-- **Ablation studies**: Remove feature types to assess contribution
-- **Surrogate analysis**: Compare with shuffled data to confirm signal
 
 ## Applications
+- **Visual Neuroscience**: Understanding computational mechanisms in primary visual cortex
+- **Brain-Computer Interfaces**: Improved decoding of visual stimuli from neural activity
+- **Model Validation**: Testing whether artificial vision models capture biological computation
+- **Cross-Species Comparison**: Comparing V1 computation across species using shared alignment framework
+- **Feature Visualization**: Identifying which visual features drive neural population responses
 
-1. **Visual neuroscience**: Understand V1 computation beyond descriptive tuning curves
-2. **BCI**: Improve visual brain-computer interfaces with interpretable features
-3. **Computer vision**: Inform biologically inspired vision model design
-4. **Neurological disorders**: Detect V1 processing abnormalities via feature analysis
+## Pitfalls
+- Requires **large-scale neural datasets** (small datasets may not capture population dynamics)
+- Contrastive alignment may capture **superficial correlations** rather than causal mechanisms
+- Feature map interpretability depends on **tower architecture design** choices
+- Mouse V1 findings may not directly generalize to primate/human visual cortex
+- Two-photon calcium imaging has **temporal resolution limits** compared to electrophysiology
 
 ## Related Skills
-
-- `spiking-neural-network-analysis` - SNN paper analysis
-- `eeg-visual-attention-decoding` - EEG-based visual decoding
-- `primary-visual-cortex-v1-functions` - V1 function frameworks
-- `brain-inspired-attention-mechanisms` - Brain-inspired vision
-- `neural-population-decoding` - Population decoding methods
-
-## References
-
-- Wang, X., Gao, Z., Qin, H., Wu, Z., Zhou, F., Zhao, H. (2026). "Interpreting V1 Population
-  Activity via Image-Neural Latent Representation Alignment." arXiv:2605.04309 [cs.NE].
-- Chen, T. et al. (2020). SimCLR: A Simple Framework for Contrastive Learning.
-- Yamins, D.L.K. & DiCarlo, J.J. (2016). Using goal-driven deep learning models to understand sensory cortex.
+- primary-visual-cortex-v1-functions
+- neural-encoding-evaluation-ground-truth
+- connectome-constrained-neural-network
+- eeg-visual-attention-decoding
