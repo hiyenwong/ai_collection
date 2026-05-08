@@ -1,148 +1,147 @@
 ---
 name: hebbian-learning-benchmark-memory
-description: "Benchmarking 7 local Hebbian learning rules for associative memory storage and prototype extraction. Bayesian-Hebbian rules achieve highest capacity. Activation: hebbian learning benchmark, associative memory capacity, prototype extraction, Bayesian-Hebbian learning, covariance learning."
+description: >
+  Benchmarking of seven local Hebbian learning rules for associative memory storage,
+  prototype extraction, and weight information capacity in recurrent neural networks
+  with winner-take-all dynamics. Compares additive Hebb, covariance learning, and
+  Bayesian-Hebbian rules across non-modular and modular architectures.
+  Use when: benchmarking Hebbian learning rules, associative memory design, prototype
+  extraction, synaptic plasticity comparison, content-addressable memory, winner-take-all
+  networks, binary pattern storage, memory capacity analysis.
+  Activation: hebbian learning, associative memory, prototype extraction, memory capacity,
+  winner-take-all, WTA dynamics, covariance learning, Bayesian-Hebbian, binary patterns,
+  sparse coding, plasticity benchmark, 赫布学习, 联想记忆, 原型提取, 记忆容量
 ---
 
 # Hebbian Learning Rules Benchmark for Associative Memory
 
-## Paper Reference
+Based on: Lansner et al. (2026), arXiv:2605.01074
 
-- **Title:** Benchmarking local Hebbian learning rules for memory storage and prototype extraction
-- **Authors:** Anders Lansner, Andreas Knoblauch, Naresh B Ravichandran, Pawel Herman
-- **arXiv:** 2605.01074v1 (May 2026)
-- **Categories:** cs.NE, cs.LG
-- **URL:** https://arxiv.org/abs/2605.01074v1
+## Problem
 
-## Core Problem
-
-Associative memory (content-addressable memory) is fundamental to both computer science and cognitive/brain science. A key but understudied capability is **prototype extraction**: recalling correct prototypes from distorted training instances.
+Many Hebbian learning rules exist for associative memory, but systematic comparison
+ac architectures and tasks is limited. Key question: **which rule provides the best
+trade-off between storage capacity, prototype extraction, and robustness to correlations?**
 
 ## Benchmark Setup
 
-### Architecture
-- **Non-modular and modular recurrent networks** with winner-take-all (WTA) dynamics
-- **Moderately sparse binary patterns** as input representations
+### Network Architecture
+- **Non-modular**: Single recurrent network with winner-take-all (WTA) dynamics
+- **Modular**: Multiple WTA modules with inter-module connections
+- **Patterns**: Moderately sparse binary patterns
 
-### 7 Hebbian Learning Rules Tested
+### Seven Hebbian Rules Tested
 
-1. **Additive Hebb** (original): wᵢⱼ += xᵢxⱼ
-2. **Covariance Learning**: wᵢⱼ += (xᵢ - μᵢ)(xⱼ - μⱼ)
-3. **Bayesian-Hebbian** (multiple variants): Based on Bayesian inference principles
-
-### Metrics Measured
-
-| Metric | Description |
-|--------|-------------|
-| Pattern Storage Capacity | Max patterns stored and correctly recalled |
-| Weight Information Capacity | Information stored per synapse |
-| Prototype Extraction | Ability to recall clean prototype from noisy inputs |
-| Correlation Sensitivity | Robustness to correlated data |
-
-## Results Summary
-
-### Ranking by Capacity
-
-| Rank | Rule | Capacity | Robustness |
-|------|------|----------|------------|
-| 🥇 | **Bayesian-Hebbian** | Highest | High |
-| 🥈 | Covariance Learning | Moderate | Robust |
-| 🥉 | Other variants | Variable | Variable |
-| 4 | Additive Hebb (original) | Worst | Poor |
+| Rule | Description | Capacity | Robustness |
+|------|-------------|----------|------------|
+| Additive Hebb | Δw = pre × post | **Worst** | Low |
+| Covariance | Δw = (pre - μ_pre)(post - μ_post) | Moderate | **High** |
+| Bayesian-Hebbian | Probabilistic update based on posterior | **Highest** | High |
+| *(4 others)* | Various normalized/covariance variants | Varies | Varies |
 
 ### Key Findings
 
-1. **Additive Hebb rule performs worst** across all capacity measures
-2. **Covariance learning is robust** but has moderate capacity
-3. **Bayesian-Hebbian rules achieve highest capacity** in almost all tested conditions
-4. **Prototype extraction capability** correlates with storage capacity
-5. **Correlated data sensitivity** varies significantly across rules
+1. **Additive Hebb rule** has the worst capacity across all conditions
+2. **Covariance learning** is robust but offers only moderate capacity
+3. **Bayesian-Hebbian rules** consistently show the highest capacity in almost all tested conditions
+4. **Modular architectures** generally outperform non-modular for both storage and prototype extraction
+5. **Correlation sensitivity** varies significantly across rules — Bayesian rules are most robust
 
-## Bayesian-Hebbian Learning
+## When to Use Which Rule
 
-### Principle
+| Task | Recommended Rule |
+|------|-----------------|
+| Maximum storage capacity | Bayesian-Hebbian |
+| Robustness to noise/correlations | Covariance learning |
+| Simple implementation | Additive Hebb (but expect low capacity) |
+| Prototype extraction | Bayesian-Hebbian in modular WTA |
+| Few-shot learning | Bayesian-Hebbian |
 
-Bayesian-Hebbian learning derives weight updates from Bayesian inference:
-- Weights represent conditional probabilities
-- Learning updates follow Bayes' rule
-- Naturally handles sparse, correlated data
+## Implementation Guidance
 
-### Advantages
-- Higher storage capacity
-- Better prototype extraction
-- More robust to data correlations
-- Theoretically grounded in probabilistic inference
-
-## Applications
-
-- **Associative Memory Systems**: Content-addressable memory in neuromorphic hardware
-- **Prototype Learning**: Learning canonical representations from noisy data
-- **Figure-Ground Segmentation**: Perceptual organization tasks
-- **Perceptual Reconstruction**: Filling in missing information
-- **Cognitive Modeling**: Brain-inspired memory architectures
-
-## Implementation Pattern
+### WTA Network with Hebbian Learning
 
 ```python
-# Additive Hebb (baseline)
-def additive_hebb(X):
-    """X: binary patterns (n_samples, n_features)"""
-    return X.T @ X / X.shape[0]
+import numpy as np
 
-# Covariance Learning
-def covariance_hebb(X):
-    X_centered = X - X.mean(axis=0)
-    return X_centered.T @ X_centered / X.shape[0]
-
-# Bayesian-Hebbian (simplified)
-def bayesian_hebb(X, prior=0.5):
-    """Bayesian-Hebbian with prior probability"""
-    n, d = X.shape
-    p_i = X.mean(axis=0)  # marginal probabilities
-    p_ij = (X.T @ X) / n  # joint probabilities
-    # Conditional probability-based weights
-    W = np.log((p_ij + eps) / (p_i[:, None] * p_j[None, :] + eps) + eps)
-    return W
+class WTAAssociativeMemory:
+    def __init__(self, n_neurons, sparsity=0.1, rule='bayesian'):
+        self.n = n_neurons
+        self.sparsity = sparsity
+        self.W = np.zeros((n_neurons, n_neurons))
+        self.rule = rule
+    
+    def learn(self, patterns):
+        """Apply Hebbian learning rule to patterns."""
+        for x in patterns:
+            if self.rule == 'additive':
+                self.W += np.outer(x, x)
+            elif self.rule == 'covariance':
+                mu = self.sparsity
+                self.W += np.outer(x - mu, x - mu)
+            elif self.rule == 'bayesian':
+                # Bayesian update with prior
+                prior = 1.0 / self.n
+                posterior = x / (x + (1-x) * (prior / (1-prior)))
+                self.W += np.outer(posterior, x)
+    
+    def recall(self, cue):
+        """Retrieve pattern using WTA dynamics."""
+        state = cue.copy()
+        for _ in range(10):  # iterations
+            activation = self.W @ state
+            # WTA: keep only top-k active
+            k = int(self.sparsity * self.n)
+            state = np.zeros_like(state)
+            indices = np.argsort(activation)[-k:]
+            state[indices] = 1
+        return state
 ```
 
-## Modular vs Non-Modular Networks
+### Capacity Measurement
 
-| Aspect | Modular | Non-Modular |
-|--------|---------|-------------|
-| Capacity | Higher (with proper modularity) | Lower |
-| Interference | Reduced between modules | Higher |
-| Scalability | Better | Limited |
-| Biological plausibility | High (cortical columns) | Moderate |
+```python
+def measure_capacity(network, n_patterns, n_trials=50):
+    """Measure how many patterns can be stored and recalled."""
+    success = 0
+    for _ in range(n_trials):
+        patterns = generate_sparse_patterns(n_patterns, network.n, network.sparsity)
+        network.learn(patterns)
+        for p in patterns:
+            # Corrupt 20% of bits
+            cue = corrupt(p, noise=0.2)
+            recalled = network.recall(cue)
+            if np.array_equal(recalled, p):
+                success += 1
+    return success / (n_trials * n_patterns)
+```
 
-## WTA Dynamics
+### Prototype Extraction
 
-Winner-take-all dynamics in recurrent networks:
-- Competitive activation among neurons
-- Only strongest pattern wins
-- Enables content-addressable recall
-- Prevents spurious attractor states
+When training set contains distorted instances of underlying prototypes:
+
+```python
+def prototype_extraction(network, distorted_patterns, n_prototypes):
+    """Network should converge to generating prototype from distorted instances."""
+    network.learn(distorted_patterns)
+    # Query with new distorted instance
+    probe = distort(prototype, noise=0.3)
+    result = network.recall(probe)
+    # Should match the original prototype, not any training instance
+    return result
+```
 
 ## Pitfalls
 
-- **Pattern correlation**: High correlation between stored patterns degrades all rules
-- **Capacity limits**: All rules have fundamental capacity bounds
-- **Sparsity tuning**: Moderately sparse patterns work best; too dense or too sparse hurts
-- **Modularity design**: Improper modular partitioning can hurt more than help
-- **WTA convergence**: WTA dynamics may not converge for very similar patterns
+- **Additive Hebb saturates quickly**: weights grow unbounded without normalization
+- **Correlated patterns**: severely reduce capacity for simple Hebb rules
+- **Prototype vs. memorization**: network may memorize specific instances rather than extracting prototypes
+- **Modular vs. non-modular**: modular WTA has higher capacity but requires careful inter-module weight design
+- **Sparsity matters**: optimal sparsity depends on rule — Bayesian-Hebbian works well at moderate sparsity (~0.1)
 
-## Relation to Existing Skills
+## References
 
-- `mpcs-neuroplastic-continual-learning`: MPCS uses Hebbian updates as one of 11 mechanisms
-- `feedback-hebbian-continual-learning`: Hebbian learning in continual learning context
-- `kernel-hopfield-associative-memory`: Attractor-based associative memory
-- `hippo-multi-attractor-memory`: Multi-attractor memory models
-
-## Activation Keywords
-
-- hebbian learning benchmark
-- associative memory capacity
-- prototype extraction neural network
-- Bayesian-Hebbian learning
-- covariance learning rule
-- WTA recurrent network
-- content-addressable memory
-- pattern storage capacity
+- Lansner et al. (2026). "Benchmarking local Hebbian learning rules for memory
+  storage and prototype extraction." arXiv:2605.01074 [cs.NE].
+- Willshaw et al. (1969). A simple model of short-term memory.
+- Tsodyks & Feigel'man (1988). Enhanced storage capacity in neural networks.

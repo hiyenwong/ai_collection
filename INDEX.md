@@ -29,6 +29,12 @@
 
 ## 2026-05-08 - Neuroscience Research (Cron Job - Evening)
 
+### Benchmarking local Hebbian learning rules for memory storage and prototype extraction
+- [[hebbian-learning-benchmark-memory]] - 系统评测七种赫布学习规则在联想记忆中的存储容量、原型提取能力和对数据相关性的鲁棒性，贝叶斯-赫布规则在几乎所有条件下表现最优 (arXiv: 2605.01074)
+  - 核心要点 1: 加法赫布规则容量最差，协方差学习鲁棒但容量中等，贝叶斯-赫布规则几乎在所有条件下容量最高
+  - 核心要点 2: 模块化WTA架构优于非模块化，在存储和原型提取任务中均表现更好
+  - **Activation**: hebbian learning benchmark, associative memory, prototype extraction, memory capacity, Bayesian-Hebbian, covariance learning, WTA dynamics, binary pattern storage
+
 ## 2026-05-08 - Systems Engineering Research (Cron Job)
 
 ### Safety by Invariance, Liveness through Refinement: Heterogeneous Contract Framework for Co-Design of Layered Control
