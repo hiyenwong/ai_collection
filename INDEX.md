@@ -539,6 +539,26 @@
   - Key: Gains decompose into algorithmic efficiency (~14.5×) and neuromorphic co-design (~295× energy) via event-driven learning and sparse graded-spike communication
   - **Activation**: CLP-SNN, Loihi 2 continual learning, neuromorphic edge AI, spike-driven learning, self-normalizing SNN, local learning rule, rehearsal-free continual learning
 
+## 2026-05-08 - Neuroscience Research (Cron Job v8)
+
+### Standalone Skills Synced to ai_collection (10 skills)
+- [[clp-snn-loihi2-continual-learning]] - CLP-SNN on Intel Loihi 2: 113× lower latency, 6,600× lower energy for rehearsal-free online continual learning on neuromorphic hardware (arXiv: 2511.01553)
+- [[phys-mcp-physical-neural-networks]] - phys-MCP: substrate-aware control plane for physical neural networks (arXiv: recent)
+- [[neural-graph-embedding-qubo]] - Neural-powered unit disk graph embedding for QUBO-to-quantum mapping
+- [[unifying-dynamics-graph-neural-computation]] - R-RNNs: resolvent-based temporal sparsity matching task structure in neural computation (arXiv: 2605.03598)
+- [[neural-qubit-embedding]] - Neural-powered unit disk graph embedding for QUBO-to-quantum mapping
+- [[tribev2-brain-foundation-model]] - TRIBE v2: tri-modal foundation model for in-silico neuroscience
+- [[multi-scale-information-geometry-neural]] - Multi-scale information geometry for neural population mutual information structure
+- [[neurally-guided-adversarial-robustness]] - Dissociating spatial frequency reliance from adversarial robustness in neurally guided DCNNs
+- [[geosae-brain-mri-sae]] - GeoSAE: interpretable brain MRI foundation model via sparse autoencoders
+- [[ferroelectric-snn-eeg]] - Ferroelectric SNN with synaptic plasticity for personalized EEG analysis
+
+### Coverage Summary
+- Papers scanned from q-bio.NC + cs.NE: 9 recent (May 7-8, 2026)
+- Coverage rate: 100% (6/6 neuroscience papers covered by existing skills; 3 non-neuroscience papers skipped)
+- Key trend: Brain-DNN transformation alignment (NVS methodology), multi-scale information geometry in neural populations, think-aloud cognitive model discovery
+- Total ai_collection skills: 1974
+
 ## 2026-05-08 - Systems Engineering + Quantum (Cron Job)
 
 ### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
