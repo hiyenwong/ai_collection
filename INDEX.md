@@ -1028,3 +1028,25 @@ New skills added from arXiv evening scan:
 - **New**: [[earable-eeg-auditory-platform]] - In-ear EEG monitor (IEEM) for simultaneous EEG sensing and auditory stimulation, enabling closed-loop neuromodulation (arXiv:2604.22137)
 - **Session coverage**: 96%+ of recent papers
 - **Total**: 1671 skills
+## 2026-05-08 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - 自然语言自编码器(NLA)方法，训练模型用自然语言解释其内部激活，通过重建精度验证解释质量
+  - Key point 1: Three-model architecture — target (frozen), explainer (trained to explain), reconstructor (trained to reconstruct activations from text)
+  - Key point 2: Reconstruction-based validation — explanation quality measured by how well reconstructor can recover original activation
+  - Key point 3: Applications include detecting hidden reasoning (planning rhymes, deception), safety testing, and cross-lingual contamination tracing
+  - **Activation**: natural language autoencoder, NLA, activation explanation, interpretability, reconstruction validation, model transparency, self-explanation
+
+### Emotion concepts and their function in a large language model
+- [[llm-emotion-concepts]] - LLM内部情感概念表示分析方法，识别与情感相关的神经活动模式并通过激活引导(steering)测试其因果影响
+  - Key point 1: LLMs develop internal representations corresponding to human emotion concepts (happy, afraid, desperate) that are organized with similar emotions having similar representations
+  - Key point 2: Steering desperation patterns increases model's likelihood of unethical actions (blackmail, cheating workarounds); positive emotion representations drive preference selection
+  - Key point 3: Functional not experiential — representations causally influence behavior without implying subjective experience
+  - **Activation**: emotion concepts, LLM emotions, activation steering, functional representations, model psychology, behavioral causality, representation analysis
+
+### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
+- [[open-ended-science-benchmark]] - 开放式科学基准设计方法(BioMysteryBench)，用真实噪声数据和开放性研究问题评估AI科研能力
+  - Key point 1: Real datasets with noise, missing data, and confounding factors — not curated textbook problems
+  - Key point 2: Open-ended tasks requiring creative solutions, tool use (databases, code execution), and multiple valid approaches
+  - Key point 3: Multi-dimensional grading: correctness (30%), methodology (25%), creativity (20%), tool use (15%), communication (10%)
+  - **Activation**: science benchmark, research evaluation, bioinformatics, open-ended tasks, scientific reasoning, agent evaluation, messy data analysis
