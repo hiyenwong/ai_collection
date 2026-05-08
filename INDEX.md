@@ -1,5 +1,14 @@
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
+## 2026-05-08 - Neuroscience Research (Cron Job)
+
+### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
+- [[decoding-encoding-alignment-critique]] - 揭示RSA/DSA对齐度量的根本缺陷：解码对齐不代表计算相似性，高对齐分数可由极少数神经元子群体驱动 (arXiv: 2605.05907)
+  - 核心要点1: 解码对齐(RSA/DSA)无法反映神经元群体的编码拓扑，相似解码行为可由小神经元子集主导
+  - 核心要点2: 引入编码流形作为补充分析工具，必须同时报告解码对齐和编码拓扑才能得出有效结论
+  - **Activation**: decoding alignment, encoding manifold, RSA critique, brain-DNN comparison, representational similarity
+
+
 ### Efficient Event-Driven Retrieval in High-Capacity Kernel Hopfield Networks
 - [[event-driven-hopfield-retrieval]] - KLR Hopfield网络的异步事件驱动检索，实现接近O(N)存储容量的神经形态联想记忆 (arXiv: 2605.05978)
   - 核心要点 1: 异步序列更新在调优核参数下与同步动力学统计不可区分，保持高召回率
