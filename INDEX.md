@@ -1,6 +1,10 @@
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
-## 2026-05-08 - Neuroscience Research (Cron Job)
+### A multi-scale information geometry reveals the structure of mutual information in neural populations
+- [[multi-scale-information-geometry-neural]] - 多尺度信息几何揭示神经群体编码的互信息结构，Fisher信息度量的多尺度扩展直接关联互信息 (arXiv: 2605.06304)
+  - 核心要点1: 唯一黎曼表示几何从粗粒化下距离收缩的第一原理自然涌现，多尺度扩展Fisher信息度量
+  - 核心要点2: 度量张量本征向量识别对信息传输贡献最大的刺激变化方向，可通过扩散模型估计
+  - **Activation**: information geometry, Fisher information metric, neural population coding, mutual information, representational geometry, diffusion model estimation
 
 ### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
 - [[decoding-encoding-alignment-critique]] - 揭示RSA/DSA对齐度量的根本缺陷：解码对齐不代表计算相似性，高对齐分数可由极少数神经元子群体驱动 (arXiv: 2605.05907)
