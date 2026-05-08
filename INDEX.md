@@ -1,4 +1,17 @@
 ## 2026-05-08 - Neuroscience Research (Cron Job)
+## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### The true cost of factoring: Linking magic and number-theoretic complexity in Shor's algorithm
+- [[quantum-magic-number-theory-complexity]] - Links quantum magic (non-stabilizerness) resource cost to classical number-theoretic hardness of factoring (arXiv: 2605.05347)
+  - 核心要点 1: 量子算法的真实成本应由非稳定态资源（magic）衡量，而非单纯的门计数
+  - 核心要点 2: Shor算法中magic的生成量与数论问题的计算难度直接相关
+  - **Activation**: quantum magic, non-stabilizerness, Shor's algorithm, number theory complexity, resource theory
+
+### Quantum Proper Scoring Rules: Minimax Estimation and Resource-Theoretic Advantages
+- [[quantum-proper-scoring-rules]] - Generalizes proper scoring rules to quantum domain with operator convex generators and Quantum Cramér-Rao-McCarthy Bound (arXiv: 2605.05268)
+  - 核心要点 1: 将经典评分规则推广到量子密度算符域，定义量子价值泛函
+  - 核心要点 2: 证明量子Cramér-Rao-McCarthy界，连接量子Fisher信息与估计风险
+  - **Activation**: quantum scoring rules, state estimation, Cramer-Rao bound, quantum Fisher information, metrology
 
 ### A multi-scale information geometry reveals the structure of mutual information in neural populations
 - [[multi-scale-information-geometry-neural]] - 多尺度信息几何揭示神经群体编码的互信息结构，Fisher信息度量的多尺度扩展直接关联互信息 (arXiv: 2605.06304)
