@@ -1,5 +1,12 @@
 ## 2026-05-09 - Neuroscience Research (Cron Job)
 
+### An extremely coarse feedback signal is sufficient for learning human-aligned visual representations
+- [[coarse-feedback-human-aligned-visual]] - Demonstrates extremely coarse feedback (8 broad categories) creates brain-aligned representations matching or exceeding 1,000-class supervised models and all self-supervised models; validated against macaque electrophysiology and human fMRI (arXiv: 2605.05556)
+  - Core finding: 8-category classification produces better V1/V2 alignment than 1,000-class or self-supervised learning
+  - Key result: Coarsely trained networks align closer to human perceptual similarity than ANY existing model including CLIP and DINOv2
+  - Implication: Reframes what learning signals biological vision requires — fine-grained supervision may distort representations rather than help
+  - **Activation**: coarse feedback visual representations, human-aligned vision networks, supervision granularity neural alignment, coarse category learning vision, brain-aligned representation learning
+
 ### A multi-scale information geometry reveals the structure of mutual information in neural populations
 - [[multi-scale-information-geometry-neural]] - Riemannian information geometry framework for neural population codes using diffusion models; extends Fisher information across stimulus coarse-graining scales (arXiv:2605.06304)
   - Core insight: Unique Riemannian metric emerges from coarse-graining contraction principle, exactly linking mutual information to expected metric tensor trace
