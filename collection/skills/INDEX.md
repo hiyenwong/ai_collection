@@ -1,3 +1,19 @@
+## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Beyond Gates: Pulse Level Quantum Fourier Models
+- [[pulse-level-quantum-fourier-models]] - 脉冲级量子傅里叶模型(QFM)用于量子机器学习，超越门电路分解实现更丰富的频率谱 (arXiv: 2605.04945)
+  - 核心要点: QFM在脉冲级操作而非门级分解，访问更丰富的频率集合，提供更强的表达能力
+  - 核心要点: 频率谱由哈密顿量本征值差决定，脉冲级控制可绕过门分解开销直接优化
+  - **Activation**: quantum Fourier model, QFM, pulse-level quantum ML, quantum machine learning Fourier, 脉冲级量子傅里叶模型, quantum feature space
+
+### From Classical to Quantum-Mechanical Data Assimilation
+- [[quantum-mechanical-data-assimilation]] - 量子力学数据同化(QMDA)结合动力系统与量子计算进行状态估计 (arXiv: 2605.04881)
+  - 核心要点: 转移算子框架统一经典DATO和量子QMDA方法，量子态编码实现指数级状态空间压缩
+  - 核心要点: QMDA在预测步使用幺正演化、更新步使用量子测量，读出开销是量子优势的关键限制
+  - **Activation**: quantum data assimilation, QMDA, DATO, quantum state estimation, transfer operator dynamics, 量子数据同化
+
+---
+
 ## 2026-05-07 - Systems Engineering + Quantum Computing (Cron Job - 23:00)
 
 ### SpinTune: RL-Based Quantum Sensor Network Reliability
