@@ -6,6 +6,18 @@
   - 核心要点: 频率谱由哈密顿量本征值差决定，脉冲级控制可绕过门分解开销直接优化
   - **Activation**: quantum Fourier model, QFM, pulse-level quantum ML, quantum machine learning Fourier, 脉冲级量子傅里叶模型, quantum feature space
 
+### Analytical Angle-Finding for Quantum Signal Processing via Orthogonal Polynomials
+- [[quantum-signal-processing-orthogonal-poly]] - 通过正交多项式理论实现QSP显式角度计算，光滑函数O(log(1/ε))门复杂度的块编码 (arXiv: 2605.05321)
+  - 核心要点: QSP多项式基通过正交性/双正交性刻画，推导Hermite、Jacobi、Rogers-Szego多项式的显式QSP角度
+  - 核心要点: 利用Hermite级数展开实现光滑函数的O(log(1/ε))门块编码，适用于Hamiltonian simulation和量子特征映射
+  - **Activation**: quantum signal processing, QSP angles, orthogonal polynomials QSP, Hermite polynomials quantum, Jacobi polynomials quantum, Rogers-Szego, block-encoding, quantum function approximation
+
+### Distributed Shor's Algorithm on Modular Atomic Processors
+- [[modular-quantum-shor-compilation]] - 半百万量子比特模块化处理器上Shor算法分布式编译，2048位RSA分解仅16%时间开销 (arXiv: 2605.03951)
+  - 核心要点: CPU启发的模块化架构，通过Bell pair分发和流水线优化实现跨模块通信与模块内时钟率的最佳平衡
+  - 核心要点: 首个端到端大规模整数分解模拟，证明模块化架构在~50万量子比特规模下的可行性
+  - **Activation**: Shor algorithm compilation, modular quantum processor, distributed quantum factoring, RSA quantum attack, Bell pair communication, atomic qubit architecture, quantum cryptography
+
 ### From Classical to Quantum-Mechanical Data Assimilation
 - [[quantum-mechanical-data-assimilation]] - 量子力学数据同化(QMDA)结合动力系统与量子计算进行状态估计 (arXiv: 2605.04881)
   - 核心要点: 转移算子框架统一经典DATO和量子QMDA方法，量子态编码实现指数级状态空间压缩

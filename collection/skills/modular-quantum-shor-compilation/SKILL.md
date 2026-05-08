@@ -1,138 +1,113 @@
 ---
 name: modular-quantum-shor-compilation
 description: >
-  Distributed compilation of Shor's algorithm on modular quantum processors for large-scale integer factorization.
-  Use when: (1) analyzing Shor's algorithm resource requirements for RSA factoring, (2) designing modular/distributed
-  quantum processor architectures, (3) optimizing inter-module communication vs intra-module clock rate tradeoffs,
-  (4) scaling quantum algorithms beyond single-module qubit limits, (5) evaluating half-million+ qubit system designs,
-  or when studying distributed quantum compilation strategies for large-scale algorithms.
+  Distributed compilation of Shor's algorithm on modular atomic quantum processors.
+  Methodology for large-scale integer factorization across multiple quantum modules with
+  optimized inter-module communication and intra-module clock rates.
+  Use when: compiling Shor's algorithm for distributed quantum hardware, designing modular quantum architectures,
+  optimizing quantum communication between modules, analyzing resource requirements for large-scale factoring,
+  or planning fault-tolerant quantum cryptography attacks.
+  Trigger words: Shor's algorithm, quantum factoring, modular quantum processor, distributed quantum compilation,
+  RSA factoring, quantum cryptography, inter-module communication, Bell pairs, atomic processor.
 ---
 
 # Modular Quantum Shor Compilation
 
-Distributed compilation of Shor's algorithm on modular atomic processors for factoring large RSA integers.
+## Overview
 
-## Core Problem
+Methodology for compiling and optimizing Shor's algorithm across modular atomic quantum processors.
+Addresses the challenge of distributing ~10^6 physical qubits across multiple interconnected modules
+while minimizing the overhead from inter-module communication.
 
-Shor's algorithm requires ~10^6 physical qubits for 2048-bit RSA factoring, exceeding single-module capacity.
-Solution: distribute across multiple modules with optimized inter-module communication.
+Based on: "Factoring 2048-bit RSA integers with a half-million-qubit modular atomic processor" (arXiv: 2605.03951, 2026-05-08)
 
-## Key Architecture Parameters
+## Architecture
 
-| Parameter | Value (2048-bit RSA) |
-|-----------|---------------------|
-| Total qubits | ~500,000 (half-million) |
-| Inter-module comm rate | 10^5 Bell pairs/second |
-| Measurement time | 1 ms |
-| Architecture | CPU-inspired modular design |
-| Time overhead vs single-module | 16% |
+### CPU-Inspired Modular Design
+
+The processor architecture organizes quantum modules analogous to CPU cores:
+- **Modules**: Each contains a subset of physical qubits with local operations
+- **Inter-module links**: Bell pair distribution channels for remote operations
+- **Measurement units**: Local measurement with specified latency (e.g., 1 ms)
+
+### Key Parameters
+
+| Parameter | Value (2048-bit RSA) | Impact |
+|---|---|---|
+| Total qubits | ~500,000 | Hardware scale |
+| Bell pair rate | 10^5 /sec | Communication bandwidth |
+| Measurement time | 1 ms | Gate latency |
+| Time overhead vs single-module | 16% | Communication efficiency |
 
 ## Compilation Strategy
 
-### Inter-Module Communication Optimization
+### Step 1: Problem Decomposition
 
-The critical tradeoff: inter-module Bell pair distribution rate vs intra-module clock rate.
+Decompose the factoring problem into module-local and cross-module operations:
+- **Modular exponentiation**: Core of Shor's algorithm, requires most gates
+- **Quantum Fourier Transform (QFT)**: Requires cross-module entanglement
+- **Measurement and classical post-processing**: Determines factors from output
 
-**Pattern 1: Bell Pair Budgeting**
-```
-1. Estimate total Bell pairs needed for algorithm
-2. Compare against distribution rate (10^5 Bell/s)
-3. Pipeline communication with computation
-4. Overlap Bell pair generation with local gates
-```
+### Step 2: Qubit Mapping
 
-**Pattern 2: Module Partitioning**
-```
-1. Decompose Shor's circuit into module-sized subcircuits
-2. Minimize cross-module gates (teleportation cost)
-3. Place frequently interacting qubits in same module
-4. Use measurement-based teleportation for cross-module ops
-```
+Map logical qubits to physical locations across modules:
+- **Data qubits**: Distributed to minimize cross-module operations
+- **Ancilla qubits**: Placed near frequently accessed data qubits
+- **Communication qubits**: Dedicated qubits for Bell pair distribution
 
-### CPU-Inspired Architecture
+### Step 3: Communication Optimization
 
-**Design principles**:
-- Modular qubit arrays connected via photonic interconnects
-- Measurement-based communication (not direct entanglement swapping)
-- Classical control hierarchy per module
-- Asynchronous module operation where possible
+Optimize the interplay between inter-module communication and intra-module clock rate:
+- **Pipelining**: Overlap communication with local computation
+- **Batching**: Group remote operations to amortize Bell pair setup cost
+- **Scheduling**: Order operations to minimize idle time waiting for remote results
 
-## Algorithm Breakdown for Modular Execution
+### Step 4: Gate Compilation
 
-### Modular Exponentiation (dominant cost)
-
-The modular exponentiation circuit a^x mod N is the bottleneck:
-
-1. **Decompose** into controlled modular multiplications
-2. **Map** each multiplication to module partitions
-3. **Schedule** cross-module teleportation operations
-4. **Pipeline** communication with local computation
-
-### Quantum Fourier Transform (QFT)
-
-1. **Distribute** QFT across modules by qubit grouping
-2. **Sequence** cross-module controlled-phase rotations
-3. **Batch** teleportation requests to maximize Bell pair utilization
+Compile logical gates into module-local and cross-module primitives:
+- **Local gates**: Direct execution within a module
+- **Remote CNOT**: Teleportation-based using pre-distributed Bell pairs
+- **Measurement-based**: Use measurement outcomes to control subsequent operations
 
 ## Performance Analysis
 
-### Time Overhead Calculation
+### Resource Scaling
 
-```
-T_modular = T_single × (1 + communication_overhead)
-```
+For N-bit RSA integer factorization:
+- **Physical qubits**: O(N^2) with surface code error correction
+- **Logical gates**: O(N^3) for modular exponentiation
+- **Communication cost**: Scales with the fraction of cross-module operations
 
-For half-million qubit system at 10^5 Bell/s:
-- Communication overhead ≈ 16%
-- Dominated by: Bell pair generation latency + teleportation scheduling
+### Time Complexity
 
-### Scaling Laws
+The distributed compilation achieves:
+- **16% time overhead** vs ideal single-module for 2048-bit RSA
+- **Linear scaling** of overhead with communication latency
+- **Sub-linear scaling** with number of modules (due to pipelining)
 
-| RSA bits | Required qubits | Modules needed | Comm bandwidth |
-|----------|----------------|----------------|----------------|
-| 1024 | ~200K | 4-8 | 10^5 Bell/s |
-| 2048 | ~500K | 8-16 | 10^5 Bell/s |
-| 4096 | ~1M+ | 16-32 | 10^6 Bell/s |
+## Practical Considerations
 
-## Implementation Considerations
+### Error Correction
 
-### Error Correction Overhead
+- Surface code or similar QEC required for fault tolerance
+- Logical error rate must be below algorithm threshold
+- Error correction overhead dominates physical qubit count
 
-- Surface code distance d ≈ 27 for 2048-bit RSA
-- Physical-to-logical qubit ratio ≈ d^2 ≈ 729
-- Each logical qubit requires ~729 physical qubits
+### Communication Bottlenecks
 
-### Classical Control
+- Bell pair distribution rate limits remote gate throughput
+- Measurement latency affects feedback-dependent operations
+- Network topology affects worst-case communication distance
 
-- FPGA-based controllers per module
-- Real-time feedforward for teleportation
-- Synchronization across modules via classical network
+### Verification
 
-## Activation Keywords
+- Classical verification of factoring result is O(N^2)
+- Quantum volume benchmarks validate module performance
+- Cross-module entanglement fidelity must exceed threshold
 
-- modular quantum processor
-- distributed Shor algorithm
-- RSA quantum factoring
-- quantum compilation distributed
-- half-million qubit
-- inter-module communication quantum
-- quantum teleportation compilation
-- modular atomic processor
-- Shor algorithm scaling
-- quantum factoring architecture
-- 量子模编译
-- 分布式Shor算法
-- RSA量子分解
+## Pitfalls
 
-## Tools Used
-
-- `exec`: Run quantum simulation (Qiskit, Cirq)
-- `read`: Load paper analysis, reference implementations
-- `write`: Save compilation results, architecture designs
-
-## Related Skills
-
-- `distributed-quantum-computing`: General distributed quantum patterns
-- `quantum-systems-engineering`: Quantum system design
-- `qbalance-quantum-workflow-optimization`: Quantum workflow optimization
-- `quantum-number-theory-algorithms`: Number theory quantum algorithms
+- Underestimating communication overhead can negate parallelism benefits
+- Module size must balance local computation vs communication frequency
+- Error correction resource estimates vary significantly by code choice
+- Classical preprocessing (selecting smoothness bounds) affects quantum resource needs
