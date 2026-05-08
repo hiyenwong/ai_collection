@@ -1,49 +1,110 @@
 ---
 name: random-riemann-zeta-spectrum
-description: "Integral means spectrum analysis for the random Riemann zeta function. Use when studying analytic number theory problems involving zeta function statistics, Gaussian multiplicative chaos (GMC), Kraetzer's conjecture for univalent functions, or probabilistic methods in complex analysis. Trigger: Riemann zeta spectrum, integral means spectrum, Gaussian multiplicative chaos, random zeta function, Kraetzer conjecture, univalent functions spectrum, zeta function moments."
+description: "Mathematical framework for analyzing the Riemann zeta function and its randomized variants using integral means spectrum, Gaussian multiplicative chaos (GMC), and analytic number theory. Use when: (1) studying the Riemann zeta function's asymptotic behavior on short intervals, (2) analyzing moments and maxima of zeta along the critical axis, (3) working with Gaussian multiplicative chaos or Kahane's GMC theory, (4) connecting number theory to probability theory and conformal mapping, (5) researching random analytic functions and their integral means spectra. Keywords: riemann zeta, random zeta function, integral means spectrum, gaussian multiplicative chaos, GMC, kahane, analytic number theory, critical strip, bagchi, kraetzer conjecture, univalent functions, probability theory, conformal mapping."
 ---
 
-# Random Riemann Zeta Integral Means Spectrum
+# Random Riemann Zeta Spectrum
 
-Analysis of integral means spectrum for analytic functions whose derivative is the randomized Riemann zeta function.
+Mathematical framework for analyzing the Riemann zeta function and its randomized variants through integral means spectra, Gaussian multiplicative chaos (GMC), and probability-theoretic methods.
 
-## Core Objects
+Based on arXiv:2603.26507 — "Integral Means Spectrum for the Random Riemann Zeta Function."
 
-- **Randomized zeta function**: ζ_rand(σ+ih) represents asymptotic statistical behavior of random vertical shifts of actual ζ-function in critical strip (1/2 < σ ≤ 1)
-- **Integral means spectrum**: Characterizes growth of analytic function moments
+## Core Concepts
 
-## Key Result
+### Randomized Riemann Zeta Function
 
-The complex integral means spectrum of the primitive of ζ_rand is almost surely of the form conjectured 30 years ago by **Kraetzer** for the universal integral means spectrum of univalent functions in the disc.
+The randomized zeta function (introduced by Bagchi) represents the asymptotic statistical behavior of random vertical shifts of the actual zeta function in the critical strip.
 
-## Connections
+**Key property**: The randomized zeta captures the same asymptotic distribution as studying `zeta(s + iT)` for random `T`.
 
-1. **Gaussian Multiplicative Chaos (GMC)**: ζ-function rigorously related to GMC on the critical line
-2. **Holomorphic GMC on unit disc**: Integral means spectrum also follows Kraetzer form
-3. **Non-injectivity**: Neither the primitive of ζ_rand nor holomorphic GMC are injective
-4. **Liouville quantum gravity**: Holomorphic GMC closely related to LQG on the unit circle
+### Integral Means Spectrum
 
-## Method
+For an analytic function `f` on the unit disk, the integral means spectrum is:
+```
+beta_f(p) = sup{ beta : integral_{0}^{2pi} |f(re^{i theta})|^p d theta = O((1-r)^{-beta}) as r -> 1 }
+```
 
-1. Use probability theory and analytic number theory to derive spectrum
-2. Establish connection between random ζ-function and GMC distribution
-3. Provide alternative derivation via convergence of ζ-function on critical line to holomorphic GMC
-4. Prove Kraetzer form holds almost surely for both random ζ and holomorphic GMC primitives
+The **Kraetzer conjecture** (30 years old) predicts the form of the universal integral means spectrum for univalent functions.
 
-## Applications
+### Gaussian Multiplicative Chaos (GMC)
 
-- Asymptotic behavior of moments and maxima of ζ-function on short intervals along critical axis
-- Testing Kraetzer's conjecture through rigorous probabilistic methods
-- Understanding universality in complex integral means spectra
-- Connections between number theory and quantum gravity
+Initiated by Kahane 40 years ago, GMC provides a rigorous framework for exponentiating log-correlated Gaussian fields. The random zeta function has been rigorously related to GMC.
 
-## Mathematical Framework
+**Key insight**: The complex integral means spectrum of the primitive of the random zeta is almost surely of the form conjectured by Kraetzer.
 
-- MSC classes: 60G15, 60G60, 60G70, 11M06
-- Categories: Complex Variables (math.CV), Mathematical Physics (math-ph), Number Theory (math.NT), Probability (math.PR)
+## When to Use This Framework
 
-## Related
+| Scenario | Approach |
+|----------|----------|
+| Zeta moments on short intervals | Randomized zeta + probability |
+| Maxima of zeta along critical axis | GMC connection |
+| Conformal mapping of zeta-related functions | Integral means spectrum |
+| Statistical behavior of zeta shifts | Bagchi's randomized model |
+| Universal spectra conjectures | Kraetzer's form + GMC |
 
-- arXiv:2603.26507 - "Integral Means Spectrum for the Random Riemann Zeta Function"
-- Authors: Duplantier, Gayrard, Saksman
-- Bagchi's randomized ζ-function, Kahane's GMC, Kraetzer's conjecture
+## Analytical Methods
+
+### Step 1: Randomization
+
+Replace deterministic zeta with its randomized version:
+- Study `zeta(s + iT)` where `T` is uniformly random in `[0, H]`
+- As `H -> infinity`, converges in distribution to the randomized zeta
+
+### Step 2: Primitive Construction
+
+Work with the primitive (antiderivative) of the random zeta:
+```
+F(z) = integral_{0}^{z} zeta_random(w) dw
+```
+
+The integral means spectrum of `F` is the primary object of study.
+
+### Step 3: GMC Connection
+
+Use the established correspondence:
+- Random zeta → GMC via log-correlated structure
+- GMC → integral means spectrum via exponentiation formulas
+
+### Step 4: Spectrum Computation
+
+Apply probability and basic analytic number theory:
+- Compute moments of the randomized zeta
+- Relate to GMC exponent formulas
+- Verify Kraetzer's conjectured form
+
+## Key Results
+
+1. **Kraetzer verification**: The complex integral means spectrum of the primitive of the random zeta is almost surely of the Kraetzer form
+2. **GMC connection**: Rigorous relation between random zeta and Gaussian multiplicative chaos
+3. **Universality**: The spectrum form is universal across a class of univalent functions
+
+## Related Papers in Knowledge Graph
+
+| ID | Paper | Category |
+|----|-------|----------|
+| 500 | Integral Means Spectrum for the Random Riemann Zeta Function | math.NT, math.PR, math-ph |
+| 501 | Towards sample-optimal learning of bosonic Gaussian quantum states | quant-ph, math-ph |
+| 498 | Quantum Prediction of Transport Dynamics in Discretized State Spaces | quant-ph, stat.CO |
+| 555 | Classical shadows over symmetric spaces | quant-ph, mathematics |
+| 556 | Module Lattice Security: Weber Conjecture for k ≤ 12 | math.NT |
+| 554 | Geometric and Topological Obstructions to Hermitianization | quant-ph, mathematics |
+
+## Common Pitfalls
+
+- **Deterministic vs random**: The random zeta is NOT the same as evaluating zeta at random points — it's a specific probabilistic model
+- **Critical strip only**: Results apply specifically within the critical strip (0 < Re(s) < 1)
+- **GMC technicality**: GMC requires careful renormalization — the naive exponential of a log-correlated field is not well-defined
+- **Kraetzer conjecture**: Only verified for the random zeta primitive, not for all univalent functions
+
+## Activation Keywords
+
+- random riemann zeta
+- integral means spectrum
+- gaussian multiplicative chaos
+- GMC kahane
+- kraetzer conjecture
+- bagchi zeta
+- analytic number theory probability
+- zeta function statistics
+- riemann zeta moments
+- conformal mapping spectrum
