@@ -64,6 +64,13 @@
   - 核心要点 2: 证明量子Cramér-Rao-McCarthy界，量化量子资源在预测任务中的经济价值
   - **Activation**: quantum scoring rules, minimax estimation, quantum Fisher information, operator convex, resource theory
 
+### Cusped Singularity Mixed-Mode Oscillation Analysis
+- [[cusped-singularity-mmo-analysis]] - Geometric singular perturbation analysis of MMOs in inhibitory neural networks via cusped singularities (arXiv: 2605.03606)
+  - 核心要点 1: 尖点奇异性（临界流形尖点处的折叠奇异性）是互抑制神经网络中混合模式振荡（MMO）的通用组织机制
+  - 核心要点 2: 尖点奇异性保证小振幅振荡（SAO）的产生，结合奇异Hopf分岔形成完整MMO，呈现独特的交替振荡模式
+  - 核心要点 3: 在Curtu速率模型和Morris-Lecar突触抑制耦合模型中验证了该机制的普适性
+  - **Activation**: mixed-mode oscillations, MMO, cusped singularity, slow-fast neural system, mutual inhibition oscillation, singular perturbation neural, blow-up method neural, neural oscillation mechanism
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
