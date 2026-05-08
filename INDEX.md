@@ -78,6 +78,15 @@
   - Validation: Improved alignment with independent C. elegans connectomes, cell-type-specific temporal organization, and neuromodulatory profiles consistent with known receptor kinetics
   - **Activation**: neural circuit inference, SBTG, directed connectivity, calcium imaging circuit mapping, lag-specific interaction, Jacobian recovery, brain state transition, denoising score model
 
+### Efficient Event-Driven Retrieval in High-Capacity Kernel Hopfield Networks
+- [[kernel-hopfield-event-driven-retrieval]] - Event-driven asynchronous retrieval in Kernel Logistic Regression (KLR) Hopfield networks for neuromorphic associative memory; demonstrates asynchronous updates match synchronous dynamics while enabling sparse, event-driven computation with near-optimal efficiency (arXiv: 2605.05978)
+  - Core finding: Asynchronous sequential updates produce retrieval trajectories statistically indistinguishable from synchronous dynamics under tuned kernel parameters
+  - Storage capacity: Empirical storage approaching O(N) for random patterns — exceeds classical Hopfield ~0.138N limit
+  - Event efficiency: Converges using ~H events (H = initial Hamming distance), near-optimal — each flip corrects one error on average
+  - Mechanism: Large-margin attractors induced by KLR learning create smooth energy landscapes suited for sparse computation
+  - Hardware implications: Basis for scalable, low-power associative memory on event-driven neuromorphic architectures
+  - **Activation**: kernel hopfield, KLR Hopfield, event-driven retrieval, asynchronous associative memory, neuromorphic memory, large-margin attractor, sparse event computation, kernel logistic regression memory
+
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update #2)
