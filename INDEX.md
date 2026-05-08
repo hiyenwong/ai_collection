@@ -1,4 +1,11 @@
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update)
+
+### Classical shadows over symmetric spaces
+- [[quantum-classical-shadows]] - Extends classical shadow protocols from compact groups to compact symmetric spaces, improving sample complexity for certain observable distributions (arXiv: 2605.05518)
+  - 核心要点 1: 经典影子协议通常从紧致群均匀采样，本文推广到紧致对称空间采样
+  - 核心要点 2: 在某些观测分布下，对称空间协议比现有影子方案有采样复杂度优势
+  - **Activation**: classical shadows, symmetric spaces, quantum state tomography, randomized measurements, sample complexity
 
 ### Efficient Quantum Fourier Transforms For Semisimple Algebras
 - [[quantum-algebraic-structures]] - Generalizes QFT from finite groups to semisimple algebras with efficient circuits for partition, Brauer, and walled Brauer algebras (arXiv: 2605.05337)
