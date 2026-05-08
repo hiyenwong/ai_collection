@@ -1,3 +1,23 @@
+## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Efficient Quantum Fourier Transforms For Semisimple Algebras
+- [[quantum-algebraic-structures]] - Generalizes QFT from finite groups to semisimple algebras with efficient circuits for partition, Brauer, and walled Brauer algebras (arXiv: 2605.05337)
+  - 核心要点 1: 半单代数上的傅里叶变换可以是非幺正的，但当参数 d 足够大时可被幺正算子良好逼近
+  - 核心要点 2: 通过分解为不可约表示构建高效量子电路，推广了群上的QFT
+  - **Activation**: quantum algebra, semisimple algebra QFT, quantum Fourier transform, Brauer algebra, representation theory
+
+### Analytical Angle-Finding and Series Expansions for Quantum Signal Processing via Orthogonal Polynomial Theory
+- [[quantum-algebraic-structures]] - Analytical QSP angle-finding via Hermite, Jacobi, and Rogers-Szego polynomials with O(log(1/ε)) gate complexity (arXiv: 2605.05321)
+  - 核心要点 1: 通过正交/双正交多项式族表征可实现的QSP多项式基，导出闭式角度公式
+  - 核心要点 2: 利用Hermite级数展开实现O(log(1/ε))门复杂度的光滑函数块编码
+  - **Activation**: quantum signal processing, orthogonal polynomials, QSP angles, Hermite expansion, Jacobi polynomials
+
+### Quantum Proper Scoring Rules: Minimax Estimation and Resource-Theoretic Advantages
+- [[quantum-algebraic-structures]] - Quantum domain scoring rules with operator convex generators and Quantum Cramér-Rao-McCarthy Bound (arXiv: 2605.05268)
+  - 核心要点 1: 将经典评分规则推广到量子密度算符域，建立完整对偶理论
+  - 核心要点 2: 证明量子Cramér-Rao-McCarthy界，量化量子资源在预测任务中的经济价值
+  - **Activation**: quantum scoring rules, minimax estimation, quantum Fisher information, operator convex, resource theory
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
