@@ -28,7 +28,9 @@
       "Bash(git fetch *)",
       "Bash(git status *)",
       "Bash(git pull *)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(grep -v -E \"^[0-9a-z]+-[a-z]+-[a-z]+\\(-[a-z]+\\)*$\")",
+      "Bash([ -d \"/Users/hiyenwong/ai_github/ai_collection/collection/skills/$skill\" ])"
     ]
   }
 }
