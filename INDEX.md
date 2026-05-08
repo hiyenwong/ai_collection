@@ -1,3 +1,19 @@
+## 2026-05-09 - Neuroscience Research (Cron Job)
+
+### A multi-scale information geometry reveals the structure of mutual information in neural populations
+- [[multi-scale-information-geometry-neural]] - Riemannian information geometry framework for neural population codes using diffusion models; extends Fisher information across stimulus coarse-graining scales (arXiv:2605.06304)
+  - Core insight: Unique Riemannian metric emerges from coarse-graining contraction principle, exactly linking mutual information to expected metric tensor trace
+  - Key method: Metric tensor estimated via conditional diffusion models (score-based), making framework practical for high-D stimuli and large neural populations
+  - V1/V4 validation: Applied to macaque visual cortex — eigenvectors identify stimulus variations most important for information transmission
+  - **Activation**: multi-scale Fisher, information geometry neural, representational geometry, neural population code, Fisher information metric, coarse-graining, mutual information neural
+
+### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
+- [[decoding-encoding-alignment-critique]] - Fundamental critique of RSA/DSA alignment metrics; shows decoding similarity does NOT imply computational similarity (arXiv:2605.05907)
+  - Key finding: High RSA/DSA alignment can be driven by tiny non-representative neuron subpopulations
+  - Key finding: Alignment metrics are blind to encoding manifold topology — the distribution of function across neurons
+  - Causal evidence: MNIST experiment — decoding metrics unchanged when encoding topology causally manipulated via training loss
+  - **Activation**: RSA critique, representational similarity analysis, encoding manifold, brain-DNN comparison, neural alignment metrics, CKA neuroscience
+
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update #2)
