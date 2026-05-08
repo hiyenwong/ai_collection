@@ -1,5 +1,13 @@
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update)
+## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update #2)
+
+### Module Lattice Security (Part I): Unconditional Verification of Weber's Conjecture for k ≤ 12
+- [[module-lattice-security]] - First unconditional proof of Weber's conjecture for k ≤ 12, establishing foundations for Ring-LWE and Module-LWE security without GRH assumption (arXiv: 2604.15858)
+  - 核心要点 1: 结合Fukuda-Komatsu计算筛法、Z_2塔归纳结构和Herbrand定理，首次无条件证明k≤12的韦伯猜想
+  - 核心要点 2: 韦伯猜想决定主理想问题可解性、模自由性和R-LWE/MLWE最坏情况到平均情况归约的紧致性
+  - 核心要点 3: 后量子密码方案（Kyber、Falcon、NewHope）的安全性直接依赖于这些数论基础
+  - **Activation**: Weber conjecture, module lattice, Ring-LWE, Module-LWE, post-quantum cryptography, cyclotomic fields, Fukuda-Komatsu sieve, Herbrand theorem
 
 ### Classical shadows over symmetric spaces
 - [[quantum-classical-shadows]] - Extends classical shadow protocols from compact groups to compact symmetric spaces, improving sample complexity for certain observable distributions (arXiv: 2605.05518)
