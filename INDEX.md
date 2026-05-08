@@ -4,6 +4,27 @@
 
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly #3)
 
+### The true cost of factoring: Linking magic and number-theoretic complexity in Shor's algorithm
+- [[quantum-magic-state-analysis]] - Analyzes magic (non-stabilizerness) as the genuine quantum resource cost in Shor's algorithm, linking it to number-theoretic hardness of factoring (arXiv: 2605.05347)
+  - 核心要点 1: 量子算法成本应以"魔力"（非稳定子资源）而非仅门数和量子比特数来衡量
+  - 核心要点 2: Shor算法中模指数运算步骤产生最大魔力，与因数分解难度直接相关
+  - 核心要点 3: 魔力生成速率与经典计算困难性成正比，揭示量子优势的数学结构根源
+  - **Activation**: quantum magic state, non-stabilizerness, Shor algorithm resource cost, quantum resource theory, magic state distillation, mana computation, quantum advantage estimation
+
+### Analytical Angle-Finding and Series Expansions for QSP via Orthogonal Polynomial Theory
+- [[quantum-signal-processing-orthogonal-polynomials]] - Analytical QSP angle-finding via Hermite, Jacobi, Rogers-Szego polynomials with O(log(1/ε)) gate complexity for smooth function approximation (arXiv: 2605.05321)
+  - 核心要点 1: 通过正交/双正交多项式族完整表征可实现的QSP多项式基
+  - 核心要点 2: 为Hermite、Jacobi、Rogers-Szego多项式族导出闭式QSP角度公式
+  - 核心要点 3: 光滑函数的ε-近似可通过Hermite级数展开用O(log(1/ε))门实现块编码
+  - **Activation**: quantum signal processing QSP, QSP angle finding, orthogonal polynomial quantum, Hermite polynomial quantum, Jacobi polynomial QSP, Rogers-Szego quantum, quantum function approximation
+
+### Quantum Proper Scoring Rules: Minimax Estimation and Resource-Theoretic Advantages
+- [[quantum-proper-scoring-rules]] - Generalizes proper scoring rules to density operators via operator convex generators with Quantum Cramér-Rao-McCarthy Bound for state tomography (arXiv: 2605.05268)
+  - 核心要点 1: 将经典评分规则推广到量子密度算符，建立算子凸生成函数与量子评分规则的完整对偶理论
+  - 核心要点 2: 推导量子Cramér-Rao-McCarthy界，将最小最大风险与生成函数曲率和量子Fisher信息关联
+  - 核心要点 3: 量化量子资源在预测任务中的经济价值，连接量子资源理论与机制设计
+  - **Activation**: quantum proper scoring rules, quantum state estimation, quantum Fisher information, minimax quantum tomography, operator convex quantum, quantum Cramer-Rao bound, quantum forecasting
+
 ### Integral Means Spectrum for the Random Riemann Zeta Function
 - [[random-riemann-zeta-spectrum]] - Proves Kraetzer's 30-year conjecture for integral means spectrum of random Riemann zeta primitive via Gaussian multiplicative chaos (arXiv: 2603.26507)
   - 核心要点 1: 随机黎曼zeta函数的原函数的复积分均值谱几乎必然符合Kraetzer猜想形式
@@ -576,6 +597,34 @@
 - Coverage rate: 100% (6/6 neuroscience papers covered by existing skills; 3 non-neuroscience papers skipped)
 - Key trend: Brain-DNN transformation alignment (NVS methodology), multi-scale information geometry in neural populations, think-aloud cognitive model discovery
 - Total ai_collection skills: 1974
+
+## 2026-05-08 - Neuroscience Research (Cron Job v9)
+
+### Spiking Sequence Machines and Transformers
+- [[spiking-transformer-unification]] - Proves Phase-Latency Isomorphism: sinusoidal positional phase and spike timing are linearly related, unifying Spiking SDM (2007) and Transformer (2017) architectures (arXiv: 2605.00662)
+  - 核心要点 1: 证明 Spiking SDM 和 Transformer 共享相同的 5 个功能操作（编码、上下文维护、联想检索、存储、解码）
+  - 核心要点 2: 余弦相似度是两种架构共享的检索原语；时间、相位和秩是同一计算原语的三种实例化
+  - 核心要点 3: 基于秩的位置编码在性能上匹配或超越正弦编码，关键在于点积相似度下的距离可判别性
+  - **Activation**: spiking transformer, phase-latency isomorphism, sparse distributed memory, positional encoding theory, SNN transformer unification, spike-timing attention, cosine similarity retrieval
+
+### Training Non-Differentiable Networks via Optimal Transport (PolyStep)
+- [[polystep-gradient-free-training]] - Gradient-free optimizer using optimal transport geometry trains hard-LIF SNNs to 93.4% accuracy, 60pp+ over gradient-free baselines (arXiv: 2605.01928)
+  - 核心要点 1: PolyStep 通过最优传输几何实现仅前向传播训练，适用于不可微网络（SNN、量化网络、离散路由）
+  - 核心要点 2: 在硬 LIF 脉冲网络上达到 93.4% 准确率，超过所有无梯度基线 60+ 个百分点，与代理梯度 Adam 相差仅 4.4pp
+  - 核心要点 3: 证明在分段光滑损失上以 O(log T/√T) 速率收敛到保守驻点，匹配零阶查询复杂度下界
+  - **Activation**: polystep optimizer, gradient-free training, non-differentiable network, hard-LIF training, optimal transport optimizer, surrogate gradient alternative, forward-only training
+
+### Distribution-based brain connectivity graph representations for classification
+- [[distribution-based-brain-connectivity]] - Uses vector quantiles of distribution-valued edges instead of scalar weights for brain connectivity graphs from fMRI, improving classification performance (arXiv: via HAL)
+  - 核心要点 1: 用分布值边（向量分位数）替代传统标量权重表示脑连接图，捕获更丰富的连接信息
+  - 核心要点 2: 基于体素聚类的统计估计器，在患者诊断和流体智力分类任务上表现优异
+  - **Activation**: distribution-valued brain connectivity, graph brain representation, fMRI connectome classification, voxel clustering, brain network edges
+
+### Coverage Summary
+- Papers scanned from arXiv (cs.NE, cs.LG, cs.AI) + OpenAlex: 3 selected from ~17 neuroscience-related
+- Coverage rate: 3 new skills created
+- Key trend: SNN-Transformer theoretical unification, gradient-free SNN training via optimal transport, distribution-valued brain connectivity
+- Total ai_collection skills: ~1977
 
 ## 2026-05-08 - Systems Engineering + Quantum (Cron Job)
 
