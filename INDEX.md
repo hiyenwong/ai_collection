@@ -1,3 +1,23 @@
+## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
+
+### Beyond Gates: Pulse Level Quantum Fourier Models
+- [[pulse-level-quantum-fourier-models]] - 脉冲级量子傅里叶模型训练优化方法，通过独立脉冲缩放替换门级参数，松弛局部优化景观，显著提升训练性能 (arXiv: 2605.03xxx)
+  - 核心要点 1: 脉冲参数化将单一门角度替换为多个独立可调子角度，为梯度下降提供高维逃逸路径
+  - 核心要点 2: 脉冲控制不显著改变全局可表达性，但根本性改变局部优化景观
+  - **Activation**: pulse-level quantum computing, quantum Fourier models, QFM training optimization, pulse parameterized quantum circuits, quantum ML hardware control
+
+### Quantum Prediction of Transport Dynamics in Discretized State Spaces
+- [[quantum-bayesian-state-estimation]] - 基于门量子计算机的贝叶斯状态估计算法，使用Wick旋转将扩散转化为色散相位演化，实现Fokker-Planck方程的酉传播 (arXiv: 2604.xxxxx)
+  - 核心要点 1: 概率密度编码在量子态振幅中，状态空间随量子比特数指数增长
+  - 核心要点 2: 漂移分量在振幅空间中可实现精确线性操作，扩散分量通过Wick旋转实现酉代理
+  - **Activation**: quantum Bayesian estimation, Fokker-Planck quantum solver, quantum state prediction, amplitude-encoded probability, Wick rotation diffusion
+
+### Towards sample-optimal learning of bosonic Gaussian quantum states
+- [[sample-optimal-gaussian-state-learning]] - 玻色高斯量子态学习的最优样本复杂度分析，证明Gaussian测量下界Ω(n³/ε²)，任意测量下界Ω(n²/ε²) (arXiv: 2603.xxxxx)
+  - 核心要点 1: 纯Gaussian态可用Gaussian测量达到最优，被动Gaussian态需要非Gaussian测量
+  - 核心要点 2: 自适应测量对近能量无关缩放不可或缺
+  - **Activation**: Gaussian state tomography, sample complexity quantum learning, bosonic state characterization, continuous-variable quantum learning, adaptive quantum measurement
+
 ## 2026-05-08 - Quantum Error Correction (Cron Job)
 
 ### Topological subsystem bivariate bicycle codes with four-qubit check operators

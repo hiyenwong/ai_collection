@@ -1,113 +1,118 @@
 ---
 name: quantum-bayesian-state-estimation
-description: >
-  Gate-based quantum algorithms for Bayesian state estimation using Fokker-Planck
-  equation on discretized state spaces. Encodes probability density in quantum
-  amplitudes, uses quantum Fourier transforms and Wick rotation for unitary
-  propagation. Enables exponential state space scaling for high-dimensional
-  filtering. Use when: quantum Bayesian estimation, Fokker-Planck quantum
-  algorithm, quantum state prediction, quantum filtering, Bayesian transport
-  dynamics, Wick rotation diffusion, quantum Fourier state estimation.
-  Source: arXiv:2604.24161
+description: "Quantum algorithms for Bayesian state estimation and transport dynamics prediction. Use when: (1) implementing Bayesian filtering/prediction on quantum computers, (2) solving Fokker-Planck equations via quantum algorithms, (3) encoding probability distributions in quantum state amplitudes, (4) implementing quantum Fourier transform for spectral-domain evolution, (5) using Wick rotation for quantum simulation of diffusion. Activation: quantum Bayesian estimation, Fokker-Planck quantum solver, quantum state prediction, amplitude-encoded probability distributions, 量子贝叶斯状态估计."
 ---
 
 # Quantum Bayesian State Estimation
 
-## Description
+Implement Bayesian state estimation on gate-based quantum computers using amplitude-encoded probability distributions and quantum spectral methods.
 
-Implements gate-based quantum algorithms for the prediction step of Bayesian
-state estimation based on the Fokker-Planck equation on discretized
-position-velocity state spaces. Probability density is encoded in quantum state
-amplitudes, enabling compact representation of high-dimensional distributions.
+## Core Insight
 
-## Core Methodology
+Probability densities can be encoded in quantum state amplitudes, enabling compact representation of high-dimensional distributions (exponential in number of qubits). The evolution is realized in the spectral domain using quantum Fourier transforms (QFT) and phase rotations.
 
-### Step 1: Encode Probability in Quantum Amplitudes
+## When to Use
 
-Represent probability density p(x,v) as quantum state amplitudes:
+- Bayesian filtering/prediction with high-dimensional state spaces
+- Solving transport equations on quantum hardware
+- Implementing quantum versions of Kalman filters
+- State estimation where classical discretization is prohibitive
+
+## Implementation Pattern
+
+### 1. Amplitude Encoding
+
+Encode probability density p(x) in quantum state amplitudes:
+
 ```
-|ψ⟩ = Σ_{x,v} √p(x,v) |x⟩|v⟩
+|ψ⟩ = Σ_x √p(x) |x⟩
 ```
-This enables exponential compression — n qubits represent 2^n states.
 
-### Step 2: Drift Component (Exact in Amplitude Space)
+The square root relationship between density and amplitude is key.
 
-The drift term of the Fokker-Planck equation can be implemented exactly
-using quantum Fourier transforms:
+### 2. Drift Component (Exact Implementation)
+
+The drift (advection) term admits an exact linear implementation in amplitude space:
 
 ```python
-# Quantum circuit steps:
-# 1. QFT on position register
-# 2. Phase rotation by drift coefficient
-# 3. Inverse QFT
-def drift_step(qc, position_qubits, drift_coefficient):
-    qc.qft(position_qubits)
-    for i, q in enumerate(position_qubits):
-        qc.p(drift_coefficient * 2**i, q)
-    qc.qft_dg(position_qubits)
+def implement_drift(state, velocity, dt):
+    """Implement drift via phase-space translation."""
+    # Shift operation in computational basis
+    # |x⟩ → |x + v·dt⟩
+    return quantum_shift(state, velocity * dt)
 ```
 
-### Step 3: Diffusion via Wick Rotation
+### 3. Diffusion Component (Wick Rotation Surrogate)
 
-The diffusion term does NOT admit a linear representation in amplitude space
-(nonlinear relation between probability density and wave function). Solution:
-
-**Wick rotation approach**: Transform diffusion into dispersive phase evolution
-```
-∂p/∂t = D ∇²p  →  ∂ψ/∂t = iD ∇²ψ
-```
-
-This yields a fully unitary propagation implementable on gate-based quantum
-computers.
-
-### Step 4: Full Quantum Propagation
+The diffusion term does NOT admit a linear representation in amplitude space due to the nonlinear √p(x) relationship. Solution: use Wick rotation to transform diffusion into dispersive phase evolution:
 
 ```python
-def quantum_fokker_planck(qc, pos_qubits, vel_qubits,
-                          drift_coeff, diffusion_coeff, dt):
-    # Drift step (exact)
-    drift_step(qc, pos_qubits, drift_coeff * dt)
-    drift_step(qc, vel_qubits, drift_coeff * dt)
-
-    # Diffusion step (Wick rotated)
-    qc.qft(pos_qubits)
-    qc.qft(vel_qubits)
-    # Phase evolution for diffusion
-    for i, qi in enumerate(pos_qubits):
-        for j, qj in enumerate(vel_qubits):
-            qc.p(diffusion_coeff * dt * 2**(i+j), qi)
-    qc.qft_dg(pos_qubits)
-    qc.qft_dg(vel_qubits)
+def implement_diffusion_wick(state, diffusion_coeff, dt):
+    """Implement diffusion via Wick-rotated unitary evolution."""
+    # Transform: ∂_t p = D·∇²p → unitary e^{-i·D·∇²·dt}
+    # This replaces classical diffusion with quantum dispersion
+    
+    # 1. QFT to spectral domain
+    state = qft(state)
+    
+    # 2. Apply phase rotation: e^{-i·D·k²·dt}
+    state = apply_phase_rotation(state, diffusion_coeff, dt)
+    
+    # 3. Inverse QFT back to position space
+    state = iqft(state)
+    
+    return state
 ```
 
-## Key Results
+### 4. Full Fokker-Planck Evolution
 
-| Property | Classical | Quantum |
-|----------|-----------|---------|
-| State space | O(N) memory | O(log N) qubits |
-| High-dimensional filtering | Tensor decompositions needed | Native exponential scaling |
-| Drift implementation | Numerical integration | Exact in amplitude space |
-| Diffusion implementation | Finite difference | Wick-rotated unitary |
+```python
+def evolve_fokker_planck(initial_state, drift_fn, diffusion, dt, n_steps):
+    """Quantum evolution of Fokker-Planck equation."""
+    state = initial_state
+    
+    for _ in range(n_steps):
+        # Drift step (exact in amplitude space)
+        state = implement_drift(state, drift_fn, dt)
+        
+        # Diffusion step (Wick-rotated unitary)
+        state = implement_diffusion_wick(state, diffusion, dt)
+    
+    return state
+```
 
-## Implementation Notes
+### 5. Measurement and Extraction
 
-- The drift component reproduces classical transport dynamics accurately
-- Diffusion requires Wick rotation — cannot be implemented directly as linear
-  operator in amplitude space
-- Numerical validation shows strong agreement with exact Fokker-Planck solution
-- Suitable for high-dimensional filtering problems where classical methods
-  require complex tensor decompositions
+```python
+def extract_density(state, n_shots=10000):
+    """Reconstruct probability density from quantum measurements."""
+    # Measure in computational basis
+    samples = measure(state, shots=n_shots)
+    
+    # Estimate p(x) from sample frequencies
+    density = compute_histogram(samples, n_bins=2**n_qubits)
+    density = density / n_shots
+    
+    return density
+```
 
-## Application Domains
+## Key Properties
 
-- Bayesian state estimation
-- Kalman filtering (quantum-enhanced)
-- High-dimensional probability propagation
-- Quantum-enhanced tracking systems
-- Stochastic differential equations on quantum hardware
+| Aspect | Detail |
+|--------|--------|
+| State space scaling | O(2^n) with n qubits |
+| Drift implementation | Exact linear operation |
+| Diffusion implementation | Wick-rotated unitary surrogate |
+| Complexity | O(poly(n)) per time step |
+| Measurement cost | O(1/ε²) shots for ε accuracy |
+
+## Verification Steps
+
+1. Compare quantum solution against analytical Fokker-Planck solution
+2. Verify probability conservation (Σ|ψ_x|² = 1 at all times)
+3. Check convergence with increasing qubit count
+4. Validate drift-only and diffusion-only components separately
 
 ## References
 
-- arXiv:2604.24161 — "Quantum Prediction of Transport Dynamics in Discretized
-  State Spaces" (Felix Govaers, 2026)
-- IEEE Transactions on Quantum Engineering (submitted April 2026)
+- Govaers (2026): "Quantum Prediction of Transport Dynamics in Discretized State Spaces" (arXiv:2604.xxxxx, quant-ph, cs.IT, stat.CO)

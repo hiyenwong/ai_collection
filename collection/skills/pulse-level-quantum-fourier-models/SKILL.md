@@ -1,121 +1,103 @@
 ---
 name: pulse-level-quantum-fourier-models
-description: "Pulse-level Quantum Fourier Models (QFMs) methodology for quantum machine learning. Goes beyond gate-based VQAs by operating at the pulse level, enabling richer Fourier feature spaces for quantum ML. Covers: (1) QFM mathematical structure via quantum Fourier series, (2) pulse-level control vs gate decomposition trade-offs, (3) scalability and trainability analysis, (4) frequency spectrum control for expressive quantum models. Use when: designing quantum ML models, analyzing QFM trainability, comparing pulse-level vs gate-based approaches, or optimizing quantum feature spaces for machine learning tasks. Activation: quantum Fourier model, QFM, pulse-level quantum ML, quantum machine learning Fourier, 脉冲级量子傅里叶模型, quantum feature space"
+description: "Pulse-level Quantum Fourier Models (QFMs) for quantum machine learning. Use when: (1) implementing variational quantum algorithms at the pulse/hardware level, (2) optimizing QFM training landscapes, (3) designing pulse-parameterized quantum circuits, (4) analyzing expressibility and Fourier coefficient correlation of quantum models, (5) replacing gate-level parameterization with pulse-level control. Activation: pulse-level quantum computing, quantum Fourier models, QFM training optimization, pulse parameterized quantum circuits, quantum machine learning hardware control, 脉冲级量子傅里叶模型."
 ---
 
-# Pulse-Level Quantum Fourier Models (QFMs)
+# Pulse-Level Quantum Fourier Models
 
-## Overview
+Implement Quantum Fourier Models (QFMs) using pulse-level control parameters instead of abstract gate angles for improved training performance.
 
-Quantum Fourier Models (QFMs) provide a mathematically well-defined structure for quantum machine learning based on quantum Fourier series. Unlike gate-based variational quantum algorithms (VQAs) that decompose circuits into discrete gates, pulse-level QFMs operate directly on quantum hardware control pulses, enabling richer frequency spectra and more expressive models.
+## Core Insight
 
-**Source**: arXiv:2605.04945 - "Beyond Gates: Pulse Level Quantum Fourier Models"
-
-## Mathematical Foundation
-
-### Quantum Fourier Series
-
-A QFM represents a function as a quantum Fourier series:
-
-```
-f(x) = Σ_k c_k * e^(i * ω_k * x)
-```
-
-where frequencies ω_k are determined by the Hamiltonian eigenvalue differences, and coefficients c_k depend on the observable and state preparation.
-
-### Key Components
-
-1. **Data Encoding**: Input x mapped via unitary U(x) = exp(-i * H_data * x)
-2. **Trainable Unitary**: Parameterized quantum circuit U(θ)
-3. **Measurement**: Observable expectation ⟨O⟩ as output
-4. **Frequency Spectrum**: Determined by Hamiltonian eigenvalue differences
-
-## Workflow
-
-### Step 1: Define QFM Architecture
-
-```python
-# QFM components
-# 1. Data Hamiltonian H_data - encodes input x
-# 2. Ansatz U(θ) - trainable quantum circuit
-# 3. Observable O - measurement operator
-
-def qfm_circuit(x, theta, H_data, ansatz, observable):
-    # Prepare initial state
-    state = |0⟩^n
-    # Encode data
-    state = exp(-i * H_data * x) @ state
-    # Apply trainable ansatz
-    state = ansatz(theta) @ state
-    # Measure observable
-    return ⟨state| observable |state⟩
-```
-
-### Step 2: Analyze Frequency Spectrum
-
-The expressivity of a QFM is determined by its accessible frequency set:
-
-```python
-def compute_frequencies(H_data):
-    """Compute accessible frequencies from data Hamiltonian eigenvalues."""
-    eigenvalues = np.linalg.eigvalsh(H_data)
-    # Frequencies are pairwise differences
-    freqs = set()
-    for i in range(len(eigenvalues)):
-        for j in range(len(eigenvalues)):
-            freqs.add(eigenvalues[i] - eigenvalues[j])
-    return sorted(freqs)
-```
-
-### Step 3: Pulse-Level vs Gate-Based Trade-offs
-
-| Aspect | Gate-Based VQA | Pulse-Level QFM |
-|--------|---------------|-----------------|
-| Expressivity | Limited by gate set | Richer frequency spectrum |
-| Compilation | Gate decomposition overhead | Direct hardware control |
-| Noise | Accumulated gate errors | Shorter circuits, less noise |
-| Trainability | Well-studied | Emerging, potential advantages |
-
-### Step 4: Trainability Considerations
-
-- **Barren Plateaus**: Check gradient variance scaling
-- **Frequency Control**: More frequencies → higher expressivity but harder training
-- **Ansatz Design**: Balance expressivity with trainability
-
-## Key Insights from Paper
-
-1. **Pulse-level QFMs** bypass gate decomposition, accessing richer frequency sets
-2. **Scalability analysis** shows potential advantages over gate-based approaches
-3. **Trainability limits** exist but pulse-level control offers new optimization landscapes
-4. **Mathematical structure** of QFMs provides rigorous foundation for QML model design
+Pulse-level parameterization fundamentally alters the local optimization landscape of QFMs. Independent pulse scalings replace a single logical gate angle with multiple independently tunable sub-angles, relaxing rigid monomial couplings and providing gradient descent with higher-dimensional escape routes.
 
 ## When to Use
 
-- Designing quantum ML models where expressivity matters
-- Comparing pulse-level vs gate-based quantum approaches
-- Analyzing QFM frequency spectra for specific Hamiltonians
-- Optimizing quantum feature spaces for regression/classification
-- Researching trainability properties of quantum models
+- Training QFMs that converge poorly at the gate level
+- Designing quantum ML models for near-term hardware
+- Optimizing variational circuits with barren plateaus
+- Implementing feature maps with exponential/ternary frequency structure
 
-## Activation Keywords
+## Implementation Pattern
 
-- quantum Fourier model
-- QFM quantum machine learning
-- pulse-level quantum ML
-- quantum Fourier series ML
-- 脉冲级量子傅里叶模型
-- quantum feature space design
-- quantum model expressivity
-- QFM trainability
+### 1. Pulse Parameterization
 
-## Related Skills
+Instead of a single rotation angle θ per gate:
 
-- `quantum-neural-architecture`: Quantum neural network design
-- `hybrid-qml-pipeline-design`: Hybrid QML pipeline patterns
-- `composite-quantum-gates-error-cancellation`: Pulse shaping for gates
-- `drl-quantum-optimal-control`: RL for quantum pulse control
+```python
+# Gate-level: single parameter
+U(θ) = RZ(θ)
+
+# Pulse-level: multiple sub-angles
+U_pulse(θ₁, θ₂, ..., θₙ) = RZ(θ₁) · RZ(θ₂) · ... · RZ(θₙ)
+```
+
+Each pulse scaling provides an independent optimization direction.
+
+### 2. Expressibility Analysis
+
+Compute expressibility and Fourier coefficient correlation (FCC):
+
+```python
+def compute_fcc(pulse_params, feature_map):
+    """Fourier coefficient correlation for pulse-level QFM."""
+    # Evaluate model at multiple input points
+    outputs = [evaluate_qfm(pulse_params, x) for x in sample_inputs()]
+    
+    # Compute Fourier spectrum
+    spectrum = fft(outputs)
+    
+    # Correlation of Fourier coefficients
+    fcc = np.corrcoef(np.abs(spectrum))
+    
+    return spectrum, fcc
+```
+
+### 3. Training Pipeline
+
+```python
+def train_pulse_qfm(pulse_params, data, n_steps=100, lr=0.01):
+    for step in range(n_steps):
+        # Forward pass with pulse parameters
+        predictions = [evaluate_qfm(pulse_params, x) for x, y in data]
+        loss = compute_loss(predictions, [y for x, y in data])
+        
+        # Gradient computation via parameter-shift
+        grads = parameter_shift_gradient(pulse_params, data)
+        
+        # Update pulse parameters independently
+        for i in range(len(pulse_params)):
+            pulse_params[i] -= lr * grads[i]
+    
+    return pulse_params
+```
+
+### 4. Key Properties
+
+| Property | Gate-Level | Pulse-Level |
+|----------|-----------|-------------|
+| Parameters per gate | 1 | N (pulse sub-angles) |
+| Optimization landscape | Rigid monomial couplings | Relaxed, decoupled |
+| Training convergence | Limited | Significantly improved |
+| Expressibility | Fixed | Slightly altered |
+| Hardware mapping | Indirect | Direct |
+
+## Mathematical Foundation
+
+The QFM output is a Fourier series:
+```
+f(x) = Σ_k c_k · e^(i·k·x)
+```
+
+At gate level, Fourier coefficients are coupled through monomial dependencies on gate angles. Pulse-level parameterization breaks these couplings by introducing independent sub-angles for each pulse segment.
+
+## Verification Steps
+
+1. Compare expressibility histograms between gate-level and pulse-level parameterizations
+2. Measure FCC before and after pulse optimization
+3. Validate training convergence on benchmark Fourier series tasks
+4. Check that optimized pulse sequences remain physically implementable
 
 ## References
 
-- arXiv:2605.04945 - "Beyond Gates: Pulse Level Quantum Fourier Models"
-- Categories: quant-ph
+- Strobl, Franz, Scheller, Kuehn, Mauerer (2026): "Beyond Gates: Pulse Level Quantum Fourier Models" (arXiv:2605.03xxx)
