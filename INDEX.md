@@ -1,3 +1,11 @@
+## 2026-05-08 - Neuroscience Research (Cron Job - Evening)
+
+### Learning Reveals Invisible Structure in Low-Rank RNNs
+- [[low-rank-rnn-learning-dynamics]] - Gradient-descent learning dynamics in low-rank RNNs decomposed into loss-visible (determines function) and loss-invisible (encodes training history) overlaps, explaining why functionally equivalent networks learn differently (arXiv: 2605.04115)
+  - Core: Closed-form ODEs for learning in reduced overlap space; exact for linear, asymptotically exact for nonlinear large-N RNNs
+  - Key: Loss-invisible overlaps act as memory variables; learning exposes connectivity differences between functionally equivalent networks
+  - **Activation**: low-rank RNN learning, RNN overlap space, loss-visible invisible, RNN gradient descent dynamics, RNN learning theory, Ger Barak RNN
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### Dissociating Spatial Frequency Reliance from Adversarial Robustness in Neurally Guided DCNNs
