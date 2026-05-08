@@ -63,6 +63,21 @@
   - Analysis: Compares spiking vs. standard transformers in terms of expressivity, sample complexity, and generalization bounds
   - **Activation**: spiking transformer theory, effective dimension, spiking transformer generalization, SNN expressivity, neuromorphic transformer
 
+### NeuralSet: A High-Performing Python Package for Neuro-AI
+- [[neuralset-neuro-ai-framework]] - Unified Python framework from Meta FAIR for neuro-AI research, harmonizing multi-modal neural recordings (fMRI, M/EEG, spikes) with complex stimuli (text, audio, video) via pretrained DL embeddings; provides lazy data extraction and PyTorch-ready interface (arXiv: 2605.03169)
+  - Core innovation: Decouples experimental metadata from lazy data extraction — metadata in memory, neural data on-demand
+  - Key method: Harmonizes standard neuroscientific preprocessing pipelines with pretrained deep learning embeddings
+  - Scalability: Single PyTorch-ready interface scaling from local prototyping to high-performance cluster execution
+  - Key feature: Full computational provenance — eliminates manual data wrangling
+  - **Activation**: neuralset, neuro-ai framework, neural recording preprocessing, multi-modal brain data, Brain-AI alignment, fMRI MEG EEG pipeline, lazy data extraction, neural dataset harmonization
+
+### Inferring Active Neural Circuits Using Diffusion Scores (SBTG)
+- [[sbtg-neural-dynamics-inference]] - Score-Block Time Graphs (SBTG) methodology using denoising score models to infer lag-specific directed neural circuit interactions from population activity data, applied to C. elegans whole-brain calcium imaging (arXiv: 2605.02852)
+  - Core insight: Cross-block score products recover the Jacobian of the transition map between brain states under nonlinear dynamics
+  - Key method: Multi-block windows condition on intermediate time points, avoiding omitted-lag bias inherent in pairwise analyses
+  - Validation: Improved alignment with independent C. elegans connectomes, cell-type-specific temporal organization, and neuromodulatory profiles consistent with known receptor kinetics
+  - **Activation**: neural circuit inference, SBTG, directed connectivity, calcium imaging circuit mapping, lag-specific interaction, Jacobian recovery, brain state transition, denoising score model
+
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update #2)
