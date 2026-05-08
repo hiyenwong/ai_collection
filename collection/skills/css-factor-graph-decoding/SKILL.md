@@ -1,102 +1,78 @@
 ---
 name: css-factor-graph-decoding
-description: "Factor-graph formulation for CSS quantum error correction syndrome decoding using Joint BP and Four-State BP algorithms. Use when implementing or analyzing quantum error correction decoders, CSS code syndrome processing, factor-graph based decoding, belief propagation for quantum codes, or when working with stabilizer codes and quantum LDPC codes."
+description: "CSS quantum error correction syndrome decoding via factor-graph formulation and belief propagation. Use when: implementing CSS code decoders, comparing joint BP vs four-state BP for syndrome decoding, formulating QEC decoding as factor graph inference, designing belief propagation decoders for stabilizer codes. Keywords: CSS code, syndrome decoding, factor graph, belief propagation, QEC decoder, Tanner graph, stabilizer code."
 ---
 
 # CSS Factor-Graph Syndrome Decoding
 
-Methodology from Kasai (2026) "A Factor-Graph Formulation of CSS Syndrome Decoding: Joint BP and Four-State BP" (arXiv:2605.05132).
+> Factor-graph formulation of CSS syndrome decoding unifying joint BP and four-state BP approaches, showing their equivalence through state relabeling.
 
-## Core Insight
+## Metadata
+- **Source**: arXiv:2605.05132
+- **Author**: Kenta Kasai
+- **Published**: 2026-05-06
 
-CSS codes decompose Pauli errors into X and Z components, each constrained by separate parity-check matrices (H_X, H_Z). The joint posterior forms a binary factor graph with **two coupled Tanner graphs** linked by local joint priors at each qubit.
+## Core Methodology
 
-## Two Algorithms
+### Key Insight
+CSS codes have two independent check matrices (X and Z stabilizers) imposing binary parity-check constraints on Pauli error components. The posterior probability factors as a binary factor graph with **two Tanner graphs coupled by local joint prior** at each qubit.
 
-### 1. Joint BP (Belief Propagation)
+### Technical Framework
 
-- Runs standard sum-product on the coupled factor graph
-- X and Z components processed simultaneously
-- Messages passed between both Tanner graphs via joint prior
-- Equivalent to maximum a posteriori (MAP) estimation under independence assumptions
+**Factor Graph Structure:**
+1. Two Tanner graphs: one for X-checks, one for Z-checks
+2. Coupled via local joint prior P(e_X, e_Z) at each qubit node
+3. Retains channel correlation between X and Z error components
 
-### 2. Four-State BP
+**Two Equivalent Formulations:**
 
-- Treats each qubit error as a 4-state variable: {I, X, Y, Z}
-- Single factor graph with 4-ary variables instead of binary pairs
-- Captures X-Z correlation explicitly in message structure
-- More accurate than Joint BP for codes with X-Z correlations
+1. **Joint BP**: Run sum-product on binary factor graph with coupled Tanner graphs
+   - Each qubit has two binary variables (e_X, e_Z)
+   - Messages flow along both Tanner graphs
+   - Local prior couples the two variables
 
-## When to Use
+2. **Four-State BP**: Single factor graph with 4-state Pauli labels {I, X, Y, Z}
+   - Each edge carries message over 4 states
+   - Equivalent to joint BP after relabeling: (e_X, e_Z) → Pauli state
 
-| Scenario | Recommended |
-|----------|-------------|
-| Standard CSS code, no X-Z correlation | Joint BP |
-| Code with X-Z correlated errors | Four-State BP |
-| Fast decoding needed | Joint BP (parallelizable) |
-| Maximum accuracy | Four-State BP |
+**Equivalence Proof:** After relabeling the four local Pauli states and marginalizing irrelevant binary components, both algorithms compute identical posterior weights, messages, and beliefs.
 
-## Implementation Pattern
+## Implementation Guide
 
-```python
-def css_factor_graph_decode(syndrome_x, syndrome_z, H_x, H_z, method="joint_bp"):
-    """
-    Decode CSS code using factor-graph BP.
-    
-    Args:
-        syndrome_x: X-syndrome measurements (binary vector)
-        syndrome_z: Z-syndrome measurements (binary vector)  
-        H_x: X-check matrix (binary)
-        H_z: Z-check matrix (binary)
-        method: "joint_bp" or "four_state_bp"
-    
-    Returns:
-        Estimated Pauli error (string of I/X/Y/Z)
-    """
-    # 1. Build coupled Tanner graph
-    #    - Variable nodes: qubits (N nodes)
-    #    - Check nodes: H_x checks + H_z checks
-    #    - Edges: from H_x and H_z structure
-    
-    # 2. Initialize messages
-    #    - Prior at each qubit based on channel model
-    #    - Joint prior couples X and Z components
-    
-    # 3. Run sum-product iterations
-    #    - Variable-to-check messages
-    #    - Check-to-variable messages (parity constraints)
-    #    - Joint prior updates between X/Z components
-    
-    # 4. Marginalize to get error estimate
-    #    - Most likely Pauli error per qubit
-    
-    pass
+### Joint BP Algorithm
+```
+For each iteration:
+  1. X-graph: send messages along X-Tanner graph (binary BP)
+  2. Z-graph: send messages along Z-Tanner graph (binary BP)
+  3. Couple: at each qubit, update joint prior P(e_X, e_Z)
+  4. Marginalize: compute posterior P(e_X, e_Z | syndrome)
+  5. Decode: choose most likely Pauli error
 ```
 
-## Key Advantages
+### Four-State BP Algorithm
+```
+For each iteration:
+  1. Initialize: messages m(σ) for σ ∈ {I, X, Y, Z}
+  2. Check nodes: parity-check constraints on Pauli labels
+  3. Variable nodes: combine incoming messages with channel prior
+  4. Update: send new messages along edges
+  5. Decode: argmax over 4 Pauli states
+```
 
-1. **Unified framework**: Both X and Z decoding in one graph
-2. **Correlation capture**: Four-State BP handles X-Z error correlations
-3. **Parallelizable**: Joint BP naturally parallel across qubits
-4. **Extensible**: Framework extends to non-CSS codes
+## Applications
+- CSS code decoder design (surface codes, LDPC codes)
+- Comparing decoder performance across formulations
+- Understanding channel correlation exploitation in QEC
+- Syndrome extraction optimization for fault-tolerant QC
 
 ## Pitfalls
-
-- Joint BP assumes X-Z independence; degrades when errors are correlated
-- Four-State BP has 4x message complexity vs binary BP
+- Joint BP requires careful handling of correlated noise models
+- Four-state BP has higher per-message complexity (4 states vs 2)
+- Both formulations assume independent error events between qubits
 - Convergence not guaranteed for graphs with short cycles
-- Need proper scheduling (flooding vs layered) for convergence
 
-## Related Concepts
-
-- CSS codes: Calderbank-Shor-Steane quantum error correction codes
-- Tanner graphs: Bipartite graph representation of parity-check codes
-- Sum-product algorithm: Belief propagation on factor graphs
-- Quantum LDPC: Low-density parity-check quantum codes
-
-## Activation Keywords
-
-- CSS decoding, syndrome decoding, quantum error correction
-- factor graph decoding, belief propagation quantum
-- Joint BP, Four-State BP, quantum LDPC decoding
-- stabilizer code decoding, Pauli error correction
+## Related Skills
+- css-syndrome-decoding
+- quantum-error-correction-methods
+- lottery-bp-decoding
+- iceberg-error-detection

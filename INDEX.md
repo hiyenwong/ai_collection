@@ -1,3 +1,23 @@
+## 2026-05-08 - CSS QEC / Hypergraph Routing / Adaptivity Theory (Cron Hourly)
+
+### A Factor-Graph Formulation of CSS Syndrome Decoding
+- [[css-factor-graph-decoding]] - CSS量子纠错症状解码的因子图表述，联合BP与四态BP的等价性证明 (arXiv: 2605.05132)
+  - 核心要点 1: 两个Tanner图通过每个量子比特的联合先验耦合，保留X/Z误差分量的信道相关性
+  - 核心要点 2: 联合BP与四态BP在状态重标记后计算相同的后验权重、消息和信念
+  - **Activation**: CSS syndrome decoding, factor graph QEC, joint belief propagation, four-state BP, Tanner graph coupling, stabilizer code decoder
+
+### Block Permutation Routing on Ramanujan Hypergraphs
+- [[ramanujan-hypergraph-quantum-routing]] - 拉马努金超图上的块置换路由用于容错量子计算，谱分析给出路由复杂度界 (arXiv: 2605.05036)
+  - 核心要点 1: 商图谱的谱比在高连通性区域保持，三级谱继承：精确/扰动/通用
+  - 核心要点 2: 结合相关解码方案将症状提取开销从O(d²)降至O(d)，路由成为主导项
+  - **Activation**: quantum routing, Ramanujan hypergraph, surface code patch routing, fault-tolerant circuit depth, spectral graph bounds, lattice surgery compilation
+
+### Adaptivity Under Realizability Constraints
+- [[adaptivity-realizability-constraints]] - 可实现性约束下自适应性的理论分析，揭示ICL与Agentic Learning的四种场景 (arXiv: 2605.04995)
+  - 核心要点 1: 四种场景：无优势/持续优势/仅约束下涌现优势/约束下消失优势
+  - 核心要点 2: ReLU可实现性根本性地改变自适应查询的效用，反直觉场景(c)值得注意
+  - **Activation**: in-context learning vs agentic, adaptivity theory, realizability constraints, ReLU network approximation, adaptive querying strategy
+
 ## 2026-05-08 - Number Theory, Statistics + Quantum Mechanics (Cron Job)
 
 ### Beyond Gates: Pulse Level Quantum Fourier Models
