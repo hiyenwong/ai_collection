@@ -14,6 +14,39 @@
   - Causal evidence: MNIST experiment — decoding metrics unchanged when encoding topology causally manipulated via training loss
   - **Activation**: RSA critique, representational similarity analysis, encoding manifold, brain-DNN comparison, neural alignment metrics, CKA neuroscience
 
+### Spiking Sequence Machines and Transformers
+- [[spiking-transformer-unification]] - Theoretical framework unifying Spiking Neural Networks (SNNs) and Transformers through shared computational primitives including position-dependent spike-phase encoding (arXiv:2605.00662)
+  - Core insight: SNN position encoding via spike timing (phase) equals Transformer rotary/absolute position encoding — both modulate activation based on position
+  - Key mechanism: Winner-Take-All (WTA) circuits as softmax; sequence machine recurrence as causal self-attention; STDP as local learning
+  - Formal mapping: Sequence machine update rule = Transformer self-attention when threshold = softmax and keys/values from synaptic weights
+  - **Activation**: spiking transformer, SNN-Transformer unification, spike sequence machine, spiking position encoding, WTA spiking, neural sequence machine
+
+### TRIBE v2: Tri-modal Foundation Model for In-Silico Neuroscience
+- [[tribev2-brain-foundation-model]] - TRIBE v2 tri-modal (video+audio+language) foundation model predicting human fMRI responses across diverse conditions; trained on 1,000+ hours fMRI / 720 subjects (arXiv:2605.04326)
+  - Core innovation: Unified tri-modal architecture for zero-shot brain response prediction across visual, auditory, and linguistic stimuli
+  - Training scale: 1,000+ hours of fMRI data from 720 subjects — one of the largest in-silico neuroscience models
+  - Applications: Hypothesis testing without human subjects, stimulus optimization for brain response, neural architecture discovery
+  - **Activation**: TRIBE v2, tri-modal foundation model, in-silico neuroscience, fMRI prediction, brain foundation model, zero-shot brain decoding
+
+### Distribution-Valued Brain Connectivity via Vector Quantiles
+- [[distribution-based-brain-connectivity]] - Distribution-valued brain connectivity analysis using vector quantiles instead of scalar edge weights for connectome classification (HAL 2026, Mhanna/Achard/Petersen)
+  - Core insight: Replace scalar edge weights (e.g., correlation) with full distribution-valued weights using vector quantiles, capturing richer connectivity patterns
+  - Key method: Optimal transport for distribution comparison; Wasserstein distance between connectome distributions
+  - Applications: Improved brain state classification, biomarker discovery from connectivity distributions
+  - **Activation**: distribution-based connectivity, vector quantile brain, Wasserstein connectome, distribution-valued connectome, brain graph distribution
+
+### Geometry-Aware Spiking Graph Neural Network
+- [[geometry-aware-spiking-gnn]] - Geometry-Aware Spiking Graph Neural Network combining SNN temporal dynamics with graph geometric structure for energy-efficient graph learning
+  - Core innovation: Integrates spike-timing dynamics of SNNs with graph geometric structure (curvature, simplicial complexes) for energy-efficient graph representation learning
+  - Applications: Brain network analysis, point cloud processing, graph classification with temporal dynamics
+  - **Activation**: spiking graph neural network, geometric SNN, geometry-aware GNN, spiking brain network, neuromorphic graph learning
+
+### Effective Dimension Analysis of Spiking Transformers
+- [[spiking-transformer-effective-dimension]] - Spiking Transformers Theory analyzing effective dimension (generalization capacity) of spiking transformer architectures
+  - Core insight: Effective dimension quantifies model complexity and generalization capability of spiking transformer architectures
+  - Analysis: Compares spiking vs. standard transformers in terms of expressivity, sample complexity, and generalization bounds
+  - **Activation**: spiking transformer theory, effective dimension, spiking transformer generalization, SNN expressivity, neuromorphic transformer
+
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update)
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Hourly Update #2)
