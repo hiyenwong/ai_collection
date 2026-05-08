@@ -1,108 +1,124 @@
 ---
 name: multi-scale-information-geometry-neural
 description: >
-  Multi-scale information geometry framework for neural population coding. Establishes
-  a unique Riemannian representational geometry emerging from first principles of
-  distance contraction under coarse-graining. Extends Fisher information metric to
-  multiple scales, directly relating geometry to mutual information. Eigenvectors of
-  the metric tensor identify stimulus variations contributing most to information
-  transmission. Use when: analyzing neural population codes, information geometry in
-  neuroscience, Fisher information metric, representational geometry, mutual information
-  in neural systems, diffusion model estimation, visual cortical coding, high-dimensional
-  stimulus representation.
+  Multi-scale information geometry framework for analyzing neural population codes.
+  Extends Fisher information metric across stimulus coarse-graining scales to reveal
+  mutual information structure. Use when analyzing: (1) neural population coding geometry,
+  (2) Fisher information limitations in neural data, (3) representational geometry from
+  first principles, (4) mutual information estimation from neural responses,
+  (5) diffusion model-based neural encoding analysis.
+  Trigger: multi-scale Fisher, information geometry neural, representational geometry,
+  neural population code, Fisher information metric, coarse-graining, mutual information neural.
 ---
 
 # Multi-Scale Information Geometry for Neural Populations
 
-Based on arXiv:2605.06304 (Azeglio, Laquitaine, Ferrari, Chalk, May 2026).
+Based on Azeglio et al. (2026), arXiv:2605.06304.
 
-## Core Framework
+## Core Insight
 
-Understanding how neural population responses represent sensory information requires
-defining a representational geometry where distances reflect how reliably stimuli can
-be distinguished from neural activity. Different distance constructions lead to
-qualitatively different conclusions about the neural code.
+The Fisher information metric is purely local — two neural codes can have identical Fisher
+information everywhere yet differ markedly in global discriminability. A unique **multi-scale
+Riemannian geometry** emerges from axioms about how distances contract under stimulus
+coarse-graining (isotropic Gaussian diffusion).
 
-**Key insight:** A unique Riemannian representational geometry emerges from first
-principles governing how distances contract as stimulus resolution is lost through
-coarse-graining.
+## Key Mathematical Framework
 
-## Multi-Scale Fisher Information Metric
-
-The framework produces a multi-scale extension of the Fisher information metric:
-
-- **Fine scales**: Capture encoding structure for detailed stimulus distinctions
-- **Coarse scales**: Capture global stimulus categorization structure
-- **Multi-scale**: Spans from fine stimulus details to coarse global distinctions
-
-### Information-Geometry Relationship
-
-The metric tensor is **exactly related to mutual information** encoded by the population:
-
-- **Well-encoded stimulus directions** (contributing more to mutual information) → **expanded** in geometry
-- **Poorly-encoded directions** → **contracted** in geometry
-
-This provides a direct geometric interpretation of information content.
-
-## Practical Estimation
-
-The metric tensor can be estimated using **diffusion models**, making the framework
-practical for:
-
-- Large neural populations
-- High-dimensional stimuli (e.g., natural images)
-
-## Application to Visual Cortex
-
-Applied to visual cortical responses to natural images:
-
-1. Compute metric tensor from neural population responses
-2. Extract eigenvectors of the metric tensor
-3. Eigenvectors identify stimulus variations contributing most to information transmission
-4. Yields **interpretable features** robust to modeling choices
-
-## Methodology Steps
+### Multi-Scale Fisher Information Matrix
 
 ```
-1. Record neural population responses to stimuli
-2. Estimate metric tensor g_μν using diffusion models
-   - Train diffusion model on stimulus-response pairs
-   - Extract local geometry from model's learned representation
-3. Compute eigendecomposition of metric tensor
-4. Interpret eigenvectors as information-carrying stimulus dimensions
-5. Analyze multi-scale structure by varying coarse-graining level
+G(x) = ∫₀^∞ [φ_t * J_t](x) dt
 ```
 
-## Key Advantages Over Traditional Approaches
+Where:
+- `φ_t` = isotropic Gaussian kernel of variance t
+- `J_t(x)` = Fisher information of the diffused conditional p_t(r|x)
+- `*` = spatial convolution
 
-| Traditional | Multi-Scale Info Geometry |
-|-------------|--------------------------|
-| Single-scale geometry | Multi-scale from fine to coarse |
-| Ad hoc distance metrics | Derived from first principles |
-| No direct information link | Exactly related to mutual information |
-| Requires model specification | Estimable via diffusion models |
-| Hard to interpret | Eigenvectors give interpretable features |
+### Four Axioms Deriving the Geometry
 
-## Related Skills
+1. **Contraction**: Coarse-graining reduces discriminability → distances contract
+2. **Locality**: Contraction depends only on p(r|x) and first derivatives at x
+3. **Sufficiency**: Invariant to sufficiency-preserving transformations of r
+4. **Zero baseline**: If r ⊥ x, then G(x) = 0
 
-- `decoding-encoding-alignment-critique`: Complementary critique of RSA/DSA alignment
-- `neural-population-dynamics`: Population dynamics analysis methods
-- `neural-population-decoding`: Decoding methods for high-dimensional neural data
-- `entropy-brain-connectivity-paths`: Information-theoretic measures for brain networks
+### Fundamental Identity: Mutual Information = Expected Magnification
 
-## When to Use
+```
+I(R; X) = (1/2) · E_x[Tr(G(x))]
+```
 
-- Analyzing neural population coding efficiency
-- Comparing representational geometries across brain areas
-- Understanding information bottlenecks in sensory processing
-- Building interpretable models of neural coding
-- Studying how stimulus structure maps to neural representation
+Mutual information equals the expected rate at which squared distances increase under
+infinitesimal stimulus perturbations. Well-encoded directions are expanded; poorly
+encoded directions are contracted.
 
-## arXiv Reference
+### Estimation via Diffusion Models
 
-- **ID**: 2605.06304
-- **Title**: A multi-scale information geometry reveals the structure of mutual information in neural populations
-- **Authors**: Simone Azeglio, Steeve Laquitaine, Ulisse Ferrari, Matthew Chalk
-- **Date**: 2026-05-08
-- **Category**: q-bio.NC
-- **PDF**: https://arxiv.org/pdf/2605.06304
+The metric tensor can be estimated using conditional diffusion models:
+
+```
+dxᵀ J_t(x_t) dx = (1/2t²) · E_{r,r'}[(x̂(x_t,r) - x̂(x_t,r'))ᵀ dx]²
+```
+
+Where x̂(x_t, r) = E[x | x_t, r] is the posterior mean estimated by a diffusion model.
+
+## Comparison: Fisher vs Multi-Scale Fisher
+
+| Property | Fisher J(x) | Multi-Scale G(x) |
+|----------|------------|------------------|
+| Scope | Local (infinitesimal) | All scales |
+| Mutual info link | None | Exact: I = ½E[Tr(G)] |
+| Model artifacts | Sensitive to unconstrained directions | Robust (data-constrained) |
+| Tuning curve discrimination | Identical for bell/monotonic | Correctly distinguishes |
+
+## Practical Application Pipeline
+
+### Step 1: Fit Encoding Model
+Train a model to predict neural responses r from stimulus x (e.g., CNN for visual stimuli).
+
+### Step 2: Compute Diffused Fisher at Multiple Scales
+For each scale t_k (discretized):
+- Compute J_t(x) from the diffused distribution p_t(r|x)
+- Use Tweedie's identity to relate score to posterior mean
+
+### Step 3: Integrate Across Scales
+```
+G(x) ≈ Σ_k [φ_{t_k} * J_{t_k}](x) · Δt_k
+```
+Approximate the expectation over z via Monte Carlo sampling.
+
+### Step 4: Analyze Eigenvectors
+Leading eigenvectors of G(x) identify stimulus directions contributing most to information
+transmission. These are:
+- **V1**: Spatially localized, edge-like (fine structure)
+- **V4**: Broader, spatially distributed (global structure)
+
+## Key Findings from Visual Cortex Analysis
+
+- Applied to macaque V1/V4 recordings (Papale et al. dataset)
+- 50 most reliable neurons per area, InceptionV3 encoding model
+- V1 correlation: 0.75, V4 correlation: 0.71
+- Multi-scale geometry shows clear V1/V4 differentiation
+- Fisher eigenvectors show no clear differentiation (high-frequency noise artifacts)
+
+## When to Use This Framework
+
+- **Instead of Fisher**: When global discriminability matters, not just local sensitivity
+- **For high-dimensional stimuli**: When encoding models are weakly constrained in some directions
+- **For comparing cortical areas**: When seeking robust, model-independent geometric features
+- **For mutual information**: When needing exact MI-geometry correspondence
+
+## Limitations
+
+- Requires fitting an encoding model first
+- Computationally intensive for very high-dimensional stimuli
+- Diffusion model estimation adds approximation error at small t
+- Assumes isotropic Gaussian diffusion (may not match all experimental designs)
+
+## Related Concepts
+
+- Čencov's theorem (uniqueness of Fisher metric)
+- Tweedie's identity (score-posterior relationship)
+- Heat equation (diffusion process)
+- Riemannian geometry on stimulus space
+- Neural population coding

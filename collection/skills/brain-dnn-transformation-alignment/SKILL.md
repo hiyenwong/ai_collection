@@ -1,142 +1,184 @@
 ---
 name: brain-dnn-transformation-alignment
 description: >
-  Naturality Violation Score (NVS) for brain-DNN alignment beyond object-level
-  comparison. Uses category theory to test whether brains and DNNs preserve the
-  same transformations among stimuli. Covers approximate naturality, axis-resolved
-  alignment analysis, and hierarchy crossover detection. Use when: (1) evaluating
-  brain-DNN alignment at the transformation level, (2) comparing neural representations
-  across model architectures, (3) analyzing semantic vs low-level visual alignment,
-  or (4) designing neuroscience-inspired model evaluation.
-  Activation: naturality violation score, NVS, brain-DNN alignment, transformation
-  alignment, category theory neuroscience, axis-resolved alignment, hierarchy
-  crossover, approximate naturality, brain model comparison.
+  Category-theoretic framework for brain-DNN alignment via approximate naturality.
+  Tests whether brains and DNNs preserve the same stimulus transformations, not just
+  per-stimulus correspondence. Introduces Naturality Violation Score (NVS) for
+  axis-resolved alignment analysis. Use when: (1) comparing brain and DNN representations,
+  (2) going beyond RSA/CKA/Brain-Score for alignment, (3) studying transformation
+  preservation across systems, (4) category theory in neuroscience.
+  Trigger: brain-DNN alignment, naturality violation, NVS, transformation preservation,
+  category theory neuroscience, representational alignment, cospan alignment.
 ---
 
-# Brain-DNN Transformation Alignment (NVS)
+# Brain-DNN Alignment via Approximate Naturality
 
-Based on Kamitani (2026) — arXiv:2605.06420.
+Based on Kamitani (2026), arXiv:2605.06420.
 
-## Core Concept
+## Core Insight
 
-Traditional brain-DNN alignment measures per-stimulus correspondence (encoding
-accuracy, RSA, CKA). This paper introduces a **transformation-level** alignment
-test: do the brain and model preserve the *same* transformations among stimuli?
+Existing alignment metrics (RSA, CKA, encoding/decoding accuracy) test whether brain
+and DNN assign similar codes to the same stimuli. This framework asks a deeper question:
+**do they preserve the same transformations** among stimuli?
 
-## Mathematical Framework
+## Naturality Square
 
-### Approximate Naturality
-
-Inspired by category theory, alignment is formalized as naturality:
+For brain space B, model space M, and proxy space W:
 
 ```
-Brain side:    x ──f──► x'
-                  │         │
-              φ_brain    φ_model
-                  ↓         ↓
-Model side:   φ(x)─f'──► φ(x')
+η ◦ F_B(r) = F_M(r) ◦ η
 ```
 
-If the brain and model preserve the same transformation f, the naturality
-square approximately commutes:
+Where:
+- `r : s → s'` = candidate stimulus transformation
+- `F_B(r) : B → B`, `F_M(r) : M → M` = linear operators realizing r on each side
+- `η : B → M` = translator (linear decoder), `η' : M → B` = translator (linear encoder)
+
+The two paths should approximately commute: propagate-then-translate ≈ translate-then-propagate.
+
+## Operational Implementation via Cospan
+
+The naturality square is realized through three learned linear maps:
+
+1. **Φ_B : W → B** — world-to-brain map (Ridge regression)
+2. **Φ_M : W → M** — world-to-model map (Ridge regression)
+3. **η : B → M**, **η' : M → B** — translators between systems
+
+Each candidate morphism is parameterized by ΔW = F_W(s') - F_W(s) ∈ W.
+
+The operational identity becomes:
+```
+Φ_M(ΔW) = η(Φ_B(ΔW))
+```
+
+## Naturality Violation Score (NVS)
 
 ```
-φ_model(f(x)) ≈ f'(φ_brain(x))
+NVS_η  = ||η(Φ_B(ΔW)) - Φ_M(ΔW)|| / E_π[||η(Φ_B(ΔW)) - Φ_M(ΔW)||]
+NVS_η' = ||η'(Φ_M(ΔW)) - Φ_B(ΔW)|| / E_π[||η'(Φ_M(ΔW)) - Φ_B(ΔW)||]
+NVS    = ½(NVS_η + NVS_η')
 ```
 
-### Naturality Violation Score (NVS)
+- **NVS = 0**: perfect commutativity (transformation preserved)
+- **NVS = 1**: permutation null baseline (chance level)
+- **NVS < 1**: evidence for structure relative to null
 
-NVS quantifies deviation from commutativity, normalized to a permutation null:
+## World Model Proxy Space (W)
 
+The choice of W determines which transformations can be tested:
+
+| Proxy | Captures | Example |
+|-------|----------|---------|
+| CLIP-text | Language-grounded semantics | image captions → text embeddings |
+| DINOv2 | Self-supervised visual structure | image → visual features |
+| DreamSim | Human perceptual similarity | image → perceptual embedding |
+
+## Axis-Resolved Analysis (CAV-based)
+
+Decompose ΔW along Concept Activation Vector (CAV) directions:
 ```
-NVS(f) = ||φ_model(f(x)) - f'(φ_brain(x))|| / E_perm[||...||]
+ΔW_a = ⟨ΔW, v_a⟩ · v_a
 ```
 
-- **NVS ≈ 0**: perfect transformation preservation
-- **NVS ≈ 1**: no better than random permutation
-- **Lower NVS = better alignment** for that transformation axis
+This yields NVS_a (e.g., NVS_animacy) — testing whether a specific semantic axis
+is preserved across brain and model.
 
-## Key Findings
+## Key Empirical Findings (GOD Dataset)
 
-### Hierarchy Crossover
+**Hierarchy Crossover**: Different transformation axes align at different brain regions
+and DNN layers:
 
-Applied to fMRI (GOD dataset, 5 subjects) + 3 vision DNNs + 3 world-model
-proxies:
+| Axis Level | Brain Region | DNN Layers | Best NVS |
+|-----------|-------------|------------|----------|
+| Low-level (luminance, spatial freq) | V1 | Shallow (L1-L4) | ~0.37 |
+| Mid-level (curvilinearity, texture) | V2-V4 | Middle (L3-L6) | ~0.40-0.58 |
+| Semantic (animacy, real size) | HVC | Deep (L6-L8) | 0.19-0.45 |
 
-| Alignment Axis | Best Aligned To | NVS |
-|---------------|-----------------|-----|
-| **Semantic** (animacy) | High-level visual cortex + deep DNN layers | 0.39 |
-| **Mid-level visual** | Mid visual cortex + mid DNN layers | < next-best |
-| **Low-level visual** | Early visual cortex + shallow layers | < next-best |
+**Animacy** is the strongest axis: NVS_animacy = 0.39 (vs. 1.0 null baseline),
+consistent with ventral stream organization.
 
-This reveals that alignment is **axis-selective** rather than uniform —
-different transformation families align at different depths.
+## Why NVS > Traditional Metrics
 
-### Dissociation from Traditional Metrics
+| Metric | Tests | Limitation |
+|--------|-------|------------|
+| Encoding/Decoding r | Per-stimulus correspondence | Misses transformation structure |
+| RSA | Pairwise similarity | Single scalar, no axis resolution |
+| CKA | Global geometry alignment | Collapses factor-level differences |
+| Procrustes | Optimal rotation alignment | Cannot localize which factors align |
+| **NVS** | **Per-transformation preservation** | **Axis-resolved, null-normalized** |
 
-- NVS captures alignment failures that RSA/CKA cannot resolve
-- Encoding/decoding accuracy does not predict NVS
-- Alignment is selective over candidate morphism families
+In synthetic PoC: CCA returns ≈0.99 for models preserving disjoint factor subsets,
+while NVS cleanly separates them per axis (0.02 vs 0.57).
 
-## Implementation Workflow
+## Implementation Pipeline
 
-### Step 1: Define Proxy Space
+### Step 1: Define Spaces
+- B: brain activity (fMRI voxels, neural recordings)
+- M: DNN layer activations
+- W: proxy embedding space (CLIP, DINOv2, DreamSim)
 
-Choose a proxy space W and comparison maps:
-- **Proxy**: semantic embeddings (e.g., CLIP, Word2Vec)
-- **Maps**: morphisms between stimuli (e.g., animacy gradient, pose rotation)
+### Step 2: Fit Linear Maps
+- Φ_B, Φ_M: Ridge regression from W to B/M
+- η, η': Ridge regression between B and M
+- Fit on training stimulus pairs
 
-### Step 2: Compute NVS Per Axis
+### Step 3: Compute NVS
+- For each test pair (s, s'), compute ΔW
+- Evaluate both paths around the naturality square
+- Compute permutation-normalized residuals
 
-For each transformation axis f:
-1. Apply f to stimuli on brain side → get brain responses
-2. Apply f to stimuli on model side → get model activations
-3. Measure commutativity deviation
-4. Normalize against permutation null distribution
+### Step 4: Axis Decomposition
+- Project ΔW onto CAV directions v_a
+- Compute NVS_a for each concept axis
+- Identify hierarchy crossover patterns
 
-### Step 3: Axis-Resolved Analysis
+## Code Skeleton
 
-- Compare NVS across multiple axes (semantic, spatial, temporal)
-- Identify which brain regions align with which model layers per axis
-- Detect hierarchy crossovers (different axes peak at different depths)
+```python
+import numpy as np
+from sklearn.linear_model import Ridge
 
-## Practical Applications
+# Fit translators
+eta = Ridge(alpha=1.0).fit(B_train, M_train)
+eta_inv = Ridge(alpha=1.0).fit(M_train, B_train)
 
-### Model Selection
-Use NVS to choose DNN architectures that best preserve brain-relevant
-transformations for a specific task domain.
+# Fit world-to-space maps
+phi_B = Ridge(alpha=1.0).fit(W_train, B_train)
+phi_M = Ridge(alpha=1.0).fit(W_train, M_train)
 
-### Layer-wise Alignment
-Map which DNN layers correspond to which brain areas for different
-transformation types — useful for neuroscientific interpretability.
+# Compute NVS for a set of transformations
+def compute_nvs(delta_W, eta, eta_inv, phi_B, phi_M, n_perm=1000):
+    # Direct paths
+    direct_M = phi_M.predict(delta_W)
+    via_B = eta.predict(phi_B.predict(delta_W))
+    
+    # Residual
+    residual = np.linalg.norm(via_B - direct_M, axis=1).mean()
+    
+    # Permutation null
+    perm_residuals = []
+    for _ in range(n_perm):
+        idx = np.random.permutation(len(delta_W))
+        perm_residuals.append(
+            np.linalg.norm(via_B - phi_M.predict(delta_W[idx]), axis=1).mean()
+        )
+    
+    return residual / np.mean(perm_residuals)
+```
 
-### Proxy Space Design
-The method generalizes to any proxy space (world models, symbolic
-representations, etc.), enabling richer brain-model comparisons.
+## Limitations
 
-## Comparison with Existing Methods
+- n=5 subjects on single dataset (GOD)
+- Proxy space W is a limited approximation of true world model
+- Linear maps may not capture nonlinear structure
+- Not enforcing strict functorial properties (composition, identity)
+- CAV-based axes depend on proxy viability
 
-| Method | Granularity | Transformation-aware? | Null model |
-|--------|------------|----------------------|------------|
-| Encoding accuracy | Per-stimulus | No | None |
-| RSA | Geometry | Partial | None |
-| CKA | Global similarity | No | None |
-| **NVS (this work)** | **Per-axis** | **Yes** | **Permutation null** |
+## Related Concepts
 
-## Common Pitfalls
-
-- **Proxy space quality**: NVS results depend on proxy choice; poor proxies
-  yield misleading NVS values
-- **Transformation definition**: candidate morphisms must be well-defined
-  and meaningful for both brain and model domains
-- **Permutation null**: ensure sufficient permutations (≥1000) for stable
-  normalization
-- **W-less control**: always run anchor-ablation to verify alignment isn't
-  driven by trivial correlations
-
-## Activation Keywords
-
-- naturality violation score, NVS, brain-DNN transformation alignment,
-  approximate naturality, axis-resolved alignment, hierarchy crossover,
-  category theory neuroscience, brain model comparison, transformation
-  preservation, semantic alignment
+- Category theory (natural transformations, functors)
+- Cospan diagram (W → B, W → M)
+- Linear representation hypothesis
+- Concept Activation Vectors (CAVs)
+- Brain-Score, RSA, CKA (existing metrics)
+- Equivariant neural networks

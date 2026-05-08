@@ -1,76 +1,132 @@
 ---
 name: think-aloud-cognitive-model-discovery
-description: "Think-Aloud methodology for automated cognitive model discovery using LLMs. Uses verbal protocol data (think-aloud traces) as additional constraints beyond behavioral data to discover better cognitive models. Activation: think-aloud, cognitive model discovery, verbal protocol, automated model discovery, LLM cognitive modeling, process-level data."
+description: >
+  Using think-aloud verbal traces as additional data constraints for automated cognitive model discovery with LLMs.
+  Process-level language data improves predictive performance and systematically reshapes discovered model structures,
+  shifting from explicit comparator towards integrated utility models. Use when: automated cognitive modeling,
+  LLM-based model discovery, think-aloud protocol analysis, risky decision-making modeling, process-level cognitive data,
+  behavioral model constraints, or cognitive science AI methods. arXiv:2605.05091
+  Activation: think-aloud model discovery, cognitive model AI, verbal protocol analysis, LLM cognitive modeling,
+  process-level constraints, risky decision model, automated model discovery, cognitive architecture LLM
 ---
 
-# Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
+# Think-Aloud Reshapes Automated Cognitive Model Discovery
 
-> Using think-aloud verbal traces as additional data constraints during LLM-based automated cognitive model discovery, achieving significantly improved predictive performance and systematically reshaping discovered model structures.
+**Paper**: Xie, Jagadish, Pan, Wilson (2026). "Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior"
+**arXiv**: [2605.05091](https://arxiv.org/abs/2605.05091)
+**Categories**: q-bio.NC (Neurons and Cognition), cs.AI (Artificial Intelligence)
 
-## Metadata
-- **Source**: arXiv:2605.05091
-- **Authors**: Hanbo Xie, Akshay K. Jagadish, Lan Pan, Robert C. Wilson
-- **Published**: 2026-05-06
-- **Domain**: Computational Cognitive Modeling + AI
+## Problem
 
-## Core Methodology
+Computational cognitive models discovered using LLMs have traditionally relied **solely on behavioral data**
+(e.g., choice patterns, response times). This creates a fundamental limitation: models produced from behavioral
+trajectories alone are **under-determined** — multiple distinct mechanisms can produce identical behavior.
 
-### Key Innovation
-Automated cognitive model discovery using LLMs has historically relied **solely on behavioral data** (e.g., choice trajectories, reaction times). However, models derived from behavior alone are typically **under-determined** — multiple competing models can explain the same behavioral patterns. This work introduces **think-aloud traces** (verbal protocols where participants articulate their reasoning process) as an additional constraint during the model discovery process, fundamentally changing both model quality and structure.
+## Solution: Process-Level Language Constraints
 
-### Technical Framework
+Using **Think-Aloud verbal traces** as an additional form of data constraint during automated model discovery
+with LLMs provides process-level information that behavioral data alone cannot capture.
 
-1. **Data Collection**: Collect both behavioral data (choices, RTs) AND think-aloud verbal traces from participants during decision-making tasks
-2. **LLM-Based Model Discovery**: Use LLMs to generate candidate cognitive models that explain the observed data
-3. **Multi-Constraint Optimization**: Evaluate candidate models against BOTH behavioral fit AND verbal protocol alignment
-4. **Structural Analysis**: Compare discovered model structures across conditions (behavior-only vs. behavior+think-aloud)
+## Key Findings
 
-### Domain Application: Risky Decision-Making
-- Applied to risky decision-making domain
-- **69.4% of participants** showed discovered models belonging to different structural classes when think-aloud was included
-- Systematic shift from **Explicit Comparator** models toward **Integrated Utility** models
-- Think-aloud data not only improves model fit but **reshapes the structure** of discovered cognitive mechanisms
+1. **Improved Predictive Performance**: Models discovered with think-aloud data achieve significantly better
+   prediction accuracy on held-out behavioral data
+2. **Structural Shift**: 69.4% of participants received models belonging to different structural classes:
+   - Behavior-only → **Explicit comparator** models
+   - Behavior + Think-Aloud → **Integrated utility** models
+3. **Mechanism Recovery**: Process-level language enables identification of cognitive mechanisms that are
+   **not recoverable from behavior alone**
 
-## Implementation Guide
+## Methodology Framework
 
-### Prerequisites
-- LLM with strong reasoning capabilities (for model generation)
-- Think-aloud protocol data from participants
-- Behavioral data (choices, reaction times)
-- Cognitive modeling framework (e.g., drift-diffusion models, prospect theory variants)
+### Data Types
+- **Behavioral data**: Choices, response times, confidence ratings
+- **Think-aloud traces**: Verbal protocols collected during task performance, capturing real-time reasoning
 
-### Step-by-Step
+### LLM-Based Model Discovery Pipeline
+1. **Input**: Behavioral data + think-aloud transcripts
+2. **LLM hypothesis generation**: Propose cognitive model structures consistent with both data streams
+3. **Model fitting**: Parameterize models against behavioral data
+4. **Validation**: Cross-validate on held-out behavioral data
+5. **Model selection**: Choose best-fitting model class
 
-1. **Collect Think-Aloud Data**: Record and transcribe participants' verbal reports during task performance
-2. **Encode Verbal Traces**: Convert think-aloud transcripts into structured representations (e.g., cognitive process annotations)
-3. **Generate Candidate Models**: Use LLM to propose cognitive model architectures
-4. **Fit to Behavior**: Evaluate each model's ability to predict behavioral data
-5. **Validate Against Verbal Data**: Check if model's implied cognitive processes align with think-aloud content
-6. **Select Best Models**: Rank by combined behavioral + verbal fit
-7. **An Structural Shifts**: Compare model classes discovered with vs. without think-aloud constraints
+### Structural Model Classes
 
-### Key Findings
-- Models discovered with think-aloud achieve **significantly improved predictive performance** on held-out data
-- **Majority shift** in model structure classes (69.4% of participants)
-- Think-aloud enables identification of **mechanisms not recoverable from behavior alone**
-- Process-level language data provides complementary constraints that resolve behavioral under-determination
+| Class | Description | Data Required |
+|-------|------------|---------------|
+| **Explicit Comparator** | Compares options using explicit rules/thresholds | Behavior only |
+| **Integrated Utility** | Computes unified utility integrating multiple factors | Behavior + Process data |
+| **Evidence Accumulation** | Sequential sampling with drift-diffusion | Behavior + RT |
+| **Heuristic-Based** | Uses simplified decision rules | Behavior only |
 
-## Applications
-- **Cognitive Psychology**: Discovering more accurate cognitive models for decision-making, memory, learning
-- **Human-AI Interaction**: Understanding human reasoning processes for better AI alignment
-- **Clinical Assessment**: Identifying altered cognitive processes in psychiatric conditions
-- **Education**: Modeling student problem-solving strategies using verbal protocols
-- **LLM Evaluation**: Using cognitive model discovery to evaluate LLM reasoning processes
+## When to Use Think-Aloud Constraints
 
-## Pitfalls
-- Think-aloud protocols may **alter** the cognitive processes they measure (reactivity effect)
-- Verbal trace encoding requires careful methodology to avoid researcher bias
-- LLM-generated models need rigorous validation against ground-truth cognitive mechanisms
-- Not all cognitive processes are accessible to verbal report (implicit vs. explicit processes)
-- Domain-specific: Results from risky decision-making may not generalize to other cognitive domains
+| Scenario | Behavior Only | + Think-Aloud |
+|----------|--------------|---------------|
+| Model is well-constrained by behavior | Sufficient | Marginal gain |
+| Multiple models explain behavior equally | **Under-determined** | **Resolves ambiguity** ✓ |
+| Interest in process mechanisms | Cannot recover | **Enables recovery** ✓ |
+| Complex decision tasks | May find suboptimal model | **Better structural fit** ✓ |
+
+## Application Domain: Risky Decision-Making
+
+The paper demonstrates this approach in risky decision-making tasks, where:
+- Think-aloud data reveals how participants weigh probabilities and outcomes
+- Language captures attentional focus and strategy shifts
+- Model discovery shifts toward integrated utility computation
+
+## Implementation Considerations
+
+### Think-Aloud Protocol Design
+- **Concurrent**: Participants verbalize while performing task (captures online processing)
+- **Retrospective**: Participants explain reasoning after task (may include post-hoc rationalization)
+- **Structured vs. unstructured**: Guided prompts vs. free-form verbalization
+
+### LLM Prompting Strategy
+```python
+# Example: LLM prompt for model discovery with think-aloud
+prompt = """
+Given the following behavioral data and think-aloud transcripts,
+propose a computational cognitive model that explains both:
+
+Behavioral data:
+- Choice patterns: {choices}
+- Response times: {rt}
+
+Think-aloud transcript excerpts:
+- "{transcript_excerpts}"
+
+The model should:
+1. Specify the decision computation mechanism
+2. Define how evidence is accumulated/integrated
+3. Account for individual differences in strategy
+"""
+```
+
+### Validation Protocol
+1. Split data: 70% training, 30% held-out testing
+2. Compare cross-validated predictive accuracy across model classes
+3. Test whether think-aloud-constrained models generalize to pure behavioral data
+
+## Pitfalls and Limitations
+
+- **Verbalization reactivity**: Thinking aloud may alter the decision process itself
+- **Incomplete reporting**: Participants may not verbalize all relevant cognitive processes
+- **Interpretation bias**: LLMs may over-interpret vague or ambiguous verbal reports
+- **Domain specificity**: Effectiveness may vary across cognitive domains
+- **Scalability**: Think-aloud collection is labor-intensive compared to pure behavioral data
 
 ## Related Skills
-- agentic-behavioral-modeling
-- neural-dynamics-decision-making
-- agent-memory-framework
-- meta-cognitive-reflection
+
+- `computational-linguistics-brain-perspective` - Computational neuroscience + linguistics
+- `agent-coordinator` - LLM-based analysis and coordination
+- `cognitive-flexibility-task-structure` - Cognitive task modeling
+- `neural-dynamics-decision-making` - Decision-making neural dynamics
+- `llm-concept-neurons-control` - LLM analysis methods
+
+## References
+
+- Xie, H., Jagadish, A.K., Pan, L., Wilson, R.C. (2026). "Think-Aloud Reshapes Automated Cognitive
+  Model Discovery Beyond Behavior." arXiv:2605.05091 [q-bio.NC, cs.AI].
+- Ericsson, K.A. & Simon, H.A. (1980). Verbal reports as data. Psychological Review.
+- Lieder, F. & Griffiths, T.L. (2020). Resource-rational analysis. Psychological Bulletin.
