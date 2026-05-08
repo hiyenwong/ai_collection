@@ -1,3 +1,23 @@
+## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### Beyond Gates: Pulse Level Quantum Fourier Models
+- [[pulse-level-quantum-fourier]] - 脉冲级量子傅里叶模型参数化，通过独立子角调优提升QML训练性能 (arXiv: 2605.04945)
+  - 核心要点 1: 独立脉冲缩放替代单一逻辑角，释放高维梯度下降逃逸路径
+  - 核心要点 2: 复合门中子角独立性显著提升训练性能，但不改变全局表达能力
+  - **Activation**: 脉冲级量子计算, 量子傅里叶模型, QML优化, pulse-level QFM, composite gate optimization
+
+### Block Permutation Routing on Ramanujan Hypergraphs for Fault-Tolerant Quantum Computing
+- [[ramanujan-hypergraph-routing]] - Ramanujan超图上的块排列路由用于容错量子计算 (arXiv: 2605.05036)
+  - 核心要点 1: Ramanujan超图上的块排列路由，保持谱比的高连通性
+  - 核心要点 2: 谱继承三层级：精确(Haemers)、扰动(Weyl)、通用(Cheeger)
+  - **Activation**: 量子路由, 表面编码, 超图变换, QCCD架构, fault-tolerant routing, block permutation
+
+### Integral Means Spectrum for the Random Riemann Zeta Function
+- [[random-riemann-zeta-spectrum]] - 随机黎曼ζ函数积分均值谱证明Kraetzer猜想 (arXiv: 2603.26507)
+  - 核心要点 1: 随机ζ函数原函数的积分均值谱几乎必然符合Kraetzer猜想形式
+  - 核心要点 2: 建立ζ函数临界线收敛到全纯GMC分布的替代推导
+  - **Activation**: 黎曼ζ函数, 积分均值谱, 高斯乘性混沌, Kraetzer猜想, 单叶函数
+
 ## 2026-05-08 - Neuroscience Research (Cron Job)
 
 ### TRIBE v2: A Tri-Modal Brain Foundation Model
