@@ -1,5 +1,14 @@
 ## 2026-05-09 - Neuroscience Research (Cron Job)
 
+### A Universal Space of Brain Dynamics for Unveiling Cognitive Transitions and Individual Differences
+- [[universal-brain-dynamics]] - Universal Brain Dynamics (UBD) framework constructing a shared latent space for whole-brain fMRI across 8 cognitive states and 963 subjects; integrates dMRI structural connectivity with GCNs and Deep Koopman Operators (arXiv:2605.02936)
+  - Core innovation: Single trained model achieves Pearson's r > 0.9 across 8 cognitive states and generalizes to UK Biobank
+  - Key finding: First empirical evidence that infra-slow fluctuation (ISF) manifests as 4 distinct separable spectral peaks, not a continuous distribution
+  - Key mechanism: Structure-function coupling reframed as temporal evolution — SC serves as the origin, FC as the destination
+  - Cognitive transitions: Latent trajectories achieve ~100% classification accuracy across states — driven by cognitive demands not chronological time
+  - Individual differences: >90% subject clustering accuracy; high-performers show stronger load-dependent network reconfiguration
+  - **Activation**: universal brain dynamics, UBD, brain dynamics space, Koopman brain, GCN fMRI prediction, structure-function coupling, cognitive state transition, infra-slow fluctuation, brain latent manifold
+
 ### An extremely coarse feedback signal is sufficient for learning human-aligned visual representations
 - [[coarse-feedback-human-aligned-visual]] - Demonstrates extremely coarse feedback (8 broad categories) creates brain-aligned representations matching or exceeding 1,000-class supervised models and all self-supervised models; validated against macaque electrophysiology and human fMRI (arXiv: 2605.05556)
   - Core finding: 8-category classification produces better V1/V2 alignment than 1,000-class or self-supervised learning
