@@ -1,3 +1,23 @@
+## 2026-05-10 - 量子力学/经济学/数论 (Cron Job)
+
+### Quantum Proper Scoring Rules: Minimax Estimation and Resource-Theoretic Advantages
+- [[quantum-proper-scoring-rules]] - 量子proper scoring rules方法论，将经典评分规则扩展到量子领域，实现量子激励机制设计 (arXiv: 2605.05268)
+  - Quantum Value Functionals通过operator convex generators建立proper quantum scoring rules
+  - Quantum Cramér-Rao-McCarthy Bound连接minimax risk与QFI
+  - **Activation**: quantum scoring, proper scoring rules, quantum Fisher information, quantum incentives
+
+### The true cost of factoring: Linking magic and number-theoretic complexity in Shor's algorithm
+- [[quantum-magic-resource-analysis]] - 量化magic state作为量子资源的方法论，连接数论复杂度与量子资源需求 (arXiv: 2605.05347)
+  - Magic (non-stabilizerness)量化作为基础量子资源度量
+  - Shor算法在实际相关区域最大化利用magic资源
+  - **Activation**: magic state, non-stabilizerness, quantum resource theory, Shor algorithm
+
+### A Factor-Graph Formulation of CSS Syndrome Decoding: Joint BP and Four-State BP
+- [[css-syndrome-decoding]] - CSS量子纠错syndrome decoding的factor graph公式化方法 (arXiv: 2605.05132)
+  - CSS syndrome decoding建模为两个耦合Tanner图的binary factor graph
+  - Joint BP与four-state BP在重标记和边缘化后等价
+  - **Activation**: CSS code, syndrome decoding, belief propagation, quantum error correction
+
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Beyond Gates: Pulse Level Quantum Fourier Models
