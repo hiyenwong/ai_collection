@@ -25,6 +25,12 @@
   - Joint BP与four-state BP在重标记和边缘化后等价
   - **Activation**: CSS code, syndrome decoding, belief propagation, quantum error correction
 
+### QML Framework-Agnostic Design
+- [[qml-framework-agnostic-design]] - 框架无关的量子机器学习设计方法论，通过抽象层实现跨平台兼容和算法可移植性
+  - 核心要点: 定义硬件无关的量子ML抽象接口，支持在不同量子后端间无缝迁移
+  - 核心要点: 采用中间表示(IR)层解耦算法逻辑与物理实现，降低框架锁定风险
+  - **Activation**: framework-agnostic QML, quantum ML portability, quantum abstraction layer, cross-platform quantum
+
 ## 2026-05-08 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Beyond Gates: Pulse Level Quantum Fourier Models
