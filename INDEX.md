@@ -1,5 +1,14 @@
 ## 2026-05-09 - Neuroscience Research (Cron Job)
 
+### Detecting AI-Generated Videos with Spiking Neural Networks
+- [[mast-aigv-detection-snn]] - First SNN-based detector for AI-generated video detection, achieving 93.14% cross-generator accuracy (arXiv: 2605.05895)
+  - AI-generated videos exhibit smoother temporal residuals at pixel level and more compact semantic trajectories, with SNNs responding to boundary-localized temporal artifacts
+  - MAST converts inter-frame residuals into pseudo-events processed by spike-driven temporal branch with learnable per-channel time constants, fused with frozen X-CLIP encoder
+  - 69× energy savings for the gate at parameter parity (1.24 mJ vs 85.61 mJ per clip)
+  - **Activation**: AI-generated video detection, SNN video detection, temporal artifact detection, pseudo-event conversion, cross-generator generalization, MAST, spike-driven temporal integration, AIGV detection, boundary-localized firing, SDT-V3
+
+## 2026-05-09 - Neuroscience Research (Cron Job)
+
 ### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
 - [[naturality-violation-score]] - 基于范畴论的脑-DNN对齐新方法，通过Naturality Violation Score(NVS)评估变换保持性而非刺激级对应 (arXiv: 2605.06420)
   - 提出Naturality Square形式主义，将脑与模型的对齐从"表示相同刺激"提升到"保留相同变换"
