@@ -1,3 +1,17 @@
+## 2026-05-09 - Neuroscience Research (Cron Job)
+
+### A multi-scale information geometry reveals the structure of mutual information in neural populations
+- [[multi-scale-info-geometry-neural]] - Riemannian representational geometry derived from coarse-graining principles, exactly related to mutual information (arXiv: 2605.06304)
+  - Core: Multi-scale Fisher information metric captures encoding structure from fine to coarse scales
+  - Core: Metric tensor eigenvectors identify information-carrying stimulus features in neural populations
+  - **Activation**: information geometry, Fisher information, neural coding, representational geometry, mutual information
+
+### A Generalized Framework of Antisymmetric Polyspectral Indices for Identifying High-Order Neural Interactions
+- [[antisymmetric-polyspectral-neural-interactions]] - Generalized antisymmetric cross-polyspectral indices detecting 3-way+ neural interactions beyond pairwise connectivity (arXiv: 2605.04636)
+  - Core: Cross-bispectrum and cross-trispectrum with antisymmetric properties robust to volume conduction
+  - Core: Hypergraph construction for multi-node synergistic brain network analysis
+  - **Activation**: polyspectral, bispectrum, higher-order connectivity, multi-node coupling, synergistic connectivity
+
 ## 2026-05-09 - Anthropic Research (Cron Job)
 
 ### Teaching Claude why
