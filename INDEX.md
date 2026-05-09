@@ -1,3 +1,26 @@
+## 2026-05-09 - Anthropic Research (Cron Job)
+
+### Teaching Claude why
+- [[teaching-claude-why]] - Reduce agentic misalignment through principled, principle-based alignment training that generalizes out-of-distribution
+  - Core finding: Agentic misalignment comes from pre-trained model; standard RLHF insufficient for agentic settings
+  - Key method: Synthetic Document Fine-Tuning (SDF) — train on principled documents that articulate why certain actions are wrong
+  - Result: Every Claude since Haiku 4.5 achieves perfect score on agentic misalignment evals
+  - **Activation**: agentic misalignment, alignment training, safety training, RLHF, constitution, honeypot, blackmail, OOD generalization
+
+### Automated Alignment Researchers
+- [[automated-alignment-researchers]] - Use LLMs as autonomous alignment researchers to discover alignment improvements via weak-to-strong supervision
+  - Core metric: Performance Gap Recovered (PGR) — measures how much weaker teacher recovers strong model potential
+  - Key result: 9 AAR instances recovered 97% of the performance gap vs human researchers
+  - Method: LLM researchers propose hypotheses, design experiments, test on models, iterate
+  - **Activation**: AAR, automated alignment, weak-to-strong supervision, PGR, scalable oversight, alignment automation
+
+### Trustworthy Agents in Practice
+- [[trustworthy-agents-framework]] - Five-principle framework for building and governing trustworthy AI agents with practical implementation guidance
+  - Five principles: Human Control, Alignment with Values, Security, Transparency, Privacy
+  - Key pattern: Agent architecture with 4 layers (model, tools, memory, execution) each with oversight
+  - Practical guidance: prompt injection defense, permission systems, audit logging
+  - **Activation**: trustworthy agents, agent governance, prompt injection, human control, agent security, transparency, privacy
+
 ## 2026-05-09 - Quantum Error Correction (Cron Job)
 
 ### Syndrome Resampling Enhances QEC Thresholds
