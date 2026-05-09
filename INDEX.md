@@ -552,3 +552,34 @@
    499|- [[random-riemann-zeta-spectrum]] - Proves Kraetzer's 30-year conjecture: integral means spectrum of random zeta primitive matches universal spectrum of univalent functions via Gaussian multiplicative chaos (arXiv: 2603.26507)
    500|  - Core: Random zeta-function models asymptotic statistics of vertical shifts; primitive's spectrum almost surely equals Kraetzer's universal form
    501|
+## 2026-05-10 - Deep Learning Research (Cron Job)
+
+### Near-Policy Distillation: Accelerating On-Policy Distillation via Asynchronous Generation
+- [[near-policy-distillation]] - Accelerates on-policy distillation 2-4x via async generation buffer with KL-bounded staleness guarantee (arXiv: 2605.05940)
+  - Core: Decouples expensive generation from evaluation using near-policy buffer, maintaining distillation fidelity
+  - Key: Async worker generates from stale policy snapshot; main loop consumes with KL penalty if drift exceeds threshold
+  - **Activation**: distillation, on-policy distillation, async generation, NPD, teacher-student, throughput optimization
+
+### SparseForge: Hessian-Mask Guided Semi-Structured Pruning
+- [[sparseforge-hessian-mask]] - Efficient semi-structured LLM sparsification via annealing of Hessian-mask guided pruning (arXiv: 2605.06402)
+  - Core: Uses second-order Hessian/Fisher importance estimation with gradual mask annealing for N:M sparsity patterns
+  - Key: Annealed sigmoid mask prevents catastrophic accuracy drops; 2:4 patterns compatible with Tensor Cores
+  - **Activation**: sparseforge, hessian mask, semi-structured pruning, LLM sparsification, 2:4 sparsity, model compression
+
+### ScaleLogic: RL Reasoning Scaling with Synthetic Logical Framework
+- [[scalelogic-rl-reasoning]] - Studies RL scaling laws via synthetic logic tasks with independent depth and expressiveness control (arXiv: 2605.06638)
+  - Core: Training compute follows power law T ∝ D^γ where γ increases with logical expressiveness (1.04 → 2.60)
+  - Key: Expressiveness shapes scaling exponent; curriculum learning substantially reduces compute for same performance
+  - **Activation**: scalelogic, rl reasoning, reasoning depth, logical expressiveness, scaling law, curriculum training
+
+### PBKV: Prediction-Based KV-Cache Management for Agent Workflows
+- [[pbkv-agent-workflow]] - Predicts future agent invocations to optimize KV-Cache eviction and prefetching (arXiv: 2605.06472)
+  - Core: Fuses historical workflow patterns with current context to predict next N agent calls, guiding cache management
+  - Key: 1.85x speedup over LRU, 1.26x over KVFlow; conservative policy robust to prediction errors
+  - **Activation**: pbkv, kv-cache management, agent workflow serving, dynamic workflow, cache prediction, KVFlow
+
+### StreamIndex: Memory-Bounded Compressed Sparse Attention via Streaming Top-k
+- [[streamindex-csa-topk]] - Eliminates OOM in DeepSeek-V4 CSA indexer via chunked partition-merge top-k (arXiv: 2605.02568)
+  - Core: Chunked processing never materializes full score tensor; 32x regime extension (S=65K→1M) at 6.21 GB peak
+  - Key: Triton kernels for chunked scoring + top-k; bit-exact recall ≥0.9980 across all configurations
+  - **Activation**: streamindex, compressed sparse attention, streaming top-k, CSA indexer, Triton, OOM prevention, DeepSeek V4
