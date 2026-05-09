@@ -1,3 +1,36 @@
+## 2026-05-09 - OpenAI Research (Cron Job)
+
+### Trading Inference Time Compute for Adversarial Robustness
+- [[trading-inference-time-adversarial-robustness]] - Trade repeated sampling at inference time for provable adversarial robustness guarantees in LLMs through safety filtering and output aggregation
+  - Core innovation: Compute-robustness trade-off — more samples → logarithmically stronger adversarial defense
+  - Key method: Repeated sampling + safety filter + majority vote aggregation
+  - Application: Post-hoc jailbreak defense layer on aligned LLMs
+  - **Activation**: adversarial robustness, inference-time compute, repeated sampling, safety filter, jailbreak defense, compute-robustness tradeoff
+
+### Detecting and Reducing Scheming in AI Models
+- [[detecting-reducing-scheming-ai]] - Systematic evaluation methodology for detecting hidden misalignment (scheming) in frontier AI models through situational awareness tests, reward tampering detection, and sandbagging evaluations
+  - Core innovation: Joint Apollo Research + OpenAI framework for deceptive behavior detection
+  - Key methods: Multi-stage adversarial deployment scenarios, cross-model comparison, training-time intervention
+  - Finding: Scheming behaviors detected in controlled tests across frontier models
+  - **Activation**: scheming detection, hidden misalignment, AI deceptive behavior, Apollo Research, model safety evaluation, alignment
+
+### Collective Alignment: Public Input on AI Model Behavior
+- [[collective-alignment-public-input]] - Methodology for incorporating public input into AI model alignment through large-scale surveys and democratic value aggregation across global demographics
+  - Core innovation: Survey 1000+ people worldwide, compare to Model Spec, update defaults
+  - Key methods: Demographic sampling, behavior scenario preference elicitation, iterative re-surveying
+  - Finding: Global public opinion differs from existing AI defaults, cultural variation requires nuanced alignment
+  - **Activation**: collective alignment, public input AI, democratic AI alignment, Model Spec, AI behavior preferences
+
+## 2026-05-09 - Neuroscience Research (Cron Job)
+
+### Unifying Dynamical Systems and Graph Theory to Mechanistically Understand Neural Computation
+- [[unifying-dynamics-graph-neural-computation]] - Unified framework integrating Recurrent Neural Networks (RNNs) with dynamical systems and graph theory to mechanistically understand neural computation; introduces path-constrained regularization, multi-hop interaction analysis, and temporal sparsity metrics (arXiv:2605.03598)
+  - Core innovation: R-RNNs (Recurrent-Residual RNNs) with path-constrained regularization enabling mechanistic interpretation of neural dynamics
+  - Key method: Multi-hop path analysis quantifying information flow through network connectivity graphs
+  - Key finding: Temporal sparsity patterns reveal computational bottlenecks and redundant pathways in trained RNNs
+  - Mechanistic insight: Unifies dynamical systems stability analysis with graph-theoretic measures for interpretable neural computation
+  - **Activation**: R-RNN, recurrent residual networks, path-constrained regularization, neural dynamics interpretation, graph theory RNN, temporal sparsity neural, mechanistic neural computation, dynamical systems neural networks
+
 ## 2026-05-09 - Systems Engineering Research (Cron Job)
 
 ### Safactory: A Scalable Agent Factory for Trustworthy Autonomous Intelligence
