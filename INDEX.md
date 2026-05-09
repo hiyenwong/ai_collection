@@ -1,3 +1,17 @@
+## 2026-05-09 - Neuroscience Research (Cron Job)
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+- [[naturality-violation-score]] - 基于范畴论的脑-DNN对齐新方法，通过Naturality Violation Score(NVS)评估变换保持性而非刺激级对应 (arXiv: 2605.06420)
+  - 提出Naturality Square形式主义，将脑与模型的对齐从"表示相同刺激"提升到"保留相同变换"
+  - 轴分解分析揭示层次交叉：语义轴(animacy)向高级视觉皮层和深层DNN对齐，低级视觉轴向早期区域对齐
+  - **Activation**: brain-DNN alignment, naturality violation, transformation alignment, category theory neuroscience
+
+### A multi-scale information geometry reveals the structure of mutual information in neural populations
+- [[multi-scale-info-geometry-neural]] - 从信息收缩原理推导唯一黎曼表征几何，将Fisher信息度量与互信息精确关联 (arXiv: 2605.06304)
+  - 信息收缩原理唯一确定神经群体的表征几何，多尺度Fisher信息度量捕获从精细到粗略的编码结构
+  - 度量张量特征向量识别对信息传输贡献最大的刺激变化方向，可通过扩散模型估计
+  - **Activation**: neural coding geometry, Fisher information metric, information geometry, mutual information neural
+
 
 
 ## 2026-05-09 - Neuroscience Research (Cron Job)
