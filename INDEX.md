@@ -1,3 +1,28 @@
+## 2026-05-09 - Quantum Error Correction (Cron Job)
+
+### Syndrome Resampling Enhances QEC Thresholds
+- [[quantum-error-correction-methods]] - Bias syndrome averages toward high-probability syndromes to increase QEC thresholds and reduce logical error rates by up to 4 orders of magnitude without hardware changes (arXiv: 2605.06101)
+  - Core method: Resample syndromes according to P(s)^α with MLD, linked to Rényi coherent information phase transitions
+  - Decoder-agnostic: works with any QEC decoder from finite syndrome data
+  - Applied to existing experimental data: 2 orders of magnitude logical error rate reduction
+  - **Activation**: syndrome resampling, QEC threshold, logical error rate, Rényi coherent information
+
+### Affine Subcode Ensemble Decoding
+- [[quantum-error-correction-methods]] - Extend affine subcode ensemble decoding from classical to quantum setting to address degeneracy impairment in qLDPC BP decoding (arXiv: 2605.06547)
+  - Core insight: Appending independent rows to check matrix reduces search space for degenerate solutions
+  - Uses overcomplete matrices for each decoding path, improved convergence on toric/GB codes
+  - **Activation**: affine subcode, degeneracy-aware decoding, qLDPC, belief propagation
+
+### Real-time FPGA Neural Network Decoder
+- [[quantum-error-correction-methods]] - FPGA-based NN decoder achieves 550 ns closed-loop latency for real-time distance-3 surface code QEC on superconducting processor (arXiv: 2605.04892)
+  - 124 ns NN decoding within 1.25 μs QEC cycle, supports mid-circuit feedback for non-Clifford operations
+  - **Activation**: FPGA decoder, neural network decoder, real-time QEC, surface code
+
+### Distributed BB Codes in Modular Architecture
+- [[quantum-error-correction-methods]] - Implement [[144,12,12]] BB code across modular processors interconnected via shared Bell pairs with BP+OSD decoding (arXiv: 2605.04663)
+  - Star network architecture for trapped ion/neutral atom platforms with all-to-all internal connectivity
+  - **Activation**: bivariate bicycle codes, distributed QEC, modular quantum computing, qLDPC
+
 ## 2026-05-09 - OpenAI Research (Cron Job)
 
 ### Trading Inference Time Compute for Adversarial Robustness
