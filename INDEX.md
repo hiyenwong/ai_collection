@@ -1,3 +1,21 @@
+## 2026-05-09 - Systems Engineering Research (Cron Job)
+
+### Safactory: A Scalable Agent Factory for Trustworthy Autonomous Intelligence
+- [[safactory-agent-factory]] - Production-grade autonomous agent factory with sandboxing, multi-level safety guardrails, policy-driven execution, and dynamic tool provisioning; enables trustless deployment of AI agents in enterprise environments (arXiv: 2605.06230)
+  - Core innovation: Multi-layer safety architecture combining static analysis, runtime monitoring, and post-execution verification
+  - Key pattern: Policy-driven tool provisioning — agents only receive tools they need, when they need them, reducing attack surface
+  - Architecture: Sandboxed execution environments with resource limits, capability scoping, and audit logging
+  - Scalability: Factory pattern for spawning, monitoring, and terminating agent instances on demand
+  - **Activation**: agent factory, autonomous agent sandbox, agent safety guardrails, policy-driven tool provisioning, trustless AI deployment, scalable agent orchestration
+
+### Towards Formal Verification of Hybrid Synchronous Programs with Refinement Types
+- [[formal-verification-hybrid-synchronous]] - Formal verification methodology combining refinement types with synchronous programming models for hybrid/cyber-physical systems; bridges discrete controller logic with continuous physical dynamics (arXiv: 2605.04377)
+  - Core innovation: Refinement type system that encodes safety invariants directly in the type layer of hybrid programs
+  - Key method: Synchronous model composition with continuous-time constraints — verified correctness at compile time
+  - Application domain: CPS, robotic control, aerospace systems where safety-critical guarantees are required
+  - Verification: Automated theorem proving integrated into the compilation pipeline
+  - **Activation**: formal verification hybrid systems, refinement types synchronous programs, CPS verification, hybrid program correctness, safety-critical control verification
+
 ## 2026-05-09 - Neuroscience Research (Cron Job)
 
 ### A Universal Space of Brain Dynamics for Unveiling Cognitive Transitions and Individual Differences
