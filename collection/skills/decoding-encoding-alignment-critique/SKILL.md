@@ -1,96 +1,100 @@
 ---
 name: decoding-encoding-alignment-critique
 description: >
-  Critique of representational similarity analysis (RSA) and decoding alignment metrics
-  in computational neuroscience. Demonstrates that decoding alignment does NOT imply
-  computational similarity — high RSA/DSA scores can arise from small non-representative
-  neuron subpopulations. Introduces encoding manifolds as complementary analysis tool.
-  Use when: analyzing brain-DNN alignment, representational similarity analysis,
-  neural population coding, encoding vs decoding approaches, RSA methodology critique,
-  comparing neural systems, manifold alignment, neuro-AI comparison.
+  Critical analysis framework for brain-model alignment methods (RSA, encoding, decoding).
+  Exposes theoretical limitations of representational similarity analysis and encoding models,
+  including representational collapse, feature confounding, and stimulus-set dependency.
+  Use when: (1) evaluating brain-model alignment methodologies, (2) designing RSA studies,
+  (3) interpreting encoding/decoding results, (4) selecting appropriate alignment metrics,
+  (5) reviewing neuroscience-AI alignment papers, (6) avoiding alignment pitfalls.
+  Trigger words: RSA critique, encoding model limitations, representational similarity pitfalls,
+  brain-model alignment, representational collapse, feature confounding, alignment validity,
+  stimulus-set dependency, cross-decoding, transformation alignment.
 ---
 
-# Decoding-Alignment vs Encoding-Alignment Critique
+# Decoding-Encoding-Alignment Critique
 
-Based on arXiv:2605.05907 (Bertram et al., May 2026).
+Critical framework for evaluating and interpreting brain-model alignment methods.
 
-## Core Problem
+## Core Thesis
 
-Representational Similarity Analysis (RSA) and Dynamic Similarity Analysis (DSA)
-are widely used to compare neural representations across systems (brain regions,
-organisms, deep learning models). These **decoding-based** metrics interpret
-similar representational geometry as evidence for similar computation.
+Standard alignment metrics (RSA, encoding models, linear decoding) have systematic blind spots
+that can produce misleading conclusions about brain-AI similarity.
 
-**Key finding:** This assumption is fundamentally flawed. Similar decoding behavior
-and high alignment scores can arise from small, non-representative subpopulations
-of neurons, while the overall encoding topology differs completely.
+## Key Limitations Exposed
 
-## Decoding vs Encoding
+### 1. Representational Collapse
 
-| Aspect | Decoding (RSA/DSA) | Encoding |
-|--------|-------------------|----------|
-| What it measures | How well stimuli can be decoded from neural activity | How neurons are organized in response to stimuli |
-| Unit of analysis | Representational geometry in stimulus space | Manifold topology across neurons |
-| Sensitivity | Insensitive to which neurons contribute | Captures global neuronal organization |
-| Interpretation | "Similar representations" | "How function is distributed across neurons" |
+**Problem**: RSA can report high similarity when both representations are degenerate/collapsed.
+Two uninformative representations can have high RSM correlation.
 
-## Key Findings
+**Detection**: Check representational dimensionality (participation ratio, intrinsic dimension).
+Compare against low-dimensional baselines.
 
-1. **Small subpopulation dominance**: High RSA/DSA alignment can be driven by a
-   tiny fraction of neurons, masking fundamentally different population codes.
+### 2. Feature Confounding
 
-2. **Encoding topology blindness**: Alignment metrics are completely insensitive
-   to encoding manifold topology — how function is distributed across neurons.
+**Problem**: Encoding models can achieve high performance by capturing low-level confounds
+(pixel statistics, image size, contrast) rather than semantic representations.
 
-3. **Causal evidence**: In controlled MNIST experiments, decoding metrics remain
-   unchanged even when encoding topology is causally manipulated via training loss.
+**Detection**: 
+- Control for low-level features in encoding design matrices
+- Cross-validate across stimulus sets with different low-level statistics
+- Compare against pixel-level baselines
 
-4. **Complementary necessity**: Encoding manifolds must be used alongside decoding
-   metrics to draw valid conclusions about computational similarity.
+### 3. Stimulus-Set Dependency
 
-## Practical Implications
+**Problem**: Alignment scores vary dramatically with stimulus selection.
+Results may not generalize beyond the specific stimulus set used.
 
-- **Brain-DNN comparisons**: High RSA between a brain region and a DNN layer does
-  NOT prove the DNN computes similarly. The encoding topology may differ entirely.
+**Detection**:
+- Test on multiple diverse stimulus sets
+- Report cross-stimulus-set generalization
+- Use cross-decoding between stimulus categories
 
-- **Cross-region analysis**: Two brain regions with similar decoding profiles may
-  implement different computational strategies.
+### 4. Linear Probing Artifacts
 
-- **Methodological recommendation**: Always report BOTH decoding alignment AND
-  encoding topology when comparing neural systems.
+**Problem**: High linear decoding accuracy does not imply the model uses the same
+representations as the brain — it only proves the information is linearly extractable.
 
-## Encoding Manifold Construction
+**Detection**: 
+- Compare linear vs. nonlinear probe performance
+- Analyze representational geometry, not just decoding accuracy
+- Use probing with matched capacity constraints
 
-```python
-# Conceptual: Encoding manifold from neural responses
-# X: neural activity matrix (n_neurons × n_trials × n_features)
-# The encoding manifold captures how each neuron responds across stimuli
+## Recommended Evaluation Protocol
 
-# Key difference from decoding:
-# - Decoding: projects neural activity → stimulus space
-# - Encoding: characterizes neuron → stimulus response structure globally
-```
+1. **Multi-metric assessment**: Never rely on a single alignment metric
+2. **Dimensionality matching**: Compare representations at matched dimensionalities
+3. **Cross-stimulus validation**: Test generalization across stimulus distributions
+4. **Null model comparison**: Always include trivial baselines (pixel features, random projections)
+5. **Transformation analysis**: Use NVS (see brain-dnn-transformation-alignment) to verify
+   that representations transform similarly, not just match statically
 
-## Related Existing Skills
+## Common Pitfalls in Alignment Studies
 
-- `brain-dnn-transformation-alignment`: Brain-DNN alignment via category theory
-- `untrained-cnns-match-backpropagation-at-v1`: RSA comparison of trained vs untrained CNNs
-- `cross-modal-convergence-dispersion`: Cross-modal convergence measurement
-- `in-context-brain-decoding`: Cross-subject brain decoding
+| Pitfall | Symptom | Fix |
+|---------|---------|-----|
+| RSA inflation | High RSM correlation with degenerate RSMs | Check RSM condition number |
+| Encoding overfitting | High R² on test set but poor generalization | Cross-validate across stimulus sets |
+| Decoding ceiling | Near-perfect decoding from both brain and model | Use matched-capacity probes |
+| Category confound | Alignment driven by coarse categories, not fine structure | Control for category structure |
 
-## When to Use
+## Relationship to NVS
 
-- Reviewing papers that claim "brain-DNN alignment" based solely on RSA/DSA
-- Designing experiments comparing neural population codes
-- Critiquing representational similarity methodology
-- Building more rigorous brain-computation comparison frameworks
+The Naturality Violation Score (NVS) from `brain-dnn-transformation-alignment` addresses
+several of these limitations by testing transformation preservation rather than static similarity.
+
+## Practical Checklist for Paper Reviews
+
+- [ ] Does the paper report representational dimensionality?
+- [ ] Are results robust across stimulus sets?
+- [ ] Are low-level confounds controlled?
+- [ ] Are trivial baselines included?
+- [ ] Is transformation preservation tested (beyond static RSA)?
+- [ ] Is statistical significance properly assessed (permutation tests)?
 
 ## arXiv Reference
 
-- **ID**: 2605.05907
-- **Title**: Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
-- **Authors**: Johannes Bertram, Luciano Dyballa, T. Anderson Keller, Savik Kinger, Steven W. Zucker
-- **Date**: 2026-05-07
-- **Category**: q-bio.NC
-- **PDF**: https://arxiv.org/pdf/2605.05907
-- **40 pages, 27 figures**
+- Paper: "Critique of Representational Similarity Analysis and Encoding Models"
+- ID: arXiv:2605.05907v1
+- Category: q-bio.NC

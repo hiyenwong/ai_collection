@@ -1,3 +1,19 @@
+
+
+## 2026-05-09 - Neuroscience Research (Cron Job)
+
+### Naturality Violation Score for Brain-DNN Transformation Alignment
+- [[brain-dnn-transformation-alignment]] - Category-theoretic framework evaluating whether brains and DNNs preserve the same representational transformations via Naturality Violation Score (NVS) (arXiv: 2605.06420)
+  - Core: Goes beyond static RSA/CCA to measure transformation preservation across stimulus conditions using category theory functors and natural transformations
+  - Core: NVS quantifies deviation from commutative diagrams between brain and DNN representational spaces; lower NVS = better alignment
+  - **Activation**: NVS, naturality violation, brain-DNN transformation, representational dynamics, category theory neuroscience, Kamitani lab
+
+### Critical Analysis of Decoding-Encoding-Alignment Methods
+- [[decoding-encoding-alignment-critique]] - Systematic critique of RSA, encoding models, and decoding approaches revealing representational collapse, feature confounding, and stimulus-set dependency (arXiv: 2605.05907)
+  - Core: RSA conflates feature representations with stimulus-set statistics; encoding models suffer from identifiability issues; decoding accuracy doesn't imply neural alignment
+  - Core: Proposes transformation alignment as a more robust alternative, testing whether models preserve the same computational trajectories as brains
+  - **Activation**: RSA critique, encoding model limitations, representational collapse, feature confounding, alignment validity, stimulus-set dependency
+
 ## 2026-05-09 - Neuroscience Research (Cron Job)
 
 ### Neuromorphic visual attention framework for sign language recognition on SpiNNaker-2
