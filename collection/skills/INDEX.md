@@ -1,5 +1,12 @@
 ## 2026-05-10 - 量子力学/经济学/数论 (Cron Job)
 
+### A Residual-Based Quantum Linear System Algorithm with Dynamic Stopping and Applications to Elliptic PDEs
+- [[residual-based-qlsa-dynamic-stopping]] - 基于残差的量子线性系统算法，通过残差寄存器实现动态停止条件，减少量子电路门数和演化时间 (arXiv: 2605.06414)
+  - 增强动力学设计引入残差变量，测量残差寄存器可实时判断收敛状态而无需重构解向量
+  - 对光滑右端项，动态停止可减少演化时间和门计数，降低硬件误差累积风险
+  - 适用于离散椭圆PDE求解，PDE依赖尺度与平方根条件数缩放相当
+  - **Activation**: quantum linear system, QLSA, dynamic stopping, residual register, elliptic PDE, quantum convergence, a posteriori error
+
 ### Quantum Proper Scoring Rules: Minimax Estimation and Resource-Theoretic Advantages
 - [[quantum-proper-scoring-rules]] - 量子proper scoring rules方法论，将经典评分规则扩展到量子领域，实现量子激励机制设计 (arXiv: 2605.05268)
   - Quantum Value Functionals通过operator convex generators建立proper quantum scoring rules
