@@ -1,3 +1,27 @@
+
+## 2026-05-10 - Neuroscience Research (Cron Job)
+
+### An extremely coarse feedback signal is sufficient for learning human-aligned visual representations
+- [[coarse-feedback-visual-alignment]] - 极粗分类信号（仅8类）训练的视觉网络脑区对齐度超越千分类和自监督模型，与人类感知相似度判断最匹配 (arXiv: 2605.05556)
+  - 核心要点 1: 通过PCA分割预训练嵌入，参数化控制分类粒度（2/4/8/16/.../64类）
+  - 核心要点 2: 仅8类训练的网络在猕猴电生理和人类fMRI对齐度上匹敌或超越1000类模型
+  - 核心要点 3: 粗粒度模型在人类感知相似度判断上的对齐度超越所有其他模型
+  - **Activation**: coarse feedback visual alignment, brain-aligned vision, representational similarity, training signal granularity, neural alignment coarse classification
+
+### Multilevel Regression Modeling of Covariance Matrix Outcomes
+- [[mcap-multilevel-covariance-regression]] - MCAP多级协变量辅助主成分回归框架，处理分层嵌套神经影像数据，揭示生命周期中脑功能连接变化规律 (arXiv: 2605.05371)
+  - 核心要点 1: 簇特异性线性投影+广义线性混合效应模型处理层次化数据
+  - 核心要点 2: von Mises-Fisher分布在单位球面上建模簇特异性投影，实现跨簇信息借用
+  - 核心要点 3: HCP生命周期研究（5-90岁）发现成年晚期神经重组模式收敛
+  - **Activation**: multilevel covariance regression, MCAP, lifespan brain connectivity, functional connectivity outcomes, hierarchical neuroimaging
+
+### Interpreting V1 Population Activity via Image-Neural Latent Representation Alignment
+- [[dina-v1-population-activity-interpretation]] - DINA双塔图像-神经对齐框架，在中间特征图级别对齐视觉刺激和V1群体响应，实现可解码且可解释的视觉计算分析 (arXiv: 2605.04309)
+  - 核心要点 1: 对比学习在共享潜空间中对齐图像特征图和V1群体响应
+  - 核心要点 2: 解码性能主要由粗粒度低级视觉结构驱动，而非语义类别信息
+  - 核心要点 3: 对齐特征图由稀疏强响应神经元及其功能交互重构
+  - **Activation**: DINA dual-tower alignment, V1 population activity, calcium imaging decoding, interpretable neural alignment, contrastive neural encoding
+
 ## 2026-05-10 - Information Science + Quantum (Cron Job)
 
 ### Quantum Computation at the Edge of Chaos
