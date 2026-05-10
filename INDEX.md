@@ -1,3 +1,12 @@
+## 2026-05-12 - Neuroscience (Cron Job)
+
+### Quantum-like dynamics in the human brain
+- [[quantum-like-brain-dynamics]] - QL coupled oscillator modeling for whole-brain dynamics with optimal energy efficiency (bioRxiv: 2025.10.02.680057)
+  - Quantum-like probability interference in coupled oscillators produces better empirical fit with lower energy cost
+  - Larger whole-brain spectral gap is the key signature of efficient QL brain dynamics
+  - Systematic QL level sweep identifies optimal regime for neuroimaging data fit
+  - **Activation**: quantum-like dynamics, QL brain dynamics, coupled oscillator brain model, spectral gap, 量子似脑动力学
+
 ## 2026-05-11 - Deep Neuroscience Research (Cron Job - Deep Reading)
 
 ### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
