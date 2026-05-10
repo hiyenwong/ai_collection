@@ -1,3 +1,26 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
+- [[spiking-quantum-encoding]] - Spike-driven temporal encoding converts real-valued features into LIF spike trains, maps spike statistics to quantum rotations with temporal qubits — CKTA 0.966 vs 0.632 for angle encoding (arXiv: 2604.11022)
+  - Core: Leaky integrate-and-fire (LIF) spike trains encode temporal structure into quantum features; spike statistics → quantum rotations + temporal qubits via controlled phase operations
+  - Encoding-centric evaluation: CKTA, Fisher separability, silhouette, TVpair collapse metrics assess representation quality independently of classifier
+  - Wine: accuracy 0.826, AUC 0.978 under fixed qubit budget
+  - **Activation**: SPATE encoding, spiking quantum encoding, spike-driven temporal encoding, quantum ML encoding, LIF quantum feature, temporal qubits, pulse quantum encoding
+
+### Quantum Photonic Neural Networks in Time
+- [[quantum-photonic-neural-networks]] - Time-bin-encoded QPNN uses constant photonic elements regardless of network size/depth; Bell-state analyzer with fidelity >0.99 and efficiency >0.9 via time gating (arXiv: 2603.23798)
+  - Core: Recursive time-multiplexing reuses same physical components; hardware cost O(1) per time bin vs O(N×D) for spatial encoding
+  - Realistic quantum dot nonlinearity (single QD + waveguide) trained for Bell-state analysis
+  - Time gating trades efficiency for fidelity: raw 0.96 → gated >0.99, efficiency >0.9
+  - **Activation**: QPNN time encoding, quantum photonic neural network, time-bin quantum network, photonic neural scaling, quantum dot nonlinearity, Bell-state analyzer photonic
+
+### Contextuality, Incompatibility, and Intra-System Entanglement of Mental Markers
+- [[quantum-like-mental-markers]] - Quantum-informational model of mental markers using I-field approach; Hilbert space formalism for contextuality and entanglement-like correlations in cognition (arXiv: 2603.03358)
+  - Core: Quantum-like modeling (QLM) uses Hilbert space math for cognitive phenomena WITHOUT physical quantum brain claims
+  - Contextuality: non-commuting observables explain order effects, conjunction fallacies, framing effects
+  - Intra-system entanglement: non-separable mental states across cognitive domains (mathematical structure, not physical)
+  - **Activation**: quantum-like cognition, mental markers quantum, I-field theory, cognitive contextuality, mental observables incompatibility, Khrennikov quantum-like
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Unifying Dynamical Systems and Graph Theory to Mechanistically Understand Computation in Neural Networks
