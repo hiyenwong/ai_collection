@@ -1,4 +1,30 @@
 ### Quantum Mechanical Data Assimilation: Classical vs Quantum Paradigms
+## 2026-05-11 - Neuroscience + Quantum (Cron Job)
+
+### Extreme Quantum Cognition Machines for Deliberative Decision Making
+- [[extreme-quantum-cognition]] - Quantum learning architecture for deliberative decisions with noisy data tolerance (arXiv: 2603.05430)
+  - Fixed quantum dynamics generates nonlinear feature map; linear readout only
+  - Dynamical attention via input-dependent Hamiltonian coupling
+  - **Activation**: extreme quantum cognition, quantum reservoir computing attention, dynamical attention quantum, deliberative decision quantum
+
+### Contextuality Derived from Minimal Decision Dynamics: Quantum Tug-of-War
+- [[quantum-tug-of-war-decision]] - Proves contextuality emerges from conservation-based adaptive decision dynamics (arXiv: 2601.10034)
+  - KCBS-type contextuality witnesses in minimal single-system setting
+  - Quantum probability as structural necessity, not assumption
+  - **Activation**: quantum tug-of-war, contextuality decision, KCBS witness, non-Kolmogorovian probability
+
+### A Quantum Spectral Framework for Solving PDEs
+- [[quantum-spectral-pde]] - Quantum block encoding with Fourier space filtering for linear PDE solving (arXiv: 2604.25825)
+  - Exploits filter structure in Fourier space via QBE + reversible arithmetic
+  - Extensible to wavelet analysis and equivariant quantum neural networks
+  - **Activation**: quantum spectral PDE, quantum block encoding PDE, QBE differential equations
+
+### Centralizing Task-based Approach to Quantum Network Control
+- [[quantum-network-task-control]] - Centralized resource-centric quantum network control replacing layered stacks (arXiv: 2605.03336)
+  - Priority-based scheduler tracks quantum memory across nodes
+  - Superior to layered stacks: lower latency, preserved fidelity, linear scaling
+  - **Activation**: quantum network centralized, task-based quantum networking, quantum memory scheduling
+
 - [[quantum-mechanical-data-assimilation]] - QMDA vs DATO: operator-theoretic data assimilation comparing classical transfer operators with quantum mechanical updates (arXiv: 2605.04881)
   - Both share operator-theoretic foundation but differ in state-space structure, update mechanisms, and scalability
   - QMDA excels in noisy/sparse regimes with enhanced structural preservation; DATO better for large-scale classical settings
