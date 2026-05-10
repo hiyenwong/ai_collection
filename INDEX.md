@@ -1,6 +1,20 @@
 
 ## 2026-05-10 - Information Science + Quantum (Cron Job)
 
+### Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval
+- [[reasoning-driven-retrieval]] - 将检索视为迭代推理过程，通过假设生成、证据评估和自改进搜索来发现潜在模式文档 (arXiv: 657)
+  - 核心要点 1: 传统RAG将检索视为黑盒，但推理LLM能在文档呈现时识别潜在相关性，失败在于检索管道未能呈现最相关文档
+  - 核心要点 2: 倾斜查询(OBLIQ)寻找潜在模式——隐含立场、失败模式、抽象场景——传统检索器无法识别
+  - 核心要点 3: 检索代理框架包含假设生成、迭代搜索、自我改进三阶段
+  - **Activation**: reasoning retrieval, retrieval agent, oblique queries, hypothesis-driven search, iterative retrieval, RAG reasoning, 推理检索
+
+### Information-Theoretic Authenticated PIR: From PIR-RV To APIR
+- [[information-theoretic-pir]] - 信息论认证私有信息检索，无需计算硬度假设实现隐私保护和完整性验证 (arXiv: 681)
+  - 核心要点 1: itPIR-RV实现无计算假设的完整性但只提供宽松查询隐私，新APIR方案同时实现完整查询隐私和选择性失败防御
+  - 核心要点 2: 多服务器PIR协议通过随机查询分解和响应聚合实现信息论安全
+  - 核心要点 3: 选择性失败防御通过盲查询和一致性检查防止服务器基于查询内容选择性中止
+  - **Activation**: private information retrieval, PIR, authenticated PIR, itPIR, information-theoretic security, privacy-preserving query, 私有信息检索
+
 ### Toward Hop-Independent Fidelity in Quantum Data Centers
 - [[quantum-data-centers-entanglement]] - 量子数据中心纠缠分布的拓扑无关保真度分析框架，研究多跳网络中纠缠纯化的资源需求 (arXiv: 2605.06263)
   - 核心要点 1: 多跳纠缠交换每步降低原始端到端保真度，拓扑和多路复用增加副本但不能解决保真度损失
