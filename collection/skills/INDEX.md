@@ -1,4 +1,20 @@
-## 2026-05-10 - Information Science / Quantum (Sunday Cron)
+## 2026-05-10 - Information Science + Quantum Mechanics (Sunday Cron - Round 3)
+
+### Syndrome resampling enhances quantum error correction thresholds
+- [[syndrome-resampling-qec]] - 重采样综合征提升QEC阈值，无需额外硬件即可降低逻辑错误率4个数量级 (arXiv: 2605.06101)
+  - 利用低概率综合征易导致逻辑失败的特性，偏向最可能综合征提高保真度
+  - 建立Rényi相干信息与综合征概率分布幂次的直接联系
+  - 适用于任何解码器，可从有限综合征数据实现
+  - 表面码：逻辑错误率降低多达4个数量级
+  - **Activation**: syndrome resampling, QEC threshold, Rényi coherent information, decoder-agnostic QEC, logical fidelity improvement, syndrome biasing
+
+### OBLIQ-Bench: Exposing Overlooked Bottlenecks in Modern Retrievers
+- [[oblique-retrieval-benchmark]] - 揭示现代检索器在隐式和潜在查询上的瓶颈 (arXiv: 2605.06235)
+  - 定义倾斜查询(oblique query)：寻找实例化潜在模式而非匹配显式关键词的文档
+  - 揭示检索-验证不对称性：LLM可验证相关性但检索管线无法召回
+  - 五种倾斜搜索问题的基准测试套件
+  - **Activation**: oblique retrieval, latent pattern search, implicit query, OBLIQ-Bench, retrieval bottleneck, verification asymmetry
+
 
 ### Affine Subcode Ensemble Decoding for Degeneracy-Aware Quantum Error Correction
 - [[affine-subcode-ensemble-decoding]] - 仿射子集集成解码改进QLDPC码BP解码的收敛性 (arXiv: 2605.06547)
