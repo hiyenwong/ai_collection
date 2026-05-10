@@ -11,12 +11,9 @@ Usage:
 """
 
 import argparse
-import os
 import json
 from pathlib import Path
-from typing import Optional
 from dataclasses import dataclass, field, asdict
-from datetime import datetime
 
 @dataclass
 class ProjectVision:
@@ -104,7 +101,7 @@ class InterviewConductor:
         print("\n📚 Layers per domain? (default: types, config, repo, service, runtime, ui)")
         layers_input = input("> ").strip()
         if layers_input:
-            self.config.architecture.layers = [l.strip() for l in layers_input.split(",")]
+            self.config.architecture.layers = [layer.strip() for layer in layers_input.split(",")]
         
         print("\n🔀 Cross-cutting concerns? (default: auth, logging, feature-flags)")
         cc_input = input("> ").strip()
@@ -527,7 +524,7 @@ def main():
         # Save config
         config_path = base_path / ".agent-bootstrap.json"
         config_path.write_text(json.dumps(asdict(config), indent=2))
-        print(f"💾 Config saved to .agent-bootstrap.json\n")
+        print("💾 Config saved to .agent-bootstrap.json\n")
         
         # Generate artifacts
         print("✨ Generating project structure...\n")
