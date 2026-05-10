@@ -1,4 +1,19 @@
 
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Operating a bistable qubit
+- [[bistable-qubit-fpga]] - FPGA-based 1-bit adaptive feedback for TLS-induced dephasing mitigation in superconducting qubits (arXiv: 2605.03187)
+  - Single-shot measurement reaches information-theoretic limit for bistable frequency estimation
+  - 136 kHz estimation bandwidth with 77% error reduction
+  - **Activation**: bistable qubit, TLS defect, FPGA feedback, adaptive qubit control, dephasing mitigation, superconducting qubit stability
+
+### Neuromorphic visual attention for sign language recognition on SpiNNaker2
+- [[neuromorphic-spinnaker-asl]] - Neuromorphic SNN-based visual attention for energy-efficient real-time sign language recognition (arXiv: 2605.09)
+  - Event-driven processing on SpiNNaker2 neuromorphic hardware
+  - Ultra-low power consumption with real-time gesture recognition capability
+  - **Activation**: neuromorphic visual attention, sign language recognition, SpiNNaker2, spiking neural network, event-driven vision
+
+
 ## 2026-05-10 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Tight Contraction Rates for Primitive Channels under Quantum f-Divergences
