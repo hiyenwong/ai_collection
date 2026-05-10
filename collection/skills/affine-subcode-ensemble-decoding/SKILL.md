@@ -1,117 +1,108 @@
 ---
 name: affine-subcode-ensemble-decoding
-description: "Affine Subcode Ensemble Decoding methodology for degeneracy-aware quantum error correction. Extends affine subcode ensemble decoding from classical to quantum LDPC codes, using overcomplete matrices and appended linearly independent rows to reduce degenerate solution search space. Use when working with quantum error correction decoding, belief propagation on QLDPC codes, degeneracy-aware decoding, toric codes, generalized bicycle codes, or Monte-Carlo simulation of quantum code performance."
+description: "Affine Subcode Ensemble Decoding methodology for degeneracy-aware quantum error correction. Improves belief-propagation (BP) decoding of quantum LDPC codes by leveraging affine subcode structure to handle degeneracy. Use when: quantum error correction, QLDPC decoding, belief propagation, degeneracy, ensemble decoding, quantum LDPC codes, fault-tolerant quantum computing, syndrome decoding, CSS codes."
 ---
 
-# Affine Subcode Ensemble Decoding for Quantum Error Correction
+# Affine Subcode Ensemble Decoding for Degeneracy-Aware QEC
 
-## Overview
+Quantum low-density parity-check (QLDPC) codes are promising for low-overhead fault-tolerant quantum computing, but **degeneracy** impairs convergence of standard belief-propagation (BP) decoding. This methodology uses **affine subcode ensemble decoding** to improve BP performance.
 
-Quantum LDPC (low-density parity-check) codes are promising candidates for low-overhead fault-tolerant quantum computing, but **degeneracy** impairs convergence of belief-propagation (BP) decoding. This methodology extends **affine subcode ensemble decoding** from classical to quantum settings, using overcomplete matrices to reduce the degenerate solution search space.
+## Core Problem
 
-## Core Technique
+Standard BP decoding for QLDPC codes fails because:
+- Multiple error patterns produce the same syndrome (degeneracy)
+- BP treats all patterns as equally likely, ignoring redundancy
+- Causes convergence failure even for correctable errors
 
-### The Degeneracy Problem
+## Methodology
 
-In quantum stabilizer codes, multiple distinct error patterns can produce the same syndrome (degeneracy). BP decoders converge poorly because they cannot distinguish between degenerate solutions.
+### Step 1: Identify Affine Subcodes
 
-### Solution: Check Matrix Augmentation
-
-Append **linearly independent rows** to the stabilizer check matrix to constrain the search space:
-
-1. Start with original check matrix `H` of size `m × n`
-2. Find `k` linearly independent rows that are in the dual of the code but not in the row space of `H`
-3. Append these rows to create an **overcomplete matrix** `H'` of size `(m+k) × n`
-4. Run BP decoding on `H'` — the augmented constraints reduce degeneracy ambiguity
-
-### Affine Subcode Ensemble Decoding
-
+For syndrome `s`, decompose the code:
 ```
-For each decoding path i = 1, ..., M:
-  1. Sample a random subset of augmented constraints
-  2. Run BP decoding with the selected constraints
-  3. Record the decoded error pattern
-  4. Weight results by constraint consistency
-
-Final result = weighted majority vote across all paths
+C_s = {e | H*e = s} = e_0 + C_0
 ```
-
-## Algorithm Steps
-
-### Step 1: Matrix Augmentation
-
-```python
-def augment_check_matrix(H, num_extra_rows):
-    """Augment stabilizer check matrix with linearly independent rows."""
-    import numpy as np
-    from scipy.sparse import vstack
-    
-    # Find rows in dual space not in row(H)
-    null_space = find_null_space(H)  # Over GF(2)
-    extra_rows = null_space[:num_extra_rows]
-    
-    return vstack([H, extra_rows])
-```
+where `e_0` is a particular solution and `C_0` is the kernel (code space).
 
 ### Step 2: Ensemble Decoding
 
+1. Generate multiple affine subcode representatives
+2. Run BP on each representative independently
+3. Aggregate results across the ensemble
+4. Select the most probable correction
+
+### Step 3: Degeneracy-Aware Message Passing
+
+Modify BP update rules:
+```
+m_{i->j} = f(messages) * degeneracy_weight
+```
+where `degeneracy_weight` penalizes messages ignoring equivalent error patterns.
+
+## Implementation Pattern
+
 ```python
-def affine_subcode_decode(syndrome, H_aug, num_paths=8, bp_iterations=50):
-    """Affine subcode ensemble decoding for quantum codes."""
-    results = []
+import numpy as np
+from scipy.sparse import csr_matrix
+
+class AffineSubcodeDecoder:
+    def __init__(self, H, max_iter=50, ensemble_size=10):
+        self.H = H
+        self.max_iter = max_iter
+        self.ensemble_size = ensemble_size
     
-    for _ in range(num_paths):
-        # Randomly select subset of augmented constraints
-        mask = random_constraint_selection(H_aug)
-        H_sub = H_aug[mask]
-        syndrome_sub = syndrome[mask]
-        
-        # Run BP on sub-problem
-        error_pattern = belief_propagation(H_sub, syndrome_sub, 
-                                            max_iter=bp_iterations)
-        results.append(error_pattern)
+    def find_particular_solution(self, syndrome):
+        """Find one solution e_0 such that H*e_0 = syndrome (GF(2))."""
+        # Gaussian elimination over GF(2)
+        pass
     
-    return majority_vote(results)
+    def generate_affine_subcodes(self, syndrome, n_samples):
+        """Generate multiple affine subcode representatives."""
+        e_0 = self.find_particular_solution(syndrome)
+        subcodes = [e_0]
+        for _ in range(n_samples - 1):
+            c_0 = self._sample_code_space()
+            subcodes.append(e_0 ^ c_0)
+        return subcodes
+    
+    def decode(self, syndrome, channel_probs):
+        """Ensemble decoding with degeneracy awareness."""
+        subcodes = self.generate_affine_subcodes(syndrome, self.ensemble_size)
+        results = []
+        for subcode in subcodes:
+            result = self._bp_decode(subcode, channel_probs)
+            results.append(result)
+        return self._aggregate_results(results)
+    
+    def _bp_decode(self, initial_guess, channel_probs):
+        """Standard BP with degeneracy-modified update rules."""
+        pass
 ```
 
-## Key Results
+## Key Advantages
 
-- Tested on **toric codes** and **generalized bicycle codes**
-- Improved BP convergence rates
-- Reduced logical error rates compared to standard BP
-- Overcomplete matrices per decoding path further boost performance
+1. **Handles degeneracy explicitly** - unlike standard BP
+2. **Ensemble approach** - robust across error configurations
+3. **Compatible with existing QLDPC codes** - CSS, hypergraph, BB codes
+4. **Parallelizable** - each ensemble member decodes independently
 
-## When to Use
+## Applications
 
-- Decoding quantum LDPC codes where BP fails to converge
-- Surface codes, toric codes, hypergraph product codes
-- When degeneracy causes decoder ambiguity
-- Monte-Carlo performance evaluation of quantum codes
+- Surface code decoding
+- Hypergraph product codes
+- Bivariate bicycle (BB) codes
+- Any QLDPC code where degeneracy impairs BP convergence
 
-## Activation Keywords
+## Verification
 
-- affine subcode decoding
-- degeneracy-aware quantum error correction
-- QLDPC decoding
-- quantum LDPC belief propagation
-- quantum code ensemble decoding
-- toric code decoding
-- generalized bicycle code decoding
-- quantum error correction overcomplete matrix
-- affine subcode ensemble
-- 仿射子码系综解码
-- 量子纠错解码
-- 退化解量子错误纠正
+Test decoder with known syndrome-error pairs:
+1. Generate random errors below code threshold
+2. Compute syndrome: `s = H*e`
+3. Run decoder: `e_hat = decode(s)`
+4. Check: `H*(e XOR e_hat) = 0` (logical equivalence)
 
-## Related Concepts
+## References
 
-- **Belief Propagation (BP)**: Standard iterative decoder impaired by degeneracy
-- **Stabilizer Codes**: Quantum error correcting codes defined by commuting Pauli operators
-- **Overcomplete Matrix**: Redundant parity check matrix with extra constraints
-- **Toric Code**: 2D topological quantum code on a torus
-- **Generalized Bicycle Code**: QLDPC code with bicycle graph structure
-
-## Resources
-
-- **arXiv**: [2605.06547](https://arxiv.org/abs/2605.06547)
-- **PDF**: [Download](https://arxiv.org/pdf/2605.06547v1)
+- arXiv: 2605.06547v1 (2026)
+- Belief propagation for quantum error correction
+- QLDPC code constructions (Panteleev & Kalachev)

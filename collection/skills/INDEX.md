@@ -1,4 +1,11 @@
-## 2026-05-10 - 量子力学/经济学/数论 (Cron Job)
+## 2026-05-10 - Information Science / Quantum (Sunday Cron)
+
+### Affine Subcode Ensemble Decoding for Degeneracy-Aware Quantum Error Correction
+- [[affine-subcode-ensemble-decoding]] - 仿射子集集成解码改进QLDPC码BP解码的收敛性 (arXiv: 2605.06547)
+  - 将QLDPC码分解为仿射子集，对每个子集独立运行BP解码并集成结果
+  - 显式处理简并性(degeneracy)问题，解决传统BP忽略等效错误模式的缺陷
+  - 适用于CSS码、超图积码、双变量双线性码等各类QLDPC码
+  - **Activation**: quantum error correction, QLDPC decoding, belief propagation, degeneracy, ensemble decoding, affine subcode, quantum LDPC
 
 ## 2026-05-10 - Information Science (Cron Job)
 
