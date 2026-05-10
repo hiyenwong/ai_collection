@@ -1,5 +1,20 @@
 ## 2026-05-10 - 量子力学/经济学/数论 (Cron Job)
 
+## 2026-05-10 - Information Science (Cron Job)
+
+### EMO: Pretraining Mixture of Experts for Emergent Modularity
+- [[emo-emergent-moe-modularity]] - 文档级专家池共享实现MoE模块化部署 (arXiv: 2605.06663)
+  - 文档内token共享专家池，实现语义级专家特化
+  - 25%专家保留仅1%性能损失，支持内存受限部署
+  - **Activation**: emo moe, emergent modularity, mixture of experts modularity, composable MoE, modular LLM deployment
+
+### UniPool: A Globally Shared Expert Pool for Mixture-of-Experts
+- [[unipool-shared-expert-moe]] - 全局共享专家池替代逐层专家所有权 (arXiv: 2605.06665)
+  - 池级辅助损失实现专家利用率均衡，NormRouter提供稳定路由
+  - 专家参数可按深度亚线性增长，41.6%-66.7%预算匹配vanilla MoE
+  - **Activation**: unipool, shared expert pool, pool-level MoE, global expert budget, NormRouter
+
+
 ### A Residual-Based Quantum Linear System Algorithm with Dynamic Stopping and Applications to Elliptic PDEs
 - [[residual-based-qlsa-dynamic-stopping]] - 基于残差的量子线性系统算法，通过残差寄存器实现动态停止条件，减少量子电路门数和演化时间 (arXiv: 2605.06414)
   - 增强动力学设计引入残差变量，测量残差寄存器可实时判断收敛状态而无需重构解向量
