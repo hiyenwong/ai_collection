@@ -1,3 +1,19 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Monday Cron - Round 2)
+
+### Exchange-Only Silicon Spin Qubits: PINN Optimised Pulse Sequences
+- [[pinn-quantum-pulse-optimization]] - 两阶段PINN框架优化硅自旋量子比特脉冲，最大化噪声平均门保真度 (arXiv: 2605.03056)
+  - Stage I: 噪声平均门保真度最大化（迭代1-100粗搜索）
+  - Stage II: 门级保真度精炼，添加鲁棒性惩罚
+  - 物理约束：将含交换哈密顿量的薛定谔方程直接嵌入损失函数
+  - **Activation**: PINN quantum control, exchange-only spin qubits, charge noise optimization, silicon quantum computing, pulse optimization, gate fidelity
+
+### Quantum-Tunnelling Oscillators for Cognitive Modelling
+- [[quantum-cognitive-tunnelling-oscillators]] - 量子隧穿振荡器建模认知决策，光学错觉感知与群体决策的量子力学代理 (arXiv: 2604.03940)
+  - 将认知代理建模为量子力学系统，选择通过隧穿而非概率转移
+  - 光学错觉感知：感知态作为希尔伯特空间基态，感知切换为量子隧穿
+  - 群体决策：耦合量子隧穿振荡器网络涌现集体现象
+  - **Activation**: quantum tunnelling oscillator, cognitive modelling, quantum cognition, optical illusion perception, group decision making, context-dependent transitions
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Monday Cron - Round 1)
 
 ### Toward Magnetic-Field-Free Quantum Computing in Engineered Organic Materials: 3-Layer Quantum Brain Hypothesis
