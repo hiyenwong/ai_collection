@@ -1,3 +1,18 @@
+## 2026-05-11 - Neuroscience x Quantum Computing (Cron Job)
+
+### Brain-Inspired Quantum Neural Architectures for Pattern Recognition
+- [[quantum-brain-modeling]] - Integrates QSNN, QLSTM and covariant QEC for brain-inspired quantum modeling (arXiv: 2505.01735)
+  - Two-stage model: hypothalamus-like QSNN filtering + hippocampus-like QLSTM memory consolidation
+  - Quantum spiking networks for noisy event filtering with quantum superposition for spike timing
+  - **Activation**: quantum brain, QSNN, QLSTM, quantum-like cognition, CQEC
+
+### Constructing a Bridge Between Oscillatory Neuronal Networks and Quantum-Like Cognition
+- [[quantum-brain-modeling]] - Links neurophysiology to quantum probability for cognitive psychology (arXiv: 2506.00040)
+  - Density matrices and quantum amplitudes model cognitive decision states
+  - Explains conjunction fallacies, order effects, response replicability via quantum interference
+  - **Activation**: quantum-like, density matrix, cognitive modeling, oscillatory networks
+
+
 
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
