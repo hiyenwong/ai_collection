@@ -30,6 +30,27 @@
   - Monte Carlo sampling for observable estimation with exact diagonalization validation for N ≤ 10 qubits
   - **Activation**: open quantum system simulation, neural quantum states, Lindblad master equation, RL quantum control, quantum dynamics TDVP, decoherence modeling, quantum error correction simulation
 
+### Residual-Based QLSA with Dynamic Stopping for Linear Systems
+- [[quantum-dynamic-stopping]] - Residual-based Quantum Linear System Algorithm with adaptive dynamic stopping criterion for efficient HHL-class solving of linear systems, applied to elliptic PDEs (arXiv: 2605.06414)
+  - Residual estimation via quantum phase estimation and amplitude amplification replaces heuristic fixed-depth iteration
+  - Adaptive stopping criterion ‖r_k‖ < ε guarantees solution quality without over-computation on NISQ hardware
+  - Applied to elliptic PDE solving with logarithmic qubit scaling vs classical O(N) memory
+  - **Activation**: QLSA dynamic stopping, HHL algorithm, quantum linear systems, residual estimation, elliptic PDE quantum, quantum phase estimation stopping, adaptive quantum iteration
+
+### QDSA: Diagonal Unitary Synthesis via Quantum Decomposition
+- [[qdsa-diagonal-unitary-synthesis]] - Quantum Diagonal Synthesis Algorithm (QDSA) for efficient decomposition of diagonal unitary matrices into optimal gate sequences with minimal CNOT count (arXiv: 2605.06397)
+  - Hierarchical decomposition reduces CNOT complexity from O(4^n) to O(2^n) for n-qubit diagonal unitaries
+  - Exploits phase redundancy and symmetries in diagonal matrices for further gate count reduction
+  - Applicable to quantum oracle construction, QFT variants, and variational circuit ansatz design
+  - **Activation**: diagonal unitary synthesis, quantum gate decomposition, CNOT optimization, quantum oracle design, QFT optimization, variational circuit ansatz, quantum compiler optimization
+
+### Affine Subcode Ensemble Decoding for Quantum Error Correction
+- [[affine-subcode-qec-decoding]] - Degeneracy-aware quantum error correction using affine subcode ensemble decoding that exploits code degeneracy for improved logical error rates beyond standard minimum-weight decoding (arXiv: 2605.06547)
+  - Affine subcode decomposition partitions the error coset space to enumerate degenerate error configurations
+  - Ensemble voting across subcode decoders achieves near-maximum-likelihood performance with polynomial complexity
+  - Demonstrates 10-100x logical error rate improvement over MWPM on surface codes with realistic noise
+  - **Activation**: quantum error correction, degeneracy-aware decoding, affine subcode ensemble, surface code decoding, MWPM improvement, logical error rate optimization, quantum fault tolerance
+
 ## 2026-05-10 - Systems Engineering Research (Cron Job)
 
 ### Quantifying Trade-Offs Between Stability and Goal-Obfuscation in Network Control Systems
