@@ -1,3 +1,9 @@
+### Quantum Mechanical Data Assimilation: Classical vs Quantum Paradigms
+- [[quantum-mechanical-data-assimilation]] - QMDA vs DATO: operator-theoretic data assimilation comparing classical transfer operators with quantum mechanical updates (arXiv: 2605.04881)
+  - Both share operator-theoretic foundation but differ in state-space structure, update mechanisms, and scalability
+  - QMDA excels in noisy/sparse regimes with enhanced structural preservation; DATO better for large-scale classical settings
+  - **Activation**: QMDA, quantum data assimilation, DATO, transfer operator assimilation, Koopman data assimilation
+
 ## 2026-05-11 - Neuroscience x Quantum Computing (Cron Job)
 
 ### Beyond Gates: Pulse Level Quantum Fourier Models
