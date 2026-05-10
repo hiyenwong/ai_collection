@@ -1,3 +1,33 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Monday Cron - Round 1)
+
+### Toward Magnetic-Field-Free Quantum Computing in Engineered Organic Materials: 3-Layer Quantum Brain Hypothesis
+- [[three-layer-quantum-brain]] - 三层量子脑假说：核自旋记忆→电子自旋界面→经典电化学，无磁场有机量子计算 (arXiv: 2605.00026)
+  - 提出4条无磁场量子计算路径（黄酮-硝基自由基对、PTM自由基阵列、SVILC类比、SSH孤子）
+  - CQEC在16个路径×算法对上显著提升(p<10⁻⁵)，Bernstein-Vazirani实现7.6-31×量子优势
+  - 层-蛋白质权衡：CRY核T₂长但电子T₂短，MAO-A反之
+  - **Activation**: three-layer quantum brain, CQEC, radical-pair qubit, cryptochrome quantum, organic quantum computing, SVILC, magnetic-field-free quantum
+
+### The Physical Basis of Information Flow in Neural Matter: Thermocoherent Perspective
+- [[thermocoherent-cognitive-dynamics]] - 热相干框架建模神经物质信息流，耦合热流与离域相干信息 (arXiv: 2604.04069)
+  - 关系资源（纠缠、量子失谐、经典关联）可作为神经组织中隐藏的物理资源
+  - 离子通道、氢键质子网络、芳香π电子架构、富磷酸基序为可能底物
+  - 非宏观量子认知声明，而是可证伪的微观资源偏置跨尺度协调框架
+  - **Activation**: thermocoherent effect, information flow neural matter, relational resources, Mpemba neural, cross-scale neural coordination
+
+### GKSL Dynamics for Quantum-Like Models of Cognition and Decision Making
+- [[gksl-quantum-cognition]] - 开放量子系统GKSL主方程建模认知决策，含认知节拍分析 (arXiv: 2604.18643)
+  - 主动/被动哈密顿量区分：非对换=认知代理的数学签名
+  - 认知节拍：Liouvillian通道间的结构张力产生二次慢调制，映射犹豫/承诺时机
+  - 可稳定非纳什均衡结果（如囚徒困境）
+  - **Activation**: GKSL, Lindblad, quantum cognition, cognitive beats, open quantum systems, decision making, non-Nash equilibrium
+
+### Training Single-Electron and Single-Photon Stochastic Physical Neural Networks
+- [[stochastic-physical-neural-networks]] - 随机物理神经网络训练，单电子/单光子神经元实现>97% MNIST精度 (arXiv: 2604.10861)
+  - 电子实现：量子点单电子隧穿；光子实现：单光子源驱动模式
+  - 关键发现：向后传递使用经验输出（非真概率）实现更高精度
+  - 高噪声和模型不确定性下保持鲁棒性
+  - **Activation**: stochastic PNN, physical neural network, single-electron neuron, single-photon neuron, empirical backward pass
+
 ## 2026-05-10 - Information Science + Quantum Mechanics (Sunday Cron - Round 3)
 
 ### Syndrome resampling enhances quantum error correction thresholds
