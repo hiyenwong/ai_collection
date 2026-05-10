@@ -1,4 +1,30 @@
 
+## 2026-05-10 - Information Science + Quantum Mechanics (Cron Job)
+
+### Tight Contraction Rates for Primitive Channels under Quantum f-Divergences
+- [[quantum-f-divergence-contraction]] - Quantum channel convergence analysis using f-divergence SDPI bounds (arXiv: 2605.06452)
+  - Establishes local reverse Pinsker inequality for quantum f-divergences
+  - Bounds asymptotic contraction rates by SDPI constants
+  - **Activation**: quantum f-divergence, contraction rate, SDPI, data processing inequality
+
+### Residual-Based Quantum Linear System Algorithm with Dynamic Stopping
+- [[quantum-linear-system-residual]] - QLSA with adaptive precision control for elliptic PDEs (arXiv: 2605.06414)
+  - Residual-based error estimation for dynamic stopping in QSVT
+  - Applied to elliptic PDE solving on quantum computers
+  - **Activation**: quantum linear system, QLSA, residual estimation, dynamic stopping, QSVT
+
+### Multitime Memory Beyond Quantum Regression Theorem
+- [[quantum-multitime-memory]] - Non-Markovian sequential measurement statistics framework (arXiv: 2605.06427)
+  - Generalizes quantum regression theorem for memory effects
+  - Process tensor formalism for multi-time correlations
+  - **Activation**: quantum memory, regression theorem, non-Markovian, sequential measurement
+
+### Machine Learning Approaches to Building Quantum Circuits
+- [[quantum-circuit-builder]] - ML-driven shortest analytic quantum algorithm for diagonal matrices (arXiv: 2605.06633)
+  - Interpretable ML constructs universal quantum algorithms
+  - **Activation**: quantum circuit, ML algorithm, diagonal matrix, quantum synthesis
+
+
 ## 2026-05-10 - Information Science + Quantum (Cron Job)
 
 ### Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval
