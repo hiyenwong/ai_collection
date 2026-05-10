@@ -1,7 +1,28 @@
 
-## 2026-05-10 - Neuroscience Research (Cron Job)
+## 2026-05-10 - Information Science + Quantum (Cron Job)
 
-### Efficient event-driven retrieval in high-capacity kernel Hopfield networks
+### Toward Hop-Independent Fidelity in Quantum Data Centers
+- [[quantum-data-centers-entanglement]] - 量子数据中心纠缠分布的拓扑无关保真度分析框架，研究多跳网络中纠缠纯化的资源需求 (arXiv: 2605.06263)
+  - 核心要点 1: 多跳纠缠交换每步降低原始端到端保真度，拓扑和多路复用增加副本但不能解决保真度损失
+  - 核心要点 2: 使用拓扑无关黑盒模型分析纯化资源需求——给定n个原始副本，能否通过纯化达到目标保真度
+  - 核心要点 3: 关键问题不是有多少副本，而是副本是否足够消除多跳分布导致的保真度损失
+  - **Activation**: quantum data center, entanglement distribution, entanglement purification, QPU networking, hop-independent fidelity, quantum network topology
+
+### Continuous-Time Distribution Matching for Few-Step Diffusion Distillation
+- [[diffusion-distribution-matching]] - 连续时间分布匹配蒸馏加速扩散模型，解决离散DMD的视觉伪影和过度平滑问题 (arXiv: 2605.06376)
+  - 核心要点 1: 离散时间DMD仅在少数预定义时间点提供稀疏监督，反向KL散度的模式搜索特性导致视觉伪影
+  - 核心要点 2: 连续时间分布匹配沿PF-ODE轨迹全程匹配分布，提供更密集的监督和更稳定的训练
+  - 核心要点 3: 一致性蒸馏沿完整PF-ODE轨迹强制执行自一致性，引导轨迹趋向清洁数据流形
+  - **Activation**: diffusion distillation, distribution matching distillation, DMD acceleration, consistency distillation, few-step diffusion, continuous-time distribution matching
+
+### The Role of Node Features in Graph Pooling
+- [[graph-pooling-node-features]] - 揭示图池化中节点特征与图拓扑对齐的关键作用，量化特征-拓扑不对齐导致的池化失效 (arXiv: 2605.06250)
+  - 核心要点 1: 图池化经验增益常边际或不一致，根源是节点特征未与图拓扑良好对齐
+  - 核心要点 2: 提出定量度量评估特征-拓扑对齐程度，形式化池化有效性的基本要求
+  - 核心要点 3: 池化算子需要反映节点结构角色的特征——经验网络中常不满足此条件
+  - **Activation**: graph pooling, node feature alignment, GNN pooling optimization, graph classification pooling, WL-1 expressivity, graph topology features
+
+## 2026-05-10 - Neuroscience Research (Cron Job)
 - [[klr-hopfield-event-driven-retrieval]] - 核逻辑回归Hopfield网络异步事件驱动检索，存储容量P/N≈30，事件数≈初始汉明距离，适合神经形态硬件 (arXiv: 2605.05978)
   - 核心要点 1: KLR Hopfield网络异步串行更新轨迹与同步动态统计上不可区分，保持高召回准确率
   - 核心要点 2: 异步网络存储容量达P/N≈30，远超经典Hopfield极限(0.14)
