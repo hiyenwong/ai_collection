@@ -1,6 +1,13 @@
 
 ## 2026-05-10 - Neuroscience Research (Cron Job)
 
+### Efficient event-driven retrieval in high-capacity kernel Hopfield networks
+- [[klr-hopfield-event-driven-retrieval]] - 核逻辑回归Hopfield网络异步事件驱动检索，存储容量P/N≈30，事件数≈初始汉明距离，适合神经形态硬件 (arXiv: 2605.05978)
+  - 核心要点 1: KLR Hopfield网络异步串行更新轨迹与同步动态统计上不可区分，保持高召回准确率
+  - 核心要点 2: 异步网络存储容量达P/N≈30，远超经典Hopfield极限(0.14)
+  - 核心要点 3: KLR大间隔吸引子创造平滑能量景观，收敛事件数接近目标图案汉明距离，无寄生振荡
+  - **Activation**: KLR Hopfield asynchronous, event-driven associative memory, kernel Hopfield event-driven, asynchronous retrieval dynamics, neuromorphic Hopfield network, margin-based associative memory
+
 ### An extremely coarse feedback signal is sufficient for learning human-aligned visual representations
 - [[coarse-feedback-visual-alignment]] - 极粗分类信号（仅8类）训练的视觉网络脑区对齐度超越千分类和自监督模型，与人类感知相似度判断最匹配 (arXiv: 2605.05556)
   - 核心要点 1: 通过PCA分割预训练嵌入，参数化控制分类粒度（2/4/8/16/.../64类）
