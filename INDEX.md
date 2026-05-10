@@ -1,3 +1,25 @@
+## 2026-05-11 - Deep Neuroscience Research (Cron Job - Deep Reading)
+
+### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
+- [[decoding-encoding-alignment-critique]] - RSA/DSA alignment can be driven by tiny subpopulations; encoding topology must be analyzed complementarily (arXiv: 2605.05907)
+  - Core: High RSA/DSA can arise from small non-representative neuron subsets — decoding alignment ≠ computational similarity
+  - Causal evidence: decoding metrics unchanged when encoding topology manipulated via training loss
+  - Solution: dual-manifold analysis — always pair decoding (WHAT is represented) with encoding (HOW it's implemented)
+  - **Activation**: RSA critique, encoding manifold, subpopulation dominance, neural system comparison, decoding alignment
+
+### A multi-scale information geometry reveals the structure of mutual information in neural populations
+- [[multi-scale-info-geometry-neural]] - Unique Riemannian geometry from information contraction; Fisher metric extended to multi-scale with diffusion model estimation (arXiv: 2605.06304)
+  - Core: Information contraction under coarse-graining uniquely determines neural representational geometry
+  - Multi-scale Fisher metric directly relates to mutual information — well-encoded directions expanded, poorly encoded contracted
+  - Metric tensor eigenvectors identify stimulus variations contributing most to information transmission
+  - **Activation**: neural coding geometry, Fisher information metric, mutual information, diffusion model neural estimation
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+- [[naturality-violation-score]] - Category-theoretic approach to brain-DNN alignment: do brain and model preserve the same transformations? (arXiv: 2605.06420)
+  - Core: Moves beyond static RSA to test whether brain and model preserve the same candidate transformations among stimuli
+  - Complements decoding-encoding critique by adding transformation preservation as a third analysis dimension
+  - **Activation**: transformation alignment, category theory brain-DNN, NVS, transformation preservation
+
 ### Quantum Mechanical Data Assimilation: Classical vs Quantum Paradigms
 ## 2026-05-11 - Neuroscience + Quantum (Cron Job)
 
