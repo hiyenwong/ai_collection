@@ -17,7 +17,13 @@
 
      1|## 2026-05-10 - Neuroscience Research (Cron Job)
      2|
-     3|### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+     3|### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
+- [[think-aloud-cognitive-model-discovery]] - 通过Think-Aloud协议增强自动认知模型发现，超越纯行为数据捕捉决策过程中的推理和元认知 (arXiv: 2605.05091)
+  - Think-Aloud口头报告作为额外数据约束，显著提升认知模型发现的可解释性和准确性
+  - 纯行为数据无法区分的竞争模型可通过语言报告有效区分
+  - **Activation**: think-aloud protocol, cognitive model discovery, verbal protocol analysis, decision-making cognition
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
      4|- [[naturality-violation-score]] - 引入 Naturality Violation Score (NVS)，用范畴论的近似自然性重构脑-DNN对齐评估，从逐刺激匹配转向变换结构保持 (arXiv: 2605.06420)
      5|  - 核心要点 1: 通过 cospan 框架连接脑空间 B、模型空间 M 和 World Model 代理空间 W，拟合 ΦB/ΦM/η/η' 四条线性映射链
      6|  - 核心要点 2: NVS 衡量自然性方格的双向残差并归一化到置换零分布，0=完美交换，1=随机基线
@@ -159,7 +165,13 @@
    142|     9|
    143|    10|## 2026-05-09 - Neuroscience Research (Cron Job)
    144|    11|
-   145|    12|### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+   145|    12|### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
+- [[think-aloud-cognitive-model-discovery]] - 通过Think-Aloud协议增强自动认知模型发现，超越纯行为数据捕捉决策过程中的推理和元认知 (arXiv: 2605.05091)
+  - Think-Aloud口头报告作为额外数据约束，显著提升认知模型发现的可解释性和准确性
+  - 纯行为数据无法区分的竞争模型可通过语言报告有效区分
+  - **Activation**: think-aloud protocol, cognitive model discovery, verbal protocol analysis, decision-making cognition
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
    146|    13|- [[naturality-violation-score]] - 基于范畴论的脑-DNN对齐新方法，通过Naturality Violation Score(NVS)评估变换保持性而非刺激级对应 (arXiv: 2605.06420)
    147|    14|  - 提出Naturality Square形式主义，将脑与模型的对齐从"表示相同刺激"提升到"保留相同变换"
    148|    15|  - 轴分解分析揭示层次交叉：语义轴(animacy)向高级视觉皮层和深层DNN对齐，低级视觉轴向早期区域对齐
@@ -423,7 +435,13 @@
    406|   273|   220|  - 核心要点 2: KLR学习诱导的大边际吸引子创造平滑能量景观，收敛事件数≈初始汉明距离，适合稀疏神经形态计算
    407|   274|   221|  - **Activation**: kernel hopfield, event-driven retrieval, KLR Hopfield, asynchronous associative memory, neuromorphic memory, large-margin attractor
    408|   275|   222|
-   409|   276|   223|### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+   409|   276|   223|### Think-Aloud Reshapes Automated Cognitive Model Discovery Beyond Behavior
+- [[think-aloud-cognitive-model-discovery]] - 通过Think-Aloud协议增强自动认知模型发现，超越纯行为数据捕捉决策过程中的推理和元认知 (arXiv: 2605.05091)
+  - Think-Aloud口头报告作为额外数据约束，显著提升认知模型发现的可解释性和准确性
+  - 纯行为数据无法区分的竞争模型可通过语言报告有效区分
+  - **Activation**: think-aloud protocol, cognitive model discovery, verbal protocol analysis, decision-making cognition
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
    410|   277|   224|- [[brain-dnn-transformation-alignment]] - 基于范畴论的自然性违反分数(NVS)评估脑-DNN变换级对齐，揭示语义/视觉轴的分层交叉 (arXiv: 2605.06420)
    411|   278|   225|  - 核心要点 1: 将脑-DNN对齐从刺激级对应提升到变换保持测试，NVS量化与置换零模型的偏差
    412|   279|   226|  - 核心要点 2: 发现分层交叉现象——语义轴对齐高层视觉皮层+深层DNN，低级视觉轴对齐早期皮层+浅层
