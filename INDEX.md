@@ -1,3 +1,23 @@
+## 2026-05-10 - Information Science + Quantum (Cron Job)
+
+### Affine Subcode Ensemble Decoding for Degeneracy-Aware Quantum Error Correction
+- [[affine-subcode-ensemble-decoding]] - 通过扩充校验矩阵和仿射子码系综解码解决量子LDPC码的简并性问题，提升BP解码收敛率和逻辑错误率 (arXiv: 2605.06547)
+  - 核心要点 1: 在校验矩阵中添加线性无关行，减少简并解搜索空间
+  - 核心要点 2: 对每个解码路径使用不完整矩阵，多个路径投票提高解码可靠性
+  - **Activation**: affine subcode decoding, degeneracy-aware QEC, QLDPC decoding, quantum LDPC, toric code decoding
+
+### Machine Learning Approaches to Building Quantum Circuits for Sets of Matrices
+- [[quantum-circuit-ml-construction]] - 使用可解释机器学习构建最短通用量子算法来编码任意大小对角矩阵 (arXiv: 2605.06633)
+  - 核心要点 1: 通过分析ML参数可构造解析最短量子电路
+  - 核心要点 2: 适用于任意尺寸的对角矩阵编码
+  - **Activation**: quantum circuit construction, ML quantum algorithms, diagonal matrix encoding
+
+### The Kubo-Thermalization Correspondence
+- [[kubo-thermalization-correspondence]] - 建立量子热化与Kubo线性响应之间的精确对应关系，通过平衡响应推断热化动力学 (arXiv: 2605.06666)
+  - 核心要点 1: 长时间热化磁化与短时间线性响应谱之间的精确联系
+  - 核心要点 2: 适用于与热浴耦合的自旋系统，独立于系统-浴耦合微观细节
+  - **Activation**: quantum thermalization, Kubo response, linear response, many-body physics
+
 ## 2026-05-10 - Quantum State Preparation (Cron Job)
 
 ### Practical Log-Depth Quantum State Preparation via Matrix Product States
