@@ -1,3 +1,12 @@
+## 2026-05-10 - Quantum State Preparation (Cron Job)
+
+### Practical Log-Depth Quantum State Preparation via Matrix Product States
+- [[ttn-quantum-state-preparation]] - Efficient log-depth quantum state preparation using MPS-to-TTN renormalization with unitary circuit compilation (arXiv: 2605.06579)
+  - MPS representation enables polynomial-parameter encoding of exponentially large quantum states
+  - TTN renormalization converts MPS to tree tensor network for efficient hierarchical decomposition
+  - Log-depth unitary circuit compilation via sequential two-qubit gate synthesis from TTN isometries
+  - **Activation**: quantum state preparation, MPS tensor network, TTN renormalization, log-depth quantum circuit, quantum state compilation, isometric decomposition, quantum data loading
+
 ## 2026-05-10 - Quantum Mechanics Daily (Cron Job)
 
 ### Machine Learning Approaches to Building Quantum Circuits for Sets of Matrices
