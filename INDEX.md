@@ -1,3 +1,10 @@
+### TunnElQNN: Hybrid Quantum-classical Neural Network
+- [[hybrid-quantum-neural-tunneling]] - Hybrid QNN with quantum tunneling optimization for escaping local minima (ResearchSquare: rs-8537433)
+  - Quantum tunneling probability allows optimizer to escape local minima that trap gradient descent
+  - WKB approximation computes tunneling probability from loss landscape curvature
+  - Adaptive tunneling annealing reduces quantum correction as training progresses
+  - **Activation**: quantum neural network, quantum tunneling optimization, TunnElQNN, hybrid quantum-classical
+
 ## 2026-05-12 - Neuroscience (Cron Job)
 
 ### Quantum-like dynamics in the human brain
