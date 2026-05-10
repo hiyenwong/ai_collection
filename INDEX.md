@@ -1,3 +1,12 @@
+## 2026-05-10 - Neuroscience Research (Cron Job)
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+- [[naturality-violation-score]] - 引入 Naturality Violation Score (NVS)，用范畴论的近似自然性重构脑-DNN对齐评估，从逐刺激匹配转向变换结构保持 (arXiv: 2605.06420)
+  - 核心要点 1: 通过 cospan 框架连接脑空间 B、模型空间 M 和 World Model 代理空间 W，拟合 ΦB/ΦM/η/η' 四条线性映射链
+  - 核心要点 2: NVS 衡量自然性方格的双向残差并归一化到置换零分布，0=完美交换，1=随机基线
+  - 核心要点 3: 轴分解分析揭示层级交叉——低层视觉轴对齐 V1×浅层，语义轴(animacy)对齐 HVC×深层
+  - **Activation**: NVS, naturality violation, brain-DNN alignment, category theory alignment, approximate naturality, cospan framework, transformation preservation, axis-resolved alignment
+
 ## 2026-05-10 - Information Science + Quantum (Cron Job)
 
 ### Affine Subcode Ensemble Decoding for Degeneracy-Aware Quantum Error Correction
