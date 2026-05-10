@@ -1,5 +1,11 @@
 ## 2026-05-11 - Neuroscience x Quantum Computing (Cron Job)
 
+### Beyond Gates: Pulse Level Quantum Fourier Models
+- [[pulse-level-qfm]] - Pulse-level QFMs replace gate-level angles with independently tunable sub-angles, boosting VQA training convergence (arXiv: 2605.04945)
+  - Gate-level parameterization creates rigid monomial couplings; pulse scalings provide higher-dimensional escape routes
+  - Global expressibility and Fourier coefficient correlation unchanged; local optimization landscape fundamentally altered
+  - **Activation**: pulse-level QFM, quantum Fourier model, pulse variational quantum, QFM training optimization, quantum pulse parameterization
+
 ### Brain-Inspired Quantum Neural Architectures for Pattern Recognition
 - [[quantum-brain-modeling]] - Integrates QSNN, QLSTM and covariant QEC for brain-inspired quantum modeling (arXiv: 2505.01735)
   - Two-stage model: hypothalamus-like QSNN filtering + hippocampus-like QLSTM memory consolidation
