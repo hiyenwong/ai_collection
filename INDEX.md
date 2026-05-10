@@ -59,6 +59,21 @@
     36|  - Log-depth unitary circuit compilation via sequential two-qubit gate synthesis from TTN isometries
     37|  - **Activation**: quantum state preparation, MPS tensor network, TTN renormalization, log-depth quantum circuit, quantum state compilation, isometric decomposition, quantum data loading
     38|
+### Superintelligent Retrieval Agent
+- [[superintelligent-retrieval-agent]] - 智能检索代理超越黑盒查询，主动推理信息需求并迭代验证检索质量 (arXiv: 2605.06647)
+  - 核心要点 1: 信息差距分析优先于检索——识别需要什么类型的信息、深度如何
+  - 核心要点 2: 策略选择匹配查询类型——事实查询直接搜索，分析查询多跳推理
+  - 核心要点 3: 质量门控循环——检索后评估文档相关性，不满足则重新检索
+  - **Activation**: superintelligent retrieval, 智能检索代理, RAG agent optimization, active retrieval strategy
+
+### Edge-specific Signal Propagation on 3D Mechanism Graphs for QY Prediction
+- [[graph-mechanism-quantum-prediction]] - 边特定信号传播在3D机制图上预测荧光蛋白量子产率 (arXiv: 2605.06644)
+  - 核心要点 1: 色团3D微环境决定量子产率，序列不够——需要结构图表示
+  - 核心要点 2: 边类型特定的消息传递捕获不同物理交互的独特影响
+  - 核心要点 3: H键、π堆叠、静电、范德华各自使用不同权重矩阵
+  - **Activation**: quantum yield prediction, 量子产率预测, mechanism graph, edge-specific GNN, fluorescent protein
+
+
     39|## 2026-05-10 - Quantum Mechanics Daily (Cron Job)
     40|
     41|## 2026-05-10 - 量子力学 + 信息学 (Cron Job)
