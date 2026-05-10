@@ -1,137 +1,296 @@
 ---
 name: event-driven-hopfield-retrieval
-description: "Event-driven asynchronous retrieval in Kernel Logistic Regression (KLR) Hopfield networks. Shows asynchronous sequential updates match synchronous dynamics while achieving P/N ≈ 30 storage capacity, with convergence events proportional to Hamming distance. Enables energy-efficient neuromorphic deployment. Activation: event-driven Hopfield, asynchronous retrieval, KLR Hopfield neuromorphic, sparse associative memory, event-driven associative memory, Hopfield hardware."
+description: "Event-driven asynchronous retrieval in high-capacity kernel Hopfield networks. KLR Hopfield networks achieve P/N ≈ 30 storage capacity with asynchronous updates, enabling energy-efficient neuromorphic deployment. Event count matches initial Hamming distance — minimal spurious oscillations. Activation: Hopfield network, kernel associative memory, event-driven computation, asynchronous retrieval, neuromorphic memory, storage capacity, KLR Hopfield, margin maximization."
 ---
 
-# Event-Driven Hopfield Retrieval
+# Efficient Event-Driven Retrieval in High-Capacity Kernel Hopfield Networks
 
-> Efficient asynchronous retrieval dynamics in high-capacity Kernel Logistic Regression (KLR) Hopfield networks, enabling sparse event-driven computation for neuromorphic hardware deployment.
+**arXiv:** 2605.05978 [cs.NE] (May 2026)  
+**Author:** Akira Tamamori (Aichi Institute of Technology, Japan)  
+**Source:** https://arxiv.org/abs/2605.05978  
+**Published:** NOLTA, IEICE, vol. 17, no. 1, pp. 1–10
 
-## Metadata
-- **Source**: arXiv:2605.05978
-- **Authors**: Akira Tamamori
-- **Published**: 2026-05-07
-- **Category**: Neural and Evolutionary Computing (cs.NE)
+## Core Problem
 
-## Core Methodology
+High-capacity associative memory models like Kernel Logistic Regression (KLR) Hopfield networks rely on computationally expensive **synchronous updates** — evaluating all N neurons simultaneously at each step. For large-scale applications where stored patterns P >> N, this incurs substantial computational and memory access costs, blocking deployment on energy-efficient neuromorphic hardware.
 
-### Key Innovation
+## Key Finding: Asynchronous Dynamics Match Synchronous Performance
 
-High-capacity associative memory models like KLR Hopfield networks typically rely on computationally expensive **synchronous updates**, creating a bottleneck for deployment on energy-efficient **event-driven neuromorphic hardware**. This paper demonstrates that **asynchronous sequential updates** can match synchronous performance while enabling sparse, event-based computation.
+Under appropriately tuned kernel parameters, **asynchronous sequential updates** in KLR Hopfield networks exhibit trajectories that are **statistically indistinguishable** from synchronous dynamics, while maintaining high recall accuracy. This enables efficient neuromorphic deployment without performance degradation.
 
-### Key Findings
+## Technical Framework
 
-1. **Asynchronous ≈ Synchronous**: Under appropriately tuned kernel parameters, asynchronous sequential update trajectories are **statistically indistinguishable** from synchronous dynamics, maintaining high recall accuracy for random patterns.
+### KLR Hopfield Network Model
 
-2. **Storage Capacity P/N ≈ 30**: The asynchronous network achieves empirical storage capacity approaching 30 patterns per neuron in static random pattern regimes, **exceeding classical Hopfield limits** (P/N ≈ 0.14) and even the synchronous KLR limits (~16-20).
+A network of N neurons storing P patterns {ξ^μ}_{μ=1}^{P}:
 
-3. **Event-Proportional Convergence**: The network converges using a number of state transitions (bit flips) **close to the initial Hamming distance** from the target pattern, with **no observable spurious oscillations**.
-
-4. **Large-Margin Attractors**: KLR learning creates a **smooth energy landscape** suited for sparse, event-driven computation — each attractor basin is wide enough that asynchronous updates naturally converge without oscillation.
-
-### Technical Framework
-
-#### Asynchronous Update Rule
-
+**Local field at neuron i:**
 ```
-For each neuron i (selected sequentially or randomly):
-    h_i = Σ_j K(x_i, x_j) · ξ_j    (local field via kernel)
-    ξ_i ← sign(h_i)                 # Update only if sign changes
+h_i(s) = Σ(μ=1→P) α_i^μ · K(s, ξ^μ)
 ```
 
-Key difference from synchronous: only one neuron updates at a time, and only if its state actually changes (event-driven).
+Where:
+- α ∈ R^(P×N): dual variables learned via KLR (optimized independently per neuron)
+- K(·,·): RBF kernel = exp(-γ‖x-y‖²)
+- γ: kernel locality parameter (critical hyperparameter)
 
-#### Why It Works
+**KLR Learning Objective (per neuron i):**
+```
+L(α_i) = -Σ(ν=1→P)[y_ν,i·log(σ(h_i(ξ^ν))) + (1-y_ν,i)·log(1-σ(h_i(ξ^ν)))]
+         + (λ/2)·α_i^T · K · α_i
+```
 
-- **KLR learning** creates large-margin attractors with smooth basins
-- **Kernel parameters** control the width of attraction basins
-- **Asynchronous updates** avoid the oscillatory behavior seen in classical Hopfield networks
-- The energy landscape is sufficiently smooth that random sequential updates reliably descend to attractors
+Where y_ν,i = (ξ_i^ν + 1)/2 ∈ {0,1} is the target bit, σ is the logistic sigmoid, K is the Gram matrix, and λ is weight decay. This optimization yields **large-margin attractors**.
 
-### Computational Efficiency Analysis
+### Pseudo-Energy Function
 
-- **Event count ≈ Hamming distance**: For a corrupted pattern with H bit errors, approximately H events (flips) are needed for correction
-- **No spurious oscillations**: Unlike classical Hopfield, no limit cycles or oscillatory states observed
-- **Constant per-event cost**: Each update only computes the local field for one neuron
+```
+V(s) = -Σ(i=1→N) s_i · h_i(s) = -Σ(i=1→N) s_i · Σ(μ=1→P) α_i^μ · K(s, ξ^μ)
+```
+
+Note: V(s) is a pseudo-energy (Lyapunov candidate), not the strict Ising energy E(s) of classical Hopfield networks.
+
+### Two Update Schemes
+
+#### Synchronous (Parallel) Update
+```
+s_i(t+1) = sign(h_i(s(t)))  for all i = 1,...,N
+```
+- Computationally efficient on GPUs
+- No monotonic energy decrease guarantee
+- Susceptible to oscillations/limit cycles at high loads
+
+#### Asynchronous (Sequential) Update
+```
+s_i^new = sign(h_i(s_current))  for single neuron i
+```
+- One epoch = N sequential updates in random permutation order
+- Suppresses macroscopic oscillations
+- Large margins drive local field alignment → convergence to fixed-point attractor
+- **Key insight**: Margin-induced smoothness of attractor landscape prevents spurious oscillations
+
+### Kernel Parameter Regimes
+
+| Regime | γ | Properties |
+|--------|------|------------|
+| Ridge (static memory) | 0.02 | Sharp/deep attractors, optimal for minimal noise |
+| **Robust** (this work) | **0.1** | Wider attractor basins, robust to noise, high capacity |
+
+The broader kernel (γ=0.1) provides wider attractor basins necessary for stable retrieval under high noise (10-20%) and large storage loads.
+
+## Empirical Results
+
+### 1. Trajectory Similarity (Sync vs Async)
+- Starting from 20% noisy initial state (N=50, P/N=3.0, γ=0.1)
+- Both schemes converge to overlap > 0.95 within a few steps
+- Trajectories nearly indistinguishable within statistical variation
+- Confirmed at larger scales (N=100, N=200)
+
+### 2. Storage Capacity
+| Network Size (N) | Max Tested P/N | Accuracy |
+|-------------------|----------------|----------|
+| 50 | ~20 | 1.0 (starts degrading) |
+| 100 | 30 | 1.0 |
+| 200 | 30 | 1.0 |
+
+- **P/N ≈ 30** maintained with perfect recall — orders of magnitude above classical Hebbian limit (P ≈ 0.14N)
+- Capacity benefits from increasing orthogonality of random patterns in high-dimensional kernel feature space
+- Sync and async performance consistent across all sizes and loads
+
+### 3. Event-Driven Efficiency
+- Total bit flips required ≈ initial Hamming distance (theoretical minimum)
+- At 20% noise (~10 initial errors): ~10 events needed, 95% recall success
+- At 40% noise (~15 initial errors): ~15 events needed, <10% recall
+- **No spurious oscillations observed** — network corrects erroneous bits directly
+
+### Computational Cost Comparison
+
+For a 50-neuron network at 20% initial noise:
+- **Synchronous**: ~3 steps × 50 evaluations = **150 evaluations**
+- **Asynchronous (event-driven)**: ~10 events = **10 evaluations**
+- **Speedup**: ~15× fewer computations
+
+## Margin-Induced Smoothness
+
+The key mechanism enabling efficient asynchronous retrieval:
+
+1. **Large classification margins** from KLR optimization ensure local field h_i(s) aligns strongly with target state
+2. This suppresses noise from update order permutations
+3. Energy landscape characterized by **smooth, wide basins of attraction** largely free of rugged local minima
+4. Individual bit flips tend to decrease pseudo-energy in practice
+5. Result: direct convergence path with minimal secondary bit flips
+
+### Why No Spurious Oscillations?
+
+Unlike classical Hopfield networks where asynchronous updates often traverse rugged landscapes and fall into spurious states, KLR's margin maximization creates attractor basins that:
+- Are deep enough to capture noisy initial states
+- Are wide enough to accommodate update order variation
+- Are smooth enough to prevent oscillatory behavior
+
+## Trade-off: Capacity vs Locality
+
+- **γ = 0.02 (Ridge)**: Maximizes attractor sharpness, optimal for static memory with minimal noise
+- **γ = 0.1 (Robust)**: Required for P/N > 20 with 10-20% noise robustness
+- The broader kernel trades some per-pattern specificity for wider basins that accommodate more patterns and more noise
 
 ## Implementation Guide
 
-### Prerequisites
-- KLR-trained Hopfield network weights
-- Kernel function (e.g., RBF, polynomial)
-- Event-driven simulation framework or neuromorphic hardware
-
-### Step-by-Step
-
-1. **Train KLR Hopfield** on pattern set {ξ^μ} using kernel logistic regression
-2. **Tune kernel parameters** (bandwidth, regularization) for smooth attractor basins
-3. **Initialize** with corrupted pattern (noisy input)
-4. **Run asynchronous updates**:
-   - Select neurons sequentially or randomly
-   - Compute local field only for selected neuron
-   - Update state only if sign changes (event trigger)
-   - Track total events (bit flips)
-5. **Check convergence**: no state changes for one full pass through all neurons
-
-### Minimal Code Example
+### KLR Hopfield Network
 
 ```python
 import numpy as np
-from sklearn.kernel_approximation import RBFSampler
+from scipy.special import expit  # sigmoid
 
-def async_hopfield_retrieve(stored_patterns, noisy_input, kernel_fn, max_events=1000):
-    """
-    Asynchronous event-driven retrieval in KLR Hopfield network.
+class KLRHopfieldNetwork:
+    def __init__(self, N, gamma=0.1, lr=0.1, weight_decay=0.01):
+        self.N = N
+        self.gamma = gamma  # kernel locality parameter
+        self.lr = lr
+        self.weight_decay = weight_decay
+        self.alpha = None  # dual variables, shape (P, N)
+        self.patterns = None  # stored patterns, shape (P, N)
     
-    stored_patterns: (P, N) matrix of stored binary patterns
-    noisy_input: (N,) corrupted binary pattern
-    kernel_fn: kernel function K(x, y)
-    max_events: maximum number of state transitions
-    """
-    N = len(noisy_input)
-    state = noisy_input.copy()
-    events = 0
+    def rbf_kernel(self, x, y):
+        """RBF kernel: K(x,y) = exp(-gamma * ||x-y||^2)"""
+        return np.exp(-self.gamma * np.sum((x - y) ** 2))
     
-    for _ in range(max_events):
-        changed = False
-        # Random sequential update
-        order = np.random.permutation(N)
-        for i in order:
-            # Compute local field for neuron i only
-            h_i = 0
-            for mu in range(len(stored_patterns)):
-                h_i += kernel_fn(state, stored_patterns[mu]) * stored_patterns[mu, i]
-            
-            new_state = 1 if h_i > 0 else -1
-            if new_state != state[i]:
-                state[i] = new_state
-                events += 1
-                changed = True
+    def gram_matrix(self):
+        """Compute Gram matrix K_mu_nu = K(xi^mu, xi^nu)"""
+        P = self.patterns.shape[0]
+        K = np.zeros((P, P))
+        for mu in range(P):
+            for nu in range(P):
+                K[mu, nu] = self.rbf_kernel(self.patterns[mu], self.patterns[nu])
+        return K
+    
+    def learn(self, patterns, iterations=500):
+        """Learn dual variables via KLR optimization."""
+        self.patterns = patterns.copy()
+        P, N = patterns.shape
+        self.alpha = np.zeros((P, N))
+        K = self.gram_matrix()
         
-        if not changed:  # Converged
-            break
+        for iteration in range(iterations):
+            for i in range(N):
+                y = (patterns[:, i] + 1) / 2  # target bits in {0, 1}
+                
+                # Compute local fields for all patterns
+                h = np.array([
+                    sum(self.alpha[mu, i] * self.rbf_kernel(patterns[nu], patterns[mu])
+                        for mu in range(P))
+                    for nu in range(P)
+                ])
+                
+                # Gradient of L2-regularized negative log-likelihood
+                sigma_h = expit(h)
+                grad = -patterns[:, i] * (y - sigma_h) + self.weight_decay * (K @ self.alpha[:, i])
+                
+                self.alpha[:, i] -= self.lr * grad
     
-    return state, events
+    def local_field(self, s, neuron_idx):
+        """Compute local field h_i(s) for neuron i."""
+        h = sum(
+            self.alpha[mu, neuron_idx] * self.rbf_kernel(s, self.patterns[mu])
+            for mu in range(self.patterns.shape[0])
+        )
+        return h
+    
+    def retrieve_synchronous(self, s_init, max_steps=20):
+        """Synchronous (parallel) retrieval."""
+        s = s_init.copy()
+        trajectory = [s.copy()]
+        
+        for _ in range(max_steps):
+            h = np.array([self.local_field(s, i) for i in range(self.N)])
+            s = np.sign(h)
+            s[s == 0] = 1  # convention: sign(0) = 1
+            trajectory.append(s.copy())
+        
+        return s, trajectory
+    
+    def retrieve_asynchronous(self, s_init, max_epochs=20):
+        """
+        Asynchronous (sequential) retrieval.
+        One epoch = N sequential updates in random order.
+        """
+        s = s_init.copy()
+        trajectory = [s.copy()]
+        event_count = 0  # total bit flips
+        
+        for epoch in range(max_epochs):
+            order = np.random.permutation(self.N)
+            epoch_changed = False
+            
+            for i in order:
+                h_i = self.local_field(s, i)
+                s_new = 1 if h_i >= 0 else -1
+                
+                if s_new != s[i]:
+                    s[i] = s_new
+                    event_count += 1
+                    epoch_changed = True
+            
+            trajectory.append(s.copy())
+            if not epoch_changed:
+                break
+        
+        return s, trajectory, event_count
 ```
 
-## Applications
+### Usage Example
 
-- **Neuromorphic associative memory** — deploy on event-driven hardware (Loihi, SpiNNaker)
-- **Low-power pattern completion** — sparse updates minimize energy consumption
-- **High-capacity memory systems** — P/N ≈ 30 exceeds classical Hopfield by 200x
-- **Real-time error correction** — convergence time proportional to error magnitude
-- **Brain-inspired memory modeling** — asynchronous updates more biologically plausible
+```python
+# Store 150 random patterns in 50-neuron network
+N, P = 50, 150  # P/N = 3.0
+patterns = np.random.choice([-1, 1], size=(P, N))
 
-## Pitfalls
+net = KLRHopfieldNetwork(N, gamma=0.1)
+net.learn(patterns, iterations=500)
 
-- **Kernel parameter sensitivity**: bandwidth must be tuned for smooth attractor basins; too narrow → fragmented basins, too wide → merged attractors
-- **Random pattern regime**: results demonstrated for random patterns; structured data capacity may differ
-- **Sequential order matters**: random vs. fixed ordering may affect convergence speed
-- **Not tested on continuous states**: current analysis assumes binary {+1, -1} neurons
+# Retrieve from noisy initial state (20% noise)
+noisy = patterns[0].copy()
+flip_idx = np.random.choice(N, size=int(0.2 * N), replace=False)
+noisy[flip_idx] *= -1
+
+# Asynchronous retrieval
+result, trajectory, events = net.retrieve_asynchronous(noisy)
+print(f"Converged in {events} events (theoretical min: {int(0.2 * N)})")
+print(f"Recall accuracy: {np.mean(result == patterns[0]):.2%}")
+```
+
+## Applications to Neuromorphic Hardware
+
+1. **Event-driven associative memory**: Each bit flip triggers computation only for affected neurons
+2. **Low-power pattern retrieval**: 15× fewer computations vs. synchronous evaluation
+3. **Scalable storage**: P/N ≈ 30 capacity enables large pattern libraries
+4. **No oscillation overhead**: Clean convergence eliminates need for oscillation detection/termination logic
+
+## Limitations
+
+1. Kernel matrix computation is O(P²) — scaling to very large P requires approximation methods
+2. Results validated on random patterns; structured/real-world patterns may behave differently
+3. Finite-size analysis only (N up to 200); asymptotic behavior unknown
+4. RBF kernel chosen; other kernel families may offer different trade-offs
+5. No theoretical proof of convergence for asynchronous updates — empirical evidence only
+
+## Comparison with Modern Hopfield Networks (MHNs)
+
+| Property | KLR Hopfield | Modern Hopfield (MHN) |
+|----------|-------------|----------------------|
+| Architecture | Binary-state, quadratic energy | Complex nonlinearities (e.g., Softmax) |
+| Hardware compatibility | High (simple operations) | Low (requires Softmax) |
+| Asynchronous support | Yes (this work) | Not explored |
+| Storage capacity | P/N ≈ 30 | Higher, but hardware cost |
+| Energy landscape | Smooth basins (margin-induced) | Complex, potentially rugged |
+
+## Activation Keywords
+
+kernel Hopfield network, asynchronous retrieval, event-driven computation, associative memory, neuromorphic hardware, storage capacity, KLR, margin maximization, RBF kernel, attractor landscape, pseudo-energy, pattern retrieval, error correction, energy-efficient memory, binary-state network
 
 ## Related Skills
+
+- kernel-hopfield-event-driven-retrieval
 - kernel-hopfield-associative-memory
 - kernel-hopfield-attractor-geometry
-- hippocampal-replay-credit-assignment
-- agent-memory-framework
-- eeg-hopfield-emotion-energy
+- neuromorphic-continual-nuclear-ics
+- snn-learning-survey

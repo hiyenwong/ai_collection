@@ -1,3 +1,21 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Unifying Dynamical Systems and Graph Theory to Mechanistically Understand Computation in Neural Networks
+- [[unifying-dynamics-graph-neural-computation]] - Graph resolvent recovers input-output routing from RNN weights; R-RNNs regularize multi-hop pathways for temporally structured sparsity (arXiv: 2605.03598)
+  - Core: RNN computation = multi-hop pathways on graph, not individual weights; resolvent R = (I - αW*)^(-1) recovers spatial-temporal routing
+  - Hop-wise decomposition (W^k) reveals how network temporally routes information — even hops process signal, odd hops process noise
+  - R-RNNs: regularize resolvent instead of weights → better test MSE, temporal sparsity matching task structure, robustness under strong regularization
+  - Reconciles Sherringtonian (local) and Hopfieldian (distributed) views through walk accumulation
+  - **Activation**: multi-hop pathways, resolvent RNN, R-RNN, graph computation, neural network interpretability, structure-function mapping, temporal routing
+
+### Efficient Event-Driven Retrieval in High-Capacity Kernel Hopfield Networks
+- [[event-driven-hopfield-retrieval]] - KLR Hopfield networks achieve P/N ≈ 30 storage capacity with asynchronous updates — event count matches Hamming distance, no spurious oscillations (arXiv: 2605.05978)
+  - Core: Margin-induced smooth attractor landscape enables asynchronous updates matching synchronous performance
+  - Storage capacity P/N ≈ 30 (vs classical 0.14N); robust kernel γ=0.1 enables wide basins for noisy retrieval
+  - Event-driven efficiency: 15× fewer computations than synchronous — bit flips ≈ initial Hamming distance
+  - Directly applicable to neuromorphic hardware for low-power associative memory
+  - **Activation**: kernel Hopfield network, asynchronous retrieval, event-driven computation, associative memory, neuromorphic hardware, storage capacity
+
 ### TunnElQNN: Hybrid Quantum-classical Neural Network
 - [[hybrid-quantum-neural-tunneling]] - Hybrid QNN with quantum tunneling optimization for escaping local minima (ResearchSquare: rs-8537433)
   - Quantum tunneling probability allows optimizer to escape local minima that trap gradient descent

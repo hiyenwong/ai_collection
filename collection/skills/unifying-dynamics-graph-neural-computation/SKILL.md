@@ -1,158 +1,198 @@
 ---
 name: unifying-dynamics-graph-neural-computation
-description: >
-  Unifying dynamical systems and graph theory to mechanistically understand computation
-  in neural networks. Introduces resolvent-RNNs (R-RNNs) that constrain multi-hop pathways
-  to induce temporal sparsity matching task structure. Addresses the gap between structural
-  and functional connectivity in RNNs, showing that computation is implemented through
-  multi-hop communication rather than direct connections. Use when: analyzing RNN connectivity-function
-  relationships, designing path-constrained regularization, studying temporal information
-  routing in recurrent networks, comparing L1 vs pathway-based sparsity, or investigating
-  how network structure supports hierarchical modular tasks.
-  Activation: resolvent-RNN, R-RNN, multi-hop pathway, temporal sparsity, graph neural
-  computation, dynamical systems graph theory, pathway regularization, structure-function
-  neural network, 多跳路径, 时间稀疏性, 图神经网络计算
+description: "Framework unifying dynamical systems and graph theory to mechanistically understand computation in neural networks. Uses resolvent-based multi-hop pathway analysis to recover input-output routing structure from connectivity, introduces R-RNNs with resolvent-based regularization for temporally structured sparsity. Activation: multi-hop, resolvent RNN, graph computation, neural network interpretability, structure-function mapping, temporal routing, R-RNN, network communication."
 ---
 
-# Unifying Dynamical Systems and Graph Theory for Neural Network Computation
+# Unifying Dynamical Systems and Graph Theory to Mechanistically Understand Computation in Neural Networks
 
-Based on: Sharma, Goodman & Akarca (2026), arXiv:2605.03598
+**arXiv:** 2605.03598 [cs.NE, cs.AI] (May 2026)  
+**Authors:** Jatin Sharma, Dan F.M. Goodman, Danyal Akarca (Imperial College London)  
+**Source:** https://arxiv.org/abs/2605.03598
 
-## Core Insight
+## Core Problem
 
-In recurrent neural networks, **structural connectivity** (direct weights) and **functional
-connectivity** (information flow) diverge. Computation is implemented through **multi-hop
-pathways** between input and output units, not through individual weights alone.
+How to infer what a neural network computes from its structure? In neural systems, structural and functional connectivity diverge — direct connections capture only single-step interactions, but computation in recurrent networks is mediated by multi-hop pathways unfolding over time.
 
-### Key Finding: Decomposing Pathways by Hop Length
+## Key Insight: Multi-Hop Pathways Over Single Connections
 
-By modeling the RNN as a graph and analyzing multi-hop pathways, we can recover how the
-network **temporally routes information**. Decomposing pathways by hop length reveals
-the temporal structure of computation:
-- Short hops → fast, local processing
-- Long hops → slow, integrative processing
+Computation in recurrent networks is better understood through **multi-hop pathways** than through individual weight connections. The raw weight matrix W alone cannot recover the learned input-output structure, even when the network has sufficient capacity. Multi-hop graph measures reveal the spatial-temporal routing that mediates information flow.
 
-## Resolvent-RNNs (R-RNNs)
+## Technical Framework
 
-### Problem with Standard Regularization
+### Neural Networks as Graphs
 
-L1 regularization constrains **single-hop** structure (individual weights) rather than
-the **multi-hop pathways** that actually support computation. This misalignment limits
-effectiveness, especially for tasks requiring structured temporal processing.
+An RNN's weight matrices form an adjacency matrix W ∈ R^(n×n) where n = i + h + o (input + hidden + output units). The key property: W^k tells you how many walks of length k exist between any two nodes. Different network structures can share the same multi-hop pattern (W^k) despite different single-hop structures (W).
 
-### Solution: Pathway-Constrained Regularization
+### The Resolvent as Multi-Hop Summary
 
-R-RNNs use the **resolvent** (I - γW)⁻¹ to constrain multi-hop communication:
+The graph resolvent aggregates walks of all lengths with exponential decay:
 
 ```
-R(γ) = (I - γW)⁻¹ = I + γW + γ²W² + γ³W³ + ...
+R = (I - αW*)^(-1) = Σ(k=0→∞) (αW*)^k
 ```
 
-where W is the weight matrix and γ is a scaling parameter. The resolvent sums all
-pathway contributions across all hop lengths, weighted by γ^k for k-hop paths.
+Where W* = W/λ_max (normalized) and α ∈ (0,1) controls long-walk influence. The resolvent corresponds to a **leaky cascade** dynamical process — information propagates through the network with diminishing influence at each hop.
 
-### R-RNN Regularization
+### Truncated Resolvent for Temporal Tasks
 
-Instead of penalizing individual weights (L1: ||W||₁), R-RNNs penalize pathway strength:
+For RNNs with sequence length L, only finite hops can influence output:
 
 ```
-L_R = ||R(γ)||₁  or  L_R = ||R(γ) - R_target||
+R_io = Σ(k=2→L+1) (αW*)^k  [input-to-output block]
 ```
 
-This induces **temporal sparsity** that matches the task structure.
+This truncated resolvent captures the input-output influence map R_io, representing the signed weighted sum over all walks between each input and output node.
 
-## When to Use
+### Hop-Wise Decomposition Reveals Temporal Routing
 
-| Scenario | Method |
-|----------|--------|
-| Simple feedforward network | L1/L2 regularization |
-| RNN with dense temporal dependencies | R-RNN regularization |
-| Task with known temporal sparsity | R-RNN with task-matched target |
-| Analyzing structure-function gap | Multi-hop pathway decomposition |
-| Hierarchical modular tasks | R-RNN (matches modular temporal structure) |
+Decomposing by hop length (computing W^k_io for individual k) reveals **how the network temporally routes information**:
+- Hop length k corresponds to inputs arriving at time t = L - (k - 2)
+- Even-numbered hops process signal inputs; odd hops process noise inputs
+- This provides an input-agnostic method to characterize routing capacity
 
-## Benefits Over L1 Regularization
+## R-RNNs: Resolvent-Based Regularization
 
-1. **Stronger sparsity-function alignment**: Pruned pathways match computational needs
-2. **Better robustness under strong regularization**: Maintains performance at higher sparsity
-3. **Temporal sparsity matching task structure**: Naturally discovers optimal temporal routing
-4. **Improved performance on sparse-signal tasks**: Even when task signal is temporally sparse
+### The Problem with L1 Regularization
 
-## Implementation Pipeline
+L1 regularization acts on individual weights (single-hop), but computation is implemented through multi-hop pathways. Sparse weights ≠ sparse functional pathways — a small number of strong connections can still induce dense multi-hop routing.
+
+### R-RNN Solution
+
+Regularize the resolvent directly instead of individual weights:
+
+```
+L_sparsity = Σ|R_io|  (vs. L1: Σ|W|)
+```
+
+Where R is computed from W (not normalized W*) to prevent trivial reduction by increasing λ_max.
+
+### Advantages of R-RNNs
+
+1. **Improved performance**: Lower test MSE than L1-RNNs on modular tasks
+2. **Temporal sparsity**: Suppresses redundant pathways across all temporal routes
+3. **Task-aligned sparsity**: Selectively suppresses hops matching task structure (e.g., suppresses signal-carrying hops when signal is sparse)
+4. **Robustness under strong regularization**: Maintains performance at high β where L1-RNNs degrade rapidly
+5. **Sparsity-function alignment**: Achieves communication sparsity with minimal performance loss
+
+## Mechanistic Interpretability Applications
+
+### Reconciling Sherringtonian and Hopfieldian Views
+
+- **Sherringtonian** (localized computation): Local connectivity generates distributed routing patterns through accumulation of walks
+- **Hopfieldian** (distributed computation): What appears as distributed processing reflects exploitation of many parallel pathways
+- The resolvent makes this link explicit, connecting local weights to global functional consequences
+
+### Structure-Function Relationships
+
+Structural modularity only translates to functional modularity if the walk structure respects module boundaries. Computing R_io for networks with varying structural modularity reveals why the structure-function relationship breaks down in some regimes.
+
+### Input-Agnostic Routing Capacity
+
+Unlike the Jacobian (which measures input-dependent sensitivity and requires extensive controlled experiments), hop-based measures describe a network's "routing capacity" just from its connectivity — enabling comparison of how networks would respond to novel stimuli without new input-output measurements.
+
+## Implementation Guide
+
+### Computing the Resolvent
 
 ```python
 import numpy as np
-from scipy.linalg import inv
 
-def compute_resolvent(W, gamma=0.9, max_power=None):
-    """Compute resolvent matrix R(γ) = (I - γW)⁻¹
-    
-    Use Neumann series for approximation or direct inversion.
+def compute_resolvent(W, alpha=0.8, L=None):
     """
-    n = W.shape[0]
-    if max_power is None:
-        # Direct inversion (more accurate)
-        return inv(np.eye(n) - gamma * W)
+    Compute truncated resolvent for RNN weight matrix.
+    
+    Args:
+        W: Weight matrix (n x n), n = i + h + o
+        alpha: Damping parameter (0 < alpha < 1)
+        L: Sequence length (truncation point)
+    
+    Returns:
+        R: Truncated resolvent (input-to-output block)
+    """
+    lambda_max = np.max(np.abs(np.linalg.eigvals(W)))
+    W_norm = W / lambda_max
+    
+    if L is not None:
+        # Truncated: only hops 2 to L+1
+        R = np.zeros_like(W)
+        Wk = W_norm @ W_norm  # Start at k=2
+        for k in range(2, L + 2):
+            R += (alpha ** k) * Wk
+            Wk = Wk @ W_norm
     else:
-        # Neumann series approximation
-        R = np.eye(n)
-        Wk = np.eye(n)
-        for k in range(1, max_power + 1):
-            Wk = Wk @ W
-            R += (gamma ** k) * Wk
-        return R
-
-def pathway_decomposition(W, gamma=0.9, max_hops=10):
-    """Decompose multi-hop pathways by hop length.
+        # Full resolvent: (I - alpha*W_norm)^(-1)
+        n = W.shape[0]
+        R = np.linalg.inv(np.eye(n) - alpha * W_norm)
     
-    Returns contribution of each hop length to total pathway strength.
-    """
-    n = W.shape[0]
-    contributions = {}
-    Wk = np.eye(n)
-    for k in range(max_hops + 1):
-        if k > 0:
-            Wk = Wk @ W
-        contributions[k] = (gamma ** k) * np.abs(Wk)
-    return contributions
-
-def r_rnn_loss(W, gamma=0.9, lambda_reg=0.01):
-    """R-RNN regularization loss."""
-    R = compute_resolvent(W, gamma)
-    return lambda_reg * np.sum(np.abs(R))
+    # Extract input-to-output block
+    i, h, o = input_size, hidden_size, output_size
+    R_io = R[:i, i+h:i+h+o]
+    
+    return R_io
 ```
 
-## Key Parameters
+### R-RNN Regularization
 
-- **γ (gamma)**: Scaling parameter controlling relative weight of longer paths
-  - γ → 0: dominated by direct connections (approaches L1)
-  - γ → 1/||W||: emphasizes long-range pathways
-- **max_hops**: Maximum pathway length for decomposition analysis
-- **λ_reg**: Regularization strength for R-RNN penalty
+```python
+def resolvent_regularization(W, alpha=0.8, L=None):
+    """Compute L_sparsity = sum|R_io| for R-RNN training."""
+    R_io = compute_resolvent(W, alpha, L)
+    return np.sum(np.abs(R_io))
 
-## Testable Predictions from the Paper
+# In training loop:
+# loss = task_loss + beta * resolvent_regularization(W)
+```
 
-1. R-RNNs achieve better performance than L1-RNNs under strong regularization
-2. Multi-hop pathway analysis reveals temporal information routing patterns
-3. R-RNNs exhibit stronger sparsity-function alignment
-4. Performance advantage is largest when task signal is temporally sparse
+### Hop-Wise Decomposition
 
-## Pitfalls
+```python
+def hop_wise_decomposition(W, k, input_size, hidden_size, output_size):
+    """Compute W^k input-to-output block."""
+    Wk = np.linalg.matrix_power(W, k)
+    i, h, o = input_size, hidden_size, output_size
+    return Wk[:i, i+h:i+h+o]
 
-- **Resolvent inversion**: (I - γW) must be invertible; ensure γ < 1/ρ(W) where ρ is spectral radius
-- **Computational cost**: Matrix inversion is O(n³); use Neumann series for large networks
-- **Interpretation**: Long pathways don't necessarily mean long temporal delays; depends on dynamics
-- **Nonlinear RNNs**: The resolvent analysis is exact for linear RNNs; for nonlinear RNNs,
-  it applies to the Jacobian along trajectories
+# Analyze temporal routing
+for k in range(2, L + 2):
+    Wk_io = hop_wise_decomposition(W, k, i, h, o)
+    # Wk_io reveals routing for inputs at time t = L - (k - 2)
+```
+
+## Experimental Validation
+
+### Tasks Tested
+- Module averaging (within-module aggregation)
+- Subtraction (hierarchical inhibitory pathways)
+- Addition (hierarchical excitatory pathways)
+- Multiplication (non-linear, defined via task Jacobian)
+- Oscillating on-off signal (temporal routing)
+
+### Key Results
+- R_io correlation with optimal solution: 0.92-0.99 (vs. W_hh: 0.03-0.24)
+- R-RNNs achieve lower test MSE than L1-RNNs across all β values
+- R-RNNs maintain performance under strong regularization where L1-RNNs fail
+
+## Applications to Biological Networks
+
+1. **Brain network analysis**: Use resolvent to predict functional connectivity from structural connectivity
+2. **Clinical populations**: Compare R_io between healthy and clinical groups as graph metric
+3. **Information theory**: Test whether high R_io pathways carry more mutual information
+4. **Physical computing systems**: Extend to any system where dynamics unfold on a graph
+
+## Limitations
+
+1. Resolvent assumes a specific dynamical prior (leaky cascade); other systems may need communicability or alternative measures
+2. Current validation on intentionally modular tasks; generality to naturalistic, high-dimensional tasks is open
+3. Extending beyond shallow RNNs (Transformers, MoEs) requires careful node/edge definitions
+4. Connection to information theoretic quantities remains to be established
+
+## Activation Keywords
+
+multi-hop pathways, resolvent RNN, R-RNN, graph theory neural networks, structure-function mapping, temporal routing, network communication, mechanistic interpretability, sparsity regularization, input-output routing, communicability, leaky cascade, Sherringtonian, Hopfieldian, routing capacity, neural network as graph
 
 ## Related Skills
 
-- neural-population-dynamics
-- rnn-task-degradation-analysis
+- unifying-dynamics-graph-neural-computation
 - brain-network-controllability
-- snn-performance-analysis
-
-## Reference
-
-Sharma, J., Goodman, D.F., & Akarca, D. (2026). "Unifying Dynamical Systems and Graph
-Theory to Mechanistically Understand Computation in Neural Networks." arXiv:2605.03598 [cs.NE].
+- hermes-brain-connectivity
+- snn-learning-survey
