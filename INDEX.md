@@ -9,6 +9,32 @@
 
 ## 2026-05-10 - Quantum Mechanics Daily (Cron Job)
 
+## 2026-05-10 - 量子力学 + 信息学 (Cron Job)
+
+### Exponential quantum advantage in processing massive classical data
+- [[quantum-polylog-data-processing]] - 证明多对数规模量子计算机在ML任务中实现指数级优势 (arXiv: 2605.06539)
+  - 量子随机访问QRAM实现多对数查询复杂度
+  - 量子优势来自量子并行性+指数态空间，与输入数据无关
+  - **Activation**: 量子优势, 海量数据处理, polylog, quantum advantage, massive data
+
+### Hybrid Quantum-Classical GANs for the Generation of Adversarial Network Flows
+- [[hybrid-quantum-gan-security]] - 混合量子-经典GAN改善对抗流量生成质量并降低计算开销 (arXiv: 2605.06629)
+  - 量子电路作为生成器克服mode collapse
+  - 减少训练所需高维数据量和计算成本
+  - **Activation**: 量子GAN, 对抗流量, 网络安全, quantum GAN, adversarial traffic
+
+### Machine Learning Approaches to Building Quantum Circuits for Sets of Matrices
+- [[ml-quantum-circuit-construction]] - 可解释ML构建任意维度qudit系统最短解析量子算法 (arXiv: 2605.06633)
+  - 通过ML参数分析构造同时对角化矩阵集的通用量子算法
+  - 适用于任意维度qudit系统
+  - **Activation**: ML构建量子电路, qudit, 同时对角化, matrix diagonalization
+
+### Quantum Information Theory with Deep Neural Networks
+- [[quantum-info-deep-learning]] - 深度学习近似量子态、优化协议、自动发现量子纠错码 (arXiv: 2605.06547)
+  - 神经量子态(NQS)近似多体波函数
+  - 自动架构搜索发现新型量子纠错码
+  - **Activation**: 量子信息论, 深度学习, neural quantum state, QEC discovery
+
 ### Machine Learning Approaches to Building Quantum Circuits for Sets of Matrices
 - [[quantum-circuit-builder]] - ML-driven quantum circuit synthesis using parameterized ansatz and fidelity-based optimization for implementing target matrix sets (arXiv: 2605.06633)
   - Parameterized quantum circuits with rotation/entangling gates optimized via classical gradient descent or parameter-shift rule
