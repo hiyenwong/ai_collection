@@ -1,3 +1,33 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Update)
+
+### Quantum-enhanced Large Language Models via Cayley Unitary Adapters
+- [[quantum-cayley-llm-adapters]] - Cayley-parameterized unitary adapters inserted into frozen LLM projection layers improve Llama 3.1 8B perplexity by 1.4% with only 6K quantum params on 156-qubit IBM hardware (arXiv: 2605.05914)
+  - Core: Cayley transform parameterizes unitary circuits without barren plateau; adapters placed in frozen projection layers achieve 83% compression recovery
+  - Noise-expressivity phase transition identifies concrete path to quantum utility at larger qubit scales
+  - End-to-end inference validated on real IBM System Two QPU, not simulation
+  - **Activation**: quantum-enhanced LLM, Cayley unitary adapter, quantum LLM fine-tuning, QPU inference for LLM, parameter-efficient quantum LLM, quantum adapter layers
+
+### Quantum Hierarchical Reinforcement Learning via Variational Quantum Circuits
+- [[quantum-hierarchical-rl]] - Hybrid option-critic agent replaces classical feature extractor with VQC, saving 66% params while outperforming classical baselines; quantum option-value estimation identified as bottleneck (arXiv: 2605.03434)
+  - Core: Quantum feature extractors excel, but quantum option-value functions degrade performance — hybrid design (quantum features + classical decisions) is optimal
+  - Architecture choices (circuit depth, entanglement pattern, encoding strategy) critically affect RL performance
+  - Parameter efficiency, not raw accuracy, is the key advantage
+  - **Activation**: quantum reinforcement learning, quantum hierarchical RL, option-critic quantum, variational quantum RL, parameter-efficient RL, quantum decision-making
+
+### Multitime Memory Beyond the Quantum Regression Theorem
+- [[quantum-multitime-memory]] - Exact decomposition of two-time propagator into QRT contribution + memory term encoding system-environment correlations; introduces operational non-Markovianity quantifier for sequential measurements (arXiv: 2605.06427)
+  - Core: Memory term yields explicit second-order correction via reduced map + bath correlations in weak-coupling regime
+  - Reduced-state non-Markovianity ≠ multitime memory — higher temporal order reveals hidden memory
+  - Pseudomode embedding provides non-perturbative reference for benchmarking
+  - **Activation**: quantum memory effects, non-Markovian quantum dynamics, quantum regression theorem violation, sequential quantum measurements, spin-boson model, multitime correlation
+
+### Neural Network Modeling of Many-Body Super- and Sub-Radiant Dynamics
+- [[neural-quantum-manybody-dynamics]] - First application of neural quantum states to dissipative light-matter dynamics beyond exact diagonalization limits, simulating ~40 atoms in dense arrays with structured dissipation (arXiv: 2605.04640)
+  - Core: NQS captures both superradiant fast emission and subradiant long-lived trapped states in 1D/2D atomic arrays
+  - Transformer-based wavefunctions with TDVP time evolution and Lindblad dissipative terms
+  - Results experimentally realizable with cold atomic quantum simulators
+  - **Activation**: neural quantum states, many-body quantum dynamics, superradiant simulation, subradiant dynamics, neural network wavefunction, Lindblad neural states
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning

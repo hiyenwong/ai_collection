@@ -1,121 +1,117 @@
 ---
 name: quantum-multitime-memory
-description: "Multitime memory methodology beyond quantum regression theorem for sequential measurement statistics. Use when analyzing non-Markovian quantum processes, multi-time correlation functions, quantum memory effects, or sequential quantum measurement scenarios where standard regression theorem fails."
+description: "Framework for analyzing memory effects in open quantum systems beyond the Quantum Regression Theorem (QRT). Decomposes multitime propagators into QRT-like contributions and memory terms encoding system-environment correlations. Provides operational quantifier of non-Markovianity for sequential measurement statistics. Use when: quantum memory effects, non-Markovian quantum dynamics, quantum regression theorem violation, open quantum system memory, sequential quantum measurements, spin-boson model, pseudomode embedding, multitime correlation functions."
 ---
 
-# Multitime Quantum Memory Beyond Regression Theorem
+# Quantum Multitime Memory Analysis
 
-> Methodology for characterizing quantum memory effects in sequential measurement statistics that go beyond the quantum regression theorem, capturing non-Markovian temporal correlations.
+## Description
 
-## Metadata
-- **Source**: arXiv:2605.06427
-- **Authors**: Paolo Luppi, Claudia Benedetti, Andrea Smirne
-- **Published**: 2026-05-07
-- **Categories**: quant-ph
-- **Comments**: 12 pages, 6 figures
+Analyzes memory in sequential measurement statistics of open quantum systems by decomposing multitime propagators into a QRT-like contribution and a memory term. The memory term encodes system-environment correlations and provides an operational quantifier of non-Markovianity beyond single-time analysis.
 
-## Core Methodology
+## Activation Keywords
 
-### Key Innovation
-The quantum regression theorem (QRT) provides a standard method for computing multi-time correlation functions in open quantum systems, but it fails when the system has memory (non-Markovian dynamics). This work establishes a framework for computing multitime statistics that correctly accounts for memory effects beyond the QRT approximation.
+- quantum memory effects
+- non-Markovian quantum dynamics
+- quantum regression theorem violation
+- open quantum system memory
+- sequential quantum measurements
+- spin-boson model
+- pseudomode embedding
+- multitime correlation functions
+- QRT violation
+- quantum non-Markovianity
 
-### Technical Framework
+## Core Framework
 
-#### Step 1: Identify QRT Failure Conditions
-The QRT assumes:
-- Markovian dynamics (no memory)
-- Time-scale separation between system and environment
-- Factorized initial system-environment state
+### Two-Time Propagator Decomposition
 
-When these fail, multi-time correlations deviate from QRT predictions.
+For an open quantum system with factorized initial state, the two-time propagator decomposes exactly:
 
-#### Step 2: Generalized Multi-Time Correlation Functions
-For sequential measurements at times t_1, t_2, ..., t_n:
 ```
-C(t_1, ..., t_n) = Tr[O_n U(t_n, t_{n-1}) ... O_1 U(t_1, 0) ρ_0 U†(t_1, 0) ... O_n]
+K(t₂, t₁) = K_QRT(t₂, t₁) + K_memory(t₂, t₁)
 ```
-where the evolution U includes system-environment correlations.
 
-#### Step 3: Process Tensor Formalism
-Use the process tensor (or quantum comb) framework:
+- **K_QRT**: Fully determined by the one-time reduced dynamical map (Markovian contribution)
+- **K_memory**: Encodes system-environment correlations across intervention (non-Markovian contribution)
+
+### Weak-Coupling Memory Term
+
+In the weak-coupling regime, the memory term yields a second-order correction:
+
 ```
-P(t_n, ..., t_1) = Tr_E[U_{tot}(t_n, 0) (ρ_S ⊗ ρ_E) U_{tot}†(t_n, 0)]
+K_memory ≈ Σ ∫ dτ G(τ) × bath_correlation(τ)
 ```
-This captures the full multi-time influence of the environment.
 
-#### Step 4: Memory Kernel Approach
-Decompose the dynamics into:
+where G(τ) is derived from the reduced map and bath correlation functions characterize the environment.
+
+### Operational QRT Violation Quantifier
+
+Define the distance between exact and QRT-predicted joint probabilities:
+
 ```
-dρ_S(t)/dt = ∫_0^t K(t-s) ρ_S(s) ds
+δ_QRT = || P_exact(t₂, t₁) - P_QRT(t₂, t₁) ||
 ```
-where K(τ) is the memory kernel encoding non-Markovian effects.
 
-#### Step 5: Sequential Measurement Statistics
-For measurement outcomes {m_i} at times {t_i}:
-```
-P(m_1, ..., m_n) = Tr[M_n E_{t_n - t_{n-1}} ... M_1 E_{t_1} [ρ_0]]
-```
-where E_t is the non-Markovian dynamical map.
+This quantifier is:
+- **Protocol-dependent**: Depends on measurement bases and timing
+- **Temporally hierarchical**: Higher-order statistics may show memory when two-time doesn't
+- **Inequivalent to single-time non-Markovianity**: Reduced-state memory ≠ multitime memory
 
-## Implementation Guide
+### Implementation Pattern
 
-### Prerequisites
-- Python with QuTiP for quantum dynamics
-- Understanding of open quantum systems theory
-
-### Step-by-Step
-1. Characterize the system-environment interaction Hamiltonian
-2. Compute the process tensor or memory kernel
-3. Identify regimes where QRT fails (strong coupling, structured environments)
-4. Compute multi-time correlation functions using the generalized framework
-5. Compare with QRT predictions to quantify memory effects
-6. Design experiments to detect deviations from QRT
-
-### Code Example
 ```python
-import numpy as np
-from qutip import *
-
-def compute_multitime_correlation(H_sys, H_int, rho_0, operators, times):
-    """Compute multi-time correlations with memory effects."""
-    # Construct total Hamiltonian
-    H_total = H_sys + H_int
+# Pseudocode for QRT violation analysis
+def compute_qrt_violation(reduced_map, bath_correlations, measurement_protocol):
+    """
+    Compute the QRT violation quantifier for sequential measurements.
     
-    # Compute process tensor via tensor network contraction
-    # or master equation with memory kernel
+    Args:
+        reduced_map: One-time dynamical map Λ(t)
+        bath_correlations: Environment correlation functions C(τ)
+        measurement_protocol: Sequence of measurement operators {M_i}
     
-    correlations = []
-    for i, t in enumerate(times[:-1]):
-        # Evolve with memory effects
-        rho_t = evolve_with_memory(H_total, rho_0, t)
-        corr = expect(operators[i], rho_t)
-        correlations.append(corr)
+    Returns:
+        delta_qrt: QRT violation quantifier
+    """
+    # QRT prediction from reduced map only
+    p_qrt = predict_qrt(reduced_map, measurement_protocol)
     
-    return correlations
-
-def qrt_prediction(H_sys, operators, times):
-    """Standard QRT prediction (for comparison)."""
-    # Assumes Markovian master equation
-    corr_qrt = []
-    for t in times:
-        rho_t = mesolve(H_sys, rho_0, [t])[0]
-        corr_qrt.append(expect(operators[0], rho_t))
-    return corr_qrt
+    # Full calculation including memory term
+    memory_term = compute_memory_term(reduced_map, bath_correlations)
+    p_exact = p_qrt + memory_term
+    
+    # Operational distance metric
+    delta_qrt = total_variation_distance(p_exact, p_qrt)
+    return delta_qrt
 ```
 
-## Applications
-- **Quantum sensing**: Multi-time correlation measurements for noise spectroscopy
-- **Quantum control**: Designing control pulses that account for memory effects
-- **Quantum information**: Understanding decoherence in non-Markovian environments
-- **Quantum thermodynamics**: Multi-time energy exchange in open systems
+### Key Findings from arXiv:2605.06427
 
-## Pitfalls
-- Process tensor grows exponentially with number of time steps
-- Requires full system-environment dynamics (computationally expensive)
-- Memory kernel extraction is an inverse problem (ill-posed)
-- Experimental verification requires high-fidelity sequential measurements
+1. **Exact decomposition**: Two-time propagator splits into QRT + memory for factorized initial states
+2. **Second-order correction**: Memory term expressed via reduced map + bath correlations in weak coupling
+3. **Protocol dependency**: Non-Markovianity quantifier depends on measurement protocol
+4. **Temporal hierarchy**: Memory visible at higher temporal order even when two-time statistics are QRT-compatible
+5. **Spectral density impact**: Bath parameters (Ohmicity, cutoff frequency) control memory strength
+6. **Temperature effect**: Higher temperature generally increases memory effects
 
-## Related Skills
-- quantum-f-divergence-contraction
-- quantum-distributed-snapshot
-- quantum-neural-research
+### Benchmarking Protocol
+
+Use pseudomode embedding as non-perturbative reference:
+1. Map structured environment to finite set of pseudomodes
+2. Solve enlarged system+pseudomodes dynamics exactly
+3. Trace out pseudomodes to get exact open system dynamics
+4. Compare with QRT predictions
+
+## Error Handling
+
+- **Non-factorized initial states**: Decomposition requires modification for correlated initial conditions
+- **Strong coupling**: Second-order approximation breaks down; use pseudomode or HEOM methods
+- **Numerical stability**: Memory term can be small; use high-precision arithmetic for accurate quantification
+
+## Resources
+
+- arXiv: https://arxiv.org/abs/2605.06427v1
+- Quantum Regression Theorem (Carmichael, Gardiner)
+- Pseudomode method (Garraway, 1997)
+- HEOM (Hierarchical Equations of Motion) for non-perturbative validation
