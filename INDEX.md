@@ -1,3 +1,19 @@
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### Zero-Shot Imagined Speech Decoding via Imagined-to-Listened MEG Mapping
+- [[zero-shot-imagined-speech-meg]] - Three-stage pipeline mapping imagined MEG to listened MEG for zero-shot imagined speech decoding (arXiv: 2605.08075)
+  - 核心要点 1: 利用配对想象的/聆听的 MEG 数据训练跨条件映射模型，解决想象语音数据稀缺问题
+  - 核心要点 2: 三阶段流程 — (1) 想象→聆听 MEG 映射 (2) 纯聆听对比词解码器 (3) 零样本想象语音解码
+  - 核心要点 3: 使用训练音乐家改善时间对齐，多嵌入策略评估（语义/声学/语音）
+  - **Activation**: imagined speech decoding, MEG BCI, cross-condition neural mapping, speech neuroprosthetics
+
+### DoLQ: Discovering ODEs with LLM-Based Qualitative & Quantitative Evaluation
+- [[dolq-ode-discovery-llm]] - Multi-agent symbolic regression using LLM scientist for combined domain knowledge + numerical evaluation (arXiv: 2605.07323, ICML 2026)
+  - 核心要点 1: 三代理架构 — Sampler 提议候选 ODE、Parameter Optimizer 优化系数、Scientist Agent 用 LLM 进行定性+定量评估
+  - 核心要点 2: 超越纯数值指标的科学发现 — 引入领域知识评估物理合理性
+  - 核心要点 3: 在多维 ODE 基准上超越现有方法，更准确地恢复真实符号项
+  - **Activation**: ODE discovery, symbolic regression, LLM scientific discovery, equation discovery
+
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Compositional Quantum Heuristics for Max-Clique Detection
