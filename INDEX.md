@@ -1,3 +1,17 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - Eliminates surrogate gradient approximation errors by extending convexification to parallel recurrent threshold networks, enabling globally optimal SNN training (arXiv: 2605.08022)
+  - Core: Convexification of recurrent threshold networks subsuming parallel SNNs; parameter reconstruction algorithm solving convex optimization directly
+  - Data scalable and robust to model configurations; works standalone or combined with surrogate-gradient training
+  - **Activation**: globally optimal SNN training, parameter reconstruction, convexification recurrent threshold, SNN without surrogate gradient, convex SNN training
+
+### Reason to Play: Behavioral and Brain Alignment Between Frontier LRMs and Human Game Learners
+- [[lrm-game-learning-brain-alignment]] - Frontier LRMs match human behavioral patterns in novel game discovery and predict fMRI brain activity an order of magnitude better than RL alternatives (arXiv: 2605.08019)
+  - Core: Three-way evaluation (behavioral matching, brain prediction, task performance); alignment driven by in-context game state representation, not planning
+  - Tested on complex human gameplay with concurrent fMRI — rule discovery, hypothesis revision, multi-step planning
+  - **Activation**: LRM brain alignment, reasoning model cognitive neuroscience, AI human game learning, frontier model brain prediction, behavioral alignment fMRI
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Update #3)
 
 ### Dynamic Synaptic Modulation of LMG Qubits populations in a Bio-Inspired Quantum Brain
