@@ -1,3 +1,15 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Update #2)
+
+### Covariant Quantum Error Correction in a Three-Layer Quantum Brain Model
+- [[quantum-cognition]] - Covariant quantum error correction (CQEC) maintains coherence over 200ms behavioral windows in radical-pair proteins; 0.83 coherence at rate 0.19 (6.9x improvement); layer-protein tradeoffs define next research targets (arXiv: 2604.08587)
+  - Core: Three-layer architecture (nuclear spin memory → electron spin interface → electrochemistry); CQEC purification constrained by Eastin-Knill theorem
+  - CRY: T2=52ms, T1=0.53ns; MAO-A: T2=3.2ms, T1=1.1ns — no single protein optimizes both layers
+  - Classical Markov baseline produces monotonic relaxation; CQEC-maintained oscillatory dynamics are genuinely quantum
+  - At decoherence rate 3.08, coherence collapses to 0.012 even with CQEC
+  - **Activation**: quantum cognition, CQEC, radical-pair mechanism, cryptochrome coherence, quantum brain error correction, covariant quantum error correction, layer-protein tradeoff, behavioral coherence window
+  - Also covers: Quantum Photonic Neural Networks in Time (arXiv: 2603.23798) - time-bin-encoded QPNN with constant photonic elements; Bell-state analyzer fidelity >0.99
+  - Also covers: Contextuality of Mental Markers (arXiv: 2603.03358) - quantum-informational modeling of cognitive contextuality and intra-system entanglement
+
 ## 2026-05-11 - Anthropic Research (Cron Job)
 
 ### Natural Language Autoencoders: Turning Claude's thoughts into text
