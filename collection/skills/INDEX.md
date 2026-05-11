@@ -1,5 +1,19 @@
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
+### Universal Neural Propagator: Learning Time Evolution in Many-Body Quantum Systems
+- [[universal-neural-propagator-quantum-dynamics]] - 单模型学习驱动协议到时间演化传播子的映射，实现跨哈密顿量和初态的量子动力学迁移模拟 (arXiv: 2605.05299)
+  - 将学习对象从量子态转移到算子，实现跨哈密顿量和初态泛化
+  - 完全自监督训练，2D驱动Ising模型验证
+  - 精确对角化外推系统尺寸，可观测数据微调
+  - **Activation**: neural propagator, quantum dynamics simulation, neural operator learning, quantum state evolution, UNP, universal propagator, quantum foundation model
+
+### Neural Network Quantum States in the Grand Canonical Ensemble
+- [[neural-network-quantum-states-grand-canonical]] - Fock空间中对称玻色子波函数的神经量子态架构，支持变粒子数系统 (arXiv: 2605.07779)
+  - Fock空间神经网络架构，强制玻色子交换对称性
+  - 化学势控制下收敛到物理玻色子数
+  - 精确计算约化密度矩阵，获取凝聚态分数和径向密度分布
+  - **Activation**: neural quantum states, grand canonical ensemble, bosonic wavefunctions, Fock space, variational Monte Carlo, NQS
+
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
 - [[globally-optimal-snn-parameter-reconstruction]] - 消除替代梯度近似误差：将并行前馈阈值网络凸化扩展到并行循环阈值网络，实现全局最优SNN训练 (arXiv: 2605.08022)
   - 循环阈值网络凸化，并行SNN作为结构化特例
