@@ -1,3 +1,12 @@
+## 2026-05-11 - Quantum Computing (Cron Job)
+
+### Practical Log-Depth Quantum State Preparation via Tree Tensor Network Compilation
+- [[tree-tensor-network-compilation]] - Decompose matrix product states into O(log n) depth quantum circuits via TTN renormalisation with explicit fidelity-depth tradeoff; ancilla-free overlap verification for circuit calibration (arXiv: 2605.06579)
+  - Core: MPS-to-TTN conversion via bottom-up SVD truncation yields log-depth circuits; k parameter controls fidelity vs depth tradeoff
+  - Extends to MPO for ancilla-free overlap estimation |<phi|U|psi>|^2 with device calibration applications
+  - Best for low-entanglement states; O(chi^3) classical SVD preprocessing
+  - **Activation**: tree tensor network, ttn compilation, mps to circuit, quantum state preparation, log-depth circuit, circuit verification, overlap estimation, matrix product state loading, shallow quantum circuit, nisq state preparation
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Update)
 
 ### Quantum-enhanced Large Language Models via Cayley Unitary Adapters
