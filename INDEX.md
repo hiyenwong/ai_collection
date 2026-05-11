@@ -1,3 +1,17 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Dynamical mechanisms of flexible phase-locking in cortical theta oscillators
+- [[flexible-phase-locking-cortical-theta]] - Multi-timescale inhibitory currents enable flexible phase-locking via delayed Hopf bifurcation (arXiv: 2605.08014)
+  - Core: Slow+superslow inhibitory currents generate prolonged post-input recovery delays through delayed Hopf phenomena
+  - Core: I_m (theta) and I_Kss (delta) cooperate to expand entrainment range for speech processing
+  - **Activation**: phase-locking, theta oscillations, delayed Hopf, speech segmentation, multi-timescale dynamics
+
+### The Causally Emergent Alignment Hypothesis
+- [[causally-emergent-alignment-hypothesis]] - Causal emergence (Phi-ID) predicts and aligns with RL agent reward trajectory (arXiv: 2605.06746)
+  - Core: Successful RL agents show causal emergence that predicts final reward early in training
+  - Core: Unified metric for comparing learning dynamics in biological and artificial agents
+  - **Activation**: causal emergence, reinforcement learning, Phi-ID, alignment hypothesis, representational dynamics
+
 
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
