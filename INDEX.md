@@ -1,5 +1,14 @@
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### Photonic-Implemented Efficient Deep Quantum Neural Network via Virtual-Driven Hilbert Space Expansion
+- [[photonic-deep-quantum-neural-network]] - Deep QNN on integrated photonic platforms using virtual-driven Hilbert space expansion for effective nonlinear activation (arXiv: 2605.06397v1)
+  - Core contribution: Non-unitary, nonlinear activation on linear photonic chip via input replication and mode expansion
+  - Key innovation: Avoids ancillary qubits and measurement feedback — all operations remain on-chip
+  - Enables cascadable deep quantum neural networks on programmable photonic hardware
+  - **Activation**: photonic QNN, quantum photonic activation, deep quantum neural network, virtual Hilbert space, nonlinear quantum activation, integrated quantum photonics
+
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
 - [[meg-quantum-information-capacity]] - 基于量子传感器和脑代谢推导MEG信息容量上限2.2Mbit/s (arXiv: 2511.06401)
   - 核心要点：人脑最大信息率仅依赖几何、代谢和普朗克常数
