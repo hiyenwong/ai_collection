@@ -58,6 +58,13 @@
   - 核心要点 3: 在稀疏信号恢复和鲁棒回归基准上超越 ADAM/GA/DE/IHT 等经典方法
   - **Activation**: quantum-inspired optimization, QIEO, non-convex optimization, global search evolutionary, escaping local minima, 量子启发优化, 量子进化优化
 
+### Gated QKAN-FWP: Quantum-inspired Sequence Learning
+- [[gated-qkan-fwp]] - Quantum Fast Weight Programmers with variational quantum Kolmogorov-Arnold Networks for scalable sequence learning (arXiv: 2605.06734)
+  - 核心要点 1: 量子快速权重编程器 (QFWP) 从输入动态生成权重矩阵，替代固定RNN权重
+  - 核心要点 2: 变分量子 Kolmogorov-Arnold Networks (QKAN) 将 1D 函数替换为参数化量子电路
+  - 核心要点 3: 门控机制控制快权重信息流，量子启发时序编码捕获长程依赖
+  - **Activation**: quantum sequence learning, QKAN, fast weight programmer, quantum-inspired RNN, temporal encoding quantum, 量子序列学习
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Pan-FM: A Pan-Organ Foundation Model with Saliency-Guided Masking for Missing Robustness
