@@ -1,3 +1,19 @@
+## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job - Hourly)
+
+### Medical Imaging Classification with Cold-Atom Reservoir Computing
+- [[cold-atom-reservoir-computing]] - Hybrid quantum-classical pipeline with neutral-atom reservoir computing for medical image classification (arXiv: 2605.06727)
+  - 核心要点 1: 引导自编码器降维 + 冷原子储层动力学 + 替代驱动读出训练三阶段流程
+  - 核心要点 2: 中性原子量子系统天然实现高维非线性动力系统，适合储层计算
+  - 核心要点 3: 仅训练读出层，储层本身固定，参数效率极高
+  - **Activation**: cold atom reservoir, neutral-atom RC, hybrid quantum-classical, surrogate training, medical imaging reservoir, 冷原子储备计算
+
+### Universal Neural Propagator: Learning Time Evolution in Many-Body Quantum Systems
+- [[universal-neural-propagator]] - Single self-supervised model mapping driving protocols to time-evolution propagators across protocol spaces and Hilbert spaces (arXiv: 2605.05299)
+  - 核心要点 1: 单一模型同时跨驱动协议函数空间和指数大希尔伯特空间学习传播子映射
+  - 核心要点 2: 纯自监督训练，使用薛定谔方程残差作为物理损失
+  - 核心要点 3: 超越传统方法——无需每个哈密顿量单独训练，支持跨协议泛化
+  - **Activation**: universal neural propagator, quantum dynamics learning, time evolution propagator, driving protocol mapping, many-body quantum ML, self-supervised quantum dynamics, 通用神经传播子
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Zero-Shot Imagined Speech Decoding via Imagined-to-Listened MEG Mapping
