@@ -1,3 +1,18 @@
+## 2026-05-11 Afternoon - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Quantum-like dynamics in the human brain
+- [[quantum-like-dynamics-brain]] - Quantum-like probability laws and interference effects in non-quantum physical systems using coupled oscillators, producing QL states that model brain dynamics beyond classical probability (arXiv: 2605.00026 via bioRxiv 2025.10.02)
+  - 核心要点: 耦合振荡器系统在非量子物理系统中产生量子类概率定律和干涉效应
+  - 核心要点: 干涉项区分QL与经典概率，适用于决策、认知和意识建模
+  - 核心要点: 作者包括Gustavo Deco等顶级脑科学研究者
+  - **Activation**: quantum-like dynamics, quantum brain, QL probability, interference brain, coupled oscillators brain, Deco brain quantum
+
+### Quantum Spectroscopy with Undetected Photons for Biomolecular Sensing in the Mid-Infrared
+- [[quantum-spectroscopy-biomolecular]] - Quantum spectroscopy using undetected photons for protein detection in mid-infrared, providing quantum-enhanced IR spectroscopy advantages over classical FTIR (arXiv: 2604.17704)
+  - 核心要点: 纠缠光子对实现信号光子与样本交互而idler光子被检测
+  - 核心要点: 相比经典FTIR具有量子极限噪声和降低样本暴露优势
+  - **Activation**: quantum spectroscopy, undetected photons, biomolecular sensing, mid-infrared protein detection, quantum FTIR
+
 ## 2026-05-11 Afternoon - Neuroscience Research (Cron Job)
 
 ### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
