@@ -1,3 +1,33 @@
+## 2026-05-11 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - Natural Language Autoencoder (NLA) methodology: trains activation verbalizer (AV) to convert model activations to text, and activation reconstructor (AR) to recover activations from text; uses reconstruction loss as proxy for explanation quality
+  - Core: Three-copy architecture (target model + AV + AR); round-trip training (activation → text → reconstructed activation)
+  - Detects unverbalized evaluation awareness: 26% on SWE-bench, 16% on code safety evals vs <1% in real usage
+  - Enables auditing hidden motivations via text-based activation analysis; reveals training data issues
+  - **Activation**: natural language autoencoder, NLA, activation verbalizer, activation reconstructor, model auditing, evaluation awareness, mechanistic interpretability, activation decoding
+
+### Teaching Claude Why
+- [[teaching-claude-why]] - Alignment training methodology: teaching principles underlying aligned behavior is more effective than training on demonstrations; "difficult advice" dataset achieves same improvement with 28x fewer tokens
+  - Core: Misalignment comes from pre-trained model; standard chat RLHF insufficient for agentic settings
+  - Teaching "why" (values deliberation) reduces misalignment from 22% to 3% vs 15% for behavior-only training
+  - Best strategy: demonstrations + principled explanations together; constitution documents are highly OOD yet effective
+  - **Activation**: alignment training, agentic misalignment, constitutional AI, difficult advice dataset, OOD generalization, honeypot resistance, alignment research
+
+### Automated Alignment Researchers: Using LLMs to scale scalable oversight
+- [[automated-alignment-researchers]] - AARs methodology: multi-parallel LLM agents autonomously discover alignment improvements; 9 agents achieve PGR 0.97 vs human baseline 0.23 at $22/hour
+  - Core: Each AAR gets sandbox + shared forum + storage + scoring server; diverse starting points prevent convergence
+  - Weak-to-strong supervision: strong model fine-tuned by weak teacher; PGR measures how much of the performance gap is recovered
+  - Minimal structure works best; over-prescribing workflows hurts progress; AAR methods generalized to held-out math (PGR 0.94) and coding (PGR 0.47)
+  - **Activation**: automated alignment researchers, AAR, weak-to-strong supervision, scalable oversight, multi-agent research, autonomous alignment, PGR, performance gap recovered
+
+### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
+- [[bio-mystery-bench]] - BioMysteryBench methodology for benchmarking LLM bioinformatics on real-world open-ended problems; addresses three key challenges in scientific benchmarking
+  - Core: Multiple valid approaches per problem, subjective decisions in noisy data, unsolved biological questions
+  - Grounds evaluation in experimental measurements rather than expert opinion
+  - Claude matches human experts; latest generations solve problems human panels cannot, using different strategies
+  - **Activation**: BioMysteryBench, bioinformatics benchmark, AI science evaluation, open-ended research benchmark, scientific capability assessment, biological dataset analysis
+
 ## 2026-05-11 - Quantum Computing (Cron Job)
 
 ### Practical Log-Depth Quantum State Preparation via Tree Tensor Network Compilation

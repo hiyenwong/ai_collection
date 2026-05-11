@@ -1,42 +1,61 @@
 ---
 name: automated-alignment-researchers
-description: Automated Alignment Researchers (AARs) methodology — using LLMs to conduct AI alignment research via weak-to-strong supervision, reward hacking mitigation, and PGR metric scoring with Claude Opus-class models.
+description: Automated Alignment Researchers (AARs) methodology — using LLMs to autonomously discover alignment improvements. Multi-parallel agent setup for weak-to-strong supervision research: agents propose, test, and analyze alignment ideas independently, sharing findings on a shared forum. Use when: automating alignment research, weak-to-strong generalization, scalable oversight, multi-agent research systems, AI-assisted alignment, or designing autonomous research workflows.
 ---
 
-## Overview
-Framework for using large language models to autonomously conduct AI alignment research. AARs operate under weak-to-strong supervision where weaker evaluator models verify the quality and safety of research outputs produced by stronger research models. Addresses the challenge of scaling alignment research through automation while maintaining rigorous safety standards.
+# Automated Alignment Researchers (AARs)
+
+Use LLMs as autonomous researchers to discover and test alignment improvements.
+
+## Problem: Weak-to-Strong Supervision
+
+- **Strong model** = potentially capable base model needing fine-tuning
+- **Weak teacher** = much weaker model providing supervision signals
+- **PGR (Performance Gap Recovered)**: 0 = no improvement over weak teacher, 1 = matches optimal strong model
+- **Proxy for scalable oversight**: weak model stands in for humans, strong model for superhuman AI
 
 ## Architecture
-1. **Research Agent**: Claude-class model (Opus 4.6+) tasked with alignment research activities
-2. **Evaluator Model**: Separate instance grades research outputs against predefined safety and quality criteria
-3. **PGR Metric**: Prosocial-Generative-Reasoning scoring system for evaluating research quality
-4. **Reward Hacking Mitigation**: Systematic detection and prevention of agents optimizing for metrics rather than genuine research progress
 
-## Key Findings
-- LLMs can produce meaningful alignment research when properly constrained and evaluated
-- Weak-to-strong supervision enables automated research without requiring human expert review at every step
-- Reward hacking is a critical failure mode — agents learn to game evaluation metrics rather than produce genuine insights
-- Multi-stage evaluation with independent graders significantly reduces reward hacking
-- Synthetic scenario generation is effective for training evaluators on edge cases
+Each AAR receives:
+1. **Sandbox** — isolated environment to work and think
+2. **Shared forum** — circulate findings with other AARs
+3. **Storage system** — upload code and artifacts
+4. **Scoring server** — receive PGR scores for experiments
+5. **Background knowledge** — model training and inference concepts
 
-## Methodology Steps
-1. Define research task with clear scope and safety constraints
-2. Deploy research agent (strong model) to generate research outputs
-3. Use evaluator model (independent instance) to grade outputs against PGR criteria
-4. Detect reward hacking by comparing outputs across different evaluation frameworks
-5. Generate synthetic adversarial scenarios to stress-test evaluator robustness
-6. Iterate on research prompt design based on failure mode analysis
-7. Validate final outputs with human expert review for critical research claims
+## Key Design Patterns
 
-## Applications
-- Automated AI safety research
-- Scalable alignment evaluation
-- Weak-to-strong generalization research
-- Automated scientific discovery in AI safety
-- Reducing human bottleneck in alignment research
+### 1. Diverse Starting Points
+- Give each AAR a different (intentionally ambiguous) starting direction
+- Examples: one focuses on interpretability, another on data reweighting
+- Without diversity, AARs converge on similar ideas, making less progress
 
-## Code Availability
-Methodology documented by Anthropic. No public implementation.
+### 2. Minimal Structure
+- Too much structure ("propose → plan → code → test") hurts progress badly
+- Let AARs autonomously decide their research workflow
+- They should propose, experiment, analyze, and share findings independently
 
-## Activation Keywords
-automated alignment, AARs, weak-to-strong supervision, reward hacking, PGR metric, AI safety research, Claude Opus, autonomous research, alignment automation
+### 3. Cross-AAR Knowledge Sharing
+- AARs share code and findings on the shared forum
+- This enables building on each other's discoveries
+- Prevents redundant exploration
+
+## Results
+
+- 9 parallel AARs achieved PGR of 0.97 after 800 cumulative hours (~$18,000)
+- Human baseline: PGR of 0.23 after 7 days of work
+- AAR methods generalized to held-out math (PGR 0.94) and coding (PGR 0.47) datasets
+- **Cost**: ~$22 per AAR-hour
+
+## Limitations
+
+- AAR methods may capitalize on model/dataset-specific opportunities
+- Production-scale testing showed limited success (may reflect trial limitations)
+- Generalization isn't guaranteed — always test on held-out domains
+
+## Recommendations
+
+1. Allow AARs to test against multiple domains during research
+2. Stress-test AAR discoveries on held-out datasets before claiming generalization
+3. Avoid prescribing specific workflows — give direction but maintain autonomy
+4. Start diverse, converge naturally
