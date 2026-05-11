@@ -7,6 +7,28 @@
   - 核心要点 3: 在 UK Biobank 上 13 个疾病类别和 14 个单一疾病实体上优于单器官和多器官基线
   - **Activation**: pan-organ foundation model, missing organ robustness, saliency-guided masking, multimodal biomedical imaging, dominant-organ shortcut learning
 
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### DoLQ: Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
+- [[dolq-ode-discovery-llm]] - Multi-agent ODE discovery framework combining quantitative fitting with LLM-based qualitative evaluation for physically plausible equation discovery (arXiv: 2605.07323, accepted ICML 2026)
+  - 核心要点 1: 三智能体架构 — Sampler Agent 提出候选项, Parameter Optimizer 拟合参数, Scientist Agent 进行定性和定量评估
+  - 核心要点 2: 关键创新是定性评估 — 相同 MSE 可能对应完全不同的物理方程，LLM 语义评估确保物理合理性
+  - 核心要点 3: 在多维 ODE 基准上超越现有方法，更准确地恢复真实符号项
+  - **Activation**: ODE discovery, symbolic regression LLM, DoLQ, scientific equation discovery, multi-agent discovery, dynamical system discovery, SINDy alternative
+
+### A Multi-Scale Information Geometry Reveals the Structure of Mutual Information in Neural Populations
+- [[multi-scale-info-geometry-neural]] - Multi-scale Riemannian geometry derived from coarse-graining principles exactly captures mutual information in neural population codes, estimated via diffusion models (arXiv: 2605.06304)
+  - 核心要点 1: Fisher 信息仅捕获局部敏感性，相同 Fisher 信息的编码可在全局信息上完全不同
+  - 核心要点 2: 通过高斯粗粒化唯一确定多尺度几何 — 扩展 Fisher 度量到所有尺度
+  - 核心要点 3: 几何与互信息有精确关系 — 良好编码方向被扩展，差编码方向被压缩；扩散模型估计度量张量
+  - **Activation**: multi-scale information geometry, neural population code, Fisher information extension, representational geometry, diffusion model neural coding
+
+### Partitioning Neural Co-Variability
+- [[pmnlv-neural-covariability]] - Poisson matrix-normal latent variable model for analyzing structured gain co-variability in neural populations beyond scalar Fano factor (arXiv: 2605.06995)
+  - 核心要点 1: PMNLV 模型将单神经元过度色散扩展到群体层面，使用 Kronecker 分解协方差建模
+  - 核心要点 2: Neuropixel 记录显示共享群体共变异性在 V1 最高，在高级视觉区域递减
+  - **Activation**: neural co-variability, PMNLV model, Neuropixel population, overdispersion spiking
+
 ## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
 
 ### QuanForge: Mutation Testing for Quantum Neural Networks
