@@ -85,6 +85,27 @@
   - 核心要点 2: 变分量子 Kolmogorov-Arnold Networks (QKAN) 将 1D 函数替换为参数化量子电路
   - 核心要点 3: 门控机制控制快权重信息流，量子启发时序编码捕获长程依赖
   - **Activation**: quantum sequence learning, QKAN, fast weight programmer, quantum-inspired RNN, temporal encoding quantum, 量子序列学习
+### Normalizing Trajectory Models
+- [[normalizing-trajectory-models]] - Few-step generative modeling with exact likelihood via normalizing flows + parallel trajectory prediction (arXiv: 2605.08078)
+  - 核心要点 1: 将每个反向去噪步骤建模为条件归一化流，保持精确似然训练框架
+  - 核心要点 2: 浅层可逆块 + 深层并行轨迹预测器架构，端到端可训练
+  - 核心要点 3: 自蒸馏机制 — 在模型自身分数上训练的轻量级去噪器实现4步高质量采样
+  - **Activation**: normalizing trajectory, flow matching, few-step generation, diffusion distillation, trajectory modeling, exact likelihood generation
+
+### Advances in Quantum Learning Theory with Bosonic Systems
+- [[quantum-cv-learning-theory]] - Quantum learning theory for continuous-variable systems: sample complexity, Gaussian state learning, trace distance bounds (arXiv: 2605.08082)
+  - 核心要点 1: 综述 CV 系统量子学习理论 — 非高斯态和高斯态的样本复杂度分析
+  - 核心要点 2: 基于协方差矩阵的迹距离界，实现无需完整层析的态比较
+  - 核心要点 3: 高斯性测试协议与高效高斯过程学习
+  - **Activation**: quantum learning theory, continuous variable, bosonic systems, Gaussian states, quantum tomography, sample complexity quantum
+
+### Unlocking Vacuum Entanglement
+- [[vacuum-entanglement-extraction]] - Vacuum entanglement extraction protocols via local operations for distributed quantum computing and networking (arXiv: 2605.08076)
+  - 核心要点 1: 量子场真空态中的纠缠可通过局部操作提取，无需预共享纠缠对
+  - 核心要点 2: 提取效率取决于探测器间距、相互作用时间和耦合强度
+  - 核心要点 3: 应用于分布式量子计算和量子网络的纠缠分发
+  - **Activation**: vacuum entanglement, entanglement harvesting, quantum field theory communication, distributed quantum computing, quantum networking
+
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
