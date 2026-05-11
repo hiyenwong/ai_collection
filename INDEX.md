@@ -1,3 +1,26 @@
+## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Compositional Quantum Heuristics for Max-Clique Detection
+- [[compositional-quantum-heuristics]] - Compositional quantum model assembly to avoid barren plateaus, using group-invariant loss functions and permutation-equivariant quantum GNNs (arXiv: 2605.07611)
+  - 核心要点 1: 通过将大型量子模型分解为小型可训练子组件的组合方法，避免 QML 中的 barren plateau 问题
+  - 核心要点 2: 群不变损失函数与对称性诱导的归纳偏差，将有效参数搜索空间缩小 |G| 倍
+  - 核心要点 3: 排列等变量子图神经网络 + 递归混合量子-经典启发式框架，解决最大团检测等组合优化问题
+  - **Activation**: barren plateau, quantum composition, compositional QML, quantum graph neural network, max-clique, group-invariant loss, symmetry-induced bias, permutation-equivariant, recursive quantum heuristic, quantum subcircuit assembly
+
+### Quantum-Inspired Tunneling Optimization for Non-Convex ML
+- [[quantum-tunneling-optimization]] - Quantum-inspired evolutionary optimization (QIEO) using superposition-inspired probabilistic encoding and simulated tunneling to escape local optima in non-convex ML landscapes (arXiv: 2605.07947)
+  - 核心要点 1: 量子叠加启发的概率编码（每个基因是概率振幅对 [α, β]），保持对整个解空间的同步探索
+  - 核心要点 2: 量子隧穿模拟穿过能量势垒，克服经典优化器（ADAM/GA/DE/IHT）陷入局部最优的问题
+  - 核心要点 3: 在稀疏信号恢复和鲁棒回归基准上超越所有经典方法，混合探索+利用策略是关键
+  - **Activation**: non-convex optimization, local optima escape, quantum tunneling optimizer, sparse signal recovery, robust regression, quantum evolutionary algorithm, superposition-inspired encoding, QIEO
+
+### Quantum Boltzmann Machine via Bilevel Optimization
+- [[quantum-boltzmann-bilevel]] - Extends QAOA circuit to bilevel optimization for fully connected Quantum Boltzmann Machine, overcoming classical BM partial connectivity and QAOA fixed Hamiltonian limitations (arXiv: 2605.07473)
+  - 核心要点 1: 双层优化框架 — 外层学习最优目标哈密顿量，内层优化 QAOA 电路参数（自由能最小化）
+  - 核心要点 2: 全连接 Ising 型哈密顿量参数化，经典受限玻尔兹曼机因配分函数不可计算而无法实现
+  - 核心要点 3: 隐式微分穿过内层解实现端到端训练，量子电路提供高效采样替代经典吉布斯采样
+  - **Activation**: quantum Boltzmann machine, QAOA, bilevel optimization, fully connected Boltzmann, quantum generative model, energy-based quantum model, quantum sampling, quantum annealing, Hamiltonian learning
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Pan-FM: A Pan-Organ Foundation Model with Saliency-Guided Masking for Missing Robustness
