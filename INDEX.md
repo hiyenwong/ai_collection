@@ -37,6 +37,27 @@
   - 核心要点 3: 隐式微分穿过内层解实现端到端训练，量子电路提供高效采样替代经典吉布斯采样
   - **Activation**: quantum Boltzmann machine, QAOA, bilevel optimization, fully connected Boltzmann, quantum generative model, energy-based quantum model, quantum sampling, quantum annealing, Hamiltonian learning
 
+### QuanForge: Mutation Testing for Quantum Neural Networks
+- [[quanforge-qnn-testing]] - Mutation testing framework for QNN robustness analysis with 9 mutation operators and statistical mutation killing (arXiv: 2604.20706)
+  - 核心要点 1: 统计突变杀死方法 — 用假设检验处理量子测量的随机性，提供可靠的突变杀死标准
+  - 核心要点 2: 9种突变算子 — 5种门级（省略、插入、替换、复制、重排序）+ 3种参数级（扰动、丢弃、缩放）+ 1种测量级
+  - 核心要点 3: 系统化突变生成算法可定位量子电路脆弱区域，区分不同测试套件的有效性
+  - **Activation**: quantum testing, QNN testing, mutation testing, quantum circuit robustness, quantum ML evaluation, 量子测试, 量子神经网络测试
+
+### SPATE: Spiking-Phase Adaptive Temporal Encoding for QML
+- [[qml-spiking-encoding]] - Spike-based temporal encoding for quantum machine learning, bridging neuromorphic computing with QML via phase-encoded qubits (arXiv: 2604.11022)
+  - 核心要点 1: 脉冲编码捕获输入数据的时间动态，解决传统QML静态编码无法处理时序数据的问题
+  - 核心要点 2: 相位编码量子比特使量子系统能原生处理时间依赖模式
+  - 核心要点 3: 三阶段流程 — 脉冲生成 → 相位编码 → 量子处理，将神经形态范式与QML桥接
+  - **Activation**: spiking quantum encoding, QML temporal encoding, spike encoding quantum, neuromorphic quantum computing, 脉冲量子编码
+
+### QIEO: Quantum-Inspired Evolutionary Optimization
+- [[quantum-inspired-optimization]] - Quantum-inspired evolutionary optimization using superposition-inspired probability amplitudes and quantum rotation gates for non-convex ML landscapes (arXiv: 2605.07947)
+  - 核心要点 1: 量子叠加启发的概率振幅编码 [α, β] 保持全局搜索视野，优于传统进化算法
+  - 核心要点 2: 量子旋转门更新概率分布，量子干涉平衡探索与利用
+  - 核心要点 3: 在稀疏信号恢复和鲁棒回归基准上超越 ADAM/GA/DE/IHT 等经典方法
+  - **Activation**: quantum-inspired optimization, QIEO, non-convex optimization, global search evolutionary, escaping local minima, 量子启发优化, 量子进化优化
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Pan-FM: A Pan-Organ Foundation Model with Saliency-Guided Masking for Missing Robustness
