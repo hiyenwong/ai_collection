@@ -1,3 +1,30 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Neural network quantum states in the grand canonical ensemble
+- [[neural-network-quantum-states-grand-canonical]] - Extends variational Monte Carlo with neural quantum states to grand canonical ensemble for studying quantum phase transitions with variable particle number (arXiv: 2605.07779)
+  - 核心要点: 神经量子态在大正则系综中的变分蒙特卡洛方法
+  - 核心要点: 可变粒子数量子多体系统研究
+  - 核心要点: 量子相变和多体局域化的新途径
+  - **Activation**: neural quantum states, grand canonical ensemble, variational Monte Carlo, quantum phase transition, many-body localization
+
+### Reducibility of native weighted graphs on Rydberg Arrays
+- [[reducibility-weighted-graphs-rydberg]] - Studies classical reducibility of random unit-disk graph instances on Rydberg atom quantum processors for maximum independent set problems (arXiv: 2605.07952)
+  - 核心要点: Rydberg原子量子处理器上的图归约性分析
+  - 核心要点: 最大独立集问题的经典可归约性研究
+  - **Activation**: Rydberg arrays, unit-disk graphs, maximum independent set, quantum processor, graph reducibility
+
+### Unlocking vacuum entanglement
+- [[unlocking-vacuum-entanglement]] - Studies entanglement structure in harmonic chain ground states using two-mode squeezed states for local mode analysis (arXiv: 2605.08076)
+  - 核心要点: 谐振链基态中的纠缠结构分析
+  - 核心要点: 双模压缩态在局域模式纠缠研究中的应用
+  - **Activation**: vacuum entanglement, harmonic chain, two-mode squeezed states, ground state entanglement
+
+### Covert Signaling for Communication and Sensing over the Bosonic Channels
+- [[covert-signaling-bosonic-channels]] - Studies fundamental limits of covert quantum communication and sensing via square-root laws for bosonic channels (arXiv: 2605.08066)
+  - 核心要点: 玻色子信道上隐蔽量子通信的基本限制
+  - 核心要点: 平方根定律在隐蔽通信和传感中的应用
+  - **Activation**: covert quantum communication, bosonic channels, square-root law, quantum sensing, signaling limits
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction

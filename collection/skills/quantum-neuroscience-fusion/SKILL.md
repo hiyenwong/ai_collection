@@ -1,176 +1,114 @@
 ---
 name: quantum-neuroscience-fusion
-description: "Quantum neuroscience research skill - explores the intersection of quantum computing and neuroscience, including quantum neural networks, quantum spiking neural networks, quantum brain-inspired computing. Use when searching quantum neuroscience papers, analyzing quantum-ML architectures, or designing quantum neuromorphic systems."
+description: "Quantum neuroscience research skill - explores the intersection of quantum computing and neuroscience. Use when researching quantum effects in neural systems, quantum brain models, neuromorphic quantum computing, or cross-disciplinary studies combining quantum mechanics with brain research. Covers 3-Layer Quantum Brain Hypothesis, quantum neural networks for EEG analysis, magnetic-field-free quantum reservoir computing, and quantum-enhanced biomolecular sensing."
 ---
 
 # Quantum Neuroscience Fusion
 
-Research skill for exploring the intersection of quantum computing and neuroscience. Covers quantum neural networks, quantum spiking neural networks, quantum brain-inspired computing, and quantum cognitive modeling.
+Research skill exploring the intersection of quantum computing and neuroscience.
 
 ## Activation Keywords
 
 - quantum neuroscience
 - 量子神经科学
-- quantum neural network
-- quantum spiking neural network
 - quantum brain
-- quantum cognition
-- quantum neuromorphic
-- quantum SNN
-- 量子脉冲神经网络
+- quantum neural network EEG
+- 量子脑
+- quantum reservoir computing
+- 3-layer quantum brain
+- magnetic-field-free quantum computing
+- quantum biomolecular sensing
+- neuromorphic quantum
 
-## Tools Used
+## Key Research Areas
 
-- `web_search`: Search quantum neuroscience papers
-- `exec`: Run kg_tool for knowledge graph queries
-- `read`: Load paper abstracts, skill references
-- `write`: Create research summaries, notes
+### 1. 3-Layer Quantum Brain Hypothesis
 
-## Core Concepts
+Framework extending quantum brain modeling to magnetic-field-free organic materials.
 
-### Quantum Neural Networks (QNN)
+**Four implementation paths:**
+- **P1**: Flavin-nitroxide radical pairs in molecular crystals
+- **P2**: Molecular qubits in quantum Hall regime of topological insulator surfaces
+- **P3**: Two-level system mimicking singlet-triplet subspace in single-molecule magnets
+- **P4**: Chiral-induced spin selectivity (CISS) in supramolecular assemblies
 
-Variational quantum circuits for learning tasks:
-- Parameterized quantum circuits
-- Quantum variational classifiers
-- Quantum autoencoders
-- Hybrid classical-quantum networks
+**Key insight**: Enables quantum computing in clinical/industrial settings without cryogenic magnets.
 
-### Quantum Spiking Neural Networks
+### 2. Quantum Neural Networks for Brain Signal Analysis
 
-Brain-inspired quantum computing:
-- Quantum neurons with spiking dynamics
-- Quantum synapses with entanglement
-- Quantum reservoir computing
-- Quantum oscillator-based associative memory
+Using quantum-enhanced neural architectures for:
+- EEG signal decoding and classification
+- fMRI pattern recognition
+- Neural population dynamics modeling
+- Cross-subject brain decoding
 
-### Quantum Cognitive Modeling
+### 3. Quantum Reservoir Computing for Neural Dynamics
 
-Quantum models of cognition:
-- Quantum probability for decision making
-- Quantum contextuality in perception
-- Quantum entanglement in neural assemblies
-- Quantum coherence in brain dynamics
+Applying quantum reservoir computing to:
+- Model complex neural population dynamics
+- Predict brain state transitions
+- Analyze spatiotemporal EEG patterns
+- Real-time neural signal processing
 
-## Research Workflow
+### 4. Quantum-Enhanced Biomolecular Sensing
 
-### Step 1: Search Papers
+Using quantum spectroscopy for:
+- Protein detection in mid-infrared
+- Biomolecular fingerprinting
+- Non-invasive neural chemical sensing
+- Quantum advantage over classical FTIR
 
-Search quantum neuroscience papers:
+## Workflow
 
-```bash
-# arXiv search via kg_tool
-kg_tool search kg.db "quantum neural"
-kg_tool search kg.db "quantum spiking"
-kg_tool search kg.db "quantum brain"
+### Step 1: Search arXiv
+
+Search for papers combining quantum and neuroscience:
+```
+Queries: "quantum AND brain", "quantum AND neural", "quantum reservoir computing"
+Categories: quant-ph, q-bio.NC, cs.NE
 ```
 
-### Step 2: Analyze Architecture
+### Step 2: Import to Knowledge Graph
 
-Key architecture patterns:
-- **Circuit depth**: Shallow circuits for NISQ devices
-- **Encoding**: Amplitude encoding, basis encoding, angle encoding
-- **Decoding**: Measurement-based readout, quantum state tomography
-- **Hybrid**: Classical preprocessing + quantum processing
+Import papers into kg.db with proper categorization.
 
-### Step 3: Extract Patterns
+### Step 3: Analyze Cross-Disciplinary Connections
 
-From knowledge graph:
-```bash
-kg_tool pagerank kg.db  # Find important papers
-kg_tool louvain kg.db   # Find research clusters
-kg_tool similar kg.db <entity_id>  # Find related work
-```
+Identify papers that bridge quantum methods with neuroscience applications:
+- Quantum ML for neural signal processing
+- Brain-inspired quantum architectures
+- Quantum sensors for neural measurement
 
-### Step 4: Synthesize Insights
+### Step 4: Extract Reusable Patterns
 
-Key research directions:
-1. Quantum advantage in neural network training
-2. Quantum error mitigation in spiking dynamics
-3. Quantum coherence for memory capacity
-4. Quantum entanglement for distributed computation
+For each paper, identify:
+- Quantum method used (QNN, QRC, variational, etc.)
+- Neuroscience application (EEG, fMRI, behavior, etc.)
+- Computational advantage claimed
+- Experimental validation status
 
-## Key Papers (from kg.db)
+### Step 5: Create Skills
 
-### Top Quantum Neuroscience Papers
+Extract reusable skill patterns from promising papers.
 
-1. **Quantum Vision Transformers** (arXiv:2604.xxx)
-   - Quantum attention mechanism
-   - Hybrid classical-quantum architecture
+## Key Papers to Track
 
-2. **Quantum-Tunnelling Oscillators for Cognitive Modelling**
-   - Quantum oscillators for neural computation
-   - Machine-vision applications
+- 3-Layer Quantum Brain Hypothesis (magnetic-field-free QC)
+- Quantum neural network states (grand canonical ensemble)
+- Quantum learning theory with bosonic systems
+- Quantum spectroscopy for biomolecular sensing
+- Brain-inspired quantum neural architectures
 
-3. **Simulation of memristive synapses on quantum computer**
-   - Quantum memristor implementation
-   - Neuromorphic quantum computing
+## Resources
 
-4. **Quantum Circuit-Based Learning Models**
-   - Bridging quantum computing and ML
-   - Variational quantum classifiers
+### arXiv Categories
+- `quant-ph`: Quantum Physics
+- `q-bio.NC`: Neurons and Cognition
+- `cs.NE`: Neural and Evolutionary Computing
+- `cond-mat`: Condensed Matter (for quantum materials)
 
-5. **Circuit Harmonic Matrices: Quantum ML Framework**
-   - Spectral framework for QML
-   - Harmonic analysis approach
-
-## Research Questions
-
-- Can quantum entanglement improve associative memory capacity?
-- Does quantum coherence enhance learning dynamics?
-- How to implement quantum STDP (spike-timing-dependent plasticity)?
-- What quantum advantages exist for brain-inspired computing?
-
-## Implementation Notes
-
-### Quantum SNN Architecture
-
-```
-Quantum Neuron Model:
-  Input: Classical spikes → Quantum state preparation
-  Processing: Quantum circuit evolution
-  Output: Quantum measurement → Classical spikes
-
-Quantum Synapse:
-  Entanglement between neurons
-  Quantum gate-based plasticity
-  Measurement-induced weight update
-```
-
-### Hybrid Quantum-Classical Pipeline
-
-```
-1. Classical preprocessing: Feature extraction
-2. Quantum encoding: State preparation
-3. Quantum processing: Circuit execution
-4. Quantum decoding: Measurement
-5. Classical postprocessing: Output interpretation
-```
-
-## Related Skills
-
-- **spikingjelly-framework**: Spiking neural network implementation
-- **quantum-machine-learning**: Quantum ML general
-- **brain-network-analysis**: Brain connectivity analysis
-
-## Knowledge Graph Integration
-
-Use kg.db for:
-- Paper similarity search via vectors
-- PageRank for importance ranking
-- Louvain for community detection
-- BFS for paper relationships
-
-## Limitations
-
-- NISQ era constraints (noise, limited qubits)
-- Quantum error correction overhead
-- Classical-quantum interface complexity
-- Lack of established benchmarks
-
-## Future Directions
-
-- Quantum error mitigation for SNNs
-- Quantum hardware for neuromorphic systems
-- Quantum advantage demonstrations
-- Standard benchmarks for quantum neuroscience
+### Related Skills
+- `quantum-neural-architecture`: QNN design
+- `quantum-reservoir-computing`: QRC methodology
+- `spiking-neural-network-analysis`: SNN analysis
+- `brain-inspired-intelligence-paradigm`: Brain-inspired computing
