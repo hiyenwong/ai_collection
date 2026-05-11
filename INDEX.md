@@ -1,3 +1,12 @@
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### Pan-FM: A Pan-Organ Foundation Model with Saliency-Guided Masking for Missing Robustness
+- [[pan-fm-pan-organ-foundation]] - Multi-organ foundation model pre-trained on 7 organs with Saliency-Guided Masking for realistic missing-organ scenarios (arXiv: 2605.07055)
+  - 核心要点 1: 七器官统一骨干网络，处理真实世界中非随机缺失 (MNAR) 的多模态医学影像数据
+  - 核心要点 2: Saliency-Guided Masking (SGM) 自适应掩蔽主导器官，防止捷径学习偏差
+  - 核心要点 3: 在 UK Biobank 上 13 个疾病类别和 14 个单一疾病实体上优于单器官和多器官基线
+  - **Activation**: pan-organ foundation model, missing organ robustness, saliency-guided masking, multimodal biomedical imaging, dominant-organ shortcut learning
+
 ## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
 
 ### QuanForge: Mutation Testing for Quantum Neural Networks
