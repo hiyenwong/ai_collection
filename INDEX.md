@@ -1,3 +1,26 @@
+## 2026-05-12 - Deep Learning Research (Cron Job)
+
+### Efficient On-Policy Distillation: Prune-OPD + vOPD
+- [[efficient-opd-distillation]] - Dynamic prefix drift detection and control variate baseline for efficient LLM on-policy distillation (arXiv: 2605.07804, 2605.07865)
+  - 核心要点 1: Prune-OPD 实时监测学生-教师 top-k 重叠度检测前缀漂移，单调衰减不可靠奖励并动态截断，减少训练时间 37.6%-68.0%
+  - 核心要点 2: vOPD 将 OPD 值函数表示为逐 token 反向 KL 散度的闭式解，作为控制变量基线降低梯度方差
+  - 核心要点 3: 两种方法互补 — Prune-OPD 优化计算分配，vOPD 稳定训练过程
+  - **Activation**: on-policy distillation, OPD, Prune-OPD, vOPD, prefix drift, control variate baseline, reasoning model distillation, reverse KL divergence
+
+### Memory-Efficient Looped Transformer (MELT)
+- [[memory-efficient-looped-transformer]] - Shared KV cache across reasoning loops decoupling compute from memory in looped LLMs (arXiv: 2605.07721)
+  - 核心要点 1: MELT 使用单层共享 KV 缓存替代每层每循环独立缓存，内存占用与推理深度无关
+  - 核心要点 2: 两阶段训练：插值过渡 + 注意力对齐蒸馏，从预训练 Ouro 参数微调
+  - 核心要点 3: 实现恒定内存迭代推理，性能超越同等大小标准 LLM，内存远小于 Ouro
+  - **Activation**: looped transformer, Ouro, MELT, recurrent LLM, KV cache memory, iterative reasoning, constant memory transformer
+
+### Globally Optimal SNN Training via Parameter Reconstruction
+- [[globally-optimal-snn-training]] - Convex parameter reconstruction for training parallel recurrent threshold networks without surrogate gradient approximation (arXiv: 2605.08022)
+  - 核心要点 1: 将并行前馈阈值网络凸化扩展到并行循环阈值网络，脉冲神经网络为其结构化特例
+  - 核心要点 2: 参数重建算法避免替代梯度近似误差跨层累积，支持独立使用或与替代梯度结合
+  - 核心要点 3: 具有数据可扩展性和模型配置鲁棒性，适用于大规模 SNN 训练
+  - **Activation**: globally optimal SNN, parameter reconstruction, convex SNN training, surrogate gradient alternative, threshold network convexification
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Partitioning Neural Co-Variability
