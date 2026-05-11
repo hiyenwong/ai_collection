@@ -1,3 +1,13 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Update #3)
+
+### Dynamic Synaptic Modulation of LMG Qubits populations in a Bio-Inspired Quantum Brain
+- [[dynamic-synaptic-lmg-qubits]] - Bio-inspired quantum neural network encoding neuronal populations as LMG qubits with activity-dependent homeostatic synaptic feedback; links collective quantum many-body modes to population homeostasis and rhythmogenesis (arXiv: 2602.16003)
+  - Core: LMG Hamiltonian with dynamic synaptic-efficacy feedback; fully connected qubits stabilized by homeostatic control
+  - Three computational primitives: stable set points (memory storage), controllable oscillations (rhythmogenesis), size-dependent robustness (scalable quantum computation)
+  - Feedback substantially expands paramagnetic phase at expense of ferromagnetic phases; critical boundaries displaced for tunable quantum phase access
+  - Longitudinal field coupling markedly enhances feedback effect on phase structure
+  - **Activation**: LMG qubits, quantum LMG brain, synaptic-efficacy feedback, activity-dependent homeostatic quantum, collective spin quantum network, quantum attractor rhythmogenesis, bio-inspired quantum neural network
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Update #2)
 
 ### Covariant Quantum Error Correction in a Three-Layer Quantum Brain Model
