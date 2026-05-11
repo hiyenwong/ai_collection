@@ -1,3 +1,26 @@
+## 2026-05-11 - Neuroscience (Cron Job)
+
+### Toward Magnetic-Field-Free Quantum Computing and Quantum Reservoir Computing
+- [[organic-quantum-reservoir-computing]] - Design magnetic-field-free quantum reservoir computing with engineered organic materials via 3-layer quantum brain hypothesis (arXiv: 2605.00026)
+  - 核心要点: 无磁场量子计算架构设计
+  - 核心要点: 有机材料量子比特实现路径
+  - 核心要点: 3层量子脑假说在量子储层计算中的应用
+  - **Activation**: organic quantum, quantum reservoir computing, magnetic-field-free qubits, 3-layer quantum brain, SVILC
+
+### Advances in quantum learning theory with bosonic systems
+- [[quantum-learning-theory-cv]] - Quantum learning theory framework for continuous-variable bosonic systems covering information extraction efficiency bounds (arXiv: 2605.08082)
+  - 核心要点: 连续变量量子学习理论框架
+  - 核心要点: 玻色子系统信息提取效率边界
+  - 核心要点: 量子样本复杂度分析方法
+  - **Activation**: quantum learning theory, continuous variable, bosonic quantum ML, CV quantum, sample complexity
+
+### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
+- [[behavior-vlm-neuroscience]] - Finetuning-free behavioral understanding for neuroscience using vision-language models linking neural activity to behavior (arXiv: 2603.12176)
+  - 核心要点: 免微调行为理解架构
+  - 核心要点: VLM在神经科学行为分析中的应用
+  - 核心要点: 神经活动与行为特征的零样本关联
+  - **Activation**: behavioral understanding, neuroscience VLM, pose estimation, neural-behavioral mapping
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Dynamical mechanisms of flexible phase-locking in cortical theta oscillators
