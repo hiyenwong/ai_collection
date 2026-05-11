@@ -135,6 +135,13 @@
   - 核心要点 2: 使用表征相似性分析比较 LRM 与人类学习者的学习轨迹
   - **Activation**: LRM brain alignment, reasoning model neuroscience, game learning AI, behavioral alignment human AI
 
+### Learning to Measure Quantum Neural Networks
+- [[learnable-observable-qnn]] - 使量子测量算符(Hermitian矩阵)成为可训练参数，与电路参数联合端到端训练，降低QML专家依赖 (arXiv: 2501.05663)
+  - 核心要点 1: 将可观测量参数化为泡利基底的线性组合 O(φ) = Σᵢ φᵢ Pᵢ，φᵢ 为可训练系数
+  - 核心要点 2: 端到端可微分训练框架，可观测量参数与量子电路参数同时通过反向传播优化
+  - 核心要点 3: 减少QML模型设计中的专家依赖，自动学习最优测量基底
+  - **Activation**: learnable observable, quantum measurement training, QNN observable optimization, differentiable quantum measurement, parameterized observable
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
