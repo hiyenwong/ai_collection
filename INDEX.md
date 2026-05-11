@@ -1,5 +1,19 @@
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - Closed-form reconstruction of SNN parameters from trained ANN, eliminating surrogate gradient approximations (arXiv: 2605.08022)
+  - 核心要点 1: 首次证明任意 ReLU-ANN 存在等价 SNN，通过闭式参数重构实现全局最优训练，消除代理梯度近似误差
+  - 核心要点 2: 重构公式 W_SNN = W_ANN / (T * theta) 保证训练精度可继承自 ANN，无需 BPTT
+  - 核心要点 3: 相比代理梯度方法，具有精确梯度、全局最优、训练稳定、计算成本低四大优势
+  - **Activation**: globally optimal SNN training, SNN parameter reconstruction, surrogate gradient free SNN, ANN to SNN conversion, exact SNN training
+
+### Dynamical Mechanisms of Flexible Phase-Locking in Cortical Theta Oscillators
+- [[flexible-phase-locking-cortical-theta]] - Computational neuroscience analysis of how cortical theta oscillators flexibly phase-lock to inputs across wide timescale ranges (arXiv: 2605.08014)
+  - 核心要点 1: 听觉皮层 theta 振荡器通过内禀频率自适应、增益调制、多时间尺度整合实现灵活锁相
+  - 核心要点 2: 使用相位响应曲线 (PRC) 和 Arnold 舌头分析量化锁相区域和动态机制
+  - 核心要点 3: 宽范围夹带 (~2-12 Hz)、非对称响应、噪声鲁棒性支持语音处理和听觉流分离
+  - **Activation**: cortical theta oscillations, flexible phase-locking, auditory cortex dynamics, phase response curve, Arnold tongue analysis, speech neural tracking
+
 ### Direct-to-Event Spiking Neural Network Transfer
 - [[direct-to-event-snn-transfer]] - Transfer pretrained direct-coded SNNs to energy-efficient event-based execution (arXiv: 2605.07207)
   - 核心要点 1: 首次系统化研究直接编码 SNN 到事件驱动的迁移问题，填补 SNN 部署能量效率差距
