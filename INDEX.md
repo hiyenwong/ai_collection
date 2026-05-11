@@ -1,3 +1,11 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Partitioning Neural Co-Variability
+- [[pmnlv-neural-covariability]] - PMNLV model partitions neural co-variability in population recordings using Kronecker-factored matrix-normal priors; reveals shared population co-variability peaks in V1 and declines in higher visual areas, invisible to scalar Fano factor summaries (arXiv: 2605.06995)
+  - 核心要点: PMNLV模型扩展单神经元过度离散到群体水平，使用Kronecker分解协方差捕获结构化增益调制
+  - 核心要点: 群体共变性在初级视皮层达峰值并在高级视皮层递减，标量指标不可见
+  - **Activation**: PMNLV neural co-variability, overdispersion model, population gain covariance, Neuropixel analysis, Kronecker-factored covariance, VEM estimation, Kernel Tournament Method
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Neural network quantum states in the grand canonical ensemble
