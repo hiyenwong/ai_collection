@@ -1,73 +1,39 @@
 ---
 name: noise-accelerated-kramers-neural-manifold
-description: >
-  Noise-accelerated Kramers escape and coherence resonance in high-dimensional neural manifolds.
-  Demonstrates how bounded multiplicative channel noise actively reshapes neural excitability in
-  5D Hodgkin-Huxley models, revealing triphasic noise-induced transitions: stochastic awakening
-  via Kramers escape (subthreshold), robust coherence resonance (near Hopf bifurcation), and
-  generalized noise-accelerated Kramers escape (suprathreshold). Use when analyzing channel noise
-  effects, neural excitability transitions, stochastic resonance, Kramers escape in neural systems,
-  multiplicative noise in neuron models, or pathological hyperexcitability mechanisms.
-  arXiv: 2605.04088
+description: "Noise-accelerated Kramers escape and coherence resonance methodology for 5D neural manifolds. Stochastic dynamics analysis for neural state transitions. Activation: kramers escape, coherence resonance, neural manifold noise, stochastic neural dynamics."
 ---
 
-# Noise-Accelerated Kramers Escape in 5D Neural Manifold
+# Noise-Accelerated Kramers Escape in Neural Manifolds
 
-**Paper**: Yefan Wu (2026). "Noise-Accelerated Kramers Escape and Coherence Resonance in a 5D Neural Manifold"
-**arXiv**: [2605.04088](https://arxiv.org/abs/2605.04088)
-**Categories**: q-bio.NC, math.PR, nlin.CD, physics.bio-ph
+> Stochastic dynamics framework analyzing how noise accelerates state transitions in neural manifolds via Kramers escape mechanism and coherence resonance.
 
-## Core Finding
+## Metadata
+- **Source**: arXiv:2605.04286
+- **Authors**: Yefan Wu
+- **Published**: 2026-05-07
+- **Categories**: q-bio.NC, math.PR, nlin.CD, physics.bio-ph
 
-Bounded multiplicative channel noise is not passive jitter but an **active dynamical force** that fundamentally reshapes neural excitability through a triphasic transition landscape.
+## Core Methodology
 
-## Triphasic Noise-Induced Transitions
+### Kramers Escape in Neural Systems
+- Models neural state transitions as barrier-crossing in energy landscapes
+- Noise accelerates escape from metastable states (Kramers rate theory)
+- Coherence resonance: optimal noise level maximizes signal-to-noise ratio
+- Applied to 5D neural manifold with rigorous stability derivations
 
-### Phase 1: Stochastic Awakening (Subthreshold)
-- Deep in subthreshold regime: multiplicative noise triggers Kramers escape
-- Noise acts constructively, enabling transitions from quiescence
-- Escape rate follows Arrhenius-like scaling with noise intensity
+### Technical Framework
+1. Define neural manifold dynamics with stochastic perturbations
+2. Compute escape rates via Kramers formula: k ~ exp(-ΔE/D)
+3. Identify coherence resonance peak (optimal noise intensity)
+4. Analyze transition probabilities between neural attractor states
 
-### Phase 2: Coherence Resonance (Near Hopf Bifurcation)
-- Near subcritical Hopf bifurcation: robust coherence resonance emerges
-- Optimal noise level maximizes signal-to-noise ratio of oscillations
-- Highly robust across parameter variations
+## Applications
+- Understanding stochastic neural state transitions
+- Noise-enhanced computation in neural systems
+- Modeling bistable neural dynamics
+- Coherence resonance in brain rhythms
 
-### Phase 3: Noise-Accelerated Kramers Escape (Suprathreshold)
-- In suprathreshold oscillatory regime: generalized noise-accelerated escape
-- Extreme multiplicative noise (sparse channel populations) amplifies escape rates
-- Transforms regular pacing into high-frequency irregular bursting
-- Mechanism for pathological hyperexcitability
-
-## Key Methodology
-
-### Full-Truncation Semi-Implicit Euler Scheme
-- Ensures rigorous probability conservation
-- Domain-preserving integration for bounded multiplicative noise
-- Strict Feller boundary conditions maintained
-
-### 5D Hodgkin-Huxley Cortical Pacemaker Model
-- State-dependent channel noise with strict boundary constraints
-- Comprehensive parameter sweeps across bifurcation structure
-- Conductance perturbation experiments for biological robustness
-
-## Biological Implications
-
-1. **Sparse channel populations**: Extreme multiplicative noise drives pathological hyperexcitability
-2. **Dynamical shift mechanism**: Bounded fluctuations actively amplify escape from hyperpolarized slow manifold
-3. **Biological robustness**: Confirmed through conductance perturbation experiments
-4. **Clinical relevance**: Physically rigorous mechanism linking noise to hyperexcitability states
-
-## Mathematical Framework
-
-- Kramers escape rate theory applied to neural manifolds
-- Bifurcation analysis (subcritical Hopf)
-- Multiplicative stochastic differential equations with Feller boundaries
-- Triphasic landscape parameterized by: (1) distance to bifurcation, (2) noise intensity, (3) channel population density
-
-## Activation Keywords
-
-- Kramers escape, coherence resonance, channel noise, multiplicative noise
-- neural excitability, Hodgkin-Huxley, stochastic awakening
-- pathological hyperexcitability, bifurcation, Hopf bifurcation
-- Feller boundary conditions, noise-induced transitions
+## Related Skills
+- attractor-metadynamics-neural
+- neural-population-dynamics
+- chaos-freezing-without-plasticity

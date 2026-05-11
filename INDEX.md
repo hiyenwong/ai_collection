@@ -89,6 +89,51 @@
   - Results experimentally realizable with cold atomic quantum simulators
   - **Activation**: neural quantum states, many-body quantum dynamics, superradiant simulation, subradiant dynamics, neural network wavefunction, Lindblad neural states
 
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+- [[naturality-violation-score]] - Category-theory-based brain-DNN alignment via Naturality Violation Score (arXiv: 2605.06420)
+  - Shifts alignment from per-stimulus sameness to preservation of transformations under explicitly chosen comparison maps
+  - NVS separates complementary alignment failures that aggregate scalars cannot resolve
+  - **Activation**: brain-DNN alignment, naturality, transformation preservation, fMRI comparison
+
+### Efficient event-driven retrieval in high-capacity kernel Hopfield networks
+- [[klr-hopfield-event-driven-retrieval]] - Event-driven asynchronous retrieval in kernel Hopfield networks (arXiv: 2605.05978)
+  - Enables event-based, asynchronous pattern retrieval in high-capacity Hopfield networks
+  - Reduces computational overhead compared to synchronous update dynamics
+  - **Activation**: Hopfield networks, event-driven, associative memory, kernel methods
+
+### A Generalized Framework of Antisymmetric Polyspectral Indices for Identifying High-Order Neural Interactions
+- [[antisymmetric-polyspectral-neural-interactions]] - Generalized framework for antisymmetric cross-polyspectral indices detecting high-order brain interactions (arXiv: 2605.04636)
+  - Extends antisymmetric cross-spectrum to higher-order polyspectral interactions
+  - Provides robust tool for identifying directed multi-region neural connectivity
+  - **Activation**: polyspectral, high-order interactions, brain connectivity, antisymmetric indices
+
+### Cusped singularities organize mixed-mode oscillations in mutually inhibitory slow-fast systems
+- [[cusped-singularity-mmo-analysis]] - Geometric singular perturbation analysis of mixed-mode oscillations via cusped singularities (arXiv: 2605.04262)
+  - Cusped singularity geometry organizes MMO patterns in slow-fast neural systems
+  - Applies to mutually inhibitory neuron pairs and related circuit motifs
+  - **Activation**: mixed-mode oscillations, cusped singularity, slow-fast systems, neural oscillations
+
+### Noise-accelerated Kramers Escape and Coherence Resonance in a 5D Neural Manifold
+- [[noise-accelerated-kramers-neural-manifold]] - Stochastic dynamics analysis of noise-accelerated state transitions in neural manifolds (arXiv: 2605.04286)
+  - Kramers escape theory applied to 5D neural manifold with rigorous stability derivations
+  - Coherence resonance identifies optimal noise level for neural state transitions
+  - **Activation**: kramers escape, coherence resonance, neural manifold noise, stochastic dynamics
+
+### Online Generalised Predictive Coding
+- [[online-generalised-predictive-coding]] - Online Dynamic Expectation Maximisation (ODEM) for biologically plausible online predictive coding (arXiv: 2605.04242)
+  - Extends predictive coding to online/sequential setting with simultaneous state-parameter estimation
+  - Compatible with Karl Friston's active inference framework
+  - **Activation**: predictive coding, online learning, DEM, dynamic expectation maximisation, active inference
+
+### Robust volatility updates for Hierarchical Gaussian Filtering
+- [[hgf-robust-volatility-updates]] - Improved HGF volatility update rules for stable uncertainty estimation in hierarchical perceptual inference (arXiv: 2605.04235)
+  - Bounded influence functions prevent runaway volatility estimates
+  - Proved stability under mild conditions for hierarchical belief updating
+  - **Activation**: hierarchical gaussian filter, volatility update, perceptual inference, uncertainty estimation
+
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
