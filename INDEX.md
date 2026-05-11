@@ -1,3 +1,17 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - Eliminates surrogate gradient errors by extending convexification to parallel recurrent threshold networks for globally optimal SNN training (arXiv: 2605.08022)
+  - Core: Convexification of parallel recurrent threshold networks subsumes SNNs as structured special case
+  - Core: Parameter reconstruction algorithm achieves global optima, outperforming surrogate-gradient baselines
+  - **Activation**: globally optimal SNN, parameter reconstruction, convex SNN training, surrogate gradient alternative
+
+### The Causally Emergent Alignment Hypothesis
+- [[causally-emergent-alignment-hypothesis]] - Causal emergence (ΦID) predicts and aligns with RL agent reward trajectories, bridging biological and artificial learning (arXiv: 2605.06746)
+  - Core: Causal emergence computed via ΦID predicts final reward early in training across diverse environments
+  - Core: Representational dynamics of successful agents align with reward improvement, suggesting emergence as a new optimization axis
+  - **Activation**: causal emergence, ΦID, RL alignment, causal power, biological-artificial learning parallel
+
 ## 2026-05-11 - Neuroscience (Cron Job)
 
 ### Toward Magnetic-Field-Free Quantum Computing and Quantum Reservoir Computing

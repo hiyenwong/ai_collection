@@ -1,69 +1,89 @@
 ---
 name: causally-emergent-alignment-hypothesis
-description: "Causal emergence (ΦID) predicts and aligns with RL agent reward trajectory. Successful agents show causal emergence that predicts final reward early in training. Activation: causal emergence, reinforcement learning, ΦID, alignment hypothesis, representational dynamics, agent cognition, causal power."
+description: >
+  Causal emergence (ΦID) predicts and aligns with RL agent reward trajectories.
+  The Causally Emergent Alignment Hypothesis states that successful RL agents exhibit
+  causal emergence that is predictive of final reward early in training and whose
+  representational dynamics align with reward improvement. Use when analyzing RL agent
+  representations, measuring causal emergence in neural networks, studying AI-biology
+  alignment, or investigating ΦID as a learning metric. arXiv: 2605.06746
 ---
 
 # Causally Emergent Alignment Hypothesis
 
-> Causal emergence measured via ΦID consistently predicts final reward early in RL training and aligns with reward improvement trajectories, revealing a previously undocumented axis of neural representation reorganization.
+**arXiv:** 2605.06746 (2026-05-07)
+**Authors:** Federico Pigozzi, Michael Levin
+**Categories:** cs.NE
 
-## Metadata
-- **Source**: arXiv:2605.06746
-- **Authors**: Federico Pigozzi, Michael Levin
-- **Published**: 2026-05-07
-- **Categories**: cs.NE
+## Core Hypothesis
 
-## Core Methodology
+The **Causally Emergent Alignment Hypothesis** proposes that causal emergence — the degree to which an agent exerts unique predictive power on its future — is consistently predictive of final reward in RL agents early in training, and its representational dynamics align with reward improvement.
 
-### Key Innovation
-The **Causally Emergent Alignment Hypothesis** posits that successful RL agents exhibit causal emergence that:
-1. **Predicts final reward early in training** — before performance metrics show improvement
-2. **Aligns with reward trajectory** — representational dynamics track learning progress
-3. **Generalizes across architectures and environments** — robust to algorithm and environment variations
+## Background
 
-### Technical Framework
+- Biological agents increase their causal emergence after learning new memories
+- Causal emergence measures the degree of causal power an agent has over subsequent events
+- ΦID (Partial Information Decomposition) framework quantifies causal emergence
+- Gap: whether artificial RL agents exhibit similar causal emergence patterns
 
-**Causal Emergence via ΦID:**
-- **ΦID (Partial Information Decomposition for multivariate systems)** quantifies the degree to which an agent's latent state exerts unique predictive power over its future
-- Computed on latent-space representations of neural network agents over their lifetimes
-- Higher causal emergence = agent is more of a "driver" of subsequent events rather than a passive conduit
+## Methodology
 
-**Measurement Protocol:**
-1. Extract latent representations at each training step
-2. Compute ΦID between current latent state and future states
-3. Track causal emergence trajectory across training lifetime
-4. Correlate with reward learning curve and final performance
-5. Test prediction: does early causal emergence predict final reward?
+### ΦID Computation
 
-**Experimental Design:**
-- Multiple RL algorithms (model-free and model-based)
-- Multiple agent architectures (different network sizes, activation functions)
-- Six environments on a complexity spectrum
-- Consistent ΦID computation across all conditions
+- Compute causal emergence of RL agent latent-space representations over their lifetimes
+- Use ΦID (Partial Information Decomposition) framework to estimate causal emergence
+- Track across training trajectories in multiple environments
 
-### Key Findings
-- Causal emergence increases during successful learning
-- Early causal emergence values predict final reward better than early reward signals
-- The alignment holds across most tasks and architectures
-- Biological agents (even minimal ones) also increase causal emergence after learning
+### Experimental Setup
+
+- Multiple RL algorithms tested across diverse environments
+- Six environments arranged on a complexity spectrum
+- Different agent architectures evaluated
+- Causal emergence computed consistently across all conditions
+
+## Key Findings
+
+1. **Early prediction:** Causal emergence predicts final reward early in training
+2. **Representational alignment:** Emergence dynamics align with reward improvement in most tasks
+3. **Cross-environment robustness:** Pattern holds across diverse environments and algorithms
+4. **Bio-artificial alignment:** Connects learning dynamics of biological and artificial agents
+
+## Implications
+
+- Causal emergence as an **undisclosed axis of neural representation reorganization** in RL
+- Potential for causal interventions to improve RL agent training
+- Bridge between biological learning and artificial agent learning
+- New metric for evaluating agent quality beyond raw reward
 
 ## Applications
-- **RL agent evaluation** — Early-stage diagnostic for predicting agent success without full training
-- **Architecture selection** — Compare architectures by their causal emergence trajectories
-- **Curriculum design** — Use causal emergence to guide environment complexity progression
-- **Biological-AI comparison** — Unified metric for comparing learning in biological and artificial systems
-- **Interpretability** — Causal emergence as a window into representational reorganization during learning
+
+- RL agent analysis and debugging
+- Early prediction of training success
+- Designing better RL architectures
+- Studying biological-artificial learning parallels
+- Causal representation analysis in neural networks
+
+## Workflow
+
+1. Train RL agent in target environment
+2. Record latent-space representations over training lifetime
+3. Compute ΦID-based causal emergence at regular intervals
+4. Correlate causal emergence trajectory with reward trajectory
+5. Use early emergence patterns to predict final performance
+6. Design interventions to maximize causal emergence
 
 ## Pitfalls
-- ΦID computation is expensive for large latent spaces; may require dimensionality reduction
-- Sensitive to choice of latent representation layer; different layers may show different emergence profiles
-- Requires sufficient temporal resolution in saved checkpoints
-- Correlation does not imply causation — high emergence may be a byproduct rather than a driver of learning
-- The six-environment study may not generalize to all task types
 
-## Related Skills
-- causal-learning-neural-assemblies
-- direct-neural-assemblies-causal-learning
-- rl-temporal-logic
-- neural-dynamics-decision-making
-- neural-population-dynamics
+- ΦID computation is computationally expensive for high-dimensional representations
+- Results may vary across environment complexity levels
+- Causal emergence is necessary but not sufficient for good performance
+- Requires careful dimensionality reduction of latent spaces for ΦID estimation
+
+## Activation Keywords
+
+causal emergence, ΦID, RL alignment, causal power agent, representation dynamics, biologically plausible RL, 2605.06746, Pigozzi Levin
+
+## References
+
+- Paper: https://arxiv.org/abs/2605.06746
+- PDF: https://arxiv.org/pdf/2605.06746
