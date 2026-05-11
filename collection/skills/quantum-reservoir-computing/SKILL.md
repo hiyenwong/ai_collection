@@ -1,270 +1,110 @@
 ---
 name: quantum-reservoir-computing
-description: "Quantum Reservoir Computing (QRC) framework for chaotic time-series prediction and dynamical systems modeling. Use for benchmarking fixed-reservoir vs variational quantum architectures, implementing quantum physics-informed neural networks (QPINN), and analyzing quantum machine learning performance on NISQ devices. Focus on Lorenz system and chaotic dynamics applications."
+category: quantum-ml
+description: Quantum Reservoir Computing (QRC) framework for chaotic time-series forecasting using quantum dynamics as the reservoir. Combines classical readout training with quantum feature representations across distributed and single-qubit architectures.
+trigger_words: quantum reservoir computing, time series forecasting, quantum dynamics, echo state network, quantum machine learning, distributed quantum
+version: 1.0.0
+created: 2026-05-12
+source: arXiv:2605.04991v1
+authors: Ioannis Liliopoulos, Georgios D. Varsamis, Konstantinos Rallis, Evangelos Tsipas, Ioannis G. Karafyllidis, Georgios Ch. Sirakoulis, Panagiotis Dimitrakis
 ---
 
-# Quantum Reservoir Computing for Chaotic Dynamics
-
-This skill implements the Quantum Reservoir Computing (QRC) framework for time-series prediction on chaotic systems, benchmarking against variational Quantum Physics-Informed Neural Networks (QPINN).
-
-## Overview
-
-Deploying quantum machine learning on NISQ devices requires architectures where training overhead does not negate computational advantages. This methodology systematically compares QRC (fixed-reservoir) vs QPINN (variational) approaches for chaotic time-series prediction.
-
-## Key Findings
-
-### Performance Comparison (4-5 qubits, 2-3 layers)
-- **QRC MSE**: ~10^-3 (significantly lower)
-- **QPINN MSE**: Higher error
-- **Training Speed**: QRC trains ~10,000x faster (0.2s vs hours per seed)
-- **Root Cause**: QPINN instability stems from capacity limitations and competing loss terms, NOT barren plateaus
-
-## Activation Keywords
-- quantum reservoir computing
-- QRC
-- QPINN
-- quantum physics-informed neural network
-- chaotic dynamics
-- Lorenz system
-- fixed-reservoir quantum
-- variational quantum architecture
-
-## Tools Used
-- exec: Run quantum simulations and benchmarks
-- python: Implement QRC and QPINN architectures
+# Quantum Reservoir Computing (QRC)
 
 ## Core Methodology
 
-### 1. Quantum Reservoir Computing (QRC)
+Quantum Reservoir Computing (QRC) leverages quantum system dynamics as a computational reservoir for time-series forecasting. Key insight: the natural evolution of a quantum system under input driving provides a rich, high-dimensional feature space that can be exploited by training only a simple classical readout layer.
 
-#### Architecture
-```
-Input State → Quantum Reservoir (Fixed Hamiltonian) → Measurement → Classical Readout
-```
+### Why QRC?
+- **No backpropagation**: Avoids training deep quantum circuits; only the classical readout is trained
+- **Rich features**: Quantum superposition and entanglement provide exponentially large feature spaces
+- **Hardware efficient**: Shallow circuits suffice since we don't need gradient flow through the reservoir
+- **Distributed scalability**: Can span multiple quantum processors for larger reservoirs
 
-#### Fixed Hamiltonian
-- Transverse-field Ising model
-- Fixed parameters (no variational optimization)
-- Natural quantum dynamics as reservoir states
+## Architecture Variants (Benchmarked)
 
-#### Temporal Windowing Technique
-Based on classical delay-embedding principle:
-```python
-def temporal_window(input_history, window_size):
-    """
-    Provide bounded, structured input history
-    Improves attractor reconstruction
-    """
-    return input_history[-window_size:]
-```
+### 1. Single-Qubit Reservoir
+- One qubit driven by time-series input
+- Simplest architecture, minimal hardware requirements
+- Suitable for low-dimensional time series
+- Limited feature space dimensionality
 
-### 2. Quantum Physics-Informed Neural Network (QPINN)
+### 2. Multi-Qubit Single-Processor Reservoir
+- Multiple qubits on one quantum processor with inter-qubit coupling
+- Entanglement between qubits enriches feature space
+- Best for current NISQ devices
+- Exponential feature space in number of qubits
 
-#### Architecture
-```
-Input → Variational Quantum Circuit (Trainable) → Measurement → Physics-Informed Loss
-```
+### 3. Distributed Quantum Reservoir
+- Multiple quantum processors connected classically
+- Each processor runs its own reservoir
+- Classical post-processing combines outputs
+- Enables scaling beyond single-processor qubit limits
 
-#### Loss Components
-1. **Data Loss**: MSE between predictions and ground truth
-2. **Physics Loss**: Residuals of governing equations
-3. **Regularization**: Parameter norm constraints
+### 4. Hybrid Classical-Quantum Reservoir
+- Classical RNN components combined with quantum reservoir
+- Best of both worlds: quantum expressivity + classical processing
+- Most flexible architecture for complex time series
 
-#### Failure Mode Analysis
-- **NOT Barren Plateaus**: Gradient norms remain large (~10^-1)
-- **Capacity Limitation**: Limited expressivity for complex dynamics
-- **Competing Objectives**: Data fidelity vs physics constraints
+## Implementation Steps
 
-## Implementation
+### Step 1: Input Encoding
+- Map classical time-series values to quantum circuit parameters
+- Common encoding: amplitude encoding, angle encoding, or data re-uploading
+- For angle encoding: input x maps to rotation angle R_x(θ) on qubit
 
-### QRC Implementation
-```python
-import pennylane as qml
-import numpy as np
+### Step 2: Reservoir Dynamics
+- Apply fixed (non-trainable) quantum circuit layers
+- Include entangling gates between qubits for multi-qubit architectures
+- Use randomized or structured circuit topology
+- Key: dynamics must be rich enough to separate different input histories
 
-class QuantumReservoir:
-    def __init__(self, n_qubits, hamiltonian_params):
-        self.n_qubits = n_qubits
-        self.params = hamiltonian_params  # Fixed!
-        self.dev = qml.device("default.qubit", wires=n_qubits)
-    
-    @qml.qnode
-    def reservoir_dynamics(self, input_state, time_steps):
-        # Initialize state
-        qml.MottonenStatePreparation(input_state, wires=range(self.n_qubits))
-        
-        # Apply fixed Hamiltonian evolution
-        for t in range(time_steps):
-            self._ising_step()
-        
-        # Return expectation values
-        return [qml.expval(qml.PauliZ(i)) for i in range(self.n_qubits)]
-    
-    def _ising_step(self):
-        # Transverse-field Ising model
-        for i in range(self.n_qubits):
-            qml.RX(self.params['h'], wires=i)
-        for i in range(self.n_qubits - 1):
-            qml.IsingXX(self.params['J'], wires=[i, i+1])
-```
+### Step 3: Measurement and Feature Extraction
+- Measure qubits in computational basis (or other bases)
+- Collect measurement statistics as feature vector
+- Optionally measure multiple observables for richer features
+- Feature vector dimension = number of measurable observables
 
-### Temporal Windowing
-```python
-class TemporalWindowEncoder:
-    def __init__(self, window_size, stride=1):
-        self.window_size = window_size
-        self.stride = stride
-    
-    def encode(self, time_series):
-        """
-        Create delay-embedded windows for reservoir input
-        """
-        windows = []
-        for i in range(0, len(time_series) - self.window_size, self.stride):
-            window = time_series[i:i + self.window_size]
-            windows.append(window)
-        return np.array(windows)
-```
+### Step 4: Classical Readout Training
+- Use linear regression, Ridge regression, or simple neural network
+- Train readout mapping: features → prediction target
+- Only this layer is trained; quantum reservoir is frozen
+- Regularization is important to prevent overfitting on noisy quantum measurements
 
-### Benchmarking Framework
-```python
-class QuantumChaosBenchmark:
-    def __init__(self, system='lorenz'):
-        self.system = system
-        self.systems = {
-            'lorenz': LorenzSystem(),
-            'rossler': RosslerSystem(),
-            'lorenz96': Lorenz96System()
-        }
-    
-    def benchmark(self, model, n_seeds=10):
-        results = []
-        for seed in range(n_seeds):
-            # Generate data
-            train_data, test_data = self.systems[self.system].generate(seed)
-            
-            # Train and evaluate
-            model.train(train_data)
-            mse = model.evaluate(test_data)
-            train_time = model.training_time
-            
-            results.append({
-                'seed': seed,
-                'mse': mse,
-                'train_time': train_time
-            })
-        
-        return self._aggregate(results)
-```
+### Step 5: Distributed Architecture (if applicable)
+- Run reservoir on multiple quantum processors in parallel
+- Collect features from each processor
+- Concatenate or weighted-combine feature vectors
+- Train unified readout on combined features
 
-## Test Systems
+## Key Hyperparameters
 
-### 1. Lorenz System
-```
-dx/dt = σ(y - x)
-dy/dt = x(ρ - z) - y
-dz/dt = xy - βz
-```
-Parameters: σ=10, ρ=28, β=8/3
+- **Number of qubits**: Controls feature space dimensionality (2^n for n qubits)
+- **Circuit depth**: Deeper circuits capture longer temporal dependencies
+- **Input encoding scheme**: Affects how classical data maps to quantum states
+- **Measurement basis**: Determines which features are extracted
+- **Regularization strength**: Critical for noisy quantum measurements
+- **Temporal window size**: How many past time steps influence current state
 
-### 2. Rössler System
-```
-dx/dt = -y - z
-dy/dt = x + ay
-dz/dt = b + z(x - c)
-```
-Parameters: a=0.2, b=0.2, c=5.7
+## Advantages
 
-### 3. Lorenz-96 System
-N-dimensional chaotic system with forcing F:
-```
-dx_i/dt = (x_{i+1} - x_{i-2})x_{i-1} - x_i + F
-```
+- **Training efficiency**: No quantum gradient computation needed
+- **NISQ-friendly**: Works with shallow circuits and noisy hardware
+- **Scalable**: Can distribute across multiple quantum processors
+- **Versatile**: Applicable to any time-series forecasting task
 
-## Results Summary
+## Pitfalls
 
-| System | QRC MSE | QPINN MSE | QRC Training | QPINN Training |
-|--------|---------|-----------|--------------|----------------|
-| Lorenz | ~10^-3 | Higher | 0.2s | Hours |
-| Rössler | ~10^-3 | Higher | 0.2s | Hours |
-| Lorenz-96 | ~10^-3 | Higher | 0.2s | Hours |
+- **Noise sensitivity**: Quantum measurement noise propagates to readout; use averaging
+- **Input encoding bottleneck**: Limited qubit count restricts encoding dimensionality
+- **Temporal decay**: Quantum reservoir memory has finite decay time; tune circuit depth accordingly
+- **Readout overfitting**: Simple readout may overfit to measurement noise; use cross-validation
+- **Hardware connectivity**: Qubit connectivity constraints limit circuit topology
 
-## Key Insights
+## Verification
 
-1. **Fixed-Reservoir Advantage**: Non-variational approach avoids optimization instabilities
-2. **No Barren Plateaus**: Gradients remain tractable at tested scales
-3. **Temporal Structure**: Delay embedding crucial for attractor reconstruction
-4. **NISQ Compatibility**: Minimal quantum circuit depth required
-
-## Advanced Technique: Split-Ensemble Training
-
-From "Reorganizing Quantum Measurement Records Improves Time-Series Prediction" (arXiv:2604.28160v1, 2026-04-30).
-
-### Problem
-Standard approach averages all shots from one labeled time step into a single feature vector. This reduces finite-shot noise but gives the readout only one training example per time step — too few for effective learning.
-
-### Solution: Split-Ensemble Training
-Split the same measurement shots into groups, and use each group average as a separate, partially denoised feature vector for the same target:
-
-```python
-def split_ensemble(shots, n_groups):
-    """
-    Split measurement records into n_groups.
-    Each group average becomes a separate training example.
-    No additional quantum circuit executions required.
-    """
-    group_size = len(shots) // n_groups
-    groups = [shots[i*group_size:(i+1)*group_size] for i in range(n_groups)]
-    feature_vectors = [np.mean(g, axis=0) for g in groups]
-    return feature_vectors  # n_groups examples for same target
-```
-
-### Benefits
-- **More training data** without additional quantum hardware cost
-- **Partial denoising** from group averaging (trade-off between noise reduction and data quantity)
-- **Strongest gains on real hardware** where shot noise is significant
-- **Broadly applicable** across quantum reservoir computing tasks
-
-### Integration with QRC
-```python
-class EnhancedQRC(QuantumReservoir):
-    def extract_features_split(self, input_history, window_size, n_groups=4):
-        """
-        Split-ensemble feature extraction for QRC.
-        Instead of averaging all shots, split into groups.
-        """
-        all_shots = self.run_circuit(input_history, n_shots=1024)
-        # Split into groups, each gives a training example
-        feature_groups = split_ensemble(all_shots, n_groups)
-        # Each group is a partially-denoised feature vector
-        return feature_groups
-```
-
-## References
-
-- Paper: "Fixed-Reservoir vs Variational Quantum Architectures for Chaotic Dynamics: Benchmarking QRC and QPINN on the Lorenz System" (arXiv:2604.23743)
-- Paper: "Reorganizing Quantum Measurement Records Improves Time-Series Prediction" (arXiv:2604.28160v1, 2026-04-30) - Split-Ensemble Training
-- Author: Tushar Pandey (QRC); Markus Baumann et al. (Split-Ensemble)
-- Categories: Quantum Physics (quant-ph), Machine Learning (cs.LG)
-
-## Best Practices
-
-1. **Use Temporal Windowing**: Essential for capturing dynamics
-2. **Apply Split-Ensemble**: When readout has too few training examples, split shots into groups (n_groups=4-8 recommended)
-3. **Start Small**: Test on 4-5 qubits before scaling
-4. **Monitor Gradients**: Verify non-vanishing gradients in QPINN
-5. **Multiple Seeds**: Average over random initializations
-6. **Physics Validation**: Compare reconstructed attractors visually
-
-## Limitations
-
-- Tested on small qubit counts (4-5)
-- Quantum advantage not yet demonstrated
-- Requires classical optimization of readout layer
-- Hardware noise not fully characterized
-- Split-ensemble: optimal group size depends on total shot budget and noise level
-
-## Related Skills
-- quantum-machine-learning
-- physics-informed-neural-networks
-- chaotic-systems-modeling
+- Benchmark against classical reservoir computing (ESN) on same tasks
+- Compare different architectures (single vs. multi-qubit vs. distributed)
+- Test on standard time-series benchmarks (Mackey-Glass, Lorenz system)
+- Evaluate noise robustness by adding simulated hardware noise
+- Verify scalability: does performance improve with more qubits?

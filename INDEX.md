@@ -1,3 +1,23 @@
+## 2026-05-12 - Computer Science (Cron Job)
+
+### Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters
+- [[quantum-cayley-llm-adapters]] - 量子增强 LLM 微调方法，使用 Cayley 参数化酉适配器克服经典内存限制 (arXiv: 2605.05914)
+  - 核心要点: Cayley 变换参数化酉矩阵，仅训练量子适配器参数
+  - 核心要点: 在真实量子硬件上验证，非仅仿真
+  - **Activation**: quantum-enhanced llm, cayley adapter, unitary adapter, quantum fine-tuning
+
+### Scalable Quantum Reservoir Computing over Distributed Quantum Architectures
+- [[quantum-reservoir-computing]] - 量子 reservoir computing 时间序列预测，无需反向传播，分布式架构可扩展 (arXiv: 2605.04991)
+  - 核心要点: 量子系统动力学作为计算 reservoir，仅训练经典读取层
+  - 核心要点: 四种架构变体：单量子位、多量子位、分布式、混合
+  - **Activation**: quantum reservoir computing, time series forecasting, distributed quantum
+
+### Quantum Software Architecture Framework (QSAF)
+- [[quantum-software-architecture]] - 混合量子经典系统组件化架构框架，34 种可复用量子电路模式 (arXiv: 2605.01800)
+  - 核心要点: 从电路级设计到系统级推理的转变
+  - 核心要点: 识别 34 种可复用量子电路组件和架构模式
+  - **Activation**: quantum software architecture, hybrid quantum-classical, quantum component
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction

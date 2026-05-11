@@ -1,112 +1,67 @@
 ---
 name: quantum-cayley-llm-adapters
-description: "Quantum-enhanced LLM methodology using Cayley-parameterized unitary adapters executed on real quantum hardware. Demonstrates 1.4% perplexity improvement on Llama 3.1 8B with only 6K quantum parameters on 156-qubit IBM QPU. Use when: implementing quantum LLM adapters, running quantum circuits for AI, Cayley parameterization, barren plateau mitigation, quantum-classical hybrid LLM, quantum hardware AI execution, unitary adapters, quantum utility path, SmolLM2 experiments, noise-expressivity phase transition."
+category: quantum-ml
+description: Quantum-enhanced LLM methodology using Cayley-parameterized unitary adapters to overcome classical memory scaling limits. Enables quantum circuit blocks in frozen transformer architectures for LLM fine-tuning on real quantum hardware.
+trigger_words: quantum-enhanced llm, cayley adapter, unitary adapter, quantum fine-tuning, quantum language model, quantum adapter, parameterized quantum circuit
+version: 1.0.0
+created: 2026-05-12
+source: arXiv:2605.05914v1
+authors: Borja Aizpurua, Sukhbinder Singh, Augustine Kshetrimayum, Saeed S. Jahromi, Roman Orus
 ---
 
-# Quantum Cayley LLM Adapters
+# Quantum-Enhanced LLMs via Cayley Unitary Adapters
 
-Quantum-enhanced LLM methodology via Cayley-parameterized unitary adapters. First demonstration of quantum circuit execution improving LLM performance on real 156-qubit hardware.
+## Core Methodology
 
-## Activation Keywords
+Cayley-parameterized unitary adapters are quantum circuit blocks inserted into frozen projection layers of pre-trained LLMs. This approach:
 
-- quantum cayley adapters
-- quantum LLM enhancement
-- Cayley unitary adapters
-- quantum hardware LLM
-- barren plateau mitigation
-- quantum AI execution
-- quantum utility path
-- noise-expressivity transition
-- quantum-classical hybrid LLM
-- unitary adapter LLM
+1. **Parameter Efficiency**: Only adapter parameters are trained while the base model remains frozen, dramatically reducing trainable parameter count
+2. **Quantum Advantage**: Unitary transformations provide richer representational capacity than classical linear adapters
+3. **Hardware Compatibility**: Designed to run on actual quantum hardware, not just simulators
+4. **Memory Scaling**: Quantum parameterization overcomes the unfavorable classical memory scaling with model size
 
-## Core Architecture
+## Implementation Steps
 
-### Three-Stage Design
+### Step 1: Identify Frozen Layers
+- Freeze all transformer projection layers (attention, FFN projections)
+- These are the primary candidates for quantum adapter insertion
 
-1. **Frozen LLM Base**: Pre-trained LLM (Llama 3.1 8B, SmolLM2) with frozen weights
-2. **Cayley Unitary Adapters**: Inserted into projection layers, parameterized via Cayley transform
-3. **Real QPU Execution**: IBM Quantum System Two (156 qubits) for end-to-end inference
+### Step 2: Design Cayley Unitary Circuits
+- Use Cayley transform to parameterize unitary matrices: U = (I - A)(I + A)⁻¹ where A is skew-Hermitian
+- Map skew-Hermitian A to trainable quantum circuit parameters
+- Ensure circuits are hardware-efficient (shallow depth, native gates)
 
-### Cayley Parameterization
+### Step 3: Adapter Integration
+- Insert quantum circuit blocks as adapter layers between frozen projections
+- Classical input → quantum encoding → variational circuit → measurement → classical output
+- Maintain residual connections for training stability
 
-```
-U = (I - A)(I + A)^(-1)
-```
+### Step 4: Training Protocol
+- Train only quantum adapter parameters (not the base model)
+- Use gradient-based optimization with parameter-shift rule or finite differences
+- Batch processing: encode classical data into quantum states, measure, compute loss
 
-Where A is skew-Hermitian matrix. Guarantees unitarity without constraints, avoiding barren plateau problem inherent in naive quantum parameterizations.
+### Step 5: Deployment on Real Hardware
+- Calibrate for specific quantum hardware noise profiles
+- Use error mitigation techniques (zero-noise extrapolation, readout error mitigation)
+- Validate that quantum advantage persists under realistic noise conditions
 
-## Key Findings
+## Key Advantages
 
-### Llama 3.1 8B Results
-- **Perplexity improvement**: 1.4% with only 6,000 quantum parameters
-- **Compression recovery**: 83% recovery of compression-induced degradation
-- **Hardware**: Validated on 156-qubit IBM Quantum System Two
+- **Scalability**: Memory requirements scale favorably compared to classical fine-tuning
+- **Expressivity**: Unitary transformations provide richer feature transformations
+- **Practical**: Demonstrated on real quantum hardware, not just simulation
+- **Compatibility**: Works with any pre-trained LLM architecture
 
-### SmolLM2 Systematic Study
-- Monotonic perplexity improvement with unitary block dimension
-- Correct answers to questions classical baselines fail
-- Noise-expressivity phase transition identifies quantum utility path
+## Pitfalls
 
-### Technical Insights
-- **No barren plateau**: Cayley parameterization avoids gradient vanishing
-- **Efficient scaling**: 6K parameters for 8B model (~0.000075% overhead)
-- **Hardware validated**: Real QPU execution, not simulation
-- **Phase transition**: Sharp noise-expressivity boundary defines scalability path
+- **Hardware Noise**: NISQ devices have significant noise; error mitigation is essential
+- **Encoding Overhead**: Classical-to-quantum data encoding can be a bottleneck
+- **Circuit Depth**: Keep circuits shallow to minimize decoherence effects
+- **Gradient Estimation**: Parameter-shift rule requires 2N circuit evaluations per parameter
 
-## Implementation Pattern
+## Verification
 
-### Adapter Placement
-
-```python
-# Insert Cayley adapters into frozen projection layers
-def apply_cayley_adapter(projection_layer, quantum_circuit):
-    # Freeze original weights
-    for param in projection_layer.parameters():
-        param.requires_grad = False
-    
-    # Insert Cayley unitary adapter
-    cayley_params = skew_hermitian_matrix(qubit_count)
-    unitary = cayley_transform(cayley_params)
-    
-    # Execute on QPU
-    return quantum_execute(unitary, projection_layer)
-```
-
-### Circuit Design Principles
-- Keep circuit depth below noise threshold
-- Scale unitary block dimension systematically
-- Monitor noise-expressivity phase transition
-- Use Cayley transform to guarantee unitarity
-
-## When to Use
-
-- Implementing quantum-enhanced LLM inference
-- Need to mitigate barren plateaus in quantum ML
-- Running quantum circuits for AI on real hardware
-- Hybrid quantum-classical model development
-- Compressing large models with quantum adapters
-- Testing quantum utility for practical AI tasks
-
-## Limitations
-
-- Requires access to quantum hardware (IBM QPU demonstrated)
-- Current improvements modest (1.4% at small scale)
-- Noise limits practical qubit counts
-- Classical preprocessing required for adapter integration
-- Only validated on specific model architectures
-
-## Related Research
-
-- Quantum-classical hybrid neural networks
-- Barren plateau mitigation strategies
-- Parameter-efficient LLM fine-tuning (LoRA, Adapters)
-- Quantum machine learning expressivity
-- Noisy intermediate-scale quantum (NISQ) algorithms
-
-## References
-
-- arXiv:2605.05914v1 - Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters
-- Authors: Borja Aizpurua, Sukhbinder Singh, Augustine Kshetrimayum, Saeed S. Jahromi, Roman Orus
-- Published: May 7, 2026
-- Subjects: Quantum Physics (quant-ph), Artificial Intelligence (cs.AI), Machine Learning (cs.LG)
+- Compare performance against classical adapter baselines (LoRA, linear adapters)
+- Verify that quantum advantage persists as problem size scales
+- Test on multiple LLM architectures to confirm generality
