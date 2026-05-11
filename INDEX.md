@@ -1,3 +1,32 @@
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### Partitioning Neural Co-Variability
+- [[pmnlv-neural-covariability]] - Poisson matrix-normal latent variable model for analyzing structured gain co-variability in neural populations beyond scalar Fano factor (arXiv: 2605.06995)
+  - 核心要点 1: PMNLV 模型将单神经元过度色散扩展到群体层面，使用 Kronecker 分解协方差建模
+  - 核心要点 2: 变分 EM (VEM) 和 Kernel Tournament Method (KTM) 两种互补估计算法
+  - 核心要点 3: Neuropixel 记录显示共享群体共变异性在 V1 最高，在高级视觉区域递减
+  - **Activation**: neural co-variability, Poisson matrix-normal, overdispersion spiking, Neuropixel population, structured gain modulation, trial-to-trial variability
+
+### Learning Cross-Atlas Consistent Brain Disorder Representations via Disentangled Multi-Atlas Functional Connectivity Learning
+- [[madcle-multi-atlas-disentangled-connectivity]] - Multi-branch disentangled representation learning for cross-atlas consistent FC-based disorder identification (arXiv: 2605.07026)
+  - 核心要点 1: MADCLE 联合编码多个脑图谱的 FC 矩阵，通过分布对齐实现跨图谱一致性
+  - 核心要点 2: 分离协变量相关和图谱依赖的残差因子，减少非疾病信息泄漏
+  - 核心要点 3: 在 ADNI 和 ADHD-200 数据集上优于单图谱基线和多图谱 GNN/Transformer
+  - **Activation**: multi-atlas functional connectivity, disentangled representation, brain disorder identification, cross-atlas consistency
+
+### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
+- [[same-brain-different-prediction]] - EEG preprocessing instability analysis: up to 42% prediction flip rate across pipelines with Walsh-Hadamard decomposition and Preprocessing Uncertainty diagnostic (arXiv: 2605.07212)
+  - 核心要点 1: 将预处理选择形式化为反事实干预空间，跨6个数据集发现高达42%试验级预测翻转
+  - 核心要点 2: Walsh-Hadamard 分解揭示敏感性在二元干预设计下近乎可加
+  - 核心要点 3: Preprocessing Uncertainty (PU) 和 NA-PGI 图结构正则化作为缓解策略
+  - **Activation**: EEG preprocessing reliability, preprocessing uncertainty, Walsh-Hadamard decomposition, EEG pipeline instability, NA-PGI regularization
+
+### Reason to Play: Behavioral and Brain Alignment Between Frontier LRMs and Human Game Learners
+- [[lrm-game-learning-brain-alignment]] - Frontier LRM behavioral and brain alignment with human game learners using representational similarity (arXiv: 2605.08019)
+  - 核心要点 1: 前沿大推理模型 (LRM) 在游戏学习中的行为和脑对齐分析
+  - 核心要点 2: 使用表征相似性分析比较 LRM 与人类学习者的学习轨迹
+  - **Activation**: LRM brain alignment, reasoning model neuroscience, game learning AI, behavioral alignment human AI
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
