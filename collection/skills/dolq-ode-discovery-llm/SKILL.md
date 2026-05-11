@@ -1,60 +1,75 @@
 ---
-name: "dolq-ode-discovery-llm"
-description: "DoLQ framework for discovering ODEs using LLM-based qualitative and quantitative evaluation. Multi-agent architecture for interpretable scientific equation discovery. Activation: ODE discovery, symbolic regression LLM, DoLQ, scientific equation discovery, multi-agent discovery, dynamical system discovery, SINDy alternative."
+name: dolq-ode-discovery-llm
+description: "DoLQ framework for discovering ODEs using LLM-based qualitative and quantitative evaluation. Multi-agent architecture with Sampler Agent, Parameter Optimizer, and Scientist Agent for symbolic equation discovery from observational data. Accepted at ICML 2026. Activation: ODE discovery, equation discovery, symbolic regression, differential equation, dolq, LLM-based evaluation, scientific machine learning."
 ---
 
-# DoLQ: Discovering ODEs with LLM-Based Qualitative and Quantitative Evaluation
+# DoLQ: ODE Discovery with LLM-Based Evaluation
 
-**Paper:** Sum Kyun Song, Bong Gyun Shin, Jae Yong Lee — "Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation" (arXiv: 2605.07323, accepted at ICML 2026)
-**Code:** https://github.com/Bon99yun/DoLQ
+> Multi-agent framework for discovering governing ordinary differential equations from observational data using LLM-based qualitative and quantitative evaluation. Accepted at ICML 2026.
 
-## Overview
+## Metadata
+- **Source**: arXiv:2605.07323
+- **Authors**: Sum Kyun Song, Bong Gyun Shin, Jae Yong Lee
+- **Published**: 2026-05-08
+- **Venue**: ICML 2026
 
-DoLQ is a multi-agent framework that discovers governing ordinary differential equations from observational data by combining quantitative metrics (MSE, parameter fitting) with qualitative evaluation (LLM-based semantic assessment of physical plausibility). Key insight: similar MSE values can correspond to completely different equations — quantitative metrics alone are insufficient for correct scientific discovery.
+## Core Methodology
 
-## Core Problem
+### Key Innovation
+Existing symbolic regression approaches rely primarily on quantitative metrics. DoLQ addresses the gap by incorporating **domain knowledge** via LLM-based qualitative evaluation to ensure physical plausibility of discovered equations.
 
-Traditional symbolic regression and SINDy rely primarily on quantitative fitting metrics. Different equations can produce nearly identical MSE but represent fundamentally different physics. Real scientific discovery requires domain knowledge and physical plausibility checks. SINDy requires pre-specified basis function libraries.
+### Multi-Agent Architecture
 
-## Multi-Agent Architecture
+1. **Sampler Agent**: Proposes dynamic system candidates (equation structures)
+2. **Parameter Optimizer**: Refines equations for numerical accuracy
+3. **Scientist Agent**: Leverages LLM to conduct both:
+   - **Qualitative evaluation**: Physical plausibility, domain knowledge consistency
+   - **Quantitative evaluation**: Numerical accuracy against observed data
+   - Synthesizes results to iteratively guide the search
 
-### Three-Agent Framework
-
-1. **Sampler Agent** — Proposes dynamic system candidate terms with physical justifications based on system description and Scientist Agent feedback
-2. **Parameter Optimizer** — Refines equations for accuracy by fitting coefficients to data
-3. **Scientist Agent** — LLM-based evaluator conducting qualitative semantic assessment and quantitative iterative comparison, synthesizing both to guide search
-
-### Iterative Loop
+### Workflow
 
 ```
-System Description -> Sampler Agent -> Candidate Terms -> Parameter Optimizer -> Fitted Equations -> Scientist Agent -> Feedback Loop
+Data → Sampler Agent → Candidate Equations
+                           ↓
+                    Parameter Optimizer → Refined Equations
+                           ↓
+                    Scientist Agent (LLM)
+                    ├── Qualitative Eval (domain knowledge)
+                    └── Quantitative Eval (numerical fit)
+                           ↓
+                    Synthesize → Guide next iteration
+                           ↓
+                    Best ODE discovered
 ```
 
-## Key Innovation: Qualitative Evaluation
+## Applications
+- Scientific machine learning for dynamical systems
+- Discovering governing equations from neural population data
+- Physics-informed equation discovery
+- Multi-dimensional ODE benchmark problems
 
-- LLM assesses whether proposed equations are physically plausible given system context
-- Evaluates mathematical form consistency with known physics/biology principles
-- Prevents overfitting to noise by requiring semantic coherence
-- Bridges the gap between statistical fit and scientific validity
+## Implementation Guide
 
-## Comparison with Existing Methods
+### Prerequisites
+- LLM API access (for Scientist Agent)
+- Numerical optimization library (for Parameter Optimizer)
+- ODE solver for simulation-based evaluation
 
-| Method | Quantitative | Qualitative | Multi-Agent | Library-Free |
-|--------|-------------|-------------|-------------|-------------|
-| SINDy | Yes | No | No | No (requires library) |
-| Traditional SR | Yes | No | No | Yes |
-| **DoLQ** | **Yes** | **Yes** | **Yes** | **Yes** |
+### Key Design Principles
+1. **Multi-agent separation**: Each agent has distinct role and expertise
+2. **Iterative refinement**: Feedback loop from evaluation guides search
+3. **Dual evaluation**: Both qualitative (LLM domain knowledge) and quantitative (numerical metrics)
+4. **Symbolic term recovery**: Focus on recovering correct symbolic terms, not just numerical fit
 
-## When to Use
+## Pitfalls
+- LLM qualitative evaluation quality depends on prompt design and model capability
+- Parameter optimization can be computationally expensive for complex systems
+- Search space explosion in high-dimensional ODE discovery
+- Only validated on synthetic benchmarks; real-world biological data application needs verification
 
-- Discovering governing equations from time-series data
-- Need interpretable mathematical models of dynamical systems
-- Working in physics, chemistry, biology, or engineering domains
-- Quantitative fitting alone is insufficient (need physical plausibility)
-- Comparing or improving upon SINDy-based approaches
-- Building scientific discovery AI systems
-
-## References
-
-- Song et al. (2026). DoLQ: ODE Discovery with LLM Evaluation. arXiv: 2605.07323. ICML 2026.
-- Brunton et al. (2016). SINDy: Discovering governing equations from data. PNAS.
+## Related Skills
+- pem-ude-neural-governing-equations
+- neural-emulator-theory
+- spiking-neural-network-differential-equation
+- ode-complexity-dynamics

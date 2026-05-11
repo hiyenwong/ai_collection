@@ -30,6 +30,14 @@
   - 核心要点 3: 在 UK Biobank 上 13 个疾病类别和 14 个单一疾病实体上优于单器官和多器官基线
   - **Activation**: pan-organ foundation model, missing organ robustness, saliency-guided masking, multimodal biomedical imaging, dominant-organ shortcut learning
 
+### DoLQ: ODE Discovery with LLM-Based Evaluation
+- [[dolq-ode-discovery-llm]] - Multi-agent framework for discovering ODEs from data using LLM-based qualitative + quantitative evaluation, accepted at ICML 2026 (arXiv: 2605.07323)
+  - 核心要点 1: 多智能体架构 — Sampler Agent 提议候选方程，Parameter Optimizer 优化精度，Scientist Agent (LLM) 进行定性与定量评估
+  - 核心要点 2: LLM 定性评估确保物理合理性，突破纯定量符号回归的局限
+  - 核心要点 3: 迭代反馈循环引导搜索，在高维 ODE 基准上超越现有方法
+  - **Activation**: ODE discovery, equation discovery, symbolic regression, differential equation, dolq, LLM-based evaluation, scientific machine learning, multi-agent equation discovery
+
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### DoLQ: Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
