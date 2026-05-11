@@ -1,3 +1,19 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - 通过参数重建实现SNN全局最优训练，避免代理梯度近似误差累积 (arXiv: 2605.08022v1)
+  - Core contribution: Extends convexification from parallel feedforward threshold networks to parallel recurrent threshold networks (subsuming SNNs)
+  - Key innovation: Parameter reconstruction algorithm provides globally optimal SNN training without surrogate gradient approximation
+  - Demonstrates data scalability and robustness across tasks, standalone or combined with surrogate-gradient
+  - **Activation**: globally optimal SNN, parameter reconstruction SNN, surrogate gradient alternatives, convex SNN optimization, recurrent threshold networks
+
+### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
+- [[same-brain-different-prediction]] - 揭示预处理选择如何严重影响EEG解码可靠性，提出反事实干预框架 (arXiv: 2605.07212v1)
+  - Core contribution: Formalizes preprocessing choices as a counterfactual intervention space showing ~42% prediction flip rate
+  - Key innovation: Establishes minimum preprocessing reporting standards for reproducible neural decoding
+  - Implications for BCI reliability and clinical neuroscience reproducibility
+  - **Activation**: EEG preprocessing reliability, counterfactual intervention, BCI reproducibility, neural decoding robustness
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Photonic-Implemented Efficient Deep Quantum Neural Network via Virtual-Driven Hilbert Space Expansion
