@@ -35,6 +35,14 @@
   - 核心要点 3: 在多维 ODE 基准上超越现有方法，更准确地恢复真实符号项
   - **Activation**: ODE discovery, symbolic regression, LLM scientific discovery, equation discovery
 
+
+### Quantization Robustness from Dense Representations of Sparse Functions in Kernel Associative Memory
+- [[kernel-hopfield-attractor-geometry]] - Geometric analysis of attractor boundaries and storage capacity in kernel Hopfield networks via quantization/pruning experiments (arXiv: 2604.20333)
+  - 核心要点 1: KLR Hopfield 网络在低精度量化下保持鲁棒性，但对剪枝高度敏感 — "稀疏函数、密集表示"原理
+  - 核心要点 2: 基于自发对称破缺和 Walsh 分析的几何解释，揭示鲁棒表示的底层几何原则
+  - 核心要点 3: 为硬件高效的核关联记忆提供实用路径，为神经系统鲁棒表示提供几何洞察
+  - **Activation**: kernel Hopfield, KLR associative memory, attractor basin geometry, quantization robustness, sparse function dense representation
+
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Compositional Quantum Heuristics for Max-Clique Detection
