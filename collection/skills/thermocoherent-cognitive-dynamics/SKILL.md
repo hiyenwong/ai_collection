@@ -3,10 +3,10 @@ name: thermocoherent-cognitive-dynamics
 description: >
   Thermocoherent framework for modeling information flow in neural matter.
   Heat flow couples to delocalized information flow carried by shared coherence.
-  Use when: thermocoherent effects in neural systems, quantum cognition physical
-  basis, relational resources in neural tissue (entanglement, discord, classical
-  correlations), Mpemba-type thermal relaxation in cognition, cross-scale neural
-  coordination, arXiv:2604.04069, quantum information flow in neural matter.
+  Use when: thermocoherent effects in neural systems, quantum cognition physical basis,
+  relational resources in neural tissue (entanglement, discord, classical correlations),
+  Mpemba-type thermal relaxation in cognition, cross-scale neural coordination,
+  arXiv:2604.04069, quantum information flow in neural matter.
 ---
 
 # Thermocoherent Cognitive Dynamics Framework
@@ -57,6 +57,14 @@ Relational resources may arise in:
 
 Correlations can enable counterintuitive thermal relaxation where hotter systems
 cool faster — this may play a role in neural state transitions.
+
+## Today's Findings (2026-05-11)
+
+From arXiv:2604.04069v2 — this paper establishes that:
+- Operational relevance of correlations depends on dynamical accessibility, not taxonomy
+- Single composite system's relational structure acts as usable physical resource
+- Environmental coupling makes resources transiently accessible
+- Framework bridges microscopic quantum effects to macroscopic neural coordination
 
 ## Activation Keywords
 

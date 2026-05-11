@@ -39,6 +39,20 @@
 
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### Toward Magnetic-Field-Free Quantum Computing in Engineered Organic Materials: 3-Layer Quantum Brain Hypothesis
+- [[three-layer-quantum-brain]] - Extends SVILC qubit + 3-layer quantum brain to organic materials without magnetic field; CQEC achieves 6.9× coherence improvement; 7.6-31× quantum advantage (arXiv: 2605.00026v1)
+  - Core contribution: Four paths to magnetic-field-free quantum computing (flavin-nitroxide, PTM radical array, SVILC analogue, SSH soliton)
+  - Key innovation: CQEC purification protocol across radical-pair proteins; Petz recovery beyond entanglement-breaking threshold confirmed
+  - Bernstein-Vazirani yields provable quantum advantage; 10-40× cost reduction, 10-200× power reduction vs competing platforms
+  - **Activation**: SVILC qubit, magnetic-field-free quantum, covariant QEC, three-layer quantum brain, radical-pair quantum, organic quantum computing
+
+### The Physical Basis of Information Flow in Neural Matter: Thermocoherent Perspective
+- [[thermocoherent-cognitive-dynamics]] - Multiscale resource-theory framework where heat flow couples to delocalized information via shared coherence (arXiv: 2604.04069v2)
+  - Core contribution: Relational structure in composite states acts as usable physical resource hidden from local descriptions
+  - Key innovation: Ion-channel interfaces, proton networks, π-electron architectures, phosphate motifs as substrate classes for thermocoherent organization
+  - Falsifiable framework: microscopic relational resources bias transport, relaxation, signaling, cross-scale coordination
+  - **Activation**: thermocoherent cognition, information flow neural matter, relational resources, Mpemba neural, quantum cognition physical basis
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Aquatic Neuromorphic Optical Flow
