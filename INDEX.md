@@ -1,3 +1,33 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-meg]] - Derives fundamental 2.2 Mbit/s information capacity bound for MEG using quantum sensor physics, neural metabolism, and geometric constraints (arXiv: 2511.06401)
+  - 核心要点 1: 量子传感器能量分辨率与脑代谢功率结合推导技术无关的信息容量上界
+  - 核心要点 2: 时空带宽竞争导致基本权衡，高阶多极分量被几何抑制低于量子噪声
+  - 核心要点 3: 仅依赖几何、神经代谢和普朗克常数的普适性界限
+  - **Activation**: quantum limit MEG, magnetoencephalography information capacity, neural metabolic bound, quantum sensor brain imaging, 2.2 Mbit/s brain
+
+### De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry
+- [[quantum-limited-brain-imaging-bounds]] - Universal quantum-limited brain imaging bounds across MEG/EEG/fMRI modalities using Mahalanobis whitening and Bures distance (arXiv: 2511.07313)
+  - 核心要点 1: Mahalanobis 白化作为两阶段去个性化方法从 fMRI 提取主体信息
+  - 核心要点 2: Bures 距离与量子力学连接，提供量子启发的相似性度量
+  - 核心要点 3: 三级约束层次框架适用于所有非侵入式脑成像模态
+  - **Activation**: quantum limited brain imaging, fundamental neuroimaging limits, Mahalanobis whitening fMRI, Bures distance quantum
+
+### Compositional Quantum Heuristics for Max-Clique Detection
+- [[compositional-quantum-heuristics]] - Group-invariant loss functions for quantum ML mitigate barren plateau problem (arXiv: 2605.07611)
+  - 核心要点 1: 组合式量子模型组装缓解可训练性与经典可模拟性权衡
+  - 核心要点 2: 对称性诱导的归纳偏见改善梯度行为
+  - 核心要点 3: 递归混合量子经典启发式算法指导经典搜索
+  - **Activation**: compositional quantum ML, barren plateaus mitigation, group-invariant loss, quantum graph neural network
+
+### Quantum Annealing: Optimisation, Sampling, and Many-Body Dynamics
+- [[quantum-annealing-review]] - Comprehensive review of quantum annealing for optimisation and many-body quantum dynamics (arXiv: 2605.06857)
+  - 核心要点 1: 量子退火作为专用近量子方法用于离散优化和采样
+  - 核心要点 2: 数千量子比特的可编程自旋系统，最大的可控量子设备
+  - 核心要点 3: 隧穿、谱隙和开放系统效应决定计算性能
+  - **Activation**: quantum annealing optimisation, quantum sampling, many-body quantum dynamics, programmable spin systems
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
