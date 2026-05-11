@@ -1,3 +1,12 @@
+
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters
+- [[quantum-cayley-llm-adapters]] - Cayley-parameterized unitary adapters improve Llama 3.1 8B perplexity by 1.4% with 6K params on 156-qubit IBM QPU; avoids barren plateaus via guaranteed unitarity (arXiv: 2605.05914)
+  - Core: Cayley transform parameterizes unitary circuits inserted into frozen LLM projection layers; executed on real IBM Quantum System Two hardware
+  - Monotonic improvement with block dimension, 83% compression recovery, noise-expressivity phase transition defines quantum utility path
+  - **Activation**: quantum cayley adapters, barren plateau mitigation, quantum hardware LLM, unitary adapter LLM, quantum-classical hybrid LLM, noise-expressivity transition
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
