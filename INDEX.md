@@ -1,3 +1,26 @@
+## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
+
+### QuanForge: Mutation Testing for Quantum Neural Networks
+- [[quantum-neural-network-testing]] - Statistical mutation testing framework for QNN reliability with 9 gate/parameter-level mutation operators (arXiv: 2604.20706)
+  - 核心要点 1: 统计假设检验替代确定性变异杀死，解决量子测量概率性问题
+  - 核心要点 2: 9种变异操作符 — 门级（插入/删除/替换/复制）和参数级（扰动/置零/缩放/交换/取反）
+  - 核心要点 3: 变异分数用于定位电路脆弱区域，指导数据增强和结构评估
+  - **Activation**: quantum testing, QNN mutation testing, quantum circuit validation, statistical mutation killing, variational quantum circuit testing, gate-level mutation
+
+### Replay Buffer Engineering for Quantum Circuit Optimization
+- [[quantum-replay-buffer-engineering]] - ReaPER+ annealed replay rule achieving 4-32x sample efficiency gains in quantum RL optimization (arXiv: 2604.21863)
+  - 核心要点 1: ReaPER+ 从TD误差驱动平滑过渡到可靠性感知采样，提升样本效率4-32倍
+  - 核心要点 2: OptCRLQAS将多次架构编辑的量子评估合并，减少67.5%训练时间
+  - 核心要点 3: 无噪声轨迹迁移到噪声环境warm-start，减少85-90%达到化学精度的步数
+  - **Activation**: replay buffer quantum, RL quantum optimization, quantum architecture search, ReaPER+, amortized quantum evaluation, noiseless trajectory transfer
+
+### Photonic QNN via Hilbert Space Expansion
+- [[photonic-quantum-neural-network]] - Ancillary-qubit-free nonlinear activation on linear photonic chips via input replication and mode expansion (arXiv: 2605.06397)
+  - 核心要点 1: 通过输入复制和模式扩展在线性光量子芯片上实现有效非线性激活函数
+  - 核心要点 2: 消除辅助量子比特需求和测量诱导的量子比特消耗，显著降低资源成本
+  - 核心要点 3: 集成4个纠缠源的编程干涉网络，展示非线性分类、图像生成和Gibbs态制备
+  - **Activation**: photonic QNN, quantum photonic neural network, Hilbert space expansion, non-unitary activation quantum, ancillary qubit free, dimension-enhanced expressivity
+
 ## 2026-05-12 - Deep Learning Research (Cron Job)
 
 ### Efficient On-Policy Distillation: Prune-OPD + vOPD
