@@ -1,5 +1,19 @@
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[meg-quantum-information-capacity]] - 基于量子传感器和脑代谢推导MEG信息容量上限2.2Mbit/s (arXiv: 2511.06401)
+  - 核心要点：人脑最大信息率仅依赖几何、代谢和普朗克常数
+  - 核心要点：时空带宽存在根本性权衡，高次多极分量被几何抑制
+  - **Activation**: meg quantum limit, 量子信息容量, quantum sensing neuroscience, SQUID
+
+### Parameter efficient hybrid spiking-quantum CNN with surrogate gradient and quantum data-reupload
+- [[spiking-quantum-data-reupload]] - 实现SNN与量子电路在单一反向传播框架下的联合训练 (arXiv: 2512.03895)
+  - 核心要点：无需预训练编码器，从随机初始化即可收敛
+  - 核心要点：使用0.5%参数达到SOTA SNN基线86%准确率
+  - **Activation**: spiking quantum neural network, SQDR-CNN, quantum data re-upload, hybrid SNN
+
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Aquatic Neuromorphic Optical Flow
