@@ -1,5 +1,13 @@
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Aquatic Neuromorphic Optical Flow
+- [[aquatic-neuromorphic-optical-flow]] - Self-supervised SNN framework for per-pixel optical flow from event camera streams in underwater environments (arXiv: 2605.07653v1)
+  - Core contribution: Bridges neuromorphic sensing and aquatic intelligence for lightweight, real-time perception
+  - Key innovation: Self-supervised optical flow estimation via event warping consistency, bypassing underwater data scarcity
+  - **Activation**: underwater vision, event camera, neuromorphic optical flow, aquatic perception, DVS underwater
+
 ### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
 - [[spiking-phase-quantum-encoding]] - Spike-driven temporal encoding for quantum feature preparation (arXiv: 2604.11022)
   - Converts real-valued features into LIF spike trains for quantum rotations
