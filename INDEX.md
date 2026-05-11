@@ -1,3 +1,25 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
+- [[spiking-phase-quantum-encoding]] - Spike-driven temporal encoding for quantum feature preparation (arXiv: 2604.11022)
+  - Converts real-valued features into LIF spike trains for quantum rotations
+  - Encoding-centric evaluation protocol (CKTA, Fisher score, silhouette)
+  - Achieves CKTA 0.966 vs angle encoding 0.632 on Blobs dataset
+  - **Activation**: SPATE, spiking encoding quantum, temporal quantum encoding, spike-to-phase, LIF quantum
+
+### Compositional Quantum Heuristics for Max-Clique Detection
+- [[compositional-quantum-heuristics]] - Group-invariant loss functions for symmetry-induced inductive bias in quantum circuits (arXiv: 2605.07611)
+  - Permutation-equivariant quantum graph neural networks for graph problems
+  - Recursive hybrid quantum-classical heuristic for scalability
+  - **Activation**: compositional quantum circuits, barren plateau mitigation, quantum graph neural network, group-invariant loss
+
+### GSC-QEMit: Adaptive Quantum Error Mitigation
+- [[gsc-qemit-qem]] - Telemetry-driven context-forecast-bandit framework for adaptive QEM (arXiv: 2604.24551)
+  - GHSOM + Gaussian-process forecaster + contextual multi-armed bandit
+  - +9.0% logical fidelity improvement with cost-aware Thompson sampling
+  - **Activation**: adaptive quantum error mitigation, telemetry-driven QEM, forecast bandit quantum
+
+
 ## 2026-05-11 Afternoon - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Quantum-like dynamics in the human brain
