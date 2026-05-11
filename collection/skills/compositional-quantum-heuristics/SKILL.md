@@ -1,116 +1,112 @@
 ---
 name: compositional-quantum-heuristics
-description: "Design compositional quantum models that avoid barren plateaus by assembling smaller trainable subcomponents. Use when building quantum neural networks, quantum graph algorithms, or combinatorial optimization solvers. Triggers: barren plateau, quantum composition, compositional QML, quantum graph neural network, max-clique, group-invariant loss, symmetry-induced bias, permutation-equivariant, recursive quantum heuristic, quantum subcircuit assembly"
+description: >
+  Compositional Quantum Heuristics methodology for mitigating barren plateaus
+  in quantum machine learning. Assembles larger quantum models from smaller
+  trainable subcomponents using group-invariant loss functions and symmetry-
+  induced inductive bias. Use when building quantum ML models, designing
+  parameterized quantum circuits, or addressing gradient vanishing in QML.
+  arXiv:2605.07611
 ---
 
-# Compositional Quantum Heuristics
+# Compositional Quantum Heuristics for QML
 
-## Overview
+## Description
 
-This skill provides patterns for building quantum machine learning models compositionally — assembling larger quantum models from smaller, independently trainable subcomponents. This approach directly addresses the **barren plateau** problem in QML, where deep quantum circuits have vanishing gradients that prevent effective training.
+Addresses the barren plateau problem in quantum machine learning by
+composing larger quantum models from smaller, trainable subcomponents.
+Uses group-invariant loss functions to introduce symmetry-induced inductive
+bias, improving gradient behavior and generalization.
 
-Based on: *Compositional Quantum Heuristics for Max-Clique Detection* (arxiv:2605.07611, May 2026).
+## Activation Keywords
+- compositional quantum heuristics
+- barren plateau mitigation
+- quantum ML composition
+- group-invariant loss function
+- permutation-equivariant QGNN
+- quantum graph neural network
+- symmetry-induced bias quantum
+- QIRO quantum-informed recursive
 
-## Core Problem: Barren Plateaus
+## Core Methodology
 
-In deep variational quantum circuits, the gradient magnitude decreases exponentially with circuit depth:
+### Step 1: Decompose into Subcomponents
 
-```
-|∇L(θ)|² ≈ O(1/2ⁿ)  where n = number of qubits
-```
+Break the target quantum circuit into smaller sub-circuits that are:
+- Classically simulable (few qubits each)
+- Trainable (no barren plateaus at small scale)
+- Composable (output of one feeds into next)
 
-This makes gradient-based training impossible for circuits beyond ~20 qubits without special structure.
-
-## Technique 1: Compositional Model Assembly
-
-Instead of training one large circuit, decompose the problem:
-
-```
-Large Circuit C(θ) → Compose[C₁(θ₁), C₂(θ₂), ..., Cₖ(θₖ)]
-```
-
-Each subcircuit Cᵢ is small enough to remain trainable (avoids barren plateaus), and the composition preserves expressivity.
-
-**When to use:** Any quantum circuit with >10 qubits where gradient vanishing is observed.
-
-**Steps:**
-1. Identify problem structure that allows decomposition (e.g., graph subproblems)
-2. Design subcircuits C₁...Cₖ, each with ≤10 qubits
-3. Train each subcircuit independently
-4. Compose outputs via classical post-processing or light entanglement
-
-## Technique 2: Group-Invariant Loss Functions
-
-Design loss functions invariant under symmetry groups of the problem:
+### Step 2: Construct Group-Invariant Loss
 
 ```python
-# Symmetry-induced inductive bias
+import numpy as np
+
 def group_invariant_loss(predictions, targets, symmetry_group):
-    """Loss invariant under problem symmetry group action."""
-    # Average loss over group orbit
-    total_loss = 0
+    """Loss invariant under symmetry group transformations."""
+    loss = 0.0
     for g in symmetry_group:
-        transformed_preds = g.apply(predictions)
-        total_loss += standard_loss(transformed_preds, targets)
-    return total_loss / len(symmetry_group)
+        # Apply group transformation to predictions
+        g_preds = apply_symmetry(predictions, g)
+        g_targets = apply_symmetry(targets, g)
+        loss += np.mean((g_preds - g_targets) ** 2)
+    return loss / len(symmetry_group)
+
+def apply_symmetry(x, permutation):
+    """Apply permutation symmetry to data."""
+    return x[permutation]
 ```
 
-**Benefits:**
-- Reduces effective parameter search space
-- Enforces problem-specific constraints
-- Improves sample complexity by |G| factor (group order)
+### Step 3: Build Permutation-Equivariant QGNN
 
-## Technique 3: Permutation-Equivariant Quantum GNNs
-
-For graph problems (max-clique, TSP, graph isomorphism), use permutation-equivariant architectures:
+For graph problems (e.g., max-clique):
+1. Encode graph structure as quantum state
+2. Apply permutation-equivariant quantum layers
+3. Read out invariant predictions
 
 ```python
-# Permutation-equivariant quantum graph neural network
-def perm_equivariant_qgnn(graph_state, adjacency):
-    """
-    Quantum GNN that respects graph permutation symmetry:
-    f(P·A·P⁻¹, P·x) = P·f(A, x)
-    """
-    # Message passing via quantum gates conditioned on adjacency
-    for layer in range(depth):
-        for edge in adjacency.edges():
-            apply_controlled_gate(qubit_i=edge.u, qubit_j=edge.v, gate=RYY)
-        # Node update via variational layer
-        for node in adjacency.nodes():
-            apply_variational_layer(qubit=node, params=θ[layer])
-    return measure()
-```
-
-**Applicable problems:** Max-clique detection, graph coloring, community detection, molecular property prediction.
-
-## Technique 4: Recursive Hybrid Quantum-Classical Heuristic
-
-Combine quantum subroutines with classical recursive decomposition:
-
-```
-function Solve(problem):
-    if size(problem) ≤ threshold:
-        return QuantumSubroutine(problem)
+# Pseudocode for permutation-equivariant QGNN
+def qgnn_layer(adjacency, node_states, num_qubits):
+    """One layer of permutation-equivariant quantum GNN."""
+    # Aggregate neighbor information (equivariant)
+    aggregated = adjacency @ node_states
     
-    subproblems = ClassicalDecompose(problem)
-    partial_solutions = [Solve(sp) for sp in subproblems]
-    return ClassicalMerge(partial_solutions)
+    # Apply quantum circuit to each node (equivariant)
+    updated = apply_parametric_circuit(aggregated, node_states)
+    
+    # Normalize
+    return updated / np.linalg.norm(updated)
 ```
 
-**Key insight:** Each recursive call operates on smaller instances that are easier for quantum circuits to handle, while the classical layer manages the global structure.
+### Step 4: Recursive Hybrid Heuristic (QIRO-inspired)
 
-## Activation Scenarios
+Use trained quantum model to guide classical search:
+1. Train small quantum model on subproblems
+2. Use model predictions to prioritize classical search branches
+3. Recurse on promising subproblems
+4. Combine solutions compositionally
 
-Use this skill when:
-- Designing quantum circuits for combinatorial optimization
-- Encountering barren plateaus in QML training
-- Building quantum models for graph-structured data
-- Need to scale quantum algorithms beyond ~10-20 qubits
-- Working on max-clique, TSP, graph partitioning, or similar problems
+## Applications
 
-## Anti-Patterns to Avoid
+- **Max-Clique Detection**: Identifying maximal cliques in graphs
+- **Combinatorial Optimization**: Graph problems with symmetry
+- **Graph Classification**: With permutation-invariant pooling
+- **Any QML task** where circuit expressivity vs trainability trade-off exists
 
-1. **Monolithic deep circuits** — Don't build one 50-qubit circuit; decompose into 5×10-qubit circuits
-2. **Ignoring symmetry** — Don't use generic loss functions when problem has known symmetries
-3. **Pure quantum** — Don't try to solve everything quantum; use hybrid recursive approach
-4. **Random initialization** — Initialize subcircuits near identity to stay in trainable regime
+## Key Insights
+
+1. **Composition beats monolith**: Smaller circuits are trainable; compose them
+2. **Symmetry is free bias**: Group invariance provides inductive bias without data
+3. **Recursive guidance**: Quantum models guide classical search, not replace it
+4. **Generalization**: Compositional models generalize to larger instances
+
+## Pitfalls
+
+- Group symmetry must match problem structure (wrong group = no benefit)
+- Subcomponent boundaries need careful design
+- Recursive depth limited by accumulated errors
+- Classical simulation of subcomponents still exponential in subcircuit size
+
+## References
+- arXiv:2605.07611 - "Compositional Quantum Heuristics for Max-Clique Detection"
+- arXiv:2308.13607 - QIRO (Quantum-Informed Recursive Optimization)
