@@ -23,6 +23,12 @@
 
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
+### Multi-Atlas Disentangled Connectivity Learning for Brain Disorder Identification
+- [[madcle-multi-atlas-disentangled-connectivity]] - Multi-branch FC representation learning with cross-atlas distributional alignment for robust brain disorder classification (arXiv: 2605.07026)
+  - Core: Joint encoding of FC matrices from different atlases with distributional alignment (MMD) of disease-related representations
+  - Core: Disentangles disease signal, covariate factors, and atlas-specific residuals via covariate supervision, reconstruction, and decorrelation constraints
+  - **Activation**: multi-atlas FC, disentangled connectivity, cross-atlas consistency, MADCLE, atlas parcellation heterogeneity, FC disorder identification
+
 ### Dynamical mechanisms of flexible phase-locking in cortical theta oscillators
 - [[flexible-phase-locking-cortical-theta]] - Multi-timescale inhibitory currents enable flexible phase-locking via delayed Hopf bifurcation (arXiv: 2605.08014)
   - Core: Slow+superslow inhibitory currents generate prolonged post-input recovery delays through delayed Hopf phenomena

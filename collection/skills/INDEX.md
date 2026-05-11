@@ -1,3 +1,26 @@
+## 2026-05-11 - Neuroscience Research (Cron Job)
+
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - 消除替代梯度近似误差：将并行前馈阈值网络凸化扩展到并行循环阈值网络，实现全局最优SNN训练 (arXiv: 2605.08022)
+  - 循环阈值网络凸化，并行SNN作为结构化特例
+  - 参数重构算法直接求解凸优化，消除跨层误差累积
+  - 数据可扩展，可单独使用或与替代梯度训练结合
+  - **Activation**: globally optimal SNN, parameter reconstruction, convex SNN training, surrogate gradient elimination, threshold network convexification
+
+### Multi-Atlas Disentangled Connectivity Learning for Brain Disorder Identification
+- [[madcle-multi-atlas-disentangled-connectivity]] - 多脑图谱解耦功能连接表示学习，通过跨图谱分布对齐实现鲁棒脑疾病分类 (arXiv: 2605.07026)
+  - 多分支编码不同图谱FC矩阵，MMD对齐疾病相关表示
+  - 解耦疾病信号、协变量因子和图谱特异性残差
+  - 在ADNI和ADHD-200数据集上优于单图谱和多图谱基线
+  - **Activation**: multi-atlas FC, disentangled connectivity, cross-atlas consistency, MADCLE, atlas parcellation heterogeneity
+
+### CORE: Cross-site OOD Robust brain nEtwork
+- [[core-cross-site-ood-brain-network]] - 跨站点OOD鲁棒脑网络学习框架，通过站点混杂因子解耦和瞬态通路动力学建模实现跨站点泛化 (arXiv: 2605.06050)
+  - 站点感知混杂因子解耦，提取可复现诊断连接边
+  - 线图组织实现通路级迁移建模
+  - 先验引导的个体自适应门控保留个体变异性
+  - **Activation**: cross-site OOD, brain network generalization, confounder decoupling, transient pathway dynamics, line graph brain
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Monday Cron - Round 3)
 
 ### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
