@@ -21,6 +21,22 @@
   - Intra-system entanglement: non-separable mental states across cognitive domains (mathematical structure, not physical)
   - **Activation**: quantum-like cognition, mental markers quantum, I-field theory, cognitive contextuality, mental observables incompatibility, Khrennikov quantum-like
 
+## 2026-05-11 - Systems Engineering Research (Cron Job)
+
+### Quantifying Trade-Offs Between Stability and Goal-Obfuscation
+- [[stability-goal-obfuscation]] - Joint CLF+PCBF control framework maintains task stability while preventing intent inference by Bayesian observers via RBPF belief-state privacy constraints (arXiv: 2605.06630)
+  - Core: Lyapunov-stable trajectories are inherently legible; contractive dynamics concentrate observer posterior over intent; privacy enforced via probabilistic control barrier functions on RBPF belief state
+  - Dual QP: min ||u - u_nom||² s.t. CLF(stability) + PCBF(privacy) + input constraints
+  - Separate PCBF derivations for Bayesian update step and resampling step enable full RBPF cycle guarantee
+  - **Activation**: stability goal obfuscation, intent privacy, control barrier functions privacy, Lyapunov legibility, adversarial trajectory planning, PCBF, RBPF belief state control, safety-critical autonomy privacy
+
+### Joint Temporal-Structural Representation Learning for Distributed Fault Discrimination in Microservice Architectures
+- [[temporal-structural-fault-discrimination]] - Dynamic graph sequence model combines temporal GNN encoding with attention-based structured message passing for multi-class fault detection in microservice systems (arXiv: 2605.01776)
+  - Core: microservice system as dynamic graph sequence; joint temporal coding + attention-based message passing captures fault propagation along dependency edges
+  - Dual readout: node-level aggregation + temporal aggregation → system-level fault classification
+  - Handles diverse fault morphologies, cascading failures, and multi-source noise
+  - **Activation**: microservice fault detection, distributed fault discrimination, temporal graph neural network ops, service mesh anomaly detection, fault propagation GNN, AIOps fault classification, dynamic graph sequence monitoring
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Unifying Dynamical Systems and Graph Theory to Mechanistically Understand Computation in Neural Networks

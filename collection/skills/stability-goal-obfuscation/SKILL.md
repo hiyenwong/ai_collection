@@ -1,85 +1,95 @@
 ---
 name: stability-goal-obfuscation
 description: >
-  Control-theoretic goal-obfuscation framework for autonomous systems. Quantifies
-  privacy-stability trade-offs using Particle Control Belief Functions (PCBF),
-  Rao-Blackwellized Particle Filtering (RBPF), and robust MPC for goal-privacy
-  preservation in adversarial observation scenarios.
+  Stability-goal obfuscation tradeoff methodology for autonomous agents.
+  Addresses the problem that Lyapunov-stable goal-directed trajectories are
+  inherently legible to Bayesian observers, leaking intent. Combines control
+  Lyapunov functions (CLFs), probabilistic control barrier functions (PCBFs),
+  and Rao-Blackwellized particle filter (RBPF) belief-state analysis to
+  maintain task stability while obfuscating intent from passive observers.
+  Use when: designing privacy-preserving autonomous systems, adversarial
+  trajectory planning, intent privacy, safety-critical control, control
+  barrier functions, Lyapunov stability with privacy constraints.
 ---
 
-## When to Use
-- Designing privacy-preserving controllers for autonomous agents (robots, drones, self-driving vehicles)
-- Implementing goal obfuscation in adversarial observation environments
-- Quantifying trade-offs between system stability and intent privacy
-- Building robust MPC formulations with belief-state dynamics
-- Multi-agent systems where agents must hide true objectives from observers
+# Stability-Goal Obfuscation Tradeoff
 
-## Core Concepts
+Framework for maintaining task stability while preventing intent inference
+by adversarial observers, based on Wang, Guralnik & Dixon (arXiv:2605.06630, May 2026).
 
-### PCBF (Particle Control Belief Function)
-Represents the controller's belief about an adversary's inference of the agent's goal state. Uses particle filtering to approximate the posterior distribution over possible goals given observed trajectories.
+## Problem
 
-### RBPF (Rao-Blackwellized Particle Filter)
-Variance-reduced particle filter that analytically integrates out linear state components, reducing particle degeneracy and improving estimation efficiency in high-dimensional belief spaces.
+Goal-directed agents under Lyapunov-based control are intrinsically **legible**:
+the contractive dynamics of a Lyapunov basin of attraction concentrates a
+Bayesian observer's posterior belief over the agent's latent intent parameters
+(goal location, radius, arrival time). Task-optimal trajectories are the most
+information-leaking.
 
-### Stability-Privacy Trade-off
-Formal quantification: increasing obfuscation (privacy) inherently degrades tracking performance (stability). The trade-off is parameterized by a privacy budget that constrains the adversary's inference accuracy.
+## Core Methodology
 
-## Implementation Steps
+### 1. Dual-State Control Problem
 
-### Step 1: Define the System Model
+Joint control on:
+- **Physical state** x: agent dynamics ẋ ∈ u + d̄B (fully actuated, bounded disturbance)
+- **Belief state** b: observer's RBPF belief over possible agent goals
+
+The controller must satisfy both a **tracking constraint** (CLF) and a **privacy constraint** (PCBF) simultaneously.
+
+### 2. KL-Based Information Leakage Measurement
+
+- Observer uses Rao-Blackwellized particle filter (RBPF) with N particles over discrete goal samples
+- Information leakage measured as KL divergence between prior and posterior over goals
+- Online-computable at each RBPF update step
+- Privacy requires maintaining leakage below a threshold with high probability
+
+### 3. Probabilistic Control Barrier Functions (PCBFs)
+
+Key innovation: derive separate PCBF conditions for:
+- **Bayesian update step**: posterior concentration from new observations
+- **Resampling step**: particle weight redistribution
+
+Combined PCBF guarantees privacy across the full RBPF update cycle.
+
+### 4. Joint Feasibility Analysis
+
+The tracking envelope (physical feasibility) and privacy constraint (belief-state feasibility) interact:
+- Tight privacy bounds shrink feasible control set
+- Loose bounds may fail to obfuscate
+- Feasibility depends on disturbance bounds d̄, RBPF particle count N, and measurement noise
+
+## Implementation Pattern
+
+```python
+# QP formulation (per timestep):
+# min  ||u - u_nom||²
+# s.t.  ∂V/∂x · f(x,u) ≤ -α(V(x))          # CLF (stability)
+#       P[PCBF(b, u) ≥ 0] ≥ 1 - ε          # PCBF (privacy, probabilistic)
+#       u ∈ U                                # input constraints
 ```
-State dynamics: x_{k+1} = f(x_k, u_k) + w_k
-Observation model: y_k = h(x_k) + v_k
-Goal set: G = {g_1, g_2, ..., g_N}
-```
 
-### Step 2: Construct PCBF
-1. Initialize particle set {ξ_i, w_i} for i=1..M over goal hypotheses
-2. For each time step k:
-   - Predict: propagate particles through dynamics model
-   - Update: weight particles using likelihood of observed trajectory
-   - Resample: apply systematic resampling when ESS < threshold
+Where:
+- `u_nom`: nominal task-optimal control
+- `V`: control Lyapunov function
+- `PCBF`: probabilistic barrier function on belief state
+- `ε`: acceptable privacy violation probability
 
-### Step 3: Apply RBPF
-- Analytically integrate linear Gaussian sub-components
-- Maintain particle representation only for non-linear components
-- Reduces variance by O(1/√M) compared to standard PF
+## When to Apply
 
-### Step 4: Design Obfuscation Controller
-```
-min_u  E[cost(x, u)] + λ · PrivacyPenalty(PCBF)
-s.t.   x ∈ feasible_region
-       PrivacyPenalty ≥ privacy_threshold
-```
-- λ controls stability-privacy trade-off
-- PrivacyPenalty measures adversary's goal inference accuracy (lower = more private)
+- Autonomous vehicles operating in adversarial environments
+- Military/aerospace systems requiring intent privacy
+- Multi-agent systems where intent leakage compromises coordination
+- Any Lyapunov-stable controller operating under observation
 
-### Step 5: Robust MPC Integration
-1. Formulate MPC with belief-state as augmented state
-2. Include chance constraints on privacy level
-3. Solve using scenario-based or distributionally robust optimization
-4. Implement receding-horizon control with privacy guarantees
+## Key References
 
-## Key Parameters
-- `M`: Number of particles (typically 500-5000)
-- `λ`: Privacy-stability trade-off weight
-- `privacy_threshold`: Minimum acceptable obfuscation level
-- `horizon`: MPC prediction horizon
-- `ESS_threshold`: Effective sample size threshold for resampling
+- arXiv:2605.06630 — Wang, Guralnik, Dixon (2026)
+- Ames et al. (2016, 2019) — Control Barrier Functions
+- Dragan et al. (2013) — Legible robot motion planning
+- Wang et al. (2025b) — Intent inference via RBPF
 
 ## Pitfalls
-- **Particle degeneracy**: Use RBPF instead of standard PF for high-dimensional problems
-- **Computational burden**: Limit particle count; consider GPU acceleration for real-time
-- **Privacy budget calibration**: Too aggressive obfuscation → system instability; too weak → goal exposed
-- **Model mismatch**: Adversary model errors can cause over/under-estimation of privacy
 
-## Verification
-1. Simulate adversary observer and measure goal inference accuracy
-2. Verify stability via Lyapunov analysis of closed-loop system
-3. Test edge cases: multiple simultaneous goals, dynamic goal switching
-4. Compare privacy level against theoretical bounds
-
-## References
-- arXiv: 2605.06630v1 — "Quantifying Trade-Offs Between Stability and Goal-Obfuscation"
-- Category: eess.SY (Electrical Engineering and Systems Science - Systems and Control)
+- RBPF requires sufficient particle count for accurate belief estimation
+- Privacy constraint may be infeasible if disturbance bounds are too tight
+- Joint feasibility analysis is problem-specific; no universal bounds
+- PCBF derivation requires careful treatment of both update and resampling steps
