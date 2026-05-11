@@ -1,10 +1,25 @@
-## 2026-05-11 - Neuroscience Research (Cron Job)
+## 2026-05-11 Afternoon - Neuroscience Research (Cron Job)
+
+### Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?
+- [[naturality-violation-score]] - Category theory approach to brain-DNN alignment via Naturality Violation Score (NVS), testing whether brain and model preserve the same transformations among stimuli; axis-resolved analysis reveals hierarchy crossover with semantic axes aligning toward HVC and deeper layers (arXiv: 2605.06420)
+  - 核心要点: NVS将脑-DNN比较从单刺激相似度转变为结构保持性测试
+  - 核心要点: 语义轴在深层皮层和DNN层对齐最强(NVS^animacy = 0.39)，低级轴在早期视觉皮层对齐
+  - 核心要点: 代理定义的刺激变化通过脑侧和模型侧传播，自然性方格近似交换
+  - **Activation**: naturality violation score, brain-DNN transformation alignment, category theory neuroscience, fMRI GOD dataset, world-model proxy embeddings
+
+### NeuralSet: A High-Performing Python Package for Neuro-AI
+- [[neuralset-neuro-ai-framework]] - Jean-Rémi King et al. release NeuralSet, a high-performing Python package for Neuro-AI research, unifying tools for brain-DNN alignment, encoding/decoding, and neural population analysis (arXiv: 2605.03169)
+  - 核心要点: 统一Python框架支持神经科学-AI交叉研究
+  - 核心要点: 编码/解码、脑-DNN对齐、群体分析工具整合
+  - **Activation**: NeuralSet, neuro-AI framework, brain-DNN comparison, neural population analysis
 
 ### Partitioning Neural Co-Variability
-- [[pmnlv-neural-covariability]] - PMNLV model partitions neural co-variability in population recordings using Kronecker-factored matrix-normal priors; reveals shared population co-variability peaks in V1 and declines in higher visual areas, invisible to scalar Fano factor summaries (arXiv: 2605.06995)
-  - 核心要点: PMNLV模型扩展单神经元过度离散到群体水平，使用Kronecker分解协方差捕获结构化增益调制
-  - 核心要点: 群体共变性在初级视皮层达峰值并在高级视皮层递减，标量指标不可见
+- [[pmnlv-neural-covariability]] - PMNLV model partitions neural co-variability using Kronecker-factored matrix-normal priors; shared population co-variability peaks in V1 and declines in higher visual areas, invisible to scalar Fano factor summaries (arXiv: 2605.06995)
+  - 核心要点: PMNLV模型扩展单神经元过度离散到群体水平，Kronecker分解协方差捕获结构化增益调制
+  - 核心要点: Neuropixel记录证实群体共变性在初级视皮层达峰值
   - **Activation**: PMNLV neural co-variability, overdispersion model, population gain covariance, Neuropixel analysis, Kronecker-factored covariance, VEM estimation, Kernel Tournament Method
+
+## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Cron Job)
 
