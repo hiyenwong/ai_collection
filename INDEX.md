@@ -496,6 +496,32 @@
   - **Activation**: neuromorphic visual attention, sign language recognition, SpiNNaker2, spiking neural network, event-driven vision
 
 
+## 2026-05-11 - Neuroscience Research (Cron Job) - Supplement
+
+### Direct-to-Event Spiking Neural Network Transfer
+- [[direct-to-event-snn-transfer]] - First systematic study of converting direct-coded SNNs to event-based representations for energy efficiency (arXiv: 2605.07207v1)
+  - Core contribution: Enables reuse of pretrained SNN databases while achieving event-based energy efficiency
+  - Key challenge: Direct-coded SNNs are much less energy-efficient than event-based counterparts
+  - **Activation**: direct-to-event SNN, event-based SNN conversion, direct coding SNN, SNN energy efficiency
+
+### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
+- [[same-brain-different-prediction]] - Formalizes preprocessing as counterfactual intervention space; shows up to 42% of trial-level predictions flip with preprocessing changes (arXiv: 2605.07212v1)
+  - Core contribution: Walsh-Hadamard decomposition reveals near-additive sensitivity in 2^7 pipeline space
+  - Introduces Preprocessing Uncertainty (PU) as per-trial diagnostic complementary to model confidence
+  - **Activation**: EEG preprocessing reliability, preprocessing uncertainty, EEG decoding stability, counterfactual preprocessing
+
+### ShiftLIF: Efficient Multi-Level Spiking Neurons with Power-of-Two Quantization
+- [[shiftlif-power-of-two-quantization]] - Multi-level spiking neuron model using power-of-two quantization for efficient edge deployment (arXiv: 2605.01866v1)
+  - Core contribution: Replace multipliers with bit-shift operations in LIF neuron communication
+  - Enables energy-efficient SNN inference on resource-constrained edge devices
+  - **Activation**: ShiftLIF neuron, power-of-two quantization SNN, efficient spiking neurons, edge SNN deployment
+
+### SNNF: An SNN-based Near-Sensor Noise Filter for Dynamic Vision Sensors
+- [[snnf-near-sensor-dvs-noise-filter]] - Compact SNN noise filter for DVS background activity, achieving 44.4 Meps at <5% power of ANN designs (arXiv: 2605.01937v1)
+  - Core contribution: EBBI representation + single-layer SNN replaces power-hungry multipliers with accumulation logic
+  - FPGA: 11% memory, 40% logic of SOTA; ASIC: 13% area, <5% power of ANN designs
+  - **Activation**: SNN noise filter, DVS background activity, event-based noise filtering, near-sensor SNN
+
 ## 2026-05-10 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Tight Contraction Rates for Primitive Channels under Quantum f-Divergences
