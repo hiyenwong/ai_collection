@@ -1,3 +1,19 @@
+## 2026-05-11 - Neuroscience + Quantum Mechanics (Monday Cron - Round 3)
+
+### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
+- [[eeg-preprocessing-reliability]] - EEG解码可靠性评估：预处理选择导致42%试次预测翻转，提出Walsh-Hadamard分解、预处理不确定性(PU)诊断、NA-PGI正则化 (arXiv: 2605.07212)
+  - 预处理干预空间的形式化建模，2^7管线空间分析
+  - PU捕获模型置信度之外的不稳定性维度
+  - Walsh-Hadamard分解揭示敏感性在实践中近可加
+  - **Activation**: eeg reliability, 预处理可靠性, preprocessing uncertainty, pipeline sensitivity, bci reliability, eeg decoding robustness
+
+### Breaking QAOA's Fixed Target Hamiltonian Barrier: A Fully Connected Quantum Boltzmann Machine via Bilevel Optimization
+- [[quantum-boltzmann-machine-qaoa]] - 全连接量子玻尔兹曼机通过双层优化扩展QAOA架构，单层(p=1)实现95.6%保真度，噪声鲁棒性强 (arXiv: 2605.07473)
+  - 内环：正相能量最小化（QAOA电路）
+  - 外环：负相对比散度（优化目标哈密顿量结构参数）
+  - 2x噪声下目标态概率仍为最高（0.3859）
+  - **Activation**: quantum boltzmann machine, QBM, QAOA extension, 量子玻尔兹曼机, bilevel quantum optimization, quantum contrastive divergence
+
 ## 2026-05-11 - Neuroscience + Quantum Mechanics (Monday Cron - Round 2)
 
 ### Exchange-Only Silicon Spin Qubits: PINN Optimised Pulse Sequences
