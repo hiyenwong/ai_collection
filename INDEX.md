@@ -1,3 +1,19 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Energy-Efficient Implementation of Spiking Recurrent Cells on FPGA
+- [[snn-fpga-hardware-software-codesign]] - FPGA加速器实现SRC神经元SNN，通过分段线性近似移除tanh/exp运算，4bit量化实现0.45mJ/推理 (arXiv: 2605.10679)
+  - 核心要点: SRC神经元在生物合理性和硬件成本之间取得平衡，通过数学简化消除浮点运算
+  - 核心要点: 权重直接存储在LUT寄存器中无需适配，VHDL全硬件实现
+  - 核心要点: 4bit量化+44张图像trace仍保持92.89%准确率，能耗仅0.45mJ/数字
+  - **Activation**: SNN FPGA, spiking recurrent cell SRC, neuromorphic hardware accelerator, SNN energy efficiency
+
+### Frequency Matching in Spiking Neural Networks for mmWave Sensing
+- [[frequency-matching-snn-mmwave]] - 基于频率匹配原理的SNN毫米波感知方法，LIF动力学提供天然低通滤波抑制高频噪声，精度提升6.22% (arXiv: 2605.09983)
+  - 核心要点: LIF神经元膜电位积分天然等效于低通滤波器，膜衰减因子τ决定有效带宽
+  - 核心要点: 频率匹配准则——将LIF带宽与数据判别性频谱内容匹配，实现机制-数据对齐
+  - 核心要点: 4个mmWave数据集验证：平均精度+6.22%，能耗降低3.64×
+  - **Activation**: frequency matching SNN, LIF low-pass filter, mmWave spiking network, membrane decay factor, edge sensing, mechanism-data alignment
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Predictive and feedback signals differently shape the formation of group-level and individualized language representations
