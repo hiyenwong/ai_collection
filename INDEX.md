@@ -25,6 +25,18 @@
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
+### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
+- [[sparse-temporal-context-reconfiguration]] - 联合稀疏编码和时序动力学支持上下文重配置，在小鼠mPFC和SNN中发现防止灾难性遗忘的核心机制 (arXiv: 2605.10178)
+  - 核心要点: 稀疏编码减少跨上下文干扰，时序动力学增强上下文可分离性
+  - 核心要点: SNN天然具备两种属性，无需辅助启发式即可实现终身学习中的稳定保留
+  - **Activation**: sparse coding, temporal dynamics, context reconfiguration, catastrophic forgetting, lifelong learning, SNN
+
+### Cortico-Cerebellar Modularity as an Architectural Inductive Bias for Efficient Temporal Learning
+- [[cortico-cerebellar-modular-rnn]] - 皮层-小脑模块化架构作为高效时序学习的归纳偏置，CB-RNN中小脑模块驱动学习效率而皮层核心充当固定储层 (arXiv: 2605.10356)
+  - 核心要点: 异质模块化架构在时序任务上学习更快、性能更高，超越参数匹配的基线
+  - 核心要点: 最小训练后冻结皮层核心，将后续学习委托给小脑模块仍保持优越效率
+  - **Activation**: cortico-cerebellar, CB-RNN, cerebellar module, cortical core, temporal learning, modular architecture
+
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
 - [[globally-optimal-snn-parameter-reconstruction]] - 通过参数重建实现SNN全局最优训练，消除代理梯度近似误差 (arXiv: 2605.08022)
   - 核心要点: 将前馈阈值网络凸化理论扩展到并行循环阈值网络，证明LIF-SNN是其结构化特例
