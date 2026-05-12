@@ -25,6 +25,12 @@
   - MIP=NEXP，MIP*=RE（含共享纠缠）
   - 泄漏模型影响证明系统可靠性
   - **Activation**: multi-prover interactive proofs, MIP protocols, MIP*
+
+### Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis
+- [[equivariant-rl-quantum-circuit-synthesis]] - Symplectic-equivariant RL synthesizes Clifford circuits by reducing symplectic matrix to identity (arXiv: 2605.10910)
+  - RL agent discovers gate sequences with equivariant network respecting Sp(2n, F_2) symmetry
+  - Better sample efficiency and generalization to larger qubit counts
+  - **Activation**: quantum circuit synthesis, Clifford group, equivariant neural networks, RL quantum control
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Partial Annealing and Pattern Decorrelation in Associative Neural Networks
