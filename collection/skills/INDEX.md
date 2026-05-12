@@ -1,5 +1,19 @@
 ## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
 
+### Quantum Circuit Simulation of Compartmental Drug Dynamics
+- [[quantum-pkpd-simulation]] - Quantum circuit simulation of PK/PD compartmental drug dynamics using PennyLane variational algorithms (arXiv: 2605.09691v1)
+  - 4-compartment model (central, peripheral, effect-site, response) encoded in 12 qubits
+  - Quantum-enhanced SAEM achieves improved log-likelihood vs classical ODE fitting
+  - **Activation**: quantum PK/PD, pharmacokinetic simulation, drug dynamics quantum, quantum circuit SAEM, pennylane pharmacokinetics
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Medical Imaging
+- [[quantum-medical-feature-fusion]] - Temperature-scaled hybrid quantum-classical feature fusion for breast cancer classification (arXiv: 2604.22903v1)
+  - Three fusion strategies: SHF (static), DHF (dynamic), TSHF (temperature-scaled)
+  - TSHF achieves 87.82% accuracy, 91.77% F1, 89.08% AUC-ROC on BreastMNIST
+  - **Activation**: quantum feature fusion, hybrid quantum medical imaging, temperature-scaled fusion, quantum breast cancer, quantum medical classification
+
+## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
+
 ### Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings
 - [[quantum-kernel-medical-embeddings]] - Quantum support vector machines with frozen medical foundation model embeddings achieve advantage on chest radiograph classification (arXiv: 2604.24597)
   - QSVM with MedSigLIP/RAD-DINO embeddings outperforms classical kernel collapse
