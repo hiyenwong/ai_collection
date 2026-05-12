@@ -1,3 +1,11 @@
+## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Communication-Efficient Distributed Inverse Quantum Fourier Transform
+- [[distributed-iqft-communication]] - Distributed iQFT with communication horizon pruning reduces inter-node quantum communication from O(P^2) to O(P) (arXiv: 2605.10710)
+  - 核心要点: 基于阈值修剪策略的通信视界利用受控相位旋转指数衰减特性，安全省略远程门
+  - 核心要点: 每节点纠缠资源消耗饱和为常数值，全局通信复杂度从二次降至线性
+  - 核心要点: iQFT作为Shor、HHL等量子算法的关键构建块，此技术直接提升分布式量子计算的实用性
+  - **Activation**: distributed iQFT, communication horizon pruning, distributed quantum computing, quantum network communication, scalable QFT, quantum teleportation optimization, distributed Shor algorithm
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### NeuralBench: A Unifying Framework to Benchmark NeuroAI Models
