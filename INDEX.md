@@ -1,6 +1,13 @@
 
 ## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
 
+### Qlustering for Data Clustering via Network-Based Quantum Transport
+- [[quantum-transport-clustering]] - 基于GKSL主方程稳态量子传输的无监督聚类方法，通过终端电流读数直接推断簇分配，避免全态层析 (arXiv: 2605.10844)
+  - 核心要点: 数据编码为输入态，簇分配从稳态输出电流推断，无需全态层析
+  - 核心要点: 经典数据准备 + 量子传输动力学 + 经典聚类分配的混合工作流
+  - 核心要点: 对退相干强度具有广泛鲁棒性，电流是量子设备的原生可观测量
+  - **Activation**: quantum clustering, qlustering, GKSL clustering, quantum transport learning, open quantum network clustering, steady-state quantum ML, tomography-free readout
+
 ### Compositional Quantum Heuristics for Max-Clique Detection
 - [[compositional-quantum-heuristics]] - 组合式量子启发式方法解决QML中的barren plateau问题，通过子组件组合和对称性归纳偏差提升梯度行为 (arXiv: 2605.07611)
   - 核心要点: 将大型量子模型分解为小型可训练子组件，避免barren plateau
