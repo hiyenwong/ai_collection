@@ -1,4 +1,10 @@
 ## 2026-05-12 - Neuroscience Research (Cron Job)
+### PRM: Explainable RNN for P300-based BCIs
+- [[prm-explainable-rnn-p300-bci]] - 后循环模块(PRM)增强RNN架构的P300分类性能与可解释性，实现全局/局部双重可解释性分析 (arXiv: 2605.10121)
+  - 核心要点: PRM作为RNN附加层，实现性能提升9%的同时输出时空重要性图，与P300神经生理学描述一致
+  - 核心要点: 全局可解释性识别相关脑区和关键时间区间，局部可解释性解析单次决策的时空模式
+  - 核心要点: 可泛化至运动想象、SSVEP、认知负荷评估等EEG任务
+  - **Activation**: PRM, P300 BCI, explainable RNN EEG, post-recurrent module, transparent BCI, EEG explainability, P300 classification
 
 ### DANCE: Detect and Classify Events in EEG
 - [[dance-eeg-event-detection-classification]] - 端到端集合预测框架，直接从原始未对齐EEG信号中联合检测和分类神经事件 (arXiv: 2605.10688)
@@ -36,6 +42,12 @@
   - **Activation**: dissipative memory, non-gradient consolidation, deep memory mechanism, triple-loop consolidation, MoE gating memory, persistent memory neuromorphic, hippocampal consolidation parallel
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
+### PRM: Explainable RNN for P300-based BCIs
+- [[prm-explainable-rnn-p300-bci]] - 后循环模块(PRM)增强RNN架构的P300分类性能与可解释性，实现全局/局部双重可解释性分析 (arXiv: 2605.10121)
+  - 核心要点: PRM作为RNN附加层，实现性能提升9%的同时输出时空重要性图，与P300神经生理学描述一致
+  - 核心要点: 全局可解释性识别相关脑区和关键时间区间，局部可解释性解析单次决策的时空模式
+  - 核心要点: 可泛化至运动想象、SSVEP、认知负荷评估等EEG任务
+  - **Activation**: PRM, P300 BCI, explainable RNN EEG, post-recurrent module, transparent BCI, EEG explainability, P300 classification
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
 - [[globally-optimal-snn-parameter-reconstruction]] - 将凸优化扩展到递归阈值网络的SNN全局最优训练方法，避免代理梯度近似误差 (arXiv: 2605.08022)
@@ -90,6 +102,12 @@
 
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
+### PRM: Explainable RNN for P300-based BCIs
+- [[prm-explainable-rnn-p300-bci]] - 后循环模块(PRM)增强RNN架构的P300分类性能与可解释性，实现全局/局部双重可解释性分析 (arXiv: 2605.10121)
+  - 核心要点: PRM作为RNN附加层，实现性能提升9%的同时输出时空重要性图，与P300神经生理学描述一致
+  - 核心要点: 全局可解释性识别相关脑区和关键时间区间，局部可解释性解析单次决策的时空模式
+  - 核心要点: 可泛化至运动想象、SSVEP、认知负荷评估等EEG任务
+  - **Activation**: PRM, P300 BCI, explainable RNN EEG, post-recurrent module, transparent BCI, EEG explainability, P300 classification
 
 ### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
 - [[sparse-temporal-context-reconfiguration]] - 联合稀疏编码和时序动力学支持上下文重配置，在小鼠mPFC和SNN中发现防止灾难性遗忘的核心机制 (arXiv: 2605.10178)
@@ -159,6 +177,12 @@
   - **Activation**: quantum software architecture, hybrid quantum-classical, quantum component
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
+### PRM: Explainable RNN for P300-based BCIs
+- [[prm-explainable-rnn-p300-bci]] - 后循环模块(PRM)增强RNN架构的P300分类性能与可解释性，实现全局/局部双重可解释性分析 (arXiv: 2605.10121)
+  - 核心要点: PRM作为RNN附加层，实现性能提升9%的同时输出时空重要性图，与P300神经生理学描述一致
+  - 核心要点: 全局可解释性识别相关脑区和关键时间区间，局部可解释性解析单次决策的时空模式
+  - 核心要点: 可泛化至运动想象、SSVEP、认知负荷评估等EEG任务
+  - **Activation**: PRM, P300 BCI, explainable RNN EEG, post-recurrent module, transparent BCI, EEG explainability, P300 classification
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
 - [[globally-optimal-snn-parameter-reconstruction]] - Closed-form reconstruction of SNN parameters from trained ANN, eliminating surrogate gradient approximations (arXiv: 2605.08022)
@@ -276,6 +300,12 @@
 
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
+### PRM: Explainable RNN for P300-based BCIs
+- [[prm-explainable-rnn-p300-bci]] - 后循环模块(PRM)增强RNN架构的P300分类性能与可解释性，实现全局/局部双重可解释性分析 (arXiv: 2605.10121)
+  - 核心要点: PRM作为RNN附加层，实现性能提升9%的同时输出时空重要性图，与P300神经生理学描述一致
+  - 核心要点: 全局可解释性识别相关脑区和关键时间区间，局部可解释性解析单次决策的时空模式
+  - 核心要点: 可泛化至运动想象、SSVEP、认知负荷评估等EEG任务
+  - **Activation**: PRM, P300 BCI, explainable RNN EEG, post-recurrent module, transparent BCI, EEG explainability, P300 classification
 
 ### Pan-FM: A Pan-Organ Foundation Model with Saliency-Guided Masking for Missing Robustness
 - [[pan-fm-pan-organ-foundation]] - Multi-organ foundation model pre-trained on 7 organs with Saliency-Guided Masking for realistic missing-organ scenarios (arXiv: 2605.07055)
@@ -285,19 +315,9 @@
   - **Activation**: pan-organ foundation model, missing organ robustness, saliency-guided masking, multimodal biomedical imaging, dominant-organ shortcut learning
 
 ### DoLQ: ODE Discovery with LLM-Based Evaluation
-- [[dolq-ode-discovery-llm]] - Multi-agent framework for discovering ODEs from data using LLM-based qualitative + quantitative evaluation, accepted at ICML 2026 (arXiv: 2605.07323)
-  - 核心要点 1: 多智能体架构 — Sampler Agent 提议候选方程，Parameter Optimizer 优化精度，Scientist Agent (LLM) 进行定性与定量评估
-  - 核心要点 2: LLM 定性评估确保物理合理性，突破纯定量符号回归的局限
-  - 核心要点 3: 迭代反馈循环引导搜索，在高维 ODE 基准上超越现有方法
-  - **Activation**: ODE discovery, equation discovery, symbolic regression, differential equation, dolq, LLM-based evaluation, scientific machine learning, multi-agent equation discovery
+- [[dolq-ode-discovery-llm]] - Multi-agent framework for discovering ODEs from data using LLM-based qualitative + quantitative evaluation, accepted at
 
-
-## 2026-05-12 - Neuroscience Research (Cron Job)
-
-### DoLQ: Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
--
-
-... [OUTPUT TRUNCATED - 104634 chars omitted out of 154634 total] ...
+... [OUTPUT TRUNCATED - 634 chars omitted out of 50634 total] ...
 
 xity for certain observable distributions (arXiv: 2605.05518)
    346|   213|   160|  - 核心要点 1: 经典影子协议通常从紧致群均匀采样，本文推广到紧致对称空间采样
