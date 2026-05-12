@@ -1,4 +1,28 @@
 
+## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
+
+### Compositional Quantum Heuristics for Max-Clique Detection
+- [[compositional-quantum-heuristics]] - 组合式量子启发式方法解决QML中的barren plateau问题，通过子组件组合和对称性归纳偏差提升梯度行为 (arXiv: 2605.07611)
+  - 核心要点: 将大型量子模型分解为小型可训练子组件，避免barren plateau
+  - 核心要点: 构建群不变损失函数引入对称性归纳偏差，改善泛化能力
+  - 核心要点: 递归混合量子-经典启发式，用量子模型指导经典搜索
+  - **Activation**: compositional quantum heuristics, barren plateau mitigation, quantum ML composition, group-invariant loss function, permutation-equivariant QGNN
+
+### Breaking QAOA's Fixed Target Hamiltonian Barrier: A Fully Connected QBM via Bilevel Optimization
+- [[quantum-boltzmann-machine-bilevel]] - 通过双层优化架构打破QAOA固定目标哈密顿量限制，实现全连接量子玻尔兹曼机 (arXiv: 2605.07473)
+  - 核心要点: 内层训练模拟QAOA电路正相能量最小化，外层优化目标哈密顿量结构参数
+  - 核心要点: 单层(p=1)即达到0.9559测量概率，具有显著噪声鲁棒性
+  - 核心要点: 分块学习策略在10次测量下生成目标量子态网格图像
+  - **Activation**: quantum boltzmann machine, QBM bilevel optimization, QAOA extension, quantum generative model, bilevel quantum optimization
+
+### Loop Composition in Quantum Algorithms
+- [[loop-composition-quantum]] - 量子算法中的循环组合方法论，用量子行走在控制流图上建模分支+循环，实现变时Grover搜索最优复杂度 (arXiv: 2605.07518)
+  - 核心要点: 标准量子电路模型（直线程序）无法有效处理变长子例程的叠加
+  - 核心要点: 量子行走分支组合加入循环建模后恢复最优复杂度界
+  - 核心要点: 程序控制流建模对量子算法设计至关重要
+  - **Activation**: loop composition quantum, quantum algorithm control flow, branching composition quantum, quantum walk algorithm design, variable-time quantum search
+
+
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
