@@ -14,33 +14,40 @@
 
 ## 2026-05-14 - Medicine + Quantum Computing (Cron Job)
 
-Today's arXiv scan (quantum + medical/healthcare/clinical) found 11 papers. 4 new papers imported to KG, 2 new skills created.
+Today's topic: Medicine (Wednesday) + daily quantum mechanics. arXiv scan found 15 papers. 1 new paper imported to KG (2605.09691). 1 new skill created.
 
-### Design Space Exploration of Hybrid Quantum Neural Networks for Chronic Kidney Disease
-- [[hqnn-design-space-exploration]] - Systematic HQNN architecture exploration for medical ML (arXiv: 2604.13608)
-  - Encoding screening → ansatz optimization → measurement tuning → shot analysis → noise robustness
-  - ZZFeatureMap + RealAmplitudes best for clinical tabular data
-  - **Activation**: HQNN design, quantum neural network architecture search, QNN encoding selection
+### Quantum Circuit Simulation of Compartmental Drug Dynamics
+- [[quantum-circuit-drug-dynamics]] - Quantum circuit simulation of PK/PD models using variational algorithms (arXiv: 2605.09691)
+  - Reformulates compartmental PK/PD ODEs as open quantum systems via Lindblad master equation
+  - Implements PennyLane quantum circuits for drug dynamics simulation
+  - Variational quantum algorithms for population-level parameter estimation
+  - **Activation**: quantum drug dynamics, quantum pharmacokinetics, population PK/PD quantum, pennylane drug simulation
 
-### Quantum Machine Learning for Colorectal Cancer Data
-- [[quantum-medical-diagnosis]] (updated) - QML for anastomotic leak classification with 83.3% sensitivity (arXiv: 2604.13951)
-  - Fβ-optimized quantum configs outperform classical on rare medical events
-  - ZZFeatureMap + RealAmplitudes/EfficientSU2 under simulated noise
-  - **Activation**: quantum medical diagnosis, QNN healthcare, quantum clinical prediction
+### Papers Scanned (no new skills needed - covered by existing)
+- **2605.08324** - FQPDR: Federated QNN for Diabetic Retinopathy → existing [[fqpdr-medical-detection]]
+- **2605.06727** - Medical Imaging with Cold-Atom Reservoir Computing → existing [[cold-atom-reservoir-computing]]
+- **2604.24597** - Quantum Kernel Advantage in Medical Foundation Models → existing [[quantum-kernel-medical-embeddings]]
+- **2604.16953** - Hybrid QNN for Breast Cancer Thermographic Classification → existing [[hybrid-quantum-medical-classification]]
+- **2604.22903** - Adaptive Hybrid Quantum-Classical Feature Fusion → existing [[hybrid-quantum-classical-nn]]
+- **2604.20438** - Quantum-Enhanced RNN for Battery State of Health → existing [[quantum-neural-hybrid]]
+- **2605.10458** - QT-Net: AI Models in Atomic Chemical Space → existing [[quantum-drug-discovery]]
+- **2605.09691** - Quantum Circuit Drug Dynamics (NEW) → [[quantum-circuit-drug-dynamics]] ✓
 
-### Quantum Projective Learning for Antibiotic Resistance
-- [[quantum-projective-learning-clinical]] - QPL methodology with data complexity signature for quantum advantage prediction (arXiv: 2601.15483)
-  - First large-scale QML evaluation on clinical urine cultures (60 qubit IBM Eagle/Heron)
-  - Data complexity signature predicts when quantum outperforms classical
-  - **Activation**: quantum projective learning, QPL clinical, quantum antibiotic resistance
+### Knowledge Graph Status
+- Entities: 842 (836 → 842, added 6 keyword entities)
+- Relations: 2910 (2904 → 2910, added 6 HAS_KEYWORD relations)
+- Vectors: 813
+- Paper 2605.09691 imported with keywords: quantum circuit, drug dynamics, pharmacokinetics, variational quantum, population PK/PD, pennylane
 
-### Additional Papers Scanned
-- **2604.22903** - Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification → existing quantum-medical-diagnosis
-- **2604.16953** - Hybrid QNN for Breast Cancer Thermographic Classification → existing quantum-medical-diagnosis
-- **2604.01616** - Quantum-Enhanced Tensor-Network Federated Medical Diagnosis → existing quantum-medical-diagnosis
-- **2601.18556** - Generative Diffusion + Quantum-Enhanced Discrimination for Medical Imaging → existing quantum-medical-diagnosis
-- **2508.07948** - Quantum-Classical Hybrid Multiomic Analysis for Neurodegenerative Diseases → existing quantum-medical-diagnosis
-- **2605.08324** - FQPDR: Federated QNN for Diabetic Retinopathy → existing quantum-medical-diagnosis
+### PageRank Top Papers (quantum + medicine)
+1. [173] Quantum computing and AI: status and perspectives (PR=0.0040)
+2. [362] Quantum computing revolution in healthcare: systematic review (PR=0.0039)
+3. [193] Quantum Circuit-Based Learning Models (PR=0.0035)
+4. [348] Quantum Computing in Personalized Medicine (PR=0.0021)
+5. [188] Qubit-Based Framework for QML (PR=0.0017)
+6. [347] Quantum Generative Learning for Medical Image Generation (PR=0.0015)
+7. [272] Applications of quantum computing in clinical care (PR=0.0015)
+
 
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
