@@ -1,3 +1,17 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Cortico-Cerebellar RNN Architecture for Temporal Learning
+- [[cortico-cerebellar-rnn]] - CB-RNN augments RNNs with cerebellar feedforward module; cortex as fixed reservoir, cerebellum drives learning efficiency (arXiv: 2605.10356)
+  - Key finding: freezing recurrent core after minimal training preserves superior learning — cortex functions as fixed reservoir
+  - Heterogeneous modular architectures provide powerful structural inductive bias for temporal tasks
+  - **Activation**: cortico-cerebellar, CB-RNN, cerebellar RNN, fixed reservoir, heterogeneous modularity, temporal learning
+
+### Joint Sparse Coding and Temporal Dynamics for Context Reconfiguration
+- [[sparse-temporal-context-reconfiguration]] (existing) - Sparsity + temporal dynamics enable lifelong learning without auxiliary heuristics (arXiv: 2605.10178)
+  - Mouse mPFC + computational networks show sparse coding reduces cross-context interference
+  - SNNs naturally exhibit both properties, improved retention without replay or regularization
+  - **Activation**: sparse coding, temporal dynamics, context reconfiguration, catastrophic forgetting prevention
+
 ## 2026-05-14 - Medicine + Quantum Computing (Cron Job)
 
 Today's arXiv scan (quantum + medical/healthcare/clinical) found 11 papers. 4 new papers imported to KG, 2 new skills created.
