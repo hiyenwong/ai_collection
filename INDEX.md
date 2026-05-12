@@ -1,3 +1,33 @@
+## 2026-05-14 - Medicine + Quantum Computing (Cron Job)
+
+Today's arXiv scan (quantum + medical/healthcare/clinical) found 11 papers. 4 new papers imported to KG, 2 new skills created.
+
+### Design Space Exploration of Hybrid Quantum Neural Networks for Chronic Kidney Disease
+- [[hqnn-design-space-exploration]] - Systematic HQNN architecture exploration for medical ML (arXiv: 2604.13608)
+  - Encoding screening → ansatz optimization → measurement tuning → shot analysis → noise robustness
+  - ZZFeatureMap + RealAmplitudes best for clinical tabular data
+  - **Activation**: HQNN design, quantum neural network architecture search, QNN encoding selection
+
+### Quantum Machine Learning for Colorectal Cancer Data
+- [[quantum-medical-diagnosis]] (updated) - QML for anastomotic leak classification with 83.3% sensitivity (arXiv: 2604.13951)
+  - Fβ-optimized quantum configs outperform classical on rare medical events
+  - ZZFeatureMap + RealAmplitudes/EfficientSU2 under simulated noise
+  - **Activation**: quantum medical diagnosis, QNN healthcare, quantum clinical prediction
+
+### Quantum Projective Learning for Antibiotic Resistance
+- [[quantum-projective-learning-clinical]] - QPL methodology with data complexity signature for quantum advantage prediction (arXiv: 2601.15483)
+  - First large-scale QML evaluation on clinical urine cultures (60 qubit IBM Eagle/Heron)
+  - Data complexity signature predicts when quantum outperforms classical
+  - **Activation**: quantum projective learning, QPL clinical, quantum antibiotic resistance
+
+### Additional Papers Scanned
+- **2604.22903** - Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification → existing quantum-medical-diagnosis
+- **2604.16953** - Hybrid QNN for Breast Cancer Thermographic Classification → existing quantum-medical-diagnosis
+- **2604.01616** - Quantum-Enhanced Tensor-Network Federated Medical Diagnosis → existing quantum-medical-diagnosis
+- **2601.18556** - Generative Diffusion + Quantum-Enhanced Discrimination for Medical Imaging → existing quantum-medical-diagnosis
+- **2508.07948** - Quantum-Classical Hybrid Multiomic Analysis for Neurodegenerative Diseases → existing quantum-medical-diagnosis
+- **2605.08324** - FQPDR: Federated QNN for Diabetic Retinopathy → existing quantum-medical-diagnosis
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Synced 15 neuroscience standalone skills to ai_collection
