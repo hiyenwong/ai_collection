@@ -1,3 +1,40 @@
+## 2026-05-12 - Computer Science + Quantum Mechanics (Tuesday Cron Job)
+
+### Photonic-Implemented Efficient Deep Quantum Neural Network
+- [[photonic-deep-qnn]] - 光子芯片上的深度量子神经网络，通过虚拟希尔伯特空间扩展实现无需辅助量子比特的非线性激活 (arXiv: 2605.06397)
+  - 输入复制+模式扩展在线性光子芯片上实现有效非线性激活
+  - 消除物理辅助量子比特和测量诱导消耗，级联性优异
+  - 展示两层QNN在非线性分类、图像生成、Gibbs态制备中的应用
+  - **Activation**: photonic deep QNN, integrated photonics quantum neural network, Hilbert space expansion, ancilla-free QNN, 光子量子神经网络, virtual Hilbert space
+
+### Lightweight Quantum Agent for Edge Systems
+- [[lightweight-quantum-agent]] - 轻量级量子安全边缘AI代理，联合优化后量子密码(NOMA)和NOMA资源分配，线性复杂度O(N) (arXiv: 2604.25980)
+  - 多阶段随机MINLP建模PQC静态功耗约束，Lyapunov优化解耦长期问题
+  - O(N)线性复杂度NOMA功率分配算法，N=35时较SCA加速46倍
+  - 维持队列稳定性和能耗约束，满足动态无线环境实时决策需求
+  - **Activation**: lightweight quantum agent, edge AI PQC, NOMA resource allocation, Lyapunov optimization edge, 轻量级量子代理, post-quantum cryptography edge
+
+### FPGA-Based Real-Time Quantum Error Correction Decoder
+- [[fpga-quantum-decoder]] - FPGA神经网络解码器实现550ns确定性闭环延迟的实时表面码纠错 (arXiv: 2605.04892)
+  - 124ns NN推理延迟，1.25μs QEC周期内完成反馈校正
+  - 非Clifford电路中Pauli-frame不足时的中电路反馈校正
+  - 实时解码逻辑性能与离线解码相当
+  - **Activation**: FPGA quantum decoder, real-time QEC, surface code decoding, neural network decoder, low-latency quantum control, FPGA解码
+
+### Neural-Powered Qubit Embedding for QUBO Problems
+- [[neural-qubit-embedding]] - 神经网络解决Rydberg原子量子硬件的QUBO图嵌入问题，超越Gurobi求解器 (arXiv: 2605.04736)
+  - 将QUBO问题映射为单位盘图嵌入，利用神经网络从不配置转换到可行配置
+  - 量子比特物理放置匹配硬件Ising哈密顿量
+  - **Activation**: neural qubit embedding, QUBO graph embedding, unit disk graph, Rydberg atom quantum, neutral atom embedding
+
+### Quantum Hierarchical Reinforcement Learning
+- [[quantum-hierarchical-rl]] - 变分量子电路实现的分层强化学习，混合option-critic架构节省66%可训练参数 (arXiv: 2605.03434)
+  - 量子特征提取器超越经典基线，量子option-value估计存在架构瓶颈
+  - 混合分层agent在标准基准环境中验证
+  - **Activation**: quantum hierarchical RL, variational quantum circuits RL, option-critic quantum, quantum reinforcement learning, parameter-efficient quantum agent
+
+---
+
 ## 2026-05-11 - Neuroscience Research (Cron Job)
 
 ### Universal Neural Propagator: Learning Time Evolution in Many-Body Quantum Systems
