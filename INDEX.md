@@ -1,5 +1,19 @@
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
+### Cortico-cerebellar modularity as an architectural inductive bias for efficient temporal learning
+- [[cortico-cerebellar-modularity-rnn]] - RNN augmented with cerebellar-inspired feedforward module achieves faster learning via fixed cortical reservoir + adaptive cerebellar readout (arXiv: 2605.10356)
+  - Heterogeneous modularity: cortical RNN acts as fixed reservoir, cerebellar module drives learning
+  - Freezing cortex after warmup preserves efficiency — structural inductive bias for temporal learning
+  - **Activation**: cortico-cerebellar, cerebellar RNN, CB-RNN, modular RNN, temporal learning
+
+### Encoding and Decoding Temporal Signals with Spiking Bandpass Wavelets
+- [[spiking-bandpass-wavelet-encoding]] - Recasts spike encoders as time-causal wavelet frames with reconstruction error bounds, bridging SNN encoding with signal processing theory (arXiv: 2605.09770)
+  - Spike encoding reformulated as wavelet transform with quantitative bandwidths
+  - Signal reconstruction up to quantization error, RMSE comparable to continuous wavelets
+  - **Activation**: spiking wavelet, spike encoding, temporal signal encoding, bandpass wavelet
+
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
 ### Spiking Bandpass Wavelet Encoding
 - [[spiking-bandpass-wavelet-encoding]] - Spike encoders reformulated as time-causal wavelet frames with quantitative bandwidth guarantees (arXiv: 2605.09770)
   - Bridges neuromorphic spike encoding with classical signal processing via bandpass wavelet decomposition

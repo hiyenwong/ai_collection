@@ -1,69 +1,140 @@
 ---
 name: spiking-bandpass-wavelet-encoding
-description: "Spiking Bandpass Wavelet encoding methodology for temporal signal encoding and decoding. Recasts spike encoders as time-causal wavelet frames with quantitative bandwidths and reconstruction error bounds. Maps directly to neuromorphic hardware. Applicable to spike-based encoding, temporal signal processing, neuromorphic computing, event-based sensing. Triggers: spike encoding, wavelet encoding, temporal signal processing, neuromorphic encoding, event-based signal reconstruction."
+description: >
+  Spiking Bandpass Wavelet encoding methodology for temporal signal processing.
+  Recasts spike encoders as time-causal wavelet frames with quantitative bandwidths
+  and reconstruction error bounds. Maps spike representations to signal processing
+  theory, enabling neuromorphic hardware implementation.
+  Applicable to SNN temporal encoding, neuromorphic signal processing, event-based
+  sensing, ECG/audio processing with spiking networks.
+  Activation: spiking wavelet, spike encoding, temporal signal encoding, bandpass wavelet,
+  neuromorphic signal processing, spike-based encoding, time-causal wavelets,
+  ECG spiking, audio spiking, spike reconstruction
 ---
 
 # Spiking Bandpass Wavelet Encoding
 
-## Overview
+Based on: Pedersen, Lindeberg & Gerstoft (2026) arXiv:2605.09770
 
-Methodology from arXiv:2605.09770 (Pedersen, Lindeberg, Gerstoft, 2026-05-10) bridging spike-based encoding with classical signal processing theory.
+## Core Insight
 
-## Core Problem
-
-Spike-based encodings are sparse and energy-efficient, but have been formulated **probabilistically**, disconnected from most signal processing literature. This limits theoretical understanding and practical deployment.
-
-## Key Innovation
-
-**Reformulates spike encoders as time-causal wavelet frames** with:
-- Quantitative bandwidths
+Spike-based encodings are typically formulated probabilistically, disconnected from
+signal processing theory. This work recasts spike encoders as **time-causal wavelet frames**
+with:
+- Quantitative bandwidth specifications
 - Reconstruction error bounds
-- Preservation of sparsity and locality
 - Direct mapping to neuromorphic hardware
 
-## Methodology
+## Theoretical Framework
 
-### 1. Wavelet Frame Construction
+### Spike Encoder as Wavelet Frame
 
-- Construct time-causal wavelets from spike encoding principles
-- Each wavelet corresponds to a bandpass filter
-- Wavelets are inherently causal (no future information needed)
+A spike encoder produces events when the signal crosses a threshold. This can be
+reformulated as a wavelet transform where:
 
-### 2. Reconstruction Theory
+1. **Basis functions**: Bandpass wavelets derived from the spike generation mechanism
+2. **Time-causality**: Each wavelet depends only on past signal values
+3. **Sparsity**: Natural sparsity from the spike threshold mechanism
+4. **Locality**: Each spike encodes local signal features
 
+### Reconstruction
+
+Signal reconstruction from spikes is possible up to:
+- Spike quantization error
+- Time discretization error
+
+Achieves normalized RMSE comparable to continuous wavelet transforms.
+
+## Implementation Pattern
+
+```python
+import numpy as np
+
+class SpikingWaveletEncoder:
+    """Encode temporal signals using spiking bandpass wavelets."""
+    
+    def __init__(self, n_channels, bandwidth, sample_rate):
+        self.n_channels = n_channels
+        self.bandwidth = bandwidth
+        self.sample_rate = sample_rate
+        # Wavelet filters per channel
+        self.filters = self._build_wavelet_filters()
+    
+    def _build_wavelet_filters(self):
+        """Construct bandpass wavelet filters for each channel."""
+        filters = []
+        for i in range(self.n_channels):
+            center_freq = self.bandwidth * (2 ** i)
+            # Time-causal bandpass wavelet
+            t = np.arange(0, 100) / self.sample_rate
+            wavelet = np.exp(-t * center_freq) * np.sin(2 * np.pi * center_freq * t)
+            wavelet = wavelet / np.sum(wavelet**2)  # normalize
+            filters.append(wavelet)
+        return np.array(filters)
+    
+    def encode(self, signal):
+        """Encode signal as spike train via wavelet thresholding."""
+        spikes = []
+        for filt in self.filters:
+            # Convolve with wavelet (time-causal)
+            response = np.convolve(signal, filt, mode='same')
+            # Generate spikes at threshold crossings
+            threshold = np.std(response) * 0.5
+            spike_times = np.where(np.diff(np.sign(response - threshold)) > 0)[0]
+            spikes.append(spike_times)
+        return spikes
+    
+    def decode(self, spikes, original_length):
+        """Reconstruct signal from spike train."""
+        reconstruction = np.zeros(original_length)
+        for i, spike_times in enumerate(spikes):
+            for t in spike_times:
+                if t < len(self.filters[i]):
+                    reconstruction[t:t+len(self.filters[i])] += self.filters[i]
+        return reconstruction
+
+# Usage on ECG or audio:
+# encoder = SpikingWaveletEncoder(n_channels=8, bandwidth=10, sample_rate=1000)
+# spikes = encoder.encode(ecg_signal)
+# reconstructed = encoder.decode(spikes, len(ecg_signal))
 ```
-Signal -> Spike Encoder -> Spike Train -> Wavelet Decoder -> Reconstructed Signal
-```
 
-- Reconstruction up to spike quantization and time discretization errors
-- Quantitative bounds on reconstruction error
-- Normalized RMSE comparable to continuous wavelet transforms
+## Key Properties
 
-### 3. Properties
-
-- **Sparsity**: Maintains sparse representation of spikes
-- **Locality**: Local in both time and frequency
-- **Causality**: Real-time compatible, no look-ahead needed
-- **Hardware Mapping**: Directly implementable on neuromorphic chips
+| Property | Description |
+|----------|-------------|
+| Sparsity | Only fires when signal exceeds local threshold |
+| Energy efficiency | Sparse spike events minimize computation |
+| Time-causal | No future information needed |
+| Bandwidth control | Adjustable frequency coverage per channel |
+| Hardware mapping | Direct implementation on neuromorphic chips |
 
 ## Applications
 
-- ECG signal reconstruction
-- Audio signal processing
-- Event-based camera data
-- Neuromorphic sensor processing
-- Real-time temporal signal encoding
+- ECG signal processing with spiking networks
+- Audio feature extraction for neuromorphic hearing
+- Event-based vision sensor preprocessing
+- Temporal signal compression
+- Real-time anomaly detection in streaming data
 
-## Connection to Spiking Neural Networks
+## Advantages Over Traditional Encodings
 
-Wavelet-encoded inputs provide theoretically-grounded representations for SNNs:
-- Better input encoding than heuristic methods
-- Preserves temporal structure with error bounds
-- Compatible with neuromorphic hardware deployment
+- **Signal processing connection**: Bridges spike coding and wavelet theory
+- **Reconstruction guarantees**: Error bounds on signal recovery
+- **Neuromorphic compatibility**: Maps directly to event-based hardware
+- **No probabilistic assumptions**: Deterministic wavelet formulation
 
-## arXiv Reference
+## Related Skills
 
-- **Paper**: Encoding and Decoding Temporal Signals with Spiking Bandpass Wavelets
-- **ID**: 2605.09770
-- **URL**: https://arxiv.org/abs/2605.09770
-- **PDF**: https://arxiv.org/pdf/2605.09770v1
+- `cortico-cerebellar-modularity-rnn` - Brain-inspired RNN architecture
+- `spikingjelly-framework` - SNN deep learning framework
+- `snn-performance-analysis` - SNN performance evaluation
+- `edgespike-edge-iot-snn` - Edge SNN deployment
+
+## ArXiv Reference
+
+- **Paper**: arXiv:2605.09770v1
+- **Title**: Encoding and Decoding Temporal Signals with Spiking Bandpass Wavelets
+- **Authors**: Jens Egholm Pedersen, Tony Lindeberg, Peter Gerstoft
+- **Date**: 2026-05-10
+- **Categories**: cs.NE, eess.SP, q-bio.NC
