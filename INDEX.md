@@ -1,4 +1,13 @@
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
+## 2026-05-14 - Medicine + Quantum (Cron Job)
+
+### Hybrid Quantum-Classical Medical Diagnosis Pipelines
+- [[hybrid-quantum-medical-diagnosis]] - Hybrid quantum-classical ML pipelines for medical image classification and diagnosis
+  - HQCNN: classical CNN + quantum variational classification layer (4-16 qubits)
+  - CV-QNN: continuous-variable quantum neural networks using photonic Gaussian gates
+  - Federated learning with tensor-network frontends + MPC-secured aggregation + quantum refinement
+  - **Activation**: quantum medical diagnosis, hybrid quantum ML, HQNN, medical image classification, CV-QNN, federated quantum learning
+
 
 ### Communication-Efficient Distributed Inverse Quantum Fourier Transform
 - [[distributed-iqft-communication]] - Distributed iQFT with communication horizon pruning reduces inter-node quantum communication from O(P^2) to O(P) (arXiv: 2605.10710)
