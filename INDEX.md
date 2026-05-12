@@ -1,3 +1,23 @@
+
+## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
+
+### A passive self-correcting quantum memory in three dimensions
+- [[passive-quantum-memory-3d]] - 自纠错量子记忆设计，3D Pauli稳定子哈密顿量实现指数级记忆寿命 (arXiv: 2605.10943)
+  - 递归哈密顿量变换降低维度同时保留逻辑编码
+  - 能垒工程设计使热误差指数抑制
+  - **Activation**: self-correcting quantum memory, 3D stabilizer, passive quantum memory
+
+### The Complexity of Stoquastic Sparse Hamiltonians
+- [[hamiltonian-complexity-stoquastic]] - StoqMA复杂度类分析框架，稀疏哈密顿量分类与模拟方法 (arXiv: 2605.02845)
+  - Stoquastic哈密顿量无符号问题，可用量子蒙特卡洛模拟
+  - StoqMA位于MA和QCMA之间的复杂度类
+  - **Activation**: stoquastic Hamiltonian, Hamiltonian complexity, StoqMA
+
+### Multi-Prover Interactive Proof Systems with Leakage
+- [[multi-prover-interactive-proofs]] - 多证明者交互证明系统泄漏分析，MIP/MIP*复杂度类与纠缠证明 (arXiv: 2605.09872)
+  - MIP=NEXP，MIP*=RE（含共享纠缠）
+  - 泄漏模型影响证明系统可靠性
+  - **Activation**: multi-prover interactive proofs, MIP protocols, MIP*
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Partial Annealing and Pattern Decorrelation in Associative Neural Networks
