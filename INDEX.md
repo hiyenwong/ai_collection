@@ -49,6 +49,13 @@ Today's arXiv scan (q-bio.NC + cs.NE, May 12) found 29+ papers across both categ
   - Cross-evaluation efficiency demonstrates robustness across clients
   - **Activation**: federated quantum, privacy-preserving medical AI, federated QNN, distributed quantum diagnosis, patient data privacy quantum
 
+### FQPDR: Federated Quantum Medical Detection Skill
+- [[fqpdr-medical-detection]] - Three-layer federated QNN architecture for privacy-preserving early disease detection combining FL, QNN, and quantum kernel refinement (arXiv: 2605.08324)
+  - Federated learning layer: local QNN training on private hospital data
+  - Quantum neural network layer: lightweight PQC with 8-12 qubits for medical image features
+  - Two-tier comparison framework for validating quantum advantage in medical imaging
+  - **Activation**: federated quantum neural network, FQPDR, privacy-preserving medical diagnosis, quantum kernel medical imaging
+
 ### Medical Imaging Classification with Cold-Atom Reservoir Computing using Auto-Encoders and Surrogate-Driven Training
 - [[surrogate-gradient-quantum-reservoir-medical]] - Overcomes non-differentiable quantum measurement barrier using differentiable surrogate models enabling end-to-end backprop through quantum reservoir (arXiv: 2605.06727)
   - Guided auto-encoder produces compact representations optimized for quantum reservoir
