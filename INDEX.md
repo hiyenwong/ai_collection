@@ -1,3 +1,12 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Joint sparse coding and temporal dynamics support context reconfiguration
+- [[sparse-temporal-context-reconfiguration]] - 稀疏编码与时间动力学协同实现上下文重构，揭示大脑如何在适应新环境时不遗忘旧知识，为终身学习提供无辅助机制的抗遗忘方案 (arXiv: 2605.10178)
+  - 小鼠mPFC显示情境依赖的稀疏编码减少跨情境干扰
+  - 网络活动的时间动力学进一步增强情境可分离性
+  - 脉冲神经网络(SNN)天然具备双重属性，无需回放缓冲或正则化即可抵抗灾难性遗忘
+  - **Activation**: sparse coding, temporal dynamics, context reconfiguration, lifelong learning, catastrophic forgetting
+
 ## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
 
 ### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
