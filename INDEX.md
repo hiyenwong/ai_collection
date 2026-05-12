@@ -1,5 +1,37 @@
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
+### Synced 15 neuroscience standalone skills to ai_collection
+Today's arXiv scan (q-bio.NC + cs.NE, May 12) found 29+ papers across both categories. All papers covered by existing skills. Primary value: synced 15 standalone neuroscience skills that were created separately but not yet in the ai_collection project.
+
+#### Papers Scanned (May 12, 2026)
+- **2605.10356** - Cortico-cerebellar modularity for temporal learning → [[cortico-cerebellar-modularity-rnn]]
+- **2605.10178** - Joint sparse coding and temporal dynamics → [[sparse-temporal-context-reconfiguration]]
+- **2605.09770** - Spiking Bandpass Wavelets for temporal signals → [[spiking-bandpass-wavelet-encoding]]
+- **2605.10505** - Multilevel Interactive Equilibrium in NeuroAI → [[multilevel-interactive-equilibrium-neuroai]]
+- **2605.10679** - Spiking Recurrent Cells on FPGA → [[spiking-recurrent-cells-fpga-accelerator]]
+- **2605.09409** - Predictive/feedback signals for language representations → [[predictive-feedback-signals-language-representations]]
+- **2605.09243** - How Much is Brain Data Worth for ML → [[brain-data-value-scaling-laws]]
+
+#### Synced Skills
+- [[behavior-vlm-neuroscience]] - Behavior VLM for neuroscience understanding
+- [[brain-digital-twins-execution]] - Brain digital twins execution semantics
+- [[brain-inspired-capture-visual-decoding]] - Brain-inspired visual capture
+- [[cognitive-circuit-breaker-ai-reliability]] - Cognitive circuit breaker for AI reliability
+- [[cold-atom-reservoir-computing]] - Cold atom reservoir computing
+- [[core-cross-site-ood-brain-network]] - CORE cross-site OOD robust brain network
+- [[frequency-matching-snn-mmwave]] - Frequency matching SNN for mmWave sensing
+- [[fsfm-selective-forgetting-agent-memory]] - Selective forgetting agent memory
+- [[higher-order-brain-interactions-o-information]] - Higher-order brain interactions via O-information
+- [[neuroscience]] - Comprehensive neuroscience skill
+- [[organic-quantum-reservoir-computing]] - Organic quantum reservoir computing
+- [[qml-spiking-encoding]] - QML spiking encoding
+- [[spiking-phase-quantum-encoding]] - Spiking phase quantum encoding
+- [[topological-signal-processing-brain-networks]] - Topological signal processing for brain networks
+- [[universal-neural-propagator]] - Universal neural propagator
+
+
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
 ### Joint sparse coding and temporal dynamics support context reconfiguration
 - [[sparse-temporal-context-reconfiguration]] - 稀疏编码与时间动力学协同实现上下文重构，揭示大脑如何在适应新环境时不遗忘旧知识，为终身学习提供无辅助机制的抗遗忘方案 (arXiv: 2605.10178)
   - 小鼠mPFC显示情境依赖的稀疏编码减少跨情境干扰
