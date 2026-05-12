@@ -1,80 +1,84 @@
 ---
 name: cold-atom-reservoir-computing
 description: >
-  Hybrid quantum-classical machine learning using neutral-atom (cold-atom) reservoir computing
-  for classification tasks, especially medical imaging. Covers the pipeline of guided auto-encoder
-  dimensionality reduction, surrogate-driven training, and cold-atom reservoir state evolution.
-  Use when: (1) implementing reservoir computing with quantum/neutral-atom systems,
-  (2) building hybrid quantum-classical ML pipelines, (3) medical image classification with
-  reservoir computing, (4) surrogate-gradient training for non-differentiable systems,
-  (5) autoencoder-guided dimensionality reduction for reservoir inputs.
-  Activation: cold atom reservoir, neutral atom reservoir computing, hybrid quantum-classical ML,
-  medical imaging reservoir, surrogate-driven training, polyp detection quantum,
-  autoencoder reservoir computing, 冷原子储备计算.
+  Cold-atom (neutral-atom) reservoir computing methodology for efficient machine learning tasks.
+  Uses Rydberg atom arrays as physical reservoirs, encoding input data into Hamiltonian parameters
+  and reading out via quantum measurements. Use when implementing reservoir computing on quantum
+  hardware, exploring neutral-atom ML platforms, or building energy-efficient quantum-inspired
+  classifiers. Triggers: cold atom reservoir, neutral atom computing, Rydberg reservoir,
+  quantum reservoir machine, atom array ML, physical reservoir computing quantum.
 ---
 
 # Cold-Atom Reservoir Computing
 
-Hybrid quantum-classical pipeline using **neutral-atom reservoir computing** for classification,
-with application to medical image classification (polyp detection).
+## Core Methodology
 
-## Key Insight
+Neutral-atom reservoir computing for efficient ML:
 
-Neutral-atom quantum systems naturally implement rich, high-dimensional dynamical systems ideal
-for reservoir computing. By coupling a classical autoencoder for input encoding with a physical
-cold-atom reservoir and surrogate-driven readout training, this approach achieves competitive
-classification with significantly fewer trainable parameters than full neural networks.
+1. **Input encoding**: Map data to Rydberg Hamiltonian parameters (detuning, Rabi frequency)
+2. **Reservoir evolution**: Let atom array evolve under Hamiltonian dynamics
+3. **Measurement readout**: Extract expectation values as high-dimensional features
+4. **Linear readout**: Train simple linear classifier on reservoir states
 
-## Pipeline Architecture
-
-### Stage 1: Guided Auto-Encoder (Dimensionality Reduction)
-
-- Train a classical autoencoder to compress high-dimensional inputs (e.g., medical images)
-- Use the encoder to project inputs into a lower-dimensional latent space
-- The latent representation serves as the control signal for the reservoir
+## Rydberg Hamiltonian
 
 ```
-Input (image) → Encoder → Latent vector → Reservoir control parameters
+H(t) = sum_i [Omega(t)/2 * sigma_x_i - Delta_i(t) * n_i] + sum_{i<j} V_{ij} * n_i * n_j
 ```
 
-### Stage 2: Cold-Atom Reservoir Dynamics
+- Input data encoded in Delta_i (detuning) and Omega (Rabi frequency)
+- V_{ij} = C_6 / |r_i - r_j|^6 (van der Waals interaction)
+- Natural nonlinear dynamics from Rydberg blockade
 
-- The latent vector controls parameters of a neutral-atom quantum system
-- The system evolves under its natural Hamiltonian dynamics
-- Physical measurements at multiple time steps yield high-dimensional reservoir states
-- Key properties: natural nonlinearity, high dimensionality, fading memory
+## Advantages Over Classical Reservoir Computing
 
+- **High dimensionality**: N atoms provide 2^N dimensional Hilbert space
+- **Natural nonlinearity**: Rydberg blockade creates intrinsic nonlinear response
+- **Energy efficiency**: Physical computation without digital simulation overhead
+- **Parallelism**: All atoms evolve simultaneously
+
+## Implementation Pattern (PennyLane)
+
+```python
+import pennylane as qml
+
+def rydberg_reservoir(n_atoms, input_data):
+    dev = qml.device('default.qubit', wires=n_atoms)
+    
+    @qml.qnode(dev)
+    def circuit(inputs):
+        # Encode inputs into Hamiltonian
+        for i in range(n_atoms):
+            qml.RY(inputs[i], wires=i)
+        
+        # Rydberg interaction (entangling layer)
+        for i in range(n_atoms - 1):
+            qml.CNOT(wires=[i, i + 1])
+        
+        # Readout
+        return [qml.expval(qml.PauliZ(i)) for i in range(n_atoms)]
+    
+    return circuit(input_data)
+
+# Linear readout training
+from sklearn.linear_model import Ridge
+reservoir_states = [rydberg_reservoir(4, x) for x in X_train]
+clf = Ridge(alpha=1.0)
+clf.fit(reservoir_states, y_train)
 ```
-Latent vector → Set control parameters → Evolve Hamiltonian → Measure observables → Reservoir states
-```
 
-### Stage 3: Surrogate-Driven Readout Training
+## Hardware Platforms
 
-- The reservoir-to-output mapping is linear: `output = W_readout · reservoir_states`
-- Since the physical reservoir is non-differentiable, use surrogate gradients
-- Train only the readout weights W_readout (reservoir itself is fixed)
-- Loss: cross-entropy for classification, MSE for regression
+- Neutral-atom arrays (QuEra, Pasqal)
+- Rydberg atom platforms with programmable geometry
+- Scalable to 100+ qubits with current technology
 
-```
-Reservoir states → Linear readout → Surrogate gradient descent → Classification output
-```
-
-## Key Advantages
-
-1. **Parameter efficiency**: Only train readout layer, not the reservoir
-2. **Natural nonlinearity**: Quantum dynamics provide rich nonlinear transformations
-3. **Energy efficiency**: Physical system computes for free during evolution
-4. **Few-shot learning**: Reservoir computing excels with limited training data
-
-## Implementation Considerations
-
-- **Reservoir hyperparameters**: atom number, interaction strength, evolution time
-- **Input encoding**: How to map latent vectors to physical control parameters
-- **Readout design**: Linear regression vs. regularized (ridge regression)
-- **Surrogate gradient choice**: Straight-through estimator, sigmoid approximation
-
-## Related Approaches
-
-- See `quantum-reservoir-computing` for general QRC patterns
-- See `organic-quantum-reservoir-computing` for magnetic-field-free variants
-- See `parametric-oscillator-reservoir-computing` for classical oscillator reservoirs
+## Activation Keywords
+- cold atom reservoir computing
+- neutral atom machine learning
+- Rydberg reservoir
+- quantum reservoir computing
+- atom array ML
+- physical reservoir quantum
+- Rydberg blockade computing
+- neutral-atom classification

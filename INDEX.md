@@ -1,3 +1,37 @@
+## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
+
+### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
+- [[federated-quantum-medical-diagnosis]] - Combines federated learning with quantum neural networks for privacy-preserving medical image diagnosis without centralizing patient data (arXiv: 2605.08324)
+  - Each client trains local QNN, shares only model parameters with server
+  - Lightweight: 4-6 qubits, 10-20 trainable parameters sufficient
+  - Validated on E-Ophtha and Retina MNIST for microaneurysm detection
+  - Cross-evaluation efficiency demonstrates robustness across clients
+  - **Activation**: federated quantum, privacy-preserving medical AI, federated QNN, distributed quantum diagnosis, patient data privacy quantum
+
+### Medical Imaging Classification with Cold-Atom Reservoir Computing using Auto-Encoders and Surrogate-Driven Training
+- [[surrogate-gradient-quantum-reservoir-medical]] - Overcomes non-differentiable quantum measurement barrier using differentiable surrogate models enabling end-to-end backprop through quantum reservoir (arXiv: 2605.06727)
+  - Guided auto-encoder produces compact representations optimized for quantum reservoir
+  - Latent vectors encoded as Rydberg Hamiltonian pulse detuning parameters
+  - Joint optimization: classification accuracy + auto-encoder reconstruction
+  - Outperforms PCA and unguided autoencoders for polyp detection
+  - **Activation**: surrogate quantum training, quantum reservoir medical, gradient barrier quantum, Rydberg Hamiltonian encoding, cold-atom reservoir
+
+### Algorithmic Advantage on a Gate-Based Photonic Quantum Neural Network
+- [[photonic-quantum-neural-advantage]] - Proves QNNs with 2 parameters solve tasks requiring ANNs with 4x+ parameters, deployed on six-qubit photonic processor (arXiv: 2605.10801)
+  - Effective dimension (Fisher-based) as generalization capacity measure
+  - 100% accuracy on XOR where matched ANN fails at random guessing
+  - Gradient-free optimization robust to photon loss and phase errors
+  - Both online and offline learning settings validated on hardware
+  - **Activation**: photonic QNN advantage, quantum effective dimension, gate-based quantum classifier, variational quantum classifier, QNN expressivity
+
+### Cold-Atom Reservoir Computing for Efficient ML
+- [[cold-atom-reservoir-computing]] - Neutral-atom arrays as physical reservoirs encoding data into Rydberg Hamiltonian, reading out via quantum measurements for efficient classification (arXiv: 2605.06727)
+  - N atoms provide 2^N dimensional Hilbert space with natural nonlinearity
+  - Rydberg blockade creates intrinsic nonlinear response
+  - Scalable to 100+ qubits with current neutral-atom platforms
+  - Energy-efficient physical computation without digital simulation
+  - **Activation**: cold atom reservoir, neutral atom computing, Rydberg reservoir, quantum reservoir machine, atom array ML
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
