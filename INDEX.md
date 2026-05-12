@@ -48,6 +48,20 @@
 
 ## 2026-05-12 - Computer Science (Cron Job)
 
+### Beyond Gates: Pulse Level Quantum Fourier Models
+- [[pulse-level-quantum-computing]] - 脉冲级量子计算突破门抽象层限制，直接操作硬件微波参数，通过子角度分解显著改善变分量子算法训练景观 (arXiv: 2605.04945)
+  - 核心要点: 脉冲形状不改变全局表达能力，但根本性改变局部优化景观
+  - 核心要点: 独立脉冲缩放将单一逻辑角度替换为多个独立可调子角度
+  - 核心要点: 放松门级参数化的刚性单项式耦合，为梯度下降提供高维逃逸路径
+  - **Activation**: pulse-level quantum computing, QFM pulse parameterization, variational quantum algorithm optimization, Fourier quantum model, quantum control optimization
+
+### Advances in Quantum Learning Theory with Bosonic Systems
+- [[quantum-learning-theory]] - 连续变量量子学习理论综述，研究CV系统状态学习的样本复杂度边界、高斯/非高斯态学习、高斯性检验 (arXiv: 2605.08082)
+  - 核心要点: 给出CV态之间基于协方差矩阵的迹距离边界
+  - 核心要点: 非高斯态学习样本复杂度受能量约束影响
+  - 核心要点: 高斯态与非高斯态学习的样本复杂度标度不同
+  - **Activation**: quantum learning theory, continuous-variable quantum systems, bosonic quantum ML, quantum state tomography, sample complexity analysis
+
 ### Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters
 - [[quantum-cayley-llm-adapters]] - 量子增强 LLM 微调方法，使用 Cayley 参数化酉适配器克服经典内存限制 (arXiv: 2605.05914)
   - 核心要点: Cayley 变换参数化酉矩阵，仅训练量子适配器参数
