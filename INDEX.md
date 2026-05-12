@@ -1,6 +1,22 @@
 
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 
+### An Extremely Coarse Feedback Signal is Sufficient for Learning Human-Aligned Visual Representations
+- [[coarse-feedback-visual-alignment]] - 极粗粒度监督信号（仅2-8个类别）即可训练出与灵长类视觉皮层高度对齐的神经网络表征 (arXiv: 2605.05556)
+  - 核心要点: 2类粗监督匹配1000类在猕猴V1/人早期视觉的对齐度，8类匹配IT/腹侧流
+  - 核心要点: 粗监督模型在THINGS行为相似度对齐上超越所有测试模型（含CLIP、DINOv2等）
+  - 核心要点: 仅需1% ImageNet数据的粗监督模型在行为对齐上超过100%数据训练的1000类模型
+  - **Activation**: coarse supervision brain alignment, visual representation granularity, RSA neural alignment, brain-aligned vision models, supervisory signal coarseness, human perceptual similarity
+
+### Persistent Memory Through Triple-Loop Consolidation in a Non-Gradient Dissipative Cognitive Architecture
+- [[triple-loop-consolidation-non-gradient-memory]] - 非梯度耗散认知架构中的三重循环记忆巩固机制，在状态持续销毁的情况下实现持久记忆 (arXiv: 2603.27188)
+  - 核心要点: Deep Memory机制通过记录-播种-重入三重循环实现非梯度持久记忆
+  - 核心要点: 离散MoE路由是因果前提（MI=1.10 vs 0.001），连续播种优于单次播种
+  - 核心要点: 在~970次模拟中R=0.984，显著优于Hopfield和ESN基线，功能平行于海马巩固
+  - **Activation**: dissipative memory, non-gradient consolidation, deep memory mechanism, triple-loop consolidation, MoE gating memory, persistent memory neuromorphic, hippocampal consolidation parallel
+
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
 ### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
 - [[globally-optimal-snn-parameter-reconstruction]] - 将凸优化扩展到递归阈值网络的SNN全局最优训练方法，避免代理梯度近似误差 (arXiv: 2605.08022)
   - 核心要点: 扩展前馈阈值网络凸化理论到并行递归阈值网络，SNN为其结构化特例
