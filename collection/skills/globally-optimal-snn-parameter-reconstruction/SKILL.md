@@ -1,78 +1,69 @@
 ---
 name: globally-optimal-snn-parameter-reconstruction
-description: >
-  Globally optimal Spiking Neural Network (SNN) training via parameter reconstruction.
-  Extends convexification of parallel feedforward threshold networks to parallel recurrent
-  threshold networks, subsuming parallel SNNs as a structured special case. Eliminates
-  surrogate gradient approximation errors by reconstructing optimal parameters directly.
-  Use when training SNNs, optimizing spiking networks, avoiding surrogate gradient issues,
-  or exploring convex SNN training methods. arXiv: 2605.08022
+description: "Globally optimal Spiking Neural Network (SNN) training via parameter reconstruction methodology. Extends convexification of parallel feedforward threshold networks to parallel recurrent threshold networks, enabling parameter reconstruction algorithm that avoids surrogate gradient approximation errors. Applicable to SNN training, optimization, energy-efficient neural networks. Triggers: SNN training, surrogate gradient, spiking neural network optimization, convex training, globally optimal SNN."
 ---
 
 # Globally Optimal SNN Training via Parameter Reconstruction
 
-**arXiv:** 2605.08022 (2026-05-08)
-**Authors:** Himanshu Udupi, Xiaocong Yang, ChengXiang Zhai
-**Categories:** cs.NE, cs.AI, cs.LG
+## Overview
+
+Methodology from arXiv:2605.08022 (Udupi, Yang, Zhai, 2026-05-08) for training Spiking Neural Networks without surrogate gradient approximation errors.
 
 ## Core Problem
 
-SNN training typically relies on surrogate gradients due to non-differentiability of spike functions, introducing approximation errors that accumulate across layers and degrade training quality.
+SNN training typically relies on **surrogate gradients** due to the non-differentiability of the spike function. This introduces approximation errors that accumulate across layers, limiting performance.
 
 ## Key Innovation
 
-Extends convexification theory from parallel feedforward threshold networks to **parallel recurrent threshold networks**, which subsume parallel SNNs as a structured special case. This enables a parameter reconstruction algorithm that achieves globally optimal solutions without surrogate gradient approximation.
+**Parameter Reconstruction Algorithm**: Extends convexification theory from parallel feedforward threshold networks to **parallel recurrent threshold networks**, which subsume parallel SNNs as a structured special case.
 
 ## Methodology
 
-### Theoretical Foundation
+### 1. Convexification Framework
 
-- Parallel recurrent threshold networks can be convexified, enabling global optimization
-- SNNs are a structured special case of parallel recurrent threshold networks
-- Parameter reconstruction maps the convex solution back to SNN parameters
+- Extend convexification from feedforward to recurrent threshold networks
+- Parallel SNNs are a structured special case of parallel recurrent threshold networks
+- This theoretical framework provides global optimality guarantees
 
-### Parameter Reconstruction Algorithm
+### 2. Parameter Reconstruction
 
-1. Formulate SNN training as convex optimization over threshold network parameters
-2. Solve the convex problem to obtain globally optimal solution
-3. Reconstruct SNN parameters from the convex solution
-4. Optionally combine with surrogate-gradient training for hybrid optimization
+```
+ANN Training -> Parameter Reconstruction -> SNN Parameters
+```
 
-### Key Advantages
+- Train equivalent threshold network with convex optimization
+- Reconstruct SNN parameters from the trained threshold network
+- Avoids surrogate gradient entirely
 
-- **No surrogate gradient error:** Eliminates approximation errors from non-differentiable spike functions
-- **Consistent improvement:** Outperforms surrogate-gradient baselines across tasks
-- **Data scalability:** Performance scales with data size
-- **Configuration robustness:** Robust to model hyperparameter choices
-- **Composability:** Works standalone or combined with surrogate-gradient training
+### 3. Hybrid Approach
+
+- Can combine parameter reconstruction with surrogate-gradient training
+- Parameter reconstruction provides better initialization
+- Surrogate gradient fine-tunes the solution
+
+## Key Advantages
+
+1. **No approximation errors**: Avoids surrogate gradient approximation
+2. **Data scalability**: Demonstrated consistent improvement with larger datasets
+3. **Robust to configuration**: Works across different model architectures
+4. **Standalone or hybrid**: Can be used alone or combined with existing methods
+
+## Implementation Considerations
+
+- Extend parallel feedforward threshold network convexification to recurrent case
+- Parameter reconstruction maps threshold network weights to SNN parameters
+- Suitable for both classification and temporal sequence tasks
 
 ## Applications
 
-- Energy-efficient SNN deployment on neuromorphic hardware
-- Large-scale SNN training without error accumulation
-- SNNs requiring high training accuracy
-- Research on theoretically grounded SNN training methods
+- Energy-efficient SNN deployment
+- Large-scale SNN training
+- Neuromorphic hardware optimization
+- Biological neural network simulation
 
-## Comparison with Surrogate Gradient Methods
+## arXiv Reference
 
-| Aspect | Surrogate Gradient | Parameter Reconstruction |
-|--------|-------------------|-------------------------|
-| Error | Approximation errors accumulate | No approximation error |
-| Optimality | Local optima | Global optimum (convex) |
-| Scalability | Degrades with depth | Scales with data |
-| Hybrid use | N/A | Can combine with SG |
-
-## Pitfalls
-
-- Convexification applies to **parallel** recurrent threshold networks; sequential SNNs need restructuring
-- Theoretical framework requires careful mapping between SNN architecture and threshold network formulation
-- Computational cost of convex optimization may be higher than gradient-based methods for very large networks
-
-## Activation Keywords
-
-globally optimal SNN, parameter reconstruction SNN, convex SNN training, surrogate gradient alternative, recurrent threshold network convexification, 2605.08022
-
-## References
-
-- Paper: https://arxiv.org/abs/2605.08022
-- PDF: https://arxiv.org/pdf/2605.08022
+- **Paper**: Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- **ID**: 2605.08022
+- **URL**: https://arxiv.org/abs/2605.08022
+- **PDF**: https://arxiv.org/pdf/2605.08022v1
