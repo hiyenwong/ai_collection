@@ -1,4 +1,20 @@
 
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - 将凸优化扩展到递归阈值网络的SNN全局最优训练方法，避免代理梯度近似误差 (arXiv: 2605.08022)
+  - 核心要点: 扩展前馈阈值网络凸化理论到并行递归阈值网络，SNN为其结构化特例
+  - 核心要点: 参数重构算法避免代理梯度跨层累积近似误差
+  - 核心要点: 可单独使用或与代理梯度联合使用，具数据可扩展性和架构鲁棒性
+  - **Activation**: globally optimal SNN training, parameter reconstruction, surrogate gradient alternatives, convex SNN optimization, threshold network convexification, large-scale SNN training
+
+### Encoding and Decoding Temporal Signals with Spiking Bandpass Wavelets
+- [[spiking-bandpass-wavelet-encoding]] - 将脉冲编码器重构为时间因果小波帧的信号处理方法，具有量化带宽和重建误差界 (arXiv: 2605.09770)
+  - 核心要点: 脉冲编码与经典信号处理理论桥接，赋予定量带宽和重建误差界
+  - 核心要点: 小波保持脉冲表示的稀疏性和局部性，重建误差与连续小波变换相当
+  - 核心要点: 可直接映射到神经形态硬件，适用于ECG、音频等时序信号重建
+  - **Activation**: spiking bandpass wavelets, spike encoding, temporal signal reconstruction, neuromorphic encoding, causal wavelet frames, event-based signal processing
+
 ## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
 
 ### Qlustering for Data Clustering via Network-Based Quantum Transport
