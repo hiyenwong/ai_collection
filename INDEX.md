@@ -1,3 +1,10 @@
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### Predictive and feedback signals differently shape the formation of group-level and individualized language representations
+- [[predictive-feedback-signals-language-representations]] - Multi-signal model: prediction shapes group-level neural architecture, feedback explains individual differences in language learning (arXiv: 2605.09409)
+  - Prediction model explains most unique neural variance despite feedback-based task
+  - Feedback model best predicts individual generalization outcomes on Day 7
+  - **Activation**: language learning, predictive coding, feedback signals, brain-model alignment, individual differences
 
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
 
