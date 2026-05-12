@@ -1,87 +1,144 @@
 ---
 name: equivariant-rl-clifford
-description: "Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis. Synthesizes optimal Clifford quantum circuits using RL with qubit-permutation-equivariant neural networks. Use when: synthesizing quantum circuits, Clifford gate optimization, quantum circuit compilation, equivariant neural networks for quantum computing, RL for quantum tasks, or qubit relabeling invariance."
+description: >
+  Equivariant reinforcement learning for Clifford quantum circuit synthesis.
+  Use when synthesizing Clifford quantum circuits with RL, designing
+  equivariant neural networks for quantum tasks, building size-agnostic
+  policies across qubit counts, or optimizing quantum circuit compilation
+  with all-to-all connectivity. Covers graph-based state representations,
+  permutation-equivariant architectures, and RL reward design for gate synthesis.
+  Activation: equivariant RL, quantum circuit synthesis, Clifford circuits,
+  RL quantum, permutation equivariant, qubit routing, quantum compilation,
+  量子线路综合, 等变强化学习, Clifford synthesis.
 ---
 
-# Equivariant RL for Clifford Circuit Synthesis
+# Equivariant RL for Clifford Quantum Circuit Synthesis
 
-Synthesize Clifford quantum circuits using RL with qubit-permutation-equivariant neural networks (arXiv: 2605.10910).
+Methodology from arXiv:2605.10910 (Yeung, Kissinger, Cornish, 2026-05-11).
 
-## Core Problem
+## Core Innovation
 
-Synthesizing Clifford circuits for all-to-all qubit connectivity devices. The key challenge: the search space grows factorially with qubit count, but the underlying problem is invariant to qubit relabeling.
+Synthesize Clifford quantum circuits via RL using a **permutation-equivariant** neural network architecture that is **size-agnostic** — a single learned policy generalizes across different qubit counts.
 
-## Key Insight
+## Key Results
 
-A neural network policy that is **equivariant to qubit permutations** can learn a single policy that works across all qubit counts, rather than training separate policies per qubit count.
+- Agent finds circuits within one two-qubit gate of optimality in milliseconds per instance
+- Optimal circuits found in 99.2% of instances
+- Single policy works across varying qubit counts (transfer learning by design)
 
 ## Architecture
 
-### Equivariant Policy Network
+### State Representation
 
-- **Input**: Clifford state representation (stabilizer tableau or symplectic matrix)
-- **Equivariance**: Permutations of qubit labels in input produce corresponding permutations in output
-- **Size-agnostic**: Single trained policy works for any qubit count
-- **Output**: Distribution over valid Clifford gate actions (H, S, CNOT)
+- Represent quantum circuit state as a graph over qubits
+- Nodes: qubits with local Clifford tableau information
+- Edges: two-qubit gate history / entanglement structure
+- State update: apply gate action to graph (local modification)
 
-### RL Training
+### Permutation-Equivariant Network
 
-- **Environment**: Clifford circuit synthesis task
-- **State**: Current unitary (represented as stabilizer tableau)
-- **Action**: Apply Clifford gate (H, S, CNOT on any qubit pair)
-- **Reward**: Negative circuit depth / gate count (minimize gates)
-- **Termination**: Target unitary reached
+- **Critical property**: relabeling qubits should produce equivalent output
+- Network architecture respects S_n (symmetric group) equivariance
+- Use graph neural network (GNN) or similar permutation-invariant layers
+- Output: distribution over valid gate actions (invariant to qubit ordering)
 
-## Results
+### Action Space
 
-- Finds circuits within **one two-qubit gate of optimality** in milliseconds per instance
-- **99.2% optimal** circuit discovery rate
-- Single policy generalizes across qubit counts
+- Actions: apply specific quantum gates (CNOT, H, S, etc.)
+- For all-to-all connectivity: any qubit pair can receive two-qubit gates
+- Action masking: exclude redundant or identity operations
 
-## Workflow for Agents
+### Reward Design
 
-### Step 1: Define Target Unitary
+- **Primary**: negative gate count (minimize circuit depth)
+- **Termination**: bonus when target Clifford is reached
+- **Penalty**: small per-step cost to encourage shorter circuits
+- Verification: check equivalence via stabilizer formalism (Clifford simulation is efficient)
 
-Express the target Clifford operation as:
-- Stabilizer tableau (binary symplectic matrix)
-- Or as a composition of known Clifford gates
+## Workflow
 
-### Step 2: Run Synthesis
+### Step 1: Define Target Clifford
 
 ```python
-# Pseudocode for synthesis
-def synthesize_clifford(target_unitary, max_steps=1000):
-    state = identity_tableau(target_unitary.n_qubits)
-    circuit = []
-    for step in range(max_steps):
-        action = equivariant_policy(state)  # (gate_type, qubit_indices)
-        state = apply_gate(state, action)
-        circuit.append(action)
-        if state == target_unitary:
-            break
-    return circuit
+# Target specified as stabilizer tableau or unitary
+# Clifford group on n qubits has efficient classical representation
+# via stabilizer tableau (Gottesman-Knill theorem)
+target_tableau = get_clifford_target(n_qubits)
 ```
 
-### Step 3: Optimize Circuit
+### Step 2: Initialize RL Environment
 
-Post-process to merge adjacent gates and remove identities.
+```python
+env = CliffordCircuitEnv(
+    n_qubits=n,
+    action_space='all_to_all',
+    gates=['CNOT', 'H', 'S'],
+    max_steps=50
+)
+```
 
-## Design Principles
+### Step 3: Build Equivariant Policy Network
 
-1. **Equivariance over invariance**: The policy output must permute consistently with input qubit permutations, not stay fixed
-2. **Size-agnostic training**: Train on mixed qubit counts to enable generalization
-3. **Symplectic representation**: Use binary symplectic matrices (tableaux) for efficient Clifford state representation
-4. **Reward shaping**: Penalize two-qubit gates more heavily than single-qubit gates
+```python
+# Key: network must be equivariant to qubit permutations
+policy = EquivariantCliffordNet(
+    node_dim=tableau_dim,
+    edge_dim=connectivity_dim,
+    hidden_dim=128,
+    num_layers=4
+)
+# Output: P(action | state) invariant under qubit relabeling
+```
 
-## When to Use
+### Step 4: Train with PPO or Similar
 
-- Clifford circuit synthesis for NISQ devices
-- Quantum compiler optimization
-- Any task requiring minimal-depth Clifford circuits
-- When circuit synthesis must generalize across qubit counts
+```python
+# Standard RL training loop
+for episode in range(num_episodes):
+    state = env.reset()
+    while not done:
+        action = policy.select_action(state)
+        next_state, reward, done = env.step(action)
+        # Verify: check if current circuit = target Clifford
+        if env.verify_equivalence(target_tableau):
+            reward += terminal_bonus
+        store_transition(state, action, reward)
+```
 
-## Related Skills
+### Step 5: Evaluate
 
-- quantum-neural-network-designer
-- quantum-error-correction-methods
-- quantum-circuit-synthesis-gst
+```python
+# Metrics:
+# 1. Optimality gap: gates_found - gates_optimal
+# 2. Success rate: % of instances solved optimally
+# 3. Generalization: test on unseen qubit counts
+# 4. Inference time: ms per instance
+```
+
+## Why Equivariance Matters
+
+1. **Data efficiency**: symmetry constraints reduce effective search space exponentially
+2. **Generalization**: policy learned on 3 qubits works on 8 qubits
+3. **Physical correctness**: quantum gates commute with qubit relabeling — architecture respects this
+4. **No retraining**: deploy single model across device sizes
+
+## Pitfalls
+
+- **Tableau representation**: must use efficient Clifford simulation (not full state vector). Stabilizer tableaux update in O(n²) per gate.
+- **Action space size**: for n qubits with all-to-all connectivity, O(n²) two-qubit actions. Use action masking to reduce.
+- **Reward sparsity**: reaching exact Clifford match is sparse. Add intermediate rewards (e.g., Hamming distance between current and target tableau).
+- **Equivalence checking**: Clifford equivalence is O(n³) via tableau comparison — fast enough for RL but don't use full state vector simulation.
+- **Over-counting**: multiple gate sequences produce same Clifford. Factor out global phases and redundant gate orderings.
+
+## Extensions
+
+- **Noisy devices**: add gate error rates to reward function
+- **Hardware constraints**: modify action space for limited connectivity (linear, grid)
+- **Non-Clifford gates**: extend to include T-gate synthesis (requires non-stabilizer simulation)
+- **Multi-objective**: jointly optimize depth, gate count, and fidelity
+
+## References
+
+- arXiv:2605.10910 — Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis
+- Gottesman-Knill theorem: efficient classical simulation of Clifford circuits
+- Stabilizer formalism for quantum error correction

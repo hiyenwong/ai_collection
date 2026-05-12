@@ -1,3 +1,25 @@
+## 2026-05-13 - Computer Science + Quantum Computing (Cron Job)
+
+### Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis
+- [[equivariant-rl-clifford]] - 使用等变强化学习综合Clifford量子线路，单策略跨不同量子比特数量，99.2%实例达到最优 (arXiv: 2605.10910)
+  - 核心要点: 置换等变神经网络架构对量子比特重标记保持不变，实现跨量子比特数泛化
+  - 核心要点: 智能体在毫秒级找到偏离最优仅一个双量子比特门的线路
+  - 核心要点: 对称性约束指数级缩小有效搜索空间，无需重新训练即可部署
+  - **Activation**: equivariant RL, quantum circuit synthesis, Clifford circuits, RL quantum, permutation equivariant, qubit routing, quantum compilation
+
+### ML-Guided Clifford Noise Reduction for Hamiltonian Simulations
+- [[ml-clifford-noise-reduction]] - ML引导的Clifford噪声降低框架，通过中间电路测量实现54%逻辑错误率降低 (arXiv: 2605.06792)
+  - 核心要点: 结合辛transvection Trotter综合、CliNR编码和Shor式稳定子验证
+  - 核心要点: ML学习选择最优验证稳定子，超越随机选择
+  - 核心要点: 设备匹配噪声模型，自适应硬件噪声特征
+  - **Activation**: quantum noise reduction, Clifford noise, CliNR, stabilizer verification, mid-circuit measurement, ML quantum verification
+
+### Photonic QNN Algorithmic Advantage
+- [[photonic-qnn-algorithmic-advantage]] - 光子量子神经网络展现超越经典ANN的算法优势，单参数对收敛而ANN失败 (arXiv: 2605.10801)
+  - 核心要点: 有效维度分析量化QNN表达能力，同等参数下QNN优于ANN
+  - 核心要点: 光子QNN以单对可训练参数实现100%准确率和0.04损失
+  - 核心要点: 量子干涉创造复杂决策边界，低参数 regime 优势最显著
+  - **Activation**: photonic QNN, quantum neural network advantage, effective dimension QNN, quantum classifier, photonic quantum, QNN vs ANN
 ## 2026-05-12 - Neuroscience Research (Cron Job)
 ### PRM: Explainable RNN for P300-based BCIs
 - [[prm-explainable-rnn-p300-bci]] - 后循环模块(PRM)增强RNN架构的P300分类性能与可解释性，实现全局/局部双重可解释性分析 (arXiv: 2605.10121)
