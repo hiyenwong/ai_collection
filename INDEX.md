@@ -28,6 +28,8 @@ Today's arXiv scan (q-bio.NC + cs.NE, May 12) found 29+ papers across both categ
 - [[spiking-phase-quantum-encoding]] - Spiking phase quantum encoding
 - [[topological-signal-processing-brain-networks]] - Topological signal processing for brain networks
 - [[universal-neural-propagator]] - Universal neural propagator
+- [[brain-data-value-scaling-laws]] - Mathematical framework for brain data value in ML
+- [[sparse-temporal-context-reconfiguration]] - Joint sparse coding and temporal dynamics for context reconfiguration
 
 
 ## 2026-05-13 - Neuroscience Research (Cron Job)
