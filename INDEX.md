@@ -1,3 +1,18 @@
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### NeuralBench: A Unifying Framework to Benchmark NeuroAI Models
+- [[neuralbench-unified-neuroai-benchmark]] - Unified NeuroAI benchmarking across 36 EEG tasks, 14 architectures, 94 datasets (arXiv: 2605.08495)
+  - Core finding: Foundation models only marginally outperform task-specific models
+  - Extensible design for MEG/fMRI integration
+  - **Activation**: neuralbench, neuroai benchmark, brain model evaluation, EEG benchmark
+
+### How Much is Brain Data Worth for Machine Learning?
+- [[brain-data-value-scaling-laws]] - Mathematical scaling laws for brain data value in ML (arXiv: 2605.09243)
+  - Derives exchange rates between neural samples and task labels
+  - Analyzes distribution shift robustness via brain regularization
+  - **Activation**: brain data value, neural data worth, brain-regularized learning, neuroai scaling laws
+
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Energy-Efficient Implementation of Spiking Recurrent Cells on FPGA
