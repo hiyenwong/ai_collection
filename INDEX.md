@@ -1,3 +1,19 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Partial Annealing and Pattern Decorrelation in Associative Neural Networks
+- [[partial-annealing-pattern-decorrelation]] - 部分退火框架实现联想神经网络模式去相关，通过双温度双时间尺度分离实现最大存储容量αc=1 (arXiv: 2605.10304)
+  - 核心要点: 双温度双时间尺度框架耦合快速神经元动态与慢速突触动态，引入类副本参数n调节快慢分离
+  - 核心要点: 负值n诱导存储模式渐进去相关，减少干扰，促进正交配置，达到理论最大存储容量
+  - 核心要点: 在有偏模式场景下恢复检索能力，优于标准去相关方法，为记忆组织提供自适应机制
+  - **Activation**: partial annealing, pattern decorrelation, associative memory, Hopfield model, two-temperature framework, memory capacity
+
+### Moving MRI: Imaging a Moving Body with a Moving Magnet
+- [[moving-mri-brain-imaging]] - 移动MRI系统，同步移动受试者和扫描仪实现运动中的脑成像，为前庭功能研究开辟新范式 (arXiv: 2605.09267)
+  - 核心要点: 将无液氦超导磁体、梯度线圈和RF线圈作为整体安装在气动倾斜平台上，最小化相对运动
+  - 核心要点: 在大鼠活体实验中成功实现重复倾斜运动期间的脑部成像，表征了倾斜引起的场偏移伪影
+  - 核心要点: 为自然主义前庭功能研究奠定基础，未来可扩展到人类系统
+  - **Activation**: moving MRI, mMRI, vestibular imaging, motion artifact, naturalistic neuroimaging, superconducting magnet
+
 ## 2026-05-13 - Computer Science + Quantum Computing (Cron Job)
 
 ### Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis
