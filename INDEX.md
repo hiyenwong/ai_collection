@@ -1,5 +1,11 @@
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
+### Spiking Bandpass Wavelet Encoding
+- [[spiking-bandpass-wavelet-encoding]] - Spike encoders reformulated as time-causal wavelet frames with quantitative bandwidth guarantees (arXiv: 2605.09770)
+  - Bridges neuromorphic spike encoding with classical signal processing via bandpass wavelet decomposition
+  - Time-causal kernels enable real-time event generation with theoretical reconstruction bounds
+  - **Activation**: spike encoding, wavelet-based spiking, neuromorphic encoding, event-based temporal representation, bandpass filtering with spikes
+
 ### Cortico-Cerebellar RNN Architecture for Temporal Learning
 - [[cortico-cerebellar-rnn]] - CB-RNN augments RNNs with cerebellar feedforward module; cortex as fixed reservoir, cerebellum drives learning efficiency (arXiv: 2605.10356)
   - Key finding: freezing recurrent core after minimal training preserves superior learning — cortex functions as fixed reservoir
