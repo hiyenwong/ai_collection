@@ -1,3 +1,27 @@
+
+## 2026-05-12 - Neuroscience Research (Cron Job)
+
+### Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
+- [[globally-optimal-snn-parameter-reconstruction]] - 通过参数重建实现SNN全局最优训练，消除代理梯度近似误差 (arXiv: 2605.08022)
+  - 核心要点: 将前馈阈值网络凸化理论扩展到并行循环阈值网络，证明LIF-SNN是其结构化特例
+  - 核心要点: 通过枚举可实现的脉冲激活模式构建有限脉冲字典，在字典上求解凸优化问题
+  - **Activation**: globally optimal SNN training, SNN parameter reconstruction, convex SNN, surrogate gradient free, recurrent threshold network convexification
+
+### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
+- [[same-brain-different-prediction]] - EEG预处理选择对解码可靠性的影响，高达42%试次预测会因预处理不同而翻转 (arXiv: 2605.07212)
+  - 核心要点: 将预处理选择建模为反事实干预空间，在2^7=128个管线上评估预测稳定性
+  - 核心要点: 提出预处理不确定性(PU)度量和Walsh-Hadamard分解揭示预处理步骤的近可加性
+  - **Activation**: EEG preprocessing reliability, prediction stability, counterfactual preprocessing, EEG pipeline comparison, BCI robustness
+
+
+## 2026-05-12 - Systems Engineering Research (Cron Job)
+
+### Distributionally Robust Data-Driven Predictive Control for Stochastic LTI Systems
+- [[dr-data-driven-predictive-control]] - 分布鲁棒数据驱动预测控制，结合Wasserstein模糊集实现未知扰动分布下的鲁棒控制 (arXiv: 2605.07589)
+  - 核心要点: 从输入输出轨迹数据直接构建预测器，无需系统辨识
+  - 核心要点: 使用Wasserstein距离构建模糊集，提供有限样本性能保证
+  - **Activation**: distributionally robust control, data-driven MPC, Wasserstein, subspace predictive control, stochastic LTI
+
 ## 2026-05-12 - Computer Science (Cron Job)
 
 ### Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters

@@ -127,6 +127,39 @@ def simulate_snn(snn_params, input_spikes, T=10, theta=1.0):
 3. **Temporal precision**: May require many time steps for accurate reconstruction
 4. **Network architecture**: Limited to feedforward architectures
 
+## NEW: Convexification of Recurrent Threshold Networks (arXiv:2605.08022)
+
+A **different** globally optimal approach by Udupi, Yang & Zhai (2026-05).
+
+### Core Idea
+
+**Directly convexify the SNN training problem** — no surrogate gradient needed:
+
+1. Extend convexification from parallel **feedforward** threshold networks to parallel **recurrent** threshold networks
+2. Parallel recurrent threshold networks **subsume parallel SNNs** as a structured special case
+3. Solve the convex problem globally, then reconstruct SNN parameters
+4. Eliminates surrogate gradient approximation errors that accumulate across layers
+
+### Key Advantages
+
+- **Eliminates surrogate gradient bias** — no approximation errors
+- Works as a **standalone method** OR combined with surrogate-gradient training for hybrid improvement
+- **Data scalable** — performance improves with more training data
+- **Robust** to model configuration changes
+- Points toward **large-scale SNN training** potential
+- Applies to **recurrent** architectures, not just feedforward
+
+### How It Differs from ANN-to-SNN Conversion
+
+| Aspect | ANN-to-SNN Conversion | Convexification + Reconstruction |
+|--------|----------------------|----------------------------------|
+| Starting point | Pre-trained ANN | Direct SNN formulation |
+| Training | Train ANN, then convert | Convexify SNN, solve globally |
+| Architecture | Feedforward only | Recurrent threshold networks |
+| Gradient error | N/A (no gradients) | Eliminated (no surrogate needed) |
+| Scalability | Limited by ANN equivalence | Scalable to larger networks |
+| Composability | N/A | Can combine with SG |
+
 ## Use Cases
 
 - High-accuracy SNN deployment on neuromorphic hardware
