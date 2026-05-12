@@ -785,6 +785,20 @@
   - Systematic QL level sweep identifies optimal regime for neuroimaging data fit
   - **Activation**: quantum-like dynamics, QL brain dynamics, coupled oscillator brain model, spectral gap, 量子似脑动力学
 
+### Cortico-Cerebellar Modularity for Temporal Learning
+- [[cortico-cerebellar-modularity-rnn]] - CB-RNN 结合循环皮层核心与小脑启发前馈模块，实现更快的时序学习和更高性能，揭示小脑模块作为学习效率主要驱动力 (arXiv: 2605.10356)
+  - 核心要点 1: CB-RNN 架构在多种时序任务上优于参数匹配的纯循环基线，学习速度更快、性能上限更高
+  - 核心要点 2: 冻结循环核心后仅训练小脑模块仍保持优越学习效率，皮层网络可主要作为固定储层
+  - 核心要点 3: 异质模块化架构可作为神经系统的强大结构归纳偏置
+  - **Activation**: cortico-cerebellar RNN, CB-RNN, cerebellar module, temporal learning efficiency, modular architecture, reservoir computing
+
+### Multilevel Interactive Equilibrium in NeuroAI
+- [[multilevel-interactive-equilibrium-neuroai]] - 将纳什均衡扩展到具有内部计算的 NeuroAI 系统，多层交互均衡 (MIE) 在神经学习动力学、认知表征和行为策略三个层面同时稳定 (arXiv: 2605.10505)
+  - 核心要点 1: MIE 在部分可观测、有界计算和不确定性条件下定义均衡，适用于生物脑、人工代理和人机混合系统
+  - 核心要点 2: 均衡跨三层耦合稳定：神经学习动力学、认知表征、行为策略
+  - 核心要点 3: 应用于人机驾驶交互、LLM 人机交互、计算精神病学等领域
+  - **Activation**: multilevel interactive equilibrium, MIE NeuroAI, game theory NeuroAI, bounded rationality, human-AI interaction equilibrium, computational psychiatry
+
 ## 2026-05-11 - Deep Neuroscience Research (Cron Job - Deep Reading)
 
 ### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
