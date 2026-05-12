@@ -8,6 +8,27 @@
 
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
 
+### Qlustering for Data Clustering via Network-Based Quantum Transport
+- [[qlustering-quantum-clustering]] - Unsupervised clustering via steady-state quantum transport in open quantum networks, inferring cluster assignments from terminal current observables (arXiv: 2605.10844)
+  - Data encoded as input states, cluster assignments inferred from GKSL steady-state output currents
+  - No full state tomography required - uses accessible transport observables
+  - Noise-robust across broad dephasing strengths; benchmarked on QM9 and Iris
+  - **Activation**: quantum clustering, GKSL transport, steady-state quantum clustering, tomography-free quantum learning
+
+### MAGIQ: A Post-Quantum Multi-Agentic AI Governance System with Provable Security
+- [[magiq-post-quantum-agent-governance]] - Multi-agent AI governance with post-quantum cryptographic protocols and UC security proofs (arXiv: 2605.06933)
+  - Policy definition and enforcement for agent-to-agent sessions using PQC primitives
+  - Session-based enforcement with message attribution accountability
+  - Formally proven correct via Universal Composability framework
+  - **Activation**: post-quantum agent governance, MAGIQ, UC framework multi-agent, PQC agent security
+
+### Compositional Quantum Heuristics for Max-Clique Detection
+- [[compositional-quantum-heuristics]] - Mitigating barren plateaus via compositional quantum models with group-invariant loss functions (arXiv: 2605.07611)
+  - Assembles larger quantum models from smaller trainable subcomponents
+  - Symmetry-induced inductive bias via group-invariant loss functions
+  - Recursive hybrid quantum-classical heuristic inspired by QIRO
+  - **Activation**: compositional quantum circuits, barren plateau mitigation, permutation-equivariant QGNN, QIRO
+
 ### A passive self-correcting quantum memory in three dimensions
 - [[passive-quantum-memory-3d]] - 自纠错量子记忆设计，3D Pauli稳定子哈密顿量实现指数级记忆寿命 (arXiv: 2605.10943)
   - 递归哈密顿量变换降低维度同时保留逻辑编码
