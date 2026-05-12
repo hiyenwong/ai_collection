@@ -1,3 +1,19 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### How Much is Brain Data Worth for Machine Learning?
+- [[brain-data-value-scaling-laws]] - Mathematical framework quantifying brain data value for ML training, deriving scaling laws and brain-to-task data exchange rates (arXiv: 2605.09243)
+  - BEFS two-stage estimator: brain encoding model + task learning with brain feature regularization
+  - Exchange rates depend on brain-task alignment, neural SNR, latent dimension, and task sample regime
+  - Budget optimization: when and how much brain data to collect vs task labels
+  - **Activation**: brain data value, neural data worth, brain distillation, brain-regularized learning, neuroAI data collection
+
+### FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts
+- [[flux-longitudinal-flow-matching]] - Framework for reconstructing trajectories from unpaired biological snapshots while discovering latent regime transitions (arXiv: 2605.08648)
+  - Three-stage training: metric learning, bend network, MoE velocity field with Gumbel-Softmax routing
+  - Geometry-aware paths keep trajectories on data manifolds vs Euclidean shortcuts
+  - Validated on widefield calcium imaging (neural learning regimes) and single-cell differentiation
+  - **Activation**: longitudinal flow matching, geometry-aware transport, biological trajectory reconstruction, regime discovery
+
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Cron Job)
 ## 2026-05-14 - Medicine + Quantum (Cron Job)
 
