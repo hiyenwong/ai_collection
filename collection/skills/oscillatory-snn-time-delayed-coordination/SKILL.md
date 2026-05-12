@@ -1,195 +1,113 @@
 ---
 name: oscillatory-snn-time-delayed-coordination
-description: "Oscillatory Spiking Neural Network with time-delayed coordination inspired by cortical synchronous rhythms. Models cortical oscillations as coordination mechanism gating information flow between spiking populations, enabling structured representations through time-delayed STDP. Activation: oscillatory SNN, cortical rhythm learning, time-delayed spike coordination, brain-inspired SNN learning, synchronous rhythm SNN."
+description: Oscillatory Spiking Neural Network with time-delayed coordination methodology. Models cognition-level neural synchrony emerging from iterative bottom-up and top-down interactions between micro-scale spiking dynamics and macro-scale oscillatory synchronization. Use when studying S2-Net, spiking-by-synchronization, oscillatory neural networks, time-delayed coordination, cortical rhythm modeling, temporal binding, or brain-inspired learning primitives.
 ---
 
-# Oscillatory Spiking Neural Network with Time-Delayed Coordination
+# Oscillatory SNN with Time-Delayed Coordination (S2-Net)
 
-> Brain-inspired learning mechanism where cortical oscillations serve as a coordination mechanism that gates information flow between spiking neuron populations, enabling the emergence of structured representations through time-delayed spike-timing-dependent plasticity.
+## Overview
 
-## Metadata
-- **Source**: arXiv:2605.01656v1
-- **Authors**: Tingting Dan, Guorong Wu
-- **Published**: 2026-05-03
-- **Categories**: q-bio.NC, cs.AI, cs.LG
+S2-Net (Spiking-by-Synchronization Neural Network) is a brain-inspired learning primitive where cognition-level neural synchrony emerges through iterative bottom-up and top-down interactions between micro-scale spiking neuron dynamics and macro-scale oscillatory synchronization mechanisms.
 
-## Core Problem
+**Source**: Dan & Wu, "From Cortical Synchronous Rhythm to Brain Inspired Learning Mechanism: An Oscillatory Spiking Neural Network with Time-Delayed Coordination" (arXiv:2605.01656, May 2026)
 
-Human cognition emerges from coordinated spiking dynamics in distributed neural circuits, where information is encoded via both firing rates and precise spike timing determined by brain rhythms. Standard SNNs lack mechanisms to capture this multi-scale coordination between micro-scale spiking dynamics and macro-scale oscillatory synchronization.
+## Key Principles
 
-## Key Innovation
+### 1. Bottom-Up: Oscillatory Synchronization from Spiking Activity
+- Each parcel (cortical region, image pixel, etc.) is modeled as a spiking neuron
+- Neurons are embedded in a **predefined connectivity scaffold**
+- Spiking activity accumulates over a **finite memory window**
+- Past spiking patterns form oscillatory synchronization — rhythms emerge from spike history
+- Low-level information is encoded in **spatiotemporal domain**: neurons selectively group and fire spontaneously
 
-A brain-inspired learning primitive in which **cognition-level neural synchrony** emerges through iterative bottom-up and top-down interactions between:
-1. **Micro-scale**: Spiking neuron dynamics (individual neuron firing)
-2. **Macro-scale**: Oscillatory synchronization mechanism (population-level rhythms)
+### 2. Top-Down: Time-Delayed Modulation
+- Brain dynamics operate in **partial and transient synchronization**, NOT global phase locking
+- Oscillatory coordination uses a **time-delayed synchronization formulation**
+- This enables top-down modulation of heterogeneous neural spiking for large-scale distributed systems
+- The rhythmic timing acts as a **control mechanism** for information routing
 
-Cortical oscillations are modeled as a **coordination mechanism** that gates information flow between spiking neuron populations, enabling the emergence of structured representations through **time-delayed spike-timing-dependent plasticity (STDP)**.
+### 3. Spiking-by-Synchronization Paradigm
+- Unlike standard SNNs where information flows through spike trains, S2-Net uses **rhythmic timing** as the primary control signal
+- Synchronization patterns (which neurons fire together, at what phase) encode information
+- The interplay between individual spiking and collective oscillation creates a two-level representation:
+  - **Micro**: individual spike timing and rate
+  - **Macro**: phase relationships and synchronization clusters
 
-### Architecture
+## Architecture
+
 ```
-                    ┌─────────────────────┐
-                    │  Oscillatory Layer   │
-                    │  (macro-scale rhythm) │
-                    │  Phase φ(t), freq ω  │
-                    └──────┬───────────────┘
-                           │ gates
-              ┌────────────┼────────────┐
-              │            │            │
-        ┌─────▼─────┐ ┌────▼─────┐ ┌────▼─────┐
-        │ Population│ │Population│ │Population│
-        │    A      │ │    B     │ │    C     │
-        │ (spiking) │ │(spiking) │ │(spiking) │
-        └─────┬─────┘ └────┬─────┘ └────┬─────┘
-              │            │            │
-              └────────────┼────────────┘
-                           │
-                    Time-delayed STDP
-                    (bottom-up + top-down)
+Input → [Spiking Neurons on Connectivity Scaffold]
+           ↓ (bottom-up accumulation over memory window)
+     [Oscillatory Synchronization Formation]
+           ↓ (top-down time-delayed modulation)
+     [Heterogeneous Neural Spiking Modulation]
+           ↓ (iterative loop)
+     [Output: Synchronized Spike Patterns]
 ```
 
-## Core Methodology
+### Core Components
 
-### 1. Oscillatory Coordination Mechanism
-- Each population is assigned an oscillatory phase φ(t) with frequency ω
-- Phase determines **gating window** for information flow between populations
-- Populations with aligned phases communicate effectively; misaligned phases block communication
-- Oscillations emerge from population dynamics, not imposed externally
-
-### 2. Time-Delayed STDP
-- Standard STDP is extended with **time-delay terms** that account for oscillatory phase
-- Synaptic updates depend on both spike timing AND oscillatory phase alignment
-- Bottom-up and top-down pathways have different delay characteristics
-- Enables learning of temporal sequences with multiple timescales
-
-### 3. Bottom-Up / Top-Down Interaction
-- **Bottom-up**: Feedforward spike propagation carries sensory/input information
-- **Top-down**: Oscillatory feedback modulates population excitability
-- **Iterative refinement**: Multiple bottom-up/top-down cycles converge to stable representation
-- **Phase coding**: Information encoded in relative phase differences between populations
-
-### 4. Emergent Synchrony
-- Neural synchrony is not hardcoded but **emerges** through learning
-- Populations that process related information naturally synchronize
-- Unrelated populations desynchronize, enabling separation of representations
-- Synchrony strength correlates with task-relevant information content
-
-## Implementation Guide
-
-### Prerequisites
-- SpikingJelly or similar SNN framework
-- PyTorch
-
-### Oscillatory SNN Layer
-```python
-import torch
-import torch.nn as nn
-import numpy as np
-
-class OscillatoryPopulation(nn.Module):
-    """Spiking neuron population with oscillatory coordination."""
-    
-    def __init__(self, n_neurons, frequency=10.0, dt=1e-3):
-        super().__init__()
-        self.n_neurons = n_neurons
-        self.frequency = frequency  # Hz
-        self.dt = dt
-        self.phase = nn.Parameter(torch.zeros(1))  # Learnable phase offset
-        self.membrane = torch.zeros(n_neurons)
-        self.spike_threshold = 1.0
-        
-    def oscillatory_gate(self, t):
-        """Compute oscillatory gating signal."""
-        omega = 2 * np.pi * self.frequency
-        return torch.sigmoid(torch.cos(omega * t + self.phase))
-    
-    def forward(self, input_spikes, t):
-        # Update membrane potential
-        self.membrane = self.membrane + input_spikes - self.membrane * 0.1
-        
-        # Apply oscillatory gating
-        gate = self.oscillatory_gate(t)
-        gated_membrane = self.membrane * gate
-        
-        # Generate spikes
-        spikes = (gated_membrane > self.spike_threshold).float()
-        self.membrane = self.membrane * (1 - spikes)  # Reset
-        
-        return spikes, self.membrane
-```
-
-### Time-Delayed STDP
-```python
-def time_delayed_stdp(pre_spikes, post_spikes, pre_phase, post_phase, 
-                       weights, learning_rate=0.01, tau_stdp=20e-3):
-    """STDP with oscillatory phase-dependent modulation."""
-    
-    # Standard STDP window
-    dt = post_spikes - pre_spikes  # spike timing difference
-    stdp_window = torch.exp(-torch.abs(dt) / tau_stdp) * torch.sign(dt)
-    
-    # Phase modulation: stronger learning when phases align
-    phase_alignment = torch.cos(pre_phase - post_phase)
-    phase_alignment = torch.clamp(phase_alignment, min=0)  # Only positive alignment
-    
-    # Combined update
-    delta_w = learning_rate * stdp_window * phase_alignment
-    
-    return delta_w
-```
-
-### Multi-Population Network
-```python
-class OscillatorySNN(nn.Module):
-    def __init__(self, layer_sizes, frequencies):
-        super().__init__()
-        self.populations = nn.ModuleList([
-            OscillatoryPopulation(size, freq)
-            for size, freq in zip(layer_sizes, frequencies)
-        ])
-        self.weights = nn.ParameterList([
-            nn.Parameter(torch.randn(layer_sizes[i], layer_sizes[i+1]) * 0.1)
-            for i in range(len(layer_sizes) - 1)
-        ])
-        
-    def forward(self, input_spikes, n_timesteps=100):
-        outputs = []
-        for t in range(n_timesteps):
-            layer_spikes = input_spikes
-            for pop, weight in zip(self.populations, self.weights):
-                input_current = layer_spikes @ weight
-                spikes, membrane = pop(input_current, t)
-                layer_spikes = spikes
-            outputs.append(layer_spikes)
-        return torch.stack(outputs)
-```
+1. **Connectivity Scaffold**: Predefined structure defining which neurons can synchronize
+2. **Memory Window**: Finite temporal window for accumulating spiking history
+3. **Time-Delayed Synchronization Formulation**: Models the lag between neural events and rhythmic responses
+4. **Selective Grouping**: Neurons self-organize into functional groups through dynamics
 
 ## Applications
-- **Temporal sequence learning**: Tasks requiring multi-timescale temporal processing
-- **Working memory**: Oscillatory gating enables sustained activity patterns
-- **Attention mechanisms**: Phase alignment as selective communication routing
-- **Multi-modal integration**: Different modalities processed in phase-separated populations
-- **Sequence prediction**: Learning temporal dependencies with oscillatory coordination
 
-## Advantages Over Standard SNNs
-| Aspect | Standard SNN | Oscillatory SNN |
-|--------|-------------|-----------------|
-| Temporal coding | Spike timing only | Timing + phase |
-| Population coordination | None | Oscillatory gating |
-| Multi-timescale | Limited | Natural via frequencies |
-| Representation structure | Implicit | Emergent through synchrony |
-| Biological plausibility | Moderate | High |
+The methodology has demonstrated results across:
+- **Neural activity decoding**: Reconstructing stimuli or intentions from neural recordings
+- **Energy-efficient signal processing**: Sparse, event-driven computation leveraging temporal structure
+- **Temporal binding**: Associating features across time through synchronized oscillations
+- **Semantic reasoning**: Using oscillatory patterns for higher-level cognitive tasks
+
+## Implementation Guidelines
+
+### Scaffold Design
+1. Choose connectivity reflecting the target system's structure:
+   - For images: grid/graph connectivity over pixels/superpixels
+   - For cortex: structural connectivity from DTI or functional connectivity
+   - For abstract data: similarity-based or learned adjacency
+
+2. Scaffold density controls synchronization capacity:
+   - Too dense → everything synchronizes, no selectivity
+   - Too sparse → no coordination, isolated neurons
+
+### Memory Window Tuning
+1. Window length T determines oscillation timescale:
+   - Short T → high-frequency oscillations, fine temporal resolution
+   - Long T → low-frequency oscillations, global integration
+
+2. Match T to the task's relevant timescale:
+   - Sensory processing: short (10-100ms)
+   - Cognitive/semantic: longer (100ms-seconds)
+
+### Time-Delay Parameters
+1. Delays should reflect biological/physical constraints:
+   - Axonal conduction delays (distance-dependent)
+   - Synaptic transmission delays
+   - Processing pipeline delays
+
+2. Heterogeneous delays enhance computational capacity:
+   - Uniform delays → limited dynamic range
+   - Varied delays → richer oscillatory patterns
+
+## Verification Steps
+
+1. **Synchronization emergence**: Verify that oscillatory patterns emerge spontaneously from spiking, not imposed externally
+2. **Partial synchronization**: Confirm system operates in partial/transient sync regime, not global locking
+3. **Bottom-up causality**: Show that spike statistics predict synchronization patterns
+4. **Top-down modulation**: Show that synchronization state modulates subsequent spiking
+5. **Task performance**: Validate on at least one of: decoding, signal processing, temporal binding, reasoning
 
 ## Pitfalls
-- **Frequency selection**: Choosing appropriate oscillation frequencies requires task-specific tuning
-- **Phase initialization**: Random phase initialization may require many cycles to achieve useful coordination
-- **Computational overhead**: Oscillatory gating adds computation per timestep
-- **Training stability**: Time-delayed STDP can be unstable with inappropriate learning rates
-- **Scalability**: Number of phase parameters grows with population count
 
-## Related Skills
-- spiking-neural-network-analysis
-- snn-learning-survey
-- holobrain-holograph-oscillatory-gnn
-- brain-inspired-snn-pattern-analysis
-- spiking-oscillation-mapping
-- kuramoto-brain-network
+- **Global phase locking trap**: If all neurons synchronize identically, the system loses representational power — ensure heterogeneity
+- **Memory window too long**: Accumulating too much history smooths out temporal structure, losing the dynamic benefit
+- **Ignoring delay heterogeneity**: Uniform time delays severely limit the oscillatory pattern space
+- **Scaffold mismatch**: Using incorrect connectivity (e.g., fully-connected for spatial data) breaks the spatial structure
+- **Not iterative**: The power comes from bottom-up ↔ top-down iteration; single-pass loses the emergent dynamics
+- **SNN conversion issues**: Converting pre-trained ANNs to S2-Net requires careful spike-timing calibration
+
+## Activation Keywords
+
+S2-Net, spiking-by-synchronization, oscillatory SNN, time-delayed coordination, cortical rhythm modeling, neural synchrony, temporal binding SNN, bottom-up top-down SNN, partial synchronization, rhythmic timing control, brain-inspired learning primitive, oscillatory neural dynamics

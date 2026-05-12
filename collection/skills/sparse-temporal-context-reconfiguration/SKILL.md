@@ -1,125 +1,91 @@
 ---
 name: sparse-temporal-context-reconfiguration
-description: "Joint sparse coding and temporal dynamics for context reconfiguration in neural networks — bridging mouse mPFC findings with SNN lifelong learning. Identifies sparsity + temporal dynamics as core mechanisms preventing catastrophic forgetting during context transitions."
+description: Joint sparse coding and temporal dynamics for context reconfiguration methodology. Identifies how sparsity reduces cross-context interference and temporal dynamics enhance context separability, enabling stable adaptation without catastrophic forgetting in lifelong learning. Use when studying context switching, catastrophic forgetting prevention, lifelong learning mechanisms, sparse coding in neural systems, SNN temporal dynamics, mPFC context representations, or energy-efficient adaptive architectures.
 ---
 
 # Sparse-Temporal Context Reconfiguration
 
-Based on: Shi et al. (2026) "Joint sparse coding and temporal dynamics support context reconfiguration" — arXiv:2605.10178v1
+## Overview
 
-## Core Problem
+Joint sparse coding and temporal dynamics form a core mechanism supporting flexible context reconfiguration in lifelong learning. This methodology was identified through combined analysis of mouse medial prefrontal cortex (mPFC) recordings and computational networks, establishing an energy-efficient architectural principle for stable adaptation.
 
-How does the brain transition between distinct contexts while maintaining representations of prior experience? This is the central challenge of **catastrophic forgetting** in both biological and artificial neural systems.
+**Source**: Shi et al., "Joint sparse coding and temporal dynamics support context reconfiguration" (arXiv:2605.10178, May 2026)
 
-## Key Discovery
+## Key Findings
 
-**Joint sparse coding + temporal dynamics** in both mouse medial prefrontal cortex (mPFC) and computational networks serve as mechanisms that preserve prior representations during context transitions.
-
-## Mechanisms
-
-### 1. Sparse Coding Reduces Cross-Context Interference
-
-- **Observation**: Context-dependent neural representations in mPFC are sparse
-- **Effect**: Sparsity reduces overlap between context representations
-- **Result**: Less interference when switching between contexts
-- **Computational principle**: Activity-constrained representations naturally separate contexts
+### 1. Sparsity Reduces Cross-Context Interference
+- Context-dependent representations in mPFC exhibit **sparse activation patterns** that minimize overlap between different contextual states
+- Sparse coding ensures that transitioning between contexts does not erase prior representations
+- Mechanism: only a subset of neurons participate in any given context, creating orthogonal-ish subspaces
 
 ### 2. Temporal Dynamics Enhance Context Separability
+- Beyond spatial sparsity, **temporal evolution** of network activity provides an additional dimension for context discrimination
+- Networks with rich temporal dynamics (like SNNs) can separate contexts that would otherwise be confounded in static representations
+- Time becomes an information-bearing dimension: same neurons firing at different temporal patterns encode different contexts
 
-- **Observation**: Network activity evolves over time with distinct temporal trajectories
-- **Effect**: Temporal dynamics add an additional dimension for context separation
-- **Result**: Contexts that might overlap in static space become separable over time
-- **Computational principle**: Time itself becomes a feature for context discrimination
+### 3. SNNs Exhibit Superior Lifelong Learning Retention
+- Networks endowed with **both** sparsity and temporal dynamics (i.e., Spiking Neural Networks) show improved retention during lifelong learning **without auxiliary heuristics**
+- No need for experience replay, elastic weight consolidation, or other anti-forgetting mechanisms
+- The architecture itself provides the protection
 
-### 3. Synergistic Effect in Spiking Neural Networks
+### 4. Energy Efficiency Through Activity Constraint
+- Both mechanisms are naturally activity-constraining: sparse coding limits simultaneous firing, temporal dynamics distribute computation over time
+- This dual constraint creates an **energy-efficient** pathway for stable adaptation
 
-- Networks with **both** properties (sparse + temporal) like SNNs show:
-  - Improved retention during lifelong learning
-  - No auxiliary heuristics required
-  - Energy-efficient adaptation
-  - Stable knowledge preservation
-
-## Theoretical Framework
+## Mechanistic Framework
 
 ```
-Context Transition = f(Sparsity, Temporal Dynamics)
-
-Where:
-- Sparsity reduces cross-context interference
-- Temporal dynamics enhance context separability
-- Together they enable flexible reconfiguration without forgetting
+Context A: Sparse subset {n1, n3, n7} fires at temporal pattern T_A
+Context B: Sparse subset {n2, n5, n8} fires at temporal pattern T_B
+Overlap: Minimal spatial overlap + distinct temporal signatures = clean separation
 ```
 
-## Implications for AI
+### Mathematical Intuition
 
-### Lifelong Learning Architecture
+- **Sparsity constraint**: ||x||_0 << N (few active neurons per context)
+- **Temporal separability**: ||h_A(t) - h_B(t)|| > threshold across time window
+- **Joint benefit**: P(interference) ≈ P(spatial_overlap) × P(temporal_confusion) → both small
 
-1. **Sparse representations**: Enforce sparsity in context-specific layers
-2. **Temporal processing**: Use recurrent/spiking dynamics for context separation
-3. **Energy efficiency**: Activity-constrained representations reduce compute
-4. **No auxiliary mechanisms**: Architecture alone handles context switching
+## Implementation Guidelines
 
-### Design Principles
+### For SNN Design
+1. **Induce sparsity** through:
+   - High firing thresholds
+   - Lateral inhibition mechanisms
+   - Regularization penalties on spike counts
+   
+2. **Preserve temporal dynamics** through:
+   - Heterogeneous neuron time constants
+   - Delayed synaptic connections
+   - Recurrent feedback loops
+   - Membrane potential decay (not instant reset)
 
-- **Sparsity as structural constraint**: Not just regularization, but fundamental architecture
-- **Time as computational resource**: Temporal dynamics aren't noise — they're features
-- **Biological plausibility**: Mechanisms grounded in actual mPFC recordings
-- **Emergent stability**: Forgetting prevention emerges from architecture, not heuristics
+3. **Lifelong learning setup**:
+   - Present contexts sequentially (not mixed)
+   - Allow temporal separation between context presentations
+   - Measure retention without rehearsal
 
-## Applications
+### For Neuroscience Analysis
+1. Analyze mPFC (or target region) population activity during context switches
+2. Quantify sparsity: fraction of neurons active per context vs. total
+3. Measure cross-context interference: overlap in active neuron sets
+4. Compute temporal separability: time-resolved pattern discrimination
 
-1. **Continual/Lifelong Learning**: SNNs for sequential task learning
-2. **Context-Aware Systems**: Dynamic context switching in AI agents
-3. **Energy-Efficient AI**: Sparse-temporal architectures for edge deployment
-4. **Neuroscience-AI Bridge**: Validating biological mechanisms in artificial systems
+## Verification Steps
 
-## Comparison with Existing Methods
+1. **Sparsity check**: Active neuron fraction per context should be significantly below 1.0 (typically < 20-30%)
+2. **Interference check**: Context representations should show low cosine similarity when contexts differ
+3. **Temporal check**: Decoding accuracy should improve when temporal windows are included vs. static snapshots
+4. **Retention check**: Performance on Context A after learning Context B should remain high without replay
 
-| Method | Mechanism | Requires Auxiliary? | Biological Grounding |
-|--------|-----------|---------------------|---------------------|
-| EWC | Weight regularization | Yes | No |
-| Replay | Memory buffers | Yes | Partial |
-| **Sparse-Temporal** | Architecture | **No** | **Yes (mPFC)** |
+## Pitfalls
 
-## Key Takeaways
-
-1. **Sparsity + temporal dynamics** is a fundamental mechanism, not just an optimization
-2. **SNNs naturally embody** both properties, explaining their lifelong learning advantages
-3. **Energy efficiency** emerges from activity-constrained representations
-4. **Architectural inductive bias** can replace auxiliary heuristics for context stability
-
-## Related Skills
-
-- multi-plasticity-snn-training
-- snn-learning-survey
-- feedback-hebbian-continual-learning
-- mistake-gated-continual-learning
-- working-memory-heterogeneous-delays
+- **Too sparse**: If sparsity is excessive, representational capacity drops — balance is critical
+- **Too fast**: Rapid temporal dynamics collapse the time dimension, losing separability benefit
+- **Static analysis only**: Missing temporal analysis underestimates context separation capacity
+- **Artificial mixing**: Interleaving contexts during training defeats the mechanism's purpose
+- **Not just SNNs**: Any network with temporal dynamics + sparsity benefits, but SNNs are most natural fit
 
 ## Activation Keywords
 
-sparse coding, temporal dynamics, context reconfiguration, catastrophic forgetting, lifelong learning, mPFC, medial prefrontal cortex, context switching, spiking neural network, continual learning, representation stability
-
-## Research Gaps
-
-1. How to optimize sparsity levels for specific task domains?
-2. What temporal scales are optimal for different context types?
-3. Can this mechanism be combined with other continual learning approaches?
-4. How does this scale to large language models and vision systems?
-
-## Implementation Hints
-
-```python
-# Conceptual implementation
-class SparseTemporalNetwork:
-    def __init__(self, sparsity_level, temporal_window):
-        self.sparse_layer = SparseCodingLayer(level=sparsity_level)
-        self.temporal_layer = RecurrentLayer(window=temporal_window)
-    
-    def forward(self, x, context):
-        # Sparse encoding reduces interference
-        sparse_repr = self.sparse_layer(x)
-        # Temporal dynamics enhance separability
-        output = self.temporal_layer(sparse_repr, context)
-        return output
-```
+context reconfiguration, catastrophic forgetting prevention, sparse coding neural, temporal dynamics separation, lifelong learning SNN, mPFC context switching, activity-constrained learning, stable adaptation mechanism, neural context separation, energy-efficient lifelong learning
