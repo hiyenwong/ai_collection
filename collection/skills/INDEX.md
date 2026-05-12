@@ -1,5 +1,14 @@
 ## 2026-05-12 - Computer Science + Quantum Mechanics (Tuesday Cron Job)
 
+### Can LLMs Solve Science or Just Write Code? Evaluating Quantum Solver Generation
+- [[quantum-solver-evaluation]] - Q-SAGE迭代评估+等价RL量子电路合成+光子QNN算法优势评估+LUNA量子比特读出+CliNR噪声减少 (arXiv: 2605.07525)
+  - Q-SAGE: 迭代评估LLM生成的量子求解器，执行+对比经典结果+反馈精炼
+  - 等价RL架构: 单一策略跨不同量子比特数(6→30)实现Clifford电路合成，99.2%最优
+  - 光子QNN算法优势: 2参数QNN vs 8参数ANN实现相同分类精度，计算有效维度
+  - LUNA: LUT逻辑实现10.95x面积缩减、30%延迟降低的量子比特读出
+  - CliNR: 中电路测量+ML引导稳定子选择，54%逻辑错误率降低
+  - **Activation**: quantum solver evaluation, Q-SAGE, equivariant RL quantum, Clifford synthesis, photonic QNN, LUNA qubit readout, CliNR, mid-circuit measurement, quantum noise reduction, 量子求解器评估, 量子神经网络评估
+
 ### Photonic-Implemented Efficient Deep Quantum Neural Network
 - [[photonic-deep-qnn]] - 光子芯片上的深度量子神经网络，通过虚拟希尔伯特空间扩展实现无需辅助量子比特的非线性激活 (arXiv: 2605.06397)
   - 输入复制+模式扩展在线性光子芯片上实现有效非线性激活
