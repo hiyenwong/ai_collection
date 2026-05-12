@@ -928,3 +928,25 @@ Today's arXiv scan (q-bio.NC + cs.NE, May 12) found 29+ papers across both categ
    771|   632|   499|   446|- [[quantum-spatial-error-correction]] - QEC using spin-position superposition and gauge symmetry, resilient to spin/position decoherence and joint dephasing with nearest-neighbor interactions only (arXiv: 2604.25747)
    772|   633|   500|   447|  - Core: 3+2 particle nested square encoding Shor's code; gauge symmetry protects against unified noise model
    773|   634|   501|
+## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
+
+Today's topic: Medicine (Wednesday) + daily quantum mechanics. arXiv scan found 3 new papers. 90 duplicates cleaned from KG. 3 new skills created.
+
+### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
+- [[federated-quantum-medical]] - 联邦量子神经网络用于医疗隐私保护诊断 (arXiv: 2605.08324v1)
+  - 联邦学习 + 量子神经网络实现跨机构医疗诊断，不共享原始患者数据
+  - 用于糖尿病性视网膜病变早期检测，微动脉瘤检测
+  - **Activation**: federated quantum learning, 联邦量子学习, FQPDR, medical privacy, privacy-preserving diagnosis
+
+### Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings
+- [[quantum-kernel-advantage]] - 量子核方法在医疗基础模型嵌入中的优势 (arXiv: 2604.24597v1)
+  - 在MIMIC-CXR胸片上使用QSVM + 冻结医疗基础模型嵌入证明量子核优势
+  - 两阶公平比较框架：MedSigLIP-448, RAD-DINO, ViT-patch32
+  - **Activation**: quantum kernel, QSVM, medical foundation model, MIMIC-CXR, quantum advantage
+
+### Quantum Drug Discovery Pipeline (Updated)
+- [[quantum-drug-discovery]] - 量子药物发现流水线 (Updated 2026-05-13)
+  - 整合量子计算到药物开发全流程：分子模拟→靶点预测→PK/PD建模→临床试验优化
+  - PennyLane量子电路模拟房室PK/PD模型
+  - **Activation**: quantum drug discovery, PK/PD modeling, PennyLane, clinical trial optimization
+
