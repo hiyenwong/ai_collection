@@ -1,5 +1,17 @@
 
-## 2026-05-12 - Neuroscience Research (Cron Job)
+## 2026-05-12 - Computer Science + Quantum Computing (Cron Job)
+
+### Compositional Quantum Heuristics for Max-Clique Detection
+- [[compositional-quantum-heuristics]] - 组合式量子启发式方法，通过小组件组装大模型缓解barren plateau问题 (arXiv: 2605.07611)
+  - 核心要点: 构建群不变损失函数引入对称性诱导偏置，改善梯度行为和泛化
+  - 核心要点: 排列等变量子GNN用于图组合优化，QIRO启发的递归混合搜索
+  - **Activation**: compositional quantum, barren plateau mitigation, quantum GNN, QIRO, group-invariant loss, permutation-equivariant quantum, max-clique quantum
+
+### The power of entanglement in distributed quantum machine learning
+- [[entanglement-distributed-qml]] - 纠缠在分布式量子机器学习中的作用，CHSH博弈类比提升分类准确率 (arXiv: 2605.03864)
+  - 核心要点: 预建立纠缠解决远程节点相干时间约束，纠缠-准确率呈倒U型关系
+  - 核心要点: 过度纠缠减少参数空间有效维度，需优化纠缠量与结构
+  - **Activation**: distributed quantum ML, entanglement classification, quantum internet ML, CHSH quantum learning, entanglement resource optimization
 
 ### An Extremely Coarse Feedback Signal is Sufficient for Learning Human-Aligned Visual Representations
 - [[coarse-feedback-visual-alignment]] - 极粗粒度监督信号（仅2-8个类别）即可训练出与灵长类视觉皮层高度对齐的神经网络表征 (arXiv: 2605.05556)
