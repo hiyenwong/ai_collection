@@ -1,138 +1,66 @@
 ---
 name: flexible-phase-locking-cortical-theta
-description: "Dynamical mechanisms of flexible phase-locking in cortical theta oscillators. Computational neuroscience methodology analyzing how cortical oscillators flexibly phase-lock to inputs spanning a wide range of timescales. Use when: studying cortical oscillations, theta rhythm dynamics, phase-locking mechanisms, auditory cortex dynamics, speech processing neural mechanisms, mathematical neuroscience, q-bio.NC papers."
+description: "Dynamical systems methodology for flexible phase-locking in cortical oscillators. Multi-timescale inhibitory currents enable entrainment to rhythms slower than intrinsic frequency via delayed Hopf bifurcation. Activation: phase-locking, cortical oscillators, theta oscillations, speech segmentation, delayed Hopf, multi-timescale dynamics, entrainment, inhibitory currents."
 ---
 
 # Flexible Phase-Locking in Cortical Theta Oscillators
 
-## Core Idea
+> Multi-timescale inhibitory current interactions generate flexible phase-locking via delayed Hopf bifurcation, enabling cortical oscillators to entrain to rhythms substantially slower than their intrinsic frequency.
 
-Computational analysis of how auditory cortical oscillators flexibly phase-lock to acoustic inputs across a wide range of temporal frequencies, enabling robust speech and auditory processing.
+## Metadata
+- **Source**: arXiv:2605.08014
+- **Authors**: Yangyang Wang, Benjamin R. Pittman-Polletta
+- **Published**: 2026-05-08
+- **Categories**: q-bio.NC, math.DS
 
-**Key insight**: Cortical theta oscillators use a combination of intrinsic dynamics and adaptive coupling mechanisms to maintain stable phase-locking despite large variations in input statistics.
+## Core Methodology
 
-## Mathematical Framework
+### Key Innovation
+Cortical oscillators can flexibly phase-lock to inputs spanning a wide range of timescales (including rhythms substantially slower than intrinsic frequency) through a **delayed Hopf bifurcation (DHB)** mechanism driven by multi-timescale inhibitory current interactions. This expands the entrainment frequency range far beyond what single-timescale models can achieve.
 
-### Theta Oscillator Model
+### Technical Framework
 
-The cortical theta oscillator is modeled as a nonlinear dynamical system:
+**Three-Timescale Structure:**
+1. **Fast timescale** — Intrinsic theta oscillation (4-8 Hz)
+2. **Intermediate timescale** — Theta-timescale inhibitory current I_m, expands phase-locking range by prolonging delayed recovery along superslow manifold
+3. **Superslow timescale** — Delta-timescale (1-4 Hz) inhibitory potassium current I_{K_{SS}}, critical for entrainment flexibility under external forcing
 
-```
-dtheta/dt = omega + Z(theta) * I(t)
-```
+**Delayed Hopf Bifurcation Mechanism:**
+- Slow and superslow inhibitory processes interact to generate **prolonged post-input recovery delays**
+- The DHB creates a memory-like effect where the system "remembers" previous inputs, allowing it to track slower rhythms
+- I_{K_{SS}} plays minimal role in unforced oscillatory dynamics but is recruited specifically for phase-locking under external forcing
+- I_m is not redundant but cooperatively expands the entrainment range
 
-where:
-- theta: oscillator phase
-- omega: intrinsic frequency (~4-8 Hz for theta band)
-- Z(theta): phase response curve (PRC)
-- I(t): time-varying acoustic input
+**Dynamical Systems Analysis:**
+- Use geometric singular perturbation theory to analyze the three-timescale system
+- Identify the critical manifold structure (fast, slow, superslow manifolds)
+- Analyze the delayed Hopf bifurcation phenomenon: trajectory stays near repelling slow manifold after bifurcation point
+- Compute the delay duration and its dependence on timescale separation parameters
 
-### Phase-Locking Analysis
-
-For periodic inputs with frequency omega_in:
-
-```
-Phase locking occurs when |omega - omega_in| < K * max|Z(theta)|
-```
-
-where K is the coupling strength.
-
-### Flexible Locking Mechanisms
-
-1. **Intrinsic frequency adaptation**: Oscillator adjusts omega based on recent input statistics
-2. **Gain modulation**: Z(theta) amplitude scales with input salience
-3. **Multi-timescale integration**: Combines fast (ms) and slow (s) adaptation processes
-4. **Network synchronization**: Local oscillator ensembles provide robust collective phase-locking
-
-## Computational Methods
-
-### Phase Response Curve Estimation
-
+### Mathematical Framework
 ```python
-import numpy as np
-
-def estimate_prc(oscillator_model, perturbation_strength=0.1, n_phases=100):
-    """Estimate phase response curve via perturbation analysis."""
-    phases = np.linspace(0, 2*np.pi, n_phases)
-    prc = np.zeros(n_phases)
-
-    for i, phase in enumerate(phases):
-        # Simulate unperturbed oscillator
-        T0 = get_period(oscillator_model)
-
-        # Apply perturbation at given phase
-        T1 = get_period_with_perturbation(
-            oscillator_model, phase, perturbation_strength
-        )
-
-        prc[i] = (T1 - T0) / T0
-
-    return phases, prc
+# Conceptual model structure
+# Three-timescale ODE system:
+# dx/dt = f(x, y, z)          # Fast variables (membrane potential)
+# dy/dt = ε * g(x, y, z)      # Slow variables (I_m dynamics)
+# dz/dt = ε² * h(x, y, z)     # Superslow variables (I_{K_{SS}} dynamics)
+# where 0 < ε << 1 represents timescale separation
 ```
-
-### Phase-Locking Value (PLV) Computation
-
-```python
-def compute_plv(oscillator_phase, input_phase, window_size=100):
-    """Compute phase-locking value over sliding window."""
-    phase_diff = oscillator_phase - input_phase
-    plv = np.abs(np.exp(1j * phase_diff))
-
-    # Sliding window average
-    plv_smooth = np.convolve(plv, np.ones(window_size)/window_size, mode='same')
-    return plv_smooth
-```
-
-### Arnold Tongue Analysis
-
-```python
-def compute_arnold_tongue(oscillator_model, freq_range, coupling_range):
-    """Compute Arnold tongue showing phase-locking regions."""
-    locking_map = np.zeros((len(freq_range), len(coupling_range)))
-
-    for i, freq in enumerate(freq_range):
-        for j, coupling in enumerate(coupling_range):
-            # Simulate with input at given frequency and coupling
-            phase_locking = simulate_and_measure_locking(
-                oscillator_model, freq, coupling
-            )
-            locking_map[i, j] = phase_locking
-
-    return locking_map
-```
-
-## Key Findings
-
-### Flexible Locking Properties
-
-1. **Broad entrainment range**: Theta oscillators lock to inputs from ~2-12 Hz
-2. **Asymmetric response**: Faster adaptation to increasing vs decreasing input rates
-3. **Robustness to noise**: Phase-locking persists under significant acoustic noise
-4. **Hierarchical coupling**: Theta-gamma cross-frequency coupling enhances flexibility
-
-### Neural Implications
-
-- **Speech processing**: Enables tracking of syllable-rate fluctuations (~4-8 Hz)
-- **Temporal prediction**: Supports predictive coding for auditory stream segregation
-- **Attention modulation**: Top-down signals modulate coupling strength K
-- **Pathology markers**: Abnormal phase-locking linked to auditory processing disorders
 
 ## Applications
+- **Speech processing** — Explain how auditory cortex tracks speech rhythms at variable rates
+- **Neural coding** — Understand how oscillatory neurons encode temporal information across scales
+- **Brain-computer interfaces** — Design oscillatory decoders that adapt to variable input rates
+- **Computational psychiatry** — Model disruptions in temporal processing (e.g., dyslexia, aphasia)
 
-- Auditory cortex computational modeling
-- Speech processing algorithm design
-- Brain-computer interface temporal decoding
-- Clinical assessment of auditory processing
+## Pitfalls
+- DHB effects are sensitive to noise level — biological noise may disrupt the delayed recovery
+- Three-timescale separation requires careful parameter tuning; insufficient separation eliminates the effect
+- The mechanism is specific to forced oscillators — spontaneous dynamics may not exhibit the same properties
+- Validation requires biophysically grounded models; simplified phase oscillator models may miss key dynamics
 
-## Activation Keywords
-
-- cortical theta oscillations
-- flexible phase-locking
-- auditory cortex dynamics
-- theta rhythm mechanisms
-- phase response curve
-- Arnold tongue analysis
-- speech neural tracking
-- 皮层theta振荡
-- 灵活锁相
-- cortical oscillator dynamics
+## Related Skills
+- kuramoto-brain-network
+- neural-dynamics-universal-translator
+- attractor-metadynamics-neural
+- neuromodulation-rhythmic-pattern-control
