@@ -8,6 +8,13 @@
   - 核心要点: 对退相干强度具有广泛鲁棒性，电流是量子设备的原生可观测量
   - **Activation**: quantum clustering, qlustering, GKSL clustering, quantum transport learning, open quantum network clustering, steady-state quantum ML, tomography-free readout
 
+### Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis
+- [[equivariant-rl-clifford]] - 基于量子排列等变神经网络的RL方法合成Clifford量子电路，单策略跨任意量子比特数，99.2%最优电路发现率 (arXiv: 2605.10910)
+  - 核心要点: 对量子比特排列等变的策略网络，单策略适用于所有量子比特数量
+  - 核心要点: 每实例毫秒级找到最优电路（误差在1个双量子比特门内）
+  - 核心要点: 使用辛矩阵（stabilizer tableau）表示Clifford态进行高效RL训练
+  - **Activation**: equivariant RL quantum, clifford circuit synthesis, qubit permutation equivariant, quantum circuit compilation, RL quantum synthesis, stabilizer tableau optimization, size-agnostic quantum policy
+
 ### Compositional Quantum Heuristics for Max-Clique Detection
 - [[compositional-quantum-heuristics]] - 组合式量子启发式方法解决QML中的barren plateau问题，通过子组件组合和对称性归纳偏差提升梯度行为 (arXiv: 2605.07611)
   - 核心要点: 将大型量子模型分解为小型可训练子组件，避免barren plateau
