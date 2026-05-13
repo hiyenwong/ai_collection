@@ -1,3 +1,12 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Internally Triggered Retrospective Learning in Neural Networks
+- [[episodic-learning-neural-networks]] - 内部触发的回溯学习范式，网络自身表征动力学驱动稀疏 episodic 权重更新 (arXiv: 2605.10994)
+  - 潜在迹线积累：突触交互编码近期共激活模式，不立即修改参数
+  - 内部预测过程：持续计算预测与观测状态的差异度量
+  - 自适应阈值：差异超过基于近期误差统计的阈值时触发学习事件
+  - **Activation**: episodic learning, internally triggered learning, retrospective learning, sparse weight updates, energy-efficient neural networks
+
 ## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Lower Overhead Fault-Tolerant Building Blocks for Noisy Quantum Computers
@@ -13,6 +22,13 @@
   - 量子隧穿和干涉逃离局部最优
   - 资源估算：量子比特数、电路深度、相干时间
   - **Activation**: quantum Hamiltonian descent, augmented Lagrangian quantum, constrained quantum optimization, AL-QHD
+
+### Optimal State Preparation for Impulse Estimation in Gaussian Quantum Systems
+- [[optimal-parametric-quantum-estimation]] - 最优控制增强高斯量子系统脉冲估计，通过参数调制动态塑造估计协方差 (arXiv: 2605.12155)
+  - 将脉冲估计不确定性最小化转化为非线性最优控制问题
+  - 参数调制与传统压缩协议不同，在已知脉冲时刻最大化信息增益
+  - 估计方差降低至稳态操作的1/2，适用于纳米机械谐振器和悬浮纳米粒子
+  - **Activation**: optimal quantum control, impulse estimation quantum, parametric modulation, Gaussian quantum systems, quantum sensing
 
 ## 2026-05-15 - Systems Engineering + Quantum Mechanics (Cron Job)
 
