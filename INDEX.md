@@ -1,3 +1,21 @@
+## 2026-05-14 - 医学 + 量子力学 (Cron Job - 周三医学主题)
+
+### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
+- [[fqpdr-quantum-medical-diagnosis]] - Federated Quantum Neural Network for distributed medical diagnosis across hospitals without sharing patient data; trains local QNNs and aggregates via FedAvg (arXiv: 2605.08324)
+  - Multi-hospital federated QNN architecture with parameterized quantum circuits
+  - Classical medical features encoded into quantum states via angle embedding
+  - Privacy-preserving: patient data never leaves originating institution
+  - Applicable to rare disease detection requiring pooled sparse data
+  - **Activation**: federated quantum, quantum medical diagnosis, FQN, privacy-preserving medical AI, diabetic retinopathy quantum, distributed quantum healthcare
+
+## 2026-05-14 - Quantum Computing Research (Cron Job)
+
+### Pre-Asymptotic Trainability in Photonic Variational Circuits under Postselection
+- [[photonic-variational-trainability]] - Challenges barren plateau assumption in passive photonic circuits; postselection prevents strong mixing dynamics that cause gradient vanishing (arXiv: 2605.11879)
+  - Linear optical quantum computing shows trainability despite deep circuits
+  - Postselection maintains gradient variance at usable levels
+  - Implications for photonic VQA optimization and NISQ-era training
+
 ## 2026-05-13 - 医学 + 量子力学 (Cron Job - 周三医学主题)
 
 ### Quantum Entanglement Degree as Novel PET Biomarkers for Hypoxia
