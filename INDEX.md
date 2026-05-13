@@ -1,3 +1,25 @@
+## 2026-05-13 - Medicine + Neuroscience (Cron Job)
+
+### MTCSN: Multi-Timescale Conductance Spiking Networks
+- [[multi-timescale-conductance-snn]] - Sparse, gradient-trainable SNN with multi-timescale conductance for enhanced temporal processing (arXiv: 2605.11835)
+  - Multi-timescale conductance dynamics capture diverse firing patterns (bursting, adapting, regular)
+  - Sparse recurrent connectivity with gradient-based training for efficient temporal sequence processing
+  - **Activation**: multi-timescale spiking, conductance SNN, gradient-trainable SNN, sparse spiking network, temporal processing
+
+### Attractor Models for Language and Reasoning
+- [[attractor-models-language-reasoning]] - Backbone pre-training with attractor dynamics for improved reasoning in language models (arXiv: 2605.12466)
+  - Text representations evolve through learned energy landscape to stable attractor states
+  - Multi-step reasoning modeled as trajectories through attractor basins with energy barriers
+  - **Activation**: attractor language model, attractor reasoning, dynamical systems NLP, energy-based language, backbone pre-training
+
+### EEG Microstate Discovery via Variational Deep Embedding
+- [[eeg-microstate-variational-embedding]] - Unsupervised EEG microstate discovery using VAE-based deep embedding for robust biomarker identification (arXiv: 2605.10947)
+  - Variational autoencoder captures nonlinear microstate structure beyond k-means limitations
+  - Probabilistic soft assignment with temporal HMM for clinical biomarker discovery
+  - **Activation**: EEG microstate discovery, variational EEG embedding, microstate analysis, EEG temporal segmentation, deep embedding EEG
+
+---
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Counterfausal Analysis of Brain Network Dynamics

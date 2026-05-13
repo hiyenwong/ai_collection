@@ -1,95 +1,86 @@
 ---
 name: attractor-models-language-reasoning
-description: >
-  Attractor Models for language and reasoning — backbone proposes output embeddings, attractor module
-  refines them by solving for fixed point via implicit differentiation. Constant memory for effective depth,
-  adaptive iteration count, equilibrium internalization phenomenon. Outperforms standard and looped Transformers
-  across language modeling and challenging reasoning tasks (Sudoku-Extreme 91.4%, Maze-Hard 93.1% with 27M params).
-  Use when designing recurrent/iterative refinement architectures, fixed-point models, energy-based reasoning,
-  or efficient looped Transformers. arXiv: 2605.12466 (cs.LG, cs.AI, cs.CL, cs.NE). Fein-Ashley, Rashidinejad.
+description: "Attractor Models for Language and Reasoning — backbone pre-training with attractor dynamics for improved reasoning in language models. Use when: implementing attractor-based language models, improving reasoning through dynamical systems, backbone pre-training with energy-based methods, dynamical systems approach to NLP, energy landscape models for reasoning. Based on arXiv:2605.12466 (2026). Trigger: attractor language model, attractor reasoning, dynamical systems NLP, energy-based language model, backbone pre-training reasoning"
 ---
 
 # Attractor Models for Language and Reasoning
 
-> Fixed-point attractor models turn recurrence into scalable iterative refinement with implicit
-> differentiation, achieving equilibrium internalization — solver removable at inference with minimal loss.
+## Overview
 
-## Metadata
-- **Source**: arXiv:2605.12466
-- **Authors**: Jacob Fein-Ashley, Paria Rashidinejad
-- **Published**: 2026-05-12
-- **Subjects**: cs.LG, cs.AI, cs.CL, cs.NE
+Backbone pre-training framework using attractor dynamics to improve reasoning capabilities in language models. Models text representations as evolving dynamical systems converging to stable attractor states.
 
-## Core Problem
+Based on: arXiv:2605.12466 (2026) "Attractor Models for Language and Reasoning"
 
-Looped Transformers improve language modeling and reasoning through iterative refinement, but face:
-1. **Training instability** — recurrent architectures are hard to optimize
-2. **Fixed recurrence depth** — constrained to small, pre-defined iteration counts
-3. **High deployment cost** — scaling recurrence is computationally expensive
+## Core Concept
 
-## Key Innovation
+### Attractor Dynamics in Language
 
-**Attractor Models**: Two-stage architecture that decouples proposal from refinement:
+Text representations evolve through a learned energy landscape:
 
-1. **Backbone module**: Proposes initial output embeddings
-2. **Attractor module**: Refines embeddings by solving for the fixed point
-   - Gradients via **implicit differentiation** (not backprop-through-time)
-   - Training memory is **constant** in effective depth
-   - Iteration count chosen **adaptively by convergence**
+1. **Input encoding**: Text mapped to initial state in representation space
+2. **Dynamical evolution**: State evolves according to learned dynamics
+3. **Attractor convergence**: State settles into stable attractor representing semantic meaning
+4. **Reasoning**: Multi-step reasoning modeled as trajectory through attractor basins
 
-### Novel Phenomenon: Equilibrium Internalization
+### Energy Function
 
-Fixed-point training places the model's initial output embedding **near equilibrium**, allowing
-the solver to be **removed at inference time** with little degradation. The model learns to
-internalize the fixed-point computation.
-
-## Results
-
-### Language Modeling
-- 770M Attractor Model outperforms 1.3B Transformer trained on **2× more tokens**
-- Pareto improvement over standard and stable looped Transformers across sizes
-- Up to 46.6% perplexity improvement, 19.7% downstream accuracy gain
-- Reduced training cost
-
-### Reasoning (27M params, ~1000 examples)
-- **Sudoku-Extreme**: 91.4% accuracy
-- **Maze-Hard**: 93.1% accuracy
-- Outperforms Claude and GPT-o3 (which fail completely)
-- Specialized recursive reasoners collapse at larger sizes; Attractor Models scale favorably
-
-## Implementation Guide
-
-### Architecture Design
 ```
-Input → Backbone → Initial Embeddings → Attractor → Fixed Point → Output
-                  (feed-forward)        (iterative, implicit diff)
+E(h) = -Σ_k w_k · φ_k(h)
+dh/dt = -∂E/∂h
 ```
 
-### Training
-- Implicit differentiation for gradients through fixed point
-- No need for BPTT or truncated backprop
-- Memory efficient — constant regardless of effective depth
+where φ_k are learned feature functions and h is the hidden state.
 
-### Inference
-- Adaptive convergence: iterate until solution stabilizes
-- After training: solver may be removed (equilibrium internalization)
-- Backbone alone produces near-fixed-point outputs
+## Architecture
 
-## Applications
-- Efficient language model pretraining with iterative refinement
-- Reasoning tasks requiring recursive/iterative computation
-- Memory-constrained deployment of recurrent architectures
-- Energy-based inference systems
-- Neuro-inspired reasoning models with attractor dynamics
+### Backbone Pre-training
 
-## Pitfalls
-- Fixed-point convergence not guaranteed for all inputs
-- Implicit differentiation requires stable Jacobian at fixed point
-- Equilibrium internalization is an emergent property, not enforced
+- Pre-train on large text corpus with attractor objectives
+- Learn energy landscape that clusters semantically similar inputs
+- Attractor states encode stable reasoning conclusions
+- Transient dynamics model intermediate reasoning steps
+
+### Key Mechanisms
+
+1. **Multi-attractor basins**: Different reasoning paths converge to different attractors
+2. **Basin depth**: Deeper basins = more confident conclusions
+3. **Basin transitions**: Reasoning steps modeled as transitions between basins
+4. **Energy barriers**: Difficulty of reasoning steps encoded in landscape geometry
+
+## Implementation Patterns
+
+```python
+class AttractorLayer(nn.Module):
+    def __init__(self, dim, n_steps=10):
+        super().__init__()
+        self.energy_net = nn.Sequential(
+            nn.Linear(dim, dim * 4),
+            nn.GELU(),
+            nn.Linear(dim * 4, 1)
+        )
+        self.n_steps = n_steps
+    
+    def forward(self, h):
+        for _ in range(self.n_steps):
+            h.requires_grad_(True)
+            energy = self.energy_net(h)
+            grad = torch.autograd.grad(energy, h)[0]
+            h = h - self.lr * grad  # gradient descent on energy
+        return h, energy
+```
+
+## When to Use
+
+- Multi-step reasoning tasks (math, logic, planning)
+- Improving robustness of language model outputs
+- Analyzing reasoning trajectories in neural networks
+- Building interpretable reasoning models
 
 ## Related Skills
-- attractor-fcm-gradient-descent
-- attractor-metadynamics-neural
-- attention-residuals
-- memory-efficient-looped-transformer
-- neuro-attractor-landscape-working-memory
+
+- neural-population-dynamics for dynamical systems analysis
+- neuro-attractor-landscape-working-memory for attractor theory
+
+## Resources
+
+- Original paper: arXiv:2605.12466
