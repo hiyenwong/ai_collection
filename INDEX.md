@@ -1,6 +1,22 @@
-## 2026-05-14 - Neuroscience Research (Cron Job)
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
-### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+### Lower Overhead Fault-Tolerant Building Blocks for Noisy Quantum Computers
+- [[quantum-fault-tolerance-building-blocks]] - Reduces spacetime cost of fault tolerance via combinatorial flag FT proofs, 100% yield Steane/Golay state prep, and distance-4 planar codes (arXiv: 2605.12385)
+  - Flag fault-tolerant stabilizer measurement exponentially reduces extra qubits needed
+  - Steane and Golay code state preparation circuits achieve 100% yield
+  - Distance-four planar code encodes 6 logical qubits using 1/10 physical qubits of d=5 surface code
+  - Classical-code-protected measurement cuts gate time by 2-6x
+  - **Activation**: flag fault tolerance, Steane code, Golay code, surface code optimization, qubit overhead reduction
+
+### Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder
+- [[fpga-quantum-error-decoder]] - Hardware-integrated FPGA-based NN decoder achieving 550ns closed-loop latency for real-time distance-3 surface code QEC (arXiv: 2605.04892)
+  - Neural network decoder on FPGA with 124ns inference time
+  - Deterministic closed-loop latency of 550ns within 1.25μs QEC cycle
+  - Real-time decoding matches offline decoding logical performance
+  - Mid-circuit feedback correction for non-Clifford logical circuits
+  - **Activation**: FPGA quantum decoder, real-time QEC, neural network decoder, low-latency quantum feedback, surface code decoder
+
+## 2026-05-14 - Neuroscience Research (Cron Job)
 - [[spatiotemporal-tdann-mt-direction-maps]] - Extends TDANN to spatiotemporal domain showing MT direction maps emerge from universal self-organizing principles balancing contrastive learning and spatial regularization (arXiv: 2605.11718)
   - 3D ResNet-18 with MoCo self-supervised learning on naturalistic videos drives spontaneous emergence of direction-selective maps and pinwheel structures
   - MT tuning properties arise from strict trade-off between task-driven discriminative pressure and spatial regularization
