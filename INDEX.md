@@ -1,4 +1,19 @@
 ## 2026-05-13 - Medicine + Neuroscience (Cron Job)
+## 2026-05-13 - 医学 + 量子力学 (Cron Job)
+
+### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
+- [[federated-quantum-medical-diagnosis]] - 联邦量子神经网络用于隐私保护的糖尿病视网膜病变早期检测 (arXiv: 2605.08324)
+  - 核心要点: 结合联邦学习与量子神经网络，实现多机构协作医疗诊断而不共享患者数据
+  - 核心要点: 在有限样本和少量可学习参数下实现鲁棒的轻量级学习模型
+  - **Activation**: federated quantum medical, FQPDR, quantum federated learning, privacy-preserving medical AI, 联邦量子医疗, 隐私保护医疗诊断
+
+### Quantum Circuit Simulation of Compartmental Drug Dynamics
+- [[quantum-pkpd-simulation]] - 量子电路模拟房室药代动力学模型，用于群体药代动力学参数估计 (arXiv: 2605.09691)
+  - 核心要点: 将经典PK/PD微分方程重构为开放量子系统，使用12量子比特编码4个药理学房室
+  - 核心要点: 量子增强SAEM算法实现更好的统计拟合，同时保持参数估计一致性
+  - **Activation**: quantum PK/PD, quantum pharmacokinetics, quantum drug dynamics, 量子药代动力学, 量子临床模拟
+
+
 
 ### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
 - [[neural-code-language-interpretability]] - Natural language hypothesis generation + closed-loop verification for single-neuron selectivity across visual hierarchy (arXiv: 2605.12485)
