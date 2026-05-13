@@ -1,3 +1,19 @@
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+- [[spatiotemporal-tdann-mt-direction-maps]] - Extends TDANN to spatiotemporal domain showing MT direction maps emerge from universal self-organizing principles balancing contrastive learning and spatial regularization (arXiv: 2605.11718)
+  - 3D ResNet-18 with MoCo self-supervised learning on naturalistic videos drives spontaneous emergence of direction-selective maps and pinwheel structures
+  - MT tuning properties arise from strict trade-off between task-driven discriminative pressure and spatial regularization
+  - Quantitative match with in vivo macaque MT baselines (DSI, circular variance, pinwheel density)
+  - **Activation**: spatiotemporal TDANN, MT direction maps, dorsal stream self-organization, pinwheel formation
+
+### TRACE: Temporal Routing with Autoregressive Cross-channel Experts for EEG Representation Learning
+- [[trace-eeg-autoregressive-routing]] - Autoregressive EEG pre-training with cross-channel temporal routing MoE preserving coherence while adapting to non-stationary states (arXiv: 2605.11380)
+  - CTR-FFN routes all channels at same temporal step to same experts based on causal cross-channel history
+  - Heterogeneous pre-training across 1.5M+ segments (16-128 channels) without common montage projection
+  - Evaluated on 8 downstream BCI benchmarks across 6 task categories (seen-domain + unseen transfer)
+  - **Activation**: TRACE EEG framework, autoregressive EEG pre-training, cross-channel temporal routing, TR-MoE, CTR-FFN
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### Internally Triggered Retrospective Learning in Neural Networks
