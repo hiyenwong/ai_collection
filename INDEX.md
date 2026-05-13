@@ -1,5 +1,13 @@
 ## 2026-05-13 - Medicine + Neuroscience (Cron Job)
 
+### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
+- [[neural-code-language-interpretability]] - Natural language hypothesis generation + closed-loop verification for single-neuron selectivity across visual hierarchy (arXiv: 2605.12485)
+  - Three-stage pipeline: Translate (image→text via VLM) → Semantic Hypothesis (LLM distills extreme responses) → Verification (text→image generation + digital twin validation)
+  - >96% of V1/V4 neurons driven to extreme percentiles by hypothesis-generated images vs ~10% random baseline
+  - V4 suppression highly describable (97.6%), V1 suppression poor (56%) — reveals language expressibility limits for sub-lexical features
+  - RSA shows partial alignment: neural activity ↔ DINOv3 ↔ Qwen language embeddings
+  - **Activation**: neural code interpretability, neuron characterization, digital twin neuroscience, language-based neural analysis, closed-loop hypothesis testing
+
 ### MTCSN: Multi-Timescale Conductance Spiking Networks
 - [[multi-timescale-conductance-snn]] - Sparse, gradient-trainable SNN with multi-timescale conductance for enhanced temporal processing (arXiv: 2605.11835)
   - Multi-timescale conductance dynamics capture diverse firing patterns (bursting, adapting, regular)
