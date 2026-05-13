@@ -1,19 +1,12 @@
 ## 2026-05-13 - 医学 + 量子力学 (Cron Job - 周三医学主题)
 
-### Improving search efficiency via adaptive acquisition function selection in discrete black-box optimization
-- [[adaptive-acquisition-bbo]] - Hybrid BOCS + Gaussian Process method with adaptive LCB selection for discrete BBO; detects stagnation and dynamically balances exploitation-exploration, outperforming random-point addition on QUBO and HUBO benchmarks (arXiv: 2605.10856)
-  - BOCS as primary parametric surrogate + GP-LCB activated only on stagnation detection
-  - Adaptive β selection dynamically controls exploitation-exploration balance based on optimization progress
-  - Hamming-neighborhood-aware point selection, not just low-energy near-promising points
-  - Sparse surrogate capacity critical for quantum annealing applications
-  - **Activation**: adaptive acquisition, BOCS stagnation fix, discrete Bayesian optimization, QUBO optimization, HUBO optimization, black-box optimization, quantum-inspired search, combinatorial optimization
-
-### A passive self-correcting quantum memory in three dimensions
-- [[self-correcting-quantum-memory-3d]] - 3D Pauli stabilizer Hamiltonian encoding a qubit for exponential time at non-zero temperature via recursive transformations (arXiv: 2605.04951)
-  - Recursive Hamiltonian transformations increase memory lifetime at each level
-  - Passive protection without active error correction — thermal dynamics preserve state
-  - Exponential lifetime scaling with system size at finite temperature
-  - **Activation**: self-correcting quantum memory, 3D stabilizer Hamiltonian, passive quantum error correction, thermal quantum memory, Pauli stabilizer code
+### Quantum Circuit Simulation of Compartmental Drug Dynamics: Leveraging Variational Algorithms for Nonlinear Mixed-Effects Population Pharmacokinetics
+- [[quantum-pkpd-simulation]] - Reformulates compartmental PK/PD models as open quantum systems using PennyLane quantum circuits for population pharmacokinetics parameter estimation (arXiv: 2605.09691)
+  - Classical ODE-based PK/PD models encoded as quantum circuit evolution
+  - Variational quantum algorithms for nonlinear mixed-effects population model fitting
+  - Potential exponential speedup for multi-compartment drug dynamics simulation
+  - Population-level predictions via quantum expectation values
+  - **Activation**: quantum PK/PD, quantum pharmacokinetics, drug dynamics simulation, compartmental quantum model, quantum circuit drug simulation, variational quantum healthcare
 
 ### Medical Imaging Classification with Cold-Atom Reservoir Computing using Auto-Encoders and Surrogate-Driven Training
 - [[cold-atom-medical-imaging]] - Hybrid quantum-classical pipeline with neutral-atom reservoir computing for medical image classification (polyp detection) using guided auto-encoder for dimensionality reduction (arXiv: 2605)
