@@ -1,3 +1,22 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Counterfausal Analysis of Brain Network Dynamics
+- [[counterfactual-brain-dynamics]] - Hodge-theoretic counterfausal causal analysis framework modeling brain network perturbations as energy-flow problems (arXiv: 2603.29843)
+  - Decomposes directed brain communication into dissipative (gradient) and persistent (harmonic) components via Hodge theory
+  - Enables simulated intervention analysis: predicting how causal architecture reconfigures under lesions or neuromodulation
+  - Demonstrated on temporal lobe epilepsy (400 HCP subjects) comparing pathological recurrence vs therapeutic disconnection
+  - **Activation**: counterfausal brain, Hodge theory brain, causal brain network, brain network intervention, harmonic flow brain, Dirichlet energy network
+
+### Spiking Free Energy Control (SFEC)
+- [[spiking-free-energy-control]] - Bio-plausible spiking neural control framework where neurons fire only when reducing free energy (arXiv: 2603.09729)
+  - Bridges Free Energy Principle/Active Inference with spiking neural circuit implementation
+  - Spike constraint gating: neurons only fire when ∂F/∂t < 0, achieving high sparsity and robustness
+  - Resilient to both external (sensory noise, collisions) and internal (synaptic noise, neuron silencing) perturbations
+  - Deployable on neuromorphic hardware (Loihi, SpiNNaker) for energy-efficient robotics control
+  - **Activation**: spiking control, free energy principle SNN, active inference spiking, neuromorphic control, spike-based free energy, SFEC
+
+---
+
 ## 2026-05-13 - Medicine + Quantum Computing (Cron Job)
 
 ### Medical fMRI & Quantum Computing
