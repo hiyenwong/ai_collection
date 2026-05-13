@@ -1,3 +1,25 @@
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Lower Overhead Fault-Tolerant Building Blocks for Noisy Quantum Computers
+- [[quantum-fault-tolerance-building-blocks]] - Reduces spacetime cost of fault tolerance via flag FT, 100% yield state prep, distance-4 planar code (arXiv: 2605.12385v1)
+  - Combinatorial proof exponentially reduces flag qubits for stabilizer measurement of any size
+  - Distance-4 planar code encodes 6 logical qubits using 1/10 the physical qubits of d=5 surface code
+  - Classical-code-protected measurement cuts computation time by 2-6x
+  - **Activation**: flag fault tolerance, stabilizer measurement optimization, Steane code, Golay code, surface code optimization, qubit overhead reduction
+
+### Pre-Asymptotic Trainability in Photonic Variational Circuits under Postselection
+- [[photonic-variational-trainability]] - Analyzes barren plateau dynamics in photonic variational circuits: allow-bunching and collision-free regimes remain trainable, dual-rail causes exponential concentration (arXiv: 2605.11879v1)
+  - Photonic circuits constrained to Lie algebra O(m²), not full exponential Hilbert space
+  - Postselection geometry, not dimension, determines gradient concentration
+  - Dual-rail postselection induces barren plateaus beyond moderate system sizes
+  - **Activation**: photonic barren plateau, variational photonic circuits, postselection gradient concentration, dual-rail postselection, linear optical quantum computing
+
+### Scalable Measurement-Based Quantum Simulation Patterns for Benchmarking
+- [[quantum-measurement-patterns]] - QPatLib workflow for generating Pauli-string unitary measurement patterns with commuting subset conventions for MBQC benchmarking (arXiv: 2605.12502v1)
+  - Standardized testbed for pattern-optimization protocols in measurement-based quantum simulation
+  - Multiple commuting conventions (sequential, grouped, parallel) for trade-off analysis
+  - **Activation**: measurement-based quantum computing, QPatLib, Pauli-string patterns, MBQC, quantum simulation patterns
+
 ## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
 
 ### Quantum Circuit Simulation of Compartmental Drug Dynamics
