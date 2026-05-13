@@ -1,5 +1,13 @@
 
 
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Leveraging Non-Equilibrium ECRAM Dynamics for Short-Term Plasticity in Neuromorphic Circuits
+- [[ecram-short-term-plasticity]] - Cross-layer co-design transforming volatile ECRAM ionic dynamics into native STP hardware with 2 pJ/spike energy efficiency (arXiv: 2605.11243)
+  - ECRAM devices' non-equilibrium transient conductance (~1.5 KΩ/spike) co-designed with delay-feedback LIF neuron for synaptic facilitation and intrinsic excitability modulation
+  - Network-level frequency-selective spike processing; individual synapses act as tunable temporal filters across multiple neuron topologies
+  - **Activation**: ECRAM short-term plasticity, neuromorphic STP, non-equilibrium ionic dynamics, delay-feedback LIF, memristive synaptic plasticity
+
 ## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
 
 ### Bridging Krylov Complexity and Universal Analog Quantum Simulator
