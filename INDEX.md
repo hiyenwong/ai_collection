@@ -1,3 +1,22 @@
+## 2026-05-13 - Quantum Metrology Research (Cron Job)
+
+### Quantum metrology via partial quantum error correction
+- [[partial-qec-metrology]] - Partial QEC achieves super-SQL sensing using subset of stabilizer checks, noise suppression of p^δ where δ=⌊(l+1)/2⌋, adaptive weight-increasing strategy for scalability (arXiv: 2605.08341)
+  - Probe states encoded as superpositions of energetically different states; partial checks suppress noise before and after phase imprinting
+  - All checks are local operators, avoiding non-local connectivity requirements
+  - Contrast with full QEC metrology (PRL 112, 080801/150802 2014) which requires measuring all checks
+  - **Activation**: partial QEC metrology, super-SQL sensing, quantum sensing with QEC, stabilizer check subset sensing, QEC-assisted metrology
+
+### Optimal FALQON for Quantum Approximate Optimization via Layer-wise Parameter Tuning
+- FALQON with layer-wise parameter tuning improves convergence for NISQ combinatorial optimization, replaces fixed hyperparameters with adaptive per-layer optimization (arXiv: 2605.08332)
+  - Single circuit evaluation per layer, feedback-based adaptive approach
+  - **Activation**: FALQON, quantum approximate optimization, layer-wise tuning, NISQ optimization
+
+### The finite-shot help-harm boundary of zero-noise extrapolation
+- Defines finite-shot help-harm boundary for ZNE where fixed Richardson ZNE transitions from harmful to helpful, MSE-based crossing analysis (arXiv: 2605.08251)
+  - ZNE reduces bias but increases variance through Richardson coefficients and shot splitting
+  - **Activation**: zero-noise extrapolation, ZNE, finite-shot boundary, Richardson extrapolation, NISQ error mitigation
+
 ## 2026-05-13 - Medicine + Quantum Computing (Cron Job)
 
 Today's topic: Medicine (Wednesday) + daily quantum mechanics. KG analysis of 767 entities, 218k+ relationships. PageRank and Louvain community detection performed. 3 new skills created.
