@@ -11,8 +11,13 @@
     - 68.6% features representation-causal; 50 universal features across 3 architectures
     - Confirmed features recover 79.3% of model advantage; task gradient MDD(99%) to Stress(56%)
   - **Activation**: EEG interpretability, foundation model audit, LEACE, ridge probing, clinical EEG
+### ECRAM Short-Term Plasticity for Neuromorphic Circuits
+- [[ecram-short-term-plasticity]] - Cross-layer device-circuit-system co-design implementing short-term plasticity via non-equilibrium ECRAM dynamics (arXiv: 2605.11243)
+  - Transforms volatile ionic dynamics from device artifacts into computational resources for STP
+  - Delay-feedback LIF neurons with activity-dependent conductance modulation for temporal processing
+  - **Activation**: neuromorphic STP, ECRAM synaptic devices, temporal information processing, hardware-software co-design
 
-
+---
 
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
