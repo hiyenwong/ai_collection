@@ -1,5 +1,21 @@
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
+### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
+- [[neural-code-language-characterization]] - Closed-loop framework using natural language to characterize neural selectivity at scale; LLM-generated semantic hypotheses verified in silico on digital twins of macaque V1/V4 (arXiv: 2605.12485)
+  - Natural language descriptions capture neural selectivity from V1 (oriented edges, spatial frequency) to V4 (form, color, texture conjunctions)
+  - LLM-generated activating/suppressing hypotheses drive 96.1% of V4 neurons above 95th percentile of natural-image responses
+  - Representational similarity analysis: vision most aligned to neural activity; linguistic compression lossy yet semantically faithful
+  - **Activation**: neural code characterization, language-based neural description, digital twin neuroscience, interpretable neural selectivity, agentic neural discovery, V1 V4 semantic description
+
+### Joint sparse coding and temporal dynamics support context reconfiguration
+- [[context-reconfiguration-sparse-temporal]] - Identifies sparse coding + temporal dynamics in mouse mPFC as core mechanism for preserving prior knowledge during context transitions; SNNs naturally exhibit both properties for lifelong learning (arXiv: 2605.10178)
+  - Sparse context-dependent representations reduce cross-context interference
+  - Temporal dynamics enhance context separability across time
+  - Networks with both properties (e.g., SNNs) show improved retention without auxiliary heuristics
+  - **Activation**: context reconfiguration, sparse coding temporal dynamics, catastrophic forgetting, lifelong learning SNN, mPFC context switching, neural representation stability
+
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
 ### Encoding and Decoding Temporal Signals with Spiking Bandpass Wavelets
 - [[spiking-bandpass-wavelet-encoding]] - Recasts spike encoders as time-causal wavelet frames with quantitative bandwidths and reconstruction error bounds; achieves NRMSE comparable to continuous wavelet transforms on ECG and audio (arXiv: 2605.09770)
   - Spike-based encoding reformulated as wavelet frame decomposition
