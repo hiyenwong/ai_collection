@@ -1,5 +1,12 @@
 ## 2026-05-13 - Quantum Metrology Research (Cron Job)
 
+### Optimal FALQON for Quantum Approximate Optimization via Layer-wise Parameter Tuning
+- [[optimal-falqon-qaoa]] - Treats per-layer time step (δ_k) and scaling factor (M_k) as classical optimization variables, reducing circuit depth vs standard FALQON, outperforms QAOA on all 94 3-regular graphs (12 vertices) (arXiv: 2605.08332)
+  - Single circuit evaluation per layer maintained, NISQ-compatible
+  - Gradient-based classical optimization of quantum circuit parameters
+  - **Activation**: FALQON optimization, optimal FALQON, QAOA parameter tuning, quantum combinatorial optimization, layer-wise quantum optimization
+
+
 ### Quantum metrology via partial quantum error correction
 - [[partial-qec-metrology]] - Partial QEC achieves super-SQL sensing using subset of stabilizer checks, noise suppression of p^δ where δ=⌊(l+1)/2⌋, adaptive weight-increasing strategy for scalability (arXiv: 2605.08341)
   - Probe states encoded as superpositions of energetically different states; partial checks suppress noise before and after phase imprinting
