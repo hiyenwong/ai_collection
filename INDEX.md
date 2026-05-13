@@ -1,3 +1,19 @@
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Lower Overhead Fault-Tolerant Building Blocks for Noisy Quantum Computers
+- [[quantum-fault-tolerance-blocks]] - 低开销量子容错构建模块方法论，面向NISQ设备的纠错码与逻辑量子比特实现 (arXiv: 2605.12385)
+  - 逻辑量子比特编码：将算法信息分散到多个物理量子比特
+  - 表面码/彩色码/LDPC码选择策略基于硬件连接性约束
+  - 魔力态蒸馏优化减少非Clifford门开销
+  - **Activation**: quantum fault tolerance, logical qubit encoding, surface code NISQ, 量子容错构建模块
+
+### Benchmarking and Resource Analysis for Augmented-Lagrangian Quantum Hamiltonian Descent
+- [[al-qhd-quantum-optimization]] - 增强拉格朗日量子哈密顿下降法求解约束非凸优化问题 (arXiv: 2605.12066)
+  - QHD连续优化嵌入AL框架处理约束
+  - 量子隧穿和干涉逃离局部最优
+  - 资源估算：量子比特数、电路深度、相干时间
+  - **Activation**: quantum Hamiltonian descent, augmented Lagrangian quantum, constrained quantum optimization, AL-QHD
+
 ## 2026-05-15 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Replay-Buffer Engineering for Noise-Robust Quantum Circuit Optimization
