@@ -1,3 +1,24 @@
+## 2026-05-13 - Medicine + Quantum Computing (Cron Job)
+
+### Medical fMRI & Quantum Computing
+
+- [[quantum-fmri-foundation-models]] - Quantum-enhanced fMRI foundation models combining Brain-DiT with quantum ML for neuroimaging analysis (arXiv: 2604.12683)
+  - Integrates pre-trained fMRI foundation models with quantum feature mapping
+  - Quantum kernel methods for brain disorder classification and cross-subject generalization
+  - **Activation**: quantum fMRI, quantum brain imaging, quantum foundation model brain, quantum neuroimaging
+
+- [[quantum-eeg-biomarker-discovery]] - Quantum ML for robust EEG biomarker discovery across subjects and platforms (arXiv: 2604.22116)
+  - Quantum kernel-based EEG feature extraction for neurological conditions
+  - Cross-subject and cross-platform biomarker validation
+  - **Activation**: quantum EEG biomarker, quantum brain signal, quantum EEG classification, quantum neurological biomarker
+
+- [[quantum-flow-matching-medical]] - Quantum-enhanced flow matching for medical image generation and longitudinal analysis (arXiv: 2605.08648)
+  - Quantum variational circuits in flow matching for disease progression modeling
+  - Quantum MoE routing for multimodal medical image synthesis
+  - **Activation**: quantum flow matching medical, quantum medical image generation, quantum disease progression, quantum longitudinal imaging
+
+---
+
 ## 2026-05-13 - Neuroscience Research (Cron Job - Batch 4: Standalone Sync)
 
 ### Standalone Skills Synced to ai_collection (60 skills)
