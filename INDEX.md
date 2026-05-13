@@ -1,5 +1,40 @@
+
+
+## 2026-05-13 - Medicine + Quantum Mechanics (Cron Job)
+
+### Bridging Krylov Complexity and Universal Analog Quantum Simulator
+  - [[krylov-complexity-analog-simulator]] - 使用Krylov复杂度作为诊断工具映射任意哈密顿量到模拟量子模拟器 (arXiv: 2605.07668)
+    - 超越经典计算能力的多体系统模拟
+    - 通过复杂度增长模式检测量子相变
+    - **Activation**: krylov复杂度, 模拟量子模拟, analog quantum simulation, 克里洛夫复杂度
+
+### A universal complementarity identity for polarized double-slit interferometry
+  - [[universal-complementarity-identity]] - 建立四不变量精确恒等式 V_A^2+V_N^2+P^2+I^2=1 (arXiv: 2604.18760)
+    - 完整刻画波粒二象性的互补关系
+    - 通过标准偏振和干涉测量验证
+    - **Activation**: 互补性恒等式, double-slit interferometry, 波粒二象性, complementarity identity
+
+### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+  - [[hybrid-quantum-classical-feature-fusion]] - 双分支架构结合量子与经典特征提取 (arXiv: 2604.22903)
+    - 自适应融合机制解决优化不对称性问题
+    - 利用量子与经典特征的互补性提升医学分类性能
+    - **Activation**: 量子经典特征融合, hybrid quantum-classical, 医学图像分类, feature fusion
+
 ## 2026-05-13 - Medicine + Neuroscience (Cron Job)
 ## 2026-05-13 - 医学 + 量子力学 (Cron Job)
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Multi-Timescale Conductance Spiking Networks (MTCSN)
+- [[multi-timescale-conductance-snn]] - Sparse, gradient-trainable SNN framework using multi-timescale conductance shaping for rich firing dynamics without surrogate gradients (arXiv: 2605.11835)
+  - 核心要点: Conductance-based I-V curve shaping with fast/slow/ultra-slow timescales enables tonic, phasic, and bursting regimes in a single model
+  - 核心要点: Discrete-time formulation allows direct BPTT without surrogate gradients, outperforming LIF and AdLIF on Mackey-Glass regression with higher sparsity
+  - **Activation**: conductance SNN, multi-timescale spiking, gradient-trainable SNN, MTCSN, surrogate-free SNN, I-V curve shaping
+
+### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
+- [[sparse-temporal-context-reconfiguration]] - Brain transitions between contexts while preserving prior knowledge through sparsity and temporal dynamics — SNNs naturally exhibit both (arXiv: 2605.10178)
+  - 核心要点: Sparse coding reduces cross-context interference; temporal dynamics enhance context separability across time
+  - 核心要点: SNNs show improved lifelong learning retention without auxiliary heuristics (no replay, no EWC needed) — forgetting reduction emerges from architecture
+  - **Activation**: context reconfiguration, sparse coding temporal dynamics, catastrophic forgetting architecture, lifelong learning SNN, mPFC context switching
 
 ### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
 - [[federated-quantum-medical-diagnosis]] - 联邦量子神经网络用于隐私保护的糖尿病视网膜病变早期检测 (arXiv: 2605.08324)
