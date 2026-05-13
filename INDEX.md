@@ -1,3 +1,29 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Spatiotemporal TDANN for MT Direction Maps
+- [[mt-direction-maps-spatiotemporal]] - 3D ResNet with MoCo self-supervised learning + spatial loss produces brain-like direction-selective maps and pinwheel structures matching macaque MT physiology (arXiv: 2605.11718)
+  - Extends TDANN to dorsal stream: 3D ResNet trained on naturalistic videos via contrastive learning
+  - MT tuning emerges from strict trade-off between discriminative pressure and spatial regularization
+  - Quantitative match to in vivo macaque MT: direction selectivity index, circular variance, pinwheel density
+  - Unifies ventral and dorsal stream topographic origins under single computational mechanism
+  - **Activation**: MT direction maps, spatiotemporal TDANN, dorsal stream self-organization, motion direction selectivity, cortical topography, MoCo visual neuroscience
+
+### Attractor Models for Language and Reasoning
+- [[attractor-models-language-reasoning]] - Fixed-point attractor architecture with implicit differentiation for scalable iterative refinement; 770M outperforms 1.3B Transformer on 2× tokens, 27M achieves 91.4% Sudoku-Extreme (arXiv: 2605.12466)
+  - Two-stage: backbone proposes embeddings, attractor refines via fixed-point solving
+  - Constant memory for effective depth; iterations chosen adaptively by convergence
+  - Equilibrium internalization: fixed-point training enables solver removal at inference
+  - Outperforms Claude and GPT-o3 on challenging reasoning tasks with tiny model
+  - **Activation**: attractor models, fixed-point reasoning, implicit differentiation, looped Transformer, iterative refinement, equilibrium internalization
+
+### EEG Microstate Discovery via Variational Deep Embedding
+- [[eeg-microstate-variational-embedding]] - Variational deep embedding replaces k-means microstate clustering with uncertainty-aware latent space learning for interpretable EEG analysis (arXiv: 2605.10947)
+  - Deep VAE learns continuous temporal representation of EEG segments
+  - Systematic architecture search identifies optimal configuration
+  - Multi-quadrant evaluation: interpretability, stability, accuracy, scalability
+  - Principled uncertainty quantification via variational posterior
+  - **Activation**: EEG microstate discovery, variational EEG embedding, microstate clustering, interpretable EEG analysis, deep EEG pipeline
+
 ## 2026-05-13 - 医学 + 量子力学 (Cron Job - 周三医学主题)
 
 ### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
