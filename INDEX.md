@@ -1,3 +1,15 @@
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Spatiotemporal TDANN for Cortical Self-Organization
+- [[spatiotemporal-tdann]] - 3D ResNet TDANN with MoCo contrastive learning on videos + spatial loss generates MT direction maps and pinwheels (arXiv: 2605.11718)
+  - Extends TDANN from ventral to dorsal stream modeling via spatiotemporal contrastive optimization
+  - MT tuning emerges from trade-off between discriminative pressure and spatial regularization
+
+### Episodic Retrospective Learning in Neural Networks
+- [[episodic-learning-neural-networks]] - Internally triggered sparse learning events via adaptive discrepancy thresholding (arXiv: 2605.10994)
+  - Replaces continuous weight updates with latent trace accumulation + prediction-error triggered retrospective updates
+  - Reduces parameter drift while preserving informative patterns for edge/autonomous systems
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
