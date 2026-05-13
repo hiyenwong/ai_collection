@@ -46,6 +46,20 @@
   - Scaling analysis of balanced neural networks with conductance-based synapses
   - **Activation**: balanced network scaling, conductance synapses, neural network scaling laws
 
+### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure
+- [[leggett-garg-neural-dynamics]] - Proposes experimental Leggett-Garg inequality tests to distinguish diffusive vs persistent stochastic structure in single neurons (arXiv: 2605.12126)
+  - Telegrapher's equation vs cable equation: finite-velocity transport with memory
+  - Purely diffusive dynamics always satisfies LGIs; persistent stochastic dynamics can violate them
+  - Conservative interpretation: non-diffusive ≠ quantum coherence, just non-Markovian structure
+  - **Activation**: Leggett-Garg inequality, Telegrapher equation, persistent stochastic neuron, non-diffusive neural dynamics, temporal correlations
+
+### Interpreting EEG Foundational Transformers with LRP
+- [[eeg-foundation-lrp-interpretability]] - Applies Layer-wise Relevance Propagation (LRP) to EEG foundation models for post-hoc attribution, revealing Clever Hans behavior and novel biological hypotheses (arXiv: 2605.11885)
+  - Extends LRP from CNN-based to Transformer-based EEG models
+  - Uncovers ocular signal exploitation in motor imagery ("Clever Hans" behavior)
+  - Reveals central electrode cluster as candidate sensorimotor arousal signature
+  - **Activation**: EEG interpretability, LRP, EEG foundation model, Clever Hans EEG, transformer attribution
+
 ### Interpretable EEG Microstate Discovery via Variational Deep Embedding
 - [[eeg-microstate-variational-embedding]] - Systematic architecture search with multi-quadrant evaluation for interpretable EEG microstate discovery via variational deep embedding (arXiv: 2605.10947)
   - Variational deep embedding for interpretable EEG microstate discovery
