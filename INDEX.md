@@ -1,3 +1,33 @@
+## 2026-05-15 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Replay-Buffer Engineering for Noise-Robust Quantum Circuit Optimization
+- [[replay-buffer-quantum-optimization]] - 使用回放缓冲工程加速变分量子算法在硬件噪声下的优化 (arXiv: 2604.21863)
+  - 存储历史优化参数加速新任务初始化
+  - 噪声级别匹配过滤避免误导优化
+  - 比随机初始化快2-5倍收敛
+  - **Activation**: replay buffer quantum, noise-robust VQA, 量子线路优化回放, quantum circuit optimization
+
+### Quantum Metrology via Partial Quantum Error Correction
+- [[quantum-metrology-partial-qec]] - 使用部分量子纠错增强传感精度，超越标准量子极限 (arXiv: 2605.08341)
+  - 部分纠错码保护传感子空间同时允许信号积累
+  - 在SQL和HL之间实现精度缩放
+  - 适用于原子钟、磁力计、引力波探测
+  - **Activation**: quantum metrology partial QEC, phase estimation error correction, 量子精密测量纠错
+
+### Bridging Krylov Complexity and Universal Analog Quantum Simulator
+- [[krylov-complexity-analog-simulator]] - 用Krylov复杂度理论表征模拟量子模拟器的计算能力 (arXiv: 2605.07668)
+  - Lanczos系数b_n增长率区分可积/混沌系统
+  - Krylov复杂度K(t)追踪算符增长
+  - 用于量子模拟器验证和基准测试
+  - **Activation**: Krylov complexity, analog quantum simulator, Lanczos algorithm quantum
+
+### Universal Complementarity Identity for Polarized Double-Slit Interferometry
+- [[universal-complementarity-identity]] - 极化双缝干涉中路径可区分度与干涉可见度的精确互补恒等式 (arXiv: 2604.18760)
+  - D^2 + V^2 = 1 恒等式适用于任意极化标记态
+  - 导出QKD安全性边界
+  - 量子擦除器的信息恢复量化
+  - **Activation**: complementarity identity, wave-particle duality, 互补性恒等式量子干涉
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
 ### Spatiotemporal TDANN for Cortical Self-Organization
