@@ -1,4 +1,11 @@
-## 2026-05-14 - Neuroscience Research (Cron Job - Evening)
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Multi-Timescale Conductance Spiking Networks: A Sparse, Gradient-Trainable Framework with Rich Firing Dynamics
+- [[multi-timescale-conductance-snn]] - Conductance-based SNN with direct BPTT (no surrogate gradients), multi-timescale dynamics yielding tonic/phasic/bursting regimes, superior Mackey-Glass prediction with higher sparsity (arXiv: 2605.11835)
+  - Replaces phenomenological LIF/AdLIF with I-V curve shaping via fast/slow/ultra-slow conductances
+  - Direct backpropagation through time eliminates forward-backward mismatch of surrogate gradients
+  - Feed-forward architecture achieves temporal processing via intrinsic neuron memory (no recurrent connections needed)
+  - **Activation**: multi-timescale conductance, MTCSN, conductance-based SNN, gradient-trainable spiking, neuromorphic temporal processing
 
 ### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
 - [[neural-code-language-characterization]] - Closed-loop framework using natural language to characterize neural selectivity via digital twins and in silico hypothesis verification across macaque V1 and V4 (arXiv: 2605.12485)

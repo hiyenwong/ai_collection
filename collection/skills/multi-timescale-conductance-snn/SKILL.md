@@ -1,133 +1,105 @@
 ---
 name: multi-timescale-conductance-snn
-description: "Multi-Timescale Conductance Spiking Networks (MTCSN) methodology — a gradient-trainable SNN framework using fast, slow, and ultra-slow conductance shaping of I-V curves to produce rich firing regimes (tonic, phasic, bursting) with high sparsity. Enabling backpropagation through time without surrogate gradients. Use when designing conductance-based SNNs, implementing neuromorphic hardware with conductance synapses, or building sparse temporal processing models with differentiable spiking dynamics. Keywords: conductance SNN, multi-timescale spiking, gradient-trainable SNN, MTCSN, conductance-based neuron, surrogate-free SNN, I-V curve shaping, spiking regression, Mackey-Glass, AdLIF."
+description: Multi-Timescale Conductance Spiking Networks (MTCSN) methodology. A gradient-trainable SNN framework where neural dynamics emerge from shaping the I-V curve by tuning fast, slow, and ultra-slow conductances. Enables direct backpropagation through time without surrogate gradients, supports rich firing regimes (tonic, phasic, bursting), and achieves superior temporal processing with high activity sparsity. Use when: designing conductance-based SNNs, building neuromorphic temporal processing systems, comparing SNN neuron models (LIF, AdLIF vs. conductance-based), implementing gradient-trainable spiking networks without surrogate gradients, energy-efficient spike-based computation, Mackey-Glass or chaotic time-series prediction.
+  Activation: multi-timescale conductance, MTC SNN, conductance-based SNN, MTCSN, gradient-trainable spiking network, I-V curve shaping, spiking neuron dynamics, neuromorphic temporal processing.
+  arXiv: 2605.11835 (2026 IEEE Neuro-Inspired Computational Elements Conference)
 ---
 
 # Multi-Timescale Conductance Spiking Networks (MTCSN)
 
-## Paper Source
+Gradient-trainable SNN framework using conductance-based neuron models with multi-timescale dynamics for enhanced temporal processing.
 
-- **Title**: Multi-Timescale Conductance Spiking Networks: A Sparse, Gradient-Trainable Framework with Rich Firing Dynamics for Enhanced Temporal Processing
-- **Authors**: Alex Fulleda-Garcia, Saray Soldado-Magraner, Josep Maria Margarit-Taulé
-- **arXiv**: [2605.11835](https://arxiv.org/abs/2605.11835) (2026-05-12)
-- **Categories**: cs.NE, cs.AI, cs.LG
+## Core Concept
 
-## Core Methodology
+Replace phenomenological neuron models (LIF, AdLIF) with biophysically grounded **conductance-based dynamics** that:
+- Emerge from shaping the **current-voltage (I-V) curve** via tunable conductances
+- Enable **direct backpropagation through time (BPTT)** without surrogate gradients
+- Support rich firing regimes: tonic, phasic, and bursting within a single model
+- Yield substantially **sparser activity** for energy-efficient computation
 
-### Conductance-Based I-V Curve Shaping
+## Mathematical Framework
 
-Instead of phenomenological LIF models, MTCSN uses biophysically-inspired conductance dynamics:
+### Conductance-Based Neuron Dynamics
 
-$$\tau_m \frac{dV}{dt} = -(V - E_L) - \sum_k g_k(t) \cdot (V - E_k) + I_{ext}(t)$$
+The MTC neuron models membrane potential U_m(t) through multiple conductance timescales:
 
-where conductances $g_k$ operate at multiple timescales:
-- **Fast conductance** ($\tau_f \approx 1$ms): Captures rapid AMPA-like synaptic currents
-- **Slow conductance** ($\tau_s \approx 10-100$ms): NMDA/GABA_B-like dynamics
-- **Ultra-slow conductance** ($\tau_{us} \approx 100-1000$ms): Adaptation/homeostatic processes
+```
+τm · dUm/dt = I_in(t) - I_-s - I+_s - I+_us - I^-_s
+```
 
-### Key Design Principles
+Where:
+- **Fast timescale (τm)**: Destabilizing element I⁻_s (negative conductance) drives rapid depolarization
+- **Slow timescale (τs ≫ τm)**: Restorative element I⁺_s with positive conductance provides damping and refractory period
+- **Ultra-slow timescale (τus ≫ τs)**: Higher-order temporal processing via slow-negative element balanced by positive ultra-slow conductance
 
-1. **I-V curve parameterization**: Tuning conductances shapes the neuron's I-V curve, directly controlling excitability type and firing regime
-2. **Emergent firing patterns**: Single neuron model produces tonic, phasic, and bursting responses without explicit mode switching
-3. **Gradient-trainable**: Discrete-time formulation enables backpropagation through time (BPTT) without surrogate gradient approximations
-4. **Hardware-compatible**: Conductance parameters map directly to analog circuit implementations
-5. **High sparsity**: Activity sparsity from both communication and computational perspectives
+### Signal Conditioning
+
+Transform continuous membrane potential to standardized transmission signal:
+```
+s(t) = min(ReLU(Um(t) - Uth) / (Usat - Uth), 1)
+```
+
+This normalizes action potentials to [0,1], ensuring consistent inter-neuron communication.
 
 ### Discrete-Time Formulation
 
-For BPTT, the continuous dynamics are discretized:
+The continuous dynamics are discretized for direct BPTT, eliminating the forward-backward mismatch of surrogate gradients.
 
-$$V[t+1] = V[t] + \frac{\Delta t}{\tau_m} \left[-(V[t] - E_L) - \sum_k g_k[t](V[t] - E_k) + I[t]\right]$$
+## Key Advantages vs. Baselines
 
-$$g_k[t+1] = g_k[t] \cdot e^{-\Delta t/\tau_k} + \Delta g_k[t]$$
-
-Spike generation: $s[t] = \mathbb{1}(V[t] > V_{th})$, with reset $V \leftarrow V_{reset}$
-
-### Trainability Advantages
-
-- **No surrogate gradients**: Exact gradients flow through differentiable membrane dynamics
-- **Rich temporal credit assignment**: Multi-timescale conductances provide natural temporal memory
-- **Sparse activity**: Conductance shaping naturally suppresses unnecessary firing
-
-## Comparison to Baselines
-
-| Property | LIF | AdLIF | MTCSN (this work) |
-|----------|-----|-------|-------------------|
-| Gradient method | Surrogate | Surrogate | Direct BPTT |
-| Firing regimes | Single | Limited | Tonic, phasic, bursting |
-| Sparsity | Moderate | Moderate | High |
-| Hardware mapping | Simple | Moderate | Direct to analog |
-| Trainability | Good | Good | Superior |
-
-### Performance (Mackey-Glass Regression)
-
-- Outperforms LIF and AdLIF at the predictability limit
-- Exhibits substantially sparser activity from both communication and computational perspectives
-- Better noise robustness for continuous-valued outputs
+| Dimension | LIF | AdLIF | MTCSN |
+|-----------|-----|-------|-------|
+| Trainability | Surrogate gradient | Surrogate gradient | **Direct BPTT** |
+| Firing regimes | Single (tonic) | Limited | **Tonic, phasic, bursting** |
+| Sparsity | Indirect control | Indirect control | **Emergent from conductance** |
+| Temporal processing | Single timescale | Two timescales | **Multi-timescale** |
+| Hardware mapping | Limited | Limited | **Analog circuit-ready** |
 
 ## Implementation Pattern
 
 ```python
-class MTCSNeuron(nn.Module):
-    def __init__(self, n_fast=1, n_slow=1, n_ultra_slow=1):
-        super().__init__()
-        # Conductance parameters (learnable)
-        self.g_fast = nn.Parameter(torch.randn(n_fast))
-        self.g_slow = nn.Parameter(torch.randn(n_slow))
-        self.g_ultra_slow = nn.Parameter(torch.randn(n_ultra_slow))
-        
-        # Timescales (can be fixed or learnable)
-        self.tau_fast = 1.0   # ms
-        self.tau_slow = 50.0  # ms
-        self.tau_ultra_slow = 500.0  # ms
-        
-        # Reversal potentials
-        self.E_exc = 0.0   # mV
-        self.E_inh = -75.0  # mV
-        self.E_L = -65.0    # mV
-        
-        self.V_th = -50.0
-        self.V_reset = -65.0
-        self.tau_m = 20.0   # ms
+# Pseudocode for MTC neuron forward pass
+def mtc_neuron_forward(Um, g_slow, g_uslow, I_in, params):
+    # Fast destabilizing current (drives spiking)
+    I_fast = negative_conductance(Um, params)
+    # Slow restorative current (damping)
+    I_slow = positive_conductance(Um, g_slow, params)
+    # Ultra-slow modulation (bursting/tonic transition)
+    I_uslow = positive_conductance(Um, g_uslow, params)
     
-    def forward(self, I_ext, dt=1.0):
-        """BPTT-compatible forward pass."""
-        V = torch.full_like(I_ext, self.E_L)
-        g = torch.zeros_like(I_ext)
-        spikes = torch.zeros_like(I_ext)
-        
-        for t in range(I_ext.shape[0]):
-            # Update conductances
-            g = g * torch.exp(-dt / self.tau_k) + delta_g(t)
-            
-            # Update membrane potential
-            dV = (-(V - self.E_L) - g * (V - self.E_k) + I_ext[t]) * dt / self.tau_m
-            V = V + dV
-            
-            # Spike generation
-            spikes[t] = (V > self.V_th).float()
-            V = V * (1 - spikes[t]) + self.V_reset * spikes[t]
-        
-        return spikes
+    # Update membrane potential
+    dUm = I_in - I_fast - I_slow - I_uslow
+    Um_new = Um + dt * dUm / tau_m
+    
+    # Signal conditioning
+    s = min(max(Um_new - Uth, 0) / (Usat - Uth), 1)
+    return Um_new, s
 ```
 
-## Use Cases
+## Evaluation Results
 
-1. **Temporal sequence processing**: Where standard LIF/AdLIF struggle with regression tasks
-2. **Neuromorphic hardware deployment**: Conductance parameters directly map to analog circuits
-3. **Low-power edge inference**: High sparsity reduces communication and computation
-4. **Temporal credit assignment**: Multi-timescale dynamics provide natural memory without RNN overhead
-5. **Biophysically realistic modeling**: Bridging computational neuroscience with deep learning
+On **Mackey-Glass time-series regression** at the predictability horizon (~1 Lyapunov time):
+- **MTC outperforms LIF and AdLIF** in prediction accuracy
+- **Substantially sparser activity** in both rate and duty-cycle dimensions
+- Feed-forward architecture (no recurrent connections) achieves temporal processing via intrinsic neuron memory
 
-## Activation Keywords
+## When to Use
 
-- conductance SNN
-- multi-timescale spiking
-- gradient-trainable SNN
-- MTCSN
-- conductance-based neuron
-- surrogate-free SNN
-- I-V curve shaping
-- spiking regression
-- Mackey-Glass prediction
-- AdLIF alternative
+- Building SNNs for **temporal regression** or time-series forecasting
+- Needing **multiple firing regimes** in a single neuron model
+- **Neuromorphic hardware** implementation where conductance maps to analog circuits
+- Replacing surrogate gradient training with **true gradient-based** optimization
+- Seeking **high sparsity** for energy-efficient deployment
+
+## Pitfalls
+
+- Feed-forward evaluation only tested; recurrent MTC networks remain unexplored
+- Mackey-Glass is canonical but limited; real-world temporal tasks need validation
+- Conductance parameters require careful initialization to avoid numerical instability
+- Signal conditioning (Saturated ReLU) is a design choice; alternatives may be needed for specific tasks
+
+## References
+
+- Fulleda-Garcia, Soldado-Magraner, Margarit-Taulé (2026). IEEE Neuro-Inspired Computational Elements Conference.
+- Ribar & Sepulchre (conductance-based neuron model foundation)
+- snnTorch framework (LIF/AdLIF baselines)

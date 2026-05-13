@@ -1,111 +1,116 @@
 ---
 name: neural-code-language-characterization
-description: "Closed-loop framework for automated neuron characterization using natural language descriptions. Translates neuron activation patterns into semantic hypotheses, verifies them via in silico experiments using neural digital twins. Use when: neuron selectivity analysis, neural code interpretation, automated neuroscience discovery, V1/V4 characterization, digital twin experiments, semantic description of neurons, generative model for neuroscience."
+description: Natural language characterization of neural coding methodology. Uses closed-loop LLM-based framework to generate human-readable semantic descriptions of individual neuron selectivity across visual cortical areas (V1, V4). Combines neural digital twins, generative image models, and hypothesis verification to characterize what neurons encode at scale. Use when: characterizing neural selectivity beyond Gabor functions, building neural digital twins, automated neuroscience discovery, vision-language alignment in neural coding, semantic hypothesis generation for neurons, in-silico neural experiments.
+  Activation: neural code language, automated neuron characterization, semantic neural description, V1 V4 digital twin, language-based neural coding, semantic hypothesis verification, neural interpretability, agentic neuroscience.
+  arXiv: 2605.12485
 ---
 
 # Neural Code Language Characterization
 
-Automated characterization of neural selectivity using natural language and neural digital twins.
+Closed-loop framework for characterizing individual neuron selectivity using natural language descriptions, verified through generative image synthesis and neural digital twins.
 
-## Paper
+## Core Concept
 
-- **Title**: Letting the neural code speak: Automated characterization of monkey visual neurons through human language
-- **arXiv**: 2605.12485
-- **Authors**: Vedang Lad, Katrin Franke, Tamar Rott Shaham, Surya Ganguli, Andreas S. Tolias et al.
-- **Date**: 2026-05-12
-- **Categories**: q-bio.NC, q-bio.QM
+Natural language can serve as a compact, interpretable representation of what individual neurons encode. While V1 neurons are well described by Gabor functions, higher visual areas (V4, IT) lack comparable general frameworks. This methodology bridges the gap by:
 
-## Overview
+1. Translating neuron's activating/suppressing images into dense captions
+2. Generating semantic hypotheses about neural selectivity
+3. Synthesizing images from hypotheses
+4. Verifying hypotheses in silico against neural digital twins
 
-Understanding what individual neurons encode is a core question in neuroscience. While V1 neuron selectivity can be captured by Gabor functions, no comparable framework exists for higher cortical areas. This paper demonstrates that **natural language** can serve as a universal description language for neural selectivity.
+## Closed-Loop Framework
 
-## Key Methodology
+```
+Neural Digital Twin (V1/V4)
+    ↓
+High/Low Activating Images → Dense Captions (BLIP/LLM)
+    ↓
+Semantic Hypothesis Generation (LLM)
+    ↓
+Image Synthesis from Hypotheses (Diffusion Model)
+    ↓
+In Silico Verification on Neural Twin
+    ↓
+Iterate until hypothesis converges
+```
 
-### Closed-Loop Framework
+## Key Results
 
-The framework operates in four phases:
+### V4 Characterization
+- **96.1%** of neurons driven above 95th percentile by activating hypothesis images
+- **97.6%** driven below 5th percentile by suppressing hypothesis images
+- (vs. ~10% for random images)
+- Descriptions: conjunctions of form, color, and texture
 
-1. **Caption Generation**: Translate high-activating and low-activating images into dense captions
-2. **Hypothesis Synthesis**: Generate semantic hypotheses about what the neuron responds to
-3. **Image Synthesis**: Create new images based on the hypothesis
-4. **In Silico Verification**: Test the synthesized images on the neural digital twin
-
-### Results
-
-| Area | Description |
-|------|-------------|
-| **V1** | Oriented edges, spatial frequency (classical features) |
-| **V4** | Conjunctions of form, color, and texture |
-
-**V4 Performance**:
-- Activating hypotheses drove 96.1% of neurons above 95th percentile of natural-image responses
-- Suppressing hypotheses drove 97.6% of neurons below 5th percentile
-- Random images: only ~10% at these thresholds
+### V1 Characterization
+- Activation results matched V4 performance
+- Suppression less describable in language
+- Descriptions: oriented edges and spatial frequency (consistent with Gabor models)
 
 ### Representational Alignment
-
-- RSA reveals partial alignment between neural activity, vision embeddings, and language embeddings
 - Vision embeddings most aligned with neural activity
-- Linguistic compression is lossy but semantically faithful
-- Information lost in text bottleneck recovered when hypotheses are rendered back to images
+- Language embeddings partially aligned
+- Alignment lost in text bottleneck recovered when hypotheses rendered back to images
+- **Linguistic compression is lossy yet semantically faithful**
 
-## Implementation Pattern
+## Implementation Architecture
 
+### Components
+- **Neural Digital Twin**: Deep network trained on single-neuron responses (predicts activity with high accuracy)
+- **Dense Captioning**: Translates images to detailed natural language descriptions
+- **Hypothesis Generator**: LLM produces activating/suppressing semantic hypotheses
+- **Image Synthesizer**: Diffusion model generates images from text hypotheses
+- **Verification Engine**: Tests generated images against neural twin predictions
+
+### Workflow
+```python
+# Pseudocode for closed-loop characterization
+def characterize_neuron(neural_twin, neuron_id, iterations=5):
+    # Step 1: Find activating/suppressing images from large image set
+    high_images, low_images = screen_images(neural_twin, neuron_id)
+    
+    for i in range(iterations):
+        # Step 2: Generate dense captions
+        captions_high = dense_caption(high_images)
+        captions_low = dense_caption(low_images)
+        
+        # Step 3: Generate semantic hypothesis
+        hypothesis = llm_generate_hypothesis(captions_high, captions_low)
+        
+        # Step 4: Synthesize test images from hypothesis
+        test_images = diffusion_generate(hypothesis)
+        
+        # Step 5: Verify against neural twin
+        responses = neural_twin.predict(neuron_id, test_images)
+        
+        # Step 6: Evaluate and refine
+        if verify_hypothesis(responses):
+            return hypothesis, test_images
+        
+        # Refine image set based on results
+        high_images = update_images(test_images, responses)
 ```
-[High/Low Activating Images] 
-        ↓
-[Dense Caption Generation]
-        ↓
-[Semantic Hypothesis]
-        ↓
-[Image Synthesis from Hypothesis]
-        ↓
-[In Silico Verification on Digital Twin]
-        ↓
-[Hypothesis Validation / Refinement]
-```
 
-## Applications
+## When to Use
 
-- Automated neuron characterization across cortical areas
-- Interpretable descriptions of neural function at scale
-- Agentic scientific discovery in neuroscience
-- Cross-area comparison of neural coding strategies
-- Validation of neural digital twin models
+- Characterizing neural selectivity in **higher visual areas** (V4, IT)
+- Building **interpretable neural coding** frameworks beyond mathematical models
+- **Agentic scientific discovery** pipelines for neuroscience
+- Cross-modal **vision-language-neural alignment** studies
+- Testing whether **natural language** can capture neural function
 
 ## Key Insights
 
-1. **Language as Universal Code**: Natural language can describe neural selectivity in areas where mathematical models fail
-2. **Closed-Loop Discovery**: The hypothesis-generation-verification loop enables automated neuroscience
-3. **Digital Twin Necessity**: Neural digital twins enable rapid in silico hypothesis testing
-4. **Compressibility**: Neural tuning is compressible into semantic descriptions, suggesting structured representations
-5. **Information Recovery**: Lost linguistic information is recoverable when rendered back to visual stimuli
-
-## Related Concepts
-
-- Neural digital twins
-- Representational similarity analysis (RSA)
-- Generative models for neuroscience
-- Automated hypothesis generation
-- Agentic scientific discovery
-- Vision-language models for neuroscience
+- **Language is a viable neural code descriptor** for most neurons in V1 and V4
+- **V1 suppression is less describable** than V4 — suppression in early visual cortex may rely on non-semantic features
+- **Lossy-but-faithful compression**: text loses some neural information but recovers it when re-rendered as images
+- **Digital twins enable scalable in-silico neuroscience** without requiring live animal experiments
+- **Generative models + neural models** enable testable, interpretable descriptions at scale
 
 ## Pitfalls
 
-- V1 suppression less describable in language than V4
-- Linguistic compression is lossy — some neural tuning details may not map cleanly to language
-- Requires accurate neural digital twins for verification
-- Validation on biological neurons still needed
-
-## References
-
-- arXiv: 2605.12485
-- Related: neural digital twins, TDANN, automated neuroscience
-
-## Notes for Agents
-
-When analyzing this methodology:
-1. Focus on the closed-loop nature — it's not just description, it's description + verification
-2. The V1 vs V4 difference in suppressibility is scientifically interesting
-3. The recoverability of lost information is a key theoretical finding
-4. Consider how this extends beyond visual cortex to other sensory modalities
+- Requires high-quality neural digital twin (accurate predictor of neuron responses)
+- Language descriptions may miss non-semantic visual features
+- V1 suppression characterization remains challenging
+- Hypothesis quality depends on captioning and LLM capabilities
+- Generalization beyond V1/V4 to IT or other areas untested
