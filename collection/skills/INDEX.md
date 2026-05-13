@@ -51,3 +51,12 @@
   - Inner-loop: positive phase energy minimization
   - Outer-loop: quantum circuit as negative phase sampler for log-likelihood maximization
   - **Activation**: quantum boltzmann machine, QAOA extension, bilevel quantum optimization
+
+## 2026-05-13 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis
+- [[equivariant-rl-quantum-circuit-synthesis]] - RL framework leveraging Clifford group symmetries for efficient quantum circuit synthesis (arXiv: 2605.10910)
+  - Equivariant policy network respects quantum operation symmetries
+  - Stabilizer tableau representation enables efficient Clifford simulation
+  - Symmetry reduction collapses equivalent states to canonical representatives
+  - **Activation**: equivariant RL, quantum circuit synthesis, clifford group, symmetry-aware reinforcement learning, steerable neural networks, 量子电路合成, 等变强化学习

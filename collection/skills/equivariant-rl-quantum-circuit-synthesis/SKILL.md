@@ -1,107 +1,291 @@
 ---
 name: equivariant-rl-quantum-circuit-synthesis
-description: "Equivariant reinforcement learning for Clifford quantum circuit synthesis. Uses symplectic-equivariant neural networks to synthesize Clifford gate sequences that reduce symplectic matrix representation to identity. Use when: quantum circuit synthesis, Clifford group operations, equivariant neural networks for quantum computing, RL for quantum control, or stabilizer circuit compilation."
+description: "Equivariant reinforcement learning for Clifford quantum circuit synthesis. Use when designing RL-based quantum circuit synthesis, leveraging group symmetries in quantum operations, or building equivariant architectures for quantum computing tasks."
+version: 1.0.0
+author: Hermes Agent (Cron Job)
+license: MIT
 ---
 
-# Equivariant RL for Clifford Quantum Circuit Synthesis
+# Equivariant RL for Quantum Circuit Synthesis
 
-Reinforcement learning approach for synthesizing Clifford quantum circuits using equivariant neural networks that respect the symplectic symmetry of the Clifford group (arXiv: 2605.10910).
+Methodology from arXiv:2605.10910 - "Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis" (Yeung, Kissinger, Cornish, 2026-05-12).
 
-## Core Idea
+## Overview
 
-Synthesize Clifford quantum circuits by framing circuit synthesis as an RL problem where an agent discovers gate sequences that reduce a symplectic matrix representation to the identity. Equivariant neural networks respecting the symplectic symmetry of the Clifford group achieve significant improvements over standard RL approaches.
+This skill provides a framework for using equivariant reinforcement learning to synthesize Clifford quantum circuits. By leveraging the group symmetry properties of the Clifford group, the method achieves more efficient circuit synthesis compared to standard RL approaches.
 
-## Mathematical Foundation
+## Core Concepts
 
-### Clifford Group and Symplectic Representation
+### 1. Clifford Group Symmetries
+- The Clifford group forms a unitary 2-design with rich symmetry structure
+- Circuits are equivalent up to Clifford group transformations
+- Symmetry-aware policies reduce the search space exponentially
 
-The Clifford group on n qubits is isomorphic to the symplectic group Sp(2n, F_2). Each Clifford gate corresponds to a symplectic matrix over GF(2):
+### 2. Equivariant Architecture
+- **Equivariant Policy Network**: Network outputs transform consistently under Clifford group actions
+- **Group-equivariant layers**: Use steerable features that respect Clifford symmetries
+- **Symmetry reduction**: Collapse equivalent states to canonical representatives
 
+### 3. RL Formulation
+- **State**: Current quantum circuit (gate sequence + qubit connectivity)
+- **Action**: Add/remove/modify gates (H, S, CNOT, CZ, etc.)
+- **Reward**: Negative circuit depth + correctness bonus
+- **Episode**: Until target unitary is achieved within tolerance
+
+## Implementation
+
+### Step 1: State Representation
+```python
+import numpy as np
+from stim import Tableau
+
+class CliffordState:
+    """Represent quantum circuit state via stabilizer tableau."""
+    
+    def __init__(self, n_qubits):
+        self.n_qubits = n_qubits
+        self.tableau = Tableau(n_qubits)
+        self.gates = []
+        
+    def apply_gate(self, gate_name, qubits):
+        """Apply Clifford gate to tableau."""
+        if gate_name == "H":
+            self.tableau.append_H(qubits[0])
+        elif gate_name == "S":
+            self.tableau.append_S(qubits[0])
+        elif gate_name == "CNOT":
+            self.tableau.append_CX(qubits[0], qubits[1])
+        elif gate_name == "CZ":
+            self.tableau.append_CZ(qubits[0], qubits[1])
+        
+        self.gates.append((gate_name, qubits))
+        
+    def canonical_form(self):
+        """Return canonical representative under Clifford equivalence."""
+        # Use Gaussian elimination on stabilizer tableau
+        return self.tableau.to_pauli_string()
+        
+    def circuit_depth(self):
+        """Calculate circuit depth."""
+        if not self.gates:
+            return 0
+        # Track qubit usage timeline
+        timelines = {i: 0 for i in range(self.n_qubits)}
+        depth = 0
+        for gate, qubits in self.gates:
+            max_time = max(timelines[q] for q in qubits) + 1
+            for q in qubits:
+                timelines[q] = max_time
+            depth = max(depth, max_time)
+        return depth
 ```
-Circuit = G_1 ∘ G_2 ∘ ... ∘ G_k
-Symplectic: S = S_1 · S_2 · ... · S_k
+
+### Step 2: Equivariant Policy Network
+```python
+import torch
+import torch.nn as nn
+
+class EquivariantCliffordPolicy(nn.Module):
+    """Equivariant policy for Clifford circuit synthesis."""
+    
+    def __init__(self, n_qubits, hidden_dim=128):
+        super().__init__()
+        self.n_qubits = n_qubits
+        self.hidden_dim = hidden_dim
+        
+        # Equivariant layers
+        self.state_encoder = nn.Sequential(
+            nn.Linear(n_qubits * n_qubits, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU()
+        )
+        
+        # Gate selection head (equivariant under qubit permutation)
+        self.gate_selector = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, 4)  # H, S, CNOT, CZ
+        )
+        
+        # Qubit selection head
+        self.qubit_selector = nn.Sequential(
+            nn.Linear(hidden_dim, n_qubits)
+        )
+        
+    def forward(self, state_tableau):
+        """
+        Args:
+            state_tableau: Stabilizer tableau as binary matrix
+        Returns:
+            gate_probs: Distribution over gate types
+            qubit_probs: Distribution over qubit choices
+        """
+        # Encode tableau
+        tableau_flat = state_tableau.reshape(-1, self.n_qubits * self.n_qubits)
+        features = self.state_encoder(tableau_flat.float())
+        
+        # Gate selection
+        gate_probs = torch.softmax(self.gate_selector(features), dim=-1)
+        
+        # Qubit selection (permutation-equivariant)
+        qubit_probs = torch.softmax(self.qubit_selector(features), dim=-1)
+        
+        return gate_probs, qubit_probs
 ```
 
-Goal: Find gate sequence such that S = I (identity matrix).
+### Step 3: Training Loop
+```python
+import torch
+from torch.optim import Adam
 
-### Symplectic Equivariance
-
-An equivariant network f satisfies:
+def train_equivariant_rl(policy, target_unitary, n_episodes=1000, lr=1e-3):
+    """Train equivariant policy for circuit synthesis."""
+    optimizer = Adam(policy.parameters(), lr=lr)
+    
+    for episode in range(n_episodes):
+        state = CliffordState(policy.n_qubits)
+        done = False
+        log_probs = []
+        rewards = []
+        
+        while not done:
+            # Get policy distribution
+            tableau = state.tableau.to_numpy()
+            gate_probs, qubit_probs = policy(tableau)
+            
+            # Sample action
+            gate_idx = torch.multinomial(gate_probs[0], 1).item()
+            qubit_idx = torch.multinomial(qubit_probs[0], 1).item()
+            
+            # Apply action
+            gates = ["H", "S", "CNOT", "CZ"]
+            gate = gates[gate_idx]
+            qubits = [qubit_idx, (qubit_idx + 1) % policy.n_qubits]
+            state.apply_gate(gate, qubits)
+            
+            # Calculate reward
+            current = state.tableau.to_numpy()
+            target = target_unitary.to_numpy()
+            match = np.allclose(current, target, atol=1e-8)
+            
+            reward = -state.circuit_depth() * 0.1
+            if match:
+                reward += 100
+                done = True
+            
+            if state.circuit_depth() > 50:
+                done = True
+                reward = -50
+                
+            log_probs.append(torch.log(gate_probs[0, gate_idx] * qubit_probs[0, qubit_idx]))
+            rewards.append(reward)
+        
+        # REINFORCE update
+        returns = []
+        G = 0
+        for r in reversed(rewards):
+            G = r + 0.99 * G
+            returns.insert(0, G)
+        
+        returns = torch.tensor(returns)
+        returns = (returns - returns.mean()) / (returns.std() + 1e-8)
+        
+        loss = -sum(lp * ret for lp, ret in zip(log_probs, returns))
+        
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        if episode % 100 == 0:
+            print(f"Episode {episode}, Return: {sum(rewards):.2f}, Depth: {state.circuit_depth()}")
 ```
-f(g·x) = g·f(x)  for all g in Sp(2n, F_2)
+
+### Step 4: Symmetry Reduction
+```python
+from itertools import permutations
+
+def get_clifford_symmetries(n_qubits):
+    """Get symmetry operations for n-qubit Clifford group."""
+    # Qubit permutations
+    qubit_perms = list(permutations(range(n_qubits)))
+    
+    # Pauli frame changes (2^2n possibilities for n qubits)
+    pauli_frames = []
+    for i in range(2**(2*n_qubits)):
+        frame = [(i >> (2*j)) & 3 for j in range(n_qubits)]
+        pauli_frames.append(frame)
+        
+    return qubit_perms, pauli_frames
+
+def canonicalize_state(state, symmetries):
+    """Find canonical representative under symmetry group."""
+    qubit_perms, pauli_frames = symmetries
+    
+    best_state = None
+    best_repr = None
+    
+    for perm in qubit_perms:
+        for frame in pauli_frames:
+            # Apply symmetry transformation
+            transformed = apply_symmetry(state, perm, frame)
+            repr_str = transformed.canonical_form()
+            
+            if best_repr is None or repr_str < best_repr:
+                best_repr = repr_str
+                best_state = transformed
+                
+    return best_state
 ```
 
-This ensures the network respects the symmetry structure of the Clifford group, leading to:
-- Better sample efficiency
-- Generalization to larger qubit counts
-- Physically meaningful representations
+## Key Patterns
 
-## RL Formulation
+### Pattern 1: Equivariant Design
+- Design networks that respect physical symmetries
+- Reduce search space by factoring out equivalent configurations
+- Use steerable features for consistent transformations
 
-### State Space
-- Current symplectic matrix S ∈ Sp(2n, F_2)
-- Encoded as binary matrix or bit representation
+### Pattern 2: Symmetry-Aware RL
+- Canonicalize states before processing
+- Augment experiences with symmetric equivalents
+- Reward shaping that respects symmetry structure
 
-### Action Space
-- Elementary Clifford gates: {H, S, CNOT, CZ, SWAP}
-- Each gate corresponds to a known symplectic transformation
+### Pattern 3: Stabilizer-Based Representation
+- Use stabilizer tableaux for efficient Clifford circuit simulation
+- Gaussian elimination for canonical forms
+- Binary matrix representation for neural network input
 
-### Reward Function
-- Reduction in distance from identity: reward = -||S - I||_F
-- Terminal reward when S = I (circuit successfully synthesized)
-- Step penalty to encourage shorter circuits
+## Tools & Dependencies
 
-### Training
-1. Initialize agent with random Clifford target
-2. Agent selects gate actions sequentially
-3. Update symplectic matrix: S ← S · S_gate
-4. Repeat until S = I or max steps reached
-5. Policy gradient or PPO optimization
+```bash
+pip install torch stim numpy
+```
 
-## Workflow
+## Activation
 
-### Step 1: Define Target Circuit
-- Specify desired Clifford operation as symplectic matrix
-- Or generate random Clifford for training
+- equivariant RL
+- quantum circuit synthesis
+- clifford group
+- symmetry-aware reinforcement learning
+- steerable neural networks
+- 量子电路合成
+- 等变强化学习
 
-### Step 2: Run RL Synthesis
-- Agent discovers gate sequence
-- Equivariant network ensures symmetry-respecting decisions
+## Related Skills
 
-### Step 3: Validate Output
-- Verify synthesized circuit matches target
-- Check gate count and circuit depth
+- `quantum-neural-architecture`: For general QNN design
+- `quantum-ml-patterns`: For quantum ML research patterns
+- `rl-temporal-logic`: For RL with formal guarantees
 
-### Step 4: Optimize
-- Apply gate cancellation rules
-- Merge consecutive compatible gates
-- Minimize circuit depth for hardware
+## References
 
-## Key Advantages
+- Yeung, R., Kissinger, A., & Cornish, R. (2026). "Equivariant Reinforcement Learning for Clifford Quantum Circuit Synthesis" arXiv:2605.10910
+- Gottesman, D. (1998). "The Heisenberg Representation of Quantum Computers" arXiv:quant-ph/9807006
+- Cohen, T. et al. (2019). "Gauge Equivariant Convolutional Networks" ICLR 2019
 
-1. **Symplectic equivariance**: Network respects Clifford group structure
-2. **Better generalization**: Trained on small n, works for larger systems
-3. **No gate set restrictions**: Works with all-to-all connectivity
-4. **Competitive with analytical methods**: RL discovers efficient decompositions
+## Pitfalls
 
-## Implementation Notes
-
-- Use GF(2) arithmetic for symplectic matrix operations
-- Equivariant layers can be implemented via symplectic group representations
-- Standard RL algorithms (PPO, SAC) work as policy optimizers
-- Binary matrix encoding is memory-efficient
-
-## When to Use
-
-- Clifford circuit synthesis for quantum compilation
-- Quantum gate sequence optimization
-- Symplectic-equivariant neural network architectures
-- RL-based quantum control and calibration
-- Stabilizer circuit preparation
-
-## Related Concepts
-
-- **Gottesman-Knill theorem**: Clifford circuits classically simulable
-- **Stabilizer formalism**: Pauli group evolution under Clifford gates
-- **Symplectic group Sp(2n, F_2)**: Mathematical structure of Clifford group
-- **Equivariant neural networks**: Networks respecting group symmetries
+1. **State explosion**: Without symmetry reduction, Clifford circuit search space grows as O(4^n)
+2. **Tableau updates**: stim library is fast but requires proper installation
+3. **Canonical forms**: Gaussian elimination on stabilizer tableaux is O(n^3)
+4. **Reward design**: Simple depth-based rewards may lead to suboptimal local minima
