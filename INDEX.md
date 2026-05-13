@@ -1,3 +1,29 @@
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Tolerating Device Failure in Distributed Quantum Computing
+- [[distributed-quantum-fault-tolerance]] - 设计容错分布式量子计算系统，支持热替换节点和分布式QEC (arXiv: 2605.11088)
+  - 分布式QEC使系统可靠性超过单个组件
+  - Toric code在<0.05%物理错误率下优于单体架构
+  - **Activation**: distributed quantum computing, quantum fault tolerance, toric code, Floquet code
+
+### Breaking the scalability barrier via a vertical tunable coupler in 3D integrated transmon system
+- [[3d-integrated-quantum-processor]] - 3D集成超导量子处理器设计，垂直可调耦合器实现芯片间纠缠 (arXiv: 2605.11488)
+  - 3层芯片堆叠（顶部Qubit+载流芯片+底部Qubit）
+  - 单量子门保真度99.87%，CZ门97.5%
+  - **Activation**: 3D quantum processor, vertical coupler, flip-chip qubit, interchip coupling
+
+### Strain-controlled crossover between Majorana and Andreev bound states
+- [[strain-controlled-topological-quantum]] - 应变工程控制拓扑量子态，psABS到MBS的转换 (arXiv: 2605.11066)
+  - 空间非均匀应变调控拓扑相边界
+  - BdG模拟框架+位置依赖拓扑质量分析
+  - **Activation**: strain-controlled quantum, Majorana bound states, topological quantum computing
+
+### Unification of Signal Transform Theory
+- [[signal-transform-unification]] - 基于群表示论统一所有信号变换，DAD-CAD匹配群发现算法 (arXiv: 2605.11589)
+  - 每个变换是特定群不变协方差的特征基
+  - Peter-Weyl定理构建不可约矩阵元
+  - **Activation**: signal transform theory, matched group discovery, Algebraic Diversity
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
 ### Multi-Timescale Conductance Spiking Networks: A Sparse, Gradient-Trainable Framework with Rich Firing Dynamics
