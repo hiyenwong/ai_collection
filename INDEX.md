@@ -1,5 +1,12 @@
 ## 2026-05-13 - 医学 + 量子力学 (Cron Job - 周三医学主题)
 
+### Quantum Entanglement Degree as Novel PET Biomarkers for Hypoxia
+- [[quantum-pet-biomarkers]] - Novel quantum sensing method using positronium photon entanglement degree, lifetime, and annihilation ratios to non-invasively assess tissue oxygen concentration (arXiv: 2605.00021)
+  - Two approaches: (1) dual-parameter τ_oPs + R_oPs-3γ/2γ measurement, (2) entanglement degree sensitivity to pick-off vs self-annihilation
+  - Derived formula linking pO₂ to quantum entanglement metrics
+  - Quantitative C_QE predictions across tissue types (adipose: 0.890, water: 0.867)
+  - **Activation**: quantum PET biomarkers, positronium hypoxia sensing, quantum entanglement PET, positronium lifetime oxygen, pick-off conversion annihilation
+
 ### Quantum Circuit Simulation of Compartmental Drug Dynamics: Leveraging Variational Algorithms for Nonlinear Mixed-Effects Population Pharmacokinetics
 - [[quantum-pkpd-simulation]] - Reformulates compartmental PK/PD models as open quantum systems using PennyLane quantum circuits for population pharmacokinetics parameter estimation (arXiv: 2605.09691)
   - Classical ODE-based PK/PD models encoded as quantum circuit evolution
