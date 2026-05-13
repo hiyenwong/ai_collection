@@ -1,5 +1,21 @@
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
+### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
+- [[eeg-preprocessing-reliability]] - Quantifies how preprocessing choices cause up to 42% prediction flips in EEG decoding, introduces CFR/PU diagnostics and NA-PGI mitigation (arXiv: 2605.07212)
+  - Seven binary interventions (reference, HPF, LPF, baseline, ASR, autoreject, bad-channel) form 128-pipeline Boolean lattice
+  - Walsh-Hadamard decomposition shows near-additivity; greedy step-tuning achieves within 2.5% of oracle on all 6 datasets
+  - Preprocessing Uncertainty (PU) captures instability orthogonal to softmax entropy and MC Dropout
+  - **Activation**: EEG preprocessing reliability, CFR counterfactual flip rate, preprocessing uncertainty PU, NA-PGI regularization, EEG pipeline stability, EEG decoding robustness, BCI reliability
+
+### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
+- [[decoding-encoding-alignment-critique]] - Shows RSA/CKA/Procrustes can be saturated by 5% of neurons and are blind to internal functional organization topology (arXiv: 2605.05907)
+  - Encoding manifold (neuron-centric) complements decoding manifold (stimulus-centric) for complete population characterization
+  - Gromov-Wasserstein distance as intrinsic measure of encoding manifold coverage between populations
+  - Causal MNIST evidence: identical decoding scores with causally manipulated encoding topology (discrete vs continuous)
+  - **Activation**: decoding alignment critique, encoding manifold, RSA limitations, CKA blindness, neural population topology, Gromov-Wasserstein neural alignment, brain-model comparison
+
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
 ### Cortico-cerebellar modularity as an architectural inductive bias for efficient temporal learning
 - [[cortico-cerebellar-modularity-rnn]] - RNN augmented with cerebellar-inspired feedforward module achieves faster learning via fixed cortical reservoir + adaptive cerebellar readout (arXiv: 2605.10356)
   - Heterogeneous modularity: cortical RNN acts as fixed reservoir, cerebellar module drives learning

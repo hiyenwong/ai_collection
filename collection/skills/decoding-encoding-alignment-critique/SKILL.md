@@ -1,153 +1,127 @@
 ---
 name: decoding-encoding-alignment-critique
 description: >
-  Critical analysis framework for brain-model alignment methods (RSA, encoding, decoding).
-  Exposes that decoding alignment does NOT imply computational similarity — high RSA/DSA
-  scores can arise from small non-representative neuron subpopulations. Introduces encoding
-  manifolds as complementary analysis tool. Covers representational collapse, feature
-  confounding, stimulus-set dependency, and subpopulation dominance.
-  Use when: (1) evaluating brain-model alignment methodologies, (2) designing RSA studies,
-  (3) interpreting encoding/decoding results, (4) selecting appropriate alignment metrics,
-  (5) reviewing neuroscience-AI alignment papers, (6) avoiding alignment pitfalls.
-  Trigger words: RSA critique, encoding model limitations, representational similarity pitfalls,
-  brain-model alignment, representational collapse, feature confounding, alignment validity,
-  stimulus-set dependency, cross-decoding, transformation alignment, encoding manifold,
-  subpopulation dominance, neural system comparison.
+  Critical analysis framework for brain-model alignment methods demonstrating
+  that decoding-based similarity metrics (RSA, CKA, Procrustes) are insensitive
+  to internal functional organization. Based on arXiv:2605.05907 (Bertram et al.,
+  2026). Use when: (1) evaluating representational similarity analysis validity,
+  (2) comparing neural systems across species or models, (3) designing encoding
+  manifold analyses, (4) applying Gromov-Wasserstein distance for neural
+  population comparison, (5) questioning whether high RSA/CKA implies functional
+  similarity, (6) analyzing neural population topology. Activation: decoding
+  alignment, encoding manifold, RSA critique, CKA limitations, representational
+  similarity analysis, neural manifold, Gromov-Wasserstein neural alignment,
+  brain-model comparison, neural population topology, 解码对齐, 编码流形,
+  表征相似性分析批判.
 ---
 
-# Decoding-Encoding-Alignment Critique
+# Decoding-Alignment Critique
 
-Critical framework for evaluating and interpreting brain-model alignment methods.
+Based on: *"Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience"* (Bertram et al., arXiv:2605.05907, May 2026).
 
-## Core Thesis
+## Core Argument
 
-Standard alignment metrics (RSA, encoding models, linear decoding) have systematic blind spots
-that can produce misleading conclusions about brain-AI similarity. **Decoding alignment does NOT
-imply computational similarity.**
+Decoding-based similarity metrics (RSA, CKA, Procrustes, classification accuracy) can be **saturated by a small subset of neurons** and are **insensitive to internal functional organization**. Two systems can achieve identical alignment scores while having qualitatively different internal architectures.
 
-## Key Limitations Exposed
+## Key Insight: Two Manifolds
 
-### 1. Subpopulation Dominance (NEW - arXiv:2605.05907)
+### Decoding Manifold (stimulus-centric)
+- Points = stimuli, coordinates = population responses
+- Nearby points = stimuli evoking similar activity
+- What decoding metrics (RSA, CKA) measure
 
-**Problem**: High RSA/DSA alignment can arise from tiny, non-representative subpopulations of
-neurons. The representational geometry reflects a few neurons, not the whole population.
+### Encoding Manifold (neuron-centric)
+- Points = neurons, coordinates = stimulus-response profiles
+- Nearby points = neurons with similar tuning
+- Captures functional architecture independently of readout
 
-**Evidence**:
-- Similar decoding behavior and high alignment from small subpopulations while overall encoding
-  topology differs completely
-- Causal MNIST experiment: decoding metrics unchanged when encoding topology is manipulated
-  via training loss
-- Alignment metrics are blind to how function is distributed across neurons
+## Critical Findings
 
-**Detection**:
-```python
-def subpopulation_rsa(neural_responses_a, neural_responses_b, n_range=[5,10,20,50,100]):
-    """Test RSA stability across random subpopulations."""
-    import numpy as np
-    from scipy.spatial.distance import pdist, squareform
-    from scipy.stats import spearmanr
-    
-    results = {}
-    for n in n_range:
-        if n >= min(neural_responses_a.shape[0], neural_responses_b.shape[0]):
-            continue
-        rsa_scores = []
-        for _ in range(100):
-            idx_a = np.random.choice(neural_responses_a.shape[0], n, replace=False)
-            idx_b = np.random.choice(neural_responses_b.shape[0], n, replace=False)
-            rdm_a = squareform(pdist(neural_responses_a[idx_a], metric='correlation'))
-            rdm_b = squareform(pdist(neural_responses_b[idx_b], metric='correlation'))
-            rsa_scores.append(spearmanr(rdm_a.ravel(), rdm_b.ravel())[0])
-        results[n] = {'mean': np.mean(rsa_scores), 'std': np.std(rsa_scores)}
-    return results
+### 1. Decoding Metrics Saturate with Small Subpopulations
+
+Across mouse retina, V1, and VISp:
+- All 8 decoding metrics plateau at **5% of neurons** or below under best selection
+- RSA and CKA remain near ceiling even under random selection at moderate fractions
+- Same scalar summary can be produced by functionally heterogeneous populations
+
+### 2. Encoding Manifold Position Determines Decoding Fidelity
+
+- High-PC1 subpopulations recover full-population decoding profile
+- Low-PC1 subpopulations yield substantially lower scores
+- **BUT**: both occupy only a small, localized region of encoding manifold
+- Decoding metrics capture local vs. global encoding differences but miss the topology
+
+### 3. Causal Manipulation Evidence (MNIST Experiment)
+
+- Decoding metrics unchanged when encoding topology is causally manipulated via training loss
+- Discrete vs. continuous encoding manifolds produce identical RSA/CKA scores
+- Provides causal (not just correlational) evidence of decoding metric blindness
+
+### 4. Biological Validation
+
+- Retina: encoding manifold clusters by known retinal ganglion cell types
+- V1: no known functional groups, shows continuous encoding topology
+- Allen Brain Observatory (5 cortical areas): decoding metrics saturate, encoding reveals structural differences
+
+## Methodology
+
+### Encoding Manifold Construction (3 stages)
+
+1. **Nonnegative Tensor Factorization (NTF)**
+   - Decompose response tensor (neurons x stimuli x trials x time)
+   - Yields neural factors embedding each neuron in stimulus-response space
+   - Only hyperparameter: number of factors
+
+2. **Iterated Adaptive Neighborhoods (IAN)**
+   - Build weighted data graph over neural encoding space
+   - Locally adaptive similarity kernel (no fixed neighborhood size)
+
+3. **Diffusion Maps**
+   - Low-dimensional embedding preserving intrinsic geometry
+   - Produces the encoding manifold in diffusion coordinates
+
+### Gromov-Wasserstein (GW) Distance
+
+Applied as intrinsic measure of encoding manifold coverage:
+- Finds optimal transport between two metric spaces (no point correspondence needed)
+- Two manifolds with same shape = zero distance
+- Structurally incompatible = high distance
+- Normalized GW similarity = 1 - GW/max_baseline
+
+```
+GW(E_sub, E_full) = min_T sum_{ij} T_ij * |d_E_sub(i,j) - d_E_full(i,j)|^2
+GW_similarity = 1 - GW / GW_baseline
 ```
 
-### 2. Encoding-Decoding Decoupling (NEW - arXiv:2605.05907)
+### Eight Complementary Metrics
 
-**Problem**: Alignment metrics capture WHAT is represented (decoding) but not HOW it's
-implemented (encoding). Two systems can have identical decoding but completely different
-encoding structures.
+**Static**: k-NN accuracy, RSA, CKA, Procrustes R²
+**Trajectory**: time-resolved RSA, Speed Profile Correlation, Trajectory Procrustes R², Dynamical Similarity Analysis (DSA)
 
-**Solution - Dual Manifold Analysis**:
-| Aspect | Decoding Manifold | Encoding Manifold |
-|--------|-------------------|-------------------|
-| What it measures | Stimulus distinguishability from neural activity | How neurons are organized across responses |
-| Unit of analysis | Stimulus space geometry | Neural population space geometry |
-| Answers | "What information is represented?" | "How is it implemented across neurons?" |
-| Sensitivity | Insensitive to which neurons contribute | Captures global neuronal organization |
+## Practical Implications
 
-```python
-# Encoding RDM: pairwise similarity of neuron tuning curves
-def compute_encoding_rdm(neural_responses):
-    """Rows are neurons; captures neuron-neuron similarity structure."""
-    from scipy.spatial.distance import pdist, squareform
-    return squareform(pdist(neural_responses.T, metric='correlation'))
-```
+1. **Model validation is incomplete**: A model declared "brain-aligned" by RSA/CKA may have structurally distinct internal organization
+2. **Neuroscience comparisons need both manifolds**: Always complement decoding analysis with encoding manifold analysis
+3. **GW for population comparison**: Use Gromov-Wasserstein distance as complementary diagnostic
+4. **Subpopulation analysis matters**: Test whether results hold across subpopulations, not just full population
 
-### 3. Representational Collapse
+## When to Apply
 
-**Problem**: RSA can report high similarity when both representations are degenerate/collapsed.
-Two uninformative representations can have high RSM correlation.
+- Validating brain-model alignment claims (RSA/CKA alone is insufficient)
+- Comparing neural populations across brain regions, species, or models
+- Designing experiments to characterize neural population functional architecture
+- Questioning whether high representational similarity implies functional similarity
+- Building interpretable neural decoding systems
 
-**Detection**: Check representational dimensionality (participation ratio, intrinsic dimension).
-Compare against low-dimensional baselines.
+## Code Reference
 
-### 4. Feature Confounding
+Neural Manifold Explorer tool provided in paper.
+NTF: https://github.com/ahwillia/tensorly
+IAN: iterative adaptive neighborhoods algorithm
+Diffusion maps: https://diffusion-maps.readthedocs.io/
 
-**Problem**: Encoding models can achieve high performance by capturing low-level confounds
-(pixel statistics, image size, contrast) rather than semantic representations.
+## Related
 
-**Detection**: Control for low-level features; cross-validate across stimulus sets.
-
-### 5. Stimulus-Set Dependency
-
-**Problem**: Alignment scores vary dramatically with stimulus selection.
-
-**Detection**: Test on multiple diverse stimulus sets; report cross-stimulus generalization.
-
-### 6. Linear Probing Artifacts
-
-**Problem**: High linear decoding accuracy only proves information is linearly extractable,
-not that the model uses the same representations as the brain.
-
-## Recommended Evaluation Protocol
-
-1. **Dual-manifold analysis**: Always pair decoding (RSA/DSA) with encoding analysis
-2. **Subpopulation sensitivity**: Test alignment stability across neuron subsamples
-3. **Dimensionality matching**: Compare representations at matched dimensionalities
-4. **Cross-stimulus validation**: Test generalization across stimulus distributions
-5. **Null model comparison**: Include trivial baselines
-6. **Transformation analysis**: Test if representations transform similarly, not just match statically
-
-## Common Pitfalls in Alignment Studies
-
-| Pitfall | Symptom | Fix |
-|---------|---------|-----|
-| Subpopulation dominance | High RSA driven by few neurons | Subpopulation stability analysis |
-| Encoding blindness | Identical decoding, different implementation | Encoding manifold analysis |
-| RSA inflation | High RSM correlation with degenerate RSMs | Check RSM condition number |
-| Encoding overfitting | High R² but poor generalization | Cross-validate across stimulus sets |
-| Decoding ceiling | Near-perfect decoding from both | Use matched-capacity probes |
-| Category confound | Alignment driven by coarse categories | Control for category structure |
-
-## When to Use
-
-- Evaluating brain-DNN alignment beyond RSA
-- Comparing neural coding across brain regions
-- Understanding how information is distributed in populations
-- Critiquing representational similarity studies
-- Designing comprehensive neural system comparisons
-
-## arXiv References
-
-### Primary: Subpopulation Dominance in RSA
-- Paper: "Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience"
-- Authors: Bertram, J., Dyballa, L., Keller, T.A., Kinger, S., & Zucker, S.W. (2026)
-- ID: arXiv:2605.05907v1 | Category: q-bio.NC | Date: 2026-05-07
-- Key finding: RSA alignment can be driven by tiny subpopulations; encoding topology must be analyzed complementarily
-
-### Secondary: Transformation Alignment
-- Paper: "Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?"
-- Author: Yukiyasu Kamitani (2026)
-- ID: arXiv:2605.06420v1 | Category: q-bio.NC
-- Proposes category-theoretic approach: do brain and model preserve the same candidate transformations?
+- brain-dnn-transformation-alignment: category-theoretic alignment framework
+- naturality-violation-score: brain-DNN alignment methodology
+- neural-manifold-learning-dynamics: neural manifold analysis methods
