@@ -1,3 +1,19 @@
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### CERTIFY-ED: A Multi-Layer Verification Framework for Exact Diagonalization
+- [[certify-ed-verification]] - 13层纵深防御验证框架，多源共识校验、防篡改证书、错误注入自测试 (arXiv: 2605.11787)
+  - 核心要点: 13个独立验证层覆盖代数/算法/数值/物理四个维度，每层捕获不同失效模式
+  - 核心要点: SHA-256哈希证书确保计算结果可追溯且防篡改，支持机器可验证的下游验证
+  - 核心要点: 错误注入自测试（6类已知错误全部检出）确保验证流水线自身可靠性
+  - **Activation**: multi-layer verification, defense in depth, multi-oracle consensus, tamper-evident certificates, error injection self-testing
+
+### QAP-Router: Tackling Qubit Routing as Dynamic Quadratic Assignment with Reinforcement Learning
+- [[qap-router-qubit-routing]] - 将量子比特路由建模为动态二次分配问题(QAP)，结构感知Transformer+PPO训练 (arXiv: 2605.12365)
+  - 核心要点: 逻辑交互=流矩阵F，硬件拓扑=距离矩阵D，目标是最小化Tr(F·X·D·X^T)
+  - 核心要点: 结构感知注意力机制将问题耦合(流×距离)直接编码到注意力分数中
+  - 核心要点: 前向→后向→前向三路精炼，在MQTBench上降低15.7% CNOT门
+  - **Activation**: qubit routing, quadratic assignment problem, quantum compilation, SWAP optimization, structure-aware Transformer
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
 ### Fast Automatic Artifact Rejection (FAAR) for EEG MI-BCIs
