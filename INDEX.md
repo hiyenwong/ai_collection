@@ -1,3 +1,28 @@
+## 2026-05-13 - 医学 + 量子力学 (Cron Job - 周三医学主题)
+
+### Improving search efficiency via adaptive acquisition function selection in discrete black-box optimization
+- [[adaptive-acquisition-bbo]] - Hybrid BOCS + Gaussian Process method with adaptive LCB selection for discrete BBO; detects stagnation and dynamically balances exploitation-exploration, outperforming random-point addition on QUBO and HUBO benchmarks (arXiv: 2605.10856)
+  - BOCS as primary parametric surrogate + GP-LCB activated only on stagnation detection
+  - Adaptive β selection dynamically controls exploitation-exploration balance based on optimization progress
+  - Hamming-neighborhood-aware point selection, not just low-energy near-promising points
+  - Sparse surrogate capacity critical for quantum annealing applications
+  - **Activation**: adaptive acquisition, BOCS stagnation fix, discrete Bayesian optimization, QUBO optimization, HUBO optimization, black-box optimization, quantum-inspired search, combinatorial optimization
+
+### A passive self-correcting quantum memory in three dimensions
+- [[self-correcting-quantum-memory-3d]] - 3D Pauli stabilizer Hamiltonian encoding a qubit for exponential time at non-zero temperature via recursive transformations (arXiv: 2605.04951)
+  - Recursive Hamiltonian transformations increase memory lifetime at each level
+  - Passive protection without active error correction — thermal dynamics preserve state
+  - Exponential lifetime scaling with system size at finite temperature
+  - **Activation**: self-correcting quantum memory, 3D stabilizer Hamiltonian, passive quantum error correction, thermal quantum memory, Pauli stabilizer code
+
+### Medical Imaging Classification with Cold-Atom Reservoir Computing using Auto-Encoders and Surrogate-Driven Training
+- [[cold-atom-medical-imaging]] - Hybrid quantum-classical pipeline with neutral-atom reservoir computing for medical image classification (polyp detection) using guided auto-encoder for dimensionality reduction (arXiv: 2605)
+  - Guided auto-encoder compresses medical images while preserving clinically relevant features
+  - Cold neutral-atom reservoir provides rich nonlinear dynamics for classification
+  - Surrogate-driven training avoids repeated expensive quantum experiments
+  - NISQ-compatible — works with noisy physical reservoirs
+  - **Activation**: cold-atom reservoir computing, neutral-atom medical imaging, quantum reservoir medical classification, auto-encoder reservoir, surrogate-driven training, quantum-classical medical pipeline
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
