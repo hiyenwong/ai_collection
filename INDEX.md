@@ -1,3 +1,13 @@
+## 2026-05-13 - 医学 + 量子力学 (Cron Job - 周三医学主题)
+
+### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
+- [[hybrid-quantum-medical-imaging]] - Integrates quantum variational circuits with classical CNN backbones for thermographic breast cancer classification, leveraging quantum advantage in complex thermal pattern discrimination (arXiv: 2604.16953)
+  - Hybrid architecture: Classical CNN encoder → Quantum variational layer → Classical classifier
+  - Amplitude encoding of CNN features into quantum states for enhanced discrimination
+  - Quanvolutional filters as alternatives to convolutional layers for medical image patches
+  - Joint classical-quantum optimization using parameter-shift rule for gradient computation
+  - **Activation**: hybrid quantum neural network, quantum medical imaging, thermographic cancer detection, quanvolutional network, quantum healthcare AI, breast cancer quantum classification
+
 ## 2026-05-14 - 医学 + 量子力学 (Cron Job - 周三医学主题)
 
 ### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
