@@ -48,6 +48,24 @@
   - Improved learning efficiency and temporal precision across tasks
   - **Activation**: cortico-cerebellar RNN, cerebellar neural architecture, temporal sequence learning, brain-inspired RNN, modular neural architecture
 
+## 2026-05-13 - Neuroscience Research (Cron Job - Batch 3)
+
+### Multi-Timescale Conductance Spiking Networks: A Sparse, Gradient-Trainable Framework with Rich Firing Dynamics for Enhanced Temporal Processing
+- [[multi-timescale-conductance-snn]] - SNN framework using fast/slow/ultra-slow conductances to shape I-V curve, enabling direct BPTT (no surrogate gradients) with rich firing regimes and high sparsity (arXiv: 2605.11835)
+  - Multi-timescale conductance parametrization replaces phenomenological LIF dynamics
+  - Direct backpropagation through time without surrogate gradient approximation
+  - Single model exhibits tonic, phasic, and bursting firing regimes
+  - Outperforms LIF and AdLIF on Mackey-Glass regression with substantially sparser activity
+  - **Activation**: multi-timescale spiking, conductance SNN, gradient-trainable SNN, I-V curve shaping, temporal processing SNN, direct BPTT SNN
+
+### Probabilistic Prediction of Neural Dynamics via Autoregressive Flow Matching
+- [[autoregressive-flow-matching-neural-dynamics]] - Generative forecasting framework using autoregressive flow matching for probabilistic neural dynamics prediction from multimodal sensory input and past neural history (arXiv: 2604.11178)
+  - Flow matching learns conditional distribution of future neural states given past dynamics
+  - Autoregressive factorization captures temporal dependencies between predictions
+  - Past neural history is the dominant predictor — more than sensory input alone
+  - Significantly outperforms GLM and non-autoregressive baselines on fMRI data
+  - **Activation**: neural dynamics prediction, autoregressive flow matching, fMRI forecasting, probabilistic neural prediction, closed-loop neurotechnology, transport-based generative modeling
+
      1|## 2026-05-13 - Quantum Metrology Research (Cron Job)
      2|
      3|### Optimal FALQON for Quantum Approximate Optimization via Layer-wise Parameter Tuning
