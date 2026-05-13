@@ -1,3 +1,24 @@
+## 2026-05-14 - Neuroscience Research (Cron Job - Evening)
+
+### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
+- [[neural-code-language-characterization]] - Closed-loop framework using natural language to characterize neural selectivity via digital twins and in silico hypothesis verification across macaque V1 and V4 (arXiv: 2605.12485)
+  - Translates high/low-activating images into dense captions → semantic hypotheses → synthesized images → in silico verification
+  - V4: activating hypotheses drove 96.1% of neurons above 95th percentile, suppressing below 5th percentile
+  - RSA shows partial alignment between neural activity, vision embeddings, and language embeddings
+  - Linguistic compression is lossy but semantically faithful — lost info recovered when rendered back to images
+  - **Activation**: neural code language, automated neuron characterization, digital twin in silico, semantic hypothesis, V1 V4 selectivity
+
+### Empirical Scaling Laws in Balanced Networks with Conductance-Based Synapses
+- [[balanced-network-scaling-conductance]] - Empirical scaling laws for balanced networks with conductance-based synapses (arXiv: 2605.12404)
+  - Scaling analysis of balanced neural networks with conductance-based synapses
+  - **Activation**: balanced network scaling, conductance synapses, neural network scaling laws
+
+### Interpretable EEG Microstate Discovery via Variational Deep Embedding
+- [[eeg-microstate-variational-embedding]] - Systematic architecture search with multi-quadrant evaluation for interpretable EEG microstate discovery via variational deep embedding (arXiv: 2605.10947)
+  - Variational deep embedding for interpretable EEG microstate discovery
+  - Systematic architecture search with multi-quadrant evaluation
+  - **Activation**: EEG microstate, variational embedding, interpretable EEG
+
 ## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Lower Overhead Fault-Tolerant Building Blocks for Noisy Quantum Computers
