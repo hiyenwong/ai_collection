@@ -1,3 +1,12 @@
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Fast Automatic Artifact Rejection (FAAR) for EEG MI-BCIs
+- [[eeg-faar-artifact-rejection]] - 轻量级自动化EEG伪影拒绝方法，通过信号质量指数自适应阈值减少BCI不可用性 (arXiv: 2605.12408)
+  - 核心要点: 计算epoch级信号质量指数(SQI)，自适应选择拒绝阈值，无需手动调参
+  - 核心要点: 在低信噪比条件下效果最显著，有效减少被试间变异性
+  - **Activation**: FAAR artifact rejection, EEG cleaning, motor imagery BCI, signal quality index
+
+
 ## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Tolerating Device Failure in Distributed Quantum Computing
