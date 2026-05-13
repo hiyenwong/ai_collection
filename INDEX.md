@@ -1,3 +1,34 @@
+## 2026-05-13 - Medicine + Quantum Computing (Cron Job)
+
+Today's topic: Medicine (Wednesday) + daily quantum mechanics. KG analysis of 767 entities, 218k+ relationships. PageRank and Louvain community detection performed. 3 new skills created.
+
+### Hydration Monitoring with Hybrid Classical Quantum Predictive Modeling
+- [[hybrid-quantum-classical-medical]] - Combines classical ML with variational quantum circuits (VQC) and Quantum Sequential Models for physiological monitoring using urinary biomarker data (arXiv: 2604.15381)
+  - Modular QSM architecture for flexible hybrid quantum-classical predictive pipelines
+  - Symmetry-constrained quantum regressors reduce parameter space and improve convergence
+  - Evaluated on Predict Health Toilet (PHT) system data for hydration status prediction
+  - **Activation**: hybrid quantum medical, quantum sequential model, QSM, variational quantum medical, quantum biomarker, quantum health monitoring, quantum physiological prediction
+
+### Continuous-Variable QNN for Biomedical Imaging
+- [[cv-quantum-medical-imaging]] - CV-QCNN using Gaussian gates (displacement, squeezing, rotation, beamsplitters) for medical image classification on MedMNIST benchmarks (arXiv: 2511.02051)
+  - Infinite-dimensional Hilbert spaces offer richer representation than discrete-variable systems
+  - Photonic implementation naturally fits optical medical imaging systems
+  - Built-in Gaussian noise resilience for common imaging noise
+  - **Activation**: CV quantum neural network, continuous variable quantum, photonic quantum medical, quantum biomedical imaging, MedMNIST quantum, Gaussian gate quantum, CV-QCNN
+
+### Distributed Hybrid QCNN with Quantum Circuit Splitting
+- [[distributed-quantum-cnn-medical]] - Splits N-qubit QCNN into M smaller sub-circuits for medical image classification under resource constraints (arXiv: 2501.06225)
+  - 8-qubit QCNN reconstructable with only 5 qubits via circuit splitting
+  - Distributed training enables parallel sub-circuit execution
+  - Superior performance with fewer parameters compared to recent technologies
+  - **Activation**: distributed quantum CNN, quantum circuit splitting, split QCNN, resource-constrained quantum medical, quantum medical image classification
+
+### Knowledge Graph Analysis
+- **Entities**: 767 | **Relationships**: 218,007 | **Vectors**: 733
+- **PageRank Top**: Hydration Monitoring (0.0117), Heat-Related Illness Prediction (0.0109), Space-Time Tradeoffs qLDPC (0.0108), Battery Health Quantum (0.0106), After-discharge Mortality (0.0101)
+- **Louvain Communities**: 392 QM nodes, largest community (192 nodes) covers quantum brain/neural architectures
+- **Most Connected**: Towards CV-QNN for Biomedical Imaging (2,062 rels), Hydration Monitoring (1,861), Battery Health Quantum (1,847)
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Same Brain, Different Prediction: How Preprocessing Choices Undermine EEG Decoding Reliability
