@@ -1,3 +1,17 @@
+## 2026-05-13 - Neuroscience Research (Cron Job)
+
+### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
+- [[neural-code-language-characterization]] - Closed-loop framework using natural language to characterize neuron selectivity via digital twins (arXiv: 2605.12485)
+    - V4: 96.1% neurons driven above 95th percentile by activating hypotheses; 97.6% below 5th by suppressing
+    - Vision embeddings most aligned with neural activity; linguistic compression lossy but recoverable
+  - **Activation**: neural characterization, digital twins, natural language, V1/V4, automated neuroscience
+
+### What Do EEG Foundation Models Capture from Human Brain Signals?
+- [[neural-encoding-evaluation-ground-truth]] - Systematic audit of EEG foundation models via probing, LEACE erasure, and transparent classifiers (arXiv: 2605.11410)
+    - 68.6% features representation-causal; 50 universal features across 3 architectures
+    - Confirmed features recover 79.3% of model advantage; task gradient MDD(99%) to Stress(56%)
+  - **Activation**: EEG interpretability, foundation model audit, LEACE, ridge probing, clinical EEG
+
 
 
 ## 2026-05-13 - Neuroscience Research (Cron Job)
