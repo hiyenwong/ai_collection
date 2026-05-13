@@ -1,104 +1,109 @@
 ---
 name: hybrid-quantum-medical-imaging
-description: >
-  Hybrid Quantum-Classical Neural Network methodology for medical image analysis,
-  specifically thermographic breast cancer classification. Combines quantum variational
-  circuits with classical CNN backbones to leverage quantum advantage in complex thermal
-  pattern discrimination. Use when building quantum-enhanced medical imaging classifiers,
-  HQNN architectures, thermographic cancer detection systems, or quantum-classical
-  feature fusion for healthcare AI. Activation: hybrid quantum neural network, quantum
-  medical imaging, thermographic cancer detection, HQNN breast cancer, quantum healthcare AI.
+description: "Hybrid quantum-classical neural network methodology for medical image classification, particularly thermographic breast cancer detection. Integrates quantum neural network layers with classical CNN backbones to enhance pattern recognition in complex medical imaging data. Use when: (1) hybrid quantum-classical architectures for medical diagnosis, (2) quantum-enhanced image classification in healthcare, (3) thermographic/thermal image analysis with quantum methods, (4) quanvolutional networks for medical applications, (5) quantum machine learning for healthcare AI."
 ---
 
 # Hybrid Quantum Medical Imaging
 
-## Architecture Pattern
+## Overview
 
-Combine quantum variational circuits with classical CNN backbones for medical image classification:
+Hybrid quantum-classical neural networks combine quantum circuit layers with classical deep learning architectures to leverage quantum computing advantages for medical image classification tasks. This approach shows promise in thermographic breast cancer detection and other medical imaging domains where classical methods struggle with complex thermal patterns.
+
+## Core Architecture
+
+### Hybrid QNN Structure
 
 ```
-Input Image -> Classical CNN Backbone -> Feature Vector
-                                           |
-                                    Quantum Encoding
-                                           |
-                               Variational Quantum Circuit
-                                           |
-                              Quantum Measurement -> Classification
+Input Image → Classical CNN Backbone → Feature Maps → 
+Quantum Variational Layer → Quantum Measurements → 
+Classical Classification Head → Diagnosis Output
 ```
 
-## Key Design Decisions
+### Key Components
 
-### Classical Backbone Selection
-- Use lightweight CNNs (ResNet18, EfficientNet-B0) for feature extraction
-- Freeze backbone layers during quantum circuit training
-- Extract mid-level features (before final FC layer) for quantum encoding
+1. **Classical Encoder**: Pre-trained CNN (ResNet, VGG, EfficientNet) extracts high-level features from medical images
 
-### Quantum Circuit Design
-- Use parameterized rotation gates (RY, RZ) for encoding
-- Implement entangling layers (CNOT, CZ) for quantum advantage
-- Keep circuit depth ≤ 4 for NISQ-era hardware compatibility
-- Use amplitude or angle encoding based on feature dimensionality
+2. **Quantum Variational Layer**: Parameterized quantum circuits (PQC) process encoded features using quantum advantage:
+   - Amplitude encoding of classical features into quantum states
+   - Variational quantum circuit with trainable rotation gates
+   - Entanglement layers for complex feature interactions
+   - Measurement in computational basis
 
-### Training Strategy
-- Two-phase training: freeze quantum while training classical, then joint fine-tuning
-- Use hybrid loss: classical cross-entropy + quantum measurement expectation
-- Apply gradient clipping to prevent quantum gradient explosion
-- Use parameter-shift rule for quantum gradient computation
+3. **Classical Classifier**: Dense layers on measured quantum outputs for final classification
 
-## Implementation Example
+## Implementation Patterns
 
+### Pattern 1: Quantum Feature Enhancement
 ```python
 import pennylane as qml
 from pennylane import numpy as pnp
-import torch
 
-def create_quantum_layer(n_qubits, n_layers):
-    dev = qml.device("default.qubit", wires=n_qubits)
-    
-    @qml.qnode(dev)
-    def circuit(inputs, weights):
-        # Encoding
-        for i in range(n_qubits):
-            qml.RY(inputs[i], wires=i)
-        
-        # Variational layers
-        for layer in range(n_layers):
-            for i in range(n_qubits):
-                qml.Rot(*weights[layer, i], wires=i)
-            for i in range(n_qubits - 1):
-                qml.CNOT(wires=[i, i+1])
-        
-        return [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]
-    
-    weight_shapes = {"weights": (n_layers, n_qubits, 3)}
-    return qml.qnn.TorchLayer(circuit, weight_shapes)
+# Define quantum circuit
+n_qubits = 4
+dev = qml.device("default.qubit", wires=n_qubits)
 
-# Integration with classical backbone
-class HQNNClassifier(torch.nn.Module):
-    def __init__(self, backbone, n_qubits=4, n_layers=3):
-        super().__init__()
-        self.backbone = backbone
-        self.feature_extractor = torch.nn.Sequential(*list(backbone.children())[:-1])
-        self.quantum_layer = create_quantum_layer(n_qubits, n_layers)
-        self.classifier = torch.nn.Linear(n_qubits, 2)
-    
-    def forward(self, x):
-        features = self.feature_extractor(x).squeeze()
-        quantum_output = self.quantum_layer(features[:n_qubits])
-        return self.classifier(quantum_output)
+@qml.qnode(dev)
+def quantum_layer(inputs, weights):
+    # Encode classical features
+    qml.AngleEmbedding(inputs, wires=range(n_qubits))
+    # Variational circuit
+    qml.BasicEntanglerLayers(weights, wires=range(n_qubits))
+    # Measure
+    return [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]
 ```
+
+### Pattern 2: Hybrid Training Loop
+- Initialize classical backbone with pre-trained weights
+- Randomly initialize quantum circuit parameters
+- Forward pass: image → CNN features → quantum encoding → quantum processing → measurement → classifier
+- Backpropagate through quantum layer using parameter-shift rule
+- Joint optimization of classical and quantum parameters
+
+### Pattern 3: Quanvolutional Layer
+Replace convolutional layers with quanvolutional filters:
+- Random quantum circuits applied to local image patches
+- Measurement outcomes form feature maps
+- Classical CNN processes quantum-generated features
+- Effective for small datasets and medical images
 
 ## Medical Imaging Applications
 
-- Thermographic breast cancer classification
-- X-ray pneumonia detection
-- MRI tumor segmentation
-- Histopathology image analysis
-- Dermatology lesion classification
+### Thermographic Breast Cancer Detection
+- Input: Infrared thermographic images (thermal patterns)
+- Challenge: Subtle temperature variations indicating malignancy
+- Quantum advantage: Enhanced feature discrimination in high-dimensional thermal space
+- Output: Binary classification (benign/malignant)
 
-## Pitfalls
+### Speech-Based Healthcare
+- Quanvolutional networks for voice pathology detection
+- Emotion recognition from speech patterns
+- Noise-robust quantum feature extraction
 
-- Quantum circuits add significant computational overhead; only use when classical approaches plateau
-- Shot noise in quantum measurements can destabilize training; use shot=1024 minimum
-- NISQ hardware limitations restrict practical qubit counts to ~20-50
-- Quantum advantage is dataset-dependent; benchmark against classical baselines first
+### Cardiorespiratory Analysis
+- Hybrid models for sound separation and clustering
+- Anomaly detection in healthcare monitoring
+- Generative models for data augmentation
+
+## Performance Considerations
+
+- **Qubit count**: Limited by current quantum hardware (typically 4-16 qubits for near-term devices)
+- **Classical bottleneck**: Most computation still classical; quantum layer processes compressed features
+- **Noise sensitivity**: Current NISQ devices require error mitigation techniques
+- **Training time**: Quantum circuit evaluation adds computational overhead
+
+## Error Handling
+
+### Quantum Circuit Errors
+- Use noise models for realistic simulation
+- Implement error mitigation (zero-noise extrapolation, readout error correction)
+- Consider classical simulation fallback for large circuits
+
+### Data Encoding Issues
+- Ensure feature vectors match qubit count (padding/truncation)
+- Use amplitude encoding for high-dimensional features
+- Validate encoding preserves critical information
+
+## Resources
+- arXiv:2604.16953 - Hybrid Quantum Neural Networks for Breast Cancer Thermographic Classification
+- PennyLane: https://pennylane.ai/
+- Qiskit: https://qiskit.org/
