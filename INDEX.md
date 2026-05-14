@@ -1,3 +1,18 @@
+
+## 2026-05-14 - Systems Engineering Research (Cron Job)
+
+### SHIA: A Direct SysML–Hardware Interface Architecture for Model-Centric Verification
+- [[shia-sysml-hardware-interface]] - 将可执行SysML模型直接接入硬件验证回路，消除中间转换链，实现模型驱动的验证与更短的数字线程 (arXiv: 2605.11248)
+  - 核心要点 1: SysML模型可作为硬件验证的执行层，而非静态描述
+  - 核心要点 2: 双向服务器架构（SysML侧C++服务器 + 硬件侧Raspberry Pi）实现零差异模型-硬件对比
+  - **Activation**: SHIA, SysML, MBSE, hardware-in-the-loop, model-centric verification, digital thread
+
+### Skill Drift Is Contract Violation: Proactive Maintenance for LLM Agent Skill Libraries
+- [[skill-drift-contract-violation]] - 将技能漂移建模为契约违反，从技能文档中提取可执行环境契约，精准检测API/依赖变更，零误报率 (arXiv: 2605.10990)
+  - 核心要点 1: 区分角色承载假设（契约）与噪声文本，避免粗粒度变更监控的40%误报
+  - 核心要点 2: 契约违反使修复可操作化，一轮修复成功率从10%提升至78%
+  - **Activation**: skill drift, contract violation, agent skill maintenance, skill library decay, drift detection
+
 ## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### CERTIFY-ED: A Multi-Layer Verification Framework for Exact Diagonalization
