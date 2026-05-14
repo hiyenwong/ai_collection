@@ -21,7 +21,22 @@
   - Quantum lattice entropy H_Q(Λ) for NTRU optimization
   - **Activation**: post-quantum cryptography security, SPHINCS+ parameter optimization, NIST PQC evaluation
 
-     1|## 2026-05-15 - Neuroscience Research (Cron Job)
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neuron]] - Spiking neuron factorizing temporal computation into Frequency Selectivity (FS) and Temporal Shaping (TS) modules, providing interpretable neuron-level frequency and timing summaries (arXiv: 2605.13071)
+  - FS parameterizes each neuron's target frequency as maximizer of subthreshold magnitude response
+  - TS reshapes when frequency components contribute via group-delay modulation
+  - Outperforms LIF in feedforward SNNs without recurrence or delays on auditory benchmarks (SHD, SSC, GSC)
+  - **Activation**: FiTS, interpretable spiking neuron, frequency selectivity SNN, temporal shaping, group-delay modulation, auditory SNN, SHD SSC
+
+### Multi-Timescale Conductance Spiking Networks
+- [[multi-timescale-conductance-snn]] - Gradient-trainable SNN framework where neural dynamics emerge from shaping I-V curve via fast/slow/ultra-slow conductances, supporting tonic/phasic/bursting regimes without surrogate gradients (arXiv: 2605.11835)
+  - Direct BPTT without surrogate-gradient approximations
+  - Single model exhibits tonic, phasic, and bursting firing regimes
+  - Outperforms LIF and AdLIF on Mackey-Glass regression with substantially sparser activity
+  - **Activation**: MTCSN, multi-timescale conductance SNN, conductance-based spiking, surrogate-gradient-free, Mackey-Glass SNN, tonic phasic bursting
+
 ## 2026-05-15 - Deep Learning Research (Cron Job)
 
 ### Attention Once Is All You Need: Efficient Streaming Inference with Stateful Transformers
