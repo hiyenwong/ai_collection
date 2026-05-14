@@ -29,6 +29,14 @@
   - Future modality-agnostic designs need alternative structural biases
   - **Activation**: byte modeling efficiency, byte-level language model, masked diffusion model efficiency, context fragility
 
+### SD3MF: Supervised Deep Multimodal Matrix Factorization for Interpretable Brain Network Analysis
+- [[sd3mf-multimodal-brain-network]] - Interpretable framework that generalizes SNMTF to supervised prediction over populations of multimodal brain networks (arXiv: 2605.13312)
+  - Deep hierarchical factorizations with shared latent representation align subjects across modalities
+  - Adaptive weights enable data-driven multimodal fusion, handling missing modalities gracefully
+  - Community-level interaction matrices yield biologically interpretable and discriminative features
+  - Consistently outperforms CNN and GNN baselines on multimodal connectome datasets
+  - **Activation**: SD3MF, multimodal matrix factorization brain, interpretable connectome analysis, supervised graph prediction, community-level brain interaction, adaptive multimodal fusion connectome
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### Brain-DiT: A Universal Multi-state fMRI Foundation Model with Metadata-Conditioned Pretraining
