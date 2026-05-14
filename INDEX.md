@@ -28,6 +28,24 @@
 
 ### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
 - [[spatiotemporal-tdann]] - Spatiotemporal TDANN with MoCo self-supervision generates brain-like direction maps and pinwheel structures in MT area (arXiv: 2605.11718)
+
+### Multi-Timescale Conductance Spiking Networks
+- [[multi-timescale-conductance-snn]] - Gradient-trainable SNN framework using shaped I-V curves via fast, slow, ultra-slow conductances enabling rich firing regimes (tonic, phasic, bursting) with direct BPTT (arXiv: 2605.11835)
+  - Overcomes LIF/AdLIF limitations in regression tasks: higher accuracy + sparser activity (28% vs 38-45%)
+  - Systematic control over excitability regimes; analog circuit-friendly implementation
+  - **Activation**: multi-timescale conductance, gradient-trainable SNN, direct BPTT spiking, rich firing dynamics, MTCSN
+
+### Leveraging Non-Equilibrium ECRAM Dynamics for Short-Term Plasticity
+- [[ecram-short-term-plasticity-neuromorphic]] - Cross-layer device-circuit-system co-design transforming volatile ECRAM dynamics into computational resources for STP in neuromorphic circuits (arXiv: 2605.11243)
+  - Delay-feedback LIF + ECRAM synapses: 2 pJ/spike, native temporal filtering without additional circuitry
+  - Demonstrates synaptic facilitation and intrinsic excitability modulation at network level
+  - **Activation**: ECRAM short-term plasticity, neuromorphic temporal processing, device-circuit co-design, memristive synapses
+
+### Scaling Laws and Tradeoffs in Recurrent Networks of Expressive Neurons
+- [[scaling-laws-expressive-neurons-recurrent]] - Information-theoretic framework for optimal parameter allocation between neuron count (N), per-unit complexity (k_e), and connectivity (k_c) in recurrent networks (arXiv: 2605.12049)
+  - Expressive Leaky Memory (ELM) neurons enable independent tuning of complexity vs width vs connectivity
+  - Pareto-frontier scaling law: larger budgets favor more AND more complex neurons; closed-form model captures SNR saturation and redundancy
+  - **Activation**: scaling laws neural networks, expressive neurons, recurrent network tradeoffs, ELM neurons, parameter allocation
   - 3D ResNet + spatial loss unifies ventral and dorsal stream computational origins via optimization trade-off
   - Quantitative match to macaque MT: DSI, circular variance, pinwheel density all align with in vivo baselines
   - **Activation**: MT direction maps, dorsal stream modeling, spatiotemporal TDANN, cortical self-organization
