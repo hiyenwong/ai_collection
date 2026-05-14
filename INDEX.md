@@ -20,6 +20,12 @@
 
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[mamba-spike-forecasting-behavioral-decoding]] - Single Mamba forecaster trained on next-step spike counts simultaneously decodes behavior better than raw spikes on Steinmetz benchmark (arXiv: 2605.12999)
+  - Mouse choice 75.7% (2.3x chance), stimulus side 66.1% (2x chance) across 39 sessions, ~27K neurons
+  - Outperforms 500ms linear decoder by 4-6pp; 100-150 trial calibration reaches asymptote; fits 50ms bin budget
+  - **Activation**: Mamba neural decoding, spike forecasting behavioral, Neuropixels decoding, implicit behavioral readout
+
 ### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
 - [[neural-code-language-characterization]] - Closed-loop LLM framework translates neural activation patterns into semantic descriptions for V1/V4 neurons using digital twins (arXiv: 2605.12485)
   - V4 neurons: 96.1% activation above 95th percentile, 97.6% suppression below 5th percentile via semantic hypothesis testing
