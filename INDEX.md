@@ -1,7 +1,37 @@
      1|## 2026-05-15 - Neuroscience Research (Cron Job)
+## 2026-05-15 - Deep Learning Research (Cron Job)
+
+### Attention Once Is All You Need: Efficient Streaming Inference with Stateful Transformers
+- [[stateful-streaming-transformer-inference]] - Stateful session model with persistent KV cache enabling O(|q|) query latency and Flash Queries speculative prefetching for streaming workloads (arXiv: 2605.13784)
+  - Persistent KV cache advances incrementally, moving prefill off critical path
+  - Flash Queries reclaim idle GPU cycles to pre-evaluate and cache answers before user asks
+  - Multi-tenant continuous-batching with cell-budget admission and prefix-aware grouped prefill
+  - **Activation**: stateful inference, streaming LLM, KV cache persistent, flash queries, continuous batching
+
+### DisAgg: Distributed Aggregators for Efficient Secure Aggregation in Federated Learning
+- [[disaggregate-secure-aggregation-fl]] - Federated learning protocol using small aggregator committees for secret-sharing-based aggregation, eliminating homomorphic encryption overhead (arXiv: 2605.13708)
+  - Client committee performs aggregation instead of central server
+  - Eliminates local masking and expensive homomorphic encryption
+  - 4.6x speedup over OPA for 100k-dimensional vectors from 100k clients
+  - **Activation**: secure aggregation federated learning, DisAgg, secret sharing aggregation, federated learning privacy
+
+### Rethinking Efficient Graph Coarsening via a Non-Selfishness Principle
+- [[nope-non-selfish-graph-coarsening]] - NOPE graph coarsening using collective neighborhood interference instead of pairwise similarity, achieving near-linear complexity (arXiv: 2605.13021)
+  - Non-selfishness principle prioritizes collective neighborhood over individual node matching
+  - NOPE* reduces O(δ·d) to O(d) evaluation via local isotropy assumption
+  - 1-3 orders of magnitude acceleration, can outperform LLM-based graph reasoning
+  - **Activation**: graph coarsening, non-selfishness graph, NOPE graph, graph dimensionality reduction
+
+### The Efficiency Gap in Byte Modeling
+- [[byte-modeling-efficiency-gap]] - Compute-matched scaling study revealing byte modeling penalty is worse for MDM than AR due to context fragility (arXiv: 2605.12928)
+  - AR's stable causal history allows natural subword pattern rediscovery; MDM destroys local contiguity
+  - Performance penalty is not uniform across scales — gap widens for MDM
+  - Future modality-agnostic designs need alternative structural biases
+  - **Activation**: byte modeling efficiency, byte-level language model, masked diffusion model efficiency, context fragility
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
-### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
+### Brain-DiT: A Universal Multi-state fMRI Foundation Model with Metadata-Conditioned Pretraining
 - [[sparse-temporal-context-reconfiguration]] - Brain-inspired mechanism: sparse ensemble recruitment + temporal dynamics enable context reconfiguration in mPFC and SNNs, resisting catastrophic forgetting without auxiliary heuristics (arXiv: 2605.10178)
   - Mouse mPFC shows 32% cross-context neuron overlap (vs 61% chance); context decoding ~82.58% accuracy
   - SNNs with TLIF neurons outperform ANNs in TIL/DIL/CIL with lower neuron overlap
