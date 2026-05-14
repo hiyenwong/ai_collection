@@ -1,149 +1,58 @@
 ---
 name: loop-composition-quantum
-description: >
-  Loop composition methodology for quantum algorithms. Models program control
-  flow (branching + looping) in quantum circuits using quantum walk formalism.
-  Addresses limitations of straight-line quantum circuit model for variable-length
-  subroutines in superposition. Use when designing quantum algorithms with dynamic
-  control flow, variable-time search, or loop-based quantum computation.
-  arXiv:2605.07518
+description: "Loop composition methodology for quantum algorithms. Modeling quantum algorithms as compositions of loop structures for modular algorithm design and analysis (arXiv: 2605.07518)"
 ---
 
 # Loop Composition in Quantum Algorithms
 
 ## Description
 
-Quantum algorithms are traditionally modeled as straight-line programs (sequences
-of gates). This breaks down when subroutines have different lengths executed in
-superposition. This skill provides the quantum walk-based branching composition
-formalism extended to handle **looping** control flow, enabling correct complexity
-analysis for algorithms like variable-time Grover search.
+Methodology for modeling quantum algorithms as compositions of loop structures. Enables modular algorithm design, compositional reasoning about quantum algorithm correctness, and systematic optimization of iterative quantum protocols.
 
 ## Activation Keywords
-
 - loop composition quantum
-- quantum algorithm control flow
-- branching composition quantum
-- quantum walk algorithm design
-- variable-time quantum search
-- quantum loop modeling
-- quantum walk formalism
-- quantum subroutine composition
+- quantum algorithm composition
+- modular quantum algorithms
+- iterative quantum protocols
+- quantum algorithm patterns
+- 量子算法组合
+- 循环组合量子
 
-## Core Concepts
+## Core Methodology
 
-### 1. The Straight-Line Limitation
+### Step 1: Loop Structure Identification
+- Identify iterative components in quantum algorithms (amplitude amplification, phase estimation, QAOA)
+- Decompose algorithm into: initialization -> loop body -> measurement
+- Each loop body is a quantum channel (CPTP map)
 
-Standard quantum circuit model: `U = U_T ··· U_2 · U_1`
+### Step 2: Composition Rules
+- **Sequential composition**: Loop A followed by Loop B = B o A
+- **Nested composition**: Loop B inside Loop A = iterate(iterate(A, k), m)
+- **Parallel composition**: Loop A and Loop B on different subsystems = A tensor B
 
-This assumes every execution path has the same length. When subroutines run for
-different numbers of steps in superposition, the model becomes inconvenient and
-leads to suboptimal complexity bounds.
+### Step 3: Convergence Analysis
+- Fixed point analysis: Find stationary states of loop channel
+- Convergence rate: Spectral gap of the loop superoperator
+- Error accumulation: Compose error bounds across iterations
 
-### 2. Quantum Walk-Based Branching
+### Step 4: Optimization
+- Unroll small loops into direct unitaries
+- Merge commuting loop bodies
+- Replace nested loops with single optimized loop when possible
 
-Replace straight-line composition with quantum walk formalism:
-
+## Common Patterns
 ```
-|ψ⟩ → Walk(G, U_branching) |ψ⟩
-```
+Amplitude Amplification Loop:
+  [State prep] -> [Oracle] -> [Diffusion] -> repeat k times -> [Measure]
 
-Where the walk operator on graph G naturally handles different-length paths
-through the algorithm's control flow graph.
+Phase Estimation Loop:
+  [State prep] -> [Controlled-U^2^j] for j=0..n-1 -> [Inverse QFT] -> [Measure]
 
-### 3. Looping Extension
-
-Branching composition alone gives worse complexity than prior work for variable-time
-search. Adding **loop modeling** recovers optimal bounds:
-
-```python
-def loop_composition(subroutine, max_iterations, condition_operator):
-    """Compose a quantum subroutine with loop control.
-    
-    Uses quantum walk on the control flow graph that includes
-    loop back-edges, not just branching.
-    
-    Args:
-        subroutine: Unitary representing one loop iteration
-        max_iterations: Upper bound on loop count
-        condition_operator: Projects onto loop-continue states
-    
-    Returns:
-        Composed unitary with loop-aware complexity
-    """
-    # Build control flow graph with loop edges
-    # Each node = program counter state
-    # Edges = subroutine application or loop back-edge
-    graph = build_cfg(subroutine, max_iterations)
-    
-    # Quantum walk on CFG captures both branching and looping
-    walk_op = quantum_walk_operator(graph)
-    
-    return walk_op
+QAOA Loop:
+  [Initial state] -> [Cost Hamiltonian] -> [Mixer Hamiltonian] -> repeat p times
 ```
 
-### 4. Application: Variable-Time Grover Search
-
-Standard Grover: `O(√N)` for uniform search times.
-Variable-time: Different items have different verification costs `t_i`.
-
-**Naive branching composition**: `O(√(Σ t_i²))` — worse than prior work.
-**With loop composition**: `O(√(Σ t_i) / √N)` — matches optimal bound.
-
-The key insight: loops create amplitude amplification that pure branching misses.
-
-## Design Patterns
-
-### Pattern 1: Loop-to-Walk Translation
-
-1. Map algorithm to control flow graph (CFG)
-2. Identify loop back-edges in the CFG
-3. Construct quantum walk operator on the CFG
-4. Analyze complexity via spectral gap of walk operator
-
-### Pattern 2: Amplitude Recycling
-
-Loops allow amplitude to "recycle" through earlier states, concentrating
-probability on solution states more efficiently than one-shot branching.
-
-### Pattern 3: Adaptive Iteration Count
-
-```
-for k in range(log N):
-    if measurement indicates progress:
-        continue with next iteration
-    else:
-        restart with amplified initial state
-```
-
-## When to Use
-
-- Quantum algorithms with **while-loop** semantics
-- Variable-time search where different items have different costs
-- Recursive quantum algorithms with non-uniform depth
-- Algorithms where control flow depends on quantum measurement
-- Any quantum algorithm beyond fixed-depth circuit model
-
-## Pitfalls
-
-- Branching-only composition misses loop-induced amplitude recycling
-- Loop composition requires bounding the maximum iterations
-- Quantum walk construction overhead scales with CFG size
-- Measurement-dependent loops require careful uncomputation
-- Prior work (Ambainis-style variable-time search) achieves same bounds
-  via different techniques — compare approaches for your use case
-
-## Key Takeaways
-
-1. **Program control flow matters**: Don't force quantum algorithms into
-   straight-line circuits when they have natural loop structure
-2. **Branching + looping > branching alone**: Loop composition recovers
-   optimal complexity that pure branching loses
-3. **Quantum walk formalism**: Natural framework for modeling both branching
-   and looping in quantum computation
-
-## References
-
-- arXiv:2605.07518 - "Loop Composition in Quantum Algorithms"
-- Ambainis variable-time quantum search (prior art)
-- Quantum walk search algorithms (Szegedy, Magniez et al.)
+## Related Skills
+- quantum-optimization-qaoa
+- variational-quantum-algorithms
+- quantum-computing-patterns

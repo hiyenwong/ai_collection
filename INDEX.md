@@ -1,3 +1,15 @@
+## 2026-05-14 - Neuroscience Research (Cron Job PM)
+
+### State-Space NTK Collapse Near Bifurcations
+- [[state-space-ntk-collapse-bifurcations]] - NTK spectrum degradation analysis as state-space RNNs approach bifurcation points (arXiv:2605.12763)
+  - NTK eigenvalue collapse near critical phase transitions
+  - Different bifurcation types produce distinct NTK signatures
+  - **Activation**: NTK collapse, bifurcation analysis, state-space NTK, critical transitions neural networks
+
+### 18 Standalone Skills Synced
+- photonic-variational-trainability, signal-transform-unification, syndrome-adaptive-gain-control, quantum-compiler-routing, eeg-foundation-lrp-interpretability, adaptive-quantum-classical-fusion, optimal-parametric-quantum-estimation, quantum-qubit-routing, dart-q-realtime-qldpc-decoding, universal-complementarity-identity, strain-controlled-topological-quantum, syndrome-adaptive-gain-qldpc, topological-fault-detection-quantum, trace-eeg-autoregressive-routing, von-neumann-quantum-control, qubridge-fidelity-decomposition, krylov-complexity-analog-simulator, leggett-garg-neural-dynamics
+
+
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
 ### DART-Q: Real-Time QLDPC Decoding Framework
