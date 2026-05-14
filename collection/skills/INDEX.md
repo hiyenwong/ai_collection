@@ -1,4 +1,12 @@
-## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
+
+### QBalance: A Reproducible Multi-Objective Workflow for Quantum Compilation, Noise Suppression, and Error-Mitigation Strategy Selection
+- [[qbalance-workflow-optimization]] - Multi-objective quantum workflow optimization with Pareto strategy selection, survival-product error proxy, and Bayesian surrogate ordering (arXiv: 2605.02966)
+  - Core: Weighted objective (fidelity/cost/time/reproducibility) for NISQ quantum compilation strategy selection
+  - Pareto-optimal non-dominated selection across compilation, noise suppression, and error mitigation strategies
+  - Bayesian linear surrogate + Thompson sampling for expensive strategy evaluation ordering
+  - **Activation**: qbalance, quantum workflow optimization, quantum compilation strategy, noise suppression selection, error mitigation, multi-objective quantum
+
 
 ### Dynamic Quantum-Assisted Co-Design of Control Tuning and Lyapunov Stability Synthesis
 - [[quantum-control-systems]] - Joint quantum-classical co-design framework for nonlinear system control with Lyapunov stability certificates (arXiv: 2605.04296)
