@@ -1,3 +1,21 @@
+## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
+
+### DART-Q: Real-Time QLDPC Decoding Framework
+- [[dart-q-realtime-qldpc-decoding]] - Deadline-driven QLDPC decoder with EDF scheduling and admission control for real-time quantum error correction (arXiv: 2605.09142)
+  - **Activation**: real-time decoding, QLDPC, fault-tolerant quantum, deadline scheduling, admission control
+
+### Price and Payoff: Stochastic FTQC Resource Planning
+- [[stochastic-ftqc-resource-planning]] - Stochastic-aware resource planning for magic state production reducing space-time volume by 27% (arXiv: 2605.07983)
+  - **Activation**: stochastic planning, fault-tolerant quantum, magic state, factory allocation, resource optimization
+
+### Topological Engine Monitor for Quantum Fault Detection
+- [[topological-fault-detection-quantum]] - Persistent homology-based non-invasive fault detection for quantum engines robust to complex noise (arXiv: 2604.11289)
+  - **Activation**: topological data analysis, persistent homology, quantum fault detection, engine monitoring
+
+### Neural QAOA² Differentiable Quantum Optimization
+- [[neural-qaoa-differentiable-optimization]] - End-to-end differentiable framework for joint graph partitioning and QAOA parameter initialization (arXiv: 2605.13072)
+  - **Activation**: neural QAOA, differentiable optimization, graph partitioning, quantum parameters, combinatorial optimization
+
 
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
