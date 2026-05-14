@@ -1,5 +1,19 @@
 ## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
+### Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes
+- [[syndrome-adaptive-gain-qldpc]] - Dynamically adjusts MS scaling factor based on syndrome patterns, eliminating per-code optimization (arXiv: 2605.10433)
+  - Adaptive gain based on fraction of unsatisfied stabilizers during iterative decoding
+  - Matches/exceeds offline-optimized SMS FER, approaches BP performance with O(E) complexity
+  - Degree-robust: avoids fixed scaling penalty across varying CN degrees
+  - **Activation**: quantum LDPC decoding, min-sum scaling, syndrome adaptive gain, SAGMS, QEC decoder optimization, iterative decoding, 量子LDPC解码
+
+### Affiliated Operators for Classical and Quantum Control
+- [[von-neumann-quantum-control]] - Extends Lie algebra rank condition to infinite-dimensional bilinear quantum systems via von Neumann algebra affiliation (arXiv: 2605.13774)
+  - Drift and control operators affiliated with von Neumann algebra M ⇒ standard LARC applies
+  - Spectral projections replace boundedness requirement for unbounded operators
+  - Enables controllability analysis for CV systems, quantum field control, bosonic codes
+  - **Activation**: von Neumann algebra quantum control, infinite-dimensional controllability, bilinear quantum systems, affiliated operators, 无限维量子控制
+
 ### Lower Overhead Fault-Tolerant Building Blocks for Noisy Quantum Computers
 - [[quantum-fault-tolerance-building-blocks]] - Reduces spacetime cost of fault tolerance via flag FT, 100% yield state prep, distance-4 planar code (arXiv: 2605.12385v1)
   - Combinatorial proof exponentially reduces flag qubits for stabilizer measurement of any size

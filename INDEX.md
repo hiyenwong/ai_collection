@@ -1,3 +1,12 @@
+## 2026-05-14 - 系统工程学 + 量子力学 (Cron Job)
+
+### Scaling Qubit Mapping and Routing With Position Graph Abstraction and Memoization
+- [[quantum-qubit-routing]] - Position graph abstraction + memoized SABRE for scalable quantum compilation (arXiv: 2605.09237)
+  - Position graph unifies locations, paths, and routing constraints
+  - Memoized heuristic scoring eliminates redundant SABRE evaluations
+  - Architecture-aware compilation generalizes across quantum hardware types
+  - **Activation**: qubit routing, qubit mapping, quantum compiler, SABRE, position graph, TI-QCCD, 量子比特路由, 量子编译
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
 ### SpikeProphecy: Large-Scale Benchmark for Autoregressive Neural Population Forecasting
