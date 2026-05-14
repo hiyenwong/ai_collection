@@ -14,7 +14,29 @@
   - 核心要点: SHAP 分析揭示 max frequency (40-60 Hz)、higher amplitude、shorter pulse width 为关键参数
   - **Activation**: embodied neurocomputation, biological neural network computing, MEA neurocomputation, bio-silicon computing
 
-## 2026-05-15 - Number Theory + Quantum Mechanics (Cron Job)
+## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Neural QAOA²: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization
+- [[neural-qaoa-optimization]] - Uses neural networks for differentiable graph partitioning and parameter initialization in QAOA, addressing poor partitioning quality and random parameter initialization for scalable NISQ optimization (arXiv: 2605.13051)
+  - 核心要点: 神经网络联合优化图分割和QAOA参数初始化，解决分治QAOA的两大瓶颈
+  - 核心要点: 可微分割允许梯度优化，迁移学习避免随机初始化的barren plateau
+  - 核心要点: 子图独立执行QAOA后经典后处理组合解
+  - **Activation**: neural qaoa, quantum combinatorial optimization, graph partitioning quantum, differentiable qaoa, NISQ optimization
+
+### Phase Matching for a Generalized Grover's Algorithm
+- [[quantum-grover-optimization]] - Studies optimal phase changes per iteration in generalized Grover's algorithm, proving classical phase matching (π) is optimal until target probability approaches 1 (arXiv: 2605.13758)
+  - 核心要点: 经典相位匹配在目标概率接近1前始终最优
+  - 核心要点: 高概率区域最优相位偏离π，需要优化框架
+  - 核心要点: 提供完整优化框架用于广义Grover算法相位序列设计
+  - **Activation**: grover algorithm optimization, quantum search optimization, grover phase matching, generalized grover
+
+### Quantum Precoded Polar Codes
+- [[quantum-precoded-polar-codes]] - CSS quantum error-correcting codes from rate-1 precoded polar codes, optimized via genetic algorithms for improved logical error rates (arXiv: 2605.12656)
+  - 核心要点: 从经典速率1预编码极化码构建CSS量子纠错码
+  - 核心要点: 遗传算法优化速率分布和预编码器
+  - 核心要点: 短码长下展示改进的逻辑错误率
+  - **Activation**: quantum polar codes, CSS codes, quantum error correction codes, precoded polar codes
+
 
 ### On the Spectral Theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic Curves
 - [[isogeny-graph-quantum-sampling]] - First provable quantum polynomial-time algorithms for sampling supersingular elliptic curves with unknown endomorphism rings, based on spectral theory of isogeny graphs (arXiv: 2602.02263)
