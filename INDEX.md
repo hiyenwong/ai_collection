@@ -68,6 +68,20 @@
   - 核心要点: 应用于长程外推、多体系统相图学习、量子传感贝叶斯优化
   - **Activation**: quantum gaussian process, QGP, quantum kernel, bayesian quantum learning, free-fermion learning, quantum Bayesian optimization
 
+### Feedback-based quantum optimization and its classical counterpart: quantum advantage and the power of classical algorithms
+- [[quantum-feedback-optimization]] - Feedback-based quantum optimization (FALQON) with classical spin-system correspondence; quantum finds better solutions, classical converges faster, one classical algorithm shows strong scalability for higher-order UBO (arXiv: 2605.13082)
+  - 核心要点: FALQON通过测量反馈自适应控制量子演化，无需经典优化外环
+  - 核心要点: 量子算法在解质量上可优于经典算法，但经典算法收敛更快
+  - 核心要点: 基于自旋系统量子-经典对应，推导出经典对应算法
+  - **Activation**: quantum feedback optimization, FALQON algorithm, feedback-based quantum optimization, quantum combinatorial optimization, quantum classical optimization comparison, higher-order binary optimization quantum
+
+### Unitaria: Quantum Linear Algebra via Block Encodings
+- [[quantum-linear-algebra-block-encoding]] - Python library bringing NumPy/SciPy simplicity to quantum block encoding algorithms; composable array-like interface for QSVT, matrix arithmetic, and automatic circuit extraction (arXiv: 2605.10768)
+  - 核心要点: 块编码将矩阵嵌入更大酉算子的子块中，实现矩阵运算组合
+  - 核心要点: 矩阵算术评估路径直接在编码向量上计算，无需辅助量子比特
+  - 核心要点: 自动资源估计（门数、量子比特数、归一化常数），无需执行电路
+  - **Activation**: block encoding quantum, quantum linear algebra, QSVT quantum singular value transformation, quantum matrix arithmetic, quantum HHL algorithm, quantum linear system solver, Hamiltonian simulation block encoding
+
 ### Efficient Quantum Fourier Transforms For Semisimple Algebras
 - [[semisimple-algebra-qft]] - Generalizes QFT from finite groups to finite-dimensional semisimple algebras (partition, Brauer, walled Brauer), with gate complexity poly(n, log d, log(1/ε)) via unitary approximation when parameter d is large (arXiv: 2605.05337)
   - 核心要点: 代数傅里叶变换可以是非酉的，但当参数d足够大时可被酉算子良好逼近
