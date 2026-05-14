@@ -47,6 +47,22 @@
   - 在神经活动解码、能量高效信号处理、时间绑定和语义推理任务中取得优异结果
   - **Activation**: S2-Net, spiking-by-synchronization, oscillatory SNN, time-delayed coordination, cortical rhythm, temporal binding, neural synchrony
 
+### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
+- [[spikeprophecy-benchmark]] - Large-scale benchmark for evaluating neural population forecasting models at Neuropixels scale, addressing critical BCI infrastructure gap (arXiv: 2605.12992)
+  - ~27,000 neurons across 39 sessions (Steinmetz visual-discrimination), 1,994 held-out trials at 50ms resolution
+  - Mamba forecaster trained on next-step spike counts delivers both forecasting and behavioral readout in one pass
+  - Mouse choice decoding: 75.7% (2.3x chance), beats linear decoder on raw spikes by 4-6 pp
+  - Calibration efficiency: 100-150 trials to reach asymptote; fits 50ms GPU budget
+  - **Activation**: spikeprophecy, neural forecasting benchmark, spike count prediction, neural population forecasting, autoregressive neural dynamics, BCI forecasting, Mamba neural dynamics
+
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neurons]] - Factorizes temporal computation within individual spiking neurons into Frequency Selectivity and Temporal Shaping modules (arXiv: 2605.13071)
+  - FS module: each neuron learns target frequency as maximizer of subthreshold magnitude response
+  - TS module: group-delay modulation controls when frequency components contribute to membrane voltage
+  - Improves over LIF baseline in auditory benchmarks without recurrence or network delays
+  - Learned parameters provide interpretable neuron-level summaries of frequency/timing organization
+  - **Activation**: FiTS, frequency selective spiking neuron, temporal shaping SNN, interpretable spiking neuron, auditory spiking neural network, frequency selectivity neural dynamics
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
