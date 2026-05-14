@@ -1,3 +1,17 @@
+## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
+
+### Ensemble Engineering to Overcome Destructive Cancellation in Quantum Measurements
+- [[quantum-ensemble-engineering]] - Mitigates destructive cancellation in NISQ quantum measurements by aligning ensemble weights with operator sign structure via amplitude amplification and shallow circuits (arXiv: 2605.03729)
+  - Reformulates correlators in basis-resolved representation to expose cancellation origin
+  - Two approaches: Grover-type amplification (benchmark) and oracle-free shallow circuits (practical NISQ)
+  - Demonstrated on IBM 20-qubit processors; ~10× signal improvement over uniform averaging
+  - **Activation**: quantum ensemble engineering, NISQ measurement, destructive cancellation, 量子系综工程
+
+### QBalance: Multi-Objective Quantum Workflow Optimization
+- Related paper on reproducible quantum compilation and error-mitigation strategy selection (arXiv: 2605.02966)
+  - Multi-objective strategy selection over circuits, backends, and transformation policies
+  - Bayesian linear candidate-ordering surrogate for workflow optimization
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
 ### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
