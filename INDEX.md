@@ -1,3 +1,19 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[mamba-spike-behavioral-decoding]] - Mamba forecaster trained on spike prediction implicitly encodes behavioral information, enabling closed-loop BCI without separate decoding networks (arXiv: 2605.12999)
+  - 核心要点: 单一 Mamba 模型训练 spike rate prediction，其预测的 firing rates 隐含行为信息，无需 behavioral labels 即可解码行为
+  - 核心要点: 在 Steinmetz benchmark 上，Mamba 预测 rates 解码小鼠选择达 75.7%（2.3x chance），超过 matched-context raw spike baselines 4-6 pp
+  - 核心要点: Population shuffle test 证明 Mamba 利用 cross-neuron coupling（shuffle 后 r 下降 48.4%），而非单神经元自相关
+  - **Activation**: mamba forecaster, spike forecast behavioral decoding, implicit behavioral decoding, neural population rate prediction
+
+### Embodied Neurocomputation: A Framework for Interfacing Biological Neural Cultures
+- [[embodied-neurocomputation-framework]] - Systems-level framework for bio-silicon computing interfaces, validated through large-scale parameter optimization of BNN agents in goal-driven navigation (arXiv: 2605.13315)
+  - 核心要点: 形式化 Embodied Neurocomputation 框架为四模块优化问题（编码-生物转换-解码-反馈），首次大规模优化 BNN encoding 参数
+  - 核心要点: 筛选 1,296 种 encoding 配置、4,000+ 小时实时交互，找到 12 种稳定学习的配置，性能超过同等训练预算的 DQN
+  - 核心要点: SHAP 分析揭示 max frequency (40-60 Hz)、higher amplitude、shorter pulse width 为关键参数
+  - **Activation**: embodied neurocomputation, biological neural network computing, MEA neurocomputation, bio-silicon computing
+
 ## 2026-05-15 - Number Theory + Quantum Mechanics (Cron Job)
 
 ### On the Spectral Theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic Curves
