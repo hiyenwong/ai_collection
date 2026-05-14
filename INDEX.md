@@ -1,5 +1,14 @@
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neurons]] - Spiking neuron factorizing temporal computation into frequency selectivity and temporal shaping modules for interpretable SNN design (arXiv: 2605.13071)
+  - FS module maps target frequency to adaptation strength via closed-form inverse; TS reshapes membrane voltage accumulation through group-delay modulation
+  - Consistent improvements over LIF baseline in feedforward SNNs on auditory benchmarks without recurrence or delays
+  - Learned parameters provide interpretable neuron-level summaries of frequency and timing organization
+  - **Activation**: FiTS, frequency selectivity spiking, temporal shaping SNN, interpretable spiking neuron, frequency-specialized neuron, group-delay spiking
+
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
 ### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
 - [[automated-neural-characterization-language]] - Closed-loop framework using natural language to characterize individual neuron selectivity at scale via digital twins and LLM hypothesis generation (arXiv: 2605.12485)
   - 96.1% of V4 neurons driven above 95th percentile by activating hypothesis images; 97.6% driven below 5th percentile by suppressing hypotheses
