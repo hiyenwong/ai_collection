@@ -1,3 +1,19 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### Brain-DiT: A Universal Multi-state fMRI Foundation Model with Metadata-Conditioned Pretraining
+- [[brain-dit-fmri-foundation-model]] - Diffusion Transformer pretrained on 349,898 fMRI sessions from 24 datasets across 5 brain states, outperforms reconstruction/alignment pretraining (arXiv: 2604.12683)
+  - Metadata-conditioned diffusion pretraining disentangles intrinsic neural dynamics from population variability
+  - Multi-scale representations: global semantics for disease classification, local structure for demographics
+  - Proven superior: diffusion > reconstruction > alignment for fMRI foundation models
+  - **Activation**: brain-dit, fMRI foundation model, diffusion transformer brain, metadata-conditioned fMRI, multi-state fMRI
+
+### Probabilistic Prediction of Neural Dynamics via Autoregressive Flow Matching
+- [[autoregressive-flow-matching-neural-dynamics]] - Autoregressive flow matching framework for probabilistic neural activity forecasting from naturalistic stimuli, evaluated on Algonauts 2025 fMRI dataset (arXiv: 2604.11178)
+  - Learns conditional distribution p(neural_future | past_activity, sensory_input) via transport-based generative modeling
+  - Past BOLD dynamics is dominant predictor; autoregressive factorization adds gains under short-horizon conditions
+  - Enables closed-loop neurotechnology through probabilistic neural forecasting
+  - **Activation**: autoregressive flow matching, neural dynamics forecasting, probabilistic neural prediction, flow matching neuroscience
+
 ## 2026-05-15 - Systems Engineering + Quantum (Cron Job)
 
 ### Crystallographic Symmetry Generates Phononic Holonomic Gates with Biased-Erasure Channels
