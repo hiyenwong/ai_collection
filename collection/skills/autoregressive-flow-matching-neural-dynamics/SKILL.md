@@ -14,7 +14,8 @@ description: >
 ## Source
 - **Paper**: Probabilistic Prediction of Neural Dynamics via Autoregressive Flow Matching
 - **arXiv**: 2604.11178v1
-- **Date**: 2026-04-15
+- **Authors**: Nicole Rogalla, Yuzhen Qin, Mario Senden, Ahmed El-Gazzar, Marcel van Gerven
+- **Date**: 2026-04-13
 
 ## Core Innovation
 

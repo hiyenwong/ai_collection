@@ -9,7 +9,7 @@ description: "Brain-DiT universal multi-state fMRI foundation model with metadat
 
 ## Metadata
 - **Source**: arXiv:2604.12683v1
-- **Authors**: Brain foundation model researchers (2026)
+- **Authors**: Junfeng Xia, Wenhao Ye, Xuanye Pan, Xinke Shen, Mo Wang, Quanying Liu
 - **Published**: 2026-04-14
 - **Domain**: fMRI Analysis, Foundation Models, Diffusion Models, Brain Imaging
 
