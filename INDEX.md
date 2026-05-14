@@ -1,3 +1,17 @@
+## 2026-05-14 - Quantum Compilation + Quantum Systems (Cron Job)
+
+### TuniQ: Autotuning Compilation Passes for Quantum Workloads at Scale for Effectiveness and Efficiency
+- [[tuniq-quantum-compiler-rl]] - RL驱动的量子编译Pass自适应选择系统，动态优化编译流程以最大化保真度和效率 (arXiv: 2605.11375)
+  - 核心要点: 双编码器阶段感知表征+动态动作掩码，让RL代理根据电路结构、后端拓扑和噪声画像选择最优编译Pass序列
+  - 核心要点: 跨阶段奖励设计实现跨编译层信用分配，在IBM Quantum Cloud上超越Qiskit最高优化级别保真度，且无需重新训练即可泛化到不同后端
+  - **Activation**: quantum compilation RL, tuniq, quantum compiler optimization, RL transpiler, quantum pass selection, fidelity optimization, autotuning quantum compilation
+
+### QuBridge: Layer-wise Fidelity Decomposition in Quantum Computation Pipeline
+- [[qubridge-fidelity-decomposition]] - 量子计算流水线保真度分层分解分析工具，量化各编译决策层对最终输出质量的贡献 (arXiv: 2605.11529)
+  - 核心要点: 三阶段渐进式消融实验揭示：Qubit选择可将最差保真度带从11.8%压缩至2%以内；每门脉冲形状分配带来+0.9%额外增益
+  - 核心要点: 纠错编码并非均匀有利，其条件收益仅在输入态主导误差通道可被所选码检测时才显现
+  - **Activation**: quantum fidelity analysis, compilation pipeline, qubridge, fidelity decomposition, quantum error detection, ablation analysis
+
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
 ### Scaling Qubit Mapping and Routing With Position Graph Abstraction and Memoization
