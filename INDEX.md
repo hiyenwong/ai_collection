@@ -1,3 +1,34 @@
+
+## 2026-05-14 - Neuroscience Research (Cron Job)
+## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
+
+### Tolerating Device Failure in Distributed Quantum Computing
+- [[distributed-quantum-fault-tolerance]] - 分布式量子容错：设备热替换+旗帜容错将开销降至1/10 (arXiv: 2605.11088, 2605.12385)
+  - 模块化量子网络中QEC期间组件可热替换，逻辑错误率稳定
+  - Flag fault tolerance指数减少稳定子测量额外量子比特
+  - **Activation**: distributed quantum, fault tolerance, device failure, hot-swap, flag QEC, 分布式量子, 容错
+
+### Scaling Qubit Mapping and Routing With Position Graph Abstraction
+- [[qubit-mapping-routing-memoization]] - 位置图抽象+记忆化加速量子编译路由 (arXiv: 2605.09237)
+  - 位置图统一可执行位置、移动路径和路由约束
+  - 记忆化缓存路由决策，编译时间从指数降至近线性
+  - **Activation**: qubit mapping, routing, TI-QCCD, compilation, position graph, memoization, 量子编译, 路由
+
+
+### Embodied Neurocomputation Framework
+- [[embodied-neurocomputation-framework]] - Systems-level optimization of biological neural network (BNN) encoding/decoding via closed-loop task-driven validation, outperforming DQN agents (arXiv: 2605.13315)
+  - Multi-combinatorial parameter search across 1,300+ configs and 4,000+ hours of real-time BNN-environment interaction
+  - 12 configurations showed consistent learning; BNN configs significantly outperformed optimized DQN under same budget
+  - Establishes foundation for bio-silicon hybrid architectures and field-wide neurocomputation benchmarks
+  - **Activation**: embodied neurocomputation, biological neural network computing, bio-silicon interface, BNN agent, organoid intelligence, living neural computing
+
+### Geno-Synthetic Coevolutionary Optimization
+- [[geno-synthetic-coevolution-optimization]] - Type-factored coevolutionary optimization for heterogeneous genotypes assembling into composite phenotypes (arXiv: 2605.13365)
+  - Decomposes evolutionary search into coordinated sub-populations, each with specialized genotype representations
+  - Assembly function maps heterogeneous genetic contributions into unified functional phenotype
+  - Enables modular evolutionary search for neural architecture, robot design, SNN evolution
+  - **Activation**: geno-synthetic, coevolutionary optimization, heterogeneous genotype, assembled phenotype, type-factored evolution, modular evolutionary algorithm
+
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
 ### Ensemble Engineering to Overcome Destructive Cancellation in Quantum Measurements
