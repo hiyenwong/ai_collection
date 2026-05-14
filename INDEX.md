@@ -1,3 +1,12 @@
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
+- [[automated-neural-characterization-language]] - Closed-loop framework using natural language to characterize individual neuron selectivity at scale via digital twins and LLM hypothesis generation (arXiv: 2605.12485)
+  - 96.1% of V4 neurons driven above 95th percentile by activating hypothesis images; 97.6% driven below 5th percentile by suppressing hypotheses
+  - Language embeddings partially aligned with neural activity and vision embeddings; linguistic compression is lossy yet semantically faithful
+  - V1 suppression less describable than activation, suggesting different computational principles in early visual areas
+  - **Activation**: neural characterization, neural selectivity, digital twin neuroscience, semantic hypothesis testing, V1 V4 visual cortex, automated neural analysis, closed-loop neural characterization
+
 ## 2026-05-14 - 系统工程学 + 量子力学 (Cron Job)
 
 ### Scaling Qubit Mapping and Routing With Position Graph Abstraction and Memoization
