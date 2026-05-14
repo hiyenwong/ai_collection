@@ -1,5 +1,19 @@
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
+### Human face perception reflects inverse-generative and naturalistic discriminative objectives
+- [[face-perception-inverse-generative]] - Controversial stimulus pairs expose that human face perception is shaped by inverse-generative mechanisms inferring latent 3D causes of appearance, tuned by natural image statistics (arXiv: 2605.12619)
+  - 核心要点: 争议性刺激对（controversial pairs）比随机刺激更能区分不同计算目标的面部感知模型
+  - 核心要点: 逆向渲染、面部识别、物体分类模型最匹配人类判断，证明面部感知是逆问题求解而非模式匹配
+  - 核心要点: 自然图像训练的模型持续优于合成图像训练，864名被试验证
+  - **Activation**: face perception inverse generative, inverse rendering face perception, controversial face pairs, human face dissimilarity judgments
+
+### Characterizing Universal Object Representations Across Vision Models
+- [[universal-object-representations-vision]] - Non-negative dimension decomposition across 162 vision models reveals universal dimensions are interpretable, semantic-driven, and better predict macaque IT and human similarity judgments (arXiv: 2605.13675)
+  - 核心要点: 162个视觉模型的物体相似性结构分解为非负维度，识别通用（universal）vs 模型特异性维度
+  - 核心要点: 通用维度更具可解释性，由概念性图像属性驱动，与架构/目标/数据/规模无关
+  - 核心要点: 通用维度越多，模型越能预测猕猴IT神经活动和人类相似性判断，Universality = 生物对齐
+  - **Activation**: universal object representations vision, vision model convergence dimensions, non-negative dimension decomposition vision, macaque IT prediction vision models
+
 ## 2026-05-15 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
 
 ### QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling
