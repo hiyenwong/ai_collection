@@ -1,5 +1,19 @@
 ## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
 
+### Dynamic Quantum-Assisted Co-Design of Control Tuning and Lyapunov Stability Synthesis
+- [[quantum-control-systems]] - Joint quantum-classical co-design framework for nonlinear system control with Lyapunov stability certificates (arXiv: 2605.04296)
+  - Quantum search over controller-stability product space for simultaneous optimization
+  - Bridges QAOA/VQE quantum optimization with classical Lyapunov synthesis
+  - Exponential speedup for certain control design space exploration problems
+  - **Activation**: quantum control, Lyapunov stability synthesis, quantum-assisted control, nonlinear system control, 量子控制合成
+
+### Symplectic H2 Model Reduction for High-Dimensional Linear Quantum Systems
+- [[quantum-control-systems]] - Structure-preserving model order reduction for quantum systems using symplectic balancing (arXiv: 2605.11817)
+  - Preserves canonical commutation relations during reduction
+  - H2 norm-optimal approximation with symplectic structure guarantee
+  - Standard balanced truncation destroys quantum physical properties
+  - **Activation**: symplectic model reduction, quantum system reduction, H2 norm, structure-preserving reduction, 量子系统降阶
+
 ### Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes
 - [[syndrome-adaptive-gain-qldpc]] - Dynamically adjusts MS scaling factor based on syndrome patterns, eliminating per-code optimization (arXiv: 2605.10433)
   - Adaptive gain based on fraction of unsatisfied stabilizers during iterative decoding
