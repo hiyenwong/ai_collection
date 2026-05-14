@@ -1,3 +1,26 @@
+## 2026-05-15 - Number Theory + Quantum Mechanics (Cron Job)
+
+### On the Spectral Theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic Curves
+- [[isogeny-graph-quantum-sampling]] - First provable quantum polynomial-time algorithms for sampling supersingular elliptic curves with unknown endomorphism rings, based on spectral theory of isogeny graphs (arXiv: 2602.02263)
+  - Spectral gap analysis of Ramanujan isogeny graphs determines mixing time
+  - Quantum-enhanced random walk hides endomorphism ring structure
+  - Applicable to isogeny-based cryptographic protocols (SIKE, CSIDH)
+  - **Activation**: isogeny graph sampling, supersingular elliptic curves, quantum curve generation, 同源图采样
+
+### Multi-Qubit Golden Gates
+- [[multi-qubit-golden-gates]] - Construction of optimal topological generators for compact unitary Lie groups, extending golden gates to multi-qubit systems via Sarnak-Xue Density Hypothesis (arXiv: 2509.09047)
+  - Algebraic number theory produces explicit generators for SU(2^n)
+  - Uniform spectral gap independent of dimension
+  - Near-optimal O(log(1/ε)) word length for ε-approximation
+  - **Activation**: golden gates, multi-qubit gate synthesis, Sarnak-Xue hypothesis, 黄金门
+
+### Tight Quantum-Security Bounds and Parameter Optimization for SPHINCS+ and NTRU
+- [[post-quantum-crypto-security-bounds]] - Tight security bounds for NIST PQC finalists incorporating decoherence effects and parallelization limits, reducing SPHINCS+ parameters by 15-20% (arXiv: 2508.19250)
+  - Quantum attack model with realistic hardware constraints
+  - Entropy concentration inequalities for parameter reduction
+  - Quantum lattice entropy H_Q(Λ) for NTRU optimization
+  - **Activation**: post-quantum cryptography security, SPHINCS+ parameter optimization, NIST PQC evaluation
+
      1|## 2026-05-15 - Neuroscience Research (Cron Job)
 ## 2026-05-15 - Deep Learning Research (Cron Job)
 
