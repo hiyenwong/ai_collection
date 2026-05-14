@@ -1,7 +1,21 @@
-## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+## 2026-05-14 - Neuroscience Research (Cron Job)
 
-### Operating a bistable qubit
-- [[bistable-qubit-adaptive-feedback-control]] - Adaptive 1-bit FPGA feedback protocol for operating bistable qubits affected by TLS defects (arXiv: 2605.03187)
+### SpikeProphecy: Large-Scale Benchmark for Autoregressive Neural Population Forecasting
+- [[spikeprophecy-benchmark]] - First large-scale benchmark for causal, autoregressive spike-count forecasting with population metric decomposition on 105 Neuropixels sessions (~89,800 neurons) (arXiv: 2605.12992)
+  - Decomposes aggregate correlation into temporal fidelity, spatial pattern accuracy, and magnitude-invariant alignment
+  - 7 architecture baselines (SSMs, RNNs, transformers) across 4 structural families
+  - **Activation**: SpikeProphecy, neural population forecasting, spike count forecasting, Neuropixels benchmark, population metric decomposition, temporal fidelity, spatial pattern accuracy
+
+### Predictive Coding Light+: STDP-Based Sequence Prediction in Spiking Neural Networks
+- [[predictive-coding-light]] - Spiking neural network architecture for unsupervised sequence processing using STDP with synaptic delays for short-term information retention (arXiv: 2605.12732)
+  - Reproduces classic visual cortex sequence learning findings without supervision
+  - Learns to fill in missing inputs in gesture recognition via recurrent excitatory connections with delays
+  - **Activation**: Predictive Coding Light+, PCL+, STDP sequence learning, spiking neural network prediction, synaptic delay learning, unsupervised sequence processing
+
+     1|## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+     2|
+     3|### Operating a bistable qubit
+     4|- [[bistable-qubit-adaptive-feedback-control]] - Adaptive 1-bit FPGA feed
   - Estimates qubit frequency from single-shot measurement at ~136 kHz bandwidth
   - 77% error reduction in gate fidelities, suppresses TLS-induced Ramsey beating
   - **Activation**: bistable qubit, adaptive qubit control, TLS defect mitigation, FPGA qubit feedback
