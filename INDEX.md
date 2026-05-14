@@ -1,5 +1,22 @@
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
+## 2026-05-15 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
+
+### QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling
+- [[qlam-quantum-attention-memory]] - Quantum Long-Attention Memory for O(log n) sequence modeling via block-encoded quantum attention (arXiv: 2605.13833)
+  - Token embeddings as quantum states via amplitude encoding
+  - Attention scores via quantum inner products (Hadamard test)
+  - O(log n) qubit memory compression for long sequences
+  - **Activation**: qlam, quantum attention, quantum long-attention memory, long sequence modeling quantum
+
+### Wavelet Variance Equipartition as a Threshold for World-Model Quality and Quantum Kernel TN-Simulability
+- [[wavelet-variance-equipartition-quantum]] - Wavelet scaling exponent as physics-grounded model quality diagnostic (arXiv: 2605.11557)
+  - Wavelet variance equipartition (α=0) as optimality criterion
+  - Quantum kernel tensor-network simulability threshold
+  - Multi-scale representation analysis for any learned model
+  - **Activation**: wavelet variance equipartition, quantum kernel simulability, world model quality assessment
+
+
 ### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
 - [[mamba-spike-behavioral-decoding]] - Mamba forecaster trained on spike prediction implicitly encodes behavioral information, enabling closed-loop BCI without separate decoding networks (arXiv: 2605.12999)
   - 核心要点: 单一 Mamba 模型训练 spike rate prediction，其预测的 firing rates 隐含行为信息，无需 behavioral labels 即可解码行为
