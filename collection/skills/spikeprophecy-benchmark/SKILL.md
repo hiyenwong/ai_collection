@@ -1,145 +1,115 @@
 ---
 name: spikeprophecy-benchmark
-description: "SpikeProphecy methodology for evaluating autoregressive neural population forecasting via population metric decomposition. Separates aggregate performance into temporal fidelity, spatial pattern accuracy, and magnitude-invariant alignment. Activation: spike forecasting, neural population benchmark, autoregressive spike-count forecasting, population metric decomposition, neuropixels analysis, spikeprophecy, neural dynamics forecasting."
+description: >
+  SpikeProphecy methodology for evaluating autoregressive neural population
+  forecasting models. Addresses the critical benchmarking gap in large-scale
+  neural dynamics prediction. Use when: evaluating neural forecasting models,
+  designing neural population benchmarks, comparing Mamba/RNN/Transformer
+  architectures for spike prediction, benchmarking brain-computer interface
+  (BCI) components, building neural dynamics prediction pipelines, or
+  analyzing next-step spike count forecasting at Neuropixels scale.
+  Activation: spikeprophecy, neural forecasting benchmark, spike count prediction,
+  neural population forecasting, autoregressive neural dynamics, BCI forecasting.
 ---
 
-# SpikeProphecy: Population Metric Decomposition for Neural Population Forecasting
+# SpikeProphecy Benchmark Methodology
 
-> A large-scale benchmark framework for causal, autoregressive spike-count forecasting on real electrophysiology recordings, with a population metric decomposition that reveals structure masked by aggregate correlation metrics.
+Large-scale benchmark for autoregressive neural population forecasting,
+addressing the critical gap in standardized evaluation of neural dynamics
+prediction models.
 
-## Metadata
-- **Source**: arXiv:2605.12992
+## Paper Reference
+
+- **Title**: SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
 - **Authors**: John R. Minnick, Jinghui Geng, Kamran Hussain, Jesus Gonzalez-Ferrer, Ash Robbins, Mohammed A. Mostajo-Radji, David Haussler, Jason K. Eshraghian, Mircea Teodorescu
-- **Published**: 2026-05-13
-- **Venue**: Submitted to NeurIPS 2026 Datasets and Benchmarks Track
+- **arXiv**: 2605.12992
+- **Date**: 2026-05-13
+- **Categories**: q-bio.NC, cs.LG
 
 ## Core Problem
 
-Neural population models (predicting joint firing of many simultaneously recorded neurons forward in time) are typically evaluated by a single aggregate Pearson correlation *r* between predicted and actual spike counts. This scalar **masks critical structure** — it collapses temporal dynamics, spatial patterns, and magnitude alignment into one number, making it impossible to diagnose what aspects of neural dynamics a model captures or fails to capture.
+Closed-loop BCI requires forecasting upcoming neural population activity, but no standardized benchmark exists to evaluate different forecasting architectures (RNN, Transformer, Mamba, state-space models) at Neuropixels scale (~27,000 neurons).
 
-## Core Methodology
+## Benchmark Design
 
-### Population Metric Decomposition
-
-The key innovation is decomposing aggregate forecasting performance into three orthogonal dimensions:
-
-1. **Temporal Fidelity**: How well does the model capture the timing structure of neural activity? Does it predict when neurons fire with correct temporal dynamics?
-
-2. **Spatial Pattern Accuracy**: How well does the model capture which neurons co-fire? Does it reproduce the spatial correlation structure across the population?
-
-3. **Magnitude-Invariant Alignment**: How well does the model capture the relative firing rate patterns, independent of absolute scale? This separates shape matching from amplitude matching.
-
-**Why this matters**: The decomposition surfaces aspects of neural data that an aggregate scalar collapses together, enabling targeted model improvement and revealing which architectural families excel at which aspects of neural dynamics.
-
-### Key Findings from SpikeProphecy
-
-- **Brain-region predictability ranking**: Reproduces across all 7 baselines (3 SSMs, 1 non-diagonal SSM, Transformer, LSTM, SNN) and survives ANCOVA correction for firing-statistics constraints
-- **Sub-Poisson evaluation floor**: Rigorous metrics reveal genuine biophysical constraints on regular spike trains
-- **Negative result on KL distillation**: KL-on-output-rates distillation for ANN-to-SNN transfer fails in the Poisson count domain
-
-## Benchmark Protocol
-
-### Dataset
-- **105 Neuropixels sessions** from Steinmetz 2019 + IBL Repeated Site
-- **~89,800 neurons** total across sessions
-- Processed dataset available under CC-BY-4.0 license
-
-### Architecture Baselines (7 models, 4 structural families)
-1. **SSMs** (State Space Models): 3 diagonal + 1 non-diagonal
-2. **Transformer**: Attention-based sequence model
-3. **LSTM**: Recurrent sequence model
-4. **Spiking Neural Network**: Biologically-plausible dynamics
+### Data Characteristics
+- **Scale**: ~27,000 neurons across 39 sessions (Steinmetz visual-discrimination)
+- **Resolution**: 50 ms binning (standard for Neuropixels)
+- **Trials**: 1,994 held-out trials across sessions
+- **Task**: Visual discrimination (mouse choice + stimulus side)
 
 ### Evaluation Protocol
-1. **Causal forecasting**: Models must predict future spike counts from past observations only
-2. **Autoregressive**: Predictions feed back as inputs for subsequent timesteps
-3. **Decomposed metrics**: Each prediction evaluated on temporal, spatial, and magnitude dimensions
-4. **ANCOVA correction**: Results corrected for firing-rate statistics as covariates
+- **Task**: Next-step spike count forecasting
+- **Input**: Historical spike counts at population scale
+- **Output**: Predicted spike counts for next time bin
+- **Metrics**: 
+  - Forecast accuracy (correlation, MSE)
+  - Downstream behavior decoding quality
+  - Computational efficiency (fit within 50 ms GPU budget)
 
-## Implementation Guide
+## Key Findings
 
-### Prerequisites
-- Access to Neuropixels electrophysiology data (Steinmetz 2019, IBL datasets)
-- Python with PyTorch/JAX for model implementations
-- Statistical analysis tools for ANCOVA corrections
+### Mamba Forecaster Performance
+- A single Mamba forecaster trained on next-step spike counts delivers both
+  forecasting AND behavioral readout in one forward pass
+- **Mouse choice decoding**: 75.7±0.2% trial vote (~2.3x chance)
+- **Stimulus side decoding**: 66.1±0.6% trial vote (~2x chance)
+- **Beats linear decoder on raw spikes** by 4-6 percentage points
 
-### Step-by-Step
+### Calibration Efficiency
+- Session-start calibration: ~100-150 trials to reach within 1-2 pp of asymptote
+- Full pipeline fits within 50 ms bin budget on workstation GPUs
+- Compatible with tethered chronic Neuropixels recording setups
 
-1. **Data Preprocessing**
-   - Load Neuropixels spike train data
-   - Bin spike counts at appropriate temporal resolution
-   - Split into train/validation/test with temporal ordering
+## Architecture Comparison Framework
 
-2. **Model Training**
-   - Train each baseline architecture on the same data splits
-   - Ensure causal, autoregressive prediction setup
-   - Use consistent hyperparameter tuning protocol
+When evaluating neural forecasting models, compare across:
 
-3. **Metric Decomposition**
-   - For each model's predictions, compute:
-     - Temporal fidelity: autocorrelation structure matching
-     - Spatial accuracy: cross-neuron correlation matrix similarity
-     - Magnitude alignment: rate-invariant pattern correlation
-   - Apply ANCOVA to correct for firing-statistics covariates
+| Dimension | Metrics |
+|-----------|---------|
+| Accuracy | Correlation with true spikes, MSE, log-likelihood |
+| Downstream utility | Behavior decoding accuracy from predicted rates |
+| Calibration speed | Trials needed to reach asymptotic performance |
+| Latency | Inference time per 50 ms bin |
+| Scalability | Performance vs. neuron count |
 
-4. **Analysis**
-   - Rank brain regions by predictability across models
-   - Identify which metric dimension each architecture family excels at
-   - Check for sub-Poisson evaluation floors
+## Implementation Patterns
 
-### Code Structure (Conceptual)
-
+### Linear Readout from Forecast
 ```python
-def decompose_metrics(predictions, ground_truth):
-    """Decompose aggregate correlation into three dimensions."""
-    
-    # Temporal fidelity: per-neuron temporal structure
-    temporal = compute_temporal_correlation(predictions, ground_truth)
-    
-    # Spatial pattern accuracy: cross-neuron covariance structure
-    spatial = compute_spatial_alignment(predictions, ground_truth)
-    
-    # Magnitude-invariant alignment: shape matching without scale
-    magnitude = compute_magnitude_invariant_correlation(predictions, ground_truth)
-    
-    return {
-        'temporal_fidelity': temporal,
-        'spatial_accuracy': spatial,
-        'magnitude_alignment': magnitude
-    }
+# Train lightweight per-session linear head on predicted rates
+# rather than raw spike counts
+from sklearn.linear_model import LogisticRegression
 
-def ancova_correct(metric_scores, firing_stats_covariates):
-    """Correct metric scores for firing statistics using ANCOVA."""
-    # Fit ANCOVA model with firing rate, spike count variance as covariates
-    # Return region effects above and beyond firing statistics
-    pass
+# Mamba produces predicted rates (smoothed forecasts)
+predicted_rates = mamba_forecaster.predict(historical_spikes)
+
+# Linear head decodes behavior from predicted rates
+decoder = LogisticRegression()
+decoder.fit(predicted_rates, behavioral_labels)
+
+# Compare against baseline: same decoder on raw spikes
+baseline_decoder = LogisticRegression()
+baseline_decoder.fit(raw_spikes, behavioral_labels)
 ```
 
-## Applications
+### Calibration Protocol
+1. Collect ~100-150 trials from session start
+2. Train linear readout head on forecasted rates
+3. Evaluate on held-out trials
+4. Performance reaches within 1-2 pp of full-session asymptote
 
-- **Model selection**: Choose architectures based on which aspect of neural dynamics is most important for the task
-- **Model diagnosis**: Identify which dimension a model fails on, guiding architectural improvements
-- **Neuroscience insight**: The brain-region predictability ranking reveals which brain areas have more predictable population dynamics
-- **ANN-to-SNN transfer**: Evaluate distillation strategies for converting artificial networks to spiking equivalents
-- **Benchmark standardization**: Replace single aggregate metrics with decomposed evaluation protocols
+## Related Work
 
-## Pitfalls
+- Implicit Behavioral Decoding from Next-Step Spike Forecasts (2605.12999):
+  Companion paper showing behavioral decoding from spike forecasts
+- Predictive Coding Light+ (2605.12732): Sequence prediction via STDP + delays
+- Mamba state-space models for neural dynamics forecasting
 
-- **Aggregate correlation masks structure**: A high aggregate *r* can hide failures in temporal, spatial, or magnitude dimensions
-- **Firing statistics confound**: Regions with different firing rates will appear differently predictable — ANCOVA correction is essential
-- **Poisson domain specifics**: Standard distillation losses (KL on output rates) may fail for spike count distributions
-- **Sub-Poisson floor**: Some neural populations have such regular firing that no model can significantly outperform the biophysical floor
-- **Causal evaluation**: Must use truly autoregressive prediction — teacher forcing during evaluation inflates metrics unrealistically
+## When to Use This Skill
 
-## Related Skills
-
-- spike-prophecy-benchmark
-- autoregressive-flow-matching-neural-dynamics
-- spiking-neural-network-analysis
-- neural-population-dynamics
-- neural-population-decoding
-- neural-dynamics-universal-translator
-- neural-dynamics-autoregressive-flow-matching
-- mamba-spike-forecasting-behavioral-decoding
-- sbtg-neural-dynamics-inference
-- jedi-neural-dynamics-inference
+- Designing benchmarks for neural population forecasting models
+- Comparing RNN/Transformer/Mamba architectures for spike prediction
+- Building BCI systems requiring neural activity forecasting
+- Evaluating whether forecasting improves downstream decoding
+- Setting up standardized evaluation for neural dynamics research
