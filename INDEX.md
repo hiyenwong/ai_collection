@@ -14,6 +14,20 @@
   - 核心要点: SHAP 分析揭示 max frequency (40-60 Hz)、higher amplitude、shorter pulse width 为关键参数
   - **Activation**: embodied neurocomputation, biological neural network computing, MEA neurocomputation, bio-silicon computing
 
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neuron]] - Spiking neuron architecture factorizing temporal computation into Frequency Selectivity and Temporal Shaping modules, providing interpretable neuron-level frequency/timing summaries without recurrence (arXiv: 2605.13071)
+  - 核心要点: FiTS 将神经元时间计算分解为频率选择性(FS)和时间整形(TS)两个模块，每个神经元专注于特定频带和时序角色
+  - 核心要点: FS 模块参数化每个神经元的目标频率为亚阈值幅值响应的最大化器; TS 模块通过群延迟调制重塑频率成分何时贡献到膜电压积累
+  - 核心要点: 在 SHD/SSC 语音基准上，无递归无前馈延迟的简单 FF-SNN 即超越 LIF，与强递归基线相当，且提供可解释的频率/时序组织摘要
+  - **Activation**: FiTS, frequency selectivity spiking neuron, interpretable SNN, temporal shaping, group-delay modulation SNN, auditory spiking neural network
+
+### Multi-Timescale Conductance Spiking Networks
+- [[multi-timescale-conductance-snn]] - Gradient-trainable SNN framework with rich firing dynamics emerging from multi-timescale conductances, enabling direct BPTT without surrogate gradients and substantially sparser activity (arXiv: 2605.11835)
+  - 核心要点: MTCSN 通过调节快/慢/超慢电导塑造 I-V 曲线，在单个模型中实现紧张/相位/爆发等多种放电模式
+  - 核心要点: 推导离散时间可微分公式，支持直接 BPTT 训练，无需代理梯度近似
+  - 核心要点: 在 Mackey-Glass 时间序列回归上超越 LIF 和 AdLIF，同时显著降低通信和计算角度的活动稀疏性
+  - **Activation**: MTCSN, multi-timescale conductance, conductance-based SNN, I-V curve shaping SNN, differentiable spiking dynamics, surrogate-gradient-free
+
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Provable and Scalable Quantum Gaussian Processes for Quantum Learning

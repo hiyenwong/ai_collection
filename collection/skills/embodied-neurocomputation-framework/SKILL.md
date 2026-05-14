@@ -1,189 +1,103 @@
 ---
 name: embodied-neurocomputation-framework
 description: >
-  Embodied Neurocomputation framework for interfacing biological neural cultures
-  with scaled task-driven validation. Systems-level approach to multi-variable
-  optimization of encoding/decoding between silicon computing and living biology.
-  Demonstrates that biological neural networks (BNNs) can outperform DQN agents
-  in goal-driven navigation when encoding parameters are properly optimized.
-category: neuroscience
-tags: [biological-neural-networks, neurocomputation, MEA, encoding-decoding, bio-silicon, hybrid-computing, parameter-optimization]
-related_skills:
-  - embodied-neurocomputation-framework
-  - neural-digital-twins-bci
-  - neural-brain-framework
-  - energy-based-neurocomputation
-activation_keywords:
-  - embodied neurocomputation
-  - biological neural network computing
-  - MEA neurocomputation
-  - bio-silicon computing
-  - biological neural culture interfacing
-  - cortical labs CL1
-  - neural encoding optimization
+  Embodied Neurocomputation framework for interfacing biological neural cultures (BNNs) with
+  scaled task-driven validation. Systems-level approach to multi-variable optimization of
+  encoding/decoding between silicon computing and living biological neural networks.
+  Covers closed-loop navigation tasks, parameter optimization for BNN agents, bio-silicon
+  hybrid architectures, and field-wide benchmark development for neurocomputing.
+  Use when designing bio-silicon interfaces, BNN-based agents, embodied neurocomputation
+  systems, hybrid bio-silicon architectures, or task-driven neurocomputing benchmarks.
+  Trigger words: embodied neurocomputation, biological neural network computing, BNN agent,
+  bio-silicon interface, biological neural culture computation, closed-loop BNN, odor-style
+  gradient navigation BNN, neurocomputation encoding decoding, hybrid bio-silicon architecture.
 ---
 
 # Embodied Neurocomputation Framework
 
-**Paper**: *Embodied Neurocomputation: A Framework for Interfacing Biological Neural Cultures with Scaled Task-Driven Validation*
-**Authors**: Johnson Zhou, Daniel Tanneberg, Forough Habibollahi, Alon Loeffler, Kiaran Lawson, Valentina Baccetti, Kwaku Dad Abu-Bonsrah, Candice Desouza, Finn Doensen, Bradley Watmuff, Daria Kornienko, Azin Azadi, Justin L. Bourke, Bernhard Sendhoff, Brett J. Kagan
-**Institutions**: Cortical Labs (Australia), Honda Research Institute Europe (Germany)
-**arXiv**: 2605.13315 (May 13, 2026)
-**Category**: cs.ET, cs.LG, cs.NE
+**Paper**: Zhou et al., arXiv:2605.13315, May 2026
 
-## Overview
+## Core Idea
 
-This paper introduces a formal **Embodied Neurocomputation Framework** — a systems-level approach to interfacing biological neural networks (BNNs) with conventional computers via Micro-Electrode Arrays (MEAs). The framework conceptualizes the digital-biological interface as a multi-variable optimization problem across four interdependent modules: encoding, biological transformation, decoding, and feedback. It validates this through the first large-scale parameter optimization of encoding configurations for BNN agents performing closed-loop navigation.
+Biological neural networks (BNNs) offer incredibly energy and data efficient information
+processing with distinct learning mechanisms. The core challenge is determining optimal
+encoding/decoding between silicon computing interfaces and living biology. This framework
+proposes a systems-level approach to this multi-variable optimization problem through
+**Embodied Neurocomputation** — task-driven closed-loop validation of BNN agents.
 
-## Core Framework
+## Framework Architecture
 
-### Mathematical Formulation
+### System Components
 
-Neurocomputation f at time t, with parameter set theta_t, as sequential feed-forward mappings:
+1. **Encoding Layer**: Maps task inputs to stimulation patterns for the BNN
+   - Spatial electrode mapping
+   - Temporal stimulation patterns (frequency, amplitude, timing)
+   - Multi-modal encoding (e.g., odor-style + visual cues)
 
-```
-y_t = f(x_t; theta_t) = d(b(e(x_t; theta_e); theta_b,t); theta_d)
-```
+2. **Biological Neural Network (BNN)**: Living neural culture as computational substrate
+   - Multi-electrode array (MEA) recording/stimulation
+   - Biological plasticity and adaptation mechanisms
+   - Intrinsic learning from environmental feedback
 
-Where:
-- **e(x_t; theta_e)**: Encoding — transforms task information into electrical stimuli
-- **b(u_t; theta_b,t)**: Biological transformation — BNN's intrinsic dynamics
-- **d(v_t; theta_d)**: Decoding — transforms neural responses into task-relevant outputs
-- **r(Score; theta_r)**: Feedback — drives BNN adaptation toward objectives
+3. **Decoding Layer**: Reads BNN activity and maps to action outputs
+   - Spike train decoding strategies
+   - Population activity interpretation
+   - Action selection from neural readout
 
-Biological adaptation:
-```
-theta_b,t+1 = g(r(Score; theta_r); theta_b,t)
-```
+4. **Environment**: Simulated or physical task domain
+   - Grid-world navigation (current validation)
+   - Closed-loop feedback to encoding layer
+   - Reward/punishment signals
 
-### Four Key Modules
+### Parameter Optimization Challenge
 
-#### 1. Encoding (theta_e = theta_task union theta_stim)
-- Transforms task-specific information into stimulation matrix u_t in {0,1}^(C x tau_in)
-- **C**: stimulation channels, **tau_in**: pulse delivery time steps
-- Parameters: frequency, amplitude, pulse width, waveform morphology, spatiotemporal distribution
-- **Rate encoding**: sensor value -> sequence of stimulations at interpolated frequencies
+The biological interactions create a massive multi-combinatorial search space:
+- ~1,300 parameter combinations evaluated
+- >4,000 hours of real-time agent-environment interactions
+- 12 configurations identified that consistently demonstrated learning
 
-#### 2. Biological Transformation (b)
-- Non-stationary mapping depending on temporal structure of input
-- Parameters theta_b evolve according to stimulation/response history, feedback, and spontaneous processes
-- Produces *qualitative change*: reorganizes informational structure, not just scaling/filtering
-- **"Third-order" information-processing system**: response depends on how previous outputs shaped transformation
-- Non-invertible: reflects reorganization and compression of information
+**Key Finding**: BNN configurations achieved significantly higher task performance than
+optimized silicon-based DQN agents under the same interaction budget.
 
-#### 3. Decoding (theta_d)
-- Inverse of encoding: transforms BNN responses into task-relevant formats
-- Response matrix v_t in R^(C x tau_out) -> output
-- **Count decoding**: spike counts aggregated in spatial regions, normalized against baseline spontaneous activity
-- Action with highest relative spike density is executed
+## Key Insights
 
-#### 4. Feedback (theta_r)
-- Special form of encoding designed to drive BNN adaptation
-- **Reinforcing (r+)**: structured bursts for favorable outcomes
-- **Plasticity-inducing (r-)**: random stimulation to encourage alternative mappings
+### Why BNNs Outperform DQN in Limited Budgets
 
-## Empirical Evaluation
+- Biological plasticity enables rapid adaptation from minimal experience
+- Intrinsic recurrent dynamics provide rich temporal processing
+- Energy efficiency allows longer exploration within same budget
+- Natural noise may support exploration-exploitation balance
 
-### Task: Goal-Driven Navigation
-- Simulated 6x6 gridworld with barrier, food source, and odor gradient
-- Agent actions: move forward, turn left, turn right
-- Scalar sensor: odor strongest to left (-1), front (0), right/behind (1)
-- Three evaluation modes: 30 steps/1 episode, 150 steps/1 episode, 30 steps/5 episodes
+### Encoding/Decoding Optimization Principles
 
-### Experimental Setup
-- **26 BNN cultures** via Cortical Labs CL1 platform
-- Distributed optimization: Optuna HPO server + multiple CL1 clients
-- **1,296 parameter combinations** screened
-- **4,000+ hours** of real-time agent-environment interactions
-- Two-stage screening: Stage 1 (n=1,296 -> n=64), Stage 2 (n=64 -> n=12 top configurations)
-
-### Encoding Parameters Screened
-
-| Parameter | Stage 1 Values | Top (n=12) |
-|-----------|---------------|------------|
-| Min Frequency (Hz) | 2.0, 3.0, 4.0, 5.0 | 4.0 |
-| Max Frequency (Hz) | 40.0, 60.0, 80.0, 100.0 | 40.0, 60.0, 80.0 |
-| Amplitude (uA) | 1.0, 2.0, 2.5 | 2.5 |
-| Pulse Width (us) | 40.0, 80.0, 160.0 | 40.0, 80.0 |
-| Tick Rate (Hz) | 1.0, 2.0, 4.0 | 1.0, 2.0 |
-| Ticks per Step | 2, 4, 8 | 4 |
-
-### Key Findings
-
-1. **Maximum frequency is strongest driver**: favors moderate values (40-60 Hz)
-2. **Higher amplitude, shorter pulse width, faster interaction rates** support improved performance
-3. **BNN agents significantly outperform DQN benchmarks** under equivalent training steps
-4. **12 configurations** consistently demonstrated learning across multiple episodes
-
-### SHAP Analysis Results
-- Max Frequency: strongest positive impact on top 1% performance
-- Amplitude: higher values (2.5 uA) favored
-- Pulse Width: shorter (40 us) preferred
-- Ticks/Step: moderate (4) optimal
-- Tick Rate: lower (1-2 Hz) better
-- Min Frequency: moderate (4 Hz) optimal
-
-### Biological Setups Tested
-- **Group 1**: 7 cortical/hippocampal cultures in PDMS ring
-- **Group 2**: 9 cortical/hippocampal cultures on astrocytes, monolayer
-- **Group 3**: 5 cortical-only cultures, monolayer (Stage 2)
-- **Group 4**: 5 cortical-only cultures, monolayer (Stage 2)
+1. **Closed-loop alignment**: Encoding and decoding must co-optimize with task dynamics
+2. **Biological constraints**: Stimulation patterns must respect BNN physiological limits
+3. **Temporal matching**: Stimulation timing should align with natural neural timescales
+4. **Spatial specificity**: Electrode configuration critically affects information transfer
 
 ## Applications
 
-1. **Hybrid bio-silicon computing**: Bridging biological efficiency with silicon programmability
-2. **Robotic control**: BNN-driven adaptive decision-making for embodied agents
-3. **Neuroscience research**: Understanding biological learning mechanisms through task-driven validation
-4. **Energy-efficient computing**: Alternative to von Neumann bottleneck limitations
-5. **Benchmarking framework**: Establishing field-wide standards for neurocomputation
-
-## Framework Principles
-
-### Systems Thinking
-- Each component is interconnected and highly parameterized
-- Adjusting any single part changes the entire system response
-- Configuration is a multi-variable optimization problem
-
-### Learning vs Training Distinction
-- **Learning**: biological adaptation emerging from intrinsic biophysical plasticity
-- **Training**: algorithmic optimization in artificial neural networks
-- This distinction emphasizes that biological adaptation is fundamentally different from gradient-based updates
-
-### Hardware Agnosticism
-- Framework encapsulates physical interactions within mapping functions
-- Applicable to MEA, optogenetic, chemical, or other interfacing modalities
-
-## Key Insights for Practice
-
-1. **Parameter optimization is essential**: Heuristic/ad-hoc stimulation protocols are insufficient for robust BNN computing
-2. **Biological stochasticity requires replication**: Identical parameters must be evaluated across multiple cultures simultaneously
-3. **Rate encoding with moderate frequencies** (40-60 Hz max) provides the best coupling with BNN biophysics
-4. **Feedback design matters**: Structured bursts for reinforcement, random stimulation for plasticity induction
-5. **Calibration time**: 4,000+ hours of real-time interaction needed — not trivial
-
-## Comparison to Silicon-Based AI
-
-| Aspect | BNN | Silicon DNN |
-|--------|-----|-------------|
-| Energy efficiency | Extremely high (mW range) | High (GPU/TPU watts) |
-| Continual learning | Intrinsic | Requires specific techniques |
-| Non-stationarity | High (adaptive, evolving) | Fixed after training |
-| Parameter optimization | Biological (plasticity) | Gradient-based |
-| Scalability | Limited by culture setup | Massive scale possible |
-| Task performance | Surpasses DQN (this work) | Superior on complex tasks |
+- Hybrid bio-silicon robotic control
+- Energy-efficient adaptive computing systems
+- Neuroprosthetic device optimization
+- Brain-computer interface encoding strategies
+- Field-wide neurocomputing benchmarks
 
 ## Pitfalls
 
-1. **Biological variability**: Each culture has unique dynamics; parameters optimized for one may not transfer
-2. **Parameter space is vast**: 6 encoding parameters x 4-5 values each = 1,296 combinations minimum
-3. **Real-time constraint**: Experiments run at biological speed (not accelerated)
-4. **Hardware limitations**: MEA platforms are expensive and require specialized expertise
-5. **Decoding simplicity**: Current count decoding is rudimentary; more sophisticated methods needed
-6. **Feedback design**: Fixed feedback regimen may not be optimal for all parameter configurations
+- BNN experiments require extensive real-time interaction (4000+ hrs for validation)
+- Parameter space is combinatorially explosive — systematic search infeasible
+- Biological variability across cultures requires robust encoding strategies
+- Task complexity must match BNN computational capacity
 
-## References
+## Activation Keywords
 
-- Cortical Labs CL1 platform: https://corticallabs.com/cloud
-- Optuna HPO framework
-- Count decoding from Cortical Labs prior work
-- Related: Cortical Labs "DishBrain" (Pong-playing neural culture)
+- embodied-neurocomputation-framework
+- biological neural network computing
+- BNN agent optimization
+- bio-silicon hybrid architecture
+- neurocomputation encoding decoding
+- closed-loop biological neural computation
+- task-driven neurocomputing benchmark
+- living neural culture computation
+- MEA-based neural computing
