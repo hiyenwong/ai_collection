@@ -12,6 +12,13 @@
   - 核心要点: 纠错编码并非均匀有利，其条件收益仅在输入态主导误差通道可被所选码检测时才显现
   - **Activation**: quantum fidelity analysis, compilation pipeline, qubridge, fidelity decomposition, quantum error detection, ablation analysis
 
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Accounting for Missed Events in the Bayesian Modeling of IP3R Multimodal Gating
+- [[ip3r-bayesian-missed-event-modeling]] - Bayesian framework for ion channel gating with missed event correction (arXiv: 2605.11675)
+  - Core: Integrates temporal resolution limitations directly into hierarchical Markov chain likelihood for unbiased kinetic parameter inference
+  - Key finding: IP3R exhibits bimodal Park/Drive gating with Ca²⁺-dependent mode switching regulating CICR
+  - **Activation**: IP3R modeling, calcium channel gating, missed event correction, Bayesian ion channel, patch clamp analysis
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
 ### Scaling Qubit Mapping and Routing With Position Graph Abstraction and Memoization
