@@ -1,3 +1,17 @@
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
+- [[neural-code-language-characterization]] - Closed-loop LLM framework translates neural activation patterns into semantic descriptions for V1/V4 neurons using digital twins (arXiv: 2605.12485)
+  - V4 neurons: 96.1% activation above 95th percentile, 97.6% suppression below 5th percentile via semantic hypothesis testing
+  - Linguistic compression is lossy but semantically faithful; vision embeddings align best with neural activity
+  - **Activation**: neural code characterization, digital twin neuroscience, LLM neuron interpretation, V1 V4 semantic description
+
+### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+- [[spatiotemporal-tdann]] - Spatiotemporal TDANN with MoCo self-supervision generates brain-like direction maps and pinwheel structures in MT area (arXiv: 2605.11718)
+  - 3D ResNet + spatial loss unifies ventral and dorsal stream computational origins via optimization trade-off
+  - Quantitative match to macaque MT: DSI, circular variance, pinwheel density all align with in vivo baselines
+  - **Activation**: MT direction maps, dorsal stream modeling, spatiotemporal TDANN, cortical self-organization
+
 ## 2026-05-14 - Anthropic Research (Cron Job)
 
 ### Teaching Claude Why
