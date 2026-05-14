@@ -1,111 +1,145 @@
 ---
 name: spikeprophecy-benchmark
-description: "SpikeProphecy methodology for autoregressive neural population forecasting. Introduces a large-scale benchmark for causal, autoregressive spike-count forecasting on real electrophysiology recordings. Core contribution: population metric decomposition separating aggregate performance into temporal fidelity, spatial pattern accuracy, and magnitude-invariant alignment. Evaluated on 105 Neuropixels sessions (~89,800 neurons) with 7 architecture baselines spanning SSMs, RNNs, transformers, and other families. Activation: SpikeProphecy, neural population forecasting, spike count forecasting, Neuropixels benchmark, autoregressive spike prediction, neural dynamics prediction, population metric decomposition, temporal fidelity, spatial pattern accuracy, Steinmetz dataset, neural population models."
+description: "SpikeProphecy methodology for evaluating autoregressive neural population forecasting via population metric decomposition. Separates aggregate performance into temporal fidelity, spatial pattern accuracy, and magnitude-invariant alignment. Activation: spike forecasting, neural population benchmark, autoregressive spike-count forecasting, population metric decomposition, neuropixels analysis, spikeprophecy, neural dynamics forecasting."
 ---
 
-# SpikeProphecy Benchmark Methodology
+# SpikeProphecy: Population Metric Decomposition for Neural Population Forecasting
 
-## Overview
+> A large-scale benchmark framework for causal, autoregressive spike-count forecasting on real electrophysiology recordings, with a population metric decomposition that reveals structure masked by aggregate correlation metrics.
 
-SpikeProphecy (arXiv: 2605.12992) introduces the **first large-scale benchmark for causal, autoregressive spike-count forecasting** on real electrophysiology recordings. It challenges the field's reliance on a single aggregate Pearson correlation metric, which masks critical structural aspects of neural population predictions.
+## Metadata
+- **Source**: arXiv:2605.12992
+- **Authors**: John R. Minnick, Jinghui Geng, Kamran Hussain, Jesus Gonzalez-Ferrer, Ash Robbins, Mohammed A. Mostajo-Radji, David Haussler, Jason K. Eshraghian, Mircea Teodorescu
+- **Published**: 2026-05-13
+- **Venue**: Submitted to NeurIPS 2026 Datasets and Benchmarks Track
 
 ## Core Problem
 
-Neural population models predict joint firing of many simultaneously recorded neurons forward in time, but are typically evaluated by a single aggregate Pearson correlation $r$ between predicted and actual spike counts. This scalar collapses together distinct aspects of prediction quality — temporal fidelity, spatial pattern accuracy, and magnitude alignment — making it impossible to distinguish what a model actually captures.
+Neural population models (predicting joint firing of many simultaneously recorded neurons forward in time) are typically evaluated by a single aggregate Pearson correlation *r* between predicted and actual spike counts. This scalar **masks critical structure** — it collapses temporal dynamics, spatial patterns, and magnitude alignment into one number, making it impossible to diagnose what aspects of neural dynamics a model captures or fails to capture.
 
-## Key Contributions
+## Core Methodology
 
-### 1. Population Metric Decomposition
+### Population Metric Decomposition
 
-Decomposes aggregate forecasting performance into three orthogonal components:
+The key innovation is decomposing aggregate forecasting performance into three orthogonal dimensions:
 
-- **Temporal Fidelity**: How well the model captures the timing dynamics of neural activity
-- **Spatial Pattern Accuracy**: How well the model captures the spatial correlations across neurons
-- **Magnitude-Invariant Alignment**: How well the model captures relative firing rate patterns independent of absolute magnitude
+1. **Temporal Fidelity**: How well does the model capture the timing structure of neural activity? Does it predict when neurons fire with correct temporal dynamics?
 
-This decomposition surfaces aspects of the underlying data that an aggregate scalar obscures.
+2. **Spatial Pattern Accuracy**: How well does the model capture which neurons co-fire? Does it reproduce the spatial correlation structure across the population?
 
-### 2. Large-Scale Benchmark Protocol
+3. **Magnitude-Invariant Alignment**: How well does the model capture the relative firing rate patterns, independent of absolute scale? This separates shape matching from amplitude matching.
 
-- **Dataset**: 105 Neuropixels sessions (Steinmetz 2019 + IBL Repeated Site)
-- **Scale**: ~89,800 neurons across sessions
-- **Task**: Causal, autoregressive spike-count forecasting
-- **Baselines**: 7 architectures spanning 4 structural families:
-  - 4 State Space Models (3 diagonal + 1 non-diagonal)
-  - RNN-based models
-  - Transformer-based models
-  - Other baseline families
+**Why this matters**: The decomposition surfaces aspects of neural data that an aggregate scalar collapses together, enabling targeted model improvement and revealing which architectural families excel at which aspects of neural dynamics.
 
-### 3. Implicit Behavioral Decoding
+### Key Findings from SpikeProphecy
 
-Companion work (arXiv: 2605.12999) demonstrates that a single Mamba forecaster trained on next-step spike counts can simultaneously:
-- Forecast neural population activity
-- Decode behavioral state from predicted rates
-- Achieve 75.7±0.2% trial vote accuracy on mouse choice (~2.3× chance)
-- Achieve 66.1±0.6% on stimulus side (~2× chance)
-- Outperform matched linear decoders by 4-6 percentage points
+- **Brain-region predictability ranking**: Reproduces across all 7 baselines (3 SSMs, 1 non-diagonal SSM, Transformer, LSTM, SNN) and survives ANCOVA correction for firing-statistics constraints
+- **Sub-Poisson evaluation floor**: Rigorous metrics reveal genuine biophysical constraints on regular spike trains
+- **Negative result on KL distillation**: KL-on-output-rates distillation for ANN-to-SNN transfer fails in the Poisson count domain
 
-## Application to Skill Development
+## Benchmark Protocol
 
-### When to Apply This Methodology
+### Dataset
+- **105 Neuropixels sessions** from Steinmetz 2019 + IBL Repeated Site
+- **~89,800 neurons** total across sessions
+- Processed dataset available under CC-BY-4.0 license
 
-- Evaluating neural population forecasting models
-- Designing benchmark protocols for neural dynamics prediction
-- Comparing SSM, RNN, and transformer architectures for spike prediction
-- Analyzing multi-dimensional prediction quality beyond aggregate correlation
+### Architecture Baselines (7 models, 4 structural families)
+1. **SSMs** (State Space Models): 3 diagonal + 1 non-diagonal
+2. **Transformer**: Attention-based sequence model
+3. **LSTM**: Recurrent sequence model
+4. **Spiking Neural Network**: Biologically-plausible dynamics
 
-### Metric Decomposition Implementation
+### Evaluation Protocol
+1. **Causal forecasting**: Models must predict future spike counts from past observations only
+2. **Autoregressive**: Predictions feed back as inputs for subsequent timesteps
+3. **Decomposed metrics**: Each prediction evaluated on temporal, spatial, and magnitude dimensions
+4. **ANCOVA correction**: Results corrected for firing-rate statistics as covariates
+
+## Implementation Guide
+
+### Prerequisites
+- Access to Neuropixels electrophysiology data (Steinmetz 2019, IBL datasets)
+- Python with PyTorch/JAX for model implementations
+- Statistical analysis tools for ANCOVA corrections
+
+### Step-by-Step
+
+1. **Data Preprocessing**
+   - Load Neuropixels spike train data
+   - Bin spike counts at appropriate temporal resolution
+   - Split into train/validation/test with temporal ordering
+
+2. **Model Training**
+   - Train each baseline architecture on the same data splits
+   - Ensure causal, autoregressive prediction setup
+   - Use consistent hyperparameter tuning protocol
+
+3. **Metric Decomposition**
+   - For each model's predictions, compute:
+     - Temporal fidelity: autocorrelation structure matching
+     - Spatial accuracy: cross-neuron correlation matrix similarity
+     - Magnitude alignment: rate-invariant pattern correlation
+   - Apply ANCOVA to correct for firing-statistics covariates
+
+4. **Analysis**
+   - Rank brain regions by predictability across models
+   - Identify which metric dimension each architecture family excels at
+   - Check for sub-Poisson evaluation floors
+
+### Code Structure (Conceptual)
 
 ```python
-# Conceptual framework for the three-way decomposition
-def decompose_population_metrics(predictions, ground_truth):
-    """
-    Decompose aggregate forecasting metrics into:
-    1. Temporal fidelity (time-domain accuracy per neuron)
-    2. Spatial pattern accuracy (cross-neuron correlation structure)
-    3. Magnitude-invariant alignment (rate pattern without scale)
-    """
-    # Temporal: per-neuron temporal correlation
-    temporal = compute_temporal_fidelity(predictions, ground_truth)
+def decompose_metrics(predictions, ground_truth):
+    """Decompose aggregate correlation into three dimensions."""
     
-    # Spatial: cross-neuron pattern at each timestep
-    spatial = compute_spatial_accuracy(predictions, ground_truth)
+    # Temporal fidelity: per-neuron temporal structure
+    temporal = compute_temporal_correlation(predictions, ground_truth)
     
-    # Magnitude-invariant: normalized rate patterns
-    magnitude_invariant = compute_magnitude_invariant(predictions, ground_truth)
+    # Spatial pattern accuracy: cross-neuron covariance structure
+    spatial = compute_spatial_alignment(predictions, ground_truth)
+    
+    # Magnitude-invariant alignment: shape matching without scale
+    magnitude = compute_magnitude_invariant_correlation(predictions, ground_truth)
     
     return {
         'temporal_fidelity': temporal,
-        'spatial_pattern': spatial,
-        'magnitude_invariant': magnitude_invariant
+        'spatial_accuracy': spatial,
+        'magnitude_alignment': magnitude
     }
+
+def ancova_correct(metric_scores, firing_stats_covariates):
+    """Correct metric scores for firing statistics using ANCOVA."""
+    # Fit ANCOVA model with firing rate, spike count variance as covariates
+    # Return region effects above and beyond firing statistics
+    pass
 ```
 
-### Architecture Selection Guidance
+## Applications
 
-| Architecture | Strengths | Best For |
-|-------------|-----------|----------|
-| SSM (diagonal) | Efficient, long context | High-throughput sessions |
-| SSM (non-diagonal) | Captures cross-neuron interactions | Dense connectivity patterns |
-| RNN | Proven on sequential data | Moderate-scale sessions |
-| Transformer | Global attention | Complex temporal dependencies |
+- **Model selection**: Choose architectures based on which aspect of neural dynamics is most important for the task
+- **Model diagnosis**: Identify which dimension a model fails on, guiding architectural improvements
+- **Neuroscience insight**: The brain-region predictability ranking reveals which brain areas have more predictable population dynamics
+- **ANN-to-SNN transfer**: Evaluate distillation strategies for converting artificial networks to spiking equivalents
+- **Benchmark standardization**: Replace single aggregate metrics with decomposed evaluation protocols
 
-## Research Implications
+## Pitfalls
 
-1. **Evaluation matters**: How we evaluate spike forecasting matters as much as what we build
-2. **Decomposition reveals structure**: Population metric decomposition surfaces critical aspects collapsed by aggregate scalars
-3. **Unified forecasting+decoding**: A single forecaster can serve both prediction and behavioral readout
-4. **Scale enables discovery**: 105-session, ~89,800-neuron benchmark provides statistical power for nuanced comparisons
+- **Aggregate correlation masks structure**: A high aggregate *r* can hide failures in temporal, spatial, or magnitude dimensions
+- **Firing statistics confound**: Regions with different firing rates will appear differently predictable — ANCOVA correction is essential
+- **Poisson domain specifics**: Standard distillation losses (KL on output rates) may fail for spike count distributions
+- **Sub-Poisson floor**: Some neural populations have such regular firing that no model can significantly outperform the biophysical floor
+- **Causal evaluation**: Must use truly autoregressive prediction — teacher forcing during evaluation inflates metrics unrealistically
 
 ## Related Skills
 
-- `mamba-spike-forecasting-behavioral-decoding` - Mamba forecaster for behavioral decoding
-- `autoregressive-flow-matching-neural-dynamics` - Flow matching for neural dynamics
-- `neural-population-dynamics` - Neural population analysis methods
-
-## References
-
-- SpikeProphecy: arXiv:2605.12992
-- Implicit Behavioral Decoding: arXiv:2605.12999
-- Steinmetz Dataset: Nature 2019
-- IBL Repeated Site: International Brain Laboratory
+- spike-prophecy-benchmark
+- autoregressive-flow-matching-neural-dynamics
+- spiking-neural-network-analysis
+- neural-population-dynamics
+- neural-population-decoding
+- neural-dynamics-universal-translator
+- neural-dynamics-autoregressive-flow-matching
+- mamba-spike-forecasting-behavioral-decoding
+- sbtg-neural-dynamics-inference
+- jedi-neural-dynamics-inference
