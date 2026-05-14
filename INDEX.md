@@ -304,6 +304,15 @@
 
 ---
 
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Accounting for Missed Events in the Bayesian Modeling of IP3R Multimodal Gating
+- [[bayesian-ip3r-missed-event-modeling]] - Bayesian ion channel gating analysis with missed event correction integrated into likelihood (arXiv: 2605.11675)
+  - Hierarchical Markov chains with mode-dependent kinetics for IP3R channel
+  - Missed event correction in likelihood function prevents model selection bias
+  - **Activation**: ip3r modeling, calcium channel gating, bayesian missed event, hierarchical markov chain, patch clamp analysis
+
+
 ## 2026-05-13 - Neuroscience Research (Cron Job)
 
 ### Counterfausal Analysis of Brain Network Dynamics
