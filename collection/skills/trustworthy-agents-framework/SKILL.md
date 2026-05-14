@@ -11,19 +11,34 @@ Comprehensive framework for designing, deploying, and governing trustworthy AI a
 2. **Agent Harness**: Execution environment managing tool access, state, and action logging
 3. **Tools**: External APIs and functions with permission-based access control
 4. **Environment**: Sandboxed execution context preventing unauthorized data access
-5. **Five Core Principles**:
-   - Human Control: Humans retain ultimate decision authority
-   - Value Alignment: Agent behavior consistent with human values and organizational policies
-   - Secure Interactions: Protection against prompt injection, tool misuse, and data exfiltration
-   - Transparency: Agent actions and reasoning are auditable and explainable
-   - Privacy: Agent respects data boundaries and minimizes information exposure
+5. **Agent Behavior Layers**:
+   - Self-directed loop: plans, acts, observes, adjusts, repeats
+   - Behavior depends on model + harness + tools + environment working together
+6. **Five Core Principles**:
+   - **Human Control**: Humans retain ultimate decision authority
+     - Permission tiers: always allow, needs approval, block
+     - Plan Mode: shows intended plan for review before execution
+   - **Value Alignment**: Agent behavior consistent with human values
+     - Training on ambiguous situations reinforces pausing over assuming
+     - Constitution reinforces "raising concerns, seeking clarification, or declining to proceed"
+   - **Secure Interactions**: Protection against prompt injection, tool misuse, data exfiltration
+     - Multi-layer defenses: training, monitoring, red-teaming
+   - **Transparency**: Agent actions and reasoning are auditable and explainable
+   - **Privacy**: Agent respects data boundaries and minimizes information exposure
 
 ## Key Findings
 - Prompt injection remains the highest-risk attack vector for agent deployment
+- Agent behavior depends on all four layers (model, harness, tools, environment) working together
+- Claude's rate of checking in roughly doubles on complex tasks vs simple tasks
 - Tool-use security requires explicit permission models, not implicit trust
 - Multi-agent systems introduce emergent risks not present in single-agent designs
-- Open standards like MCP (Model Context Protocol) improve interoperability but expand attack surface
+- Open standards like MCP (Model Context Protocol, donated to Linux Foundation) improve interoperability but expand attack surface
 - Auditability must be built into agent architecture, not bolted on after deployment
+
+## Ecosystem Recommendations
+1. **Benchmarks**: Rigorous, standardized ways to compare agent systems on prompt injection resistance and uncertainty surfacing
+2. **Evidence Sharing**: Publishing how agents are used and where they struggle
+3. **Open Standards**: Protocols like MCP allow security properties to be designed into infrastructure
 
 ## Methodology Steps
 1. **Threat Modeling**: Identify attack vectors specific to agent deployment context
