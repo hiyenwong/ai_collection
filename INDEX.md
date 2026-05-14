@@ -1,3 +1,23 @@
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Operating a bistable qubit
+- [[bistable-qubit-adaptive-feedback-control]] - Adaptive 1-bit FPGA feedback protocol for operating bistable qubits affected by TLS defects (arXiv: 2605.03187)
+  - Estimates qubit frequency from single-shot measurement at ~136 kHz bandwidth
+  - 77% error reduction in gate fidelities, suppresses TLS-induced Ramsey beating
+  - **Activation**: bistable qubit, adaptive qubit control, TLS defect mitigation, FPGA qubit feedback
+
+### Unitaria: Quantum Linear Algebra via Block Encodings
+- [[unitaria-quantum-linear-algebra]] - NumPy/SciPy-like Python library for quantum algorithms via block encodings without low-level circuit construction (arXiv: 2605.10768)
+  - Matrix-arithmetic evaluation path enables correctness verification beyond state vector simulation
+  - Automatic resource estimation (gate/qubit counts) without circuit execution
+  - **Activation**: unitaria, quantum linear algebra, block encoding, QSVT, quantum matrix operations
+
+### Scaling Qubit Mapping and Routing with Position Graph Memoization
+- [[qubit-mapping-routing-memoization]] - Scalable qubit routing using position graph abstraction and memoization for TI-QCCD architectures (arXiv: 2605.09237)
+  - Caches optimal routing solutions for sub-circuits to reduce compilation bottleneck
+  - Supports arbitrary ion trap architectures with movement constraints
+  - **Activation**: qubit mapping, quantum routing, TI-QCCD compilation, position graph abstraction
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 
 ### Letting the neural code speak: Automated characterization of monkey visual neurons through human language
