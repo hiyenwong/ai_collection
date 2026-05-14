@@ -1,3 +1,48 @@
+## 2026-05-15 - Systems Engineering + Quantum (Cron Job)
+
+### Crystallographic Symmetry Generates Phononic Holonomic Gates with Biased-Erasure Channels
+- [[phononic-holonomic-gates-biased-erasure]] - Strain-active Lambda manifolds enable 99.88% fidelity superadiabatic holonomic gates with 64% data-qubit reduction via biased-erasure channels (arXiv: 2605.10932)
+  - Crystallographic symmetry fixes strain interaction to scalar dot product in multiplicity-one 2D irrep
+  - Circular strain field from phase-locked mechanical modes enables complex phononic Lambda-leg control
+  - A2-sector perturbations parity-filtered into optically distinguishable auxiliary state
+  - **Activation**: phononic holonomic gates, biased-erasure channels, crystallographic quantum control, strain-active Lambda manifold, superadiabatic echo-lune gate, NV center holonomic control
+
+### Communication-Efficient Distributed Inverse Quantum Fourier Transform
+- [[distributed-iqft-communication]] - Communication-optimized distributed IQFT protocol reducing inter-node bandwidth from O(n log n) to O(n/m log n) across m quantum processing nodes (arXiv: 2605.10710)
+  - Decomposes global IQFT into local computation + minimal communication phases
+  - Batches/eliminates redundant controlled-phase gates across nodes
+  - Communication rounds vs. local computation trade-off analysis
+  - **Activation**: distributed IQFT, communication-efficient quantum Fourier, distributed quantum computing communication, quantum Fourier transform distributed
+
+### Loop Composition in Quantum Algorithms
+- [[loop-composition-quantum]] - Models quantum algorithms as compositions of loop structures for modular design, compositional reasoning, and systematic optimization of iterative quantum protocols (arXiv: 2605.07518)
+  - Sequential, nested, and parallel loop composition rules for quantum channels
+  - Fixed point analysis and spectral gap convergence rates
+  - Pattern library: amplitude amplification, phase estimation, QAOA loops
+  - **Activation**: loop composition quantum, quantum algorithm composition, modular quantum algorithms, iterative quantum protocols
+
+### Parity Supervision for Quantum Generative Modeling
+- [[parity-supervision-quantum-generalization]] - Parity constraints as supervisory signals in quantum generative models improving out-of-distribution generalization through constrained output space (arXiv: 2605.10258)
+  - Parity operator enforces global constraint on output distribution
+  - Combined KL + parity loss balances fidelity and generalization
+  - Theoretical bounds on generalization gap improvement
+  - **Activation**: parity supervision quantum, quantum generative model generalization, parity constraints quantum ML, quantum model generalization
+
+### Multi-Qubit Stabilizer Readout on Dual-Species Rydberg Arrays
+- [[multi-qubit-stabilizer-rydberg]] - Parallel multi-qubit stabilizer measurement using species-selective Rydberg operations for real-time QEC in neutral atom platforms (arXiv: 2605.10924)
+  - Dual-species architecture: long-coherence data qubits + fast-gate ancilla qubits
+  - Species-selective controlled-phase gates for non-destructive stabilizer measurement
+  - Parallel measurement scheduling with crosstalk avoidance
+  - **Activation**: multi-qubit stabilizer readout, Rydberg atom QEC, dual-species Rydberg array, neutral atom error correction, parallel stabilizer measurement
+
+### Quantum Hypergraph Partitioning
+- [[quantum-hypergraph-partitioning]] - Hypergraph-based quantum circuit partitioning capturing multi-qubit interactions beyond pairwise couplings for optimal distributed quantum resource allocation (arXiv: 2605.10623)
+  - Circuit-to-hypergraph conversion with hyperedges for multi-qubit gates
+  - QUBO formulation solvable via quantum annealing or QAOA
+  - Hardware mapping with communication scheduling optimization
+  - **Activation**: quantum hypergraph partitioning, distributed quantum circuit mapping, hypergraph quantum topology, quantum hardware allocation
+
+
 ## 2026-05-14 - Neuroscience Research (Cron Job PM)
 
 ### State-Space NTK Collapse Near Bifurcations
