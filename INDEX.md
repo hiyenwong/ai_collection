@@ -16,6 +16,35 @@
 
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Provable and Scalable Quantum Gaussian Processes for Quantum Learning
+- [[quantum-gaussian-processes]] - Bayesian framework for learning from quantum systems through priors over unknown quantum transformations, enabling regression, classification, and Bayesian optimization directly on quantum data using quantum kernels. Provable and scalable for matchgate/free-fermionic evolutions (arXiv: 2605.00099)
+  - 核心要点: 量子高斯过程将unitary量子随机过程定义为高斯过程，通过量子核注入物理先验进行贝叶斯学习
+  - 核心要点: 证明matchgate/free-fermion演化产生可证明且可扩展的QGP，是首个未知unitary作用于所有量子比特的族
+  - 核心要点: 应用于长程外推、多体系统相图学习、量子传感贝叶斯优化
+  - **Activation**: quantum gaussian process, QGP, quantum kernel, bayesian quantum learning, free-fermion learning, quantum Bayesian optimization
+
+### Efficient Quantum Fourier Transforms For Semisimple Algebras
+- [[semisimple-algebra-qft]] - Generalizes QFT from finite groups to finite-dimensional semisimple algebras (partition, Brauer, walled Brauer), with gate complexity poly(n, log d, log(1/ε)) via unitary approximation when parameter d is large (arXiv: 2605.05337)
+  - 核心要点: 代数傅里叶变换可以是非酉的，但当参数d足够大时可被酉算子良好逼近
+  - 核心要点: 给出分割代数、Brauer代数、墙Brauer代数的有效量子傅里叶变换
+  - 核心要点: 连接数论（Schur-Weyl对偶）、统计物理和量子算法
+  - **Activation**: quantum Fourier transform, semisimple algebra, Brauer algebra, partition algebra, Schur-Weyl duality, algebra QFT
+
+### Optimal Error Exponents for Composite Sequential Quantum Hypothesis Testing
+- [[sequential-quantum-hypothesis-testing]] - Mixture-sequential quantum probability ratio test for distinguishing null quantum states from sets of alternatives, achieving optimal Type-I and Type-II error exponents characterized by minimal measured relative entropies (arXiv: 2605.04915)
+  - 核心要点: 复合假设检验通过混合估计自适应选择测量，实现对数似然比阈值停止
+  - 核心要点: 同时达到最优Type-I和最坏情况Type-II错误指数
+  - 核心要点: 复合SQHT样本复杂度至少等于两固定状态间序贯检验
+  - **Activation**: sequential quantum hypothesis testing, SQHT, quantum probability ratio test, quantum state discrimination, composite hypothesis testing
+
+### Cloning is as Hard as Learning for Stabilizer States
+- [[quantum-cloning-learning-equivalence]] - Proves that for n-qubit stabilizer states, optimal cloning sample complexity is Θ(n), matching learning complexity exactly — cloning is as hard as learning even for this structured class (arXiv: 2604.15269)
+  - 核心要点: 稳定器态克隆最优样本复杂度为Θ(n)，与学习复杂度完全相等
+  - 核心要点: 使用Abelian State Hidden Subgroup框架和随机纯化通道连接量子克隆与经典样本放大
+  - 核心要点: 为No-Cloning定理提供细粒度视角，打开量子学习理论与密码学联系
+  - **Activation**: quantum cloning, quantum learning theory, stabilizer states, sample complexity, No-Cloning theorem, sample amplification
+
+
 ### Neural QAOA²: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization
 - [[neural-qaoa-optimization]] - Uses neural networks for differentiable graph partitioning and parameter initialization in QAOA, addressing poor partitioning quality and random parameter initialization for scalable NISQ optimization (arXiv: 2605.13051)
   - 核心要点: 神经网络联合优化图分割和QAOA参数初始化，解决分治QAOA的两大瓶颈
