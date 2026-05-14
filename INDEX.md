@@ -1,4 +1,36 @@
 
+## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
+
+### Affiliated operators for classical and quantum control
+- [[quantum-control-systems]] - von Neumann algebra framework for controllability of bilinear quantum systems on infinite-dimensional Hilbert spaces (arXiv: 2605.13774)
+  - Drift and control terms affiliated with von Neumann algebra of finite type
+  - Lie bracket generating condition implies full controllability
+  - State approximation bounds derived from algebraic structure
+  - **Activation**: quantum control, von Neumann algebra, bilinear systems, controllability, infinite-dimensional Hilbert space, operator algebra, 量子控制
+
+### CO-MAP: A Reinforcement Learning Approach to the Qubit Allocation Problem
+- [[quantum-control-systems]] - RL-based qubit allocation for quantum compilation minimizing SWAP overhead (arXiv: 2605.13638)
+  - Learns logical-to-physical qubit mapping policies via reinforcement learning
+  - State: current mapping + gate sequence position; Action: assign logical to physical qubit
+  - Reward: negative estimated routing cost; trains on diverse circuit benchmarks
+  - **Activation**: qubit allocation, quantum compiler, reinforcement learning compilation, qubit mapping, SWAP optimization, CO-MAP
+
+### A Quantum Multi-Programming Framework to Maximize Quantum Resources for the LUCJ Ansatz
+- [[quantum-control-systems]] - Multi-programming framework for concurrent quantum program execution maximizing hardware utilization (arXiv: 2605.12614)
+  - Partition hardware qubits into logical slices for concurrent execution
+  - Manage crosstalk between concurrent programs via physical coupling models
+  - Optimize throughput vs. individual fidelity trade-offs
+  - **Activation**: quantum multi-programming, resource optimization, quantum throughput, LUCJ ansatz, concurrent quantum execution, 量子多编程
+
+### Grid-Orch: An LLM-Powered Orchestrator for Distribution Grid Simulation and Analytics
+- [[llm-orchestrated-systems]] - LLM orchestrator bridging natural language with power grid simulation via MCP (arXiv: 2605.12728)
+  - LLM decomposes user intent into tool-specific commands for engineering simulators
+  - MCP server layer provides standardized interface to domain-specific tools
+  - Validation gate ensures physical correctness of simulation results
+  - Addresses 1.5M engineer shortage by democratizing access to grid analysis tools
+  - **Activation**: LLM orchestrator, MCP engineering, natural language simulation, engineering tool orchestration, grid simulation, automated engineering workflow
+
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
