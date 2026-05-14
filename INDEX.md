@@ -1,3 +1,23 @@
+## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
+
+### Scaling Qubit Mapping and Routing With Position Graph Abstraction and Memoization
+- [[quantum-compiler-routing]] - 量子编译器中基于位置图抽象和记忆化的可扩放量比特映射与路由优化 (arXiv: 2605.09237v1)
+  - 核心要点：位置图抽象统一了可执行位置、移动路径和路由约束三大约束表达
+  - 核心要点：通过记忆化启发式评估加速 SABRE 编译算法，不改路由决策仅加速
+  - **Activation**: quantum compiler, qubit mapping, qubit routing, SABRE algorithm, quantum circuit compilation, TI-QCCD, trapped-ion compilation, position graph abstraction
+
+### Lower overhead fault-tolerant building blocks for noisy quantum computers
+- [[quantum-fault-tolerance-blocks]] (updated) - 降低容错量子计算开销：标志容错稳定子测量、距离-4编码、经典编码保护测量结果 (arXiv: 2605.12385v1)
+  - 核心要点：标志容错组合证明指数级减少测量任意大小稳定子所需的额外量子比特
+  - 核心要点：距离-4编码编码6个逻辑量子比特，使用十分之一的物理量子比特达到与距离-5表面码相同保护
+  - **Activation**: quantum fault tolerance, flag fault tolerance, surface code, low overhead QEC
+
+### Benchmarking and Resource Analysis for Augmented-Lagrangian Quantum Hamiltonian Descent
+- [[al-qhd-quantum-optimization]] (updated) - 增强拉格朗日量子哈密顿下降框架用于约束非凸优化及资源估计 (arXiv: 2605.12066v1)
+  - 核心要点：将QHD嵌入增强拉格朗日框架，将约束优化转化为无约束量子子问题序列
+  - 核心要点：Texas7k ACOPF实例资源估计达 ~4.46×10⁷ 纠缠门（NISQ）和 ~9.42×10⁸ T门（容错）
+  - **Activation**: quantum Hamiltonian descent, augmented Lagrangian quantum, constrained quantum optimization, AL-QHD
+
 
 ## 2026-05-14 - Systems Engineering Research (Cron Job)
 
