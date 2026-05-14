@@ -1,4 +1,20 @@
 
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration
+- [[sparse-temporal-context-reconfiguration]] - 联合稀疏编码与时间动力学支持上下文重构：大脑通过稀疏性减少跨上下文干扰，时间动力学增强上下文可分离性，SNN天然具备这两种特性 (arXiv: 2605.10178)
+  - mPFC记录显示上下文依赖的稀疏活动模式，减少表征重叠
+  - 时间动力学为上下文编码增加正交维度，即使重叠表征也可分离
+  - SNN在终身学习中表现出更好的保留能力，无需额外正则化或回放机制
+  - **Activation**: context reconfiguration, sparse coding temporal dynamics, catastrophic forgetting, lifelong learning SNN, mPFC, stable adaptation, 上下文重构
+
+### S2-Net: Oscillatory Spiking Neural Network with Time-Delayed Coordination
+- [[oscillatory-snn-time-delayed-coordination]] - 从皮质同步节律到脑启发学习机制：S2-Net通过自下而上和自上而下的迭代交互实现认知级神经同步 (arXiv: 2605.01656)
+  - 自下而上：脉冲活动在有限记忆窗口内累积形成振荡同步模式
+  - 自上而下：时间延迟同步公式实现对异质神经脉冲的全局调制
+  - 在神经活动解码、能量高效信号处理、时间绑定和语义推理任务中取得优异结果
+  - **Activation**: S2-Net, spiking-by-synchronization, oscillatory SNN, time-delayed coordination, cortical rhythm, temporal binding, neural synchrony
+
 ## 2026-05-14 - Neuroscience Research (Cron Job)
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
