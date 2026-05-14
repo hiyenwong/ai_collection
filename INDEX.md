@@ -17,6 +17,13 @@
   - **Activation**: neural QAOA, differentiable optimization, graph partitioning, quantum parameters, combinatorial optimization
 
 
+## 2026-05-14 - Neuroscience Research (Cron Job)
+
+### Information as Maximum-Caliber Deviation: A bridge between Integrated Information Theory and the Free Energy Principle
+- [[iit-fep-maxcaliber-bridge]] - Maximum-Caliber Deviation framework bridging IIT and FEP via variational principles (arXiv: 2605.12536)
+  - Information defined as deviation from constrained MaxCal path ensembles
+  - IIT 3.0 cause/effect repertoires re-derived from CMEP variational principles
+  - **Activation**: iit fep bridge, maximum caliber, integrated information, free energy principle, consciousness
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
 ### Affiliated operators for classical and quantum control
