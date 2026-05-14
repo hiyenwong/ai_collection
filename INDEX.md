@@ -19,6 +19,14 @@
   - Core: Integrates temporal resolution limitations directly into hierarchical Markov chain likelihood for unbiased kinetic parameter inference
   - Key finding: IP3R exhibits bimodal Park/Drive gating with Ca²⁺-dependent mode switching regulating CICR
   - **Activation**: IP3R modeling, calcium channel gating, missed event correction, Bayesian ion channel, patch clamp analysis
+## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job - Block Encoding)
+
+### Unitaria: Quantum Linear Algebra via Block Encodings
+- [[quantum-block-encoding-linear-algebra]] - Block encoding methodology for quantum linear algebra, enabling unified QSVT-based matrix operations (arXiv: 2605.10768v1)
+  - 核心要点 1: 块编码作为统一接口实现矩阵运算，支持量子奇异值变换(QSVT)、哈密顿量模拟和矩阵函数求值
+  - 核心要点 2: QSVT实现多项式函数作用于奇异值，单一框架覆盖HHL算法、矩阵求逆、特征值估计
+  - **Activation**: quantum block encoding, quantum linear algebra, unitaria, quantum SVD, QSVT, quantum matrix inversion, quantum Hamiltonian simulation
+
 ## 2026-05-14 - Systems Engineering + Quantum (Cron Job)
 
 ### Scaling Qubit Mapping and Routing With Position Graph Abstraction and Memoization
