@@ -6,6 +6,12 @@
   - 核心要点 2: LS-SSA 局部膨胀窗口机制，平衡局部细节与长程依赖，降低计算复杂度
   - **Activation**: spiking transformer, local attention, SNN, energy-efficient, LSFormer
 
+### Do Language Models Align with Brains? Prediction Scores Are Not Enough
+- [[lpact-brain-lm-alignment-evaluation]] - Source-audited framework (L-PACT) rigorously evaluates brain-LM alignment beyond prediction scores (arXiv: 2605.14025)
+  - 核心要点 1: L-PACT 四重验证门控（预测-关系-机制剥离-可靠性边界），严控假阳性
+  - 核心要点 2: 严格对照下所有 146 集成行均被控制解释，挑战高预测分=结构对齐的假设
+  - **Activation**: brain alignment, L-PACT, prediction scores, brain-language model, evaluation
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
