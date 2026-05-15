@@ -1,3 +1,17 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Large-scale portfolio optimization using Pauli Correlation Encoding
+- [[pauli-correlation-portfolio-optimization]] - 基于Pauli关联编码的大规模量子组合优化，单量子比特编码多变量实现250+资产优化 (arXiv: 2511.21305)
+  - 核心要点：通过市场图分割将高维组合优化分解为强关联资产子组合
+  - 核心要点：Pauli算符关联实现单量子比特多变量编码，突破qubit数量限制
+  - **Activation**: Pauli correlation encoding, PCE portfolio, quantum portfolio optimization, scalable VQA, market graph partitioning
+
+### A Quantum Reservoir Computing Approach to Quantum Stock Movement Forecasting
+- [[quantum-reservoir-stock-forecasting]] - 量子储备池计算预测量子投资板块股票走势，仅需3-6量子比特即可实现非线性金融时间序列预测 (arXiv: 2602.13094)
+  - 核心要点：小型量子系统作为计算储备池，仅需训练经典读出层
+  - 核心要点：量子纠缠提供非线性特征扩展，适用于NISQ设备
+  - **Activation**: quantum reservoir computing, QRC stock forecasting, quantum time series, quantum trading prediction, small-scale quantum ML
+
 
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
