@@ -1,3 +1,19 @@
+## 2026-05-15 - 数学 + 量子力学 (Mathematics + Quantum Mechanics) (Cron Job)
+
+### Towards Exponential Quantum Improvements in Solving Cardinality-Constrained Binary Optimization
+- [[quantum-grover-admm-optimization]] - Grover搜索 + ADMM混合框架实现约束二元优化指数加速 (arXiv: 2603.14744)
+    - 固定基数子空间Grover搜索：O(sqrt(C(n,k)/M))，指数优于全空间搜索
+    - ADMM分解：量子二次oracle + 经典基数约束投影，保证ε-近似解
+  - **Activation**: Grover optimization, ADMM, cardinality constraint, binary optimization, hybrid quantum-classical
+
+## 2026-05-15 - 数学 + 量子力学 (Mathematics + Quantum Mechanics) (Cron Job)
+
+### Cusp Form Dimensions, Lattice Uniqueness, and LP Sharpness for Sphere Packing in Dimensions 8 and 24
+- [[sphere-packing-lp-sharpness]] - 统一数论、格论、CFT的球体堆积LP界锐度分析方法论 (arXiv: 2604.10914)
+    - 三条件等价猜想：cusp form维度 + 对偶LP障碍 + CFT极值存在性
+    - Bost-Connes量子统计系统通过Hecke代数连接三种视角
+  - **Activation**: sphere packing, cusp forms, modular forms, LP bounds, Bost-Connes system
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
