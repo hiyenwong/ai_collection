@@ -1,3 +1,12 @@
+## 2026-05-15 - Systems Engineering Research (Cron Job)
+
+### Byzantine-Resilient Consensus via Active Reputation Learning
+- [[byzantine-consensus-reputation-learning]] - 将主动声誉学习嵌入共识闭环，通过异常鲁棒损失函数和历史信息构建信誉向量，实现拜占庭容错与共识质量的双向正反馈 (arXiv: 2605.11357)
+  - 核心要点: 传统拜占庭容错是被动过滤，本文提出主动声誉学习机制，信誉向量在概率单纯形上更新
+  - 核心要点: 学习-控制协同设计：更好的共识状态提升拜占庭可识别性，更精确的声誉反过来改善共识
+  - 核心要点: 使用异常鲁棒损失函数（Huber/Student's t-loss）结合多样性保持探索项，平衡损失最小化与信誉估计
+  - **Activation**: byzantine consensus, reputation learning, resilient consensus, distributed fault tolerance, adversarial agents, multi-agent trust
+
 ## 2026-05-15 - Neuroscience Research (Cron Job) - KAST-BAR
 
 ### KAST-BAR: Knowledge-Anchored Semantically-Dynamic Topology Brain Autoregressive Modeling for Universal Neural Interpretation
