@@ -28,6 +28,20 @@
   - 对生物神经回路解释和人工循环系统设计(储层计算)均有重要意义
   - **Activation**: information flux, cortical microcircuit, reverse engineering neural circuit, recurrence resonance, reservoir computing optimization
 
+### NeuroTrain: Local Learning Rules SNN Benchmarking
+- [[neurotrain-local-learning-snn-benchmarking]] - Open benchmarking framework for systematic evaluation of local learning rules in Spiking Neural Networks (arXiv: 2605.15058)
+  - 统一API集成STDP、Hebbian、三因子、代理梯度、eligibility propagation等局部学习规则
+  - 标准化基准套件覆盖静态图像、神经形态数据集和时序任务
+  - 评估指标涵盖准确率、能效、收敛速度和内存占用
+  - **Activation**: local learning rules, SNN benchmarking, NeuroTrain, STDP comparison, biologically plausible learning
+
+### LSFormer: Local Structure-Aware Spiking Transformer
+- [[lsformer-local-structure-aware-spiking-transformer]] - 突破Transformer-based SNN全局自注意力瓶颈，提出局部结构感知自注意力和脉冲响应池化 (arXiv: 2605.13887)
+  - Spiking Response Pooling (SPooling) 替代max pooling，保留区域特征多样性
+  - Local Structure-Aware Spiking Self-Attention (LS-SSA) 使用局部膨胀窗口降低复杂度
+  - Tiny-ImageNet +4.3%, N-CALTECH101 +8.6% 超越现有Transformer-based SNN
+  - **Activation**: LSFormer, local structure-aware, spiking transformer, dilated window attention, SPooling
+
 ## 2026-05-15 - 数学 + 量子力学 (Mathematics + Quantum Mechanics) (Cron Job)
 
 ### Towards Exponential Quantum Improvements in Solving Cardinality-Constrained Binary Optimization
