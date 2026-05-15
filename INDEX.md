@@ -1,5 +1,19 @@
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
+### Mixed-State Long-Range Entanglement from Dimensional Constraints
+- [[quantum-mixed-state-entanglement]] - Methodology for analyzing long-range entanglement in many-body mixed states via dimensional constraints and symmetry counting arguments (arXiv: 2605.15201)
+  - Dimensional mismatch: SRE states span poly(N) vs full symmetry sector exp(N) proves LRE
+  - SW-SSB detection requires information-theoretic diagnostics, not order parameters
+  - Geometrically non-local Lindbladian construction to stabilize LRE as steady state
+  - **Activation**: long-range entanglement, mixed state entanglement, SRE spanning, dimensional constraint, symmetry-enforced entanglement
+
+### Non-Invertible Symmetries on Tensor-Product Hilbert Spaces and Quantum Cellular Automata
+- [[quantum-cellular-automata-symmetries]] - Methodology for analyzing fusion category symmetries on tensor-product Hilbert spaces with quantum cellular automata (arXiv: 2605.15194)
+  - Weakly integral fusion categories are necessary for tensor-product Hilbert space realizability
+  - QCA and symmetry-operator indices determined by categorical data under defect assumptions
+  - Explicit lattice model construction for Tambara-Yamagami categorical symmetries
+  - **Activation**: quantum cellular automata, fusion category symmetry, non-invertible symmetry, QCA index, Tambara-Yamagami
+
 ### BB plot: A Tool for Accurate Model Selection Using Bayes factors
 - [[bayesian-model-selection-bb-plot]] - Bayesian model selection with BB plot diagnostics for validating Bayes factor calculations and estimating background distributions at low cost (arXiv: 2605.10333)
   - BB relationship: p(B|H1) = B* p(B|H2) - fundamental identity connecting Bayes factor distributions under competing hypotheses
