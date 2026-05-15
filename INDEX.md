@@ -1,3 +1,19 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
+- [[spikeprophecy-benchmark]] - First large-scale benchmark for causal, autoregressive spike-count forecasting on 105 Neuropixels sessions (~89,800 neurons), with population metric decomposition exposing structure invisible to aggregate Pearson r (arXiv: 2605.12992)
+  - Population metric decomposition: pop_rate_r (temporal fidelity), spatial_r (spatial pattern), cosine_sim (magnitude-invariant alignment)
+  - Brain-region predictability hierarchy reproduces across all 7 baselines, survives ANCOVA correction (ΔR²=0.018)
+  - Architecture clustering: SSMs (Mamba/HGRN2/GatedDeltaNet) r=0.48-0.50, LSTM 0.441, SNN 0.430; negative result on KL distillation for ANN→SNN
+  - **Activation**: spikeprophecy, neural forecasting benchmark, spike count prediction, neural population forecasting, autoregressive neural dynamics, BCI forecasting, population metric decomposition, Neuropixels benchmark
+
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neurons]] - Spiking neuron factorizing temporal computation into explicit Frequency Selectivity (FS) and Temporal Shaping (TS) modules, enabling learnable frequency preferences and group-delay modulation with post-training interpretability (arXiv: 2605.13071)
+  - FS module: closed-form Ω* ↔ κ* mapping enables frequency-domain initialization, learning, and interpretation in same coordinate
+  - TS module: all-pass filter cascade + λ-mixing for group-delay shaping, can induce negative group-delay shift impossible under pure AP composition
+  - Consistently improves over LIF baseline on SHD/SSC auditory benchmarks in simple feedforward SNNs without recurrence
+  - **Activation**: FiTS, frequency selective spiking neuron, temporal shaping SNN, interpretable spiking neurons, group-delay modulation, neuronal resonance, all-pass filter spiking, frequency selectivity neuron
+
 ### Geometric Pareto Control: Riemannian Gradient Flow of Energy Function via Lie Group Homotopy
 - [[geometric-pareto-control]] - 将 Pareto 最优解族嵌入 Lie 群子流形，通过黎曼梯度流实现闭环导航，解决安全关键 CPS 中 RL 的采样复杂度、重训练、脆性切换和不安全探索问题 (arXiv: 2605.09824)
   - 核心要点: 离线阶段将 Pareto 最优解嵌入 Lie 群子流形，训练时可行性裕度保证无需后验投影
