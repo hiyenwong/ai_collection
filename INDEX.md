@@ -1,3 +1,24 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
+- [[cd-qaoa-portfolio-optimization]] - 反绝热量子近似优化算法用于约束组合优化，通过变分规范势降低电路深度并提升约束满足率 (arXiv: 2605.06858)
+  - 核心要点：CD-QAOA将近似绝热规范势融入QAOA层，减少达到目标近似比所需的电路深度
+  - 核心要点：原生处理基数和预算约束，无需惩罚系数，在真实金融数据集上优于标准QAOA
+  - **Activation**: counterdiabatic QAOA, CD-QAOA, constrained portfolio optimization, quantum gauge potential, adiabatic quantum optimization
+
+### Qvine: Vine Structured Quantum Circuits for Loading High Dimensional Distributions
+- [[qvine-quantum-distribution-loading]] - 藤结构量子电路通过成对copula依赖加载高维分布，实现O(n·polylog n)门复杂度 (arXiv: 2604.26213)
+  - 核心要点：利用藤copula分解将高维分布编码为边际+成对依赖，电路深度从指数级降至对数级
+  - 核心要点：适用于金融风险分析、量子生成模型、概率量子推理等场景
+  - **Activation**: vine quantum circuit, quantum distribution loading, copula quantum, quantum state preparation, high dimensional distribution quantum
+
+### Quantum Computing for Financial Transformation: A Review of Optimisation, Pricing, Risk, Machine Learning, and Post-Quantum Security
+- [[quantum-financial-transformation-review]] - 量子计算在金融领域的全面综述：组合优化、衍生品定价、风险管理、量子ML和后量子安全 (arXiv: 2604.08180)
+  - 核心要点：识别金融核心瓶颈（组合搜索、期望估计、稀有事件分析、表征学习、密码安全）与量子算法的对应关系
+  - 核心要点：系统性评估量子金融应用的成熟度和NISQ时代可行性路线图
+  - **Activation**: quantum finance review, quantum financial transformation, quantum pricing risk, post-quantum security, quantum ML finance
+
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
