@@ -1,128 +1,108 @@
 ---
 name: lpact-brain-lm-alignment-evaluation
-description: "L-PACT framework for evaluating brain-language model alignment. Goes beyond prediction scores to assess predictive, relational, mechanism-stripping, and reliability-bounded evidence."
+description: "L-PACT (Locked Predictive-Aligned Cross-modal Testing) framework for rigorous brain-language model alignment evaluation. Goes beyond prediction scores with four evidence gates: predictive-control, relational-profile, mechanism-stripping, and reliability-bounded evaluation. Use when evaluating brain-model alignment, interpreting neural prediction scores, designing brain-AI comparison studies, or critically assessing claims of structural alignment between LLMs and brain activity. Activation: L-PACT, brain alignment, brain-language model, prediction scores, brain-AI comparison, neural prediction, alignment evaluation, brain-model alignment."
 ---
 
-# L-PACT: Brain-Language Model Alignment Evaluation Framework
+# L-PACT: Brain-LM Alignment Evaluation Framework
 
-**Source:** arXiv:2605.14025 (May 15, 2026)
-**Title:** Do Language Models Align with Brains? Prediction Scores Are Not Enough
-**Categories:** q-bio.NC, cs.AI, cs.LG (likely)
+Source-audited framework for evaluating whether language model representations genuinely align with brain activity, beyond surface-level prediction scores.
 
-## Problem Statement
+## Problem
 
-Brain-language model comparisons often interpret neural prediction scores as evidence that model representations capture brain-relevant language computation. This paper challenges that assumption by asking whether prediction scores alone are sufficient to support claims of brain-model alignment.
+Brain-language model comparisons commonly interpret neural prediction scores (encoding model performance) as evidence that model representations capture brain-relevant language computation. L-PACT demonstrates that high prediction scores alone are insufficient — controls, baselines, and nuisance factors can produce positive results without genuine structural alignment.
 
-## Key Innovation: L-PACT Framework
+## Four Evidence Gates
 
-L-PACT is a **source-audited framework** that evaluates alignment across four evidence dimensions:
+### 1. Predictive-Control Gate
 
-### 1. Predictive Evidence
-- Standard brain-to-model prediction scores
-- How well model features predict brain activity patterns
-- Baseline evaluation using naturalistic language neural datasets
+Compare real model features against:
+- Nuisance baselines (acoustic envelopes, low-level neural features)
+- Severe controls (shuffled, deterministic signals)
+- Brain-brain ceiling (upper bound from inter-subject reliability)
 
-### 2. Relational Evidence
-- Tests whether model-to-brain profiles reproduce brain-to-brain patterns
-- Compares model representations against inter-subject brain similarity
-- Goes beyond simple prediction to capture relational structure
+A model passes only if it significantly outperforms all controls.
 
-### 3. Mechanism-Stripping Evidence
-- Recomputes held-out scores after removing ("stripping") specific mechanisms
-- Tests whether claimed alignment depends on specific model components
-- Validates that alignment is not due to trivial or spurious correlations
+### 2. Relational-Profile Gate
 
-### 4. Reliability-Bounded Evidence
-- Normalizes evidence against brain-brain ceilings
-- Accounts for measurement noise and reliability limits
-- Provides upper bounds on achievable alignment
+Test whether model-to-brain similarity profiles reproduce brain-to-brain patterns:
+- Extract representational similarity structure from model features
+- Compare with brain RSM (Representational Similarity Matrix)
+- Validate against brain-brain relational ceiling
 
-## Methodology
+### 3. Mechanism-Stripping Gate
 
-### Evaluation Pipeline:
+Remove suspected alignment mechanisms from the model and re-test:
+- Strip predictive features (e.g., next-word prediction heads)
+- Recompute held-out alignment scores post-stripping
+- If scores collapse, alignment is superficial rather than structural
+
+### 4. Reliability-Bounded Gate
+
+Normalize all evidence against brain-brain reliability ceilings:
+- Estimate test-retest reliability of neural data
+- Ceiling-normalize model-to-brain scores
+- Operational Turing bound: can the model pass given measurement noise limits?
+
+## Key Findings (arXiv:2605.14025)
+
+- 414 predictive-control rows, 2304 relational profile rows, 4320 mechanism-stripping rows, 420 brain-brain ceiling rows, 146 integrated decision rows analyzed
+- Assay sensitivity confirmed: framework produces positive evidence when expected (brain-brain reliability, implanted-signal simulation)
+- **No real model row passed all four gates**; all 146 integrated rows were control-explained
+- Less stringent single-criterion rules would count raw positive effects, but L-PACT downgrades them because controls explain the apparent evidence
+
+## Usage Guidelines
+
+### When Evaluating Brain-Model Alignment
+
+1. **Never rely solely on prediction scores** — always run control analyses
+2. **Establish brain-brain ceilings** — normalize against inter-subject reliability
+3. **Test nuisance alternatives** — low-level features, acoustic properties, deterministic baselines
+4. **Perform mechanism stripping** — verify alignment is structural, not artifact of specific components
+5. **Report control-explained taxonomy** — convert apparent positives into auditable categories
+
+### Implementation Checklist
+
+```python
+# Pseudocode for L-PACT evaluation
+def lpact_evaluate(model_features, brain_data, nuisance_baselines):
+    results = {}
+    
+    # Gate 1: Predictive-Control
+    results['predictive'] = test_against_controls(
+        model_features, brain_data, 
+        baselines=nuisance_baselines,
+        ceiling=brain_brain_reliability(brain_data)
+    )
+    
+    # Gate 2: Relational Profile
+    results['relational'] = compare_rsm_profiles(
+        model_features, brain_data,
+        brain_brain_rsm=inter_subject_rsm(brain_data)
+    )
+    
+    # Gate 3: Mechanism Stripping
+    stripped = strip_prediction_head(model_features)
+    results['stripping'] = test_stripped_model(stripped, brain_data)
+    
+    # Gate 4: Reliability Bounding
+    results['reliability'] = normalize_by_ceiling(
+        results['predictive'], brain_brain_reliability(brain_data)
+    )
+    
+    # Integrated decision: ALL gates must pass
+    return all(results.values())
 ```
-[Neural Datasets] → [LM Representations] → [L-PACT Analysis]
-                                                ↓
-                              ┌─────────────────┼─────────────────┐
-                              ↓                 ↓                 ↓
-                       [Predictive]       [Relational]     [Mechanism-Stripping]
-                              ↓                 ↓                 ↓
-                       Score vs           Pattern           Ablation Study
-                       Nuisance Baselines Reproduction     of Components
-                              ↓                 ↓                 ↓
-                         [Reliability-Bounded Normalization]
-                              ↓
-                       [Brain-Brain Ceiling Comparison]
-```
 
-### Key Comparisons:
-- **Real model features** vs **nuisance baselines**
-- **Severe controls** to test robustness
-- **Brain-to-brain patterns** as ceiling for alignment
-- **Mechanism ablation** to validate causal contribution
+## Core Takeaways
 
-## Significance for NeuroAI
-
-1. **Challenges prevailing assumptions** about brain-model alignment
-2. **Provides rigorous framework** beyond simple prediction scores
-3. **Source-audited** methodology ensures transparency
-4. **Multi-dimensional evidence** prevents over-interpretation
-5. **Establishes brain-brain ceiling** as normalization reference
-
-## Applications
-
-- Evaluating new language models for brain alignment
-- Comparing different model architectures
-- Validating claims in neuro-AI research
-- Designing more brain-inspired language models
-- Meta-analysis of brain-model alignment literature
-
-## Implementation Guidance
-
-### When to Use:
-- Claiming brain-model alignment in research
-- Comparing multiple models for neural prediction
-- Validating that alignment is meaningful, not trivial
-- Publishing neuro-AI alignment results
-
-### L-PACT Evaluation Steps:
-1. **Collect neural data** from naturalistic language tasks
-2. **Extract model representations** at multiple layers
-3. **Compute predictive scores** with proper baselines
-4. **Test relational patterns** (model-brain vs brain-brain)
-5. **Perform mechanism stripping** to validate contributions
-6. **Normalize against reliability bounds**
-7. **Report comprehensive evidence** across all dimensions
-
-## Limitations & Open Questions
-
-- Requires access to high-quality neural datasets
-- Computationally intensive (multiple evaluation dimensions)
-- Brain-brain ceiling estimation depends on dataset quality
-- May need adaptation for different neural recording modalities
+- High prediction scores ≠ structural brain alignment
+- Control analyses are essential — nuisance features can mimic alignment
+- Brain-brain reliability ceilings provide necessary normalization
+- Mechanism stripping distinguishes genuine vs. superficial alignment
+- Apparent positives should be catalogued as control-explained, not dismissed
 
 ## Related Skills
 
-- brain-dnn-transformation-alignment
-- neural-encoding-evaluation-ground-truth
-- decoding-encoding-alignment-critique
-- naturality-violation-score
-- lrm-game-learning-brain-alignment
-- representation-steering
-
-## Activation Keywords
-
-- L-PACT
-- brain model alignment
-- brain-language alignment
-- neural prediction evaluation
-- mechanism stripping
-- brain-brain ceiling
-- alignment evaluation framework
-- language model neuroscience
-- brain alignment validation
-
-## References
-
-- arXiv: https://arxiv.org/abs/2605.14025
-- PDF: https://arxiv.org/pdf/2605.14025.pdf
+- `naturality-violation-score` — Category-theory-based brain-DNN alignment
+- `computational-lesions-multilingual-language-models-separate` — Causal framework for multilingual brain-model alignment
+- `brain-dnn-transformation-alignment` — Category-theoretic brain-to-DNN transformation analysis
