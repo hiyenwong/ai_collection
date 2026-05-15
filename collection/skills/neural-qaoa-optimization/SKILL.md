@@ -1,148 +1,119 @@
 ---
 name: neural-qaoa-optimization
-description: "Neural QAOA² methodology - using neural networks for differentiable graph partitioning and parameter initialization in quantum combinatorial optimization. Bridges ML and QAOA for scalable NISQ optimization."
-category: quantum
+description: Neural QAOA² methodology for differentiable joint graph partitioning and parameter initialization in quantum combinatorial optimization. Addresses scalability limits of QAOA through neural network-guided divide-and-conquer.
 ---
 
-# Neural QAOA² Optimization
+# Neural QAOA²: Differentiable Joint Graph Partitioning and Parameter Initialization
 
 ## Description
-Neural QAOA² methodology for scalable quantum combinatorial optimization. Uses neural networks for differentiable joint graph partitioning and parameter initialization, addressing the two fundamental limitations of divide-and-conquer QAOA: poor partitioning quality and random parameter initialization.
+
+Neural QAOA² addresses the scalability bottleneck of the Quantum Approximate Optimization Algorithm (QAOA) through a novel neural network-based approach. While divide-and-conquer frameworks like QAOA² partition graphs into subgraphs, existing methods suffer from poor partitioning quality and random parameter initialization. Neural QAOA² introduces differentiable joint graph partitioning and parameter initialization using neural networks, bridging classical ML and quantum computing for scalable optimization.
+
+Based on arXiv:2605.13051 (2026).
 
 ## Activation Keywords
+
 - neural qaoa
-- qaoa optimization
+- qaoa partitioning
 - quantum combinatorial optimization
-- graph partitioning quantum
+- differentiable graph partition
 - qaoa parameter initialization
-- quantum approximate optimization
-- neural quantum optimization
-- differentiable qaoa
-- NISQ optimization
+- quantum optimization scaling
+- 神经QAOA
+- 量子组合优化
 
 ## Tools Used
-- exec: Run QAOA circuits via Qiskit/PennyLane
-- exec: Train neural partitioners via PyTorch
-- search: arXiv for related quantum optimization papers
 
-## Core Concepts
+- execute_code: Implement QAOA and neural network components
+- web_search: Search for QAOA implementations and papers
+- write_file: Create optimization scripts
 
-### Problem
-QAOA is constrained by limited qubits on NISQ devices. Divide-and-conquer (QAOA²) partitions graphs into subgraphs but suffers from:
-1. Poor partitioning quality (cut edges cause information loss)
-2. Random parameter initialization (slow convergence, suboptimal results)
+## Usage Patterns
 
-### Solution: Neural QAOA²
+### Pattern 1: Large-scale QUBO Problems
+When QAOA cannot handle the full problem size due to qubit limitations.
 
-**Phase 1: Neural Graph Partitioning**
-- Train a neural network to learn optimal graph partitions
-- Minimize cut edges while balancing subgraph sizes
-- Differentiable partition allows gradient-based optimization
+### Pattern 2: QAOA Parameter Optimization
+When random parameter initialization leads to poor convergence or barren plateaus.
 
-**Phase 2: Neural Parameter Initialization**
-- Use neural networks to predict good QAOA parameters (γ, β)
-- Transfer learning from solved instances to new ones
-- Warm-start optimization avoids barren plateaus
-
-**Phase 3: Distributed QAOA Execution**
-- Run QAOA on each subgraph independently
-- Combine solutions with classical post-processing
-- Iteratively refine partition boundaries
+### Pattern 3: Graph-based Combinatorial Problems
+When solving MaxCut, graph partitioning, or similar combinatorial problems on quantum hardware.
 
 ## Instructions for Agents
 
-### Step 1: Problem Analysis
-1. Identify the combinatorial optimization problem (MAX-CUT, MIS, etc.)
-2. Encode as QUBO/Ising Hamiltonian
-3. Determine graph size and structure
+### Step 1: Problem Encoding
 
-### Step 2: Graph Partitioning
-```python
-# Neural partitioner training
-import torch
-import networkx as nx
-
-def neural_partition(graph, num_subgraphs, k=3):
-    """Learn optimal graph partition via neural network."""
-    # Node embeddings via GNN
-    embeddings = gnn_encoder(graph)
-    # Soft assignment to subgraphs
-    assignments = softmax(mlp(embeddings))
-    # Loss: minimize cut edges + balance constraint
-    loss = cut_loss(assignments) + balance_penalty(assignments)
-    return assignments
+Encode the combinatorial problem as a QUBO (Quadratic Unconstrained Binary Optimization):
+```
+H_C = Σ c_ij * Z_i * Z_j + Σ h_i * Z_i
 ```
 
-### Step 3: Parameter Prediction
-```python
-def predict_qaoa_params(graph_features, depth_p):
-    """Neural network predicts QAOA parameters."""
-    params = param_network(graph_features, depth_p)
-    return params  # Returns (gamma_1...gamma_p, beta_1...beta_p)
-```
+### Step 2: Neural Graph Partitioning
 
-### Step 4: Execute QAOA on Subgraphs
-```python
-from qiskit.algorithms import QAOA
-from qiskit.primitives import Sampler
+Use a differentiable graph neural network to partition the problem:
+- **Input**: Problem graph with edge weights
+- **Output**: Soft partition assignment (continuous relaxation)
+- **Training**: Optimize partition quality + inter-subgraph coupling strength
 
-def run_subgraph_qaoa(subgraph, params, shots=1024):
-    """Run QAOA on a subgraph with predicted parameters."""
-    qubit_op = encode_ising(subgraph)
-    qaoa = QAOA(sampler=Sampler(), optimizer=COBYLA(), 
-                initial_point=params)
-    result = qaoa.compute_minimum_eigenvalue(qubit_op)
-    return result
-```
+### Step 3: Differentiable Parameter Initialization
 
-### Step 5: Solution Combination
-1. Merge subgraph solutions
-2. Resolve conflicts at partition boundaries
-3. Apply local search refinement
-4. Report approximation ratio
+Train a neural network to predict good QAOA parameters:
+- **Input**: Subgraph properties (size, density, spectral gap)
+- **Output**: Initial (γ, β) parameters for each subgraph
+- **Benefit**: Avoids barren plateaus and poor local minima
+
+### Step 4: Subproblem Solving
+
+Solve each subgraph independently on quantum hardware:
+1. Apply QAOA with neural-initialized parameters
+2. Measure and collect solutions per subgraph
+3. Use classical post-processing to combine solutions
+
+### Step 5: Solution Aggregation
+
+Combine subgraph solutions accounting for inter-subgraph couplings:
+- Iterative refinement across subgraph boundaries
+- Message passing between neighboring subgraphs
+- Greedy or LP rounding for final assignment
+
+## Key Technical Insights
+
+### Why Neural QAOA² Works
+- **Partitioning quality**: Neural networks learn problem-structure-aware partitions vs. random/geometric
+- **Parameter initialization**: Avoids the "warm-start" problem that plagues standard QAOA
+- **End-to-end differentiability**: Joint optimization of partition + parameters
+- **Scalability**: Subproblems fit within NISQ device qubit counts
+
+### Comparison with Standard QAOA²
+| Aspect | Standard QAOA² | Neural QAOA² |
+|--------|---------------|--------------|
+| Partitioning | Heuristic/random | Neural network learned |
+| Parameters | Random | Neural network predicted |
+| Convergence | Slow, unreliable | Fast, consistent |
+| Scalability | Limited by partition quality | Scales with network capacity |
 
 ## Error Handling
 
-### Barren Plateau
-If QAOA optimization converges poorly:
-1. Use predicted parameters instead of random
-2. Reduce circuit depth p
-3. Add parameter constraints from problem structure
+### Poor Partition Quality
+- If inter-subgraph couplings are too strong, solution quality degrades
+- Solution: Add coupling penalty to the partition loss function
 
-### Large Cut Edges
-If partition quality is poor:
-1. Increase number of partitioning iterations
-2. Use spectral clustering as initialization
-3. Try different number of subgraphs
+### Parameter Initialization Failure
+- If neural predictions are far from optimal, QAOA may still converge to poor local minima
+- Solution: Use neural init as warm start, then fine-tune with classical optimizer
 
-### NISQ Hardware Errors
-If running on real hardware:
-1. Use error mitigation (readout correction, ZNE)
-2. Map qubits to minimize SWAP overhead
-3. Reduce circuit depth where possible
-
-## Best Practices
-
-1. Start with small graphs to validate the pipeline
-2. Use simulation before running on real hardware
-3. Benchmark against classical baselines (Goemans-Williamson, etc.)
-4. Track approximation ratio and runtime
-5. Use transfer learning across similar problem instances
-
-## Limitations
-
-- Requires training data for neural components
-- Partition quality depends on graph structure
-- Not guaranteed to find global optimum
-- Performance degrades with highly connected graphs
+### Hardware Noise
+- NISQ noise affects subproblem solutions
+- Solution: Use error mitigation techniques (zero-noise extrapolation, readout mitigation)
 
 ## Resources
 
-- arXiv: Neural QAOA² (2605.13051)
-- Qiskit: https://qiskit.org/documentation/
-- PennyLane: https://pennylane.ai/
+- arXiv:2605.13051 - Neural QAOA² paper
+- PennyLane/Qiskit for QAOA implementation
+- PyTorch Geometric for graph neural networks
 
 ## Related Skills
-- quantum-optimization-qaoa: Basic QAOA guide
-- quantum-neural-architecture: QNN design patterns
-- quantum-ml-patterns: QML research patterns
+
+- qaoa-optimization
+- quantum-optimization-qaoa
+- quantum-neural-architecture-search

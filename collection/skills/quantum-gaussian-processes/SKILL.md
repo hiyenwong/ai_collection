@@ -1,234 +1,114 @@
 ---
 name: quantum-gaussian-processes
-description: "Quantum Gaussian Processes (QGP) methodology — Bayesian framework for learning from quantum systems through priors over unknown quantum transformations. Enables regression, classification, and Bayesian optimization directly on quantum data using quantum kernels derived from process structure and symmetries. Provable and scalable for matchgate/free-fermionic evolutions. Activation: quantum gaussian process, QGP, quantum kernel, bayesian quantum learning, free-fermion learning, quantum Bayesian optimization."
+description: Quantum Gaussian Processes methodology for learning from quantum systems through Bayesian inference and priors over unknown quantum transformations. Enables regression, classification, and Bayesian optimization on quantum data.
 ---
 
 # Quantum Gaussian Processes (QGP)
 
-Research methodology for Bayesian quantum machine learning using quantum Gaussian processes, based on Jäger et al. (arXiv: 2605.00099).
+## Description
 
-## Overview
+Quantum Gaussian Processes (QGP) methodology for learning from quantum systems through Bayesian inference. Introduces a framework where unitary quantum stochastic processes define Gaussian processes, enabling regression, classification, and Bayesian optimization directly on quantum data. Proves that matchgate/free-fermionic evolutions give rise to provable and scalable quantum Gaussian processes — the first family where the unknown unitary acts non-trivially on all qubits.
 
-Quantum Gaussian Processes provide a **Bayesian framework for learning from quantum systems** through priors over unknown quantum transformations. Under suitable conditions, unitary quantum stochastic processes define Gaussian processes, enabling regression, classification, and Bayesian optimization directly on quantum data. The key is injecting physics-informed inductive bias through quantum kernels derived from process structure and symmetries.
+Based on arXiv:2605.00099 (Jager, Braccia, Bermejo, Cerezo, 2026).
 
-## Key Concepts
+## Activation Keywords
 
-### 1. Quantum Gaussian Process Framework
+- quantum gaussian process
+- QGP
+- quantum bayesian inference
+- quantum learning
+- quantum regression
+- free-fermion evolution
+- matchgate quantum process
+- 量子高斯过程
+- 量子贝叶斯推断
 
-- **Prior**: Place a Gaussian process prior over unknown quantum transformations
-- **Quantum Kernel**: Define kernels from quantum process structure and symmetries
-- **Inductive Bias**: Inject strong physics-informed priors via quantum kernels
-- **Posterior**: Update beliefs about quantum transformations from measurement data
+## Tools Used
 
-### 2. Provable Scalability for Matchgate Evolutions
+- web_search: Search for QGP papers and implementations
+- read_file: Read quantum computing papers and implementations
+- execute_code: Implement QGP algorithms in Python/QuTiP/PennyLane
+- write_file: Write QGP implementation scripts
 
-- Matchgate (free-fermionic) evolutions give rise to **provable and scalable** QGPs
-- First family where the unknown unitary acts **non-trivially on all qubits**
-- Kernel computation scales efficiently with system size
-- Provides theoretical guarantees for learning performance
+## Usage Patterns
 
-### 3. Applications
+### Pattern 1: Quantum Regression with QGP
+When predicting quantum system properties from measurement data using Bayesian inference.
 
-- **Quantum Regression**: Predict quantum state properties from limited data
-- **Quantum Classification**: Classify quantum states using kernel methods
-- **Bayesian Optimization**: Sample-efficient optimization of quantum sensing tasks
-- **Phase Diagram Learning**: Learn phase boundaries in many-body systems
-- **Long-range Extrapolation**: Accurate prediction beyond training data range
+### Pattern 2: Quantum Classification
+When classifying quantum states using Gaussian process priors over unitary transformations.
 
-## Methodology
+### Pattern 3: Bayesian Optimization on Quantum Hardware
+When optimizing quantum circuit parameters using Bayesian optimization with QGP priors.
 
-### Quantum Kernel Construction
+## Instructions for Agents
 
-```python
-import numpy as np
+### Step 1: Problem Formulation
 
-def quantum_kernel(x, x_prime, unitary_structure):
-    """
-    Construct quantum kernel from process structure.
-    
-    The kernel encodes the similarity between two inputs
-    through the lens of the quantum process's symmetries.
-    
-    Args:
-        x, x_prime: Input parameter configurations
-        unitary_structure: Known structural information about the process
-    
-    Returns:
-        Kernel value k(x, x')
-    """
-    # For matchgate/free-fermion processes:
-    # k(x, x') = <ψ(x)|ρ(x')|ψ(x)>
-    # where ρ is the quantum state at x' and |ψ(x)> is a probe state
-    
-    # Exploit free-fermion structure for efficient computation
-    # via covariance matrix formalism
-    gamma_x = build_covariance_matrix(x, unitary_structure)
-    gamma_xp = build_covariance_matrix(x_prime, unitary_structure)
-    
-    # Gaussian kernel from covariance matrices
-    diff = gamma_x - gamma_xp
-    return np.exp(-0.5 * np.trace(diff @ diff.T))
-```
+Identify the quantum learning task:
+- **Regression**: Predict expectation values of observables
+- **Classification**: Distinguish quantum states/phases
+- **Bayesian Optimization**: Optimize quantum circuit parameters
 
-### Bayesian Optimization on Quantum Data
+### Step 2: Choose the Process Model
 
-```python
-def quantum_bayesian_optimization(
-    quantum_process,
-    acquisition_function='EI',
-    n_iterations=50,
-    prior_structure='matchgate'
-):
-    """
-    Bayesian optimization of quantum sensing/learning tasks.
-    
-    Uses QGP posterior to guide sampling of quantum experiments,
-    achieving sample-efficient optimization.
-    
-    1. Initialize with small set of quantum measurements
-    2. Fit QGP posterior over quantum transformation
-    3. Select next measurement via acquisition function
-    4. Update posterior and repeat
-    """
-    # Initialize with diverse quantum states
-    X_init = design_quantum_experiment(n=5)
-    y_init = quantum_process.measure(X_init)
-    
-    # Fit QGP posterior
-    gp = QuantumGP(kernel=matchgate_kernel(prior_structure))
-    gp.fit(X_init, y_init)
-    
-    for i in range(n_iterations):
-        # Select next point via Expected Improvement
-        x_next = gp.optimize_acquisition(acquisition_function)
-        y_next = quantum_process.measure(x_next)
-        gp.update(x_next, y_next)
-    
-    return gp.best_solution()
-```
+| Process Type | Use When | Properties |
+|-------------|----------|------------|
+| Matchgate/Free-fermion | Full qubit entanglement needed | Provable, scalable, acts on all qubits |
+| Parameterized unitary | Specific circuit structure | Customizable, domain-specific |
+| Clifford+T | Universal computation | Standard gate set |
 
-### Phase Diagram Learning
+### Step 3: Define the Kernel
 
-```python
-def learn_quantum_phase_diagram(hamiltonian, parameter_range):
-    """
-    Learn phase boundaries in many-body quantum systems
-    using QGP with physics-informed kernel.
-    
-    The kernel encodes locality and symmetry constraints
-    of the Hamiltonian, enabling efficient learning
-    from limited measurement data.
-    """
-    # Sample sparse points across parameter space
-    X_sample = latin_hypercube_sampling(parameter_range, n=20)
-    
-    # Measure order parameters at each point
-    order_params = measure_order_parameters(hamiltonian, X_sample)
-    
-    # Fit QGP with symmetry-aware kernel
-    gp = QuantumGP(
-        kernel=symmetry_kernel(hamiltonian.symmetries),
-        noise_variance=measurement_noise
-    )
-    gp.fit(X_sample, order_params)
-    
-    # Predict full phase diagram
-    X_dense = grid_sampling(parameter_range, resolution=100)
-    phase_predictions = gp.predict(X_dense)
-    uncertainty = gp.predict_uncertainty(X_dense)
-    
-    return phase_predictions, uncertainty
-```
+The QGP kernel is derived from the unitary process:
+- For free-fermion processes: Use fermionic Gaussian state overlap
+- Kernel encodes similarity between quantum data points
+- Computed via expectation values of observables
 
-## Why QGP Over Standard QML?
+### Step 4: Train and Predict
 
-| Aspect | Standard QML | Quantum GPs |
-|--------|-------------|-------------|
-| **Interpretability** | Black-box | Bayesian posterior provides uncertainty |
-| **Sample Efficiency** | Requires large datasets | Works with few measurements |
-| **Theoretical Guarantees** | Limited | Provable for matchgate evolutions |
-| **Scalability** | Often limited | Efficient kernel computation |
-| **Inductive Bias** | Architecture-dependent | Physics-informed via kernel design |
+1. Prepare training data as quantum states
+2. Compute kernel matrix from unitary evolution
+3. Apply GP posterior mean/variance formulas
+4. Make predictions with uncertainty quantification
 
-## Inductive Bias Design
+### Step 5: Scalability Analysis
 
-### Structure-Based Priors
+- Free-fermion QGP scales polynomially with qubit count
+- General unitary processes may require exponential resources
+- Consider NISQ hardware constraints for implementation
 
-1. **Locality**: Encode that nearby parameters produce similar quantum states
-2. **Symmetry**: Build group symmetries directly into the kernel
-3. **Conservation Laws**: Enforce conserved quantities in the prior
-4. **Scaling**: Incorporate known finite-size scaling behavior
+## Key Technical Insights
 
-### Kernel Design Patterns
+### Why QGP Matters
+- **Provable guarantees**: First family of QGPs with theoretical guarantees for full-qubit unitary
+- **Scalable**: Free-fermion QGP avoids exponential scaling
+- **Hardware-ready**: Compatible with near-term quantum devices
+- **Uncertainty quantification**: Natural Bayesian uncertainty for quantum data
 
-```python
-# Locality + Symmetry kernel
-def physics_informed_quantum_kernel(x, x_prime, symmetries):
-    # Base kernel from quantum overlap
-    base = quantum_overlap_kernel(x, x_prime)
-    
-    # Symmetry averaging
-    sym_avg = np.mean([
-        base(symmetry(x), symmetry(x_prime))
-        for symmetry in symmetries
-    ])
-    
-    # Locality weighting
-    locality = locality_weight(x, x_prime)
-    
-    return sym_avg * locality
-```
-
-## Performance Results
-
-### Demonstrated Applications
-
-1. **Long-range extrapolation**: Accurate prediction far beyond training data
-2. **Phase diagram learning**: Efficient mapping of many-body phase boundaries
-3. **Quantum sensing**: Sample-efficient Bayesian optimization
-
-### Scalability
-
-- Matchgate evolutions: **Poly(n)** kernel computation
-- Free-fermion structure enables efficient covariance matrix updates
-- First framework with provable scaling for full-system unitaries
-
-## Implementation Notes
-
-### When to Use QGP
-
-- Limited quantum measurement budget
-- Need uncertainty quantification
-- Physics-informed priors available
-- Regression/classification on quantum data
-
-### When Not to Use QGP
-
-- Very high-dimensional parameter spaces (>100 parameters)
-- Non-stationary quantum processes without known structure
-- Real-time quantum control (GP inference overhead)
-
-### Computational Considerations
-
-- Standard GP: O(n³) for n training points
-- Use sparse GPs or inducing points for scalability
-- Matchgate kernel: O(n²) or better via covariance structure
+### Matchgate/Free-fermion Key Result
+- Unknown unitary acts non-trivially on ALL qubits (unlike prior work)
+- Polynomial-time classical simulation of the process
+- Enables quantum advantage proofs for specific learning tasks
 
 ## Error Handling
 
-### Finite Measurement Noise
+### Noisy Quantum Data
+- QGP naturally handles noise via the GP noise variance parameter
+- Use heteroscedastic noise model for varying measurement error
 
-- Quantum measurements are inherently noisy (shot noise)
-- Include noise variance in GP likelihood
-- Use heteroscedastic noise model if noise varies with parameters
+### Kernel Computation Issues
+- If exact kernel is intractable, use Monte Carlo estimation
+- For large datasets, use sparse GP approximations
 
-### Kernel Misspecification
+## Resources
 
-- If kernel doesn't match process structure, predictions degrade
-- Validate kernel choice on held-out quantum data
-- Use automatic relevance determination (ARD) for feature selection
+- arXiv:2605.00099 - Original QGP paper
+- PennyLane: QML framework for implementation
+- QuTiP: Quantum system simulation
 
-## References
+## Related Skills
 
-- Jäger, J., Braccia, P., Bermejo, P., Algaba, M.G., García-Martín, D., & Cerezo, M. (2026). Provable and scalable quantum Gaussian processes for quantum learning. arXiv: 2605.00099.
-- Related: `quantum-ml-patterns`, `quantum-statistical-estimation`, `bayesian-agent-orchestration`
+- quantum-ml-research
+- quantum-learning-theory
+- bayesian-model-selection-bb-plot
