@@ -37,6 +37,20 @@
   - 核心要点: 100% 可行性、0.30% Oracle 次优性、12.3ms 决策时间，不确定性下无需重训练
   - **Activation**: geometric pareto control, riemannian gradient flow control, lie group control, multi-objective optimal control, pareto submanifold, safety-critical CPS control
 
+### Multiple Mechanisms of Rhythm Switching in RNNs with Adaptive Time Constants
+- [[rhythm-switching-adaptive-time-constants-rnn]] - RNNs trained on multi-band rhythm switching deploy multiple coexisting mechanisms (subpopulation turnover, baseline shifts, phase reorganization), with degeneracy across training runs; high-frequency rhythms dominated by short-time-constant neurons (arXiv: 2605.14388)
+  - Three switching mechanisms: subpopulation turnover, network-wide baseline shifts, inter-neuronal phase reorganization
+  - Time constant-frequency negative correlation strengthens monotonically with frequency band
+  - 20 independently trained networks show solution degeneracy — multiple valid mechanisms for same task
+  - **Activation**: rhythm switching RNN, adaptive time constants, multi-band rhythm switching, RNN neural dynamics, frequency band switching
+
+### Cortical Microcircuit Information Flux Optimization
+- [[cortical-microcircuit-information-flux]] - Simulation-based reverse engineering to test whether cortical microcircuits are structurally optimized for information flux, mapping parameter space to identify if biological configurations are near optima (arXiv: 2605.14680)
+  - Reverse engineering approach: systematically vary circuit parameters and measure information flux
+  - Compare biological microcircuit configurations to information-theoretic optima
+  - Applications to understanding cortical design principles and guiding ANN architecture
+  - **Activation**: cortical microcircuit, information flux, neural circuit optimization, reverse engineering brain circuits, simulation-based circuit analysis
+
 ## 2026-05-15 - Anthropic Research (Cron Job)
 
 ### Natural Language Autoencoders: Turning Claude's thoughts into text
