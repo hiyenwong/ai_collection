@@ -13,6 +13,18 @@
   - Top-down: Mixture-of-Memories dynamically selects and fuses relevant memories to refine reconstruction
   - **Activation**: fMRI video reconstruction, CineNeuron, fMRI-to-video, neural video decoding, Mixture-of-Memories
 
+### Transport Mean Field Theory for SNN Population Dynamics
+- [[transport-mean-field-snn-dynamics]] - Derives firing rate fluctuations from initial voltage distributions using transport solutions to the advection equation (arXiv: 2605.14319)
+  - Transport-based mean field links initial density to time-varying population rate: ν(t) = ρ₀(ṽ(t)) · (F(ṽ(t)) + Ī(t))
+  - Closed-form solutions for LIF and QIF neurons; captures transient dynamics missed by asynchronous steady-state methods
+  - **Activation**: transport equation mean field, SNN population dynamics, firing rate fluctuations, Fokker-Planck SNN, integrate-and-fire mean field
+
+### Predictive Coding Light+ (PCL+) for Sequence Learning
+- [[predictive-coding-light-plus-pcl]] - Unsupervised sequence learning in SNNs using STDP and heterogeneous synaptic delays for working memory (arXiv: 2605.12732)
+  - Adds delayed recurrent excitation (100-500ms) to PCL architecture, enabling short-term memory without persistent spiking
+  - Reproduces V1 sequence learning and "fills in" missing gesture input via temporal associations
+  - **Activation**: predictive coding light plus, PCL+, STDP sequence learning, synaptic delay memory, working memory SNN, event camera
+
 ## 2026-05-16 - Economics/Investment + Quantum Finance (Cron Job)
 
 ### QAOA Mixer Selection for Portfolio Optimization
