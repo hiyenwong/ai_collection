@@ -1,3 +1,19 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
+- [[quantum-portfolio-optimization]] - QAOA with counterdiabatic driving for portfolio optimization under budget and risk constraints (arXiv: 2605.06858)
+  - Counterdiabatic (CD) extension of QAOA improves approximation ratios at fixed depth
+  - XY-mixer naturally enforces cardinality constraints without penalty distortion
+  - Nested commutators approximate adiabatic gauge potentials for CD terms
+  - **Activation**: quantum portfolio, QAOA finance, counterdiabatic QAOA, 量子投资组合
+
+### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
+- [[constraint-preserving-quantum-mixers]] - Systematic analysis of constraint-preserving quantum mixers under Trotterization tradeoffs (arXiv: 2605.02465)
+  - XY-mixer preserves Hamming weight naturally enforcing cardinality constraints
+  - Trotterization introduces constraint violations that scale with circuit depth
+  - Optimal tradeoff point between constraint preservation and hardware feasibility
+  - **Activation**: quantum mixer, XY-mixer Trotterization, constraint preserving, 量子混合器约束
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### Breaking Global Self-Attention Bottlenecks in Transformer-based Spiking Neural Networks with Local Structure-Aware Self-Attention
