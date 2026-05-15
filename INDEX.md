@@ -837,3 +837,11 @@
    499|
    500|## 2026-05-14 - Systems Engineering + Quantum Mechanics (Cron Job)
    501|
+## 2026-05-15 - Quantum Optimal Control (Cron Job)
+
+### Adaptive Tensor Network Sampling for Quantum Optimal Control
+- [[adaptive-tensor-network-qoc]] - Gradient-free quantum optimal control using MPS/TT sampling heuristic (arXiv: 2604.24467)
+  - Core: MPS defines score function over discrete control space, iteratively refined by top-sequence selection
+  - Captures inter-step correlations with O(N*d*D²) params vs O(d^N) full distribution
+  - Validated: single-qubit state transfer, Bell-pair prep, qutrit gates, open-system transfer
+  - **Activation**: tensor network quantum control, MPS sampling, quantum optimal control gradient-free, 张量网络量子优化控制
