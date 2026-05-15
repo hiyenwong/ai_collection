@@ -1,4 +1,18 @@
 
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### NeuroAtlas: Benchmarking Foundation Models for Clinical EEG and Brain-Computer Interfaces
+- [[neuroatlas-eeg-foundation-benchmark]] - Largest EEG benchmark (42 datasets, 260k hours) revealing EEG-specific FMs don't consistently beat generic time-series FMs (arXiv: 2605.14698)
+  - Core finding: Standard ML metrics insufficient for clinical utility — need event-level decision quality, hypnogram features, brain-age gap
+  - Core finding: Model rankings vary substantially within domains; no single "best" model across all EEG tasks
+  - **Activation**: NeuroAtlas, EEG foundation model, clinical EEG benchmark, brain-computer interface evaluation
+
+### CineNeuron: Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction
+- [[cineneuron-fmri-video-reconstruction]] - Dual-pathway brain-inspired framework with bottom-up semantic enrichment + top-down Mixture-of-Memories for video reconstruction from fMRI (arXiv: 2605.14569)
+  - Bottom-up: Maps fMRI to multi-modal embedding space (text + image + action + object)
+  - Top-down: Mixture-of-Memories dynamically selects and fuses relevant memories to refine reconstruction
+  - **Activation**: fMRI video reconstruction, CineNeuron, fMRI-to-video, neural video decoding, Mixture-of-Memories
+
 ## 2026-05-16 - Economics/Investment + Quantum Finance (Cron Job)
 
 ### QAOA Mixer Selection for Portfolio Optimization
