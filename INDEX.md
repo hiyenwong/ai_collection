@@ -1,3 +1,19 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
+- [[dual-axis-zebrafish-circuits]] - 斑马鱼被盖微电路的双轴功能归因方法，将生物电路结构转化为类脑神经网络设计模式 (arXiv: 2605.13924)
+  - 提出能量敏感度指数(ESI)和鲁棒敏感度指数(RSI)双轴归因框架
+  - 发现 ns_TIN（高效信息门）和 superficial_TIN（鲁棒稳定器）的功能分离
+  - 将归因功能成功转移到 ResNet18，在预算缩减和噪声条件下验证有效性
+  - **Activation**: dual-axis attribution, zebrafish tectal, microcircuit, ns_TIN, superficial_TIN, energy efficiency, robustness
+
+### Consciousness as Uncommon Self-Knowledge: A Synergistic Information Framework
+- [[consciousness-usk-framework]] - 基于部分信息分解(PID)的意识理论框架，将意识定义为系统对自身的协同信息 (arXiv: 2605.13884)
+  - 区分意识(协同自我知识)与元认知(冗余自我知识)
+  - 为 IIT、GWT、HOT 三大意识理论的反例提供原则性解决方案
+  - 提出 GWT 时间解离、LLM 中层扰动解离、麻醉/阿尔茨海默病效应三大可验证预测
+  - **Activation**: consciousness, USK, synergistic information, Partial Information Decomposition, PIRD, IIT, GWT
+
 ## 2026-05-15 - 数学 + 量子力学 (Mathematics + Quantum Mechanics) (Cron Job)
 
 ### Towards Exponential Quantum Improvements in Solving Cardinality-Constrained Binary Optimization
