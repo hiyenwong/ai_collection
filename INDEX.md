@@ -1,3 +1,12 @@
+
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### Elastic Spiking Transformers for Efficient Gesture Understanding
+- [[elastic-spiking-transformer]] - Matryoshka-style elasticity for Spiking Transformers enabling runtime-adaptive inference without retraining (arXiv: 2605.13869)
+  - Nested elasticity in Feature Extractor, Spiking Self-Attention, and Feed-Forward blocks
+  - Dual energy savings: parameter footprint reduction + spike firing rate reduction
+  - **Activation**: elastic spiking transformer, matryoshka spiking, runtime adaptive SNN, granularity-aware weight sharing
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
