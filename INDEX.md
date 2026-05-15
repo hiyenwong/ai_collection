@@ -1,3 +1,17 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-local-learning-snn-benchmarking]] - 首次系统化的SNN局部学习规则分类学与统一基准框架，填补了脉冲神经网络训练算法比较的空白 (arXiv: 2605.15058)
+  - 提出5类SNN训练算法的细粒度分类：替代梯度反向传播、局部/三因素学习、生物可塑性、ANN转SNN、非标准优化
+  - 开源snnTorch框架实现代表性算法的统一基准比较
+  - **Activation**: SNN training, local learning rules, surrogate gradient, three-factor learning, STDP, neurotrain, snnTorch, 脉冲神经网络训练
+
+### From Chaos to Synchrony in Recurrent E-I Networks with Target-Specific Inhibition
+- [[ei-network-chaos-synchrony-theory]] - 将经典SCS混沌理论扩展到E/I分离网络，发现相干振荡会抑制混沌而非共存 (arXiv: 2605.14916)
+  - 导出含目标特异性抑制的两群发放率网络的平均场方程，识别三种动力学区域
+  - 关键发现：相干振荡的出现会抑制而非共存于混沌涨落
+  - **Activation**: SCS theory, E/I balance, target-specific inhibition, dynamical mean-field, neural chaos, 兴奋抑制平衡, 混沌同步
+
 ## 2026-05-15 - Number Theory, Statistics, Math + Quantum Mechanics (Cron Job)
 
 ### From Hilbert's Tenth Problem to Quantum Speedup
