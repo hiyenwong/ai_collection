@@ -1,138 +1,156 @@
 ---
 name: multi-timescale-conductance-snn
-description: >
-  Multi-Timescale Conductance Spiking Networks (MTCSN) methodology — gradient-trainable SNN
-  framework with rich firing dynamics. Neural dynamics emerge from shaping the I-V curve by
-  tuning fast, slow, and ultra-slow conductances. Supports tonic, phasic, and bursting firing
-  regimes within a single model. Discrete-time differentiable formulation enables direct BPTT
-  without surrogate gradients. Outperforms LIF and AdLIF on Mackey-Glass time-series regression
-  with substantially sparser activity. Use when designing SNNs for regression tasks, neuromorphic
-  analog circuits, temporal processing with sparse firing, or when needing differentiable dynamics
-  without surrogate gradients. Trigger words: MTCSN, multi-timescale conductance, conductance-based SNN,
-  I-V curve shaping SNN, differentiable spiking dynamics, surrogate-gradient-free, Mackey-Glass SNN,
-  tonic phasic bursting spiking, AdLIF alternative, energy-aware temporal processing.
+description: "Multi-timescale conductance spiking neural network methodology for gradient-trainable SNNs with rich firing dynamics. Shapes current-voltage (I-V) curve by tuning fast, slow and ultra-slow conductances, enabling systematic control over excitability, tonic/phasic/bursting responses, and direct backpropagation through time without surrogate gradients. Use when: (1) training SNNs for temporal processing or regression tasks, (2) designing gradient-trainable spiking neurons, (3) controlling firing diversity and sparsity, (4) neuromorphic hardware implementation, (5) comparing conductance-based neurons to LIF/AdLIF models."
 ---
 
-# Multi-Timescale Conductance Spiking Networks (MTCSN)
+# Multi-Timescale Conductance Spiking Networks
 
-**Paper**: Fulleda-Garcia, Soldado-Magraner, Margarit-Taulé (IMB-CNM/CSIC, UCLA), arXiv:2605.11835, May 2026
+## Overview
 
-## Core Problem
+Multi-timescale conductance spiking networks (MTCSN) provide a gradient-trainable SNN framework where neural dynamics emerge from shaping the I-V curve via tunable conductances at multiple timescales. Yields rich firing regimes (tonic, phasic, bursting) and enables direct BPTT without surrogate gradients.
 
-Standard SNN neuron models trade off three critical properties:
-1. **Gradient-based trainability**
-2. **Dynamical richness** (diverse firing patterns)
-3. **High activity sparsity**
+**Paper**: Fulleda-Garcia et al., "Multi-Timescale Conductance Spiking Networks: A Sparse, Gradient-Trainable Framework with Rich Firing Dynamics for Enhanced Temporal Processing" (arXiv: 2605.11835)
 
-This is especially acute in **regression tasks**, where approximation error, noise, and spike
-discretization degrade continuous-valued outputs. Most SOTA SNNs use simple phenomenological
-dynamics with surrogate gradients, offering limited control over spiking diversity and sparsity.
+## Key Contributions
 
-## MTCSN Solution
+### 1. Conductance-Based Neuron Model
 
-MTCSN shapes neural dynamics through **multi-timescale conductances**:
+Instead of fixed phenomenological dynamics, neuron behavior emerges from:
+- **Fast conductance**: rapid depolarization (spike initiation)
+- **Slow conductance**: adaptation / recovery
+- **Ultra-slow conductance**: long-term excitability modulation
 
-- **Fast conductance**: Rapid current response
-- **Slow conductance**: Medium-timescale adaptation
-- **Ultra-slow conductance**: Long-timescale modulation
+Each conductance has:
+- Reversal potential `E_rev`
+- Time constant `τ`
+- Conductance strength `g`
 
-The I-V (current-voltage) curve is shaped by tuning these conductances, allowing:
-- Systematic control over neuron excitability
-- Rich firing regimes: tonic, phasic, bursting within a single model
-- Efficient analog circuit implementation
+### 2. I-V Curve Shaping
 
-## Key Innovation: Differentiable Without Surrogate Gradients
+By tuning conductance parameters, the I-V curve is systematically shaped to produce:
+- **Tonic firing**: sustained regular spiking
+- **Phasic firing**: transient response then silence
+- **Bursting**: clusters of spikes separated by silent periods
 
-MTCSN derives a **discrete-time formulation** of conductance-based dynamics that is
-**directly differentiable**, enabling:
+This provides rich dynamical repertoire from a **single unified model**.
 
-- Direct backpropagation through time (BPTT)
-- No surrogate-gradient approximations needed
-- Exact gradient computation through spike generation
+### 3. Discrete-Time Differentiable Formulation
 
-This is significant because most conductance-based SNNs require surrogate gradients due
-to non-differentiable threshold functions.
+Key innovation: derive discrete-time formulation enabling **direct backpropagation through time (BPTT)** without surrogate gradient approximations.
 
-## Architecture
+Standard SNN training uses surrogate gradients because the spike function is non-differentiable. MTCSN circumvents this by:
+- Expressing dynamics as differentiable recurrence
+- Treating membrane potential evolution as continuous differentiable function
+- Spike generation as event from the differentiable trajectory
+
+### 4. Performance Results
+
+Evaluated on **Mackey-Glass time-series regression** (predictability limit):
+- **Outperforms LIF networks** significantly
+- **Outperforms SOTA AdLIF networks**
+- **Substantially sparser activity** from both communication and computational perspectives
+
+## Mathematical Framework
 
 ### Conductance Dynamics
 
-The membrane voltage dynamics emerge from the shaped I-V curve:
-
 ```
-C·dV/dt = -g_fast·(V - E_fast) - g_slow·(V - E_slow) - g_ultraslow·(V - E_ultraslow) + I_ext
+C dV/dt = -g_L(V - E_L) - Σ_k g_k(t)(V - E_k) + I_syn + I_ext
 ```
 
-Each conductance has its own timescale:
-- τ_fast: Fast synaptic/leak dynamics
-- τ_slow: Medium adaptation
-- τ_ultraslow: Slow modulatory processes
+Where each conductance evolves:
+```
+τ_k dg_k/dt = -g_k + Σ_j w_kj · spike_j(t) + g_k_baseline
+```
 
-### Discrete-Time Formulation
+### Discrete-Time BPTT
 
-The continuous dynamics are discretized for BPTT:
-- Euler or higher-order integration scheme
-- Spike generation as differentiable event
-- Gradient flows through conductance parameters
-
-### Firing Regimes
-
-By tuning conductance parameters, a single MTCSN neuron can exhibit:
-
-| Regime | Behavior | Biological Analog |
-|--------|----------|-------------------|
-| Tonic | Regular spiking | Cortical pyramidal neurons |
-| Phasic | Burst then silence | Thalamic relay neurons |
-| Bursting | Clusters of spikes | Thalamic/cortical bursting cells |
-
-## Performance
-
-Evaluated on **Mackey-Glass time-series regression** at the predictability limit:
-
-- **Outperforms** baseline LIF networks
-- **Outperforms** SOTA AdLIF (Adaptive LIF) networks
-- **Substantially sparser** activity (both communication and computational sparsity)
+1. Discretize continuous dynamics: `V[t+1] = f(V[t], g[t], I[t])`
+2. Compute gradients: `∂L/∂w = Σ_t (∂L/∂V[t]) · (∂V[t]/∂w)`
+3. Chain rule through the differentiable recurrence
+4. No surrogate gradient needed — the membrane potential trajectory is smooth
 
 ## Implementation Guide
 
-### When to Use MTCSN
+### Core Components
 
-- Time-series regression tasks with SNNs
-- Needing diverse firing patterns without architectural changes
-- Neuromorphic analog circuit implementations
-- Energy-aware temporal processing
-- When surrogate gradients are undesirable
-- When sparsity is critical
+```python
+# Simplified pseudocode
+class MTCSNeuron:
+    def __init__(self, tau_fast, tau_slow, tau_ultra_slow):
+        self.conductances = {
+            'fast':   {'tau': tau_fast,   'E_rev': E_Na,  'g': 0.0},
+            'slow':   {'tau': tau_slow,   'E_rev': E_K,   'g': 0.0},
+            'ultra':  {'tau': tau_ultra,  'E_rev': E_slow, 'g': 0.0},
+        }
+    
+    def step(self, V, input_current, dt):
+        # Update each conductance
+        for name, params in self.conductances.items():
+            params['g'] += dt/params['tau'] * (-params['g'] + synaptic_input[name])
+        
+        # Update membrane potential
+        I_leak = g_L * (V - E_L)
+        I_cond = sum(p['g'] * (V - p['E_rev']) for p in self.conductances.values())
+        dV = dt/C * (-I_leak - I_cond + input_current)
+        V_new = V + dV
+        
+        # Spike generation
+        spike = V_new > V_threshold
+        if spike: V_new = V_reset
+        return V_new, spike
+```
 
-### Comparison with Baselines
+### Training Loop
 
-| Model | Trainability | Firing Diversity | Sparsity | Surrogate Needed |
-|-------|-------------|------------------|----------|------------------|
-| LIF | Good | Low (tonic only) | Moderate | Yes |
-| AdLIF | Good | Moderate | Moderate | Yes |
-| **MTCSN** | **Good** | **High (tonic/phasic/bursting)** | **High** | **No** |
+```python
+def train_mtcsn(network, data, epochs=100, lr=1e-3):
+    for epoch in range(epochs):
+        V_states = []
+        spikes = []
+        
+        # Forward pass (differentiable)
+        V, g = init_state()
+        for t in range(seq_len):
+            V, spike = network.step(V, g, input[t])
+            V_states.append(V)
+            spikes.append(spike)
+        
+        # Compute loss on membrane potentials / spike counts
+        loss = criterion(V_states, target)
+        
+        # Backward pass (standard BPTT)
+        loss.backward()
+        optimizer.step()
+```
 
-### Training
+## Comparison: MTCSN vs LIF vs AdLIF
 
-1. Define conductance parameters (g_fast, g_slow, g_ultraslow) with their timescales
-2. Discretize dynamics for BPTT
-3. Train with standard MSE/MAE loss for regression
-4. Conductance parameters are learned end-to-end
-
-### Hardware Considerations
-
-- Efficiently implementable in **analog neuromorphic circuits**
-- Conductance parameters map to physical circuit elements
-- Natural fit for memristive or conductance-based neuromorphic chips
+| Property | LIF | AdLIF | MTCSN |
+|----------|-----|-------|-------|
+| Firing regimes | Tonic only | Limited adaptation | Tonic, phasic, bursting |
+| Gradient training | Surrogate | Surrogate | **Direct BPTT** |
+| Sparsity | Moderate | Moderate | **High** |
+| Hardware mapping | Simple | Moderate | **Analog circuit friendly** |
+| Parameter count | Low | Medium | Medium-High |
+| Expressivity | Low | Medium | **High** |
 
 ## Activation Keywords
 
-- MTCSN, multi-timescale-conductance-snn
-- conductance-based spiking neural network
-- I-V curve shaping SNN
-- differentiable spiking dynamics without surrogate
-- tonic phasic bursting spiking neuron
-- Mackey-Glass time-series SNN
-- AdLIF alternative, energy-aware SNN
-- neuromorphic analog circuit SNN
-- sparse spiking regression
+- multi-timescale conductance SNN
+- conductance spiking network
+- gradient-trainable SNN
+- direct BPTT spiking neurons
+- I-V curve shaping
+- tonic phasic bursting SNN
+- surrogate gradient alternative
+- 2605.11835
+- MTCSN
+
+## Related Skills
+
+- `surrogate-gradient-snn-training` — standard SNN training approach (MTCSN provides alternative)
+- `snn-learning-survey` — comprehensive SNN learning survey
+- `spiking-computational-neuroscience-survey` — SNN applications survey
+- `chaos-synchrony-ei-networks` — E/I network dynamics
+- `three-factor-snn-learning` — three-factor learning rules

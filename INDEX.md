@@ -1,3 +1,17 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### From Chaos to Synchrony in Recurrent Excitatory-Inhibitory Networks with Target-Specific Inhibition
+- [[chaos-synchrony-ei-networks]] - 扩展SCS理论到E/I网络，揭示靶向抑制控制混沌-同步相变 (arXiv: 2605.14916)
+  - DMFT推导E/I网络宏观动力学，识别靶向抑制为关键控制参数
+  - 发现相干振荡抑制混沌分量，不相容共存
+  - **Activation**: chaos synchrony E-I networks, target-specific inhibition, DMFT neural dynamics, SCS theory extension, 2605.14916
+
+### Multi-Timescale Conductance Spiking Networks: Gradient-Trainable Framework with Rich Firing Dynamics
+- [[multi-timescale-conductance-snn]] - 多时间尺度电导SNN，无需代理梯度直接BPTT训练 (arXiv: 2605.11835)
+  - 通过调节快/慢/超慢电导塑造I-V曲线，实现tonic/phasic/bursting多种放电模式
+  - 离散时间可微公式支持直接BPTT，超越LIF/AdLIF且在Mackey-Glass回归中表现更稀疏
+  - **Activation**: multi-timescale conductance SNN, gradient-trainable SNN, direct BPTT, I-V curve shaping, MTCSN, 2605.11835
+
 ## 2026-05-15 - 量子力学/数论/统计学 (Cron Job)
 
 ### Quantum Sufficiency for Self-Adjoint Statistical Models
