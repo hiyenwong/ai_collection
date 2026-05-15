@@ -1,3 +1,19 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-local-learning-snn-benchmarking]] - Unified taxonomy and open benchmarking framework for SNN training rules (arXiv: 2605.15058)
+  - Comprehensive taxonomy of SNN training: direct training, ANN-to-SNN conversion, gradient-free optimization
+  - NeuroTrain: open snnTorch-based framework for reproducible benchmarking of local learning rules
+  - Locality-performance tradeoff analysis across surrogate gradients, eligibility traces, STDP, and RL
+  - **Activation**: neurotrain, local learning SNN, SNN training, snn benchmarking, spiking neural network
+
+### Are cortical microcircuits optimized for information flux?
+- [[cortical-microcircuit-information-flux-optimization]] - Simulation-based reverse engineering of cortical layer 5 microcircuits for information flux maximization (arXiv: 2605.14680)
+  - Embedded-core model: core-periphery architecture maximizes mutual information between successive states
+  - Recurrence Resonance: noise-enhanced information flux with resonance-like profile
+  - Adaptive bias mechanism drives neurons toward maximum-entropy operating point (firing rate ≈ 0.5)
+  - **Activation**: cortical microcircuit, information flux, layer 5 cortex, recurrence resonance, embedded core model
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Large-scale portfolio optimization using Pauli Correlation Encoding

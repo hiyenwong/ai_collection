@@ -1,163 +1,187 @@
 ---
 name: neurotrain-local-learning-snn-benchmarking
-description: >
-  Comprehensive taxonomy and benchmarking framework for Spiking Neural Network (SNN)
-  local learning rules. Covers surrogate-gradient backpropagation, local/three-factor
-  learning rules, biologically inspired plasticity mechanisms, ANN-to-SNN conversion,
-  and non-standard optimization. Based on NeuroTrain survey (arXiv:2605.15058).
-  Activation: SNN training, local learning rules, spiking neural network benchmarking,
-  surrogate gradient, three-factor learning, STDP, neurotrain, snnTorch, local plasticity,
-  脉冲神经网络训练, 局部学习规则, 替代梯度, 三因素学习
+description: "Comprehensive survey and open benchmarking framework for local learning rules in Spiking Neural Networks (SNNs). Covers taxonomy of training methods (direct training, ANN-to-SNN conversion, optimization), local learning paradigms, and the NeuroTrain framework for reproducible research. Activation: neurotrain, local learning SNN, SNN training survey, snn benchmarking, spiking neural network training rules, local learning rules."
 ---
 
-# NeuroTrain: SNN Local Learning Rules Taxonomy & Benchmarking
+# NeuroTrain: Local Learning Rules for Spiking Neural Networks with Open Benchmarking Framework
 
-Comprehensive framework for understanding, comparing, and implementing local learning
-rules for Spiking Neural Networks (SNNs). Based on the NeuroTrain survey and open-source
-benchmarking framework.
+**arXiv:** 2605.15058v1 [cs.NE] | **Published:** 2026-05-14
+**Authors:** Alessio Caviglia, Filippo Marostica, Roberta Bardini, Alessandro Savino, Stefano Di Carlo (Politecnico di Torino)
 
-## SNN Training Taxonomy
+## Core Contribution
 
-### 1. Surrogate-Gradient Backpropagation
-- **Principle**: Approximate the non-differentiable spike function with a smooth surrogate
-- **Key methods**: SLAYER, SuperSpike, e-prop
-- **Locality**: Backward pass requires global error signal
-- **Strengths**: High accuracy, compatible with deep architectures
-- **Weaknesses**: Biologically implausible, requires backward weight transport
+This paper provides (i) a unified taxonomy-driven review of SNN training algorithms with emphasis on local learning methods, and (ii) **NeuroTrain**, an open-source snnTorch-based framework for reproducible implementation, comparison, and benchmarking of SNN training rules.
 
-### 2. Local Learning Rules
-- **Principle**: Weight updates depend only on pre/post-synaptic activity and local signals
-- **Key methods**:
-  - Spike-Timing-Dependent Plasticity (STDP)
-  - Temporal Difference Learning
-  - Eligibility Trace-based methods
-- **Locality**: Fully local — suitable for neuromorphic hardware
-- **Strengths**: Biological plausibility, energy efficiency, online learning
-- **Weaknesses**: Lower accuracy on complex tasks, limited scalability
+## Taxonomy of SNN Training Methods
 
-### 3. Three-Factor Learning
-- **Principle**: Weight update = f(pre_activity, post_activity, modulatory_signal)
-- **Key methods**:
-  - Reward-modulated STDP
-  - Feedback Alignment (local error)
-  - e-prop with local eligibility traces
-- **Locality**: Local with global broadcast signal
-- **Strengths**: Biological plausibility (dopamine as modulator), RL-compatible
-- **Weaknesses**: Requires global signal broadcast
+### Three Main Learning Strategies
 
-### 4. ANN-to-SNN Conversion
-- **Principle**: Train ANN first, then convert to equivalent SNN
-- **Key methods**: Rate-based conversion, spike-based conversion
-- **Strengths**: Leverages mature ANN training, high accuracy
-- **Weaknesses**: High latency, no temporal processing, conversion overhead
+1. **Direct SNN Training** — learning performed while explicitly simulating spiking dynamics during optimization
+2. **ANN-to-SNN Conversion** — train a ReLU-ANN first, then convert activations to spiking neurons
+3. **Optimization (Gradient-free)** — treat the network as a black box evaluated against a fitness function
 
-### 5. Biologically Inspired Plasticity
-- **Key mechanisms**:
-  - Homeostatic plasticity (synaptic scaling)
-  - Metaplasticity (plasticity of plasticity)
-  - Structural plasticity (synapse formation/pruning)
-  - Astrocyte-mediated plasticity
+### Categorization Axes
 
-## NeuroTrain Framework Architecture
+The taxonomy organizes training algorithms along explicit axes:
 
-```
-NeuroTrain (snnTorch-based)
-├── Dataset module (MNIST, CIFAR, N-MNIST, etc.)
-├── Model module (feedforward, recurrent, convolutional SNNs)
-├── Learning module (taxonomy-implemented algorithms)
-├── Evaluation module (accuracy, energy, latency, spike sparsity)
-└── Benchmark module (cross-algorithm comparison)
-```
+- **Training strategy** (direct / conversion / optimization)
+- **Learning paradigm** (supervised / unsupervised / reinforcement learning)
+- **Spatial locality** (local vs. non-local error propagation)
+- **Temporal locality** (online vs. requiring full sequence storage)
+- **Biological plausibility** (how closely the method maps to known synaptic plasticity)
 
-## Key Benchmarking Dimensions
+### Key Training Algorithm Families
 
-### 1. Accuracy
-- Classification accuracy on standard benchmarks
-- Trade-off with biological plausibility
+#### Direct Training Methods
 
-### 2. Energy Efficiency
-- Total spike count (proxy for energy)
-- Operations per inference
-- Hardware deployment efficiency
+1. **Surrogate Gradient BPTT**
+   - Replace non-differentiable spike derivative ∂S[t]/∂U[t] with bounded proxy
+   - Treat SNN as discretized RNN, unroll over time
+   - Back-Propagation Through Time (BPTT) with surrogate gradients is the dominant approach
+   - SuperSpike: spike-train distance optimization
 
-### 3. Training Dynamics
-- Convergence speed
-- Sample efficiency
-- Stability during training
+2. **Eligibility Traces** (temporal credit assignment)
+   - Factorize gradients into synapse-specific eligibility trace × learning signal
+   - Enable online updates without storing entire unrolled trajectory
+   - e-prop: forward-only learning with eligibility traces
+   - FPTT (Forward Propagation Through Time): recast temporal credit as consensus problem
 
-### 4. Scalability
-- Performance with network depth/width
-- Performance with temporal horizon
-- Memory requirements
+3. **Direct Feedback Alignment (DFA)**
+   - Broadcast error to all layers simultaneously via fixed random projections
+   - Avoids weight transport problem but still requires full forward pass completion
 
-## Practical Implementation Patterns
+4. **Direct Random Target Projection (DRTP)**
+   - Similar to DFA but with random target projection
 
-### STDP Implementation (snnTorch)
-```python
-import snntorch as snn
-import snntorch.functional as SF
+5. **Auxiliary Local Classifiers**
+   - Add local classifiers at intermediate layers
+   - Spatial backpropagation with online temporal credit assignment
 
-# Pre/post-synaptic spike traces
-pre_trace = torch.zeros_like(w)
-post_trace = torch.zeros_like(w)
+6. **Forward-Forward Algorithm** (adapted to SNNs)
+   - Accumulated spike counts as goodness measure
+   - Layer normalization between layers to decouple representations
+   - Decouples learning across depth
 
-# STDP weight update
-def stdp_update(w, pre_spikes, post_spikes, 
-                pre_trace, post_trace,
-                lr=0.01, tau_trace=20.0):
-    # Trace updates
-    pre_trace = pre_trace * torch.exp(-dt/tau_trace) + pre_spikes
-    post_trace = post_trace * torch.exp(-dt/tau_trace) + post_spikes
-    
-    # Hebbian term (pre → post)
-    dw_hebbian = lr * torch.outer(post_spikes, pre_trace)
-    
-    # Anti-Hebbian term (post → pre)
-    dw_anti = -lr * torch.outer(post_trace, pre_spikes)
-    
-    return w + dw_hebbian + dw_anti
-```
+#### Unsupervised Approaches
 
-### Three-Factor Learning with Eligibility Traces
-```python
-# Eligibility trace (local memory of pre/post coincidence)
-eligibility = torch.zeros_like(w)
+- **STDP-inspired mechanisms**: Spike-Timing-Dependent Plasticity
+  - Early hierarchical SNNs with rank-order temporal coding
+  - Limited to ~5 layers, accuracy on CIFAR-10 below supervised methods
+  - Modern contrastive and generative approaches extend capabilities
+- **Hebbian learning**: local correlation-based weight updates
 
-def three_factor_update(w, eligibility, modulatory_signal, lr=0.01):
-    # Update eligibility: e_t = ρ*e_{t-1} + pre * post
-    eligibility = rho * eligibility + pre_spikes * post_spikes
-    
-    # Apply modulatory signal (reward, error, dopamine)
-    dw = lr * modulatory_signal * eligibility
-    
-    return w + dw, eligibility
-```
+#### Reinforcement Learning in SNNs
 
-## Hardware Suitability Matrix
+- **R-STDP** (Reward-modulated STDP): local reward-modulated rules
+  - Theoretical foundations by Florian (2007), Izhikevich (2007)
+  - Unified taxonomy: R-max, R-STDP, TD-STDP (Frémaux & Gerstner, 2016)
+  - Limited to shallow architectures
+- **Deep spiking RL**: hybrid actor-critic with surrogate gradients
+  - DSQN (Deep Spiking Q-Network): competitive on 17 Atari games
+  - Spiking world models: recent trend for closing performance gap
 
-| Method | Loihi 2 | SpiNNaker | BrainScaleS | GPU | CPU |
-|--------|---------|-----------|-------------|-----|-----|
-| STDP | ✅ | ✅ | ✅ | ❌ | ❌ |
-| Three-factor | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ |
-| Surrogate | ❌ | ❌ | ❌ | ✅ | ⚠️ |
-| ANN→SNN | ❌ | ❌ | ⚠️ | ✅ | ✅ |
+#### ANN-to-SNN Conversion
+
+- Train deep ReLU-ANN (VGG, ResNet), replace activations with LIF/IF neurons
+- Quantize-aware training (QKDs): first method to achieve zero conversion loss
+- **Advantages**: easiest route to deploying pretrained models on neuromorphic hardware, highest accuracies on static datasets
+- **Limitations**: network never trains on spike-based representations, can't exploit temporal coding or adapt to event-driven inputs
+
+### Locality Spectrum
+
+| Method | Spatial Locality | Temporal Locality | Hardware Mapping |
+|--------|-----------------|-------------------|------------------|
+| STDP | Local | Local | Excellent |
+| R-STDP | Local | Local | Good |
+| Eligibility Traces | Non-local | Local | Moderate |
+| DFA/DRTP | Non-local | Non-local | Limited |
+| Surrogate BPTT | Non-local | Non-local | Limited |
+| ANN-SNN Conversion | Non-local | N/A | Good |
+
+## NeuroTrain Framework
+
+### Architecture
+
+Built on **snnTorch** + **PyTorch**, NeuroTrain enforces clear separation:
+
+1. **Dataloaders** — dataset loading and preprocessing
+2. **Models** — network architectures (SNN models)
+3. **Trainers** — training rules/algorithms (the core contribution)
+4. **Benchmarking Engine** — automates experiments by combining trainers, models, dataloaders
+
+### Design Principles
+
+- **Encapsulation**: learning rules are decoupled from network models
+- **Incompatibility handling**: defined within objects, exposed to engine during experiments
+- **Reproducibility**: unified framework eliminates algorithm-specific evaluation scripts
+- **Extensibility**: open resource for community contributions
+
+### Goal
+
+Move beyond isolated, algorithm-specific evaluation scripts toward an open benchmarking ecosystem for the SNN community — similar to the role shared benchmarks play in deep learning.
+
+## Key Findings
+
+1. **Locality-Performance Tradeoff**: Relaxing spatial locality generally improves training performance on challenging benchmarks, but reduces neuromorphic hardware compatibility
+2. **Surrogate gradients dominate** direct training for complex tasks
+3. **Local learning remains essential** for online adaptation and low-power deployment
+4. **No unified benchmarking framework** existed prior to NeuroTrain — field was fragmented
+5. **Gradient-free methods** useful for black-box optimization but limited scalability
+6. **Spiking RL** spans wide locality range: R-STDP (fully local) → e-prop (temporally local) → surrogate BPTT (non-local)
 
 ## Open Challenges
 
-1. **Scaling local rules**: How to achieve deep network performance with purely local learning?
-2. **Credit assignment**: Can local rules approximate backpropagation quality?
-3. **Hybrid approaches**: Combining global supervision with local plasticity
-4. **Hardware-aware design**: Co-designing algorithms with neuromorphic constraints
-5. **Temporal credit**: Long-range temporal dependencies in local learning
+1. **Closing the performance gap** between highly local, hardware-friendly rules and globally trained deep spiking systems
+2. **Standardized benchmarking** across methods, datasets, and metrics
+3. **Temporal coding exploitation** in conversion-based approaches
+4. **Large-scale SNN architectures** with local learning rules
+5. **Continual learning** with spiking plasticity mechanisms
+
+## Technical Implementation Details
+
+### Surrogate Gradient Pipeline
+- SNN → discretized RNN → unroll over time → surrogate gradient in backward pass
+- Key: replace Heaviside step function derivative with smooth approximation (sigmoid, piecewise linear, etc.)
+
+### Eligibility Trace Mechanism
+- Gradient factorization: `∂L/∂w = eligibility_trace × learning_signal`
+- Eligibility trace: forward-computed state variable at each synapse
+- Learning signal: broadcast (possibly global) error or reward
+
+### STDP Mechanism
+- Pre-synaptic spike timing relative to post-synaptic spike determines weight change
+- Δw ∝ f(Δt_pre - Δt_post)
+- Causal: pre before post → potentiation (LTP)
+- Anti-causal: post before pre → depression (LTD)
+
+## Activation Keywords
+
+- neurotrain
+- local learning SNN
+- SNN training survey
+- snn benchmarking
+- spiking neural network training rules
+- local learning rules
+- surrogate gradient SNN
+- eligibility traces SNN
+- STDP SNN training
+- e-prop
+- ANN to SNN conversion
+- reward-modulated STDP
+- R-STDP
+- snnTorch
+- neuromorphic computing training
 
 ## Related Skills
 
-- **snn-learning-survey**: Comprehensive SNN learning rule overview
-- **spikingjelly-framework**: SNN deep learning framework
-- **decolle-snn-learning**: Deep continuous local learning
+- **spiking-neural-network-analysis**: Analyze SNN papers and extract patterns
+- **spikingjelly-framework**: SNN deep learning framework usage
+- **snn-learning-survey**: Comprehensive survey of SNN learning rules
+- **spiking-computational-neuroscience-survey**: SNN applications in computational neuroscience
+- **brain-inspired-snn-pattern-analysis**: Extract patterns from brain-inspired SNN papers
 
 ## References
 
-- Caviglia et al., "NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework", arXiv:2605.15058 (2026)
-- Zenke et al., "E-prop: Approximate gradients for spike trains", Nature Communications (2021)
-- Bellec et al., "A solution to the learning dilemma for recurrent networks of spiking neurons", Nature Communications (2020)
+- arXiv: [2605.15058](https://arxiv.org/abs/2605.15058)
+- PDF: [Download](https://arxiv.org/pdf/2605.15058)
+- License: CC BY 4.0
