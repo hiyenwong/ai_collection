@@ -1,3 +1,26 @@
+## 2026-05-15 - Neuroscience Research (Cron Job)
+
+### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
+- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
+  - Softmax-Free Spiking Attention (SFSA): eliminates softmax and floating-point ops in autoregressive LM
+  - Spike-Aware Alignment Distillation (SpAD): multi-level ANN-to-SNN distillation reduces training tokens to 5.6% for 1.3B model
+  - Achieves 4.16%-5.87% of computational cost vs ANN counterparts with competitive NLG performance
+  - **Activation**: bispikclm, binary spiking language model, softmax-free spiking attention, spike-aware distillation, matmul-free spiking, energy-efficient LLM, spiking causal language model
+
+### ASTDP-GAD: Neuromorphic Graph Anomaly Detection via Adaptive STDP and Spiking Graph Neural Networks
+- [[astpd-gad-neuromorphic-graph-anomaly]] - Novel Adaptive Spiking Temporal Dynamics Plasticity framework for Graph Anomaly Detection integrating SNNs with STDP learning (arXiv: 2605.13863)
+  - LIF-based Graph Attention (LIFGAT) with lateral inhibition approximates any continuous attention function
+  - Event-driven hypergraph memory with STDP-inspired prototype updates converges to optimal prototypes
+  - Validated on 9 datasets with theoretical guarantees across all components
+  - **Activation**: astpd-gad, neuromorphic graph anomaly detection, adaptive STDP, spiking graph neural network, LIF graph attention, STDP anomaly detection
+
+### Do Language Models Align with Brains? Prediction Scores Are Not Enough
+- [[lpact-brain-lm-alignment-evaluation]] - L-PACT source-audited framework evaluates brain-model alignment across predictive, relational, mechanism-stripping, and reliability-bounded evidence (arXiv: 2605.14025)
+  - Challenges assumption that prediction scores alone prove brain-model alignment
+  - Tests model-to-brain profile reproduction of brain-to-brain patterns
+  - Mechanism stripping validates causal contribution of specific model components
+  - **Activation**: L-PACT, brain model alignment, brain-language alignment, neural prediction evaluation, mechanism stripping, brain-brain ceiling, alignment evaluation framework
+
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
 ### Mixed-State Long-Range Entanglement from Dimensional Constraints
