@@ -1,3 +1,12 @@
+
+## 2026-05-16 - Economics/Investment + Quantum Finance (Cron Job)
+
+### QAOA Mixer Selection for Portfolio Optimization
+- [[quantum-finance-portfolio]] - QAOA Mixer选择和两步优化模式 (arXiv: qaoa-mixers-2026)
+  - XY混合器比传统X混合器在约束型组合优化中有15%更好近似比
+  - 两步QAOA先经典筛选后量子优化，降低电路深度需求
+  - **Activation**: quantum portfolio, QAOA mixer, 约束型优化, 两步QAOA, 量子金融
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization

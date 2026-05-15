@@ -1,6 +1,6 @@
 ---
 name: quantum-finance-portfolio
-description: "量子计算在金融组合优化中的应用。涵盖 QUBO建模、量子退火、QRNG增强Monte Carlo、VaR/CVaR风险估计。触发词：量子金融、quantum portfolio、量子组合优化、quantum annealing finance、QRNG VaR"
+description: "量子计算在金融组合优化中的应用。涵盖 QUBO建模、量子退火、QRNG增强Monte Carlo、VaR/CVaR风险估计、QAOA Mixer选择、两步QAOA优化。触发词：量子金融、quantum portfolio、量子组合优化、quantum annealing finance、QRNG VaR、QAOA mixer"
 ---
 
 # Quantum Finance Portfolio
@@ -17,6 +17,8 @@ description: "量子计算在金融组合优化中的应用。涵盖 QUBO建模�
 - QRNG Monte Carlo
 - 量子风险估计
 - quantum VaR CVaR
+- QAOA mixer selection
+- 两步QAOA
 
 ## Tools Used
 - `exec`: Run Python quantum computing scripts
@@ -24,7 +26,7 @@ description: "量子计算在金融组合优化中的应用。涵盖 QUBO建模�
 - `web_fetch`: Fetch paper details from arxiv/Springer
 - `sqlite3`: Query kg.db for related research
 
-## Core Patterns (from 2025 research)
+## Core Patterns (from 2025-2026 research)
 
 ### Pattern 1: QUBO建模 (Graph-based Coalition - GCS-Q)
 
@@ -77,13 +79,39 @@ description: "量子计算在金融组合优化中的应用。涵盖 QUBO建模�
 - 渐进式量子优势验证
 ```
 
+### Pattern 4: QAOA Mixer选择（2026-05-16新增）
+
+**核心发现**：XY混合器在传统X混合器之上，对约束型投资组合优化问题有15%更好的近似比。
+
+- XY Mixer适用于多约束（long/short/neutral）组合优化
+- X Mixer适用于简单权重分配问题
+- Mixer选择应基于问题约束类型：有约束→XY，无约束→X
+- **验证方法**：在同一问题实例上对比不同Mixer的近似比和解的质量
+
+### Pattern 5: 两步QAOA优化（2026-05-16新增）
+
+**核心思想**：先经典筛选 promising 资产子集，再量子优化权重分配。
+
+- **Step 1 - 经典预筛选**：使用传统方法（如均值-方差、风险平价）缩小资产范围
+- **Step 2 - 量子优化**：对候选子集应用QAOA进行权重分配
+- **优势**：降低电路深度、减少qubit需求、更适合NISQ设备
+- **适用场景**：大规模投资组合（>50资产）、qubit有限的量子硬件
+
+## 2026年QAOA最新进展
+
+| 方法 | 优势 | 适用场景 |
+|------|------|----------|
+| XY Mixer | 15%更好近似比 | 约束型组合优化 |
+| 两步QAOA | 降低电路深度 | NISQ设备 |
+| 经典预筛选 | 减少qubit需求 | 大规模组合 |
+
 ## Instructions for Agents
 
 ### Step 1: 问题分析
 当用户请求量子金融任务时:
 1. 确定问题类型 (聚类/优化/风险估计)
 2. 评估量子适用性
-3. 选择合适模式 (QUBO/QRNG/混合)
+3. 选择合适模式 (QUBO/QRNG/混合/QAOA)
 
 ### Step 2: QUBO建模 (如适用)
 1. 定义优化目标函数
@@ -95,6 +123,8 @@ description: "量子计算在金融组合优化中的应用。涵盖 QUBO建模�
 - **小规模 (n<100)**: 量子退火器 (D-Wave) 或 QAOA
 - **中等规模**: 混合 VQE + 经典优化
 - **大规模**: QRNG增强 Monte Carlo
+- **约束型组合**: QAOA with XY Mixer
+- **大规模组合**: 两步QAOA优化
 
 ### Step 4: 结果验证
 1. 与经典算法对比
@@ -124,15 +154,18 @@ If quantum results vary significantly:
 最新研究论文存储在 kg.db:
 
 ```bash
-sqlite3 kg.db "SELECT name, properties FROM kg_entities WHERE entity_type='paper' AND category='quantum-finance'"
+sqlite3 kg.db "SELECT title FROM kg_entities WHERE category='quant-ph' AND title LIKE '%portfolio%'"
 ```
 
 关键论文:
 - arxiv 2509.07766: GCS-Q 图聚类
 - arxiv 2502.02125: QRNG VaR/CVaR
 - Springer 10.1186/s40854-025-00751-6: 量子金融综述
+- Research Square rs-9005100: QAOA Mixers for Ternary Portfolio (2026)
+- MDPI: Two-Step QAOA for Portfolio Optimization (2026)
+- D-Wave Hybrid Portfolio Optimization Audit (2026)
 
-## Examples
+## Example Usage
 
 ### Example 1: 资产聚类
 ```
@@ -156,6 +189,28 @@ Agent:
 4. 对比经典 RNG 结果
 ```
 
+### Example 3: QAOA Mixer选择
+```
+User: "用QAOA优化有做空限制的投资组合"
+
+Agent:
+1. 识别约束类型: long/short/neutral
+2. 选择 XY Mixer (约束型)
+3. 设置 QAOA 参数 (p, mixer_type="XY")
+4. 对比 X Mixer 结果验证优势
+```
+
+### Example 4: 两步QAOA优化
+```
+User: "用QAOA优化100支股票的投资组合"
+
+Agent:
+1. Step 1: 经典预筛选 (均值-方差选top 20)
+2. Step 2: QAOA优化候选子集权重
+3. 评估 qubit savings (100→20)
+4. 验证结果与全量优化的差距
+```
+
 ## Resources
 - **kg.db**: 本地知识图谱存储量子金融论文
 - **kg_tool**: CLI查询工具
@@ -165,3 +220,4 @@ Agent:
 - `stock-analysis`: 经典股票分析
 - `arxiv-search`: 论文搜索
 - `skill-extractor`: 从新论文提炼模式
+- `quantum-optimization-qaoa`: QAOA算法指南
