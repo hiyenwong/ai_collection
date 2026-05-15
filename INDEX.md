@@ -1,3 +1,19 @@
+## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### BB plot: A Tool for Accurate Model Selection Using Bayes factors
+- [[bayesian-model-selection-bb-plot]] - Bayesian model selection with BB plot diagnostics for validating Bayes factor calculations and estimating background distributions at low cost (arXiv: 2605.10333)
+  - BB relationship: p(B|H1) = B* p(B|H2) - fundamental identity connecting Bayes factor distributions under competing hypotheses
+  - BB plot construction: simulate under simpler hypothesis, plot tail probabilities on log-log axes, verify self-consistency
+  - Applications: gravitational wave model selection, expensive likelihood domains, cross-validation of evidence estimators
+  - **Activation**: bayesian model selection, BB plot, Bayes factor, model comparison, evidence computation, gravitational wave model selection
+
+### Quantum dynamics of two XX interacting PT-symmetric non-Hermitian qubits: enhancement of quantum annealing
+- [[pt-symmetric-quantum-annealing]] - PT-symmetric non-Hermitian terms in qubit Hamiltonians greatly enhance ground-state probability after quantum annealing (arXiv: 2605.13008)
+  - Two-qubit XX-coupled model with PT-symmetric gain-loss terms
+  - Enhancement mechanisms: gap modification, selective amplification, imaginary-time filtering, critical slowing avoidance
+  - Platform implementations: NV centers, superconducting circuits, trapped ions; optimal gamma near exceptional point gives 5-20x enhancement
+  - **Activation**: PT-symmetric quantum annealing, non-Hermitian quantum annealing, parity-time symmetric quantum, XX-coupled PT qubits, quantum annealing enhancement
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
