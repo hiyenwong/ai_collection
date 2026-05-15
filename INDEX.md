@@ -1,3 +1,39 @@
+## 2026-05-15 - 数论/统计学/高等数学 + 量子力学 (Cron Job)
+
+### Diffusion Computation versus Quantum Computation: A Comparative Model for Order Finding and Factoring
+- [[diffusion-quantum-factoring]] - 基于扩散过程的整数分解方法，用Cayley图谱计算替代Shor算法的酉演化 (arXiv: 2601.02518)
+  - 在有限图上迭代扩散过程，log₂(r)步恢复乘法阶
+  - 经典马尔可夫扩散 vs 量子酉演化的对比分析
+  - **Activation**: diffusion factoring, order finding, cayley graph factorization, shor alternative, spectral factorization, markovian factoring
+
+### Towards Enhanced Quantum Resistance for RSA via Constrained Renyi Entropy Optimization
+- [[quantum-renyi-entropy-rsa]] - 通过约束RSA素数邻近性增强量子抵抗力的CREO框架 (arXiv: 2508.00840)
+  - Rényi熵优化降低Shor算法中量子态可区分性
+  - 素数间隙定理与格基问题的连接
+  - 向后兼容现有RSA基础设施
+  - **Activation**: quantum resistant rsa, renyi entropy optimization, creo cryptography, prime proximity rsa, shor algorithm defense
+
+### Quantum Prediction of Transport Dynamics in Discretized State Spaces
+- [[quantum-bayesian-filtering]] - 基于Wick旋转的量子贝叶斯滤波，用量子态编码概率密度 (arXiv: 2604.24161)
+  - Fokker-Planck方程通过Wick旋转转为酉演化
+  - 高维滤波的O(log N)量子复杂度
+  - QFT加速卷积运算
+  - **Activation**: quantum bayesian filtering, quantum state estimation, quantum fokker-planck, wick rotation diffusion, quantum transport prediction
+
+### Graphical Algebraic Geometry: From Ideals and Varieties to Quantum Calculi
+- [[graphical-algebraic-geometry]] - 图形代数几何与量子计算ZH/ZX演算的统一框架 (arXiv: 2605.13993)
+  - 对易代数和仿射簇的图语言
+  - GAG到ZH演算的关系如同GLA到ZX演算
+  - 量子计算的范畴论基础
+  - **Activation**: graphical algebraic geometry, ZH calculus, ZX calculus, quantum calculi, categorical quantum mechanics
+
+### Cusp Form Dimensions, Lattice Uniqueness, and LP Sharpness for Sphere Packing in Dimensions 8 and 24
+- [[cusp-form-sphere-packing]] - Bost-Connes量子统计系统连接数论、格论和CFT的球填充分析 (arXiv: 2604.10914)
+  - Cohn-Elkies LP界在8维和24维锐利的条件
+  - Hecke代数统一三种视角
+  - 模形式在优化问题中的应用
+  - **Activation**: cusp form sphere packing, Bost-Connes system, LP bound sharpness, Hecke algebra, modular forms optimization
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### From Chaos to Synchrony in Recurrent Excitatory-Inhibitory Networks with Target-Specific Inhibition
