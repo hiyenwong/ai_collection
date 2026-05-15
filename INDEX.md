@@ -1,4 +1,18 @@
 ## 2026-05-15 - Neuroscience Research (Cron Job)
+## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Quantum Sufficiency for Self-Adjoint Statistical Models via Likelihood-Type Operators
+- [[quantum-statistical-modeling]] - 量子充分性理论，在实*-子代数和实Jordan代数上构建量子统计模型，实现基于似然比的充分统计量提取 (arXiv: 2604.23292)
+  - 实Jordan代数提供超越复*-代数框架的量子统计自然结构
+  - Koashi-Imoto分解将Hilbert空间分解为经典/量子分量
+  - **Activation**: quantum sufficiency, self-adjoint, Jordan algebra, likelihood operator, quantum statistics
+
+### Quantum Optical Signatures of Band Topology in Solid-State High Harmonics
+- [[quantum-topology-spectroscopy]] - 通过高次谐波产生的量子光学特征检测能带拓扑，拓扑相产生更强的量子光特征 (arXiv: 2604.20388)
+  - 拓扑相的高次谐波响应和量子光特征均强于平凡相
+  - 腔-物质相互作用产生由电流涨落驱动的压缩高次谐波量子光
+  - **Activation**: band topology, high-harmonic generation, quantum light, SSH model, squeezed light
+
 
 ### Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
 - [[dual-axis-zebrafish-circuits]] - 斑马鱼被盖微电路的双轴功能归因方法，将生物电路结构转化为类脑神经网络设计模式 (arXiv: 2605.13924)
