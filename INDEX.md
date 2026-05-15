@@ -1,3 +1,11 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Breaking Global Self-Attention Bottlenecks in Transformer-based Spiking Neural Networks with Local Structure-Aware Self-Attention
+- [[lsformer-local-structure-aware-spiking-transformer]] - Local structure-aware spiking transformer replacing global self-attention with dilated windows + spiking response pooling (arXiv: 2605.13887)
+  - 核心要点 1: SPooling 替代 max pooling，更全面保留区域特征
+  - 核心要点 2: LS-SSA 局部膨胀窗口机制，平衡局部细节与长程依赖，降低计算复杂度
+  - **Activation**: spiking transformer, local attention, SNN, energy-efficient, LSFormer
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework

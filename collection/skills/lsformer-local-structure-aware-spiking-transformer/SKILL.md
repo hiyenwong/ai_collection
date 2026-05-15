@@ -1,87 +1,71 @@
 ---
 name: lsformer-local-structure-aware-spiking-transformer
-description: "LSFormer: Local Structure-Aware Spiking Transformer methodology for breaking global self-attention bottlenecks in Transformer-based SNNs. Uses Spiking Response Pooling (SPooling) and Local Structure-Aware Spiking Self-Attention (LS-SSA) with local dilated windows. Activation: LSFormer, local structure-aware spiking transformer, spiking response pooling, local self-attention SNN, dilated window attention, transformer-based spiking neural network."
+description: >
+  LSFormer: Local Structure-Aware Spiking Transformer. Replaces global self-attention
+  with dilated local windows and spiking response pooling for energy-efficient SNNs.
+  Keywords: spiking transformer, local attention, SNN, energy-efficient, LSFormer,
+  spiking neural network, self-attention bottleneck, SPooling, LS-SSA, Tiny-ImageNet
 ---
 
-# LSFormer: Local Structure-Aware Spiking Transformer
+# LSFormer — Local Structure-Aware Spiking Transformer
 
-> Transformer-based SNN architecture that replaces global self-attention with local structure-aware attention and max pooling with spiking response pooling, achieving SOTA on Tiny-ImageNet (+4.3%) and N-CALTECH101 (+8.6%).
+**Paper:** *Breaking Global Self-Attention Bottlenecks in Transformer-based Spiking Neural Networks with Local Structure-Aware Self-Attention*
+**Authors:** Lingdong Li, Hangming Zhang, Qiang Yu
+**arXiv:** [2605.13887](https://arxiv.org/abs/2605.13887) (cs.NE / cs.AI, 2026-05-12)
 
-## Metadata
-- **Source**: arXiv:2605.13887
-- **Authors**: Lingdong Li, Hangming Zhang, Qiang Yu
-- **Published**: 2026-05-12
+## Problem
 
-## Core Methodology
+Transformer-based SNNs suffer from two limitations:
+1. **Max pooling bottleneck** — only captures the strongest spike response, failing to preserve representative regional features across time steps.
+2. **Global self-attention bottleneck** — quadratic computational complexity conflicts with the sparse, energy-efficient nature of SNNs.
 
-### Problem
-Transformer-based SNNs face two bottlenecks:
-1. **Max pooling** captures only the strongest response, losing regional feature diversity
-2. **Global self-attention** has quadratic complexity, conflicting with SNNs' sparse/energy-efficient nature
+## Methodology
 
-### Architecture Components
+### SPooling (Spiking Response Pooling)
+- Replaces max pooling with a spiking-aware aggregation mechanism.
+- Captures cumulative regional spike responses across time, not just the peak.
+- Preserves richer temporal-spatial feature representations for downstream attention.
 
-#### 1. Spiking Response Pooling (SPooling)
-- Replaces max pooling with spike-based pooling that integrates responses across a region
-- Preserves representative regional features rather than just the maximum
-- Maintains compatibility with discrete spike events
+### LS-SSA (Local Structure-Aware Spiking Self-Attention)
+- Introduces a **local dilated window mechanism** to limit attention scope.
+- Balances local detail capture with long-range dependency modeling.
+- Reduces computational complexity from O(N²) to near-linear while maintaining accuracy.
+- Maintains spike-compatible operations throughout.
 
-#### 2. Local Structure-Aware Spiking Self-Attention (LS-SSA)
-- Replaces global attention with **local dilated window** mechanism
-- Captures both local details (small window) and long-range dependencies (dilated expansion)
-- Reduces computational complexity from O(N²) to O(N·k) where k << N
-- Structure-aware: adapts attention patterns to local feature geometry
+## Architecture
 
-### Key Innovation
-First SNN transformer to combine local attention with spiking dynamics, bridging the gap between energy efficiency and representational power.
-
-## Implementation Guide
-
-### Architecture Pattern
 ```
-LSFormer Block:
-├── Spiking Response Pooling (replaces MaxPool)
-│   └── Integrates spike responses over local region
-├── Local Structure-Aware Spiking Self-Attention
-│   └── Dilated window: local + long-range via dilation rate
-│   └── Spiking QKV: spike-based query/key/value projections
-└── Spiking FFN
-    └── Spike-compatible feed-forward network
+Input Spike Tensor → SPooling → LS-SSA Blocks → Classification Head
 ```
 
-### Dilated Window Design
-- Window size w, dilation rate d
-- Effective receptive field: w + (w-1)(d-1)
-- Trade-off: larger d captures more context, smaller d preserves locality
+- LS-SSA blocks replace standard global self-attention in Transformer layers.
+- Dilated windows expand receptive field without full quadratic attention.
+- Compatible with standard SNN training pipelines (direct training or ANN-SNN conversion).
 
-### Energy Efficiency
-- Sparsity from spike-based computation reduces active FLOPs
-- Local attention eliminates quadratic scaling
-- Combined effect: significantly lower energy vs. global attention SNNs
+## Results
 
-## Performance Results
-- **Tiny-ImageNet**: +4.3% over SOTA Transformer-based SNNs
-- **N-CALTECH101**: +8.6% over SOTA neuromorphic baselines
-- Applicable to both static image and event-based vision tasks
+| Dataset | Improvement |
+|---------|-------------|
+| Tiny-ImageNet | +4.3% top-1 accuracy (SOTA) |
+| N-CALTECH101 | +8.6% accuracy (SOTA) |
 
-## Applications
-- Energy-efficient vision on neuromorphic hardware
-- Edge deployment of spiking vision transformers
-- Large-scale spiking models where global attention is prohibitive
-- Bridging ANN transformers and SNN efficiency
+## Usage Guidance
 
-## Pitfalls
-- Dilated window size and rate need careful tuning per dataset
-- SPooling may lose sharp boundary information in some tasks
-- Local attention may underperform on tasks requiring true global reasoning
-- Spike-based QKV projections require surrogate gradients for training
-- Compatible with existing spiking transformer frameworks (SpikingJelly, etc.)
+Use this skill when:
+- Designing or optimizing **spiking transformer architectures** for vision tasks.
+- Seeking **energy-efficient alternatives** to global self-attention in SNNs.
+- Implementing **local attention mechanisms** with dilated receptive fields.
+- Replacing max pooling with **temporal-spike-aware pooling** in SNN pipelines.
+- Benchmarking SNNs on image classification (Tiny-ImageNet, event-based datasets).
 
-## Related Skills
-- spiking-transformer-unification
-- stdp-spiking-transformer-attention
-- winner-take-all-spiking
-- spiking-mllm-multimodal-neuromorphic
-- adaptive-spiking-transformer-energy-efficiency
-- gemst-multidimensional-grouping-snn
-- spikingjelly-framework
+## Key Implementation Notes
+
+- SPooling aggregates spike responses across the temporal dimension before attention.
+- LS-SSA window dilation factor controls the trade-off between locality and global context.
+- Maintain spike-compatible activation (threshold-and-fire) within attention computations.
+- Compatible with both rate-coded and temporal-coded SNN representations.
+
+## References
+
+- arXiv: [2605.13887](https://arxiv.org/abs/2605.13887)
+- Related: Spiking Neural Networks, Vision Transformers, Efficient Attention
