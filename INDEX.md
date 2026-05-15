@@ -42,6 +42,13 @@
   - **Activation**: hidden subgroup problem, prime factorization molecular, Shor's algorithm group theory, molecular orbital symmetry, SALC factoring
 
 ## 2026-05-15 - Neuroscience Research (Cron Job)
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - Offline-to-online distillation framework for causal LFP decoding, transferring bidirectional Mamba-2 teacher to compact causal student for real-time wireless BCI (arXiv: 2605.14867)
+  - Bidirectional Mamba-2 teacher pretrained with masked autoencoding across multiple sessions
+  - Retrospective distillation: combined representation alignment + task supervision objective
+  - Outperforms both causal and non-causal LFP SOTA; 2x parameter reduction, 10x training time reduction
+  - LFP-only decoding competitive with spike-based methods, practical for wireless implantable BCIs
+  - **Activation**: LFP decoding, causal BCI, retrospective distillation, local field potential, offline-to-online, wireless BCI, Mamba neural decoding
 
 ### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
 - [[spikeprophecy-benchmark]] - First large-scale benchmark for causal, autoregressive spike-count forecasting on 105 Neuropixels sessions (~89,800 neurons), with population metric decomposition exposing structure invisible to aggregate Pearson r (arXiv: 2605.12992)
