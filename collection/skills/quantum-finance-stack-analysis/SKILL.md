@@ -1,108 +1,58 @@
 ---
 name: quantum-finance-stack-analysis
-description: "Financial computation stack framework for evaluating quantum advantage across portfolio optimization, derivative pricing, risk estimation, QML, and post-quantum security. Based on arXiv:2604.08180 — the most comprehensive quantum finance review to date."
-category: quantum-finance
+description: "Financial computation stack framework for evaluating quantum computing applicability in finance. Covers five interconnected layers: portfolio optimisation, derivative pricing, risk estimation, quantum ML, and post-quantum cryptography. Use when analyzing quantum computing applications in finance, evaluating quantum finance workflows, designing hybrid quantum-classical financial systems, or assessing quantum advantage claims in financial contexts."
 ---
 
 # Quantum Finance Stack Analysis
 
-## Description
+Framework for systematically evaluating quantum computing applicability across the financial computation stack, based on arXiv:2604.08180.
 
-Framework for systematically evaluating quantum computing applications in finance across five interconnected domains: portfolio optimization, derivative pricing, risk estimation, quantum machine learning, and post-quantum cryptography. Uses a financial-computation stack approach with common evaluative logic: identify bottleneck → specify quantum primitive → compare classical benchmark → assess under realistic constraints. Based on arXiv:2604.08180 (134-page comprehensive review).
+## The Five-Layer Stack
 
-## Activation Keywords
-- quantum finance review
-- quantum financial computation stack
-- quantum advantage finance assessment
-- hybrid quantum finance workflow
-- quantum derivative pricing
-- quantum risk estimation
-- post-quantum financial security
-- 量子金融评估框架
-- quantum finance bottleneck analysis
+1. **Portfolio Optimisation Layer** - Constrained search dominates; QAOA/quantum annealing most credible when combinatorial complexity is binding cost
+2. **Derivative Pricing Layer** - Amplitude estimation methods matter when repeated expectation evaluation is the binding cost (Monte Carlo acceleration)
+3. **Risk Estimation Layer** - Tail-risk and scenario estimation; quantum advantage when rare-event analysis is bottleneck
+4. **Quantum ML Layer** - Task-dependent; strongest in pattern recognition on high-dimensional financial data where quantum kernels offer expressivity advantage
+5. **Post-Quantum Cryptography Layer** - Already strategically necessary; financial infrastructure must migrate before fault-tolerant attacks arrive
 
-## Tools Used
-- **web_search**: Find quantum finance papers and benchmarks
-- **web_extract**: Extract paper content from arXiv
-- **terminal**: Run quantum simulation experiments
-- **file**: Create analysis scripts and reports
-- **skill_view**: Reference related quantum computing and finance skills
+## Evaluation Framework
 
-## Financial Computation Stack Framework
+For each layer, apply this logic:
 
-### Layer 1: Constrained Portfolio Optimization
-**Quantum Primitive**: QAOA, Quantum Annealing, VQE
-**When Quantum Wins**: When constrained search dominates computational cost
-**Classical Benchmark**: Mixed-integer programming, simulated annealing, problem-tailored heuristics
-**Key Insight**: Most credible near-term quantum advantage domain; hybrid workflows outperform pure quantum
+1. **Identify the financial bottleneck** - What computational problem limits current approaches?
+2. **Specify the quantum primitive** - Which quantum algorithm addresses this bottleneck?
+3. **Compare with classical benchmark** - What is the best classical alternative?
+4. **Assess implementation constraints** - Qubit count, coherence time, error rates, data loading overhead
+5. **Determine hybrid vs. pure quantum** - Near-term advantage lies in hybrid workflows, not pure quantum
 
-### Layer 2: Derivative Pricing
-**Quantum Primitive**: Amplitude Estimation (Monte Carlo acceleration)
-**When Quantum Wins**: When repeated expectation evaluation is the binding cost
-**Classical Benchmark**: Monte Carlo simulation, PDE methods
-**Key Insight**: Quadratic speedup in sample complexity; advantage depends on state preparation efficiency
+## Key Findings
 
-### Layer 3: Tail-Risk and Scenario Estimation
-**Quantum Primitive**: Quantum Monte Carlo, rare-event sampling
-**When Quantum Wins**: When tail probabilities require massive sampling
-**Classical Benchmark**: Importance sampling, variance reduction techniques
-**Key Insight**: Amplitude estimation provides quadratic advantage for rare-event analysis
+- **Strongest near-term case**: Hybrid quantum-classical workflows rather than blanket quantum advantage claims
+- **Quantum optimisation**: Most credible when constrained search dominates (portfolio selection, asset allocation)
+- **Amplitude estimation**: Most impactful for repeated expectation evaluation (option pricing, VaR calculation)
+- **Quantum ML**: Remains highly task-dependent; no universal advantage demonstrated
+- **Post-quantum crypto**: Already strategically necessary - migrate before fault-tolerant quantum attacks
 
-### Layer 4: Quantum Machine Learning
-**Quantum Primitive**: Variational quantum circuits, quantum kernels
-**When Quantum Wins**: Task-dependent; requires problem-specific analysis
-**Classical Benchmark**: Deep neural networks, gradient boosting
-**Key Insight**: Remains highly task-dependent; no universal advantage proven
+## Hybrid Workflow Design
 
-### Layer 5: Post-Quantum Security
-**Quantum Primitive**: N/A (defensive domain)
-**When Action Required**: NOW — financial infrastructures must migrate before fault-tolerant attacks
-**Classical Benchmark**: RSA, ECC (currently secure but threatened by Shor's algorithm)
-**Key Insight**: Already strategically necessary; migration must happen before FTQC arrives
+Design hybrid quantum-classical financial systems where:
 
-## Evaluation Logic (applied across all layers)
+- Classical preprocessing handles data loading and feature engineering
+- Quantum subroutine solves the combinatorial core
+- Classical postprocessing validates and interprets results
+- Feedback loop iterates between quantum and classical layers
 
-1. **Identify the financial bottleneck**: What computation is limiting current capabilities?
-2. **Specify the relevant quantum primitive**: Which quantum algorithm addresses this bottleneck?
-3. **Compare with explicit classical benchmark**: What's the best classical alternative?
-4. **Assess under realistic constraints**: Consider error rates, qubit counts, coherence times, overhead
+## Implementation Checklist
 
-## Key Findings from arXiv:2604.08180
-
-1. **Hybrid > Pure**: The strongest near-term case for quantum finance lies in carefully designed hybrid workflows rather than blanket claims of universal advantage
-2. **Portfolio optimization**: Most credible when constrained search dominates; hot-starting methods reduce qubit requirements
-3. **Amplitude estimation**: Matters most when repeated expectation evaluation is the binding cost
-4. **QML remains task-dependent**: No universal advantage; must analyze each application case-by-case
-5. **Post-quantum cryptography**: Already strategically necessary — financial infrastructure must migrate before fault-tolerant attacks arrive
-6. **System-level synthesis**: Must evaluate the entire computation stack, not isolated demonstrations
-
-## When to Apply This Framework
-
-- Evaluating whether quantum computing can solve a specific financial problem
-- Building a quantum finance roadmap for an organization
-- Comparing quantum vs classical approaches for a financial computation
-- Assessing the maturity and readiness of quantum finance applications
-- Planning post-quantum cryptographic migration for financial systems
-
-## Error Handling
-
-### Overstating Quantum Advantage
-- Always compare against the BEST classical baseline, not naive implementations
-- Consider that classical algorithms also improve over time
-- Account for quantum overhead (error correction, state preparation, readout)
-
-### Ignoring Implementation Constraints
-- NISQ devices have limited qubits, coherence, and fidelity
-- Real-world deployment requires fault tolerance for many algorithms
-- State preparation overhead can negate theoretical speedups
-
-## Related Papers
-
-- arXiv:2510.11153 — "Hot-Starting Quantum Portfolio Optimization"
-- arXiv:2509.17876 — "Quantum Portfolio Optimization: An Extensive Benchmark"
-- arXiv:2508.21031 — "Introducing the Quantum Economic Advantage Online Calculator"
+- [ ] Identify computational bottleneck in financial workflow
+- [ ] Map to appropriate quantum primitive (QAOA, amplitude estimation, quantum kernel, etc.)
+- [ ] Establish classical baseline performance
+- [ ] Estimate qubit requirements and circuit depth
+- [ ] Design hybrid quantum-classical pipeline
+- [ ] Validate against classical benchmark under realistic noise models
+- [ ] Assess post-quantum cryptography readiness
 
 ## Resources
 
-- **Primary Paper**: https://arxiv.org/abs/2604.08180
-- **MIT Quantum Advantage Calculator**: https://futuretech.mit.edu/quantum-economic-advantage-calculator
+- Primary paper: arXiv:2604.08180 (134 pages, comprehensive review)
+- Related: qbalance-workflow-optimization skill for quantum workflow selection
