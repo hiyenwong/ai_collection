@@ -1,3 +1,17 @@
+## 2026-05-16 - 经济学、投资 + 量子力学 (Cron Job)
+
+### Hot-Starting Quantum Portfolio Optimization
+- [[quantum-hotstart-portfolio]] - 利用连续松弛解构建紧凑希尔伯特空间的量子组合优化热启动方法 (arXiv: 2510.11153)
+  - 核心要点：通过连续最优解附近构造受限搜索空间，减少所需量子比特数
+  - 核心要点：在 D-Wave Advantage 和经典求解器上均超越现有方法
+  - **Activation**: hot-start quantum portfolio, 量子组合优化热启动, discrete mean-variance quantum, compact hilbert space portfolio
+
+### Quantum Computing for Financial Transformation: A Review
+- [[quantum-finance-stack-analysis]] - 量子金融五层计算栈分析框架，涵盖组合优化、衍生品定价、风险评估、量子ML和后量子安全 (arXiv: 2604.08180)
+  - 核心要点：最强近期优势在混合工作流而非纯量子方案
+  - 核心要点：后量子密码学迁移已具有战略必要性
+  - **Activation**: quantum finance review, 量子金融评估框架, hybrid quantum finance, post-quantum financial security
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Noise-Induced Landscape Distortion in QAOA for Constrained Binary Optimization
