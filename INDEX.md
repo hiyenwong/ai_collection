@@ -1,3 +1,27 @@
+## 2026-05-15 - 量子力学/数论/统计学 (Cron Job)
+
+### Quantum Sufficiency for Self-Adjoint Statistical Models
+- [[quantum-statistical-estimation]] - 量子统计估计理论与充分性条件分析 (arXiv: 2604.23292)
+  - 量子充分性保留最优推断所需的全部统计信息
+  - 自伴统计模型的似然型算符框架
+  - **Activation**: quantum statistical estimation, quantum sufficiency, 量子统计估计
+
+## 2026-05-15 - 量子力学/数论/统计学 (Cron Job)
+
+### Mixed-State Long-Range Entanglement from Dimensional Constraints
+- [[quantum-entanglement-detection]] - 量子纠缠检测与长程纠缠表征方法 (arXiv: 2605.15201)
+  - 混合态长程纠缠的维度约束机制
+  - 可扩展的多体态自测试认证
+  - **Activation**: quantum entanglement detection, long-range entanglement, self-testing
+
+## 2026-05-15 - 量子力学/数论/统计学 (Cron Job)
+
+### Decoherence in Matter-Wave Talbot Interference: Hydrodynamic Probability-Flow
+- [[quantum-probability-analysis]] - 量子概率流分析与退相干动力学建模 (arXiv: 2605.14181)
+  - 流体动力学概率流分析退相干效应
+  - 量子-经典过渡的Talbot干涉建模
+  - **Activation**: quantum probability analysis, hydrodynamic probability flow, decoherence
+
 
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
