@@ -1180,3 +1180,24 @@
   - Captures inter-step correlations with O(N*d*D²) params vs O(d^N) full distribution
   - Validated: single-qubit state transfer, Bell-pair prep, qutrit gates, open-system transfer
   - **Activation**: tensor network quantum control, MPS sampling, quantum optimal control gradient-free, 张量网络量子优化控制
+
+## 2026-05-16 - Deep Learning Research (Cron Job)
+
+### Self-Distilled Agentic Reinforcement Learning
+- [[sdar-self-distilled-agentic-rl]] - Stabilizes on-policy self-distillation for multi-turn LLM agents via gated auxiliary objective (arXiv: 2605.15155)
+  - Maps detached token-level signals into sigmoid gate, strengthening positive-gap distillation and attenuating negative teacher rejections
+  - +9.4% on ALFWorld, +7.0% on Search-QA, +10.2% on WebShop-Acc vs GRPO; avoids naive GRPO+OPSD instability
+  - **Activation**: self-distilled agentic RL, SDAR, on-policy self-distillation, OPSD, multi-turn RL agent, gated distillation, GRPO agent
+
+### Uncertainty-Aware Token Pruning in Spiking Transformers
+- [[uncertainty-token-pruning-spiking]] - Training-free token pruning for spiking transformers using temporal uncertainty patterns modeled via Dirichlet distribution (arXiv: 2605.09276)
+  - Token importance from mean + fluctuation of temporal uncertainty across spiking steps, not just instantaneous activation
+  - Plug-and-play at inference time; most consistent gains under token pruning on static and neuromorphic benchmarks
+  - **Activation**: token pruning spiking transformer, uncertainty token reduction, spiking transformer efficiency, Dirichlet token importance, Uncert
+
+### Selective Alignment Knowledge Distillation for SNNs
+- [[selective-alignment-kd-snn]] - Addresses uniform timestep alignment flaw in SNN distillation by selectively aligning only at erroneous timesteps (arXiv: 2605.14252)
+  - Equalizes competing logits at wrong timesteps; reweights temporal alignment by confidence and inter-timestep similarity
+  - Consistent improvements over existing distillation methods on static and neuromorphic datasets
+  - **Activation**: selective alignment distillation, SeAl-KD, SNN knowledge distillation, temporal distillation SNN, timestep distillation
+
