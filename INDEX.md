@@ -7,6 +7,17 @@
   - Dual energy savings: parameter footprint reduction + spike firing rate reduction
   - **Activation**: elastic spiking transformer, matryoshka spiking, runtime adaptive SNN, granularity-aware weight sharing
 
+### Transport-Based Mean Field Theory for SNN Dynamics
+- [[transport-mean-field-snn-dynamics]] - Derives approximate macroscopic firing rate evolution from Fokker-Planck transport solutions, predicting how rate fluctuations emerge from time-varying inputs and initial voltage distributions (arXiv: 2605.14319)
+  - Transport mean field system based on advection equation, not steady-state assumptions
+  - Captures dynamic interaction between inputs, initial densities, and neuronal coupling
+  - **Activation**: transport mean field SNN, Fokker-Planck SNN dynamics, firing rate fluctuations, macroscopic SNN approximation
+
+### Feature Visualization for Brain Encoder Interpretability
+- [[feature-visualization-brain-encoder]] - Uses gradient ascent on predicted ROI activation to synthesize images validating brain encoder models recover known cortical selectivity (arXiv: 2605.13904)
+  - Qualitative complement to quantitative prediction accuracy evaluation
+  - Recovers V1-V4 hierarchy progression, MT motion streaks, FFA face super-stimuli, PPA rectilinear patterns
+  - **Activation**: feature visualization brain encoder, cortical selectivity validation, brain encoder interpretability, ROI gradient ascent
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
