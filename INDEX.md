@@ -14,6 +14,33 @@
   - Platform implementations: NV centers, superconducting circuits, trapped ions; optimal gamma near exceptional point gives 5-20x enhancement
   - **Activation**: PT-symmetric quantum annealing, non-Hermitian quantum annealing, parity-time symmetric quantum, XX-coupled PT qubits, quantum annealing enhancement
 
+### Provable and scalable quantum Gaussian processes for quantum learning
+- [[quantum-gaussian-processes]] - Quantum Gaussian Processes: Bayesian framework for learning from quantum systems through priors over unitary transformations, with matchgate/free-fermion evolutions giving provable and scalable QGPs (arXiv: 2605.00099)
+  - First family of QGPs where unknown unitary acts non-trivially on all qubits
+  - Enables regression, classification, and Bayesian optimization on quantum data with theoretical guarantees
+  - **Activation**: quantum gaussian process, QGP, quantum bayesian inference, quantum learning, free-fermion evolution, matchgate quantum process
+
+### Unitaria: Quantum Linear Algebra via Block Encodings
+- [[unitaria-quantum-linear-algebra]] - Unitaria library: NumPy-like interface for quantum algorithms using block encodings, enabling composition, verification, and resource estimation without circuit execution (arXiv: 2605.10768)
+  - Composable array-like API for block encodings: add, multiply, tensor product, QSVT
+  - Matrix arithmetic evaluation path avoids ancilla qubits and exponential simulation
+  - Automatic circuit extraction and resource estimation (gate/qubit counts)
+  - **Activation**: unitaria, quantum linear algebra, block encoding, QSVT, quantum matrix operations, quantum numpy
+
+### Neural QAOA²: Differentiable Joint Graph Partitioning and Parameter Initialization
+- [[neural-qaoa-optimization]] - Neural QAOA²: neural network-guided graph partitioning and parameter initialization for scalable quantum combinatorial optimization (arXiv: 2605.13051)
+  - Addresses QAOA scalability via differentiable joint partitioning + parameter initialization
+  - Neural network predicts good QAOA parameters from subgraph properties
+  - End-to-end differentiability avoids barren plateaus and poor local minima
+  - **Activation**: neural qaoa, qaoa partitioning, quantum combinatorial optimization, differentiable graph partition, qaoa parameter initialization
+
+### Hidden Prime-Factor Subgroups in Molecular Systems
+- [[hidden-subgroup-prime-factorization]] - Connects Shor's algorithm group theory with molecular orbital symmetries, showing physical systems may encode prime factorization solutions (arXiv: 2605.04343)
+  - Recasts Shor's algorithm as Hidden Subgroup Problem over symmetry groups
+  - SALCs in molecular orbitals contain information about prime factors of integers
+  - Bridges abstract number theory with condensed matter physics
+  - **Activation**: hidden subgroup problem, prime factorization molecular, Shor's algorithm group theory, molecular orbital symmetry, SALC factoring
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
