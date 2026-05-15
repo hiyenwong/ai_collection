@@ -1,4 +1,18 @@
-## 2026-05-16 - Neuroscience Research (Cron Job)
+### 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - Afternoon)
+
+### Hybrid Quantum Genetic Algorithm for Portfolio Optimization
+- [[quantum-genetic-portfolio-optimization]] - 混合量子遗传算法在组合优化中比经典GA收敛更快，同时保持更高种群多样性 (arXiv: 2604.11667)
+  - 核心要点：量子叠加态表示投资组合候选，通过量子旋转门演化向更优解
+  - 核心要点：比暴力搜索显著更少的评估次数达到全局最优
+  - **Activation**: quantum genetic algorithm portfolio, HQGA optimization, quantum evolutionary finance, 混合量子遗传组合优化
+
+### The Cost of Quantum Resistance in Blockchain
+- [[quantum-resistant-blockchain-economics]] - 后量子密码学过渡到区块链系统的经济影响分析，提出基于哈希的提交-揭示替代方案 (arXiv: 2605.06853)
+  - 核心要点：SPHINCS+签名使区块链签名数据增加40-125倍，比特币每天增加约4GB
+  - 核心要点：哈希提交-揭示方案在保持安全性的同时将近链上数据维持在当前水平
+  - **Activation**: post-quantum blockchain cost, quantum resistant blockchain economics, SPHINCS+ blockchain overhead, hash commit reveal blockchain
+
+# 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
 - [[transport-mean-field-snn-dynamics]] - Transport-based mean field theory for SNN population dynamics (arXiv: 2605.14319)
