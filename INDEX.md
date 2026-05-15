@@ -153,6 +153,15 @@
   - 核心要点: 连接量子密码学、量子复杂性理论和量子编译
   - **Activation**: pseudorandom unitary, PRU quantum, unitary synthesis, quantum pseudorandomness, scalable security quantum, PRU construction
 
+### Quantum Circuit Simulation of Compartmental Drug Dynamics
+- [[quantum-circuit-simulation-drug-dynamics]] - Reformulates compartmental PK/PD models as open quantum systems using PennyLane variational circuits for population pharmacokinetics simulation (arXiv: 2605.09691)
+  - 核心要点: 将经典药代动力学ODE模型重构为开放量子系统
+  - 核心要点: 四个药理学房态（中央、外周、效应部位、响应）编码为量子态
+  - 核心要点: 变分量子算法实现非线性混合效应群体药代动力学拟合
+  - **Activation**: quantum PK/PD simulation, compartmental drug dynamics quantum, quantum pharmacokinetics, variational drug model quantum, PennyLane PK/PD
+
+
+
 
 
 ## 2026-05-15 - Neuroscience Research (Cron Job)
