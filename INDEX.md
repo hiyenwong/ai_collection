@@ -146,6 +146,14 @@
   - Entropy concentration inequalities for parameter reduction
   - Quantum lattice entropy H_Q(Λ) for NTRU optimization
   - **Activation**: post-quantum cryptography security, SPHINCS+ parameter optimization, NIST PQC evaluation
+### On Scalable Pseudorandom Unitaries and the Unitary Synthesis Problem
+- [[pseudorandom-unitaries-analysis]] - Analysis framework for pseudorandom unitaries with scalable security and implications for the unitary synthesis problem in quantum cryptography (arXiv: 2605.09957)
+  - 核心要点: 可扩展伪随机酉算子（PRU）要求安全参数独立于输入维度变化，当前主流分析范式无法建立
+  - 核心要点: 若可扩展PRU可在主流范式下构造，则unitary synthesis问题有正解
+  - 核心要点: 连接量子密码学、量子复杂性理论和量子编译
+  - **Activation**: pseudorandom unitary, PRU quantum, unitary synthesis, quantum pseudorandomness, scalable security quantum, PRU construction
+
+
 
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
