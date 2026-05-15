@@ -12,6 +12,24 @@
   - 核心要点：哈希提交-揭示方案在保持安全性的同时将近链上数据维持在当前水平
   - **Activation**: post-quantum blockchain cost, quantum resistant blockchain economics, SPHINCS+ blockchain overhead, hash commit reveal blockchain
 
+### Quantum Computing for Financial Transformation
+- [[quantum-finance-stack-analysis]] - 金融计算堆栈框架，系统化评估量子计算在金融五大领域（组合优化、衍生品定价、风险估计、量子ML、后量子密码学）的适用性 (arXiv: 2604.08180)
+  - 核心要点：五层堆栈架构——组合优化(QAOA)、衍生品定价(振幅估计)、风险估计(稀有事件分析)、量子ML(任务依赖)、后量子密码学(战略必需)
+  - 核心要点：近期最强案例是混合量子-经典工作流，而非纯量子优势声明
+  - **Activation**: quantum finance stack, portfolio optimization quantum, derivative pricing quantum, risk estimation quantum, post-quantum cryptography finance, hybrid quantum workflows
+
+### Quantum Temporal Convolutional Neural Networks for Equity Prediction
+- [[quantum-tcnn-equity-prediction]] - 量子时间卷积神经网络用于横截面股票收益率预测，结合量子电路层与时间卷积网络 (arXiv: 2512.06630)
+  - 核心要点：因果卷积保持时间顺序，量子电路层捕获非线性特征交互
+  - 核心要点：使用秩信息系数(IC)评估预测能力，对比纯经典TCNN基线
+  - **Activation**: quantum TCNN equity prediction, quantum temporal convolution stock, cross-sectional return prediction, quantum neural network finance
+
+### Quantum Reservoir Computing for Stock Forecasting
+- [[quantum-reservoir-stock-forecasting]] - 量子储备池计算方法用于股票市场走势预测，利用量子动力学系统处理时序金融数据 (arXiv: 2602.13094)
+  - 核心要点：储备池固定不变，仅训练经典读出层，训练极简
+  - 核心要点：量子纠缠自然产生丰富的特征混合，对噪声数据鲁棒
+  - **Activation**: quantum reservoir computing stock, QRC forecasting, quantum dynamical system finance, stock movement prediction quantum
+
 # 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
