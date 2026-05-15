@@ -1,3 +1,18 @@
+
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Joint sparse coding and temporal dynamics support context reconfiguration
+- [[context-reconfiguration-sparse-temporal]] - 稀疏编码与时序动力学联合支持上下文重构，SNN天然具备持续学习抗遗忘能力 (arXiv: 2605.10178)
+  - 稀疏表征降低跨上下文干扰，时序动力学增强时间维度的上下文可分性
+  - 兼具两种属性的网络（如SNN）在终身学习中表现出改善的记忆保持，无需辅助启发式方法
+  - **Activation**: context reconfiguration, sparse coding, catastrophic forgetting, lifelong learning, SNN
+
+### Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
+- [[dual-axis-zebrafish-circuits]] - 斑马鱼视顶盖微电路双轴归因分析：能量效率与鲁棒性的联合优化 (arXiv: 2605.13924)
+  - 生物神经回路包含支持不同计算功能的专门子结构
+  - 视顶盖微电路通过专门子结构同时优化能量效率和鲁棒性
+  - **Activation**: zebrafish tectal, energy-efficient, robustness, circuit-to-function, bio-inspired architecture
+
 ## 2026-05-16 - 经济学、投资 + 量子力学 (Cron Job)
 
 ### Hot-Starting Quantum Portfolio Optimization
