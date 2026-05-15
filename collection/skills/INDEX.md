@@ -1,3 +1,18 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
+- [[transport-mean-field-snn-dynamics]] - Transport-based mean field theory for SNN population dynamics (arXiv: 2605.14319)
+  - Derives firing rate fluctuations from transport solutions to Fokker-Planck equation
+  - Bridges microscopic integrate-and-fire to macroscopic population dynamics
+  - **Activation**: transport equation, mean field, Fokker-Planck, firing rate fluctuations, SNN dynamics
+
+### Multiple mechanisms of rhythm switching in recurrent neural networks with adaptive time constants
+- [[rhythm-switching-adaptive-time-constants-rnn]] - Rhythm switching mechanisms in RNNs with learnable time constants (arXiv: 2605.14388)
+  - Three coexisting mechanisms: subpopulation turnover, baseline shifts, phase reorganization
+  - High-frequency rhythms dominated by short-time-constant neuron subpopulations
+  - **Activation**: rhythm switching, adaptive time constants, RNN dynamics, frequency bands, functional differentiation
+
+
 ## 2026-05-15 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
 
 ### Universal quantum resource distillation via composite generalised quantum Stein's lemma

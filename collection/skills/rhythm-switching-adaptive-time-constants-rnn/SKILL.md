@@ -1,104 +1,89 @@
 ---
 name: rhythm-switching-adaptive-time-constants-rnn
-description: "Methodology for analyzing how recurrent neural networks with neuron-specific adaptive time constants switch between multiple frequency band rhythms. Covers rhythm-switching mechanisms, time constant-frequency relationships, and degeneracy of learned solutions. Activation: rhythm switching RNN, adaptive time constants, frequency band switching, RNN neural dynamics, multi-band rhythms, cortical rhythm mechanisms."
+description: "Multiple mechanisms of rhythm switching in recurrent neural networks (RNNs) with adaptive/learnable time constants. Analyzes how RNNs switch between rhythms across multiple frequency bands (theta, alpha, beta, gamma) and how neuronal time constants relate to rhythm-specific functional differentiation. Use when: (1) studying RNN rhythm switching mechanisms, (2) analyzing neuron-specific time constant learning in recurrent networks, (3) understanding frequency-band-specific functional differentiation in neural systems, (4) investigating degeneracy of learned solutions in RNNs, (5) examining active subpopulation turnover and baseline shift mechanisms in trained RNNs, (6) modeling cognitive flexibility through rhythm switching."
 ---
 
-# Rhythm Switching in RNNs with Adaptive Time Constants
+# Rhythm Switching with Adaptive Time Constants in RNNs
 
-> Analysis of multiple coexisting mechanisms by which RNNs with learnable neuron-specific time constants switch between frequency band rhythms (theta, alpha, beta, gamma).
+Methodology from arXiv:2605.14388 (Yamaguti & Nakamura, 2026).
 
-## Metadata
-- **Source**: arXiv:2605.14388
-- **Authors**: Yutaka Yamaguti, Shota Nakamura
-- **Published**: 2026-05-14
+## Core Contribution
 
-## Core Methodology
+Trained leaky integrator RNNs with **neuron-specific learnable time constants** on a four-band (theta, alpha, beta, gamma) rhythm-switching task. Analyzed 20 independently trained networks to reveal the internal mechanisms of rhythm switching.
 
-### Key Innovation
-RNNs trained on multi-band rhythm-switching tasks deploy **multiple coexisting mechanisms** for switching, not a single canonical approach. The mechanisms vary across independently trained runs, exposing a **degeneracy of learned solutions**.
+## Key Findings
 
-### Three Rhythm-Switching Mechanisms
+### 1. Frequency-Dependent Subpopulation Organization
 
-1. **Subpopulation Turnover**
-   - Active neuron subpopulation changes between rhythm modes
-   - Different neurons dominate output for different frequency bands
+| Frequency | Participation | Dominant Neurons |
+|-----------|--------------|------------------|
+| Low (theta) | Distributed (many neurons) | No clear dominance |
+| High (gamma) | Concentrated (small subpopulation) | Short-time-constant neurons |
 
-2. **Network-Wide Baseline Shifts**
-   - Global shift in operating point repositions network near distinct unstable fixed points
-   - Each fixed point corresponds to a different rhythm mode
-   - Switching = jumping between basins of attraction
+- **Negative correlation** between time constant and matched-mode amplitude **strengthens monotonically with frequency**
+- High-frequency rhythms are dominated by a small subpopulation of short-time-constant neurons
 
-3. **Inter-Neuronal Phase Reorganization**
-   - Selective cancellation or support of band components in population output
-   - Phase relationships between neurons reorganize to favor specific frequencies
+### 2. Three Coexisting Rhythm Switching Mechanisms
 
-### Time Constant-Frequency Relationship
-- **Negative correlation** between neuron time constant and matched-mode amplitude
-- Correlation strengthens **monotonically with frequency**
-- **Low-frequency rhythms**: distributed participation of many neurons
-- **High-frequency rhythms**: dominated by small subpopulation of **short-time-constant neurons**
+1. **Subpopulation turnover**: Different subsets of neurons become active for different rhythms
+2. **Network-wide baseline shifts**: Reposition the operating point near distinct unstable fixed points
+3. **Inter-neuronal phase reorganization**: Selectively cancels or supports band components in population output
 
-### Experimental Framework
+### 3. Degeneracy of Solutions
 
-1. Train leaky integrator RNNs with neuron-specific learnable time constants
-2. Task: four-band (theta, alpha, beta, gamma) rhythm switching
-3. Analyze 20+ independently trained networks
-4. Identify switching mechanisms via spectral decomposition and phase analysis
+- The mechanism deployed for each mode pair **varied across training runs**
+- Multiple distinct internal solutions achieve the same behavioral output
+- Parallels the coexistence of rhythm-specific and multi-rhythm interneurons in biological circuits
 
-## Implementation Guide
+## RNN Model Specification
 
-### Analysis Steps
+### Leaky Integrator with Learnable Time Constants
 
-1. **Train RNN** with adaptive time constants on rhythm-switching task
-2. **Spectral analysis**: compute power spectra for each trained network
-3. **Time constant mapping**: correlate learned time constants with rhythm participation
-4. **Mechanism identification**:
-   - Subpopulation analysis: which neurons active per mode
-   - Fixed point analysis: linearize around operating points
-   - Phase analysis: compute phase relationships between neurons
+\[
+\tau_i \frac{dh_i}{dt} = -h_i + \sum_j W_{ij} \phi(h_j) + b_i + u_i(t)
+\]
 
-### Code Skeleton
-```python
-import numpy as np
+where:
+- \(\tau_i\): neuron-specific time constant (learnable)
+- \(h_i\): hidden state
+- \(W_{ij}\): recurrent weights
+- \(\phi\): activation function (typically tanh)
+- \(u_i(t)\): input signal specifying target frequency band
 
-# Leaky integrator RNN with adaptive time constants
-class AdaptiveTimeConstantRNN:
-    def __init__(self, n_units, dt=0.001):
-        self.tau = np.ones(n_units)  # learnable time constants
-        self.W = np.random.randn(n_units, n_units) * 0.1
-        self.b = np.zeros(n_units)
-        
-    def step(self, x, h, u):
-        # dh/dt = (-h + f(Wh + u)) / tau
-        pre = self.W @ h + u + self.b
-        dh = (-h + np.tanh(pre)) / self.tau
-        return h + dh * dt
-    
-    def analyze_rhythm(self, output, fs):
-        from scipy.signal import welch
-        freqs, psd = welch(output, fs=fs)
-        bands = {'theta': (4,8), 'alpha': (8,13), 'beta': (13,30), 'gamma': (30,80)}
-        powers = {}
-        for band, (lo, hi) in bands.items():
-            mask = (freqs >= lo) & (freqs <= hi)
-            powers[band] = np.trapz(psd[mask], freqs[mask])
-        return powers, freqs, psd
-```
+### Training Task
 
-## Applications
-- Interpreting frequency-band-specific functional differentiation in biological neural systems
-- Understanding degeneracy in learned neural representations
-- Designing RNNs with controllable rhythm generation capabilities
-- Modeling cortical circuit mechanisms for multi-band neural oscillations
+- Input: one-hot encoding of target frequency band (theta/alpha/beta/gamma)
+- Output: sinusoidal signal at the specified frequency
+- Loss: MSE between generated and target oscillation
 
-## Pitfalls
-- Mechanism degeneracy: different training runs yield different switching mechanisms
-- Time constant initialization can bias which mechanism emerges
-- Spectral analysis requires sufficient sequence length for reliable band estimates
-- Biological plausibility of learned time constants may vary
+## Analysis Pipeline
+
+### 1. Time Constant Distribution Analysis
+- Plot distribution of learned \(\tau_i\) values
+- Check for bimodality or clustering
+
+### 2. Mode-Amplitude Correlation
+- Compute matched-mode amplitude for each frequency band
+- Correlate with time constants across neurons
+- Verify monotonic strengthening with frequency
+
+### 3. Mechanism Decomposition
+For each rhythm transition, identify which mechanism dominates:
+- **Subpopulation turnover**: Track which neurons are active in each band
+- **Baseline shift**: Compute mean activity level across the network
+- **Phase reorganization**: Analyze phase relationships between neuron pairs
+
+### 4. Cross-Run Comparison
+- Compare mechanisms across independently trained networks
+- Quantify solution degeneracy
+
+## Implications for Biological Systems
+
+1. **Functional differentiation**: Short-time-constant neurons specialize for high-frequency processing
+2. **Degeneracy**: Multiple neural implementations can produce identical behavior
+3. **Multi-rhythm neurons**: Some neurons participate in multiple bands, parallel to biological findings
 
 ## Related Skills
-- rhythm-snn-temporal-processing
-- neuromodulation-rhythmic-pattern-control
-- neural-dynamics-decision-making
-- working-memory-rsnn-delays
+
+- `neural-population-dynamics` - Neural population analysis methods
+- `rhythm-switching-adaptive-time-constants-rnn` - This skill
