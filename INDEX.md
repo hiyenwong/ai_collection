@@ -1,6 +1,25 @@
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
-### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
+### Noise-Induced Landscape Distortion in QAOA for Constrained Binary Optimization
+- [[quantum-portfolio-optimization]] - Device-agnostic LSC metric quantifies QAOA noise distortion on IBM Heron r2 hardware (arXiv: 2604.19426v1)
+  - Hardware noise compresses landscape span by 24-30% without displacing global minimum
+  - Classical-to-hardware parameter transfer supported; ZNE yields mixed results (+7%/+9%/-4%)
+  - IBM calibration model r=0.959 but explains only ~42% of approximation-ratio degradation
+  - **Activation**: QAOA noise analysis, landscape span compression, quantum portfolio, IBM hardware noise, 量子噪声分析
+
+### LogQ Algorithm: Quantum-Inspired Classical Optimization
+- [[quantum-inspired-optimization]] - QUBO reformulation as non-linear continuous relaxation eliminates Pauli decomposition (arXiv: 2604.12925v1)
+  - Quantum-inspired classical algorithm for portfolio, fleet, charging station optimization
+  - Gradient-inspired parameter optimization with fewer resources than quantum circuits
+  - **Activation**: LogQ algorithm, quantum-inspired optimization, QUBO classical, non-linear relaxation, 量子启发优化
+
+### Hybrid Quantum Classical Genetic Algorithms for Portfolio Optimization
+- [[quantum-portfolio-optimization]] - HQGA converges faster than classical GA for portfolio optimization (arXiv: 2604.11667v1)
+  - Maintains higher population diversity throughout optimization process
+  - Fewer evaluations-to-solution than brute-force to reach global optimum
+  - **Activation**: hybrid quantum genetic, HQGA portfolio, quantum GA optimization, 混合量子遗传
+
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 - [[quantum-portfolio-optimization]] - QAOA with counterdiabatic driving for portfolio optimization under budget and risk constraints (arXiv: 2605.06858)
   - Counterdiabatic (CD) extension of QAOA improves approximation ratios at fixed depth
   - XY-mixer naturally enforces cardinality constraints without penalty distortion
