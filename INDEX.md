@@ -16,6 +16,32 @@
 
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
+### Elastic Spiking Transformer
+- [[elastic-spiking-transformer]] - Matryoshka-style elasticity for Spiking Transformers running at multiple resolutions (synced from standalone)
+  - Enables running spiking transformers at different width/depth configurations without retraining
+  - Matryoshka representation learning adapted for energy-efficient SNN inference
+  - **Activation**: elastic spiking transformer, Matryoshka SNN, adaptive resolution spiking, multi-scale SNN inference
+
+### FiTS Interpretable Spiking Neuron
+- [[fits-interpretable-spiking-neuron]] - Frequency Selectivity and Temporal Shaping (FiTS) interpretable spiking neuron model
+  - Combines frequency-domain selectivity with temporal shaping for interpretable SNN units
+  - Enables frequency-selective computation in spiking neural networks
+  - **Activation**: FiTS neuron, frequency selective spiking, interpretable SNN, temporal shaping neuron
+
+### KAST-BAR Autoregressive Brain Model
+- [[kast-brain-autoregressive]] - Knowledge-Anchored Semantically-Dynamic Transformer for autoregressive brain modeling
+  - Autoregressive brain signal modeling with semantic knowledge anchoring
+  - **Activation**: KAST-BAR, autoregressive brain modeling, knowledge-anchored transformer brain
+
+### Transport Mean Field SNN Dynamics
+- [[transport-mean-field-snn-dynamics]] - Transport-based mean field theory for spiking neural network dynamics
+  - Mean field analysis of SNNs using transport equation framework
+  - Provides approximate macroscopic dynamics from microscopic spiking behavior
+  - **Activation**: transport mean field SNN, SNN macroscopic dynamics, transport equation spiking network
+
+
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
 ### Breaking Global Self-Attention Bottlenecks in Transformer-based Spiking Neural Networks with Local Structure-Aware Self-Attention
 - [[lsformer-local-structure-aware-spiking-transformer]] - Local structure-aware spiking transformer replacing global self-attention with dilated windows + spiking response pooling (arXiv: 2605.13887)
   - 核心要点 1: SPooling 替代 max pooling，更全面保留区域特征
