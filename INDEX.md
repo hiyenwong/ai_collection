@@ -1,3 +1,12 @@
+## 2026-05-15 - Neuroscience Research (Cron Job) - KAST-BAR
+
+### KAST-BAR: Knowledge-Anchored Semantically-Dynamic Topology Brain Autoregressive Modeling for Universal Neural Interpretation
+- [[kast-brain-autoregressive]] - EEG foundation model integrating Dual-Stream Hierarchical Attention (DSHA) for brain topology with Knowledge-Anchored Semantic Profiler (KASP) and Semantic Text-Aware Refiner (STAR) to bridge physiological signals and expert-level medical semantics, pre-trained on 21 datasets (arXiv: 2605.13133)
+  - 核心要点: DSHA编码器同时捕获局部时间动力学和全局空间拓扑，建模大脑非欧几里得结构
+  - 核心要点: KASP将神经表征合成为专家级文本描述，STAR使用Latent Expert Queries实现语义反馈增强
+  - 核心要点: 21个数据集预训练，6个下游任务一致优于现有方法
+  - **Activation**: kast-bar, knowledge-anchored brain autoregressive, eeg foundation model semantic alignment, dual-stream hierarchical attention eeg, brain topology representation learning
+
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 
 ### Human face perception reflects inverse-generative and naturalistic discriminative objectives
