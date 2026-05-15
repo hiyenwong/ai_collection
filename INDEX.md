@@ -14,6 +14,20 @@
   - 提出 GWT 时间解离、LLM 中层扰动解离、麻醉/阿尔茨海默病效应三大可验证预测
   - **Activation**: consciousness, USK, synergistic information, Partial Information Decomposition, PIRD, IIT, GWT
 
+### Approximate Macroscopic Dynamics of Spiking Neural Networks via Transport Equation
+- [[transport-mean-field-snn-dynamics]] - 基于传输方程解的SNN宏观动力学近似，从Fokker-Planck系统推导瞬态放电率动力学 (arXiv: 2605.14319)
+  - 提出基于传输(对流)解的平均场方法，突破异步稳态假设限制
+  - 捕获时变输入、初始电压分布和耦合之间的动态相互作用
+  - 适用于慢输入和兴奋驱动状态下的SNN群体动力学分析
+  - **Activation**: transport mean field, SNN population dynamics, Fokker-Planck neural, firing rate fluctuations, integrate-and-fire mean field
+
+### Are cortical microcircuits optimized for information flux?
+- [[cortical-microcircuit-information-flux]] - 通过逆向工程仿真发现皮层微电路通过嵌入网络增强信息通量 (arXiv: 2605.14680)
+  - 嵌入网络通过有效偏置和循环共振两种机制增强核心群体的信息通量
+  - 信息通量可通过个体优化偏置进一步提升，且偏置可从自组织原则涌现
+  - 对生物神经回路解释和人工循环系统设计(储层计算)均有重要意义
+  - **Activation**: information flux, cortical microcircuit, reverse engineering neural circuit, recurrence resonance, reservoir computing optimization
+
 ## 2026-05-15 - 数学 + 量子力学 (Mathematics + Quantum Mechanics) (Cron Job)
 
 ### Towards Exponential Quantum Improvements in Solving Cardinality-Constrained Binary Optimization
