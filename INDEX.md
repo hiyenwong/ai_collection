@@ -1,3 +1,29 @@
+## 2026-05-15 - Number Theory, Statistics, Math + Quantum Mechanics (Cron Job)
+
+### From Hilbert's Tenth Problem to Quantum Speedup
+- [[quantum-diophantine-oracle]] - 量子数论预言机构建 (arXiv: 2605.13980)
+  - 核心要点：将有界丢番图方程系统归约为量子搜索问题，实现O(M^(k/2))量子加速
+  - 核心要点：构建可逆算术电路作为量子预言机，支持Grover振幅放大
+  - **Activation**: diophantine, Hilbert, quantum oracle, bounded equations, number theory quantum
+
+### Winning Lottery Tickets via Quantum-Inspired Classical Algorithm
+- [[quantum-inspired-lottery-tickets]] - 量子启发彩票发现算法 (arXiv: 2605.13979)
+  - 核心要点：使用量子启发Frieze-Kannan-Vempala采样近似SVD进行权重重要性评分
+  - 核心要点：比幅度剪枝快2-5x，无需完整反向传播
+  - **Activation**: lottery ticket, neural network pruning, quantum-inspired, sparse subnetwork
+
+### Decoherence via Hydrodynamic Probability-Flow Analysis
+- [[quantum-probability-flow]] - 量子概率流退相干分析 (arXiv: 2605.14181)
+  - 核心要点：通过概率流分解 j = j_coherent + j_incoherent 量化退相干程度
+  - 核心要点：定义相干性度量 C = |j_coherent|/|j|，1=完全相干，0=完全退相干
+  - **Activation**: decoherence, Talbot interference, probability flow, hydrodynamic quantum
+
+### QUACOD Quantum Coordinate Descent
+- [[quantum-coordinate-descent]] - 量子坐标下降优化 (arXiv: 2605.14001)
+  - 核心要点：将大规模QUBO问题分解为坐标级量子子程序，支持10000+变量
+  - 核心要点：单调收敛，O(1/sqrt(T))收敛率，10-50次迭代实用收敛
+  - **Activation**: QUACOD, coordinate descent quantum, QUBO decomposition, scalable optimization
+
 ## 2026-05-15 - 数论/统计学/高等数学 + 量子力学 (Cron Job)
 
 ### Diffusion Computation versus Quantum Computation: A Comparative Model for Order Finding and Factoring
