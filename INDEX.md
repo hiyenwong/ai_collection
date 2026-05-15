@@ -1,6 +1,24 @@
 ## 2026-05-15 - Neuroscience Research (Cron Job)
 ## 2026-05-15 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
+### A complete characterisation of conditional entropies
+- [[conditional-entropy-quantum]] - 完整刻画条件熵的公理化框架，证明最一般的条件熵是Renyi熵的指数平均 (arXiv: 2601.23213)
+  - 操作公理：独立性可加性、重标记不变性、条件混合单调性
+  - 确定条件混合下的状态变换速率，提供带副信息的量子热力学第二定律
+  - **Activation**: conditional entropy, Renyi entropy, quantum thermodynamics, information theory, entropy axioms
+
+### Random matrix theory of charge distribution in disordered quantum impurity models
+- [[random-matrix-quantum-statistics]] - 随机矩阵理论分析无序量子杂质模型的电荷分布，发现高斯到双模分布的相变 (arXiv: 2507.22586)
+  - 大杂化->高斯分布，小杂化->双模分布+(-3/2)幂律
+  - 推导N->infinity极限下的精确RMT解
+  - **Activation**: random matrix theory, quantum impurity, GOE, charge distribution, universal power-law
+
+### Integral Means Spectrum for the Random Riemann Zeta Function
+- [[random-riemann-zeta-spectrum]] - 随机Riemann zeta函数的积分均值谱分析，证明几乎必然符合Kraetzer猜想形式 (arXiv: 2603.26507)
+  - 将随机zeta函数与Gaussian multiplicative chaos建立严格联系
+  - 使用概率论和解析数论工具证明单位圆盘上的积分均值谱
+  - **Activation**: Riemann zeta function, integral means spectrum, Gaussian multiplicative chaos, analytic number theory
+
 ### Quantum Sufficiency for Self-Adjoint Statistical Models via Likelihood-Type Operators
 - [[quantum-statistical-modeling]] - 量子充分性理论，在实*-子代数和实Jordan代数上构建量子统计模型，实现基于似然比的充分统计量提取 (arXiv: 2604.23292)
   - 实Jordan代数提供超越复*-代数框架的量子统计自然结构
