@@ -1,3 +1,10 @@
+### Geometric Pareto Control: Riemannian Gradient Flow of Energy Function via Lie Group Homotopy
+- [[geometric-pareto-control]] - 将 Pareto 最优解族嵌入 Lie 群子流形，通过黎曼梯度流实现闭环导航，解决安全关键 CPS 中 RL 的采样复杂度、重训练、脆性切换和不安全探索问题 (arXiv: 2605.09824)
+  - 核心要点: 离线阶段将 Pareto 最优解嵌入 Lie 群子流形，训练时可行性裕度保证无需后验投影
+  - 核心要点: 在线阶段通过奇异扰动势场的黎曼梯度流导航，双时间尺度动态优先约束恢复
+  - 核心要点: 100% 可行性、0.30% Oracle 次优性、12.3ms 决策时间，不确定性下无需重训练
+  - **Activation**: geometric pareto control, riemannian gradient flow control, lie group control, multi-objective optimal control, pareto submanifold, safety-critical CPS control
+
 ## 2026-05-15 - Systems Engineering Research (Cron Job)
 
 ### Byzantine-Resilient Consensus via Active Reputation Learning
