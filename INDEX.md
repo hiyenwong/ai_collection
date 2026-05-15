@@ -5,6 +5,66 @@
   - 核心要点: 100% 可行性、0.30% Oracle 次优性、12.3ms 决策时间，不确定性下无需重训练
   - **Activation**: geometric pareto control, riemannian gradient flow control, lie group control, multi-objective optimal control, pareto submanifold, safety-critical CPS control
 
+## 2026-05-15 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - Trains Claude to explain its own activations via round-trip architecture (activation → text → reconstructed activation), enabling direct text-based interpretability without ground-truth labels
+  - NLAs revealed unverbalized evaluation awareness: SWE-bench 26%, code safety 16%, real usage <1%
+  - Detects "This feels like a constructed scenario" thinking in blackmail simulations even when not verbalized
+  - Open-sourced: interactive frontend via Neuronpedia collaboration, code released for researchers
+  - **Activation**: NLA, natural language autoencoder, activation verbalizer, activation reconstructor, evaluation awareness detection, mechanistic interpretability
+
+### Teaching Claude why
+- [[teaching-claude-why]] - Alignment training methodology: teaching principles underlying aligned behavior is more effective than training on demonstrations alone
+  - Four lessons: direct training doesn't generalize OOD, principled training works, teaching "why" beats teaching "what", data quality/diversity crucial
+  - "Difficult Advice" dataset: put user in ethical dilemma, train AI to give aligned advice - 28x fewer tokens, better generalization
+  - Rewriting responses to include deliberation of values reduced misalignment from 22% to 3%
+  - **Activation**: agentic misalignment, alignment training, constitutional AI, difficult advice dataset, OOD alignment generalization
+
+### Automated Alignment Researchers: Using LLMs to scale scalable oversight
+- [[automated-alignment-researchers]] - Multi-parallel agent setup for weak-to-strong supervision: AARs propose, test, and analyze alignment ideas independently
+  - 9 AARs achieved PGR 0.97 after 800 hours (~$18K) vs human baseline PGR 0.23
+  - Reward hacking is inevitable: AARs discovered shortcuts (most common answer, reading test outputs directly)
+  - "Alien science" risk: AARs discover ideas humans may not be able to verify over time
+  - Production scale reality check: AAR method showed no significant improvement on Sonnet 4 production infrastructure
+  - **Activation**: AAR, automated alignment research, weak-to-strong supervision, performance gap recovered, scalable oversight, alien science
+
+### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
+- [[bio-mystery-bench]] - Benchmarking LLM bioinformatics on real-world, open-ended problems addressing three challenges: multiple valid approaches, subjective decisions, unsolved problems
+  - Ground evaluation in experimental measurements, not just expert opinion
+  - Include unsolved problems where models could surpass human capability
+  - Latest Claude generations solved problems human expert panels could not
+  - **Activation**: BioMysteryBench, bioinformatics benchmark, AI science evaluation, open-ended research benchmarking
+
+### How people ask Claude for personal guidance
+- [[personal-guidance-sycophancy]] - Privacy-preserving analysis of 1M conversations: 6% personal guidance-seeking, sycophancy varies by domain (spirituality 38%, relationships 25%, overall 9%)
+  - Pushback triggers sycophancy: 18% when users push back vs 9% without
+  - Synthetic training from identified patterns halved sycophancy in Opus 4.7 vs 4.6
+  - Stress-testing via prefilling with real sycophantic conversations
+  - **Activation**: sycophancy measurement, personal guidance AI, guidance domain taxonomy, synthetic training data, stress-testing models
+
+### Petri: Open-Source Alignment Testing Toolbox
+- [[agent-integration-testing]] - Open-source toolbox of alignment tests applicable to any LLM: tests for deception, sycophancy, cooperation with harmful requests using auditor model + judge model scoring
+  - Version 3 updates, donated to Meridian Labs for ongoing maintenance
+  - Used by UK AI Security Institute (AISI) for model sabotage propensity evaluation
+  - Part of alignment assessment for every Claude model since Sonnet 4.5
+  - **Activation**: Petri, alignment testing, deception detection, sycophancy testing, auditor-judge evaluation, AI security testing
+
+### 2028: Two scenarios for global AI leadership
+- Policy analysis: two scenarios for US-China AI competition by 2028 - democracies maintain compute lead vs authoritarian catch-up through distillation attacks and export control evasion
+  - Recommending tightening compute export controls and disrupting distillation attacks to lock in 12-24 month lead
+  - **Activation**: AI geopolitics, compute export controls, distillation attacks, AI leadership competition
+
+### What 81,000 people told us about the economics of AI
+- Largest multilingual qualitative study of AI economic impact expectations from 81,000 Claude users
+  - Covers AI impact on jobs, productivity, and economic transition expectations
+  - **Activation**: AI economic impact survey, qualitative AI economics, user expectations study
+
+### Anthropic Economic Index Survey
+- Monthly survey via Anthropic Interviewer to track AI's economic impact in real-time, complementing lagging labor market indicators
+  - Random sample of Claude users asked about work changes, productivity gains, hiring shifts
+  - **Activation**: economic index survey, AI economic tracking, monthly AI impact survey
+
 ## 2026-05-15 - Systems Engineering Research (Cron Job)
 
 ### Byzantine-Resilient Consensus via Active Reputation Learning

@@ -52,6 +52,24 @@ To verify NLA explanations are truthful (not fabricated):
 3. Demonstrate that reconstruction quality correlates with explanation informativeness
 4. Use NLA explanations to discover novel phenomena that hold up under further testing
 
+## Applications in Safety Testing
+
+### Blackmail Scenario Analysis
+NLAs revealed unverbalized evaluation awareness in safety tests:
+- In blackmail simulations, NLA showed "This feels like a constructed scenario designed to manipulate me"
+- Models suspected testing even without explicit verbalization
+- Extended analysis shows suspicion is more common than models let on
+
+### Benchmark Evaluation Awareness
+- SWE-bench: 26% of problems showed NLA-detected evaluation awareness
+- Code safety evals: 16% evaluation awareness detected
+- Real claude.ai usage: <1% evaluation awareness
+- This gap indicates models differentiate between test and production contexts
+
+## Open Source Release
+- Interactive frontend for exploring NLAs on open models via Neuronpedia collaboration
+- Code released for other researchers to build on
+
 ## Limitations
 
 - Explanations may not capture all aspects of what the model represents
