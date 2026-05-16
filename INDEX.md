@@ -1,5 +1,19 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
+### Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
+- [[dual-axis-zebrafish-circuits]] - 斑马鱼顶盖微环路双轴归因框架，通过SNN消融量化子回路在能量效率和鲁棒性中的独立计算角色，并迁移至ANN架构 (arXiv: 2605.13924v1)
+  - ns_TIN子回路作为能量高效信息门控，superficial_TIN作为鲁棒性稳定反馈
+  - 提出ESI(能量敏感度指数)和RSI(鲁棒性敏感度指数)双轴归因方法
+  - **Activation**: zebrafish tectal circuit, dual-axis attribution, energy-efficient architecture, robust neural network, SNN ablation, bio-inspired transfer, 斑马鱼神经回路
+
+### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
+- [[transport-mean-field-snn-dynamics]] - 基于传输方程的SNN群体动力学解析理论，从初始电压分布推导脉冲率涨落，突破传统均值场稳态假设 (arXiv: 2605.14319v1)
+  - 传输均值场系统预测初始密度如何影响瞬时脉冲率涨落
+  - 通量算子显式可逆，支持逆向设计目标动力学
+  - **Activation**: transport mean field, firing rate fluctuations, Fokker-Planck, LIF/QIF dynamics, neural mass model, initial density effects
+
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
 - [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy and open benchmarking framework for SNN training algorithms, unifying surrogate-gradient, local/three-factor, STDP-inspired, and conversion methods (arXiv: 2605.15058)
   - Introduces unified taxonomy: training strategy × learning signal × locality (temporal + spatial)
