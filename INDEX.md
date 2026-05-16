@@ -8,10 +8,11 @@
   - **Activation**: quantum finance time series, QLSTM, quantum reservoir computing, quantum stock prediction, financial quantum machine learning
 
 ### Large-scale portfolio optimization on a trapped-ion quantum computer
-- [[quantum-time-series-finance]] - End-to-end pipeline for large-scale portfolio selection with cardinality constraints on trapped-ion processors (arXiv: 2602.23976)
-  - Demonstrates hardware-aware decomposition on trapped-ion quantum processors
-  - Addresses real-world portfolio optimization with cardinality constraints
-  - **Activation**: trapped-ion quantum computing, portfolio optimization, cardinality constraints
+- [[trapped-ion-portfolio-optimization]] - End-to-end pipeline for large-scale portfolio selection with cardinality constraints on trapped-ion processors (arXiv: 2602.23976)
+  - Hardware-aware decomposition maps 100+ asset problems to trapped-ion qubit limits
+  - All-to-all connectivity eliminates SWAP overhead, native Mølmer-Sørensen gates efficient for portfolio QUBO
+  - Cardinality constraints via penalty method or constraint-preserving XY-mixer
+  - **Activation**: trapped-ion quantum computing, portfolio optimization, cardinality constraints, hardware-aware quantum decomposition, 2602.23976
 
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
