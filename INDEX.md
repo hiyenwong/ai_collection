@@ -1,4 +1,12 @@
 
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Learning Developmental Scaffoldings to Guide Self-Organisation
+- [[learning-developmental-scaffoldings]] - Joint NCA+SIREN model that learns developmental pre-patterns alongside self-organization rules, revealing non-trivial information offloading between initial conditions and dynamics (arXiv: 2605.14998)
+  - Pre-patterns don't approximate targets — they bias developmental dynamics to facilitate convergence
+  - Joint learning yields improvements in robustness, encoding capacity, and symmetry breaking
+  - Applications to brain development: cortical column formation, retinotopic mapping, neurodevelopmental disorders
+  - **Activation**: developmental scaffoldings, self-organisation, neural cellular automata, NCA, pre-patterns, morphogenetic, SIREN, information offloading
 ## 2026-05-16 - 量子优化 (Cron Job)
 
 ### QUACOD: Quantum Optimization via Coordinate Descent for Scalable Drone Scheduling
