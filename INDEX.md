@@ -1,21 +1,16 @@
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
-### Cortical microcircuit information flux optimization (already covered)
-- [[cortical-microcircuit-information-flux]] — Information flux in cortical layer 5 microcircuits via Recurrence Resonance and effective biases (arXiv: 2605.14680)
-  - **Activation**: cortical microcircuit, information flux, recurrence resonance, neural circuit optimization
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks
+- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive survey and open benchmarking framework for SNN local learning rules covering surrogate-gradient BP, three-factor learning, biological plasticity, ANN-to-SNN conversion, and non-standard optimization (arXiv: 2605.15058)
+  - 核心要点 1: 统一分类法将SNN训练算法分为五大类：代理梯度反向传播、局部/三因子学习、生物可塑性机制、ANN-to-SNN转换、非标准优化策略
+  - 核心要点 2: 发布NeuroTrain开源框架（基于snnTorch），实现各算法类代表性实现，支持跨数据集/架构/训练 regimes 的一致性基准测试
+  - **Activation**: neurotrain, local learning SNN, SNN benchmarking, snn training survey, surrogate gradient, three-factor learning, ANN-to-SNN conversion, SNN taxonomy, snntorch
 
-### REALM: Retrospective Encoder Alignment for LFP Modeling (already covered)
-- [[realm-lfp-retrospective-decoding]] — Offline-to-online distillation for causal LFP decoding in BCIs (arXiv: 2605.14867)
-  - **Activation**: realm, LFP decoding, BCI, retrospective distillation
-
-### L-PACT: Locked Predictive-Aligned Cross-modal Testing (already covered)
-- [[lpact-brain-lm-alignment-evaluation]] — Rigorous brain-LM alignment evaluation with multi-gate validation (arXiv: 2605.14025)
-  - **Activation**: brain-language model alignment, L-PACT, neural prediction scores
-
-### Standalone Skills Synced
-- [[bcpnn-native-explainability]], [[chaos-synchrony-ei-networks]], [[cortical-microcircuit-information-flux-optimization]], [[ei-network-chaos-synchrony-theory]], [[qlam-quantum-attention-memory]], [[quantum-topology-spectroscopy]], [[sealkd-snn-knowledge-distillation]]
-
-**Total ai_collection skills**: 1264 | **Coverage**: 100% | **0 new skills, 7 synced**
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model for causal BCI decoding via retrospective Mamba-2 distillation (arXiv: 2605.14867)
+  - 核心要点 1: 三阶段流程：BiMamba-2自监督预训练 → 回顾性蒸馏到因果学生模型 → 行为解码
+  - 核心要点 2: 达到SOTA LFP-only解码，参数量减半，训练速度提升10倍，可部署于Jetson/RPi
+  - **Activation**: LFP decoding, BCI, Mamba-2, knowledge distillation, causal neural decoding, wireless BCI
 
 ## 2026-05-16 - Economics & Investment + Quantum Mechanics (Cron Job)
 
