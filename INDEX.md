@@ -1,3 +1,20 @@
+## 2026-05-17 - Information Science + Quantum (Cron Job)
+
+### Universal quantum resource distillation via composite generalised quantum Stein's lemma
+- [[quantum-resource-distillation]] - 量子资源蒸馏/对称性分析的统一框架 (arXiv: 2605.15174)
+    - 复合广义量子Stein引理建立统一的资源蒸馏速率
+    - 所有量子资源理论的信息论量统一控制蒸馏效率
+    - 适用于纠缠/魔态/相干性蒸馏协议设计
+  - **Activation**: quantum resource distillation, quantum Stein's lemma, entanglement distillation, magic state distillation, 量子资源蒸馏
+
+### Non-Invertible Symmetries on Tensor-Product Hilbert Spaces and Quantum Cellular Automata
+- [[quantum-cellular-automata-symmetries]] - 量子资源蒸馏/对称性分析的统一框架 (arXiv: 2605.15194)
+    - 可实现的融合范畴对称性必须是弱积分的(FPdim=√n)
+    - 量子元胞自动机(QCA)提供对称性细化分类机制
+    - 非可逆对称性作为拓扑码逻辑算子的新视角
+  - **Activation**: quantum cellular automata, non-invertible symmetry, fusion category, 量子元胞自动机, 非可逆对称性
+
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### REALM: Retrospective Encoder Alignment for LFP Modeling

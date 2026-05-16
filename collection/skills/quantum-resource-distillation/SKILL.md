@@ -1,143 +1,108 @@
 ---
 name: quantum-resource-distillation
 description: >
-  Universal quantum resource distillation methodology via composite generalised
-  quantum Stein's lemma. Provides fundamental limits on resource conversion rates
-  for quantum entanglement distillation and general quantum resource theories.
-  Use when: quantum resource distillation, quantum Stein's lemma, entanglement
-  distillation, resource conversion, quantum thermodynamics, composite hypothesis
-  testing, quantum hypothesis testing (arXiv: 2605.15174).
+  Methodology for quantum resource distillation using the composite generalised quantum Stein's lemma.
+  Covers optimal rates for distilling quantum resources (entanglement, magic, coherence) from noisy states
+  via asymptotic conversion protocols. Use when: (1) analyzing quantum resource conversion rates,
+  (2) designing distillation protocols for entanglement/magic states, (3) studying asymptotic quantum
+  resource theory, (4) evaluating noisy-to-pure state conversion efficiency, or (5) researching
+  quantum Stein's lemma applications. Activation: quantum resource distillation, quantum Stein's lemma,
+  entanglement distillation, magic state distillation, quantum resource theory, asymptotic conversion,
+  量子资源蒸馏, 量子斯坦因引理.
 ---
 
-# Universal Quantum Resource Distillation via Composite Quantum Stein's Lemma
+# Quantum Resource Distillation
 
-## Overview
+## Description
 
-The composite generalised quantum Stein's lemma provides a universal framework for
-quantum resource distillation. The key insight is that the optimal rate at which
-desired target states can be obtained from a given supply is fundamentally bounded
-by a generalised relative entropy measure.
+Quantum resource distillation methodology based on the composite generalised quantum Stein's lemma
+(arXiv:2605.15174). Provides framework for computing optimal conversion rates of quantum resources
+(entanglement, coherence, magic) from noisy input states to pure target states in the asymptotic limit.
 
-## Core Principles
+## Core Framework
 
-### Quantum Resource Theories
+### Quantum Stein's Lemma for Resource Distillation
 
-A resource theory consists of:
-- **Free states** F: States that cost nothing to prepare
-- **Free operations** O: Operations that don't generate resources
-- **Resource states**: States outside F that contain useful properties
+The composite generalised quantum Stein's lemma establishes:
+- **Optimal error exponent** = relative entropy between target and resource states
+- **Achievable rate** = resource measure derived from hypothesis testing
+- **Universality** — applies to all quantum resource theories satisfying basic axioms
 
-### Stein's Lemma in Resource Distillation
+### Key Mathematical Objects
 
-The composite quantum Stein's lemma states:
+1. **Resource measures**: Monotones quantifying "resourcefulness" of quantum states
+2. **Distillation protocols**: LOCC or free operations converting n copies of ρ → m copies of target state
+3. **Asymptotic rate**: lim (m/n) as n → ∞, measuring conversion efficiency
+4. **Generalised relative entropy**: D(ρ||σ) — the fundamental quantity governing rates
 
-The optimal distillation rate R of a resource is bounded by:
-R ≤ inf_σ∈F D(ρ||σ)
+### Distillation Rate Formula
 
-where D(·||·) is the quantum relative entropy and the infimum is taken over all
-free states σ in the set F.
+For distilling target state ψ from noisy state ρ:
+```
+R_distill(ρ → ψ) = inf_σ D(ρ||σ) / D(ψ||σ_target)
+```
+where the infimum is over free states σ in the resource theory.
 
-### Distillation Protocol
+## Application Domains
 
-1. **Start**: n copies of resource state ρ^⊗n
-2. **Apply free operations**: O_n ∈ O (free operations)
-3. **Goal**: Output m copies of target state τ^⊗m
-4. **Rate**: R = lim_{n→∞} m/n
+### Entanglement Distillation
+- Extract pure Bell pairs from mixed entangled states
+- Rate governed by entanglement of distillation E_D(ρ)
+- Fundamental limit: E_D(ρ) ≤ E_R(ρ) (relative entropy of entanglement)
 
-The optimal rate is given by the composite Stein's bound:
-R* = inf_σ∈F D(ρ||σ)
+### Magic State Distillation
+- Extract non-Clifford magic states from noisy preparations
+- Critical for fault-tolerant quantum computation
+- Rate determined by magic monotones (mana, thauma)
 
-## Key Results
+### Coherence Distillation
+- Extract pure coherent superpositions from mixed states
+- Relevant for quantum metrology and sensing
+- Coherence of distillation C_D(ρ) = S(Δ(ρ)) - S(ρ) in some theories
 
-### Single-Resource Distillation
-
-For a single resource state ρ and target τ:
-- Rate = D_min(ρ||F) where D_min is the min-relative entropy
-- Achieved via typical subspace measurement
-
-### Composite Settings
-
-When the free set F is composite (union of convex sets):
-- Rate = min_{k} inf_{σ∈F_k} D(ρ||σ)
-- Accounts for multiple free state families
-
-### Irreversibility
-
-- Distillation rate ≠ Formation rate in general
-- Gap quantified by regularised relative entropy
-- Reversibility holds only for specific resource theories
-
-## Application Workflow
+## Instructions for Agents
 
 ### Step 1: Identify Resource Theory
+Determine the free operations and free states:
+- Entanglement: LOCC operations, separable states
+- Magic: Clifford operations, stabilizer states
+- Coherence: Incoherent operations, diagonal states
 
-Determine the free states F and free operations O:
-- Entanglement theory: F = separable states, O = LOCC
-- Coherence theory: F = incoherent states, O = MIO/DIO
-- Athermality: F = thermal states, O = thermal operations
+### Step 2: Characterize Input State
+Compute relevant resource measures for the input state ρ:
+- Relative entropy of resource: D_R(ρ) = min_σ D(ρ||σ)
+- Robustness of resource
+- Other theory-specific monotones
 
-### Step 2: Characterise Free States
-
-For the specific resource theory:
-- Parametrize the set F
-- Determine its convex structure
-- Identify extremal points if computationally tractable
-
-### Step 3: Compute Distillation Bound
-
-R* = inf_{σ∈F} D(ρ||σ)
-
-Use numerical methods:
-- Convex optimization for convex F
-- Semidefinite programming for SDP-representable F
-- Monte Carlo sampling for large systems
-
-### Step 4: Construct Protocol
-
-Design asymptotically achieving protocol:
-- Typical subspace projection
-- Measurement in resource eigenbasis
-- Post-selection and amplification
-
-## Computational Methods
-
-### Relative Entropy Calculation
-
-For states ρ and σ:
-D(ρ||σ) = Tr[ρ(log ρ - log σ)]
-
-Numerical approaches:
-- Diagonalize both states in common basis
-- Use matrix logarithm via scipy.linalg.logm
-- Handle zero eigenvalues with epsilon regularization
-
-### Composite Optimization
-
-For F = ∪_k F_k:
-```python
-import numpy as np
-from scipy.optimize import minimize
-
-def composite_stein_bound(rho, free_families):
-    """Compute inf over composite free set."""
-    bounds = []
-    for F_k in free_families:
-        # Compute inf D(rho||sigma) over sigma in F_k
-        bound = minimize_relative_entropy(rho, F_k)
-        bounds.append(bound)
-    return min(bounds)
+### Step 3: Apply Stein's Lemma Bound
+The optimal distillation rate is bounded by:
 ```
+R ≤ D_R(ρ) / D_R(target)
+```
+This is the composite generalised quantum Stein's lemma result.
 
-## Activation Keywords
+### Step 4: Check Achievability
+Verify if the bound is achievable:
+- Asymptotic regime: n → ∞ copies available
+- One-shot regime: finite n, use hypothesis testing relative entropy
+- Composite vs. simple hypothesis testing
 
-- quantum resource distillation
-- quantum Stein's lemma
-- entanglement distillation rate
-- resource conversion
-- composite hypothesis testing quantum
-- quantum hypothesis testing
-- free state distillation
+## Limitations
 
-## Related Papers
+- Results are asymptotic (n → ∞); finite-size corrections require one-shot analysis
+- Assumes i.i.d. input states; correlated inputs need different treatment
+- Specific rates depend on the resource theory's structure
 
-- arXiv:2605.15174 (Lami, Berta, Chiribella)
+## Related Skills
+
+- quantum-ai-patterns: Reusable quantum AI research patterns
+- quantum-error-correction-gauge-theory: QEC via gauge theories
+- quantum-ml-patterns: Quantum ML research patterns
+- ml-quantum-error-correction: ML for QEC
+- quantum-fault-tolerance-verification: Quantum fault-tolerance verification
+
+## Notes
+
+- Based on Lami, Regula, Takagi (2026): "Universal quantum resource distillation via composite generalised quantum Stein's lemma"
+- The composite Stein's lemma generalizes the standard result to multiple alternative hypotheses
+- Key insight: a single information-theoretic quantity governs distillation across ALL resource theories
