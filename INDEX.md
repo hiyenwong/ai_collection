@@ -1,6 +1,24 @@
 
 ## 2026-05-16 - Systems Engineering Research (Cron Job)
 
+### BCPNN Native Explainability: XAI for Brain-Like Neural Networks
+- [[bcpnn-native-explainability]] - First XAI taxonomy for BCPNN mapping architectural primitives to 16 explanation primitives and 5 config-as-explanation primitives, enabling EU AI Act compliance (arXiv: 2605.11595)
+  - BCPNN inherently transparent — weights, posteriors, attractor dynamics map directly to XAI modalities
+  - No post-hoc explanation needed; all quantities maintained during normal operation
+  - **Activation**: bcpnn explainability, bayesian confidence propagation, brain-like AI XAI, EU AI Act neural network, neuromorphic explainability
+
+### SeAl-KD: Selective Alignment Knowledge Distillation for SNNs
+- [[sealkd-snn-knowledge-distillation]] - Selective alignment KD that corrects erroneous timesteps while preserving useful temporal dynamics, outperforming uniform timestep distillation on static and neuromorphic datasets (arXiv: 2605.14252)
+  - Equalizes competing logits at erroneous timesteps instead of forcing uniform alignment
+  - Reweights temporal alignment based on confidence and inter-timestep similarity
+  - **Activation**: sealkd, selective alignment, knowledge distillation SNN, timestep alignment, temporal knowledge distillation, SNN training
+
+### BiSpikCLM: First Fully Binary Spiking MatMul-Free Causal Language Model
+- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal LM with Softmax-Free Spiking Attention and 4-level Spike-Aware Alignment Distillation, achieving competitive NLG at 4.16%-5.87% ANN compute cost (arXiv: 2605.13859)
+  - Introduces SFSA: eliminates softmax and floating-point MatMul in autoregressive attention
+  - SpAD distillation across embeddings, attention maps, intermediate features, and logits enables training with only 5.6% of tokens
+  - **Activation**: bispikclm, binary spiking LLM, spiking language model, MatMul-free spiking, softmax-free attention, spike-aware distillation, energy-efficient LLM
+
 ### Hybrid Metaheuristic Optimization of Distributed Control System Hardware Architecture with Model-Based Verification
 - [[distributed-control-dcs-architecture]] - Hybrid GA+SA optimization with SAT/SMT formal verification for DCS hardware architecture design under uncertainty (arXiv: 2605.14788)
   - 核心要点 1: 混合遗传算法+模拟退火优化分布式控制系统硬件架构,在成本与可靠性间求Pareto最优
