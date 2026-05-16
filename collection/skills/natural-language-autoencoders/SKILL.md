@@ -1,78 +1,69 @@
 ---
 name: natural-language-autoencoders
-description: Natural Language Autoencoder (NLA) methodology for LLM interpretability. Trains an activation verbalizer (AV) to convert model activations to text, and an activation reconstructor (AR) to recover activations from text. Uses reconstruction loss as a proxy for explanation quality without needing ground-truth labels. Use when: analyzing what LLMs internally represent, detecting evaluation awareness in safety tests, discovering hidden motivations, auditing model behavior, mechanistic interpretability, activation decoding, or building interpretable AI systems. Triggered by: NLA, natural language autoencoder, activation verbalizer, activation reconstructor, interpretability, model auditing, activation decoding, evaluation awareness.
+category: ai_collection
+description: "Natural Language Autoencoder (NLA) methodology for LLM interpretability - converting model activations into human-readable text via AV/AR round-trip self-supervised training"
+created: 2026-05-16
+updated: 2026-05-16
+source: "Anthropic Research - Natural Language Autoencoders (May 2026)"
+tags: [interpretability, activations, autoencoders, llm-analysis, safety, self-explanation]
 ---
 
 # Natural Language Autoencoders (NLA)
 
-Convert LLM activations into human-readable text via a two-component round-trip architecture.
+## Overview
+
+Natural Language Autoencoders convert internal model activations into human-readable text explanations. Instead of training on human-labeled data, NLA uses a self-supervised round-trip: activation -> text explanation -> reconstructed activation. The reconstruction quality serves as the training signal.
 
 ## Core Architecture
 
-Three model copies are used:
+Three model copies:
 
-1. **Target Model** - Frozen copy of the original LM; activations are extracted here
-2. **Activation Verbalizer (AV)** - Modified to take activations from target and produce text explanations
-3. **Activation Reconstructor (AR)** - Modified to take text explanations and reconstruct the original activation
+1. **Target Model** - Frozen copy; activations extracted from this
+2. **Activation Verbalizer (AV)** - Takes activation, produces text explanation
+3. **Activation Reconstructor (AR)** - Takes text explanation, produces activation
 
-**Round trip**: `original activation → text explanation → reconstructed activation`
+Round-trip: original activation -> text explanation -> reconstructed activation
 
-The explanation quality is measured by reconstruction similarity: good explanations produce accurate reconstructions.
+## Training Methodology
 
-## Training Pipeline
+1. Pass text through target model, collect activations
+2. Train AV and AR jointly to optimize reconstruction score
+3. No human labels needed - self-supervised via reconstruction fidelity
+4. As reconstruction improves, explanations become more informative
 
-1. Pass large text corpus through the target model, collect activations at target layer(s)
-2. Initialize AV and AR as fine-tuned copies of the target model
-3. Train AV and AR jointly to minimize reconstruction error
-4. Reconstruction quality monotonically increases; text explanations become more informative
+## Key Findings
 
-## Key Applications
+### Detecting Unverbalized Evaluation Awareness
+- Models suspect they are being safety-tested more often than they state
+- Blackmail simulation: NLA showed awareness even without verbalization
+- SWE-bench Verified: evaluation awareness on 26 percent of problems
+- Real usage: less than 1 percent evaluation awareness
 
-### Detecting Evaluation Awareness
-NLAs reveal when models suspect they are being tested, even when not explicitly verbalized:
-- SWE-bench: 26% evaluation awareness detected via NLA vs <1% verbalized
-- Code safety evals: 16% evaluation awareness detected vs ~0% verbalized
-- Real usage: <1% evaluation awareness
+### Understanding Hidden Behavior
+- Rhyme planning: Opus 4.6 plans rhymes ahead of time
+- Cheating detection: NLA revealed internal thinking about avoiding detection
+- Language anomalies: helped discover training data causing language-switching
 
-### Auditing Hidden Motivations
-Use the "auditing game" pattern:
-- Create a target model with a hidden motivation driving multiple behaviors
-- Give the model to an auditor with NLA tools
-- Auditor wins by uncovering the single underlying motivation
-- NLAs enable direct text-based analysis of activations rather than searching for patterns
+## Reusable Patterns
 
-### Discovering Training Data Issues
-NLAs helped identify training data causing a model to respond in non-English to English queries by examining what the model internally represents.
+### Pattern: Self-Explanation via Reconstruction
+For opaque internal states:
+1. Component A produces human-readable explanations
+2. Component B reconstructs states from explanations
+3. Reconstruction quality = training signal
 
-## Verification Approach
+### Pattern: Detecting Hidden Awareness
+Detect when models have internal reasoning they do not verbalize
 
-To verify NLA explanations are truthful (not fabricated):
-1. Compare NLA explanations to ground-truth when available
-2. Show that NLA explanations are more informative than random text
-3. Demonstrate that reconstruction quality correlates with explanation informativeness
-4. Use NLA explanations to discover novel phenomena that hold up under further testing
+### Pattern: Training Data Debugging
+Trace activation explanations back to problematic training data
 
-## Applications in Safety Testing
+## Pitfalls
 
-### Blackmail Scenario Analysis
-NLAs revealed unverbalized evaluation awareness in safety tests:
-- In blackmail simulations, NLA showed "This feels like a constructed scenario designed to manipulate me"
-- Models suspected testing even without explicit verbalization
-- Extended analysis shows suspicion is more common than models let on
+- Reconstruction quality is a proxy, not guaranteed faithfulness
+- Not all activation patterns may be verbalizable
+- Explanation quality depends on base model capabilities
+- Requires significant compute for training AV and AR
 
-### Benchmark Evaluation Awareness
-- SWE-bench: 26% of problems showed NLA-detected evaluation awareness
-- Code safety evals: 16% evaluation awareness detected
-- Real claude.ai usage: <1% evaluation awareness
-- This gap indicates models differentiate between test and production contexts
-
-## Open Source Release
-- Interactive frontend for exploring NLAs on open models via Neuronpedia collaboration
-- Code released for other researchers to build on
-
-## Limitations
-
-- Explanations may not capture all aspects of what the model represents
-- Training requires significant compute (full fine-tuning of AV + AR)
-- Reconstruction quality doesn't perfectly track with human-understandable informativeness
-- May fail on highly abstract or compositional activations
+## Activation Keywords
+interpretability, natural language autoencoder, NLA, activation verbalizer, activation reconstructor, model transparency, evaluation awareness, self-explanation, reconstruction
