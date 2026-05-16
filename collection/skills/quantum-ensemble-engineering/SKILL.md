@@ -1,87 +1,116 @@
 ---
 name: quantum-ensemble-engineering
-description: >
-  Quantum ensemble engineering methodology for improving measurement efficiency on NISQ devices.
-  Addresses destructive cancellation in sampling-based quantum measurements by aligning ensemble
-  weights with operator sign structure. Use when: designing quantum measurement protocols,
-  optimizing NISQ device readout, mitigating destructive cancellation in quantum correlators,
-  implementing amplitude amplification for measurement, or selecting sampling strategies for
-  quantum observable estimation. Covers Grover-type amplification, oracle-free shallow circuits,
-  basis-resolved correlator representation, and multi-qubit diagonal observable extensions.
-  Activation keywords: quantum ensemble engineering, destructive cancellation, NISQ measurement,
-  quantum correlator sampling, amplitude amplification measurement, 量子系综工程
+description: "Quantum Ensemble Engineering methodology for mitigating destructive cancellation in NISQ measurements. Aligns sampling distributions with operator sign structure via amplitude amplification and shallow circuits. (arXiv: 2605.03729)"
 ---
 
 # Quantum Ensemble Engineering
 
-Methodology from arXiv:2605.03729 for overcoming destructive cancellation in quantum measurements through ensemble engineering.
+## Description
+
+Methodology from arXiv:2605.03729 for mitigating destructive cancellation in quantum measurements on NISQ devices. The key insight is that signal loss under uniform ensemble averaging reflects a structural mismatch between ensemble weights and the operator-dependent sign structure of measured correlators, not merely statistical noise.
+
+**Trigger**: quantum ensemble engineering, destructive cancellation, NISQ measurement, quantum measurement efficiency, amplitude amplification, correlator measurement
 
 ## Core Problem
 
-On NISQ devices, expectation values are estimated via sampling. Near-uniform ensemble averaging causes **destructive cancellation** — physically relevant signals are suppressed due to structural mismatch between ensemble weights and operator-dependent sign structure.
+On NISQ devices, expectation values of observables are obtained through sampling-based approximations. Under near-uniform ensembles, destructive cancellation renders physically relevant signals unresolvable because positive and negative contributions cancel out.
 
-## Solution Framework
+## Key Insight
+
+The limitation is structural, not purely statistical: ensemble weights are mismatched with the operator-dependent sign structure of the measured correlator. Solution: encode the sampling distribution directly in the prepared quantum state.
+
+## Methodology
 
 ### Step 1: Basis-Resolved Correlator Representation
 
-Reformulate the correlator to make cancellation origin explicit:
+Reformulate the target correlator in a basis-resolved representation to make the origin of cancellation explicit:
 
-```
-⟨O⟩ = Σ_i w_i · s_i · |⟨ψ_i|O|ψ_i⟩|
-```
+- Express the observable in the computational basis
+- Identify the sign structure of the correlator
+- Map which basis states contribute positively vs negatively
 
-where `w_i` are ensemble weights, `s_i` is the sign structure of the operator in that basis.
+### Step 2: Structure-Aligned Ensemble Design
 
-### Step 2: Align Ensemble Weights with Operator Structure
+Derive sampling distributions that align ensemble weights with the operator structure:
+
+- Weight states proportional to their contribution magnitude
+- Suppress states with minimal signal contribution
+- Ensure the distribution remains physically preparable
+
+### Step 3: Circuit Construction
 
 Two complementary approaches:
 
-**Approach A: Grover-type Amplitude Amplification**
-- Encodes sampling distribution directly in the prepared quantum state
-- Provides structure-aligned benchmark
-- Best for: verification, small-scale demonstrations
+#### Grover-Type Amplitude Amplification (Benchmark)
+- Use oracle-based amplitude amplification to boost signal states
+- Provides a structure-aligned reference point
+- Limited by oracle construction complexity
 
-**Approach B: Oracle-Free Shallow Circuit**
-- Designed for near-term hardware constraints
-- No oracle required — uses structural properties of the observable
-- Best for: practical NISQ deployment
+#### Oracle-Free Shallow Circuit (Near-Term)
+- Design shallow circuits without oracle overhead
+- Optimized for NISQ hardware constraints
+- Tradeoff: slightly less amplification, much more noise-robust
 
-### Step 3: Tradeoff Management
+### Step 4: Tradeoff Analysis
 
-Balance amplification strength against noise robustness:
-- Stronger amplification → better signal exposure
-- But also → more circuit depth → more noise sensitivity
-- Optimal point depends on device coherence time and gate fidelity
+Identify the practical tradeoff between amplification strength and noise robustness:
 
-### Step 4: Extensions
+- Stronger amplification → more signal but deeper circuits → more noise
+- Shallower circuits → more noise-robust but less amplification
+- Find optimal depth for specific hardware
 
-- **Multi-qubit diagonal observables**: Framework extends directly
-- **Non-diagonal observables**: Requires basis transformation before engineering
+### Step 5: Extension to Multi-Qubit Observables
 
-## Implementation Patterns
+- Extend framework to multi-qubit diagonal observables
+- Outline path toward non-diagonal generalizations
+- Apply to infinite-temperature correlation functions as benchmark
 
-### Pattern 1: Infinite-Temperature Correlation Function
+## Practical Implementation
 
-Use as representative testbed. On IBM 20-qubit processors, engineered ensembles expose operator-resolved contributions suppressed by ~10× under uniform averaging.
-
-### Pattern 2: QBalance Integration
-
-Combine with QBalance (arXiv:2605.02966) multi-objective workflow for:
-- Automatic compilation strategy selection
-- Noise suppression policy optimization
-- Error mitigation strategy selection
-
-## Pitfalls
-
-- **Uniform sampling baseline**: Always compare against uniform ensemble to quantify improvement
-- **Hardware constraints**: Oracle-free approach preferred on current hardware
-- **Noise calibration**: Amplification strength must be calibrated per-device
+```python
+# Pseudocode for ensemble engineering workflow
+def ensemble_engineering(observable, backend, n_qubits):
+    # 1. Analyze observable sign structure
+    sign_structure = analyze_correlator_sign(observable)
+    
+    # 2. Design aligned ensemble distribution
+    ensemble_weights = design_aligned_weights(sign_structure)
+    
+    # 3. Choose circuit construction
+    if hardware_supports_oracle(backend):
+        circuit = build_amplitude_amplification(ensemble_weights)
+    else:
+        circuit = build_shoracle_free_circuit(ensemble_weights)
+    
+    # 4. Execute and measure
+    results = run_circuit(circuit, backend, n_qubits)
+    
+    return process_results(results, sign_structure)
+```
 
 ## Activation Keywords
 - quantum ensemble engineering
 - destructive cancellation quantum
-- NISQ measurement optimization
-- quantum correlator sampling
-- amplitude amplification measurement
+- NISQ measurement efficiency
+- quantum correlator measurement
+- amplitude amplification quantum
+- ensemble-based quantum measurement
 - 量子系综工程
-- quantum measurement efficiency
+- 破坏性抵消
+- 量子测量效率
+
+## Tools Used
+- quantum hardware: IBM quantum processors (up to 20 qubits demonstrated)
+- Qiskit: Circuit construction and execution
+- exec: Run quantum simulation scripts
+
+## Pitfalls
+1. **Oracle construction cost**: Grover-type amplification requires oracle that may be as expensive as the original problem
+2. **Noise amplification**: Deeper circuits for stronger amplification may introduce more noise than signal gain
+3. **Diagonal-only limitation**: Current extension only covers diagonal observables; non-diagonal generalizations remain theoretical
+4. **Hardware-specific**: Optimal circuit depth depends on specific device coherence times and gate fidelities
+
+## References
+- arXiv: 2605.03729
+- Related: QBalance (arXiv: 2605.02966) for workflow optimization
+- Related: Rigorous error bounds for thermal state preparation (arXiv: 2605.03011)

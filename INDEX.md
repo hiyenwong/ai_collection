@@ -1,5 +1,20 @@
 ## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
 
+### Ensemble Engineering to Overcome Destructive Cancellation in Quantum Measurements
+- [[quantum-ensemble-engineering]] - Quantum ensemble engineering framework mitigating destructive cancellation in NISQ measurements by aligning sampling distributions with operator sign structure (arXiv: 2605.03729)
+  - Reveals signal loss is structural (weight-sign mismatch), not purely statistical
+  - Two circuit constructions: Grover-type amplitude amplification (benchmark) and oracle-free shallow circuit (near-term)
+  - Demonstrated on IBM quantum processors up to 20 qubits; exposes operator-resolved contributions suppressed under uniform averaging
+  - Identifies amplification-vs-noise tradeoff; extends to multi-qubit diagonal observables
+  - **Activation**: quantum ensemble engineering, destructive cancellation quantum, NISQ measurement, amplitude amplification, quantum correlator
+
+### QBalance: Multi-Objective Quantum Workflow Optimization
+- [[quantum-workflow-balance]] - Reproducible multi-objective strategy selection for quantum compilation, noise suppression, and error mitigation on NISQ devices (arXiv: 2605.02966)
+  - Formulates quantum workflow as finite multi-objective strategy-selection over circuits, backends, and transformation policies
+  - Uses Pareto non-dominated selection, survival-product error proxy, and Bayesian candidate-ordering surrogate
+  - Covers layout, routing, randomized compiling, dynamical decoupling, ZNE, measurement mitigation, circuit cutting
+  - **Activation**: quantum workflow optimization, QBalance, quantum compilation strategy, multi-objective quantum, noise suppression, error mitigation
+
 ### MQTT Across a Raspberry Pi 5 IoT Network Utilizing Quantum-resistant Signature Algorithms
 - [[post-quantum-crypto-analysis]] - Analyze and deploy PQC (FALCON, Kyber, Dilithium) on IoT/edge devices, benchmarking overhead and security trade-offs (arXiv: 2605.13698)
   - FALCON (NIST-selected lattice-based signature) deployed on Raspberry Pi 5 MQTT network
