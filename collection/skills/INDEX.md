@@ -1,3 +1,23 @@
+## 2026-05-16 - Neuroscience Research (Cron Job - 18:00)
+
+### HyNeuralMap: Hyperbolic Mapping of Visual Semantics to Neural Hierarchies
+- [[hyperbolic-neural-mapping]] - 双曲几何洛伦兹模型将视觉语义映射到神经层级结构，超越欧几里得基线 (arXiv: 2605.09392)
+  - 核心要点：双曲空间负曲率作为归纳偏置，自然编码层级语义组织和跨被试神经相似性
+  - 核心要点：视觉和神经嵌入在双曲空间联合优化，测地线距离保持语义邻近性
+  - **Activation**: HyNeuralMap, hyperbolic neural mapping, Lorentz embedding, cross-modal alignment, hierarchical neural representation
+
+### DANCE: Detect and Classify Events in EEG
+- [[dance-eeg-event-detection]] - 集合预测框架从连续未对齐EEG信号中联合检测和分类事件，癫痫检测SOTA (arXiv: 2605.10688)
+  - 核心要点：将神经解码重构为集合预测问题，无需预对齐事件窗口
+  - 核心要点：在10个数据集上评估，涵盖认知、临床和BCI任务，统一处理毫秒到分钟级事件
+  - **Activation**: DANCE, EEG event detection, continuous decoding, set prediction EEG, asynchronous BCI, seizure monitoring
+
+### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+- [[spatiotemporal-tdann-mt-direction-maps]] - 时空TDANN通过MoCo对比优化自发涌现MT方向选择图，统一腹背流计算起源 (arXiv: 2605.11718)
+  - 核心要点：3D ResNet + MoCo自监督学习 + 生物空间正则化，自发产生脑状方向图和拓扑风车结构
+  - 核心要点：方向选择性源于任务判别压力与空间正则化的严格权衡，定量匹配猕猴MT生理基线
+  - **Activation**: spatiotemporal TDANN, MT direction maps, dorsal stream, direction selectivity, cortical self-organization, MoCo neuroscience
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - 16:00)
 
 ### Learning Temporal Patterns in Financial Time Series: Quantum LSTM and Quantum Reservoir Computing
