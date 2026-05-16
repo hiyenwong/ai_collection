@@ -1,5 +1,27 @@
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Network-Aware Bilinear Tokenization for Brain FC Representation Learning
+- [[nerve-network-aware-bilinear-fc-tokenization]] - Self-supervised FC representation learning via network-aware bilinear tokenization in MAE, partitioning FC matrices into intra/inter-network connectivity blocks (arXiv: 2605.14048)
+  - **Core Innovation**: Redefines FC tokenization by grouping regions into functional networks, using bilinear factorization for parameter-efficient embedding (linear O(N) vs quadratic O(N²) scaling)
+  - **Evaluation**: Outperforms agnostic MAE variants across ABCD, PNC, CCNP cohorts; superior cross-cohort transfer for behavior prediction
+  - **Key Insight**: The functional analog of image patches is connectivity blocks between brain networks, not individual regions
+  - **Activation**: nerve, network-aware fc, bilinear tokenization, brain mae, functional connectomics ssl
+
+### Note on Existing Skills Updated/Verified
+- [[neurotrain-local-learning-snn-benchmarking]] - Updated with arXiv:2605.15058 (NeuroTrain survey of local learning rules for SNNs)
+- [[fits-interpretable-spiking-neurons]] - Verified against arXiv:2605.13071 (FiTS interpretable spiking neurons)
+- [[ei-network-chaos-synchrony-theory]] - Verified against arXiv:2605.14916 (Chaos to synchrony in E-I networks)
+- [[dual-axis-zebrafish-circuits]] - Verified against arXiv:2605.13924 (Zebrafish tectal microcircuits)
+- [[kast-brain-autoregressive]] - Verified against arXiv:2605.13133 (KAST-BAR knowledge-anchored brain modeling)
+- [[sd3mf-multimodal-brain-network]] - Verified against arXiv:2605.13312 (SD3MF interpretable brain networks)
+- [[leggett-garg-neural-dynamics]] - Verified against arXiv:2605.12126 (Leggett-Garg tests in neural dynamics)
+- [[ecram-short-term-plasticity-neuromorphic]] - Verified against arXiv:2605.11243 (ECRAM dynamics for STP)
+- [[multi-timescale-conductance-snn]] - Verified against arXiv:2605.11835 (Multi-timescale conductance SNNs)
+- [[predictive-coding-light]] - Verified against arXiv:2605.12732 (PCL+ for visual sequences with STDP)
+
+
 ### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
 - [[hybrid-quantum-audit]] - Audit quantum advantage in hybrid quantum-classical optimization systems (arXiv: dwave-hybrid-2026)
   - Decompose hybrid pipelines into quantum vs classical contributions
