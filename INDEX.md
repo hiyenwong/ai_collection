@@ -32,6 +32,20 @@
   - Agents forecast beyond knowledge cutoff with chronological news
   - **Activation**: adaptive agent evaluation, future simulation, agent forecasting
 
+### Post-Quantum Network Security Architecture
+- [[post-quantum-network-security]] - Analysis and design of post-quantum cryptographic network architectures against HNDL threats, covering transparent proxy patterns and KEM-based encryption (arXiv: 2605.06932, 2605.10175)
+  - Aquaman transparent proxy intercepts session-key requests at network edge for PQC upgrade without endpoint changes
+  - KEM-IES replaces ECIES with post-quantum Key Encapsulation Mechanism for quantum-resilient encryption
+  - Hash-based commit-reveal alternative minimizes blockchain infrastructure overhead for PQC migration
+  - **Activation**: post-quantum cryptography, PQC, HNDL, harvest now decrypt later, quantum resilient, KEM, key encapsulation mechanism, 后量子密码
+
+### Linear-Time T-Gate Optimization
+- [[quantum-circuit-t-optimization]] - Linear-time T-gate optimization via random abstraction for fault-tolerant quantum circuit compilation (arXiv: 2605.13929)
+  - Random abstraction achieves O(n) T-count reduction vs exponential brute-force search
+  - T-gates require expensive magic-state distillation — reducing T-count 10x enables previously impossible algorithms
+  - Covers T-depth vs T-count tradeoffs and magic-state factory planning
+  - **Activation**: T-gate optimization, T-count minimization, magic state distillation, quantum circuit optimization, random abstraction
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
