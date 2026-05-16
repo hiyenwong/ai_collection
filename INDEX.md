@@ -1,3 +1,18 @@
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### Multiple mechanisms of rhythm switching in recurrent neural networks with adaptive time constants
+- [[rhythm-switching-adaptive-time-constants-rnn]] - RNNs with neuron-specific learnable time constants exhibit multiple mechanisms for rhythm switching across frequency bands (arXiv: 2605.14388v1)
+    - Time constant specialization creates multi-scale temporal basis in RNNs
+    - Cross-frequency coupling emerges naturally from heterogeneous time constants
+  - **Activation**: rhythm switching, adaptive time constants, RNN oscillations, multi-frequency, leaky integrator
+
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[implicit-behavioral-decoding-spike-forecasts]] - Mamba forecaster trained on spike counts implicitly learns behaviorally-relevant representations (arXiv: 2605.12999v1)
+    - Single Mamba model delivers both neural forecasts and behavioral readouts in one pass
+    - Predicted rates enable better behavioral decoding than raw spikes
+  - **Activation**: behavioral decoding, spike forecasting, Mamba, Neuropixels, closed-loop BCI
+
+
 ## 2026-05-17 - Information Science + Quantum (Cron Job)
 
 ### Universal quantum resource distillation via composite generalised quantum Stein's lemma
