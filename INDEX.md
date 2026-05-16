@@ -1,4 +1,18 @@
 
+## 2026-05-16 - Systems Engineering Research (Cron Job)
+
+### Hybrid Metaheuristic Optimization of Distributed Control System Hardware Architecture with Model-Based Verification
+- [[distributed-control-dcs-architecture]] - Hybrid GA+SA optimization with SAT/SMT formal verification for DCS hardware architecture design under uncertainty (arXiv: 2605.14788)
+  - 核心要点 1: 混合遗传算法+模拟退火优化分布式控制系统硬件架构,在成本与可靠性间求Pareto最优
+  - 核心要点 2: 将最优架构编码为SAT/SMT公式进行形式化验证,提取unsat core反馈优化约束
+  - **Activation**: DCS, distributed control, hardware architecture, model-based verification, hybrid metaheuristic, process control
+
+### A Prototyping Framework for Distributed Control of Multi-Robot Systems
+- [[distributed-control-prototyping-framework]] - SPMD paradigm for emulating distributed multi-robot control on single machine, bridging theory to hardware deployment (arXiv: 2605.15049)
+  - 核心要点 1: 使用SPMD(单程序多数据)范式在单机上仿真分布式多机器人控制系统
+  - 核心要点 2: 同一控制算法通过替换通信层即可从仿真部署到真实硬件,最小化代码改动
+  - **Activation**: SPMD, distributed control, multi-robot, prototyping, emulation, neighbor communication
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### NeuroAtlas: Benchmarking Foundation Models for Clinical EEG and Brain-Computer Interfaces
