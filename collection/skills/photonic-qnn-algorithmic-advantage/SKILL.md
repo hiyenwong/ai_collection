@@ -1,142 +1,111 @@
 ---
 name: photonic-qnn-algorithmic-advantage
-description: >
-  Algorithmic advantage of gate-based photonic quantum neural networks over
-  classical ANNs. Use when comparing QNN vs ANN performance, evaluating
-  quantum neural network expressivity via effective dimension, designing
-  photonic quantum classifiers, or analyzing parameter efficiency of
-  variational quantum circuits. Covers effective dimension analysis,
-  photonic qubit implementation, and benchmarking QNN convergence.
-  Activation: photonic QNN, quantum neural network advantage, effective
-  dimension QNN, quantum classifier, photonic quantum, QNN vs ANN,
-  variational quantum classifier, 光子量子神经网络.
+description: "Gate-based photonic quantum neural network methodology demonstrating algorithmic advantage from arXiv:2605.10801. Implements variational quantum classifiers with single photons and probabilistic gates on integrated photonic platforms."
 ---
 
-# Photonic QNN Algorithmic Advantage
+# Photonic Quantum Neural Networks - Algorithmic Advantage
 
-Methodology from arXiv:2605.10801 (McKiernan, Sapienza, 2026-05-11).
+## Description
 
-## Core Finding
+Methodology for implementing gate-based variational quantum classifiers using single photons and probabilistic gates on integrated photonic platforms. Demonstrates algorithmic advantage of photonic QNNs for classification tasks. Based on arXiv:2605.10801.
 
-Gate-based **photonic quantum neural networks** demonstrate **algorithmic advantage** over classically matched ANNs:
-- Superior converged cross-entropy loss and prediction accuracy
-- A photonic QNN with a **single pair of trainable parameters** converged (loss 0.04, accuracy 100%) while equivalent ANN failed
-- Advantage quantified via **effective dimension** analysis
+## Activation Keywords
+- photonic quantum neural network
+- photonic QNN
+- quantum classifier photons
+- gate-based photonic quantum
+- algorithmic advantage quantum
+- 光子量子神经网络
+- photonic variational classifier
 
-## Effective Dimension Framework
+## Tools Used
+- exec: Run photonic quantum circuit simulations (Strawberry Fields, Pennylane)
+- read: Load classification datasets
+- write: Save QNN model parameters and results
 
-The effective dimension measures the expressivity of a parameterized model:
+## Core Methodology
+
+### Gate-Based Photonic QNN Architecture
+
+1. **Single Photon Encoding**: Information encoded in photonic degrees of freedom (path, polarization, time-bin)
+2. **Probabilistic Gates**: Implement standard quantum circuit model via probabilistic gate operations
+3. **Variational Layers**: Parameterized single-qubit rotations + entangling operations
+4. **Measurement**: Photon detection in computational basis for classification
+
+### Expressive Power Analysis
+
+- Two deployable QNN architectures evaluated
+- **Expressive capacity** measured via kernel matrix rank and expressibility metrics
+- **Quantum advantage** identified in regimes where classical feature maps struggle with non-linear separability
+
+### Training Protocol
+
+1. **Data Encoding**: Classical features mapped to photonic states
+2. **Variational Optimization**: Gradient-based optimization of gate parameters
+3. **Error Mitigation**: Post-selection on successful gate events
+4. **Classification**: Measurement outcomes mapped to class labels
+
+### Photonic vs Matter QNNs
+
+| Aspect | Photonic QNN | Matter QNN (superconducting/ion trap) |
+|--------|-------------|----------------------------------------|
+| Operating Temp | Room temp | Cryogenic (mK) |
+| Connectivity | All-to-all (via beamsplitters) | Limited by geometry |
+| Decoherence | Low (photons don't decohere) | High |
+| Gate Determinism | Probabilistic | Deterministic |
+| Scalability | High (integrated photonics) | Moderate |
+
+## Implementation Pattern
 
 ```python
-def effective_dimension(model, data_distribution, n_samples=1000):
-    """
-    Compute effective dimension of a parameterized model.
-    Higher effective dimension → more expressive model class.
-    """
-    # 1. Sample parameters from prior
-    theta_samples = sample_prior(model.n_params, n_samples)
+# Photonic QNN classifier (Strawberry Fields / Pennylane)
+import pennylane as qml
+from pennylane import numpy as np
+
+n_modes = 4
+dev = qml.device('default.gaussian', wires=n_modes)
+
+@qml.qnode(dev)
+def photonic_qnn(weights, features):
+    # Encoding: Displacement gate
+    for i in range(n_modes):
+        qml.Displacement(features[i], 0.0, wires=i)
     
-    # 2. Compute Fisher Information Matrix for each sample
-    F_matrices = []
-    for theta in theta_samples:
-        F = compute_fisher_information(model, theta, data_distribution)
-        F_matrices.append(F)
+    # Variational layers
+    for layer in range(len(weights)):
+        # Single-mode rotations
+        for i in range(n_modes):
+            qml.Rotation(weights[layer][i], wires=i)
+        # Two-mode beamsplitters (entanglement)
+        for i in range(0, n_modes-1, 2):
+            qml.Beamsplitter(weights[layer][n_modes+i], 0.0, wires=[i, i+1])
     
-    # 3. Average Fisher matrix
-    F_avg = mean(F_matrices)
-    
-    # 4. Effective dimension = Tr(F_avg) / n_params
-    # Normalized version accounts for sample size n
-    d_eff = normalized_effective_dimension(F_avg, n=n_samples)
-    return d_eff
+    # Measurement: photon number expectation
+    return [qml.expval(qml.NumberOperator(i)) for i in range(n_modes)]
 ```
 
-### Why Effective Dimension Matters
+## Key Findings
 
-- **Not just parameter count**: two models with same #params can have very different expressivity
-- **Architecture-dependent**: QNNs structure parameter space differently than ANNs
-- **Predictive of generalization**: higher effective dimension correlates with better learning capacity
-- **Hardware-agnostic metric**: applies to any parameterized quantum or classical model
+1. **Algorithmic advantage** demonstrated for specific classification tasks
+2. **Gate-based approach** emulates standard circuit model, enabling algorithm transferability
+3. **Photonic platforms** offer room-temperature operation with low decoherence
+4. **Probabilistic gates** require post-selection but enable high-fidelity operations
 
-## Photonic QNN Architecture
+## When to Use
 
-### Gate-Based Variational Circuit
+- **Room-temperature quantum computing** requirements
+- **Low-decoherence** classification tasks
+- **Integrated photonics** hardware available
+- **High-connectivity** quantum circuit needs
+- **Variational classification** with limited qubit counts
 
-```
-Input → [Encoding Layer] → [Variational Layer(θ)] → [Measurement] → Output
-```
+## Error Handling
 
-- **Encoding**: map classical data to photonic quantum states
-- **Variational**: parameterized single/two-photon gates
-- **Measurement**: photon detection → classical output
+- **Probabilistic gates**: Post-selection reduces success rate; repeat until success
+- **Photon loss**: Major error source in photonic systems; use error-correcting encodings
+- **Mode mismatch**: Calibrate beamsplitter parameters carefully
+- **Detection efficiency**: Use high-efficiency superconducting nanowire detectors
 
-### Key Design Principles
-
-1. **Few parameters, high expressivity**: photonic interference creates complex decision boundaries
-2. **Native quantum features**: entanglement and superposition provide representational advantage
-3. **Hardware-efficient**: single photons are natural qubits with low decoherence
-
-## Benchmarking Protocol
-
-### Step 1: Match Parameter Counts
-
-```python
-# Fair comparison: QNN and ANN with identical trainable parameter budget
-n_params = 2  # minimal case showing advantage
-qnn = PhotonicQNN(n_params=n_params, n_qubits=n_qubits)
-ann = ClassicalNN(n_params=n_params, architecture='matched')
-```
-
-### Step 2: Train Both Models
-
-```python
-# Same dataset, optimizer, learning rate, epochs
-qnn_results = train(qnn, X_train, y_train, optimizer='Adam', lr=0.01)
-ann_results = train(ann, X_train, y_train, optimizer='Adam', lr=0.01)
-```
-
-### Step 3: Compare Metrics
-
-```python
-# Primary metrics
-comparison = {
-    'final_loss': (qnn_loss, ann_loss),
-    'accuracy': (qnn_acc, ann_acc),
-    'convergence_steps': (qnn_steps, ann_steps),
-    'effective_dimension': (qnn_dim, ann_dim),
-}
-```
-
-### Step 4: Effective Dimension Analysis
-
-```python
-# Compute effective dimension for both models
-qnn_eff_dim = effective_dimension(qnn, data_dist=X_train)
-ann_eff_dim = effective_dimension(ann, data_dist=X_train)
-
-# Advantage ratio
-advantage = qnn_eff_dim / ann_eff_dim  # > 1 indicates QNN advantage
-```
-
-## When QNNs Show Advantage
-
-1. **Low-data regimes**: QNN expressivity helps when training data is scarce
-2. **Structured data**: problems with inherent symmetries QNNs can exploit
-3. **Few-parameter regime**: advantage is most pronounced at minimal parameter counts
-4. **Nonlinearly separable tasks**: quantum feature maps provide implicit nonlinear embedding
-
-## Pitfalls
-
-- **Encoding matters**: poor data encoding can negate any quantum advantage. Test multiple encoding strategies.
-- **Barren plateaus**: deep variational circuits suffer from vanishing gradients. Keep circuit depth shallow.
-- **Hardware noise**: photonic systems have loss and mode-mismatch errors. Account for realistic noise in simulations.
-- **Effective dimension computation**: Fisher matrix estimation requires many samples. Use Monte Carlo with sufficient n.
-- **Not universal advantage**: QNNs don't always outperform ANNs. Advantage is task- and architecture-dependent.
-- **Classical baseline strength**: ensure classical baseline is properly tuned. Weak baselines create false positives.
-
-## Extensions
-
-- **Multi-class classification**: extend beyond binary classification
-- **Hybrid architectures**: classical pre-processing + quantum core + classical post-processing
-- **Differentiable quantum circuits**: integrate with automatic differentiation frameworks
-- **Quantum kernel perspective**: interpret QNN as implicit kernel method with quantum feature map
+## Resources
+- arXiv: 2605.10801 - "Algorithmic Advantage on a Gate-Based Photonic Quantum Neural Network"
+- Solomon McKiernan, Luca Sapienza

@@ -1,3 +1,29 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - 16:00)
+
+### Learning Temporal Patterns in Financial Time Series: Quantum LSTM and Quantum Reservoir Computing
+- [[quantum-financial-time-series]] - 量子LSTM和量子储备池计算用于金融时间序列预测，多时间尺度滞后结构建模 (arXiv: 2605.02656)
+  - 核心要点：QLSTM用参数化量子电路替换经典LSTM门，QRC用量子系统作为固定高维特征空间
+  - 核心要点：混合架构（经典预处理+量子核心+经典读出）在NISQ设备上效果最佳
+  - **Activation**: quantum LSTM finance, QLSTM, quantum reservoir computing finance, quantum financial time series
+
+### Algorithmic Advantage on a Gate-Based Photonic Quantum Neural Network
+- [[photonic-qnn-algorithmic-advantage]] - 门基光子量子神经网络展示算法优势，单光子+概率门实现变分分类器 (arXiv: 2605.10801)
+  - 核心要点：光子平台室温操作、低退相干、全对全连接
+  - 核心要点：概率门通过后选择实现高保真操作，展示特定分类任务的算法优势
+  - **Activation**: photonic quantum neural network, photonic QNN, gate-based photonic quantum, algorithmic advantage quantum
+
+### Quantum Interval Bound Propagation for Certified Training of Quantum Neural Networks
+- [[quantum-certified-training-ibp]] - 量子区间边界传播(QIBP)用于QNN认证训练，提供形式化鲁棒性保证 (arXiv: 2605.00747)
+  - 核心要点：将经典IBP扩展到量子电路，通过密度矩阵边界传播实现形式化鲁棒性认证
+  - 核心要点：认证训练显著提升鲁棒性而不损失精度，IBP损失与标准损失联合优化
+  - **Activation**: quantum IBP, certified quantum training, QNN certification, quantum certified robustness
+
+### STN-GPR: A Singularity Tensor Network Framework for Efficient Option Pricing
+- [[tensor-network-option-pricing]] - 奇异张量网络框架用于高效期权定价，大规模投资组合重估值加速100倍 (arXiv: 2603.26318)
+  - 核心要点：张量网络压缩高维定价函数到低秩表示，GPR处理TN无法捕获的奇异点
+  - 核心要点：适用于VaR/Expected Shortfall计算，50+资产组合可行
+  - **Activation**: tensor network option pricing, STN-GPR, portfolio revaluation, VaR tensor network
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - 15:00)
 
 ### Learning PDEs for Portfolio Optimization with Quantum Physics-Informed Neural Networks
