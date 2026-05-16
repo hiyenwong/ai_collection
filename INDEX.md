@@ -1,4 +1,25 @@
 
+## 2026-05-16 - 经济学、投资 (Cron Job) - 量子金融专题
+
+### Quantum Portfolio Optimization with Expert Analysis Evaluation
+- [[quantum-expert-evaluation-portfolio]] - Expert Analysis Evaluation framework for benchmarking VQE and QAOA portfolio optimization with financial professional judgment, revealing critical gaps between algorithmic performance and financial applicability (arXiv: 2507.20532)
+  - 核心要点 1: 金融专家独立评估量子优化组合的经济合理性，揭示算法指标与实际金融适用性的差距
+  - 核心要点 2: 建立四维评估标准：经济合理性、实际可行性、可解释性、对制度变化的鲁棒性
+  - **Activation**: quantum portfolio expert evaluation, 量子组合专家评估, VQE portfolio benchmarking, QAOA financial assessment, quantum finance expert judgment, portfolio optimization benchmark, quantum investment analysis
+
+### Hot-Starting Quantum Portfolio Optimization
+- [[hotstart-quantum-portfolio-optimization]] - Hot-starting methodology restricting discrete portfolio search space to neighborhood of continuous optimum via compact Hilbert space, reducing qubits from ~700 to ~50 while maintaining solution quality (arXiv: 2510.11153)
+  - 核心要点 1: 先求解连续松弛问题，再在连续最优解附近构造紧凑希尔伯特空间进行量子搜索
+  - 核心要点 2: 在D-Wave Advantage量子退火器和软件求解器上均优于最新技术
+  - **Activation**: hot-start quantum optimization, 热启动量子优化, compact Hilbert space portfolio, discrete portfolio optimization quantum, QUBO search space reduction, 量子组合热启动, qubit reduction portfolio
+
+### Neural QAOA²: Differentiable Joint Graph Partitioning and Parameter Initialization
+- [[neural-qaoa-differentiable-partitioning]] - End-to-end differentiable framework jointly learning graph partitions and QAOA parameter initialization via generative evaluative network with differentiable quantum evaluator surrogate (arXiv: 2605.13051)
+  - 核心要点 1: 用可微图划分替代启发式模块化度量，用学习型参数初始化替代随机初始化
+  - 核心要点 2: 可微量子评估器作为高性能代理，为划分和参数提供直接梯度信号
+  - **Activation**: neural QAOA2, 神经QAOA, differentiable graph partitioning quantum, QAOA parameter initialization neural, quantum combinatorial optimization neural, GEN quantum evaluator, divide-and-conquer QAOA
+
+
 ## 2026-05-16 - Systems Engineering Research (Cron Job)
 
 ### BCPNN Native Explainability: XAI for Brain-Like Neural Networks
