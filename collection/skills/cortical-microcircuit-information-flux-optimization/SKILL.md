@@ -1,218 +1,265 @@
 ---
 name: cortical-microcircuit-information-flux-optimization
-description: "Simulation-based reverse engineering study of cortical layer 5 microcircuits, investigating whether densely connected core populations are optimized for information flux (mutual information between successive network states). Covers the embedded-core model, recurrence resonance, adaptive bias mechanisms, and information-theoretic analysis of cortical processing. Activation: cortical microcircuit, information flux, reverse engineering brain, layer 5 cortex, mutual information neural network, recurrence resonance, embedded core model."
+description: "Simulation-based reverse engineering methodology for analyzing whether cortical microcircuits are structurally optimized for information flux. Uses Embedded Core Model (ECM) with Boltzmann neurons to study core-periphery architecture effects on mutual information between network states. Activation: cortical microcircuit, information flux, reverse engineering neural networks, core-periphery architecture, recurrence resonance, embedded core model, reservoir computing optimization."
 ---
 
 # Cortical Microcircuit Information Flux Optimization
 
-**arXiv:** 2605.14680v1 [q-bio.NC] | **Published:** 2026-05-14
-**Authors:** Claus Metzner, Ali Ghebleh, Karin Prebeck, Achim Schilling (Friedrich-Alexander-University Erlangen-Nürnberg)
+**Paper**: Are cortical microcircuits optimized for information flux? A simulation-based reverse engineering study (arXiv:2605.14680)
+**Authors**: Claus Metzner, Ali Ghebleh, Karin Prebeck, Achim Schilling, Andreas Maier, Thomas Kinfe, Patrick Krauss
+**Institution**: Friedrich-Alexander-University Erlangen-Nürnberg (FAU), University Hospital Mannheim
+**Date**: May 14, 2026
+**Categories**: q-bio.NC
 
-## Core Research Question
+## Overview
 
-**Are cortical microcircuits optimized for information flux?**
+This paper investigates whether **biological cortical microcircuits** are structurally organized to maximize **information flux** — defined as the mutual information between successive network states. Using a simulation-based reverse engineering approach, the authors construct an **Embedded Core Model (ECM)** that captures the layer 5 cortical architecture (Song et al.) and systematically analyze how the embedding network enhances core dynamics.
 
-This study uses simulation-based reverse engineering to investigate whether the embedded-core architecture of cortical layer 5 microcircuits is shaped by selective pressure to maximize information flux — the mutual information between successive network states.
+**Key Finding**: The peripheral network surrounding a densely connected excitatory core provides two critical contributions: (1) effective **biases** that shift core neurons into higher-entropy operating regimes, and (2) **stochastic fluctuations** that prevent trapping in simple attractors via **Recurrence Resonance**.
 
-## Core Concept: Information Flux
+## Core Concepts
 
-### Definition
-Information flux = mutual information I(x_{t+1}; x_t) between successive network states
-- Measures how much information about the current state is preserved in the next state
-- I(x_{t+1}; x_t) = H(x_t) - H(x_{t+1}|x_t)
-  - H(x_t): output entropy (diversity of visited states)
-  - H(x_{t+1}|x_t): conditional entropy (uncertainty of next state given current)
+### Information Flux
+- Defined as: `I(z(t); z(t+1))` — mutual information between consecutive global network states
+- High flux → network avoids fixed-point/oscillatory trapping, maintains rich dynamical repertoire
+- Essential for reservoir computing and biological information processing
 
-### Why Information Flux Matters
-- **Zero flux** → no determinism, network visits states randomly, useless for computation
-- **Maximum flux** → deterministic transitions, but may lack computational flexibility
-- **Optimal regime**: balance between entropy (state exploration) and determinism (state predictability)
-- Maximum occurs when system visits all possible states with comparable probability (high entropy) AND transitions remain sufficiently predictable
+### Embedded Core Model (ECM)
 
-## Embedded Core Model
+```
+Network Architecture (N_total = 125 neurons):
+┌──────────────────────────────────────────────┐
+│  Peripheral Neurons (Np = 90, excitatory)    │
+│  - Sparse, weak connections                   │
+│  - Provide: biases + stochastic fluctuations  │
+│                                               │
+│  ┌─────────────────────┐                     │
+│  │  Core (Nc = 10)     │                     │
+│  │  - Dense, strong    │                     │
+│  │  - Lognormal weights│                     │
+│  │  - High connectivity│                     │
+│  └─────────────────────┘                     │
+│                                               │
+│  Interneurons (Ni = 25, inhibitory)          │
+│  - No self-connections                        │
+│  - Project to core + peripheral              │
+│  - Weight: wi = -5 (optimized)               │
+└──────────────────────────────────────────────┘
+```
 
-### Architecture
-Simplified model of cortical layer 5 microcircuit with three populations:
+### Network Construction Rules
 
-1. **Core neurons (10 neurons)**: Densely and strongly interconnected
-   - Connection density: d = 11.6% (consistent with experimental cortical measurements)
-   - Represent the central processing unit
+1. **Connection density**: d = 11.6% (matches cortical layer 5 measurements)
+2. **Weight distribution**: Lognormal (μ=-0.702, σ=0.9355)
+3. **Core-periphery assignment**: Largest weights → core connections
+4. **Inhibitory connections**: Uniform weight wi = -5 (numerically optimized)
+5. **Self-connections**: Excluded
 
-2. **Peripheral neurons**: Larger supporting population
-   - Weakly connected, providing background input
+### Boltzmann Neuron Dynamics
 
-3. **Interneurons**: Inhibitory population
-   - Modulate core activity through feedback
+```python
+def boltzmann_activation(u, t0=5):
+    """Stochastic Boltzmann neuron with temperature t0."""
+    return 1 / (1 + np.exp(-u / t0))  # Logistic activation
 
-### Key Design Principle
-The model captures a fundamental statistical feature of cortical microcircuits: coexistence of a small set of strong connections embedded within a large population of weaker ones.
+def update_neuron(i, W, z, t):
+    """Update neuron i given current state z."""
+    u_i = sum(W[i,j] * z[j] for j in neighbors(i))
+    return np.random.random() < boltzmann_activation(u_i)
+```
+
+### Information Flux Approximation
+
+For N=10 core neurons, full state space = 2^10 = 1024 states.
+- Required simulation: T_sim ≈ 10^7 steps (K=10 samples per transition)
+- **Approximation**: Use triplet-level flux analysis
+  - **Intra-triplet flux**: I(A→A), I(B→B), I(C→C) — within-group information
+  - **Inter-triplet flux**: I(A→B), I(A→C), I(B→C), etc. — cross-group information
+  - **Total flux indicator**: f = I_intra + I_inter (in units of 10^-3 bit)
 
 ## Key Findings
 
-### 1. Embedded Structure Enhances Information Flux
-- Core network embedded in larger network achieves **significantly higher** information flux than isolated core
-- Peripheral and interneuron populations act as "driving inputs" that shift core neurons toward favorable operating points
-- Flux-enhancing influence operates **strictly feedforward**: removing outgoing projections from core to embedding network has minimal impact
+### 1. Embedding Network Enhances Information Flux
+- Core-with-embedding shows significantly higher flux than isolated core
+- Two mechanisms identified:
+  - **Bias effect**: Peripheral neurons provide effective DC biases
+  - **Noise effect**: Stochastic fluctuations prevent attractor trapping
 
-### 2. Recurrence Resonance
-- Information flux follows a **resonance-like profile** as a function of noise intensity
-- At optimal noise level (σ ≈ 2), flux peaks at ~0.012 bit (intra-triplet) and ~0.022 bit (inter-triplet)
-- This phenomenon, termed "Recurrence Resonance," requires external noise adjustment
-- Resonance peak occurs only in **strongly coupled systems** where runaway dynamics would otherwise occur
-- Analytically: I(x_{t+1}; x_t) = H(x_t) - H(x_{t+1}|x_t)
-  - Noise increases entropy H(x_t) while keeping conditional entropy manageable
+### 2. Recurrence Resonance Mechanism
+- Optimal noise level maximizes information flux
+- Too little noise → network trapped in fixed points
+- Too much noise → random behavior, no information transfer
+- The embedding network naturally provides near-optimal noise
 
-### 3. Adaptive Bias Mechanism
-- Core neurons with **individually optimized biases** achieve even larger information flux
-- Bias adaptation rule: b_i(t) = b_i(t-1) - ε(z_i(t) - 1/2)
-  - Drives neurons toward maximum-entropy operating point (firing probability ≈ 0.5)
-  - At p=0.5, individual output entropy H(x) is maximized for binary neurons
+### 3. Self-Organizing Bias Optimization
+- Individually optimized biases can exceed biological embedding performance
+- Simple self-organization principle drives neurons toward maximal entropy:
+  ```
+  When p(z=1) > 0.5 → increase negative bias
+  When p(z=1) < 0.5 → increase positive bias
+  ```
 
-### 4. Evolutionary Optimization of Biases
-- 10-dimensional bias vector optimized evolutionarily
-- Individually different biases yield the **largest achievable** information flux in the core
-- Target firing rate of 0.5 maximizes individual output entropy
+### 4. Analytical Single-Neuron Solution
+- Closed-form mutual information for self-coupled noisy Boltzmann neuron:
+  ```
+  I(z(t); z(t+1)) = H(π) - π₀·H(p₀) - π₁·H(p₁)
+  ```
+  where H is binary entropy, π are stationary probabilities
 
-### 5. Noise Statistics Matter
-- Adding independent Gaussian white noise to pre-optimized biases **decreases** information flux
-- Non-Gaussian statistics of embedding-network control signals are functionally important
-- The specific signal structure from the embedding network is not just noise — it carries computationally relevant structure
+## Implementation Guide
 
-### 6. Simulated Lesion Experiments
-- Removing peripheral population → reduced information flux in core
-- Removing interneurons → different pattern of flux reduction
-- Confirms feedforward driving role of embedding network
+### ECM Simulation
 
-## Analytical Theory: Noisy Boltzmann Neuron
+```python
+import numpy as np
 
-### Single Neuron Analysis
-For a single binary Boltzmann neuron with states x_t ∈ {0,1}:
-- Recursive self-coupling with noise
-- Mutual information I(x_{t+1}; x_t) computed analytically
-- Information flux maximized at intermediate noise levels
-- Resonance-like peak only in strongly coupled systems
-
-### Multi-Neuron Extension
-- Information flux evaluated for groups of three neurons ("triplets")
-- Maximum possible information flux: I_opt = 3 bits (for triplet)
-- Actual achieved: ~0.057 bit (intra-triplet) + ~0.082 bit (inter-triplet)
-
-## Neural Dynamics Analysis
-
-### Time-Delayed Mutual Information
-I(A_t; B_{t+1}) between sub-populations reveals information flow patterns:
-- Strongest flux: **recursively within the core** (0.0058 bit)
-- Equal flux: interneurons → peripheral population (0.0058 bit)
-- Weaker: core → peripheral, peripheral → interneurons
-
-### Activation Patterns
-- Binary activation time series reveals coordinated dynamics
-- Core neurons show synchronized activity patterns
-- Interneurons exhibit strong statistical dependencies
-- Peripheral neurons provide diverse background activity
-
-## Biological Implications
-
-### 1. Core-Periphery Structure
-The embedded-core architecture may be shaped by **selective pressure to maximize information flux**, providing an information-theoretic justification for this ubiquitous cortical motif.
-
-### 2. Operating Point Optimization
-Core neurons operating near **high-entropy, balanced firing regime** (firing rate ≈ 0.5) maximizes information processing capacity — resonating with the "edge of chaos" concept in reservoir computing.
-
-### 3. Driving vs. Modulatory Inputs
-Results align with classical distinction:
-- **Driving inputs**: subcortical/feedback projections that modulate gain/operating point
-- **Modulatory inputs**: adjust the computational regime without directly encoding stimulus information
-
-### 4. Local Route to Global Optimization
-Maximizing individual neuron entropy through **neuron-specific bias tuning** is a principled and **local** route to reaching a globally favorable computational regime.
-
-## Methodology Summary
-
-### Simulation Pipeline
-1. Construct embedded-core network with biologically-inspired connectivity
-2. Run stochastic dynamics simulations (binary Boltzmann neurons)
-3. Compute mutual information between successive states (practical limitation: triplet groups)
-4. Test variations: noise levels, lesion experiments, bias optimization
-5. Compare embedded vs. isolated core performance
-
-### Information Flux Measurement
-- States discretized to binary (on/off)
-- Mutual information estimated from state transition statistics
-- Triplet-level analysis (3-neuron groups) for computational tractability
-
-### Optimization Methods
-- Evolutionary algorithm for bias vector optimization
-- Noise intensity sweep for resonance characterization
-- Adaptive bias update rule for homeostatic regulation
-
-## Technical Implementation
-
-### Boltzmann Neuron Model
-```
-z_i(t+1) = 1 if Σ_j w_ij * z_j(t) + b_i(t) + noise > 0
-         = 0 otherwise
+class EmbeddedCoreModel:
+    def __init__(self, Nc=10, Np=90, Ni=25, d=0.116, t0=5):
+        self.Nc, self.Np, self.Ni = Nc, Np, Ni
+        self.N = Nc + Np + Ni
+        self.t0 = t0  # Temperature
+        self.W = self._build_connectivity(d)
+        
+    def _build_connectivity(self, d):
+        """Build core-periphery weight matrix."""
+        W = np.zeros((self.N, self.N))
+        n_exc = self.Nc + self.Np  # Excitatory neurons
+        
+        # Lognormal weights for excitatory connections
+        mu, sigma = -0.702, 0.9355
+        n_connections = int(d * n_exc * (n_exc - 1))
+        weights = np.random.lognormal(mu, sigma, n_connections)
+        
+        # Assign largest weights to core-core connections
+        core_weights = np.sort(weights)[-self.Nc*(self.Nc-1):]
+        # ... fill matrix ...
+        
+        # Inhibitory connections
+        W[self.Nc:self.N, :self.Nc+self.Np] = -5.0
+        
+        return W
+    
+    def step(self, z):
+        """One synchronous update step."""
+        u = self.W @ z  # Total input
+        p_on = 1 / (1 + np.exp(-u / self.t0))
+        return (np.random.random(self.N) < p_on).astype(float)
+    
+    def compute_flux_triplets(self, states, triplets=None):
+        """Compute information flux using triplet approximation."""
+        if triplets is None:
+            triplets = [[0,1,2], [3,4,5], [6,7,8]]
+        
+        # Build transition matrices for each triplet pair
+        # ... count state transitions ...
+        # Compute mutual information I(X;Y)
+        return I_intra, I_inter
 ```
 
-### Adaptive Bias Rule
-```
-b_i(t) = b_i(t-1) - ε * (z_i(t) - 0.5)
-```
-- Drives average firing rate toward 0.5
-- ε: learning rate for bias adaptation
+### Recurrence Resonance Analysis
 
-### Mutual Information Estimation
+```python
+def recurrence_resonance_curve(model, noise_levels):
+    """Plot information flux vs noise amplitude."""
+    flux_values = []
+    for noise_amp in noise_levels:
+        # Run simulation with injected noise
+        states = run_with_noise(model, noise_amp, T=10**6)
+        flux = model.compute_flux_triplets(states)
+        flux_values.append(flux)
+    return flux_values
+    # Expected: bell-shaped curve with peak at optimal noise
 ```
-I(X;Y) = Σ_x Σ_y P(x,y) * log2(P(x,y) / (P(x) * P(y)))
+
+### Self-Organizing Bias
+
+```python
+class AdaptiveBiasCore:
+    def __init__(self, Nc=10, learning_rate=0.01):
+        self.biases = np.zeros(Nc)
+        self.lr = learning_rate
+        
+    def update_biases(self, z_history, window=1000):
+        """Self-organize biases toward maximal entropy."""
+        recent = z_history[-window:]
+        mean_activation = recent.mean(axis=0)
+        
+        # Push neurons toward 50% activation
+        self.biases -= self.lr * (mean_activation - 0.5)
+        return self.biases
 ```
-- Computed from empirical state transition distributions
-- Triplet-level: 2^3 = 8 possible states per time step
+
+## Use Cases
+
+### 1. Biological Circuit Analysis
+- Test hypotheses about cortical microcircuit function
+- Compare simulated flux with electrophysiological data
+- Identify structural principles for information processing
+
+### 2. Reservoir Computing Design
+- Optimize reservoir topology for maximum information processing
+- Design core-periphery architectures for specific tasks
+- Tune noise levels for recurrence resonance
+
+### 3. Neural Network Architecture Search
+- Use ECM principles to design better RNN architectures
+- Core-periphery connectivity patterns for improved memory
+- Self-organizing bias mechanisms for adaptive networks
+
+## Comparison with Related Work
+
+| Approach | Model | Key Finding |
+|----------|-------|-------------|
+| SCS theory | Random RNNs | Chaos transition at critical gain |
+| This work | ECM (structured) | Embedding enhances flux via bias + noise |
+| Edge of chaos | Various | Peak performance near regime transitions |
+| Recurrence Resonance | RNN + noise | Optimal noise maximizes information flow |
 
 ## Key Parameters
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| Core size | 10 neurons | Densely interconnected core |
-| Connection density | 11.6% | Matches experimental cortical data |
-| Optimal noise σ | ~2 | Recurrence resonance peak |
-| Target firing rate | 0.5 | Maximum entropy operating point |
-| Bias learning rate ε | small | Slow adaptation timescale |
+| Nc | 10 | Core neurons |
+| Np | 90 | Peripheral neurons |
+| Ni | 25 | Inhibitory interneurons |
+| d | 11.6% | Connection density |
+| μ | -0.702 | Lognormal weight mean |
+| σ | 0.9355 | Lognormal weight std |
+| t0 | 5 | Temperature parameter |
+| wi | -5 | Inhibitory weight |
 
-## Open Questions
+## Limitations
 
-1. **Performance-flux relationship**: Does maximizing information flux actually improve task performance? Need continuous tuning experiments.
-2. **Scalability**: Can these findings generalize to larger, more realistic network sizes?
-3. **Multi-scale integration**: How does layer-5 optimization relate to inter-areal information flow?
-4. **Learning rules**: What plasticity mechanisms could implement the bias adaptation observed?
-5. **Non-Gaussian signal structure**: What is the precise computational role of non-Gaussian embedding signals?
+- Simplified Boltzmann neurons (not biophysically realistic)
+- Fixed network size (N=125)
+- Binary neuron states (not continuous firing rates)
+- Synchronous updates (not asynchronous biological timing)
+- Single temperature parameter (no heterogeneous neuron properties)
 
 ## Activation Keywords
 
 - cortical microcircuit
 - information flux
-- reverse engineering brain
-- layer 5 cortex
-- mutual information neural network
+- reverse engineering neural networks
+- core-periphery architecture
 - recurrence resonance
 - embedded core model
-- cortical architecture
-- Boltzmann neuron
-- entropy optimization
-- edge of chaos
-- neural dynamics information theory
-- cortical layer 5 model
-- information-theoretic neuroscience
-
-## Related Skills
-
-- **neural-population-dynamics**: Methods for analyzing neural population dynamics
-- **neural-code-dynamics-analysis**: Framework for neural coding dynamics
-- **brain-inspired-snn-pattern-analysis**: Extract patterns from brain-inspired computing papers
-- **generative-brain-dynamics-models**: Generative models for brain dynamics
-- **nonequilibrium-brain-dynamics**: Nonequilibrium physics framework for brain dynamics
+- reservoir computing optimization
+- mutual information neural dynamics
+- cortical layer 5
+- self-organizing bias
 
 ## References
 
-- arXiv: [2605.14680](https://arxiv.org/abs/2605.14680)
-- PDF: [Download](https://arxiv.org/pdf/2605.14680)
-- License: CC BY-NC-ND 4.0
+- Original paper: https://arxiv.org/abs/2605.14680
+- Song et al. — Cortical layer 5 connectivity structure
+- SCS theory — Sompolinsky, Crisanti, Sommers chaos transition
+- Recurrence Resonance — noise-enhanced RNN dynamics
+
+## Related Skills
+
+- ei-network-chaos-synchrony-theory
+- chaos-synchrony-ei-networks
+- neural-critical-dynamics-theory
+- reservoir-computing-design-patterns
+- self-organized-criticality-brain-body-resonance

@@ -1,3 +1,17 @@
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model using retrospective distillation for causal real-time BCI decoding (arXiv: 2605.14867)
+  - 核心要点: Bidirectional Mamba-2 teacher → causal Mamba-2 student via representation alignment + task supervision
+  - 核心要点: 2× parameter reduction, 10× training speedup, deployable on Jetson Orin Nano / Raspberry Pi 5
+  - **Activation**: LFP decoding, brain-computer interface, local field potentials, REALM, causal neural decoding, knowledge distillation BCI
+
+### Are cortical microcircuits optimized for information flux?
+- [[cortical-microcircuit-information-flux-optimization]] - Simulation-based reverse engineering reveals how cortical core-periphery architecture enhances information flux via bias + recurrence resonance (arXiv: 2605.14680)
+  - 核心要点: Embedded Core Model (ECM) shows peripheral neurons provide effective biases and stochastic fluctuations that shift core into higher-entropy regime
+  - 核心要点: Self-organizing bias principle drives neurons toward maximal entropy, exceeding biological embedding performance
+  - **Activation**: cortical microcircuit, information flux, reverse engineering neural networks, core-periphery architecture, recurrence resonance
+
 
 
 ## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
