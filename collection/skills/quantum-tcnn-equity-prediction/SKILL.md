@@ -1,69 +1,75 @@
 ---
 name: quantum-tcnn-equity-prediction
-description: "Quantum Temporal Convolutional Neural Network (QTCNN) methodology for cross-sectional equity return prediction. Combines quantum circuit layers with temporal convolution networks to capture both temporal patterns and quantum feature space interactions in financial time-series. Use when building quantum-enhanced stock prediction models, designing quantum neural networks for financial forecasting, or implementing temporal quantum machine learning for equity markets."
+description: "Quantum Temporal Convolutional Neural Network (QTCNN) methodology for cross-sectional equity return prediction. Combines classical temporal encoder with parameter-efficient quantum convolution circuits for stock market forecasting. Use when: building quantum-enhanced financial prediction models, combining quantum circuits with time-series analysis, equity return forecasting, portfolio construction from quantum ML predictions, or benchmarking quantum vs classical financial models. Activation: quantum tcnn, quantum temporal convolution, equity return prediction quantum, quantum stock forecasting, QTCNN, quantum time-series finance."
 ---
 
-# Quantum TCNN for Equity Return Prediction
+# Quantum Temporal Convolutional Neural Networks for Equity Prediction
 
-Methodology for using Quantum Temporal Convolutional Neural Networks to predict cross-sectional equity returns, based on arXiv:2512.06630.
+Design and evaluate Quantum Temporal Convolutional Neural Networks (QTCNN) for cross-sectional equity return prediction. Combines classical temporal encoding with quantum convolution circuits to leverage superposition and entanglement for enhanced feature representation.
 
 ## Architecture
 
+### Two-Stage Pipeline
+
 ```
-Input (Financial Time-Series) → Temporal Convolution → Quantum Circuit Layer → Prediction
+Market Data → Temporal Encoder → Quantum Convolution → Prediction
 ```
 
-### Temporal Convolution Block
+### Stage 1: Classical Temporal Encoder
+- Extract multi-scale patterns from sequential technical indicators
+- Use dilated causal convolutions (TCN-style) to capture varying time horizons
+- Handle noisy input and regime shifts via robust feature extraction
+- Output: compressed temporal feature vectors
 
-- Causal convolutions to preserve temporal ordering
-- Dilated convolutions for capturing long-range dependencies
-- Residual connections for gradient flow
-- Output: temporal feature representations
+### Stage 2: Quantum Convolution Circuit
+- Encode classical features into quantum state via amplitude/angle encoding
+- Apply parameterized quantum gates (entangling layers) for feature transformation
+- Leverage superposition for parallel feature processing
+- Use entanglement for capturing non-linear cross-feature dependencies
+- Measurement yields enhanced feature representation
+- Fewer parameters than classical equivalents → suppresses overfitting
 
-### Quantum Circuit Layer
+## Key Design Decisions
 
-- Encode temporal features into quantum states via amplitude or angle encoding
-- Apply parameterized quantum gates (rotation + entangling layers)
-- Measure observables to extract quantum-enhanced features
-- Output: quantum feature vectors
+### Encoding Strategy
+- **Amplitude encoding**: O(log N) qubits for N features; requires state preparation
+- **Angle encoding**: One rotation per feature; more NISQ-friendly
+- Choose based on qubit count and feature dimensionality
 
-### Key Design Decisions
+### Quantum Circuit Depth
+- Shallow circuits (2-4 entangling layers) for NISQ compatibility
+- Use hardware-efficient ansatz matching device connectivity
+- Balance expressivity against noise accumulation
 
-1. **Encoding**: Angle encoding for sequential data (preserves temporal structure)
-2. **Ansatz**: Hardware-efficient with alternating rotation/entangling layers
-3. **Measurement**: Pauli-Z expectation values for real-valued output
-4. **Training**: Hybrid quantum-classical backpropagation
+### Training Approach
+- Classical encoder: standard backpropagation
+- Quantum circuit: parameter-shift rule for gradient computation
+- Joint optimization with shared loss (e.g., portfolio Sharpe ratio)
 
-## Application to Equity Returns
+## Evaluation Protocol
 
-- **Input features**: Price history, volume, technical indicators, market factors
-- **Target**: Cross-sectional return ranking (not absolute price prediction)
-- **Advantage**: Quantum layers may capture non-linear interactions that classical TCNNs miss
-- **Evaluation**: Compare against pure classical TCNN baseline
+1. **Dataset**: Use large-scale exchange data (e.g., JPX Tokyo Stock Exchange)
+2. **Metric**: Out-of-sample Sharpe ratio as primary performance metric
+3. **Baseline**: Compare against classical TCN, LSTM, and linear models
+4. **Portfolio**: Construct long-short portfolios from model predictions
+5. **Result benchmark**: QTCNN achieved Sharpe ratio of 0.538, outperforming classical baseline by ~72%
 
-## Training Pipeline
+## When to Use
 
-1. Prepare cross-sectional dataset (stocks × time × features)
-2. Normalize features per stock to remove scale effects
-3. Split into train/validation/test by time period
-4. Train TCNN backbone on classical data
-5. Fine-tune with quantum layer inserted
-6. Evaluate on out-of-sample period using rank IC (Information Coefficient)
+- Financial prediction with noisy, regime-shifting data
+- Need for parameter-efficient models (limited training data)
+- Quantum advantage hypothesis testing in finance
+- Cross-sectional prediction across many assets simultaneously
 
-## Validation Metrics
+## Implementation Notes
 
-- Rank Information Coefficient (IC): Correlation between predicted and actual return ranks
-- IC decay: How predictive power degrades over time horizon
-- Turnover-adjusted returns: Practical trading simulation
-- Quantum vs. classical performance gap
-
-## Limitations
-
-- Requires careful data encoding to preserve temporal structure
-- Quantum circuit depth limited by noise on NISQ devices
-- Need sufficient qubits for meaningful feature dimension
-- Classical TCNN baseline is very strong - quantum advantage not guaranteed
+- Use PennyLane, Qiskit, or similar quantum ML frameworks
+- Simulate on classical hardware first, then deploy to real quantum devices
+- Key parameter: number of qubits vs feature dimension tradeoff
+- Consider variational quantum circuits with trainable gates
+- Monitor for barren plateaus in gradient-based optimization
 
 ## Resources
 
-- Primary paper: arXiv:2512.06630
+- arXiv: 2512.06630 - "Quantum Temporal Convolutional Neural Networks for Cross-Sectional Equity Return Prediction"
+- Authors: Chi-Sheng Chen, Xinyu Zhang, En-Jui Kuo, Rong Fu, Qiuzhe Xie, Fan Zhang

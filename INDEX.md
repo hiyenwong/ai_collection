@@ -35,6 +35,18 @@
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+### Quantum Temporal Convolutional Neural Networks for Equity Return Prediction
+- [[quantum-tcnn-equity-prediction]] - QTCNN combines classical temporal encoder with quantum convolution circuits for cross-sectional equity return prediction, achieving Sharpe ratio of 0.538 (72% improvement over classical baselines) (arXiv: 2512.06630)
+  - Core point: Classical TCN extracts multi-scale temporal patterns, quantum circuit leverages superposition/entanglement for enhanced feature representation
+  - Core point: Parameter-efficient quantum design suppresses overfitting; joint optimization with portfolio Sharpe ratio as loss
+  - **Activation**: quantum tcnn, QTCNN, equity return prediction, quantum stock forecasting, quantum time-series finance, temporal convolutional quantum
+
+### Quantum Reservoir Computing for Stock Movement Forecasting
+- [[quantum-reservoir-stock-forecasting]] - QRC framework using 4-6 qubit quantum systems as computational reservoir for nonlinear financial time-series forecasting, achieving >80% stock trend classification accuracy (arXiv: 2602.13094)
+  - Core point: Small-scale quantum reservoir provides exponentially large state space via superposition; only readout layer is trained
+  - Core point: Platform-agnostic implementation across superconducting circuits, trapped ions, and photonic systems; NISQ-compatible
+  - **Activation**: quantum reservoir computing, QRC stock prediction, quantum time-series forecasting, quantum stock movement, reservoir computing finance
+
 ### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
 - [[cd-qaoa-portfolio-optimization]] - 反绝热量子近似优化算法用于约束组合优化，通过变分规范势降低电路深度并提升约束满足率 (arXiv: 2605.06858)
   - 核心要点：CD-QAOA将近似绝热规范势融入QAOA层，减少达到目标近似比所需的电路深度
