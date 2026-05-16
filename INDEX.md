@@ -1,3 +1,19 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### BiSpikCLM: Binary Spiking Causal Language Model
+- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with softmax-free attention and spike-aware distillation (arXiv: 2605.13859)
+  - Softmax-Free Spiking Attention (SFSA) eliminates all floating-point ops in autoregressive attention
+  - Spike-Aware Alignment Distillation (SpAD) enables training with only 5.6% of tokens for 1.3B model
+  - Achieves 4.16%-5.87% computational cost vs ANN counterparts on NLG tasks
+  - **Activation**: binary spiking LLM, spiking attention, MatMul-free, alignment distillation, energy-efficient NLP
+
+### NeuroTrain: Local Learning Rules for SNNs Survey + Benchmark
+- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy of SNN training algorithms with open snnTorch-based benchmarking framework (arXiv: 2605.15058)
+  - Unifies 6 training categories: surrogate-gradient, local rules, three-factor learning, bioplasticity, ANN-SNN conversion, non-standard optimization
+  - Open benchmarking framework enables fair comparison across datasets, architectures, training regimes
+  - Identifies open challenges in scalable local learning and hardware-software co-design
+  - **Activation**: SNN training taxonomy, local learning rules, surrogate gradient, three-factor learning, snntorch benchmarking
+
 ## 2026-05-16 - Economics, Investment (Cron Job)
 
 ### Constrained Counterdiabatic QAOA for Portfolio Optimization
