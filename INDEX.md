@@ -1,5 +1,18 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
-## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
+
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[mamba-spike-population-forecaster]] - Mamba forecaster on Neuropixels spike counts delivers both neural forecasts and behavioral readouts in one pass, outperforming direct decoders by 4-6pp (arXiv: 2605.12999)
+  - Single Mamba trained on next-step prediction implicitly learns behavioral representations
+  - Linear head on predicted rates: 75.7% choice decoding, 66.1% stimulus (Steinmetz benchmark)
+  - 100-150 trial calibration, <50ms inference on workstation GPUs
+  - **Activation**: mamba spike forecaster, neural population forecast, implicit behavioral decoding, next-step spike prediction, Mamba neuroscience, Neuropixels BCI, spike count forecasting
+
+### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
+- [[decoding-encoding-alignment-critique]] - RSA/DSA alignment metrics are fundamentally flawed — can be driven by tiny neuron subpopulations and are blind to encoding topology (arXiv: 2605.05907)
+  - High decoding alignment can arise from small, non-representative neuron subsets
+  - Encoding manifold topology is invisible to RSA/DSA metrics
+  - Causal evidence: decoding metrics unchanged when encoding topology is manipulated
+  - **Activation**: decoding alignment, encoding alignment, RSA critique, representational similarity analysis, brain model alignment, encoding manifold, neural representation comparison
 
 ### KGPFN: Knowledge Graph Foundation Model via In-Context Learning
 - [[kgpf-knowledge-graph-foundation-model]] - Knowledge Graph Foundation Model using PFN for in-context learning across unseen graphs (arXiv: 2605.14907)
