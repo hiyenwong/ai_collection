@@ -1,3 +1,37 @@
+
+
+## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
+
+### New approaches to almost i.i.d. information theory
+- [[almost-iid-quantum-information]] - Methodology for analyzing almost i.i.d. quantum states via Wasserstein distance and k-body marginals (arXiv: 2605.15114)
+  - Three hierarchical definitions: k-body marginals, quantum Wasserstein, Mazzola et al. notion
+  - Strict separation proven with explicit counterexamples
+  - **Activation**: almost iid quantum, quantum wasserstein distance, quantum information theory non-iid, 量子信息论
+
+### Mixed-State Long-Range Entanglement from Dimensional Constraints
+- [[mixed-state-lre-dimensions]] - New mechanism for LRE in symmetric mixed states via translation-invariant subspace (arXiv: 2605.15201)
+  - Maximally mixed state in translation-invariant subspace on 1D ring is LRE
+  - SRE states span polynomial subspace vs exponential full subspace
+  - **Activation**: long-range entanglement, mixed state quantum, translation symmetry
+
+### Non-Invertible Symmetries and Quantum Cellular Automata
+- [[non-invertible-symmetries-qca]] - Fusion category symmetries on tensor-product Hilbert spaces with QCAs (arXiv: 2605.15194)
+  - QCA-refined realizations of fusion categories with symmetry-operator index constraints
+  - Proves bounds on realizable symmetries under physical defect assumptions
+  - **Activation**: quantum cellular automata, non-invertible symmetry, fusion category
+
+### Universal Quantum Resource Distillation
+- [[universal-quantum-resource-distillation]] - Universal distillation without input state knowledge via composite quantum Stein lemma (arXiv: 2605.15174)
+  - Optimal rates governed by regularized relative entropy of entanglement
+  - Applies to entanglement purification under non-entangling maps
+  - **Activation**: quantum resource distillation, quantum stein lemma, entanglement purification
+
+### FutureSim: Adaptive Agent Evaluation
+- [[futuresim-adaptive-agents]] - Chronological world event replay for evaluating adaptive AI agents (arXiv: 2605.15188)
+  - Grounded simulations replay real-world events for agent evaluation
+  - Agents forecast beyond knowledge cutoff with chronological news
+  - **Activation**: adaptive agent evaluation, future simulation, agent forecasting
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
