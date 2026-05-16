@@ -1,3 +1,22 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - 15:00)
+
+### Learning PDEs for Portfolio Optimization with Quantum Physics-Informed Neural Networks
+- [[quantum-pinn-portfolio-optimization]] - 量子物理信息神经网络求解组合优化PDE，将HJB方程编码为量子电路残差损失 (arXiv: 2604.03346)
+  - 核心要点：用量子参数化电路作为价值函数ansatz，量子纠缠自然捕获跨资产相关性
+  - 核心要点：通过参数平移规则计算PDE残差梯度，兼容NISQ设备浅层电路
+  - 核心要点：可扩展到含交易成本、跳跃扩散市场等无解析解的高维场景
+  - **Activation**: quantum PINN portfolio, QPINN finance, quantum PDE portfolio optimization, HJB quantum neural network, quantum stochastic control PDE
+
+### Quantum Temporal Convolutional Neural Networks for Equity Prediction (Updated)
+- [[quantum-tcnn-equity-prediction]] - 量子时间卷积神经网络横截面股票收益预测，JPX数据集Sharpe比率0.538，超越经典基线72% (arXiv: 2512.06630)
+  - 核心要点：时间编码器提取多尺度技术指标模式，量子卷积层利用叠加/纠缠增强特征表示
+  - 核心要点：参数量少于经典等效模型，有效抑制过拟合
+
+### Quantum Computing for Financial Transformation (Review Updated)
+- [[quantum-finance-stack-analysis]] - 金融计算五层堆栈：组合优化、衍生品定价、风险估计、量子ML、后量子密码学 (arXiv: 2604.08180)
+  - 核心要点：近期最强案例是精心设计的混合量子-经典工作流
+  - 核心要点：组合优化最可信（组合复杂性是约束成本），振幅估计对重复期望评估最有效
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - Hourly)
 
 ### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
