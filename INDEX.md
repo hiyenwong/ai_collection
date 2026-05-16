@@ -1,4 +1,20 @@
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Multi-Timescale Conductance Spiking Networks
+- [[multi-timescale-conductance-spiking-networks]] - Sparse, gradient-trainable SNN framework using fast/slow/ultra-slow conductance elements for rich firing dynamics, trained with direct BPTT without surrogate gradients (arXiv: 2605.11835v1)
+  - Conductance-based neurons eliminate surrogate gradient mismatch — fully differentiable BPTT through continuous I-V curve dynamics
+  - Three-timescale architecture (fast negative, slow positive, ultra-slow negative) enables tonic/phasic/bursting regimes in single model
+  - Outperforms LIF and AdLIF on Mackey-Glass chaotic time series forecasting with feedforward-only architecture
+  - **Activation**: MTC-SNN, conductance spiking, BPTT spiking, multi-timescale neuron, Mackey-Glass forecasting, I-V curve shaping
+
+### Chaos to Synchrony in E/I Networks with Target-Specific Inhibition
+- [[chaos-synchrony-ei-networks]] - Extended SCS theory for two-population E/I networks with target-specific inhibition, revealing three phase diagram organizations and chaos-suppression by endogenous oscillations (arXiv: 2605.14916v1)
+  - DMFT derivation shows target-specific inhibition parameters (β, δ) determine which collective instability (chaotic vs. oscillatory) dominates
+  - Key finding: coherent oscillations suppress chaotic fluctuations — endogenous chaos suppression without external stimulus
+  - Three qualitatively distinct phase diagram classes: inhibition-dominated, strictly balanced, excitation-dominated
+  - **Activation**: E/I network SCS theory, chaos-synchrony transition, DMFT neural networks, target-specific inhibition
+
 
 ### QTCNN: Quantum Temporal Convolutional Neural Networks for Equity Return Prediction
 - [[qtcnn-equity-prediction]] - Cross-sectional equity return prediction combining classical temporal encoder with quantum convolution circuits, achieving 72% Sharpe ratio improvement (arXiv: 2512.06630)
