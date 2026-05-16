@@ -1,6 +1,26 @@
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
-## 2026-05-16 - Neuroscience Research (Cron Job)
+### Constrained Counterdiabatic QAOA for Portfolio Optimization
+- [[qaoa-constrained-portfolio-optimization]] - Constrained portfolio optimization via CCD-QAOA with XY-mixer and nested commutator CD terms (arXiv: 2605.06858)
+  - Core Innovation: Adds counterdiabatic gauge potentials to QAOA ansatz, improving convergence under budget/risk constraints
+  - Key Technique: XY-mixer preserves Hamming weight (budget constraint) without penalty terms
+  - Practical: CD terms from nested commutators [H_C, [H_C, H_M]] accelerate variational optimization
+  - **Activation**: quantum portfolio optimization, QAOA, counterdiabatic, XY-mixer, constrained QUBO finance
+
+### Information-Theoretic Portfolio Selection
+- [[information-theoretic-portfolio-selection]] - Portfolio selection via Renyi divergence decomposition under CRRA utility (arXiv: 2605.03184)
+  - Core Innovation: CE growth rate = Renyi divergence + Renyi entropy of risk-tilted market + log-partition
+  - Key Insight: Renyi order α maps directly to investor's risk aversion coefficient
+  - Application: Single-period portfolio optimization through information geometry
+  - **Activation**: portfolio selection, CRRA utility, Renyi divergence, information projection, risk aversion
+
+### Hybrid Quantum-Classical Trading Framework
+- [[hybrid-quantum-classical-trading]] - End-to-end hybrid trading: classical asset selection + QAOA rebalancing with walk-forward evaluation (arXiv: 2603.16904)
+  - Core Innovation: Ledoit-Wolf + hierarchical clustering for decorrelated asset selection, QAOA for weight optimization
+  - Pipeline: Covariance shrinkage → correlation clustering → QUBO → QAOA → walk-forward backtest
+  - Baseline Comparison: GPU-accelerated GA vs minimum variance vs equal weight vs quantum
+  - **Activation**: quantum trading, hybrid portfolio, walk-forward QUBO, Ledoit-Wolf, algorithmic trading quantum
+
 
 ### Network-Aware Bilinear Tokenization for Brain FC Representation Learning
 - [[nerve-network-aware-bilinear-fc-tokenization]] - Self-supervised FC representation learning via network-aware bilinear tokenization in MAE, partitioning FC matrices into intra/inter-network connectivity blocks (arXiv: 2605.14048)
