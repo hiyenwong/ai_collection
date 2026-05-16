@@ -1,3 +1,12 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### QTCNN: Quantum Temporal Convolutional Neural Networks for Equity Return Prediction
+- [[qtcnn-equity-prediction]] - Cross-sectional equity return prediction combining classical temporal encoder with quantum convolution circuits, achieving 72% Sharpe ratio improvement (arXiv: 2512.06630)
+  - Classical temporal encoder extracts multi-scale patterns from sequential technical indicators
+  - Quantum convolution leverages superposition and entanglement to suppress overfitting with O(n) parameters
+  - Achieves Sharpe ratio of 0.538 vs 0.313 classical baseline on JPX Tokyo Stock Exchange data
+  - **Activation**: QTCNN, quantum temporal convolution, quantum equity prediction, quantum return forecasting, cross-sectional prediction
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### BiSpikCLM: Binary Spiking Causal Language Model
