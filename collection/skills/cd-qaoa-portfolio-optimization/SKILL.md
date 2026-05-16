@@ -90,10 +90,19 @@ CD-QAOA handles constraints natively through counterdiabatic driving:
 | K | Cardinality constraint | User-defined |
 | B | Budget constraint | User-defined |
 
+## Related Research (Updated 2026-05-16)
+
+| Paper | Key Finding |
+|-------|-------------|
+| **2605.06858** (CCD-QAOA) | Counterdiabatic QAOA beats XY/Grover/penalty mixers at fixed depth |
+| **2605.07722** (QAOA Mixers) | XY mixers achieve 15% better approximation for ternary portfolios |
+| **2605.07723** (Two-Step QAOA) | Classical screening + quantum optimization reduces circuit depth |
+| **D-Wave Hybrid Audit** | Quantum contribution mainly in solution space exploration |
+
 ## Resources
 
 - arxiv:2605.06858 — Falla & Safro (2026)
-- kg.db entity ID 1116+ related portfolio optimization papers
+- kg.db entity IDs: 1097 (CCD-QAOA), 1118-1120 (today's new papers)
 
 ## Related Skills
 

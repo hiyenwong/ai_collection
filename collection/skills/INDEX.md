@@ -1,3 +1,17 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - Hourly)
+
+### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
+- [[cd-qaoa-portfolio-optimization]] - 约束反绝热QAOA算法在固定电路深度下超越XY/Grover/惩罚混合器，实现更优组合优化近似比 (arXiv: 2605.06858)
+  - 核心要点：通过嵌套对易子生成近似绝热规范势，融入变分ansatz提升约束满足
+  - 核心要点：在固定深度p下，CCD-QAOA一致优于标准XY-mixer、Grover-mixer和惩罚式QAOA
+  - **Activation**: CD-QAOA, counterdiabatic QAOA, constrained portfolio optimization, adiabatic gauge potential, XY mixer QAOA, quantum portfolio selection
+
+### Two-Step QAOA for Portfolio Optimization
+- [[two-step-qaoa-portfolio]] - 两步QAOA方法：经典筛选+量子优化，在NISQ设备上实现大规模组合优化 (arXiv: 2605.06858)
+  - 核心要点：第一步用经典方法筛选候选资产子集，第二步在缩减空间运行QAOA分配权重
+  - 核心要点：显著降低电路深度需求，同时保持与全量子方法相当的解质量
+  - **Activation**: two-step QAOA, hybrid portfolio screening, NISQ portfolio optimization, classical quantum portfolio, asset subset screening
+
 ### 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - Afternoon)
 
 ### Hybrid Quantum Genetic Algorithm for Portfolio Optimization
@@ -92,5 +106,3 @@
   - Preserves canonical commutation relations during reduction
   - H2 norm-optimal approximation with symplectic structure guarantees
   - **Activation**: quantum model reduction, symplectic H2, quantum system approximation
-
-
