@@ -1,3 +1,18 @@
+## 2026-05-16 - Economics & Investment + Quantum Mechanics (Cron Job)
+
+### Learning Temporal Patterns in Financial Time Series: A Comparative Study of QLSTM and QRC
+- [[quantum-time-series-finance]] - Quantum time series forecasting for financial applications using QLSTM and QRC architectures (arXiv: 2605.02656)
+  - Comparative study of Quantum LSTM vs Quantum Reservoir Computing for financial forecasting
+  - QRC better for NISQ (no internal training); QLSTM higher accuracy but needs deeper circuits
+  - Hybrid quantum-classical architectures with parameter shift rule for gradients
+  - **Activation**: quantum finance time series, QLSTM, quantum reservoir computing, quantum stock prediction, financial quantum machine learning
+
+### Large-scale portfolio optimization on a trapped-ion quantum computer
+- [[quantum-time-series-finance]] - End-to-end pipeline for large-scale portfolio selection with cardinality constraints on trapped-ion processors (arXiv: 2602.23976)
+  - Demonstrates hardware-aware decomposition on trapped-ion quantum processors
+  - Addresses real-world portfolio optimization with cardinality constraints
+  - **Activation**: trapped-ion quantum computing, portfolio optimization, cardinality constraints
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### Probabilistic Prediction of Neural Dynamics via Autoregressive Flow Matching
