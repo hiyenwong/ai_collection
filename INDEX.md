@@ -1,4 +1,18 @@
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+## 2026-05-16 - Economics, Investment + Quantum (Cron Job)
+
+### A Hybrid Quantum-Classical Framework for Financial Volatility Forecasting Based on Quantum Circuit Born Machines
+- [[hybrid-quantum-temporal-forecasting]] - Hybrid LSTM-QCBM architecture for financial volatility distribution learning (arXiv: 2603.09789)
+  - Combines LSTM temporal features with Quantum Circuit Born Machine for conditional volatility distribution sampling
+  - NISQ-compatible: shallow circuits (depth 2-4, 4-8 qubits) with parameter-shift gradient optimization
+  - **Activation**: volatility forecasting, QCBM, quantum finance, financial time series, risk management
+
+### Quantum-Enhanced Temporal Embeddings via a Hybrid Seq2Seq Architecture
+- [[hybrid-quantum-temporal-forecasting]] - QLSTM Seq2Seq autoencoder for temporal embedding learning (arXiv: 2602.11578)
+  - Embeds depth-1 VQC within LSTM recurrent gates to shape latent manifold geometry
+  - Evaluated on 14 rolling S&P 500 windows; produces smoother trajectories and clearer regime transitions
+  - **Activation**: QLSTM, temporal embeddings, Seq2Seq, regime detection, quantum time series
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### Multi-Timescale Conductance Spiking Networks
