@@ -1,6 +1,20 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 ## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
 
+### KGPFN: Knowledge Graph Foundation Model via In-Context Learning
+- [[kgpf-knowledge-graph-foundation-model]] - Knowledge Graph Foundation Model using PFN for in-context learning across unseen graphs (arXiv: 2605.14907)
+  - Three-level context: relation graph message passing + NBFNet local + PFN global
+  - Multi-graph pretraining enables zero-shot adaptation via ICL alone
+  - Outperforms fine-tuned baselines on 57 KG benchmarks without fine-tuning
+  - **Activation**: knowledge graph foundation model, PFN for graphs, in-context KG reasoning, cross-graph transfer, NBFNet
+
+### Why Neighborhoods Matter: Traversal Context and Provenance in Agentic GraphRAG
+- [[agentic-graphrag-citation-provenance]] - Citation faithfulness in Agentic GraphRAG as trajectory-level problem (arXiv: 2605.15109)
+  - Cited evidence necessary but not sufficient for accurate answers
+  - Uncited traversal context and graph structure also influence outcomes
+  - Citation evaluation should consider provenance over broader retrieval trajectory
+  - **Activation**: agentic GraphRAG, citation faithfulness, retrieval trajectory, knowledge graph provenance, graph traversal
+
 ### Universal quantum resource distillation via composite generalised quantum Stein's lemma
 - [[universal-quantum-resource-distillation]] - Universal quantum resource distillation achieving optimal rates with no input state knowledge (arXiv: 2605.15174)
   - Extends quantum Stein's lemma to composite unknown-state hypothesis testing
