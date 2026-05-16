@@ -1,3 +1,40 @@
+## 2026-05-16 - Economics, Investment (Cron Job)
+
+### Constrained Counterdiabatic QAOA for Portfolio Optimization
+- [[cd-qaoa-portfolio]] - Counterdiabatic QAOA for constrained portfolio optimization with nested commutator gauge potentials (arXiv: 2605.06858)
+  - Counterdiabatic driving suppresses transitions from instantaneous ground state
+  - XY mixer preserves budget constraints, nested commutators add variational parameters
+  - Achieves faster convergence with fewer circuit layers under realistic constraints
+  - **Activation**: counterdiabatic QAOA, CCD-QAOA, portfolio optimization, quantum finance constraints
+
+### Learning Temporal Patterns in Financial Time Series: QLSTM vs QRC
+- [[quantum-time-series-finance]] - Quantum LSTM and Reservoir Computing for financial time series with amplitude encoding (arXiv: 2605.02656)
+  - Amplitude encoding enables efficient lagged observation representation under qubit constraints
+  - QRC requires only classical readout training, minimal quantum circuit optimization
+  - Quantum models match classical baselines in univariate, modestly outperform in multivariate
+  - **Activation**: quantum time series, QLSTM, quantum reservoir computing, financial forecasting
+
+### Quantum Computing for Financial Transformation
+- [[quantum-financial-transformation]] - Five-domain framework for quantum finance: portfolio, pricing, risk, ML, security (arXiv: 2604.08180)
+  - Evaluative logic: identify bottleneck, specify quantum primitive, compare benchmark, assess constraints
+  - Hybrid workflows strongest near-term; no universal quantum advantage claims
+  - Post-quantum cryptography already strategically necessary
+  - **Activation**: quantum finance strategy, hybrid quantum finance, post-quantum security
+
+### Quantum-Assisted Optimal Rebalancing with Uncorrelated Asset Selection
+- [[quantum-assisted-rebalancing]] - Walk-forward QUBO rebalancing with Ledoit-Wolf covariance and hierarchical clustering (arXiv: 2603.16904)
+  - Ledoit-Wolf shrinkage stabilizes high-dimensional covariance estimates
+  - Hierarchical clustering ensures diversification across uncorrelated clusters
+  - Entropy-regularized GA + minimum variance + equal weight benchmarks
+  - **Activation**: portfolio rebalancing, QUBO scheduling, quantum trading, hierarchical clustering
+
+### Single-Period Portfolio Selection via Information Projection
+- [[portfolio-information-projection]] - Information-theoretic CRRA portfolio optimization using Renyi divergence decomposition (arXiv: 2605.03184)
+  - CE growth rate decomposes into Renyi divergence, entropy, and log-partition terms
+  - Portfolio optimization as information projection onto risk-tilted market measure
+  - Generalizes Kelly criterion to arbitrary CRRA risk aversion
+  - **Activation**: information projection, Renyi divergence, CRRA portfolio, Kelly criterion
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Constrained Counterdiabatic QAOA for Portfolio Optimization

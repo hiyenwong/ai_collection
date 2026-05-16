@@ -1,81 +1,123 @@
 ---
 name: quantum-time-series-finance
-description: "Quantum time series forecasting methodology for financial applications using Quantum LSTM (QLSTM) and Quantum Reservoir Computing (QRC). Covers hybrid quantum-classical architectures for stock prediction, market analysis, and financial pattern recognition. Activation: quantum finance time series, QLSTM, quantum reservoir computing, quantum stock prediction, financial quantum machine learning, quantum LSTM, QRC finance."
+description: >
+  Quantum time series forecasting methodology for financial data using QLSTM and QRC.
+  Compares Quantum Long Short-Term Memory (QLSTM) and Quantum Reservoir Computing (QRC)
+  architectures for financial time-series prediction. Uses amplitude encoding for efficient
+  representation of lagged observations under realistic qubit constraints.
+  Use when: financial time series forecasting, quantum LSTM, quantum reservoir computing,
+  quantum machine learning for finance, stock prediction, temporal pattern recognition,
+  quantum-enhanced forecasting, amplitude encoding financial data.
 ---
 
-# Quantum Time Series Finance
+# Quantum Time Series Financial Forecasting
 
-Quantum time series forecasting for financial applications using QLSTM and QRC architectures.
+QLSTM and QRC architectures for financial time series prediction with amplitude encoding.
 
-## Architecture Comparison
+## Core Architectures
 
 ### Quantum LSTM (QLSTM)
 
-Replace classical gates with quantum variational circuits:
-- Input-to-hidden and hidden-to-hidden mappings become parameterized quantum circuits
-- Ansatz: rotation gates (RY/RZ) + entangling CZ layers
-- Measurement collapse produces gate activations (sigmoid/tanh)
-- Advantages: quantum expressivity, potential advantage on sequential data
-- Disadvantages: noisy intermediate-scale limitations, shallow circuits only
+Quantum-enhanced LSTM using parameterized quantum circuits for recurrent dynamics:
+
+Input: Amplitude-encoded lagged observations |x(t-lag), ..., x(t-1)>
+Recurrent: Parameterized quantum circuit U(theta) for cell state update
+Output: Measured quantum state to classical readout layer
 
 ### Quantum Reservoir Computing (QRC)
 
-Use quantum dynamics as fixed reservoir:
-- Input signal drives quantum system evolution
-- Internal dynamics are NOT trained (fixed Hamiltonian)
-- Only readout layer is classical linear regression
-- Advantage: avoids barren plateaus, minimal quantum resource requirements
-- Disadvantage: less flexible than fully trainable architectures
+Quantum reservoir with fixed random circuit and trainable readout:
 
-## Key Papers
+Input: Amplitude-encoded lagged window |x(t-w), ..., x(t-1)>
+Reservoir: Fixed random parameterized quantum circuit (no training)
+Readout: Classical linear regression on measurement outcomes
 
-- arXiv:2605.02656 - Comparative study of QLSTM vs QRC for financial time series
-- arXiv:2602.23976 - Large-scale portfolio optimization on trapped-ion quantum computer
-- arXiv:2604.08180 - Quantum computing for financial transformation review
+## Amplitude Encoding
 
-## Implementation Pattern
+Efficient state preparation for normalized lagged observations:
 
 ```python
-# QLSTM cell with variational quantum circuit
-import pennylane as qml
+import numpy as np
 
-def qlstm_cell(x_t, h_prev, n_qubits, weights):
-    # Encode input and previous hidden state
-    for i in range(n_qubits):
-        qml.RY(x_t[i], wires=i)
-        qml.RY(h_prev[i], wires=i)
-    
-    # Variational layers
-    for layer in range(n_layers):
-        for i in range(n_qubits):
-            qml.Rot(*weights[layer][i], wires=i)
-        for i in range(n_qubits - 1):
-            qml.CZ(wires=[i, i+1])
-    
-    # Measure for gate outputs
-    c_t = [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]
-    return c_t
+def amplitude_encode_lags(data, lag_window):
+    n_qubits = int(np.ceil(np.log2(lag_window)))
+    window = np.array(data[-lag_window:])
+    window = window / np.linalg.norm(window)
+    padded = np.zeros(2**n_qubits)
+    padded[:lag_window] = window
+    return padded, n_qubits
 ```
 
-## Workflow
+## Lag Structure Selection
 
-1. Data Preparation: Normalize financial time series (returns, volatility)
-2. Architecture Selection: QRC for quick prototyping, QLSTM for higher accuracy
-3. Encoding Strategy: Amplitude encoding for dense features, angle encoding for sparse
-4. Training: Hybrid gradient (classical backprop + parameter shift rule)
-5. Evaluation: Compare against classical LSTM/GRU baselines
+| Setting | Univariate | Multivariate |
+|---------|-----------|-------------|
+| Lag Window | 5-20 | 3-10 per feature |
+| Encoding | Single amplitude vector | Concatenated amplitudes |
+| Qubits Needed | ceil(log2(lag)) | ceil(log2(lag * features)) |
 
-## Pitfalls
+### Lag Selection Strategy
 
-- Quantum advantage only appears for specific problem structures
-- NISQ devices limited to shallow circuits (~10-20 qubits)
-- Financial data often has low signal-to-noise ratio masking quantum advantage
-- Always compare against classical baselines with similar parameter counts
+1. Autocorrelation analysis: Identify significant lags via ACF/PACF
+2. Mutual information: Select lags with highest MI to target
+3. Cross-validation: Test multiple lag windows on validation set
+4. Quantum constraint: Max lag limited by available qubits (2^n states)
 
-## Activation Keywords
+## Implementation Workflow
 
-- QLSTM, quantum LSTM
-- QRC finance, quantum reservoir computing finance
-- quantum time series prediction
-- quantum financial forecasting
-- hybrid quantum classical finance
+### Step 1: Data Preparation
+
+```python
+def prepare_financial_data(prices, lag=10, split=0.8):
+    returns = np.diff(np.log(prices))
+    X, y = [], []
+    for i in range(lag, len(returns)):
+        X.append(returns[i-lag:i])
+        y.append(returns[i])
+    X, y = np.array(X), np.array(y)
+    split_idx = int(len(X) * split)
+    return X[:split_idx], y[:split_idx], X[split_idx:], y[split_idx:]
+```
+
+### Step 2: QLSTM Circuit
+
+QLSTM cell with parameterized quantum circuit:
+- Encode input and hidden state as quantum amplitudes
+- Apply parameterized quantum layers for gate computation
+- Measure output gates (input, forget, cell, output)
+- Update cell and hidden states classically
+
+### Step 3: QRC Training
+
+Train readout layer for quantum reservoir computing:
+- Run fixed random quantum circuit on input states
+- Collect measurement outcomes as reservoir states
+- Train classical Ridge regression on reservoir states
+
+## Benchmarking
+
+Compare against classical baselines:
+- Classical LSTM
+- Classical Reservoir Computing (ESN)
+- ARIMA / Prophet
+
+Metrics: MSE, MAE, MAPE, directional accuracy
+
+## Key Findings
+
+1. Univariate: Quantum models match classical baselines with proper lag selection
+2. Multivariate: Quantum models can modestly outperform classical with suitable encoding
+3. Qubit efficiency: Amplitude encoding enables large lag windows with few qubits
+4. Training cost: QRC requires minimal quantum circuit training (only readout)
+
+## When to Use
+
+- Financial time series with limited training data
+- Need for quantum advantage demonstration in forecasting
+- Amplitude-encoded data with moderate feature dimensionality
+- Comparison studies of quantum vs classical architectures
+
+## References
+
+- arXiv: 2605.02656 - Learning Temporal Patterns in Financial Time Series: QLSTM vs QRC
+- Maheshwari, Hellstern, Zaefferer et al., 2026
