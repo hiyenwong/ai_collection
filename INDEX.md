@@ -1,3 +1,21 @@
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy and open benchmarking framework for SNN training algorithms, unifying surrogate-gradient, local/three-factor, STDP-inspired, and conversion methods (arXiv: 2605.15058)
+  - Introduces unified taxonomy: training strategy × learning signal × locality (temporal + spatial)
+  - NeuroTrain: open snnTorch-based framework for reproducible cross-method benchmarking across 8 datasets
+  - Benchmarks 10+ training rules (BPTT, E-prop, DECOLLE, OTTT, ESD-RTRL, etc.) under consistent conditions
+  - Reveals limited portability of training rules across datasets/architectures; ~850 GPU hours for campaign
+  - **Activation**: NeuroTrain, SNN training survey, local learning rules, spiking neural network benchmark, eligibility traces, STDP-inspired learning, snnTorch framework
+
+### Multi-Timescale Conductance Spiking Networks: A Sparse, Gradient-Trainable Framework with Rich Firing Dynamics for Enhanced Temporal Processing
+- [[multi-timescale-conductance-spiking-networks]] - Conductance-based neuron model with fast/slow/ultra-slow timescales enabling rich firing regimes and standard BPTT training without surrogate gradients (arXiv: 2605.11835)
+  - I-V curve shaping via conductance elements produces tonic, phasic, and bursting responses in single model
+  - Fully differentiable spiking dynamics — no surrogate gradient approximation needed
+  - Outperforms LIF and SOTA AdLIF on Mackey-Glass chaotic time series at predictability horizon
+  - Operates in sparser regime; naturally maps to analog neuromorphic circuits
+  - **Activation**: multi-timescale conductance, MTC spiking network, conductance-based neuron, surrogate-free SNN, I-V curve shaping, spiking regression
+
 ## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Ensemble Engineering to Overcome Destructive Cancellation in Quantum Measurements
