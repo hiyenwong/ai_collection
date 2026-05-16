@@ -1,3 +1,12 @@
+## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
+- [[hybrid-quantum-audit]] - Audit quantum advantage in hybrid quantum-classical optimization systems (arXiv: dwave-hybrid-2026)
+  - Decompose hybrid pipelines into quantum vs classical contributions
+  - Define metrics: Quantum Improvement Rate, Solution Space Exploration Index, Hybrid Synergy Score
+  - Statistical protocol with ≥30 iterations, bootstrap confidence intervals, effect sizes
+  - **Activation**: hybrid quantum audit, D-Wave hybrid, quantum advantage audit, quantum contribution measurement
+
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks
