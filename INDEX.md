@@ -1,3 +1,18 @@
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[mamba-spike-forecaster-bci]] - Single Mamba forecaster simultaneously predicts neural population activity AND decodes behavior from Neuropixels-scale spike counts (arXiv: 2605.12999)
+  - Mouse choice decoded at 75.7% (3-class, 2.3× chance), stimulus side at 66.1% (2× chance)
+  - Predicted rates beat matched-context (500ms) linear decoders by 4-6 pp on behavioral targets
+  - ~100-150 trial calibration brings linear readout within 1-2pp of asymptote
+  - **Activation**: spike forecasting, BCI decoding, neural population dynamics, Mamba neural forecaster, Neuropixels, closed-loop BCI
+
+### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons Through Human Language
+- [[neural-code-speak]] - Closed-loop pipeline using digital twins + LLMs + text-to-image to generate interpretable semantic descriptions of individual neuron selectivity in V1 and V4 (arXiv: 2605.12485)
+  - V4: 96.1% neurons driven above 95th percentile, 97.6% below 5th percentile via synthesized hypothesis images
+  - Translates image-to-text-to-hypothesis for neural selectivity beyond V1 where no mathematical model exists
+  - **Activation**: neural characterization, neuron selectivity, digital twin neuroscience, semantic hypothesis, V1 V4 neuron, neural code interpretation
+
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
