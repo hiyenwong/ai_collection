@@ -1,4 +1,12 @@
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
+- [[quantum-analog-encoding-finance]] - QSVT-based quantum state preparation for correlated Gaussian distributions with O(log N) gate complexity (arXiv: 2604.22463)
+  - Uses Quantum Singular Value Transformation to prepare correlated Gaussian states from covariance matrix block-encoding
+  - Exponential map via linear combination of unitaries enables rough Bergomi model simulation
+  - Polylogarithmic complexity provides potential exponential speedup over classical sampling
+  - **Activation**: quantum analog encoding, rough volatility quantum, QSVT finance, quantum state preparation, rough Bergomi model
+
 ## 2026-05-16 - Economics, Investment + Quantum (Cron Job)
 
 ### A Hybrid Quantum-Classical Framework for Financial Volatility Forecasting Based on Quantum Circuit Born Machines
@@ -104,6 +112,14 @@
   - **Activation**: information projection, Renyi divergence, CRRA portfolio, Kelly criterion
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
+- [[quantum-analog-encoding-finance]] - QSVT-based quantum state preparation for correlated Gaussian distributions with O(log N) gate complexity (arXiv: 2604.22463)
+  - Uses Quantum Singular Value Transformation to prepare correlated Gaussian states from covariance matrix block-encoding
+  - Exponential map via linear combination of unitaries enables rough Bergomi model simulation
+  - Polylogarithmic complexity provides potential exponential speedup over classical sampling
+  - **Activation**: quantum analog encoding, rough volatility quantum, QSVT finance, quantum state preparation, rough Bergomi model
+
 
 ### Constrained Counterdiabatic QAOA for Portfolio Optimization
 - [[qaoa-constrained-portfolio-optimization]] - Constrained portfolio optimization via CCD-QAOA with XY-mixer and nested commutator CD terms (arXiv: 2605.06858)
@@ -325,6 +341,14 @@
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
+- [[quantum-analog-encoding-finance]] - QSVT-based quantum state preparation for correlated Gaussian distributions with O(log N) gate complexity (arXiv: 2604.22463)
+  - Uses Quantum Singular Value Transformation to prepare correlated Gaussian states from covariance matrix block-encoding
+  - Exponential map via linear combination of unitaries enables rough Bergomi model simulation
+  - Polylogarithmic complexity provides potential exponential speedup over classical sampling
+  - **Activation**: quantum analog encoding, rough volatility quantum, QSVT finance, quantum state preparation, rough Bergomi model
+
+
 ### Quantum Temporal Convolutional Neural Networks for Equity Return Prediction
 - [[quantum-tcnn-equity-prediction]] - QTCNN combines classical temporal encoder with quantum convolution circuits for cross-sectional equity return prediction, achieving Sharpe ratio of 0.538 (72% improvement over classical baselines) (arXiv: 2512.06630)
   - Core point: Classical TCN extracts multi-scale temporal patterns, quantum circuit leverages superposition/entanglement for enhanced feature representation
@@ -369,6 +393,14 @@
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
+- [[quantum-analog-encoding-finance]] - QSVT-based quantum state preparation for correlated Gaussian distributions with O(log N) gate complexity (arXiv: 2604.22463)
+  - Uses Quantum Singular Value Transformation to prepare correlated Gaussian states from covariance matrix block-encoding
+  - Exponential map via linear combination of unitaries enables rough Bergomi model simulation
+  - Polylogarithmic complexity provides potential exponential speedup over classical sampling
+  - **Activation**: quantum analog encoding, rough volatility quantum, QSVT finance, quantum state preparation, rough Bergomi model
+
+
 ### Large-scale portfolio optimization using Pauli Correlation Encoding
 - [[pauli-correlation-portfolio-optimization]] - 基于Pauli关联编码的大规模量子组合优化，单量子比特编码多变量实现250+资产优化 (arXiv: 2511.21305)
   - 核心要点：通过市场图分割将高维组合优化分解为强关联资产子组合
@@ -408,6 +440,14 @@
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
+- [[quantum-analog-encoding-finance]] - QSVT-based quantum state preparation for correlated Gaussian distributions with O(log N) gate complexity (arXiv: 2604.22463)
+  - Uses Quantum Singular Value Transformation to prepare correlated Gaussian states from covariance matrix block-encoding
+  - Exponential map via linear combination of unitaries enables rough Bergomi model simulation
+  - Polylogarithmic complexity provides potential exponential speedup over classical sampling
+  - **Activation**: quantum analog encoding, rough volatility quantum, QSVT finance, quantum state preparation, rough Bergomi model
+
+
 ### Noise-Induced Landscape Distortion in QAOA for Constrained Binary Optimization
 - [[quantum-portfolio-optimization]] - Device-agnostic LSC metric quantifies QAOA noise distortion on IBM Heron r2 hardware (arXiv: 2604.19426v1)
   - Hardware noise compresses landscape span by 24-30% without displacing global minimum
@@ -423,6 +463,14 @@
 
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Quantum analog-encoding for correlated Gaussian vectors and their exponentiation with application to rough volatility
+- [[quantum-analog-encoding-finance]] - QSVT-based quantum state preparation for correlated Gaussian distributions with O(log N) gate complexity (arXiv: 2604.22463)
+  - Uses Quantum Singular Value Transformation to prepare correlated Gaussian states from covariance matrix block-encoding
+  - Exponential map via linear combination of unitaries enables rough Bergomi model simulation
+  - Polylogarithmic complexity provides potential exponential speedup over classical sampling
+  - **Activation**: quantum analog encoding, rough volatility quantum, QSVT finance, quantum state preparation, rough Bergomi model
+
   - Counterdiabatic (CD) extension of QAOA improves approximation ratios at fixed depth
   - XY-mixer naturally enforces cardinality constraints without penalty distortion
   - Nested commutators approximate adiabatic gauge potentials for CD terms
