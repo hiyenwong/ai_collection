@@ -1,4 +1,27 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
+## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
+
+### Universal quantum resource distillation via composite generalised quantum Stein's lemma
+- [[universal-quantum-resource-distillation]] - Universal quantum resource distillation achieving optimal rates with no input state knowledge (arXiv: 2605.15174)
+  - Extends quantum Stein's lemma to composite unknown-state hypothesis testing
+  - Optimal distillation rates with zero input state knowledge
+  - Applies to entanglement, magic states, and coherence distillation
+  - **Activation**: universal resource distillation, quantum Stein's lemma, entanglement distillation
+
+### Simultaneously Minimizing Storage and Bandwidth Under Exact Repair With Quantum Entanglement
+- [[quantum-entanglement-distributed-storage]] - Entanglement-assisted distributed storage minimizing both storage and bandwidth under exact repair (arXiv: 2605.12455)
+  - Simultaneously minimizes storage α and repair bandwidth dβ_q under exact repair
+  - Combines product-matrix framework with CSS stabilizer formalism
+  - Optimal point achievable when d ≥ 2k-2
+  - **Activation**: quantum distributed storage, entanglement-assisted codes, exact repair
+
+### Univariate Bicycle Quantum LDPC Codes + Multiple-Bases BP List Decoding
+- [[quantum-ldpc-decoding-optimization]] - QLDPC code design with UB codes and structured decoding diversity via MBBP-LD (arXiv: 2605.14173)
+  - Univariate Bicycle codes reduce design space from 2-polynomial to 1-polynomial search
+  - MBBP-LD generates structured decoding diversity via cycle-free subtree decompositions
+  - [[256,2]] UB codes match [[1201,1,25]] surface code performance
+  - **Activation**: QLDPC codes, bicycle codes, belief propagation, list decoding
+
 
 ### Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
 - [[dual-axis-zebrafish-circuits]] - 斑马鱼顶盖微环路双轴归因框架，通过SNN消融量化子回路在能量效率和鲁棒性中的独立计算角色，并迁移至ANN架构 (arXiv: 2605.13924v1)
