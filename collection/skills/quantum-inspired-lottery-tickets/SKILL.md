@@ -1,73 +1,130 @@
 ---
 name: quantum-inspired-lottery-tickets
-description: >
-  Quantum-inspired classical algorithm for discovering winning lottery tickets
-  (sparse subnetworks) in neural networks. Uses quantum state simulation techniques
-  to efficiently identify important weights without full training. Use when: neural
-  network pruning, lottery ticket hypothesis, sparse subnetwork discovery, quantum-inspired
-  ML, efficient model compression. Trigger words: lottery ticket, neural network pruning,
-  quantum-inspired classical, sparse subnetwork, weight importance.
+description: "Quantum-inspired classical algorithm for finding winning lottery tickets (sparse subnetworks) in neural networks via ridgelet transform sampling. Runs in O(poly(D)) time, matching quantum sampling quality classically. Use when: neural network pruning, finding sparse subnetworks, lottery ticket hypothesis, quantum-inspired ML, ridgelet transform, or efficient neural architecture search."
 ---
 
-# Quantum-Inspired Lottery Ticket Discovery
+# Quantum-Inspired Lottery Tickets
 
-Apply quantum state simulation techniques to classically identify winning lottery
-tickets (sparse subnetworks that match full network performance) in neural networks.
+## Overview
 
-## Core Insight
+The "lottery ticket hypothesis" states that dense neural networks contain sparse subnetworks that can match full-network performance. Finding these subnetworks classically is exponential in data dimension D. A quantum algorithm achieved O(D) sampling time, but this skill implements a **fully classical** O(poly(D)) alternative using the ridgelet transform — matching quantum quality without quantum hardware.
 
-Quantum algorithms can efficiently sample from distributions over weight subsets.
-The classical simulation leverages:
+**Key result**: O(poly(D)) runtime with empirical risk comparable to optimal sampling, vs. exp(O(D)) naive classical approach.
 
-1. **Low-rank approximation**: Approximate weight matrix spectrum using quantum-inspired sampling
-2. **Importance scoring**: Use leverage scores (quantum-inspired) to rank weights
-3. **Iterative refinement**: Alternating between sparse mask selection and weight re-training
+## Ridgelet Transform for Network Pruning
 
-## Algorithm
+### Core Idea
 
-### Phase 1: Quantum-Inspied Importance Scoring
+A shallow neural network with hidden layer parameters {(a_i, b_i)} and output weights {c_i} can be represented via the ridgelet transform:
 
-For weight matrix W of shape (m, n):
+```
+f(x) = ∫ c(a,b) · σ(a·x + b) dμ(a,b)
+```
 
-1. Compute approximate SVD using quantum-inspired Frieze-Kannan-Vempala sampling
-2. Extract top-k singular vectors via subspace iteration
-3. Score each weight w_ij by its contribution to top singular directions:
-   score(i,j) = sum_{r=1}^k sigma_r * |u_r[i] * v_r[j]|
+The ridgelet transform `c(a,b)` provides an **optimized probability distribution** for sampling which hidden nodes to keep.
 
-### Phase 2: Mask Selection
+### Algorithm
 
-1. Sort weights by importance score
-2. Select top p% weights to keep (sparsity = 1-p/100)
-3. Create binary mask M where M[i,j] = 1 if w_ij is selected
+```python
+def quantum_inspired_lottery_ticket(X, y, n_hidden, sparsity_ratio, hidden_layer_width=10000):
+    """
+    Find winning lottery ticket via quantum-inspired ridgelet sampling.
+    
+    X: input data (N × D)
+    y: target labels
+    n_hidden: number of hidden nodes to keep
+    sparsity_ratio: fraction of nodes to retain
+    """
+    # Step 1: Train over-parameterized network
+    wide_net = train_wide_network(X, y, width=hidden_layer_width)
+    
+    # Step 2: Compute ridgelet transform of output weights
+    # c(a,b) ≈ <output_gradient, σ(a·x + b)>
+    ridgelet_coeffs = compute_ridgelet_transform(wide_net, X, y)
+    
+    # Step 3: Build probability distribution from ridgelet magnitudes
+    probabilities = np.abs(ridgelet_coeffs) ** 2
+    probabilities /= probabilities.sum()
+    
+    # Step 4: Sample n_hidden nodes according to optimized distribution
+    selected_indices = np.random.choice(
+        hidden_layer_width, size=n_hidden, 
+        p=probabilities, replace=False
+    )
+    
+    # Step 5: Extract and fine-tune subnetwork
+    subnetwork = extract_subnetwork(wide_net, selected_indices)
+    subnetwork = fine_tune(subnetwork, X, y)
+    
+    return subnetwork
+```
 
-### Phase 3: Rewind and Re-train
+### Why This Beats Naive Sampling
 
-1. Reset selected weights to initialization values (lottery ticket reset)
-2. Re-train only the selected subnetwork
-3. Validate performance matches full network
+| Method | Runtime | Quality |
+|--------|---------|---------|
+| Uniform random | O(1) per sample | Poor (high empirical risk) |
+| Optimal (exhaustive) | exp(O(D)) | Best |
+| Quantum | O(D) | Best |
+| **This (quantum-inspired)** | **O(poly(D))** | **≈ Quantum** |
 
-## Key Parameters
+## Ridgelet Transform Computation
 
-- **Sparsity target**: 90-99% typical for winning tickets
-- **SVD rank k**: O(log(min(m,n))) sufficient for good approximation
-- **Sample complexity**: O(k^2/epsilon^2) for epsilon-accurate scores
+The key computational insight: the ridgelet transform can be approximated efficiently:
 
-## Advantages Over Classical Methods
+```python
+def compute_ridgelet_transform(network, X, y, n_samples=10000):
+    """Approximate ridgelet transform via Monte Carlo."""
+    # For each candidate (a, b) direction:
+    # c(a,b) = (1/N) Σᵢ [∂L/∂f(xᵢ)] · σ(a·xᵢ + b)
+    
+    gradients = compute_output_gradients(network, X, y)
+    
+    # Sample candidate directions
+    a_candidates = np.random.randn(n_samples, X.shape[1])
+    b_candidates = np.random.randn(n_samples)
+    
+    # Compute transform values
+    ridgelet_coeffs = np.zeros(n_samples)
+    for i in range(n_samples):
+        activation = np.maximum(0, X @ a_candidates[i] + b_candidates[i])
+        ridgelet_coeffs[i] = np.mean(gradients * activation)
+    
+    return ridgelet_coeffs
+```
 
-- **Magnitude pruning**: Only uses absolute values |w_ij|
-- **This method**: Uses spectral importance, capturing weight interactions
-- **Gradient-based**: Requires full backward pass
-- **This method**: Forward-only scoring via matrix sampling
+## Practical Guidelines
 
-## Complexity
+### When to Use
 
-- **Time**: O(nnz * k / epsilon^2) where nnz = non-zeros in W
-- **Space**: O(nnz) — no need to store full SVD
-- **Practical**: 2-5x faster than magnitude pruning at same accuracy
+- **Network compression**: Reduce model size while maintaining accuracy
+- **Edge deployment**: Find subnetworks that fit on-device
+- **Training acceleration**: Train wide network once, extract many subnetworks
+- **Architecture search**: Automated neural architecture selection
 
-## Applications
+### Parameter Selection
 
-- Model compression for edge deployment
-- Understanding neural network redundancy
-- Transfer learning with sparse initialization
-- Efficient fine-tuning of large models
+| Parameter | Rule of Thumb |
+|-----------|---------------|
+| Over-parameterization | 10-100x target width |
+| Ridgelet samples | 1000-10000 |
+| Sparsity ratio | 1-10% for best results |
+| Fine-tuning epochs | 10-50% of original training |
+
+## Key Insights
+
+1. **Ridgelet transform ≈ importance weights**: Larger |c(a,b)| means that direction carries more information about the target function
+2. **Quantum advantage is illusory here**: The classical polynomial algorithm removes the purported quantum speedup
+3. **Dequantization success**: Many "quantum ML advantages" can be matched classically with the right mathematical tools
+
+## Applications to Finance
+
+The lottery ticket approach transfers directly to financial modeling:
+
+- **Factor model compression**: Find minimal set of predictive factors
+- **Time series forecasting**: Sparse subnetworks for market prediction
+- **Risk modeling**: Compress large risk networks for faster computation
+
+## Related Papers
+
+- arXiv:2605.13979 — Winning Lottery Tickets in Neural Networks via a Quantum-Inspired Classical Algorithm (Isogai et al., 2026)
