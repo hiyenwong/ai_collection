@@ -1,3 +1,19 @@
+## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
+
+### MQTT Across a Raspberry Pi 5 IoT Network Utilizing Quantum-resistant Signature Algorithms
+- [[post-quantum-crypto-analysis]] - Analyze and deploy PQC (FALCON, Kyber, Dilithium) on IoT/edge devices, benchmarking overhead and security trade-offs (arXiv: 2605.13698)
+  - FALCON (NIST-selected lattice-based signature) deployed on Raspberry Pi 5 MQTT network
+  - Quantifies PQC signing/verification latency, memory usage, and MQTT packet overhead on constrained hardware
+  - Provides deployment framework for quantum-safe IoT infrastructure transition
+  - **Activation**: post-quantum cryptography, PQC, FALCON signature, quantum-resistant IoT, lattice-based crypto, NIST PQC, quantum-safe protocol
+
+### Zeno-Enhanced Probabilistic Error Cancellation with Quantum Error Detection Codes
+- [[quantum-error-cancellation]] - Hybrid QED+PEC error mitigation achieving 3-4 orders of magnitude lower sampling overhead for NISQ circuits (arXiv: 2605.12149)
+  - Post-selection maps physical noise to weaker logical channel, then PEC cancels residual
+  - First-order QED+PEC reaches n=200 physical qubits at F≈0.956
+  - Discrete-Zeno trade-off: cheap detection reshapes effective channel rather than adding overhead
+  - **Activation**: quantum error mitigation, probabilistic error cancellation, PEC, zero-noise extrapolation, ZNE, QEDC, Zeno effect, NISQ error mitigation
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
