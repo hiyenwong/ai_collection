@@ -1,4 +1,13 @@
 
+## 2026-05-16 - 量子优化 (Cron Job)
+
+### QUACOD: Quantum Optimization via Coordinate Descent for Scalable Drone Scheduling
+- [[quacod-quantum-coordinate-descent]] - Decomposes large-scale combinatorial optimization into quantum-solvable subproblems via coordinate descent, enabling NISQ hardware to handle 5x more drones and 35x more routes than direct approaches (arXiv: 2605.14001)
+  - 核心要点 1: 坐标下降框架将高复杂度问题分解为多个子问题，每个子问题用量子优化（QAOA/VQE）求解
+  - 核心要点 2: 硬件高效电路在坐标下降子问题中表现优异，推动NISQ时代实用量子计算
+  - **Activation**: quacod, quantum coordinate descent, quantum optimization scaling, large-scale qubo, iterative quantum optimization, drone scheduling quantum, 坐标下降量子优化
+
+
 ## 2026-05-16 - 经济学、投资 (Cron Job) - 量子金融专题
 
 ### Quantum Portfolio Optimization with Expert Analysis Evaluation
