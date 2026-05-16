@@ -1,3 +1,22 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### Cortical microcircuit information flux optimization (already covered)
+- [[cortical-microcircuit-information-flux]] — Information flux in cortical layer 5 microcircuits via Recurrence Resonance and effective biases (arXiv: 2605.14680)
+  - **Activation**: cortical microcircuit, information flux, recurrence resonance, neural circuit optimization
+
+### REALM: Retrospective Encoder Alignment for LFP Modeling (already covered)
+- [[realm-lfp-retrospective-decoding]] — Offline-to-online distillation for causal LFP decoding in BCIs (arXiv: 2605.14867)
+  - **Activation**: realm, LFP decoding, BCI, retrospective distillation
+
+### L-PACT: Locked Predictive-Aligned Cross-modal Testing (already covered)
+- [[lpact-brain-lm-alignment-evaluation]] — Rigorous brain-LM alignment evaluation with multi-gate validation (arXiv: 2605.14025)
+  - **Activation**: brain-language model alignment, L-PACT, neural prediction scores
+
+### Standalone Skills Synced
+- [[bcpnn-native-explainability]], [[chaos-synchrony-ei-networks]], [[cortical-microcircuit-information-flux-optimization]], [[ei-network-chaos-synchrony-theory]], [[qlam-quantum-attention-memory]], [[quantum-topology-spectroscopy]], [[sealkd-snn-knowledge-distillation]]
+
+**Total ai_collection skills**: 1264 | **Coverage**: 100% | **0 new skills, 7 synced**
+
 ## 2026-05-16 - Economics & Investment + Quantum Mechanics (Cron Job)
 
 ### Learning Temporal Patterns in Financial Time Series: A Comparative Study of QLSTM and QRC
