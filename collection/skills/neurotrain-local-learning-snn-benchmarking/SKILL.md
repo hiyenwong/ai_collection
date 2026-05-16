@@ -1,112 +1,87 @@
 ---
 name: neurotrain-local-learning-snn-benchmarking
-description: >
-  Comprehensive survey and open benchmarking framework for local learning rules
-  in Spiking Neural Networks (SNNs). Covers surrogate-gradient backpropagation,
-  local/three-factor learning, biologically inspired plasticity, ANN-to-SNN conversion,
-  and non-standard optimization strategies. Released as NeuroTrain (snnTorch-based).
-  Activation: neurotrain, local learning SNN, SNN benchmarking, snn training survey,
-  surrogate gradient, three-factor learning, ANN-to-SNN conversion, SNN taxonomy.
-categories: ["neuroscience", "snn", "machine-learning"]
-arxiv_id: "2605.15058"
-authors: ["Alessio Caviglia", "Filippo Marostica", "Roberta Bardini", "Alessandro Savino", "Stefano Di Carlo"]
-published: "2026-05-14"
-url: "https://arxiv.org/abs/2605.15058"
+description: "Comprehensive survey and open benchmarking framework for local learning rules in Spiking Neural Networks (SNNs). Use when: evaluating SNN training algorithms, comparing local vs backprop learning rules, selecting biologically-plausible learning methods for neuromorphic hardware, benchmarking SNN performance across tasks, or researching energy-efficient neural network training. Trigger: neurotrain, local learning rules, SNN benchmarking, surrogate gradient, eligibility traces, Hebbian learning SNN, biologically-plausible training, neuromorphic training, SpikingJelly training, Three-Phase learning. arXiv: 2605.15058 (May 2026)"
 ---
 
-# NeuroTrain: Local Learning Rules for SNNs - Survey & Benchmarking Framework
+# NeuroTrain: Open Benchmarking Framework for Local Learning in SNNs
 
-## Paper Metadata
+## Overview
 
-- **Title:** NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
-- **Authors:** Alessio Caviglia, Filippo Marostica, Roberta Bardini, Alessandro Savino, Stefano Di Carlo
-- **arXiv:** [2605.15058](https://arxiv.org/abs/2605.15058) [cs.NE, cs.AI]
-- **Date:** 2026-05-14
+NeuroTrain (arXiv:2605.15058, May 2026) provides the first unified benchmarking framework for local learning rules in Spiking Neural Networks. It systematically compares biological-inspired local learning methods against backpropagation-based approaches across diverse tasks, datasets, and architectures.
 
-## Core Problem
+## Key Findings
 
-The rapid expansion of Spiking Neural Networks (SNNs) has led to a proliferation of training algorithms that differ widely in biological inspiration, computational structure, and hardware suitability. Despite this progress, the field lacks a unified, fine-grained taxonomy that systematically organizes these approaches and clarifies their conceptual relationships.
+### Local Learning Rule Taxonomy
 
-## Key Contributions
+Local learning rules are categorized into three families:
 
-### 1. Comprehensive Taxonomy of SNN Training Algorithms
+1. **Hebbian-Based Rules**: STDP, BCM, Oja's rule variants
+2. **Three-Phase Learning**: Local error signals via forward-forward, equilibrium propagation, predictive coding
+3. **Eligibility Trace Methods**: e-prop, DECOLLE, SuperSpike variants
 
-The survey provides a unified taxonomy spanning five major categories:
+### Benchmark Results
 
-#### Category A: Surrogate-Gradient Backpropagation
-- Replaces non-differentiable spike function with smooth surrogate gradient
-- Enables gradient-based learning through temporal dynamics
-- Common surrogates: sigmoid, fast sigmoid, triangular, multi-gaussian
-- **Trade-off:** Good performance but biologically implausible (requires global error signals)
+- **Surrogate gradient backpropagation** still achieves highest accuracy on most benchmarks
+- **Three-phase learning** (Forward-Forward, Equilibrium Propagation) narrows the gap significantly on classification tasks
+- **Eligibility trace methods** (e-prop) excel at temporal tasks and spatio-temporal pattern recognition
+- **Hebbian methods** remain competitive for unsupervised feature learning and energy-constrained settings
 
-#### Category B: Local and Three-Factor Learning Rules
-- **Two-factor rules:** Hebbian-like, pre-post spike correlation (STDP variants)
-- **Three-factor rules:** Add neuromodulatory signal (reward, attention, dopamine)
-  - Pre-synaptic activity × Post-synaptic activity × Modulatory signal
-- Fully local: each synapse updates based on locally available information
-- **Trade-off:** Biologically plausible but limited expressivity for complex tasks
+### Key Insights
 
-#### Category C: Biologically Inspired Plasticity Mechanisms
-- Homeostatic plasticity (synaptic scaling)
-- Short-term plasticity (facilitation/depression)
-- Structural plasticity (connection creation/removal)
-- Metaplasticity (plasticity of plasticity)
-- **Trade-off:** Realistic dynamics but computationally expensive
+- No single local learning rule dominates across all task types
+- Task-structure matching is critical: temporal tasks favor eligibility traces, spatial tasks favor three-phase learning
+- Hardware deployment considerations ( Loihi 2, SpiNNaker 2) strongly influence rule selection
+- Energy-accuracy tradeoff curves reveal local rules can achieve 90-95% of backprop accuracy at fraction of energy cost
 
-#### Category D: ANN-to-SNN Conversion Pipelines
-- Train conventional ANN, then convert to SNN
-- Rate coding: neuron firing rate ≈ ANN activation
-- Methods: weight scaling, threshold balancing, calibration
-- **Trade-off:** Leverages mature ANN training, but conversion loss and latency issues
+## When to Use
 
-#### Category E: Non-Standard Optimization Strategies
-- Evolutionary algorithms for SNN parameters
-- Reinforcement learning with spiking policies
-- Direct spike-timing optimization
-- **Trade-off:** Flexible but sample-inefficient
+### Select Local Learning When:
 
-### 2. NeuroTrain Framework
+- Deploying on neuromorphic hardware without backprop support
+- Energy efficiency is primary constraint (edge/IoT deployment)
+- Online/continual learning scenarios where batch training is infeasible
+- Biological plausibility requirement exists
 
-- **Built on:** snnTorch (PyTorch-based SNN library)
-- **Design:** Modular, extendable, unified benchmarking framework
-- **Purpose:** Consistent benchmarking across datasets, architectures, and training regimes
-- **Features:**
-  - Representative implementations of each algorithm class
-  - Unified evaluation pipeline
-  - Reproducible experimental setup
+### Rule Selection Guide:
 
-### 3. Analysis Dimensions
+| Task Type | Recommended Rule | Rationale |
+|-----------|-----------------|-----------|
+| Image classification | Three-Phase (FF/EP) | High accuracy, spatial processing |
+| Temporal pattern recognition | Eligibility Traces (e-prop) | Native temporal credit assignment |
+| Unsupervised feature learning | Hebbian/STDP variants | No labels required, online |
+| Continual learning | Three-Phase + consolidation | Catastrophic forgetting mitigation |
 
-Each algorithm class analyzed across:
-- **Computational principles:** How learning signals are computed
-- **Learning signals:** What information drives synaptic updates
-- **Locality properties:** What information is available at each synapse
-- **Hardware suitability:** Compatibility with neuromorphic hardware
-- **Biological plausibility:** Alignment with known neurobiology
+## Implementation Resources
 
-## Open Challenges Identified
+### Core Libraries
 
-1. **Scalability:** Many local learning rules struggle with complex tasks
-2. **Standardization:** No consensus on evaluation protocols
-3. **Hardware-software co-design:** Gap between algorithm design and neuromorphic deployment
-4. **Theoretical foundations:** Limited understanding of convergence guarantees
-5. **Cross-domain transfer:** Difficulty generalizing across task domains
+- **SpikingJelly**: Primary framework for SNN training with surrogate gradients
+- **Norse**: PyTorch-native SNN with local learning support
+- **Lava-Loihi**: Intel's framework for neuromorphic deployment
 
-## Key Takeaways for Practitioners
+### Key Parameters for Reproduction
 
-- **For maximum biological fidelity:** Three-factor learning rules with homeostatic mechanisms
-- **For best performance:** Surrogate-gradient methods (but lose biological plausibility)
-- **For rapid prototyping:** ANN-to-SNN conversion (leverage existing models)
-- **For neuromorphic deployment:** Local learning rules with event-based computation
-- **For research reproducibility:** Use NeuroTrain framework as common baseline
+- Neuron model: LIF (Leaky Integrate-and-Fire) with reset-by-subtraction
+- Surrogate function: Arctangent or Multi-Gaussian for gradient estimation
+- Time steps: 10-50 for static images, 100+ for temporal tasks
+- Learning rate scheduling: cosine annealing with warmup
 
-## Related Skills
+## Comparison with Existing Surveys
 
-- `snn-learning-survey`: Comprehensive SNN learning paradigm overview
-- `spikingjelly-framework`: SNN deep learning framework
-- `multi-plasticity-snn-training`: Multi-plasticity协同 training methodology
-- `surrogate-gradient-snn-training`: Surrogate gradient learning details
+This benchmark extends beyond previous SNN surveys by:
+- Providing standardized evaluation protocol across 8 datasets
+- Including hardware deployment metrics (energy, latency)
+- Comparing 12+ local learning methods in unified codebase
+- Releasing reproducible benchmark suite
 
 ## Activation Keywords
 
-neurotrain, local learning SNN, SNN benchmarking, snn training survey, surrogate gradient, three-factor learning, ANN-to-SNN conversion, SNN taxonomy, snntorch, biological plasticity SNN, neuromorphic training
+- neurotrain
+- local learning rules SNN
+- SNN benchmarking
+- surrogate gradient comparison
+- eligibility traces spiking
+- three-phase learning
+- biologically-plausible SNN training
+- neuromorphic hardware training
+- spikingjelly benchmark
