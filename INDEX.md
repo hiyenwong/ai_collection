@@ -1,3 +1,18 @@
+## 2026-05-16 - Neuroscience Research (Cron Job)
+
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model for causal BCI decoding via retrospective Mamba-2 distillation (arXiv: 2605.14867)
+  - Three-stage pipeline: BiMamba-2 self-supervised pretraining → retrospective distillation to causal student → behavior decoding
+  - Achieves SOTA LFP-only decoding, 2× fewer params, 10× faster training, deployable on Jetson/RPi
+  - **Activation**: LFP decoding, BCI, Mamba-2, knowledge distillation, causal neural decoding, wireless BCI
+
+### Multi-Timescale Conductance Spiking Networks (MTC-SNN)
+- [[mtc-conductance-spiking-networks]] - Gradient-trainable SNN with exact BPTT via multi-timescale conductance-based neurons (arXiv: 2605.11835)
+  - Four conductance timescales enable tonic, phasic, bursting regimes without surrogate gradients
+  - Outperforms LIF/AdLIF on Mackey-Glass forecasting with sparser activity
+  - **Activation**: conductance neuron, exact BPTT, SNN dynamics, temporal regression, neuromorphic hardware, I-V curve shaping
+
+
 
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
