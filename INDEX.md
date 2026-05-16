@@ -1,5 +1,12 @@
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
+### Probabilistic Prediction of Neural Dynamics via Autoregressive Flow Matching
+- [[autoregressive-flow-matching-neural-dynamics]] - Flow matching generative model adapted for probabilistic short-term neural dynamics forecasting, outperforms GLM on Algonauts 2025 fMRI challenge (arXiv: 2604.11178)
+  - Learns conditional distribution of future BOLD activity from past neural dynamics + concurrent sensory input
+  - Past BOLD dynamics is dominant predictor; autoregressive factorization yields consistent short-horizon gains
+  - Subject-specific models on Algonauts 2025 Challenge dataset with widespread cortical prediction improvement
+  - **Activation**: autoregressive flow matching, neural dynamics prediction, fMRI forecasting, flow matching neuroscience, BOLD prediction, Algonauts challenge
+
 ### REALM: Retrospective Encoder Alignment for LFP Modeling
 - [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model for causal BCI decoding via retrospective Mamba-2 distillation (arXiv: 2605.14867)
   - Three-stage pipeline: BiMamba-2 self-supervised pretraining → retrospective distillation to causal student → behavior decoding
