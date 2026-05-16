@@ -1383,3 +1383,57 @@
   - Consistent improvements over existing distillation methods on static and neuromorphic datasets
   - **Activation**: selective alignment distillation, SeAl-KD, SNN knowledge distillation, temporal distillation SNN, timestep distillation
 
+
+## 2026-05-16 - OpenAI Research (Cron Job)
+
+### GPT-5.5: Smartest and Most Intuitive Model
+- **Source**: [Introducing GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)
+- **Key points**:
+  - GPT-5.5: Next-gen model with improved reasoning, coding, and tool use
+  - GPT-5.5 Pro: Enhanced version for complex tasks
+  - Available in API with updated system card
+- **Activation**: GPT-5.5, frontier-model, reasoning, coding
+
+### GPT-5.5 Instant: Smarter, Clearer, More Personalized
+- **Source**: [GPT-5.5 Instant](https://openai.com/index/gpt-5-5-instant/)
+- **Key points**:
+  - Updated default ChatGPT model with improved accuracy
+  - Reduced hallucinations and better personalization
+  - System card published for safety documentation
+- **Activation**: GPT-5.5-instant, personalization, accuracy
+
+### GPT-Rosalind: Life Sciences Research Model
+- **Source**: [Introducing GPT-Rosalind](https://openai.com/index/introducing-gpt-rosalind/)
+- **Key points**:
+  - Frontier reasoning model for biology, drug discovery, and translational medicine
+  - Life Sciences Research Plugin connects to 50+ scientific databases
+  - Evaluated on BixBench, LABBench2, and human expert benchmarks
+- **Activation**: life-sciences, drug-discovery, genomics, protein-engineering, scientific-workflow
+
+### ChatGPT Images 2.0: State-of-the-Art Image Generation
+- **Source**: [ChatGPT Images 2.0](https://openai.com/index/introducing-chatgpt-images-2-0/)
+- **Key points**:
+  - Improved text rendering and multilingual support
+  - Advanced visual reasoning capabilities
+  - State-of-the-art image generation model
+- **Activation**: image-generation, visual-reasoning, text-rendering
+
+### Realtime Voice Models: GPT-Realtime-2, Translate, Whisper
+- **Source**: [Voice Intelligence API](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/)
+- **Key points**:
+  - GPT-Realtime-2: First voice model with GPT-5-class reasoning
+  - GPT-Realtime-Translate: 70+ input languages, 13 output languages
+  - GPT-Realtime-Whisper: Low-latency streaming transcription
+  - Voice-to-Action, Systems-to-Voice, Voice-to-Voice patterns
+- **Activation**: voice-agent, realtime, speech-to-speech, translation, transcription
+- **Skill**: [[voice-agent-patterns]]
+
+### Scientific Workflow Orchestration (from GPT-Rosalind)
+- **Source**: [GPT-Rosalind for life sciences](https://openai.com/index/introducing-gpt-rosalind/)
+- **Key points**:
+  - Plugin-based orchestration for scientific databases and tools
+  - Multi-omics database integration patterns
+  - Trusted access framework for enterprise deployment
+- **Activation**: scientific-workflow, database-orchestration, life-sciences
+- **Skill**: [[ai-scientific-workflow-orchestration]]
+
