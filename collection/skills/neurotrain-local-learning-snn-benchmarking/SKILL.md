@@ -1,107 +1,109 @@
 ---
 name: neurotrain-local-learning-snn-benchmarking
-description: >
-  Comprehensive survey and open benchmarking framework for local learning
-  rules in Spiking Neural Networks. Provides unified taxonomy of SNN training
-  algorithms: surrogate-gradient backpropagation, local and three-factor
-  learning rules, biologically inspired plasticity, ANN-to-SNN conversion,
-  and non-standard optimization. Includes NeuroTrain, an open-source
-  snnTorch-based benchmarking framework.
-  Use when: surveying SNN training methods, implementing local learning rules,
-  benchmarking SNN algorithms, comparing surrogate gradients vs local rules,
-  three-factor learning, biologically plausible plasticity, reproducible SNN research.
-  Keywords: neurotrain, local learning, SNN training, surrogate gradient,
-  three-factor learning, snntorch, benchmarking, taxonomy, plasticity rules.
+description: "NeuroTrain methodology for surveying and benchmarking local learning rules in Spiking Neural Networks (SNNs). Comprehensive taxonomy of SNN training algorithms spanning surrogate-gradient backpropagation, local and three-factor learning rules, biologically inspired plasticity mechanisms, ANN-to-SNN conversion pipelines, and non-standard optimization strategies. Use when: designing SNN training algorithms, comparing local learning rules, benchmarking SNN training approaches, implementing biologically plausible learning, or working with snnTorch framework."
 ---
 
-# NeuroTrain: Surveying Local Learning Rules for SNNs
+# NeuroTrain: Local Learning SNN Benchmarking
 
-**arXiv**: 2605.15058
-**Authors**: Alessio Caviglia, Filippo Marostica, Roberta Bardini,
-  Alessandro Savino, Stefano Di Carlo
+## Overview
 
-## Problem Statement
+arXiv:2605.15058 | Caviglia, Marostica, Bardini, Savino, Di Carlo (May 2026)
 
-The rapid expansion of SNNs has led to a proliferation of training algorithms
-that differ widely in biological inspiration, computational structure, and
-hardware suitability. The field lacks a unified, fine-grained taxonomy that
-systematically organizes these approaches.
+SNNs have proliferated with diverse training algorithms differing in biological inspiration, computational structure, and hardware suitability. NeuroTrain provides a unified taxonomy and open-source benchmarking framework.
 
-## Taxonomy of SNN Training Algorithms
+## SNN Training Taxonomy
 
 ### 1. Surrogate-Gradient Backpropagation
-- Uses surrogate functions to approximate spike derivative
-- Enables standard backprop through non-differentiable spiking neurons
-- Common surrogates: straight-through, sigmoid, triangle, exponential
-- Trade-off: performance vs biological plausibility
+- Replace non-differentiable spike function with smooth surrogate during backward pass
+- Common surrogates: sigmoid, arctan, triangular, Gaussian
+- Enables gradient-based training while preserving spiking dynamics
+- Used in frameworks: snnTorch, SpyTorch, Norse
 
 ### 2. Local Learning Rules
-- Synaptic updates depend only on pre/post-synaptic activity
-- No global error signal required
-- Examples: STDP, anti-STDP, Hebbian rules
-- Biologically plausible, hardware-friendly
+- Update rules depend only on pre- and post-synaptic activity (local information)
+- Hebbian: strengthen connections between co-active neurons
+- Anti-Hebbian: decorrelate neuron responses
+- STDP (Spike-Timing Dependent Plasticity): timing-based weight updates
 
 ### 3. Three-Factor Learning Rules
-- Pre-synaptic × post-synaptic × modulatory signal
-- Bridges local plasticity with global objectives
-- Modulatory signals: reward, eligibility traces, dopamine-like
-- Enables reinforcement learning in SNNs
+- Extend two-factor Hebbian with global modulatory signal (third factor)
+- Formula: dw = pre x post x modulator
+- Modulators: reward signals, attention, dopamine-like neuromodulators
+- Bridge between local plasticity and global optimization
 
 ### 4. Biologically Inspired Plasticity
-- Homeostatic plasticity, synaptic scaling
-- Metaplasticity (plasticity of plasticity)
-- Structural plasticity (connection creation/pruning)
-- Short-term plasticity (facilitation, depression)
+- Homeostatic plasticity: maintain activity within target range
+- Synaptic scaling: global weight normalization
+- Structural plasticity: create/prune connections
+- Metaplasticity: plasticity of plasticity (sliding threshold)
 
 ### 5. ANN-to-SNN Conversion
-- Train ANN, convert weights to spiking equivalent
-- Preserves performance through rate coding
-- Trade-offs: latency, accuracy, energy
+- Train standard ANN, convert to SNN via rate coding
+- Advantages: leverage ANN training infrastructure
+- Challenges: latency, accuracy gap, timestep selection
 
 ### 6. Non-Standard Optimization
-- Evolutionary strategies
-- Direct policy search
-- Meta-learning approaches
+- Evolutionary algorithms, reinforcement learning
+- Gradient-free approaches for non-differentiable components
 
-## NeuroTrain Benchmarking Framework
+## NeuroTrain Framework
 
-### Architecture
-- Built on snnTorch
-- Unified, modular, extendable design
-- Consistent benchmarking across:
-  - Datasets (static and neuromorphic)
-  - Architectures (CNN, RNN, Transformer)
-  - Training regimes
+### Key Components
+- Built on snnTorch (LIF neuron implementations)
+- Modular architecture: interchangeable learning rules, datasets, architectures
+- Unified API for consistent benchmarking
 
-### Key Features
-- Implement representative algorithms from each category
-- Enable fair comparison with identical experimental setup
-- Support custom algorithm extension
-- Reproducible research pipelines
+### Benchmarking Dimensions
+- Datasets: static images (MNIST, CIFAR) + neuromorphic (N-MNIST, DVS)
+- Architectures: feedforward, convolutional, recurrent SNNs
+- Training Regimes: supervised, unsupervised, hybrid
 
-## Analysis Dimensions
+## Implementation Guide
 
-For each algorithm class, evaluate:
-1. **Computational principles**: How learning signals are computed
-2. **Learning signals**: What drives synaptic updates
-3. **Locality properties**: How much local vs global information is needed
-4. **Biological plausibility**: Alignment with neuroscience findings
-5. **Hardware suitability**: Compatibility with neuromorphic chips
-6. **Scalability**: Performance on large-scale tasks
+```python
+import snntorch as snn
+import snntorch.functional as SF
+import torch
+import torch.nn as nn
+
+# LIF neuron with surrogate gradient
+lif = snn.Leaky(beta=0.9, threshold=0.5, spike_grad=SF.surrogate.atan())
+
+# Three-factor learning example
+def three_factor_update(pre_spike, post_spike, reward, learning_rate=0.01):
+    dw = learning_rate * pre_spike * post_spike * reward
+    return dw
+
+# Surrogate gradient training loop
+def train_step(model, data, target, optimizer):
+    optimizer.zero_grad()
+    spk_rec, mem_rec = model(data)
+    loss = SF.mse_count_loss()(spk_rec, target)
+    loss.backward()  # surrogate gradients flow through spikes
+    optimizer.step()
+    return loss.item()
+```
+
+## Comparison Criteria
+
+| Criterion | Surrogate-GD | Local Rules | Three-Factor | ANN-to-SNN |
+|-----------|-------------|-------------|--------------|------------|
+| Biological plausibility | Low | High | Medium | Low |
+| Hardware efficiency | Medium | High | High | High |
+| Accuracy | High | Low-Medium | Medium | High |
+| Training speed | Fast | Fast | Medium | Slow (2-phase) |
+| Scalability | High | High | High | High |
 
 ## Open Challenges
 
-- Scalable local learning for deep networks
-- Bridging performance gap with backpropagation
-- Hardware-software co-design
-- Standardized evaluation benchmarks
-- Theoretical foundations for local learning convergence
+1. Taxonomy gaps: No unified classification across biological/computational boundaries
+2. Hardware constraints: Local rules need specialized neuromorphic hardware
+3. Accuracy gap: SNNs still lag ANNs on complex vision/language tasks
+4. Standardization: No agreed benchmark suite or evaluation metrics
+5. Hybrid approaches: Combining multiple learning paradigms effectively
 
-## When to Apply
+## Activation
 
-- Surveying SNN training landscape
-- Selecting appropriate learning rule for a task
-- Implementing biologically plausible learning
-- Benchmarking new SNN algorithms
-- Neuromorphic hardware deployment
-- Research on local vs global learning trade-offs
+- neurotrain, snn benchmark, local learning SNN, SNN training comparison
+- surrogate gradient snn, three-factor learning, STDP benchmarking
+- snnTorch framework, biologically plausible learning, ANN-to-SNN conversion

@@ -15,6 +15,19 @@
 
 ## 2026-05-16 - Neuroscience Research (Cron Job)
 
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy and open-source snnTorch-based benchmarking framework for SNN training algorithms, spanning surrogate-gradient backprop, local/three-factor learning, biologically inspired plasticity, ANN-to-SNN conversion, and non-standard optimization (arXiv: 2605.15058)
+  - First unified fine-grained taxonomy organizing SNN training algorithms by computational principles, learning signals, and locality properties
+  - Releases NeuroTrain: open-source modular framework enabling consistent benchmarking across datasets, architectures, and training regimes
+  - **Activation**: neurotrain, snn benchmark, local learning SNN, surrogate gradient snn, three-factor learning, snnTorch framework
+
+### Selective Alignment Knowledge Distillation for Spiking Neural Networks
+- [[selective-alignment-kd-snn]] - Addresses SNN-ANN performance gap by selectively aligning class-level and temporal knowledge during distillation, correcting erroneous timesteps while preserving useful temporal dynamics (arXiv: 2605.14252)
+  - Key insight: not all timesteps matter equally — intermediate predictions need not be individually correct when final output is correct
+  - SeAl-KD equalizes competing logits at erroneous timesteps and reweights temporal alignment by confidence and inter-timestep similarity
+  - Consistent improvements on static (CIFAR) and neuromorphic (N-MNIST, DVS) datasets over uniform KD baselines
+  - **Activation**: selective alignment KD, SeAl-KD, SNN knowledge distillation, timestep-aware distillation, temporal alignment SNN
+
 ### Multi-Timescale Conductance Spiking Networks
 - [[multi-timescale-conductance-spiking-networks]] - Sparse, gradient-trainable SNN framework using fast/slow/ultra-slow conductance elements for rich firing dynamics, trained with direct BPTT without surrogate gradients (arXiv: 2605.11835v1)
   - Conductance-based neurons eliminate surrogate gradient mismatch — fully differentiable BPTT through continuous I-V curve dynamics
