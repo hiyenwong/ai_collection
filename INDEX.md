@@ -1,3 +1,25 @@
+
+## 2026-05-18 - 神经科学 + 量子力学 (Cron Job)
+
+### Rogue Variable Theory: A Quantum-Compatible Cognition Framework
+- [[quantum-compatible-cognition-framework]] - 量子兼容认知框架，建模前事件认知状态和潜在解释竞争 (arXiv: 2601.00466)
+  - 核心要点: Mirrored Personal Graph (MPG) 映射认知状态到希尔伯特空间
+  - 核心要点: Rosetta Stone Layer (RSL) 实现跨用户认知状态比较
+  - 核心要点: Rogue Operator 谱分析识别认知偏离方向
+  - **Activation**: rogue variable theory, RVT, quantum cognition, pre-event states, cognitive complementarity
+
+### Natural Intelligence: the information processing power of life
+- [[natural-intelligence-bio-ops]] - 量化生物系统信息处理能力，估计地球生命总计算量 (arXiv: 2506.16478)
+  - 核心要点: 人体每秒执行 ~10^22 bio-ops，超过全球所有计算机总和
+  - 核心要点: 大脑仅占总生物计算的一小部分
+  - **Activation**: natural intelligence, bio-ops, biological computation, 生物信息处理
+
+### Quantum effects in the brain: A review
+- [[quantum-effects-in-brain-review]] - 量子效应在大脑中的可能性评估框架 (arXiv: 1910.08423)
+  - 核心要点: 系统评估量子生物学在神经科学中的证据
+  - 核心要点: 退相干时间 vs 生物时间尺度是核心判据
+  - **Activation**: quantum effects brain, quantum biology, microtubule quantum, 量子脑效应
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### BiSpikCLM: Binary Spiking Causal Language Model
