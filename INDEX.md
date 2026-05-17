@@ -1,3 +1,29 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Extended E-I Network Chaos-Synchrony Theory
+- [[ei-network-chaos-synchrony-theory]] - Extends SCS chaos theory to E/I structured recurrent networks with target-specific inhibition, revealing three dynamical regimes and chaos suppression by coherent oscillations (arXiv: 2605.14916)
+  - Target-specific inhibition breaks E-I balance, organizing phase diagram into inhibition-dominated (quiescent/async chaos), excitation-dominated (sync chaos/coherent oscillations)
+  - Coherent oscillations actively suppress chaotic fluctuations — no coexistence regime
+  - **Activation**: E-I network chaos, excitatory inhibitory balance, SCS theory extension, target-specific inhibition, chaos synchrony transition, dynamical mean field neural
+
+### Embodied Neurocomputation Framework
+- [[embodied-neurocomputation-framework]] - Systems-level framework for interfacing biological neural cultures with silicon computing via closed-loop task-driven validation, achieving 12 successful configs out of 1,300 tested (arXiv: 2605.13315)
+  - BNNs outperform DQN under matched interaction budgets for odor-gradient navigation tasks
+  - Multi-combinatorial encoding/decoding optimization requires Bayesian or evolutionary strategies
+  - **Activation**: biological neural network computation, BNN encoding decoding, bio-silicon hybrid, embodied neurocomputation, living neural computing
+
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- REALM uses retrospective distillation to bridge offline-to-online LFP decoding, achieving 2× parameter reduction and 10× faster training while outperforming SOTA causal/non-causal methods (arXiv: 2605.14867)
+  - Bidirectional Mamba-2 teacher → causal student via representation alignment + task supervision
+  - Enables real-time wireless implantable BCI without spike signals
+  - **Activation**: REALM, LFP modeling, retrospective distillation, causal neural decoding, wireless BCI, Mamba neural signal
+
+### Cortical Microcircuit Information Flux Optimization
+- Reverse-engineering study showing cortical layer 5 embedding networks enhance information flux via effective biases and Recurrence Resonance, preventing attractor trapping (arXiv: 2605.14680)
+  - Embedding network shifts core neurons to higher-entropy regime and supplies stochastic fluctuations
+  - Optimized biases can emerge from simple self-organization principles
+  - **Activation**: cortical microcircuit, information flux, recurrence resonance, reverse engineering neural network, cortical layer 5
+
 
 ## 2026-05-18 - 神经科学 + 量子力学 (Cron Job)
 

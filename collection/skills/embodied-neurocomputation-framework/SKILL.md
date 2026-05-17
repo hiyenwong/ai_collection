@@ -1,103 +1,76 @@
 ---
 name: embodied-neurocomputation-framework
 description: >
-  Embodied Neurocomputation framework for interfacing biological neural cultures (BNNs) with
-  scaled task-driven validation. Systems-level approach to multi-variable optimization of
-  encoding/decoding between silicon computing and living biological neural networks.
-  Covers closed-loop navigation tasks, parameter optimization for BNN agents, bio-silicon
-  hybrid architectures, and field-wide benchmark development for neurocomputing.
-  Use when designing bio-silicon interfaces, BNN-based agents, embodied neurocomputation
-  systems, hybrid bio-silicon architectures, or task-driven neurocomputing benchmarks.
-  Trigger words: embodied neurocomputation, biological neural network computing, BNN agent,
-  bio-silicon interface, biological neural culture computation, closed-loop BNN, odor-style
-  gradient navigation BNN, neurocomputation encoding decoding, hybrid bio-silicon architecture.
+  Embodied Neurocomputation framework for interfacing biological neural
+  cultures (BNNs) with silicon computing via scaled task-driven validation.
+  Covers closed-loop BCI encoding/decoding, parameter optimization for
+  bio-silicon hybrid agents, and systems-level approaches to multi-variable
+  encoding/decoding optimization. Use when working with biological neural
+  networks for computation, designing bio-silicon hybrid architectures,
+  optimizing BNN encoding/decoding, or developing task-driven neurocomputing
+  benchmarks.
 ---
 
 # Embodied Neurocomputation Framework
 
-**Paper**: Zhou et al., arXiv:2605.13315, May 2026
+Based on Zhou et al. (2026), arXiv:2605.13315. Systems-level approach to
+interfacing biological neural cultures (BNNs) with silicon computing.
 
-## Core Idea
+## Core Problem
 
-Biological neural networks (BNNs) offer incredibly energy and data efficient information
-processing with distinct learning mechanisms. The core challenge is determining optimal
-encoding/decoding between silicon computing interfaces and living biology. This framework
-proposes a systems-level approach to this multi-variable optimization problem through
-**Embodied Neurocomputation** — task-driven closed-loop validation of BNN agents.
+BNN encoding/decoding interface is a massive multi-combinatorial optimization
+problem. Study tested ~1,300 configurations across 4,000+ hours; only 12
+showed consistent learning (<1% success rate).
 
 ## Framework Architecture
 
-### System Components
+```
+[Silicon Encoder] → [Stimulation Pattern] → [BNN Culture]
+                                              ↓
+[Recording Array] ← [Neural Activity] ← [BNN Culture]
+       ↓
+[Silicon Decoder] → [Action/Output] → [Environment Feedback]
+```
 
-1. **Encoding Layer**: Maps task inputs to stimulation patterns for the BNN
-   - Spatial electrode mapping
-   - Temporal stimulation patterns (frequency, amplitude, timing)
-   - Multi-modal encoding (e.g., odor-style + visual cues)
+## Key Findings
 
-2. **Biological Neural Network (BNN)**: Living neural culture as computational substrate
-   - Multi-electrode array (MEA) recording/stimulation
-   - Biological plasticity and adaptation mechanisms
-   - Intrinsic learning from environmental feedback
+1. **BNNs outperform DQN** under matched interaction budgets
+2. **Encoding matters more than decoding** - stimulation pattern is dominant
+3. **Multi-combinatorial challenge** requires Bayesian optimization/evolutionary strategies
+4. **Bio-silicon hybrid potential** for adaptive pattern recognition + precise control
 
-3. **Decoding Layer**: Reads BNN activity and maps to action outputs
-   - Spike train decoding strategies
-   - Population activity interpretation
-   - Action selection from neural readout
+## Configuration Evaluation
 
-4. **Environment**: Simulated or physical task domain
-   - Grid-world navigation (current validation)
-   - Closed-loop feedback to encoding layer
-   - Reward/punishment signals
-
-### Parameter Optimization Challenge
-
-The biological interactions create a massive multi-combinatorial search space:
-- ~1,300 parameter combinations evaluated
-- >4,000 hours of real-time agent-environment interactions
-- 12 configurations identified that consistently demonstrated learning
-
-**Key Finding**: BNN configurations achieved significantly higher task performance than
-optimized silicon-based DQN agents under the same interaction budget.
-
-## Key Insights
-
-### Why BNNs Outperform DQN in Limited Budgets
-
-- Biological plasticity enables rapid adaptation from minimal experience
-- Intrinsic recurrent dynamics provide rich temporal processing
-- Energy efficiency allows longer exploration within same budget
-- Natural noise may support exploration-exploitation balance
-
-### Encoding/Decoding Optimization Principles
-
-1. **Closed-loop alignment**: Encoding and decoding must co-optimize with task dynamics
-2. **Biological constraints**: Stimulation patterns must respect BNN physiological limits
-3. **Temporal matching**: Stimulation timing should align with natural neural timescales
-4. **Spatial specificity**: Electrode configuration critically affects information transfer
-
-## Applications
-
-- Hybrid bio-silicon robotic control
-- Energy-efficient adaptive computing systems
-- Neuroprosthetic device optimization
-- Brain-computer interface encoding strategies
-- Field-wide neurocomputing benchmarks
-
-## Pitfalls
-
-- BNN experiments require extensive real-time interaction (4000+ hrs for validation)
-- Parameter space is combinatorially explosive — systematic search infeasible
-- Biological variability across cultures requires robust encoding strategies
-- Task complexity must match BNN computational capacity
+```python
+def evaluate_configuration(config, task_env, n_episodes=10):
+    """Evaluate BNN configuration on closed-loop task."""
+    performances = []
+    for ep in range(n_episodes):
+        state = task_env.reset()
+        total_reward = 0
+        for step in range(max_steps):
+            stim = encode(state, config['encoder_params'])
+            neural_response = apply_stimulation(stim, config['culture_params'])
+            action = decode(neural_response, config['decoder_params'])
+            state, reward, done = task_env.step(action)
+            total_reward += reward
+            if done:
+                break
+        performances.append(total_reward)
+    
+    return {
+        'mean_performance': np.mean(performances),
+        'learning_score': compute_learning_trend(performances),
+        'consistency': np.std(performances)
+    }
+```
 
 ## Activation Keywords
 
-- embodied-neurocomputation-framework
-- biological neural network computing
-- BNN agent optimization
-- bio-silicon hybrid architecture
-- neurocomputation encoding decoding
-- closed-loop biological neural computation
-- task-driven neurocomputing benchmark
-- living neural culture computation
-- MEA-based neural computing
+- biological neural network computation
+- BNN encoding decoding
+- bio-silicon hybrid
+- embodied neurocomputation
+- neural culture interface
+- closed-loop BCI optimization
+- living neural computing
