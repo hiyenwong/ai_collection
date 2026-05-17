@@ -82,6 +82,13 @@
   - **Activation**: quantum, algorithm, machine, verification
 ## 2026-05-17 - Information Science (Cron Job)
 
+### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 1188)
+  - Local fuzzing around non-convergent seeds drives most improvement over random testing
+  - Concolic seed discovery effective for VQE, less stable for QAOA
+  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing
+
+
 ### Toward Covert Quantum Computing
 - [[quantum-information-security]] - 多租户量子云平台中的隐蔽计算与侧信道分析模式 (arXiv: 2605.14325)
   - O(√n) 边界量子比特提供泄露信息，但长程耦合超越边界假设
@@ -1540,6 +1547,13 @@
 | # | Paper Title | arXiv ID | Covered By Skill |
 |---
 ## 2026-05-17 - Information Science (Cron Job)
+
+### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 1188)
+  - Local fuzzing around non-convergent seeds drives most improvement over random testing
+  - Concolic seed discovery effective for VQE, less stable for QAOA
+  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing
+
 
 ### Toward Covert Quantum Computing
 - [[covert-quantum-computing]] - Information-theoretic covertness analysis for multi-tenant quantum cloud platforms (arXiv: 2505.11747)
