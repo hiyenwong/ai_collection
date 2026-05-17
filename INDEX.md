@@ -1,6 +1,29 @@
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Extended E-I Network Chaos-Synchrony Theory
+## 2026-05-18 - Neuroscience + Quantum (Cron Job)
+
+### Leggett-Garg Tests in Neural Dynamics
+- [[leggett-garg-neural-dynamics]] - Leggett-Garg temporal correlation testing for distinguishing diffusive from non-diffusive stochastic neural dynamics (arXiv: 2605.12126)
+  - Leggett-Garg inequality testing for temporal correlations in single neurons
+  - Kac-type finite-velocity processes vs Wiener diffusive models
+  - Conservative interpretation: violation ≠ quantum coherence, but against diffusive description
+  - **Activation**: Leggett-Garg inequality, neural dynamics testing, Kac process, Telegrapher equation, non-diffusive neural models
+
+### Physics Guided Generative Optimization for Trotter Suzuki Decomposition
+- [[physics-guided-generative-optimization]] - Generate-and-evaluate loop for quantum circuit optimization combining diffusion models, PINN feedback, and GNN encoding (arXiv: 2605.13268)
+  - Conditional diffusion model proposes term grouping and formula order
+  - PINN provides differentiable fidelity feedback for NISQ compilation
+  - REINFORCE + Pareto tracking for hybrid discrete-continuous training space
+  - **Activation**: generative quantum optimization, Trotter Suzuki decomposition, PINN feedback quantum, diffusion model circuit
+
+### Neural Fields for NV-Center Inverse Sensing
+- [[neural-fields-quantum-sensing]] - Neural field methodology for quantum sensor inverse problems using amortization-free coordinate neural fields (arXiv: 2605.13988)
+  - Coordinate neural field coupled to differentiable NV forward model
+  - Tensor power-summed dipolar operator prevents center-collapse failure
+  - Annealed positional encoding with multiscale optimization and sparsity gating
+  - **Activation**: NV center sensing, quantum sensor inverse problem, neural field physics, differentiable quantum model
+
 - [[ei-network-chaos-synchrony-theory]] - Extends SCS chaos theory to E/I structured recurrent networks with target-specific inhibition, revealing three dynamical regimes and chaos suppression by coherent oscillations (arXiv: 2605.14916)
   - Target-specific inhibition breaks E-I balance, organizing phase diagram into inhibition-dominated (quiescent/async chaos), excitation-dominated (sync chaos/coherent oscillations)
   - Coherent oscillations actively suppress chaotic fluctuations — no coexistence regime
