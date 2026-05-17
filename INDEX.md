@@ -15,10 +15,34 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: SNN Training Survey & Benchmarking Framework
-- [[neurotrain-snn-benchmarking]] - Comprehensive taxonomy and open-source benchmarking framework for SNN training algorithms, covering surrogate-gradient, local/three-factor learning, plasticity, and ANN-to-SNN conversion (arXiv: 2605.15058)
+- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy and open-source benchmarking framework for SNN training algorithms, covering surrogate-gradient, local/three-factor learning, plasticity, and ANN-to-SNN conversion (arXiv: 2605.15058)
   - First unified taxonomy spanning 6 major SNN training paradigms with computational principles and locality analysis
   - Releases NeuroTrain: snnTorch-based open framework for reproducible benchmarking across datasets, architectures, and training regimes
   - **Activation**: neurotrain, SNN training taxonomy, local learning rules, surrogate gradient, three-factor learning, snnTorch benchmarking
+
+### Transport Mean Field for SNN Population Dynamics
+- [[transport-mean-field-snn]] - 基于传输方程的SNN群体动力学解析理论，从初始电压分布推导脉冲率涨落，突破传统均值场稳态假设 (arXiv: 2605.14319)
+  - Transport solution to advection equation replaces asymptotic steady-state mean field approaches
+  - Captures firing rate fluctuations from dynamic interaction of initial conditions, time-varying inputs, and coupling
+  - **Activation**: transport mean field, firing rate fluctuations, Fokker-Planck, LIF dynamics, neural population, initial density effects
+
+### Selective Alignment Knowledge Distillation for SNNs
+- [[sealkd-snn-knowledge-distillation]] - Addresses SNN-ANN performance gap by selectively aligning class-level and temporal knowledge during distillation, correcting erroneous timesteps while preserving useful temporal dynamics (arXiv: 2605.14252)
+  - Equalizes competing logits at erroneous timesteps rather than forcing uniform alignment
+  - Reweights temporal alignment by confidence and inter-timestep similarity
+  - **Activation**: selective alignment KD, SeAl-KD, SNN knowledge distillation, timestep-aware distillation
+
+### Dual-axis Zebrafish Circuit Attribution
+- [[dual-axis-zebrafish-circuits]] - 斑马鱼顶盖微环路双轴归因框架，通过SNN消融量化子回路在能量效率和鲁棒性中的独立计算角色，并迁移至ANN架构 (arXiv: 2605.13924)
+  - ns_TIN subcircuit: spike-efficient internal information gate (low spike footprint, measurable influence on prediction error)
+  - superficial_TIN subcircuit: highest robustness sensitivity, feedback-like stabilization role
+  - **Activation**: dual-axis attribution, zebrafish tectal circuit, energy-efficient architecture, robust neural network, SNN ablation
+
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neuron]] - SNN neuron factorizing temporal computation into Frequency Selectivity (FS) and Temporal Shaping (TS) modules, enabling learnable frequency preferences and group-delay modulation (arXiv: 2605.13071)
+  - FS parameterizes each neuron's target frequency as maximizer of subthreshold magnitude response
+  - TS reshapes when frequency components contribute to membrane voltage through group-delay modulation
+  - **Activation**: FiTS, frequency selectivity spiking neuron, interpretable SNN, temporal shaping, group-delay modulation
 
 ### NERVE: Network-Aware Brain FC Tokenization
 - [[nerve-brain-fc-tokenization]] - Self-supervised FC representation learning via bilinear tokenization that respects brain network organization, reducing parameter complexity from quadratic to linear (arXiv: 2605.14048)
