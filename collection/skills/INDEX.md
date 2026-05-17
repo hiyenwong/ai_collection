@@ -1,3 +1,23 @@
+## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job - 14:00)
+
+### Scalable Self-Testing of Generic Multipartite Quantum States
+- [[quantum-self-testing]] - 大规模多体量子态自测试认证方法，仅从观测统计量识别量子态，无需信任测量设备 (arXiv: 2605.15106)
+  - 核心要点：自测试是最强形式的量子态认证，仅从观测统计量识别底层量子态和测量，无需假设设备内部工作原理
+  - 核心要点：通过将目标态分解为局部可验证子组件，设计并行自测试，实现可扩展的多体量子态认证
+  - **Activation**: quantum self-testing, multipartite quantum states, device-independent certification, Bell inequalities, quantum verification
+
+### A Single-Molecule Spin-Photon Interface
+- [[quantum-spin-photon-interface]] - 单分子自旋-光子接口用于量子网络，连接长寿命自旋量子比特与光子实现分布式量子信息处理 (arXiv: 2605.10077)
+  - 核心要点：光学接口连接长寿命自旋量子比特与光子是量子网络和分布式量子信息处理的核心需求
+  - 核心要点：通过腔增强（Purcell效应）、光谱匹配和纠缠生成协议，实现高合作率的自旋-光子纠缠
+  - **Activation**: spin-photon interface, quantum networking, solid-state qubit, quantum transducer, cavity QED, quantum repeater
+
+### Telecom Quantum Memory Over One Microsecond in Nanophotonic Lithium Niobate
+- [[telecom-quantum-memory-lithium-niobate]] - 纳米光子铌酸锂中实现超过1微秒的电信带量子记忆，基于掺铒原子频率梳 (arXiv: 2605.11588)
+  - 核心要点：使用掺铒薄膜铌酸锂中的原子频率梳存储单光子级电信带光脉冲超过1微秒
+  - 核心要点：可扩展量子信息处理在量子计算、网络和传感中的关键组件
+  - **Activation**: quantum memory, lithium niobate, telecom quantum, atomic frequency comb, nanophotonic quantum memory
+
 ## 2026-05-16 - Neuroscience Research (Cron Job - 18:00)
 
 ### HyNeuralMap: Hyperbolic Mapping of Visual Semantics to Neural Hierarchies
