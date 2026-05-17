@@ -18,7 +18,7 @@ This complete package contains everything needed to implement a Claude Code plug
 
 ### Documents in This Package
 
-#### 1. 📋 [MARKETPLACE_BLUEPRINT.md](./MARKETPLACE_BLUEPRINT.md) (Primary)
+#### 1. 📋 [MARKETPLACE_BLUEPRINT.md](../MARKETPLACE_BLUEPRINT.md) (Primary)
 **Length:** ~350 lines | **Audience:** All stakeholders  
 **Content:**
 - Scope & compatibility boundaries (non-destructive, parallel paths)
@@ -99,7 +99,7 @@ This complete package contains everything needed to implement a Claude Code plug
 
 | Goal | Document | Section |
 |------|----------|---------|
-| Understand the full design | [MARKETPLACE_BLUEPRINT.md](./MARKETPLACE_BLUEPRINT.md) | All sections |
+| Understand the full design | [MARKETPLACE_BLUEPRINT.md](../MARKETPLACE_BLUEPRINT.md) | All sections |
 | Know which skills go where | [PLUGIN_DECOMPOSITION.md](./PLUGIN_DECOMPOSITION.md) | Mapping table, Directory structure |
 | Actually build it | [IMPLEMENTATION_CHECKLIST.md](./IMPLEMENTATION_CHECKLIST.md) | All phases |
 | Just get started ASAP | [QUICKSTART.md](./QUICKSTART.md) | All content |

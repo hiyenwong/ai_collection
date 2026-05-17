@@ -526,7 +526,7 @@ For Claude Code users, install plugins from the marketplace:
 /plugin install openclaw-core@openclaw-ai-collection
 ```
 
-See [Marketplace Guide](./docs/marketplace/MARKETPLACE.md) for details.
+See [Marketplace Guide](./marketplace/MARKETPLACE.md) for details.
 
 ### Method 2: Script Installation (OpenClaw/Manual)
 For OpenClaw users or manual installation:
@@ -535,7 +535,7 @@ For OpenClaw users or manual installation:
 python scripts/install.py --scope user --skills --agents
 ```
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for details.
 
 Both methods can coexist — use whichever suits your workflow.
 ```

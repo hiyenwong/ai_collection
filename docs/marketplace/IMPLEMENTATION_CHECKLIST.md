@@ -285,7 +285,7 @@ For Claude Code users:
 /plugin install openclaw-neuroscience@openclaw-ai-collection
 ```
 
-[Full Marketplace Guide](./docs/marketplace/MARKETPLACE.md)
+[Full Marketplace Guide](./MARKETPLACE.md)
 
 ### Option 2: OpenClaw Installation Script (Manual)
 
@@ -634,7 +634,7 @@ OpenClaw skills are available via two methods:
    python scripts/install.py --scope user --skills
    ```
 
-See [Marketplace Guide](./docs/marketplace/MARKETPLACE.md).
+See [Marketplace Guide](./MARKETPLACE.md).
 ```
 
 ---
