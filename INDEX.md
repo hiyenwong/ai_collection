@@ -5,6 +5,15 @@
     - 基于测量基量子计算的UBQC协议，客户端仅需有限量子能力即可委托计算
     - 模块化超导处理器架构实现分布式盲计算，降低单模块量子比特需求
   - **Activation**: blind quantum computation, secure quantum cloud, quantum privacy, delegated quantum computing, UBQC, measurement-based quantum computing
+## 2026-05-17 - Information Science + Quantum (Cron Job) - Update
+
+### QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling
+- [[qlam-quantum-attention-memory]] - 量子长注意力记忆方法，利用量子叠加实现长程依赖建模，降低注意力复杂度 (arXiv: 2605.13833v1)
+    - 量子叠加态并行编码所有token对注意力分数，振幅放大提取重要长程依赖
+    - 混合经典-量子架构：经典编码局部特征，量子模块处理长程依赖
+  - **Activation**: quantum attention, QLAM, long sequence quantum, quantum memory, long-range dependencies, quantum transformer
+
+
 
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
