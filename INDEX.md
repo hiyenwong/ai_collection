@@ -1,3 +1,11 @@
+## 2026-05-17 - Information Science + Quantum (Cron Job)
+
+### Blind Quantum Computation on a Modular Superconducting Processor
+- [[blind-quantum-computation]] - 盲量子计算方法论，实现云端量子计算中算法/输入/输出的信息论安全 (arXiv: 2605.14656v1)
+    - 基于测量基量子计算的UBQC协议，客户端仅需有限量子能力即可委托计算
+    - 模块化超导处理器架构实现分布式盲计算，降低单模块量子比特需求
+  - **Activation**: blind quantum computation, secure quantum cloud, quantum privacy, delegated quantum computing, UBQC, measurement-based quantum computing
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
