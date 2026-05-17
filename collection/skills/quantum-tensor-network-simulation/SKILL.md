@@ -118,3 +118,16 @@ See [quantum_noise_models.md](references/quantum_noise_models.md) for noise oper
 ## Source
 
 Based on arxiv:2604.08467 - "Accelerating Quantum Tensor Network Simulations with Unified Path Variations and Non-Degenerate Batched Sampling" by Taylor Lee Patti et al.
+
+## Activation Keywords
+- [skill-specific keyword]
+- [related search term]
+- [use case description]
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

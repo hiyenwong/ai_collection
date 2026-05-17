@@ -256,3 +256,16 @@ Benefits:
 - Soft constraints allow learning but may violate physics
 - Validate against analytical solutions when available
 - Consider computational cost of physics layers
+
+## Activation Keywords
+- [skill-specific keyword]
+- [related search term]
+- [use case description]
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

@@ -280,3 +280,11 @@ def compute_reward(outcome: Outcome) -> float:
 - RL training requires minimal data (152 pairs)
 - Performance gains up to 14.8% over base models
 - Dual-agent architecture separates concerns effectively
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

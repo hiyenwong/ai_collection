@@ -94,3 +94,11 @@ sparse_vector = sparsify(steering_vector, keep_ratio=0.01)  # 99% sparse
 
 - Reference paper: arxiv:2604.08524
 - Key finding: Freezing all attention scores drops performance by only 8.75%
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

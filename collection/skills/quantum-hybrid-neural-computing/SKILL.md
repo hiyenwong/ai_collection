@@ -329,3 +329,11 @@ def benchmark_vqc(vqc, X_test, y_test):
 - Cerezo et al. "Variational quantum algorithms"
 - McClean et al. "Barren plateaus in quantum neural networks"
 - Schuld & Petruccione "Machine Learning with Quantum Computers"
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

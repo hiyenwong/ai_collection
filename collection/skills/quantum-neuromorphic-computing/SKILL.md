@@ -129,3 +129,11 @@ cargo build --release
 - Focuses on theoretical models with potential hardware implementations
 - Uses knowledge graph (kg.db) for paper retrieval and analysis
 - Supports both analysis and simulation workflows
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

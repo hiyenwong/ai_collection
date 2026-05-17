@@ -119,3 +119,11 @@ If noise inversion is unstable:
 - Increase alpha regularization parameter
 - Use truncated SVD instead of direct inversion
 - Verify randomized compiling produced sufficient diversity
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

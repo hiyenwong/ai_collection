@@ -155,3 +155,11 @@ When implementing quantum number theory algorithms:
 - `distributed-quantum-computing`: Distributed quantum algorithm execution
 - `hybrid-quantum-classical-systems`: Hybrid quantum-classical algorithms
 - `arxiv-search`: Paper discovery workflow
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

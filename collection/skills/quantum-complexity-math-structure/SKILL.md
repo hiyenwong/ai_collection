@@ -154,3 +154,25 @@ def compute_texture(state_rho, alpha, z_param):
 - arxiv category: quant-ph, math-ph
 - Complexity zoo: https://complexityzoo.net
 - Quantum information wiki
+
+## Instructions for Agents
+
+### Step 1: Identify the mathematical structure
+- Determine the complexity class
+- Analyze the quantum resources required
+
+### Step 2: Apply theoretical framework
+- Review relevant complexity theorems
+- Map to quantum circuit models
+
+### Step 3: Provide analysis
+- Document complexity bounds
+- Suggest optimization strategies
+
+## Examples
+
+### Example 1: Analyzing quantum complexity
+```
+User: What's the complexity of this quantum algorithm?
+Agent: Let me analyze the quantum complexity using BQP and QMA frameworks.
+```

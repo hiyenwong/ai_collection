@@ -1,38 +1,51 @@
 # [Skill Name]
 
+> **Cross-tool compatibility:** This skill works with OpenClaw, Claude Code, Codex, Hermes, and OpenCode.
+
 ## Description
+
 [Brief description (1-2 sentences) of what this skill does]
 
 ## Activation Keywords
+
 - [keyword1]
 - [keyword2]
 - [keyword3]
+- [keyword4]
+- [keyword5]
 
 ## Tools Used
+
 - [tool1]: [Description of usage]
 - [tool2]: [Description of usage]
 
 ## Installation (if applicable)
+
 ```bash
 # Installation commands
 ```
 
 ### Prerequisites
+
 - [Requirement 1]
 - [Requirement 2]
 
 ## Usage Patterns
 
 ### Operation 1
+
 ```bash
 # Command example
 ```
+
 [Description of operation]
 
 ### Operation 2
+
 ```bash
 # Command example
 ```
+
 [Description of operation]
 
 ## Instructions for Agents
@@ -40,12 +53,15 @@
 [Step-by-step instructions for agents to follow when this skill is activated]
 
 ### Step 1: [Action]
+
 [Detailed instructions]
 
 ### Step 2: [Action]
+
 [Detailed instructions]
 
 ### Step 3: [Action]
+
 [Detailed instructions]
 
 ## Context Files
@@ -53,6 +69,7 @@
 The skill uses these context files when available:
 
 ### [FILENAME].md
+
 ```markdown
 # [Context file description]
 
@@ -62,6 +79,7 @@ The skill uses these context files when available:
 ## Error Handling
 
 ### [Error Type]
+
 ```
 If you see "[error message]":
   [Recovery step 1]
@@ -72,11 +90,13 @@ If you see "[error message]":
 ## Configuration
 
 ### Environment Variables (Optional)
+
 ```bash
 export [VARIABLE_NAME]="value"
 ```
 
 ### Configuration File (Optional)
+
 ```bash
 # Config file location
 /path/to/config
@@ -100,6 +120,7 @@ export [VARIABLE_NAME]="value"
 ## Examples
 
 ### Example 1: [Scenario]
+
 ```
 User: "[User request]"
 
@@ -113,14 +134,24 @@ Agent Process:
 Agent: [Confirmation message]
 ```
 
+### Example 2: [Scenario]
+
+```
+User: "[User request]"
+
+Agent: [Confirmation message]
+```
+
 ## Troubleshooting
 
 ### [Issue 1]
+
 ```bash
 # Solution
 ```
 
 ### [Issue 2]
+
 ```bash
 # Solution
 ```
@@ -132,5 +163,6 @@ Agent: [Confirmation message]
 - [Related Tools/Projects]
 
 ## Related Skills
+
 - [skill1]: [Brief description]
 - [skill2]: [Brief description]

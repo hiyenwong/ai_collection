@@ -18,15 +18,64 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 # Required sections for SKILL.md
-# Required sections for SKILL.md
+# Each entry has a canonical name and acceptable aliases for cross-tool compatibility.
+# Supports: OpenClaw, Claude Code, Codex, Hermes, OpenCode
 REQUIRED_SECTIONS = [
-    "# Skill Name",
-    "## Description",
-    "## Activation Keywords",
-    "## Tools Used",
-    "## Instructions for Agents",
-    "## Examples",
+    ("# Skill Name", ["# Skill Name"]),
+    (
+        "## Description",
+        ["## Description", "## Overview", "## Summary", "## About", "## 概述"],
+    ),
+    (
+        "## Activation Keywords",
+        [
+            "## Activation Keywords",
+            "## Keywords",
+            "## Trigger Words",
+            "## When to Use",
+            "## Activation",
+            "## 触发词",
+            "## 触发关键词",
+        ],
+    ),
+    (
+        "## Tools Used",
+        [
+            "## Tools Used",
+            "## Required Tools",
+            "## Dependencies",
+            "## Tools",
+            "## 使用工具",
+        ],
+    ),
+    (
+        "## Instructions for Agents",
+        [
+            "## Instructions for Agents",
+            "## Instructions",
+            "## Usage",
+            "## How to Use",
+            "## Implementation",
+            "## Workflow",
+            "## Steps",
+            "## Application Workflow",
+            "## Implementation Guide",
+            "## 使用说明",
+        ],
+    ),
+    (
+        "## Examples",
+        [
+            "## Examples",
+            "## Example Usage",
+            "## Usage Examples",
+            "## Example Use Cases",
+        ],
+    ),
 ]
+
+# For backwards compatibility, also expose just the canonical names
+REQUIRED_SECTION_NAMES = [name for name, _ in REQUIRED_SECTIONS]
 
 # Paper-based skills have different structure
 PAPER_SKILL_INDICATORS = [
@@ -47,8 +96,30 @@ PAPER_SKILL_INDICATORS = [
 
 
 def is_paper_skill(content: str) -> bool:
-    """Check if this is a paper-based skill (arXiv research paper)."""
-    return any(indicator in content for indicator in PAPER_SKILL_INDICATORS)
+    """Check if this is a paper-based skill (arXiv research paper or reference doc)."""
+    # Direct indicators
+    if any(indicator in content for indicator in PAPER_SKILL_INDICATORS):
+        return True
+
+    # YAML frontmatter-based detection:
+    # Skills with frontmatter (name + description) but lacking
+    # OpenClaw-style action sections are likely paper/reference imports
+    if content.startswith("---"):
+        end = content.find("\n---", 3)
+        if end != -1:
+            fm_text = content[3:end].strip()
+            body = content[end + 4 :]
+            has_fm_name = "name:" in fm_text
+            has_fm_desc = "description:" in fm_text
+            if has_fm_name and has_fm_desc:
+                # Check if body lacks standard OpenClaw action sections
+                lacks_tools = "## Tools Used" not in body
+                lacks_instructions = "## Instructions for Agents" not in body
+                lacks_examples = "## Examples" not in body
+                # If missing all 3 core action sections, treat as paper/reference skill
+                if lacks_tools and lacks_instructions and lacks_examples:
+                    return True
+    return False
 
 
 # Optional sections
@@ -166,7 +237,7 @@ class SkillValidator:
         return len(self.errors) == 0
 
     def _check_sections(self, content: str) -> None:
-        """Check for required sections."""
+        """Check for required sections, accepting aliases for cross-tool compatibility."""
         # Extract all markdown headers (text after the # markers)
         headers = re.findall(r"^#{1,6}\s+(.+)$", content, re.MULTILINE)
         found_sections = set(headers)
@@ -178,34 +249,39 @@ class SkillValidator:
         fm = self._frontmatter or {}
         fm_keys_lower = {k.lower() for k in fm}
 
-        def _section_present(required: str) -> bool:
-            """Check if a required section is satisfied by markdown or frontmatter."""
-            # Strip leading '#' and whitespace to get the bare section name
-            pattern = re.sub(r"^#+\s*", "", required).lower()
+        def _header_matches(header_text: str) -> bool:
+            """Check if a header text matches any found header."""
+            # Strip leading '#' and whitespace to get the bare header name
+            bare = re.sub(r"^#+\s*", "", header_text).lower()
+            return any(bare in h for h in headers_lower)
+
+        def _section_present(canonical: str, aliases: list[str]) -> bool:
+            """Check if a required section is satisfied by any of its names."""
+            # Check all aliases first
+            for alias in aliases:
+                if _header_matches(alias):
+                    return True
 
             # Special case: '# Skill Name' → any H1 header is acceptable
-            if required == "# Skill Name":
+            if canonical == "# Skill Name":
                 has_h1 = any(re.match(r"^#\s", line) for line in content.splitlines())
                 if has_h1:
                     return True
                 # fallback: frontmatter 'name' field
                 return "name" in fm_keys_lower
 
-            # Check markdown headers
-            if any(pattern in h for h in headers_lower):
-                return True
-
             # Fallback: check YAML frontmatter keys
             # e.g. 'description' satisfies '## Description'
-            if pattern.replace(" ", "_") in fm_keys_lower or pattern in fm_keys_lower:
+            bare = re.sub(r"^#+\s*", "", canonical).lower()
+            if bare.replace(" ", "_") in fm_keys_lower or bare in fm_keys_lower:
                 return True
 
             return False
 
-        # Check required sections
-        for required in REQUIRED_SECTIONS:
-            if not _section_present(required):
-                self.errors.append(f"Missing required section: {required}")
+        # Check required sections (with aliases)
+        for canonical, aliases in REQUIRED_SECTIONS:
+            if not _section_present(canonical, aliases):
+                self.errors.append(f"Missing required section: {canonical}")
 
         # Report optional sections found
         for optional in OPTIONAL_SECTIONS:
@@ -367,11 +443,13 @@ def validate_all_skills(skills_dir: Path) -> Dict[str, SkillValidator]:
 
         # Skip parent directories that only contain sub-skills
         # (e.g., systems-engineering with cps-resilience-roadmap, soft-control-multi-agent)
+        # Recursively search for SKILL.md in subdirectories
         skill_md = skill_path / "SKILL.md"
         if not skill_md.exists():
-            # Check if this is a parent directory with sub-skills
-            subdirs = [d for d in skill_path.iterdir() if d.is_dir()]
-            if subdirs and all((d / "SKILL.md").exists() for d in subdirs):
+            has_sub_skill = any(
+                p.name == "SKILL.md" for p in skill_path.rglob("SKILL.md")
+            )
+            if has_sub_skill:
                 print(
                     f"⏭️  Skipping parent directory with sub-skills: {skill_path.name}"
                 )

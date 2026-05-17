@@ -1,5 +1,7 @@
 # [Agent Name]
 
+> **Cross-tool compatibility:** This agent works with OpenClaw, Claude Code, Codex, Hermes, and OpenCode.
+
 ## Purpose
 [Clear, concise description of what this agent does and why it exists]
 

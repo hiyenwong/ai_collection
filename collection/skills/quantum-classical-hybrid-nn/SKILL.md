@@ -233,3 +233,16 @@ Benefits:
 - Test gradient variance early in development
 - Consider hardware constraints when designing quantum circuits
 - Hybrid architectures often outperform pure quantum or classical approaches
+
+## Activation Keywords
+- [skill-specific keyword]
+- [related search term]
+- [use case description]
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

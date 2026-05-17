@@ -105,3 +105,25 @@ Current D-Wave hybrid approaches rely heavily on classical post-processing, with
 - "Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization" - Lozano et al.
 - D-Wave Hybrid Solver Documentation
 - Quantum advantage benchmarking frameworks
+
+## Instructions for Agents
+
+### Step 1: Understand the audit requirements
+- Identify the quantum system being audited
+- Determine the relevant hybrid classical-quantum components
+
+### Step 2: Apply audit framework
+- Review security protocols
+- Verify quantum-classical interface integrity
+
+### Step 3: Generate audit report
+- Document findings
+- Provide recommendations
+
+## Examples
+
+### Example 1: Conducting a hybrid quantum audit
+```
+User: I need to audit our hybrid quantum system
+Agent: I'll help you conduct a comprehensive audit of your hybrid quantum-classical infrastructure.
+```

@@ -190,3 +190,11 @@ From PageRank analysis of kg.db:
 - Consider both error mitigation and correction
 - Balance quantum and classical resource allocation
 - Account for communication overhead in distributed settings
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

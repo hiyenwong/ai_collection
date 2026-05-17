@@ -247,3 +247,8 @@ Recommendations:
 - Requires quantum computing library (Qiskit/PennyLane/Cirq)
 - Lie algebra analysis is computationally intensive for large circuits
 - Always validate designs with simulation before hardware deployment
+
+## Activation Keywords
+- [skill-specific keyword]
+- [related search term]
+- [use case description]

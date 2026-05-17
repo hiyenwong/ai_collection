@@ -1,3 +1,7 @@
+---
+name: quantum-error-correction-methods
+description: Quantum error correction methods and techniques for fault-tolerant quantum computing.
+---
 # Quantum Error Correction Methods
 
 ## Description

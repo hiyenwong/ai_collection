@@ -232,3 +232,8 @@ pip install qutip numpy scipy matplotlib
 - Simulation accuracy depends on component models
 - High-dimensional encoding limited by mode orthogonality
 - Consider decoherence effects in all designs
+
+## Activation Keywords
+- [skill-specific keyword]
+- [related search term]
+- [use case description]

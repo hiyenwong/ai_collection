@@ -101,3 +101,28 @@ correction = GNN_readout(x)
 - Belief propagation decoders
 - Fault-tolerant quantum computation
 - Code concatenation and code switching
+
+## Description
+
+Neural network-based decoders for quantum error correction codes. Covers CNN, Transformer, and GNN approaches for decoding surface codes, color codes, and other topological codes. Includes training workflows, performance benchmarks, and implementation patterns.
+
+## Activation Keywords
+- neural decoder
+- quantum error correction decoder
+- ML quantum decoder
+- surface code decoder
+- neural QEC
+
+## Tools Used
+- read: Read research papers and decoder implementations
+- write: Document decoder architectures and training procedures
+- exec: Run decoder training and evaluation scripts
+- web_search: Search for latest decoder research
+
+## Examples
+
+### Example 1: Designing a neural decoder
+```
+User: I need to design a neural decoder for the surface code
+Agent: I'll help you design a neural decoder using CNN and Transformer approaches for surface code error correction.
+```

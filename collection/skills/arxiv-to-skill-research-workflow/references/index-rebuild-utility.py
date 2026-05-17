@@ -11,13 +11,16 @@ Usage: Run via execute_code in Hermes cron jobs.
 import os
 import re
 
+
 def count_skills(skill_dir):
     """Count actual skills by scanning filesystem."""
     return sum(
-        1 for item in os.listdir(skill_dir)
+        1
+        for item in os.listdir(skill_dir)
         if os.path.isdir(os.path.join(skill_dir, item))
         and os.path.exists(os.path.join(skill_dir, item, "SKILL.md"))
     )
+
 
 def fix_index_count(index_path, skill_dir):
     """Find and fix the skill count in INDEX.md."""
@@ -28,9 +31,9 @@ def fix_index_count(index_path, skill_dir):
 
     # Pattern: **Total Skills**: NNN or Total: NNN skills
     patterns = [
-        (r'(\*\*Total Skills\*\*: )(\d+)', rf'\g<1>{actual}'),
-        (r'(Total: )(\d+)( skills)', rf'\g<1>{actual}\g<3>'),
-        (r'(\()(\d{3,})(\) skills)', rf'\g<1>{actual}\g<3>'),
+        (r"(\*\*Total Skills\*\*: )(\d+)", rf"\g<1>{actual}"),
+        (r"(Total: )(\d+)( skills)", rf"\g<1>{actual}\g<3>"),
+        (r"(\()(\d{3,})(\) skills)", rf"\g<1>{actual}\g<3>"),
     ]
 
     updated = False
@@ -40,20 +43,25 @@ def fix_index_count(index_path, skill_dir):
             updated = True
 
     if updated:
-        with open(index_path, 'w') as f:
+        with open(index_path, "w") as f:
             f.write(content)
         print(f"INDEX.md count updated to {actual}")
     else:
-        print(f"INDEX.md count verification: actual={actual}, no pattern matched to update")
+        print(
+            f"INDEX.md count verification: actual={actual}, no pattern matched to update"
+        )
 
     return actual
+
 
 if __name__ == "__main__":
     skill_dir = os.path.expanduser("~/.hermes/skills/ai_collection")
     index_path = os.path.join(
-        os.environ.get("OBSIDIAN_VAULT_PATH", "/Users/hiyenwong/Documents/Obsidian Vault"),
+        os.environ.get(
+            "OBSIDIAN_VAULT_PATH", "/Users/hiyenwong/Documents/Obsidian Vault"
+        ),
         "ai_collection",
-        "INDEX.md"
+        "INDEX.md",
     )
 
     if os.path.exists(index_path):

@@ -84,3 +84,11 @@ total_loss = grpo_loss + length_loss + entropy_loss
 
 - Reference paper: arxiv:2604.08539
 - Key innovation: N(0,1) advantage distribution
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```

@@ -161,3 +161,11 @@ For detailed mathematical background, see:
 2. **Check Encoding Feasibility**: Simplicial complex encoding must be polynomial
 3. **Assess Hardware Reality**: NISQ-era limitations on Betti estimation
 4. **Connect to Applications**: TDA for neuroscience, materials, ML domains
+
+## Examples
+
+### Example 1: Using this skill
+```
+User: [Request related to this skill's domain]
+Agent: [Applies skill knowledge to help user]
+```
