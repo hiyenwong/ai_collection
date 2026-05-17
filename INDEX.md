@@ -20,6 +20,12 @@
   - Long-range crosstalk from drive/control lines breaks covertness beyond nearest-neighbor model
   - **Activation**: covert quantum computing, quantum cloud security, quantum crosstalk, quantum side channel, QCU privacy, quantum isolation
 
+### Wavelet Variance Equipartition as Threshold for World-Model Quality and Quantum Kernel TN-Simulability
+- [[wavelet-variance-equipartition-quantum]] - Physics-grounded metric for world-model latent space quality using wavelet scaling exponent α=1/2 as sharp boundary for quantum kernel classical simulability via tensor network contraction (arXiv: 2605.11557)
+  - Wavelet scaling exponent α≈1/2 mirrors Kolmogorov inertial range, providing optimal representation quality diagnostic
+  - Sharp phase transition at α=1/2 determines classical simulability of amplitude-encoded quantum kernels
+  - **Activation**: wavelet variance equipartition, quantum kernel simulability, wavelet scaling exponent, tensor network contraction, world model quality, Kolmogorov inertial range
+
 ### A Toolbox to Understand the Physics of Quantum Data Management
 - [[quantum-data-management-toolbox]] - Physics-informed spectral analysis toolbox for evaluating quantum annealing in data management problems through energy gaps and eigenstate structure (arXiv: 2605.14719)
   - Spectral properties inaccessible from hardware measurements essential for understanding computational hardness

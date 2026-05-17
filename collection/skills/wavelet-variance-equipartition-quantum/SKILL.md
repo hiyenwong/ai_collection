@@ -1,79 +1,145 @@
 ---
 name: wavelet-variance-equipartition-quantum
 description: >
-  Wavelet variance equipartition methodology for assessing world model quality and
-  determining classical simulability of amplitude-encoded quantum kernels. Uses wavelet
-  scaling exponent α as a physics-grounded diagnostic: optimal representations satisfy
-  variance equipartition (α ≈ 1/2) mirroring Kolmogorov's inertial range. Establishes
-  α = 1/2 as a sharp transition boundary for classical simulability of quantum kernels
-  using tensor networks. Use when: evaluating learned representations in world models,
-  analyzing quantum kernel simulability, studying wavelet scaling in machine learning,
-  or assessing tensor network efficiency for quantum simulation.
-  Activation: wavelet variance equipartition, quantum kernel simulability, tensor network
-  simulation, wavelet scaling exponent, world model quality, Kolmogorov inertial range.
+  Wavelet variance equipartition methodology for assessing world-model latent space
+  quality and determining quantum kernel simulability. Establishes α=1/2 as a sharp
+  transition boundary for classical simulability of amplitude-encoded quantum kernels
+  via tensor network contraction. Use when: evaluating world-model representations,
+  analyzing quantum kernel classical simulability, computing wavelet scaling exponents,
+  assessing tensor network contraction complexity, or studying representation fidelity
+  through spectral analysis.
+  Activation: wavelet variance equipartition, quantum kernel simulability, wavelet scaling
+  exponent, tensor network contraction, world model quality, quantum kernel TN,
+  Kolmogorov inertial range representation, α=1/2 threshold.
 ---
 
-# Wavelet Variance Equipartition for Quantum Kernel Analysis
+# Wavelet Variance Equipartition for World-Model Quality & Quantum Kernel Simulability
 
-Methodology from arXiv:2605.11557 — "Wavelet Variance Equipartition as a Threshold for World-Model Quality and Quantum Kernel TN-Simulability" (Kam, Cadet, Bessafi, 2026).
+Methodology from arXiv:2605.11557 — "Wavelet Variance Equipartition as a Threshold for
+World-Model Quality and Quantum Kernel TN-Simulability" (Kam, Cadet, Bessafi, 2026).
 
-## Core Insight
+## Core Concept
 
-The wavelet scaling exponent α serves as a universal diagnostic connecting:
-1. **World model representation quality**: Optimal representations satisfy α ≈ 1/2
-2. **Quantum kernel classical simulability**: α = 1/2 marks sharp transition boundary
+World models learn compact representations of complex environments but lack physics-grounded
+metrics for latent space structural fidelity. Wavelet variance equipartition provides:
 
-## Wavelet Scaling Exponent α
+- **Scaling exponent α**: Critical diagnostic of representation quality
+- **Optimal α ≈ 1/2**: Mirrors Kolmogorov's inertial range turbulence
+- **Sharp transition at α = 1/2**: Classical simulability boundary for quantum kernels
 
-For a signal or representation, the wavelet variance scales as:
+## Wavelet Scaling Exponent Analysis
 
-    Var(W_j) ∝ 2^(-2αj)
-
-where W_j are wavelet coefficients at scale j.
-
-- **α < 1/2**: Persistent/long-range correlations — hard to simulate classically
-- **α = 1/2**: Variance equipartition (Kolmogorov inertial range) — critical boundary
-- **α > 1/2**: Anti-persistent/smooth — easy to simulate classically
-
-## Connection to Quantum Kernel Simulability
-
-For amplitude-encoded quantum kernels:
-
-- When α < 1/2: Tensor network simulation requires exponentially large bond dimension
-- When α = 1/2: Sharp transition in tensor network simulability
-- When α > 1/2: Efficient classical simulation via tensor networks possible
-
-## Application to World Models
-
-World models learn compact latent representations of complex environments. The wavelet
-scaling exponent provides a physics-grounded metric (not just empirical) for assessing
-structural fidelity:
-
-1. Compute wavelet transform of latent representations
-2. Estimate scaling exponent α from wavelet variance across scales
-3. Compare to α = 1/2 equipartition benchmark
-4. Deviations indicate structural deficiencies in the learned representation
-
-## Tensor Network Simulation Protocol
+### Computing α
 
 ```python
-# 1. Compute wavelet decomposition of data/representation
-# 2. Estimate α from log-log plot of wavelet variance vs. scale
-# 3. If α ≥ 1/2: tensor network simulation feasible
-# 4. If α < 1/2: exponential bond dimension required
-# 5. Use α to predict required TN bond dimension for given accuracy
+import numpy as np
+from scipy.signal import cwt, ricker
+
+def compute_wavelet_scaling_exponent(data, scales=None):
+    """Compute wavelet scaling exponent α from variance distribution."""
+    if scales is None:
+        scales = np.logspace(0, 2, 20)
+
+    # Continuous wavelet transform
+    coefficients = cwt(data, ricker, scales)
+
+    # Wavelet variance at each scale
+    variance = np.var(coefficients, axis=1)
+
+    # Log-log linear regression for scaling exponent
+    log_scales = np.log(scales)
+    log_var = np.log(variance)
+
+    # α is the slope: var(s) ∝ s^(2α)
+    coeffs = np.polyfit(log_scales, log_var, 1)
+    alpha = coeffs[0] / 2  # Half the log-log slope
+
+    return alpha, variance, scales
 ```
+
+### Interpretation
+
+| α Range | Interpretation | Implication |
+|---------|---------------|-------------|
+| α < 1/2 | Under-correlated, noisy representation | Insufficient structure |
+| α = 1/2 | **Optimal equipartition** | Kolmogorov-like inertial range |
+| α > 1/2 | Over-smoothed, lossy compression | Information degradation |
+
+## Quantum Kernel TN-Simulability
+
+### Threshold Theorem
+
+For amplitude-encoded quantum kernels K(x,x'):
+
+- **α = 1/2 is sharp boundary**: Below this threshold, tensor network contraction
+  is classically tractable
+- **Above threshold**: Classical simulation becomes intractable
+- **Tensor network contraction cost**: Scales with bond dimension D, where
+  D depends on α
+
+### Classical Simulability Analysis
+
+```python
+def assess_quantum_kernel_simulability(alpha, system_size):
+    """Assess classical simulability of quantum kernel via TN contraction."""
+    if alpha <= 0.5:
+        # Classically simulable via tensor network
+        bond_dim = int(system_size ** (1 - 2*alpha))
+        cost = "O(poly(n))" if bond_dim < system_size else "O(exp(n))"
+        return "SIMULABLE", bond_dim, cost
+    else:
+        # Beyond classical simulability threshold
+        return "INTRACTABLE", None, "O(exp(n))"
+```
+
+## World-Model Quality Assessment
+
+### Diagnostic Pipeline
+
+1. **Extract latent representations** from trained world model
+2. **Compute wavelet decomposition** across multiple scales
+3. **Measure variance scaling** → extract α
+4. **Compare to optimal α ≈ 1/2**
+5. **If α deviates**: Adjust model architecture/training to improve representation
+
+### Representation Quality Metrics
+
+- **Kolmogorov match**: |α - 1/2| < ε → high structural fidelity
+- **Variance distribution**: Flat spectrum across scales → equipartition
+- **Information preservation**: Correlation with ground truth dynamics
+
+## Practical Applications
+
+### ML Architecture Selection
+
+- World models with α ≈ 1/2 → suitable for quantum kernel methods
+- World models with α > 1/2 → need architectural changes (deeper, wider, different norms)
+- World models with α < 1/2 → may need regularization or more training
+
+### Quantum-Classical Boundary
+
+- Determine when quantum advantage is genuinely necessary
+- Set expectations for classical simulation costs
+- Guide quantum resource allocation
+
+## Verification Steps
+
+1. **Validate α computation** on known benchmarks (e.g., ImageNet latent space)
+2. **Cross-check with tensor network simulation** on small instances
+3. **Compare with existing quality metrics** (FID, reconstruction loss)
+4. **Test on multiple world model architectures** for consistency
 
 ## Key Findings
 
-- α = 1/2 is a sharp phase transition, not a gradual boundary
-- Tensor network efficiency directly correlated with wavelet scaling properties
-- Provides quantitative criterion for when quantum advantage is achievable
-- Connects statistical physics (Kolmogorov turbulence) to ML representation quality
+- Wavelet scaling provides **physics-grounded** (not empirical) quality metric
+- α = 1/2 connects turbulence theory (Kolmogorov) to ML representation learning
+- Sharp phase transition at α = 1/2 for quantum kernel classical simulability
+- Tensor network contraction cost directly determined by α
 
 ## When to Apply
 
-- Evaluating whether a quantum kernel offers genuine advantage over classical TN methods
-- Assessing quality of learned representations in world models or autoencoders
-- Determining bond dimension requirements for tensor network simulation
-- Analyzing structural properties of high-dimensional data through wavelet lens
+- Evaluating latent space quality of world models, VAEs, diffusion models
+- Assessing quantum advantage for kernel methods
+- Determining classical simulability of quantum circuits
+- Designing architecture-informed training objectives
+- Bridging physics and ML representation analysis
