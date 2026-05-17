@@ -809,7 +809,15 @@
   - Top-down: Mixture-of-Memories dynamically selects and fuses relevant memories to refine reconstruction
   - **Activation**: fMRI video reconstruction, CineNeuron, fMRI-to-video, neural video decoding, Mixture-of-Memories
 
-### Transport Mean Field Theory for SNN Population Dynamics
+### Transport Mean Field for SNN Population Dynamics
+- [[transport-mean-field-snn]] - 基于传输方程的SNN群体动力学解析理论，从初始电压分布推导脉冲率涨落，突破传统均值场稳态假设 (arXiv: 2605.14319)
+  - Transport solution to advection equation replaces asymptotic steady-state mean field approaches
+  - Captures firing rate fluctuations from dynamic interaction of initial conditions, time-varying inputs, and coupling
+  - **Activation**: transport mean field, firing rate fluctuations, Fokker-Planck, LIF dynamics, neural population, initial density effects
+
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Transport Mean Field for SNN Population Dynamics
 - [[transport-mean-field-snn-dynamics]] - Derives firing rate fluctuations from initial voltage distributions using transport solutions to the advection equation (arXiv: 2605.14319)
   - Transport-based mean field links initial density to time-varying population rate: ν(t) = ρ₀(ṽ(t)) · (F(ṽ(t)) + Ī(t))
   - Closed-form solutions for LIF and QIF neurons; captures transient dynamics missed by asynchronous steady-state methods

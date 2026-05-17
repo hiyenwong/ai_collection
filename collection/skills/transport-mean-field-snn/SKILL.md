@@ -1,85 +1,144 @@
 ---
 name: transport-mean-field-snn
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: >
+  Transport Mean Field methodology for approximate macroscopic dynamics of spiking neural networks.
+  Derives population firing rate evolution from initial voltage distributions via transport
+  (advection) solution to the Fokker-Planck system, unlike earlier mean field approaches based
+  on asynchronous steady-state solutions. Assumes slow time-varying inputs and excitation-driven
+  regime. Use when: analyzing SNN population dynamics, deriving mean field approximations,
+  studying firing rate fluctuations, modeling neural population responses to time-varying inputs,
+  or understanding how initial conditions shape population-level dynamics.
 ---
 
-# Transport Mean Field Snn
+# Transport Mean Field for Spiking Neural Network Population Dynamics
 
-## Overview
+**Paper**: Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
+**Authors**: Wilten Nicola, Sue Ann Campbell (arXiv:2605.14319v1, May 2026)
 
-[TODO: 1-2 sentences explaining what this skill enables]
+## Core Idea
 
-## Structuring This Skill
+Derives an analytical approximation for the evolution of instantaneous population firing rate
+as a function of the initial voltage distribution in networks of coupled integrate-and-fire neurons
+with time-varying inputs. Uses the **transport solution** (advection equation) rather than
+asynchronous steady-state solutions to the Fokker-Planck system.
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Key Distinction from Prior Mean Field Approaches
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" → "Reading" → "Creating" → "Editing"
-- Structure: ## Overview → ## Workflow Decision Tree → ## Step 1 → ## Step 2...
+| Aspect | Prior Mean Field | Transport Mean Field (this work) |
+|--------|-----------------|----------------------------------|
+| Basis | Asynchronous/constant flux steady state | Transport solution to advection equation |
+| Input assumption | Constant inputs | Slow time-varying inputs |
+| Regime | General | Excitation-driven regime |
+| Captures | Average firing rate | Firing rate fluctuations from initial conditions |
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" → "Merge PDFs" → "Split PDFs" → "Extract Text"
-- Structure: ## Overview → ## Quick Start → ## Task Category 1 → ## Task Category 2...
+## Mathematical Framework
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" → "Colors" → "Typography" → "Features"
-- Structure: ## Overview → ## Guidelines → ## Specifications → ## Usage...
+### Transport Mean Field System
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" → numbered capability list
-- Structure: ## Overview → ## Core Capabilities → ### 1. Feature → ### 2. Feature...
+For a population of coupled integrate-and-fire neurons:
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+1. **Voltage distribution evolution**: The population voltage density evolves via the
+   transport (advection) equation derived from the Fokker-Planck system.
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+2. **Instantaneous flux/firing rate**: The firing rate at time t depends on:
+   - The initial voltage distribution across the population
+   - Time-varying external inputs (assumed slow)
+   - Coupling strength between neurons
 
-## [TODO: Replace with the first main section based on chosen structure]
+3. **Key insight**: Firing rate fluctuations emerge from dynamic interaction between:
+   - Time-varying inputs
+   - Initial voltage densities
+   - Network coupling
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+### When the Approximation Holds
 
-## Resources
+- Inputs vary slowly compared to neuronal timescales
+- Neurons operate in excitation-driven regime
+- Population is sufficiently large for mean field approximation
 
-This skill includes example resource directories that demonstrate how to organize different types of bundled resources:
+## Applications
 
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+### 1. Population Dynamics Analysis
+- Predict how heterogeneous initial conditions affect population firing patterns
+- Understand emergence of oscillations or transients in SNN populations
 
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+### 2. Firing Rate Fluctuation Modeling
+- Explain experimentally observed multi-timescale firing rate fluctuations
+- Connect single-neuron properties to population-level dynamics
 
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+### 3. Network Design
+- Choose initial conditions to achieve desired population dynamics
+- Understand how coupling strength shapes collective behavior
 
-**Note:** Scripts may be executed without loading into context, but can still be read by Claude for patching or environment adjustments.
+## Implementation Guide
 
-### references/
-Documentation and reference material intended to be loaded into context to inform Claude's process and thinking.
+### Numerical Simulation
 
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
+```python
+import numpy as np
 
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Claude should reference while working.
+def transport_mean_field(v0_dist, input_fn, coupling, dt=0.1, T=100):
+    """
+    Approximate population firing rate via transport solution.
+    
+    Args:
+        v0_dist: Initial voltage distribution (array)
+        input_fn: Function t -> external input at time t
+        coupling: Coupling strength between neurons
+        dt: Time step
+        T: Total simulation time
+    
+    Returns:
+        firing_rates: Array of instantaneous firing rates
+    """
+    n_steps = int(T / dt)
+    firing_rates = np.zeros(n_steps)
+    
+    # Track voltage distribution evolution via transport
+    # (simplified 1D advection with input-driven drift)
+    v_dist = v0_dist.copy()
+    
+    for t in range(n_steps):
+        # Compute drift from input and coupling
+        I_ext = input_fn(t * dt)
+        drift = I_ext + coupling * firing_rates[max(0, t-1)]
+        
+        # Transport: shift distribution by drift
+        v_dist = np.roll(v_dist, -int(drift / dt))
+        
+        # Firing rate = flux at threshold
+        firing_rates[t] = v_dist[-1] * drift
+    
+    return firing_rates
+```
 
-### assets/
-Files not intended to be loaded into context, but rather used within the output Claude produces.
+### Connection to Fokker-Planck
 
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
+The full Fokker-Planck equation for the voltage density p(v, t):
 
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
+```
+∂p/∂t = -∂/∂v [μ(v,t) p] + (σ²/2) ∂²p/∂v²
+```
 
----
+The transport approximation neglects the diffusion term, keeping only the advection:
 
-**Any unneeded directories can be deleted.** Not every skill requires all three types of resources.
+```
+∂p/∂t = -∂/∂v [μ(v,t) p]
+```
+
+This is valid when drift dominates diffusion (excitation-driven regime).
+
+## Activation Keywords
+
+- transport mean field SNN, mean field approximation SNN
+- population firing rate dynamics, neural population dynamics
+- Fokker-Planck SNN, advection equation neural dynamics
+- firing rate fluctuations, integrate-and-fire population
+- 传输平均场, 脉冲神经网络群体动力学
+- macroscopic neural dynamics, voltage distribution evolution
+
+## Related Skills
+
+- `transport-mean-field-snn-dynamics`: Extended version with transport-based mean field theory
+- `snn-performance-analysis`: General SNN analysis methods
+- `neural-population-dynamics`: Broader neural population analysis framework
