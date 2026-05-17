@@ -1,4 +1,11 @@
-## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job - 14:00)
+## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job - 15:00)
+
+### Extreme Quantum Cognition Machines for Deliberative Decision Making
+- [[extreme-quantum-cognition-machines]] - 极端量子认知机架构，结合量子储备池计算与动态注意力机制实现抗噪决策推理 (arXiv: 2603.05430)
+  - 核心要点：固定量子动力学作为非线性特征映射，学习仅局限于线性读出层，输入依赖的哈密顿量相互作用项实现动态注意力
+  - 核心要点：天然容忍噪声和矛盾训练数据，适用于符号推理、序列分析、异常检测和自动诊断
+  - **Activation**: extreme quantum cognition machines, EQCM, quantum reservoir computing decision, quantum deliberative decision making, quantum cognition architecture, 极端量子认知机
+
 
 ### Scalable Self-Testing of Generic Multipartite Quantum States
 - [[quantum-self-testing]] - 大规模多体量子态自测试认证方法，仅从观测统计量识别量子态，无需信任测量设备 (arXiv: 2605.15106)
