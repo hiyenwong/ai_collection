@@ -1,5 +1,22 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[mamba-spike-forecaster-bci]] - Mamba state-space model trained on spike counts implicitly decodes behavior without supervised labels (arXiv: 2605.12999)
+  - Single Mamba forecaster trained only on next-step Poisson rate prediction simultaneously forecasts neural dynamics AND decodes behavior
+  - Predicted rates carry more behavioral info than raw spike counts (75.7% choice decoding vs ~70% linear baseline on Steinmetz benchmark)
+  - **Activation**: mamba spike forecaster, behavioral decoding, BCI closed-loop, Neuropixels decoding, neural population forecasting
+
+### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
+- [[neural-code-language-interpretability]] - LLM-driven closed-loop framework generates and verifies semantic hypotheses for neuron selectivity (arXiv: 2605.12485)
+  - Gemini 3.0 Pro + Imagen 4.0 + digital twins create testable natural language descriptions of what each V1/V4 neuron encodes
+  - Hypothesis-generated images drove 96.1% of V4 neurons above 95th percentile of natural-image responses (vs 10% random baseline)
+  - **Activation**: neural code speak, semantic hypothesis, neuron characterization, language-based interpretability, digital twin visual cortex
+
+---
+
+
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
 - [[neurotrain-snn-benchmarking]] - Comprehensive SNN training algorithm taxonomy and open benchmarking framework spanning surrogate-gradient, local/three-factor learning, predictive coding, and neuromodulated plasticity (arXiv: 2605.15058)
   - First unified taxonomy of SNN training algorithms with standardized benchmarking

@@ -1,134 +1,122 @@
 ---
 name: mamba-spike-forecaster-bci
-description: >
-  Mamba-based spike forecaster for closed-loop BCI. A single Mamba forecaster
-  trained on next-step spike counts at Neuropixels scale delivers both neural
-  population forecasting AND behavioral decoding in one forward pass.
-  Predicted rates decode mouse choice at 75.7% (3-class, 2.3x chance) and
-  stimulus side at 66.1% (2x chance), beating matched-context linear decoders
-  by 4-6 percentage points. A calibration block of ~100-150 trials brings
-  readout within 1-2pp of asymptote. Fits inside 50ms bin budget on workstation GPUs.
-  Activation: spike forecasting, BCI decoding, neural population dynamics,
-  Mamba neural forecaster, Neuropixels spike analysis, closed-loop BCI,
-  behavioral decoding from spikes, spike count prediction,
-  neural dynamics forecasting, Poisson rate prediction
+description: "Mamba forecaster for population-scale spike prediction and implicit behavioral decoding in closed-loop BCI. Use a single Mamba selective state-space model trained on next-step spike counts to simultaneously forecast neural population dynamics and decode behavioral states. Activation: mamba spike forecaster, spike prediction, behavioral decoding, BCI closed-loop, Neuropixels decoding, neural population forecasting, implicit decoding, state-space model spike."
 ---
 
-# Mamba Spike Forecaster for Closed-Loop BCI
+# Mamba Spike Forecaster for BCI
 
-## Overview
+A single Mamba selective state-space model trained only on next-step spike counts can simultaneously forecast neural population activity AND decode behavioral states — no separate decoder needed.
 
-A single Mamba forecaster trained only on next-step spike counts simultaneously:
-1. **Forecasts** upcoming neural population activity (50ms ahead)
-2. **Decodes** behavioral state (choice, stimulus) via lightweight linear readout
+**Paper**: Minnick et al., "Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale" (arXiv:2605.12999, May 2026)
 
-arXiv: 2605.12999 (May 2026)
+## Core Insight
 
-## Key Insight
-
-A forecaster's predicted firing rates serve as a **behaviorally informative compression** of recent population state. Reading behavior off the forecaster's predicted rates outperforms reading directly from raw spike counts under matched temporal context.
+The forecasting objective (next-step Poisson rate prediction) forces the model to integrate population activity over a history window. Its continuous-valued rate outputs serve as a **behaviorally informative compression** of the recent population state. Predicted rates carry more behavioral information than raw spike counts.
 
 ## Architecture
 
+### Input Pipeline
+- Spike-sorted Neuropixels recordings (M neurons, 50ms bins)
+- Sliding window: H=10 bins (500ms context)
+- History matrix X_t ∈ R^(M×H)
+
+### Mamba Forecaster
 ```
-Spike-counts (M neurons, H=10 bins, 500ms context)
-    → Mamba selective state-space model
-    → Predicted next-bin firing rates λ̂(t+1) ∈ R^M
-        → (1) Population forecast (direct output)
-        → (2) Behavioral decoding via linear head: softmax(Wλ̂ + b)
+h_t = Ā h_{t-1} + B̄ x_t
+y_t = C h_t
 ```
+- Selective state-space model with causal recurrence
+- Content-aware gating matched to spike-count autoregression
+- Output: predicted next-bin firing rates λ̂_{t+1} ∈ R^M_{>0} via softplus
+- Trained with Poisson negative log-likelihood (NLL)
+- ~1.95M parameters
 
-- **Input**: Sliding window of population spike-count vectors X_t ∈ Z^M≥0, H=10 bins (500ms), Δt=50ms
-- **Model**: Mamba (selective state-space model) — causal recurrence with content-aware gating
-- **Loss**: Poisson negative log-likelihood (NLL) on predicted rates
-- **Multi-session**: Pads to M_max=1998 neurons with per-sample channel mask
+### Behavioral Readout
+- Per-session multinomial logistic regression: ŷ = softmax(Wλ̂ + b)
+- Decodes: response (3-class), stimulus side (3-class), contrast (16-class)
+- Behavioral labels NEVER enter forecaster training
 
-## Behavioral Decoding Results
+## Key Results (Steinmetz visual-discrimination benchmark)
 
-| Target | Mamba Decoding | Matched-Context Linear | Gain |
-|--------|---------------|----------------------|------|
-| Mouse Choice (3-class) | 75.7±0.2% | ~70% | +4-6 pp |
-| Stimulus Side (3-class) | 66.1±0.6% | ~60% | +4-6 pp |
+| Metric | Mamba | Matched Linear Baseline | Gain |
+|--------|-------|------------------------|------|
+| Mouse choice (trial vote) | 75.7% | ~70-71% | +4-6 pp |
+| Stimulus side (trial vote) | 66.1% | ~60-62% | +4-6 pp |
+| Chance level | 33.3% | — | — |
 
-- **Chance levels**: 33.3% (3-class)
-- **Calibration**: ~100-150 trials brings readout within 1-2pp of asymptote
-- **Multi-seed**: Results consistent across 3 training seeds
-- **Architecture controls**: Transformer, LRU, NDT2 bidirectional all within ~1-3pp
+- 39 sessions, ~27,000 neurons, 1,994 held-out trials
+- Per-neuron Pearson r = 0.176, population-rate r = 0.783
+- Calibration: ~100-150 trials → within 1-2 pp of asymptote
+- Fits inside 50ms bin budget on workstation GPUs
 
-## Why It Works
+## Implementation Pipeline
 
-1. **Training objective forces integration**: Next-step Poisson rate prediction requires integrating population activity over history window
-2. **Continuous-valued compression**: Predicted rates carry more behavioral info than raw single-bin spike counts
-3. **No behavioral labels needed for forecaster**: Behavior decodes implicitly from spike forecasts
-4. **Single model replaces two**: One forecaster replaces separate forecasting + decoding networks
-
-## Implementation Guide
-
-### Data Format
-
+### 1. Data Preparation
 ```python
-# Per-bin spike counts: M neurons × H history bins
-X_t = spikes[t-H+1:t+1]  # shape: (M, H), dtype: int, Δt=50ms
+# Cross-laboratory: Steinmetz 2019 + IBL Repeated Site
+# 105 sessions, 89,768 channels across 42 Allen CCF regions
+# Pad to M_max = 1,998 with per-sample channel mask
+# 50ms bins, H=10 history (500ms context)
 ```
 
-### Training Loop
+### 2. Training
+- Loss: Poisson NLL on real (unmasked) channels
+- Optimizer: AdamW + cosine LR warmup
+- Epochs: 50
+- Split: 70/15/15% temporal train/val/test per session
+- Behavioral evaluation: separate 20% trial-level holdout
 
-```python
-# Predict next-step rates
-rates = model(X_t)  # shape: (M,), softplus activated
+### 3. Behavioral Decoding (Post-hoc)
+- Use predicted rates as features
+- Per-session multinomial LR over behavioral targets
+- Same protocol applied to raw-count baselines for fair comparison
 
-# Poisson NLL loss
-loss = poisson_nll(rates, spikes[t+1])  # only on unmasked channels
+## Architecture Controls
 
-# Multi-session: pad to M_max, use channel mask
-```
+All sharing same input pipeline, Poisson NLL, training schedule:
 
-### Behavioral Readout (Post-hoc)
+| Architecture | Parameters | Decoding Performance |
+|-------------|-----------|---------------------|
+| Mamba (selective SSM) | 1.95M | Best (headline results) |
+| Transformer (causal attention) | 2.22M | Within ~1-3 pp |
+| LRU (linear recurrent unit) | 1.23M | Within ~1-3 pp |
+| NDT2-style bidirectional masked | ~2.22M | Within ~1-3 pp |
 
-```python
-# Linear head on predicted rates (per-session)
-W, b = fit_multinomial_logistic(rates, behavior_labels)
-predictions = softmax(W @ rates + b)
-```
+## Deployment Considerations
 
-### Closed-Loop Deployment
+### Closed-Loop BCI
+- Session-start calibration: 100-150 trials
+- Inference fits 50ms bin budget
+- Single model replaces separate forecast + decode networks
+- Reduces compute/memory by ~2x vs dual-model approach
 
-```python
-# 1. Session-start calibration: ~100-150 trials
-# 2. Fit linear readout on calibration data
-# 3. Online inference: Mamba forward pass + linear head
-# 4. Both forecast AND decode in one pass (< 50ms on workstation GPU)
-```
+### Multi-Session Training
+- Pad to M_max neurons, mask per-sample
+- Per-session specialization recovered by post-hoc linear readout
+- Cross-laboratory generalization verified
 
-## Comparison to Alternatives
+## Comparison to Related Methods
 
-| Method | Forecasting | Decoding | Inference Cost |
-|--------|-----------|----------|---------------|
-| Linear decoder on raw spikes | ✗ | Baseline | Low |
-| LFADS (VAE) | Smoothed rates | Requires separate decoder | High |
-| NDT/NDT2 | Masked attention | Yes | Medium-High |
-| CEBRA | Embedding | Yes (contrastive) | Medium |
-| **Mamba forecaster** | **Next-step** | **Implicit** | **Medium** |
+| Method | Spike Prediction | Behavioral Decoding | Implicit Decoding |
+|--------|-----------------|-------------------|-------------------|
+| LFADS | Smoothed rates (non-causal) | No | No |
+| NDT/NDT2 | Masked attention | Yes (supervised) | No |
+| CEBRA | No (embeddings only) | Yes (supervised) | No |
+| NEDS | Yes (Poisson) | Yes (supervised) | No |
+| **This work** | **Yes (causal)** | **Yes (emergent)** | **Yes** |
 
-## Applicability
+## When to Use
 
-- Closed-loop BCI systems requiring both forecasting and decoding
-- Neuropixels-scale recordings (>1000 simultaneous neurons)
-- Any task where behavior can be decoded from neural population activity
-- Real-time systems with <50ms latency budget
-- Generalizes to Transformer/LRU architectures (tested)
+- Closed-loop BCI requiring both forecasting and decoding
+- Population-scale neural recordings (Neuropixels, multi-electrode arrays)
+- When computational budget is constrained (single model for two tasks)
+- Multi-session behavioral decoding with minimal per-session calibration
+- Causal spike-rate forecasting for downstream control systems
 
-## Limitations
+## Pitfalls
 
-- GPU-bound inference (not suitable for implanted devices)
-- Multi-session training requires channel padding/masking
-- Per-session linear readout needs calibration data
-- Tested on visual-discrimination task; generalization to other tasks TBD
-
-## Activation Keywords
-
-- spike forecasting, BCI decoding, neural population dynamics
-- Mamba neural forecaster, Neuropixels spike analysis
-- closed-loop BCI, behavioral decoding from spikes
-- spike count prediction, neural dynamics forecasting
-- Poisson rate prediction, state-space model neuroscience
+- Per-neuron prediction is noisy at 50ms bins (single-neuron Poisson noise dominates)
+- Population-level structure is reliably captured even when per-neuron predictions are weak
+- Behavioral decoding is emergent — quality depends on task-relevant dynamics being captured by forecasting objective
+- Calibration needed per session (~100-150 trials minimum)
+- GPU-bound — not suitable for edge-only deployment without external compute
