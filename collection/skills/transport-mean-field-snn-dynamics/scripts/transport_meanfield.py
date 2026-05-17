@@ -4,9 +4,9 @@ Based on arXiv:2605.14319 - approximate macroscopic dynamics via transport solut
 """
 
 import numpy as np
+from scipy.integrate import solve_ivp
 import matplotlib
-
-matplotlib.use("Agg")
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
@@ -15,16 +15,8 @@ def gaussian_initial(v, v_mean=0.5, v_std=0.1):
     return np.exp(-0.5 * ((v - v_mean) / v_std) ** 2) / (v_std * np.sqrt(2 * np.pi))
 
 
-def transport_meanfield(
-    v0_dist,
-    mu_func,
-    v_reset=-1.0,
-    v_thresh=1.0,
-    n_grid=2000,
-    dt=0.01,
-    T=50.0,
-    coupling=0.0,
-):
+def transport_meanfield(v0_dist, mu_func, v_reset=-1.0, v_thresh=1.0,
+                        n_grid=2000, dt=0.01, T=50.0, coupling=0.0):
     """Transport-based mean field for IF population.
 
     Args:
@@ -89,9 +81,9 @@ def transport_meanfield(
 def plot_results(times, flux, title="Transport Mean Field", save_path=None):
     """Plot firing rate dynamics."""
     fig, ax = plt.subplots(figsize=(10, 4))
-    ax.plot(times, flux, "b-", linewidth=1.5)
-    ax.set_xlabel("Time (ms)")
-    ax.set_ylabel("Firing Rate (Hz)")
+    ax.plot(times, flux, 'b-', linewidth=1.5)
+    ax.set_xlabel('Time (ms)')
+    ax.set_ylabel('Firing Rate (Hz)')
     ax.set_title(title)
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
@@ -104,19 +96,18 @@ def plot_results(times, flux, title="Transport Mean Field", save_path=None):
 if __name__ == "__main__":
     # Example: constant input
     mu0 = 0.5
-
-    def mu_func(t):
-        return mu0
+    mu_func = lambda t: mu0
 
     times, flux = transport_meanfield(
-        v0_dist=gaussian_initial, mu_func=mu_func, coupling=0.0, T=100.0, dt=0.005
+        v0_dist=gaussian_initial,
+        mu_func=mu_func,
+        coupling=0.0,
+        T=100.0,
+        dt=0.005
     )
 
-    plot_results(
-        times,
-        flux,
-        title="Transport Mean Field - Constant Input",
-        save_path="/tmp/transport_meanfield_demo.png",
-    )
+    plot_results(times, flux,
+                 title="Transport Mean Field - Constant Input",
+                 save_path="/tmp/transport_meanfield_demo.png")
     print(f"Mean firing rate: {np.mean(flux[1000:]):.4f}")
     print(f"Peak firing rate: {np.max(flux):.4f}")
