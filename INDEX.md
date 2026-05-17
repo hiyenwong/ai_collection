@@ -50,6 +50,13 @@
   - Quantum-enhanced expressivity captures subtle emotional cues under recording variability
   - **Activation**: HQTN speech emotion, quantum tensor network SER, hybrid quantum-classical emotion recognition
 
+### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 2605.14219)
+  - Models hybrid inputs as pairs of classical optimizer hyperparameters and quantum circuit parameters
+  - Two-phase strategy: seed discovery (concolic) + local fuzzing around failure points
+  - Local fuzzing is main driver of improvement; concolic seed discovery helps VQE but unstable for QAOA
+  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing, VQE debugging
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
