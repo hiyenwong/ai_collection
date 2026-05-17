@@ -17,6 +17,13 @@
 ### Extended E-I Network Chaos-Synchrony Theory
 ## 2026-05-18 - Neuroscience + Quantum (Cron Job)
 
+### Parallel Scan Recurrent Neural Quantum States
+- [[parallel-scan-neural-quantum-states]] - Parallel scan (prefix-sum) recurrence for GPU-parallelizable neural quantum state training in variational Monte Carlo (arXiv: 2605.13807)
+  - Replaces O(N) sequential autoregressive sampling with O(log N) parallel scan
+  - Enables 2D spin lattices up to 52x52 matching QMC accuracy with modest compute
+  - Associative recurrence reformulation as critical design requirement
+  - **Activation**: parallel scan NQS, neural quantum state, variational Monte Carlo, recurrent wave function, PSR-NQS, spin lattice simulation
+
 ### Leggett-Garg Tests in Neural Dynamics
 - [[leggett-garg-neural-dynamics]] - Leggett-Garg temporal correlation testing for distinguishing diffusive from non-diffusive stochastic neural dynamics (arXiv: 2605.12126)
   - Leggett-Garg inequality testing for temporal correlations in single neurons
