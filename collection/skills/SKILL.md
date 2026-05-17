@@ -1,321 +1,126 @@
 ---
-name: predictive-coding-light-plus-pcl
-description: "Predictive Coding Light+ (PCL+) methodology for unsupervised sequence learning in spiking neural networks using STDP and heterogeneous synaptic delays. Combines energy-efficient predictive coding with working memory via delayed recurrent excitation. ArXiv 2605.12732."
-tags: [snn, predictive-coding, stdp, synaptic-delays, sequence-learning, working-memory, event-camera]
-arxiv_id: "2605.12732"
-date: "2026-05-12"
+name: multi-timescale-conductance-spiking-networks
+description: >
+  Multi-Timescale Conductance (MTC) Spiking Networks — gradient-trainable framework
+  with rich firing dynamics for enhanced temporal processing. Conductance-based neuron
+  model with fast/slow/ultra-slow timescales enables tonic, phasic, and bursting
+  responses within a single model. Trainable via standard BPTT without surrogate gradients.
+  Activation: multi-timescale conductance, MTC spiking network, conductance-based neuron,
+  spiking neural network regression, surrogate-free SNN training, I-V curve shaping,
+  neuromorphic analog circuits, Mackey-Glass forecasting SNN
 ---
 
-# Predictive Coding Light+ (PCL+) Methodology
+# Multi-Timescale Conductance (MTC) Spiking Networks
 
-## Paper Reference
+Paper: arXiv:2605.11835v1 (May 12, 2026)
+Authors: Alex Fulleda-Garcia, Saray Soldado-Magraner, Josep Maria Margarit-Taulé
+Affiliations: IMB-CNM/CSIC (Spain), UCLA (USA)
 
-**Title:** Predictive Coding Light+: learning to predict visual sequences with spike timing-dependent plasticity and synaptic delays  
-**Authors:** Antony W. N'dri, Thomas Barbier, Céline Teulière, Jochen Triesch  
-**arXiv:** 2605.12732 (May 12, 2026)  
-**Categories:** q-bio.NC  
-**Affiliations:** Université Clermont Auvergne, Orange Labs, Frankfurt Institute for Advanced Studies, Goethe University Frankfurt
+## Core Problem
 
-## Abstract Summary
+Standard SNN neuron models (LIF, AdLIF) face a fundamental trade-off:
+- **Gradient trainability** — requires smooth dynamics
+- **Dynamical richness** — biological neurons exhibit diverse firing modes
+- **Activity sparsity** — energy efficiency requires sparse spiking
 
-PCL+ is a spiking neural network architecture for unsupervised sequence processing that learns recurrent excitatory connections with delays to enable short-term retention of information. It reproduces classic findings on sequence learning in visual cortex and learns to "fill in" missing input in a challenging gesture recognition task. Combines energy-efficient predictive coding with working memory without spending extra spikes.
+LIF models sacrifice biophysical realism; surrogate gradients create forward-backward mismatch,
+especially damaging for continuous-valued temporal regression.
 
-## Core Architecture
+## MTC Neuron Model
 
-### PCL+ Network Components
+### Circuit Foundation
 
-The PCL+ network extends the original PCL (Predictive Coding Light) model with **delayed recurrent excitation**:
+Based on Ribar & Sepulchre (2019) conductance-based framework. Neuron excitability controlled
+by shaping the I-V (current-voltage) curve via parallel conductance elements at different timescales.
 
+### Governing Equations
+
+**State variables (filtered voltages):**
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    PCL+ Architecture                     │
-├─────────────────────────────────────────────────────────┤
-│                                                          │
-│  Complex Cells (Layer 2)                                 │
-│  ┌──────────────┐                                        │
-│  │  Top-down    │                                        │
-│  │  Inhibition ─┼──────► Simple Cells                    │
-│  │  + Delayed   │         (Layer 1)                     │
-│  │  Excitation ─┤                                        │
-│  └──────────────┘                                        │
-│       ▲                                                  │
-│       │ Feedforward                                      │
-│       │ Excitation                                       │
-│       │                                                  │
-│  ┌────┴─────────────────────────────────┐                │
-│  │    Simple Cells                      │                │
-│  │    ┌───────────────────────────┐     │                │
-│  │    │  Local Lateral Inhibition │     │                │
-│  │    │  Distant Lateral Inhib.   │     │                │
-│  │    │  Distant Lateral EXCITATION│    │  ◄── NEW IN PCL+│
-│  │    │  (with delays Δt)         │     │                │
-│  │    └───────────────────────────┘     │                │
-│  └──────────────────────────────────────┘                │
-│       ▲                                                  │
-│       │ Event Camera Input (ON/OFF events)              │
-└─────────────────────────────────────────────────────────┘
+τx · dUx/dt = -Ux + Um  (for each timescale x)
+Ix±(t) = ±αx± · tanh(Ux - δx±)
 ```
 
-### Synaptic Connection Types
-
-| Type | Direction | Plasticity | Delay | Purpose |
-|------|-----------|------------|-------|---------|
-| Feedforward excitation | Input→Simple | STDP | None | Sensory drive |
-| Local lateral inhibition | Simple↔Simple (nearby) | STDP | None | WTA competition |
-| Distant lateral inhibition | Simple→Simple (far) | STDP | None | Suppress predictable |
-| Top-down inhibition | Complex→Simple | STDP | None | Suppress predictable |
-| **Distant lateral excitation** | Simple→Simple (far) | STDP | **Heterogeneous (100-500ms)** | **Working memory (NEW)** |
-| **Top-down excitation** | Complex→Simple | STDP | **Heterogeneous (100-500ms)** | **Working memory (NEW)** |
-
-### Key Innovation: Delayed Recurrent Excitation
-
-PCL+ introduces **two new connection types** with heterogeneous synaptic delays:
-
-1. **Delayed distant lateral excitation** between simple cells
-2. **Delayed top-down excitation** from complex cells to simple cells
-
-These connections:
-- Learn via standard STDP rules
-- Use heterogeneous delays drawn from uniform distribution [100ms, 500ms]
-- Maintain a record of the recent past through delayed spike propagation
-- Decay over time due to recurrent inhibition (fading memory)
-
-## Neuron Model
-
-### Leaky Integrate-and-Fire (LIF)
-
-```python
-def update_membrane_potential(V, dt, tau_m, V_reset, V_thresh, 
-                               V_min, eta_RP, tau_RP, t_since_spike,
-                               synaptic_inputs):
-    """Event-based LIF update."""
-    V_tilde = max(V_min, V * exp(-dt / tau_m) + 
-                  sum(synaptic_inputs) - 
-                  eta_RP * exp(-(t_since_spike) / tau_RP))
-    
-    if V_tilde >= V_thresh:
-        return V_reset, True  # Spike!
-    return V_tilde, False
+**Membrane potential dynamics:**
+```
+τm · dUm/dt = -(Um - Urest) + R·Iin(t) - R·Σ Ix±(t)
 ```
 
-### Key Parameters
+### Three Timescale Conductances
 
-| Parameter | Simple Cells | Complex Cells |
-|-----------|-------------|---------------|
-| V_reset | -10 mV | -10 mV |
-| V_thresh | 30 mV | 3 mV |
-| τ_m | 18 ms | 50 ms |
-| τ_RP | 5 ms | 5 ms |
-| V_min | -20 mV | -20 mV |
+| Timescale | Role | Effect |
+|-----------|------|--------|
+| **Fast (τf)** | Negative conductance If− | Creates negative differential resistance → drives rapid depolarization (upstroke) |
+| **Slow (τs)** | Positive conductance Is+ | Damping force → recovery + refractory period |
+| **Ultra-slow (τus)** | Slow negative + ultra-slow positive | Enables bursting, higher-order temporal processing |
 
-## STDP Learning Rules
+### Firing Regimes
 
-### Causal STDP
+By tuning conductance parameters, the same model produces:
+- **Tonic Spiking** — sustained firing to constant input
+- **Tonic Bursting** — sustained clusters of spikes
+- **Phasic Spiking** — transient response to input onset
+- **Phasic Bursting** — transient burst responses
 
-PCL+ uses causal spike timing-dependent plasticity:
+## Key Innovation: Differentiable Spiking
 
-```python
-def causal_stdp(pre_spike_time, post_spike_time, 
-                tau_LTP, tau_LTD, eta_plus, eta_minus,
-                w_current, w_min, w_max):
-    dt = post_spike_time - pre_spike_time
-    
-    if dt > 0:  # Pre before post → LTP
-        delta_w = eta_plus * exp(-dt / tau_LTP)
-        w_new = min(w_max, w_current + delta_w)
-    elif dt < 0:  # Post before pre → LTD
-        delta_w = eta_minus * exp(dt / tau_LTD)
-        w_new = max(w_min, w_current + delta_w)
-    else:
-        w_new = w_current
-    
-    return w_new
+Unlike LIF's hybrid continuous-discrete nature (hard threshold + reset),
+MTC produces spikes through **fully derivable nonlinear dynamics**.
+
+### Signal Conditioning (Semi-Digital Communication)
+```
+s(t) = min(ReLU(Um(t) - Uth) / (Usat - Uth), 1)
 ```
 
-### Weight-Dependent STDP
+This provides:
+1. **Signal standardization** — normalizes spike amplitudes to [0,1]
+2. **Semi-digital sparsity** — suppresses sub-threshold activity while retaining continuous slope
+   information during rising phase (needed for exact gradients)
+3. **Synaptic transduction model** — approximates nonlinear neurotransmitter release
 
-For stability, PCL+ uses weight-dependent scaling:
+## Training: No Surrogate Gradients Needed
 
-```python
-def weight_dependent_stdp(delta_w, w_current, w_max, w_min, lambda_param):
-    # Soft bound: scaling depends on distance from bounds
-    if delta_w > 0:  # Potentiation
-        scale = ((w_max - w_current) / (w_max - w_min)) ** lambda_param
-    else:  # Depression
-        scale = ((w_current - w_min) / (w_max - w_min)) ** lambda_param
-    return delta_w * scale
-```
+- **MTC**: Standard BPTT through continuous conductance state variables
+- **LIF**: Requires surrogate gradient (ArcTan derivative in snnTorch)
+- **AdLIF**: Requires SLAYER surrogate gradient (α=5)
 
-## Network Training Workflow
+The conductance states provide smooth internal representations, avoiding the
+spike discretization problem that necessitates surrogate gradients.
 
-### Step 1: Event Camera Preprocessing
+## Experimental Results: Mackey-Glass Time Series
 
-```python
-def event_camera_to_spikes(events, simple_cell_receptive_fields):
-    """Convert event camera ON/OFF events to simple cell input spikes."""
-    # Events: (x, y, polarity, timestamp)
-    # Polarity: +1 (ON/brightness increase), -1 (OFF/brightness decrease)
-    spikes = []
-    for event in events:
-        x, y, polarity, t = event
-        # Map to simple cell receptive fields
-        for rc in simple_cell_receptive_fields:
-            if rc.covers(x, y, polarity):
-                spikes.append((rc.neuron_id, t))
-    return spikes
-```
+**Task**: Chaotic time series forecasting at predictability horizon (1 Lyapunov time)
+**Architecture**: Feedforward SNN, 4 stages (input projection → spiking hidden layer → linear readout → low-pass filter)
 
-### Step 2: Feedforward Excitatory Learning
+**Key findings**:
+- MTC outperforms LIF and SOTA AdLIF baselines in regression accuracy
+- MTC operates in considerably sparser regime (both rate and duty-cycle dimensions)
+- Dynamic sparsity emerges from single-neuron excitability tuning, not loss regularization
+- Aligns with neuromorphic vision of energy-efficient intelligent perception
 
-Simple cells learn receptive fields from event camera input via STDP:
+## Hardware Implementation Advantages
 
-```python
-def learn_feedforward_weights(input_spikes, simple_cell_spikes,
-                               w_feedforward, tau_LTP, tau_LTD):
-    for inp_time in input_spikes:
-        for sc_time in simple_cell_spikes:
-            dt = sc_time - inp_time
-            w_feedforward = causal_stdp(inp_time, sc_time, 
-                                         tau_LTP, tau_LTD, 
-                                         w_feedforward)
-    return w_feedforward
-```
+1. **Analog circuit compatible** — conductance elements implementable with compact transconductance blocks (subthreshold MOS)
+2. **I-V curves need not be exact tanh** — any approximately monotone nonlinearity works
+3. **Multi-timescale dynamics** naturally map to neuromorphic hardware with different RC constants
+4. **No surrogate gradient overhead** — eliminates backward pass approximation circuitry
 
-### Step 3: Lateral Connection Learning
+## Comparison with Baselines
 
-Both inhibitory and excitatory lateral connections learn via STDP:
+| Property | LIF | AdLIF | MTC (this work) |
+|----------|:---:|:-----:|:---:|
+| Firing regimes | Tonic only | Tonic + some adaptation | Tonic, phasic, bursting |
+| Surrogate gradient needed | ✓ | ✓ | ✗ |
+| Timescale control | 1 (membrane) | 2 (membrane + adaptation) | 3+ (fast, slow, ultra-slow) |
+| I-V curve shaping | No | No | Yes |
+| Analog circuit mapping | Simple | Moderate | Natural |
+| Sparsity mechanism | Threshold/loss reg | Threshold/loss reg | Intrinsic excitability |
 
-```python
-def learn_lateral_connections(simple_cell_spikes, 
-                               w_lateral_inhib, w_lateral_excit,
-                               delays_uniform=(100, 500)):
-    """Learn lateral connections with heterogeneous delays."""
-    for i, spikes_i in enumerate(simple_cell_spikes):
-        for j, spikes_j in enumerate(simple_cell_spikes):
-            if i == j:
-                continue
-            # Inhibition: instantaneous
-            w_lateral_inhib[i, j] = learn_from_pairs(spikes_i, spikes_j)
-            # Excitation: with delay (NEW in PCL+)
-            delay = random.uniform(*delays_uniform)
-            w_lateral_excit[i, j] = learn_from_pairs_with_delay(
-                spikes_i, spikes_j, delay)
-    return w_lateral_inhib, w_lateral_excit
-```
+## Activation Context
 
-### Step 4: Complex Cell Learning
-
-Complex cells learn to pool over simple cells and provide top-down feedback:
-
-```python
-def learn_topdown_connections(simple_spikes, complex_spikes,
-                               w_topdown_inhib, w_topdown_excit):
-    """Learn top-down inhibitory and excitatory connections."""
-    # Inhibition: suppress predictable simple cell spikes
-    w_topdown_inhib = learn_from_pairs(complex_spikes, simple_spikes)
-    # Excitation with delay: maintain memory (NEW in PCL+)
-    delay = random.uniform(100, 500)
-    w_topdown_excit = learn_from_pairs_with_delay(
-        complex_spikes, simple_spikes, delay)
-    return w_topdown_inhib, w_topdown_excit
-```
-
-## Sequence Learning Mechanism
-
-### Temporal Association via Delayed Excitation
-
-```
-Time:     t₁        t₂        t₃        t₄        t₅
-          │         │         │         │         │
-Input:    [Stim A]  [Stim B]  [Stim C]  [—]       [—]
-          │         │         │
-Simple:   [spike]──►[spike]──►[spike]
-           │  │       │  │       │
-Delayed   └──┼───────┼──┼───────┘  (recurrent excitation)
-Excitation  └────────┼───────────►  activates at t₃
-                     └───────────►  activates at t₄
-                                    
-Memory:   [Stim A]  [A+B]     [A+B+C]   [A+B+C]   [fading...]
-```
-
-The delayed excitatory connections create **temporal associations**:
-- A spike at t₁ arrives at target cell at t₁ + delay
-- Multiple connections with different delays create a distributed memory trace
-- Recurrent inhibition ensures the memory fades over time
-
-### "Filling In" Missing Input
-
-When trained on sequences, PCL+ can predict and fill in missing sensory input:
-
-```
-Test:     [Stim A]  [Stim B]  [—]       [—]       [—]
-                   │         │
-Memory via ────────┼─────────┘
-Delayed Excit.     │         
-                   └────────► Predicts Stim C pattern
-                            (without actual input)
-```
-
-## Implementation Considerations
-
-### Event-Based Simulation
-
-PCL+ uses event-based simulation (no fixed time steps):
-
-```python
-class EventBasedSNN:
-    def __init__(self, neurons, connections):
-        self.event_queue = PriorityQueue()  # Sorted by time
-    
-    def step(self):
-        """Process next event in queue."""
-        event = self.event_queue.pop()
-        self.process_event(event)
-    
-    def process_event(self, event):
-        if event.type == "SPIKE":
-            self.propagate_spike(event.neuron, event.time)
-        elif event.type == "INPUT":
-            self.process_input(event)
-```
-
-### Energy Efficiency
-
-PCL+ achieves energy efficiency through:
-
-1. **Event-based processing**: Only compute when spikes arrive
-2. **Predictive spike suppression**: Redundant spikes are removed by inhibition
-3. **Delayed excitation for memory**: No persistent activity needed
-4. **Sparse coding**: Only unpredictable events generate spikes
-
-### Working Memory Trade-off
-
-| Memory Mechanism | Energy Cost | Capacity | Decay |
-|-----------------|-------------|----------|-------|
-| Persistent activity (traditional SNN) | High (continuous spiking) | Limited by runaway excitation | N/A |
-| PCL+ delayed excitation | Low (propagating spikes only) | Set by delay distribution | Natural decay via inhibition |
-
-## Experimental Results Summary
-
-1. **Grating sequences**: PCL+ reproduces visual sequence learning findings in mouse V1
-2. **Gesture recognition**: Successfully fills in missing input in event-camera gesture videos
-3. **Control experiments**: Shuffled connections and random connectivity fail to fill in, confirming learned structure is necessary
-
-## When to Use PCL+
-
-- **Unsupervised sequence learning**: Learning temporal patterns from event-based data
-- **Working memory in SNNs**: Short-term retention without persistent activity
-- **Energy-efficient temporal processing**: Neuromorphic hardware deployment
-- **Predictive sensory processing**: Systems that need to predict future inputs
-- **Event camera applications**: Processing asynchronous event-based vision data
-
-## Activation Keywords
-
-predictive coding light plus, PCL+, STDP sequence learning, synaptic delay memory, event camera SNN, working memory spiking network, unsupervised visual sequence, energy-efficient temporal processing
-
-## Related Skills
-
-- predictive-coding-light: Original PCL methodology
-- spiking-neural-network-analysis: General SNN paper analysis
-- spikingjelly-framework: SNN implementation framework
-- snn-learning-survey: Comprehensive SNN learning rules
+Use this skill when:
+- Designing neuron models with rich firing dynamics for temporal processing
+- Building SNNs that avoid surrogate gradient approximations
+- Implementing neuromorphic circuits with conductance-based dynamics
+- Tackling continuous-valued temporal regression with spiking networks
+- Studying the trade-off between trainability, dynamical richness, and sparsity

@@ -19,6 +19,15 @@
   - **Activation**: macroscopic dynamics, transport equation, firing rate fluctuations, Fokker-Planck, mean field, integrate-and-fire
 
 
+## 2026-05-17 - Systems Engineering Research (Cron Job)
+
+### Sheaves as a Means of Maintaining Consistency in Model-based Systems Engineering
+- [[sheaf-consistency-mbse]] - 用层论(presheaf/sheaf condition)建模MBSE多视图一致性，仅检查pairwise interface compatibility即可证明全局一致性 (arXiv: 2605.08609)
+    - Sheaf condition等价于pairwise overlap compatibility，全局一致性可简化为O(N²)检查
+    - Limit-preserving functors派生属性继承一致性保证，Lean 4+Mathlib机器验证
+    - 适用于CPS架构设计：电气/热/机械/软件多工程视图一致性管理
+  - **Activation**: sheaf theory MBSE, model-based systems engineering consistency, multi-view architecture, CPS design consistency, category theory systems engineering, presheaf design spaces, 层论系统一致性
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### Multiple mechanisms of rhythm switching in recurrent neural networks with adaptive time constants
