@@ -109,6 +109,12 @@
     - 基于测量基量子计算的UBQC协议，客户端仅需有限量子能力即可委托计算
     - 模块化超导处理器架构实现分布式盲计算，降低单模块量子比特需求
   - **Activation**: blind quantum computation, secure quantum cloud, quantum privacy, delegated quantum computing, UBQC, measurement-based quantum computing
+### New approaches to almost i.i.d. information theory
+- [[almost-iid-quantum-information]] - Strict hierarchy of almost i.i.d. quantum state definitions (Wasserstein, k-body marginals, Mazzola) (arXiv: 1165)
+  - Establishes strict separation between three definitions of "almost i.i.d." quantum states
+  - Quantum Wasserstein distance bridges gap between physical relevance and mathematical tractability
+  - **Activation**: almost i.i.d. quantum, quantum Wasserstein distance, k-body marginals
+
 ## 2026-05-17 - Information Science + Quantum (Cron Job) - Update
 
 ### QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling

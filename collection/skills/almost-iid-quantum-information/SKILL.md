@@ -1,99 +1,128 @@
 ---
 name: almost-iid-quantum-information
-description: >
-  Methodology for analyzing almost i.i.d. (independent and identically distributed) quantum states
-  using quantum Wasserstein distance, k-body marginals, and normalized information theory.
-  Based on arXiv 2605.15114. Use when: analyzing quantum information sources, evaluating
-  quantum state similarity beyond i.i.d. assumptions, designing quantum communication protocols,
-  or working with non-i.i.d. quantum data. Covers three hierarchical definitions of almost i.i.d.
-  states and their strict separation properties.
+description: "Almost i.i.d. information theory methodology — alternative definitions of almost independently and identically distributed quantum states using quantum Wasserstein distance and k-body marginals. Addresses the too-stringent i.i.d. assumption in quantum information theory."
+tags: ["quantum-information", "information-theory", "quantum-states", "i.i.d.", "wasserstein"]
+related_skills: ["quantum-information-protocol-analyzer", "quantum-statistical-estimation"]
 ---
 
-# Almost-IID Quantum Information Theory
+# Almost i.i.d. Quantum Information Theory
 
 ## Description
-Analysis of quantum information sources that relax the strict i.i.d. assumption.
-Three alternative definitions form a strict hierarchy: k-body marginals (loosest),
-quantum Wasserstein distance (intermediate), and Mazzola et al. notion (strictest).
+
+Methodology for relaxing the independent and identically distributed (i.i.d.) assumption in quantum information theory. Based on arXiv: "New approaches to almost i.i.d. information theory" (Girardi, De Palma, Lami, 2026). Introduces two alternative definitions of almost i.i.d. states and establishes a strict hierarchy among them.
 
 ## Activation Keywords
-- almost iid quantum
-- quantum wasserstein distance
-- quantum information theory non-iid
-- quantum state similarity
-- quantum source analysis
-- 量子信息论
-- 量子态相似性
-- quantum marginal analysis
-- quantum resource distillation
 
-## Tools Used
-- `exec`: Run quantum information analysis scripts
-- `read`: Read paper content and mathematical proofs
-- `web_search`: Find related quantum information papers
+- almost i.i.d. quantum
+- quantum Wasserstein distance
+- k-body marginals
+- relaxed i.i.d. assumption
+- quantum source models
+- 量子近似独立同分布
 
-## Instructions for Agents
+## Core Framework
 
-### Step 1: Understand the Problem
-Traditional quantum information theory assumes i.i.d. sources, which is too stringent
-for real quantum systems. This methodology provides three relaxed alternatives.
+### The Problem with i.i.d. Assumption
 
-### Step 2: Three Hierarchical Definitions
-1. **k-body marginals** - Compare reduced density matrices of k-body subsystems
-   - Loosest definition, allows more variation in global state
-2. **Quantum Wasserstein distance** - Distance based on quantum transport cost
-   - Intermediate strictness, physically motivated
-3. **Mazzola et al. notion** - Based on typical subspace analysis
-   - Strictest definition, closest to i.i.d.
+The i.i.d. assumption is ubiquitous in quantum information theory but:
+- **Too stringent**: Real quantum sources exhibit correlations
+- **Physically unrealistic**: Practical systems have memory and interdependencies
+- **Limits applicability**: Many protocols cannot be analyzed under strict i.i.d.
 
-### Step 3: Strict Separation
-The paper proves these three notions are strictly separated:
-- Mazzola et al. → Quantum Wasserstein → k-body marginals
-- Each implication is one-way; explicit counterexamples exist
+### Three Definitions of "Almost i.i.d."
 
-### Step 4: Application to Quantum Resource Distillation
-Universal distillation rates are achievable without knowledge of input state,
-certifying robustness of quantum resource distillation. This applies to:
-- Entanglement purification under non-entangling maps
-- Rates governed by regularized relative entropy of entanglement
+A strict hierarchy exists from strictest to loosest:
 
-## Error Handling
-### Quantum Wasserstein Calculation Issues
-If Wasserstein distance calculation fails:
-- Fall back to k-body marginal comparison
-- Use trace distance as upper bound
+1. **Mazzola et al. notion** (strictest)
+   - Most constraining definition
+   - Closest to true i.i.d. behavior
+   - Limited practical applicability but strongest theoretical guarantees
 
-### Non-IID Source Analysis
-For sources that don't fit any definition:
-- Check if system size allows polynomial vs exponential subspace growth
-- Verify translation symmetry constraints
+2. **Quantum Wasserstein distance** (intermediate)
+   - Based on optimal transport metrics
+   - Balances mathematical tractability with physical relevance
+   - Captures correlations through distance-based relaxation
 
-## Best Practices
-1. Use the loosest definition that suffices for the application
-2. When designing protocols, account for non-i.i.d. behavior explicitly
-3. Consider symmetry constraints when analyzing state properties
+3. **Average k-body marginals** (loosest)
+   - Most permissive definition
+   - Only requires matching low-order correlations
+   - Broadest physical applicability, weakest guarantees
 
-## Examples
-### Example 1: Source Analysis
+### Strict Separation
+
+The hierarchy is **strict** — explicit examples demonstrate that each class properly contains the next. This means:
+- There exist states satisfying definition 3 but not 2
+- There exist states satisfying definition 2 but not 1
+- The classes are genuinely different, not equivalent reformulations
+
+## Mathematical Structure
+
+### Quantum Wasserstein Distance Approach
+
 ```
-User: "分析这个量子信源是否接近i.i.d."
+For quantum state ρ:
+  Wasserstein(ρ, σ_iid) ≤ ε
+where σ_iid is the closest i.i.d. state
 
-Agent: 
-1. Check k-body marginals match for small k
-2. Compute quantum Wasserstein distance
-3. Determine which definition the source satisfies
+This measures how "far" ρ is from being i.i.d.
+using optimal transport on the quantum state space.
 ```
 
-## Resources
-- arXiv: 2605.15114 - "New approaches to almost i.i.d. information theory"
-- arXiv: 2605.15174 - "Universal quantum resource distillation"
+### k-Body Marginals Approach
 
-## Related Skills
-- quantum-information-protocol-analyzer: Analyze quantum protocols
-- quantum-error-correction-methods: QEC patterns
-- quantum-ml-patterns: QML research patterns
+```
+For quantum state ρ on n subsystems:
+  ||Tr_{n-k}[ρ] - σ^{⊗k}|| ≤ ε for all k-body reductions
+  
+Only low-order correlations need match i.i.d. behavior.
+Higher-order correlations can be arbitrary.
+```
 
-## Notes
-- Paper proves strict hierarchy with explicit counterexamples
-- Translation-invariant subspace dimension grows polynomially,
-  while full subspace grows exponentially - key to LRE in mixed states
+## Application Methodology
+
+### Step 1: Identify Source Model
+
+Determine which "almost i.i.d." definition fits your physical system:
+- **Highly correlated systems**: Use k-body marginals (loosest)
+- **Moderate correlations**: Use quantum Wasserstein distance
+- **Near-i.i.d. systems**: Use Mazzola et al. definition
+
+### Step 2: Choose Analysis Framework
+
+| Definition | Analysis Tools | Guarantees |
+|-----------|---------------|------------|
+| Mazzola et al. | Standard i.i.d. techniques | Strongest |
+| Wasserstein | Optimal transport theory | Moderate |
+| k-body marginals | Reduced density matrix analysis | Weakest but broadest |
+
+### Step 3: Protocol Adaptation
+
+Many quantum information protocols assume i.i.d. sources:
+- **Quantum key distribution**: Security proofs may need modification
+- **Channel coding**: Capacity results may change
+- **State estimation**: Convergence rates affected
+- **Entanglement theory**: Detection criteria may loosen
+
+## Implications for Quantum Information Theory
+
+### Positive Results
+- More physically realistic source models
+- Broader applicability of existing protocols
+- Bridges gap between theory and practice
+
+### Challenges
+- Each definition requires different proof techniques
+- Security guarantees weaken as definitions loosen
+- Computational complexity of verification increases
+
+## References
+
+- arXiv: "New approaches to almost i.i.d. information theory" — Girardi, De Palma, Lami (2026)
+- Quantum Wasserstein distance literature
+- Mazzola et al. original definition
+
+## Limitations
+
+- Explicit examples separating the three classes may be complex to construct
+- Protocol-specific analysis required for each definition
+- Computational verification of Wasserstein distance is non-trivial for large systems
