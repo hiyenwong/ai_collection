@@ -1,3 +1,23 @@
+## 2026-05-18 - Neuroscience + Quantum Computing (Cron Job - 00:00)
+
+### HQTN-SER: Speech Emotion Recognition with Hybrid Quantum Tensor Networks
+- [[hqtn-quantum-tensor-emotion]] - 混合量子张量网络用于语音情感识别，将经典特征提取与量子电路Born机器(QCBM)结合，在数据受限场景下实现紧凑的非线性相关建模 (arXiv: 2605.14523)
+  - 核心要点：QCBM模块以少量参数实现非线性相关建模，在真实录音条件下优于纯经典基线
+  - 核心要点：电路结构对性能影响显著，需在不同ansatz间消融测试；噪声鲁棒性验证是部署前提
+  - **Activation**: hybrid quantum tensor network, HQTN-SER, speech emotion recognition, quantum circuit Born machine, QCBM, emotion classification, affective computing, quantum neural emotion
+
+### Photonic-Implemented Efficient Deep Quantum Neural Network via Virtual-Driven Hilbert Space Expansion
+- [[photonic-qnn-hilbert-expansion]] - 光子芯片上的高效深度量子神经网络，通过输入复制和模式扩展实现希尔伯特空间扩展，无需辅助量子比特即可实现非线性激活 (arXiv: 2605.06397)
+  - 核心要点：在线性量子光子芯片上通过输入复制和模式扩展实现有效非幺正和非线性激活
+  - 核心要点：消除物理辅助量子比特需求，显著降低资源成本，在非线性分类和图像生成上展示增强表达能力
+  - **Activation**: photonic quantum neural network, QNN, Hilbert space expansion, nonlinear activation quantum, photonic chip deep learning
+
+### Wavelet Variance Equipartition as a Threshold for World-Model Quality and Quantum Kernel TN-Simulability
+- [[wavelet-variance-quantum-kernel]] - 小波方差均分定理作为世界模型质量阈值，建立α=1/2为量子核经典可模拟性的尖锐相变边界 (arXiv: 2605.11557)
+  - 核心要点：最优表示满足方差均分(α≈1/2)，镜像Kolmogorov惯性区间
+  - 核心要点：建立α=1/2为振幅编码量子核经典可模拟性的尖锐相变边界
+  - **Activation**: wavelet variance equipartition, quantum kernel simulability, tensor network simulation, world model quality, scaling exponent
+
 ## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job - 15:00)
 
 ### Extreme Quantum Cognition Machines for Deliberative Decision Making
