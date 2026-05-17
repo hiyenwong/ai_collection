@@ -1,5 +1,17 @@
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
+### BiSpikCLM: Binary Spiking Causal Language Model
+- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
+  - SFSA eliminates softmax and floating-point ops in autoregressive language modeling, using binary spike-based computation
+  - SpAD distills ANN→SNN across 4 levels (embeddings, attention maps, intermediate features, logits); 1.3B model trained with only 5.6% tokens
+  - **Activation**: BiSpikCLM, binary spiking LLM, softmax-free spiking attention, spike-aware distillation, spiking language model, event-driven NLP
+
+### ASTDP-GAD: Neuromorphic Graph Anomaly Detection
+- [[astdp-gad-neuromorphic-graph-anomaly]] - Adaptive Spiking Temporal Dynamics Plasticity framework combining spiking GNNs with STDP learning for energy-efficient anomaly detection in dynamic networks (arXiv: 2605.13863)
+  - Six innovations: adaptive LIF spike encoding, LIFGAT with lateral inhibition, event-driven hypergraph memory, spike rate contrast pooling, adaptive STDP layers, multi-scale temporal fusion
+  - Theoretical guarantees: LIFGAT universal approximation, STDP stable convergence, hypergraph prototype convergence, 5× variance reduction
+  - **Activation**: ASTDP-GAD, spiking graph neural network, neuromorphic anomaly detection, STDP graph learning, LIF graph attention, event-driven graph anomaly
+
 ### HormoneT5: Hormone-inspired Emotion Layer for Transformers
 - [[hormone-t5-emotion-layer]] - Biologically-inspired Hormone Emotion Block augmenting transformers with six continuous hormone-like values via per-hormone attention heads for emotionally-appropriate response generation (arXiv: 2605.13858)
   - Six hormone dimensions (dopamine/serotonin/oxytocin/cortisol/adrenaline/endorphin) computed through orthogonal query attention with temperature scaling
