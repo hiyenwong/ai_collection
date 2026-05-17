@@ -1,84 +1,96 @@
 ---
 name: state-space-ntk-collapse-bifurcations
-description: "Analysis of Neural Tangent Kernel (NTK) collapse near dynamical bifurcations in state-space models. Studies how the NTK spectrum degrades as recurrent networks approach critical transitions. Activation: NTK collapse, bifurcation analysis, state-space NTK, critical transitions neural networks, dynamical systems deep learning."
+description: >
+  Local theory of gradient descent near bifurcations via state-space neural tangent
+  kernel (sNTK). Bifurcations collapse sNTK to rank-one operators corresponding to
+  classical normal forms, funneling gradient descent into critical dynamical directions.
+  Use when: analyzing RNN learning dynamics near bifurcations, studying NTK collapse,
+  understanding gradient-based training of recurrent systems, bifurcation analysis in
+  deep learning, neural tangent kernel for temporal tasks, normal form learning theory.
 ---
 
 # State-Space NTK Collapse Near Bifurcations
 
-> Analysis of Neural Tangent Kernel (NTK) behavior near dynamical bifurcations in state-space neural networks, revealing how training dynamics change as models approach critical phase transitions.
+## Paper Reference
 
-## Metadata
-- **Source**: arXiv:2605.12763
-- **Authors**: James Hazelden, Eric Shea-Brown
-- **Published**: 2026-05-14
-- **Categories**: Machine Learning (cs.LG); Dynamical Systems (math.DS); Optimization and Control (math.OC); Neurons and Cognition (q-bio.NC)
+- **Title:** State-Space NTK Collapse Near Bifurcations
+- **Authors:** James Hazelden, Eric Shea-Brown
+- **arXiv:** 2605.12763 (May 2026)
+- **Categories:** cs.LG, math.DS, math.OC, q-bio.NC
 
 ## Core Methodology
 
-### Key Innovation
-Analyzes the behavior of the Neural Tangent Kernel (NTK) as state-space recurrent neural networks approach dynamical bifurcations. The NTK provides a linearized view of neural network training dynamics, and this work reveals how the NTK spectrum degrades near critical transitions, affecting trainability and generalization.
+### Empirical State-Space NTK (sNTK)
 
-### Technical Framework
-1. **State-Space RNN Formulation**: Analyzes recurrent networks through their continuous-time state-space dynamics
-2. **NTK Computation**: Computes the Neural Tangent Kernel for state-space models
-3. **Bifurcation Analysis**: Studies how NTK eigenvalues change as network parameters approach bifurcation points
-4. **Critical Transition Theory**: Connects dynamical systems bifurcation theory with deep learning training dynamics
+The sNTK describes gradient descent dynamics in function space for temporal models:
 
-### Key Findings
-- NTK spectrum collapses as the network approaches bifurcation points
-- Eigenvalue structure reveals which directions in parameter space become ill-conditioned
-- Different bifurcation types (saddle-node, Hopf, etc.) produce distinct NTK signatures
-- Training dynamics slow down near critical transitions due to NTK degradation
-- Has implications for understanding critical brain dynamics and phase transitions in neural systems
+$$K_{sNTK}(t, t') = \frac{\partial h(t)}{\partial \theta}^\top \frac{\partial h(t')}{\partial \theta}$$
 
-## Implementation Guide
+where $h(t)$ is the hidden state at time $t$ and $\theta$ are model parameters.
 
-### Prerequisites
-- PyTorch/JAX for neural network implementation
-- Linear algebra libraries for eigenvalue computation
-- Bifurcation analysis tools (e.g., PyDSTool, PyAuto)
+### Key Finding: Bifurcation Dominance
 
-### Step-by-Step
-1. **Define State-Space Model**: Implement recurrent network as continuous-time dynamical system
-2. **Compute NTK**: Calculate Neural Tangent Kernel for the state-space model
-3. **Parameter Sweep**: Vary parameters to approach bifurcation points
-4. **Eigenvalue Analysis**: Track NTK eigenvalue spectrum during parameter changes
-5. **Bifurcation Detection**: Identify critical transition points from NTK behavior
+Near bifurcations, the sNTK reduces to a **rank-one operator**:
 
-### Code Concept
-```python
-# Conceptual framework
-def compute_state_space_ntk(model, inputs):
-    """Compute NTK for state-space recurrent model."""
-    # Linearize model around current parameters
-    # Compute Jacobian of outputs w.r.t. parameters
-    # NTK = J @ J.T
-    jacobian = torch.autograd.functional.jacobian(model, inputs)
-    ntk = jacobian @ jacobian.T
-    return ntk
+$$K_{sNTK} \approx \lambda \cdot v \cdot v^\top$$
 
-def analyze_ntk_collapse(ntk, bifurcation_param):
-    """Analyze NTK eigenvalue spectrum near bifurcation."""
-    eigenvalues = torch.linalg.eigvalsh(ntk)
-    condition_number = eigenvalues.max() / eigenvalues.min()
-    return eigenvalues, condition_number
-```
+where $v$ corresponds to the critical eigendirection of the normal form.
 
-## Applications
-- Understanding training dynamics of recurrent neural networks near critical points
-- Predicting when RNN training will stall due to NTK collapse
-- Designing initialization schemes that avoid bifurcation-adjacent regions
-- Connecting deep learning theory with critical brain dynamics
-- Analyzing stability of learned dynamical systems
+This means learning near bifurcations is **dominated by a single parameter direction**,
+making the learning geometry predictable from classical bifurcation theory.
 
-## Pitfalls
-- NTK analysis assumes linearized training dynamics, which may not hold far from initialization
-- Computing full NTK is O(N²) in data size — requires approximations for large datasets
-- Bifurcation detection requires careful parameter sweep design
+### Bifurcation Channel Decomposition
 
-## Related Skills
-- geodynamics-geometric-state-space
-- neural-dynamics-universal-translator
-- neural-critical-dynamics-theory
-- nonlinear-rnn-fixed-connectivity-solution
-- renormalization-scaling-brain-activity
+Procedure:
+1. Compute sNTK at the current parameter configuration
+2. Decompose into bifurcation-relevant channel and residual channel
+3. Near codimension-1 bifurcations, the relevant channel is rank-one and highly amplified
+4. This amplification causes the bifurcation channel to dominate the full sNTK
+
+### Normal Form Correspondence
+
+| Bifurcation Type | Normal Form | Learning Geometry |
+|---|---|---|
+| Saddle-node | $\dot{x} = \mu + x^2$ | Single dominant direction |
+| Pitchfork | $\dot{x} = \mu x - x^3$ | Symmetric bifurcation in parameter space |
+| Hopf | $\dot{z} = (\mu + i\omega)z - |z|^2 z$ | Oscillatory mode emergence |
+
+### Learning Instability Resolution
+
+Low-rank natural gradient methods resolve learning instability near bifurcations:
+- Standard SGD becomes unstable as sNTK effective rank collapses
+- Natural gradient restricted to the dominant bifurcation direction stabilizes training
+- Very little overhead compared to SGD
+
+## Student-Teacher RNN Illustration
+
+In the student-teacher RNN setup:
+- First learned bifurcation coincides with sharp sNTK effective rank collapse
+- Emergence of dominant parameter direction
+- Restricted sNTK closely matches pitchfork normal form landscape
+
+## Practical Applications
+
+### RNN Training Diagnostics
+- Monitor sNTK effective rank during training
+- Sharp drops indicate the network is learning bifurcations
+- Use this signal to adapt learning rates or switch to natural gradient
+
+### Architecture Design
+- Bifurcations are necessary for rich temporal feature learning
+- Design architectures that facilitate controlled bifurcation passage
+- Use normal form theory to predict learning behavior
+
+### Optimization Strategy
+- When sNTK rank collapses, switch to low-rank natural gradient
+- Avoid standard SGD instability near bifurcation boundaries
+- Exploit rank-one structure for efficient second-order updates
+
+## Activation Keywords
+
+- state-space NTK, sNTK collapse, bifurcation learning dynamics
+- RNN training bifurcation, neural tangent kernel recurrent
+- normal form learning theory, gradient descent near bifurcation
+- pitchfork bifurcation neural network, Hopf bifurcation learning
+- low-rank natural gradient RNN, bifurcation channel decomposition
+- temporal feature learning, recurrent network dynamics analysis

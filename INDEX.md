@@ -1,3 +1,17 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### State-Space NTK Collapse Near Bifurcations
+- [[state-space-ntk-collapse-bifurcations]] - Local theory of gradient descent near bifurcations via state-space neural tangent kernel (sNTK), showing sNTK collapses to rank-one operators matching classical normal forms (arXiv: 2605.12763)
+  - Near codimension-1 bifurcations, sNTK reduces to rank-one operator in bifurcation-relevant channel
+  - Low-rank natural gradient resolves learning instability near bifurcations with minimal overhead
+  - **Activation**: state-space NTK, sNTK collapse, bifurcation learning dynamics, RNN training bifurcation, normal form learning theory, neural tangent kernel recurrent
+
+### Empirical Scaling Laws in Balanced Networks with Conductance-Based Synapses
+- [[balanced-network-scaling-conductance]] - Cancellation effect between conductance-based synapses and spike time correlations produces realistic membrane potential variability (arXiv: 2605.12404)
+  - Current-based + correlations overestimate variability; conductance-based alone underestimates
+  - Both assumptions together yield moderate, realistic Vm variance across network sizes
+  - **Activation**: balanced network conductance synapse, membrane potential variability, E/I balanced network, spike time correlation, cortical variability modeling
+
 ## 2026-05-18 - Information Science + Quantum (Cron Job)
 
 ### Toward Covert Quantum Computing
