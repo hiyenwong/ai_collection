@@ -1,5 +1,17 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
+### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
+- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
+  - SFSA replaces softmax causal attention with spike-based Hadamard-masked integer dot product, eliminating all FP operations in attention
+  - SpAD distillation enables training with only 5.6% of standard tokens (10B vs 180B), achieving 42.19% accuracy at 4.16% energy cost of OPT-1.3B
+  - **Activation**: BiSpikCLM, binary spiking LLM, softmax-free attention, spiking NLP, MatMul-free language model, SFSA, spike-aware distillation
+
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model for causal behavior decoding via retrospective distillation from bidirectional Mamba-2 teacher (arXiv: 2605.14867)
+  - 3-stage pipeline: self-supervised CMAE pretraining → retrospective distillation → fine-tuning; achieves SOTA LFP decoding with 2× parameter reduction and 10× faster convergence
+  - First real-time LFP decoder deployed on edge hardware (Jetson Orin Nano, RPi 5), enabling wireless implantable BCI without spike signals
+  - **Activation**: REALM, LFP decoding, causal neural decoding, retrospective distillation, Mamba-2 BCI, wireless BCI, offline-to-online neural decoding
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
