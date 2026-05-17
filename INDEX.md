@@ -1,3 +1,29 @@
+## 2026-05-18 - Information Science + Quantum (Cron Job)
+
+### New approaches to almost i.i.d. information theory
+- [[almost-iid-quantum-information]] - Alternative frameworks for quantum information analysis using Wasserstein distance and k-body marginals, relaxing i.i.d. assumption (arXiv: 2605.15114)
+  - Quantum Wasserstein distance defines almost-i.i.d. states beyond strict independence
+  - Strict hierarchical relationship between Wasserstein and k-body marginal definitions
+  - **Activation**: almost i.i.d., quantum Wasserstein distance, k-body marginals, non-i.i.d. quantum protocols
+
+### Wavelet Variance Equipartition as a Threshold for World-Model Quality and Quantum Kernel TN-Simulability
+- [[wavelet-variance-equipartition-quantum]] - Physics-grounded spectral metric for assessing world-model quality and quantum kernel tensor network simulability (arXiv: 2605.11557)
+  - Wavelet variance equipartition identifies threshold for latent space structural fidelity
+  - Links world-model quality to quantum kernel tensor network simulability
+  - **Activation**: wavelet variance equipartition, world-model quality, quantum kernel simulability, spectral analysis
+
+### ORCHID: Orchestrated Reduction Consensus for Hash-based Integrity in Distributed Ledgers
+- [[orchid-distributed-consensus]] - Bio-inspired consensus protocol mapping neuroscientific binding problem to distributed ledger integrity (arXiv: 2605.12211)
+  - Maps neural binding problem to distributed consensus coordination
+  - Hierarchical orchestrated reduction with hash-based integrity verification
+  - **Activation**: ORCHID consensus, bio-inspired consensus, distributed ledger integrity, hash-based verification
+
+### HQTN-SER: Speech Emotion Recognition with Hybrid Quantum Tensor Networks
+- [[hqtn-speech-emotion-quantum]] - Hybrid quantum tensor network combining quantum tensor networks with classical ML for robust speech emotion recognition (arXiv: 2605.14523)
+  - Tensor train decomposition compresses high-dimensional audio features
+  - Quantum-enhanced expressivity captures subtle emotional cues under recording variability
+  - **Activation**: HQTN speech emotion, quantum tensor network SER, hybrid quantum-classical emotion recognition
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
