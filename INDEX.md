@@ -1,3 +1,17 @@
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### Multi-Timescale Conductance Spiking Networks
+- [[multi-timescale-conductance-snn]] - Gradient-trainable spiking networks using multi-timescale conductances for energy-aware temporal processing, outperforming LIF and AdLIF without surrogate gradients (arXiv: 2605.11835)
+  - I-V curve shaping via fast/slow/ultra-slow conductances enables rich firing regimes (tonic, phasic, bursting) in single model
+  - Direct backpropagation through time without surrogate-gradient approximations
+  - **Activation**: multi-timescale conductance, MTC-SNN, conductance spiking, gradient-trainable SNN, I-V curve shaping
+
+### Embodied Neurocomputation Framework
+- [[embodied-neurocomputation]] - Systems-level framework for interfacing biological neural cultures with task-driven validation, BNN outperforms silicon DQN in closed-loop navigation (arXiv: 2605.13315)
+  - First large-scale parameter optimization of BNN encoding configurations (~1,300 configs, 4,000+ hours)
+  - 12 configurations demonstrated consistent learning, surpassing optimized DQN under same budget
+  - **Activation**: embodied neurocomputation, biological neural networks, bio-silicon hybrid, BNN neurocomputation
+
 ## 2026-05-17 - Information Science + Quantum (Cron Job)
 
 ### Quantum Complexity in Gravity, QFT, and Quantum Information Science
