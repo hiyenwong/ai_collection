@@ -1,124 +1,72 @@
 ---
 name: information-theoretic-pir
-description: "Information-theoretic authenticated private information retrieval (PIR) methodology. Achieves privacy-preserving database queries without computational hardness assumptions, with integrity verification and defense against selective-failure attacks. Use when building privacy-preserving search, secure database access, or authenticated retrieval systems."
+description: "Information-theoretic authenticated private information retrieval (aPIR) methodology. Use when: implementing privacy-preserving data retrieval, designing secure query protocols, building authenticated retrieval systems, or analyzing information-theoretic security guarantees. Covers unconditional security against malicious adversaries with information-theoretic privacy and authenticity guarantees. Keywords: private information retrieval, PIR, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR, secure query protocol, unconditional security."
 ---
 
-# Information-Theoretic Authenticated PIR
+# Information-Theoretic Authenticated Private Information Retrieval (aPIR)
 
-Private Information Retrieval (PIR) allows clients to retrieve database entries without leaking which entry they're accessing. Information-theoretic PIR achieves this without relying on computational hardness assumptions.
+## Core Protocol Principles
 
-## Core Insight
+Implement authenticated private information retrieval enabling clients to privately retrieve database items while ensuring integrity:
 
-Standard PIR protects query privacy but not correctness — malicious servers can return wrong answers. Authenticated PIR (APIR) adds integrity but relies on computational assumptions. Information-theoretic PIR with Result Verification (itPIR-RV) achieves integrity without computational assumptions but only provides relaxed query privacy. The new APIR scheme achieves both full query privacy and defense against selective-failure attacks.
+- **Privacy guarantee**: Server learns nothing about which item was retrieved (information-theoretic)
+- **Authenticity guarantee**: Client receives correct item with high probability, verifiable against tampering
+- **Unconditional security**: Security holds against computationally unbounded malicious adversaries
+- **Zero-knowledge retrieval**: No information leakage beyond the retrieved item itself
 
-## APIR Framework
+## Key Architecture Patterns
 
-### Security Properties
+### Client-Server Protocol Flow
 
-1. **Query Privacy**: Server learns nothing about which index is being queried
-2. **Integrity**: Client detects any incorrect response from server
-3. **Selective-Failure Defense**: Server cannot selectively abort based on query content
-4. **Information-Theoretic**: Security holds against computationally unbounded adversaries
+1. **Query generation**: Client creates cryptographically blinded query using information-theoretic encoding
+2. **Server computation**: Server processes query across entire database without learning target index
+3. **Response verification**: Client verifies response authenticity using information-theoretic proof
+4. **Item extraction**: Client recovers the specific item from the verified response
 
-### Construction Pattern
+### Security Model Implementation
 
-```python
-class AuthenticatedPIR:
-    def __init__(self, num_servers, database):
-        self.num_servers = num_servers  # Minimum 2 for itPIR
-        self.database = database
-        self.auth_keys = self.setup_authentication()
-    
-    def setup_authentication(self):
-        """Setup MAC keys for each database entry."""
-        return [generate_mac_key() for _ in range(len(database))]
-    
-    def query(self, index):
-        """Generate PIR queries for multiple servers."""
-        queries = []
-        for server_id in range(self.num_servers):
-            q = generate_pir_query(index, server_id, self.num_servers)
-            queries.append(q)
-        return queries
-    
-    def aggregate_response(self, responses, index):
-        """Aggregate and verify responses."""
-        result = aggregate_pir_responses(responses)
-        
-        # Verify integrity using authentication tags
-        tag = responses[0].auth_tag
-        if not verify_mac(result, tag, self.auth_keys[index]):
-            raise IntegrityError("Server returned incorrect data")
-        
-        return result
-```
+- **Privacy**: Information-theoretic indistinguishability of queries for any target item
+- **Authenticity**: Merkle-tree or homomorphic commitments for response verification
+- **Robustness**: Protocol continues correctly even with malicious server behavior
+- **Efficiency**: Sub-linear communication for large databases using coding theory techniques
 
-### itPIR Protocol (n servers, t-collusion resistant)
+## Application Domains
 
-```
-Client:
-1. Generate random queries q₁,...,qₙ such that Σqᵢ = eᵢ (unit vector at index i)
-2. Send qⱼ to server j
+### Secure Cloud Storage
+- Private file retrieval from cloud providers
+- Auditable access without revealing access patterns
+- Integration with existing storage APIs
 
-Each Server j:
-1. Compute response rⱼ = Σₖ qⱼ[k] · DB[k]
-2. Send rⱼ back with authentication tag
+### Blockchain and Cryptography
+- Privacy-preserving oracle queries
+- Secure multi-party computation primitives
+- Zero-knowledge proof systems
 
-Client:
-1. Compute result = Σⱼ rⱼ
-2. Verify authentication tag
-3. If valid, result = DB[i]
-```
+### Healthcare and Finance
+- Medical record retrieval with privacy guarantees
+- Financial data queries without exposing search patterns
+- Compliance with data protection regulations
 
-### Selective-Failure Defense
+## Implementation Guidelines
 
-The key innovation: prevent servers from learning whether a query was valid before responding.
+### Communication Complexity
+- Achieve O(sqrt(n)) communication for database of size n
+- Use Reed-Solomon or similar error-correcting codes
+- Balance between communication rounds and bandwidth
 
-```python
-class SelectiveFailureDefense:
-    """Prevent servers from selectively aborting based on query content."""
-    
-    def blind_query(self, query, randomness):
-        """Blind the query so server can't distinguish valid from random."""
-        return blind_pir_query(query, randomness)
-    
-    def verify_consistency(self, responses):
-        """Cross-check responses to detect selective failures."""
-        # If server aborts selectively, inconsistency will be detected
-        return check_response_consistency(responses)
-```
+### Verification Mechanisms
+- Implement information-theoretic MACs for response authentication
+- Use polynomial commitments for efficient verification
+- Ensure verification overhead is logarithmic in database size
 
-## Application Scenarios
+## Error Handling
 
-### Secure Medical Record Access
-- Retrieve patient records without revealing which patient
-- Verify record integrity without computational assumptions
+### Server Misbehavior
+- Detect and reject tampered responses with information-theoretic certainty
+- Implement retry with different query encoding
+- Log verification failures for audit trails
 
-### Financial Data Privacy
-- Query market data without revealing trading strategy
-- Information-theoretic protection against future quantum attacks
-
-### Legal Discovery
-- Search legal databases without revealing case strategy
-- Ensure response integrity for legal proceedings
-
-## Security Parameters
-
-| Parameter | Description | Recommended |
-|-----------|-------------|-------------|
-| n_servers | Number of non-colluding servers | ≥ 2 |
-| t | Collusion resistance | t < n/2 |
-| mac_bits | Authentication tag size | ≥ 128 |
-| field_size | Finite field size | ≥ 2¹²⁸ |
-
-## Pitfalls
-
-- Requires multiple non-colluding servers — single-server itPIR is impossible
-- Communication cost grows with database size — use for moderate databases
-- Server collusion breaks privacy — ensure physical/organizational separation
-- Authentication requires shared key setup — plan key distribution carefully
-
-## References
-
-- arXiv: "Information-Theoretic Authenticated PIR: From PIR-RV To APIR" (ID: 681)
-- Chor, Goldreich, Kushilevitz, Sudan (1995) — Original PIR formulation
+### Performance Optimization
+- Cache frequently accessed items with secure indexing
+- Batch multiple queries using information-theoretic techniques
+- Pre-compute server responses for static databases

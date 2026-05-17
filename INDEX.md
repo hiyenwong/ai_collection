@@ -1,3 +1,29 @@
+## 2026-05-17 - Information Science + Quantum (Cron Job)
+
+### Quantum Complexity in Gravity, QFT, and Quantum Information Science
+- [[quantum-complexity-definitions]] - Bridges quantum information theory, many-body physics, QFT, and holography to unify definitions of quantum complexity (arXiv: 2503.10753)
+  - Multiple complexity definitions: circuit complexity, geometric (unitary group geodesics), and dynamical (state/operator spreading via tensor networks)
+  - Proposes relationship between boundary complexity and gravitational observables via AdS/CFT correspondence
+  - **Activation**: quantum complexity, random quantum circuits, unitary geodesics, tensor network complexity, holographic complexity, AdS/CFT
+
+### Information-Theoretic Authenticated Private Information Retrieval
+- [[information-theoretic-pir]] - Protocol enabling clients to privately retrieve database items with information-theoretic privacy and authenticity guarantees against malicious adversaries (arXiv: 2604.01551)
+  - Achieves unconditional security: server learns nothing about retrieved item, client verifies response integrity
+  - O(sqrt(n)) communication complexity using error-correcting codes and polynomial commitments
+  - **Activation**: private information retrieval, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR
+
+### Quantum complexity in gravity, quantum field theory, and quantum information science
+- [[quantum-complexity-definitions]] - Bridges quantum information theory, many-body physics, QFT, and holography to unify definitions of quantum complexity (arXiv: 2503.10753)
+  - Multiple complexity definitions: circuit complexity, geometric (unitary group geodesics), and dynamical (state/operator spreading via tensor networks)
+  - Proposes relationship between boundary complexity and gravitational observables via AdS/CFT correspondence
+  - **Activation**: quantum complexity, random quantum circuits, unitary geodesics, tensor network complexity, holographic complexity, AdS/CFT
+
+### Information-Theoretic Authenticated Private Information Retrieval
+- [[information-theoretic-pir]] - Protocol enabling clients to privately retrieve database items with information-theoretic privacy and authenticity guarantees against malicious adversaries (arXiv: 2604.01551)
+  - Achieves unconditional security: server learns nothing about retrieved item, client verifies response integrity
+  - O(sqrt(n)) communication complexity using error-correcting codes and polynomial commitments
+  - **Activation**: private information retrieval, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR
+
 ## 2026-05-18 - Information Science + Quantum (Cron Job)
 
 ### New approaches to almost i.i.d. information theory
