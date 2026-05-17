@@ -1538,7 +1538,16 @@
 
 ### Papers Analyzed (All Covered)
 | # | Paper Title | arXiv ID | Covered By Skill |
-|---|-------------|----------|------------------|
+|---
+## 2026-05-17 - Information Science (Cron Job)
+
+### Toward Covert Quantum Computing
+- [[covert-quantum-computing]] - Information-theoretic covertness analysis for multi-tenant quantum cloud platforms (arXiv: 2505.11747)
+  - Derives O(√n) border qubit limit for adversary detection via discrete isoperimetric inequalities
+  - Adopts quantum-strategy framework for covertness with quantum memories and adaptive operations
+  - Identifies long-range crosstalk as side channel on real hardware (IQM Emerald, IBM Heron 2)
+  - **Activation**: covert quantum computing, quantum privacy, quantum cloud security, 量子隐蔽计算, multi-tenant quantum, quantum crosstalk
+|-------------|----------|------------------|
 | 1 | NeuroTrain: Surveying Local Learning Rules for SNNs | 2605.15058 | neurotrain-local-learning-snn-benchmarking |
 | 2 | Breaking Global Self-Attention Bottlenecks in Transformer-based SNNs (LSFormer) | 2605.13887 | lsformer-local-structure-aware-spiking-transformer |
 | 3 | Dual-axis attribution of zebrafish tectal microcircuits | 2605.13924 | dual-axis-zebrafish-circuits |
