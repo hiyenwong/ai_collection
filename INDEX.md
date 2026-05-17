@@ -1844,3 +1844,18 @@
 
 ### Collection Maturity Assessment
 At 2471 skills with 100% coverage of recent q-bio.NC and cs.NE submissions, the ai_collection has reached extreme maturity. All major neuroscience topics from arXiv are comprehensively covered.
+
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neurons]] - SNN神经元将时间计算分解为频率选择性(FS)和时间塑形(TS)模块，实现可解释的频率-时间专业化 (arXiv: 2605.13071)
+  - FS参数化每个神经元的目标频率作为亚阈值幅度响应的最大化器
+  - TS通过群延迟调制重塑频率分量对膜电压积累的贡献时机
+  - **Activation**: FiTS, frequency selectivity spiking neuron, interpretable SNN, temporal shaping, group-delay modulation, 频率选择性脉冲神经元
+
+### Mamba Spike Forecaster for Implicit Behavioral Decoding
+- [[mamba-spike-forecaster-bci]] - Mamba状态空间模型仅通过下一步脉冲计数预测即可同时实现神经群体预测和隐式行为解码 (arXiv: 2605.12999)
+  - 单一Mamba前向传递同时输出脉冲预测和行为读，无需独立解码器
+  - 预测脉冲率在Steinmetz基准上选择解码达75.7%，优于原始脉冲线性解码
+  - **Activation**: mamba spike forecaster, implicit behavioral decoding, neural population forecasting, closed-loop BCI, Neuropixels, 脉冲预测行为解码
+
