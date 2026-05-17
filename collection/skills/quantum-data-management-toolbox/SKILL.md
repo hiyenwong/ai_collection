@@ -1,80 +1,76 @@
 ---
 name: quantum-data-management-toolbox
-description: "Physics-based framework for understanding quantum computing applications in data management. Maps physical behavior of quantum devices to database problem structure and difficulty. Use when analyzing quantum annealing for data management problems, evaluating quantum advantage for database queries, or comparing quantum vs classical data management approaches."
+description: >
+  Computational toolbox for systematic numerical analysis of quantum annealing processes
+  derived from data management problem formulations. Bridges quantum computing and database
+  systems research through physics-informed analysis of spectral properties (energy gaps,
+  eigenstate structure) to understand computational hardness and scaling. Use when: evaluating
+  quantum annealing for database problems, analyzing spectral properties of optimization
+  Hamiltonians, studying quantum-classical co-design for data management, or building
+  physics-informed quantum algorithm evaluation frameworks.
+  Activation: quantum data management, quantum annealing database, quantum optimization
+  Hamiltonian, spectral analysis quantum, quantum database toolbox, quantum-classical co-design.
 ---
 
 # Quantum Data Management Toolbox
 
-## Core Problem
+Methodology from arXiv:2605.14719 — "A Toolbox to Understand the Physics of Quantum Data Management" (Mauerer, Schönberger, 2026).
 
-Quantum computing for data management remains constrained by limited understanding of how physical device behavior relates to database problem structure and difficulty.
+## Core Insight
 
-## Framework Components
+Quantum annealing for combinatorial optimization in data management tasks cannot be adequately
+evaluated using only conventional empirical or complexity-theoretic methods. Physics-informed
+numerical analysis of spectral and dynamical properties is essential.
 
-### Physical-Problem Mapping
+## Toolbox Components
 
-1. **Identify database problem structure**
-   - Query optimization as constraint satisfaction
-   - Transaction scheduling as optimization
-   - Index selection as combinatorial search
+### 1. Spectral Analysis
 
-2. **Map to quantum device physics**
-   - Quantum annealing → energy minimization
-   - Gate-based → circuit depth/width constraints
-   - Evaluate problem-device fitness
+Study energy gaps and eigenstate structure of problem Hamiltonians:
 
-### Quantum Annealing Evaluation
+- **Minimum gap identification**: Determines annealing time requirements
+- **Eigenstate localization**: Reveals structural hardness patterns
+- **Spectral density**: Characterizes problem difficulty landscape
 
-For data management problems on quantum annealers:
+### 2. Dynamical Property Analysis
 
-1. Encode problem as QUBO (Quadratic Unconstrained Binary Optimization)
-2. Map QUBO variables to qubit connectivity graph
-3. Measure:
-   - Time-to-solution vs classical baselines
-   - Solution quality degradation with problem size
-   - Embedding overhead (chain lengths, minor embedding)
+- Track state evolution during annealing schedule
+- Identify diabatic transitions and their impact on solution quality
+- Correlate dynamical behavior with problem structure
 
-### Classical Comparison Baseline
+### 3. Visualization Techniques
 
-Always compare against:
-- Optimal classical algorithms (branch-and-bound, dynamic programming)
-- Heuristic classical algorithms (greedy, simulated annealing)
-- Approximation algorithms with known bounds
+- **Energy landscape plots**: Map optimization terrain
+- **Eigenstate overlap diagrams**: Show structural similarities to canonical models
+- **Annealing path visualization**: Track computational trajectory
 
-## Design Patterns
+### 4. Reduced Effective Descriptions
 
-### QUBO Encoding for Database Problems
+Construct simplified models that capture essential physics:
 
-```python
-def encode_query_optimization_qubo(queries, resources):
-    """
-    Encode query execution plan selection as QUBO.
-    Variables: x[i,j] = 1 if query i uses plan j
-    Constraints: Each query gets exactly one plan
-    Objective: Minimize total execution cost
-    """
-    # Build Q matrix for QUBO
-    # Linear terms: execution costs
-    # Quadratic terms: resource conflicts, penalties
-    pass
-```
+- Identify structural similarities to known physical models
+- Build effective Hamiltonians for problem families
+- Enable scaling predictions from small-system analysis
 
-### Problem Difficulty Assessment
+## Workflow
 
-- Small instances: classical methods dominate
-- Medium instances: quantum may find better local minima
-- Large instances: evaluate scaling behavior, not just absolute performance
+1. **Formulate**: Map data management problem to QUBO/Ising Hamiltonian
+2. **Diagonalize**: Compute full spectrum (small instances) or use approximation methods
+3. **Analyze**: Extract spectral gaps, eigenstate structure, degeneracy patterns
+4. **Visualize**: Generate diagnostic plots for interpretation
+5. **Reduce**: Construct effective descriptions for larger instances
+6. **Predict**: Extrapolate scaling behavior
 
-## Activation Keywords
-- quantum data management
-- quantum database
-- quantum annealing database
-- quantum query optimization
-- quantum vs classical database
-- physics of quantum data
-- quantum data management toolbox
-- 量子数据管理
-- quantum annealing QUBO database
+## Key Findings
 
-## References
-- arXiv:2605.14719 - A Toolbox to Understand the Physics of Quantum Data Management (Mauerer, Schönberger)
+- Spectral properties inaccessible from direct hardware measurements are essential for
+  understanding computational hardness
+- Structural similarities to canonical physical models guide algorithm design
+- Physics-informed perspective bridges quantum computing and database research
+
+## When to Apply
+
+- Evaluating quantum annealing approaches for query optimization, join ordering, or resource allocation
+- Designing quantum-classical hybrid algorithms for database systems
+- Understanding why certain data management problems are hard/easy for quantum annealers
+- Building co-design frameworks that jointly optimize hardware and problem formulation

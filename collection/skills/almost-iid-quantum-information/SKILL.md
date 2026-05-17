@@ -1,54 +1,65 @@
 ---
 name: almost-iid-quantum-information
-description: "Almost i.i.d. information theory methodology — alternative frameworks for quantum information analysis using Wasserstein distance and k-body marginals, relaxing the stringent i.i.d. assumption for practical quantum protocols under realistic noise conditions. Use when analyzing quantum information theory, quantum protocols under non-i.i.d. conditions, quantum Wasserstein distance, k-body marginals, or quantum resource manipulation."
+description: >
+  Alternative definitions and analysis of "almost i.i.d." quantum states for practical
+  quantum information theory. The i.i.d. assumption is ubiquitous in quantum information theory
+  but too stringent for practical settings. Introduces definitions based on normalized quantum
+  Wasserstein distance and local-structure analysis. Use when: analyzing quantum information
+  sources beyond i.i.d. assumption, designing quantum protocols for correlated sources,
+  studying quantum Wasserstein distance applications, or evaluating practical quantum
+  communication/computation under realistic noise models.
+  Activation: almost i.i.d. quantum, quantum Wasserstein distance, quantum source correlation,
+  non-i.i.d. quantum, quantum information practical, quantum correlated sources.
 ---
 
 # Almost i.i.d. Quantum Information Theory
 
-## Methodology
+Methodology from arXiv:2605.15114 — "New approaches to almost i.i.d. information theory" (Girardi, De Palma, Lami, 2026).
 
-Relax the stringent i.i.d. (independent and identically distributed) assumption in quantum information theory using two alternative definitions:
+## Problem Statement
 
-### 1. Quantum Wasserstein Distance Framework
+The i.i.d. assumption in quantum information theory enables clean asymptotic analysis but
+is unrealistic in practice. Physical sources exhibit correlations, memory effects, and
+structured dependencies.
 
-Define almost i.i.d. states via normalized quantum Wasserstein distance:
+## Alternative Definitions
 
-$$\text{Almost-i.i.d.} \iff \frac{1}{n} \|\rho_n - \sigma^{\otimes n}\|_W \leq \epsilon$$
+### Definition 1: Normalized Quantum Wasserstein Distance
 
-where $\|\cdot\|_W$ is the quantum Wasserstein distance and $\sigma^{\otimes n}$ is the i.i.d. reference.
+Define "almost i.i.d." via proximity to i.i.d. states under normalized quantum Wasserstein
+distance:
 
-### 2. Average k-body Marginals Framework
+- **Wasserstein metric**: Quantifies transport cost between quantum states
+- **Normalization**: Ensures meaningful comparison across system sizes
+- **Threshold**: States within ε distance of an i.i.d. state are "almost i.i.d."
 
-Define almost i.i.d. states via convergence of k-body marginals:
+### Definition 2: Local Structure Analysis
 
-$$\frac{1}{\binom{n}{k}} \sum_{S:|S|=k} \|\rho_S - \sigma^{\otimes k}\|_1 \leq \epsilon_k$$
+Based on examining local subsystem properties:
 
-### Key Results
+- Analyze reduced density matrices of small subsystems
+- Require local statistics to approximate i.i.d. behavior
+- Global correlations may exist but remain locally invisible
 
-- Strict hierarchical relationship between the two definitions
-- Wasserstein distance definition implies k-body marginal definition
-- Both frameworks are strictly weaker than the i.i.d. assumption
-- Enable analysis of quantum protocols under realistic correlated noise
+## Applications
 
-## Application Patterns
+1. **Quantum channel capacity**: Extend Shannon-like results to correlated sources
+2. **Quantum key distribution**: Security proofs under realistic noise models
+3. **Quantum data compression**: Coding theorems for non-i.i.d. ensembles
+4. **Quantum thermodynamics**: Work extraction from correlated quantum states
 
-### Quantum Protocol Analysis
+## Key Insight from Mazzola/Sutter/Renner (arXiv:2603.15792)
 
-1. Replace i.i.d. assumption with almost-i.i.d. framework
-2. Bound protocol performance using Wasserstein or marginal distance
-3. Derive finite-size corrections for non-i.i.d. settings
+The original "almost i.i.d." class was proposed based on physical plausibility arguments.
+The new definitions provide:
 
-### Resource Manipulation
+- **Mathematical tractability**: Enable rigorous proofs
+- **Physical grounding**: Connect to measurable quantities
+- **Computational accessibility**: Enable practical verification
 
-1. Characterize target states via almost-i.i.d. approximations
-2. Compute distillation rates under correlated noise
-3. Apply composite generalized quantum Stein's lemma for rate bounds
+## When to Apply
 
-## Activation Keywords
-- almost i.i.d., quantum Wasserstein distance, k-body marginals
-- non-i.i.d. quantum protocols, quantum information theory
-- quantum resource distillation, composite Stein's lemma
-
-## References
-- arXiv:2605.15114 — "New approaches to almost i.i.d. information theory"
-- Girardi, De Palma, Lami (2026)
+- Designing quantum protocols for realistic (non-i.i.d.) noise environments
+- Analyzing quantum communication over correlated channels
+- Extending asymptotic quantum information results to finite-size regimes
+- Evaluating quantum advantage under practical source models

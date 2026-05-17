@@ -1,3 +1,17 @@
+## 2026-05-18 - Information Science + Quantum (Cron Job)
+
+### Toward Covert Quantum Computing
+- [[covert-quantum-computing]] - Information-theoretic covertness analysis for multi-tenant quantum cloud computing, using discrete isoperimetric inequalities and quantum-strategy framework (arXiv: 2605.14325)
+  - Only O(√n) border qubits provide detection information to adversary in planar layout
+  - Long-range crosstalk from drive/control lines breaks covertness beyond nearest-neighbor model
+  - **Activation**: covert quantum computing, quantum cloud security, quantum crosstalk, quantum side channel, QCU privacy, quantum isolation
+
+### A Toolbox to Understand the Physics of Quantum Data Management
+- [[quantum-data-management-toolbox]] - Physics-informed spectral analysis toolbox for evaluating quantum annealing in data management problems through energy gaps and eigenstate structure (arXiv: 2605.14719)
+  - Spectral properties inaccessible from hardware measurements essential for understanding computational hardness
+  - Bridging quantum computing and database research via physics-informed co-design framework
+  - **Activation**: quantum data management, quantum annealing database, spectral analysis quantum, quantum-classical co-design, quantum optimization Hamiltonian
+
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: SNN Training Survey & Benchmarking Framework

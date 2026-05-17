@@ -1,196 +1,84 @@
 ---
 name: covert-quantum-computing
-description: "Covert quantum computing methodology — ensuring privacy against co-tenant adversaries in multi-tenant quantum cloud platforms. Covers information-theoretic covertness analysis, discrete isoperimetric inequalities, crosstalk-based side channels, and quantum-strategy framework for adversarial detection."
-tags: ["quantum-computing", "information-theory", "security", "privacy", "quantum-cloud"]
-related_skills: ["quantum-information-protocol-analyzer", "cross-layer-crypto-analysis"]
+description: >
+  Covert quantum computing methodology for multi-tenant quantum cloud platforms.
+  Ensures computation privacy against adversaries sharing the same quantum processing unit
+  using information-theoretic covertness analysis. Use when: designing secure quantum cloud
+  architectures, analyzing multi-tenant QCU privacy, studying quantum crosstalk side channels,
+  implementing covert quantum communication, evaluating spatial isolation for quantum processors,
+  or analyzing qubit layout security properties.
+  Activation: covert quantum computing, quantum cloud security, quantum privacy,
+  multi-tenant quantum, quantum crosstalk, quantum side channel, quantum covertness,
+  QCU security, quantum isolation.
 ---
 
 # Covert Quantum Computing
 
-## Description
+Methodology from arXiv:2605.14325 — "Toward Covert Quantum Computing" (Anderson, Datta, Bash, 2026).
 
-Methodology for designing and analyzing covert quantum computing systems that hide computation from adversarial co-tenants on shared quantum processing units. Based on arXiv:2505.11747 "Toward Covert Quantum Computing" (Anderson, Datta, Bash, 2026). Applies information theory to quantum multi-tenant privacy, using quantum-strategy frameworks and discrete isoperimetric analysis.
+## Core Concept
 
-## Activation Keywords
+Covert quantum computing ensures that an adversary with access to all other quantum computational
+units (QCUs) of a shared quantum computer **cannot detect** computation on the subset they cannot
+access. Unlike covert communication (where the adversary observes a shared channel), here the
+adversary controls the systems used for detection.
 
-- covert quantum computing
-- quantum privacy
-- quantum cloud security
-- 量子隐蔽计算
-- multi-tenant quantum
-- quantum crosstalk
-- quantum side channel
-- QCU privacy
-- quantum covertness
-- 量子云平台安全
+## Analysis Framework
 
-## Core Concepts
+### Quantum-Strategy Framework
 
-### 1. Covert Quantum Computing Definition
+Use the quantum-strategy framework from quantum game theory and memory channel discrimination:
 
-An adversary with access to all other Quantum Computational Units (QCUs) of a shared quantum computer **cannot detect** computation happening on the subset they cannot access. Analogous to covert communication, but the adversary controls the detection systems.
+1. Model adversary as having quantum memory and adaptive operations
+2. Analyze detection probability using quantum hypothesis testing
+3. Account for adaptive measurements across multiple rounds
 
-### 2. Quantum-Strategy Framework
+### Discrete Isoperimetric Inequalities
 
-Since the adversary controls the systems used for detection, standard information theory is insufficient. The analysis requires:
-- **Quantum memories**: Adversary can store quantum states for later measurement
-- **Adaptive operations**: Adversary can adjust detection strategy based on prior results
-- **Memory channel discrimination**: The adversary's detection is modeled as distinguishing between quantum channels
+For planar graph circuit layouts with nearest-neighbor crosstalk model:
 
-### 3. Discrete Isoperimetric Inequality
+- **n-qubit circuit**: Only O(√n) border qubits provide detection information to adversary
+- **Scaling law**: Covertness improves as √n / n → 0 for large circuits
+- **Implication**: Larger quantum processors naturally provide better covertness
 
-For an n-qubit circuit under planar graph nearest-neighbor crosstalk model:
-- Only **O(√n) border qubits** provide detection information to the adversary
-- Interior qubits are "shielded" by the graph topology
-- This scaling law determines the fundamental covertness limit
+### Crosstalk Analysis
 
-### 4. Crosstalk Side Channels
+Two types of crosstalk channels to analyze:
 
-Real quantum hardware reveals additional attack surfaces:
-- **Nearest-neighbor crosstalk**: Expected and modeled by the isoperimetric analysis
-- **Long-range coupling**: Observed on both IQM Emerald (54-qubit) and IBM Heron 2 (156-qubit)
-- **Leakage-induced coupling**: Drive and control lines induce side channels beyond border qubits
-- These weaken covertness and degrade spatially distributed circuits
+1. **Nearest-neighbor crosstalk**: Expected, border-limited — consistent with isoperimetric bound
+2. **Long-range coupling**: Induced by leakage from drive/control lines — reveals side channel
+   beyond border qubits, degrading covertness and co-tenant circuit fidelity
 
-## Implementation Methodology
+## Verification Steps
 
-### Phase 1: Covertness Analysis
+### Ramsey Experiment Protocol
+
+To detect crosstalk on qubits not used in computation:
 
 ```python
-def analyze_covertness(n_qubits, topology="planar"):
-    """Analyze covertness properties for a given circuit."""
-    
-    # Step 1: Compute border qubits via isoperimetric inequality
-    if topology == "planar":
-        border_qubits = O(sqrt(n_qubits))
-    else:
-        # For other topologies, compute vertex boundary
-        border_qubits = vertex_boundary(circuit_graph)
-    
-    # Step 2: Model adversary's detection capability
-    # Adversary measures border qubits using quantum-strategy framework
-    detection_capacity = compute_detection_capacity(
-        border_qubits=border_qubits,
-        adversary_memory=True,
-        adaptive_operations=True
-    )
-    
-    # Step 3: Compute covertness bound
-    # Probability adversary detects computation
-    detection_probability = bound_detection_probability(detection_capacity)
-    
-    return {
-        "border_qubits": border_qubits,
-        "detection_probability": detection_probability,
-        "covertness_achievable": detection_probability < threshold
-    }
+# 1. Initialize border qubits in |+⟩ state
+# 2. Run computation on interior qubits
+# 3. Measure border qubits for phase shifts
+# 4. Repeat to statistically detect deviations
 ```
 
-### Phase 2: Crosstalk Characterization
+### Covertness Metrics
 
-```python
-def characterize_crosstalk(backend_name, num_qubits):
-    """Characterize crosstalk channels on real quantum hardware."""
-    
-    # Ramsey experiment on idle qubits while neighbors execute gates
-    for idle_qubit in qubits:
-        # Apply Ramsey sequence
-        ramsey_signal = run_ramsey(idle_qubit)
-        
-        # While neighbors execute random gates
-        for neighbor in get_neighbors(idle_qubit):
-            execute_random_gates(neighbor)
-        
-        # Measure phase shift → crosstalk strength
-        crosstalk_strength = measure_phase_shift(ramsey_signal)
-    
-    # Map both nearest-neighbor and long-range crosstalk
-    return crosstalk_map
-```
+- **Detection probability**: P_detect < ε for chosen covertness parameter ε
+- **Crosstalk magnitude**: Measure Ramsey fringe shifts on idle qubits
+- **Spatial decay**: Verify crosstalk falls off with distance from compute qubits
 
-### Phase 3: Security Assessment
+## Key Findings
 
-| Threat Model | Detection Method | Mitigation |
-|-------------|-----------------|------------|
-| Nearest-neighbor crosstalk | Isoperimetric bound O(√n) | Already limited by topology |
-| Long-range crosstalk | Drive line leakage | Shielding, scheduling |
-| Control line leakage | Spectral analysis | Frequency planning |
-| Adversary with quantum memory | Quantum-strategy framework | Temporal isolation |
+- IBM Heron 2 (156-qubit) and IQM Emerald (54-qubit) show both nearest-neighbor AND
+  long-range crosstalk — long-range coupling is the practical bottleneck for covertness
+- Drive/control line leakage hypothesis: spatial isolation alone is insufficient
+- Co-tenants exposed to both adversarial AND unintended crosstalk degradation
 
-## Practical Implications
+## When to Apply
 
-### For Quantum Cloud Providers
-
-1. **Spatial isolation**: Assign qubits with maximum graph distance between tenants
-2. **Crosstalk characterization**: Regular Ramsey-based crosstalk mapping
-3. **Temporal scheduling**: Serialize operations when covertness is critical
-4. **Hardware hardening**: Reduce long-range coupling through better drive line design
-
-### For Quantum Algorithm Designers
-
-1. **Qubit selection**: Prefer interior qubits for sensitive computations
-2. **Circuit layout**: Minimize border exposure of critical subcircuits
-3. **Timing**: Execute sensitive operations when neighboring QCUs are idle
-
-### For Security Researchers
-
-1. **Attack surface**: Long-range crosstalk is a previously uncharacterized side channel
-2. **Detection limits**: O(√n) border provides theoretical upper bound on adversary info
-3. **Quantum-strategy framework**: Generalizes beyond simple measurement to adaptive quantum detection
-
-## Related Research Patterns
-
-- **Covert classical communication**: Information-theoretic square-root law for classical channels
-- **Quantum key distribution**: Related but different — QKD secures content, covert computing hides existence
-- **Side-channel attacks**: Crosstalk is analogous to electromagnetic/timing side channels in classical systems
-- **Multi-tenant cloud security**: Quantum extension of classical cloud isolation problems
-
-## Error Handling
-
-### Hardware-Specific Variations
-Different quantum processors have different crosstalk profiles:
-- IQM Emerald: Nearest-neighbor dominated
-- IBM Heron 2: Significant long-range coupling observed
-- Always characterize your specific hardware
-
-### Framework Limitations
-- The O(√n) bound assumes planar nearest-neighbor topology
-- Real hardware may violate this assumption via long-range coupling
-- Quantum-strategy framework analysis is computationally intensive
-
-## Examples
-
-### Example 1: Covertness Assessment for 54-Qubit Processor
-
-```
-Given: IQM Emerald, 54 qubits, planar topology
-Border qubits: O(√54) ≈ 7 qubits
-Detection information available: Limited to 7/54 ≈ 13% of qubits
-Covertness: Achievable for interior computations
-Risk: Long-range crosstalk may increase detection surface
-```
-
-### Example 2: Security Design for Multi-Tenant Quantum Cloud
-
-```
-Problem: Two tenants share a 156-qubit IBM Heron 2 processor
-Solution:
-1. Map crosstalk topology via Ramsey experiments
-2. Assign qubit subsets maximizing graph distance
-3. Schedule sensitive operations during idle neighbor periods
-4. Monitor for long-range coupling anomalies
-```
-
-## References
-
-- arXiv: "Toward Covert Quantum Computing" — Anderson, Datta, Bash (2026)
-- Quantum game theory and memory channel discrimination literature
-- Discrete isoperimetric inequalities in graph theory
-- Classical covert communication (Bash et al., square-root law)
-
-## Limitations
-
-- Current analysis limited to nearest-neighbor crosstalk models
-- Long-range coupling mechanisms not fully characterized
-- Quantum-strategy framework computations scale exponentially with adversary resources
-- Hardware-specific results may not generalize across quantum architectures
+- Designing quantum cloud platform security architecture
+- Evaluating multi-tenant quantum computing isolation guarantees
+- Analyzing spatial layout optimization for quantum processors
+- Assessing crosstalk as a security vulnerability in quantum hardware
+- Building quantum information-theoretic security protocols
