@@ -1,4 +1,18 @@
 ## 2026-05-17 - Information Science + Quantum (Cron Job)
+## 2026-05-17 - 信息学/量子力学 (Cron Job)
+
+### QAP-Router: Tackling Qubit Routing as Dynamic Quadratic Assignment with Reinforc
+- [[qap-router-tackling-qubit-routing-dynamic]] - Qubit routing is a fundamental problem in quantum compilation, known to be NPhard (arXiv: 2605.12365)
+  - Core methodology from recent arxiv paper
+  - Category: quant-ph
+  - **Activation**: quantum, learning, network, gate, routing
+## 2026-05-17 - 信息学/量子力学 (Cron Job)
+
+### CERTIFY-ED: A Multi-Layer Verification Framework for Exact Diagonalization of Qu
+- [[certify-ed-multi-layer-verification-framework-exact]] - Exact diagonalization (ED) is a workhorse technique in computational quantum many-body physics, but  (arXiv: 2605.11787)
+  - Core methodology from recent arxiv paper
+  - Category: cond-mat.str-el
+  - **Activation**: quantum, algorithm, machine, verification
 ## 2026-05-17 - Information Science (Cron Job)
 
 ### Toward Covert Quantum Computing
