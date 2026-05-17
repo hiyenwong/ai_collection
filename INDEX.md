@@ -25,6 +25,30 @@
   - **Activation**: cortical microcircuit, information flux, E/I balance, reverse engineering, mutual information, layer 5
 
 ## 2026-05-17 - Information Science + Quantum (Cron Job)
+
+### Toward Covert Quantum Computing
+- [[covert-quantum-computing]] - Privacy-preserving multi-tenant quantum computation framework analyzing adversarial detection, spatial isolation, and crosstalk side channels (arXiv: 2605.14325)
+  - Only O(√n) border qubits provide detection information under nearest-neighbor crosstalk model
+  - Long-range coupling from drive/control lines creates exploitable side channels
+  - **Activation**: covert quantum computing, quantum privacy, multi-tenant security, crosstalk
+
+### Energy efficiency of quantum computers
+- [[quantum-energy-efficiency]] - Framework defining energy efficiency metric for quantum computers as algorithms-per-joule, enabling cross-platform comparison of superconducting, trapped-ion, neutral-atom, and photonic platforms (arXiv: 2605.15090)
+  - Energy efficiency = N algorithms executed / E joules consumed
+  - Accounts for full hardware stack: cryogenics, control electronics, error correction
+  - **Activation**: quantum energy efficiency, quantum power consumption, platform comparison
+
+### A Toolbox to Understand the Physics of Quantum Data Management
+- [[quantum-data-management-toolbox]] - Physics-based framework mapping quantum device behavior to database problem structure, evaluating quantum annealing for query optimization and data management (arXiv: 2605.14719)
+  - Maps QUBO formulations to quantum annealer connectivity constraints
+  - Provides classical baselines for quantum advantage assessment
+  - **Activation**: quantum data management, quantum database, quantum annealing QUBO
+
+### CyberAId: AI-Driven Cybersecurity for Financial Service Providers
+- [[cyberaid-ai-security-framework]] - Hybrid multi-agent AI security framework combining LLM subagents with SIEM/XDR telemetry, privacy-preserving federation, and quantum authentication for financial services (arXiv: 2605.01892)
+  - Specialist subagents reason over classical telemetry rather than replacing it
+  - Four falsifiable design principles with bounded human-in-the-loop autonomy
+  - **Activation**: AI cybersecurity, multi-agent SOC, collaborative defense, SIEM LLM
 ## 2026-05-17 - 信息学/量子力学 (Cron Job)
 
 ### QAP-Router: Tackling Qubit Routing as Dynamic Quadratic Assignment with Reinforc
