@@ -1,5 +1,26 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-snn-benchmarking]] - 首次统一SNN训练算法分类体系，发布开源snnTorch基准测试框架 (arXiv: 2605.15058v1)
+    - 覆盖代理梯度反传、局部学习、三因子规则、ANN转SNN、非标准优化五大类
+    - 揭示生物合理性-计算效率-任务性能的权衡三角关系
+  - **Activation**: SNN training, neurotrain, surrogate gradient, local learning rules, three-factor learning, ANN-to-SNN conversion, snnTorch benchmarking
+
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - 回顾性蒸馏框架实现因果LFP行为解码，适用于无线植入BCI (arXiv: 2605.14867v1)
+    - 双向Mamba-2教师模型掩码自编码预训练，蒸馏至紧凑因果学生模型
+    - 参数量减半、训练时间减少10倍，性能超越因果/非因果LFP SOTA
+  - **Activation**: LFP decoding, REALM, retrospective distillation, causal BCI, local field potential, Mamba neural decoding, spike-free decoding
+
+### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
+- [[approximate-macroscopic-dynamics-snn-transport]] - 通过输运方程解析推导SNN群体放电率波动涌现机制 (arXiv: 2605.14319v1)
+    - 基于输运解而非传统均值场假设，捕获时变输入下的放电率波动
+    - 揭示初始电压分布、时变输入与网络耦合的动态交互
+  - **Activation**: macroscopic dynamics, transport equation, firing rate fluctuations, Fokker-Planck, mean field, integrate-and-fire
+
+
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
 ### Multiple mechanisms of rhythm switching in recurrent neural networks with adaptive time constants
 - [[rhythm-switching-adaptive-time-constants-rnn]] - RNNs with neuron-specific learnable time constants exhibit multiple mechanisms for rhythm switching across frequency bands (arXiv: 2605.14388v1)
     - Time constant specialization creates multi-scale temporal basis in RNNs
