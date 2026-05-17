@@ -1,5 +1,11 @@
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
+### HormoneT5: Hormone-inspired Emotion Layer for Transformers
+- [[hormone-t5-emotion-layer]] - Biologically-inspired Hormone Emotion Block augmenting transformers with six continuous hormone-like values via per-hormone attention heads for emotionally-appropriate response generation (arXiv: 2605.13858)
+  - Six hormone dimensions (dopamine/serotonin/oxytocin/cortisol/adrenaline/endorphin) computed through orthogonal query attention with temperature scaling
+  - Multi-objective training: seq2seq loss + hormone prediction with margin penalties + diversity regularization achieving 85%+ per-hormone accuracy
+  - **Activation**: HormoneT5, HELT, hormone emotion layer, affective computing transformer, endocrine-inspired AI, emotional language models, bio-inspired emotion modeling
+
 ### State-Space NTK Collapse Near Bifurcations
 - [[state-space-ntk-collapse-bifurcations]] - Local theory of gradient descent near bifurcations via state-space neural tangent kernel (sNTK), showing sNTK collapses to rank-one operators matching classical normal forms (arXiv: 2605.12763)
   - Near codimension-1 bifurcations, sNTK reduces to rank-one operator in bifurcation-relevant channel

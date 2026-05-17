@@ -1,103 +1,204 @@
 ---
 name: transport-mean-field-snn-dynamics
 description: >
-  Transport-based mean field theory for spiking neural network population dynamics. Analytically
-  derives firing rate fluctuations from initial voltage distributions via transport equation
-  solutions to the Fokker-Planck system. Use when: SNN mean field theory, neural population
-  dynamics, firing rate fluctuations, Fokker-Planck analysis, transport equation for neurons,
-  LIF/QIF network analysis, asynchronous state theory, neural mass models.
+  Transport mean field methodology for approximating macroscopic dynamics of spiking neural
+  networks. Derives population firing rate evolution from initial voltage distributions through
+  a Fokker-Planck system, based on transport solutions to the advection equation. Unlike
+  traditional mean field approaches using asynchronous steady-state solutions, this method
+  captures firing rate fluctuations emerging from dynamic interaction between time-varying
+  inputs, initial densities, and coupling in neural populations. Applicable to integrate-and-fire
+  networks with slow time-varying inputs in the excitation-driven regime.
+  Use when: modeling neural population dynamics, mean field theory for SNNs, firing rate
+  fluctuations, Fokker-Planck approaches to neural dynamics, transport equation in neuroscience,
+  population-level neural modeling.
+  Keywords: transport mean field, Fokker-Planck SNN, firing rate fluctuations, population
+  dynamics, integrate-and-fire mean field, advection equation neuroscience, voltage distribution
+  dynamics, neural population modeling.
 ---
 
-# Transport Mean Field Theory for SNN Dynamics
+# Transport Mean Field SNN Dynamics
 
-## Overview
+arXiv: 2605.14319 | Nicola & Campbell (May 2026)
 
-Analytical framework for understanding how firing rate fluctuations emerge in coupled spiking
-neural networks as a function of initial voltage distributions and time-varying inputs.
+## Core Contribution
 
-**Paper**: Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation (arXiv:2605.14319v1)
+Analytically derives approximate macroscopic dynamics for populations of coupled
+integrate-and-fire neurons by solving the transport equation for the advection dynamics,
+predicting how firing rate fluctuations emerge from initial voltage distributions under
+time-varying inputs.
 
-**Authors**: Wilten Nicola, Sue Ann Campbell (University of Calgary, University of Waterloo)
+## Problem Addressed
 
-## Key Theoretical Contributions
+Firing rate fluctuations are observed experimentally at multiple time scales:
+- **Single neurons**: Trial-to-trial variability
+- **Across trials**: Stimulus-elicited response variability
+- **Across populations**: Population-level rate oscillations and transients
 
-### Transport Mean Field System
-Unlike traditional mean field theories assuming asynchronous steady states, this approach:
-- Uses transport solution to the advection equation
-- Assumes slow time-varying inputs and excitation-driven regime
-- Predicts firing rate fluctuations from dynamic interaction between:
-  1. Time-varying inputs
-  2. Initial voltage densities
-  3. Network coupling strength
+Traditional mean field approaches assume asynchronous or constant flux steady states,
+which fail to capture dynamic transients and initial-condition-dependent fluctuations.
 
-### Mathematical Framework
+## Key Methodology
 
-#### Fokker-Planck System
-Starting point for population-level description of coupled integrate-and-fire neurons:
-- Density evolution: ∂ρ/∂t + ∂/∂v[(F(v) + I(t))ρ] = diffusion terms
-- Flux at threshold gives population firing rate
+### Transport-Based Mean Field
 
-#### Transport Equation Solution
-For excitation-driven regime with slow inputs:
-- Probability integral transform maps voltage domain to phase domain
-- Density evolves as rigid rotation in phase space
-- Conversion back to voltage domain produces non-constant flux
+The population of neurons is described by a probability density function `ρ(v, t)` over
+the voltage variable `v` at time `t`:
 
-#### Firing Rate Formulas
+```
+∂ρ/∂t + ∂/∂v [μ(v,t) · ρ] = D · ∂²ρ/∂v²
+```
 
-**LIF Neuron**:
-- ν_LIF(t) = ρ_v0(ṽ(t)) · (-ṽ(t) + I)
-- Ω(I) = [log(-v_reset + I) - log(v_thr + I)]^(-1)
+where:
+- `μ(v,t)`: drift term (time-varying input + coupling effects)
+- `D`: diffusion coefficient (noise/variance)
+- `ρ(v,t)`: voltage distribution density
 
-**QIF Neuron**:
-- ν_QIF(t) = ρ_v0(ṽ(t)) · (ṽ(t)² + I)
-- Ω(I) = [arctan(v_thr/√I) - arctan(v_reset/√I)] / √I
+### Transport Solution (Advection Equation)
 
-### Flux Operator Invertibility
-The flux operator R mapping initial densities to firing rates is **explicitly invertible**:
-- Given desired firing rate ν(t) = z(t), recover initial density:
-  ρ_v(ṽ) = z(t⁻¹(ṽ)) / (F(ṽ) + I)
-- This enables inverse design: specify target dynamics, find required initial conditions
+When diffusion is small and inputs are slow, the dominant dynamics come from the
+transport (advection) term:
 
-## Key Properties
+```
+∂ρ/∂t + ∂/∂v [μ(v,t) · ρ] = 0
+```
 
-### Captures Fast Fluctuations
-- Predicts instantaneous firing rate fluctuations from initial density structure
-- Handles unimodal and bimodal initial densities
-- Works for both excitatory and inhibitory coupling (weak/intermediate strength)
+The solution follows characteristics of the ODE:
 
-### Limitations
-- Accuracy decreases asymptotically (t → ∞) as system evolves toward synchronous/asynchronous states
-- Violates F'(v) + Ī(t) > 0 condition for strong inhibitory coupling (periodic bursting)
-- Cannot predict long-time density evolution from changing neuronal synchrony
+```
+dv/dt = μ(v, t)
+```
 
-### Extensions
-- Single coupled population with time-varying input c(t)
-- Two interacting populations with cross-coupling
-- Generalizes beyond Ott-Antonsen Lorentzian assumption
+This gives a closed-form approximation for the evolution of the voltage distribution
+and the resulting population firing rate.
 
-## Activation Keywords
-- transport mean field
-- firing rate fluctuations
-- Fokker-Planck neural dynamics
-- population density approach
-- LIF mean field theory
-- QIF neuron dynamics
-- neural mass model
-- initial density effects
-- flux operator invertibility
-- 脉冲神经网络均值场
-- 传输方程神经动力学
+### Flux Calculation
 
-## Implementation Notes
+The instantaneous population firing rate (flux) at the threshold `v_th`:
 
-1. **Transport Solution**: Use probability integral transform g(v) for phase domain mapping
-2. **LIF vs QIF**: Choose neuron model based on problem (LIF for leaky dynamics, QIF for oscillatory analysis)
-3. **Coupling Strength**: Theory valid for weak/intermediate coupling; strong coupling requires bifurcation analysis
-4. **Initial Conditions**: Initial voltage density critically determines fluctuation pattern
+```
+r(t) = J(v_th, t) = μ(v_th, t) · ρ(v_th, t) - D · ∂ρ/∂v|_{v_th}
+```
+
+The transport approximation provides `ρ(v_th, t)` by tracking how the initial
+distribution evolves along characteristics.
+
+## Assumptions
+
+1. **Slow inputs**: Time-varying inputs change slowly compared to neuronal timescales
+2. **Excitation-driven regime**: Neurons operate in a regime dominated by excitatory drive
+3. **Integrate-and-fire neurons**: LIF or similar models with reset mechanism
+4. **Coupled network**: Recurrent connections modeled through mean field coupling
+
+## When to Use This Approach
+
+| Scenario | Recommended |
+|----------|------------|
+| Steady-state analysis | Traditional mean field (steady-state FP) |
+| Dynamic transients | **Transport mean field** (this method) |
+| Fast-varying inputs | Full Fokker-Planck simulation |
+| Initial condition effects | **Transport mean field** (this method) |
+| Large coupled networks | **Transport mean field** (this method) |
+
+## Mathematical Framework
+
+### Characteristic Equations
+
+For the advection equation `∂ρ/∂t + ∂(μρ)/∂v = 0`:
+
+```python
+# Characteristic curve: tracks voltage evolution
+def characteristic(t, v0, mu_fn):
+    """Solve dv/dt = mu(v, t) with initial condition v(0) = v0."""
+    # Numerical integration along characteristics
+    from scipy.integrate import solve_ivp
+    sol = solve_ivp(
+        lambda t, v: mu_fn(v, t),
+        [0, t],
+        [v0],
+        method='RK45',
+        dense_output=True
+    )
+    return sol.sol(t)[0]
+
+# Density evolution along characteristics
+def density_along_characteristic(v0, t, rho_0, mu_fn):
+    """Compute density at time t for a characteristic starting at v0."""
+    v_t = characteristic(t, v0, mu_fn)
+    # Jacobian of characteristic map
+    # ρ(v,t) = ρ₀(v₀) / |∂v(t)/∂v₀|
+    jacobian = compute_jacobian(v0, t, mu_fn)
+    return rho_0(v0) / abs(jacobian)
+```
+
+### Firing Rate Prediction
+
+```python
+def predict_firing_rate(rho_0, mu_fn, v_reset, v_threshold, t_eval):
+    """Predict population firing rate from initial voltage distribution."""
+    rates = []
+    for t in t_eval:
+        # Find which initial conditions reach threshold at time t
+        v_at_t = [characteristic(t, v0, mu_fn) for v0 in v_grid]
+        # Count crossings and compute flux
+        flux = compute_flux_at_threshold(
+            rho_0, v_grid, v_at_t, mu_fn, v_threshold, t
+        )
+        rates.append(flux)
+    return np.array(rates)
+```
+
+## Key Insights
+
+1. **Initial conditions matter**: The initial voltage distribution significantly affects
+   transient firing rate dynamics — a feature absent from steady-state mean field theory
+
+2. **Dynamic interaction**: Fluctuations emerge from the interplay of:
+   - Time-varying external inputs
+   - Initial voltage density shape
+   - Recurrent coupling strength
+
+3. **Transport vs. diffusion**: In the excitation-driven regime with slow inputs,
+   the transport (deterministic drift) dominates over diffusion, making the advection
+   equation a good approximation
+
+4. **Computational efficiency**: Transport solution is much faster than full
+   Fokker-Planck simulation while capturing essential transient dynamics
+
+## Comparison with Other Mean Field Approaches
+
+| Method | Captures Transients | Computational Cost | Accuracy |
+|--------|-------------------|-------------------|----------|
+| Steady-state FP | ❌ | Low | Good for steady state |
+| Full FP simulation | ✅ | High | Very good |
+| **Transport MF** | ✅ | **Medium** | **Good for slow inputs** |
+| QIF mean field | Partial | Medium | Limited model class |
+
+## Applications
+
+- **Neural population modeling**: Predicting population-level firing dynamics
+- **Stimulus response analysis**: Understanding trial-to-trial variability
+- **Network state transitions**: Analyzing how networks transition between states
+- **Theoretical neuroscience**: Bridging microscopic neuron models to macroscopic dynamics
+- **SNN macroscopic analysis**: Understanding population-level behavior of spiking networks
+
+## Activation
+
+- transport mean field SNN, Fokker-Planck neural dynamics
+- firing rate fluctuations, population dynamics
+- integrate-and-fire mean field, advection equation neuroscience
+- voltage distribution dynamics, neural population modeling
+- 传输平均场, 脉冲神经网络动力学, 群体神经动力学
+
+## Limitations
+
+- Requires slow input assumption — not valid for rapidly changing stimuli
+- Excitation-driven regime only — may not apply to inhibition-dominated networks
+- Approximation quality degrades when diffusion becomes significant
+- Single-population mean field — extensions needed for multi-population networks
 
 ## Related Work
-- Traditional mean field: Assumes asynchronous steady state (Abbott & Van Vreeswijk 1993)
-- Ott-Antonsen: Requires Lorentzian heterogeneity assumption (Ott & Antonsen 2008)
-- Modern neural mass: Heterogeneous networks (Montbrió, Pazó, Roxin 2015-2025)
-- This work: Transport-based, no distribution assumption, handles fast fluctuations
+
+- Brunel & Hakim (1999): Fast global oscillations in sparsely connected networks
+- Fourcaud & Brunel (2002): Dynamics of population activity in networks of integrate-and-fire neurons
+- Montbrió et al. (2015): Macroscopic description for networks of QIF neurons
+- Deco et al. (2008): The dynamic brain: from spiking neurons to neural masses
