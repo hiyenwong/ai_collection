@@ -1,3 +1,12 @@
+## 2026-05-18 - Neuroscience + Quantum (Cron Job)
+
+### GKSL Dynamics for Quantum-Like Cognition
+- [[gksl-quantum-cognition]] - Open quantum systems framework (GKSL/Lindblad master equation) for quantum-like modeling of cognition and decision-making, with cognitive beat detection (arXiv: 2604.18643)
+  - GKSL master equation models mental state evolution as dissipative process in Hilbert space
+  - Active vs Passive Hamiltonian regimes distinguish cognitive agency from classical rationality
+  - Cognitive beats: spectral signature of internal deliberation between competing flows of mind
+  - **Activation**: GKSL dynamics, quantum-like cognition, Lindblad equation, cognitive beats, decision making, open quantum systems
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### REALM: Retrospective Encoder Alignment for LFP Modeling
