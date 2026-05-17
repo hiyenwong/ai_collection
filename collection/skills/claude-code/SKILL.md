@@ -3,6 +3,7 @@ name: claude-code
 version: v2.1.84
 last_updated: 2026-03-27
 description: Anthropic's official AI-powered coding companion. Use when user wants to run claude-code CLI, needs help with code using Anthropic's Claude, or mentions claude-code, anthropic coding, claude cli, or claude terminal.
+platforms: [claude-code, codex, hermes, opencode, openclaw]
 ---
 
 # Claude Code
@@ -521,48 +522,41 @@ Give Claude context about your code:
 ## Examples
 
 ### Example 1: Adding a Feature
-```
-User: "Add error handling to the user authentication function in src/auth.js"
 
-Claude Code:
+**User:** Add error handling to the user authentication function in src/auth.js
+
+**Agent:**
 1. Reads src/auth.js
 2. Identifies the authentication function
-3. Adds try-catch blocks
-4. Adds logging for errors
-5. Adds user-friendly error messages
-6. Suggests testing approach
+3. Adds try-catch blocks with logging
+4. Adds user-friendly error messages
+5. Suggests testing approach
 
 Result: Updated src/auth.js with comprehensive error handling
-```
 
 ### Example 2: Debugging
-```
-User: "I'm getting a 500 error when calling /api/users. Help me debug it."
 
-Claude Code:
+**User:** I'm getting a 500 error when calling /api/users. Help me debug it.
+
+**Agent:**
 1. Reads the API endpoint code
-2. Checks database queries
-3. Reviews error logs
-4. Identifies missing error handling
-5. Adds proper error handling
-6. Suggests logging improvements
+2. Checks database queries and error logs
+3. Identifies missing error handling
+4. Adds proper error handling and logging
 
-Result: Fixed API endpoint with proper error handling and logging
-```
+Result: Fixed API endpoint with proper error handling
 
 ### Example 3: Understanding Code
-```
-User: "Explain how the middleware chain works in server.js"
 
-Claude Code:
+**User:** Explain how the middleware chain works in server.js
+
+**Agent:**
 1. Reads server.js
-2. Identifies middleware functions
-3. Explains execution order
-4. Describes what each middleware does
-5. Provides examples of adding new middleware
+2. Identifies middleware functions and execution order
+3. Describes what each middleware does
+4. Provides examples of adding new middleware
 
 Result: Clear explanation of middleware architecture with examples
-```
 
 ## Limitations
 

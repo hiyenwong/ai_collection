@@ -3,6 +3,7 @@ name: opencode
 version: v1.3.5
 last_updated: 2026-03-30
 description: Open source AI coding agent with multi-agent orchestration and ultrawork mode. Use when user mentions opencode, open code, oh-my-opencode, ultrawork, ulw, or needs an AI coding agent with background tasks and LSP integration.
+platforms: [claude-code, codex, hermes, opencode, openclaw]
 ---
 
 # OpenCode + Oh My OpenCode
@@ -492,59 +493,38 @@ Use `/share` to:
 ## Examples
 
 ### Example 1: Feature with Ultrawork
-```
-User: "Add user authentication with JWT tokens ultrawork"
 
-Oh My OpenCode:
-1. Sisyphus (orchestrator) breaks down task:
-   - Create user model
-   - Implement JWT generation
-   - Add authentication middleware
-   - Create login endpoint
-   - Add tests
+**User:** Add user authentication with JWT tokens ultrawork
 
-2. Spawns parallel background agents:
-   - Explore agent: Finds existing patterns
-   - Librarian: Looks up JWT best practices
-   - Prometheus: Plans implementation
-
-3. Oracle designs authentication flow
-
-4. Agents implement in parallel
-
-5. Sisyphus coordinates and integrates
+**Agent:**
+1. Orchestrator breaks down task into sub-tasks
+2. Spawns parallel background agents (planner, researcher, implementer)
+3. Agents implement JWT model, middleware, login endpoint, and tests in parallel
+4. Orchestrator integrates results
 
 Result: Complete authentication system with tests
-```
 
 ### Example 2: Debugging with Specialized Agent
-```
-User: "The login form shows 'invalid credentials' even with correct password"
 
-Oh My OpenCode:
-1. Sisyphus assigns to Oracle (debugging specialist)
+**User:** The login form shows 'invalid credentials' even with correct password
 
-2. Oracle investigates:
-   - Reads login form code
-   - Traces authentication flow
-   - Identifies bug: Password comparison case-sensitive
-   - Fixes by normalizing input
+**Agent:**
+1. Reads login form code and traces authentication flow
+2. Identifies bug: password comparison is case-sensitive
+3. Fixes by normalizing input before comparison
 
 Result: Bug fixed with minimal changes
-```
 
 ### Example 3: LSP Refactoring
-```
-User: "Refactor to rename User class to Customer using LSP"
 
-Oh My OpenCode:
-1. Uses LSP to find all references
-2. Safely renames symbol
-3. Updates all usages
-4. Verifies no broken references
+**User:** Refactor to rename User class to Customer using LSP
+
+**Agent:**
+1. Uses LSP to find all references to `User`
+2. Safely renames symbol across all files
+3. Verifies no broken references remain
 
 Result: Clean refactoring without manual search/replace
-```
 
 ## Limitations
 

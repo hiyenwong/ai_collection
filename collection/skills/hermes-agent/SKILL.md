@@ -2,18 +2,26 @@
 name: hermes-agent
 description: Complete guide to using and extending Hermes Agent — CLI usage, setup, configuration, spawning additional agents, gateway platforms, skills, voice, tools, profiles, and a concise contributor reference. Load this skill when helping users configure Hermes, troubleshoot issues, spawn agent instances, or make code contributions.
 version: 2.0.0
+last_updated: 2026-03-30
 author: Hermes Agent + Teknium
 license: MIT
+platforms: [claude-code, codex, hermes, opencode, openclaw]
 metadata:
   hermes:
     tags: [hermes, setup, configuration, multi-agent, spawning, cli, gateway, development]
     homepage: https://github.com/NousResearch/hermes-agent
-    related_skills: [claude-code, codex, opencode]
+    related_skills: [claude-code, codex, opencode, openclaw]
 ---
 
 # Hermes Agent
 
-Hermes Agent is an open-source AI agent framework by Nous Research that runs in your terminal, messaging platforms, and IDEs. It belongs to the same category as Claude Code (Anthropic), Codex (OpenAI), and OpenClaw — autonomous coding and task-execution agents that use tool calling to interact with your system. Hermes works with any LLM provider (OpenRouter, Anthropic, OpenAI, DeepSeek, local models, and 15+ others) and runs on Linux, macOS, and WSL.
+## Description
+
+Hermes Agent is an open-source AI agent framework by Nous Research that runs in your terminal,
+messaging platforms, and IDEs. It belongs to the same category as Claude Code (Anthropic), Codex
+(OpenAI), and OpenClaw — autonomous coding and task-execution agents that use tool calling to
+interact with your system. Hermes works with any LLM provider (OpenRouter, Anthropic, OpenAI,
+DeepSeek, local models, and 15+ others) and runs on Linux, macOS, and WSL.
 
 What makes Hermes different:
 
@@ -29,6 +37,21 @@ People use Hermes for software development, research, system administration, dat
 **This skill helps you work with Hermes Agent effectively** — setting it up, configuring features, spawning additional agent instances, troubleshooting issues, finding the right commands and settings, and understanding how the system works when you need to extend or contribute to it.
 
 **Docs:** https://hermes-agent.nousresearch.com/docs/
+
+## Activation Keywords
+
+- hermes
+- hermes-agent
+- hermes agent
+- use hermes
+- nous hermes
+
+## Tools Used
+
+- read: Read existing files and documentation
+- write: Create new files and documentation
+- bash: Execute shell commands
+- exec: Run hermes CLI commands
 
 ## Quick Start
 
@@ -705,37 +728,41 @@ Types: `fix:`, `feat:`, `refactor:`, `docs:`, `chore:`
 - Config values go in `config.yaml`, secrets go in `.env`
 - New tools need a `check_fn` so they only appear when requirements are met
 
-## Activation Keywords
-
-- "hermes-agent"
-- "hermes agent"
-- "use hermes agent"
-- "hermes agent help"
-- "hermes agent tool"
-
-## Tools Used
-
-- `Read` - Read existing files and documentation
-- `Write` - Create new files and documentation
-- `Bash` - Execute commands when needed
-
 ## Instructions for Agents
 
-1. Identify user's intent and specific requirements
-2. Gather necessary context from files or user input
-3. Execute appropriate actions using available tools
-4. Provide clear results and suggest next steps
+1. Check if Hermes is installed: `hermes --version`
+2. Run `hermes setup` to configure provider and model on first use
+3. Use `hermes chat -q "task"` for single queries or `hermes` for interactive mode
+4. For long-running tasks, use `hermes chat --background "task"`
+5. Use `hermes doctor` to diagnose configuration issues
+6. Provide clear results and suggest next steps
 
 ## Examples
 
-### Basic Hermes Agent usage
-```
-User: "Help me with hermes agent"
-→ Understand requirements → Execute actions → Provide results
+### Example 1: Interactive Coding Session
+
+**User:** Start a Hermes coding session for my project
+
+**Agent:**
+```bash
+cd /path/to/project
+hermes
 ```
 
-### Advanced usage
+### Example 2: Single Query
+
+**User:** Ask Hermes to explain my codebase
+
+**Agent:**
+```bash
+hermes chat -q "Give me an overview of this project's architecture"
 ```
-User: "I need detailed hermes agent assistance"
-→ Clarify scope → Provide comprehensive solution → Follow up
+
+### Example 3: Spawn a Background Agent
+
+**User:** Run Hermes in the background to implement a feature
+
+**Agent:**
+```bash
+hermes chat --background "Implement a REST API endpoint for user profile"
 ```
