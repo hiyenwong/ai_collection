@@ -1,3 +1,17 @@
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-snn-benchmarking]] - Comprehensive SNN training algorithm taxonomy and open benchmarking framework spanning surrogate-gradient, local/three-factor learning, predictive coding, and neuromodulated plasticity (arXiv: 2605.15058)
+  - First unified taxonomy of SNN training algorithms with standardized benchmarking
+  - Local learning rules achieve competitive accuracy with significantly lower memory than backprop
+  - **Activation**: SNN, spiking neural network, local learning, benchmarking, surrogate gradient, STDP, three-factor learning, predictive coding
+
+### Are Cortical Microcircuits Optimized for Information Flux? - A Simulation-based Reverse Engineering Study
+- [[cortical-microcircuit-information-flux]] - Simulation-based reverse engineering of cortical microcircuits using mutual information between network states to evaluate structural optimization (arXiv: 2605.14680)
+  - Cortical-like connectivity with E/I balance significantly outperforms random networks for information flux
+  - Demonstrates evolutionary optimization of neural architecture for information processing capacity
+  - **Activation**: cortical microcircuit, information flux, E/I balance, reverse engineering, mutual information, layer 5
+
 ## 2026-05-17 - Information Science + Quantum (Cron Job)
 ## 2026-05-17 - 信息学/量子力学 (Cron Job)
 

@@ -1,103 +1,119 @@
 ---
 name: cortical-microcircuit-information-flux
-description: "Simulation-based reverse engineering methodology for analyzing whether cortical microcircuits are optimized for information flux. Core-embedding architecture, Recurrence Resonance, effective biases. Activation: cortical microcircuit, information flux, neural circuit optimization, reverse engineering brain circuits, recurrence resonance, embedding network dynamics."
+description: "Simulation-based reverse engineering methodology for analyzing cortical microcircuit optimization for information flux (arXiv:2605.14680). Uses mutual information between network states to evaluate structural configurations. Use when: studying cortical microcircuits, analyzing E/I balance effects, reverse engineering neural architectures, evaluating information processing capacity, comparing biological vs artificial network structures."
 ---
 
-# Cortical Microcircuit Information Flux Optimization
+# Cortical Microcircuit Information Flux Analysis
 
-> Simulation-based reverse engineering revealing that cortical microcircuits' embedding networks enhance core population information flux through effective biases and stochastic fluctuations via Recurrence Resonance.
+## Paper Reference
+**arXiv**: 2605.14680
+**Title**: Are cortical microcircuits optimized for information flux? -- A simulation-based reverse engineering study
+**Authors**: Claus Metzner, Ali Ghebleh, Karin Prebeck
 
-## Metadata
-- **Source**: arXiv:2605.14680
-- **Authors**: Claus Metzner, Ali Ghebleh, Karin Prebeck, Achim Schilling, Andreas Maier, Thomas Kinfe, Patrick Krauss
-- **Published**: 2026-05-14
+## Core Framework
 
-## Core Methodology
+### Information Flux Definition
+Information flux = Mutual information I(S_t; S_{t+1}) between consecutive network states
+- Quantifies how much current state informs about next state
+- Prerequisite for rich information processing capabilities
+- Higher flux means greater computational capacity
 
-### Key Innovation
-Information flux = mutual information I(s(t), s(t+1)) between successive network states. The paper studies a simplified cortical layer 5 architecture where a **densely interconnected core population** is embedded in a **larger supporting network**. Surprising finding: the embedding network exerts a pronounced flux-enhancing effect through two mechanisms:
+### Simulation-Based Reverse Engineering Methodology
 
-1. **Effective biases** — embedding network generates biases that shift core neurons into higher-entropy operating regimes
-2. **Stochastic fluctuations via Recurrence Resonance** — prevents core from becoming trapped in simple fixed-point or oscillatory attractors
+1. **Define structural model**: Simplified cortical layer 5 architecture
+2. **Parameter space exploration**: Systematically vary connectivity parameters
+3. **Objective function**: Maximize information flux
+4. **Comparison baselines**: Random networks, shuffled connectivity
+5. **Analysis**: Identify structural configurations that maximize flux
 
-Information flux can be increased beyond the biologically embedded case by applying individually optimized biases to core neurons, which can emerge from a simple self-organization principle.
+## Cortical Layer 5 Architecture Model
 
-### Core-Embedding Architecture
-- **Core population**: densely and strongly interconnected neurons
-- **Embedding network**: larger supporting network surrounding the core
-- The embedding network's flux-enhancing effect is the central discovery
+### Key Components
+- **Excitatory population**: Pyramidal cells (principal output neurons)
+- **Inhibitory population**: Interneurons (regulatory control)
+- **Dense inhibitory connectivity**: Strong, widespread inhibition
+- **Recurrent excitation**: Feedback loops within pyramidal population
 
-### Two Enhancement Mechanisms
+### Model Parameters to Explore
+- E/I connection probability and strength
+- Recurrent excitation strength
+- Inhibitory feedback gain
+- Network size and topology
+- External input statistics
 
-**1. Effective Biases**
-- Embedding generates effective biases shifting core to higher-entropy regimes
-- Individually optimized biases can exceed biological embedding performance
-- Biases emerge from simple self-organization principles
+## Analysis Pipeline
 
-**2. Recurrence Resonance**
-- Stochastic fluctuations from embedding prevent entrapment in attractors
-- Noise-induced enhancement of information processing capacity
-- Key insight: noise is computationally beneficial, not just detrimental
-
-### Reverse Engineering Procedure
-1. Build simplified cortical layer 5 model (core + embedding)
-2. Compute mutual information between successive network states
-3. Compare isolated core vs. core+embedding configurations
-4. Isolate bias vs. fluctuation contributions via ablation
-5. Derive self-organization principle for bias emergence
-6. Compare with artificial recurrent systems (reservoir computers)
-
-### Code Example
+### Step 1: Network Simulation
 ```python
-import numpy as np
-from sklearn.metrics import mutual_info_score
-
-def simulate_recurrent_network(W, bias, noise_std, n_steps, n_neurons, x0=None):
-    """Simulate recurrent network dynamics."""
-    if x0 is None:
-        x0 = np.random.randn(n_neurons)
-    states = np.zeros((n_steps, n_neurons))
-    x = x0.copy()
-    for t in range(n_steps):
-        x = np.tanh(W @ x + bias + noise_std * np.random.randn(n_neurons))
-        states[t] = x
-    return states
-
-def compute_information_flux(states, discretize_bins=50):
-    """Compute mutual information between successive network states."""
-    s_t = np.digitize(states[:-1].flatten(), np.linspace(states.min(), states.max(), discretize_bins))
-    s_t1 = np.digitize(states[1:].flatten(), np.linspace(states.min(), states.max(), discretize_bins))
-    return mutual_info_score(s_t, s_t1)
-
-# Core-only vs Core+Embedding comparison
-n_core, n_embed = 50, 200
-W_core = np.random.randn(n_core, n_core) * 0.5
-W_full = np.random.randn(n_core+n_embed, n_core+n_embed) * 0.3
-
-states_core = simulate_recurrent_network(W_core, np.zeros(n_core), 0.1, 10000, n_core)
-states_full = simulate_recurrent_network(W_full, np.zeros(n_core+n_embed), 0.1, 10000, n_core+n_embed)
-
-flux_core = compute_information_flux(states_core)
-flux_full = compute_information_flux(states_full)
+# Simplified rate-based or spiking network
+def simulate_network(params, T=1000):
+    states = []
+    current_state = initialize(params)
+    for t in range(T):
+        current_state = step(current_state, params)
+        states.append(current_state)
+    return np.array(states)
 ```
 
-## Applications
-- Understanding design principles of cortical microcircuits
-- Evaluating whether biological circuits are optimized for information processing
-- Guiding artificial neural network architecture design
-- Identifying constraints that shape cortical evolution
+### Step 2: Information Flux Estimation
+```python
+from sklearn.metrics import mutual_info_score
 
-## Pitfalls
-- Information flux estimation sensitive to discretization bin size — use multiple estimators
-- Simplified models may not capture full biological complexity (ion channels, plasticity)
-- Recurrence Resonance requires careful noise level tuning — too much noise destroys structure
-- Mutual information estimation on high-dimensional states requires large sample sizes
-- Self-organization principles may converge slowly — monitor convergence criteria
-- Biological circuits may optimize for multiple objectives, not just information flux
+# Estimate MI between consecutive states using k-nearest neighbors
+# Use continuous MI estimator (Kraskov-Stoegbauer-Grassberger)
+# or discretize and use mutual_info_score
+def estimate_information_flux(states):
+    s_t = states[:-1]
+    s_t1 = states[1:]
+    return compute_mi(s_t, s_t1)
+```
+
+### Step 3: Parameter Sweep
+```python
+# Systematic exploration of parameter space
+results = []
+for e_i_ratio in np.linspace(0.1, 0.9, 10):
+    for rec_strength in np.linspace(0.1, 1.0, 10):
+        params = {'e_i_ratio': e_i_ratio, 'rec_strength': rec_strength}
+        states = simulate_network(params)
+        flux = estimate_information_flux(states)
+        results.append({**params, 'flux': flux})
+```
+
+### Step 4: Compare with Baselines
+- **Random networks**: Erdos-Renyi connectivity
+- **Shuffled networks**: Same degree distribution, random wiring
+- **Biological networks**: Empirical connectivity data
+- **Key finding**: Cortical-like connectivity significantly outperforms random networks
+
+## Key Insights
+
+### E/I Balance and Information Flux
+- Optimal E/I ratio exists for maximum information flux
+- Too much inhibition leads to network silenced, low flux
+- Too much excitation leads to saturation or instability, degraded flux
+- Biological networks operate near optimal balance point
+
+### Recurrent Structure Benefits
+- Recurrent connections enable temporal integration
+- Feedback loops amplify useful signals
+- Structured recurrence is better than random recurrence for flux
+
+### Evolutionary Implications
+- Cortical architecture appears optimized for information processing
+- Structural constraints emerge from functional optimization
+- Provides computational justification for observed connectivity patterns
+
+## Application Domains
+
+1. **Neural architecture design**: Inform AI network structure
+2. **Brain-computer interfaces**: Understanding signal propagation
+3. **Neuromodulation studies**: How E/I balance affects computation
+4. **Computational psychiatry**: Altered E/I balance in disorders
+5. **Neuromorphic computing**: Bio-inspired efficient architectures
 
 ## Related Skills
-- neural-dynamics-decision-making
-- neural-population-dynamics
-- connectome-genetic-environmental-architecture
-- brain-connectivity-analysis
-- energy-based-neurocomputation
+- **neurotrain-snn-benchmarking**: SNN training algorithms
+- **snn-learning-survey**: SNN learning paradigms
+- **brain-network-controllability**: Network control theory
+- **generative-brain-dynamics-models**: Brain dynamics modeling

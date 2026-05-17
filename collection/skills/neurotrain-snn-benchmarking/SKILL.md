@@ -1,101 +1,111 @@
 ---
 name: neurotrain-snn-benchmarking
-description: >
-  Comprehensive SNN training algorithm taxonomy and open benchmarking framework methodology from arXiv:2605.15058 (NeuroTrain, 2026-05-14).
-  Covers surrogate-gradient backpropagation, local/three-factor learning rules, biologically inspired plasticity, ANN-to-SNN conversion, and non-standard optimization.
-  Use when: researching SNN training methods, comparing learning rules, designing neuromorphic training pipelines,
-  or benchmarking spiking neural network algorithms. Activation: SNN training, spiking neural network learning,
-  neurotrain, surrogate gradient, local learning rules, three-factor learning, ANN-to-SNN conversion,
-  snnTorch benchmarking, neuromorphic training.
+description: "Comprehensive SNN training algorithm taxonomy and open benchmarking framework from NeuroTrain paper (arXiv:2605.15058). Covers surrogate-gradient backpropagation, local/three-factor learning rules, predictive coding, and neuromodulated plasticity. Use when: analyzing SNN training methods, comparing learning rules, benchmarking spiking networks, evaluating biological plausibility vs computational efficiency, implementing local learning in SNNs."
 ---
 
-# NeuroTrain: SNN Training Algorithm Taxonomy & Benchmarking Framework
+# NeuroTrain: SNN Training Taxonomy & Benchmarking
 
-**arXiv:** 2605.15058 | **Date:** 2026-05-14 | **Authors:** Caviglia, Marostica, Bardini, Savino, Di Carlo
+## Paper Reference
+**arXiv**: 2605.15058
+**Title**: NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+**Authors**: Alessio Caviglia, Filippo Marostica, Roberta Bardini
 
-## Core Contribution
+## SNN Training Algorithm Taxonomy
 
-First unified, fine-grained taxonomy of SNN training algorithms spanning the full landscape of approaches.
-Releases **NeuroTrain** — an open-source snnTorch-based framework for consistent benchmarking across
-datasets, architectures, and training regimes.
-
-## Taxonomy of SNN Training Algorithms
-
-### 1. Surrogate-Gradient Backpropagation (BP)
-- **Principle:** Replace non-differentiable spike function with smooth surrogate during backward pass
-- **Learning Signal:** Global error gradient via chain rule
-- **Locality:** Non-local (requires backprop through time)
-- **Representative methods:** SuperSpike, STDP-BP, slayer
-- **Strengths:** High accuracy on complex tasks
-- **Weaknesses:** Biologically implausible, memory-intensive BPTT
+### 1. Surrogate-Gradient Backpropagation
+- **Mechanism**: Replace non-differentiable spike function with smooth surrogate during backward pass
+- **Common surrogates**: sigmoid, atan, exponential, piecewise linear
+- **Pros**: End-to-end differentiable, high accuracy on standard benchmarks
+- **Cons**: Biologically implausible, high memory for BPTT, not hardware-friendly
+- **Use when**: Maximum accuracy needed, no hardware constraints
 
 ### 2. Local Learning Rules
-- **Principle:** Weight updates depend only on pre/post-synaptic activity
-- **Learning Signal:** Local activity correlation
-- **Locality:** Fully local (synapse-level)
-- **Representative methods:** STDP, Hebbian learning, eligibility traces
-- **Strengths:** Hardware-friendly, biologically plausible
-- **Weaknesses:** Limited to simpler tasks, slower convergence
+- **STDP variants**: Pair-based, triplet, voltage-dependent, reward-modulated
+- **Hebbian rules**: Correlation-based weight updates using pre/post activity
+- **Pros**: Biologically plausible, low memory, online-capable, hardware-friendly
+- **Cons**: Lower accuracy on complex tasks, limited credit assignment
+- **Key finding**: Competitive accuracy on image classification with significantly lower memory footprint than backprop
 
 ### 3. Three-Factor Learning Rules
-- **Principle:** Local pre/post activity modulated by global third factor (reward, error, neuromodulator)
-- **Learning Signal:** Local activity × global modulatory signal
-- **Locality:** Semi-local (requires broadcast signal)
-- **Representative methods:** Reward-modulated STDP, e-prop
-- **Strengths:** Balance of biological plausibility and learning power
-- **Weaknesses:** Third factor computation can be complex
+- **Mechanism**: Pre-synaptic * Post-synaptic * Modulatory signal (dopamine/error)
+- **Bridges**: Hebbian plasticity and supervised learning
+- **Implementation**: 
+  ```python
+  # Three-factor update
+  delta_w = pre_spike * post_trace * modulatory_signal
+  w += learning_rate * delta_w
+  ```
+- **Use when**: Need biological plausibility with supervised signal
 
-### 4. Biologically Inspired Plasticity
-- **Principle:** Mechanisms mimicking biological synaptic plasticity
-- **Learning Signal:** Intrinsic biological signals (calcium, dopamine)
-- **Locality:** Local to semi-local
-- **Representative methods:** Calcium-based plasticity, homeostatic scaling
-- **Strengths:** High biological fidelity, self-regulating
-- **Weaknesses:** Task-specific tuning difficult
+### 4. Predictive Coding
+- **Principle**: Minimize prediction error at each layer
+- **Energy efficiency**: Local computation, no global error backpropagation
+- **Edge deployment**: Suitable for neuromorphic hardware with power constraints
+- **Implementation pattern**:
+  ```python
+  # Each layer predicts next layer's activity
+  prediction = W @ current_state
+  error = target - prediction
+  weight_update = error @ current_state.T  # Local Hebbian
+  ```
 
-### 5. ANN-to-SNN Conversion
-- **Principle:** Train ANN first, then convert to equivalent SNN
-- **Learning Signal:** Standard ANN backprop
-- **Locality:** N/A (conversion step is deterministic)
-- **Representative methods:** Rate coding conversion, spike-based calibration
-- **Strengths:** Leverages mature ANN training, high accuracy
-- **Weaknesses:** Requires long simulation timesteps, latency overhead
+### 5. Neuromodulated Plasticity
+- **Mechanism**: Global neuromodulator (dopamine, acetylcholine) gates local plasticity
+- **Temporal credit assignment**: Solves distal reward problem
+- **Biological basis**: Matches experimental findings in cortex
 
-### 6. Non-Standard Optimization
-- **Principle:** Methods outside gradient-based frameworks
-- **Learning Signal:** Various (evolutionary, direct search, etc.)
-- **Locality:** Varies
-- **Representative methods:** Evolutionary algorithms, direct policy search
-- **Strengths:** No gradient computation needed
-- **Weaknesses:** Sample inefficient, limited scalability
+## Benchmarking Framework Guidelines
 
-## NeuroTrain Framework
+### Evaluation Dimensions
+1. **Accuracy**: Classification/regression performance on standard datasets
+2. **Memory footprint**: Parameters + activations during training
+3. **Compute efficiency**: FLOPs, energy consumption estimates
+4. **Biological plausibility**: How closely matches known neural mechanisms
+5. **Hardware compatibility**: Suitability for neuromorphic deployment
+6. **Scalability**: Performance with network size and task complexity
 
-- **Built on:** snnTorch
-- **Design:** Modular, extendable architecture
-- **Capabilities:**
-  - Implements representative algorithms from each taxonomy class
-  - Unified API for consistent benchmarking
-  - Supports multiple datasets, architectures, training regimes
-  - Reproducible research framework
+### Standard Datasets for SNN Benchmarking
+- **Static images**: MNIST, CIFAR-10, CIFAR-100, ImageNet subsets
+- **Dynamic/Temporal**: N-MNIST, SHD, DVS-Gesture, Event-based datasets
+- **Neuroscience**: Brain-computer interface datasets
 
-## Key Insights
+### Reproducibility Checklist
+- Fixed random seeds across all experiments
+- Same network architecture across methods
+- Consistent dataset splits
+- Reported hyperparameter search ranges
+- Training time/compute budget comparison
 
-1. **Fragmentation problem:** SNN training literature is highly fragmented — NeuroTrain consolidates it
-2. **Trade-off triangle:** Biological plausibility ↔ computational efficiency ↔ task performance
-3. **No single winner:** Each class has distinct advantages for different use cases
-4. **Hardware considerations:** Local rules are most suitable for neuromorphic chips
-5. **Future direction:** Hybrid approaches combining local learning with global supervision
+## Performance Trade-offs Summary
 
-## Pitfalls
+| Method | Accuracy | Memory | Bio-plausible | Hardware-friendly |
+|--------|----------|--------|---------------|-------------------|
+| Surrogate BP | High | High | Low | Low |
+| Local (STDP) | Medium | Low | High | High |
+| Three-factor | Medium-High | Low | High | High |
+| Predictive Coding | Medium | Low-Med | High | High |
+| Neuromodulated | Medium | Low | Very High | High |
 
-- Surrogate gradient choice critically impacts training stability (not just approximation quality)
-- Local learning rules may require careful temporal credit assignment design
-- ANN-to-SNN conversion accuracy depends heavily on simulation timestep count
-- Three-factor rules need careful design of the modulatory signal pathway
+## Implementation Patterns
 
-## Verification
+### Converting ANN to SNN
+```python
+# Rate-based conversion
+def ann_to_snn(ann_weights, T=100):
+    snn_weights = ann_weights  # Direct transfer
+    # Run with Poisson or rate encoding over T timesteps
+    return snn_weights
+```
 
-- Compare trained SNN against baseline on standard benchmarks (MNIST, CIFAR-10, N-MNIST)
-- Verify spike sparsity meets energy efficiency targets
-- Check that local rules maintain weight stability over long training periods
+### Local Learning with Eligibility Traces
+```python
+# Eligibility trace for temporal credit assignment
+eligibility = decay * eligibility + pre_spike * post_trace
+delta_w = learning_rate * eligibility * reward_prediction_error
+```
+
+## Related Skills
+- **snn-learning-survey**: Comprehensive SNN learning rules
+- **spikingjelly-framework**: SNN implementation framework
+- **multi-plasticity-snn-training**: Multi-plasticity synergistic training
+- **three-factor-snn-learning**: Three-factor learning rules
