@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-966-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-2532-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -66,7 +66,7 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [Psychologist](collection/agents/psychologist/) | 心理学家，认知行为分析 | Opus 4.5 | ✅ |
 | [Statistician](collection/agents/statistician/) | 统计学家，统计推断与不确定性量化 | Opus 4.5 | ✅ |
 
-[查看全部 19 个代理 →](./collection/agents/)
+[查看全部 27 个代理 →](./collection/agents/)
 
 ## 技能
 
@@ -85,7 +85,7 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [Memory Retrieval](collection/skills/memory-retrieval/) | - | 两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
 | [Self-Challenge](collection/skills/self-challenge/) | - | 双代理自我挑战进化机制 | self challenge, 自我挑战 | ✅ |
 
-[查看全部 38 个技能 →](./collection/skills/)
+[查看全部 2532 个技能 →](./collection/skills/)
 
 ### 版本检测功能
 

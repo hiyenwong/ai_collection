@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-966-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-2532-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -126,7 +126,7 @@ Install agents and skills directly from Claude Code using the **Plugin Marketpla
 | [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
 | [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
 
-[View all 966 skills →](./collection/skills/)
+[View all 2532 skills →](./collection/skills/)
 
 ### Version Check Feature
 
@@ -245,24 +245,19 @@ ai_collection/
 
 The `knowledge/` directory contains AI self-evolution learning materials:
 
-### arXiv Papers (38 papers)
+### arXiv Papers (7 papers)
 
 Topics covered:
-- **Self-evolving agents** - Darwin Gödel Machine, Agent0, NNGPT
-- **Memory systems** - MemRL, Memex(RL), Live-Evo
-- **Meta-cognition** - Learn Like Humans, ICE Strategy
-- **Multi-agent systems** - CASTER, Agentic Hives, ST-EVO
-- **Skill architecture** - Agent Skills for LLMs, Audited Skill-Graph
+- **Spiking neural networks** - SNN classifiers, learning frameworks, neural code dynamics
+- **Brain dynamics** - Generative models, structure-function coupling
+- **Neuroscience** - Neural connectivity, synaptic plasticity, Tsodyks-Markram dynamics
+- **Working memory** - Heterogeneous delays, recurrent spiking networks
+- **Self-evolution** - Agent self-improvement and meta-cognition
 
-### Skills Converted (29 skills)
+### Skills Converted (2 skills)
 
 Papers converted to practical OpenClaw skills:
-- `meta-cognitive-reflection` - Pre/during/post task reflection
-- `memory-retrieval` - Two-stage memory with utility filtering
-- `self-challenge` - Dual-agent capability expansion
-- `ice-review` - Cross-task knowledge extraction
-- `indexed-memory` - Long-horizon task memory
-- And more...
+- See `knowledge/skills/` directory
 
 See [knowledge/arxiv/index.json](./knowledge/arxiv/index.json) for the full paper index.
 
