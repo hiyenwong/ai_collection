@@ -1,3 +1,17 @@
+## 2026-05-18 - Neuroscience + Quantum Computing (Cron Job - 01:00)
+
+### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
+- [[quantum-like-cognitive-modeling]] - 运用Leggett-Garg不等式测试神经动力学中的非扩散随机结构，探索时间关联中的非经典性（非物理量子过程） (arXiv: 2605.12126)
+  - 核心要点：Leggett-Garg不等式作为贝尔不等式的时间类比，用于区分扩散模型与持续性随机模型
+  - 核心要点：违反不等式不意味着微观量子相干性，而是表明存在持久性、记忆效应和情境时间结构
+  - **Activation**: quantum cognition, 量子认知, quantum-like modeling, leggett-garg neural, contextuality cognition, cognitive entanglement, mental markers, neural dynamics testing
+
+### Contextuality, Incompatibility, and Intra-System Entanglement of Mental Markers
+- [[quantum-like-cognitive-modeling]] - 量子类认知建模：运用希尔伯特空间形式化方法模拟认知情境性、不相容性和认知-情感纠缠 (arXiv: 2603.03358)
+  - 核心要点：在信息过载条件下，个体响应的是携带认知和情感分量的紧凑心理标记(mental markers)
+  - 核心要点：系统内纠缠(cognitive-affective entanglement)是心理标记的基本结构特征
+  - **Activation**: 量子类建模, quantum-like modeling, contextuality, incompatibility, mental markers, intra-system entanglement, quantum information cognition
+
 ## 2026-05-18 - Neuroscience + Quantum Computing (Cron Job - 00:00)
 
 ### HQTN-SER: Speech Emotion Recognition with Hybrid Quantum Tensor Networks
