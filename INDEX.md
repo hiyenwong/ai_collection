@@ -1,5 +1,19 @@
 ## 2026-05-17 - Neuroscience Research (Cron Job)
 
+### NeuroTrain: SNN Training Survey & Benchmarking Framework
+- [[neurotrain-snn-benchmarking]] - Comprehensive taxonomy and open-source benchmarking framework for SNN training algorithms, covering surrogate-gradient, local/three-factor learning, plasticity, and ANN-to-SNN conversion (arXiv: 2605.15058)
+  - First unified taxonomy spanning 6 major SNN training paradigms with computational principles and locality analysis
+  - Releases NeuroTrain: snnTorch-based open framework for reproducible benchmarking across datasets, architectures, and training regimes
+  - **Activation**: neurotrain, SNN training taxonomy, local learning rules, surrogate gradient, three-factor learning, snnTorch benchmarking
+
+### NERVE: Network-Aware Brain FC Tokenization
+- [[nerve-brain-fc-tokenization]] - Self-supervised FC representation learning via bilinear tokenization that respects brain network organization, reducing parameter complexity from quadratic to linear (arXiv: 2605.14048)
+  - Bilinear factorization embeds heterogeneous network-pair patches while preserving network identity
+  - Validated on ABCD, PNC, CCNP cohorts for behavior/psychopathology prediction with stable transferable representations
+  - **Activation**: NERVE, brain FC tokenization, bilinear factorization, masked autoencoder brain, network-aware FC, self-supervised fMRI
+
+## 2026-05-17 - Neuroscience Research (Cron Job)
+
 ### Multi-Timescale Conductance Spiking Networks
 - [[multi-timescale-conductance-snn]] - Gradient-trainable spiking networks using multi-timescale conductances for energy-aware temporal processing, outperforming LIF and AdLIF without surrogate gradients (arXiv: 2605.11835)
   - I-V curve shaping via fast/slow/ultra-slow conductances enables rich firing regimes (tonic, phasic, bursting) in single model
