@@ -6,6 +6,18 @@
   - Local learning rules achieve competitive accuracy with significantly lower memory than backprop
   - **Activation**: SNN, spiking neural network, local learning, benchmarking, surrogate gradient, STDP, three-factor learning, predictive coding
 
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[mamba-spike-population-forecaster]] - Single Mamba forecaster trained on next-step spike counts simultaneously predicts neural activity and decodes behavior, outperforming linear decoders on raw spikes (arXiv: 2605.12999)
+  - Mamba's predicted rates decode mouse choice at 75.7% (2.3x chance) and stimulus side at 66.1% (2x chance)
+  - ~100-150 trial calibration brings readout within 1-2pp of asymptote; fits 50ms bin budget on workstation GPUs
+  - **Activation**: Mamba, spike forecasting, behavioral decoding, Neuropixels, closed-loop BCI, visual discrimination
+
+### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+- [[spatiotemporal-tdann-mt-direction-maps]] - Spatiotemporal TDANN framework showing MT direction maps emerge from self-supervised contrastive learning with spatial regularization, unifying ventral and dorsal stream self-organization (arXiv: 2605.11718)
+  - Model reproduces macaque MT DSI, circular variance, and pinwheel density (~3.14/mm2) from naturalistic video alone
+  - MT tuning properties emerge from trade-off between discriminative pressure and spatial regularization
+  - **Activation**: TDANN, MT cortex, direction selectivity, self-organization, MoCo, visual cortex, dorsal stream
+
 ### Are Cortical Microcircuits Optimized for Information Flux? - A Simulation-based Reverse Engineering Study
 - [[cortical-microcircuit-information-flux]] - Simulation-based reverse engineering of cortical microcircuits using mutual information between network states to evaluate structural optimization (arXiv: 2605.14680)
   - Cortical-like connectivity with E/I balance significantly outperforms random networks for information flux
