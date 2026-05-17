@@ -1,4 +1,20 @@
 ## 2026-05-17 - Information Science + Quantum (Cron Job)
+## 2026-05-17 - Information Science (Cron Job)
+
+### Toward Covert Quantum Computing
+- [[quantum-information-security]] - 多租户量子云平台中的隐蔽计算与侧信道分析模式 (arXiv: 2605.14325)
+  - O(√n) 边界量子比特提供泄露信息，但长程耦合超越边界假设
+  - 使用量子策略框架建模自适应对手的检测能力
+  - 控制线泄漏导致空间隔离策略失效
+  - **Activation**: covert quantum computing, crosstalk, side channel, spatial isolation
+
+### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+- [[quantum-information-security]] - 混合量子-经典程序的两阶段失败导向模糊测试方法 (arXiv: 2605.14219)
+  - 先搜索非收敛种子再局部模糊电路参数的两阶段策略
+  - 失败引导局部模糊测试是改进随机测试的主要驱动力
+  - 合解种子发现对 VQE 有效但对 QAOA 不稳定
+  - **Activation**: quantum fuzzing, HQC testing, VQE, QAOA, concolic testing
+
 
 ### Blind Quantum Computation on a Modular Superconducting Processor
 - [[blind-quantum-computation]] - 盲量子计算方法论，实现云端量子计算中算法/输入/输出的信息论安全 (arXiv: 2605.14656v1)
