@@ -1,216 +1,198 @@
 ---
 name: spikeprophecy-benchmark
-description: >
-  SpikeProphecy methodology for evaluating autoregressive neural population
-  forecasting models. First large-scale benchmark for causal, autoregressive
-  spike-count forecasting on real electrophysiology recordings. Features
-  population metric decomposition (temporal fidelity, spatial pattern accuracy,
-  magnitude-invariant alignment). Use when: evaluating neural forecasting models,
-  designing neural population benchmarks, comparing SSM/RNN/Transformer/SNN
-  architectures for spike prediction, benchmarking brain-computer interface (BCI)
-  components, analyzing brain-region predictability hierarchies, or building
-  neural dynamics prediction pipelines.
-  Activation: spikeprophecy, neural forecasting benchmark, spike count prediction,
-  neural population forecasting, autoregressive neural dynamics, BCI forecasting,
-  population metric decomposition, Neuropixels benchmark.
+description: "SpikeProphecy: First large-scale benchmark for causal, autoregressive neural population spike-count forecasting. Introduces population metric decomposition (temporal fidelity, spatial pattern accuracy, magnitude-invariant alignment) on 105 Neuropixels sessions (~89,800 neurons). arXiv:2605.12992"
+tags: ["neural-population", "forecasting", "benchmark", "neuropixels", "spike-count", "evaluation", "ssm", "transformer"]
+related_skills: ["realm-lfp-retrospective-decoding", "neural-population-dynamics"]
 ---
 
-# SpikeProphecy Benchmark Methodology
+# SpikeProphecy: Large-Scale Benchmark for Autoregressive Neural Population Forecasting
 
-First large-scale benchmark for causal, autoregressive spike-count forecasting
-on real electrophysiology recordings (105 Neuropixels sessions, ~89,800 neurons).
-Introduces population metric decomposition that exposes structure invisible to
-aggregate Pearson r.
+**Paper**: arXiv:2605.12992v1 (May 13, 2026)
+**Authors**: John R. Minnick, Jinghui Geng, Kamran Hussain, Jesus Gonzalez-Ferrer, Ash Robbins, Mohammed A. Mostajo-Radji, David Haussler, Jason K. Eshraghian, Mircea Teodorescu (UC Santa Cruz)
 
-## Paper Reference
+## Problem
 
-- **Title**: SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
-- **Authors**: John R. Minnick, Jinghui Geng, Kamran Hussain, Jesus Gonzalez-Ferrer, Ash Robbins, Mohammed A. Mostajo-Radji, David Haussler, Jason K. Eshraghian, Mircea Teodorescu
-- **arXiv**: 2605.12992 [q-bio.NC]
-- **Date**: 2026-05-13
-- **Institution**: UC Santa Cruz (ECE, Genomics Institute, CS, Applied Math, Biomolecular Engineering)
-- **Categories**: q-bio.NC, cs.LG
-- **Submitted to**: NeurIPS 2026 Datasets and Benchmarks Track
+Neural population models (predicting joint firing of many simultaneously recorded neurons) are evaluated by a single aggregate Pearson correlation r, which:
+- Masks critical structure (brain region differences, neuron subpopulation failures)
+- Collapses temporal dynamics capture vs. spatial pattern fidelity
+- Hides the distinction between population-level vs. individual-neuron accuracy
 
-## Core Problem
+**No established benchmark existed** for spike-count forecasting at scale on real electrophysiology data.
 
-Neural population models predicting joint firing of simultaneously recorded neurons are typically evaluated by a single aggregate Pearson correlation r between predicted and actual spike counts — a number that masks critical structure. SpikeProphecy addresses:
-1. **No established benchmark** for spike-count forecasting at scale on real electrophysiology data
-2. **Aggregate metrics hide structure**: brain-region differences, neuron subpopulation failures, temporal vs. spatial fidelity conflation
-3. **Downstream relevance**: forecasting matters for closed-loop BCIs (50-100ms look-ahead) and in silico neural population simulators ("digital twins")
+## SpikeProphecy Benchmark
 
-## Task Formulation
+### Scale
+- **105 Neuropixels sessions** from two public datasets:
+  - Steinmetz 2019: 75 sessions, multiple brain regions
+  - IBL Repeated Site: 30 sessions, repeated recording sites
+- **~89,800 neurons** total
+- **First large-scale autoregressive spike-count forecasting benchmark**
 
-Given a history window of T spike-count vectors, predict the next time bin:
+### Population Metric Decomposition (Core Contribution)
 
-$$X_t = \{\mathbf{x}(t{-}T{+}1), \ldots, \mathbf{x}(t)\} \longrightarrow \hat{\mathbf{y}}(t{+}1) \approx \mathbf{x}(t{+}1), \quad \mathbf{x}(t) \in \mathbb{Z}_{\geq 0}^M$$
+Instead of a single aggregate Pearson r, SpikeProphecy decomposes evaluation into three orthogonal axes:
 
-- **M**: number of neurons per session (up to M_max = 1,998)
-- **Δt**: 50ms bin width
-- **T**: 10 bins (500ms history)
-- **Constraints**: strictly autoregressive (intrinsic covariates only) and causal (no future context)
-- **Loss**: Poisson NLL with softplus rate outputs
+1. **`pop_rate_r`** (Temporal Fidelity)
+   - How well does the model capture population-level firing rate dynamics over time?
+   - Measures temporal pattern matching across the entire population
+   - Example: r_pop = 0.76 (good temporal capture)
 
-## Datasets
+2. **`spatial_r`** (Spatial Pattern Accuracy)
+   - How well does the model capture which specific neurons are firing?
+   - Measures individual neuron identity preservation
+   - Example: r_spatial = 0.55 (moderate spatial capture)
 
-### Steinmetz 2019 (39 sessions)
-- 10 mice, Neuropixels probes
-- Regions: visual cortex, motor cortex, hippocampus, thalamus, midbrain
-- Up to 1,240 neurons/session
-- Visual discrimination task (~2-hour recordings)
-- Data: Figshare (CC-BY-4.0), processed tensors on HuggingFace
+3. **`cosine_sim`** (Magnitude-Invariant Alignment)
+   - Directional alignment of population activity vectors, independent of magnitude
+   - Captures whether the model gets the "shape" of population activity right
 
-### IBL Repeated Site (66 sessions)
-- Multi-lab consortium (9 labs), standardized probe trajectory
-- Up to 1,998 neurons/session
-- Same task paradigm across different labs, mice, rigs
-- Tests cross-lab generalization
-- Data: IBL Open Neurophysiology Environment (ONE API)
+### Why Decomposition Matters
 
-### Processing
-- Temporal splits: 70/15/15 train/val/test (ordered first/middle/last)
-- 14-test audit suite for 5 leakage vectors
-- Population-GLM sanity check: r=1.000 on train, r=-0.015 on val (canonical catch)
+An aggregate r = 0.50 sounds mediocre, but decomposition reveals:
+- Temporal population dynamics: r_pop = 0.76 (well captured)
+- Individual neuron identity: r_spatial = 0.55 (moderately captured)
 
-## Population Metric Decomposition (Core Contribution)
+This guides targeted model improvement.
 
-Three complementary metrics that expose structure aggregate r hides:
+## Architecture Baselines Tested
 
-### (i) Population Rate r (pop_rate_r) — Temporal Fidelity
-*When is the population active?*
+Seven models across four structural families:
 
-$$r_{\mathrm{pop}} = \mathrm{Pearson}\!\left(\Big[{\textstyle\sum_{i=1}^{M}y_{i}(t)}\Big]_{t=1}^{T}, \; \Big[{\textstyle\sum_{i=1}^{M}\hat{y}_{i}(t)}\Big]_{t=1}^{T}\right)$$
+### State Space Models (SSMs) - 4 variants
+1. **S4** (Structured State Space)
+2. **Mamba** (Selective SSM)
+3. **Griffin** (Gated SSM)
+4. **RWKV** (Receptance Weighted Key Value, non-diagonal SSM)
 
-Marginalizes over neuron identity to measure ensemble rate envelope tracking.
-
-### (ii) Spatial Pattern r (spatial_r) — Spatial Fidelity
-*Which neurons fire?*
-
-$$r_{\mathrm{spatial}} = \frac{1}{T_{\mathrm{eval}}} \sum_{t=1}^{T_{\mathrm{eval}}} \mathrm{Pearson}\!\big(\mathbf{y}(t), \hat{\mathbf{y}}(t)\big)$$
-
-Per-timebin cross-neuron correlation, capturing identification of active subset.
-
-### (iii) Population Cosine Similarity (cosine_sim) — Magnitude-Invariant Alignment
-*Relative activation regardless of overall rate?*
-
-$$\mathrm{cos\_sim} = \frac{1}{T_{\mathrm{eval}}} \sum_{t=1}^{T_{\mathrm{eval}}} \frac{\mathbf{y}(t) \cdot \hat{\mathbf{y}}(t)}{\|\mathbf{y}(t)\| \; \|\hat{\mathbf{y}}(t)\|}$$
-
-Normalizing magnitudes isolates pattern fidelity from rate calibration.
-Dynamic range: 0.31 (train-set-mean floor) to 0.63 (modern architectures).
-
-### Key Insight
-An aggregate r=0.50 may decompose to:
-- r_pop = 0.76 (temporal population dynamics well-captured)
-- r_spatial = 0.55 (individual neuron spatial identity only moderate)
-
-## Architecture Baselines
-
-All trained under identical optimizer, schedule, loss, and data:
-
-| Architecture | Type | Params | Key Property |
-|-------------|------|--------|-------------|
-| Mamba | Diagonal selective SSM | 1.95M | Input-dependent gating, O(T) |
-| HGRN2 | Diagonal gated linear RNN | 1.82M | State expansion, O(T) |
-| LRU | Diagonal linear recurrence | 1.23M | Ring eigenvalue init |
-| GatedDeltaNet | Non-diagonal delta-rule SSM | 1.43M | Matrix state per head |
-| Transformer | Causal attention | 2.22M | Global context, O(T²) |
-| LSTM | Gated recurrence | 2.22M | Classical baseline |
-| SNN (RSynaptic) | Spiking (3L) | 965K | Event-driven, neuromorphic |
-| Autoreg GLM | Poisson, own T-step hist. | ~10/N | No cross-neuron info |
-| Population GLM | Poisson, full (T,M) hist. | ~7K/N | Linear pop baseline |
+### Other architectures
+5. **Transformer** (standard attention-based)
+6. **LSTM** (classic recurrent)
+7. **Spiking Network** (event-driven SNN)
 
 ## Key Findings
 
-### Finding 1: Brain-Region Predictability Hierarchy
-- Functional brain-region ranking reproduces across ALL 7 baselines
-- Survives ANCOVA correction for firing-statistics constraints
-- Region ΔR² = 0.018 above the firing-statistics covariates
-- At fine 54-region Allen acronym level: ΔR² = 0.053
-- Kruskal-Wallis: H=1,056, p<10^{-200}
+### 1. Brain-Region Predictability Ranking
+- A consistent hierarchy of brain region predictability emerges across ALL seven baselines
+- Survives ANCOVA correction for firing-statistics covariates (region ΔR² = 0.018)
+- Some regions are inherently more predictable than others, independent of model choice
 
-### Finding 2: Sub-Poisson Evaluation Floor
-- Rigorous metrics + biophysical constraints on regular spike trains
-- Empirical oracle ceiling at r=0.17 for per-neuron metrics
-- Reveals genuine hardness of regular spike train prediction
+### 2. Sub-Poisson Evaluation Floor
+- Rigorous metrics combined with genuine biophysical constraints reveal a "floor"
+- Regular spike trains have inherent unpredictability below Poisson level
+- This is a fundamental biophysical limit, not a model limitation
 
-### Finding 3: Negative Result on KL Distillation
-- KL-on-output-rates distillation for ANN→SNN transfer fails in Poisson count domain
-- Hypothesized mechanism: redundancy of soft labels when target is already real-valued
-- Does NOT generalize to feature-level or attention-transfer distillation
+### 3. KL-on-Output-Rates Distillation (Negative Result)
+- ANN→SNN transfer via KL divergence on output rates does NOT work well
+- In this Poisson count domain, distillation fails to preserve distributional properties
+- Important negative result for the community
 
-### Architecture Clustering
-- SSM cluster (Mamba, HGRN2, GatedDeltaNet): Wt-r = 0.480–0.500
-- Transformer: competitive with SSM cluster
-- LSTM: 0.441 (significantly behind cluster, p<10^{-7})
-- SNN: 0.430 (lowest of deep models)
-- Per-neuron r collapses an order of magnitude below aggregate metrics for ALL architectures
+### 4. Linear vs. Deep Model Hierarchy
+- Decomposition exposes distinct failure modes between linear and deep models
+- Single-scalar reporting misses these failure mode differences entirely
 
-## Evaluation Protocol Implementation
+## Why This Matters
 
-```python
-import numpy as np
-from scipy.stats import pearsonr
+### For BCI Development
+- 50-100ms look-ahead predictions compensate for sensing/processing delays
+- Essential for closed-loop BCIs
+- Enables "digital twin" neural simulators for algorithm development without animal experiments
 
-def population_metric_decomposition(y_true, y_pred):
-    """
-    Args:
-        y_true: (T_eval, M) ground truth spike counts
-        y_pred: (T_eval, M) predicted rates
-    Returns:
-        dict with pop_rate_r, spatial_r, cosine_sim
-    """
-    T, M = y_true.shape
-    
-    # (i) Population Rate r — temporal fidelity
-    pop_true = y_true.sum(axis=1)  # (T,)
-    pop_pred = y_pred.sum(axis=1)  # (T,)
-    pop_rate_r = pearsonr(pop_true, pop_pred)[0]
-    
-    # (ii) Spatial Pattern r — spatial fidelity
-    spatial_rs = []
-    for t in range(T):
-        r = pearsonr(y_true[t], y_pred[t])[0]
-        spatial_rs.append(r)
-    spatial_r = np.mean(spatial_rs)
-    
-    # (iii) Cosine Similarity — magnitude-invariant alignment
-    norms_true = np.linalg.norm(y_true, axis=1)  # (T,)
-    norms_pred = np.linalg.norm(y_pred, axis=1)  # (T,)
-    dots = (y_true * y_pred).sum(axis=1)  # (T,)
-    cos_sims = dots / (norms_true * norms_pred + 1e-8)
-    cosine_sim = np.mean(cos_sims)
-    
-    return {
-        'pop_rate_r': pop_rate_r,
-        'spatial_r': spatial_r,
-        'cosine_sim': cosine_sim
-    }
+### For Neural Science
+- Provides standardized evaluation protocol for neural population models
+- Enables fair comparison across architectures
+- Reveals fundamental structure in neural population predictability
+
+## Application Protocol
+
+### When to Use SpikeProphecy
+- Evaluating neural population forecasting models
+- Comparing architectures for spike-count prediction
+- Building closed-loop BCI systems requiring look-ahead predictions
+- Developing in silico neural population simulators
+- Studying brain-region-specific neural dynamics predictability
+
+### Metric Selection Guide
+```
+For temporal pattern analysis:     → pop_rate_r
+For neuron-specific prediction:    → spatial_r
+For population geometry:           → cosine_sim
+For comprehensive evaluation:      → all three metrics
+Avoid:                             → single aggregate Pearson r alone
 ```
 
-## When to Use This Skill
+### Architecture Selection Guide
+```
+For best overall performance:      → SSM family (Mamba, Griffin)
+For interpretability:              → S4 (structured state space)
+For event-driven efficiency:       → Spiking network (with caveats)
+For baseline comparison:           → LSTM, Transformer
+```
 
-- Designing benchmarks for neural population forecasting models
-- Comparing SSM/RNN/Transformer/SNN architectures for spike prediction
-- Building BCI systems requiring neural activity forecasting
-- Evaluating whether forecasting improves downstream decoding
-- Analyzing brain-region predictability hierarchies
-- Understanding limitations of aggregate Pearson r in neural data evaluation
-- Setting up standardized evaluation for neural dynamics research
-- Knowledge distillation for ANN-to-SNN transfer on neural data
+## Implementation Pattern
 
-## Public Resources
+```python
+class SpikeProphecyEvaluator:
+    """Population metric decomposition for spike-count forecasting."""
+    
+    def __init__(self, n_neurons):
+        self.n_neurons = n_neurons
+    
+    def pop_rate_r(self, predicted, actual):
+        """Temporal fidelity: population-level firing rate dynamics."""
+        # Sum across neurons at each timestep
+        # Pearson r between predicted and actual population rates
+        pred_rates = predicted.sum(axis=1)  # sum across neurons
+        actual_rates = actual.sum(axis=1)
+        return pearsonr(pred_rates, actual_rates)
+    
+    def spatial_r(self, predicted, actual):
+        """Spatial pattern accuracy: individual neuron identity."""
+        # Pearson r per neuron, then average
+        neuron_rs = [pearsonr(predicted[:, i], actual[:, i]) 
+                     for i in range(self.n_neurons)]
+        return np.mean(neuron_rs)
+    
+    def cosine_sim(self, predicted, actual):
+        """Magnitude-invariant alignment: population activity shape."""
+        # Cosine similarity between population activity vectors
+        return cosine_similarity(predicted, actual)
+```
 
-- Processed tensors: HuggingFace `mysteriousauthor/spikeprophecy-steinmetz`
-- Source recordings: Figshare + IBL ONE API
-- Evaluation toolkit: pip-installable
-- Trained checkpoints: included in release
-- Reproduction configs: YAML files
+## Data Access
+
+- **Steinmetz 2019**: 75 sessions, publicly available
+- **IBL Repeated Site**: 30 sessions, International Brain Laboratory
+- Total: ~89,800 neurons across 105 sessions
+
+## Activation Keywords
+
+- spike forecasting, neural population model, Neuropixels
+- population metric decomposition, spike-count prediction
+- autoregressive neural forecasting, closed-loop BCI
+- brain region predictability, neural digital twin
+- SSM for neural data, Mamba neural population
+- benchmark neural population, spike prophecy
 
 ## Pitfalls
 
-1. **Aggregate r is misleading**: Always decompose into population metrics
-2. **Interleaved splits cause leakage**: Use temporal splits for autoregressive tasks
-3. **Per-neuron r collapses**: Don't report it as the primary metric
-4. **KL distillation may fail**: In Poisson count domains, soft labels are redundant
-5. **Biophysical floor exists**: Regular spike trains have genuine predictability limits
-6. **Architecture differences are subtle**: SSM cluster members are statistically indistinguishable
+- **Don't use aggregate Pearson r alone** — it masks critical structure
+- **Account for sub-Poisson floor** — some unpredictability is biophysical, not model failure
+- **KL distillation fails** on output rates in Poisson count domain
+- **Match temporal context** when comparing models (same look-ahead window)
+- **Fire-rate covariates matter** — region predictability differences persist after ANCOVA correction
+
+## Related Work
+
+- **LFADS**: Latent Factor Analysis via Dynamical Systems
+- **NDT/NDT2/NDT3**: Neural Decoding Transformers
+- **CEBRA**: Contrastive Embedding for Brain Activity
+- **S4/Mamba/Griffin**: State space model families
+- **REALM** (arXiv:2605.14867): LFP-based decoding (complementary modality)
+
+## Open Questions
+
+- What determines brain-region predictability hierarchy?
+- Can models surpass the sub-Poisson evaluation floor?
+- How does forecast quality scale with session count and neuron count?
+- Can the metric decomposition guide architecture search?
+- What is the minimum look-ahead needed for effective closed-loop BCI?

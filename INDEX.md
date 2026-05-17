@@ -1,5 +1,19 @@
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - Retrospective distillation framework enabling high-performance causal LFP decoding for BCIs using Mamba-2 teacher-student architecture (arXiv: 2605.14867)
+  - Bidirectional Mamba-2 teacher pretrained via masked autoencoding across sessions, distilled to causal student for real-time deployment
+  - LFP-only models achieve competitive decoding performance with 2x parameter reduction and 10x faster training
+  - **Activation**: LFP decoding, BCI, Mamba-2, knowledge distillation, causal decoder, wireless BCI, spike vs LFP
+
+### SpikeProphecy: Large-Scale Benchmark for Neural Population Forecasting
+- [[spikeprophecy-benchmark]] - First large-scale benchmark for autoregressive spike-count forecasting with population metric decomposition on 105 Neuropixels sessions (arXiv: 2605.12992)
+  - Decomposes evaluation into temporal fidelity (pop_rate_r), spatial pattern accuracy (spatial_r), and magnitude-invariant alignment (cosine_sim)
+  - Reveals brain-region predictability hierarchy consistent across 7 architectures, sub-Poisson evaluation floor, and negative KL distillation result
+  - **Activation**: spike forecasting, neural population, Neuropixels, metric decomposition, SSM, closed-loop BCI, digital twin
+
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
 ### Extended E-I Network Chaos-Synchrony Theory
 ## 2026-05-18 - Neuroscience + Quantum (Cron Job)
 

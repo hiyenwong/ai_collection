@@ -1,153 +1,133 @@
 ---
 name: realm-lfp-retrospective-decoding
-description: REALM (Retrospective Encoder Alignment for LFP Modeling) — causal LFP-based behavior decoding via retrospective knowledge distillation from bidirectional Mamba-2 teacher.
+description: "REALM: Retrospective Encoder Alignment for LFP Modeling — retrospective distillation framework enabling high-performance causal LFP decoding for BCIs using Mamba-2 teacher-student architecture. arXiv:2605.14867"
+tags: ["bci", "lfp", "mamba", "knowledge-distillation", "neural-decoding", "state-space-model"]
+related_skills: ["spikeprophecy-benchmark", "eeg-ieeg-bridge-bci"]
 ---
 
 # REALM: Retrospective Encoder Alignment for LFP Modeling
 
-**Source**: Wu, Bu, Ma, Du. "REALM: Retrospective Encoder Alignment for LFP Modeling." arXiv:2605.14867, 2026.
+**Paper**: arXiv:2605.14867v1 (May 14, 2026)
+**Authors**: Peicheng Wu, Zhenyu Bu, Runze Ma, Lin Du (Ohio State University, Monash University Malaysia)
+**Published**: IOP Journal
 
-## Overview
+## Problem
 
-REALM is the **first foundation model pre-trained exclusively on Local Field Potentials (LFP)** for high-fidelity motor decoding without spikes in real-time, resource-constrained BCIs. It bridges the offline-to-online deployment gap using retrospective knowledge distillation.
+Brain-computer interfaces (BCIs) traditionally rely on extracellular spike recordings (>30kHz sampling), which create fundamental barriers:
+- **Power-intensive**: Tens of milliwatts sustained power, incompatible with implantable wireless devices
+- **Unstable over time**: Electrode migration, encapsulation, neuronal loss degrade single-unit isolation
+- **Bandwidth-heavy**: Massive data transmission for multi-channel spike data
 
-## Key Problem
+**Local Field Potentials (LFPs)** solve these problems (long-term stability, lower bandwidth ~500Hz, sub-milliwatt power) but suffer from:
+- Reduced decoding accuracy vs. spike-based methods
+- Reliance on non-causal (bidirectional) architectures unsuitable for real-time deployment
 
-- Spike-based BCIs require >30kHz sampling → tens of milliwatts power → incompatible with wireless implantable devices
-- LFPs offer sub-milliwatt operation but historically show lower decoding accuracy
-- Existing neural decoding models (NDT2, NDT3) are **non-causal** (bidirectional) → unsuitable for real-time use
-- The offline-to-online deployment gap in neural decoding mirrors what speech recognition solved a decade ago
+## REALM Architecture
 
-## Three-Stage Pipeline
-
-### Stage 1: Self-Supervised Pretraining
-
-- **Bidirectional Mamba-2 teacher** pretrained on 130 hours of LFP data
-- **6 subjects, 3 datasets** (Makin, Flint, etc.)
-- **Continuous Masked Autoencoding (CMAE)** objective
-- Neural tokenizer: TCN → ECA → Session-specific spatial embeddings + Shared value embeddings
-- Input: Raw LFP at 100Hz, 96 channels (Utah array), 500-timestep windows
-
-### Stage 2: Retrospective Knowledge Distillation
-
-- Compress non-causal BiMamba-2 teacher into **strictly causal Mamba-2 students** (2.1M–10.5M params)
-- Combined objective: Representation alignment + Task supervision
-- Generalizes to bidirectional setting as well (REALM-bi)
-- Achieves 10× faster convergence with half the parameters vs. CrossModalDistill
-
-### Stage 3: Fine-tuning & Evaluation
-
-- Per-session supervised/unsupervised fine-tuning
-- Zero-shot evaluation on held-out sessions
-- Behavior prediction: 2D cursor velocity decoding
-
-## Neural Tokenizer Architecture
+### Two-Stage Distillation Pipeline
 
 ```
-Raw LFP (B×96×1×500)
-    ↓ Conv1D (per-channel, K=3, d_ch=8)
-    ↓ ECA (Efficient Channel Attention, k=5)
-    ↓ Session-specific spatial embedding
-    ↓ Shared value embedding
-Token embeddings
+Stage 1: Teacher Pretraining
+  Multi-session LFP → Bidirectional Mamba-2 → Masked Autoencoding (MAE)
+  
+Stage 2: Student Distillation
+  Teacher (bidirectional Mamba-2) → Distillation → Student (causal Mamba-2)
+  
+Deployment:
+  Raw LFP → Neural Tokenizer → Causal REALM Encoder → Behavior Head → Velocity
 ```
 
-**Causal ECA**: Running mean over [1,t] instead of full window for real-time compatibility.
+### Neural Tokenizer
+- Conv1D + ECA (Efficient Channel Attention) + Linear Projection + LayerNorm
+- Converts raw multi-channel LFP into neural tokens
+- Temporal-spatial feature extraction at mesoscopic scale
 
-## Mamba-2 Architecture
+### Mamba-2 Encoder
+- **Teacher**: Bidirectional Mamba-2 (offline, non-causal, multi-session pretraining)
+- **Student**: Causal Mamba-2 (real-time, deployment-ready)
+- Selective scan mechanism for sequence modeling
+- **2× parameter reduction** vs. Transformer baselines
+- **10× training time reduction**
 
-REALM uses **Mamba-2** (SSD - Selective State Space with Diagonal) as the backbone:
+### Distillation Objective
+Combined loss:
+1. **Representation alignment**: Teacher-student hidden state alignment
+2. **Task supervision**: MSE for behavior decoding (2D cursor velocity)
+3. **Multi-session pretraining**: Cross-session generalization
 
-- **BiMamba-2 teacher**: Bidirectional (forward + backward SSD layers concatenated)
-- **Causal Mamba-2 student**: Single forward SSD pass only
-- Skip linear connections for residual learning
-- LayerNorm before projection
+## Experimental Setup
 
-## Results
+- **Subject**: Rhesus macaque motor cortex (M1) recordings
+- **Electrode**: 96-channel Utah array (4mm × 4mm)
+- **Task**: Continuous random-target reaching (Makin dataset) + center-out reaching (Flint dataset)
+- **Target**: 2D cursor velocity decoding
+- **Deployment targets**: NVIDIA Jetson Orin Nano, Raspberry Pi 5
 
-| Model | R² Score | Params | Training Time | Causal |
-|-------|---------|--------|--------------|--------|
-| REALM-causal (Makin) | New SOTA | 2.1M-10.5M | Fast | ✓ |
-| REALM-bi (offline) | 0.776 | ~5M | 10× faster | ✗ |
-| CrossModalDistill | 0.763 | ~10M | Baseline | ✗ |
-| Kalman Filter | Lower | Minimal | Instant | ✓ |
+## Key Results
 
-REALM-bi surpasses CrossModalDistill (R²=0.763) which requires spike supervision, while using half the parameters and converging 10× faster.
-
-## Real-Time Deployment
-
-First purely LFP-based decoder achieving real-time performance on:
-- **NVIDIA Jetson Orin Nano**: Full sampling rate decoding
-- **Raspberry Pi 5**: End-to-end causal pipeline
-
-This demonstrates feasibility for fully-implantable, battery-free wireless BCI systems.
+- Outperforms both causal and non-causal LFP-based SOTA methods
+- LFP-only models achieve competitive decoding without spike signals
+- 2× parameter reduction, 10× training time reduction
+- Bridges gap between offline and real-time neural decoding
 
 ## Why This Matters
 
-1. **LFP-only foundation model**: No prior work pre-trained foundation models on LFP alone
-2. **Causal real-time decoding**: First demonstration of LFP-based decoder running in real-time on portable hardware
-3. **No spike dependency**: Does not require paired spike recordings during training (unlike CrossModalDistill)
-4. **Retrospective distillation**: Proves structured representation transfer bridges offline-to-online gap
-5. **Energy efficiency**: Compatible with on-skull energy harvesting, inductive recharging, thermoelectric scavenging
+REALM demonstrates **LFP-only BCIs** can be practical for:
+- Fully implantable wireless BCIs
+- Energy-efficient on-device decoding
+- Long-term chronic deployment (LFP stable for years after spikes degrade)
+- High-channel-count systems where spike bandwidth is prohibitive
 
-## Implementation Guide
+## Implementation Guidance
 
-### Core Components
+### Training Recipe
+1. Pretrain bidirectional Mamba-2 teacher with MAE across multiple recording sessions
+2. Initialize smaller causal Mamba-2 student
+3. Joint distillation: representation alignment + task MSE
+4. Deploy student on edge hardware (Jetson, Pi 5)
 
+### When to Use REALM
+- BCI neural decoding from LFP signals
+- Converting non-causal models to causal real-time variants
+- Knowledge distillation for neural signal processing
+- Multi-session neural data foundation model training
+- Edge deployment of neural decoders
+- Spike-vs-LFP tradeoff analysis for wireless BCI design
+
+### Architecture Code Pattern
 ```python
-# Neural Tokenizer
-class NeuralTokenizer:
-    def __init__(self, channels=96, d_ch=8, kernel=3, eca_k=5):
-        self.conv1d = Conv1d(1, d_ch, kernel, padding=1)  # per-channel
-        self.eca = EfficientChannelAttention(eca_k)
-        self.shared_value_emb = Linear(...)
-        self.session_spatial_emb = Embedding(...)  # session-specific
+class NeuralTokenizer(nn.Module):
+    """Conv1D + ECA + Projection for LFP tokenization"""
     
-    def forward(self, x, session_id):
-        # x: (B, C, 1, T) raw LFP
-        h = gelu(self.conv1d(x))  # (B, C, d_ch, T)
-        h = self.eca(h)  # channel-attended
-        tokens = self.shared_value_emb(h) + self.session_spatial_emb(session_id)
-        return tokens
-
-# Retrospective Distillation Loss
-def distillation_loss(teacher_out, student_out, task_labels):
-    repr_align = MSE(teacher_hidden, student_hidden)
-    task_loss = MSE(student_velocity, task_labels)
-    return repr_align + task_loss
+class REALMTeacher(nn.Module):
+    """Bidirectional Mamba-2 with MAE pretraining"""
+    
+class REALMStudent(nn.Module):
+    """Causal Mamba-2 distilled from teacher"""
+    
+class BehaviorDecoder(nn.Module):
+    """Linear head with skip connections for velocity output"""
 ```
 
-### Training Strategy
+## Activation Keywords
 
-1. **Pretrain teacher**: CMAE on 130h multi-session LFP (bidirectional Mamba-2)
-2. **Distill student**: Freeze teacher, train causal Mamba-2 student with combined loss
-3. **Fine-tune**: Per-session supervised fine-tuning on behavior prediction
-4. **Evaluate**: Held-out sessions, zero-shot transfer
+- LFP decoding, brain-computer interface, BCI, neural decoding
+- Mamba-2, state space model, SSM, knowledge distillation
+- causal decoder, real-time neural decoding, retrospective alignment
+- local field potential, spike vs LFP tradeoff
+- multi-session neural data, neural foundation model
+- wireless BCI, implantable BCI, edge neural decoding
 
-### Key Design Choices
+## Open Questions
 
-- **Window size**: 500 timesteps at 100Hz (5 seconds of LFP)
-- **Channel count**: 96 (Utah array standard)
-- **Student params**: 2.1M–10.5M (vs. teacher ~10M+)
-- **Representation alignment**: Layer-by-layer feature matching
+- Cross-species and cross-region generalization?
+- Optimal teacher-student architecture ratio?
+- Extension to ECoG, EEG modalities?
+- Scaling to higher channel counts (Neuropixels)?
 
-## Pitfalls
+## Related Work
 
-1. **Causality constraint**: Student must be strictly causal — no future information access
-2. **Session-specific embeddings**: Requires careful handling for cross-session generalization
-3. **LFP quality**: Signal quality depends on electrode state; chronic implantation effects matter
-4. **Teacher-student gap**: Distillation quality depends on teacher pretraining quality
-5. **Edge hardware limits**: Jetson Nano/RPi5 have memory constraints; model must fit in RAM
-
-## Activation
-
-- REALM
-- LFP decoding
-- local field potential
-- causal neural decoding
-- retrospective distillation
-- Mamba-2 BCI
-- wireless BCI
-- offline-to-online neural decoding
-- LFP foundation model
-- behavior decoding
+- **CEBRA**: Contrastive embedding for neural data
+- **NDT2/NDT3**: Neural decoding Transformers (bidirectional)
+- **NPT**: Neural Population Transformer
+- Offline-to-online distillation in speech recognition
