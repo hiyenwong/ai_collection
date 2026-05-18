@@ -381,6 +381,12 @@
   - KAPf-CPD analytic variant for scalable long-sequence processing
   - **Activation**: KAP-CPD, change-point detection, dynamic brain networks, kernel aggregation, time-varying functional connectivity
 
+- [[vacoal-algebro-deterministic-memory]] - Algebro-deterministic hippocampal memory using Galois-field LFSRs as substrate for Vector-HaSH/TEM, with CR-based multi-hop replay fidelity decay model (arXiv: 2605.15652)
+  - Deterministic Galois-field diffusion replaces random scaffold projections with matched second-moment statistics
+  - Confidence Ratio (CR₂ = Π CR₁^n) algebraically models iEEG-observed multiplicative replay decay
+  - Maps to EC-CA3 and EC-DG-CA3 pathways with energy-capacity-plasticity tradeoffs
+  - **Activation**: hippocampal memory, VaCoAl, algebro-deterministic, Vector-HaSH, TEM, Galois field, hyperdimensional memory
+
 ## 2026-05-12 - Systems Engineering Research (Cron Job)
 
 ### HySecTwin: A Knowledge-Driven Digital Twin Framework Augmented with Hybrid Reasoning for Cyber-Physical Systems
