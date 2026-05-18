@@ -1,3 +1,14 @@
+## 2026-05-18 - Polariton BEC Quantum Neuromorphic (Cron Job - 22:01)
+
+### Polariton BECs: Theory and Concepts
+- [[polariton-bec-quantum-neuromorphic]] - Polariton Bose-Einstein condensate theory for room-temperature quantum neuromorphic computing, driven-dissipative dynamics, and optical neural networks (arXiv: 2605.16256)
+  - Polaritons are WISI (Weakly-Interacting, Strongly-Interfering) particles combining light interference with exciton interactions
+  - Macroscopic quantum coherence at room temperature (vs nK for atomic BECs)
+  - Driven-dissipative nonlinear dynamics: synchronization, pattern formation, topological defects
+  - Applications: optical neural networks, quantum reservoir computing, coherent Ising machines
+  - Bridges quantum optics, condensed matter physics, and neuromorphic computing
+  - **Activation**: polariton BEC, quantum neuromorphic, room temperature quantum, driven-dissipative, WISI particles, optical neural network, quantum reservoir
+
 ## 2026-05-18 - Quantum Feature Amplification Networks (Cron Job - 22:00)
 
 ### Quantum Feature Amplification Network (QFAN) as An Autoregressive Quantum Generative Model
