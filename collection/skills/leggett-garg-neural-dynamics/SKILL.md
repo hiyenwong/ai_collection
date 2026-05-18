@@ -1,119 +1,146 @@
 ---
 name: leggett-garg-neural-dynamics
-description: "Leggett-Garg inequality testing methodology for neural dynamics — probing non-diffusive stochastic structure in single neurons. Applies quantum temporal correlation analysis to distinguish diffusive (Wiener/cable-equation) models from persistent stochastic models in neural systems."
-tags: ["quantum", "neuroscience", "leggett-garg", "neural-dynamics", "temporal-correlations"]
+description: "Methodology for testing Leggett-Garg inequalities in neural dynamics to probe non-diffusive stochastic structure in single neurons. Use when studying whether neural computation exhibits non-classical behavior, analyzing stochastic models of neural dynamics beyond cable-equation/Wiener models, or exploring quantum-like phenomena in biological neural systems. Bridges quantum foundations and neuroscience."
 ---
 
-# Leggett-Garg Neural Dynamics Testing
+# Leggett-Garg Tests in Neural Dynamics
 
 ## Description
 
-Leggett-Garg inequality (LGI) testing methodology for probing non-diffusive stochastic structure in single-neuron dynamics. The LGI serves as a temporal analogue of Bell-type constraints, distinguishing between Markovian diffusive models (Wiener/cable-equation) and non-diffusive persistent stochastic models based on Kac-type finite-velocity processes leading to the Telegrapher's equation.
+Apply Leggett-Garg inequality testing to single-neuron dynamics to distinguish between classical diffusive (Wiener/cable-equation) models and non-diffusive stochastic models. When neural models violate LG inequalities, it suggests non-classical behavior in neural computation — opening new avenues for understanding the fundamental nature of neural processing.
+
+Based on: Ghose, "Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons" (arXiv:2605.12126, 2026).
 
 ## Activation Keywords
 
 - leggett-garg neural
+- quantum neural dynamics
+- non-diffusive neuron
+- macrorealism neural
 - temporal correlations neuron
-- non-diffusive neural dynamics
-- quantum-like neural testing
-- LGI neuron dynamics
-- Kac process neural
-- Telegrapher equation brain
-- persistent stochastic neuron
-
-## Theoretical Foundation
-
-### Two Classes of Stochastic Neural Dynamics
-
-**Class 1: Diffusive Models**
-- Based on Wiener noise and cable equation
-- Markovian, trajectory-based
-- Monotonic decay of temporal correlations
-- Always satisfies Leggett-Garg inequalities
-
-**Class 2: Persistent Stochastic Models**
-- Finite-velocity stochastic processes (Kac-type)
-- Non-Markovian, memory effects
-- Oscillatory temporal correlations
-- Can violate Leggett-Garg inequalities
-
-### Key Mathematical Objects
-
-- **Telegrapher's Equation**: Arises from Kac-type finite-velocity processes
-- **Analytic Continuation**: Connection between Kac processes and Dirac-like envelope equations
-- **Leggett-Garg Inequality**: Temporal analogue of Bell constraints
-- **Temporal Correlations**: Measure persistence and memory in neural dynamics
-
-## Methodology
-
-### Step 1: Define Measurement Protocol
-
-Select three measurement times t1 < t2 < t3 for temporal correlation testing.
-The LGI tests: K = C(t1,t2) + C(t2,t3) - C(t1,t3) <= 1
-where C(ti,tj) are two-time correlation functions.
-
-### Step 2: Experimental Design
-
-- Record single-neuron voltage or spike dynamics
-- Perform repeated measurements at specified time intervals
-- Compute two-time correlation functions C(ti,tj)
-- Test whether K exceeds the classical bound of 1
-
-### Step 3: Interpretation
-
-**LGI Satisfied (K <= 1)**: Dynamics consistent with trajectory-based diffusive models
-**LGI Violated (K > 1)**: Evidence of non-diffusive temporal correlations, memory effects, and contextual temporal structure
-
-### Conservative Interpretation
-
-Violation is NOT evidence of microscopic quantum coherence in the brain. Rather, it indicates:
-- Persistence in stochastic dynamics
-- Non-Markovian memory structure
-- Contextual temporal correlations analogous to quantum systems
+- LG inequality neural
+- 量子神经动力学
+- 神经非扩散
+- stochastic neuron model
 
 ## Tools Used
 
-- Statistical analysis: Correlation function computation
-- Stochastic process modeling: Kac process simulation
-- Telegrapher's equation: Finite-velocity transport modeling
-- Time-series analysis: Neural dynamics measurement
+- exec: Run simulation/analysis code
+- write: Create analysis scripts and reports
 
-## Applications
+## Core Methodology
 
-1. **Neural Dynamics Characterization**: Distinguish diffusive vs persistent stochastic models
-2. **Memory Effect Detection**: Identify non-Markovian structure in neurons
-3. **Quantum-Classical Boundary**: Probe classical systems with quantum-like temporal structure
-4. **Brain-Computer Interfaces**: Better models of neural signal propagation
-5. **Computational Neuroscience**: Refined models beyond cable equation
+### Leggett-Garg Inequalities
 
-## Error Handling
+LG inequalities test macrorealism — the assumption that a system has definite properties independent of measurement and that measurement doesn't disturb the system. Violation suggests non-classical temporal correlations.
 
-### Insufficient Data
-- Need sufficient repeated measurements for statistical significance
-- Use bootstrapping for confidence intervals on K
+The canonical LG inequality for dichotomic observable Q(t):
 
-### Measurement Noise
-- Account for experimental noise in correlation estimation
-- Use noise-robust correlation estimators
+```
+K = C(t1,t2) + C(t2,t3) - C(t1,t3) ≤ 1
+```
 
-### Finite Sampling
-- Discrete time sampling may miss fine temporal structure
-- Use interpolation or continuous-time estimation methods
+where C(ti,tj) = ⟨Q(ti)Q(tj)⟩ are temporal correlation functions.
 
-## References
+Classical systems satisfy K ≤ 1; quantum systems can reach K = 1.5 (Tsirelson-like bound).
 
-- arXiv:2605.12126 - "Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons" (May 2026)
-- Kac, M. (1956) - "Probability and Some of Its Applications"
-- Leggett, A.J. & Garg, A. (1985) - "Quantum mechanics versus macroscopic realism"
+### Application to Neural Dynamics
+
+1. **Define dichotomic observable**: Map neural state (membrane potential, firing rate) to Q = ±1
+   - Example: Q = +1 if V > threshold, Q = -1 otherwise
+
+2. **Choose measurement times**: Select t1, t2, t3 at meaningful intervals relative to neural timescales
+
+3. **Compute temporal correlations**: C(ti,tj) = ⟨Q(ti)Q(tj)⟩ from experimental or simulated data
+
+4. **Test LG inequality**: Calculate K and check if K > 1
+
+### Models That Violate LG Inequalities
+
+- **Non-diffusive stochastic models**: Lévy flights, fractional Brownian motion
+- **Models with memory**: Non-Markovian dynamics
+- **Models with quantum-like phase coherence**
+
+### Models That Satisfy LG Inequalities
+
+- **Standard cable equation**: Wiener process diffusion
+- **Markovian rate models**: Classical Hodgkin-Huxley variants
+- **Ornstein-Uhlenbeck processes**: Linear Gaussian dynamics
+
+## Experimental Design
+
+### In Silico (Simulation)
+
+```python
+def test_lg_inequality(trajectory, t1, t2, t3, threshold=0):
+    """Test Leggett-Garg inequality on neural trajectory data."""
+    Q = np.where(trajectory > threshold, 1, -1)
+    
+    C12 = np.mean(Q[t1] * Q[t2])
+    C23 = np.mean(Q[t2] * Q[t3])
+    C13 = np.mean(Q[t1] * Q[t3])
+    
+    K = C12 + C23 - C13
+    return K, C12, C23, C13
+```
+
+### Key Considerations
+
+1. **Non-invasive measurability**: LG tests assume measurements don't disturb the system. In neural recordings, this is approximated by weak measurements or post-selection.
+
+2. **Stationarity**: Correlations should be computed over stationary segments of data.
+
+3. **Temporal resolution**: Measurement times must resolve the relevant neural dynamics (typically ms scale for single neurons).
+
+4. **Ensemble averaging**: LG inequalities require averaging over many trials/realizations.
+
+## Connection to Quantum Neuroscience
+
+This methodology bridges quantum physics and neuroscience by:
+
+1. **Testing quantum-like behavior**: If neurons violate LG inequalities, it suggests non-classical temporal structure in neural computation.
+
+2. **Informing quantum-inspired models**: Results guide whether quantum cognition models or classical models better describe neural dynamics.
+
+3. **Neuromorphic computing**: Non-classical neural dynamics may enable new computational paradigms in neuromorphic hardware.
+
+## Related Quantum-Neural Concepts
+
+- **Quantum cognition**: Hilbert space models of decision-making and cognition
+- **Neuromorphic quantum computing**: Quantum circuits inspired by neural architectures
+- **Quantum reservoir computing**: Fixed quantum dynamics with linear readout (see extreme-quantum-cognition skill)
+- **Neural quantum states**: Variational Monte Carlo with neural network wavefunctions
 
 ## Examples
 
-### Example: Single Neuron Testing
+### Simulating LG Test on Neuron Model
 
-**Scenario**: Test whether hippocampal CA1 neuron dynamics show persistent stochastic behavior.
+```python
+import numpy as np
 
-1. Record membrane potential at high temporal resolution
-2. Select measurement times t1, t2, t3 spaced by ~10ms
-3. Compute C(t1,t2), C(t2,t3), C(t1,t3) over repeated trials
-4. Calculate K = C(t1,t2) + C(t2,t3) - C(t1,t3)
-5. If K > 1 (with statistical significance), evidence of non-diffusive dynamics
+# Simulate non-diffusive neural dynamics (Lévy flight)
+def levy_neural_trajectory(T, alpha=1.5):
+    """Generate non-diffusive neural trajectory."""
+    steps = np.random.standard_t(df=alpha, size=T)
+    return np.cumsum(steps)
+
+# Simulate diffusive (classical) neural dynamics
+def brownian_neural_trajectory(T):
+    """Generate diffusive neural trajectory."""
+    steps = np.random.randn(T)
+    return np.cumsum(steps)
+
+# Test on both models
+for name, traj in [("Levy", levy_neural_trajectory(10000)),
+                    ("Brownian", brownian_neural_trajectory(10000))]:
+    K, c12, c23, c13 = test_lg_inequality(traj, 100, 200, 300)
+    violation = "VIOLATES" if K > 1 else "SATISFIES"
+    print(f"{name}: K = {K:.4f} ({violation} LG inequality)")
+```
+
+## Limitations
+
+- LG inequality violation doesn't prove quantum behavior — other non-classical mechanisms (memory, nonlinearity) can also violate
+- Experimental implementation in real neurons is extremely challenging
+- Requires careful control of measurement back-action
+- Interpretation depends on the specific neural model being tested

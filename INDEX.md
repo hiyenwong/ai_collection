@@ -1,3 +1,65 @@
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
+- [[leggett-garg-neural-dynamics]] - Test Leggett-Garg inequalities in neural dynamics to distinguish classical vs non-classical stochastic neuron models (arXiv: 2605.12126)
+  - Proposes experimental programme testing LG temporal correlations in single-neuron dynamics
+  - Distinguishes diffusive (Wiener/cable-equation) from non-diffusive stochastic models of neural dynamics
+  - Certain neural models violate LG inequalities, suggesting non-classical behavior in single-neuron dynamics
+  - Bridges quantum foundations (macrorealism testing) with computational neuroscience
+  - **Activation**: leggett-garg neural, quantum neural dynamics, non-diffusive neuron, macrorealism neural, temporal correlations neuron, LG inequality neural
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-anos-qnn]] - Diagonal ANO reduces observable parameter complexity from O(4^k) to O(2^k) while preserving full ANO capability (arXiv: 2605.15410)
+  - Makes quantum observables dynamic to enlarge VQA function space
+  - Diagonal observables are canonical representatives of ANO space modulo unitary similarity
+  - Significant reduction in measurement-side classical computation cost
+  - **Activation**: diagonal ANO, quantum observable, VQA optimization, quantum neural network
+
+### Quantum Advantage in Multi-Agent Reinforcement Learning
+- [[qmarl-entanglement-coordination]] - Entangled QMARL agents approach Tsirelson limit (0.854) in CHSH game, proving quantum advantage over classical (arXiv: 2605.14235)
+  - Decentralized QMARL with VQC actors and shared entangled states
+  - Unentangled quantum circuits match classical baseline — entanglement is the active coordination mechanism
+  - Specific Bell state structures enable different coordination patterns
+  - **Activation**: quantum multi-agent RL, entanglement coordination, QMARL, CHSH game quantum
+
+### Extreme Quantum Cognition Machines
+- [[extreme-quantum-cognition-machines]] - Quantum learning architectures for deliberative decision making tolerant to noisy/contradictory data (arXiv: 2603.05430)
+  - Fixed quantum dynamics generates nonlinear feature map, learning confined to linear readout
+  - Dynamical attention mechanism via input-dependent Hamiltonian interaction term
+  - Related to quantum extreme learning and quantum reservoir computing
+  - **Activation**: quantum cognition, extreme learning machine quantum, reservoir computing quantum
+
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
+- [[leggett-garg-neural-dynamics]] - Test Leggett-Garg inequalities in neural dynamics to distinguish classical vs non-classical stochastic neuron models (arXiv: 2605.12126)
+  - Proposes experimental programme testing LG temporal correlations in single-neuron dynamics
+  - Distinguishes diffusive (Wiener/cable-equation) from non-diffusive stochastic models of neural dynamics
+  - Certain neural models violate LG inequalities, suggesting non-classical behavior in single-neuron dynamics
+  - Bridges quantum foundations (macrorealism testing) with computational neuroscience
+  - **Activation**: leggett-garg neural, quantum neural dynamics, non-diffusive neuron, macrorealism neural, temporal correlations neuron, LG inequality neural
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-anos-qnn]] - Diagonal ANO reduces observable parameter complexity from O(4^k) to O(2^k) while preserving full ANO capability (arXiv: 2605.15410)
+  - Makes quantum observables dynamic to enlarge VQA function space
+  - Diagonal observables are canonical representatives of ANO space modulo unitary similarity
+  - Significant reduction in measurement-side classical computation cost
+  - **Activation**: diagonal ANO, quantum observable, VQA optimization, quantum neural network
+
+### Quantum Advantage in Multi-Agent Reinforcement Learning
+- [[qmarl-entanglement-coordination]] - Entangled QMARL agents approach Tsirelson limit (0.854) in CHSH game, proving quantum advantage over classical (arXiv: 2605.14235)
+  - Decentralized QMARL with VQC actors and shared entangled states
+  - Unentangled quantum circuits match classical baseline — entanglement is the active coordination mechanism
+  - Specific Bell state structures enable different coordination patterns
+  - **Activation**: quantum multi-agent RL, entanglement coordination, QMARL, CHSH game quantum
+
+### Extreme Quantum Cognition Machines
+- [[extreme-quantum-cognition-machines]] - Quantum learning architectures for deliberative decision making tolerant to noisy/contradictory data (arXiv: 2603.05430)
+  - Fixed quantum dynamics generates nonlinear feature map, learning confined to linear readout
+  - Dynamical attention mechanism via input-dependent Hamiltonian interaction term
+  - Related to quantum extreme learning and quantum reservoir computing
+  - **Activation**: quantum cognition, extreme learning machine quantum, reservoir computing quantum
+
 ## 2026-05-18 - Neuroscience Research (Cron Job - Early Morning)
 ### REALM: Retrospective Encoder Alignment for LFP Modeling
 - [[realm-lfp-retrospective-decoding]] - Causal LFP decoding via retrospective distillation from bidirectional Mamba-2 teacher, enabling spike-free BCI with reduced power/bandwidth (arXiv: 2605.14867)
