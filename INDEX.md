@@ -1,4 +1,17 @@
 ## 2026-05-19 - Deep Learning Research (Cron Job)
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[spike-forecast-behavioral]] - Joint neural population forecasting and behavioral decoding from spiking activity (arXiv: 2605.12999)
+  - Single model handles both spike forecasting and behavioral readout implicitly
+  - Eliminates separate forecast → decode pipelines for closed-loop BCI systems
+  - **Activation**: spike forecast behavioral, implicit behavioral decoding, closed-loop BCI, population neural forecasting
+
+### Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders
+- [[eeg-sae-interpretability]] - Extracting clinically interpretable features from EEG foundation model activations using SAE decomposition (arXiv: 2605.13930)
+  - First application of SAE-based interpretability to EEG foundation models
+  - Discovers human-interpretable features: sleep spindles, epileptiform patterns, frequency-band encodings
+  - **Activation**: EEG foundation model interpretability, sparse autoencoder EEG, mechanistic interpretability, clinical EEG auditing
 
 ### STS: Efficient Sparse Attention with Speculative Token Sparsity
 - [[speculative-sparse-attention-sts]] - Training-free sparse attention using draft model attention scores to construct dynamic token-and-head-wise sparsity masks for LLM inference, achieving 2.67x speedup at ~90% sparsity (arXiv: 2605.15508)
