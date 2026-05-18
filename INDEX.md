@@ -1,6 +1,24 @@
-## 2026-05-19 - Computer Science + Quantum (Cron Job - Hourly)
+## 2026-05-19 - 量子计算/计算机科学 (Cron Job)
 
-### Quantum State Isomorphism Problems for Groups
+### Mutually Unbiased Bases for Variational Quantum Initialization
+- [[mub-qaoa-initialization]] - MUB集合初始化变分量子算法，理论证明MUB集成最大化随机哈密顿宽度，QAOA暖启动在80%案例中不劣于标准方案 (arXiv: 2605.16060)
+  - MUB集成在所有d+1正交基并集中最大化各向同性高斯随机哈密顿宽度
+  - 自适应MUB-XRot暖启动QAOA在MaxCut/MIS/背包问题上1500个测试案例80%不劣
+  - **Activation**: MUB initialization, mutually unbiased bases, QAOA warm-start, variational quantum
+
+### Bias Analysis and Regularization of SMO-VQE
+- 分析SMO-VQE中偏差累积，发现偏差校正在小曲率方向 destabilizes 优化，提出正则化方法 (arXiv: 2605.15813)
+  - NFT/Rotosolve算法利用三角依赖性实现解析一维最小化
+  - 偏差校正 destabilizes 优化，原始偏差估计器隐式充当正则化器
+  - **Activation**: VQE, SMO, Rotosolve, variational quantum eigensolver
+
+### σ-VQE: Excited-state Preparation of Quantum Many-Body Scars
+- σ-VQE变分量子本征求解器针对中间谱本征态，利用浅层电路有限表达能力优先选择疤痕态 (arXiv: 2602.20881)
+  - 低深度电路+能量选择性目标函数，显式惩罚目标能量附近的能量方差
+  - 在IBM Fez (Heron r2 QPU)上完成原理验证演示
+  - **Activation**: sigma-VQE, quantum many-body scars, excited state, shallow circuit
+
+## Quantum State Isomorphism Problems for Groups
 - [[quantum-state-isomorphism-groups]] - Computational complexity of quantum state equivalence under group actions (arXiv: 2605.12615)
   - 核心要点 1: Pure-state version is BQP-hard for all nontrivial groups, contained in QCMA∩QCSZK
   - 核心要点 2: Mixed-state version is QSZK-complete; resolves open question on abelian state hidden subgroup
