@@ -1,99 +1,141 @@
 ---
 name: dual-axis-zebrafish-circuits
 description: >
-  Dual-axis attribution methodology for zebrafish tectal microcircuits. Maps biological
-  subcircuits to computational functions (energy-efficient processing vs robustness-preserving
-  stabilization) through SNN ablation and transfers insights to artificial neural architectures.
-  Use when: bio-inspired neural architecture design, circuit-level attribution, energy-efficient
-  computation, robust neural networks, zebrafish visual-motor system, subcircuit ablation,
-  biological-to-ANN transfer.
+  Dual-axis attribution methodology for zebrafish tectal microcircuits.
+  Analyzes biological neural circuit substructures along two computational
+  axes: energy-efficient information processing and robustness-preserving
+  stabilization. Reconstructs directed zebrafish-inspired retinotectal
+  microcircuit graphs and validates dual-axis functional attribution.
+  Use when: studying bio-inspired neural circuit design, energy-efficient
+  neurocomputing, zebrafish brain modeling, or circuit-level attribution
+  in biological neural networks. arXiv: 2605.13924
+  Activation: zebrafish tectal, dual-axis attribution, retinotectal,
+  energy-efficient neurocomputing, circuit-level attribution,
+  robustness stabilization, bio-inspired circuits, microcircuit analysis.
 ---
 
-# Dual-Axis Zebrafish Circuit Attribution
+# Dual-Axis Attribution of Zebrafish Tectal Microcircuits
 
-## Overview
+## Paper Reference
 
-A systematic methodology for attributing computational functions to biological neural subcircuits
-along two axes: **energy-efficient information processing** and **robustness-preserving stabilization**.
-Bridges biological circuit organization with artificial neural architecture design.
+- **Title:** Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
+- **arXiv:** 2605.13924 (2026-05-13)
+- **Authors:** Ningping Li, Hao Zhang, Yi Zhou
+- **Categories:** cs.NE
 
-**Paper**: Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing (arXiv:2605.13924v1)
+## Core Methodology
 
-**Authors**: Ningping Li, Hao Zhang, Yi Zhou (USTC)
+### Two Computational Axes
 
-## Methodology Framework
+**Axis 1: Energy-Efficient Information Processing**
+- Circuits specialized for low-energy signal transmission
+- Minimizes metabolic cost while preserving information fidelity
+- Relates to sparse coding, efficient neural representations
+- Key metric: energy per bit of information processed
 
-### Stage 1: Biological Graph Construction
-Reconstruct a directed brain abstraction from anatomical and electrophysiological connection priors.
-- Nodes: neural categories/subpopulations (e.g., RGC, TIN, TPN)
-- Edges: directed connection probabilities between categories
-- Connection matrix: A ∈ R^(n×n) where A_ij = P(connection from j → i)
+**Axis 2: Robustness-Preserving Stabilization**
+- Circuits maintaining functional stability under perturbation
+- Noise tolerance, fault tolerance in neural computation
+- Relates to attractor dynamics, homeostatic mechanisms
+- Key metric: performance degradation under structural damage
 
-### Stage 2: Mesoscopic Substructure Definition
-Group microscopic cell-category nodes into anatomical/functional substructures.
-- Example substructures: ns_TIN (non-superficial tectal interneurons), superficial_TIN, deep_TIN
-- Groups capture functional coherence rather than individual neurons
+### Microcircuit Reconstruction
 
-### Stage 3: Dynamic Feasibility Checking
-Verify signal propagation through the reconstructed graph using LIF spiking neural network simulation.
-- Ensure the graph topology supports realistic neural dynamics
-- Validate retinotectal signal flow patterns
+1. **Graph Construction:**
+   - Directed graph from zebrafish retinotectal connectivity data
+   - Nodes: neurons (retinal ganglion cells, tectal neurons)
+   - Edges: synaptic connections (excitatory, inhibitory)
+   - Weighted by connection strength
 
-### Stage 4: SNN-Based Substructure Ablation
-Use a leaky integrate-and-fire SNN as nonlinear perturbation testbed.
+2. **Axis Attribution:**
+   - Partition circuit into substructures
+   - Score each substructure on both axes
+   - Validate functional specialization
 
-**Dual-Axis Metrics**:
+3. **Functional Validation:**
+   - Simulate circuit dynamics
+   - Measure energy efficiency and robustness separately
+   - Confirm dual-axis separation
 
-1. **Energy Sensitivity Index (ESI)**: Identifies energy-efficient substructures
-   - ESI = |ΔPerformance| / (1 + SpikeFootprint)
-   - High ESI = significant performance impact with low spike cost
-   - Finds "sparse but important" subcircuits
+## Bio-Inspired Design Principles
 
-2. **Robustness Sensitivity Index (RSI)**: Identifies robustness-preserving substructures  
-   - RSI = normalized performance degradation after substructure removal
-   - High RSI = critical for system-level stability under perturbation
-   - Finds "feedback-like stabilizing" subcircuits
+### For Energy Efficiency
+- Sparse connectivity patterns
+- Hierarchical processing with early filtering
+- Predictive coding to reduce redundant computation
+- Event-driven processing (spike-based)
 
-### Stage 5: ANN Transfer
-Transfer attributed functions to artificial neural network modules:
+### For Robustness
+- Redundant pathways for critical functions
+- Feedback stabilization loops
+- Degeneracy: different structures achieve same function
+- Graceful degradation under partial damage
 
-| Subcircuit | Computational Role | ANN Module Design |
-|-----------|-------------------|-------------------|
-| ns_TIN | Energy-efficient gating | Adaptive computation gating for budget reduction |
-| superficial_TIN | Robustness stabilization | Feedback-like refinement for noise robustness |
+## Applications
 
-## Key Findings
+1. **Bio-Inspired Neural Network Design:**
+   - Borrow circuit motifs from zebrafish tectum
+   - Implement dual-axis optimization in artificial networks
+   - Energy-robustness tradeoff as design principle
 
-### Functional Dissociation
-- **ns_TIN**: Low spike footprint + measurable prediction error influence → spike-efficient internal information gate
-- **superficial_TIN**: Highest robustness sensitivity → feedback-like role in system stability
-- These subcircuits serve computationally distinct roles
+2. **Neuromorphic Computing:**
+   - Map efficient subcircuits to neuromorphic hardware
+   - Use stabilization motifs for fault tolerance
+   - Hybrid architectures combining both axes
 
-### Transfer Validation (CIFAR-10)
-- ResNet18WithNsTIN: Slower performance degradation under inference-budget reduction
-- ResNet18WithSuperficialTIN: Higher accuracy under Gaussian noise corruption
+3. **Neuroscience Understanding:**
+   - Framework for analyzing other brain regions
+   - Quantitative measure of circuit specialization
+   - Bridge between structure and function
 
-## Activation Keywords
-- dual-axis attribution
-- zebrafish tectal circuit
-- energy-efficient neural architecture
-- robust neural network design
-- bio-inspired subcircuit transfer
-- SNN ablation analysis
-- biological-to-ANN transfer
-- circuit-level functional attribution
-- 斑马鱼神经回路
-- 能量高效计算
-- 鲁棒神经网络
+## Key Insights
 
-## Implementation Notes
+- Biological circuits are not monolithic; substructures serve distinct purposes
+- Energy efficiency and robustness may be optimized by separate subcircuits
+- Bio-inspired networks should consider both axes explicitly
+- Circuit-level attribution bridges neuroscience and AI design
 
-1. **Graph Construction**: Use connection probability matrices from biological atlases
-2. **Ablation Protocol**: Systematically remove subcircuits, measure ESI and RSI
-3. **Transfer Design**: Map biological roles to architectural mechanisms (gating, feedback)
-4. **Evaluation**: Match evaluation to attributed function (budget reduction for energy, noise for robustness)
+## Practical Implementation
 
-## Pitfalls
-- Naive lesion analysis only measures global performance loss — use dual-axis to distinguish computational roles
-- Low activity ≠ unimportant: a subcircuit may be sparse but functionally critical
-- Transfer should validate under conditions matching the attributed function
+```python
+# Simplified dual-axis analysis framework
+import networkx as nx
+
+def build_retinotectal_graph(connections):
+    """Build directed graph from connectivity data."""
+    G = nx.DiGraph()
+    for pre, post, weight, sign in connections:
+        G.add_edge(pre, post, weight=weight, sign=sign)
+    return G
+
+def compute_energy_efficiency(G):
+    """Estimate energy cost of information processing."""
+    # Weighted path length as proxy for energy
+    total_cost = 0
+    for u, v, data in G.edges(data=True):
+        total_cost += data['weight'] * (1 if data['sign'] == 'exc' else 0.5)
+    return total_cost
+
+def compute_robustness(G, damage_fraction=0.1):
+    """Test circuit robustness to random node removal."""
+    import random
+    n_remove = int(len(G.nodes()) * damage_fraction)
+    damaged = G.copy()
+    damaged.remove_nodes_from(random.sample(list(G.nodes()), n_remove))
+    # Measure functional degradation
+    original_paths = nx.average_shortest_path_length(G)
+    damaged_paths = nx.average_shortest_path_length(damaged)
+    return damaged_paths / original_paths if original_paths > 0 else 1.0
+
+def attribute_dual_axis(G, subcircuits):
+    """Score subcircuits on both axes."""
+    scores = {}
+    for name, subG in subcircuits.items():
+        energy = compute_energy_efficiency(subG)
+        robustness = compute_robustness(subG)
+        scores[name] = {
+            'energy_efficiency': 1.0 / (1.0 + energy),  # Lower cost = higher efficiency
+            'robustness': 1.0 / robustness  # Closer to 1 = more robust
+        }
+    return scores
+```

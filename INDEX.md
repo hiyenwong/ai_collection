@@ -1,3 +1,17 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+- [[neurotrain-local-learning-snn-benchmarking]] - SNN训练算法全面分类与开源基准测试框架 (arXiv: 2605.15058)
+  - 覆盖6类SNN训练方法：代理梯度BP、局部学习规则、三因子学习、生物可塑性、ANN-SNN转换、非标准优化
+  - 基于snnTorch的统一模块化基准测试框架，支持多维度评估（准确率/效率/生物合理性/硬件适配性）
+  - **Activation**: NeuroTrain, SNN benchmarking, local learning rules, surrogate gradient, three-factor learning
+
+### Dual-axis attribution of zebrafish tectal microcircuits for energy-efficient and robust neurocomputing
+- [[dual-axis-zebrafish-circuits]] - 斑马鱼被盖微电路双轴归因：能效信息处理与鲁棒稳定性的功能分离 (arXiv: 2605.13924)
+  - 生物神经回路子结构沿两计算轴分工：能效信息处理 vs 鲁棒性保持稳定
+  - 构建斑马鱼视网膜被盖有向图，量化验证功能特异性分离
+  - **Activation**: zebrafish tectal, dual-axis attribution, retinotectal, energy-efficient neurocomputing
+
 
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Evening)
 
