@@ -20,6 +20,21 @@
   - Simulation-based approach comparing natural vs. optimized circuit configurations
   - **Activation**: cortical microcircuit, information flux, reverse engineering, circuit optimization
 
+### Clockless FPGA Neuromorphic Scaling
+- [[clockless-fpga-neuromorphic-scaling]] - Scalable neuromorphic architecture via autonomous time-continuous spiking dynamics in clockless digital circuits on commercial FPGAs, eliminating need for custom ASIC (arXiv: 2605.16114)
+  - Boolean spiking neurons with E/I synaptic weights emerge autonomous spiking dynamics
+  - Competitive accuracy on audio classification (84.5% SHD) with 2 orders of magnitude lower power
+  - Cascadable multi-FPGA architecture enables scalable deployment
+  - **Activation**: clockless FPGA neuromorphic, scalable asynchronous spiking, Boolean neuron FPGA, energy-efficient neuromorphic hardware
+
+### The Complex Brain Hypothesis: Resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience
+- [[complex-brain-hypothesis-resolving-entropy-content]] - Theoretical framework resolving the conflict between Entropic Brain Hypothesis and content-free conscious states via topological complexity metrics (arXiv: 2605.16146)
+  - Minimal Phenomenal Experiences (MPEs) challenge EBH: high entropy but no content
+  - Proposes topological complexity metrics to separate phenomenological content from entropy
+  - Bridges computational neuroscience with consciousness studies
+  - **Activation**: complex brain hypothesis, minimal phenomenal experience, entropic brain, consciousness entropy
+
+
 ### Implicit Behavioral Decoding from Spike Forecasts
 - [[implicit-behavioral-decoding-spike-forecasts]] - Joint neural population forecasting and behavioral decoding from spiking activity (arXiv: 2605.12999)
   - Single model handles both spike forecasting and behavioral readout implicitly
