@@ -1,4 +1,46 @@
-## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job)
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
+- [[decoding-encoding-alignment-critique]] - Fundamental critique of RSA/CKA/Procrustes showing decoding metrics saturate with small subpopulations and are blind to encoding manifold topology (arXiv: 2605.05907)
+  - 核心要点 1: RSA/CKA/Procrustes can be saturated by 5% of neurons and miss functional architecture
+  - 核心要点 2: Encoding manifold (neuron-centric) vs decoding manifold (stimulus-centric) duality
+  - 核心要点 3: Causal evidence via MNIST — identical decoding scores with different encoding topologies
+  - 核心要点 4: Gromov-Wasserstein distance as complementary metric for neural population comparison
+  - **Activation**: decoding alignment critique, RSA limitations, CKA blindness, encoding manifold, neural population topology, Gromov-Wasserstein neural, 2605.05907
+
+### Clockless Asynchronous Neuromorphic Computing on FPGA
+- [[clockless-asynchronous-neuromorphic-computing]] - Scalable B-SNN architecture using autonomous Boolean spiking neurons on commercial FPGAs with nanosecond spike dynamics (arXiv: 2605.16114)
+  - 核心要点 1: 196-neuron B-SNN with Dale's principle (20% inhibitory), receptive neurons (CM=2), local connectivity
+  - 核心要点 2: Synaptic weights embedded in circuit topology (not registers) via delayed-path replication
+  - 核心要点 3: Liquid State Machine on SHD audio classification; 2.07 ns spikes vs 10ns measurement clock
+  - 核心要点 4: UDP/Ethernet real-time spike streaming; 10-100x lower power than clocked designs
+  - **Activation**: clockless FPGA neuromorphic, Boolean spiking neuron, autonomous circuit SNN, asynchronous neuromorphic, 2605.16114
+
+### Ensemble Engineering for Quantum Measurements
+- [[ensemble-engineering-quantum-measurements]] - General framework mitigating destructive cancellation in NISQ quantum measurements by encoding sampling distribution in prepared quantum state (arXiv: 2605.03729)
+  - 核心要点 1: Destructive cancellation is structural mismatch between ensemble weights and operator sign structure, not just statistical
+  - 核心要点 2: Grover-type amplitude amplification + oracle-free shallow circuit for near-term hardware
+  - 核心要点 3: Demonstrated on IBM quantum processors up to 20 qubits
+  - **Activation**: quantum ensemble engineering, destructive cancellation, NISQ measurement, amplitude amplification, 2605.03729
+
+### QBalance: Multi-Objective Quantum Workflow Optimization
+- [[qbalance-workflow-optimization]] - Reproducible multi-objective strategy selection for quantum compilation, noise suppression, and error mitigation (arXiv: 2605.02966)
+  - 核心要点 1: Formulates quantum compilation as weighted multi-objective optimization over circuits, backends, and policies
+  - 核心要点 2: Non-dominated Pareto selection, Bayesian candidate ordering, survival-product error proxy
+  - **Activation**: QBalance, quantum workflow optimization, quantum compilation strategy, NISQ compilation, 2605.02966
+
+### Adaptive Bistable Qubit Control
+- [[adaptive-bistable-qubit-control]] - 1-bit feedback protocol for operating bistable qubits with TLS defects using FPGA real-time control at ~136 kHz (arXiv: 2605.03187)
+  - 核心要点 1: Estimates qubit bistable frequency from single single-shot measurement — reaches Shannon information limit
+  - 核心要点 2: 77% error reduction in gate fidelity suppression, validated on superconducting qubit
+  - 核心要点 3: Scalable to large qubit arrays via parallel FPGA feedback channels
+  - **Activation**: bistable qubit, TLS defect mitigation, 1-bit feedback, adaptive qubit control, FPGA quantum control, 2605.03187
+
+### Embedded Quantum Machine Learning in Embedded Systems
+- [[embedded-quantum-machine-learning]] - Feasibility analysis and hybrid architectures for embedding quantum ML workloads in resource-constrained embedded systems (arXiv: 2603.12540)
+  - 核心要点 1: Explores hybrid classical-quantum architectures for embedded deployment
+  - 核心要点 2: Addresses resource constraints in edge quantum computing scenarios
+  - **Activation**: embedded quantum ML, edge quantum computing, hybrid quantum-classical embedded, 2603.12540
 
 ### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
 - [[diagonal-adaptive-non-local-observables]] - Reduces k-local observable complexity from O(4^k) to O(2^k) while preserving full ANO expressivity via diagonal canonical representation (arXiv: 2605.15410)
