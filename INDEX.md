@@ -1,3 +1,11 @@
+## 2026-05-14 - Systems Engineering Research (Cron Job)
+
+### Refactoring-as-Propositions: Proved Refactoring of Hybrid Systems via Proved Refinements
+- [[refactoring-as-propositions]] - Use dRL to prove α ⊑ β (refinement), then transfer existing safety proofs [α]φ → (arXiv: 2605.15001)
+  - Use dRL to prove α ⊑ β (refinement), then transfer existing safety proofs [α]φ → [β]φ
+  - Modular proof decomposition reduces full-system re-verification to local change proofs
+  - **Activation**: CPS refactoring, formal verification, differential refinement logic, hybrid systems, dRL
+
      1|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
 - [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
   - QEEGNet = EEGNet backbone + VQC layers with angle encoding
