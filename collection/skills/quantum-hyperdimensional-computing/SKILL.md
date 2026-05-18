@@ -1,98 +1,64 @@
 ---
 name: quantum-hyperdimensional-computing
-description: "Quantum Hyperdimensional Computing (QHDC) methodology — mapping brain-inspired Hyperdimensional Computing onto native quantum computer operations. Use when designing quantum neuromorphic architectures, implementing quantum-native HDC operations, encoding brain-inspired representations on quantum hardware, or building hybrid quantum-classical cognitive algorithms. Covers hypervector-to-quantum-state mapping, LCU/OAA bundling, quantum phase oracle binding, QFT permutation, and Hadamard Test similarity. arXiv: 2511.12664."
+description: "Quantum Hyperdimensional Computing (QHDC) methodology — mapping brain-inspired hyperdimensional computing operations to native quantum computer operations. Hypervectors to quantum states, bundling via LCU/OAA, binding via quantum phase oracles, permutation via QFT, similarity via Hadamard Test. Validated on 156-qubit IBM Heron r3. Use when designing quantum neuromorphic architectures, brain-inspired quantum algorithms, hyperdimensional computing on quantum hardware, or neuromorphic-quantum fusion systems. Activation: quantum hyperdimensional, QHDC, hyperdimensional quantum, quantum neuromorphic architecture, HDC quantum mapping."
 ---
 
 # Quantum Hyperdimensional Computing (QHDC)
 
-Brain-inspired Hyperdimensional Computing (HDC) maps directly onto native quantum computing operations, forming a new class of quantum neuromorphic algorithms. Based on Cumbo et al. (arXiv:2511.12664).
+Map brain-inspired Hyperdimensional Computing (HDC) operations to native quantum computer operations for quantum neuromorphic architectures. Validated on 156-qubit IBM Heron r3.
 
-## Core Mappings
+## Core Mapping
 
-Five HDC operations map to quantum-native primitives:
+| HDC Operation | Quantum Implementation | Circuit Element |
+|---|---|---|
+| Hypervector → State | D-dimensional bipolar vector to |ψ⟩ = 1/√D Σ (-1)^{v_i} |i⟩ | State preparation |
+| Bundling (superposition) | Vector addition | LCU (Linear Combination of Unitaries) + OAA (Oblivious Amplitude Amplification) |
+| Binding (association) | Element-wise multiplication | Quantum phase oracle: apply Z-rotations conditioned on state |
+| Permutation (sequence) | Cyclic shift | QFT → phase shift → QFT† |
+| Similarity (matching) | Dot product / cosine | Hadamard Test: ⟨ψ|φ⟩ → probability of |0⟩ on ancilla |
 
-| HDC Operation | Quantum Implementation |
-|---|---|
-| **Hypervector representation** | Map D-dimensional binary/ bipolar hypervectors to n-qubit quantum states via amplitude or basis encoding |
-| **Bundling (superposition)** | Linear Combination of Unitaries (LCU) + Oblivious Amplitude Amplification (OAA) for quantum-native averaging |
-| **Binding (association)** | Quantum phase oracles — element-wise XOR becomes controlled-phase gates |
-| **Permutation (sequencing)** | Quantum Fourier Transform (QFT) for circular shift operations |
-| **Similarity measurement** | Hadamard Test for quantum state fidelity / overlap estimation |
+## Workflow
 
-## LCU + OAA Bundling
+### 1. Encode Classical Data to Quantum Hypervectors
 
-Bundle M hypervectors as quantum state superposition:
+```python
+# D-dimensional bipolar vector → quantum state
+# For v ∈ {-1, +1}^D: |ψ_v⟩ = 1/√D Σ_i (-1)^{v_i} |i⟩
+# Use amplitude encoding or basis encoding depending on D
+```
 
-1. Encode each hypervector as unitary U_i acting on |0⟩
-2. Prepare uniform ancilla superposition over M indices
-3. Apply controlled-U_i operations (LCU step)
-4. Apply Oblivious Amplitude Amplification to boost success amplitude
-5. Post-select on ancilla |0⟩ to obtain bundled state
+### 2. Implement Bundling via LCU + OAA
 
-Success probability scales as 1/M²; OAA amplifies to constant success rate.
+LCU constructs the superposition of multiple hypervectors. OAA amplifies the desired component without requiring knowledge of individual amplitudes.
 
-## Quantum Phase Oracle Binding
+### 3. Implement Binding via Phase Oracles
 
-For binding two hypervectors A ⊗ B:
+Element-wise multiplication maps to applying conditional phase rotations. For two hypervectors, apply Z gate conditioned on the control qubits.
 
-1. Encode A and B into separate register states |ψ_A⟩, |ψ_B⟩
-2. Apply controlled-phase oracle: O|x⟩|y⟩ = (-1)^{x·y}|x⟩|y⟩
-3. The phase encodes the bound representation
-4. Measurement in appropriate basis retrieves bound result
+### 4. Implement Permutation via QFT
 
-This is exponentially more compact than classical binding for high-dimensional vectors.
+Cyclic shift: QFT → multiply each frequency component by ω^k → QFT†. Enables sequence/order encoding.
 
-## QFT Permutation
+### 5. Measure Similarity via Hadamard Test
 
-Circular shift of hypervector components:
+Place an ancilla in |+⟩, controlled-swap the two states, measure ancilla. P(0) = (1 + Re⟨ψ|φ⟩)/2.
 
-1. Apply QFT to the register
-2. Apply phase ramp e^{2πik/n} in frequency domain
-3. Apply inverse QFT
+## Complexity Advantages
 
-Equivalent to cyclic permutation in classical HDC but implemented in O(log²n) quantum gates vs O(n) classically.
+- **Bundling**: O(log D) quantum gates vs O(D) classical
+- **Binding**: O(1) depth with phase oracle vs O(D)
+- **Similarity**: O(log D) via Hadamard Test vs O(D) classical dot product
+- **Storage**: log D qubits store D-dimensional vector
 
-## Hadamard Test Similarity
+## Practical Considerations
 
-Estimate similarity between query |ψ_q⟩ and memory |ψ_m⟩:
+- Current validation on 156-qubit IBM Heron r3 demonstrates feasibility
+- State preparation depth dominates circuit complexity
+- Noise resilience inherent to HDC redundancy transfers to quantum setting
+- Suitable for NISQ-era due to shallow circuit requirements per operation
 
-1. Prepare ancilla in |+⟩ state
-2. Controlled-SWAP: if ancilla=1, swap |ψ_q⟩ and |ψ_m⟩
-3. Measure ancilla in X-basis
-4. P(0) = (1 + |⟨ψ_q|ψ_m⟩|²)/2 gives fidelity estimate
+## Activation
 
-Requires O(1/ε²) shots for ε precision — exponentially fewer resources than classical full-vector comparison for large D.
+Keywords: quantum hyperdimensional, QHDC, hyperdimensional quantum, quantum neuromorphic, HDC quantum mapping, quantum brain-inspired computing
 
-## Hardware Validation
-
-QHDC validated on:
-- **IBM Heron r3**: 156-qubit execution
-- **Tasks**: Symbolic analogical reasoning, supervised classification
-- **Result**: Quantum simulation matches classical; real hardware shows expected noise degradation but validates mapping feasibility
-
-## When to Use QHDC
-
-- Quantum-native implementation of brain-inspired computing
-- High-dimensional pattern recognition on quantum hardware
-- Hybrid quantum-classical cognitive architectures
-- Biomedical data analysis requiring quantum advantage
-- Symbolic reasoning tasks with quantum circuits
-- Neuromorphic quantum algorithm design
-
-## Key Advantages over QML Approaches
-
-1. **No variational training** — HDC operations are fixed, avoiding barren plateaus
-2. **Direct quantum-native mapping** — no awkward classical-to-quantum translation
-3. **Interpretability** — HDC operations have clear semantic meaning
-4. **Resource efficiency** — O(log D) qubits for D-dimensional hypervectors
-5. **Robustness** — HDC's inherent noise tolerance transfers to quantum hardware
-
-## Related Concepts
-
-- Hyperdimensional Computing (HDC) / Vector Symbolic Architectures (VSA)
-- Quantum Neuromorphic Computing
-- Quantum Machine Learning (QML)
-- Brain-Inspired Quantum Algorithms
-- IBM Heron quantum processor architecture
-
-**Activation**: quantum hyperdimensional computing, QHDC, quantum neuromorphic, HDC quantum, quantum vector symbolic, brain-inspired quantum, quantum cognitive architecture, arXiv:2511.12664
+Source: arXiv:2511.12664 — "Quantum Hyperdimensional Computing: a foundational paradigm for quantum neuromorphic architectures"

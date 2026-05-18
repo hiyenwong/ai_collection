@@ -1,3 +1,12 @@
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Quantum Hyperdimensional Computing: A Foundational Paradigm for Quantum Neuromorphic Architectures
+- [[quantum-hyperdimensional-computing]] - 将脑启发的高维计算(HDC)映射到量子操作：超向量→量子态、捆绑→LCU/OAA、绑定→相位预言、排列→QFT、相似度→Hadamard Test，在156-qubit IBM Heron r3验证 (arXiv: 2511.12664)
+  - HDC五大核心操作映射到量子门：捆绑用LCU+OAA、绑定用相位预言、排列用QFT、相似度用Hadamard Test
+  - 量子复杂度优势：捆绑O(log D)、绑定O(1)、相似度O(log D)，远超经典O(D)
+  - log D量子比特存储D维向量，天然噪声鲁棒性
+  - **Activation**: quantum hyperdimensional, QHDC, hyperdimensional quantum, quantum neuromorphic, HDC quantum mapping
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders
