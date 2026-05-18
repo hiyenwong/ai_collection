@@ -1,3 +1,12 @@
+## 2026-05-19 - Computer Science + Quantum (Cron Job - Hourly)
+
+### AQKA: Active Quantum Kernel Acquisition Under a Shot Budget
+- [[aqka-active-quantum-kernel-acquisition]] - Closed-form gradient-based optimal shot allocation for quantum kernel estimation (arXiv: 2605.14672)
+  - 核心要点 1: Optimal shot allocation s_ij* ∝ |g_ij|√(K_ij(1-K_ij)) using KRR/SVM dual variables
+  - 核心要点 2: Regime decomposition - AQKA dominates budget-limited, Nyström-QKE wins at saturating budgets
+  - 核心要点 3: Live hardware results: +26-32 pts on 156-qubit Heron, advantage grows with N
+  - **Activation**: AQKA, active quantum kernel, shot budget allocation, adaptive shot allocation, quantum kernel ridge regression, 2605.14672
+
 ## 2026-05-19 - Computer Science + Quantum (Hourly Cron Job)
 
 ### Shot-Based Quantum Encoding: A Data-Loading Paradigm for Quantum Neural Networks
