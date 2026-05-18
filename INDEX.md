@@ -80,6 +80,27 @@
   - Conservative interpretation: violation indicates non-Markovian memory, not quantum coherence
   - **Activation**: leggett-garg neural, temporal correlations neuron, non-diffusive neural dynamics, quantum-like neural testing
 
+### Solving Classical and Quantum Spin Glasses with Deep Boltzmann Quantum States
+- [[deep-boltzmann-quantum-states]] - Combines Deep Boltzmann Machine architectures with neural quantum states to solve frustrated quantum spin glass problems (arXiv: 2605.15899)
+  - DBM as variational ansatz for quantum wavefunctions with complex-valued amplitudes
+  - Handles sign problem through complex-valued network parameters
+  - Variational Monte Carlo with stochastic reconfiguration for natural gradient descent
+  - **Activation**: deep boltzmann quantum states, quantum spin glass, neural quantum states, variational quantum, frustrated systems
+
+### Thermodynamic Networks: Harnessing Non-Equilibrium Steady States for Computation
+- [[thermodynamic-networks]] - Framework for autonomous physics-based computation using non-equilibrium steady states in thermodynamic networks (arXiv: 2605.15985)
+  - Computation through thermodynamic relaxation processes between finite reservoirs
+  - Autonomous, clockless, energy-efficient computation paradigm
+  - Connects thermodynamics with information processing
+  - **Activation**: thermodynamic networks, non-equilibrium computation, autonomous computing, physical computation
+
+### Born-rule statistical dynamical quantum phase transitions under measurement
+- [[born-rule-quantum-phase-transitions]] - Studies dynamical quantum phase transitions (DQPTs) through Born-rule measurement statistics analyzing nonanalytic changes in return probability (arXiv: 2605.16029)
+  - DQPTs occur at critical times where Loschmidt echo rate function is nonanalytic
+  - Connects quantum measurement theory with dynamical critical phenomena
+  - Statistical ensemble of measurements reveals DQPT signatures
+  - **Activation**: dynamical quantum phase transition, born rule, loschmidt echo, fidelity dynamics, quantum measurement
+
 ### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
 - [[spikeprophecy-benchmark]] - First large-scale benchmark for spike-count forecasting with population metric decomposition (arXiv: 2605.12992)
   - Decomposes aggregate Pearson r into temporal fidelity, spatial pattern accuracy, magnitude-invariant alignment
