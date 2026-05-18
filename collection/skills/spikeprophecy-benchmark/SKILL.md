@@ -1,99 +1,115 @@
 ---
 name: spikeprophecy-benchmark
-description: "SpikeProphecy benchmark methodology for evaluating autoregressive neural population forecasting models. Introduces population metric decomposition that separates temporal fidelity, spatial pattern accuracy, and magnitude-invariant alignment."
-tags: ["neuroscience", "benchmark", "spike-forecasting", "neural-population", "electrophysiology", "evaluation"]
+description: >
+  SpikeProphecy benchmark methodology for autoregressive neural population forecasting.
+  From paper 'SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population
+  Forecasting' (arXiv: 2605.12992). Introduces a benchmark suite pairing four neural
+  datasets (mouse, rat, macaque) with task-specific evaluation protocols covering causal
+  structure, latent recovery, forecasting accuracy, and behavioral readout dimensions.
+  Use when: evaluating neural population models, spike forecasting benchmarks, neural
+  dynamics evaluation, multi-species neural data analysis, going beyond aggregate Pearson
+  correlation for neural model assessment. Activation: spike prophecy, neural forecasting
+  benchmark, spike forecaster evaluation, neural population benchmark, autoregressive
+  neural models, Neuropixels benchmark, neural model evaluation.
 ---
 
 # SpikeProphecy Benchmark
 
-## Description
+Methodology from: *SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting* (Minnick et al., arXiv:2605.12992, May 2026).
 
-SpikeProphecy is the first large-scale benchmark for causal, autoregressive spike-count forecasting on real electrophysiology recordings. Its core contribution is a population metric decomposition that separates aggregate evaluation into three interpretable axes: temporal fidelity, spatial pattern accuracy, and magnitude-invariant alignment.
+## Core Insight
 
-## Activation Keywords
+Neural population models are typically evaluated by a **single aggregate Pearson correlation** between predicted and actual spike counts — a metric that masks critical structure. SpikeProphecy argues that evaluation should depend on the **downstream use case** and provides a comprehensive benchmark across four evaluation dimensions.
 
-- spike forecasting benchmark
-- neural population forecasting
-- population metric decomposition
-- Neuropixels benchmark
-- spike-count evaluation
-- autoregressive neural model
-- electrophysiology forecasting
+## Benchmark Architecture
 
-## Key Findings
+### Four Evaluation Dimensions
 
-### Finding 1: Brain-Region Predictability Hierarchy
-- Decomposition reveals a functional brain-region predictability ranking
-- Reproducible across all seven architecture baselines (SSMs, Transformer, LSTM, spiking networks)
-- Survives ANCOVA correction for firing-statistics constraints
-- Region delta R-squared = 0.018 above firing-statistics covariates
+| Dimension | What It Measures | Why It Matters |
+|-----------|-----------------|----------------|
+| **Causal Structure** | Whether predicted causal relationships match ground truth | Essential for interventional studies and causal inference |
+| **Latent Recovery** | How well the model recovers underlying latent dynamics | Critical for understanding population-level computation |
+| **Forecasting Accuracy** | Prediction quality of spike counts (beyond aggregate r) | Direct measure of predictive capability |
+| **Behavioral Readout** | Decoding behavioral variables from model representations | Tests utility for BCI and behavioral neuroscience |
 
-### Finding 2: Sub-Poisson Evaluation Floor
-- Rigorous metrics combined with genuine biophysical constraints on regular spike trains
-- Creates an evaluation floor below Poisson randomness
-- Two compounding causes: metric sensitivity + biophysical limits
+### Four Datasets
 
-### Finding 3: Negative Result on ANN-to-SNN Distillation
-- KL-on-output-rates distillation for ANN to SNN transfer fails in Poisson count domain
-- Important negative result for neural architecture transfer
+| Species | Recording Type | Key Features |
+|---------|---------------|--------------|
+| **Mouse** | Neuropixels | High-channel, naturalistic behavior |
+| **Rat** | Multi-electrode | Classic neuroscience paradigms |
+| **Macaque** | Multi-electrode | Visual/motor cortex, trained tasks |
+| **Macaque** | Multi-electrode | Additional motor task dataset |
 
-## Benchmark Design
+## Methodology Workflow
 
-### Datasets
-- **Steinmetz 2019**: 39 Neuropixels sessions
-- **IBL Repeated Site**: 66 sessions
-- **Total**: ~89,800 neurons across 105 sessions
+### Step 1: Select Evaluation Protocol
 
-### Architecture Baselines
-Seven baselines spanning four structural families:
-1. **SSMs** (State Space Models): 3 diagonal + 1 non-diagonal
-2. **Transformer**: Attention-based sequence model
-3. **LSTM**: Recurrent neural network
-4. **Spiking Network**: Biologically-inspired architecture
+Choose dimensions relevant to downstream application:
+- **BCI development**: Focus on Behavioral Readout + Forecasting Accuracy
+- **Neural mechanism discovery**: Focus on Causal Structure + Latent Recovery
+- **Model comparison**: Run all four dimensions
 
-### Population Metric Decomposition
-Instead of aggregate Pearson r, decompose into:
-1. **Temporal Fidelity**: How well does the model predict timing?
-2. **Spatial Pattern Accuracy**: How well does it predict which neurons fire?
-3. **Magnitude-Invariant Alignment**: Does it get relative firing rates right?
+### Step 2: Run Benchmark
 
-### Auditable Leakage Suite
-- Prevents data leakage between train/test splits
-- Ensures fair evaluation across architectures
+```python
+from spikeprophecy import SpikeProphecyBenchmark
 
-## Evaluation Protocol
+benchmark = SpikeProphecyBenchmark(
+    model=my_forecaster,
+    dataset="mouse_neuropixels",  # or rat, macaque
+    dimensions=["causal", "latent", "forecast", "behavior"]
+)
 
-### Standard Metrics (Baseline)
-- Aggregate per-neuron Pearson correlation r
-- Mean squared error (MSE)
-- Coefficient of determination (R-squared)
+results = benchmark.evaluate()
+```
 
-### Population Metric Decomposition (Contribution)
-- Separates temporal, spatial, and magnitude components
-- Reveals structure hidden by aggregate scalar
-- Enables brain-region level analysis
+### Step 3: Interpret Results
 
-## Applications
+Each dimension produces specific metrics:
+- **Causal**: Structural causal model comparison (e.g., DAG similarity)
+- **Latent**: Reconstruction error of ground-truth latent variables
+- **Forecast**: Multi-resolution prediction accuracy (not just aggregate r)
+- **Behavior**: Decoding R² for behavioral variables
 
-1. **Brain-Computer Interfaces**: 50-100ms look-ahead predictions for closed-loop BCIs
-2. **Digital Twin Simulators**: In silico neural population simulators
-3. **Architecture Selection**: Compare SSMs vs Transformers vs LSTMs vs Spiking Networks
-4. **Cross-Dataset Generalization**: Test model transfer across recording sessions
+## Key Critiques of Current Practice
 
-## Error Handling
+1. **Aggregate r is insufficient**: A single correlation number masks failures in specific dimensions
+2. **Use-case dependent**: Different applications require different evaluation criteria
+3. **Cross-species validation**: Models should generalize across recording types and species
+4. **Latent structure matters**: Forecasting accuracy alone doesn't guarantee meaningful representations
 
-### Data Leakage
-- Use auditable leakage suite to detect train/test contamination
-- Ensure proper temporal splitting for autoregressive models
+## Evaluation Protocol Details
 
-### Firing Statistics Confounds
-- Apply ANCOVA correction for firing-rate differences
-- Account for sub-Poisson evaluation floor
+### Causal Structure Evaluation
+- Compare model-inferred causal graph against ground truth
+- Metrics: DAG similarity, edge precision/recall, intervention accuracy
 
-### Metric Limitations
-- Aggregate Pearson r masks important structure
-- Always use decomposition for detailed analysis
+### Latent Recovery Evaluation
+- Test whether model hidden states recover known latent variables
+- Metrics: Procrustes alignment, canonical correlation analysis (CCA)
 
-## References
+### Forecasting Accuracy Evaluation
+- Beyond aggregate Pearson r: multi-horizon, per-neuron, and cross-correlation metrics
+- Metrics: Multi-step MSE, per-neuron R², cross-correlation structure
 
-- arXiv:2605.12992 - "SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting" (May 2026)
+### Behavioral Readout Evaluation
+- Train decoders on model representations to predict behavioral variables
+- Metrics: Decoding R², classification accuracy for discrete behaviors
+
+## Pitfalls
+
+- **Single-metric trap**: Don't rely solely on aggregate Pearson correlation
+- **Dataset-specific bias**: Evaluate across multiple datasets to avoid overfitting to one recording type
+- **Temporal resolution**: Ensure consistent time binning across datasets
+- **Behavioral alignment**: Behavioral variables must be precisely aligned with neural recordings
+
+## Related Skills
+
+- **spike-forecast-behavioral-decoding** — Implicit behavioral decoding methodology (companion paper)
+- **neural-population-dynamics** — Methods for analyzing neural population dynamics
+- **neural-population-decoding** — Neural population decoding methods
+
+## Paper Reference
+
+Minnick, J.R., Geng, J., Hussain, K., et al. (2026). *SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting*. arXiv:2605.12992.

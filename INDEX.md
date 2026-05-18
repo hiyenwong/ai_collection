@@ -1,3 +1,18 @@
+## 2026-05-18 - Neuroscience Research (Cron Job - Late Night)
+
+### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
+- [[spikeprophecy-benchmark]] - 提出四维评估框架替代单一Pearson r，涵盖因果结构、潜变量恢复、预测精度、行为解码，覆盖小鼠/大鼠/猕猴多物种数据集 (arXiv: 2605.12992)
+  - 批判当前仅用aggregate Pearson r评估神经群体模型的不足
+  - 四维评估：因果结构(DAG相似度)、潜变量恢复(Procrustes/CCA)、多分辨率预测精度、行为解码R²
+  - 四数据集跨物种验证：小鼠Neuropixels、大鼠多电极、猕猴多电极
+  - **Activation**: spike prophecy, neural forecasting benchmark, spike forecaster evaluation, neural population benchmark
+### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+- [[spike-forecast-behavioral-decoding]] - 单个Mamba forecaster仅在spike counts上自监督训练，隐层状态自然涌现行为表征，线性探针即达到专用decoder精度 (arXiv: 2605.12999)
+  - 统一forecaster+decoder为单一模型，closed-loop BCI延迟和算力大幅降低
+  - 自监督：无需行为标签，next-step spike prediction自然捕获task-relevant latent structure
+  - per-session线性探针即可解码行为变量，精度媲美supervised decoder
+  - **Activation**: spike forecast, behavioral decoding, Mamba neural, implicit neural representation, closed-loop BCI
+
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
 
 ### Quantum Hyperdimensional Computing: A Foundational Paradigm for Quantum Neuromorphic Architectures
