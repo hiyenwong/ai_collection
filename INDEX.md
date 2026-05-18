@@ -1,3 +1,25 @@
+## 2026-05-19 - Computer Science + Quantum (Cron Job)
+
+### Winning Lottery Tickets in Neural Networks via a Quantum-Inspired Classical Algorithm
+- [[quantum-inspired-lottery-tickets]] - Classical dequantization of quantum ML lottery ticket algorithm achieving polynomial-time sparse subnetwork selection via ridgelet transform sampling (arXiv: 2605.13979)
+  - 核心要点 1: QML algorithm selects sparse subnetworks from large shallow NNs via ridgelet transform
+  - 核心要点 2: Classical dequantized algorithm runs in O(poly(D)) vs O(exp(D)) naive approach
+  - 核心要点 3: Achieves comparable empirical risk to exact sampling, much better than uniform sampling
+  - **Activation**: quantum-inspired, lottery tickets, dequantization, ridgelet sampling, sparse subnetwork, 量子启发中奖彩票, 2605.13979
+
+### Quantum Feature Pyramid Gating for Seismic Image Segmentation
+- [[quantum-feature-pyramid-gating]] - Hybrid quantum-classical image segmentation using multi-scale quantum feature extraction with adaptive gating mechanism (arXiv: 2605.15370)
+  - 核心要点 1: Multi-scale feature pyramid with quantum feature encoding at each scale
+  - 核心要点 2: Parameterized quantum circuits process encoded features, adaptive gates fuse quantum+classical
+  - **Activation**: quantum feature pyramid, QFPG, quantum segmentation, hybrid quantum-classical, 量子特征金字塔, 2605.15370
+
+### Wavelet Variance Equipartition as Threshold for Quantum Kernel TN-Simulability
+- [[wavelet-variance-equipartition-quantum]] - Wavelet scaling exponent α as diagnostic for representation quality and classical simulability boundary of quantum kernels (arXiv: 2605.11557)
+  - 核心要点 1: α=1/2 is sharp boundary — area-law (>1/2) admits classical emulation, volume-law (<1/2) is exponentially hard
+  - 核心要点 2: VideoMAE latents show spatial tokens ~0.423, feature channels ~-0.123 (deep volume-law)
+  - 核心要点 3: Shot noise wall: measurement budget M=Ω(d²) constrains quantum ML scalability
+  - **Activation**: wavelet variance equipartition, scaling exponent, quantum kernel simulability, tensor network bond dimension, 小波方差等配分, 2605.11557
+
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
 ### Decoding Alignment without Encoding Alignment: A critique of similarity analysis in neuroscience
