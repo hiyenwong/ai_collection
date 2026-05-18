@@ -7,6 +7,30 @@
   - **Activation**: MUB initialization, mutually unbiased bases, QAOA warm-start, variational quantum
 
 ### Bias Analysis and Regularization of SMO-VQE
+### SMO-VQE Bias Analysis and Regularization
+- [[smo-vqe-regularization]] - 分析SMO-VQE偏差累积，发现偏差校正在小曲率方向 destabilizes 优化，提出正则化方法提升VQE性能 (arXiv: 2605.15813)
+  - NFT/Rotosolve算法利用三角依赖性实现解析一维最小化，仅需2-3次能量评估
+  - 偏差校正 destabilizes 小曲率方向优化，原始偏差隐式充当正则化器
+  - 正则化方法实现误差累积同时保持无偏估计，跨系统规模/电路深度/哈密顿量一致提升
+  - **Activation**: SMO-VQE, Rotosolve, NFT algorithm, VQE optimization, quantum circuit bias
+
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+All ~100 papers scanned across multiple search queries (neuroscience+brain network, SNN+comp neuro, q-bio.NC, cs.NE).
+12 recent papers analyzed in detail — **100% covered** by existing skills (extreme maturity).
+No new skills created.
+
+### Key Recent Papers Analyzed
+- **The Complex Brain Hypothesis** (2605.16146) — Karl Friston group extends consciousness/entropy framework → [[complex-brain-hypothesis]]
+- **Code-Modulated Motion VEP for BCI** (2605.15801) — New BCI paradigm → [[code-modulated-motion-vep-bci]]
+- **Interpreting EEG Transformers with LRP** (2605.11885) — EEG foundation model explainability → [[eeg-foundation-lrp-interpretability]]
+- **Cortical Microcircuits Information Flux** (2605.14680) — Reverse engineering study → [[cortical-microcircuits-information-flux-optimization]]
+- **Rhythm Switching RNNs** (2605.14388) — Adaptive time constants → [[rhythm-switching-adaptive-time-constants-rnn]]
+- **Clockless Neuromorphic Computing** (2605.16114) — Autonomous spiking on reconfigurable chip → [[clockless-asynchronous-neuromorphic-computing]]
+- **Hippocampal-Entorhinal World Model** (2605.15733) — Structure abstraction and generalization → [[hippocampal-entorhinal-world-model]]
+
+**Activation**: neuroscience research, arxiv monitoring, cron job, zero new skills
+
 - 分析SMO-VQE中偏差累积，发现偏差校正在小曲率方向 destabilizes 优化，提出正则化方法 (arXiv: 2605.15813)
   - NFT/Rotosolve算法利用三角依赖性实现解析一维最小化
   - 偏差校正 destabilizes 优化，原始偏差估计器隐式充当正则化器
