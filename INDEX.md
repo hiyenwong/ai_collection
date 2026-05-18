@@ -1,4 +1,13 @@
 ## 2026-05-19 - Computer Science + Quantum (Cron Job - Hourly)
+
+### Quantum State Isomorphism Problems for Groups
+- [[quantum-state-isomorphism-groups]] - Computational complexity of quantum state equivalence under group actions (arXiv: 2605.12615)
+  - 核心要点 1: Pure-state version is BQP-hard for all nontrivial groups, contained in QCMA∩QCSZK
+  - 核心要点 2: Mixed-state version is QSZK-complete; resolves open question on abelian state hidden subgroup
+  - 核心要点 3: Clifford group ≥ Graph Isomorphism, Pauli group BQP-complete, bosonic optical ≥ Graph Isomorphism
+  - **Activation**: quantum state isomorphism, state hidden subgroup, quantum group actions, QSZK-complete, BQP-hard, 量子态同构, 2605.12615
+
+## 2026-05-19 - Computer Science + Quantum (Cron Job - Hourly)
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
 ### Bridging Silicon and the Hippocampus: Algebro-Deterministic Memory "VaCoAl" as a Substrate for Vector-HaSH and TEM
