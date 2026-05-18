@@ -1,3 +1,11 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-adaptive-non-local-observables]] - Reduces k-local observable complexity from O(4^k) to O(2^k) while preserving full ANO expressivity via diagonal canonical representation (arXiv: 2605.15410)
+  - 核心要点 1: 对角可观测量是 ANO 空间在酉相似变换下的规范代表元，保持等效表达能力
+  - 核心要点 2: 将 k 局部可观测量复杂度从 O(4^k) 降至 O(2^k)，显著降低经典优化成本
+  - **Activation**: diagonal ANO, quantum observable optimization, VQA function space, adaptive quantum measurements, 2605.15410
+
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
 ### Hippocampal-Entorhinal Inspired World Model
