@@ -1,3 +1,17 @@
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Afternoon)
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-anos-qnn]] - 对角自适应非局域可观测量，将VQA可观测量复杂度从O(4^k)降至O(2^k)，同时保持完整表达能力 (arXiv: 2605.15410)
+  - 对角矩阵是AN0空间的模酉相似典型代表，优化对角可观测量等价于优化全Hermitian空间
+  - 测量端经典计算复杂度指数级降低，适用于VQE/QAOA等变分量子算法
+  - **Activation**: diagonal ANO, adaptive non-local observable, quantum observable optimization, VQA measurement reduction, QNN observable design
+
+### Quantum Neuromorphic Computing Patterns
+- [[quantum-neuromorphic-patterns]] - 量子与神经形态计算交叉模式：量子脑模型、量子储层计算用于神经动力学、SPATE脉冲-相位编码 (arXiv: multiple)
+  - 四种核心模式：脑启发的量子神经架构、量子储层计算处理神经信号、SPATE脉冲-相位量子编码、量子认知建模
+  - 结合量子纠缠建模神经同步、使用变分量子电路实现类Hebbian学习
+  - **Activation**: quantum neuromorphic, quantum brain, brain-inspired quantum, quantum reservoir computing neural, spiking quantum
+
 ## 2026-05-18 - Neuroscience Research (Cron Job - Late)
 
 ### The Complex Brain Hypothesis: Resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience
