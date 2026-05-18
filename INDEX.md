@@ -1,3 +1,23 @@
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Hippocampal-Entorhinal Inspired World Model
+- [[hippocampal-entorhinal-world-model]] - Brain-inspired hierarchical world model for structure abstraction and generalization from video (arXiv: 2605.15733)
+  - Simultaneously infers latent transitions and constructs predictive visual world model
+  - HPC-MEC coupling dissociates relational structures (MEC) from integrated episodic scenes (HPC)
+  - **Activation**: hippocampal-entorhinal model, world model, structure abstraction, HPC-MEC coupling
+
+### Cortical Microcircuit Information Flux Optimization
+- [[cortical-microcircuits-information-flux-optimization]] - Simulation-based reverse engineering of cortical microcircuit optimization for information flux (arXiv: 2605.14680)
+  - Reverse engineering study of whether cortical microcircuits are optimized for information transmission
+  - Simulation-based approach comparing natural vs. optimized circuit configurations
+  - **Activation**: cortical microcircuit, information flux, reverse engineering, circuit optimization
+
+### Implicit Behavioral Decoding from Spike Forecasts
+- [[implicit-behavioral-decoding-spike-forecasts]] - Joint neural population forecasting and behavioral decoding from spiking activity (arXiv: 2605.12999)
+  - Single model handles both spike forecasting and behavioral readout implicitly
+  - Eliminates separate forecast → decode pipelines for closed-loop BCI systems
+  - **Activation**: spike forecast behavioral, implicit behavioral decoding, closed-loop BCI
+
 ## 2026-05-19 - Deep Learning Research (Cron Job)
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
