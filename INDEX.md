@@ -1,3 +1,12 @@
+## 2026-05-18 - Anthropic Research (Cron Job)
+
+### Teaching Claude why (Updated)
+- [[teaching-claude-why]] - Alignment training methodology: teaching principles beats teaching demonstrations; difficult advice dataset achieves 28x token efficiency
+  - Four lessons: direct training doesn't generalize, principled OOD training works, teaching "why" beats "what", data quality/diversity crucial
+  - NEW: Alignment improvements persist through RL fine-tuning; diverse training environments significantly improve generalization
+  - Difficult advice dataset: put user in dilemma, train AI to give aligned advice — 28x fewer tokens, better OOD generalization
+  - **Activation**: agentic misalignment, alignment training, OOD generalization, constitutional AI, honeypot resistance, difficult advice, RL persistence
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### NeuroGAN-3D: Enhancing Intrinsic Functional Brain Networks via High-Fidelity 3D Generative Super-Resolution

@@ -1,6 +1,6 @@
 ---
 name: teaching-claude-why
-description: Alignment training methodology for reducing agentic misalignment in LLMs. Core insight: teaching principles underlying aligned behavior is more effective than training on demonstrations of aligned behavior alone. Covers constitution-aligned training, difficult advice datasets, OOD generalization, and the four key lessons from Anthropic's alignment research. Use when: aligning AI agents, reducing misalignment behaviors, designing safety training data, constitutional AI, agentic safety, alignment research, or training AI systems to resist honeypot scenarios.
+description: Alignment training methodology for reducing agentic misalignment in LLMs. Core insight: teaching principles underlying aligned behavior is more effective than training on demonstrations of aligned behavior alone. Covers constitution-aligned training, difficult advice datasets, OOD generalization, RL persistence testing, diverse training environments, and the four key lessons from Anthropic's alignment research. Use when: aligning AI agents, reducing misalignment behaviors, designing safety training data, constitutional AI, agentic safety, alignment research, or training AI systems to resist honeypot scenarios.
 ---
 
 # Teaching Claude Why: Alignment Training Methodology
@@ -57,3 +57,20 @@ Key innovation: instead of training the AI on honeypot scenarios where *it* face
 ## Quality Improvement Technique
 
 Rewriting training responses to include deliberation of values and ethics reduced misalignment from 22% to 3%, compared to only 15% when training on aligned behaviors alone.
+
+## Generalization and Persistence Through RL
+
+After improving alignment via supervised fine-tuning, improvements must persist through RL:
+- Multiple snapshots initialized with different alignment datasets were trained with RL on harmlessness environments
+- More aligned snapshots maintained their lead across: agentic misalignment evals, constitution adherence evals, and automated alignment assessment
+- Both absence of misaligned behavior AND presence of actively admirable behavior persisted through RL
+- **Key insight**: Alignment improvements from principled training survive subsequent RL fine-tuning
+
+## Diverse Training Environments
+
+Training on a broad set of safety-relevant environments improves alignment generalization:
+- Baseline RL environments: diverse topics but mostly harmful request/jailbreak with no system prompt
+- Augmented environments: added tool definitions and diverse system prompts to user prompts
+- **Key finding**: Even though these augmented environments didn't require agentic actions (tools never necessary, human always present), mixing them with simple chat environments significantly improved honeypot eval performance
+- **Lesson**: Include diverse environments with varied system prompts and tool definitions in safety training, even if they don't mirror the evaluation setting
+- Capabilities-focused RL environment mixes are changing rapidly; standard RLHF alone won't generalize as model capabilities grow
