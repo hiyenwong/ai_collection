@@ -68,6 +68,11 @@
   - Drop-in replacement for consolidation step in existing memory systems
   - **Activation**: recmem, recurrence memory consolidation, lazy memory, agent memory efficiency
 
+### Cortical Microcircuit Information Flux Optimization
+- [[cortical-microcircuits-information-flux-optimization]] - Simulation-based reverse engineering of whether cortical microcircuits are optimized for information flux (arXiv: 2605.14680)
+  - Investigates if biological cortical circuits operate near information transmission optima
+  - Uses mutual information between successive network states as optimization objective
+  - **Activation**: cortical microcircuit optimization, information flux neural networks, reverse engineering brain circuits
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - 23:00)
 
 ### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
