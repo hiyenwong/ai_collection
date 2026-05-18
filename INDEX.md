@@ -202,9 +202,16 @@
   - Captures complex entanglement in classical/quantum spin glasses
   - Boltzmann architecture naturally models competing interactions and frustration
   - Unified framework for classical and quantum disordered systems
-  - **Activation**: deep boltzmann quantum states, spin glass quantum, frustrated many-body, neural quantum states, variational monte carlo
+  - **Activation**: cortical microcircuit optimization, information flux neural networks, reverse engineering brain circuits
 
-## 2026-05-18 - Neuroscience Research (Cron Job - 23:00)
+### Letting the Neural Code Speak: Automated Neuron Characterization via Language
+- [[neural-code-language-interpretability]] - Closed-loop framework translating neuron activations into semantic descriptions using neural digital twins (arXiv: 2605.12485)
+  - 核心要点 1: Natural language replaces mathematical models for characterizing neurons in higher visual areas
+  - 核心要点 2: Closed-loop: generate captions → semantic hypothesis → synthesize images → verify in silico
+  - 核心要点 3: V4 neurons achieve 96.1% activation / 97.6% suppression with language-generated images vs ~10% random
+  - **Activation**: neural code speak, automated neuron characterization, language-based neural description, neural digital twin, 2605.12485
+
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - 23:00)
 
 ### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
 - [[clockless-neuromorphic-snn]] - Clockless asynchronous Boolean spiking neural networks on FPGA achieving nanosecond-scale spike dynamics with 100x energy efficiency over clocked implementations (arXiv: 2605.16114)
