@@ -1,3 +1,13 @@
+## 2026-05-18 - Quantum Feature Amplification Networks (Cron Job - 22:00)
+
+### Quantum Feature Amplification Network (QFAN) as An Autoregressive Quantum Generative Model
+- [[quantum-feature-amplification]] - Autoregressive quantum generative model decoupling register size from output dimension via fixed-size quantum circuits + classical decoding (arXiv: 2605.16044)
+  - Direct-register quantum generative models require register size proportional to output dimension — QFAN breaks this coupling
+  - Uses fixed-size quantum circuit for local feature patches + autoregressive classical decoder for full output
+  - Scalable to high-dimensional data (detector-scale geometries in HEP) without proportional qubit increase
+  - Bridges quantum ML with practical large-scale generative modeling for scientific applications
+  - **Activation**: quantum feature amplification, QFAN, autoregressive quantum generative, scalable quantum ML, fixed-size quantum circuit
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
