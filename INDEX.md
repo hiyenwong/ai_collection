@@ -1,3 +1,27 @@
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - 23:00)
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-ano-quantum-observables]] - Diagonal adaptive non-local observables for VQAs: reduces O(n²) to O(n) parameters while retaining full expressivity via canonical diagonal representation (arXiv: 2605.15410)
+  - Diagonal observables are canonical representatives of ANO space modulo unitary similarity
+  - Equivalent expressivity to full Hermitian ANO with far fewer parameters
+  - Faster convergence and easier classical optimization
+  - Hardware-friendly: diagonal measurements native on most platforms
+  - **Activation**: diagonal ANO, adaptive non-local observables, VQA parameter efficiency, quantum measurement design, observable adaptivity
+
+### Extreme Quantum Cognition Machines
+- [[extreme-quantum-cognition]] - Quantum learning architecture for deliberative decision making with dynamical attention, noise-tolerant to contradictory data (arXiv: 2603.05430)
+  - Fixed quantum dynamics as nonlinear feature map, learning only in linear readout
+  - Input-dependent Hamiltonian attention modulates quantum evolution
+  - No barren plateaus, inherent noise regularization
+  - **Activation**: extreme quantum cognition, EQCM, quantum reservoir computing, quantum extreme learning, dynamical attention quantum
+
+### Deep Boltzmann Quantum States for Spin Glasses
+- [[deep-boltzmann-quantum-states]] - Neural quantum states + Boltzmann machine for frustrated quantum many-body systems (arXiv: 2605.15899)
+  - Captures complex entanglement in classical/quantum spin glasses
+  - Boltzmann architecture naturally models competing interactions and frustration
+  - Unified framework for classical and quantum disordered systems
+  - **Activation**: deep boltzmann quantum states, spin glass quantum, frustrated many-body, neural quantum states, variational monte carlo
+
 ## 2026-05-18 - Neuroscience Research (Cron Job - 23:00)
 
 ### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
