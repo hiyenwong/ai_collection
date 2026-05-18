@@ -1,3 +1,26 @@
+
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Evening)
+
+### Exploring Biological Neuronal Correlations with Quantum Generative Models
+- [[quantum-biological-neural-correlations]] - 量子生成模型捕获生物神经元活动的时空相关性，比经典方法参数更少 (arXiv: 2409.09125)
+  - 量子生成框架生成具有时空相关性的合成神经元数据
+  - 比经典方法所需可训练参数更少
+  - **Activation**: quantum generative neural, biological neuronal correlation, quantum neuroscience, synthetic neural data
+
+### Global Mean-Amplitude Enhanced Spiking Neural Network Coherent Ising Machine
+- [[global-mean-amplitude-snn-cim]] - 全局平均振幅反馈增强SNN相干Ising机，Max-Cut成功率提升27% (arXiv: 2509.13917)
+  - 物理驱动的振幅稳定化防止振荡发散
+  - Max-Cut问题成功率比传统SNN-CIM提升27%
+  - 在交通分配问题上验证了通用性
+  - **Activation**: coherent ising machine, GFSNN-CIM, mean-amplitude feedback, spiking neural optimizer, Max-Cut SNN
+
+### Solving Classical and Quantum Spin Glasses with Deep Boltzmann Quantum States
+- [[quantum-spin-glass-boltzmann]] - 深度玻尔兹曼量子态结合神经量子态与玻尔兹曼机架构高效表示受阻挫量子系统 (arXiv: 2605.15899)
+  - 结合神经量子态与玻尔兹曼机架构
+  - 高效处理由无序和能量受挫产生的指数级局部能量极小值
+  - 同时适用于经典和量子自旋玻璃问题
+  - **Activation**: deep boltzmann quantum, spin glass neural, frustrated quantum system, neural quantum state
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Bridging Silicon and the Hippocampus: Algebro-Deterministic Memory "VaCoAl" as a Substrate for Vector-HaSH and TEM
