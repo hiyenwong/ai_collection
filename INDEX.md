@@ -1,3 +1,11 @@
+## 2026-05-12 - Systems Engineering Research (Cron Job)
+
+### HySecTwin: A Knowledge-Driven Digital Twin Framework Augmented with Hybrid Reasoning for Cyber-Physical Systems
+- [[hysectwin-digital-twin-cps]] - Semantic modelling + hybrid (deterministic + fuzzy) reasoning for CPS threat det (arXiv: 2605.11682)
+  - Semantic modelling + hybrid (deterministic + fuzzy) reasoning for CPS threat detection
+  - 21.5% faster detection with sub-ms sync, MITRE ATT&CK-aligned explainable alerts
+  - **Activation**: digital twin, CPS security, semantic reasoning, threat detection, knowledge graph
+
 ## 2026-05-14 - Systems Engineering Research (Cron Job)
 
 ### Refactoring-as-Propositions: Proved Refactoring of Hybrid Systems via Proved Refinements
