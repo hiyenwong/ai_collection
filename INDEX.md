@@ -1,3 +1,12 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
+- [[clockless-asynchronous-neuromorphic-computing]] - Clockless FPGA-based neuromorphic computing using autonomous Boolean spiking neuron dynamics (arXiv: 2605.16114)
+  - Clockless (asynchronous) digital circuits for neuromorphic computation without specialized hardware
+  - Boolean spiking neurons with configurable excitatory/inhibitory weights on commercial FPGAs
+  - Energy-efficient quasi-analog processing bridging digital-analog neuromorphic gap
+  - **Activation**: clockless neuromorphic, asynchronous digital circuits, FPGA spiking, reconfigurable chip
+
 ## 2026-05-18 - Neuroscience Research (Cron Job - Night)
 
 ### Are Cortical Microcircuits Optimized for Information Flux?
