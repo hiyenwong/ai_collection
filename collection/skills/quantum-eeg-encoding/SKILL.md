@@ -1,64 +1,95 @@
 ---
 name: quantum-eeg-encoding
-description: "Quantum-EEGNet (QEEGNet) methodology — hybrid quantum-classical neural network for EEG signal encoding and analysis. Integrates variational quantum circuits into EEGNet architecture for cross-task and cross-dataset brain signal decoding. Use when building quantum-enhanced BCI systems, hybrid quantum-classical models for neuroscience data, or quantum machine learning for EEG/fMRI analysis. Covers quantum layer integration, parameter-efficient quantum circuits, cross-dataset generalization, and noise robustness. arXiv: 2407.19214, 2503.00080."
+description: >
+  Quantum-EEGNet (QEEGNet) methodology for hybrid quantum-classical EEG signal encoding
+  and classification. Combines classical EEGNet convolutional architecture with quantum
+  variational layers for enhanced cross-task and cross-dataset generalization. Use when:
+  designing hybrid quantum-classical neural networks for EEG/brain signals, implementing
+  quantum layers in biomedical signal processing, optimizing quantum advantage in
+  neuroimaging, or building cross-dataset EEG encoders. Triggers: QEEGNet, quantum EEG,
+  quantum brain signal, quantum biomedical, quantum-classical hybrid neural network,
+  EEG quantum layers, variational quantum EEG.
 ---
 
-# Quantum-EEGNet (QEEGNet)
+# Quantum-EEGNet (QEEGNet) Methodology
 
-Hybrid quantum-classical neural network that integrates quantum computing layers into EEGNet for enhanced EEG encoding and analysis. Based on Chen et al. (arXiv: 2407.19214, 2503.00080).
+Hybrid quantum-classical architecture for EEG encoding derived from arXiv:2503.00080.
 
 ## Architecture
 
-QEEGNet = EEGNet backbone + Quantum variational circuit layers:
+```
+Raw EEG → EEGNet (Conv layers) → Feature Embeddings → Quantum Variational Layer → Classification
+```
 
-1. **Temporal Convolution** → spatial filtering of EEG channels
-2. **Depthwise Convolution** → channel-wise feature extraction
-3. **Quantum Layer** → variational quantum circuit (VQC) on extracted features
-4. **Separable Convolution** → combined temporal-spatial processing
-5. **Classification Head** → softmax output
+### EEGNet Backbone
 
-## Quantum Layer Design
+Standard EEGNet components:
+1. Temporal convolution (1D filters for frequency analysis)
+2. Depthwise spatial convolution (captures spatial patterns across electrodes)
+3. Separable convolution (temporal + spatial separation)
+4. Output: compact feature embeddings
 
-- **Encoding**: Classical features mapped to quantum states via angle encoding
-- **Circuit**: Parameterized quantum gates (RY, RZ, CNOT entanglement layers)
-- **Measurement**: Expectation values of Pauli-Z observables
-- **Backpropagation**: Parameter-shift rule for gradient computation
+### Quantum Variational Layer
+
+- Encodes EEGNet embeddings into quantum states
+- Applies parameterized quantum gates (variational circuit)
+- Measures quantum state for classical output
+- Circuit depth and qubit count must balance expressivity vs. trainability
 
 ## Key Findings
 
-- QEEGNet outperforms EEGNet on BCI Competition IV 2a dataset for most subjects
-- More robust to noise than classical EEGNet
-- Cross-dataset generalization is inconsistent — requires further optimization
-- Hybrid architectures need better quantum-classical interface design
+1. **Cross-task generalization**: QEEGNet tested on cognitive and motor task datasets
+2. **Cross-dataset transfer**: Performance varies across different EEG datasets
+3. **Optimization challenge**: Hybrid architectures require careful tuning to achieve
+   quantum advantage over purely classical baselines
+4. **Parameter efficiency**: Quantum layers can achieve comparable results with
+   fewer classical parameters, but quantum circuit training adds complexity
 
-## Cross-Dataset Transfer
+## Implementation Guide
 
-QEEGNet evaluated across diverse cognitive and motor task datasets:
-- Motor imagery (BCI IV 2a)
-- P300 event-related potentials
-- SSVEP visual evoked potentials
-- Emotional recognition datasets
+### Step 1: Prepare EEG Data
 
-Results show competitive performance but inconsistent improvements over classical baselines, indicating the need for task-specific quantum layer tuning.
+```python
+# Standard EEG preprocessing
+- Bandpass filter (0.5-50 Hz typical)
+- Epoch extraction around events
+- Baseline correction
+- Standardization per channel
+```
 
-## Advantages
+### Step 2: Build EEGNet Encoder
 
-1. **Parameter efficiency**: Quantum layers can represent complex functions with fewer parameters
-2. **Noise robustness**: Quantum circuits show inherent tolerance to certain noise types
-3. **Expressivity**: Quantum feature spaces may capture patterns classical models miss
+```python
+# Standard EEGNet architecture
+# Input: (batch, channels, time)
+# Output: (batch, embedding_dim)
+```
 
-## Challenges
+### Step 3: Add Quantum Layer
 
-1. **Cross-task generalization**: Performance varies significantly across datasets
-2. **Quantum advantage threshold**: Benefits only appear at certain data complexity levels
-3. **Training stability**: Hybrid quantum-classical optimization can be unstable
-4. **Hardware limitations**: Current NISQ devices limit circuit depth and qubit count
+```python
+# Encode embeddings into quantum states
+# Use angle encoding or amplitude encoding
+# Design variational circuit with trainable parameters
+# Measure observables for classification
+```
 
-## When to Use
+### Step 4: Hybrid Training
 
-- Building quantum-enhanced brain-computer interfaces
-- Experimenting with hybrid quantum-classical models for neuroimaging
-- Researching quantum advantage in biological signal processing
-- EEG/fMRI classification with limited training data
+```python
+# Loss = classical_loss(quantum_output, targets)
+# Gradients flow through quantum layer (parameter-shift rule)
+# Optimize classical + quantum parameters jointly
+```
 
-**Activation**: quantum EEG, QEEGNet, quantum brain-computer interface, quantum neuroscience, hybrid quantum neural EEG, quantum signal encoding, arXiv:2407.19214, arXiv:2503.00080
+## Pitfalls
+
+- **Barren plateaus**: Deep quantum circuits suffer from vanishing gradients
+- **Cross-dataset gap**: Models trained on one EEG dataset may not generalize
+- **Quantum simulation overhead**: Classical simulation of quantum layers is slow
+- **Noise sensitivity**: Real quantum hardware adds noise that can degrade EEG features
+
+## Related Skills
+
+- `quantum-neuroscience-patterns`: Broader quantum neuroscience methodology
+- `quantum-eeg-foundation`: Quantum-enhanced EEG signal analysis

@@ -30,6 +30,20 @@
   - log D量子比特存储D维向量，天然噪声鲁棒性
   - **Activation**: quantum hyperdimensional, QHDC, hyperdimensional quantum, quantum neuromorphic, HDC quantum mapping
 
+### Quantum-EEGNet: Hybrid Quantum-Classical EEG Encoding
+- [[quantum-eeg-encoding]] - QEEGNet将EEGNet卷积架构与量子变分层结合，探索跨任务/跨数据集的脑电编码泛化能力 (arXiv: 2503.00080)
+  - EEGNet提取时空特征 → 量子变分层编码 → 分类输出
+  - 跨认知和运动任务数据集评估，混合架构需进一步优化以充分发挥量子优势
+  - 量子层以更少参数实现相当性能，但量子电路训练增加复杂度
+  - **Activation**: QEEGNet, quantum EEG, quantum brain signal, quantum biomedical, hybrid quantum-classical neural network
+
+### Quantum Neuroscience Patterns
+- [[quantum-neuroscience-patterns]] - 量子计算与神经科学研究交叉模式汇总：QHDC、量子生成神经元模型、QEEGNet、Leggett-Garg神经动力学测试 (arXiv: 2511.12664, 2409.09125, 2503.00080, 2605.12126)
+  - 量子超维计算：HDC操作映射到量子门原语
+  - 量子生成模型：以更少参数捕获生物神经元时空相关性
+  - Leggett-Garg测试：探测单神经元非扩散随机结构
+  - **Activation**: quantum neuroscience, quantum brain, quantum neural networks, Leggett-Garg neural
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders
@@ -847,3 +861,18 @@
    499|   488|  - **Activation**: almost iid quantum, quantum wasserstein distance, quantum information theory non-iid, 量子信息论
    500|   489|
    501|
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Evening)
+
+### The Collapse of Unentangled Stoquastic Merlin-Arthur Proof Systems
+- [[quantum-merlin-arthur-proof]] - Proves StoqMA(k)=StoqMA: unentanglement gives no additional power to stoquastic verification, separating entanglement from interference role via positive de Finetti theorem (arXiv: 2605.16249)
+  - Separation of entanglement and interference in stoquastic Merlin-Arthur verification
+  - Positive value-based de Finetti theorem for separately symmetric extensions
+  - Spectral relaxation realized as one-witness stoquastic verifier
+  - **Activation**: stoquastic, Merlin-Arthur, StoqMA, de Finetti theorem, entanglement detection, quantum verification
+
+### Local Softmax and Global Weights in Non-Boolean Event Structures
+- [[non-boolean-event-softmax]] - Shows single-valuedness on shared atoms collapses generalized softmax to admissible-weight polytope parametrization, with exotic weights reachable beyond classical/quantum bounds (arXiv: 2605.16248)
+  - Local normalization does not imply global probability weight in non-Boolean event structures
+  - Consistent connectedness / no-disturbance as critical collapsing constraint
+  - Exotic weights exceeding quantum bounds reachable without no-disturbance
+  - **Activation**: non-boolean event structures, generalized softmax, consistent connectedness, no-disturbance, contextuality, exotic weights
