@@ -1,3 +1,18 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Scalable Learning in Structured Recurrent Spiking Neural Networks without Backpropagation
+- [[structured-recurrent-snn-backprop-free]] - Structured recurrent SNN architecture using local plasticity, WTA teaching signals, and three-factor learning for backprop-free scalable training (arXiv: 2605.00402)
+  - Core: Structured multi-layer recurrent SNN with locally dense layers and sparse small-world long-range projections
+  - Learning: Three-factor rule with WTA teaching, random broadcast alignment, and modulatory gating via eligibility traces
+  - **Activation**: structured recurrent SNN, backprop-free learning, three-factor learning, WTA teaching, eligibility traces, neuromodulatory
+
+### UniBCI: Towards a Unified Pretrained Model for Invasive Brain-Computer Interfaces
+- [[unibci-invasive-foundation-model]] - Unified foundation model for invasive BCI using context-conditioned tokenization and hierarchical Interval-Area Attention across species and brain regions (arXiv: 2605.00061)
+  - Core: Context-Conditioned Spatio-Temporal (CST) tokenization embedding neural signals with metadata into shared space
+  - Architecture: Hierarchical IAA combining linear attention (interval-level) and sliding-window attention (area-level)
+  - Pretraining: Self-supervised masked signal reconstruction on multi-species, multi-subject, multi-paradigm corpus
+  - **Activation**: UniBCI, invasive BCI, neural foundation model, CST tokenization, Interval-Area Attention, IAA, masked reconstruction
+
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Consciousness as Uncommon Self-Knowledge: A Synergistic Information Framework
