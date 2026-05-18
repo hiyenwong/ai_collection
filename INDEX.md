@@ -1,3 +1,26 @@
+## 2026-05-18 - Neuroscience Research (Cron Job - Early Morning)
+
+### Code-Modulated Motion Visual Evoked Potential for BCI
+- [[code-modulated-motion-vep-bci]] - Novel BCI paradigm using pseudo-random motion sequences instead of flickering for visual stimulation, achieving 85.67% accuracy in 4-class online BCI (arXiv: 2605.15801)
+  - c-MVEP uses motion modulation with pseudo-random codes instead of luminance flicker
+  - Comparable SNR to c-VEP but lower accuracy (85.67% vs 97.81%) and slower (2.61s vs 1.15s)
+  - Provides flicker-free alternative for users sensitive to visual flicker (photosensitive epilepsy)
+  - **Activation**: c-MVEP, motion VEP, code-modulated VEP, flicker-free BCI, visual evoked potential
+
+### Clockless Asynchronous Neuromorphic Computing
+- [[clockless-asynchronous-neuromorphic-computing]] - Clockless asynchronous neuromorphic computing on FPGAs using Boolean spiking neurons with autonomous time-continuous dynamics (arXiv: 2605.16114)
+  - Boolean spiking neurons evolve continuously without global clock, eliminating clock tree power
+  - Reconfigurable chip enables dynamic topology changes via FPGA interconnect reprogramming
+  - Excitatory/inhibitory weights implemented as configurable delays and gates
+  - **Activation**: clockless neuromorphic, asynchronous spiking, FPGA neuromorphic, Boolean spiking neuron
+
+### VaCoAl: Algebro-Deterministic Hippocampal Memory
+- [[vacoal-algebro-deterministic-memory]] - Algebro-deterministic hippocampal memory architecture using Galois-field LFSRs as substrate for vector hashing and TEM (arXiv: 2605.15652)
+  - Galois-field LFSR provides deterministic alternative to random scaffold-to-hippocampus projections
+  - Algebraically tractable model of multi-hop replay-fidelity decay
+  - STDP-like path selection mechanism for memory consolidation
+  - **Activation**: vacoal, algebro-deterministic memory, hippocampal memory, Galois-field LFSR, vector-hash
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Structure Abstraction and Generalization in a Hippocampal-Entorhinal Inspired World Model
