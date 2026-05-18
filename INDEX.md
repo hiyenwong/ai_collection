@@ -1,3 +1,17 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Bridging Silicon and the Hippocampus: Algebro-Deterministic Memory "VaCoAl" as a Substrate for Vector-HaSH and TEM
+- [[vacoul-hdc-sram-cam-ai]] - 海马体记忆机制与超维计算的代数桥梁，将DG模式分离和CA3模式完成映射到CAM硬件 (arXiv: 2605.15652)
+  - VaCoAl 为 Vector-HaSH 和 TEM 提供代数对象，用伽罗瓦域 LFSR 替代随机投影
+  - 路径积分置信比率首次为多跳回放保真度衰减提供代数可溯模型
+  - **Activation**: hippocampus, hyperdimensional computing, CAM, Vector-HaSH, TEM, memory consolidation, dentate gyrus
+
+### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
+- [[clockless-asynchronous-neuromorphic-computing]] - 基于无时钟异步FPGA的脉冲神经架构，实现超低功耗神经形态计算 (arXiv: 2605.16114)
+  - 布尔脉冲神经元在无时钟数字电路中自主演化，无需专用神经形态芯片
+  - 在商用FPGA上实现，功耗显著低于传统数字实现
+  - **Activation**: clockless, asynchronous, neuromorphic, FPGA, spiking neuron, energy-efficient
+
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Elastic Spiking Transformers for Efficient Gesture Understanding
