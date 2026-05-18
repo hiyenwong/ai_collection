@@ -1,3 +1,26 @@
+## 2026-05-19 - Computer Science + Quantum (Hourly Cron Job)
+
+### Shot-Based Quantum Encoding: A Data-Loading Paradigm for Quantum Neural Networks
+- [[shot-based-quantum-encoding]] - NISQ data loading via shot distribution over input states (arXiv: 2604.06135)
+  - 核心要点 1: SBQE allocates shots according to data-dependent classical distributions instead of deep encoding circuits
+  - 核心要点 2: Achieves high expressivity with shallow circuits — optimizes the hardware-native resource (shots)
+  - 核心要点 3: Outperforms angle/amplitude/basis encoding on expressivity-depth tradeoff
+  - **Activation**: shot-based encoding, SBQE, quantum data loading, quantum neural network encoding, 2604.06135
+
+### Soft-Quantum Algorithms
+- [[soft-quantum-algorithms]] - Direct matrix element optimization bypassing gate-based VQC training (arXiv: 2604.06523)
+  - 核心要点 1: Trains unitary matrix elements directly, avoiding gate decomposition overhead and barren plateaus
+  - 核心要点 2: Efficient for few-qubit problems with large datasets — matrix size scales as 2^n
+  - 核心要点 3: Post-training compilation step required to deploy on quantum hardware
+  - **Activation**: soft-quantum, direct matrix optimization, quantum operation optimization, VQC alternatives, 2604.06523
+
+### Do Quantum Transformers Help? A Systematic VQC Architecture Comparison
+- [[vqc-architecture-comparison]] - Systematic comparison of FC-VQC, ResNet-VQC, QT, FQT on tabular benchmarks (arXiv: 2604.23931)
+  - 核心要点 1: ResNet-VQC provides best accuracy-parameter tradeoff for most tabular tasks
+  - 核心要点 2: Quantum transformers show promise but require more qubits than NISQ devices provide
+  - 核心要点 3: No single architecture dominates — benchmark-dependent selection needed
+  - **Activation**: VQC architecture, quantum transformer, variational quantum circuit comparison, quantum tabular learning, 2604.23931
+
 ## 2026-05-19 - Computer Science + Quantum (Cron Job)
 
 ### Winning Lottery Tickets in Neural Networks via a Quantum-Inspired Classical Algorithm
