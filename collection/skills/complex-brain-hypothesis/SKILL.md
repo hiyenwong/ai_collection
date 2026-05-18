@@ -1,76 +1,62 @@
 ---
 name: complex-brain-hypothesis
-description: "The Complex Brain Hypothesis (CBH) — resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience. Proposes brain complexity (not entropy) indexes phenomenal richness: fine-grained regime (HCPEs, proliferating content) vs coarse-grained regime (MPEs, contentless awareness). Refines the Entropic Brain Hypothesis. Use for consciousness research, computational theories of consciousness, psychedelic neuroscience, meditation studies, brain entropy analysis. Activation: complex brain hypothesis, entropic brain hypothesis, minimal phenomenal experience, consciousness entropy, Friston consciousness, 5-MeO-DMT meditation."
+description: "Complex Brain Hypothesis (CBH) methodology for resolving entropy-content conundrum in consciousness research. Extends Entropic Brain Hypothesis by introducing brain complexity as index of phenomenal richness, modulated by inference grain. Use when: studying consciousness, minimal phenomenal experiences, psychedelic states, entropy vs complexity in brain activity, Karl Friston free energy framework, computational theories of consciousness. Activation: complex brain hypothesis, entropy content conundrum, minimal phenomenal experience, consciousness entropy, brain complexity, free energy principle consciousness."
 ---
 
-# The Complex Brain Hypothesis
+# Complex Brain Hypothesis (CBH)
 
-> Resolves the Entropy-Content Conundrum: proposes that complexity (not entropy) indexes phenomenal richness, distinguishing fine-grained (HCPE) from coarse-grained (MPE) regimes of consciousness.
+Framework resolving the entropy-content conundrum in consciousness research.
 
-## Metadata
-- **Source**: arXiv:2605.16146
-- **Authors**: Jonas Mago, Edmundo Lopez-Sola, Jakub Vohryzek, Michael Lifshitz, Robin Carhart-Harris, Karl Friston, Shamil Chandaria
-- **Published**: 2026-05-15
-- **Category**: Neurons and Cognition (q-bio.NC)
+## Problem
 
-## Core Problem: The Entropy-Content Conundrum
+The Entropic Brain Hypothesis (EBH) links brain entropy to phenomenal richness, but both high-content psychedelic experiences (HCPEs) and low-content minimal phenomenal experiences (MPEs) show elevated brain entropy. This creates a conundrum: how can the same marker (entropy) index opposite levels of phenomenal richness?
 
-The **Entropic Brain Hypothesis (EBH)** posits brain entropy as a marker of phenomenal richness: higher entropy = richer experience. But recent studies of:
-- **Meditation-induced MPEs** (minimal phenomenal experiences): low content, high entropy
-- **5-MeO-DMT-induced MPEs**: contentless awareness, high entropy
+## Solution: Complex Brain Hypothesis
 
-Both show elevated brain entropy yet opposite phenomenology to high-content psychedelic experiences (HCPEs). This creates a conundrum: entropy is elevated with both increased AND decreased phenomenal richness.
+Brain **complexity** (not entropy) indexes phenomenal richness. Both MPEs and HCPEs can have high entropy but differ in complexity.
 
-## The Complex Brain Hypothesis (CBH)
+## Key Concepts
 
-### Key Insight
-**Complexity** (not entropy) better indexes the richness differentiating MPEs from HCPEs.
+### Grain of Inference
 
-### Two Regimes of Brain Complexity
+The CBH proposes that brain complexity is modulated by the **grain of inference** through which the brain resolves uncertainty:
 
-| Regime | Phenomenology | Grain of Inference | Brain Signature |
-|--------|---------------|-------------------|-----------------|
-| **Fine-grained** | HCPEs (psychedelics) — proliferating content | Loosened constraints amplify fluctuations into rich content | Elevated entropy, high perturbational complexity |
-| **Coarse-grained** | MPEs (meditation, 5-MeO-DMT) — contentless awareness | Simpler model dissolves variety into unitary experience | Elevated entropy, LOW perturbational complexity |
+- **Fine-grained regime** (HCPEs): Loosened constraints amplify fluctuations into proliferating content. High complexity, high entropy, rich phenomenology.
+- **Coarse-grained regime** (MPEs): Simpler model dissolves variety into "contentless" awareness. Low complexity, high entropy, minimal phenomenology.
 
-### Mechanism
-Brain complexity is modulated by the **grain of inference** through which the brain resolves uncertainty:
-1. **Fine-grained regime**: Constraints are loosened, fluctuations amplify into diverse content (psychedelic states)
-2. **Coarse-grained regime**: Model is simplified, variety dissolves into "contentless" awareness (meditation/5-MeO-DMT)
+### Entropy vs Complexity
 
-Both regimes can show elevated entropy but diverge in phenomenology and perturbational signatures.
+| Regime | Entropy | Complexity | Phenomenology |
+|--------|---------|------------|---------------|
+| HCPE (fine-grained) | High | High | Rich, proliferating content |
+| MPE (coarse-grained) | High | Low | Simple, contentless awareness |
+| Normal waking | Moderate | Moderate | Structured experience |
 
-## Implications
+### Perturbational Signatures
 
-1. **Refines EBH**: Complexity resolves the entropy-content paradox
-2. **MPEs as test cases**: Minimal phenomenal experiences are crucial for computational theories of consciousness
-3. **Predictive signatures**: CBH predicts different perturbational responses (e.g., TMS-EEG PCI) for MPEs vs HCPEs
-4. **Bridges theories**: Connects predictive processing (Friston's free energy) with consciousness research
+MPEs and HCPEs should show distinct perturbational (e.g., TMS-EEG) signatures despite both having elevated entropy, due to their different complexity profiles.
 
-## Methodology Framework
+## Applications
 
-### Analysis Pipeline
-1. Identify state (MPE vs HCPE) via phenomenological report
-2. Measure brain entropy (e.g., Lempel-Ziv complexity of fMRI/EEG)
-3. Measure brain complexity (e.g., PCI — perturbational complexity index)
-4. Correlate complexity with phenomenal richness (not entropy)
-5. Validate with perturbational signatures (TMS-EEG)
+- Testing computational theories of consciousness
+- Analyzing meditation-induced MPE states
+- Understanding psychedelic neuroimaging data
+- Free Energy Principle extensions
+- Designing perturbational consciousness measures
 
-### Computational Modeling
-- Use predictive coding / active inference frameworks
-- Model grain of inference as precision weighting parameter
-- Simulate transitions between fine/coarse regimes
+## Relationship to EBH
 
-## Related Skills
-- entropy-brain-connectivity-paths
-- consciousness-usk-framework
-- ctm-ai-consciousness-blueprint
-- uncommon-self-knowledge-consciousness
-- eeg-tes-consciousness-measurement
+CBH refines (not replaces) EBH:
+- EBH: entropy ≈ phenomenal richness (incomplete)
+- CBH: complexity ≈ phenomenal richness, entropy ≈ uncertainty resolution regime
 
-## Pitfalls
-- Entropy ≠ complexity: both can be elevated but have different phenomenological correlates
-- MPEs are hard to study: require experienced meditators or controlled psychedelic protocols
-- Perturbational complexity (PCI) is the key differentiator, not entropy alone
-- The CBH is a refinement, not rejection, of the EBH — both entropy and complexity matter
+## Activation Keywords
 
+- Complex brain hypothesis
+- Entropy-content conundrum
+- Minimal phenomenal experience
+- Consciousness complexity
+- Entropic brain hypothesis extension
+- Free energy consciousness
+- Meditation neuroimaging
+- Psychedelic consciousness

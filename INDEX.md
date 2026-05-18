@@ -1,4 +1,18 @@
 ## 2026-05-18 - Neuroscience Research (Cron Job - Early Morning)
+### REALM: Retrospective Encoder Alignment for LFP Modeling
+- [[realm-lfp-retrospective-decoding]] - Causal LFP decoding via retrospective distillation from bidirectional Mamba-2 teacher, enabling spike-free BCI with reduced power/bandwidth (arXiv: 2605.14867)
+  - Bidirectional Mamba-2 pretrained with masked autoencoding distilled to compact causal student
+  - Outperforms causal AND non-causal LFP-based SOTA for behavior decoding
+  - Significant parameter count and training time reduction
+  - **Activation**: REALM, LFP decoding, retrospective distillation, causal neural decoding, Mamba neural model, wireless BCI
+
+### Complex Brain Hypothesis
+- [[complex-brain-hypothesis]] - Resolves entropy-content conundrum in consciousness: brain complexity (not entropy) indexes phenomenal richness, modulated by inference grain (arXiv: 2605.16146)
+  - Fine-grained regime (HCPEs): loosened constraints amplify fluctuations → rich content, high complexity
+  - Coarse-grained regime (MPEs): simpler model dissolves variety → contentless awareness, low complexity
+  - Both show elevated entropy but differ in complexity and perturbational signatures
+  - **Activation**: complex brain hypothesis, entropy-content conundrum, minimal phenomenal experience, consciousness complexity, free energy consciousness
+
 
 ### Code-Modulated Motion Visual Evoked Potential for BCI
 - [[code-modulated-motion-vep-bci]] - Novel BCI paradigm using pseudo-random motion sequences instead of flickering for visual stimulation, achieving 85.67% accuracy in 4-class online BCI (arXiv: 2605.15801)

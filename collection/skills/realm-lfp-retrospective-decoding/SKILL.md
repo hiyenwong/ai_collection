@@ -1,100 +1,69 @@
 ---
 name: realm-lfp-retrospective-decoding
-description: "REALM: Retrospective distillation framework for causal LFP-based behavior decoding in brain-computer interfaces (BCIs). Enables LFP-only models to match spike-based decoding performance via knowledge distillation from bidirectional to causal architectures."
+description: "REALM methodology for LFP-based behavior decoding using retrospective distillation. Use when: building causal LFP decoding models, offline-to-online distillation for neural signals, Mamba-based neural sequence modeling, BCI decoding without spike signals, reducing bandwidth/power in implantable BCIs, behavior decoding from local field potentials. Activation: LFP decoding, REALM, retrospective distillation, causal neural decoding, wireless BCI, Mamba neural model, spike-free decoding."
 ---
 
 # REALM: Retrospective Encoder Alignment for LFP Modeling
 
-**Paper:** REALM: Retrospective Encoder Alignment for LFP Modeling (arXiv: 2605.14867)
-**Authors:** Peicheng Wu, Zhenyu Bu, Runze Ma, Lin Du
-**Published:** 2026-05-14
-**Categories:** cs.LG, cs.AI, q-bio.NC
+Methodology for causal LFP-based behavior decoding via retrospective distillation.
 
-## Problem Statement
+## Problem
 
-Spike activity dominates BCI behavior decoding due to high spatiotemporal resolution, but high sampling frequency creates power/bandwidth bottlenecks for wireless implantable BCIs. Local field potentials (LFPs) offer better stability, lower energy, and lower bandwidth, but LFP-based decoding typically has reduced accuracy and relies on non-causal architectures unsuitable for real-time deployment.
+Spike signals dominate BCI decoding but have high power/bandwidth costs. LFPs offer lower energy and bandwidth but causal LFP models show reduced accuracy vs. non-causal architectures.
 
-## Core Methodology
+## Solution: REALM Framework
 
-REALM proposes a **retrospective distillation framework** enabling causal LFP decoding that matches or exceeds spike-based approaches:
+Transfer knowledge from offline bidirectional model to causal real-time model via retrospective distillation.
 
-### Architecture
+## Architecture
 
-1. **Teacher Model (Offline, Bidirectional)**
-   - Mamba-2 state-space model architecture
-   - Pretrained using masked autoencoding objective across multiple sessions
-   - Non-causal: can see future context for optimal representation learning
-   - Learns rich latent representations of LFP dynamics
+### Teacher Model (Offline)
+- **Backbone**: Bidirectional Mamba-2
+- **Pretraining**: Masked autoencoding objective across multiple sessions
+- **Purpose**: Capture rich bidirectional temporal dependencies
 
-2. **Student Model (Online, Causal)**
-   - Compact causal version of the teacher architecture
-   - Trained via knowledge distillation from teacher
-   - Real-time deployment suitable: no future context required
-   - 2x parameter reduction, 10x training time reduction
+### Student Model (Real-time)
+- **Backbone**: Compact causal Mamba-2
+- **Training**: Combined objective of representation alignment + task supervision
+- **Purpose**: Real-time causal decoding with minimal parameters
 
-### Distillation Objective
-
-The student is trained with a combined loss:
-- **Representation Alignment**: Student encoder representations match teacher representations
-- **Task Supervision**: Standard behavior decoding loss (e.g., classification or regression)
-
-This bridges offline (bidirectional) and online (causal) neural decoding.
-
-### Key Results
-
-- Outperforms both causal and non-causal LFP SOTA methods for behavior decoding
-- 2x reduction in parameter count vs. baseline
-- 10x reduction in training time
-- LFP-only models achieve competitive decoding without spike signals
-
-## Implementation Workflow
-
-### Step 1: Data Preparation
-- Collect multi-session LFP recordings
-- Ensure consistent preprocessing (filtering, normalization)
-- Split into train/validation/test across sessions
-
-### Step 2: Teacher Pretraining (Bidirectional Mamba-2)
-```python
-# Masked autoencoding pretraining
-# Mask random time segments of LFP
-# Train Mamba-2 to reconstruct masked segments
-# Objective: minimize reconstruction loss across all sessions
+### Distillation Pipeline
+```
+Bidirectional Teacher (offline)
+    ↓ representation alignment + task supervision
+Causal Student (real-time)
+    ↓ behavior decoding output
 ```
 
-### Step 3: Knowledge Distillation
-```python
-# Combined objective:
-# L_total = L_task + λ * L_alignment
-# 
-# L_task: behavior decoding loss (cross-entropy/MSE)
-# L_alignment: MSE or cosine similarity between teacher/student representations
-# λ: alignment weight hyperparameter
-```
+## Key Results
 
-### Step 4: Causal Student Deployment
-- Deploy compact student model for real-time inference
-- No future context required
-- Suitable for wireless implantable BCI systems
+- Outperforms causal AND non-causal LFP-based SOTA methods
+- Significant parameter count reduction
+- Significant training time reduction
+- Competitive with spike-based decoding using LFP-only signals
+
+## Workflow
+
+1. **Pretrain Teacher**: Multi-session bidirectional Mamba-2 with masked autoencoding
+2. **Distill to Student**: Align representations + task supervision
+3. **Deploy**: Compact causal model for real-time wireless BCI
+
+## Implementation Notes
+
+- Mamba-2 state space model captures long-range temporal dependencies efficiently
+- Masked autoencoding pretraining leverages unlabeled multi-session data
+- Representation alignment preserves teacher's internal representations
+- Task supervision ensures decoding accuracy is maintained
+- Suitable for next-generation wireless implantable BCIs
 
 ## Activation Keywords
 
-- LFP decoding, local field potential
+- LFP decoding
+- REALM
 - retrospective distillation
 - causal neural decoding
-- knowledge distillation BCI
-- Mamba state-space model
 - wireless BCI
-- behavior decoding
-- offline-to-online distillation
-
-## Related Skills
-
-- mind2drive-eeg-driver-intention: EEG-based driver intention prediction
-- copilot-assisted-second-thought-bci: BCI framework for EEG-to-robot control
-- eeg-ieeg-bridge-bci: Bridging scalp EEG and intracranial EEG
-
-## References
-
-- Paper: https://arxiv.org/abs/2605.14867
-- PDF: https://arxiv.org/pdf/2605.14867
+- Mamba neural model
+- spike-free decoding
+- behavior decoding LFP
+- local field potential decoding
