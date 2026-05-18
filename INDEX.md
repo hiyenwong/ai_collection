@@ -1,3 +1,26 @@
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Elastic Spiking Transformers for Efficient Gesture Understanding
+- [[elastic-spiking-transformer-matryoshka]] - Matryoshka-style elastic Spiking Transformer with runtime-adaptive width/attention head slicing for deployment across hardware budgets without retraining (arXiv: 2605.13869)
+  - Single universal model dynamically slices network width and attention heads at inference time
+  - Reducing active neurons also lowers spike firing rates, yielding proportional reductions in synaptic operations
+  - Evaluated on CIFAR10/100, CIFAR10-DVS, and EHWGesture clinical gesture understanding dataset
+  - **Activation**: elastic spiking transformer, Matryoshka spiking network, runtime-adaptive SNN, dynamic width spiking, gesture understanding SNN
+
+### Evaluating Container Orchestration for Neuromorphic Workloads in Virtual Edge Environments
+- Paper on deploying SNN workloads with Kubernetes in edge environments (arXiv: 2605.15866)
+  - SNN workloads highly sensitive to resource availability (0.5 CPU cores → 47.6x latency increase)
+  - K3d default round-robin routing introduces significant tail latency under replica scaling
+  - Provides baseline for deploying neuromorphic workloads in containerized edge environments
+  - **Activation**: neuromorphic kubernetes, SNN edge deployment, container orchestration SNN
+
+### Control-Plane Openness in Near-Term Quantum Computing
+- Survey of 13 commercial quantum vendors across 4 modalities on control-plane openness (arXiv: 2605.15233)
+  - IBM removed pulse-level control from production QPUs in Feb 2025
+  - Mid-tier superconducting vendors and neutral-atom platforms moving toward more openness
+  - Documents what the field has lost as access landscape has shifted
+  - **Activation**: quantum control plane, quantum vendor survey, pulse-level access
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### Scalable Learning in Structured Recurrent Spiking Neural Networks without Backpropagation
