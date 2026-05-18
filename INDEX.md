@@ -1,3 +1,26 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### NeuroGAN-3D: Enhancing Intrinsic Functional Brain Networks via High-Fidelity 3D Generative Super-Resolution
+- [[neurogan-3d]] - 3D GAN for super-resolution of rs-fMRI spatial maps, enabling precise functional unit localization (arXiv: 2605.08373)
+  - First 3D GAN specifically designed for rs-fMRI spatial map enhancement
+  - Significantly outperforms conventional interpolation baselines
+  - Preserves biologically meaningful connectivity patterns at higher resolution
+  - **Activation**: NeuroGAN, fMRI super-resolution, 3D generative neuroimaging, volumetric brain maps, rs-fMRI enhancement
+
+### Prior Elicitation for Bayesian Estimation of Single-Subject Connectivity Networks
+- [[prior-elicitation-connectivity]] - Bayesian priors on correlation matrices with expert-informed hyperparameters for single-subject FC inference (arXiv: 2605.02587)
+  - Novel Bayesian priors on correlation matrices with interpretable hyperparameters
+  - Distributional (not point) connectivity weights with uncertainty quantification
+  - Significance testing via posterior credible sets — only 2nd Bayesian FC model for single-subject
+  - **Activation**: Bayesian functional connectivity, prior elicitation, single-subject FC, distributional connectivity weights, credible sets brain network
+
+### KAP-CPD: Kernel Aggregation for Change-Point Detection in Dynamic Networks
+- [[kap-cpd]] - Multi-kernel aggregation for change-point detection in dynamic brain networks, with fast analytic variant (arXiv: 2605.14463)
+  - Kernel-agnostic: aggregates multiple kernels to adapt to diverse change patterns
+  - Distribution-free: no assumptions about network distribution
+  - KAPf-CPD analytic variant for scalable long-sequence processing
+  - **Activation**: KAP-CPD, change-point detection, dynamic brain networks, kernel aggregation, time-varying functional connectivity
+
 ## 2026-05-12 - Systems Engineering Research (Cron Job)
 
 ### HySecTwin: A Knowledge-Driven Digital Twin Framework Augmented with Hybrid Reasoning for Cyber-Physical Systems
