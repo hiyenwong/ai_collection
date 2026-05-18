@@ -1,73 +1,119 @@
 ---
 name: leggett-garg-neural-dynamics
-description: Methodology for testing Leggett-Garg temporal correlations in neural dynamics to distinguish diffusive from non-diffusive stochastic models. Use when analyzing single-neuron dynamics, testing quantum-like temporal correlations in neural systems, probing non-Markovian structure in biological data, or distinguishing between diffusive and persistent stochastic processes. Triggered by: Leggett-Garg inequality, neural dynamics testing, Kac process, Telegrapher equation, non-diffusive neural models, temporal correlations in neurons.
+description: "Leggett-Garg inequality testing methodology for neural dynamics — probing non-diffusive stochastic structure in single neurons. Applies quantum temporal correlation analysis to distinguish diffusive (Wiener/cable-equation) models from persistent stochastic models in neural systems."
+tags: ["quantum", "neuroscience", "leggett-garg", "neural-dynamics", "temporal-correlations"]
 ---
 
 # Leggett-Garg Neural Dynamics Testing
 
 ## Description
-Test Leggett-Garg temporal correlations in single-neuron dynamics to distinguish
-diffusive (Wiener/cable-equation) models from non-diffusive persistent stochastic
-models based on Kac-type finite-velocity processes.
+
+Leggett-Garg inequality (LGI) testing methodology for probing non-diffusive stochastic structure in single-neuron dynamics. The LGI serves as a temporal analogue of Bell-type constraints, distinguishing between Markovian diffusive models (Wiener/cable-equation) and non-diffusive persistent stochastic models based on Kac-type finite-velocity processes leading to the Telegrapher's equation.
 
 ## Activation Keywords
-- Leggett-Garg inequality
-- neural dynamics testing
-- non-diffusive neural models
-- Kac process analysis
-- Telegrapher equation
-- temporal correlations neurons
-- non-Markovian neural structure
 
-## Core Methodology
+- leggett-garg neural
+- temporal correlations neuron
+- non-diffusive neural dynamics
+- quantum-like neural testing
+- LGI neuron dynamics
+- Kac process neural
+- Telegrapher equation brain
+- persistent stochastic neuron
 
-### Step 1: Define Observable
-Select neural observable O(t) (e.g., membrane potential, firing rate) at times t1, t2, t3.
+## Theoretical Foundation
 
-### Step 2: Compute Two-Time Correlations
-Calculate K(t1, t2) = <O(t1)O(t2)> from experimental or simulated data.
+### Two Classes of Stochastic Neural Dynamics
 
-### Step 3: Construct Leggett-Garg Quantity
-K_LG = K(t1,t2) + K(t2,t3) - K(t1,t3)
+**Class 1: Diffusive Models**
+- Based on Wiener noise and cable equation
+- Markovian, trajectory-based
+- Monotonic decay of temporal correlations
+- Always satisfies Leggett-Garg inequalities
 
-### Step 4: Test Inequality
-For macrorealistic (diffusive) systems: K_LG <= 1
-Violation indicates non-diffusive persistent stochastic dynamics.
+**Class 2: Persistent Stochastic Models**
+- Finite-velocity stochastic processes (Kac-type)
+- Non-Markovian, memory effects
+- Oscillatory temporal correlations
+- Can violate Leggett-Garg inequalities
 
-### Step 5: Interpret Results
-- Violation → evidence against trajectory-based diffusive description
-- NOT evidence of microscopic quantum coherence
-- Indicates persistence, memory, contextual temporal structure
+### Key Mathematical Objects
 
-## Mathematical Framework
-- Diffusive dynamics: Wiener process, cable equation
-- Non-diffusive: Kac-type finite-velocity processes → Telegrapher's equation
-- Analytic continuation: Kac processes ↔ Dirac-like envelope equations
+- **Telegrapher's Equation**: Arises from Kac-type finite-velocity processes
+- **Analytic Continuation**: Connection between Kac processes and Dirac-like envelope equations
+- **Leggett-Garg Inequality**: Temporal analogue of Bell constraints
+- **Temporal Correlations**: Measure persistence and memory in neural dynamics
 
-## Implementation
-```python
-import numpy as np
+## Methodology
 
-def leggett_garg_correlation(time_series, t1, t2, t3):
-    """Compute Leggett-Garg correlations from time series."""
-    def two_time_corr(data, ti, tj):
-        return np.mean(data[ti] * data[tj])
-    
-    K12 = two_time_corr(time_series, t1, t2)
-    K23 = two_time_corr(time_series, t2, t3)
-    K13 = two_time_corr(time_series, t1, t3)
-    
-    return K12 + K23 - K13
+### Step 1: Define Measurement Protocol
 
-# Test: violation if K_LG > 1 indicates non-diffusive dynamics
-```
+Select three measurement times t1 < t2 < t3 for temporal correlation testing.
+The LGI tests: K = C(t1,t2) + C(t2,t3) - C(t1,t3) <= 1
+where C(ti,tj) are two-time correlation functions.
+
+### Step 2: Experimental Design
+
+- Record single-neuron voltage or spike dynamics
+- Perform repeated measurements at specified time intervals
+- Compute two-time correlation functions C(ti,tj)
+- Test whether K exceeds the classical bound of 1
+
+### Step 3: Interpretation
+
+**LGI Satisfied (K <= 1)**: Dynamics consistent with trajectory-based diffusive models
+**LGI Violated (K > 1)**: Evidence of non-diffusive temporal correlations, memory effects, and contextual temporal structure
+
+### Conservative Interpretation
+
+Violation is NOT evidence of microscopic quantum coherence in the brain. Rather, it indicates:
+- Persistence in stochastic dynamics
+- Non-Markovian memory structure
+- Contextual temporal correlations analogous to quantum systems
+
+## Tools Used
+
+- Statistical analysis: Correlation function computation
+- Stochastic process modeling: Kac process simulation
+- Telegrapher's equation: Finite-velocity transport modeling
+- Time-series analysis: Neural dynamics measurement
+
+## Applications
+
+1. **Neural Dynamics Characterization**: Distinguish diffusive vs persistent stochastic models
+2. **Memory Effect Detection**: Identify non-Markovian structure in neurons
+3. **Quantum-Classical Boundary**: Probe classical systems with quantum-like temporal structure
+4. **Brain-Computer Interfaces**: Better models of neural signal propagation
+5. **Computational Neuroscience**: Refined models beyond cable equation
 
 ## Error Handling
-- Ensure sufficient temporal resolution to capture correlations
-- Account for measurement noise in experimental data
-- Multiple measurements needed for statistical significance
+
+### Insufficient Data
+- Need sufficient repeated measurements for statistical significance
+- Use bootstrapping for confidence intervals on K
+
+### Measurement Noise
+- Account for experimental noise in correlation estimation
+- Use noise-robust correlation estimators
+
+### Finite Sampling
+- Discrete time sampling may miss fine temporal structure
+- Use interpolation or continuous-time estimation methods
 
 ## References
-- Paper: arXiv:2605.12126 (Partha Ghose, 2026-05-12)
-- Leggett-Garg inequalities: temporal analogues of Bell inequalities
-- Kac processes: finite-velocity random walks
+
+- arXiv:2605.12126 - "Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons" (May 2026)
+- Kac, M. (1956) - "Probability and Some of Its Applications"
+- Leggett, A.J. & Garg, A. (1985) - "Quantum mechanics versus macroscopic realism"
+
+## Examples
+
+### Example: Single Neuron Testing
+
+**Scenario**: Test whether hippocampal CA1 neuron dynamics show persistent stochastic behavior.
+
+1. Record membrane potential at high temporal resolution
+2. Select measurement times t1, t2, t3 spaced by ~10ms
+3. Compute C(t1,t2), C(t2,t3), C(t1,t3) over repeated trials
+4. Calculate K = C(t1,t2) + C(t2,t3) - C(t1,t3)
+5. If K > 1 (with statistical significance), evidence of non-diffusive dynamics
