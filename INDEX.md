@@ -1,3 +1,22 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders
+- [[eeg-foundation-sae-interpretability]] - 使用TopK稀疏自编码器提取EEG基础模型的稀疏特征字典，通过临床概念探针量化单体语义性和纠缠度，实现概念操控和频率映射 (arXiv: 2605.13930v2)
+  - SAE从EEG transformer embeddings提取稀疏字典，跨SleepFM/REVE/LaBraM架构鲁棒迁移
+  - 概念操控揭示三种状态：可选择性操控、编码但纠缠、未编码
+  - 频谱解码器将潜在操控映射回生理频率特征（慢波抑制、α波段恢复）
+  - 年龄-病理纠缠：无法在不破坏另一概念的情况下抑制一个概念
+  - **"Wrecking-ball"效应**：大操控幅度导致全局性能崩溃
+  - **Activation**: EEG可解释性, 稀疏自编码器, EEG基础模型, 概念操控, 频谱解码
+
+### On the Stability of Growth in Structural Plasticity
+- [[structural-plasticity-growth-stability]] - 揭示神经网络生长操作并非剪枝的逆操作，发现"前向激活-后向饥饿"现象及新生单元集成稳定性问题 (arXiv: 2605.15435)
+  - 新生单元前向参与计算但接收比既有单元弱得多的梯度信号
+  - 在CNN等复杂架构中问题尤为显著，小MLP中不明显
+  - 生长策略在最终精度上可达高位，但轨迹平均性能和重训后子网络均不如剪枝
+  - 持续学习中生长策略的竞争力取决于新生单元是否有足够集成时间
+  - **Activation**: 结构可塑性, 动态生长, 新生单元集成, 梯度饥饿, 持续学习
+
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Afternoon)
 
 ### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
