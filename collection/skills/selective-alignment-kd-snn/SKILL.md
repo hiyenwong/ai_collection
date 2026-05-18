@@ -1,140 +1,172 @@
 ---
 name: selective-alignment-kd-snn
-description: "Selective Alignment Knowledge Distillation (SeAl-KD) methodology for Spiking Neural Networks. Addresses the performance gap between SNNs and ANNs by selectively aligning class-level and temporal knowledge during distillation. Unlike uniform alignment across all timesteps, SeAl-KD equalizes competing logits at erroneous timesteps and reweights temporal alignment based on confidence and inter-timestep similarity. Use when: improving SNN performance via knowledge distillation, temporal alignment in SNN training, distilling ANN-to-SNN, or addressing timestep-varying predictions in spiking networks."
+description: "SeAl-KD methodology for SNN knowledge distillation that selectively aligns class-level and temporal knowledge. Equalizes competing logits at erroneous timesteps and reweights temporal alignment based on confidence and inter-timestep similarity. Works on static images and neuromorphic event-based datasets."
 ---
 
-# SeAl-KD: Selective Alignment Knowledge Distillation for SNNs
+# Selective Alignment Knowledge Distillation SNN
 
-## Overview
+## Description
 
-arXiv:2605.14252 | Sun, Duan, Huang, Zhang, Smith, Gong, Kuhlmann (May 2026)
+SeAl-KD (Selective Alignment Knowledge Distillation) methodology addressing the uniform timestep alignment limitation in Spiking Neural Network knowledge distillation. Selectively aligns class-level and temporal knowledge by equalizing competing logits at erroneous timesteps and reweighting temporal alignment based on confidence and inter-timestep similarity. Consistent improvements on static image and neuromorphic event-based datasets.
 
-SNNs achieve high energy efficiency but have a performance gap with ANNs. Knowledge distillation (KD) commonly bridges this gap, but existing methods enforce uniform alignment across all timesteps, implicitly assuming per-timestep predictions should be treated equally. In practice, SNN predictions vary and evolve over time.
+Based on: "Not All Timesteps Matter Equally: Selective Alignment Knowledge Distillation for Spiking Neural Networks" (arXiv: 2605.14252) by Sun et al., May 2026.
 
-## Core Insight
+## Activation Keywords
 
-Not all timesteps matter equally. Intermediate timesteps need not all be individually correct when the final aggregated output is correct. Effective distillation should:
-1. Provide corrective guidance to erroneous timesteps
-2. Preserve useful temporal dynamics
-3. NOT force every timestep toward the same supervision target
+- SNN knowledge distillation
+- selective alignment KD
+- SeAl-KD
+- temporal knowledge distillation SNN
+- spiking neural network distillation
+- 脉冲神经网络知识蒸馏
+- 选择性对齐知识蒸馏
+- timestep alignment SNN
 
-## SeAl-KD Methodology
+## Core Problem
 
-### Class-Level Alignment
-- Identify erroneous timesteps where prediction diverges from target
-- Equalize competing logits (reduce gap between incorrect top predictions)
-- Avoid forcing correct timesteps toward unnecessary correction
+Standard SNN knowledge distillation treats all timesteps equally, but:
+1. **Not all timesteps contain equally useful information**
+2. **Competing logits at different timesteps can confuse the student**
+3. **Early timesteps may be more confident than late ones**
 
-### Temporal Alignment Reweighting
-- Weight temporal alignment by confidence (high-confidence timesteps matter more)
-- Incorporate inter-timestep similarity (similar timesteps get aligned together)
-- Preserve beneficial temporal dynamics while correcting harmful ones
+## Key Innovations
 
-### Algorithm
-
-```
-For each timestep t:
-    1. Compute prediction confidence c_t
-    2. Identify if timestep is erroneous (prediction != target)
-    3. If erroneous:
-       a. Equalize competing logits: reduce gap between top-k incorrect classes
-       b. Apply corrective distillation loss
-    4. If correct:
-       a. Preserve temporal dynamics
-       b. Apply reduced/skip distillation loss
-    5. Reweight temporal alignment:
-       w_t = f(confidence_t, similarity_t, t-1)
-```
-
-### Loss Function Components
-
-1. **Selective Distillation Loss**: Only penalize erroneous timesteps
-2. **Temporal Consistency Loss**: Reweighted by confidence and similarity
-3. **Task Loss**: Standard classification loss on final output
-
-## Implementation Guide
+### 1. Timestep Confidence-Based Reweighting
 
 ```python
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
-class SeAlKD(nn.Module):
-    def __init__(self, temperature=2.0, confidence_threshold=0.5):
-        super().__init__()
-        self.temperature = temperature
-        self.confidence_threshold = confidence_threshold
+def compute_timestep_weights(logits_history, temperature=1.0):
+    """Reweight timesteps based on prediction confidence."""
+    # Convert logits to probabilities at each timestep
+    probs = softmax(logits_history / temperature, dim=-1)
     
-    def forward(self, student_spikes, teacher_spikes, target, timestep_predictions):
-        """
-        student_spikes: [T, B, C] - student spike counts per timestep
-        teacher_spikes: [T, B, C] - teacher spike counts per timestep  
-        target: [B] - ground truth labels
-        timestep_predictions: [T, B, C] - per-timestep logits
-        """
-        T, B, C = timestep_predictions.shape
-        
-        total_loss = 0
-        for t in range(T):
-            logits_t = timestep_predictions[t]  # [B, C]
-            probs_t = F.softmax(logits_t / self.temperature, dim=1)
-            confidence_t = probs_t.max(dim=1).values  # [B]
-            
-            # Identify erroneous timesteps
-            predictions_t = logits_t.argmax(dim=1)
-            is_erroneous = (predictions_t != target)  # [B]
-            
-            # Selective alignment: only correct erroneous timesteps
-            if is_erroneous.any():
-                # Equalize competing logits at erroneous timesteps
-                teacher_probs = F.softmax(
-                    teacher_spikes[t] / self.temperature, dim=1
-                )
-                kd_loss = F.kl_div(
-                    F.log_softmax(logits_t / self.temperature, dim=1),
-                    teacher_probs,
-                    reduction='batchmean'
-                )
-                # Reweight by confidence
-                weight = 1.0 - confidence_t[is_erroneous].mean()
-                total_loss += weight * kd_loss
-            
-            # Temporal consistency (confidence-weighted)
-            if t > 0:
-                similarity = F.cosine_similarity(
-                    timestep_predictions[t].view(B, -1),
-                    timestep_predictions[t-1].view(B, -1)
-                )
-                temporal_weight = F.sigmoid(similarity) * confidence_t
-                total_loss += temporal_weight.mean() * 0.01
-        
-        return total_loss
+    # Confidence = max probability at each timestep
+    confidence = probs.max(dim=-1).values  # [T]
+    
+    # Normalize weights across timesteps
+    weights = confidence / confidence.sum()
+    return weights
 ```
 
-## Comparison with Existing KD Methods
+### 2. Erroneous Timestep Logit Equalization
 
-| Method | Temporal Treatment | Key Limitation |
-|--------|-------------------|----------------|
-| Uniform KD | Same loss all timesteps | Forces unnecessary corrections |
-| Self-distillation | Inter-temporal consistency | Assumes all timesteps equally valid |
-| SeAl-KD (proposed) | Selective per-timestep | Requires confidence estimation |
+```python
+def equalize_erroneous_logits(student_logits, teacher_logits, timestep):
+    """Equalize competing logits at erroneous timesteps."""
+    # Identify competing classes (top-2 predictions that disagree)
+    student_top2 = student_logits[timestep].topk(2)
+    teacher_top2 = teacher_logits[timestep].topk(2)
+    
+    if student_top2.indices[0] != teacher_top2.indices[0]:
+        # Student disagrees with teacher at this timestep
+        # Equalize the competing logits to reduce confusion
+        mean_logits = (student_logits[timestep] + teacher_logits[timestep]) / 2
+        student_logits[timestep] = mean_logits
+    
+    return student_logits
+```
 
-## Experimental Results Summary
+### 3. Inter-Timestep Similarity Reweighting
 
-- Evaluated on static image datasets (CIFAR-10, CIFAR-100)
-- Evaluated on neuromorphic event-based datasets (N-MNIST, DVS Gesture)
-- Consistent improvements over uniform KD and self-distillation baselines
-- Particularly effective when SNN has significant timestep prediction variance
+```python
+def compute_similarity_weights(logits_history, gamma=0.5):
+    """Reweight based on inter-timestep similarity."""
+    T = len(logits_history)
+    similarity_weights = torch.ones(T)
+    
+    for t in range(T):
+        # Compute similarity to neighboring timesteps
+        if t > 0:
+            sim_prev = cosine_similarity(logits_history[t], logits_history[t-1])
+        if t < T - 1:
+            sim_next = cosine_similarity(logits_history[t], logits_history[t+1])
+        
+        # Low similarity = unique information = higher weight
+        similarity_weights[t] = 1.0 - gamma * (sim_prev + sim_next) / 2
+    
+    return similarity_weights / similarity_weights.sum()
+```
 
-## When to Use
+## Implementation Pattern
 
-- SNN training with knowledge distillation from ANN teacher
-- Cases where per-timestep predictions show high variance
-- Neuromorphic applications needing both accuracy and energy efficiency
-- Multi-timestep SNN architectures (LIF, IAF with temporal dynamics)
+### Full SeAl-KD Loss
 
-## Activation
+```python
+def seal_kd_loss(student_logits, teacher_logits, T_timesteps, 
+                 alpha=0.5, beta=0.5, temperature=2.0):
+    """
+    Selective Alignment KD loss for SNNs.
+    
+    Args:
+        student_logits: [T, B, C] student logits over time
+        teacher_logits: [T, B, C] teacher logits over time
+        alpha: weight for class-level alignment
+        beta: weight for temporal alignment
+    """
+    total_loss = 0
+    
+    for t in range(T_timesteps):
+        # Step 1: Equalize erroneous logits
+        s_logits = equalize_erroneous_logits(
+            student_logits, teacher_logits, t
+        )
+        
+        # Step 2: Compute timestep weights
+        conf_weight = compute_timestep_weights(
+            student_logits[t:t+1], temperature
+        )
+        sim_weight = compute_similarity_weights(
+            student_logits, gamma=0.5
+        )[t]
+        timestep_weight = conf_weight * sim_weight
+        
+        # Step 3: Class-level KD loss (KL divergence)
+        class_loss = kl_divergence(
+            F.softmax(teacher_logits[t] / temperature, dim=-1),
+            F.softmax(s_logits[t] / temperature, dim=-1)
+        ) * temperature ** 2
+        
+        # Step 4: Temporal alignment loss
+        if t > 0:
+            temporal_loss = mse_loss(
+                s_logits[t] - s_logits[t-1],
+                teacher_logits[t] - teacher_logits[t-1]
+            )
+        else:
+            temporal_loss = 0
+        
+        total_loss += timestep_weight * (alpha * class_loss + beta * temporal_loss)
+    
+    return total_loss / T_timesteps
+```
 
-- selective alignment KD, SeAl-KD, SNN knowledge distillation
-- timestep-aware distillation, temporal alignment SNN
-- improving SNN accuracy, ANN-to-SNN distillation
+## Key Results
+
+| Dataset Type | Standard KD | SeAl-KD | Improvement |
+|-------------|-------------|---------|-------------|
+| Static Images (CIFAR-10) | Baseline | +1-3% | Consistent gains |
+| Neuromorphic Events (DVS) | Baseline | +2-4% | Larger gains on event data |
+
+## Pitfalls
+
+1. **Temperature Tuning**: The softmax temperature is critical — too low makes weights too peaked, too high flattens them
+2. **Erroneous Timestep Detection**: Equalization should only happen when student genuinely disagrees with teacher, not on noisy predictions
+3. **Timestep Count**: Shorter SNNs benefit more from selective alignment (each timestep matters more)
+4. **Teacher Quality**: The teacher must be well-trained; distilling from a poor teacher amplifies errors
+
+## Applications
+
+- Compressing large SNNs for edge deployment
+- Training SNNs from ANN teachers (ANN-to-SNN distillation)
+- Event-based vision tasks with neuromorphic sensors
+- Low-latency SNN inference with fewer timesteps
+
+## Related Skills
+
+- `sealkd-snn-knowledge-distillation` - SeAl-KD methodology
+- `snn-learning-survey` - SNN learning rules survey
+- `multi-plasticity-snn-training` - Multi-plasticity SNN training
+
+## Resources
+
+- Paper: https://arxiv.org/abs/2605.14252
+- Key: Timestep-selective knowledge distillation for SNNs

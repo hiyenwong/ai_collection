@@ -975,3 +975,40 @@
   - Consistent connectedness / no-disturbance as critical collapsing constraint
   - Exotic weights exceeding quantum bounds reachable without no-disturbance
   - **Activation**: non-boolean event structures, generalized softmax, consistent connectedness, no-disturbance, contextuality, exotic weights
+
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Scalable Neuromorphic Computing from Clockless Reconfigurable Chip
+- [[clockless-neuromorphic-chip]] - Autonomous Boolean spiking dynamics on clockless FPGA for low-power neuromorphic ML (arXiv: 2605.16114)
+  - Clockless (asynchronous) digital circuits produce autonomous spiking dynamics
+  - Boolean neurons with configurable excitatory/inhibitory synaptic weights
+  - Competitive audio classification at significantly lower power than digital implementations
+  - **Activation**: clockless neuromorphic, asynchronous spiking, FPGA neuromorphic, Boolean spiking neurons
+
+### Native Explainability for BCPNN: Trusted Brain-Like AI
+- [[native-explainability-bcpnn]] - Maps BCPNN architecture to 16 explanation primitives + 5 Configuration-as-Explanation primitives for EU AI Act compliance (arXiv: 2605.11595)
+  - Inherently transparent: weights, posteriors, attractor dynamics map to XAI modalities
+  - Attribution, prototype, concept, counterfactual, and mechanistic explanations
+  - Zero overhead compared to post-hoc XAI methods
+  - **Activation**: BCPNN explainability, native XAI brain-like, configuration-as-explanation, EU AI Act neural
+
+### Energy Efficiency of Quantum Computers
+- [[energy-efficiency-quantum-computers]] - First framework benchmarking energy efficiency across superconducting, silicon spin, trapped ion, neutral atom, and photonic platforms (arXiv: 2605.15090)
+  - Defines efficiency as algorithms performed over energy consumed
+  - Silicon spin qubits most promising (low cooling + CMOS scalability)
+  - Photonic platforms best efficiency (room temperature, low control energy)
+  - **Activation**: quantum energy efficiency, QC energy benchmark, sustainable quantum computing
+
+### DiffusionHijack: Supply-Chain PRNG Backdoor Attack + QRNG Defense
+- [[diffusionhijack-quantum-defense]] - PRNG hijacking forces pixel-perfect attacker content (SSIM=1.00) on SD/SDXL; QRNG defense neutralizes attack (arXiv: 2605.13115)
+  - Supply chain attack via compromised PRNG package — no weight modification needed
+  - Bypasses CLIP safety checkers at 98-100% success rate
+  - QRNG provides information-theoretic unpredictability (SSIM < 0.20)
+  - **Activation**: diffusion model backdoor, PRNG supply chain attack, quantum random number defense
+
+### Selective Alignment Knowledge Distillation for SNNs
+- [[selective-alignment-kd-snn]] - SeAl-KD selectively aligns class-level and temporal knowledge by reweighting timesteps based on confidence (arXiv: 2605.14252)
+  - Equalizes competing logits at erroneous timesteps
+  - Reweights temporal alignment by confidence and inter-timestep similarity
+  - Consistent improvements on static images and neuromorphic event datasets
+  - **Activation**: SNN knowledge distillation, selective alignment KD, SeAl-KD, timestep weighting
