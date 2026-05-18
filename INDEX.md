@@ -1,3 +1,13 @@
+## 2026-05-18 - Neuroscience Research (Cron Job - Night)
+
+### Are Cortical Microcircuits Optimized for Information Flux?
+- [[cortical-microcircuit-information-flux]] - Simulation-based reverse engineering showing cortical layer 5 embedding networks enhance information flux via effective biases and Recurrence Resonance, preventing attractor trapping (arXiv: 2605.14680)
+  - Core-embedding network architecture: densely connected core within larger supporting network
+  - Two key mechanisms: effective biases shift core to higher-entropy regime, stochastic fluctuations prevent attractor trapping via Recurrence Resonance
+  - Individually optimized biases can increase flux beyond biological embedding
+  - Applications: biological circuit interpretation, reservoir computing optimization, neuromorphic design
+  - **Activation**: information flux, cortical microcircuit, recurrence resonance, mutual information neural, reservoir computing optimization
+
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
 
 ### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
