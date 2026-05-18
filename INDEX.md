@@ -1,3 +1,16 @@
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Consciousness as Uncommon Self-Knowledge: A Synergistic Information Framework
+- [[uncommon-self-knowledge-consciousness]] - 将意识定义为系统对自身携带的协同信息，基于PID分解 (arXiv: 2605.13884)
+  - USK = 自指向协同信息，只存在于子系统联合观测中
+  - 区分意识与元认知，解决IIT/GWT/HOT反例
+  - **Activation**: consciousness, USK, synergistic information, PID, metacognition
+
+### QSeqSim: A Symbolic Simulator for Qiskit While Loops Using Sequential Quantum Circuits
+- [[qseqsim-quantum-while-loops]] - Qiskit量子while循环符号模拟器，填补迭代量子程序仿真空白 (arXiv: 2605.14881)
+  - 将量子while循环转换为有界顺序电路
+  - 符号化状态表示，高效处理测量分支
+  - **Activation**: QSeqSim, quantum while loops, sequential circuits, Qiskit
 ## 2026-05-18 - QPINN with Trainable Embeddings (Cron Job)
 
 ### A QPINN Framework with Quantum Trainable Embeddings for the Lid-Driven Cavity Problem
