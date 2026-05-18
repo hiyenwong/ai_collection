@@ -1,512 +1,573 @@
+     1|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
 ## 2026-05-18 - Neuroscience + Quantum (Cron Job)
-
-### Quantum Hyperdimensional Computing: a foundational paradigm for quantum neuromorphic architectures
-- [[quantum-hyperdimensional-computing]] - Quantum-native Hyperdimensional Computing mapping brain-inspired operations onto quantum primitives (arXiv: 2511.12664)
-  - HDC bundling → LCU + Oblivious Amplitude Amplification
-  - HDC binding → Quantum phase oracles
-  - HDC permutation → Quantum Fourier Transform
-  - HDC similarity → Hadamard Test for state fidelity
-  - Validated on 156-qubit IBM Heron r3; no variational training needed
-  - **Activation**: quantum hyperdimensional computing, QHDC, quantum neuromorphic, HDC quantum, quantum vector symbolic, brain-inspired quantum
-
-     1|## 2026-05-18 - Neuroscience + Quantum (Cron Job)
      2|
-     3|### GKSL Dynamics for Quantum-Like Cognition
-     4|- [[gksl-quantum-cognition]] - Open quantum systems framework (GKSL/Lindblad master equation) for quantum-like modeling of cognition and decision-making, with cognitive beat detection (arXiv: 2604.18643)
-     5|  - GKSL master equation models mental state evolution as dissipative process in Hilbert space
-     6|  - Active vs Passive Hamiltonian regimes distinguish cognitive agency from classical rationality
-     7|  - Cognitive beats: spectral signature of internal deliberation between competing flows of mind
-     8|  - **Activation**: GKSL dynamics, quantum-like cognition, Lindblad equation, cognitive beats, decision making, open quantum systems
-     9|
-    10|## 2026-05-18 - Neuroscience Research (Cron Job)
+     3|### Quantum Hyperdimensional Computing: a foundational paradigm for quantum neuromorphic architectures
+     4|- [[quantum-hyperdimensional-computing]] - Quantum-native Hyperdimensional Computing mapping brain-inspired operations onto quantum primitives (arXiv: 2511.12664)
+     5|  - HDC bundling → LCU + Oblivious Amplitude Amplification
+     6|  - HDC binding → Quantum phase oracles
+     7|  - HDC permutation → Quantum Fourier Transform
+     8|  - HDC similarity → Hadamard Test for state fidelity
+     9|  - Validated on 156-qubit IBM Heron r3; no variational training needed
+    10|  - **Activation**: quantum hyperdimensional computing, QHDC, quantum neuromorphic, HDC quantum, quantum vector symbolic, brain-inspired quantum
     11|
-    12|### REALM: Retrospective Encoder Alignment for LFP Modeling
-    13|- [[realm-lfp-retrospective-decoding]] - Retrospective distillation framework enabling high-performance causal LFP decoding for BCIs using Mamba-2 teacher-student architecture (arXiv: 2605.14867)
-    14|  - Bidirectional Mamba-2 teacher pretrained via masked autoencoding across sessions, distilled to causal student for real-time deployment
-    15|  - LFP-only models achieve competitive decoding performance with 2x parameter reduction and 10x faster training
-    16|  - **Activation**: LFP decoding, BCI, Mamba-2, knowledge distillation, causal decoder, wireless BCI, spike vs LFP
-    17|
-    18|### SpikeProphecy: Large-Scale Benchmark for Neural Population Forecasting
-    19|- [[spikeprophecy-benchmark]] - First large-scale benchmark for autoregressive spike-count forecasting with population metric decomposition on 105 Neuropixels sessions (arXiv: 2605.12992)
-    20|  - Decomposes evaluation into temporal fidelity (pop_rate_r), spatial pattern accuracy (spatial_r), and magnitude-invariant alignment (cosine_sim)
-    21|  - Reveals brain-region predictability hierarchy consistent across 7 architectures, sub-Poisson evaluation floor, and negative KL distillation result
-    22|  - **Activation**: spike forecasting, neural population, Neuropixels, metric decomposition, SSM, closed-loop BCI, digital twin
-    23|
-    24|## 2026-05-18 - Neuroscience Research (Cron Job)
-    25|
-    26|### Extended E-I Network Chaos-Synchrony Theory
-    27|## 2026-05-18 - Neuroscience + Quantum (Cron Job)
-    28|
-    29|### Parallel Scan Recurrent Neural Quantum States
-    30|- [[parallel-scan-neural-quantum-states]] - Parallel scan (prefix-sum) recurrence for GPU-parallelizable neural quantum state training in variational Monte Carlo (arXiv: 2605.13807)
-    31|  - Replaces O(N) sequential autoregressive sampling with O(log N) parallel scan
-    32|  - Enables 2D spin lattices up to 52x52 matching QMC accuracy with modest compute
-    33|  - Associative recurrence reformulation as critical design requirement
-    34|  - **Activation**: parallel scan NQS, neural quantum state, variational Monte Carlo, recurrent wave function, PSR-NQS, spin lattice simulation
-    35|
-    36|### Leggett-Garg Tests in Neural Dynamics
-    37|- [[leggett-garg-neural-dynamics]] - Leggett-Garg temporal correlation testing for distinguishing diffusive from non-diffusive stochastic neural dynamics (arXiv: 2605.12126)
-    38|  - Leggett-Garg inequality testing for temporal correlations in single neurons
-    39|  - Kac-type finite-velocity processes vs Wiener diffusive models
-    40|  - Conservative interpretation: violation ≠ quantum coherence, but against diffusive description
-    41|  - **Activation**: Leggett-Garg inequality, neural dynamics testing, Kac process, Telegrapher equation, non-diffusive neural models
-    42|
-    43|### Physics Guided Generative Optimization for Trotter Suzuki Decomposition
-    44|- [[physics-guided-generative-optimization]] - Generate-and-evaluate loop for quantum circuit optimization combining diffusion models, PINN feedback, and GNN encoding (arXiv: 2605.13268)
-    45|  - Conditional diffusion model proposes term grouping and formula order
-    46|  - PINN provides differentiable fidelity feedback for NISQ compilation
-    47|  - REINFORCE + Pareto tracking for hybrid discrete-continuous training space
-    48|  - **Activation**: generative quantum optimization, Trotter Suzuki decomposition, PINN feedback quantum, diffusion model circuit
-    49|
-    50|### Neural Fields for NV-Center Inverse Sensing
-    51|- [[neural-fields-quantum-sensing]] - Neural field methodology for quantum sensor inverse problems using amortization-free coordinate neural fields (arXiv: 2605.13988)
-    52|  - Coordinate neural field coupled to differentiable NV forward model
-    53|  - Tensor power-summed dipolar operator prevents center-collapse failure
-    54|  - Annealed positional encoding with multiscale optimization and sparsity gating
-    55|  - **Activation**: NV center sensing, quantum sensor inverse problem, neural field physics, differentiable quantum model
-    56|
-    57|- [[ei-network-chaos-synchrony-theory]] - Extends SCS chaos theory to E/I structured recurrent networks with target-specific inhibition, revealing three dynamical regimes and chaos suppression by coherent oscillations (arXiv: 2605.14916)
-    58|  - Target-specific inhibition breaks E-I balance, organizing phase diagram into inhibition-dominated (quiescent/async chaos), excitation-dominated (sync chaos/coherent oscillations)
-    59|  - Coherent oscillations actively suppress chaotic fluctuations — no coexistence regime
-    60|  - **Activation**: E-I network chaos, excitatory inhibitory balance, SCS theory extension, target-specific inhibition, chaos synchrony transition, dynamical mean field neural
-    61|
-    62|### Embodied Neurocomputation Framework
-    63|- [[embodied-neurocomputation-framework]] - Systems-level framework for interfacing biological neural cultures with silicon computing via closed-loop task-driven validation, achieving 12 successful configs out of 1,300 tested (arXiv: 2605.13315)
-    64|  - BNNs outperform DQN under matched interaction budgets for odor-gradient navigation tasks
-    65|  - Multi-combinatorial encoding/decoding optimization requires Bayesian or evolutionary strategies
-    66|  - **Activation**: biological neural network computation, BNN encoding decoding, bio-silicon hybrid, embodied neurocomputation, living neural computing
-    67|
-    68|### REALM: Retrospective Encoder Alignment for LFP Modeling
-    69|- REALM uses retrospective distillation to bridge offline-to-online LFP decoding, achieving 2× parameter reduction and 10× faster training while outperforming SOTA causal/non-causal methods (arXiv: 2605.14867)
-    70|  - Bidirectional Mamba-2 teacher → causal student via representation alignment + task supervision
-    71|  - Enables real-time wireless implantable BCI without spike signals
-    72|  - **Activation**: REALM, LFP modeling, retrospective distillation, causal neural decoding, wireless BCI, Mamba neural signal
-    73|
-    74|### Cortical Microcircuit Information Flux Optimization
-    75|- Reverse-engineering study showing cortical layer 5 embedding networks enhance information flux via effective biases and Recurrence Resonance, preventing attractor trapping (arXiv: 2605.14680)
-    76|  - Embedding network shifts core neurons to higher-entropy regime and supplies stochastic fluctuations
-    77|  - Optimized biases can emerge from simple self-organization principles
-    78|  - **Activation**: cortical microcircuit, information flux, recurrence resonance, reverse engineering neural network, cortical layer 5
-    79|
-    80|
-    81|## 2026-05-18 - 神经科学 + 量子力学 (Cron Job)
-    82|
-    83|### Rogue Variable Theory: A Quantum-Compatible Cognition Framework
-    84|- [[quantum-compatible-cognition-framework]] - 量子兼容认知框架，建模前事件认知状态和潜在解释竞争 (arXiv: 2601.00466)
-    85|  - 核心要点: Mirrored Personal Graph (MPG) 映射认知状态到希尔伯特空间
-    86|  - 核心要点: Rosetta Stone Layer (RSL) 实现跨用户认知状态比较
-    87|  - 核心要点: Rogue Operator 谱分析识别认知偏离方向
-    88|  - **Activation**: rogue variable theory, RVT, quantum cognition, pre-event states, cognitive complementarity
-    89|
-    90|### Natural Intelligence: the information processing power of life
-    91|- [[natural-intelligence-bio-ops]] - 量化生物系统信息处理能力，估计地球生命总计算量 (arXiv: 2506.16478)
-    92|  - 核心要点: 人体每秒执行 ~10^22 bio-ops，超过全球所有计算机总和
-    93|  - 核心要点: 大脑仅占总生物计算的一小部分
-    94|  - **Activation**: natural intelligence, bio-ops, biological computation, 生物信息处理
-    95|
-    96|### Quantum effects in the brain: A review
-    97|- [[quantum-effects-in-brain-review]] - 量子效应在大脑中的可能性评估框架 (arXiv: 1910.08423)
-    98|  - 核心要点: 系统评估量子生物学在神经科学中的证据
-    99|  - 核心要点: 退相干时间 vs 生物时间尺度是核心判据
-   100|  - **Activation**: quantum effects brain, quantum biology, microtubule quantum, 量子脑效应
-   101|
-   102|## 2026-05-18 - Neuroscience Research (Cron Job)
-   103|
-   104|### BiSpikCLM: Binary Spiking Causal Language Model
-   105|- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
-   106|  - SFSA eliminates softmax and floating-point ops in autoregressive language modeling, using binary spike-based computation
-   107|  - SpAD distills ANN→SNN across 4 levels (embeddings, attention maps, intermediate features, logits); 1.3B model trained with only 5.6% tokens
-   108|  - **Activation**: BiSpikCLM, binary spiking LLM, softmax-free spiking attention, spike-aware distillation, spiking language model, event-driven NLP
-   109|
-   110|### ASTDP-GAD: Neuromorphic Graph Anomaly Detection
-   111|- [[astdp-gad-neuromorphic-graph-anomaly]] - Adaptive Spiking Temporal Dynamics Plasticity framework combining spiking GNNs with STDP learning for energy-efficient anomaly detection in dynamic networks (arXiv: 2605.13863)
-   112|  - Six innovations: adaptive LIF spike encoding, LIFGAT with lateral inhibition, event-driven hypergraph memory, spike rate contrast pooling, adaptive STDP layers, multi-scale temporal fusion
-   113|  - Theoretical guarantees: LIFGAT universal approximation, STDP stable convergence, hypergraph prototype convergence, 5× variance reduction
-   114|  - **Activation**: ASTDP-GAD, spiking graph neural network, neuromorphic anomaly detection, STDP graph learning, LIF graph attention, event-driven graph anomaly
-   115|
-   116|### HormoneT5: Hormone-inspired Emotion Layer for Transformers
-   117|- [[hormone-t5-emotion-layer]] - Biologically-inspired Hormone Emotion Block augmenting transformers with six continuous hormone-like values via per-hormone attention heads for emotionally-appropriate response generation (arXiv: 2605.13858)
-   118|  - Six hormone dimensions (dopamine/serotonin/oxytocin/cortisol/adrenaline/endorphin) computed through orthogonal query attention with temperature scaling
-   119|  - Multi-objective training: seq2seq loss + hormone prediction with margin penalties + diversity regularization achieving 85%+ per-hormone accuracy
-   120|  - **Activation**: HormoneT5, HELT, hormone emotion layer, affective computing transformer, endocrine-inspired AI, emotional language models, bio-inspired emotion modeling
-   121|
-   122|### State-Space NTK Collapse Near Bifurcations
-   123|- [[state-space-ntk-collapse-bifurcations]] - Local theory of gradient descent near bifurcations via state-space neural tangent kernel (sNTK), showing sNTK collapses to rank-one operators matching classical normal forms (arXiv: 2605.12763)
-   124|  - Near codimension-1 bifurcations, sNTK reduces to rank-one operator in bifurcation-relevant channel
-   125|  - Low-rank natural gradient resolves learning instability near bifurcations with minimal overhead
-   126|  - **Activation**: state-space NTK, sNTK collapse, bifurcation learning dynamics, RNN training bifurcation, normal form learning theory, neural tangent kernel recurrent
-   127|
-   128|### Empirical Scaling Laws in Balanced Networks with Conductance-Based Synapses
-   129|- [[balanced-network-scaling-conductance]] - Cancellation effect between conductance-based synapses and spike time correlations produces realistic membrane potential variability (arXiv: 2605.12404)
-   130|  - Current-based + correlations overestimate variability; conductance-based alone underestimates
-   131|  - Both assumptions together yield moderate, realistic Vm variance across network sizes
-   132|  - **Activation**: balanced network conductance synapse, membrane potential variability, E/I balanced network, spike time correlation, cortical variability modeling
-   133|
-   134|## 2026-05-18 - Information Science + Quantum (Cron Job)
-   135|
-   136|### Toward Covert Quantum Computing
-   137|- [[covert-quantum-computing]] - Information-theoretic covertness analysis for multi-tenant quantum cloud computing, using discrete isoperimetric inequalities and quantum-strategy framework (arXiv: 2605.14325)
-   138|  - Only O(√n) border qubits provide detection information to adversary in planar layout
-   139|  - Long-range crosstalk from drive/control lines breaks covertness beyond nearest-neighbor model
-   140|  - **Activation**: covert quantum computing, quantum cloud security, quantum crosstalk, quantum side channel, QCU privacy, quantum isolation
-   141|
-   142|### Wavelet Variance Equipartition as Threshold for World-Model Quality and Quantum Kernel TN-Simulability
-   143|- [[wavelet-variance-equipartition-quantum]] - Physics-grounded metric for world-model latent space quality using wavelet scaling exponent α=1/2 as sharp boundary for quantum kernel classical simulability via tensor network contraction (arXiv: 2605.11557)
-   144|  - Wavelet scaling exponent α≈1/2 mirrors Kolmogorov inertial range, providing optimal representation quality diagnostic
-   145|  - Sharp phase transition at α=1/2 determines classical simulability of amplitude-encoded quantum kernels
-   146|  - **Activation**: wavelet variance equipartition, quantum kernel simulability, wavelet scaling exponent, tensor network contraction, world model quality, Kolmogorov inertial range
-   147|
-   148|### A Toolbox to Understand the Physics of Quantum Data Management
-   149|- [[quantum-data-management-toolbox]] - Physics-informed spectral analysis toolbox for evaluating quantum annealing in data management problems through energy gaps and eigenstate structure (arXiv: 2605.14719)
-   150|  - Spectral properties inaccessible from hardware measurements essential for understanding computational hardness
-   151|  - Bridging quantum computing and database research via physics-informed co-design framework
-   152|  - **Activation**: quantum data management, quantum annealing database, spectral analysis quantum, quantum-classical co-design, quantum optimization Hamiltonian
-   153|
-   154|## 2026-05-17 - Neuroscience Research (Cron Job)
-   155|
-   156|### NeuroTrain: SNN Training Survey & Benchmarking Framework
-   157|- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy and open-source benchmarking framework for SNN training algorithms, covering surrogate-gradient, local/three-factor learning, plasticity, and ANN-to-SNN conversion (arXiv: 2605.15058)
-   158|  - First unified taxonomy spanning 6 major SNN training paradigms with computational principles and locality analysis
-   159|  - Releases NeuroTrain: snnTorch-based open framework for reproducible benchmarking across datasets, architectures, and training regimes
-   160|  - **Activation**: neurotrain, SNN training taxonomy, local learning rules, surrogate gradient, three-factor learning, snnTorch benchmarking
-   161|
-   162|### Transport Mean Field for SNN Population Dynamics
-   163|- [[transport-mean-field-snn]] - 基于传输方程的SNN群体动力学解析理论，从初始电压分布推导脉冲率涨落，突破传统均值场稳态假设 (arXiv: 2605.14319)
-   164|  - Transport solution to advection equation replaces asymptotic steady-state mean field approaches
-   165|  - Captures firing rate fluctuations from dynamic interaction of initial conditions, time-varying inputs, and coupling
-   166|  - **Activation**: transport mean field, firing rate fluctuations, Fokker-Planck, LIF dynamics, neural population, initial density effects
-   167|
-   168|### Selective Alignment Knowledge Distillation for SNNs
-   169|- [[sealkd-snn-knowledge-distillation]] - Addresses SNN-ANN performance gap by selectively aligning class-level and temporal knowledge during distillation, correcting erroneous timesteps while preserving useful temporal dynamics (arXiv: 2605.14252)
-   170|  - Equalizes competing logits at erroneous timesteps rather than forcing uniform alignment
-   171|  - Reweights temporal alignment by confidence and inter-timestep similarity
-   172|  - **Activation**: selective alignment KD, SeAl-KD, SNN knowledge distillation, timestep-aware distillation
-   173|
-   174|### Dual-axis Zebrafish Circuit Attribution
-   175|- [[dual-axis-zebrafish-circuits]] - 斑马鱼顶盖微环路双轴归因框架，通过SNN消融量化子回路在能量效率和鲁棒性中的独立计算角色，并迁移至ANN架构 (arXiv: 2605.13924)
-   176|  - ns_TIN subcircuit: spike-efficient internal information gate (low spike footprint, measurable influence on prediction error)
-   177|  - superficial_TIN subcircuit: highest robustness sensitivity, feedback-like stabilization role
-   178|  - **Activation**: dual-axis attribution, zebrafish tectal circuit, energy-efficient architecture, robust neural network, SNN ablation
-   179|
-   180|### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
-   181|- [[fits-interpretable-spiking-neuron]] - SNN neuron factorizing temporal computation into Frequency Selectivity (FS) and Temporal Shaping (TS) modules, enabling learnable frequency preferences and group-delay modulation (arXiv: 2605.13071)
-   182|  - FS parameterizes each neuron's target frequency as maximizer of subthreshold magnitude response
-   183|  - TS reshapes when frequency components contribute to membrane voltage through group-delay modulation
-   184|  - **Activation**: FiTS, frequency selectivity spiking neuron, interpretable SNN, temporal shaping, group-delay modulation
-   185|
-   186|### NERVE: Network-Aware Brain FC Tokenization
-   187|- [[nerve-brain-fc-tokenization]] - Self-supervised FC representation learning via bilinear tokenization that respects brain network organization, reducing parameter complexity from quadratic to linear (arXiv: 2605.14048)
-   188|  - Bilinear factorization embeds heterogeneous network-pair patches while preserving network identity
-   189|  - Validated on ABCD, PNC, CCNP cohorts for behavior/psychopathology prediction with stable transferable representations
-   190|  - **Activation**: NERVE, brain FC tokenization, bilinear factorization, masked autoencoder brain, network-aware FC, self-supervised fMRI
-   191|
-   192|## 2026-05-17 - Neuroscience Research (Cron Job)
-   193|
-   194|### Multi-Timescale Conductance Spiking Networks
-   195|- [[multi-timescale-conductance-snn]] - Gradient-trainable spiking networks using multi-timescale conductances for energy-aware temporal processing, outperforming LIF and AdLIF without surrogate gradients (arXiv: 2605.11835)
-   196|  - I-V curve shaping via fast/slow/ultra-slow conductances enables rich firing regimes (tonic, phasic, bursting) in single model
-   197|  - Direct backpropagation through time without surrogate-gradient approximations
-   198|  - **Activation**: multi-timescale conductance, MTC-SNN, conductance spiking, gradient-trainable SNN, I-V curve shaping
-   199|
-   200|### Embodied Neurocomputation Framework
-   201|- [[embodied-neurocomputation]] - Systems-level framework for interfacing biological neural cultures with task-driven validation, BNN outperforms silicon DQN in closed-loop navigation (arXiv: 2605.13315)
-   202|  - First large-scale parameter optimization of BNN encoding configurations (~1,300 configs, 4,000+ hours)
-   203|  - 12 configurations demonstrated consistent learning, surpassing optimized DQN under same budget
-   204|  - **Activation**: embodied neurocomputation, biological neural networks, bio-silicon hybrid, BNN neurocomputation
-   205|
-   206|## 2026-05-17 - Information Science + Quantum (Cron Job)
-   207|
-   208|### Quantum Complexity in Gravity, QFT, and Quantum Information Science
-   209|- [[quantum-complexity-definitions]] - Bridges quantum information theory, many-body physics, QFT, and holography to unify definitions of quantum complexity (arXiv: 2503.10753)
-   210|  - Multiple complexity definitions: circuit complexity, geometric (unitary group geodesics), and dynamical (state/operator spreading via tensor networks)
-   211|  - Proposes relationship between boundary complexity and gravitational observables via AdS/CFT correspondence
-   212|  - **Activation**: quantum complexity, random quantum circuits, unitary geodesics, tensor network complexity, holographic complexity, AdS/CFT
-   213|
-   214|### Information-Theoretic Authenticated Private Information Retrieval
-   215|- [[information-theoretic-pir]] - Protocol enabling clients to privately retrieve database items with information-theoretic privacy and authenticity guarantees against malicious adversaries (arXiv: 2604.01551)
-   216|  - Achieves unconditional security: server learns nothing about retrieved item, client verifies response integrity
-   217|  - O(sqrt(n)) communication complexity using error-correcting codes and polynomial commitments
-   218|  - **Activation**: private information retrieval, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR
-   219|
-   220|### Quantum complexity in gravity, quantum field theory, and quantum information science
-   221|- [[quantum-complexity-definitions]] - Bridges quantum information theory, many-body physics, QFT, and holography to unify definitions of quantum complexity (arXiv: 2503.10753)
-   222|  - Multiple complexity definitions: circuit complexity, geometric (unitary group geodesics), and dynamical (state/operator spreading via tensor networks)
-   223|  - Proposes relationship between boundary complexity and gravitational observables via AdS/CFT correspondence
-   224|  - **Activation**: quantum complexity, random quantum circuits, unitary geodesics, tensor network complexity, holographic complexity, AdS/CFT
-   225|
-   226|### Information-Theoretic Authenticated Private Information Retrieval
-   227|- [[information-theoretic-pir]] - Protocol enabling clients to privately retrieve database items with information-theoretic privacy and authenticity guarantees against malicious adversaries (arXiv: 2604.01551)
-   228|  - Achieves unconditional security: server learns nothing about retrieved item, client verifies response integrity
-   229|  - O(sqrt(n)) communication complexity using error-correcting codes and polynomial commitments
-   230|  - **Activation**: private information retrieval, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR
-   231|
-   232|## 2026-05-18 - Information Science + Quantum (Cron Job)
-   233|
-   234|### New approaches to almost i.i.d. information theory
-   235|- [[almost-iid-quantum-information]] - Alternative frameworks for quantum information analysis using Wasserstein distance and k-body marginals, relaxing i.i.d. assumption (arXiv: 2605.15114)
-   236|  - Quantum Wasserstein distance defines almost-i.i.d. states beyond strict independence
-   237|  - Strict hierarchical relationship between Wasserstein and k-body marginal definitions
-   238|  - **Activation**: almost i.i.d., quantum Wasserstein distance, k-body marginals, non-i.i.d. quantum protocols
-   239|
-   240|### Wavelet Variance Equipartition as a Threshold for World-Model Quality and Quantum Kernel TN-Simulability
-   241|- [[wavelet-variance-equipartition-quantum]] - Physics-grounded spectral metric for assessing world-model quality and quantum kernel tensor network simulability (arXiv: 2605.11557)
-   242|  - Wavelet variance equipartition identifies threshold for latent space structural fidelity
-   243|  - Links world-model quality to quantum kernel tensor network simulability
-   244|  - **Activation**: wavelet variance equipartition, world-model quality, quantum kernel simulability, spectral analysis
-   245|
-   246|### ORCHID: Orchestrated Reduction Consensus for Hash-based Integrity in Distributed Ledgers
-   247|- [[orchid-distributed-consensus]] - Bio-inspired consensus protocol mapping neuroscientific binding problem to distributed ledger integrity (arXiv: 2605.12211)
-   248|  - Maps neural binding problem to distributed consensus coordination
-   249|  - Hierarchical orchestrated reduction with hash-based integrity verification
-   250|  - **Activation**: ORCHID consensus, bio-inspired consensus, distributed ledger integrity, hash-based verification
-   251|
-   252|### HQTN-SER: Speech Emotion Recognition with Hybrid Quantum Tensor Networks
-   253|- [[hqtn-speech-emotion-quantum]] - Hybrid quantum tensor network combining quantum tensor networks with classical ML for robust speech emotion recognition (arXiv: 2605.14523)
-   254|  - Tensor train decomposition compresses high-dimensional audio features
-   255|  - Quantum-enhanced expressivity captures subtle emotional cues under recording variability
-   256|  - **Activation**: HQTN speech emotion, quantum tensor network SER, hybrid quantum-classical emotion recognition
-   257|
-   258|### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
-   259|- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 2605.14219)
-   260|  - Models hybrid inputs as pairs of classical optimizer hyperparameters and quantum circuit parameters
-   261|  - Two-phase strategy: seed discovery (concolic) + local fuzzing around failure points
-   262|  - Local fuzzing is main driver of improvement; concolic seed discovery helps VQE but unstable for QAOA
-   263|  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing, VQE debugging
-   264|
-   265|## 2026-05-17 - Neuroscience Research (Cron Job)
-   266|
-   267|### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
-   268|- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
-   269|  - SFSA replaces softmax causal attention with spike-based Hadamard-masked integer dot product, eliminating all FP operations in attention
-   270|  - SpAD distillation enables training with only 5.6% of standard tokens (10B vs 180B), achieving 42.19% accuracy at 4.16% energy cost of OPT-1.3B
-   271|  - **Activation**: BiSpikCLM, binary spiking LLM, softmax-free attention, spiking NLP, MatMul-free language model, SFSA, spike-aware distillation
-   272|
-   273|### REALM: Retrospective Encoder Alignment for LFP Modeling
-   274|- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model for causal behavior decoding via retrospective distillation from bidirectional Mamba-2 teacher (arXiv: 2605.14867)
-   275|  - 3-stage pipeline: self-supervised CMAE pretraining → retrospective distillation → fine-tuning; achieves SOTA LFP decoding with 2× parameter reduction and 10× faster convergence
-   276|  - First real-time LFP decoder deployed on edge hardware (Jetson Orin Nano, RPi 5), enabling wireless implantable BCI without spike signals
-   277|  - **Activation**: REALM, LFP decoding, causal neural decoding, retrospective distillation, Mamba-2 BCI, wireless BCI, offline-to-online neural decoding
-   278|
-   279|## 2026-05-17 - Neuroscience Research (Cron Job)
-   280|
-   281|### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
-   282|- [[mamba-spike-forecaster-bci]] - Mamba state-space model trained on spike counts implicitly decodes behavior without supervised labels (arXiv: 2605.12999)
-   283|  - Single Mamba forecaster trained only on next-step Poisson rate prediction simultaneously forecasts neural dynamics AND decodes behavior
-   284|  - Predicted rates carry more behavioral info than raw spike counts (75.7% choice decoding vs ~70% linear baseline on Steinmetz benchmark)
-   285|  - **Activation**: mamba spike forecaster, behavioral decoding, BCI closed-loop, Neuropixels decoding, neural population forecasting
-   286|
-   287|### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
-   288|- [[neural-code-language-interpretability]] - LLM-driven closed-loop framework generates and verifies semantic hypotheses for neuron selectivity (arXiv: 2605.12485)
-   289|  - Gemini 3.0 Pro + Imagen 4.0 + digital twins create testable natural language descriptions of what each V1/V4 neuron encodes
-   290|  - Hypothesis-generated images drove 96.1% of V4 neurons above 95th percentile of natural-image responses (vs 10% random baseline)
-   291|  - **Activation**: neural code speak, semantic hypothesis, neuron characterization, language-based interpretability, digital twin visual cortex
-   292|
-   293|---
-   294|
-   295|
-   296|### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
-   297|- [[neurotrain-snn-benchmarking]] - Comprehensive SNN training algorithm taxonomy and open benchmarking framework spanning surrogate-gradient, local/three-factor learning, predictive coding, and neuromodulated plasticity (arXiv: 2605.15058)
-   298|  - First unified taxonomy of SNN training algorithms with standardized benchmarking
-   299|  - Local learning rules achieve competitive accuracy with significantly lower memory than backprop
-   300|  - **Activation**: SNN, spiking neural network, local learning, benchmarking, surrogate gradient, STDP, three-factor learning, predictive coding
-   301|
-   302|### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
-   303|- [[mamba-spike-population-forecaster]] - Single Mamba forecaster trained on next-step spike counts simultaneously predicts neural activity and decodes behavior, outperforming linear decoders on raw spikes (arXiv: 2605.12999)
-   304|  - Mamba's predicted rates decode mouse choice at 75.7% (2.3x chance) and stimulus side at 66.1% (2x chance)
-   305|  - ~100-150 trial calibration brings readout within 1-2pp of asymptote; fits 50ms bin budget on workstation GPUs
-   306|  - **Activation**: Mamba, spike forecasting, behavioral decoding, Neuropixels, closed-loop BCI, visual discrimination
-   307|
-   308|### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
-   309|- [[spatiotemporal-tdann-mt-direction-maps]] - Spatiotemporal TDANN framework showing MT direction maps emerge from self-supervised contrastive learning with spatial regularization, unifying ventral and dorsal stream self-organization (arXiv: 2605.11718)
-   310|  - Model reproduces macaque MT DSI, circular variance, and pinwheel density (~3.14/mm2) from naturalistic video alone
-   311|  - MT tuning properties emerge from trade-off between discriminative pressure and spatial regularization
-   312|  - **Activation**: TDANN, MT cortex, direction selectivity, self-organization, MoCo, visual cortex, dorsal stream
-   313|
-   314|### Are Cortical Microcircuits Optimized for Information Flux? - A Simulation-based Reverse Engineering Study
-   315|- [[cortical-microcircuit-information-flux]] - Simulation-based reverse engineering of cortical microcircuits using mutual information between network states to evaluate structural optimization (arXiv: 2605.14680)
-   316|  - Cortical-like connectivity with E/I balance significantly outperforms random networks for information flux
-   317|  - Demonstrates evolutionary optimization of neural architecture for information processing capacity
-   318|  - **Activation**: cortical microcircuit, information flux, E/I balance, reverse engineering, mutual information, layer 5
-   319|
-   320|## 2026-05-17 - Information Science + Quantum (Cron Job)
-   321|
-   322|### Toward Covert Quantum Computing
-   323|- [[covert-quantum-computing]] - Privacy-preserving multi-tenant quantum computation framework analyzing adversarial detection, spatial isolation, and crosstalk side channels (arXiv: 2605.14325)
-   324|  - Only O(√n) border qubits provide detection information under nearest-neighbor crosstalk model
-   325|  - Long-range coupling from drive/control lines creates exploitable side channels
-   326|  - **Activation**: covert quantum computing, quantum privacy, multi-tenant security, crosstalk
-   327|
-   328|### Energy efficiency of quantum computers
-   329|- [[quantum-energy-efficiency]] - Framework defining energy efficiency metric for quantum computers as algorithms-per-joule, enabling cross-platform comparison of superconducting, trapped-ion, neutral-atom, and photonic platforms (arXiv: 2605.15090)
-   330|  - Energy efficiency = N algorithms executed / E joules consumed
-   331|  - Accounts for full hardware stack: cryogenics, control electronics, error correction
-   332|  - **Activation**: quantum energy efficiency, quantum power consumption, platform comparison
-   333|
-   334|### A Toolbox to Understand the Physics of Quantum Data Management
-   335|- [[quantum-data-management-toolbox]] - Physics-based framework mapping quantum device behavior to database problem structure, evaluating quantum annealing for query optimization and data management (arXiv: 2605.14719)
-   336|  - Maps QUBO formulations to quantum annealer connectivity constraints
-   337|  - Provides classical baselines for quantum advantage assessment
-   338|  - **Activation**: quantum data management, quantum database, quantum annealing QUBO
-   339|
-   340|### CyberAId: AI-Driven Cybersecurity for Financial Service Providers
-   341|- [[cyberaid-ai-security-framework]] - Hybrid multi-agent AI security framework combining LLM subagents with SIEM/XDR telemetry, privacy-preserving federation, and quantum authentication for financial services (arXiv: 2605.01892)
-   342|  - Specialist subagents reason over classical telemetry rather than replacing it
-   343|  - Four falsifiable design principles with bounded human-in-the-loop autonomy
-   344|  - **Activation**: AI cybersecurity, multi-agent SOC, collaborative defense, SIEM LLM
-   345|## 2026-05-17 - 信息学/量子力学 (Cron Job)
-   346|
-   347|### QAP-Router: Tackling Qubit Routing as Dynamic Quadratic Assignment with Reinforc
-   348|- [[qap-router-tackling-qubit-routing-dynamic]] - Qubit routing is a fundamental problem in quantum compilation, known to be NPhard (arXiv: 2605.12365)
-   349|  - Core methodology from recent arxiv paper
-   350|  - Category: quant-ph
-   351|  - **Activation**: quantum, learning, network, gate, routing
-   352|## 2026-05-17 - 信息学/量子力学 (Cron Job)
-   353|
-   354|### CERTIFY-ED: A Multi-Layer Verification Framework for Exact Diagonalization of Qu
-   355|- [[certify-ed-multi-layer-verification-framework-exact]] - Exact diagonalization (ED) is a workhorse technique in computational quantum many-body physics, but  (arXiv: 2605.11787)
-   356|  - Core methodology from recent arxiv paper
-   357|  - Category: cond-mat.str-el
-   358|  - **Activation**: quantum, algorithm, machine, verification
-   359|## 2026-05-17 - Information Science (Cron Job)
-   360|
-   361|### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
-   362|- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 1188)
-   363|  - Local fuzzing around non-convergent seeds drives most improvement over random testing
-   364|  - Concolic seed discovery effective for VQE, less stable for QAOA
-   365|  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing
-   366|
-   367|
-   368|### Toward Covert Quantum Computing
-   369|- [[quantum-information-security]] - 多租户量子云平台中的隐蔽计算与侧信道分析模式 (arXiv: 2605.14325)
-   370|  - O(√n) 边界量子比特提供泄露信息，但长程耦合超越边界假设
-   371|  - 使用量子策略框架建模自适应对手的检测能力
-   372|  - 控制线泄漏导致空间隔离策略失效
-   373|  - **Activation**: covert quantum computing, crosstalk, side channel, spatial isolation
-   374|
-   375|### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
-   376|- [[quantum-information-security]] - 混合量子-经典程序的两阶段失败导向模糊测试方法 (arXiv: 2605.14219)
-   377|  - 先搜索非收敛种子再局部模糊电路参数的两阶段策略
-   378|  - 失败引导局部模糊测试是改进随机测试的主要驱动力
-   379|  - 合解种子发现对 VQE 有效但对 QAOA 不稳定
-   380|  - **Activation**: quantum fuzzing, HQC testing, VQE, QAOA, concolic testing
-   381|
-   382|
-   383|### Blind Quantum Computation on a Modular Superconducting Processor
-   384|- [[blind-quantum-computation]] - 盲量子计算方法论，实现云端量子计算中算法/输入/输出的信息论安全 (arXiv: 2605.14656v1)
-   385|    - 基于测量基量子计算的UBQC协议，客户端仅需有限量子能力即可委托计算
-   386|    - 模块化超导处理器架构实现分布式盲计算，降低单模块量子比特需求
-   387|  - **Activation**: blind quantum computation, secure quantum cloud, quantum privacy, delegated quantum computing, UBQC, measurement-based quantum computing
-   388|### New approaches to almost i.i.d. information theory
-   389|- [[almost-iid-quantum-information]] - Strict hierarchy of almost i.i.d. quantum state definitions (Wasserstein, k-body marginals, Mazzola) (arXiv: 1165)
-   390|  - Establishes strict separation between three definitions of "almost i.i.d." quantum states
-   391|  - Quantum Wasserstein distance bridges gap between physical relevance and mathematical tractability
-   392|  - **Activation**: almost i.i.d. quantum, quantum Wasserstein distance, k-body marginals
-   393|
-   394|## 2026-05-17 - Information Science + Quantum (Cron Job) - Update
-   395|
-   396|### QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling
-   397|- [[qlam-quantum-attention-memory]] - 量子长注意力记忆方法，利用量子叠加实现长程依赖建模，降低注意力复杂度 (arXiv: 2605.13833v1)
-   398|    - 量子叠加态并行编码所有token对注意力分数，振幅放大提取重要长程依赖
-   399|    - 混合经典-量子架构：经典编码局部特征，量子模块处理长程依赖
-   400|  - **Activation**: quantum attention, QLAM, long sequence quantum, quantum memory, long-range dependencies, quantum transformer
-   401|
-   402|
-   403|
-   404|## 2026-05-17 - Neuroscience Research (Cron Job)
-   405|
-   406|### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
-   407|- [[neurotrain-snn-benchmarking]] - 首次统一SNN训练算法分类体系，发布开源snnTorch基准测试框架 (arXiv: 2605.15058v1)
-   408|    - 覆盖代理梯度反传、局部学习、三因子规则、ANN转SNN、非标准优化五大类
-   409|    - 揭示生物合理性-计算效率-任务性能的权衡三角关系
-   410|  - **Activation**: SNN training, neurotrain, surrogate gradient, local learning rules, three-factor learning, ANN-to-SNN conversion, snnTorch benchmarking
-   411|
-   412|### REALM: Retrospective Encoder Alignment for LFP Modeling
-   413|- [[realm-lfp-retrospective-decoding]] - 回顾性蒸馏框架实现因果LFP行为解码，适用于无线植入BCI (arXiv: 2605.14867v1)
-   414|    - 双向Mamba-2教师模型掩码自编码预训练，蒸馏至紧凑因果学生模型
-   415|    - 参数量减半、训练时间减少10倍，性能超越因果/非因果LFP SOTA
-   416|  - **Activation**: LFP decoding, REALM, retrospective distillation, causal BCI, local field potential, Mamba neural decoding, spike-free decoding
-   417|
-   418|### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
-   419|- [[approximate-macroscopic-dynamics-snn-transport]] - 通过输运方程解析推导SNN群体放电率波动涌现机制 (arXiv: 2605.14319v1)
-   420|    - 基于输运解而非传统均值场假设，捕获时变输入下的放电率波动
-   421|    - 揭示初始电压分布、时变输入与网络耦合的动态交互
-   422|  - **Activation**: macroscopic dynamics, transport equation, firing rate fluctuations, Fokker-Planck, mean field, integrate-and-fire
-   423|
-   424|
-   425|## 2026-05-17 - Systems Engineering Research (Cron Job)
-   426|
-   427|### Sheaves as a Means of Maintaining Consistency in Model-based Systems Engineering
-   428|- [[sheaf-consistency-mbse]] - 用层论(presheaf/sheaf condition)建模MBSE多视图一致性，仅检查pairwise interface compatibility即可证明全局一致性 (arXiv: 2605.08609)
-   429|    - Sheaf condition等价于pairwise overlap compatibility，全局一致性可简化为O(N²)检查
-   430|    - Limit-preserving functors派生属性继承一致性保证，Lean 4+Mathlib机器验证
-   431|    - 适用于CPS架构设计：电气/热/机械/软件多工程视图一致性管理
-   432|  - **Activation**: sheaf theory MBSE, model-based systems engineering consistency, multi-view architecture, CPS design consistency, category theory systems engineering, presheaf design spaces, 层论系统一致性
-   433|
-   434|## 2026-05-17 - Neuroscience Research (Cron Job)
-   435|
-   436|### Multiple mechanisms of rhythm switching in recurrent neural networks with adaptive time constants
-   437|- [[rhythm-switching-adaptive-time-constants-rnn]] - RNNs with neuron-specific learnable time constants exhibit multiple mechanisms for rhythm switching across frequency bands (arXiv: 2605.14388v1)
-   438|    - Time constant specialization creates multi-scale temporal basis in RNNs
-   439|    - Cross-frequency coupling emerges naturally from heterogeneous time constants
-   440|  - **Activation**: rhythm switching, adaptive time constants, RNN oscillations, multi-frequency, leaky integrator
-   441|
-   442|### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
-   443|- [[implicit-behavioral-decoding-spike-forecasts]] - Mamba forecaster trained on spike counts implicitly learns behaviorally-relevant representations (arXiv: 2605.12999v1)
-   444|    - Single Mamba model delivers both neural forecasts and behavioral readouts in one pass
-   445|    - Predicted rates enable better behavioral decoding than raw spikes
-   446|  - **Activation**: behavioral decoding, spike forecasting, Mamba, Neuropixels, closed-loop BCI
-   447|
-   448|
-   449|## 2026-05-17 - Information Science + Quantum (Cron Job)
-   450|
-   451|### Universal quantum resource distillation via composite generalised quantum Stein's lemma
-   452|- [[quantum-resource-distillation]] - 量子资源蒸馏/对称性分析的统一框架 (arXiv: 2605.15174)
-   453|    - 复合广义量子Stein引理建立统一的资源蒸馏速率
-   454|    - 所有量子资源理论的信息论量统一控制蒸馏效率
-   455|    - 适用于纠缠/魔态/相干性蒸馏协议设计
-   456|  - **Activation**: quantum resource distillation, quantum Stein's lemma, entanglement distillation, magic state distillation, 量子资源蒸馏
-   457|
-   458|### Non-Invertible Symmetries on Tensor-Product Hilbert Spaces and Quantum Cellular Automata
-   459|- [[quantum-cellular-automata-symmetries]] - 量子资源蒸馏/对称性分析的统一框架 (arXiv: 2605.15194)
-   460|    - 可实现的融合范畴对称性必须是弱积分的(FPdim=√n)
-   461|    - 量子元胞自动机(QCA)提供对称性细化分类机制
-   462|    - 非可逆对称性作为拓扑码逻辑算子的新视角
-   463|  - **Activation**: quantum cellular automata, non-invertible symmetry, fusion category, 量子元胞自动机, 非可逆对称性
-   464|
-   465|
-   466|## 2026-05-17 - Neuroscience Research (Cron Job)
-   467|
-   468|### REALM: Retrospective Encoder Alignment for LFP Modeling
-   469|- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model using retrospective distillation for causal real-time BCI decoding (arXiv: 2605.14867)
-   470|  - 核心要点: Bidirectional Mamba-2 teacher → causal Mamba-2 student via representation alignment + task supervision
-   471|  - 核心要点: 2× parameter reduction, 10× training speedup, deployable on Jetson Orin Nano / Raspberry Pi 5
-   472|  - **Activation**: LFP decoding, brain-computer interface, local field potentials, REALM, causal neural decoding, knowledge distillation BCI
-   473|
-   474|### Are cortical microcircuits optimized for information flux?
-   475|- [[cortical-microcircuit-information-flux-optimization]] - Simulation-based reverse engineering reveals how cortical core-periphery architecture enhances information flux via bias + recurrence resonance (arXiv: 2605.14680)
-   476|  - 核心要点: Embedded Core Model (ECM) shows peripheral neurons provide effective biases and stochastic fluctuations that shift core into higher-entropy regime
-   477|  - 核心要点: Self-organizing bias principle drives neurons toward maximal entropy, exceeding biological embedding performance
-   478|  - **Activation**: cortical microcircuit, information flux, reverse engineering neural networks, core-periphery architecture, recurrence resonance
-   479|
-   480|
-   481|
-   482|## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
-   483|
-   484|### New approaches to almost i.i.d. information theory
-   485|- [[almost-iid-quantum-information]] - Methodology for analyzing almost i.i.d. quantum states via Wasserstein distance and k-body marginals (arXiv: 2605.15114)
-   486|  - Three hierarchical definitions: k-body marginals, quantum Wasserstein, Mazzola et al. notion
-   487|  - Strict separation proven with explicit counterexamples
-   488|  - **Activation**: almost iid quantum, quantum wasserstein distance, quantum information theory non-iid, 量子信息论
-   489|
-   490|### Mixed-State Long-Range Entanglement from Dimensional Constraints
-   491|- [[mixed-state-lre-dimensions]] - New mechanism for LRE in symmetric mixed states via translation-invariant subspace (arXiv: 2605.15201)
-   492|  - Maximally mixed state in translation-invariant subspace on 1D ring is LRE
-   493|  - SRE states span polynomial subspace vs exponential full subspace
-   494|  - **Activation**: long-range entanglement, mixed state quantum, translation symmetry
-   495|
-   496|### Non-Invertible Symmetries and Quantum Cellular Automata
-   497|- [[non-invertible-symmetries-qca]] - Fusion category symmetries on tensor-product Hilbert spaces with QCAs (arXiv: 2605.15194)
-   498|  - QCA-refined realizations of fusion categories with symmetry-operator index constraints
-   499|  - Proves bounds on realizable symmetries under physical defect assumptions
-   500|  - **Activation**: quantum cellular automata, non-invertible symmetry, fusion category
+    12|     1|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Neuroscience + Quantum (Cron Job)
+    13|     2|
+    14|     3|### GKSL Dynamics for Quantum-Like Cognition
+    15|     4|- [[gksl-quantum-cognition]] - Open quantum systems framework (GKSL/Lindblad master equation) for quantum-like modeling of cognition and decision-making, with cognitive beat detection (arXiv: 2604.18643)
+    16|     5|  - GKSL master equation models mental state evolution as dissipative process in Hilbert space
+    17|     6|  - Active vs Passive Hamiltonian regimes distinguish cognitive agency from classical rationality
+    18|     7|  - Cognitive beats: spectral signature of internal deliberation between competing flows of mind
+    19|     8|  - **Activation**: GKSL dynamics, quantum-like cognition, Lindblad equation, cognitive beats, decision making, open quantum systems
+    20|     9|
+    21|    10|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Neuroscience Research (Cron Job)
+    22|    11|
+    23|    12|### REALM: Retrospective Encoder Alignment for LFP Modeling
+    24|    13|- [[realm-lfp-retrospective-decoding]] - Retrospective distillation framework enabling high-performance causal LFP decoding for BCIs using Mamba-2 teacher-student architecture (arXiv: 2605.14867)
+    25|    14|  - Bidirectional Mamba-2 teacher pretrained via masked autoencoding across sessions, distilled to causal student for real-time deployment
+    26|    15|  - LFP-only models achieve competitive decoding performance with 2x parameter reduction and 10x faster training
+    27|    16|  - **Activation**: LFP decoding, BCI, Mamba-2, knowledge distillation, causal decoder, wireless BCI, spike vs LFP
+    28|    17|
+    29|    18|### SpikeProphecy: Large-Scale Benchmark for Neural Population Forecasting
+    30|    19|- [[spikeprophecy-benchmark]] - First large-scale benchmark for autoregressive spike-count forecasting with population metric decomposition on 105 Neuropixels sessions (arXiv: 2605.12992)
+    31|    20|  - Decomposes evaluation into temporal fidelity (pop_rate_r), spatial pattern accuracy (spatial_r), and magnitude-invariant alignment (cosine_sim)
+    32|    21|  - Reveals brain-region predictability hierarchy consistent across 7 architectures, sub-Poisson evaluation floor, and negative KL distillation result
+    33|    22|  - **Activation**: spike forecasting, neural population, Neuropixels, metric decomposition, SSM, closed-loop BCI, digital twin
+    34|    23|
+    35|    24|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Neuroscience Research (Cron Job)
+    36|    25|
+    37|    26|### Extended E-I Network Chaos-Synchrony Theory
+    38|    27|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Neuroscience + Quantum (Cron Job)
+    39|    28|
+    40|    29|### Parallel Scan Recurrent Neural Quantum States
+    41|    30|- [[parallel-scan-neural-quantum-states]] - Parallel scan (prefix-sum) recurrence for GPU-parallelizable neural quantum state training in variational Monte Carlo (arXiv: 2605.13807)
+    42|    31|  - Replaces O(N) sequential autoregressive sampling with O(log N) parallel scan
+    43|    32|  - Enables 2D spin lattices up to 52x52 matching QMC accuracy with modest compute
+    44|    33|  - Associative recurrence reformulation as critical design requirement
+    45|    34|  - **Activation**: parallel scan NQS, neural quantum state, variational Monte Carlo, recurrent wave function, PSR-NQS, spin lattice simulation
+    46|    35|
+    47|    36|### Leggett-Garg Tests in Neural Dynamics
+    48|    37|- [[leggett-garg-neural-dynamics]] - Leggett-Garg temporal correlation testing for distinguishing diffusive from non-diffusive stochastic neural dynamics (arXiv: 2605.12126)
+    49|    38|  - Leggett-Garg inequality testing for temporal correlations in single neurons
+    50|    39|  - Kac-type finite-velocity processes vs Wiener diffusive models
+    51|    40|  - Conservative interpretation: violation ≠ quantum coherence, but against diffusive description
+    52|    41|  - **Activation**: Leggett-Garg inequality, neural dynamics testing, Kac process, Telegrapher equation, non-diffusive neural models
+    53|    42|
+    54|    43|### Physics Guided Generative Optimization for Trotter Suzuki Decomposition
+    55|    44|- [[physics-guided-generative-optimization]] - Generate-and-evaluate loop for quantum circuit optimization combining diffusion models, PINN feedback, and GNN encoding (arXiv: 2605.13268)
+    56|    45|  - Conditional diffusion model proposes term grouping and formula order
+    57|    46|  - PINN provides differentiable fidelity feedback for NISQ compilation
+    58|    47|  - REINFORCE + Pareto tracking for hybrid discrete-continuous training space
+    59|    48|  - **Activation**: generative quantum optimization, Trotter Suzuki decomposition, PINN feedback quantum, diffusion model circuit
+    60|    49|
+    61|    50|### Neural Fields for NV-Center Inverse Sensing
+    62|    51|- [[neural-fields-quantum-sensing]] - Neural field methodology for quantum sensor inverse problems using amortization-free coordinate neural fields (arXiv: 2605.13988)
+    63|    52|  - Coordinate neural field coupled to differentiable NV forward model
+    64|    53|  - Tensor power-summed dipolar operator prevents center-collapse failure
+    65|    54|  - Annealed positional encoding with multiscale optimization and sparsity gating
+    66|    55|  - **Activation**: NV center sensing, quantum sensor inverse problem, neural field physics, differentiable quantum model
+    67|    56|
+    68|    57|- [[ei-network-chaos-synchrony-theory]] - Extends SCS chaos theory to E/I structured recurrent networks with target-specific inhibition, revealing three dynamical regimes and chaos suppression by coherent oscillations (arXiv: 2605.14916)
+    69|    58|  - Target-specific inhibition breaks E-I balance, organizing phase diagram into inhibition-dominated (quiescent/async chaos), excitation-dominated (sync chaos/coherent oscillations)
+    70|    59|  - Coherent oscillations actively suppress chaotic fluctuations — no coexistence regime
+    71|    60|  - **Activation**: E-I network chaos, excitatory inhibitory balance, SCS theory extension, target-specific inhibition, chaos synchrony transition, dynamical mean field neural
+    72|    61|
+    73|    62|### Embodied Neurocomputation Framework
+    74|    63|- [[embodied-neurocomputation-framework]] - Systems-level framework for interfacing biological neural cultures with silicon computing via closed-loop task-driven validation, achieving 12 successful configs out of 1,300 tested (arXiv: 2605.13315)
+    75|    64|  - BNNs outperform DQN under matched interaction budgets for odor-gradient navigation tasks
+    76|    65|  - Multi-combinatorial encoding/decoding optimization requires Bayesian or evolutionary strategies
+    77|    66|  - **Activation**: biological neural network computation, BNN encoding decoding, bio-silicon hybrid, embodied neurocomputation, living neural computing
+    78|    67|
+    79|    68|### REALM: Retrospective Encoder Alignment for LFP Modeling
+    80|    69|- REALM uses retrospective distillation to bridge offline-to-online LFP decoding, achieving 2× parameter reduction and 10× faster training while outperforming SOTA causal/non-causal methods (arXiv: 2605.14867)
+    81|    70|  - Bidirectional Mamba-2 teacher → causal student via representation alignment + task supervision
+    82|    71|  - Enables real-time wireless implantable BCI without spike signals
+    83|    72|  - **Activation**: REALM, LFP modeling, retrospective distillation, causal neural decoding, wireless BCI, Mamba neural signal
+    84|    73|
+    85|    74|### Cortical Microcircuit Information Flux Optimization
+    86|    75|- Reverse-engineering study showing cortical layer 5 embedding networks enhance information flux via effective biases and Recurrence Resonance, preventing attractor trapping (arXiv: 2605.14680)
+    87|    76|  - Embedding network shifts core neurons to higher-entropy regime and supplies stochastic fluctuations
+    88|    77|  - Optimized biases can emerge from simple self-organization principles
+    89|    78|  - **Activation**: cortical microcircuit, information flux, recurrence resonance, reverse engineering neural network, cortical layer 5
+    90|    79|
+    91|    80|
+    92|    81|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - 神经科学 + 量子力学 (Cron Job)
+    93|    82|
+    94|    83|### Rogue Variable Theory: A Quantum-Compatible Cognition Framework
+    95|    84|- [[quantum-compatible-cognition-framework]] - 量子兼容认知框架，建模前事件认知状态和潜在解释竞争 (arXiv: 2601.00466)
+    96|    85|  - 核心要点: Mirrored Personal Graph (MPG) 映射认知状态到希尔伯特空间
+    97|    86|  - 核心要点: Rosetta Stone Layer (RSL) 实现跨用户认知状态比较
+    98|    87|  - 核心要点: Rogue Operator 谱分析识别认知偏离方向
+    99|    88|  - **Activation**: rogue variable theory, RVT, quantum cognition, pre-event states, cognitive complementarity
+   100|    89|
+   101|    90|### Natural Intelligence: the information processing power of life
+   102|    91|- [[natural-intelligence-bio-ops]] - 量化生物系统信息处理能力，估计地球生命总计算量 (arXiv: 2506.16478)
+   103|    92|  - 核心要点: 人体每秒执行 ~10^22 bio-ops，超过全球所有计算机总和
+   104|    93|  - 核心要点: 大脑仅占总生物计算的一小部分
+   105|    94|  - **Activation**: natural intelligence, bio-ops, biological computation, 生物信息处理
+   106|    95|
+   107|    96|### Quantum effects in the brain: A review
+   108|    97|- [[quantum-effects-in-brain-review]] - 量子效应在大脑中的可能性评估框架 (arXiv: 1910.08423)
+   109|    98|  - 核心要点: 系统评估量子生物学在神经科学中的证据
+   110|    99|  - 核心要点: 退相干时间 vs 生物时间尺度是核心判据
+   111|   100|  - **Activation**: quantum effects brain, quantum biology, microtubule quantum, 量子脑效应
+   112|   101|
+   113|   102|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Neuroscience Research (Cron Job)
+   114|   103|
+   115|   104|### BiSpikCLM: Binary Spiking Causal Language Model
+   116|   105|- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
+   117|   106|  - SFSA eliminates softmax and floating-point ops in autoregressive language modeling, using binary spike-based computation
+   118|   107|  - SpAD distills ANN→SNN across 4 levels (embeddings, attention maps, intermediate features, logits); 1.3B model trained with only 5.6% tokens
+   119|   108|  - **Activation**: BiSpikCLM, binary spiking LLM, softmax-free spiking attention, spike-aware distillation, spiking language model, event-driven NLP
+   120|   109|
+   121|   110|### ASTDP-GAD: Neuromorphic Graph Anomaly Detection
+   122|   111|- [[astdp-gad-neuromorphic-graph-anomaly]] - Adaptive Spiking Temporal Dynamics Plasticity framework combining spiking GNNs with STDP learning for energy-efficient anomaly detection in dynamic networks (arXiv: 2605.13863)
+   123|   112|  - Six innovations: adaptive LIF spike encoding, LIFGAT with lateral inhibition, event-driven hypergraph memory, spike rate contrast pooling, adaptive STDP layers, multi-scale temporal fusion
+   124|   113|  - Theoretical guarantees: LIFGAT universal approximation, STDP stable convergence, hypergraph prototype convergence, 5× variance reduction
+   125|   114|  - **Activation**: ASTDP-GAD, spiking graph neural network, neuromorphic anomaly detection, STDP graph learning, LIF graph attention, event-driven graph anomaly
+   126|   115|
+   127|   116|### HormoneT5: Hormone-inspired Emotion Layer for Transformers
+   128|   117|- [[hormone-t5-emotion-layer]] - Biologically-inspired Hormone Emotion Block augmenting transformers with six continuous hormone-like values via per-hormone attention heads for emotionally-appropriate response generation (arXiv: 2605.13858)
+   129|   118|  - Six hormone dimensions (dopamine/serotonin/oxytocin/cortisol/adrenaline/endorphin) computed through orthogonal query attention with temperature scaling
+   130|   119|  - Multi-objective training: seq2seq loss + hormone prediction with margin penalties + diversity regularization achieving 85%+ per-hormone accuracy
+   131|   120|  - **Activation**: HormoneT5, HELT, hormone emotion layer, affective computing transformer, endocrine-inspired AI, emotional language models, bio-inspired emotion modeling
+   132|   121|
+   133|   122|### State-Space NTK Collapse Near Bifurcations
+   134|   123|- [[state-space-ntk-collapse-bifurcations]] - Local theory of gradient descent near bifurcations via state-space neural tangent kernel (sNTK), showing sNTK collapses to rank-one operators matching classical normal forms (arXiv: 2605.12763)
+   135|   124|  - Near codimension-1 bifurcations, sNTK reduces to rank-one operator in bifurcation-relevant channel
+   136|   125|  - Low-rank natural gradient resolves learning instability near bifurcations with minimal overhead
+   137|   126|  - **Activation**: state-space NTK, sNTK collapse, bifurcation learning dynamics, RNN training bifurcation, normal form learning theory, neural tangent kernel recurrent
+   138|   127|
+   139|   128|### Empirical Scaling Laws in Balanced Networks with Conductance-Based Synapses
+   140|   129|- [[balanced-network-scaling-conductance]] - Cancellation effect between conductance-based synapses and spike time correlations produces realistic membrane potential variability (arXiv: 2605.12404)
+   141|   130|  - Current-based + correlations overestimate variability; conductance-based alone underestimates
+   142|   131|  - Both assumptions together yield moderate, realistic Vm variance across network sizes
+   143|   132|  - **Activation**: balanced network conductance synapse, membrane potential variability, E/I balanced network, spike time correlation, cortical variability modeling
+   144|   133|
+   145|   134|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Information Science + Quantum (Cron Job)
+   146|   135|
+   147|   136|### Toward Covert Quantum Computing
+   148|   137|- [[covert-quantum-computing]] - Information-theoretic covertness analysis for multi-tenant quantum cloud computing, using discrete isoperimetric inequalities and quantum-strategy framework (arXiv: 2605.14325)
+   149|   138|  - Only O(√n) border qubits provide detection information to adversary in planar layout
+   150|   139|  - Long-range crosstalk from drive/control lines breaks covertness beyond nearest-neighbor model
+   151|   140|  - **Activation**: covert quantum computing, quantum cloud security, quantum crosstalk, quantum side channel, QCU privacy, quantum isolation
+   152|   141|
+   153|   142|### Wavelet Variance Equipartition as Threshold for World-Model Quality and Quantum Kernel TN-Simulability
+   154|   143|- [[wavelet-variance-equipartition-quantum]] - Physics-grounded metric for world-model latent space quality using wavelet scaling exponent α=1/2 as sharp boundary for quantum kernel classical simulability via tensor network contraction (arXiv: 2605.11557)
+   155|   144|  - Wavelet scaling exponent α≈1/2 mirrors Kolmogorov inertial range, providing optimal representation quality diagnostic
+   156|   145|  - Sharp phase transition at α=1/2 determines classical simulability of amplitude-encoded quantum kernels
+   157|   146|  - **Activation**: wavelet variance equipartition, quantum kernel simulability, wavelet scaling exponent, tensor network contraction, world model quality, Kolmogorov inertial range
+   158|   147|
+   159|   148|### A Toolbox to Understand the Physics of Quantum Data Management
+   160|   149|- [[quantum-data-management-toolbox]] - Physics-informed spectral analysis toolbox for evaluating quantum annealing in data management problems through energy gaps and eigenstate structure (arXiv: 2605.14719)
+   161|   150|  - Spectral properties inaccessible from hardware measurements essential for understanding computational hardness
+   162|   151|  - Bridging quantum computing and database research via physics-informed co-design framework
+   163|   152|  - **Activation**: quantum data management, quantum annealing database, spectral analysis quantum, quantum-classical co-design, quantum optimization Hamiltonian
+   164|   153|
+   165|   154|## 2026-05-17 - Neuroscience Research (Cron Job)
+   166|   155|
+   167|   156|### NeuroTrain: SNN Training Survey & Benchmarking Framework
+   168|   157|- [[neurotrain-local-learning-snn-benchmarking]] - Comprehensive taxonomy and open-source benchmarking framework for SNN training algorithms, covering surrogate-gradient, local/three-factor learning, plasticity, and ANN-to-SNN conversion (arXiv: 2605.15058)
+   169|   158|  - First unified taxonomy spanning 6 major SNN training paradigms with computational principles and locality analysis
+   170|   159|  - Releases NeuroTrain: snnTorch-based open framework for reproducible benchmarking across datasets, architectures, and training regimes
+   171|   160|  - **Activation**: neurotrain, SNN training taxonomy, local learning rules, surrogate gradient, three-factor learning, snnTorch benchmarking
+   172|   161|
+   173|   162|### Transport Mean Field for SNN Population Dynamics
+   174|   163|- [[transport-mean-field-snn]] - 基于传输方程的SNN群体动力学解析理论，从初始电压分布推导脉冲率涨落，突破传统均值场稳态假设 (arXiv: 2605.14319)
+   175|   164|  - Transport solution to advection equation replaces asymptotic steady-state mean field approaches
+   176|   165|  - Captures firing rate fluctuations from dynamic interaction of initial conditions, time-varying inputs, and coupling
+   177|   166|  - **Activation**: transport mean field, firing rate fluctuations, Fokker-Planck, LIF dynamics, neural population, initial density effects
+   178|   167|
+   179|   168|### Selective Alignment Knowledge Distillation for SNNs
+   180|   169|- [[sealkd-snn-knowledge-distillation]] - Addresses SNN-ANN performance gap by selectively aligning class-level and temporal knowledge during distillation, correcting erroneous timesteps while preserving useful temporal dynamics (arXiv: 2605.14252)
+   181|   170|  - Equalizes competing logits at erroneous timesteps rather than forcing uniform alignment
+   182|   171|  - Reweights temporal alignment by confidence and inter-timestep similarity
+   183|   172|  - **Activation**: selective alignment KD, SeAl-KD, SNN knowledge distillation, timestep-aware distillation
+   184|   173|
+   185|   174|### Dual-axis Zebrafish Circuit Attribution
+   186|   175|- [[dual-axis-zebrafish-circuits]] - 斑马鱼顶盖微环路双轴归因框架，通过SNN消融量化子回路在能量效率和鲁棒性中的独立计算角色，并迁移至ANN架构 (arXiv: 2605.13924)
+   187|   176|  - ns_TIN subcircuit: spike-efficient internal information gate (low spike footprint, measurable influence on prediction error)
+   188|   177|  - superficial_TIN subcircuit: highest robustness sensitivity, feedback-like stabilization role
+   189|   178|  - **Activation**: dual-axis attribution, zebrafish tectal circuit, energy-efficient architecture, robust neural network, SNN ablation
+   190|   179|
+   191|   180|### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+   192|   181|- [[fits-interpretable-spiking-neuron]] - SNN neuron factorizing temporal computation into Frequency Selectivity (FS) and Temporal Shaping (TS) modules, enabling learnable frequency preferences and group-delay modulation (arXiv: 2605.13071)
+   193|   182|  - FS parameterizes each neuron's target frequency as maximizer of subthreshold magnitude response
+   194|   183|  - TS reshapes when frequency components contribute to membrane voltage through group-delay modulation
+   195|   184|  - **Activation**: FiTS, frequency selectivity spiking neuron, interpretable SNN, temporal shaping, group-delay modulation
+   196|   185|
+   197|   186|### NERVE: Network-Aware Brain FC Tokenization
+   198|   187|- [[nerve-brain-fc-tokenization]] - Self-supervised FC representation learning via bilinear tokenization that respects brain network organization, reducing parameter complexity from quadratic to linear (arXiv: 2605.14048)
+   199|   188|  - Bilinear factorization embeds heterogeneous network-pair patches while preserving network identity
+   200|   189|  - Validated on ABCD, PNC, CCNP cohorts for behavior/psychopathology prediction with stable transferable representations
+   201|   190|  - **Activation**: NERVE, brain FC tokenization, bilinear factorization, masked autoencoder brain, network-aware FC, self-supervised fMRI
+   202|   191|
+   203|   192|## 2026-05-17 - Neuroscience Research (Cron Job)
+   204|   193|
+   205|   194|### Multi-Timescale Conductance Spiking Networks
+   206|   195|- [[multi-timescale-conductance-snn]] - Gradient-trainable spiking networks using multi-timescale conductances for energy-aware temporal processing, outperforming LIF and AdLIF without surrogate gradients (arXiv: 2605.11835)
+   207|   196|  - I-V curve shaping via fast/slow/ultra-slow conductances enables rich firing regimes (tonic, phasic, bursting) in single model
+   208|   197|  - Direct backpropagation through time without surrogate-gradient approximations
+   209|   198|  - **Activation**: multi-timescale conductance, MTC-SNN, conductance spiking, gradient-trainable SNN, I-V curve shaping
+   210|   199|
+   211|   200|### Embodied Neurocomputation Framework
+   212|   201|- [[embodied-neurocomputation]] - Systems-level framework for interfacing biological neural cultures with task-driven validation, BNN outperforms silicon DQN in closed-loop navigation (arXiv: 2605.13315)
+   213|   202|  - First large-scale parameter optimization of BNN encoding configurations (~1,300 configs, 4,000+ hours)
+   214|   203|  - 12 configurations demonstrated consistent learning, surpassing optimized DQN under same budget
+   215|   204|  - **Activation**: embodied neurocomputation, biological neural networks, bio-silicon hybrid, BNN neurocomputation
+   216|   205|
+   217|   206|## 2026-05-17 - Information Science + Quantum (Cron Job)
+   218|   207|
+   219|   208|### Quantum Complexity in Gravity, QFT, and Quantum Information Science
+   220|   209|- [[quantum-complexity-definitions]] - Bridges quantum information theory, many-body physics, QFT, and holography to unify definitions of quantum complexity (arXiv: 2503.10753)
+   221|   210|  - Multiple complexity definitions: circuit complexity, geometric (unitary group geodesics), and dynamical (state/operator spreading via tensor networks)
+   222|   211|  - Proposes relationship between boundary complexity and gravitational observables via AdS/CFT correspondence
+   223|   212|  - **Activation**: quantum complexity, random quantum circuits, unitary geodesics, tensor network complexity, holographic complexity, AdS/CFT
+   224|   213|
+   225|   214|### Information-Theoretic Authenticated Private Information Retrieval
+   226|   215|- [[information-theoretic-pir]] - Protocol enabling clients to privately retrieve database items with information-theoretic privacy and authenticity guarantees against malicious adversaries (arXiv: 2604.01551)
+   227|   216|  - Achieves unconditional security: server learns nothing about retrieved item, client verifies response integrity
+   228|   217|  - O(sqrt(n)) communication complexity using error-correcting codes and polynomial commitments
+   229|   218|  - **Activation**: private information retrieval, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR
+   230|   219|
+   231|   220|### Quantum complexity in gravity, quantum field theory, and quantum information science
+   232|   221|- [[quantum-complexity-definitions]] - Bridges quantum information theory, many-body physics, QFT, and holography to unify definitions of quantum complexity (arXiv: 2503.10753)
+   233|   222|  - Multiple complexity definitions: circuit complexity, geometric (unitary group geodesics), and dynamical (state/operator spreading via tensor networks)
+   234|   223|  - Proposes relationship between boundary complexity and gravitational observables via AdS/CFT correspondence
+   235|   224|  - **Activation**: quantum complexity, random quantum circuits, unitary geodesics, tensor network complexity, holographic complexity, AdS/CFT
+   236|   225|
+   237|   226|### Information-Theoretic Authenticated Private Information Retrieval
+   238|   227|- [[information-theoretic-pir]] - Protocol enabling clients to privately retrieve database items with information-theoretic privacy and authenticity guarantees against malicious adversaries (arXiv: 2604.01551)
+   239|   228|  - Achieves unconditional security: server learns nothing about retrieved item, client verifies response integrity
+   240|   229|  - O(sqrt(n)) communication complexity using error-correcting codes and polynomial commitments
+   241|   230|  - **Activation**: private information retrieval, aPIR, information-theoretic security, privacy-preserving retrieval, authenticated PIR
+   242|   231|
+   243|   232|### Quantum-EEGNet for Cross-Task EEG Encoding with Quantum Machine Learning
+- [[quantum-eeg-encoding]] - Hybrid quantum-classical neural network integrating variational quantum circuits into EEGNet for brain signal decoding (arXiv: 2407.19214, 2503.00080)
+  - QEEGNet = EEGNet backbone + VQC layers with angle encoding
+  - Outperforms EEGNet on BCI IV 2a, more noise-robust
+  - Cross-dataset generalization requires task-specific tuning
+  - **Activation**: quantum EEG, QEEGNet, quantum BCI, hybrid quantum neural
+
+
+## 2026-05-18 - Information Science + Quantum (Cron Job)
+   244|   233|
+   245|   234|### New approaches to almost i.i.d. information theory
+   246|   235|- [[almost-iid-quantum-information]] - Alternative frameworks for quantum information analysis using Wasserstein distance and k-body marginals, relaxing i.i.d. assumption (arXiv: 2605.15114)
+   247|   236|  - Quantum Wasserstein distance defines almost-i.i.d. states beyond strict independence
+   248|   237|  - Strict hierarchical relationship between Wasserstein and k-body marginal definitions
+   249|   238|  - **Activation**: almost i.i.d., quantum Wasserstein distance, k-body marginals, non-i.i.d. quantum protocols
+   250|   239|
+   251|   240|### Wavelet Variance Equipartition as a Threshold for World-Model Quality and Quantum Kernel TN-Simulability
+   252|   241|- [[wavelet-variance-equipartition-quantum]] - Physics-grounded spectral metric for assessing world-model quality and quantum kernel tensor network simulability (arXiv: 2605.11557)
+   253|   242|  - Wavelet variance equipartition identifies threshold for latent space structural fidelity
+   254|   243|  - Links world-model quality to quantum kernel tensor network simulability
+   255|   244|  - **Activation**: wavelet variance equipartition, world-model quality, quantum kernel simulability, spectral analysis
+   256|   245|
+   257|   246|### ORCHID: Orchestrated Reduction Consensus for Hash-based Integrity in Distributed Ledgers
+   258|   247|- [[orchid-distributed-consensus]] - Bio-inspired consensus protocol mapping neuroscientific binding problem to distributed ledger integrity (arXiv: 2605.12211)
+   259|   248|  - Maps neural binding problem to distributed consensus coordination
+   260|   249|  - Hierarchical orchestrated reduction with hash-based integrity verification
+   261|   250|  - **Activation**: ORCHID consensus, bio-inspired consensus, distributed ledger integrity, hash-based verification
+   262|   251|
+   263|   252|### HQTN-SER: Speech Emotion Recognition with Hybrid Quantum Tensor Networks
+   264|   253|- [[hqtn-speech-emotion-quantum]] - Hybrid quantum tensor network combining quantum tensor networks with classical ML for robust speech emotion recognition (arXiv: 2605.14523)
+   265|   254|  - Tensor train decomposition compresses high-dimensional audio features
+   266|   255|  - Quantum-enhanced expressivity captures subtle emotional cues under recording variability
+   267|   256|  - **Activation**: HQTN speech emotion, quantum tensor network SER, hybrid quantum-classical emotion recognition
+   268|   257|
+   269|   258|### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+   270|   259|- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 2605.14219)
+   271|   260|  - Models hybrid inputs as pairs of classical optimizer hyperparameters and quantum circuit parameters
+   272|   261|  - Two-phase strategy: seed discovery (concolic) + local fuzzing around failure points
+   273|   262|  - Local fuzzing is main driver of improvement; concolic seed discovery helps VQE but unstable for QAOA
+   274|   263|  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing, VQE debugging
+   275|   264|
+   276|   265|## 2026-05-17 - Neuroscience Research (Cron Job)
+   277|   266|
+   278|   267|### BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation
+   279|   268|- [[bispikclm-binary-spiking-llm]] - First fully binary spiking MatMul-free causal language model with Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation (arXiv: 2605.13859)
+   280|   269|  - SFSA replaces softmax causal attention with spike-based Hadamard-masked integer dot product, eliminating all FP operations in attention
+   281|   270|  - SpAD distillation enables training with only 5.6% of standard tokens (10B vs 180B), achieving 42.19% accuracy at 4.16% energy cost of OPT-1.3B
+   282|   271|  - **Activation**: BiSpikCLM, binary spiking LLM, softmax-free attention, spiking NLP, MatMul-free language model, SFSA, spike-aware distillation
+   283|   272|
+   284|   273|### REALM: Retrospective Encoder Alignment for LFP Modeling
+   285|   274|- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model for causal behavior decoding via retrospective distillation from bidirectional Mamba-2 teacher (arXiv: 2605.14867)
+   286|   275|  - 3-stage pipeline: self-supervised CMAE pretraining → retrospective distillation → fine-tuning; achieves SOTA LFP decoding with 2× parameter reduction and 10× faster convergence
+   287|   276|  - First real-time LFP decoder deployed on edge hardware (Jetson Orin Nano, RPi 5), enabling wireless implantable BCI without spike signals
+   288|   277|  - **Activation**: REALM, LFP decoding, causal neural decoding, retrospective distillation, Mamba-2 BCI, wireless BCI, offline-to-online neural decoding
+   289|   278|
+   290|   279|## 2026-05-17 - Neuroscience Research (Cron Job)
+   291|   280|
+   292|   281|### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+   293|   282|- [[mamba-spike-forecaster-bci]] - Mamba state-space model trained on spike counts implicitly decodes behavior without supervised labels (arXiv: 2605.12999)
+   294|   283|  - Single Mamba forecaster trained only on next-step Poisson rate prediction simultaneously forecasts neural dynamics AND decodes behavior
+   295|   284|  - Predicted rates carry more behavioral info than raw spike counts (75.7% choice decoding vs ~70% linear baseline on Steinmetz benchmark)
+   296|   285|  - **Activation**: mamba spike forecaster, behavioral decoding, BCI closed-loop, Neuropixels decoding, neural population forecasting
+   297|   286|
+   298|   287|### Letting the Neural Code Speak: Automated Characterization of Monkey Visual Neurons through Human Language
+   299|   288|- [[neural-code-language-interpretability]] - LLM-driven closed-loop framework generates and verifies semantic hypotheses for neuron selectivity (arXiv: 2605.12485)
+   300|   289|  - Gemini 3.0 Pro + Imagen 4.0 + digital twins create testable natural language descriptions of what each V1/V4 neuron encodes
+   301|   290|  - Hypothesis-generated images drove 96.1% of V4 neurons above 95th percentile of natural-image responses (vs 10% random baseline)
+   302|   291|  - **Activation**: neural code speak, semantic hypothesis, neuron characterization, language-based interpretability, digital twin visual cortex
+   303|   292|
+   304|   293|---
+   305|   294|
+   306|   295|
+   307|   296|### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+   308|   297|- [[neurotrain-snn-benchmarking]] - Comprehensive SNN training algorithm taxonomy and open benchmarking framework spanning surrogate-gradient, local/three-factor learning, predictive coding, and neuromodulated plasticity (arXiv: 2605.15058)
+   309|   298|  - First unified taxonomy of SNN training algorithms with standardized benchmarking
+   310|   299|  - Local learning rules achieve competitive accuracy with significantly lower memory than backprop
+   311|   300|  - **Activation**: SNN, spiking neural network, local learning, benchmarking, surrogate gradient, STDP, three-factor learning, predictive coding
+   312|   301|
+   313|   302|### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+   314|   303|- [[mamba-spike-population-forecaster]] - Single Mamba forecaster trained on next-step spike counts simultaneously predicts neural activity and decodes behavior, outperforming linear decoders on raw spikes (arXiv: 2605.12999)
+   315|   304|  - Mamba's predicted rates decode mouse choice at 75.7% (2.3x chance) and stimulus side at 66.1% (2x chance)
+   316|   305|  - ~100-150 trial calibration brings readout within 1-2pp of asymptote; fits 50ms bin budget on workstation GPUs
+   317|   306|  - **Activation**: Mamba, spike forecasting, behavioral decoding, Neuropixels, closed-loop BCI, visual discrimination
+   318|   307|
+   319|   308|### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+   320|   309|- [[spatiotemporal-tdann-mt-direction-maps]] - Spatiotemporal TDANN framework showing MT direction maps emerge from self-supervised contrastive learning with spatial regularization, unifying ventral and dorsal stream self-organization (arXiv: 2605.11718)
+   321|   310|  - Model reproduces macaque MT DSI, circular variance, and pinwheel density (~3.14/mm2) from naturalistic video alone
+   322|   311|  - MT tuning properties emerge from trade-off between discriminative pressure and spatial regularization
+   323|   312|  - **Activation**: TDANN, MT cortex, direction selectivity, self-organization, MoCo, visual cortex, dorsal stream
+   324|   313|
+   325|   314|### Are Cortical Microcircuits Optimized for Information Flux? - A Simulation-based Reverse Engineering Study
+   326|   315|- [[cortical-microcircuit-information-flux]] - Simulation-based reverse engineering of cortical microcircuits using mutual information between network states to evaluate structural optimization (arXiv: 2605.14680)
+   327|   316|  - Cortical-like connectivity with E/I balance significantly outperforms random networks for information flux
+   328|   317|  - Demonstrates evolutionary optimization of neural architecture for information processing capacity
+   329|   318|  - **Activation**: cortical microcircuit, information flux, E/I balance, reverse engineering, mutual information, layer 5
+   330|   319|
+   331|   320|## 2026-05-17 - Information Science + Quantum (Cron Job)
+   332|   321|
+   333|   322|### Toward Covert Quantum Computing
+   334|   323|- [[covert-quantum-computing]] - Privacy-preserving multi-tenant quantum computation framework analyzing adversarial detection, spatial isolation, and crosstalk side channels (arXiv: 2605.14325)
+   335|   324|  - Only O(√n) border qubits provide detection information under nearest-neighbor crosstalk model
+   336|   325|  - Long-range coupling from drive/control lines creates exploitable side channels
+   337|   326|  - **Activation**: covert quantum computing, quantum privacy, multi-tenant security, crosstalk
+   338|   327|
+   339|   328|### Energy efficiency of quantum computers
+   340|   329|- [[quantum-energy-efficiency]] - Framework defining energy efficiency metric for quantum computers as algorithms-per-joule, enabling cross-platform comparison of superconducting, trapped-ion, neutral-atom, and photonic platforms (arXiv: 2605.15090)
+   341|   330|  - Energy efficiency = N algorithms executed / E joules consumed
+   342|   331|  - Accounts for full hardware stack: cryogenics, control electronics, error correction
+   343|   332|  - **Activation**: quantum energy efficiency, quantum power consumption, platform comparison
+   344|   333|
+   345|   334|### A Toolbox to Understand the Physics of Quantum Data Management
+   346|   335|- [[quantum-data-management-toolbox]] - Physics-based framework mapping quantum device behavior to database problem structure, evaluating quantum annealing for query optimization and data management (arXiv: 2605.14719)
+   347|   336|  - Maps QUBO formulations to quantum annealer connectivity constraints
+   348|   337|  - Provides classical baselines for quantum advantage assessment
+   349|   338|  - **Activation**: quantum data management, quantum database, quantum annealing QUBO
+   350|   339|
+   351|   340|### CyberAId: AI-Driven Cybersecurity for Financial Service Providers
+   352|   341|- [[cyberaid-ai-security-framework]] - Hybrid multi-agent AI security framework combining LLM subagents with SIEM/XDR telemetry, privacy-preserving federation, and quantum authentication for financial services (arXiv: 2605.01892)
+   353|   342|  - Specialist subagents reason over classical telemetry rather than replacing it
+   354|   343|  - Four falsifiable design principles with bounded human-in-the-loop autonomy
+   355|   344|  - **Activation**: AI cybersecurity, multi-agent SOC, collaborative defense, SIEM LLM
+   356|   345|## 2026-05-17 - 信息学/量子力学 (Cron Job)
+   357|   346|
+   358|   347|### QAP-Router: Tackling Qubit Routing as Dynamic Quadratic Assignment with Reinforc
+   359|   348|- [[qap-router-tackling-qubit-routing-dynamic]] - Qubit routing is a fundamental problem in quantum compilation, known to be NPhard (arXiv: 2605.12365)
+   360|   349|  - Core methodology from recent arxiv paper
+   361|   350|  - Category: quant-ph
+   362|   351|  - **Activation**: quantum, learning, network, gate, routing
+   363|   352|## 2026-05-17 - 信息学/量子力学 (Cron Job)
+   364|   353|
+   365|   354|### CERTIFY-ED: A Multi-Layer Verification Framework for Exact Diagonalization of Qu
+   366|   355|- [[certify-ed-multi-layer-verification-framework-exact]] - Exact diagonalization (ED) is a workhorse technique in computational quantum many-body physics, but  (arXiv: 2605.11787)
+   367|   356|  - Core methodology from recent arxiv paper
+   368|   357|  - Category: cond-mat.str-el
+   369|   358|  - **Activation**: quantum, algorithm, machine, verification
+   370|   359|## 2026-05-17 - Information Science (Cron Job)
+   371|   360|
+   372|   361|### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+   373|   362|- [[failure-guided-quantum-fuzzing]] - Two-phase failure-guided fuzzing for VQE/QAOA programs using concolic seeds + local parameter mutation (arXiv: 1188)
+   374|   363|  - Local fuzzing around non-convergent seeds drives most improvement over random testing
+   375|   364|  - Concolic seed discovery effective for VQE, less stable for QAOA
+   376|   365|  - **Activation**: quantum fuzzing, HQC testing, failure-guided fuzzing, hybrid quantum testing
+   377|   366|
+   378|   367|
+   379|   368|### Toward Covert Quantum Computing
+   380|   369|- [[quantum-information-security]] - 多租户量子云平台中的隐蔽计算与侧信道分析模式 (arXiv: 2605.14325)
+   381|   370|  - O(√n) 边界量子比特提供泄露信息，但长程耦合超越边界假设
+   382|   371|  - 使用量子策略框架建模自适应对手的检测能力
+   383|   372|  - 控制线泄漏导致空间隔离策略失效
+   384|   373|  - **Activation**: covert quantum computing, crosstalk, side channel, spatial isolation
+   385|   374|
+   386|   375|### Failure-Guided Fuzzing for Hybrid Quantum-Classical Programs
+   387|   376|- [[quantum-information-security]] - 混合量子-经典程序的两阶段失败导向模糊测试方法 (arXiv: 2605.14219)
+   388|   377|  - 先搜索非收敛种子再局部模糊电路参数的两阶段策略
+   389|   378|  - 失败引导局部模糊测试是改进随机测试的主要驱动力
+   390|   379|  - 合解种子发现对 VQE 有效但对 QAOA 不稳定
+   391|   380|  - **Activation**: quantum fuzzing, HQC testing, VQE, QAOA, concolic testing
+   392|   381|
+   393|   382|
+   394|   383|### Blind Quantum Computation on a Modular Superconducting Processor
+   395|   384|- [[blind-quantum-computation]] - 盲量子计算方法论，实现云端量子计算中算法/输入/输出的信息论安全 (arXiv: 2605.14656v1)
+   396|   385|    - 基于测量基量子计算的UBQC协议，客户端仅需有限量子能力即可委托计算
+   397|   386|    - 模块化超导处理器架构实现分布式盲计算，降低单模块量子比特需求
+   398|   387|  - **Activation**: blind quantum computation, secure quantum cloud, quantum privacy, delegated quantum computing, UBQC, measurement-based quantum computing
+   399|   388|### New approaches to almost i.i.d. information theory
+   400|   389|- [[almost-iid-quantum-information]] - Strict hierarchy of almost i.i.d. quantum state definitions (Wasserstein, k-body marginals, Mazzola) (arXiv: 1165)
+   401|   390|  - Establishes strict separation between three definitions of "almost i.i.d." quantum states
+   402|   391|  - Quantum Wasserstein distance bridges gap between physical relevance and mathematical tractability
+   403|   392|  - **Activation**: almost i.i.d. quantum, quantum Wasserstein distance, k-body marginals
+   404|   393|
+   405|   394|## 2026-05-17 - Information Science + Quantum (Cron Job) - Update
+   406|   395|
+   407|   396|### QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling
+   408|   397|- [[qlam-quantum-attention-memory]] - 量子长注意力记忆方法，利用量子叠加实现长程依赖建模，降低注意力复杂度 (arXiv: 2605.13833v1)
+   409|   398|    - 量子叠加态并行编码所有token对注意力分数，振幅放大提取重要长程依赖
+   410|   399|    - 混合经典-量子架构：经典编码局部特征，量子模块处理长程依赖
+   411|   400|  - **Activation**: quantum attention, QLAM, long sequence quantum, quantum memory, long-range dependencies, quantum transformer
+   412|   401|
+   413|   402|
+   414|   403|
+   415|   404|## 2026-05-17 - Neuroscience Research (Cron Job)
+   416|   405|
+   417|   406|### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
+   418|   407|- [[neurotrain-snn-benchmarking]] - 首次统一SNN训练算法分类体系，发布开源snnTorch基准测试框架 (arXiv: 2605.15058v1)
+   419|   408|    - 覆盖代理梯度反传、局部学习、三因子规则、ANN转SNN、非标准优化五大类
+   420|   409|    - 揭示生物合理性-计算效率-任务性能的权衡三角关系
+   421|   410|  - **Activation**: SNN training, neurotrain, surrogate gradient, local learning rules, three-factor learning, ANN-to-SNN conversion, snnTorch benchmarking
+   422|   411|
+   423|   412|### REALM: Retrospective Encoder Alignment for LFP Modeling
+   424|   413|- [[realm-lfp-retrospective-decoding]] - 回顾性蒸馏框架实现因果LFP行为解码，适用于无线植入BCI (arXiv: 2605.14867v1)
+   425|   414|    - 双向Mamba-2教师模型掩码自编码预训练，蒸馏至紧凑因果学生模型
+   426|   415|    - 参数量减半、训练时间减少10倍，性能超越因果/非因果LFP SOTA
+   427|   416|  - **Activation**: LFP decoding, REALM, retrospective distillation, causal BCI, local field potential, Mamba neural decoding, spike-free decoding
+   428|   417|
+   429|   418|### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
+   430|   419|- [[approximate-macroscopic-dynamics-snn-transport]] - 通过输运方程解析推导SNN群体放电率波动涌现机制 (arXiv: 2605.14319v1)
+   431|   420|    - 基于输运解而非传统均值场假设，捕获时变输入下的放电率波动
+   432|   421|    - 揭示初始电压分布、时变输入与网络耦合的动态交互
+   433|   422|  - **Activation**: macroscopic dynamics, transport equation, firing rate fluctuations, Fokker-Planck, mean field, integrate-and-fire
+   434|   423|
+   435|   424|
+   436|   425|## 2026-05-17 - Systems Engineering Research (Cron Job)
+   437|   426|
+   438|   427|### Sheaves as a Means of Maintaining Consistency in Model-based Systems Engineering
+   439|   428|- [[sheaf-consistency-mbse]] - 用层论(presheaf/sheaf condition)建模MBSE多视图一致性，仅检查pairwise interface compatibility即可证明全局一致性 (arXiv: 2605.08609)
+   440|   429|    - Sheaf condition等价于pairwise overlap compatibility，全局一致性可简化为O(N²)检查
+   441|   430|    - Limit-preserving functors派生属性继承一致性保证，Lean 4+Mathlib机器验证
+   442|   431|    - 适用于CPS架构设计：电气/热/机械/软件多工程视图一致性管理
+   443|   432|  - **Activation**: sheaf theory MBSE, model-based systems engineering consistency, multi-view architecture, CPS design consistency, category theory systems engineering, presheaf design spaces, 层论系统一致性
+   444|   433|
+   445|   434|## 2026-05-17 - Neuroscience Research (Cron Job)
+   446|   435|
+   447|   436|### Multiple mechanisms of rhythm switching in recurrent neural networks with adaptive time constants
+   448|   437|- [[rhythm-switching-adaptive-time-constants-rnn]] - RNNs with neuron-specific learnable time constants exhibit multiple mechanisms for rhythm switching across frequency bands (arXiv: 2605.14388v1)
+   449|   438|    - Time constant specialization creates multi-scale temporal basis in RNNs
+   450|   439|    - Cross-frequency coupling emerges naturally from heterogeneous time constants
+   451|   440|  - **Activation**: rhythm switching, adaptive time constants, RNN oscillations, multi-frequency, leaky integrator
+   452|   441|
+   453|   442|### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
+   454|   443|- [[implicit-behavioral-decoding-spike-forecasts]] - Mamba forecaster trained on spike counts implicitly learns behaviorally-relevant representations (arXiv: 2605.12999v1)
+   455|   444|    - Single Mamba model delivers both neural forecasts and behavioral readouts in one pass
+   456|   445|    - Predicted rates enable better behavioral decoding than raw spikes
+   457|   446|  - **Activation**: behavioral decoding, spike forecasting, Mamba, Neuropixels, closed-loop BCI
+   458|   447|
+   459|   448|
+   460|   449|## 2026-05-17 - Information Science + Quantum (Cron Job)
+   461|   450|
+   462|   451|### Universal quantum resource distillation via composite generalised quantum Stein's lemma
+   463|   452|- [[quantum-resource-distillation]] - 量子资源蒸馏/对称性分析的统一框架 (arXiv: 2605.15174)
+   464|   453|    - 复合广义量子Stein引理建立统一的资源蒸馏速率
+   465|   454|    - 所有量子资源理论的信息论量统一控制蒸馏效率
+   466|   455|    - 适用于纠缠/魔态/相干性蒸馏协议设计
+   467|   456|  - **Activation**: quantum resource distillation, quantum Stein's lemma, entanglement distillation, magic state distillation, 量子资源蒸馏
+   468|   457|
+   469|   458|### Non-Invertible Symmetries on Tensor-Product Hilbert Spaces and Quantum Cellular Automata
+   470|   459|- [[quantum-cellular-automata-symmetries]] - 量子资源蒸馏/对称性分析的统一框架 (arXiv: 2605.15194)
+   471|   460|    - 可实现的融合范畴对称性必须是弱积分的(FPdim=√n)
+   472|   461|    - 量子元胞自动机(QCA)提供对称性细化分类机制
+   473|   462|    - 非可逆对称性作为拓扑码逻辑算子的新视角
+   474|   463|  - **Activation**: quantum cellular automata, non-invertible symmetry, fusion category, 量子元胞自动机, 非可逆对称性
+   475|   464|
+   476|   465|
+   477|   466|## 2026-05-17 - Neuroscience Research (Cron Job)
+   478|   467|
+   479|   468|### REALM: Retrospective Encoder Alignment for LFP Modeling
+   480|   469|- [[realm-lfp-retrospective-decoding]] - First LFP-only foundation model using retrospective distillation for causal real-time BCI decoding (arXiv: 2605.14867)
+   481|   470|  - 核心要点: Bidirectional Mamba-2 teacher → causal Mamba-2 student via representation alignment + task supervision
+   482|   471|  - 核心要点: 2× parameter reduction, 10× training speedup, deployable on Jetson Orin Nano / Raspberry Pi 5
+   483|   472|  - **Activation**: LFP decoding, brain-computer interface, local field potentials, REALM, causal neural decoding, knowledge distillation BCI
+   484|   473|
+   485|   474|### Are cortical microcircuits optimized for information flux?
+   486|   475|- [[cortical-microcircuit-information-flux-optimization]] - Simulation-based reverse engineering reveals how cortical core-periphery architecture enhances information flux via bias + recurrence resonance (arXiv: 2605.14680)
+   487|   476|  - 核心要点: Embedded Core Model (ECM) shows peripheral neurons provide effective biases and stochastic fluctuations that shift core into higher-entropy regime
+   488|   477|  - 核心要点: Self-organizing bias principle drives neurons toward maximal entropy, exceeding biological embedding performance
+   489|   478|  - **Activation**: cortical microcircuit, information flux, reverse engineering neural networks, core-periphery architecture, recurrence resonance
+   490|   479|
+   491|   480|
+   492|   481|
+   493|   482|## 2026-05-17 - Information Science + Quantum Mechanics (Cron Job)
+   494|   483|
+   495|   484|### New approaches to almost i.i.d. information theory
+   496|   485|- [[almost-iid-quantum-information]] - Methodology for analyzing almost i.i.d. quantum states via Wasserstein distance and k-body marginals (arXiv: 2605.15114)
+   497|   486|  - Three hierarchical definitions: k-body marginals, quantum Wasserstein, Mazzola et al. notion
+   498|   487|  - Strict separation proven with explicit counterexamples
+   499|   488|  - **Activation**: almost iid quantum, quantum wasserstein distance, quantum information theory non-iid, 量子信息论
+   500|   489|
    501|
