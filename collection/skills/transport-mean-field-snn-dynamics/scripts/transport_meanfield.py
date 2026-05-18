@@ -4,7 +4,7 @@ Based on arXiv:2605.14319 - approximate macroscopic dynamics via transport solut
 """
 
 import numpy as np
-from scipy.integrate import solve_ivp
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -96,7 +96,8 @@ def plot_results(times, flux, title="Transport Mean Field", save_path=None):
 if __name__ == "__main__":
     # Example: constant input
     mu0 = 0.5
-    mu_func = lambda t: mu0
+    def mu_func(t: float) -> float:
+        return mu0
 
     times, flux = transport_meanfield(
         v0_dist=gaussian_initial,
