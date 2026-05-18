@@ -1,3 +1,60 @@
+## 2026-05-19 - Deep Learning Research (Cron Job)
+
+### STS: Efficient Sparse Attention with Speculative Token Sparsity
+- [[speculative-sparse-attention-sts]] - Training-free sparse attention using draft model attention scores to construct dynamic token-and-head-wise sparsity masks for LLM inference, achieving 2.67x speedup at ~90% sparsity (arXiv: 2605.15508)
+  - Cross-model attention correlation: small draft model predicts important tokens for large target model
+  - Integrates with speculative decoding — no extra inference cost
+  - Maintains accuracy at high sparsity levels unlike static pruning
+  - **Activation**: speculative sparse attention, draft model sparsity, attention mask training-free, long context LLM inference
+
+### DualKV: Shared-Prompt Flash Attention for Efficient RL Training
+- [[dualkv-shared-prompt-flash-attention]] - FlashAttention kernel variant eliminating shared-prompt replication during GRPO/DAPO training, achieving 1.63-3.82x speedup and raising MFU from 36% to 76% (arXiv: 2605.15422)
+  - Causal masking makes prompt representations invariant across N rollout sequences
+  - Fused CUDA kernels process prompt once across all rollouts
+  - Data pipeline repacks N(P+R) tokens into P+NR per micro-batch
+  - **Activation**: dualkv, shared prompt flash attention, GRPO training speedup, RL kernel optimization
+
+### Probabilistic Chunk Masking for Efficient VLA RL
+- [[vla-probabilistic-chunk-masking]] - Drop-in GRPO modification using success-failure action variance to allocate gradient computation to informative trajectory chunks, achieving 2.38x speedup while backpropagating through <20% of chunks (arXiv: 2605.16154)
+  - Success-failure action variance proxies per-phase gradient variance
+  - No reward model or learned critic required
+  - 60% lower peak activation memory
+  - **Activation**: probabilistic chunk masking, efficient GRPO, VLA RL, gradient variance
+
+### Self-evolving Agent Experience (DrugSAGE)
+- [[self-evolving-agent-experience]] - Framework for LLM agents that accumulates cross-task memory of verified skills, statistical evidence, and error-fix patterns, enabling zero-test-time search on new tasks (arXiv: 2605.15461)
+  - Memory components: verified skills, statistical evidence, error-fix records
+  - Direct transfer of working solutions without search
+  - Outperforms baselines by 10-30% in zero-search regime
+  - **Activation**: self-evolving agent, cross-task memory, experience reuse, agent skill accumulation
+
+### Compound LLM Agent Design in Adversarial POMDPs
+- [[compound-llm-agent-design]] - Systematic study of 12 agent configurations revealing deliberation cascade pattern and that programmatic state abstraction delivers highest returns per token (arXiv: 2605.16205)
+  - Deliberation cascade: distributing deliberation across hierarchy degrades performance up to 3.4x
+  - Hierarchy without deliberation achieves best absolute performance
+  - Context engineering more cost-effective than deliberation
+  - **Activation**: compound agent design, deliberation cascade, hierarchical agents, RPTS, adversarial POMDP
+
+### Stepwise Reasoning with External Subgraph Generation
+- [[stepwise-reasoning-subgraph]] - Stepwise reasoning framework building query-specific subgraphs from external KBs to ground intermediate reasoning steps, improving LLM accuracy and factual reliability (arXiv: 2605.16117)
+  - Three-stage: subgraph construction → progressive reasoning → trajectory combination
+  - Reduces hallucination by grounding in structured knowledge
+  - **Activation**: stepwise reasoning, subgraph generation, knowledge grounding, external KB reasoning
+
+### Federated Learning of SNNs under Heterogeneous Temporal Resolutions
+- [[federated-snn-heterogeneous-temporal]] - Federated learning framework for SNNs addressing temporal resolution mismatch across edge devices, enabling local-resolution training with global model compatibility (arXiv: 2605.15355)
+  - Naive FedAvg fails when clients have different sampling rates
+  - Adaptation methods recover accuracy lost to temporal mismatch
+  - Applies to SNNs and broader class of stateful-neuron networks
+  - **Activation**: federated SNN, temporal resolution mismatch, heterogeneous edge FL
+
+### RecMem: Recurrence-based Memory Consolidation for LLM Agents
+- [[recurrence-memory-consolidation]] - Memory consolidation storing interactions in subconscious layer, only invoking LLM when sustained recurrence detected, reducing token cost by up to 87% while exceeding accuracy (arXiv: 2605.16045)
+  - Lightweight embedding for subconscious storage, LLM only for recurring patterns
+  - Semantic refinement recovers fine-grained facts omitted by compression
+  - Drop-in replacement for consolidation step in existing memory systems
+  - **Activation**: recmem, recurrence memory consolidation, lazy memory, agent memory efficiency
+
 ## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - 23:00)
 
 ### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
