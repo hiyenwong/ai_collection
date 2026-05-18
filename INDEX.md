@@ -1,3 +1,11 @@
+## 2026-05-18 - Neuroscience Research (Cron Job)
+
+### Structure Abstraction and Generalization in a Hippocampal-Entorhinal Inspired World Model
+- [[hippocampal-entorhinal-world-model]] - Brain-inspired hierarchical world model using HPC-MEC circuit for structure abstraction and generalization via velocity-driven path integration (arXiv: 2605.15733)
+  - Inverse model for structural extraction from high-dimensional dynamics
+  - HPC-MEC coupling dissociating relational structures (MEC) from episodic scenes (HPC)
+  - **Activation**: hippocampal-entorhinal, world model, structure abstraction, path integration, grid cells, self-supervised learning
+
 ## 2026-05-18 - Neuroscience Research (Cron Job - Late Night)
 
 ### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
