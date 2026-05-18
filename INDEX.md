@@ -1,4 +1,18 @@
 ## 2026-05-19 - Computer Science + Quantum (Cron Job - Hourly)
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Bridging Silicon and the Hippocampus: Algebro-Deterministic Memory "VaCoAl" as a Substrate for Vector-HaSH and TEM
+- [[vacoal-hippocampal-memory]] - 用Galois域LFSR构建海马体记忆的代数确定性基底，连接Vector-HaSH、TEM与iEEG发现 (arXiv: 2605.15652)
+  - 确定性Galois域扩散替代随机投影，提供比特级可复现的准正交向量基底
+  - 提出CR2 = ∏CR1^n 多跳回放保真度衰减的首个代数可处理模型
+  - **Activation**: hippocampal memory, VaCoAl, Vector-HaSH, TEM, grid cells, episodic replay, sharp-wave ripples, hyperdimensional computing, Galois field, STDP
+
+### FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- [[fits-interpretable-spiking-neuron]] - 将SNN神经元时序计算分解为频率选择性和时间塑形两个可解释模块 (arXiv: 2605.13071)
+  - FS模块学习神经元目标频率，TS模块通过群延迟调制控制时序对齐
+  - 在无循环/延迟的前馈SNN中超越LIF基线，提供神经元级可解释参数
+  - **Activation**: FiTS, frequency selectivity, temporal shaping, interpretable SNN, LIF neuron, group delay, auditory processing
+
 
 ### AQKA: Active Quantum Kernel Acquisition Under a Shot Budget
 - [[aqka-active-quantum-kernel-acquisition]] - Closed-form gradient-based optimal shot allocation for quantum kernel estimation (arXiv: 2605.14672)

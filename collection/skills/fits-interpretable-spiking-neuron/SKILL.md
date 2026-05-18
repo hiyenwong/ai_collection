@@ -1,136 +1,86 @@
 ---
 name: fits-interpretable-spiking-neuron
-description: >
-  FiTS (Frequency Selectivity and Temporal Shaping) interpretable spiking neuron methodology.
-  Factorizes temporal computation within each spiking neuron into Frequency Selectivity (FS)
-  and Temporal Shaping (TS) modules. FS parameterizes each neuron's target frequency as the
-  maximizer of its subthreshold magnitude response; TS reshapes when frequency components
-  contribute to membrane voltage accumulation through group-delay modulation.
-  Use when designing interpretable SNN neurons, auditory processing SNNs, frequency-selective
-  spiking models, or when needing neuron-level interpretability in temporal SNNs.
-  Trigger words: FiTS, frequency selectivity spiking neuron, interpretable SNN, temporal shaping,
-  group-delay modulation SNN, auditory spiking neural network, SHD SSC benchmarks.
+description: "FiTS (Frequency Selectivity and Temporal Shaping) interpretable spiking neuron model. Factorizes temporal computation into Frequency Selectivity and Temporal Shaping within each neuron. Use when: spiking neural networks, interpretable neurons, temporal processing, frequency selectivity, temporal shaping, LIF neuron improvement, auditory processing, neuron-level interpretability, group-delay modulation, subthreshold magnitude response, feedforward SNNs, spike timing."
 ---
 
 # FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
 
-**Paper**: Choi & Chung (KAIST), arXiv:2605.13071, May 2026
+## Paper Reference
 
-## Core Idea
+- **Title**: FiTS: Interpretable Spiking Neurons via Frequency Selectivity and Temporal Shaping
+- **arXiv**: 2605.13071
+- **Authors**: Jongmin Choi, Joon Son Chung
+- **Date**: 2026-05-19
+- **Category**: cs.NE (Neural and Evolutionary Computing)
 
-FiTS factorizes neuron-level temporal computation into two explicit mechanisms:
+## Core Innovation
 
-1. **Frequency Selectivity (FS)**: Parameterizes each neuron's target frequency as the maximizer
-   of its subthreshold magnitude response. Motivated by intrinsic neuronal resonance.
-2. **Temporal Shaping (TS)**: Reshapes *when* frequency components contribute to pre-spike
-   membrane voltage through group-delay modulation.
+FiTS introduces a new spiking neuron model that **factorizes temporal computation** within each neuron into two independent modules:
 
-This allows individual neurons to specialize in specific frequency bands and timing roles,
-providing interpretable neuron-level summaries without requiring recurrent connections or
-network-level delays.
+1. **Frequency Selectivity (FS)**: Parameterizes each neuron's target frequency as the maximizer of its subthreshold magnitude response
+2. **Temporal Shaping (TS)**: Reshapes when frequency components contribute to membrane voltage accumulation through group-delay modulation
 
-## FiTS Neuron Architecture
+## Architecture
 
-### FS Module (Frequency Selectivity)
+### FS Module - Frequency Selectivity
 
-The FS module uses a resonator-style update that creates a bandpass frequency response:
+- Each neuron learns a **target frequency** parameter
+- Subthreshold membrane dynamics are tuned to maximize response at the target frequency
+- Provides frequency-selective filtering at the single-neuron level
+- Eliminates need for network-level delays or recurrence for temporal modeling
 
-```
-V0[k+1] = (1 - μΔt)·V[k] - ηΔt·a[k] + I[k]    # resonant membrane
-a[k+1]  = (1 - ρΔt)·a[k] + γΔt·V0[k+1]         # adaptive variable
-```
+### TS Module - Temporal Shaping
 
-- The **target frequency** f* is the maximizer of the subthreshold magnitude response
-- Learnable parameters control the resonant frequency per neuron
-- Each neuron specializes to a specific frequency band
+- Controls **when** frequency components contribute to membrane voltage accumulation
+- Uses **group-delay modulation** to shift temporal alignment of frequency components
+- Enables phase alignment and temporal feature extraction at neuron level
 
-### TS Module (Temporal Shaping)
+## Key Properties
 
-The TS module applies cascaded delays with learnable group-delay shifts:
+### Interpretability
 
-```
-Vm[k+1] = βm·(Vm[k] - Vm-1[k+1]) + Vm-1[k]     for m = 1..M
-Ṽm[k+1] = (1 - λm)·Ṽm-1[k+1] + λm·Vm[k+1]     delay modulation
-```
+- **Target frequencies** provide interpretable neuron-level summaries of frequency organization
+- **Group-delay shifts** reveal timing organization learned within the network
+- Unlike black-box SNN neurons, FiTS neurons have physically meaningful parameters
 
-- M cascaded stages create a delay chain
-- λm parameters modulate group delay, reshaping temporal contributions
-- Provides explicit control over timing of frequency component contributions
+### Performance
 
-### Spike Generation
+- Improves over plain LIF baseline on auditory benchmarks
+- Competitive with strong temporal SNN baselines (with recurrence/delays)
+- Works in **simple feedforward SNNs** without recurrence or network-level delays
 
-```
-S[k+1] = Θ(eVM[k+1] - Vth)     # threshold crossing
-V[k+1] = eVM[k+1] - S[k+1]·Vth # reset
-```
+### Comparison to LIF
 
-## Discrete-Time Update Algorithm
+| Feature | LIF | FiTS |
+|---------|-----|------|
+| Frequency selectivity | No (fixed time constant) | Yes (learnable target frequency) |
+| Temporal shaping | No | Yes (group-delay modulation) |
+| Interpretability | Limited | High (frequency + timing parameters) |
+| Needs recurrence for temporal | Often | No |
 
-```
-Input:  V[k], a[k], {Vm[k]}m=0..M, I[k]
-Output: V[k+1], a[k+1], {Vm[k+1]}m=0..M, S[k+1]
+## Mathematical Foundation
 
-FS module:
-  1. V0[k+1] ← (1-μΔt)V[k] - ηΔt·a[k] + I[k]
-  2. a[k+1]  ← (1-ρΔt)a[k] + γΔt·V0[k+1]
+### Subthreshold Response
 
-TS module:
-  3. Ṽ0[k+1] ← V0[k+1]
-  4. for m = 1 to M:
-       Vm[k+1]  ← βm(Vm[k] - Vm-1[k+1]) + Vm-1[k]
-       Ṽm[k+1] ← (1-λm)Ṽm-1[k+1] + λm·Vm[k+1]
+The FiTS neuron's subthreshold dynamics are designed such that:
 
-Spike:
-  5. S[k+1] ← Θ(eVM[k+1] - Vth)
-  6. V[k+1] ← eVM[k+1] - S[k+1]·Vth
-```
+$$H(\omega) = \frac{1}{1 + j\omega\tau - \text{FS terms}}$$
 
-## Key Advantages
+The target frequency $\omega^*$ is learned as the maximizer of $|H(\omega)|$.
 
-- **Interpretability**: Learned target frequencies and group-delay shifts provide explicit
-  neuron-level summaries of frequency/timing organization
-- **No recurrence needed**: Outperforms LIF in feedforward networks without recurrent connections
-- **Competitive with strong baselines**: Matches recurrent SNNs with delay mechanisms on auditory tasks
-- **Simple architecture**: Works with basic feedforward SNNs
+### Group Delay
 
-## Benchmarks
+$$\tau_g(\omega) = -\frac{d}{d\omega}\arg H(\omega)$$
 
-| Dataset | Description |
-|---------|-------------|
-| SHD | Spiking Heidelberg Digits (20-class, 10ms resolution) |
-| SSC | Spiking Speech Commands |
-| GSC | Google Speech Commands (non-spiking) |
+The TS module modulates $\tau_g$ to control temporal alignment.
 
-## Implementation Guide
+## Use Cases
 
-### When to Use FiTS
-
-- Auditory/speech processing tasks with temporal structure
-- Needing interpretable frequency-selective neurons
-- Feedforward SNNs where recurrence/delays are undesirable
-- Analyzing frequency organization learned by SNNs
-
-### Comparison with Baselines
-
-| Model | Recurrence | Delays | Key Difference |
-|-------|-----------|--------|----------------|
-| LIF | No | No | Simple leaky integrator |
-| RadLIF | Yes | No | Recurrent LIF |
-| SE-adLIF | Yes | No | Adaptive LIF with state expansion |
-| **FiTS** | **No** | **No** | **FS + TS within each neuron** |
-
-### Training
-
-- Train with standard backpropagation through time (BPTT)
-- Surrogate gradients for spike function (e.g., sigmoid surrogate)
-- Target frequencies and group delays are learned end-to-end
+1. **Auditory processing**: Where frequency selectivity and timing are central
+2. **Temporal pattern recognition**: Event-driven temporal processing
+3. **Interpretable SNNs**: When neuron-level understanding is required
+4. **Energy-efficient temporal modeling**: Feedforward SNNs without recurrence overhead
 
 ## Activation Keywords
 
-- FiTS, fits-interpretable-spiking-neuron
-- frequency selectivity spiking neuron
-- interpretable SNN, temporal shaping SNN
-- group-delay modulation spiking
-- auditory spiking neural network
-- SHD SSC benchmarks SNN
-- neuron-level interpretability temporal SNN
+FiTS, frequency selectivity, temporal shaping, interpretable spiking neurons, LIF neuron, group delay, subthreshold response, auditory SNN, feedforward SNN, temporal processing, spiking neuron design, neuron specialization
