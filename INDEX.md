@@ -1,3 +1,34 @@
+## 2026-05-18 - QPINN with Trainable Embeddings (Cron Job)
+
+### A QPINN Framework with Quantum Trainable Embeddings for the Lid-Driven Cavity Problem
+- [[qpinn-trainable-embeddings]] - QPINN framework using QNN-based trainable embeddings for PDE solving (arXiv: 2605.13892)
+  - Core: QNN learns data-adaptive quantum feature maps instead of classical fixed encoding
+  - Results: Stable training, competitive accuracy, significantly fewer parameters than classical PINNs
+  - **Activation**: QPINN, quantum PINN, quantum trainable embeddings, quantum PDE solver
+
+## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Leggett–Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
+- [[leggett-garg-neural-dynamics]] - LGI testing methodology to distinguish diffusive vs persistent stochastic models in neural dynamics (arXiv: 2605.12126)
+  - LGI as temporal analogue of Bell constraints for neural dynamics
+  - Persistent stochastic (Kac-type) models can violate LGI; diffusive models always satisfy it
+  - Conservative interpretation: violation indicates non-Markovian memory, not quantum coherence
+  - **Activation**: leggett-garg neural, temporal correlations neuron, non-diffusive neural dynamics, quantum-like neural testing
+
+### SpikeProphecy: A Large-Scale Benchmark for Autoregressive Neural Population Forecasting
+- [[spikeprophecy-benchmark]] - First large-scale benchmark for spike-count forecasting with population metric decomposition (arXiv: 2605.12992)
+  - Decomposes aggregate Pearson r into temporal fidelity, spatial pattern accuracy, magnitude-invariant alignment
+  - 105 Neuropixels sessions, 89,800 neurons, 7 architecture baselines
+  - Reveals brain-region predictability hierarchy + sub-Poisson evaluation floor
+  - **Activation**: spike forecasting benchmark, neural population forecasting, population metric decomposition, Neuropixels benchmark
+
+### Neural Fields for NV-Center Inverse Sensing (NeTMY)
+- [[netmy-neural-field-nv-sensing]] - Coordinate neural field for NV-center quantum sensor inverse problems with physics-faithful reconstruction (arXiv: 2605.13988)
+  - Tensor power-summed dipolar operator exposes center-collapse failure in free-density optimization
+  - NeTMY uses annealed positional encoding + multiscale optimization + sparsity gating
+  - Parameterization smooths gradient updates, mitigating center-collapse pathology
+  - **Activation**: NV center sensing, neural field inverse problem, quantum sensor reconstruction, NeTMY
+
 ## 2026-05-18 - Anthropic Research (Cron Job)
 
 ### Teaching Claude why (Updated)
