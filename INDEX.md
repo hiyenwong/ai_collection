@@ -1,3 +1,12 @@
+## 2026-05-18 - Neuroscience Research (Cron Job - Late)
+
+### The Complex Brain Hypothesis: Resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience
+- [[complex-brain-hypothesis]] - 提出复杂度假说解决熵-内容悖论：细粒度(HCPEs)与粗粒度(MPEs)意识状态区分 (arXiv: 2605.16146)
+  - 复杂脑假说(CBH)修正熵脑假说(EBH)，用复杂度而非熵指数现象丰富度
+  - 两机制：细粒度(致幻剂-内容增殖)与粗粒度(冥想/5-MeO-DMT-内容消解)，均可升熵但现象学相反
+  - 预测扰动签名(PCI)差异，MPEs为意识计算理论的关键测试案例
+  - **Activation**: complex brain hypothesis, entropic brain, minimal phenomenal experience, consciousness entropy, Friston consciousness, 5-MeO-DMT, meditation consciousness
+
 ## 2026-05-18 - Neuroscience Research (Cron Job)
 
 ### NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework
