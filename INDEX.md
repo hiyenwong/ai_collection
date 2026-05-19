@@ -17,6 +17,20 @@
 
 ## 2026-05-20 - Medicine + Quantum (Cron Job)
 
+### CovAngelo: A hybrid quantum-classical computing platform for accurate and scalable drug discovery
+- [[covangelo-hybrid-quantum-drug-discovery]] - QM/QM/MM multiscale embedding platform integrating quantum hardware (IQM, IonQ, IBM) for covalent docking and reaction barrier estimation, up to 20x speedup (arXiv: 2604.10487)
+  - Quantum-information metrics (entanglement entropy) guide active space partitioning for QM/QM/MM boundaries
+  - Multi-backend support: IQM, IonQ, IBM via CUDA-Q, plus GPU clusters for scalability
+  - Demonstrated on zanubrutinib covalent docking to BTK via Michael addition mechanism
+  - **Activation**: covangelo, quantum drug discovery, QM QM MM embedding, covalent docking, quantum chemistry drug design, quantum hardware drug screening
+
+### Latent Style-based Quantum Wasserstein GAN for Drug Design
+- [[quantum-wasserstein-gan-drug-design]] - Style-based QGAN with VAE latent encoding and gradient penalty loss for de novo molecular generation, validated on 156-qubit IBM Heron (arXiv: 2603.22399)
+  - Per-rotation noise injection enables style control for property-conditioned molecule generation
+  - WGAN-GP training prevents mode collapse with fewer parameters than classical GANs
+  - Benchmark: MOSES suite for validity, uniqueness, novelty, FCD metrics
+  - **Activation**: quantum GAN drug design, QWGAN molecular generation, quantum generative chemistry, style-based QGAN, VAE quantum drug
+
 ### Discovering Data Encoding Strategies for QCCNN Using MCTS
 - [[effective-rank-encoding-predictor]] - Uses effective rank of quantum feature maps to predict encoding performance, accelerating QML encoding search (arXiv: 2605.18540)
   - 核心要点 1: Entanglement capability and Fourier decomposition provide minimal insight into encoding performance
