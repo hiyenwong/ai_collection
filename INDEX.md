@@ -1,4 +1,18 @@
 ## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks: a computational account with clinical predictions
+- [[ven-circuit-snn-social-learning]] - VENs as acquisition scaffolds in recurrent SNNs enabling 98% vs 70% convergence; clinical predictions for bvFTD and ASC (arXiv: 2605.17399)
+  - VENs provide direct gradient pathway immune to Jacobian instabilities in recurrent circuits
+  - Phase-ablation shows mid-training VEN removal most disruptive; inference ablation causes stochastic collapse
+  - **Activation**: von economo neurons, VEN, social learning SNN, acquisition scaffold, bvFTD, autism, gradient pathway
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - Crystalline population geometry enables >100x memory capacity in food-caching species vs non-caching (arXiv: 2605.17199)
+  - Shesha stability metric quantifies geometric rigidity; caching hippocampus shows 2x temporal coherence
+  - 169-fold representational redundancy as "geometric tax" against biological noise
+  - **Activation**: geometric phase transition, hippocampal memory, population geometry, crystalline coding, Shesha stability, spatial memory
+
+## 2026-05-19 - Neuroscience Research (Cron Job)
 ## 2026-05-19 - Computer Science + Quantum (Cron Job)
 
 ### AgentWall: A Runtime Safety Layer for Local AI Agents
