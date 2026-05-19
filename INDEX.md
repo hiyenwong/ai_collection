@@ -1,3 +1,11 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 8PM)
+
+### Hybrid Quantum-Classical Neural Architecture Search
+- [[hqnn-neural-architecture-search]] - NAS methodology for designing HQNNs with hardware-aware FLOPs-constrained search (arXiv: 2605.18345)
+  - 核心要点 1: HQNN architecture design via NAS — encoding strategies, PQC structures, measurement design, classical-quantum coupling
+  - 核心要点 2: FLOPs-aware search optimizes accuracy vs computational cost for NISQ deployment
+  - **Activation**: HQNN architecture search, quantum NAS, hybrid quantum NAS, FLOPs-aware quantum search, neural architecture search quantum
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 7PM)
 
 ### RL-CQE: Reinforcement Learning Contracted Quantum Eigensolver for Excited States
