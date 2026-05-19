@@ -1,3 +1,19 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job - Hourly v2)
+
+### HOPPER: A Hop-by-hop Entanglement Distribution Protocol for Asynchronous Quantum Networks
+- [[hopper-entanglement-distribution]] - 异步量子网络中逐跳纠缠分发协议，中间节点自主决策实现多路并行ebit建立，突破串行瓶颈 (arXiv: 2605.15869)
+  - 多路并发ebit请求在同一量子路径上同时传输，无需等待前一个完成
+  - 中间节点基于本地资源状态自主进行逐跳决策，无需全局同步
+  - 在长距离高延迟网络中显著优于同步方案，充分利用多量子比特内存
+  - **Activation**: quantum network protocol, entanglement distribution, hop-by-hop, async quantum, HOPPER, quantum internet
+
+### Thermodynamic Networks: Harnessing Non-Equilibrium Steady States for Computation
+- [[thermodynamic-networks-computation]] - 利用非平衡稳态的热力学网络计算框架，将计算任务映射到热力学系统的稳态演化中 (arXiv: 2605.15985)
+  - 计算通过热力学网络向非平衡稳态的自然演化涌现，耗散是特征而非缺陷
+  - 能量流执行逻辑操作，热耗散限制计算精度
+  - 速度、精度、能耗之间的基本权衡关系
+  - **Activation**: thermodynamic computing, non-equilibrium steady states, physical computation, thermodynamic networks
+
 ## 2026-05-19 - 量子计算/计算机科学 (Cron Job)
 
 ### Mutually Unbiased Bases for Variational Quantum Initialization
