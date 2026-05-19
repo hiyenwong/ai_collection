@@ -1,4 +1,20 @@
 
+## 2026-05-19 - Computer Science + Quantum Computing (Cron Job)
+
+### Quantum Solvers for Nonlinear Matrix Equations in Quantum Chemistry
+- [[quantum-riccati-solver]] - Quantum algorithm for algebraic Riccati equations via Riesz projectors and QSVT, enabling linear-scaling RPA and coupled-cluster computations (arXiv: 2605.16189)
+  - Block-encodes Riccati solutions as Riesz projectors onto invariant subspaces
+  - Contour-integral resolvents + QSVT achieve poly(m) scaling in excitation rank
+  - Opens route to quantum algorithms for coupled-cluster theory
+  - **Activation**: quantum riccati, quantum nonlinear matrix, RPA quantum, algebraic riccati equation, quantum chemistry algorithm
+
+### Efficient Quantum Algorithm for Linear Matrix Differential Equations
+- [[quantum-linear-differential-equation]] - Nearly optimal O~(nu*L*t/epsilon) quantum algorithm for linear matrix ODEs with polynomial-to-exponential speedups for dissipative dynamics (arXiv: 2605.16195)
+  - Computes matrix entries directly, avoiding exponential state-amplitude decay
+  - Constant query complexity for dissipative dynamics, linear for unitary
+  - Proven optimal up to logarithmic factors
+  - **Activation**: quantum differential equation, open quantum system, dissipative dynamics, linear matrix ODE quantum, quantum time evolution
+
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
 ### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
