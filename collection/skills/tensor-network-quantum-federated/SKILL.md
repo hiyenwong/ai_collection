@@ -1,79 +1,179 @@
 ---
 name: tensor-network-quantum-federated
-description: >
-  Privacy-aware federated learning combining tensor-network compression with
-  quantum-enhanced processing for medical diagnosis. Use when building multi-institutional
-  medical AI systems that need: (1) MPC-secured aggregation, (2) small-qubit quantum
-  processing on compressed features, (3) tensor-network frontends (MPS/TTN/MERA).
-  Addresses the dual challenge of communication overhead and qubit limitations.
+description: "Tensor-network frontend with quantum-enhanced processor for privacy-aware federated medical diagnosis. Uses MPS/TTN/MERA compression to enable small-qubit quantum processing on compressed latent features while reducing MPC communication overhead. Use when building federated learning systems with quantum refinement, privacy-preserving medical AI, or tensor-network compressed quantum ML pipelines. Activation: tensor network quantum federated, MPC quantum medical, TTN quantum processor, federated quantum diagnosis"
 ---
 
 # Tensor-Network Quantum Federated Learning
 
-## Architecture Overview
+## Overview
+
+Combines tensor-network representation learning, MPC-secured aggregation, and post-aggregation quantum refinement for privacy-aware federated medical image classification.
+
+## Core Architecture
+
+### Three-Layer Design
 
 ```
-[Client A] ── MPS/TTN/MERA ──┐
-[Client B] ── MPS/TTN/MERA ──┤ → MPC Aggregation → QEP → Diagnosis
-[Client C] ── MPS/TTN/MERA ──┘
+┌─────────────────────────────────────────────────┐
+│                  Clients (N hospitals)           │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐         │
+│  │ MPS     │  │  TTN    │  │  MERA   │         │
+│  │ Frontend│  │Frontend │  │Frontend │         │
+│  └────┬────┘  └────┬────┘  └────┬────┘         │
+│       ▼             ▼            ▼               │
+│  Compressed    Compressed   Compressed           │
+│  Latent        Latent       Latent               │
+└───────┬───────────┬────────────┬─────────────────┘
+        │           │            │
+        ▼           ▼            ▼
+┌───────────────────────────────────────────────┐
+│         Secure Aggregation (MPC)               │
+│  Protected latent → Aggregated representation  │
+└──────────────────────┬────────────────────────┘
+                       ▼
+┌───────────────────────────────────────────────┐
+│    Quantum-Enhanced Processor (QEP)            │
+│  Quantum-state embedding + Observable readout  │
+└──────────────────────┬────────────────────────┘
+                       ▼
+              Refined Predictions
 ```
 
-## Three-Layer Design
-
-### Layer 1: Tensor-Network Frontend (Client-Side)
-Compresses high-dimensional medical images into compact latent representations.
+### Tensor-Network Frontends
 
 | Frontend | Compression | Best For |
 |----------|-------------|----------|
-| MPS | Linear scaling | 1D sequences, time-series |
-| TTN | Logarithmic scaling | 2D images (recommended) |
-| MERA | Multi-scale | Hierarchical features |
+| **MPS** (Matrix Product State) | Linear chain, low entanglement | 1D sequential data |
+| **TTN** (Tree Tensor Network) | Hierarchical, balanced | **Most balanced overall** |
+| **MERA** (Multi-scale ER Ansatz) | Multi-scale, critical systems | Scale-invariant data |
 
-**Key insight**: TTN+QEP combination shows the most balanced overall profile.
+### Key Findings
 
-### Layer 2: MPC-Secured Aggregation (Server-Side)
-- Multi-party computation protects aggregated latents
-- Communication cost ∝ latent dimension (not original image size)
-- Tensor-network compression directly reduces MPC overhead
+1. **TTN+QEP** exhibits the most balanced overall profile on PneumoniaMNIST
+2. QEP effect is **frontend-dependent**, not uniform across architectures
+3. QEP is more stable when qubit count matches latent dimension
+4. Noisy conditions degrade QEP performance vs noiseless
+5. MPC communication cost ∝ latent representation dimension
 
-### Layer 3: Quantum-Enhanced Processor (Post-Aggregation)
-- Quantum-state embedding of aggregated latents
-- Observable-based readout for classification
-- Stable when qubit count ≈ latent dimension
-- Degrades under noise vs. noiseless simulation
+## Implementation Guide
 
-## Design Principles
+### Step 1: Tensor-Network Compression
 
-### Co-Design Requirement
-Representation compression, quantum refinement, and privacy deployment must be optimized **jointly**, not independently.
+```python
+import torch
+import tensornetwork as tn
 
-### Qubit-Latent Matching
-QEP stability requires qubit count sufficiently matched to latent dimension:
-- Too few qubits → information bottleneck
-- Too many qubits → noise amplification on NISQ devices
+class TTNFrontend(nn.Module):
+    """Tree Tensor Network compression for medical images."""
+    def __init__(self, input_dim, latent_dim):
+        super().__init__()
+        self.input_dim = input_dim
+        self.latent_dim = latent_dim
+        # Learnable TTN nodes
+        self.tensors = nn.ParameterList([
+            nn.Parameter(torch.randn(input_dim // 4, latent_dim))
+            for _ in range(4)
+        ])
+    
+    def forward(self, x):
+        # Flatten input
+        x = x.view(x.shape[0], -1)
+        # Apply TTN compression through hierarchical contraction
+        chunks = torch.chunk(x, 4, dim=1)
+        compressed = []
+        for chunk, tensor in zip(chunks, self.tensors):
+            compressed.append(chunk @ tensor)
+        # Combine compressed chunks
+        return torch.cat(compressed, dim=-1).mean(dim=-1, keepdim=True)
+```
 
-### Dual Role of Compression
-Tensor-network compression serves two purposes:
-1. Enables small-qubit quantum processing
-2. Reduces MPC communication overhead
+### Step 2: Quantum-Enhanced Processor
 
-## Implementation Checklist
+```python
+import pennylane as qml
 
-1. Choose tensor-network frontend based on data modality
-2. Set latent dimension to match available qubit count
-3. Configure MPC protocol for chosen latent dimension
-4. Train QEP with noise models matching target hardware
-5. Validate end-to-end on PneumoniaMNIST or similar benchmark
+class QuantumEnhancedProcessor(nn.Module):
+    """Post-aggregation quantum refinement."""
+    def __init__(self, latent_dim, n_qubits):
+        super().__init__()
+        assert n_qubits <= latent_dim, "Qubits must fit latent dimension"
+        self.n_qubits = n_qubits
+        self.latent_dim = latent_dim
+        
+        self.dev = qml.device("default.qubit", wires=n_qubits)
+        self.weights = nn.Parameter(torch.randn(n_qubits, 3))
+        
+    @qml.qnode
+    def _qnode(self, inputs, weights):
+        qml.AmplitudeEmbedding(inputs, wires=range(self.n_qubits), normalize=True)
+        for i in range(self.n_qubits):
+            qml.Rot(weights[i, 0], weights[i, 1], weights[i, 2], wires=i)
+        for i in range(self.n_qubits - 1):
+            qml.CNOT(wires=[i, i + 1])
+        return [qml.expval(qml.PauliZ(i)) for i in range(self.n_qubits)]
+    
+    def forward(self, latent):
+        # Select first n_qubits dimensions
+        quantum_input = latent[:, :self.n_qubits]
+        # Run quantum circuit
+        q_output = self._qnode(quantum_input, self.weights)
+        return torch.stack(q_output).T
+```
 
-## Performance Notes
+### Step 3: Federated Training Loop
 
-- QEP effect is **frontend-dependent**, not uniform across architectures
-- Noisy conditions degrade QEP performance relative to noiseless
-- TTN frontend recommended as starting point for medical imaging
-- Communication cost governed by latent dimension, not original data size
+```python
+def federated_train_round(clients, server_qep, n_rounds=10):
+    """One round of federated training with quantum refinement."""
+    client_updates = []
+    
+    # Each client trains locally
+    for client in clients:
+        local_loss = client.train_local_epoch()
+        compressed_latent = client.get_compressed_latent()
+        client_updates.append(compressed_latent)
+    
+    # Secure aggregation (MPC simulation)
+    aggregated = torch.mean(torch.stack(client_updates), dim=0)
+    
+    # Quantum refinement
+    refined = server_qep(aggregated)
+    
+    # Compute loss on refined representation
+    loss = compute_diagnostic_loss(refined)
+    return loss, refined
+```
 
-## Related Papers in Knowledge Graph
+## Pitfalls
 
-- ID 250: Quantum-Enhanced Processing with Tensor-Network Frontends
-- ID 260: Adaptive Hybrid Quantum-Classical Feature Fusion
-- ID 261: QML for Medical Image Classification Review
+### Qubit-Latent Mismatch
+- QEP degrades when qubit count ≠ latent dimension
+- **Solution**: `n_qubits = min(latent_dim, hardware_max_qubits)`
+
+### Noise Sensitivity
+- QEP performance drops significantly under noisy conditions
+- **Solution**: Use error mitigation or increase shot count
+
+### MPC Communication Overhead
+- Communication cost scales with latent dimension
+- **Solution**: Tensor-network compression reduces both quantum input size AND MPC overhead
+
+### Frontend Selection
+- Different frontends suit different data types
+- **TTN**: Best default for medical imaging (balanced)
+- **MPS**: Good for 1D sequential (ECG, signals)
+- **MERA**: For multi-scale patterns (CT slices)
+
+## Activation Keywords
+- tensor network quantum federated
+- MPC quantum medical diagnosis
+- TTN quantum processor
+- federated quantum learning
+- quantum enhanced processor
+- privacy aware quantum ML
+- MPS TTN MERA quantum
+
+## Related Patterns
+- Hybrid quantum-classical feature fusion (see `hybrid-quantum-classical-feature-fusion-medical`)
+- Federated quantum learning for healthcare
+- Quantum error mitigation in NISQ

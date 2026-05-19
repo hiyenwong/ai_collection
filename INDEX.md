@@ -19,6 +19,18 @@
   - 核心要点 2: Fusion weights reveal when quantum features complement classical features
   - **Activation**: adaptive hybrid feature fusion, quantum classical complementarity, medical image quantum fusion
 
+### Tensor-Network Quantum Federated Medical Diagnosis
+- [[tensor-network-quantum-federated]] - Tensor-network frontends (MPS/TTN/MERA) + Quantum-Enhanced Processor for privacy-aware federated medical diagnosis (arXiv: 2604.01616)
+  - 核心要点 1: TTN+QEP combination shows most balanced profile on PneumoniaMNIST
+  - 核心要点 2: Tensor-network compression reduces both quantum input size and MPC communication overhead
+  - **Activation**: tensor network quantum federated, MPC quantum medical, TTN quantum processor
+
+### Hybrid Quantum Neural Networks for Thermographic Breast Cancer Classification
+- [[hybrid-quantum-medical-thermographic]] - HQNN architecture integrating quantum circuits within classical layers for thermographic breast cancer detection (arXiv: 2604.16953)
+  - 核心要点 1: Quantum variational layers enhance classical CNN feature extraction for thermal imaging
+  - 核心要点 2: Published in IEEE IBITeC 2025 conference
+  - **Activation**: hybrid quantum neural network medical, HQNN thermographic, quantum thermal imaging
+
 ## 2026-05-19 - Neuroscience Research (Cron Job - Evening)
 
 ### Session Summary
