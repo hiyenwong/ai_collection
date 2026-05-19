@@ -1,3 +1,17 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
+- [[vencircuit-ven-gradient-scaffold]] - Von Economo neurons as residual gradient scaffolds in SNNs, explaining their role in reliable learning and clinical patterns in bvFTD/ASC (arXiv: 2605.17399)
+  - VENs (2% of neurons) provide direct gradient pathway immune to Jacobian instabilities in recurrent circuits
+  - 98% convergence with VENs vs 70% without (OR=21.0, p=8.7e-5); failed ablated networks show complete learning absence
+  - **Activation**: vencircuit, ven neurons, von economo, gradient scaffold, residual pathway, social cognition SNN
+
+### Self-supervised local learning rules learn hidden hierarchical structure of high-dimensional data
+- [[self-supervised-local-learning-rhm]] - Layerwise self-supervised local rules match backprop data efficiency while being biologically plausible (arXiv: 2605.18557)
+  - Direct feedback approximations fail (miss input-specific masking); layerwise contrastive/non-contrastive rules succeed
+  - No symmetric error network needed — solves weight transport problem with cortical-compatible plasticity
+  - **Activation**: self-supervised local learning, random hierarchy model, biologically plausible backprop, layerwise contrastive
+
 ## 2026-05-20 - Deep Learning Research (Cron Job)
 
 ### Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics
