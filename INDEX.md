@@ -1,3 +1,27 @@
+## 2026-05-19 - Computer Science + Quantum (Cron Job 11AM)
+
+### Hybrid Quantum-Classical Neural Architecture Search
+- [[hqnn-neural-architecture-search]] - Systematic NAS for HQNN design combining parameterized quantum circuits with classical neural networks, with FLOPs-aware optimization balancing accuracy and computational efficiency for NISQ-era deployment (arXiv: 2605.18345)
+  - Defines HQNN search space: encoding, circuit structure, measurement, classical coupling
+  - FLOPs-aware search as proxy for computational complexity
+  - Hardware-constrained architecture optimization for practical deployment
+  - **Activation**: hybrid quantum NAS, HQNN architecture search, quantum neural architecture, FLOPs-aware quantum, hardware-aware QML
+
+### Discovering Data Encoding Strategies for Quantum-Classical Neural Networks Using Monte Carlo Tree Search
+- [[mcts-quantum-encoding-discovery]] - Uses MCTS to automatically discover optimal data encoding circuits for quantum-classical CNNs, with effective rank analysis as performance predictor to accelerate search (arXiv: 2605.18540)
+  - MCTS discovers encoding circuits that outperform common strategies on medical imaging datasets
+  - Effective rank of feature maps correlates with encoding performance — usable as threshold criterion
+  - Entanglement capability and Fourier decomposition provide minimal predictive insight
+  - **Activation**: quantum encoding discovery, MCTS encoding search, quantum data embedding, effective rank encoding
+
+### Geometric Prototype Learning in Quantum Hilbert Space with Matrix Product States
+- [[quantum-hilbert-prototype-learning]] - Prototype-based learning with class representatives as generative MPS in quantum Hilbert space, enabling classification/clustering via geometric quantum state measures (arXiv: 2605.17895)
+  - Lifts prototype learning from classical feature space to quantum Hilbert space
+  - Identifies quantum "attraction" effect from coherent superposition of assigned states
+  - Prototype-based dimensionality reduction from 2^n to k (number of classes)
+  - Outperforms classical prototype approaches on Fashion-MNIST and ECG datasets
+  - **Activation**: quantum prototype learning, quantum Hilbert space learning, MPS classification, quantum geometric learning
+
 ## 2026-05-19 - Neuroscience Research (Cron Job 11AM)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
