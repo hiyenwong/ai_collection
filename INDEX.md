@@ -1,3 +1,22 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 3PM)
+
+### Quantum Feature Amplification Network (QFAN)
+- [[quantum-feature-amplification-network]] - Autoregressive quantum generative model that removes register-size bottleneck by generating images as block sequences with reused small quantum circuits (arXiv: 2605.16044)
+  - 核心要点: autoregressive quantum generation, block-based image synthesis, fixed qubit budget, 3-qubit circuit with 12 shared params
+  - 核心要点: shot-noise propagation bound, empirical decoder-capacity heuristic, hardware verified on IBM QPU
+  - **Activation**: quantum feature amplification, QFAN, autoregressive quantum generation, quantum generative model blocks, qubit-efficient quantum generative
+
+### Algorithmic Advantage on Gate-Based Photonic QNN
+- [[photonic-qnn-algorithmic-advantage]] - Gate-based photonic QNN achieves 100% accuracy on XOR with just 2 trainable parameters, solving tasks requiring 4x+ classical parameters (arXiv: 2605.10801)
+  - 核心要点: effective dimension as capacity measure, proven generalization-error bound, parameter-matched QNN vs ANN comparison
+  - 核心要点: gradient-free optimization on real 6-qubit photonic processor, robustness to photon loss and phase-shifter noise
+  - **Activation**: photonic quantum neural network, algorithmic advantage QNN, effective dimension quantum, gate-based photonic QNN, gradient-free quantum training
+
+### Quantum-Inspired Lottery Tickets
+- [[quantum-inspired-lottery-tickets]] - Quantum-inspired classical algorithm for finding winning lottery tickets in neural networks via sparse subnetwork selection (arXiv: 2605.13979)
+  - 核心要点: quantum-inspired classical algorithm avoids quantum hardware requirement, efficient sparse subnetwork selection
+  - 核心要点: bridges QML with practical classical network compression
+  - **Activation**: quantum-inspired lottery tickets, winning lottery tickets, sparse subnetwork selection, quantum-inspired classical algorithm, neural network pruning
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
 ## 2026-05-19 - Computer Science (Cron Job)
@@ -497,78 +516,3 @@ All 12 papers scanned across q-bio.NC and cs.NE categories (May 15-18, 2026).
   - Three-stage: subgraph construction → progressive reasoning → trajectory combination
   - Reduces hallucination by grounding in structured knowledge
   - **Activation**: stepwise reasoning, subgraph generation, knowledge grounding, external KB reasoning
-
-### Federated Learning of SNNs under Heterogeneous Temporal Resolutions
-- [[federated-snn-heterogeneous-temporal]] - Federated learning framework for SNNs addressing temporal resolution mismatch across edge devices, enabling local-resolution training with global model compatibility (arXiv: 2605.15355)
-  - Naive FedAvg fails when clients have different sampling rates
-  - Adaptation methods recover accuracy lost to temporal mismatch
-  - Applies to SNNs and broader class of stateful-neuron networks
-  - **Activation**: federated SNN, temporal resolution mismatch, heterogeneous edge FL
-
-### RecMem: Recurrence-based Memory Consolidation for LLM Agents
-- [[recurrence-memory-consolidation]] - Memory consolidation storing interactions in subconscious layer, only invoking LLM when sustained recurrence detected, reducing token cost by up to 87% while exceeding accuracy (arXiv: 2605.16045)
-  - Lightweight embedding for subconscious storage, LLM only for recurring patterns
-  - Semantic refinement recovers fine-grained facts omitted by compression
-  - Drop-in replacement for consolidation step in existing memory systems
-  - **Activation**: recmem, recurrence memory consolidation, lazy memory, agent memory efficiency
-
-### Cortical Microcircuit Information Flux Optimization
-- [[cortical-microcircuits-information-flux-optimization]] - Simulation-based reverse engineering of whether cortical microcircuits are optimized for information flux (arXiv: 2605.14680)
-  - Investigates if biological cortical circuits operate near information transmission optima
-  - Uses mutual information between successive network states as optimization objective
-  - **Activation**: cortical microcircuit optimization, information flux neural networks, reverse engineering brain circuits
-## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - 23:00)
-
-### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
-- [[diagonal-ano-quantum-observables]] - Diagonal adaptive non-local observables for VQAs: reduces O(n²) to O(n) parameters while retaining full expressivity via canonical diagonal representation (arXiv: 2605.15410)
-  - Diagonal observables are canonical representatives of ANO space modulo unitary similarity
-  - Equivalent expressivity to full Hermitian ANO with far fewer parameters
-  - Faster convergence and easier classical optimization
-  - Hardware-friendly: diagonal measurements native on most platforms
-  - **Activation**: diagonal ANO, adaptive non-local observables, VQA parameter efficiency, quantum measurement design, observable adaptivity
-
-### Extreme Quantum Cognition Machines
-- [[extreme-quantum-cognition]] - Quantum learning architecture for deliberative decision making with dynamical attention, noise-tolerant to contradictory data (arXiv: 2603.05430)
-  - Fixed quantum dynamics as nonlinear feature map, learning only in linear readout
-  - Input-dependent Hamiltonian attention modulates quantum evolution
-  - No barren plateaus, inherent noise regularization
-  - **Activation**: extreme quantum cognition, EQCM, quantum reservoir computing, quantum extreme learning, dynamical attention quantum
-
-### Deep Boltzmann Quantum States for Spin Glasses
-- [[deep-boltzmann-quantum-states]] - Neural quantum states + Boltzmann machine for frustrated quantum many-body systems (arXiv: 2605.15899)
-  - Captures complex entanglement in classical/quantum spin glasses
-  - Boltzmann architecture naturally models competing interactions and frustration
-  - Unified framework for classical and quantum disordered systems
-  - **Activation**: cortical microcircuit optimization, information flux neural networks, reverse engineering brain circuits
-
-### Letting the Neural Code Speak: Automated Neuron Characterization via Language
-- [[neural-code-language-interpretability]] - Closed-loop framework translating neuron activations into semantic descriptions using neural digital twins (arXiv: 2605.12485)
-  - 核心要点 1: Natural language replaces mathematical models for characterizing neurons in higher visual areas
-  - 核心要点 2: Closed-loop: generate captions → semantic hypothesis → synthesize images → verify in silico
-  - 核心要点 3: V4 neurons achieve 96.1% activation / 97.6% suppression with language-generated images vs ~10% random
-  - **Activation**: neural code speak, automated neuron characterization, language-based neural description, neural digital twin, 2605.12485
-
-## 2026-05-18 - Neuroscience + Quantum Mechanics (Cron Job - 23:00)
-
-### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
-- [[clockless-neuromorphic-snn]] - Clockless asynchronous Boolean spiking neural networks on FPGA achieving nanosecond-scale spike dynamics with 100x energy efficiency over clocked implementations (arXiv: 2605.16114)
-  - Boolean spiking neurons with configurable excitatory/inhibitory weights and propagation delays
-  - Quasi-analog dynamics emerge from autonomous time-continuous evolution of digital logic (no global clock)
-  - 84.5% accuracy on SHD audio classification, competitive with analog neuromorphic state-of-the-art
-  - 2 orders of magnitude lower power than digital FPGA SNN implementations
-  - **Activation**: clockless neuromorphic, boolean spiking neuron, async spiking network, liquid state machine FPGA, energy-efficient SNN hardware
-
-### Structure Abstraction and Generalization in a Hippocampal-Entorhinal Inspired World Model
-- [[hpc-mec-world-model]] - Brain-inspired hierarchical world model using HPC-MEC coupling for structure abstraction and zero-shot generalization from real-world video (arXiv: 2605.15733)
-  - MEC encodes abstract relational structures via CANN; HPC binds content-specific episodic information
-  - Inverse model learns latent transitions from observation-only videos (no action labels needed)
-  - Demonstrates zero-shot transfer: extract transitions from human videos, apply to novel objects/scenes
-  - 84 FPS inference on A100; trained on SSv2 (220K videos), evaluated on OmniObject3D and robotics benchmarks
-  - **Activation**: hpc-mec world model, hippocampal entorhinal model, structure abstraction, cognitive map AI, grid cell model, latent transition reuse
-
-     1|## 2026-05-18 - Polariton BEC Quantum Neuromorphic (Cron Job - 22:01)
-     2|
-     3|### Polariton BECs: Theory and Concepts
-     4|- [[polariton-bec-quantum-neuromorphic]] - Polariton Bose-Einstein condensate theory for room-temperature quantum neuromorphic computing, driven-dissipative dynamics, and optical neural networks (arXiv: 2605.16256)
-     5|  - Polaritons are WISI (Weakly-Interacting, Strongly-Interfering) particles combining light interference with exciton interactions
-     6|
