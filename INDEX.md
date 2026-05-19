@@ -16,9 +16,9 @@
 
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
-All ~100 papers scanned across multiple search queries (neuroscience+brain network, SNN+comp neuro, q-bio.NC, cs.NE).
-12 recent papers analyzed in detail — **100% covered** by existing skills (extreme maturity).
-No new skills created.
+All 12 papers scanned across q-bio.NC and cs.NE categories (May 15-18, 2026).
+**75% coverage** (9/12 papers covered by existing skills). 0 new skills created.
+3 papers skipped: single-subject exploratory study (no generalizable methodology), symbolic regression (not neuroscience), evolutionary algorithm optimization (not neuroscience).
 
 ### Key Recent Papers Analyzed
 - **The Complex Brain Hypothesis** (2605.16146) — Karl Friston group extends consciousness/entropy framework → [[complex-brain-hypothesis]]
@@ -28,6 +28,13 @@ No new skills created.
 - **Rhythm Switching RNNs** (2605.14388) — Adaptive time constants → [[rhythm-switching-adaptive-time-constants-rnn]]
 - **Clockless Neuromorphic Computing** (2605.16114) — Autonomous spiking on reconfigurable chip → [[clockless-asynchronous-neuromorphic-computing]]
 - **Hippocampal-Entorhinal World Model** (2605.15733) — Structure abstraction and generalization → [[hippocampal-entorhinal-world-model]]
+- **Algebro-Deterministic Memory VaCoAl** (2605.15652) — Bridging silicon and hippocampus → [[vacoal-algebro-deterministic-memory]]
+- **Thermodynamic Networks** (2605.15985) — Non-equilibrium steady states → [[neuronal-murburn-thermodynamic-electricity]]
+
+### Skipped Papers
+- **From Observed Viability to Internal Predictive Approximation** (2605.15862) — Single-subject exploratory, no generalizable methodology
+- **Diversified Residual Symbolic Regression** (2605.15809) — Symbolic regression, not neuroscience
+- **Co-Evolutionary Algorithm Portfolios** (2605.15729) — Evolutionary optimization, not neuroscience
 
 **Activation**: neuroscience research, arxiv monitoring, cron job, zero new skills
 
