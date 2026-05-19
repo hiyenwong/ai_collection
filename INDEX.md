@@ -1,5 +1,16 @@
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
+## 2026-05-19 - Computer Science (Cron Job)
+
+### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
+- [[qlif-cast-quantum-spiking-forecasting]] - Quantum Leaky-Integrate-and-Fire spiking neural network for time-series regression, achieving 15.4% lower MSE than classical LIF (arXiv: 2605.18333)
+  - 核心要点: QLIF, quantum spiking, time-series forecasting, hybrid quantum-classical
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-adaptive-non-local-observables]] - Dynamic observable methodology expanding VQA function space with efficient diagonal approximation (arXiv: 2605.15410)
+  - 核心要点: adaptive observables, VQA expressivity, quantum neural networks, diagonal ANO
+
+
 ### SPIKER-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in SNNs
 - [[spiker-ll-snn-accelerator]] - FPGA-accelerated SNN with STSF local learning rule, DSP-free, sub-ms latency, <0.1 mJ per inference (arXiv: 2605.18003)
   - Extends Spiker+ inference architecture with STSF (Spike-Timing-Specific-Feedback) local learning for on-device training
