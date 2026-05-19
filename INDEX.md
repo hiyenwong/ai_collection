@@ -39,6 +39,12 @@
 
 ## 2026-05-20 - Medicine + Quantum (Cron Job)
 
+### Multi-Class Neurological Disorder Prediction with Tensor Network Feature Engineering
+- [[tensor-network-medical-imaging]] - PARAFAC/CP tensor decompositions extract discriminative features from 55,160 MRI images across 8 diagnostic categories; quantum-inspired classical framework matches recent baselines (arXiv: 2605.17771)
+  - Ensemble classifier enriched with PARAFAC CP tensor decompositions achieves robust validation across tensor rank configurations
+  - 5-fold nested stratified cross-validation demonstrates robustness to tensor network expressivity
+  - **Activation**: PARAFAC medical imaging, tensor decomposition MRI, quantum-inspired classification, neurological disorder prediction, CP decomposition medical, tensor feature engineering
+
 ### Practical Quantum Federated Learning for Privacy-Sensitive Healthcare: Communication Efficiency and Noise Resilience
 - [[quantum-federated-healthcare-communication]] - Hybrid QFL architecture reduces quantum transmissions from 3·T·N·M·P to {3t + 2(T−t)}·N·M·P with dynamic centralized/decentralized switching (arXiv: 2603.03853)
   - Light-cone feature selection eliminates redundant qubit features in PQC
