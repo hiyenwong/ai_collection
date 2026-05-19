@@ -1,3 +1,26 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 12PM)
+
+### ACE: Self-Evolving LLM Coding Framework via Adversarial Unit Test Generation
+- [[adversarial-testing-framework]] - Self-evolving code generation using solver-adversary architecture with execution-level supervision, no ground-truth or reward models needed; SFT + KTO joint optimization (arXiv: 2605.16299)
+  - Solver generates code, adversary generates adversarial tests inducing runtime failures
+  - Execution boolean table discriminates code quality, top fraction selected for SFT
+  - KTO with length penalty optimizes adversary; converges in 4-5 rounds with 3-7% pass@1 gains
+  - **Activation**: adversarial testing, solver-adversary, self-evolving coding, ACE framework, execution-based supervision, preference optimization, KTO training, fuzzing LLM, robust code generation
+
+### Lean-QEC: End-to-End Formalization of Quantum Error Correction
+- [[quantum-error-formal-verification]] - First Lean 4 formalization of stabilizer-code theory delivering machine-checked distance certificates for qLDPC codes up to 144 qubits via verified SAT reduction (arXiv: 2605.16523)
+  - Distance condition → Boolean satisfiability via verified reduction with BitVec-flattened encoding
+  - Error-location encoding reduces variables: n → k·⌈log₂n⌉, scaling to industrial code sizes
+  - Covers CSS and Bivariate Bicycle code families (J90,8,10K, J70,6,9K BB codes)
+  - **Activation**: quantum error correction formalization, Lean QEC, stabilizer code verification, distance certificate, qLDPC formal proof, machine-checked quantum proof, formal quantum verification
+
+### Quokka#: Quantum Computing with #SAT
+- [[quantum-circuit-sat-analysis]] - Reduces quantum circuit simulation, verification, equivalence checking, and synthesis to weighted model counting (#SAT) with complex-valued weights (arXiv: 2605.16509)
+  - Four engines: simulation, Hoare logic verification, exact/approximate equivalence, depth-optimal synthesis
+  - Computational-basis and Pauli-basis encodings with complex weight support
+  - Depth-optimal synthesis via Max#SAT enabling arbitrary gate set translation
+  - **Activation**: quantum circuit SAT, weighted model counting quantum, Quokka#, quantum circuit verification, quantum equivalence checking, quantum circuit synthesis #SAT
+
 ## 2026-05-19 - Neuroscience Research (Cron Job 12PM)
 
 ### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
