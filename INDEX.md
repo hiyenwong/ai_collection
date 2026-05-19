@@ -1,3 +1,26 @@
+## 2026-05-20 - Deep Learning Research (Cron Job)
+
+### Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics
+- [[probe-trajectory-reasoning-monitoring]] - Probe trajectories track concept probability evolution across CoT tokens; max-pooling achieves 95% AUROC, avg/last-token collapse to random (arXiv: 2605.18549)
+  - Evaluating probes at every generated token yields better outcome prediction than static single-point probes
+  - Template-based training data achieves near-parity with costly dynamically generated responses
+  - Signal-processing features (volatility, trend, steady-state) capture temporal reasoning dynamics
+  - **Activation**: probe trajectory, reasoning monitoring, LRM safety, CoT faithfulness, max-pooling probe
+
+### Implicit Hierarchical GRPO: Decoupling Tool Invocation from Execution for Tool-Integrated Mathematical Reasoning
+- [[implicit-hierarchical-grpo]] - Decouples tool invocation from execution via delayed execution; surrogate loss bridges explicit/implicit hierarchical policies; +2.53% on Qwen3-8B (arXiv: 2605.18500)
+  - Immediate tool execution disrupts reasoning coherence; delayed execution preserves reasoning flow
+  - Surrogate loss enables single policy to learn behavior equivalent to explicit hierarchical policy
+  - Consistent gains across 6 out-of-domain math benchmarks without multi-stage training
+  - **Activation**: hierarchical GRPO, tool-integrated reasoning, IH-GRPO, delayed tool execution
+
+### SD-Search: On-Policy Hindsight Self-Distillation for Search-Augmented Reasoning
+- [[sd-search-on-policy-hindsight-distillation]] - Derives step-level supervision from policy itself via on-policy hindsight self-distillation; no external teacher or annotations needed (arXiv: 2605.18299)
+  - Single model plays student (inference context) and teacher (hindsight block) roles with different conditioning
+  - Jensen-Shannon divergence at query positions layers dense step-level signal on GRPO trajectory reward
+  - Eliminates need for external teacher models or sub-question annotation pipelines
+  - **Activation**: sd-search, on-policy distillation, hindsight self-distillation, search-augmented reasoning, step-level credit
+
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
 ### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks: a computational account with clinical predictions
