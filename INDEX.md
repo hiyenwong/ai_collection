@@ -1,3 +1,19 @@
+## 2026-05-19 - Computer Science + Quantum (Cron Job 11AM)
+
+### Beyond Commutativity: Redesigning Trotter Decomposition via Local Symmetry
+- [[trotter-local-symmetry]] - Local symmetry-based Trotter decomposition for quantum simulation using operators that commute with Hamiltonian subsets, enabling improved partitioning beyond commutativity methods (arXiv: 2605.16016)
+  - Local symmetries reveal hidden structure enabling larger Hamiltonian blocks
+  - Fewer Trotter steps → shallower circuits for fixed accuracy
+  - Applicable to condensed matter and quantum chemistry Hamiltonians
+  - **Activation**: local symmetry Trotter, Hamiltonian partitioning, quantum simulation decomposition
+
+### Encoding Circuit Synthesis for Fault-Tolerant Quantum Computation
+- [[ftqc-encoding-circuit-synthesis]] - Systematic encoding circuit synthesis for preparing arbitrary logical states in QECCs, optimizing two-qubit gate count and circuit depth for FTQC (arXiv: 2605.15266)
+  - Uses stabilizer structure and Gaussian elimination for circuit construction
+  - Focuses on dominant resource costs: two-qubit gates and depth
+  - Applicable to surface codes, color codes, and LDPC codes
+  - **Activation**: encoding circuit synthesis, fault-tolerant state preparation, logical state encoding
+
 ## 2026-05-19 - Computer Science + Quantum (Cron Job 10AM)
 
 ### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
