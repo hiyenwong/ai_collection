@@ -12,6 +12,44 @@
   - No symmetric error network needed — solves weight transport problem with cortical-compatible plasticity
   - **Activation**: self-supervised local learning, random hierarchy model, biologically plausible backprop, layerwise contrastive
 
+## 2026-05-20 - Medicine + Quantum Computing (Cron Job)
+
+### CovAngelo: A hybrid quantum-classical computing platform for accurate and scalable drug discovery
+- [[quantum-drug-discovery-pipeline]] - Hybrid quantum-classical platform combining VQE/QAOA for molecular conformation search with classical scoring for drug discovery (arXiv: 2604.10487)
+  - Quantum algorithms explore conformational space more efficiently than classical methods
+  - CovAngelo architecture: quantum sampling + classical scoring for scalable pipelines
+  - **Activation**: quantum drug discovery, 量子药物发现, VQE molecular, QAOA drug screening, CovAngelo
+
+### Latent Style-based Quantum Wasserstein GAN for Drug Design
+- [[quantum-drug-discovery-pipeline]] - Quantum-classical generative model for molecular design with latent style conditioning and Wasserstein distance (arXiv: 2603.22399)
+  - Quantum circuits provide high-dimensional feature space for molecular generation
+  - Style conditioning controls molecular properties (solubility, toxicity, binding)
+  - **Activation**: quantum WGAN, drug design, molecular generation, quantum generative
+
+### Discovering Data Encoding Strategies for Quantum-Classical Neural Networks Using Monte Carlo Tree Search
+- [[quantum-medical-imaging-pipeline]] - MCTS discovers optimal encoding circuits for QCCNN on medical imaging datasets; effective rank predicts performance (arXiv: 2605.18540)
+  - Effective rank of feature maps correlates with encoding performance
+  - Entanglement capability and Fourier decomposition provide minimal insight
+  - **Activation**: quantum medical imaging, 量子医学影像, encoding discovery, MCTS encoding
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+- [[quantum-medical-imaging-pipeline]] - Temperature-Scaled Hybrid Fusion (TSHF) achieves 87.82% accuracy on BreastMNIST with quantum-classical architecture (arXiv: 2604.22903)
+  - Three fusion strategies: SHF (offline), DHF (end-to-end), TSHF (dynamic balancing)
+  - Temperature scaling resolves quantum-classical gradient mismatch
+  - **Activation**: hybrid quantum classical, feature fusion, breast cancer QML, TSHF
+
+### FQPDR: Federated Quantum Neural Network for Privacy-preserving Early Detection of Diabetic Retinopathy
+- [[quantum-healthcare-privacy-framework]] - Federated QNN for early DR detection using limited samples and few learnable parameters (arXiv: 2605.08324)
+  - Privacy-preserving: model parameters shared, patient data stays local
+  - Lightweight quantum models effective for medical image tasks
+  - **Activation**: federated quantum healthcare, 联邦量子医疗, privacy QNN, FQPDR
+
+### Quantum-Enhanced Processing with Tensor-Network Frontends for Privacy-Aware Federated Medical Diagnosis
+- [[quantum-healthcare-privacy-framework]] - MPS/TTN/MERA compression + QEP refinement for federated medical imaging with MPC-secured aggregation (arXiv: 2604.01616)
+  - Tensor compression reduces both quantum processing dimension and MPC communication overhead
+  - TTN+QEP combination shows most balanced overall profile
+  - **Activation**: tensor network federated, quantum healthcare privacy, MPC quantum, QEP
+
 ## 2026-05-20 - Deep Learning Research (Cron Job)
 
 ### Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics
