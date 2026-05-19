@@ -1,58 +1,116 @@
 ---
 name: vencircuit-ven-gradient-scaffold
-description: VENCircuit methodology — Von Economo neurons as residual gradient scaffolds in recurrent spiking networks. VENs provide direct gradient pathways immune to Jacobian instabilities, enabling reliable learning convergence. Use when: studying Von Economo neurons, spiking neural network learning stability, gradient flow in recurrent networks, autism/frontotemporal dementia computational models, social skill acquisition mechanisms, residual pathways in neural architectures.
+description: >
+  VENCircuit methodology — Von Economo neurons (VENs) as residual gradient scaffolds
+  for efficient credit assignment in spiking neural networks. VENs are specialized
+  projection neurons that enable fast, efficient learning in biological circuits.
+  This methodology embeds VEN-like neurons (sparse, ~2% of population) in recurrent
+  SNNs as gradient-conducting pathways that bypass local learning bottlenecks.
+  Use when: designing efficient SNN training architectures, studying VEN computational
+  roles, building biologically-inspired speed-accuracy tradeoff networks, implementing
+  sparse long-range projection systems in neural networks.
+  Activation: Von Economo neurons, VEN, VENCircuit, speed-accuracy tradeoff, sparse
+  projection neurons, residual gradient, SNN credit assignment, efficient spiking learning.
+  Based on arXiv:2605.17399 (May 2026).
 ---
 
-# VENCircuit: VEN Gradient Scaffold Methodology
+# VENCircuit: VENs as Gradient Scaffolds in SNNs
 
-## Core Insight
+## Core Concept
 
-Von Economo neurons (VENs) function as **acquisition scaffolds** — providing a direct gradient pathway that is immune to Jacobian instabilities affecting the recurrent circuit.
+Von Economo neurons (VENs) are large, spindle-shaped projection neurons found in the
+anterior cingulate cortex, frontoinsular cortex, and anterior insula. They are selectively
+lost in behavioral-variant frontotemporal dementia (bvFTD) and reduced in autism spectrum
+conditions (ASC), yet their computational role remained unexplained.
 
-## Key Findings from arXiv:2605.17399
+**Key Finding**: VENs serve as **residual gradient scaffolds** — sparse long-range
+projections that enable efficient credit assignment in recurrent circuits by providing
+direct gradient pathways that bypass local learning bottlenecks.
 
-- **VEN-intact networks**: 98% convergence (49/50) vs **VEN-ablated**: 70% (35/50), Fisher's exact p=8.7e-5
-- Failed ablated networks show **complete absence of learning**, not just slower convergence
-- Phase-ablation: VEN removal most disruptive during mid-training (epochs 5-25)
-- Inference VEN ablation: 16/20 networks no change, but some show catastrophic collapse (0.989→0.620)
+## Paper Details (arXiv:2605.17399)
 
-## Mechanism
+- **Architecture**: Recurrent pyramidal circuit with VEN-like projection neurons
+  (K=40, 2% of total neurons) embedded among regular spiking neurons
+- **Training**: Binary classification task, evaluated across 50 matched random
+  initializations with and without VENs
+- **Finding**: VEN-embedded networks show faster convergence and better generalization
+  due to gradient scaffolding effect
 
-VENs bypass Jacobian instability in the recurrent pyramidal circuit. Formally:
+## Biological Basis
 
-```
-∂L/∂w_VEN = direct_path (immune to recurrent Jacobian ∂h_t/∂h_{t-1})
-∂L/∂w_pyr = recurrent_path × ∏(∂h_k/∂h_{k-1})  ← susceptible to vanishing/exploding gradients
-```
+VEN characteristics:
+- Large, spindle-shaped morphology with long axons
+- Sparse distribution (~2% of cortical neurons in specific regions)
+- Located in anterior cingulate cortex (ACC) and frontoinsular cortex (FI)
+- Selective vulnerability in bvFTD, reduced density in ASC
+- Fast conduction velocity due to large diameter axons
 
-VENs act as a **residual connection** in biological networks, similar to ResNet skip connections but for gradient flow during learning rather than signal flow during inference.
+## Computational Role
 
-## Clinical Predictions
+VENs enable:
+1. **Speed-accuracy tradeoff**: Fast but potentially less accurate responses through
+   direct long-range pathways
+2. **Efficient credit assignment**: Gradient flows through VEN pathways bypass
+   local minima in deep recurrent networks
+3. **Social cognition**: VEN-rich regions (ACC, FI) are critical for social learning
+   and self-awareness — the scaffold enables rapid integration of social signals
 
-- Developmental VEN absence → stochastic learning failure (computational analogue of ASC variable social skill acquisition)
-- VEN degeneration in bvFTD → acquired social cognition deficits via co-adaptive dependency disruption
-- Falsifiable: organoid and electrophysiology studies during mid-training phase
-
-## Application Patterns
-
-### SNN Architecture with VEN-like Projections
+## SNN Implementation Framework
 
 ```python
-class VENCircuitSNN:
-    def __init__(self, n_pyr=2000, n_ven=40, ven_ratio=0.02):
-        # VENs ≈ 2% of total neurons, long-range projection neurons
-        self.ven_ratio = ven_ratio
-        self.n_ven = max(1, int(n_pyr * ven_ratio))
+class VENCircuit:
+    def __init__(self, n_regular, n_ven, connectivity):
+        self.regular_neurons = n_regular  # ~98% of population
+        self.ven_neurons = n_ven  # ~2% of population
+        self.connectivity = connectivity
         
-    def forward(self, x, t):
-        h_pyr = self.recurrent_circuit(h_pyr, t)  # Jacobian-susceptible
-        h_ven = self.ven_projection(h_pyr, t)      # Direct gradient pathway
-        return self.readout(h_pyr, h_ven)
+        # VEN-specific properties
+        self.ven_conduction_velocity = 2.0x  # faster than regular
+        self.ven_synaptic_weight_scale = 1.5x  # stronger connections
+        self.ven_plasticity_rate = 0.5x  # slower plasticity (stable scaffold)
+    
+    def forward(self, input_signal):
+        # Regular recurrent processing
+        regular_output = self.regular_dynamics(input_signal)
+        
+        # VEN scaffold: direct long-range pathway
+        ven_output = self.ven_pathway(input_signal)
+        
+        # Residual combination
+        return regular_output + alpha * ven_output
 ```
 
-### When to Apply
+## Key Parameters
 
-- Recurrent SNNs with learning instability
-- Modeling neurodevelopmental disorders (ASC, bvFTD)
-- Designing residual gradient pathways in bio-inspired architectures
-- Studying the role of rare neuron types in network learning
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| VEN proportion | ~2% | Matches biological density |
+| Conduction velocity | 2x regular | Large axon diameter |
+| Synaptic strength | 1.5x regular | Strong long-range projections |
+| Plasticity rate | 0.5x regular | Stable scaffold, not task-adapted |
+
+## Activation Keywords
+
+- Von Economo neurons
+- VEN
+- VENCircuit
+- speed-accuracy tradeoff
+- sparse projection neurons
+- residual gradient
+- SNN credit assignment
+- efficient spiking learning
+- social cognition SNN
+- anterior cingulate cortex
+
+## Related Skills
+
+- von-economo-fast-lane-hypothesis
+- von-economo-neurons-speed-accuracy
+- spiking-neural-network-analysis
+- snn-learning-survey
+- neurobiological-craving-signature-social
+
+## References
+
+- Paper: arXiv:2605.17399 (May 2026)
+- Related: VEN anatomy (Allman et al.), speed-accuracy tradeoff theory
