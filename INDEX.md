@@ -1,3 +1,19 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
+- [[vencircuit-ven-scaffold-snn]] - VENs function as residual gradient scaffolds in recurrent SNNs, providing acquisition reliability not performance enhancement (arXiv: 2605.17399)
+  - VEN-intact SNNs converge 98% vs 70% for ablated (OR=21.0, p=8.7e-5)
+  - VENs bypass recurrent Jacobian instability, analogous to ResNet skip connections
+  - Maps to ASC variability (developmental) and bvFTD heterogeneity (adult loss)
+  - **Activation**: Von Economo neurons, VEN, VENCircuit, social cognition SNN, gradient flow SNN, residual connection SNN, bvFTD, autism computational model, BPTT stability
+
+### Spiker-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in Spiking Neural Networks
+- [[spiker-ll-fpga-snn-accelerator]] - FPGA SNN accelerator with on-device STSF local learning, 92-93% accuracy, <0.1mJ per inference, DSP-free (arXiv: 2605.18003)
+  - Extends Spiker+ inference architecture with hardware-adapted three-factor STSF rule
+  - Coincidence-based updates without traces, temporal gating (5/10 timesteps)
+  - Pynq Z2 deployment: sub-ms latency, scalable from <5k LUTs
+  - **Activation**: Spiker-LL, FPGA SNN accelerator, STSF learning rule, on-device learning, edge neuromorphic, hardware-algorithm co-design, local learning rule
+
 
 ## 2026-05-20 - Medicine + Quantum (Cron Job)
 

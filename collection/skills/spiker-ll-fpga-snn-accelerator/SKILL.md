@@ -1,96 +1,109 @@
 ---
 name: spiker-ll-fpga-snn-accelerator
-description: >
-  Spiker-LL: FPGA-based Spiking Neural Network accelerator enabling adaptive
-  on-device local learning. Extends open-source Spiker architecture with STSF
-  (Spiking Time Sparse Feedback) local learning rule for supervised training
-  without BPTT. Use when designing edge neuromorphic hardware, FPGA SNN
-  accelerators, on-device learning systems, local learning rules, or
-  hardware-algorithm co-design for spiking networks. Trigger words: Spiker-LL,
-  SNN accelerator, FPGA neuromorphic, STSF learning rule, on-device training,
-  local learning, Spiker architecture, DSP-free SNN, edge intelligence,
-  Spiking Time Sparse Feedback.
+description: "Spiker-LL methodology: FPGA-based SNN accelerator enabling on-device adaptive local learning via STSF (Spiking Time Sparse Feedback) rule. Extends open-source Spiker+ inference architecture with hardware-adapted three-factor learning. Achieves 92-93% accuracy, sub-ms latency, <0.1mJ per inference, DSP-free. Use when: designing SNN hardware accelerators, implementing on-device learning, edge neuromorphic computing, STSF learning rule, FPGA SNN deployment, hardware-algorithm co-design, local learning rules vs BPTT, energy-efficient edge AI."
 ---
 
 # Spiker-LL: FPGA SNN Accelerator with On-Device Learning
 
-## Core Thesis
+## Core Contribution
 
-Deploying adaptive intelligence at the edge requires hardware-algorithm co-design. Spiker-LL extends the open-source Spiker+ inference architecture with efficient STSF local learning, enabling **inference + training** on low-cost edge FPGAs with <0.1 mJ per inference.
+Spiker-LL extends the open-source Spiker+ inference architecture with efficient **on-device supervised learning** using the STSF (Spiking Time Sparse Feedback) local learning rule. Enables real-time inference AND training on low-cost edge FPGAs.
 
-*Source: arXiv:2605.18003 (Caviglia et al. 2026)*
+## Key Results
 
-## Architecture Overview
+| Dataset | Architecture | Accuracy | Latency | Energy/Inference |
+|---------|-------------|----------|---------|-----------------|
+| MNIST | 784-200-10 | 92% | <1ms | <0.1 mJ |
+| F-MNIST | 784-200-10 | 88% | <1ms | <0.1 mJ |
+| DIGITS | 64-20-10 | 93% | <1ms | <0.1 mJ |
 
-### Spiker-LL Microarchitecture
-
-1. **Local Learning Module**: Implements STSF rule — computes weight updates using only local spike timing and pre/post activity
-2. **Arbiter**: Manages access to synaptic state between inference and learning phases
-3. **Control Units**: Coordinate learning/inference switching with minimal overhead
-
-### Design Principles
-
-- **DSP-free**: Uses multiplier-free LIF neurons — no DSP slices needed
-- **Streaming**: Maintains Spiker's pipelined execution during both inference and learning
-- **Minimal overhead**: Training support added only at synaptic-state access points
-- **Reusable**: Existing datapaths, memory banks, and control logic shared between modes
+- **Platform**: Pynq Z2 (Xilinx Zynq-7020)
+- **DSP-free**: Uses only LUTs and BRAMs, no DSP slices
+- **Scalable**: From <5k LUTs (compact) to larger configurations
+- **16-bit fixed-point**: 8 fractional bits for weights and membrane potentials
 
 ## STSF Learning Rule
 
-**Spiking Time Sparse Feedback** provides supervised learning via:
-- Direct Feedback Alignment (DFA): fixed random top-down error signals
-- Spike-triggered local plasticity: updates only when spikes occur
-- No eligibility traces needed (unlike e-Prop, DECOLLE)
-- Negligible state overhead compared to trace-based methods
+STSF is a **three-factor local learning rule** that avoids BPTT's O(NT) memory and O(ET) compute costs.
 
-**Tradeoff**: Limited temporal credit assignment vs. extreme hardware efficiency. Best for feedforward, low-latency spiking workloads.
+### Weight Update
 
-## Performance Results
+For each synapse, combines three quantities available in hardware:
+1. **Pre-synaptic spike**: s_pre(t)
+2. **Post-synaptic membrane potential**: V_post(t)
+3. **Global error signal**: δ(t) from temporal gating
 
-| Benchmark | Accuracy | Latency | Energy |
-|-----------|----------|---------|--------|
-| MNIST | ~93% | <1ms | <0.1 mJ |
-| F-MNIST | ~92% | <1ms | <0.1 mJ |
-| DIGITS | ~92% | <1ms | <0.1 mJ |
+ΔW_ij ∝ s_pre(t) · V_post(t) · δ(t)
 
-- Scales from <5k LUTs (ultra-compact) to larger networks
-- Maintains real-time operation across configurations
-- Competitive with prior FPGA/ASIC SNN accelerators
+### Key Design Choices
 
-## Comparison to Other Local Learning Rules
+- **Coincidence-based updates without traces**: Avoids memory bottlenecks of eligibility trace methods
+- **Temporal gating**: Only 5 timesteps used for weight updates (out of 10 total), reducing compute
+- **Single-sample adaptation**: Fixed-point updates preserve learning dynamics with marginal accuracy loss
+- **No BPTT required**: Eliminates temporal unrolling and long-range dependencies
 
-| Method | State Overhead | Temporal Credit | Hardware Cost |
-|--------|---------------|-----------------|---------------|
-| STSF (Spiker-LL) | Minimal | Limited | Lowest |
-| e-Prop | High (eligibility traces) | Strong | Higher |
-| DECOLLE | Medium (local losses) | Medium | Medium |
-| BPTT | O(NT) memory | Strongest | Prohibitive |
+## Hardware Architecture
 
-## Design Guidelines for Edge SNN Hardware
+### Baseline (Spiker+)
+- Fully parameterizable LIF neuron layers
+- Multiplier-free discrete-time LIF model
+- Per-layer BRAM weight storage
+- Sequential input streaming, parallel neuron computation
+- Local controllers per layer + global controller
 
-1. **Reuse existing infrastructure**: Add learning at synaptic access points, don't rebuild datapaths
-2. **Prefer DSP-free designs**: Multiplier-free neurons scale better on FPGA
-3. **Event-driven updates**: Only compute when spikes occur — exploit temporal sparsity
-4. **Fixed random feedback**: DFA avoids backpropagation complexity
-5. **Minimal state**: Avoid per-synapse eligibility traces when possible
+### Extensions for Learning (Spiker-LL)
+1. **Weight Updater Module**: Ultra-lightweight, tightly coupled to each LIF neuron
+   - Implements STSF three-factor rule in datapath
+   - Modular — deployable across different network configs
+2. **Error Signal Distribution**: Global error signal routed to all synaptic access points
+3. **Temporal Gating Controller**: Selects which timesteps contribute to weight updates
+4. **State Memory**: Minimal additional BRAM for post-synaptic state accumulation
 
-## Application to AI Systems
+### LIF Neuron Model
 
-- Edge deployment of adaptive SNNs on resource-constrained devices
-- Hardware design for neuromorphic sensors + on-device learning
-- Co-designing algorithms and hardware for streaming spiking workloads
-- Open-source alternative to proprietary neuromorphic chips (Loihi, etc.)
+```
+I_syn[n] = Σ_j W_j · s_in,j[n]
+V_m[n] = β·V_m[n-1] + I_syn[n] - V_th·s_out[n-1]
+s_out[n] = 1 if V_m[n] ≥ V_th, else 0
+```
 
-## Limitations
+Reset mechanism configurable (subtractive or zeroing).
 
-- STSF limited in tasks with long-range temporal dependencies
-- Tested on standard benchmarks (MNIST, F-MNIST, DIGITS) — complex real-world tasks need evaluation
-- FPGA-specific; ASIC deployment would require different optimization
+## Comparison with Prior SNN Accelerators
 
-## Activation Keywords
+| Work | Year | Rule | Accuracy | Platform |
+|------|------|------|----------|----------|
+| Spiker-LL (this) | 2026 | STSF | 92% | Pynq Z2 |
+| [15] Integer E-Prop | 2025 | E-Prop | 97.55% | Zynq-7010 |
+| [16] Optimized AL | 2025 | AL | 97.3% | Zynq-7045 |
+| [18] PLR | 2020 | PLR | 96.2% | Zynq-7045 |
+| [21] STDP | 2023 | STDP | 91.5% | Virtex-6 |
 
-- Spiker-LL, SNN FPGA accelerator, on-device learning
-- STSF learning rule, local learning, Spiking Time Sparse Feedback
-- DSP-free neuromorphic hardware, edge intelligence
-- Spiker architecture, hardware-algorithm co-design
-- multiplier-free LIF neurons, Direct Feedback Alignment
+Spiker-LL trades some accuracy for **full on-device training** capability with minimal energy.
+
+## Design Principles
+
+1. **Hardware-adapted algorithm**: STSF chosen specifically for hardware compatibility (coincidence detection, no traces)
+2. **Reuse existing datapaths**: Training modifications at synaptic-state access points only
+3. **Preserve timing closure**: No impact on inference path critical timing
+4. **Fixed-point arithmetic**: 16-bit with 8 fractional bits — balances precision and resource usage
+
+## Future Extensions
+
+- Incremental updates for online adaptation
+- Runtime feedback loops for continuous learning
+- Richer neuron models beyond LIF
+- Stability analysis under quantization and gating
+
+## Related Skills
+
+- `snn-fpga-hardware-software-codesign` — FPGA SNN co-design patterns
+- `edgespike-edge-iot-snn` — Edge SNN deployment
+- `spiking-neural-network-analysis` — SNN paper analysis
+- `snn-learning-survey` — SNN learning paradigms
+
+## arXiv Reference
+
+- **Paper**: "Spiker-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in Spiking Neural Networks" (Caviglia et al., 2026)
+- **ID**: arXiv:2605.18003
+- **URL**: https://arxiv.org/abs/2605.18003
