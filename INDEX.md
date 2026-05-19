@@ -12,6 +12,35 @@
   - 169-fold representational redundancy as "geometric tax" against biological noise
   - **Activation**: geometric phase transition, hippocampal memory, population geometry, crystalline coding, Shesha stability, spatial memory
 
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Standalone Skill Sync Batch
+- [[spiker-ll-fpga-snn-accelerator]] - FPGA accelerator for adaptive local learning in SNNs without BPTT, enabling on-device edge training (arXiv: 2605.18351)
+  - Core: Three-factor local learning rule with pre-synaptic, post-synaptic, and modulatory factors
+  - Core: Event-driven processing with fixed-point arithmetic for minimal FPGA resource usage
+  - **Activation**: FPGA SNN local learning, adaptive local learning, on-device spiking training, three-factor learning
+- [[qlif-cast-quantum-spiking-forecasting]] - Quantum Leaky-Integrate-and-Fire for time-series weather forecasting with hybrid quantum-classical recurrent architecture (arXiv: 2605.18333)
+  - Core: Qubit superposition neuron excitation states with Rx rotation gates and T1 decay
+  - Core: 15.4% lower MSE than classical LIF, 94% faster convergence than QLSTM
+  - **Activation**: quantum spiking neural network, quantum LIF, time-series forecasting, weather prediction
+- [[spike-forecast-behavioral-decoding]] - Implicit behavioral decoding from next-step spike forecasts using Mamba forecaster for closed-loop BCI (arXiv: related)
+  - Core: Single spike forecaster enables both prediction and implicit behavioral readout
+  - **Activation**: spike forecasting, behavioral decoding, Mamba forecaster, closed-loop BCI
+- [[quantum-feature-amplification-network]] - Quantum Feature Amplification Network for hybrid quantum-classical ML feature enhancement
+  - Core: Quantum circuit-based feature amplification in hybrid architectures
+  - **Activation**: quantum feature amplification, quantum-classical hybrid, ML feature enhancement
+- [[quantum-feature-amplification]] - Quantum feature amplification methodology for quantum machine learning
+  - **Activation**: quantum feature amplification, QML
+- [[spike-forecast-behavioral]] - Implicit behavioral decoding from next-step spike forecasts (arXiv: related)
+  - **Activation**: spike forecast, behavioral decoding
+
+### Papers Analyzed (already covered)
+- MIRAGE: fMRI-to-image mental imagery → `mirage-fmri-mental-imagery-decoding` (arXiv: 2605.17198)
+- Geometric Phase Transition hippocampal memory → `geometric-phase-transition-hippocampal-memory` (arXiv: 2605.17199)
+- VENCircuit VENs social skill SNN → `ven-circuit-snn-social-learning` (arXiv: 2605.17399)
+- Functional Whole-Brain Models → `functional-whole-brain-models` (arXiv: 2605.18118)
+- Selective Alignment KD SNN → `sealkd-snn-knowledge-distillation` (arXiv: 2605.14252)
+
 ## 2026-05-19 - Computer Science + Quantum (Cron Job)
 
 ### QuantFPFlow: Quantum Amplitude Estimation for Fokker-Planck Policy Optimisation in Continuous RL
