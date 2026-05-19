@@ -12,6 +12,44 @@
   - 169-fold representational redundancy as "geometric tax" against biological noise
   - **Activation**: geometric phase transition, hippocampal memory, population geometry, crystalline coding, Shesha stability, spatial memory
 
+## 2026-05-19 - Computer Science + Quantum (Cron Job)
+
+### QuantFPFlow: Quantum Amplitude Estimation for Fokker-Planck Policy Optimisation in Continuous RL
+- [[quantum-amplitude-estimation-rl]] - Quantum amplitude estimation for RL achieving O(1/ε) quadratic speedup over classical O(1/ε²) (arXiv: 2605.16429)
+  - Grover-amplified amplitude estimator for partition function estimation
+  - Exploration bonus R_aug = R_env + α·log(1/ρ*(s)) for multimodal landscapes
+  - Quantum-inspired classical simulation exhibits same algorithmic structure
+  - **Activation**: quantum amplitude estimation, QuantFPFlow, Fokker-Planck RL, Grover amplification
+
+### Byzantine-Resilient Federated Learning via QUBO-Based Client Selection on Quantum Annealers
+- [[qubo-federated-learning-security]] - QUBO-based client selection outperforms MultiKrum on advanced Byzantine attacks (arXiv: 2605.16438)
+  - Joint QUBO optimization over all client subsets vs greedy MultiKrum scoring
+  - 95.11% vs 81.33% accuracy on Advanced LIE attack (MNIST)
+  - Quantum annealer solves pairwise distance encoding for honest client detection
+  - **Activation**: QUBO federated learning, Byzantine-resilient FL, quantum annealer security
+
+### QuChaTeR: A Hybrid Quantum-Chaotic Temporal Framework for Earthquake Prediction
+- [[quantum-chaotic-temporal-forecasting]] - Hybrid quantum-chaotic architecture combining wavelet, chaotic maps, and VQC for time series (arXiv: 2605.16454)
+  - Wavelet decomposition + chaotic maps + variational quantum circuits
+  - Outperforms LSTM/GRU/RNN/Reservoir on real-world seismic datasets
+  - Faster convergence with richer quantum state representations
+  - **Activation**: quantum chaotic forecasting, QuChaTeR, VQC time series, PennyLane
+
+### LoopQ: Quantization for Recursive Transformers
+- [[loop-aware-transformer-quantization]] - Loop-aware PTQ framework for recursive/looped Transformer models (arXiv: 2605.16343)
+  - Addresses distribution shift across loop roles and recursive error accumulation
+  - Combines activation scaling, cross-loop state alignment, trajectory-aware optimization
+  - First systematic study of quantization in looped language models
+  - **Activation**: LoopQ quantization, recursive transformer PTQ, looped model compression
+
+### Forecasting Medium-Horizon Alzheimer Disease Progression: Residual Gap-Aware Transformers
+- [[residual-gap-aware-transformer-medical]] - Residual gap-aware transformer for 24-month CDR-SB change prediction from irregular biomarker histories (arXiv: 2605.16319)
+  - Anchor-based prediction using only data available at MCI visit
+  - Predicts residual changes vs absolute scores to avoid baseline confounding
+  - Handles irregular biomarker observation patterns in longitudinal data
+  - **Activation**: residual gap prediction, Alzheimer prognosis, CDR-SB forecasting, ADNI
+
+
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 ## 2026-05-19 - Computer Science + Quantum (Cron Job)
 
