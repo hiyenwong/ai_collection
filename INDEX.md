@@ -1,4 +1,24 @@
 
+## 2026-05-20 - Medicine + Quantum (Cron Job)
+
+### Discovering Data Encoding Strategies for QCCNN Using MCTS
+- [[effective-rank-encoding-predictor]] - Uses effective rank of quantum feature maps to predict encoding performance, accelerating QML encoding search (arXiv: 2605.18540)
+  - 核心要点 1: Entanglement capability and Fourier decomposition provide minimal insight into encoding performance
+  - 核心要点 2: Effective rank of feature maps exhibits meaningful correlation and serves as threshold criterion
+  - **Activation**: effective rank encoding, feature map rank QML, encoding performance prediction
+
+### Multi-Class Neurological Disorder Prediction with Tensor Network
+- [[tensor-network-neurological-predictor]] - Tensor Network Feature Engineering for multi-class neurological disorder prediction from sparse MRI data (arXiv: 2605.17771)
+  - 核心要点 1: Tensor decompositions extract rich features from sparse MRI representations
+  - 核心要点 2: Supports multi-class disorder classification with interpretable factor matrices
+  - **Activation**: tensor network MRI, neurological disorder prediction, tensor feature engineering
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer
+- [[adaptive-hybrid-feature-fusion-medical]] - Learns optimal complementarity between quantum and classical features through adaptive weighting for medical image classification (arXiv: 2604.22903)
+  - 核心要点 1: Adaptive fusion module learns per-sample optimal quantum/classical feature weighting
+  - 核心要点 2: Fusion weights reveal when quantum features complement classical features
+  - **Activation**: adaptive hybrid feature fusion, quantum classical complementarity, medical image quantum fusion
+
 ## 2026-05-19 - Neuroscience Research (Cron Job - Evening)
 
 ### Session Summary
