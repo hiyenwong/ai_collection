@@ -1,104 +1,60 @@
 ---
 name: self-supervised-local-learning-rhm
-description: "Self-supervised local learning rules that discover hidden hierarchical structure in high-dimensional data. Demonstrates that layerwise self-supervised (contrastive/non-contrastive) losses match backpropagation data efficiency while being biologically plausible. Applicable to: biologically plausible learning, SNN training without backprop, cortical plasticity rules. Activation: self-supervised local learning, random hierarchy model, biologically plausible backprop, layerwise contrastive learning."
+description: "Layerwise self-supervised local learning rules for deep networks on the Random Hierarchy Model (RHM). Direct feedback approximations fail due to input-specific masking nonlinearity; layerwise contrastive/non-contrastive self-supervised rules succeed and match backprop data efficiency while being cortex-compatible. Use when: designing biologically plausible learning rules, local learning algorithms, self-supervised contrastive learning, solving weight transport problem, hierarchical structure learning, cortical-compatible plasticity."
 ---
 
-# Self-Supervised Local Learning on the Random Hierarchy Model
+# Self-Supervised Local Learning on Random Hierarchy Model (RHM)
 
-Based on: Delrocq, Wu, Bellec, Gerstner (2026) — arXiv:2605.18557
+## Core Problem
 
-## Core Insight
+How do biological neural networks learn abstract hierarchical representations without backpropagation's symmetric weight requirement (weight transport problem)?
 
-Biologically plausible **self-supervised local learning rules** can discover the hidden hierarchical structure of high-dimensional data with the **same data efficiency as supervised backpropagation**, while being compatible with known cortical synaptic plasticity rules.
+## Key Finding from arXiv:2605.18557
 
-## Key Findings
+Two classes of local learning rules tested on RHM:
 
-- **Direct feedback rules FAIL**: Approximating error propagation from output layer fails on RHM tasks
-- **Layerwise self-supervised rules SUCCEED**: Contrastive and non-contrastive losses learn the hierarchical structure
-- **Equal data efficiency**: Self-supervised local rules match supervised backprop in sample efficiency
-- **Failure mechanism**: Direct feedback misses input-specific nonlinearities ("masking") essential for complex tasks
-- **Cortical compatibility**: All successful rules map to known synaptic plasticity mechanisms
+### Class 1: Direct Feedback Approximations → **FAIL**
+- Use direct feedback signals to approximate error propagation from output layer
+- Fail because they miss **input-specific nonlinear masking** that is essential in full backprop
+- Cannot learn complex hierarchical tasks
 
-## Random Hierarchy Model (RHM)
+### Class 2: Layerwise Self-Supervised Rules → **SUCCEED**
+- Use layerwise contrastive or non-contrastive loss functions
+- Do **not** approximate errors at the output layer
+- **As data-efficient as supervised backpropagation**
+- Compatible with known cortical synaptic plasticity rules
 
-The RHM generates data with known latent hierarchical structure:
-- Features organized in nested groups
-- Ground-truth hierarchy is known (enables evaluation)
-- Designed to study how networks learn abstract representations
+## Mechanism
 
-## Two Types of Local Learning Rules
+Full backprop implements input-specific masking:
+```
+∂L/∂w_l = δ_l · x_l  where δ_l depends on downstream Jacobian AND input-specific gates
+```
+Direct feedback rules approximate δ_l globally but miss the input-specific component, causing failure on hierarchical tasks.
 
-### Type 1: Direct Feedback (FAILS)
-- Uses feedback connections to approximate error signals from output layer
-- Attempts to mimic backpropagation's error propagation
-- **Fails because**: misses input-specific nonlinearities ("masking") implemented in full backprop
-- The masking is **essential** for learning complex hierarchical tasks
+Self-supervised rules bypass this by learning structure directly at each layer.
 
-### Type 2: Layerwise Self-Supervised (SUCCEEDS)
-- Each layer learns via self-supervised objectives
-- **Contrastive**: InfoNCE-style losses comparing positive/negative pairs
-- **Non-contrastive**: VICReg, Barlow Twins-style redundancy reduction
-- No explicit error approximation needed
-- **Succeeds because**: discovers hierarchical structure through data geometry
-
-## Implementation Pattern
+## Application Patterns
 
 ```python
-import torch
-import torch.nn as nn
-
-class LocalLearningNetwork(nn.Module):
-    def __init__(self, layers, hidden_dims):
-        super().__init__()
-        self.layers = nn.ModuleList([
-            nn.Linear(d_in, d_out) 
-            for d_in, d_out in zip(hidden_dims[:-1], hidden_dims[1:])
-        ])
-    
-    def forward_encoder(self, x):
-        # Feedforward encoding through all layers
-        activations = []
+class LayerwiseSelfSupervisedLearning:
+    def __init__(self, layers):
+        self.layers = layers
+        
+    def train_step(self, x):
         h = x
-        for layer in self.layers:
+        for i, layer in enumerate(self.layers):
+            # Layerwise self-supervised objective
+            # e.g., contrastive: maximize agreement between augmented views
+            loss = self.contrastive_loss(layer(h))
+            layer.update(loss)  # Local update, no global error signal needed
             h = layer(h)
-            h = torch.relu(h)
-            activations.append(h)
-        return activations
-    
-    def layerwise_loss(self, activations):
-        # Self-supervised loss at each layer
-        total_loss = 0
-        for i, act in enumerate(activations):
-            # Contrastive loss (e.g., InfoNCE)
-            # or non-contrastive (e.g., VICReg)
-            loss = self.self_supervised_loss(act)
-            total_loss += loss
-        return total_loss
-    
-    def self_supervised_loss(self, act):
-        # Implement contrastive or non-contrastive loss
-        # VICReg-style: variance + invariance + covariance
-        # or InfoNCE-style: positive vs negative pairs
-        pass
 ```
 
-## Why This Matters
+## When to Apply
 
-- **Biological plausibility**: No symmetric error network needed (solves weight transport problem)
-- **No long convergence**: Unlike some biologically plausible algorithms, these converge efficiently
-- **Same data efficiency**: No trade-off in sample complexity vs. backpropagation
-- **Cortical compatibility**: Maps to known Hebbian/STDP mechanisms
-
-## Pitfalls
-
-- **Not all local rules work**: Direct feedback approximations specifically fail on hierarchical tasks
-- **RHM is synthetic**: Results on artificial dataset; need validation on real-world data
-- **Contrastive vs non-contrastive**: Both work but may differ in convergence speed and stability
-
-## Related Skills
-- `meta-learning-biological-plasticity`
-- `snn-learning-survey`
-- `feedback-hebbian-continual-learning`
-
-## arXiv
-- https://arxiv.org/abs/2605.18557
+- Building biologically plausible deep learning models
+- Solving the weight transport problem
+- Training deep networks without symmetric feedback weights
+- Learning hierarchical representations with local plasticity rules
+- Neuromorphic computing implementations

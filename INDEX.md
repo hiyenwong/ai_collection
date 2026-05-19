@@ -134,6 +134,30 @@
 
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
+### Self-supervised local learning rules learn the hidden hierarchical structure of high-dimensional data
+- [[self-supervised-local-learning-rhm]] - Layerwise self-supervised contrastive rules match backprop data efficiency on RHM while being cortex-compatible; direct feedback approximations fail due to masking nonlinearity (arXiv: 2605.18557)
+  - Direct feedback fails to capture input-specific masking essential for hierarchical learning
+  - Layerwise contrastive/non-contrastive rules succeed without approximating output-layer errors
+  - **Activation**: self-supervised local learning, RHM, biologically plausible backprop, layerwise contrastive, weight transport
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models]] - Unifies bottom-up WBM (biophysically detailed) with top-down neuroconnectionism (task-performing DNNs) via four minimal criteria (arXiv: 2605.18118)
+  - Four criteria: structural grounding, dynamical realism, functional competence, mappable observables
+  - Three-pillar roadmap across short/mid/long-term horizons for full integration
+  - **Activation**: functional whole-brain models, fWBM, neuroconnectionism, whole-brain modeling, brain simulation task performance
+
+### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
+- [[vencircuit-ven-gradient-scaffold]] - VENs as residual gradient scaffolds in SNNs; 98% convergence with VENs vs 70% without, immune to Jacobian instabilities (arXiv: 2605.17399)
+  - VENs (2% of neurons) provide direct gradient pathway bypassing recurrent circuit Jacobian
+  - Phase-ablation: mid-training VEN removal most disruptive; inference ablation causes stochastic collapse
+  - **Activation**: vencircuit, ven neurons, von economo, gradient scaffold, residual pathway, social cognition SNN
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - Crystalline population geometry enables >100× memory capacity in food-caching species; Shesha stability metric quantifies rigidity (arXiv: 2605.17199)
+  - E/I circuit motif: excitatory spatial scaffold + inhibitory orthogonal decorrelation
+  - 169× representational redundancy as "geometric tax" against biological noise
+  - **Activation**: geometric phase transition, hippocampal memory, population geometry, crystalline coding, Shesha stability
+
 ## 2026-05-20 - Medicine + Quantum (Cron Job)
 
 ### Multi-Class Neurological Disorder Prediction with Tensor Network Feature Engineering
