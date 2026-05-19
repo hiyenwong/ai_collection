@@ -1,3 +1,17 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 4PM)
+
+### Noise-Aware Quantum Program Testing
+- [[noise-aware-quantum-testing]] - Mutation testing methodology that evaluates quantum program robustness under realistic hardware noise, extending mutation analysis beyond noiseless simulators (arXiv: 2605.13279)
+  - 核心要点: Noise can mask up to 40% of detectable mutants — tests passing on simulators may fail on real NISQ devices
+  - 核心要点: Four noise models (depolarizing, amplitude damping, phase damping, readout error) integrated into mutation testing workflow
+  - **Activation**: noise-aware quantum testing, quantum mutation testing under noise, robust quantum testing, NISQ quantum testing, quantum software testing noise
+
+### Quantum Software Architecture Framework (QSAF)
+- [[quantum-software-architecture-framework]] - Component-based framework for designing hybrid quantum-classical systems with separation of concerns, reusability, and engineering rigor (arXiv: 2605.01800)
+  - 核心要点: Three-layer architecture (quantum algorithm, hybrid interface, classical processing) with standardized component interfaces
+  - 核心要点: Design patterns for VQE/QAOA loops, QML training, and quantum subroutines with anti-patterns for monolithic programs
+  - **Activation**: quantum software architecture, QSAF, hybrid quantum-classical architecture, quantum component design, quantum system design
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 3PM)
 
 ### Quantum Feature Amplification Network (QFAN)
