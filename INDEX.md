@@ -1,3 +1,12 @@
+## 2026-05-19 - Neuroscience Research (Cron Job 12PM)
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - Memory capacity via neural population geometry phase transition (crystalline vs mist codes), Shesha metric, and 169-fold geometric tax for manifold stability (arXiv: 2605.17199)
+  - Shesha metric: geometric stability (0.245 crystalline vs 0.166 mist) and temporal coherence
+  - E/I subspace segregation: excitatory scaffold + inhibitory decorrelation in orthogonal subspaces
+  - Double dissociation with Valiant's SMA: advantage from continuous topology, not discrete allocation
+  - **Activation**: geometric phase transition, hippocampal memory, Shesha metric, crystalline geometry, neural code stability, spatial memory capacity, geometric tax
+
 ## 2026-05-19 - Computer Science + Quantum (Cron Job 11AM)
 
 ### Hybrid Quantum-Classical Neural Architecture Search
