@@ -1,5 +1,13 @@
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
+### Subject-Specific Analysis of Self-Initiated Attention Shifts from EEG
+- [[eeg-self-initiated-attention-shifts]] - Preparatory EEG activity distinguishes self-initiated vs externally instructed attention shifts with reliable within-subject classification, SHAP feature attribution (arXiv: 2605.18251)
+  - Self-initiated shifts lack temporal markers but show subject-specific discriminative EEG signatures
+  - Higher-frequency bands and frontal regions contribute most to classification decisions
+  - High-frequency EEG interpretation requires careful artifact control (muscle, eye movement)
+  - Applications: asynchronous BCI, personalized attention monitoring, volitional control assessment
+  - **Activation**: self-initiated attention, EEG attention shifts, voluntary attention, asynchronous BCI, SHAP EEG, preparatory EEG
+
 ### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
 - [[vencircuit-ven-scaffold-snn]] - VENs function as residual gradient scaffolds in recurrent SNNs, providing acquisition reliability not performance enhancement (arXiv: 2605.17399)
   - VEN-intact SNNs converge 98% vs 70% for ablated (OR=21.0, p=8.7e-5)

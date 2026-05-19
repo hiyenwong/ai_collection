@@ -1,147 +1,158 @@
 ---
 name: mcts-quantum-encoding-discovery
-description: "MCTS-based quantum data encoding discovery methodology. Use Monte Carlo Tree Search to discover optimal data encoding circuits for quantum-classical neural networks. Evaluates encoding strategies by effective rank correlation rather than entanglement capability or Fourier decomposition. Applies to QML model design, encoding circuit optimization, and quantum feature map selection. Activation: MCTS encoding discovery, quantum encoding optimization, Monte Carlo Tree Search QML, data encoding circuit search, effective rank encoding, quantum feature map discovery"
+description: MCTS-based quantum data encoding discovery methodology. Uses Monte Carlo Tree Search to find optimal encoding circuits for quantum-classical neural networks, with effective rank as performance predictor. Trigger words: MCTS encoding, quantum encoding discovery, QML encoding optimization, 量子编码发现.
 ---
 
-# MCTS-Based Quantum Encoding Discovery
+# MCTS Quantum Encoding Discovery
 
-Methodology for discovering optimal data encoding circuits for quantum-classical neural networks using Monte Carlo Tree Search (MCTS). Addresses the open question of why certain encodings outperform others in quantum machine learning.
+## Description
 
-## Key Paper
+Monte Carlo Tree Search (MCTS) methodology for discovering optimal data encoding
+strategies in quantum machine learning (QML). Evaluates encoding circuits by their
+effective rank and uses tree search to efficiently navigate the encoding circuit
+space. Validated on medical imaging datasets.
 
-**Discovering Data Encoding Strategies for Quantum-Classical Neural Networks Using Monte Carlo Tree Search** (arXiv:2605.18540, May 2026)
-- Authors: Lena Tokuhiro, Amine Bentellis, Jeanette Miriam Lorenz
-- Category: quant-ph
+## Core Methodology
 
-## Core Problem
+The key insight: **not all data encodings are equal**, and the choice of encoding
+significantly impacts QML performance. Rather than using hand-designed encodings,
+MCTS systematically discovers encoding circuits that outperform standard approaches.
 
-The choice of data encoding significantly influences QML performance, but why certain encodings outperform others remains poorly understood. Common metrics like **entanglement capability** and **Fourier decomposition** provide minimal insight into encoding effectiveness.
+### Framework Components
 
-## Key Finding
+1. **Quantum-Classical CNN (QCCNN)**: Non-variational quantum block for feature
+   extraction followed by a classical classifier
+2. **MCTS Search**: Tree search over encoding circuit configurations
+3. **Effective Rank Metric**: Key predictor of encoding quality — correlates with
+   performance better than entanglement capability or Fourier decomposition
+4. **Threshold Criterion**: Use effective rank to prune low-performing branches
 
-The **effective rank of feature maps** exhibits meaningful correlation with encoding performance and can serve as a threshold criterion to accelerate the search for high-performing encodings.
+## Mathematical Framework
 
-## Methodology
+### Effective Rank of Feature Maps
 
-### MCTS for Encoding Circuit Discovery
-
-1. **Search Space**: Space of possible data encoding circuits (gate sequences, qubit assignments, rotation angles)
-2. **Evaluation**: Each candidate encoding is evaluated by training a quantum-classical CNN (QCCNN) on the target task
-3. **Objective**: Maximize classification accuracy on medical imaging datasets
-4. **Architecture**: QCCNN combines non-variational quantum block for feature extraction with classical classifier
-
-### Effective Rank as Predictive Metric
-
-The effective rank of feature maps correlates with encoding quality:
-- **High effective rank** → richer feature representation → better encoding
-- Can be used as a **threshold criterion** to prune low-performing candidates early
-- Significantly faster than full training evaluation
-
-### What DOESN'T Work as Predictors
-
-- **Entanglement capability**: Minimal insight into encoding performance
-- **Fourier decomposition**: Minimal insight into encoding performance
-
-## Implementation Pattern
-
-```python
-# MCTS-based encoding search
-from mcts import MCTS  # conceptual
-
-class EncodingMCTS:
-    def __init__(self, n_qubits, max_depth):
-        self.n_qubits = n_qubits
-        self.max_depth = max_depth
-    
-    def search(self, dataset, budget=1000):
-        """Search for optimal encoding circuit."""
-        root = EncodingNode(gates=[])
-        
-        for _ in range(budget):
-            # Selection: traverse tree using UCB
-            node = self.select(root)
-            
-            # Expansion: add new gate to encoding
-            node = self.expand(node)
-            
-            # Simulation: evaluate encoding
-            score = self.simulate(node, dataset)
-            
-            # Backpropagation: update node values
-            self.backpropagate(node, score)
-        
-        return self.best_encoding(root)
-    
-    def simulate(self, node, dataset):
-        """Evaluate encoding using effective rank as fast proxy."""
-        feature_map = build_feature_map(node.gates)
-        features = apply_encoding(feature_map, dataset)
-        
-        # Fast evaluation using effective rank
-        eff_rank = compute_effective_rank(features)
-        
-        # Use effective rank as threshold to skip poor candidates
-        if eff_rank < threshold:
-            return low_score  # Skip full training
-        
-        # Full evaluation for promising candidates
-        return train_and_evaluate_qccnn(features, dataset)
-
-def compute_effective_rank(features):
-    """Compute effective rank of feature matrix."""
-    import numpy as np
-    # SVD-based effective rank
-    s = np.linalg.svd(features, compute_uv=False)
-    s_norm = s / s.sum()
-    entropy = -np.sum(s_norm * np.log(s_norm + 1e-10))
-    return np.exp(entropy)
-```
-
-## QCCNN Architecture
+The effective rank measures the informativeness of quantum feature maps:
 
 ```
-Input Data → Encoding Circuit → Quantum Feature Extraction → Classical Classifier → Output
-               (discovered by MCTS)
+r_eff(Φ) = exp(H(λ)) / d
 ```
 
-### Quantum Block
-- Non-variational quantum block for feature extraction
-- Data encoding circuit (discovered by MCTS)
-- Fixed circuit depth, optimized gate sequence
+where λ are the eigenvalues of the feature covariance matrix, H is the Shannon
+entropy, and d is the dimension. Higher effective rank indicates more uniformly
+distributed information across feature dimensions.
 
-### Classical Classifier
-- Standard neural network layers
-- Trained jointly or separately from quantum block
+### MCTS for Encoding Discovery
 
-## When to Use
+```
+Selection → Expansion → Simulation → Backpropagation
 
-- QML tasks where encoding choice is unknown
-- Medical image classification with quantum-classical hybrid models
-- When standard encodings (ZZFeatureMap, amplitude encoding) underperform
-- When you need to discover encoding strategies tailored to specific data distributions
+- State: Partial encoding circuit configuration
+- Action: Add/remove/modify a gate in the encoding
+- Reward: Classification accuracy on validation set
+- Rollout: Quick evaluation with limited epochs
+```
 
-## Best Practices
+## Usage Patterns
 
-1. **Use effective rank as early stopping**: Prune candidates below effective rank threshold before full training
-2. **Don't rely on entanglement metrics**: They don't predict encoding quality
-3. **Don't rely on Fourier analysis**: Limited predictive power for encoding selection
-4. **Search space design**: Include diverse gate types (RY, RZ, CNOT, CZ) in the search space
-5. **Budget allocation**: MCTS budget should balance exploration vs. exploitation
+### Pattern 1: Discovering QML Encoding Circuits
+
+When building a quantum-classical hybrid model:
+
+1. Define the encoding search space (gate types, qubit connectivity)
+2. Set up MCTS with effective rank as early stopping criterion
+3. Run search: select → expand → simulate → backpropagate
+4. Extract top-k encoding circuits for final evaluation
+5. Compare against standard encodings (amplitude, angle, IQP)
+
+### Pattern 2: Encoding Quality Prediction
+
+Before full training, use effective rank to predict encoding performance:
+
+1. Compute feature maps for each candidate encoding
+2. Calculate effective rank of the feature covariance matrix
+3. Rank encodings by effective rank (higher → better)
+4. Use as threshold to prune search space early
+
+### Pattern 3: Medical Imaging QML Pipeline
+
+For medical image classification with quantum models:
+
+1. Preprocess images to compatible quantum state format
+2. Use MCTS-discovered encoding for quantum feature extraction
+3. Non-variational quantum block: fixed circuit, no trainable parameters
+4. Classical classifier on top: lightweight neural network or SVM
+5. Evaluate with cross-validation on medical dataset
+
+## Instructions for Agents
+
+### Step 1: Identify the QML Problem
+
+- Determine if quantum encoding is the bottleneck
+- Check if classical baselines are competitive
+- Assess dataset size and feature dimensionality
+
+### Step 2: Set Up MCTS Search
+
+- Define action space: available quantum gates (RY, RZ, CNOT, etc.)
+- Set tree depth and breadth parameters
+- Initialize with common encoding strategies as root
+
+### Step 3: Run Evaluation
+
+- Use effective rank for quick pre-screening
+- Full evaluation: train QCCNN with discovered encoding
+- Compare against: amplitude encoding, angle encoding, IQP encoding
+
+### Step 4: Analyze Results
+
+- Check if entanglement capability correlates with performance (spoiler: it doesn't)
+- Check if Fourier decomposition provides insight (spoiler: minimal)
+- Verify effective rank as the primary predictor
 
 ## Pitfalls
 
-- **Computational cost**: Full QCCNN training for each candidate is expensive — use effective rank proxy
-- **Search space explosion**: Limit max circuit depth and gate types
-- **Dataset dependency**: Optimal encoding is data-dependent — may not generalize across datasets
-- **No theoretical guarantee**: MCTS discovers good encodings empirically, not provably optimal
-- **Medical data scarcity**: Limited public medical imaging datasets for QML benchmarking
+### Effective Rank vs Other Metrics
 
-## Activation
+- **Entanglement capability**: Poor predictor of encoding performance
+- **Fourier decomposition**: Minimal insight for practical encoding selection
+- **Effective rank**: Best single predictor — use this
 
-Keywords: MCTS encoding discovery, quantum encoding optimization, Monte Carlo Tree Search QML, data encoding circuit search, effective rank encoding, quantum feature map discovery, encoding strategy QML
+### QCCNN Design
+
+- The quantum block should be **non-variational** (fixed parameters)
+- Train only the classical classifier
+- This avoids barren plateau issues while still gaining quantum advantage
+
+### Dataset Requirements
+
+- Works best on structured data (medical images, tabular)
+- Need sufficient samples for effective rank computation
+- Small datasets may not show clear encoding differences
+
+### MCTS Configuration
+
+- Too few iterations → poor exploration
+- Too many → diminishing returns
+- Start with 100-500 iterations, scale based on action space size
+
+## Activation Keywords
+
+- MCTS encoding discovery
+- quantum encoding optimization
+- QML data encoding
+- quantum-classical neural network encoding
+- effective rank encoding
+- 量子编码发现
+- 量子机器学习编码优化
 
 ## Related Skills
 
-- **quantum-kernel-advantage** - Quantum kernel methods for medical AI
-- **quantum-ml-patterns** - General quantum ML research patterns
-- **quantum-neural-network-designer** - QNN architecture design
+- `quantum-ml-patterns` — General QML research patterns
+- `quantum-neural-architecture` — QNN architecture design
+- `quantum-neural-network-designer` — QNN optimization
+- `hybrid-quantum-classical-nn` — Hybrid model patterns
+
+## Reference
+
+- arXiv:2605.18540 — "Discovering Data Encoding Strategies for Quantum-Classical
+  Neural Networks Using Monte Carlo Tree Search" (Tokuhiro et al., 2026)
