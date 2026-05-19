@@ -1,3 +1,19 @@
+## 2026-05-19 - Neuroscience Research (Cron Job 11AM)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Proposes fWBMs as a unified paradigm bridging bottom-up whole-brain modeling and top-down neuroconnectionism, requiring structural grounding, dynamical realism, functional competence, and mappable observables (arXiv: 2605.18118)
+  - Unifies biophysically realistic brain models with task-performing neural networks
+  - Establishes four minimal criteria and a three-pillar roadmap for integration
+  - Opens pathways for virtual patient models and cross-scale neuroscience hypotheses
+  - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, brain structure function integration
+
+### Not All Timesteps Matter Equally: Selective Alignment Knowledge Distillation for Spiking Neural Networks
+- [[selective-alignment-knowledge-distillation-snn]] - SeAl-KD selectively aligns temporal knowledge in SNNs by equalizing competing logits at erroneous timesteps and reweighting temporal alignment based on confidence, improving over uniform KD (arXiv: 2605.14252)
+  - Recognizes SNN predictions evolve over time — not all timesteps need equal supervision
+  - Two-part method: logit equalization for errors + confidence-weighted temporal alignment
+  - Validated on static image and neuromorphic event-based datasets
+  - **Activation**: SNN knowledge distillation, selective alignment KD, SeAl-KD, temporal alignment SNN
+
 ## 2026-05-19 - Computer Science + Quantum (Cron Job 11AM)
 
 ### Beyond Commutativity: Redesigning Trotter Decomposition via Local Symmetry
