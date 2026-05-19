@@ -1,3 +1,19 @@
+## 2026-05-19 - Neuroscience Research (Cron Job 10PM)
+
+### MIRAGE: Robust Multi-Modal fMRI-to-Mental-Image Decoding
+- [[mirage-fmri-mental-imagery-decoding]] - Linear backbone + multi-modal features + diffusion model achieves SOTA mental image reconstruction from fMRI, showing seen-image performance ≠ mental-image generalization (arXiv: 2605.17198)
+  - 核心要点 1: SOTA visual decoder performance does NOT guarantee mental imagery generalization — architecture must be explicitly designed for cross-decoding
+  - 核心要点 2: Low-dimensional image features + text guidance + high+low-level features required for optimal mental image reconstruction
+  - 核心要点 3: Simple linear backbone outperforms complex nonlinear encoders for cross-decoding from perception to imagination
+  - **Activation**: MIRAGE, fMRI mental imagery, brain-to-image decoding, NSD-Imagery, vision decoder generalization
+
+### Self-Supervised Local Learning for Hierarchical Structure Discovery
+- [[self-supervised-local-learning-hierarchy]] - Layerwise self-supervised contrastive/non-contrastive learning matches backprop data efficiency on Random Hierarchy Model, while direct-feedback methods fail (arXiv: 2605.18557)
+  - 核心要点 1: Direct feedback methods fail on hierarchical tasks due to missing input-specific nonlinearities (masking) essential for complex learning
+  - 核心要点 2: Layerwise self-supervised learning (contrastive AND non-contrastive) succeeds — data-efficient as backprop, compatible with cortical plasticity
+  - 核心要点 3: Brain likely uses self-supervised objectives rather than approximate backprop for learning abstract hierarchical representations
+  - **Activation**: self-supervised local learning, biological plasticity, Random Hierarchy Model, Gerstner, contrastive learning, hierarchical structure learning
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 8PM)
 
 ### Hybrid Quantum-Classical Neural Architecture Search
