@@ -19,6 +19,18 @@
   - **Activation**: quantum-inspired lottery tickets, winning lottery tickets, sparse subnetwork selection, quantum-inspired classical algorithm, neural network pruning
 ## 2026-05-19 - Neuroscience Research (Cron Job)
 
+### NERVE: Network-Aware Bilinear Tokenization for Brain Functional Connectivity Representation Learning
+- [[nerve-fc-bilinear-tokenization]] - Self-supervised FC representation learning via structured bilinear factorization that aligns tokenization with brain network organization, outperforming agnostic MAE baselines on cross-cohort prediction (arXiv: 2605.14048)
+  - 核心要点: 网络感知块划分将FC矩阵按脑网络对内/块间连接分区,通过结构双线性分解嵌入异构块,参数复杂度从二次降为线性
+  - 核心要点: 在ABCD/PNC/CCNP三个发育队列上验证,跨队列迁移能力显著优于结构无关MAE和图自监督基线
+  - **Activation**: NERVE tokenization, brain FC representation, functional connectivity MAE, bilinear factorization brain, network-aware brain ML, rs-fMRI deep learning
+
+### MTC-SN: Multi-Timescale Conductance Spiking Networks
+- [[mtc-spiking-networks]] - Gradient-trainable SNN framework using fast/slow/ultra-slow conductances to shape I-V curves, enabling exact BPTT without surrogate gradients and richer firing dynamics (arXiv: 2605.11835)
+  - 核心要点: 多时间尺度电导(快/慢/超慢)塑造I-V曲线,在单一模型内实现tonic/phasic/bursting等多种发放模式
+  - 核心要点: 离散化可微动力学公式实现精确BPTT,在Mackey-Glass时间序列回归上超越LIF和AdLIF且稀疏度更高
+  - **Activation**: multi-timescale conductance, MTC-SN, conductance-based SNN, gradient-trainable spiking, temporal regression SNN, neuromorphic regression
+
 ## 2026-05-19 - Computer Science (Cron Job)
 
 ### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
