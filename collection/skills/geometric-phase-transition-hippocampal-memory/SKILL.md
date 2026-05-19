@@ -1,98 +1,120 @@
 ---
 name: geometric-phase-transition-hippocampal-memory
 description: >
-  Geometric Phase Transition methodology for understanding extreme hippocampal
-  memory capacity. Core idea: high-capacity memory emerges from a discrete
-  stiffening of population geometry — a transition from disorganized "mist" to
-  "crystalline" collective coding. Use when analyzing hippocampal memory systems,
-  population code geometry, spatial memory capacity, excitatory-inhibitory circuit
-  dynamics, memory scaling principles, or the Shesha geometric stability metric.
-  Trigger words: geometric phase transition, hippocampal memory, crystalline code,
-  population geometry, Shesha metric, memory capacity, geometric stability,
-  excitatory-inhibitory dissociation, geometric tax, topological rigidity.
+  Geometric phase transition methodology for hippocampal memory capacity.
+  Explains how topological rigidity ("crystalline" geometry) in hippocampal
+  population coding enables extreme memory capacity (>100x advantage). Covers
+  the crystalline-vs-mist coding framework, Shesha geometric stability metrics,
+  excitatory-inhibitory synergistic circuit dynamics, and the 169-fold
+  representational redundancy "geometric tax." Use when: studying hippocampal
+  memory, population geometry, neural coding capacity, topological rigidity,
+  food-caching bird neuroscience, memory phase transitions, crystalline neural
+  codes, or geometric stability in neural representations.
+  Activation: geometric phase transition, hippocampal memory, crystalline coding,
+  population geometry, topological rigidity, Shesha metric, memory capacity,
+  neural code geometry, 海马体记忆, 几何相变, 拓扑刚性
 ---
 
 # Geometric Phase Transition in Hippocampal Memory
 
-## Core Thesis
+**Paper**: Raju, P.C. (2026). *Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity*. arXiv:2605.17199.
 
-Superior spatial memory emerges from a **discrete stiffening of hippocampal population geometry** — a phase transition from disorganized ("mist") to rigid ("crystalline") collective coding. Evolution achieves high-capacity memory not by proliferating neurons, but by engineering the geometry of the neural code itself.
+## Core Insight
 
-*Source: arXiv:2605.17199 (Raju 2026)*
+High-capacity biological memory emerges not from proliferating neurons but from **engineering the geometry of the neural code itself** — a discrete phase transition from disorganized "mist" coding to topologically rigid "crystalline" collective coding.
 
 ## Key Findings
 
-### 1. Crystalline vs. Mist Codes
+### Crystalline vs. Mist Coding
 
-- **Caching chickadees** maintain topologically rigid, "crystalline" geometry with geometric stability (Shesha: 0.245) and 2x temporal coherence (0.393 vs 0.209)
-- **Non-caching finches** exhibit disorganized "mist" geometry — low-dimensional structure absent, spatial relationships poorly preserved
-- Mantel test: chickadee r_mean=0.420 (39/39 sessions sig.) vs finch r_mean=0.230 (8/8 sig.), p<0.001
+| Property | Crystalline (Caching Chickadees) | Mist (Non-caching Zebra Finches) |
+|----------|-----------------------------------|-----------------------------------|
+| Geometric stability (Shesha) | 0.245 | 0.166 |
+| Temporal coherence (Shesha) | 0.393 | 0.209 |
+| Memory capacity | >1,000 locations | <10 locations |
+| Topology | Rigid, crystalline | Disorganized |
 
-### 2. E/I Circuit Mechanism
+### Circuit Dynamics
 
-- Excitatory neurons form the spatial scaffold
-- Inhibitory populations contribute **orthogonal decorrelation**
-- E and I occupy largely non-overlapping representational subspaces
-- Combined E+I populations expand dimensionality beyond either alone
+**Synergistic E/I mechanism:**
+- **Excitatory neurons**: Form the spatial scaffold
+- **Inhibitory neurons**: Contribute orthogonal decorrelation
+- E and I populations occupy largely non-overlapping representational subspaces
 
-### 3. Capacity Scaling
+### Stable Memory Allocator Dissociation
 
-- Crystalline codes sustain readout beyond M=1,000 locations
-- Mist codes fail below M=10 — **>100-fold capacity advantage**
-- Validated across 10,000 network configurations
+- Double dissociation with Valiant's SMA model
+- Caching networks show **near-zero split-half allocation reliability** despite geometric superiority
+- Confirms advantage is from **continuous topological organization**, not discrete neuron allocation
 
-### 4. Geometric Tax
+### Computational Modeling (10k configurations)
 
-- Capacity requires **169-fold representational redundancy**
-- This "tax" stabilizes the manifold against biological noise
-- Tradeoff: redundancy for stability
+- Topological rigidity is the **mathematical prerequisite for scale**
+- Crystalline codes sustain high-fidelity readout beyond M=1k locations
+- Mist codes fail below M=10
+- **>100-fold capacity advantage**
 
-### 5. Dissociation from Stable Memory Allocator
+### The Geometric Tax
 
-- Double dissociation with Valiant's Stable Memory Allocator
-- Caching networks show near-zero split-half allocation reliability despite geometric superiority
-- Confirms advantage reflects **continuous topological organization**, not discrete neuron allocation
+- High capacity requires **169-fold representational redundancy**
+- This redundancy stabilizes the manifold against biological noise
+- Trade-off: capacity vs. metabolic cost of redundant coding
 
-## The Shesha Metric
+## Theoretical Framework
 
-Geometric stability measure with two variants:
+### Shesha Metric
 
-1. **Shesha_FS** (Feature-split): Stability across feature dimensions
-2. **Shesha_SS** (Sample-split): Stability across data samples
+A geometric stability measure quantifying:
+1. Spatial rigidity of population codes
+2. Temporal coherence across time windows
+3. Topological persistence of representational manifolds
 
-Higher values = more rigid, crystalline geometry. Chickadee hippocampus consistently scores higher than non-caching species.
+### Phase Transition
 
-## Application to AI/ML
+Memory capacity emerges from a **discrete stiffening** transition:
+- Below threshold: disorganized mist (low capacity, fragile)
+- Above threshold: crystalline geometry (high capacity, robust)
+- Transition is abrupt, not gradual
 
-### Memory System Design
+## Methodology
 
-- Design neural representations with topological rigidity for high-capacity memory
-- Crystalline codes prevent catastrophic interference in continual learning
-- Trade redundancy for stability (geometric tax)
+### Comparative Neuroscience
+- Food-caching chickadees vs. non-caching zebra finches
+- Natural behavioral specialization as experimental lever
+- Cross-species comparison controlling for hardware constraints
 
-### E/I-Inspired Architecture
+### Computational Modeling
+- 10k network configurations
+- Geometric stability analysis
+- Capacity scaling curves
 
-- Separate excitatory (representational scaffold) and inhibitory (decorrelation) pathways
-- Non-overlapping subspaces for different functional roles
-- Use inhibitory signals to expand representational dimensionality
+## Applications
 
-### Population Code Analysis
+- **Memory systems design**: Engineering population geometry for capacity
+- **Neuromorphic computing**: Crystalline coding architectures
+- **Evolutionary neuroscience**: Understanding memory specialization
+- **Neural coding theory**: Beyond rate coding to geometric coding
+- **Hippocampal prosthetics**: Targeting geometric stability, not just neuron count
 
-- Use representational dissimilarity matrices (RDMs) to assess geometric structure
-- Mantel tests to compare neural geometry to task geometry
-- Test-retest population vector correlation for temporal coherence
+## Related Concepts
 
-## Limitations
-
-- Based on avian hippocampal recordings; mammalian generalization needs validation
-- Computational model assumes specific noise distributions
-- 169-fold geometric tax may be prohibitive in some artificial systems
+- Valiant's Stable Memory Allocator
+- Population coding geometry
+- Topological data analysis in neuroscience
+- Excitatory-inhibitory balance
+- Manifold learning in neural systems
 
 ## Activation Keywords
 
-- geometric phase transition, hippocampal memory capacity
-- crystalline neural code, population geometry
-- Shesha metric, geometric stability
-- excitatory-inhibitory dissociation, orthogonal inhibition
-- memory scaling, geometric tax, topological rigidity
-- Valiant stable memory allocator, catastrophic interference
+- geometric phase transition
+- hippocampal memory
+- crystalline coding
+- population geometry
+- topological rigidity
+- Shesha metric
+- memory capacity
+- neural code geometry
+- 海马体记忆
+- 几何相变
+- 拓扑刚性
+- 晶体编码
