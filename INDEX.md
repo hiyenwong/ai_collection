@@ -1,3 +1,18 @@
+## 2026-05-19 - Systems Engineering Research (Cron Job)
+
+### From Backup Restoration to Minimum Viable Factory Recovery
+- [[mvf-recovery-critical-infrastructure]] - Reframes ransomware recovery as interdependency and continuity problem across IT/OT/physical/supply-chain domains (arXiv: 2605.16167)
+  - Core contribution: Defines Minimum Viable Factory (MVF) Recovery as the smallest safe, trusted, and operationally meaningful production capability
+  - Identifies 9 evidence-backed recovery failure modes: dependency blindness, backup over-trust, identity trust collapse, unsafe OT reconnection, etc.
+  - **Activation**: mvf recovery, minimum viable factory, ransomware recovery, critical infrastructure, IT-OT recovery
+
+### Detecting Privilege Escalation in Polyglot Microservices via Agentic Program Analysis
+- [[neo-agentic-program-analysis]] - Combines LLM agents with classic program analysis for cross-service vulnerability detection (arXiv: 2605.15569)
+  - Core contribution: Neo framework achieves 81% precision / 85% recall on 25 microservice apps across 7 languages, discovering 24 zero-day vulnerabilities
+  - Key technique: Dynamic analysis planning + adaptive code search primitives + semantic validation
+  - **Activation**: neo analysis, agentic program analysis, privilege escalation, microservice security, polyglot vulnerability
+
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job - Hourly v2)
 
 ### HOPPER: A Hop-by-hop Entanglement Distribution Protocol for Asynchronous Quantum Networks
