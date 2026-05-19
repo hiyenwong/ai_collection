@@ -1,58 +1,100 @@
 ---
 name: eeg-foundation-sae-interpretability
-description: "Mechanistic interpretability of EEG foundation models via Sparse Autoencoders (SAEs). Extract sparse feature dictionaries from EEG transformer embeddings (SleepFM, REVE, LaBraM). Ground features in clinical taxonomy (abnormality, age, sex, medication). Concept steering with target vs. off-target probe area metric. Reveals three operational regimes: selectively steerable, encoded but entangled, non-encoded. Exposes wrecking-ball interventions and clinical entanglements (age-pathology confounding). Use when interpreting EEG foundation models, analyzing neural embeddings, applying SAEs to biomedical time series, or performing concept steering on clinical models. Activation: EEG interpretability, SAE sparse autoencoder EEG, EEG foundation model mechanistic, concept steering brain model."
+description: Mechanistic interpretability of EEG foundation models via Sparse Autoencoders (SAEs). Extracts monosemantic features from EEG transformers, diagnoses representational failures, and enables concept steering with clinical grounding. Use when interpreting EEG foundation models (SleepFM, REVE, LaBraM), applying SAEs to brain signal transformers, benchmarking model interpretability, or performing clinical concept steering on neuroimaging models.
 ---
 
-# EEG Foundation Model Interpretability via SAEs
+# Mechanistic Interpretability of EEG Foundation Models via SAEs
 
-Apply TopK Sparse Autoencoders to extract interpretable features from EEG foundation model embeddings. Ground features in clinical taxonomy.
+Framework for extracting, analyzing, and steering internal representations of EEG foundation models using TopK Sparse Autoencoders. Bridges the gap between black-box clinical performance and interpretable, trustworthy neuroscience.
 
-## Workflow
+## Architecture
 
-### 1. Train TopK SAE on Model Embeddings
+### Pipeline
 
-Extract embeddings from target layer of EEG transformer (SleepFM, REVE, LaBraM). Train TopK SAE:
-- Dictionary size: 8x-64x embedding dimension
-- TopK: 32-128 active features per input
-- Loss: reconstruction + L0 sparsity constraint
+```
+EEG Foundation Model (SleepFM/REVE/LaBraM)
+    ↓ Extract embeddings
+TopK Sparse Autoencoder (SAE)
+    ↓ Sparse feature dictionary
+Clinical Taxonomy Grounding (abnormality, age, sex, medication)
+    ↓ Monosemanticity & entanglement analysis
+Concept Steering + Spectral Decoder
+    ↓ Physiologically interpretable frequency signatures
+```
 
-### 2. Ground Features in Clinical Taxonomy
+## Key Methodology
 
-Map each SAE feature to clinical concepts:
-- Abnormality markers (epileptiform, slowing, etc.)
-- Demographics (age, sex)
-- Medication effects
-- Artifact patterns
+### Sparse Autoencoder Training
 
-### 3. Concept Steering with Probe Metrics
+- **TopK sparsity**: Enforces exactly K active features per input
+- **Dictionary health audit**: Intrinsic procedure to validate feature quality
+- **Cross-architecture transfer**: Single hyperparameter procedure works across SleepFM, REVE, LaBraM
 
-For each clinical concept:
-- **Target area**: region where steering should activate
-- **Off-target area**: regions where steering should NOT activate
-- **Selectivity metric** = target activation / off-target activation
+### Three Operational Regimes (Concept Steering)
 
-### 4. Identify Operational Regimes
+1. **Selectively steerable**: Clean feature manipulation without side effects
+2. **Encoded but entangled**: Feature exists but coupled with others
+3. **Non-encoded**: Concept not represented in model internals
 
-Classify features into three regimes:
-1. **Selectively steerable**: high target, low off-target — clean intervention possible
-2. **Encoded but entangled**: activated but mixed with other concepts — partial control
-3. **Non-encoded**: not represented in model — concept absent from representation
+### Failure Mode Detection
 
-### 5. Critical Failure Modes
+- **"Wrecking-ball" interventions**: Steering that collapses global performance
+- **Clinical entanglements**: Age-pathology confounding — cannot suppress one without corrupting the other
 
-- **Wrecking-ball interventions**: steering one concept collapses global model performance
-- **Clinical entanglements**: age-pathology confounding — model conflates age-related changes with disease markers
-- **Cross-architecture divergence**: same concept represented differently across SleepFM/REVE/LaBraM
+### Spectral Decoder
 
-## Best Practices
+Maps latent steering interventions back to EEG amplitude spectrum:
+- Pathological slow-wave suppression
+- α-band restoration
+- Physiologically interpretable frequency signatures
 
-- Always validate steering effects on held-out clinical datasets
-- Report both target and off-target metrics — steering without selectivity is dangerous
-- Compare across multiple architectures to identify robust vs. architecture-specific features
-- Check for demographic confounding before clinical deployment
+## Clinical Applications
 
-## Activation
+- Explain model predictions to clinicians
+- Detect and mitigate demographic confounds (age, sex, medication effects)
+- Validate model decisions against known neurophysiological markers
+- Generate interpretable frequency-domain explanations
 
-Keywords: EEG interpretability, SAE sparse autoencoder EEG, EEG foundation model mechanistic, concept steering brain model, clinical model interpretability
+## Implementation Steps
 
-Source: arXiv:2605.13930 — "Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders"
+### Step 1: Extract Embeddings
+
+Run target EEG transformer on clinical dataset. Extract layer embeddings.
+
+### Step 2: Train SAE
+
+Fit TopK SAE on embeddings. Use intrinsic dictionary health audit to tune K.
+
+### Step 3: Ground Features
+
+Map sparse features to clinical taxonomy (abnormality, age, sex, medication).
+
+### Step 4: Benchmark Monosemanticity
+
+Quantify feature purity and entanglement across clinical concepts.
+
+### Step 5: Concept Steering
+
+Apply steering vectors. Evaluate via "target vs. off-target" probe metric.
+
+### Step 6: Spectral Decoding
+
+Map steering effects back to EEG frequency domain for clinical interpretation.
+
+## When to Use
+
+- EEG foundation model interpretability analysis
+- Clinical validation of neuroimaging AI models
+- Detecting model biases and confounds
+- Generating neurophysiologically grounded explanations
+- Comparing representational quality across EEG architectures
+
+## Related Skills
+
+- `eeg-foundation-lrp-interpretability`: LRP-based EEG interpretability
+- `eeg-foundation-model-adapters`: Domain adaptation for EEG FMs
+- `eeg-sae-interpretability`: SAE-based EEG interpretability (overlaps)
+
+## References
+
+Based on: Lehn-Schiøler et al. (2026). "Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders." arXiv:2605.13930

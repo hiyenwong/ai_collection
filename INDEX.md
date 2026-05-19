@@ -1,3 +1,21 @@
+
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Scalable neuromorphic computing from autonomous spiking dynamics in a clockless reconfigurable chip
+- [[clockless-asynchronous-neuromorphic-computing]] - FPGA-based clockless Boolean spiking networks achieve analog-level energy efficiency without custom ASICs (arXiv: 2605.16114)
+  - Clockless (asynchronous) digital circuits enable autonomous time-continuous spiking dynamics
+  - Commodity FPGAs with configurable excitatory/inhibitory synapses rival analog neuromorphic power
+  - Complete spike-encoding pipeline demonstrated on audio classification
+  - **Activation**: clockless SNN, FPGA neuromorphic, asynchronous spiking, autonomous spiking dynamics, reconfigurable neuromorphic chip
+
+### Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders
+- [[eeg-foundation-sae-interpretability]] - SAE-based interpretability framework for EEG transformers reveals clinical entanglements and enables concept steering (arXiv: 2605.13930)
+  - TopK SAEs extract monosemantic features from SleepFM, REVE, LaBraM across architectures
+  - Three operational regimes: selectively steerable, encoded-but-entangled, non-encoded
+  - Detects "wrecking-ball" interventions and age-pathology confounding failures
+  - Spectral decoder maps latent steering to physiologically interpretable frequency signatures
+  - **Activation**: EEG interpretability, sparse autoencoder, concept steering, EEG foundation model, monosemanticity
+
 ## 2026-05-19 - Systems Engineering Research (Cron Job)
 
 ### From Backup Restoration to Minimum Viable Factory Recovery
