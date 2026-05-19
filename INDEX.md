@@ -1,3 +1,11 @@
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### SPIKER-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in SNNs
+- [[spiker-ll-snn-accelerator]] - FPGA-accelerated SNN with STSF local learning rule, DSP-free, sub-ms latency, <0.1 mJ per inference (arXiv: 2605.18003)
+  - Extends Spiker+ inference architecture with STSF (Spike-Timing-Specific-Feedback) local learning for on-device training
+  - DSP-free implementation using only LUT/FF/BRAM, achieving 93% accuracy on MNIST/F-MNIST/DIGITS
+  - **Activation**: spiker-ll, FPGA SNN accelerator, adaptive local learning SNN, STSF learning rule, edge FPGA SNN, on-device SNN training
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 1PM)
 
 ### Non-Gaussian Entanglement Hierarchy Based on the Schmidt Number
