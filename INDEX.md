@@ -1,4 +1,24 @@
 ## 2026-05-19 - Neuroscience Research (Cron Job)
+## 2026-05-19 - Computer Science + Quantum (Cron Job)
+
+### AgentWall: A Runtime Safety Layer for Local AI Agents
+- [[agent-safety-layer]] - Runtime safety interception layer for local AI agents with declarative policy enforcement (arXiv: 2605.16265)
+  - Intercept agent actions before execution with policy evaluation
+  - 92.9% enforcement accuracy with sub-millisecond overhead
+  - **Activation**: agent safety, runtime guardrails, action interception, policy enforcement, AI agent security
+
+### ANNEAL: Adapting LLM Agents via Governed Symbolic Patch Learning
+- [[governed-symbolic-patch]] - Neuro-symbolic methodology for persistent fault elimination via knowledge graph repair (arXiv: 2605.16309)
+  - Failure-Driven Knowledge Acquisition (FDKA) localizes and patches recurring faults
+  - Reduces recurring failure rates to 0% vs 72-100% for baselines
+  - **Activation**: self-evolving agents, knowledge graph repair, persistent faults, symbolic patching, FDKA
+
+### ACE + TDDev: Adversarial Test-Driven Development
+- [[adversarial-test-driven-dev]] - Self-evolving code generation combining adversarial testing with TDD (arXiv: 2605.16299, 2605.17242)
+  - Solver-adversary architecture discovers failures without ground-truth code
+  - TDD improves web app generation quality by 34-48 percentage points
+  - **Activation**: adversarial testing, self-evolving code, test-driven development, code generation, web app generation
+
 
 ### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
 - [[vencircuit-ven-gradient-scaffold]] - VENs as residual gradient pathway scaffolds in recurrent SNNs, providing immune gradient flow for reliable learning (arXiv: 2605.17399)
