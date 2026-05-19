@@ -1,3 +1,17 @@
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models]] - Unified modeling paradigm bridging bottom-up whole-brain modeling and top-down neuroconnectionism with four minimal criteria (arXiv: 2605.18118)
+  - 核心要点 1: fWBMs defined by four criteria: structural grounding, dynamical realism, functional competence, mappable observables
+  - 核心要点 2: Three-pillar roadmap: short-term (differentiable WBM), mid-term (cross-modal validation), long-term (clinical translation)
+  - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism
+
+### Spiker-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in SNNs
+- [[spiker-ll-fpga-snn-accelerator]] - FPGA-based SNN accelerator with on-device STSF local learning, DSP-free, sub-ms latency (arXiv: 2605.18003)
+  - 核心要点 1: Extends Spiker+ inference architecture with STSF local learning rule for supervised training without BPTT
+  - 核心要点 2: 92-93% accuracy on MNIST/F-MNIST/DIGITS, <0.1mJ per inference, scales from <5k LUTs to larger networks
+  - **Activation**: FPGA SNN accelerator, spiker-ll, on-device learning, STSF, edge neuromorphic
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
