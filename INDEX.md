@@ -1,3 +1,19 @@
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
+- [[vencircuit-ven-gradient-scaffold]] - VENs as residual gradient pathway scaffolds in recurrent SNNs, providing immune gradient flow for reliable learning (arXiv: 2605.17399)
+  - VEN-intact networks converge 98% vs VEN-ablated 70% — complete absence of learning in failures, not just slower
+  - VENs provide direct gradient pathway structurally immune to Jacobian product instabilities in BPTT
+  - Clinical predictions: bvFTD → learning failure, ASC → stochastic variable social skill acquisition
+  - **Activation**: Von Economo, VEN, gradient scaffold, VENCircuit, social learning SNN, bvFTD, residual SNN
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - Discrete phase transition from "mist" to "crystalline" population geometry enables >100x memory capacity (arXiv: 2605.17199)
+  - Caching chickadees show crystalline geometry (Shesha: 0.245 vs 0.166) with 2x temporal coherence
+  - Crystalline codes sustain M>1000 locations while mist codes fail below M=10, validated across 10k configs
+  - E-I synergy: excitatory neurons form spatial scaffold, inhibitory provides orthogonal decorrelation
+  - **Activation**: hippocampal memory, population geometry, crystalline coding, Shesha metric, memory scaling
+
 ## 2026-05-19 - Neuroscience Research (Cron Job 10PM)
 
 ### MIRAGE: Robust Multi-Modal fMRI-to-Mental-Image Decoding
