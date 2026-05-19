@@ -12,6 +12,23 @@
   - 核心要点: Design patterns for VQE/QAOA loops, QML training, and quantum subroutines with anti-patterns for monolithic programs
   - **Activation**: quantum software architecture, QSAF, hybrid quantum-classical architecture, quantum component design, quantum system design
 
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - 高容量空间记忆源于海马群体几何的离散硬化相变：从无序"雾"到"晶体"编码 (arXiv: 2605.17199)
+  - 核心要点 1: 晶体编码通过拓扑刚性实现 M=1,000+ 地点记忆，雾编码在 M=10 以下失效（>100倍容量优势）
+  - 核心要点 2: E/I 协同机制 — 兴奋性神经元构建空间支架，抑制性神经元正交去相关，占据非重叠表示子空间
+  - 核心要点 3: "几何税"概念 — 169倍表示冗余维持流形稳定性，对抗生物噪声
+  - 核心要点 4: 与 Valiant 稳定记忆分配器的双重分离，确认优势来自连续拓扑组织而非离散神经元分配
+  - **Activation**: geometric phase transition, hippocampal memory, crystalline code, population geometry, Shesha metric, geometric stability, geometric tax
+
+### Spiker-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in SNNs
+- [[spiker-ll-fpga-snn-accelerator]] - 基于 FPGA 的 SNN 加速器，通过 STSF 局部学习规则实现片上训练，无需 DSP 且能耗 <0.1mJ (arXiv: 2605.18003)
+  - 核心要点 1: STSF (Spiking Time Sparse Feedback) 局部学习 — 使用随机反馈对齐+脉冲触发局部可塑性，无需 BPTT 和资格迹
+  - 核心要点 2: 最小化微架构扩展 — 仅在突触状态访问点添加训练支持，复用现有数据路径和控制逻辑
+  - 核心要点 3: MNIST/F-MNIST/DIGITS 上 92-93% 准确率，亚毫秒延迟，<0.1mJ 每推理，完全无 DSP
+  - **Activation**: Spiker-LL, SNN FPGA accelerator, on-device learning, STSF learning rule, DSP-free neuromorphic hardware, edge intelligence
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 3PM)
 
 ### Quantum Feature Amplification Network (QFAN)
