@@ -1,3 +1,11 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job)
+
+### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
+- [[hybrid-quantum-time-series-forecasting]] - Hybrid quantum-classical neural architecture for time-series forecasting using QLIF spiking neurons (arXiv: 2605.18333, 2605.18345)
+  - QLIF neuron: single-qubit superpositions via Rx rotation + T1 relaxation → 15.4% lower MSE vs classical LIF
+  - Hybrid architecture: classical preprocessing + quantum recurrent layers for multivariate forecasting
+  - **Activation**: quantum time series, QLIF, quantum spiking neural network, hybrid quantum-classical
+
 ## 2026-05-18 - Neuroscience + Quantum Computing (Cron Job - 01:00)
 
 ### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons

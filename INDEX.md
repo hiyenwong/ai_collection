@@ -1,3 +1,11 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job)
+
+### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
+- [[hybrid-quantum-time-series-forecasting]] - Hybrid quantum-classical neural architecture for time-series forecasting using QLIF spiking neurons (arXiv: 2605.18333, 2605.18345)
+  - 核心要点 1: QLIF neuron encodes membrane potential as single-qubit superpositions via Rx rotation gates and T1 relaxation decay, achieving 15.4% lower MSE vs classical LIF
+  - 核心要点 2: Hybrid quantum-classical recurrent architecture combines classical preprocessing with quantum recurrent layers for multivariate time-series prediction
+  - **Activation**: quantum time series, QLIF, quantum spiking neural network, hybrid quantum-classical, quantum recurrent, quantum machine learning forecasting
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 4PM)
 
 ### Noise-Aware Quantum Program Testing
