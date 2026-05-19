@@ -37,6 +37,34 @@
 
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
+## 2026-05-20 - Medicine + Quantum (Cron Job)
+
+### Practical Quantum Federated Learning for Privacy-Sensitive Healthcare: Communication Efficiency and Noise Resilience
+- [[quantum-federated-healthcare-communication]] - Hybrid QFL architecture reduces quantum transmissions from 3·T·N·M·P to {3t + 2(T−t)}·N·M·P with dynamic centralized/decentralized switching (arXiv: 2603.03853)
+  - Light-cone feature selection eliminates redundant qubit features in PQC
+  - Decentralized aggregation is more noise-resilient under depolarizing noise than centralized
+  - **Activation**: quantum federated learning, QFL healthcare, communication efficiency, light-cone feature selection, decentralized quantum aggregation
+
+### Quantum-Enhanced Processing with Tensor-Network Frontends for Privacy-Aware Federated Medical Diagnosis
+- [[tensor-network-frontend-quantum-medical]] - Tensor-network (MPS/TTN/MERA) client-side compression with quantum-enhanced processor refinement; TTN+QEP most balanced for medical classification (arXiv: 2603.04674)
+  - Client-side tensor networks compress local inputs → MPC-secured aggregation → QEP quantum-state refinement
+  - TTN architecture best captures hierarchical spatial features in medical images
+  - **Activation**: tensor network frontend, TTN medical, quantum enhanced processor, federated medical diagnosis, MPS compression
+
+### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification: A Novel Quantum-Classical Integration Approach
+- [[hqnn-breast-cancer-thermographic]] - HQNN integrates 4-qubit variational circuit with multi-head attention and classical CNN for thermal breast cancer classification (arXiv: 2604.16953)
+  - Multi-head attention selects discriminative features before quantum encoding
+  - Strongly entangling layers with RY rotations and CNOT chains for maximum expressivity
+  - **Activation**: HQNN breast cancer, quantum thermographic, hybrid quantum CNN, parameterized quantum circuit medical, thermal image quantum
+
+### Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings
+- [[quantum-kernel-medical-embeddings]] - Two-tier fair comparison framework; QSVM wins F1 in all 18 configs vs classical collapse on MIMIC-CXR (arXiv: related)
+  - Classical linear kernel collapses to majority-class prediction on 90-100% of seeds; QSVM maintains non-trivial recall
+  - Quantum kernel effective rank reaches 69.80 at q=11 vs linear kernel collapse
+  - **Activation**: quantum kernel medical, QSVM medical imaging, quantum advantage evaluation, classical collapse
+
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
 ### Standalone Skill Sync Batch
 - [[spiker-ll-fpga-snn-accelerator]] - FPGA accelerator for adaptive local learning in SNNs without BPTT, enabling on-device edge training (arXiv: 2605.18351)
   - Core: Three-factor local learning rule with pre-synaptic, post-synaptic, and modulatory factors
