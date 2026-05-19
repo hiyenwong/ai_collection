@@ -191,6 +191,16 @@
   - **Activation**: quantum reservoir computing stock, QRC forecasting, quantum dynamical system finance, stock movement prediction quantum
 
 # 2026-05-16 - Neuroscience Research (Cron Job)
+## 2026-05-20 - Medicine + Quantum (Cron Job - Hourly)
+
+### Discovering Data Encoding Strategies for Quantum-Classical Neural Networks Using Monte Carlo Tree Search
+- [[mcts-quantum-encoding-discovery]] - MCTS-based discovery of optimal QML encoding circuits using effective rank as proxy metric (arXiv: 2605.18540)
+  - MCTS discovers encodings that outperform standard strategies on medical imaging datasets
+  - Effective rank of feature maps is a meaningful predictor (not entanglement or Fourier)
+  - Non-variational quantum block + classical classifier (QCCNN) architecture
+  - **Activation**: MCTS encoding discovery, quantum encoding optimization, effective rank encoding
+
+
 
 ### Approximate Macroscopic Dynamics of Spiking Neural Networks Based on Solutions to the Transport Equation
 - [[transport-mean-field-snn-dynamics]] - Transport-based mean field theory for SNN population dynamics (arXiv: 2605.14319)
