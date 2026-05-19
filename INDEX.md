@@ -1,3 +1,34 @@
+## 2026-05-19 - Computer Science + Quantum (Cron Job 10AM)
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-ano-qnn]] - Reduces k-local quantum observable complexity from O(4^k) to O(2^k) using diagonal observables, preserving full ANO expressivity via unitary similarity equivalence (arXiv: 2605.15410)
+  - Diagonal matrices are canonical representatives of ANO space modulo unitary similarity
+  - Enables joint optimization of circuit parameters and observable eigenvalues
+  - Conventional VQCs with Pauli-Z measurements are a subset of diagonal ANO
+  - **Activation**: diagonal ANO, adaptive observables, quantum neural network observables, VQA measurement optimization
+
+### Measurement-Efficient VQLS for Carleman-Linearized Nonlinear Dynamics
+- [[carleman-vqls]] - Hybrid quantum-classical pipeline combining Carleman linearization with VQLS to solve nonlinear differential equations, tested on IBM and Xanadu platforms (arXiv: 2605.15366)
+  - Carleman linearization converts weakly nonlinear ODEs to high-dimensional linear systems
+  - Symmetry-grouped Hadamard Tests reduce measurement overhead
+  - Local cost formulations more resilient to barren plateaus than global costs
+  - **Activation**: Carleman linearization, VQLS nonlinear equations, quantum differential equation solver
+
+### Controllable Quantum Memory Capacity in Quantum Reservoir Networks
+- [[quantum-reservoir-memory]] - Unified QRC framework using tunable partial-SWAP gates to interpolate between feedback and recurrent architectures, providing single hyperparameter for memory control (arXiv: 2605.12713)
+  - partial-SWAP parameter θ controls memory capacity: θ=0 (feedback limit), θ=π/2 (recurrent limit)
+  - Trade-off between quantum memory capacity and processing speed
+  - Echo state property validation essential for reservoir stability
+  - **Activation**: quantum reservoir computing, quantum memory capacity, partial-SWAP QRC, temporal quantum ML
+
+
+## 2026-05-19 - Neuroscience Research (Cron Job)
+
+### Thermodynamic Networks: Harnessing Non-Equilibrium Steady States for Computation
+- [[thermodynamic-networks-computation]] - Autonomous physics-based computation using non-equilibrium steady states, with NDC as the expressivity switch (arXiv: 2605.15985)
+  - Identifies Negative Differential Conductance (NDC) as the critical property for universal function approximation in thermodynamic networks
+  - Demonstrated on quantum dot networks and enzymatic reaction networks, training via natural equilibration
+  - **Activation**: thermodynamic networks, non-equilibrium computation, NDC, steady-state computing, physics-based computation
 
 ## 2026-05-19 - Computer Science + Quantum Computing (Cron Job)
 
