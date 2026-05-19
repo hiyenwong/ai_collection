@@ -6,6 +6,18 @@
   - Hybrid architecture: classical preprocessing + quantum recurrent layers for multivariate forecasting
   - **Activation**: quantum time series, QLIF, quantum spiking neural network, hybrid quantum-classical
 
+### Sparse Mamba Decoder for Quantum Error Correction
+- [[sparse-mamba-quantum-decoder]] - Sparse Mamba state-space model for efficient defect-centric quantum error correction decoding on surface codes (arXiv: 2605.17156)
+  - 缺陷中心处理：仅处理有错误的 syndrome 位置，复杂度从 O(L²) 降至 O(d)
+  - Mamba SSM 替代注意力机制：线性复杂度捕获长程 syndrome 关联
+  - **Activation**: quantum error correction, Mamba decoder, sparse decoding, surface codes, neural QEC decoder
+
+### Quantum Sidecar Architecture for Hybrid AI
+- [[quantum-sidecar-ai-architecture]] - Quantum sidecar architecture patterns for hybrid AI training/inference with stateful protected registers (arXiv: 2605.18031)
+  - 状态保护寄存器在训练迭代间保持量子相干性
+  - 三种设计模式：量子梯度估计、量子特征映射、量子优化层
+  - **Activation**: quantum sidecar, hybrid AI, quantum-classical interface, stateful quantum registers, QSU
+
 ## 2026-05-18 - Neuroscience + Quantum Computing (Cron Job - 01:00)
 
 ### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
