@@ -1,3 +1,24 @@
+## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 1PM)
+
+### Non-Gaussian Entanglement Hierarchy Based on the Schmidt Number
+- [[non-gaussian-entanglement-hierarchy]] - Rigorous hierarchy for classifying continuous-variable entanglement via Schmidt number, providing computable bounds and operational criteria for entanglement detection beyond Gaussian operations (arXiv: 2605.18605)
+  - Schmidt number SN(ρ) classifies states: separable (1), k-dimensional entanglement (k), infinite-dimensional (CV limit)
+  - Lower/upper bounds via entanglement witnesses and non-Gaussianity measures
+  - Operational bound: distillable key rate R ≤ log₂(SN(ρ))
+  - **Activation**: non-Gaussian entanglement, Schmidt number hierarchy, continuous-variable entanglement, quantum entanglement bounds, CV quantum systems
+
+### Bounds on Quantum Conference Key Agreement in Pair-Entangled Networks
+- New paper establishing fundamental limits on multipartite quantum key rates from bipartite resources (arXiv: 2605.18399)
+  - Proves limitations on conference key rates when parties share only pairwise entanglement
+  - Connects quantum network topology with achievable secure communication rates
+  - **Activation**: quantum conference key, pair-entangled networks, multipartite QKD, quantum network bounds
+
+### Topologically Protected Long-Range Correlations in Driven-Dissipative Bosonic Chains
+- Demonstrates topological protection of correlations in non-Hermitian quantum many-body steady states (arXiv: 2605.18394)
+  - Connects non-Hermitian topology with quantum many-body physics in open systems
+  - Long-range correlations robust against local perturbations via topological invariants
+  - **Activation**: topological protection, bosonic chains, non-Hermitian topology, driven-dissipative systems, quantum correlations
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job 12PM)
 
 ### ACE: Self-Evolving LLM Coding Framework via Adversarial Unit Test Generation
