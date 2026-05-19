@@ -21,6 +21,15 @@
   - Depth-optimal synthesis via Max#SAT enabling arbitrary gate set translation
   - **Activation**: quantum circuit SAT, weighted model counting quantum, Quokka#, quantum circuit verification, quantum equivalence checking, quantum circuit synthesis #SAT
 
+## 2026-05-19 - Neuroscience Research (Cron Job 1PM)
+
+### VENCircuit: Von Economo Neurons as Acquisition Scaffolds in Recurrent SNNs
+- [[ven-circuit-snn-social-learning]] - VENs function as gradient pathway bypass ensuring reliable training convergence (98% vs 70%), with clinical predictions for bvFTD and ASC (arXiv: 2605.17399)
+  - VEN-intact networks converge 49/50 (98%) vs ablated 35/50 (70%); failed networks show complete absence of learning
+  - Phase-ablation reveals critical window (epochs 5-25) when co-adaptive dependency forms
+  - Formal account: VENs provide direct gradient pathway immune to recurrent Jacobian instabilities
+  - **Activation**: Von Economo neurons, VEN, VENCircuit, social skill acquisition, recurrent SNN, gradient pathway, acquisition scaffold, bvFTD, autism spectrum condition, stochastic learning failure
+
 ## 2026-05-19 - Neuroscience Research (Cron Job 12PM)
 
 ### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
