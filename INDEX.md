@@ -172,6 +172,14 @@
   - 核心要点 2: 64% hits@3 对未见字母的检索准确率,为表意语言BCI开辟路径
   - **Activation**: zero-shot BCI, handwriting decoding, kinematic primitives, intracortical BCI, logographic language BCI
 
+## 2026-05-20 - 量子医学 (Cron Job)
+
+### Pauli Correlation Encoding for mRNA Secondary Structure Prediction
+- [[pce-qubo-dense-constraint-decoding]] - PCE压缩编码+PAGD问题感知解码器解决mRNA二级结构密集约束QUBO问题 (arXiv: 2605.20163)
+  - Pauli关联编码将m个二进制变量压缩到n=O(m^(1/k))量子比特上
+  - PAGD解码器实现75-100%近最优恢复，在IBM Heron硬件上成功部署
+  - **Activation**: PCE, Pauli Correlation Encoding, QUBO decoding, dense constraint QUBO, variational quantum optimization, PAGD, quantum mRNA
+
 ## 2026-05-21 - Medicine (Cron Job)
 
 ### Quantum Biomedical Sensor Generations
