@@ -1,5 +1,23 @@
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
+### Atoms of Thought: Universal EEG Representation Learning with Microstates
+- [[eeg-microstate-tokenizer-representation]] - Universal microstate tokenizer for EEG representation learning across downstream tasks via discrete token sequences (arXiv: 2605.20182)
+  - Core: Cluster continuous EEG into discrete microstate tokens as universal representation
+  - Applies to sleep staging, emotion recognition, seizure detection, motor imagery
+  - **Activation**: eeg tokenization, microstate tokenizer, universal eeg representation, discrete eeg tokens
+
+### Papers Already Covered
+- Reconfigurable Nonlinear Photonic Networks for In-Situ Learning (2605.19911) → covered by `reconfigurable-photonic-decision-network`
+- Beyond Prediction Accuracy: Target-Space Recovery Profiles (2605.20127) → covered by `target-space-recovery-profiles`
+
+### Coverage Summary
+- Papers scanned: 748 total, 248 neuroscience-related
+- New skills created: 1
+- Papers already covered: 2 (from today's top candidates)
+- Collection: 1344 skills
+
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
 ### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
 - [[braindyn-sheaf-neural-ode]] - First framework combining cellular sheaf theory with neural ODEs for continuous-time brain dynamics modeling (arXiv: 2605.19324)
   - Sheaf Laplacian with learnable restriction maps enables edge-specific feature transformations, preventing GNN oversmoothing in brain networks
