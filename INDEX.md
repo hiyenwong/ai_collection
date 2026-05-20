@@ -1,3 +1,17 @@
+## 2026-05-20 - Medicine + Quantum Engineering (Cron Job)
+
+### InterQ: Communication-Aware Modular QPU Scheduling
+- [[interq-modular-qpu-scheduling]] - 面向模块化量子处理器的通信感知调度框架,联合优化多QPU架构下的量子比特分配、并行执行和通信依赖 (arXiv: 2605.17769)
+  - 核心要点 1: 超导(经典链路)、离子阱(光子互连)、中性原子(光链路)三种模块化架构的调度权衡
+  - 核心要点 2: 自适应电路切割平衡保真度与通信开销,中性原子保真度最高、超导延迟最低
+  - **Activation**: modular QPU scheduling, communication-aware quantum, circuit cutting, quantum cloud architecture, inter-QPU communication
+
+### Ensemble Engineering for Quantum Measurements
+- [[ensemble-engineering-quantum]] - 量子系综工程方法论,通过采样分布与算符符号结构对齐克服NISQ测量中的破坏性抵消 (arXiv: 2605.03729)
+  - 核心要点 1: 将算符在基分辨表示下重构,揭示抵消的结构根源而非统计噪声
+  - 核心要点 2: Grover型振幅放大与无预言机浅电路两种互补实现,权衡信号提取与噪声鲁棒性
+  - **Activation**: quantum ensemble engineering, destructive cancellation, NISQ measurement, expectation value estimation, amplitude amplification measurement
+
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
 ### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
