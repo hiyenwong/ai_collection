@@ -1,3 +1,11 @@
+## 2026-05-20 - Universal Jaynes-Cummings Oscillator Control (Cron Job)
+
+### Universal Jaynes-Cummings Control of an Oscillator
+- [[jaynes-cummings-oscillator-control]] - Universal oscillator control methodology compiling arbitrary unitary gates into JC interaction sequences and qubit rotations, achieving 96% qudit gate fidelity (arXiv: 2605.18658)
+  - Core innovation: Experimental demonstration of universal JC-based oscillator control with qudit encoding
+  - Core technique: Cutoff photon number encoding + dispersive shift as compilation resource + leakage error detection
+  - **Activation**: Jaynes-Cummings, JC interaction, bosonic processor, oscillator control, qudit, transmon, cavity QED
+
 ## 2026-05-20 - Medicine + Quantum Mechanics (Cron Job)
 
 ### Quantum Biomedical Imaging and Sensing
