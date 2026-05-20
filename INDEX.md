@@ -1,3 +1,19 @@
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### TIDE: Asymmetric Neural Circuits for Stabilized Temporal Inhibitory-Excitatory Dynamics
+- [[tide-ei-dynamics]] - Neuro-inspired architecture using asymmetric E-I networks with Wilson-Cowan dynamics and lateral inhibition for stabilized neural dynamics (arXiv: 2605.19403)
+  - Dale's principle enforcement (80:20 E-I ratio) with hierarchical receptive fields
+  - Game-theoretic energy-based optimization with proven convergence and stability
+  - Surpasses CTM with <50% training time and +1.65% top-1 accuracy under perturbations
+  - **Activation**: TIDE, E-I balance, Wilson-Cowan, Dale's principle, neural dynamics stability, continuous thought machine, lateral inhibition
+
+### FPED: Functional-Network Prior-Guided Mixture-of-Experts for Interpretable Brain Decoding
+- [[fped-brain-decoding]] - MoE framework modeling functional brain networks as specialized experts with adaptive routing for interpretable fMRI decoding (arXiv: 2605.19279)
+  - Preserves brain network topology instead of flattening fMRI into 1D vectors
+  - Adaptive routing reveals biologically meaningful correspondence between networks and semantic processing
+  - Competitive performance with only 0.68B parameters, transparent decision pathways
+  - **Activation**: FPED, fMRI decoding, functional brain network, brain network MoE, interpretable brain decoding, visual reconstruction fMRI
+
 ## 2026-05-20 - Medicine + Quantum Computing (Cron Job)
 
 ### Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs
