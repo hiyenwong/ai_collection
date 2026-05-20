@@ -14,6 +14,15 @@
 
 ## 2026-05-20 - Medicine (Cron Job)
 
+### Towards Fair Benchmarking of Quantum Transfer Learning for Visual Classification
+- [[qtl-fair-benchmarking]] - Fair comparison methodology for Quantum Transfer Learning using classical backbones with quantum classification heads (arXiv: 2605.19417)
+  - Pretrained classical backbones (ResNet/ViT) extract features; compact quantum modules serve as trainable heads
+  - Establishes fair comparison protocol: equal parameter budget, features, data, and optimization
+  - Exposes common unfair practices in quantum ML benchmarking claims
+  - **Activation**: quantum transfer learning, QTL, fair benchmarking quantum, quantum visual classification, quantum medical image, QTL fair comparison
+
+
+
 ### Quantum Koopman Algorithms
 - [[quantum-koopman-algorithms]] - Observable-space framework for simulating linear quantum and nonlinear classical dynamics with O(polylog(N)) gate cost, exponential improvement over classical methods (arXiv: 2605.19054)
   - Dynamic-QKA for initial-value problems, Spectral-QKA for eigenvalue analysis of Koopman operator
