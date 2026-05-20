@@ -1,3 +1,27 @@
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes
+- [[syndrome-adaptive-gain-control]] - Syndrome adaptive gain Min-Sum decoder for quantum LDPC codes that adapts message gain online based on unsatisfied stabilizers (arXiv: 2605.10433)
+  - Dynamically adjusts scaling factor during decoding based on syndrome weight
+  - Eliminates need for per-code/per-noise-level offline optimization
+  - Matches or outperforms offline-optimized SMS decoder, approaches BP performance
+  - **Activation**: syndrome adaptive gain, SAGMS, QLDPC decoding, quantum error correction, adaptive min-sum
+
+### Symplectic H2 Model Reduction for High-Dimensional Linear Quantum Systems
+- [[symplectic-model-reduction-quantum]] - Symplectic H2 model reduction for high-dimensional linear quantum systems preserving physical properties (arXiv: 2605.07152)
+  - Extends H2-norm optimal model reduction to quantum systems with symplectic constraints
+  - Preserves canonical commutation relations in reduced-order models
+  - Enables tractable control design for large-scale quantum systems
+  - **Activation**: quantum model reduction, symplectic H2, quantum system simplification, model order reduction
+
+### Regularized Counterdiabatic Driving for the Quantum Rabi Model
+- [[counterdiabatic-driving-quantum]] - Regularized counterdiabatic driving for fast high-fidelity quantum state preparation in the Rabi Model (arXiv: 2605.18237)
+  - Adds counterdiabatic term to Hamiltonian to suppress non-adiabatic transitions
+  - Regularization addresses divergence of CD term in the Rabi Model
+  - Enables fast evolution along adiabatic path with high fidelity
+  - **Activation**: counterdiabatic driving, shortcut to adiabaticity, quantum Rabi model, fast state preparation
+
+
 ## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Universally Robust Control of Open Quantum Systems

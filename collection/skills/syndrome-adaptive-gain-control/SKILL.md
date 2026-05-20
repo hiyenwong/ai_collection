@@ -1,116 +1,121 @@
 ---
 name: syndrome-adaptive-gain-control
-description: >
-  Syndrome Adaptive Gain Control methodology for quantum LDPC decoding.
-  Dynamically adjusts min-sum decoder scaling factors based on syndrome patterns
-  to improve convergence and error correction performance.
-  arXiv: 2605.10433 (Cordova, Balatsoukas-Stimming, Gultekin)
-  Dynamically adjusts min-sum decoder scaling factors based on syndrome patterns
-  to improve convergence and error correction performance.
-  Use when: designing quantum error correction decoders, optimizing min-sum algorithms,
-  implementing adaptive gain control, analyzing syndrome patterns in quantum LDPC codes,
-  or studying feedback-controlled decoding systems.
-  Trigger: syndrome gain control, adaptive decoding, quantum LDPC, min-sum optimization,
-  SAGMS, syndrome pattern, quantum error correction decoder, 自适应增益控制
+description: Syndrome Adaptive Gain Control methodology for quantum LDPC error correction decoding. Adapts message gain during iterative decoding based on syndrome patterns.
+category: quantum
 ---
 
-# Syndrome Adaptive Gain Control (SAGMS)
+# Syndrome Adaptive Gain Control
 
-Dynamic gain control for min-sum decoding of quantum LDPC codes that adjusts
-the scaling factor based on syndrome pattern analysis.
+## Description
+Syndrome Adaptive Gain Min-Sum (SAGMS) decoding methodology for quantum LDPC codes. Dynamically adjusts message scaling during iterative belief-propagation-style decoding based on the fraction of unsatisfied stabilizers, eliminating the need for per-code or per-noise-level offline optimization.
 
-## Core Methodology
+## Activation Keywords
+- syndrome adaptive gain
+- SAGMS decoding
+- QLDPC decoding
+- quantum LDPC error correction
+- adaptive min-sum decoder
+- quantum error correction adaptive control
+- 自适应量子纠错解码
 
-The min-sum decoder approximates belief propagation for LDPC codes using a scaling
-factor (gain) to compensate for the approximation error. Fixed gain suboptimally
-handles varying syndrome patterns during iterative decoding.
+## Core Concepts
 
-**Key insight:** Syndrome patterns contain information about decoder convergence state.
-Adaptive gain adjustment based on syndrome characteristics improves both convergence
-speed and final error rate.
+### The Problem
+- Min-Sum (MS) decoding is a low-complexity alternative to belief propagation (BP) for QLDPC codes
+- MS systematically overestimates message magnitudes
+- Scaled Min-Sum (SMS) uses a fixed scaling factor, but optimal factor varies with check-node degree and noise level
+- Fixed scaling incurs growing penalty as code parameters vary
 
-## Algorithm Steps
+### The Solution: SAGMS
+- Adapts message gain **online** during decoding
+- Gain is a function of the fraction of unsatisfied stabilizers (syndrome weight)
+- No per-code or per-noise-level optimization needed
+- Matches or outperforms offline-optimized SMS decoder
+- Approaches BP performance while retaining MS-level complexity
 
-1. **Syndrome Computation**: At each iteration, compute syndrome vector `s = H·x`
-   where H is the parity-check matrix and x is the current estimate.
+## Mathematical Framework
 
-2. **Pattern Analysis**: Extract features from the syndrome pattern:
-   - Syndrome weight (number of non-zero elements)
-   - Syndrome density trend (increasing/decreasing over iterations)
-   - Syndrome cluster structure (spatial distribution on Tanner graph)
-
-3. **Gain Adjustment**: Map syndrome features to optimal scaling factor:
-   - High syndrome weight → increase gain (aggressive correction)
-   - Decreasing syndrome weight → moderate gain (refinement phase)
-   - Oscillating syndrome → reduce gain (avoid overcorrection)
-
-4. **Iterative Application**: Apply adjusted gain in next min-sum iteration:
-   ```
-   m_new = α(s) · sign(m) · min(|m|)
-   ```
-   where α(s) is the syndrome-dependent scaling function.
-
-## Implementation Pattern
-
-```python
-def syndrome_adaptive_gain(syndrome_history, iteration, max_iter):
-    """Compute adaptive gain from syndrome pattern history."""
-    current_weight = np.count_nonzero(syndrome_history[-1])
-    
-    if len(syndrome_history) < 2:
-        return 0.625  # Standard fixed gain default
-    
-    prev_weight = np.count_nonzero(syndrome_history[-2])
-    
-    # Trend analysis
-    if current_weight > prev_weight * 1.1:
-        return 0.8  # Increase gain when syndrome grows
-    elif current_weight < prev_weight * 0.9:
-        return 0.5  # Reduce gain during convergence
-    elif abs(current_weight - prev_weight) < 3:
-        # Oscillation detected
-        return 0.4  # Conservative gain
-    else:
-        return 0.625  # Default
-
-def min_sum_step(check_matrix, variable_msgs, check_msgs, gain):
-    """One min-sum decoding iteration with adaptive gain."""
-    # Check-to-variable messages
-    for c in range(check_matrix.shape[0]):
-        neighbors = np.where(check_matrix[c])[0]
-        for v in neighbors:
-            others = [variable_msgs[n] for n in neighbors if n != v]
-            sign = np.prod([np.sign(m) for m in others])
-            mag = min(abs(m) for m in others)
-            check_msgs[c, v] = gain * sign * mag
-    return check_msgs
+### Syndrome-Based Gain Adaptation
+```
+gain = f(syndrome_weight / total_stabilizers)
 ```
 
-## Applications
+Where:
+- `syndrome_weight` = number of unsatisfied stabilizer checks
+- As syndrome weight decreases → gain converges toward 1.0 (no scaling)
+- As syndrome weight increases → gain reduces to prevent overestimation
 
-- **Quantum LDPC decoding**: CSS codes, bivariate bicycle codes, hypergraph product codes
-- **Adaptive belief propagation**: Classical LDPC codes with syndrome feedback
-- **Iterative receiver design**: Turbo-like systems with dynamic parameter adjustment
-- **Feedback-controlled systems**: Any iterative algorithm benefiting from state-aware parameter tuning
+### Key Insight
+- The scaling factor required for SMS to match BP **decreases with check-node degree**
+- Any fixed scaling optimized for one degree incurs penalty as CN degree varies
+- SAGMS avoids this by adapting dynamically
 
-## Key Parameters
+## Instructions for Agents
 
-| Parameter | Description | Typical Range |
-|-----------|-------------|---------------|
-| `α_min` | Minimum scaling factor | 0.3 - 0.5 |
-| `α_max` | Maximum scaling factor | 0.7 - 0.9 |
-| `history_window` | Syndrome history length | 3 - 10 |
-| `weight_threshold` | Syndrome weight change threshold | 5-15% |
+### Step 1: Identify the QLDPC Code
+- Determine code parameters: n qubits, m stabilizers, check-node degrees
+- Identify the noise model (depolarizing, biased, etc.)
 
-## Related Methods
+### Step 2: Initialize MS Decoder
+- Set up Min-Sum message passing on the Tanner graph
+- Initialize messages (typically uniform or channel-based)
 
-- **Normalized Min-Sum**: Fixed gain scaling (α ≈ 0.625)
-- **Offset Min-Sum**: Subtraction-based compensation
-- **Belief Propagation**: Optimal but computationally expensive
-- **Ordered Statistics**: Post-processing for failed decodings
+### Step 3: Implement Adaptive Gain
+- At each iteration, compute syndrome weight (unsatisfied checks)
+- Calculate adaptive gain: `gain = g(syndrome_weight / m)`
+- Apply gain to outgoing check-to-variable messages
+- Common gain functions: linear, sigmoid, or piecewise
 
-## Pitfalls
+### Step 4: Iterate and Converge
+- Run message passing with adaptive gain
+- Monitor syndrome convergence
+- Stop when syndrome = 0 (success) or max iterations reached
 
-- **Over-adaptation**: Too-aggressive gain changes cause oscillation; use smoothing
-- **Pattern recognition latency**: Syndrome features need several iterations to stabilize
-- **Code-specific tuning**: Optimal gain mapping depends on code structure and channel model
+## Usage Patterns
+
+### Pattern 1: Fixed SMS Baseline Comparison
+```python
+# Compare SAGMS vs optimized SMS
+fer_sms = benchmark_sms_decoder(code, noise_level, fixed_gain=optimal_gain)
+fer_sagms = benchmark_sagms_decoder(code, noise_level)
+# SAGMS should match or exceed SMS performance
+```
+
+### Pattern 2: BP Performance Target
+```python
+# SAGMS should approach BP performance
+fer_bp = benchmark_bp_decoder(code, noise_level)
+fer_sagms = benchmark_sagms_decoder(code, noise_level)
+# SAGMS approaches BP while being much faster
+```
+
+## Error Handling
+
+### Decoder Failure (non-zero syndrome at max iterations)
+- Increase max iterations
+- Check if noise level exceeds code capacity
+- Consider combining with other error mitigation techniques
+
+### Gain Function Tuning
+- Default: linear gain function works for most cases
+- For specific codes: optimize gain function shape via grid search
+- The gain function should be monotonically decreasing with syndrome weight
+
+## Performance Characteristics
+- **Complexity**: Same as MS decoding (O(edges × iterations))
+- **FER Performance**: Matches/exceeds offline-optimized SMS
+- **BP Gap**: Approaches BP performance
+- **Adaptivity**: No offline tuning needed
+
+## Limitations
+- Performance depends on gain function design
+- May not achieve optimal performance for all code families
+- Primarily validated on generalized bicycle QLDPC codes
+
+## Resources
+- arXiv:2605.10433 - "Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes"
+- Authors: Hernan Cordova, Alexios Balatsoukas-Stimming, Yunus Can Gültekin, Gabriele Liga, Alex Alvarado
+
+## Related Skills
+- quantum-error-correction-methods
+- syndrome-adaptive-gain-qldpc
