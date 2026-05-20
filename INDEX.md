@@ -1,5 +1,19 @@
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
+### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
+- [[braindyn-sheaf-neural-ode]] - First framework combining cellular sheaf theory with neural ODEs for continuous-time brain dynamics modeling (arXiv: 2605.19324)
+  - Sheaf Laplacian with learnable restriction maps enables edge-specific feature transformations, preventing GNN oversmoothing in brain networks
+  - Multi-modal evaluation across fMRI (22% MSE reduction vs ODEBRAIN), EEG, and NEST spiking simulations with in silico perturbation capability
+  - **Activation**: braindyn, sheaf neural ode, cellular sheaf brain, sheaf Laplacian, generative brain dynamics, virtual brain model
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[zeroshot-handwriting-bci]] - Kinematics-aligned decoding enables zero-shot character recognition (64% hits@3) for BCI scaling to logographic languages (arXiv: 2605.19048)
+  - GRU-based neural-to-kinematics model with Soft-DTW loss enables template matching against unseen characters
+  - CTC forward/mirror-RNN snippet extraction from continuous data eliminates supervised single-letter calibration requirement
+  - **Activation**: zero-shot bci, kinematics decoding, handwriting bci, logographic language, soft-dtw, conserved representation
+
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
 ### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
 - [[target-space-recovery-profiles]] - Framework for evaluating model-brain alignment by identifying which response dimensions are recovered by prediction, beyond scalar accuracy metrics (arXiv: 2605.20127)
   - Prediction accuracy alone masks model-brain mismatches; TSRP decomposes prediction into reproducible response dimensions
