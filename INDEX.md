@@ -1418,3 +1418,53 @@
   - **Activation**: biomysterybench, bioinformatics, benchmarking, open-ended evaluation, consensus grading
 
 
+
+## 2026-05-21 - Deep Learning Research (Cron Job)
+
+### LionMuon: Alternating Spectral and Sign Descent for Efficient Training
+- [[lionmuon-optimizer]] - Optimizer alternating between spectral (Muon) and sign-based (Lion) updates on fixed period for compute-efficient large-scale training (arXiv: 2605.19811)
+  - Dual-EMA shared momentum buffer: state memory matches Lion, half of AdamW
+  - P=2 Pareto-dominates Muon/Lion/Signum/AdamW at 124M–720M scale
+  - Sharp complexity bounds under heavy-tailed noise predict compute-optimal period
+  - **Activation**: LionMuon, alternating optimizer, spectral sign descent, dual-EMA momentum, compute-efficient optimizer, Muon optimizer
+
+### When to Stop Reusing: Dynamic Gradient Gating for Sample-Efficient RLVR
+- [[dynamic-gradient-gating-rlvr]] - Real-time lm_head gradient norm monitoring to detect catastrophic policy shift and safely reuse rollout batches in RLVR (arXiv: 2605.19425)
+  - DWD phenomenon: degradation synchronized with lm_head weight surge, intermediate layers stable
+  - lm_head gradient norm lower-bounds policy divergence — principled early-stop signal
+  - 2.93x sample efficiency, 2.14x wall-clock speedup across math/ALFWorld/WebShop
+  - **Activation**: DGG, RLVR sample reuse, lm_head gradient monitoring, dynamic gradient gating, policy shift detection, batch reuse RL
+
+### From Seeing to Thinking: Decoupling Perception and Reasoning in VLM Post-Training
+- [[staged-training-vlm-perception-reasoning]] - Three-stage VLM training (perception → visual reasoning → text reasoning) showing perception is the primary bottleneck, not reasoning (arXiv: 2605.20177)
+  - Visual perception learned more effectively via RL than caption-based SFT
+  - +1.5% reasoning accuracy with 20.8% shorter reasoning traces
+  - Capability staging is orthogonal to difficulty-based curricula — combining yields additive gains
+  - **Activation**: VLM staged training, perception reasoning decoupling, visual perception RL, VLM post-training curriculum, capability staging
+
+### ClinSeekAgent: Automating Multimodal Evidence Seeking for Agentic Clinical Reasoning
+- [[agentic-evidence-seeking-clinical]] - Agentic framework for active multimodal evidence acquisition from raw clinical sources (EHR, knowledge bases, imaging) (arXiv: 2605.20176)
+  - Three-phase cycle: evidence gathering → hypothesis refinement → evidence integration
+  - Dual-use: inference-time agent for frontier LLMs + training-time trajectory distillation
+  - +15.1 F1 on multimodal tasks; distilled 35B model approaches Claude Opus 4.6
+  - **Activation**: ClinSeekAgent, clinical evidence seeking, agentic clinical reasoning, multimodal evidence acquisition, EHR navigation, trajectory distillation
+
+### CopT: Contrastive On-Policy Thinking with Continuous Spaces for General and Agentic Reasoning
+- [[contrastive-on-policy-thinking]] - Answer-first reasoning with continuous embedding contrastive verifiers and dynamic KL-based reliability estimation (arXiv: 2605.20075)
+  - Reverse KL estimator equals mutual information between latent state and answer token
+  - +23% peak accuracy, up to 57% token reduction — no training required
+  - Dynamically controls draft-answer visibility during on-policy thinking
+  - **Activation**: CopT, contrastive on-policy thinking, answer-first reasoning, continuous embedding verifier, reverse KL estimation, performative reasoning
+
+### Other Papers (No Reusable Skill Pattern)
+- Information Processing Capacity of Stationary Physical Systems (2605.19152) — IPC framework extension, photonic demonstration, theoretical analysis
+- Scalable Energy-Efficient Optical-Neural Architecture for Deepfake Detection (2605.19360) — Hardware-specific optical computing system
+- Accurate Efficient Explainable DL for Environmental Science (2605.19366) — Dissertation, domain-specific applications
+- Rethinking Visual Attribution for Chest X-ray Reasoning (2605.20158) — Attribution evaluation framework, MedFocus method
+- MixRea: Benchmarking Explicit-Implicit Reasoning (2605.20128) — Benchmark + prompting method (PRCP)
+
+### Coverage Summary
+- Papers scanned: 10 new from arXiv
+- New skills created: 5
+- Papers without reusable patterns: 5
+- Total collection skills: 1349
