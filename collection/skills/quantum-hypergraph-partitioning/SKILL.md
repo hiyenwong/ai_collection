@@ -1,56 +1,45 @@
 ---
 name: quantum-hypergraph-partitioning
-description: "Quantum hypergraph partitioning methodology for distributed quantum computing and quantum network design. Maps quantum circuit topology to hardware connectivity via hypergraph optimization (arXiv: 2605.10623)"
+description: Quantum hypergraph partitioning using QAOA with distributional solutions — finding probability distributions over partitions rather than single solutions. Use when solving hypergraph optimization with quantum algorithms, fairness-aware partitioning, or distributional QAOA.
 ---
 
 # Quantum Hypergraph Partitioning
 
-## Description
+## Core Concept
 
-Methodology for partitioning quantum circuits across distributed hardware using hypergraph representations. Captures multi-qubit interactions (hyperedges) beyond pairwise couplings, enabling optimal resource allocation in distributed quantum systems.
+Study hypergraph partitioning problems where the desired output is a probability distribution over partitions, not a single solution. QAOA naturally produces distributional solutions through quantum state measurement, making it well-suited for maximin/minimax objectives like Fair Cut Cover.
+
+## Technical Approach
+
+1. **Distributional Perspective**: Solution = quantum state encoding probability distribution
+2. **QAOA Native Fit**: QAOA measurement distribution directly represents solution
+3. **Fair Cut Cover**: Minimize worst expected imbalance across hyperedges
+4. **Multi-Objective QAOA**: Handle multiple partitioning objectives simultaneously
+
+## Key Results
+
+- Low-depth multi-angle QAOA outperforms classical SDP approximation baselines
+- Quantum states natively represent distributional solutions
+- Unified framework: balanced partitioning + polarized community discovery + distributional fairness
+
+## Usage Patterns
+
+### Pattern 1: Fair Partitioning
+1. Define hypergraph with fairness objective
+2. Formulate as QAOA cost Hamiltonian with multi-angle parameters
+3. Optimize to minimize worst-case expected imbalance
+4. Extract distribution from quantum state measurements
+
+### Pattern 2: Community Discovery
+1. Map network to hypergraph structure
+2. Apply QAOA with polarization objective
+3. Quantum state reveals community probability distribution
+4. Post-process measurements for community assignments
 
 ## Activation Keywords
 - quantum hypergraph partitioning
-- distributed quantum circuit mapping
-- hypergraph quantum topology
-- quantum hardware allocation
-- multi-qubit interaction mapping
-- 量子超图划分
-- 分布式量子电路映射
-
-## Core Methodology
-
-### Step 1: Circuit-to-Hypergraph Conversion
-- Vertices: qubits in quantum circuit
-- Hyperedges: multi-qubit gates (not just 2-qubit)
-- Edge weights: gate frequency/importance
-- Captures Toffoli, multi-controlled gates as single hyperedges
-
-### Step 2: Partitioning Objective
-- Minimize: cut edges (inter-node communication)
-- Constraint: balance partition sizes (load balancing)
-- Objective: minimize max(partition_size) + alpha * cut_weight
-
-### Step 3: Quantum-Enhanced Partitioning
-- Use quantum annealing or QAOA to solve partitioning
-- QUBO formulation of hypergraph partitioning
-- Quantum advantage for large, dense hypergraphs
-
-### Step 4: Hardware Mapping
-- Assign partitions to quantum processing nodes
-- Schedule inter-node operations
-- Optimize communication scheduling
-
-## Implementation
-```
-QUBO formulation:
-  min sum_{hyperedges e} w_e * (1 - product_{v in e} x_v)
-  + lambda * sum_i (sum_v x_{v,i} - n/m)^2
-  
-  x_{v,i} = 1 if qubit v assigned to partition i
-```
-
-## Related Skills
-- qubit-mapping-routing-memoization
-- quantum-compiler-routing
-- quantum-systems-engineering
+- QAOA distributional solution
+- fair cut cover quantum
+- multi-angle QAOA partitioning
+- quantum community discovery
+- distributional quantum optimization

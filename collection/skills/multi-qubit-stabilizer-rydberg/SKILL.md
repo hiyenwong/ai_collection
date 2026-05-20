@@ -1,49 +1,38 @@
 ---
 name: multi-qubit-stabilizer-rydberg
-description: "Multi-qubit stabilizer readout methodology for dual-species Rydberg atom arrays. Enables parallel measurement of stabilizer operators for quantum error correction in neutral atom platforms (arXiv: 2605.10924)"
+description: Multi-qubit stabilizer readout methodology for dual-species Rydberg atom arrays enabling parallel syndrome extraction for quantum error correction. Use when designing Rydberg quantum error correction, stabilizer measurement circuits, or neutral atom QEC protocols.
 ---
 
 # Multi-Qubit Stabilizer Readout on Dual-Species Rydberg Arrays
 
-## Description
+## Core Concept
 
-Methodology for parallel multi-qubit stabilizer measurement on dual-species Rydberg atom arrays. Uses species-selective operations to measure stabilizer operators without destroying data qubit states, enabling real-time quantum error correction.
+Dual-species Rydberg atom arrays enable simultaneous multi-qubit stabilizer measurements by using two atomic species (data qubits + ancilla qubits) with species-selective Rydberg interactions, allowing parallel syndrome extraction for quantum error correction.
+
+## Technical Approach
+
+1. **Dual-Species Architecture**: Separate atomic species for data and ancilla qubits
+2. **Species-Selective Gates**: Different Rydberg states enable selective interactions
+3. **Parallel Stabilizer Measurement**: Multiple stabilizers measured simultaneously
+4. **Syndrome Extraction**: Ancilla qubits accumulate parity information via controlled phase gates
+
+## Key Patterns
+
+### Stabilizer Circuit Design
+- Ancilla initialized in |+⟩ state
+- Species-selective CZ gates entangle ancilla with data qubits
+- Measurement of ancilla reveals stabilizer eigenvalue
+- Parallel execution reduces syndrome extraction time
+
+### Error Correction Integration
+- Surface code: X and Z stabilizers measured in parallel
+- Code distance d requires d² data qubits + (d²-1) ancilla qubits
+- Measurement fidelity determines QEC threshold
 
 ## Activation Keywords
 - multi-qubit stabilizer readout
-- Rydberg atom QEC
 - dual-species Rydberg array
-- neutral atom error correction
-- parallel stabilizer measurement
-- 里德堡原子稳定子测量
-- 双物种里德堡阵列
-
-## Core Methodology
-
-### Step 1: Dual-Species Architecture
-- **Data qubits**: Species A (long coherence time)
-- **Ancilla qubits**: Species B (fast gates, good readout)
-- Species-selective Rydberg interactions for entangling gates
-
-### Step 2: Stabilizer Measurement Protocol
-1. Prepare ancilla qubits in |0> state
-2. Apply controlled-phase gates between ancilla and data qubits
-3. Gates implement stabilizer generator measurement circuit
-4. Read out ancilla qubits (non-destructive to data)
-5. Classical decoding of syndrome
-
-### Step 3: Parallelization Strategy
-- Measure commuting stabilizers simultaneously
-- Spatial scheduling to avoid crosstalk
-- Ancilla reuse across rounds
-
-### Step 4: Error Analysis
-- Gate infidelity from Rydberg interaction noise
-- Readout errors in ancilla measurement
-- Syndrome extraction error propagation
-- Threshold analysis for fault tolerance
-
-## Related Skills
-- quantum-error-correction-methods
-- distributed-quantum-fault-tolerance
-- quantum-fault-tolerance-blocks
+- Rydberg quantum error correction
+- neutral atom stabilizer measurement
+- parallel syndrome extraction
+- species-selective Rydberg gates

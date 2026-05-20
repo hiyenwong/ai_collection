@@ -22,6 +22,80 @@
 
 ## 2026-05-20 - Medicine + Quantum Mechanics (Cron Job)
 
+### Phononic Holonomic Gates with Biased Erasure
+- [[phononic-holonomic-gates-biased-erasure]] - Crystallographic symmetry generates phononic holonomic gates with biased-erasure errors for fault-tolerant quantum computing (arXiv: 2605.10932)
+  - 核心要点 1: 晶体对称性保护的全息量子门,通过绝热参数循环实现几何相位操控
+  - 核心要点 2: 声子量子比特天然产生擦除偏置误差通道,支持高效纠错
+  - **Activation**: phononic quantum gate, holonomic quantum computing, biased erasure error, crystallographic quantum gate, geometric quantum gate
+
+### Multi-Qubit Stabilizer Readout on Dual-Species Rydberg Array
+- [[multi-qubit-stabilizer-rydberg]] - Multi-qubit stabilizer readout methodology for dual-species Rydberg atom arrays enabling parallel syndrome extraction (arXiv: 2605.10924)
+  - 核心要点 1: 双物种架构分离数据比特和辅助比特,实现并行稳定子测量
+  - 核心要点 2: 物种选择性里德堡门允许同时提取X和Z稳定子信息
+  - **Activation**: multi-qubit stabilizer readout, dual-species Rydberg array, Rydberg quantum error correction, neutral atom stabilizer measurement
+
+### DART-Q Real-Time QLDPC Decoding
+- [[dart-q-realtime-qldpc-decoding]] - Deadline-driven framework for real-time QLDPC syndrome decoding with bounded latency guarantees (arXiv: 2605.09142)
+  - 核心要点 1: 解码器保证在固定时间预算内完成,防止错误积累
+  - 核心要点 2: 自适应复杂度策略根据综合征权重调整计算量
+  - **Activation**: DART-Q decoding, real-time QLDPC decoder, deadline-driven quantum error correction, bounded latency quantum decoding
+
+### Equivariant RL for Clifford Quantum Circuit Synthesis
+- [[equivariant-rl-clifford]] - Equivariant reinforcement learning methodology for Clifford quantum circuit synthesis using group symmetries (arXiv: 2605.10910)
+  - 核心要点 1: 等变策略利用Clifford群对称性大幅减少搜索空间
+  - 核心要点 2: 比非等变方法收敛到更短电路,样本效率显著提升
+  - **Activation**: equivariant RL Clifford synthesis, Clifford circuit optimization RL, group-equivariant quantum compilation, RL quantum circuit design
+
+### Quantum Metrology via Partial QEC
+- [[quantum-metrology-partial-qec]] - Quantum metrology enhanced by partial quantum error correction improving sensing precision beyond standard quantum limit (arXiv: 2605.08341)
+  - 核心要点 1: 部分纠错修正主导噪声同时保留信号参数敏感性
+  - 核心要点 2: 全纠错会破坏信号,部分纠错平衡噪声抑制与信号保留
+  - **Activation**: quantum metrology partial QEC, quantum error correction sensing, noise-resilient quantum sensor, entanglement-enhanced metrology
+
+### Algorithmic Advantage on Gate-Based Photonic QNN
+- [[photonic-qnn-algorithmic-advantage]] - QNNs with fewer parameters outperform classical ANNs, validated on 6-qubit photonic processor (arXiv: 2605.10801)
+  - 核心要点 1: 2参数QNN解决经典ANN需要8+参数的任务
+  - 核心要点 2: QNN有效维度更高,在等效参数下具有更强表达能力
+  - **Activation**: photonic QNN algorithmic advantage, gate-based photonic quantum classifier, quantum neural network capacity, effective dimension QNN
+
+### Many Hamiltonians Are Sparsifiable
+- [[many-hamiltonian-sparsifiable]] - Quantum Hamiltonians can be reduced to significantly fewer terms while preserving system behavior for all states (arXiv: 2605.02211)
+  - 核心要点 1: Pauli字符串、随机算符、量子SAT哈密顿量均可稀疏化
+  - 核心要点 2: 反直觉发现:量子系统通常比经典对应更容易稀疏化
+  - **Activation**: Hamiltonian sparsification, quantum Hamiltonian reduction, term reduction quantum simulation, sparse Hamiltonian approximation
+
+### Quantum Multi-Level Estimation of Functionals
+- [[quantum-multi-level-estimation]] - Near-optimal quantum estimators for Tsallis entropy using non-destructive singular value discrimination (arXiv: 2605.03685)
+  - 核心要点 1: 对数区间划分+非破坏性奇异值判别实现自适应估计
+  - 核心要点 2: 首次实现非整数q-熵的近似最优量子估计算法
+  - **Activation**: quantum multi-level estimation, quantum entropy estimation, quantum distribution functional, quantum Tsallis entropy
+
+### Quantum Hypergraph Partitioning
+- [[quantum-hypergraph-partitioning]] - Distributional QAOA solutions for hypergraph partitioning with fairness objectives outperforming classical SDP baselines (arXiv: 2605.10623)
+  - 核心要点 1: QAOA测量分布原生表示概率分布解,适合最大化最小目标
+  - 核心要点 2: 低深度多角度QAOA超越经典SDP近似基线
+  - **Activation**: quantum hypergraph partitioning, QAOA distributional solution, fair cut cover quantum, multi-angle QAOA partitioning
+
+### Communication-Efficient Distributed Inverse QFT
+- [[distributed-iqft-communication]] - Reduce distributed iQFT quantum communication from O(P²) to O(P) via threshold-driven pruning (arXiv: 2605.10710)
+  - 核心要点 1: 通信视界策略修剪远程受控相位门,节点间通信降至线性
+  - 核心要点 2: 每节点纠缠资源消耗饱和为常数,保持功能正确性
+  - **Activation**: distributed inverse QFT, quantum Fourier transform distributed, communication-efficient quantum algorithm, quantum network iQFT
+
+### GKSL Quantum Cognition and Decision Making
+- [[gksl-quantum-cognition]] - Open quantum systems framework for cognitive psychology using GKSL master equation dynamics (arXiv: 2604.18643)
+  - 核心要点 1: GKSL主方程建模心理状态演化为耗散过程
+  - 核心要点 2: 认知节拍揭示竞争思维流之间的犹豫/准备时间映射
+  - **Activation**: GKSL quantum cognition, quantum-like decision making, open quantum system cognition, cognitive beats quantum, Lindblad equation psychology
+
+### SPATE Spiking-Phase Adaptive Temporal Encoding
+- [[spiking-quantum-encoding]] - Spike-driven temporal encoding for quantum machine learning converting real-valued features to quantum rotations (arXiv: 2604.11022)
+  - 核心要点 1: LIF脉冲序列+量子旋转映射实现时间信息编码
+  - 核心要点 2: CKTA 0.966 vs 角度编码0.632,显著优于静态编码方法
+  - **Activation**: SPATE quantum encoding, spiking-phase adaptive temporal encoding, spike-driven quantum feature map, temporal quantum encoding
+
+## 2026-05-20 - Medicine + Quantum Mechanics (Cron Job)
+
 ### Quantum Biomedical Imaging and Sensing
 - [[quantum-biomedical-imaging-sensors]] - Four generations of quantum biosensors with quantum optical imaging techniques using entanglement, squeezing, and quantum correlations (arXiv: 2603.29944, 2511.03935)
   - Core innovation: Generational framework for quantum biosensors (Gen 1-4) addressing clinical translation
