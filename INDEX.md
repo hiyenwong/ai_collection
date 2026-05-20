@@ -1,3 +1,11 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[zero-shot-kinematic-bci-decoding]] - Zero-shot character decoding via conserved kinematic representations in motor cortex, enabling open-vocabulary BCI for logographic languages (arXiv: 2605.19048)
+  - Two-stage architecture: neural→kinematics RNN + DTW-based template matching
+  - 41.88% hits@1, 64.35% hits@3 on unseen characters; neural snippets extracted from continuous writing data without supervised labels
+  - **Activation**: zero-shot bci, handwriting decoding, kinematic representations, conserved neural dynamics, logographic bci, motor cortex decoding, dtw template matching
+
 ## 2026-05-20 - Medicine (Cron Job)
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
