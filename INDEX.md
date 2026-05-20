@@ -1,3 +1,20 @@
+## 2026-05-20 - Medicine (Cron Job)
+
+### Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs
+- [[pce-pagd-dense-constraint-qubo]] - PCE+PAGD decoder for dense-constraint QUBO problems in biomedical applications, achieving 75-100% near-optimal recovery on mRNA structure prediction (arXiv: 2605.20163)
+  - Pauli Correlation Encoding compresses m binary variables onto n=O(m^{1/k}) qubits via commuting Pauli correlators
+  - Problem-Aware Guided Decoder (PAGD) scores candidates by energy reduction + trained prior + constraint pruning
+  - Demonstrated on IBM Heron at biological scale: 694-745 variables, 23 qubits, 480 two-qubit gates
+  - **Activation**: pce pagd, pauli correlation decoding, dense constraint qubo, mRNA quantum prediction, problem-aware guided decoder
+
+### Off-line quantum-advantage feature extraction for industrial production
+- [[quantum-feature-surrogate]] - Quantum feature surrogate framework for scalable quantum advantage in production ML, turning QPU into a teacher of representations (arXiv: 2605.19801)
+  - Subsample quantum processing + classical surrogate learning for near-zero cost production inference
+  - Developed by Kipu Quantum for industrial-scale applications including healthcare and molecular analysis
+  - Reduces QPU calls from millions to hundreds while maintaining ~95-99% feature fidelity
+  - **Activation**: quantum feature surrogate, quantum surrogate model, offline quantum advantage, quantum teacher model
+
+
 
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
