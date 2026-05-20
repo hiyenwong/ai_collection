@@ -1,3 +1,17 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles
+- [[target-space-recovery-profiles]] - Diagnostic framework for model-brain alignment beyond prediction accuracy, identifies which reproducible neural response dimensions are recovered (arXiv: 2605.20127)
+  - Repeated fMRI measurements identify low-dimensional reproducible response dimensions in early-to-intermediate visual cortex
+  - Pretrained and randomly initialized models achieve similar accuracy but distinct recovery profiles, revealing hidden model-brain mismatches
+  - **Activation**: target-space recovery, model-brain alignment evaluation, brain response dimensions, reproducible neural dimensions, diagnostic alignment
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[zero-shot-kinematic-bci-decoding]] - Zero-shot handwriting BCI decoding via conserved kinematic stroke primitives, enabling open-vocabulary decoding for logographic languages (arXiv: 2605.19048)
+  - 64% hits@3 retrieval on completely unseen characters; neural representations of kinematic strokes are conserved across character contexts
+  - Provides evidence for compositional basis of complex motor control; minimal recalibration for new characters
+  - **Activation**: zero-shot BCI, handwriting decoding, kinematic representations, intracortical BCI, logographic language BCI, compositional motor control
+
 ## 2026-05-20 - 医学+量子力学 (Cron Job - Hourly)
 
 ### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED

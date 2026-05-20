@@ -1,113 +1,95 @@
 ---
 name: target-space-recovery-profiles
-description: "Target-Space Recovery Profiles (TSRP) methodology for evaluating model-brain alignment beyond prediction accuracy. Identifies which dimensions of brain response space are recovered by predictive models, providing diagnostic evaluation of alignment between AI models and neural activity. Applicable to brain-encoding studies, computational neuroscience, neural alignment research."
+description: "Target-Space Recovery Profiles (TSRP) methodology for evaluating model-brain alignment beyond prediction accuracy. Identifies which reproducible brain response dimensions are recovered by prediction models."
 ---
 
-# Target-Space Recovery Profiles for Model-Brain Alignment
+# Target-Space Recovery Profiles (TSRP) Methodology
 
-## Overview
+**Paper**: Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+**arXiv**: [2605.20127](https://arxiv.org/abs/2605.20127)
+**Authors**: Ken Nakamura, Tomoya Nakai, Ryuto Yashiro, Ayumu Yamashita, Kaoru Amano
+**Date**: May 20, 2026
+**Categories**: q-bio.NC, cs.AI, cs.LG
 
-Target-Space Recovery Profiles (TSRP) is a unified framework for evaluating both model-brain and brain-brain alignment by identifying the response dimensions recovered by prediction. Published as arXiv:2605.20127 (Nakamura et al., 2026).
+## Core Problem
 
-**Core Insight**: Prediction accuracy alone does not indicate which dimensions of the target brain's response space are recovered. Two models with identical prediction accuracy can have fundamentally different alignment profiles with neural data.
+Artificial vision models are typically evaluated against the human visual cortex by measuring how accurately their internal representations predict brain responses (e.g., fMRI, EEG). However, **prediction accuracy alone does not indicate which dimensions of the target brain's response space are recovered**. Two models with identical prediction accuracy may recover fundamentally different neural response patterns, masking model-brain mismatches.
 
-## Key Contributions
+## TSRP Framework
 
-### 1. Beyond Scalar Accuracy Metrics
-- Traditional brain-encoding studies use scalar metrics (correlation, R²) to measure model-brain alignment
-- TSRP decomposes prediction into response dimensions to reveal *what* is being predicted
-- Provides diagnostic profiles rather than single-number benchmarks
+### Step 1: Identify Reproducible Response Dimensions
 
-### 2. Reproducible Response Dimension Identification
-- Uses repeated fMRI measurements to identify target-brain response dimensions
-- Identifies dimensions that can be reproducibly predicted across independent trial splits
-- Establishes upper bound on predictability for each dimension
+Using repeated measurements of the target brain (e.g., repeated fMRI trials):
 
-### 3. Recovery Profile Analysis
-- Quantifies how strongly each reproducible response dimension is recovered
-- Compares recovery profiles across different models and baselines
-- Brain-to-brain comparisons provide human reference for diagnostic evaluation
+1. Split data into independent trial splits
+2. Identify response dimensions that can be **reproducibly predicted** across splits
+3. These reproducible dimensions form the "recovery space" for evaluation
 
-## Methodology
+### Step 2: Predict Target-Brain Responses
 
-### Step 1: Identify Reproducible Dimensions
-```python
-# Split fMRI data into independent trial sets
-# Perform PCA/SVD on trial-averaged responses
-# Identify dimensions with high cross-validation reliability
-from sklearn.decomposition import PCA
-from sklearn.model_selection import cross_val_score
+Given either:
+- Another subject's brain responses (brain-to-brain prediction), or
+- A model's internal representations (model-to-brain prediction)
 
-# For each voxel or ROI, compute reliability across splits
-reliability = compute_dimension_reliability(trial_split_1, trial_split_2)
-```
+Predict target-brain responses using the same prediction pipeline.
 
-### Step 2: Build Encoding Models
-```python
-# Train encoding models to predict brain responses from:
-# 1. Another subject's brain responses (brain-brain baseline)
-# 2. Model internal representations (model-brain alignment)
-from sklearn.linear_model import Ridge
+### Step 3: Quantify Recovery Strength
 
-encoding_model = Ridge(alpha=1.0)
-encoding_model.fit(model_features, brain_responses)
-predictions = encoding_model.predict(test_features)
-```
+For each reproducible response dimension identified in Step 1:
+- Compute how strongly that dimension is recovered by the prediction
+- Build a **recovery profile**: a vector of recovery strengths across all dimensions
 
-### Step 3: Compute Recovery Profiles
-```python
-# For each reproducible dimension, compute recovery strength
-# Recovery = correlation between predicted and actual dimension scores
-recovery_profiles = {}
-for dim in reproducible_dimensions:
-    predicted_dim = project_to_dimension(predictions, dim)
-    actual_dim = project_to_dimension(actual_responses, dim)
-    recovery_profiles[dim] = correlation(predicted_dim, actual_dim)
-```
+### Step 4: Diagnostic Evaluation
 
-### Step 4: Compare Recovery Profiles
-```python
-# Visualize recovery profiles across models
-# Identify dimensions where models diverge despite similar accuracy
-import matplotlib.pyplot as plt
+- Compare recovery profiles across different models
+- Compare model recovery profiles against brain-to-brain recovery profiles (human reference)
+- Identify which specific dimensions each model fails to capture
 
-plt.bar(dimension_ids, recovery_profile_model1, alpha=0.7, label='Model 1')
-plt.bar(dimension_ids, recovery_profile_model2, alpha=0.7, label='Model 2')
-plt.axhline(y=brain_brain_baseline, color='r', linestyle='--', label='Brain-Brain')
-```
+## Key Findings (from Natural Scenes Dataset)
 
-## Key Findings from Natural Scenes Dataset
-
-1. **Early-to-intermediate visual cortex** contains low-dimensional set of reproducible response dimensions
-2. **Brain-to-brain comparisons** identify consistently recoverable dimensions across subjects
-3. **Pretrained vs random models** can achieve similar prediction accuracy but show distinct recovery profiles
-4. **Prediction accuracy masks mismatches** - models can score equally while recovering different neural computations
+1. **Early-to-intermediate visual cortex** responses contain a **low-dimensional set of reproducible dimensions**
+2. Brain-to-brain comparisons identify which dimensions are **consistently recoverable** across subjects, providing a diagnostic human reference
+3. Pretrained and randomly initialized models can achieve **similar prediction accuracy** while showing **distinct recovery profiles**
+4. **Prediction accuracy alone can mask model-brain mismatches**
 
 ## Applications
 
-- **Brain-Encoding Studies**: Evaluate which aspects of neural activity models capture
-- **Model Comparison**: Diagnose differences between architectures beyond accuracy
-- **Brain-Brain Alignment**: Establish human baselines for model evaluation
-- **Computational Neuroscience**: Understand representational structure in neural data
-
-## Related Concepts
-
-- Neural encoding models
-- Representational Similarity Analysis (RSA)
-- Brain-computer interface evaluation
-- Model-brain alignment benchmarks
-- fMRI response decomposition
-- Cross-subject generalization
+- **Model-brain alignment evaluation**: Beyond scalar accuracy metrics, provide diagnostic dimension-by-dimension analysis
+- **Cross-subject neural consistency**: Quantify which response dimensions are shared across individuals
+- **Model development guidance**: Identify specific neural response dimensions that models fail to capture
+- **Benchmark design**: Replace single-number benchmarks with diagnostic profile comparisons
 
 ## Implementation Considerations
 
-- Requires repeated measurements for reliability estimation
-- Works best with high-quality fMRI datasets (e.g., Natural Scenes Dataset)
-- Can be applied to other neural modalities (EEG, MEG, ECoG)
-- Complements existing alignment metrics rather than replacing them
+### Data Requirements
+- Repeated measurements of the same stimuli for the same subjects (to establish reproducibility)
+- Multiple subjects viewing the same stimuli (for brain-to-brain reference)
+- Sufficient trials per condition to enable reliable split-half analysis
 
-## References
+### Dimensionality Reduction
+- PCA or similar methods to identify dominant response dimensions
+- Focus on dimensions that show high reproducibility across trial splits
+- Low-dimensional structure expected in early visual cortex
 
-- arXiv:2605.20127 - "Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment"
-- Natural Scenes Dataset (NSD) - large-scale fMRI dataset for vision research
-- Brain-encoding model literature (Naselaris et al., 2011; Huth et al., 2016)
+### Recovery Metric
+- Correlation-based or regression-based measurement of dimension recovery strength
+- Normalize across dimensions for fair comparison
+- Statistical testing for significance of recovery differences
+
+## Connection to Existing Skills
+
+This methodology extends and complements:
+- **target-predictor-profiles** (existing skill): TSRP generalizes from model-to-model prediction to model-brain and brain-brain alignment
+- **naturality-violation-score**: Both address model-brain alignment but TSRP focuses on dimension recovery rather than transformation naturality
+- **encoding-evaluation-ground-truth**: TSRP provides a complementary evaluation framework that doesn't require ground-truth approximations
+
+## Activation
+
+Trigger words: target-space recovery, model-brain alignment evaluation, brain response dimensions, reproducible neural dimensions, beyond prediction accuracy, diagnostic alignment, recovery profile, brain-to-brain comparison, visual cortex alignment
+
+## Pitfalls
+
+- **Requires repeated measurements**: Cannot be applied to single-trial datasets without modifications
+- **Dimension selection bias**: The choice of dimensionality reduction method affects which dimensions are identified
+- **Cross-subject variability**: Brain-to-brain reference profiles may vary depending on subject population
+- **Not a replacement for accuracy**: TSRP complements but does not replace prediction accuracy metrics
