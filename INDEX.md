@@ -1,3 +1,23 @@
+## 2026-05-20 - Medicine + Quantum Mechanics (Cron Job)
+
+### MoBayes: Modular Bayesian Framework for Clinical Decision Support
+- [[mobayes-clinical-decision]] - Separates language generation from probabilistic clinical reasoning in LLM-based healthcare systems (arXiv: 2604.20022)
+  - Addresses architectural gap where LLMs conflate token prediction with medical inference
+  - Bayesian module provides calibrated uncertainty estimates and auditability independent of language model
+  - **Activation**: clinical reasoning, medical LLM, Bayesian clinical, decision support, MoBayes
+
+### Federated Learning for Privacy-Preserving ECG Monitoring
+- [[federated-ecg-wearable]] - Family-grouped hierarchical FL for sub-5KB cardiovascular models on ultra-resource-constrained wearables (arXiv: 2605.18862)
+  - Three-level hierarchy: device → family group → global server reduces non-IID problem
+  - Early arrhythmia detection with <5KB models, no raw ECG data leaves device
+  - **Activation**: federated learning ECG, wearable cardiac monitoring, privacy-preserving ML, sub-5KB model, arrhythmia detection
+
+### GraphPINE: Graph Importance Propagation for Interpretable Drug Response
+- [[graphpine-drug-response]] - Propagates importance scores through biological knowledge graphs for structure-constrained drug response explainability (arXiv: 2504.05454)
+  - Existing methods (attention, gradients, Shapley) fail to respect biological pathway structure
+  - O(|E|) propagation ensures explanations align with known drug-gene-pathway relationships
+  - **Activation**: drug response prediction, interpretable ML, graph importance propagation, biomedical explainability, pharmacogenomics
+
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
 ### Beyond Prediction Accuracy: Target-Space Recovery Profiles

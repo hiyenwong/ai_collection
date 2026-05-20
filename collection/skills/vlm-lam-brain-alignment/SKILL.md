@@ -1,139 +1,117 @@
----
-name: vlm-lam-brain-alignment
-description: "Brain alignment methodology for Vision-Language Models (VLMs) and Large-Action Models (LAMs) during naturalistic gameplay. Studies how action-focused and reasoning-focused prompts shape model internal representations and align with fMRI brain activity. Reveals prompt-symmetric vs prompt-asymmetric representational organization."
----
-
 # VLM/LAM Brain Alignment During Naturalistic Gameplay
+
+**Reference Paper:** [2605.19352](https://arxiv.org/abs/2605.19352) — *Brain alignment of reasoning and action representations from vision-language and action models during naturalistic gameplay*
+**Authors:** Subba Reddy Oota, Anant Khandelwal, Khushbu Pahwa, Satya Sai Srinath Namburi, Tanmoy Chakraborty, Bapi S. Raju, Manish Gupta
+**Published:** 19 May 2026 · 21 pages, 11 figures
+**Subjects:** Neurons and Cognition (q-bio.NC); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+---
 
 ## Overview
 
-This methodology studies brain alignment of foundation models (VLMs and LAMs) during interactive gameplay using fMRI recordings. Published as arXiv:2605.19352 (Oota et al., 2026).
+This paper studies **brain alignment** of foundation models — specifically **Vision-Language Models (VLMs)** and **Large-Action Models (LAMs)** — using fMRI recordings from human participants playing naturalistic Atari-style video games. It addresses a gap in brain-encoding research: prior work focuses on passive tasks (language comprehension, static visual processing) or reinforcement-learning (RL) agents, but not on modern foundation models during interactive gameplay.
 
-**Core Insight**: Action-specialized fine-tuning reorganizes multimodal representations toward action-relevant neural computations even when whole-brain prediction accuracy is statistically equivalent between VLM and LAM.
+**Key finding:** Action-specialized fine-tuning reorganizes multimodal representations toward action-relevant neural computations, even when whole-brain prediction accuracy is statistically equivalent between VLM and LAM.
 
-## Key Contributions
-
-### 1. Interactive Brain Alignment Beyond Passive Tasks
-- Most brain-encoding studies focus on language comprehension or passive visual processing
-- This work extends alignment studies to interactive, naturalistic gameplay scenarios
-- Uses Atari-style video games as dynamic, goal-directed environments
-
-### 2. Prompt-Driven Representation Analysis
-- Examines how action-focused vs reasoning-focused prompts shape model representations
-- Compares alignment patterns across different prompting strategies
-- Reveals qualitative differences in representational organization
-
-### 3. Variance Partitioning for Model Comparison
-- Uses variance partitioning to decompose unique contributions of different model components
-- Identifies prompt-symmetric (VLM) vs prompt-asymmetric (LAM) organizations
-- Maps alignment patterns to cortical processing hierarchy
-
-## Key Findings
-
-### Prediction Performance
-- Both VLMs and LAMs exhibit significantly better voxel-wise encoding performance than RL baselines
-- Advantage holds even under matched feature dimensionality
-- Prompt-driven gains scale with cortical processing hierarchy
-
-### Cortical Hierarchy Effects
-- **Largest improvements**: Frontal-parietal and motor-planning regions
-- **Moderate improvements**: Early visual cortex (roughly half the gain)
-- Suggests higher-order cognitive regions benefit more from foundation model representations
-
-### Representational Organization
-- **VLM**: Prompt-symmetric (12.5% unique action vs 13.6% unique reasoning)
-- **LAM**: Prompt-asymmetric (27% unique action vs -5% unique reasoning)
-- Asymmetry strongest in frontal-motor cortex
-- Action-specialized fine-tuning reorganizes representations toward action-relevant computations
+---
 
 ## Methodology
 
-### Step 1: Data Collection
-```python
-# Record fMRI while participants play Atari-style games
-# Extract model features from VLMs and LAMs with different prompts
-# Match feature dimensionality for fair comparison
+### Experimental Paradigm
 
-gameplay_data = collect_fmi_during_gameplay(participants)
-vlm_features = extract_features(vlm_model, game_frames, prompt='action')
-lam_features = extract_features(lam_model, game_frames, prompt='action')
-```
+| Component | Description |
+|---|---|
+| **Stimuli** | Naturalistic Atari-style video games |
+| **Recording** | fMRI (whole-brain) from human participants during gameplay |
+| **Models compared** | VLMs (vision-language), LAMs (large-action), RL baselines |
+| **Prompt conditions** | Action-focused prompts vs. reasoning-focused prompts |
 
-### Step 2: Encoding Model Training
-```python
-from sklearn.linear_model import Ridge
-from sklearn.model_selection import cross_val_score
+### Brain-Encoding Framework
 
-# Train voxel-wise encoding models
-encoding_models = {}
-for voxel in voxels:
-    model = Ridge(alpha=1.0)
-    model.fit(train_features, voxel_responses)
-    encoding_models[voxel] = model
+The study uses a **voxel-wise encoding model** approach:
 
-# Evaluate with cross-validation
-scores = cross_val_score(encoding_model, features, responses, cv=5)
-```
+1. **Feature extraction:** Pass gameplay frames (and game state) through VLMs and LAMs with different prompts to extract internal representations (activations from intermediate layers)
+2. **Temporal alignment:** Synchronize model features with fMRI time series (accounting for hemodynamic response function)
+3. **Ridge regression:** Train per-voxel linear encoders mapping model features → fMRI BOLD signal
+4. **Cross-validation:** Split data into train/test folds; evaluate prediction accuracy (e.g., Pearson correlation) on held-out data
+5. **Dimensionality matching:** Control experiments with matched feature dimensionality to ensure fair comparison
 
-### Step 3: Variance Partitioning Analysis
-```python
-def variance_partitioning(model_a, model_b, brain_responses):
-    """Decompose unique and shared variance contributions."""
-    pred_a = model_a.predict(test_features)
-    pred_b = model_b.predict(test_features)
-    
-    # Unique variance for each model
-    unique_a = r2_score(brain_responses, pred_a) - r2_score(brain_responses, pred_b)
-    unique_b = r2_score(brain_responses, pred_b) - r2_score(brain_responses, pred_a)
-    shared = min(r2_score(brain_responses, pred_a), r2_score(brain_responses, pred_b))
-    
-    return unique_a, unique_b, shared
-```
+### Key Analyses
 
-### Step 4: Cortical Mapping
-```python
-# Map alignment patterns to brain regions
-# Identify regions with strongest prompt-driven effects
-# Compare across cortical hierarchy
+#### 1. Voxel-wise Encoding Performance
 
-regions = ['early_visual', 'frontal_parietal', 'motor_planning']
-for region in regions:
-    alignment_scores = compute_alignment(region_features, region_responses)
-    print(f"{region}: {alignment_scores}")
-```
+Compare encoding performance (predictive accuracy per voxel) across model families:
+- **VLM** vs. **LAM** vs. **RL baselines**
+- Tested under both **matched** and **unmatched** feature dimensionality
+- Statistical significance assessed across participants
 
-## Applications
+#### 2. Cortical Hierarchy Analysis
 
-- **Interactive AI Evaluation**: Assess model alignment during dynamic tasks
-- **Neuroscience of Agency**: Study how action representations map to brain activity
-- **Model Architecture Design**: Inform development of action-specialized models
-- **Brain-Computer Interfaces**: Leverage foundation model representations for decoding
-- **Cognitive Neuroscience**: Understand hierarchical processing of action vs reasoning
+Examine how encoding gains distribute across the cortical processing hierarchy:
+- **Early visual cortex** (V1–V4): lower-level visual processing
+- **Frontal-parietal regions**: higher-level reasoning and planning
+- **Motor-planning regions**: action preparation and execution
+
+**Finding:** Prompt-driven gains scale with cortical hierarchy — largest improvements in frontal-parietal and motor-planning regions; early visual cortex gains roughly half as much.
+
+#### 3. Variance Partitioning
+
+Decompose representational overlap between action and reasoning conditions:
+
+| Model | Unique Action (%) | Unique Reasoning (%) | Pattern |
+|---|---|---|---|
+| **VLM** | 12.5% | 13.6% | Prompt-symmetric |
+| **LAM** | 27.0% | -5.0% | Prompt-asymmetric |
+
+- **VLM is prompt-symmetric:** action and reasoning prompts each capture unique variance (~equal)
+- **LAM is prompt-asymmetric:** action prompt captures substantial unique variance (27%), reasoning prompt captures negative unique variance (−5%), indicating overlapping/redundant representations
+- **Asymmetry strongest in frontal-motor cortex**
+
+---
+
+## Key Findings Summary
+
+1. **Foundation models outperform RL baselines:** Both VLMs and LAMs exhibit significantly better voxel-wise encoding performance than RL baselines, even under matched feature dimensionality.
+
+2. **Gains scale with cortical hierarchy:** Prompt-driven improvements are largest in high-level regions (frontal-parietal, motor-planning) and smaller (~half) in early visual cortex.
+
+3. **Representational reorganization via action fine-tuning:** LAMs show prompt-asymmetric variance partitioning (heavy action bias), while VLMs remain symmetric. This demonstrates that action-specialized fine-tuning reorganizes representations toward action-relevant neural computations.
+
+4. **Equivalent whole-brain accuracy, different organization:** Despite statistically equivalent whole-brain prediction accuracy between VLM and LAM, their internal representational organization differs qualitatively.
+
+---
+
+## Relevance to Brain-Encoding Research
+
+This paper is a methodological reference for studies that:
+- Use **foundation models** (not just task-specific or RL models) as encoding features
+- Study **interactive/naturalistic** paradigms rather than passive stimulus presentation
+- Examine how **prompt engineering** shapes model representations and their brain alignment
+- Apply **variance partitioning** to understand representational overlap between model conditions
+- Compare models across the **cortical processing hierarchy**
+
+---
 
 ## Related Concepts
 
-- Brain-encoding models
-- Representational Similarity Analysis
-- Foundation model alignment
-- Interactive neuroscience paradigms
-- Variance partitioning in neuroimaging
-- Cortical hierarchy mapping
-- Action representation in brain
-- Vision-language models
-- Large-action models
+- **Brain-encoding models:** Predict brain activity from computational model features
+- **RSA (Representational Similarity Analysis):** Compare representational geometry across brains and models
+- **Hemodynamic response function (HRF):** Convolution kernel for fMRI temporal alignment
+- **Voxel-wise encoding:** Per-voxel regression from model features to BOLD signal
+- **Variance partitioning:** Decomposition of unique vs. shared variance across model conditions
+- **Vision-Language Models (VLMs):** Multimodal models trained on image-text pairs (e.g., CLIP-family, LLaVA-family)
+- **Large-Action Models (LAMs):** Models fine-tuned or specialized for action prediction/selection in interactive environments
+- **Cortical hierarchy:** Processing gradient from early sensory → association → motor regions
 
-## Implementation Considerations
+---
 
-- Requires fMRI data collection during interactive tasks
-- Foundation model feature extraction with multiple prompts
-- Careful control for feature dimensionality differences
-- Variance partitioning requires sufficient sample size
-- Cortical ROI definition affects interpretation of hierarchical effects
+## Citation
 
-## References
-
-- arXiv:2605.19352 - "Brain alignment of reasoning and action representations from vision-language and action models during naturalistic gameplay"
-- Natural Scenes Dataset (NSD) for fMRI benchmarks
-- Brain-encoding model frameworks (Naselaris et al., 2011)
-- Vision-language model literature (CLIP, BLIP, etc.)
-- Large-action model research
+```bibtex
+@article{oota2026brain,
+  title={Brain alignment of reasoning and action representations from vision-language and action models during naturalistic gameplay},
+  author={Oota, Subba Reddy and Khandelwal, Anant and Pahwa, Khushbu and Namburi, Satya Sai Srinath and Chakraborty, Tanmoy and Raju, Bapi S. and Gupta, Manish},
+  journal={arXiv preprint arXiv:2605.19352},
+  year={2026}
+}
+```
