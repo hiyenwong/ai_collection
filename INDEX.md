@@ -1,3 +1,24 @@
+## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Universally Robust Control of Open Quantum Systems
+- [[universally-robust-quantum-control]] - Universal framework for noise-agnostic quantum control achieving >99% fidelity without prior noise characterization (arXiv: 2508.07379)
+  - 噪声敏感度指标独立于系统-环境耦合细节，提供通用鲁棒性保证
+  - 通过控制驱动动态修改系统-环境耦合，实现任意马尔可夫噪声下的误差抑制
+  - 跨平台适用：超导电路、囚禁离子、固态量子比特
+  - **Activation**: quantum control, robust control, open quantum systems, noise-agnostic, decoherence mitigation, 量子控制, 噪声无关控制, 退相干抑制, fault-tolerant control
+
+### Architecting Early Fault Tolerant Neutral Atoms Systems with Quantum Advantage
+- [[architecting-early-fault-tolerant-neutral-atoms]] - Efficient FT architecture design for neutral atom platforms enabling quantum advantage in dynamics simulations (arXiv: 2604.19735)
+  - Neutral atom平台早期容错架构设计，支持量子优势应用
+  - 量子动力学模拟等应用的系统级工程方案
+  - **Activation**: fault tolerant, neutral atoms, quantum advantage, system architecture, 容错架构, 中性原子
+
+### Robust Quantum Control using Reinforcement Learning from Demonstration
+- [[robust-quantum-control-rl-demonstration]] - RLfD methodology for fast gate calibration leveraging model-generated control sequences (arXiv: 2503.21085)
+  - 利用系统模型生成的控制序列，通过RL进一步优化避免模型偏差
+  - 训练更稳定，适用于快速门校准
+  - **Activation**: quantum control, RLfD, gate calibration, reinforcement learning, 量子门校准, 强化学习
+
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### TIDE: Asymmetric Neural Circuits for Stabilized Temporal Inhibitory-Excitatory Dynamics
