@@ -1,3 +1,11 @@
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[conserved-kinematic-bci-zeroshot]] - 零样本手写BCI解码框架：通过运动学预测+DTW模板匹配实现未见字符解码，为表意语言BCI提供可扩展路径 (arXiv: 2605.19048)
+  - 两阶段架构：RNN运动学预测 → Soft-DTW模板匹配，无需逐字符训练数据
+  - 运动皮层手写表征具有组合性——运动学基元跨字符合并复用，支持零样本泛化
+  - **Activation**: zero-shot BCI, handwriting BCI, kinematics prediction, motor cortex representation, iBCI recalibration
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes
