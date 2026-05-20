@@ -7,6 +7,24 @@
   - 仅0.68B参数实现高竞争力语义重建性能
   - **Activation**: fMRI decoding, Mixture-of-Experts, brain network, visual reconstruction, functional connectivity
 
+
+## 2026-05-21 - Systems Engineering (Cron Job)
+
+### Symplectic H2 Model Reduction for High-Dimensional Linear Quantum Systems
+- [[symplectic-quantum-model-reduction]] - 辛H2模型降阶方法，通过辛Petrov-Galerkin框架和Q-IRKA算法对高维线性量子系统进行降阶，同时保持物理可实现性 (arXiv: 2605.07152)
+  - 辛Petrov-Galerkin框架自动满足PR约束
+  - Q-IRKA算法实现大规模量子系统的可伸缩降阶
+  - 降阶质量取决于耗散几何、通道放置、异质性和降阶维度
+  - **Activation**: symplectic model reduction, Q-IRKA, quantum model reduction, 辛模型约简, physical realizability
+
+### Zeno-Assisted Quantum Heat Engines
+- [[zeno-quantum-lubrication]] - 基于量子芝诺动力学(QZD)的量子热机润滑方法，通过辅助润滑系统和频繁监测实现绝热捷径，在有限冲程时间内恢复Otto效率 (arXiv: 2605.18367)
+  - QZD将联合演化限制在芝诺子空间，实现绝热捷径
+  - 在理想芝诺极限下恢复Otto效率
+  - 需权衡切换、驱动、监测和不完美热化的热力学成本
+  - **Activation**: quantum heat engine, quantum lubrication, QZD, 量子芝诺动力学, quantum friction
+
+
 ### VENCircuit: Von Economo Neurons as Acquisition Scaffolds in Recurrent Spiking Networks
 - [[vencircuit-ven-scaffold-snn]] - Von Economo神经元在脉冲神经网络中作为学习获取支架的计算模型,解释其在社交学习中的关键作用 (arXiv: 2605.17399)
   - VEN完整网络98%收敛率 vs 移除后70%,Fisher's exact p=8.7e-5
