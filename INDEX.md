@@ -13,6 +13,37 @@
   - 无需先验噪声表征即可达到>99%保真度
   - **Activation**: robust quantum control, 鲁棒量子控制, noise-agnostic control
 
+### Dynamic Quantum-Assisted Co-Design of Control Tuning and Lyapunov Stability Synthesis for Nonlinear Systems
+- [[quantum-assisted-control-lyapunov]] - Quantum-assisted co-design of controller and Lyapunov parameters via QITE on Ising Hamiltonian surrogate (arXiv: 2605.04296)
+  - Black-Hole calibration contracts search region, then QITE explores encoded Hamiltonian
+  - Joint online optimization of controller gains and Lyapunov certificates
+  - **Activation**: quantum-assisted control, Lyapunov synthesis, QITE optimization, Ising Hamiltonian control
+
+### Space-Time Tradeoffs of Pauli-Based Computation in Distributed qLDPC Architectures
+- [[pbc-distributed-quantum-computing]] - Large qLDPC blocks outperform surface code 10x in distributed PBC via qubit migration (arXiv: 2605.03854)
+  - PBC competitive in distributed regime; establish as compilation baseline
+  - Qubit migration to free nodes bypasses sequential bottleneck
+  - **Activation**: pauli-based computation, PBC distributed, qLDPC architecture, quantum compilation
+
+### Quantum Battery Optimized by Parametric Amplification
+- [[quantum-battery-parametric-amplification]] - Quantum battery optimization via parametric amplification for enhanced energy storage and charging power (arXiv: 2605.14582)
+  - Squeezed-state engineering increases both capacity and charging rate
+  - Trade-off analysis between charging speed and energy efficiency
+  - **Activation**: quantum battery, parametric amplification, quantum energy storage
+
+### Programmable Non-Hermitian Synchronization of Light on a Silicon Photonic Processor
+- [[non-hermitian-photonic-sync]] - Programmable non-Hermitian synchronization on silicon photonic chips via engineered gain/loss profiles (arXiv: 2605.14653)
+  - Exceptional point control for enhanced sensing and collective dynamics
+  - Reconfigurable platform for photonic network synchronization
+  - **Activation**: non-hermitian synchronization, photonic processor, exceptional point photonics
+
+### Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes
+- [[syndrome-adaptive-gain-qldpc]] - Adaptive MS decoder gain based on unsatisfied stabilizer fraction for QLDPC codes (arXiv: 2605.10433)
+  - SAGMS adapts gain online, no per-code optimization needed
+  - Matches or outperforms offline optimized SMS, approaches BP performance
+  - **Activation**: syndrome adaptive gain, QLDPC decoding, min-sum decoder, quantum error correction
+
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### Tolerating Device Failure in Distributed Quantum Computing
