@@ -1,3 +1,12 @@
+## 2026-05-20 - Medicine + Quantum Computing (Cron Job)
+
+### Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs
+- [[pce-qubo-dense-constraint-decoding]] - Pauli Correlation Encoding methodology for solving densely constrained QUBO problems with quantum variable compression and problem-aware guided decoding (arXiv: 2605.20163)
+  - PCE压缩m个二元变量到n=O(m^(1/k))量子比特，通过泡利算符关联映射实现指数级变量压缩
+  - PAGD(问题感知引导解码器)结合边际QUBO能量减少与约束违反惩罚，贪心分配变量
+  - QUBO空间sigmoid损失函数保持约束惩罚结构，避免朴素舍入导致的不可行解
+  - **Activation**: pce decoding, pauli correlation encoding, qubo decoding, dense constraint quantum, mrna secondary structure, PAGD, 泡利相关编码
+
 ## 2026-05-20 - Medicine + Quantum Mechanics (Cron Job)
 
 ### MoBayes: Modular Bayesian Framework for Clinical Decision Support
