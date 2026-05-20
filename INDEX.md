@@ -14,6 +14,13 @@
   - 发育期缺失产生随机学习失败,类比ASD中社交技能的可变表现
   - **Activation**: Von Economo neurons, spiking neural networks, social learning, gradient pathways, autism spectrum
 
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- [[target-space-recovery-profiles]] - 超越预测精度的模型-脑对齐评估框架，通过识别可恢复的响应维度提供更诊断性的评估 (arXiv: 2605.20127)
+  - 重复fMRI测量识别可复现的脑响应维度
+  - 预训练模型和随机初始化模型可达到相似精度但恢复不同维度
+  - 脑-脑对比提供人类诊断参考基线
+  - **Activation**: model-brain alignment, target-space recovery, fMRI encoding, prediction accuracy
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ### Unveiling Energetic Advantage in Superconducting Cat-Qubits Quantum Computation

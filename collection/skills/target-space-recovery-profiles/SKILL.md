@@ -1,114 +1,75 @@
 ---
 name: target-space-recovery-profiles
-description: >
-  Target-Space Recovery Profiles (TSRP) methodology for evaluating model-brain
-  alignment beyond prediction accuracy. Identifies which reproducible brain
-  response dimensions are actually recovered by prediction models, providing
-  diagnostic evaluation rather than scalar benchmarks. Use when: evaluating
-  neural encoding models, comparing model-brain alignment methods, designing
-  brain alignment evaluation frameworks, diagnosing why models with similar
-  accuracy show different neural representations, brain-brain comparison studies.
-  Triggered by: target-space recovery, recovery profiles, model-brain alignment
-  evaluation, encoding model diagnostics, brain prediction dimensions, neural
-  encoding evaluation, prediction accuracy limitations, brain-brain alignment,
-  response dimension recovery, reproducible brain dimensions, TSRP.
+description: Target-Space Recovery Profiles (TSRP) methodology for evaluating model-brain alignment beyond prediction accuracy. Identifies which reproducible brain response dimensions are recovered by prediction models.
+category: ai_collection
+keywords: model-brain alignment, target-space recovery, fMRI encoding, visual cortex, prediction accuracy, response dimensions, NSD dataset, neural encoding evaluation
+created: 2026-05-21
+arxiv_id: "2605.20127"
+arxiv_url: "https://arxiv.org/abs/2605.20127"
+source: cron-neuroscience-research
 ---
 
-# Target-Space Recovery Profiles (TSRP)
-
-Evaluate model-brain alignment by identifying **which** reproducible brain
-response dimensions are recovered, not just how accurately.
-
-## Core Problem
-
-Prediction accuracy alone masks model-brain mismatches. Models with identical
-encoding accuracy can recover completely different dimensions of brain activity.
-TSRP makes explicit *which* dimensions are aligned.
-
-## Methodology
-
-### Step 1: Identify Reproducible Dimensions
-```
-Split fMRI trials into independent halves → PCA on each → compare subspaces
-```
-Dimensions with high cross-split reliability are "reproducible" — they represent
-stable neural signals, not noise.
-
-### Step 2: Train Encoding Models
-```
-For each model (brain-to-brain, CNN, transformer):
-  - Train linear mapping: model features → fMRI voxels
-  - Use cross-validation across stimuli
-```
-
-### Step 3: Compute Recovery Profiles
-For each reproducible dimension d:
-1. Project predicted responses onto d
-2. Compute correlation between predicted and actual projection
-3. Recovery(d) = correlation² — how well dimension d is recovered
-
-### Step 4: Brain-to-Brain Baseline
-```
-Use other subjects' fMRI as "ideal model" to establish:
-  - Upper bound on recoverable dimensions
-  - Diagnostic human reference (not just scalar)
-```
-
-## Key Findings (Nakamura et al., arXiv:2605.20127)
-
-- Early-to-intermediate visual cortex has **low-dimensional reproducible subspace**
-- Pretrained and random models can match in accuracy but **diverge in recovery profiles**
-- Brain-to-brain comparison provides dimension-specific reference, not scalar
-- Some dimensions are consistently recoverable across subjects; others are not
-
-## Implementation Pattern
-```python
-# Reproducibility analysis
-from sklearn.decomposition import PCA
-import numpy as np
-
-def find_reproducible_dims(fmrA, fmrB, max_dims=20):
-    """Find dimensions reproducible across two trial splits."""
-    pca_a = PCA(max_dims).fit(fmrA)
-    pca_b = PCA(max_dims).fit(fmrB)
-    # Subspace similarity via canonical correlation
-    A = pca_a.transform(fmrA)[:, :k]
-    B = pca_b.transform(fmrB)[:, :k]
-    # Project between subspaces, measure alignment
-    scores = []
-    for i in range(k):
-        sim = np.abs(np.corrcoef(A[:, i], B[:, i])[0, 1]**2)
-        scores.append(sim)
-    return scores  # reproducibility per dimension
-
-def compute_recovery_profile(predicted, actual, repro_dims):
-    """Compute recovery profile for encoding model predictions."""
-    recovery = []
-    for i, (_, dim_score) in enumerate(repro_dims):
-        pred_proj = predicted @ repro_dims[i]
-        act_proj = actual @ repro_dims[i]
-        rec = np.corrcoef(pred_proj, act_proj)[0, 1]**2
-        recovery.append((dim_score, rec))
-    return recovery
-```
-
-## When to Use TSRP vs Standard Encoding
-
-| Scenario | Method |
-|----------|--------|
-| Compare model accuracy | Standard encoding (R²) |
-| Diagnose *why* models differ | TSRP recovery profiles |
-| Brain-to-brain comparison | TSRP with subject baseline |
-| Dimension-specific alignment | TSRP |
-| Quick benchmark | Standard encoding |
-
-## Activation
-target-space recovery, recovery profiles, model-brain alignment evaluation,
-encoding model diagnostics, brain prediction dimensions, neural encoding
-evaluation, prediction accuracy limitations, brain-brain alignment, response
-dimension recovery, reproducible brain dimensions, TSRP, Nakamura 2026.
+# Target-Space Recovery Profiles (TSRP) for Model-Brain Alignment Evaluation
 
 ## Paper
-Nakamura, K. et al. "Beyond Prediction Accuracy: Target-Space Recovery
-Profiles for Evaluating Model-Brain Alignment." arXiv:2605.20127 [q-bio.NC],
-2026.
+- **Title**: Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- **Authors**: Ken Nakamura, Tomoya Nakai, Ryuto Yashiro, Ayumu Yamashita, Kaoru Amano
+- **arXiv**: 2605.20127 (2026-05-19)
+- **URL**: https://arxiv.org/abs/2605.20127
+
+## Problem
+AI vision models are evaluated against human visual cortex by measuring how accurately their internal representations predict brain responses (fMRI). However, **prediction accuracy alone is insufficient**:
+- Two models can achieve similar accuracy while recovering completely different response dimensions
+- Accuracy doesn't reveal which brain response patterns are actually captured
+- No diagnostic framework exists to compare model-brain vs brain-brain alignment
+
+## Core Methodology: TSRP Framework
+
+### Step 1: Identify Reproducible Response Dimensions
+- Use repeated fMRI measurements across independent trial splits
+- Identify target-brain response dimensions that can be reproducibly predicted
+- These represent the "true signal" in brain responses that any model should recover
+
+### Step 2: Predict Target-Brain Responses
+- Either from another subject's brain responses (brain-to-brain) or model representations (model-to-brain)
+- Quantify how strongly each reproducible response dimension is recovered
+
+### Step 3: Recovery Profile Analysis
+- For each reproducible dimension, measure the prediction strength
+- Create a "recovery profile" vector showing which dimensions are well-recovered
+- Compare profiles across models and against human brain-to-brain baseline
+
+## Key Findings
+1. **Early-to-intermediate visual cortex responses contain a low-dimensional set of reproducible dimensions**
+2. **Brain-to-brain comparisons identify consistently recoverable dimensions**, providing a diagnostic human reference
+3. **Pretrained and randomly initialized models can achieve similar accuracy but show distinct recovery profiles**
+4. **Prediction accuracy alone masks model-brain mismatches** — two models with equal accuracy may recover entirely different neural dimensions
+
+## Technical Approach
+```
+Repeated fMRI → Split-half reproducibility analysis → Reproducible dimensions
+    ↓
+Model/Brain predictor → Predict target responses → Recovery strength per dimension
+    ↓
+Recovery Profile = [strength_dim1, strength_dim2, ...]
+```
+
+## Activation Triggers
+- model-brain alignment evaluation
+- neural encoding model assessment
+- fMRI response prediction
+- brain-to-brain comparison
+- visual encoding models
+- neural representational analysis
+
+## Pitfalls
+- Requires repeated fMRI measurements (expensive)
+- Reproducibility threshold selection affects dimension count
+- May need different analysis for different brain regions
+- Recovery profile interpretation requires neuroscientific expertise
+
+## Related Skills
+- `neural-encoding-evaluation-ground-truth`: Ground-truth approximation for neural encoding
+- `neural-encoding-evaluation-meeg`: Evaluation framework for MEEG encoding models
+- `eeg-preprocessing-reliability`: EEG decoding reliability assessment
+- `same-brain-different-prediction`: EEG decoding reliability methodology
