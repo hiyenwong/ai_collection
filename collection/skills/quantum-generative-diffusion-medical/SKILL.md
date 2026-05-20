@@ -1,6 +1,7 @@
 ---
 name: quantum-generative-diffusion-medical
-description: "SDA-QEC methodology: Simplified Diffusion Augmentation with Quantum-Enhanced Classification for medical imaging. Lightweight diffusion augmentor generates synthetic minority samples; quantum feature layer in MobileNetV2 enhances discrimination via Hilbert space mapping. Achieves 98.33% accuracy on coronary angiography. Activation: quantum diffusion medical, quantum generative augmentation, SDA-QEC, diffusion augmentation quantum, quantum-enhanced medical imaging, quantum data augmentation"-
+description: "SDA-QEC methodology: Simplified Diffusion Augmentation with Quantum-Enhanced Classification for medical imaging. Lightweight diffusion augmentor generates synthetic minority samples; quantum feature layer in MobileNetV2 enhances discrimination via Hilbert space mapping. Achieves 98.33% accuracy on coronary angiography. Activation: quantum diffusion medical, quantum generative augmentation, SDA-QEC, diffusion augmentation quantum, quantum-enhanced medical imaging, quantum data augmentation"
+---
 
 # Quantum Generative Diffusion for Medical Imaging
 

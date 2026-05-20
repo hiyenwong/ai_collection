@@ -6,10 +6,10 @@ Based on: arXiv:2605.16467 "Beyond Bell Teleportation: Machine-Learned Adaptive 
 """
 
 import numpy as np
-from typing import Dict, Tuple, Optional
+from typing import Dict
 
 # Pauli matrices
-I = np.eye(2, dtype=complex)
+IDENTITY = np.eye(2, dtype=complex)
 X = np.array([[0, 1], [1, 0]], dtype=complex)
 Y = np.array([[0, -1j], [1j, 0]], dtype=complex)
 Z = np.array([[1, 0], [0, -1]], dtype=complex)
@@ -78,27 +78,22 @@ def adaptive_teleportation(
     beta = np.random.randn() + 1j * np.random.randn()
     norm = np.sqrt(abs(alpha)**2 + abs(beta)**2)
     alpha, beta = alpha / norm, beta / norm
-    
-    target_state = np.array([[alpha], [beta]])
-    target_density = target_state @ target_state.conj().T
-    
+
     # Bell-state teleportation baseline (no adaptive optimization)
     bell_fidelity = 1.0 - noise_strength * 0.5  # Simplified model
     
     # Adaptive optimization (gradient-free search)
     best_fidelity = bell_fidelity
-    best_params = None
-    
+
     for _ in range(num_iterations):
         # Random perturbation of teleportation parameters
         params = np.random.randn(6) * 0.1
-        
+
         # Simulate with adaptive correction
         adaptive_fidelity = bell_fidelity + np.sum(params) * noise_strength * 0.1
-        
+
         if adaptive_fidelity > best_fidelity:
             best_fidelity = adaptive_fidelity
-            best_params = params
     
     return {
         'target_state': f'|ψ⟩ = {alpha:.3f}|0⟩ + {beta:.3f}|1⟩',

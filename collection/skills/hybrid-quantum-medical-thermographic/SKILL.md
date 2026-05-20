@@ -1,6 +1,7 @@
 ---
 name: hybrid-quantum-medical-thermographic
-description: "Hybrid Quantum Neural Networks (HQNN) for medical thermographic classification with multi-head attention and parameterized quantum circuits. 4-qubit variational circuit with strongly entangling layers. Use when building quantum-enhanced medical imaging classifiers, HQNN architectures, or thermographic diagnosis systems. Activation: hybrid quantum neural network medical, HQNN thermographic, quantum breast cancer thermography, quantum thermal imaging diagnosis"-
+description: "Hybrid Quantum Neural Networks (HQNN) for medical thermographic classification with multi-head attention and parameterized quantum circuits. 4-qubit variational circuit with strongly entangling layers. Use when building quantum-enhanced medical imaging classifiers, HQNN architectures, or thermographic diagnosis systems. Activation: hybrid quantum neural network medical, HQNN thermographic, quantum breast cancer thermography, quantum thermal imaging diagnosis"
+---
 
 # Hybrid Quantum Neural Networks for Thermographic Medical Diagnosis
 
@@ -114,8 +115,32 @@ class HQNNLayer(torch.nn.Module):
 - HQNN thermographic classification
 - quantum breast cancer thermography
 - quantum thermal imaging
--- hybrid quantum medical diagnosis
+- hybrid quantum medical diagnosis
 - quantum layer neural network medical
+
+## Tools Used
+
+- Python 3.10+
+- PennyLane (quantum circuit simulation)
+- PyTorch (neural network framework)
+- NumPy (numerical computation)
+
+## Instructions for Agents
+
+1. Assess the medical imaging dataset characteristics (modality, size, class balance)
+2. Design the classical preprocessing pipeline (CNN feature extraction)
+3. Configure the quantum variational circuit (qubits, layers, entanglement strategy)
+4. Implement multi-head attention for quantum-aware feature fusion
+5. Train with noise models for NISQ robustness
+6. Validate on held-out thermographic data with clinical metrics
+
+## Examples
+
+```
+# Basic HQNN thermographic classifier setup
+agent> "Build a hybrid quantum neural network for breast cancer thermographic classification"
+→ Configure CNN backbone → Add quantum layer with 4 qubits → Train with PennyLane + PyTorch
+```
 
 ## Related Papers
 
