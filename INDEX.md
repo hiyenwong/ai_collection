@@ -1,3 +1,17 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- [[target-space-recovery-profiles]] - Framework for evaluating model-brain alignment by identifying which response dimensions are recovered by prediction, beyond scalar accuracy metrics (arXiv: 2605.20127)
+  - Prediction accuracy alone masks model-brain mismatches; TSRP decomposes prediction into reproducible response dimensions
+  - Brain-to-brain comparisons provide human reference for diagnostic evaluation
+  - **Activation**: model-brain alignment, encoding models, fMRI, brain-encoding, response dimensions, prediction accuracy
+
+### Brain Alignment of Reasoning and Action Representations from VLMs and LAMs During Naturalistic Gameplay
+- [[vlm-lam-brain-alignment]] - Studies how VLM and LAM representations align with fMRI during interactive gameplay, revealing prompt-symmetric vs prompt-asymmetric organization (arXiv: 2605.19352)
+  - Action-specialized fine-tuning reorganizes multimodal representations toward action-relevant neural computations
+  - Prompt-driven gains scale with cortical hierarchy: frontal-parietal > early visual
+  - **Activation**: brain alignment, VLM, LAM, interactive neuroscience, variance partitioning, action representations
+
 ## 2026-05-20 - Medicine (Cron Job)
 
 ### Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs
