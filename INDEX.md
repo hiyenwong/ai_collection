@@ -1,3 +1,19 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Reconfigurable Nonlinear Photonic Decision Network (RNPDN)
+- [[reconfigurable-photonic-decision-network]] - Photonic neuromorphic computing framework with in-situ learning and memory via driven-dissipative nonlinear optical dynamics (arXiv: 2605.19911)
+  - Core: Local physical learning rules enabling adaptive state evolution without external weight updates
+  - Core: Tunable stability-plasticity tradeoff via decay and hysteresis mechanisms in bistable photonic states
+  - Core: Simultaneous transient (fading) and persistent (bistable) memory formation in optical substrate
+  - **Activation**: photonic neuromorphic, RNPDN, driven-dissipative dynamics, in-situ learning, optical neural network
+
+### EvoTrace: Evolutionary Coding Agent Trace Analysis
+- [[evotrace-evolutionary-coding-analysis]] - Diagnostic framework for analyzing what evolutionary coding agents (LLM + evolutionary search) actually evolve, beyond final benchmark scores (arXiv: 2605.20086)
+  - Core: EvoReplay methodology reconstructs search states behind high-scoring solutions via controlled interventions
+  - Core: ~30% of code lines added during evolutionary search are byte-identical re-introductions of previously deleted lines (cycling pattern)
+  - Core: LLM-as-judge annotation pipeline categorizes edits into 9 types, validated against human re-annotation
+  - **Activation**: evolutionary coding agent, LLM code evolution, EvoTrace, agentic search analysis, code generation mechanism
+
 ## 2026-05-20 - Medicine + Quantum Engineering (Cron Job)
 
 ### InterQ: Communication-Aware Modular QPU Scheduling
