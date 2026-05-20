@@ -1,5 +1,28 @@
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
+### Arqon: A suite of control applications enabling a reliable quantum network
+- [[quantum-network-reliability]] - Quantum network reliability control applications with admission control and scheduling for entanglement delivery (arXiv: 2604.08692)
+  - Extends classical network reliability to quantum entanglement service delivery
+  - O(k³) admission control and O(N³) scheduling algorithms for centrally controlled quantum networks
+  - Complete Python implementation with analytic and numerical evaluation on static topologies
+  - **Activation**: quantum network reliability, entanglement distribution, admission control, quantum scheduling, Arqon control applications
+
+### A System Aware Resource Allocation for Distributed Workflows in Quantum Computing Environments
+- [[quantum-workflow-allocation]] - Multi-metric resource allocation for distributed quantum workflows across hybrid classical-quantum networks (arXiv: 2605.17944)
+  - Graph-based allocation optimizing fidelity, execution time, communication overhead, and wait time simultaneously
+  - ~30% communication reduction, ~40% wait time improvement over priority-based methods
+  - NISQ-era device heterogeneity awareness for efficient quantum program placement
+  - **Activation**: quantum workflow allocation, distributed quantum computing, NISQ scheduling, fidelity-aware optimization, quantum cloud
+
+### Quantum Sidecar Architectures for Hybrid AI Training and Inference
+- [[quantum-sidecar-architecture]] - Quantum co-processor sidecar patterns for hybrid AI pipelines - stateful protected registers and stateless reset-and-reprepare modes (arXiv: 2605.18031)
+  - Two operating modes: stateful (QND parity readout with protected registers) and stateless (reset-and-reprepare QAOA sampling)
+  - Quantum sidecars as bounded signal generators for optimizer-side sampling, routing, expert selection
+  - Quantum weight-state sidecars: restricted representations over control variables, not full weight tensors
+  - **Activation**: quantum sidecar, hybrid AI architecture, QND readout, reset-and-reprepare, quantum co-processor, ML optimizer sampling
+
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
 ### Efficient Fault-Tolerant Ancilla Preparation for Quantum BCH codes via Cyclic Symmetry
 - [[cyclic-symmetry-ancilla-distillation]] - Fault-tolerant ancilla preparation for quantum BCH codes using cyclic symmetry-enabled entanglement distillation (arXiv: 2605.19471)
   - Two-stage approach: non-FT preparation + cyclic-symmetry-aware distillation
