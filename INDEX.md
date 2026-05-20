@@ -1,4 +1,25 @@
 ## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### EmoMind: Decoding Affective Captions from Human Brain fMRI
+- [[emomind-affective-brain-decoding]] - First end-to-end fMRI-to-affective-caption pipeline using continuous 34D emotion vectors, outperforming GPT-4 label baselines (arXiv: 2605.16739)
+  - Core innovation: Continuous emotion representation vs discrete categorical labels
+  - Core technique: Two-stage pipeline with classifier-free guidance rewriting against identity-preserving null branch
+  - **Activation**: emomind, affective brain decoding, emotion fMRI, brain-to-text emotion, affective caption
+
+### Darwin Family: MRI-Trust-Weighted Evolutionary Merging for LLMs
+- [[darwin-family-evolutionary-merging]] - Training-free evolutionary merging achieving 86.9% GPQA Diamond (#6/1252) via 14D merge genome and cross-architecture breeding (arXiv: 2605.14386)
+  - Core innovation: MRI-Trust Fusion balancing diagnostic layer-importance with evolutionary search
+  - Core technique: 14-dimensional adaptive merge genome + Architecture Mapper for Transformer-Mamba cross-breeding
+  - **Activation**: darwin family, evolutionary merging, MRI-Trust Fusion, model merging, gradient-free merging
+
+### Mathematical Characterization of Neural Activation by Temporal Interference Stimulation
+- [[temporal-interference-stimulation-mathematical]] - Mathematical framework using FHN + geometric singular perturbation theory mapping TIS parameters to quiescent/transient/tonic firing regimes (arXiv: 2605.16761)
+  - Core innovation: First rigorous dynamical systems analysis of TIS-induced neural activation
+  - Core technique: Phase-plane analysis + geometric singular perturbation on FitzHugh-Nagumo model
+  - **Activation**: temporal interference stimulation, TIS neuromodulation, FitzHugh-Nagumo TIS, geometric singular perturbation neural
+
+
+## 2026-05-20 - Neuroscience Research (Cron Job)
 ## 2026-05-20 - Systems Engineering Research (Cron Job)
 
 ### A Readiness-Driven Runtime for Pipeline-Parallel Training under Runtime Variability
