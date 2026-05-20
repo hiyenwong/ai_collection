@@ -23,6 +23,13 @@
 
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model–Brain Alignment
+- [[predictive-subspace-recovery-profiles]] - 提出目标空间恢复剖面方法，超越预测准确率评估模型-脑对齐，揭示哪些可重现的脑响应维度被恢复 (arXiv: 2605.20127)
+  - 核心要点 1: 预测准确率本身不能揭示目标脑响应空间的哪些维度被恢复；相同准确率可能对应完全不同的恢复维度
+  - 核心要点 2: 使用重复fMRI测量定义可重现目标参考，通过方向覆盖率量化每个维度的恢复程度
+  - 核心要点 3: 预训练模型在准确率匹配情况下仍展现出更高的恢复剖面均值(0.177, CI: 0.162–0.192)
+  - **Activation**: model brain alignment, predictive subspace, recovery profile, brain prediction evaluation, NeuroAI alignment, target-space recovery, NSD analysis
+
 ### Reconfigurable Nonlinear Photonic Decision Network (RNPDN)
 - [[reconfigurable-photonic-decision-network]] - Photonic neuromorphic computing framework with in-situ learning and memory via driven-dissipative nonlinear optical dynamics (arXiv: 2605.19911)
   - Core: Local physical learning rules enabling adaptive state evolution without external weight updates
