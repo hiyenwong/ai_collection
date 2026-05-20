@@ -16,4 +16,11 @@
 
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
+### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
+- [[braindyn-sheaf-neural-ode]] - First combination of cellular sheaf theory with neural ODEs for continuous-time brain dynamics modeling on structured brain graphs, outperforming GNNs and transformers across fMRI and EEG modalities (arXiv: 2605.19324)
+  - Cellular sheaves equip each edge with restriction maps that transform node features into edge-specific shared spaces before aggregation, enabling heterogeneous inter-region communication
+  - Three-component architecture: LSTM temporal encoding → sheaf Laplacian message passing → neural ODE continuous-time evolution
+  - Strong forecasting across fMRI (PNC) and EEG (TUSZ) with in silico perturbation prediction capability
+  - **Activation**: braindyn, sheaf neural ODE, brain dynamics forecasting, sheaf Laplacian, generative brain model, continuous-time neural dynamics, in silico perturbation
+
 ### Mechanistically
