@@ -1,3 +1,8 @@
+---
+name: conserved-kinematic-bci-zeroshot
+description: "Conserved kinematic representations for zero-shot BCI handwriting decoding. Triggers: zero-shot BCI, kinematic decoding, handwriting BCI, conserved representations, brain-computer interface."
+---
+
 # Conserved Kinematic Representations for Zero-Shot BCI Handwriting Decoding
 
 **Paper:** Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs

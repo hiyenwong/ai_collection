@@ -1,3 +1,8 @@
+---
+name: vlm-lam-brain-alignment
+description: "VLM/LAM brain alignment during naturalistic gameplay. Brain alignment of reasoning and action representations from vision-language and action models. Triggers: VLM brain alignment, LAM brain alignment, naturalistic gameplay, neural representation alignment."
+---
+
 # VLM/LAM Brain Alignment During Naturalistic Gameplay
 
 **Reference Paper:** [2605.19352](https://arxiv.org/abs/2605.19352) — *Brain alignment of reasoning and action representations from vision-language and action models during naturalistic gameplay*
