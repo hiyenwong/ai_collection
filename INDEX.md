@@ -1,3 +1,13 @@
+
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### GOAL: Graph-based Objective-Aligned Diffusion Solvers for Dynamic Multi-Objective Optimization
+- [[goal-graph-diffusion-multi-objective-optimization]] - Conditioned diffusion over relational graphs with heterogeneous constraint encoding for multi-objective combinatorial optimization (arXiv: 2605.19119)
+  - Heterogeneous graph encoding: distinct edge types for different constraint classes enable selective message passing
+  - Conditioned diffusion process generates Pareto-optimal solutions aligned with human-specified objectives
+  - 100% feasibility and <0.20% MAPE on FSP/JSP/FJSP benchmarks, 25x speedup over NSGA-II/MOEA/D
+  - **Activation**: diffusion solver, multi-objective optimization, graph neural network scheduling, heterogeneous graph encoding, neural combinatorial optimization
+
 ## 2026-05-20 - Medicine + Quantum (Cron Job - TSHF)
 
 ### Temperature-Scaled Hybrid Fusion (TSHF)
