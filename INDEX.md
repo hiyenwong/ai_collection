@@ -15,6 +15,19 @@
   - 运动皮层手写表征具有组合性——运动学基元跨字符合并复用，支持零样本泛化
   - **Activation**: zero-shot BCI, handwriting BCI, kinematics prediction, motor cortex representation, iBCI recalibration
 
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- [[target-space-recovery-profiles]] - 超越预测精度的模型-脑对齐诊断框架，通过识别可复现的脑响应维度揭示哪些维度真正被模型捕获 (arXiv: 2605.20127)
+  - 预测精度相同 ≠ 对齐维度相同：预训练模型与随机初始化模型可达相同编码精度但恢复截然不同的维度谱
+  - 脑-脑比较提供维度级人类参考基准，而非单一标量
+  - **Activation**: target-space recovery, model-brain alignment, neural encoding evaluation, brain prediction dimensions, TSRP, fMRI encoding
+
+### Brain Alignment of Reasoning and Action Representations from VLMs and LAMs During Naturalistic Gameplay
+- [[vlm-lam-brain-alignment]] - 研究VLM和LAM在自然游戏任务中的脑对齐差异，揭示动作专用微调如何重组多模态表征朝向动作相关神经计算 (arXiv: 2605.19352)
+  - VLM提示对称（动作vs推理均衡），LAM提示不对称（强烈偏向动作表征）
+  - 提示驱动的增益随皮层层级缩放：额顶叶和运动规划区域获益最大
+  - 等效预测精度 ≠ 等效脑对齐：模型R²相同但表征组织根本不同
+  - **Activation**: VLM brain alignment, LAM fMRI encoding, prompt-symmetric, prompt-asymmetric, cortical hierarchy, interactive gameplay fMRI
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### Syndrome Adaptive Gain Control for Min-Sum Decoding of Quantum LDPC Codes
