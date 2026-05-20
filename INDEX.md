@@ -14,6 +14,33 @@
 
 ## 2026-05-20 - Medicine (Cron Job)
 
+### Quantum Koopman Algorithms
+- [[quantum-koopman-algorithms]] - Observable-space framework for simulating linear quantum and nonlinear classical dynamics with O(polylog(N)) gate cost, exponential improvement over classical methods (arXiv: 2605.19054)
+  - Dynamic-QKA for initial-value problems, Spectral-QKA for eigenvalue analysis of Koopman operator
+  - Novel nonlinear interaction-picture algorithm enables perturbative expansions beyond weakly nonlinear systems
+  - Applications: heat flow reconstruction, decay rate estimation, biological dynamics modeling
+  - **Activation**: quantum koopman, QKA, observable-space quantum, nonlinear dynamics quantum, 量子库普曼
+
+### Hybrid Quantum Neural Networks for Breast Cancer Thermographic Classification
+- [[hybrid-quantum-medical-imaging]] - HQNN integrates 4-qubit variational circuit with multi-head attention and classical CNN for thermal breast cancer classification (arXiv: 2604.16953)
+  - Quantum component uses strongly entangling layers; classical component uses attention-based feature fusion
+  - Demonstrates quantum advantage in medical image classification through classical simulation
+  - QSVM outperforms QNN on highly imbalanced healthcare datasets (per companion papers)
+  - **Activation**: hybrid quantum medical, HQNN medical, quantum CNN medical, quantum thermographic, 量子医学影像
+
+### Multi-VQC: A Novel QML Approach for Enhancing Healthcare Classification
+- [[multi-vqc-healthcare]] - Multi-Variational Quantum Circuit approach for disease classification with significant class imbalance challenges (arXiv: 2505.20797)
+  - Addresses class imbalance in healthcare datasets using quantum models' higher-dimensional representation
+  - Demonstrated on Prostate Cancer, Heart Failure, and Diabetes datasets
+  - Published at 2025 IEEE International Conference on Quantum Software (QSW)
+  - **Activation**: multi-vqc, quantum healthcare classification, quantum imbalance, VQC medical
+
+### Quantum-Inspired Privacy-Preserving Federated Learning for Dementia
+- [[quantum-inspired-federated-dementia]] - Quantum-inspired federated learning framework enabling secure multi-hospital dementia classification without data sharing (arXiv: 2503.03267)
+  - Combines quantum-inspired optimization with federated learning for privacy-preserving medical AI
+  - Enables collaborative model training across institutions while maintaining patient data privacy
+  - **Activation**: quantum federated learning, privacy-preserving dementia, quantum-inspired FL, medical privacy
+
 ### Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs
 - [[pce-pagd-dense-constraint-qubo]] - PCE+PAGD decoder for dense-constraint QUBO problems in biomedical applications, achieving 75-100% near-optimal recovery on mRNA structure prediction (arXiv: 2605.20163)
   - Pauli Correlation Encoding compresses m binary variables onto n=O(m^{1/k}) qubits via commuting Pauli correlators
