@@ -1,6 +1,6 @@
 ---
 name: temperature-scaled-hybrid-fusion
-description: "Temperature-Scaled Hybrid Fusion (TSHF) methodology for balancing quantum-classical gradient dynamics in hybrid ML pipelines. Introduces a learnable scalar τ inspired by multimodal learning to resolve optimization asymmetries between quantum and classical branches."
+description: "Temperature-Scaled Hybrid Fusion (TSHF) methodology for balancing quantum-classical gradient dynamics in hybrid ML pipelines. Introduces a learnable scalar τ inspired by multimodal learning to resolve optimization asymmetries between quantum and classical branches. Updated 2026-05-20 with SDA-QEC integration pattern."
 ---
 
 # Temperature-Scaled Hybrid Fusion (TSHF)

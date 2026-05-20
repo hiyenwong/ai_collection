@@ -1,3 +1,25 @@
+## 2026-05-20 - Medicine (Cron Job)
+
+### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+- [[temperature-scaled-hybrid-fusion]] - Temperature-Scaled Hybrid Fusion (TSHF) for balancing quantum-classical gradient dynamics (arXiv: 2604.22903)
+  - Learnable tau scalar balances quantum-classical branches
+  - 87.82% accuracy on BreastMNIST
+  - Resolves optimization asymmetries in hybrid ML
+  - **Activation**: TSHF, hybrid fusion, quantum-classical gradient balancing, temperature-scaled fusion
+
+### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
+- [[hybrid-quantum-medical-thermographic]] - HQNN with multi-head attention and 4-qubit variational circuits for thermographic classification (arXiv: 2604.16953)
+  - 4-qubit variational circuit with strongly entangling layers
+  - Multi-head attention for quantum-aware feature encoding
+  - Superior convergence on thermographic data
+  - **Activation**: HQNN thermographic, quantum breast cancer, multi-head attention quantum
+
+### Generative Diffusion Augmentation with Quantum-Enhanced Discrimination for Medical Image Diagnosis
+- [[quantum-generative-diffusion-medical]] - SDA-QEC: diffusion augmentation + quantum-enhanced MobileNetV2 for imbalanced medical datasets (arXiv: 2601.18556)
+  - 98.33% accuracy on coronary angiography
+  - Lightweight diffusion augmentor for minority classes
+  - Simultaneous sensitivity and specificity of 98.33%
+  - **Activation**: SDA-QEC, diffusion augmentation quantum, quantum generative medical
 ## 2026-05-20 - Medicine + Quantum (Cron Job)
 
 ### Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings

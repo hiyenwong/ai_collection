@@ -1,7 +1,6 @@
 ---
 name: hybrid-quantum-medical-thermographic
-description: "Hybrid Quantum Neural Networks (HQNN) for medical thermographic classification. Integrates quantum circuits within classical neural network layers for enhanced breast cancer detection using thermographic imaging. Use when building quantum-enhanced medical imaging classifiers, HQNN architectures, or thermographic diagnosis systems. Activation: hybrid quantum neural network medical, HQNN thermographic, quantum breast cancer thermography, quantum thermal imaging diagnosis"
----
+description: "Hybrid Quantum Neural Networks (HQNN) for medical thermographic classification with multi-head attention and parameterized quantum circuits. 4-qubit variational circuit with strongly entangling layers. Use when building quantum-enhanced medical imaging classifiers, HQNN architectures, or thermographic diagnosis systems. Activation: hybrid quantum neural network medical, HQNN thermographic, quantum breast cancer thermography, quantum thermal imaging diagnosis"-
 
 # Hybrid Quantum Neural Networks for Thermographic Medical Diagnosis
 
@@ -14,10 +13,12 @@ Combines quantum circuits with classical neural network layers to enhance medica
 ### HQNN Layer Integration
 
 ```
-Thermal Image → Conv Layers → [Quantum Layer] → Dense Layers → Classification
+Thermal Image → Conv Layers → [Multi-Head Attention] → [Quantum Layer] → Dense Layers → Classification
                               │
-                    Variational Quantum Circuit
-                    (parameterized gates)
+                    Multi-Head Attention for quantum-aware feature encoding
+                    │
+                    4-qubit Variational Circuit with Strongly Entangling Layers
+                    (parameterized gates with multi-head attention)
 ```
 
 ### Key Components
@@ -113,8 +114,25 @@ class HQNNLayer(torch.nn.Module):
 - HQNN thermographic classification
 - quantum breast cancer thermography
 - quantum thermal imaging
-- hybrid quantum medical diagnosis
+-- hybrid quantum medical diagnosis
 - quantum layer neural network medical
+
+## Related Papers
+
+- **2604.16953**: HQNN with multi-head attention for breast cancer thermographic classification (IEEE IBITeC 2025). 4-qubit variational circuit with strongly entangling layers, classical attention for feature fusion. Published at IEEE International Biomedical Instrumentation and Technology Conference.
+- **2604.22903**: TSHF methodology — complementary approach using temperature-scaled hybrid fusion (ResNet + trainable quantum circuit, BreastMNIST)
+
+## Pitfalls
+
+### Quantum Circuit Depth for Thermographic Data
+- Thermographic images have lower spatial resolution than standard images
+- **Solution**: Use 4-qubit circuits with 2 strongly entangling layers — proven effective
+### Multi-Head Attention Integration
+- Classical attention + quantum circuit can create gradient conflicts
+- **Solution**: Freeze attention layer during initial quantum circuit warmup, then jointly fine-tune
+### Convergence on NISQ Simulation
+- Quantum-classical hybrid systems may exhibit unstable convergence
+- **Solution**: Monitor both classical and quantum loss separately; use gradient clipping
 
 ## Related Patterns
 - Hybrid quantum-classical feature fusion
