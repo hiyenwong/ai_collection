@@ -1,3 +1,18 @@
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job - Hourly)
+
+### Unveiling Energetic Advantage in Superconducting Cat-Qubits Quantum Computation
+- [[energetic-efficiency-quantum-computation]] - 超导猫量子比特计算的能量效率分析框架，从时间复杂度转向能耗分析 (arXiv: 2605.19854)
+  - 能量-时间乘积(ET)作为量子计算效率综合指标
+  - 猫量子比特自主错误抑制带来的能量优势
+  - 全系统能耗建模：门操作、控制电子、冷却基础设施
+  - **Activation**: quantum energetic efficiency, 量子能量效率, cat-qubit energetics, energy-aware quantum computing
+
+### Universally Robust Control of Open Quantum Systems (Updated)
+- [[universally-robust-quantum-control]] - 开放量子系统的噪声无关鲁棒控制框架 (arXiv: 2508.07379)
+  - 动态修改系统-环境耦合实现高保真度操作
+  - 无需先验噪声表征即可达到>99%保真度
+  - **Activation**: robust quantum control, 鲁棒量子控制, noise-agnostic control
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### Tolerating Device Failure in Distributed Quantum Computing
