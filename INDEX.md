@@ -1,3 +1,17 @@
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- [[predictive-subspace-recovery-profiles]] - 超越预测精度的模型-脑对齐评估框架,识别编码模型恢复的可重复脑响应维度 (arXiv: 2605.20127)
+  - 核心要点 1: 预测精度相同但恢复维度不同的模型可能具有截然不同的脑对齐特征
+  - 核心要点 2: 脑对脑比较提供人类参考剖面,早中期视觉皮层响应包含低维可重复维度
+  - **Activation**: model-brain alignment evaluation, predictive subspace, recovery profiles, neural encoding diagnostics, brain prediction dimensions
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[kinematic-zero-shot-bci-decoding]] - 基于保守运动学表征的手写BCI零解码方法,实现对未见字符的开集解码 (arXiv: 2605.19048)
+  - 核心要点 1: 运动皮层通过共享运动学基元组合表征手写,神经表征跨字符上下文保守
+  - 核心要点 2: 64% hits@3 对未见字母的检索准确率,为表意语言BCI开辟路径
+  - **Activation**: zero-shot BCI, handwriting decoding, kinematic primitives, intracortical BCI, logographic language BCI
+
 ## 2026-05-21 - Medicine (Cron Job)
 
 ### Quantum Biomedical Sensor Generations
