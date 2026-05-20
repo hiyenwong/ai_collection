@@ -1,92 +1,80 @@
 ---
 name: vencircuit-ven-scaffold-snn
-description: "VENCircuit methodology: Von Economo neurons (VENs) as residual gradient scaffolds in recurrent spiking neural networks. Explains why VENs are necessary for reliable social skill acquisition (not performance). Maps developmental VEN reduction to ASC variability and adult VEN loss to bvFTD heterogeneity. Use when: studying VEN function, social cognition in SNNs, gradient flow in recurrent SNNs, developmental neurodegeneration modeling, autism/frontotemporal dementia computational models, biological residual connections, BPTT stability analysis, brain-inspired residual architectures."
+description: Computational framework showing Von Economo neurons (VENs) function as acquisition scaffolds in recurrent spiking neural networks. Provides gradient pathways immune to Jacobian instabilities, explaining VEN loss in bvFTD and ASC.
+category: ai_collection
+keywords: Von Economo neurons, spiking neural networks, social learning, gradient pathways, frontotemporal dementia, autism, recurrent circuits, acquisition scaffold
+created: 2026-05-21
+arxiv_id: "2605.17399"
+arxiv_url: "https://arxiv.org/abs/2605.17399"
+source: cron-neuroscience-research
 ---
 
-# VENCircuit: VENs as Residual Gradient Scaffolds in SNNs
+# VENCircuit: Von Economo Neurons as Acquisition Scaffolds in Recurrent Spiking Networks
 
-## Core Finding
+## Paper
+- **Title**: Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks: a computational account with clinical predictions
+- **Author**: Esila Keskin
+- **arXiv**: 2605.17399 (2026-05-17)
+- **URL**: https://arxiv.org/abs/2605.17399
 
-Von Economo neurons (VENs) — large, fast-projecting bipolar cells in ACC/FIC — function as **acquisition scaffolds**, not performance enablers. They provide a direct gradient pathway immune to Jacobian product instabilities in recurrent circuits.
+## Problem
+Von Economo neurons (VENs) are large, spindle-shaped neurons found in anterior cingulate cortex (ACC) and frontoinsular cortex (FI). They are:
+- Selectively lost in behavioral-variant frontotemporal dementia (bvFTD)
+- Reduced in autism spectrum conditions (ASC)
+- Their computational role in social learning remains unexplained
 
-**Key result**: VEN-intact SNNs converged 98% (49/50) vs VEN-ablated 70% (35/50). OR=21.0, p=8.7e-5. Failed ablated networks showed complete absence of learning — not slow learning.
+## Core Methodology: VENCircuit
 
-## Architecture
+### Network Architecture
+- **Recurrent Pyramidal Circuit**: Base network of pyramidal-like neurons
+- **VEN-like Projection Neurons**: K=40 specialized neurons (2% of total) embedded in recurrent circuit
+- **Matched Controls**: 50 random initializations with and without VENs
 
-VENCircuit: N=2000 recurrent LIF pyramidal neurons + K=40 VEN-like neurons (2%).
+### Key Findings
 
-- **Pyramidal circuit**: Recurrent connections W_pp (p=0.15, no self-connections), feedforward W_ip (fan-in=80)
-- **VEN pathway**: Feedforward-only input W_iv (fan-in=8, sparse dendritic arbour), direct projection to output
-- **VEN time constant**: β_VEN=0.975 (faster than β_pyr=0.95), matching biological fast-conduction property
-- **No recurrent input to VENs**: Biologically accurate — VENs receive sparse local connectivity
+#### 1. Training Reliability
+- VEN-intact networks: 49/50 converged (98%)
+- VEN-ablated networks: 35/50 converged (70%)
+- Fisher's exact: OR=21.0, 95% CI 2.7-167, p=8.7e-5
+- Failed ablated networks showed complete learning absence (not just slower)
 
-### LIF Dynamics
+#### 2. Phase-Ablation Experiments
+- VEN removal most disruptive during mid-training (epochs 5-25)
+- Co-adaptive dependency forms in pyramidal circuit during this phase
+- Early and late ablation less disruptive
 
-All populations use discrete-time LIF with detached reset:
-- u_t = β·u_{t-1}·(1 - s_{t-1}^{det}) + I_t
-- s_t = σ_spike(u_t - θ) with ATan surrogate gradient
-- σ'(u) = 1 / (1 + (πu/2)²)
+#### 3. Formal Gradient Analysis
+- VENs provide direct gradient pathway immune to Jacobian instabilities
+- Recurrent circuits suffer from vanishing/exploding gradient issues
+- VENs bypass these instabilities via their specialized connectivity
 
-## Theoretical Mechanism
+#### 4. Inference-Time Ablation
+- Performance drop ranges from no change (16/20) to catastrophic collapse (0.989→0.620)
+- Bimodal outcome mirrors variable social skill presentation in ASC
 
-### Proposition 1: Recurrent Jacobian Bound
+### Theoretical Contribution
+**VENs as Acquisition Scaffolds**:
+- Not merely speed-enhancing but essential for reliable convergence
+- Developmental absence produces stochastic learning failure
+- Computational analogue of variable social skill acquisition in ASC
 
-α = β_pyr + γ·||W_pp||₂ bounds the Jacobian of u_k w.r.t. u_t: ||∂u_k/∂u_t|| ≤ α^{k-t}
+## Activation Triggers
+- Von Economo neurons, VENs, spindle neurons
+- Social learning computational modeling
+- Spiking neural network architecture design
+- bvFTD, autism spectrum computational models
+- Gradient pathways in recurrent networks
+- Brain-inspired reliable learning
+- Organoid/electrophysiology predictions
 
-At initialization: ||W_pp||₂ ≈ 0.078 uniformly across seeds → α ≈ 1.028.
-
-Networks initialize near critical gradient-flow boundary — recurrent pathway is marginally unstable.
-
-### Proposition 2: VEN Gradient Pathway
-
-VEN pathway gradient is O(1) regardless of recurrent weight configuration.
-
-VENs bypass the recurrent Jacobian entirely — providing a residual connection analogous to ResNet skip connections (He et al., 2016), but in a spiking temporal context.
-
-### Mechanism: Gradient Direction Consistency
-
-Empirical measurements show the operative mechanism is **gradient direction consistency**, not magnitude. VENs stabilize the direction of weight updates in the pyramidal circuit.
-
-## Phase-Ablation Results
-
-VEN removal is most disruptive during **mid-training (epochs 5-25)**, when a co-adaptive dependency forms in the pyramidal circuit on VEN activity.
-
-## Clinical Predictions
-
-### ASC (developmental VEN reduction)
-- ~30% of networks never learn (stochastic failure)
-- Converging networks perform normally
-- Maps to variable social skill acquisition in autism
-
-### bvFTD (adult VEN loss)
-- 80% of trained networks unaffected at inference
-- 20% show significant drops (Wilcoxon p=0.022)
-- Heterogeneity predicts variable bvFTD severity
-
-## Key Parameters
-
-| Parameter | Value |
-|-----------|-------|
-| N (pyramidal) | 2000 |
-| K (VEN) | 40 (2%) |
-| p_rec (recurrent) | 0.15 |
-| fan-in (pyramidal) | 80 |
-| fan-in (VEN) | 8 |
-| β_pyr | 0.95 |
-| β_VEN | 0.975 |
-| θ (threshold) | 1.0 |
-| T (timesteps) | 50 |
-| Epochs | 50 |
+## Pitfalls
+- Binary classification task doesn't directly model social cognition
+- K=40 VENs is a simplification of biological VEN populations
+- Results from controlled task may not generalize to complex social learning
+- Falsifiable predictions require organoid/electrophysiology validation
 
 ## Related Skills
-
-- `snn-learning-survey` — comprehensive SNN learning paradigms
-- `spiking-neural-network-analysis` — SNN paper analysis patterns
-- `spikingjelly-framework` — SNN implementation framework
-- `ven-circuit-snn-social-learning` — VENCircuit extended methodology
-
-## arXiv Reference
-
-- **Paper**: "Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks" (Keskin, 2026)
-- **ID**: arXiv:2605.17399
-- **URL**: https://arxiv.org/abs/2605.17399
+- `spiking-neural-network-analysis`: SNN paper analysis
+- `neurobiological-craving-signature-social`: Social neuroscience modeling
+- `cognitive-flexibility-task-structure`: Neural network models of cognition
+- `attractor-metadynamics-neural`: Neural attractor dynamics

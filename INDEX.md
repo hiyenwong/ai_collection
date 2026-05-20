@@ -1,3 +1,19 @@
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### FPED: Functional-Network Prior-Guided Mixture-of-Experts Framework for Interpretable Brain Decoding
+- [[fped-moe-brain-decoding]] - fMRI视觉解码中基于功能网络先验引导的混合专家(MoE)框架,实现可解释的语义重建 (arXiv: 2605.19279)
+  - 功能脑网络作为专门专家模块,保留大脑拓扑结构
+  - 自适应路由揭示功能网络与语义处理的生物学对应关系
+  - 仅0.68B参数实现高竞争力语义重建性能
+  - **Activation**: fMRI decoding, Mixture-of-Experts, brain network, visual reconstruction, functional connectivity
+
+### VENCircuit: Von Economo Neurons as Acquisition Scaffolds in Recurrent Spiking Networks
+- [[vencircuit-ven-scaffold-snn]] - Von Economo神经元在脉冲神经网络中作为学习获取支架的计算模型,解释其在社交学习中的关键作用 (arXiv: 2605.17399)
+  - VEN完整网络98%收敛率 vs 移除后70%,Fisher's exact p=8.7e-5
+  - 形式化分析:VEN提供免疫于Jacobian不稳定性的直接梯度通路
+  - 发育期缺失产生随机学习失败,类比ASD中社交技能的可变表现
+  - **Activation**: Von Economo neurons, spiking neural networks, social learning, gradient pathways, autism spectrum
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ### Unveiling Energetic Advantage in Superconducting Cat-Qubits Quantum Computation
