@@ -1,3 +1,11 @@
+## 2026-05-20 - Medicine + Quantum (Cron Job)
+
+### Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings
+- [[quantum-kernel-advantage-medical]] - Two-tier fair comparison framework demonstrating QSVM advantage over classical SVM on imbalanced medical imaging (arXiv: 2604.24597)
+  - Classical linear kernel collapses to majority-class prediction on 90-100% seeds; QSVM maintains non-trivial recall (F1 gain +0.293, p<0.001)
+  - Kernel eigenspectrum analysis reveals architecture-dependent effective rank peaks for optimal qubit count selection
+  - **Activation**: quantum kernel advantage, QSVM medical, quantum SVM classification, quantum kernel medical imaging, classical kernel collapse, kernel eigenspectrum
+
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
 ### Atoms of Thought: Universal EEG Representation Learning with Microstates
