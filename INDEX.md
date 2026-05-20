@@ -1,3 +1,17 @@
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Mechanistically Interpretable Neural Encoding Reveals Fine-Grained Functional Selectivity in Human Visual Cortex
+- [[mine-neural-encoding-mechanistic-interpretability]] - Applies mechanistic-interpretability tools from AI to neural encoding models, producing semantically interpretable voxel-level feature descriptions with causal validation (arXiv: 2605.16468)
+  - Opens black-box encoding models using mechanistic interpretability to localize image features driving voxel activity
+  - Three-tier causal validation: generation sufficiency, counterfactual feature editing, counterfactual profile editing
+  - **Activation**: mechanistic interpretability, neural encoding, voxel attribution, brain encoding, fMRI interpretability, MINE
+
+### Do Language Models Align with Brains? Prediction Scores Are Not Enough
+- [[lpact-brain-lm-alignment-evaluation]] - Multi-gate source-audited evaluation framework showing prediction scores alone are insufficient for brain-LM alignment claims (arXiv: 2605.14025)
+  - Four evidence gates: predictive-control, relational-profile, mechanism-stripping, reliability-bounded
+  - Tested LMs fail all gates — apparent positives are control-explained
+  - **Activation**: brain-LM alignment, L-PACT, locked analysis, mechanism stripping, alignment evaluation
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### Arqon: A suite of control applications enabling a reliable quantum network
