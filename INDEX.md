@@ -1,3 +1,41 @@
+## 2026-05-20 - 医学+量子力学 (Cron Job - Hourly)
+
+### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
+- [[optical-neural-networks-waveguide-qed]] - All-optical neural networks via coherent transient quantum dynamics, eliminating optoelectronic bottleneck (arXiv: 2605.17752)
+  - Giant cavity QED implements programmable synaptic weights via phase-tunable nonlocal interference
+  - Bad-cavity integrator + Rabi activation replace electronic computation entirely
+  - **Activation**: optical neural networks, waveguide QED, all-optical computing, Rabi dynamics, photonic neuromorphic
+
+### Quantum Viterbi Algorithm
+- [[quantum-viterbi-algorithm]] - Quantum Viterbi decoding for hidden quantum Markov models with proven strict advantage over classical strategies (arXiv: 2605.18912)
+  - Optimization over continuous manifold of pure quantum effects vs discrete classical state space
+  - Applications to quantum memories, quantum communication with memory, NISQ ML
+  - **Activation**: quantum viterbi, hidden quantum markov, quantum decoding, HQMM, sequential decision making
+
+### Large-Scale Quantum Kernels for Hyperspectral Data Classification
+- [[large-scale-quantum-kernels-hyperspectral]] - Fidelity quantum kernel SVM achieving 78% accuracy on hyperspectral data via tensor network simulation + GPU acceleration (arXiv: 2605.17587)
+  - O(n²) scaling in qubits via tensor network contraction eliminates quantum simulation bottleneck
+  - Kernel bandwidth optimization crucial for mitigating exponential concentration
+  - **Activation**: quantum kernels, hyperspectral classification, tensor network contraction, fidelity kernel, bandwidth optimization
+
+### O(n) Alternative to Quantum Fourier Transform with HP-L Circuits
+- [[shallow-qft-alternative-hp-circuits]] - Linear-depth Hadamard-controlled Phase circuits replace O(n²) QFT in Shor's algorithm (arXiv: 2605.16998)
+  - HP-1 circuit preserves shift invariance with exponentially growing Fisher information
+  - Neural network classical post-processing compensates for simpler quantum structure
+  - **Activation**: shallow QFT, HP circuits, linear depth quantum circuits, Shor's algorithm optimization, Fisher information quantum
+
+### Quantum ML for Cyber-Physical Anomaly Detection in UAVs
+- [[quantum-machine-learning-uav-anomaly-detection]] - Leakage-free evaluation of quantum ML for UAV anomaly detection with temporal protocol + feature audit (arXiv: 2605.19233)
+  - Group-aware temporal partitioning eliminates inflated metrics from random splits
+  - Hybrid XGBoost+DRU shows incremental benefit under proxy-free evaluation
+  - **Activation**: quantum anomaly detection, UAV security, data reuploading, leakage-free evaluation, cyber-physical systems
+
+### Task-Specific Programming of Chaos in Neural Circuits
+- [[chaos-programming-neural-circuits]] - Network topology as reconfigurable parameter for task-specific chaos programming in reservoir computing (arXiv: 2605.19465)
+  - Small-world connectivity enables low-latency on-off switching of chaos via edge rewiring
+  - Unified chaos-latency phase diagram from joint element-level and topological control
+  - **Activation**: programmable chaos, neural circuit topology, reservoir computing, small-world networks, neuromorphic dynamics
+
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
 ### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
