@@ -1,3 +1,24 @@
+## 2026-05-20 - Medicine + Quantum Mechanics (Cron Job)
+
+### Quantum Biomedical Imaging and Sensing
+- [[quantum-biomedical-imaging-sensors]] - Four generations of quantum biosensors with quantum optical imaging techniques using entanglement, squeezing, and quantum correlations (arXiv: 2603.29944, 2511.03935)
+  - Core innovation: Generational framework for quantum biosensors (Gen 1-4) addressing clinical translation
+  - Core technique: Nonclassical light (entanglement/squeezing) for super-resolution biomedical imaging
+  - **Activation**: quantum biomedical sensor, quantum optical imaging, quantum biosensor, entanglement imaging, squeezing microscopy
+
+### Quantum Generative Diffusion for Medical Imaging
+- [[quantum-generative-diffusion-medical]] - Quantum-enhanced generative diffusion modeling for medical image augmentation in small-sample, imbalanced diagnostic scenarios (arXiv: 2601.18556)
+  - Core innovation: Quantum noise schedule and quantum sampling for diffusion-based medical data augmentation
+  - Core technique: Quantum feature extraction + diffusion process + classical refinement pipeline
+  - **Activation**: quantum diffusion medical, quantum generative augmentation, quantum-enhanced medical imaging, quantum data augmentation
+
+### Quantum State Preparation for Medical Data
+- [[quantum-state-preparation-medical]] - Comprehensive survey of quantum state preparation approaches for encoding medical information into quantum systems (arXiv: 2508.05063)
+  - Core innovation: Systematic analysis of amplitude, basis, angle, and Hamiltonian encoding for medical data
+  - Core technique: Circuit depth vs. encoding fidelity trade-off analysis for medical quantum computing
+  - **Activation**: quantum state preparation medical, medical data encoding quantum, quantum amplitude encoding healthcare
+
+
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
 ### EmoMind: Decoding Affective Captions from Human Brain fMRI
