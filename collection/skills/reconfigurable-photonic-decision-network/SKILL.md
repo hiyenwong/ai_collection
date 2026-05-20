@@ -1,114 +1,139 @@
 ---
 name: reconfigurable-photonic-decision-network
-description: "RNPDN framework for adaptive photonic neuromorphic computing. In-situ learning and memory formation via driven-dissipative nonlinear optical dynamics with local physical learning rules, tunable stability-plasticity tradeoff, and bistable photonic memory states. Activation: photonic neuromorphic, RNPDN, driven-dissipative dynamics, in-situ learning, optical neural network, physical-layer learning."
+description: "Reconfigurable Nonlinear Photonic Decision Network (RNPDN) methodology for adaptive photonic neuromorphic computing. Local physical learning rules with tunable stability-plasticity tradeoff, controlled memory formation via bistable photonic states, and in-situ learning through driven-dissipative dynamics."
 ---
 
-# Reconfigurable Nonlinear Photonic Decision Network (RNPDN)
+# Reconfigurable Photonic Decision Network (RNPDN)
 
-> A physically grounded neuromorphic framework in which computation, memory, and learning emerge directly from driven-dissipative nonlinear optical dynamics, enabling in-situ learning and both transient and persistent memory in photonic hardware.
+Methodology for adaptive photonic neuromorphic computing where computation, memory, and learning emerge directly from driven-dissipative dynamics in nonlinear optical systems.
 
-## Metadata
-- **Source**: arXiv:2605.19911
-- **Author**: Isaac Yorke
-- **Published**: 2026-05-19
-- **Subjects**: Optics (physics.optics); Neural and Evolutionary Computing (cs.NE); Chaotic Dynamics (nlin.CD)
+## Source
 
-## Core Methodology
+arXiv:2605.19911 — "Reconfigurable Nonlinear Photonic Networks for In-Situ Learning and Memory Formation via Driven-Dissipative Dynamics"
+Isaac Yorke
+Submitted: May 19, 2026
+Subjects: Optics (physics.optics); Neural and Evolutionary Computing (cs.NE); Chaotic Dynamics (nlin.CD)
 
-### Key Innovation
+## Core Problem
 
-The RNPDN framework breaks from conventional photonic reservoir computing (where learning is restricted to external readout layers and memory is transient) by enabling **intrinsic adaptation within the physical layer itself**. The system simultaneously achieves:
+Most photonic neuromorphic implementations rely on **fixed dynamical substrates** (e.g., reservoir computing) where:
+- Learning is restricted to external readout layers only
+- Memory is limited to transient fading effects
+- The physical layer cannot adapt intrinsically
 
-1. **Local physical learning rules** — adaptive state evolution without external weight updates
-2. **Tunable stability-plasticity tradeoff** — governed by decay and hysteresis mechanisms
-3. **Controlled memory formation/erasure** — via bistable photonic states (persistent) alongside fading memory (transient)
-4. **In-situ learning** — learning occurs within the physical substrate, not in post-processing
-5. **Hardware-faithful nonlinear dynamics** — incorporating saturation and dissipation effects
+## RNPDN Framework
 
-### Technical Framework
+### Key Properties
 
-#### Driven-Dissipative Dynamics
+1. **Local Physical Learning Rules**: Adaptive state evolution driven by local interactions within the photonic network
+2. **Tunable Stability-Plasticity Tradeoff**: Governed by decay and hysteresis mechanisms
+3. **Controlled Memory Formation/Erase**: Via bistable photonic states
+4. **Fading Memory**: Transient dynamics for temporal processing
+5. **In-Situ Learning**: Intrinsic adaptation within the physical layer
+6. **Hardware-Faithful Nonlinear Dynamics**: Incorporating saturation and dissipation
 
-The network operates as a system of coupled nonlinear optical elements driven by external inputs while dissipating energy. The key physics:
+### Architecture
 
-- **Nonlinearity**: Each node exhibits saturable nonlinear response (intensity-dependent)
-- **Dissipation**: Controlled decay rates govern transient vs. persistent memory
-- **Driving**: External optical inputs provide stimulus for computation and learning
-- **Coupling**: Inter-node connections enable distributed computation
-
-#### Local Physical Learning Rules
-
-Unlike conventional approaches that use external optimization (e.g., gradient descent on readout weights), RNPDN uses **local physical learning rules** where:
-- State evolution is adaptive based on local input statistics
-- Learning emerges from the interplay of drive, nonlinearity, and dissipation
-- No global error backpropagation required — learning is distributed and local
-
-#### Stability-Plasticity Tradeoff
-
-The system balances:
-- **Stability**: Hysteresis mechanisms maintain learned states against noise
-- **Plasticity**: Decay mechanisms allow adaptation to new inputs
-- The tradeoff is tunable via physical parameters (decay rates, coupling strengths)
-
-#### Memory Architecture
-
-Two complementary memory types:
-1. **Fading memory** (transient): Short-term contextual information from driven dynamics
-2. **Persistent memory**: Long-term information stored in bistable photonic states, with controlled formation and erasure
-
-## Implementation Guide
-
-### Prerequisites
-- Nonlinear optics simulation framework (e.g., coupled mode theory solvers)
-- Understanding of driven-dissipative systems and bifurcation theory
-- Numerical ODE integration with adaptive step sizes
-
-### Step-by-Step
-1. **Model definition**: Set up coupled nonlinear differential equations for each photonic node
-2. **Parameter calibration**: Tune decay rates, coupling strengths, and nonlinearity coefficients
-3. **Stability analysis**: Identify bistable regimes via bifurcation analysis
-4. **Training protocol**: Apply input sequences and observe adaptive state evolution
-5. **Memory testing**: Evaluate both transient (fading) and persistent (bistable) memory retention
-6. **Hardware mapping**: Map simulation parameters to physical device specifications
-
-### Code Example (Conceptual)
-```python
-# Driven-dissipative nonlinear photonic node dynamics
-import numpy as np
-from scipy.integrate import solve_ivp
-
-def rnepdn_dynamics(t, state, params):
-    N = params['n_nodes']
-    x = state[:N]  # node amplitudes
-    y = state[N:]  # node phases/memory
-    
-    # Driven-dissipative dynamics with local learning
-    dx = (params['drive'] * params['input_signal'](t) 
-          - params['decay'] * x 
-          + params['nonlinearity'](x, params['saturation'])
-          + params['coupling'] @ x)
-    
-    # Hysteresis-based memory update
-    dy = params['hysteresis'](x, y, params['threshold'])
-    
-    return np.concatenate([dx, dy])
+```
+Input → Nonlinear Photonic Nodes → Driven-Dissipative Dynamics → Output
+                ↑                          ↓
+        ← Local Learning Rules ← State Evolution
+                ↑                          ↓
+        ← Memory Formation (Bistability) ←
 ```
 
-## Applications
-- **Adaptive photonic signal processing**: Real-time optical signal classification
-- **Neuromorphic photonic hardware**: Energy-efficient, high-bandwidth computing
-- **In-situ optical learning**: On-chip learning without external processors
-- **Dynamic memory systems**: Combined short-term and long-term optical memory
+### Driven-Dissipative Dynamics Model
+
+The core dynamics combine:
+- **Driving term**: Input signal injection
+- **Dissipation**: Energy loss / decay mechanisms
+- **Nonlinearity**: Saturation effects in photonic components
+- **Bistability**: Two stable states for memory storage
+- **Hysteresis**: State-dependent switching for stability-plasticity control
+
+### Local Learning Rule
+
+```python
+def rnpsn_update(state, input_signal, decay_rate, learning_rate, 
+                  hysteresis_threshold, noise=0.0):
+    """
+    Single-step update for RNPDN node.
+    
+    Args:
+        state: Current node state (amplitude/phase)
+        input_signal: External driving input
+        decay_rate: Dissipation coefficient (controls fading memory)
+        learning_rate: Adaptation strength
+        hysteresis_threshold: Bistability switching threshold
+        noise: Stochastic perturbation
+    
+    Returns:
+        new_state: Updated node state
+    """
+    # Dissipation term
+    dissipation = -decay_rate * state
+    
+    # Nonlinear driving (with saturation)
+    drive = learning_rate * input_signal * (1 - state**2)
+    
+    # Hysteresis-based bistability
+    if abs(state) > hysteresis_threshold:
+        # Lock into stable state (memory formation)
+        drive *= 0.1  # Reduced plasticity when in stable state
+    
+    # Stochastic perturbation (optional)
+    stochastic = noise * np.random.randn()
+    
+    new_state = state + dissipation + drive + stochastic
+    return np.tanh(new_state)  # Bounded output
+```
+
+## Application Scenarios
+
+### Photonic Neuromorphic Hardware
+- Design energy-efficient photonic computing systems
+- Implement in-situ learning without external training loops
+- Build adaptive optical signal processors
+
+### Temporal Pattern Recognition
+- Leverage fading memory for sequence processing
+- Use bistable states for persistent feature storage
+- Apply to real-time signal classification tasks
+
+### Adaptive Control Systems
+- Tunable stability-plasticity for dynamic environments
+- In-situ adaptation without stopping operation
+- Energy-efficient edge computing with photonic substrates
+
+## Key Advantages Over Traditional Approaches
+
+| Property | Reservoir Computing | RNPDN |
+|----------|-------------------|-------|
+| Learning scope | Readout only | In-situ physical layer |
+| Memory type | Transient only | Transient + persistent |
+| Adaptation | No | Yes (local rules) |
+| Stability-plasticity | Fixed | Tunable |
+
+## Implementation Considerations
+
+- **Hardware constraints**: Must account for actual photonic component nonlinearities
+- **Saturation limits**: Physical components have bounded response ranges
+- **Thermal effects**: Dissipation generates heat; may affect stability
+- **Scalability**: Network topology design affects learning efficiency
 
 ## Pitfalls
-- **Physical constraints**: Simulation may not capture all hardware non-idealities (noise, fabrication variations)
-- **Stability analysis**: Bistable regimes require careful parameter tuning to avoid unwanted oscillations
-- **Scalability**: Numerical simulation cost grows quadratically with node count for full coupling
-- **Validation gap**: Results are simulation-based; experimental demonstration is needed
+
+- Bistability threshold tuning is critical — too low causes instability, too high prevents adaptation
+- Noise can disrupt memory formation; balance stochastic perturbation carefully
+- Decay rate must be tuned per application: fast decay for temporal processing, slow decay for memory
+- Numerical simulation must faithfully capture hardware nonlinearities
+
+## Activation
+
+photonic neuromorphic computing, nonlinear optical networks, in-situ learning, driven-dissipative dynamics, adaptive photonics, bistable memory, neuromorphic hardware, optical computing
 
 ## Related Skills
-- neuromorphic-oscillator-reservoir-computing
-- neuron-photonic-spiking-laser
-- photonic-deep-quantum-neural-network
-- analog-neuromorphic-plasticity
-- parametrically-driven-oscillator-neuromorphic
+
+- physical-foundation-models
+- phys-mcp-physical-neural-networks
+- stochastic-physical-neural-networks

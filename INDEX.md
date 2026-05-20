@@ -35,6 +35,20 @@
   - Competitive performance with only 0.68B parameters, transparent decision pathways
   - **Activation**: FPED, fMRI decoding, functional brain network, brain network MoE, interpretable brain decoding, visual reconstruction fMRI
 
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- [[target-space-recovery-profiles]] - fMRI response dimension recovery framework beyond scalar prediction accuracy for evaluating model-brain alignment (arXiv: 2605.20127)
+  - Identifies reproducible brain response dimensions from repeated fMRI measurements
+  - Quantifies which dimensions are recovered by model or brain-to-brain prediction
+  - Pretrained and random models can achieve similar accuracy with distinct recovery profiles
+  - **Activation**: target space recovery, model-brain alignment, fMRI evaluation, prediction accuracy, brain alignment
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- Already covered by [[kinematic-zero-shot-bci-decoding]] (arXiv: 2605.19048)
+
+### Reshaping Neural Representation via Associative, Presynaptic Short-Term Plasticity
+- Already covered by [[reshaping-neural-representation-presynaptic-plasticity]] (arXiv: 2601.10397)
 ## 2026-05-20 - Medicine + Quantum Computing (Cron Job)
 
 ### Pauli Correlation Encoding for mRNA Secondary Structure Prediction: Problem-Aware Decoding for Dense-Constraint QUBOs
