@@ -1,4 +1,18 @@
 ## 2026-05-20 - Medicine (Cron Job)
+## 2026-05-20 - Neuroscience Research (Cron Job)
+
+### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
+- [[qlif-cast-weather-forecasting]] - Quantum spiking neuron model for time-series regression achieving 15.4% MSE reduction over classical LIF, validated on 156-qubit IBM QPU (arXiv: 2605.18333)
+  - Single-qubit superposition neuron states with Rx rotation gates and T1 relaxation decay enable quantum-enhanced temporal dynamics
+  - 94% training time reduction vs QLSTM/QNN while maintaining competitive accuracy; 1.2% simulation-to-hardware deviation
+  - **Activation**: quantum spiking neural network, quantum time series forecasting, hybrid quantum classical recurrent, quantum weather forecasting
+
+### Neuromorphic Control of Flapping-Wing MAV on Resource-Constrained Hardware
+- [[neuromorphic-fwmav-snn-control]] - First onboard neuromorphic autonomous flight using dual SNNs on $5 ESP32, 36% latency and 18% power reduction vs ANN (arXiv: 2605.19430)
+  - Hierarchical SNN framework: state estimation SNN + CPG modulation SNN for wing actuation of <30g butterfly robot
+  - Imitation learning transfers conventional controller policy to spiking network without specialized neuromorphic hardware
+  - **Activation**: neuromorphic fw mav, spiking neural network control, ESP32 neuromorphic, CPG modulation SNN, embedded spiking control
+
 
 ### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
 - [[temperature-scaled-hybrid-fusion]] - Temperature-Scaled Hybrid Fusion (TSHF) for balancing quantum-classical gradient dynamics (arXiv: 2604.22903)
