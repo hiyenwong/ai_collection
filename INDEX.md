@@ -1,3 +1,17 @@
+## 2026-05-21 - Medicine (Cron Job)
+
+### Quantum Biomedical Sensor Generations
+- [[quantum-biomedical-sensors]] - 四代量子生物传感器分类框架,按量子资源利用率划分,解决临床转化中的经典噪声瓶颈 (arXiv: 2603.29944)
+  - 核心要点 1: 从经典到全量子控制的四代传感器演进路径
+  - 核心要点 2: 生物环境中退相干时间远短于真空条件,临床转化面临经典噪声限制
+  - **Activation**: quantum biosensor, biomedical quantum sensing, NV center medical, atomic magnetometer MEG
+
+### Quantum Compartmental PK/PD Simulation
+- [[quantum-compartmental-pkpd]] - 将房室PK/PD模型重构为开放量子系统,使用变分量子算法模拟群体药代动力学 (arXiv: 2605.09691)
+  - 核心要点 1: 经典ODE转化为量子电路,用受控量子门建模房室间药物转移
+  - 核心要点 2: 变分优化处理非线性混合效应模型,叠加态实现参数空间并行探索
+  - **Activation**: quantum PK/PD, compartmental drug dynamics, variational quantum pharmacokinetics, PennyLane drug simulation
+
 ## 2026-05-20 - Universal Jaynes-Cummings Oscillator Control (Cron Job)
 
 ### Universal Jaynes-Cummings Control of an Oscillator
