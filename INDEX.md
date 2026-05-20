@@ -1,4 +1,18 @@
 ## 2026-05-20 - Neuroscience Research (Cron Job)
+## 2026-05-20 - Systems Engineering Research (Cron Job)
+
+### A Readiness-Driven Runtime for Pipeline-Parallel Training under Runtime Variability
+- [[readiness-driven-pipeline-runtime]] - Treating pipeline schedules as non-binding hint orders instead of pre-committed execution sequences, reducing bubbles under runtime variability (arXiv: 2605.18750)
+  - Schedule-as-Hint: ranks ready work by priority instead of blocking on scheduled order
+  - Message-driven async communication + ready-set arbitration for low-overhead dispatch
+  - **Activation**: readiness-driven pipeline, RRFP, pipeline parallelism runtime, distributed training variability
+
+### Cooperative and Noncooperative Paradigms for Game-Theoretic Control of Socio-Technical Systems
+- [[game-theoretic-socio-technical-control]] - Unified game-theoretic framework coupling local feedback learning with global coordination for resilient socio-technical systems (arXiv: 2605.17886)
+  - Coupled local-global feedback architecture with multi-time-scale control
+  - Stackelberg incentive design + cooperative coalition formation + adversarial resilience
+  - **Activation**: game-theoretic control, socio-technical systems, incentive mechanism design, multi-agent resilience
+
 
 ### Subject-Specific Analysis of Self-Initiated Attention Shifts from EEG
 - [[eeg-self-initiated-attention-shifts]] - Preparatory EEG activity distinguishes self-initiated vs externally instructed attention shifts with reliable within-subject classification, SHAP feature attribution (arXiv: 2605.18251)
