@@ -1,106 +1,224 @@
 ---
 name: conserved-kinematic-bci-zeroshot
-description: "Conserved kinematic representations for zero-shot BCI handwriting decoding. Triggers: zero-shot BCI, kinematic decoding, handwriting BCI, conserved representations, brain-computer interface."
+description: Zero-shot handwriting BCI decoding methodology using conserved kinematic representations. Aligns intracortical neural activity to imagined kinematics, enabling decoding of unseen characters without per-character training. Applicable to logographic languages (Chinese, Japanese) and open-vocabulary BCI systems. Activation: zero-shot BCI, handwriting decoding, kinematic primitives, BCI logographic, intracortical decoding, compositional motor control, open-vocabulary BCI
 ---
 
-# Conserved Kinematic Representations for Zero-Shot BCI Handwriting Decoding
+# Conserved Kinematic BCI Zero-Shot Decoding
 
-**Paper:** Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
-**arXiv:** 2605.19048
+Zero-shot decoding methodology for intracortical Brain-Computer Interfaces (iBCIs) that leverages conserved kinematic representations to decode unseen handwriting characters without per-character training.
+
+**arXiv:** [2605.19048](https://arxiv.org/2605.19048)
 **Authors:** Srinivas Ravishankar, Virginia de Sa
-**Date:** 18 May 2026
-**Subjects:** Neurons and Cognition (q-bio.NC)
-
----
-
-## Overview
-
-This paper addresses a critical limitation in intracortical Brain-Computer Interfaces (iBCIs) for handwriting decoding: existing methods require observing every character during training, which does not scale to logographic languages (Chinese, Japanese) with thousands of characters. The authors introduce a computational framework that aligns neural activity to imagined kinematics, enabling zero-shot decoding of unseen characters. The model achieves **64% hits@3 retrieval on unseen letters**, providing evidence that neural representations of kinematic strokes are conserved across different character contexts.
+**Date:** 2026-05-18
+**Categories:** q-bio.NC
 
 ## Core Problem
 
-Traditional handwriting BCI decoders:
-- Must observe every character in the alphabet during training
-- Cannot generalize to unseen characters (closed-vocabulary)
-- Scale poorly to logographic languages with thousands of characters
-- Require recalibration when adding new characters
+Traditional imagined handwriting iBCIs require observing every character during training. This is infeasible for logographic languages (Chinese: 3000-5000+ characters, Japanese kanji: 2000+). The fundamental question: **does motor cortex represent handwriting through composition of shared kinematic primitives?**
 
-This raises a fundamental motor neuroscience question: **Does the motor cortex represent handwriting through the composition of shared kinematic primitives?**
+## Key Discovery
 
-## Key Hypothesis
+Neural representations of kinematic strokes are **robustly conserved across different character contexts**. A stroke (e.g., horizontal line, vertical line, curve) activates the same neural pattern regardless of which character it appears in.
 
-The motor cortex encodes handwriting as a composition of shared kinematic primitives (strokes), and these neural representations are conserved across different character contexts. This compositional structure can be exploited to decode unseen characters without direct training examples.
+### Performance
 
-## Methodology
+- **64% hits@3 retrieval** on completely unseen letters (zero-shot)
+- Strong evidence for compositional basis of complex motor control
+- Enables open-vocabulary iBCI communication with minimal recalibration
 
-### 1. Neural-Kinematic Alignment
+## Methodology Pipeline
 
-The core technical contribution is a computational framework for aligning neural activity to imagined kinematics in large intracortical datasets:
+### Step 1: Kinematic Feature Extraction
 
-- **Neural data:** Intracortical recordings from motor cortex during imagined handwriting
-- **Kinematic representation:** Movement trajectories (velocity, position, direction) of handwriting strokes
-- **Alignment mechanism:** Maps neural population activity to continuous kinematic features rather than discrete character labels
+```python
+import numpy as np
 
-### 2. Compositional Decoding Framework
+def extract_kinematic_features(character_strokes):
+    """Extract kinematic primitives from handwriting strokes.
+    
+    Each stroke is decomposed into:
+    - Direction (angle of motion)
+    - Velocity profile
+    - Curvature
+    - Stroke duration
+    - Start/end positions
+    """
+    kinematic_features = []
+    for stroke in character_strokes:
+        # Compute velocity
+        velocity = np.diff(stroke['position'], axis=0)
+        
+        # Direction (angle)
+        direction = np.arctan2(velocity[:, 1], velocity[:, 0])
+        
+        # Speed magnitude
+        speed = np.linalg.norm(velocity, axis=1)
+        
+        # Curvature (change in direction)
+        curvature = np.diff(direction)
+        
+        kinematic_features.append({
+            'direction': direction,
+            'speed': speed,
+            'curvature': curvature,
+            'duration': len(stroke['position']),
+            'start_pos': stroke['position'][0],
+            'end_pos': stroke['position'][-1]
+        })
+    
+    return kinematic_features
+```
 
-The framework decomposes handwriting into kinematic primitives:
-- Characters are represented as sequences/compositions of strokes
-- Each stroke has conserved neural signatures independent of character context
-- The decoder learns stroke-level representations that compose into full characters
+### Step 2: Neural-Kinematic Alignment
 
-### 3. Zero-Shot Capability
+```python
+from sklearn.linear_model import Ridge
+import numpy as np
 
-- Trained on a subset of characters/strokes
-- Can decode characters not seen during training
-- Achieves this by composing known stroke-level neural representations
-- Minimal recalibration burden when adding new characters
+def align_neural_to_kinematics(neural_activity, kinematic_features, n_components=20):
+    """Align intracortical neural activity to kinematic primitives.
+    
+    Maps high-dimensional neural population activity to 
+    low-dimensional kinematic feature space.
+    """
+    from sklearn.decomposition import PCA
+    
+    # Reduce neural dimensionality
+    neural_pca = PCA(n_components=n_components)
+    neural_reduced = neural_pca.fit_transform(neural_activity)
+    
+    # Flatten kinematic features into matrix
+    kinematic_matrix = flatten_kinematic_features(kinematic_features)
+    
+    # Ridge regression: neural → kinematics
+    alignment_model = Ridge(alpha=1.0)
+    alignment_model.fit(neural_reduced, kinematic_matrix)
+    
+    return alignment_model, neural_pca
 
-## Key Results
+def flatten_kinematic_features(kinematic_features):
+    """Convert kinematic feature list to feature matrix."""
+    rows = []
+    for feat in kinematic_features:
+        row = np.concatenate([
+            feat['direction'],
+            feat['speed'],
+            feat['curvature'],
+            [feat['duration']],
+            feat['start_pos'].flatten(),
+            feat['end_pos'].flatten()
+        ])
+        rows.append(row)
+    return np.array(rows)
+```
 
-| Metric | Value |
-|--------|-------|
-| Hits@3 retrieval on unseen letters | 64% |
-| Evidence for conserved kinematic representations | Strong |
-| Zero-shot decoding capability | Demonstrated |
+### Step 3: Zero-Shot Character Decoding
 
-## Significance
+```python
+def decode_unseen_character(neural_activity, alignment_model, neural_pca, 
+                            known_kinematic_templates, k=3):
+    """Decode an unseen handwriting character by matching to kinematic templates.
+    
+    Args:
+        neural_activity: Neural population activity for the character
+        alignment_model: Trained neural-to-kinematic mapping
+        neural_pca: PCA transform for neural data
+        known_kinematic_templates: Kinematic templates for all known characters
+        k: Number of top retrievals (hits@k)
+    
+    Returns:
+        Top-k most likely characters based on kinematic similarity
+    """
+    # Map neural activity to kinematic space
+    neural_reduced = neural_pca.transform(neural_activity)
+    predicted_kinematics = alignment_model.predict(neural_reduced)
+    
+    # Compare to all known character templates
+    similarities = []
+    for char_id, template in known_kinematic_templates.items():
+        sim = compute_kinematic_similarity(predicted_kinematics, template)
+        similarities.append((char_id, sim))
+    
+    # Return top-k most similar characters
+    similarities.sort(key=lambda x: x[1], reverse=True)
+    return similarities[:k]
 
-### For Motor Neuroscience
-- Provides strong evidence for a **compositional basis of complex motor control**
-- Demonstrates that kinematic stroke representations are robustly conserved across character contexts
-- Offers a framework for dissecting conserved neural dynamics in large-scale intracortical datasets
+def compute_kinematic_similarity(pred_kinematics, template_kinematics):
+    """Compute similarity between predicted and template kinematics."""
+    # Dynamic Time Warping or cosine similarity on kinematic features
+    from scipy.spatial.distance import cosine
+    return 1.0 - cosine(pred_kinematics.flatten(), template_kinematics.flatten())
+```
 
-### For BCI Applications
-- Establishes a new paradigm for **open-vocabulary iBCI communication**
-- Enables BCI use in logographic languages without exhaustive character training
-- Reduces recalibration burden on users
-- Crucial for increasing adoption of neuroprosthetics in logographic language regions
+### Step 4: Conserved Stroke Analysis
 
-## Technical Keywords
+```python
+def analyze_stroke_conservation(neural_patterns_by_stroke, stroke_type):
+    """Analyze how consistently a stroke type is represented neurally.
+    
+    Tests the hypothesis that the same stroke (e.g., horizontal line)
+    produces similar neural activity regardless of context.
+    """
+    # Collect all neural patterns for this stroke type
+    patterns = neural_patterns_by_stroke[stroke_type]
+    
+    # Compute within-stroke consistency
+    avg_pattern = np.mean(patterns, axis=0)
+    consistency = np.mean([
+        np.corrcoef(p.flatten(), avg_pattern.flatten())[0, 1]
+        for p in patterns
+    ])
+    
+    return {
+        'stroke_type': stroke_type,
+        'consistency': consistency,
+        'num_occurrences': len(patterns),
+        'avg_pattern': avg_pattern
+    }
+```
 
-`iBCI` `handwriting decoding` `zero-shot learning` `kinematic primitives` `motor cortex` `neural alignment` `compositional representation` `intracortical recordings` `logographic languages` `stroke decomposition` `open-vocabulary decoding` `neural dynamics`
+## Application Scenarios
 
-## Use Cases for This Skill
+- **Logographic language BCIs**: Chinese, Japanese, Korean character decoding without per-character training
+- **Open-vocabulary communication**: User can write any character, including novel combinations
+- **Reduced calibration burden**: Train on limited character set, decode full vocabulary
+- **Motor neuroscience research**: Study compositional organization of motor cortex
+- **Cross-linguistic BCI transfer**: Knowledge from Latin script transfers to other writing systems
 
-- Research on motor cortex representations and kinematic encoding
-- Design of zero-shot or open-vocabulary BCI decoders
-- Scaling BCIs to logographic languages (Chinese, Japanese, Korean)
-- Compositional approaches to neural decoding
-- Kinematic feature alignment in neural data
-- Reducing calibration burden in neuroprosthetic systems
-- Cross-character generalization in handwriting BCIs
+## Key Design Principles
 
-## Related Concepts
+1. **Compositionality**: Complex characters = composition of shared kinematic primitives
+2. **Conservation**: Same stroke → same neural pattern across different character contexts
+3. **Template matching**: Build kinematic template library from known characters
+4. **Zero-shot generalization**: Unseen characters decoded by decomposing into known stroke primitives
 
-- Intracortical Brain-Computer Interfaces (iBCIs)
-- Motor cortex neural encoding
-- Kinematic trajectory decoding
-- Compositional motor representations
-- Zero-shot and open-vocabulary machine learning
-- Neural population dynamics
-- Neuroprosthetics for logographic language users
-- Stroke-based character decomposition
+## Data Requirements
 
----
+- **Intracortical recordings**: Utah array or similar (high-density, single-unit/multi-unit)
+- **Handwriting task**: User imagines writing characters while neural activity is recorded
+- **Stroke-level annotations**: Each character decomposed into constituent strokes
+- **Sufficient training set**: ~hundreds of characters covering all stroke types in the language
 
-*SKILL.md generated from arXiv:2605.19048 — Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs*
+## Pitfalls
+
+- **Stroke segmentation quality**: Poor stroke decomposition degrades zero-shot performance
+- **Inter-subject variability**: Kinematic-conservation patterns may differ between users
+- **Character complexity**: Very complex characters with many strokes may have degraded retrieval
+- **Neural signal quality**: Requires high-quality intracortical recordings; ECoG may work but with lower resolution
+- **hits@3 metric**: 64% means 36% of unseen characters are NOT in top-3; further improvements needed for practical use
+
+## Relationship to Existing Methods
+
+| Method | Training requirement | Zero-shot capability |
+|--------|---------------------|---------------------|
+| Traditional iBCI (Willett et al.) | All characters observed | None |
+| TSRP (this work) | Subset of characters | Yes (hits@3 = 64%) |
+| Language model + iBCI | Per-user calibration | Partial (constrained vocabulary) |
+
+## Related Skills
+
+- `eeg-ieeg-bridge-bci` - Bridging scalp EEG and intracranial EEG in BCI
+- `kinematic-zero-shot-bci-decoding` - Zero-shot handwriting BCI decoding via conserved kinematics
+- `copilot-assisted-second-thought-bci` - Copilot-assisted EEG-to-robotic control
+- `bci-rehabilitation-protocols` - BCI rehabilitation protocols for stroke recovery
+- `eeg-brain-connectivity-bci` - EEG brain connectivity for BCI applications
