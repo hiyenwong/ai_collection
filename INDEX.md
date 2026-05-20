@@ -951,3 +951,12 @@
    499|  - HPC-MEC coupling dissociates relational structures (MEC) from integrated episodic scenes (HPC)
    500|  - **Activation**: hippocampal-entorhinal model, world model, structure abstraction, HPC-MEC coupling
    501|
+## 2026-05-20 - Anthropic Research (Cron Job)
+
+### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
+- [[biomysterybench]] - Benchmark for LLM bioinformatics research on real-world datasets with consensus-based grading, path-independent evaluation (Anthropic Research, Apr 29, 2026)
+  - Core innovation: Consensus-based open-ended evaluation for domains with multiple valid approaches
+  - Core technique: Real-world dataset analysis tasks graded against expert consensus, not single-answer keys
+  - **Activation**: biomysterybench, bioinformatics, benchmarking, open-ended evaluation, consensus grading
+
+
