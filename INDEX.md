@@ -1,3 +1,26 @@
+## 2026-05-20 - Medicine + Quantum Computing (Cron Job - Quantum + Medical)
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Medical Diagnosis
+- [[adaptive-hybrid-quantum-classical-feature-fusion-medical]] - 自适应混合量子-经典特征融合方法,将量子ML与经典深度学习结合提升医学图像分类精度 (arXiv: 2604.22903)
+  - 核心要点 1: 量子特征映射到希尔伯特空间捕获全局关联,经典特征捕获局部模式,两者互补
+  - 核心要点 2: 自适应门控网络学习何时信任量子 vs 经典特征,非固定权重
+  - 核心要点 3: 少量量子比特(4-8)即可在NISQ设备上实现2-5%精度提升
+  - **Activation**: quantum-classical feature fusion, hybrid quantum medical, 量子经典特征融合, adaptive quantum fusion, quantum medical classification
+
+### Cold-Atom Reservoir Computing for Medical Imaging Classification
+- [[cold-atom-reservoir-computing-medical]] - 基于冷原子/中性原子储层计算的医学图像分类流水线,结合自编码器和代理驱动训练 (arXiv: 2605.06727)
+  - 核心要点 1: 储层权重固定不训练,仅训练读出层,大幅降低训练复杂度
+  - 核心要点 2: 自编码器压缩高维医学图像到潜空间后再输入储层
+  - 核心要点 3: 代理驱动训练近似量子梯度,适用于二分类医疗诊断任务
+  - **Activation**: cold atom reservoir computing, neutral atom medical imaging, quantum reservoir classification, 冷原子储层计算, surrogate-driven quantum training
+
+### Federated Quantum Neural Network for Privacy-Preserving Medical Diagnosis
+- [[federated-quantum-neural-network-medical-diagnosis]] - 联邦量子神经网络(FQPDR)方法论,结合联邦学习与QNN实现隐私保护的分布式医疗诊断 (arXiv: 2605.08324)
+  - 核心要点 1: 患者数据不出院,仅共享模型参数,满足医疗数据隐私要求
+  - 核心要点 2: 轻量级QNN(少参数)适合联邦设置,通信开销低
+  - 核心要点 3: 交叉评估验证跨机构泛化能力,少量样本即可实现鲁棒学习
+  - **Activation**: federated quantum neural network, FQPDR, 联邦量子神经网络, privacy-preserving quantum ML, distributed quantum learning
+
 ## 2026-05-20 - Neuroscience Research (Cron Job)
 
 ### Reconfigurable Nonlinear Photonic Decision Network (RNPDN)
