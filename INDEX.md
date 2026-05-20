@@ -1,3 +1,12 @@
+## 2026-05-20 - Medicine + Quantum (Cron Job - TSHF)
+
+### Temperature-Scaled Hybrid Fusion (TSHF)
+- [[temperature-scaled-hybrid-fusion]] - 温度缩放混合融合方法论,通过可学习标量τ动态平衡量子-经典混合模型中的梯度动力学差异,解决优化不对称性 (arXiv: 2604.22903)
+  - 核心要点 1: SHF/DHF/TSHF三种渐进式融合策略,TSHF通过可学习τ动态平衡量子与经典分支
+  - 核心要点 2: τ在反向传播中学习,初始值决定分支优先级,收敛值反映最优平衡点
+  - 核心要点 3: 在BreastMNIST上验证,ResNet+可训练量子电路+TSHF达87.82%准确率,91.77% F1
+  - **Activation**: TSHF, temperature-scaled fusion, hybrid quantum-classical fusion, quantum-classical gradient balancing, 温度缩放混合融合, 量子经典梯度平衡
+
 ## 2026-05-20 - Medicine + Quantum Computing (Cron Job - Quantum + Medical)
 
 ### Adaptive Hybrid Quantum-Classical Feature Fusion for Medical Diagnosis
