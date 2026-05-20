@@ -1,3 +1,12 @@
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### Efficient Fault-Tolerant Ancilla Preparation for Quantum BCH codes via Cyclic Symmetry
+- [[cyclic-symmetry-ancilla-distillation]] - Fault-tolerant ancilla preparation for quantum BCH codes using cyclic symmetry-enabled entanglement distillation (arXiv: 2605.19471)
+  - Two-stage approach: non-FT preparation + cyclic-symmetry-aware distillation
+  - Leverages cyclic structure of BCH codes to determine which non-FT circuits produce FT states
+  - Lower spatial overhead and logical error rates than conventional distillation on codes up to 127 qubits
+  - **Activation**: fault-tolerant ancilla, quantum BCH codes, cyclic symmetry, entanglement distillation, FTQC resource optimization, neutral atom quantum computing
+
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
