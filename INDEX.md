@@ -1,3 +1,21 @@
+## 2026-05-22 - Neuroscience Research (Cron Job)
+
+### A Simple Model of Co-Emergence of Grid and Place Fields
+- [[grid-place-co-emergence]] - First unified recurrent network model instantiating Dale's Law where grid and place cells co-emerge from a single sensory-prediction objective without supervision of either type (arXiv:2605.21356)
+  - Single-objective RNN trained to predict next sensory observation from masked previous observations and egocentric motion
+  - Coexists across 1,000 training configurations; balance set by sensory noise and masking
+  - Reproduces grid fragmentation, merging, lattice alignment, 3D bat fields, and developmental order without retraining
+  - Two complementary encoding pressures: reconstruction (place-like) vs prediction (grid-like)
+  - **Activation**: grid cell place cell co-emergence, Dale's law RNN, spatial navigation sensory prediction, hippocampal-entorhinal unified model, grid field co-emergence, 网格细胞位置细胞共同涌现
+
+### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
+- [[platonic-representations-brain]] - Extends Strong Platonic Representation Hypothesis to human visual cortex, proving subject-specific fMRI representations are approximately isometric and translatable via unsupervised geometric transformations without paired data (arXiv:2605.20496)
+  - Self-supervised encoder from fMRI data exploiting repeated stimulus presentations
+  - Unsupervised orthogonal rotations recover accurate cross-subject instance-level correspondences
+  - Synchronized pairwise rotations into shared latent space further improves retrieval
+  - Evidence for shared universal neural geometry across individuals in visual cortex
+  - **Activation**: platonic representation human brain universal geometry, fMRI cross-subject unsupervised alignment, shared neural geometry visual cortex, deep learning brain representation translation, 柏拉图表征人脑视觉皮层通用几何
+
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### Closed-Form Predictive Coding via Hierarchical Gaussian Filters
