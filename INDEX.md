@@ -687,3 +687,21 @@
    642|  - 80% of economic impacts concentrated in tech, creative, and professional services
    643|  - **Activation**: AI expectations, user research, AI economics, automation, augmentation, multilingual research, Anthropic Interviewer
    644|
+
+## 2026-05-22 - Neuroscience Research: Functional Whole-Brain Models & Kinematic Zero-Shot BCI (Cron Job)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm integrating structural/dynamical realism with task-performing capacity across cognitive domains (arXiv:2605.18118)
+  - Four minimal criteria: structural grounding, continuous-time dynamical realism, functional competence, mappable observables
+  - Three-pillar roadmap: short-term coupling, mid-term recurrent fWBMs, long-term closed-loop learning brains
+  - Unifies bottom-up WBM and top-down neuroconnectionism into single paradigm
+  - Enables virtual brain labs for psychiatric/neurological drug development
+  - **Activation**: fWBM, whole-brain model, neuroconnectionism, brain dynamics, cognitive function, connectome
+
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[kinematic-zero-shot-bci]] - Zero-shot ML decoding of unseen characters via conserved kinematic primitives in motor cortex, achieving 64% hits@3 on unseen letters (arXiv:2605.19048)
+  - Demonstrates compositional basis of complex motor control through shared kinematic strokes
+  - Enables open-vocabulary iBCI communication for logographic languages (Chinese, Japanese)
+  - Neural representations of kinematic strokes robustly conserved across character contexts
+  - Framework for dissecting conserved neural dynamics in large-scale intracortical datasets
+  - **Activation**: zero-shot BCI, kinematic representation, handwriting decoding, motor cortex, iBCI, neuroprosthetics

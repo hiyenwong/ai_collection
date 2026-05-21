@@ -1,80 +1,65 @@
 ---
-name: kinematic-zero-shot-bci
-description: Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs — computational framework for zero-shot character decoding in handwriting Brain-Computer Interfaces by aligning neural activity to shared kinematic primitives (motor strokes). Achieves 64% hits@3 retrieval on unseen letters, supporting open-vocabulary iBCI for logographic languages. Activates on zero-shot BCI decoding, handwriting iBCI, conserved kinematic representations, motor cortex compositionality, neural dynamics alignment, open-vocabulary neuroprosthetics.
+name: conserved-kinematic-zero-shot-bci
+description: "Conserved Kinematic Representations for Zero-Shot Decoding in Handwriting BCIs. Methodology aligning neural activity to imagined kinematics for zero-shot capable ML decoding of unseen characters in BCI systems. Use when: researching brain-computer interfaces, motor cortex representations, zero-shot decoding, handwriting BCIs, kinematic primitives, logographic language neuroprosthetics, compositional motor control. Keywords: zero-shot BCI, kinematic representation, handwriting decoding, motor cortex, iBCI, neuroprosthetics, compositionality."
 ---
 
-# Conserved Kinematic Representations for Zero-Shot Handwriting BCI
+# Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
 
-Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs — a computational framework demonstrating that the motor cortex represents handwriting through composition of shared kinematic primitives, enabling zero-shot decoding of unseen characters.
+Methodology from arXiv:2605.19048 — "Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs" by Ravishankar and de Sa (May 2026).
 
-## Core Problem
+## Overview
 
-Intracortical Brain-Computer Interfaces (iBCIs) for imagined handwriting achieve high communication rates for Latin scripts but require observing every character during training. This is impractical for logographic languages (Chinese, Japanese) with thousands of character classes. Traditional methods also require supervised single-letter data collection for recalibration, which is a continuous burden on BCI users due to neural non-stationarity.
+Intracortical Brain-Computer Interfaces (iBCIs) decoding imagined handwriting achieve high communication rates for Latin scripts but require observing every character during training. This is impractical for logographic languages (Chinese, Japanese) with thousands of character classes.
 
-## Key Innovation
+**Key question**: Does motor cortex represent handwriting through composition of **shared kinematic primitives**?
 
-### Conserved Kinematic Representations
-The motor cortex represents handwriting through **composition of shared kinematic primitives** (motor strokes) that are robustly conserved across different character contexts. This allows neural pattern generalization from seen to unseen characters.
+**Result**: Yes — the model achieves 64% hits@3 retrieval on unseen letters, demonstrating that neural representations of kinematic strokes are robustly conserved across different character contexts.
 
-### Computational Framework
-1. **Neural-to-kinematic alignment**: Align neural activity to imagined kinematics in large-scale intracortical datasets
-2. **Zero-shot ML decoder**: Trains on seen characters, generalizes to unseen ones via kinematic decomposition
-3. **Hits@3 retrieval**: Achieves **64% hits@3** on unseen characters, demonstrating robust cross-character generalization
+## Core Methodology
 
-### Unsupervised Recalibration
-Builds on prior unsupervised recalibration work for handwriting decoding, eliminating the need for supervised single-letter data collection during recalibration sessions.
+### Neural-to-Kinematic Alignment Framework
 
-## Technical Approach
+1. **Large-scale neural data alignment**: Align neural activity to imagined kinematics across large intracortical datasets
+2. **Kinematic primitive extraction**: Decompose handwriting into shared stroke-level kinematic primitives
+3. **Zero-shot ML decoder**: Train on seen characters, decode unseen ones via kinematic composition
 
-### Framework Components
-1. **Kinematic Stroke Extraction**: Decompose handwriting into shared stroke primitives
-2. **Neural Dynamics Alignment**: Temporal alignment between neural firing patterns and imagined kinematics
-3. **Compositional Decoder**: Decode novel characters by recognizing combinations of learned stroke primitives
+### Key Components
 
-### Evaluation Paradigm
-- Dataset: Intracortical micro-electrode recordings during imagined handwriting (single participant)
-- Zero-shot setting: All training data for each target character removed
-- Metrics: Hits@k retrieval on unseen letters
-- Result: 64% hits@3 accuracy on unseen characters
+- **Neural alignment**: Maps neural population activity to imagined handwriting kinematics
+- **Kinematic stroke conservation**: Shows same stroke types have similar neural signatures across different characters
+- **Compositional decoding**: Unseen characters decoded as novel compositions of known kinematic primitives
+- **Hits@3 evaluation**: 64% success rate on unseen character retrieval
 
-## Key Findings
+## Implications
 
-1. **Compositional motor control**: Strong evidence that complex motor control is built from reusable kinematic primitives
-2. **Cross-character generalization**: Neural representations of kinematic strokes are robustly conserved across different character contexts
-3. **Zero-shot capability**: First demonstration of zero-shot handwritten character decoding in ballistic (continuous) handwriting
-4. **Reduced recalibration burden**: Framework compatible with unsupervised recalibration, critical for daily-use neuroprosthetics
-5. **Logographic language accessibility**: Addresses key barrier to adopting handwriting BCIs for Chinese, Japanese, and other large-character-set languages
+### For Motor Neuroscience
+- Strong evidence for **compositional basis of complex motor control**
+- Supports theory that motor cortex uses reusable kinematic building blocks
+- Provides framework for dissecting conserved neural dynamics in large-scale intracortical datasets
 
-## When to Use
+### For BCI Technology
+- Enables **open-vocabulary iBCI communication** with minimal recalibration
+- Critical for adoption of neuroprosthetics in logographic languages (Chinese, Japanese, etc.)
+- Reduces training burden from thousands of characters to manageable primitives
 
-- **BCI zero-shot decoding**: When training data is limited for some character classes
-- **Cross-linguistic BCI**: When extending handwriting decoders to logographic languages
-- **Motor neuroscience research**: When investigating compositional motor control in cortex
-- **Recalibration optimization**: When minimizing user recalibration burden is critical
-- **Open-vocabulary iBCI**: When supporting unrestricted vocabulary communication
+### For Machine Learning
+- Demonstrates effectiveness of kinematic representation learning for neural decoding
+- Zero-shot paradigm applicable to other BCI domains
 
-## Pitfalls
+## Practical Usage Notes
 
-- **Single participant data**: Currently validated on one participant — cross-participant generalization needs further validation
-- **English dataset proxy**: Proof of concept on English dataset; logographic dataset not yet publicly available
-- **Hits@3 vs exact match**: 64% hits@3 means the correct character is in top-3 candidates, not always top-1
-- **Kinematic alignment quality**: Depends on accurate kinematic extraction from neural signals
-- **Real-time performance**: Zero-shot decoding overhead for real-time BCI applications not yet characterized
+- Framework applicable to other motor decoding tasks (speech, gesture)
+- Kinematic primitives may generalize across subjects with transfer learning
+- Compatible with Utah array and other high-density intracortical recordings
 
-## Related Skills
+## Activation Keywords
 
-- `bci-sift-feature-selection` — Automated BCI feature selection toolbox
-- `copilot-assisted-second-thought-bci` — EEG-to-robot control with copilot assistance
-- `async-delta-modulator-bmi` — Asynchronous delta modulation for BMIs
-- `bcmi-motion-control-detection` — BCMI motion control detection
-- `neural-digital-twins-bci` — Neural Digital Twins for BCI
+- zero-shot BCI, kinematic representation, handwriting decoding
+- conserved neural dynamics, compositional motor control
+- logographic language neuroprosthetics, open-vocabulary iBCI
 
-## Reference
+## References
 
-- **Title**: Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
-- **Authors**: Srinivas Ravishankar, Virginia de Sa
-- **arXiv**: 2605.19048 [q-bio.NC]
-- **Date**: May 18, 2026
-- **Institution**: UC San Diego (Department of Cognitive Science, Halicioglu Data Science Institute)
-- **URL**: https://arxiv.org/abs/2605.19048
-- **License**: CC BY 4.0
+- arXiv:2605.19048 — Original paper
+- Willett et al. (2021) — High-performance handwriting BCI for Latin scripts
+- Related: `kinematic-zero-shot-bci` skill
