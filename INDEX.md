@@ -1,3 +1,24 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### An Exponential Sample-Complexity Advantage for Coherent Quantum Inference
+- [[coherent-quantum-inference]] - Coherent quantum processing achieves exponentially lower sample complexity O(d/ε) vs O(d²/ε²) for incoherent protocols in quantum purity amplification (arXiv:2605.21457)
+  - 核心要点 1: 相干量子推断（输出保持量子态）相比非相干协议（先测量再经典处理）实现指数级样本复杂度优势
+  - 核心要点 2: 对d维输入的量子纯度放大(QPA)，相干处理仅需O(d/ε)拷贝，非相干需O(d²/ε²)
+  - 核心要点 3: 纠缠破坏极限定义了每个相干协议的最优非相干对应物，用于基准测试
+  - **Activation**: coherent quantum inference, sample complexity, quantum purity amplification, entanglement-breaking limit, quantum statistics, quantum data processing
+
+### Evidence of Quantum Machine Learning Advantage with Tens of Noisy Qubits
+- [[qml-advantage-noisy-qubits]] - Demonstrates clear quantum ML advantage at 30-40 noisy qubit scale; coherent processing outperforms fixed-measurement schemes with data acquisition as the fundamental bottleneck (arXiv:2605.21346)
+  - 核心要点 1: 在30-40个噪声量子尺度上，相干量子处理与固定测量方案之间存在清晰性能分离
+  - 核心要点 2: 测量优先策略需要数月甚至数年才能匹配相干协议——瓶颈在于数据采集而非经典计算
+  - **Activation**: quantum ML advantage, noisy qubits, coherent vs fixed-measurement, learning advantage, quantum data acquisition
+
+### Quantum Nonlocality and Device-Independent Randomness Robust to Noisy Signaling
+- [[quantum-nonlocality-robust-signaling]] - Characterizes local polytope vertices/facets with noisy signaling channels; new Bell inequalities more robust than CHSH for device-independent randomness certification (arXiv:2605.21293)
+  - 核心要点 1: 即使输入被近完美复制，量子非定域性对噪声信号信道仍具有鲁棒性
+  - 核心要点 2: 新识别的Bell不等式在认证DI随机性时比CHSH不等式对去极化噪声更鲁棒
+  - **Activation**: quantum nonlocality, device-independent randomness, Bell inequalities, noisy signaling, local polytope, quantum cryptography
+
 ## 2026-05-22 - Neuroscience Research: Texture Perception + CNN Alignment (Cron Job)
 
 ### Perceptual Misalignment of Texture Representations in CNNs
