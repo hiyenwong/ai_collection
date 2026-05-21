@@ -1,5 +1,12 @@
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
+### BCI-sift: Automated Feature Selection Toolbox for Brain Computer Interface Applications
+- [[bci-sift-feature-selection]] - 自动化BCI特征选择工具箱,通过优化算法在电极/时间/频率三维识别信息性神经特征,提升HD ECoG解码精度 (arXiv: 2605.19646)
+  - 跨三维(电极、时间、频率)特征选择,scikit-learn兼容
+  - HD ECoG语音解码验证:所选电极与感觉运动皮层功能组织一致
+  - 特征选择提升分类精度,高频带(gamma)最具信息量
+  - **Activation**: BCI feature selection, ECoG decoding, neural feature optimization, brain-computer interface, automated ML pipeline
+
 ### FPED: Functional-Network Prior-Guided Mixture-of-Experts Framework for Interpretable Brain Decoding
 - [[fped-moe-brain-decoding]] - fMRI视觉解码中基于功能网络先验引导的混合专家(MoE)框架,实现可解释的语义重建 (arXiv: 2605.19279)
   - 功能脑网络作为专门专家模块,保留大脑拓扑结构
@@ -33,7 +40,7 @@
   - **Activation**: Von Economo neurons, spiking neural networks, social learning, gradient pathways, autism spectrum
 
 ### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
-- [[target-space-recovery-profiles]] - 超越预测精度的模型-脑对齐评估框架，通过识别可恢复的响应维度提供更诊断性的评估 (arXiv: 2605.20127)
+- [[predictive-subspace-recovery-profiles]] - 超越预测精度的模型-脑对齐评估框架，通过识别可恢复的响应维度提供更诊断性的评估 (arXiv: 2605.20127)
   - 重复fMRI测量识别可复现的脑响应维度
   - 预训练模型和随机初始化模型可达到相似精度但恢复不同维度
   - 脑-脑对比提供人类诊断参考基线
