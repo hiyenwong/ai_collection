@@ -216,7 +216,21 @@
   - Strong forecasting across fMRI (PNC) and EEG (TUSZ) with in silico perturbation prediction capability
   - **Activation**: braindyn, sheaf neural ODE, brain dynamics forecasting, sheaf Laplacian, generative brain model, continuous-time neural dynamics, in silico perturbation
 
-### Mechanistically
+### MINE: Mechanistically Interpretable Neural Encoding Reveals Fine-Grained Functional Selectivity in Human Visual Cortex
+- [[mine-mechanistically-interpretable-neural-encoding]] - Opens the black box of neural encoding by applying mechanistic interpretability tools to localize features driving voxel-level fMRI responses in human visual cortex (arXiv: 2605.16468)
+  - Language-aligned image representations predict voxel responses with semantic interpretability
+  - Counterfactual insertion/removal of predicted features provides causal evidence for voxel selectivity
+  - Per-voxel functional profiles reveal fine-grained structure within category-selective regions (FFA, PPA, etc.)
+  - Establishes mechanistic interpretability as a tool for causal, fine-grained discovery in neuroscience
+  - **Activation**: MINE, mechanistic interpretability, neural encoding, visual cortex, language-aligned representations, counterfactual editing, voxel-level fMRI
+
+### A Unified Model of Grid and Place Cell Co-Emergence from Sensory Prediction
+- [[grid-place-cell-co-emergence]] - First unified recurrent network model in which grid and place cells co-emerge from a single sensory-prediction objective without supervision of either cell type (arXiv: 2605.21356)
+  - Dual encoding pressures: pattern completion (sensory reconstruction) drives place fields, path integration (motion prediction) drives grid fields
+  - Qualitative reproduction: grid fragmentation, merging, 3D bat fields, developmental order of place-then-grid
+  - Balance between codes controlled by sensory noise and input masking — resource allocation trade-off
+  - Dale's Law network trained purely on sensory prediction — no spatial labels needed
+  - **Activation**: grid cells, place cells, co-emergence, sensory prediction, spatial navigation, path integration, Dale's Law, entorhinal cortex, hippocampus
 
 ## 2026-05-21 - Anthropic Research (Cron Job)
 
