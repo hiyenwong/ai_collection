@@ -15,8 +15,15 @@
   - Opens clinical opportunities for lesion-deficit mapping, psychiatric circuit testing, connectome-based prediction
   - **Activation**: functional whole-brain model, fWBM, neuroconnectionism, whole-brain modeling, brain structure function unification, cognitive brain simulation, connectome functional competence
 
+### MIRAGE: Robust Multi-Modal fMRI-to-Mental-Image Decoding
+- [[mirage-fmri-mental-imagery-decoding]] - MIRAGE explicitly designs for cross-decoding generalization from visual perception to mental imagery: linear backbone + multi-modal text/image features → diffusion model achieves SOTA on NSD-Imagery benchmark (arXiv:2605.17198)
+  - SOTA on seen images ≠ SOTA on mental imagery — architecture must be explicitly designed for cross-decoding
+  - Linear backbone + low-dimensional image features + text guidance + multi-level features outperforms complex nonlinear architectures
+  - Text-based features provide critical semantic guidance for mental image reconstruction
+  - Human raters and feature metrics confirm SOTA quality on NSD-Imagery benchmark
+  - **Activation**: MIRAGE mental imagery, fMRI mental image reconstruction, brain-to-image decoding, NSD-Imagery, vision decoder generalization, mental imagery fMRI, cross-decoding brain activity, fMRI diffusion model
 
-     1|## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
      2|
      3|### Evidence of Quantum Machine Learning Advantage with Tens of Noisy Qubits
      4|- [[quantum-ml-advantage-noisy]] - Demonstrates coherent quantum ML advantage at 30-40 noisy qubits scale; data acquisition becomes the fundamental bottleneck over classical computation (arXiv:2605.21346)
