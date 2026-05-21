@@ -221,6 +221,29 @@
 
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### RSE of a Quantum Transport Code and its Effects
+- [[quantum-software-engineering]] - Research software engineering methodology for quantum/scientific computing codes covering CI, testing, benchmarking, and critical defect detection (arXiv: 2605.21334)
+  - Continuous integration and automated testing essential for scientific code quality
+  - Continuous benchmarking reveals HPC system configuration performance regressions
+  - Dangerous defects in Fortran scientific codes as prevalent as in C/C++
+  - Boundary condition mathematical model misunderstandings cause long-term errors
+  - **Activation**: research software engineering, RSE scientific code, quantum code quality, scientific software testing, continuous benchmarking, 科研软件工程, 科学代码质量保证
+
+### Ergotropy and Work Extraction in Quantum Heat Engines via Quantum Channels
+- Paper: Multilevel quantum systems (qutrit) exhibit enhanced work extraction and improved robustness against decoherence compared to two-level systems under generalized amplitude damping channels (arXiv: 2605.20969)
+  - Quantum channels model heat absorption, dissipation, and work extraction in open quantum thermal machines
+  - Multilevel systems provide better thermodynamic performance under dissipative dynamics
+  - Ergotropy analysis reveals environmental effects on maximum extractable work
+  - **Already covered by existing skills**: quantum-battery-parametric-amplification, zeno-quantum-lubrication
+
+### Terrestrial readiness campaign for space-to-ground quantum communications
+- Paper: Free-space QKD experiment over 1.8 km link using SpeQtre satellite engineering model, achieving 7.56 kbps secret key rate with 4.78% QBER (arXiv: 2605.19689)
+  - BBM92 protocol with polarization-entangled photons validated under realistic atmospheric conditions
+  - Ground-space segment operational compatibility established for future quantum networks
+  - **Already covered by existing skills**: dependable-quantum-systems, covert-quantum-computing
+
 ## 2026-05-21 - Systems Engineering Research (Cron Job)
 
 ### ReasonSTL: Bridging Natural Language and Signal Temporal Logic via Tool-Augmented Process-Rewarded Learning
