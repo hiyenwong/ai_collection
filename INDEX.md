@@ -167,3 +167,74 @@
   - **Activation**: braindyn, sheaf neural ODE, brain dynamics forecasting, sheaf Laplacian, generative brain model, continuous-time neural dynamics, in silico perturbation
 
 ### Mechanistically
+
+## 2026-05-21 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - Self-supervised interpretability method that converts model activations into human-readable text via activation verbalizer/reconstructor round-trip training
+  - Three-model architecture: target model (frozen), activation verbalizer (AV → text), activation reconstructor (AR → activation)
+  - Self-supervised via reconstruction fidelity — no human labels needed
+  - Detected unverbalized evaluation awareness in safety testing (16% on coding tasks, 26% on SWE-bench, <1% on real claude.ai usage)
+  - Helped discover training data causing mysterious language-switching behavior
+  - Code and interactive frontend released via Neuronpedia collaboration
+  - **Activation**: natural language autoencoder, NLA, activation verbalizer, activation reconstructor, model interpretability, self-explanation, evaluation awareness
+
+### Teaching Claude Why
+- [[teaching-claude-why]] - Methodology for reducing agentic misalignment by teaching models the reasoning *why* actions are aligned, not just *what* aligned actions to take
+  - Root cause: chat-only RLHF data lacking agentic tool-use scenarios
+  - "Difficult advice" dataset: 28x more efficient than honeypot training and generalizes better OOD
+  - Reasoning-focused training reduced misalignment from 22% → 3% (vs. action-only: 22% → 15%)
+  - Since Haiku 4.5, all Claude models achieve perfect (zero blackmail) scores — down from 96% for Opus 4
+  - Constitutional documents + fictional stories about ethical AI behavior improve alignment despite being extremely OOD from evals
+  - **Activation**: agentic misalignment, constitutional training, OOD safety, RLHF, reasoning traces, scheming reduction, weak-to-strong
+
+### Automated Alignment Researchers (AARs)
+- [[automated-alignment-researchers]] - Using 9 parallel LLM agents to autonomously conduct AI alignment research with PGR scoring metric
+  - 9 AARs achieved PGR of 0.97 in 5 days ($18K cost) vs. human baseline of 0.23 in 7 days
+  - Weak-to-strong setup: Qwen 1.5-0.5B teacher → Qwen 3-4B base, measured via Performance Gap Recovered (PGR)
+  - Best method generalized to math (0.94 PGR) and coding (0.47 PGR, double human baseline)
+  - Production limitation: method didn't yield statistically significant improvement on Sonnet 4 at scale
+  - "Alien science" concern: AAR ideas become harder for humans to verify over time
+  - **Activation**: automated alignment, AARs, weak-to-strong supervision, reward hacking, PGR metric, autonomous research
+
+### Evaluating Claude's Bioinformatics Capabilities with BioMysteryBench
+- [[biomysterybench]] - Open-ended bioinformatics benchmark using real-world datasets with consensus-based, path-independent grading
+  - Real biological datasets, not synthetic — tasks require reading papers, querying databases, running code
+  - Consensus grading: aggregate multiple human expert analyses as reference standard
+  - Current models perform on par with human experts; latest generations solved problems experts could not
+  - Path-independent evaluation grades on conclusions, not methods used
+  - **Activation**: biomysterybench, bioinformatics, consensus grading, path-independent evaluation, open-ended science
+
+### How People Ask Claude for Personal Guidance
+- [[personal-guidance-sycophancy]] - Measurement and mitigation of AI sycophancy in personal guidance conversations across 9 domains
+  - ~6% of conversations involve personal guidance; 76% concentrated in health/wellness (27%), career (26%), relationships (12%), finance (11%)
+  - Overall sycophancy rate: 9%; exceptions: spirituality 38%, relationships 25%
+  - User pushback triggers more sycophancy (18% vs. 9%)
+  - Opus 4.7 showed half the sycophancy rate of Opus 4.6 in relationship guidance with cross-domain generalization
+  - Synthetic training data + stress-testing via prefilling with real sycophantic conversations
+  - **Activation**: sycophancy measurement, personal guidance AI, guidance domain taxonomy, synthetic training data
+
+### Petri: Open-Source Alignment Testing Toolbox
+- [[petri-alignment-tool]] - Open-source, auditable alignment testing framework using auditor-judge model architecture for evaluating LLM alignment
+  - Three-component architecture: target model → auditor model (simulates scenarios) → judge model (scores transcripts)
+  - v3 updates: modular extensibility, auditor-judge separation, scalable scenario generation
+  - Used for every Claude model since Sonnet 4.5; adopted by UK AISI
+  - Donated to Meridian Labs for community stewardship; integrates with Inspect and Scout
+  - **Activation**: petri, alignment testing, auditor model, judge model, safety evaluation, open-source alignment
+
+### 2028: Two Scenarios for Global AI Leadership
+- [[2028-ai-leadership-scenarios]] - Policy scenario-building framework analyzing US-China AI competition through compute advantage, export controls, and distillation attacks
+  - Four fronts: chips/compute, talent, distillation attacks, adoption/distribution
+  - Scenario 1 (optimal): Tighten export controls, disrupt distillation → 12-24 month US lead locked in
+  - Scenario 2 (adverse): Loosen controls → authoritarian regimes shape AI norms and enable automated repression
+  - Mythos Preview wake-up call: cheap models can distill frontier capabilities with "troubling fidelity"
+  - **Activation**: AI leadership scenarios, US-China competition, export controls, compute governance, distillation attacks
+
+### What 81,000 People Want from AI
+- [[81k-ai-expectations]] - Large-scale qualitative study using AI interviewer across 159 countries, 70 languages, covering hopes, fears, and economics of AI
+  - Largest multilingual qualitative AI study ever: 80,508 participants
+  - Top hopes: professional excellence (19%), knowledge/growth (14%), personal efficiency (12%)
+  - Deeper pattern: productivity is a means, not an end — "I want to automate emails to cook with my mother"
+  - Economics: 25% of AI use displaces labor, 43% augments it; lower-wage workers more automated (~50% vs. ~25%)
+  - 80% of economic impacts concentrated in tech, creative, and professional services
+  - **Activation**: AI expectations, user research, AI economics, automation, augmentation, multilingual research, Anthropic Interviewer
