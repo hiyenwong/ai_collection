@@ -18,19 +18,19 @@
 
 ## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
 
-### Quantum Koopman Algorithms
-- [[quantum-koopman-algorithms]] - Observable-space framework for simulating linear quantum and nonlinear classical system dynamics (arXiv: 2605.19054)
-  - Dynamic-QKA for initial-value problems, Spectral-QKA for eigenvalue analysis
-  - O(polylog(N)) gate cost for free fermion-bath systems — exponential improvement
-  - Nonlinear interaction-picture quantum algorithm for perturbative expansions
-  - **Activation**: quantum koopman, QKA, observable-space dynamics, nonlinear dynamics simulation, quantum ODE solver, spectral analysis quantum
+### When Does Adaptation Win? Scaling Laws for Meta-Learning in Quantum Control
+- [[quantum-control-meta-learning-scaling]] - Scaling law lower bound showing adaptation gain saturates exponentially with gradient steps and scales linearly with task variance; few-shot pre-adaptation protocol estimates optimal budget from N=3-5 probe steps (arXiv: 2601.18973)
+  - Adaptation gain >40% fidelity on two-qubit gates under extreme OOD (10x training noise)
+  - Cross-domain validation: same scaling laws emerge from quantum gate calibration and classical LQR control
+  - Variance-aware controller selection: non-adaptive for low-variance, meta-learning for high-variance
+  - **Activation**: quantum control meta-learning, adaptation scaling laws, quantum gate calibration, per-device calibration, OOD quantum control, meta-learning quantum
 
-### Efficient Fault-Tolerant Ancilla Preparation for Quantum BCH Codes
-- [[fault-tolerant-ancilla-preparation-bch]] - Two-stage fault-tolerant ancilla preparation leveraging cyclic symmetry of quantum BCH codes (arXiv: 2605.19471)
-  - Non-FT preparation + entanglement distillation with cyclic symmetry guidance
-  - Lower spatial overhead than conventional distillation on codes up to 127 qubits
-  - Code-specific distillation protocols using algebraic symmetry structure
-  - **Activation**: quantum BCH code, fault-tolerant ancilla, entanglement distillation, cyclic symmetry, quantum error correction, FTQC, high-rate code
+### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
+- [[quantum-rl-process-synthesis]] - Quantum RL for process synthesis with state encoding algorithms decoupling qubit requirements from problem size (logarithmic vs linear scaling) (arXiv: 2605.21213)
+  - Competitive per-episode performance, improved per-parameter efficiency vs classical RL
+  - Controlled classical vs quantum benchmarking framework for flowsheet synthesis
+  - MDP formulation for process synthesis with economic objective and feasibility constraints
+  - **Activation**: quantum RL process synthesis, quantum process systems engineering, quantum-enhanced RL, flowsheet synthesis, qubit encoding algorithms
 
 ### Quantum-Enhanced Distributed Network Sensing
 - [[quantum-enhanced-distributed-sensing]] - Multiphase estimation using three quantum resources: catalysis, entanglement, and squeezing (arXiv: 2605.19545)
