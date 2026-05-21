@@ -1,205 +1,182 @@
 ---
 name: quantum-rl-process-synthesis
-description: "Quantum reinforcement learning for process systems engineering — state encoding algorithms that decouple qubit requirements from problem size, quantum-enhanced RL for flowsheet synthesis, and scalability patterns. Covers Markov decision process formulation, per-parameter efficiency gains, and controlled classical vs quantum benchmarking. Activation: quantum RL process synthesis, quantum process systems engineering, quantum-enhanced RL, flowsheet synthesis, qubit encoding algorithms."
+description: "Quantum reinforcement learning methodology for process systems engineering — encoding process synthesis as MDPs with state encoding algorithms that decouple qubit requirements from problem size. Applies quantum-enhanced RL to flowsheet synthesis, process optimization, and engineering design spaces. Combines quantum computing with systems engineering for scalable process synthesis."
 ---
 
-# Quantum RL for Process Synthesis
+# Quantum RL Process Synthesis
 
-Methodology for applying quantum reinforcement learning to process synthesis problems, featuring state encoding algorithms that decouple qubit requirements from problem size.
+Quantum reinforcement learning methodology for process systems engineering. Formally poses process synthesis as a Markov decision process (MDP) and solves it with quantum-enhanced RL algorithms. Introduces state encoding algorithms that decouple qubit requirements from problem size, enabling scalable quantum RL for engineering design problems.
 
-## Core Problem
+Based on: *Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing* (arXiv:2605.21213) — Braniff, You & Tian (2026).
 
-Process synthesis (finding optimal flowsheet designs) is combinatorially complex:
-- Design space grows exponentially with unit count
-- Classical RL scales poorly with problem size
-- Earlier quantum RL approaches required qubits scaling with problem complexity
+## Activation Keywords
 
-## Key Innovation: State Encoding Algorithms
+- quantum reinforcement learning process synthesis
+- quantum RL engineering design
+- quantum process optimization
+- flowsheet synthesis quantum
+- quantum MDP process systems
+- 量子强化学习过程综合
+- 量子过程优化
+- quantum systems engineering
 
-The breakthrough is decoupling qubit requirements from problem size:
+## Core Concepts
 
+### Problem Formulation
+
+Process synthesis (designing optimal process flowsheets) is reformulated as a Markov Decision Process:
+- **State**: Current partial flowsheet configuration
+- **Action**: Add/remove/modify a unit operation
+- **Reward**: Economic performance metric (cost, yield, energy)
+- **Terminal**: Complete feasible flowsheet
+
+### State Encoding Algorithm
+
+The key innovation is a state encoding that decouples qubit count from problem size:
+- Traditional quantum RL: qubits scale with design space complexity
+- This approach: fixed qubit encoding via compressed state representation
+- Enables moderate-to-large scale problems on limited quantum hardware
+
+### Quantum RL Algorithms
+
+Three quantum-enhanced RL approaches evaluated:
+1. **Quantum Circuit RL**: Variational quantum circuits as policy networks
+2. **Quantum-enhanced Value Functions**: Quantum amplitude estimation for value estimation
+3. **Hybrid Quantum-Classical**: Classical RL with quantum feature maps
+
+### Benchmarking Framework
+
+- Classical RL baseline under identical training conditions
+- Evaluated across flowsheet synthesis with increasing unit counts
+- Metrics: per-episode performance, per-parameter efficiency, scalability
+
+## Workflow
+
+### Step 1: Problem Encoding
+
+Define the process synthesis problem as an MDP:
+```python
+# Define unit operations and their connections
+units = [...]  # Available process units (reactors, separators, etc.)
+connections = [...]  # Feasible connections between units
+
+# State representation: compressed encoding
+def encode_state(partial_flowsheet, encoding_dim):
+    """Encode partial flowsheet into fixed-dimensional quantum state."""
+    # Map combinatorial design to fixed qubit representation
+    # Key: decouple qubit count from problem size
+    return compressed_encoding
 ```
-Original: qubits ∝ problem_size  (scales poorly)
-New: qubits ∝ log(problem_size)  (scales efficiently)
+
+### Step 2: Quantum Circuit Design
+
+Build parameterized quantum circuits for policy/value:
+```python
+import numpy as np
+
+def quantum_policy_circuit(params, state_encoding, n_qubits, n_layers):
+    """Variational quantum circuit as policy network."""
+    # 1. State preparation: encode MDP state into quantum state
+    # 2. Parameterized layers: trainable quantum gates
+    # 3. Measurement: extract action probabilities
+    # 4. Return: action distribution for RL policy
+    pass
 ```
 
-### Encoding Algorithm Pattern
+### Step 3: Training Loop
 
 ```python
-def encode_state_to_qubits(state, num_units, encoding_bits=8):
-    """
-    Encode process synthesis state into quantum register.
-    
-    Instead of one qubit per unit, use binary encoding
-    of unit configurations.
-    """
-    # Binary encoding of unit selections
-    # N units → log2(N) qubits for selection
-    # Each unit's operating conditions → fixed bits
-    
-    selection_qubits = ceil(log2(num_units))
-    condition_qubits = encoding_bits * num_units  # Can be compressed
-    
-    # Key insight: many unit configurations are equivalent
-    # Use symmetry reduction to further compress
-    return compressed_binary_encoding(state)
+def quantum_rl_training(
+    env,              # Process synthesis environment
+    quantum_circuit,  # Parameterized quantum circuit
+    n_episodes,       # Training episodes
+    learning_rate,    # Optimizer step size
+    encoding_dim      # State encoding dimensionality
+):
+    """Train quantum RL agent for process synthesis."""
+    # For each episode:
+    #   1. Encode current state
+    #   2. Run quantum circuit to get action
+    #   3. Execute action in environment
+    #   4. Compute reward
+    #   5. Update quantum circuit parameters
+    #   6. Track convergence metrics
+    pass
 ```
 
-## MDP Formulation for Process Synthesis
+### Step 4: Scalability Analysis
 
-### State Space
-- Available unit operations
-- Current flowsheet configuration
-- Material/energy balances
+Evaluate across increasing problem sizes:
+- Small: 2-5 unit operations
+- Medium: 6-15 unit operations  
+- Large: 16+ unit operations
+- Compare quantum vs classical on each scale
 
-### Action Space
-- Add/remove unit operations
-- Connect/disconnect streams
-- Adjust operating conditions
+## Key Findings from Research
 
-### Reward Function
-- Economic objective (NPV, profit)
-- Feasibility penalty (constraint violations)
-- Complexity penalty (fewer units preferred)
+1. **Small design spaces**: All approaches (quantum and classical) find optimal solutions
+2. **Moderate scale**: Quantum shows competitive per-episode performance
+3. **Parameter efficiency**: Quantum approaches more efficient per-parameter than classical
+4. **State encoding**: Decoupling qubit count from problem size is critical for scalability
 
-## Performance Patterns
+## Usage Patterns
 
-### Per-Episode Performance
-- **Small design spaces**: Quantum ≈ Classical (both find optimal)
-- **Moderate design spaces**: Quantum competitive per-episode
-- **Key advantage**: Better per-parameter efficiency
+### Pattern 1: Chemical Process Flowsheet Synthesis
+Design optimal chemical process flowsheets using quantum RL:
+- Encode available unit operations
+- Define connection constraints
+- Train quantum RL to find cost-optimal flowsheet
+- Benchmark against classical RL (PPO, DQN, etc.)
 
-### Per-Parameter Efficiency
-```
-Quantum efficiency = (solution_quality / num_parameters)
-Classical efficiency = (solution_quality / num_parameters)
+### Pattern 2: Multi-Objective Process Optimization
+Extend to multi-objective optimization:
+- Combine economic, environmental, safety objectives
+- Use quantum Pareto front estimation
+- Quantum advantage in exploring trade-off surfaces
 
-Quantum / Classical ratio > 1 for moderate+ problems
-```
+### Pattern 3: Real-Time Process Reconfiguration
+Apply to dynamic process reconfiguration:
+- Online MDP formulation
+- Quantum policy transfer across operating conditions
+- Rapid adaptation to feedstock/product changes
 
-## Benchmarking Framework
+## Error Handling
 
-### Controlled Comparison Protocol
+### Qubit Limitations
+- If qubit count exceeds hardware limits: use state encoding compression
+- If circuit depth too deep: reduce layers, use hardware-efficient ansatz
+- If training diverges: switch to hybrid quantum-classical approach
 
-```python
-def benchmark_quantum_vs_classical_rl(problem_sizes):
-    """
-    Controlled benchmark: identical training conditions.
-    """
-    results = []
-    for n_units in problem_sizes:
-        # Same MDP formulation
-        mdp = create_flowsheet_mdp(n_units)
-        
-        # Same training conditions
-        episodes = 1000
-        lr = 0.001
-        gamma = 0.99
-        
-        # Classical RL baseline
-        classical_results = train_and_evaluate(
-            ClassicalRLPolicy(), mdp, episodes, lr, gamma
-        )
-        
-        # Quantum RL variants
-        quantum_results = train_and_evaluate(
-            QuantumRLPolicy(encoding_bits=8), mdp, episodes, lr, gamma
-        )
-        
-        results.append({
-            'units': n_units,
-            'classical_best': classical_results['best_reward'],
-            'quantum_best': quantum_results['best_reward'],
-            'classical_params': classical_results['num_params'],
-            'quantum_params': quantum_results['num_params'],
-        })
-    
-    return results
-```
+### Scalability Issues
+- Large problems: use hierarchical decomposition
+- Combinatorial explosion: apply constraint-based pruning before quantum encoding
+- Memory limits: use variational state compression
 
-## Scalability Analysis
+## Best Practices
 
-| Problem Scale | Classical RL | Quantum RL | Winner |
-|--------------|-------------|-----------|--------|
-| Small (<10 units) | Optimal | Optimal | Tie |
-| Moderate (10-50) | Good | Competitive | Per-param: Quantum |
-| Large (50+) | Degrades | Expected better | Quantum (projected) |
+1. **Always benchmark against classical RL** under identical conditions
+2. **Report per-parameter efficiency** not just per-episode performance
+3. **Use state encoding** that decouples qubit count from problem size
+4. **Start with small problems** to validate framework before scaling
+5. **Track convergence behavior** across different quantum circuit architectures
+6. **Consider hardware constraints** when designing quantum circuits
 
-## Implementation Patterns
+## Limitations
 
-### Pattern 1: Hybrid Quantum-Classical Training
+- Quantum advantage demonstrated for moderate-scale, not yet large-scale
+- Requires careful state encoding design
+- Current results on simulators; hardware execution needs further validation
+- Process synthesis domain-specific; generalization to other domains untested
 
-```python
-class HybridQRLProcessSynthesis:
-    def __init__(self, quantum_layers=2, classical_layers=3):
-        self.quantum_encoder = QuantumStateEncoder()
-        self.classical_policy = ClassicalPolicy(classical_layers)
-        self.quantum_policy = QuantumPolicy(quantum_layers)
-    
-    def select_action(self, state):
-        # Quantum encoding for state compression
-        q_state = self.quantum_encoder.encode(state)
-        
-        # Quantum policy for action selection
-        if self.use_quantum:
-            return self.quantum_policy(q_state)
-        else:
-            return self.classical_policy(state.flatten())
-```
+## Resources
 
-### Pattern 2: Progressive Problem Scaling
-
-```python
-def progressive_scaling(max_units, step=5):
-    """
-    Gradually increase problem size to test scalability.
-    """
-    for n in range(step, max_units + 1, step):
-        mdp = create_flowsheet_mdp(n)
-        results = benchmark(mdp)
-        
-        # Check if quantum advantage emerges
-        if results['quantum_efficiency'] > results['classical_efficiency']:
-            print(f"Quantum advantage at {n} units")
-        
-        yield n, results
-```
-
-## Pitfalls
-
-### Qubit Requirement Blow-up
-- **Problem**: Naive encoding requires too many qubits
-- **Solution**: Use binary/logarithmic encoding with symmetry reduction
-- **Verification**: Verify qubit count = O(log(problem_size))
-
-### Training Instability
-- **Problem**: Quantum circuits can have barren plateaus
-- **Solution**: Use parameterized circuits with careful initialization
-- **Mitigation**: Start from classical solution as warm start
-
-### Simulation Overhead
-- **Problem**: Quantum simulation on classical hardware is slow
-- **Solution**: Use state encoding to minimize simulated qubits
-- **Benchmark**: Profile simulation time vs. classical baseline
-
-## Verification Steps
-
-1. **Encoding correctness**: Verify encoded state can be decoded back
-2. **Scalability**: Test qubit count vs. problem size (should be logarithmic)
-3. **Optimality**: Verify optimal solution found for small problems
-4. **Benchmark reproducibility**: Same results with identical seeds
+- **Paper**: arXiv:2605.21213 — "Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing"
+- **Authors**: Austin Braniff, Fengqi You, Yuhe Tian
+- **Institutions**: West Virginia University, Cornell University
+- **Categories**: quant-ph, cs.AI, cs.LG, math.OC
 
 ## Related Skills
 
-- `quantum-ml-patterns` — General quantum ML patterns
-- `quantum-control-engineering` — Quantum control methodology
-- `qbalance-quantum-workflow-optimization` — Quantum workflow optimization
-- `quantum-neural-hybrid` — Hybrid quantum-classical neural networks
-
-## arXiv Reference
-
-- **Paper**: "Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing"
-- **arXiv**: [2605.21213](https://arxiv.org/abs/2605.21213)
-- **Authors**: Austin Braniff, Fengqi You, Yuhe Tian
-- **Categories**: quant-ph, cs.AI, cs.LG, math.OC
-- **Date**: 2026-05-20
+- **quantum-reinforcement-learning**: General quantum RL methods
+- **process-systems-engineering**: Traditional process synthesis approaches
+- **quantum-optimization-qaoa**: QAOA for combinatorial optimization
