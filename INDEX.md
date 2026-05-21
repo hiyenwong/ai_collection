@@ -1,3 +1,23 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Quantum Viterbi Algorithm
+- [[quantum-viterbi-decoding]] - 将经典Viterbi解码算法扩展到隐量子马尔可夫模型，在连续量子效应流形上优化，证明超越经典对角策略的严格量子优势 (arXiv:2605.18912)
+  - 核心要点 1: HQMM的隐状态是连续流形上的纯量子效应而非离散状态，利用隐记忆中的相干叠加
+  - 核心要点 2: 严格量子优势定理：相干隐轨迹的解码得分严格超过任何约束于对角（交换）效应的经典策略
+  - **Activation**: quantum viterbi, HQMM, hidden quantum Markov model, sequential quantum decoding, quantum advantage, NISQ ML, 量子维特比算法
+
+### Q-SYNTH: Hybrid Quantum-Classical Adversarial Augmentation
+- [[q-synth-hybrid-quantum-gan-fraud]] - 混合经典-量子生成对抗框架，参数量子电路作为生成器、经典神经网络作为判别器，用于不平衡欺诈检测中的少数类合成 (arXiv:2605.21164)
+  - 核心要点 1: 在分布保真度（KS统计量、Wasserstein距离）和下游分类性能之间取得优于经典GAN的平衡
+  - 核心要点 2: 参数量子电路在表格数据生成中展现独特优势，减少边缘分布不匹配
+  - **Activation**: quantum GAN, fraud detection, class imbalance, Q-SYNTH, parameterized quantum circuit, tabular data generation, hybrid quantum-classical
+
+### Leakage-Free Quantum ML Evaluation for Cyber-Physical Systems
+- [[leakage-free-qml-cyber-physical]] - 无人机异常检测中量子ML的无泄漏评估方法，提出时间感知分组协议和三模式特征审计，确保量子优势的统计严谨性 (arXiv:2605.19233)
+  - 核心要点 1: B2时间分组协议消除随机分层划分中混合相邻样本导致的性能膨胀
+  - 核心要点 2: 三模式特征审计量化瞬态物理信号与上下文代理特征的贡献比例
+  - **Activation**: leakage-free evaluation, quantum ML benchmark, cyber-physical anomaly, UAV detection, temporal protocol, feature audit, DRU classifier
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
 ### Flow loops and quantum groups
