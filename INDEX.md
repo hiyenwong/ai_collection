@@ -15,6 +15,21 @@
   - Short-/mid-/long-term horizons toward personalized brain simulation for clinical applications
   - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, brain structure-function, brain dynamics simulation, neural mass model
 
+### Von Economo Neurons Enable Reliable Social Skill Acquisition in Recurrent Spiking Neural Networks
+- [[vencircuit-ven-gradient-scaffold]] - Biologically motivated SNN showing VENs function as residual gradient scaffolds: 2% VENs confer 21x training convergence advantage via direct gradient pathway immune to recurrent Jacobian instabilities, with clinical predictions for ASC vs bvFTD (arXiv: 2605.17399)
+  - VEN-intact networks converge 98% vs 70% ablated (Fisher's OR=21.0, p=8.7×10⁻⁵)
+  - VENs provide O(1) gradient pathway structurally immune to product instabilities
+  - Mid-training ablation (epochs 5-25) most disruptive; inference-time VENs largely dispensable
+  - Predicts timing of VEN loss determines social cognitive consequences (developmental vs adult)
+  - **Activation**: Von Economo neuron, VENCircuit, gradient scaffold SNN, spiking neural network social cognition, residual connections SNN
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - Extreme spatial memory in food-caching birds arises from a topological phase transition from disorganized "mist" to geometrically rigid "crystalline" hippocampal population code, enabling >100x capacity via neural manifold stiffening (arXiv: 2605.17199)
+  - Crystalline codes sustain >1,000 locations vs mist codes failing below 10 (>100x advantage)
+  - Excitatory-inhibitory synergy: excitatory scaffold + inhibitory orthogonal decorrelation
+  - 169-fold "geometric tax" — representational redundancy stabilizing manifold against noise
+  - Double dissociation with Valiant's model confirms continuous topological organization
+  - **Activation**: geometric phase transition, crystalline neural code, hippocampal memory, geometric tax, food-caching birds spatial memory, mist code vs crystalline code
 
 ## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
 
