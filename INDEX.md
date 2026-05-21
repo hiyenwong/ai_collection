@@ -41,6 +41,13 @@
   - 仅0.68B参数实现高竞争力语义重建性能
   - **Activation**: fMRI decoding, Mixture-of-Experts, brain network, visual reconstruction, functional connectivity
 
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[kinematic-zero-shot-bci]] - 运动皮层通过共有的运动学基元(笔划)组合表示手写的计算框架,实现零样本未知字符解码,为文字脑机接口扩展到大字符集语言(中文、日文)建立基础 (arXiv: 2605.19048)
+  - 运动皮层手写表征由共享运动学基元组成,跨字符上下文高度保守
+  - 零样本ML解码器在未见字符上达到64% hits@3检索率
+  - 框架兼容无监督重校准,消除有监督单字母数据采集需求
+  - **Activation**: zero-shot BCI decoding, handwriting iBCI, conserved kinematic representations, motor cortex compositionality, neural dynamics alignment, open-vocabulary neuroprosthetics
+
 
 ## 2026-05-21 - Systems Engineering (Cron Job)
 
