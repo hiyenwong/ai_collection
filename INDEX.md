@@ -23,6 +23,20 @@
 
 ## 2026-05-22 - Neuroscience Research (Cron Job)
 
+### Brain Alignment of Reasoning and Action Representations from VLMs and LAMs During Gameplay
+- [[brain-alignment-vlm-lam-gameplay]] - Vision-language models (VLMs) and large-action models (LAMs) exhibit strong brain alignment with fMRI during naturalistic Atari gameplay, outperforming RL baselines with prompt-driven gains scaling with cortical hierarchy (arXiv:2605.19352)
+  - VLM is prompt-symmetric (12.5% action vs 13.6% reasoning unique variance); LAM is prompt-asymmetric (27% action vs -5% reasoning)
+  - Largest encoding improvements in frontal-parietal and motor-planning regions
+  - Action-specialized fine-tuning reorganizes multimodal representations toward action-relevant neural computations
+  - **Activation**: brain alignment VLM LAM, vision-language model brain encoding, large-action model neural alignment, naturalistic gameplay fMRI, action reasoning representations brain
+
+### Letting the Neural Code Speak: Automated Characterization of Visual Neurons Through Human Language
+- [[neural-code-speak]] - Closed-loop framework using generative models and neural digital twins to translate each neuron's high/low activating images into semantic hypotheses, verified in silico; 96.1% of V4 neurons driven above 95th percentile by hypothesis-generated images (arXiv:2605.12485)
+  - Descriptions range from oriented edges/spatial frequency in V1 to conjunctions of form/color/texture in V4
+  - Language compression is lossy but semantically faithful; RSA shows alignment recovered when hypotheses rendered back into images
+  - Enables agentic scientific discovery for interpretable neural function description at scale
+  - **Activation**: neural code language, automated neuron characterization, neural digital twin visual cortex, closed-loop neuron description, semantic hypothesis neural selectivity, macaque V1 V4 neuron description
+
 ### A Simple Model of Co-Emergence of Grid and Place Fields
 - [[grid-place-co-emergence]] - First unified recurrent network model instantiating Dale's Law where grid and place cells co-emerge from a single sensory-prediction objective without supervision of either type (arXiv:2605.21356)
   - Single-objective RNN trained to predict next sensory observation from masked previous observations and egocentric motion
