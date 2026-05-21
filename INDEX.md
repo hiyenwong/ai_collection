@@ -1,6 +1,16 @@
 
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
+## 2026-05-21 - Systems Engineering Research (Cron Job)
+
+### ReasonSTL: Bridging Natural Language and Signal Temporal Logic via Tool-Augmented Process-Rewarded Learning
+- [[reasonstl-nl-to-stl]] - Tool-augmented framework for translating natural language CPS requirements into STL formulas using process-rewarded training on local open-source LLMs (arXiv: 2605.06483)
+  - 核心要点 1: Three-stage pipeline (Explicit Reasoning → Deterministic Tool Calls → Structured Formula Construction) for NL-to-STL translation
+  - 核心要点 2: Process-rewarded training enables 4B parameter models to achieve SOTA performance while preserving privacy and reducing costs
+  - 核心要点 3: STL-Bench benchmark provides bilingual, computation-aware evaluation grounded in real-world CPS signals
+  - **Activation**: NL-to-STL, signal temporal logic, cyber-physical systems specification, formal methods translation, tool-augmented LLM, process-rewarded learning
+
+
 ### Quantum-Accelerated Deep Reinforcement Learning for Frequency Regulation Enhancement
 - [[quantum-accelerated-control-systems]] - Quantum circuits integrated into DDPG agents for adaptive frequency regulation in power systems (arXiv: 2512.04439)
   - Quantum ansatz embedded in DRL policy network reduces parameters while improving generalization
