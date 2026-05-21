@@ -1,91 +1,50 @@
 ---
 name: platonic-representations-brain
-description: "Demonstrates that subject-specific fMRI representations from visual cortex are approximately isometric across individuals and can be translated through purely geometric transformations. Uses self-supervised learning and unsupervised orthogonal rotations to recover a shared neural geometry."
+description: "Platonic Representations in the Human Brain methodology — unsupervised recovery of universal neural geometry across subjects from fMRI data. Use when: (1) studying cross-subject brain alignment without shared stimuli, (2) applying unsupervised orthogonal rotation / Procrustes to neural embeddings, (3) working with the Strong Platonic Representation Hypothesis in biological neural systems, (4) analyzing shared geometry in human visual cortex from fMRI (NSD dataset), (5) implementing self-supervised fMRI encoders with repeated stimulus presentations. Keywords: platonic representation, universal geometry, cross-subject alignment, fMRI, orthogonal Procrustes, representational similarity, visual cortex, NSD."
 ---
-
 # Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
 
-Extends the Strong Platonic Representation Hypothesis from artificial neural networks to the human brain: fMRI representations from different subjects' visual cortex are approximately isometric and can be aligned through purely geometric transformations without paired data.
+Methodology from arXiv:2605.20496 (May 2026). Authors: Pablo Marcos-Manchón, Rishi Jha, Lluís Fuentemilla.
 
-Based on: *Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry* (arXiv:2605.20496) — Marcos-Manchón, Jha & Fuentemilla (2026).
+## Core Idea
 
-## Activation Keywords
+The Strong Platonic Representation Hypothesis states that independently trained neural networks converge to geometrically similar representations. This paper extends that hypothesis to **biological neural systems** — specifically, the human visual cortex — showing that subject-specific fMRI embedding spaces can be translated across subjects using **only the intrinsic geometry of neural responses**, without shared stimuli or paired supervision.
 
-- platonic representation human brain
-- cross-subject brain alignment unsupervised
-- fMRI representation geometry translation
-- shared neural geometry visual cortex
-- self-supervised brain encoder orthogonal rotation
-- universal latent space brain decoding
-- neural isometry cross-subject
-- 柏拉图表示人脑通用几何
+## Key Results
 
-## Core Innovation
+1. **Self-supervised fMRI encoder**: Learns subject-specific embeddings from fMRI data alone by exploiting repeated stimulus presentations (Natural Scenes Dataset).
 
-### Translating the Platonic Hypothesis to Brains
+2. **Approximately isometric spaces**: Independently learned subject embeddings can be translated via simple unsupervised orthogonal rotations (Procrustes), recovering accurate instance-level cross-subject correspondences.
 
-The Strong Platonic Representation Hypothesis says neural network embeddings can be translated through a universal latent space. This work asks: **Can the same be done across human brains?**
+3. **Common coordinate system**: Synchronizing pairwise rotations into a single shared latent space improves cross-subject retrieval, demonstrating mutual compatibility of subject-specific spaces.
 
-### Key Method
+## Method Details
 
-Using fMRI data from the **Natural Scenes Dataset**:
+### Self-Supervised Encoder
+- Uses repeated stimulus presentations in NSD (each image seen 3 times by each subject)
+- Learns embeddings from brain activity voxels without any image/modal supervision
+- Exploits the fact that repeated presentations of the same stimulus should produce similar neural embeddings
 
-1. **Self-supervised encoder**: Learns subject-specific embeddings from brain data alone by exploiting repeated stimulus presentations (no labels)
-2. **Unsupervised alignment**: Translates embeddings across subjects using orthogonal rotations — no paired cross-subject samples needed
-3. **Joint synchronization**: Aligning all pairwise rotations into a shared latent space further improves retrieval
+### Unsupervised Orthogonal Rotation
+- Given two subject-specific embedding spaces S₁, S₂, finds orthogonal matrix R minimizing ||S₁R - S₂||²
+- No paired cross-subject samples needed — relies on shared stimulus identity across subjects
+- Proves that independently learned spaces are approximately isometric
 
-## Key Findings
+### Shared Latent Space Synchronization
+- Extends pairwise alignment to multi-subject setting
+- Synchronizes all pairwise rotations into one consensus coordinate system
+- Further improves cross-subject retrieval performance
 
-### Evidence for Shared Neural Geometry
+## Dataset
 
-- **Subject-specific fMRI representations** in visual cortex are approximately isometric across individuals
-- **Geometric transformations alone** (orthogonal rotations) suffice for cross-subject translation
-- **Common coordinate system** exists: pairwise synchronizations are mutually compatible
-
-### No Intermediate Models Needed
-
-Unlike prior work that uses intermediate DNN representations to bridge subjects, this approach works with:
-- No intermediate model representations
-- No paired cross-subject training samples
-- No stimulus labels during encoding
-
-## Methodology
-
-### Encoder Architecture
-
-- Self-supervised learning via repeated stimulus presentations
-- Subject-specific embedding spaces
-- fMRI voxel → latent space mapping
-
-### Alignment Procedure
-
-1. Learn independent subject-specific embeddings
-2. Compute pairwise orthogonal rotations between subject spaces
-3. Synchronize rotations into a single shared latent space
-4. Evaluate via cross-subject retrieval performance
+**Natural Scenes Dataset (NSD)**: Large-scale 7T fMRI dataset of subjects viewing complex natural images. Each image is viewed 3 times per subject, enabling self-supervised learning from repetition structure.
 
 ## Implications
 
-### For Neuroscience
+- Provides evidence for shared neural geometry in human visual cortex
+- Suggests that biological brains converge toward similar geometric representations of visual experience
+- Practical applications: cross-subject neural decoding, brain-computer interfaces without subject-specific calibration
+- Bridging the gap between AI representational convergence and neuroscience
 
-- Provides evidence that **neural representations share a universal geometry** across individuals
-- Suggests the visual cortex develops functionally equivalent representations through shared developmental and evolutionary constraints
-- Opens the door to pooling fMRI data across subjects without explicit normalization
-
-### For Brain-Computer Interfaces
-
-- Enables cross-subject zero-shot decoding
-- Reduces need for subject-specific calibration
-- Could generalize to other brain regions and modalities
-
-### For AI
-
-- Biological validation of the Platonic Representation Hypothesis
-- Suggests alignment methods from AI transfer to neural data
-- Potential for brain-to-brain communication frameworks
-
-## Related Work
-
-- [[grid-place-cell-co-emergence]] - Unified model of spatial cell co-emergence
-- [[meta-learning-in-context-brain-decoding]] - Training-free cross-subject brain decoding
-- [[fc-guided-band-selection-bci]] - Subject-adaptive BCI via functional connectivity
+## Activation
+- platonic representation, universal geometry, cross-subject alignment, fMRI alignment, neural geometry, Procrustes alignment, shared latent space, brain representation convergence
