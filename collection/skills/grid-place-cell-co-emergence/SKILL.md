@@ -1,170 +1,71 @@
 ---
 name: grid-place-cell-co-emergence
-description: "Unified recurrent network model demonstrating co-emergence of grid cells and place cells from a single sensory-prediction objective without supervision of either cell type. Shows how complementary spatial codes (grid fields for path integration, place fields for pattern completion) emerge through sensory prediction and ego-motion processing. Activation: grid cells, place cells, spatial navigation, entorhinal cortex, hippocampus, co-emergence, sensory prediction, path integration, Dale's Law, recurrent network."
+description: "First unified recurrent network model implementing Dale's Law that achieves co-emergence of grid cells and place fields from a single sensory-prediction objective without supervision of either cell type. Based on arXiv:2605.21356."
 ---
 
-# Grid and Place Cell Co-Emergence
+# A Simple Model of Co-Emergence of Grid and Place Fields
 
-**arXiv:** 2605.21356v1 [q-bio.NC] | **Published:** 2026-05-21
-**Authors:** Multiple authors
+**arXiv**: 2605.21356 | **Authors**: Zhaoze Wang, Genela Morris, Dori Derdikman, Pratik Chaudhari, Vijay Balasubramanian
 
-## Core Research Question
+First single-objective recurrent network model in which grid cells (medial entorhinal cortex) and place cells (hippocampus) co-emerge without supervision of either type, addressing the chicken-and-egg problem of spatial representation development.
 
-**How do grid cells and place cells co-emerge during development?**
+## Key Contributions
 
-This paper introduces the first unified recurrent network model in which grid and place cells co-emerge from a single sensory-prediction objective, without supervision of either type or reliance on pre-existing spatial-cell representations.
+1. **First co-emergence model**: Unified recurrent network with Dale's Law trained on sensory-prediction objective produces both grid and place fields simultaneously
+2. **1,000+ config robustness**: Both spatial codes coexist across all tested training configurations; balance controlled by sensory noise/masking
+3. **Two complementary pressures**: (1) Sensory reconstruction/pattern completion → place fields, (2) Motion prediction/path integration → grid fields
+4. **Qualitative experimental reproduction**: Grid fragmentation, wall-removal merging, lattice alignment, 3D bat fields, developmental ordering (place cells precede grid cells)
 
-## The Chicken-and-Egg Problem
-
-Grid cells (medial entorhinal cortex) and place cells (hippocampus) are reciprocally connected:
-- **Grid cells** → project to place cells via the perforant path
-- **Place cells** → project back to grid cells via subiculum → deep entorhinal layers
-
-This reciprocal connectivity creates a paradox: which type emerges first, and how do they reinforce each other during development?
-
-Previous approaches:
-- Derive one type from the other (asymmetric development)
-- Model emergence of one type in isolation
-- Use separate objectives or specialized loss functions
-
-## Core Innovation
-
-A **unified single-objective model** in which both spatial codes emerge simultaneously:
-
-### Architecture
-- Recurrent network with **Dale's Law** (every neuron is either excitatory or inhibitory)
-- Trained to predict next sensory observation from masked previous observations and egocentric motion
-- No spatial supervision — only sensory prediction
-
-### Dual Encoding Pressures
-The model reveals two complementary pressures within a single objective:
-
-1. **Pattern Completion Pressure**: Correcting errors / reconstructing missing components of sensory observations
-   - → Drives **place cell-like** representations (pointing field)
-   
-2. **Path Integration Pressure**: Predicting next sensory state during navigation
-   - → Drives **grid cell-like** representations (periodic, hexagonal)
-
-## Key Results
-
-### 1. Co-Emergence Across 1,000 Configurations
-Both spatial codes coexist across 1,000 different training configurations
-- Robust phenomenon, not a lucky hyperparameter choice
-
-### 2. Balance Controlled by Sensory Noise/Masking
-The relative strength of grid vs. place representations is set by:
-- **Sensory noise**: Higher noise → stronger place fields
-- **Input masking**: More masking → stronger grid fields
-- This reveals a **resource allocation trade-off** between the two coding strategies
-
-### 3. Qualitative Reproduction of Known Phenomena
-
-| Phenomenon | Model Reproduction |
-|---|---|
-| **Grid fragmentation in hairpin mazes** | Grid fields break/remap at maze corners |
-| **Grid merging after wall removal** | Grid fields realign when barriers removed |
-| **Lattice alignment across connected rooms** | Grid fields maintain relative alignment |
-| **3D grid fields (freely flying bats)** | Locally ordered 3D structure emerges |
-| **Developmental order: place cells before grid cells** | Place fields stabilize earlier |
-
-### 4. Developmental Predictions
-- Place cells stabilize earlier in training → consistent with experimental observations
-- Grid cells develop more gradually → reach full maturity later
-
-## Theoretical Framework
-
-### Sensory Prediction as Universal Objective
-The model treats spatial navigation as a **sensory prediction problem**:
-- Input: Masked/partial sensory observations + egocentric motion
-- Output: Predicted next sensory state
-- The network must learn spatial structure to make accurate predictions
-
-### Two Complementary Codes
-
-| Property | Grid Cells | Place Cells |
-|---|---|---|
-| **Function** | Path integration | Pattern completion |
-| **Representation** | Periodic, hexagonal lattice | Localized, single-peaked |
-| **Driven by** | Motion prediction pressure | Sensory reconstruction pressure |
-| **Robustness** | Resistant to sensory noise | Sensitive to sensory features |
-| **Development** | Gradual, later maturation | Faster, earlier stabilization |
-
-## Implications
-
-### For Neuroscience
-- Provides a **circuit-level account** of how two fundamental spatial codes arise
-- Explains why both grid and place cells exist — they serve complementary roles within a unified predictive framework
-- Makes testable predictions about developmental sequence
-
-### For AI
-- Demonstrates that complex spatial representations can emerge from a simple prediction objective
-- Shows how different neural codes can specialize within a single network
-- Relevant for navigation in embodied AI agents
-
-### For Navigation Theory
-- Reconciles conflicting theories: both grid-centric and place-centric accounts are partially correct
-- The key insight is the **dual pressure** within sensory prediction
-
-## Methodology
+## Method
 
 ### Network Architecture
-- Recurrent neural network with Dale's Law
-- Excitatory/inhibitory neuron populations
-- Inputs: sensory observations + egocentric motion (velocity, heading)
-- Output: predicted next sensory observation
+- Recurrent neural network with Dale's Law (each neuron is either excitatory or inhibitory)
+- Trained via sensory prediction: predict next sensory observation from masked previous observations and egocentric motion
+- No spatial labels, no place/grid cell supervision
 
-### Training
-- Objective: minimize prediction error
-- Self-supervised (no spatial labels)
-- Masking strategy: randomly occlude portions of sensory input
+### Training Objective
+- **Reconstruction pressure**: Correct errors and reconstruct masked components of sensory observations
+- **Prediction pressure**: Predict next sensory state during navigation
+- The balance between these two pressures determines the grid vs. place field distribution
 
-### Analysis
-- Identify grid cells: spatial firing rate maps, gridness score
-- Identify place cells: spatial information score, field localization
-- Compare gridness scores across conditions
+### Validation
+- Tested across 1,000 different training configurations (varying noise, masking, network size)
+- Compared against experimental data: hairpin maze grids, wall removal, connected rooms, 3D bat flight
+- Developmental trajectory analysis: place cells emerge before grid cells
 
-## Experimental Predictions
+## Key Findings
 
-1. **Developmental delay**: Grid cells should show delayed maturation relative to place cells
-2. **Dual modulation**: Manipulations that affect sensory noise should differentially impact grid vs. place codes
-3. **Lesion predictions**: Disrupting predictive coding should affect both cell types but in different ways
+### Grid Cells for Path Integration
+- Grid-like firing patterns emerge from the motion prediction (path integration) objective
+- Hexagonal grid tessellation of spatial environment
+- Phase relationships and scale organization match experimental observations
 
-## Open Questions
+### Place Cells for Pattern Completion
+- Place-like fields emerge from the sensory reconstruction objective
+- Sparse, localized firing in specific spatial locations
+- Remapping properties consistent with hippocampal place cells
 
-1. Does the same dual-pressure mechanism operate in biological development?
-2. How do the two codes interact during active navigation vs. replay?
-3. Can the model scale to richer sensory environments?
-4. What is the role of hippocampal theta oscillations in coordinating the two codes?
+### Emergent Properties
+- Grid fragmentation in hairpin mazes reproduces experimental findings
+- Grid field merging after wall removal matches observations
+- Lattice alignment across connected rooms
+- 3D volumetric grid fields in simulated bat flight
+- Developmental order: place cells before grid cells
 
-## Activation Keywords
+## When to Use
 
-- grid cells
-- place cells
-- spatial navigation
-- entorhinal cortex
-- hippocampus
-- co-emergence
-- sensory prediction
-- path integration
-- pattern completion
-- Dale's Law
-- recurrent network
-- spatial representation
-- developmental neuroscience
-- grid cell development
-- place field formation
-- self-supervised learning navigation
-- neural coding spatial
+- Modeling spatial navigation and hippocampal-entorhinal circuits
+- Understanding neural code development without supervision
+- Studying grid/place cell interactions and co-emergence
+- Exploring sensory-prediction as a unified learning objective
+- Developing biologically-plausible spatial representations in AI
 
 ## Related Skills
 
-- **grid-cell-normative-theory-review**: Normative theory of grid cell representations
-- **hippocampal-entorhinal-world-model**: Brain-inspired hierarchical world model
-- **neural-population-dynamics**: Methods for analyzing neural population dynamics
-- **attractor-models-language-reasoning**: Attractor models for neural computation
-- **generative-brain-dynamics-models**: Generative models for brain dynamics
+- [[platonic-representations-brain]] - Cross-subject neural geometry alignment
+- [[hippocampal-entorhinal-world-model]] - HPC-MEC inspired hierarchical world models
+- [[grid-cell-normative-theory-review]] - Normative theory review of grid cell representations
 
-## References
+## Activation Keywords
 
-- arXiv: [2605.21356](https://arxiv.org/abs/2605.21356)
-- PDF: [Download](https://arxiv.org/pdf/2605.21356)
+grid cells, place cells, co-emergence, sensory prediction, path integration, entorhinal cortex, hippocampus, Dale's Law, spatial navigation, recurrent neural network, self-supervised spatial learning, grid field development, hippocampal place fields, 3D grid fields, neural development ordering
