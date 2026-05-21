@@ -1,4 +1,41 @@
 
+## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Quantum Koopman Algorithms
+- [[quantum-koopman-algorithms]] - Observable-space framework for simulating linear quantum and nonlinear classical system dynamics (arXiv: 2605.19054)
+  - Dynamic-QKA for initial-value problems, Spectral-QKA for eigenvalue analysis
+  - O(polylog(N)) gate cost for free fermion-bath systems — exponential improvement
+  - Nonlinear interaction-picture quantum algorithm for perturbative expansions
+  - **Activation**: quantum koopman, QKA, observable-space dynamics, nonlinear dynamics simulation, quantum ODE solver, spectral analysis quantum
+
+### Efficient Fault-Tolerant Ancilla Preparation for Quantum BCH Codes
+- [[fault-tolerant-ancilla-preparation-bch]] - Two-stage fault-tolerant ancilla preparation leveraging cyclic symmetry of quantum BCH codes (arXiv: 2605.19471)
+  - Non-FT preparation + entanglement distillation with cyclic symmetry guidance
+  - Lower spatial overhead than conventional distillation on codes up to 127 qubits
+  - Code-specific distillation protocols using algebraic symmetry structure
+  - **Activation**: quantum BCH code, fault-tolerant ancilla, entanglement distillation, cyclic symmetry, quantum error correction, FTQC, high-rate code
+
+### Quantum-Enhanced Distributed Network Sensing
+- [[quantum-enhanced-distributed-sensing]] - Multiphase estimation using three quantum resources: catalysis, entanglement, and squeezing (arXiv: 2605.19545)
+  - Partial catalysis outperforms global catalysis in both ideal and noisy regimes
+  - Precision approaches Heisenberg limit with full three-resource combination
+  - Homodyne measurement scheme approaching quantum Cramer-Rao bound
+  - **Activation**: quantum distributed sensing, multiphase estimation, quantum catalysis, entanglement squeezing, Heisenberg limit, DQN sensing, homodyne measurement
+
+### Attack-Resilient CLF-CBF Quadratic Programs
+- Paper: "A Unified Framework for Attack-Resilient CLF-CBF Quadratic Programs for Nonlinear Control-Affine Systems" (arXiv: 2605.20144)
+  - AR-CLFs and AR-CBFs for false data injection attack resilience
+  - Finite-time recovery to nominal safe set without prior magnitude bounds
+  - Unified QP enforcing stability and safety simultaneously
+  - **Already covered by existing skills**: advanced-control-systems-2026, discounted-mpc-robust-control
+
+### Risk-Aware Covert Quantum Communication
+- Paper: "A Risk-Aware Framework for Covert Quantum Communication under Stochastic Channel Uncertainty" (arXiv: 2605.18928)
+  - Combines quantum communication theory with robust control principles
+  - Secure quantum network design under stochastic channel uncertainty
+  - **Already covered by existing skills**: covert-quantum-computing, dependable-quantum-systems
+
+
 
 ## 2026-05-21 - Medicine + Quantum Mechanics (Cron Job)
 
