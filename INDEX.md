@@ -36,6 +36,22 @@
   - **Already covered by existing skills**: covert-quantum-computing, dependable-quantum-systems
 
 
+### Quantum Distributed Sensor Fusion with Byzantine Tolerance
+- [[quantum-distributed-sensor-fusion]] - Unified MSE lower bounds for distributed quantum sensor fusion indexed by entanglement visibility and fault fraction (arXiv: 2605.19327)
+  - Two-parameter MSE family: entanglement visibility (V) and fault fraction (f/M)
+  - Heisenberg-limited precision achievable with full entanglement and no faults
+  - Classical Brooks-Iyengar overlap + SPOTLESS verification adapted for quantum sensors
+  - Three quantum resources (catalysis + entanglement + squeezing) outperform any two
+  - **Activation**: quantum sensor fusion, byzantine-tolerant quantum sensing, distributed quantum sensing, entanglement visibility bounds, quantum sensor network reliability
+
+### Quantum Workflow Resource Allocation
+- [[quantum-workflow-resource-allocation]] - System-aware resource allocation for distributed quantum computing workflows in cloud platforms (arXiv: 2605.17944)
+  - Multi-dimensional matching: program requirements × processor characteristics × queue state × cost
+  - Dynamic reallocation based on quantum processor health monitoring
+  - Workflow decomposition across heterogeneous quantum processors
+  - **Activation**: quantum resource allocation, quantum workflow scheduling, quantum cloud resource management, distributed quantum computing workflow, quantum program allocation
+
+
 
 ## 2026-05-21 - Medicine + Quantum Mechanics (Cron Job)
 
