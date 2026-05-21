@@ -1,4 +1,15 @@
 
+## 2026-05-21 - Quantum ML + VQA Optimization (Cron Job)
+
+### Accelerating Noisy Variational Quantum Algorithms with Physics-Informed Denoising Networks
+- [[pidn-vqa-denoising]] - Physics-Informed Denoising Network (PIDN) reduces Zero-Noise Extrapolation cost by ~4-6× by learning a surrogate of optimization dynamics, preserving gradient directionality while slashing circuit executions (arXiv: 2605.02066)
+  - View variational update as trajectory in parameter space → train PIDN to reproduce ZNE-mitigated values
+  - Physics-informed loss preserves gradient descent dynamics (cosine similarity with ZNE >0.95)
+  - Benchmarked on QAOA (MaxCut, SK, TFIM) and VQE (LiH, BeH₂, H₂O) across all molecular systems
+  - PIDN fails only when ZNE itself becomes unreliable — robust failure mode
+  - Ablation confirms physics-informed loss is necessary for directional consistency
+  - **Activation**: PIDN, physics-informed denoising, ZNE acceleration, noisy VQA, quantum error mitigation surrogate, gradient-preserving denoising, NISQ optimization, circuit reduction
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ## 2026-05-21 - Systems Engineering Research (Cron Job)
