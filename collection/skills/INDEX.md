@@ -1,3 +1,19 @@
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
+- [[platonic-representations-brain-universal-geometry]] - Evidence for shared neural geometry — subject-specific fMRI representations in visual cortex are approximately isometric across individuals and translatable via unsupervised orthogonal rotations (arXiv: 2605.20496)
+  - Self-supervised encoder learns subject-specific embeddings from fMRI alone via repeated stimulus presentations
+  - Individually learned spaces can be translated across subjects using unsupervised orthogonal rotations, without paired samples
+  - Synchronizing pairwise rotations into a shared latent space further improves cross-subject retrieval
+  - **Activation**: platonic representation, universal geometry, brain representation, cross-subject alignment, fMRI, visual cortex, isometric embedding, Natural Scenes Dataset
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment
+- [[target-space-recovery-profiles-brain-alignment]] - Unified framework identifying which reproducible brain response dimensions are recovered by model predictions, revealing prediction accuracy alone can mask model-brain mismatches (arXiv: 2605.20127)
+  - Reproducible brain response dimensions identified via repeated fMRI trial splits in Natural Scenes Dataset
+  - Early-to-intermediate visual cortex contains a low-dimensional set of reproducible dimensions
+  - Pretrained and random-initialized models can match in accuracy while showing distinct recovery profiles
+  - **Activation**: brain alignment, model evaluation, fMRI encoding models, prediction accuracy, response dimensions, visual cortex, target-space recovery
+
 ## 2026-05-19 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Weather Forecasting
