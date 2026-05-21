@@ -1,4 +1,21 @@
 
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
+- [[platonic-representations-brain-universal-geometry]] - Evidence for a shared neural geometry in human visual cortex where subject-specific fMRI representations are approximately isometric and translatable via unsupervised geometric transformations (arXiv: 2605.20496)
+  - Self-supervised encoder learns subject-specific fMRI embeddings from repeated stimulus presentations
+  - Unsupervised orthogonal rotation alignment translates independently learned brain spaces across subjects
+  - Shared latent space via synchronized pairwise rotations improves cross-subject retrieval
+  - **Activation**: platonic representation, universal brain geometry, cross-subject fMRI alignment, isometric neural embedding, unsupervised brain translation, visual cortex representation
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm integrating structural brain grounding, continuous-time dynamical realism, and task-performing cognitive capacity (arXiv: 2605.18118)
+  - Four minimal criteria: structural grounding, dynamical realism, functional competence, mappable observables
+  - Three-pillar roadmap bridging bottom-up WBM and top-down neuroconnectionism
+  - Short-/mid-/long-term horizons toward personalized brain simulation for clinical applications
+  - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, brain structure-function, brain dynamics simulation, neural mass model
+
+
 ## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Quantum Koopman Algorithms
