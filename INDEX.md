@@ -1,5 +1,12 @@
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
+### Evidence of Quantum Machine Learning Advantage with Tens of Noisy Qubits
+- [[quantum-ml-advantage-noisy]] - Demonstrates coherent quantum ML advantage at 30-40 noisy qubits scale; data acquisition becomes the fundamental bottleneck over classical computation (arXiv:2605.21346)
+  - Coherent quantum processing shows clear performance separation vs fixed-measurement schemes under realistic hardware noise
+  - At 30-40 qubit scale, measure-first matching requires months to years of data collection
+  - Systematic hardware constraint evaluation framework: state prep, gate errors, readout, connectivity, coherence times
+  - **Activation**: quantum ml advantage, noisy qubits, qml benchmark, coherent processing, quantum data acquisition, NISQ machine learning, 量子机器学习优势
+
 ### An Entropy-Governed Speedup for Quantum Algorithms on Local Hamiltonians
 - [[entropy-governed-quantum-speedup]] - Faster quantum algorithm for low-energy estimation on k-local Hamiltonians that breaks the Grover bound O(2^{n/2}) by targeting depth-d state energy minimums (arXiv:2605.18241)
   - Outputs quantum state with energy bounded by minimum over all depth-d circuits
