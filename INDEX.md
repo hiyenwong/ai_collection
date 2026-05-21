@@ -35,6 +35,15 @@
 - Part of quantum-systems-engineering-2026 - Energy optimization methodology (arXiv:2605.19854)
   - Quantum energetic advantage before computational advantage at >26 qubits
 
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### Coupling-Phase Engineering for Giant-Atom Waveguide QED Systems
+- [[coupling-phase-giant-atom-control]] - Use coupling phase to control bound states in the continuum (BICs) and quantum dynamics in nonlocal light-matter interfaces (arXiv: 2605.17878)
+  - Core: Giant atoms couple to waveguides at multiple spatially separated points, enabling interference-based BIC engineering
+  - Pattern: Coupling phase modulation controls BIC number, profile, and dynamical behavior
+  - Applications: Quantum state trapping, protected quantum information processing, giant-atom quantum networks
+  - **Activation**: giant atom, waveguide QED, bound state in continuum, coupling phase engineering, BIC quantum, 量子巨原子, 连续谱束缚态
+
 ## 2026-05-21 - Systems Engineering (Cron Job)
 
 ### Modeling and Resource Optimization for Quantum Oracles
