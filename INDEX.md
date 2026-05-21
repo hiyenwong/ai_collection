@@ -53,6 +53,21 @@
   - Evidence for shared universal neural geometry across individuals in visual cortex
   - **Activation**: platonic representation human brain universal geometry, fMRI cross-subject unsupervised alignment, shared neural geometry visual cortex, deep learning brain representation translation, 柏拉图表征人脑视觉皮层通用几何
 
+
+### MLLM Brain Alignment via Task-Conditioned Probing
+- [[mllm-brain-alignment-task-probing]] - Instruction-tuned MLLMs show higher brain alignment than non-IT models during naturalistic movie watching; reveals task-specific neural representations across brain regions (arXiv:2506.08277)
+  - IT-MLLMs achieve ~9-20% higher brain alignment vs baselines
+  - Task-specific instructions produce distinct MLLM representations across brain regions
+  - ICL models show strong semantic coupling (r=0.78) while IT-MLLMs show weak semantic coupling (r=0.14)
+  - **Activation**: brain-MLLM alignment, instruction-tuned MLLM, task-conditioned probing, fMRI encoding
+
+### E-ReCON: Energy-Efficient nvCIM Macro for SNN/CNN Edge Inference
+- [[erecon-snn-nvcim-hardware]] - 16Kb energy- and resource-efficient DCIM macro with 3T1R ReRAM bitcell supporting both CNN and SNN workloads (arXiv:2605.20717)
+  - Novel 3T1R bitcell with AND-based in-memory multiplication for dual workload support
+  - Interleaved 10T/28T adder tree reduces transistor count by 37% and power by 28%
+  - Achieves 419 TOPS/W energy efficiency at 2.31-3.1 TOPS throughput
+  - 2A2W precision matches FP32 baseline accuracy across VGG/ResNet on ImageNet
+  - **Activation**: nvCIM, ReRAM CIM, SNN hardware accelerator, neuromorphic hardware macro
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### Closed-Form Predictive Coding via Hierarchical Gaussian Filters
@@ -69,7 +84,22 @@
   - Extends to Pearl's rung-3 counterfactual reasoning
   - **Activation**: vacoal, hyperdimensional computing, algebraic mind, Gary Marcus, reversible variable binding, Galois fields, PyVaCoAl
 
-## 2026-05-21 - Systems Engineering (Cron Job)
+### MLLM Brain Alignment via Task-Conditioned Probing
+- [[mllm-brain-alignment-task-probing]] - Instruction-tuned MLLMs show higher brain alignment than non-IT models during naturalistic movie watching; reveals task-specific neural representations across brain regions (arXiv:2506.08277)
+  - IT-MLLMs achieve ~9-20% higher brain alignment vs baselines
+  - Task-specific instructions produce distinct MLLM representations across brain regions
+  - ICL models show strong semantic coupling (r=0.78) while IT-MLLMs show weak semantic coupling (r=0.14)
+  - **Activation**: brain-MLLM alignment, instruction-tuned MLLM, task-conditioned probing, fMRI encoding
+
+### E-ReCON: Energy-Efficient nvCIM Macro for SNN/CNN Edge Inference
+- [[erecon-snn-nvcim-hardware]] - 16Kb energy- and resource-efficient DCIM macro with 3T1R ReRAM bitcell supporting both CNN and SNN workloads (arXiv:2605.20717)
+  - Novel 3T1R bitcell with AND-based in-memory multiplication for dual workload support
+  - Interleaved 10T/28T adder tree reduces transistor count by 37% and power by 28%
+  - Achieves 419 TOPS/W energy efficiency at 2.31-3.1 TOPS throughput
+  - 2A2W precision matches FP32 baseline accuracy across VGG/ResNet on ImageNet
+  - **Activation**: nvCIM, ReRAM CIM, SNN hardware accelerator, neuromorphic hardware macro
+
+## 2026-05-22
 
 ### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
 - [[quantum-systems-engineering-2026]] - Quantum systems engineering methodology covering sidecar architectures, resource allocation, energetic optimization, and RL-based process synthesis via quantum computing (arXiv:2605.21213)
