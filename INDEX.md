@@ -1,4 +1,43 @@
 
+
+## 2026-05-21 - Medicine + Quantum Mechanics (Cron Job)
+
+### GKSL Dynamics for Quantum-Like Cognition and Decision Making
+- [[gksl-quantum-cognition]] - Updated with arXiv:2604.18643 (GKSL master equation for cognitive psychology)
+  - Passive/Active Hamiltonian classification for detecting cognitive agency
+  - Cognitive beats as spectral diagnostic for nested deliberation timescales
+  - Non-Nash equilibrium stabilization in strategic games via dissipative quantum models
+  - **Activation**: GKSL quantum cognition, quantum-like decision making, cognitive beats
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+- [[adaptive-hybrid-quantum-classical-feature-fusion-medical]] - arXiv:2604.22903
+  - Complementarity analysis between quantum and classical feature spaces for medical imaging
+  - Temperature-scaled hybrid fusion (TSHF) resolves quantum-classical optimization asymmetries
+  - Hilbert space mapping enhances breast cancer classification with limited qubit budgets
+  - **Activation**: hybrid quantum-classical feature fusion, TSHF, breast cancer quantum, medical image quantum ML
+
+### Tensor-Network Federated Medical Diagnosis with MPC Security
+- [[tensor-network-quantum-federated]] - arXiv:2604.01616
+  - Privacy-aware federated learning: tensor-network frontend + MPC aggregation + quantum refinement
+  - Tensor-network compression enables quantum processing with minimal qubit requirements
+  - Post-aggregation quantum enhancement improves diagnostic accuracy across distributed sites
+  - **Activation**: federated quantum learning, tensor network medical, MPC privacy healthcare
+
+### HQNN Breast Cancer Thermographic Classification
+- [[hybrid-quantum-medical-thermographic]] - arXiv:2604.16953
+  - Hybrid quantum-classical neural networks for breast cancer thermographic imaging
+  - Quantum circuits embedded in classical layers for enhanced thermal pattern recognition
+  - Medical diagnosis using infrared thermal signatures with quantum enhancement
+  - **Activation**: HQNN thermographic, breast cancer thermal, quantum medical imaging
+
+### Tensor Network Feature Engineering for Neurological Disorder Prediction
+- [[tensor-network-neurological-predictor]] - arXiv:2605.17771
+  - Multi-class neurological disorder prediction using tensor network feature engineering
+  - Medical feature extraction from imaging data via tensor decomposition methods
+  - Classification pipeline for diverse neurological conditions
+  - **Activation**: tensor network neurological, multi-class disorder prediction, medical feature engineering
+
+
 ## 2026-05-21 - Quantum ML + VQA Optimization (Cron Job)
 
 ### Accelerating Noisy Variational Quantum Algorithms with Physics-Informed Denoising Networks

@@ -23,6 +23,24 @@ Model mental state evolution as a dissipative process using the GKSL master equa
 - **Strategic Games**: GKSL dynamics stabilize non-Nash outcomes (e.g., cooperation in Prisoner's Dilemma)
 - **Nested Timescales**: Multiple deliberation frequencies produce spectral diagnostic of cognitive depth
 
+## Application Patterns
+
+### Pattern 1: Cognitive Agency Detection
+Use non-commutation of Hamiltonian with decision basis projections to identify true cognitive agency (quantum escape from classical equilibria).
+
+### Pattern 2: Cognitive Beats Analysis
+When multiple deliberation flows operate at similar frequencies, extract beat envelope as spectral diagnostic for depth of cognitive processing.
+
+### Pattern 3: Strategic Game Stabilization
+Apply GKSL Liouvillian channels to stabilize non-Nash equilibrium outcomes in game-theoretic scenarios.
+
+## Resources
+
+- **arXiv:2604.18643** — GKSL dynamics for quantum-like cognition and decision making
+  - Passive/Active Hamiltonian classification for cognitive agency detection
+  - Cognitive beats as nested timescale diagnostic
+  - Non-Nash stabilization via dissipative quantum models
+
 ## Activation Keywords
 - GKSL quantum cognition
 - quantum-like decision making
