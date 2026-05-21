@@ -1,3 +1,26 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### An Entropy-Governed Speedup for Quantum Algorithms on Local Hamiltonians
+- [[entropy-governed-quantum-speedup]] - Faster quantum algorithm for low-energy estimation on k-local Hamiltonians that breaks the Grover bound O(2^{n/2}) by targeting depth-d state energy minimums (arXiv:2605.18241)
+  - Outputs quantum state with energy bounded by minimum over all depth-d circuits
+  - Provides insight into distinguishing strongly entangled vs classically describable states
+  - For Hamiltonians with depth-d ground states, matches Buhrman et al. (PRL 2025) guarantees but faster
+  - **Activation**: entropy-governed speedup, local Hamiltonian, depth-d states, Grover bound, quantum complexity, low-energy estimation, state preparation, 熵调控量子加速
+
+### Statistical Quantum Phase Estimation: Extensions and Practical Considerations
+- [[statistical-quantum-phase-estimation]] - SQPE refinements for early fault-tolerant quantum computers: handles negative Pauli weights, changepoint detection without overlap estimates, 2x sample reduction via Fourier symmetry (arXiv:2605.18876)
+  - Generalizes random compilation for arbitrary-sign Pauli weights in LCU decomposition
+  - Changepoint detection replaces overlap-dependent GSE estimation (no chicken-and-egg problem)
+  - Fourier series symmetry halves circuit runs while maintaining accuracy
+  - **Activation**: statistical quantum phase estimation, SQPE, ground state energy, changepoint detection, LCU decomposition, Pauli weights, Fourier symmetry, early fault-tolerant quantum computing
+
+### Circuits of Quantum Hashing and Quantum Fourier Transform for a Cactus as a Qubit Connectivity Graph
+- [[quantum-hashing-qft-connectivity]] - O(n^2*m) quantum circuit optimization for quantum hashing and QFT on cactus graph connectivity, improving over exponential-time algorithm for arbitrary graphs (arXiv:2605.20789)
+  - Uses shortest non-simple 1-covering path as polynomial-time subroutine
+  - Applies to NISQ devices with restricted qubit connectivity (IBM Q, Rigetti)
+  - Independently useful graph theory result for cactus graphs
+  - **Activation**: quantum hashing, quantum fingerprinting, qubit connectivity graph, cactus graph, QFT optimization, quantum circuit compilation, 1-covering path, NISQ routing
+
 ## 2026-05-22 - Neuroscience Research (Cron Job)
 
 ### A Simple Model of Co-Emergence of Grid and Place Fields
