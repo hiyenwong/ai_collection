@@ -18,6 +18,14 @@
 
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
+### Stimulus Symmetries Can Confound Representational Similarity Analyses
+- [[stimulus-symmetries-rsm-confound]] - Demonstrates that stimulus symmetries in network inputs cause functionally-equivalent neural representations to produce different, drifting RSM geometries, challenging common assumptions in RSA/CKA analyses (arXiv: 2605.21324)
+  - Formal proof that stimulus symmetries produce gauge-dependence in RSMs — functionally equivalent codes yield different geometries
+  - SGD/energy regularization drives RSMs to drift over training via sparse, manifold-tiling codes
+  - Phenomena persist in image-trained networks with latent (not explicit) symmetries
+  - Challenges the assumption that RSM invariance to rotation captures all meaningful equivalence
+  - **Activation**: representational similarity analysis, RSM gauge dependence, stimulus symmetry, RSA confound, neural code comparison, drifting representations, representational geometry, functionally equivalent representations, neural manifold tiling, CKA limitations, RSA robustness, stimulus invariance
+
 ### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
 - [[platonic-representations-brain-universal-geometry]] - Evidence for a shared neural geometry in human visual cortex where subject-specific fMRI representations are approximately isometric and translatable via unsupervised geometric transformations (arXiv: 2605.20496)
   - Self-supervised encoder learns subject-specific fMRI embeddings from repeated stimulus presentations
