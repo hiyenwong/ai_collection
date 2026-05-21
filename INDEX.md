@@ -46,6 +46,14 @@
 
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
+### QUTest: A Native Testing Framework for Quantum Programs
+- [[quantum-native-testing-framework]] - Native OpenQASM 3 testing framework with pragma-based assertions, 12 assertion types, linter, and CI integration for quantum programs (arXiv: 2605.19736)
+  - Both programs and tests are standard .qasm files using //% pragma comments
+  - 12 assertion types: deterministic, statistical, quantum-state, and structural checks
+  - Environment-aware mode for cross-runtime testing (Qiskit, Cirq, Qulacs)
+  - CLI with auto test discovery, compatibility checks, and JUnit XML reports
+  - **Activation**: quantum native testing, openqasm testing framework, quantum test assertions, quantum program testing, qasm test framework, quantum CI testing, pragma quantum testing, 量子测试框架
+
 ### PIQC: Scalable Distributed Quantum Computing via Photonic Integration of Designed Molecular Quantum Nodes
 - [[piqc-distributed-quantum-computing]] - Scalable distributed quantum computing architecture using photonic integration of designed molecular quantum nodes (NV/SiV centers in diamond) with nanophotonic waveguide networks for entanglement distribution (arXiv: 2605.21204)
   - NV/SiV centers as quantum processing nodes with long coherence times
