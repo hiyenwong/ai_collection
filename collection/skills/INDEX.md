@@ -1,3 +1,23 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Modeling and Resource Optimization for Quantum Oracles
+- [[quantum-oracle-optimization]] - HRSE model and ASDT algorithm for optimal quantum oracle resource allocation under qubit constraints (arXiv: 2605.21380)
+  - HRSE model enables formal oracle description and precise gate complexity analysis
+  - ASDT algorithm reduces circuit depth by ~54% vs W-cycle under fixed qubit constraint
+  - **Activation**: quantum oracle, HRSE, ASDT, oracle optimization, circuit depth, gate complexity
+
+### An Exponential Sample-Complexity Advantage for Coherent Quantum Inference
+- [[coherent-quantum-inference]] - Coherent quantum inference achieving exponential sample-complexity advantage over incoherent protocols (arXiv: 2605.21457)
+  - Coherent protocols achieve O(1/eps) vs Omega(d/eps) sample complexity for purity amplification
+  - Entanglement-breaking limit identifies optimal incoherent counterpart
+  - **Activation**: coherent quantum inference, quantum purity amplification, sample complexity
+
+### Flow loops and quantum groups
+- [[flow-loops-quantum-groups]] - Connecting quantum group invariants with Morse flow dynamics for knot theory (arXiv: 2605.21382)
+  - Morse flow loop counting yields two-variable series invariants for fibered knots
+  - Proven correspondence with BPS q-series from quantum group Verma modules for braid-homogeneous knots
+  - **Activation**: flow loops, quantum groups, knot invariants, Morse flows, BPS q-series
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### Quantum End-to-End Learning for Contextual Combinatorial Optimization
