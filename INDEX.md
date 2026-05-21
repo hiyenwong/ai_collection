@@ -56,6 +56,27 @@
   - Double dissociation with Valiant's model confirms continuous topological organization
   - **Activation**: geometric phase transition, crystalline neural code, hippocampal memory, geometric tax, food-caching birds spatial memory, mist code vs crystalline code
 
+### A Simple Model of Co-Emergence of Grid and Place Fields (Evening Supplement)
+- [[grid-place-cell-co-emergence]] - First unified recurrent network model achieving co-emergence of grid cells and place cells from a single sensory-prediction objective without supervision of either cell type (arXiv: 2605.21356)
+  - Grid fields for path integration (motion prediction pressure), place fields for pattern completion (sensory reconstruction pressure)
+  - Both spatial codes coexist across 1,000+ training configurations; balance controlled by sensory noise/masking
+  - Qualitatively reproduces grid fragmentation, wall-removal merging, lattice alignment, 3D bat fields, and developmental ordering
+  - **Activation**: grid cells, place cells, co-emergence, sensory prediction, path integration, entorhinal cortex-hippocampus loop, spatial navigation, grid cell development
+
+### Self-Supervised Local Learning Rules Discover Hidden Hierarchical Structure
+- [[self-supervised-local-learning-rhm]] - Biologically plausible learning algorithms showing that layerwise self-supervised (contrastive/non-contrastive) rules can learn hidden hierarchical structure as efficiently as backpropagation, while gradient-feedback rules fail due to input-specific nonlinearity masking (arXiv: 2605.18557)
+  - Direct-feedback alignment rules fail on Random Hierarchy Model (RHM) tasks due to "masking" — input-specific nonlinearities essential for complex tasks
+  - Self-supervised local rules (contrastive and non-contrastive) match backprop data efficiency
+  - Compatible with known cortical synaptic plasticity rules; provides candidate mechanism for cortex learning without explicit error signals
+  - **Activation**: biologically plausible learning, local learning rules, backpropagation-free learning, self-supervised learning, cortical plasticity, hierarchical representation learning, Random Hierarchy Model, masking phenomenon
+
+### Subject-Specific Analysis of Self-Initiated Attention Shifts from EEG
+- [[eeg-self-initiated-attention-shifts]] - Machine learning framework distinguishing self-initiated vs externally-instructed attention shifts from preparatory EEG activity, with SHAP-based feature attribution showing frontal high-frequency bands as key discriminators (arXiv: 2605.18251)
+  - Controlled experimental paradigm isolating self-initiated shifts under identical visual stimulation
+  - Reliable within-subject classification from preparatory EEG spectral features
+  - SHAP analysis reveals frontal regions and higher-frequency bands dominate model decisions
+  - **Activation**: EEG attention shifts, self-initiated attention, brain-computer interface, SHAP EEG analysis, preparatory neural activity, attention decoding, spectral EEG features
+  
 ## 2026-05-21 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### When Does Adaptation Win? Scaling Laws for Meta-Learning in Quantum Control
