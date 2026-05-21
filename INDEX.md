@@ -2,6 +2,22 @@
 
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
+### PIQC: Scalable Distributed Quantum Computing via Photonic Integration of Designed Molecular Quantum Nodes
+- [[piqc-distributed-quantum-computing]] - Scalable distributed quantum computing architecture using photonic integration of designed molecular quantum nodes (NV/SiV centers in diamond) with nanophotonic waveguide networks for entanglement distribution (arXiv: 2605.21204)
+  - NV/SiV centers as quantum processing nodes with long coherence times
+  - Nanophotonic waveguide interconnects for modular scalability
+  - Heralded entanglement distribution via spin-photon entanglement and photon interference
+  - Systems engineering framework for error budget analysis and topology design
+  - **Activation**: photonic integrated distributed quantum computing, molecular quantum nodes, NV center quantum network, distributed quantum architecture
+
+### Measurement and Control of the Complex Berry Phase in a Quantum System
+- [[complex-berry-phase-quantum-control]] - Complex Berry phase measurement and control methodology for non-Hermitian quantum systems using superconducting transmon circuits with engineered dissipation (arXiv: 2605.16559)
+  - Complex Berry phase decomposition into real (geometric phase) and imaginary (amplification/attenuation) components
+  - Engineered dissipation used as control resource rather than liability
+  - Non-unitary quantum control via path-dependent geometric effects
+  - Geometric quantum gates with SU(1,1) operations
+  - **Activation**: complex Berry phase quantum control, non-Hermitian geometric phase, transmon circuit Berry phase, engineered dissipation quantum control
+
 ### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
 - [[quantum-rl-process-synthesis]] - Quantum reinforcement learning methodology for process systems engineering that encodes process synthesis as MDPs with state encoding algorithms decoupling qubit requirements from problem size (arXiv: 2605.21213)
   - Process synthesis formally posed as MDP with compressed state encoding
