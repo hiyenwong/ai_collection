@@ -1,5 +1,26 @@
 ## 2026-05-21 - Systems Engineering (Cron Job)
 
+### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
+- [[quantum-systems-engineering-2026]] - Quantum systems engineering methodology covering sidecar architectures, resource allocation, energetic optimization, and RL-based process synthesis via quantum computing (arXiv:2605.21213)
+  - Core: Formulates process synthesis as MDP solved with quantum-enhanced RL
+  - Pattern: Quantum sidecar architecture with stateful/stateless operating modes
+  - **Activation**: quantum systems engineering, hybrid quantum architecture, quantum resource allocation, quantum sidecar, quantum process synthesis, 量子系统工程, 量子混合架构
+
+### Quantum Sidecar Architectures for Hybrid AI Training and Inference
+- Part of quantum-systems-engineering-2026 - Two-mode quantum co-processor architecture (arXiv:2605.18031)
+  - Stateful protected register mode for reusable quantum resources
+  - Stateless reset-and-reprepare mode for per-invocation circuits
+
+### System Aware Resource Allocation for Distributed Quantum Workflows
+- Part of quantum-systems-engineering-2026 - Comprehensive quantum program allocation (arXiv:2605.17944)
+  - Qubit availability, circuit depth, error rate, and workflow dependency optimization
+
+### Energetic Advantage in Superconducting Cat-Qubits
+- Part of quantum-systems-engineering-2026 - Energy optimization methodology (arXiv:2605.19854)
+  - Quantum energetic advantage before computational advantage at >26 qubits
+
+## 2026-05-21 - Systems Engineering (Cron Job)
+
 ### Modeling and Resource Optimization for Quantum Oracles
 - [[quantum-oracle-resource-optimization]] - Formal oracle description and space-depth trade-off algorithm achieving 54% circuit depth reduction (arXiv: 2605.21380)
   - HRSE model enables hierarchical recursive synthesis-evaluation for formal oracle description
