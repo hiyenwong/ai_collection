@@ -1,3 +1,12 @@
+## 2026-05-22 - Neuroscience Research: Texture Perception + CNN Alignment (Cron Job)
+
+### Perceptual Misalignment of Texture Representations in CNNs
+- [[texture-misalignment-cnn-perception]] - Systematic investigation finding no correlation between CNN Brain-Score and alignment with human texture perception; texture perception involves mechanisms distinct from object recognition CNNs (arXiv:2604.01341)
+  - 核心要点 1: CNN基于Gram matrix的纹理表征与人类纹理感知不对齐，无论网络架构、深度或训练目标
+  - 核心要点 2: Brain-Score高的模型并不具有更类人的纹理表征——模型视觉系统对齐程度与纹理感知对齐无关
+  - 核心要点 3: 纹理感知需要超越标准物体识别CNN的额外机制，可能依赖上下文信息整合
+  - **Activation**: texture perception, CNN texture representation, Gram matrix, Brain-Score, visual perception alignment, perceptual misalignment, Julesz texture
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Quantum Viterbi Algorithm
