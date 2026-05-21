@@ -1,3 +1,19 @@
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Closed-Form Predictive Coding via Hierarchical Gaussian Filters
+- [[closed-form-predictive-coding-hgf]] - Restores precision-weighted prediction errors to predictive coding networks using deep hierarchical Gaussian filters, enabling biologically plausible learning without backpropagation (arXiv:2605.20293)
+  - Core: Expresses PC networks as HGFs with closed-form variational inference for activations, weights, and precisions
+  - Results: Approaches backpropagation on FashionMNIST; outperforms on online/data-efficiency/concept-drift tasks
+  - Biological grounding: Hebbian-compatible local update rules; precision-weighting connects to cortical attention/uncertainty
+  - **Activation**: predictive coding, hierarchical Gaussian filter, free energy principle, precision-weighted prediction error, biologically plausible learning, HGF
+
+### How to Build Marcus's Algebraic Mind: VaCoAl over Galois Fields
+- [[algebraic-mind-vacoa]] - Maps Gary Marcus's three pillars of cognitive architecture onto PyVaCoAl/VaCoAl hyperdimensional computing using XOR-and-shift over GF(2) (arXiv:2605.21379)
+  - Core: Single algebraic primitive (XOR-shift) implements reversible variable binding, non-commutative bundling, and individual/kind separation
+  - Biological homologue: Dentate gyrus-CA3 circuit as VaCoAl's natural implementation
+  - Extends to Pearl's rung-3 counterfactual reasoning
+  - **Activation**: vacoal, hyperdimensional computing, algebraic mind, Gary Marcus, reversible variable binding, Galois fields, PyVaCoAl
+
 ## 2026-05-21 - Systems Engineering (Cron Job)
 
 ### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
