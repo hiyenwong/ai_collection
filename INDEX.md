@@ -1,3 +1,23 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Flow loops and quantum groups
+- [[flow-loops-quantum-groups]] - 连接量子群不变量与Morse流动力学研究纽结拓扑 (arXiv: 2605.21382)
+  - 核心要点 1: 纤维纽结的补空间上Morse流闭轨道计数产生双变量级数不变量
+  - 核心要点 2: 动力学级数猜想等价于3d N=2 QFT的BPS q-级数, 桥接动力系统与量子拓扑
+  - **Activation**: flow loops, quantum groups, Morse flow knots, BPS q-series, 量子群不变量, 纽结拓扑
+
+### O(n) alternative to Quantum Fourier Transform
+- [[shallow-qft-alternative-hp-circuits]] - O(n)复杂度替代QFT结合神经网络经典后处理 (arXiv: 2605.16998)
+  - 核心要点 1: 识别QFT在隐藏子群问题中的两个关键性质: 平移不变性和子群生成元信息保留
+  - 核心要点 2: 提出O(n)深度的替代方案, 大幅降低电路深度要求
+  - **Activation**: QFT alternative, O(n) circuit, hidden subgroup, Shor algorithm
+
+### Mechanism of Efficacy in QAOA for Random k-SAT
+- [[qaoa-adiabatic-manifold-k-sat]] - 发现QAOA在随机k-SAT中的有效机制: 绝热流形与亚线性参数优化 (arXiv: 2605.20288)
+  - 核心要点 1: 在通用mixer k-local搜索框架中发现QAOA最优参数位于光滑绝热流形上
+  - 核心要点 2: 流形可用亚线性数量参数表征, 实现高效参数优化
+  - **Activation**: QAOA mechanism, k-SAT, adiabatic manifold, sublinear optimization
+
 ## 2026-05-22 - Neuroscience Research: Spike Forecasting + Functional Whole-Brain Models (Cron Job)
 
 ### Implicit Behavioral Decoding from Next-Step Spike Forecasts at Population Scale
