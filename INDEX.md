@@ -1,3 +1,16 @@
+## 2026-05-21 - Systems Engineering (Cron Job)
+
+### Modeling and Resource Optimization for Quantum Oracles
+- [[quantum-oracle-resource-optimization]] - Formal oracle description and space-depth trade-off algorithm achieving 54% circuit depth reduction (arXiv: 2605.21380)
+  - HRSE model enables hierarchical recursive synthesis-evaluation for formal oracle description
+  - ASDT algorithm generates optimal oracle structures under fixed qubit constraints
+  - **Activation**: quantum oracle, oracle optimization, HRSE model, ASDT algorithm, space-depth tradeoff, quantum circuit optimization
+
+### When Does Adaptation Win? Scaling Laws for Meta-Learning in Quantum Control
+- [[quantum-control-meta-learning-scaling]] - Scaling law for meta-learning adaptation gain in quantum control with >40% fidelity gains (arXiv: 2601.18973)
+  - Already exists in collection (checked for duplicates)
+  - **Activation**: quantum control, meta-learning, scaling laws, adaptation gain
+
 
 
 ## 2026-05-21 - Neuroscience Research (Cron Job)
