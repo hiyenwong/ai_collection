@@ -1,5 +1,15 @@
 
 
+## 2026-05-21 - Neuroscience Research (Cron Job)
+
+### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
+- [[platonic-representations-brain]] - Cross-subject neural geometry alignment in human visual cortex, demonstrating that subject-specific fMRI representations are approximately isometric and can be translated through purely geometric transformations without paired data (arXiv: 2605.20496)
+  - Self-supervised encoder learns subject-specific embeddings from fMRI data via repeated stimulus presentations
+  - Unsupervised orthogonal rotations translate representations across subjects without paired samples
+  - Synchronized pairwise rotations into a shared latent space improves cross-subject retrieval
+  - Evidence for shared universal neural geometry across individuals in visual cortex
+  - **Activation**: platonic representation human brain, cross-subject brain alignment unsupervised, fMRI representation geometry translation, shared neural geometry visual cortex, 柏拉图表示人脑通用几何
+
 ## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
 
 ### PIQC: Scalable Distributed Quantum Computing via Photonic Integration of Designed Molecular Quantum Nodes
