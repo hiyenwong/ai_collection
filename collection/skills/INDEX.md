@@ -1,3 +1,19 @@
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### Quantum End-to-End Learning for Contextual Combinatorial Optimization
+- [[quantum-end-to-end-learning]] - First quantum end-to-end learning framework for contextual combinatorial optimization using QAOA with context re-uploading phase-separator (arXiv: 2605.20222)
+  - Context re-uploading phase-separator jointly captures relations among contexts, uncertain coefficients, and optimal solutions
+  - Stationarity-guaranteed end-to-end training on task loss without NP-hard solver calls
+  - Substantially fewer parameters than classical benchmarks while maintaining competitive performance
+  - **Activation**: quantum end-to-end learning, QEL, contextual combinatorial optimization, QAOA training, quantum surrogate policy, context re-uploading
+
+### Bowtie VarQTE: Resource-Efficient Quantum State Preparation Primitive
+- [[bowtie-varqte-quantum-state-prep]] - Hybrid classical-quantum framework leveraging causal light-cones to minimize quantum resources for variational quantum time evolution (arXiv: 2605.20331)
+  - Causal light-cone exploitation enables classical simulation of causally relevant subcircuits
+  - Exact parameter updates via McLachlan variational principle without requiring classical target state representation
+  - Reduced quantum circuit depth compared to approximate quantum compilation (AQC)
+  - **Activation**: bowtie varqte, variational quantum time evolution, quantum state preparation, causal light-cone, McLachlan variational principle, hybrid quantum-classical
+
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
