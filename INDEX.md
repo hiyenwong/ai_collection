@@ -1,4 +1,21 @@
 
+
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
+- [[quantum-rl-process-synthesis]] - Quantum reinforcement learning methodology for process systems engineering that encodes process synthesis as MDPs with state encoding algorithms decoupling qubit requirements from problem size (arXiv: 2605.21213)
+  - Process synthesis formally posed as MDP with compressed state encoding
+  - Quantum-enhanced RL shows competitive per-episode performance and superior per-parameter efficiency vs classical RL
+  - State encoding decouples qubit count from problem size for scalability
+  - **Activation**: quantum reinforcement learning process synthesis, quantum RL engineering design, quantum process optimization, flowsheet synthesis quantum, quantum MDP process systems
+
+### Software Between Quantum and Machine Learning -- And Down to Pulses
+- [[quantum-control-pulse-software]] - Software framework integrating quantum optimal control within QML for pulse-level modelling, bridging gate-based abstractions with hardware-aware optimisation using JAX-based high-performance implementation (arXiv: 2605.21286)
+  - Composable ansatz constructions with interchangeable building blocks for pulse-level modelling
+  - End-to-end optimisation of pulse parameters within QML setting
+  - Fourier-analytic diagnostics and extended entanglement measures for analysis
+  - **Activation**: quantum pulse level control, quantum optimal control software, QML pulse modelling, quantum gate abstraction, hardware-aware quantum optimisation
+
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
