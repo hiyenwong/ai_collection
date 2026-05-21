@@ -1,3 +1,20 @@
+
+## 2026-05-21 - Systems Engineering + Quantum (Cron Job)
+
+### Quantum-Accelerated Deep Reinforcement Learning for Frequency Regulation Enhancement
+- [[quantum-accelerated-control-systems]] - Quantum circuits integrated into DDPG agents for adaptive frequency regulation in power systems (arXiv: 2512.04439)
+  - Quantum ansatz embedded in DRL policy network reduces parameters while improving generalization
+  - Hybrid quantum-classical training compatible with NISQ-era devices
+  - Demonstrated robust frequency regulation across IEEE 14-bus test system scenarios
+  - **Activation**: quantum control, frequency regulation, DDPG, power systems, quantum circuit, adaptive controller, system reliability, quantum acceleration
+
+### Beyond the Purcell Effect: Controlling Pure Quantum Dephasing with Spin Noise Metasurfaces
+- [[quantum-dephasing-engineering]] - Nanophotonic spin noise metasurfaces for broadband control of qubit pure dephasing dynamics (arXiv: 2605.20180)
+  - Controls low-frequency (MHz) photonic environments far off-resonant with qubits
+  - Experimental demonstration with CoFeB metasurfaces and NV centers in diamond
+  - Dynamical decoupling spectral decomposition isolates metasurface-controlled dephasing
+  - **Activation**: quantum dephasing, metasurface, spin noise, qubit coherence, nanophotonic engineering, NV centers, dynamical decoupling
+
 ## 2026-05-21 - Neuroscience Research (Cron Job)
 
 ### BCI-sift: Automated Feature Selection Toolbox for Brain Computer Interface Applications
