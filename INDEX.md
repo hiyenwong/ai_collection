@@ -804,3 +804,12 @@
   - Neural representations of kinematic strokes robustly conserved across character contexts
   - Framework for dissecting conserved neural dynamics in large-scale intracortical datasets
   - **Activation**: zero-shot BCI, kinematic representation, handwriting decoding, motor cortex, iBCI, neuroprosthetics
+
+## 2026-05-22 - Anthropic Research (Cron Job)
+
+### Evaluating Claude's bioinformatics research capabilities with BioMysteryBench
+- [[biomysterybench-evaluation]] - Benchmark methodology for evaluating LLMs on open-ended bioinformatics research tasks using real-world datasets and multi-pathway grading against human expert baselines (Anthropic, Apr 2026)
+  - Addresses unique evaluation challenges: multiple valid approaches, subjective research decisions, noisy biological data
+  - Uses panel of human experts as baseline; Claude performs on par with experts and sometimes solves problems experts could not
+  - Grades on conclusions rather than methods, allowing diverse analytical pathways
+  - **Activation**: BioMysteryBench, bioinformatics benchmark, LLM science evaluation, biological data analysis, scientific capability, open-ended benchmark, AI for science
