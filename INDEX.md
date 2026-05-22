@@ -1,4 +1,21 @@
 
+## 2026-05-22 - Neuroscience Research: EmoMind Affective fMRI Decoding + Complex Brain Hypothesis (Cron Job)
+
+### EmoMind: Decoding Affective Captions from Human Brain fMRI
+- [[emomind-affective-brain-decoding]] - First end-to-end pipeline for decoding affective captions directly from fMRI signals using continuous 34D emotion vectors and classifier-free guidance, outperforming label-prompted GPT-4 across subject-specificity, structural geometry, and causal control axes (arXiv: 2605.16739)
+  - Two-stage pipeline: (1) retrieve neutral scene description from brain-decoded visual features, (2) rewrite using continuous emotion vector with classifier-free guidance against identity-preserving null branch
+  - Three-axis validation: subject-specificity, structural geometry, causal control + synthetic-brain substitution test
+  - Largest gains on person-specific affective structure metrics (not population-level aggregation)
+  - **Activation**: emomind, affective brain decoding, emotion fMRI, brain-to-text emotion, continuous emotion vector, classifier-free guidance neural, affective caption generation
+
+### The Complex Brain Hypothesis: Resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience
+- [[complex-brain-hypothesis]] - Proposes brain complexity (not entropy) as the true index of phenomenal richness, resolving the conundrum that both high-content psychedelic and low-content minimal phenomenal states show elevated brain entropy (arXiv: 2605.16146)
+  - Grain of inference: fine-grained regime (HCPEs) with high complexity+high entropy; coarse-grained regime (MPEs) with low complexity+high entropy
+  - Refines (not replaces) the Entropic Brain Hypothesis by adding complexity as the key discriminating factor
+  - Predicts distinct perturbational signatures (TMS-EEG) for MPEs vs HCPEs despite both having elevated entropy
+  - Authors include Carhart-Harris & Karl Friston
+  - **Activation**: complex brain hypothesis, entropy content conundrum, minimal phenomenal experience, consciousness entropy, brain complexity, free energy principle consciousness
+
 ## 2026-05-22 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
 
 ### Q-PhotoNAS: Hybrid Quantum Neural Architecture Search Framework on Photonic Devices
@@ -524,8 +541,8 @@
    105|  - Achieves 419 TOPS/W energy efficiency at 2.31-3.1 TOPS throughput
    106|  - 2A2W precision matches FP32 baseline accuracy across VGG/ResNet on ImageNet
    107|  - **Activation**: nvCIM, ReRAM CIM, SNN hardware accelerator, neuromorphic hardware macro
-   108|
-   109|## 2026-05-22
+
+## 2026-05-22
    110|
    111|### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
    112|- [[quantum-systems-engineering-2026]] - Quantum systems engineering methodology covering sidecar architectures, resource allocation, energetic optimization, and RL-based process synthesis via quantum computing (arXiv:2605.21213)
