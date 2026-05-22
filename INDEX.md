@@ -1,4 +1,14 @@
 
+## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job - Hourly)
+
+### STN-GPR: Singularity Tensor Network Framework for Efficient Option Pricing
+- [[singularity-tensor-network-pricing]] - Tensor network surrogate for option pricing with singularity-aware compression and GPR uncertainty quantification for large-scale portfolio revaluation (arXiv: STN-GPR)
+  - Tensor Train decomposition replaces Monte Carlo/PDE for 100-1000x speedup
+  - Singularity handling via adaptive bond dimension refinement near payoff discontinuities
+  - GPR integration provides error bounds and adaptive sampling
+  - Automatic Greeks computation via tensor network differentiation
+  - **Activation**: tensor network option pricing, STN-GPR, tensor train finance, portfolio revaluation tensor, compressed derivative pricing
+
 ## 2026-05-23 - Neuroscience Research: Spiking Timing + Thousand Brains (Cron Job)
 
 ### Learning sequence timing and control of replay speed in networks of spiking neurons
