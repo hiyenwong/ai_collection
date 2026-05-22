@@ -47,6 +47,14 @@
   - Enables patient-specific fWBMs for personalized treatment of brain disorders
   - **Activation**: fWBM, functional whole-brain model, neuroconnectionism, brain dynamics framework, cognitive function modeling, brain structure-function integration
 
+### Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness
+- [[efficient-coding-criticality-sloppiness]] - Theoretical framework proving that maximizing Fisher information under resource constraints drives neural populations toward criticality (soft modes, power laws) and sloppiness simultaneously, unifying efficient coding with the critical brain hypothesis (arXiv:2605.22598)
+  - Fisher information maximization with trace constraint → soft modes with diverging correlation lengths
+  - Unifies statistical criticality (power laws) with dynamical criticality (bifurcation, critical slowing down)
+  - Provides mechanistic explanation for neural sloppiness as efficient resource allocation
+  - Hebb-like learning rule maps onto predictive coding architecture
+  - **Activation**: efficient coding, critical brain hypothesis, Fisher information, sloppiness, power-law avalanches, neural criticality, population coding, soft modes, Hebbian learning, predictive coding
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — 2nd batch)
 
 ### Mechanism of Efficacy in QAOA for Random k-SAT: From Adiabatic Manifold to Sublinear Parameter Optimization
