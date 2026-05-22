@@ -9,6 +9,14 @@
   - Automatic Greeks computation via tensor network differentiation
   - **Activation**: tensor network option pricing, STN-GPR, tensor train finance, portfolio revaluation tensor, compressed derivative pricing
 
+### Reinforcement Learning for Quantum Processes with Memory
+- [[quantum-memory-rl]] - RL framework for quantum systems with hidden memory, proving O~(sqrt(K)) regret via optimistic MLE with quantum instruments; connects learning regret to thermodynamic dissipation (arXiv: 1611)
+  - Hidden quantum memory evolving via unknown channels, agent intervenes with quantum instruments
+  - Optimistic MLE achieves sublinear cumulative regret, matching information-theoretic lower bound
+  - Regret exactly quantifies thermodynamic dissipation in state-agnostic work extraction
+  - Extended to continuous action spaces (general POVMs)
+  - **Activation**: quantum RL memory, quantum bandit, quantum system identification, thermodynamic regret, quantum instrument learning
+
 ## 2026-05-23 - Neuroscience Research: Spiking Timing + Thousand Brains (Cron Job)
 
 ### Learning sequence timing and control of replay speed in networks of spiking neurons
