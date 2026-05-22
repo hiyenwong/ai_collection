@@ -1,3 +1,12 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Maximum Likelihood Decoding of Quantum Error Correction Codes
+- [[statistical-mechanics-quantum-decoding]] - Unified MLD framework bridging statistical mechanics (disordered spin models), tensor network contraction, and neural decoder architectures for optimal quantum error correction (arXiv:2605.17230)
+  - Maps MLD to partition functions of disordered spin models for exact threshold estimation via phase transitions
+  - Tensor network approximation yields near-MLD accuracy with polynomial computational cost
+  - Neural decoders (autoregressive, transformer) learn MLD distributions from data for fast real-time decoding
+  - **Activation**: maximum likelihood decoding, quantum error correction, statistical mechanics, tensor networks, neural decoder, spin model, phase transition threshold
+
 ## 2026-05-22 - Advanced Mathematics + Quantum (Cron Job — Final Batch)
 
 ### All Quantum Probability viewed in Complex Projective Geometry
