@@ -1,6 +1,13 @@
 
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Maximum Likelihood Decoding of Quantum Error Correction Codes
+- [[statistical-physics-quantum-decoding]] - Statistical physics approach to QEC decoding — reformulating MLD as partition function computation in classical spin models, enabling exact MLD via tensor networks and approximate MLD via belief propagation (arXiv: 2605.17230)
+  - CSS codes: MLD maps to partition functions of classical spin models with quenched disorder
+  - Exact MLD via tensor network contraction; approximate MLD via belief propagation with convergence guarantees
+  - Decoding threshold corresponds to thermodynamic phase transition in the spin model
+  - **Activation**: maximum likelihood decoding, quantum error correction, statistical physics, tensor network decoding, belief propagation, CSS codes, phase transition
+
 ### Exact Framework for Transport Statistics in Quadratic Quantum Systems
 - [[quantum-transport-statistics-framework]] - Exact framework for evaluating heat, energy, and particle transport statistics between Gaussian reservoirs (arXiv: 2602.21190)
   - Combines full counting statistics with non-Markovian master equations
