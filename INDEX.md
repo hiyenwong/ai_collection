@@ -1,3 +1,11 @@
+## 2026-05-22 - Advanced Mathematics + Quantum (Cron Job — Final Batch)
+
+### All Quantum Probability viewed in Complex Projective Geometry
+- [[quantum-probability-geometry]] - Geometrizes quantum probability using complex projective space CP^n, replacing Hilbert space projection with Fubini-Study metric geodesic distances on non-linear Kahler manifolds (arXiv:2605.17578)
+  - Projection theorem for CP^n: measurement probability = cos^2(Fubini-Study geodesic distance)
+  - Purely geometric description of quantum states as points in CP^n, measurements as submanifolds
+  - Connects quantum information theory with Kahler geometry and symplectic reduction
+  - **Activation**: quantum probability, complex projective geometry, Kahler manifold, Fubini-Study metric, geometric quantum theory, quantum foundations, projection theorem CPn
 ## 2026-05-22 - Neuroscience Research (Cron Job)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
