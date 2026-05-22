@@ -1,5 +1,12 @@
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Quantum Sufficiency for Self-Adjoint Statistical Models via Likelihood-Type Operators
+- [[quantum-sufficiency-statistical-models]] - Quantum sufficiency on real *-subalgebras and real Jordan algebras extending classical sufficiency to quantum settings using likelihood-type operators (arXiv: 2604.23292)
+  - Square-root likelihood ratios and symmetric logarithmic derivatives as fundamental self-adjoint likelihood-type objects
+  - Minimal sufficient real *-subalgebras characterized by likelihood-ratio set + ρ-modular invariance
+  - Koashi-Imoto decompositions for quantum channels preserving statistical structure
+  - **Activation**: quantum sufficiency, self-adjoint statistical models, likelihood-type operators, symmetric logarithmic derivative, real Jordan algebra, Koashi-Imoto decomposition, quantum Fisher information
+
 ### Modeling and Resource Optimization for Quantum Oracles
 - [[quantum-oracle-optimization]] - HRSE model and ASDT algorithm for optimal quantum oracle resource allocation under qubit constraints (arXiv: 2605.21380)
   - HRSE model enables formal oracle description and precise gate complexity analysis
