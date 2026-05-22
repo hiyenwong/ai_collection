@@ -1,3 +1,25 @@
+## 2026-05-22 - 数论/量子计算 (Cron Job)
+
+### End-to-End Formalization of Quantum Error Correction
+- [[lean-qec-formal-verification]] - Lean 4 formal verification of stabilizer codes with machine-checked distance certificates for qLDPC codes up to 144 qubits (arXiv: 2605.16523)
+  - Verified SAT reduction translates distance condition into Boolean satisfiability with Lean-checked proof
+  - BitVec-flattened encoding and error-location encoding reduce variables from O(n) to O(√n)
+  - Covers CSS, Bivariate Bicycle, and Generalized Bicycle code families
+  - **Activation**: Lean 4, quantum error correction
+### Pre-Asymptotic Trainability in Photonic Variational Circuits under Postselection
+- [[photonic-variational-trainability]] - Gradient concentration analysis for passive photonic variational circuits showing polynomial vs exponential barren plateau behavior under different postselection regimes (arXiv: 2605.11879)
+  - Allow-bunching and collision-free regimes show polynomial gradient decay (not exponential)
+  - Dual-rail postselection induces exponential concentration beyond moderate system sizes
+  - Barren plateaus governed by interplay of passive linear-optical dynamics, postselection geometry, and task observables
+  - **Activation**: photonic quantum computing, barren plateaus, variational circuits, postselection, gradient concentration, linear optical
+
+### Two remarks on decomposition numbers of standard modules for quantum affine sl_2
+- [[quantum-affine-decomposition]] - Closed positive formulas for decomposition numbers of quantum affine sl_2 representations using Nakajima geometric approach and canonical basis elements (arXiv: 2605.22571)
+  - Piecewise-linear closed formula for q-characters of irreducible representations
+  - Uses Nakajima's geometric approach to quantum affine algebra representations
+  - **Activation**: quantum affine algebra, decomposition numbers, Nakajima geometry, q-characters, representation theory
+, stabilizer codes, formal verification, distance certificate, SAT encoding, qLDPC, theorem proving, fault tolerance
+
 ## 2026-05-22 - Neuroscience Research: Cross-Species Brain Alignment + SNN Thousand Brains (Cron Job)
 
 ### Cross-Species RSA Reveals Conserved Early Visual Alignment but Divergent Higher-Area Rankings Across Human fMRI and Macaque Electrophysiology
