@@ -1,3 +1,19 @@
+## 2026-05-22 - Neuroscience Research (Cron Job)
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[learning-sequence-timing-spiking-neurons]] - Extends spiking Temporal Memory (sTM) model to encode element-specific timing via sequential population activation and uses oscillatory inputs as clock signal for flexible replay speed control (arXiv:2605.22523)
+  - Timing encoded by sequential activation of element-specific neuronal populations
+  - Oscillatory background inputs serve as clock for replay speed modulation
+  - Elapsed time represented by unique sparse spatiotemporal neural activity patterns
+  - **Activation**: spiking sequence timing, sTM model, oscillatory replay speed, STDP temporal learning, spatiotemporal neural encoding
+
+### Temporal Coding as a Substrate for Sensorimotor Object Inference
+- [[temporal-coding-thousand-brains-spiking]] - Spiking reinterpretation of Thousand Brains Architecture replacing dense vectors with rank-order spike packets for sensorimotor inference, using STDP for directional encoding and inter-burst timing for displacement (arXiv:2605.22206)
+  - Rank-order spike bursts encode feature identity via firing order (strongest fires first)
+  - Time gap between bursts implicitly encodes sensor displacement (no explicit coordinate math)
+  - STDP learns traversal direction; adaptive lambda adjusts temporal weighting per object geometry
+  - **Activation**: thousand brains spiking, rank-order temporal coding, Monty framework SNN, STDP sensorimotor, neuromorphic object recognition
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — 2nd batch)
 
 ### Mechanism of Efficacy in QAOA for Random k-SAT: From Adiabatic Manifold to Sublinear Parameter Optimization
