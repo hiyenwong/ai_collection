@@ -1,3 +1,24 @@
+
+## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### From quantum to quantum-inspired: the LogQ algorithm as a non-linear continuous relaxation
+- [[logq-quantum-inspired-optimization]] - LogQ reformulated as classical non-linear continuous relaxation for QUBO portfolio optimization (arXiv: 2604.12925)
+  - Core: Non-linear continuous relaxation replaces Pauli decomposition for classical QUBO solving
+  - Pattern: Quantum-to-classical algorithm translation with gradient-inspired optimization
+  - **Activation**: quantum-inspired, logq, qubo, portfolio optimization, continuous relaxation
+
+### Large-scale portfolio optimization on a trapped-ion quantum computer
+- [[trapped-ion-portfolio-optimization]] - End-to-end trapped-ion QPU pipeline for 250-asset portfolio selection (arXiv: 2602.23976)
+  - Core: RMT denoising + community detection + BF-DCQO on 64-qubit Barium system
+  - Pattern: Hardware-aware QUBO decomposition with two-stage post-processing
+  - **Activation**: trapped-ion, portfolio optimization, QUBO decomposition, BF-DCQO, correlation matrix
+
+### Constrained Portfolio Optimization via QAOA with XY-Mixers and Trotterized Initialization
+- [[qaoa-xy-mixers-portfolio]] - Constraint-preserving QAOA using XY-mixer Hamiltonian for Direct Indexing (arXiv: 2602.14827)
+  - Core: XY-mixer preserves Hamming weight, Dicke initialization, Sharpe 1.81 vs SA 1.31
+  - Pattern: Constraint-preserving quantum ansatz design with adiabatic-inspired parameters
+  - **Activation**: qaoa, xy-mixer, dicke state, portfolio optimization, constraint-preserving, direct indexing
+
 ## 2026-05-23 - Neuroscience Research: Riemannian fMRI + Spiking Timing (Cron Job)
 
 ### Riemannian Geometry for fMRI: Modeling Correlation Manifolds and Eigenvector Subspaces

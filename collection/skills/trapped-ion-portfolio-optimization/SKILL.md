@@ -1,73 +1,81 @@
 ---
 name: trapped-ion-portfolio-optimization
-description: "Large-scale portfolio optimization on trapped-ion quantum computers. End-to-end pipeline for portfolio selection with cardinality constraints using hardware-aware decomposition on trapped-ion quantum processors. Use when: trapped-ion quantum computing, portfolio optimization with cardinality constraints, hardware-aware quantum decomposition, NISQ-era financial optimization, quantum asset selection, quantum computing finance benchmark, arXiv:2602.23976."
+description: "End-to-end pipeline for large-scale portfolio selection with cardinality constraints using trapped-ion quantum computers. Use when: executing portfolio optimization on trapped-ion QPU hardware; solving QUBO subproblems via BF-DCQO; decomposing large portfolios via correlation-guided splitting; implementing two-stage post-processing for cardinality constraints; benchmarking quantum vs classical portfolio methods. Keywords: trapped-ion, portfolio optimization, QUBO decomposition, BF-DCQO, correlation matrix, random matrix theory, cardinality constraints"
 ---
 
 # Trapped-Ion Portfolio Optimization
 
-## Description
+## Core Concept
 
-Large-scale portfolio optimization demonstrated on trapped-ion quantum processors. Addresses cardinality-constrained portfolio selection via hardware-aware decomposition, enabling quantum advantage on current NISQ devices for realistic financial problems.
+End-to-end pipeline that decomposes large portfolio optimization problems into hardware-embeddable QUBO subproblems, solves them on trapped-ion quantum processors using BF-DCQO (Bias-Field Digitized Counterdiabatic Quantum Optimization), and recombines solutions with cardinality-preserving post-processing.
 
-## Core Methodology
+## Workflow
 
-### 1. Problem Formulation
+### Phase 1: Correlation Analysis
 
-Map mean-variance portfolio optimization with cardinality constraints to QUBO/Ising:
+1. **RMT-based Denoising**: Apply Random Matrix Theory to clean the correlation matrix
+   - Compute eigenvalue spectrum of asset return correlations
+   - Filter eigenvalues within the Marcenko-Pastur bulk (noise)
+   - Reconstruct denoised correlation matrix from significant eigenvalues only
 
-```
-min w^T Σ w - λ μ^T w + γ (Σ w_i - 1)^2 + ρ (Σ z_i - k)^2
-```
+2. **Community Detection**: Identify groups of correlated assets
+   - Apply Louvain or similar community detection on the correlation graph
+   - Each community becomes a candidate subproblem
 
-Where:
-- `w_i`: portfolio weights (continuous)
-- `z_i`: binary selection indicators (asset included or not)
-- `k`: cardinality constraint (max assets to hold)
-- `λ`: risk aversion parameter
-- `γ, ρ`: penalty coefficients
+### Phase 2: QUBO Decomposition
 
-### 2. Hardware-Aware Decomposition
+3. **Correlation-Guided Greedy Splitting**: Cap each cluster by executable qubit budget
+   ```
+   For each community C:
+     if |C| <= qubit_budget:
+       subproblem = C
+     else:
+       split C into chunks of size <= qubit_budget
+       using correlation-guided greedy partitioning
+   ```
 
-Key innovation: decompose large portfolio problems to fit trapped-ion hardware limits.
+4. **BF-DCQO Execution**: Solve each subproblem non-variationally
+   - No classical parameter-training loops (avoids barren plateaus)
+   - Uses counterdiabatic driving terms for faster convergence
+   - Bias fields steer optimization toward feasible solutions
 
-**Decomposition Pipeline:**
-1. **Classical pre-screening**: Filter assets by Sharpe ratio / liquidity
-2. **Subproblem partitioning**: Split remaining assets into subsets matching qubit count
-3. **Quantum optimization**: Solve each subproblem on trapped-ion QPU
-4. **Classical aggregation**: Merge sub-solutions with global constraint enforcement
+### Phase 3: Recombination and Post-Processing
 
-### 3. Trapped-Ion Advantages
+5. **Candidate Recombination**: Merge low-energy candidates into global portfolios
 
-- **All-to-all connectivity**: No SWAP overhead, direct qubit interactions
-- **High-fidelity gates**: >99.9% single-qubit, >99% two-qubit
-- **Native Mølmer-Sørensen gates**: Efficient for portfolio QUBO terms
-- **Flexible qubit count**: Scale from 10s to 100s of qubits
+6. **Two-Stage Post-Processing**:
+   - **Fast Repair**: Fix constraint violations (budget, cardinality)
+   - **Cardinality-Preserving Swap Local Search**: Optimize within fixed cardinality
 
-### 4. Cardinality Constraint Handling
+## Key Parameters
 
-Two approaches demonstrated:
-- **Penalty method**: Add `ρ(Σ z_i - k)^2` to Hamiltonian
-- **Constraint-preserving mixer**: XY-mixer that maintains valid cardinality
+| Parameter | Typical Value | Description |
+|-----------|--------------|-------------|
+| Qubit Budget | 20-64 | Max qubits per subproblem (hardware-dependent) |
+| Universe Size | 100-500 | Total assets in portfolio |
+| Cardinality K | 10-50 | Number of assets to select |
 
-## Activation Keywords
+## Pattern: Hardware-Aware Problem Decomposition
 
-- trapped-ion portfolio optimization
-- hardware-aware quantum decomposition
-- cardinality constraints portfolio quantum
-- quantum asset selection trapped ion
-- NISQ portfolio optimization
-- 2602.23976
+When NISQ devices have limited qubits:
+1. Cluster the problem using domain knowledge (correlations)
+2. Split clusters to fit hardware constraints
+3. Solve subproblems independently
+4. Recombine with feasibility-preserving operations
 
-## Key Findings
+## Benchmarks
 
-1. End-to-end quantum advantage demonstrated on real trapped-ion hardware
-2. Hardware-aware decomposition enables solving 100+ asset problems
-3. Cardinality constraints handled efficiently via penalty or mixer methods
-4. Quantum solutions competitive with classical heuristics at small scale
+- Demonstrated on 250-asset S&P 500 universe
+- Executed on 64-qubit Barium development system (IonQ Tempo line)
+- Larger executable subproblems → reduced decomposition error → better risk-return trade-offs
 
-## Related Skills
+## Pitfalls
 
-- [[quantum-portfolio-optimization]] - General QAOA portfolio optimization
-- [[cd-qaoa-portfolio-optimization]] - Counterdiabatic QAOA
-- [[two-step-qaoa-portfolio]] - Two-step QAOA approach
-- [[quantum-finance-portfolio]] - Comprehensive quantum finance
+- **Decomposition error**: Splitting loses cross-cluster correlations
+- **Hardware noise**: NISQ errors accumulate with circuit depth
+- **Post-processing bottleneck**: Repair step may degrade quantum advantage
+- **Turnover**: High portfolio turnover increases transaction costs
+
+## References
+
+- arXiv: 2602.23976 - "Large-scale portfolio optimization on a trapped-ion quantum computer"
