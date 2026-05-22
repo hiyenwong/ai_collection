@@ -1,3 +1,30 @@
+## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### A Penalty-Free Pipeline for Direct Quantum-Annealer Portfolio Optimization
+- [[penalty-free-quantum-annealing]] - Two-stage classical screening + penalty-free QUBO avoids dense chain-break failures on D-Wave hardware (arXiv: 2605.17628)
+  - Cardinality penalty creates dense rank-one term destroying QUBO sparsity
+  - Classical pre-screening reduces asset universe before quantum mapping
+  - **Activation**: penalty-free quantum annealing, QUBO cardinality constraint, D-Wave chain break, sparse QUBO
+
+### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
+- [[quantum-resource-audit]] - Systematic framework for auditing actual QPU time vs classical compute in hybrid quantum-classical optimization (arXiv: 2605.17623)
+  - QPU time only 0.7% of total runtime on portfolio optimization instances
+  - Classical baseline (Gurobi) needed as optimality anchor for quality claims
+  - **Activation**: quantum resource audit, QPU time analysis, hybrid quantum classical benchmark, quantum advantage measurement
+
+### Constrained Counterdiabatic QAOA for Portfolio Optimization
+- [[counterdiabatic-qaoa]] - CCD-QAOA incorporates approximate adiabatic gauge potentials via nested commutators for constrained portfolio optimization (arXiv: 2605.06858)
+  - XY mixer preserves Hamming weight for budget constraint enforcement
+  - Counterdiabatic terms accelerate adiabatic evolution, fewer layers needed
+  - **Activation**: counterdiabatic QAOA, CCD-QAOA, adiabatic gauge potential, constrained quantum optimization, XY mixer portfolio
+
+### Large-Scale Portfolio Optimization using Pauli Correlation Encoding
+- [[pauli-correlation-encoding]] - PCE assigns multiple variables per qubit through market graph partitioning to scale gate-based VQA to 250+ variables (arXiv: 2511.21305)
+  - Market graph clustering enables exponential variable-to-qubit compression
+  - Iterative sub-portfolio optimization with classical coordination
+  - **Activation**: Pauli Correlation Encoding, PCE methodology, multi-variable per qubit, market graph partitioning, dense QUBO gate-based
+
+
 ## 2026-05-23 - Neuroscience Research (Cron Job)
 
 ### Canonical Functionalism
