@@ -1,18 +1,25 @@
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Friday)
 
-### A Uniform Random-Lattice Tail Bound for the SVP Kissing-Profile Parameter
-- [[svp-lattice-tail-bound]] - Dimension-uniform tail bound for lattice gamma parameter γ(L) proving γ(L)=2^{o(n)} with high probability for Haar-Siegel random lattices; feeds into SVP algorithm complexity analysis (arXiv:2605.21966)
-  - Rogers-Schmidt second moment estimate + dyadic self-normalization avoids independence assumptions
-  - Tail bound μ{γ(L) > T} ≤ C_γ/T holds uniformly in dimension n
-  - MSC codes: 11H06, 11H31, 60B15, 68Q25
-  - **Activation**: SVP algorithm, shortest vector problem, lattice kissing number, Rogers mean value, lattice tail bound, quantum lattice algorithm, gamma parameter, 最短向量问题, 格密码学
+### Three Ways to Find Comfort with the Bell Proof and the Results of the Bell Experiments
+- [[bell-theorem-statistical-causality]] - Statistical causality framework for analyzing Bell's theorem using Pearl-style causal graphs; three-perspective reconstruction after CHSH violation (non-local randomness, accessible variables, geometric dimension-dependence) (arXiv: 2605.13154)
+  - Pearl causal graphs decompose Bell's three assumptions: locality, counterfactual definiteness, freedom
+  - CHSH inequality as facet of local polytope; Tsirelson bound 2√2 ↔ 3 spatial dimensions
+  - Statistical independence testing for device-independent randomness certification
+  - **Activation**: bell theorem statistical causality, Pearl causal graphs quantum, CHSH inequality analysis, quantum nonlocality statistics, counterfactual definiteness, Bell experiment analysis
 
-### Concatenating Algebraic Codes over High-Rate Quantum LDPC Codes
-- [[algebraic-quantum-code-concatenation]] - Code concatenation treating inner qLDPC blocks as logical Galois qudits, enabling quantum Reed-Solomon outer codes with list decoders; achieves teraquop regime at 10⁻³ physical noise (arXiv:2605.21898)
-  - Galois qudit abstraction handles correlated errors in high-rate inner codes
-  - "Time-like" Reed-Solomon protection for fault-tolerant syndrome extraction
-  - Lightweight FT scheme works for large-alphabet qudits but fails for qubits
-  - **Activation**: quantum error correction, code concatenation, quantum LDPC, Galois qudit, Reed-Solomon quantum code, list decoding, fault tolerance, teraquop, 量子纠错, 量子码级联
+### Quantum Prediction of Transport Dynamics in Discretized State Spaces
+- [[quantum-bayesian-transport-prediction]] - Gate-based quantum algorithm for Bayesian state estimation using Fokker-Planck equation; amplitude encoding + QFT spectral evolution + Wick rotation for unitary diffusion surrogate (arXiv: 2604.24161)
+  - Drift implemented exactly via QFT + phase rotations; diffusion via Wick rotation surrogate
+  - Exponential state space scaling (2ⁿ for n qubits) for high-dimensional probability distributions
+  - Best use case: quantum state used for further quantum processing, not full classical readout
+  - **Activation**: quantum Bayesian transport, quantum Fokker-Planck, Wick rotation quantum diffusion, gate-based Bayesian filtering, quantum state prediction amplitudes
+
+### Module Lattice Security (Part III): Structured CVP Distance on the Log-Unit Lattice
+- [[module-lattice-security]] - Updated: Part III extends the series with Coarse Lattice Theorem and Trigamma Theorem; reduces CDPR factor for ML-KEM from exp(O~(√n)) to sub-polynomial (arXiv: 2605.17404)
+  - CVP distance convergence on log-unit lattice of Q(ζ_{2^k}); Voronoi cell containment
+  - Babai's algorithm returns zero for structured targets, exactly recovers unit perturbations
+  - Categories: cs.DS, cs.CR, math.NT, math.ST, quant-ph — bridges number theory, statistics, and quantum
+  - **Activation**: module lattice security, Weber conjecture, Ring-LWE, Module-LWE, post-quantum cryptography, lattice cryptography
 
 ## 2026-05-22 - Neuroscience Research: Brain-DNN Alignment + SNN Sequence Timing (Cron Job)
 
