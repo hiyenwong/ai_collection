@@ -22,6 +22,22 @@
   - STDP learns traversal direction; adaptive lambda adjusts temporal weighting per object geometry
   - **Activation**: thousand brains spiking, rank-order temporal coding, Monty framework SNN, STDP sensorimotor, neuromorphic object recognition
 
+### Conserved Kinematic Representations enable Zero-Shot Decoding in Handwriting BCIs
+- [[conserved-kinematic-zero-shot-bci]] - Demonstrates that motor cortex encodes handwriting through shared kinematic primitives enabling zero-shot decoding of unseen characters, achieving 64% hits@3 on unseen letters (arXiv:2605.19048)
+  - Neural alignment framework maps neural activity to imagined kinematics for stroke decomposition
+  - Zero-shot decoder achieves 64% hits@3 retrieval on characters never seen during training
+  - Provides strong evidence for compositional basis of complex motor control
+  - Enables open-vocabulary iBCI communication for logographic languages (Chinese, Japanese)
+  - **Activation**: kinematic BCI, zero-shot neural decoding, conserved motor representations, compositional kinematics, handwriting iBCI, logographic BCI, open-vocabulary decoding
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Proposes unified paradigm integrating bottom-up whole-brain modeling (biophysical simulations) with top-down neuroconnectionism (task-optimized DNNs) via four minimal criteria and three-pillar roadmap (arXiv:2605.18118)
+  - Four criteria: structural grounding, continuous-time dynamics, functional competence, mappable observables
+  - Three-pillar roadmap: short-term coupling, mid-term recurrent fWBMs, long-term closed-loop learning
+  - Bridges microscopic synaptic mechanisms to macroscopic cognitive functions
+  - Enables patient-specific fWBMs for personalized treatment of brain disorders
+  - **Activation**: fWBM, functional whole-brain model, neuroconnectionism, brain dynamics framework, cognitive function modeling, brain structure-function integration
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — 2nd batch)
 
 ### Mechanism of Efficacy in QAOA for Random k-SAT: From Adiabatic Manifold to Sublinear Parameter Optimization
