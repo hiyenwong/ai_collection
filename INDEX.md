@@ -1,3 +1,22 @@
+## 2026-05-22 - Neuroscience Research: Efficient Coding + Spiking Timing (Cron Job)
+
+### Efficient coding under constraint drives neural systems towards criticality and sloppiness
+- [[efficient-coding-criticality-sloppiness]] - Theoretical framework linking Fisher information maximization under resource constraints to emergence of criticality (power-law avalanches, diverging correlation lengths) and sloppiness in neural populations (arXiv: 2605.22598)
+  - Maximizing Fisher information under metabolic constraints creates soft modes (eigenvalues → 0) and diverging correlation lengths — statistical criticality
+  - Introducing spatial structure unifies statistical and dynamical criticality (critical slowing down, bifurcation) within a single framework
+  - Sloppiness emerges naturally as Fisher information matrix becomes singular near critical point
+  - Numerical simulations confirm power-law avalanche distributions after optimization
+  - **Activation**: efficient coding, critical brain hypothesis, Fisher information, neural avalanche, sloppiness, soft modes, population coding
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons
+- [[learning-sequence-timing-spiking-neurons]] - Extends spiking Temporal Memory (sTM) model to encode element-specific timing via sequential activation of neuronal populations, with oscillatory background inputs as clock signal for flexible replay speed control (arXiv: 2605.22523)
+  - Element duration encoded by sequential activation of element-specific sub-populations — unique sparse spatiotemporal patterns
+  - Oscillatory background inputs (4-80 Hz) serve as robust clock signal for replay speed modulation
+  - 1:1 clock regime where replay speed = oscillation frequency; integer fraction modes at lower amplitudes
+  - Phase-invariant for frequencies >20 Hz; accessible range ~10-70 Hz
+  - Consistent with hippocampal replay phenomena (theta sequences during sleep, gamma during wake)
+  - **Activation**: spiking temporal memory, sequence learning SNN, replay speed, oscillatory entrainment, theta sequences, time cells
+
 
 ## 2026-05-22 - Neuroscience Research: EmoMind Affective fMRI Decoding + Complex Brain Hypothesis (Cron Job)
 
