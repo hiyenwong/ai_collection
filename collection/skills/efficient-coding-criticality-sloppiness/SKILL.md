@@ -25,7 +25,32 @@ date: 2026-05-21
 
 This paper establishes a theoretical framework linking **efficient coding** to **criticality** in neural populations. Using a Gaussian population coding model, the authors demonstrate that maximizing Fisher information under resource constraints naturally leads to the emergence of soft modes, diverging correlation lengths, and power-law response — hallmarks of criticality. The framework unifies statistical and dynamical criticality perspectives and provides a mechanistic explanation for sloppiness in neural systems.
 
-## Core Mathematical Framework
+## Core Results from Paper
+
+### Learning Dynamics
+- Fisher information saturates after ~200 iterations
+- Largest eigenvalue of precision matrix A grows; others compress toward zero
+- IPR of softest mode ∼ N⁻¹ (delocalized, global mode)
+- Dropout + graph Laplacian regularization prevent mode localization in heterogeneous networks
+
+### Unifying Two Forms of Criticality
+- **λ_min → 0** simultaneously produces:
+  1. Diverging correlation length ξ ∝ 1/√λ_min (statistical criticality)
+  2. μ_max → 1⁻ in transfer matrix T = I − dt·A (dynamical criticality — critical slowing down, bifurcation precursor)
+- This is a key theoretical unification within a single minimal model
+
+### Power-Law Avalanches from Quench Response
+- Quench: rapid fluctuation δA in the precision matrix A
+- Response magnitude ‖dx‖ ∝ 1/λ_soft in sloppy directions
+- Distribution P(‖dx‖) shows heavy-tailed power law
+- Critical condition: soft mode must be delocalized (IPR ∼ 1/N)
+- Shuffled matrices do NOT produce power laws
+
+### Implications
+- **Criticality as consequence, not cause**: Emerges from efficient coding under metabolic constraints
+- **Sloppiness as robustness feature**: Information immune to noise in sloppy directions
+- **Predictive coding mapping**: Whitening matrix W relates to predictive coding error neurons
+- **Effective couplings**: Precision matrix A ≠ synaptic weights — dense effective interactions arise from sparse structural connectivity
 
 ### Gaussian Population Coding
 

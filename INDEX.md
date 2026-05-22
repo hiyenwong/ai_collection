@@ -1,3 +1,21 @@
+## 2026-05-22 - Neuroscience Research: SNN Sequence Timing + Efficient Coding Criticality (Cron Job — Evening Batch)
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[learning-sequence-timing-spiking-neurons]] - Extends sTM spiking network model to encode element-specific timing via delay lines of sequentially activated neuronal assemblies; uses oscillatory background inputs as clock signal for flexible replay speed control (10-70 Hz range, phase-invariant >20 Hz) (arXiv:2605.22523)
+  - Time intervals discretized into elementary intervals shorter than dendritic plateau potential (~100ms)
+  - Oscillatory input provides robust 1:1 clock tracking; constant input requires fine-tuning for slow speeds
+  - Fast compressed replay at <5 Hz (like slow-wave sleep hippocampal replay)
+  - Verified with musical melody sequences at dilation factors 1x, 2x, 3x
+  - **Activation**: spiking neural network, sTM model, temporal memory, sequence learning, replay speed control, STDP, dendritic action potentials, oscillatory clock signal
+
+### Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness
+- [[efficient-coding-criticality-sloppiness]] - Unified theoretical framework linking Fisher information maximization under resource constraints to criticality; shows that maximizing coding efficiency naturally produces power-law avalanches, diverging correlation lengths, and sloppiness (arXiv:2605.22598)
+  - Unifies statistical criticality (diverging correlation length) and dynamical criticality (critical slowing down, bifurcation) within single minimal Gaussian model
+  - Hebb-like learning rule ΔW ∝ η(ggᵀ)W maps onto predictive coding architecture
+  - Delocalized soft modes (IPR ∼ 1/N) require graph Laplacian regularization + dropout
+  - Quench response magnitude P(‖dx‖) shows power-law distribution from soft-mode geometry
+  - **Activation**: efficient coding, critical brain hypothesis, Fisher information, sloppiness, criticality, power-law avalanches, neural dynamics, predictive coding, Hebbian learning
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Friday)
 
 ### Three Ways to Find Comfort with the Bell Proof and the Results of the Bell Experiments

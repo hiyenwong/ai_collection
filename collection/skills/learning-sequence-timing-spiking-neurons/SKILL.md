@@ -20,6 +20,29 @@ Based on: "Learning sequence timing and control of replay speed in networks of s
 - Mechanism for flexible control of replay speed (e.g., fast replay during sleep vs. slow replay during wakefulness) remains unknown
 - Need biologically plausible mechanisms for both timing encoding and speed modulation
 
+## Core Results from Paper
+
+### Learning Sequence Timing via Delay Lines
+- Time intervals between sequence elements are discretized into elementary intervals shorter than dendritic plateau potential duration (~100ms)
+- Longer intervals constructed from concatenations of these elementary intervals
+- Implemented as delay lines of sequentially activated neuronal assemblies within same minicolumn
+- Sparse, context-specific spatiotemporal "bar code" patterns encoding time elapsed since sequence onset
+- Demonstrated with musical melody sequences (Oh, Pretty Woman) with dilation factors 1x, 2x, 3x
+
+### Replay Speed Control: Constant vs. Oscillatory Input
+- **Constant background input**: Limited flexibility — slow replay requires fine-tuning; speed sensitive to input current magnitude
+- **Oscillatory background input**: Robust, flexible speed control
+  - 1:1 clock regime: replay speed = oscillation frequency (green band in parameter space)
+  - Integer fraction modes: f/2, f/3, f/4 at lower amplitudes (blue bands)
+  - Fast compressed replay at <5 Hz (like slow-wave sleep hippocampal replay)
+  - Phase-invariant for frequencies >20 Hz
+  - Accessible range: ~10 Hz to ~70 Hz
+
+### Phase Invariance
+- For frequencies >20 Hz, replay speed is largely invariant to oscillation phase at onset
+- Initial inter-assembly intervals show small variability that quickly disappears
+- At low frequencies, strong phase dependence can prevent or alter replay
+
 ## Approach
 
 ### Timing Encoding via Sequential Population Activation
