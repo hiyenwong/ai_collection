@@ -1,3 +1,19 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Friday)
+
+### A Uniform Random-Lattice Tail Bound for the SVP Kissing-Profile Parameter
+- [[svp-lattice-tail-bound]] - Dimension-uniform tail bound for lattice gamma parameter γ(L) proving γ(L)=2^{o(n)} with high probability for Haar-Siegel random lattices; feeds into SVP algorithm complexity analysis (arXiv:2605.21966)
+  - Rogers-Schmidt second moment estimate + dyadic self-normalization avoids independence assumptions
+  - Tail bound μ{γ(L) > T} ≤ C_γ/T holds uniformly in dimension n
+  - MSC codes: 11H06, 11H31, 60B15, 68Q25
+  - **Activation**: SVP algorithm, shortest vector problem, lattice kissing number, Rogers mean value, lattice tail bound, quantum lattice algorithm, gamma parameter, 最短向量问题, 格密码学
+
+### Concatenating Algebraic Codes over High-Rate Quantum LDPC Codes
+- [[algebraic-quantum-code-concatenation]] - Code concatenation treating inner qLDPC blocks as logical Galois qudits, enabling quantum Reed-Solomon outer codes with list decoders; achieves teraquop regime at 10⁻³ physical noise (arXiv:2605.21898)
+  - Galois qudit abstraction handles correlated errors in high-rate inner codes
+  - "Time-like" Reed-Solomon protection for fault-tolerant syndrome extraction
+  - Lightweight FT scheme works for large-alphabet qudits but fails for qubits
+  - **Activation**: quantum error correction, code concatenation, quantum LDPC, Galois qudit, Reed-Solomon quantum code, list decoding, fault tolerance, teraquop, 量子纠错, 量子码级联
+
 ## 2026-05-22 - Neuroscience Research: Brain-DNN Alignment + SNN Sequence Timing (Cron Job)
 
 ### Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI
