@@ -1,5 +1,12 @@
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Tensor Cookbook: Mastering Tensors through Diagrams
+- [[tensor-cookbook-diagrams]] - Tensor network diagram methodology for simplifying tensor algebra, bridging quantum physics notation with machine learning and statistics (arXiv: 2605.16610)
+  - Graphical Penrose notation reduces notational overhead for tensor contractions and decompositions
+  - Diagrammatic differentiation rules for transparent gradient computation
+  - Bridges quantum MPS/PEPS with ML tensor train/Tucker decompositions
+  - **Activation**: tensor network diagrams, tensor cookbook, penrose notation, tensor contraction diagrams, 张量网络图, 张量图解
+
 ### Quantum Sufficiency for Self-Adjoint Statistical Models via Likelihood-Type Operators
 - [[quantum-sufficiency-statistical-models]] - Quantum sufficiency on real *-subalgebras and real Jordan algebras extending classical sufficiency to quantum settings using likelihood-type operators (arXiv: 2604.23292)
   - Square-root likelihood ratios and symmetric logarithmic derivatives as fundamental self-adjoint likelihood-type objects
