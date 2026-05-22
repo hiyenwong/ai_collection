@@ -1,3 +1,26 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Hourly Batch)
+
+### Quantum Purity Amplification for Arbitrary Eigenstates and Multiple Outputs
+- [[quantum-purity-amplification]] - Coherent transformation of n mixed state copies into high-fidelity eigenstate copies with dimension-uniform sample complexity (arXiv:2605.21570)
+  - Path-graph parametrization shows O(m/(epsilon*D^2)) input copies needed, independent of dimension d
+  - Generalized Young diagrams yield tight sample complexity bounds across all output regimes
+  - First dimension-uniform guarantee for optimal QPA, establishes coherent-incoherent separation
+  - **Activation**: quantum purity amplification, QPA, eigenstate purification, coherent quantum information, dimension-uniform sample complexity, generalized Young diagrams
+
+### What We Talk About When We Talk About Dissipative Quantum Chaos
+- [[dissipative-quantum-chaos]] - Comprehensive review extending Hamiltonian quantum chaos to open quantum dynamics via Lindbladian spectral analysis (arXiv:2605.21628)
+  - Complex eigenvalue spectrum of Lindbladian replaces Hamiltonian for chaos classification
+  - Ginibre vs. Poisson level spacing statistics distinguish chaotic from integrable open systems
+  - Experimental predictions now being tested in driven-dissipative quantum platforms
+  - **Activation**: dissipative quantum chaos, Lindbladian spectral analysis, open quantum systems, Ginibre ensemble, driven-dissipative, quantum integrability
+
+### Optimal Quantum Feshbach Engines
+- [[quantum-feshbach-engines]] - Optimization framework for high-efficiency quantum thermodynamic cycles using trapped BECs with Feshbach resonance tuning (arXiv:2605.21562)
+  - Dual control: trap stiffness and interaction strength via Feshbach resonance
+  - Optimal driving protocols for each stroke using Pontryagin maximum principle
+  - Balances power output, efficiency, and quantum coherence preservation
+  - **Activation**: quantum Feshbach engine, quantum thermodynamics, BEC heat engine, Feshbach resonance control, quantum optimal control, trapped condensate
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Maximum Likelihood Decoding of Quantum Error Correction Codes
