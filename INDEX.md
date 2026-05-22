@@ -30,6 +30,30 @@
     16|  - Phase-invariant for frequencies >20 Hz; accessible range ~10-70 Hz
     17|  - Consistent with hippocampal replay phenomena (theta sequences during sleep, gamma during wake)
     18|  - **Activation**: spiking temporal memory, sequence learning SNN, replay speed, oscillatory entrainment, theta sequences, time cells
+
+
+## 2026-05-23 - Deep Learning Research: Efficiency + Agent Systems (Cron Job)
+
+### GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving
+- [[graphflow-llm-agent-serving]] - Graph-based workflow management paradigm for efficient LLM agent serving using unified directed graphs (wGraph) for dynamic workflow instantiation with KV-cache optimization (arXiv: 2605.22566)
+  - Represents agent workflows as a unified graph (wGraph) where each node is an atomic operation — shared substrate for dynamic task-specific instantiation
+  - Adaptive workflow generation from wGraph based on task semantics and constraint requirements
+  - Workflow state management exploits wGraph structure for ~4x KV-cache memory reduction
+  - **Activation**: graph workflow, wGraph, agent serving optimization, workflow state management, KV-cache optimization, LLM agent workflow
+
+### The Distillation Game: Adaptive Attacks & Efficient Defenses
+- [[distillation-game-defense]] - Product-of-Experts (PoE) defense against adaptive distillation attacks — a minimax game framework between a utility-constrained teacher and an adaptive student that reweights high-value examples (arXiv: 2605.22737)
+  - Adaptive student reweights high-value examples for substantially more capability recovery than passive evaluation suggests
+  - PoE defense: simple forward-pass-only combination of teacher + proxy student during generation
+  - Large passive-adaptive gap — defense evaluation should use adaptive students
+  - **Activation**: distillation attack, model stealing defense, Product-of-Experts defense, adaptive distillation, anti-distillation
+
+### Partial Fusion of Neural Networks
+- [[partial-fusion-neural-networks]] - Interpolation between ensembles and weight aggregation via neuron-level similarity matching with partial optimal transport, framed as generalized pruning where neurons are deleted or linearly combined (arXiv: 2605.22350)
+  - Partial fusion only aggregates weights of most similar neurons, preserving diversity while reducing cost
+  - Partial optimal transport for joint neuron identification and matching
+  - Generalized pruning framework: neurons can be deleted OR linearly combined based on similarity
+  - **Activation**: partial fusion, weight aggregation, neuron matching, model ensemble pruning, partial optimal transport
     19|
     20|
     21|
