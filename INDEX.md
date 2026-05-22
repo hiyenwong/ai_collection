@@ -1,4 +1,21 @@
 
+## 2026-05-22 - Neuroscience Research: Friston Attractor Networks + Naturalistic Cognitive Science (Cron Job)
+
+### Self-Orthogonalizing Attractor Neural Networks Emerging from the Free Energy Principle
+- [[self-orthogonalizing-attractor-networks]] - Formalizes how attractor networks emerge from the free energy principle applied to universal partitioning of random dynamical systems; results in self-orthogonalizing attractor representations with biologically plausible multi-level Bayesian active inference (arXiv:2505.22749)
+  - Attractors on the free energy landscape encode prior beliefs; inference integrates sensory data into posterior beliefs
+  - Self-orthogonalization emerges from simultaneously optimizing predictive accuracy and model complexity — enhances generalization and mutual information
+  - Random data → symmetric sparse couplings (Boltzmann Machine-like); sequential data → asymmetric couplings with non-equilibrium dynamics
+  - Published in Neurocomputing (2026), 133472 — by Spisak & Friston
+  - **Activation**: free energy principle attractor networks, self-orthogonalizing attractors, Bayesian active inference attractor, FEP Boltzmann Machine, Spisak Friston attractor
+
+### Naturalistic Computational Cognitive Science: Towards Generalizable Models and Theories That Capture the Full Range of Natural Behavior
+- [[naturalistic-computational-cognitive-science]] - Comprehensive framework arguing that cognitive science must embrace naturalistic experimental paradigms and AI integration to build generalizable theories spanning the full scope of natural behavior (arXiv:2502.20349)
+  - Naturalistic paradigms elicit distinct neural engagement patterns and behavioral strategies not captured by controlled experiments
+  - Large-scale AI models trained on naturalistic data show qualitatively different behavior and generalization patterns
+  - Provides practical guidance for integrating naturalistic methods without sacrificing experimental control or theoretical rigor
+  - **Activation**: naturalistic computational cognitive science, ecologically valid neuroscience, naturalistic AI cognitive modeling, generalizable cognitive theories
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Maximum Likelihood Decoding of Quantum Error Correction Codes
