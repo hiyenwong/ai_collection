@@ -1,69 +1,78 @@
 ---
 name: globally-optimal-snn-parameter-reconstruction
-description: "Globally optimal Spiking Neural Network (SNN) training via parameter reconstruction methodology. Extends convexification of parallel feedforward threshold networks to parallel recurrent threshold networks, enabling parameter reconstruction algorithm that avoids surrogate gradient approximation errors. Applicable to SNN training, optimization, energy-efficient neural networks. Triggers: SNN training, surrogate gradient, spiking neural network optimization, convex training, globally optimal SNN."
+description: "Globally optimal Spiking Neural Network (SNN) training via parameter reconstruction methodology. Extends convexification of parallel feedforward threshold networks to parallel recurrent threshold networks, which subsume parallel SNNs as a structured special case. Proposes parameter reconstruction algorithm that eliminates surrogate gradient approximation errors. Use when training SNNs without surrogate gradients, seeking globally optimal solutions, or addressing SNN training approximation errors. Trigger: globally optimal SNN, parameter reconstruction, convexification, threshold networks, surrogate gradient alternatives."
 ---
 
 # Globally Optimal SNN Training via Parameter Reconstruction
 
-## Overview
+**Paper:** arXiv:2605.08022 (May 2026)
+**Authors:** Himanshu Udupi, Xiaocong Yang, ChengXiang Zhai
 
-Methodology from arXiv:2605.08022 (Udupi, Yang, Zhai, 2026-05-08) for training Spiking Neural Networks without surrogate gradient approximation errors.
+## Problem
 
-## Core Problem
+SNN training relies on **surrogate gradients** because the spike function is non-differentiable. This introduces approximation errors that **accumulate across layers**, degrading performance in deep SNNs.
 
-SNN training typically relies on **surrogate gradients** due to the non-differentiability of the spike function. This introduces approximation errors that accumulate across layers, limiting performance.
+## Solution: Parameter Reconstruction
 
-## Key Innovation
+Extend convexification of parallel feedforward threshold networks → parallel recurrent threshold networks. Parallel SNNs are a structured special case.
 
-**Parameter Reconstruction Algorithm**: Extends convexification theory from parallel feedforward threshold networks to **parallel recurrent threshold networks**, which subsume parallel SNNs as a structured special case.
+### Core Approach
 
-## Methodology
+1. **Convexification**: Transform the non-convex SNN training landscape into a convex formulation via parallel recurrent threshold network equivalence
+2. **Parameter Reconstruction**: Reconstruct SNN parameters from the convexified solution, avoiding gradient approximation entirely
+3. **Hybrid Mode**: Can be combined with surrogate-gradient training for additional gains
 
-### 1. Convexification Framework
+### Key Advantages
 
-- Extend convexification from feedforward to recurrent threshold networks
-- Parallel SNNs are a structured special case of parallel recurrent threshold networks
-- This theoretical framework provides global optimality guarantees
+- **No approximation error**: Eliminates surrogate gradient bias
+- **Data scalable**: Performance improves consistently with more data
+- **Model-robust**: Works across various SNN architectures and configurations
+- **Large-scale potential**: Demonstrated scalability to larger SNNs
 
-### 2. Parameter Reconstruction
+## Implementation Patterns
+
+### Pattern 1: Standalone Parameter Reconstruction
 
 ```
-ANN Training -> Parameter Reconstruction -> SNN Parameters
+1. Formulate SNN as parallel recurrent threshold network
+2. Apply convexification to training objective
+3. Solve convex problem for optimal parameters
+4. Reconstruct SNN parameters from convex solution
+5. Deploy reconstructed SNN
 ```
 
-- Train equivalent threshold network with convex optimization
-- Reconstruct SNN parameters from the trained threshold network
-- Avoids surrogate gradient entirely
+### Pattern 2: Hybrid with Surrogate Gradients
 
-### 3. Hybrid Approach
+```
+1. Initialize SNN with surrogate gradient training (warm start)
+2. Apply parameter reconstruction for refinement
+3. Fine-tune with hybrid objective
+```
 
-- Can combine parameter reconstruction with surrogate-gradient training
-- Parameter reconstruction provides better initialization
-- Surrogate gradient fine-tunes the solution
+## Comparison with Existing Methods
 
-## Key Advantages
+| Method | Approximation Error | Global Optimum | Scalability |
+|--------|-------------------|----------------|-------------|
+| Surrogate Gradient | Yes (accumulates) | No | Moderate |
+| Parameter Reconstruction | No | Yes | High |
+| Hybrid (PR + SG) | Reduced | Approximate | High |
 
-1. **No approximation errors**: Avoids surrogate gradient approximation
-2. **Data scalability**: Demonstrated consistent improvement with larger datasets
-3. **Robust to configuration**: Works across different model architectures
-4. **Standalone or hybrid**: Can be used alone or combined with existing methods
+## Activation Keywords
 
-## Implementation Considerations
+- globally optimal SNN training
+- parameter reconstruction SNN
+- SNN training without surrogate gradient
+- convexification threshold network
+- spiking neural network optimization
+- 2605.08022
 
-- Extend parallel feedforward threshold network convexification to recurrent case
-- Parameter reconstruction maps threshold network weights to SNN parameters
-- Suitable for both classification and temporal sequence tasks
+## Related Skills
 
-## Applications
-
-- Energy-efficient SNN deployment
-- Large-scale SNN training
-- Neuromorphic hardware optimization
-- Biological neural network simulation
+- snn-learning-survey
+- surrogate-gradient-snn-training
+- spikingjelly-framework
 
 ## arXiv Reference
 
-- **Paper**: Globally Optimal Training of Spiking Neural Networks via Parameter Reconstruction
-- **ID**: 2605.08022
-- **URL**: https://arxiv.org/abs/2605.08022
-- **PDF**: https://arxiv.org/pdf/2605.08022v1
+- **arXiv:** https://arxiv.org/abs/2605.08022
+- **PDF:** https://arxiv.org/pdf/2605.08022v1
