@@ -1,3 +1,19 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — 2nd batch)
+
+### Mechanism of Efficacy in QAOA for Random k-SAT: From Adiabatic Manifold to Sublinear Parameter Optimization
+- [[qaoa-adiabatic-manifold-samp]] - Discovers that optimal QAOA parameters remain on a smooth adiabatic manifold, enabling SAMP strategy for sublinear parameter optimization and zero-cost deep-circuit initialization (arXiv:2605.20288)
+  - Establishes formal correspondence between adiabatic state transfer and QAOA ansatz for random k-SAT
+  - Optimal parameters do not become stochastic under depth compression — confined to low-dimensional adiabatic manifold
+  - SAMP transforms parameter optimization from unstructured high-dimensional search into guided refinement
+  - **Activation**: QAOA parameter optimization, adiabatic manifold, SAMP, random k-SAT, variational quantum algorithm, NISQ, parameter concentration
+
+### Semidefinite Programming for Optimal Quantum Cloning: A Computational Framework
+- [[sdp-quantum-cloning-framework]] - Computational framework reformulating quantum cloning as SDP over CPTP maps via Choi-Jamiolkowski isomorphism, providing unified catalogue of Kraus operators for all major cloning families (arXiv:2605.21274)
+  - Numerically certifies global optimality through primal-dual strong duality
+  - Automatically extracts operational Kraus operators from optimal Choi matrix via spectral decomposition
+  - Application to optimal cloning attacks on BB84 under depolarizing noise
+  - **Activation**: quantum cloning, semidefinite programming, SDP, Choi-Jamiolkowski isomorphism, Kraus operators, CPTP maps, BB84 security, quantum channel optimization
+
 ## 2026-05-22 - Quantum End-to-End Learning + Combinatorial Optimization (Cron Job)
 
 ### Quantum End-to-End Learning for Contextual Combinatorial Optimization
