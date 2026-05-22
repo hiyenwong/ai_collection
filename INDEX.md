@@ -1,4 +1,23 @@
 
+## 2026-05-23 - Neuroscience Research: Spiking Timing + Thousand Brains (Cron Job)
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons
+- [[learning-sequence-timing-spiking-neurons]] - Extends spiking Temporal Memory (sTM) model to encode element-specific timing and flexibly control replay speed via oscillatory background inputs (arXiv: 2605.22523)
+  - Duration encoded by sequential activation of element-specific neuronal populations across wide timescales
+  - Oscillatory background inputs serve as clock signal for replay speed modulation
+  - Replay speed during wakefulness vs sleep correlates with global EEG/LFP oscillatory activity
+  - Biologically plausible STDP-based framework for sequence timing learning
+  - **Activation**: spiking temporal memory, sTM sequence learning, spiking neuron timing, replay speed control, oscillatory clock SNN
+
+### Temporal Coding as a Substrate for Sensorimotor Object Inference: A Spiking Reinterpretation of Thousand Brains Architecture
+- [[temporal-coding-thousand-brains-spiking]] - Replaces dense feature vectors with rank-order spike packets for sensorimotor inference in Monty/Thousand Brains framework using STDP to encode traversal direction (arXiv: 2605.22206)
+  - Rank-order spike encoding: most activated neuron fires first, inter-burst gap encodes sensor displacement
+  - STDP encodes traversal direction into synaptic weights; directional sequence carries spatial meaning
+  - Adaptive λ adjusts temporal integration window based on object geometry
+  - Perfect discrimination on objects with same features in different spatial arrangements (dense vectors fail at chance)
+  - Maintains 30-50pp advantage across all noise levels; λ converges to geometry-distinct values
+  - **Activation**: thousand brains theory, temporal coding spiking, neuromorphic object recognition, STDP spatial encoding, Monty framework spiking
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### From quantum to quantum-inspired: the LogQ algorithm as a non-linear continuous relaxation

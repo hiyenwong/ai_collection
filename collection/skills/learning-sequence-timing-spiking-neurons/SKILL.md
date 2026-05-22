@@ -1,88 +1,63 @@
 ---
 name: learning-sequence-timing-spiking-neurons
-version: v1.0.0
-last_updated: 2026-05-22
-description: "Learning sequence timing and control of replay speed in networks of spiking neurons. Extends the spiking Temporal Memory (sTM) model to encode element-specific timing via sequential activation of neuronal populations and uses oscillatory background inputs as a clock signal for flexible replay speed control. Applicable to: sequence learning in SNNs, temporal coding, biological replay mechanisms, timing representation in spiking networks. Trigger: spiking temporal memory, sequence timing SNN, replay speed control, oscillatory clock signal, STDP sequence learning, sTM model"
+description: Learning sequence timing and control of replay speed in networks of spiking neurons. Research methodology from arXiv 2605.22523 (May 2026). Extending the spiking Temporal Memory (sTM) model to encode element-specific timing and flexibly control replay speed via oscillatory background inputs. Use when working on: spiking neural network temporal processing, biologically plausible sequence learning, replay/sleep consolidation mechanisms, or neuromorphic timing circuits.
 ---
 
 # Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
 
-## Description
+**arXiv:** 2605.22523 | **Authors:** Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff
 
-A biologically plausible mechanism for learning precise sequence timing in spiking neural networks, extending the spiking Temporal Memory (sTM) model. The duration of sequence elements is represented by sequential activation of element-specific neuronal populations, enabling encoding across wide timescales. Oscillatory background inputs serve as a clock signal for flexible replay speed control.
+## Overview
 
-Based on: "Learning sequence timing and control of replay speed in networks of spiking neurons" (arXiv:2605.22523, May 2026)
+Processing sequential inputs is a fundamental brain function underlying sensory perception, language, and motor control. This paper extends the spiking Temporal Memory (sTM) model — a biologically inspired spiking neural network — to encode not just the *order* but the *precise timing* of sequence elements, and to flexibly control the *speed* of sequence replay.
 
-## Problem
+## Key Contributions
 
-- Sequence processing in the brain requires representing not just order but precise timing of events
-- Existing computational models (including the original sTM model) learn sequence order but not element-specific timing
-- Mechanism for flexible control of replay speed (e.g., fast replay during sleep vs. slow replay during wakefulness) remains unknown
-- Need biologically plausible mechanisms for both timing encoding and speed modulation
+### 1. Timing Encoding via Sequential Activation
+- Each sequence element's duration is represented by sequential activation of element-specific neuronal populations
+- Enables encoding sequences across a wide range of timescales (from milliseconds to seconds)
+- Biologically plausible: elapsed time is encoded by unique, sparse spatiotemporal patterns of neural activity
 
-## Core Results from Paper
+### 2. Oscillatory Clock for Replay Speed Control
+- Oscillatory background inputs serve as a clock signal
+- Provides robust, flexible mechanism for controlling sequence replay speed
+- Replay speed during wakefulness vs sleep correlates with global oscillatory activity (EEG/LFP rhythms)
 
-### Learning Sequence Timing via Delay Lines
-- Time intervals between sequence elements are discretized into elementary intervals shorter than dendritic plateau potential duration (~100ms)
-- Longer intervals constructed from concatenations of these elementary intervals
-- Implemented as delay lines of sequentially activated neuronal assemblies within same minicolumn
-- Sparse, context-specific spatiotemporal "bar code" patterns encoding time elapsed since sequence onset
-- Demonstrated with musical melody sequences (Oh, Pretty Woman) with dilation factors 1x, 2x, 3x
+### 3. Biologically Plausible Framework
+- Fully spiking neuron model (no rate-code approximations)
+- STDP-based learning maintains biological realism
+- Extends the sTM model which represents each sequence element by synchronously-firing neuron ensembles
 
-### Replay Speed Control: Constant vs. Oscillatory Input
-- **Constant background input**: Limited flexibility — slow replay requires fine-tuning; speed sensitive to input current magnitude
-- **Oscillatory background input**: Robust, flexible speed control
-  - 1:1 clock regime: replay speed = oscillation frequency (green band in parameter space)
-  - Integer fraction modes: f/2, f/3, f/4 at lower amplitudes (blue bands)
-  - Fast compressed replay at <5 Hz (like slow-wave sleep hippocampal replay)
-  - Phase-invariant for frequencies >20 Hz
-  - Accessible range: ~10 Hz to ~70 Hz
+## Methodological Details
 
-### Phase Invariance
-- For frequencies >20 Hz, replay speed is largely invariant to oscillation phase at onset
-- Initial inter-assembly intervals show small variability that quickly disappears
-- At low frequencies, strong phase dependence can prevent or alter replay
+### sTM Model Architecture
+- Each sequence element → small set of synchronously-firing neurons
+- Active neuron set encodes element identity in sequential context
+- Original sTM: learns order but not timing
+- Extended sTM: learns order AND timing via population-specific duration encoding
 
-## Approach
+### Replay Speed Modulation
+- Oscillatory input frequency → replay speed
+- Slower oscillations → slower replay (sleep-like)
+- Faster oscillations → faster replay (wake-like)
+- Mechanism: global oscillatory activity gates synaptic transmission or neuronal excitability
 
-### Timing Encoding via Sequential Population Activation
+## Key Results
+- Model successfully encodes and replays sequences with element-specific timing
+- Replay speed flexibly modulated across wide range
+- Temporal compression/expansion preserves sequence structure
+- Sparse spatiotemporal activity patterns emerge as timing representation
 
-The duration of each sequence element is encoded by sequential activation of element-specific neuronal populations, creating unique sparse spatiotemporal patterns of neural activity:
+## Activation Keywords
+- spiking temporal memory
+- sTM sequence learning
+- spiking neuron timing
+- replay speed control
+- oscillatory clock SNN
+- sequence timing neuroscience
+- biologically plausible sequence learning
 
-```text
-Element A → [Population A1 → A2 → ... → An] → Element B → [Population B1 → B2 → ... → Bn]
-```
-
-### Oscillatory Clock for Speed Control
-
-Oscillatory background inputs (representing global brain oscillations like theta rhythms) serve as a clock signal:
-
-- Different oscillation frequencies modulate replay speed
-- Higher frequencies lead to faster replay
-- Lower frequencies lead to slower replay
-- Provides robust mechanism independent of learned weights
-
-### Biologically Plausible Learning
-
-- Uses STDP-like mechanisms for sequence structure learning
-- Timing information is implicit in the spatiotemporal firing patterns
-- No external timer or explicit delay lines needed
-
-## Key Findings
-
-1. Elapsed time is encoded by unique sparse spatiotemporal patterns of neural activity
-2. Replay speed during wakefulness vs. sleep correlates with global oscillatory activity observed in EEG or LFP recordings
-3. The mechanism works across a wide range of timescales
-4. Oscillatory clock provides robust speed control independent of learned content
-
-## Implications
-
-- Provides a unified framework for understanding timing in neural computation
-- Connects sequence replay speed modulation to brain rhythms (theta oscillations)
-- Offers testable predictions about replay speed during different brain states
-- Relevant for both biological neuroscience and neuromorphic computing
-
-## Activation
-
-- spiking sequence timing, sTM model temporal memory, oscillatory replay speed control
-- STDP temporal sequence learning, spatiotemporal neural patterns encoding
+## Related Skills
+- working-memory-heterogeneous-delays-v3
+- attractor-models-language-reasoning
+- spike-timing-neuronal-assemblies
