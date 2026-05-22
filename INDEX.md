@@ -1,3 +1,33 @@
+## 2026-05-23 - Economics and Investment + Quantum Finance (Cron Job)
+
+### Higher-Order Portfolio Optimization with Quantum Approximate Optimization Algorithm
+- [[higher-order-portfolio-qaoa]] - First quantum formulation for portfolio optimization including higher-order moments (skewness, kurtosis) via HUBO formulation, avoiding quadratic reduction overhead of QUBO (arXiv: 2509.01496)
+  - Higher-order unconstrained binary optimization (HUBO) maps naturally to QAOA circuits
+  - Includes skewness and kurtosis for more realistic portfolio return distribution modeling
+  - Realistic integer variable encoding with capital-based budget constraint
+  - **Activation**: higher-order portfolio, qaoa hubo, skewness kurtosis portfolio, quantum portfolio moments
+
+### Quantum and Classical ML in Decentralized Finance: AMM Backtesting
+- [[quantum-defi-trading]] - Comprehensive empirical comparison of QML vs CML for AMM/DeFi trading strategies across 10 models with multi-asset backtesting, hybrid quantum models achieve 11.2 percent avg return and 1.42 Sharpe (arXiv: 2510.15903)
+  - Hybrid quantum models (QASA Sequence) outperform both classical and pure quantum: 13.99 percent return, 1.76 Sharpe
+  - Systematic comparison: classical (RF, GB, LR), pure quantum (VQE, QNN, QSVM), hybrid (QASA, QuantumRWKV), transformers
+  - Multi-asset backtesting across cryptocurrency markets with realistic transaction costs
+  - **Activation**: quantum defi trading, qml amm, hybrid quantum crypto, automated market maker
+
+### QADQN: Quantum Attention Deep Q-Network for Financial Market Prediction
+- [[quantum-attention-rl]] - Embeds variational quantum circuits within Deep Q-Network for market prediction and trading, achieving Sortino ratios of 1.28 and 1.19 on S and P 500 with realistic transaction costs (arXiv: 2408.03088)
+  - Quantum attention mechanism computes attention weights via parameterized quantum circuits
+  - Entanglement models complex feature correlations in market data
+  - Hybrid quantum-classical training with parameter-shift rule for quantum gradients
+  - **Activation**: quantum attention dqn, qadqn, quantum rl trading, variational quantum reinforcement learning
+
+### Tianyan: Cloud Services with Quantum Advantage
+- Quantum cloud platform with 105-qubit Zuchongzhi 3.0-like processor achieving quantum advantage on random circuit sampling - 1M samples in 18.4 min vs 16,000 years for classical (arXiv: 2512.10504)
+  - 105 qubits with fidelities: 1Q 99.90 percent, 2Q 99.56 percent, readout 98.7 percent
+  - Cqlib open-source SDK for extended quantum circuits and primitives
+  - Democratizes access to high-performance quantum hardware for community validation
+  - **Activation**: quantum cloud, quantum advantage, zuchongzhi processor, quantum computing as a service
+
 ## 2026-05-23 - Neuroscience Research: SNN Timing + EEG Microstates (Cron Job)
 
 ### Learning Sequence Timing and Replay Speed Control in SNNs
