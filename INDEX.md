@@ -13,6 +13,12 @@
   - O(1/ε) evolution time matching optimal Heisenberg limit
   - **Activation**: adiabatic qpe, quantum phase estimation, adiabatic quantum computing, eigenvalue estimation
 
+### Self-Testing of Exact Entanglement Embezzlement
+- [[self-testing-entanglement-embezzlement]] - Proves exact entanglement embezzlement is a self-test for Cuntz isometries and unique quasi-free state on the Cuntz algebra O_d using modular theory (arXiv: 2605.22713)
+  - Any embezzlement protocol arises from unique state on O_d ⊗ O_d tensor product
+  - Von Neumann algebra is unique separable approximately finite-dimensional Type III_λ factor
+  - **Activation**: entanglement embezzlement, Cuntz algebra, self-testing quantum, von Neumann algebra, Type III factor
+
 ### Quantum Circuit Design via Dynamic Pauli Constraints
 - [[quantum-circuit-dynamic-pauli-constraints]] - Software-oriented quantum computation model with constraint-aware circuit synthesis for NISQ hardware (arXiv: 2605.22744)
   - Dynamic Pauli constraints evolve during computation for hardware-aware synthesis
