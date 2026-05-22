@@ -28,6 +28,13 @@
   - Classical baseline (Gurobi) needed as optimality anchor for quality claims
   - **Activation**: quantum resource audit, QPU time analysis, hybrid quantum classical benchmark, quantum advantage measurement
 
+### Constrained Portfolio Optimization via QAOA with XY-Mixers and Trotterized Initialization
+- [[dicke-qaoa-initialization]] - QAOA barren plateau mitigation via Dicke state initialization + adiabatic Trotterized parameter schedule for strictly constraint-preserving portfolio optimization (arXiv: 2602.14827)
+  - Dicke state |D(n,K)⟩ ensures evolution stays in feasible subspace from the start
+  - XY-mixer Hamiltonian strictly preserves Hamming weight (no penalty terms needed)
+  - Trotterized adiabatic parameter schedule mitigates barren plateaus (Sharpe 1.81 vs SA 1.31 vs HRP 0.98)
+  - **Activation**: Dicke state QAOA, XY-mixer portfolio, Trotterized initialization, barren plateau mitigation, constraint-preserving QAOA, direct indexing quantum
+
 ### Constrained Counterdiabatic QAOA for Portfolio Optimization
 - [[counterdiabatic-qaoa]] - CCD-QAOA incorporates approximate adiabatic gauge potentials via nested commutators for constrained portfolio optimization (arXiv: 2605.06858)
   - XY mixer preserves Hamming weight for budget constraint enforcement
