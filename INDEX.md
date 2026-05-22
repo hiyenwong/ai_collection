@@ -1,3 +1,24 @@
+
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Exact Framework for Transport Statistics in Quadratic Quantum Systems
+- [[quantum-transport-statistics-framework]] - Exact framework for evaluating heat, energy, and particle transport statistics between Gaussian reservoirs (arXiv: 2602.21190)
+  - Combines full counting statistics with non-Markovian master equations
+  - Exact evaluation of all transport cumulants (current, noise, skewness)
+  - **Activation**: quantum transport, full counting statistics, non-Markovian, Gaussian reservoirs
+
+### Quantized Return Statistics under Coherent Weak Monitoring
+- [[quantized-return-statistics]] - Quantum measurement return statistics connecting winding number topology with recurrence (arXiv: 2603.26933)
+  - Mean return time quantized under strong monitoring through winding number
+  - Quantization survives under weak monitoring with modified statistical properties
+  - **Activation**: quantum return statistics, winding number, weak monitoring, topological quantization
+
+### Restricted Excludant Statistics in Parity-Distinct Partitions and Quantum Modular Forms
+- [[quantum-modular-forms-partitions]] - Number theory partition statistics connecting to quantum modular forms via q-series (arXiv: 2603.13915)
+  - Studies restricted excludant statistics in parity-distinct partitions
+  - Generating functions related to quantum modular forms via q-series transformations
+  - **Activation**: partition statistics, quantum modular forms, q-series, number theory
+
 ## 2026-05-22 - 数论/量子计算 (Cron Job)
 
 ### End-to-End Formalization of Quantum Error Correction
