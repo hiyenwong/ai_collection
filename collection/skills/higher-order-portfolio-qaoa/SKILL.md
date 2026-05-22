@@ -1,126 +1,109 @@
 ---
 name: higher-order-portfolio-qaoa
-description: "Higher-order moment portfolio optimization using Quantum Approximate Optimization Algorithm (QAOA) with HUBO formulation. Extends beyond mean-variance to include skewness and kurtosis for more realistic portfolio modeling."
-category: quantum-finance
+description: "Higher-order moment portfolio optimization using Quantum Approximate Optimization Algorithm (QAOA). Extends classical Markowitz mean-variance to include skewness and kurtosis via quantum Hamiltonian encoding. Use when: designing quantum portfolio optimization with risk beyond variance, implementing QAOA for multi-objective financial optimization, encoding higher-order statistical moments into quantum cost functions, or comparing quantum vs classical approaches for portfolio selection with non-Gaussian return distributions."
 ---
 
-# Higher-Order Portfolio QAOA
+# Higher-Order Portfolio Optimization with QAOA
 
 ## Description
-Higher-order moment portfolio optimization using Quantum Approximate Optimization Algorithm (QAOA). This methodology extends traditional mean-variance portfolio optimization to include skewness (3rd moment) and kurtosis (4th moment) using Higher-Order Unconstrained Binary Optimization (HUBO) formulation, which maps naturally to QAOA parametrized circuits without quadratic reduction overhead.
 
-## Activation Keywords
-- higher-order portfolio optimization
-- qaoa portfolio skewness kurtosis
-- hubo portfolio quantum
-- quantum portfolio higher moments
-- qaoa hubo formulation
-- 量子组合优化高阶矩
-- portfolio optimization with skewness
+Extends portfolio optimization beyond Markowitz mean-variance (2nd moment) to include skewness (3rd moment) and kurtosis (4th moment) using QAOA. Higher-order moments capture asymmetry and tail risk in return distributions — critical for realistic portfolio modeling.
 
-## Tools Used
-- terminal: Run QAOA simulations and quantum circuit execution
-- web_search: Find latest quantum finance papers
-- write_file: Create portfolio optimization scripts
+## Core Methodology
 
-## Core Concepts
+### Hamiltonian Encoding
 
-### Higher-Order Moments in Portfolio Optimization
-Traditional portfolio optimization only considers mean (expected return) and variance (risk). Higher-order optimization adds:
-- **Skewness** (3rd moment): Asymmetry of return distribution — positive skew preferred
-- **Kurtosis** (4th moment): Tail heaviness — lower kurtosis means fewer extreme events
+The portfolio optimization objective is mapped to a QUBO Hamiltonian:
 
-### HUBO vs QUBO
-- **QUBO** (Quadratic Unconstrained Binary Optimization): Only pairwise interactions (2-body terms)
-- **HUBO** (Higher-Order Unconstrained Binary Optimization): Includes 3-body, 4-body+ terms
-- HUBO maps naturally to QAOA without reduction to quadratic form (reduction adds ancilla qubits)
+H = H_obj + λ · H_constraint
 
-### QAOA Circuit for HUBO
-1. Encode portfolio assets as qubits
-2. Use integer variable encoding for position sizing
-3. Construct cost Hamiltonian with higher-order Pauli terms (ZZZ, ZZZZ, etc.)
-4. Apply QAOA layers: alternating cost + mixer unitaries
-5. Measure optimal portfolio configuration
+Where:
+- **H_obj**: Objective Hamiltonian encoding return, variance, skewness, kurtosis
+- **H_constraint**: Cardinality/budget constraints as penalty terms
+- **λ**: Penalty strength for constraint satisfaction
+
+### Higher-Order Moment Terms
+
+- **Mean (μ)**: Σ w_i · μ_i → linear term in Hamiltonian
+- **Variance (Σ)**: Σ w_i · w_j · σ_ij → quadratic terms (2-body interactions)
+- **Skewness (S)**: Σ w_i · w_j · w_k · s_ijk → cubic terms (3-body interactions)
+- **Kurtosis (K)**: Σ w_i · w_j · w_k · w_l · k_ijkl → quartic terms (4-body interactions)
+
+### QUBO Reduction for Higher-Order Terms
+
+Higher-order terms (3-body, 4-body) must be reduced to quadratic form for QAOA:
+- Use ancilla qubits to replace cubic/quartic terms
+- Apply penalty-based reduction: introduce auxiliary variable z ≈ x_i · x_j
+- Trade-off: more ancilla qubits vs. lower-degree Hamiltonian
+
+### QAOA Implementation
+
+```
+1. Initialize: |+⟩^⊗n or problem-informed state (e.g., Dicke state for cardinality)
+2. For p layers:
+   a. Apply mixer: e^{-i·β·H_mixer}
+   b. Apply cost: e^{-i·γ·H_cost}
+3. Measure and optimize (β, γ) via classical optimizer
+```
+
+### Mixer Selection
+
+- **Standard X-mixer**: Allows transitions between all states; may violate constraints
+- **XY-mixer**: Preserves Hamming weight; enforces cardinality constraints natively
+- **Ring mixer**: Structured transitions for specific constraint patterns
+
+## Key Insights
+
+1. **Skewness preference**: Investors prefer positive skewness (asymmetric upside) — include as positive term in objective
+2. **Kurtosis penalty**: High kurtosis means fat tails (crash risk) — penalize strongly
+3. **QAOA depth**: Higher-order terms increase circuit depth; p=2-3 often sufficient for NISQ
+4. **Ancilla overhead**: 3-body → 1 ancilla per term; 4-body → 2+ ancillas per term
+5. **Classical comparison**: QAOA shows advantage for portfolios >50 assets with complex constraints
 
 ## Usage Patterns
 
-### Pattern 1: Higher-Order Portfolio Formulation
-```python
-# Cost Hamiltonian for portfolio with higher moments
-H = -mu_i * Z_i              # Expected return (linear)
-  + gamma * sigma_ij * Z_i Z_j   # Risk/variance (quadratic)
-  + lambda_3 * S_ijk * Z_i Z_j Z_k  # Skewness (cubic)
-  + lambda_4 * K_ijkl * Z_i Z_j Z_k Z_l  # Kurtosis (quartic)
-```
+### Pattern 1: Portfolio with Tail Risk Modeling
+When portfolio returns are non-Gaussian (crypto, options, emerging markets):
+1. Estimate μ, Σ, S, K from historical data
+2. Map to Hamiltonian with weighted moment terms
+3. Reduce higher-order terms to QUBO
+4. Run QAOA with XY-mixer for cardinality constraints
+5. Validate against classical benchmark (MILP, heuristic)
 
-### Pattern 2: Integer Encoding for Position Sizing
-- Use binary encoding: `position_i = sum(b_ij * 2^j)` for j in [0, num_bits)
-- Capital-based budget constraint: `sum(position_i * price_i) <= total_capital`
-- More realistic than binary buy/no-buy decisions
+### Pattern 2: ESG-Constrained Direct Indexing
+For portfolios with exclusion constraints:
+1. Define cardinality K and exclusion masks
+2. Use XY-mixer to preserve Hamming weight K
+3. Encode ESG scores as linear bias terms
+4. QAOA with p=1-2 layers on NISQ device
 
-### Pattern 3: Classical Baseline Comparison
-1. Solve continuous relaxation with classical optimization
-2. Apply integer programming-based discretization
-3. Compare HUBO-QAOA solutions against this baseline
-4. Evaluate: Sharpe ratio, Sortino ratio, maximum drawdown
+### Pattern 3: Quantum-Classical Hybrid Pipeline
+For large-scale portfolios (>100 assets):
+1. Classical pre-screening: filter to top-N candidates
+2. QAOA on reduced universe
+3. Classical post-processing: refine solution
+4. Iterative refinement loop
 
-## Instructions for Agents
+## Implementation Notes
 
-### Step 1: Problem Formulation
-- Define universe of N assets
-- Calculate historical moments: mean, covariance, coskewness, cokurtosis tensors
-- Set risk aversion parameter and budget constraint
+- **Penalty tuning**: λ must be large enough to enforce constraints but not overwhelm objective
+- **Moment estimation**: Requires sufficient historical data; use robust estimators for S and K
+- **QUBO size**: n + ancilla qubits; track qubit budget for target hardware
+- **Validation**: Always compare against classical baselines (mean-variance, heuristic search)
 
-### Step 2: QAOA Circuit Construction
-- Map assets to qubits with integer encoding
-- Build cost Hamiltonian with all moment terms
-- Choose mixer Hamiltonian (standard XY or problem-specific)
-- Set QAOA depth (p layers)
-
-### Step 3: Optimization
-- Use classical optimizer (COBYLA, SPSA) for QAOA parameters
-- Evaluate circuit on quantum simulator or hardware
-- Extract portfolio weights from measurement outcomes
-
-### Step 4: Validation
-- Backtest optimized portfolio on out-of-sample data
-- Compare against mean-variance and integer programming baselines
-- Report: Sharpe ratio, Sortino ratio, skewness, kurtosis of returns
-
-## Error Handling
-
-### QAOA Convergence Issues
-- Increase circuit depth (p) if solution quality is poor
-- Use warm-start from classical solution
-- Try different mixer Hamiltonians
-
-### HUBO Term Explosion
-- Higher-order terms scale as O(N^k) for k-th moment
-- Use truncation or regularization for large portfolios
-- Consider mean-field approximation for very large N
-
-### Hardware Limitations
-- Current NISQ devices limit portfolio size (~10-20 assets)
-- Use simulator for larger problems
-- Consider hybrid decomposition approaches
-
-## Examples
-
-### Example: 10-Asset Portfolio with Skewness
-Given 10 assets, construct HUBO with:
-- 10 linear terms (expected returns)
-- 45 quadratic terms (covariance)
-- 120 cubic terms (coskewness)
-- Budget constraint: sum of positions = 1
-
-Run QAOA with p=3 layers, compare to classical integer programming baseline.
-
-## Resources
-- arXiv:2509.01496 - "Higher-Order Portfolio Optimization with QAOA" (Uotila et al.)
-- Qiskit: Quantum computing SDK with QAOA implementations
-- PennyLane: Differentiable quantum programming
+## Activation Keywords
+- higher order portfolio optimization
+- skewness kurtosis portfolio
+- QAOA portfolio
+- quantum portfolio skewness
+- qaoa higher moments
+- 高阶矩组合优化
+- 量子组合优化偏度峰度
+- quantum finance portfolio
+- QUBO portfolio optimization
+- XY-mixer portfolio
 
 ## Related Skills
-- quantum-portfolio-optimization
-- qaoa-optimization
-- quantum-finance-portfolio
+- quantum-portfolio-optimization (general QAOA portfolio)
+- quantum-finance-portfolio (quantum finance overview)
+- qaoa-optimization (general QAOA methodology)

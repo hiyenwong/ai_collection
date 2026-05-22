@@ -206,6 +206,14 @@
   - **Activation**: Pauli Correlation Encoding, PCE methodology, multi-variable per qubit, market graph partitioning, dense QUBO gate-based
 
 
+### Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection
+- [[quantum-genetic-negative-selection]] - Quantum Genetic Algorithm integrated into negative selection for financial anomaly detection, exploiting quantum superposition for enhanced detector generation (arXiv: 2605.22527)
+  - QGNSA replaces classical evolutionary optimization in EvoSeedRNSA with quantum genetic operations
+  - Quantum superposition encodes multiple detector candidates simultaneously; amplitude adjustment guides search
+  - Superior accuracy on Metaverse Financial Transactions Dataset vs classical counterpart
+  - Robust under varying hyperparameter configurations
+  - **Activation**: quantum genetic negative selection, QGNSA anomaly detection, quantum genetic algorithm finance, immune-inspired fraud detection, 量子遗传阴性选择算法
+
 ## 2026-05-23 - Neuroscience Research (Cron Job)
 
 ### Canonical Functionalism
