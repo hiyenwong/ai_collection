@@ -60,6 +60,24 @@
   - Pretrained and random models can achieve similar accuracy with distinct recovery profiles
   - **Activation**: target-space recovery, brain alignment evaluation, reproducible dimensions, model-brain comparison, fMRI encoding models
 
+## 2026-05-23 - Neuroscience Research: Cross-Species Auditory + Cognitive Cost Alignment (Cron Job)
+
+### Computational Auditory Periphery Models: the Return of the Rodent
+- [[computational-auditory-periphery-models]] - Cross-species 1-D nonlinear cochlear transmission-line model adapted from human to mouse and gerbil, enabling unified computational framework for SNHL research (arXiv: 2605.19070)
+  - Species-specific BM length/width, stapes area, middle-ear transfer functions, frequency range parameterization
+  - Validated against BM velocity, AN tuning curves, and DPOAEs across species
+  - Cochlear synaptopathy simulations reproduce species-specific ABR/EFR differences in SNHL
+  - OHC individualization via DPOAEs captures intergroup but not individual differences
+  - **Activation**: auditory periphery model, cochlear transmission line, cross-species hearing, sensorineural hearing loss, cochlear synaptopathy, DPOAE simulation
+
+### Effort as Ceiling, Not Dial: Cognitive Cost Alignment of LRMs
+- [[effort-cognitive-cost-llm-alignment]] - LRM chain-of-thought token counts align with human RTs invariant of inference-time effort — effort is an upper budget ceiling, not a dial; allocation policy crystallized at training time (arXiv: 2605.16938)
+  - Within-task and cross-task LRM-human RT alignment unchanged across 3 effort levels (Bayes Factors lean null)
+  - Effort parameter sets upper generation budget, not real-time allocation — allocation is training-time crystallized
+  - Larger models (120B) show better fine-grained alignment with human difficulty patterns
+  - Supports compiled (training-time) rather than online (inference-time) account of LRM problem-solving
+  - **Activation**: cognitive cost alignment, LRM reasoning budget, compiled cognition, chain-of-thought RT, human-AI cognitive alignment
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### A Penalty-Free Pipeline for Direct Quantum-Annealer Portfolio Optimization
