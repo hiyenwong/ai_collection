@@ -1,3 +1,23 @@
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### On the Spectral theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic curves
+- [[isogeny-graph-quantum-sampling]] - Proves Quantum Unique Ergodicity for supersingular isogeny graphs, enabling provably secure quantum polynomial-time sampling of elliptic curves for post-quantum cryptography without trusted setup (arXiv:2602.02263)
+  - Õ(log⁴p) quantum gate complexity heuristic variant; Õ(log¹³p) under GRH
+  - Removes heuristic eigenvalue separation assumption in Kane-Sharif-Silverberg quantum money protocol
+  - **Activation**: isogeny graphs, quantum sampling, supersingular elliptic curves, quantum unique ergodicity, post-quantum cryptography, spectral theory, number theory, CGL hash
+
+### Multi-Qubit Golden Gates
+- [[multi-qubit-golden-gates]] - Constructs optimal topological generators for compact unitary Lie groups using number theory, enabling ~10x fewer T-type gates than Clifford+T for 2-qubit approximations (arXiv:2509.09047)
+  - Proves Sarnak-Xue Density Hypothesis via endoscopic classification of automorphic representations
+  - 4.8x fewer non-Clifford gates than Clifford+T; tight upper bounds on CS count
+  - **Activation**: golden gates, gate synthesis, Clifford+T, Clifford+CS, topological generators, Lie groups, automorphic forms, quantum compilation
+
+### Geometric Prototype Learning in Quantum Hilbert Space with Matrix Product States
+- [[quantum-hilbert-prototype-learning]] - Lifts prototype-based ML to quantum Hilbert space using MPS as class representatives, outperforming classical prototypes via geometric quantum state measures (arXiv:2605.17895)
+  - Classification via Born rule: P(c|x) = |⟨φ_c|ψ_x⟩|² — quantum probability as decision function
+  - Natural "attraction" effect from Hilbert space geometry enables effective learning
+  - Dimensionality reduction via prototype distances; explainable quantum ML
+  - **Activation**: quantum prototype learning, matrix product states, quantum Hilbert space, explainable quantum ML, geometric classification, tensor networks, Born rule
 ## 2026-05-22 - Systems Engineering Research (Cron Job)
 
 ### Agentic Agile-V: From Vibe Coding to Verified Engineering in Software and Hardware Development

@@ -1,114 +1,102 @@
 ---
 name: isogeny-graph-quantum-sampling
-description: Quantum sampling of supersingular elliptic curves using spectral theory of isogeny graphs. Covers quantum polynomial-time algorithms for generating secure curves for isogeny-based cryptography, spectral gap analysis, and sampling with unknown endomorphism rings. Use when working with isogeny-based protocols (SIKE, CSIDH), secure curve generation, or quantum sampling in algebraic geometry.
+category: quantum
+description: Quantum sampling of supersingular elliptic curves via isogeny graph spectral theory. Proves Quantum Unique Ergodicity for isogeny graphs, enabling secure instantiation of isogeny-based cryptographic protocols without trusted setup.
+version: "1.0"
+tags: [quantum-computing, number-theory, isogeny-graphs, cryptography, spectral-theory]
+source: "arxiv:2602.02263"
+arxiv_id: "2602.02263"
+date: "2026-05-22"
 ---
 
 # Isogeny Graph Quantum Sampling
 
-## Description
+## Overview
 
-Methodology for sampling random supersingular elliptic curves with unknown endomorphism rings using spectral theory of isogeny graphs. Addresses the fundamental problem in isogeny-based cryptography where protocols require secure curves with hidden endomorphism structure.
+This methodology enables provably secure sampling of random supersingular elliptic curves with unknown endomorphism rings — a critical primitive for isogeny-based cryptographic protocols (CGL hash function, SIDH variants) without requiring trusted setup.
 
-## Activation Keywords
+## Core Technique
 
-- isogeny graph sampling
-- supersingular elliptic curves
-- quantum curve generation
-- secure isogeny cryptography
-- endomorphism ring hiding
-- SIKE curve generation
-- CSIDH parameters
-- spectral gap isogeny
-- quantum polynomial-time sampling
-- 同源图采样
-- 超奇异椭圆曲线
+### Quantum Unique Ergodicity on Isogeny Graphs
 
-## Tools Used
+The key insight is proving the **Quantum Unique Ergodicity (QUE) conjecture** for supersingular ℓ-isogeny graphs:
 
-- exec: Run spectral analysis scripts
-- read: Read isogeny graph structures
-- write: Generate curve parameters
+- **Eigenvector delocalization**: All eigenvectors of the isogeny graph adjacency matrix are completely delocalized
+- **ε-separation property**: Eigenvalues satisfy stronger separation than previously conjected (removes heuristic assumption in quantum money protocols)
 
-## Core Concepts
+### Algorithm Variants
+
+#### Variant 1: Booher-based Sampling
+- **Complexity**: Õ(log⁴p) quantum gates (heuristic)
+- **Under GRH**: Õ(log¹³p) quantum gates
+- **Security**: Based on average-case hardness of endomorphism ring problem
+- **Use case**: General secure curve sampling
+
+#### Variant 2: Oriented Curve Sampling
+- Samples uniform 𝒪-oriented curves for any imaginary quadratic order 𝒪
+- **Security**: Based on hardness of Vectorization problem
+- **Use case**: Structured curve generation with specific orientations
+
+## Mathematical Framework
 
 ### Isogeny Graph Structure
+- Vertices: Supersingular elliptic curves over 𝔽_{p²}
+- Edges: ℓ-isogenies between curves
+- Graph properties: (ℓ+1)-regular, Ramanujan
 
-- Vertices: Supersingular elliptic curves over Fp²
-- Edges: l-isogenies between curves (typically l=2 or 3)
-- Graph is (l+1)-regular, connected, and Ramanujan
-- Spectral gap determines mixing rate for random walks
+### Spectral Delocalization
+1. Compute adjacency matrix A of supersingular ℓ-isogeny graph
+2. Analyze eigenvector distribution via QUE
+3. Prove complete delocalization → uniform sampling guarantee
 
-### Quantum Sampling Algorithm
-
-1. **Initialize**: Start from a known curve E₀
-2. **Random Walk**: Perform quantum-enhanced random walk on isogeny graph
-3. **Spectral Analysis**: Use spectral gap to determine walk length
-4. **Output**: Return curve with statistically hidden endomorphism ring
-
-### Security Analysis
-
-- Endomorphism ring must remain unknown
-- Distribution must be statistically close to uniform
-- Walk length must exceed mixing time of graph
-- Quantum advantage over classical sampling methods
+### Security Model
+- **Endomorphism Ring Problem**: Given supersingular curve E, find End(E)
+- **Vectorization Problem**: Given oriented curves (E, ι), (E', ι'), find isogeny φ: E → E' preserving orientation
+- Both problems believed hard for quantum computers (post-quantum secure)
 
 ## Implementation Patterns
 
-### Curve Sampling Protocol
+### Pattern 1: Secure Curve Generation
+```
+Input: Prime p, isogeny degree ℓ
+Output: Supersingular curve E/𝔽_{p²} with unknown End(E)
 
-```python
-def sample_secure_curve(p: int, l: int, walk_length: int):
-    """Sample supersingular curve with hidden endomorphism ring
-    
-    Args:
-        p: Prime characteristic
-        l: Isogeny degree (typically 2 or 3)
-        walk_length: Number of steps in random walk
-    """
-    # 1. Start from known curve
-    E = known_supersingular_curve(p)
-    
-    # 2. Quantum random walk
-    for _ in range(walk_length):
-        E = apply_isogeny(E, l)  # l-isogeny step
-    
-    return E
+1. Initialize quantum superposition over all supersingular curves
+2. Apply quantum walk on isogeny graph
+3. Measure to sample uniformly from the supersingular set
+4. Verify curve is supersingular (check trace of Frobenius ≡ 0 mod p)
 ```
 
-### Spectral Gap Computation
+### Pattern 2: Interactive Verification Protocol
+```
+1. Sample curve using quantum algorithm
+2. Run quantum computation verification protocol
+3. Prove correctness of sampling without revealing endomorphism ring
+4. Output verified secure curve for cryptographic instantiation
+```
 
-- Second eigenvalue λ₂ of adjacency matrix
-- Mixing time ≈ log(p) / (1 - λ₂/(l+1))
-- For Ramanujan graphs: λ₂ ≤ 2√l
-- Required walk length: O(log p)
+## Applications
 
-## Security Parameters
+1. **CGL Hash Function**: Secure instantiation without trusted setup
+2. **SIDH/SIKE variants**: Safe parameter generation
+3. **Quantum Money**: Removes heuristic eigenvalue separation assumption
+4. **Isogeny-based KEM**: Provably secure public key generation
 
-| Parameter | Description | Recommendation |
-|-----------|-------------|----------------|
-| p | Field characteristic | ≥ 2^256 |
-| l | Isogeny degree | 2 or 3 |
-| Walk length | Random walk steps | ≥ 2·log₂(p) |
-| Security level | Classical bits | 128+ |
+## Key Theorems
 
-## Error Handling
+- **Theorem 1**: QUE holds for supersingular ℓ-isogeny graphs
+- **Theorem 2**: ε-separation of eigenvalues (stronger than Kane-Sharif-Silverberg conjecture)
+- **Corollary**: Quantum polynomial-time secure sampling with high probability
 
-### Insufficient Mixing
+## Pitfalls
 
-If walk length < mixing time:
-- Endomorphism ring may be partially known
-- Increase walk length to O(log p)
-- Verify using spectral gap bounds
-
-### Graph Connectivity
-
-If graph not fully connected:
-- Check prime characteristic validity
-- Ensure supersingular condition met
-- Verify l-isogeny existence
+- **GRH dependency**: Õ(log¹³p) bound requires Generalized Riemann Hypothesis
+- **Heuristic variant**: Õ(log⁴p) is heuristic, not rigorously proven
+- **Verification overhead**: Interactive quantum verification adds protocol complexity
+- **Prime selection**: Must use cryptographically appropriate prime p
 
 ## References
 
-- arXiv:2602.02263 - Spectral theory of isogeny graphs
-- Ramanujan graph properties
-- Supersingular isogeny-based cryptography
+- arXiv:2602.02263 - "On the Spectral theory of Isogeny Graphs and Quantum Sampling"
+- CGL hash function (Charles-Goren-Lauter)
+- Kane-Sharif-Silverberg quantum money protocol
