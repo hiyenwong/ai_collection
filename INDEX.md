@@ -1,6 +1,14 @@
 
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job - Hourly)
 
+### Parameterized EWL Quantum Game Circuits for Innovation Recommender Systems
+- [[quantum-growth-modeling]] - Parameterized 4-qubit EWL quantum game circuit mapped to Dirac-Solow-Swan Hamiltonian for modeling capital accumulation and disruptive innovation in quadruple helix ecosystems (arXiv: 2605.18080)
+  - 22-gate EWL circuit with parameterized local rotations tuned by real funding data weights
+  - Measurement probabilities serve as recommender scores for disruptive vs sustaining innovation
+  - Dirac-Solow-Swan Hamiltonian enables time-evolution simulation of bifurcation dynamics
+  - NISQ-compatible (circuit depth 11, O(n) scaling for n-round helix communications)
+  - **Activation**: quantum growth model, Dirac Hamiltonian economics, Solow-Swan quantum, EWL quantum game, innovation ecosystem, capital accumulation quantum, policy recommender quantum
+
 ### STN-GPR: Singularity Tensor Network Framework for Efficient Option Pricing
 - [[singularity-tensor-network-pricing]] - Tensor network surrogate for option pricing with singularity-aware compression and GPR uncertainty quantification for large-scale portfolio revaluation (arXiv: STN-GPR)
   - Tensor Train decomposition replaces Monte Carlo/PDE for 100-1000x speedup
