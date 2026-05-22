@@ -1,3 +1,22 @@
+## 2026-05-22 - Systems Engineering Research (Cron Job)
+
+### Agentic Agile-V: From Vibe Coding to Verified Engineering in Software and Hardware Development
+- [[agentic-agile-v]] - Agentic Agile-V framework with SCOPE-V micro-cycle (Specify, Constrain, Orchestrate, Prove, Evolve, Verify) for verified AI-assisted engineering process control (arXiv:2605.20456)
+  - Core Insight: Engineering process control, not prompt engineering, is the central challenge for AI coding agents
+  - SCOPE-V Loop: Six-step micro-cycle converting conversational intent → structured engineering artifacts → acceptance evidence
+  - Conversation-to-Contract Gate: Separates exploratory dialogue from structured implementation with reviewed briefs
+  - Risk-Adaptive Workflows: R1 (auto-approve) / R2 (human review) / R3 (full brief + evidence bundle) based on change scope
+  - Evidence Bundle: Task brief, agent plan, test results, diff summary, risk trace, reviewer decision, rollback path
+  - **Activation**: agentic engineering, AI agent workflow, verified engineering, SCOPE-V, agent safety, engineering process control, AI code review
+
+### On Integrating Resilience and Human Oversight into LLM-Assisted Modeling Workflows for Digital Twins
+- [[llm-dt-resilient-modeling]] - Three design principles for building resilient LLM-assisted Digital Twin modeling workflows with human oversight; FactoryFlow framework (arXiv:2603.25898)
+  - Principle 1: Orthogonalize structural modeling (LLM-translated IR with human validation) from parameter fitting (continuous sensor data streams)
+  - Principle 2: Restrict model IR to interconnections of pre-validated library components, not monolithic generated code
+  - Principle 3: Use density-preserving IR (Python with loops/classes) to minimize hallucination error accumulation
+  - Error Characterization: Low-density IRs (verbose) → proportional error amplification; high-density IRs → errors confined to structural choices
+  - **Activation**: digital twins, LLM-assisted modeling, FactoryFlow, model-based systems engineering, LLM resilience, human-in-the-loop modeling, simulation automation
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### An Exponential Sample-Complexity Advantage for Coherent Quantum Inference
