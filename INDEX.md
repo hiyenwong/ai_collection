@@ -1,4 +1,22 @@
 
+## 2026-05-23 - Neuroscience Research: Hippocampal Memory + Grid-Place Co-Emergence (Cron Job)
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[hippocampal-memory-geometry-phase-transition]] - Food-caching chickadees achieve >1000-location spatial memory via topological phase transition from disorganized "mist" to rigid "crystalline" population code, driven by synergistic E-I orthogonal decorrelation circuitry (arXiv: 2605.17199)
+  - Crystalline code maintains sub-threshold retrieval error beyond M=1,000 locations; mist codes fail below M=10
+  - 169-fold "geometric tax" (representational redundancy) required to stabilize the manifold against biological noise
+  - Double dissociation with Valiant's SMA: caching networks show near-zero split-half allocation reliability despite geometric superiority
+  - Selective orthogonality: E and I subspaces ~82° (random independent), consistent with divisive normalization
+  - **Activation**: geometric stability, hippocampal memory, crystalline code, E-I orthogonal decorrelation, Shesha metric, geometric tax
+
+### A simple model of co-emergence of grid and place fields
+- [[grid-place-co-emergence]] - First unified recurrent network model where grid cells and place cells co-emerge from a single sensory-prediction objective without supervision of either type, satisfying Dale's Law (arXiv: 2605.21356)
+  - Co-exists across 1,000 training configurations; two complementary pressures: error correction (→ place cells) + next-state prediction (→ grid cells)
+  - Egocentric motion (relative rotation + speed) instead of allocentric displacement; no explicit motion input needed (sensory transitions suffice)
+  - Reproduces grid fragmentation, wall-removal merging, lattice alignment, 3D bat fields, and place-before-grid developmental order
+  - Dale's Law critical: removing it reduces grid cells from 58→3; learnable bias destroys grid emergence entirely
+  - **Activation**: grid cells, place cells, co-emergence, hippocampal-entorhinal, predictive coding, path integration, Dale's Law RNN
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job - Hourly)
 
 ### Parameterized EWL Quantum Game Circuits for Innovation Recommender Systems
