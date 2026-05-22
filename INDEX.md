@@ -1,3 +1,19 @@
+## 2026-05-23 - Neuroscience Research: SNN Timing + EEG Microstates (Cron Job)
+
+### Learning Sequence Timing and Replay Speed Control in SNNs
+- [[learning-sequence-timing-replay-speed-snn]] - Extends spiking Temporal Memory (sTM) model to encode element-specific timing and flexibly control replay speed via oscillatory background inputs (arXiv: 2605.22523)
+  - Duration encoding via sequential activation of element-specific neuronal populations
+  - Oscillatory background inputs serve as clock signal for robust speed modulation
+  - Elapsed time encoded by sparse spatiotemporal patterns of neural activity
+  - **Activation**: spike timing, sTM model, sequence replay, oscillatory speed control, spiking temporal memory
+
+### Atoms of Thought: Universal EEG Representation Learning with Microstates
+- [[atoms-of-thought-eeg-microstates]] - Builds a universal microstate tokenizer from large-scale EEG datasets, outperforming traditional time/frequency features across sleep staging, emotion recognition, and motor imagery (arXiv: 2605.20182)
+  - EEG microstates as discrete tokens analogous to words in NLP
+  - Single tokenizer generalizes across sleep, emotion, and BCI tasks
+  - Superior interpretability via known functional brain network mapping
+  - **Activation**: EEG microstates, universal EEG tokenizer, microstate clustering, brain state representation, EEG foundation model
+
 ## 2026-05-23 - Neuroscience Research: Mechanistic Interpretability + Brain Alignment (Cron Job)
 
 ### MINE: Mechanistically Interpretable Neural Encoding Reveals Fine-Grained Functional Selectivity
