@@ -1,3 +1,21 @@
+## 2026-05-22 - Neuroscience Research: Cross-Species Brain Alignment + SNN Thousand Brains (Cron Job)
+
+### Cross-Species RSA Reveals Conserved Early Visual Alignment but Divergent Higher-Area Rankings Across Human fMRI and Macaque Electrophysiology
+- [[cross-species-rsa-brain-alignment]] - Tests five learning rules (BP, FA, PC, STDP, untrained) against macaque electrophysiology; early visual alignment conserved across species, but IT rankings show no cross-species correlation (arXiv:2605.22401)
+  - All models achieve higher alignment with macaque early visual cortex (ρ=0.15–0.30 at V1/V2) than with human fMRI (ρ=0.01–0.08) — electrophysiology has 2-4x higher SNR
+  - STDP produces highest macaque V1/V2 alignment (ρ~0.30), followed by PC (ρ~0.28) — consistent with human V1 ranking
+  - At IT, learning rule rankings show no correlation across species (Kendall's τ=0.00, p=1.00) — limited by n=5 and stimulus differences
+  - Pretrained ResNet-50 achieves ρ=0.25 at macaque IT, above custom CNNs (ρ=0.07–0.14) — IT alignment limited by model capacity/training data, not learning rule
+  - **Activation**: cross-species RSA, brain-DNN alignment, macaque electrophysiology, STDP V1, IT cross-species divergence, model capacity vs learning rules
+
+### Temporal Coding as a Substrate for Sensorimotor Object Inference: A Spiking Reinterpretation of Thousand Brains Architecture
+- [[temporal-coding-thousand-brains-spiking]] - Replaces dense vectors with rank-order spike packets in Thousand Brains Theory framework for sensorimotor object inference, using STDP for directional encoding and inter-burst timing for displacement (arXiv:2605.22206)
+  - Rank-order spike packets: most strongly activated neuron fires first; time gap between bursts encodes sensor displacement
+  - Learnable parameter λ adjusts reliance on earlier vs recent contacts, adapting to object geometry
+  - Achieves perfect discrimination on objects with identical features in different spatial arrangements (dense accumulation at chance)
+  - Maintains 30-50 percentage point advantage across all tested noise levels
+  - **Activation**: temporal coding SNN, Thousand Brains Theory, spiking sensorimotor inference, STDP directional encoding, rank-order spike packets, Monty framework
+
 ## 2026-05-22 - Neuroscience Research: SNN Sequence Timing + Efficient Coding Criticality (Cron Job — Evening Batch)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
@@ -16,7 +34,22 @@
   - Quench response magnitude P(‖dx‖) shows power-law distribution from soft-mode geometry
   - **Activation**: efficient coding, critical brain hypothesis, Fisher information, sloppiness, criticality, power-law avalanches, neural dynamics, predictive coding, Hebbian learning
 
-## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Friday)
+## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Friday, Evening Batch)
+
+### ATHENA: A Compiler For Optimized Scheduling In Distributed Quantum Computers
+- [[distributed-quantum-compiler-scheduling]] - DQC compiler with utility-driven lookahead (UMS) and EPR-capacity-aware early scheduling (EES); reduces teleportations by 34% avg (up to 65%) and latency by 2x avg (up to 2.9x) vs state-of-the-art (arXiv:2605.21795)
+  - Non-local CNOTs are 4.3-7.7x slower and 4x more error-prone than local CNOTs
+  - UMS: schedule blocks considering only *useful* future blocks (shared qubits) in lookahead; maintain multiple candidate schedules, defer sub-optimal commitments
+  - EES: schedule future operations and teleportations *early* when EPR resources available; overlap with ongoing computation
+  - Block-level scheduling lacks lookahead — naive expansion to all subsequent blocks doesn't help
+  - **Activation**: distributed quantum computer compiler, DQC scheduling, teleportation optimization, utility-driven lookahead, EPR capacity, cross-chip CNOT, quantum transpilation co-design
+
+### GeneCS: Synthesizing Resource-Efficient Code Surgery for Arbitrary Quantum Stabilizer Codes
+- [[quantum-stabilizer-code-surgery]] - Resource-efficient compiler for synthesizing code surgery protocols for arbitrary stabilizer codes; 10x reduction in ancillary qubits and checks, scales to 1000+ qubits at ~1s per instance (arXiv:2605.21746)
+  - Structure-aware optimizations eliminate redundancy in measurement graph construction
+  - Dynamically balance expansion and congestion with code degree constraints
+  - Enables practical logical operations and efficient cross-code communication for QLDPC codes
+  - **Activation**: quantum stabilizer code surgery, GeneCS compiler, QLDPC codes, fault-tolerant quantum computing, code deformation, logical operations, ancilla optimization
 
 ### Three Ways to Find Comfort with the Bell Proof and the Results of the Bell Experiments
 - [[bell-theorem-statistical-causality]] - Statistical causality framework for analyzing Bell's theorem using Pearl-style causal graphs; three-perspective reconstruction after CHSH violation (non-local randomness, accessible variables, geometric dimension-dependence) (arXiv: 2605.13154)
