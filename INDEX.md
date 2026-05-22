@@ -1,3 +1,13 @@
+## 2026-05-22 - Quantum End-to-End Learning + Combinatorial Optimization (Cron Job)
+
+### Quantum End-to-End Learning for Contextual Combinatorial Optimization
+- [[quantum-end-to-end-learning-qel]] - First quantum computing-based end-to-end learning framework for contextual combinatorial optimization (CCO), leveraging QAOA with context re-uploading phase-separator (arXiv:2605.20222)
+  - Proposes context re-uploading phase-separator inspired by data re-uploading, jointly capturing relations among contexts, uncertain coefficients, and optimal solutions
+  - Enables joint end-to-end training with stationarity convergence guarantee, avoiding NP-hard solver calls
+  - Achieves competitive performance with substantially fewer parameters than classical benchmarks
+  - Validated on contextual knapsack, portfolio optimization, and shortest path problems
+  - **Activation**: QEL, contextual combinatorial optimization, quantum end-to-end learning, QAOA, context re-uploading, decision-focused quantum learning, quantum surrogate policy, quantum decision-making
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### On the Spectral theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic curves
