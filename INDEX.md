@@ -1,3 +1,19 @@
+## 2026-05-23 - Neuroscience Research: Mechanistic Interpretability + Brain Alignment (Cron Job)
+
+### MINE: Mechanistically Interpretable Neural Encoding Reveals Fine-Grained Functional Selectivity
+- [[mine-mechanistically-interpretable-neural-encoding]] - Applies mechanistic interpretability tools from LLM research to vision encoding models, revealing and causally validating fine-grained voxel-level functional selectivity in human visual cortex (arXiv: 2605.16468)
+  - Opens the black box of DNN encoding models using attribution → per-voxel functional profiles → counterfactual validation
+  - Recovers known category selectivity while revealing previously invisible within-region voxel heterogeneity
+  - Counterfactual feature insertion/removal causally validates predicted voxel selectivity
+  - **Activation**: MINE framework, mechanistically interpretable encoding, voxel functional profiles, counterfactual brain validation, vision encoding interpretability
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Model-Brain Alignment
+- [[target-space-recovery-profiles-brain-alignment]] - Unified framework evaluating which reproducible brain response dimensions are recovered by model predictions, going beyond scalar prediction accuracy (arXiv: 2605.20127)
+  - Identifies reproducible brain response dimensions using repeated fMRI measurements
+  - Brain-to-brain comparisons provide human reference for model evaluation
+  - Pretrained and random models can achieve similar accuracy with distinct recovery profiles
+  - **Activation**: target-space recovery, brain alignment evaluation, reproducible dimensions, model-brain comparison, fMRI encoding models
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### A Penalty-Free Pipeline for Direct Quantum-Annealer Portfolio Optimization
