@@ -1,3 +1,14 @@
+## 2026-05-22 - Neuroscience Research: Brain-DNN Alignment + SNN Sequence Timing (Cron Job)
+
+### Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI
+- [[untrained-cnns-match-backpropagation-at-v1]] - Systematic RSA comparison of BP, FA, PC, STDP against human fMRI (THINGS dataset, 720 stimuli, 3 subjects) showing untrained random CNNs match/exceed BP at V1 alignment (arXiv:2604.16875)
+  - Untrained baseline exceeds BP at V1/V2 (ρ=0.076 vs 0.034, Δρ=+0.044, p<0.001) — architecture dominates early vision
+  - STDP achieves highest V1 alignment among trained rules (ρ=0.064)
+  - At LOC, only BP reliably exceeds random baseline; all rules converge at IT (ρ=0.008–0.014)
+  - FA produces consistently lowest alignment at V1, V2, LOC
+  - All effects survive pixel-similarity control via Partial RSA
+  - **Activation**: brain-DNN alignment, RSA comparison, learning rules, untrained CNN, STDP vision, backpropagation alternative, visual cortex modeling, representational similarity analysis
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job — Hourly Batch)
 
 ### Quantum Purity Amplification for Arbitrary Eigenstates and Multiple Outputs
