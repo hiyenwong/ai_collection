@@ -1,3 +1,13 @@
+## 2026-05-23 - Neuroscience Research: Riemannian fMRI + Spiking Timing (Cron Job)
+
+### Riemannian Geometry for fMRI: Modeling Correlation Manifolds and Eigenvector Subspaces
+- [[riemannian-fmri-correlation-manifolds]] - Scalable geometric framework for fMRI functional connectivity using Off-log Riemannian metric on correlation manifolds and Grassmannian subspace discrimination for eigenvector analysis, validated on Parkinson's, psychosis, and ageing datasets (arXiv: 2605.22334)
+  - Off-log metric enables closed-form distances, Frechet means, and linear models without complex manifold optimization
+  - Grassmannian subspace comparison via principal-angle distances resolves eigenvector sign/basis ambiguities
+  - Validated on 2 clinical cohorts + 3 ageing fMRI datasets; Grassmannian consistently outperforms Euclidean baselines
+  - Reveals disease-relevant brain networks invisible to standard Euclidean analysis
+  - **Activation**: Riemannian fMRI, correlation manifold, Off-log metric, Grassmannian brain network, functional connectivity geometry
+
 ## 2026-05-23 - Economics and Investment + Quantum Finance (Cron Job)
 
 ### Higher-Order Portfolio Optimization with Quantum Approximate Optimization Algorithm
