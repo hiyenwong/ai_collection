@@ -1,4 +1,25 @@
 
+## 2026-05-22 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
+
+### Q-PhotoNAS: Hybrid Quantum Neural Architecture Search Framework on Photonic Devices
+- [[q-photonas-hybrid-arch-search]] - NAS framework for hybrid quantum-classical photonic devices enabling automated QML architecture discovery with hardware-aware constraints (arXiv: 2605.22097)
+  - Differentiable NAS applied to photonic quantum circuit design with supernet approach
+  - Hardware-aware search incorporating optical loss, phase shifter precision, crosstalk constraints
+  - **Activation**: q-photonas, photonic quantum, neural architecture search, quantum NAS, photonic QML
+
+### Adiabatic Quantum Phase Estimation
+- [[adiabatic-quantum-phase-estimation]] - Adiabatic approach to QPE achieving Heisenberg-limited scaling with simpler circuit requirements for NISQ hardware (arXiv: 2605.22770)
+  - No inverse QFT, no ancilla qubits for phase register, no controlled-U^(2^k) operations
+  - O(1/ε) evolution time matching optimal Heisenberg limit
+  - **Activation**: adiabatic qpe, quantum phase estimation, adiabatic quantum computing, eigenvalue estimation
+
+### Quantum Circuit Design via Dynamic Pauli Constraints
+- [[quantum-circuit-dynamic-pauli-constraints]] - Software-oriented quantum computation model with constraint-aware circuit synthesis for NISQ hardware (arXiv: 2605.22744)
+  - Dynamic Pauli constraints evolve during computation for hardware-aware synthesis
+  - Constraint types: connectivity, gate set, coherence, cross-talk
+  - **Activation**: dynamic pauli constraints, quantum circuit design, constraint-aware synthesis, NISQ compilation
+
+
 ## 2026-05-22 - Neuroscience Research: Friston Attractor Networks + Naturalistic Cognitive Science (Cron Job)
 
 ### Self-Orthogonalizing Attractor Neural Networks Emerging from the Free Energy Principle
