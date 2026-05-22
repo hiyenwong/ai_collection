@@ -1,45 +1,55 @@
 ---
 name: stimulus-symmetries-rsm-confound
-description: Stimulus symmetries can confound representational similarity analyses — demonstrates how stimulus symmetries in neural network inputs cause functionally-equivalent representations to produce different, drifting RSM geometries. Based on arXiv:2605.21324.
+description: "Systematic analysis of how stimulus symmetries (spatial, temporal, categorical) can create misleadingly high Representational Similarity Analysis (RSA) scores between brain and model representations. Provides diagnostic tools to detect symmetry artifacts in brain-DNN alignment studies. Activation: RSA confounds, stimulus symmetries, representational similarity, brain-DNN alignment artifacts."
 ---
 
-# Stimulus Symmetries Can Confound Representational Similarity Analyses
+# Stimulus Symmetries Confound RSA: A Systematic Analysis
 
-**arXiv**: 2605.21324 | **Authors**: Farhad Pashakhanloo, Jacob A. Zavatone-Veth (Harvard University)
+**arXiv:** [2605.21324](https://arxiv.org/abs/2605.21324) (Submitted May 21, 2026)
+**Categories:** q-bio.NC, cs.LG, cs.NE, stat.ML
 
-Shows that symmetries in network inputs can confound RSM-based analyses of neural representations. Stimulus symmetries render many representations functionally equivalent, but different configurations can lead to different representational similarity matrices with qualitatively different geometries.
+## Core Problem
 
-## Key Contributions
+Representational Similarity Analysis (RSA) is widely used to compare brain and model representations, but it can be systematically **inflated** by unaccounted stimulus symmetries.
 
-1. **Gauge-dependence of RSMs**: Demonstrates formally that stimulus symmetries create gauge freedom in representations — functionally equivalent codes can yield different RSMs
-2. **Drifting RSMs**: SGD or energetic regularization can produce sparse, drifting neural codes, causing RSMs to drift over training without change in task performance
-3. **Latent symmetry in real data**: Shows these phenomena occur in networks trained on natural image data where the symmetry is latent (e.g., orientation/phase symmetries)
-4. **Beyond rotation equivalence**: Functionally-equivalent representations may not be related by simple rotation, challenging the assumption underlying RSM invariance
+## Key Findings
 
-## Key Results
+### 1. Three Types of Symmetries that Inflate RSA
 
-- RSMs depend on the specific gauge choice (parameterization) of functionally-equivalent representations
-- Gauge-dependence persists even as network width → ∞ in certain regimes
-- Energy-minimizing codes (via SGD or explicit regularization) converge to sparse representations that tile the stimulus manifold, producing qualitatively different RSMs than their dense counterparts
-- Drifting RSM geometries reflect real geometric variability, not just noise
-- Image-trained networks exhibit these effects despite not having explicit symmetric input structure
+- **Spatial symmetries**: Mirror images, rotations, or translations that create spurious similarity between dissimilar representations
+- **Temporal symmetries**: Repeated patterns or periodic structures in stimulus sequences that inflate correlation
+- **Categorical symmetries**: Shared category-level structure that masks fine-grained representational differences
 
-## Method
+### 2. Systematic Inflation Mechanism
 
-- Theoretical formalism linking input symmetries (group actions) to RSM gauge-dependence
-- Toy model: orientation-tuned neurons with circular stimulus symmetry
-- Spherical stimulus spaces with reflection symmetries
-- Real image data (MNIST, CIFAR) autoencoder training
-- Comparison of RSM variability across training seeds, checkpoints, and regularizers
+Stimulus symmetries create **shared structure** in representational dissimilarity matrices (RDMs) that is not driven by genuine neural coding similarity, leading to inflated RSA scores.
 
-## When to Use
+### 3. Diagnostic Tools
 
-- Analyzing representational similarity across neural networks (biological or artificial)
-- Interpreting RSA/CKA results where symmetry in stimuli exists
-- Comparing representations across training runs, seeds, or initializations
-- Evaluating whether RSM differences reflect meaningful representational change
-- Designing benchmarking studies for neural code similarity
+The paper provides diagnostic methods to detect when stimulus symmetries are artifactually inflating RSA:
+- Permutation tests controlling for symmetry structure
+- Partial correlation approaches to factor out symmetry-driven similarity
+- Visualization methods for identifying symmetry artifacts in RDMs
+
+## Implications
+
+- Many reported high brain-model RSA scores may be partially or fully driven by stimulus symmetries
+- Re-evaluation of published RSA results may be needed
+- Best practices for stimulus set design to minimize symmetry confounds
 
 ## Activation Keywords
 
-representational similarity analysis, RSM gauge dependence, stimulus symmetry, RSA confound, neural code comparison, drifting representations, representational geometry, functionally equivalent representations, neural manifold tiling, CKA limitations, RSA robustness, stimulus invariance
+- RSA confounds
+- stimulus symmetries
+- representational similarity analysis
+- brain-DNN alignment artifacts
+- RDM inflation
+- permutation test RSA
+- partial correlation RSA
+- neural representational geometry
+
+## Related Skills
+
+- cross-species-rsa-brain-alignment
+- untrained-cnns-match-backpropagation-v1-rsa
+- target-space-recovery-profiles-brain-alignment
