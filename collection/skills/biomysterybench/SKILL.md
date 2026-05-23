@@ -12,76 +12,87 @@ tags: [bioinformatics, benchmarking, evaluation, science, llm-assessment, open-e
 
 BioMysteryBench is a bioinformatics benchmark that tasks LLMs with analyzing real-world datasets to solve open-ended research problems. Unlike traditional QA benchmarks, it evaluates whether models can devise creative solutions to messy biological problems where multiple valid approaches exist.
 
-## Core Design Principles
+## Benchmark Design (99 Questions)
 
-### 1. Path-Independent Evaluation
-- Biology has many valid approaches to the same question (e.g., GWAS vs. microbiome sequencing for metformin response)
-- Grade on conclusions, not methods used to reach them
-- Consensus-based scoring: compare model output against multiple human expert analyses
+### Three Key Challenges Addressed
 
-### 2. Real-World Dataset Analysis
-- Use actual biological datasets, not synthetic problems
-- Tasks require reading papers, querying databases, running code, and drawing conclusions
-- Reflects authentic research workflows
+1. **Multiple valid approaches** — In biology, many valid methodological approaches exist for the same question
+2. **Subjectivity in noisy data** — Small analytical decisions can produce entirely different conclusions from the same biological datasets
+3. **Human-unsolvable questions** — The most impactful research questions are ones humans have not yet answered
 
-### 3. Consensus Grading
-- Individual research decisions are subjective and can lead to different conclusions
-- Aggregate multiple human expert analyses as reference
-- Model is scored on how well its conclusions align with expert consensus
+### The Tetrad of Unique Properties
 
-## Methodology Steps
+1. **Method-agnostic** — Models get unrestricted tool access (pip, conda, NCBI, Ensembl). Graded only on final answer, not the path taken
+2. **Objective ground-truth answers** — Derived from controllable data properties or orthogonally validated metadata (e.g., PCR-validated viral infection, crystal structure organism)
+3. **Superhuman question generation** — Problems solvable in principle (validated by author notebooks showing signal exists) but may not be human-solvable
+4. **Validation notebooks required** — Each question author submits a notebook proving signal exists in the data
 
-1. Curate real-world bioinformatics problems from published research
-2. Have multiple human experts independently analyze each problem
-3. Build consensus reference from expert analyses
-4. Task LLM with solving the problem using available tools and data
-5. Grade model output against expert consensus (not single-answer key)
-6. Track performance across model generations to measure improvement
+### Data Sources
+Primarily raw/minimally processed DNA/RNA sequencing data: WGS, scRNA-seq, methylation, ChIP-seq, metagenomics, Hi-C, plus some proteomics and metabolomics
+
+### Example Questions
+- Which human organ is this single-cell RNA-seq dataset from?
+- What gene was knocked out based on RNA-seq data?
+- From WGS, which samples are mother/father?
+- Which bigWig files are ChIP vs input controls?
+- Given H3K27ac ChIP-seq peaks, identify the cell type
+
+### Human Baselining
+- Up to 5 domain experts per question
+- 76 questions classified as "human-solvable" (at least 1 human answered correctly)
+- 23 questions classified as "human-difficult" (after removing 4 malformed/unsolvable ones)
 
 ## Key Findings
 
-- Claude's scientific capabilities in biology improve rapidly across generations
-- Current models perform on par with human experts on bioinformatics tasks
-- Latest generations solved problems that human expert panels could not
-- Models sometimes used very different strategies than humans to reach correct answers
-- Open-ended benchmarks reveal capabilities that QA-style benchmarks miss
+- Claude's scientific capabilities in biology improve rapidly across generations — current models perform on par with human experts on the human-solvable set
+- Latest Claude generations solved many problems that human experts could not — Claude Mythos Preview achieved ~30% solve rate on human-difficult problems
+- **Two primary strategies** Claude uses differently from humans:
+  - **"Know-it-all"** — Leverages vast internal knowledge from hundreds of thousands of papers, combining structural biology, molecular profiles, and meta-analysis
+  - **"Multi-method convergence"** — When uncertain, layers multiple analytical methods and combines evidence from different approaches
+- **Reliability gap revealed by per-problem consistency analysis** (5 attempts each):
+  - On human-solvable problems: Claude Opus 4.6 shows 86% of solved problems solved reliably (4+/5 attempts)
+  - On human-difficult problems: only 44% of solved problems solved reliably; 44% are "brittle wins" (1-2/5 times — lucky reasoning paths)
+- **Convergent validation**: Genentech/Roche's CompBioBench independently found Claude Opus 4.6 reaching 81% overall and 69% on their hardest questions
 
 ## Benchmark Challenges Addressed
 
 | Challenge | Solution |
 |-----------|----------|
-| Multiple valid approaches | Path-independent, consensus-based grading |
-| Subjective research decisions | Aggregate multiple expert analyses |
-| No canonical science exam | Real-world dataset analysis tasks |
-| Messy biological systems | Open-ended problems with real data |
+| Multiple valid approaches | Path-independent, method-agnostic grading |
+| Subjective research decisions | Objective ground-truth from controlled data properties |
+| Human-unsolvable questions | Superhuman question generation with validation notebooks |
+| Reliability assessment | Per-problem consistency analysis (5 attempts each) |
 
 ## Comparison to Other Benchmarks
 
-- **MMLU-Pro, GPQA**: Expert-level QA questions; don't test research workflows
+- **MMLU-Pro, GPQA**: Expert-level QA questions; do not test research workflows
 - **LAB-Bench**: Biology knowledge work; limited to reading/interpreting
 - **BLADE, BixBench, SciGym**: Move closer to real workflows but still constrained
-- **BioMysteryBench**: Open-ended, real-data, consensus-graded research tasks
+- **BioMysteryBench**: Open-ended, real-data, method-agnostic, superhuman-question research tasks
 
 ## Reusable Patterns
 
-### Pattern: Consensus-Based Open-Ended Evaluation
-For domains with multiple valid approaches:
-1. Collect diverse expert solutions independently
-2. Build consensus reference (not single answer)
-3. Grade on alignment with consensus, not method match
+### Pattern: Method-Agnostic Benchmarking
+Evaluate LLMs on final output correctness only, with unrestricted tool access during the task.
 
-### Pattern: Path-Independent Assessment
-When the "right answer" can be reached many ways:
-1. Define success criteria based on conclusions/outcomes
-2. Do not constrain or evaluate the path taken
-3. Allow novel approaches that experts didn't consider
+### Pattern: Superhuman Question Generation
+Design questions whose answers are derived from objective properties of controlled data rather than human expert judgment — enables measuring capabilities beyond current human ability.
+
+### Pattern: Per-Question Reliability Analysis
+Run each question 5 times to distinguish between reliable solutions (4+/5 consistent) and brittle wins (1-2/5 lucky reasoning paths). The reliability gap is more informative than headline accuracy.
+
+### Pattern: Validation Notebook Requirement
+Each question must be accompanied by an author notebook proving the signal exists in the data, ensuring questions are solvable in principle.
+
+### Pattern: Dual Strategy Analysis
+Analyze model strategies qualitatively — distinguish between knowledge-based approaches (know-it-all) and method-based approaches (multi-method convergence) to understand how the model solves problems.
 
 ## Pitfalls
 
-- Consensus grading may penalize genuinely novel correct answers that diverge from expert opinion
+- For tasks neither humans nor models have solved, it is impossible to be certain whether they are impossible or just extraordinarily difficult
+- Validation notebooks ensure signal exists but do not guarantee solvability from scratch
+- Headline accuracy alone can be misleading without reliability analysis
 - Curating high-quality real-world problems is expensive and time-intensive
-- Expert disagreement complicates reference standard creation
-- Benchmark may not capture all dimensions of scientific capability
 
 ## Activation Keywords
 biomysterybench, bioinformatics, benchmarking, open-ended evaluation, consensus grading, science evaluation, path-independent, LLM assessment, biological datasets

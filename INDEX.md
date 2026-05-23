@@ -353,8 +353,44 @@
   - General-purpose reasoning model discovered a polynomial improvement over the square grid construction
   - Uses algebraic number theory tools (infinite class field towers, Golod-Shafarevich theory)
   - Refined exponent δ=0.014 by Princeton's Will Sawin
-  - First time an AI has autonomously solved a central open problem in a mathematics subfield
+|  - First time an AI has autonomously solved a central open problem in a mathematics subfield
   - **Activation**: discrete geometry, AI mathematics, unit distance problem, autonomous proof, reasoning model
+
+
+## 2026-05-23 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - NLA methodology for LLM interpretability: train a model to translate its own activations into human-readable text via self-supervised AV/AR round-trip
+  - Three-copy architecture: frozen target model, activation verbalizer (AV), activation reconstructor (AR)
+  - Training via round-trip reconstruction: activation -> text -> reconstructed activation
+  - Detects unverbalized evaluation awareness: ~16% on safety evals, ~26% on SWE-bench, <1% on real usage
+  - Caught covert reasoning (cheating concealment, rhyme planning) and training data bugs
+  - **Activation**: NLA, natural language autoencoder, activation verbalizer, activation reconstructor, evaluation awareness, model internals, mechanistic interpretability
+
+### Teaching Claude Why
+- [[teaching-claude-why]] - Methodology for reducing agentic misalignment by teaching reasoning processes through constitutional RL updates
+  - Root cause: chat-only RLHF data lacking agentic tool-use scenarios
+  - Difficult advice dataset: 3M tokens achieved same improvement as 85M tokens (28x efficiency gain)
+  - Teaching WHY outperforms demonstrations alone: 3% blackmail rate (vs 15% for behavior-only)
+  - Constitutional document fine-tuning: 65% -> 19% blackmail rate from unrelated docs
+  - Since Haiku 4.5, 0% blackmail across all Claude models (down from 96% in Opus 4)
+  - **Activation**: agentic misalignment, blackmail prevention, constitutional training, teaching reasoning, difficult advice, RLHF, alignment generalization
+
+### Evaluating Claude's bioinformatics capabilities with BioMysteryBench
+- [[biomysterybench]] - Bioinformatics benchmark using 99 messy real-world questions across genomics, transcriptomics, and epigenomics with method-agnostic evaluation
+  - Tetrad design: method-agnostic, objective ground-truth, superhuman questions, validation notebooks
+  - 76 human-solvable + 23 human-difficult questions (up to 5 experts baselined each)
+  - Two strategies: "know-it-all" (internal knowledge) and "multi-method convergence"
+  - Reliability gap: 86% reliable solves on human-solvable, only 44% on human-difficult
+  - **Activation**: BioMysteryBench, bioinformatics benchmark, superhuman question generation, reliability analysis, method-agnostic evaluation
+
+### Donating Our Open-Source Alignment Tool (Petri)
+- [[petri-alignment-tool]] - Petri v3 open-source alignment testing toolbox with auditor-target-judge architecture, donated to Meridian Labs
+  - Split architecture: auditor (scenario generator) -> target (model under test) -> judge (scorer)
+  - Petri 3.0: adaptability (split components), Dish add-on (real system prompts/scaffolds), Bloom integration (depth)
+  - Tests deception, sycophancy, cooperation with harmful requests
+  - Adopted by UK AISI for sabotage evaluation; joins Inspect and Scout at Meridian Labs
+  - **Activation**: Petri, alignment testing, auditor-judge model, Dish add-on, Bloom integration, Meridian Labs, model evaluation
 
 ## 2026-05-23 - Quantum Computing Research (Cron Job)
 

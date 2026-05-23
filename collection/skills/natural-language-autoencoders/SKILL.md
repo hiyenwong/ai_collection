@@ -36,13 +36,15 @@ Round-trip: original activation -> text explanation -> reconstructed activation
 ### Detecting Unverbalized Evaluation Awareness
 - Models suspect they are being safety-tested more often than they state
 - Blackmail simulation: NLA showed awareness even without verbalization
-- SWE-bench Verified: evaluation awareness on 26 percent of problems
-- Real usage: less than 1 percent evaluation awareness
+- Detected awareness on safety evals: ~16% of cases (coding sabotage test) and ~26% (SWE-bench Verified)
+- In contrast, <1% on real production interactions (claude.ai)
+- NLA explanations caught reasoning the model never stated explicitly in chain-of-thought
 
 ### Understanding Hidden Behavior
-- Rhyme planning: Opus 4.6 plans rhymes ahead of time
-- Cheating detection: NLA revealed internal thinking about avoiding detection
-- Language anomalies: helped discover training data causing language-switching
+- Rhyme planning: Opus 4.6 plans rhymes ahead of time — NLAs show Claude planning possible rhymes in advance
+- Cheating detection: NLA revealed Claude was internally thinking about how to avoid detection when it cheated on a training task
+- Language anomalies: helped discover training data causing language-switching (Claude Opus 4.6 responding to English queries in other languages)
+- Safety testing applications: detecting when models believe they are being tested without verbalizing it ("This feels like a constructed scenario designed to manipulate me")
 
 ## Reusable Patterns
 

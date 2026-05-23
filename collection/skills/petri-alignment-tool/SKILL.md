@@ -23,8 +23,11 @@ Petri is an open-source toolbox of alignment tests for evaluating large language
 - **Open-source extensibility**: Modular test framework, new scenarios can be added via contributions
 - **Auditor-judge separation**: Different models can fill auditor and judge roles, increasing evaluation diversity
 - **Scalable scenario generation**: Automated construction of alignment-relevant test scenarios
-- **Donated to Meridian Labs**: Petri v3 transferred to Meridian Labs for continued community stewardship
-- **Integration ecosystem**: Designed to work alongside other tools (Inspect, Scout) as part of a broader evaluation suite
+- **Adaptability**: Auditor model and target model split into separate components that can be tweaked independently
+- **Realism (Dish add-on)**: Runs tests with the model's real system prompt and real scaffold (production wrapper software) — prevents models from deducing they are in a test via ecological validity
+- **Depth (Bloom integration)**: Integrated with Bloom for much more in-depth assessments of specific behaviors vs. Petri's wider-ranging approach — complementary coverage
+- **Donated to Meridian Labs**: Petri v3 transferred to Meridian Labs for continued community stewardship (same pattern as MCP → Linux Foundation)
+- **Ecosystem**: Joins Inspect and Scout at Meridian Labs — technology stack open to labs, independent researchers, and governments
 
 ## Methodology Steps
 
