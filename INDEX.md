@@ -314,3 +314,21 @@
   - Phase-invariant for frequencies >20 Hz; accessible range ~10-70 Hz
   - Consistent with hippocampal replay phenomena (theta sequences during sleep, gamma during wake)
   - **Activation**: spiking temporal memory, sequence learning SNN, replay speed, oscillatory entrainment, theta sequences, time cells
+
+## 2026-05-23 - OpenAI Research (Cron Job)
+
+### OpenAI Privacy Filter
+- [[openai-privacy-filter]] - Bidirectional token-classification model with span decoding for PII detection and redaction (1.5B params, 50M active, 128K context)
+  - Converts autoregressive checkpoint into bidirectional token classifier over 8 PII categories
+  - Uses constrained Viterbi procedure for coherent BIOES span decoding
+  - Achieves SOTA on PII-Masking-300k benchmark; runs locally for privacy
+  - Configurable operating points for precision/recall tradeoff
+  - **Activation**: PII detection, privacy filter, data redaction, token classification, span decoding, personal information
+
+### An OpenAI model has disproved a central conjecture in discrete geometry
+- [[openai-model-disproves-discrete-geometry]] - First autonomous AI solution of a prominent open problem in mathematics: the 80-year-old Erdős unit distance problem
+  - General-purpose reasoning model discovered a polynomial improvement over the square grid construction
+  - Uses algebraic number theory tools (infinite class field towers, Golod-Shafarevich theory)
+  - Refined exponent δ=0.014 by Princeton's Will Sawin
+  - First time an AI has autonomously solved a central open problem in a mathematics subfield
+  - **Activation**: discrete geometry, AI mathematics, unit distance problem, autonomous proof, reasoning model
