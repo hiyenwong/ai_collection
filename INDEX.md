@@ -10,6 +10,17 @@
   - THINGS-EEG基准测试：subj.-dependent zero-shot和subj.-independent zero-shot均取得领先性能
   - **Activation**: staged eeg representation, EEG visual decoding, coarse-to-fine semantics, semantic latent channels, THINGS-EEG benchmark
 
+## 2026-05-23 - Economics, Investment + Quantum (Cron Job)
+
+### Option Pricing on Noisy Intermediate-Scale Quantum Computers: A Quantum Neural Network Approach
+- [[qnn-option-pricing-nisq]] - Quantum Neural Network methodology for derivative pricing on NISQ hardware, cross-platform benchmarking across IBM Fez, IonQ Forte, Rigetti Ankaa-3, IQM Garnet quantum processors (arXiv: 2604.19832)
+  - 2-qubit QNN architecture approximates Black-Scholes-Merton pricing functions
+  - Cross-platform evaluation reveals hardware-dependent performance characteristics
+  - Demonstrates viable quantum approach for derivative pricing despite NISQ constraints
+  - Extendable to stochastic volatility, local volatility, and interest rate models
+  - **Activation**: quantum option pricing, QNN derivative pricing, NISQ finance, quantum Black-Scholes, cross-platform quantum benchmark
+
+
 ## 2026-05-23 - 经济学、投资 + 量子力学 (Cron Job)
 
 ### Parameterized 4-Qubit EWL Quantum Game Circuits with Dirac-Solow-Swan Hamiltonian Integration for Quadruple Helix Disruptive Innovation Recommender Systems
