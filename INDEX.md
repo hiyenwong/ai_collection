@@ -18,6 +18,20 @@
 
 ## 2026-05-24 - Information Science + Quantum Computing (Cron Job - Sunday)
 
+### Operationalising Post Quantum TLS Automated Configuration Profiling and Hybrid PQC Deployment (arXiv:2605.17955)
+- [[pqc-tls-deployment]] - Automated PQC TLS deployment methodology with configuration parsing and hybrid ML-KEM key exchange for enterprise infrastructure (arXiv: 2605.17955)
+  - Configuration parsing across Nginx, Apache, API gateways for unified cryptographic inventory
+  - Hybrid ML-KEM + X25519 deployment with zero application-layer changes
+  - Migration strategy: discovery → pilot → production with performance monitoring
+  - **Activation**: post-quantum cryptography deployment, PQC TLS migration, ML-KEM hybrid, cryptographic inventory, crypto-agility
+
+### Optimization of Secret Key Rate for BB84 under Collective Rotation Noise (arXiv:2605.21140)
+- [[qkd-noise-optimization]] - QKD noise engineering strategy finding optimal noise range where eavesdropper information is minimized while SKR degradation remains small (arXiv: 2605.21140)
+  - Non-zero noise sweet spot: collective rotation noise can act as natural defense
+  - QBER monitoring with ~11% threshold for BB84 asymptotic security
+  - Intercept-resend and coherent attack scenario analysis under noise
+  - **Activation**: quantum key distribution, BB84 protocol, QKD noise optimization, secret key rate, quantum bit error rate, collective rotation noise
+
 ### Q-SpiRL: Quantum Spiking Reinforcement Learning for Adaptive Robot Navigation (arXiv:2605.20801)
 - [[q-spirl-quantum-spiking-rl]] - Combines spike-based temporal processing with variational quantum feature transformation for obstacle-aware robot navigation, achieving up to 99% success rate with deterministic inference on IBM quantum hardware (arXiv: 2605.20801)
   - Five agent families evaluated under unified pipeline: Q-learning, MLP, SNN, QMLP, QSNN
