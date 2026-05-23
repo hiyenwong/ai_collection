@@ -782,3 +782,78 @@
   - Critical finding: D-Wave hybrid is ~99% classical (0.7% QPU time) — report honestly
   - DHE vs amplitude encoding: non-commutative Hamiltonian evolution preserves full Hilbert space access
   - **Activation**: quantum finance, quantum portfolio optimization, quantum reservoir computing finance, quantum trading strategy, quantum economics modeling, quantum game theory trading, 量子金融, 量子投资组合, quantum advantage finance
+
+## 2026-05-24 - Deep Learning Research (Cron Job)
+
+### SR²AM: Self-Regulated Simulative Reasoning for Efficient Agentic Planning (arXiv:2605.22138)
+- [[efficient-agentic-reasoning-sr2am]] - Three-system framework (System I/II/III) decomposing agent reasoning: simulative planning via world model, self-regulated planning depth, and reactive execution. Achieves 25.8-95.3% fewer reasoning tokens vs comparable agentic LLMs (arXiv:2605.22138)
+  - System II: Simulative reasoning grounded in future-state prediction via LLM-as-world-model
+  - System III: Learned configurator deciding when and how deeply to plan
+  - RL increases planning horizon by 22.8% while frequency grows only 2.0%
+  - Pass@1 competitive with 120-355B parameter systems using v0.1-8B model
+  - **Activation**: SR²AM, self-regulated reasoning, simulative planning, agentic reasoning, three-system framework, adaptive computation, world model planning
+
+### Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning (arXiv:2605.22511)
+- [[search-e1-self-distillation]] - Self-evolution for search-augmented reasoning via vanilla GRPO + Offline Self-Distillation (OFSD) with token-level forward KL objective. No external supervision needed (arXiv:2605.22511)
+  - OFSD: token-level forward KL from privileged context distribution to policy distribution
+  - Reaches 0.440 avg EM with Qwen2.5-3B across 7 QA benchmarks
+  - Surpasses all open-source baselines at both 3B and 7B scales
+  - Interleaving GRPO with OFSD provides dense per-step supervision
+  - **Activation**: Search-E1, OFSD, self-distillation reasoning, GRPO self-evolution, search-augmented reasoning, forward KL distillation, token-level distillation
+
+### Structured-Sparse Attention for Entity Tracking (arXiv:2605.22476)
+- [[structured-sparse-attention-entity]] - Blockwise resolvent-style attention operator achieving subquadratic O(n^(4/3)d) complexity for entity tracking by exploiting localized attention structure (arXiv:2605.22476)
+  - Learned attention in entity tracking is strongly block-diagonal with light cross-block residue
+  - Exact within-block + reduced-system cross-block routing via resolvent operator
+  - 12-29% wall-clock improvement vs dense operator, up to 2.4x faster than compact Transformer
+  - Limitation: performance collapses when #evolving properties > #attention heads
+  - **Activation**: structured-sparse attention, subquadratic attention, entity tracking, blockwise resolvent, sparse transformer, long-range tracking
+
+### WorldKV: Efficient World Memory with Retrieval and Compression (arXiv:2605.22718)
+- [[worldkv-world-memory]] - Training-free KV-cache management for video diffusion world models combining World Retrieval (evicted chunk reuse via camera/action correspondence) and World Compression (token pruning via key-key similarity to anchor frame) (arXiv:2605.22718)
+  - Matches full-KV memory fidelity at ~2x throughput
+  - Scene-aware retrieval without re-encoding via camera/action correspondence
+  - Halves per-chunk storage via anchor-frame token pruning
+  - Competitive with memory-trained baselines without any fine-tuning
+  - **Activation**: WorldKV, world memory, KV-cache management, video diffusion world model, world retrieval, token compression, persistent world consistency
+
+### Self-Policy Distillation via Capability-Selective Subspace Projection (arXiv:2605.22675)
+- [[self-policy-distillation-spd]] - SPD: capability-selective self-distillation by extracting low-rank subspace from gradients on correctness-defining tokens, projecting KV activations during self-generation, fine-tuning with NTP loss. No external signals needed (arXiv:2605.22675)
+  - Up to 13% improvement over SOTA self-distillation without external signals
+  - 16% improvement over pre-trained baselines, 15% better out-of-domain
+  - Extracts capability subspace via SVD on gradient-based token importance
+  - KV activation projection during self-generation filters noise from raw outputs
+  - **Activation**: SPD, self-policy distillation, capability subspace, KV activation projection, gradient-based distillation, self-distillation LLM, activation subspace
+
+### X-Token: Projection-Guided Cross-Tokenizer Knowledge Distillation (arXiv:2605.21699)
+- [[x-token-cross-tokenizer-distillation]] - Cross-tokenizer KD with P-KL (sparse projection matrix for unmatched tokens) and H-KL (hybrid relaxed matching for near-equivalent tokens), enabling LLM teaching across incompatible vocabularies (arXiv:2605.21699)
+  - Identifies uncommon-token failure and over-conservative matching failure modes
+  - P-KL: projection matrix W initialized from string rules, sparse KL over full distribution
+  - H-KL: top-k weighted mapping per student token for relaxed alignment
+  - Outperforms GOLD by +3.82 avg points with Qwen3-4B teacher
+  - Multi-teacher extension via per-teacher projection matrices
+  - **Activation**: X-Token, cross-tokenizer distillation, P-KL, H-KL, projection matrix distillation, incompatible vocabularies, tokenizer-agnostic KD
+
+### DeferMem: Query-Time Evidence Distillation via RL for Long-Term Memory QA (arXiv:2605.22411)
+- [[defermem-evidence-distillation]] - Long-term memory QA framework using segment-link retrieval + RL-trained memory distiller (DistillPO) for query-conditioned evidence selection and rewriting (arXiv:2605.22411)
+  - Decouples high-recall candidate retrieval from query-conditioned evidence distillation
+  - DistillPO: structured action (selection + rewriting) with decomposed-and-gated reward
+  - Fastest runtime with zero commercial-API token cost for memory operations
+  - RL-trained distiller generalizes across conversation domains
+  - **Activation**: DeferMem, evidence distillation, DistillPO, long-term memory QA, RL memory retrieval, segment-link structure, query-time evidence
+
+### AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Privileged Signals (arXiv:2605.20643)
+- [[avsd-adaptive-view-self-distillation]] - Multi-view self-distillation separating stable cross-view consensus from view-specific residual signals, selectively gating residuals when aligned with consensus (arXiv:2605.20643)
+  - Consensus signal provides reliable update direction shared across views
+  - View-specific residual added only when directionally aligned and proportionate
+  - Math Avg@8: +3.1% (Qwen3-8B) and +2.2% (Qwen3-4B) over strongest baselines
+  - Code reasoning: +2.4% on Codeforces/LiveCodeBench
+  - **Activation**: AVSD, adaptive-view distillation, multi-view self-distillation, consensus-residual decomposition, privileged signals, token-level supervision
+
+### HES: Unified Data Selection for LLM Reasoning via High-Entropy Sum (arXiv:2605.22389)
+- [[hes-data-selection-reasoning]] - Training-free metric for LLM reasoning data selection summing entropy of top-k highest-entropy tokens per sample. Validated across SFT, RFT, and RL paradigms (arXiv:2605.22389)
+  - Top 20% HES-ranked data matches full-dataset SFT performance
+  - Significantly outperforms correctness-only rejection sampling in RFT
+  - HES-selected trajectories boost GRPO reasoning patterns in RL
+  - Computationally efficient — requires no auxiliary models or reward systems
+  - **Activation**: HES, high-entropy sum, reasoning data selection, data quality metric, LLM reasoning data, training-free selection, long-CoT filtering
