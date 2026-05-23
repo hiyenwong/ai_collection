@@ -1,3 +1,15 @@
+## 2026-05-23 - Anthropic Founder Playbook (中文精读版)
+
+### Anthropic 创始人手册: Building an AI-Native Startup
+- [[anthropic-founder-playbook-ai-native-startup]] - AI 原生创业四阶段方法论 (Idea/MVP/Launch/Scale)
+  - Claude 生成: skill, anthropic-founder-playbook-ai-native-startup
+  - 核心要点 1: Idea 阶段以调研驱动的验证为核心,出口标准是找到 Problem-Solution Fit
+  - 核心要点 2: MVP 阶段需先定义架构(CLAUDE.md)再动手,避免 agentic 技术债复利
+  - 核心要点 3: Launch 阶段把创始人从 builder 变成'设计做工作的系统'
+  - 核心要点 4: Scale 阶段通过领域深度+集成深度+专有数据构建可防守护城河
+  - Activation: 创业方法论, AI-native, 精益创业, founder-playbook
+
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
