@@ -12,6 +12,15 @@
   - 振荡背景输入作为全局时钟信号调节重放速度，频率越高重放越快
   - **Activation**: sequence timing, spiking temporal memory, sTM, replay speed, SNN, oscillatory clock
 
+## 2026-05-23 - Economics/Investment + Quantum (Cron Job)
+
+### What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation
+- [[deep-hedging-symbolic-distillation]] - Framework for auditing and distilling deep RL hedging policies into interpretable symbolic formulas, with regime fragility analysis (arXiv: 2605.21696)
+  - TD3 agents learn systematic delta haircuts relative to Black-Scholes driven by spot-IV co-movement
+  - Symbolic regression distills neural policies into compact formulas preserving 80%+ of RL advantage
+  - Systematic regime fragility analysis identifies when neural hedges underperform BS baselines
+  - **Activation**: deep hedging symbolic distillation, RL options hedging audit, delta haircut analysis, neural policy distillation, regime fragility testing
+
 ## 2026-05-23 - Economics/Investment + Quantum Finance (Cron Job)
 
 ### Quantum Reinforcement Learning for Dynamic Portfolio Optimization
