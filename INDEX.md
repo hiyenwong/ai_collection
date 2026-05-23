@@ -1,3 +1,26 @@
+## 2026-05-23 - Economics/Investment + Quantum Finance (Cron Job)
+
+### Quantum Reinforcement Learning for Dynamic Portfolio Optimization
+- [[quantum-rl-dynamic-portfolio]] - QRL methodology for dynamic portfolio optimization using VQC-based quantum DDPG/DQN with fewer parameters than classical deep RL (arXiv: 2601.18811)
+  - VQC作为策略/价值函数近似器，参数效率比经典网络高10-100倍
+  - 量子DDPG和DQN在投资组合优化中达到与经典RL相当的性能
+  - **Activation**: quantum reinforcement learning portfolio, QRL dynamic portfolio, variational quantum circuit trading, quantum DDPG DQN
+
+### Hybrid Classical-Quantum Portfolio Construction
+- [[quantum-finance-portfolio]] - Ledoit-Wolf收缩协方差估计 + 层次相关性聚类 + 熵正则化遗传算法的组合构建框架 (arXiv: 2603.16904)
+  - 从无偏S&P 500中提取去相关资产，GPU加速的遗传算法优化权重
+  - **Activation**: hybrid portfolio construction, Ledoit-Wolf shrinkage, hierarchical clustering
+
+### Tensor Network Option Pricing
+- [[singularity-tensor-network-pricing]] - 奇异性感知的张量网络期权定价框架，用于大规模投资组合重新估值 (arXiv: 2603.26318)
+  - 使用TT-cross近似构建高维价格面的张量代理，保留衍生品支付函数的尖锐特征
+  - **Activation**: tensor network option pricing, TT-cross approximation, portfolio revaluation
+
+### Financial Computation Stack Framework
+- [[quantum-finance-stack-analysis]] - 量子金融计算栈评估框架：约束优化、导数定价、尾部风险、QML和后量子密码学的系统分析 (arXiv: 2604.08180)
+  - 134页综述，提出金融-计算栈的五层评估逻辑：识别瓶颈→指定量子原语→经典基准对比→实现约束评估
+  - **Activation**: quantum finance stack, financial computation framework, quantum advantage assessment
+
 
 ## 2026-05-23 - Systems Engineering Research: Digital Twin + Distributed Systems (Cron Job)
 
