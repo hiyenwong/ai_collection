@@ -18,6 +18,27 @@
 
 ## 2026-05-23 - Economics, Investment + Quantum Finance (Cron Job)
 
+### Constraint Locality XY-Mixer Design under Trotterized Adiabatic Evolution
+- [[constraint-locality-xy-mixer-design]] - XY-mixer effectiveness under Trotterization depends on constraint locality: global constraints suffer Trotter errors, local blocks excel (arXiv: 2605.02465)
+  - 核心要点: XY-mixer dominant Trotter error depends on individual constraint structure, not total problem size
+  - 核心要点: Single global equality constraint → use Pauli-X mixer; multiple disjoint local blocks → use XY-mixer
+  - 核心要点: Dedicated 2-way-1-hot mixer Hamiltonian for TSP-like constraints
+  - **Activation**: XY-mixer design, Trotterized adiabatic evolution, constraint locality, constraint-preserving mixer, combinatorial optimization quantum, quantum portfolio optimization mixer
+
+### Quantum Tilted Loss in Variational Optimization
+- [[quantum-tilted-loss-optimization]] - Operator-level exponential tilting that reshapes VQA optimization landscapes to mitigate barren plateaus by amplifying gradient signals (arXiv: 2605.02850)
+  - 核心要点: QTL objective L(θ) = log Tr[exp(-βH)ρ(θ)] amplifies gradients where standard VQAs flatten
+  - 核心要点: Single tunable parameter β controls landscape sharpness; annealing schedule provides exploration→exploitation
+  - 核心要点: Naturally captures tail risk in financial applications (CVaR-like behavior)
+  - **Activation**: quantum tilted loss, QTL optimization, barren plateau mitigation, VQA training improvement, exponential tilting quantum, variational quantum algorithm landscape
+
+### Digital Spreading Framework for Quantum Expectation Computation
+- [[digital-spreading-quantum-finance]] - Resolves rotation gate vs arithmetic circuit tradeoff using pruned Cuccaro ripple-carry — eliminates both sine-to-square bias and O(n²) complexity (arXiv: 2604.05452)
+  - 核心要点: Analog rotation gates suffer sine-to-square bias; digital WeightedAdder circuits are O(n²) — both exceed NISQ limits
+  - 核心要点: Pruned Cuccaro ripple-carry achieves O(n) gate count with no rotation gates
+  - 核心要点: Pure digital expectation computation compatible with NISQ coherence times
+  - **Activation**: digital spreading quantum, Cuccaro ripple-carry quantum, quantum finance NISQ, rotation-free quantum computation, quantum expectation computation, financial engineering quantum
+
 ### Contextual Quantum Neural Networks for Stock Price Prediction
 - [[contextual-qnn-stock-prediction]] - Multi-asset stock prediction via quantum multi-task learning with share-and-specify ansatz (arXiv: 2503.01884)
   - 核心要点: Share-and-specify ansatz enables simultaneous multi-asset training on single quantum circuit
