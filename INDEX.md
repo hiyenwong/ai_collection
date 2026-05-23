@@ -8,6 +8,22 @@
   - Validated by both feature metrics and human raters
   - **Activation**: MIRAGE, fMRI mental imagery, brain-to-image decoding, mental image reconstruction, NSD-Imagery, vision decoder generalization, fMRI diffusion model, neuroimaging decoding
 
+### Learning Sequence Timing and Replay Speed in Spiking Neural Networks
+- [[learning-sequence-timing-snn]] - Biologically plausible SNN sequence learning extending spiking Temporal Memory (sTM) with element-specific timing encoding via sequential population activation and oscillatory clock-based replay speed modulation (arXiv: 2605.22523)
+  - sTM model extended to encode element-specific durations via synfire chain propagation
+  - Oscillatory background input (θ/γ rhythms) provides flexible clock signal for replay speed control
+  - Elapsed time encoded by unique sparse spatiotemporal neural activity patterns
+  - Links replay speed to EEG/LFP oscillatory patterns (θ during wake, γ during sleep)
+  - **Activation**: spiking temporal memory, sTM model, sequence timing SNN, replay speed control, oscillatory clock neural, synfire chain timing, SNN sequence learning, theta gamma replay
+
+### Mamba Spike Forecaster for Behavioral Decoding in BCIs
+- [[mamba-spike-forecaster-bci]] - Single Mamba state-space model trained on next-step spike counts at Neuropixels scale simultaneously forecasts neural population activity and decodes behavioral state via lightweight linear readout. Achieves 75.7% choice decoding on Steinmetz benchmark (arXiv: 2605.12999)
+  - Mamba SSM forecaster predicts next-step spike counts → denoised rates improve decoding by 4-6 pp over raw spikes
+  - Lightweight per-session linear readout calibrates in just 100-150 trials
+  - Validated on 39 sessions, ~27,000 neurons, 1,994 held-out trials
+  - Pipeline fits within 50 ms bin budget on workstation GPUs for closed-loop BCI
+  - **Activation**: Mamba neural decoding, spike forecasting BCI, implicit behavioral decoding, Neuropixels Mamba, state space model neuroscience, Steinmetz benchmark, closed-loop BCI Mamba
+
 ### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
 - [[platonic-representations-brain-universal-geometry]] - Self-supervised recovery of universal neural geometry across subjects using fMRI. Evidence that human visual cortex representations are approximately isometric and translatable via unsupervised orthogonal rotations (arXiv: 2605.20496)
   - Self-supervised encoder learns subject-specific embeddings from fMRI alone via repeated stimulus presentations
