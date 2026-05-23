@@ -355,3 +355,19 @@
   - Refined exponent δ=0.014 by Princeton's Will Sawin
   - First time an AI has autonomously solved a central open problem in a mathematics subfield
   - **Activation**: discrete geometry, AI mathematics, unit distance problem, autonomous proof, reasoning model
+
+## 2026-05-23 - Quantum Computing Research (Cron Job)
+
+### Quantum Circuit Design via Dynamic Pauli Constraints
+- [[quantum-circuit-dynamic-pauli-constraints]] - Software-oriented quantum computation model where gates are specified by constraints on Pauli observables, with k-local quantum state tomography per layer; universal for BQP with O(D²N log N) overhead (arXiv: 2605.22744)
+  - Formalizes NISQ-era quantum software design in terms of physically observable quantities — gates as Pauli constraints, not unitary matrices
+  - Equivalent to coupling-graph-restricted circuit model with polynomial overhead
+  - Provides a natural software interface for quantum imaginary time evolution, procedural generation, and verifiable quantum computing
+  - **Activation**: Pauli constraints, constraint-based quantum circuit, NISQ quantum software, k-local tomography, measurement-aware compilation
+
+### Reinforcement Learning for Ion Shuttling on Trapped-Ion Quantum Computers
+- [[rl-ion-shuttling-trapped-ion]] - First RL-based optimization of ion transport in modular trapped-ion chips, achieving up to 36.3% reduction in shuttling operations vs heuristic baselines (arXiv: 2605.22463)
+  - RL agent learns optimal shuttling strategies through direct interaction with chip environment
+  - Architecture-agnostic: easily applicable to various chip designs
+  - Addresses high-dimensional optimization problem of ion routing between storage, preparation, and gate zones
+  - **Activation**: ion shuttling optimization, trapped-ion quantum computer, RL quantum hardware, quantum circuit compilation, modular chip architecture
