@@ -92,6 +92,13 @@
   - SpiNNaker多核神经形态平台实现低功耗实时推理
   - **Activation**: SpiNNaker ASL, neuromorphic sign language, DVS gesture, event-based vision SNN
 
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unifies bottom-up whole-brain modeling (biophysical realism) with top-down neuroconnectionism (functional performance) into a single paradigm with four minimal criteria and a three-pillar roadmap (arXiv: 2605.18118)
+  - fWBM四标准：结构基础(S)、动力学现实(D)、功能能力(F)、可映射观测(M)
+  - 三步走路线图：短期(混合模型)→中期(全功能fWBM)→长期(多尺度个性化模型)
+  - 关键使能技术: 可微仿真、多尺度数据整合、高级参数优化
+  - **Activation**: functional whole-brain model, fWBM, neuroconnectionism, whole-brain modeling, brain dynamics
+
 ## 2026-05-23 - Economics/Investment + Quantum (Cron Job)
 
 ### What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation
