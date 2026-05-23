@@ -1,248 +1,144 @@
 ---
 name: hotstart-quantum-portfolio-optimization
-description: "Hot-starting methodology for quantum portfolio optimization. Restricts search space to discrete solutions near the continuous optimum by constructing a compact Hilbert space, reducing required qubits. Outperforms state-of-the-art techniques on both software solvers and D-Wave quantum annealer."
+description: "Hot-starting methodology for quantum portfolio optimization — restricting search space to discrete solutions near the continuous optimum by constructing a compact Hilbert space, reducing qubit requirements."
 ---
 
 # Hot-Starting Quantum Portfolio Optimization
 
 ## Description
-
-Hot-Starting Quantum Portfolio Optimization methodology that restricts the search space of discrete mean-variance portfolio optimization to solutions in the vicinity of the continuous optimum. Constructs a compact Hilbert space that reduces required qubits while maintaining solution quality. Outperforms state-of-the-art techniques on both classical software solvers and D-Wave Advantage quantum annealer.
-
-**Based on:** arXiv:2510.11153v1 — "Hot-Starting Quantum Portfolio Optimization" by Sebastian Schlütter, Tomislav Maras, Alexander Dotterweich, Nico Piatkowski
+Methodology for hot-starting quantum portfolio optimization by restricting the search space to discrete solutions in the vicinity of the continuous optimum through compact Hilbert space construction. This approach reduces the number of required qubits and improves quantum optimization performance for mean-variance portfolio problems with cardinality constraints.
 
 ## Activation Keywords
-
 - hot-start quantum optimization
-- 热启动量子优化
-- compact Hilbert space portfolio
-- discrete portfolio optimization quantum
-- QUBO search space reduction
-- 量子组合热启动
-- qubit reduction portfolio
-- D-Wave portfolio optimization
+- 热启动量子组合优化
+- warm-start QAOA
+- quantum portfolio hot-start
+- compact Hilbert space optimization
+- discrete mean-variance optimization
+- quantum QUBO reduction
+- 量子组合优化热启动
 
-## Core Methodology
+## Tools Used
+- terminal: Run quantum circuit simulators, Qiskit/PennyLane scripts
+- search_files: Locate quantum optimization codebases
+- read_file: Read quantum circuit definitions
+- write_file: Create QUBO formulations
 
-### The Hot-Starting Principle
+## Usage Patterns
 
-**Problem**: Discrete portfolio optimization (selecting K assets from N with integer lot sizes) requires O(N × log(max_lots)) qubits — too many for current quantum hardware.
+### Pattern 1: Hot-Start Portfolio Optimization
+When solving discrete mean-variance portfolio optimization with quantum annealers or QAOA:
+1. Solve the relaxed continuous optimization problem classically
+2. Construct a compact Hilbert space around the continuous optimum
+3. Map the restricted discrete search space to a reduced QUBO
+4. Run quantum optimization on the reduced problem
 
-**Solution**: First solve the continuous relaxation classically, then restrict the quantum search to a small neighborhood around the continuous optimum.
+### Pattern 2: Qubit Reduction via Search Space Restriction
+When facing qubit limitations for portfolio optimization:
+1. Identify the continuous optimal solution
+2. Define a neighborhood radius k around each asset weight
+3. Encode only the discrete points within this neighborhood
+4. Achieve O(log(k)) qubit reduction per asset
 
-### Step 1: Continuous Relaxation
+### Pattern 3: Quantum-Classical Hybrid Pipeline
+For production quantum finance workflows:
+1. Classical pre-processing: solve relaxed problem
+2. Quantum optimization: restricted search space
+3. Classical post-processing: feasibility verification
+4. Expert evaluation: financial viability assessment
 
-```python
-def continuous_relaxation(mu, Sigma, lambda_param, budget):
-    """
-    Solve continuous mean-variance optimization:
-    max λ * μ^T w - (1-λ) * w^T Σ w
-    s.t. sum(w) = budget, w >= 0
-    
-    Returns: w_continuous (optimal continuous weights)
-    """
-    # Closed-form or convex optimization solution
-    # This is fast and reliable on classical hardware
-    w_star = solve_markowitz(mu, Sigma, lambda_param, budget)
-    return w_star
+## Instructions for Agents
+
+### Step 1: Formulate the Continuous Relaxation
+Given a portfolio optimization problem:
 ```
+minimize: w^T Σ w - λ μ^T w
+subject to: sum(w_i) = 1, w_i ∈ {0, 1/K, 2/K, ..., 1}
+           cardinality: sum(I(w_i > 0)) ≤ C
+```
+
+Solve the relaxed continuous version (w_i ∈ [0, 1]) to get w*.
 
 ### Step 2: Construct Compact Hilbert Space
+1. For each asset i, define discrete levels near w*_i:
+   ```
+   levels_i = {max(0, w*_i - δ), ..., min(1, w*_i + δ)}
+   ```
+   where δ controls the neighborhood size
+2. Encode each asset with ceil(log2(|levels_i|)) qubits
+3. Total qubits = Σ ceil(log2(|levels_i|)) ≪ N * ceil(log2(K+1))
 
-```python
-def construct_compact_hilbert_space(w_star, delta, K):
-    """
-    Build a restricted search space around the continuous optimum.
-    
-    For each asset i:
-        If w_star[i] > 0: allow w[i] ∈ {0, w_star[i] ± delta}
-        If w_star[i] = 0: allow w[i] ∈ {0, small_value}
-    
-    This reduces the binary encoding from N×log(M) to ~K×log(2R+1)
-    where R is the radius of the neighborhood.
-    
-    Returns:
-        QUBO matrix Q_restricted for the compact space
-    """
-    # For each asset in the active set:
-    # Encode deviation from continuous optimum
-    # Binary variables represent { -delta, 0, +delta }
-    
-    active_assets = np.where(w_star > threshold)[0]
-    
-    # Restrict to K nearest to active set
-    if len(active_assets) > K:
-        active_assets = select_top_k(active_assets, w_star, K)
-    
-    # Encode each active asset with few qubits
-    # Instead of log(max_lots) qubits per asset,
-    # use log(2*radius + 1) qubits
-    Q = build_qubo_active_set(active_assets, w_star, delta, mu, Sigma)
-    return Q, active_assets
-```
+### Step 3: Build Reduced QUBO
+1. Map discrete levels to binary variables
+2. Construct QUBO objective: x^T Q x
+3. Add constraints as penalty terms:
+   - Budget constraint: λ_1(sum(w_i) - 1)^2
+   - Cardinality: λ_2(sum(I(w_i > 0)) - C)^2
 
-### Step 3: Quantum Optimization on Restricted Space
+### Step 4: Quantum Optimization
+1. Run QAOA or quantum annealing on the reduced QUBO
+2. Use appropriate ansatz depth for gate-based approaches
+3. For annealers, set appropriate chain strengths
 
-```python
-def quantum_optimize_restricted(Q, device='dwave'):
-    """
-    Run quantum optimization on the compact Hilbert space.
-    
-    Options:
-    - D-Wave quantum annealer
-    - Simulated annealing (classical baseline)
-    - QAOA on gate-based quantum computer
-    
-    Returns: best discrete portfolio within the restricted space
-    """
-    if device == 'dwave':
-        sampler = DWaveSampler()
-        result = sampler.sample_qubo(Q, num_reads=1000)
-    elif device == 'simulated':
-        result = simulated_annealing(Q)
-    
-    # Decode solution back to original space
-    w_optimal = decode_solution(result.best_sample, active_assets, w_star, delta)
-    return w_optimal
-```
-
-### Step 4: Quality Verification
-
-```python
-def verify_hotstart_quality(w_optimal, w_continuous, Q_full):
-    """
-    Verify that the hot-started solution is competitive.
-    
-    Check:
-    1. Solution feasibility (budget, cardinality constraints)
-    2. Objective value vs. continuous optimum (optimality gap)
-    3. Objective value vs. full QUBO (if tractable)
-    4. Qubit savings achieved
-    """
-    # Optimality gap
-    gap = (objective(w_continuous) - objective(w_optimal)) / objective(w_continuous)
-    
-    # Qubit comparison
-    full_qubits = n_assets * log2(max_lots)
-    restricted_qubits = len(active_assets) * log2(2*radius + 1)
-    savings = (full_qubits - restricted_qubits) / full_qubits
-    
-    return {
-        'optimality_gap': gap,
-        'qubit_savings': savings,
-        'feasible': check_constraints(w_optimal),
-    }
-```
-
-## Key Advantages
-
-| Metric | Full QUBO | Hot-Started |
-|--------|-----------|-------------|
-| **Qubits** | N × log(M) | K × log(2R+1) |
-| **Example (N=100, M=100)** | ~700 qubits | ~50 qubits |
-| **Solution Quality** | Optimal | Near-optimal (gap < 1%) |
-| **Runtime** | Hours (queue) | Minutes |
-| **Hardware Feasibility** | Future (1000+ qubits) | Current (D-Wave Advantage) |
-
-## Parameter Selection Guide
-
-### Delta (Neighborhood Radius)
-
-| Delta | Pros | Cons |
-|-------|------|------|
-| Small (1-2 lots) | Fewer qubits, faster | May miss global optimum |
-| Medium (3-5 lots) | Good balance | Moderate qubit count |
-| Large (5+ lots) | Near-full coverage | Defeats purpose of hot-starting |
-
-**Recommendation**: Start with delta=3, verify gap < 1%, increase if needed.
-
-### K (Number of Active Assets)
-
-```python
-# Heuristic: K = min(N_active_continuous + margin, max_budget)
-K = min(len(np.where(w_star > 0)[0]) + 5, 20)
-```
-
-## Implementation Pattern
-
-### Full Workflow
-
-```python
-def hotstart_portfolio_optimization(
-    mu, Sigma, budget, K_select, 
-    lambda_param=0.5, delta=3, device='dwave'
-):
-    """
-    Complete hot-started quantum portfolio optimization.
-    
-    Args:
-        mu: Expected returns vector
-        Sigma: Covariance matrix
-        budget: Total investment budget
-        K_select: Number of assets to select (cardinality)
-        lambda_param: Risk-return trade-off
-        delta: Neighborhood radius in lot units
-        device: 'dwave', 'qaoa', or 'simulated'
-    
-    Returns:
-        Optimized portfolio with metadata
-    """
-    # 1. Continuous relaxation
-    w_star = continuous_relaxation(mu, Sigma, lambda_param, budget)
-    
-    # 2. Compact Hilbert space construction
-    Q, active_assets = construct_compact_hilbert_space(w_star, delta, K_select)
-    
-    # 3. Quantum optimization
-    w_opt = quantum_optimize_restricted(Q, device)
-    
-    # 4. Verification
-    metrics = verify_hotstart_quality(w_opt, w_star, Q)
-    
-    return {
-        'weights': w_opt,
-        'active_assets': active_assets,
-        'qubits_used': len(active_assets) * int(np.log2(2*delta + 1) + 1),
-        'optimality_gap': metrics['optimality_gap'],
-    }
-```
+### Step 5: Expert Analysis Evaluation
+After quantum optimization:
+1. Check diversification: number of non-zero weights
+2. Verify risk exposure: portfolio variance within bounds
+3. Assess turnover: trading costs from rebalancing
+4. Compare against classical benchmarks (Gurobi, simulated annealing)
 
 ## Error Handling
 
-### Continuous Relaxation Infeasible
-```
-Check constraints for conflicts (e.g., K_select > N available assets)
-Relax cardinality constraint or adjust budget
-```
+### Qubit Limitation
+If still too many qubits after hot-starting:
+- Reduce δ (neighborhood size)
+- Use asset screening to pre-filter
+- Apply hierarchical optimization (sector → asset)
 
-### Restricted Space Contains No Feasible Solutions
-```
-Increase delta (neighborhood radius)
-Re-run with delta *= 2 until feasible solutions found
-```
+### Solution Infeasibility
+If quantum solution violates constraints:
+- Increase penalty weights λ_1, λ_2
+- Use constraint-native interfaces (D-Wave LeapHybridCQM)
+- Apply feasibility-aware reassembly
 
-### Quantum Annealer Returns Infeasible Solution
-```
-Apply classical repair:
-1. Round to nearest feasible portfolio
-2. Project onto budget constraint
-3. Verify cardinality constraint
+### Barren Plateaus
+If QAOA optimization fails to converge:
+- Use warm-started initial parameters from classical solution
+- Apply layerwise training
+- Reduce circuit depth
+
+## Examples
+
+### Example 1: Mean-Variance Portfolio with Cardinality Constraint
+```python
+from qaoa import QAOA
+import numpy as np
+
+# Step 1: Solve continuous relaxation
+w_cont = classical_mean_variance(mu, Sigma, cardinality=C)
+
+# Step 2: Define discrete levels around continuous optimum
+delta = 0.1  # neighborhood radius
+discrete_weights = []
+for w_i in w_cont:
+    levels = np.arange(max(0, w_i - delta), min(1, w_i + delta), 0.05)
+    discrete_weights.append(levels)
+
+# Step 3: Build QUBO with reduced encoding
+Q = build_qubo(Sigma, mu, discrete_weights, lambda_budget=10, lambda_card=5)
+
+# Step 4: Run QAOA
+qaoa = QAOA(Q, p=3, initial_params=warm_start_params(w_cont))
+result = qaoa.optimize()
 ```
 
 ## Resources
-
-- **Paper:** arXiv:2510.11153v1 - "Hot-Starting Quantum Portfolio Optimization"
-- **Related:** Expert Analysis Evaluation (arXiv:2507.20532v1)
-- **D-Wave:** https://docs.dwavesys.com/docs/latest/c_qubo.html
+- arXiv: 2510.11153 - Hot-Starting Quantum Portfolio Optimization
+- arXiv: 2507.20532 - Quantum Portfolio Optimization with Expert Analysis Evaluation
+- arXiv: 2605.17623 - Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
 
 ## Related Skills
-
-- `quantum-portfolio-optimizer` - Standard QAOA portfolio optimization
-- `quantum-expert-evaluation-portfolio` - Expert evaluation framework
-- `qbalance-quantum-workflow-optimization` - Quantum workflow optimization
-
-## Activation
-
-- **Domain**: Quantum Finance, Combinatorial Optimization
-- **Use Case**: Reducing qubit requirements for portfolio optimization
-- **Keywords**: hot-start quantum, compact Hilbert space, qubit reduction
+- quantum-portfolio-optimizer
+- qaoa-optimization
+- quantum-ml-patterns
+- quantum-finance-portfolio

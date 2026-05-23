@@ -1,3 +1,33 @@
+## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
+- [[hotstart-quantum-portfolio-optimization]] - Hot-starting methodology for quantum portfolio optimization by constructing compact Hilbert space around continuous optimum, reducing qubit requirements (arXiv: 2605.17623)
+  - D-Wave hybrid is 99.3% classical decomposition with only 0.7% QPU time
+  - Cardinality penalty creates dense rank-one term collapsing intended density benchmark
+  - Constraint-native vs penalty-encoded interface analysis reveals source of performance gains
+  - **Activation**: hot-start quantum optimization, 热启动量子组合优化, D-Wave hybrid audit, compact Hilbert space, QUBO reduction, quantum portfolio benchmark
+
+### Quantum Portfolio Optimization with Expert Analysis Evaluation
+- [[hotstart-quantum-portfolio-optimization]] - Expert Analysis Evaluation framework bridging computational quantum optimization with financial viability assessment for VQE and QAOA portfolios (arXiv: 2507.20532)
+  - VQE and QAOA minimize cost but often violate financial criteria (diversification, risk exposure)
+  - Expert judgment necessary to validate quantum-optimized portfolios for real-world application
+  - Benchmark across asset universes, ansatz architectures, and circuit depths
+  - **Activation**: expert analysis evaluation, 专家评估框架, quantum portfolio viability, VQE QAOA finance, quantum optimization benchmark
+
+### Contextual Quantum Neural Networks for Stock Price Prediction
+- [[contextual-quantum-neural-stock-prediction]] - Multi-asset stock price prediction using quantum batch gradient update (QBGU) and share-and-specify ansatz with logarithmic qubit overhead (arXiv: 2503.01884)
+  - QBGU accelerates standard SGD in quantum applications with improved convergence
+  - QMTL architecture enables simultaneous multi-asset training on same quantum circuit
+  - Outperforms quantum single-task learning and captures inter-asset correlations
+  - **Activation**: quantum stock prediction, 量子股票预测, QBGU, quantum multi-task learning, share-and-specify ansatz, QMTL finance
+
+### hbar_E: An Action Constant for Quantum Economics
+- [[quantum-economic-action-constant]] - Economic action constant (hbar_E) as structural analogue to Planck's constant for modeling macroeconomic regime transitions under radical uncertainty (arXiv: 2509.02647)
+  - Non-commuting economic observables (X, P_X) derive uncertainty relations and semi-classical limit
+  - hbar_E governs transitions between deterministic, probabilistic, and unstable dynamics
+  - Double-well economic potential models boom/bust regime bifurcations
+  - **Activation**: quantum economics, 量子经济学, economic action constant, hbar_E, macroeconomic regime transitions, canonical quantization economics
+
 ## 2026-05-22 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Tensor Cookbook: Mastering Tensors through Diagrams
