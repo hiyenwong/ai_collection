@@ -1,3 +1,19 @@
+## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Constrained Counterdiabatic QAOA for Portfolio Optimization
+- [[constrained-counterdiabatic-qaoa-portfolio]] - Counterdiabatic QAOA with CD driving terms accelerates convergence on constrained financial optimization (arXiv: 2605.06858)
+  - CD terms suppress diabatic transitions during adiabatic evolution
+  - Enables faster convergence to optimal portfolio weights
+  - Joint optimization of QAOA angles and CD coefficients
+  - **Activation**: counterdiabatic QAOA, CD-QAOA portfolio, constrained QAOA, quantum approximate optimization finance
+
+### Quantum Amplitude Estimation for Insurance Tail-Risk Pricing
+- [[quantum-amplitude-estimation-insurance-pricing]] - QAE provides quadratic speedup over classical Monte Carlo for catastrophe insurance tail-risk pricing (arXiv: 2603.15664)
+  - O(1/ε) vs O(1/ε²) convergence advantage for rare events
+  - Empirical convergence analysis for practical insurance applications
+  - Tail-risk metrics: VaR, CVaR, tail conditional expectation
+  - **Activation**: quantum amplitude estimation insurance, QAE tail-risk pricing, quantum Monte Carlo finance, catastrophe insurance quantum
+
 
 ## 2026-05-23 - Economics, Investment + Quantum (Cron Job - QML Benchmark & Interpretability)
 
