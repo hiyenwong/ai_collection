@@ -1,3 +1,20 @@
+## 2026-05-23 - Neuroscience Cron (Spiking Language Models + Spike Operators)
+
+### SymbolicLight V1: Spike-Gated Dual-Path Language Modeling with High Activation Sparsity
+- [[symboliclight-spike-gated-language]] - First natively trained spiking language model combining binary LIF spike dynamics with continuous residual stream. 194M params, >89% activation sparsity, PPL 8.88 on bilingual corpus (arXiv: 2605.21333)
+  - Dual-Path SparseTCAM replaces dense self-attention with exponential-decay path + spike-gated local attention
+  - Ablation proves temporal integration (not sparsity alone) drives performance
+  - 0.8B scale-up demonstrates sparsity preservation at larger scale
+  - **Activation**: symboliclight, spike-gated language model, spiking language model, LIF language model, activation sparsity
+
+### Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck
+- [[plug-and-play-spiking-operators]] - Training-free ANN-to-SNN conversion framework implementing spike-friendly Softmax, SiLU, and normalization via LIF population coding + bit-shift scaling (arXiv: 2605.20289)
+  - Decomposes Transformer nonlinearities into division, exponentiation, ℓ₂ norm primitives
+  - <1% accuracy drop across all evaluated LLM tasks, no fine-tuning required
+  - Modular operator blocks integrate into existing ANN-to-SNN pipelines
+  - **Activation**: spiking operators, ANN-to-SNN conversion, spike-friendly softmax, LIF population coding, spiking transformer
+
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Constrained Counterdiabatic QAOA for Portfolio Optimization
