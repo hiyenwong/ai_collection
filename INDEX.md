@@ -1,5 +1,19 @@
 ## 2026-05-24 - Information Science + Quantum (Cron Job)
 
+### Quantum Homomorphic Encryption: Towards Practical and Private Computation on Untrusted Quantum Hardware (arXiv:2604.19256)
+- [[quantum-homomorphic-encryption-qhe]] - QOTPH framework enabling computation on encrypted quantum states via Quantum One-Time Pad with information-theoretic security (arXiv: 2604.19256)
+  - Homomorphic gate decompositions for Clifford+T circuits with systematic key update rules
+  - Non-interactive evaluation for Clifford gates; T gates require additional protocol
+  - Validated on simulated environments and real IBM quantum processors under circuit-level noise
+  - **Activation**: quantum homomorphic encryption, QHE, QOTP, encrypted quantum computation, privacy-preserving quantum, delegated quantum computing, blind quantum computation
+
+### Quantum-Resistant Networks: A Review of Primitives, Protocols and Best Practices (arXiv:2605.04129)
+- [[quantum-resistant-networks]] - First comprehensive systematization of post-quantum network architectures across cryptographic foundations, key distribution, and deployment (arXiv: 2605.04129)
+  - Unified taxonomy: symmetric-only, PQ-PKI, hybrid, information-theoretic multi-path foundations
+  - Key distribution architectures: centralized, hierarchical, replicated, threshold, MPC-backed, serverless
+  - Analyzes trade-offs under harvest-now-decrypt-later and partial infrastructure compromise threats
+  - **Activation**: post-quantum cryptography, PQC networks, quantum resistant, network security architecture, key distribution, cryptographic agility
+
 ### Q-PhotoNAS: Hybrid Quantum Neural Architecture Search Framework on Photonic Devices (arXiv:2605.22097)
 - [[q-photonas-hybrid-arch-search]] - NAS framework for hybrid photonic quantum-classical models using genetic algorithm-based search with learnable quantum phase encoding (arXiv: 2605.22097)
   - 19 hyperparameters encoded in 6 gene groups (classical preprocessing, phase encoding, photonic circuit, measurement, post-processing, training)
