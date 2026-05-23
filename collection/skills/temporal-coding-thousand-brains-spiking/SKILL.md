@@ -43,10 +43,18 @@ The Thousand Brains Theory (TBT) / Monty framework models object recognition thr
 4. Object classifier
 
 ## Key Results
-- **Perfect discrimination**: temporal coding achieves 100% accuracy on objects with identical features in different spatial arrangements (dense accumulation performs at chance)
-- **Noise robustness**: maintains 30-50 percentage point advantage across all tested noise levels
-- **Adaptive λ convergence**: converges to distinct values reflecting object geometric complexity
-- **Three testable predictions** derived for biological validation
+
+| Metric | Temporal Coding | Dense Accumulation |
+|---|---|---|
+| Objects with identical features, different spatial arrangement | 100% accuracy | Chance level |
+| Noise robustness (all levels) | 30-50 pp advantage | Severely degraded |
+| Adaptive lambda convergence | Distinct values per geometry | N/A |
+
+## Three Testable Predictions
+
+1. **Temporal order determines discrimination**: rank-order spike sequences carry spatial meaning dense vectors discard — objects with identical features in different arrangements should be fully discriminable
+2. **Traversal direction encoded in weights via STDP**: weight matrices should reflect sweep direction (left-to-right vs right-to-left produce asymmetric patterns)
+3. **Lambda adaptation reflects geometric complexity**: simple objects produce higher lambda (favoring recent contacts), complex objects produce lower lambda (distributing across all contacts)
 
 ## Activation Keywords
 - thousand brains theory

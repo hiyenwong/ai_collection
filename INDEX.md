@@ -1,3 +1,21 @@
+## 2026-05-24 - Neuroscience Research (Cron Job - Sunday)
+
+### Temporal Coding as a Substrate for Sensorimotor Object Inference: A Spiking Reinterpretation of Thousand Brains Architecture (arXiv:2605.22206)
+- [[temporal-coding-thousand-brains-spiking]] - Replaces dense floating-point vectors with rank-order spike packets for sensorimotor inference in the Monty/Thousand Brains framework; uses STDP to encode traversal direction and adaptive lambda for geometric complexity (arXiv: 2605.22206)
+  - Perfect discrimination on objects with identical features in different arrangements (dense accumulation at chance)
+  - 30-50 percentage point noise robustness advantage maintained across all levels
+  - Adaptive lambda converges to distinct values reflecting object geometric complexity
+  - Three testable predictions: temporal order discrimination, STDP direction encoding, lambda-geometry correspondence
+  - **Activation**: thousand brains theory, temporal coding, rank-order coding, sensorimotor inference, STDP direction encoding, Monty framework spiking
+
+### Joint Sparse Coding and Temporal Dynamics Support Context Reconfiguration (arXiv:2605.10178)
+- [[sparse-temporal-context-reconfiguration]] - Identifies sparsity in context-dependent representations and temporal dynamics as mechanisms for preserving prior knowledge during context transitions; SNNs show improved lifelong learning retention (arXiv: 2605.10178)
+  - Sparsity reduces cross-context interference in mouse mPFC and computational networks
+  - Temporal dynamics further separate context representations across time
+  - SNNs naturally exhibit both properties, retaining information better without auxiliary heuristics
+  - Energy-efficient architectural principle for stable adaptation
+  - **Activation**: context reconfiguration, lifelong learning SNN, catastrophic forgetting spiking, sparse coding context, temporal dynamics neural, mPFC context switching
+
 ## 2026-05-24 - Information Science + Quantum Computing (Cron Job - Sunday)
 
 ### Q-SpiRL: Quantum Spiking Reinforcement Learning for Adaptive Robot Navigation (arXiv:2605.20801)
