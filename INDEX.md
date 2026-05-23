@@ -22,6 +22,21 @@
   - **Activation**: quantum finance stack, financial computation framework, quantum advantage assessment
 
 
+
+### Quantum Physics-Informed Neural Networks for Portfolio PDEs
+- [[qpinn-portfolio-optimization]] - 量子物理信息神经网络求解金融PDE，使用张量秩分解参数化量子电路，80倍参数减少仍获更高精度 (arXiv: 2604.03346)
+  - 参数化量子电路实现基于张量秩分解的多项式逼近，复杂度从指数级降到多项式级
+  - 在Merton组合优化PDE上以80倍更少参数超越经典全连接PINN的精度和收敛速度
+  - 提供QPINN（量子）和Quantum-inspired PINN（经典模拟）两种变体
+  - **Activation**: qpinn portfolio optimization, quantum PINN, quantum PDE solver, Merton portfolio quantum, tensor rank quantum circuit
+
+### Quantum Attention Deep Q-Network for Trading
+- [[qadqn-trading]] - 量子注意力深度Q网络用于金融市场预测和交易策略，变分量子电路嵌入DQN框架，Sortino比率1.28 (arXiv: 2408.03088)
+  - 量子注意力层通过变分量子电路计算特征权重，识别市场相关特征
+  - 在S&P 500上实现Sortino比率1.28（非重叠测试）和1.19（重叠测试）
+  - 包含交易成本验证，符合真实市场条件，发表于IEEE QCE 2024
+  - **Activation**: QADQN trading, quantum attention deep q network, quantum RL trading, quantum market prediction
+
 ## 2026-05-23 - Systems Engineering Research: Digital Twin + Distributed Systems (Cron Job)
 
 ### AdaPTwin: Adaptive Multi-Fidelity Predictive Digital Twin for Vehicular Networks
