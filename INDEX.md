@@ -1,3 +1,13 @@
+## 2026-05-24 - Information Science + Quantum Computing (Cron Job - Sunday)
+
+### Q-SpiRL: Quantum Spiking Reinforcement Learning for Adaptive Robot Navigation (arXiv:2605.20801)
+- [[q-spirl-quantum-spiking-rl]] - Combines spike-based temporal processing with variational quantum feature transformation for obstacle-aware robot navigation, achieving up to 99% success rate with deterministic inference on IBM quantum hardware (arXiv: 2605.20801)
+  - Five agent families evaluated under unified pipeline: Q-learning, MLP, SNN, QMLP, QSNN
+  - QSNN outperforms all baselines in success rate + trajectory efficiency + motion smoothness
+  - Spike encoding captures dynamic obstacle patterns; quantum layer provides high-dimensional feature transformation
+  - Verified deployment on real IBM quantum hardware under NISQ constraints
+  - **Activation**: quantum reinforcement learning, quantum spiking, QSNN, spike-based RL, quantum robot navigation, quantum SNN policy, variational quantum RL
+
 ## 2026-05-25 - Neuroscience Research (Cron Job - Sunday)
 
 ### Subject-Specific Analysis of Self-Initiated Attention Shifts from EEG (arXiv:2605.18251)
