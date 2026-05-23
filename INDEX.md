@@ -1,3 +1,22 @@
+## 2026-05-23 - Neuroscience Research (Cron Job)
+
+### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
+- [[vencircuit-von-economo-snn-social-learning]] - VENCircuit computational account showing Von Economo neurons (2% of total) act as acquisition scaffolds in SNNs, providing a 21-fold increase in training convergence odds (arXiv: 2605.17399)
+  - VENs provide a direct gradient pathway immune to Jacobian instabilities in recurrent circuits
+  - VEN-intact: 98% convergence vs VEN-ablated: 70% (Fisher's OR=21.0, p=8.7e-5)
+  - Phase ablation shows VEN removal most disruptive during mid-training (epochs 5-25)
+  - Inference ablation: heterogeneous effects — from no change to catastrophic collapse (0.989→0.620)
+  - Clinical predictions: developmental VEN reduction → stochastic learning failure (ASC); adult VEN loss → heterogeneous performance effects (bvFTD)
+  - **Activation**: Von Economo neurons, VENCircuit, social learning SNN, gradient flow, training stability, frontotemporal dementia, autism spectrum
+
+### Supervised Deep Multimodal Matrix Factorization for Interpretable Brain Network Analysis
+- [[sd3mf-multimodal-brain-network]] - SD3MF extends SNMTF from unsupervised clustering to supervised prediction over populations of multimodal graphs with deep hierarchical factorizations and adaptive multimodal fusion (arXiv: 2605.13312)
+  - Encoder-decoder formulation jointly optimizes graph reconstruction and supervised prediction
+  - Community-level interaction matrices yield interpretable + discriminative features
+  - Outperforms CNNs and GNNs on multimodal connectome datasets
+  - Adaptive weights enable data-driven multimodal fusion
+  - **Activation**: SD3MF, multimodal brain network, matrix factorization, interpretable connectome analysis
+
 ## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Quantum Computing for Financial Transformation: A Review of Optimisation, Pricing, Risk, Machine Learning, and Post-Quantum Security
