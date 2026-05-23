@@ -1,3 +1,26 @@
+## 2026-05-23 - Economics, Investment + Quantum Finance (Cron Job)
+
+### Contextual Quantum Neural Networks for Stock Price Prediction
+- [[contextual-qnn-stock-prediction]] - Multi-asset stock prediction via quantum multi-task learning with share-and-specify ansatz (arXiv: 2503.01884)
+  - 核心要点: Share-and-specify ansatz enables simultaneous multi-asset training on single quantum circuit
+  - 核心要点: Quantum batch gradient update (QBGU) accelerates convergence over standard quantum SGD
+  - 核心要点: Logarithmic qubit overhead O(log N) for N assets via quantum superposition
+  - **Activation**: contextual quantum neural network, stock price prediction, quantum multi-task learning, QMTL, share-and-specify ansatz, quantum batch gradient update, QBGU, quantum finance
+
+### FiD-QAE: Fidelity-Driven Quantum Autoencoder for Fraud Detection
+- [[fid-quantum-autoencoder-fraud]] - Quantum autoencoder for fraud detection using SWAP test fidelity estimation (arXiv: 2512.12689)
+  - 核心要点: Fidelity estimation via SWAP test as anomaly detection criterion
+  - 核心要点: Maintains consistent performance under multiple quantum noise models
+  - 核心要点: Validated on IBM Quantum hardware with results consistent with simulation
+  - **Activation**: quantum autoencoder, fraud detection, fidelity estimation, SWAP test, anomaly detection, quantum machine learning, credit card fraud
+
+### Comparative QML Architecture Analysis for Fraud Detection
+- [[qml-fraud-detection-comparison]] - Systematic comparison of VQC, SQNN, EQNN for financial fraud detection (arXiv: 2412.19441)
+  - 核心要点: VQC consistently achieves F1-score of 0.88, outperforming SQNN and EQNN
+  - 核心要点: Feature map and ansatz configuration choices dominate architecture selection
+  - 核心要点: ANOVA validation confirms statistical significance of performance differences
+  - **Activation**: quantum machine learning comparison, VQC, SQNN, EQNN, fraud detection architecture, quantum feature map, ansatz configuration, ANOVA validation
+
 ## 2026-05-23 - Neuroscience Cron (Spiking Language Models + Spike Operators)
 
 ### SymbolicLight V1: Spike-Gated Dual-Path Language Modeling with High Activation Sparsity
