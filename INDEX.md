@@ -1,3 +1,28 @@
+## 2026-05-24 - Neuroscience Research (Cron Job)
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons (arXiv:2605.22523)
+- [[learning-sequence-timing-spiking-neurons]] - sTM model extension for encoding element-specific timing and flexible replay speed modulation via oscillatory background input (arXiv:2605.22523)
+  - Timing encoding via sequential activation of delay-line assemblies within minicolumns (discretize time into dAP-compatible intervals)
+  - Oscillatory background input (simulating theta/gamma rhythms) acts as clock signal for replay speed control (10-70 Hz range)
+  - Replay speed independent of encoding speed — no relearning needed
+  - Structural STDP + continuous weight decay; Plateau potentials (~100ms) set intrinsic timescale
+  - **Activation**: spiking neural network, sequence timing, replay speed, sTM model, temporal memory, oscillatory control, dendritic action potential
+
+### Efficient coding under constraint drives neural systems towards criticality and sloppiness (arXiv:2605.22598)
+- [[efficient-coding-criticality-sloppiness]] - Theoretical framework linking Fisher information maximization under resource constraints to brain criticality, soft modes, and sloppiness (arXiv:2605.22598)
+  - Maximizing Fisher info under trace(Tr(A)) constraint forces precision matrix toward rank-1 → diverging correlation length (statistical criticality) + critical slowing down (dynamical criticality)
+  - Unifies statistical and dynamical criticality perspectives in a single minimal Gaussian population coding model
+  - Quench events in sloppy directions produce power-law avalanche distributions from spectral geometry alone
+  - Hebb-like learning rule δW ∝ ggᵀW maps directly onto predictive coding architecture
+  - **Activation**: brain criticality, efficient coding, Fisher information, neural avalanches, sloppiness, soft modes
+
+### Cross-Species RSA Reveals Conserved Early Visual Alignment but Divergent Higher-Area Rankings (arXiv:2605.22401)
+- [[cross-species-rsa-brain-alignment]] - Systematic RSA comparison of 5 learning rules (BP, FA, PC, STDP, untrained) across human fMRI and macaque electrophysiology (arXiv:2605.22401)
+  - STDP and PC lead at V1/V2 (ρ~0.30), conserved across species; IT rankings show no cross-species correlation
+  - Macaque electrophysiology yields 2-4x higher alignment than human fMRI (ρ 0.15-0.30 vs 0.01-0.08)
+  - ResNet-50 (ImageNet) achieves ρ=0.25 at macaque IT, far above all custom CNN conditions (ρ=0.07-0.14)
+  - **Activation**: RSA, cross-species, brain alignment, representational similarity, learning rules, visual cortex
+
 ## 2026-05-23 - Economics/Quantum Finance (Cron Job)
 
 ### Constrained Counterdiabatic QAOA for Portfolio Optimization (arXiv:2605.06858)
