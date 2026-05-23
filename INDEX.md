@@ -12,6 +12,15 @@
 
 ## 2026-05-23 - Economics, Investment + Quantum (Cron Job)
 
+### Quantum Portfolio Optimization: QAOA Interaction-Degree Threshold & DRL Integration
+- [[quantum-portfolio-qaoa-drl]] - Synthesizes QAOA quantum advantage thresholds, Dicke state initialization for portfolio optimization, adiabatic QPE for risk analysis, and DRL trading agent dynamics (arXiv: 2605.22758, 2605.22770, 2605.22215, 2605.21696, 2605.20348)
+  - QAOA degree-3 threshold: classical sampling collapses PH, but optimization may be trivial
+  - Dicke state initialization mitigates barren plateaus in portfolio QAOA
+  - Adiabatic QPE achieves Heisenberg-limited eigenvalue estimation for covariance analysis
+  - Deep hedging symbolic distillation reveals delta corrections and regime fragility
+  - Multi-agent RL trading can develop supra-competitive outcomes through memory
+  - **Activation**: quantum portfolio, QAOA finance, Dicke state initialization, quantum advantage threshold, deep hedging, RL trading agents, counterdiabatic QAOA
+
 ### Option Pricing on Noisy Intermediate-Scale Quantum Computers: A Quantum Neural Network Approach
 - [[qnn-option-pricing-nisq]] - Quantum Neural Network methodology for derivative pricing on NISQ hardware, cross-platform benchmarking across IBM Fez, IonQ Forte, Rigetti Ankaa-3, IQM Garnet quantum processors (arXiv: 2604.19832)
   - 2-qubit QNN architecture approximates Black-Scholes-Merton pricing functions
