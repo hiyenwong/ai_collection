@@ -1,4 +1,23 @@
 
+## 2026-05-23 - Economics, Investment + Quantum (Cron Job - QML Benchmark & Interpretability)
+
+### Quantum vs. Classical Machine Learning: A Benchmark Study for Financial Prediction
+- [[qml-benchmark-financial-prediction]] - Reproducible benchmarking framework comparing QML with architecture-matched classical models on directional prediction (+3.8 AUC AAPL), live trading (QLSTM beats in 2/4 regimes), and volatility forecasting (QSVR lowest QLIKE) (arXiv: 2601.03802)
+  - Hybrid QNN surpasses parameter-matched ANN: +3.8 AUC, +3.4 accuracy on AAPL; +4.9 AUC, +3.6 on KCHOL
+  - QLSTM achieves higher risk-adjusted returns in 2 of 4 S&P 500 market regimes
+  - Angle-encoded QSVR attains lowest QLIKE; within ~0.02-0.04 of best classical on S&P500/AAPL
+  - Key insight: QML advantage when data structure and circuit design are well-aligned
+  - **Activation**: qml benchmark financial, quantum vs classical finance, quantum LSTM trading, quantum volatility forecasting, QML financial prediction, 量子机器学习金融基准
+
+### IQNN-CS: Interpretable Quantum Neural Network for Credit Scoring
+- [[interpretable-quantum-credit-scoring]] - Interpretable QNN framework for multiclass credit risk classification with Inter-Class Attribution Alignment (ICAA) metric for quantifying how model distinguishes between risk categories (arXiv: 2510.15044)
+  - Combines variational QNN with post-hoc explanation techniques for structured financial data
+  - ICAA metric: quantifies attribution divergence across predicted credit risk classes
+  - Stable training dynamics, competitive predictive performance on real-world credit datasets
+  - Addresses regulatory requirement for transparent QML in financial decision-making
+  - **Activation**: interpretable quantum credit scoring, IQNN-CS, ICAA metric, quantum explainable finance, 量子可解释信用评分
+
+
 
 ## 2026-05-23 - Neuroscience Research: EEG Visual Decoding (Cron Job)
 
