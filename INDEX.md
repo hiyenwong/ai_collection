@@ -1,4 +1,22 @@
 
+## 2026-05-23 - Systems Engineering Research: Digital Twin + Distributed Systems (Cron Job)
+
+### AdaPTwin: Adaptive Multi-Fidelity Predictive Digital Twin for Vehicular Networks
+- [[adaptwin-digital-twin]] - Adaptive multi-fidelity predictive digital twin framework for proactive radio resource management in vehicular networks; dynamically adjusts NDT fidelity based on network conditions (arXiv: 2605.21897)
+  - Hierarchical cloud-edge architecture with periodic cloud-side fidelity selection and real-time edge-side proactive RRM
+  - Transformer enhanced with continual and transfer learning for trajectory prediction
+  - Joint RSU beamforming and vehicle-RSU association via multi-start iterative coordinate descent
+  - Up to 90% sum-rate gain and 80% outage probability reduction vs non-adaptive NDTs
+  - **Activation**: digital twin, adaptive fidelity, predictive NDT, cloud-edge architecture, vehicular networks, RRM, trajectory prediction, ray tracing
+
+### LiveR: Fine-Grained Elasticity via Live Reconfiguration for Model Training
+- [[liver-live-reconfiguration]] - Replaces checkpoint/restart with live, bounded-memory handoff between mixed-parallel training worlds for elastic LLM training on volatile GPU resources (arXiv: 2605.22014)
+  - Asynchronous target world preparation while current world continues training; isolated worker bootstrapping
+  - Direct model state streaming over high-bandwidth interconnects (NVLink, InfiniBand) instead of disk I/O
+  - Online state reshaping across tensor, pipeline, and data parallel dimensions
+  - 14-23× speedup over checkpoint/restart baselines; up to 99% training goodput under volatile conditions
+  - **Activation**: live reconfiguration, elastic training, mixed-parallel training, LLM training, spot instances, Megatron-LM
+
 ## 2026-05-23 - Neuroscience Research: Hippocampal Memory + Grid-Place Co-Emergence (Cron Job)
 
 ### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
