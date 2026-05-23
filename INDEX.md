@@ -1,3 +1,20 @@
+## 2026-05-23 - Neuroscience Research: JET EEG Generation + ELSA SNN Accelerator (Cron Job)
+
+### JET: Just EEG Transformer — Continuous Flow Matching for EEG Generation
+- [[jet-eeg-flow-matching]] - Generative EEG framework using conditional flow matching that models neural signals as continuous trajectories, preserving spectral structure and temporal stationarity. ICML 2026. Reduces TS-FID by >40% (arXiv: 2605.21280)
+  - Continuous flow matching captures temporal continuity better than discrete diffusion-based EEG generation
+  - Principled constraints preserve spectral structure, temporal stationarity, and signal-level statistics
+  - Raw sequence modeling without domain-specific representations
+  - **Activation**: JET EEG transformer, conditional flow matching EEG, continuous EEG generation, EEG flow matching, spectral structure EEG generation, raw EEG sequence modeling
+
+### ELSA: An ELastic SNN Inference Architecture for Efficient Neuromorphic Computing
+- [[elsa-snn-elastic-inference]] - Near-SRAM dataflow architecture realizing true elastic inference via spine/token-wise pipeline, bundled AER protocol, and mini-batch spiking Gustavson-product for SNN sparsity. ISCA 2026. 3.4× speedup, 13.6-22.1× energy efficiency vs SOTA (arXiv: 2605.20802)
+  - Spine/token-wise pipeline forwards each spike immediately, enabling true elastic inference
+  - Bundled AER protocol reduces NoC communication traffic
+  - Mini-batch spiking Gustavson-product exploits inherent SNN sparsity
+  - SNNs can outperform quantized ANNs (4-bit ResNet-50) while maintaining accuracy
+  - **Activation**: ELSA SNN accelerator, elastic SNN inference, spine-wise pipeline neuromorphic, bundled AER protocol, spiking Gustavson product, near-SRAM SNN architecture
+
 ## 2026-05-23 - Neuroscience Research: MIRAGE Mental Imagery + Platonic Representations (Cron Job)
 
 ### MIRAGE: Robust Multi-Modal fMRI-to-Mental-Image Decoding
