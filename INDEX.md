@@ -1,5 +1,15 @@
 
 
+## 2026-05-23 - Neuroscience Research: EEG Visual Decoding (Cron Job)
+
+### Neuroscience-inspired Staged Representation Learning with Disentangled Coarse- and Fine-Grained Semantics for EEG Visual Decoding
+- [[eeg-staged-representation-learning]] - Reformulates EEG visual decoding as stage-specific representation decomposition (low-level visual, high-level semantic, integrative fusion) with dual-level coarse/fine-grained semantic learning and semantic latent channels (arXiv: 2605.16923)
+  - 三阶段框架：低层视觉表示学习、高层语义表示学习、整合信息融合
+  - 多模态双级语义学习：分离粗粒度标签级语义和细粒度图像级视觉语义信息
+  - 语义潜通道：从视觉诱发电位生成的计算表示通道，扩展通道级语义表示空间
+  - THINGS-EEG基准测试：subj.-dependent zero-shot和subj.-independent zero-shot均取得领先性能
+  - **Activation**: staged eeg representation, EEG visual decoding, coarse-to-fine semantics, semantic latent channels, THINGS-EEG benchmark
+
 ## 2026-05-23 - 经济学、投资 + 量子力学 (Cron Job)
 
 ### Parameterized 4-Qubit EWL Quantum Game Circuits with Dirac-Solow-Swan Hamiltonian Integration for Quadruple Helix Disruptive Innovation Recommender Systems
