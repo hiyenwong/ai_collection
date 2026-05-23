@@ -12,6 +12,12 @@
   - 振荡背景输入作为全局时钟信号调节重放速度，频率越高重放越快
   - **Activation**: sequence timing, spiking temporal memory, sTM, replay speed, SNN, oscillatory clock
 
+### Neuromorphic Visual Attention for ASL on SpiNNaker (Late Sync)
+- [[neuromorphic-spiNNaker-asl]] - Spiking neural network framework for energy-efficient real-time sign language recognition on SpiNNaker hardware; combines DVS event cameras with spike-based visual attention mechanisms (arXiv: 2605.06005)
+  - DVS事件相机代替帧相机，只报告亮度变化，利用手势时间稀疏性
+  - SpiNNaker多核神经形态平台实现低功耗实时推理
+  - **Activation**: SpiNNaker ASL, neuromorphic sign language, DVS gesture, event-based vision SNN
+
 ## 2026-05-23 - Economics/Investment + Quantum (Cron Job)
 
 ### What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation
