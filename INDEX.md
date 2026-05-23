@@ -1,3 +1,26 @@
+## 2026-05-25 - Information Science + Quantum (Cron Job - Sunday)
+
+### Quantum Purity Amplification for Arbitrary Eigenstates and Multiple Outputs (arXiv:2605.21570)
+- [[quantum-purity-amplification]] - General solution for coherently transforming n copies of a mixed state into m high-fidelity copies of any chosen eigenstate (arXiv: 2605.21570)
+  - Handles arbitrary target eigenstates, not just dominant one
+  - Supports arbitrary local dimension d (qubits, qudits, continuous-variable)
+  - Quantifiable fidelity trade-off bounds between input copies and output quality
+  - **Activation**: quantum purity amplification, QPA, state purification, mixed to pure state, quantum state amplification, eigenstate purification
+
+### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat (arXiv:2605.22569)
+- [[quantum-crypto-exposure-measurement]] - Formal mathematical framework for quantifying information leakage in quantum cryptographic systems under HNDL threat model (arXiv: 2605.22569)
+  - HNDL model captures hard non-delegatable leakage that cannot be prevented cryptographically
+  - Provides quantitative exposure metrics: IE, SM, RS
+  - Formal bounds on adversary knowledge using quantum information theory
+  - **Activation**: quantum cryptographic exposure, HNDL threat model, quantum security measurement, information leakage quantum, quantum threat modeling
+
+### A Sharp Interaction-Degree Threshold for Simulating QAOA (arXiv:2605.22758)
+- [[qaoa-interaction-threshold]] - Identifies sharp computational phase transition where classical simulation of QAOA becomes intractable (arXiv: 2605.22758)
+  - Below threshold k_c: efficient tensor network classical simulation
+  - Above threshold: exponential complexity, quantum advantage emerges
+  - Interaction degree analysis provides quantum-classical boundary metric
+  - **Activation**: QAOA simulation threshold, interaction degree QAOA, quantum advantage boundary, QAOA complexity analysis, classical simulation QAOA, computational phase transition
+
 ## 2026-05-24 - Information Science + Quantum (Cron Job)
 
 ### Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality (arXiv:2605.20765)
