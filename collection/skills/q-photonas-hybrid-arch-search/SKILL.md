@@ -1,77 +1,91 @@
 ---
 name: q-photonas-hybrid-arch-search
-description: "Q-PhotoNAS: Hybrid Quantum Neural Architecture Search framework on photonic devices for scalable quantum machine learning"
+description: Q-PhotoNAS methodology — Hybrid Quantum Neural Architecture Search framework for photonic quantum-classical models using genetic algorithm-based NAS with learnable quantum phase encoding.
+category: quantum-computing
+version: 1.1.0
+tags: [quantum, nas, photonic, qml, architecture-search, hybrid-quantum-classical, genetic-algorithm]
+trigger: quantum architecture search, photonic quantum computing, Q-PhotoNAS, quantum NAS, hybrid quantum neural architecture, quantum phase encoding, genetic algorithm quantum, photonic QPU, Quandela
 ---
 
-# Q-PhotoNAS: Hybrid Quantum Neural Architecture Search
+# Q-PhotoNAS: Hybrid Quantum Neural Architecture Search Framework on Photonic Devices
+
+## Source
+- arXiv: 2605.22097v1
+- Authors: Farah Elnakhal, Alberto Marchisio, Nouhaila Innan, Gabriel Falcao, Muhammad Shafique
+- Category: quant-ph
 
 ## Overview
 
-Q-PhotoNAS (arXiv: 2605.22097) introduces a **Neural Architecture Search (NAS) framework for hybrid quantum-classical photonic devices**. It addresses the challenge of designing effective quantum machine learning architectures on photonic quantum computing platforms, which offer advantages in scalability and room-temperature operation but require specialized architecture design.
-
-**arXiv**: 2605.22097  
-**Category**: quant-ph; cs.LG  
-**Key Problem**: Photonic quantum computing is promising for scalable QML, but designing effective hybrid quantum-classical architectures remains challenging and manual.
+Q-PhotoNAS is a neural architecture search (NAS) framework specifically designed for hybrid photonic quantum-classical machine learning models. It addresses the challenge of designing effective architectures that account for the collaboration between classical preprocessing, quantum phase encoding, and photonic circuit structure.
 
 ## Core Methodology
 
-### 1. Photonic QML Architecture Space
-- Defines a **searchable architecture space** for photonic quantum circuits
-- Parameters include: number of optical modes, beam splitter configurations, phase shifter placements, measurement strategies
-- Hybrid classical-quantum interface: classical optimization of photonic circuit parameters
+### 1. Gene-Based Architecture Encoding
 
-### 2. Neural Architecture Search for Quantum Circuits
-- Applies **differentiable NAS** techniques to quantum circuit design
-- Search strategy: gradient-based optimization over continuous relaxation of discrete architecture choices
-- Supernet approach: train one over-parameterized model that contains all candidate architectures
+The framework encodes **19 hyperparameters** organized into **6 gene groups**:
 
-### 3. Photonic Hardware Constraints
-- Incorporates **hardware-aware constraints** into the search process:
-  - Optical loss budgets
-  - Phase shifter precision limits
-  - Detector efficiency
-  - Crosstalk between adjacent waveguides
-- Search results are guaranteed to be implementable on real photonic hardware
+| Gene Group | Parameters | Description |
+|---|---|---|
+| Classical Preprocessing | Number of layers, activation, units | Classical feature extraction |
+| Phase Encoding | Encoding type, rotation angles | Quantum data encoding strategy |
+| Photonic Circuit | Circuit depth, width, connectivity | Photonic QPU configuration |
+| Measurement | Measurement basis, shots | Readout configuration |
+| Post-processing | Classical layers after quantum | Hybrid readout processing |
+| Training | Learning rate, optimizer, epochs | Training hyperparameters |
 
-### 4. Hybrid Training Pipeline
-1. Define architecture search space for photonic circuits
-2. Train supernet using classical simulation of photonic quantum circuits
-3. Apply differentiable architecture search to find optimal sub-architecture
-4. Deploy and fine-tune on actual photonic hardware
+### 2. Genetic Algorithm-Based Search
 
-## Key Insights
+**Evolutionary Strategy:**
+- **Population initialization**: Random sampling from the joint design space
+- **Group-based crossover**: Crossover operates at gene-group level, preserving coherent architectural blocks
+- **Per-gene mutation**: Individual gene mutation within each group
+- **Elitism**: Top performers preserved across generations
+- **Evaluation budget**: Short training budget for candidate evaluation before full retraining
 
-- **Photonic advantage**: Photonics offers room-temperature operation, natural compatibility with communication, and potential for large-scale integration
-- **Architecture design bottleneck**: Manual design of quantum photonic circuits is intractable for large systems
-- **NAS solution**: Automated architecture search discovers configurations that human designers might miss
-- **Hardware awareness**: Without hardware constraints, search results may be physically unrealizable
+### 3. Learnable Quantum Phase Encoding
 
-## Application Scenarios
+Quantum phase encoding is treated as a learnable component within the search space, allowing the NAS to discover optimal encoding strategies that complement the photonic circuit architecture.
+
+### 4. Quantum Contribution Analysis
+
+Post-search analysis verifies that the photonic layer extracts **non-redundant features orthogonal to the classical pathway**, providing measurable accuracy advantage over classical-only baselines.
+
+## Key Results
+
+| Benchmark | Accuracy | Inference Time (projected) |
+|---|---|---|
+| Digits | 99.44% | 67 ms (Quandela Ascella QPU) |
+| MNIST | 98.78% | 149 ms (Quandela Ascella QPU) |
+
+## When to Use
 
 Use this skill when:
-- Designing quantum machine learning models on photonic platforms
-- Automating quantum circuit architecture discovery
-- Building hardware-aware quantum neural networks
-- Comparing photonic vs. superconducting QML architectures
-- Researching differentiable quantum architecture search
+- Designing hybrid quantum-classical ML architectures for photonic devices
+- Automating architecture search for quantum neural networks
+- Exploring the joint design space of classical preprocessing + quantum circuits
+- Evaluating quantum advantage over classical baselines with orthogonal feature extraction
+- Working with photonic quantum computing platforms (Quandela, Xanadu, etc.)
 
-## Activation Keywords
-q-photonas, photonic quantum, neural architecture search, quantum NAS, photonic QML, differentiable architecture search, quantum circuit design, photonic computing, optical quantum, hardware-aware quantum
+## Implementation Steps
 
-## Implementation Notes
+1. **Define gene groups**: Encode architecture parameters into 6 logical gene groups
+2. **Initialize population**: Sample diverse architectures from the design space
+3. **Evaluate candidates**: Short training runs (few epochs) for fitness estimation
+4. **Evolve population**: Apply group-based crossover, per-gene mutation, elitism
+5. **Full retrain**: Retrain the best-found architecture with full training budget
+6. **Validate quantum advantage**: Verify photonic layer contributes orthogonal features
+7. **Deploy**: Project inference times on target photonic QPU
 
-### Simulation Requirements
-- Photonic circuit simulation (e.g., Strawberry Fields, Pennylane with photonic backend)
-- Classical optimizer for architecture parameters
-- Gradient estimation techniques for discrete quantum operations
+## Pitfalls
 
-### Search Space Design
-- Start with small-scale circuits (4-8 modes) for feasibility
-- Gradually expand search space as computational resources allow
-- Use transfer learning from smaller to larger architectures
+- Manual architecture tuning fails to account for classical-quantum collaboration
+- Without quantum contribution analysis, redundant quantum features waste resources
+- Short evaluation budget must be representative — too short leads to false positives
+- Hardware constraints (connectivity, coherence) must be encoded in the search space
+- Genetic search may converge prematurely — maintain population diversity
 
-## Related Work
-- Differentiable Architecture Search (DARTS) for classical neural networks
-- Quantum Architecture Search (QAS) for gate-based quantum circuits
-- Photonic quantum computing platforms (Xanadu, PsiQuantum)
-- Hardware-aware NAS for edge AI
+## Related Papers
+
+- Q-SpiRL (arXiv:2605.20801) — Quantum spiking reinforcement learning
+- Quantum circuit design via dynamic Pauli constraints (arXiv:2605.22744)
+- Software Between Quantum and ML — Down to Pulses (arXiv:2605.21286)
