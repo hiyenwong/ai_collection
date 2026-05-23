@@ -1,3 +1,40 @@
+## 2026-05-23 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Quantum Computing for Financial Transformation: A Review of Optimisation, Pricing, Risk, Machine Learning, and Post-Quantum Security
+- [[quantum-finance-stack]] - Financial computation stack framework evaluating quantum advantage across five domains: portfolio optimisation, derivative pricing, tail-risk estimation, quantum ML, and post-quantum security (arXiv: 2604.08180)
+  - Applies common evaluative logic: identify bottleneck, specify quantum primitive, compare classical benchmark, assess realistic constraints
+  - 134-page comprehensive review; strongest near-term case is carefully designed hybrid workflows
+  - Classical MIP solves 1000-asset portfolio instances in seconds; problem-tailored heuristics outperform quantum
+  - Post-quantum cryptography already strategically necessary for financial infrastructure
+  - **Activation**: quantum finance stack, financial quantum computing, quantum portfolio benchmark, quantum derivative pricing, quantum risk estimation, post-quantum cryptography finance, hybrid quantum finance workflow
+
+### Hot-Starting Quantum Portfolio Optimization
+- [[hotstart-quantum-portfolio]] - Compact Hilbert space QUBO formulation restricting search to vicinity of continuous optimum, reducing qubits and outperforming SOTA on D-Wave Advantage quantum annealer (arXiv: 2510.11153)
+  - Solves continuous relaxation first, maps to nearest discrete solutions, constructs reduced QUBO
+  - Reduces qubit requirements from O(N log M) to O(N log delta) where delta << M
+  - Outperforms existing warm-start and full QUBO approaches on both classical and quantum solvers
+  - **Activation**: hot-start quantum portfolio, warm-start QUBO, compact Hilbert space optimization, quantum portfolio reduction, D-Wave portfolio optimization
+
+### Dynamical Hamiltonian Encoding
+- [[dynamical-hamiltonian-encoding]] - Data encoding methodology addressing the Inverse Born Rule Fallacy — uses non-commutative Hamiltonian evolution instead of static phase-locked amplitude encoding for genuine quantum advantage in ML/finance (arXiv: 2602.21350)
+  - Standard amplitude encoding (psi = sqrt(P)) restricts to positive real orthant, making states "phase-deaf"
+  - DHE encodes data as coefficients of non-commuting Hamiltonian generators, preserving full Hilbert space access
+  - Based on QIFT (Quantum Imaginary Time Evolution) framework
+  - **Activation**: dynamical Hamiltonian encoding, inverse Born rule fallacy, quantum data encoding, amplitude encoding alternative, QIFE quantum ML, non-commutative quantum feature map
+
+### Quantum Portfolio Optimization with Expert Analysis Evaluation
+- [[quantum-portfolio-expert-eval]] - (existing skill reference) VQE/QAOA benchmark for portfolio optimization introducing Expert Analysis Evaluation framework — bridges gap between algorithmic performance and financial applicability (arXiv: 2507.20532)
+  - Financial professionals assess economic soundness of quantum-optimized portfolios
+  - Algorithmic convergence does not guarantee financial viability (diversification, risk exposure violations)
+  - **Activation**: quantum portfolio expert evaluation, VQE portfolio benchmark, QAOA financial viability
+
+### Quantum Portfolio Optimization: An Extensive Benchmark
+- [[quantum-portfolio-benchmark]] - (existing skill reference) Comprehensive benchmark comparing quantum annealing + QAOA against classical MIP, simulated annealing, tabu search on 250 real-world instances up to 1000 assets (arXiv: 2509.17876)
+  - Classical MIP solves all instances to proven optimality in seconds
+  - Problem-tailored heuristic consistently outperforms quantum approaches for fixed runtime
+  - Limited room for quantum advantage in standard portfolio optimization
+  - **Activation**: quantum portfolio benchmark, quantum advantage finance, portfolio optimization comparison
+
 ## 2026-05-23 - Neuroscience Research: JET EEG Generation + ELSA SNN Accelerator (Cron Job)
 
 ### JET: Just EEG Transformer — Continuous Flow Matching for EEG Generation
