@@ -1,3 +1,17 @@
+## 2026-05-23 - Economics/Quantum Finance (Cron Job)
+
+### Constrained Counterdiabatic QAOA for Portfolio Optimization (arXiv:2605.06858)
+- [[constrained-counterdiabatic-qaoa-portfolio]] - CCD-QAOA incorporating approximate adiabatic gauge potentials from nested commutators into QAOA ansatz for constrained portfolio optimization with XY mixer (arXiv:2605.06858)
+  - Counterdiabatic driving terms accelerate convergence by adding shortcuts to adiabaticity
+  - XY mixer preserves Hamming weight, naturally enforcing budget constraints without penalties
+  - **Activation**: CCD-QAOA, counterdiabatic QAOA, constrained portfolio optimization, XY mixer, adiabatic gauge potential
+
+### Quantum Reservoir Computing for Volatility Forecasting (arXiv:2505.13933)
+- [[quantum-reservoir-computing-finance]] - Quantum reservoir computing using transverse-field Ising Hamiltonian with input/memory qubits for financial time series forecasting (arXiv:2505.13933)
+  - Consistently outperforms classical econometric models and ML benchmarks on volatility prediction
+  - Wrapper-based feature selection + Shapley values for interpretability on NISQ hardware
+  - **Activation**: quantum reservoir computing, QRC finance, quantum volatility forecasting, Ising Hamiltonian reservoir
+
 ## 2026-05-23 - Neuroscience Research (Cron Job)
 
 ### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks

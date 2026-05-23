@@ -1,87 +1,72 @@
 ---
 name: constrained-counterdiabatic-qaoa-portfolio
-description: "Constrained Counterdiabatic QAOA (CCD-QAOA) methodology for portfolio optimization. Extends QAOA with counterdiabatic driving terms to improve convergence on constrained financial optimization problems. Uses CD terms to suppress diabatic transitions during adiabatic evolution, enabling faster convergence to optimal portfolio weights. Use when: counterdiabatic QAOA, CD-QAOA portfolio, quantum approximate optimization, quantum finance optimization, adiabatic quantum computing finance, constrained QAOA."
+description: "Constrained Counterdiabatic QAOA (CCD-QAOA) methodology for portfolio optimization. Incorporates approximate adiabatic gauge potentials from nested commutators of Ising-type portfolio Hamiltonian and XY mixer Hamiltonian into variational ansatz. Achieves improved optimization under budget and risk constraints vs standard QAOA, Grover-mixer QAOA, and penalty-based QAOA. Use when: implementing QAOA for constrained portfolio optimization, designing counterdiabatic extensions, benchmarking QAOA mixers for finance, or optimizing quantum portfolio algorithms with hard constraints."
 ---
 
 # Constrained Counterdiabatic QAOA for Portfolio Optimization
 
-## Core Problem
+## Core Idea
 
-Standard QAOA for portfolio optimization struggles with slow convergence and getting trapped in local minima when handling cardinality and budget constraints. Counterdiabatic (CD) driving can accelerate convergence by suppressing non-adiabatic transitions.
+Standard QAOA with transverse-field mixers fail to enforce hard constraints (budget, cardinality) on portfolio optimization, requiring soft penalties that distort the energy landscape. CCD-QAOA incorporates counterdiabatic (CD) driving terms derived from nested commutators of the problem Hamiltonian and XY mixer into the variational ansatz, enabling constraint preservation without penalties.
 
-## Key Insight
+## Key Components
 
-Adding counterdiabatic terms to the QAOA mixer Hamiltonian provides a shortcut-to-adiabaticity that preserves constraint satisfaction while accelerating convergence to the optimal portfolio.
+### 1. Portfolio Hamiltonian
+Map portfolio optimization to Ising-type Hamiltonian:
+- Binary variables x_i = {0,1} for asset inclusion
+- Objective: maximize return - λ × risk
+- Constraints: budget (∑x_i = K), sector limits
 
-## Methodology
-
-### Step 1: Define Portfolio QUBO
-
-Formulate portfolio optimization as QUBO:
+### 2. XY Mixer (Hamming weight-preserving)
+The XY mixer preserves Hamming weight (number of selected assets), naturally enforcing budget constraint:
 ```
-H_C = -∑ μ_i x_i + λ ∑∑ Σ_ij x_i x_j
+H_XY = ½ ∑_{i<j} (X_i X_j + Y_i Y_j)
 ```
-Where x_i ∈ {0,1} indicates asset inclusion.
+This ensures transitions only between states with same number of assets.
 
-### Step 2: Add Counterdiabatic Terms
-
-Extend the mixer with CD driving:
+### 3. Counterdiabatic Terms
+Derive approximate adiabatic gauge potentials from nested commutators:
 ```
-H_CD(t) = ∑ γ_i(t) [H_D, H_M]_i
+A_μ ≈ ∑ c_k [H_prob, [H_prob, ... [H_prob, H_XY]...]]
 ```
-Where γ_i(t) are time-dependent coefficients that suppress diabatic transitions.
+The CD terms accelerate convergence by adding shortcuts to adiabaticity.
 
-### Step 3: Enforce Constraints
+### 4. Variational Ansatz
+CCD-QAOA ansatz at depth p:
+```
+|ψ(θ)⟩ = ∏_{l=1}^p e^{-iβ_l H_CD} e^{-iγ_l H_prob} e^{-iα_l H_XY} |ψ₀⟩
+```
+where H_CD contains the counterdiabatic correction terms.
 
-Implement constraints via:
-- Penalty terms in cost Hamiltonian for soft constraints
-- CD terms that respect the constraint manifold
-- Post-processing projection for hard cardinality
+## Benchmarking Results
 
-### Step 4: Optimize Parameters
+CCD-QAOA consistently outperforms:
+- Standard XY-mixer QAOA (baseline)
+- Grover-mixer QAOA (global mixing)
+- Penalty-based QAOA (soft constraints)
 
-Optimize QAOA angles (γ, β) and CD coefficients jointly:
-- Use gradient-based optimization
-- Initialize with adiabatic schedule
-- Exploit parameter concentration for warm start
+Key metric: better approximation ratios at fixed QAOA depth p.
 
-### Step 5: Sample and Post-Process
+## Implementation Workflow
 
-- Sample from optimized circuit
-- Project to feasible portfolio space
-- Compare against classical baselines
-
-## When to Use
-
-- Portfolio optimization with QAOA
-- Constrained combinatorial optimization on quantum hardware
-- Problems where standard QAOA converges slowly
-- Financial optimization with cardinality constraints
-
-## Pitfalls
-
-### CD Term Computation Cost
-Computing exact CD terms scales exponentially. Use variational approximation or first-order truncation for practical implementations.
-
-### Parameter Optimization Landscape
-Adding CD terms increases parameter space dimension. Use layer-by-layer initialization to avoid barren plateaus.
-
-### Hardware Noise Sensitivity
-CD terms amplify circuit depth. On NISQ devices, balance CD benefit against decoherence.
+1. **Formulate QUBO**: Map portfolio to Ising Hamiltonian
+2. **Choose XY mixer**: For Hamming weight preservation
+3. **Compute CD terms**: Nested commutators [H_prob, H_XY], [H_prob, [H_prob, H_XY]], ...
+4. **Build ansatz**: Alternating layers of H_prob, H_XY, H_CD
+5. **Optimize parameters**: Classical optimizer on quantum circuit
+6. **Benchmark**: Compare approximation ratios vs baseline QAOA variants
 
 ## Activation Keywords
-
+- CCD-QAOA
 - counterdiabatic QAOA
-- CD-QAOA portfolio
-- constrained QAOA
-- quantum approximate optimization finance
-- adiabatic quantum computing portfolio
-- shortcut to adiabaticity optimization
-- 反绝热驱动量子优化
-- 约束QAOA投资组合
+- constrained portfolio optimization quantum
+- XY mixer QAOA
+- counterdiabatic driving quantum
+- adiabatic gauge potential QAOA
+- constrained binary optimization quantum
+- QAOA portfolio
 
 ## Resources
-
-- Paper: arXiv:2605.06858
-- Related: quantum-optimization-qaoa skill
-- Hardware: Gate-based quantum processors
+- arXiv: 2605.06858
+- Authors: Jose Falla, Ilya Safro
+- Published: May 2026
