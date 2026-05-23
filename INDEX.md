@@ -1,3 +1,28 @@
+
+
+## 2026-05-23 - 经济学、投资 + 量子力学 (Cron Job)
+
+### Parameterized 4-Qubit EWL Quantum Game Circuits with Dirac-Solow-Swan Hamiltonian Integration for Quadruple Helix Disruptive Innovation Recommender Systems
+- [[quantum-game-recommender-systems]] - 量子博弈电路推荐系统方法论，将EWL电路测量概率映射为创新推荐评分，结合Dirac-Solow-Swan哈密顿量模拟资本积累动力学 (arXiv: 2605.18080)
+  - EWL量子电路作为推荐引擎，4量子比特编码四重螺旋参与者
+  - 量子测量概率映射到Dirac-Solow-Swan哈密顿量对角势
+  - 仅22门电路深度11，适合NISQ设备
+  - **Activation**: quantum game recommender, EWL circuit economics, Dirac-Solow-Swan, quadruple helix, innovation recommender
+
+### The Cost of Quantum Resistance: A Hash-Based Commit-Reveal Alternative for Minimizing Blockchain Infrastructure Overhead
+- [[post-quantum-blockchain-economics]] - 后量子密码区块链迁移经济分析框架，评估哈希承诺-揭示方案相比直接PQC签名替换的基础设施成本优势 (arXiv: 2605.06853)
+  - 哈希commit-reveal方案相比直接PQC替代方案仅增加1.5-2倍交易开销
+  - 语义重设计优于直接大签名替换，长期经济效益更好
+  - 量化PQC迁移成本：存储、带宽、计算、双支持期
+  - **Activation**: post-quantum blockchain, commit-reveal, PQC migration cost, blockchain economics
+
+### Non-Gaussian Entanglement Hierarchy Based on the Schmidt Number
+- [[non-gaussian-entanglement-hierarchy]] - 基于施密特数的非高斯纠缠层次分类框架，超越高斯态表征连续变量系统中的复杂纠缠结构 (arXiv: 2605.18605)
+  - 施密特数K作为连续变量纠缠量化指标，K越大纠缠结构越复杂
+  - 建立从乘积态到任意非高斯纠缠的n级层次分类
+  - 应用：量子通信容量、量子计量超越高斯极限、CV量子计算资源态
+  - **Activation**: non-Gaussian entanglement, Schmidt number, CV entanglement, entanglement hierarchy
+
 ## 2026-05-23 - Neuroscience Research (Cron Job)
 
 ### Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness

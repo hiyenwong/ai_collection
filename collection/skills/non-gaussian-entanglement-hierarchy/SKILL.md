@@ -1,78 +1,116 @@
 ---
 name: non-gaussian-entanglement-hierarchy
-description: "Non-Gaussian entanglement hierarchy based on Schmidt number methodology. Establishes bounds for continuous-variable quantum systems and characterizes entanglement beyond Gaussian operations. Activation: non-Gaussian entanglement, Schmidt number hierarchy, continuous-variable entanglement, quantum entanglement bounds, CV quantum systems."
+description: "Schmidt number-based hierarchy for characterizing and classifying non-Gaussian entanglement in continuous variable quantum systems. Provides a framework for understanding entanglement structures beyond Gaussian states. Trigger words: non-Gaussian entanglement, Schmidt number hierarchy, continuous variable entanglement, entanglement classification, CV quantum entanglement, Schmidt number characterization."
 ---
 
-# Non-Gaussian Entanglement Hierarchy Based on Schmidt Number
+# Non-Gaussian Entanglement Hierarchy
 
-Establishes a rigorous hierarchy for classifying and bounding entanglement in continuous-variable (CV) quantum systems using the Schmidt number as the fundamental measure.
+## Description
+A hierarchical framework for characterizing non-Gaussian entanglement in continuous variable (CV) quantum systems based on the Schmidt number. This methodology extends entanglement classification beyond Gaussian states, providing tools to understand and quantify complex entanglement structures in photonic and bosonic systems.
 
-## Core Concept
+## Activation Keywords
+- non-Gaussian entanglement
+- Schmidt number hierarchy
+- continuous variable entanglement
+- entanglement classification
+- CV quantum entanglement
+- Schmidt number characterization
+- 非高斯纠缠层次
+- bosonic entanglement hierarchy
 
-Gaussian operations alone cannot distill entanglement in CV systems. This methodology introduces a non-Gaussian entanglement hierarchy that classifies states by their Schmidt number, providing computable bounds and operational criteria for entanglement detection beyond Gaussian regimes.
+## Core Concepts
 
-## Mathematical Framework
+### 1. Schmidt Number for CV Systems
+The Schmidt number generalizes to continuous variable systems:
 
-### Schmidt Number Hierarchy
+```
+Schmidt Number K:
+K = 1 / Σ_i λ_i²
+where λ_i are Schmidt coefficients
 
-The Schmidt number SN(ρ) classifies quantum states:
-- SN(ρ) = 1: Separable states
-- SN(ρ) = k: States requiring at least k-dimensional entanglement
-- SN(ρ) → ∞: Infinite-dimensional entanglement (CV limit)
+For bipartite state |ψ⟩ = Σ_i λ_i |i_A⟩|i_B⟩
 
-### Key Bounds
-
-For a CV state ρ with non-Gaussian operations:
-1. **Lower Bound**: SN(ρ) ≥ f(tr(Wρ)) where W is an entanglement witness
-2. **Upper Bound**: SN(ρ) ≤ g(N(ρ)) where N is a non-Gaussianity measure
-3. **Operational Bound**: Key rate R ≤ log₂(SN(ρ)) for quantum communication
-
-## Implementation Steps
-
-1. **State Preparation**: Generate or prepare the CV quantum state
-2. **Non-Gaussianity Measurement**: Compute non-Gaussianity via:
-   - Wigner function negativity
-   - Quantum relative entropy to Gaussian reference
-   - Higher-order cumulants
-3. **Schmidt Number Estimation**: Use semidefinite programming (SDP)
-4. **Hierarchy Classification**: Assign state to appropriate level
-5. **Bound Computation**: Calculate operational bounds for the application
-
-## Use Cases
-
-- **Quantum Communication**: Bound on distillable key rate
-- **Quantum Sensing**: Entanglement-enhanced precision limits
-- **Quantum Computing**: Resource requirements for CV quantum algorithms
-- **Quantum Metrology**: Non-Gaussian entanglement as a metrological resource
-
-## Detection Criteria
-
-### Witness-Based Detection
-
-```python
-def schmidt_witness(rho, k):
-    """Test if Schmidt number exceeds k."""
-    # Construct optimal witness W_k
-    W_k = optimal_schmidt_witness(k)
-    # If tr(W_k @ rho) < 0, then SN(rho) > k
-    return np.trace(W_k @ rho) < 0
+Interpretation:
+- K = 1: product state (no entanglement)
+- K → ∞: maximally entangled
+- Larger K = more complex entanglement structure
 ```
 
-### Entropic Bounds
+### 2. Non-Gaussian Entanglement Hierarchy
+Classification beyond Gaussian states:
 
-- Use Rényi entropies for experimental feasibility
-- Logarithmic negativity as computable entanglement monotone
-- Conditional entropy bounds for operational interpretations
+```
+Level 0: Product states (K=1)
+Level 1: Gaussian entangled states (squeezed, two-mode)
+Level 2: Weakly non-Gaussian (small photon additions/subtractions)
+Level 3: Moderately non-Gaussian (cat states, GKP states)
+Level 4: Strongly non-Gaussian (complex superpositions)
+Level n: Arbitrary non-Gaussian entanglement
+```
 
-## Practical Considerations
+### 3. Characterization Tools
+For classifying entanglement at each level:
 
-- Non-Gaussianity is resource-intensive (photon subtraction, cubic phase gates)
-- Schmidt number estimation scales poorly with dimension
-- Experimental verification requires full state tomography or clever witness design
-- For large CV systems, use approximate bounds with limited measurements
+- **Gaussian states**: Covariance matrix analysis, logarithmic negativity
+- **Weakly non-Gaussian**: Perturbation theory, photon statistics
+- **Moderately non-Gaussian**: Wigner function negativity, fidelity measures
+- **Strongly non-Gaussian**: Full state tomography, Schmidt decomposition
 
-## Relationship to Other Methods
+### 4. Applications
+- **Quantum communication**: Higher Schmidt numbers enable better channel capacity
+- **Quantum metrology**: Non-Gaussian entanglement surpasses Gaussian limits
+- **Quantum computing**: Resource states for CV quantum computation
+- **Quantum sensing**: Enhanced sensitivity through non-Gaussian correlations
 
-- Extends Gaussian entanglement theory (PPT criterion, logarithmic negativity)
-- Connects to discrete-variable entanglement theory via Schmidt decomposition
-- Bridges with quantum resource theories (non-Gaussianity as a resource)
+## Usage Patterns
+
+### Pattern 1: Entanglement Classification
+1. Obtain quantum state description (density matrix or wavefunction)
+2. Compute Schmidt decomposition
+3. Calculate Schmidt number K
+4. Classify into hierarchy level
+5. Determine appropriate characterization tools
+
+### Pattern 2: Resource Assessment
+1. Identify target quantum protocol/application
+2. Determine required entanglement level
+3. Compare available states using Schmidt number hierarchy
+4. Select optimal resource states
+5. Quantify gap between available and required entanglement
+
+## Instructions for Agents
+
+### When analyzing entanglement papers:
+1. Check if the paper addresses non-Gaussian entanglement
+2. Identify the classification framework (Schmidt number or other)
+3. Extract quantitative measures (K values, negativity, etc.)
+4. Note the specific CV system (optical, mechanical, etc.)
+5. Map results to the hierarchy levels
+
+### When designing quantum protocols:
+1. Determine entanglement requirements (Gaussian vs non-Gaussian)
+2. Use Schmidt number hierarchy to assess resource states
+3. Consider practical generation methods for each level
+4. Account for decoherence effects on entanglement structure
+
+## Error Handling
+### Schmidt Number Computation
+- For infinite-dimensional CV systems, truncate basis appropriately
+- Verify convergence of Schmidt coefficient series
+- Use numerical methods for complex states
+
+### Classification Ambiguity
+- Some states may span multiple hierarchy levels
+- Use multiple characterization tools for cross-validation
+- Consider the specific application context
+
+## Resources
+- arXiv: 2605.18605 - "Non-Gaussian Entanglement Hierarchy Based on the Schmidt Number"
+- Continuous variable quantum information theory
+- Schmidt decomposition for bipartite systems
+- Gaussian vs non-Gaussian quantum states
+
+## Related Skills
+- quantum-entanglement-detection: General entanglement detection
+- bosonic-gkp-parity-encoding: GKP state encoding
+- quantum-neuromorphic-patterns: Quantum resources for neuromorphic
