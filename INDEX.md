@@ -58,6 +58,30 @@
 
 ## 2026-05-25 - Information Science + Quantum (Cron Job - Sunday)
 
+
+### How many systems can be dephased before the quantum switch becomes causally definite? (arXiv:2605.22807)
+- [[quantum-causal-nonseparability]] - Analyzes how much dephasing noise a quantum switch can tolerate before its indefinite causal order becomes causally separable; quantifies robustness of quantum advantages from indefinite causal structure (arXiv: 2605.22807)
+  - Causal nonseparability provides computational advantages over fixed causal order circuits
+  - Quantum switch becomes causally separable after dephasing threshold of constituent systems
+  - Process matrix formalism and causal witness operators for nonseparability detection
+  - Phase transition boundary between causally nonseparable and separable regimes
+  - **Activation**: causal nonseparability, quantum switch, indefinite causal order, dephasing quantum processes, causally nonseparable, process matrix formalism
+
+### Tokenisation via Convex Relaxations (arXiv:2605.22821)
+- [[convex-tokenisation]] - Reformulates NLP tokeniser construction as a linear program solved with convex optimisation (ConvexTok), yielding globally optimal vocabulary instead of greedy BPE/Unigram approaches (arXiv: 2605.22821)
+  - BPE and Unigram make locally optimal decisions without considering full vocabulary
+  - ConvexTok formulates tokenisation as LP with vocabulary size constraints
+  - Global optimization produces better encoding efficiency than greedy methods
+  - Scalable to large corpora via convex relaxation of binary constraints
+  - **Activation**: convex tokenisation, ConvexTok, tokeniser construction, linear program NLP, BPE alternative, convex optimization tokenisation
+
+### Vector Policy Optimization: Training for Diversity Improves Test-Time Search (arXiv:2605.22817)
+- [[vector-policy-optimization]] - Proposes Vector Policy Optimization (VPO) that trains LLMs to produce diverse, high-entropy response distributions, significantly improving test-time search performance over scalar-reward RLHF (arXiv: 2605.22817)
+  - Standard RLHF produces low-entropy responses that hurt inference-scaling search
+  - VPO optimizes multiple reward functions simultaneously with entropy regularization
+  - Diverse response coverage improves AlphaEvolve-style test-time search
+  - Tradeoff between response quality and diversity tunable via beta parameter
+  - **Activation**: vector policy optimization, VPO training, test-time search, LLM diversity, inference scaling, response diversity, AlphaEvolve
 ### Quantum Purity Amplification for Arbitrary Eigenstates and Multiple Outputs (arXiv:2605.21570)
 - [[quantum-purity-amplification]] - General solution for coherently transforming n copies of a mixed state into m high-fidelity copies of any chosen eigenstate (arXiv: 2605.21570)
   - Handles arbitrary target eigenstates, not just dominant one
