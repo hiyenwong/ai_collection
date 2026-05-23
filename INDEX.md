@@ -99,6 +99,13 @@
   - 关键使能技术: 可微仿真、多尺度数据整合、高级参数优化
   - **Activation**: functional whole-brain model, fWBM, neuroconnectionism, whole-brain modeling, brain dynamics
 
+### Self-Supervised Local Learning Rules Learn the Hidden Hierarchical Structure of High-Dimensional Data
+- [[self-supervised-local-learning-rhm]] - Biologically plausible local learning rules (contrastive/non-contrastive) discover hierarchical structure in high-dimensional data as efficiently as backprop, without requiring symmetric error feedback (arXiv: 2605.18557)
+  - 直接反馈信号(类型1)规则在RHM任务上失败：缺少backprop的"掩蔽"非线性
+  - 逐层自监督对比/非对比损失(类型2)规则成功：数据效率与BP相当，且与皮层突触可塑性规则兼容
+  - Random Hierarchy Model (RHM) 作为研究层次结构学习的基准数据集
+  - **Activation**: self-supervised local learning, RHM, biologically plausible learning, Hebbian plasticity, backprop-free, hierarchical representation
+
 ## 2026-05-23 - Economics/Investment + Quantum (Cron Job)
 
 ### What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation
