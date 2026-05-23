@@ -1,3 +1,17 @@
+## 2026-05-23 - Neuroscience Research (Cron Job)
+
+### Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness
+- [[efficient-coding-criticality]] - Theoretical framework linking efficient coding (Fisher info maximization) to critical brain dynamics: soft modes, diverging correlation lengths, and sloppiness emerge naturally under resource constraints (arXiv: 2605.22598)
+  - 最大化Fisher信息→软模→发散相关长度→临界慢化→邋遢性，统一的统计与动力学临界性框架
+  - 数值模拟证实优化导致幂律响应，提供了效率编码、邋遢性和临界脑假说之间的机制联系
+  - **Activation**: efficient coding, critical brain hypothesis, Fisher information, neural avalanches, sloppiness
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[snn-sequence-timing-replay]] - Biologically plausible SNN model extending spiking Temporal Memory (sTM) for element-specific duration encoding and oscillatory-gated replay speed control (arXiv: 2605.22523)
+  - 序列元素持续时间通过专用神经元群的顺序激活编码，支持毫秒到秒级时间尺度
+  - 振荡背景输入作为全局时钟信号调节重放速度，频率越高重放越快
+  - **Activation**: sequence timing, spiking temporal memory, sTM, replay speed, SNN, oscillatory clock
+
 ## 2026-05-23 - Economics/Investment + Quantum Finance (Cron Job)
 
 ### Quantum Reinforcement Learning for Dynamic Portfolio Optimization
