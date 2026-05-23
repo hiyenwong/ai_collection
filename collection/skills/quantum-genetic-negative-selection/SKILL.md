@@ -1,78 +1,90 @@
 ---
 name: quantum-genetic-negative-selection
-description: "Quantum Genetic Negative Selection Algorithm (QGNSA) for anomaly detection in financial transactions. Integrates Quantum Genetic Algorithm (QGA) into classical negative selection, exploiting quantum superposition and probabilistic amplitude adjustment to enhance search space exploration. Use when: anomaly detection, financial fraud detection, quantum genetic algorithms, immune-inspired detection, negative selection algorithms."
+description: Quantum Genetic Negative Selection Algorithm (QGNSA) methodology — integrating quantum genetic algorithms into negative selection for enhanced anomaly detection using quantum superposition and probabilistic amplitude adjustment.
+category: quantum-computing
+version: 1.0.0
+tags: [quantum, genetic-algorithm, anomaly-detection, negative-selection, immune-inspired, qga]
+trigger: quantum genetic algorithm, negative selection, anomaly detection, QGNSA, quantum immune system, quantum superposition search, artificial immune system
 ---
 
 # Quantum Genetic Negative Selection Algorithm (QGNSA)
 
-## Core Concept
+## Source
+- arXiv: 2605.22527v1
+- Authors: Giancarlo P. Gamberi, Calebe P. Bianchini
+- Category: cs.NE
 
-Negative Selection Algorithms (NSAs) mimic the immune system's self/non-self discrimination for anomaly detection. Classical NSA effectiveness is limited by detector generation efficiency. QGNSA integrates a Quantum Genetic Algorithm (QGA) to overcome this bottleneck.
+## Overview
 
-## Key Innovation
+QGNSA integrates Quantum Genetic Algorithms (QGA) into Negative Selection Algorithms (NSA) for anomaly detection, replacing classical evolutionary optimization with quantum-inspired search. The method exploits quantum superposition and probabilistic amplitude adjustment to enhance search space exploration and convergence efficiency.
 
-Replace classical evolutionary optimization with quantum genetic operations:
-- **Quantum superposition**: Each chromosome encodes multiple detector candidates simultaneously
-- **Probabilistic amplitude adjustment**: Guide search toward promising detector configurations
-- **Enhanced exploration**: Broader search space coverage than classical evolution
+## Core Methodology
 
-## Methodology
+### 1. Negative Selection Algorithm (NSA)
 
-### Step 1: Quantum Encoding
+Inspired by the self/non-self discrimination mechanism of the human immune system:
+- **Self set**: Normal patterns (training data)
+- **Detectors**: Generated to NOT match self patterns
+- **Anomaly detection**: Anything matched by a detector is classified as non-self (anomalous)
 
-Represent detector candidates as quantum chromosomes:
-```
-|ψ⟩ = Σ α_i |detector_i⟩ + β_i |¬detector_i⟩
-```
+### 2. Quantum Genetic Algorithm (QGA) Integration
 
-Each qubit pair represents presence/absence probability of a detector feature.
+**Key quantum mechanisms:**
+- **Quantum chromosome**: Represented as probability amplitude vectors (α, β pairs)
+- **Superposition**: Each chromosome encodes multiple candidate detectors simultaneously
+- **Quantum rotation gate**: Updates probability amplitudes toward better solutions
+- **Quantum measurement**: Collapses superposition to concrete detector candidates for evaluation
 
-### Step 2: Fitness Evaluation
+### 3. QGNSA Pipeline
 
-Evaluate detector quality using:
-- **Coverage**: Fraction of non-self (anomalous) patterns detected
-- **Specificity**: Avoidance of self (normal) patterns
-- **Diversity**: Detector set coverage distribution
+1. **Initialize quantum population**: Random quantum chromosomes with uniform amplitudes
+2. **Observe (measure)**: Collapse quantum chromosomes to concrete detector candidates
+3. **Evaluate fitness**: Test detectors against self set (coverage, non-self detection rate)
+4. **Update amplitudes**: Apply quantum rotation gates toward better solutions
+5. **Quantum crossover/mutation**: Quantum-inspired genetic operators
+6. **Repeat** until convergence or max generations
 
-### Step 3: Quantum Genetic Operations
+### 4. Advantages Over Classical GA
 
-- **Quantum rotation gates**: Adjust amplitudes toward better detectors
-- **Quantum crossover**: Recombine detector features probabilistically
-- **Mutation**: Introduce novel detector configurations
+- **Diverse search**: Quantum superposition explores multiple regions simultaneously
+- **Faster convergence**: Probabilistic amplitude adjustment guides search more efficiently
+- **Robustness**: Maintains robustness under varying hyperparameter configurations
 
-### Step 4: Measurement and Selection
+## Key Results
 
-Collapse quantum states to classical detector candidates. Select high-fitness detectors for the final set.
-
-## Applications
-
-- Financial transaction fraud detection
-- Network intrusion detection
-- Industrial anomaly detection
-- High-dimensional data outlier detection
-
-## Performance Results
-
-Evaluated on Metaverse Financial Transactions Dataset:
-- Superior anomaly detection accuracy vs classical EvoSeedRNSA
+- Evaluated on Metaverse Financial Transactions Dataset
+- Superior anomaly detection accuracy compared to classical EvoSeedRNSA
 - Robust under varying hyperparameter configurations
-- Improved convergence efficiency
+
+## When to Use
+
+Use this skill when:
+- Building anomaly detection systems for high-dimensional data
+- Needing detector generation that covers diverse anomaly patterns
+- Working with financial transaction data, network security, or IoT monitoring
+- Exploring quantum-inspired algorithms for classical problems
+
+## Implementation Steps
+
+1. Define self set from normal data
+2. Initialize quantum population with uniform amplitude chromosomes
+3. Implement quantum measurement (collapse to concrete detectors)
+4. Design fitness function: detector coverage × non-self detection rate
+5. Implement quantum rotation gate for amplitude updates
+6. Apply quantum crossover and mutation operators
+7. Terminate on convergence, extract best detector set
+8. Deploy for real-time anomaly detection
 
 ## Pitfalls
 
-### Real Hardware Deployment
-Current results are simulation-based. Real quantum hardware deployment requires circuit optimization and error mitigation.
+- Quantum chromosome size must balance search space coverage with computational cost
+- Rotation gate parameters (angle, direction) critically affect convergence
+- Detector diversity must be maintained to avoid coverage gaps
+- High-dimensional data may require larger quantum populations
+- Hybrid quantum-classical approaches may offer better efficiency on real quantum hardware
 
-### High-Dimensional Scaling
-Quantum advantage most pronounced in high-dimensional spaces. For low-dimensional problems, classical NSA may be sufficient.
+## Related Papers
 
-## Activation Keywords
-
-- quantum genetic negative selection
-- QGNSA anomaly detection
-- quantum genetic algorithm finance
-- immune-inspired fraud detection
-- 量子遗传阴性选择算法
-- negative selection algorithm
-- quantum anomaly detection financial
-- quantum immune algorithm
+- Q-PhotoNAS (arXiv:2605.22097) — Quantum NAS on photonic devices
+- Q-SpiRL (arXiv:2605.20801) — Quantum spiking reinforcement learning
+- Adaptive Measurement Allocation for Kernelized SVMs (arXiv:2605.22275)

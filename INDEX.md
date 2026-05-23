@@ -1,3 +1,19 @@
+## 2026-05-24 - Information Science + Quantum (Cron Job)
+
+### Q-PhotoNAS: Hybrid Quantum Neural Architecture Search Framework on Photonic Devices (arXiv:2605.22097)
+- [[q-photonas-hybrid-arch-search]] - NAS framework for hybrid photonic quantum-classical models using genetic algorithm-based search with learnable quantum phase encoding (arXiv: 2605.22097)
+  - 19 hyperparameters encoded in 6 gene groups (classical preprocessing, phase encoding, photonic circuit, measurement, post-processing, training)
+  - Group-based crossover, per-gene mutation, elitism; 99.44% Digits, 98.78% MNIST accuracy
+  - Photonic layer extracts non-redundant features orthogonal to classical pathway
+  - **Activation**: quantum architecture search, photonic quantum computing, Q-PhotoNAS, quantum NAS, hybrid quantum neural architecture, quantum phase encoding, genetic algorithm quantum, photonic QPU, Quandela
+
+### Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection (arXiv:2605.22527)
+- [[quantum-genetic-negative-selection]] - QGNSA methodology integrating quantum genetic algorithms into negative selection for enhanced anomaly detection (arXiv: 2605.22527)
+  - Quantum superposition + probabilistic amplitude adjustment for diverse search space exploration
+  - Superior anomaly detection on Metaverse Financial Transactions Dataset
+  - Robust under varying hyperparameter configurations
+  - **Activation**: quantum genetic algorithm, negative selection, anomaly detection, QGNSA, quantum immune system, quantum superposition search
+
 ## 2026-05-24 - Neuroscience Research (Cron Job)
 
 ### Learning sequence timing and control of replay speed in networks of spiking neurons (arXiv:2605.22523)
