@@ -1,3 +1,33 @@
+## 2026-05-25 - Neuroscience Research (Cron Job - Sunday)
+
+### Subject-Specific Analysis of Self-Initiated Attention Shifts from EEG (arXiv:2605.18251)
+- [[self-initiated-attention-shifts-eeg]] - Machine learning + SHAP analysis of EEG reveals subject-specific discriminative information in preparatory activity for distinguishing self-initiated vs externally-cued attention shifts; higher-frequency bands and frontal regions are most informative (arXiv: 2605.18251)
+  - Controlled comparison of self-initiated vs externally instructed shifts under identical visual stimulation
+  - SHAP-based feature attribution across frequency bands and regions of interest
+  - Reliable within-subject classification: beta/gamma bands and frontal regions drive decisions
+  - **Activation**: self-initiated attention, EEG attention decoding, SHAP EEG, frontal EEG, voluntary attention, subject-specific EEG
+
+### BCI-sift: An Automated Feature Selection Toolbox for BCI (arXiv:2605.19646)
+- [[bci-sift-feature-selection]] - Automated scikit-learn-compatible feature selection toolbox for BCI applications operating across electrode, temporal, and frequency dimensions; validated on HD ECoG speech decoding (arXiv: 2605.19646)
+  - Multi-dimensional selection: electrodes, time points, frequency bands simultaneously
+  - Validated on 8 participants HD ECoG speech decoding (12-word task)
+  - High-frequency gamma band identified as most informative feature dimension
+  - **Activation**: BCI feature selection, ECoG decoding, neural feature tuning, automated BCI ML pipeline, BCI-sift
+
+### Brain Alignment of Reasoning and Action Representations from VLMs and LAMs (arXiv:2605.19352)
+- [[vlm-lam-brain-alignment]] - fMRI study showing VLMs and LAMs outperform RL baselines in brain encoding during gameplay; prompt gains scale with cortical hierarchy; VLM is prompt-symmetric while LAM is prompt-asymmetric in representational organization (arXiv: 2605.19352)
+  - Both VLMs and LAMs significantly outperform RL baselines in voxel-wise encoding
+  - Prompt-driven gains largest in frontal-parietal and motor-planning regions
+  - VLM: 12.5% unique action vs 13.6% unique reasoning; LAM: 27% unique action vs -5% unique reasoning
+  - **Activation**: VLM brain alignment, LAM fMRI encoding, interactive gameplay fMRI, cortical hierarchy encoding, action model brain comparison
+
+### Conserved Kinematic Representations Enable Zero-Shot Decoding in Handwriting BCIs (arXiv:2605.19048)
+- [[conserved-kinematic-zero-shot-bci]] - Zero-shot handwriting BCI decoding using conserved kinematic primitives; achieves 64% hits@3 on unseen letters, enabling open-vocabulary iBCI for logographic languages (arXiv: 2605.19048)
+  - Neural representations of kinematic strokes are conserved across different character contexts
+  - 64% hits@3 retrieval on unseen letters → strong evidence for compositional motor control
+  - Enables scaling BCIs to Chinese, Japanese, and other logographic languages
+  - **Activation**: zero-shot BCI, handwriting decoding, kinematic representations, conserved neural dynamics, iBCI handwriting, logographic BCI, motor cortex primitives
+
 ## 2026-05-25 - Information Science + Quantum (Cron Job - Sunday)
 
 ### Quantum Purity Amplification for Arbitrary Eigenstates and Multiple Outputs (arXiv:2605.21570)
