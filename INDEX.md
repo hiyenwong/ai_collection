@@ -1,3 +1,21 @@
+## 2026-05-23 - Neuroscience Research: MIRAGE Mental Imagery + Platonic Representations (Cron Job)
+
+### MIRAGE: Robust Multi-Modal fMRI-to-Mental-Image Decoding
+- [[mirage-fmri-mental-imagery-decoding]] - Multi-modal fMRI decoder for cross-decoding visual perception to mental imagery. Linear backbone + multi-modal features (text, high-level, low-level image) → diffusion model, achieving SOTA on NSD-Imagery benchmark (arXiv: 2605.17198)
+  - SOTA on seen images ≠ SOTA on mental images: architecture must be explicitly designed for cross-decoding
+  - Low-dimensional image features + text guidance + multi-level features gives best mental image quality
+  - Linear backbone outperforms complex nonlinear encoders for mental image decoding
+  - Validated by both feature metrics and human raters
+  - **Activation**: MIRAGE, fMRI mental imagery, brain-to-image decoding, mental image reconstruction, NSD-Imagery, vision decoder generalization, fMRI diffusion model, neuroimaging decoding
+
+### Platonic Representations in the Human Brain: Unsupervised Recovery of Universal Geometry
+- [[platonic-representations-brain-universal-geometry]] - Self-supervised recovery of universal neural geometry across subjects using fMRI. Evidence that human visual cortex representations are approximately isometric and translatable via unsupervised orthogonal rotations (arXiv: 2605.20496)
+  - Self-supervised encoder learns subject-specific embeddings from fMRI alone via repeated stimulus presentations
+  - Unsupervised orthogonal rotation alignment translates independently learned brain spaces across subjects
+  - Shared latent space via synchronized pairwise rotations improves cross-subject retrieval
+  - Bridges ANN representation convergence and biological neural geometry
+  - **Activation**: platonic representation, universal geometry, brain representation, cross-subject alignment, fMRI visual cortex, isometric embedding, Natural Scenes Dataset, self-supervised brain encoding
+
 ## 2026-05-23 - Economics, Investment + Quantum Finance (Cron Job)
 
 ### Contextual Quantum Neural Networks for Stock Price Prediction
