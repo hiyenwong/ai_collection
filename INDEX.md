@@ -14,6 +14,13 @@
 
 ## 2026-05-23 - Neuroscience Research (Cron Job)
 
+### Winner-Take-All bottlenecks enforce disentangled symbolic representations in multi-task learning (arXiv:2605.22472)
+- [[winner-take-all-bottleneck-disentangled]] - WTA bottlenecks provably enforce extraction of categorical latent factors in multi-task learning, producing symbolic single-neuron encodings (arXiv:2605.22472)
+  - Theoretical proof that WTA (cortical circuit motif) produces disentangled symbolic representations in deep networks
+  - Single neurons encode single abstract features (object, color, position)
+  - Enables compositional generalization; bridges sub-symbolic to symbolic AI
+  - **Activation**: WTA, winner-take-all, disentangled representations, symbolic AI, latent factors, cortical circuits, multi-task learning, neural bottleneck
+
 ### Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks
 - [[vencircuit-von-economo-snn-social-learning]] - VENCircuit computational account showing Von Economo neurons (2% of total) act as acquisition scaffolds in SNNs, providing a 21-fold increase in training convergence odds (arXiv: 2605.17399)
   - VENs provide a direct gradient pathway immune to Jacobian instabilities in recurrent circuits
