@@ -1,5 +1,12 @@
 ## 2026-05-24 - Information Science + Quantum (Cron Job)
 
+### Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality (arXiv:2605.20765)
+- [[quantum-fisher-information-privacy]] - QFI duality framework establishing precision-privacy tradeoffs in distributed quantum sensing; Heisenberg-limited precision for target parameter forces zero QFI for all other independent directions (arXiv: 2605.20765)
+  - QFI duality theorem: F_Q(w) + F_Q(v) <= N for any N-qubit probe state with local phase encoding
+  - Privacy guarantee: attaining F_Q = N for sensing target renders all alternative estimations impossible
+  - GHZ states achieve optimal tradeoff for N >= 2; equatorial states for N = 2
+  - **Activation**: quantum Fisher information, QFI duality, quantum sensing privacy, distributed quantum sensors, parameter privacy, Heisenberg limit, Fisher information duality
+
 ### Quantum Homomorphic Encryption: Towards Practical and Private Computation on Untrusted Quantum Hardware (arXiv:2604.19256)
 - [[quantum-homomorphic-encryption-qhe]] - QOTPH framework enabling computation on encrypted quantum states via Quantum One-Time Pad with information-theoretic security (arXiv: 2604.19256)
   - Homomorphic gate decompositions for Clifford+T circuits with systematic key update rules

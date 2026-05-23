@@ -155,6 +155,15 @@ From recent papers (2604.01876v1, 2604.01831v1):
 - Path validation without topology revelation
 - Multi-path certification
 
+### Pattern 2.5: Hybrid QKD+KLJN Key Distribution
+
+From paper 2605.15247 (Basar, May 2026):
+- Combines BB84-type optical QKD with KLJN (Kirchhoff-law-Johnson-noise) statistical-physical key exchange
+- Three KLJN-assisted QKD protocols: eliminate public basis disclosure, extract basis-derived key bits, generate raw key bits
+- KLJN link used for secure basis handling and additional raw key generation
+- Improves key generation efficiency in short-haul infrastructures (MANs, data center interconnects)
+- Analytical key rate expressions account for optical channel penalties, KLJN bandwidth constraints, and synchronization bottlenecks
+
 ### Pattern 3: Quantum State Engineering
 
 From recent papers (2604.01722v1, 2604.02234v1):
@@ -182,7 +191,7 @@ From recent papers (2604.01722v1, 2604.02234v1):
 
 ## Resources
 
-- **Knowledge Graph**: `/Users/hiyenwong/.openclaw/workspace/kg.db`
+- **Knowledge Graph**: `/Users/hiyenwong/wiki/kg.db`
 - **Arxiv Search**: `scripts/search_arxiv.py`
 - **Import Script**: `scripts/import_papers_to_kg.py`
 - **kg_tool**: `scripts/kg_tool/target/release/kg_tool`
@@ -192,34 +201,6 @@ From recent papers (2604.01722v1, 2604.02234v1):
 - **skill-extractor**: Extract patterns from quantum papers
 - **skill-creator**: Create specialized quantum skills
 - **arxiv-search**: Search quantum papers on arxiv
-
-## Examples
-
-### Example 1: QKD Protocol with Encoding Conversion
-
-```
-User: "Design a QKD protocol that supports both polarization and time-bin encoding"
-
-Agent:
-1. Identify heterogeneous network topology
-2. Select polarization for short-distance segments, time-bin for long-distance
-3. Define encoding conversion mechanism at intermediate nodes
-4. Specify security verification and error threshold parameters
-5. Output complete protocol design document
-```
-
-### Example 2: Topology-Hiding Protocol
-
-```
-User: "设计一个拓扑隐藏的量子密钥分发方案"
-
-Agent:
-1. Identify topology privacy requirement
-2. Apply graph-signature zero-knowledge proof pattern
-3. Design multi-path certification without topology revelation
-4. Specify quantum network configuration
-5. Validate security properties and feasibility
-```
 
 ## Notes
 
