@@ -1,3 +1,14 @@
+## 2026-05-24 - Quantum Computing Research (Cron Job)
+
+### Sparse Mamba Decoder for Surface Code Quantum Error Correction (arXiv:2605.17156)
+- [[sparse-mamba-qec-decoder]] - Defect-centric neural decoder using Mamba state-space backbone processes only k active detection events (O(k) complexity) instead of full O(d²R) syndrome array; 95-467x faster than Tesseract near-MLD with up to 49% reduced logical error rate (arXiv: 2605.17156)
+  - Core: 13-dimensional feature embedding per detection event → Mamba selective scan → near-constant 24-57μs latency across d=3-9
+  - Key insight: at p~0.1%, <5% syndrome entries are active — existing dense decoders waste computation on empty syndrome
+  - Result: MWPM logical error rate reduced up to 49% at d≤5 under SI1000 noise; 232-463x faster than Belief Matching
+  - Sycamore experimental dataset: ensemble matches/surpasses dense Mamba decoder baseline
+  - 7.5-16M parameters on commodity NVIDIA GPUs, no specialized accelerators
+  - **Activation**: sparse mamba decoder, SMD, QEC neural decoder, surface code Mamba, defect-centric decoding, sparse syndrome processing, quantum error correction state space model
+
 ## 2026-05-24 - Systems Engineering Research (Cron Job)
 
 ### AdaPTwin: Adaptive Multi-Fidelity Predictive Digital Twin
