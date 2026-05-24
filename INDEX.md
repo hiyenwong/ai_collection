@@ -57,6 +57,24 @@
   - Applied to visual cortical responses to natural images, yielding robust, modelling-choice-independent features
   - **Activation**: information geometry, neural population code, Fisher information metric, representational geometry, multi-scale encoding, mutual information neural, diffusion models neuroscience
 
+### Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness
+- [[efficient-coding-criticality]] - Normative theory showing efficient coding under resource constraints drives neural systems towards critical states with power-law avalanches and sloppiness (arXiv: 2605.22598)
+  - Efficient coding under finite neurons and energy budgets places system at critical point of phase transition
+  - Criticality → power-law neural avalanches (scale-free dynamics)
+  - Criticality → sloppiness (parameter redundancy, robustness to variation)
+  - Unifies normative theory (efficient coding) with mechanistic observations (criticality)
+  - Bridges efficient coding, criticality, and sloppiness in a single framework
+  - **Activation**: efficient coding, criticality, neural avalanche, power law, sloppiness, self-organized criticality, brain criticality, normative theory
+
+### Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity
+- [[geometric-phase-transition-hippocampal-memory]] - Hippocampal spatial memory capacity emerges from a discrete stiffening of population geometry, transitioning from disorganized to crystalline collective coding (arXiv: 2605.17199)
+  - Geometric phase transition in place cell ensembles: disorganized → crystalline arrangement
+  - Exponential memory capacity in crystalline phase vs. linear in disorganized phase
+  - First-order transition: once started, geometry locks in rapidly (discrete stiffening)
+  - Order parameter: spatial correlation length of place field arrangement
+  - Explains extreme hippocampal capacity (10^5+ distinct spatial representations)
+  - **Activation**: geometric phase transition, hippocampus, population geometry, spatial memory, place cells, grid cells, memory capacity, collective coding, crystalline neural representation
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
 ### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat
