@@ -59,6 +59,14 @@
     30|  - Result: All rules converge at IT; learning rules differentiate only at intermediate areas
     31|  - **Activation**: untrained CNN V1 alignment, RSA brain comparison, architecture-driven brain alignment, STDP V1, THINGS-fMRI, random weights V1 match
     32|
+    33|### Riemannian geometry meets fMRI: the advantages of modeling correlation manifolds and eigenvector subspaces (arXiv:2605.22334)
+    34|- [[riemannian-fmri-correlation-manifolds]] - Scalable geometric framework for fMRI functional connectivity using the Off-log metric (closed-form correlation manifold analysis) and Grassmannian subspace discrimination for eigenvector comparisons (arXiv: 2605.22334)
+    35|  - Core: Off-log diffeomorphism maps correlation matrices to symmetric hollow matrices enabling closed-form distances, Fréchet means, and linear models without manifold optimization
+    36|  - Key insight: Permutation-invariant log-Euclidean geometry on the elliptope solves the scalability problem of existing Riemannian methods for high-dimensional neuroimaging
+    37|  - Grassmannian method: Principal-angle distances between Laplacian eigenvectors resolve sign/basis ambiguities, consistently outperforming Euclidean baselines
+    38|  - Results: Validated on Parkinson's (22 HC vs 22 PD), psychosis (26 HC vs 26 NAP), and 3 aging fMRI datasets (cam-CAN, HCPAging, NKI; ~1309 subjects total)
+    39|  - **Activation**: Riemannian geometry fMRI, Off-log metric, correlation manifold, Grassmannian discriminant, functional connectivity manifold, elliptope geometry, brain age prediction, brain network topology
+    32|
     33|## 2026-05-24 - Information Science + Quantum Computing Research (Sunday Cron Job)
     34|
     35|### A Graph-Based Forensic Framework for Inferring Hardware Noise of Cloud Quantum Backend (arXiv:2512.14541)
