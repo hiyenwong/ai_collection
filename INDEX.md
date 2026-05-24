@@ -1,3 +1,19 @@
+## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday Evening)
+
+### Vector Policy Optimization: Training for Diversity Improves Test-Time Search
+- [[vector-policy-optimization]] - VPO methodology trains LLMs with multi-objective reward vectors to maintain response diversity for inference-time search procedures (arXiv: 2605.22817)
+  - Scalar reward optimization leads to low-entropy response distributions that fail at test-time search
+  - Vector rewards + diversity bonus term enables coverage of solution space across varied task-specific rewards
+  - Integrates with GRPO: vector-valued advantages + diversity bonus in policy gradient update
+  - **Activation**: vector policy optimization, response diversity training, test-time compute scaling, multi-objective RL fine-tuning, AlphaEvolve search, inference-time diversity
+
+### Tokenisation via Convex Relaxations
+- [[convex-tokenization]] - ConvexTok formulates tokenizer construction as a linear program instead of greedy BPE/Unigram, achieving globally optimal vocabulary selection (arXiv: 2605.22821)
+  - LP formulation with coverage + vocabulary size constraints provides theoretical optimality bounds
+  - Consistently improves bits-per-byte (BpB) over greedy tokenization methods
+  - Flexible constraint system allows domain-specific tokenization optimization
+  - **Activation**: convex tokenization, tokenizer optimization, BPE alternative, linear program tokenizer, bits-per-byte improvement, globally optimal vocabulary
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Exact Hidden Paths in Noisy High Dimensional Path Spaces (arXiv: 2605.22477)
