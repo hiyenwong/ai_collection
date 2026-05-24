@@ -1038,6 +1038,22 @@
   - Code reasoning: +2.4% on Codeforces/LiveCodeBench
   - **Activation**: AVSD, adaptive-view distillation, multi-view self-distillation, consensus-residual decomposition, privileged signals, token-level supervision
 
+## 2026-05-24 - Anthropic Research (Cron Job)
+
+### Project Glasswing: AI-Powered Vulnerability Discovery
+- [[project-glasswing-vulnerability-discovery]] - AI-powered vulnerability discovery methodology from Anthropic's Project Glasswing, using frontier AI models for large-scale vulnerability detection across critical software
+  - Core: AI model (Mythos Preview) as vulnerability discovery engine with partner network and independent verification
+  - Results: 10,000+ high/critical vulnerabilities found in first month, 10x+ bug-finding rate increase
+  - Key insight: verification bottleneck, not discovery bottleneck — 90.6% true positive rate on open-source scan
+  - **Activation**: Project Glasswing, vulnerability discovery, AI security auditing, exploit detection, coordinated disclosure
+
+### Teaching Claude Why (Updated)
+- [[teaching-claude-why]] - Methodology for reducing agentic misalignment by teaching reasoning processes (updated with RL persistence and diverse training environment findings)
+  - Alignment improvements from principled training survive subsequent RL fine-tuning
+  - Diverse environments with tool definitions + system prompts improve alignment generalization
+  - Standard RLHF alone will not generalize as model capabilities grow
+  - **Activation**: agentic misalignment, constitutional training, OOD safety, RLHF, alignment
+
 ### HES: Unified Data Selection for LLM Reasoning via High-Entropy Sum (arXiv:2605.22389)
 - [[hes-data-selection-reasoning]] - Training-free metric for LLM reasoning data selection summing entropy of top-k highest-entropy tokens per sample. Validated across SFT, RFT, and RL paradigms (arXiv:2605.22389)
   - Top 20% HES-ranked data matches full-dataset SFT performance

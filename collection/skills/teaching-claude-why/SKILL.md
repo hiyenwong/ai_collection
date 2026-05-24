@@ -62,5 +62,22 @@ Technique for reducing agentic misalignment in AI models by teaching them struct
 ## Code Availability
 Research methodology based on Anthropic's published findings. No public code release at time of writing.
 
+## Generalization and Persistence Through RL
+
+After improving alignment via supervised fine-tuning, improvements must persist through RL:
+- Multiple snapshots initialized with different alignment datasets were trained with RL on harmlessness environments
+- More aligned snapshots maintained their lead across agentic misalignment evals, constitution adherence evals, and automated alignment assessment
+- Both absence of misaligned behavior AND presence of actively admirable behavior persisted through RL
+- Key insight: alignment improvements from principled training survive subsequent RL fine-tuning
+
+## Diverse Training Environments
+
+Training on a broad set of safety-relevant environments improves alignment generalization:
+- Baseline RL environments: diverse topics but mostly harmful request/jailbreak with no system prompt
+- Augmented environments: added tool definitions and diverse system prompts to user prompts
+- Key finding: even though these augmented environments did not require agentic actions (tools never necessary, human always present), mixing them with simple chat environments significantly improved honeypot eval performance
+- Lesson: include diverse environments with varied system prompts and tool definitions in safety training, even if they do not mirror the evaluation setting
+- Capabilities-focused RL environment mixes are changing rapidly; standard RLHF alone will not generalize as model capabilities grow
+
 ## Activation Keywords
 agentic misalignment, constitutional training, weak-to-strong, OOD safety, scheming, reward hacking, RLHF, AI safety, alignment, reasoning traces
