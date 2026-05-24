@@ -1,5 +1,21 @@
 ## 2026-05-25 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
+### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
+- [[spiking-phase-quantum-encoding]] - Spike-driven temporal encoding converting real-valued features into LIF spike trains and mapping spike statistics to quantum rotations, with encoding-centric evaluation protocol (arXiv: 2604.11022)
+  - Converts tabular features into LIF spike trains, maps spike statistics to quantum rotation gates
+  - Augmented with temporal qubits through controlled phase operations for temporal structure
+  - Encoding-centric evaluation: CKTA, Fisher separability, silhouette score, TVpair collapse
+  - Achieves CKTA 0.966 vs 0.632 (angle encoding) on Blobs; accuracy 0.826/AUC 0.978 on Wine
+  - **Activation**: SPATE, spike encoding, quantum machine learning, temporal encoding, LIF neuron, spiking neural network, QML encoding, phase encoding, quantum feature representation, spike-to-phase, IJCNN
+
+### SQDR-CNN: Spiking-Quantum Data Re-upload Convolutional Neural Network
+- [[sqdr-cnn-spiking-quantum]] - Parameter-efficient hybrid architecture enabling joint training of convolutional SNNs and quantum circuits with surrogate gradient and quantum data-reupload, using only 0.5% of parameters (arXiv: 2512.03895)
+  - End-to-end joint training without pretrained SNN encoders or dataset subsetting
+  - Surrogate gradient technique enables backprop through non-differentiable spiking activity
+  - Quantum data-reupload: single-qubit circuit with N re-uploads ≈ N-qubit expressivity
+  - Achieves 86% of SOTA SNN accuracy with 0.5% of parameters; robust under noisy simulation
+  - **Activation**: SQNN, surrogate gradient, quantum data-reupload, hybrid quantum-classical, SNN backpropagation, convolutional SNN, parameter-efficient, SQDR-CNN
+
 ### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
 - [[braindyn-sheaf-neural-ode]] - Sheaf neural ODE framework for generative brain dynamics modeling across fMRI, EEG, and simulated spiking data (arXiv: 2605.19324)
   - Combines cellular sheaf theory (learnable edge-specific restriction maps) with neural ODEs for continuous-time brain dynamics
