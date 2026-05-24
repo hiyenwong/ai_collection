@@ -1,3 +1,12 @@
+## 2026-05-25 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
+
+### Quantum circuit design via dynamic Pauli constraints
+- [[dynamic-pauli-constraints-quantum]] - Novel quantum computation model using Pauli observable constraints for gate specification with built-in tomography; universal for BQP with O(D^2 N log N) overhead (arXiv: 2605.22744)
+  - Gates specified as constraints on Pauli observables with built-in pairwise/k-local state tomography per layer
+  - Proven equivalent to coupling-graph-restricted circuits (BQP universal) with polynomial overhead
+  - Natural interface for NISQ-era quantum software via physically observable quantities
+  - **Activation**: pauli constraints, quantum circuit design, NISQ quantum software, observable-based gates, quantum state tomography, coupling graph, BQP equivalence
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
 ### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat
@@ -700,4 +709,3 @@
    499|
    500|### Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck
    501|
-
