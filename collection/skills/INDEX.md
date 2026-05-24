@@ -8,7 +8,7 @@
   - **Activation**: fWBM, functional whole-brain model, whole-brain modeling, neuroconnectionism, brain dynamics, cognitive function, connectome
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
-- [[spiking-temporal-memory-timing-replay]] - Spiking Temporal Memory (sTM) model extending biologically inspired SNN framework to learn both order and precise timing of sequence elements with flexible replay speed modulation (arXiv: 2605.22523)
+- [[learning-sequence-timing-spiking-neurons]] - Spiking Temporal Memory (sTM) model extending biologically inspired SNN framework to learn both order and precise timing of sequence elements with flexible replay speed modulation via oscillatory background input (arXiv: 2605.22523)
   - Extends sTM model from order-only to combined order-and-timing learning
   - Uses synaptic delay plasticity and STDP for temporal encoding
   - Enables flexible replay speed modulation via spike-frequency adaptation
