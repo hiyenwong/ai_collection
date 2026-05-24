@@ -45,6 +45,13 @@
 
 ## 2026-05-24 - Information Science + Quantum Computing (Cron Job - Sunday)
 
+### 4D and 5D Layer Codes through Color Routing (arXiv:2605.18961)
+- [[layer-codes-color-routing]] - CSS code construction generalizing Layer codes to d dimensions using color routing, saturates BPT bounds exactly (arXiv: 2605.18961)
+  - Core: From D-dim qLDPC with barrier Δ → (D+1)-dim Layer code with parameters [[n^{(D+1)/D}, k, d^{(D+1)/D}]] and barrier Δ·n^{1/D}
+  - Key: Color routing resolves check layer structure and line defects that blocked previous generalization attempts
+  - Result: Exact BPT bound saturation in d>3 dimensions; modular architecture for network patches
+  - **Activation**: layer codes, color routing, qLDPC codes, CSS codes, BPT bounds, quantum error correction, dimensional generalization
+
 ### Operationalising Post Quantum TLS Automated Configuration Profiling and Hybrid PQC Deployment (arXiv:2605.17955)
 - [[pqc-tls-deployment]] - Automated PQC TLS deployment methodology with configuration parsing and hybrid ML-KEM key exchange for enterprise infrastructure (arXiv: 2605.17955)
   - Configuration parsing across Nginx, Apache, API gateways for unified cryptographic inventory
