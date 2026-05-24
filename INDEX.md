@@ -1,5 +1,19 @@
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
+### Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality
+- [[quantum-fisher-information-duality]] - QFI duality methodology establishing fundamental precision-privacy trade-offs in distributed quantum sensor networks (arXiv: 2605.20765)
+  - F_Q(w^T θ) + F_Q(v^T θ) ≤ N for any N-qubit probe state with orthogonal sensing directions
+  - Heisenberg-limited precision forces zero QFI for all other independent directions — precision IS privacy
+  - GHZ states (N≥2) and equatorial states (N=2) achieve the tight bound
+  - **Activation**: quantum fisher information duality, precision privacy quantum sensing, QFI duality, distributed quantum sensing privacy
+
+### Quantum Entanglement Halves the Oblivious Update Bandwidth
+- [[quantum-entanglement-distributed-storage]] - Quantum entanglement-assisted distributed storage achieving 2x bandwidth reduction for oblivious updates using CSS codes (arXiv: 2605.19248)
+  - Classical lower bound α bits → quantum α/2 bits-equivalent with shared entanglement
+  - CSS codes achieve the bound via superdense coding: one qudit per helper carries 2× classical capacity
+  - Matching converse proves α/2 is fundamental quantum limit
+  - **Activation**: quantum entanglement distributed storage, oblivious update bandwidth, CSS code storage, superdense coding bandwidth
+
 ### Overcoming Barren Plateaus in Variational Quantum Circuits using a Two-Step Least Squares Approach
 - [[two-step-vqc-optimization]] - Two-stage convex initialization + nonconvex refinement framework for reliable VQA training (arXiv: 2601.18060)
   - Convex initialization shapes Hilmaton landscape into smooth, low-energy basin with detectable gradients
