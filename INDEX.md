@@ -24,6 +24,14 @@
   - Applicable to robotic tactile exploration, haptic perception, and edge AI
   - **Activation**: temporal coding, thousand brains, sensorimotor inference, spike packets, STDP, rank-order coding, active sensing
 
+## 2026-05-25 - Neuroscience (Cron Job)
+
+### Guiding Multi-Objective Genetic Programming with Description Length Improves Symbolic Regression Solutions
+- [[description-length-genetic-programming]] - DL/FBF model selection for GPSR preventing structural bloat (arXiv: 2605.22374)
+  - Description Length with Fisher-information encoding outperforms AIC/BIC for compact expression selection
+  - Use DL/FBF as post-selection on Pareto front, NOT as direct fitness (causes premature convergence)
+  - **Activation**: description length genetic programming, DL model selection symbolic regression, 描述长度遗传编程
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
 ### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat
