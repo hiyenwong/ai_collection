@@ -1,90 +1,100 @@
 ---
 name: quantum-genetic-negative-selection
-description: Quantum Genetic Negative Selection Algorithm (QGNSA) methodology — integrating quantum genetic algorithms into negative selection for enhanced anomaly detection using quantum superposition and probabilistic amplitude adjustment.
-category: quantum-computing
-version: 1.0.0
-tags: [quantum, genetic-algorithm, anomaly-detection, negative-selection, immune-inspired, qga]
-trigger: quantum genetic algorithm, negative selection, anomaly detection, QGNSA, quantum immune system, quantum superposition search, artificial immune system
+description: "Quantum Genetic Negative Selection Algorithm (QGNSA) methodology for anomaly detection using quantum-enhanced evolutionary optimization"
+category: ai_collection
 ---
 
-# Quantum Genetic Negative Selection Algorithm (QGNSA)
+# Quantum Genetic Negative Selection
 
-## Source
-- arXiv: 2605.22527v1
-- Authors: Giancarlo P. Gamberi, Calebe P. Bianchini
-- Category: cs.NE
+## Description
 
-## Overview
+Quantum Genetic Negative Selection Algorithm (QGNSA) methodology for anomaly detection that integrates Quantum Genetic Algorithms (QGA) into the Negative Selection Algorithm (NSA) framework. Inspired by the self/non-self discrimination mechanism of the human immune system, QGNSA exploits quantum superposition and probabilistic amplitude adjustment to enhance search efficiency and diversity in detector generation.
 
-QGNSA integrates Quantum Genetic Algorithms (QGA) into Negative Selection Algorithms (NSA) for anomaly detection, replacing classical evolutionary optimization with quantum-inspired search. The method exploits quantum superposition and probabilistic amplitude adjustment to enhance search space exploration and convergence efficiency.
+## Activation Keywords
 
-## Core Methodology
+- QGNSA
+- quantum genetic negative selection
+- quantum anomaly detection
+- 量子遗传阴性选择
+- quantum immune detector
+- qnsa algorithm
+- quantum genetic optimization anomaly
 
-### 1. Negative Selection Algorithm (NSA)
+## Core Concepts
 
-Inspired by the self/non-self discrimination mechanism of the human immune system:
-- **Self set**: Normal patterns (training data)
-- **Detectors**: Generated to NOT match self patterns
-- **Anomaly detection**: Anything matched by a detector is classified as non-self (anomalous)
+### Quantum Genetic Algorithm Integration
+- **Q-bit representation**: Each detector encoded as quantum bits (qubits) representing probability amplitudes
+- **Superposition search**: Q-bit chromosomes represent multiple detector candidates simultaneously
+- **Amplitude adjustment**: Rotation gate updates probabilities based on fitness, collapsing toward optimal detectors
 
-### 2. Quantum Genetic Algorithm (QGA) Integration
+### Negative Selection Framework
+- **Self/non-self discrimination**: Generate detectors that recognize non-self (anomalous) patterns
+- **Detector generation**: Evolutionary process creates diverse detector set covering non-self space
+- **Affinity evaluation**: Measure detector coverage and specificity against known self patterns
 
-**Key quantum mechanisms:**
-- **Quantum chromosome**: Represented as probability amplitude vectors (α, β pairs)
-- **Superposition**: Each chromosome encodes multiple candidate detectors simultaneously
-- **Quantum rotation gate**: Updates probability amplitudes toward better solutions
-- **Quantum measurement**: Collapses superposition to concrete detector candidates for evaluation
+## Usage Patterns
 
-### 3. QGNSA Pipeline
+### Pattern 1: Anomaly Detection with Quantum Genetic Optimization
+1. Encode detector population as Q-bit chromosomes
+2. Apply quantum rotation gates for probabilistic amplitude adjustment
+3. Evaluate fitness: detection rate, false positive rate, detector efficiency
+4. Collapse Q-bits to generate concrete detector set
+5. Apply detectors to classify normal vs anomalous data
 
-1. **Initialize quantum population**: Random quantum chromosomes with uniform amplitudes
-2. **Observe (measure)**: Collapse quantum chromosomes to concrete detector candidates
-3. **Evaluate fitness**: Test detectors against self set (coverage, non-self detection rate)
-4. **Update amplitudes**: Apply quantum rotation gates toward better solutions
-5. **Quantum crossover/mutation**: Quantum-inspired genetic operators
-6. **Repeat** until convergence or max generations
+### Pattern 2: EvoSeedRNSA Enhancement
+1. Replace classical evolutionary process in EvoSeedRNSA with QGA
+2. Maintain seed-based initialization for reproducibility
+3. Apply quantum superposition during candidate generation
+4. Use amplitude-based selection pressure
 
-### 4. Advantages Over Classical GA
+## Implementation Guidelines
 
-- **Diverse search**: Quantum superposition explores multiple regions simultaneously
-- **Faster convergence**: Probabilistic amplitude adjustment guides search more efficiently
-- **Robustness**: Maintains robustness under varying hyperparameter configurations
+### Q-bit Chromosome Design
+```
+Each detector = sequence of qubits [α₁, β₁, α₂, β₂, ...]
+where |αᵢ|² + |βᵢ|² = 1 (probability normalization)
+αᵢ = amplitude for state 0, βᵢ = amplitude for state 1
+```
 
-## Key Results
+### Quantum Rotation Gate
+```
+U(θ) = [[cos(θ), -sin(θ)], [sin(θ), cos(θ)]]
+Apply rotation toward better solution
+θ = rotation angle based on fitness difference
+```
 
-- Evaluated on Metaverse Financial Transactions Dataset
-- Superior anomaly detection accuracy compared to classical EvoSeedRNSA
-- Robust under varying hyperparameter configurations
+### Fitness Function Components
+- Detection Rate (DR): True positives / (True positives + False negatives)
+- False Positive Rate (FPR): False positives / (False positives + True negatives)
+- Detector Generation Efficiency: Time/resources to generate detector set
 
-## When to Use
+## Evaluation Benchmarks
 
-Use this skill when:
-- Building anomaly detection systems for high-dimensional data
-- Needing detector generation that covers diverse anomaly patterns
-- Working with financial transaction data, network security, or IoT monitoring
-- Exploring quantum-inspired algorithms for classical problems
+- **N-gram datasets**: String-based anomaly detection
+- **Real-valued datasets**: Continuous feature anomaly detection
+- **NSA-inspired benchmarks**: Standard negative selection test suites
 
-## Implementation Steps
+## Error Handling
 
-1. Define self set from normal data
-2. Initialize quantum population with uniform amplitude chromosomes
-3. Implement quantum measurement (collapse to concrete detectors)
-4. Design fitness function: detector coverage × non-self detection rate
-5. Implement quantum rotation gate for amplitude updates
-6. Apply quantum crossover and mutation operators
-7. Terminate on convergence, extract best detector set
-8. Deploy for real-time anomaly detection
+### Quantum Decoherence in Classical Simulation
+- When simulating QGA classically, maintain full state vector
+- Use efficient matrix operations for large populations
+- Consider dimensionality reduction for high-dimensional detectors
 
-## Pitfalls
+### Detector Coverage Gaps
+- Monitor non-self space coverage during evolution
+- Use diversity preservation in quantum population
+- Apply niching techniques to prevent premature convergence
 
-- Quantum chromosome size must balance search space coverage with computational cost
-- Rotation gate parameters (angle, direction) critically affect convergence
-- Detector diversity must be maintained to avoid coverage gaps
-- High-dimensional data may require larger quantum populations
-- Hybrid quantum-classical approaches may offer better efficiency on real quantum hardware
+## References
 
-## Related Papers
+- arXiv:2605.22527 - Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection
+- Evolutionary computation and quantum-inspired optimization literature
+- Negative Selection Algorithm (NSA) foundational papers
 
-- Q-PhotoNAS (arXiv:2605.22097) — Quantum NAS on photonic devices
-- Q-SpiRL (arXiv:2605.20801) — Quantum spiking reinforcement learning
-- Adaptive Measurement Allocation for Kernelized SVMs (arXiv:2605.22275)
+## arXiv Reference
+
+- **Paper**: Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection
+- **ID**: 2605.22527
+- **Date**: 2026-05-21
+- **Authors**: Giancarlo P. Gamberi, Calebe P. Bianchini

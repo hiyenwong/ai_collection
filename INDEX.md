@@ -138,6 +138,40 @@
   - **Activation**: two-step VQC optimization, convex initialization quantum circuits, barren plateau mitigation two-stage, Riemannian manifold quantum optimization
 
 ## 2026-05-24 - Information Science (Cron Job)
+### Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection
+- [[quantum-genetic-negative-selection]] - QGNSA methodology integrating quantum genetic algorithms into negative selection for enhanced anomaly detection using quantum superposition and amplitude adjustment (arXiv: 2605.22527)
+  - Q-bit chromosome encoding enables superposition search over multiple detector candidates simultaneously
+  - Probabilistic amplitude adjustment via quantum rotation gates optimizes detector generation efficiency
+  - Significantly outperforms classical and evolutionary NSAs in detection rate and false positive rate
+  - **Activation**: QGNSA, quantum genetic negative selection, quantum anomaly detection, immune detector, quantum superposition search
+
+### Reinforcement Learning for Ion Shuttling on Trapped-Ion Quantum Computers
+- [[rl-ion-shuttling]] - RL-based ion shuttling optimization for modular trapped-ion quantum chips with distinct functional zones (arXiv: 2605.22463)
+  - First use of reinforcement learning for ion transport optimization on trapped-ion quantum computers
+  - High-dimensional routing problem where classical optimal solutions become intractable
+  - RL policy learned for real-time shuttling decisions with state fidelity preservation
+  - **Activation**: ion shuttling, trapped-ion RL, quantum ion transport, ion routing optimization
+
+### Quantum Circuit Design via Dynamic Pauli Constraints
+- [[dynamic-pauli-constraints-qc]] - Software-oriented quantum circuit model using Pauli observable constraints with k-local tomography, equivalent to BQP with O(D²N log N) overhead (arXiv: 2605.22744)
+  - Gates specified by Pauli observable constraints instead of direct unitary operations
+  - Each disjoint layer accompanied by pairwise or k-local quantum state tomography
+  - Proven universal for BQP with polynomial overhead on near-term hardware
+  - **Activation**: dynamic Pauli constraints, quantum circuit tomography, Pauli observable, coupling graph circuit
+
+### Semidefinite Programming for Optimal Quantum Cloning
+- [[sdpc-quantum-cloning]] - Computational framework reformulating quantum cloning as SDP over CPTP maps via Choi-Jamiolkowski isomorphism with primal-dual optimality certification (arXiv: 2605.21274)
+  - Choi matrix representation enables optimization over quantum channels as positive matrix optimization
+  - Strong duality provides numerical certification of global optimality without analytical proofs
+  - Kraus operators automatically extracted from optimal Choi matrix via spectral decomposition
+  - **Activation**: quantum cloning SDP, Choi-Jamiolkowski cloning, CPTP map optimization, Kraus extraction
+
+### Q-PhotoNAS: Hybrid Quantum Neural Architecture Search on Photonic Devices
+- [[q-photonas-quantum-nas]] - Automated NAS framework for hybrid photonic quantum-classical models combining genetic algorithm search with learnable phase encoding (arXiv: 2605.22097)
+  - Replaces manually tuned architectures with automated search over preprocessing, encoding, and circuit structure
+  - Genetic algorithm-based search with hardware compatibility constraints
+  - Learnable phase encoding jointly optimized with quantum circuit parameters
+  - **Activation**: Q-PhotoNAS, photonic quantum NAS, quantum neural architecture search, learnable phase encoding
 
 ### Equivalence of Privacy and Stability with Generalization Guarantees in Quantum Learning
 - [[quantum-learning-privacy-generalization]] - Unified information-theoretic framework connecting privacy, stability, and generalization in quantum learning (arXiv: 2602.01177)
@@ -666,3 +700,4 @@
    499|
    500|### Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck
    501|
+
