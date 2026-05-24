@@ -2,44 +2,38 @@
 name: self-supervised-local-learning-hierarchy
 description: "Biologically plausible local self-supervised learning rules that learn hidden hierarchical data structure as efficiently as supervised backprop. Demonstrates that Direct Feedback Alignment (DFA) methods fail on hierarchical tasks due to input-specific masking. Use for biologically plausible learning algorithms, local plasticity rules, self-supervised representation learning."
 arxiv_id: "2605.18557"
-paper_title: "Self-supervised local learning rules learn the hidden hierarchical structure of high-dimensional data"
+date: "2026-05-18"
 authors: "Ariane Delrocq, Wu S. Zihan, Guillaume Bellec, Wulfram Gerstner"
-publication_date: "2026-05-18"
-category: "Neuroscience Research"
+tags: [local-learning, biologically-plausible, self-supervised, representation-learning, DFA, plasticity, computational-neuroscience]
 ---
 
-# Self-Supervised Local Learning Rules
-
-**arXiv**: 2605.18557  
-**Date**: 2026-05-18  
-**Authors**: Ariane Delrocq, Wu S. Zihan, Guillaume Bellec, Wulfram Gerstner  
+# Self-Supervised Local Learning Rules Learn Hierarchical Structure
 
 ## Overview
-
-This paper investigates biologically plausible learning algorithms on the Random Hierarchy Model (RHM), an artificial dataset designed to study how deep neural networks learn intrinsic hierarchical structure from high-dimensional data. The key finding is that local self-supervised learning rules (contrastive and non-contrastive) can match the data efficiency of supervised backpropagation, while Direct Feedback Alignment (DFA) methods fail on hierarchical tasks.
+From EPFL (Gerstner lab). Tests biologically plausible learning algorithms on the **Random Hierarchy Model (RHM)** — a controlled synthetic dataset with known hierarchical structure. Key finding: **local self-supervised learning rules match backprop's data efficiency**, while **DFA methods fail catastrophically** on hierarchical tasks.
 
 ## Key Findings
 
-- **Local self-supervised learning rules** using layerwise contrastive or non-contrastive loss functions solve RHM tasks as efficiently as backpropagation
-- **DFA and its variants fail** on hierarchical tasks due to missing input-specific masking — a critical nonlinearity in backprop that enables learning of complex hierarchical structure
-- **Compatibility with cortical plasticity**: Layerwise loss functions enable local learning rules consistent with known synaptic plasticity mechanisms in cortex
+1. **Self-supervised local learning succeeds** — Layerwise contrastive (SimCLR-style) and non-contrastive (BYOL/Barlow Twins-style) loss functions learn RHM tasks as efficiently as full backpropagation
+2. **DFA variants fail** — Direct Feedback Alignment and its extensions (DFA, DRL, SSP) cannot learn the hierarchical structure because they lack input-specific masking: the nonlinear derivative in backprop that varies per-sample
+3. **Cortical plausibility** — Local layerwise objectives require no error transport, no weight symmetry, and no equilibrium convergence — fully compatible with known synaptic plasticity
 
-## Methodological Details
+## The RHM Benchmark
+- Synthetic dataset with tunable hierarchical depth and complexity
+- Requires deep enough networks to capture all hidden hierarchies
+- Previously shown (Cagnetta et al., 2024) that shallow networks fail even with unlimited data
+- Ideal testbed for evaluating whether a learning rule discovers hierarchical structure
 
-- **Random Hierarchy Model (RHM)**: A controlled synthetic dataset with known hierarchical structure that allows precise measurement of representation learning
-- **Two classes of local rules tested**:
-  1. Direct feedback signal approaches (DFA variants) — approximate error propagation from output
-  2. Layerwise self-supervised loss functions — contrastive and non-contrastive objectives
+## Why DFA Fails
+- DFA uses fixed random feedback matrices — same for all inputs
+- Backprop's Jacobian (derivative of ReLU etc.) creates input-dependent **masking** 
+- This masking is essential for learning when hidden layers have many more units than output classes
+- Without it, DFA's credit assignment becomes sample-independent noise on hierarchical tasks
 
-## Significance
-
-This work reveals a fundamental limitation of DFA methods and demonstrates that local self-supervised learning offers a biologically plausible alternative to backpropagation that does not sacrifice data efficiency. The findings provide strong constraints on theories of cortical learning and suggest that the brain may use layer-local objective functions rather than explicit error feedback.
+## Why Local Self-Supervised Learning Succeeds
+- Each layer optimizes its own representation quality (contrastive: maximize mutual info between augmentations; non-contrastive: decorrelate features)
+- No error propagation needed — learning signal is local to each layer
+- Data efficiency matches BP: ~10⁴–10⁵ examples for deep hierarchies (vs. ~10⁶ for DFA)
 
 ## Activation Keywords
-
-- local learning rules
-- biologically plausible learning
-- self-supervised representation learning
-- Random Hierarchy Model
-- Direct Feedback Alignment failure
-- local plasticity
+local learning rules, biologically plausible learning, self-supervised representation learning, Random Hierarchy Model, Direct Feedback Alignment failure, local plasticity
