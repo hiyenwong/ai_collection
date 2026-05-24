@@ -8,6 +8,14 @@
   - Applicable to single-neuron electrophysiology and cable-equation model validation
   - **Activation**: leggett-garg, neural dynamics, non-diffusive, persistent stochastic, Kac process, Telegrapher equation, temporal correlation, non-Markovian
 
+### Quantum Photonic Neural Networks in Time
+- [[quantum-photonic-neural-networks]] - Time-bin-encoded QPNN architecture with depth-independent hardware scaling (arXiv: 2603.23798)
+  - Same number of photonic elements regardless of network size or depth
+  - Time-bin encoding replaces spatial encoding for resource-efficient quantum neural networks
+  - Nonlinear photonic circuits trained to process quantum information
+  - Loss and phase noise modeling for realistic hardware imperfections
+  - **Activation**: quantum photonic neural network, QPNN, time-bin encoding, photonic quantum computing, nonlinear photonic circuit, brain-inspired quantum
+
 ### Quantum circuit design via dynamic Pauli constraints
 - [[dynamic-pauli-constraints-quantum]] - Novel quantum computation model using Pauli observable constraints for gate specification with built-in tomography; universal for BQP with O(D^2 N log N) overhead (arXiv: 2605.22744)
   - Gates specified as constraints on Pauli observables with built-in pairwise/k-local state tomography per layer

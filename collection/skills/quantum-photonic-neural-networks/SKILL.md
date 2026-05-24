@@ -1,181 +1,88 @@
 ---
 name: quantum-photonic-neural-networks
-description: Time-bin-encoded Quantum Photonic Neural Networks (QPNN) architecture. Reconfigurable nonlinear photonic circuits inspired by the brain, trained to process quantum information. Time encoding requires constant number of photonic elements regardless of network size/depth. Use when: quantum photonic circuits, time-encoded QNN, photonic neural networks, quantum dot nonlinearities, Bell-state analysis, Kerr nonlinearity.
+description: >
+  Time-bin-encoded quantum photonic neural network (QPNN) architecture methodology.
+  Use when designing quantum neural networks with photonic systems, time-encoded quantum circuits,
+  nonlinear photonic processors for quantum information, or brain-inspired quantum computing architectures.
+  Covers resource-efficient scaling (constant photonic elements regardless of network size/depth),
+  loss and phase noise modeling, and timing algorithms for reconfigurable nonlinear photonic circuits.
+  Triggers: quantum photonic neural network, QPNN, time-bin encoding, photonic quantum computing,
+  nonlinear photonic circuit, brain-inspired quantum, quantum neural architecture, optical neural network
 ---
 
-# Quantum Photonic Neural Networks in Time
+# Quantum Photonic Neural Networks (Time-Bin Encoded)
 
-## Description
+Methodology from arXiv:2603.23798 — architecture and timing algorithm for time-bin-encoded
+QPNNs: reconfigurable nonlinear photonic circuits inspired by the brain, trained to process
+quantum information.
 
-Time-bin-encoded Quantum Photonic Neural Networks (QPNN) are reconfigurable nonlinear photonic circuits inspired by the brain, trained to process quantum information. Unlike spatially-encoded QPNNs, time-encoded networks require the same number of photonic elements (phase shifters, switches) regardless of network size or depth — enabling scalable quantum neural processing.
+## Key Advantage
 
-**Source**: arXiv:2603.23798 — "Quantum photonic neural networks in time" (Vazquez, Ewaniuk, Rotenberg, 2026-03-25)
+Unlike spatially-encoded QPNNs, **time-encoded networks require the same number of photonic
+elements (phase shifters, switches) regardless of network size or depth**. This enables
+arbitrarily large/deep networks with fixed hardware resources.
 
-## Activation Keywords
-- QPNN time encoding
-- quantum photonic neural network
-- time-bin quantum network
-- photonic neural network scaling
-- quantum dot nonlinearity
-- Bell-state analyzer photonic
-- Kerr nonlinearity quantum
-- time-encoded QNN
-- reconfigurable photonic circuit
-- 量子光子神经网络
-- 时间编码光子网络
+## Architecture
 
-## Core Architecture
+### Time-Bin Encoding
 
-### 1. Time-Bin Encoding Advantage
-- **Constant hardware cost**: Same number of photonic elements regardless of network size/depth
-- **Recursive time-multiplexing**: Reuses same physical components across time bins
-- **Scalable**: No exponential growth in components with network depth
-- Contrast with spatial encoding: requires O(N×D) elements for N neurons, D depth
+- Quantum information encoded in temporal modes (time bins) of photons
+- Single photon's arrival time encodes the computational basis state
+- Sequential processing through the same physical hardware
 
-### 2. Network Components
-- **Phase shifters**: Trainable parameters (analogous to weights)
-- **Switches**: Route photons between time bins
-- **Nonlinear element**: Provides quantum nonlinearity (Kerr or quantum dot scattering)
-- **Delay lines**: Store photons between processing steps
+### Circuit Components
 
-### 3. Imperfection Modeling
-The architecture accounts for realistic imperfections:
-- **Photon loss**: Reduces efficiency
-- **Routing errors**: Incorrect time-bin switching
-- **Distinguishable photons**: Reduces quantum interference (critical for quantum advantage)
+1. **Delay lines** — store photons for one time bin
+2. **Phase shifters** — apply programmable unitary transformations
+3. **Switches** — route photons between paths
+4. **Nonlinear element** — provides quantum nonlinearity (e.g., measurement-based or Kerr)
 
-## Nonlinearity Implementations
+### Depth-Independent Scaling
 
-### Ideal Kerr Nonlinearity
-- Hypothetical instantaneous nonlinear response
-- Can be trained for CNOT gate implementation
-- Serves as theoretical baseline
-
-### Realistic Quantum Dot Nonlinearity
-- Single semiconductor quantum dot coupled to photonic waveguide
-- Provides realistic two-photon nonlinearity
-- **Trained as Bell-state analyzer**:
-  - Fidelity: 0.96 (raw)
-  - Fidelity: >0.99 (with time gating)
-  - Efficiency: >0.9 (with time gating)
-
-## Training Workflow
-
-### Step 1: Network Definition
 ```
-Define QPNN with:
-  - Number of time bins (network size)
-  - Nonlinearity type (Kerr / quantum dot)
-  - Loss parameters (photon loss, routing error rate)
-  - Target operation (CNOT, Bell-state analysis, etc.)
+Spatial encoding:  O(N × D) elements for N modes, D depth
+Time-bin encoding: O(1) elements for any N, D
 ```
 
-### Step 2: Timing Algorithm
-```
-Implement recursive time-multiplexing:
-  1. Inject photons at specific time bins
-  2. Apply phase shifts and switches sequentially
-  3. Route through nonlinear element
-  4. Store in delay lines between steps
-  5. Measure output at final time bins
-```
+## Timing Algorithm
 
-### Step 3: Training
-```
-Optimize phase parameters:
-  1. Define loss function (gate fidelity, state overlap)
-  2. Use gradient-based optimization
-  3. Account for noise model (loss, distinguishability)
-  4. Converge to optimal phase configuration
-```
+The timing algorithm controls when each photonic element applies its operation:
 
-### Step 4: Time Gating (Optional)
-```
-Apply temporal post-selection:
-  1. Only accept photons within expected time windows
-  2. Discard late/early arrivals
-  3. Trade-off: higher fidelity vs. lower efficiency
-```
+1. Initialize time-bin sequence
+2. For each time step t:
+   - Apply phase shift φ(t) to current time bin
+   - Route through switch s(t)
+   - Store in delay line if needed
+3. Nonlinear operation at designated layer
 
-## Performance Benchmarks
+## Imperfection Modeling
 
-| Task | Fidelity (raw) | Fidelity (gated) | Efficiency |
-|------|---------------|------------------|------------|
-| Bell-state analysis | 0.96 | >0.99 | >0.9 |
-| CNOT gate | Trained (ideal Kerr) | - | - |
+### Loss
 
-## Tools Used
-- **exec**: Simulate quantum photonic circuits
-- **read**: Load paper references and theoretical models
-- **write**: Save simulation configurations and results
+- Photon loss rate η per component
+- Affects success probability exponentially with depth
+- Mitigated by error detection/correction
 
-## Usage Patterns
+### Phase Noise
 
-### Pattern 1: QPNN Architecture Design
-```
-Design a time-bin QPNN:
-1. Determine target quantum operation
-2. Choose nonlinearity (Kerr for theory, quantum dot for implementation)
-3. Set loss parameters based on hardware
-4. Train phase parameters for target operation
-5. Apply time gating if fidelity requirements demand it
-```
+- Random phase fluctuations δφ per component
+- Accumulates coherently across layers
+- Modeled as Gaussian noise on phase parameters
 
-### Pattern 2: Scalability Analysis
-```
-Analyze scaling of QPNN:
-1. Hardware cost: O(1) elements per time bin (constant)
-2. Time cost: O(depth) sequential operations
-3. Trade-off: depth vs. coherence time requirements
-4. Compare with spatial QPNN: O(N×D) hardware scaling
-```
+## Training
 
-## Error Handling
+- Gradient-based optimization of phase parameters
+- Nonlinear element enables universal quantum computation
+- Can learn unitary transformations, state preparation, classification
 
-### Photon Loss
-- Reduces overall efficiency
-- Mitigation: time gating to improve fidelity at cost of efficiency
-- Design for expected loss rate of target hardware platform
+## Applications
 
-### Photon Distinguishability
-- Most critical imperfection for quantum interference
-- Reduces entanglement generation capability
-- Solution: use identical photon sources, active stabilization
+- Quantum machine learning on photonic hardware
+- Quantum state discrimination
+- Variational quantum circuits with photonic implementation
+- Brain-inspired quantum information processing
 
-### Routing Errors
-- Incorrect time-bin assignment
-- Solution: calibrate switch timing, use error correction
+## Activation
 
-## Implementation Notes
-
-### Hardware Platform
-- Semiconductor quantum dot + photonic waveguide (current best)
-- Alternative: nonlinear crystals, integrated photonics
-- Requires cryogenic operation for quantum dot
-
-### Simulation
-```python
-# Time-bin QPNN simulation sketch:
-# 1. Define time bin structure
-# 2. Model phase shifters as trainable unitary matrices
-# 3. Model nonlinearity as scattering matrix
-# 4. Propagate state through time bins recursively
-# 5. Calculate fidelity with target operation
-```
-
-## Related Skills
-- **quantum-neural-hybrid**: Hybrid quantum-classical neural networks
-- **quantum-reservoir-computing**: Quantum reservoir computing patterns
-- **photonic-neural-network-memory**: Photonic neural network memory mechanisms
-- **quantum-ml-patterns**: QML research patterns
-
-## Limitations
-- Requires high-quality single-photon sources
-- Time gating trades efficiency for fidelity
-- Coherence time limits maximum network depth
-- Quantum dot coupling efficiency is hardware-dependent
-- Training may be sensitive to noise model assumptions
-
-## References
-- arXiv:2603.23798 — QPNN paper (https://arxiv.org/abs/2603.23798)
-- https://arxiv.org/pdf/2603.23798 — PDF download
+Keywords: quantum photonic neural network, QPNN, time-bin encoding, photonic quantum computing,
+nonlinear photonic circuit, brain-inspired quantum, quantum neural architecture, optical neural network
