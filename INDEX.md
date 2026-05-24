@@ -1,5 +1,13 @@
 ## 2026-05-25 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
+### ORCHID: Kuramoto-Based Quantum Consensus Protocol
+- [[orchid-kuramoto-quantum-consensus]] - Bio-inspired distributed consensus mapping neuroscientific binding problem onto Byzantine fault tolerance using Kuramoto synchronization + Quantum Secret Sharing (arXiv: 2605.12126)
+  - Maps neural oscillator synchrony → consensus nodes, gamma-band binding → consensus trigger
+  - Kuramoto order parameter r(t) > θ_b triggers binding/consensus event
+  - QSS fidelity phase transition at coherence c* ≈ 0.82
+  - r_max = 0.988 at K=3.0, 100% consensus at 0-40% Byzantine faults, O(n·k) message complexity
+  - **Activation**: ORCHID consensus, Kuramoto brain synchronization, quantum secret sharing consensus, neuro-inspired blockchain, binding problem distributed systems, gamma-band binding
+
 ### SPATE: Spiking-Phase Adaptive Temporal Encoding for Quantum Machine Learning
 - [[spiking-phase-quantum-encoding]] - Spike-driven temporal encoding converting real-valued features into LIF spike trains and mapping spike statistics to quantum rotations, with encoding-centric evaluation protocol (arXiv: 2604.11022)
   - Converts tabular features into LIF spike trains, maps spike statistics to quantum rotation gates
