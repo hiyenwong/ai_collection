@@ -1,3 +1,20 @@
+## 2026-05-24 - Neuroscience Research (Cron Job)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm (fWBMs) integrating bottom-up whole-brain modeling with top-down neuroconnectionism, defined by four minimal criteria: structural grounding, continuous-time dynamical realism, functional competence, and mappable observables (arXiv: 2605.18118)
+  - Four minimal criteria: structural grounding in connectomes, dynamical realism, functional competence, mappable observables
+  - Three-pillar roadmap: short-term hybrid models, mid-term integrated architectures, long-term closed-loop fWBMs
+  - Bridges two previously separate modeling traditions in computational neuroscience
+  - **Activation**: fWBM, functional whole-brain model, whole-brain modeling, neuroconnectionism, brain dynamics, cognitive function, connectome
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[spiking-temporal-memory-timing-replay]] - Spiking Temporal Memory (sTM) model extending biologically inspired SNN framework to learn both order and precise timing of sequence elements with flexible replay speed modulation (arXiv: 2605.22523)
+  - Extends sTM model from order-only to combined order-and-timing learning
+  - Uses synaptic delay plasticity and STDP for temporal encoding
+  - Enables flexible replay speed modulation via spike-frequency adaptation
+  - Relevant to hippocampal replay, memory consolidation, and neuromorphic computing
+  - **Activation**: sTM, spiking temporal memory, STDP, sequence timing, replay speed, hippocampal replay, spiking neural network
+
 ## 2026-05-23 - Anthropic Founder Playbook (中文精读版)
 
 ### Anthropic 创始人手册: Building an AI-Native Startup
