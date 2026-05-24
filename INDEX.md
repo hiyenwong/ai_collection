@@ -1,3 +1,19 @@
+## 2026-05-24 - Systems Engineering Research (Cron Job)
+
+### AdaPTwin: Adaptive Multi-Fidelity Predictive Digital Twin
+- [[adaptwin-digital-twin]] - Adaptive multi-fidelity predictive digital twin for proactive RRM in vehicular networks (arXiv: 2605.21897)
+  - Core: Cloud-edge hierarchical architecture with dynamic fidelity adjustment
+  - Key: Transformer trajectory prediction + continual/transfer learning + NVIDIA Sionna ray tracing
+  - Result: 90% sum-rate gain, 80% outage reduction
+  - **Activation**: digital twin, adaptive fidelity, RRM, vehicular networks
+
+### Contractual Skills: A GovernSpec Design Framework for Enterprise AI Agents
+- [[contractual-skills-governspec]] - Governance layer design for AI agent skills as inspectable task contracts (arXiv: 2605.22634)
+  - Core: Contractual skill structure with goal/input/permissions/output/verification fields
+  - Key: Governance boundary between skills, GovernSpec YAML, MCP, guardrails, tracing
+  - Result: Outperforms no-skill baselines, reduces high-risk tool attempts
+  - **Activation**: AI agent governance, contractual skills, GovernSpec
+
 ## 2026-05-24 - Neuroscience Research (Cron Job - Sunday)
 
 ### Temporal Coding as a Substrate for Sensorimotor Object Inference: A Spiking Reinterpretation of Thousand Brains Architecture (arXiv:2605.22206)

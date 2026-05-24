@@ -1,96 +1,102 @@
 ---
 name: adaptwin-digital-twin
-description: "Adaptive Multi-Fidelity Predictive Digital Twin methodology for proactive resource management in vehicular networks. Based on AdaPTwin paper (arXiv:2605.21897). Use when designing digital twin systems with adaptive fidelity, cloud-edge hierarchical architectures, or proactive radio resource management in dynamic wireless environments."
+description: "AdaPTwin: Adaptive Multi-Fidelity Predictive Digital Twin for proactive radio resource management in vehicular networks. Based on arXiv:2605.21897 (May 2026). Use when designing adaptive digital twin systems with cloud-edge architecture, multi-fidelity optimization, or predictive vehicular network control. Authors: Armin Makvandi, Md. Zoheb Hassan, Md. Jahangir Hossain."
 ---
 
 # AdaPTwin: Adaptive Multi-Fidelity Predictive Digital Twin
 
-Adaptive multi-fidelity predictive digital twin framework for proactive and latency-aware resource management in vehicular networks. Core contribution: dynamically adjusting digital twin fidelity based on network conditions.
+Core methodology from arXiv:2605.21897 (May 2026).
 
-## Core Architecture
+## Problem
 
-### Hierarchical Cloud-Edge Architecture
+Digital twins are critical for achieving ultra-reliable low-latency communications (URLLC) in dynamic vehicular networks. Conventional Network Digital Twins (NDTs) suffer from:
+- **Single-fidelity tradeoff**: High-fidelity models (ray-tracing) are accurate but too slow for real-time RRM
+- **Low-fidelity inaccuracy**: Simplified models fail to capture complex propagation dynamics
+- **Static fidelity**: Fixed-fidelity twins cannot adapt to changing network conditions
+- **Latency constraints**: Proactive RRM requires predictions within stringent timing windows
 
-```
-┌─────────────────────┐
-│   Cloud Layer       │  ← Fidelity selection (periodic, compute-intensive)
-│  - Fidelity tuning  │
-│  - Model updates    │
-└────────┬────────────┘
-         │
-┌────────┴────────────┐
-│   Edge Layer        │  ← Proactive RRM loop (real-time)
-│  - Channel predict  │
-│  - RRM execution    │
-└─────────────────────┘
-```
+## Solution: Adaptive Multi-Fidelity Digital Twin
 
-The framework adopts a **hierarchical cloud-edge architecture**:
-1. **Cloud**: Computationally intensive fidelity selection, performed periodically
-2. **Edge**: Proactive RRM loop operates in real-time
+AdaPTwin dynamically adjusts NDT fidelity based on real-time network conditions, balancing accuracy vs. latency.
 
-### Edge-Based Proactive RRM Pipeline
+### Architecture
 
-1. **Channel Prediction**: Predict channels between vehicles and RSUs
-   - Trajectory forecasting via transformer model
+**Hierarchical Cloud-Edge Architecture:**
+1. **Cloud layer** (periodic, computationally intensive):
+   - Fidelity selection and optimization
+   - Trajectory model updating (continual + transfer learning)
+   - Virtual environment maintenance
+2. **Edge layer** (real-time, sub-second):
+   - Channel prediction via trajectory forecasting
    - Look-ahead ray tracing
-2. **RRM Execution**: Joint RSU beamforming and vehicle-RSU association optimization
+   - RRM execution
 
-## Key Technical Components
+### Key Components
 
-### 1. Adaptive Fidelity Selection
+#### 1. Adaptive Fidelity Selection
+- **Dynamic fidelity adjustment**: Switch fidelity levels based on network dynamics
+- **Cost-aware optimization**: Balance computation cost vs. prediction accuracy
+- **Trigger conditions**: Vehicle speed changes, traffic density shifts, channel degradation
 
-Unlike single-fidelity and multi-fidelity NDTs with fixed fidelity levels, AdaPTwin **dynamically adjusts NDT fidelity** based on:
-- Current network conditions
-- Traffic patterns
-- Latency requirements
+#### 2. Transformer-Based Trajectory Prediction
+- **Continual learning**: Adapt to new environments without forgetting
+- **Transfer learning**: Rapid adaptation to new traffic patterns
+- **Multi-vehicle coordination**: Joint trajectory forecasting
 
-### 2. Transformer with Continual & Transfer Learning
+#### 3. Look-Ahead Ray Tracing
+- **NVIDIA Sionna** for realistic radio propagation modeling
+- **Dynamically updated virtual environment** reflecting current road geometry
+- **Pre-computation cache**: Reuse ray-tracing results for similar configurations
 
-Vehicular trajectory prediction enhanced with:
-- **Continual learning**: Adapts to new environments
-- **Transfer learning**: Generalizes across traffic patterns
+#### 4. Joint Optimization
+- **Problem**: Joint RSU beamforming + vehicle-RSU association
+- **Objective**: Maximize proportionally fair sum-rate
+- **Solver**: Scalable multi-start iterative coordinate descent
 
-### 3. Dynamic Ray Tracing
+### Performance Results
+- **Up to 90% sum-rate gain** over non-adaptive NDTs
+- **80% outage probability reduction**
+- Real-time performance maintained at edge
+- Successful adaptation where fixed-fidelity twins fail
 
-Ray-tracing performed using NVIDIA Sionna by exploiting a **dynamically updated virtual environment** to ensure realistic radio propagation within the NDT.
+## Implementation Patterns
 
-### 4. Joint Optimization Problem
+### Pattern 1: Cloud-Edge Digital Twin Split
+```
+Cloud (seconds/minutes):
+  - Update prediction models
+  - Optimize fidelity strategy
+  - Maintain virtual environment
 
-A **joint RSU beamforming and vehicle-RSU association problem** is solved:
-- Objective: Maximize proportionally fair sum-rate
-- Method: Scalable multi-start iterative coordinate descent algorithm
+Edge (milliseconds):
+  - Run fast prediction with current fidelity level
+  - Execute RRM decisions
+  - Report performance metrics
+```
 
-## Performance Results
+### Pattern 2: Adaptive Fidelity Controller
+```
+if network_state is STABLE:
+    use LOW_FIDELITY (fast, low compute)
+elif network_state is MODERATE:
+    use MEDIUM_FIDELITY (balanced)
+elif network_state is VOLATILE:
+    use HIGH_FIDELITY (accurate, high compute)
+```
 
-- Up to **90% sum-rate gain** compared to non-adaptive NDTs
-- Up to **80% outage probability reduction**
-- Maintains real-time performance while adapting to diverse scenarios
-
-## Usage Patterns
-
-### When to Apply This Pattern
-
-- Designing digital twin systems for dynamic environments
-- Resource management in vehicular or mobile networks
-- Systems requiring adaptive fidelity for latency-RRM tradeoffs
-- Cloud-edge hierarchical system architectures
-
-### Key Design Decisions
-
-1. **Fidelity vs Latency Tradeoff**: Periodically (cloud) adjust fidelity level rather than fixed
-2. **Proactive vs Reactive**: Predict before acting using trajectory forecasting + ray tracing
-3. **Hierarchical Decomposition**: Separating heavy computation (cloud) from real-time decisions (edge)
+### Pattern 3: Continual Learning for Digital Twins
+- Maintain base model trained on diverse data
+- Use replay buffer to prevent catastrophic forgetting
+- Apply transfer learning for new deployment sites
 
 ## Related Skills
-
-- [[physics-guided-neural-networks]] - Physics-informed neural network design
-- [[agentic-fast-slow-planning]] - Fast-slow planning architectures
-- [[equation-free-digital-twins]] - Equation-free digital twin framework
+- [[equation-free-digital-twins]] - Equation-free digital twin framework using Koopman operators
+- [[agentic-fast-slow-planning]] - Fast-slow planning architectures bridging large-model reasoning with real-time control
+- [[physics-guided-neural-networks]] - Physics-guided neural network design and training
 
 ## Activation Keywords
-
 - digital twin, adaptive fidelity, multi-fidelity, predictive digital twin, NDT
 - vehicular networks, radio resource management, RRM
 - cloud-edge architecture, hierarchical edge computing
 - trajectory prediction, ray tracing, beamforming
+- continual learning, transfer learning, URLLC
