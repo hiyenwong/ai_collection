@@ -88,6 +88,22 @@
 
 ## 2026-05-25 - Information Science + Quantum (Cron Job - Sunday)
 
+### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat
+- [[quantum-crypto-exposure-measurement]] - Structurally-grounded HNDL exposure assessment using temporal hazard, vulnerability-exposure multiplicative terms, and saturation dynamics (arXiv: 2605.22569)
+  - Core: HNDL compromise probability = h(t) × V_crypto × O_exposure / (1 + λ × D/A)
+  - Key: Additive scoring cannot capture vulnerability-exposure interaction; marginal sensitivity is endogenous
+  - Result: Framework works under partial observability; prioritises migration based on position in vulnerability-exposure plane
+  - **Activation**: HNDL, harvest now decrypt later, quantum cryptographic exposure, post-quantum risk assessment, quantum security measurement
+
+### Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality
+- [[quantum-fisher-information-duality]] - QFI duality establishing precision-privacy tradeoff: F_Q(w·θ) + F_Q(v·θ) ≤ N for orthogonal directions in distributed quantum sensing (arXiv: 2605.20765)
+  - Core: Heisenberg-limited precision for one direction forces zero QFI for all orthogonal directions
+  - Key: GHZ states (N≥2) and equatorial states (N=2) achieve tight bound
+  - Result: Privacy is automatic — physics enforces the guarantee, no additional cryptography needed
+  - **Activation**: quantum Fisher information, QFI duality, distributed quantum sensing, quantum privacy, parameter privacy
+
+## 2026-05-24 - Information Science + Quantum (Cron Job - Sunday)
+
 
 ### How many systems can be dephased before the quantum switch becomes causally definite? (arXiv:2605.22807)
 - [[quantum-causal-nonseparability]] - Analyzes how much dephasing noise a quantum switch can tolerate before its indefinite causal order becomes causally separable; quantifies robustness of quantum advantages from indefinite causal structure (arXiv: 2605.22807)
