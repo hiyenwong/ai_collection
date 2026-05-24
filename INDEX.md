@@ -30,6 +30,15 @@
   - Flexible constraint system allows domain-specific tokenization optimization
   - **Activation**: convex tokenization, tokenizer optimization, BPE alternative, linear program tokenizer, bits-per-byte improvement, globally optimal vocabulary
 
+### Dominant vibronic relaxation channels in a europium-based molecular qubit
+- [[molecular-qubit-vibronic-engineering]] - Parameter-free DFT+TD-DFT+Redfield framework for predicting T1 relaxation times and identifying dominant decoherence pathways in molecular spin qubits (arXiv: 2605.21520)
+  - Reproduces experimental T1_long=41.39s within factor 1.4 (calculated 55.88s at 4.2K) for Eu molecular qubit
+  - Identifies dpphen rocking mode (332 cm-1) as dominant vibronic coupling channel
+  - EFG derivative analysis identifies nitrate-rocking mode (181 cm-1) as primary nuclear spin environment modulator
+  - Ligand rigidification and substitution strategies suggested for coherence optimization
+  - **Activation**: molecular qubit T1 relaxation, vibronic coupling qubit, DFT qubit decoherence, Redfield theory spin relaxation, europium spin qubit, ligand design quantum coherence
+
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Exact Hidden Paths in Noisy High Dimensional Path Spaces (arXiv: 2605.22477)
