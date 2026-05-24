@@ -1,3 +1,12 @@
+## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
+
+### Overcoming Barren Plateaus in Variational Quantum Circuits using a Two-Step Least Squares Approach
+- [[two-step-vqc-optimization]] - Two-stage convex initialization + nonconvex refinement framework for reliable VQA training (arXiv: 2601.18060)
+  - Convex initialization shapes Hilmaton landscape into smooth, low-energy basin with detectable gradients
+  - Riemannian manifold optimization reduces condition number dependence of quantum least squares matrix
+  - Applied to BB84 QKD cryptanalysis for optimal cloning strategies
+  - **Activation**: two-step VQC optimization, convex initialization quantum circuits, barren plateau mitigation two-stage, Riemannian manifold quantum optimization
+
 ## 2026-05-24 - Information Science (Cron Job)
 
 ### Equivalence of Privacy and Stability with Generalization Guarantees in Quantum Learning
