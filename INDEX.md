@@ -1,5 +1,13 @@
 ## 2026-05-25 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
+### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
+- [[leggett-garg-neural-dynamics]] - LGI testing methodology for distinguishing diffusive vs persistent stochastic neural dynamics, revealing memory and non-Markovian structure (arXiv: 2605.12126)
+  - Leggett-Garg inequality as temporal probe of neural dynamics (analogue of Bell-type constraints)
+  - Kac-type finite-velocity processes → Telegrapher's equation → Dirac-like envelope equations
+  - LGI violation indicates persistent stochastic transport, not microscopic quantum coherence
+  - Applicable to single-neuron electrophysiology and cable-equation model validation
+  - **Activation**: leggett-garg, neural dynamics, non-diffusive, persistent stochastic, Kac process, Telegrapher equation, temporal correlation, non-Markovian
+
 ### Quantum circuit design via dynamic Pauli constraints
 - [[dynamic-pauli-constraints-quantum]] - Novel quantum computation model using Pauli observable constraints for gate specification with built-in tomography; universal for BQP with O(D^2 N log N) overhead (arXiv: 2605.22744)
   - Gates specified as constraints on Pauli observables with built-in pairwise/k-local state tomography per layer
