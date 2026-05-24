@@ -1,3 +1,19 @@
+## 2026-05-25 - Information Science + Quantum Physics (Monday Cron Job)
+
+### Sudden death of entanglement, rebirth of magic (arXiv:2605.22603)
+- [[magic-entanglement-complementarity]] - Local Markovian noise irreversibly destroys entanglement but can 'rebirth' magic (non-stabilizerness) through dissipation; stabilizer membership is not preserved by local channels, enabling noise-induced magic-state distillation via parity-syndrome extraction (arXiv: 2605.22603)
+  - Core: Magic-entanglement complementarity γₑ + γ₊ = 1 under amplitude damping on n-qubit GHZ states
+  - Key insight: Dissipation pushes states both into and out of stabilizer polytope; reborn magic in separable states can be concentrated for distillation
+  - Result: Magic-generators vs magic-insulators classification of pure stabilizer states under local dissipation
+  - **Activation**: magic entanglement complementarity, stabilizer polytope, magic state distillation, amplitude damping GHZ, quantum resource theory, non-stabilizerness, noise-induced magic
+
+### How many systems can be dephased before the quantum switch becomes causally definite? (arXiv:2605.22807)
+- [[causal-nonseparability-dephasing]] - Quantum processes with indefinite causal order retain causal nonseparability if any non-future system remains undephased, but become causally separable when all systems or only the future system is kept (arXiv: 2605.22807)
+  - Core: Sharp threshold — single non-future system preservation suffices for causal nonseparability in both bipartite and multipartite QC-QCs
+  - Key insight: Future system alone is insufficient; past and intermediate systems are essential for maintaining indefinite causal order
+  - Result: Minimal resource preservation strategy for quantum switch protocols under dephasing noise
+  - **Activation**: causal nonseparability, quantum switch, indefinite causal order, dephasing robustness, QC-QC, quantum causality, process matrix
+
 ## 2026-05-24 - Neuroscience Research (Sunday Cron Job)
 
 ### Learning sequence timing and control of replay speed in networks of spiking neurons (arXiv:2605.22523)
