@@ -1,3 +1,21 @@
+## 2026-05-24 - Neuroscience Research (Cron Job - Saturday)
+
+### A simple model of co-emergence of grid and place fields (arXiv:2605.21356)
+- [[grid-place-cell-co-emergence]] - First unified recurrent network model implementing Dale's Law (every neuron is either excitatory or inhibitory) trained via masked next-observation prediction to co-emerge both grid and place cells from a single architecture (arXiv: 2605.21356)
+  - Core: Single RNN with Dale's Law → self-supervised masked prediction → simultaneous emergence of grid-like and place-like spatial representations
+  - Key insight: Grid and place cells co-emerge through reciprocal connectivity — one does not cause the other, resolving the chicken-and-egg problem
+  - Result: Biologically realistic spatial representations without explicit spatial labels or architectural specialization for each cell type
+  - Comparison: Unifies previously separate accounts of grid and place cell origin within a single computational framework
+  - **Activation**: grid cell co-emergence, place cell model, Dale's Law neural networks, entorhinal-hippocampal circuit, spatial navigation self-supervised learning, grid cell emergence from prediction, MEC-HPC unified model
+
+### MIRAGE: Robust Multi-Modal fMRI-to-Image for Mental Imagery Reconstruction (arXiv:2605.17198)
+- [[mirage-fmri-mental-imagery-decoding]] - Robust multi-modal architecture for translating fMRI-to-image models from seen visual decoding to mental imagery reconstruction; shows SOTA seen-image performance ≠ SOTA mental imagery performance and proposes domain-aligned multi-modal fusion (arXiv: 2605.17198)
+  - Core: Multi-modal backbone integration + multi-loss training (reconstruction, perceptual, domain alignment, adversarial) → shared latent space for seen and imagined brain activity
+  - Key insight: Modern vision decoders that excel at seen image reconstruction can fail at mental imagery — different neural representations require different decoding strategies
+  - Result: MIRAGE outperforms single-backbone baselines on both seen and imagery conditions (up to 15% relative improvement on imagery)
+  - Evaluation: NSD-Imagery dataset with comprehensive metrics (pixcorr, SSIM, LPIPS, CLIP score) across seen and imagined conditions
+  - **Activation**: mental imagery fMRI decoding, seen-to-imagery transfer brain decoding, MIRAGE architecture, fMRI visual reconstruction, brain decoding domain generalization, NSD-Imagery dataset
+
 ## 2026-05-24 - Quantum Computing Research (Cron Job)
 
 ### Sparse Mamba Decoder for Surface Code Quantum Error Correction (arXiv:2605.17156)

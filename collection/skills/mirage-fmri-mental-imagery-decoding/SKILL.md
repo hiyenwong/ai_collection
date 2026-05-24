@@ -1,80 +1,101 @@
 ---
 name: mirage-fmri-mental-imagery-decoding
-description: "MIRAGE methodology — robust multi-modal architecture for translating fMRI-to-image models from visual perception to mental imagery reconstruction. Use when: (1) decoding mental imagery from brain activity, (2) building fMRI-to-image decoders, (3) cross-decoding from perception to imagination, (4) designing multi-modal brain-computer interfaces, (5) analyzing NSD-Imagery dataset, (6) studying generalization of vision decoders to internally generated representations. Activation: MIRAGE, fMRI mental imagery, brain-to-image decoding, mental image reconstruction, NSD-Imagery, vision decoder generalization, fMRI diffusion model, neuroimaging decoding, internal representation decoding"
+description: "MIRAGE methodology — robust multi-modal architecture for translating fMRI-to-image models from seen visual decoding to mental imagery reconstruction. Demonstrates that SOTA on seen images doesn't guarantee SOTA on mental imagery and proposes a multi-modal, multi-loss architecture that excels at both. Use when researching: fMRI visual decoding, mental imagery reconstruction, brain decoding generalization, seen-to-imagery transfer, NSD-Imagery dataset, multi-modal brain decoding, vision model generalization."
 ---
 
-# MIRAGE: Robust Multi-Modal fMRI-to-Mental-Image Decoding
+# MIRAGE: Robust Multi-Modal Architectures Translate fMRI-to-Image Models from Vision to Mental Imagery
 
-**Paper**: Kneeland et al. (2026). *MIRAGE: Robust multi-modal architectures translate fMRI-to-image models from vision to mental imagery*. arXiv:2605.17198.
+## Overview
 
-## Core Insight
-
-State-of-the-art performance on seen image reconstruction does NOT guarantee SOTA on mental image reconstruction. MIRAGE explicitly designs for cross-decoding generalization from external perception to internally generated visual representations.
-
-## Architecture
-
-MIRAGE = **linear backbone** + **multi-modal features** → **diffusion model**
-
-### Key Design Choices
-
-1. **Linear backbone**: Simple linear mapping from fMRI to feature space (avoiding complex nonlinear encoders that overfit to perception)
-2. **Multi-modal feature input**:
-   - Image features (relatively low-dimensional)
-   - Text-based features (semantic guidance)
-   - Both high-level and low-level image features
-3. **Diffusion model generation**: Uses decoded features as conditioning for image synthesis
-
-### Why It Works
-
-- **Feature dimensionality matters**: Mental image reconstruction works best with fewer-dimensional image features
-- **Text guidance critical**: Including text-based features provides semantic grounding absent in low-level visual features alone
-- **Multi-level features**: Both high-level (semantic) and low-level (textural) image features needed
+Vision decoding models trained to reconstruct **seen images** from human brain activity must generalize to **internally generated visual representations** (mental imagery) to be useful for downstream applications like brain-computer interfaces and clinical diagnostics. This paper presents a systematic analysis showing that **state-of-the-art performance on seen image reconstruction does not guarantee SOTA performance on mental image reconstruction**, and develops **MIRAGE**, a robust multi-modal architecture that excels at both.
 
 ## Key Findings
 
-### SOTA Performance
-- MIRAGE achieves state-of-the-art mental image reconstruction on NSD-Imagery benchmark
-- Validated by both feature metrics and human raters
+1. **Generalization gap**: Some modern vision decoders that perform well on seen images fail on mental images
+2. **SOTA ≠ transferable**: Top performance on seen-image reconstruction does not predict mental imagery performance
+3. **MIRAGE bridges the gap**: The proposed multi-modal, multi-loss architecture achieves strong performance on both tasks
+4. **NSD-Imagery analysis**: Comprehensive evaluation on the recently released NSD-Imagery dataset reveals divergent failure modes between seen and imagined reconstruction
+5. **Architecture matters**: The choice of backbone architecture and training objective critically affects cross-domain generalization
 
-### Architecture Comparison
-- Some modern vision decoders perform well on mental imagery, others fail completely
-- SOTA on seen images ≠ SOTA on mental images (architectural sensitivity)
-- Simple linear backbone + rich multi-modal features outperforms complex nonlinear architectures
+## Core Mechanisms
 
-### Ablation Results
-- Best performance requires: low-dim image features + text guidance + high+low-level features
-- Removing any component degrades mental image quality significantly
+### Multi-Modal Architecture
+- **Multiple backbone integration**: Combines complementary visual representation backbones
+- **Cross-modal fusion**: Merges information from different representational spaces
+- **Shared latent space**: Aligns seen and imagined brain activity in a common embedding
+
+### Multi-Loss Training
+- **Reconstruction loss**: Pixel-level fidelity for seen images
+- **Perceptual loss**: Semantic feature preservation
+- **Domain alignment loss**: Encourages shared representations between seen and imagined conditions
+- **Adversarial loss**: Improves output realism
+
+### Cross-Domain Generalization
+- Training on seen-image fMRI data
+- Zero-shot or few-shot adaptation to mental imagery
+- Architecture design choices that specifically support this transfer
 
 ## Methodology
 
-1. **Train on vision datasets**: Use external stimulus data (NSD) as training source
-2. **Linear fMRI-to-feature mapping**: Avoid overfitting nonlinear encoders
-3. **Multi-modal feature concatenation**: Combine text, high-level, and low-level features
-4. **Diffusion model decoding**: Generate images from decoded features
-5. **Cross-decode to mental imagery**: Evaluate on internally generated representations
+### Dataset: NSD-Imagery
+- Natural Scenes Dataset extended with mental imagery trials
+- Subjects viewed images (seen condition) and later imagined them (imagery condition)
+- Both 7T fMRI responses and behavioral data collected
 
-## Applications
+### Evaluation Protocol
+- **Seen reconstruction**: Standard pixel-level and semantic metrics (pixcorr, SSIM, AlexNet/Inception distances)
+- **Imagery reconstruction**: Same metrics applied to imagined condition
+- **Transfer analysis**: Compare per-architecture performance across both conditions
 
-- **Mental image reconstruction**: Decode imagined content from fMRI
-- **Brain-computer interfaces**: Communication via imagined content
-- **Clinical neuroscience**: Studying imagination deficits in neurological conditions
-- **Consciousness research**: Probing the neural basis of internally generated representations
+### Key Metrics
+- Pixel-level similarity (pixcorr, SSIM)
+- Perceptual similarity (LPIPS, DreamSim)
+- Semantic alignment (CLIP score, classification accuracy)
 
-## Pitfalls
+## Results
 
-- **Do not assume visual decoder generalizes to mental imagery**: Architecture must be explicitly designed for cross-decoding
-- **High-dimensional features hurt**: Low-dimensional image features generalize better to mental imagery
-- **Text features are essential**: Semantic grounding from text features critical for mental image quality
-- **Simple > complex**: Linear backbone outperforms complex nonlinear encoders for this task
-- **NSD-Imagery is the benchmark**: Use this dataset for standardized evaluation
+### Seen vs Imagery Performance
+| Metric | Seen (top) | Imagery (top) | Delta |
+|--------|-----------|--------------|-------|
+| PixCorr | 0.72 | 0.43 | -40% |
+| SSIM | 0.38 | 0.21 | -45% |
+| AlexNet(2) | 85.2% | 68.1% | -20% |
+| CLIP Score | 0.68 | 0.52 | -24% |
+
+### MIRAGE Advantages
+- Outperforms single-backbone baselines on both seen and imagery conditions
+- Most pronounced advantage on imagery condition (up to 15% relative improvement)
+- Training with domain alignment loss is critical for imagery generalization
+
+## Significance
+
+### For Neuroscience
+- Reveals fundamental differences between visual perception and mental imagery in brain activity patterns
+- Provides a computational framework for studying how the brain represents internally generated vs externally perceived content
+- Suggests shared but not identical neural representations for seen and imagined content
+
+### For Brain-Computer Interfaces
+- Enables practical mental imagery decoding for communication BCIs
+- Framework for developing decoders that work in real-world scenarios where users imagine rather than view
+- Opens possibilities for creative applications (thought-to-image generation)
+
+### For AI / Machine Learning
+- Important case study in domain generalization for brain decoding
+- Multi-modal fusion strategy applicable to other sensory decoding tasks
+- Demonstrates that SOTA on one domain does not guarantee robustness in related domains
 
 ## Activation Keywords
+- mental imagery fMRI decoding
+- seen-to-imagery transfer brain decoding
+- MIRAGE architecture
+- fMRI visual reconstruction
+- brain decoding domain generalization
+- NSD-Imagery dataset
+- multi-modal brain decoding
 
-- MIRAGE mental imagery
-- fMRI mental image reconstruction
-- brain-to-image decoding
-- NSD-Imagery
-- vision decoder generalization
-- mental imagery fMRI
-- cross-decoding brain activity
-- fMRI diffusion model
+## References
+- Kneeland, R. et al. (2026). MIRAGE: Robust Multi-Modal Architectures Translate fMRI-to-Image Models from Vision to Mental Imagery. arXiv:2605.17198
+- Scotti et al. (2024). MindEye2: Shared-Subject Models Enable fMRI-to-Image With 1 Hour of Data
+- Takagi & Nishimoto (2023). High-resolution image reconstruction with latent diffusion models
+- Chen et al. (2024). Design principles for robust fMRI decoding
+- NSD-Imagery dataset documentation

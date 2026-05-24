@@ -1,71 +1,91 @@
 ---
-name: grid-place-cell-co-emergence
-description: "First unified recurrent network model implementing Dale's Law that achieves co-emergence of grid cells and place fields from a single sensory-prediction objective without supervision of either cell type. Based on arXiv:2605.21356."
+name: grid-place-co-emergence
+description: "First unified recurrent network model implementing Dale's Law (every neuron is either excitatory or inhibitory) that trains via masked next-observation prediction to co-emerge both grid and place cells from a single architecture. Use when researching: grid cell emergence, place cell models, entorhinal-hippocampal circuits, spatial navigation neural networks, Dale's Law in computational models, co-emergence of spatial representations, MEC-HPC reciprocal connectivity, developmental spatial cognition."
 ---
 
-# A Simple Model of Co-Emergence of Grid and Place Fields
+# A Simple Model of Co-emergence of Grid and Place Fields
 
-**arXiv**: 2605.21356 | **Authors**: Zhaoze Wang, Genela Morris, Dori Derdikman, Pratik Chaudhari, Vijay Balasubramanian
+## Overview
 
-First single-objective recurrent network model in which grid cells (medial entorhinal cortex) and place cells (hippocampus) co-emerge without supervision of either type, addressing the chicken-and-egg problem of spatial representation development.
+Grid cells in the medial entorhinal cortex (MEC) and place cells in the hippocampus (HPC) together support spatial navigation. The two regions are reciprocally connected, creating a **chicken-and-egg problem**: how do both arise and reinforce each other during development? Current computational accounts either derive one type from the other or model emergence in isolation.
 
-## Key Contributions
-
-1. **First co-emergence model**: Unified recurrent network with Dale's Law trained on sensory-prediction objective produces both grid and place fields simultaneously
-2. **1,000+ config robustness**: Both spatial codes coexist across all tested training configurations; balance controlled by sensory noise/masking
-3. **Two complementary pressures**: (1) Sensory reconstruction/pattern completion → place fields, (2) Motion prediction/path integration → grid fields
-4. **Qualitative experimental reproduction**: Grid fragmentation, wall-removal merging, lattice alignment, 3D bat fields, developmental ordering (place cells precede grid cells)
-
-## Method
-
-### Network Architecture
-- Recurrent neural network with Dale's Law (each neuron is either excitatory or inhibitory)
-- Trained via sensory prediction: predict next sensory observation from masked previous observations and egocentric motion
-- No spatial labels, no place/grid cell supervision
-
-### Training Objective
-- **Reconstruction pressure**: Correct errors and reconstruct masked components of sensory observations
-- **Prediction pressure**: Predict next sensory state during navigation
-- The balance between these two pressures determines the grid vs. place field distribution
-
-### Validation
-- Tested across 1,000 different training configurations (varying noise, masking, network size)
-- Compared against experimental data: hairpin maze grids, wall removal, connected rooms, 3D bat flight
-- Developmental trajectory analysis: place cells emerge before grid cells
+This paper introduces the **first unified recurrent network model** that:
+1. Instantiates **Dale's Law** (each neuron is either exclusively excitatory or exclusively inhibitory)
+2. Is trained to predict the **next sensory observation** from masked observations
+3. **Co-emerges** both grid-like and place-like spatial representations within a single network
 
 ## Key Findings
 
-### Grid Cells for Path Integration
-- Grid-like firing patterns emerge from the motion prediction (path integration) objective
-- Hexagonal grid tessellation of spatial environment
-- Phase relationships and scale organization match experimental observations
+1. **Co-emergence**: Grid and place fields emerge simultaneously, not sequentially — one does not cause the other
+2. **Dale's Law compatibility**: The model respects biological Dale's Law while still producing both cell types
+3. **Self-supervised learning**: Trained via masked next-observation prediction (no explicit spatial labels)
+4. **Grid-like patterns**: Regular hexagonal firing patterns emerge in model units resembling MEC grid cells
+5. **Place-like patterns**: Localized spatial firing fields emerge resembling hippocampal place cells
+6. **Mutual reinforcement**: The two cell types mutually reinforce each other through the reciprocal architecture
 
-### Place Cells for Pattern Completion
-- Place-like fields emerge from the sensory reconstruction objective
-- Sparse, localized firing in specific spatial locations
-- Remapping properties consistent with hippocampal place cells
+## Core Mechanisms
+
+### Unified Recurrent Architecture
+- Single recurrent neural network with Dale's Law constraints
+- Excitatory and inhibitory populations with biologically realistic connectivity
+- Trained end-to-end via self-supervised prediction objective
+
+### Training Objective
+- **Masked next-observation prediction**: Given partial sensory observations, predict the next observation
+- No explicit spatial supervision (no coordinates, no place labels)
+- Forces the network to develop internal spatial representations to solve the task
 
 ### Emergent Properties
-- Grid fragmentation in hairpin mazes reproduces experimental findings
-- Grid field merging after wall removal matches observations
-- Lattice alignment across connected rooms
-- 3D volumetric grid fields in simulated bat flight
-- Developmental order: place cells before grid cells
+- **Grid cells**: Neurons with periodic, hexagonal spatial firing fields
+- **Place cells**: Neurons with localized, single-peak spatial firing fields
+- Both emerge from the same training objective without architectural specialization
 
-## When to Use
+## Methodology
 
-- Modeling spatial navigation and hippocampal-entorhinal circuits
-- Understanding neural code development without supervision
-- Studying grid/place cell interactions and co-emergence
-- Exploring sensory-prediction as a unified learning objective
-- Developing biologically-plausible spatial representations in AI
+### Model Architecture
+- Recurrent neural network with Dale's Law constraints
+- Excitatory/inhibitory balanced network dynamics
+- Sensory input → recurrent processing → prediction output
 
-## Related Skills
+### Training
+- Self-supervised on spatial navigation trajectories
+- Masked prediction objective
+- No spatial label supervision
 
-- [[platonic-representations-brain]] - Cross-subject neural geometry alignment
-- [[hippocampal-entorhinal-world-model]] - HPC-MEC inspired hierarchical world models
-- [[grid-cell-normative-theory-review]] - Normative theory review of grid cell representations
+### Evaluation Metrics
+- Spatial information content
+- Gridness score (hexagonal regularity measure)
+- Place field size and number of fields
+- Spatial correlation between model units and biological recordings
+
+## Significance
+
+### For Neuroscience
+- Resolves the chicken-and-egg problem: grid and place cells co-emerge through reciprocal connectivity
+- Shows Dale's Law is compatible with complex spatial representations
+- Provides a unified learning framework for entorhinal-hippocampal development
+- Predicts that grid cells can arise without path integration (contra some theories)
+
+### For AI / Machine Learning
+- Demonstrates self-supervised spatial representation learning without explicit spatial labels
+- Shows that biological constraints (Dale's Law) are compatible with complex emergent representations
+- Provides a blueprint for biologically inspired spatial navigation in artificial agents
+- Suggests masked prediction as a general principle for representation learning
 
 ## Activation Keywords
+- grid cell co-emergence
+- place cell model
+- Dale's Law neural networks
+- entorhinal-hippocampal circuit
+- spatial navigation self-supervised learning
+- grid cell emergence from prediction
+- MEC-HPC unified model
+- spatial representation learning
 
-grid cells, place cells, co-emergence, sensory prediction, path integration, entorhinal cortex, hippocampus, Dale's Law, spatial navigation, recurrent neural network, self-supervised spatial learning, grid field development, hippocampal place fields, 3D grid fields, neural development ordering
+## References
+- Wang, Z., Morris, G., Derdikman, D., Chaudhari, P., & Balasubramanian, V. (2026). A Simple Model of Co-emergence of Grid and Place Fields. arXiv:2605.21356
+- Hafting et al. (2005). Microstructure of a spatial map in the entorhinal cortex
+- O'Keefe & Dostrovsky (1971). The hippocampus as a spatial map
+- Moser, Moser & Roudi (2014). Neural representations of space
+- Cueva & Wei (2018). Emergence of grid-like representations by training recurrent networks
+- Banino et al. (2018). Vector-based navigation using grid-like representations in artificial agents
