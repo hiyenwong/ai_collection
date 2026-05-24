@@ -1,3 +1,23 @@
+## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job)
+
+### Exact Hidden Paths in Noisy High Dimensional Path Spaces (arXiv: 2605.22477)
+- [[exact-hidden-path-recovery]] - Mathematical framework for exact recovery of noisy hidden paths in high-dimensional discrete path spaces using path integral interference (arXiv: 2605.22477)
+  - Core point 1: Path integral phase interference cancels noise while amplifying signal
+  - Core point 2: Enables exact recovery where classical SNR methods fail
+  - **Activation**: hidden path recovery, path integral cryptography, noise resilient signal recovery, high dimensional path analysis
+
+### Information Extraction of Nested Complex Structure of Quantum Cascade Lasers via Large Language Models (arXiv: 2605.09927)
+- [[llm-information-extraction-quantum-devices]] - LLM-based automated extraction of nested device parameters from quantum/scientific literature (arXiv: 2605.09927)
+  - Core point 1: Structured LLM prompts extract multi-level nested data (structure, materials, performance)
+  - Core point 2: Cross-validation across paper sections resolves conflicts
+  - **Activation**: LLM information extraction, nested structure extraction, quantum device parameters, literature mining
+
+### A Toolbox to Understand the Physics of Quantum Data Management (arXiv: 2605.14719)
+- [[quantum-data-management-toolbox]] - Framework connecting quantum device physics with data management abstractions for quantum database design (arXiv: 2605.14719)
+  - Core point 1: No-cloning and measurement collapse fundamentally change database operations
+  - Core point 2: Hybrid classical-quantum approach is practical path forward
+  - **Activation**: quantum data management, quantum database, quantum storage, quantum indexing, hybrid database
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
 ### Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality
