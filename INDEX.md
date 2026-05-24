@@ -1,5 +1,29 @@
 ## 2026-05-25 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
+### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
+- [[braindyn-sheaf-neural-ode]] - Sheaf neural ODE framework for generative brain dynamics modeling across fMRI, EEG, and simulated spiking data (arXiv: 2605.19324)
+  - Combines cellular sheaf theory (learnable edge-specific restriction maps) with neural ODEs for continuous-time brain dynamics
+  - LSTM-encoded temporal history → sheaf Laplacian message passing → neural ODE continuous-time evolution
+  - Evaluated on PNC fMRI (1188 subjects), TUSZ EEG, and NEST spiking simulations
+  - Outperforms CNN-LSTM, BIOT (transformer), EvolveGCN, ODEBRAIN across modalities
+  - Sheaf representation supports in silico perturbation prediction (virtual testbeds for stimulation studies)
+  - **Activation**: braindyn, sheaf neural ODE, brain dynamics forecasting, neural ODE brain, sheaf Laplacian, generative brain model, in silico perturbation, continuous-time neural dynamics
+
+### Selective Alignment Knowledge Distillation for Spiking Neural Networks
+- [[sealkd-snn-knowledge-distillation]] - Not All Timesteps Matter Equally: selective temporal alignment KD for SNNs that provides corrective guidance to erroneous timesteps while preserving useful temporal dynamics (arXiv: 2605.14252)
+  - Selective class-level alignment: equalizes competing logits only at erroneous timesteps
+  - Selective temporal alignment: confidence-weighted and inter-timestep similarity reweighting
+  - Preserves SNN's own learned temporal dynamics at correctly-predicted timesteps
+  - Consistent improvements across static image (CIFAR, ImageNet) and neuromorphic event-based (DVS-CIFAR10, DVS-Gesture) datasets
+  - **Activation**: sealkd, selective alignment knowledge distillation, SNN knowledge distillation, temporal alignment SNN, spiking neural network distillation
+
+### Canonical Functionalism: Defining Functional Structure without Observer-Relative Semantic Maps
+- [[canonical-functionalism-consciousness]] - Mathematical refinement of computational functionalism identifying consciousness-relevant organization with canonical functional structure (minimal state-transition from counterfactual roles), avoiding observer-relativity problems (arXiv: 2605.21506)
+  - Canonical functional structure: merge states with identical future behavior under all possible continuations
+  - Provides precise mathematical object over which functionalist theories of consciousness should be formulated
+  - Reframes lookup-table/simulation/unfolding objections as structural criterion questions
+  - **Activation**: canonical functionalism, consciousness theory, computational functionalism, consciousness invariants, functional structure consciousness
+
 ### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
 - [[leggett-garg-neural-dynamics]] - LGI testing methodology for distinguishing diffusive vs persistent stochastic neural dynamics, revealing memory and non-Markovian structure (arXiv: 2605.12126)
   - Leggett-Garg inequality as temporal probe of neural dynamics (analogue of Bell-type constraints)
