@@ -48,6 +48,15 @@
   - Use DL/FBF as post-selection on Pareto front, NOT as direct fitness (causes premature convergence)
   - **Activation**: description length genetic programming, DL model selection symbolic regression, 描述长度遗传编程
 
+### A Multi-Scale Information Geometry Reveals the Structure of Mutual Information in Neural Populations
+- [[multi-scale-info-geometry-neural]] - Novel framework connecting information geometry and mutual information through a unique Riemannian geometry emerging from coarse-graining of neural population responses (arXiv: 2605.06304)
+  - Multi-scale Fisher information metric extends classic framework from fine to coarse stimulus distinctions
+  - Geometry exactly related to mutual information: expanded directions = well-encoded, contracted = poorly encoded
+  - Metric tensor estimated via diffusion models, enabling practical application to large populations
+  - Eigenvectors reveal interpretable stimulus features contributing most to information transmission
+  - Applied to visual cortical responses to natural images, yielding robust, modelling-choice-independent features
+  - **Activation**: information geometry, neural population code, Fisher information metric, representational geometry, multi-scale encoding, mutual information neural, diffusion models neuroscience
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
 ### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat

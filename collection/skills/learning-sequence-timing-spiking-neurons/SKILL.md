@@ -82,3 +82,4 @@ Processing sequential inputs is a fundamental brain function underlying sensory 
 - working-memory-heterogeneous-delays-v3
 - attractor-models-language-reasoning
 - spike-timing-neuronal-assemblies
+- ssn-working-memory-heterogeneous-delays-v3
