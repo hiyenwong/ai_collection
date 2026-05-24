@@ -196,6 +196,16 @@ From recent papers (2604.01722v1, 2604.02234v1):
 - **Import Script**: `scripts/import_papers_to_kg.py`
 - **kg_tool**: `scripts/kg_tool/target/release/kg_tool`
 
+## Examples
+
+User: Design a QKD protocol for a heterogeneous fiber network that converts polarization encoding to time-bin encoding.
+
+Agent: Identify the source and receiver encoding constraints, choose a polarization-to-time-bin conversion stage, specify synchronization and calibration checks, then validate BB84 or decoy-state security assumptions against conversion loss and timing jitter.
+
+User: Check whether a topology-hiding QKD proposal leaks path information.
+
+Agent: Model what each participant can observe, verify the zero-knowledge connectivity proof, inspect whether path validation reveals graph structure, and recommend stronger proof or multi-path certification steps if leakage remains.
+
 ## Related Skills
 
 - **skill-extractor**: Extract patterns from quantum papers
