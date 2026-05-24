@@ -98,7 +98,7 @@
   - **Activation**: information geometry, neural population code, Fisher information metric, representational geometry, multi-scale encoding, mutual information neural, diffusion models neuroscience
 
 ### Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness
-- [[efficient-coding-criticality]] - Normative theory showing efficient coding under resource constraints drives neural systems towards critical states with power-law avalanches and sloppiness (arXiv: 2605.22598)
+- [[efficient-coding-criticality-sloppiness]] - Normative theory showing efficient coding under resource constraints drives neural systems towards critical states with power-law avalanches and sloppiness (arXiv: 2605.22598)
   - Efficient coding under finite neurons and energy budgets places system at critical point of phase transition
   - Criticality → power-law neural avalanches (scale-free dynamics)
   - Criticality → sloppiness (parameter redundancy, robustness to variation)
