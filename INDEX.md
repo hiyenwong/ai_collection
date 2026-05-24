@@ -7,6 +7,23 @@
   - Natural interface for NISQ-era quantum software via physically observable quantities
   - **Activation**: pauli constraints, quantum circuit design, NISQ quantum software, observable-based gates, quantum state tomography, coupling graph, BQP equivalence
 
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[sequence-timing-snn-replay]] - Spiking neural network methodology for encoding temporal sequences through sequential activation of element-specific neuronal populations with controllable replay speed via STDP (arXiv: 2605.22523)
+  - Element-specific population encoding: each sequence element represented by dedicated neuronal population
+  - STDP-based temporal learning: spike-timing-dependent plasticity learns temporal relationships
+  - Replay speed control: network reproduces sequences at different speeds while preserving temporal structure
+  - Wide timescale encoding from milliseconds to seconds
+  - **Activation**: sequence timing, replay speed, spiking neurons, STDP, temporal encoding, sequence learning, temporal abstraction
+
+### Temporal Coding for Sensorimotor Object Inference (Spiking Thousand Brains)
+- [[temporal-coding-thousand-brains-spiking]] - Replaces dense vectors with rank-order spike packets for sensorimotor inference in Thousand Brains architecture using STDP for directional encoding (arXiv: 2605.22206)
+  - Rank-order spike packets replace dense vector representations for energy-efficient encoding
+  - STDP learns traversal direction between sensory states for active object inference
+  - Adaptive lambda parameter adjusts per object geometry
+  - Applicable to robotic tactile exploration, haptic perception, and edge AI
+  - **Activation**: temporal coding, thousand brains, sensorimotor inference, spike packets, STDP, rank-order coding, active sensing
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
 
 ### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat
