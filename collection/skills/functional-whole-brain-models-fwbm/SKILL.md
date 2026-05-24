@@ -1,68 +1,49 @@
 ---
 name: functional-whole-brain-models-fwbm
-description: "Functional Whole-Brain Models (fWBMs): A unified modeling paradigm integrating structural and dynamical realism with task-performing capacity. Use when: researching whole-brain modeling, computational neuroscience frameworks, brain-network-cognition integration, or modeling paradigms bridging bottom-up biophysical simulations and top-down deep neural networks. Keywords: fWBM, whole-brain model, neuroconnectionism, brain dynamics, cognitive function, connectome, continuous-time dynamics."
+description: "Functional Whole-Brain Models (fWBMs): A unified modeling paradigm integrating structural/dynamical realism (bottom-up WBM) with task-performing capacity (top-down neuroconnectionism). Use when studying brain structure-function integration, building biophysically constrained neural networks that perform cognitive tasks, or connecting connectome data with functional competence."
+arxiv_id: "2605.18118"
+paper_title: "Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function"
+authors: "Mario Senden, Leonardo Dalla Porta, Jan Fousek, Jorge F. Mejias, Gorka Zamora-López"
+publication_date: "2026-05-18"
+category: "Neuroscience Research"
 ---
 
 # Functional Whole-Brain Models (fWBMs)
 
-Methodology from arXiv:2605.18118 — "Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function" by Senden, Dalla Porta, Fousek, Mejias, and Zamora-López (May 2026).
+**arXiv**: 2605.18118  
+**Date**: 2026-05-18  
+**Authors**: Mario Senden, Leonardo Dalla Porta, Jan Fousek, Jorge F. Mejias, Gorka Zamora-López  
 
 ## Overview
 
-Contemporary computational neuroscience has two prominent modeling traditions:
-1. **Bottom-up Whole-Brain Modeling (WBM)**: Biophysically detailed simulations of brain structure and dynamics
-2. **Top-down Neuroconnectionism**: Optimizes deep neural networks for functional performance
+Functional Whole-Brain Models (fWBMs) propose a unified modeling paradigm that integrates two prominent but incomplete traditions in computational neuroscience: bottom-up whole-brain modeling (WBM) and top-down neuroconnectionism. WBMs build biophysically detailed simulations of brain structure and dynamics but lack functional competence, while neuroconnectionist models achieve task performance but lack biological grounding. fWBMs bridge this gap.
 
-Each has achieved success but remains incomplete — WBMs lack functional competence, neuroconnectionist models lack biological grounding.
-
-**fWBMs** integrate both approaches into a unified paradigm.
-
-## Four Minimal Criteria for fWBMs
+## Four Minimal Criteria
 
 1. **Structural grounding** in empirical connectomes and regional biology
-2. **Continuous-time dynamical realism** (not discrete feedforward)
-3. **Functional competence** across cognitive domains
+2. **Continuous-time dynamical realism** reflecting neural dynamics
+3. **Functional competence** across cognitive domains (task performance)
 4. **Mappable observables** to neuroimaging, electrophysiological, and behavioral data
 
 ## Three-Pillar Roadmap
 
-### Short-term
-- Couple existing WBMs with task-optimized modules
-- Develop benchmarking frameworks linking model dynamics to cognitive tasks
-- Standardize connectome preprocessing pipelines
-
-### Mid-term
-- Build fully recurrent fWBMs trained end-to-end on cognitive tasks
-- Incorporate plasticity and learning rules into whole-brain simulations
-- Validate against multi-modal neuroimaging (fMRI, MEG/EEG, electrophysiology)
-
-### Long-term
-- Achieve closed-loop fWBMs that learn and adapt like biological brains
-- Enable virtual brain labs for psychiatric/neurological drug development
-- Bridge to artificial general intelligence through biologically grounded architectures
+- **Short-term**: Integrating existing WBM tools with task-performing neural network components
+- **Mid-term**: Developing biophysically constrained deep networks that leverage connectome data
+- **Long-term**: Full fWBM models combining structural realism, dynamical fidelity, and functional capacity
 
 ## Scientific and Clinical Opportunities
 
-- **Mechanistic understanding**: Link微观 synaptic/neural mechanisms to macroscopic cognitive functions
-- **Clinical translation**: Patient-specific fWBMs for personalized treatment of brain disorders
-- **Common language**: Unify traditionally separate research communities
-- **Cross-scale hypotheses**: Generate testable predictions spanning molecular to behavioral levels
-
-## Key Innovations
-
-- First framework to explicitly define criteria bridging WBM and neuroconnectionism
-- Emphasizes both **dynamical realism** and **functional competence** as co-equal requirements
-- Provides concrete, phased roadmap rather than vague vision
-- Identifies "mappable observables" as critical for model validation against real brain data
+- Connectome-constrained learning in task-performing neural networks
+- Biophysics-informed deep learning architectures
+- Oscillatory network computation as a bridge between dynamics and function
+- Clinical applications linking structural abnormalities to functional deficits
 
 ## Activation Keywords
 
-- fWBM, functional whole-brain model, whole-brain model, neuroconnectionism
-- brain dynamics framework, cognitive function modeling
-- computational neuroscience paradigm, brain structure-function integration
-
-## Related Skills
-
-- `functional-whole-brain-models-fwbm` (this skill)
-- `brain-dit-fmri-foundation-model` for fMRI foundation modeling
-- `functional-whole-brain-models-fwbm` for whole-brain simulation
+- functional whole-brain model
+- fWBM
+- whole-brain modeling
+- neuroconnectionism
+- connectome-constrained neural network
+- biophysics-informed deep learning
+- brain structure-function integration

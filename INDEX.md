@@ -1,3 +1,19 @@
+## 2026-05-24 - Neuroscience Research (Cron Job)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unified fWBM paradigm bridging bottom-up whole-brain modeling and top-down neuroconnectionism for biologically realistic, task-performing brain models (arXiv: 2605.18118)
+  - Four minimal criteria: structural grounding, continuous-time dynamics, functional competence, mappable observables
+  - Three-pillar roadmap across short/mid/long-term horizons for model integration
+  - Scientific/clinical opportunities: connectome-constrained learning, biophysics-informed deep learning, oscillatory network computation
+  - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, connectome-constrained neural network, biophysics-informed deep learning, brain structure-function integration
+
+### Self-Supervised Local Learning Rules Learn the Hidden Hierarchical Structure of High-Dimensional Data
+- [[self-supervised-local-learning-hierarchy]] - Biologically plausible local self-supervised learning rules match backprop data efficiency on hierarchical data, while DFA methods fail due to missing input-specific masking (arXiv: 2605.18557)
+  - Local self-supervised contrastive/non-contrastive loss solves RHM tasks as well as BP
+  - DFA and variants fail on hierarchical tasks due to ignoring input-specific masking
+  - Layerwise loss functions enable local learning rules compatible with cortical plasticity
+  - **Activation**: local learning rules, biologically plausible learning, self-supervised representation learning, Random Hierarchy Model, Direct Feedback Alignment failure, local plasticity
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday Evening)
 
 ### Vector Policy Optimization: Training for Diversity Improves Test-Time Search
