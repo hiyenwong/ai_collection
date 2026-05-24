@@ -1,3 +1,19 @@
+## 2026-05-24 - Neuroscience Research (Sunday Cron Job)
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons (arXiv:2605.22523)
+- [[learning-sequence-timing-snn]] - Extends spiking Temporal Memory (sTM) model to encode precise element-specific timing via sequential population activation and control replay speed via oscillatory background inputs, linking replay speed to EEG/LFP oscillatory activity (arXiv: 2605.22523)
+  - Core: Element-specific duration via sequential activation of neuronal populations + oscillatory clock signal (θ/γ rhythms) for speed modulation
+  - Key insight: Elapsed time encoded by unique sparse spatiotemporal patterns; replay speed correlates with brain state oscillations
+  - Result: Biologically plausible basis for encoding and replaying complex temporal sequences across wide timescales
+  - **Activation**: spiking temporal memory, sTM, sequence timing SNN, replay speed control, oscillatory clock, hippocampal replay, synfire chain timing, sparse spatiotemporal encoding, theta gamma replay
+
+### Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI (arXiv:2604.16875)
+- [[untrained-cnns-match-backpropagation-v1-rsa]] - Systematic RSA comparison showing untrained random-weights CNN (rho=0.076) exceeds backprop (rho=0.034) at V1/V2 (p<0.001); STDP achieves highest V1 alignment among trained rules (arXiv: 2604.16875)
+  - Core: Four learning rules (BP, FA, PC, STDP) + untrained baseline compared against THINGS-fMRI (720 stimuli, 3 subjects)
+  - Key insight: Early visual alignment is architecture-driven, not learning-rule-driven — CNN structure itself encodes V1-matching priors
+  - Result: All rules converge at IT; learning rules differentiate only at intermediate areas
+  - **Activation**: untrained CNN V1 alignment, RSA brain comparison, architecture-driven brain alignment, STDP V1, THINGS-fMRI, random weights V1 match
+
 ## 2026-05-24 - Information Science + Quantum Computing Research (Sunday Cron Job)
 
 ### A Graph-Based Forensic Framework for Inferring Hardware Noise of Cloud Quantum Backend (arXiv:2512.14541)
