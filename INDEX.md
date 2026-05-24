@@ -1,3 +1,19 @@
+## 2026-05-24 - Information Science + Quantum Computing Research (Sunday Cron Job)
+
+### A Graph-Based Forensic Framework for Inferring Hardware Noise of Cloud Quantum Backend (arXiv:2512.14541)
+- [[quantum-forensic-gnn]] - GNN-based forensic framework that predicts per-qubit and per-qubit-link error rates of unseen cloud quantum backends using only topology and transpilation features, achieving ~22% mismatch for single-qubit and ~18% for qubit-link errors (arXiv: 2512.14541)
+  - Core: GNN regressors trained on IBM 27-qubit devices predict error rates from user-visible features (topology + transpilation output)
+  - Key insight: Cloud quantum providers may redirect jobs to more error-prone regions while presenting stale calibration data — forensic inference from user-visible artifacts closes this transparency gap
+  - Result: Strong ranking agreement (high Spearman correlation); identifies weak links and high-noise qubits robustly under temporal noise drift
+  - **Activation**: quantum forensic, GNN quantum noise, cloud quantum security, IBM quantum verification, hardware noise inference, quantum backend audit, quantum error rate prediction
+
+### Experimental demonstration of scalable quantum cryptographic conferencing (arXiv:2512.06661)
+- [[scalable-quantum-crypto-conferencing]] - Experimental QCC eliminating coincidence detection requirement for GHZ-state measurement, achieving 331.5 km range (66.3 dB loss) with 5.4 bit/s secure key rates, surpassing multi-user repeaterless bound (arXiv: 2512.06661)
+  - Core: Construct GHZ state by correlating detection events within coherence time instead of requiring simultaneous coincidence detection
+  - Key innovation: Three-party phase compensation + precise temporal/polarization alignment in time-bin-phase encoding framework enables scalable multi-user quantum communication
+  - Result: 3.3x range extension over previous 100 km limit; establishes new regime for metropolitan quantum networks
+  - **Activation**: quantum cryptographic conferencing, QCC, GHZ state measurement, multi-user quantum network, time-bin encoding, phase compensation, metropolitan quantum network
+
 ## 2026-05-24 - Neuroscience Research (Cron Job - Saturday)
 
 ### A simple model of co-emergence of grid and place fields (arXiv:2605.21356)
