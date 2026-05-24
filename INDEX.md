@@ -7,6 +7,22 @@
   - Scientific/clinical opportunities: connectome-constrained learning, biophysics-informed deep learning, oscillatory network computation
   - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, connectome-constrained neural network, biophysics-informed deep learning, brain structure-function integration
 
+### Stimulus Symmetries Can Confound Representational Similarity Analyses (arXiv:2605.21324)
+- [[stimulus-symmetries-rsm-confound]] - Demonstrates that stimulus symmetries in neural network inputs cause functionally-equivalent representations to produce different, drifting RSM geometries, challenging RSM-based analyses of neural codes (arXiv: 2605.21324)
+  - Symmetries in network inputs create gauge freedom — functionally-equivalent codes yield different RSMs
+  - SGD/regularization produces sparse drifting codes, causing RSMs to drift over training
+  - Effects persist in image-trained autoencoders with latent symmetry
+  - Challenges assumption that functionally-equivalent representations are related by a simple rotation
+  - **Activation**: representational similarity analysis, RSM gauge dependence, stimulus symmetry, RSA confound, neural code comparison, drifting representations, representational geometry
+
+### Beyond Prediction Accuracy: Target-Space Recovery Profiles for Evaluating Model-Brain Alignment (arXiv:2605.20127)
+- [[target-space-recovery-profiles-brain-alignment]] - Framework that identifies which reproducible brain response dimensions are recovered by model predictions, going beyond scalar prediction accuracy for evaluating brain-model alignment (arXiv: 2605.20127)
+  - Uses repeated fMRI measurements to identify reproducible response dimensions across trial splits
+  - Early-to-intermediate visual cortex contains a low-dimensional set of reproducible dimensions
+  - Pretrained and randomly initialized models can match prediction accuracy but show distinct recovery profiles
+  - Brain-to-brain comparisons provide a diagnostic human reference for evaluating model alignment
+  - **Activation**: brain alignment, model evaluation, fMRI encoding models, prediction accuracy, response dimensions, representational similarity, Natural Scenes Dataset, target-space recovery
+
 ### Self-Supervised Local Learning Rules Learn the Hidden Hierarchical Structure of High-Dimensional Data
 - [[self-supervised-local-learning-hierarchy]] - Biologically plausible local self-supervised learning rules match backprop data efficiency on hierarchical data, while DFA methods fail due to missing input-specific masking (arXiv: 2605.18557)
   - Local self-supervised contrastive/non-contrastive loss solves RHM tasks as well as BP
