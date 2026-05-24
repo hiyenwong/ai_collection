@@ -53,6 +53,22 @@
   - Layerwise loss functions enable local learning rules compatible with cortical plasticity
   - **Activation**: local learning rules, biologically plausible learning, self-supervised representation learning, Random Hierarchy Model, Direct Feedback Alignment failure, local plasticity
 
+### MINE: Mechanistically Interpretable Neural Encoding Reveals Fine-Grained Functional Selectivity in Human Visual Cortex (arXiv:2605.16468)
+- [[mine-neural-encoding-mechanistic-interpretability]] - Applies mechanistic interpretability tools (feature attribution, counterfactual editing) to voxel-level neural encoding models, enabling causal validation and discovery of fine-grained functional organization within category-selective brain regions (arXiv: 2605.16468)
+  - Language-aligned image representations predict each voxel's response and produce semantically interpretable descriptions of driving features
+  - Per-image features generalize into stable per-voxel functional profiles validated through generative image synthesis
+  - Counterfactual insertion/removal of predicted features shifts voxel activation causally, confirmed via per-voxel profile-guided editing
+  - Reveals unique voxel-level functional selectivity within well-studied regions (FFA, PPA) beyond known categorical preferences
+  - **Activation**: mechanistically interpretable neural encoding, MINE framework, voxel-level mechanistic interpretability, counterfactual brain encoding, fMRI feature attribution, functional selectivity profiling, language-aligned encoding model, fine-grained visual cortex organization
+
+### Are Cortical Microcircuits Optimized for Information Flux? — A Simulation-Based Reverse Engineering Study (arXiv:2605.14680)
+- [[cortical-microcircuit-information-flux-optimization]] - Simulation-based reverse engineering of cortical layer 5 microcircuits showing that the embedding network enhances information flux via effective bias shifts and Recurrence Resonance, with implications for reservoir computing design (arXiv: 2605.14680)
+  - Embedding network amplifies mutual information between successive network states in core population beyond isolated core performance
+  - Two-component mechanism: effective DC biases push core neurons to high-entropy regime; stochastic fluctuations via Recurrence Resonance prevent attractor trapping
+  - Recurrence Resonance identified as a novel dynamical phenomenon where optimal recurrent noise maximizes information flux
+  - Self-organized local bias optimization can exceed biologically embedded configurations
+  - **Activation**: cortical information flux, microcircuit reverse engineering, Recurrence Resonance, layer 5 microcolumn, embedding network dynamics, entropy-driven neural dynamics, reservoir computing design, core-embedding architecture
+
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday Evening)
 
 ### Vector Policy Optimization: Training for Diversity Improves Test-Time Search
