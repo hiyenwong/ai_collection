@@ -46,6 +46,27 @@
   - Result: 3.3x range extension over previous 100 km limit; establishes new regime for metropolitan quantum networks
   - **Activation**: quantum cryptographic conferencing, QCC, GHZ state measurement, multi-user quantum network, time-bin encoding, phase compensation, metropolitan quantum network
 
+### Equivalence of Privacy and Stability with Generalization Guarantees in Quantum Learning (arXiv:2602.01177)
+- [[quantum-learning-privacy-generalization]] - Unified framework establishing ε-quantum differential privacy → stability → generalization chain, with quantum mutual information bounds and Information-Theoretic Admissibility for dishonest algorithms (arXiv: 2602.01177)
+  - Core: E[gen_error] ≤ √(2·I(S;h)/n) via quantum mutual information; ε-QDP implies stability
+  - Key insight: Privacy-stability-generalization equivalence in quantum learning, extending Esposito et al. (2021) to quantum domain
+  - Result: ITA framework characterizes privacy limits for algorithms oblivious to dataset instances
+  - **Activation**: quantum learning privacy, quantum generalization bounds, quantum differential privacy stability, information-theoretic admissibility, quantum mutual information learning
+
+### How Entanglement Reshapes the Geometry of Quantum Differential Privacy (arXiv:2601.19126)
+- [[quantum-differential-privacy-geometry]] - Framework analyzing how quantum entanglement deforms the geometry of quantum differential privacy, characterizing entanglement-modified privacy-utility tradeoffs (arXiv: 2601.19126)
+  - Core: Privacy region deformation ε_entangled = ε_separable · g(E(ρ_AB)) dependent on entanglement structure
+  - Key insight: Entanglement can both enhance (masking via correlations) and degrade (side channels via Bell measurements) privacy
+  - Result: Privacy-utility Pareto frontier shaped by entanglement type and degree
+  - **Activation**: quantum differential privacy geometry, entanglement privacy tradeoff, quantum DP entanglement, quantum privacy geometry
+
+### Toward Covert Quantum Computing (arXiv:2605.14325) - Enhanced
+- [[covert-quantum-computing-crosstalk]] - Enhanced skill for computational covertness in multi-tenant quantum computers with discrete isoperimetric analysis and long-range crosstalk side channel characterization (arXiv: 2605.14325)
+  - Core: Border qubit scaling O(√n) for detection info; quantum-strategy framework for adversarial analysis
+  - Key finding: Long-range crosstalk via drive/control line leakage creates additional detection channel beyond border qubits
+  - Result: Verified on IQM Emerald (54-qubit) and IBM ibm_fez (156-qubit Heron 2)
+  - **Activation**: covert quantum computing, quantum crosstalk analysis, multi-tenant quantum security, quantum side channel, border qubit scaling
+
 ## 2026-05-24 - Neuroscience Research (Cron Job - Saturday)
 
 ### A simple model of co-emergence of grid and place fields (arXiv:2605.21356)
