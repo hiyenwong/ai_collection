@@ -1,3 +1,26 @@
+## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday)
+
+### A Formal Basis for Quantum Cryptographic Exposure Measurement under HNDL Threat
+- [[hndl-exposure-measurement]] - Multiplicative factorization framework for Harvest-Now-Decrypt-Later threat exposure, proving additive scoring frameworks are structurally inadequate (arXiv: 2605.22569)
+  - HNDL compromise probability factorizes into temporal hazard × crypto vulnerability × operational exposure / saturation denominator
+  - Marginal sensitivity is endogenous to vulnerability-exposure plane position, not fixed global constant
+  - Defense-attack intensity ratio governs saturation — diminishing returns beyond certain defense level
+  - **Activation**: HNDL, harvest now decrypt later, quantum cryptographic exposure, post-quantum risk, multiplicative scoring, defense-attack ratio
+
+### Precision and Privacy in Distributed Quantum Sensing: A QFI Duality
+- [[quantum-fisher-privacy-duality]] - QFI duality framework showing Heisenberg-limited precision forces zero QFI for all other directions, achieving parameter privacy by construction (arXiv: 2605.20765)
+  - Fundamental tradeoff: F_Q(w^T θ) + F_Q(v^T θ) ≤ N for orthogonal sensing directions
+  - GHZ states saturate bound for N≥2, maximizing precision and privacy simultaneously
+  - Privacy emerges from quantum measurement limits, not encryption protocols
+  - **Activation**: quantum Fisher information, QFI duality, distributed quantum sensing privacy, GHZ state sensing, Heisenberg limit privacy
+
+### Stream randomness extraction against quantum side information
+- [[stream-randomness-extraction-quantum]] - Converts block-wise quantum randomness extractors to on-the-fly stream implementations via offline pre-computed XOR masks, preserving security against quantum side information (arXiv: 2605.09556)
+  - Eliminates QRNG latency and buffering overhead while maintaining identical security guarantees
+  - Supports Toeplitz, circulant, and modified Toeplitz matrix constructions
+  - Offline pre-computation shifts computational burden away from real-time processing
+  - **Activation**: quantum randomness extraction, QRNG stream processing, Toeplitz hashing, quantum side information, real-time QRNG
+
 ## 2026-05-24 - Neuroscience Research (Cron Job)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
