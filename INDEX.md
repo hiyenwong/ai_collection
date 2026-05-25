@@ -6,6 +6,14 @@
   - Identifies three distinct phases: memory retrieval, spin-glass black-out, and paramagnetic
   - **Activation**: quantum associative memory, photonic quantum simulator, Hopfield network, neural network quantum simulation, spin glass memory, multiphoton processes
 
+### Extreme Quantum Cognition Machines for Deliberative Decision Making
+- [[quantum-cognition-machine-learning]] - Quantum learning architectures for deliberative decision making tolerant to noisy and contradictory training data; uses fixed quantum dynamics with dynamical attention mechanism (arXiv: 2603.05430)
+  - Fixed quantum dynamics generates nonlinear feature map, learning confined to linear readout (like ELM/QRC)
+  - Dynamical attention via input-dependent Hamiltonian interaction modulates quantum evolution
+  - Avoids barren plateaus — no gradient through quantum circuit, only readout layer trained
+  - Natural robustness to noisy training data through quantum superposition averaging
+  - **Activation**: extreme quantum cognition, quantum reservoir decision making, quantum extreme learning, dynamical attention quantum, noisy training data
+
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
 ### Preisach Attention: A Hysteretic Model of Sequential Memory
