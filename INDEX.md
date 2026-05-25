@@ -1,3 +1,23 @@
+## 2026-05-25 - Neuroscience Research (Cron Job)
+
+### Sparse Autoencoders Map Brain-LLM Alignment onto Cortical Semantic Topography
+- [[sparse-autoencoder-brain-llm-topography]] - SAEs from mechanistic interpretability decompose LLM features and map them onto human cortical semantic topography; semantic features recover 94% of brain encoding performance (arXiv: 2605.23035)
+  - SAEs decompose GPT-2 XL and Llama-3.1-8B into 16K-32K interpretable features per layer
+  - Semantic features alone recover 94% of peak brain encoding performance
+  - Five semantic subcategories map onto distinct brain regions via convergence testing
+  - SAE features predict human reading times beyond lexical controls
+  - Generalizes across English, Chinese, and French
+  - **Activation**: sparse autoencoder, brain-LLM alignment, cortical topography, SAE brain mapping, semantic encoding, computational neurolinguistics
+
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[v1-digital-twin-latent-probing]] - Multi-level representational probing framework for digital twins of mouse V1; reveals that models with comparable prediction accuracy differ substantially in latent representations (arXiv: 2605.23122)
+  - Three-level probing: linear decodability, unit tuning, population geometry
+  - Better neural prediction correlates with stronger probe accuracy
+  - Highly predictive models exhibit flatter eigenspectra (higher-dimensional representations)
+  - Models with comparable prediction scores can differ substantially in probe performance
+  - Establishes multi-level probing as complement to neural-prediction evaluation
+  - **Activation**: digital twin probing, V1 latent representations, population geometry, neural activity prediction
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job - Monday)
 
 ### Quantum-like representation of neuronal networks' activity: modeling mental entanglement
