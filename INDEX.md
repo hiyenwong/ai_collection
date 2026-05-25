@@ -134,6 +134,16 @@
   - Conventional VQCs become special case of diagonal ANO framework
   - Shifts complexity from measurement design to circuit synthesis
   - **Activation**: diagonal ANO, adaptive non-local observables, quantum observable design, VQA measurement optimization, observable parameter reduction
+
+## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
+
+### Emerging Memory Technologies at Room/Cryogenic Temperature
+- [[emerging-memory-technologies]] - Memory technology analysis framework covering SRAM, DRAM, RRAM, MRAM, FeFET, and cryogenic devices (UTBB-SOI, JJFET) for quantum and superconducting computing platforms (arXiv: 2605.21912)
+  - Comprehensive taxonomy of volatile (SRAM, DRAM, eDRAM) and non-volatile (Flash, RRAM, MRAM, FeFET) memories
+  - Cryogenic memory technologies for quantum computing: UTBB-SOI pseudo-static storage, JJFET-based devices
+  - Key trade-offs: area vs performance, energy vs retention, scalability vs reliability
+  - Quantum platforms require sub-4K operation — classical memories need cryogenic characterization
+  - **Activation**: memory technology analysis, cryogenic memory, quantum memory, RRAM MRAM FeFET, Josephson junction memory, superconducting memory, memory for quantum computing
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job - Hourly)
 
 ### Exploring Entropy-based Active Learning for Fair Brain Segmentation
