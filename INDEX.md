@@ -1,3 +1,19 @@
+## 2026-05-26 - Neuroscience + Quantum (Cron Job)
+
+### Quantum-Like Models of Cognition and Decision Making: Open-Systems and GKSL Dynamics
+- [[gskl-quantum-cognition]] - Quantum-like cognitive modeling using GKSL master equation for decision making and mental state evolution as open quantum system dynamics (arXiv: 2604.18643)
+  - Passive vs Active Hamiltonians: non-commutation with decision basis = cognitive agency signature
+  - GKSL master equation models mental state as dissipative process influenced by informational environment
+  - Quantum Escape: active Hamiltonians enable tunneling between decision states
+  - **Activation**: quantum cognition, GKSL cognition, quantum decision making, open quantum systems cognition, 量子认知建模
+
+### Winning Lottery Tickets in Neural Networks via a Quantum-Inspired Classical Algorithm
+- [[quantum-inspired-lottery-tickets]] - Quantum-inspired classical algorithm for finding winning lottery ticket subnetworks using ridgelet transform sampling, O(D) vs exp(O(D)) (arXiv: 2605.13979)
+  - Ridgelet transform defines probability distribution over hidden nodes for subnetwork sampling
+  - Quantum-inspired sampling achieves O(D) complexity vs exponential naive classical
+  - Enables efficient model compression without full optimization over all candidates
+  - **Activation**: lottery ticket hypothesis, neural network pruning, quantum-inspired pruning, ridgelet transform, 彩票假说剪枝
+
 
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 

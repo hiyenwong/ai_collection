@@ -1,65 +1,128 @@
 ---
 name: quantum-inspired-lottery-tickets
-description: >
-  Quantum-inspired classical algorithm for finding winning lottery tickets in neural networks
-  via optimized sparse subnetwork selection using ridgelet transform sampling.
-  Use when: optimizing neural network sparsity, implementing dequantized ML algorithms,
-  selecting sparse subnetworks, lottery ticket hypothesis, ridgelet-based sampling,
-  or replacing quantum ML algorithms with classical equivalents.
-  Trigger words: quantum-inspired, lottery tickets, dequantization, ridgelet sampling,
-  sparse subnetwork selection, 量子启发, 中奖彩票
+description: "Quantum-inspired classical algorithm for finding winning lottery ticket subnetworks in neural networks using ridgelet transform sampling. Achieves O(D) sampling complexity vs exp(O(D)) naive classical. Use for neural network pruning, model compression, lottery ticket hypothesis."
+category: quantum
 ---
 
 # Quantum-Inspired Lottery Tickets
 
-Dequantized algorithm for finding winning lottery tickets (sparse subnetworks)
-in neural networks using ridgelet transform-based optimized sampling.
+Quantum-inspired classical algorithm for efficiently finding "winning lottery ticket" sparse subnetworks from large neural networks. Based on ridgelet transform sampling that achieves O(D) complexity vs exp(O(D)) for naive classical approaches.
 
-## Core Methodology
+## Core Concepts
 
-### Problem
-QML algorithm selects sparse subnetworks from large shallow neural networks by sampling
-hidden nodes from an optimized probability distribution defined via ridgelet transform.
-Naive classical approach: O(exp(D)) time. Quantum approach: O(D) time.
+### Lottery Ticket Hypothesis
 
-### Solution: Classical Dequantization
-Construct fully classical algorithm running in O(poly(D)) time by:
-1. Computing ridgelet transform coefficients efficiently
-2. Using optimized sampling from the probability distribution
-3. Avoiding exponential candidate enumeration via structured sampling
+Large neural networks contain sparse subnetworks ("winning tickets") that can match the performance of the full network when trained in isolation. The challenge is efficiently finding these subnetworks without training all candidates.
 
-### Key Steps
+### Ridgelet Transform Sampling
 
-1. **Compute Ridgelet Coefficients**:
-   - Transform target function into ridgelet representation
-   - Extract optimized sampling distribution from coefficients
+Instead of solving a large-scale optimization problem over all possible subnetworks:
 
-2. **Efficient Classical Sampling**:
-   - Sample hidden nodes from the optimized distribution
-   - Use polynomial-time approximation instead of exact sampling
-   - Maintain comparable empirical risk to exact sampling
+1. Define a probability distribution over hidden nodes using the ridgelet transform
+2. Sample nodes from this optimized distribution
+3. Construct the sparse subnetwork from sampled nodes
 
-3. **Subnetwork Construction**:
-   - Build sparse subnetwork from sampled nodes
-   - Train only selected subnetwork parameters
-   - Achieve similar performance with fewer parameters
+### Quantum-Inspired Speedup
 
-## Implementation Notes
+- **Quantum algorithm**: O(D) sampling in data dimension D
+- **Naive classical**: exp(O(D)) time handling exponentially many candidates
+- **Quantum-inspired classical**: O(D) via randomized linear algebra techniques
 
-- Achieves empirical risk comparable to exact sampling
-- Substantially lower risk than uniform random sampling
-- Exponentially improved runtime vs conventional classical approach
-- No quantum hardware needed - runs on conventional computers
-- Polynomial scaling in data dimension D
+## Activation Keywords
 
-## When to Use
+- lottery ticket hypothesis
+- neural network pruning
+- quantum-inspired pruning
+- ridgelet transform sampling
+- winning lottery tickets
+- network compression quantum
+- 彩票假说剪枝
+- 量子启发剪枝
+- ridgelet 采样
 
-- Network compression / pruning via lottery ticket hypothesis
-- Replacing quantum ML algorithms with classical alternatives
-- Sparse subnetwork selection for large neural networks
-- Ridgelet-based function approximation
+## Usage Patterns
+
+### Pattern 1: Subnetwork Discovery
+
+For finding sparse subnetworks in large models:
+
+1. Compute ridgelet transform of target function
+2. Derive probability distribution p(w) from transform coefficients
+3. Sample N nodes from p(w) using quantum-inspired O(D) sampler
+4. Construct subnetwork from sampled nodes
+5. Fine-tune subnetwork weights
+
+### Pattern 2: Model Compression
+
+Compress large networks while preserving accuracy:
+
+1. Train large "teacher" network to convergence
+2. Apply ridgelet-based lottery ticket sampling
+3. Extract sparse subnetwork
+4. Verify accuracy recovery with minimal retraining
+
+### Pattern 3: Architecture Search
+
+Use lottery ticket discovery for architecture selection:
+
+1. Over-parameterize network (make it very large)
+2. Apply quantum-inspired sampling to find optimal subnetwork
+3. The sampled subnetwork reveals the right architecture size/structure
+
+## Implementation Steps
+
+### Step 1: Ridgelet Transform
+
+Compute the ridgelet transform of the target function to identify important directions in weight space. The ridgelet transform Rf(a,b) captures how function f responds to features oriented along direction a at scale b.
+
+### Step 2: Probability Distribution
+
+From the ridgelet coefficients, construct a probability distribution p(w) over candidate hidden nodes. Nodes with larger coefficients have higher sampling probability.
+
+### Step 3: Quantum-Inspired Sampling
+
+Use randomized linear algebra techniques to sample from p(w) in O(D) time:
+- Leverage importance sampling with appropriate proposal distribution
+- Use leverage score sampling for efficient candidate selection
+- Apply rejection sampling with tight bounds
+
+### Step 4: Subnetwork Construction
+
+Build the sparse subnetwork from sampled nodes:
+- Initialize weights from the original large network
+- Mask out unsampled connections
+- Fine-tune remaining weights with reduced learning rate
+
+## Key Metrics
+
+- **Sparsity ratio**: fraction of original parameters retained
+- **Accuracy recovery**: test accuracy of subnetwork vs full network
+- **Sampling efficiency**: O(D) vs exp(O(D)) classical baseline
+- **Training cost**: fine-tuning cost vs training from scratch
+
+## Research Applications
+
+1. **Model compression**: Deploy large models on edge devices
+2. **Transfer learning**: Find transferable subnetworks across tasks
+3. **Neural architecture search**: Auto-discover optimal network structure
+4. **Theoretical ML**: Study why over-parameterized networks generalize
+5. **Quantum-classical comparison**: Benchmark quantum advantage claims
+
+## Pitfalls
+
+- **Ridgelet computation**: High-dimensional ridgelet transform can be expensive; use randomized approximations
+- **Sampling variance**: Stochastic sampling means different runs produce different subnetworks; average over multiple trials
+- **Task dependence**: Winning tickets are task-specific; don't expect cross-task transfer without re-sampling
+- **Initial distribution quality**: The ridgelet-based distribution must capture important features; poor distribution yields poor subnetworks
+
+## Related Skills
+
+- **quantum-ml-patterns**: General quantum ML research patterns
+- **quantum-inspired-optimization**: Quantum-inspired classical optimization
+- **snn-performance-analysis**: Neural network performance analysis
 
 ## References
 
-- arXiv: 2605.13979
-- Authors: Natsuto Isogai, Hayata Yamasaki, Sho Sonoda, Mio Murao
+- Isogai, Yamasaki & Sonoda (2026): "Winning Lottery Tickets in Neural Networks via a Quantum-Inspired Classical Algorithm" arXiv:2605.13979
+- Frankle & Carbin (2019): "The Lottery Ticket Hypothesis"
+- Quantum-inspired ML survey papers
