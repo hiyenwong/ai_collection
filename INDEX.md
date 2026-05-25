@@ -1,5 +1,12 @@
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
+### Integrating Cognitive Load and Embodied Cognition Theories Through Representations as Multi-Scale Attractors
+- [[cognitive-load-multiscale-attractors]] - Proposes a formal rapprochement between cognitive load theory and embodied cognition by reconceptualizing psychological representations as dynamic multiscale attractors within a temporal-hierarchical prediction architecture (arXiv: 2605.23012)
+  - Three theoretical reconciliations: time-scale separation, spatially extended hierarchies, developmental trajectories
+  - Five testable predictions: cross-timescale interference, embodied load reduction, metacognition as timescale coupling, feedback topology, schema flexibility paradox
+  - Six-node open-systems architecture with attractor sculpting across millisecond→seconds→years timescales
+  - **Activation**: cognitive load, embodied cognition, multiscale attractors, attractor sculpting, temporal hierarchy, predictive processing, dynamical systems, cognitive architecture
+
 ### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
 - [[v1-digital-twin-latent-probing]] - Multi-level representational probing framework for mouse V1 digital twins reveals that models with comparable neural-prediction accuracy can rely on substantially different latent representations (arXiv: 2605.23122)
   - Three-level probing: linear decodability, latent-unit tuning, population geometry (eigenspectra)
