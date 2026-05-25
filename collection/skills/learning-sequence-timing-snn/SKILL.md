@@ -1,61 +1,68 @@
 ---
 name: learning-sequence-timing-snn
-description: "Learning sequence timing and control of replay speed in networks of spiking neurons — extending the spiking Temporal Memory (sTM) model to encode element-specific timing via sequential neuronal population activation, with oscillatory background inputs serving as a clock for flexibly controlling replay speed."
-tags: [spiking-neural-network, sequence-learning, replay, temporal-memory, computational-neuroscience, snn]
+description: "Extension of the spiking Temporal Memory (sTM) model that learns sequence timing via sequential activation of element-specific neuronal populations and uses oscillatory background inputs as a clock signal for flexible control of replay speed — biologically plausible mechanisms for encoding temporal patterns in spiking neural networks (arXiv: 2605.22523)."
+arxiv_id: "2605.22523"
+published: "2026-05-21"
+authors: "Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff"
+tags: [spiking-neural-network, sequence-learning, temporal-memory, replay-speed, oscillatory-clock, timing-mechanisms, computational-neuroscience]
 ---
 
 # Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
 
-**arXiv:2605.22523** | Submitted: 21 May 2026
+## Core Concept
 
-**Authors:** Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff
-
-## Summary
-
-Processing sequential inputs is a fundamental brain function, underlying tasks such as sensory perception, language, and motor control. A challenge in sequence processing is to represent not only the order of events, but also their **precise timing**. While existing computational models can learn sequential structure, many lack biologically plausible mechanisms to encode element-specific timing and to flexibly control the speed of sequence replay.
-
-The **spiking Temporal Memory (sTM) model**, a biologically inspired network model, provides a framework for key aspects of sequence processing. In the sTM model, each sequence element is represented by a small set of neurons firing synchronously, where the set of active neurons encodes the element's identity in its sequential context. In its original version, however, the sTM model learns the order but not the timing of sequence elements.
+Extends the **spiking Temporal Memory (sTM)** model to encode not only sequence **order** but also **precise element-specific timing**, and provides a biologically plausible mechanism for flexibly controlling the **speed of sequence replay** via oscillatory background inputs.
 
 ## Key Contributions
 
-1. **Timing Encoding via Sequential Population Activation**: The duration of sequence elements is represented by a sequential activation of element-specific neuronal populations, enabling the model to encode sequences across a wide range of timescales.
+1. **Timing Encoding Mechanism**: Duration of sequence elements is represented by sequential activation of element-specific neuronal populations, enabling encoding across a wide range of timescales.
 
-2. **Oscillatory Clock for Replay Speed Control**: Oscillatory background inputs serve as a clock signal and provide a robust and flexible mechanism for controlling the speed of sequence replay.
+2. **Oscillatory Clock Signal**: Oscillatory background inputs serve as a clock signal, providing a robust and flexible mechanism for controlling sequence replay speed.
 
-3. **Sparse Spatiotemporal Encoding**: Elapsed time is encoded by unique and sparse spatiotemporal patterns of neural activity.
+3. **Wakefulness vs. Sleep Replay**: Replay speed during wakefulness and sleep is correlated with characteristics of global oscillatory activity (EEG/LFP).
 
-4. **Biologically Plausible Replay Modulation**: The speed of sequence replay during wakefulness and sleep is correlated to the characteristics of global oscillatory activity observed in EEG or LFP recordings.
+4. **Biologically Plausible Framework**: Provides a biologically grounded basis for learning and replaying complex temporal patterns in spiking neural networks.
 
-## Methodological Framework
+## Methodology
 
-- **sTM Model**: Each sequence element → small set of synchronously firing neurons
-  - Identity encoded by which neurons are active
-  - Context encoded by the activation pattern
-- **Timing Extension**: Element duration → sequential activation within population-specific groups
-  - Timescale encoding via population dynamics
-  - Supports learning and replaying complex temporal patterns
-- **Replay Speed Control**: Oscillatory background injection
-  - Frequency of oscillation → replay speed
-  - Links to EEG/LFP rhythms (theta, sharp-wave ripples)
+### sTM Model Architecture
+- Each sequence element represented by a small set of synchronously firing neurons
+- Active neuron set encodes element identity in sequential context
+- Original model: learned order but not timing
 
-## Relation to Experimental Neuroscience
+### Timing Extension
+1. **Sequence element duration**: Represented by sequential activation of population-specific neurons
+2. **Temporal encoding**: Element-specific timing via population dynamics
+3. **Flexible replay**: Speed modulation via background oscillatory drive
 
-- Provides a circuit-level mechanism for how elapsed time is represented in neural activity
-- Explains the correlation between oscillatory brain rhythms and the speed of memory replay during different brain states (wakefulness vs. sleep)
-- Offers testable predictions for how replay speed is modulated by global brain state
+### Speed Control Mechanism
+- Oscillatory background inputs as clock signal
+- Frequency/phase modulation controls replay speed
+- Biologically plausible (EEG/LFP rhythms)
 
-## Potential Applications
+## Key Findings
 
-- Neuromorphic sequence learning and timing
-- Spike-based temporal pattern generation
-- Understanding hippocampal replay and memory consolidation
-- Flexible speed control in neural sequence generators
+| Finding | Implication |
+|---------|-------------|
+| Elapsed time encoded by sparse spatiotemporal activity patterns | Distributed timing representation |
+| Oscillatory inputs robustly control replay speed | Clock-like mechanism for sequence timing |
+| Speed varies with global oscillatory state | Links EEG rhythms to cognitive processing |
+| Timescales span wide range | Flexible temporal coding |
+
+## Relationship to Biological Data
+
+- **Hippocampal replay**: Slow replay during sleep, fast during wakefulness
+- **Cortical oscillations**: Gamma/theta rhythms as potential clock signals
+- **STDP**: Timing-dependent plasticity for sequence learning
+- **Working memory**: Persistent activity maintaining sequence context
+
+## Applications
+
+- **Sequence learning models**: Extending SNNs to temporal processing
+- **Neuromorphic computing**: Biologically plausible timing circuits
+- **Computational neuroscience**: Understanding neural code for temporal sequences
+- **Replay mechanisms**: Modeling consolidation and planning
 
 ## Activation Keywords
 
-- spiking-temporal-memory, sTM, sequence-timing, replay-speed, oscillatory-clock, spatiotemporal-encoding, spike-timing
-
-## References
-
-- arXiv:2605.22523 [q-bio.NC]
-- Original sTM model papers (cited within)
+- spiking-sequence-timing, sTM-model, neural-replay-speed, oscillatory-clock-signal, spiking-temporal-memory, sequence-timing-snn, replay-speed-control, element-specific-timing, eeg-correlates-replay, biological-plausible-timing, snn-sequence-learning, temporal-pattern-spiking, sparse-spatiotemporal-encoding

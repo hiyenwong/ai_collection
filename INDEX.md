@@ -1,3 +1,21 @@
+## 2026-05-26 - Neuroscience Research (Cron Job)
+
+### SAEs Map Brain–LLM Alignment onto Cortical Semantic Topography
+- [[sae-brain-llm-topography]] - Sparse Autoencoders bridge mechanistic interpretability with neural encoding, decomposing GPT-2 XL and Llama-3.1-8B into 16K-32K features and showing semantic features alone recover 94% of peak brain-encoding performance; a priori cortical topography predictions confirmed across five semantic subcategories (Spearman ρ=0.72). Generalizes across English, Chinese, and French. (arXiv: 2605.23035, CoNLL 2026)
+  - Semantic features dominate brain alignment: 94% of peak performance from semantic features alone
+  - Five a priori semantic subcategories map onto distinct cortical regions (Spearman ρ=0.72)
+  - SAE features predict human reading times (ΔlogLik=38.4) and encode unexpected semantic content
+  - Results generalize across English, Chinese, and French
+  - **Activation**: sparse-autoencoder-brain, brain-llm-alignment, sae-neural-encoding, cortical-semantic-topography, computational-neurolinguistics, llm-interpretability-fmri, semantic-feature-dominance, cross-linguistic-brain-encoding, sae-gpt2-fmri, sae-llama-fmri
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[learning-sequence-timing-snn]] - Extends the spiking Temporal Memory (sTM) model to encode element-specific timing and uses oscillatory background inputs as a clock signal for flexible control of sequence replay speed (arXiv: 2605.22523)
+  - Element-specific timing encoded by sequential activation of population-specific neuronal groups
+  - Oscillatory background inputs serve as robust clock signal for controlling replay speed
+  - Replay speed during wakefulness vs. sleep correlated with global oscillatory activity (EEG/LFP)
+  - Elapsed time encoded by unique sparse spatiotemporal patterns of neural activity
+  - **Activation**: spiking-sequence-timing, sTM-model, neural-replay-speed, oscillatory-clock-signal, spiking-temporal-memory, sequence-timing-snn, replay-speed-control, snn-sequence-learning, temporal-pattern-spiking
+
 ## 2026-05-26 - Computer Science (Cron Job)
 
 ### MADQRL: Distributed Quantum Reinforcement Learning Framework for Multi-Agent Environments

@@ -1,136 +1,63 @@
 ---
 name: sae-brain-llm-topography
-description: "Sparse Autoencoders (SAEs) from mechanistic interpretability bridge brain-LLM alignment with cortical semantic topography prediction"
-version: 1.0.0
-author: arXiv 2605.23035 (Dongxin Guo, Jikun Wu, Siu Ming Yiu)
-license: MIT
-platforms: [linux, macos]
-metadata:
-  hermes:
-    tags: [SAE, Brain-LLM-Alignment, Mechanistic-Interpretability, Neural-Encoding, Computational-Neurolinguistics, Sparse-Autoencoders, Cortical-Topography]
-    related_skills: [sparse-autoencoder-brain-llm-topography, brain-llm-key-neurons-grammar, in-context-brain-decoding]
+description: "Sparse Autoencoders (SAEs) bridge mechanistic interpretability with neural encoding models to map LLM features onto cortical semantic topography — decomposing GPT-2 XL and Llama-3.1-8B into 16K-32K interpretable features and showing semantic features dominate brain alignment (94% of peak encoding performance, r=0.285), validated across English/Chinese/French (arXiv: 2605.23035, CoNLL 2026)."
+arxiv_id: "2605.23035"
+published: "2026-05-21"
+authors: "Dongxin Guo, Jikun Wu, Siu Ming Yiu"
+tags: [sparse-autoencoder, brain-llm-alignment, mechanistic-interpretability, neural-encoding, semantic-topography, computational-neurolinguistics, fmri-encoding]
 ---
 
-# Sparse Autoencoders Map Brain–LLM Alignment onto Cortical Semantic Topography
+# SAEs Map Brain–LLM Alignment onto Cortical Semantic Topography
 
-**Paper**: arXiv:2605.23035 (May 2026) — Accepted at **CoNLL 2026**  
-**Authors**: Dongxin Guo, Jikun Wu, Siu Ming Yiu (The University of Hong Kong)  
+## Core Concept
 
-## Summary
+Bridges **sparse autoencoders (SAEs)** from mechanistic interpretability with **neural encoding models** to explain why intermediate LLM layers best predict human brain responses to language. Decomposes GPT-2 XL and Llama-3.1-8B into 16K–32K interpretable features per layer and tests **cortical topography predictions** derived from three independent neuroscience programs.
 
-This paper bridges **sparse autoencoders (SAEs)** from mechanistic interpretability with **neural encoding models** to explain *why* intermediate layers of LLMs best predict human brain responses to language. By decomposing GPT-2 XL and Llama-3.1-8B into 16K–32K interpretable features per layer, the authors show that:
+## Key Contributions
 
-1. **Semantic features alone** recover 94% of peak brain encoding performance (r=0.285)
-2. SAEs **recapitulate cortical semantic topography** — five a priori semantic subcategories map onto distinct brain regions
-3. Results **generalize across English, Chinese, and French**
+1. **SAE Decomposition for Brain Encoding**: First work to apply SAEs to decompose LLM representations into interpretable features and evaluate their contribution to brain encoding performance.
 
-## Key Findings
+2. **Semantic Feature Dominance**: Semantic features alone recover **94% of peak encoding performance** (r=0.285), substantially exceeding variance-matched baselines (p<0.001, d=1.31). Human-validated taxonomy achieves κ≥0.74.
 
-### 1. Semantic Features Dominate Brain Alignment
+3. **Cortical Topography Prediction**: Five a priori semantic subcategories (from three independent neuroscience programs) map onto distinct brain regions, confirmed by formal convergence test (Spearman ρ=0.72, p<0.001; hypergeometric p=0.007).
 
-- Human-validated taxonomy (Fleiss' κ ≥ 0.74) of SAE features across 6 categories
-- **Semantic features alone**: r = 0.285 (94% of peak encoding performance)
-- **Variance-matched baseline**: significantly lower (p < 0.001, Cohen's d = 1.31)
-- SAE features predict human **reading times** beyond lexical controls (ΔlogLik = 38.4, p < 0.001)
+4. **Behavioral Validation**: SAE features predict human reading times beyond lexical controls (ΔlogLik=38.4, p<0.001). Prediction-error analysis provides preliminary evidence the brain encodes unexpected semantic content.
 
-### 2. Cortical Topography Prediction
-
-Five semantic subcategories derived **a priori** from three independent neuroscience programs:
-
-| Subcategory | Predicted Region | Neuroscience Source |
-|------------|-----------------|-------------------|
-| Social/Person | Dorsomedial PFC, TPJ, Precuneus | Theory of Mind network |
-| Action/Event | Premotor, Posterior Parietal | Action observation network |
-| Place/Spatial | Parahippocampal Place Area | Scene-selective cortex |
-| Object/Entity | Lateral Occipital Complex | Object-selective cortex |
-| Abstract/Emotion | Anterior Temporal Lobe, vmPFC | Semantic hub, emotion |
-
-**Convergence test** (Spearman ρ = 0.72, p < 0.001; hypergeometric p = 0.007) confirms alignment at granularity inaccessible to prior methods.
-
-### 3. Cross-Linguistic Generalization
-
-Results replicate across **English, Chinese, and French**, suggesting language-universal semantic representations.
-
-### 4. Semantic Prediction-Error Encoding
-
-Exploratory analysis provides preliminary evidence that the brain additionally encodes **unexpected semantic content** — not just the predicted representation but deviations from it.
+5. **Cross-Linguistic Generalization**: Results generalize across English, Chinese, and French.
 
 ## Methodology
 
-### Step 1: SAE Training
+### SAE Training
+- **Models**: GPT-2 XL (1.5B), Llama-3.1-8B
+- **Feature count**: 16K–32K interpretable features per layer
+- **Sparsity**: Top-k activation with k=32 (GPT-2 XL), k=64 (Llama-3.1-8B)
 
-Train SAEs on LLM hidden states (GPT-2 XL, Llama-3.1-8B):
-- **Dictionary size**: 16K–32K features per layer
-- **Sparsity**: L1 + reconstruction loss
-- **Layers**: Across all layers (not just final)
+### Feature Taxonomy
+1. **Semantic features**: Categorical semantic information
+2. **Syntax features**: Grammatical/syntactic structure
+3. **Position features**: Token position encoding
+4. **Other/Uninterpretable**: Non-interpretable dimensions
 
-### Step 2: Feature Categorization
+### Brain Encoding Evaluation
+- **fMRI data**: Participants reading naturalistic text
+- **Encoding model**: Ridge regression from SAE features to voxel responses
+- **Evaluation**: Prediction accuracy (Pearson r) on held-out data
 
-SAE features manually categorized into taxonomy:
-1. **Semantic** (concrete concepts, abstract ideas, relations)
-2. **Syntactic** (grammatical roles, POS tags)
-3. **Positional** (token position, sequence position)
-4. **Lexical** (word frequency, orthographic)
-5. **Multi/Other** (multiple or uninterpretable)
-6. **Function word** (articles, prepositions, etc.)
+### Cortical Topography Test
+- Five semantic subcategories derived a priori
+- Predicted distinct regional specialization
+- Convergence test across independent prediction maps
 
-Human annotation with Fleiss' κ ≥ 0.74 inter-annotator agreement.
+## Key Findings
 
-### Step 3: Brain Encoding Model
+| Finding | Evidence |
+|---------|----------|
+| Semantic features drive brain alignment | 94% of peak performance from semantic alone |
+| Syntax features matter less | Variance-matched baselines significantly lower |
+| Cortical topography confirmed | Spearman ρ=0.72 across five subcategories |
+| Cross-linguistic robust | Same pattern in EN, ZH, FR |
+| Reading time prediction | ΔlogLik=38.4 beyond lexical controls |
 
-Use SAE feature activations as predictors for fMRI responses:
-- **Ridge regression** encoding model
-- Predict brain responses from SAE feature values
-- Compare semantic-only model vs variance-matched baselines
+## Activation Keywords
 
-### Step 4: Topography Mapping
-
-For each brain voxel:
-1. Find the SAE feature that best predicts it
-2. Map feature subcategory to brain region
-3. Test convergence with a priori neuroscience predictions
-
-### Step 5: Behavioral Validation
-
-Predict human **reading times** from SAE features:
-- Beyond lexical frequency and length baselines
-- ΔlogLik = 38.4 improvement over controls
-
-## Practical Implications
-
-- **For mechanistic interpretability**: SAEs provide a direct bridge to brain data
-- **For cognitive neuroscience**: LLM features predict cortical organization at unprecedented granularity
-- **For NLP**: Brain evidence for semantic primitives encoded in LLMs
-- **For cross-linguistic research**: Universal semantic representations in LLMs
-
-## Key Formulas
-
-### SAE Architecture
-
-```
-f(x) = ReLU(W_enc · (x - b_dec) + b_enc)     # feature activation
-x̂ = W_dec · f(x) + b_dec                       # reconstruction
-L = ||x - x̂||² + λ · ||f(x)||₁                 # loss (reconstruction + sparsity)
-```
-
-### Encoding Model
-
-```
-brain_voxel(t) ≈ β · f_LLM(t) + ε              # ridge regression
-```
-
-## Implementation Notes
-
-- Library: Use **SAELens** or **TransformerLens** for SAE training on LLMs
-- fMRI data: Pereira et al. (2018) natural stories dataset or similar
-- GPU requirements: 1–4 A100s for SAE training on 8B parameter models
-- Cross-linguistic evaluation: Parallel stimuli in English, Chinese, French
-- **Activation**: SAE brain alignment, sparse autoencoder encoding, LLM cortical topography, mechanistic interpretability brain, semantic encoding model, neural encoding SAE
-
-## Pitfalls
-
-- SAE feature interpretability is inherently noisy — human annotation essential
-- Cross-subject alignment in fMRI adds noise; results are group-level
-- Causal claims require follow-up experiments (activation patching)
-- Semantic categories are coarse; finer-grained taxonomies may reveal more
-- Single dataset (Pereira 2018); replication on diverse fMRI corpora needed
+- sparse-autoencoder-brain, brain-llm-alignment, sae-neural-encoding, cortical-semantic-topography, computational-neurolinguistics, llm-interpretability-fmri, semantic-feature-dominance, cross-linguistic-brain-encoding, sae-gpt2-fmri, sae-llama-fmri, mechanistic-interpretability-encoding, llm-brain-topography, semantic-subcategory-cortex
