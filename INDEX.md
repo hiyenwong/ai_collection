@@ -1,3 +1,12 @@
+## 2026-05-26 - Neuroscience + Quantum (Cron Job - Hourly)
+
+### Resting-state fMRI Analysis using Quantum Time-series Transformer
+- [[quantum-timeseries-transformer-fmri]] - Quantum Time-series Transformer (QTS) using LCU + QSVT for resting-state fMRI with polylogarithmic complexity and superior small-sample performance; identifies ADHD biomarkers via SHAP on ABCD/UK Biobank datasets (arXiv: 2509.00711)
+  - QSVT enables O(polylog(N)) self-attention vs classical O(N^2)
+  - Quantum advantage most pronounced in small-sample scenarios
+  - SHAP analysis reveals clinically meaningful neural biomarkers
+  - **Activation**: quantum transformer fMRI, quantum time-series, QTS, quantum fMRI analysis, resting-state quantum, LCU, QSVT, small-sample fMRI
+
 ## 2026-05-25 - Neuroscience Research (Cron Job - 18:00)
 
 ### MIRAGE: Robust Multi-Modal Architectures Translate fMRI-to-Image Models from Vision to Mental Imagery
