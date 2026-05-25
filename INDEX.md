@@ -1,5 +1,21 @@
 ## 2026-05-26 - Computer Science + Quantum Research (Cron Job)
 
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[v1-digital-twin-probing]] - Multi-level probing framework for evaluating latent representations in sensory cortex digital twins, beyond pure prediction accuracy; linear decodability + unit tuning + population geometry across architectures (arXiv: 2605.23122)
+  - Better neural-prediction models exhibit flatter hidden-population eigenspectra (higher-dimensional representations)
+  - Models with comparable prediction accuracy can differ substantially in latent representations
+  - Three-level probing: linear decodability (orientation/contrast/motion), latent-unit tuning, population geometry
+  - Framework for understanding digital twins as substrates for visual computation, not just predictors
+  - **Activation**: V1 digital twin, latent representation probing, neural prediction, population geometry, mouse V1 encoding, representational similarity, digital twin evaluation
+
+### Contextual Role Modulates Object Representational Geometry in the Human Brain
+- [[contextual-role-object-geometry]] - fMRI study showing dynamic remapping of object representations based on contextual role (action target vs passive element); double dissociation between action affordance and semantic representational organization (arXiv: 2605.23111)
+  - Target objects organized by action affordance; passive objects aligned with semantic dimensions
+  - Parietal action network (supramarginal/postcentral gyri) vs occipito-temporal recognition network
+  - Context-invariant visual structure preserved outside context-specific networks
+  - Flexibility and invariance operate at different levels of the same representational system
+  - **Activation**: representational geometry, fMRI object recognition, contextual modulation, action affordance, ventral dorsal stream, brain network remapping
+
 ### SoK: Critical Evaluation of Quantum Machine Learning for Adversarial Robustness
 - [[qml-adversarial-robustness-sok]] - First comprehensive systematization of adversarial robustness in QML across black/gray/white-box threat models; reveals accuracy-robustness trade-off between amplitude vs angle encoding schemes (arXiv: 2511.14989)
   - Amplitude encoding: highest clean accuracy (92.6% MNIST) but collapses under noise + adversarial perturbations

@@ -1,3 +1,84 @@
+## 2026-05-26 - Neuroscience Research (Cron Job)
+
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[v1-digital-twin-probing]] - Multi-level probing framework for evaluating latent representations in sensory cortex digital twins; linear decodability + unit tuning + population geometry (arXiv: 2605.23122)
+  - Better models exhibit flatter hidden-population eigenspectra (higher-dimensional representations)
+  - Models with comparable prediction accuracy differ substantially in latent representations
+  - Three-level probing: linear decodability, latent-unit tuning, population geometry
+  - **Activation**: V1 digital twin, latent representation probing, population geometry, mouse V1 encoding
+
+### Contextual Role Modulates Object Representational Geometry in the Human Brain
+- [[contextual-role-object-geometry]] - fMRI study showing dynamic remapping of object representations based on contextual role; double dissociation: action affordance vs semantic organization (arXiv: 2605.23111)
+  - Target objects: action affordance; passive objects: semantic dimensions
+  - Parietal action network vs occipito-temporal recognition network
+  - Context-invariant visual structure outside context-specific networks
+  - **Activation**: representational geometry, fMRI object recognition, contextual modulation, action affordance
+
+### Sparse Autoencoders Map Brain-LLM Alignment onto Cortical Semantic Topography
+- [[sae-brain-llm-cortical-topography]] - SAEs from mechanistic interpretability bridge brain-LLM alignment with cortical semantic topography prediction. Decomposes GPT-2 XL and Llama-3.1-8B into 16K-32K interpretable features per layer (arXiv: 2605.23035 | CoNLL 2026)
+  - Semantic features alone recover 94% of peak encoding performance (R²=0.94)
+  - Five semantic subcategories map onto distinct brain regions (Spearman ρ, p<0.05)
+  - SAE features predict reading times beyond lexical controls (ΔR², p<0.001)
+  - Cross-linguistic generalization: English, Chinese, French
+  - **Activation**: SAE, sparse autoencoder, mechanistic interpretability, brain encoding, cortical topography, semantic feature, LLM interpretability, fMRI encoding
+
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[v1-digital-twin-latent-probing]] - Multi-level representational probing framework for evaluating digital twins of mouse V1. Probes latent representations across three levels: linear decodability, latent-unit tuning, population geometry (arXiv: 2605.23122)
+  - Models with similar prediction accuracy rely on different latent representations
+  - Better neural prediction correlates with stronger probe accuracy
+  - Highly predictive models show flatter eigenspectra (higher-dimensional representations)
+  - Establishes multi-level probing as necessary complement to accuracy metrics
+  - **Activation**: digital twin, V1, representational probing, population geometry, orientation selectivity, eigenspectrum, mouse V1
+
+### Active Sensing Subserves Task-Level Control
+- [[active-sensing-subserves-task-control]] - Proposes that active sensing movements (explore/exploit modes) emerge inevitably from the combination of adaptive sensors, movement-sensing linkage, and task-level control, rather than from sensory uncertainty minimization (arXiv: 2605.22988)
+  - Supported by both empirical data and mathematical theory
+  - Animals switch between 'explore' (dynamic movements shaping sensory feedback) and 'exploit' (slower compensatory movements) modes
+  - Framework expressed in control theory language for robotics applications
+  - **Activation**: active sensing, sensorimotor control, explore-exploit, task-level control, adaptive sensors, feedback control
+
+### Integrating Cognitive Load and Embodied Cognition Through Multi-Scale Attractors
+- [[cognitive-load-multiscale-attractors]] - Formal rapprochement between cognitive load theory and embodied cognition by reconceptualizing psychological representations as dynamic multiscale attractors within a temporal-hierarchical prediction architecture (arXiv: 2605.23012)
+  - Two theories describe complementary, timescale-separated processes
+  - Learning as attractor sculpting across coupled temporal layers
+  - Five testable predictions: cross-timescale interference, embodied load reduction, metacognition as timescale coupling
+  - **Activation**: cognitive load, embodied cognition, multiscale attractors, dynamical systems, hierarchical predictive processing, attractor sculpting
+
+### Contextual Role Modulates Object Representational Geometry in the Human Brain
+- [[contextual-role-object-representational-geometry]] - fMRI study showing neural remapping of object representations depending on moment-to-moment contextual roles (passive vs. action target) during naturalistic movie viewing (arXiv: 2605.23111)
+  - Double dissociation: target objects organized by action affordance, passive objects by semantic dimensions
+  - Parietal action network vs. occipito-temporal visual recognition network
+  - Visual representations remain context-invariant outside specific networks
+  - **Activation**: object representation, fMRI, contextual role, action affordance, semantic representation, representational geometry, naturalistic viewing
+
+### GazeBehavior Annotation Toolkit (GBAT)
+- [[gaze-behavior-annotation-toolkit]] - Deep-learning toolkit for automatic annotation of egocentric eye-tracking and video data of child-caregiver interaction. Supports post-hoc synchronization, gaze target categorization, and behavioral coding (arXiv: 2605.22962)
+  - AI-powered video synchronization across multiple streams
+  - Semi-automatic gaze target and behavioral annotation
+  - Scalable for large-scale longitudinal developmental studies
+  - **Activation**: GBAT, gaze behavior, eye tracking, egocentric video, child-caregiver interaction, behavioral annotation, developmental psychology
+
+### Brain-LLM Alignment Tracks Training Data, Not Typology
+- [[brain-llm-alignment-training-data]] - Demonstrates that the apparent English advantage in brain-LLM alignment is an artifact of training data composition, using fMRI from 112 participants across 3 languages (arXiv: 2605.23032 | CoNLL 2026)
+  - Chinese-dominant Baichuan2-7B reverses alignment gradient entirely
+  - Typological distance independently affects alignment degradation in syntax regions (IFG)
+  - Tokenization fertility accounts for ~60% of optimal encoding layer shift
+  - **Activation**: brain-LLM alignment, cross-linguistic, training data dominance, fMRI, typological distance, neurolinguistics
+
+### Geometric Origin of Exact Mean-Field Reductions
+- [[geometric-mean-field-lorentzian-ansatz]] - Proves the Cauchy-Lorentz family is the unique connected two-dimensional family of continuous probability densities invariant under projective transport induced by Riccati dynamics, providing a unified geometric foundation for Ott-Antonsen and Montbrió-Pazó-Roxin reductions (arXiv: 2605.23669)
+  - Explains why Lorentzian Ansatz works and Gaussian closures fail
+  - Unified geometric foundation for neural mass model reductions
+  - Identifies structural condition for exact two-parameter reductions
+  - **Activation**: Lorentzian Ansatz, mean-field reduction, Ott-Antonsen, Montbrió-Pazó-Roxin, neural mass model, Riccati dynamics, Cauchy distribution
+
+### Naturalistic Computational Cognitive Science
+- [[naturalistic-computational-cognitive-science - repo]] - Framework for building generalizable cognitive science models spanning the full scope of natural situations and behaviors by integrating AI progress with naturalistic experimental paradigms (arXiv: 2502.20349, v5 updated May 2026)
+  - Reviews evidence that naturalistic paradigms elicit distinct behaviors and cognitive processes
+  - Discusses how AI learning from naturalistic data yields qualitatively different generalization patterns
+  - Practical guidance for cumulative progress in naturalistic computational cognitive science
+  - **Activation**: naturalistic cognitive science, computational cognitive science, AI for cognitive modeling, naturalistic paradigms, generalizable theories
+
 ## 2026-05-25 - Quantum Computing Research (Cron Job)
 
 ### CRiSP: Clifford RL for State Preparation — VQA Initialization via Reinforcement Learning
@@ -301,7 +382,7 @@
 ### Quantum Computing for Financial Transformation (Review Updated)
 - [[quantum-finance-stack-analysis]] - 金融计算五层堆栈：组合优化、衍生品定价、风险估计、量子ML、后量子密码学 (arXiv: 2604.08180)
   - 核心要点：近期最强案例是精心设计的混合量子-经典工作流
-  - 核心要点：组合优化最可信（组合复杂性是约束成本），振幅估计对重复期望评估最有效
+  - 核心要点：组合优化最可信（组合复杂性是成本约束），振幅估计对重复期望评估最有效
 
 ## 2026-05-16 - Economics, Investment + Quantum Mechanics (Cron Job - Hourly)
 
