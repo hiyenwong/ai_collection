@@ -1,3 +1,37 @@
+## 2026-05-26 - Deep Learning Research (Cron Job)
+
+### MARGIN: Runtime Confidence Calibration for Multi-Agent Foundation Model Coordination
+- [[margin-runtime-confidence-calibration]] - Online confidence calibration for multi-agent AI coordination; requires no model access, no held-out data, and no retraining (arXiv: 2605.22949)
+  - Symmetric exponentially weighted moving averages with Bayesian shrinkage blending
+  - 3 hyperparameters with robust defaults; 3-6x lower calibration error than design-time baselines
+  - Raises pairwise agent resolution from 45-56% (worse than random) to 70-89%
+  - Validated across 19 foundation models, 8 benchmarks, 50K+ observations
+  - **Activation**: MARGIN, multi-agent confidence calibration, runtime calibration, online calibration, agent coordination, foundation model trust, confidence band calibration, Bayesian shrinkage smoothing, multi-agent selection
+
+### Metacognition as Reward: Reinforcing LLM Reasoning via Knowledge and Regulation Signals
+- [[metacognition-as-reward]] - Metacognition-inspired RL framework guiding LLM reasoning through metacognitive knowledge and regulation dimensions without hand-crafted rubrics (arXiv: 2605.23384)
+  - Two general metacognitive dimensions: task knowledge coverage + regulation fidelity
+  - Trajectory-level reward over knowledge, regulation, and answer correctness
+  - Up to 7.7% gain over base model, up to 11.0% over vanilla DAPO on 22 benchmarks
+  - Qwen3.5-9B + MaR surpasses GPT-OSS-120B on overall average
+  - **Activation**: MaR, metacognition as reward, metacognitive RL, LLM reasoning reward, process reward model, RLVR reasoning, trajectory-level reward, reasoning process optimization
+
+### Training-Free Looped Transformers
+- [[training-free-looped-transformers]] - Inference-time technique looping a contiguous mid-stack block of layers in frozen pretrained LLMs to improve reasoning without fine-tuning (arXiv: 2605.23872)
+  - Treats transformer block as ODE Euler step; replaces one large update with damped sub-steps
+  - No fine-tuning, continued training, or architectural changes required
+  - +2.64 pp MMLU-Pro on Qwen3-4B, +1.14 pp CommonsenseQA on Qwen3-30B-A3B
+  - Works across 7 model families: dense, sparse MoE, MLA+MoE
+  - **Activation**: training-free looped transformers, inference-time looping, test-time compute, frozen LLM improvement, transformer ODE, damped looping, block reapplication, retrofitting recurrence
+
+### S³GNN: Efficient Global Mixing and Local Message Passing for Long-Range Graph Learning
+- [[s3gnn-efficient-graph-mixing]] - Efficient global mixing methodology for graph neural networks that mitigates oversquashing without restrictive theoretical assumptions (arXiv: 2605.23467)
+  - Lightweight spectral filtering reintroduces omitted long-range components
+  - Up to order-of-magnitude error reduction with up to 50% fewer parameters
+  - Validated on long-range benchmarks, KGQA, and mesh-based fluid dynamics
+  - Standard stability constraints replace difficult-to-achieve Jacobian bounds
+  - **Activation**: S³GNN, oversquashing mitigation, long-range graph learning, spectral-spatial GNN, global-local graph mixing, GNN efficiency, OSQ alleviation
+
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
 ### CORTEG: Foundation Models Enable Cross-Modality Representation Transfer from Scalp to Intracranial Brain Recordings
