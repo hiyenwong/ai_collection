@@ -1,3 +1,12 @@
+## 2026-05-25 - Neuroscience Research (Cron Job)
+
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[v1-digital-twin-latent-probing]] - Multi-level representational probing framework for mouse V1 digital twins reveals that models with comparable neural-prediction accuracy can rely on substantially different latent representations (arXiv: 2605.23122)
+  - Three-level probing: linear decodability, latent-unit tuning, population geometry (eigenspectra)
+  - Better neural prediction correlates with higher-dimensional representations closer to mouse V1 signatures
+  - Digital twins with comparable prediction scores differ substantially in probe performance and latent-unit tuning
+  - **Activation**: digital twin probing, V1 latent representations, population geometry, neural activity prediction, representational analysis, visual cortex modeling
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job)
 
 ### Covariant Quantum Error Correction in a Three-Layer Quantum Brain Model
