@@ -1,3 +1,20 @@
+
+## 2026-05-25 - Neuroscience Research (Cron Job)
+
+### Contextual Role Modulates Object Representational Geometry in the Human Brain
+- [[contextual-role-object-representational-geometry]] - fMRI study showing contextual role modulates object representational geometry with double dissociation: target objects organized by action affordance, passive objects by semantics (arXiv: 2605.23111)
+  - Double dissociation in representational geometry: action affordance vs. semantic dimensions
+  - Parietal action network for targets, occipito-temporal network for passive objects
+  - Flexibility and invariance operate at different levels of the same representational system
+  - **Activation**: fMRI, representational geometry, object recognition, contextual modulation, naturalistic stimuli
+
+### Active Sensing Subserves Task-Level Control
+- [[active-sensing-subserves-task-control]] - Proposes active sensing is not driven by sensory goals but emerges from task-level control necessity; explore-exploit mode switching in biological sensorimotor systems (arXiv: 2605.22988)
+  - Active sensing movements are necessary for control, not just information acquisition
+  - Animals switch between explore mode (dynamic) and exploit mode (compensatory)
+  - Engineered systems insufficient compared to biological robustness
+  - **Activation**: active sensing, sensorimotor control, control theory, explore-exploit, bio-inspired robotics
+
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job) - Hourly Update
 
 ### From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain
