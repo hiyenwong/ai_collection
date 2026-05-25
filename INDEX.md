@@ -23,6 +23,21 @@
   - C. elegans validation: neurolocomotor neurons emerge as functional hubs at entropy-maximizing β
   - **Activation**: algebraic quantum, C* algebra, KMS states, synaptic network, brain topology, TCK algebra, functional centrality, non-Markovian flow
 
+## 2026-05-25 - Neuroscience + Quantum (Cron Job)
+
+### Quantum Quenches that Resemble Operator Growth
+- [[quench-operator-growth]] - Quantum quenches generate operator growth patterns resembling chaotic information scrambling in spin chains; OTOC-based chaos detection applicable to quantum neural dynamics (arXiv: 2605.23874)
+  - Core operator growth methodology: measures localized operator spreading under Hamiltonian evolution
+  - Connection between quantum scrambling and neural network information propagation
+  - **Activation**: quantum quenches, operator growth, OTOC, information scrambling, chaotic spin chains
+
+### Today's Papers Imported (already had skills or were duplicates)
+- [[sparse-autoencoder-brain-llm-topography]] - CONSOLIDATED: removed duplicate sae-brain-llm-topography, retained sparse-autoencoder-brain-llm-topography (arXiv: 2605.23035)
+- 2605.23012 - cognitive-load-multiscale-attractors (already existed)
+- 2605.22988 - active-sensing-subserves-task-control (already existed)
+- 2605.23111 - contextual-role-object-representational-geometry (already existed)
+- 2605.23122 - v1-digital-twin-latent-probing (already existed)
+- 2605.23669 - geometric-mean-field-lorentzian-ansatz (already existed)
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job)
 
 ### Covariant Quantum Error Correction in a Three-Layer Quantum Brain Model
