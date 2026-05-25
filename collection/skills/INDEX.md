@@ -79,6 +79,15 @@
   - Practical guidance for cumulative progress in naturalistic computational cognitive science
   - **Activation**: naturalistic cognitive science, computational cognitive science, AI for cognitive modeling, naturalistic paradigms, generalizable theories
 
+## 2026-05-26 - Computer Science + Quantum Computing (Cron Job)
+
+### Off-line quantum-advantage feature extraction for industrial production
+- [[quantum-feature-surrogates]] - Framework enabling quantum-advantaged feature extraction at production scale via quantum-to-classical surrogate distillation. Quantum processor processes small representative subsamples, trains classical surrogate for near-zero-cost full dataset inference (arXiv: 2605.19801)
+  - Subsample must faithfully represent full dataset distribution
+  - Quantum processor acts as "teacher of representations"
+  - Classical surrogate enables production inference without quantum hardware
+  - **Activation**: quantum feature surrogate, production quantum ML, quantum subsample teacher, quantum-to-classical distillation
+
 ## 2026-05-25 - Quantum Computing Research (Cron Job)
 
 ### CRiSP: Clifford RL for State Preparation — VQA Initialization via Reinforcement Learning
