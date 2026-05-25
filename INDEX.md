@@ -1,3 +1,28 @@
+## 2026-05-25 - Neuroscience + Quantum (Cron Job - Hourly)
+
+### Exploring Entropy-based Active Learning for Fair Brain Segmentation
+- [[brain-segmentation-active-learning]] - Entropy-based active learning for fair brain image segmentation; selects most informative samples via predictive entropy while ensuring equitable performance across demographic groups (arXiv: 2605.01706)
+  - Predictive entropy selects highest-uncertainty samples for annotation
+  - Fairness constraints ensure per-group representation in annotation budget
+  - MC dropout or deep ensembles for calibrated uncertainty estimation
+  - Monitor worst-group Dice score as primary fairness indicator
+  - **Activation**: brain segmentation active learning, entropy-based sample selection, fair brain segmentation, medical imaging active learning
+
+### Solving Classical and Quantum Spin Glasses with Deep Boltzmann Quantum States
+- [[quantum-spin-glass-boltzmann]] - Deep Boltzmann Quantum States for solving classical and quantum spin glasses; overcomes disorder and energy frustration barriers that hinder conventional Metropolis Monte Carlo (arXiv: 2605.15899)
+  - Neural quantum states with Boltzmann machine architecture for frustrated systems
+  - Addresses exponentially large number of local energy minima
+  - Variational approach for ground-state properties of disordered quantum systems
+  - **Activation**: deep boltzmann quantum states, spin glass, quantum many-body, neural quantum states, variational Monte Carlo, frustrated systems
+
+### Today's Papers (Existing Skills Updated)
+- [[parallel-scan-neural-quantum-states]] - Parallel scan RNN quantum states for scalable variational Monte Carlo (arXiv: 2605.13807)
+- [[neural-network-quantum-states-grand-canonical]] - Neural quantum states in Fock space with variable particle number (arXiv: 2605.07779)
+- [[qlif-cast-quantum-spiking-forecasting]] - Quantum leaky-integrate-and-fire for time-series weather forecasting (arXiv: 2605.18333)
+- [[quantum-like-mental-markers]] - Contextuality-incompatibility-entanglement triad for mental markers (arXiv: 2603.03358)
+- [[three-layer-quantum-brain]] - Covariant QEC in three-layer quantum brain model (arXiv: 2604.08587)
+- [[leggett-garg-neural-dynamics]] - Leggett-Garg tests for non-diffusive neural dynamics (arXiv: 2605.12126)
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job - Hourly)
 
 ### Resting-state fMRI Analysis using Quantum Time-series Transformer
