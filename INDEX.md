@@ -1,3 +1,13 @@
+## 2026-05-26 - Computer Science + Quantum ML (Cron Job)
+
+### Discovering Data Encoding Strategies for QCCNN Using Monte Carlo Tree Search
+- [[mcts-encoding-discovery-qml]] - MCTS methodology for discovering optimal data encoding circuits in quantum-classical neural networks, with effective rank as the key performance predictor (arXiv: 2605.18540)
+  - MCTS discovers encodings outperforming standard strategies on medical imaging datasets
+  - Effective rank of feature maps is the strongest predictor of encoding performance
+  - Entanglement capability and Fourier decomposition provide minimal predictive insight
+  - Effective rank can serve as a threshold criterion to accelerate encoding search
+  - **Activation**: mcts-encoding-discovery, quantum-data-encoding, QCCNN, effective-rank-encoding, monte-carlo-tree-search-qml, encoding-circuit-optimization, quantum-classical-cnn
+
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
 ### SAEs Map Brain–LLM Alignment onto Cortical Semantic Topography
