@@ -1,5 +1,21 @@
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
+### Nonlocal Operator Learning for fMRI Encoding and Decoding Tasks
+- [[nonlocal-operator-fmri-encoding]] - Neural integral operator framework for fMRI encoding/decoding that performs fixed-point iterations in latent space; systematically compares short vs long temporal windows and visual cortex vs whole-brain recordings on two open-source fMRI datasets (arXiv: 2605.20389)
+  - Neural integral operators capture nonlocal spatiotemporal dependencies that CNNs/RNNs handle only indirectly
+  - Larger temporal windows consistently improve both encoding and decoding performance
+  - Learned latent space provides clearer class separation than raw fMRI data
+  - Encoding remains challenging but benefits consistently from extended temporal context
+  - **Activation**: neural-operator-fmri, nonlocal-fmri, integral-operator-brain, spatiotemporal-fmri, fmri-encoding-decoding, latent-dynamics-fmri
+
+### Learning fMRI Activation Dictionaries Across Individual Geometries via Optimal Transport
+- [[fmri-dictionary-learning-optimal-transport]] - Novel dictionary learning approach that uses Fused Gromov-Wasserstein optimal transport distance to account for individual brain geometry variability instead of template-based projection; uses amortized optimization for computational efficiency on HCP dataset (arXiv: 2605.20883)
+  - Preserves individual brain geometry rather than discarding it via template registration
+  - FGW trade-off parameter controls balance between feature alignment and structural consistency
+  - Amortized neural network predicts optimal transport plans, making FGW feasible for large-scale fMRI
+  - Captures different levels of geometric variability and preserves essential information for downstream tasks
+  - **Activation**: fmri-dictionary-learning, optimal-transport-fmri, fgw-brain, individual-brain-geometry, fmri-alignment, amortized-transport, brain-graph-optimal-transport
+
 ### STAMBRIDGE: Spectral-Temporal Amplitude-aware Mid-Feature Bridge for EEG Visual Decoding
 - [[stambridge-eeg-visual-decoding]] - Two-stage EEG visual decoding framework combining Spectral-Temporal Amplitude-aware Modulation (STAM) with Mid-Feature Semantic Bridge (MFSB) for zero-shot EEG-to-image retrieval; achieves 34.50% Top-1 accuracy on THINGS-EEG (arXiv: 2605.23137)
   - STAM replaces hard frequency masking with amplitude-derived soft channel weighting, preserving temporal transients without ringing artifacts
