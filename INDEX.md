@@ -31,6 +31,20 @@
   - Engineered systems insufficient compared to biological robustness
   - **Activation**: active sensing, sensorimotor control, control theory, explore-exploit, bio-inspired robotics
 
+### SpikingMoE: SDPrompt-Guided Dynamic Expert Fusion in Spiking Neural Networks
+- [[spikingmoe]] - First open-source SNN framework integrating spike-driven Transformer with LGN-inspired Mixture-of-Experts for dynamic computation (arXiv: 2605.23188)
+  - LGN-inspired spike-driven prompt (SDprompt) enables input-dependent expert routing in biologically plausible manner
+  - Replaces MLPs with spike-compatible expert modules; fully binary spike communication for neuromorphic hardware
+  - Achieves 94.09% (CIFAR-10) and 74.54% (CIFAR-100) top-1 accuracy
+  - **Activation**: spiking MoE, spike-driven transformer, SNN expert routing, LGN spiking, neuromorphic MoE
+
+### Sparse Autoencoders Map Brain–LLM Alignment onto Cortical Semantic Topography
+- [[sae-brain-llm-topography]] - SAE-based brain-LLM alignment reveals semantic features alone recover 94% of peak encoding performance and recapitulate cortical semantic topography (arXiv: 2605.23035)
+  - Semantic features dominate brain alignment (r=0.285, 94% of peak, d=1.31 vs baseline)
+  - Five a priori semantic subcategories map onto distinct brain regions (Spearman ρ=0.72)
+  - Generalizes across English, Chinese, and French
+  - **Activation**: SAE brain alignment, sparse autoencoder encoding, LLM cortical topography, mechanistic interpretability brain, neural encoding SAE
+
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job) - Hourly Update
 
 ### From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain
