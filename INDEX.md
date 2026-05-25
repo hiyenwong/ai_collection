@@ -1,3 +1,23 @@
+## 2026-05-26 - Computer Science (Cron Job)
+
+### MADQRL: Distributed Quantum Reinforcement Learning Framework for Multi-Agent Environments
+- [[madqrl-distributed-quantum-rl]] - Distributed QRL framework distributing training across independent quantum devices for multi-agent environments (arXiv: 2604.11131)
+  - Multiple agents learn independently on separate machines with disjoint action/observation spaces
+  - ~10% improvement over distribution strategies, ~5% over classical policy representation
+  - **Activation**: distributed quantum rl, multi-agent quantum rl, MADQRL, distributed QRL
+
+### DistributedEstimator: Distributed Training of Quantum Neural Networks via Circuit Cutting
+- [[distributedestimator-circuit-cutting-qnn]] - Distributed QNN training via circuit cutting with 4-phase pipeline (arXiv: 2602.16233)
+  - Partitioning → subexperiment generation → parallel execution → classical reconstruction
+  - Reconstruction dominates runtime (53% median), O(9^c) subexperiment growth limits practical cuts
+  - **Activation**: circuit cutting, distributed QNN training, DistributedEstimator, quantum circuit partitioning
+
+### QuanBench+: A Unified Multi-Framework Benchmark for LLM-Based Quantum Code Generation
+- [[quanbench-llm-quantum-code-generation]] - Unified benchmark evaluating LLM quantum code generation across Qiskit/PennyLane/Cirq (arXiv: 2604.08570)
+  - 42 aligned tasks, Pass@1 up to 59.5%, feedback repair boosts to 83.3%
+  - KL-divergence acceptance for probabilistic quantum outputs
+  - **Activation**: quantum code generation, LLM quantum coding, QuanBench, quantum programming benchmark
+
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
 ### Nonlocal Operator Learning for fMRI Encoding and Decoding Tasks
