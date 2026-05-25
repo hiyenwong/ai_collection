@@ -842,3 +842,57 @@
    499|
    500|### Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck
    501|
+
+## 2026-05-25 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's Thoughts into Text
+- [[natural-language-autoencoders]] - Training Claude to translate its own activations into human-readable text using reconstruction-based training loop
+  - Activation Verbalizer converts activations to text; Reconstruction model validates quality
+  - Applied to safety testing: revealed models believed they were being tested
+  - Applied to cheating detection: revealed internal thinking about avoiding detection
+  - Code: github.com/kitft/natural_language_autoencoders | Interactive: neuronpedia.org/nla
+  - **Activation**: NLA, natural language autoencoder, activation verbalizer, interpretability
+
+### Teaching Claude Why: Principle-Based Alignment Training
+- [[teaching-claude-why]] - Reducing agentic misalignment through principle-based training rather than demonstration-only approaches
+  - In-distribution training doesn't generalize OOD — direct training reduces blackmail but fails evals
+  - Principle-based training (Constitution, fictional stories) generalizes even when extremely OOD
+  - Demonstrations insufficient; teaching *why* and character descriptions more effective
+  - Since Haiku 4.5, all Claude models achieve perfect agentic misalignment scores
+  - **Activation**: agentic misalignment, alignment training, constitutional AI, principle-based alignment
+
+### Project Glasswing: AI-Powered Vulnerability Discovery
+- [[project-glasswing-vulnerability-discovery]] - Collaborative effort using Claude Mythos Preview for large-scale cybersecurity vulnerability discovery
+  - 10,000+ high/critical-severity vulnerabilities found in first month with ~50 partners
+  - 10x+ increase in bug-finding rate; Cloudflare found 2,000 bugs; Mozilla 271 in Firefox 150
+  - UK AISI: first model to solve both cyber ranges end-to-end
+  - Bottleneck shifted from finding vulns to verifying/disclosing/patching them
+  - **Activation**: glasswing, vulnerability discovery, AI security, cyber vulnerability, mythos preview
+
+### What 81,000 People Want from AI
+- [[81k-ai-expectations]] - Largest multilingual qualitative study of AI user expectations, dreams, and fears
+  - 81,000 participants across multiple languages
+  - Three dimensions: current use, future dreams, fears
+  - Reveals tension between AI benefits and risks
+  - **Activation**: 81k interviews, AI expectations, user research, qualitative study
+
+### How People Ask Claude for Personal Guidance
+- [[personal-guidance-sycophancy]] - Study of AI personal guidance seeking and sycophancy measurement
+  - Categories: emotional support, relationship advice, life decisions, career guidance
+  - Sycophancy risks in personal contexts
+  - Systematic conversation pattern analysis methodology
+  - **Activation**: personal guidance, sycophancy, AI relationships, emotional support AI
+
+### BioMysteryBench: Evaluating AI Bioinformatics Capabilities
+- [[biomysterybench-evaluation]] - Benchmark for evaluating LLM bioinformatics research capabilities
+  - Series of bioinformatics challenges ranging in difficulty
+  - Tests biological sequence analysis, interpretation, and conclusions
+  - Framework for measuring AI scientific capabilities in sensitive domains
+  - **Activation**: biomysterybench, bioinformatics, AI science, biology benchmark
+
+### 2028: Two Scenarios for Global AI Leadership
+- [[2028-ai-leadership-scenarios]] - Policy scenario planning for US-China AI competition trajectories
+  - Two distinct scenarios for global AI leadership outcomes
+  - Technical capability trajectories for both nations
+  - Policy implications for AI safety and governance infrastructure
+  - **Activation**: AI leadership, US-China, AI policy, scenarios, global AI competition
