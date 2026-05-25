@@ -1,5 +1,8 @@
 ---
 name: geometric-phase-transition-hippocampal-memory
+arxiv_id: "2605.17199"
+published: "2026-05-16"
+authors: "Prashant C. Raju"
 description: "Geometric phase transition methodology for hippocampal memory — extreme spatial memory emerges from a discrete stiffening of hippocampal population geometry from disorganized (mist) to crystalline code. Use when researching: hippocampal memory capacity, neural manifold geometry, topological phase transitions in neural codes, food-caching birds and spatial memory, geometric stability of neural representations, Valiant's Stable Memory Allocator, representational redundancy (geometric tax), excitatory-inhibitory circuit dynamics for high-capacity storage. Keywords: hippocampal memory, geometric phase transition, crystalline code, neural manifold, food-caching birds, geometric tax, spatial memory, topological rigidity."
 ---
 
