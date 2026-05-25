@@ -7,6 +7,15 @@
   - Digital twins with comparable prediction scores differ substantially in probe performance and latent-unit tuning
   - **Activation**: digital twin probing, V1 latent representations, population geometry, neural activity prediction, representational analysis, visual cortex modeling
 
+## 2026-05-25 - Neuroscience + Quantum (Cron Job - 17:00)
+
+### Kubo-Martin-Schwinger States of Path-structured Flow in Brain Synaptic Networks
+- [[kms-states-brain-networks]] - Algebraic quantum systems methodology for brain network analysis using graph C*-algebras and KMS thermodynamic states (arXiv: 2410.18222)
+  - Models synaptic networks as Toeplitz-Cuntz-Krieger (TCK) C*-algebras with gauge action
+  - KMS states represent stationary distributions of non-Markovian flow with memory decay
+  - C. elegans validation: neurolocomotor neurons emerge as functional hubs at entropy-maximizing β
+  - **Activation**: algebraic quantum, C* algebra, KMS states, synaptic network, brain topology, TCK algebra, functional centrality, non-Markovian flow
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job)
 
 ### Covariant Quantum Error Correction in a Three-Layer Quantum Brain Model
