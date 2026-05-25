@@ -1,3 +1,11 @@
+## 2026-05-26 - Neuroscience + Quantum (Cron Job)
+
+### Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection
+- [[quantum-genetic-negative-selection]] - Quantum genetic algorithm for anomaly detection via negative selection optimization (arXiv: 2605.22527)
+  - QGA replaces classical GA in negative selection detector generation
+  - Quantum superposition encodes exponential candidate space in O(n) qubits
+  - Rotation gate amplitude adjustment controls exploration vs convergence
+  - **Activation**: quantum genetic algorithm, negative selection, anomaly detection, artificial immune system, QGA, QGNSA
 ## 2026-05-25 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
 ### ORCHID: Kuramoto-Based Quantum Consensus Protocol
