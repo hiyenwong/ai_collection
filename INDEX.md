@@ -32,6 +32,14 @@
   - Digital twins with comparable prediction scores differ substantially in probe performance and latent-unit tuning
   - **Activation**: digital twin probing, V1 latent representations, population geometry, neural activity prediction, representational analysis, visual cortex modeling
 
+### UniSpike: Accelerating Spiking Neural Networks on Neuromorphic Systems via Eliminating Address Redundancy
+- [[unispike-snn-acceleration]] - Hardware-software co-design that accelerates SNN inference on many-core neuromorphic systems by eliminating redundant address transmissions in packet-based spike communication; achieves 1.93× traffic reduction, 1.77× speedup, 1.50× energy efficiency (arXiv: 2605.23796, DAC 2026)
+  - Destination-centric spike scheduling aggregates spikes for same core into compact multi-spike packets
+  - Lightweight runtime packet assembly hardware with minimal area overhead
+  - Destination-aware SNN partitioning minimizes inter-core spike traffic
+  - Duplicate address transmissions account for up to 49% of total traffic in representative workloads
+  - **Activation**: unispike, spike communication, address redundancy, neuromorphic hardware, many-core SNN, spike packet aggregation, destination-centric scheduling, SNN partitioning, hardware-software co-design, neuromorphic acceleration, event-driven neural networks, spike traffic optimization
+
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job - 17:00)
 
 ### Kubo-Martin-Schwinger States of Path-structured Flow in Brain Synaptic Networks
