@@ -1,3 +1,26 @@
+## 2026-05-25 - Quantum Computing Research (Cron Job)
+
+### CRiSP: Clifford RL for State Preparation — VQA Initialization via Reinforcement Learning
+- [[crisp-rl-clifford-vqa]] - Reinforcement learning framework using Neural-Guided MCTS with Transformer-based policy (trained via self-play) to discover optimal Clifford gate prefixes for VQA warm-start initialization, achieving 3.17× mean improvement in energy accuracy over state-of-the-art methods (arXiv: 2605.23138)
+  - Formulates Clifford prefix selection as sequential decision-making with MCTS
+  - Uses Transformer policy trained via self-play with curriculum learning
+  - Polynomial-time classical stabilizer simulation during search
+  - Up to 22 qubits, 1,370 parameters benchmarked
+  - 3.17× mean / 45.02× max improvement in energy accuracy
+  - Compatible with QAOA and VQE without modifying circuit architecture
+  - **Activation**: CRiSP, Clifford RL, VQA initialization, MCTS quantum, Transformer quantum, stabilizer simulation, QAOA warm-start, barren plateau
+
+### Sparse Mamba Decoder for Quantum Error Correction
+- [[sparse-mamba-decoder-qec]] - Defect-centric neural decoder for surface code QEC using Mamba state-space model that processes only active detection events (k ≪ d²R), achieving O(k) complexity with 24-57 μs constant latency across d=3-9 (arXiv: 2605.17156)
+  - First defect-centric neural decoder exploiting syndrome sparsity
+  - Uses 13D feature representation per defect event
+  - Mamba/SSM backbone for linear-time sequence processing
+  - 95-467× faster than Tesseract near-MLD decoder
+  - Up to 49% MWPM logical error rate reduction at d ≤ 5 (SI1000 noise)
+  - Validated on Google Sycamore experimental data
+  - 7.5M-16M parameters on commodity NVIDIA GPUs
+  - **Activation**: Sparse Mamba Decoder, SMD, quantum error correction, surface code, defect-centric decoding, Mamba, state-space model, QEC neural decoder
+
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
