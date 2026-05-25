@@ -48,6 +48,15 @@
   - Reframes lookup-table/simulation/unfolding objections as structural criterion questions
   - **Activation**: canonical functionalism, consciousness theory, computational functionalism, consciousness invariants, functional structure consciousness
 
+## 2026-05-25 - Systems Engineering Research (Cron Job - Monday)
+
+### LiveR: Fine-Grained Elasticity via Live Reconfiguration for Model Training
+- [[liver-live-reconfiguration]] - Live reconfiguration runtime for elastic LLM training replacing stop-and-restart with live, bounded-memory handoff between mixed-parallel worlds (arXiv: 2605.22014)
+  - Core: Parallel Worlds + Mock Process Groups + Streaming Resharding + Atomic Switch
+  - Key: Background Shadow World preparation while Active World continues training
+  - Result: 14×-23× speedup, ~7s downtime (vs 150s+), ~99% training efficiency under volatility
+  - **Activation**: live reconfiguration, elastic training, LLM training, mixed parallelism, spot instances, distributed systems
+
 ### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
 - [[leggett-garg-neural-dynamics]] - LGI testing methodology for distinguishing diffusive vs persistent stochastic neural dynamics, revealing memory and non-Markovian structure (arXiv: 2605.12126)
   - Leggett-Garg inequality as temporal probe of neural dynamics (analogue of Bell-type constraints)

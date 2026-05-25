@@ -1,113 +1,74 @@
 ---
 name: liver-live-reconfiguration
-description: "Live reconfiguration methodology for elastic distributed model training — replacing checkpoint/restart with live, bounded-memory handoffs between mixed-parallel training worlds. Based on LiveR paper (arXiv:2605.22014). Use when designing elastic training systems for LLMs, handling volatile GPU resources, or implementing live reconfiguration in distributed computing."
+description: "LiveR: Live reconfiguration runtime for elastic LLM training. Fine-grained elasticity via live handoff between mixed-parallel training worlds without stop-and-restart."
+category: "systems-engineering"
+bump_similar: false
 ---
 
 # LiveR: Live Reconfiguration for Elastic Model Training
 
-Live reconfiguration runtime for elastic LLM training that replaces storage-backed restart with a **live, bounded-memory handoff between mixed-parallel training worlds**. Core insight: while the current world continues training, asynchronously prepare the target world and stream model state directly over high-bandwidth interconnects.
+## Source
+- **arXiv**: 2605.22014 (22 May 2026)
+- **Authors**: Haoyuan Liu, Kairui Zhou, Shuyao Qi, Qinwei Yang, Shengkai Lin, Shizhen Zhao, Wei Zhang
+- **Venue**: MLSys 2026 (to appear)
 
-## Core Architecture
+## Core Problem
+Elastic LLM training on volatile GPU capacity (spot instances, reclaimable resources) needs frequent reconfiguration. Existing systems use stop-and-restart: checkpoint → teardown → rebuild → resume, incurring minutes of downtime per event.
 
-### Key Insight
+## Key Innovation
+LiveR replaces storage-backed restart with a **live, bounded-memory handoff between mixed-parallel training worlds**. While the current world trains, LiveR asynchronously prepares the target world and streams model state over high-bandwidth interconnects, reshaping state online across TP/PP/DP dimensions.
 
-Existing elastic training systems treat reconfiguration as **stop-and-restart**:
-1. Externalize distributed state through checkpoints
-2. Rebuild distributed runtime on a new topology
-3. Restart training
+## Core Methodology
 
-This incurs substantial downtime from: checkpoint I/O, process restart, CUDA initialization, communicator setup.
+### 1. Parallel Worlds (Background Construction)
+- **Active World**: continues training uninterrupted
+- **Shadow World**: asynchronously initialized with new process groups
+- Worlds coexist during reconfiguration — no teardown until switch
 
-**LiveR's approach**: Replace storage-backed restart with live handoff.
+### 2. Mock Process Groups (Hide Initialization Latency)
+- New ranks join isolated groups; boot CUDA, NCCL, JIT in background
+- Only final commit is on critical path (<0.5s)
 
-### Live Handoff Pipeline
+### 3. Streaming Resharding (Bounded Memory)
+- **Abstract Resource View**: state defined by logical tensors + sharding spec
+- **Intersection-based transfer**: computes minimal data movement between source/target layouts
+- Layers transferred via pipeline streaming; staging buffer capped at one layer (~512MB–1GB)
+- No full model copy needed
 
-```
-Current World (still training)
-│
-├── Asynchronously prepare target world ───► Bootstraps new workers in isolation
-│                                              (heavyweight init off critical path)
-│
-├── Stream model state over high-bandwidth ──► Reshape online across
-│   interconnects                                TP, PP, DP dimensions
-│
-└── Lightweight commit ──► Switch training to new configuration
-                           (no stop-and-restart on live path)
-```
+### 4. Atomic Switch & Consistent Cut
+- Finish current iteration (natural consistent cut under 1F1B pipeline)
+- Streaming transfers → atomic metadata swap (<0.5s)
 
-## Key Technical Components
+### 5. Design Invariants
+1. No global restart on live path
+2. Bounded memory during transition (no second model copy)
+3. Arbitrary TP/PP/DP reshaping
+4. Bit-exact numerical parity
 
-### 1. Asynchronous Target World Preparation
+## Key Results
+- **14×–23× speedup** over Megatron-LM Checkpoint
+- **~7s downtime** per event (vs 150s+)
+- **<0.3% steady-state overhead**
+- **~99% training efficiency** under volatility (vs 61.3%)
+- Verified bit-exact; supports 1,024 GPUs / 70B params
 
-While the current world continues training, LiveR:
-- Prepares the target world in **isolated workers**
-- Bootstraps newly added workers to keep heavyweight initialization off the critical path
-- No pausing of the active training loop
+## Systems Engineering Patterns
+1. **Live Handoff (Blue/Green for Training)**: two parallel worlds during transition
+2. **Background Initialization Batching**: move cold-start off critical path
+3. **Streaming State Transfer**: decouple logical from physical layout; use geometric intersection for minimal data movement
+4. **Consistent Cut**: natural iteration boundaries as state transfer points
 
-### 2. Bounded-Memory State Streaming
+## Implementation
+- ~10K lines Python; runtime extension to Megatron-LM + PyTorch Distributed
+- Companion Manager daemon for shadow world lifecycle
+- Staging buffer: 512MB–1GB per rank; NCCL backend
 
-Instead of checkpoint I/O (writing to disk), LiveR:
-- Streams model state **directly over high-bandwidth interconnects** (NVLink, InfiniBand)
-- Reshapes state **online** across tensor, pipeline, and data parallel dimensions
-- Bounded memory footprint during handoff
+## Activation
+- **Keywords**: elastic training, live reconfiguration, distributed systems, LLM training, spot instances
+- **Use when**: building distributed training infra, elastic compute systems needing topology changes without downtime
 
-### 3. Lightweight Commit
-
-- Once target world is ready, a **lightweight commit** switches training
-- No stop-and-restart on the live path
-- Minimal downtime (seconds vs minutes)
-
-### 4. Mixed-Parallel Training Support
-
-Handles reconfiguration across:
-- **Tensor Parallelism (TP)**
-- **Pipeline Parallelism (PP)**
-- **Data Parallelism (DP)**
-
-## Implementation Details
-
-- Built atop **Megatron-LM** and **PyTorch**
-- Evaluated on a **multi-node GPU cluster**
-
-## Performance Results
-
-- **Reduces downtime from minutes to seconds**
-- **14-23× speedup** over checkpoint/restart baselines
-- **Minimal steady-state overhead**
-- **Up to 99% training goodput** under volatile-resource conditions
-- Makes volatile low-cost GPU capacity practical for LLM training
-
-## Usage Patterns
-
-### When to Apply This Pattern
-
-- Elastic LLM training on spot/preemptible instances
-- Shared cluster GPU reclaim scenarios
-- Any distributed training needing dynamic resource elasticity
-- Multi-tenant GPU clusters with variable allocations
-
-### Key Design Decisions
-
-1. **Avoid Checkpoint I/O**: Stream state over interconnects instead of writing/reading from storage
-2. **Asynchronous Preparation**: Prepare target world while current world trains (hide latency)
-3. **Isolated Bootstrapping**: New workers initialized independently (no main process blocking)
-4. **Online State Reshaping**: Transform model state across parallelism dimensions without serialization
-
-### System Requirements
-
-- High-bandwidth interconnects between nodes (NVLink, InfiniBand)
-- Megatron-LM compatible training infrastructure
-- PyTorch distributed runtime
-
-## Related Skills
-
-- [[agent-first-bootstrap]] - Agent-First project initialization methodology
-- [[speculative-decoding-optimization]] - LLM inference optimization patterns
-- [[pbkv-agent-workflow]] - KV-cache optimization for LLM serving
-
-## Activation Keywords
-
-- elastic training, live reconfiguration, live handoff, mixed-parallel training
-- LLM training, spot instances, preemptible GPU, volatile GPU
-- distributed training, Megatron-LM, tensor parallelism, pipeline parallelism
-- checkpoint restart, model training elasticity, elastic distributed computing
+## Pitfalls
+- Assumes warning-based/planned elasticity (preemption notices)
+- Requires GPU reachability during transfer (2-4s)
+- Not for unannounced failures; needs checkpoint fallback
+- ~2GB memory overhead per rank during transition
