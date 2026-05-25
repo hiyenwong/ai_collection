@@ -1,3 +1,11 @@
+## 2026-05-25 - Dream/Sleep Research (Cron Job)
+
+### A large corpus of lucid and non-lucid dream reports
+- [[lucid-dream-corpus]] - 55k dream reports including 10k lucid-labeled reports from 5k contributors, curated from 10 years of online dream journals (arXiv: 2603.26992)
+  - 10k lucid, 25k non-lucid, 2k nightmare labels with user-provided classification
+  - Construct validation confirms lucid reports show known linguistic markers of lucidity
+  - **Activation**: lucid dreaming, dream corpus, dream reports, Mallett, dream dataset, dream NLP, lucidity detection
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job)
 
 ### Quantum Genetic Optimization for Negative Selection Algorithms in Anomaly Detection
