@@ -1,3 +1,21 @@
+## 2026-05-26 - Neuroscience Research (Cron Job)
+
+### STAMBRIDGE: Spectral-Temporal Amplitude-aware Mid-Feature Bridge for EEG Visual Decoding
+- [[stambridge-eeg-visual-decoding]] - Two-stage EEG visual decoding framework combining Spectral-Temporal Amplitude-aware Modulation (STAM) with Mid-Feature Semantic Bridge (MFSB) for zero-shot EEG-to-image retrieval; achieves 34.50% Top-1 accuracy on THINGS-EEG (arXiv: 2605.23137)
+  - STAM replaces hard frequency masking with amplitude-derived soft channel weighting, preserving temporal transients without ringing artifacts
+  - MFSB constructs a regularized intermediate semantic space through directed cross-modal interactions for staged distillation
+  - EEG-to-image reconstructions with diffusion model produce semantically coherent results
+  - Code available at https://github.com/thabeatmjh/STAMBRIDGE
+  - **Activation**: EEG visual decoding, zero-shot EEG retrieval, spectral-temporal modulation, cross-modal alignment, EEG-to-image, THINGS-EEG, RSVP paradigm, STAM, MFSB
+
+### Network Attractors driven by Time-Delay Plasticity
+- [[network-attractors-delay-plasticity]] - Framework for collective frequency selection and attractor formation via adaptive axonal delays (AADs), motivated by activity-dependent myelination; demonstrated on brain connectivity data with delay-coupled phase oscillators (arXiv: 2605.23520)
+  - Adaptive axonal delays enable frequency selection and explosive network relaxation oscillations
+  - Delay plasticity operates on slower timescales than synaptic STDP, offering complementary learning mechanism
+  - Demonstrated on empirical structural connectomes and fully coupled ring networks
+  - Suggests myelination as a structural learning substrate beyond weight-based plasticity
+  - **Activation**: delay plasticity, adaptive axonal delay, network attractor, frequency selection, neural oscillation, myelination model, phase oscillator brain network
+
 ## 2026-05-26 - Computer Science + Quantum Research (Cron Job)
 
 ### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
