@@ -68,6 +68,15 @@
   - Explains why Gaussian closures fail — Gaussian family not invariant under projective Riccati transport
   - **Activation**: mean-field reduction, Lorentzian ansatz, Ott-Antonsen, neural mass models, coupled oscillators, population dynamics
 
+### From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain
+- [[brain-cause-causal-visual-representations]] - BrainCause framework combining generative models and fMRI encoding to causally validate neural visual representations via counterfactual stimulus synthesis, showing activation alone is insufficient evidence of representation (arXiv: 2605.23895)
+  - Demonstrates that without causal validation, a large fraction of functional localizations are false positives
+  - Combines generative image models + image-to-fMRI encoding for controlled stimulus synthesis
+  - Successfully recovers known functional localizations (FFA, PPA) and discovers new candidate representations
+  - Proposes automated follow-up fMRI experiments for further causal testing
+  - Validated on both predicted fMRI (via encoding model) and measured fMRI data
+  - **Activation**: causal representation, BrainCause, counterfactual fMRI, functional localization, generative brain mapping, visual concept validation, activation vs representation
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job - Monday)
 
 ### Quantum-like representation of neuronal networks' activity: modeling mental entanglement
