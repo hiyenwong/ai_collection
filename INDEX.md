@@ -1,19 +1,32 @@
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job)
 
-### Quantum-Like Models of Cognition and Decision Making: Open-Systems and GKSL Dynamics
-- [[gskl-quantum-cognition]] - Quantum-like cognitive modeling using GKSL master equation for decision making and mental state evolution as open quantum system dynamics (arXiv: 2604.18643)
-  - Passive vs Active Hamiltonians: non-commutation with decision basis = cognitive agency signature
-  - GKSL master equation models mental state as dissipative process influenced by informational environment
-  - Quantum Escape: active Hamiltonians enable tunneling between decision states
-  - **Activation**: quantum cognition, GKSL cognition, quantum decision making, open quantum systems cognition, 量子认知建模
+### Covariant Quantum Error Correction in a Three-Layer Quantum Brain Model
+- [[three-layer-quantum-brain]] - Evaluates CQEC across radical-pair proteins MAO-A and CRY, showing 6.9x coherence improvement (0.83 vs 0.12) over 200ms veto window (arXiv: 2604.08587)
+  - Three-layer architecture: nuclear spin memory (ms) → electron spin interface (ns) → classical electrochemistry
+  - CRY maintains coherence at γ_veto=0.19, MAO-A collapses at γ_veto=3.08
+  - Layer-protein tradeoff: no single protein optimizes both layers
+  - **Activation**: quantum brain, covariant QEC, CQEC, radical-pair proteins, cryptochrome, MAO-A, three-layer quantum brain, quantum coherence
+
+### Leggett-Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure
+- [[leggett-garg-neural-dynamics]] - Proposes Leggett-Garg temporal correlation tests to distinguish diffusive vs non-diffusive persistent stochastic models in single-neuron dynamics (arXiv: 2605.12126)
+  - Telegrapher equation-based models can violate LG inequalities while diffusive models cannot
+  - LGI violation indicates non-Markovian structure, NOT microscopic quantum coherence
+  - Kac finite-velocity processes provide natural mechanism for persistent temporal correlations
+  - **Activation**: Leggett-Garg inequality, neural dynamics, non-diffusive stochastic, Kac process, Telegrapher equation, temporal correlation
+
+### Quantum Photonic Neural Networks in Time
+- [[quantum-photonic-neural-networks]] - Time-bin-encoded QPNN architecture using same number of photonic elements regardless of size/depth, achieving 0.99+ fidelity Bell-state analyzer (arXiv: 2603.23798)
+  - Time encoding scales independent of network size unlike spatial encoding
+  - Realistic quantum dot nonlinearity achieves 0.96 fidelity, time gating raises to 0.99
+  - Trained CNOT gate and Bell-state analyzer operations
+  - **Activation**: quantum photonic neural network, time-bin encoding, QPNN, Bell-state analyzer, photonic circuit
 
 ### Winning Lottery Tickets in Neural Networks via a Quantum-Inspired Classical Algorithm
-- [[quantum-inspired-lottery-tickets]] - Quantum-inspired classical algorithm for finding winning lottery ticket subnetworks using ridgelet transform sampling, O(D) vs exp(O(D)) (arXiv: 2605.13979)
+- [[quantum-inspired-lottery-tickets]] - Quantum-inspired classical algorithm for finding winning lottery ticket subnetworks using ridgelet transform sampling, O(poly(D)) vs exp(O(D)) (arXiv: 2605.13979)
   - Ridgelet transform defines probability distribution over hidden nodes for subnetwork sampling
-  - Quantum-inspired sampling achieves O(D) complexity vs exponential naive classical
+  - Successful dequantization: polynomial runtime on classical hardware without quantum
   - Enables efficient model compression without full optimization over all candidates
-  - **Activation**: lottery ticket hypothesis, neural network pruning, quantum-inspired pruning, ridgelet transform, 彩票假说剪枝
-
+  - **Activation**: lottery ticket hypothesis, neural network pruning, quantum-inspired pruning, ridgelet transform, dequantization
 
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
