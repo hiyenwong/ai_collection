@@ -1,5 +1,14 @@
 ## 2026-05-26 - Computer Science + Quantum Research (Cron Job)
 
+### SoK: Critical Evaluation of Quantum Machine Learning for Adversarial Robustness
+- [[qml-adversarial-robustness-sok]] - First comprehensive systematization of adversarial robustness in QML across black/gray/white-box threat models; reveals accuracy-robustness trade-off between amplitude vs angle encoding schemes (arXiv: 2511.14989)
+  - Amplitude encoding: highest clean accuracy (92.6% MNIST) but collapses under noise + adversarial perturbations
+  - Angle encoding: shallower models more stable under attack
+  - QMLP more robust to label-flipping poisoning but more vulnerable to gradient-based evasion than CMLP
+  - Circuit-level backdoor (QTrojan) fails in multi-class setting (scalability limitation)
+  - Proposes threat-aware, noise-resilient framework for secure QML deployment
+  - **Activation**: QML adversarial robustness, quantum ML security, QML attack evaluation, quantum classifier adversarial, SoK quantum security, quantum backdoor detection, QUID defense
+
 ### Evidence of Quantum Machine Learning Advantage with Tens of Noisy Qubits
 - [[qml-advantage-noisy-qubits]] - Simulations demonstrate coherent quantum processing outperforms fixed-measurement schemes at just 30-40 noisy qubits; data acquisition is the bottleneck, not classical computation (arXiv: 2605.21346)
   - QML advantage persists with realistic noise on near-term hardware
