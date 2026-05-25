@@ -1,3 +1,12 @@
+## 2026-05-25 - Neuroscience Research (Cron Job - 18:00)
+
+### MIRAGE: Robust Multi-Modal Architectures Translate fMRI-to-Image Models from Vision to Mental Imagery
+- [[mirage-fmri-mental-imagery]] - MIRAGE methodology for translating fMRI-to-image models from vision decoding to mental image reconstruction; achieves SOTA on NSD-Imagery using linear backbone + multi-modal text/image features + diffusion model (arXiv: 2605.17198)
+  - SOTA on vision decoding ≠ SOTA on mental imagery; dedicated architectures needed
+  - Linear backbone + multi-modal features (text, high/low-level image) optimal for cross-decoding
+  - Synthetic-brain substitution test validates robustness beyond measurement apparatus
+  - **Activation**: fMRI mental imagery, MIRAGE, brain decoding, image reconstruction, cross-decoding, NSD-Imagery, mental image reconstruction
+
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
 ### Integrating Cognitive Load and Embodied Cognition Theories Through Representations as Multi-Scale Attractors
