@@ -1,3 +1,11 @@
+## 2026-05-25 - Neuroscience + Quantum (Cron Job)
+
+### Observation of associative-memory retrieval and spin-glass phases on a photonic quantum simulator
+- [[quantum-associative-memory-photonic]] - Experimental demonstration of Hopfield network dynamics with four-body interactions on programmable photonic quantum processors (arXiv: 2605.22922)
+  - Maps Ising-like neurons to binary phase shifters across optical modes for quantum associative memory simulation
+  - Identifies three distinct phases: memory retrieval, spin-glass black-out, and paramagnetic
+  - **Activation**: quantum associative memory, photonic quantum simulator, Hopfield network, neural network quantum simulation, spin glass memory, multiphoton processes
+
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
 ### Preisach Attention: A Hysteretic Model of Sequential Memory
