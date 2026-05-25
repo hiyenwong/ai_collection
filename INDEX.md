@@ -1,3 +1,21 @@
+## 2026-05-26 - Neuroscience Research (Cron Job)
+
+### CORTEG: Foundation Models Enable Cross-Modality Representation Transfer from Scalp to Intracranial Brain Recordings
+- [[corteg-eeg-ecog-cross-modality]] - First cross-modality transfer framework adapting pretrained scalp-EEG foundation models to intracranial ECoG decoding; achieves competitive performance with 10-30 min calibration per patient using electrode-aware KNNSoftFourier adapter + dual-stream tokenizer (arXiv: 2605.10337)
+  - EEG FM backbone transfers generalizable features from non-invasive to invasive recordings
+  - KNNSoftFourier spatial adapter maps ECoG electrode positions to EEG FM input space
+  - Dual-stream tokenizer processes low-frequency + high-gamma bands separately
+  - Leave-one-subject-out fine-tuning enables rapid patient calibration
+  - **Activation**: CORTEG, EEG foundation model, ECoG decoding, cross-modality transfer, scalp-to-intracranial, KNNSoftFourier, brain-computer interface calibration
+
+### Cross-lingual robustness of LLM-brain alignment and its computational roots
+- [[cross-lingual-llm-brain-alignment]] - Whole-brain encoding framework examining brain-LLM alignment across Mandarin, English, and French; reveals distributed alignment spanning limbic, ventral attention, default mode, and subcortical networks with shared computational principles (arXiv: 2605.21049)
+  - Three typologically distinct languages show consistent LLM-brain alignment patterns
+  - Subcortical regions (limbic, DMN, ventral attention) exhibit alignment not previously reported
+  - Computational analysis decomposes which linguistic features drive cross-linguistic alignment
+  - Transformer depth correlates with different functional networks across languages
+  - **Activation**: cross-lingual brain alignment, multilingual fMRI encoding, LLM-brain alignment, computational neurolinguistics, subcortical language processing
+
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job - Hourly)
 
 ### Exploring Entropy-based Active Learning for Fair Brain Segmentation
