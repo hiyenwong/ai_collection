@@ -1,5 +1,22 @@
 ## 2026-05-25 - Neuroscience Research (Cron Job)
 
+### Preisach Attention: A Hysteretic Model of Sequential Memory
+- [[preisach-attention-hysteretic-memory]] - Novel sequence modeling architecture replacing softmax attention with the Preisach hysteresis operator from mathematical physics; achieves O(1) depth Turing completeness and O(n log n) inference (arXiv: 2605.23603)
+  - Binary relay operator with learned activation/deactivation thresholds
+  - Stack of local extrema as internal state — rate-independent computation
+  - Function classes of PAL and transformer are provably incomparable
+  - PAL computes historical range statistics in O(1) layers (transformer needs O(log n))
+  - O(n log n) inference cost vs O(n²) for standard attention
+  - **Activation**: preisach attention, hysteresis, sequence modeling, episodic memory, transformer alternative
+
+### SpikingMoE: SDPrompt-Guided Dynamic Expert Fusion in Spiking Neural Networks
+- [[spikingmoe-sdprompt-snn]] - First open-source SNN framework integrating MoE into spike-driven Transformer with LGN-inspired SDprompt routing; achieves 94.09%/74.54% on CIFAR-10/100 (arXiv: 2605.23188)
+  - Spike-compatible expert modules with binary spike communication for neuromorphic hardware
+  - SDprompt: LGN-inspired input-dependent expert routing mechanism
+  - Fully spike-driven MoE pipeline compatible with Loihi/TrueNorth
+  - First open-source SNN-MoE integration validated on CIFAR-10 and CIFAR-100
+  - **Activation**: spiking neural network, mixture of experts, neuromorphic computing, SNN MoE
+
 ### Sparse Autoencoders Map Brain-LLM Alignment onto Cortical Semantic Topography
 - [[sparse-autoencoder-brain-llm-topography]] - SAEs from mechanistic interpretability decompose LLM features and map them onto human cortical semantic topography; semantic features recover 94% of brain encoding performance (arXiv: 2605.23035)
   - SAEs decompose GPT-2 XL and Llama-3.1-8B into 16K-32K interpretable features per layer
