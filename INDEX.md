@@ -101,6 +101,21 @@
   - Transformer depth correlates with different functional networks across languages
   - **Activation**: cross-lingual brain alignment, multilingual fMRI encoding, LLM-brain alignment, computational neurolinguistics, subcortical language processing
 
+### SAFE Quantum Machine Learning with Variational Quantum Classifiers
+- [[safe-quantum-ml]] - SAFE-AI evaluation framework for variational quantum classifiers combining amplitude encoding, learnable classical pre-encoding, and Cramer-von-Mises-based reliability metrics across accuracy/robustness/explainability dimensions (arXiv: 2605.16067)
+  - Normalized amplitude embeddings with learnable classical pre-encoding layer stabilize VQC training
+  - SAFE-AI metrics (CvM divergence) enable consistent multi-dimensional reliability evaluation
+  - Quantum models show balanced SAFE profiles with improved robustness vs strong classical baselines
+  - Applicable to safety-critical quantum ML deployment
+  - **Activation**: SAFE quantum ML, variational quantum classifier, quantum amplitude encoding, quantum model reliability, CvM divergence QML, quantum classifier robustness
+
+### Diagonal Adaptive Non-local Observables on Quantum Neural Networks
+- [[diagonal-ano-qnn]] - Diagonal ANO methodology reduces k-local observable parameter complexity from O(4^k) to O(2^k) while retaining full ANO expressivity via diagonal canonical representatives modulo unitary similarity (arXiv: 2605.15410)
+  - Diagonal matrices are canonical representatives of ANO space modulo unitary similarity
+  - Exponential parameter reduction: O(4^k) → O(2^k) for k-local observables
+  - Conventional VQCs become special case of diagonal ANO framework
+  - Shifts complexity from measurement design to circuit synthesis
+  - **Activation**: diagonal ANO, adaptive non-local observables, quantum observable design, VQA measurement optimization, observable parameter reduction
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job - Hourly)
 
 ### Exploring Entropy-based Active Learning for Fair Brain Segmentation
