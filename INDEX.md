@@ -1,3 +1,29 @@
+## 2026-05-26 - Computer Science + Quantum Research (Cron Job)
+
+### Evidence of Quantum Machine Learning Advantage with Tens of Noisy Qubits
+- [[qml-advantage-noisy-qubits]] - Simulations demonstrate coherent quantum processing outperforms fixed-measurement schemes at just 30-40 noisy qubits; data acquisition is the bottleneck, not classical computation (arXiv: 2605.21346)
+  - QML advantage persists with realistic noise on near-term hardware
+  - Matching coherent protocol with measure-first strategies requires months/years of measurements
+  - Evaluates hardware constraints: state prep, gate errors, readout errors, connectivity, coherence times
+  - GitHub repo available for reproducibility
+  - **Activation**: quantum ML advantage, noisy qubits, coherent processing, fixed-measurement, QML advantage demonstration, data acquisition bottleneck, NISQ quantum learning
+
+### Optimizing Parallel Execution of Commuting Pauli Product Rotations
+- [[commuting-pauli-parallelization]] - Two heuristics (clique reshuffling + generator restructuring) for reducing hardware-limited circuit depth in FTQC with lattice surgery; 15-35% average depth reduction (arXiv: 2605.23738)
+  - Clique reshuffling: permute commuting products to balance per-qubit port usage
+  - Generator restructuring: rewrite commuting groups as equivalent sets with reduced port pressure
+  - Evaluated on QASMBench circuits compiled to PPRs
+  - Gains scale with port budget and saturate near 20 ports
+  - **Activation**: commuting pauli parallelization, Pauli Product Rotation, PPR optimization, lattice surgery compilation, surface code scheduling, clique reshuffling, generator restructuring, FTQC compilation
+
+### A Two-Branch Finite-Field Construction for Regular CSS LDPC Bases
+- [[two-branch-css-ldpc-construction]] - Algebraic two-branch multiplicative-coset construction for regular CSS QLDPC base matrices over finite fields; produces [[10240,4108,10≤d≤32]] code with FER 1e-7 at p=0.058 (arXiv: 2605.23894)
+  - Separates design into base matrix stage (degree distribution + girth) and cyclic lift stage (edge randomization)
+  - Reduces CSS orthogonality and 4-cycle exclusion to explicit quotient-coset conditions
+  - Joint log-domain BP + post-processing for decoding
+  - Not tied to single degree distribution — works for various (J, L) pairs
+  - **Activation**: CSS LDPC construction, quantum LDPC, QLDPC base matrix, multiplicative coset, finite field code construction, cyclic lift, Tanner graph girth, belief propagation decoding
+
 ## 2026-05-26 - Deep Learning Research (Cron Job)
 
 ### MARGIN: Runtime Confidence Calibration for Multi-Agent Foundation Model Coordination
