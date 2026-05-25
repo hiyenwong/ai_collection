@@ -1,6 +1,18 @@
-## 2026-05-25 - Neuroscience + Quantum (Cron Job)
+## 2026-05-25 - Neuroscience + Quantum (Cron Job) - Hourly Update
+
+### From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain
+- [[brain-cause-causal-visual-representation]] - Causal visual representation discovery framework that uses counterfactual stimulus generation and image-to-fMRI encoding to validate neural representations (arXiv: 2605.23895)
+  - Three-tier stimulus set: concept images, counterfactual edits (remove concept), correlated distractors
+  - Activation alone ≠ representation; without causal validation, many fMRI localizations are false positives
+  - Automated pipeline: query → generate stimuli → predict fMRI → search representations → propose experiments
+  - **Activation**: causal neuroscience, brain representation, counterfactual fMRI, visual concept localization, activation causality, functional localization validation, BrainCause methodology, image-to-brain encoding
 
 ### Observation of associative-memory retrieval and spin-glass phases on a photonic quantum simulator
+- [[photonic-quantum-hopfield-memory]] - Photonic quantum simulation of associative memory using p-body Hopfield Hamiltonians; maps Ising-like neurons to binary phase shifters (arXiv: 2605.22922)
+  - Three phases: memory retrieval, spin-glass black-out, paramagnetic
+  - Two-photon processes realize four-body local interaction terms on programmable photonic processor
+  - **Activation**: quantum associative memory, photonic Hopfield model, spin-glass memory, p-body interactions quantum, multi-photon Hopfield
+
 - [[quantum-associative-memory-photonic]] - Experimental demonstration of Hopfield network dynamics with four-body interactions on programmable photonic quantum processors (arXiv: 2605.22922)
   - Maps Ising-like neurons to binary phase shifters across optical modes for quantum associative memory simulation
   - Identifies three distinct phases: memory retrieval, spin-glass black-out, and paramagnetic
