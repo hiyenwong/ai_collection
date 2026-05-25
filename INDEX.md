@@ -224,6 +224,26 @@
   - Key trade-offs: area vs performance, energy vs retention, scalability vs reliability
   - Quantum platforms require sub-4K operation — classical memories need cryogenic characterization
   - **Activation**: memory technology analysis, cryogenic memory, quantum memory, RRAM MRAM FeFET, Josephson junction memory, superconducting memory, memory for quantum computing
+## 2026-05-26 - Computer Science + Quantum (Cron Job)
+
+### Sample-efficient benchmarking of shallow all-to-all random quantum circuits
+- [[nonlinear-cross-entropy-benchmarking]] - NISQ quantum advantage benchmarking using nonlinear cross-entropy to distinguish quantum from classical spoofers (arXiv: 2605.22909)
+  - 核心要点 1: 非线性交叉熵分数可在退极化噪声下清晰分离量子计算机与经典欺骗者
+  - 核心要点 2: 基于重输出生成的二分类器在短深度下具有对数样本复杂度
+  - **Activation**: nonlinear cross-entropy, quantum benchmarking, NISQ, random circuit sampling
+
+### Quantum Fisher Information under decoherence with explicit wavefunctions
+- [[qfi-decoherence-monte-carlo]] - QFI estimation under decoherence via Monte Carlo sampling of wavefunction-derived probability distributions (arXiv: 2605.22917)
+  - 核心要点 1: 将QFI下界映射为基于波函数振幅的经典概率分布的期望值
+  - 核心要点 2: MCMC采样实现慢指数级缩放(e^(bL), b≲0.6),超越精确对角化限制
+  - **Activation**: quantum Fisher information, decoherence, quantum metrology, Monte Carlo, Jastrow-Gutzwiller
+
+### Towards Fair Benchmarking of Quantum Transfer Learning for Visual Classification
+- [[quantum-transfer-learning-benchmarking]] - Controlled benchmarking methodology comparing 5 QTL architectures under unified pipeline (arXiv: 2605.19417)
+  - 核心要点 1: 统一预处理、冻结骨干网络、标准化指标下比较DQN/QPIE/AE-C/PVC/ED五类QTL
+  - 核心要点 2: 无单一QTL家族在所有设置下占优,性能取决于数据集、编码策略、电路设计和计算成本
+  - **Activation**: quantum transfer learning, QTL benchmarking, quantum machine learning, visual classification
+
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job - Hourly)
 
 ### Exploring Entropy-based Active Learning for Fair Brain Segmentation
