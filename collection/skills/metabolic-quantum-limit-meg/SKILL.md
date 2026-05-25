@@ -1,70 +1,127 @@
 ---
 name: metabolic-quantum-limit-meg
-description: "Metabolic quantum limit methodology for magnetoencephalography (MEG) information capacity analysis. Derives fundamental information-theoretic bounds on noninvasive brain imaging using quantum sensor physics, neural metabolism, and Planck's constant. Applicable to: quantum-limited neuroscience analysis, MEG spatial-temporal bandwidth trade-offs, fundamental limits of brain imaging technology, neural information theory. Trigger words: quantum limit MEG, magnetoencephalography information capacity, neural metabolic bound, quantum sensor brain imaging, 2.2 Mbit/s brain, spatio-temporal trade-off."
+description: "Metabolic quantum limit methodology for magnetoencephalography (MEG) — derives technology-independent bounds on brain imaging information capacity using quantum sensing limits and neural metabolism."
+category: neuroscience
+activation_keywords:
+  - metabolic quantum limit
+  - MEG information capacity
+  - quantum brain imaging
+  - magnetoencephalography quantum limit
+  - Planck brain bound
+  - quantum-limited neuroimaging
+  - 脑成像量子极限
+  - 脑磁图量子极限
+  - 代谢量子极限
 ---
 
-# Metabolic Quantum Limit to MEG Information Capacity
+# Metabolic Quantum Limit for MEG
 
-## Core Methodology
+## Description
 
-Derive fundamental limits of noninvasive brain imaging by combining:
-
-1. **Quantum sensor physics** - energy resolution limit of SQUIDs and atomic magnetometers
-2. **Neural metabolism** - brain's metabolic power as energy source
-3. **Information theory** - channel capacity bounds from physical constraints
-4. **Geometry** - spatial suppression of multipole magnetic field components
-
-## Key Results
-
-- **Maximum information rate**: 2.2 Mbit/s for human brain (technology-independent bound)
-- **Spatial limitation**: Higher multipole components fall below quantum noise floor
-- **Trade-off**: Temporal and spatial bandwidths compete (noise variance grows linearly with bandwidth)
-
-## Calculation Framework
-
-### Step 1: Energy Resolution Bound
-
-Combine magnetic sensor energy resolution with brain metabolic power:
-
-```
-Information capacity ∝ (metabolic power) / (Planck constant)
-```
-
-### Step 2: Geometric Constraints
-
-Magnetic field from neural currents:
-- Lower multoles (dipole, quadrupole) detectable
-- Higher multipoles geometrically suppressed → below quantum noise floor
-- Limits spatial complexity of measurable neural current patterns
-
-### Step 3: Spatio-Temporal Trade-off
-
-Since noise variance ∝ bandwidth:
-- High temporal resolution → reduced spatial resolution
-- High spatial resolution → reduced temporal resolution
-- Fundamental limit set by geometry, metabolism, and h̄
-
-## Applications
-
-- **MEG system design**: Optimal bandwidth selection
-- **Quantum sensing**: SQUID and atomic magnetometer optimization
-- **Brain imaging limits**: Understanding what's physically measurable
-- **Neural information theory**: Quantifying brain's information processing capacity
-
-## Related Modalities
-
-Same framework applies to:
-- **EEG**: Electric field equivalent of MEG quantum limits
-- **fNIRS**: Hemodynamic response information bounds
-- **fMRI**: BOLD signal physical limits
+Methodology for deriving fundamental, technology-independent limits on non-invasive brain imaging (specifically MEG) by combining quantum sensing energy resolution limits with the brain's metabolic power budget. Uses geometry, neural metabolism, and Planck's constant to establish absolute bounds on information capacity and spatio-temporal resolution trade-offs.
 
 ## Activation Keywords
 
-- quantum limit MEG
-- magnetoencephalography information capacity
-- neural metabolic bound
-- quantum sensor brain imaging
-- 2.2 Mbit/s brain
-- spatio-temporal trade-off
-- brain information capacity
-- quantum noise floor neuroscience
+- metabolic quantum limit
+- MEG information capacity
+- quantum brain imaging
+- magnetoencephalography quantum limit
+- Planck brain bound
+- quantum-limited neuroimaging
+- 脑成像量子极限
+- 脑磁图量子极限
+- 代谢量子极限
+
+## Core Methodology
+
+### 1. Energy Resolution Limit Framework
+
+The key insight: quantum sensors (SQUIDs, atomic magnetometers) have a fundamental energy resolution limit. When combined with the brain's metabolic power, this yields a technology-independent bound:
+
+```
+Information Capacity Bound = f(geometry, neural_metabolism, ħ)
+```
+
+For the human brain: **maximum ~2.2 Mbit/s** information rate.
+
+### 2. Finite Angular Bandwidth
+
+The measurable magnetic field from neural activity has a finite angular bandwidth:
+- Higher multipole components are geometrically suppressed
+- Components beyond a threshold fall below the quantum-limited noise floor
+- This limits the spatial complexity of neural current patterns
+
+### 3. Spatio-Temporal Trade-off
+
+Since energy resolution limit implies noise variance grows linearly with bandwidth:
+- **Temporal bandwidth ↔ Spatial bandwidth** compete
+- Increasing temporal resolution reduces spatial resolution and vice versa
+- This is a fundamental constraint, not an engineering limitation
+
+## Application Patterns
+
+### Pattern 1: Assessing Brain Imaging Limits
+
+When evaluating any brain imaging modality:
+1. Determine the sensor's energy resolution limit
+2. Calculate the brain's metabolic power available for the target region
+3. Apply the fundamental bound: information rate ≤ f(geometry, metabolism, ħ)
+4. Identify which multipole components are below noise floor
+5. Map the achievable spatio-temporal resolution trade-off curve
+
+### Pattern 2: Quantum Sensor Selection for Neuroscience
+
+When choosing quantum sensors (SQUID vs OPM vs atomic magnetometer):
+1. All sensors converge to the same fundamental limit
+2. The limit is technology-independent — no sensor can exceed it
+3. Focus optimization on approaching (not exceeding) the bound
+4. Evaluate cost/complexity trade-off at the achievable resolution
+
+### Pattern 3: Research Feasibility Assessment
+
+Before designing neuroscience experiments:
+1. Calculate the required information rate for the target phenomenon
+2. Compare against the 2.2 Mbit/s fundamental bound
+3. If requirement exceeds bound → the phenomenon cannot be resolved non-invasively
+4. Consider invasive alternatives or indirect measurement strategies
+
+## Mathematical Framework
+
+### Key Parameters
+
+| Parameter | Symbol | Typical Value |
+|-----------|--------|---------------|
+| Brain metabolic power | P | ~20W (whole brain) |
+| Planck's constant | ħ | 1.055×10⁻³⁴ J·s |
+| Brain geometry | R | ~8cm (radius) |
+| Max information rate | C_max | ~2.2 Mbit/s |
+
+### Derivation Steps
+
+1. Energy resolution limit: ΔE ≥ ħ/(2Δt) for measurement time Δt
+2. Signal-to-noise ratio: SNR ∝ P_neural / ΔE
+3. Channel capacity: C = B × log₂(1 + SNR)
+4. Geometric suppression: higher multipoles ∝ (r/R)^ℓ
+5. Combined bound: C_max = f(geometry, P, ħ)
+
+## Error Handling
+
+### Common Pitfalls
+
+1. **Confusing sensor noise with fundamental limit**: The quantum limit is not sensor noise — it's a physics bound that no sensor can overcome
+2. **Ignoring geometric suppression**: Higher spatial frequencies are geometrically suppressed, not just sensor-limited
+3. **Assuming the limit is achievable**: The 2.2 Mbit/s is an upper bound; practical systems achieve significantly less
+4. **Misapplying to invasive methods**: This bound applies only to non-invasive (external field) measurements
+
+## Related Skills
+
+- `quantum-neuroscience-analysis`: Broader quantum computing applications in neuroscience
+- `quantum-computational-sensing`: Quantum sensing methodology for task-specific measurements
+- `eeg-foundation-model-adapters`: EEG foundation model approaches (complementary modality)
+- `brain-foundation-model-batch-effects`: Batch effects in brain imaging (practical concern)
+
+## Resources
+
+- arXiv: 2511.06401 — "Metabolic quantum limit to the information capacity of magnetoencephalography"
+- Quantum sensing energy resolution theory
+- Neuroimaging physics and information theory

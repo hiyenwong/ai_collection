@@ -33,6 +33,13 @@
   - Variational approach for ground-state properties of disordered quantum systems
   - **Activation**: deep boltzmann quantum states, spin glass, quantum many-body, neural quantum states, variational Monte Carlo, frustrated systems
 
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-meg]] - Derives technology-independent bounds on MEG information capacity using quantum sensor energy resolution limits + brain metabolic power; establishes ~2.2 Mbit/s max rate and spatio-temporal trade-off (arXiv: 2511.06401)
+  - Quantum sensor energy resolution + neural metabolism → fundamental bound independent of sensor technology
+  - Higher multipole components geometrically suppressed → limits spatial complexity of neural current patterns
+  - Temporal bandwidth ↔ spatial bandwidth compete: fundamental spatio-temporal trade-off
+  - **Activation**: metabolic quantum limit, MEG information capacity, quantum brain imaging, magnetoencephalography quantum limit, Planck brain bound, quantum-limited neuroimaging, 脑成像量子极限
+
 ### Today's Papers (Existing Skills Updated)
 - [[parallel-scan-neural-quantum-states]] - Parallel scan RNN quantum states for scalable variational Monte Carlo (arXiv: 2605.13807)
 - [[neural-network-quantum-states-grand-canonical]] - Neural quantum states in Fock space with variable particle number (arXiv: 2605.07779)
