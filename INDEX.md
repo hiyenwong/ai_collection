@@ -43,6 +43,23 @@
   - Establishes multi-level probing as complement to neural-prediction evaluation
   - **Activation**: digital twin probing, V1 latent representations, population geometry, neural activity prediction
 
+### Brain-LLM Alignment Tracks Training Data, Not Typology
+- [[brain-llm-alignment-training-data]] - fMRI study (112 participants, 3 languages) shows brain-LLM alignment is driven by training-language dominance, not English as a language; Baichuan2-7B reverses alignment gradient; typological distance independently affects alignment in syntax regions (arXiv: 2605.23032)
+  - 7 LLMs across English-dominant, Chinese-dominant, and multilingual architectures tested
+  - Baichuan2-7B (Chinese-dominant) aligns best with Chinese brains, worst with English
+  - Syntax regions (IFG) show steeper typological gradients than lexico-semantic regions (PTL)
+  - Tokenization fertility accounts for ~60% of cross-linguistic optimal encoding layer shift
+  - Accepted at CoNLL 2026
+  - **Activation**: brain-LLM alignment, cross-linguistic brain encoding, training data dominance, multilingual fMRI, typological alignment
+
+### Geometric Origin of Exact Mean-Field Reductions: Möbius Symmetry and the Lorentzian Ansatz
+- [[geometric-mean-field-lorentzian-ansatz]] - Proves the Lorentzian Ansatz is geometrically necessary (not heuristic) for mean-field reductions of coupled oscillators and spiking neurons; unifies Ott-Antonsen and Montbrió-Pazó-Roxin under Möbius symmetry (arXiv: 2605.23669)
+  - Cauchy-Lorentz family = unique connected 2D family of densities invariant under Riccati projective transport
+  - Reformulates dynamics on the circle; rotation-invariant measure → Cauchy law via stereographic projection
+  - Unified foundation for Ott-Antonsen (CHAOS 2008) and MPR (PRX 2015) reductions
+  - Explains why Gaussian closures fail — Gaussian family not invariant under projective Riccati transport
+  - **Activation**: mean-field reduction, Lorentzian ansatz, Ott-Antonsen, neural mass models, coupled oscillators, population dynamics
+
 ## 2026-05-26 - Neuroscience + Quantum (Cron Job - Monday)
 
 ### Quantum-like representation of neuronal networks' activity: modeling mental entanglement
