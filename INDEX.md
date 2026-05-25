@@ -26,6 +26,22 @@
   - Elapsed time encoded by unique sparse spatiotemporal patterns of neural activity
   - **Activation**: spiking-sequence-timing, sTM-model, neural-replay-speed, oscillatory-clock-signal, spiking-temporal-memory, sequence-timing-snn, replay-speed-control, snn-sequence-learning, temporal-pattern-spiking
 
+### Bayesian Adaptive Latent Mixture Model for Zero-Inflated Weighted Brain Connectome Analysis (arXiv:2605.12901)
+- [[bayesian-adaptive-latent-mixture-brain-connectome]] - Bayesian adaptive latent mixture model for zero-inflated weighted brain networks using Hurdle likelihood and shared low-rank templates; validated on HCP data (arXiv: 2605.12901)
+  - Hurdle likelihood separates edge existence from conditional edge strength; sparsity-coupling parameter controls informativeness of absent edges
+  - Each subject's connectome expressed as simplex mixture of shared low-rank latent score matrices
+  - Theoretical guarantees: posterior consistency, LAN, Bernstein-von Mises approximation
+  - Transformed Hamiltonian Monte Carlo on unconstrained coordinates; template selection via predictive fit and stability
+  - **Activation**: zero-inflated brain connectome, Bayesian latent mixture model, Hurdle likelihood connectome, HCP connectome analysis, Hamiltonian Monte Carlo connectome, Bayesian adaptive mixture, overlapping connectivity patterns
+
+### CFSPMNet: Cross-subject Fourier-guided Mamba Network for EEG Motor Imagery Decoding in Stroke (arXiv:2605.10111)
+- [[cfspmnet-eeg-motor-imagery-stroke]] - Cross-subject EEG decoding framework combining Fourier-Reorganized State Mamba Network with Shared-Private Prototype Matching for stroke rehabilitation BCI; improves SOTA by 5.63-8.25 pp (arXiv: 2605.10111)
+  - Fourier-Reorganized State Mamba (FRSM): token state reorganization in Fourier domain guides Mamba SSM propagation
+  - Shared-Private Prototype Matching (SPPM): filters pseudo-labels by semantic + physiological consistency
+  - Achieves 68.23% (XW-Stroke) and 73.33% (2019-Stroke), outperforming CNN/Transformer/Mamba baselines
+  - Neurophysiological visualization confirms Fourier-domain reorganization and calibrated pseudo-labeling
+  - **Activation**: CFSPMNet, EEG motor imagery decoding, Mamba EEG network, Fourier-guided EEG, cross-subject BCI stroke, MI-EEG cross-patient, stroke rehabilitation EEG
+
 ## 2026-05-26 - Computer Science (Cron Job)
 
 ### MADQRL: Distributed Quantum Reinforcement Learning Framework for Multi-Agent Environments
