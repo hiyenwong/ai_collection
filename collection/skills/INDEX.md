@@ -1,4 +1,4 @@
-## 2026-05-24 - Neuroscience Research (Cron Job)
+## 2026-05-25 - Neuroscience Research (Cron Job)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
 - [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm (fWBMs) integrating bottom-up whole-brain modeling with top-down neuroconnectionism, defined by four minimal criteria: structural grounding, continuous-time dynamical realism, functional competence, and mappable observables (arXiv: 2605.18118)
@@ -7,13 +7,24 @@
   - Bridges two previously separate modeling traditions in computational neuroscience
   - **Activation**: fWBM, functional whole-brain model, whole-brain modeling, neuroconnectionism, brain dynamics, cognitive function, connectome
 
+### A Simple Model of Co-Emergence of Grid and Place Fields
+- [[grid-place-co-emergence]] - First unified recurrent network model instantiating Dale's Law where grid and place cells co-emerge from a single sensory-prediction objective without supervision of either type, reproducing grid fragmentation, wall-removal merging, 3D bat fields, and developmental ordering (arXiv: 2605.21356)
+  - First single-objective model achieving grid-place co-emergence across 1,000 training configurations
+  - Implements Dale's Law (excitatory/inhibitory neuron separation) for biological realism
+  - Balance of grid vs. place codes modulated by sensory noise and masking levels
+  - Reproduces grid fragmentation in hairpin mazes, wall-removal merging, lattice alignment across rooms
+  - Explains developmental order: place cells precede grid cells
+  - Two complementary encoding pressures: sensory reconstruction + next-state prediction
+  - **Activation**: grid cells, place cells, co-emergence, Dale's Law, spatial navigation, hippocampal-entorhinal, recurrent network, sensory prediction
+
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
-- [[learning-sequence-timing-spiking-neurons]] - Spiking Temporal Memory (sTM) model extending biologically inspired SNN framework to learn both order and precise timing of sequence elements with flexible replay speed modulation via oscillatory background input (arXiv: 2605.22523)
+- [[learning-sequence-timing-snn]] - Spiking Temporal Memory (sTM) model extending biologically inspired SNN framework to learn both order and precise timing of sequence elements with flexible replay speed modulation via oscillatory background input (arXiv: 2605.22523)
   - Extends sTM model from order-only to combined order-and-timing learning
-  - Uses synaptic delay plasticity and STDP for temporal encoding
-  - Enables flexible replay speed modulation via spike-frequency adaptation
+  - Uses sequential neuronal population activation for timing encoding
+  - Enables flexible replay speed modulation via oscillatory background clock signals
+  - Links replay speed to EEG/LFP rhythms (theta, sharp-wave ripples)
   - Relevant to hippocampal replay, memory consolidation, and neuromorphic computing
-  - **Activation**: sTM, spiking temporal memory, STDP, sequence timing, replay speed, hippocampal replay, spiking neural network
+  - **Activation**: sTM, spiking temporal memory, sequence timing, replay speed, oscillatory clock, hippocampal replay, spiking neural network
 
 ## 2026-05-23 - Anthropic Founder Playbook (中文精读版)
 
