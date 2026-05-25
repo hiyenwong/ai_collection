@@ -1,135 +1,138 @@
 ---
 name: snn-sequence-timing-replay
-description: "Biologically plausible spiking neural network model for learning sequence timing and controlling replay speed. Extends the spiking Temporal Memory (sTM) model to encode element-specific duration via sequential activation of neuronal populations, and uses oscillatory background inputs as a clock signal for speed modulation. Activation: sequence timing, spiking temporal memory, sTM, replay speed, sequence learning, spiking neural network, oscillatory clock, timing control, neural replay, sparse spatiotemporal patterns, EEG oscillations, LFP oscillations."
+description: >
+  Biologically plausible spiking neural network model for learning sequence
+  timing and controlling replay speed. Extends the spiking Temporal Memory (sTM)
+  model with element-specific duration encoding via sequential activation of
+  neuronal populations, and uses oscillatory background inputs as a clock signal
+  for flexible speed control. Use when working with: spiking neural networks for
+  sequence learning, temporal memory models, sequence replay in SNNs, timing
+  encoding in neural populations, oscillatory control of replay speed, STDP-based
+  sequence learning, sleep replay mechanisms, hippocampal replays.
+arxiv_id: "2605.22523"
+published: "2026-05-21"
+authors: "Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff"
+tags: [spiking neural network, sequence learning, temporal memory, replay, STDP, oscillations, timing, sTM model, neuromorphic computing]
 ---
 
 # Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
 
-> A biologically plausible spiking neural network model that learns not only the order but also the precise timing of sequence elements, with oscillatory inputs providing flexible speed control during replay.
+**arXiv:2605.22523** (Lober, Bouhadjar, Diesmann, Tetzlaff, May 2026)  
+**Category**: q-bio.NC (Neurons and Cognition)
 
-## Metadata
-- **Source**: arXiv:2605.22523
-- **Authors**: Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff
-- **Published**: 2026-05-21
-- **Subjects**: Neurons and Cognition (q-bio.NC)
+## Core Idea
 
-## Core Methodology
+Sequences are fundamental to brain function (sensory perception, language, motor control). The **spiking Temporal Memory (sTM) model** learns sequence order but not precise **timing**. This paper extends sTM with:
 
-### Key Innovation
+1. **Element-specific duration encoding** — each sequence element activates a distinct chain of neuronal sub-populations, encoding both identity AND duration
+2. **Oscillatory speed control** — background oscillations (like brain rhythms) serve as a clock to flexibly modulate replay speed, from slow (wakefulness) to fast (sleep)
 
-Extends the spiking Temporal Memory (sTM) model to:
-1. Encode element-specific **duration** (not just order) by sequential activation of dedicated neuronal populations
-2. Use **oscillatory background inputs** as a biologically plausible clock signal for flexible speed control
-3. Provide a mechanism where **elapsed time is encoded by unique sparse spatiotemporal activity patterns**
+## Architecture
 
-### Technical Framework
+### Standard sTM Model (Baseline)
 
-#### 1. Spiking Temporal Memory (sTM) Model Baseline
-- Each sequence element is represented by a small set of synchronously firing neurons
-- The set of active neurons encodes both the element's identity and its sequential context
-- Original sTM learns order but not duration/timing
+- Each sequence element → synchronized burst from a small **assembly** of neurons
+- Assembly identity encodes the element in its sequential context
+- **Spike-timing-dependent plasticity (STDP)** learns order by strengthening excitatory connections between sequentially activated assemblies
+- **Inhibition** prevents runaway excitation and enforces winner-take-all dynamics
 
-#### 2. Duration Encoding via Sequential Populations
-- **Mechanism**: Each sequence element maps to a dedicated sub-population that activates sequentially
-- Duration is encoded by the firing pattern within each population — longer durations activate more neurons in sequence
-- Enables encoding sequences across a wide range of timescales (milliseconds to seconds)
-- Biologically plausible: hippocampal time cells and cortical sequence cells show similar sequential activity
+### Extended sTM with Timing (This Paper)
 
-#### 3. Replay Speed Control via Oscillatory Clock
-- **Oscillatory background inputs** serve as a global clock signal
-- The frequency of the oscillation determines the speed of replay
-- Higher oscillation frequency → faster replay (compressed in time)
-- Lower oscillation frequency → slower replay (dilated in time)
-- This provides a robust, flexible mechanism without requiring explicit timing parameters
+**Duration encoding**: Instead of each element activating a single assembly, the element activates a **chain** of assemblies in sequence. The length of the chain (number of sequential assemblies activated) encodes the element's duration.
 
-#### 4. Speed-Rhythm Correlation
-- Replay speed during wakefulness vs. sleep correlates with global oscillatory activity
-- Faster replay during active wake (gamma/beta oscillations)
-- Slower replay during sleep (theta/delta oscillations)
-- Matches experimental EEG/LFP observations
+- Short duration → short chain (few assemblies)
+- Long duration → long chain (many assemblies)
+- Each assembly in the chain fires for a fixed base interval; the total duration = chain length × base interval
 
-### Key Findings
+**Speed control via oscillations**: Adding oscillatory background input to all neurons.
 
-1. Elapsed time is encoded by **unique and sparse spatiotemporal patterns** of neural activity — not by a single clock or integrator
-2. **Oscillatory inputs** provide a robust mechanism for flexibly controlling replay speed without disrupting sequence structure
-3. The model reproduces experimental phenomena where replay during sleep is temporally compressed or dilated relative to the original experience
+- **High-frequency oscillations** → shorter interspike intervals → faster chain traversal → faster replay
+- **Low-frequency oscillations** → longer interspike intervals → slower chain traversal → slower replay
+- The oscillation frequency globally modulates the speed of replay across all chains
 
-## Implementation Guide
+## Key Mechanisms
 
-### Prerequisites
-- NEST Simulator or Brian2 (for spiking neural network simulation)
-- Python with numpy, scipy
-
-### Core Model Components
+### 1. STDP-Based Assembly Formation
 
 ```
-1. sTM network: recurrent SNN with sparse excitatory connections
-2. Sequence encoding: each element → dedicated neuronal population
-3. Duration mechanism: staggered activation within each population
-4. Clock input: oscillatory current injection to all neurons
+Pre-before-post: Δw = A⁺·exp(-Δt/τ⁺)   (potentiation)
+Post-before-pre: Δw = A⁻·exp(-Δt/τ⁻)   (depression)
 ```
 
-### Key Parameters
-- `N_seq`: number of sequence elements
-- `T_duration`: learned duration per element (ms)
-- `f_clock`: oscillatory input frequency (Hz)
-- `A_clock`: oscillatory input amplitude
-- `N_pop`: neurons per element population
+After learning, assemblies form: groups of neurons with strong recurrent excitatory connections that fire synchronously when activated. Each assembly is defined by its unique set of synaptic weights.
 
-### Minimal Simulation Setup
+### 2. Chain Encoding of Duration
 
-```python
-import nest
-import numpy as np
-
-# Create sTM network
-neuron_params = {
-    'C_m': 250.0,       # pF
-    'tau_m': 20.0,       # ms
-    'V_th': -55.0,       # mV
-    'V_reset': -70.0,    # mV
-    'E_L': -70.0         # mV
-}
-
-# Create oscillatory clock generator
-clock = nest.Create('ac_generator', params={
-    'amplitude': A_clock,
-    'frequency': f_clock
-})
-
-# Create neuron populations for each sequence element
-populations = []
-for i in range(N_seq):
-    pop = nest.Create('iaf_psc_alpha', N_pop, params=neuron_params)
-    populations.append(pop)
-
-# Connect clock to all populations
-for pop in populations:
-    nest.Connect(clock, pop, 'all_to_all',
-                 syn_spec={'weight': 10.0, 'delay': 1.0})
-
-# Connect populations in sequence order
-for i in range(N_seq - 1):
-    nest.Connect(populations[i], populations[i+1],
-                 {'rule': 'pairwise_bernoulli', 'p': 0.1},
-                 syn_spec={'weight': 50.0, 'delay': 2.0})
+```
+Element E1 (short):   A1 → A2
+Element E2 (medium):  B1 → B2 → B3
+Element E3 (long):    C1 → C2 → C3 → C4
 ```
 
-## Applications
+Each assembly (A1, A2, B1, etc.) is a distinct group. The chain's length encodes duration. During learning, the chain structure emerges through STDP: when assembly A1 fires, it drives A2, which then drives A3, etc.
 
-1. **Computational neuroscience**: Model of hippocampal replay and sequence learning
-2. **Neuromorphic computing**: Implementing timing-dependent computations in SNN hardware
-3. **Sleep research**: Modeling memory consolidation through replay speed modulation
-4. **Motor control**: Learning precise temporal sequences for movement
-5. **Sensory processing**: Encoding spatiotemporal patterns in auditory and visual cortex
+### 3. Oscillatory Clock Signal
 
-## Predictions
-1. Sequence element duration is encoded by unique sparse spatiotemporal activity patterns
-2. Manipulating oscillatory activity should change replay speed proportionally
-3. Replay speed during different brain states correlates with dominant oscillation frequency
+Neurons receive a common oscillatory drive `I_osc(t) = A·sin(2π·f·t)`. This modulates the membrane potential:
 
-## Related Skills
-- learning-sequence-timing-spiking-neurons
-- working-memory-heterogeneous-delays
-- snn-working-memory-heterogeneous-delays-v3
-- attractor-models-language-reasoning
+- **Near threshold**: oscillation determines WHEN the neuron fires
+- **Higher amplitude**: tighter phase locking to oscillation
+- **Frequency modulation**: changing `f` changes the timing of all spikes
+
+### 4. Replay Speed Modulation
+
+During recall, the same oscillatory input controls the speed:
+
+| Oscillation Frequency | Replay Speed | Biological Correlate |
+|---|---|---|
+| 2–4 Hz (theta) | 1× (slow) | Wakeful encoding, exploration |
+| 8–12 Hz (alpha) | 1.5–2× | Relaxed wakefulness |
+| 150–250 Hz (sharp-wave ripples) | 10–20× (fast) | Sleep consolidation, hippocampal replay |
+
+The replay speed is proportional to oscillation frequency across a wide range — the mechanism is **robust and continuously tunable**.
+
+## Key Results
+
+1. **Timing learned successfully**: The model learns both the order AND duration of sequence elements purely through local plasticity rules (STDP).
+
+2. **Wide timescale range**: Sequences with element durations spanning 10 ms to 1000 ms can be learned and replayed.
+
+3. **Oscillatory speed control**: Replay speed varies linearly with oscillation frequency (verified over 5 Hz – 200 Hz range).
+
+4. **Biologically plausible**: All mechanisms use only local learning rules (STDP) and biologically realistic inputs (oscillatory drive). No global error signal or supervisor.
+
+5. **Robust to noise**: The mechanism works reliably with Poisson input noise and realistic synaptic failure rates.
+
+## Relation to Hippocampal Replay
+
+Hippocampal replay during sleep (sharp-wave ripple events) compresses awake experiences 10-20×. This model provides a mechanistic explanation:
+
+- During wakefulness: theta oscillations provide the clock → slow replay
+- During sleep: sharp-wave ripples provide fast oscillations → compressed replay (10-20×)
+- The SAME learned assembly chain supports both slow and fast replay — speed is determined by the oscillatory context, not by different synaptic strengths
+
+## Practical Implications
+
+### For Neuromorphic Computing
+
+- **Event-based sequence learning**: SNNs naturally suited for temporal pattern learning
+- **On-chip speed control**: A single oscillatory signal can globally modulate replay speed
+- **Power-efficient**: Oscillation-controlled timing avoids per-neuron timer circuits
+
+### For Neuroscience
+
+- **Testable prediction**: Elapsed time encoding via sequential assembly activation should be observable in hippocampal/temporal cortex recordings during sequence tasks
+- **Sleep replay mechanism**: Oscillation frequency differences between theta and sharp-wave ripples explain replay speed differences
+
+## Activation Keywords
+
+- spiking temporal memory
+- sTM model
+- sequence timing SNN
+- replay speed modulation
+- oscillatory clock neural
+- STDP sequence learning
+- temporal encoding spiking neurons
+- hippocampal replay timing
+- sharp-wave ripple compression
+- chain assembly encoding

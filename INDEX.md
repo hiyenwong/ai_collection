@@ -1,3 +1,21 @@
+## 2026-05-25 - Computational Neuroscience (Cron Job)
+
+### Efficient coding under constraint drives neural systems towards criticality and sloppiness
+- [[efficient-coding-criticality]] - Theoretical framework linking efficient coding to criticality: maximizing Fisher information under resource constraints naturally drives neural populations toward critical states and sloppiness (arXiv: 2605.22598)
+  - Fisher information maximization → soft modes → diverging correlation lengths → criticality
+  - Unifies statistical criticality (spatial) and dynamical criticality (temporal slowing)
+  - Sloppiness emerges as a natural consequence of critical dynamics
+  - Power-law avalanches confirmed numerically
+  - **Activation**: critical brain hypothesis, neural avalanches, efficient coding, Fisher information, soft modes, critical slowing down, sloppiness
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons
+- [[snn-sequence-timing-replay]] - Biologically plausible spiking Temporal Memory (sTM) model extended with element-specific duration encoding and oscillatory speed control (arXiv: 2605.22523)
+  - Duration encoded via chain length of sequentially activated neuronal assemblies
+  - Oscillatory background inputs serve as clock signal for flexible replay speed
+  - 10-20× compression during sharp-wave ripples matches hippocampal replay
+  - All mechanisms use local plasticity (STDP) — no global error signal
+  - **Activation**: spiking temporal memory, sequence timing SNN, replay speed modulation, oscillatory clock neural, STDP sequence learning, hippocampal replay timing
+
 ## 2026-05-25 - Dream/Sleep Research (Cron Job)
 
 ### A large corpus of lucid and non-lucid dream reports

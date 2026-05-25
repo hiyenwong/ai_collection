@@ -1,94 +1,118 @@
 ---
 name: efficient-coding-criticality
-description: Theoretical framework linking efficient coding to criticality in neural populations. Maximizing Fisher information under resource constraints naturally leads to soft modes, diverging correlation lengths, and power-law responses — hallmarks of criticality. Unifies statistical and dynamical criticality, explains sloppiness in neural systems. Activation: efficient coding, neural criticality, Fisher information, soft modes, critical brain hypothesis, neural avalanches, power-law, sloppiness, population coding
-version: 1.0.0
-metadata:
-  hermes:
-    source_paper: "Efficient coding under constraint drives neural systems towards criticality and sloppiness (arXiv:2605.22598)"
-    published: "2026-05-22"
-    categories: ['q-bio.NC']
-    authors: He Xiao, Xinyue Zhao, Weikang Wang
+description: >
+  Theoretical framework linking efficient coding to criticality in neural
+  populations. Shows that maximizing Fisher information under resource constraints
+  naturally leads to soft modes, diverging correlation lengths, and power-law
+  neural avalanches, unifying statistical and dynamical perspectives of criticality.
+  Also explains sloppiness in neural systems. Use when studying: critical brain
+  hypothesis, neural avalanches, efficient coding theory, Fisher information in
+  neural populations, soft modes, critical slowing down, power-law neural dynamics,
+  or the relation between coding efficiency and brain criticality.
+arxiv_id: "2605.22598"
+published: "2026-05-21"
+authors: "He Xiao, Xinyue Zhao, Weikang Wang"
+tags: [criticality, efficient coding, Fisher information, neural avalanches, critical brain, soft modes, sloppiness, neural dynamics]
 ---
 
-# Efficient Coding Drives Neural Systems to Criticality and Sloppiness
+# Efficient Coding Under Constraint Drives Neural Systems Towards Criticality and Sloppiness
 
-## Overview
-This skill provides a theoretical framework demonstrating that **efficient coding under resource constraints** naturally drives neural populations toward **criticality**. By maximizing Fisher information with limited resources (energy, neurons, firing rates), neural systems develop soft modes, diverging correlation lengths, and power-law avalanche distributions. The framework also explains the **sloppiness** (parameter insensitivity) observed in biological neural networks.
+**arXiv:2605.22598** (Xiao, Zhao, Wang, May 2026)  
+**Category**: q-bio.NC (Neurons and Cognition)  
+**MSC**: 92B20
 
-## Core Concept
+## Core Idea
 
-### Efficient Coding Principle
-- Neural systems optimize information transmission under biological constraints
-- **Fisher information** quantifies how well a neural population encodes stimuli
-- Resource constraints: limited number of neurons, energy budget, firing rate bounds
-- Optimization under constraints leads to emergent critical properties
+The brain operates near a critical state — neural avalanches follow power-law distributions. But **why?** This paper provides a theoretical framework showing that **maximizing coding efficiency under resource constraints** *naturally* drives neural populations toward criticality.
 
-### Theoretical Framework
+## Key Contributions
 
-#### Gaussian Population Coding Model
-- N neurons with tuned responses to a stimulus parameter θ
-- Fisher information I(θ) = Σ_i [r'_i(θ)]² / r_i(θ) where r_i is firing rate
-- Resource constraint: Σ_i r_i(θ) ≤ R (total firing rate budget)
-- **Key result**: Maximizing I(θ) under rate constraint R leads to:
-  - Diverging correlation lengths (statistical criticality)
-  - Emergence of soft modes (near-zero eigenvalues of Fisher information matrix)
-  - Power-law distributed neural avalanches
+### 1. Efficient Coding → Criticality (Mathematical Proof)
 
-#### Unification of Criticality Perspectives
-1. **Statistical criticality**: Diverging correlation lengths → long-range neural correlations
-2. **Dynamical criticality**: Critical slowing down + bifurcation near instability
-3. Both emerge naturally from the same optimization principle
+Using a Gaussian population coding model:
 
-### Explanation of Sloppiness
-- Neural systems exhibit **sloppiness**: many parameter combinations have little effect on behavior
-- Emerges because optimized Fisher information matrices have highly anisotropic spectra
-- Few "stiff" directions (critical for coding) + many "sloppy" directions (redundant)
-- Explains why complex neural models can be simplified without losing predictive power
+- **Fisher Information** (FI) measures coding accuracy — how well a neural population encodes a stimulus.
+- Under **resource constraints** (limited neural firing, metabolic cost), maximizing FI forces the Fisher information matrix to develop **near-zero eigenvalues** (soft modes).
+- Soft modes → **diverging correlation lengths** → hallmark of **statistical criticality**.
+- The optimization objective: `max L = FI - λ·R` where `R` is a resource constraint (e.g., total firing rate). At optimality, the FI matrix has zero modes — a critical point.
 
-## Key Predictions
+### 2. Unification of Two Criticality Perspectives
 
-### Testable Experimental Predictions
-1. Neural avalanches should follow power-law distributions with exponents ≈ -1.5 to -2.0
-2. Correlation length should increase when neural populations are pushed toward efficient coding regimes
-3. Fisher information matrix should show eigenvalue spectral decay consistent with sloppiness
-4. Resource-constrained networks (energy-depleted, sleep-deprived) should show deviations from criticality
+| Statistical Criticality | Dynamical Criticality |
+|---|---|
+| Diverging correlation lengths | Critical slowing down, bifurcation |
+| Spatial correlations span the system | Recovery from perturbation takes infinite time |
+| Arises from FI matrix soft modes | Arises from spectral properties of the dynamical operator |
 
-### Computational Implications
-- Criticality maximizes dynamic range and information transmission
-- Sloppiness explains robustness of neural computation to parameter variation
-- Framework provides principled way to build efficient spiking neural networks
+The framework **unifies** both: introducing spatial structure (neighboring neurons have correlated tuning) connects the static FI matrix soft modes to dynamical critical slowing down — the same resource-constrained optimization that produces spatial criticality also produces temporal criticality.
 
-## Implementation Guide
+### 3. Explanation of Sloppiness
 
-### Computing Fisher Information in Neural Populations
-```python
-# Given tuning curves r_i(θ) for N neurons
-# Fisher Information:
-def fisher_information(r_tuning, r_derivative):
-    """
-    r_tuning: N x K array (N neurons, K stimulus values)
-    r_derivative: derivative dr_i/dθ
-    """
-    return np.sum(r_derivative**2 / np.maximum(r_tuning, 1e-8), axis=0)
-```
+Sloppiness = the phenomenon where neural systems are insensitive to changes in most parameter directions (only a few "stiff" directions matter).
 
-### Detect Criticality Signatures
-```python
-# Check for power-law avalanche distributions
-# 1. Record population spikes over time
-# 2. Define avalanches as periods of continuous activity
-# 3. Fit power-law to size/duration distributions
-# 4. Compare to expected exponent for critical systems
-```
+- The soft modes of the FI matrix define **sloppy directions** — parameter changes along these directions barely affect coding accuracy.
+- This is a **natural consequence** of operating at criticality: the system sacrifices sensitivity along irrelevant dimensions to maximize coding along relevant ones.
+- Provides a mechanistic link between the **critical brain hypothesis** and **sloppy model phenomenology**.
+
+### 4. Numerical Verification
+
+Power-law neural avalanches emerge from the optimization, confirming the theoretical predictions.
+
+## Mathematical Framework
+
+### Gaussian Population Code
+
+Each neuron has a tuning curve: `r_i(s) = f_i(s) + ε_i` where `f_i(s)` is the mean response to stimulus `s`, and `ε_i` is noise (Gaussian with covariance `Σ`).
+
+### Fisher Information Matrix
+
+`FI_ij = E[∂log p(r|s)/∂θ_i · ∂log p(r|s)/∂θ_j]`
+
+For Gaussian noise: `FI(s) = J(s)^T Σ⁻¹ J(s)` where `J` is the Jacobian of the tuning curves w.r.t. stimulus parameters.
 
 ### Resource-Constrained Optimization
-```python
-# Lagrangian formulation for Fisher information maximization
-# Maximize: I(θ) + λ(R - Σ r_i(θ))
-# Results in optimal firing rate allocation where:
-# |r'_i(θ)|/√r_i(θ) = constant for active neurons
-```
 
-## References
-- Xiao H, Zhao X, Wang W. "Efficient coding under constraint drives neural systems towards criticality and sloppiness." arXiv:2605.22598 (2026)
-- Related: Critical brain hypothesis (Beggs & Plenz, 2003), efficient coding (Barlow, 1961), sloppiness in systems biology (Gutenkunst et al., 2007)
+`max_{θ} Tr(FI) - λ·||θ||²` or similar regularized objectives. The key is that the constraint prevents the system from having all eigenvalues large — some must go to zero.
+
+### Soft Modes and Criticality
+
+When `FI` has zero eigenvalues, the system is at a critical point in the sense of **parameter space**: changes along soft-mode directions don't affect the coding accuracy (neutral directions). These soft modes correspond to the diverging length scales of statistical criticality.
+
+### Unification via Spatial Structure
+
+Introduce spatial coupling between neurons (nearby neurons have similar tuning). The FI matrix becomes approximately:
+`FI ≈ N·(I + α·L)` where `L` is the graph Laplacian of the neural network. Near criticality, `α → α_c` at which point `(I + α·L)` becomes singular — the correlation length diverges AND the dynamical time scale diverges.
+
+## Relation to Existing Theories
+
+| Theory | Connection |
+|---|---|
+| **Critical Brain Hypothesis** | Provides the *mechanistic why* — criticality is a consequence of optimal coding under constraints |
+| **Self-Organized Criticality (SOC)** | The optimization process naturally self-organizes to criticality without fine-tuning |
+| **Efficient Coding Hypothesis** | Directly linked — the efficiency objective itself drives criticality |
+| **Sloppy Model Theory** | Sloppiness is a byproduct of criticality, not a separate phenomenon |
+
+## Key Results
+
+- Fisher information maximization under resource constraints → **soft modes** → **criticality**
+- Spatial structure unifies **statistical** and **dynamical** criticality
+- Sloppiness emerges naturally as a consequence of critical dynamics
+- Power-law avalanches confirmed numerically
+
+## Limitations
+
+- **Gaussian approximation**: Real neural noise is not Gaussian — Poisson-like (mean-variance coupling). The framework may need extension to non-Gaussian noise.
+- **Single population**: Model considers one neural population; real brains have hierarchical, multi-region organization.
+- **Static optimization**: The optimization is at equilibrium — doesn't capture how the brain dynamically adapts to changing constraints in real time.
+
+## Activation Keywords
+
+- critical brain hypothesis
+- neural avalanches
+- efficient coding
+- Fisher information neural population
+- soft modes neural dynamics
+- critical slowing down brain
+- sloppiness neural systems
+- power-law neural activity
+- resource-constrained coding
