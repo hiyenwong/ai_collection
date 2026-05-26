@@ -10,6 +10,24 @@
 
 ## 2026-05-26 - Neuroscience Research (Cron Job - Wednesday)
 
+### What Are We Actually Decoding? Source Attribution for Non-Invasive Brain-to-Language Retrieval
+- [[brain-to-language-source-attribution]] - Rigorous source attribution framework for MEG-to-audio brain decoding, separating performance into structural shortcuts, window-level neural evidence, and cross-window contextual aggregation using Group Context Bias (GCB) (arXiv: 2605.24524)
+  - Signal-blind Gaussian noise reaches 66.3% R@1 under variable-length decoding but collapses to near chance with proper controls
+  - GCB inference-time logit bias: R@1 shifts from 44%→52% on Gwilliams, 22%→29% on MOUS datasets
+  - 95.7% of Top-1 errors select wrong sentence, localising bottleneck to sentence-level competition
+  - Effect collapses under random-grouping perturbations; vanishes when local MEG evidence is attenuated
+  - Establishes that brain-to-language performance should be source-attributed, not merely reported
+  - **Activation**: brain-to-language-source-attribution, meg-audio-retrieval, structural-shortcut-detection, group-context-bias, neural-decoding-evaluation, source-attribution-framework, brain-decoding-methodology
+
+### NeuroFlowNet: Non-Invasive Reconstruction of Intracranial EEG Across the Deep Temporal Lobe from Scalp EEG
+- [[neuroflownet-scalp-to-ieeg]] - Cross-modal generative framework using Conditional Normalizing Flow (CNF) for reconstructing high-fidelity iEEG signals from scalp EEG — the first-ever reconstruction of deep temporal lobe iEEG from non-invasive sEEG (arXiv: 2603.03354)
+  - CNF core: reversible transformations model complex conditional probability distributions, avoiding pattern collapse
+  - Multi-scale architecture + self-attention captures fine-grained temporal details and long-range dependencies
+  - Validated on synchronized sEEG-iEEG dataset: temporal waveform fidelity, spectral feature reproduction, functional connectivity restoration
+  - Establishes a reliable, scalable paradigm for non-invasive deep brain dynamics analysis
+  - Code available (see paper for URL)
+  - **Activation**: neuroflownet, scalp-to-ieeg, normalizing-flow-eeg, deep-brain-reconstruction, ieeg-reconstruction, cross-modal-eeg, temporal-lobe-ieeg, non-invasive-deep-brain, conditional-normalizing-flow-eeg
+
 ### MindAlign: Bridging EEG, Vision, and Language for Zero-Shot Visual Decoding
 - [[mindalign-eeg-visual-decoding]] - Tri-modal contrastive framework for EEG-based zero-shot visual decoding, aligning EEG, image, and LLM-generated text in unified latent space (arXiv: 2605.24523)
   - Two-stage training: masked reconstruction pre-training on unlabeled EEG + tri-modal contrastive alignment
