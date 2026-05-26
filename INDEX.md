@@ -64,6 +64,22 @@
   - Provides normative account connecting AI architecture design to brain resource allocation
   - **Activation**: resource-constrained-network-growth, breadth-depth-time-tradeoffs, emergent-computation-graphs, reaction-time-correlation, normative-neural-architecture
 
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm integrating bottom-up whole-brain modeling (biophysically detailed simulations) with top-down neuroconnectionism (deep neural networks for functional performance) (arXiv: 2605.18118)
+  - Defines 4 minimal criteria: structural grounding, continuous-time dynamics, functional competence, mappable observables
+  - Three-pillar roadmap (short, mid, long-term) for unifying brain structure and cognitive function
+  - WBMs and neuroconnectionism are complementary — fWBMs generate a common language across scales
+  - Enables brain disorder modeling, stimulation targeting, development/aging tracking, cognitive science, and brain-inspired AI
+  - **Activation**: whole-brain-modeling, fWBM, neuroconnectionism, neural-mass-models, brain-structure-function, connectome, brain-inspired-AI
+
+### Multi-Objective Optimisation with Oscillatory Dynamics in Spontaneous and Decision Spiking Neural Networks
+- [[multi-objective-optimisation-oscillatory-snn]] - NSGA-III multi-objective genetic algorithm optimisation of Izhikevich neuron-based RSNNs for simultaneously matching neural firing rates and network oscillation frequencies (arXiv: 2605.25224)
+  - Method extends GA optimisation to fit both firing rates AND dominant oscillation frequencies simultaneously
+  - Validated on three regimes: spontaneous RSNN, low-activation brain organoid, simulated decision-making RSNN
+  - Oscillation frequencies are more parameter-sensitive than firing rates
+  - Identified distinct low-activity regime for decision-making dynamics
+  - **Activation**: spiking-neural-network, NSGA-III, multi-objective-optimisation, neural-oscillations, Izhikevich-neuron, brain-organoid-modeling, Pareto-frontier
+
 ## 2026-05-26 - Quantum + Reinforcement Learning (Cron Job - Tuesday)
 
 ### CRiSP: Classical State Preparation for Variational Quantum Algorithms via Reinforcement Learning
