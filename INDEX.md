@@ -1,3 +1,17 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Efficient coding under constraint drives neural systems towards criticality and sloppiness
+- [[efficient-coding-criticality-sloppiness]] - 资源约束下的高效编码驱动神经系统趋向临界性与sloppiness (arXiv: 2605.22598)
+  - 核心要点 1：最大化Fisher信息在资源约束下自然涌现软模式（soft modes）和发散相关长度——临界性的标志
+  - 核心要点 2：统一了统计临界性（发散相关长度）与动力学临界性（临界减速+分岔）两种视角
+  - **Activation**: efficient coding, neural criticality, Fisher information, sloppiness, critical brain, power-law neural
+
+### Multi-Objective Optimisation with Oscillatory Dynamics in Spontaneous and Decision Spiking Neural Networks
+- [[multi-objective-snn-oscillation]] - 用NSGA-III多目标遗传算法同时优化SNN的发放率和振荡频率，验证于脑类器官数据 (arXiv: 2605.25224)
+  - 核心要点 1：NSGA-III可在Pareto前沿上同时匹配神经元发放率和网络振荡频率（gamma/beta/theta band）
+  - 核心要点 2：振荡频率对参数更敏感，发放率更鲁棒；成功识别脑类器官的低活跃度制度
+  - **Activation**: SNN oscillation, NSGA-III neural, Izhikevich RSNN, brain organoid, multi-objective SNN
+
 ## 2026-05-27 - Medicine + Quantum (Cron Job)
 
 ### Toward General Quantum Control with Physics-Informed Large Language Models
