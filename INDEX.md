@@ -10,6 +10,20 @@
 
 ## 2026-05-26 - Neuroscience Research (Cron Job - Tuesday)
 
+### Active Sensing Subserves Task-Level Control
+- [[active-sensing-task-level-control]] - Theoretical framework proposing active sensing (movement for information) is not driven by sensory goals but is necessary for task-level control, with explore/exploit mode switching between discrete behavioral epochs (arXiv: 2605.22988)
+  - Active sensing emerges from adaptive sensors + movement-sensing linkage + task-level control constraints
+  - Animals switch between explore mode (dynamic movements shaping sensory feedback) and exploit mode (slow compensatory movements for task goals)
+  - Engineered systems outperform animals on cost functions but lack robust graceful behaviors
+  - **Activation**: active-sensing, task-level-control, explore-exploit-mode, sensorimotor-control, adaptive-sensors, bio-inspired-robotics
+
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[beyond-neural-activity-prediction]] - Multi-level representational probing framework showing that digital twins of mouse V1 with comparable prediction accuracy can differ substantially in latent representations (linear decodability, unit tuning, population geometry) (arXiv: 2605.23122)
+  - Prediction accuracy correlates with flatter eigenspectra and higher-dimensional representations
+  - Comparable accuracy ≠ comparable representations — models differ in probe performance and tuning
+  - Three-level probing: linear decodability, latent-unit tuning, population geometry
+  - **Activation**: digital-twin, neural-prediction, latent-representation, V1-modeling, representational-probing, population-geometry
+
 ### Contextual Role Modulates Object Representational Geometry in the Human Brain
 - [[contextual-role-object-representational-geometry]] - fMRI study showing neural remapping of object representations based on contextual role (target vs passive), with double dissociation between parietal action affordance network and occipito-temporal semantic network (arXiv: 2605.23111)
   - Target objects engage parietal action network organized by action affordance and hand posture dimensions
