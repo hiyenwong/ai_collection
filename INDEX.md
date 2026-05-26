@@ -1,3 +1,19 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Growing a Neural Network in Breadth, Depth, and Time
+- [[growing-neural-breadth-depth-time]] - 可微分代价项联合优化神经网络广度、深度和时间，有机涌现多样计算图 (arXiv: 2605.25174)
+  - 定义三维资源代价（广度/深度/时间）与任务误差联合反向传播优化
+  - 网络随任务复杂度在三个维度增长，遮挡输入时自发增加递归步数
+  - 模型时间用量与人类反应时间正相关，生物合理性强
+  - **Activation**: neural network growth, breadth depth time, recurrent convolutional, resource constraints, biologically plausible
+
+### Memory Uncertainty Relation and Harmonic Memory in Random Recurrent Networks
+- [[memory-uncertainty-relation-recurrent-networks]] - 随机递归网络中短时记忆容量的不确定性关系及谐波记忆下界 (arXiv: 2605.24628)
+  - 建立 STM × 状态波动 ≥ C 的不等式，类比海森堡不确定性原理
+  - 谐波记忆作为最优线性读出权重可达的下界，提供构造性理论保证
+  - 谱半径趋近于1（混沌边缘）时不等式趋于等号，达到最优记忆效率
+  - **Activation**: reservoir computing, short-term memory, harmonic memory, uncertainty relation, random recurrent networks
+
 ## 2026-05-27 - Medicine + Quantum Mechanics (Cron Job - Wednesday)
 
 ### Hybrid Quantum Neural Network for Multivariate Clinical Time Series Forecasting
