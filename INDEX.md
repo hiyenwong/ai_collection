@@ -20,6 +20,14 @@
 
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
 
+### How Agentic AI Coding Assistants Become the Attacker's Shell
+- [[agentic-coding-security]] - Security framework for protecting agentic AI coding assistants from indirect prompt injection attacks via external artifacts (arXiv: 2605.25871)
+  - Hidden instructions in code repos, docs, StackOverflow posts can hijack coding agents into attacker shells
+  - Attack surface analysis covering external repos, documentation, Q&A sites, package registries
+  - Defense strategies: artifact vetting, capability boundaries, execution isolation, prompt hardening
+  - Audit checklist for secure agentic coding workflows
+  - **Activation**: agentic-coding-security, AI-coding-assistant-security, indirect-prompt-injection, agent-attack-surface, coding-agent-hijacking, prompt-injection-defense
+
 ### QML-PipeGuard: Drift-Aware Behavioral Fingerprinting for Quantum Machine Learning Pipeline Integrity
 - [[qml-pipeline-integrity]] - Contract-based framework for verifying QML pipeline integrity via behavioral fingerprinting, detecting both hardware drift and adversarial channel substitution (arXiv: 2605.25066)
   - Behavioral fingerprint = vector of observable expectation values under tomographically structured measurement family
