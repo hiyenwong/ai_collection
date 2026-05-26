@@ -28,6 +28,21 @@
   - Audit checklist for secure agentic coding workflows
   - **Activation**: agentic-coding-security, AI-coding-assistant-security, indirect-prompt-injection, agent-attack-surface, coding-agent-hijacking, prompt-injection-defense
 
+### HQNN Expressibility-Trainability Trade-off and Multi-Objective NAS
+- [[hqnn-expressibility-trainability-nas]] - Hybrid quantum-classical neural architecture search framework that jointly optimizes expressibility, trainability, and task performance, revealing that hybridization decouples the assumed expressibility-trainability trade-off (arXiv: 2605.25768)
+  - Pure PQCs exhibit only weak, regime-dependent expressibility-trainability trade-off
+  - Full end-to-end hybrid training can eliminate the trade-off entirely — classical layers reshape the optimization landscape
+  - Multi-objective NAS over combined classical-quantum design space reveals different Pareto-optimal solutions
+  - Entanglement topology selection guidance: linear (high trainability), ring (balanced), all-to-all (high expressibility), tree (moderate)
+  - **Activation**: hqnn-architecture-design, quantum-nas, expressibility-trainability, hybrid-quantum-training, barren-plateau-mitigation, pqc-optimization, quantum-neural-architecture-search
+
+### Transition Dropping for PPO Stabilization
+- [[transition-dropping-ppo]] - Minimal PPO training stabilization via random transition dropping from rollouts, breaking repetitive gradient structure caused by causally chained on-policy transitions (arXiv: 2605.24071)
+  - 25% transition drop rate is optimal — disrupts gradient redundancy without thinning the batch
+  - Validated on 5 environments from CartPole to Hopper — matches vanilla PPO reward with more stable KL/policy entropy/value estimates
+  - Drop-in modification, one sampling step, works with any PPO implementation
+  - **Activation**: ppo-training-stabilization, transition-dropping, rl-gradient-redundancy, on-policy-training, rollout-sampling
+
 ### QML-PipeGuard: Drift-Aware Behavioral Fingerprinting for Quantum Machine Learning Pipeline Integrity
 - [[qml-pipeline-integrity]] - Contract-based framework for verifying QML pipeline integrity via behavioral fingerprinting, detecting both hardware drift and adversarial channel substitution (arXiv: 2605.25066)
   - Behavioral fingerprint = vector of observable expectation values under tomographically structured measurement family
