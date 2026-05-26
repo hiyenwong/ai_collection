@@ -1399,6 +1399,15 @@
   - Composable security framework for QKD protocols
   - **Activation**: quantum privacy amplification, quantum smooth entropies, one-shot quantum security
 
+## 2026-05-27 - Medicine + Quantum Mechanics (Cron Job - Wednesday)
+
+### QML-PipeGuard: Drift-Aware Behavioral Fingerprinting for Quantum Machine Learning Pipeline Integrity
+- [[qml-pipeline-integrity]] - Contract-based behavioral fingerprinting framework for verifying QML pipeline integrity on cloud quantum hardware (arXiv: 2605.25066)
+  - Behavioral fingerprint: vector of observable expectation values under tomographically structured measurement family
+  - Two modes: drift-aware monitoring (absorbs benign calibration changes) + adversarial detection (catches channel substitution)
+  - Validated on 2-qubit QSVM pipeline on IBM Heron r2, ~1.4×10⁴ shots, tight frame-bound C=√3
+  - **Activation**: QML pipeline integrity, quantum ML verification, behavioral fingerprinting, hardware drift monitoring, adversarial channel detection, QML-PipeGuard
+
      1|## 2026-05-25 - Information Science + Quantum Physics (Monday Cron Job)
      2|
      3|### Sudden death of entanglement, rebirth of magic (arXiv:2605.22603)

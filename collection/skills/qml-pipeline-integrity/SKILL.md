@@ -1,90 +1,143 @@
 ---
 name: qml-pipeline-integrity
-description: "Contract-based behavioral fingerprinting framework for verifying Quantum Machine Learning (QML) pipeline integrity at runtime. Addresses two threats: hardware channel drift between recalibrations and adversarial channel substitution. Uses tomographically structured measurement families to characterize pipeline behavior via observable expectation values. Provides drift-aware monitoring (absorbing benign calibration changes) and adversarial detection (catching channel substitution). Validated on IBM Heron r2 processor. Use when: deploying QML to cloud, verifying quantum hardware identity, monitoring pipeline integrity, detecting adversarial channel swaps, or building QML security tooling."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.25066"
-  published: "2026-05-24"
-  authors: Esra Yeniaras
-  tags: [quantum-machine-learning, pipeline-integrity, behavioral-fingerprinting, security, drift-monitoring, qml]
+description: "Contract-based behavioral fingerprinting framework for quantum machine learning pipeline integrity (QML-PipeGuard). Addresses hardware drift monitoring and adversarial channel substitution detection for QML systems entering regulated industries. Use when deploying QML pipelines on cloud quantum hardware, verifying quantum channel identity, monitoring calibration drift, or detecting adversarial channel substitution. Relevant to medical/healthcare QML deployment, financial QML, and any regulated QML application."
 ---
 
-# QML Pipeline Integrity via Behavioral Fingerprinting
+# QML Pipeline Integrity — Behavioral Fingerprinting (QML-PipeGuard)
 
-## Core Concept
+## Overview
 
-QML pipelines are vulnerable to two runtime threats:
-1. **Hardware drift**: NISQ devices drift between recalibrations, silently degrading performance
-2. **Adversarial substitution**: An attacker can swap the declared quantum channel with a behaviorally similar but mathematically distinct one
+Contract-based framework for runtime verification of quantum ML pipeline integrity.
+Addresses two threats not covered by existing QML verification:
+1. **Hardware drift**: Noisy quantum channels drift at calibration level between recalibrations
+2. **Adversarial channel substitution**: Execution environment replaces declared channel with a
+   behaviorally similar but mathematically distinct one
 
-This framework characterizes a QML pipeline's **behavioral fingerprint** — the vector of observable expectation values under a tomographically structured measurement family — and operates in two modes.
+Source: arXiv:2605.25066 (QML-PipeGuard: Drift-Aware Behavioral Fingerprinting for QML Pipeline Integrity)
 
-## Threat Model
+## Core Methodology
 
-| Threat | Detection Method |
-|--------|-----------------|
-| Benign calibration drift | Absorbed within calibrated tolerance ε |
-| Sneaky channel substitution | Caught via violation of informationally complete observable contract |
+### Behavioral Fingerprint
 
-For single-qubit Pauli family, tight frame-bound C=√3 defines the verification boundary.
+Characterize a QML pipeline at runtime by its **behavioral fingerprint**:
+- Vector of observable expectation values under a tomographically structured measurement family
+- Applied to the composed encoder-ansatz-measurement channel (not individual components)
+- Informationally complete for detecting channel substitution
 
-## Two-Mode Operation
+### Two Operating Modes
 
-### Mode 1: Drift-Aware Monitoring
-- Characterize baseline behavior under known-good hardware
-- Calibrate tolerance ε from historical drift measurements
-- Monitor continuously: if ||fingerprint - baseline|| ≤ ε, accept as normal drift
+**1. Drift-Aware Monitoring**
+- Absorbs benign calibration changes within a calibrated tolerance
+- Tracks natural hardware drift between recalibrations
+- Tolerance decomposition: separates adversarial vs natural-drift contributions
 
-### Mode 2: Adversarial Detection
-- Use informationally complete measurement family (e.g., Pauli measurements)
-- Verify that observed fingerprint satisfies the observable contract
-- Channel substitution violates the contract even when behavior appears similar
+**2. Adversarial Detection**
+- Catches channel substitution as violation of informationally complete observable contract
+- Threat model: tight frame-bound C=√3 for single-qubit Pauli family
+- Finite-shot sample-complexity bound for practical deployment
 
-## Implementation Pattern
+### Pipeline-Composition Treatment
 
-```python
-# 1. Define measurement family (e.g., single-qubit Pauli: X, Y, Z)
-# 2. Run fingerprint characterization shots (~1.4e4 for 2-qubit)
-# 3. Compute observable expectation values → behavioral fingerprint vector
-# 4. Compare against baseline:
-#    - ||f - f_baseline|| ≤ ε: normal drift
-#    - ||f - f_baseline|| > ε AND contract violation: adversarial
-#    - ||f - f_baseline|| > ε only: recalibration needed
+Models the full QML pipeline as a composed channel:
 ```
+|ψ⟩ → Encoder → Ansatz → Measurement → ⟨O⟩ → Fingerprint
+```
+
+The fingerprint is computed on the composed channel, making it sensitive to any
+modification at any stage (encoder, ansatz, or measurement).
+
+## Implementation Steps
+
+### Step 1: Define Observable Contract
+
+Select a tomographically structured measurement family:
+- For single-qubit: Pauli {X, Y, Z} (frame-bound C=√3)
+- For n-qubit: tensor products of single-qubit observables
+- Must be informationally complete for the channel space
+
+### Step 2: Establish Baseline Fingerprint
+
+On the verified channel:
+1. Run the QML pipeline (encoder + ansatz + measurement)
+2. Measure expectation values for each observable in the family
+3. Record baseline fingerprint vector f_baseline
+
+### Step 3: Set Tolerance Thresholds
+
+Decompose tolerance into components:
+- **Natural drift tolerance**: based on historical calibration drift data
+- **Adversarial margin**: safety margin for detecting substitution
+- **Shot noise**: statistical uncertainty from finite measurement budget
+
+### Step 4: Runtime Monitoring
+
+For each monitoring cycle:
+1. Run the pipeline with the measurement family
+2. Compute current fingerprint f_current
+3. Compare: ||f_current - f_baseline|| vs tolerance
+4. If within tolerance: pass (benign drift accepted)
+5. If exceeds tolerance: flag potential channel substitution
+
+### Step 5: Finite-Shot Validation
+
+Sample complexity bound: ~1.4×10⁴ shots for 2-qubit pipeline
+- Fits in a single batched job on current hardware (IBM Heron)
+- Validates detection with wide safety margin
+- Sneaky channels detected while evading weak contracts
 
 ## Key Parameters
 
-- **Sample complexity**: ~1.4e4 shots for 2-qubit pipeline (fits in single batched job)
-- **Frame bound**: C = √3 for single-qubit Pauli family
-- **Tolerance decomposition**: ε = ε_drift + ε_adversarial (separates natural drift from attack signal)
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| Frame bound (C) | √3 | Single-qubit Pauli family |
+| Sample budget | ~1.4×10⁴ shots | 2-qubit pipeline |
+| Tolerance decomposition | Adversarial + Drift | Separate contributions |
+| Measurement family | Tomographically structured | Informationally complete |
 
-## Pipeline Composition
+## Application to Medical/Healthcare QML
 
-The encoder-ansatz-measurement channel is treated as a compositional pipeline:
-```
-Input → [Encoder] → [Ansatz] → [Measurement] → Observable Expectations → Fingerprint
-```
+When deploying quantum ML for medical diagnosis:
+1. **Regulatory compliance**: Provide verifiable evidence that the quantum
+   processor matches the validated/declared hardware
+2. **Drift monitoring**: Track hardware stability between clinical validation runs
+3. **Adversarial protection**: Detect if cloud provider substitutes hardware
+   without notification (critical for FDA-regulated pipelines)
+4. **Audit trail**: Behavioral fingerprints serve as tamper-evident logs
 
-Each stage can be independently verified.
+## Decision Table
 
-## Applications
-- QML cloud service verification
-- Hardware identity attestation for quantum computing
-- Continuous pipeline monitoring in production QML systems
-- Security audit for quantum ML deployments
+| Scenario | Mode | Action |
+|----------|------|--------|
+| Regular monitoring between recalibrations | Drift-aware | Track within tolerance, flag if exceeded |
+| Post-recalibration verification | Adversarial | Full fingerprint comparison |
+| New hardware deployment | Baseline | Establish initial fingerprint |
+| Regulatory audit | Both | Provide fingerprint history + tolerance logs |
+
+## Common Pitfalls
+
+- **Weak contracts**: Observable families that are not informationally complete
+  allow sneaky channels to evade detection
+- **Insufficient shots**: Too few measurements cause false positives from shot noise
+- **Ignoring drift decomposition**: Conflating natural drift with adversarial changes
+  leads to either false alarms or missed detections
+- **Pipeline-level vs component-level**: Verifying individual components (encoder,
+  ansatz) is insufficient; must verify the composed channel
+
+## Validation
+
+- Tested end-to-end on 2-qubit QSVM pipeline on IBM Heron r2 (ibm_fez)
+- Sample-complexity validated on noise-matched simulator
+- Sneaky channel detected with wide safety margin
+- Typical hardware drift sits within calibrated tolerance
 
 ## Activation Keywords
-- qml pipeline integrity
-- quantum machine learning security
-- behavioral fingerprinting quantum
-- quantum hardware drift monitoring
-- adversarial channel detection quantum
-- quantum pipeline verification
-- QML security contract
-- quantum channel substitution detection
-- 量子机器学习安全
-- 量子管道完整性
-
-## Resources
-- Paper: https://arxiv.org/abs/2605.25066
-- Validated on IBM Heron r2 (ibm_fez) processor
+- QML pipeline integrity
+- quantum ML verification
+- behavioral fingerprinting
+- hardware drift monitoring
+- adversarial channel detection
+- quantum channel substitution
+- QML security
+- quantum ML deployment
+- regulated quantum computing
+- QML-PipeGuard
