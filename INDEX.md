@@ -1,5 +1,21 @@
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability in Spiking Neural Networks
+- [[cognisnn-random-graph-snn]] - Cognition-aware SNN with Random Graph Architecture achieving 80.64% on N-Caltech101 with biologically-inspired structural properties (PMID: 42140147)
+  - Random Graph Architecture (RGA) replaces rigid chain topology with stochastic connectivity mirroring cortical columns
+  - Key Pathway-based Learning without Forgetting (KP-LwF) enables continual learning via selective pathway reuse
+  - Dynamic Growth Learning (DGL) allows neurons/synapses to evolve along temporal dimension, mirroring adult neurogenesis
+  - **Activation**: CogniSNN, spiking neural network, random graph, continual learning, neuron expandability, neuromorphic, dynamic growth
+
+### Fast Efficient Coding and Sensory Adaptation in Gain-Adaptive Recurrent Networks
+- [[fast-efficient-coding-criticality]] - Theoretical framework reconciling adapter-repulsion and prior-attraction under unified gain-modulation efficient-coding model in recurrent sensory circuits (PMID: 42140911)
+  - Gain modulation propagated through recurrent weights emerges rapidly (~100ms) without synaptic plasticity
+  - Peaked priors → adapter repulsion; broad priors → prior attraction — both from same gain mechanism
+  - Behavioral experiment confirms fast prior-attraction prediction; reconciles decades of contradictory adaptation literature
+  - **Activation**: efficient coding, sensory adaptation, gain modulation, adapter repulsion, prior attraction, recurrent network, V1
+
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
 ### The 3-Body Problem: How Astrocytes May Govern Plasticity
 - [[astrocyte-3body-plasticity]] - Astrocyte-centric 3-body tripartite synapse framework for synaptic credit assignment (PMID: 42183627)
   - Astrocytes integrate Ca2+ signals over seconds-to-minutes, bridging millisecond STDP and longer-timescale memory consolidation

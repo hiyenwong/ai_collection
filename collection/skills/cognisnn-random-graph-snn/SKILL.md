@@ -1,366 +1,142 @@
 ---
 name: cognisnn-random-graph-snn
-description: Cognition-aware Spiking Neural Network (CogniSNN) methodology implementing Random Graph Architecture (RGA) for brain-inspired intelligence
-trigger_words:
-  - cognisnn
-  - random graph architecture
-  - pathway reusability
-  - dynamic growth learning
-  - kplwf
-  - neuron expandability
-  - brain-inspired snn
-category: ai_collection
+version: "1.0"
+description: "Cognition-aware Spiking Neural Network (CogniSNN) methodology. Random Graph Architecture (RGA) enabling neuron-expandability, pathway-reusability, and dynamic-configurability in SNNs for neuromorphic and continual learning tasks."
+tags:
+  - spiking-neural-networks
+  - neuromorphic
+  - continual-learning
+  - random-graph
+  - computational-neuroscience
+  - brain-inspired-ai
+trigger_conditions:
+  - "spiking neural network with biological structure"
+  - "SNN continual learning"
+  - "neuromorphic random graph architecture"
+  - "neuron expandability pathway reusability"
+  - "CogniSNN"
+  - "dynamic spiking network"
+  - "N-Caltech SNN benchmark"
+source: "PubMed PMID:42140147 / Neural Networks 2026"
+authors: ["Yongsheng Huang", "Peibo Duan", "Yujie Wu", "Kai Sun"]
+doi: "10.1016/j.neunet.2026.109071"
 ---
 
-# CogniSNN: Random Graph Architecture for Spiking Neural Networks
+# CogniSNN: Cognition-Aware Spiking Neural Network with Random Graph Architecture
 
 ## Overview
 
-CogniSNN introduces a paradigm shift in Spiking Neural Network design by incorporating **Random Graph Architecture (RGA)** instead of traditional rigid hierarchical structures. This methodology enables three key properties:
+CogniSNN is a novel SNN paradigm grounded in **Random Graph Architecture (RGA)** that explicitly models three key biologically-inspired structural characteristics missing from mainstream SNNs:
 
-- **Neuron-Expandability**: Dynamic neuron addition without disrupting pathways
-- **Pathway-Reusability**: Critical pathways shared across tasks via KP-LwF
-- **Dynamic-Configurability**: Adaptive growth along temporal dimension via DGL
+1. **Neuron-Expandability** — neurons and synapses can grow dynamically over time
+2. **Pathway-Reusability** — structural pathways are reused across tasks for efficient continual learning
+3. **Dynamic-Configurability** — network topology adapts along the temporal dimension
 
-## Paper Reference
+## Core Problem
 
-- **Title**: CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
-- **Authors**: Yongsheng Huang, Peibo Duan, Yujie Wu, Kai Sun, Zhipeng Liu, Changsheng Zhang, Bin Zhang, Mingkun Xu
-- **arXiv ID**: 2512.11743
-- **Published**: December 12, 2025
-- **Category**: cs.NE, cs.AI
+Mainstream SNNs adopt rigid, chain-like architectures borrowed from ANNs. This ignores the fundamental reality of biological neural circuits: neurons are stochastically interconnected, forming complex pathways. This rigidity causes:
+- Poor continual learning (catastrophic forgetting)
+- Fixed timestep constraints limiting temporal dynamics
+- Lack of structural adaptability
 
-## Core Architecture
+## Methodology
 
-### Random Graph Structure
+### 1. Random Graph Architecture (RGA)
+- Replace fixed chain topology with stochastic connectivity
+- Neurons form random directed connections within layers
+- Mimics biological stochastic synaptic connectivity
+- Enables exponentially larger functional pathway space
 
-Unlike ANN's chain-like hierarchy, CogniSNN uses stochastic connectivity:
-
-```
-┌─────────┐    ┌─────────┐    ┌─────────┐
-│ Neuron  │────│ Neuron  │────│ Neuron  │
-│    A    │    │    B    │    │    C    │
-└────┬────┘    └────┬────┘    └────┬────┘
-     │              │              │
-     └──────────────┼──────────────┘
-                    │
-              ┌─────────┐
-              │ Neuron  │
-              │    D    │
-              └─────────┘
-```
-
-**Properties:**
-- Small-world network characteristics
-- Sparse connectivity (typical density: 0.1-0.3)
-- Path redundancy for robustness
-
-### Neuron Model
-
-**Leaky Integrate-and-Fire (LIF) with Adaptive Threshold:**
-
-```
-τ_m * dv/dt = -(v - v_rest) + R * I(t)
-
-if v ≥ θ(t):
-    emit spike
-    v = v_reset
-    θ(t) = θ_0 + α * (recent_spike_rate)
-```
-
-**Parameters:**
-- τ_m: Membrane time constant (~20ms)
-- v_rest: Resting potential (-70mV)
-- θ_0: Baseline threshold (-55mV)
-- α: Adaptation strength (0.01-0.1)
-
-## Key Algorithms
-
-### 1. Pure Spiking Residual Mechanism
-
-Addresses network degradation in deep random pathways:
-
+### 2. Purely Spiking Residual Mechanism
 ```python
+# Spiking residual connection (no ANN-style shortcuts)
 class SpikingResidual(nn.Module):
-    def __init__(self, dim):
+    def __init__(self, channels):
         super().__init__()
-        self.conv = SpikingConv2d(dim, dim)
-        self.bn = SpikingBN(dim)
+        self.snn_block = SpikingBlock(channels)
+        self.skip = SpikingSkipConnection(channels)  # spike-based
     
-    def forward(self, x_spikes):
-        # Both input and output are spike trains
-        residual = self.bn(self.conv(x_spikes))
-        return x_spikes + residual  # Direct spike addition
+    def forward(self, x):
+        return self.snn_block(x) + self.skip(x)  # both paths spike
 ```
 
-**Advantages:**
-- No analog-digital conversion
-- Maintains temporal precision
-- Compatible with neuromorphic hardware
+### 3. Adaptive Pooling Strategy
+- Handles dimensional mismatch in deep RGA networks
+- Adaptive spatial pooling preserves temporal spike patterns
+- No ANN-style normalization needed
 
-### 2. Key Pathway-based Learning without Forgetting (KP-LwF)
-
-Enables continual learning by pathway reuse:
-
+### 4. Key Pathway-based Learning without Forgetting (KP-LwF)
 ```python
-class KPLwF:
-    def __init__(self, model, threshold=0.8):
-        self.model = model
-        self.critical_pathways = []
-        self.importance_threshold = threshold
-    
-    def identify_critical_pathways(self, task_data):
-        """
-        Analyze pathway activations to identify critical ones
-        """
-        pathway_scores = {}
-        
-        for pathway_id, pathway in enumerate(self.model.pathways):
-            # Compute importance score
-            activations = self.measure_pathway_activity(pathway, task_data)
-            pathway_scores[pathway_id] = self.compute_importance(activations)
-            
-            if pathway_scores[pathway_id] > self.importance_threshold:
-                self.critical_pathways.append(pathway_id)
-                pathway.freeze()
-    
-    def learn_new_task(self, new_task_data, epochs=100):
-        """
-        Learn new task while preserving critical pathway knowledge
-        """
-        # Only train non-critical pathways
-        for pathway_id, pathway in enumerate(self.model.pathways):
-            if pathway_id not in self.critical_pathways:
-                pathway.trainable = True
-            else:
-                # Use as knowledge distillation source
-                pathway.trainable = False
-                pathway.teacher_mode = True
-        
-        # Train with combined loss
-        for epoch in range(epochs):
-            # Task loss
-            task_loss = self.compute_task_loss(new_task_data)
-            # Distillation loss from critical pathways
-            distill_loss = self.compute_distillation_loss(new_task_data)
-            
-            total_loss = task_loss + 0.5 * distill_loss
-            total_loss.backward()
-            self.optimizer.step()
+def select_key_pathways(model, task_id, top_k=0.3):
+    """Identify and protect the most activated pathways for each task"""
+    pathway_importance = compute_pathway_gradients(model, task_id)
+    key_paths = topk_pathways(pathway_importance, k=top_k)
+    return key_paths
+
+def kp_lwf_loss(new_task_loss, old_pathways, lambda_kd=0.5):
+    """Distillation loss preserving key pathways"""
+    pathway_distill = pathway_preservation_loss(old_pathways)
+    return new_task_loss + lambda_kd * pathway_distill
 ```
 
-### 3. Dynamic Growth Learning (DGL)
+### 5. Dynamic Growth Learning (DGL)
+- Neurons and synapses evolve dynamically along the temporal dimension
+- Growth triggered by error signals and synaptic activity
+- Pruning of inactive connections prevents parameter explosion
 
-Adapts network capacity to input complexity:
+## Key Results
 
+| Metric | CogniSNN | Previous SOTA (SSNN) | Improvement |
+|--------|----------|----------------------|-------------|
+| N-Caltech101 Accuracy | **80.64%** | 77.97% | +2.67% |
+| Timesteps needed | 5 | 5 | equal |
+| Continual learning | Superior | - | significant |
+| Noise robustness | Enhanced | - | significant |
+
+## Activation Keywords
+- spiking neural network, SNN, neuromorphic, random graph
+- continual learning, catastrophic forgetting, pathway reuse
+- CogniSNN, neuron expandability, dynamic growth
+- N-Caltech, N-MNIST, DVS, event-based vision
+
+## Implementation Guidance
+
+### When to Use
+- Building SNNs for neuromorphic hardware (Intel Loihi, BrainScaleS)
+- Continual/lifelong learning with spiking networks
+- Event-based vision (DVS cameras, neuromorphic sensors)
+- Bio-inspired architecture research bridging ANN and SNN
+
+### Quick Start Pattern
 ```python
-class DynamicGrowthLearning:
-    def __init__(self, initial_capacity=100):
-        self.current_capacity = initial_capacity
-        self.utilization_history = []
-        self.growth_threshold = 0.9
-        self.pruning_threshold = 0.05
+from spikingjelly.activation_based import neuron, layer, functional
+
+class CogniSNNBlock(nn.Module):
+    def __init__(self, in_ch, out_ch, p_random=0.3):
+        super().__init__()
+        # Random graph connectivity
+        self.random_conv = RandomGraphConv(in_ch, out_ch, p=p_random)
+        self.lif = neuron.LIFNode(tau=2.0)
+        self.residual = SpikingResidual(out_ch)
     
-    def compute_utilization(self, layer_activations):
-        """
-        Measure how fully current capacity is being used
-        """
-        active_neurons = (layer_activations > 0).sum(dim=1).float().mean()
-        utilization = active_neurons / layer_activations.size(1)
-        self.utilization_history.append(utilization.item())
-        return utilization
-    
-    def should_grow(self):
-        """
-        Check if network needs expansion
-        """
-        recent_util = sum(self.utilization_history[-10:]) / 10
-        return recent_util > self.growth_threshold
-    
-    def grow_temporal_dimension(self, layer):
-        """
-        Add neurons along temporal dimension
-        """
-        new_neurons = self.initialize_neurons(
-            count=layer.size(1) // 10,  # Add 10%
-            temporal_depth=layer.temporal_dim + 1
-        )
-        layer.expand(new_neurons)
-        self.current_capacity += len(new_neurons)
-    
-    def should_prune(self, neuron_activations):
-        """
-        Identify inactive neurons for pruning
-        """
-        avg_activation = neuron_activations.mean(dim=0)
-        return avg_activation < self.pruning_threshold
-    
-    def forward(self, x, timestep):
-        # Dynamic adjustment
-        if timestep >= self.current_capacity - 1:
-            if self.should_grow():
-                self.grow_temporal_dimension(self.model.output_layer)
-        
-        # Pruning check (periodic)
-        if timestep % 1000 == 0:
-            self.prune_inactive_neurons()
-        
-        return self.model(x)
+    def forward(self, x):
+        out = self.lif(self.random_conv(x))
+        return self.residual(out)
 ```
 
-## Training Pipeline
+### Pitfalls
+- RGA increases memory footprint — use structured sparsity to control
+- DGL needs careful growth threshold tuning (too aggressive = parameter explosion)
+- KP-LwF requires task boundaries to be known — adapt for online learning
 
-### Phase 1: Structure Initialization
+## Connection to Neuroscience
 
-```python
-def initialize_cognisnn(input_size, output_size, graph_density=0.2):
-    """
-    Initialize CogniSNN with random graph structure
-    """
-    # Create random graph backbone
-    graph = create_small_world_graph(
-        n_nodes=1000,
-        k_neighbors=10,
-        rewiring_prob=0.3
-    )
-    
-    # Initialize spiking neurons
-    neurons = [LIFNeuron() for _ in range(1000)]
-    
-    # Connect based on graph edges
-    for edge in graph.edges:
-        connect_spiking(neurons[edge[0]], neurons[edge[1]])
-    
-    # Add input/output layers
-    input_layer = SpikingInputLayer(input_size)
-    output_layer = SpikingOutputLayer(output_size)
-    
-    return CogniSNN(input_layer, neurons, output_layer)
-```
+CogniSNN is directly inspired by:
+- **Cortical connectivity statistics**: ~20% random connectivity in cortical columns
+- **Hebbian-based pathway strengthening**: KP-LwF mirrors LTP/LTD consolidation
+- **Adult neurogenesis**: DGL mirrors neurogenesis in hippocampus
 
-### Phase 2: Surrogate Gradient Training
-
-```python
-def train_with_surrogate(model, dataloader, epochs=50):
-    """
-    Standard surrogate gradient training
-    """
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
-    
-    for epoch in range(epochs):
-        for batch in dataloader:
-            spikes, labels = batch
-            
-            # Forward pass
-            outputs = model(spikes)
-            
-            # Surrogate gradient for backprop
-            loss = F.cross_entropy(outputs, labels)
-            
-            # Backward
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-        
-        # Identify critical pathways after initial training
-        if epoch == epochs // 2:
-            model.identify_critical_pathways(validation_data)
-```
-
-### Phase 3: Dynamic Growth Activation
-
-```python
-def activate_dynamic_growth(model, new_task_data):
-    """
-    Enable DGL for handling variable-length sequences
-    """
-    model.dgl = DynamicGrowthLearning(
-        initial_capacity=model.current_timesteps
-    )
-    
-    for batch in new_task_data:
-        sequence_length = batch.size(1)
-        
-        # DGL handles variable lengths automatically
-        outputs = model.dgl.forward(batch, sequence_length)
-```
-
-## Experimental Results
-
-### Benchmarks
-
-| Dataset | CogniSNN | SOTA SNN | Improvement |
-|---------|----------|----------|-------------|
-| N-MNIST | 99.2%    | 98.8%    | +0.4%       |
-| DVS-CIFAR10 | 81.5% | 79.2%  | +2.3%       |
-| DVS-Gesture | 97.8% | 96.5%  | +1.3%       |
-| Tiny-ImageNet | 65.3% | 62.1% | +3.2%       |
-
-### Continual Learning Performance
-
-| Task Sequence | CogniSNN (KP-LwF) | Baseline | Improvement |
-|---------------|-------------------|----------|-------------|
-| N-MNIST → CIFAR10 | 94.2% | 67.3% | +26.9% |
-| 5-Task Split | 91.8% | 72.4% | +19.4% |
-
-### Computational Efficiency
-
-| Metric | CogniSNN | Standard SNN | Improvement |
-|--------|----------|--------------|-------------|
-| Parameters | 1.2M | 2.8M | -57% |
-| Energy (J/sample) | 0.45 | 1.12 | -60% |
-| Training Time | 3.2h | 5.1h | -37% |
-
-## Use Cases
-
-1. **Brain-inspired AI Systems**: When biological realism is desired
-2. **Continual Learning Applications**: Multi-task learning without forgetting
-3. **Resource-Constrained Devices**: Dynamic growth adapts to available resources
-4. **Event-based Vision**: Neuromorphic camera data processing
-5. **Temporal Pattern Recognition**: Variable-length sequences
-
-## Advantages
-
-- **Biological Plausibility**: Closer to brain structure than ANN-inspired SNNs
-- **Parameter Efficiency**: Reusable pathways reduce redundancy
-- **Continual Learning**: Pathway reusability enables lifelong learning
-- **Temporal Flexibility**: DGL handles variable-length inputs
-- **Hardware Friendly**: Event-driven computation suitable for neuromorphic chips
-
-## Limitations
-
-- **Complexity**: Random graph structure harder to analyze than regular networks
-- **Hyperparameter Sensitivity**: Graph density, growth thresholds need tuning
-- **Training Stability**: Surrogate gradients in random topologies can be unstable
-- **Limited Theoretical Understanding**: Random graph dynamics less studied than regular architectures
-
-## Implementation Notes
-
-### Hardware Considerations
-- Use sparse matrix formats for efficient storage
-- Implement event-driven computation for energy efficiency
-- Support online learning for DGL updates
-
-### Hyperparameter Guidelines
-- **Graph density**: 0.1-0.3 for balance between connectivity and sparsity
-- **Growth threshold**: 0.8-0.9 to trigger expansion
-- **Pruning threshold**: 0.05-0.1 for inactive neurons
-- **Pathway importance**: 0.7-0.9 for critical pathway identification
-
-## Related Work
-- Spiking Neural Networks
-- Neuromorphic Computing
-- Continual Learning
-- Graph Neural Networks
-- Brain-inspired Intelligence
-- Small-world Networks
-
-## Citation
-```bibtex
-@article{huang2025cognisnn,
-  title={CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks},
-  author={Huang, Yongsheng and Duan, Peibo and Wu, Yujie and Sun, Kai and Liu, Zhipeng and Zhang, Changsheng and Zhang, Bin and Xu, Mingkun},
-  journal={arXiv preprint arXiv:2512.11743},
-  year={2025}
-}
-```
+## References
+- Huang et al. (2026). *Neural Networks* DOI:10.1016/j.neunet.2026.109071
+- SpikingJelly framework: https://github.com/fangwei123456/spikingjelly
+- Related: SSNN (ICLR 2024), TET (ICLR 2022)
