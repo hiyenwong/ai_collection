@@ -1,3 +1,13 @@
+## 2026-05-26 - Computer Science + Quantum (Cron Job - Tuesday)
+
+### SAFE ma-QAOA: Surrogate-Assisted and Fine-Tuning Enhanced Multi-Angle QAOA
+- [[safe-ma-qaoa]] - Three-phase framework accelerating ma-QAOA training using classical LWPP surrogate pre-training, parameter distillation, and exact fine-tuning, reducing QPU workload by 94.5% (arXiv: 2605.23377)
+  - Phase 1: Classical LWPP surrogate pre-trains ma-QAOA parameters (zero QPU calls)
+  - Phase 2: Parameter distillation removes near-zero angles, reducing active params by 64.3%
+  - Phase 3: Exact fine-tuning on remaining parameters using quantum energy objective
+  - Achieves 94.5% QPU workload reduction, 44.4% fewer optimizer steps vs exact-only
+  - **Activation**: safe-ma-qaoa, surrogate-assisted-qaoa, parameter-distillation, lwpp, low-weight-pauli-propagation, ma-qaoa-optimization
+
 ## 2026-05-26 - Systems Engineering Research (Cron Job)
 
 ### Convex Hybrid Modeling: An Operator-Based Approach
