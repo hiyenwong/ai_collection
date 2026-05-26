@@ -17,6 +17,14 @@
 
 ## 2026-05-27 - Medicine + Quantum (Cron Job - Wednesday)
 
+### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
+- [[quantum-analogue-supraliminal-processing]] - Cloud-function formalism using Schrödinger-type equations with nonlinear non-Hermitian Hamiltonians to model supraliminal sensory processing and change-of-mind decisions (arXiv: 2605.25214)
+  - Non-Hermitian Hamiltonian captures open system dynamics (gain/loss) in neural networks
+  - Connectome harmonics as basis for psycho-neural bridge between first-person and third-person perspectives
+  - Lotka-Volterra competition terms model neural population interactions
+  - Applied to change-of-mind phenomenon: fast preconscious vs slow conscious processing interplay
+  - **Activation**: quantum analogue formalism, cloud function, supraliminal processing, Schrödinger neural field, non-Hermitian Hamiltonian, change of mind, connectome harmonics, Lotka-Volterra neural, phase-shift invariance
+
 ### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
 - [[adaptive-hybrid-feature-fusion-medical]] - 自适应混合量子-经典特征融合方法，通过温度缩放混合融合(TSHF)解决量子-经典优化不对称问题，乳腺癌分类达87.82%准确率 (arXiv: 2604.22903)
   - 核心要点1：提出三种渐进融合策略：SHF(离线)、DHF(端到端)、TSHF(温度缩放自适应)，TSHF最优
