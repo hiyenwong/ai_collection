@@ -1,3 +1,13 @@
+## 2026-05-26 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
+
+### Quantum State Fidelity for Functional Neural Network Construction
+- [[quantum-state-fidelity-neural-networks]] - Hybrid quantum algorithm using quantum state fidelity metrics as competitive alternatives to classical correlation/MI metrics for constructing functional neural networks from high-dimensional neural recordings (arXiv: 2508.16895)
+  - Maps neural activity patterns to density matrices and computes pairwise quantum fidelity F(ρ₁, ρ₂)
+  - Reveals distinct functional network structures not captured by classical metrics
+  - Scalable to high-dimensional data from fMRI, EEG, calcium imaging, electrophysiology
+  - No ground-truth needed — self-referential metric based on quantum information theory
+  - **Activation**: quantum-state-fidelity, functional-connectivity, neural-network-construction, quantum-graph-inference, density-matrix-neuroscience, quantum-neuroscience
+
 ## 2026-05-26 - Neuroscience Research (Cron Job - Tuesday)
 
 ### Contextual Role Modulates Object Representational Geometry in the Human Brain
