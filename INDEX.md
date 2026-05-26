@@ -1,3 +1,28 @@
+## 2026-05-26 - Systems Engineering Research (Cron Job)
+
+### Convex Hybrid Modeling: An Operator-Based Approach
+- [[convex-hybrid-modeling]] - Convex optimization framework for hybrid modeling in process control, combining operator theory with interpretable system identification via three settings: reference model regularization, interpretable subspace restriction, and kernel-based mixture models on interpretable manifolds (arXiv: 2605.23151)
+  - Three settings: (1) regularization around reference model, (2) restriction on interpretable subspace, (3) kernel-based mixture on interpretable manifold using lifted canonical features
+  - Convex optimization guarantees global optimum — no local minima, unlike neural network approaches
+  - Lifted parameterization via operator theory transforms nonlinear identification into convex kernel learning
+  - Demonstrated on both static and dynamic models, bridging physical interpretability with data-driven expressiveness
+  - **Activation**: convex-hybrid-modeling, operator-based-control, interpretable-system-identification, kernel-mixture-models, lifted-parameterization, process-control-hybrid-models
+
+### SHIA: A Direct SysML-Hardware Interface Architecture for Model-Centric Verification
+- [[shia-sysml-hardware-interface]] - Keeps executable SysML models directly in the hardware verification loop via bidirectional socket communication, eliminating model transformation chains and co-simulation platforms (arXiv: 2605.11248)
+  - SysML side server in embedded C++ (IBM Rhapsody) + hardware side server on Raspberry Pi
+  - Direct socket bidirectional link eliminates M2M/M2T transformation chains
+  - Staged verification approach isolates then integrates model and hardware components
+  - Karnaugh map comparison showed zero discrepancy between model and hardware outputs
+  - **Activation**: SHIA, sysml-hardware-interface, model-centric-verification, mbse-hil, digital-thread, model-governed-verification
+
+### Sheaves as a Means of Maintaining Consistency in Model-based Systems Engineering
+- [[sheaf-consistency-mbse]] - Sheaf-theoretic framework for multi-view consistency in CPS architecture, proving pairwise interface checks are sufficient for global design consistency (arXiv: 2605.08609)
+  - Architectural site topology with pairwise interfaces as points, engineering views as open sets
+  - Design presheaf assigns local design spaces, sheaf condition equivalent to pairwise overlap compatibility
+  - Certified in Lean 4/Mathlib: compatible local designs determine unique global designs
+  - **Activation**: sheaf-consistency, MBSE-verification, multi-view-architecture, design-presheaf, category-theory-systems-engineering
+
 ## 2026-05-26 - Computer Science + Quantum ML (Cron Job)
 
 ### Discovering Data Encoding Strategies for QCCNN Using Monte Carlo Tree Search
