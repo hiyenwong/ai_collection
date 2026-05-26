@@ -81,6 +81,30 @@
 
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
 
+### QAOA Classical Simulability Threshold
+- [[qaoa-interaction-threshold]] - Establishes sharp interaction-degree threshold below which QAOA circuits can be efficiently simulated classically, identifying the boundary between quantum advantage and classical simulability (arXiv: 2605.22758)
+  - QAOA on bounded-degree graphs has a classical simulation threshold depending on circuit depth p
+  - Below threshold: tensor network / sampling methods can efficiently simulate
+  - Above threshold: classical simulation becomes exponentially hard, quantum advantage possible
+  - Practical algorithm selection guide: compare problem degree to threshold before deploying QAOA
+  - **Activation**: qaoa-classical-simulability, interaction-degree-threshold, quantum-advantage-boundary, qaoa-simulation, variational-quantum-threshold
+
+### Quantum Switch Robustness Under Dephasing
+- [[quantum-dephase-causal-switch]] - Analyzes how many quantum systems can be dephased before the quantum switch's causally indefinite structure collapses to definite causal order, establishing noise tolerance thresholds (arXiv: 2605.22807)
+  - Quantum switch maintains indefinite causal order up to critical dephasing level
+  - Beyond threshold: causal structure collapses to definite order (classical limit)
+  - Provides operational bounds on quantum advantage in communication under realistic noise
+  - Protocol design guidance: operate below threshold or switch to definite-order protocols
+  - **Activation**: quantum-switch-dephasing, causal-indefiniteness, quantum-causal-structure, dephasing-threshold, indefinite-causal-order
+
+### Covert Quantum Communication Under Uncertainty
+- [[covert-quantum-communication-risk]] - Risk-aware framework for covert quantum communication under stochastic channel uncertainty, combining quantum information theory with robust optimization for covertness guarantees (arXiv: 2605.18928)
+  - Square-root law: covert bits scale as sqrt(n) for n channel uses
+  - Chance-constrained optimization for covertness guarantees under uncertain channels
+  - Risk-aware bounds tighter than worst-case conservative bounds
+  - Trade-off analysis between communication rate and covertness risk
+  - **Activation**: covert-quantum-communication, quantum-channel-covertness, risk-aware-quantum, stochastic-quantum-channels, quantum-communication-security
+
 ### How Agentic AI Coding Assistants Become the Attacker's Shell
 - [[agentic-coding-security]] - Security framework for protecting agentic AI coding assistants from indirect prompt injection attacks via external artifacts (arXiv: 2605.25871)
   - Hidden instructions in code repos, docs, StackOverflow posts can hijack coding agents into attacker shells

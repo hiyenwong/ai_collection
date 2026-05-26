@@ -1,52 +1,82 @@
 ---
 name: qaoa-interaction-threshold
-description: Sharp interaction-degree threshold for simulating QAOA (Quantum Approximate Optimization Algorithm). Identifies the critical interaction degree at which classical simulation of QAOA becomes intractable. Use when: QAOA complexity analysis, quantum advantage assessment, classical simulation limits, interaction degree analysis, quantum-classical boundary studies.
+description: "QAOA simulation complexity threshold methodology — establishes a sharp interaction-degree threshold below which Quantum Approximate Optimization Algorithm (QAOA) circuits can be efficiently simulated classically. Identifies the computational boundary between quantum advantage and classical simulability for QAOA on graphs of varying interaction degree. Use when analyzing QAOA classical simulability, quantum advantage thresholds, interaction degree bounds, or classical simulation of variational quantum algorithms."
 ---
 
 # QAOA Interaction-Degree Threshold
 
+## Source
+- arXiv: 2605.22758
+- Category: quant-ph / cs.CC
+
 ## Core Concept
 
-Identifies a sharp interaction-degree threshold for simulating QAOA circuits. Below the threshold, efficient classical simulation is possible; above it, quantum advantage emerges.
+Establishes a sharp threshold on the interaction degree of QAOA circuits:
+- Below threshold: QAOA can be efficiently simulated classically
+- Above threshold: quantum advantage becomes possible
 
-## Key Findings
+This provides a concrete boundary for when QAOA provides computational advantage over classical methods.
 
-1. **Sharp Threshold**: A critical interaction degree k_c exists where simulation complexity transitions
-2. **Classical Regime**: For interaction degree k < k_c, tensor network methods simulate efficiently
-3. **Quantum Regime**: For k > k_c, simulation complexity grows exponentially
-4. **Phase Transition**: The threshold represents a computational phase transition
+## Key Results
 
-## Analysis Framework
+### Interaction-Degree Threshold
+- QAOA on bounded-degree graphs has a classical simulation threshold
+- The threshold depends on circuit depth (p) and graph interaction degree
+- Below the threshold, tensor network / sampling methods can efficiently simulate
+- Above the threshold, classical simulation becomes exponentially hard
 
-### Interaction Degree Computation
-1. Analyze QAOA circuit structure (mixer and cost Hamiltonian)
-2. Compute interaction graph from two-qubit gate pattern
-3. Calculate interaction degree k (max degree of interaction graph)
-4. Compare against threshold k_c
+### Simulation Complexity
+- Classical simulation complexity scales with interaction degree
+- For degree-k interactions, threshold analysis determines the crossover point
+- Provides guidance for when to use QAOA vs classical optimization
 
-### Simulation Complexity Estimation
-- Tensor network contraction cost: O(exp(k)) for degree-k interactions
-- Threshold k_c: depends on system size, QAOA depth, and hardware constraints
-- Below threshold: use tensor network contraction
-- Above threshold: require quantum hardware or approximate methods
+## Practical Applications
 
-## Applications
+### 1. Quantum Advantage Assessment
+- Before deploying QAOA, check if problem instance is above threshold
+- If below threshold, use classical algorithms instead (saves quantum resources)
+- Helps prioritize quantum hardware time for genuinely hard instances
 
-- **QAOA Circuit Design**: Optimize circuit structure relative to threshold
-- **Quantum Advantage Prediction**: Determine when QAOA surpasses classical methods
-- **Hybrid Algorithm Design**: Partition problems around simulation threshold
-- **Benchmarking**: Use threshold as quantum-classical boundary metric
+### 2. Algorithm Selection
+```
+if interaction_degree < threshold(p):
+    use_classical_simulation()
+else:
+    use_qaoa_quantum()
+```
 
-## Activation Keywords
-- QAOA simulation threshold
-- interaction degree QAOA
-- quantum advantage boundary
-- QAOA complexity analysis
-- classical simulation QAOA
-- computational phase transition
-- QAOA 模拟阈值
+### 3. Benchmark Design
+- Use threshold as baseline for quantum advantage demonstrations
+- Design problem instances that are provably above threshold
+- Avoid claiming quantum advantage on classically simulable instances
+
+## Methodology
+
+### Step 1: Characterize Problem Graph
+- Extract interaction graph from QUBO/optimization problem
+- Compute maximum degree and degree distribution
+- Determine if graph has bounded or unbounded degree structure
+
+### Step 2: Apply Threshold Analysis
+- For QAOA depth p, compute threshold degree k*
+- Compare problem degree to k*
+- If degree < k*: classical simulation feasible
+- If degree > k*: quantum advantage possible
+
+### Step 3: Classical Simulation (Below Threshold)
+- Use tensor network contraction methods
+- Apply sampling-based approximation
+- Complexity: polynomial in problem size for bounded degree
+
+### Step 4: Quantum Execution (Above Threshold)
+- Compile QAOA circuit for target quantum hardware
+- Optimize circuit depth for NISQ constraints
+- Execute and measure solution quality
+
+## Error Handling
+- For intermediate cases near threshold, run both classical and quantum
+- Compare results to validate quantum advantage claim
+- Account for hardware noise which may shift effective threshold
 
 ## Related Skills
-- quantum-optimization-qaoa
-- qaoa-optimization
-- quantum-algorithm-framework-designer
+- qaoa-optimization, quantum-neural-architecture-search, constrained-counterdiabatic-qaoa-portfolio
