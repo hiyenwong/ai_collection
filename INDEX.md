@@ -1,3 +1,19 @@
+## 2026-05-26 - Neuroscience Research (Cron Job - Tuesday)
+
+### Contextual Role Modulates Object Representational Geometry in the Human Brain
+- [[contextual-role-object-representational-geometry]] - fMRI study showing neural remapping of object representations based on contextual role (target vs passive), with double dissociation between parietal action affordance network and occipito-temporal semantic network (arXiv: 2605.23111)
+  - Target objects engage parietal action network organized by action affordance and hand posture dimensions
+  - Passive objects recruit occipito-temporal network aligned with semantic dimensions
+  - Visual representational structure is invariant across contexts outside specialized networks
+  - **Activation**: contextual-role, object-representation, representational-geometry, fmri, action-affordance, neural-remapping
+
+### SpikingMoE: SDPrompt-Guided Dynamic Expert Fusion in Spiking Neural Networks
+- [[spikingmoe-sdprompt-snn]] - First open-source SNN framework integrating Mixture-of-Experts into a spike-driven Transformer with LGN-inspired routing via spike-driven prompts, achieving 94.09% on CIFAR-10 and 74.54% on CIFAR-100 (arXiv: 2605.23188)
+  - LGN-inspired spike-driven prompt (SDprompt) enables input-dependent expert routing
+  - Binary spike communication between all modules, designed for neuromorphic hardware
+  - First integration of MoE into spike-driven Transformer with biological routing
+  - **Activation**: spiking-neural-network, mixture-of-experts, spikingmoe, lgn-routing, sdprompt, neuromorphic
+
 ## 2026-05-26 - Quantum + Reinforcement Learning (Cron Job - Tuesday)
 
 ### CRiSP: Classical State Preparation for Variational Quantum Algorithms via Reinforcement Learning

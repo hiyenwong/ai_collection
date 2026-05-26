@@ -1,45 +1,50 @@
 ---
-name: contextual-role-object-representational-geometry
-description: "fMRI study showing how object representations are dynamically remapped in the human brain when their contextual role shifts (passive scene element vs. goal-directed action target). Double dissociation: target objects organized by action affordance, passive objects by semantics. Use when researching brain representation, fMRI, naturalistic stimuli, object recognition, or representational geometry."
-arxiv_id: "2605.23111"
-published: "2026-05-22"
-authors: ["Julien Dirani", "Shankar Chawla", "Leila Wehbe", "Bradford Z. Mahon"]
-tags: [fMRI, representational geometry, object recognition, contextual modulation, naturalistic stimuli, parietal action network, ventral stream]
+title: "Contextual Role Modulates Object Representational Geometry in the Human Brain"
+source: "arXiv:2605.23111"
+authors: "Julien Dirani, Shankar Chawla, Leila Wehbe, Bradford Z. Mahon"
+category: "ai_collection"
+tags:
+  - neuroscience
+  - fmri
+  - brain-network
+  - object-representation
+  - representational-geometry
+  - contextual-role
 ---
 
 # Contextual Role Modulates Object Representational Geometry in the Human Brain
 
-**arXiv:2605.23111** | Submitted 22 May 2026 | q-bio.NC
+**arXiv:2605.23111** | Submitted: 22 May 2026 | q-bio.NC
 
-## Overview
+## Summary
 
-This fMRI study combines naturalistic movie viewing with representational similarity analysis (RSA) to investigate how the same objects are represented differently depending on whether they are **passive scene elements** or **targets of goal-directed actions**.
+This fMRI study investigates how the human brain dynamically remaps object representations as the same object shifts across contextual roles — specifically, when objects are passive elements in a scene versus targets of goal-directed actions. Using naturalistic movie viewing, the authors demonstrate a **double dissociation** in representational geometry:
+
+- **Target objects** (action targets) engage a **parietal action network** (supramarginal and postcentral gyri), organized by **action affordance** and **hand posture affordance** dimensions.
+- **Passive objects** recruit a **distributed occipito-temporal network** (visual object recognition), aligned with **semantic dimensions**.
+
+Outside context-specific networks, representational content retains **context-invariance**, showing flexibility and invariance operate at different levels of the same representational system.
 
 ## Key Findings
 
-### 1. Contextual remapping of brain networks
-- **Target objects** → engage parietal action network (supramarginal + postcentral gyri)
-- **Passive objects** → recruit occipito-temporal network (visual object recognition)
-
-### 2. Representational geometry double dissociation
-- **Target object representations**: organized by action affordance and hand posture affordance dimensions
-- **Passive object representations**: aligned with semantic dimensions
-- Visual representational structure is **invariant to context** outside context-specific networks
-
-### 3. Flexibility and invariance coexist
-- Flexibility and invariance operate at **different levels** of the same representational system
-- Context-specific networks show dynamic remapping; context-insensitive regions retain stable representations
+1. **Neural remapping**: Object representations are dynamically remapped based on moment-to-moment changes in contextual relevance within naturalistic scenes.
+2. **Double dissociation**: Target vs. passive objects recruit distinct brain networks with different representational geometries.
+3. **Context-invariant structure**: Visual representational structure remains stable across contexts outside specialized networks.
+4. **Action affordance organization**: Target objects in parietal cortex are organized by what actions can be performed on them.
 
 ## Methodology
 
-- **Stimuli**: naturalistic movie viewing (ecologically valid)
-- **Analysis**: representational similarity analysis (RSA), multi-voxel pattern analysis (MVPA)
-- **Network mapping**: whole-brain functional localization for target vs. passive object processing
+- **fMRI** combined with **naturalistic movie viewing** (rich ecological validity)
+- Representational Similarity Analysis (RSA) to characterize representational geometry
+- Comparison of object representations across contextual roles (target vs. passive)
 
-## Relevance
+## Implications
 
-Directly addresses a fundamental question in systems neuroscience: how the brain balances **representational invariance** (recognizing objects across contexts) with **behavioral flexibility** (responding appropriately based on contextual relevance). Bridges object vision, action understanding, and cognitive control literatures.
+- Challenges purely invariant views of object representation in the ventral visual stream
+- Supports **dynamic, context-dependent** models of neural representation
+- Provides computational constraints for **brain-inspired AI** systems that need flexible object representations
+- Demonstrates that **flexibility and invariance** are complementary, not competing, properties of neural systems
 
-## Activation
+## Activation Keywords
 
-- **Keywords**: fMRI, representational geometry, object recognition, contextual modulation, naturalistic stimuli, parietal action network, ventral stream
+contextual-role, object-representation, representational-geometry, fmri, brain-network, action-affordance, visual-cognition, neural-remapping
