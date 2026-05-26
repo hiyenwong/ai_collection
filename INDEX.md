@@ -1,3 +1,11 @@
+## 2026-05-27 - Medicine + Quantum (Cron Job)
+
+### Toward General Quantum Control with Physics-Informed Large Language Models
+- [[vf-qctrl-llm-quantum-control]] - 物理信息大语言模型框架用于通用量子控制（VF-QCTRL），结合符号推理与优化提出解析控制ansätze并通过反馈迭代优化参数 (arXiv: 2605.26021)
+  - 核心要点1：LLM符号推理提出解析脉冲序列，数值优化精炼参数，无需任务特定训练即可跨多种量子系统工作
+  - 核心要点2：QCTRL-Bench基准测试16个任务，涵盖单/多量子比特、闭/开系统动力学、无噪声/有噪声环境，性能匹敌传统最优控制求解器
+  - **Activation**: physics-informed LLM, quantum control, vf-qctrl, qctrl-bench, symbolic reasoning, analytic control ansatz, training-free quantum control, benchmark-driven evaluation
+
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
 ### Balancing structure and randomness: maximum entropy networks for context-dependent computations
