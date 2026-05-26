@@ -38,6 +38,22 @@
   - First integration of MoE into spike-driven Transformer with biological routing
   - **Activation**: spiking-neural-network, mixture-of-experts, spikingmoe, lgn-routing, sdprompt, neuromorphic
 
+### Maximum Entropy Networks for Context-Dependent Computations
+- [[maximum-entropy-connectivity-networks]] - Normative framework using maximum entropy principle for neural connectivity: describe connectivity as probability distribution over single-neuron weights, express task requirements as constraints, and determine the unique distribution maximizing Shannon entropy (arXiv: 2605.25607)
+  - Maps nonlinear 2-layer networks onto gain-modulated linear models for analytical tractability
+  - Entropy maximization under task constraints leads to emergence of neuronal populations defined by contextual gain modulation
+  - Increasing contexts drives transition from specialized to unspecialized random populations
+  - Maximum entropy connectivity matches gradient-descent-trained networks qualitatively and quantitatively
+  - **Activation**: maximum-entropy-connectivity, emergent-populations, gain-modulated-linear-models, entropy-constrained-connectivity, normative-neuroscience
+
+### Growing a Neural Network in Breadth, Depth, and Time
+- [[growing-neural-breadth-depth-time]] - Differentiable cost terms for breadth, depth, and time in recurrent CNNs showing resource constraints shape neural architectures, with emergent computation graphs and correlation with human reaction times (arXiv: 2605.25174)
+  - All three resources (breadth, depth, time) can be traded off against each other for a given accuracy
+  - Networks grow in all dimensions with task complexity; spontaneously take more recurrent steps with occluded inputs
+  - Time used by the model correlates with human reaction times in object recognition tasks
+  - Provides normative account connecting AI architecture design to brain resource allocation
+  - **Activation**: resource-constrained-network-growth, breadth-depth-time-tradeoffs, emergent-computation-graphs, reaction-time-correlation, normative-neural-architecture
+
 ## 2026-05-26 - Quantum + Reinforcement Learning (Cron Job - Tuesday)
 
 ### CRiSP: Classical State Preparation for Variational Quantum Algorithms via Reinforcement Learning
