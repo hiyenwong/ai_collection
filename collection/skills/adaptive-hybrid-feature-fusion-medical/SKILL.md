@@ -99,6 +99,22 @@ class HybridMedicalClassifier(nn.Module):
         return logits, weights
 ```
 
+## Three Progressive Fusion Strategies
+
+The paper introduces three strategies of increasing sophistication:
+
+| Strategy | Approach | Training Mode | Performance on BreastMNIST |
+|----------|----------|--------------|---------------------------|
+| **SHF** (Static Hybrid Fusion) | Offline feature extraction | Two-stage training | Baseline |
+| **DHF** (Dynamic Hybrid Fusion) | End-to-end co-adaptation | Joint training | Improved |
+| **TSHF** (Temperature-Scaled Hybrid Fusion) | Learnable scalar τ balancing | Joint + adaptive | **Best: 87.82% acc, 91.77% F1, 89.08% AUC-ROC** |
+
+### TSHF Core Mechanism
+TSHF introduces a learnable scalar τ that dynamically balances quantum and classical branch contributions:
+- Solves the optimization asymmetry where classical gradients overwhelm quantum gradients
+- τ adapts during training to find optimal balance point
+- ResNet backbone + trainable quantum circuit achieves peak performance
+
 ## Workflow
 
 1. **Data Preparation**:
@@ -107,19 +123,25 @@ class HybridMedicalClassifier(nn.Module):
    - Apply standard augmentations
 
 2. **Feature Extraction**:
-   - Train classical CNN backbone
-   - Extract quantum features via parameterized quantum circuits
+   - Train classical CNN backbone (ResNet-18 recommended)
+   - Extract quantum features via 4-qubit variational circuit with strongly entangling layers
    - Use pre-trained encoders when available
 
-3. **Adaptive Fusion Training**:
-   - Initialize fusion weights uniformly
-   - Train end-to-end with classification loss
-   - Monitor weight evolution during training
+3. **Fusion Strategy Selection**:
+   - Start with SHF for baseline (offline extraction)
+   - Move to DHF for end-to-end training
+   - Use TSHF for best results (learnable τ balances branches)
 
-4. **Analysis**:
+4. **Adaptive Fusion Training**:
+   - For TSHF: initialize τ and learn end-to-end
+   - Monitor τ evolution — indicates which branch dominates
+   - Track both branch gradient magnitudes for asymmetry detection
+
+5. **Analysis**:
    - Analyze learned weights per sample/class
    - Identify when quantum features dominate
    - Identify when classical features dominate
+   - Report TSHF τ final value as interpretability metric
 
 ## Parameters
 
