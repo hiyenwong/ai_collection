@@ -1,3 +1,12 @@
+## 2026-05-27 - Quantum Chemistry (Cron Job)
+
+### Point-Group Symmetry Analysis of Many-Electron Wavefunctions on Quantum Computers
+- [[point-group-symmetry-quantum]] - Ancilla-free hybrid quantum method for point-group symmetry analysis using orbital rotations from representation matrix eigenvectors, compatible with non-abelian groups (arXiv: 2605.24824)
+  - 构建分子点群的表示矩阵，通过特征向量导出轨道旋转，实现无辅助比特的对称性分析
+  - 张量网络编码多电子波函数，结合误差缓解在真实量子硬件上执行
+  - 支持阿贝尔与非阿贝尔点群，适用于任意基函数（不局限于对称适应基）
+  - **Activation**: point-group symmetry, many-electron wavefunction, quantum chemistry, molecular simulation, tensor-network, error mitigation, drug discovery
+
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
 ### Growing a Neural Network in Breadth, Depth, and Time
