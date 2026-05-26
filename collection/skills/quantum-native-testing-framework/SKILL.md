@@ -1,207 +1,87 @@
 ---
 name: quantum-native-testing-framework
-description: "Native quantum program testing framework using OpenQASM 3 pragma-based assertions. Tests and programs are both standard .qasm files. Provides 12 assertion types (deterministic, statistical, quantum-state, structural), linter, environment-aware mode, and CI integration. Use when: designing quantum test suites, building OpenQASM testing infrastructure, implementing quantum CI/CD, or creating language-native quantum test frameworks. Based on QUTest (arXiv:2605.19736)."
-category: quantum
+category: quantum-computing
+description: Native quantum program testing framework using OpenQASM 3 with pragma-based assertions, covering deterministic, statistical, and property-based testing patterns. Based on QUTest (arXiv:2605.19736).
+version: 1.0
+created: 2026-05-26
+source_paper: arXiv:2605.19736
+activation: quantum testing, qutest, openqasm, pragma assertions, quantum verification, quantum debugging
 ---
 
-# Quantum Native Testing Framework
+# Quantum Native Testing Framework (QUTest)
 
-## Description
+## Overview
 
-Methodology for testing quantum programs **natively** in OpenQASM 3, where both programs and tests are standard `.qasm` files. Tests follow the **Arrange / Act / Assert** pattern with configuration, runtime requirements, and assertions encoded as **pragma comments** (`//%`), preserving full compatibility with existing OpenQASM tools.
+QUTest is a native testing framework for quantum programs where both programs and tests are standard `.qasm` files. Tests follow the **Arrange / Act / Assert** pattern, with configuration, runtime requirements, and assertions encoded as pragma comments (`//%`), preserving compatibility with existing OpenQASM tools.
 
-**Based on**: "QUTest: A Native Testing Framework for Quantum Programs" (Jos\u00e9 Campos, arXiv:2605.19736v1, 2026-05-19)
+## Core Architecture
 
-## Activation Keywords
+### 1. Pragma-Based Assertion System
+- Tests encoded as `//%` pragma comments in `.qasm` files
+- 12 assertion types spanning deterministic, statistical, and property-based checks
+- Configuration and runtime requirements encoded inline
 
-- quantum native testing
-- openqasm testing framework
-- quantum test assertions
-- quantum program testing
-- qasm test framework
-- quantum CI testing
-- pragma quantum testing
-- 量子测试框架
+### 2. Test Structure (Arrange / Act / Assert)
+```
+//% test: state_verification
+//% shots: 1000
+//% backend: simulator
 
-## Problem Statement
+// Arrange: prepare circuit
+qubit q[2];
+H q[0];
+CX q[0], q[1];
 
-Quantum programs are typically shared as OpenQASM 3 circuits, but tests are written in **host languages** (Python with Qiskit, etc.). This creates a disconnect:
-- Tests require knowledge of the host language framework
-- Tests cannot be run independently of the host environment
-- No standardized assertion language for quantum programs
-- CI integration requires custom tooling per framework
+// Act: measure
+measure q -> c;
 
-## Pragma-Based Test Pattern
-
-### Test File Structure
-
-```qasm
-//% test: "Verify Bell state preparation"
-//% runtime: qiskit >= 1.0
-//% shots: 1024
-
-// === Arrange ===
-qubit[2] q;
-bit[2] c;
-
-// === Act ===
-h q[0];
-cx q[0], q[1];
-
-// === Assert ===
-//% assert: bell_state(q)
-//% assert: correlation(q[0], q[1]) >= 0.95
-//% assert: marginal(q[0]) ~ uniform
+// Assert: verify entanglement
+//% assert: bell_state_correlation
+//% threshold: 0.95
 ```
 
-### Key Design Principles
+### 3. Assertion Types
+1. **Deterministic**: Exact state verification for small circuits
+2. **Statistical**: Distribution-based checks with configurable confidence intervals
+3. **Property-based**: Invariant verification across multiple executions
+4. **Budget-aware**: Adaptive testing that stops when confidence threshold is met
 
-1. **Native format**: Both program and test are `.qasm` files
-2. **Pragma encoding**: Tests use `//%` comments, preserving OpenQASM compatibility
-3. **Arrange/Act/Assert**: Standard test pattern adapted for quantum
-4. **12 assertion types**: Covering deterministic, statistical, state, and structural checks
+## Implementation Patterns
 
-## 12 Assertion Types
+### Pattern 1: Native Test Files
+- Store tests as `.qasm` files alongside quantum programs
+- Use pragma comments for test metadata
+- Run tests with QUTest CLI or integrate into CI/CD pipelines
 
-### Deterministic Assertions
-| Assertion | Description |
-|-----------|-------------|
-| `assert: state_is(...)` | Verify exact quantum state vector |
-| `assert: output_eq(...)` | Verify exact classical output bits |
+### Pattern 2: Statistical Verification
+- Use sequential hypothesis testing to reduce shot budgets
+- Apply Bayesian methods for probabilistic assertions
+- Set confidence thresholds (e.g., 95%) for pass/fail decisions
 
-### Statistical Assertions
-| Assertion | Description |
-|-----------|-------------|
-| `assert: probability(...)` | Verify measurement probability threshold |
-| `assert: distribution_eq(...)` | Compare output distributions (chi-square, KL) |
-| `assert: expectation_eq(...)` | Verify expectation value within tolerance |
-| `assert: correlation(...)` | Verify qubit correlation coefficient |
+### Pattern 3: Cross-Backend Testing
+- Test on simulators first, then validate on real hardware
+- Use noise-aware assertions that account for device-specific errors
+- Implement tolerance bands for hardware noise
 
-### Quantum-State Assertions
-| Assertion | Description |
-|-----------|-------------|
-| `assert: bell_state(...)` | Verify Bell state preparation |
-| `assert: ghz_state(...)` | Verify GHZ state preparation |
-| `assert: entangled(...)` | Verify entanglement between qubits |
+## Workflow
 
-### Structural Assertions
-| Assertion | Description |
-|-----------|-------------|
-| `assert: gate_count(...)` | Verify circuit gate count bounds |
-| `assert: depth_le(...)` | Verify circuit depth limit |
-| `assert: no_measure_before(...)` | Structural constraint on measurement placement |
+1. Write quantum circuit in OpenQASM 3
+2. Add test pragmas (`//%`) inline or in separate test files
+3. Run QUTest with target backend (simulator or real device)
+4. Review assertion results with statistical confidence scores
+5. Iterate on circuit design based on test failures
 
-## CI/CD Integration Pattern
+## Key Advantages
 
-### CLI Commands
-```bash
-# Discover and run all tests in directory
-qutest run ./quantum_circuits/
+- **No host language dependency**: Tests are pure `.qasm`, not Python/Qiskit
+- **Tool compatibility**: Pragma comments are ignored by standard OpenQASM parsers
+- **Statistical rigor**: Built-in support for probabilistic verification
+- **CI/CD ready**: Can be integrated into automated testing pipelines
+- **Budget optimization**: Adaptive testing reduces unnecessary shot consumption
 
-# Run tests against specific runtime
-qutest run --runtime qiskit --version 1.2 ./tests/
+## Related Concepts
 
-# Generate XML report for CI
-qutest run --report xml --output junit.xml ./tests/
-
-# Check runtime compatibility
-qutest check ./tests/
-
-# Lint test files
-qutest lint ./tests/
-```
-
-### CI Pipeline Example
-```yaml
-# GitHub Actions
-- name: Quantum Tests
-  run: |
-    qutest run ./tests/ --runtime qiskit --report xml
-- name: Upload Report
-  uses: actions/upload-artifact@v4
-  with:
-    name: quantum-test-results
-    paths: junit.xml
-```
-
-## Environment-Aware Testing
-
-Run the same test across multiple runtime versions:
-```bash
-# Test against multiple backends
-qutest run --env-aware ./tests/ --runtimes qiskit,cirq,qulacs
-
-# Isolated environment per runtime
-qutest run --isolate ./tests/
-```
-
-## Implementation Workflow
-
-### Step 1: Define Test Pragma Language
-- Use `//%` prefix for all test directives
-- Support test names, runtime specs, assertion types
-- Maintain backward compatibility with standard OpenQASM
-
-### Step 2: Implement Assertion Engine
-- Parse pragma comments from `.qasm` files
-- Map assertions to runtime-specific verification code
-- Execute assertions against circuit simulation/hardware results
-
-### Step 3: Build CLI Tool
-- Automatic test discovery (find `*.qasm` with `//%` pragmas)
-- Runtime compatibility checks
-- Report generation (XML/JUnit format)
-
-### Step 4: Integrate with CI
-- XML report output for standard CI tools
-- Version-specific testing for regression detection
-- Linter for pragma syntax validation
-
-## Error Handling
-
-### Runtime Compatibility
-```
-If test requires runtime not available:
-  1. Skip test with warning (not failure)
-  2. Report compatibility matrix
-  3. Suggest alternative runtimes
-```
-
-### Assertion Failure
-```
-If assertion fails:
-  1. Report expected vs actual values
-  2. Include statistical significance (p-value)
-  3. Show full output distribution for debugging
-  4. Classify as: statistical_fluke vs real_failure
-```
-
-## Best Practices
-
-1. **Use statistical assertions** for probabilistic circuits (not exact matching)
-2. **Specify minimum shot counts** in test pragmas (`//% shots: 1024`)
-3. **Test across multiple runtimes** for portability assurance
-4. **Include structural assertions** to catch regression in circuit optimization
-5. **Use environment-aware mode** to detect runtime-specific bugs
-6. **Lint before running** to catch pragma syntax errors early
-
-## Anti-Patterns
-
-| Anti-Pattern | Risk | Fix |
-|---|---|---|
-| Exact state matching | Fails on real hardware | Use statistical assertions |
-| No shot count specified | Inconsistent results | Always specify `//% shots: N` |
-| Host-language tests | Framework lock-in | Use native `.qasm` tests |
-| Single-runtime testing | Misses compatibility bugs | Test across 2+ runtimes |
-
-## Related Skills
-
-- noise-aware-quantum-testing (mutation testing under hardware noise)
-- quanforge-qnn-testing (QNN mutation testing)
-- quantum-program-linting (static analysis for quantum code)
-- quantum-program-reliability (quantum code quality assurance)
-
-## References
-
-- Campos, J. "QUTest: A Native Testing Framework for Quantum Programs" (arXiv:2605.19736v1, 2026)
-- KG entity: `2605.19736v1` in kg.db
+- Bayesian sequential verification (arXiv:2605.15601)
+- OpenQASM 3 specification
+- Quantum program verification
+- Statistical hypothesis testing
