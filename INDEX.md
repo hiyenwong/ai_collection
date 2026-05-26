@@ -922,6 +922,14 @@
   - Recurrence Resonance identified as a novel dynamical phenomenon where optimal recurrent noise maximizes information flux
   - Self-organized local bias optimization can exceed biologically embedded configurations
   - **Activation**: cortical information flux, microcircuit reverse engineering, Recurrence Resonance, layer 5 microcolumn, embedding network dynamics, entropy-driven neural dynamics, reservoir computing design, core-embedding architecture
+### Multi-Objective Optimisation with Oscillatory Dynamics in Spontaneous and Decision Spiking Neural Networks
+- [[multi-objective-snn-oscillation]] - NSGA-III multi-objective genetic algorithm optimization of Izhikevich neuron-based RSNNs for simultaneously fitting neural firing rates AND network oscillation frequencies, evaluated on simulated spiking networks and brain organoid data (arXiv: 2605.25224)
+  - First systematic application of NSGA-III to SNN oscillation and firing rate optimization
+  - Oscillation frequencies more parameter-sensitive than firing rates
+  - Low-activity decision-making regime identified
+  - Applicable to brain organoid modeling and neuromorphic system design
+  - **Activation**: nsga-iii, multi-objective-snn, spiking-oscillations, izhikevich-optimization, snn-parameter-tuning, brain-organoid, pareto-frontier-snn
+
 
 ## 2026-05-24 - Information Science + Quantum Mechanics (Cron Job - Sunday Evening)
 
