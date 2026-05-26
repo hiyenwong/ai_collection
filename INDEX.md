@@ -1,3 +1,13 @@
+## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
+
+### Benchmarking a Machine-Learning Differential Equations Solver on a Neutral-Atom Logical Processor
+- [[quantum-ml-logical-processor-benchmark]] - Experimental validation showing logical (error-corrected) quantum kernel outperforms physical (noisy) kernel for solving differential equations on neutral-atom processor (arXiv: 2605.21276)
+  - Quantum kernel methods for DE solving on PASQAL neutral-atom logical processor
+  - Logical kernel superior on relevant quality metrics vs physical kernel
+  - End-to-end application-level validation confirms fault-tolerant benefit survives full pipeline
+  - Noise-induced errors are encoding-dependent; different encodings show different FT benefits
+  - **Activation**: quantum-benchmark, logical-processor, quantum-differential-equations, quantum-kernel-ML, neutral-atom-quantum, fault-tolerant-ML
+
 ## 2026-05-26 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
 ### Quantum State Fidelity for Functional Neural Network Construction
