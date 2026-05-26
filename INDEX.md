@@ -1,3 +1,20 @@
+
+## 2026-05-26 - Neuroscience Research (Cron Job)
+
+### Balancing structure and randomness: maximum entropy networks for context-dependent computations
+- [[maximum-entropy-network-structure-function]] - Maximum entropy principle for neural connectivity reveals algorithm-independent structure-function relationships (arXiv: 2605.25607)
+  - Maximum entropy inference on network connectivity independent of any learning algorithm
+  - Analytical tractability via gain-modulated linear model mapping
+  - Quantitative match with gradient-descent trained networks across learning regimes
+  - **Activation**: maximum entropy, neural connectivity, structure-function, gain modulation, context-dependent computation
+
+### Growing a Neural Network in Breadth, Depth, and Time
+- [[growing-neural-network-breadth-depth-time]] - Differentiable cost terms for breadth, depth, and time enable resource-constrained neural architecture growth (arXiv: 2605.25174)
+  - Neural network as finite subset of infinite lattice with jointly optimizable resource costs
+  - Spontaneous increase in recurrent steps when inputs are occluded
+  - Model computation time correlates with human reaction times in object recognition
+  - **Activation**: neural architecture growth, resource constraints, breadth-depth-time tradeoff, recurrent CNN, brain design
+
 ## 2026-05-26 - Neuroscience Research (Cron Job - Tuesday)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
