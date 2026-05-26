@@ -1,3 +1,13 @@
+## 2026-05-26 - Computer Science + Quantum Computing (Cron Job - Tuesday)
+
+### Hybrid Quantum-Classical Machine Learning for Multi-Output Time-Series Forecasting at Utility Scale
+- [[hybrid-quantum-ml-timeseries-forecasting]] - Two hybrid QML frameworks (KQRC-RM and QGP) for multi-stream time-series forecasting at 100+ qubit scale on NISQ hardware, achieving 40-62% MAE reduction vs classical GP (arXiv: 2605.24252)
+  - KQRC-RM: coupled quantum reservoirs + ancilla-assisted repeated measurement + kernelized readouts
+  - QGP: projected quantum kernels from local reduced-state statistics, more robust to noise than fidelity-based
+  - Demonstrated on ibm_marrakesh with 103 household electricity consumption streams
+  - **Activation**: quantum time-series, hybrid QML forecasting, quantum reservoir computing, quantum kernel GP, utility scale quantum ML
+
+
 ## 2026-05-26 - Neuroscience Research (Cron Job - Wednesday)
 
 ### MindAlign: Bridging EEG, Vision, and Language for Zero-Shot Visual Decoding
