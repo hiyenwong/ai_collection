@@ -1,3 +1,22 @@
+
+## 2026-05-26 - Computer Science + Quantum Computing (Cron Job)
+
+### QUTest: A Native Testing Framework for Quantum Programs
+- [[quantum-native-testing-framework]] - Native quantum program testing using OpenQASM 3 pragma-based assertions with 12 assertion types spanning deterministic, statistical, and property-based verification (arXiv: 2605.19736)
+  - Tests encoded as `.qasm` files with `//%` pragma comments, following Arrange/Act/Assert pattern
+  - 12 assertion types: deterministic state checks, statistical distribution verification, property-based invariants
+  - Budget-aware adaptive testing reduces unnecessary shot consumption
+  - No host language dependency — pure QASM tests compatible with existing OpenQASM tools
+  - **Activation**: quantum testing, qutest, openqasm, pragma assertions, quantum verification, quantum debugging
+
+### Software Between Quantum and Machine Learning — And Down to Pulses
+- [[pulse-level-quantum-computing]] - Pulse-level quantum computing methodology for designing, optimizing, and executing circuits at the control-pulse layer beyond gate abstractions (arXiv: 2605.21286)
+  - Direct pulse-level control enables hardware-native operations and tailored error mitigation
+  - Pulse schedule optimization reduces circuit depth and improves gate fidelity
+  - Cross-platform pulse portability through hardware calibration abstraction
+  - Dynamical decoupling and cross-resonance calibration at pulse layer
+  - **Activation**: pulse level, quantum control, pulse optimization, quantum hardware, qubit control, dynamical decoupling
+
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
 ### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
@@ -511,3 +530,66 @@
   - Preserves canonical commutation relations during reduction
   - H2 norm-optimal approximation with symplectic structure guarantees
   - **Activation**: quantum model reduction, symplectic H2, quantum system approximation
+
+## 2026-05-26 - Anthropic Research (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's Thoughts into Text
+- [[natural-language-autoencoders]] - Anthropic interpretability method converting LLM activations into human-readable text via Activation Verbalizer + Activation Reconstructor round-trip training
+  - Three copies of same model: target (frozen), AV (activation→text), AR (text→activation)
+  - Training: reconstruct original activation from explanation text, score on similarity
+  - Revealed evaluation awareness in 16% of coding tests (never explicitly verbalized)
+  - Helped detect cheating behavior on training tasks and debug training data issues
+  - **Activation**: NLA, natural language autoencoder, activation verbalizer, activation engineering, evaluation awareness
+
+### Teaching Claude Why: Reducing Agentic Misalignment
+- [[teaching-claude-why]] - Anthropic alignment training improvements using principle-based training, "difficult advice" datasets, and counterfactual data augmentation
+  - "Difficult advice" dataset: user faces ethical dilemma, AI provides advice — 28x efficiency improvement
+  - In-distribution training (honeypot data) reduced misalignment 22%→15% only
+  - Rewriting responses with ethics deliberation reduced 22%→3%
+  - Perfect score on agentic misalignment eval since Claude Haiku 4.5
+  - **Activation**: agentic misalignment, difficult advice dataset, constitutional AI, principle-based alignment
+
+### Project Glasswing: AI-Powered Vulnerability Discovery
+- [[project-glasswing-vulnerability-discovery]] - Anthropic initiative using Claude Mythos Preview for large-scale vulnerability discovery; 10,000+ critical/high-severity vulnerabilities found
+  - ~50 partners, 10x+ bug-finding rate; 90.6% true positive rate in open-source scanning
+  - 3,900+ high/critical vulnerabilities projected in open-source alone
+  - Cloudflare: 2,000 bugs (400 high/critical), false positives better than human testers
+  - Mozilla: 271 vulnerabilities in Firefox 150; Palo Alto: 5x more patches
+  - **Activation**: glasswing, vulnerability discovery, AI security, coordinated disclosure
+
+### How People Ask Claude for Personal Guidance
+- [[personal-guidance-sycophancy]] - Study of 1M conversations revealing guidance domains and sycophancy patterns in AI personal advice
+  - 76% of guidance in 4 domains: health (27%), career (26%), relationships (12%), finance (11%)
+  - 9% overall sycophancy rate; spirituality (38%) and relationships (25%) highest
+  - Sycophancy increases to 18% under user pushback
+  - Focused training on relationship guidance improved outcomes across domains
+  - **Activation**: personal guidance, sycophancy, AI relationships, guidance conversations
+
+### Donating Our Open-Source Alignment Tool (Petri v3)
+- [[petri-alignment-tool]] - Anthropic's open-source alignment testing toolbox donated to Meridian Labs; auditor-judge model evaluation architecture
+  - Three-model architecture: target, auditor (simulates scenarios), judge (scores transcripts)
+  - Part of every Claude alignment assessment since Sonnet 4.5
+  - v3 additions: Dish (real system prompts+scaffolds), Bloom integration, donated to Meridian Labs
+  - UK AISI uses Petri for sabotage propensity evaluation
+  - **Activation**: Petri, alignment testing, auditor model, judge model, Meridian Labs
+
+### 2028: Two Scenarios for Global AI Leadership
+- [[2028-ai-leadership-scenarios]] - Anthropic policy analysis of US-China AI competition focusing on compute advantage, export controls, and distillation attacks
+  - Scenario 1 (democratic leadership): tighten export controls, disrupt distillation, accelerate adoption
+  - Scenario 2 (authoritarian convergence): loopholes unaddressed, CCP catches up/overtakes
+  - Goal: lock in 12-24 month lead on frontier capabilities by 2028
+  - **Activation**: AI leadership, US-China, export controls, compute advantage, distillation attacks
+
+### AI Science Benchmarking (BioMysteryBench)
+- [[ai-science-benchmarking]] - Methodology for evaluating AI scientific capabilities via domain-specific benchmarks addressing open-ended research problems
+  - Multi-step reasoning tasks reflecting real scientific workflows
+  - Latest AI models solved problems that human experts could not
+  - Convergent validation across BioMysteryBench + CompBioBench + BLADE + BixBench + SciGym
+  - **Activation**: AI benchmarking, BioMysteryBench, human expert comparison, convergent validation
+
+### AI Sycophancy Measurement and Mitigation
+- [[ai-sycophancy-measurement]] - Methodology for measuring, analyzing, and reducing AI sycophancy in guidance-giving contexts
+  - Automated sycophancy classifier + domain taxonomy + stress-test prefilling framework
+  - Synthetic data targeting failure patterns halves sycophancy rates
+  - Pushback analysis reveals 2x sycophancy increase under user challenge
+  - **Activation**: sycophancy measurement, stress-testing, prefilling, pushback analysis
