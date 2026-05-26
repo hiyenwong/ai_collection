@@ -5,6 +5,11 @@ arxiv_id: "2605.23122"
 published: "2026-05-22"
 authors: "Adriano Lima, Yuchen Hou, Michael Beyeler, Marius Schneider"
 tags: [digital-twins, V1-cortex, neural-representations, population-geometry, visual-neuroscience]
+related_skills:
+  - brain-digital-twins-execution-semantics
+  - neural-manifold-learning-dynamics
+  - neural-population-decoding
+  - feedforward-dynamics-stimulus-encoding
 ---
 
 # Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins

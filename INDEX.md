@@ -42,6 +42,22 @@
   - Neurophysiological visualization confirms Fourier-domain reorganization and calibrated pseudo-labeling
   - **Activation**: CFSPMNet, EEG motor imagery decoding, Mamba EEG network, Fourier-guided EEG, cross-subject BCI stroke, MI-EEG cross-patient, stroke rehabilitation EEG
 
+### Beyond Neural Activity Prediction: Probing Latent Representations in Mouse V1 Digital Twins
+- [[v1-digital-twin-latent-probing]] - Multi-level representational probing framework for mouse V1 digital twins showing models with similar prediction accuracy can have substantially different latent representations (arXiv: 2605.23122)
+  - Three-level framework: linear decodability (orientation/contrast/motion), latent-unit tuning (orientation selectivity, contrast response, spatial-frequency tuning), population geometry (eigenspectra)
+  - Better neural prediction correlates with stronger probe accuracy and flatter hidden-population eigenspectra
+  - Higher-dimensional representations closer to population-geometry signatures reported in mouse V1
+  - Models with comparable prediction scores can still differ substantially in probe performance and latent-unit tuning
+  - **Activation**: digital twin probing, V1 latent representations, population geometry, neural activity prediction, representational analysis, visual cortex modeling
+
+### SpikingMoE: SDPrompt-Guided Dynamic Expert Fusion in Spiking Neural Networks
+- [[spikingmoe-sdprompt-snn]] - First open-source SNN framework integrating Mixture-of-Experts (MoE) into a spike-driven Transformer with LGN-inspired SDprompt routing for dynamic computation (arXiv: 2605.23188)
+  - LGN-inspired spike-driven prompt (SDprompt) enables input-dependent expert routing in a biologically plausible manner
+  - Spike-compatible expert modules with binary spike communication, designed for neuromorphic hardware
+  - Replaces standard MLPs with spike-compatible expert modules; only active experts consume energy
+  - Achieves 94.09% (CIFAR-10) and 74.54% (CIFAR-100) top-1 accuracy with modular expert routing
+  - **Activation**: spiking neural network, mixture of experts, neuromorphic computing, spike-driven transformer, brain-inspired computing, LGN routing, SDprompt, snn-moe
+
 ## 2026-05-26 - Computer Science (Cron Job)
 
 ### MADQRL: Distributed Quantum Reinforcement Learning Framework for Multi-Agent Environments
