@@ -21,6 +21,7 @@
 - [[adaptive-hybrid-feature-fusion-medical]] - 自适应混合量子-经典特征融合方法，通过温度缩放混合融合(TSHF)解决量子-经典优化不对称问题，乳腺癌分类达87.82%准确率 (arXiv: 2604.22903)
   - 核心要点1：提出三种渐进融合策略：SHF(离线)、DHF(端到端)、TSHF(温度缩放自适应)，TSHF最优
   - 核心要点2：可学习标量τ动态平衡量子与经典分支梯度，解决经典梯度主导问题，ResNet+可训练量子电路达最佳性能
+  - **新增**: scripts/tshf_fusion.py — 完整PyTorch实现，支持SHF/DHF/TSHF三种策略的即插即用融合模块
   - **Activation**: hybrid quantum-classical feature fusion, 混合量子经典特征融合, temperature-scaled hybrid fusion, TSHF, quantum medical imaging, 量子医学图像, adaptive feature fusion
 
 ### Parameter-efficient Quantum Multi-task Learning
