@@ -93,6 +93,20 @@
   - Exceptional accuracy-efficiency tradeoff: more accurate AND more energy-efficient than prior SNN Transformers
   - **Activation**: safformer, active-predictive-filtering, spiking-transformer-predictive-coding, energy-efficient-spiking-transformer, brain-inspired-vision, snn-imagenet
 
+### Sensing Intelligence as a Trainable Metamaterial Property
+- [[sensing-intelligence-trainable-metamaterial]] - Optimize metamaterial body geometry via differentiable simulation to preprocess external stimuli, improving sensing accuracy by up to 5x or reducing sensors by 10x through end-to-end body-brain co-optimization (arXiv: 2605.23967)
+  - Neural network trains its own body geometry by backpropagating sensing loss through differentiable physics simulator
+  - Optimized metamaterial reduces electronic sensors by nearly 10x while maintaining accuracy
+  - End-to-end gradient flow: stimulus → metamaterial physics (differentiable) → sparse sensors → neural classifier
+  - **Activation**: sensing-intelligence, trainable-metamaterial, differentiable-simulation, embodied-perception, physical-preprocessing, sensor-optimization, neuromorphic-sensing, body-brain-co-optimization
+
+### Exact Variance and Fano Factor for Arbitrary Level Crossings in Stationary Gaussian Processes
+- [[level-crossing-fano-factor-gaussian]] - Exact analytical formulae for variance and Fano factor of arbitrary level crossings in stationary Gaussian processes, extending Kac-Rice mean rate to capture temporal correlation structure critical for neuronal spike train analysis (arXiv: 2605.25278)
+  - Oscillatory correlations (damped harmonic oscillator) produce sub-Poissonian (regular) crossing statistics
+  - Heavily damped systems produce super-Poissonian (clustered) crossing statistics
+  - OU-driven relaxational systems show reentrant sub↔super-Poissonian transitions with threshold variation
+  - **Activation**: level-crossing, fano-factor, gaussian-process, spike-train-variability, kac-rice, crossing-statistics, neural-coding-reliability, stochastic-dynamics, neuronal-threshold-crossing
+
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
 
 ### QAOA Classical Simulability Threshold
