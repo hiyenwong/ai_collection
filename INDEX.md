@@ -1,4 +1,13 @@
 
+## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
+
+### Beyond Logical Circuits: Hardware-Aware Analysis of Expressibility and Trainability in Variational Quantum Algorithms
+- [[hardware-aware-vqa-analysis]] - Hardware compilation fundamentally alters expressibility-trainability trade-offs in VQAs, requiring analysis beyond logical circuit level (arXiv: 2605.25552)
+  - Hardware transpilation (SWAP insertion, gate decomposition) significantly changes PQC expressibility
+  - Compilation affects gradient behavior and barren plateau susceptibility
+  - Logical-level analysis alone is misleading for VQA design
+  - **Activation**: hardware-aware VQA, VQA compilation, expressibility trainability tradeoff, PQC transpilation, quantum circuit benchmarking
+
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
 ### Balancing structure and randomness: maximum entropy networks for context-dependent computations
