@@ -1,5 +1,22 @@
 ## 2026-05-26 - Neuroscience Research (Cron Job - Wednesday)
 
+### MindAlign: Bridging EEG, Vision, and Language for Zero-Shot Visual Decoding
+- [[mindalign-eeg-visual-decoding]] - Tri-modal contrastive framework for EEG-based zero-shot visual decoding, aligning EEG, image, and LLM-generated text in unified latent space (arXiv: 2605.24523)
+  - Two-stage training: masked reconstruction pre-training on unlabeled EEG + tri-modal contrastive alignment
+  - Integrates subject-specific adaptation, graph-attention over channels, and temporal-spatial convolutions
+  - 54.1% Top-1 / 83.4% Top-5 on Things-EEG2 200-way zero-shot (prior best: 32.4%/64.0%)
+  - Compact CN-CLIP embeddings outperform larger backbones; validated on Things-MEG
+  - Decoding aligns with known neurophysiology of visual processing hierarchy
+  - **Activation**: mindalign, eeg-visual-decoding, tri-modal-contrastive, zero-shot-brain-decoding, eeg-to-image, things-eeg2
+
+### Word Class Representations Spontaneously Emerge from Successor Representations Trained on Natural Language
+- [[successor-representations-word-class]] - First systematic application of Successor Representations (RL) to natural language, showing syntactic categories (noun/verb/adjective) emerge spontaneously from predictive sequence learning without linguistic supervision (arXiv: 2605.24585)
+  - Deep residual network trained on WikiText-103 to predict discounted future word distributions via KL divergence
+  - Embedding space develops clear POS-based geometric organization recoverable through unsupervised clustering
+  - Short horizons produce strongest syntactic structure; longer horizons integrate broader semantic context
+  - Establishes conceptual bridge between RL, linguistics, and cognitive neuroscience
+  - **Activation**: successor-representations, emergent-syntax-pos, predictive-sequence-learning, sr-language-modeling, unsupervised-linguistics, cognitive-neuroscience-language
+
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
 - [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm integrating bottom-up whole-brain modeling (WBM) with top-down neuroconnectionism, defined by four minimal criteria: structural grounding, continuous-time dynamics, functional competence, and mappable observables (arXiv: 2605.18118)
   - Proposes functional Whole-Brain Models (fWBMs) as a missing link between biophysical WBM and task-optimized DNNs
