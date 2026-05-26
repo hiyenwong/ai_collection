@@ -1,6 +1,6 @@
 ---
 name: adaptive-hybrid-feature-fusion-medical
-description: "Adaptive Hybrid Quantum-Classical Feature Fusion methodology for medical image classification. Learns optimal complementarity between quantum and classical features through adaptive weighting. Activation: adaptive hybrid feature fusion, quantum classical complementarity, medical image quantum fusion, HQNN feature fusion, quantum classical integration medical."
+description: "Adaptive Hybrid Quantum-Classical Feature Fusion methodology for medical image classification. Addresses optimization asymmetries between quantum and classical paradigms using Temperature-Scaled Hybrid Fusion (TSHF) with learnable scalar τ, Dynamic Hybrid Fusion (DHF), and Static Hybrid Fusion (SHF) strategies. Includes implementation scripts (scripts/tshf_fusion.py) for PyTorch. Use when designing hybrid quantum-classical ML pipelines for healthcare/medical imaging, especially when combining ResNet backbones with variational quantum circuits for diagnostic tasks."
 ---
 
 # Adaptive Hybrid Quantum-Classical Feature Fusion for Medical Classification
