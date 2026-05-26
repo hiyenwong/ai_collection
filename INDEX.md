@@ -1,3 +1,19 @@
+## 2026-05-26 - Neuroscience Research (Cron Job - Tuesday)
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[learning-sequence-timing-snn]] - Biologically plausible mechanism for encoding element-specific timing and flexibly controlling replay speed via oscillatory background inputs in spiking neural networks (arXiv: 2605.22523)
+  - Extends spiking Temporal Memory (sTM) model to learn not just sequence order but precise timing
+  - Oscillatory background inputs serve as clock signals for flexible replay speed modulation
+  - Elapsed time encoded by unique sparse spatiotemporal patterns; replay speed correlates with EEG/LFP oscillatory characteristics
+  - **Activation**: sequence timing, replay speed, spiking temporal memory, sTM model, temporal coding, oscillatory replay, biologically plausible SNN
+
+### Geometric Origin of Exact Mean-Field Reductions: Möbius Symmetry and the Lorentzian Ansatz
+- [[geometric-mean-field-lorentzian-ansatz]] - Proves Cauchy-Lorentz family uniquely emerges as invariant under projective transport from Riccati dynamics, providing unified geometric foundation for Ott-Antonsen and Montbrió-Pazó-Roxin reductions (arXiv: 2605.23669)
+  - Möbius (projective) symmetry is the geometric origin of Lorentzian Ansatz, not heuristic convenience
+  - Unifies Ott-Antonsen (2008) and Montbrió-Pazó-Roxin (2015) reductions under single geometric principle
+  - Explains why Gaussian closures fail for coupled oscillator and spiking neuron systems
+  - **Activation**: Lorentzian ansatz, mean-field reduction, Ott-Antonsen, Montbrió-Pazó-Roxin, Möbius symmetry, Cauchy distribution, neural mass model, Riccati dynamics
+
 ## 2026-05-26 - Computer Science (Cron Job)
 
 ### Transformer refined quantum sampling for strongly correlated electronic structure
