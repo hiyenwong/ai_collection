@@ -1,3 +1,17 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Balancing structure and randomness: maximum entropy networks for context-dependent computations
+- [[maximum-entropy-network-structure-function]] - 基于最大熵原理的神经网络连接性规范模型，揭示任务约束如何决定神经群体结构 (arXiv: 2605.25607)
+  - 核心要点1：最大熵原理 + 任务约束 → 神经元群体结构自发涌现，无需假设特定学习算法
+  - 核心要点2：权重尺度β和上下文数K驱动从专业化到随机化的相变，定量匹配梯度下降训练网络
+  - **Activation**: maximum entropy, neural connectivity, structure-function, context-dependent computation, gain modulation
+
+### MindAlign: Bridging EEG, Vision, and Language for Zero-Shot Visual Decoding
+- [[mindalign-eeg-visual-decoding]] - 三模态对比框架（EEG+视觉+语言）用于零样本视觉解码，200路准确率54.1% vs 此前最优32.4% (arXiv: 2605.24523)
+  - 核心要点1：两阶段设计：掩码重建预训练EEG编码器 + 三模态对比对齐（文本作语义正则化器）
+  - 核心要点2：紧凑嵌入几何（CN-CLIP）优于大型模型，时序注意力对齐N170/P300神经电生理标志
+  - **Activation**: EEG visual decoding, zero-shot, contrastive learning, tri-modal, brain-computer interface
+
 ## 2026-05-27 - Quantum Chemistry (Cron Job)
 
 ### Point-Group Symmetry Analysis of Many-Electron Wavefunctions on Quantum Computers
