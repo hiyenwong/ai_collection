@@ -8,6 +8,14 @@
   - Noise-induced errors are encoding-dependent; different encodings show different FT benefits
   - **Activation**: quantum-benchmark, logical-processor, quantum-differential-equations, quantum-kernel-ML, neutral-atom-quantum, fault-tolerant-ML
 
+### Carleman Linearization for Nonlinear ODE Solving
+- [[carleman-linearization-ode-solver]] - Carleman linearization methodology converting nonlinear ODEs into infinite-dimensional linear systems; C2 (2nd order) truncation captures both transient and steady-state solutions, validated for fluid flows (arXiv: 2605.23380)
+  - Converts nonlinear ODEs to linear infinite-dimensional systems via tensor power embedding
+  - C2 (2nd order) truncation recovers both transient and steady-state solutions analytically
+  - Key technique for quantum algorithms solving nonlinear differential equations (HHL-based)
+  - Validated for 2D fluid flows at moderate Reynolds numbers
+  - **Activation**: carleman-linearization, ODE-solver, nonlinear-differential-equations, quantum-ODE, fluid-flow-simulation, C2-truncation, numerical-analysis
+
 ## 2026-05-26 - Neuroscience + Quantum Mechanics (Cron Job - Monday)
 
 ### Quantum State Fidelity for Functional Neural Network Construction
