@@ -1,3 +1,12 @@
+## 2026-05-27 - Medicine + Quantum Mechanics (Cron Job - Wednesday)
+
+### Hybrid Quantum Neural Network for Multivariate Clinical Time Series Forecasting
+- [[hybrid-quantum-clinical-forecasting]] - Hybrid quantum-classical architecture integrating VQC within RNN backbone for multivariate physiological time series forecasting (arXiv: 2603.08072)
+  - GRU encoder summarizes historical window, projects to quantum angles for VQC parameterization
+  - Quantum layer acts as learnable non-linear feature mixer for cross-variable interactions
+  - Competitive accuracy with greater robustness to noise and missing inputs on BIDMC dataset
+  - **Activation**: hybrid quantum clinical forecasting, VQC clinical prediction, quantum physiological forecasting, quantum time series, clinical time series, GRU quantum, quantum feature mixer
+
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
 ### Fast Efficient Coding and Sensory Adaptation in Gain-Adaptive Recurrent Networks
