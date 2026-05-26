@@ -18,6 +18,22 @@
   - 30-50 percentage point noise robustness advantage across all tested noise levels
   - **Activation**: temporal-coding, thousand-brains-theory, rank-order-coding, stdp-sensorimotor, spiking-neural-network, object-inference
 
+### Self-organized MT Direction Maps Emerge from Spatiotemporal Contrastive Optimization
+- [[spatiotemporal-tdann-mt-direction-maps]] - Extends TDANN to dorsal visual stream (MT area) demonstrating self-organized direction-selective maps emerge from spatiotemporal MoCo contrastive learning on naturalistic videos with biologically-inspired spatial regularization (arXiv: 2605.11718)
+  - Spatiotemporal TDANN with 3D ResNet + MoCo self-supervised learning spontaneously produces brain-like direction maps
+  - MT tuning properties emerge from optimization trade-off between discriminative pressure and spatial regularization
+  - Quantitative match to macaque MT: DSI, circular variance, pinwheel density
+  - First unified framework for both ventral and dorsal stream topographic self-organization
+  - **Activation**: spatiotemporal-tdann, MT-direction-maps, dorsal-stream-topography, cortical-self-organization, TDANN-video, self-organized-visual-cortex
+
+### An extremely coarse feedback signal is sufficient for learning human-aligned visual representations
+- [[coarse-feedback-visual-alignment]] - Demonstrates that extremely coarse classification signals (as few as 8 broad categories) produce visual representations that match or exceed brain alignment of fine-grained (1000-class) or self-supervised models (arXiv: 2605.05556)
+  - Networks distinguishing only 8 categories match or exceed neural alignment of 1000-class models
+  - Coarsely trained networks align more closely with human perceptual similarity than all alternatives tested
+  - Systematic parametric study across category counts (2 to 64) with both CNNs and ViTs
+  - Reframes what learning signals biological vision may require
+  - **Activation**: coarse-feedback-visual-alignment, brain-aligned-vision, supervisory-signal-granularity, human-perceptual-alignment, visual-representation-learning
+
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
 
 ### How Agentic AI Coding Assistants Become the Attacker's Shell
