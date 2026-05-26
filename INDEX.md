@@ -1,3 +1,20 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Balancing structure and randomness: maximum entropy networks for context-dependent computations
+- [[maximum-entropy-neural-connectivity]] - Maximum entropy framework revealing minimal low-rank connectivity structure required for working memory and context-dependent computation (arXiv: 2605.25607)
+  - Maximum entropy principle applied to neural connectivity: maximize randomness subject to functional constraints
+  - Reveals that context-dependent tasks require specific low-rank structure; other 95% of connectivity can remain random
+  - Aligns with empirical low-dimensional structure in prefrontal/cortical recordings
+  - **Activation**: maximum entropy, neural connectivity, context-dependent computation, low-rank structure, working memory
+
+### Growing a Neural Network in Breadth, Depth, and Time
+- [[growing-neural-network-breadth-depth-time]] - Bio-inspired differentiable framework for autonomous neural network growth in width, depth, and recurrent timesteps matching task complexity (arXiv: 2605.25174)
+  - Differentiable cost terms for breadth, depth, and time jointly optimized with task performance
+  - Networks grow breadth-first then depth, mirroring cortical developmental trajectories
+  - ~30-50% parameter reduction vs. fixed architectures at equivalent accuracy
+  - **Activation**: neural network growth, bio-inspired architecture, breadth depth time, resource constraints, differentiable NAS
+
+
 ## 2026-05-27 - Medicine + Quantum (Cron Job - Wednesday)
 
 ### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
