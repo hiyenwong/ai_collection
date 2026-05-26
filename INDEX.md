@@ -43,6 +43,24 @@
   - Certified in Lean 4/Mathlib: compatible local designs determine unique global designs
   - **Activation**: sheaf-consistency, MBSE-verification, multi-view-architecture, design-presheaf, category-theory-systems-engineering
 
+## 2026-05-26 - Computer Science + Quantum ML (Cron Job - Tuesday)
+
+### Fermi-Dirac Machines as Quantizations of Neurons
+- [[fermi-dirac-quantized-neurons]] - Canonical quantization of classical neurons into quantum activation observables, yielding quantum neurons that learn functions classical neurons cannot (BQP-complete) (arXiv: 2605.24386)
+  - Reinterprets Fermi-Dirac machines as canonical quantizations: classical variables → quantum operators
+  - Activation observable: ⟨ψ| σ(H(θ)) |ψ⟩ with efficient hybrid quantum-classical training via Hadamard test
+  - Quantizes ReLU, SLU, GeLU activations; BQP-complete decision problem
+  - Reduces to classical neuron when all operators commute; non-commutativity essential for quantum advantage
+  - **Activation**: fermi-dirac-quantized-neurons, quantum-neuron, canonical-quantization, activation-observable, quantum-activation, BQP-complete-neuron
+
+### A Matched Spectral Benchmark of Quantum Inspired Feature Maps
+- [[quantum-feature-map-benchmarking]] - Systematic benchmark of amplitude/angle/basis encoding under matched dimensionality with strong classical controls; shows fixed encoding geometry alone is NOT a reliable ML advantage source (arXiv: 2605.24324)
+  - Amplitude encoding removes magnitude info via unit-sphere normalization
+  - Angle encoding geometrically redundant with raw linear features
+  - Basis encoding imposes binary Hamming geometry poorly aligned with smooth decision structure
+  - Multi-metric analysis: effective rank, condition number, CKA, predictive performance, overhead
+  - **Activation**: quantum-feature-map-benchmarking, quantum-encoding-benchmark, amplitude-encoding, angle-encoding, basis-encoding, quantum-ML-benchmark
+
 ## 2026-05-26 - Computer Science + Quantum ML (Cron Job)
 
 ### Discovering Data Encoding Strategies for QCCNN Using Monte Carlo Tree Search
