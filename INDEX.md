@@ -1,13 +1,11 @@
-## 2026-05-26 - Computer Science + Quantum Computing (Cron Job - Tuesday)
+## 2026-05-26 - Computer Science (Cron Job)
 
-### Hybrid Quantum-Classical Machine Learning for Multi-Output Time-Series Forecasting at Utility Scale
-- [[hybrid-quantum-ml-timeseries-forecasting]] - Two hybrid QML frameworks (KQRC-RM and QGP) for multi-stream time-series forecasting at 100+ qubit scale on NISQ hardware, achieving 40-62% MAE reduction vs classical GP (arXiv: 2605.24252)
-  - KQRC-RM: coupled quantum reservoirs + ancilla-assisted repeated measurement + kernelized readouts
-  - QGP: projected quantum kernels from local reduced-state statistics, more robust to noise than fidelity-based
-  - Demonstrated on ibm_marrakesh with 103 household electricity consumption streams
-  - **Activation**: quantum time-series, hybrid QML forecasting, quantum reservoir computing, quantum kernel GP, utility scale quantum ML
-
-
+### Transformer refined quantum sampling for strongly correlated electronic structure
+- [[transformer-quantum-sampling]] - Hybrid quantum-classical framework combining transformer neural networks with quantum sampling for electronic structure on NISQ devices (arXiv: 2605.24617)
+  - USCI ansatz identifies chemically significant configurations on Zuchongzhi 3.1 quantum processor
+  - Transformer reconstructs complete wavefunction from sparse quantum data
+  - 40-qubit ferredoxin achieves chemical accuracy, 114-electron P-cluster reaches 12 milli-Hartree with DMRG
+  - **Activation**: quantum machine learning, transformer wavefunction, NISQ chemistry, QiankunNet, USCI ansatz
 ## 2026-05-26 - Neuroscience Research (Cron Job - Wednesday)
 
 ### What Are We Actually Decoding? Source Attribution for Non-Invasive Brain-to-Language Retrieval
