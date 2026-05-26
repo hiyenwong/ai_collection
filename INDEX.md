@@ -509,6 +509,29 @@
   - 核心要点 2: 无单一QTL家族在所有设置下占优,性能取决于数据集、编码策略、电路设计和计算成本
   - **Activation**: quantum transfer learning, QTL benchmarking, quantum machine learning, visual classification
 
+## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Optimal Quantum Differential Privacy via Fisher Information Spectral Analysis
+- [[quantum-differential-privacy-qfi]] - QFI-geometry-aware quantum DP replacing isotropic noise with direction-dependent noise (arXiv: 2605.24166)
+  - 核心要点: Minimax-optimal noise concentration in dominant QFI eigenmode
+  - 核心要点: Privacy-utility uncertainty relation ε·(1-F) ≥ Δ²Tr(F)/2d
+  - 核心要点: Hardware noise harnessing for privacy amplification (ε≈0.001 vs 4800 classical)
+  - **Activation**: quantum differential privacy, QFI privacy, Fisher information DP, 量子差分隐私
+
+### Towards Scalable Quaternary Message-Passing Decoding for Quantum Error Correction
+- [[scalable-quaternary-mp-qec-decoding]] - Dilution method enabling 16% threshold quaternary Min-Sum decoder for surface codes (arXiv: 2605.24177)
+  - 核心要点: Graph dilution breaks short cycles, enables MP decoder scalability
+  - 核心要点: O(N log²d) complexity, outperforms BP-OSD at d=65
+  - 核心要点: ~9% asymptotic threshold with interpretable convergence guarantees
+  - **Activation**: quantum error correction decoding, message passing QEC, belief propagation decoder
+
+### More Skills Worse Agents? Skill Shadowing Degrades Performance
+- [[skill-shadowing-agent-performance]] - Skill selection failure is primary bottleneck in agent skill library scaling (arXiv: 2605.24050)
+  - 核心要点: 21% performance degradation from small to 202-skill library
+  - 核心要点: Skill shadowing (wrong selection) >> context overhead (≈0)
+  - 核心要点: Focus on selection optimization, not context reduction
+  - **Activation**: skill shadowing, agent performance degradation, skill library scaling
+
 ## 2026-05-25 - Neuroscience + Quantum (Cron Job - Hourly)
 
 ### Exploring Entropy-based Active Learning for Fair Brain Segmentation
