@@ -1,8 +1,7 @@
 ---
 name: petri-alignment-tool
 category: ai_collection
-description: Petri open-source alignment testing toolbox — an auditable, extensible framework for testing LLMs for deception, sycophancy, and cooperation with harmful requests using auditor-judge model evaluation
-source: Anthropic Research - Donating our open-source alignment tool (May 7, 2026)
+description: Petri open-source alignment testing toolbox — an auditable, extensible framework for testing LLMs for deception, sycophancy, and cooperation with harmful requests using auditor-judge model evaluation. Donated to Meridian Labs in v3.
 tags: [alignment, evaluation, open-source, safety-testing, llm-assessment, red-teaming, auditable-ai]
 ---
 
@@ -10,7 +9,7 @@ tags: [alignment, evaluation, open-source, safety-testing, llm-assessment, red-t
 
 ## Overview
 
-Petri is an open-source toolbox of alignment tests for evaluating large language models for concerning tendencies. Originally developed through Anthropic's Fellows program, it uses a multi-model evaluation architecture where an "auditor" model simulates scenarios and a "judge" model scores transcripts for misaligned behaviors. Now in its third version, Petri has been part of Anthropic's alignment assessment for every Claude model since Sonnet 4.5, and has been adopted by external organizations like the UK AI Security Institute (AISI).
+Petri is an open-source toolbox of alignment tests for evaluating large language models for concerning tendencies. Originally developed through Anthropic's Fellows program, it uses a multi-model evaluation architecture where an "auditor" model simulates scenarios and a "judge" model scores transcripts for misaligned behaviors. Now in its third version (v3, donated to Meridian Labs on May 7, 2026), Petri has been part of Anthropic's alignment assessment for every Claude model since Sonnet 4.5, and has been adopted by external organizations like the UK AI Security Institute (AISI).
 
 ## Architecture
 
@@ -52,7 +51,7 @@ Petri is an open-source toolbox of alignment tests for evaluating large language
 
 - Used as part of alignment assessment for every Claude model since Sonnet 4.5
 - UK AI Security Institute (AISI) made it a major part of evaluating model propensity to sabotage AI research
-- Donated to Meridian Labs for open-source community stewardship
+- Donated to Meridian Labs for open-source community stewardship (May 7, 2026)
 - Part of broader alignment evaluator ecosystem (Inspect, Scout)
 
 ## Pitfalls
@@ -63,6 +62,6 @@ Petri is an open-source toolbox of alignment tests for evaluating large language
 - Requires careful calibration to avoid both false positives and false negatives
 - Synthetic scenarios may not reflect real-world deployment conditions
 
-## Activation Keywords
+## Activation
 
 petri, alignment testing, auditor model, judge model, safety evaluation, open-source alignment, AI safety testing, deception detection, sycophancy evaluation, red-teaming, auditable AI, LLM evaluation, Meridian Labs
