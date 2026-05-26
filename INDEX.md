@@ -14,7 +14,35 @@
   - Explains why Gaussian closures fail for coupled oscillator and spiking neuron systems
   - **Activation**: Lorentzian ansatz, mean-field reduction, Ott-Antonsen, Montbrió-Pazó-Roxin, Möbius symmetry, Cauchy distribution, neural mass model, Riccati dynamics
 
-## 2026-05-26 - Computer Science (Cron Job)
+## 2026-05-26 - Computer Science (Cron Job - Tuesday)
+
+### Geometric Prototype Learning in Quantum Hilbert Space with Matrix Product States
+- [[quantum-prototype-learning]] - Prototype-based learning where class representatives are encoded as generative MPS in quantum Hilbert space, enabling explainable ML via geometric measures (arXiv: 2605.17895)
+  - Lifts prototype learning from classical feature space to quantum Hilbert space
+  - Quantum-probabilistic prototypes induce "attraction" effect for natural clustering
+  - Outperforms classical prototype methods on Fashion-MNIST and ECG datasets
+  - **Activation**: quantum prototype learning, geometric prototype, matrix product state ML, Hilbert space learning, quantum state classification, MPS classification
+
+### Maximum Likelihood Decoding of Quantum Error Correction Codes
+- [[mld-quantum-decoding]] - Unified survey of MLD via three complementary lenses: statistical mechanics, tensor networks, and AI/neural networks for optimal QEC decoding (arXiv: 2605.17230)
+  - MLD maps to partition functions of disordered spin models for threshold analysis
+  - Tensor network decoders approach MLD accuracy with polynomial cost
+  - Neural decoders (autoregressive, transformers) learn MLD distribution from data
+  - **Activation**: maximum likelihood decoding, quantum error correction, syndrome decoding, tensor network decoder, neural decoder, statistical mechanics decoder
+
+### O(n) Alternative to Quantum Fourier Transform with Neural Net Post-Processing
+- [[shallow-qft-alternative-hp-circuits]] - O(n) Hadamard-Phase circuits replace O(n²) QFT in Shor's algorithm, with efficient neural network classical post-processing (arXiv: 2605.16998)
+  - HP-1 circuit preserves shift invariance and retains exponentially growing Fisher information
+  - Reduces QFT depth from O(n²) to O(n) — favorable for NISQ devices
+  - Neural network extracts hidden period from structured measurement distribution
+  - **Activation**: shallow QFT, Hadamard Phase circuit, HP circuit, Fisher information quantum, Shor algorithm optimization, O(n) QFT
+
+### Winning Lottery Tickets in Neural Networks via Quantum-Inspired Classical Algorithm
+- [[quantum-inspired-lottery-tickets]] - Quantum-inspired classical algorithm for sparse subnetwork selection via ridgelet transform sampling with O(poly(D)) runtime (arXiv: 2605.13979)
+  - Dequantization result: removes exponential dependence of naive classical approach
+  - Ridgelet transform defines optimized probability distribution over hidden nodes
+  - Achieves empirical risk comparable to exact sampling with polynomial scaling
+  - **Activation**: quantum-inspired lottery tickets, ridgelet transform sampling, sparse subnetwork selection, dequantization, winning lottery tickets
 
 ### Transformer refined quantum sampling for strongly correlated electronic structure
 - [[transformer-quantum-sampling]] - Hybrid quantum-classical framework combining transformer neural networks with quantum sampling for electronic structure on NISQ devices (arXiv: 2605.24617)
