@@ -1,3 +1,17 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Fast Efficient Coding and Sensory Adaptation in Gain-Adaptive Recurrent Networks
+- [[fast-efficient-coding-gain-adaptive]] - Gain-adaptive recurrent model reconciling adapter-repulsion and prior-attraction under a unified efficient-coding framework (PMID: 42140911)
+  - Neuronal gains optimize an objective balancing reconstruction accuracy and spiking cost, enabling rapid adaptation to changing stimulus statistics
+  - The same gain-modulation mechanism produces adapter repulsion under peaked priors and prior attraction under broad priors — reconciling contradictory empirical findings
+  - **Activation**: efficient coding, sensory adaptation, gain modulation, recurrent networks, tuning curves, neural dynamics
+
+### Adult-Neurogenesis Allows for Representational Stability and Flexibility in Early Olfactory System
+- [[adult-neurogenesis-olfactory-representational-stability]] - Spiking network model revealing dual role of adult neurogenesis in supporting both odor representational stability (MOB) and learning-driven drift (PCx) (PMID: 42112574)
+  - Main olfactory bulb (MOB) preserves population-level odor representations despite individual cell turnover; piriform cortex (PCx) undergoes progressive representational drift
+  - Experience-dependent stabilization: repeated odor exposure reduces drift, providing a circuit-level mechanism for memory consolidation
+  - **Activation**: neurogenesis, olfactory system, representational drift, spiking network, neural plasticity, brain network
+
 
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
 
