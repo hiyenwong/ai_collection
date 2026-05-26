@@ -1,5 +1,19 @@
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
+### The 3-Body Problem: How Astrocytes May Govern Plasticity
+- [[astrocyte-3body-plasticity]] - Astrocyte-centric 3-body tripartite synapse framework for synaptic credit assignment (PMID: 42183627)
+  - Astrocytes integrate Ca2+ signals over seconds-to-minutes, bridging millisecond STDP and longer-timescale memory consolidation
+  - Proposes astrocytes solve local credit assignment via gliotransmitter (D-serine, ATP) gating of NMDA-dependent plasticity
+  - **Activation**: astrocyte, tripartite synapse, credit assignment, plasticity, glia, hebbian learning, STDP
+
+### Low-Latency Visuotactile Neuron Using Self-Oscillating Memristor
+- [[nbox-memristor-visuotactile-snn]] - NbOx Mott-transition self-oscillating neuron for 260 ns TTFS multimodal spike encoding (PMID: 42183948)
+  - NbOx devices use intrinsic parasitic capacitance as integration element - no external capacitors needed
+  - Simultaneously encodes visual and pressure stimuli via TTFS + rate coding for embodied intelligence
+  - **Activation**: NbOx memristor, Mott transition, visuotactile, TTFS, low latency, self-oscillating neuron, neuromorphic hardware
+
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
 ### Balancing structure and randomness: maximum entropy networks for context-dependent computations
 - [[maximum-entropy-neural-connectivity]] - Maximum entropy framework revealing minimal low-rank connectivity structure required for working memory and context-dependent computation (arXiv: 2605.25607)
   - Maximum entropy principle applied to neural connectivity: maximize randomness subject to functional constraints
