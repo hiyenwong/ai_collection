@@ -79,6 +79,22 @@
   - Reframes what learning signals biological vision may require
   - **Activation**: coarse-feedback-visual-alignment, brain-aligned-vision, supervisory-signal-granularity, human-perceptual-alignment, visual-representation-learning
 
+### S2-Net: Spiking-by-Synchronization Neural Network with Time-Delayed Coordination
+- [[oscillatory-snn-time-delayed-coordination]] - Brain-inspired oscillatory SNN (S2-Net) where cognition-level neural synchrony emerges through iterative bottom-up/top-down interactions between micro-scale spiking dynamics and macro-scale oscillatory synchronization using time-delayed formulations (arXiv: 2605.01656)
+  - Models cortical regions as spiking neurons in connectivity scaffolds, oscillatory synchronization from accumulated spiking over finite memory windows
+  - Time-delayed synchronization accounts for partial/transient brain dynamics (not global phase locking)
+  - Rhythmic timing replaces attention/gating as control mechanism for information processing
+  - Demonstrated on neural activity decoding, energy-efficient signal processing, temporal binding, semantic reasoning
+  - **Activation**: oscillatory-snn-time-delayed-coordination, s2-net, spiking-by-synchronization, time-delayed-synchronization, brain-inspired-learning, cortical-rhythm-snn
+
+### SAFformer: Active Predictive Filtering for Energy-Efficient Spiking Transformers
+- [[active-predictive-filtering-spiking-transformer]] - Novel Spiking Transformer architecture based on active predictive filtering paradigm inspired by brain's predictive coding — suppresses predictable signals, focuses on salient features for dramatic energy savings (arXiv: 2605.08270, IJCAI 2026)
+  - New SOTA on CIFAR-10/100 and CIFAR10-DVS
+  - ImageNet-1K: 80.50% Top-1 accuracy, 26.58M params, only 5.88 mJ energy
+  - Shifts from passive reactive paradigm to active prediction — mirrors cortical predictive coding
+  - Exceptional accuracy-efficiency tradeoff: more accurate AND more energy-efficient than prior SNN Transformers
+  - **Activation**: safformer, active-predictive-filtering, spiking-transformer-predictive-coding, energy-efficient-spiking-transformer, brain-inspired-vision, snn-imagenet
+
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
 
 ### QAOA Classical Simulability Threshold
