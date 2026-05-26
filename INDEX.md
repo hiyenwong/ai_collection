@@ -127,6 +127,28 @@
   - Effective rank can serve as a threshold criterion to accelerate encoding search
   - **Activation**: mcts-encoding-discovery, quantum-data-encoding, QCCNN, effective-rank-encoding, monte-carlo-tree-search-qml, encoding-circuit-optimization, quantum-classical-cnn
 
+
+### Language Models Need Sleep
+- [[sleep-like-consolidation-llm]] - Sleep-like consolidation mechanism for LLMs that converts recent context into persistent fast weights before clearing KV cache, enabling long-horizon reasoning with preserved inference latency (arXiv: 2605.26099)
+  - Wake phase: normal processing; Sleep phase: N offline recurrent passes update fast weights in SSM blocks
+  - Increasing sleep duration improves performance, largest gains on deeper reasoning tasks
+  - Shifts computation to offline sleep while preserving wake-time prediction latency
+  - **Activation**: sleep consolidation, fast weights, context compression, state-space model, SSM, long context, offline processing
+
+### Agent Harness Scaling
+- [[agent-harness-scaling]] - Framework for scaling agentic AI through system-level harness design -- context governance, trustworthy memory, dynamic skill routing, and verification (arXiv: 2605.26112)
+  - Agent performance emerges from interaction: model + memory + context + routing + orchestration + governance
+  - Three bottlenecks: context governance, trustworthy memory, dynamic skill routing
+  - Proposes harness-level benchmarks: trajectory quality, memory hygiene, context efficiency
+  - **Activation**: agent harness, system scaling, context governance, trustworthy memory, skill routing, orchestration
+
+### OrpQuant: Orthogonal Residual Projection for Transformer Quantization
+- [[orthogonal-residual-quantization]] - Dual-basis geometric projection framework for multiplier-free Power-of-Two transformer quantization, replacing MAC with bit-shifts for edge deployment (arXiv: 2605.26092)
+  - Addresses Low Angular Resolution Regime in sub-4-bit PoT quantization via adaptive residual lattice
+  - Analytical solver reduces LLaMA-2-7B calibration to ~15 minutes
+  - 3-bit perplexity 6.10, competitive with AWQ; 28nm RTL shows timing improvements
+  - **Activation**: transformer quantization, power-of-two, multiplier-free, edge deployment, orthogonal projection, bit-shift
+
 ## 2026-05-26 - Neuroscience Research (Cron Job)
 
 ### SAEs Map Brain–LLM Alignment onto Cortical Semantic Topography
