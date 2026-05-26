@@ -1,3 +1,13 @@
+## 2026-05-26 - Quantum + Reinforcement Learning (Cron Job - Tuesday)
+
+### CRiSP: Classical State Preparation for Variational Quantum Algorithms via Reinforcement Learning
+- [[crisp-rl-quantum-state-preparation]] - Neural-Guided MCTS framework using a Transformer-based policy trained via self-play for Clifford gate prefix selection, warm-starting VQAs to overcome barren plateaus (arXiv: 2605.23138)
+  - Formulates Clifford prefix selection as a sequential decision-making MDP with Neural-Guided MCTS
+  - Transformer policy trained via self-play with progressive curriculum learning horizon expansion
+  - All Clifford operations are classically simulable in polynomial time (stabilizer formalism)
+  - On QAOA benchmarks up to 22 qubits/1,370 params: 3.17× mean improvement in avg energy accuracy (max 45.02×)
+  - **Activation**: crisp, clifford-reinforcement-learning, rl-qaoa-initialization, neural-mcts-quantum, quantum-state-preparation-rl
+
 ## 2026-05-26 - Computer Science + Quantum (Cron Job - Tuesday)
 
 ### SAFE ma-QAOA: Surrogate-Assisted and Fine-Tuning Enhanced Multi-Angle QAOA
