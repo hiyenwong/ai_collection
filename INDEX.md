@@ -1,4 +1,39 @@
+## 2026-05-26 - Neuroscience Research (Cron Job - Wednesday)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - Unified modeling paradigm integrating bottom-up whole-brain modeling (WBM) with top-down neuroconnectionism, defined by four minimal criteria: structural grounding, continuous-time dynamics, functional competence, and mappable observables (arXiv: 2605.18118)
+  - Proposes functional Whole-Brain Models (fWBMs) as a missing link between biophysical WBM and task-optimized DNNs
+  - Three-pillar roadmap: short-term (embedding trained DNNs in WBM scaffolds), mid-term (hybrid biophysical-DNN components), long-term (fully unified fWBMs)
+  - Clinical opportunities: personalized brain stimulation, virtual drug trials, biomarker discovery for psychiatric disorders
+  - Scientific opportunities: cross-scale hypothesis testing, common language across neuroscience subfields
+  - **Activation**: functional-whole-brain-models, fWBM, whole-brain-modeling, neuroconnectionism, brain-dynamics-unification, computational-neuroscience-framework
+
+### Temporal Coding as a Substrate for Sensorimotor Object Inference: A Spiking Reinterpretation of Thousand Brains Architecture
+- [[temporal-coding-thousand-brains-spiking]] - Spiking reinterpretation of Thousand Brains Theory replacing dense feature vectors with rank-order spike packets and STDP learning for encoding traversal direction in sensorimotor object inference (arXiv: 2605.22206)
+  - Rank-order spike packets encode feature strength via firing order (strongest neuron fires first)
+  - Inter-burst time gaps implicitly encode sensor displacement without explicit coordinate calculations
+  - STDP encodes sweep direction into asymmetric synaptic weight matrices
+  - Learnable lambda parameter adjusts reliance on early vs recent contacts, adapting to object geometry
+  - Perfect discrimination accuracy where dense accumulation performs at chance
+  - 30-50 percentage point noise robustness advantage across all tested noise levels
+  - **Activation**: temporal-coding, thousand-brains-theory, rank-order-coding, stdp-sensorimotor, spiking-neural-network, object-inference
+
 ## 2026-05-26 - Computer Science + Quantum Mechanics (Cron Job - Tuesday)
+
+### QML-PipeGuard: Drift-Aware Behavioral Fingerprinting for Quantum Machine Learning Pipeline Integrity
+- [[qml-pipeline-integrity]] - Contract-based framework for verifying QML pipeline integrity via behavioral fingerprinting, detecting both hardware drift and adversarial channel substitution (arXiv: 2605.25066)
+  - Behavioral fingerprint = vector of observable expectation values under tomographically structured measurement family
+  - Two modes: drift-aware monitoring (absorbs benign calibration changes) and adversarial detection (catches channel substitution)
+  - Validated on IBM Heron r2 with ~1.4e4 shots fitting in single batched job
+  - Tight frame-bound C=√3 for single-qubit Pauli family defines verification boundary
+  - **Activation**: qml-pipeline-integrity, quantum-ml-security, behavioral-fingerprinting-quantum, quantum-hardware-drift, adversarial-channel-detection, quantum-pipeline-verification
+
+### A General Tensor-Structured Compression Scheme for Efficient Large Language Models
+- [[tensor-mixture-compression]] - MixT: general tensor-structured compression replacing dense linear layers with natively executable mixtures of tensor operators, achieving 47.5% parameter reduction and 60.4% memory reduction on LLaMA2-7B (arXiv: 2605.25344)
+  - Broad compressible regime where MMLU accuracy preserved before model-specific abrupt transition boundary
+  - Transition coincides with coordinated shifts in output entropy, prediction entropy, and inter-layer geometry
+  - Validated on Qwen3-8B and LLaMA2-7B under unified recovery protocol
+  - **Activation**: tensor-mixture-compression, MixT-compression, LLM-tensor-compression, efficient-LLM-deployment, transformer-compression, tensor-operator-mixture
 
 ### Benchmarking a Machine-Learning Differential Equations Solver on a Neutral-Atom Logical Processor
 - [[quantum-ml-logical-processor-benchmark]] - Experimental validation showing logical (error-corrected) quantum kernel outperforms physical (noisy) kernel for solving differential equations on neutral-atom processor (arXiv: 2605.21276)
