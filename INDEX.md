@@ -1,14 +1,26 @@
-## 2026-05-27 - Neuroscience Research (Cron Job)
+## 2026-05-27 - 医学 + 量子力学 (Cron Job - Wednesday)
 
-### SpikeReg: Energy-Efficient 3D Deformable Medical Image Registration with Spiking Neural Networks
-- [[spikereg-snn-medical-registration]] - First SNN-based 3D deformable brain MRI registration matching ANN accuracy at 12.8% spike rate and 55.5× energy reduction (arXiv: 2605.25144)
-  - ANN-to-SNN conversion via layer-wise weight transfer + activation-percentile threshold calibration
-  - Surrogate gradient fine-tuning with local cross-correlation + diffusion regularization + spike-rate sparsity
-  - Negative findings: displacement distillation hurts, Dice-loss ANN teachers fail to transfer
-  - **Activation**: SNN medical imaging, neuromorphic registration, energy-efficient 3D perception, ANN-to-SNN conversion
+### Quantum Medical Patterns
+- [[quantum-medical-patterns]] - Reusable research patterns from quantum computing in medical/healthcare: hybrid architectures, quantum kernel methods, federated diagnosis, reservoir computing, QLIF forecasting (arXiv: multiple)
+- Core pattern 1: Hybrid quantum-classical clinical forecasting (GRU → VQC → classical decoder)
+- Core pattern 2: Quantum kernel medical imaging (foundation model → PCA → QSVM, 18/18 F1 wins)
+- Core pattern 3: Federated quantum medical diagnosis (privacy-preserving multi-hospital DR detection)
+- Core pattern 4: Cold-atom reservoir computing for medical imaging (auto-encoder + neutral-atom RC)
+- Core pattern 5: QLIF-CAST quantum spiking forecasting (15.4% lower MSE than classical LIF)
+- Design space exploration: encoding schemes, entanglement topologies, measurement strategies
+- **Activation**: quantum medical diagnosis, quantum healthcare AI, quantum clinical forecasting, hybrid quantum medical, quantum kernel medical imaging, federated quantum medical, quantum reservoir medical, 量子医疗诊断
 
-### Neuromorphic LiDAR-based Bird's Eye View Object Detection using Energy-efficient Spiking Neural Networks
-- [[neuromorphic-lidar-bev-snn]] - End-to-end SNN encoder-decoder for 3D LiDAR BEV object detection with 3.33× synaptic energy reduction over CNN, 92.05/87.04/86.51 AP on KITTI (arXiv: 2605.25293)
+1|## 2026-05-27 - Neuroscience Research (Cron Job)
+2|
+3|### SpikeReg: Energy-Efficient 3D Deformable Medical Image Registration with Spiking Neural Networks
+4|- [[spikereg-snn-medical-registration]] - First SNN-based 3D deformable brain MRI registration matching ANN accuracy at 12.8% spike rate and 55.5× energy reduction (arXiv: 2605.25144)
+5|  - ANN-to-SNN conversion via layer-wise weight transfer + activation-percentile threshold calibration
+6|  - Surrogate gradient fine-tuning with local cross-correlation + diffusion regularization + spike-rate sparsity
+7|  - Negative findings: displacement distillation hurts, Dice-loss ANN teachers fail to transfer
+8|  - **Activation**: SNN medical imaging, neuromorphic registration, energy-efficient 3D perception, ANN-to-SNN conversion
+9|
+10|### Neuromorphic LiDAR-based Bird's Eye View Object Detection using Energy-efficient Spiking Neural Networks
+11|
   - Learned spike encoding outperforms hand-crafted Poisson/latency/z-axis encoding strategies
   - Two variants: membrane potential (max accuracy) and fully binary (neuromorphic hardware deployment)
   - Block-wise energy analysis via SynOps/MAC proxy model

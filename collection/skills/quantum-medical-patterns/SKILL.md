@@ -1,141 +1,269 @@
 ---
 name: quantum-medical-patterns
-description: >
-  Reusable research patterns from quantum machine learning in healthcare and medical
-  applications. Covers hybrid quantum-classical medical modeling, quantum generative
-  models for medical imaging, quantum kernel methods for medical foundation models,
-  and quantum neural networks for biomedical analysis. Use when researching quantum
-  computing applications in healthcare, medical diagnosis, drug discovery, clinical
-  trial optimization, or medical image analysis. Triggers: quantum medical, quantum
-  healthcare, QML medicine, quantum diagnosis, quantum drug discovery, quantum
-  clinical trial, medical quantum computing, 量子医疗, 量子医学.
+description: Reusable research patterns from quantum computing applications in medical and healthcare domains. Covers hybrid quantum-classical architectures, quantum kernel methods, federated quantum diagnosis, reservoir computing, and time-series forecasting for clinical applications.
+category: ai_collection
 ---
 
-# Quantum Medical Research Patterns
+# Quantum Medical Patterns
 
-Reusable patterns extracted from arXiv and literature on quantum machine learning
-(QML) applications in healthcare, medical imaging, drug discovery, and clinical
-decision-making.
+## Description
 
-## Key Research Patterns
+Reusable research patterns for applying quantum computing to medical and healthcare problems. Extracted from recent papers (2025-2026) on quantum neural networks for diagnosis, quantum kernel methods for medical imaging, federated quantum learning, and quantum reservoir computing for clinical time-series forecasting.
 
-### Pattern 1: Hybrid Quantum-Classical Medical Modeling
+## Activation Keywords
+- quantum medical diagnosis
+- quantum healthcare AI
+- quantum clinical forecasting
+- hybrid quantum medical
+- quantum kernel medical imaging
+- federated quantum medical
+- quantum reservoir medical
+- 量子医疗诊断
+- 量子医疗模式
 
-**Core idea**: Classical deep learning handles data preprocessing and feature extraction;
-quantum circuits process the refined features for classification or regression.
+## Core Patterns
 
-**Typical pipeline**:
-```
-Raw medical data (EEG/MRI/clinical) → Classical preprocessing → Feature extraction
-→ Quantum feature map (angle/ amplitude encoding) → VQC/QNN → Classification
-```
+### Pattern 1: Hybrid Quantum-Classical Medical Forecasting
 
-**Encoding strategies**:
-- **Angle encoding**: Map normalized features to rotation angles of qubits (efficient, low depth)
-- **Amplitude encoding**: Embed features into quantum state amplitudes (exponential compression, requires normalization)
-- **Basis encoding**: Binary feature representation (simple but qubit-intensive)
+**Architecture**: Classical encoder → Quantum variational circuit → Classical decoder
 
-**Variational circuits**:
-- Use hardware-efficient ansatz for NISQ devices
-- 2-4 layers of parameterized rotations + entanglement
-- Gradient-based optimization (parameter-shift rule) or gradient-free (SPSA)
+**Key Components**:
+- **GRU/RNN Encoder**: Encodes clinical time-series into quantum angles
+- **Variational Quantum Circuit (VQC)**: Processes quantum-encoded features
+- **Measurement Layer**: Extracts classical predictions from quantum measurements
 
-**Reference papers**:
-- Hybrid Quantum-Classical Model with EEG + Quantum Feature Extraction (Mayo Clinic, 2026)
-- Early Detection of Coronary Heart Disease Using Hybrid QML (arxiv)
+**Use Cases**:
+- Clinical time-series forecasting (vital signs, lab values)
+- Disease progression prediction
+- Multivariate patient monitoring
 
-### Pattern 2: Quantum Generative Models for Medical Imaging
+**Design Choices**:
+- Encoding: Angle encoding for clinical features
+- Entanglement: Ring topology for sequential data
+- Measurement: Pauli-Z basis for classification
 
-**Core idea**: Quantum Generative Adversarial Networks (QGANs) or quantum variational
-autoencoders for medical image enhancement, augmentation, and synthesis.
+### Pattern 2: Quantum Kernel Medical Imaging
 
-**Advantages over classical**:
-- Lower Fréchet Inception Distance (FID) scores on medical MNIST and knee osteoarthritis X-rays
-- Better handling of small medical datasets via quantum expressivity
-- Data augmentation for rare disease classes
+**Architecture**: Medical Foundation Model → Feature Extraction → Quantum SVM
 
-**Key architectures**:
-- **QGAN**: Classical generator + quantum discriminator, or fully quantum both
-- **Quantum Circuit Born Machine (QCBM)**: Pure quantum generative model
-- **Hybrid VAE**: Classical encoder + quantum latent space + classical decoder
-
-**Reference papers**:
-- Quantum Generative Learning for High-Resolution Medical Image Enhancement (IOP, 2025)
-- Generative Diffusion Augmentation with Quantum-Enhanced Modeling for Medical Imaging
-
-### Pattern 3: Quantum Kernel Methods for Medical Foundation Models
-
-**Core idea**: Use quantum kernel functions to compute similarity in high-dimensional
-Hilbert space, potentially providing advantage over classical kernels for medical data.
-
-**Workflow**:
-```
-Medical data → Classical embedding (foundation model) → Quantum kernel → QSVM/QSVC
-→ Classification/diagnosis
-```
-
-**Key finding**: Quantum kernels show advantage when classical kernel methods suffer from
-"kernel collapse" — where classical embeddings become indistinguishable in high dimensions.
-
-**Reference papers**:
-- Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings (arxiv, 2026-04)
-- Quantum Machine Learning in Healthcare: Evaluating QNN and QSVM Models (arxiv, 2025)
-
-### Pattern 4: Quantum Optimization for Clinical Trials & Drug Discovery
-
-**Core idea**: Use quantum annealing or QAOA for combinatorial optimization in
-patient cohort selection, trial design, and molecular simulation.
-
-**Applications**:
-- Patient stratification and cohort matching (QUBO formulation)
-- Molecular electronic structure simulation (VQE, adaptive variational algorithms)
-- Drug-target interaction prediction (quantum graph neural networks)
-
-**Reference papers**:
-- Towards Quantum Computing for Clinical Trial Design (arxiv, 2026-05)
-- Convergence Frontier: ML + HPC Quantum Computing for Drug Discovery (arxiv, 2026-05)
-- Quantum Simulation of Protein Fragment Electronic Structure (arxiv, 2026)
-
-### Pattern 5: Continuous-Variable Quantum Neural Networks for Biomedical Imaging
-
-**Core idea**: Use continuous-variable (CV) quantum systems (photonic) instead of
-discrete qubits for processing high-resolution medical images.
+**Key Components**:
+- **Frozen Medical Foundation Model**: MedSigLIP, RAD-DINO, or ViT-patch32
+- **PCA Dimensionality Reduction**: Compresses to q features
+- **Quantum Support Vector Machine**: QSVM for classification
 
 **Advantages**:
-- Native compatibility with continuous medical data (pixel intensities, waveforms)
-- Higher information density per quantum mode
-- Better scalability for image-size inputs
+- 18/18 cases: QSVM wins minority-class F1 vs classical SVM
+- Leverages quantum kernel advantage under noiseless simulation
+- Two-tier fair comparison framework ensures validity
 
-**Reference papers**:
-- Towards Continuous-variable Quantum Neural Networks for Biomedical Imaging (arxiv, 2026-05)
+**Use Cases**:
+- Medical image classification
+- Chest radiograph analysis
+- Insurance risk classification
 
-## Implementation Checklist
+### Pattern 3: Federated Quantum Medical Diagnosis
 
-When researching or implementing quantum medical applications:
+**Architecture**: Local Quantum NN → Federated Aggregation → Global Model
 
-1. **Data characteristics**: Imbalanced datasets common in medical domain — use class weighting, SMOTE, or focal loss
-2. **Encoding choice**: Match encoding strategy to data type (continuous → angle/CV, binary → basis)
-3. **Circuit depth**: Keep within NISQ limits (≤20 layers) to avoid noise degradation
-4. **Baseline comparison**: Always compare against classical counterparts (SVM, RF, CNN)
-5. **Metric selection**: Use medically relevant metrics — sensitivity, specificity, AUC-ROC, not just accuracy
-6. **Dataset size**: Quantum advantage more likely with small datasets (<10K samples) where classical models overfit
-7. **Hardware awareness**: Specify target backend (simulator, IBM, IonQ, photonic) and noise model
+**Key Components**:
+- **Quantum Neural Network**: Local diagnosis at each hospital
+- **Federated Learning**: Privacy-preserving model aggregation
+- **Microaneurysm Detection**: Early diabetic retinopathy signs
 
-## Common Pitfalls
+**Advantages**:
+- Data privacy preservation across distributed hospitals
+- Improved early detection of mild DR
+- Collaborative learning without data sharing
 
-- **Data encoding bottleneck**: Loading classical medical data into quantum states can erase any quantum advantage (the "input problem")
-- **Barren plateaus**: Deep variational circuits suffer from vanishing gradients — use shallow circuits or layerwise training
-- **Overclaiming**: Many papers show advantage only on toy datasets; real medical data is much noisier
-- **Reproducibility**: Quantum simulators vs. real hardware show vastly different results
-- **Class imbalance**: Medical datasets are typically heavily imbalanced — must address explicitly
+**Use Cases**:
+- Diabetic retinopathy screening
+- Multi-hospital collaborative diagnosis
+- Privacy-sensitive medical AI
 
-## Search Queries for New Papers
+### Pattern 4: Cold-Atom Reservoir Computing for Medical Imaging
 
+**Architecture**: Guided Auto-Encoder → Neutral-Atom Reservoir → Readout Layer
+
+**Key Components**:
+- **Guided Auto-Encoder**: Handles high-dimensional medical images
+- **Neutral-Atom Reservoir**: Quantum reservoir dynamics
+- **Surrogate-Driven Training**: Non-differentiable measurement handling
+
+**Advantages**:
+- Handles non-differentiable quantum measurements
+- Compact discriminative representations
+- Well-suited for quantum reservoir computing
+
+**Use Cases**:
+- Polyp detection in medical images
+- Binary medical image classification
+- High-dimensional medical data analysis
+
+### Pattern 5: Quantum Leaky-Integrate-and-Fire Forecasting (QLIF-CAST)
+
+**Architecture**: Quantum Spiking Neurons → Time-Series Encoding → Regression Output
+
+**Key Components**:
+- **Quantum LIF Neurons**: Spiking dynamics for temporal processing
+- **Multivariate Encoding**: Handles multiple input features
+- **Continuous-Valued Prediction**: Regression output for forecasting
+
+**Performance**:
+- 15.4% lower MSE than classical LIF
+- 94% faster than QLSTM
+- Applicable to multivariate time-series
+
+**Use Cases**:
+- Weather forecasting
+- Clinical vital sign prediction
+- Multivariate environmental forecasting
+
+## Design Space Exploration Framework
+
+### Encoding Schemes Comparison
+| Encoding | Best For | Qubits Required |
+|----------|----------|-----------------|
+| Angle | Clinical features | N features |
+| Amplitude | Medical images | log₂(N) features |
+| Basis | Binary diagnosis | N features |
+
+### Entanglement Architectures
+| Topology | Use Case | Accuracy |
+|----------|----------|----------|
+| Ring | Sequential data | High |
+| Linear | Independent features | Medium |
+| Full | Complex interactions | Highest |
+| Star | Central feature | Medium-High |
+
+### Measurement Strategies
+| Strategy | Information Content | Noise Sensitivity |
+|----------|---------------------|-------------------|
+| Pauli-Z | Classification | Low |
+| Pauli-X | Phase information | Medium |
+| Pauli-Y | Complex amplitudes | High |
+
+## Implementation Guidelines
+
+### Step 1: Problem Definition
+1. Identify medical problem type (classification, forecasting, imaging)
+2. Determine data characteristics (time-series, images, tabular)
+3. Assess privacy requirements (federated vs centralized)
+
+### Step 2: Architecture Selection
+1. Choose hybrid pattern based on problem type
+2. Select encoding scheme for data type
+3. Determine entanglement topology
+4. Choose measurement strategy
+
+### Step 3: Quantum Circuit Design
+1. Define qubit count based on features
+2. Design variational ansatz
+3. Implement encoding layer
+4. Add entanglement layer
+5. Configure measurement layer
+
+### Step 4: Training Pipeline
+1. Preprocess medical data
+2. Encode into quantum format
+3. Train quantum circuit parameters
+4. Validate on clinical dataset
+5. Evaluate against classical baseline
+
+### Step 5: Deployment Considerations
+1. Noise simulation for NISQ devices
+2. Shot budget optimization
+3. Error mitigation strategies
+4. Classical-quantum interface optimization
+
+## Evaluation Metrics
+
+### Clinical Performance
+- **Sensitivity**: True positive rate for disease detection
+- **Specificity**: True negative rate
+- **AUC-ROC**: Area under receiver operating characteristic
+- **F1-Score**: Harmonic mean of precision and recall
+- **MSE**: Mean squared error for forecasting
+
+### Quantum Advantages
+- **Expressibility**: Coverage of Hilbert space
+- **Trainability**: Gradient behavior and barren plateaus
+- **Shot Efficiency**: Number of measurements needed
+- **Qubit Efficiency**: Features per qubit ratio
+
+## Error Handling
+
+### Noisy Quantum Hardware
+- Implement error mitigation techniques
+- Use noise-aware circuit design
+- Apply dynamical decoupling sequences
+
+### Data Privacy Concerns
+- Use federated learning framework
+- Implement differential privacy
+- Ensure HIPAA/GDPR compliance
+
+### Classical-Quantum Interface
+- Optimize data encoding/decoding
+- Minimize quantum-classical communication
+- Use batch processing for efficiency
+
+## Examples
+
+### Example 1: Clinical Time-Series Forecasting
 ```
-site:arxiv.org quantum machine learning medical imaging
-site:arxiv.org quantum neural network diagnosis
-site:arxiv.org quantum drug discovery
-site:arxiv.org quantum clinical trial
-site:arxiv.org quantum kernel medical
-site:arxiv.org continuous variable quantum neural network biomedical
+Problem: Predict patient vital signs 6 hours ahead
+Architecture: GRU Encoder → VQC → Classical Decoder
+Encoding: Angle encoding of normalized features
+Entanglement: Ring topology for temporal sequence
+Measurement: Pauli-Z for regression output
+Dataset: BIDMC (Beth Israel Deaconess Medical Center)
 ```
+
+### Example 2: Medical Image Classification
+```
+Problem: Classify chest radiographs for disease detection
+Architecture: MedSigLIP → PCA → QSVM
+Features: Frozen embeddings from medical foundation model
+Comparison: QSVM vs Linear SVM (fair two-tier framework)
+Result: QSVM wins F1 in 18/18 test cases
+Dataset: MIMIC-CXR chest radiographs
+```
+
+### Example 3: Federated Diabetic Retinopathy Detection
+```
+Problem: Early detection of diabetic retinopathy across hospitals
+Architecture: Local QNN → Federated Aggregation → Global Model
+Privacy: Model parameters shared, data stays local
+Task: Microaneurysm dot detection (tiny, low contrast)
+Benefit: Collaborative learning without data sharing
+```
+
+## Resources
+
+### Key Papers
+- Hybrid Quantum Neural Network for Clinical Time Series (arXiv:2603.08072)
+- Quantum Kernel Advantage in Medical Foundation Model Embeddings (arXiv:2604.24597)
+- FQPDR: Federated Quantum Neural Network for DR Detection (arXiv:2605.08324)
+- Cold-Atom Reservoir Computing for Medical Imaging (arXiv:2605.07771)
+- QLIF-CAST: Quantum Spiking Neural Network Forecasting (arXiv:2605.xxxxx)
+
+### Tools
+- Qiskit: IBM quantum computing framework
+- PennyLane: Quantum machine learning library
+- PySyft: Federated learning framework
+- TensorFlow Quantum: Hybrid quantum-classical ML
+
+## Related Skills
+- quantum-ml-patterns
+- quantum-healthcare-patterns
+- hybrid-quantum-classical-architecture
+- quantum-kernel-advantage-medical
+- federated-quantum-medical-diagnosis
+
+## Notes
+- Patterns extracted from 2025-2026 research papers
+- Focus on practical, implementable architectures
+- Emphasis on fair comparison with classical baselines
+- Privacy-preserving approaches for medical data
+- NISQ-era considerations for noisy hardware
+- Design space exploration methodology for optimal configuration
