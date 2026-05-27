@@ -193,4 +193,20 @@
   - 奖励函数：最小化EPR消耗和执行时间
   - 在线部署新电路分配
   - **Activation**: SQARL, size-agnostic RL quantum, circuit allocation RL, distributed quantum allocation
+### Exploration of Evolving Quantum Key Distribution Network Architecture Using Model-Based Systems Engineering
+- [[qkd-network-mbse]] - 基于MBSE的QKD网络架构设计方法论，使用OVM+SysML创建可追溯的模块化量子网络架构 (arXiv: 2508.15733)
+  - 正交变异性建模（OVM）捕获QKD协议/拓扑/信任模型变异性
+  - SysML结构图展示模块化可复用架构模式
+  - 架构演化框架：点对点→可信中继→量子中继→全量子
+  - 量子-经典集成策略：映射量子设备能力到经典基础设施
+  - **Activation**: MBSE, quantum network, QKD, SysML, quantum systems engineering, quantum key distribution, model-based design
+
+### Practical Entanglement Distillation Protocols with Quadratic Error Suppression
+- [[entanglement-distillation-protocols]] - 二次误差抑制的实用纠缠蒸馏协议，量子通信网络核心构建块 (arXiv: 2605.26757)
+  - 协议分类：BCNOT/递归/哈希/二次抑制协议
+  - 多级蒸馏树架构：ε→ε²→ε⁴→...→ε^(2^K)
+  - 自适应协议选择：基于误差类型和目标保真度
+  - 网络集成：支持DI-QKD、分布式量子计算、量子中继器
+  - **Activation**: entanglement distillation, entanglement purification, quantum repeater, quadratic error suppression, quantum channel fidelity
+
 
