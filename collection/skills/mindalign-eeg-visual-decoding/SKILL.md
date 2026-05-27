@@ -1,9 +1,13 @@
 ---
 name: mindalign-eeg-visual-decoding
-description: Tri-modal contrastive framework (EEG, vision, language) for zero-shot visual decoding. Achieves 54.1% Top-1 accuracy on 200-way benchmark, massively exceeding prior baselines. Use for brain-computer interface visual reconstruction, EEG-based image retrieval, non-invasive neural decoding.
-tags: [eeg, visual-decoding, contrastive-learning, brain-computer-interface, zero-shot, multimodal, neuroscience, language-grounding]
-version: "1.0"
-source: "arXiv:2605.24523"
+description: "Tri-modal contrastive framework (EEG, vision, language) for zero-shot visual decoding. Achieves 54.1% Top-1 accuracy on 200-way benchmark, massively exceeding prior baselines. Use for: brain-computer interface visual reconstruction, EEG-based image retrieval, non-invasive neural decoding, multimodal brain signal analysis."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2605.24523"
+  published: "2026-05-23"
+  authors: "Zexuan Chen, Sichao Liu, Runhao Lu, Huichao Qi, Alexandra Woolgar, Xi Vincent Wang, Lihui Wang"
+  tags: [eeg, visual-decoding, contrastive-learning, brain-computer-interface, zero-shot, multimodal, neuroscience, language-grounding]
+  source: "arXiv:2605.24523"
 ---
 
 # MindAlign: Tri-Modal EEG-Vision-Language Visual Decoding

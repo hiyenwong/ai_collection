@@ -1,5 +1,22 @@
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
+### MindAlign: Bridging EEG, Vision, and Language for Zero-Shot Visual Decoding
+- [[mindalign-eeg-visual-decoding]] - 三模态对比学习框架，实现EEG零样本视觉解码，54.1% Top-1准确率大幅超越基线 (arXiv: 2605.24523)
+  - 两阶段训练：Masked autoencoder预训练 + 三模态对比对齐
+  - CN-CLIP紧凑嵌入优于大型CLIP模型
+  - 文本描述作为语义正则化器，权重α=0.3最优
+  - **Activation**: EEG visual decoding, zero-shot image retrieval, tri-modal alignment
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[stm-sequence-timing-replay]] - 脉冲神经网络中的序列时序学习，振荡背景输入控制重放速度 (arXiv: 2605.22523)
+  - 持续编码：元素特定神经元群的顺序激活表示时长
+  - 振荡时钟：背景振荡作为时钟信号控制重放速度
+  - EEG/LFP相关性：清醒/睡眠重放速度与脑电振荡特征相关
+  - **Activation**: spiking sequence timing, replay speed control, oscillatory clock
+
+
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
 ### Random neural networks match observed dimensionality of neural population recordings and motivate stronger experimental tests
 - [[random-network-neural-dimensionality]] - First quantitative validation that minimally structured random neural networks can account for observed low dimensionality using DMFT with finite measurement time corrections (arXiv: 2605.26551)
   - Core methodology: Dynamical Mean-Field Theory extended with measurement time and behavioral context variability
