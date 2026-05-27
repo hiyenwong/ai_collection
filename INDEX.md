@@ -18,6 +18,13 @@
   - 三层缓解：硬件(布局/频率/屏蔽)、控制(补偿脉冲/最优控制/解耦)、软件(感知编译/误差修正)
   - **Activation**: quantum crosstalk, qubit crosstalk, quantum device characterization, multi-qubit errors, quantum hardware reliability, NISQ optimization
 
+### EPAR: Electromagnetic Pathways to Architectural Reliability in Quantum Processors
+- [[quantum-reliability-pathways]] - 从电磁设计预测超导量子处理器可靠性的方法论，重建设计失真如何修改有效哈密顿量并影响介导连接 (arXiv: 2603.25671)
+  - EPAR框架：电磁到架构的可靠性预测，在制造前评估量子处理器质量
+  - 设计失真重构有效哈密顿量，追踪介导连接重路由路径
+  - 量化设计选择如何放大误差率超出基线T1/T2限制
+  - **Activation**: EPAR, quantum reliability prediction, electromagnetic architecture, superconducting processor design, Hamiltonian reconstruction, crosstalk prediction, layout optimization
+
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
 ### Sensation Modulating Network: An Embodied Cognitive Architecture
