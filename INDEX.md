@@ -1,4 +1,23 @@
 
+
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
+### Toward Scalable Heterogeneous Quantum Networks: Microwave-Optical Transduction Across Platforms
+- [[quantum-network-transduction]] - 微波-光量子转导跨平台架构设计，结合光机械、电光和磁光平台实现可扩展分布式量子计算 (arXiv: 2605.26976)
+  - 三种转导平台：光机械(93%效率)、电光(99.5%效率)、磁光(本征非互易性)
+  - 提出内部效率(η_in)和磁子衰减率(κ_m/2π)作为标准化比较指标
+  - 异构网络架构：不同节点使用不同转导器类型优化整体性能
+  - 效率-噪声基本权衡：所有平台需亚量子噪声(<1)保持量子态
+  - **Activation**: quantum network, microwave-optical transduction, distributed quantum computing, quantum interconnect, optomechanical, electro-optic, magneto-optic
+
+### Crosstalk In Contemporary Quantum Devices
+- [[quantum-device-crosstalk-analysis]] - 当代量子设备串扰系统分析方法论，涵盖直接/驱动/测量/磁通四种串扰类型的表征与缓解 (arXiv: 2605.26528)
+  - 四类串扰：直接ZZ耦合、驱动信号泄漏、测量串扰、磁通串扰
+  - 系统化表征：单量子基准→成对映射→多体相互作用→时序动态
+  - 系统级影响：空间相关误差破坏标准纠错独立性假设
+  - 三层缓解：硬件(布局/频率/屏蔽)、控制(补偿脉冲/最优控制/解耦)、软件(感知编译/误差修正)
+  - **Activation**: quantum crosstalk, qubit crosstalk, quantum device characterization, multi-qubit errors, quantum hardware reliability, NISQ optimization
+
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
 ### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
