@@ -143,3 +143,23 @@
   - Medical foundation model embeddings with quantum kernels
   - **Activation**: quantum kernel advantage, QSVM, medical foundation model, MIMIC-CXR
 
+## 2026-05-27 - Medicine + Quantum ML (Cron Job - Wednesday)
+
+### Deterministic Mapping of Topological Phases via NARX Neural Networks
+- [[narx-topological-phase-mapping]] - NARX neural network discovers deterministic functional identities between topological invariants and critical parameters in quantum systems, achieving MSE of 10^{-27} (arXiv: 2605.27300)
+  - NARX achieves numerical-precision MSE at delay d=1, revealing exact functional identity between winding number and critical measurement strength
+  - Complexity paradox: NARX accuracy collapses at higher delays (d=4), confirming non-trivial high-precision dynamic mapping rather than trivial pattern learning
+  - **Activation**: NARX neural network, topological phase transition, winding number, quantum phase mapping, autoregressive exogenous, deterministic identity discovery
+
+### Leveraging Quantum-Based Architectures for Robust Diagnostics (QCNN)
+- [[quantum-medical-diagnostics]] - Hybrid classical-quantum QCNN framework for multi-class medical image classification using pretrained encoders + angle/amplitude encoding + QCNN (arXiv: 2511.12386)
+  - Achieves 99% accuracy on kidney CT, 97% on cervical cell, 99% on brain tumor classification
+  - Fewer trainable parameters than classical CNNs with superior precision, recall, and F1
+  - **Activation**: QCNN medical, quantum convolutional neural network, medical image classification, hybrid quantum classical diagnostics, pretrained encoder quantum
+
+### HQNN with Multi-Head Attention for Breast Cancer Thermographic Classification
+- [[hqnn-breast-cancer-thermographic]] - HQNN combining 4-qubit variational circuit with strongly entangling layers and classical CNN with multi-head attention for breast cancer thermography (arXiv: 2604.16953)
+  - Quantum-aware feature encoding via parameterized quantum circuits with multi-head attention
+  - Classical attention mechanisms for feature fusion, superior convergence dynamics
+  - **Activation**: HQNN thermography, breast cancer classification, quantum-classical attention, variational quantum circuit, multi-head quantum encoding
+
