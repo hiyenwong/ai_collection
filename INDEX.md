@@ -1,3 +1,17 @@
+## 2026-05-27 - Medicine + Quantum (Cron Job)
+
+### Analyzing Blood Cells with QML: Equilibrium Propagation and VQCs for Acute Myeloid Leukemia Detection
+- [[qml-equilibrium-propagation-medical]] - Energy-based backprop-free quantum training for blood cell classification, competitive under NISQ constraints (arXiv: 1808)
+  - Equilibrium Propagation computes gradients via energy differences, avoiding backpropagation
+  - VQC with EP achieves competitive AML detection accuracy on limited-qubit hardware
+  - **Activation**: equilibrium propagation, blood cells, leukemia detection, VQC, backprop-free, energy-based, NISQ
+
+### Lightweight Quantum-Enhanced ResNet for Coronary Angiography Classification
+- [[quantum-enhanced-coronary-classification]] - Hybrid CNN-VQC architecture for CAG image classification with minimal qubits (arXiv: 1809)
+  - Classical ResNet handles feature extraction, quantum circuit as lightweight classifier head
+  - Addresses operator-dependency in coronary angiography interpretation
+  - **Activation**: coronary angiography, CAG classification, quantum ResNet, hybrid CNN-VQC, cardiac imaging, lightweight QML
+
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability in Spiking Neural Networks
