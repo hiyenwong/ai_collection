@@ -1,3 +1,13 @@
+## 2026-05-28 - Systems Engineering (Cron Job)
+
+### Statistical and Algorithmic Foundations of Probing Quantum Systems with Compressive Measurements: A Review
+- [[structured-quantum-tomography]] - 结构化量子态层析成像方法论，结合压缩感知、低秩表示、张量网络和神经量子态实现可扩展量子态重建 (arXiv: 2605.27191)
+  - 三大主题：紧凑态表示、测量设计（IC-POVM/随机测量）、计算算法
+  - 随机测量（Pauli/Clifford）提供近最优采样复杂度
+  - 凸优化保证恢复、非凸优化提升可扩展性
+  - **Activation**: quantum state tomography, compressive quantum measurement, IC-POVM, randomized measurement
+
+
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
 ### MindAlign: Bridging EEG, Vision, and Language for Zero-Shot Visual Decoding
