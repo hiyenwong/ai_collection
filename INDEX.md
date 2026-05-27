@@ -22,6 +22,14 @@
   - 假设检验效力高于直接比较相似性矩阵
   - **Activation**: SRF, representation factorization, similarity matrix, interpretability
 
+### NeuroRing: Scaling Spiking Neural Networks via Multi-FPGA Bidirectional Ring Topologies and Stream-Dataflow Architectures
+- [[neuroring-multi-fpga-snn]] - 多FPGA双向环形拓扑SNN加速器，实现实时因子0.83的快速执行 (arXiv:2604.28059)
+  - 双向环形拓扑：确定性延迟、容错性、线性扩展
+  - 流数据流架构：事件驱动、异步、高吞吐量
+  - NEST集成：无缝工作流过渡，生物学保真度验证
+  - 强扩展性：RTF从2.1（1 FPGA）→0.83（4 FPGA）
+  - **Activation**: NeuroRing, multi-FPGA SNN, neuromorphic hardware, ring topology, FPGA accelerator
+
      1|## 2026-05-28 - Systems Engineering (Cron Job)
      2|
      3|### Statistical and Algorithmic Foundations of Probing Quantum Systems with Compressive Measurements: A Review
