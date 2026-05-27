@@ -1,3 +1,17 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Random Neural Networks & Neural Population Dimensionality
+- [[random-neural-network-dimensionality]] - DMFT framework quantitatively predicts low dimensionality in large-scale neural population recordings by incorporating finite measurement time and behavioral context variability (arXiv: 2605.26551)
+  - 核心要点 1: Dynamical Mean-Field Theory predicts covariance structure of randomly-connected networks; finite-T corrections align predictions with experiment
+  - 核心要点 2: Manifold orientation similarity across behavioral contexts is more sensitive to connectivity structure than dimensionality alone
+  - **Activation**: random neural network, neural population dimensionality, DMFT, neural manifold, connectivity inference
+
+### SRF: Similarity-Based Representation Factorization
+- [[srf-similarity-representation-factorization]] - General method for recovering low-dimensional, non-negative, interpretable dimensions from similarity matrices in brains, behavior, and AI (arXiv: 2605.26921)
+  - 核心要点 1: SRF factorizes pairwise similarity matrices S approx W*W^T with non-negativity constraints, yielding semantically interpretable additive dimensions
+  - 核心要点 2: 6-8 shared core dimensions found between human visual cortex and CNN layers; behavioral judgments emphasize unique semantic/functional axes
+  - **Activation**: representation factorization, brain-AI alignment, RSA interpretable, similarity embedding, core dimensions
+
 ## 2026-05-27 - 医学 + 量子力学 (Cron Job - Wednesday)
 
 ### Quantum Medical Patterns
