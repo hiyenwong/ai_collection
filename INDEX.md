@@ -1,3 +1,17 @@
+## 2026-05-28 - Medicine + Quantum (Cron Job)
+
+### Parallel Multi-Circuit Quantum Feature Fusion in Hybrid Quantum-Classical Convolutional Neural Networks for Breast Tumor Classification
+- [[qcnn-parallel-feature-fusion-medical]] - Hybrid QCNN with parallel amplitude+angle encoding VQCs for medical image classification, statistically validated via Wilcoxon test and Cohen's d (arXiv: 2512.02066)
+  - Core methodology: Two distinct quantum circuits (amplitude-encoding VQC + angle-encoding VQC with circular entanglement) run in parallel on 4 qubits; quantum embeddings fused with classical conv features
+  - Statistical validation: Parameter-matched comparison, 5 independent runs, Wilcoxon signed-rank test (p=0.03125), Cohen's d=2.14 (large effect)
+  - **Activation**: qcnn parallel feature fusion, quantum feature fusion medical, statistical validation quantum ml, wilcoxon quantum advantage, cohen d quantum classification, breastmnist quantum
+
+### Discovering Data Encoding Strategies for Quantum-Classical Neural Networks Using Monte Carlo Tree Search
+- [[mcts-encoding-discovery-qml]] - MCTS discovers optimal data encoding circuits for QCCNN, effective rank as encoding performance predictor (arXiv: 2605.18540)
+  - Core methodology: MCTS searches encoding circuit space for quantum-classical CNN with non-variational quantum block + classical classifier
+  - Key insight: Effective rank of feature maps correlates with encoding performance (not entanglement capability or Fourier decomposition)
+  - **Activation**: mcts encoding discovery, effective rank encoding, quantum data encoding, QCCNN encoding, monte carlo tree search quantum
+
 ## 2026-05-27 - Medicine + Quantum (Cron Job)
 
 ### A novel perspective on denoising using quantum localization with application to medical imaging
