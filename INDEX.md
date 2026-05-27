@@ -1,3 +1,17 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Large-scale Brain Dynamics Organized by Directional Coordination Hierarchy
+- [[directional-coordination-hierarchy-brain]] - Three-regime resting-state coordination framework (feedback/feedforward/integrative) revealing hierarchical information flow and schizophrenia disruption (biorxiv: 10.64898/2026.05.25.727703)
+  - 核心要点 1: Three stable coordination regimes form a low-dimensional directional landscape replicating across four cohorts
+  - 核心要点 2: In schizophrenia: feedback coordination decreases, integrative coordination increases, dynamics faster — tracks symptom severity and cognition
+  - **Activation**: directional brain coordination, resting-state dynamics, cortical hierarchy, schizophrenia biomarker
+
+### Low-Frequency Alpha Activity Shapes Visual Cortex Information Routing
+- [[low-frequency-alpha-visual-cortex-routing]] - Alpha oscillations in V1 encode spatially-specific figure-ground info and gate V1-V4 inter-areal communication via phase-dependent coupling (biorxiv: 10.64898/2026.05.25.727722)
+  - 核心要点 1: Alpha carries spatial figure position and orientation with fine specificity — active routing not idle inhibition
+  - 核心要点 2: Both local V1 spiking and V1-V4 coupling depend on alpha amplitude and instantaneous phase difference — alpha implements feedback gating
+  - **Activation**: alpha oscillation routing, visual cortex V1 V4 coupling, figure-ground, oscillatory gating
+
 ## 2026-05-27 - Medicine + Quantum Computing (Cron Job)
 
 ### Enhancing Blood Cells Classification using Hybrid Quantum Neural Networks
