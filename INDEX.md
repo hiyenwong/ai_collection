@@ -1,5 +1,21 @@
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### BrainDyn: Sheaf Neural ODE for Generative Brain Dynamics
+- [[braindyn-sheaf-neural-ode]] - Sheaf Neural ODE + LSTM + Neural ODE framework for continuous-time generative brain dynamics on anatomically structured graphs (arXiv: 2605.19324)
+  - Combines sheaf theory (restriction maps + Laplacian) with neural ODEs for expressive brain graph dynamics
+  - Multi-modal: validated on resting-state fMRI (PNC), scalp EEG epilepsy (TUSZ), NEST spiking simulator
+  - Supports in-silico perturbation prediction and downstream classification tasks
+  - **Activation**: brain dynamics, sheaf neural ODE, generative brain model, fMRI forecasting, EEG dynamics, digital brain twin
+
+### Learning Sequence Timing and Control of Replay Speed in Spiking Neural Networks
+- [[learning-sequence-timing-snn]] - spiking Temporal Memory (sTM) model with element-specific timing encoding and oscillatory clock for flexible replay speed control (arXiv: 2605.22523)
+  - Novel mechanism: duration encoded by sequential sub-population activation (spatial encoding of time)
+  - Oscillatory background inputs serve as clock signals -- frequency controls replay speed
+  - Biological connection: EEG/LFP oscillation characteristics predict replay speed (theta=real-time, ripple=fast)
+  - **Activation**: sequence timing, spiking temporal memory, replay speed, oscillatory clock, hippocampal sequences
+
 ### Large-scale Brain Dynamics Organized by Directional Coordination Hierarchy
 - [[directional-coordination-hierarchy-brain]] - Three-regime resting-state coordination framework (feedback/feedforward/integrative) revealing hierarchical information flow and schizophrenia disruption (biorxiv: 10.64898/2026.05.25.727703)
   - 核心要点 1: Three stable coordination regimes form a low-dimensional directional landscape replicating across four cohorts

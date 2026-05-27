@@ -1,131 +1,191 @@
 ---
-name: braindyn-sheaf-neural-ode
-description: >
-  BrainDyn: Sheaf Neural ODE methodology for generative brain dynamics modeling.
-  Combines cellular sheaf theory with neural ODEs to model continuous-time neural
-  dynamics on structured brain graphs. Use when working with brain dynamics
-  forecasting, sheaf neural networks, neural ODEs, spatiotemporal brain modeling,
-  in silico perturbation prediction, or multi-modal neural signal analysis (fMRI,
-  EEG, spiking networks). Triggered by: braindyn, sheaf neural network, neural ODE
-  brain dynamics, generative brain model, sheaf Laplacian, continuous-time neural
-  dynamics, brain signal forecasting, perturbation prediction on brain graphs.
+id: braindyn-sheaf-neural-ode
+title: BrainDyn: Sheaf Neural ODE for Generative Brain Dynamics
+description: BrainDyn: Sheaf Neural ODE methodology for continuous-time dynamics on structured brain graphs. Combines LSTM history encoding, sheaf Laplacian message passing, and neural ODEs for brain-like generative dynamics across fMRI, EEG, and spike train modalities.
+tags:
+  - brain-dynamics
+  - sheaf-neural-ode
+  - generative-model
+  - fmri
+  - eeg
+  - spiking-network
+  - computational-neuroscience
+  - graph-neural-networks
+  - continuous-time
+  - brain-modeling
+arxiv: "2605.19324"
+authors: "Siddharth Viswanath, Panayiotis Ketonis, Chen Liu, Michael Perlmutter, Dhananjay Bhaskar, Smita Krishnaswamy"
+published: "2025-05-25"
 ---
 
-# BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
+# BrainDyn: Sheaf Neural ODE for Generative Brain Dynamics
 
-arXiv:2605.19324 (Viswanath et al., Yale University, May 2026)
+## Overview
 
-## Core Idea
+BrainDyn introduces a **Sheaf Neural Ordinary Differential Equation (Neural ODE)** model for continuous-time neural dynamics on anatomically structured brain graphs. It addresses the key limitation of existing models: LLMs/RNNs ignore anatomical organization; graph networks use overly simple message passing rules.
 
-Standard GNNs aggregate all nodes in the same feature space. **Cellular sheaves** equip each edge with **restriction maps** — linear transformations that project node features into an **edge-specific shared space** before aggregation. This lets different brain connections transform and modulate signals in distinct ways, matching biological reality.
+**Core Innovation**: Combining sheaf theory with neural ODEs to achieve expressive, structure-aware brain dynamics generation.
 
-BrainDyn combines: (1) LSTM-encoded temporal history → (2) sheaf restriction maps for heterogeneous inter-region coupling → (3) neural ODE for continuous-time evolution.
+**arXiv**: 2605.19324 | Published: 2025-05-25
 
-## Architecture (3 Components)
+## Core Architecture
 
-### 1. Memory-based Node Stalks
-Each brain region's recent temporal history (sliding window) is encoded by an LSTM into a hidden state (stalk). Neural activity is history-dependent — the current state reflects accumulated past dynamics.
-
-### 2. Edge Modulation via Sheaf Restriction Maps
-Learnable restriction maps ρ: ℝ^dᵢ → ℝ^dₑ project node features into edge-specific shared spaces. Combined with feature-wise gating for channel-specific and direction-dependent coupling. Disagreements between neighboring nodes in shared spaces are measured by the **sheaf Laplacian**.
-
-### 3. Continuous-time Evolution via Neural ODE
-The sheaf Laplacian output feeds into a neural ODE (two-layer MLP vector field) integrated via 4th-order Runge-Kutta (RK4) with step size Δt=1. Governs continuous-time evolution of neuronal activity.
-
-## Sheaf Laplacian (Key Math)
-
-For graph G=(V,E), cellular sheaf assigns:
-- Node stalks: F(i) ≅ ℝ^dᵢ
-- Edge stalks: F(eᵢⱼ) ≅ ℝ^dₑ
-- Restriction maps: ρᵢ→ₑᵢⱼ, ρⱼ→ₑᵢⱼ
-
-The sheaf Laplacian L = BᵀB where B is the sheaf coboundary operator. It generalizes the graph Laplacian by measuring disagreement **only after** features are transformed through restriction maps into edge-specific spaces.
-
-## Graph Construction
-
-Prior graph P built from **Granger causality** computed from the input context window. Connections with sufficiently strong Granger causality are retained. Sheaf restriction maps then learn expressive edge-specific transformations on top of this prior.
-
-## Datasets & Evaluation
-
-- **PNC fMRI**: 1188 subjects, 400-region Schaefer parcellation, resting-state BOLD
-- **TUSZ EEG**: 19-channel scalp EEG, binary seizure/non-seizure windows
-- **NEST simulations**: 100 iaf_psc_alpha neurons, directed small-world network
-
-Outperforms CNN-LSTM, BIOT (transformer), EvolveGCN, ODEBRAIN, RiTINI across both fMRI and EEG modalities.
-
-## Perturbation Analysis
-
-The sheaf-based representations generalize to out-of-distribution perturbed dynamics. When a brain region's input is perturbed in silico, BrainDyn predicts how the perturbation propagates through the network — enabling virtual testbeds for stimulation studies.
-
-## Computational Complexity
-
-Per-sample cost decomposes:
-- LSTM encoder: O(NT(FD + LD²)) — N nodes, window T, signal dim F, hidden D, L layers
-- Sheaf Laplacian: O(EDM) — E edges, map dim M
-- Neural ODE: O(SV²) — S RK4 steps, vector field width V
-- Trained with AdamW, 100 epochs, batch 64, single NVIDIA H200 GPU
-
-## Implementation Pattern
-
+### 1. Stalk Construction (LSTM History Encoding)
 ```python
-# Conceptual BrainDyn forward pass
-import torch
-from torchdiffeq import odeint
-
-class BrainDyn(torch.nn.Module):
-    def __init__(self, n_nodes, n_edges, d_stalk, d_map, d_hidden):
-        super().__init__()
-        # LSTM per node for temporal encoding
-        self.lstm = torch.nn.LSTM(input_size=1, hidden_size=d_stalk, num_layers=2)
-        # Learnable restriction maps per edge
-        self.restriction_maps = torch.nn.Parameter(torch.randn(n_edges, d_stalk, d_map))
-        # Neural ODE vector field (2-layer MLP)
-        self.ode_func = torch.nn.Sequential(
-            torch.nn.Linear(n_nodes * d_map, d_hidden),
-            torch.nn.ReLU(),
-            torch.nn.Linear(d_hidden, n_nodes)
-        )
-    
-    def sheaf_laplacian(self, stalks, edge_index):
-        """Compute sheaf Laplacian: L = B^T B"""
-        # Project node features through restriction maps to edge spaces
-        # Measure disagreement in edge-specific spaces
-        # Pull back to node space
-        pass
-    
-    def ode_rhs(self, t, y):
-        """Neural ODE right-hand side"""
-        return self.ode_func(y)
-    
-    def forward(self, x, edge_index, t_eval):
-        # 1. Encode temporal history via LSTM → stalks
-        stalks = self.lstm(x)[0]
-        # 2. Compute sheaf Laplacian with restriction maps
-        sheaf_output = self.sheaf_laplacian(stalks, edge_index)
-        # 3. Integrate neural ODE
-        y0 = sheaf_output
-        y_pred = odeint(self.ode_rhs, y0, t_eval, method='rk4')
-        return y_pred
+# For each brain region r, encode recent activity history
+hidden_state_r = LSTM(activity_history_r[-T:])  # stalk s_r ∈ R^d
 ```
 
-## Key Advantages over Prior Work
+Each brain region's recent temporal activity window → LSTM → hidden state (stalk in sheaf terminology).
 
-| Method | Anatomical Awareness | Edge Heterogeneity | Continuous Time |
-|--------|---------------------|-------------------|-----------------|
-| CNN-LSTM | ❌ | ❌ | ❌ |
-| BIOT (Transformer) | ❌ | ❌ | ❌ |
-| EvolveGCN | ✅ (static) | ❌ | ❌ |
-| ODEBRAIN | ✅ | ❌ | ✅ |
-| **BrainDyn** | ✅ | ✅ | ✅ |
+### 2. Restriction Maps (Learnable Edge Projections)
+```python
+# Project node stalks into edge-specific shared spaces
+# For edge (u, v), learnable maps F_uv, F_vu
+shared_u = F_uv @ stalk_u  # project node u into edge (u,v) space
+shared_v = F_vu @ stalk_v  # project node v into edge (u,v) space
+```
 
-## When to Use
+Restriction maps project neighboring nodes into common edge spaces for comparison.
 
-- Building generative models of brain dynamics (fMRI, EEG, spiking)
-- Need edge-specific message passing (not uniform GNN aggregation)
-- Continuous-time modeling of neural signals
-- In silico perturbation/ stimulation prediction
-- Multi-modal neural signal analysis (one model, multiple signal types)
+### 3. Sheaf Laplacian (Discrepancy-Based Message Passing)
+```python
+# Sheaf coboundary operator δ measures discrepancies
+discrepancy_uv = shared_u - shared_v  # in shared edge space
+# Sheaf Laplacian: Δ = δᵀδ
+# Message to node u from edge (u,v):
+message_u += F_uv.T @ discrepancy_uv
+```
 
-## Activation
+The sheaf Laplacian captures directional, edge-specific feature discrepancies — more expressive than standard graph Laplacian.
 
-braindyn, sheaf neural ODE, brain dynamics forecasting, neural ODE brain, sheaf Laplacian, generative brain model, in silico perturbation, continuous-time neural dynamics, restriction map neural network, spatiotemporal brain modeling
+### 4. Neural ODE Evolution
+```python
+# Continuous-time dynamics governed by neural ODE
+def dynamics(t, state):
+    messages = compute_sheaf_laplacian_messages(state)
+    return neural_net(torch.cat([state, messages], dim=-1))
+
+# Integrate using ODE solver (e.g., dopri5)
+trajectory = odeint(dynamics, initial_state, time_points)
+```
+
+### Full BrainDyn Forward Pass
+```python
+class BrainDyn(nn.Module):
+    def __init__(self, n_regions, hidden_dim, edge_dim, time_steps):
+        self.lstm = nn.LSTM(1, hidden_dim, batch_first=True)
+        self.restriction_maps = nn.ParameterDict(...)  # per-edge maps
+        self.ode_func = ODEFunc(hidden_dim)
+        
+    def forward(self, activity_history, connectome):
+        # 1. Encode history per region
+        stalks = {r: self.lstm(activity_history[:, :, r])[0][:, -1] 
+                  for r in range(n_regions)}
+        
+        # 2. Sheaf Laplacian message passing
+        sheaf_messages = self.compute_sheaf_messages(stalks, connectome)
+        
+        # 3. Neural ODE evolution
+        initial = torch.stack([stalks[r] for r in range(n_regions)], dim=1)
+        trajectory = odeint(self.ode_func, initial, self.time_points)
+        
+        return trajectory
+```
+
+## Key Concepts
+
+### Sheaf Theory Applied to Brain Networks
+- **Stalk**: Vector space attached to each node (brain region) — represents local dynamics state
+- **Restriction maps**: Linear maps encoding how neighboring regions "see" each other in a common edge space
+- **Sheaf Laplacian**: Generalized Laplacian capturing local consistency between neighboring nodes
+- **Coboundary**: Measures how much neighboring nodes disagree in shared edge spaces
+
+### Why Sheaves for Brain Networks?
+| Standard Graph | Sheaf Graph |
+|---|---|
+| Single shared feature space | Edge-specific shared spaces |
+| Symmetric message passing | Asymmetric, direction-aware |
+| Global Laplacian | Local restriction map learning |
+| Less expressive | More expressive for heterogeneous regions |
+
+## Applications & Datasets
+
+### 1. Resting-State fMRI (PNC Dataset)
+- **Task**: Forecast future BOLD activity from past
+- **Graph**: Structural/functional connectivity atlas
+- **Result**: Strong forecasting + supports in-silico perturbation
+
+### 2. Scalp EEG with Focal Epilepsy (TUSZ Dataset)
+- **Task**: Continuous-time EEG dynamics generation
+- **Challenge**: Highly non-stationary, seizure vs. non-seizure
+- **Result**: Cross-modal generalization of sheaf ODE framework
+
+### 3. NEST Spiking Network Simulator
+- **Task**: Predict population-level spike dynamics
+- **Advantage**: Ground truth available from simulator
+- **Result**: Validates generative accuracy
+
+## Use Cases
+
+### Generate Synthetic Brain Data
+```python
+# Given initial brain state and connectome
+synthetic_activity = braindyn.generate(
+    initial_state=resting_baseline,
+    connectome=subject_structural_connectivity,
+    duration=300  # 300 time steps
+)
+```
+
+### In Silico Perturbation Prediction
+```python
+# Test what happens if region X is perturbed
+perturbed_activity = braindyn.forward(
+    activity_history=baseline_history,
+    perturbation={region_X: +2.0}  # stimulation
+)
+delta = perturbed_activity - baseline_activity
+```
+
+### Brain Dynamics Inference
+```python
+# Infer underlying generative dynamics from recordings
+latent_trajectory = braindyn.encode(observed_fmri)
+# Analyze sheaf restriction maps for connectivity insights
+attention_weights = braindyn.get_restriction_map_weights()
+```
+
+## When to Use This Skill
+
+- Generating realistic synthetic brain activity (fMRI/EEG/spikes)
+- Modeling continuous-time brain dynamics with anatomical structure
+- In-silico brain stimulation/perturbation experiments
+- Cross-modal brain dynamics generalization
+- Building digital brain twins
+- Comparing brain dynamics across conditions (rest vs. task, healthy vs. disease)
+- Graph-structured neural dynamics with expressive message passing
+
+**Trigger keywords**: brain dynamics, generative brain model, sheaf neural ODE, fMRI forecasting, EEG dynamics, brain graph, continuous-time brain, neural ODE brain
+
+## Key Results
+
+- Outperforms standard RNN, GNN, and graph ODE baselines on forecasting
+- Sheaf Laplacian provides more expressive message passing than standard graph conv
+- Representations support downstream tasks (perturbation prediction, classification)
+- Works across modalities: fMRI, EEG, spiking simulator data
+
+## Connections to Related Work
+
+- **Neural ODEs** (Chen et al. 2018): Continuous-time dynamics via ODE solvers
+- **Sheaf Neural Networks** (Hansen & Ghrist 2020): Sheaf theory for GNNs
+- **Brain-informed GNNs**: Using connectome structure for neural models
+- **Digital Brain Twins**: Generative models for individualized brain simulation
+
+## Implementation Notes
+
+1. **Sheaf Laplacian computation** is the key differentiator — O(E × d²) memory
+2. ODE solver choice matters: `dopri5` for accuracy, `euler` for speed
+3. Sliding LSTM window size T is a critical hyperparameter (try T=10-30 time steps)
+4. Restriction maps can be initialized from structural connectivity as prior
+5. Loss: MSE on activity + regularization on sheaf consistency
