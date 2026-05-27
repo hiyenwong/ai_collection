@@ -1,3 +1,13 @@
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Arbor-TVB: Multi-Scale Co-Simulation Framework for Neural-Level Seizure Generation and Whole-Brain Propagation
+- [[arbor-tvb-multiscale-simulation]] - MPI-based integration of microscopic Arbor neurons with macroscopic TVB brain models, enabling bidirectional spike ↔ mean activity translation (arXiv: 2505.16861)
+  - First framework linking detailed spiking neurons (Arbor) with whole-brain network models (TVB) via MPI intercommunicator
+  - Real-time translation: discrete spikes → continuous mean activity, continuous input → synaptic currents
+  - Seizure case study: 38-region mouse brain model, seizure onset propagation from Arbor-embedded hippocampus to whole-brain
+  - Modular design: replace any TVB node with biologically realistic Arbor populations
+  - **Activation**: multiscale simulation, arbor tvb, seizure propagation, brain network model, mpi neuroscience, neural mass model
+
 ## 2026-05-28 - Medicine + Quantum (Cron Job)
 
 ### Parallel Multi-Circuit Quantum Feature Fusion in Hybrid Quantum-Classical Convolutional Neural Networks for Breast Tumor Classification
