@@ -217,3 +217,17 @@
   - **Activation**: entanglement distillation, entanglement purification, quantum repeater, quadratic error suppression, quantum channel fidelity
 
 
+
+## 2026-05-28 - Systems Engineering (Cron Job)
+
+### Distributed Architecture for FPGA-based Superconducting Qubit Control
+- [[fpga-distributed-qubit-control]] - FPGA分布式控制架构，支持NISQ时代实时中电路测量反馈 (arXiv: 2404.15260)
+  - 核心要点 1: 分布式轻量级FPGA核心，每个核心控制1-3个信号通道
+  - 核心要点 2: 模块化编译器栈支持门级和脉冲级抽象，集成TrueQ/pyGSTi/OpenQASM3
+  - **Activation**: fpga qubit control, quantum control architecture, distributed qubit control, QubiC platform, mid-circuit measurement feedback
+
+### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack (Updated)
+- [[quantum-compiler-feedback]] - 编译器驱动的亚微秒级反馈控制栈 (arXiv: 2605.22433) [Updated]
+  - 核心要点: 六阶段转译流水线（CFG→SSA→活跃性分析→寄存器分配→代码生成），跨板同步延迟<700ns
+  - **Activation**: quantum compiler feedback, QuCtrl-BELL, sub-microsecond feedback
+
