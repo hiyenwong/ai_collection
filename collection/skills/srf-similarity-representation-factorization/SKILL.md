@@ -1,281 +1,173 @@
 ---
 name: srf-similarity-representation-factorization
-description: Similarity-Based Representation Factorization (SRF) - computational method for recovering interpretable low-dimensional embeddings from similarity matrices across neural, behavioral, and AI data.
-version: 1.0.0
-category: brain-ai-alignment
-activation_keywords:
-  - representation factorization
-  - similarity matrix
-  - interpretable embeddings
-  - brain-AI alignment
-  - neural representation
-  - behavioral dimensions
-  - non-negative factorization
-author: arXiv:2605.26921
-paper_title: Revealing the core dimensions underlying representations in brains, behavior and AI
-paper_authors: Florian P. Mahner, Ka Chun Lam, Francisco Pereira, Martin N. Hebart
-paper_date: 2026-05-27
-arxiv_id: 2605.26921
+description: "Similarity-Based Representation Factorization (SRF) - 从相似性矩阵恢复低维、非负、可解释嵌入的通用计算方法。适用于神经、行为和计算数据的表征分析，支持稀疏采样和不完整数据，提供更高的假设检验效力。"
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2605.26921"
+  published: "2026-05-26"
+  authors: "Florian P. Mahner, Ka Chun Lam, Francisco Pereira, Martin N. Hebart"
+  tags: [neuroscience, representation-analysis, factorization, similarity-matrix, interpretability, neural-data, behavioral-data]
 ---
 
-# Similarity-Based Representation Factorization (SRF)
+# SRF: Similarity-Based Representation Factorization
 
-## Overview
+## 方法概述
 
-General computational method for recovering low-dimensional, non-negative, interpretable embeddings from similarity matrices derived from neural, behavioral, and AI data. Enables extraction of core dimensions underlying representations across diverse domains.
+SRF (Similarity-Based Representation Factorization) 是一种通用计算方法，用于从测量数据的相似性矩阵中恢复低维、非负、可解释的嵌入表征。
 
-**Core Innovation**: First unified method for interpretable dimension recovery from similarity matrices, working with sparse/incomplete data and providing higher statistical power than traditional similarity comparisons.
+## 核心优势
 
-## When to Use
+### 相比传统方法的改进
 
-Use this skill when:
-- Analyzing neural representations from brain imaging data
-- Comparing behavioral representations across tasks
-- Studying AI model representations and alignment
-- Recovering interpretable dimensions from similarity data
-- Working with sparsely sampled or incomplete datasets
-- Improving hypothesis testing power over similarity matrix comparison
+现有表征研究方法（通过刺激相似性比较）局限性：
+- 对塑造表征的维度访问有限
+- 可解释性受限
 
-Trigger words: representation factorization, SRF, similarity matrix, interpretable embedding, brain-AI alignment, dimension recovery.
+SRF 解决方案：
+- 恢复可解释的维度
+- 支持稀疏采样、不完整数据
+- 提供更高假设检验效力
 
-## Core Methodology
+## 技术原理
 
-### Key Advantages
+### 相似性矩阵分解
 
-1. **Interpretability**: Non-negative embeddings with clear semantic meaning
-2. **Robustness**: Works with sparse, incomplete similarity matrices
-3. **Power**: Higher statistical power than comparing full similarity matrices
-4. **Generalization**: Validated across neural, behavioral, AI datasets
+从相关性矩阵 $S$ 恢复低维嵌入 $W$：
 
-### Mathematical Framework
+$$W = f(S, constraints)$$
 
-Given similarity matrix $S \in \mathbb{R}^{n \times n}$ (positive):
+约束条件：
+- **非负性**：$W \geq 0$（提高可解释性）
+- **低维度**：$dim(W) << dim(S)$（简化分析）
+- **可解释性**：维度对应具体特征或概念
 
-$$S \approx W W^T$$
+### 数据兼容性
 
-where $W \in \mathbb{R}^{n \times k}_{\geq 0}$ is the non-negative embedding matrix with $k$ interpretable dimensions.
+SRF 支持多种数据类型：
+1. **神经数据**：fMRI、EEG、神经影像相似性
+2. **行为数据**：心理测量、决策相似性
+3. **计算数据**：AI模型表征相似性
 
-Optimization objective:
-$$\min_{W \geq 0} \|S - W W^T\|_F^2 + \lambda \|W\|_1$$
+## 应用场景
 
-### SRF Algorithm
+### 仿真验证
 
-**Input**: Similarity matrix $S$, desired dimensionality $k$
+- 从各种形式的表征数据中恢复可解释维度
+- 即使数据稀疏采样或不完整也能有效
 
-**Output**: Non-negative embeddings $W$ for each stimulus
+### 神经数据分析
 
-**Steps**:
-1. Initialize $W$ with positive values
-2. Apply multiplicative update rules (non-negative matrix factorization)
-3. Constrain column norms for interpretability
-4. Iterate until convergence
+**验证成果**：
+- 从神经数据恢复的维度与任务特定模型匹配
+- 预测独立行为属性
 
-## Implementation
+### 行为与计算研究
 
-### Step 1: Similarity Matrix Construction
+**改进探索性分析**：
+- 揭示隐藏在相似性矩阵背后的维度
+- 提高假设检验效力
 
-```python
-import numpy as np
+## 使用流程
 
-def construct_similarity_matrix(representations):
-    """
-    Build similarity matrix from representations.
-    
-    Parameters:
-    - representations: array (n_stimuli, n_features)
-    
-    Returns:
-    - S: similarity matrix (n_stimuli, n_stimuli)
-    """
-    # Normalize representations
-    reps_norm = representations / np.linalg.norm(representations, axis=1, keepdims=True)
-    
-    # Compute pairwise similarity (cosine)
-    S = reps_norm @ reps_norm.T
-    
-    # Ensure positive values
-    S = (S + 1) / 2  # shift to [0, 1] range
-    
-    return S
-```
+### 步骤 1: 构建相似性矩阵
 
-### Step 2: SRF Factorization
+从原始数据计算刺激或条件间的相似性：
 
 ```python
-def srf_factorize(S, k, max_iter=100, tol=1e-6):
-    """
-    Perform SRF factorization on similarity matrix.
-    
-    Parameters:
-    - S: similarity matrix (n, n), positive
-    - k: number of dimensions to recover
-    - max_iter: maximum iterations
-    - tol: convergence tolerance
-    
-    Returns:
-    - W: non-negative embeddings (n, k)
-    """
-    n = S.shape[0]
-    
-    # Initialize W with random positive values
-    W = np.abs(np.random.randn(n, k)) + 0.1
-    
-    for iteration in range(max_iter):
-        W_old = W.copy()
-        
-        # Multiplicative update (NMF-style)
-        # W <- W * (S @ W) / (W @ W.T @ W + epsilon)
-        
-        numerator = S @ W
-        denominator = W @ W.T @ W + 1e-10
-        
-        W = W * numerator / denominator
-        
-        # Normalize columns for interpretability
-        W = W / (W.sum(axis=0) + 1e-10)
-        
-        # Check convergence
-        if np.linalg.norm(W - W_old) < tol:
-            print(f"Converged at iteration {iteration}")
-            break
-    
-    return W
+# 示例：神经活动相似性
+S = compute_similarity_matrix(neural_activations)
 ```
 
-### Step 3: Dimension Interpretation
+### 步骤 2: 执行 SRF 分解
+
+应用 SRF 方法提取维度：
 
 ```python
-def interpret_dimensions(W, stimuli_labels, top_k=10):
-    """
-    Interpret recovered dimensions by top stimuli.
-    
-    Parameters:
-    - W: embeddings (n_stimuli, k)
-    - stimuli_labels: list of stimulus names
-    - top_k: number of top stimuli per dimension
-    
-    Returns:
-    - interpretations: dict mapping dimension to top stimuli
-    """
-    interpretations = {}
-    
-    for dim in range(W.shape[1]):
-        # Find stimuli with highest weights on this dimension
-        top_indices = np.argsort(W[:, dim])[-top_k:][::-1]
-        top_stimuli = [stimuli_labels[i] for i in top_indices]
-        top_weights = W[top_indices, dim]
-        
-        interpretations[f'Dimension {dim+1}'] = {
-            'top_stimuli': top_stimuli,
-            'weights': top_weights
-        }
-    
-    return interpretations
+# 非负低维嵌入
+W = srf_factorize(S, n_dimensions=5, nonnegative=True)
 ```
 
-### Step 4: Statistical Testing
+### 步骤 3: 解释维度
+
+分析每个维度的含义：
 
 ```python
-def test_dimension_relevance(W1, W2, null_distribution=None):
-    """
-    Test whether recovered dimensions are meaningful.
-    
-    Higher power than testing full similarity matrix.
-    """
-    # Compute dimension-wise statistics
-    dim_correlation = np.corrcoef(W1.T, W2.T)[:W1.shape[1], W1.shape[1]:]
-    
-    # Compare to null distribution
-    if null_distribution:
-        p_values = (null_distribution > dim_correlation).mean()
-    
-    return dim_correlation, p_values
+# 维度解释
+for i in range(n_dimensions):
+    interpret_dimension(W[:, i], stimulus_labels)
 ```
 
-## Validated Applications
+### 步骤 4: 假设检验
 
-### Neural Data
-
-- **fMRI**: Recover task-relevant dimensions from brain activity patterns
-- **Neural recordings**: Extract interpretable features from population responses
-- **EEG**: Identify core temporal patterns in similarity structure
-
-### Behavioral Data
-
-- **Psychology**: Recover latent dimensions from similarity judgments
-- **Decision making**: Extract choice-relevant features
-- **Perception**: Identify perceptual dimensions
-
-### AI Data
-
-- **DNN representations**: Recover interpretable dimensions from layer activations
-- **Model comparison**: Compare dimensions across architectures
-- **Brain-AI alignment**: Test whether AI dimensions match neural dimensions
-
-## Key Findings
-
-1. **Interpretability**: Recovered dimensions match task-specific model predictions
-2. **Prediction**: Dimensions predict independent behavioral properties
-3. **Exploration**: Improve exploratory analysis of representational structure
-4. **Power**: Higher statistical power for hypothesis testing
-
-## Practical Workflow
+使用恢复的维度进行统计检验：
 
 ```python
-# Full SRF pipeline
-def srf_pipeline(data, labels, k=5):
-    """Complete SRF analysis pipeline."""
-    
-    # 1. Compute similarity matrix
-    S = construct_similarity_matrix(data)
-    
-    # 2. Factorize with SRF
-    W = srf_factorize(S, k)
-    
-    # 3. Interpret dimensions
-    interpretations = interpret_dimensions(W, labels)
-    
-    # 4. Visualize
-    for dim, info in interpretations.items():
-        print(f"\n{dim}:")
-        for stim, weight in zip(info['top_stimuli'], info['weights']):
-            print(f"  {stim}: {weight:.3f}")
-    
-    return W, interpretations
+# 比较相似性矩阵的假设检验效力
+test_power = compare_power(SRF_dimensions, similarity_matrix_comparison)
 ```
 
-## Pitfalls & Solutions
+## 实验验证结果
 
-| Pitfall | Solution |
-|---------|----------|
-| Negative similarities | Shift/clip to positive range |
-| Too many dimensions | Use cross-validation to select k |
-| Sparse data | SRF robust to incomplete matrices |
-| Non-convergence | Increase iterations, adjust initialization |
-| Uninterpretable dimensions | Check dimension normalization |
+### 模拟数据
 
-## Comparison to Alternatives
+- 稀疏采样数据恢复准确率高
+- 不完整数据容忍性好
 
-| Method | Interpretability | Sparse Data | Statistical Power |
-|--------|-----------------|-------------|-------------------|
-| SRF | ✓ Non-negative | ✓ Robust | ✓ High |
-| RSA | ✗ No factors | ✗ Needs complete | ✗ Lower |
-| PCA | ✗ Negative values | ✗ Needs complete | Medium |
-| NMF | ✓ Non-negative | Medium | Medium |
+### 神经数据
 
-## Related Skills
+- 维度与任务特定模型一致
+- 预测独立行为测量
 
-- [[rsa-representational-similarity-analysis]] - RSA methodology
-- [[brain-ai-alignment]] - Brain-AI comparison
-- [[neural-representation]] - Neural representation analysis
-- [[interpretability-methods]] - Model interpretability
+### 行为数据
 
-## References
+- 提高探索性分析质量
+- 增强假设检验统计效力
 
-1. Original paper: arXiv:2605.26921 (Mahner et al., 2026)
-2. NMF foundations: Lee & Seung, Nature
-3. RSA methodology: Kriegeskorte et al., Frontiers
+## 关键贡献
 
-## Summary
+1. **通用性**：适用于神经、行为、计算数据
+2. **可解释性**：非负约束确保维度语义清晰
+3. **鲁棒性**：稀疏和不完整数据下仍有效
+4. **统计效力**：相比直接比较相似性矩阵，假设检验效力更高
+5. **跨域应用**：神经科学、心理学、AI表征研究
 
-SRF provides first unified method for interpretable dimension recovery from similarity matrices across neural, behavioral, and AI data. Key advantages: non-negative interpretable embeddings, robust to sparse/incomplete data, higher statistical power than similarity matrix comparison. Validated across diverse datasets with dimensions matching task models and predicting independent behaviors.
+## 与相关方法的对比
+
+| 方法 | 可解释性 | 稀疏数据支持 | 假设检验效力 |
+|------|---------|------------|------------|
+| RSA | 低 | 有限 | 中 |
+| PCA | 中 | 好 | 中 |
+| SRF | 高 | 好 | 高 |
+
+## 实践建议
+
+### 维数选择
+
+- 从 3-10 个维度开始探索
+- 根据可解释性和预测能力调整
+
+### 数据预处理
+
+- 相似性计算标准化
+- 处理缺失数据（SRF 支持不完整矩阵）
+
+### 结果验证
+
+1. 与任务特定模型对比
+2. 预测独立行为属性
+3. 统计显著性检验
+
+## Activation Keywords
+
+- similarity-based representation factorization
+- SRF method
+- representation dimensionality
+- neural representation analysis
+- interpretability embeddings
+- similarity matrix factorization
+- behavioral data analysis
+- computational representation
+
+## 参考文献
+
+arXiv:2605.26921 [cs.CV, q-bio.NC] - Submitted 26 May 2026
