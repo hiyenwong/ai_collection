@@ -168,6 +168,19 @@ attention_weights = braindyn.get_restriction_map_weights()
 
 **Trigger keywords**: brain dynamics, generative brain model, sheaf neural ODE, fMRI forecasting, EEG dynamics, brain graph, continuous-time brain, neural ODE brain
 
+## Tools Used
+
+- `read`
+- `write`
+- `exec`
+
+## Examples
+
+```text
+User: Model fMRI dynamics using anatomical connectivity.
+Agent: I will use the BrainDyn sheaf neural ODE pattern with region histories, restriction maps, and ODE rollout.
+```
+
 ## Key Results
 
 - Outperforms standard RNN, GNN, and graph ODE baselines on forecasting

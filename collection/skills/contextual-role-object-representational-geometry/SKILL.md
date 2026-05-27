@@ -1,4 +1,6 @@
 ---
+name: contextual-role-object-representational-geometry
+description: Research skill for contextual object-role effects on human brain representational geometry.
 title: "Contextual Role Modulates Object Representational Geometry in the Human Brain"
 source: "arXiv:2605.23111"
 authors: "Julien Dirani, Shankar Chawla, Leila Wehbe, Bradford Z. Mahon"

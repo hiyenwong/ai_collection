@@ -1,5 +1,6 @@
 ---
 name: quantum-ml-medical-diagnosis
+description: Design and implement quantum machine learning systems for medical diagnosis and healthcare applications.
 category: quantum-medical
 version: 1.0
 created: 2026-05-27
@@ -7,6 +8,8 @@ source: cron-hourly-research
 ---
 
 # Quantum ML for Medical Diagnosis
+
+## Description
 
 Design and implement quantum machine learning systems for medical diagnosis and healthcare applications.
 
@@ -59,6 +62,12 @@ Design and implement quantum machine learning systems for medical diagnosis and 
 - Auto-encoder + surrogate-driven training pipeline
 - Quantum reservoir for medical feature extraction
 
+## Tools Used
+
+- `read`
+- `write`
+- `exec`
+
 ## Source Papers
 
 - Existing quantum-medical papers in knowledge base
@@ -69,3 +78,10 @@ Design and implement quantum machine learning systems for medical diagnosis and 
 - Hybrid models require careful gradient flow management
 - Tensor network compression should match qubit count to latent dimension
 - Federated setups need MPC overhead analysis per latent dimension
+
+## Examples
+
+```text
+User: Design a privacy-preserving quantum workflow for medical image diagnosis.
+Agent: I will combine local tensor-network compression, secure aggregation, and a quantum refinement head.
+```

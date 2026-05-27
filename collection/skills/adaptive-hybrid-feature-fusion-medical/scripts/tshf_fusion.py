@@ -11,7 +11,6 @@ Three fusion strategies:
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import Tuple
 
 
 class TSHFFusion(nn.Module):
@@ -21,8 +20,13 @@ class TSHFFusion(nn.Module):
     before concatenation, enabling dynamic gradient balancing.
     """
 
-    def __init__(self, dim_classical: int, dim_quantum: int,
-                 init_temp_c: float = 1.0, init_temp_q: float = 1.0):
+    def __init__(
+        self,
+        dim_classical: int,
+        dim_quantum: int,
+        init_temp_c: float = 1.0,
+        init_temp_q: float = 1.0,
+    ):
         super().__init__()
         self.log_tau_c = nn.Parameter(torch.tensor(init_temp_c).log())
         self.log_tau_q = nn.Parameter(torch.tensor(init_temp_q).log())
@@ -75,8 +79,13 @@ class HybridQuantumClassicalClassifier(nn.Module):
         num_classes: number of output classes
     """
 
-    def __init__(self, dim_classical: int = 512, dim_quantum: int = 16,
-                 num_classes: int = 2, strategy: str = 'tshf'):
+    def __init__(
+        self,
+        dim_classical: int = 512,
+        dim_quantum: int = 16,
+        num_classes: int = 2,
+        strategy: str = "tshf",
+    ):
         super().__init__()
 
         # Placeholder classical backbone (flattened 28x28=784 input)
@@ -93,11 +102,11 @@ class HybridQuantumClassicalClassifier(nn.Module):
             nn.Linear(64, dim_quantum),
         )
 
-        if strategy == 'tshf':
+        if strategy == "tshf":
             self.fusion = TSHFFusion(dim_classical, dim_quantum)
-        elif strategy == 'dhf':
+        elif strategy == "dhf":
             self.fusion = DHFFusion(dim_classical, dim_quantum)
-        elif strategy == 'shf':
+        elif strategy == "shf":
             self.fusion = SHFFusion(dim_classical, dim_quantum)
         else:
             raise ValueError(f"Unknown strategy: {strategy}")
@@ -116,7 +125,7 @@ class HybridQuantumClassicalClassifier(nn.Module):
         return self.classifier(fused)
 
 
-def train_epoch(model: nn.Module, loader, optimizer, device='cpu'):
+def train_epoch(model: nn.Module, loader, optimizer, device="cpu"):
     """Single training epoch."""
     model.train()
     total_loss, correct, total = 0.0, 0, 0
@@ -136,11 +145,13 @@ def train_epoch(model: nn.Module, loader, optimizer, device='cpu'):
 def print_fusion_comparison(model_tshf, model_dhf, model_shf):
     """Print temperature values from TSHF model for analysis."""
     if isinstance(model_tshf.fusion, TSHFFusion):
-        print(f"TSHF temperatures: tau_c={model_tshf.fusion.tau_c.item():.4f}, "
-              f"tau_q={model_tshf.fusion.tau_q.item():.4f}")
+        print(
+            f"TSHF temperatures: tau_c={model_tshf.fusion.tau_c.item():.4f}, "
+            f"tau_q={model_tshf.fusion.tau_q.item():.4f}"
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Quick test with synthetic data
     print("Testing TSHF fusion strategies...")
 
@@ -149,7 +160,7 @@ if __name__ == '__main__':
     x = torch.randn(batch_size, 1, 28, 28)  # Mini grayscale images
     y = torch.randint(0, 2, (batch_size,))
 
-    for strategy in ['shf', 'dhf', 'tshf']:
+    for strategy in ["shf", "dhf", "tshf"]:
         model = HybridQuantumClassicalClassifier(strategy=strategy)
         optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
@@ -157,7 +168,7 @@ if __name__ == '__main__':
             loss, acc = train_epoch(model, [(x, y)], optimizer)
 
         print(f"\n{strategy.upper()}: loss={loss:.4f}, acc={acc:.4f}")
-        if strategy == 'tshf':
+        if strategy == "tshf":
             print_fusion_comparison(model, None, None)
 
     print("\nAll strategies tested successfully.")

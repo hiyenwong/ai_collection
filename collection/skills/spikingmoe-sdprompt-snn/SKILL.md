@@ -1,4 +1,6 @@
 ---
+name: spikingmoe-sdprompt-snn
+description: Research skill for SDPrompt-guided dynamic expert fusion in spiking neural networks.
 title: "SpikingMoE: SDPrompt-Guided Dynamic Expert Fusion in Spiking Neural Networks"
 source: "arXiv:2605.23188"
 authors: "Yukai Yang, Chenxi Qin, Jungang Li, Xin Zhang, Wenwei Shao, Liqun Chen"

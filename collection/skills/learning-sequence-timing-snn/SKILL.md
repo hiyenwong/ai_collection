@@ -203,6 +203,19 @@ predicted_replay_speed = model.freq_to_speed(lfp_freq)
 
 **Trigger keywords**: sequence timing, spiking temporal memory, replay speed, oscillatory clock, hippocampal sequences, theta sequences, sleep replay, temporal coding SNN
 
+## Tools Used
+
+- `read`
+- `write`
+- `exec`
+
+## Examples
+
+```text
+User: Explain how to encode element durations in an SNN sequence memory.
+Agent: I will use sub-population timing, sparse spatiotemporal codes, and oscillatory replay control.
+```
+
 ## Implementation Tips
 
 1. **Sub-population size**: 10-30 neurons is typically sufficient for unique identification
