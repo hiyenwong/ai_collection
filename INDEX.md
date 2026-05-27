@@ -1,3 +1,12 @@
+## 2026-05-27 - Medicine + Quantum (Cron Job - Wednesday 13:00)
+
+### HQNN Expressibility-Trainability Trade-off
+- [[hqnn-expressibility-trainability]] - Multi-objective NAS framework for HQNNs revealing classical components decouple trainability from PQC expressibility under full end-to-end training (arXiv: 2605.25768)
+  - Full end-to-end hybrid training can completely eliminate the expressibility-trainability trade-off
+  - Multi-objective NAS jointly optimizes expressibility, trainability, and task performance over combined classical-quantum design space
+  - Pure PQCs show only weak trade-off; hybrid architectures increasingly disrupt it
+  - **Activation**: HQNN expressibility trainability, hybrid quantum neural network optimization, quantum circuit barren plateau, neural architecture search quantum, PQC expressibility, quantum classical hybrid training
+
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
 ### Random Neural Networks Match Neural Population Dimensionality
