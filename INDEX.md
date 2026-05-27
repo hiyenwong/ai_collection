@@ -1,6 +1,13 @@
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
+### Quantum Neuromorphic Spiking Dynamics: Bridging Quantum Computing and Neural Dynamics
+- [[quantum-neuromorphic-spiking-dynamics]] - 量子神经形态脉冲动力学方法论，结合量子计算动力学与SNN原理实现能效计算 (arXiv:2605.XXXXX)
+  - 量子膜电位类比：量子比特状态类比神经元膜电位
+  - 量子脉冲时序编码：相位/振幅编码脉冲时间和强度
+  - 量子 Kuramoto 振荡器实现神经同步动力学
+  - **Activation**: quantum neuromorphic, spiking quantum computing, quantum SNN, quantum neural oscillator, quantum membrane potential
+
 ### Random neural networks match observed dimensionality of neural population recordings
 - [[random-neural-network-dimensionality]] - 随机神经网络维数匹配神经种群记录的DMFT方法论 (arXiv:2605.26551)
   - Dynamical Mean-Field Theory扩展纳入有限测量时间和跨语境变异
@@ -116,3 +123,13 @@
     99|    44|### High-fidelity molecular quantum logic gates resilient to interaction fluctuation
    100|    45|- [[quantum-ml-medical-diagnosis]] - Quantum ML methodologies for medical diagnosis and healthcare
    101|
+
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
+### Magic-Informed Quantum Architecture Search
+- [[magic-informed-quantum-architecture-search]] - MCTS+GNN量子架构搜索，利用魔量(nonstabilizerness)引导量子电路设计，实现可控量子资源优化 (arXiv: 2605.03932)
+  - 核心要点 1: 使用GNN估计量子电路的magic属性，作为MCTS搜索的启发式引导
+  - 核心要点 2: 支持高/低magic偏置，可搜索量子优势最大化和经典可模拟近似两种模式
+  - 核心要点 3: GNN泛化到分布外电路尺寸，跨问题类型一致提升搜索质量
+  - **Activation**: magic-informed architecture search, quantum architecture search MCTS, nonstabilizerness-guided circuit design, 魔力量子架构搜索, 非稳定化力量子电路设计
+
