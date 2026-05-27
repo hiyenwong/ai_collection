@@ -239,3 +239,25 @@
    164|  - **Activation**: HQNN thermography, breast cancer classification, quantum-classical attention, variational quantum circuit, multi-head quantum encoding
    165|
    166|
+## 2026-05-27 - Medicine + Quantum ML (Cron Job)
+
+### Enhancing Blood Cells Classification using Hybrid Quantum Neural Networks
+- [[hqnn-medical-image-classification]] - HQNN combining ResNet-50 + VQC for blood cell classification, +3.7% macro F1 over classical baselines, IBM hardware validated (arXiv: 2605.23324)
+  - ResNet-50 backbone with low-dimensional latent bottleneck + variational quantum circuit
+  - Three-way comparison: HQNN vs Classical Matched vs Baseline
+  - IBM quantum hardware evaluation shows modest noise degradation
+  - **Activation**: HQNN, blood cell classification, quantum medical imaging, ResNet quantum, variational quantum circuit, medical image classification quantum
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer
+- [[adaptive-hybrid-quantum-classical-feature-fusion-medical]] - Temperature-Scaled Hybrid Fusion (TSHF) for breast cancer diagnosis on BreastMNIST, 87.82% accuracy (arXiv: 2604.22903)
+  - Three fusion strategies: SHF (static), DHF (dynamic), TSHF (temperature-scaled)
+  - TSHF resolves optimization bottlenecks via learnable scalar for gradient balancing
+  - Dual-branch pipeline: classical + quantum feature extraction with complementary fusion
+  - **Activation**: TSHF, temperature-scaled fusion, breast cancer quantum, hybrid quantum-classical, feature fusion, BreastMNIST, gradient balancing
+
+### SDA-QEC: Diffusion Augmentation with Quantum-Enhanced Classification
+- [[quantum-generative-diffusion-medical]] - Simplified Diffusion Augmentation + Quantum-Enhanced Classification for coronary angiography, 98.33% accuracy (arXiv: 2601.18556)
+  - Lightweight diffusion augmentor for minority class oversampling
+  - Quantum feature layer in MobileNetV2 for Hilbert space mapping
+  - Addresses class imbalance in medical imaging (98.33% sensitivity + specificity)
+  - **Activation**: SDA-QEC, diffusion augmentation, quantum-enhanced classification, coronary angiography, class imbalance medical, MobileNetV2 quantum
