@@ -133,3 +133,56 @@
   - 核心要点 3: GNN泛化到分布外电路尺寸，跨问题类型一致提升搜索质量
   - **Activation**: magic-informed architecture search, quantum architecture search MCTS, nonstabilizerness-guided circuit design, 魔力量子架构搜索, 非稳定化力量子电路设计
 
+### Adaptive Reinforcement Learning for Robust Open Quantum System Control
+- [[rl-quantum-control]] - 多任务SAC强化学习框架用于开放量子系统控制，跨Hamiltonian分布学习最优脉冲序列 (arXiv:2605.26925)
+  - 多任务策略共享：单个策略处理多种量子控制任务，同时适应系统参数
+  - 最大熵RL(SAC)确保探索稳定性，自动温度调优
+  - 在未知参数下实现高保真度控制，无需显式系统辨识
+  - **Activation**: rl quantum control, multi-task quantum control, SAC quantum control, reinforcement learning quantum, 强化学习量子控制
+
+### dSABRE & ATHENA: Distributed Quantum Computing Routing and Scheduling
+- [[distributed-quantum-routing]] - 多核分布式量子计算机路由和调度方法论，最小化EPR对消耗 (arXiv:2605.21960, 2605.21795)
+  - dSABRE启发式路由：SABRE风格路由适配分布式架构，最小化纠缠资源使用
+  - ATHENA编译器优化：协调量子比特移动和门执行，考虑隐形传态延迟和成功率
+  - SQARL无尺度RL分配：训练跨电路大小的通用分配策略
+  - **Activation**: distributed quantum routing, dSABRE, ATHENA compiler, EPR optimization, quantum circuit allocation, 分布式量子路由
+
+### QuCtrl-BELL: Compiler-Driven Quantum Feedback Control
+- [[quantum-compiler-feedback]] - 编译器驱动的微秒级反馈控制栈，将电路优化与硬件级实时反馈结合 (arXiv:2605.22433)
+  - 离线编译所有测量结果对应的控制序列，硬件级执行
+  - 反馈延迟O(1)，不随电路复杂度增长，关键用于量子纠错
+  - BELL序列（Basic Embedded Logic for Low-latency）架构
+  - **Activation**: quantum feedback control, compiler quantum control, QuCtrl-BELL, sub-microsecond feedback, low-latency quantum, 量子编译器反馈
+
+### Performance Limits of Fault-Tolerant Quantum Error Correction
+- [[quantum-error-correction-limits]] - 现实条件下的量子纠错性能极限分析，考虑测量误差、解码延迟和控制噪声 (arXiv:2605.24501)
+  - 现实阈值始终低于理想阈值（测量误差降低10-30%）
+  - 解码延迟引入等待错误：p_idle = 1 - exp(-t_decode / T_1)
+  - 系统化评估所有误差源对资源开销的影响
+  - **Activation**: QEC performance limits, fault tolerance analysis, syndrome measurement error, decoder latency, realistic QEC, 量子纠错性能极限
+
+### Homomorphic Quantum Error Correction
+- [[homomorphic-qec]] - 同态量子纠错方法论，保护服务器端处理的量子数据免受未授权访问和环境噪声 (arXiv:2605.25692)
+  - 代数兼容性分析：同态操作与量子纠错码的兼容性
+  - 同时实现隐私保护和噪声抵抗
+  - **Activation**: homomorphic quantum error correction, quantum data protection, 同态量子纠错
+
+### Scalable Quaternary Message-Passing Decoding for QEC
+- [[scalable-quaternary-qec-decoding]] - 可扩展的四元消息传递解码方法，解决表面码等QEC解码的可扩展性和可解释性问题 (arXiv:2605.24177)
+  - 四元置信传播(Belief Propagation)解码器
+  - 解决大规模量子纠错解码的可扩展性挑战
+  - **Activation**: quaternary QEC decoding, message-passing decoding, belief propagation quantum, scalable QEC decoder
+
+### Quantum Sensing and QEC: Two Sides of the Same Coin
+- [[quantum-sensing-qec-duality]] - 揭示量子传感与量子纠错的内在联系：最优传感态设计可借鉴QEC码结构 (arXiv:2605.24120)
+  - 参数估计最优态与纠错码的等价性
+  - 统一量子计量与纠错的理论框架
+  - **Activation**: quantum sensing QEC, quantum metrology error correction, quantum parameter estimation
+
+### SQARL: Size-Agnostic RL for Distributed Quantum Circuit Allocation
+- [[sqarl-quantum-allocation]] - 无尺度强化学习方法用于分布式量子电路分配，适应不同规模的量子处理器 (arXiv:2605.27027)
+  - 训练策略适应任意电路尺寸和硬件拓扑
+  - 奖励函数：最小化EPR消耗和执行时间
+  - 在线部署新电路分配
+  - **Activation**: SQARL, size-agnostic RL quantum, circuit allocation RL, distributed quantum allocation
+
