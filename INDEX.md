@@ -1,3 +1,19 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### SpikeReg: Energy-Efficient 3D Deformable Medical Image Registration with Spiking Neural Networks
+- [[spikereg-snn-medical-registration]] - First SNN-based 3D deformable brain MRI registration matching ANN accuracy at 12.8% spike rate and 55.5× energy reduction (arXiv: 2605.25144)
+  - ANN-to-SNN conversion via layer-wise weight transfer + activation-percentile threshold calibration
+  - Surrogate gradient fine-tuning with local cross-correlation + diffusion regularization + spike-rate sparsity
+  - Negative findings: displacement distillation hurts, Dice-loss ANN teachers fail to transfer
+  - **Activation**: SNN medical imaging, neuromorphic registration, energy-efficient 3D perception, ANN-to-SNN conversion
+
+### Neuromorphic LiDAR-based Bird's Eye View Object Detection using Energy-efficient Spiking Neural Networks
+- [[neuromorphic-lidar-bev-snn]] - End-to-end SNN encoder-decoder for 3D LiDAR BEV object detection with 3.33× synaptic energy reduction over CNN, 92.05/87.04/86.51 AP on KITTI (arXiv: 2605.25293)
+  - Learned spike encoding outperforms hand-crafted Poisson/latency/z-axis encoding strategies
+  - Two variants: membrane potential (max accuracy) and fully binary (neuromorphic hardware deployment)
+  - Block-wise energy analysis via SynOps/MAC proxy model
+  - **Activation**: neuromorphic autonomous driving, SNN object detection, LiDAR perception, spike encoding
+
 ## 2026-05-27 - Medicine + Quantum (Cron Job - Wednesday 13:00)
 
 ### HQNN Expressibility-Trainability Trade-off
