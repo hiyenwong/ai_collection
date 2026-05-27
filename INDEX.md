@@ -22,6 +22,13 @@
   - 假设检验效力高于直接比较相似性矩阵
   - **Activation**: SRF, representation factorization, similarity matrix, interpretability
 
+### Signal-to-Noise Ratio and Sample Size Govern Representational Alignment in Neural Networks
+- [[snr-sample-size-representational-alignment]] - 信噪比和样本数量调控神经网络表征对齐，揭示对齐与数据质量的单调依赖和与样本数量的非单调关系 (arXiv:2605.26973)
+  - SNR单调调控对齐：数据质量越高，表征对齐越强
+  - 样本数量非单调影响：插值阈值附近对齐最小化
+  - 对齐与泛化解耦：强对齐不保证好性能
+  - **Activation**: representational alignment, SNR alignment, sample size, interpolation threshold, universal representations
+
 ### NeuroRing: Scaling Spiking Neural Networks via Multi-FPGA Bidirectional Ring Topologies and Stream-Dataflow Architectures
 - [[neuroring-multi-fpga-snn]] - 多FPGA双向环形拓扑SNN加速器，实现实时因子0.83的快速执行 (arXiv:2604.28059)
   - 双向环形拓扑：确定性延迟、容错性、线性扩展
