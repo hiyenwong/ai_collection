@@ -1,5 +1,19 @@
 ## 2026-05-27 - Neuroscience Research (Cron Job)
 
+### Maximum Entropy Networks for Context-Dependent Neural Computations
+- [[maximum-entropy-neural-connectivity]] - Normative maximum entropy principle for deriving neural connectivity from task constraints, independent of gradient descent — bridges theory with trained network structure (arXiv: 2605.25607)
+  - 核心要点 1: Connectivity = probability distribution over weights maximizing Shannon entropy under task constraints; yields unique "least-biased" solution consistent with function
+  - 核心要点 2: Maximum entropy connectivity matches gradient-descent-trained networks quantitatively across different learning regimes; context count drives phase transition from specialized to random populations
+  - **Activation**: maximum entropy, neural connectivity, context-dependent computation, normative neuroscience, information theory, brain network structure
+
+### Multi-Objective SNN Oscillation Optimization with NSGA-III
+- [[multi-objective-snn-oscillation]] - NSGA-III genetic algorithm for simultaneously optimizing recurrent SNN connectivity to match neural firing rates and oscillation frequencies — validated on brain organoids (arXiv: 2605.25224)
+  - 核心要点 1: Oscillation frequencies are more parameter-sensitive than firing rates; NSGA-III Pareto frontier reveals trade-offs between matching multiple neural targets simultaneously
+  - 核心要点 2: Framework generalizes to brain organoids and decision-making models with transient epoch dynamics; identified low-activity regime for decision states
+  - **Activation**: spiking neural network, NSGA-III, neural oscillation, Izhikevich neuron, brain organoid, multi-objective optimization, recurrent SNN
+
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
 ### Random Neural Networks & Neural Population Dimensionality
 - [[random-neural-network-dimensionality]] - DMFT framework quantitatively predicts low dimensionality in large-scale neural population recordings by incorporating finite measurement time and behavioral context variability (arXiv: 2605.26551)
   - 核心要点 1: Dynamical Mean-Field Theory predicts covariance structure of randomly-connected networks; finite-T corrections align predictions with experiment
