@@ -1,5 +1,11 @@
 ## 2026-05-27 - Medicine + Quantum (Cron Job)
 
+### Design Space Exploration of Hybrid Quantum Neural Networks for Chronic Kidney Disease
+- [[hqnn-design-space-exploration]] - Systematic benchmarking of 625 HQNN configurations for CKD diagnosis, IQP+Ring entanglement achieves best accuracy-efficiency trade-off (arXiv: 2604.13608)
+  - Core finding: high performance does NOT require large parameter counts or complex circuits
+  - IQP encoding + Ring entanglement is optimal combo — captures pairwise correlations efficiently with minimal depth
+  - **Activation**: HQNN design space, quantum neural network architecture, hybrid quantum medical diagnosis, quantum encoding schemes, CKD classification, quantum circuit benchmarking
+
 ### Analyzing Blood Cells with QML: Equilibrium Propagation and VQCs for Acute Myeloid Leukemia Detection
 - [[qml-equilibrium-propagation-medical]] - Energy-based backprop-free quantum training for blood cell classification, competitive under NISQ constraints (arXiv: 1808)
   - Equilibrium Propagation computes gradients via energy differences, avoiding backpropagation
