@@ -20,6 +20,20 @@
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
+### Sensation Modulating Network: An Embodied Cognitive Architecture
+- [[sensation-modulating-network]] - 完整具身认知架构，通过haltability(拮抗协同均衡)调和认知主义与4E认知，从对手动力学涌现意向性 (arXiv:2605.26856)
+  - Haltability链：Opponency → Co-activation → Halt → Attention → Intentional Directedness
+  - 双信号属性：自我/世界区分作为结构布线特征，无需外部概念
+  - 四层行动模式：基底(自主) → 可停 → 可协商(递归所在) → 交易性(常规化)
+  - **Activation**: sensation modulating network, SMN, haltability, opponent dynamics, embodied cognitive architecture, intentional directedness, cognitivism vs 4E
+
+### PRISM: Probabilistic Recurrent Intention Switching Model
+- [[prism-probabilistic-intention-switching]] - 多意图逆强化学习框架，轻量递归网络映射观测历史到意图分布，O(nK) E步分解无需变分近似 (arXiv:2605.26998)
+  - EM目标精确分解为独立意图子问题，闭式求解
+  - 首个大规模机器人应用(BridgeData V2)，发现目标切换普遍存在于生物和人工系统
+  - 从无标注演示恢复时间连贯的命名意图
+  - **Activation**: PRISM, multi-intention IRL, intention switching, recurrent intention distribution, goal switching, EM decomposition, non-Markovian IRL
+
 ### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
 - [[braindyn-sheaf-neural-ode]] - Sheaf神经ODE框架，用于连续时间脑动力学建模，结合LSTM stalks与sheaf Laplacian消息传递 (arXiv:2605.19324)
   - LSTM滑动窗口编码脑区活动历史生成stalks
