@@ -1,3 +1,13 @@
+## 2026-05-27 - Medicine + Quantum Metrology (Cron Job)
+
+### Journey in quantum metrology and sensing from foundations to applications: a review
+- [[quantum-metrology-sensing-review]] - 93页量子计量与传感综述，涵盖参数估计、量子Fisher信息、量子成像与照明、原子钟 (arXiv: 2605.21702)
+  - 经典/贝叶斯参数估计框架与量子Cramér-Rao界
+  - 量子Fisher信息矩阵用于多参数估计与资源检测
+  - 量子照明在噪声环境中的目标检测优势
+  - 量子传感在生物医学中的应用(NV中心磁力计、量子增强MRI)
+  - **Activation**: quantum metrology, quantum sensing, quantum Fisher information, quantum thermometry, quantum imaging, quantum illumination
+
 ## 2026-05-27 - Medicine + Quantum ML (Cron Job)
 
 ### High-fidelity molecular quantum logic gates resilient to interaction fluctuation
