@@ -1,3 +1,17 @@
+## 2026-05-27 - Neuroscience Research (Cron Job)
+
+### Random neural networks match observed dimensionality of neural population recordings and motivate stronger experimental tests
+- [[random-network-neural-dimensionality]] - First quantitative validation that minimally structured random neural networks can account for observed low dimensionality using DMFT with finite measurement time corrections (arXiv: 2605.26551)
+  - Core methodology: Dynamical Mean-Field Theory extended with measurement time and behavioral context variability
+  - Key finding: manifold orientation similarity more sensitive to network structure than dimensionality alone
+  - **Activation**: neural dimensionality, random neural network, population recording, DMFT, neural manifold, connectivity inference
+
+### Revealing the core dimensions underlying representations in brains, behavior and AI
+- [[srf-similarity-representation-factorization]] - Similarity-Based Representation Factorization (SRF) for recovering interpretable non-negative embeddings from similarity matrices across neural/behavioral/AI data (arXiv: 2605.26921)
+  - Core methodology: Non-negative factorization of similarity matrices with robustness to sparse/incomplete data
+  - Key advantage: higher statistical power for hypothesis testing than traditional RSA
+  - **Activation**: representation factorization, SRF, similarity matrix, interpretable embedding, brain-AI alignment
+
 ## 2026-05-27 - Medicine + Quantum (Cron Job)
 
 ### What Molecular Structure Cannot Tell Us: A Taxonomy of Explainability Gaps in GNN-Based Drug Toxicity Prediction
