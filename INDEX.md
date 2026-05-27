@@ -1,3 +1,10 @@
+## 2026-05-27 - Medicine + Quantum (Cron Job)
+
+### A novel perspective on denoising using quantum localization with application to medical imaging
+- [[a-novel-perspective-on-denoising-using-quantum-loc]] - Quantum-enhanced medical image classification framework (arXiv: 2405.12226)
+  - Core methodology: Background noise in many fields such as medical imaging poses significant challenges for accurate diagnosis, prompting the development of denoising algorithms. Traditional methodologies, however, ofte
+  - **Activation**: diagnosis, measurement, image, medical, noise, quantum
+
 ## 2026-05-27 - Medicine + Quantum Metrology (Cron Job)
 
 ### Journey in quantum metrology and sensing from foundations to applications: a review
