@@ -268,3 +268,14 @@
   - Quantum feature layer in MobileNetV2 for Hilbert space mapping
   - Addresses class imbalance in medical imaging (98.33% sensitivity + specificity)
   - **Activation**: SDA-QEC, diffusion augmentation, quantum-enhanced classification, coronary angiography, class imbalance medical, MobileNetV2 quantum
+
+## 2026-05-27 - Medicine + Quantum (Cron Job)
+
+### MediQ-GAN: Quantum-Inspired GAN for High Resolution Medical Image Generation
+- [[mediq-gan-medical-image-generation]] - Quantum-inspired GAN with dual-stream generator and prototype-guided skip connections for medical image augmentation (arXiv: 2506.21015)
+  - Dual-stream architecture fusing classical and quantum-inspired branches via prototype-guided skip connections
+  - VQCs inherently preserve full-rank mappings, avoid rank collapse, and balance expressivity with trainability
+  - Outperforms state-of-the-art GANs and diffusion models on three medical imaging datasets
+  - First latent-geometry and rank-based analysis of quantum-inspired GANs
+  - **Activation**: quantum gan medical, mediq-gan, medical image augmentation, dual-stream quantum generator, prototype-guided skip, variational quantum circuit gan, rank collapse prevention
+
