@@ -1,3 +1,14 @@
+## 2026-05-27 - Medicine + Quantum ML (Cron Job)
+
+### Quantum ML Medical Diagnosis Consolidated Skill
+- [[quantum-ml-medical-diagnosis]] - Comprehensive quantum ML methodologies for medical diagnosis and healthcare
+  - Core pattern 1: Hybrid quantum-classical feature fusion with temperature-scaled balancing (TSHF)
+  - Core pattern 2: Tensor-network compression enabling small-qubit quantum processing
+  - Core pattern 3: Privacy-aware federated quantum learning with MPC-secured aggregation
+  - Core pattern 4: Quantum transfer learning with fair benchmarking under NISQ constraints
+  - Core pattern 5: Quanvolutional neural networks for disease detection
+  - **Activation**: quantum medical diagnosis, quantum healthcare, federated quantum, quantum transfer learning, quantum neural network, medical imaging quantum, quanvolutional, HQNN
+
 ## 2026-05-27 - Medicine + Quantum (Cron Job)
 
 ### Design Space Exploration of Hybrid Quantum Neural Networks for Chronic Kidney Disease
