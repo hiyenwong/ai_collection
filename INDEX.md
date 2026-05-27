@@ -1,6 +1,23 @@
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
+### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
+- [[braindyn-sheaf-neural-ode]] - Sheaf神经ODE框架，用于连续时间脑动力学建模，结合LSTM stalks与sheaf Laplacian消息传递 (arXiv:2605.19324)
+  - LSTM滑动窗口编码脑区活动历史生成stalks
+  - Restriction maps投影到边特定共享空间
+  - Sheaf Laplacian促进神经元间消息传递
+  - Neural ODE控制连续时间演化
+  - 支持fMRI/EEG/脉冲网络多模态
+  - **Activation**: sheaf neural ODE, brain dynamics, fMRI modeling, EEG forecasting, brain graphs, sheaf Laplacian, continuous dynamics
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[stm-sequence-timing-replay]] - 脉冲时序记忆模型，学习序列时序和重放速度控制，振荡背景输入作为时钟信号 (arXiv:2605.22523)
+  - 元素特定神经元群顺序激活编码时长
+  - 振荡背景输入控制重放速度
+  - 稀疏时空模式编码流逝时间
+  - 清醒/睡眠重放速度与EEG/LFP振荡特征相关
+  - **Activation**: spiking temporal memory, sequence timing, replay speed, oscillatory clock, sTM model, sequence processing
+
 ### Quantum Neuromorphic Spiking Dynamics: Bridging Quantum Computing and Neural Dynamics
 - [[quantum-neuromorphic-spiking-dynamics]] - 量子神经形态脉冲动力学方法论，结合量子计算动力学与SNN原理实现能效计算 (arXiv:2605.XXXXX)
   - 量子膜电位类比：量子比特状态类比神经元膜电位
