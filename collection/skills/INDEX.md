@@ -1,4 +1,20 @@
 
+## 2026-05-28 - Systems Engineering + Quantum Computing (Cron Job)
+
+### Quantum-Native Maximum Likelihood Detection in Random Access Channel with Overloaded MIMO
+- [[grover-mimo-detection]] - Quantum MLD for overloaded MIMO using Grover Adaptive Search with 65% rotation reduction via search space pruning (arXiv: 2605.19389)
+  - Binary optimization formulation → QUBO, no penalty terms needed
+  - GAS with search space reduction and optimal parameter settings via probability analysis
+  - Quadratic speedup over classical exhaustive search in fault-tolerant regime
+  - **Activation**: quantum mimo, grover search, overloaded MIMO, maximum likelihood detection, GAS, quantum wireless
+
+### Quantum Model for CVRPTW
+- [[grover-cvrptw-quantum]] - Qubit-efficient quantum CVRPTW solver using Grover Search with split-inspired modeling adding only O(N) qubits (arXiv: 2605.18393)
+  - Quantum formulation of classical route-first-cluster-second decomposition
+  - Oracle checks capacity and time-window feasibility
+  - Linear qubit scaling vs O(N^2) for standard TSP formulations
+  - **Activation**: quantum vehicle routing, CVRPTW, grover optimization, logistics quantum, quantum combinatorial optimization
+
 ## 2026-05-26 - Computer Science + Quantum Computing (Cron Job)
 
 ### QUTest: A Native Testing Framework for Quantum Programs
