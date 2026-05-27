@@ -27,11 +27,13 @@ Compiler-driven sub-microsecond feedback control methodology for scalable quantu
 - **Sub-microsecond latency**: Achieve feedback within hardware coherence times
 - **Scalability**: Decouple feedback latency from qubit register size
 
-### QuCtrl-BELL Architecture
-- **BELL sequences**: Basic Embedded Logic for Low-latency control
-- **Compiler pipeline**: Circuit analysis -> feedback extraction -> hardware code generation
-- **Real-time decoder**: Syndrome measurement triggers pre-compiled correction sequences
-- **State machine**: Hardware FSM executes feedback without software intervention
+### QuCtrl-BELL Architecture (arXiv:2605.22433)
+- **Six-stage transpilation pipeline**: CFG construction → SSA conversion → liveness analysis → graph-coloring register allocation → code generation → step-table generation
+- **Python-embedded DSL**: Domain-specific language for quantum control programs
+- **Control flow decoupling**: Separates loops/branches/synchronization from hardware state data
+- **Cross-board synchronization**: Sub-700ns feedback loops across distributed boards without host intervention
+- **RISC-V + PXIe deployment**: Verified on real trapped-ion hardware platform
+- **Key tradeoff resolved**: Sub-microsecond hardware coupling vs. modular software abstractions
 
 ### Key Innovations
 1. **Compile-time analysis**: Identify all possible measurement outcomes and corresponding actions
