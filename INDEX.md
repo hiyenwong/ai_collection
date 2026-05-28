@@ -131,6 +131,15 @@
   - **Activation**: trapped-ion QEC, multiqubit gates, fault-tolerant ion trap, scalable QEC compatibility
 
 
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
+### Can Quantum Federated Learning Withstand Circuit-Level Backdoors?
+- [[quantum-federated-backdoor-cult]] - CULT model formalizes 4 stealthy backdoor attacks on QFL via Grover/Pauli/Bit-flip/Sign-flip mechanisms (arXiv: 2605.27416)
+  - Single malicious client causes 50% accuracy drop under FedAvg
+  - Existing defenses (Krum, Multi-Krum, FoolsGold, FLGuardian, Mud-HoG) fail worst-case
+  - Quantum measurement noise provides natural cover for malicious gradients
+  - **Activation**: QFL security, quantum federated backdoor, CULT attack, variational circuit security
+
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
