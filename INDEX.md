@@ -1,3 +1,22 @@
+## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
+
+### Dynamic Entanglement Packet Scheduling for Quantum Networks
+- [[dynamic-entanglement-packet-scheduling]] - Online dynamic scheduler for quantum entanglement distribution with real-time scheduling, defer, retry, and drop decisions. Outperforms static TDMA with lower completion time, higher completion ratio, and graceful degradation (arXiv: 2605.28795)
+  - Online controller dynamically schedules/defers/retries/drops entanglement reservations
+  - Lower completion time, higher completion ratio, and higher throughput vs static EDF baseline
+  - Graceful degradation under overload: drops lowest-priority vs cascading failures
+  - Real-time feedback from quantum hardware to classical network controller
+  - **Activation**: quantum network scheduling, entanglement distribution, dynamic scheduler, quantum internet, resource allocation, online control
+
+### VarEFTQC: Learning Logical Operations for Arbitrary QEC Codes
+- [[var-eft-qc-logical-learning]] - Learning-based framework for discovering hardware-adapted logical operations in arbitrary quantum error correction codes, including non-additive codes. VarEFTQC co-designs non-additive encodings with noise-adapted logical gate sets (arXiv: 2605.28162)
+  - Given only encoding circuit, discovers physical logical operations with structural constraints
+  - VarEFTQC co-design: jointly optimizes encoding + logical ops for specific noise models
+  - Enables transversal IQP-type families and low-depth universal gate sets
+  - Validates by rediscovering known logical operations on standard stabilizer codes
+  - **Activation**: quantum error correction, logical operations learning, non-additive codes, VarEFTQC, fault-tolerant quantum computing, variational optimization
+
+
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
