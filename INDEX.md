@@ -1,3 +1,12 @@
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Latent-Conditioned Parameterized Quantum Circuits as Universal Approximators for Distributions over Quantum States
+- [[latent-conditioned-pqc-universal-approximator]] - 量子态分布通用逼近定理：LPQC在1-Wasserstein距离下逼近任意密度算子概率分布 (arXiv: 2605.28690)
+  - 核心：经典神经网络将潜变量映射到PQC参数，证明量子分布设置的通用逼近定理
+  - MoE架构+多模态潜先验缓解barren plateau问题
+  - QM9分子结构集成实验验证，超越量子生成基线
+  - **Activation**: latent-conditioned PQC, LPQC, universal approximator quantum states, quantum generative modeling, Wasserstein distance quantum, barren plateau MoE
+
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
 ### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
