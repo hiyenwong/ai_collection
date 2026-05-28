@@ -1,5 +1,19 @@
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
+### Backpropagation Brain Hierarchy Misalignment
+- [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度与大脑视觉处理层级的不匹配研究，揭示AI与大脑学习机制的根本差异 (arXiv:2605.28693)
+  - 反向传播梯度可预测fMRI和MEG信号，但空间-时间组织与大脑层级不一致
+  - 深度网络与大脑共享相似表征，但依赖不同的学习机制
+  - DINOv3自监督模型验证，8个视觉模型复现
+  - **Activation**: backpropagation, brain hierarchy, visual cortex, fMRI, MEG, DINOv3, representation learning, gradient alignment
+
+### EEG-FM-Audit Systematic Evaluation
+- [[eeg-fm-audit-systematic-evaluation]] - EEG基础模型三组件系统评估管道：ASHA基准测试+范式消融+神经生理学探测 (arXiv:2605.26910)
+  - 适当调优的监督基线可匹配或超越高级FMs，参数量显著更少
+  - 学习范式有效性高度依赖数据集规模和架构
+  - NPP框架揭示FMs依赖特定生理特征，建立可解释性框架
+  - **Activation**: EEG foundation model, systematic evaluation, ASHA benchmarking, paradigm ablation, neurophysiological probing, neural decoding, interpretability
+
 ### Genetic Algorithm vs Gradient Descent for DEBI-NN
 - [[genetic-algorithm-gradient-descent-debi-nn]] - Genetic algorithm superior to gradient descent for training distance-encoding biomorphic neural networks (DEBI-NN) in low-data medical regimes (arXiv:2605.27411)
   - GA consistently achieves 80-100% accuracy vs GD 66-78% on medical datasets

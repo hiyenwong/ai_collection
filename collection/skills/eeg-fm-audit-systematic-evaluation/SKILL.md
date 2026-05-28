@@ -1,176 +1,142 @@
 ---
 name: eeg-fm-audit-systematic-evaluation
-description: "EEG Foundation Model systematic evaluation pipeline. Three-component audit framework: transparently optimizing supervised baselines, ablating learning paradigms, neurophysiological probing. Use when: evaluating EEG foundation models, assessing baseline fairness, probing neural representations, auditing model reliability."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.26910"
-  published: "2026-05-26"
-  authors: "Xianheng Wang, Yige Yang, Damien Coyle"
-  tags: [eeg, foundation-model, audit, baseline-tuning, neurophysiological-probing, systematic-evaluation]
-
+description: EEG基础模型系统评估和分析管道。提出三组件评估框架：ASHA基准测试、范式级消融研究、神经生理学探测，揭示EEG-FMs的真实性能和可解释性。Activation: EEG foundation model, systematic evaluation, ASHA benchmarking, paradigm ablation, neurophysiological probing, neural decoding, interpretability.
+version: 1.0.0
+author: Xianheng Wang, Yige Yang, Damien Coyle
+arxiv_id: 2605.26910
+created: 2026-05-28
+category: neuroscience
+tags:
+  - eeg-foundation-model
+  - systematic-evaluation
+  - benchmarking
+  - interpretability
+  - neural-decoding
 ---
 
-# EEG-FM-Audit: Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
+# EEG-FM-Audit: Systematic Evaluation Pipeline
 
----
+## 核心问题
 
-## Overview
+大型EEG基础模型（FMs）在跨认知任务解码中展现巨大潜力，但现有研究存在三大关键局限：
+1. 监督基线调优不透明
+2. 复杂学习范式的贡献未验证
+3. 模型决策缺乏透明度
 
-EEG Foundation Models (FMs) show great potential for decoding EEG signals across diverse cognitive tasks, but suffer from three critical limitations:
-1. **Opaque supervised baseline tuning** - Unverified fairness
-2. **Unverified learning paradigm contributions** - Unclear effectiveness
-3. **Lack of transparency** - Poor model decision-making
+## 方法论框架
 
-EEG-FM-Audit addresses these with a comprehensive three-component evaluation pipeline.
+### 三组件评估管道
 
----
+#### 1. ASHA驱动基准测试
+- **目的**：通过透明优化确保公平比较
+- **方法**：使用ASHA算法系统优化监督基线
+- **结果**：揭示适当调优的监督基线可匹配或超越高级FMs
 
-## The Three Audit Components
+#### 2. 范式级消融研究
+- **目的**：评估FMs学习范式的有效性
+- **方法**：系统性消融不同学习范式组件
+- **发现**：学习范式有效性高度依赖数据集规模和架构
 
-### 1. ASHA-Driven Benchmarking Protocol
+#### 3. 神经生理学探测（NPP）
+- **目的**：探索FMs是否利用有效的EEG时空频特性
+- **维度**：
+  - 时间特性探测
+  - 空间特性探测
+  - 频谱特性探测
+- **意义**：建立更可解释的神经解码框架
 
-**Purpose**: Ensure fair comparisons by transparently optimizing supervised baselines.
+## 实验验证
 
-**Key principle**: Baselines should match FMs' capabilities through systematic hyperparameter tuning.
+### 数据集
+- 4个最先进EEG-FMs
+- 5个代表性监督模型
+- 3个公开数据集
 
-**Implementation**:
-- Grid search over learning rates, batch sizes, regularization
-- Early stopping calibrated to FM training dynamics
-- Architecture matching (depth, width) to FM capacity
-- Data augmentation matching FM preprocessing pipeline
+### 关键发现
 
-**Critical insight**: Properly tuned supervised baselines can match/outperform advanced FMs with significantly fewer parameters.
+#### 1. 基线性能
+- **惊人发现**：适当调优的监督基线可匹配或超越高级FMs
+- **参数效率**：监督基线参数量显著更少
+- **意义**：挑战"更大更好"的传统观念
 
-### 2. Paradigm-Level Ablation Studies
+#### 2. 范式依赖性
+- 学习范式有效性非普适
+- 数据集规模是关键因素
+- 架构设计影响范式效果
 
-**Purpose**: Evaluate effectiveness of learning paradigms in FMs.
+#### 3. 生理特征依赖
+- FMs依赖特定生理特征
+- NPP揭示特征利用模式
+- 提供可解释性证据
 
-**Method**: Surgical removal of paradigm components to measure impact.
+## 技术创新
 
-**Ablation targets**:
-- Self-supervised learning heads (remove to test supervised-only performance)
-- Multi-task learning branches (ablate to test single-task generalization)
-- Temporal processing modules (remove to test static processing limits)
+### ASHA基准协议
+- 透明超参数优化
+- 自动化基线调优
+- 可复现的比较标准
 
-**Metrics measured**:
-- Performance delta on downstream tasks
-- Parameter efficiency ratio
-- Training stability under ablation
+### NPP框架
+- 时间特性探针
+- 空间特性探针
+- 频谱特性探针
+- 多维度可解释性分析
 
-**Key finding**: Paradigm effectiveness highly dependent on dataset scale and architecture.
+### 范式消融方法
+- 模块化消融设计
+- 定量贡献评估
+- 架构依赖分析
 
-### 3. Neurophysiological Probing (NPP) Framework
+## 应用场景
 
-**Purpose**: Establish whether FMs leverage valid temporal, spatial, spectral EEG properties.
+### 1. 模型评估
+- 系统评估新EEG-FMs
+- 验证范式有效性
+- 对比监督vs无监督
 
-**Probing dimensions**:
+### 2. 模型改进
+- 识别有效学习范式
+- 优化架构设计
+- 提升可解释性
 
-#### Temporal Properties
-- **Phase consistency**: Measure phase-locking across cognitive rhythms
-- **Time-shift tolerance**: Test temporal invariance under signal delays
-- **Causal latency**: Probe for physiologically plausible processing windows
+### 3. 研究指导
+- 建立评估标准
+- 指导模型开发
+- 促进领域标准化
 
-#### Spatial Properties
-- **Topographic alignment**: Validate electrode-to-region correspondence
-- **Source localization accuracy**: Test inverse solution fidelity
-- **Channel redundancy**: Quantify information distribution across electrodes
+## 启示与影响
 
-#### Spectral Properties
-- **Band-specific SNR**: Signal-to-noise ratios in canonical bands
-- **Power spectral density matching**: Alignment with neurophysiological power profiles
-- **Cross-frequency coupling**: Test phase-amplitude coupling patterns
+### 对EEG-FM研究
+- 提供标准化评估工具
+- 揭示真实性能差距
+- 促进透明研究
 
----
+### 对神经解码
+- 建立可解释性框架
+- 验证生理合理性
+- 提升模型可信度
 
-## Results Summary
+### 对机器学习
+- 范式有效性评估方法
+- 基线调优重要性
+- 参数效率启示
 
-Applied to four state-of-the-art EEG-FMs and five representative supervised models across three public datasets.
+## 未来方向
 
-### Key Findings
+1. **扩展验证**：更多数据集和任务
+2. **新范式探索**：评估新兴学习范式
+3. **跨模态应用**：扩展到其他神经信号
+4. **自动化评估**：开发自动化评估系统
 
-1. **Baseline performance paradox**: Properly tuned supervised baselines matched/outperformed FMs with 10-100x fewer parameters
-   - Implications: FM complexity may not justify performance gain
-   - Action: Focus on supervised baseline optimization before FM development
+## 参考文献
 
-2. **Learning paradigm dependency**: FM paradigm effectiveness varies across dataset scale
-   - Large-scale datasets (>1000 subjects): Self-supervised components critical
-   - Small-scale datasets (<500 subjects): Multi-task learning beneficial
-   - Action: Match paradigm to dataset characteristics
-
-3. **Neurophysiological validation**: FMs partially leverage valid EEG properties
-   - Strong temporal alignment (r=0.72 ± 0.09)
-   - Moderate spatial correspondence (r=0.58 ± 0.11)
-   - Weak spectral matching (r=0.41 ± 0.08)
-   - Action: Enhance spectral property encoding in FMs
-
----
-
-## Implementation Guidelines
-
-### When to Use This Skill
-
-1. **Model selection phase**: Before committing to FM development, benchmark against tuned supervised baselines
-2. **Paradigm design**: Match learning paradigm to dataset scale (large→self-supervised, small→multi-task)
-3. **Validation checkpoint**: Before deployment, run NPP validation suite
-
-### Evaluation Workflow
-
-```bash
-# Step 1: Baseline benchmarking
-python scripts/benchmark_baselines.py --fm_model_path --dataset --output baseline_results.json
-
-# Step 2: Paradigm ablation
-python scripts/ablate_paradigm.py --fm_model_path --paradigm_component --output ablation_results.json
-
-# Step 3: Neurophysiological probing
-python scripts/npp_validate.py --fm_model_path --probe_type --output npp_results.json
-```
-
----
-
-## Pitfalls and Solutions
-
-### Pitfall 1: Untuned Baselines
-**Problem**: Default supervised model hyperparameters produce unfair comparisons
-**Solution**: Grid search over baseline hyperparameters before FM comparison
-**Prevention**: Always run baseline benchmarking before FM evaluation
-
-### Pitfall 2: Paradigm Overcommitment
-**Problem**: FM includes ineffective learning paradigms for small datasets
-**Solution**: Ablate paradigm components, measure impact, select only effective ones
-**Prevention**: Match paradigm to dataset scale during architecture design
-
-### Pitfall 3: Neurophysiological Misalignment
-**Problem**: FM trained on synthetic/artificial EEG lacks valid properties
-**Solution**: Run NPP validation, if alignment <0.5, augment with real EEG during training
-**Prevention**: Include neurophysiological validation in training pipeline
-
----
-
-## Related Skills
-
-- [[cross-subject-eeg-decoding]]: Cross-subject generalization for EEG models
-- [[tta-eeg-foundation-models]]: Test-time adaptation methods for EEG FMs
-- [[eeg-foundation-model-adapters]]: Domain adaptation for EEG FMs
-- [[eeg-brain-connectivity-bci]]: EEG functional connectivity analysis
-
----
-
-## References
-
-- Wang et al. (2026). "EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models." arXiv:2605.26910
-- Coyle et al. (2023). "ASHA: Automated Systematic Hyperparameter Adjustment." Neurons and Cognition.
-- Yang et al. (2024). "Paradigm-level ablation studies in foundation models." Nature Neuroscience.
-
----
+arXiv:2605.26910 - EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
 
 ## Activation Keywords
 
-- `EEG foundation model`
-- `model audit`
-- `baseline benchmarking`
-- `neurophysiological probing`
-- `paradigm ablation`
-- `systematic evaluation`
-- `ASHA benchmark`
-- `NPP validation`
+- EEG foundation model evaluation
+- ASHA benchmarking protocol
+- neurophysiological probing framework
+- systematic EEG-FM audit
+- paradigm ablation study
+- neural decoding interpretability
