@@ -67,6 +67,32 @@
   - 视觉语义内容强的句子显示VLM优势，抽象内容则不明显
   - **Activation**: VLM alignment, brain-model alignment, natural reading, multimodal learning, fMRI
 
+## 2026-05-28 - 系统工程学 (Cron Job)
+
+### Zero-shot Quantum Neural Architecture Search
+- [[zero-shot-quantum-nas]] - VQA电路零样本架构搜索，无需经典搜索循环评估可表达性与可训练性 (arXiv: 2605.27410)
+  - 核心要点: 通过梯度方差和状态空间覆盖率解析评估候选电路，消除经典搜索开销
+  - 核心要点: Pareto最优可表达性-可训练性权衡选择
+  - **Activation**: zero-shot quantum architecture search, quantum NAS, VQA circuit design, 零样本量子架构搜索
+
+### Quantum-Inspired Hamiltonian Optimization for QKD Networks
+- [[quantum-network-routing-optimization]] - 大规模QKD网络的量子启发哈密顿量优化与随机张量网络路由 (arXiv: 2605.27425)
+  - 核心要点: 联合优化延迟、密钥生成率、拥塞和安全约束的多目标哈密顿量建模
+  - 核心要点: 随机张量网络求解+自适应拥塞路由
+  - **Activation**: quantum network routing, QKD network optimization, 量子网络路由, tensor network routing
+
+### Circuit-Level Backdoor Detection for Quantum Federated Learning
+- [[quantum-federated-learning-security]] - 量子联邦学习系统电路级后门检测与安全验证 (arXiv: 2605.27416)
+  - 核心要点: 通过电路结构分析、梯度行为监控和测量模式验证检测恶意变分电路
+  - 核心要点: 电路分解隔离可疑子电路并净化
+  - **Activation**: quantum federated learning security, QFL backdoor detection, 量子联邦学习安全
+
+### Quantum ML-based 6G Edge Network
+- [[quantum-6g-edge-network]] - 面向V2X通信的量子机器学习6G边缘网络自适应通信与模型聚合 (arXiv: 2605.27417)
+  - 核心要点: 量子神经网络用于自适应波束成形和资源分配
+  - 核心要点: 希尔伯特空间中的量子模型聚合实现跨边缘节点联邦学习
+  - **Activation**: quantum 6G network, quantum V2X, quantum edge computing, 量子6G网络
+
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
