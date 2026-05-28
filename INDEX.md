@@ -156,6 +156,13 @@
   - 连接组合数论与量子模形式的桥梁
   - **Activation**: partition statistics, quantum modular forms, Ramanujan, q-series, Tauberian method, 分拆统计, 量子模形式
 
+### Quantum statistical mechanics: Gauge invariance, operator shifting, hyperdensity functionals, and nonequilibrium sum rules
+- [[quantum-statistical-mechanics-gauge]] - 量子统计力学的规范不变性框架：移位超算子建立精确求和规则，量子超密度泛函理论 (arXiv: 2605.26650)
+  - 核心：移位超算子实现规范变换，可观测量的平均值在热平衡和非平衡态下均保持不变
+  - 规范不变性导出连接全局可观测量与局域关联函数的精确求和规则
+  - 量子超密度泛函理论提供对超力和一般平均量子观测量的形式化访问
+  - **Activation**: quantum statistical mechanics, gauge invariance, operator shifting, hyperdensity functional, sum rules, nonequilibrium quantum, many-body physics, 量子统计力学, 规范不变性, 算子移位
+
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
    105|    29|
    106|    30|### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
