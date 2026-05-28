@@ -1,4 +1,31 @@
 
+## 2026-05-29 - Systems Engineering + Quantum (Cron Job)
+
+### Zero-shot Quantum Neural Architecture Search
+
+- [[mzeqas-zero-shot-quantum-nas]] - Zero-shot quantum neural architecture search using QNTK convergence and MCTS for efficient VQA circuit design (arXiv: 2605.27410)
+  - QNTK Gram matrix convergence enables zero-shot surrogate for estimating circuit performance without training
+  - MCTS-guided search discovers high-performing architectures with orders-of-magnitude fewer evaluations
+  - Outperforms evolutionary-based QNAS in both search efficiency and solution quality
+  - **Activation**: quantum NAS, neural architecture search, zero-shot, VQA, MCTS, QNTK
+
+### Quantum-Inspired Hamiltonian Optimization for QKD Network Routing
+
+- [[hamiltonian-qkd-routing]] - Quantum-inspired Hamiltonian optimization framework for adaptive QKD network routing using Metropolis annealing and Tensor Network compression (arXiv: 2605.27425)
+  - Network modeled as stochastic graph evolving under effective Hamiltonian (latency + keyrate + congestion + risk + capacity)
+  - Two approaches: stochastic Metropolis annealer + stochastic boundary-MPS tensor network compression
+  - Scalable bridge between QKD orchestration and statistical-physics optimization
+  - **Activation**: QKD routing, Hamiltonian optimization, tensor networks, quantum annealing, network orchestration
+
+### Quantum Reservoir Networks with Decoherence-Free Subspaces
+
+- [[dfs-quantum-reservoir-networks]] - Quantum reservoir computing using DFS for room-temperature quantum AI without cooling (arXiv: 2605.27427)
+  - 6-qubit quantum reservoir with 5-dimensional DFS output classifies entangled vs product states
+  - DFS dynamics immune to collective external fluctuations — no cryogenic cooling required
+  - Promising for practical, energy-efficient quantum machine learning deployment
+  - **Activation**: quantum reservoir, decoherence-free subspace, DFS, room temperature quantum, quantum classifier
+
+
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
