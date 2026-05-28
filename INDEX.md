@@ -1,5 +1,12 @@
      1|
 
+## 2026-05-28 - Systems Engineering + Quantum Computing (Cron Job)
+
+### Enhanced Reinforcement Learning-based Process Synthesis via Quantum Computing
+- [[quantum-rl-process-synthesis]] - Quantum-enhanced RL for chemical process synthesis using QUBO formulation (arXiv: 2605.21213)
+  - Core methodology: encode RL policy search as QUBO for quantum annealing
+  - Exponential speedup for large-scale process optimization with combinatorial action spaces
+  - **Activation**: quantum computing, process synthesis, QUBO optimization, reinforcement learning, chemical engineering
 ## 2026-05-28 - Quantum Computing Research (Cron Job)
 
 ### Neural Quantum Spectral Operator Learning for Solving Partial Differential Equations
