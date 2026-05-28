@@ -1,3 +1,28 @@
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Non-invertible symmetry enriched string net topological orders
+- [[non-invertible-topological-order-analysis]] - Analysis methodology for non-invertible symmetry enriched topological orders using unitary fusion categories (arXiv: 2605.28794)
+  - Core: NI-SETO definition via UFC full inclusions and anyon condensation
+  - Applications: Topological quantum computing, fusion category symmetries
+  - **Activation**: topological order, non-invertible symmetry, fusion category, string net, anyon condensation
+
+### Quantum Statistical Estimation Theory
+- [[quantum-statistical-estimation-framework]] - Framework for quantum statistical estimation combining QFI, CRB bounds, and Bayesian quantum estimation (arXiv: general framework)
+  - Core: Quantum Fisher Information, Cramér-Rao bounds, multi-parameter estimation
+  - Applications: Quantum sensing, metrology, parameter estimation in quantum systems
+  - **Activation**: quantum fisher information, cramér-rao bound, quantum estimation, metrology, quantum sensing
+
+### Dynamic Entanglement Packet Scheduling for Quantum Networks
+- Related: quantum-network-control skill (already exists) - entanglement distribution in quantum networks using TDMA (arXiv: 2605.28795)
+  - Core: On-demand entanglement packet architecture with TDMA resource allocation
+  - Applications: Scalable quantum networks, multi-user entanglement distribution
+  - **Activation**: quantum network, entanglement packet, TDMA, resource allocation
+
+### Device-Agnostic Microwave Noise Metrology
+- Related: quantum-metrology-sensing-review skill - microwave noise characterization for cryogenic quantum devices (arXiv: 2605.28808)
+  - Core: Near-quantum-limited signal processing for solid-state quantum technologies
+  - Applications: Quantum device characterization, cryogenic measurement
+  - **Activation**: microwave metrology, noise characterization, cryogenic quantum, signal processing
 
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
