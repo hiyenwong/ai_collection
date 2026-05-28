@@ -1,5 +1,14 @@
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
+### CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras
+- [[clane-neuromorphic-continual-learning]] - 首个端到端神经形态持续学习系统，在 Intel Loihi 2 上实现动作识别的在线学习 (arXiv: 2605.28387)
+  - 70.4% 准确率，100x 能量降低，16x 延迟减少
+  - Spiking 2D CNN + CLP-SNN + Temporal Aggregation Layer + Fixed-Point Normalization
+  - THU E-ACT-50 50类动作数据集 + iso-algorithm跨平台基准测试
+  - **Activation**: neuromorphic continual learning, event camera, Loihi 2, spiking CNN, CLP-SNN, action recognition, on-device learning, energy-efficient AI, edge deployment, 神经形态持续学习, 事件相机
+
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
 ### Benchmarking Fairness in Spiking Neural Networks: Data Bias, Spurious Features, and Hardware Effects
 - [[snn-fairness-benchmark-hardware]] - 首个系统性 SNN 公平性基准，揭示数据偏差与硬件限制的交互效应 (arXiv: 2605.27407)
   - 数据偏差导致弱势群体假阳性率提高23%，硬件限制放大差异至41%
