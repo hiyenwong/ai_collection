@@ -1,3 +1,12 @@
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Genetic Algorithm vs Gradient Descent for DEBI-NN
+- [[genetic-algorithm-gradient-descent-debi-nn]] - Genetic algorithm superior to gradient descent for training distance-encoding biomorphic neural networks (DEBI-NN) in low-data medical regimes (arXiv:2605.27411)
+  - GA consistently achieves 80-100% accuracy vs GD 66-78% on medical datasets
+  - Spatial interdependencies fundamentally challenge classical backpropagation
+  - Entangled gradients from neuron positions limit GD effectiveness
+  - **Activation**: DEBI-NN, genetic algorithm training, gradient descent, biomorphic, spatial encoding, medical dataset, evolutionary optimization
+
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
 ### Dynamic Entanglement Packet Scheduling for Quantum Networks
