@@ -1,5 +1,15 @@
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
 
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Circulate-Firing Spiking Neural Network Training
+- [[circulate-firing-snn-training]] - Advancing direct SNN training with circulate-firing neurons, learnable surrogate gradients, and balanced loss function (arXiv: 2605.27412)
+  - Circulate-Firing Spiking Neuron (CFSN) model enhances information capacity by leveraging membrane potentials
+  - Time-Step-Wise Learnable Surrogate Gradient (TSL-SG) enables accurate gradient estimation
+  - Positive-Negative Balanced Loss (PNB-Loss) achieves membrane potential equilibrium
+  - **Activation**: circulate-firing, CFSN, learnable surrogate gradient, TSL-SG, direct training SNN, PNB-Loss
+
+
 ### Dynamic Entanglement Packet Scheduling for Quantum Networks
 - [[dynamic-entanglement-packet-scheduling]] - Online dynamic scheduler for quantum entanglement distribution with real-time scheduling, defer, retry, and drop decisions. Outperforms static TDMA with lower completion time, higher completion ratio, and graceful degradation (arXiv: 2605.28795)
   - Online controller dynamically schedules/defers/retries/drops entanglement reservations
