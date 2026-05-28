@@ -1,4 +1,23 @@
 
+## 2026-05-28 - Systems Engineering Research (Cron Job)
+
+### When Agents Control Robots: A Zero Trust Policy Model for Agentic Cyber-Physical Systems
+- [[ztpm-agentic-cps-security]] - Zero Trust Policy Model (ZTPM) for agentic CPS security, 25 typed primitives across 5 enforcement domains with Physical Impact Tiers (arXiv:2605.25653)
+  - 五类攻击：命令注入、代理劫持、物理参数操纵、模型依赖利用、跨代理干扰
+  - 25个类型化策略原语分布在5个强制域：命令验证、代理行为、物理致动、模型接口、跨代理协调
+  - Physical Impact Tiers (0-4): 信息级→轻微→中等→重大→关键物理后果
+  - 关键发现：致动参数选择依赖模型且非确定性，需物理致动边界策略级强制
+  - **Activation**: agentic CPS, zero trust policy, robot security, multi-agent systems, physical actuation boundary, LFM security, industrial robot control
+
+### ASTRO: Adaptive Spatio-Temporal Reinforcement Optimization for GNN Powered Anomaly Detection in Cyber Physical Systems
+- [[astro-gnn-anomaly-detection-cps]] - ASTRO框架使用GNN和强化学习进行IIoT异常检测，自适应时空优化降低误报率 (arXiv:2605.25135)
+  - GNN建模IIoT网络拓扑，时空融合捕获异常传播模式
+  - 强化优化引擎：奖励函数平衡检测准确率、误报惩罚、检测延迟
+  - 自适应控制循环：动态阈值调整、时间窗口优化、模型参数更新
+  - 四种自适应机制：阈值、窗口、模型、警报级别
+  - **Activation**: anomaly detection, IIoT, Industrial Control Systems, GNN anomaly detection, spatio-temporal optimization, reinforcement learning anomaly, CPS anomaly detection
+
+
 
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
