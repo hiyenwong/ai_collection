@@ -1,4 +1,14 @@
 
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
+### Beyond Logical Circuits: Hardware-Aware Analysis of Expressibility and Trainability in VQAs
+- [[hardware-aware-vqa-analysis]] - Hardware-aware VQA analysis methodology covering compilation-aware expressibility-trainability evaluation, hybrid quantum-classical architecture design, and system-level resource optimization (arXiv: 2605.25552, 2605.25768)
+  - Core insight: compilation fundamentally transforms PQC properties — logical-level evaluation gives misleading results
+  - Hybrid architectures can eliminate the expressibility-trainability trade-off via end-to-end training
+  - Three patterns: hardware-aware evaluation, hybrid architecture design, compilation co-design
+  - Multi-objective NAS jointly optimizes expressibility + trainability + task performance
+  - **Activation**: VQA, hardware-aware compilation, expressibility trainability tradeoff, hybrid quantum neural network, parameterized quantum circuit, quantum architecture search
+
 ## 2026-05-28 - Quantum-Neuromorphic Fusion (Cron Job)
 
 ### Quantum-Neuromorphic Computing: Comprehensive Integration Framework
