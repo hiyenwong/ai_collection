@@ -24,6 +24,22 @@
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+- [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度能预测大脑信号但组织方式与大脑层级不匹配 (arXiv: 2605.28693)
+  - 核心：使用fMRI+MEG研究反向传播梯度与大脑响应的关系
+  - 发现：梯度预测能力强，但空间/时间组织与大脑不匹配
+  - 挑战：深度网络和大脑可能依赖根本不同的学习机制
+  - **Activation**: 反向传播, 大脑层级, 脑对齐, fMRI, MEG, 视觉处理
+
+### EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
+- [[eeg-fm-audit-systematic-evaluation]] - EEG基础模型系统评估框架：ASHA基准、范式消融、神经生理学探测 (arXiv: 2605.26910)
+  - 核心：三大组件解决EEG FM评估的三项局限
+  - 发现：适当调优的监督基线可匹配或超越FM（参数更少）
+  - 创新：NPP框架建立可解释神经解码标准
+  - **Activation**: EEG基础模型, ASHA基准, 神经生理学探测, NPP, 消融研究
+
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
 ### EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
 - [[eeg-fm-audit-systematic-evaluation]] - EEG基础模型系统评估管道，ASHA基准测试+范式消融+神经生理学探测框架 (arXiv:2605.26910)
   - 核心发现：透明调优的监督基线可匹敌/超越复杂FM，参数更少

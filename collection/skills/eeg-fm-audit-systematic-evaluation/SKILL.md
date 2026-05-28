@@ -1,428 +1,236 @@
 ---
 name: eeg-fm-audit-systematic-evaluation
-description: EEG基础模型系统评估和分析管道方法论。ASHA基准测试协议、范式级消融研究、神经生理学探测(NPP)框架，确保EEG-FM的公平评估和可解释性分析。适用于EEG信号解码、基础模型评估、神经科学ML研究。
-version: 1.0.0
-author: arXiv:2605.26910 (Wang et al., 2026)
-last_updated: 2026-05-28
-tags: [neuroscience, eeg, foundation-model, evaluation, benchmark, neural-decoding, interpretability]
-activation_keywords: [EEG foundation model, EEG evaluation, neural decoding benchmark, neurophysiological probing, EEG FM audit, ASHA benchmark, paradigm ablation]
+description: EEG基础模型系统评估和分析管道。提出ASHA基准测试、范式级消融研究、神经生理学探测(NPP)框架，确保EEG基础模型的公平评估和可解释性。
+tags: [neuroscience, eeg, foundation-model, evaluation, benchmarking, neural-decoding, interpretability, machine-learning]
+version: 2.0.0
+arxiv_id: 2605.26910
+authors: [Xianheng Wang, Yige Yang, Damien Coyle]
+published: 2026-05-26
+activation_keywords: [EEG基础模型, EEG foundation model, 系统评估, systematic evaluation, ASHA基准, benchmarking, 神经生理学探测, neurophysiological probing, NPP, 消融研究, ablation study]
+updated: 2026-05-28
 ---
 
-# EEG-FM-Audit: Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
+# EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
 
-## Overview
+## 研究背景
 
-EEG-FM-Audit provides a comprehensive evaluation framework for EEG Foundation Models (EEG-FMs), addressing three critical limitations in current research: opaque baseline tuning, unverified learning paradigm contributions, and lack of model transparency. This methodology systematizes EEG-FM assessment through three interconnected components.
+**核心问题**: 大型 EEG 基础模型在跨任务解码中展现出巨大潜力，但现有研究存在三个关键局限：
 
-**Core Paper**: arXiv:2605.26910 - "EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models" (Wang et al., submitted 2026-05-26)
+### 三大局限
+1. **不透明的监督基线调优**: 基线模型的调优过程不透明，难以公平比较
+2. **复杂学习范式贡献未验证**: 复杂范式（如预训练、迁移学习）的有效性未经验证
+3. **模型决策缺乏透明性**: 缺乏解释模型如何利用 EEG 特征的框架
 
-## Key Innovation
+## EEG-FM-Audit 框架
 
-The framework introduces **neurophysiological probing (NPP)** - a novel approach that validates whether FMs leverage genuine temporal, spatial, and spectral EEG properties, establishing interpretability standards for neural decoding models.
+### 三大核心组件
 
-## Three-Component Framework
+#### 1. ASHA驱动的基准测试协议
+**目的**: 确保监督基线的公平比较
 
-### 1. ASHA-Driven Benchmarking Protocol
+**方法**: 
+- 使用 ASHA（Asynchronous Successive Halving Algorithm）优化超参数
+- 透明化基线模型调优过程
+- 系统化参数搜索和评估
 
-**Purpose**: Ensure fair baseline comparisons through transparent supervised tuning
+**优势**:
+- 自动化超参数优化
+- 确保公平比较
+- 减少人工调优偏差
 
-**Methodology**:
-- Uses Asynchronous Successive Halving Algorithm (ASHA) for hyperparameter optimization
-- Transparently tunes supervised baselines to prevent unfair FM vs baseline comparisons
-- Reveals that properly tuned baselines can match/outperform advanced FMs with fewer parameters
-- Provides reproducible benchmarking pipeline
+#### 2. 范式级消融研究
+**目的**: 评估 FM 学习范式的有效性
 
-**Implementation Steps**:
-```python
-# ASHA hyperparameter search
-from ray.tune.schedulers import ASHAScheduler
+**消融维度**:
+- **预训练方法**: 自监督 vs 监督预训练
+- **迁移学习**: 任务间迁移的有效性
+- **架构设计**: 不同架构的贡献
+- **学习范式**: 不同范式组合的效果
 
-config = {
-    'lr': tune.loguniform(1e-5, 1e-2),
-    'batch_size': tune.choice([32, 64, 128, 256]),
-    'optimizer': tune.choice(['adam', 'adamw', 'sgd']),
-    'model_type': tune.choice(['cnn', 'transformer', 'lstm'])
-}
+**发现**:
+- 学习范式的有效性高度依赖：
+  - 数据集规模
+  - 模型架构
+  - 任务类型
 
-scheduler = ASHAScheduler(
-    max_t=100,
-    grace_period=10,
-    reduction_factor=3
-)
+#### 3. 神经生理学探测框架 (NPP)
+**目的**: 探索 FM 是否利用有效的 EEG 特征
+
+**探测维度**:
+- **时间特征** (Temporal): EEG 时间序列特性
+- **空间特征** (Spatial): 脑区空间分布
+- **频谱特征** (Spectral): EEG 频段特性
+
+**框架价值**:
+- 建立可解释神经解码框架
+- 验证模型利用生理学有效特征
+- 揭示模型决策机制
+
+## 实验设计
+
+### 数据集
+- **数量**: 3个公共数据集
+- **类型**: 跨认知任务 EEG 数据
+- **规模**: 大规模多任务数据
+
+### 模型对比
+- **EEG-FMs**: 4个前沿基础模型
+- **监督模型**: 5个代表性监督基线
+
+### 评估指标
+- 准确性（Accuracy）
+- 跨任务性能（Cross-task performance）
+- 参数效率（Parameter efficiency）
+- 神经生理学特征利用（NPP scores）
+
+## 核心发现
+
+### 1. 监督基线性能
+**惊喜发现**: 
+- ✅ **适当调优的监督基线可以匹配或超越先进的 FM**
+- ✅ 尽管参数显著更少
+- 💡 **挑战**: FM 的复杂范式可能被简单方法超越
+
+### 2. 学习范式有效性
+**关键洞察**:
+- 📊 FM 学习范式的有效性高度依赖：
+  - **数据规模**: 大数据集效果更好
+  - **架构**: 不同架构响应不同
+- 🎯 **启示**: 不能盲目应用范式，需根据场景优化
+
+### 3. 神经生理学特征利用
+**NPP 分析结果**:
+- 🔍 FM 利用特定的生理学特征：
+  - 时间特征（时序动态）
+  - 空间特征（脑区分布）
+  - 频谱特征（频段信息）
+- 📈 建立了更可解释的神经解码框架
+
+## 技术创新
+
+### ASHA 基准测试协议
+```
+传统方法:
+手动调优 → 偏差结果 → 不公平比较
+
+EEG-FM-Audit:
+ASHA自动优化 → 透明流程 → 公平基线
 ```
 
-**Key Finding**: Supervised baselines with transparent tuning often outperform complex FMs, challenging the assumption that larger pretrained models are inherently superior.
+**优势**:
+- 系统化超参数搜索
+- 透明化调优过程
+- 可复现的基线性能
 
-### 2. Paradigm-Level Ablation Studies
+### 范式级消融策略
+```
+完整FM → 逐层消融 → 验证各组件贡献
 
-**Purpose**: Evaluate effectiveness of learning paradigms in EEG-FMs
-
-**Key Paradigms Tested**:
-- Self-supervised learning (SSL) pretraining
-- Contrastive learning objectives
-- Transfer learning from other modalities
-- Multi-task learning frameworks
-
-**Ablation Methodology**:
-- Systematically remove/disable each paradigm component
-- Measure performance degradation across datasets
-- Analyze paradigm interactions and dependencies
-- Evaluate sensitivity to dataset scale
-
-**Critical Discoveries**:
-- Paradigm effectiveness **highly dependent** on dataset scale and architecture
-- Small datasets: SSL provides minimal benefit
-- Large datasets (>10K subjects): SSL shows significant gains
-- Transfer learning effectiveness varies by source domain
-
-**Ablation Framework**:
-```python
-def paradigm_ablation(model, paradigm, dataset):
-    """
-    Evaluate paradigm contribution
-    paradigm: ['ssl', 'contrastive', 'transfer', 'multitask']
-    """
-    baseline = model.get_performance(dataset)
-    ablated = model.disable_paradigm(paradigm)
-    degraded = ablated.get_performance(dataset)
-    
-    contribution = baseline - degraded
-    return {
-        'paradigm': paradigm,
-        'contribution': contribution,
-        'significance': statistical_test(baseline, degraded)
-    }
+消融步骤:
+1. 移除预训练 → 评估贡献
+2. 移除迁移 → 评估必要性
+3. 简化架构 → 评估设计
+4. 组合消融 → 系统验证
 ```
 
-### 3. Neurophysiological Probing (NPP) Framework
+### NPP 探测框架
+```
+模型 → 特征提取 → 生理学验证
 
-**Purpose**: Validate whether FMs use physiologically meaningful EEG features
-
-**Three Probing Dimensions**:
-
-#### Temporal Probing
-- Test sensitivity to temporal dynamics (oscillations, event timing)
-- Probe temporal order encoding
-- Validate phase/amplitude relationships
-
-```python
-# Temporal probing metrics
-temporal_features = {
-    'phase_consistency': measure_phase_locking(),
-    'event_timing': detect_onset_offsets(),
-    'oscillation_frequency': spectral_analysis(),
-    'temporal_order': sequence_encoding_test()
-}
+探测维度:
+Temporal: 时间序列模式 → 脑时间动态
+Spatial: 脑区激活 → 空间分布特征
+Spectral: 频段功率 → 频谱特性
 ```
 
-#### Spatial Probing
-- Test spatial electrode pattern usage
-- Validate brain region specificity
-- Probe topographic organization
+## 应用价值
 
-```python
-# Spatial probing metrics
-spatial_features = {
-    'electrode_correlation': electrode_similarity_matrix(),
-    'region_specificity': brain_region_activation(),
-    'topographic_gradient': spatial_organization_test(),
-    'montage_independence': cross_montage_transfer()
-}
-```
+### 1. EEG 基础模型研究
+- 提供标准化评估框架
+- 确保公平比较
+- 促进可复现研究
 
-#### Spectral Probing
-- Test frequency band utilization
-- Validate spectral feature relevance
-- Probe band-specific information extraction
+### 2. 神经解码应用
+- 建立可解释解码框架
+- 验证生理学特征利用
+- 提高 BCI 可靠性
 
-```python
-# Spectral probing metrics
-spectral_features = {
-    'band_importance': band_ablation_test(['delta', 'theta', 'alpha', 'beta', 'gamma']),
-    'spectral_power': power_spectrum_correlation(),
-    'band_interaction': cross_band_coupling(),
-    'frequency_selectivity': band_filtering_impact()
-}
-```
+### 3. 临床应用
+- EEG 诊断辅助系统
+- 可解释的神经疾病检测
+- 跨患者 EEG 分析
 
-**NPP Framework Workflow**:
-```
-Input EEG → FM Model → Output Predictions
-     ↓          ↓
-Temporal Probe → Is temporal info used?
-Spatial Probe   → Is spatial info used?
-Spectral Probe  → Is spectral info used?
-     ↓
-Physiological Validity Score
-```
+## 关键方法论要点
 
-## Research Findings
+### ⚠️ 实施陷阱
+1. **不公平基线**: 未优化的基线导致 FM 看似更好
+2. **盲目范式应用**: 不考虑数据规模和架构
+3. **缺乏解释性**: 只关注性能忽略特征利用
 
-### Main Results
+### ✅ 最佳实践
+1. **ASHA优化**: 系统化基线调优
+2. **消融验证**: 验证每个范式贡献
+3. **NPP探测**: 确保生理学有效性
+4. **多数据集**: 跨数据集验证稳定性
 
-1. **Baseline Performance**: Properly tuned supervised baselines match/outperform FMs with significantly fewer parameters
-2. **Paradigm Dependency**: Learning paradigm effectiveness scales with dataset size and architecture complexity
-3. **Physiological Validity**: FMs leverage specific temporal, spatial, and spectral features with varying fidelity
-4. **Interpretability**: NPP establishes causal link between model decisions and neurophysiological properties
+## 实验验证
 
-### Tested Models
+### 模型对比
+| 模型类型 | 数量 | 参数量 | 性能 |
+|---------|------|--------|------|
+| EEG-FMs | 4 | 大 | 多样 |
+| 监督基线 | 5 | 小 | 可匹配 |
 
-- 4 state-of-the-art EEG-FMs (LaBraM, NeuroBERT, EEG-Conformer, etc.)
-- 5 representative supervised models (EEGNet, ShallowConvNet, DeepConvNet, etc.)
-- 3 public datasets (TUH, BCI Competition, internal datasets)
+**关键发现**: 小参数监督模型可匹配大参数 FM
 
-### Performance Metrics
+### 数据集覆盖
+- 3个公共数据集
+- 多认知任务
+- 大规模验证
 
-| Component | Supervised Baseline | Advanced FM | Parameter Ratio |
-|-----------|-------------------|------------|-----------------|
-| TUH EEG   | 87.3%             | 88.1%      | 1:50 (baseline smaller) |
-| BCI IV    | 84.5%             | 85.2%      | 1:100 |
-| Motor Imagery | 91.2% | 92.1% | 1:75 |
+### NPP 探测结果
+- **时间**: 时序特征有效利用
+- **空间**: 脑区分布特征激活
+- **频谱**: 频段信息提取
 
-## When to Use
+## 理论贡献
 
-### Applicable Scenarios
+### 1. 挑战 FM 假设
+- 简单方法可能更有效
+- 复杂范式需谨慎应用
+- 参数规模不是决定因素
 
-- **EEG Foundation Model Development**: Evaluate new EEG-FM architectures objectively
-- **Baseline Comparison**: Ensure fair comparison between FMs and supervised models
-- **Paradigm Selection**: Determine which learning paradigms benefit your specific dataset scale
-- **Interpretability Analysis**: Validate physiological meaningfulness of model features
-- **Model Selection**: Choose between FM and supervised approaches based on resources/data
+### 2. 建立评估标准
+- ASHA 基准测试成为标准
+- 范式消融成为必要步骤
+- NPP 探测成为解释工具
 
-### Trigger Keywords
+### 3. 促进可解释神经科学
+- 生理学特征验证
+- 模型决策透明化
+- 跨任务可解释解码
 
-- Evaluating EEG foundation models
-- EEG neural decoding benchmarking
-- Neurophysiological interpretability
-- EEG model comparison methodology
-- Fair EEG baseline tuning
-- EEG paradigm contribution analysis
+## 未来研究方向
 
-## Implementation Guidance
+1. **扩展 NPP**: 更多生理学特征探测
+2. **跨模态应用**: EEG + MEG + fMRI
+3. **临床验证**: 神经疾病诊断应用
+4. **自动化评估**: 全自动化评估管道
 
-### Step-by-Step Evaluation Pipeline
+## 参考文献
 
-**Phase 1: Baseline Benchmarking (ASHA)**
-
-```python
-# Step 1: Define search space
-search_space = {
-    'architecture': ['eegnet', 'shallowconv', 'deepconv'],
-    'hyperparams': {...}
-}
-
-# Step 2: Run ASHA optimization
-tuner = tune.Tuner(
-    train_supervised,
-    param_space=search_space,
-    scheduler=ASHAScheduler(...)
-)
-
-# Step 3: Report best baseline performance
-best_baseline = tuner.run()
-baseline_acc = best_baseline.metrics['accuracy']
-```
-
-**Phase 2: Paradigm Ablation**
-
-```python
-# Step 1: Load FM with all paradigms
-full_fm = load_eeg_fm('path/to/model', paradigms='all')
-
-# Step 2: Ablate each paradigm
-for paradigm in ['ssl', 'contrastive', 'transfer']:
-    ablated_fm = full_fm.disable(paradigm)
-    contribution = measure_performance_drop(full_fm, ablated_fm)
-    
-# Step 3: Analyze paradigm interactions
-interaction_matrix = test_paradigm_combinations()
-```
-
-**Phase 3: Neurophysiological Probing**
-
-```python
-# Step 1: Temporal probing
-temporal_score = temporal_probing_pipeline(eeg_data, model)
-
-# Step 2: Spatial probing
-spatial_score = spatial_probing_pipeline(eeg_data, model)
-
-# Step 3: Spectral probing
-spectral_score = spectral_probing_pipeline(eeg_data, model)
-
-# Step 4: Composite physiological validity
-npp_score = aggregate_npp(temporal_score, spatial_score, spectral_score)
-```
-
-### Dataset Requirements
-
-| Dataset Type | Minimum Size | Paradigm Benefits | Recommended Evaluation |
-|-------------|-------------|------------------|----------------------|
-| Small (<1K subjects) | 500 | Minimal SSL benefit | Supervised baseline focus |
-| Medium (1K-10K) | 2,000 | Moderate SSL gain | Ablation testing essential |
-| Large (>10K) | 15,000 | Significant FM advantage | Full NPP framework |
-
-### Evaluation Protocol
-
-**Standard Pipeline**:
-1. Run ASHA baseline tuning (100 trials, grace_period=10)
-2. Apply paradigm ablation (4 paradigms × 3 datasets)
-3. Execute NPP probing (temporal, spatial, spectral dimensions)
-4. Generate interpretability report
-5. Compare against published benchmarks
-
-**Time Estimates**:
-- ASHA tuning: 4-8 hours (GPU cluster)
-- Paradigm ablation: 2-4 hours
-- NPP probing: 1-2 hours
-- Total: 7-14 hours
-
-## Pitfalls & Best Practices
-
-### Common Mistakes
-
-❌ **Avoid**:
-- Comparing FMs to untuned baselines (unfair comparison)
-- Ignoring dataset scale when selecting paradigms
-- Skipping temporal/spatial/spectral probing (miss interpretability)
-- Overclaiming FM superiority without ablation
-- Using single dataset for paradigm evaluation (incomplete picture)
-
-✅ **Best Practices**:
-- Always use ASHA or equivalent for baseline tuning
-- Test paradigms across multiple dataset scales
-- Validate physiological features with NPP
-- Report parameter counts alongside performance
-- Publish complete ablation results for reproducibility
-
-### Key Considerations
-
-1. **Baseline Transparency**: Untuned baselines give false impression of FM superiority
-2. **Scale Awareness**: Paradigm benefits highly dataset-size dependent
-3. **Physiological Grounding**: FMs must use neurologically meaningful features
-4. **Resource Efficiency**: Smaller supervised models may suffice for many applications
-5. **Reproducibility**: Full evaluation pipeline essential for credible claims
-
-## Extensions & Future Directions
-
-### Proposed Enhancements
-
-- **Multi-modal Probing**: Extend NPP to simultaneous EEG + fMRI validation
-- **Real-time NPP**: Online physiological validity during training
-- **Paradigm Discovery**: Automated paradigm identification for new datasets
-- **Cross-subject Generalization**: Evaluate subject-independent physiological encoding
-- **Clinical Validation**: Medical-grade interpretability standards
-
-### Integration Opportunities
-
-- Combine with EEG preprocessing pipelines (FAAR, artifact removal)
-- Integrate with existing foundation model frameworks
-- Link to brain-computer interface (BCI) validation protocols
-- Connect to neuroscientific hypothesis testing frameworks
-
-## Reference Implementation
-
-**Core Components**:
-
-```python
-class EEGFMAudit:
-    def __init__(self, fm_model, datasets):
-        self.fm = fm_model
-        self.datasets = datasets
-        self.baseline_tuner = ASHAScheduler()
-        self.npp_prober = NeurophysiologicalProber()
-    
-    def run_full_evaluation(self):
-        # Phase 1: Baseline
-        baseline = self.tune_supervised_baseline()
-        
-        # Phase 2: Paradigm ablation
-        paradigm_results = self.ablate_paradigms()
-        
-        # Phase 3: NPP probing
-        npp_scores = self.probe_neurophysiological()
-        
-        return {
-            'baseline_performance': baseline,
-            'paradigm_contributions': paradigm_results,
-            'physiological_validity': npp_scores,
-            'interpretability_report': self.generate_report()
-        }
-    
-    def tune_supervised_baseline(self):
-        """ASHA-driven baseline optimization"""
-        return self.baseline_tuner.optimize(...)
-    
-    def ablate_paradigms(self):
-        """Systematic paradigm removal testing"""
-        paradigms = ['ssl', 'contrastive', 'transfer', 'multitask']
-        results = {}
-        for paradigm in paradigms:
-            ablated = self.fm.disable(paradigm)
-            results[paradigm] = self.evaluate(ablated)
-        return results
-    
-    def probe_neurophysiological(self):
-        """Temporal, spatial, spectral probing"""
-        return {
-            'temporal': self.npp_prober.temporal_probe(self.fm),
-            'spatial': self.npp_prober.spatial_probe(self.fm),
-            'spectral': self.npp_prober.spectral_probe(self.fm)
-        }
-```
-
-## Validation Criteria
-
-**Physiological Validity Thresholds**:
-
-| Probe Type | Valid FM | Poor FM | Threshold |
-|-----------|---------|---------|-----------|
-| Temporal | >0.7 temporal score | <0.4 | Phase consistency test |
-| Spatial | >0.65 spatial score | <0.35 | Region specificity test |
-| Spectral | >0.75 spectral score | <0.45 | Band importance test |
-
-**FM Recommendation**:
-- Use FM if: All NPP scores > threshold AND paradigm contribution > 5%
-- Use Supervised if: NPP scores < threshold OR baseline matches FM
-- Hybrid approach: Combine FM features + supervised tuning for best results
-
-## Key Takeaways
-
-1. **Transparent Baselines Essential**: Untuned comparisons give misleading results
-2. **Scale Determines Paradigm Value**: Dataset size predicts paradigm benefit
-3. **NPP Enables Interpretability**: Physiological probing validates meaningful features
-4. **Efficiency Often Wins**: Smaller supervised models frequently outperform large FMs
-5. **Systematic Evaluation Required**: All three components necessary for credible assessment
-
-## Related Skills
-
-- [[hermes-brain-connectivity]] - EEG connectivity analysis methods
-- [[eeg-foundation-model-adapters]] - Domain adaptation for EEG FMs
-- [[neural-encoding-evaluation-ground-truth]] - Neural encoding model evaluation
-- [[tta-eeg-foundation-models]] - Test-time adaptation for EEG FMs
-- [[eeg-preprocessing-reliability]] - EEG preprocessing reliability quantification
-- [[eeg-sae-interpretability]] - Mechanistic interpretability of EEG FMs
-
-## References
-
-- Wang, X., Yang, Y., Coyle, D. (2026). "EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models". arXiv:2605.26910.
-- Li et al. (2023). "LaBraM: Large-scale Brain Model for EEG"
-- EEGNet architecture baseline studies
-- ASHA hyperparameter optimization methodology
-- Neurophysiological probing frameworks in cognitive neuroscience
-
-## Citation
-
-```bibtex
-@article{wang2026eegfmaudit,
-  title={EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models},
-  author={Wang, Xianheng and Yang, Yige and Coyle, Damien},
-  journal={arXiv preprint arXiv:2605.26910},
-  year={2026},
-  month={May}
-}
-```
+- Wang et al. (2026) - 本论文
+- Li et al. (2025) - ASHA 算法
+- EEG 基础模型相关工作
 
 ---
 
-**Activation**: Use this skill when evaluating EEG foundation models, comparing EEG neural decoding approaches, assessing paradigm contributions, or validating neurophysiological interpretability of EEG-based ML systems. Key trigger: "EEG foundation model evaluation", "neural decoding benchmark", "EEG interpretability analysis", "paradigm ablation study".
+## Metadata
+
+**arXiv**: 2605.26910  
+**DOI**: https://doi.org/10.48550/arXiv.2605.26910  
+**Category**: cs.LG, cs.AI, q-bio.NC  
+**MSC Class**: 68T07  
+**Pages**: 26  
+**Submitted**: 2026-05-26  
+**Updated**: 2026-05-28 (Cron Job Auto-Update)
