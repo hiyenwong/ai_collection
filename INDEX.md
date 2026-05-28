@@ -17,7 +17,6 @@
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
 ### Dynamic Entanglement Packet Scheduling for Quantum Networks
-- [[quantum-networks-systems-engineering]] - Dynamic online scheduling for entanglement distribution in quantum networks, replacing static TDMA with adaptive allocation (arXiv: 2605.28795)
   - Online scheduler outperforms static EDF baseline in completion time and throughput
   - Graceful degradation under network overload conditions
   - **Activation**: quantum network, entanglement scheduling, QKD routing, quantum internet
@@ -93,6 +92,31 @@
   - 核心要点: 希尔伯特空间中的量子模型聚合实现跨边缘节点联邦学习
   - **Activation**: quantum 6G network, quantum V2X, quantum edge computing, 量子6G网络
 
+## 2026-05-28 - Systems Engineering (Cron Job)
+
+### Dynamic Entanglement Packet Scheduling for Quantum Networks
+  - Dynamic scheduler outperforms static TDMA: lower completion time, higher throughput
+  - Supports multiple users with entanglement distribution reservations
+  - **Activation**: quantum network scheduling, entanglement distribution, dynamic scheduler, quantum TDMA
+
+### Device-Agnostic Microwave Noise Metrology for Nonlinear Cryogenic Quantum Devices
+- [[quantum-cryogenic-noise-metrology]] - Device-agnostic noise characterization for near-quantum-limited cryogenic devices (arXiv: 2605.28808)
+  - Standardized noise metrics independent of device physics
+  - Characterizes nonlinear effects: gain compression, intermodulation, pump-induced noise
+  - **Activation**: quantum noise metrology, cryogenic device characterization, microwave noise analysis, near-quantum-limited
+
+### Learning Logical Operations for Arbitrary Quantum Error Correction Codes
+  - Works with only encoding circuit input, no stabilizer description needed
+  - Jointly optimizes non-additive encodings with noise-adapted logical gate sets
+  - **Activation**: logical operation discovery, QEC code learning, non-additive encoding, VarEFTQC
+
+### Trapped-Ion Multiqubit Gates are Compatible with Scalable Quantum Error Correction
+- [[quantum-error-correction-methods]] (enhanced) - Demonstrates trapped-ion multiqubit gates compatible with scalable QEC (arXiv: 2605.28536)
+  - Path toward fault-tolerant quantum computing with trapped-ion architectures
+  - Addresses key compatibility challenge for scalable ion-trap QEC
+  - **Activation**: trapped-ion QEC, multiqubit gates, fault-tolerant ion trap, scalable QEC compatibility
+
+
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
@@ -106,7 +130,6 @@
 
 
 ### Dynamic Entanglement Packet Scheduling for Quantum Networks
-- [[dynamic-entanglement-packet-scheduling]] - Online dynamic scheduler for quantum entanglement distribution with real-time scheduling, defer, retry, and drop decisions. Outperforms static TDMA with lower completion time, higher completion ratio, and graceful degradation (arXiv: 2605.28795)
   - Online controller dynamically schedules/defers/retries/drops entanglement reservations
   - Lower completion time, higher completion ratio, and higher throughput vs static EDF baseline
   - Graceful degradation under overload: drops lowest-priority vs cascading failures
@@ -114,7 +137,6 @@
   - **Activation**: quantum network scheduling, entanglement distribution, dynamic scheduler, quantum internet, resource allocation, online control
 
 ### VarEFTQC: Learning Logical Operations for Arbitrary QEC Codes
-- [[var-eft-qc-logical-learning]] - Learning-based framework for discovering hardware-adapted logical operations in arbitrary quantum error correction codes, including non-additive codes. VarEFTQC co-designs non-additive encodings with noise-adapted logical gate sets (arXiv: 2605.28162)
   - Given only encoding circuit, discovers physical logical operations with structural constraints
   - VarEFTQC co-design: jointly optimizes encoding + logical ops for specific noise models
   - Enables transversal IQP-type families and low-depth universal gate sets
