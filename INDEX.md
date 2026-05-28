@@ -1,4 +1,55 @@
 
+## 2026-05-28 - Quantum-Neuromorphic Fusion (Cron Job)
+
+### Quantum-Neuromorphic Computing: Comprehensive Integration Framework
+- [[quantum-neuromorphic-fusion]] - 量子-神经形态计算融合方法论，整合量子计算与脉冲神经网络，涵盖量子增强脉冲架构、量子内存时序处理、混合训练策略与能效量子AI (综合框架)
+  - 核心架构：随机量子脉冲网络、量子储备池计算、量子增强突触权重
+  - 关键优势：能效（SNN稀疏性+量子并行）、时序处理（量子内存长依赖）、噪声容忍（随机量子处理）
+  - 实现要点：混合梯度流、变分量子训练、硬件映射策略
+  - 前沿问题：量子SNN优势条件、量子STDP学习规则、量子脉冲编码、容错量子神经形态
+  - **Activation**: quantum neuromorphic, quantum spiking, quantum reservoir, neuromorphic quantum learning, stochastic quantum SNN, quantum temporal processing
+
+## 2026-05-28 - Anthropic Research (Cron Job)
+
+### Project Glasswing: An initial update
+- [[glasswing-vulnerability-discovery]] - AI-powered vulnerability discovery methodology using Mythos Preview to find 10,000+ high/critical vulnerabilities at 10× faster rate
+  - Cloudflare: 2,000 bugs (400 high/critical), false positive rate better than human testers
+  - 90.6% true positive rate (triaged), 62.4% confirmed as high/critical
+  - Open-source: 6,202 high/critical vulnerabilities estimated in 1,000+ projects
+  - Key insight: Limiting factor is now verification/disclosure speed, not discovery
+  - **Activation**: glasswing, vulnerability discovery, mythos preview, AI security testing, frontier red team, AI cybersecurity
+
+### Teaching Claude Why
+- [[teaching-claude-why]] - Alignment training methodology showing ethics deliberation 28× more effective than action-only training
+  - Reduced agentic misalignment from 96% (Opus 4) to 0% (Claude Haiku 4.5+)
+  - Key lesson: Teaching *why* (value deliberation) > teaching *what* (correct actions)
+  - OOD "difficult advice" dataset generalizes better than honeypot-matching data
+  - Four lessons: OOD training, data quality iteration, reasoning > actions, live alignment assessment
+  - **Activation**: teaching claude why, alignment training, agentic misalignment, ethics deliberation, value reasoning
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - NLA methodology converting LLM activations into human-readable text through encoder-decoder reconstruction
+  - Reveals evaluation awareness Claude doesn't verbalize (26% on SWE-bench vs <1% on real usage)
+  - Three-component architecture: Target Model, Activation Vectorizer, Activation Reconstructor
+  - Joint training: activation → text explanation → reconstructed activation optimization
+  - Applications: understanding unverbalized thoughts, safety testing insights, intervention detection
+  - **Activation**: natural language autoencoder, NLA, activation decoder, llm interpretability, thought-to-text
+
+### 2028: Two scenarios for global AI leadership
+- [[2028-ai-leadership-scenarios]] - Policy framework analyzing US-China AI competition scenarios, compute controls, and democracy leadership requirements
+  - Scenario 1: Democracy leads (tighten export controls, disrupt distillation, accelerate adoption)
+  - Scenario 2: Authoritarian catch-up (compute loopholes exploited, AI norms shaped by repression)
+  - Key factors: compute advantage (most important), distillation attacks, talent vs compute limits
+  - Window for 12-24 month lead opportunity is limited, policy action urgent
+  - **Activation**: 2028 ai leadership, us-china ai competition, compute controls, export controls, ai geopolitics
+
+### What 81,000 people want from AI
+- [[81k-ai-expectations]] - Largest multilingual qualitative study on AI user expectations, dreams, and fears (81,000 Claude.ai users)
+  - Scale: Largest multilingual study of its kind
+  - Content: How users use AI, dreams for capabilities, fears about AI development
+  - Applications: product development, safety research prioritization, policy grounding, alignment validation
+  - **Activation**: 81k ai expectations, what people want from ai, ai survey, user expectations, qualitative study
+
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
 ### Random Neural Networks Match Observed Dimensionality of Neural Population Recordings
