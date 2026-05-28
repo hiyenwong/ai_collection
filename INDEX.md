@@ -1,5 +1,15 @@
      1|
 
+## 2026-05-28 - Quantum Computing Research (Cron Job)
+
+### Neural Quantum Spectral Operator Learning for Solving Partial Differential Equations
+- [[neural-quantum-spectral-operator-pde]] - First hybrid quantum-classical operator learning framework using Legendre-Galerkin weak formulation for parametric PDEs, Neural Variational Quantum Linear Solver (NVQLS) with sign ambiguity resolution and neural embedding encoding (arXiv: 2605.27408)
+  - 核心创新：Legendre-Galerkin量子线性求解器 + 神经嵌入参数编码
+  - 计算优势：理论复杂度降低 + 高维PDE量子加速潜力
+  - 关键应用：参数化PDE求解、工程系统建模、实时代理模型
+  - 实验验证：1D/2D PDE超越经典神经网络算子基线精度
+  - **Activation**: quantum operator learning, VQLS, quantum PDE solver, quantum spectral method, neural embedding quantum, hybrid quantum-classical operator
+
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
 ### Brain State Transition Network Control: Structural Controllability and Energy Dynamics
