@@ -1,5 +1,13 @@
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
+### Complex abelian varieties and quantum error correction: a mathematical framework for GKP codes
+- [[gkp-abelian-varieties-qec]] - GKP码通过复阿贝尔簇的几何：θ函数作为码空间，Pauli门来自θ群，Clifford门对应变换自同构 (arXiv: 2605.28784)
+  - 核心：GKP码与极化复阿贝尔簇的精确数学对应，编码渐近等距，Clifford门由高斯酉实现
+  - 失败概率由极化同态核中最短非平凡位移（systolic不变量）主导
+  - 将量子纠错性能优化转化为阿贝尔簇模空间上的几何优化问题
+  - **Activation**: GKP codes, abelian varieties, algebraic geometry quantum, theta functions, Clifford gates Gaussian, bosonic error correction, quantum systolic geometry
+
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
