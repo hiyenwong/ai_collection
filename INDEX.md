@@ -1,3 +1,26 @@
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
+### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
+- [[quctrl-bell-compiler-quantum-control]] - 编译器驱动量子控制栈方法论：六阶段转译管道实现亚微秒级反馈控制 (arXiv: 2605.22433)
+  - 控制流与硬件状态解耦，Python DSL → 六阶段编译 → 确定性硬件程序
+  - 跨板同步协议支持 <700ns 反馈延迟，无需主机干预
+  - **Activation**: compiler quantum control, QuCtrl-BELL, sub-microsecond feedback, trapped-ion control, quantum DSL
+
+### Adaptive Reinforcement Learning for Robust Open Quantum System Control
+- 多任务 SAC 强化学习框架：51 种哈密顿量变体下的鲁棒量子控制 (arXiv: 2605.26925)
+  - RIM 分析揭示 SAC 策略对脉冲扰动和退相干变异的鲁棒性优于 GRAPE
+  - **Activation**: adaptive quantum control, SAC RL, robustness measure, open quantum systems
+
+### Toward General Quantum Control with Physics-Informed LLMs (VF-QCTRL)
+- 物理信息 LLM 量子控制框架：符号推理 + 优化反馈循环 (arXiv: 2605.26021)
+  - QCTRL-BENCH 16 任务基准测试，训练-free 通用量子控制
+  - **Activation**: physics-informed LLM, VF-QCTRL, QCTRL-BENCH, analytic control ansatz
+
+### Scaling Quantum Optimization for Unit Commitment via Pauli Correlation Encoding
+- Pauli 相关编码优化：大规模组合优化的量子-经典混合方案 (arXiv: 2605.17145)
+  - Leader-follower 架构，312 二进制变量仅需 ~30 量子比特
+  - **Activation**: Pauli Correlation Encoding, PCE QUBO, leader-follower optimization, unit commitment
+
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
