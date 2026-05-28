@@ -1,5 +1,14 @@
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
+### VLMs May Not Globally Enhance Human Alignment over LLMs During Natural Reading
+- [[vlms-human-alignment-natural-reading]] - 受控文本评估揭示多模态预训练无全局优势，视觉语义内容选择性激活 VLM 对齐 (arXiv: 2605.28818)
+  - 多模态预训练不带来全局脑对齐优势，语言内部表征是关键因素
+  - VLM 优势仅在视觉语义内容强的句子中涌现（fMRI + 眼动验证）
+  - 受控设计：紧密匹配 LLM-VLM 对 + 文本-only 评估 + whole-cortex fMRI + 同步眼动追踪
+  - **Activation**: VLM-LLM alignment, human brain model comparison, natural reading fMRI, eye-tracking alignment, visual semantic content, multimodal pretraining, text-only evaluation, RSA, 脑模型对齐
+
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
 ### CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras
 - [[clane-neuromorphic-continual-learning]] - 首个端到端神经形态持续学习系统，在 Intel Loihi 2 上实现动作识别的在线学习 (arXiv: 2605.28387)
   - 70.4% 准确率，100x 能量降低，16x 延迟减少
