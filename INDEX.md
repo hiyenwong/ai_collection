@@ -7,6 +7,24 @@
   - QM9分子结构集成实验验证，超越量子生成基线
   - **Activation**: latent-conditioned PQC, LPQC, universal approximator quantum states, quantum generative modeling, Wasserstein distance quantum, barren plateau MoE
 
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Iterative maps emerging from cohomological structure of primes
+- [[prime-cohomological-maps]] - 素数上同构结构分析：迭代映射预测素数增长，对数积分函数为上同构方程的解 (arXiv: 2605.17622)
+  - 核心要点 1: 素数间隙按分离距离分组，可用迭代映射描述其主要增长
+  - 核心要点 2: 剩余涨落编码上同构结构，li(x)为上同构方程的解
+  - **Activation**: cohomological prime analysis, prime number iterative maps, 素数上同构分析, 素数迭代映射, logarithmic integral prime distribution
+
+### Module Lattice Security Part III: Structured CVP Distance on the Log-Unit Lattice
+- [[module-lattice-security]] (enhanced) - 模格安全性分析：L2 CVP距离收敛到Voronoi细胞内 (arXiv: 2605.17404)
+  - 核心要点: 随机短环元素到对数单位格的L2 CVP距离收敛到 pi/(2*sqrt(6))*sqrt(n)
+  - **Activation**: module lattice security, post-quantum cryptography, 模格安全
+
+### A Uniform Random-Lattice Tail Bound for the SVP Kissing-Profile Parameter
+- [[svp-lattice-tail-bound]] (enhanced) - SVP算法格子参数概率保证：Haar随机格尾界 (arXiv: 2605.21966)
+  - 核心要点: 证明gamma(L)等于2的o(n)次方对Haar-Siegel随机格以高概率成立
+  - **Activation**: SVP algorithm, lattice tail bound, shortest vector problem, Rogers mean value
+
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
 ### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
