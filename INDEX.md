@@ -1,3 +1,33 @@
+
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+
+- [[backpropagation-brain-misalignment]] - 一句话描述 (arXiv: 2605.28693)
+  - 反向传播梯度可预测 fMRI/MEG 信号，但时空组织与大脑层级不对齐
+  - 深度网络与大脑共享相似表征，但使用根本不同的学习机制
+  - 质疑反向传播的生物合理性，激励开发局部学习规则
+  - **Activation**: brain alignment, computational neuroscience, arXiv, 2026
+
+
+### CaMBRAIN: Real-time, Continuous EEG Inference with Causal State Space Models
+
+- [[cambrain-realtime-continuous-eeg]] - 一句话描述 (arXiv: 2605.28792)
+  - 首个因果 Mamba SSM 实现 EEG 实时连续推理，线性时间复杂度
+  - 多阶段自监督训练增强长程记忆保持（分钟级）
+  - >10x 吞吐量提升，支持可变长度流式处理
+  - **Activation**: brain alignment, computational neuroscience, EEG, real-time, Mamba, arXiv
+
+
+### CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras
+
+- [[clane-neuromorphic-continual-learning]] - 一句话描述 (arXiv: 2605.28387)
+  - 首个 Loihi 2 端到端神经形态持续学习系统，片上训练
+  - 创新 Temporal Aggregation + Fixed-Point Normalization 模块
+  - 70.4% 准确性 + >100x 能量降低 + 16x 延迟降低
+  - **Activation**: neuromorphic, SNN, Loihi 2, arXiv, 2026
+
+
      1|
 
 ## 2026-05-28 - Systems Engineering + Quantum Computing (Cron Job)
