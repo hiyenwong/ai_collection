@@ -19,6 +19,14 @@
   - Key insight: Limiting factor is now verification/disclosure speed, not discovery
   - **Activation**: glasswing, vulnerability discovery, mythos preview, AI security testing, frontier red team, AI cybersecurity
 
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Unified Neural Scaling Laws
+- [[unified-neural-scaling-laws]] - 多维度统一缩放定律：同时建模参数、数据、计算、推理步骤和超参数的缩放行为 (arXiv: 2605.26248)
+  - 核心创新：首个处理6+维度同时变化的功能形式
+  - 应用场景：大规模训练规划、资源优化、架构比较
+  - **Activation**: unified neural scaling, UNSL, multi-dimensional scaling, compute optimization
+
 ### Teaching Claude Why
 - [[teaching-claude-why]] - Alignment training methodology showing ethics deliberation 28× more effective than action-only training
   - Reduced agentic misalignment from 96% (Opus 4) to 0% (Claude Haiku 4.5+)
