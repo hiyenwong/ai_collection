@@ -117,7 +117,37 @@
    101|    25|  - 核心要点: 证明gamma(L)等于2的o(n)次方对Haar-Siegel随机格以高概率成立
    102|    26|  - **Activation**: SVP algorithm, lattice tail bound, shortest vector problem, Rogers mean value
    103|    27|
-   104|    28|## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+   104|    28|### Statistical Quantum Phase Estimation: Extensions and Practical Considerations
+- [[statistical-quantum-phase-estimation]] - 统计量子相位估计扩展：支持负Pauli权重的随机编译 + 变点检测替代重叠估计 + Fourier对称性2x采样缩减 (arXiv: 2605.18876)
+  - 核心：广义LCU随机编译支持负权重，无需预先估计trial/ground overlap下界
+  - 变点检测方法直接从CDF跳跃确定基态能量，消除重叠估计瓶颈
+  - Fourier级数对称性利用：在保持GSE精度的同时减少50%电路运行次数
+  - Qiskit量子模拟器数值验证，适用于早期容错量子计算机
+  - **Activation**: statistical QPE, SQPE, ground state energy, changepoint detection, LCU compilation, negative Pauli weights, Fourier symmetry, 统计量子相位估计
+
+### Quantum Sufficiency for Self-Adjoint Statistical Models
+- [[quantum-sufficiency-statistical-models]] - 量子充分性理论：实Jordan代数框架下的自伴统计模型，统一处理普通量子统计与局部量子统计结构 (arXiv: 2604.23292)
+  - 平方根似然比和对称对数导数自然涌现为基本自伴似然型对象
+  - 充分实正映射与充分实*-子代数、充分实Jordan代数的对应关系
+  - 最小充分实*-子代数由似然比集和ρ模不变性刻画
+  - 分离充分性的似然比方面与真正的量子模方面
+  - **Activation**: quantum sufficiency, Jordan algebra, likelihood ratio, self-adjoint models, statistical quantum theory, 量子充分性
+
+### Quantum State Isomorphism Problems for Groups
+- [[quantum-state-isomorphism-groups]] - 量子态同构问题计算复杂性：纯态版本对所有非平凡群均为BQP-hard，属于QCMA∩QCSZK (arXiv: 2605.12615)
+  - 量子态版Hidden Shift Problem：判定两个量子态是否通过群作用相关
+  - 纯态BQP-hard + QCMA∩QCSZK包含，混合态QIP(2)-complete
+  - 为量子密码学和量子态认证提供复杂性基础
+  - **Activation**: quantum state isomorphism, hidden shift problem, BQP-hard, QCMA, QCSZK, quantum complexity, 量子态同构
+
+### Parity of Parts and Excludant Statistics in Partitions and Quantum Modular Forms
+- [[quantum-modular-forms-partitions]] - 分拆中的奇偶性与排除统计：生成函数与Ramanujan量子模形式的关联 (arXiv: 2603.13915)
+  - q级数变换揭示分拆统计与Ramanujan的σ(q)、σ*(q)及Andrews的v2(q)的关系
+  - Tauberian方法获得序列渐近公式
+  - 连接组合数论与量子模形式的桥梁
+  - **Activation**: partition statistics, quantum modular forms, Ramanujan, q-series, Tauberian method, 分拆统计, 量子模形式
+
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
    105|    29|
    106|    30|### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
    107|    31|- [[quctrl-bell-compiler-quantum-control]] - 编译器驱动量子控制栈方法论：六阶段转译管道实现亚微秒级反馈控制 (arXiv: 2605.22433)
