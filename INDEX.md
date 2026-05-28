@@ -1,3 +1,13 @@
+
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### EEG-FM-Audit: A Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
+- [[eeg-fm-audit-systematic-evaluation]] - EEG基础模型系统评估管道，ASHA基准测试+范式消融+神经生理学探测框架 (arXiv:2605.26910)
+  - 核心发现：透明调优的监督基线可匹敌/超越复杂FM，参数更少
+  - 范式贡献高度依赖数据集规模和架构
+  - NPP框架验证FM是否使用生理学意义的EEG特征
+  - **Activation**: EEG foundation model, neural decoding benchmark, neurophysiological probing, ASHA benchmark, paradigm ablation
+
 ## 2026-05-28 - Neuroscience Research (Cron Job)
 
 ### Backpropagation Brain Hierarchy Misalignment
