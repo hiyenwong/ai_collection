@@ -1,6 +1,66 @@
 
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
+### Rigorous error bounds for dissipative thermal state preparation from weak system-bath coupling
+- [[dissipative-thermal-state-prep]] - Error-bounded thermal state preparation using collision models with J^2-controlled Lamb shift (arXiv: 2605.03011)
+  - Lamb shift error scales as J^2, tunable via system-bath coupling strength
+  - Randomized drive suppresses spectral resonances with many-body spectrum
+  - Practical protocol for NISQ hardware with shallow collision circuits
+  - **Activation**: thermal state preparation, dissipative lindbladian, collision model quantum, system-bath coupling error bounds
+
+### Ensemble Engineering to Overcome Destructive Cancellation in Quantum Measurements
+- [[ensemble-engineering-quantum]] - Mitigate destructive cancellation in NISQ measurements via engineered sampling distributions (arXiv: 2605.03729)
+  - Reformulate correlators in basis-resolved representation to expose cancellation structure
+  - Grover-type amplitude amplification and oracle-free shallow circuit constructions
+  - Trade-off between amplification strength and noise robustness on IBM 20-qubit processors
+  - **Activation**: quantum ensemble engineering, destructive cancellation, NISQ measurement efficiency
+
+### Trustworthy Quantum Machine Learning: A Roadmap for Reliability, Robustness, and Security
+- [[trustworthy-qml-roadmap]] - Comprehensive roadmap for trustworthy QML in the NISQ era (arXiv: 2511.02602)
+  - Covers reliability, robustness, and security for QML deployment
+  - Addresses probabilistic quantum mechanics risks and device noise
+  - Hybrid quantum-classical execution pipeline risk analysis
+  - **Activation**: trustworthy quantum ML, QML reliability, NISQ security, quantum robustness
+
+### Quantum Reliability
+- [[quantum-reliability-pathways]] - Framework for assessing reliability of quantum devices (arXiv: 2305.08461)
+  - Systematic metric for quantum reliability and its loss
+  - Extends classical reliability theory to quantum devices
+  - **Activation**: quantum reliability, quantum device assessment
+
+### Introduction to quantum control: From basic concepts to applications
+- [[quantum-control-engineering]] - Tutorial on classical electromagnetic field control of quantum systems (arXiv: 2512.04990)
+  - Use of classical EM fields to steer quantum system dynamics
+  - Exploits destructive/constructive interference for control targets
+  - **Activation**: quantum control, electromagnetic control, quantum steering
+
+### QBalance: Multi-Objective Workflow for Quantum Compilation
+- [[qbalance-quantum-workflow-optimization]] - Reproducible workflow for quantum compilation, noise suppression, and error mitigation (arXiv: 2605.02966)
+  - Multi-objective optimization of compilation strategy selection
+  - Noise suppression and error mitigation strategy selection
+  - **Activation**: quantum workflow optimization, compilation strategy, noise suppression
+
+### Towards Scalable Quaternary Message-Passing Decoding for QEC
+- [[scalable-quaternary-mp-qec-decoding]] - Quaternary Min-Sum decoder with dilution achieving 16% threshold up to distance 20 (arXiv: 2605.24177)
+  - Graph-dilution method for scalable MP decoding
+  - O(N log^2 d) worst-case complexity, outperforms BP-OSD at d=65
+  - **Activation**: quantum error correction decoding, message passing decoder, quaternary belief propagation
+
+### Operating a bistable qubit
+- [[operating-bistable-qubit]] - Adaptive feedback control for bistable qubit operation (arXiv: 2605.03187)
+  - Adaptive feedback protocol for bistable qubit control
+  - **Activation**: bistable qubit, adaptive feedback control, qubit operation
+
+### Analytical two-pulse control of universal single-qubit gates
+- [[analytical-two-pulse-control]] - Closed-form unitary evolution for universal single-qubit gates using ultracold NaCs molecules (arXiv: 2605.03461)
+  - First-order Magnus expansion for optimized two-pulse sequence
+  - Gate fidelities >0.9999 with minimal population leakage
+  - Applicable to other molecules and physical platforms
+  - **Activation**: two-pulse control, single-qubit gate, molecular quantum processor, ultracold molecules
+
+
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
 ### Beyond Logical Circuits: Hardware-Aware Analysis of Expressibility and Trainability in VQAs
 - [[hardware-aware-vqa-analysis]] - Hardware-aware VQA analysis methodology covering compilation-aware expressibility-trainability evaluation, hybrid quantum-classical architecture design, and system-level resource optimization (arXiv: 2605.25552, 2605.25768)
   - Core insight: compilation fundamentally transforms PQC properties — logical-level evaluation gives misleading results
@@ -30,6 +90,20 @@
   - **Activation**: glasswing, vulnerability discovery, mythos preview, AI security testing, frontier red team, AI cybersecurity
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+- [[backprop-brain-hierarchy-misalignment]] - Extended encoding analysis mapping backpropagated gradients to fMRI/MEG signals, revealing that brain and deep networks share representational content but rely on fundamentally different learning mechanisms (arXiv: 2605.28693)
+  - Core discovery: Gradients predict brain signals but spatial/temporal organization diverges from expected hierarchy
+  - Forward activations align with cortical hierarchy; backpropagated gradients misalign
+  - Implication: Backpropagation unlikely to be implemented in brain as-is
+  - **Activation**: backpropagation, brain hierarchy, gradient encoding, fMRI MEG, visual cortex, brain-DNN alignment, biological plausibility, self-supervised vision
+
+### Exploratory Experience Shapes the Geometry of Predictive Representations
+- [[exploratory-predictive-representation-geometry]] - Predictive-coding framework showing how exploratory vs exploitative strategies shape internal representations in agents and mice (arXiv: 2605.27929)
+  - Exploratory agents develop spatially organized representations preserving maze structure
+  - Exploitative agents learn less organized, reward-centric representations
+  - Mouse validation: exploratory mice match exploratory agent representations
+  - **Activation**: predictive coding, exploration-exploitation, active sensing, representation geometry, maze navigation, behavior-learning, exploratory behavior, latent space, generalization
 
 ### Unified Neural Scaling Laws
 - [[unified-neural-scaling-laws]] - 多维度统一缩放定律：同时建模参数、数据、计算、推理步骤和超参数的缩放行为 (arXiv: 2605.26248)
