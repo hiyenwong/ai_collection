@@ -34,6 +34,18 @@ characteristics and user-centric request handling.
 | Dynamic Efficient | Optimizes channel assignment based on current state | High-fidelity requirements |
 | Longest Queue First (LQF) | Prioritizes longest-waiting requests | Fairness across users |
 | Weighted LQF (WLQF) | Priority-weighted queue management | QoS-differentiated networks |
+| **TDMA Packet Scheduling** | Time-slot allocation with periodic recomputation | Scalable multi-user quantum networks |
+| **Earliest Deadline First (EDF)** | Deadline-driven priority scheduling | Time-sensitive entanglement requests |
+
+### Entanglement Packet Architecture (arXiv: 2605.28795)
+
+New paradigm: **on-demand entanglement packets** where a central controller
+uses TDMA to allocate network resources to quantum nodes on periodic schedules.
+
+- **Periodic schedule**: Each node assigned fixed time slots for entanglement generation
+- **Probabilistic fulfillment**: Accounts for quantum channel loss and decoherence
+- **Dynamic recomputation**: Schedule rebuilt periodically to handle changing demands
+- **Multi-application sharing**: Multiple quantum applications share network bandwidth
 
 ### Key Design Patterns
 
@@ -42,6 +54,8 @@ characteristics and user-centric request handling.
 3. **Channel assignment**: Match request requirements to link capabilities
 4. **Entanglement swapping**: Multi-hop distribution through intermediate nodes
 5. **Resource contention resolution**: Handle competing requests for shared quantum processors
+6. **TDMA slot allocation**: Assign periodic time slots for deterministic access
+7. **Deadline tracking**: Monitor and enforce entanglement delivery deadlines
 
 ## Usage Workflow
 

@@ -58,6 +58,14 @@
   - Applicable to other molecules and physical platforms
   - **Activation**: two-pulse control, single-qubit gate, molecular quantum processor, ultracold molecules
 
+### Dynamic Entanglement Packet Scheduling for Quantum Networks
+- [[quantum-network-scheduling]] (enhanced) - TDMA-based entanglement packet scheduling for scalable quantum networks with deadline-driven algorithms (arXiv: 2605.28795)
+  - TDMA time-slot allocation with periodic schedule recomputation
+  - Earliest Deadline First (EDF) scheduling for time-sensitive entanglement requests
+  - On-demand entanglement packets with probabilistic fulfillment guarantees
+  - Multi-application resource sharing in quantum networks
+  - **Activation**: quantum network scheduling, entanglement packet, TDMA quantum, EDF scheduling, quantum resource allocation
+
 
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
