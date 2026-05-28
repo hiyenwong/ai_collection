@@ -1,3 +1,21 @@
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
+### Quantum Federated Learning Security (CULT Model)
+- [[quantum-federated-security-cult]] - First formalized threat model for circuit-level backdoor attacks in Quantum Federated Learning (QFL) systems, covering Grover, Pauli, Bit-flip, and Sign-flip attack mechanisms with stealthiness guarantees (arXiv: 2605.27416)
+  - CULT model formalizes four stealthy attack types exploiting quantum-aware mechanisms
+  - Single malicious client can cause up to 50% accuracy degradation under FedAvg
+  - All tested defenses (Krum, Multi-Krum, FoolsGold, FLGuardian, Mud-HoG) fail worst-case scenarios
+  - Attacks mask presence by staying close to benign update norms
+  - **Activation**: quantum federated learning security, QFL backdoor, circuit-level attack, CULT model, quantum ML security, federated learning vulnerability
+
+### QKD Network Routing via Hamiltonian Optimization
+- [[quantum-network-routing-hamiltonian]] - Quantum-inspired optimization framework for adaptive multi-demand routing in QKD networks using effective Hamiltonian modeling and stochastic tensor network compression (arXiv: 2605.27425)
+  - Models routing as stochastic interacting graph with latency, keyrate, congestion, risk, capacity terms
+  - Dual-method: Metropolis annealing + boundary-MPS tensor network compression
+  - Scalable to large QKD network topologies
+  - Bridges classical orchestration with quantum-native routing
+  - **Activation**: QKD network routing, Hamiltonian optimization, tensor network routing, quantum network orchestration, adaptive congestion routing
+
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
