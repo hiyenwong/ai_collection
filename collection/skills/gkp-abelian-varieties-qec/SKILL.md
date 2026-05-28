@@ -1,86 +1,81 @@
 ---
 name: gkp-abelian-varieties-qec
-description: "GKP (Gottesman-Kitaev-Preskill) quantum error correction codes through the lens of complex abelian varieties and algebraic geometry. Provides a mathematical dictionary between GKP code structures and classical objects in abelian variety theory: theta functions as code space, theta group as Pauli operators, automorphisms as Clifford gates, isogeny as stabilizer concatenation. Use when: designing or analyzing GKP codes, optimizing bosonic quantum error correction, applying algebraic geometry to quantum codes, studying lattice-based quantum error correction, analyzing Gaussian unitary implementations of logical gates, or working with bosonic continuous-variable quantum computing."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.28784"
-  published: "2026-05-27"
-  authors: "Maxence Mayrand, Baptiste Royer"
-  tags: [quantum, algebraic-geometry, number-theory, error-correction, gkp, bosonic]
+description: GKP-Abelian Varieties QEC methodology — mathematical framework connecting complex abelian varieties (algebraic geometry/number theory) to Gottesman-Kitaev-Preskill quantum error-correcting codes. Maps code space to theta functions, Pauli gates to theta groups, Clifford gates to automorphisms, stabilizer concatenation to isogeny. Proves encoding is asymptotically isometric and failure probability is governed by the systolic invariant of the polarization. Use when analyzing GKP codes, quantum error correction via algebraic geometry, theta function quantum computing, or systolic bounds on code performance.
 ---
 
-# GKP Codes via Complex Abelian Varieties
+# GKP-Abelian Varieties Quantum Error Correction
 
 ## Overview
 
-GKP (Gottesman-Kitaev-Preskill) codes are bosonic quantum error-correcting codes built from symplectically integral lattices. This framework establishes a precise mathematical dictionary between GKP code theory and classical algebraic geometry of polarized complex abelian varieties.
+GKP (Gottesman-Kitaev-Preskill) codes are continuous-variable quantum error-correcting codes built from symplectically integral lattices. The framework by Mayrand & Royer (arXiv:2605.28784) establishes a precise mathematical dictionary between GKP code theory and the classical theory of complex abelian varieties (algebraic geometry / number theory).
 
-## Core Dictionary
+## Mathematical Dictionary
 
-| GKP Concept | Abelian Variety Object |
+| GKP Concept | Abelian Varieties Concept |
 |---|---|
-| Lattice Λ | Symplectically integral lattice |
-| Code space | Theta functions H⁰(X, L) |
+| Symplectic lattice L | Polarized abelian variety (A, H) |
+| Code space (finite-dim) | Space of theta functions |
 | Logical Pauli gates | Theta group elements |
-| Passive Clifford gates | Automorphisms of polarized variety (X, L) |
-| Stabilizer concatenation | Isogeny of abelian varieties |
-| Noise threshold | Systolic invariant (shortest displacement in polarization kernel) |
+| Passive logical Clifford gates | Automorphisms of (A, H) |
+| Concatenation with stabilizer codes | Isogeny |
+| Encoding map | Asymptotically isometric embedding |
+| Failure probability (small noise) | Shortest displacement in kernel of polarization isogeny (systolic invariant) |
 
-## Key Mathematical Results
+## Key Results
 
-### Asymptotic Isometric Encoding
+1. **Asymptotic Isometry**: The encoding map from the code space to theta functions is asymptotically isometric, preserving inner products in the large-lattice limit.
 
-The encoding map from the logical qudit space to the physical oscillator becomes asymptotically isometric as the lattice scale increases. This justifies the common physics heuristic that GKP codes "approximately" encode finite-dimensional states.
+2. **Clifford via Gaussian**: Every logical Clifford gate on the GKP code is realized by a Gaussian unitary operation — a consequence of the correspondence between Clifford gates and automorphisms of the polarized abelian variety.
 
-### Clifford Gates from Gaussian Unitaries
+3. **Systolic Error Bound**: For noise of small variance σ², the logical failure probability P_fail is governed to first order by:
+   ```
+   P_fail ∝ exp(-d_min² / (2σ²))
+   ```
+   where d_min is the shortest nontrivial displacement in the kernel of the polarization isogeny — a systolic invariant of the underlying polarization.
 
-Every logical Clifford gate on a GKP code is realized by a Gaussian unitary operation. This provides the mathematical foundation for fault-tolerant gate implementation in continuous-variable quantum computing.
-
-### Failure Probability and Systolic Geometry
-
-For noise of small variance σ², the logical failure probability is governed to first order by the shortest nontrivial displacement in the kernel of the polarization isogeny. This is a systolic invariant of the underlying polarization, connecting code performance to geometric optimization on the moduli space of polarized abelian varieties.
+4. **Isogeny Concatenation**: Concatenating GKP codes with stabilizer codes corresponds to applying isogenies between abelian varieties, providing a geometric interpretation of code concatenation.
 
 ## Usage Patterns
 
-### Pattern 1: Analyzing GKP Code Structure
+### Analyzing GKP Code Properties
+1. Identify the symplectic lattice defining the GKP code
+2. Construct the associated polarized abelian variety (A, H)
+3. Map quantum operations to geometric objects via the dictionary
+4. Use algebraic geometry tools to analyze code properties
 
-To analyze the structure of a GKP code defined by lattice Λ:
+### Computing Error Bounds via Systolic Invariants
+1. Determine the polarization isogeny φ: A → B
+2. Find the kernel ker(φ) and its shortest nonzero element d_min
+3. The systolic invariant d_min bounds the failure probability for small-variance noise
+4. Optimize lattice choice to maximize d_min for given code parameters
 
-1. Identify the symplectic form on Λ
-2. Construct the polarized abelian variety (X, L) from Λ
-3. Map logical operators to theta group elements
-4. Identify Clifford gates as automorphisms of (X, L)
+### Designing Codes via Isogeny
+1. Start with a base GKP code (base abelian variety)
+2. Choose an isogeny corresponding to desired stabilizer code
+3. The resulting code inherits properties from both varieties
+4. Analyze via composition of isogenies
 
-### Pattern 2: Optimizing Code Performance
+## Application Domains
 
-To optimize a GKP code for noise resilience:
+- Continuous-variable quantum computing
+- Quantum error correction with bosonic modes
+- Algebraic geometry methods in quantum information
+- Number theory applications to quantum codes
+- Lattice-based quantum cryptography
+- Geometric analysis of quantum codes
 
-1. Express the noise model in terms of displacement operators
-2. Identify the polarization isogeny kernel
-3. Compute the systolic invariant (shortest nontrivial displacement)
-4. Optimize over the moduli space of polarized abelian varieties to maximize the systole
+## Related Concepts
 
-### Pattern 3: Concatenation via Isogeny
+- **Theta functions**: Holomorphic functions on complex tori, correspond to code states
+- **Symplectic geometry**: Framework for continuous-variable quantum mechanics
+- **Polarization**: Additional structure on abelian variety encoding the symplectic form
+- **Theta group**: Finite group extension encoding logical Pauli operators
+- **Isogeny**: Surjective morphism with finite kernel, corresponds to code concatenation
+- **Systole**: Shortest nontrivial cycle, bounds code performance
 
-To concatenate a GKP code with a discrete stabilizer code:
+## Resources
 
-1. Identify the stabilizer code as defining an isogeny
-2. Compose the isogeny with the polarization
-3. The resulting polarized variety encodes the concatenated code
-4. Logical operators transform under the isogeny pullback
-
-## Error Handling
-
-### Large Variance Noise
-
-The systolic approximation for failure probability applies only for small-variance noise. For larger noise, use the full theta function analysis or numerical simulation.
-
-### Non-Symplectic Lattices
-
-The framework requires symplectically integral lattices. For non-symplectic lattices, first find a symplectic embedding or use alternative code constructions.
-
-## Related Skills
-
-- [[bosonic-gkp-parity-encoding]] - Loss-tolerant GKP communication using parity encoding
-- [[bosonic-grid-states-qec]] - Bosonic QEC using GKP grid states
-- [[quantum-error-correction-methods]] - General QEC patterns
+- **Paper**: "Complex abelian varieties and quantum error correction: a mathematical framework for GKP codes" — Maxence Mayrand, Baptiste Royer (arXiv:2605.28784, May 2026)
+- **GKP Original**: Gottesman, Kitaev, Preskill (2001) — original continuous-variable QEC codes
+- **Abelian Varieties**: Mumford, "Abelian Varieties" — classical reference
+- **Theta Functions**: Mumford, "Tata Lectures on Theta"
