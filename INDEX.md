@@ -288,3 +288,17 @@
   - 核心要点: 六阶段转译流水线（CFG→SSA→活跃性分析→寄存器分配→代码生成），跨板同步延迟<700ns
   - **Activation**: quantum compiler feedback, QuCtrl-BELL, sub-microsecond feedback
 
+## 2026-05-28 - Systems Engineering + Quantum (Hourly Cron Job)
+
+### Efficient quantum algorithm for linear matrix differential equations and applications to open quantum systems
+- [[quantum-linear-differential-equation]] - 高效量子算法求解线性矩阵微分方程，用于开放量子系统模拟，实现近乎最优查询复杂度 (arXiv: 2605.16195)
+  - 核心要点: 查询复杂度 Õ(νLt/ε)，适用于酉/耗散动力学、薛定谔方程、Lindblad主方程模拟
+  - 核心要点: 使用块编码+LCU技术构造有效哈密顿量，通过振幅估计提取解矩阵元素
+  - **Activation**: quantum differential equations, linear matrix equations, open quantum systems, block encoding, quantum simulation, Lindblad equation
+
+### When Noisy Quantum Order Finding Remains Recoverable for Shor's Algorithm
+- [[noisy-quantum-order-finding]] - NISQ硬件噪声下量子阶寻找可恢复性分析方法论，基于680+IBM量子系统分布数据 (arXiv: 2605.16074)
+  - 核心要点: 统计分析相位估计输出分布，使用连分数算法从噪声峰值中恢复正确阶数
+  - 核心要点: 建立噪声阈值与可恢复概率的关系，为Shor算法在NISQ设备上的可行性提供指导
+  - **Activation**: shor algorithm, quantum order finding, noisy quantum, phase estimation, continued fractions, NISQ, error recovery
+
