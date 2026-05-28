@@ -1,4 +1,16 @@
 
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### EEG-FM-Audit: Systematic Evaluation and Analysis Pipeline for EEG Foundation Models
+- [[eeg-fm-audit-systematic-evaluation]] - EEG Foundation Model 三组件系统评估框架：透明基准优化、学习范式消融、神经生理学探针 (arXiv: 2605.26910)
+  - ASHA 驱动基准基准协议确保监督基线公平比较
+  - 调优的监督基线可匹配/超越 FM，参数量少 10-100x
+  - 学习范式有效性高度依赖数据集规模和架构
+  - NPP 框架验证 FM 是否利用有效的时序、空间、频谱 EEG 特性
+  - FM 对时序属性强对齐(r=0.72)，空间中等(r=0.58)，频谱弱匹配(r=0.41)
+  - **Activation**: EEG foundation model, model audit, baseline benchmarking, neurophysiological probing, paradigm ablation, systematic evaluation
+
+
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job)
 
 ### Zero-shot Quantum Neural Architecture Search
