@@ -1,5 +1,31 @@
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
+### Dynamic Entanglement Packet Scheduling for Quantum Networks
+- [[quantum-networks-systems-engineering]] - Dynamic online scheduling for entanglement distribution in quantum networks, replacing static TDMA with adaptive allocation (arXiv: 2605.28795)
+  - Online scheduler outperforms static EDF baseline in completion time and throughput
+  - Graceful degradation under network overload conditions
+  - **Activation**: quantum network, entanglement scheduling, QKD routing, quantum internet
+
+### Quantum-Inspired Hamiltonian Optimization for QKD Networks
+- [[quantum-networks-systems-engineering]] - Hamiltonian-based routing for large-scale QKD networks with tensor network compression (arXiv: 2605.27425)
+  - Stochastic Metropolis annealer + boundary-MPS for multi-objective routing
+  - Bridges QKD orchestration with statistical-physics optimization
+  - **Activation**: QKD routing, Hamiltonian optimization, tensor network, congestion routing
+
+### Quantum ML-based 6G Edge Network
+- [[quantum-6g-network-systems]] - Quantum-enhanced V2X communication framework with QCNN, quantum attention, QRL, and quantum federated learning (arXiv: 2605.27417)
+  - 4-module architecture: semantic communication, multimodal fusion, model transfer, federated aggregation
+  - Quantum advantage in high-dimensional state spaces and heterogeneous data fusion
+  - **Activation**: quantum 6G, V2X, QCNN, quantum federated learning, quantum attention, QRL
+
+### Robust Quantum Control via Chirped-Pulse Engineering
+- [[quantum-robust-control-engineering]] - Robust control of single-molecule orientation in cavity QED using chirped-pulse methodology (arXiv: 2605.28511)
+  - Frequency chirping provides natural robustness to parameter variations
+  - Cavity-mediated enhancement as a systems-level resource
+  - **Activation**: quantum control, robust control, chirped pulse, cavity QED, molecular orientation
+
+## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
+
 ### Quantum Federated Learning Security (CULT Model)
 - [[quantum-federated-security-cult]] - First formalized threat model for circuit-level backdoor attacks in Quantum Federated Learning (QFL) systems, covering Grover, Pauli, Bit-flip, and Sign-flip attack mechanisms with stealthiness guarantees (arXiv: 2605.27416)
   - CULT model formalizes four stealthy attack types exploiting quantum-aware mechanisms
@@ -231,4 +257,3 @@
   - 渐进式训练哈密顿量集扩展实现未训练哈密顿量的泛化
   - 鲁棒性不保真度量(RIM)分析验证优于传统优化方法
   - **Activation**: RL quantum control, multi-task SAC quantum, robust open quantum control, adaptive quantum pulse learning, reinforcement learning quantum optimization
-
