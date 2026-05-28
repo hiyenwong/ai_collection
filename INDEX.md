@@ -1,5 +1,13 @@
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+- [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度与脑视觉层级不对齐，揭示深度学习与大脑学习机制根本差异 (arXiv: 2605.28693)
+  - 反向梯度能预测脑信号（fMRI/MEG），但时空组织与生物学反向传播预期不符
+  - 前向激活对齐 ≠ 反向机制对齐，挑战"大脑实现反向传播"假设
+  - **Activation**: 反向传播, 脑对齐, 表征对齐, 梯度分析, fMRI, MEG, 视觉皮层
+
 ### Non-invertible symmetry enriched string net topological orders
 - [[non-invertible-topological-order-analysis]] - Analysis methodology for non-invertible symmetry enriched topological orders using unitary fusion categories (arXiv: 2605.28794)
   - Core: NI-SETO definition via UFC full inclusions and anyon condensation
