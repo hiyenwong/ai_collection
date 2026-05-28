@@ -26,6 +26,14 @@
 
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
+### CaMBRAIN: Real-time, Continuous EEG Inference with Causal State Space Models
+- [[cambrain-realtime-eeg-inference]] - First causal Mamba SSM for real-time continuous EEG inference with >10x throughput (arXiv: 2605.28792)
+  - Causal Mamba SSM enables streaming EEG inference with linear O(n) complexity
+  - Multi-stage self-supervised training for long-range memory retention
+  - Bidirectional approaches are needlessly expensive for inherently causal EEG
+  - State-of-the-art across 3 EEG datasets with real-time processing capability
+  - **Activation**: EEG, real-time inference, state space model, Mamba, causal, streaming EEG, continuous inference
+
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
 - [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度能预测fMRI/MEG信号但组织方式与大脑不匹配 (arXiv: 2605.28693)
   - 反向传播梯度能预测fMRI/MEG信号但组织方式与大脑不匹配
