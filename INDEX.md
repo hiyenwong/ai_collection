@@ -7,6 +7,13 @@
   - Entangled gradients from neuron positions limit GD effectiveness
   - **Activation**: DEBI-NN, genetic algorithm training, gradient descent, biomorphic, spatial encoding, medical dataset, evolutionary optimization
 
+### Causal State Intervention for Human Controllability
+- [[causal-state-intervention-human-controllability]] - Framework for controlling human outcomes through dynamic latent state manipulation, demonstrating causal controllability via state trajectory interventions (arXiv:2605.27580)
+  - Within-person variability explained by dynamic state weighting at sub-daily timescales
+  - Human outcomes causally controllable through interventions targeting state trajectory at decision formation moments
+  - 200,000+ user dataset across 4 occupational personas (2023-2026)
+  - **Activation**: causal state, human controllability, state intervention, behavioral variability, latent state, predictive processing, computational psychiatry
+
 ## 2026-05-28 - Systems Engineering + Quantum (Cron Job)
 
 ### Dynamic Entanglement Packet Scheduling for Quantum Networks
