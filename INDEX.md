@@ -69,3 +69,24 @@
     49|### Operating a bistable qubit
     50|- [[operating-bistable-qubit]] - Adaptive feedback control for bistable qubit operation (arXiv: 2605.03187)
     51|
+### QuCtrl-BELL: Compiler-Driven Sub-Microsecond Feedback Control Stack
+- [[quantum-compiler-feedback]] - 编译器驱动的亚微秒反馈控制栈，用于可扩展量子计算。通过Python嵌入式DSL、六阶段转译流水线和跨板同步（<700ns延迟），解决硬件耦合与软件模块化的权衡 (arXiv: 2605.22433)
+  - 六阶段转译：CFG构建→SSA转换→活性分析→图着色寄存器分配→代码生成→步序表生成
+  - 控制流解耦：将循环/分支/同步与硬件状态数据分离
+  - RISC-V + PXIe部署验证：确定性时序和模块化可编程性
+  - **Activation**: quantum compiler feedback, sub-microsecond quantum control, compiler-driven quantum, QuCtrl-BELL, trapped-ion control stack, DSL quantum programming
+
+### VF-QCTRL: Physics-Informed LLM for General Quantum Control
+- [[vf-qctrl-llm-quantum-control]] - 物理信息大语言模型框架用于通用量子控制，结合符号推理与优化提出解析控制ansätze并通过反馈迭代精炼，QCTRL-Bench涵盖16个任务 (arXiv: 2605.26021)
+  - 符号+数值混合：LLM提出解析脉冲序列，数值优化精炼参数
+  - 训练免费：无需微调，跨多种量子系统通用
+  - 可解释性：直接从自然语言提示生成物理可解释的解析协议
+  - **Activation**: physics-informed LLM quantum control, VF-QCTRL, analytic control ansatz, symbolic quantum control, LLM quantum protocol design, QCTRL-Bench
+
+### Adaptive RL for Robust Open Quantum System Control
+- [[rl-quantum-control]] - 多任务SAC强化学习框架用于开放量子系统控制，跨51种哈密顿量变体学习最优脉冲序列，RIM分析显示对脉冲幅度扰动和退相干率变化优于GRAPE (arXiv: 2605.26925)
+  - 多任务SAC同时学习最优脉冲序列和问题特定的演化时间T和脉冲段数N
+  - 渐进式训练哈密顿量集扩展实现未训练哈密顿量的泛化
+  - 鲁棒性不保真度量(RIM)分析验证优于传统优化方法
+  - **Activation**: RL quantum control, multi-task SAC quantum, robust open quantum control, adaptive quantum pulse learning, reinforcement learning quantum optimization
+
