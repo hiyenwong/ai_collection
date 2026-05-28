@@ -1,3 +1,11 @@
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Complex abelian varieties and quantum error correction: a mathematical framework for GKP codes
+- [[gkp-abelian-varieties-qec]] - 复阿贝尔簇与量子纠错的数学框架，建立GKP码与代数几何之间的精确对应字典 (arXiv: 2605.28784)
+  - 编码空间映射到Theta函数空间，Pauli门对应Theta群，Clifford门对应极化阿贝尔簇自同构
+  - 编码渐近等距，小噪声下失败概率由极化同源核的最短非平凡位移（systolic不变量）控制
+  - **Activation**: GKP codes, abelian varieties, quantum error correction, theta functions, algebraic geometry, number theory, systolic bounds, 复阿贝尔簇, 量子纠错
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### VLMs May Not Globally Enhance Human Alignment over LLMs During Natural Reading
