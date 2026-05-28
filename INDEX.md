@@ -16,6 +16,15 @@
   - Bridges classical orchestration with quantum-native routing
   - **Activation**: QKD network routing, Hamiltonian optimization, tensor network routing, quantum network orchestration, adaptive congestion routing
 
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### VLMs May Not Globally Enhance Human Alignment over LLMs During Natural Reading
+- [[vlms-human-alignment-natural-reading]] - VLMs在自然阅读中不一定全局增强与人类大脑的对齐 (arXiv:2605.28818)
+  - 多模态预训练对文本处理的对齐优势是选择性的而非全局的
+  - 语言内在表征仍然是自然阅读的核心
+  - 视觉语义内容强的句子显示VLM优势，抽象内容则不明显
+  - **Activation**: VLM alignment, brain-model alignment, natural reading, multimodal learning, fMRI
+
 ## 2026-05-29 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ## 2026-05-28 - Neuroscience Research (Cron Job)
