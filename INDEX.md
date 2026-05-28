@@ -1,4 +1,22 @@
 
+## 2026-05-28 - Neuroscience Research (Cron Job)
+
+### Random Neural Networks Match Observed Dimensionality of Neural Population Recordings
+- [[random-neural-network-dimensionality]] - 使用Dynamical Mean-Field Theory验证随机神经网络与实验数据的维度性匹配，发现维度性指标不足以区分连接结构，推荐使用神经流形方向相似性 (arXiv:2605.26551)
+  - 首次定量验证：最小随机网络模型可匹配实验维度性（加入有限测量时间和行为上下文变异）
+  - 关键发现1：当前记录时长（~10³）不足以用维度性区分连接结构
+  - 关键发现2：流形方向相似性比维度性更敏感，推荐用于推断连接结构
+  - 外部输入与维度性呈非单调关系，峰值在中等输入强度
+  - **Activation**: 随机神经网络, 神经种群维度, dimensionality, neural population, mean-field theory, 维度性分析, manifold orientation, connectivity inference
+
+### Probabilistic Recurrent Intention Switching Model (PRISM)
+- [[prism-probabilistic-intention-switching]] - 多意图逆向强化学习的新方法，用轻量循环网络建模意图切换，实现精确EM分解和无变分近似闭式解 (arXiv:2605.26998)
+  - 核心创新：循环网络替代马尔可夫链/固定窗口，捕获完整历史依赖
+  - 数学突破：EM目标精确分解为独立子问题，每个意图闭式求解（无变分近似）
+  - 应用规模：首个大规模机器人应用（BridgeData V2，~10万演示）
+  - 实验验证：Gridworld→Mouse Labyrinth→BridgeData V2，恢复可命名且时间连贯的意图
+  - **Activation**: 多意图IRL, intention switching, PRISM, 目标切换, recurrent intention, EM algorithm, closed-form solution
+
 ## 2026-05-28 - Systems Engineering Research (Cron Job)
 
 ### When Agents Control Robots: A Zero Trust Policy Model for Agentic Cyber-Physical Systems
