@@ -18,6 +18,32 @@
   - Calibrated from EC CORDIS funding data for real-world recommender scoring
   - **Activation**: EWL quantum game, Dirac-Solow-Swan Hamiltonian, quantum recommender system, quadruple helix, 量子博弈论经济学
 
+### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
+- [[quantum-hybrid-audit]] - Audit methodology for decomposing hybrid quantum-classical optimization workflows, measuring actual quantum contribution vs classical overhead (arXiv: 2605.17623)
+  - QPU access time is only 0.7% of 5-second wall-clock budget in D-Wave hybrid solver
+  - Hybrid matches Gurobi MIQP optimum on all 54 provable instances despite minimal quantum time
+  - Quantum Contribution Index (QCI) framework for investment decision support
+  - **Activation**: quantum hybrid audit, D-Wave hybrid analysis, quantum contribution measurement, hybrid solver decomposition, 量子混合审计
+
+### Noise-Induced Landscape Distortion in QAOA for Constrained Binary Optimization
+- [[qaoa-landscape-audit]] - Landscape Span Compression (LSC) metric for device-agnostic audit of QAOA hardware noise impact, predicting optimization failure before expensive quantum runs (arXiv: 2604.19426)
+  - LSC = 1 - (observed_span/ideal_span); LSC > 0.7 indicates near barren plateau
+  - Empirically validated on IBM quantum hardware for constrained QUBO problems
+  - Pre-run diagnostic saves quantum compute resources by predicting failure
+  - **Activation**: qaoa landscape audit, landscape span compression, qaoa noise analysis, quantum barren plateau detection, 量子优化景观审计
+
+### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
+- [[constrained-counterdiabatic-qaoa-portfolio]] (enhanced) - CCD-QAOA with approximate adiabatic gauge potentials from nested commutators for constrained portfolio optimization (arXiv: 2605.06858)
+  - Incorporates counterdiabatic terms into variational ansatz for improved convergence
+  - Handles realistic budget and risk constraints with XY-mixer Hamiltonian
+  - **Activation**: counterdiabatic QAOA, portfolio optimization, adiabatic gauge potential, constrained quantum optimization
+
+### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
+- [[constraint-preserving-quantum-mixers]] (enhanced) - XY-mixer design methodology under Trotterized adiabatic evolution for constrained quantum optimization (arXiv: 2605.02465)
+  - Constraint locality analysis for XY-mixer Hamiltonian design
+  - Trotterized adiabatic evolution preserves feasibility throughout optimization
+  - **Activation**: constraint preserving mixers, XY-mixer, Trotterized evolution, constrained quantum optimization
+
      1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
      2|
      3|### Algorithms with Polynomially-Improved Approximation Factors for the 2→q Norm
