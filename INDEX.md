@@ -1,4 +1,21 @@
 
+
+
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### LLM ICL Representational Geometry Reorganization
+- [[llm-icl-representational-geometry-reorganization]] - ICL models reorganize representations dynamically via prototype comparison (arXiv: 2605.28854)
+  - RDM correlation increases during untangling tasks
+  - Eigenvalue spectrum separates task information
+  - **Activation**: ICL, representational geometry, prototypes, untangling, RDM correlation, online learning
+
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - Brain-IT-VQA framework for VQA from fMRI, decodes language tokens from brain activity (arXiv: 2605.29588)
+  - Token-level decoding outperforms pixel reconstruction
+  - NSD-VQA benchmark with 20 controlled question categories
+  - **Activation**: Brain-IT, VQA, fMRI decoding, brain question answering, NSD-VQA
+
+
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Paper 2605.29052
