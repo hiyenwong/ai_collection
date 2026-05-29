@@ -1,5 +1,16 @@
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
+
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### Treatment-Conditioned Diffusion for Forecasting Neurodegenerative Disease Progression
+- [[treatment-conditioned-diffusion-neurodegenerative-progression]] - Treatment-conditioned diffusion framework predicting high-fidelity future brain states via DaTscan images and levodopa dose conditioning (arXiv: 2605.29932)
+  - Novel diffusion model for neurodegenerative disease progression (Parkinson's)
+  - Transformer encoder captures non-linear pharmacological dynamics
+  - 14.0% lower MSE, 7.2% lower MAE, 4.9% higher SSIM vs baseline
+  - **Activation**: neurodegenerative, Parkinson, diffusion, DaTscan, treatment-conditioned, longitudinal neuroimaging
+
+
 ### Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents
 - [[mmpo-metacognitive-memory-policy]] - Belief Entropy 作为自监督代理优化 LLM agents 内存策略，在 1.75M-token 上下文保持 97.1% 性能 (arXiv: 2605.30159)
   - 引入 Belief Entropy 量化隐任务状态不确定性
