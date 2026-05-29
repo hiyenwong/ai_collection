@@ -33,6 +33,15 @@
   - First systematic study of embodied VR feedback for 3D BCI over 10 longitudinal sessions
   - Enhanced sensorimotor-parietal desynchronisation and motor-frontal connectivity
   - **Activation**: VR feedback, embodied BCI, motor imagery decoding, continuous BCI, 3D motor control
+
+### Brain-IT-VQA: Visual Question Answering from fMRI Signals
+- [[brain-it-vqa-fmri-visual-question-answering]] - Brain-IT-VQA framework for fMRI-based visual question answering with language token decoding (arXiv: 2605.29588)
+  - First direct language token decoding from fMRI brain activity integrated with language model
+  - NSD-VQA benchmark dataset with 20 controlled question categories and 20 QA pairs per image
+  - Quantifies visual/semantic information decodability and brain region contributions across question types
+  - Substantially outperforms previous fMRI captioning and VQA approaches
+  - **Activation**: fMRI VQA, Brain-IT, language token decoding, NSD-VQA benchmark, brain region analysis, visual question answering
+
 ## 2026-05-29 - Neuroscience Research (Cron Job) - EEG Foundation Models
 
 ### A Multi-dimensional Framework for Evaluating Generalization in EEG Foundation Models
