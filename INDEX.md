@@ -1,3 +1,38 @@
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Learning to Maximize Quantum Neural Network Expressivity via Effective Rank
+- [[effective-rank-qnn-expressivity]] - Introduces effective rank (kappa) as quantitative measure of QNN expressivity, capturing independent variational parameters (arXiv: 2506.15375)
+  - Core: Effective rank measures true degrees of freedom in parameterized quantum circuits
+  - Low kappa correlates with barren plateau severity; serves as pre-training ansatz diagnostic
+  - **Activation**: effective rank, QNN expressivity, variational circuit design, barren plateau
+
+### On the Dynamical Lie Algebras of Quantum Approximate Optimization Algorithms
+- [[dynamical-lie-algebra-qaoa]] - Analyzes QAOA expressivity and optimization landscape through dynamical Lie algebra dimension (arXiv: 2407.12587)
+  - Core: DLA dimension determines reachable unitary space, barren plateau presence, and classical simulability
+  - Graph-dependent scaling: different problem structures yield different DLA dimensions
+  - **Activation**: dynamical Lie algebra, QAOA analysis, quantum circuit expressivity, variational algorithm theory
+
+### Emergent Operational Entanglement Graphs and Sub-Quadratic Authentication Scaling
+- [[emergent-entanglement-graphs]] - Studies emergent entanglement structures in quantum networks enabling sub-quadratic QKD authentication (arXiv: 2605.27434)
+  - Core: Operational entanglement graphs differ from physical topology due to swapping/purification
+  - Graph properties provide security certificates and optimize authentication overhead
+  - **Activation**: entanglement graphs, QKD authentication, quantum network topology, quantum communication security
+
+### EFaaS: A Quantum-Classical Serverless Entangled Scheduler for Hybrid Variational Algorithms
+- [[qlass-serverless-entangled-scheduler]] - Serverless orchestration of quantum circuit evaluations for hybrid variational algorithms (arXiv: 2605.27540)
+  - Core: Treats quantum circuit evaluations as serverless functions with entanglement-aware scheduling
+  - Reduces classical-quantum communication overhead through batching and adaptive parallelism
+  - **Activation**: quantum serverless, EFaaS, hybrid variational scheduling, quantum-classical orchestration
+
+
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### Embodied VR Feedback Reshapes Neural Representations for 3D Motor Imagery BCI
+- [[embodied-vr-feedback-3d-motor-imagery-bci]] - Embodied VR feedback methodology for continuous 3D motor imagery BCI achieving 13% performance improvement (arXiv: 2605.29677)
+  - VR feedback (r=0.762) outperforms screen feedback (r=0.672) by 13% in CNN-LSTM decoder
+  - First systematic study of embodied VR feedback for 3D BCI over 10 longitudinal sessions
+  - Enhanced sensorimotor-parietal desynchronisation and motor-frontal connectivity
+  - **Activation**: VR feedback, embodied BCI, motor imagery decoding, continuous BCI, 3D motor control
 ## 2026-05-29 - Neuroscience Research (Cron Job) - EEG Foundation Models
 
 ### A Multi-dimensional Framework for Evaluating Generalization in EEG Foundation Models
