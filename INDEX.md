@@ -1,3 +1,31 @@
+
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Prime Number Identification Demonstrated with Quantum Processors
+- [[quantum-prime-identification]] - 量子处理器上基于纠缠动力学的素数识别协议，链接素性与傅里叶分量 (arXiv: 2605.28964)
+  - 核心要点: 从论文提炼的复用技能模式
+  - **Activation**: quantum, prime, identification
+
+### Quantum encodings that preserve persistent homology
+- [[quantum-persistent-homology-encoding]] - 保持持久同调拓扑特征的量子数据编码方法 (arXiv: 2605.28927)
+  - 核心要点: 从论文提炼的复用技能模式
+  - **Activation**: quantum, persistent, homology
+
+### Quantum Markovian Dynamics from a Double Covariance Stochastic Framework
+- [[quantum-markovian-stochastic-framework]] - 双协方差随机框架推导量子马尔可夫动力学的亚量子理论 (arXiv: 2605.29508)
+  - 核心要点: 从论文提炼的复用技能模式
+  - **Activation**: quantum, markovian, stochastic
+
+### A hidden bottleneck in classical and quantum linear reservoir computing
+- [[quantum-linear-reservoir-bottleneck]] - 线性和量子线性储备计算中的隐藏瓶颈分析 (arXiv: 2605.29071)
+  - 核心要点: 从论文提炼的复用技能模式
+  - **Activation**: quantum, linear, reservoir
+
+### Exponentially Fast Solution State Preparation for the Heat Equation and its use for Option Pricing
+- [[quantum-option-pricing-heat-equation]] - 热方程指数快解态制备在金融期权定价中的应用 (arXiv: 2605.28950)
+  - 核心要点: 从论文提炼的复用技能模式
+  - **Activation**: quantum, option, pricing
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Mind-Omni: A Unified Multi-Task Framework for Brain-Vision-Language Modeling via Discrete Diffusion
