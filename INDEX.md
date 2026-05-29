@@ -1,3 +1,13 @@
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### Brain Critical Dynamics - Hierarchical Organization
+- [[brain-critical-dynamics-hierarchical]] - 脑网络临界性的层级组织研究方法论，分析神经元雪崩、幂律分布和相变动力学
+  - 核心：临界态最大化信息处理能力，跨尺度幂律不变性
+  - 方法：雪崩检测、分支参数分析、重整化群变换、相变检测
+  - 应用：癫痫预测、神经退行性疾病、认知功能研究
+  - **Activation**: neuronal avalanche, critical brain, power-law, phase transition, scale-free dynamics
+
+
 ## 2026-05-29 - Anthropic Research Check (Cron Job)
 
 ### Daily Anthropic Research Fetch
