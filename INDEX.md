@@ -43,6 +43,26 @@
   - 核心要点：Gram特征基重构作为层析问题的测量自适应压缩
   - **Activation**: quantum tomography, phase space, gram matrix, finite frame theory, resolution limit
 
+### Neural Quantum Spectral Operator Learning for Solving Partial Differential Equations
+- [[neural-quantum-spectral-operator]] - 首个混合量子-经典算子学习框架(NVQLS)，利用Legendre-Galerkin弱形式求解参数化PDE (arXiv: 2605.27408)
+  - 核心要点：解决VQLS能量最小化中的符号歧义问题，防止错误解表示
+  - 核心要点：引入神经嵌入编码方案，将变化的PDE系数映射到参数化量子电路
+  - 核心要点：在高效态制备下具有理论计算复杂度优势，1D/2D参数化PDE验证
+  - **Activation**: neural quantum spectral, NVQLS, quantum PDE solver, operator learning, Legendre-Galerkin, variational quantum linear solver, 量子算子学习
+
+### Zero-shot Quantum Neural Architecture Search
+- Paper: arXiv: 2605.27410 - MZeQAS: MCTS-based zero-shot quantum NAS using QNTK convergence (arXiv: 2605.27410)
+  - 核心要点：利用量子神经切核(QNTK)的Gram矩阵收敛设计零样本代理模型
+  - 核心要点：结合MCTS探索和代理性能估计，无需完整训练即可评估候选电路
+  - 核心要点：在搜索效率和解决方案质量上均优于基于进化的方法
+  - **Activation**: quantum NAS, zero-shot search, QNTK, MCTS, VQA architecture, neural architecture search
+
+### Variational Quantum Models for Knowledge Graph Embeddings
+- Paper: arXiv: 2605.28723 - 变分量子模型用于知识图谱嵌入 (arXiv: 2605.28723)
+  - 核心要点：将变分量子电路应用于知识图谱嵌入，适配NISQ设备
+  - 核心要点：结合量子机器学习与知识表示学习
+  - **Activation**: quantum knowledge graph, variational quantum model, knowledge embedding, NISQ, quantum ML
+
 
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
