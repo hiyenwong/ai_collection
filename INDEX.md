@@ -1,5 +1,17 @@
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Algorithms with Polynomially-Improved Approximation Factors for the 2→q Norm
+- [[norm-approximation-algorithms]] - Multiplicative weight update algorithm for matrix 2→q norm approximation with polynomial improvement over spectral methods, applications to hypercontractivity and quantum separability (arXiv: 2605.25303)
+  - MWU framework achieves O(n^{1/4-δ}) vs prior O(n^{1/4} log d)
+  - Applications: hypercontractivity testing, quantum separability certification, small-set expansion
+  - **Activation**: matrix norm approximation, 2-to-q norm, operator norm, hypercontractivity, multiplicative weight update, quantum separability
+
+### Bell's Theorem: Why Probability Factorisation Fails
+- [[bell-probability-factorization]] - Statistical foundations of Bell's theorem showing why joint probability factorization P(A,B|a,b,λ)=P(A|a,λ)P(B|b,λ) fails in quantum systems (arXiv: 2605.29589)
+  - Factorization assumption incompatible with quantum entanglement
+  - CHSH inequality as statistical diagnostic for non-classical correlations
+  - **Activation**: Bell theorem, probability factorization, quantum nonlocality, CHSH inequality, joint distributions
+
 ### Comparing Classical Simulation and Sample-Based Learning of Quantum Systems
 - [[quantum-ml-simulation-learning-comparison]] - Empirical framework comparing simulability vs learnability for quantum systems via Born-rule statistics (arXiv: 2605.28986)
   - Simulation (from classical description) and learning (from measurement samples) need not coincide
