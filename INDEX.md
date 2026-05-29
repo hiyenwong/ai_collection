@@ -1,3 +1,12 @@
+## {} - Neuroscience Research (Cron Job)
+
+### Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators
+- [[noise-induced-oscillator-synchronization]] - Proves common noise synchronizes uncoupled oscillator groups via Kuramoto order parameter; phase density evolution mapping explains collective dynamics without inter-group coupling (arXiv: 2605.29529)
+  - Complex Kuramoto order parameter R(t) synchronizes across groups sharing identical noise
+  - Phase density evolution derivation: common noise creates correlated collective phases
+  - Neurophysiological implication: shared input explains functional connectivity without anatomical connections
+  - **Activation**: noise-induced synchronization, Kuramoto model, oscillator dynamics, common noise, phase density evolution, neural synchronization
+
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
 
 ### End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing under Local and Stochastic Volatility
