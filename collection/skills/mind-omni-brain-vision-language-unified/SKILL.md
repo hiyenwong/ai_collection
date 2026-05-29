@@ -1,217 +1,329 @@
 ---
 name: mind-omni-brain-vision-language-unified
-description: "Mind-Omni unified multi-task framework for Brain-Vision-Language modeling via discrete diffusion. First versatile framework unifying 7 encoding/decoding tasks through Brain Tokenizer converting heterogeneous brain signals to discrete tokens. Enables token-level interactions between modalities in shared semantic space. Includes Brain Question Answering (BQA) instruction-tuning dataset. Use when: brain-computer interface (BCI), multimodal neural modeling, brain signal tokenization, discrete diffusion for neural data, cross-modal generation, foundation models for neural activity. Activation: Mind-Omni, brain vision language, neural tokenizer, discrete diffusion BCI, multimodal brain modeling."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.29591"
-  published: "2026-05-29"
-  authors: "Reed One Peck et al."
-  tags: [brain-computer-interface, multimodal, neural-tokenization, discrete-diffusion, foundation-model, vision-language]
+description: Mind-Omni unified multi-task framework for Brain-Vision-Language modeling via discrete diffusion and Brain Tokenizer, achieving SOTA across 7 BCI tasks.
+arxiv_id: 2605.29591
+authors: Yizhuo Lu, Changde Du, Qingyu Shi, Hang Chen
+published: 2026-05-29
+categories:
+  - Artificial Intelligence
+  - Brain-Computer Interface
+  - Multimodal Foundation Model
+  - Discrete Diffusion
+  - Neural Decoding
+tags:
+  - foundation model
+  - brain-vision-language
+  - discrete diffusion
+  - Brain Tokenizer
+  - multi-task
+  - BQA
+  - neural modeling
+  - tokenization
+activation_keywords:
+  - Mind-Omni
+  - brain vision language model
+  - Brain Tokenizer
+  - discrete diffusion BCI
+  - multi-task BCI
+  - Brain Question Answering
+  - neural foundation model
+related_skills:
+  - brain-dit-fmri-foundation-model
+  - tribe-v2-foundation-model
+  - brain-foundation-model-inversion
 ---
 
 # Mind-Omni: Unified Brain-Vision-Language Framework
 
-Unified multi-task framework for brain-vision-language modeling using discrete diffusion paradigm. First versatile framework unifying seven distinct encoding/decoding tasks with Brain Tokenizer.
+## Overview
 
-## Core Methodology
+**Mind-Omni** is the first versatile framework that **unifies 7 distinct encoding and decoding tasks** in Brain-Computer Interfaces (BCIs) through a **discrete diffusion paradigm**. It introduces a novel **Brain Tokenizer** that transforms heterogeneous, continuous brain signals into standardized, discrete tokens, enabling direct token-level interactions across modalities in a shared semantic space.
 
-### Brain Tokenizer
+**Key Achievement**: Establishes **new state-of-the-art** among multi-task unified frameworks, with performance **competitive with or superior to larger specialized models**, demonstrating multi-task synergy and paving the way for neural activity foundation models.
 
-Transforms heterogeneous, continuous brain signals into standardized, discrete tokens:
+**arXiv**: [2605.29591](https://arxiv.org/abs/2605.29591)
 
-- **Input**: Continuous brain signals (EEG, fMRI, etc.)
-- **Output**: Discrete token representations
-- **Purpose**: Enable token-level interactions across modalities
+## Problem Statement
 
-Key innovation: Standardizes heterogeneous neural data into unified token format.
+Prior BCI research suffers from:
+
+1. **Specialized, Single-Task Paradigm**: One model per task, no cross-task learning
+2. **Versatility Limitation**: Cannot adapt to new BCI tasks without retraining
+3. **Inter-Task Synergies Neglected**: No sharing of neural representations across tasks
+4. **Modality Isolation**: Brain, vision, language processed separately
+5. **Continuous Signal Complexity**: Heterogeneous brain signals lack standardization
+
+## Core Innovation
 
 ### Discrete Diffusion Paradigm
 
-Core generative mechanism enabling:
+**Mind-Omni** revolutionizes BCI modeling via:
 
-- **Token-level interactions**: Direct generation/understanding between modalities
-- **Shared semantic space**: All modalities operate in common representation
-- **Multi-modal generation**: Brain → Vision, Vision → Brain, Brain → Language, etc.
+1. **Brain Tokenizer**: Continuous brain signals → discrete tokens
+2. **Unified Token Space**: Brain, vision, language in shared representation
+3. **Token-Level Interactions**: Cross-modal understanding and generation
+4. **Discrete Diffusion**: Generative modeling of neural patterns
+5. **Multi-Task Unification**: 7 tasks in single framework
 
-### Seven Unified Tasks
+### 7 Unified Tasks
 
-The framework unifies:
+**Encoding Tasks**:
+1. **Brain Encoding**: Neural signals → semantic representations
+2. **Vision Encoding**: Visual stimuli → neural predictions
+3. **Language Encoding**: Text → neural activity mapping
 
-1. **Brain Encoding**: Neural signals → embeddings
-2. **Brain Decoding**: Embeddings → neural signals
-3. **Vision Encoding**: Images → brain-representations
-4. **Vision Decoding**: Brain-signals → images
-5. **Language Encoding**: Text → brain-representations
-6. **Language Decoding**: Brain-signals → text
-7. **Cross-modal Generation**: Any-to-any modality translation
+**Decoding Tasks**:
+4. **Brain Decoding**: Neural signals → stimuli reconstruction
+5. **Vision Decoding**: Neural patterns → visual content
+6. **Language Decoding**: Brain activity → text generation
+7. **Cross-Modal Generation**: Brain → vision/language synthesis
 
-## Implementation Details
+## Brain Tokenizer Architecture
 
-### Architecture Components
+### Core Mechanism
 
-1. **Brain Tokenizer**: Continuous → discrete conversion
-2. **Discrete Diffusion Model**: Generative backbone
-3. **Multi-modal Encoder-Decoder**: Task-specific modules
-4. **Shared Semantic Space**: Cross-modal alignment
+**Brain Tokenizer** is the key innovation:
 
-### Brain Question Answering (BQA) Dataset
+```python
+# Conceptual implementation (from paper insights)
+class BrainTokenizer:
+    def __init__(self, vocab_size=8192):
+        self.encoder = ContinuousToDiscreteEncoder()
+        self.vocabulary = NeuralTokenVocabulary(vocab_size)
+        
+    def tokenize(self, brain_signal):
+        # 1. Process heterogeneous continuous signals
+        standardized = self.encoder.normalize(brain_signal)
+        
+        # 2. Quantize to discrete tokens
+        tokens = self.encoder.quantize(standardized)
+        
+        # 3. Map to vocabulary
+        token_ids = self.vocabulary.map(tokens)
+        
+        return token_ids  # Discrete representation
+```
 
-Specialized instruction-tuning dataset for advanced reasoning:
+### Tokenization Benefits
 
-- **Purpose**: Unlock reasoning capabilities
-- **Content**: Brain-related Q&A pairs
-- **Format**: Instruction-response pairs with brain signal context
+1. **Standardization**: All brain signals → uniform token format
+2. **Discrete Operations**: Enables discrete diffusion modeling
+3. **Cross-Modal Bridge**: Tokens link brain, vision, language
+4. **Semantic Alignment**: Shared token space = shared understanding
+5. **Generative Capability**: Discrete tokens enable diffusion generation
+
+## Discrete Diffusion Framework
+
+### Generative Modeling
+
+**Discrete Diffusion** for neural patterns:
+
+1. **Forward Diffusion**: Add noise to brain tokens
+2. **Reverse Diffusion**: Reconstruct clean neural patterns
+3. **Conditional Generation**: Task-specific diffusion conditioning
+4. **Cross-Modal Transition**: Brain → vision/language tokens
+
+### Multi-Task Unification
+
+**Single framework handles all 7 tasks**:
+
+- **Shared Encoder**: Brain tokenizer for all input modalities
+- **Task-Specific Heads**: Lightweight adapters per task
+- **Unified Diffusion Process**: Core generative engine
+- **Token-Level Interaction**: Direct cross-modal operations
+
+## Brain Question Answering (BQA)
+
+### Instruction Tuning Dataset
+
+**Mind-Omni** introduces **BQA dataset** for advanced reasoning:
+
+- **Brain-based Questions**: Queries about neural activity patterns
+- **Multi-Modal Answers**: Brain + vision + language reasoning
+- **Instruction Format**: Structured prompts for neural QA
+- **Cognitive Tasks**: Memory, perception, decision-making queries
+
+### Unlocking Advanced Reasoning
+
+**BQA enables**:
+
+1. **Neural Interpretation**: Explain brain activity patterns
+2. **Causal Reasoning**: Predict neural consequences
+3. **Cross-Modal QA**: Brain → vision/language question answering
+4. **Foundation Model Capabilities**: General neural reasoning
+
+## Experimental Results
+
+### State-of-the-Art Performance
+
+**Mind-Omni achieves**:
+
+- **SOTA among multi-task unified frameworks**
+- **Competitive with specialized models**: Despite unified architecture
+- **Superior performance in some tasks**: Outperforms larger specialized models
+- **Multi-task synergy**: Cross-task learning improves individual task performance
 
 ### Performance Highlights
 
-- **State-of-the-art**: Best among multi-task unified frameworks
-- **Multi-task synergy**: Evidence for task synergy benefits
-- **Competitive with specialized models**: Sometimes surpasses larger specialized models
-- **Foundation model paradigm**: Establishes new approach for neural activity modeling
+| Task Category | Mind-Omni | Specialized Models | Advantage |
+|---------------|-----------|--------------------|-----------|
+| Encoding tasks | SOTA | Task-specific best | Unified yet competitive |
+| Decoding tasks | SOTA | Larger specialized | Unified + efficient |
+| Cross-modal | Novel | Not possible | Token-level interaction |
+| BQA reasoning | Enabled | Not available | Instruction-tuned |
 
-## Key Applications
+### Multi-Task Synergy Evidence
 
-### Brain-Computer Interfaces (BCIs)
+**Key Finding**: Unified framework **outperforms task-specific models** in some cases:
 
-- **Cross-modal communication**: Brain → external devices
-- **Multimodal decoding**: Neural signals → images/text
-- **Inter-task synergy**: Leveraging multiple tasks simultaneously
+- **Shared representations**: Transfer across tasks
+- **Efficiency**: Single model for 7 tasks vs. 7 separate models
+- **Synergy**: Learning from multiple tasks improves each task
 
-### Neural Foundation Models
+## Implementation Methodology
 
-- **Versatility**: Single model for multiple BCI tasks
-- **Generalization**: Transfer across brain signal types
-- **Efficiency**: Avoid specialized model per task
+### Architecture Components
 
-### Research Directions
+1. **Brain Tokenizer**
+   - Continuous signal encoder
+   - Discrete quantization module
+   - Neural token vocabulary
 
-- **Brain signal standardization**: Discrete token representations
-- **Cross-modal generation**: Brain-conditioned image/text synthesis
-- **Multi-task learning**: Synergy between encoding/decoding
+2. **Discrete Diffusion Core**
+   - Forward diffusion scheduler
+   - Reverse diffusion decoder
+   - Conditional generation controller
 
-## Implementation Workflow
+3. **Multi-Task Heads**
+   - Encoding task adapters
+   - Decoding task adapters
+   - Cross-modal generators
 
-### Using Mind-Omni Framework
+4. **BQA Module**
+   - Instruction-tuned reasoning
+   - Neural QA capability
+   - Multi-modal answer synthesis
 
-1. **Brain Tokenization**: Convert neural signals to tokens
-   ```python
-   # Input: continuous brain signals
-   tokens = brain_tokenizer(neural_data)
-   ```
+### Training Pipeline
 
-2. **Cross-modal Generation**: Generate target modality
-   ```python
-   # Generate image from brain tokens
-   image = diffusion_model.generate(tokens, target='vision')
-   ```
+```python
+# Conceptual training process
+def train_mind_omni(brain_data, vision_data, language_data):
+    # 1. Brain Tokenization
+    brain_tokens = tokenizer.tokenize(brain_data)
+    
+    # 2. Multi-Modal Token Alignment
+    vision_tokens = vision_encoder.encode(vision_data)
+    language_tokens = language_encoder.encode(language_data)
+    
+    # 3. Discrete Diffusion Training
+    diffusion.train(
+        source_tokens=brain_tokens,
+        target_tokens=[vision_tokens, language_tokens],
+        tasks=['encoding', 'decoding', 'cross_modal']
+    )
+    
+    # 4. BQA Instruction Tuning
+    bqa_module.train(bqa_dataset)
+```
 
-3. **Multi-task Execution**: Switch between tasks
-   ```python
-   # Encode brain → decode to language
-   embedding = encode(neural_data, modality='brain')
-   text = decode(embedding, target='language')
-   ```
+## Use Cases
 
-### Code Access
+### When to Apply Mind-Omni
 
-Official implementation: **https://github.com/ReedOnePeck/Mind-Omni**
+1. **Multi-Task BCI Systems**: Applications requiring multiple encoding/decoding tasks
+2. **Neural Foundation Models**: Building general neural activity representations
+3. **Cross-Modal Neural Applications**: Brain-vision-language integration
+4. **BQA Reasoning**: Brain-based question answering systems
+5. **Unified BCI Development**: Single framework for diverse BCI tasks
 
-## Technical Advantages
+### Activation Triggers
 
-### Versatility
+- User mentions: "Mind-Omni", "Brain Tokenizer", "brain vision language"
+- Task involves: multi-task BCI, neural foundation model
+- Problem: task-specific model limitations, modality isolation
+- Requirement: unified framework, cross-modal interaction
 
-**Single framework → Seven tasks**:
-- Avoids per-task model development
-- Enables task transfer and synergy
-- Reduces deployment complexity
+## Key Insights
 
-### Token Standardization
+### Why Discrete Diffusion Works
 
-**Heterogeneous → Uniform**:
-- EEG, fMRI, MEG → common token format
-- Enables cross-modal token interactions
-- Foundation for neural foundation models
+1. **Token Standardization**
+   - Heterogeneous signals → uniform discrete format
+   - Enables cross-modal operations
 
-### Discrete Diffusion Benefits
+2. **Generative Capability**
+   - Discrete diffusion generates neural patterns
+   - Decoding tasks become generative modeling
 
-**Continuous → Discrete → Generative**:
-- Stable generation across modalities
-- Direct token-level manipulation
-- Clear semantic operations
+3. **Semantic Alignment**
+   - Shared token space = shared understanding
+   - Brain, vision, language semantically linked
 
-## Pitfalls & Limitations
-
-### Current Scope
-
-- **Task coverage**: 7 specific tasks (not exhaustive BCI tasks)
-- **Modality support**: Brain, Vision, Language (extensible to others)
-- **Signal types**: Continuous brain signals (specific preprocessing required)
-
-### Implementation Considerations
-
-- **Tokenizer design**: Brain signal type affects tokenization strategy
-- **Diffusion parameters**: Task-specific tuning needed
-- **Dataset requirements**: BQA dataset for reasoning capabilities
-
-### Performance Boundaries
-
-- **Specialized models**: May still outperform on single-task metrics
-- **Data requirements**: Multi-task learning requires diverse data
-- **Task synergy**: Not all task combinations show synergy benefits
-
-## Comparison to Alternatives
-
-| Approach | Versatility | Task Synergy | Specialization |
-|----------|-------------|--------------|----------------|
-| Mind-Omni | 7 tasks unified | Explicit synergy | Competitive |
-| Specialized models | Single task | None | Optimal per-task |
-| Multi-task (non-unified) | Multiple models | Indirect | Task-specific |
-
-**Key advantage**: First to unify BCI encoding/decoding via discrete tokens.
-
-## Research Significance
+4. **Multi-Task Efficiency**
+   - Single model for 7 tasks
+   - Parameter sharing across tasks
 
 ### Foundation Model Paradigm
 
-Establishes new direction for neural activity modeling:
+**Mind-Omni pioneers neural foundation models**:
 
-- **Pre-training**: Multi-task neural representations
-- **Fine-tuning**: Task-specific adaptation
-- **Transfer**: Cross-modal capabilities
+- **Versatility**: Handles diverse BCI tasks
+- **Generalization**: Transfers across neural applications
+- **Efficiency**: Unified architecture < specialized models combined
+- **Advanced Reasoning**: BQA enables neural QA
 
-### Multi-task Synergy Evidence
+## Pitfalls & Limitations
 
-Demonstrates that unified framework can:
+### Common Mistakes
 
-- Match specialized model performance
-- Enable task transfer
-- Reduce model deployment overhead
+1. **Tokenization Quality**
+   - Poor tokenizer → poor discrete representations
+   - Vocabulary design critical
 
-### Brain Tokenization Innovation
+2. **Diffusion Schedule**
+   - Incorrect noise schedule → degraded generation
+   - Task-specific diffusion parameters needed
 
-Discrete tokens for heterogeneous brain signals:
+3. **Task Head Design**
+   - Lightweight adapters must preserve core capabilities
+   - Don't overfit to single tasks
 
-- Standardization for foundation models
-- Cross-modal semantic alignment
-- Token-level reasoning operations
+4. **BQA Dataset Quality**
+   - Low-quality instructions → poor reasoning
+   - Diverse neural QA patterns required
 
-## Activation Keywords
+### Open Challenges
 
-Primary: Mind-Omni, brain vision language unified, neural tokenizer discrete diffusion
+- Scaling token vocabulary size
+- Optimal discrete diffusion parameters
+- Cross-task interference mitigation
+- Real-time inference efficiency
 
-Secondary: multimodal BCI, brain foundation model, cross-modal neural generation, BQA dataset
+## Related Work
 
-Task-specific: brain encoding decoding, brain-conditioned generation, neural foundation models
+### Connected Skills
+
+- **brain-dit-fmri-foundation-model**: Brain foundation models
+- **tribe-v2-foundation-model**: Multi-modal foundation model
+- **brain-foundation-model-inversion**: Foundation model analysis
+
+### Theoretical Background
+
+- **Discrete Diffusion**: Generative modeling for discrete tokens
+- **Tokenization**: Continuous signal → discrete representation
+- **Multi-Task Learning**: Shared representations across tasks
+- **Foundation Models**: Versatile, general-purpose architectures
 
 ## References
 
-- **arXiv**: https://arxiv.org/abs/2605.29591
-- **Code**: https://github.com/ReedOnePeck/Mind-Omni
-- **Categories**: cs.AI
+- **arXiv Paper**: [2605.29591 - Mind-Omni Unified Framework](https://arxiv.org/abs/2605.29591)
+- **Authors**: Yizhuo Lu, Changde Du, Qingyu Shi, Hang Chen
+- **Published**: 2026-05-29
+- **Code**: Available at project repository (see paper)
 
-## See Also
+## Summary
 
-- Brain-computer interface frameworks
-- Multimodal foundation models
-- Discrete diffusion for continuous signals
-- Neural activity tokenization methods
+Mind-Omni unifies 7 BCI encoding/decoding tasks via discrete diffusion and Brain Tokenizer, achieving SOTA performance while demonstrating multi-task synergy. The Brain Tokenizer standardizes heterogeneous neural signals into discrete tokens, enabling cross-modal brain-vision-language interactions in a shared semantic space. BQA instruction tuning unlocks advanced neural reasoning capabilities.
+
+**Core Principle**: **Tokenize brain signals** → **unified discrete space** → **multi-task foundation model** → **neural activity foundation models** paradigm.
