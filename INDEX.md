@@ -167,3 +167,33 @@
     99|
    100|## 2026-05-29 - Neuroscience Research (Cron Job)
    101|
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Quantum Desynchronization of Limit Cycles
+- [[quantum-desynchronization-dynamics]] - 量子噪声破坏耦合极限环振荡器相位同步的方法论 (arXiv: 2605.30302)
+  - 推导量子相位动力学主方程，证明量子涨落在稳态导致完全去同步
+  - 建立量子噪声强度与去同步率的标度律
+  - **Activation**: quantum desynchronization, quantum synchronization, limit cycle quantum, phase diffusion quantum, 量子去同步
+
+### Elfs, transducers and quantum walks
+- [[elfs-quantum-walk-transducers]] - 电场采样量子游走图算法搜索与优化的变换器框架 (arXiv: 2605.30013)
+  - 将elfs抽象为变换器计算模型，提供统一的量子游走击中时间分析
+  - 新击中时间边界和算法组合框架
+  - **Activation**: elfs quantum walk, electric flow sampling, quantum walk transducer, quantum graph search, 量子游走电采样
+
+### Indefinite Causal Order Reverses the Real-Complex Hierarchy
+- [[indefinite-causal-order-real-complex]] - 不确定因果顺序使实数量子理论能够模拟复数量子理论，逆转传统层级 (arXiv: 2605.30238)
+  - 证明实数量子理论+不确定因果顺序可模拟复数量子理论
+  - 因果不定性作为计算资源补偿复振幅的缺失
+  - **Activation**: indefinite causal order, real quantum theory, process matrix framework, quantum switch, causal indefiniteness, 量子因果顺序
+
+### Quantum optimization beyond QUBO (已有技能)
+- [[higher-order-portfolio-qaoa]] - 工业物流调度问题的高阶多项式二元优化QAOA方法 (arXiv: 2605.30252)
+  - HOPBO比QUBO更自然地表达复杂约束，无需罚函数项
+  - **Activation**: quantum optimization, HOPBO, QAOA beyond QUBO
+
+### Improved sample complexity for Lindbladian simulation (已有技能)
+- [[lindblad-sample-complexity]] - 基于样本的Lindbladian模拟改进的样本复杂度边界 (arXiv: 2605.30301)
+  - 基于WML算法的改进样本复杂度分析，连接统计采样分布与模拟精度
+  - **Activation**: Lindbladian simulation, sample complexity, Wave Matrix Lindbladization
+
