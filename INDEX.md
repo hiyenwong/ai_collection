@@ -1,5 +1,34 @@
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### HyperPrecision: High-Precision Numerical Evaluation of Multivariate Hypergeometric Functions
+- [[hypergeometric-high-precision-evaluation]] - Mathematica package for high-precision evaluation of Horn-type hypergeometric functions via Pfaffian systems, applicable to QFT, string theory, number theory, and statistics (arXiv: 2605.30216)
+  - Automatic Pfaffian system construction from hypergeometric function definition
+  - One-dimensional contour restriction reduces multivariate PDE to ODE for efficient evaluation
+  - **Activation**: hypergeometric, pfaffian, high-precision, horn-type, mathematica, multivariate, laurent expansion, quantum field theory
+
+### On modular forms of rational weight satisfying the canonical second-order linear modular differential equation
+- [[modular-forms-kaneko-zagier-classification]] - Complete classification of rational weights for Kaneko-Zagier differential equation admitting modular forms solutions (arXiv: 2605.23383)
+  - Transforms KZ equation to hypergeometric form, constructs monodromy representation matrices
+  - Stringent commutativity constraints limit admissible weights to specific set
+  - **Activation**: modular forms, kaneko-zagier, differential equation, monodromy, hypergeometric, rational weight, congruence subgroup
+
+### Iterative maps emerging from cohomological structure of primes
+- [[prime-cohomological-iterative-maps]] - Prime gaps described by iterative maps with cohomological structure linking to statistical and quantum mechanics (arXiv: 2605.17622)
+  - Iterative map predicts primary growth of successive primes
+  - Residual fluctuations encode well-defined cohomological structure
+  - **Activation**: prime numbers, cohomology, iterative maps, statistical mechanics, quantum mechanics, prime gaps
+
+### A Uniform Random-Lattice Tail Bound for the SVP Kissing-Profile Parameter
+- [[svp-lattice-tail-bound]] - Dimension-uniform tail bound for SVP kissing-profile parameter with implications for quantum algorithms and post-quantum cryptography (arXiv: 2605.21966)
+  - μ_n{γ(L) > T} ≤ C·T^{-1} for Haar-Siegel random lattices, uniformly in dimension
+  - γ(L) = 2^{o(n)} with high probability for random lattices
+  - **Activation**: SVP, shortest vector problem, lattice, tail bound, quantum algorithms, post-quantum cryptography
+
+### Hadamard product of convex functions and Jackson operator
+- Note: Jackson operator q-theory skill already exists; no new skill needed (arXiv: 2605.18412)
+
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
 ### Wasserstein Least Squares: A Canonical Regression Method for Probability Distributions
 - [[wasserstein-least-squares-regression]] - Distributional regression via optimal transport, achieving n^{-1/2} rate with exponential improvement for Wasserstein barycenters (arXiv: 2605.30266)
   - Canonical extension of Euclidean least squares to probability distribution space via convex analysis
