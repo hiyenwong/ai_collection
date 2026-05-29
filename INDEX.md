@@ -25,6 +25,21 @@
   - Qutrit neural networks (3-state) outperform qubit-based and classical ANNs in stock prediction
   - **Activation**: quantum finance pipeline, VQC forecasting, QUBO annealing, portfolio optimization quantum, post-quantum finance, qutrit neural network, quantum option pricing
 
+### Dynamic Circuit Compilation Optimization
+- [[dynamic-circuit-compile-optimization]] - Compile-time optimization for dynamic quantum circuits reducing classical feedforward by ~50% using static analysis and probabilistic circuit representation (arXiv: 2605.28439)
+  - Static analysis symbolically executes circuit propagating classical info alongside quantum state
+  - Probabilistic circuit model enables rewriting mid-circuit measurements as unitary operations
+  - ~50% feedforward reduction on random circuits, higher in favorable settings
+  - Accepted at ISC High Performance 2026
+  - **Activation**: dynamic circuit optimization, compile-time quantum circuit, mid-circuit measurement reduction, classical feedforward optimization, probabilistic circuit model, quantum compiler latency, low-latency quantum trading
+
+### Exponentially Fast Solution State Preparation for the Heat Equation and its use for Option Pricing
+- [[quantum-option-pricing-heat-equation]] - Exponentially fast quantum state preparation for the heat equation with application to European option pricing under Black-Scholes model (arXiv: 2605.28950)
+  - Quantum algorithm achieves exponential speedup in state preparation for heat equation solutions
+  - Direct application to option pricing under classical Black-Scholes framework
+  - Enables efficient quantum simulation of diffusion processes in quantitative finance
+  - **Activation**: quantum option pricing, heat equation quantum, black-scholes quantum, diffusion simulation, exponential speedup state prep, quantum PDE finance
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 3
 
 ### Brain-IT-VQA: From Brain Signals to Answers
