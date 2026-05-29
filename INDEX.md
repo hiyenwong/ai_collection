@@ -1,3 +1,12 @@
+## 2026-05-29 - Quantum Neural Measurement Dynamics (Cron Job)
+
+### Quantum Neural Network Measurement Dynamics and Critical Phenomena
+- [[quantum-neural-measurement-dynamics]] - 量子神经网络测量动力学与临界现象：Born-rule统计、Leggett-Garg测试、动态量子相变 (arXiv: 2605.16029, 2605.12126, 2605.25214)
+  - 核心要点：Born-rule统计动力学——Loschmidt echo测量神经态保真度演化，rate function非解析变化指示动态相变
+  - 核心要点：Leggett-Garg不等式测试——区分扩散模型与非扩散持久随机模型，K>1违反指示非马尔可夫记忆效应
+  - 核心要点：量子类比云函数 ψ(x,t) = Σ_k c_k(t)·φ_k(x)，连接谐波模式建模神经场动力学
+  - **Activation**: quantum neural network, measurement dynamics, born rule, leggett-garg, dqpt, neural measurement, quantum-classical boundary, non-diffusive dynamics, memory kernel
+
 ## 2026-05-29 - Systems Engineering Research (Cron Job)
 
 ### Subsystem Structure as an Inferential Resource for Coupled Engineered Systems
