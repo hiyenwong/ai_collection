@@ -1,3 +1,12 @@
+## 2026-05-30 - Neuroscience Research (Cron Job)
+
+### Large language models reorganize representational geometry during in-context learning
+- [[llm-icl-representational-geometry-reorganization]] - Geometric account of in-context learning linking neuroscience untangling perspective to LLM behavior (arXiv: 2605.28854)
+  - ICL effectiveness depends on online untangling of task-relevant representations
+  - Geometric reorganization increases separability during in-context examples
+  - LLMs use prototype-like algorithm with evidence integration
+  - **Activation**: ICL, in-context learning, representational geometry, untangling, prototype, LLM neuroscience
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 4
 
 ### Spiking Temporal Memory: Sequence Timing and Replay Speed Control
