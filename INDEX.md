@@ -40,6 +40,12 @@
 
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
+### Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks
+- [[bullet-trains-parallel-snn-training]] - 并行训练时间精确SNN，使用关联扫描实现44倍加速，机器精度脉冲时间求解器 (arXiv: 2603.13283)
+  - 核心要点：电荷-放电-重置动力学可关联化，并行扫描消解顺序处理瓶颈
+  - 核心要点：Newton-Raphson求解器避免时间离散化近似，支持端到端事件驱动训练
+  - **Activation**: spiking neural network, snn training, parallel scan, spike timing, event-based, neuromorphic, 并行训练, 脉冲时间
+
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
 - [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度虽能预测脑信号但其时空组织与生物学机制不符 (arXiv: 2605.28693)
   - 核心要点：梯度预测 fMRI/MEG 但计算顺序与脑时间层次不匹配
