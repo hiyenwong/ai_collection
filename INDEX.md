@@ -1,3 +1,17 @@
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### Mind-Omni: A Unified Multi-Task Framework for Brain-Vision-Language Modeling via Discrete Diffusion
+- [[mind-omni-brain-vision-language-unified]] - 首个统一脑-视觉-语言建模框架，通过Brain Tokenizer将异构脑信号转换为离散token，实现跨模态生成与理解 (arXiv: 2605.29591)
+  - 核心：Brain Tokenizer标准化连续脑信号为离散token，discrete diffusion paradigm实现跨模态交互
+  - 核心：统一7个编码/解码任务，建立神经活动基础模型范式，性能媲美专用模型
+  - **Activation**: Mind-Omni, brain vision language, neural tokenizer, discrete diffusion BCI, multimodal brain modeling, brain foundation model
+
+### Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys
+- [[neural-behavioral-whole-body-movement-monkeys]] - 自由移动猴子的自然全身运动解码框架，结合大规模硬膜皮层信号与多视角运动捕捉 (arXiv: 2605.29355)
+  - 核心：自回归编码器-解码器学习紧凑行为先验，无需显式物理约束即可生成准确全身运动
+  - 核心：分布式感觉/运动区域皮层信号解码自然全身运动，首个无约束全身运动解码
+  - **Activation**: neural-behavioral, whole-body movement, monkey kinematics, epidural signals, motion capture decoding, behavior prior
+
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
 ### Learning to Maximize Quantum Neural Network Expressivity via Effective Rank
