@@ -1,3 +1,17 @@
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Wasserstein Least Squares: A Canonical Regression Method for Probability Distributions
+- [[wasserstein-least-squares-regression]] - Distributional regression via optimal transport, achieving n^{-1/2} rate with exponential improvement for Wasserstein barycenters (arXiv: 2605.30266)
+  - Canonical extension of Euclidean least squares to probability distribution space via convex analysis
+  - Template deformation model enables n^{-1/2} estimation rate; exponential barycenter improvement
+  - **Activation**: Wasserstein regression, distributional regression, optimal transport, probability distributions, Wasserstein barycenter, template deformation
+
+### Improved Sample Complexity Bound for Sample-Based Lindbladian Simulation
+- [[lindbladian-sample-complexity]] - Sharp dichotomy between typical-case O(t²/ε²) and worst-case Ω(d⁴t²/ε²) for quantum Lindbladian simulation (arXiv: 2605.30301)
+  - WML algorithm with trace condition determines typical vs worst case
+  - Random Lindblad operators satisfy typical case with high probability
+  - **Activation**: Lindbladian simulation, sample complexity, quantum channels, open quantum systems, WML algorithm, random matrix theory
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Domain-Informed Multi-Objective Framework for EEG Channel Selection in Motor Imagery BCIs
