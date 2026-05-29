@@ -1,3 +1,14 @@
+## 2026-05-29 - Neuroscience Research (Cron Job) - EEG Foundation Models
+
+### A Multi-dimensional Framework for Evaluating Generalization in EEG Foundation Models
+- [[eeg-foundation-model-multi-dimensional-generalization]] - 多维度框架评估EEG基础模型在现实低资源条件下的泛化能力 (arXiv: 2605.28563)
+  - 核心要点：三大维度评估——有限标签数据、减少传感器覆盖、参数高效适应
+  - 核心要点：EEG基础模型在所有维度一致优于监督模型，5-25%性能提升
+  - 核心要点：LoRA和Adapter方法平衡存储效率与性能，推荐用于临床部署
+  - 核心要点：迁移学习鲁棒性超预期——10%标签数据、25%通道、1%模型大小仍保持性能
+  - **Activation**: EEG foundation model, multi-dimensional evaluation, low-resource adaptation, EEG generalization, parameter-efficient adaptation, LoRA, adapter, reduced sensor coverage
+
+
 ## 2026-05-29 - 数论、统计学、高等数学 + 量子力学 (Cron Job)
 
 ### Rademacher Complexity Bounds for Parameterized Quantum Circuits
