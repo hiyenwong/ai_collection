@@ -398,6 +398,36 @@
    240|  - **Activation**: Lindbladian simulation, sample complexity, Wave Matrix Lindbladization
    241|
    242|
+### Fermi-Dirac machines as quantizations of neurons
+- [[fermi-dirac-quantized-neurons]] - 经典神经元正则量子化方法，构建量子哈密顿量神经元，证明BQP完全性 (arXiv: 2605.24386)
+  - 核心：将经典神经元视为参数化经典哈密顿量，替换变量为量子算子得到量子神经元
+  - 核心：量化ReLU、GeLU、SiLU等激活函数，开发混合量子-经典神经网络算法
+  - **Activation**: fermi-dirac neuron, quantum quantization, BQP-complete neural, quantum activation function, hybrid quantum-classical neural
+
+### Quantum Fisher Information under decoherence with explicit wavefunctions
+- [[qfi-decoherence-monte-carlo]] - 退相干下量子Fisher信息的MCMC估计方法，超越精确对角化系统尺寸限制 (arXiv: 2605.22917)
+  - 核心：将QFI下界映射到波函数振幅分布的经典期望值，MCMC采样估计
+  - 核心：分析Jastrow-Gutzwiller波函数的计量学内容及三种噪声通道下的QFI退化
+  - **Activation**: quantum fisher information, MCMC QFI estimation, decoherence metrology, Jastrow-Gutzwiller, quantum sensing noise
+
+### Statistical Interpretation of the Procedures Measurement of Physical Quantities
+- [[quantum-probability-statistics]] - 统一代数量子力学与量子概率论的统计解释框架 (arXiv: 2605.22264)
+  - 核心：通过测量过程的统计解释连接C*-代数表述与量子概率论
+  - 核心：GNS构造、Born规则统计定律、非对易概率空间
+  - **Activation**: quantum probability, statistical measurement, algebraic quantum mechanics, quantum foundations, non-commutative probability
+
+### Maximum Likelihood Decoding of Quantum Error Correction Codes
+- [[mld-qec-decoder]] - CSS码最大似然解码重构为经典自旋模型配分函数计算 (arXiv: 2605.17230)
+  - 核心：精确MLD通过张量网络收缩，近似MLD通过置信传播算法
+  - 核心：QEC阈值对应统计力学相变，BP收敛性保证
+  - **Activation**: maximum likelihood decoding, QEC decoder, tensor network contraction, belief propagation, CSS code, statistical phase transition
+
+### Exact Framework for Transport Statistics in Quadratic Quantum Systems
+- [[quantum-transport-statistics-framework]] - 高斯热库间二次量子系统输运统计的精确计算框架 (arXiv: 2602.21190)
+  - 核心：结合全计数统计与非马尔可夫主方程方法
+  - 核心：O(N³)复杂度计算热/能量/粒子输运，适用于任意时间驱动
+  - **Activation**: quantum transport statistics, full counting statistics, non-Markovian open quantum systems, quantum thermodynamics, Gaussian reservoirs
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Beyond Silicon: Materials, Mechanisms, and Methods for Physical Neural Computing

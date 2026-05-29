@@ -1,63 +1,97 @@
 ---
 name: quantum-transport-statistics-framework
-description: "Exact framework for evaluating heat, energy, and particle transport statistics in quadratic quantum systems. Combines full counting statistics with non-Markovian master equation approaches for Gaussian reservoir transport analysis."
-tags: ["quantum", "statistics", "transport", "thermodynamics", "open-systems"]
-related_skills: ["quantum-statistical-estimation", "quantum-dephasing-dynamics"]
+description: "Exact framework for computing heat, energy, and particle transport statistics in quadratic quantum systems coupled to Gaussian reservoirs — combines full counting statistics with non-Markovian master equations. Use when: analyzing quantum transport in mesoscopic systems, computing full counting statistics for particle/heat currents, studying non-Markovian open quantum systems, evaluating transport between quantum reservoirs, or modeling quantum thermodynamic engines."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2602.21190"
+  published: "2026-02-21"
+  authors: "Guglielmo Pellitteri, Vittorio Giovannetti, Vasco Cavina"
+  tags: [quantum, transport, statistics, full-counting, non-markovian, open-systems, thermodynamics, gaussian]
 ---
 
 # Quantum Transport Statistics Framework
 
-Exact framework for evaluating transport statistics in quadratic quantum systems mediated between Gaussian reservoirs. Based on arXiv:2602.21190.
+Exact computational framework for evaluating heat, energy, and particle transport statistics between Gaussian reservoirs mediated by quadratic quantum systems.
 
-## Core Concept
+## Core Methodology
 
-Combines full counting statistics (FCS) with newly developed non-Markovian master equation approaches to evaluate heat, energy, and particle transport between Gaussian reservoirs mediated by a quadratic quantum system.
+### Full Counting Statistics (FCS) Setup
 
-## Methodology
+For a quadratic system coupled to M Gaussian reservoirs:
 
-### Full Counting Statistics
+1. **Hamiltonian**: H = H_S + Σ_α H_R^α + Σ_α H_{SR}^α
+   - H_S = ½ Ψ† h Ψ (quadratic system)
+   - H_R^α = Σ_k ε_{αk} c_{αk}† c_{αk} (Gaussian reservoir α)
+   - H_{SR}^α = Σ_k (t_{αk} Ψ† c_{αk} + h.c.) (linear coupling)
 
-1. **Counting field introduction**: Introduce counting field χ to track transfer of conserved quantities
-2. **Generating function**: Compute moment generating function G(χ,t) = Tr[ρ(χ,t)]
-3. **Cumulants**: Extract current, noise, and higher cumulants from derivatives of G(χ,t)
+2. **Counting field**: introduce χ_α for each reservoir to track transferred particles/energy
+   - Modified Hamiltonian: H(χ) = e^{iχN/2} H e^{-iχN/2}
 
-### Non-Markovian Master Equation
+3. **Cumulant generating function**: G(χ, t) = ⟨e^{iχQ(t)}⟩ where Q = accumulated current
 
-1. **System-reservoir coupling**: Model quadratic system coupled to Gaussian reservoirs
-2. **Influence functional**: Derive exact influence functional for Gaussian environments
-3. **Memory kernel**: Account for non-Markovian effects through time-nonlocal kernel
-4. **Efficient computation**: Numerically efficient method avoiding full Hilbert space evolution
+4. **Levitov-Lesovik formula**: for non-interacting systems, G(χ, t) = det[1 + T(f_L - f_R)(e^{iχ} - 1)]
+   where T = transmission matrix, f = Fermi functions
 
-### Key Results
+### Non-Markovian Master Equation Approach
 
-- Exact evaluation of all transport cumulants (current, noise, skewness, etc.)
-- Valid for arbitrary system-reservoir coupling strength
-- Applicable to fermionic and bosonic systems
-- Computationally efficient compared to full numerical approaches
-
-## Mathematical Framework
+For systems where Markov approximation fails:
 
 ```
-Current:     I = d/dχ log G(χ,t) |_{χ=0}
-Noise:       S = d²/dχ² log G(χ,t) |_{χ=0}
-Higher cumulants: C_n = dⁿ/dχⁿ log G(χ,t) |_{χ=0}
+1. Derive time-convolutionless (TCL) master equation:
+   ∂_t ρ(t) = ℒ(t)[ρ(t)] where ℒ(t) = Σ_n ℒ_n(t) (Born expansion)
+
+2. Counting-field modified Liouvillian:
+   ℒ(χ, t) = ℒ_0(t) + Σ_α (e^{iχ_α} - 1) J_α(t) + (e^{-iχ_α} - 1) J_α†(t)
+
+3. Cumulant generating function:
+   ln G(χ, t) = λ_0(χ, t) · t where λ_0 is dominant eigenvalue of ℒ(χ, t)
+
+4. Current moments:
+   ⟨I^n⟩ = (-i∂_χ)^n ln G(χ, t)|_{χ=0}
 ```
 
-## Applications
+### Efficient Computational Method
 
-- **Quantum thermoelectric devices**: Heat-to-work conversion efficiency
-- **Mesoscopic transport**: Electron transport through quantum dots
-- **Open quantum systems**: Decoherence and dissipation analysis
-- **Quantum heat engines**: Performance bounds for nanoscale engines
+The framework introduces an algorithm that:
+1. Reduces the full counting statistics to solving a set of coupled differential equations
+2. Exploits Gaussianity: only first and second moments needed (Wick's theorem)
+3. Computational cost: O(N³) for N system modes (vs O(4^N) for general states)
+4. Handles arbitrary time-dependent driving and multi-reservoir setups
 
-## Implementation Considerations
+## Key Results
 
-- **Gaussian approximation**: Requires quadratic Hamiltonian structure
-- **Reservoir assumptions**: Gaussian (non-interacting) reservoir states
-- **Numerical stability**: Memory kernel discretization and convergence
+### Current Statistics
 
-## Activation
+For steady-state transport:
+- **Average current**: ⟨I⟩ = Tr[T(E)·(f_L(E) - f_R(E))] (Landauer formula generalization)
+- **Noise (variance)**: S = ∫ dE Tr[T(E)(1-T(E))(f_L-f_R)² + T(E)(f_L(1-f_L)+f_R(1-f_R))]
+- **Skewness**: higher cumulants encode interaction effects and non-Gaussianity
 
-**Keywords**: quantum transport, full counting statistics, non-Markovian master equation, Gaussian reservoirs, heat transport, particle transport, energy transport, open quantum systems, quantum thermodynamics
-**arXiv**: 2602.21190
-**Categories**: quant-ph, cond-mat.mes-hall, cond-mat.stat-mech
+### Thermal Transport
+
+For heat current between reservoirs at temperatures T_L, T_R:
+- Fourier's law emerges in the diffusive limit
+- Ballistic transport: heat current independent of system size
+- Quantum thermal rectification possible with asymmetric couplings
+
+## Usage Patterns
+
+### Pattern 1: Steady-state transport
+Set up Hamiltonian, compute transmission T(E), evaluate Landauer-type integrals.
+
+### Pattern 2: Time-dependent driving
+Use the non-Markovian master equation with time-dependent counting fields.
+
+### Pattern 3: Full distribution
+Compute all cumulants via ∂_χ^n ln G(χ)|_{χ=0} for complete current statistics.
+
+## Error Handling
+
+### Non-Gaussian Reservoirs
+- The framework assumes Gaussian reservoirs; for non-Gaussian (e.g., spin baths), use polaron transformation or reaction coordinate mapping
+- For strongly coupled reservoirs, include system-reservoir correlations via reaction coordinate
+
+### Numerical Stability
+- For long times, the TCL expansion may diverge — switch to time-convolution (Nakajima-Zwanzig) form
+- Use adaptive time-stepping for stiff differential equations
+- Verify complete positivity of the reduced dynamics

@@ -1,150 +1,77 @@
 ---
 name: fermi-dirac-quantized-neurons
-description: "Fermi-Dirac quantized neuron methodology — canonical quantization of classical neurons into quantum activation observables. Replaces classical variables with operators whose eigenvalues encode possible values, yielding quantum neurons that can learn functions classical neurons cannot. BQP-complete. Applicable to quantum ML, hybrid quantum-classical algorithms, quantum neural architecture design. Activation: quantized neuron, Fermi-Dirac machine, quantum activation, canonical quantization, quantum neuron."
+description: "Fermi-Dirac quantization methodology for neural networks — reinterprets classical neurons as parameterized Hamiltonians and replaces variables with quantum operators. BQP-complete for certain decision problems. Use when: designing quantum neural architectures, quantizing activation functions (ReLU, GeLU, sigmoid), building hybrid quantum-classical neural algorithms, analyzing quantum advantage in neural computation, or studying the quantum-classical boundary in machine learning."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2605.24386"
+  published: "2026-05-23"
+  authors: "Alexander He, Nana Liu, Mark M. Wilde"
+  tags: [quantum, neural-networks, fermi-dirac, quantization, bqp, activation-functions]
 ---
 
-# Fermi-Dirac Quantized Neurons Methodology
+# Fermi-Dirac Quantized Neurons
 
-Based on arXiv:2605.24386 — "Fermi-Dirac machines as quantizations of neurons" by Alexander He, Nana Liu, Mark M. Wilde (May 2026).
+Canonical quantization framework that reinterprets classical neurons as parameterized classical Hamiltonians, then replaces classical variables with quantum operators to yield quantum Hamiltonian neurons. Proves BQP-completeness for the associated decision problem.
 
-## Core Insight
+## Core Methodology
 
-Classical neurons can be reinterpreted as **canonical quantizations** of classical Hamiltonian systems. By replacing classical variables with quantum operators, we get **quantized neurons** whose outputs are random variables with expectation values equal to activation observables applied to parameterized quantum Hamiltonians.
+### Classical-to-Quantum Neuron Mapping
 
-## Key Principles
+1. **Classical neuron**: activation function f applied to parameterized classical Hamiltonian H(θ, x)
+2. **Quantization**: replace classical variables (x, p) → quantum operators (x̂, p̂) with [x̂, p̂] = iℏ
+3. **Quantum neuron output**: ⟨ψ|f(Ĥ(θ, x̂, p̂))|ψ⟩ where f acts on the quantum Hamiltonian as an operator function
+4. **Measurement**: observable expectation value replaces classical scalar output
 
-### 1. Canonical Quantization of Neurons
+### Quantized Activation Functions
 
-A classical neuron: `output = σ(w·x + b)` where σ is activation function.
+Key quantization targets:
+- **Smooth ReLU**: f(x) = x·σ(x/β) → f(Ĥ) via spectral theorem
+- **GeLU**: f(x) = x·Φ(x) where Φ is Gaussian CDF → requires operator-valued Gaussian integration
+- **Sigmoid Linear Unit (SiLU)**: f(x) = x/(1+e^{-x}) → rational function of e^{Ĥ}
+- **Gaussian-smoothed ReLU**: convolution with Gaussian kernel → operator exponential
 
-Quantized version:
-- View classical neuron as activation σ applied to parameterized classical Hamiltonian H(w,x,b)
-- Replace classical variables with quantum operators
-- Eigenvalues encode possible values of classical variables
-- When Hamiltonian consists of **commuting operators**, construction reduces exactly to classical neuron
-- More generally: yields **activation observable** = σ(H_quantum)
+For each, the activation observable is computed via spectral decomposition of Ĥ.
 
-### 2. Activation Observable
-
-```
-output = ⟨ψ| σ(H(θ)) |ψ⟩
-```
-
-Where:
-- `|ψ⟩` is input quantum state
-- `H(θ)` is parameterized quantum Hamiltonian
-- `σ` is activation function (ReLU, sigmoid, GeLU, etc.)
-- Output is random variable with expectation = activation observable
-
-### 3. Hybrid Quantum-Classical Training Algorithms
-
-Efficient algorithms for evaluating outputs and gradients:
-- **Random sampling** — estimate expectation values
-- **Hamiltonian simulation** — evolve under parameterized Hamiltonian
-- **Hadamard test** — measure observables
-
-### 4. Quantized Activation Functions
-
-Supported quantized activations:
-- **Smooth ReLU** — differentiable variant
-- **Sigmoid Linear Unit (SLU)** — smooth transition
-- **Gaussian-smoothed ReLU** — noise-robust
-- **Gaussian Error Linear Unit (GeLU)** — transformer-style
-
-### 5. Complexity: BQP-Complete
-
-The computational decision problem based on Fermi-Dirac neurons is **BQP-complete**, providing complexity-theoretic evidence against efficient classical simulation.
-
-## Workflow
-
-### Step 1: Define Classical Neuron as Hamiltonian
-
-```python
-# Classical neuron: σ(w·x + b)
-# Hamiltonian formulation: H(w, x, b) = w·x + b (diagonal in computational basis)
-```
-
-### Step 2: Quantize Variables
-
-```python
-# Replace scalars with operators:
-# w → Ŵ (weight operator)
-# x → X̂ (input operator)  
-# b → B̂ (bias operator)
-# H_quantum = Ŵ · X̂ + B̂
-```
-
-### Step 3: Apply Activation to Hamiltonian
-
-```python
-# σ(H_quantum) = activation observable
-# Use spectral decomposition: σ(H) = Σ_i σ(λ_i) |i⟩⟨i|
-```
-
-### Step 4: Evaluate Output
-
-```python
-# output = ⟨ψ| σ(H(θ)) |ψ⟩
-# Estimate via repeated measurement or Hadamard test
-```
-
-### Step 5: Compute Gradients
-
-```python
-# ∂output/∂θ = ⟨ψ| ∂σ(H)/∂θ |ψ⟩
-# Use parameter-shift rule or finite differences
-```
-
-### Step 6: Train
+### Hybrid Quantum-Classical Algorithm
 
 ```
-for epoch in range(epochs):
-    for batch in data:
-        # Encode input as quantum state
-        |ψ⟩ = encode(batch.x)
-        
-        # Forward pass
-        output = ⟨ψ| σ(H(θ)) |ψ⟩
-        
-        # Compute loss and gradients
-        loss = loss_fn(output, batch.y)
-        grads = compute_gradients(H, σ, |ψ⟩)
-        
-        # Update parameters
-        θ = θ - lr * grads
+Forward pass:
+  1. Prepare |ψ⟩ on quantum device
+  2. Apply Ĥ(θ, x) evolution: e^{-iĤt}
+  3. Measure ⟨f(Ĥ)⟩ via Hamiltonian simulation + observable estimation
+  
+Gradient computation:
+  1. Parameter-shift rule: ∂θ⟨f(Ĥ)⟩ = ½[⟨f(Ĥ(θ+π/2))⟩ - ⟨f(Ĥ(θ-π/2))⟩]
+  2. Classical optimizer updates θ using quantum-evaluated gradients
 ```
 
-## Pitfalls
+### BQP-Completeness Proof Sketch
 
-1. **Commuting operators reduce to classical** — Non-commutativity is essential for quantum advantage. Ensure Hamiltonian terms don't all commute.
-2. **State preparation overhead** — Encoding classical data into quantum states can be expensive. Use amplitude/angle encoding wisely.
-3. **Measurement shot noise** — Expectation values estimated from finite samples. More shots = more accurate but slower.
-4. **NISQ limitations** — Current hardware noise limits circuit depth. Keep circuits shallow for near-term deployment.
-5. **Activation function choice matters** — Smooth activations (GeLU, smooth ReLU) are more amenable to quantum implementation than discontinuous ones.
+The decision problem "does a Fermi-Dirac neuron with given parameters output ≥ threshold?" is BQP-complete:
+- **BQP-hard**: universal quantum computation can be encoded in a single Fermi-Dirac neuron with appropriate activation
+- **In BQP**: quantum circuits can efficiently evaluate the neuron output via Hamiltonian simulation
 
-## Applications
+## Mathematical Framework
 
-- **Quantum neural networks** — building blocks for QNNs
-- **Hybrid quantum-classical ML** — replace classical layers with quantized neurons
-- **Quantum advantage demonstration** — learn functions classical neurons cannot
-- **Quantum reservoir computing** — use as readout functions
-- **Time-series forecasting** — see arXiv:2605.24252 for 100+ qubit scale applications
+The quantization map Q: C^∞(phase space) → Operators follows:
+- Position/momentum: Q(x_j) = x̂_j, Q(p_j) = -iℏ∂/∂x_j
+- Hamiltonian: Q(H(x,p,θ)) = Ĥ(x̂,p̂,θ)
+- Activation: f(H) → f(Ĥ) via functional calculus (spectral theorem for self-adjoint operators)
 
-## Benchmarking
+The Fermi-Dirac distribution enters through:
+- n_F(E) = 1/(e^{β(E-μ)} + 1) as a natural quantum activation function
+- Thermal states ρ = e^{-βĤ}/Z provide natural mixed-state neuron initialization
 
-Based on arXiv:2605.24324 findings:
-- **Amplitude encoding** removes magnitude info via unit-sphere normalization — use carefully
-- **Angle encoding** can be geometrically redundant with raw linear features
-- **Basis encoding** imposes binary Hamming geometry — poorly aligned with smooth decision surfaces
-- **Fixed quantum-inspired encoding geometry alone** is NOT a reliable ML advantage source on classical data
+## Error Handling
 
-## Verification
+### Hamiltonian Simulation Errors
+- Trotterization error scales as O(t²/n) for n Trotter steps
+- Use qubitization or LCU methods for O(t) scaling when available
 
-- Quantized neurons should reduce to classical neurons when all operators commute
-- BQP-completeness means no efficient classical simulation exists for general case
-- Numerical experiments show quantum neurons learn functions classical neurons cannot
+### Gradient Estimation
+- Parameter-shift requires 2 evaluations per parameter
+- For noisy hardware: use stochastic parameter shift or finite-difference fallback
 
-## Related Papers
-
-- arXiv:2605.24252 — Hybrid QML for multi-output time-series forecasting at 100+ qubit scale
-- arXiv:2605.24324 — Matched spectral benchmark of quantum-inspired feature maps
+### Activation Function Quantization
+- Non-analytic activations (e.g., hard ReLU) require regularization
+- Use smooth approximations with parameter β → ∞ for sharp limit
