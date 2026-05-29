@@ -1,3 +1,38 @@
+## 2026-05-29 - 数论、统计学、高等数学 + 量子力学 (Cron Job)
+
+### Rademacher Complexity Bounds for Parameterized Quantum Circuits
+- [[quantum-rademacher-bounds]] - 参数化量子电路的Rademacher复杂度界：Pauli串生成电路的泛化能力分析 (arXiv: 2605.29546)
+  - 核心要点：全参数域 R_M = O(L^(3/2)/sqrt(M))，受限参数域 R_M = O(L/sqrt(M))
+  - 核心要点：经典线性模型 R_M = O(sqrt(L/M))，量子电路在参数依赖上更差但在特征映射表达能力上可能占优
+  - 核心要点：样本复杂度估计——全参数域需 O(L^3/epsilon^2) 样本，受限域需 O(L^2/epsilon^2) 样本
+  - 核心要点：电路设计启示——参数数量直接影响泛化误差界，参数范围正则化可改善界
+  - **Activation**: rademacher complexity, PQC, generalization bounds, pauli strings, quantum ML, sample complexity, statistical learning
+
+### Chain Rules for Conditional Entropies in Quantum Cryptography
+- Paper: arXiv: 2605.29787 - Chain rules for conditional entropies in quantum cryptography: limitations and improvements
+  - 核心要点：量子密码安全证明依赖于条件熵，链式规则将非i.i.d.过程熵与每轮熵贡献关联
+  - 核心要点：熵累积定理(EAT)的关键组件，用于多轮协议的安全证明
+  - **Activation**: quantum cryptography, conditional entropy, chain rules, entropy accumulation, security proofs
+
+### Adaptive Stabilizer State Fidelity Certification
+- Paper: arXiv: 2605.29820 - Adaptive Stabilizer State Fidelity Certification
+  - 核心要点：自适应扩展报告完整认证保真度区间，每轮求解精确端点线性规划
+  - 核心要点：证明单调收紧、完全覆盖后精确恢复、最坏情况下全覆盖的必要性
+  - **Activation**: stabilizer state, fidelity certification, linear programming, quantum verification, adaptive protocol
+
+### Exact Geometric Typicality and Bipartite Entanglement from Projected CLT
+- Paper: arXiv: 2605.29732 - Exact Geometric Typicality and Bipartite Entanglement from the Projected Central Limit Theorem on Hyperspheres
+  - 核心要点：从超球面上精确投影中心极限定理重推导Beta分布和Lubkin纯度公式
+  - 核心要点：双分量量子互信息完整渐近展开具有Bernoulli因子化形式
+  - **Activation**: geometric typicality, central limit theorem, hypersphere, bipartite entanglement, page curve
+
+### Resolving the Phase Space in Quantum Tomography
+- Paper: arXiv: 2605.29784 - Resolving the phase space
+  - 核心要点：量子层析有效分辨率由测量Gram矩阵关联的采样算子决定
+  - 核心要点：Gram特征基重构作为层析问题的测量自适应压缩
+  - **Activation**: quantum tomography, phase space, gram matrix, finite frame theory, resolution limit
+
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Brain Critical Dynamics - Hierarchical Organization
