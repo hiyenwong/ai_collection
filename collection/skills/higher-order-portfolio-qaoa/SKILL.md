@@ -1,109 +1,116 @@
 ---
 name: higher-order-portfolio-qaoa
-description: "Higher-order moment portfolio optimization using Quantum Approximate Optimization Algorithm (QAOA). Extends classical Markowitz mean-variance to include skewness and kurtosis via quantum Hamiltonian encoding. Use when: designing quantum portfolio optimization with risk beyond variance, implementing QAOA for multi-objective financial optimization, encoding higher-order statistical moments into quantum cost functions, or comparing quantum vs classical approaches for portfolio selection with non-Gaussian return distributions."
+description: "Higher-order moment portfolio optimization and scheduling using Quantum Approximate Optimization Algorithm (QAOA) with HUBO (Higher-Order Unconstrained Binary Optimization) formulations that go beyond standard QUBO, enabling more complex constraint modeling while reducing qubit requirements. Includes non-Abelian mixer designs for hybrid oscillator-qubit processors."
 ---
 
-# Higher-Order Portfolio Optimization with QAOA
+# Higher-Order Portfolio QAOA
 
 ## Description
+Methodology for formulating portfolio optimization, industrial scheduling, and logistics routing problems as Higher-Order Unconstrained Binary Optimization (HUBO) problems and solving them with QAOA on both NISQ and fault-tolerant quantum processors. Captures complex process intricacies difficult to express with quadratic (QUBO) form while reducing the number of binary variables, thus lowering qubit demand. Includes non-Abelian mixer designs for hybrid continuous-variable/discrete-variable (CV-DV) quantum processors.
 
-Extends portfolio optimization beyond Markowitz mean-variance (2nd moment) to include skewness (3rd moment) and kurtosis (4th moment) using QAOA. Higher-order moments capture asymmetry and tail risk in return distributions — critical for realistic portfolio modeling.
+## Activation Keywords
+- HUBO optimization
+- higher-order QAOA
+- beyond QUBO
+- higher-order binary optimization
+- quantum optimization beyond quadratic
+- HUBO portfolio
+- higher-order unconstrained
+- non-Abelian mixer
+- hybrid oscillator-qubit QAOA
+- 高阶量子优化
+- HUBO 组合优化
 
-## Core Methodology
+## Core Concepts
 
-### Hamiltonian Encoding
+### HUBO vs QUBO
+- **QUBO**: Quadratic Unconstrained Binary Optimization — limited to pairwise interactions (2-body terms)
+- **HUBO**: Higher-Order Unconstrained Binary Optimization — supports k-body interactions (k > 2)
+- **Advantage**: HUBO captures complex correlations directly without quadratic reduction overhead
+- **Trade-off**: Higher-order terms require more sophisticated quantum circuits but fewer total qubits
 
-The portfolio optimization objective is mapped to a QUBO Hamiltonian:
-
-H = H_obj + λ · H_constraint
-
-Where:
-- **H_obj**: Objective Hamiltonian encoding return, variance, skewness, kurtosis
-- **H_constraint**: Cardinality/budget constraints as penalty terms
-- **λ**: Penalty strength for constraint satisfaction
-
-### Higher-Order Moment Terms
-
-- **Mean (μ)**: Σ w_i · μ_i → linear term in Hamiltonian
-- **Variance (Σ)**: Σ w_i · w_j · σ_ij → quadratic terms (2-body interactions)
-- **Skewness (S)**: Σ w_i · w_j · w_k · s_ijk → cubic terms (3-body interactions)
-- **Kurtosis (K)**: Σ w_i · w_j · w_k · w_l · k_ijkl → quartic terms (4-body interactions)
-
-### QUBO Reduction for Higher-Order Terms
-
-Higher-order terms (3-body, 4-body) must be reduced to quadratic form for QAOA:
-- Use ancilla qubits to replace cubic/quartic terms
-- Apply penalty-based reduction: introduce auxiliary variable z ≈ x_i · x_j
-- Trade-off: more ancilla qubits vs. lower-degree Hamiltonian
-
-### QAOA Implementation
-
+### Mathematical Framework
 ```
-1. Initialize: |+⟩^⊗n or problem-informed state (e.g., Dicke state for cardinality)
-2. For p layers:
-   a. Apply mixer: e^{-i·β·H_mixer}
-   b. Apply cost: e^{-i·γ·H_cost}
-3. Measure and optimize (β, γ) via classical optimizer
+HUBO: minimize f(x) = Σ_i c_i x_i + Σ_{i<j} c_{ij} x_i x_j + Σ_{i<j<k} c_{ijk} x_i x_j x_k + ...
+where x_i ∈ {0, 1}
 ```
 
-### Mixer Selection
+### Non-Abelian Mixer for Hybrid CV-DV Processors
+- Standard QAOA uses transverse-field mixer: H_M = Σ X_i
+- Non-Abelian mixer: exploits hybrid oscillator-qubit native gates
+- Enables better exploration of solution space for HUBO problems
+- Hardware-native: matches actual gate set on hybrid CV-DV processors
 
-- **Standard X-mixer**: Allows transitions between all states; may violate constraints
-- **XY-mixer**: Preserves Hamming weight; enforces cardinality constraints natively
-- **Ring mixer**: Structured transitions for specific constraint patterns
-
-## Key Insights
-
-1. **Skewness preference**: Investors prefer positive skewness (asymmetric upside) — include as positive term in objective
-2. **Kurtosis penalty**: High kurtosis means fat tails (crash risk) — penalize strongly
-3. **QAOA depth**: Higher-order terms increase circuit depth; p=2-3 often sufficient for NISQ
-4. **Ancilla overhead**: 3-body → 1 ancilla per term; 4-body → 2+ ancillas per term
-5. **Classical comparison**: QAOA shows advantage for portfolios >50 assets with complex constraints
+### QAOA Mapping for HUBO
+1. **Cost Hamiltonian**: Encode HUBO objective as diagonal Hamiltonian H_C
+2. **Mixer Hamiltonian**: Choose hardware-native mixer (e.g., transverse-field, non-Abelian)
+3. **Ansatz**: U(β,γ) = e^{-iβ_p H_M} e^{-iγ_p H_C} ... e^{-iβ_1 H_M} e^{-iγ_1 H_C}
+4. **Classical Optimization**: Optimize parameters (β, γ) to minimize ⟨ψ|H_C|ψ⟩
 
 ## Usage Patterns
 
-### Pattern 1: Portfolio with Tail Risk Modeling
-When portfolio returns are non-Gaussian (crypto, options, emerging markets):
-1. Estimate μ, Σ, S, K from historical data
-2. Map to Hamiltonian with weighted moment terms
-3. Reduce higher-order terms to QUBO
-4. Run QAOA with XY-mixer for cardinality constraints
-5. Validate against classical benchmark (MILP, heuristic)
+### Pattern 1: Industrial Scheduling as HUBO
+When scheduling problems have complex correlated rules (e.g., assembly-line dependencies), formulate as HUBO to capture higher-order interactions natively.
 
-### Pattern 2: ESG-Constrained Direct Indexing
-For portfolios with exclusion constraints:
-1. Define cardinality K and exclusion masks
-2. Use XY-mixer to preserve Hamming weight K
-3. Encode ESG scores as linear bias terms
-4. QAOA with p=1-2 layers on NISQ device
+### Pattern 2: Portfolio Optimization with Higher-Order Moments
+Beyond mean-variance (quadratic), incorporate skewness (3-body) and kurtosis (4-body) terms directly in HUBO formulation.
 
-### Pattern 3: Quantum-Classical Hybrid Pipeline
-For large-scale portfolios (>100 assets):
-1. Classical pre-screening: filter to top-N candidates
-2. QAOA on reduced universe
-3. Classical post-processing: refine solution
-4. Iterative refinement loop
+### Pattern 3: Logistics Routing
+Transport routing with multi-stop dependencies and time-window constraints naturally maps to higher-order terms.
 
-## Implementation Notes
+### Pattern 4: Non-Abelian Mixer on Hybrid Processors (arXiv:2605.30234)
+- For hybrid oscillator-qubit platforms, design hardware-native non-Abelian mixer
+- Develop hybrid ansatz combining continuous-variable and discrete-variable components
+- Benchmark against standard transverse-field mixer using approximation ratio
 
-- **Penalty tuning**: λ must be large enough to enforce constraints but not overwhelm objective
-- **Moment estimation**: Requires sufficient historical data; use robust estimators for S and K
-- **QUBO size**: n + ancilla qubits; track qubit budget for target hardware
-- **Validation**: Always compare against classical baselines (mean-variance, heuristic search)
+## Instructions for Agents
 
-## Activation Keywords
-- higher order portfolio optimization
-- skewness kurtosis portfolio
-- QAOA portfolio
-- quantum portfolio skewness
-- qaoa higher moments
-- 高阶矩组合优化
-- 量子组合优化偏度峰度
-- quantum finance portfolio
-- QUBO portfolio optimization
-- XY-mixer portfolio
+### Step 1: Problem Analysis
+- Identify the optimization objective and constraints
+- Determine if higher-order interactions exist (3+ variables coupled)
+- Estimate qubit requirements for QUBO vs HUBO formulations
+
+### Step 2: HUBO Formulation
+- Express objective as polynomial in binary variables
+- Group terms by order (1-body, 2-body, 3-body, ...)
+- Identify which constraints can be encoded directly vs. penalized
+
+### Step 3: Quantum Mapping
+- Map binary variables to qubits (or qudits for higher-order)
+- Construct cost Hamiltonian from HUBO polynomial
+- Select appropriate mixer (standard transverse-field or problem-specific non-Abelian)
+
+### Step 4: QAOA Execution
+- Set initial parameters (often from classical relaxation)
+- Run quantum circuit at depth p
+- Classically optimize parameters using gradient-free methods
+
+### Step 5: Result Analysis
+- Extract solution from measurement statistics
+- Compare approximation ratio against classical baselines
+- Analyze resource scaling with problem size
+
+## Error Handling
+
+### HUBO-to-QUBO Reduction
+If quantum hardware only supports 2-body interactions:
+- Use reduction techniques (ancilla qubits, penalty methods)
+- Trade-off: introduces additional qubits but enables execution on standard hardware
+
+### Barren Plateaus
+- Use problem-informed initialization
+- Layerwise training strategy
+- Monitor gradient norms during optimization
+
+### Hardware Limitations
+- For NISQ: limit circuit depth, use error mitigation
+- For fault-tolerant: leverage full higher-order native gates
+
+## Resources
+- arXiv:2605.30252 — Quantum optimization beyond QUBO for industrial logistics and scheduling
+- arXiv:2605.30234 — Non-Abelian Mixer for QAOA on Hybrid Oscillator-Qubit Quantum Processors
 
 ## Related Skills
-- quantum-portfolio-optimization (general QAOA portfolio)
-- quantum-finance-portfolio (quantum finance overview)
-- qaoa-optimization (general QAOA methodology)
+- quantum-portfolio-optimization
+- quantum-optimization-qaoa
+- quantum-computing-patterns

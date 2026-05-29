@@ -24,6 +24,36 @@
   - Reduces classical-quantum communication overhead through batching and adaptive parallelism
   - **Activation**: quantum serverless, EFaaS, hybrid variational scheduling, quantum-classical orchestration
 
+### Improved sample complexity bound for sample-based Lindbladian simulation
+- [[lindblad-sample-complexity]] - 林德布拉德模拟的显式非渐近采样复杂度界，维数依赖从 O(d²t²/ε) 改进到 O(d·||L||²t²/ε) (arXiv: 2605.30301)
+  - 核心要点：对随机 Lindblad 算子，当 ||L||²_∞ = O(1/d) 时采样复杂度与维数无关 O(t²/ε)
+  - 核心要点：显式非渐近界 n*_d(t,ε) ≤ ((2d+3)/8)||L||²_∞(t²/ε)
+  - **Activation**: Lindbladian simulation, sample complexity quantum, Wave Matrix Lindbladization, open quantum system, 林德布拉德模拟
+
+### Koopman-von Neumann Molecular Dynamics for Green-Kubo Transport Coefficients
+- [[koopman-quantum-molecular-dynamics]] - 将经典分子动力学的 Green-Kubo 输运系数表述为量子算法读出问题 (arXiv: 2605.30142)
+  - 核心要点：NVE/NVT 动力学导出为希尔伯特空间上的幺正演化，网格误差随寄存器位数指数衰减
+  - 核心要点：目标精度 ε 仅需 O(log(1/ε)) 量子位，实现对数级量子位缩放
+  - **Activation**: Koopman-von Neumann, Green-Kubo, quantum molecular dynamics, transport coefficient, KvN quantum algorithm
+
+### Quantum Synchronization of Fock States
+- [[quantum-synchronization-fock-states]] - 玻色模式的量子同步，展示负 Wigner 函数稳态下的 Arnold tongue 相位锁定 (arXiv: 2605.30271)
+  - 核心要点：非经典态可与外部驱动实现相位锁定，相滑移概率指数衰减
+  - 核心要点：从 Lindblad 时间演化中提取相滑移率的新方法
+  - **Activation**: quantum synchronization, Fock states, Lindblad evolution, phase slip rate, Arnold tongue
+
+### Qubit-efficient variational algorithm for nuclear structure
+- [[qubit-efficient-vqe-nuclear]] - VQE 中三种量子位映射策略比较，用于核基态研究 (arXiv: 2605.30261)
+  - 核心要点：比较粒子基、Slater 行列式基、量子位高效映射在 10B 核上的资源需求
+  - 核心要点：扩展到 12C 核，在噪声模拟器上运行高达 26 量子位电路
+  - **Activation**: VQE nuclear structure, qubit-efficient mapping, variational quantum eigensolver, nuclear ground state
+
+### Overcoming the Matrix-Product-State Encoding Barrier via DMRG-Guided PITE
+- [[mps-dmrg-encoding-quantum]] - 三阶段基态准备框架：DMRG 获取 MPS 后经 MPD 编码到量子寄存器 (arXiv: 2605.30141)
+  - 核心要点：MPS 编码期间中心键 Schmidt 秩呈 logistic 增长，拐点 L* 标记高效编码边界
+  - 核心要点：概率虚时演化 (PITE) 减少编码残差
+  - **Activation**: MPS encoding, DMRG, probabilistic imaginary-time evolution, ground state preparation, quantum state preparation
+
 
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
