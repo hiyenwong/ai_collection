@@ -1,5 +1,13 @@
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
+### End-to-End Formalization of Quantum Error Correction
+- [[qec-formal-verification]] - 量子纠错码端到端形式化验证方法论，SAT验证约简+机器检查距离证明 (arXiv: 2605.16523)
+  - 稳定子码理论完整形式化（线性代数、Pauli群、二元辛表示）
+  - 距离认证问题通过验证SAT约简机器检查
+  - BitVec编码将变量数从O(n)降至O(√n)
+  - **Activation**: quantum error correction formal verification, stabilizer code distance proof, machine-checked quantum verification, qLDPC certification, QECC end-to-end formalization
+
+
 ### Best-First Ordered Statistics Decoding of Quantum LDPC Codes
 - [[bf-osd-qldpc-decoding]] - BF-OSD遍历错误候选空间按似然降序，1/100查询预算达到BP+OSD同等性能 (arXiv: 2605.25777)
   - Best-First OSD替代暴力枚举，优先级队列按似然排序
