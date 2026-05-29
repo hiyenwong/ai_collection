@@ -33,6 +33,14 @@
   - Accepted at ISC High Performance 2026
   - **Activation**: dynamic circuit optimization, compile-time quantum circuit, mid-circuit measurement reduction, classical feedforward optimization, probabilistic circuit model, quantum compiler latency, low-latency quantum trading
 
+### Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents
+- [[llm-trading-agent-alignment]] - Behavioral alignment and representation dynamics of LLM trading agents — pre-failure signatures (embedding drift, effective-rank contraction), risk-feedback alignment without fine-tuning, and correlation blind spot detection (arXiv: 2605.28850)
+  - Planning embeddings drift from normal-state centroids before failures
+  - Effective-rank contraction persists across embedding types (hash, LSA, Transformer, hidden-state probes)
+  - Structured risk feedback acts as external alignment signal without fine-tuning
+  - LLM rationales justify concentrated coupled-asset exposure that risk layer clips
+  - **Activation**: llm trading agent, risk feedback alignment, pre-failure detection, representation drift, behavioral alignment, financial llm diagnostics, correlation blind spot
+
 ### Exponentially Fast Solution State Preparation for the Heat Equation and its use for Option Pricing
 - [[quantum-option-pricing-heat-equation]] - Exponentially fast quantum state preparation for the heat equation with application to European option pricing under Black-Scholes model (arXiv: 2605.28950)
   - Quantum algorithm achieves exponential speedup in state preparation for heat equation solutions
