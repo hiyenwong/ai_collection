@@ -1,3 +1,19 @@
+## 2026-05-30 - Neuroscience Research (Cron Job) - Part 2
+
+### Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+- [[embodied-vr-feedback-3d-motor-imagery-bci]] - First systematic investigation of embodied VR feedback for continuous 3D motor imagery BCI, with 8.9-13.0% improvement over screen feedback (arXiv: 2605.29677)
+  - VR feedback elicits inherently more decodable and generalisable neural representations
+  - CNN-LSTM decoder achieves r=0.762 correlation under VR vs r=0.672 under screen
+  - Neurophysiological: stronger sensorimotor-parietal desynchronisation, enhanced motor-frontal connectivity
+  - **Activation**: embodied VR feedback, motor imagery BCI, 3D decoding, neurorehabilitation, continuous BCI
+
+### Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys
+- [[neural-behavioral-whole-body-movement-monkeys]] - First framework combining large-scale epidural cortical signals with multi-view motion capture to decode unconstrained whole-body kinematics in primates (arXiv: 2605.29355)
+  - Behavior prior learning via autoregressive encoder-decoder model
+  - Decodes accurate/realistic whole-body movement without explicit physics constraints
+  - Novel proof-of-concept for natural whole-body movement decoding
+  - **Activation**: whole-body movement, motor decoding, primate neuroscience, behavior prior, motion capture
+
 ## 2026-05-30 - Neuroscience Research (Cron Job)
 
 ### Comprehensive Neural Dynamics Analysis Methodology
