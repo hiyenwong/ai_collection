@@ -341,3 +341,19 @@
    240|  - **Activation**: Lindbladian simulation, sample complexity, Wave Matrix Lindbladization
    241|
    242|
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### Beyond Silicon: Materials, Mechanisms, and Methods for Physical Neural Computing
+- [[physical-neural-computing-review]] - 物理神经网络计算综述，涵盖忆阻器、光子电路、机械超材料等多种基底 (arXiv: 2604.09833)
+  - 统一基底分类框架：忆阻器、光子、机械、微流体、化学反应、生物神经组织
+  - 能效优势：比 GPU 高 1000x，适用于边缘 AI 部署
+  - 混合训练方法：物理前向 + 数字反向传播
+  - **Activation**: physical neural computing, neuromorphic substrate, memristor networks, photonic neural, edge AI hardware
+
+### Deep Binarized Photonic Reservoir Computing for Ultrafast Multimedia Signal Processing
+- [[deep-photonic-reservoir-computing]] - Gb/s级光子储备池计算，实现超快多媒体处理 (arXiv: 2605.30149)
+  - DMD + 光学散射 + CMOS 传感器实现物理储备池
+  - 时间复用深度层结构：类 CNN 层级特征提取
+  - 1000x 能效提升，500+ Hz 推理速度
+  - **Activation**: photonic reservoir computing, optical neural network, deep RC, Gb/s inference
+
