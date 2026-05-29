@@ -1,5 +1,17 @@
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Comparing Classical Simulation and Sample-Based Learning of Quantum Systems
+- [[quantum-ml-simulation-learning-comparison]] - Empirical framework comparing simulability vs learnability for quantum systems via Born-rule statistics (arXiv: 2605.28986)
+  - Simulation (from classical description) and learning (from measurement samples) need not coincide
+  - Provides complexity-theoretic and empirical methodology for quantum advantage verification
+  - **Activation**: quantum simulation vs learning, sample-based quantum learning, simulability learnability, Born-rule statistics
+
+### Analytic Properties of the Jost Functions via the Poincaré-Picard Theorem
+- [[jost-function-analytic-ode]] - ODE-theoretic analysis of Jost function analyticity for quantum scattering and complex energy plane continuation (arXiv: 2605.28859)
+  - Applies Poincaré-Picard theorem to parameter-dependent radial Schrödinger equation
+  - Bridges mathematical analysis (ODE theory) with quantum scattering physics
+  - **Activation**: jost function, quantum scattering, analytic continuation, Poincaré-Picard, complex energy plane
+
 ### HyperPrecision: High-Precision Numerical Evaluation of Multivariate Hypergeometric Functions
 - [[hypergeometric-high-precision-evaluation]] - Mathematica package for high-precision evaluation of Horn-type hypergeometric functions via Pfaffian systems, applicable to QFT, string theory, number theory, and statistics (arXiv: 2605.30216)
   - Automatic Pfaffian system construction from hypergeometric function definition
