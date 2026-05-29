@@ -86,6 +86,20 @@
   - 离散扩散实现脑-视觉-语言统一建模
   - BQA 数据集解锁神经推理能力
   - **Activation**: Mind-Omni, Brain Tokenizer, brain vision language model
+
+### Benchmarking Positional Encoding Strategies for Transformer-Based EEG Foundation Models
+- [[eeg-transformer-positional-encoding-benchmark]] - 系统对比五种电极位置编码策略，发现 SPE 适合运动想象但 ACPE 跨任务一致性更强 (arXiv: 2605.29754)
+  - 无通用最优策略，任务依赖性显著
+  - SPE 球坐标编码高空间保真度，适合运动想象
+  - ACPE 条件编码跨任务泛化能力更强
+  - **Activation**: EEG transformer, positional encoding, electrode position, EEG foundation model, spatial encoding, BCI
+
+### MIRAGE: Adaptive Multimodal Gating for Whole-Brain fMRI Encoding
+- [[mirage-multimodal-fmri-encoding]] - 自适应多模态门控框架，原生多模态特征优于后验聚合，注意力权重可解释模态贡献 (arXiv: 2605.29850)
+  - 原生多模态骨干优于单模态后验聚合
+  - 分层自适应门控动态选择特征
+  - 可解释注意力权重映射模态-脑区对应
+  - **Activation**: fMRI encoding, multimodal brain prediction, MIRAGE, brain encoding, naturalistic stimuli, adaptive gating, multimodal fusion
      1|
      2|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
      3|
