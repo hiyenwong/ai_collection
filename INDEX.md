@@ -1,3 +1,17 @@
+## 2026-05-29 - Systems Engineering Research (Cron Job)
+
+### Subsystem Structure as an Inferential Resource for Coupled Engineered Systems
+- [[probabilistic-compositional-inference]] - 图架构用于耦合工程系统的概率组合推断，子系统结构作为推断资源 (arXiv: 2605.27544)
+  - 核心要点：有向图表示子系统交互，概率接口消息传递不确定性，避免全局协方差矩阵
+  - 核心要点：计算复杂度从 O(n³) 降低到 O(N·Smax)，支持异构模型共存，层次化组合跨尺度
+  - **Activation**: coupled systems, distributed inference, uncertainty propagation, digital twins, message passing, compositional inference
+
+### Intelligence as Managed Autonomy: Failure, Escalation, and Governance for Agentic AI Systems
+- [[smart-managed-autonomy]] - SMARt模型：自主AI系统的管理自主性理论，形式化失败处理与治理可达性 (arXiv: 2605.27628)
+  - 核心要点：四层框架（Stable/Meta-cognitive/Assisted/Regulated），Petri网验证界限性质
+  - 核心要点：检测认知漂移→暂停推理→尝试恢复→移交控制，触发集确保安全性与完备性
+  - **Activation**: managed autonomy, agentic AI safety, failure escalation, governance transitions, Petri net, epistemic drift
+
      1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
 ### Geometric Analysis of Variational Quantum Eigensolver
