@@ -57,9 +57,21 @@ For each quantum finance claim, check:
 
 ## Key Findings from Recent Benchmarks
 
-- **250-instance benchmark** (up to 1000 assets): Classical MIP solves all in seconds; quantum approaches (QA, QAOA) consistently underperform problem-tailored heuristics
-- **Expert Analysis Evaluation**: VQE/QAOA portfolios often violate financial criteria (diversification, risk exposure) despite algorithmic convergence
-- **Hot-start methods**: Show promise by restricting search space, reducing qubit requirements
+### D-Wave Hybrid Audit (2605.17623, Lozano 2026)
+- **QPU time is only 0.7% of wall-clock**: On 54 cardinality-constrained mean-variance-turnover instances (N=10–640), D-Wave's LeapHybridCQM mean QPU access time = 0.034s out of 5s budget
+- **99% is classical pipeline**: Classical decomposition, sub-problem assembly, feasibility-aware reassembly
+- **Hybrid win = constraint-native classical pipeline + small QPU contribution**, not a quantum-sampling win
+- **Cardinality penalty collapses density**: Creates dense rank-one term making logical graph fully connected regardless of original covariance density
+- **Determinism**: Constraint-native service returns identical solutions at every wall-clock budget (5–300s) and across 10 repeated calls
+- **Practical implication**: When evaluating quantum finance benchmarks, always audit the QPU vs classical time split; constraint-native interfaces hide the decomposition cost
+
+### Large-Scale Benchmark (2509.17876, Stopfer & Wagner 2025)
+- **250 instances with up to 1000 assets**: Classical MIP solves all to proven optimality in seconds
+- **Quantum annealing + QAOA vs 6 classical baselines**: Problem-tailored heuristic consistently outperforms all quantum approaches
+- **Conclusion**: Only very limited room for quantum advantage in portfolio optimization
+
+### Expert Analysis Evaluation (2507.20532, Innan et al. 2025)
+- VQE/QAOA portfolios often violate financial criteria (diversification, risk exposure) despite algorithmic convergence
 
 ## Workflow for Quantum Finance Projects
 
@@ -87,6 +99,7 @@ Algorithmic convergence ≠ financial viability. Always include domain expert as
 - hotstart-quantum-portfolio: Warm-start methodology for portfolio QUBO
 
 ## References
+- arXiv: 2605.17623 - "Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization" (Lozano, 2026) — D-Wave hybrid audit revealing QPU contributes only 0.7% of runtime
 - arXiv: 2604.08180 - "Quantum Computing for Financial Transformation" (Gong et al., 2026) — 134-page comprehensive review
 - arXiv: 2509.17876 - "Quantum Portfolio Optimization: An Extensive Benchmark" (Stopfer & Wagner, 2025)
 - arXiv: 2507.20532 - "Quantum Portfolio Optimization with Expert Analysis Evaluation" (Innan et al., 2025)

@@ -263,3 +263,28 @@
    199|    29|  - **Activation**: quantum algorithm speedup, local Hamiltonian, entropy-governed, Grover bound
    200|    30|
    201|
+### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
+- [[quantum-finance-stack]] (enhanced) - Audit reveals D-Wave hybrid QPU contributes only 0.7% of wall-clock time; 99% classical decomposition, identical solutions across all budgets showing determinism (arXiv: 2605.17623)
+  - QPU mean access time 0.034s out of 5s budget on 54 instances (N=10-640)
+  - Cardinality penalty creates dense rank-one term collapsing density benchmark axis
+  - Constraint-native interface = classical pipeline + tiny QPU contribution, not quantum sampling win
+  - **Activation**: dwave hybrid audit, quantum portfolio benchmark, QPU time analysis, constraint-native, classical decomposition, 量子组合优化审计
+
+### Quantum Portfolio Optimization: An Extensive Benchmark
+- [[quantum-finance-stack]] (enhanced) - 250-instance benchmark (up to 1000 assets): MIP solves all in seconds, classical heuristics outperform QA/QAOA (arXiv: 2509.17876)
+  - Only very limited room for quantum advantage in portfolio optimization
+  - Problem-tailored heuristic consistently outperforms quantum approaches for fixed runtime
+  - **Activation**: quantum portfolio benchmark, MIP vs quantum annealing, QAOA comparison, 量子组合优化基准
+
+### Hot-Starting Quantum Portfolio Optimization
+- [[hotstart-quantum-portfolio]] (enhanced) - Restricts search to compact Hilbert space around continuous optimum, reducing qubits and outperforming on D-Wave Advantage (arXiv: 2510.11153)
+  - Compact Hilbert space QUBO: O(N log δ) qubits vs O(N log M) standard
+  - Integrates relaxed continuous solution insights into discrete quantum search
+  - **Activation**: hot-start QUBO, quantum portfolio warm-start, compact Hilbert space, reduced qubit portfolio, 量子组合优化热启动
+
+### A Quantum Reservoir Computing Approach to Quantum Stock Movement Forecasting
+- [[quantum-reservoir-stock-forecasting]] (enhanced) - QRC with ≤6 qubits achieves >86% accuracy on 20 quantum-sector stock trend predictions, platform-agnostic (arXiv: 2602.13094)
+  - Predicts daily closing volumes (2020-2025) and minute-by-minute out-of-market volumes
+  - Optimal reservoir parameters identified; works on superconducting circuits and trapped ions
+  - **Activation**: quantum reservoir computing, QRC stock forecasting, quantum time-series prediction, small-scale quantum ML, 量子储备池计算股票预测
+
