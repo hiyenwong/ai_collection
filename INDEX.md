@@ -1,4 +1,53 @@
 
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Paper 2605.29052
+- [[quantum-nonautonomous-ode-simulation]] - 量子算法模拟非自治ODE非幺正动力学，通过SVD分解将传播子写为酉算子之和 (arXiv: 2605.29052)
+  - quantum ODE
+  - nonunitary dynamics
+  - SVD dilation
+  - quantum simulation
+  - **Activation**: quantum ODE, nonunitary dynamics, SVD dilation, quantum simulation
+
+### Paper 2605.28892
+- [[funessian-process-non-markovian]] - Funessian过程：正可分非马尔可夫过程，初始状态记忆贯穿演化，互信息表征非马尔可夫性 (arXiv: 2605.28892)
+  - non-Markovian
+  - memory effect
+  - Chapman-Kolmogorov
+  - ergodicity breaking
+  - **Activation**: non-Markovian, memory effect, Chapman-Kolmogorov, ergodicity breaking
+
+### Paper 2605.29130
+- [[mersenne-numbers-doubling-map]] - 梅森数与倍角映射动力学联系，无需显式计算即可求因子的替代Lucas-Lehmer方法 (arXiv: 2605.29130)
+  - Mersenne numbers
+  - doubling map
+  - prime testing
+  - dynamical systems
+  - **Activation**: Mersenne numbers, doubling map, prime testing, dynamical systems
+
+### Paper 2605.28906
+- [[quantum-classical-uncertainty-electromagnetism]] - 经典与量子电磁理论统一不确定关系ΔrΔk≥5/2，适用于光束和单光子 (arXiv: 2605.28906)
+  - uncertainty relations
+  - electromagnetism
+  - classical-quantum correspondence
+  - **Activation**: uncertainty relations, electromagnetism, classical-quantum correspondence
+
+### Paper 2605.28974
+- [[quantum-ml-statistics-invariant-theory]] - 基于quiver不变量理论的iPCA模型MLE存在性检验算法，连接统计学与不变量理论 (arXiv: 2605.28974)
+  - MLE existence
+  - invariant theory
+  - quiver representation
+  - iPCA
+  - **Activation**: MLE existence, invariant theory, quiver representation, iPCA
+
+### Paper 2605.28931
+- [[quantum-ml-ground-state-measurement]] - SIC-POVM测量空间量子基态变分学习，自回归GRU编码概率分布+物理性约束 (arXiv: 2605.28931)
+  - quantum ground state
+  - SIC-POVM
+  - variational learning
+  - autoregressive neural network
+  - **Activation**: quantum ground state, SIC-POVM, variational learning, autoregressive neural network
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Graph Neural Network Reveals the Cortical Morphology of Local Brain Aging in Normal Cognition and Alzheimer's Disease
