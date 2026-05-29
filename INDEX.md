@@ -1,4 +1,13 @@
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 2
+## 2026-05-30 - Economics & Investment (Cron Job)
+
+### Financially Guided Deep Portfolio Optimization
+- [[deep-portfolio-optimization-framework]] - End-to-end deep learning portfolio optimization that directly optimizes differentiable surrogates of Sharpe ratio, Omega ratio, CVaR, and Risk Parity, bypassing predict-then-optimize paradigm (arXiv: 2605.28853)
+  - AttentionLSTM with Omega-CVaR-RiskParity loss achieves best out-of-sample performance on S&P 500
+  - Expanding-window walk-forward validation with realistic bid-ask costs and quarterly rebalancing
+  - **Activation**: portfolio optimization deep learning, differentiable portfolio, Sharpe ratio neural network, CVaR portfolio, Omega ratio portfolio
+
+
 
 ### Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
 - [[embodied-vr-feedback-3d-motor-imagery-bci]] - First systematic investigation of embodied VR feedback for continuous 3D motor imagery BCI, with 8.9-13.0% improvement over screen feedback (arXiv: 2605.29677)
