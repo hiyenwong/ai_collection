@@ -3,6 +3,22 @@
 ### HyperPrecision: High-Precision Numerical Evaluation of Multivariate Hypergeometric Functions
 - [[hypergeometric-high-precision-evaluation]] - Mathematica package for high-precision evaluation of Horn-type hypergeometric functions via Pfaffian systems, applicable to QFT, string theory, number theory, and statistics (arXiv: 2605.30216)
   - Automatic Pfaffian system construction from hypergeometric function definition
+## 2026-05-29 - Neuroscience Research (Cron Job)
+
+### A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments
+- [[deep-learning-mental-rotation-vr]] - Longitudinal subcortical shape analysis with cognitive associations in aging (arXiv: 2605.29703)
+  - Equivariant neural encoder for 3D spatial representations
+  - Neuro-symbolic object encoder combining perception + reasoning
+  - Interactive VR experiments for human behavioral validation
+  - **Activation**: mental rotation, spatial cognition, VR, neuro-symbolic, equivariant networks
+
+### Subcortical Shape Variations and Their Associations with Cognition Across the 8th Decade of Life
+- [[subcortical-shape-cognition-aging]] - Longitudinal analysis of subcortical morphology + cognition (arXiv: 2605.29703)
+  - Shape-based analysis captures subtle aging patterns missed by volumetry
+  - Lothian Birth Cohort 1936: 9-year trajectory (age 70-79)
+  - Regional specificity: hippocampal head → memory, thalamus → processing speed
+  - **Activation**: subcortical morphology, brain aging, cognitive decline, shape analysis
+
   - One-dimensional contour restriction reduces multivariate PDE to ODE for efficient evaluation
   - **Activation**: hypergeometric, pfaffian, high-precision, horn-type, mathematica, multivariate, laurent expansion, quantum field theory
 
