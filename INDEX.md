@@ -1,4 +1,29 @@
      1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Geometric Analysis of Variational Quantum Eigensolver
+- [[geometric-vqe-analysis]] - VQE优化景观的黎曼几何表征，使用量子Fisher信息矩阵分析收敛性 (arXiv: 2605.27795)
+  - 核心要点：将VQE参数空间映射为黎曼流形，QFIM作为度量张量刻画优化景观
+  - 核心要点：几何障碍平原检测——QFIM行列式近零对应平坦区域，自然梯度自动预处理
+  - **Activation**: VQE geometry, quantum Fisher information, Riemannian VQE, natural gradient, barren plateaus, variational quantum algorithm
+
+### Global Bounds Beyond Local Quantum Metrology
+- [[global-quantum-metrology-bounds]] - 超越局部Cramér-Rao理论的全局量子计量界，使用Barankin型界进行全局参数估计 (arXiv: 2605.28374)
+  - 核心要点：局部QCRB仅在参数值附近有效，全局Barankin界覆盖整个参数空间
+  - 核心要点：揭示局部精度与全局覆盖之间的基本权衡，指导多阶段估计策略设计
+  - **Activation**: quantum metrology, Cramér-Rao bound, Barankin bound, global estimation, quantum sensing, precision limits
+
+### SBM Inference via Maximum Likelihood and Optimal Transport
+- [[sbm-optimal-transport-inference]] - 最大似然与最优传输的桥梁，使用半松弛Gromov-Wasserstein投影进行SBM参数估计 (arXiv: 2605.28488)
+  - 核心要点：MLVI可解释为srGW投影，变分目标与OT正则化匹配
+  - 核心要点：Sinkhorn迭代加速社区检测，OT代价作为模型选择准则
+  - **Activation**: stochastic block model, optimal transport, Gromov-Wasserstein, community detection, Sinkhorn algorithm, network inference
+
+### Robust Moment-Based Estimation via Spectral Gradient Reweighting
+- [[robust-moment-estimation-spectral]] - 基于谱梯度重加权的鲁棒矩估计，在似然不可用/误设时提供抗异常值推断 (arXiv: 2605.27718)
+  - 核心要点：对矩雅可比矩阵进行谱分解，按逆谱密度重加权梯度贡献
+  - 核心要点：自动抑制高方差方向（异常值集中），无需手动调参即实现有界影响函数
+  - **Activation**: moment estimation, GMM, robust statistics, spectral reweighting, M-estimation, outlier robustness
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
