@@ -1,3 +1,38 @@
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Best-First Ordered Statistics Decoding of Quantum LDPC Codes
+- [[bf-osd-qldpc-decoding]] - BF-OSD遍历错误候选空间按似然降序，1/100查询预算达到BP+OSD同等性能 (arXiv: 2605.25777)
+  - Best-First OSD替代暴力枚举，优先级队列按似然排序
+  - 固定BP迭代次数后调用OSD，而非等待收敛
+  - 全电路级噪声下特别有效，BP不可靠时优势明显
+  - **Activation**: quantum error correction, QLDPC decoding, BF-OSD, belief propagation, ordered statistics decoding
+
+### Quantum Mechanics: Problems and Paradoxes
+- [[quantum-foundations-probability]] - 量子力学基础公理体系：概率起源、Planck常数本质、波函数本体论、测量问题 (arXiv: 2605.30067)
+  - 量子理论公理体系形式化
+  - 经典振荡器+热浴→量子行为对应模型
+  - 概率振幅本质与Born规则推导
+  - **Activation**: quantum foundations, quantum probability, measurement problem, wave function ontology, axiom system
+
+### Entropy-Governed Speedup for Quantum Algorithms on Local Hamiltonians
+- [[entropy-governed-quantum-speedup]] (enhanced) - 利用熵结构超越Grover界的量子算法，在深度-d状态上实现更低能量估计 (arXiv: 2605.18241)
+  - 输出态能量不超过深度-d态的最小能量
+  - 区分强纠缠态与经典可描述态
+  - **Activation**: quantum algorithm speedup, local Hamiltonian, entropy-governed, Grover bound
+
+### Circuits of Quantum Hashing and QFT for Cactus Connectivity
+- [[quantum-hashing-qft-connectivity]] (enhanced) - 仙人掌图连接约束下的量子哈希与QFT电路优化 (arXiv: 2605.20789)
+  - 利用数论哈希技术优化量子电路
+  - 受限量子比特连接拓扑下的QFT构造
+  - **Activation**: quantum hashing, QFT, cactus graph, qubit connectivity, number theory
+
+### Geometric Analysis of Variational Quantum Eigensolver
+- [[geometric-vqe-analysis]] (enhanced) - VQE优化景观的黎曼几何分析，量子Fisher信息度量 (arXiv: 2605.27795)
+  - VQE参数空间的几何结构表征
+  - 量子优化收敛性分析
+  - **Activation**: VQE geometry, quantum optimization, Riemannian analysis
+
+
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
 
