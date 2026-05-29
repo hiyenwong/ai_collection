@@ -1,4 +1,13 @@
-## {} - Neuroscience Research (Cron Job)
+## 2026-05-30 - Neuroscience Research (Cron Job)
+
+### Comprehensive Neural Dynamics Analysis Methodology
+- [[neural-dynamics-analysis-methodology]] - Unified framework integrating neural population decoding, brain network dynamics, neural criticality assessment, spiking neural network dynamics, and connectome computational analysis (Synthesized from multiple recent arXiv papers)
+  - Neural population decoding: dimensionality reduction, temporal dynamics, cross-subject generalization
+  - Brain network dynamics: dynamic connectivity, control theory, Kuramoto oscillators, tensor decomposition
+  - Neural criticality assessment: power-law distributions, branching ratio, Griffiths phase
+  - Spiking neural network dynamics: LIF models, synchrony, oscillations, E/I balance
+  - Connectome computational analysis: graph metrics, hub identification, GNN, optimal transport
+  - **Activation**: neural dynamics, computational neuroscience, brain networks, neural population, spiking networks, criticality, connectome analysis, 神经动力学分析方法论
 
 ### Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators
 - [[noise-induced-oscillator-synchronization]] - Proves common noise synchronizes uncoupled oscillator groups via Kuramoto order parameter; phase density evolution mapping explains collective dynamics without inter-group coupling (arXiv: 2605.29529)
