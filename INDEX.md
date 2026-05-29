@@ -1,5 +1,16 @@
+## 2026-05-29 - Neuroscience Research (Cron Job)
 
+### Domain-Informed Multi-Objective Framework for EEG Channel Selection in Motor Imagery BCIs
+- [[domain-informed-moeeg-channel-selection-bci]] - Multi-objective optimization combining spatial relevance (Gaussian kernel) + functional discriminability (ERD) for compact EEG channel selection (arXiv: 2605.29943)
+  - NSGA-II/MOPSO/MOEA/D algorithms achieve 87%, 71%, 75%, 65% on Physionet, OpenBMI, HighGamma, BCIIV-2A
+  - 87% dimensionality reduction (64→8 channels), sensorimotor cortex prioritization
+  - **Activation**: EEG channel selection, motor imagery BCI, multi-objective optimization, Pareto front, ERD, sensorimotor cortex
 
+### Learning Robust and Task-Invariant Functional Representation from fMRI through Siamese Self-Supervised Learning
+- [[brainsimsiam-self-supervised-fmri]] - BrainSimSiam lightweight self-supervised framework for cross-task generalization without large-scale pretraining (arXiv: 2605.28990)
+  - Positive-only contrastive learning, stop-gradient mechanism, outperforms supervised baselines
+  - +15% ADHD accuracy, -8% age regression MSE, comparable to foundation models with 90% less compute
+  - **Activation**: self-supervised fMRI, Siamese learning, BrainSimSiam, positive-only contrastive, cross-task generalization
 
 ## 2026-05-29 - Neuroscience Research (Cron Job)
 
