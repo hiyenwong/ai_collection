@@ -1,125 +1,96 @@
----
-name: embodied-vr-feedback-3d-motor-imagery-bci
-description: "Embodied VR Feedback methodology for continuous 3D motor imagery BCI decoding. Systematic investigation of embodied virtual reality feedback during real-time 3D virtual limb control driven by motor imagery. Use when: (1) designing continuous BCIs for motor control, (2) studying VR feedback effects on neural representations, (3) developing motor imagery decoding systems, (4) investigating neurorehabilitation interfaces. Keywords: BCI, motor imagery, VR feedback, embodied feedback, EEG decoding, motor control, neural representations, neurorehabilitation"
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.29677"
-  published: "2026-05-28"
-  authors: "Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle"
-  tags: [bci, motor-imagery, vr-feedback, embodied, eeg, decoding, neural-representation, neurorehabilitation]
----
+# Embodied VR Feedback for 3D Motor Imagery BCI
 
-# Embodied Virtual Reality Feedback for 3D Motor Imagery BCI
+## Metadata
+- **arXiv**: 2605.29677
+- **Authors**: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle
+- **Submitted**: 28 May 2026
+- **Categories**: cs.HC, eess.SP, q-bio.NC
+- **DOI**: https://doi.org/10.48550/arXiv.2605.29677
+- **Zenodo Data**: https://doi.org/10.5281/zenodo.16047021
+- **Keywords**: embodied VR feedback, motor imagery BCI, 3D decoding, CNN-LSTM, sensorimotor networks, neurorehabilitation
 
-Research methodology from arXiv:2605.29677 — first systematic investigation of embodied VR feedback for continuous 3D motor imagery BCI decoding.
+## Summary
 
-## Core Contribution
+首篇系统性研究 embodied VR（虚拟现实）反馈对实时 3D 运动想象脑机接口的影响。研究发现 VR 反馈显著增强神经表征的可解码性和泛化能力，为下一代连续 BCI 设计提供了关键原则。
 
-**Key Finding**: Embodied VR feedback produces inherently more decodable and generalisable neural representations for motor imagery, with 8.9-13.0% improvement over screen feedback across all strategies and movement dimensions (p ≤ 0.002, d = 1.42-2.05).
+## Key Findings
 
-## Methodology Overview
+### Performance Metrics
+- **VR vs Screen**: VR 反馈在所有策略和运动维度上均显著优于屏幕反馈（提升 8.9-13.0%, p ≤ 0.002, d = 1.42-2.05）
+- **Within-Session Correlation**: VR 达到 r = 0.762，屏幕为 r = 0.672
+- **Fixed Decoder**: VR 优势在无需重新训练的固定解码器下依然存在，证明 VR 产生更可泛化的神经表征
 
-### Experimental Design
+### Three Evaluation Strategies
+1. **FDG (Fixed Decoder Generalisation)**: 实际在线性能，无重新训练
+2. **SAT (Sequential Adaptive Training)**: 定期重新训练
+3. **WSR (Within-Session Reconstruction)**: 会话内上限估计
 
-1. **Participants**: 10 participants across 10 longitudinal sessions
-2. **Feedback Modalities**: VR (embodied spatial) vs. Screen (traditional)
-3. **Decoding Strategies**:
-   - **Fixed Decoder Generalisation (FDG)**: Actual online performance without retraining
-   - **Sequential Adaptive Training (SAT)**: Periodic retraining
-   - **Within-Session Reconstruction (WSR)**: Upper-bound estimation
-4. **Movement Dimensions**: 3D continuous trajectory decoding
+### Neural Mechanisms
+- **Sensorimotor-Parietal Desynchronization**: VR 产生更强的去同步化
+- **Motor-Frontal Connectivity**: 功能连接增强
+- **Anterior Insula Engagement**: 全频段普遍激活
+- **Superior Parietal Lobule Coupling**: 与真实运动执行模式相似
 
-### Neural Recording & Processing
+## Methodology
 
-- **Signal**: Large-scale epidural cortical signals from distributed sensory-motor areas
-- **Decoder**: CNN-LSTM architecture
-- **Performance**: 
-  - VR feedback: r = 0.762 within-session correlation
-  - Screen feedback: r = 0.672
-  - VR advantage persists without retraining (FDG)
+### Architecture
+- **CNN-LSTM Decoder**: 用于运动轨迹解码
+- **Real-time 3D Virtual Limb Control**: 实时虚拟肢体控制
+- **Longitudinal Study**: 10 名参与者，10 次纵向会话
 
-### Neurophysiological Findings
+### Feedback Modalities
+- **Embodied VR**: 具身化虚拟现实反馈
+- **Screen Feedback**: 传统屏幕反馈（对照组）
 
-**VR-induced patterns paralleling real movement execution**:
-- Stronger sensorimotor-parietal desynchronisation
-- Enhanced motor-frontal functional connectivity
-- Pervasive anterior insula engagement across all frequency bands
-- Increased superior parietal lobule coupling
+### Statistical Analysis
+- **Linear Mixed-Effects Modeling**: 确认反馈方式和运动轴的主效应
+- **Effect Sizes**: Cohen's d = 1.42-2.05（大效应）
 
-## Implementation Guide
+## Clinical Applications
 
-### 1. Experimental Setup
+### Neurorehabilitation
+- **Motor Recovery**: 运动功能康复
+- **Stroke Patients**: 脑卒中患者运动想象训练
+- **Spinal Cord Injury**: 脊髓损伤患者的辅助控制
 
-```python
-# Key components for embodied VR BCI
-components = {
-    'vr_system': 'Embodied spatial feedback with 3D virtual limb',
-    'eeg_system': 'Large-scale cortical recording',
-    'decoder': 'CNN-LSTM for continuous trajectory',
-    'feedback_comparison': 'VR vs Screen modality'
-}
-```
+### Design Principles
+1. **Embodied Spatial Feedback**: 具身化空间反馈是关键设计原则
+2. **Continuous BCI**: 连续轨迹解码优于离散控制
+3. **Longitudinal Training**: 长期训练增强神经表征稳定性
 
-### 2. Decoder Architecture
+## Implementation Notes
 
-```python
-# CNN-LSTM decoder structure
-class MotorImageryDecoder:
-    def __init__(self):
-        self.cnn = ConvNet(input_channels=64)  # EEG channels
-        self.lstm = LSTM(hidden_size=128)
-        self.output = TrajectoryHead(dim=3)  # 3D position
-    
-    def forward(self, eeg_sequence):
-        features = self.cnn(eeg_sequence)
-        temporal = self.lstm(features)
-        trajectory = self.output(temporal)
-        return trajectory
-```
+### When to Use
+- **Trigger Words**: embodied feedback, VR BCI, motor imagery decoding, 3D trajectory prediction, neurorehabilitation BCI, continuous BCI, sensorimotor networks
 
-### 3. Evaluation Metrics
+### Code Patterns
+- CNN-LSTM architecture for trajectory decoding
+- Real-time feedback loop with <100ms latency
+- Session-wise decoder adaptation strategies
+- Functional connectivity analysis (motor-frontal, parietal networks)
 
-| Metric | VR Feedback | Screen Feedback | Improvement |
-|--------|-------------|-----------------|-------------|
-| FDG (Online) | r = 0.762 | r = 0.672 | 13.0% |
-| SAT (Retrained) | Improved | Baseline | 8.9% |
-| WSR (Upper-bound) | r = 0.85 | r = 0.75 | 13.3% |
-
-## Design Principles
-
-### Embodied Spatial Feedback Requirements
-
-1. **First-person perspective**: Virtual limb seen from user's viewpoint
-2. **Real-time correspondence**: Movement decoded → visual feedback within latency bounds
-3. **Spatial immersion**: 3D environment with depth perception
-4. **Motor congruence**: Imagined movement mapped to virtual limb motion
-
-### Neural Representation Enhancement Mechanisms
-
-- **Anterior insula**: Interoceptive awareness of body state
-- **Superior parietal lobule**: Spatial sensorimotor integration
-- **Motor-frontal connectivity**: Action-observation coupling
-
-## Pitfalls & Solutions
-
-| Issue | Cause | Solution |
-|-------|-------|----------|
-| Decoder drift over sessions | Neural plasticity changes | SAT strategy with periodic retraining |
-| VR latency affects performance | Real-time processing bottleneck | Optimize CNN-LSTM inference time |
-| Individual variation | Subject-specific neural patterns | Personalised decoder calibration |
-
-## Applications
-
-1. **Neurorehabilitation**: Stroke recovery, motor function restoration
-2. **Prosthetic Control**: Intuitive motor imagery-based prosthetic operation
-3. **Assistive Technology**: Wheelchair/robotic arm control via imagined movement
-4. **Motor Training**: Enhanced motor learning through embodied feedback
+### Pitfalls
+- **Latency Sensitivity**: VR 反馈延迟需控制在 <100ms
+- **Session Variability**: 不同会话间神经表征可能漂移
+- **Individual Differences**: VR 效果因人而异，需个性化调整
+- **Hardware Requirements**: VR 设备需与 EEG 系统同步
 
 ## References
 
-- arXiv:2605.29677 — Full paper
-- Zenodo DOI: 10.5281/zenodo.16047021 — Dataset
+### Related Work
+- Motor imagery BCI paradigm
+- Embodied cognition theory
+- Sensorimotor rhythm modulation
+- Virtual reality neurorehabilitation
+
+### Dataset
+- **Zenodo**: https://doi.org/10.5281/zenodo.16047021 (data available)
 
 ## Activation
+**Keywords**: embodied VR, motor imagery BCI, 3D decoding, CNN-LSTM, sensorimotor networks, neurorehabilitation, continuous BCI, virtual limb control, feedback modality
 
-Keywords: embodied VR feedback, motor imagery BCI, 3D decoding, neurorehabilitation, continuous BCI, virtual reality rehabilitation
+---
+
+**Created**: 2026-05-30 (Cron Job)
+**Source**: arXiv:2605.29677
+**Status**: Active Research Skill

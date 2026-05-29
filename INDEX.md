@@ -1,3 +1,12 @@
+## 2026-05-30 - Neuroscience Research (Cron Job) - Part 3
+
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - First framework for visual question answering from fMRI using Brain Interaction Transformer, substantially outperforming existing methods with new NSD-VQA benchmark dataset (arXiv: 2605.29588)
+  - Brain-IT decodes language tokens from brain activity, integrates with LLM for VQA
+  - NSD-VQA provides 20 controlled question-answer pairs per image across 20 categories
+  - Quantifies decodable visual/semantic information and brain region contributions
+  - **Activation**: fMRI VQA, brain decoding, visual question answering, Brain Transformer, brain representations, semantic decoding
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 2
 ## 2026-05-30 - Economics & Investment (Cron Job)
 
