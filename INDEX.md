@@ -510,3 +510,8 @@
   100|   211|  - Only very limited room for quantum advantage in portfolio optimization
   100|   212|  - Problem-tailored heuristic consistently outperforms quantum approaches for fixed runtime
   100|   213|  - **Activation**: quantum portfolio benchmark, MIP vs quantum annealing, QAOA comparison, 量子组合优化基准
+### Quantum-Inspired Qutrit Neural Networks for Financial Forecasting
+- [[quantum-qutrit-neural-financial-forecasting]] - 量子三态(Qutrit)神经网络用于实时金融预测，比ANN和Qubit网络训练更快、表现更好 (arXiv: 2605.29413)
+  - 核心要点 1: Qutrit使用3态量子叠加态(|0⟩熊/|1⟩中性/|2⟩牛)，每神经元信息容量log₂(3)≈1.58比特
+  - 核心要点 2: 3×3酉矩阵门提供比2×2更丰富的特征混合能力，特别适合三分类预测目标
+  - **Activation**: qutrit neural network, QQTN, quantum financial forecasting, 3-state quantum ML, stock prediction
