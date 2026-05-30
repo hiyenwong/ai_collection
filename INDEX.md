@@ -39,6 +39,34 @@
   - Resource-efficient route to quantum simulation of open quantum systems
   - **Activation**: programmable dissipation, partial QEC, engineered dissipation, dissipator compilation, open quantum simulation, Kraus channel mixing
 
+### Optimal Quantum Differential Privacy via Fisher Information Spectral Analysis
+- [[quantum-differential-privacy-qfi]] - QFI度量建立的几何感知量子差分隐私框架，方向依赖噪声对齐QFI特征结构，实现epsilon~0.001等效效用vs经典DP的epsilon~4800 (arXiv: 2605.24166)
+  - 核心要点 1: QFI对偶性——同时量化参数估计精度(计量学)和量子态可区分性(隐私)
+  - 核心要点 2: 六条定理：最优噪声集中、混合态QFI分解、隐私-效用不确定关系、自适应QFI估计、QFI对齐组合律、硬件噪声隐私放大
+  - 核心要点 3: QFI对齐组合律饱和于O(1) vs 标准组合律的O(k)
+  - **Activation**: quantum differential privacy, QFI privacy, Fisher information DP, quantum privacy amplification, QFI spectral analysis, geometry-aware DP, hardware noise harnessing
+
+### Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality
+- [[quantum-fisher-information-duality]] - 分布式量子传感中QFI对偶性：Heisenberg极限精度实现参数隐私，F_Q(w)+F_Q(v)<=N使得目标传感方向饱和时其他方向QFI为零 (arXiv: 2605.20765)
+  - 核心要点 1: N量子比特探针态的QFI对偶约束，任意正交方向w,v满足F_Q(w^T theta)+F_Q(v^T theta)<=N
+  - 核心要点 2: Heisenberg极限精度F_Q=N饱和边界同时强制所有其他独立方向QFI为零——即参数隐私条件
+  - 核心要点 3: 赤道态(N=2)和GHZ态(N>=2)可达等式
+  - **Activation**: quantum Fisher information duality, distributed quantum sensing, parameter privacy, Heisenberg limit, GHZ states, sensor network privacy, QFI bound
+
+### Toward Covert Quantum Computing
+- [[covert-quantum-computing]] - 隐蔽量子计算：多租户云平台中量子策略框架下的隐藏计算，离散等周不等式证明仅O(sqrt(n))边界量子比特提供检测信息 (arXiv: 2605.14325)
+  - 核心要点 1: 引入隐蔽量子计算概念——adversaries无法检测不可访问QCU上的计算
+  - 核心要点 2: 离散等周不等式推导：n量子比特电路中仅O(sqrt(n))边界量子比特提供检测信息
+  - 核心要点 3: 在IQM 54-qubit和IBM 156-qubit上发现长程耦合边信道，削弱隐蔽性
+  - **Activation**: covert quantum computing, multi-tenant quantum cloud, quantum crosstalk, isoperimetric inequality, side channel, quantum strategy framework, spatial isolation
+
+### Indefinite Causal Order Reverses the Real-Complex Hierarchy
+- [[indefinite-causal-order-real-complex]] - 不定因果序下实数量子理论比复数量子理论实现更严格的过程关联，逆转了确定因果序下的层级关系 (arXiv: 2605.30238)
+  - 核心要点 1: 过程矩阵框架下研究对称性约束对局部操作的限制
+  - 核心要点 2: 锐二分法：有限酉对称性不产生新关联，实数量子理论产生严格更多的过程关联
+  - 核心要点 3: 不定因果序下实数量子理论>复数量子理论，与确定因果序下结论相反
+  - **Activation**: indefinite causal order, process matrix, real quantum theory, complex quantum theory, symmetry constraints, quantum foundations, causal indefiniteness
+
 ## 2026-05-31 - Deep Learning Research (Cron Job)
 
 ### Draft-OPD: On-Policy Distillation for Speculative Draft Models
