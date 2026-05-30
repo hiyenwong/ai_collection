@@ -1,5 +1,11 @@
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 7
 
+### Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys
+- [[neural-behavioral-whole-body-movement-monkeys]] - 首个框架结合大规模硬膜外皮质信号与多视角运动捕捉解码自然全身体运动，无需显式物理约束即可重建真实运动轨迹 (arXiv: 2605.29355v1)
+  - 核心要点 1: 大规模硬膜外电极阵列覆盖感觉运动相关区域，多视角同步捕捉重建完整身体骨架
+  - 核心要点 2: 自回归编码器-解码器学习紧凑行为先验，皮质信号条件化解码器生成准确运动轨迹
+  - **Activation**: whole-body movement, motor decoding, primate neuroscience, neural-behavioral representation, behavior prior, epidural signals, motion capture
+
 ### Brain-IT-VQA: From Brain Signals to Answers
 - [[brain-it-vqa-fmri-visual-question-answering]] - fMRI视觉问答突破框架，解码语言tokens并集成语言模型，创建NSD-VQA基准数据集 (arXiv: 2605.29588v1)
   - 核心要点 1: 扩展Brain-IT架构，直接从fMRI脑信号解码语言tokens，实现视觉问答
