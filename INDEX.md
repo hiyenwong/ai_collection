@@ -25,6 +25,14 @@
 
 ## 2026-05-30 - Economics & Investment + Quantum Finance (Cron Job)
 
+### Insurance Pricing Optimization via Off-Policy Evaluation
+- [[quantum-off-policy-evaluation-pricing]] - Quantum off-policy evaluation methodology for insurance pricing and financial decision optimization using quantum IPS estimators and variational quantum policies (arXiv: 2605.28327)
+  - Formulates pricing as decision-making problem using off-policy evaluation and stochastic control
+  - Kernelized IPS estimator exploits local structure in action space for variance reduction
+  - Neural network policy optimization outperforms existing techniques in controlled environment
+  - Quantum amplitude estimation provides O(1/ε) vs O(1/ε²) sample complexity for IPS
+  - **Activation**: quantum pricing, off-policy evaluation, quantum OPE, insurance pricing, quantum IPS, quantum reinforcement learning pricing
+
 ### HQFS: Hybrid Quantum Classical Financial Security
 - [[quantum-finance-pipeline]] - End-to-end hybrid quantum-classical pipeline integrating VQC forecasting, QUBO annealing, and post-quantum signing for financial risk systems
   - VQC (Variational Quantum Circuit) forecasting replaces classical prediction layer
