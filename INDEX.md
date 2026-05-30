@@ -1,3 +1,33 @@
+## 2026-05-31 - Deep Learning Research (Cron Job)
+
+### Draft-OPD: On-Policy Distillation for Speculative Draft Models
+- [[draft-opd-speculative-distillation]] - On-policy distillation for speculative decoding draft models with replay from verification-exposed error positions (arXiv: 2605.29343)
+  - Target-assisted rollout for stable continuations during training
+  - Error position replay focuses training on draft-induced errors
+  - 5× lossless acceleration, 23% improvement over EAGLE-3
+  - **Activation**: speculative decoding, draft model, EAGLE, DFlash, acceptance length, on-policy distillation
+
+### SAAS: Self-Aware Reinforcement Learning for Over-Search Mitigation
+- [[saas-self-aware-agentic-search]] - Dynamic self-awareness that regulates search behavior without compromising accuracy (arXiv: 2605.29796)
+  - Search boundary modeling via contrastive rollouts
+  - Boundary-aware reward module with trajectory-level penalties
+  - Stage-wise optimization avoids reward hacking
+  - **Activation**: over-search, agentic search, search boundary, self-awareness, reasoning, multi-hop
+
+### RiM: Reasoning in Memory - Working Memory for Latent Reasoning
+- [[rim-reasoning-in-memory]] - Latent reasoning with memory blocks replacing autoregressive generation, single forward pass (arXiv: 2605.30343)
+  - Two-stage curriculum: grounding phase then refinement phase
+  - Fixed memory blocks unlock working-memory capacity
+  - Matches/exceeds latent reasoning methods without autoregressive thoughts
+  - **Activation**: latent reasoning, working memory, memory blocks, test-time compute
+
+### CGPO: Critic-Guided Diffusion Policy Optimization
+- [[cgpo-critic-guided-diffusion-policy]] - Training-free guidance in diffusion policy denoising, balances exploration-exploitation (arXiv: 2605.30056)
+  - Steers actions toward high-value regions via critic network
+  - Uses guided actions as regression objectives
+  - SOTA on MuJoCo locomotion, first real-world diffusion RL (Franka robot arm)
+  - **Activation**: diffusion policy, critic guidance, MuJoCo, robotics, exploration exploitation
+
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
 ### Programmable Dissipation via Partial Quantum Error Correction
