@@ -1,144 +1,95 @@
 ---
 name: quantum-rl-dynamic-portfolio
-category: quantum-finance
-description: Quantum Reinforcement Learning (QRL) methodology for dynamic portfolio optimization using Variational Quantum Circuits (VQC). Implements quantum analogues of DDPG and DQN for sequential portfolio decisions with fewer parameters than classical deep RL.
-tags:
-  - quantum-reinforcement-learning
-  - portfolio-optimization
-  - variational-quantum-circuits
-  - dynamic-trading
-  - qrl
-  - ddpg
-  - dqn
+description: "Quantum Reinforcement Learning (QRL) for dynamic portfolio optimization using Variational Quantum Circuits (VQC). Provides quantum analogues of Deep Deterministic Policy Gradient (DDPG) and Deep Q-Network (DQN) for sequential portfolio allocation. Achieves competitive performance vs classical deep RL with fewer trainable parameters. Use when: (1) implementing quantum RL for finance, (2) designing VQC-based trading agents, (3) comparing quantum vs classical RL for portfolio optimization, (4) building parameter-efficient quantum agents, (5) dynamic asset allocation with quantum circuits."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2601.18811"
+  published: "2026-01-20"
+  authors: "Vincent Gurgul, Ying Chen, Stefan Lessmann"
+  tags: [quantum-finance, reinforcement-learning, portfolio-optimization, VQC, QDDPG, QDQN]
 ---
 
 # Quantum RL for Dynamic Portfolio Optimization
 
-Quantum Reinforcement Learning (QRL) methodology for dynamic portfolio optimization using Variational Quantum Circuits (VQC). Based on arXiv:2601.18811.
+## Core Concept
 
-## Description
+Quantum Reinforcement Learning (QRL) approach to dynamic portfolio optimization using Variational Quantum Circuits (VQC) as function approximators. Implements quantum analogues of DDPG (QDDPG) and DQN (QDQN) where the policy/value networks are replaced by parameterized quantum circuits.
 
-This skill implements quantum analogues of Deep Deterministic Policy Gradient (DDPG) and Deep Q-Network (DQN) algorithms for dynamic portfolio optimization. The QRL agents use parameterized quantum circuits as function approximators, achieving competitive performance with classical deep RL baselines while using significantly fewer trainable parameters.
+## Key Methodology
+
+### QDDPG — Quantum Deep Deterministic Policy Gradient
+
+- **Actor network**: VQC outputs continuous portfolio weights
+- **Critic network**: VQC evaluates state-action value Q(s,a)
+- **State encoding**: Financial features encoded via angle/amplitude encoding into qubit states
+- **Action**: Portfolio weight allocation (continuous, normalized via softmax or constrained layer)
+- **Key advantage**: Fewer trainable parameters than classical neural nets of equivalent expressive power
+
+### QDQN — Quantum Deep Q-Network
+
+- **Discrete action space**: Discretized portfolio allocation decisions
+- **VQC as Q-function approximator**: Outputs Q-values for each discrete action
+- **Experience replay + target network**: Standard DQN stabilization techniques adapted for quantum circuits
+
+### VQC Architecture Pattern
+
+```
+State Encoding → Parameterized Quantum Circuit → Measurement → Classical Post-processing
+     ↓                        ↓                          ↓                    ↓
+  Angle/Amplitude        Rotation gates +            Observable              Portfolio
+  encoding of             entangling layers           expectation             weights
+  market features         (RZ, RY, CNOT, CZ)          values
+```
+
+## Implementation Considerations
+
+### Parameter Efficiency
+- QRL agents achieve competitive Sharpe ratios with **fewer trainable parameters** than classical DDPG/DQN
+- Quantum circuits exploit high-dimensional Hilbert space for compact representations
+- Critical for NISQ-era deployment where circuit depth is constrained
+
+### State Encoding Strategies
+- **Angle encoding**: Map features to rotation angles — shallow circuits, O(n) gates
+- **Amplitude encoding**: Logarithmic qubits O(log n) — deeper state preparation
+- **Basis encoding**: Binary representation — requires more qubits
+
+### Training Stability
+- Parameter shift rule for gradient computation
+- Natural gradient or Adam optimizer for VQC parameters
+- Target network updates (soft: τθ' ← τθ + (1-τ)θ') to stabilize Q-learning
+- Gradient clipping to handle quantum circuit gradient variance
+
+### NISQ Constraints
+- Circuit depth limited by coherence time
+- Measurement shot noise requires multiple shots per expectation value
+- Barren plateau risk — initialize parameters near identity or use layerwise training
+
+## Applications
+
+- Dynamic portfolio rebalancing under transaction costs
+- Multi-asset allocation with risk constraints
+- Quantum advantage research in sequential decision-making
+- Parameter-efficient trading agent design
+
+## Comparison Baselines
+
+When evaluating QRL for portfolio optimization, compare against:
+1. Classical DDPG / DQN with equivalent parameter counts
+2. Mean-variance optimization (Markowitz)
+3. Equal-weight and buy-and-hold baselines
+4. Risk parity portfolios
 
 ## Activation Keywords
 
-- quantum reinforcement learning portfolio
-- QRL dynamic portfolio
-- variational quantum circuit trading
-- quantum DDPG DQN
-- quantum policy gradient
-- quantum value function approximation
-
-## Core Methodology
-
-### 1. Quantum Policy Network Architecture
-
-```
-State → Classical Feature Encoding → Quantum Circuit → Measurement → Action
-```
-
-- **Input**: Portfolio state (asset prices, holdings, market indicators)
-- **Quantum Layer**: Parameterized quantum circuit (PQC) with entangling gates
-- **Output**: Action probabilities (buy/sell/hold) or continuous weights
-
-### 2. QRL-DDPG (Continuous Action Space)
-
-```python
-# Actor Network: VQC-based policy
-def quantum_actor(state, params):
-    # Encode state into quantum state
-    encoded = state_encoding(state)
-    # Apply parameterized quantum circuit
-    quantum_state = apply_pqc(encoded, params)
-    # Measure to get action
-    action = measure_expectation(quantum_state)
-    return action
-
-# Critic Network: Classical or hybrid
-def hybrid_critic(state, action, params):
-    # Combine state and action
-    combined = concatenate(state, action)
-    # Quantum-enhanced value estimation
-    value = quantum_value_estimation(combined, params)
-    return value
-```
-
-### 3. QRL-DQN (Discrete Action Space)
-
-```python
-# Q-Network with VQC
-def quantum_q_network(state, params):
-    # Encode market state
-    encoded = amplitude_encoding(state)
-    # Apply variational circuit
-    qc_state = variational_circuit(encoded, params)
-    # Measure Q-values for each action
-    q_values = measure_all_actions(qc_state)
-    return q_values
-```
-
-## Key Advantages
-
-1. **Parameter Efficiency**: VQC-based agents use 10-100x fewer parameters than classical deep networks
-2. **Quantum Advantage**: Potential for better exploration through quantum superposition
-3. **Hardware Compatibility**: Shallow circuits suitable for NISQ devices
-4. **Expressivity**: Quantum circuits can represent complex value functions with fewer parameters
-
-## Implementation Guidelines
-
-### State Encoding
-- **Amplitude Encoding**: Map portfolio state vector to quantum amplitudes
-- **Angle Encoding**: Use market features as rotation angles
-- **Basis Encoding**: Binary representation of trading signals
-
-### Circuit Design
-- **Depth**: Keep circuits shallow (2-4 layers) for NISQ compatibility
-- **Entanglement**: Use CZ or CNOT gates for feature interaction
-- **Parameterization**: Ry, Rz rotations with trainable angles
-
-### Training Protocol
-1. Initialize quantum circuit parameters randomly
-2. Collect experience using epsilon-greedy policy
-3. Update parameters using quantum gradient estimation
-4. Apply target network soft updates (DDPG) or Q-learning updates (DQN)
-
-## Portfolio Environment
-
-```python
-class PortfolioEnv:
-    def __init__(self, assets, initial_capital):
-        self.assets = assets
-        self.capital = initial_capital
-        self.holdings = {asset: 0 for asset in assets}
-    
-    def step(self, action):
-        # Execute trade
-        # Calculate reward (Sharpe ratio, returns, etc.)
-        # Update state
-        return next_state, reward, done, info
-```
-
-## Performance Benchmarks
-
-- **QRL-DDPG**: Achieves comparable Sharpe ratio to classical DDPG with 50x fewer parameters
-- **QRL-DQN**: Matches DQN performance on discrete trading actions with reduced circuit depth
-- **Training Stability**: Quantum gradient noise requires careful learning rate scheduling
-
-## Pitfalls
-
-1. **Gradient Estimation**: Quantum gradients require multiple circuit executions (parameter shift rule)
-2. **Barren Plateaus**: Deep quantum circuits suffer from vanishing gradients
-3. **State Preparation**: Amplitude encoding is exponentially expensive for large state spaces
-4. **Measurement Noise**: NISQ device noise affects policy evaluation
-
-## Related Patterns
-
-- **quantum-finance-portfolio**: QAOA-based portfolio optimization
-- **quantum-portfolio-optimizer**: Static portfolio selection via QAOA
-- **quantum-ml-patterns**: General quantum ML patterns
-
-## References
-
-- arXiv:2601.18811 - "Quantum Reinforcement Learning for Dynamic Portfolio Optimization"
-- Gurgul, Chen, Lessmann (2026) - VQC-based QRL for portfolio management
-- arXiv:2603.16904 - Hybrid classical-quantum framework for portfolio construction
+- quantum reinforcement learning
+- QRL portfolio
+- VQC trading agent
+- quantum DDPG
+- quantum DQN
+- QDDPG
+- QDQN
+- variational quantum circuit finance
+- quantum portfolio optimization
+- parameter-efficient quantum agent
+- dynamic asset allocation quantum
+- quantum RL finance

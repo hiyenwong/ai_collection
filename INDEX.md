@@ -2,6 +2,18 @@
 
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
 
+### Quantum Reinforcement Learning for Dynamic Portfolio Optimization
+- [[quantum-rl-dynamic-portfolio]] - 量子强化学习(VQC)实现动态组合优化，QDDPG/QDQN量子变体比经典深度RL参数更少但性能相当 (arXiv: 2601.18811)
+  - 核心要点 1: VQC替代经典神经网络作为策略/价值函数近似器，量子电路利用希尔伯特空间实现紧凑表征
+  - 核心要点 2: 量子DDPG(连续动作)和量子DQN(离散动作)两种架构，在真实金融数据上与经典基线竞争
+  - **Activation**: quantum reinforcement learning, QRL portfolio, VQC trading agent, QDDPG, QDQN, 量子强化学习, 动态组合优化
+
+### Optimizing Carbon Credit Portfolios with QAOA+ZNE on IBM Quantum Hardware
+- [[qaoa-zne-portfolio]] - QAOA结合零噪声外推(ZNE)在IBM量子硬件上优化88变量碳信用组合，超越经典贪心基线 (arXiv: 2602.09047)
+  - 核心要点 1: ZNE误差缓解对NISQ硬件至关重要，通过门折叠和Richardson外推将噪声外推至零
+  - 核心要点 2: 多目标优化(碳封存+生物多样性+社会影响)编码为QUBO，QAOA+ZNE在真实硬件上验证
+  - **Activation**: QAOA ZNE, zero noise extrapolation, error mitigation, carbon credit portfolio, ESG quantum, 误差缓解, 碳信用组合
+
 ### Exponentially Fast Solution State Preparation for the Heat Equation and its use for Option Pricing
 - [[quantum-option-pricing-heat-equation]] - 指数级加速热方程量子态制备，用于期权定价，路径依赖衍生品具有指数量子优势 (arXiv: 2605.28950)
   - 核心要点 1: 将Black-Scholes PDE转化为热方程，量子设备上直接制备解态
