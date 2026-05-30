@@ -1,3 +1,12 @@
+## 2026-05-31 - Neuroscience Research (Cron Job)
+
+### Brain Learning Principles Utilizing Non-Ideal Factors
+- [[brain-learning-non-ideal-factors]] - 脑学习利用非理想因素原则：噪声、异质性、结构不规则、分散可塑性、系统误差、混沌动力学作为进化设计原则而非缺陷，赋予鲁棒性、适应性和创造力 (arXiv: 2603.21542)
+  - 六大非理想因素：噪声(探索资源)、异质性(多样性机制)、结构不规则(功能特化)、分散可塑性(分布式优化)、系统误差(归纳偏置)、混沌动力学(生成机制)
+  - 反范式：缺陷→特征、完美→脆弱、集中→缓慢、稳定→缺乏创造力
+  - 神经形态硬件设计指导：拥抱器件变异性、噪声随机计算、不规则架构
+  - **Activation**: non-ideal factors, brain robustness, biological noise, neural heterogeneity, chaotic dynamics, decentralized plasticity, systematic errors, neuromorphic hardware, stochastic computing
+
 ## 2026-05-31 - Information Science + Quantum Mechanics (Cron Job)
 
 ### QML Adversarial Robustness Verification
