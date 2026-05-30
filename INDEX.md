@@ -1,3 +1,12 @@
+## 2026-05-31 - Information Science (Cron Job)
+
+### Quantum Subliminal Learning
+- [[quantum-subliminal-learning]] - Quantum science and machine learning convergence paradigm, exploring learning below classical detection thresholds (arXiv: 2605.29557)
+  - ML as physical science and quantum circuits as learning foundation
+  - Subliminal quantum information processing beyond classical detection
+  - Entanglement-enhanced information transfer for learning
+  - **Activation**: quantum subliminal learning, quantum information, quantum ML convergence, information science
+
 ## 2026-05-31 - Deep Learning Research (Cron Job)
 
 ### Draft-OPD: On-Policy Distillation for Speculative Draft Models
