@@ -1,19 +1,31 @@
 
-## 2026-05-30 - Neuroscience Research (Cron Job)
 
-### Continual Learning in Modern Hopfield Networks with an Application to Diffusion Models
-- [[hopfield-continual-learning-diffusion]] - Modern Hopfield Networks for continual learning in diffusion models via energy-based intrinsic forgetting and replay selection (arXiv: 2605.27975)
-  - High-energy outliers undergo larger intrinsic forgetting (sharp basin samples)
-  - Energy-based replay selection particularly effective for high-energy samples
-  - Validated in Stable Diffusion and DDPM: Hopfield energy tracks reconstruction-based forgetting
-  - **Activation**: continual learning, hopfield network, diffusion model, energy landscape, memory replay, intrinsic forgetting, stable diffusion fine-tuning
+## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
 
-### Attention as In-Context Empirical Bayes: A Two-Stage View via Particle Dynamics
-- [[attention-empirical-bayes-particle-dynamics]] - Two-stage interpretation of attention as in-context empirical Bayes inference via particle dynamics with posterior mean recovery guarantees (arXiv: 2605.29351)
-  - Stage 1: Particle dynamics (depth) refines empirical distribution via kernel posterior mean
-  - Stage 2: Skip-connection preserves noisy input as query for posterior inference
-  - Principled depth-noise relationship without explicit noise schedule
-  - **Activation**: attention mechanism, in-context learning, empirical bayes, particle dynamics, posterior inference, energy landscape, transformer interpretability
+### Exponentially Fast Solution State Preparation for the Heat Equation and its use for Option Pricing
+- [[quantum-option-pricing-heat-equation]] - 指数级加速热方程量子态制备，用于期权定价，路径依赖衍生品具有指数量子优势 (arXiv: 2605.28950)
+  - 核心要点 1: 将Black-Scholes PDE转化为热方程，量子设备上直接制备解态
+  - 核心要点 2: 路径依赖期权（亚式、障碍、回望）实现指数级量子比特优势
+  - **Activation**: quantum option pricing, heat equation, Black-Scholes, 期权定价, 衍生品定价
+
+### A Quantum Algorithm for Simulating Nonunitary Dynamics Governed by Nonautonomous Linear ODEs
+- [[quantum-nonautonomous-ode-simulation]] - 量子算法模拟非自治ODE非幺正动力学，通过SVD分解将传播子写为酉算子之和 (arXiv: 2605.29052)
+  - 核心要点 1: 解决量子硬件只能执行幺正变换的限制，实现非幺正动力学模拟
+  - 核心要点 2: 应用于经济建模中的非自治线性微分方程
+  - **Activation**: quantum ODE, nonunitary dynamics, economic modeling, 量子微分方程, 经济建模
+
+### HPC-vQPU: A Service-Export Architecture for Virtual QPUs on Batch-Scheduled HPC Systems
+- [[hpc-vqpu-architecture]] - 批调度HPC系统上虚拟QPU服务导出架构，保持拓扑/门/校准语义 (arXiv: 2605.28845)
+  - 核心要点 1: 桥接HPC批调度环境与量子软件交互式后端接口之间的鸿沟
+  - 核心要点 2: 在队列延迟和系统扩展中保持量子硬件语义完整性
+  - **Activation**: hpc quantum, virtual qpu, batch scheduling, 虚拟量子处理器, HPC架构
+
+### Additive binding energies in asphalt on a quantum processor via QSCI
+- [[quantum-pave-chemistry]] - QuantumPave混合量子经典工作流，用量子中心超算计算材料结合能 (arXiv: 2605.27640)
+  - 核心要点 1: 量子处理器采样主导电子构型，经典HPC执行对角化
+  - 核心要点 2: NISQ兼容的量子化学实用方案，无需容错量子计算
+  - **Activation**: quantum chemistry, QSCI, binding energy, quantum-centric supercomputing, 量子化学
+
 
 ## 2026-05-30 - Economics & Investment + Quantum (Cron Job)
 
