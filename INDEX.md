@@ -1,3 +1,18 @@
+## 2026-05-30 - Economics, Investment + Quantum (Cron Job) - Part 3
+
+### PortBench: A Correlation-Aware, Full-Pipeline Benchmark for LLM-Driven Portfolio Management
+- [[portbench-llm-portfolio-benchmark]] - LLM组合管理基准测试，双层评估（静态QA+动态分配流水线），CEPS衡量误差传播，90%的LLM无法跑赢等权分配 (arXiv: 2605.27887)
+  - 核心要点 1: 现有基准忽略跨资产相关性且未评估完整PM决策流水线
+  - 核心要点 2: CEPS量化流水线各阶段推理误差的复合效应，揭示程序合规≠性能
+  - 核心要点 3: 压力制度测试是关键——正常条件下表现良好的模型在危机中可能崩溃
+  - **Activation**: LLM portfolio benchmark, PortBench, CEPS, correlation-aware PM, stress regime testing, 大模型投资组合, 组合管理基准
+
+### Regime-Based Portfolio Allocation Using Hidden Markov Models and Reinforcement Learning
+- [[hmm-rl-regime-portfolio-allocation]] - HMM检测3种市场制度+RL优化配置，超越SPY基准且回撤更低 (arXiv: 2605.27848)
+  - 核心要点 1: BIC选择3种制度（低波/过渡/高波），不同制度下主导资产不同
+  - 核心要点 2: HMM提供可解释的制度标签，RL在制度内优化配置，两者结合透明且高性能
+  - **Activation**: HMM portfolio, regime detection, RL allocation, hidden markov model, tactical asset allocation, 制度检测, 马尔可夫模型
+
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
 
 ### A Tutorial on Portfolio Selection with Quantum Computing
