@@ -1,4 +1,43 @@
 ## 2026-05-31 - Neuroscience Research (Cron Job) - Brain Oscillation Framework
+## 2026-05-31 - Information Science + Quantum (Cron Job)
+
+### Elfs, transducers and quantum walks
+- [[elfs-quantum-walk-transducers]] - Electric flow sampling methodology for quantum walk-based graph algorithms (arXiv: 2605.30013)
+  - Zero-error transducer for implementing electric flow sampling (elfs)
+  - Improved quantum walk algorithms for graph search and optimization
+  - **Activation**: elfs quantum walk, electric flow sampling, quantum graph search, 量子游走电采样
+
+### Programmable Dissipation via Partial Quantum Error Correction
+- [[programmable-dissipation-qec]] - Error-correction cycle as programmable primitive for dissipative dynamics (arXiv: 2605.30217)
+  - Logical noise turned into calibrated resource via partial QEC
+  - Decoder/recovery rates tuned for desired dissipative dynamics
+  - **Activation**: programmable dissipation, partial QEC, logical noise engineering
+
+### Verifying Adversarial Robustness in Quantum Machine Learning
+- [[qml-adversarial-robustness-verification]] - Formal framework for verifying adversarial robustness in QML (arXiv: 2605.29877)
+  - Fidelity-based robustness lower bound computable from circuit structure
+  - Comprehensive formal framework validated on NISQ hardware
+  - **Activation**: QML adversarial robustness, quantum ML security, formal verification
+
+### Alternative Adiabatic Quantum Dynamics
+- [[alternative-adiabatic-quantum-dynamics]] - Gate-based adiabatic computing without time-dependent Hamiltonian simulation overhead (arXiv: 2605.30110)
+  - General framework for deriving adiabatic-alternative algorithms
+  - Gate-native implementations using standard quantum gate sets
+  - **Activation**: alternative adiabatic quantum, adiabatic gate-based, quantum adiabatic dynamics
+
+### Semidefinite Certificates for Pauli Hamiltonians
+- [[semidefinite-certificates-pauli-hamiltonians]] - Explicit finite-level convergence rates for SDP hierarchies in quantum many-body systems (arXiv: 2605.29959)
+  - Quantitative guarantees for accessible low hierarchy levels
+  - k-local Hamiltonian problem certificates with concrete error bounds
+  - **Activation**: semidefinite certificates Pauli, SDP quantum Hamiltonian, ground-state energy bounds
+
+### Tunneling Phase Diagram ML Framework
+- [[tunneling-phase-diagram-ml]] - ML framework for decoupling quantum tunneling strength from kinetic isotope effects (arXiv: 2605.30165)
+  - Decouples true tunneling from zero-point energy and classical effects
+  - Reveals anomalous high KIE-low κ regimes spanning 30 orders of magnitude
+  - **Activation**: tunneling phase diagram, kinetic isotope effect ML, quantum tunneling decoupling
+
+
 
 ### Brain Oscillation Synchronization Framework
 - [[brain-oscillation-synchronization-framework]] - 脑网络振荡同步统一计算框架：整合Kuramoto相位动力学+自适应延迟塑性+信息通量优化的综合方法论 (arXiv: 2605.23520, 2605.14680, 2105.08288)
