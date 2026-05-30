@@ -1,3 +1,12 @@
+## 2026-05-30 - Economics, Investment + Quantum (Cron Job) - Actuarial Runtime
+
+### Foundations of a Time-Consistent Counterfactual Actuarial Runtime for Autonomous AI Agents
+- [[actuarial-runtime-ai-agents]] - 自主AI代理的精算运行时框架，每个副作用动作携带时间一致的逆事实风险通行费，预动作交易层替代事后责任保险 (arXiv: 2605.26508)
+  - 核心要点 1: 四个结构性结果——逆事实通行费恒等式、不可分割性质、不可逆权威溢价、保守运行时门限定理
+  - 核心要点 2: 承保边界设计决定系统的防博弈能力，边界越大决策越少但博弈风险越高
+  - 核心要点 3: 将高概率风险包络转化为执行动作预算保证，提供数学担保
+  - **Activation**: actuarial runtime, AI agent safety, counterfactual risk, time-consistent risk, per-action insurance, risk toll, underwriting boundary, 精算运行时, 自主AI安全
+
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job) - Part 4
 
 ### End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing
