@@ -81,6 +81,27 @@
   - 核心要点 3: 后量子密码部署的侧信道防护需求
   - **Activation**: simple power analysis, post-quantum cryptography, mceliece, bike kem, side channel, physical security, code based cryptography
 
+### Quantum-Safe 6G PQC Evaluation
+- [[quantum-safe-6g-pqc-evaluation]] - Practical evaluation methodology for deploying NIST-standardized Post-Quantum Cryptography in 6G/IoT networks (arXiv: 2605.06881)
+  - Benchmarks ML-KEM/Kyber, ML-DSA/Dilithium, and Falcon on heterogeneous platforms
+  - Ciphertext/signature size expansion critically impacts handshake reliability at edge
+  - Three deployment patterns: hybrid handshake, size-optimized, asynchronous PQC
+  - **Activation**: quantum-safe 6G, PQC deployment, NIST post-quantum, ML-KEM, ML-DSA, Falcon, quantum-secure networks
+
+### Quantum-Secure PUF via Silicon Photonics
+- [[quantum-secure-puf-silicon-photonics]] - Quantum readout protocol for Physical Unclonable Functions using SiN MZI meshes with equal error rates as low as 10^-14 (arXiv: 2605.14959)
+  - Maximally mixed quantum states conceal unitary transformation from eavesdropping
+  - Single-photon detection + Monte Carlo security analysis
+  - CMOS-compatible silicon nitride fabrication for scalable deployment
+  - **Activation**: quantum PUF, physical unclonable function, silicon photonics security, quantum authentication, hardware security
+
+### DPF-based Error-Detecting IT-PIR over Rings
+- [[dpf-error-detecting-pir-rings]] - Efficient Distributed Point Function based error-detecting Information-Theoretic PIR over ring structures (arXiv: 2604.00411)
+  - Information-theoretic privacy with cryptographic error detection
+  - Ring-based construction for efficiency over field-based approaches
+  - Tolerates adversarial servers with algebraic verification
+  - **Activation**: private information retrieval, DPF, IT-PIR, ring cryptography, secure database query
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - SNN Architecture Innovation
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
