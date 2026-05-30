@@ -1,3 +1,19 @@
+## 2026-05-30 - Neuroscience Research (Cron Job) - Part 5
+
+### MIRAGE: Adaptive Multimodal Gating for Whole-Brain fMRI Encoding
+- [[mirage-multimodal-fmri-encoding]] - State-of-the-art framework predicting whole-brain fMRI responses via native multimodal backbone and adaptive layer-wise gating (arXiv: 2605.29850)
+  - Natively multimodal features consistently outperform post-hoc unimodal aggregation
+  - Interpretable modality attention traces distinct anatomical patterns across cortex
+  - Transformer brain encoder with subject-specific linear heads
+  - **Activation**: fMRI encoding, multimodal brain prediction, MIRAGE, brain encoding, naturalistic stimuli, adaptive gating
+
+### Treatment-Conditioned Diffusion for Forecasting Neurodegenerative Disease Progression
+- [[treatment-conditioned-diffusion-neurodegenerative-progression]] - Novel diffusion framework predicting high-fidelity future brain states conditioned on DaTscan and levodopa treatment (arXiv: 2605.29932)
+  - Transformer encoder for non-linear pharmacological dynamics
+  - Multi-weight ROI mask focusing on biologically critical areas
+  - 14.0% lower MSE, 7.2% lower MAE, 4.9% higher SSIM vs baseline
+  - **Activation**: neurodegenerative, disease progression, Parkinson, diffusion, longitudinal neuroimaging, DaTscan, treatment-conditioned
+
 ## 2026-05-30 - Neuroscience Research (Cron Job)
 
 ### Large language models reorganize representational geometry during in-context learning
