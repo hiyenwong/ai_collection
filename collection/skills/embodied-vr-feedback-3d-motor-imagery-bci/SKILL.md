@@ -1,229 +1,282 @@
 ---
 name: embodied-vr-feedback-3d-motor-imagery-bci
-description: >
-  Embodied VR feedback methodology for continuous 3D motor imagery BCI decoding.
-  Systematic investigation of embodied virtual reality feedback during real-time 3D
-  virtual limb control driven by motor imagery. Uses CNN-LSTM decoder achieving
-  r=0.762 under VR feedback, outperforming screen feedback by 8.9-13.0%.
-  Demonstrates embodied spatial feedback as key design principle for next-generation
-  continuous BCIs targeting intuitive motor control and neurorehabilitation.
-tags: [neuroscience, bci, motor-imagery, vr-feedback, neural-representation, 
-       eeg-decoding, cnn-lstm, functional-connectivity, neurorehabilitation]
-arxiv_id: 2605.29677
-date_added: 2026-05-30
-source: arxiv
+description: "Embodied VR feedback methodology for continuous 3D motor imagery BCI. First systematic study of VR vs screen feedback, CNN-LSTM decoder achieving r=0.762 correlations. Activation: VR feedback, motor imagery, BCI, embodied feedback, 3D decoding, neurorehabilitation."
 ---
 
-# Embodied Virtual Reality Feedback for 3D Motor Imagery BCI
+# Embodied VR Feedback for 3D Motor Imagery BCI
+
+Methodology for embodied virtual reality feedback in brain-computer interfaces for continuous three-dimensional motor imagery decoding.
 
 ## Overview
 
-**arXiv**: 2605.29677  
-**Title**: Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding  
-**Categories**: q-bio.NC, cs.NE  
-**Key Innovation**: First systematic investigation of embodied VR feedback for real-time 3D motor imagery decoding
+**Paper**: Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+**arXiv ID**: 2605.29677
+**Authors**: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle
+**Date**: 2026-05-28
+**Categories**: cs.HC, eess.SP, q-bio.NC
+**DOI**: https://doi.org/10.48550/arXiv.2605.29677
 
-## Activation
+## Key Innovation
 
-Use when:
-- Designing continuous BCI systems for motor imagery
-- Implementing VR feedback for neurorehabilitation
-- Studying neural representation changes during motor imagery training
-- Developing 3D movement trajectory decoders from imagined movement
-- Analyzing sensorimotor-parietal connectivity in BCI contexts
+**First systematic investigation** of embodied virtual reality feedback during real-time 3D virtual limb control driven by motor imagery across ten longitudinal sessions in ten participants.
 
-Keywords: `embodied VR`, `motor imagery`, `BCI`, `3D decoding`, `CNN-LSTM`, `neural representation`, `functional connectivity`, `neurorehabilitation`
+## Core Findings
 
-## Core Methodology
+### Performance Metrics
+
+| Strategy | VR Feedback | Screen Feedback | Improvement |
+|----------|-------------|-----------------|-------------|
+| Within-session correlation | r = 0.762 | r = 0.672 | 13.0% |
+| Sequential Adaptive Training | SAT | SAT | 8.9-13.0% |
+| Fixed Decoder Generalisation | FDG | FDG | 8.9-13.0% |
+
+**Statistical significance**: All improvements p <= 0.002, effect size d = 1.42-2.05
+
+### Neural Representations
+
+**VR feedback elicits inherently more decodable and generalisable neural representations**:
+
+1. **Sensorimotor-parietal desynchronisation**: Stronger under VR feedback
+2. **Motor-frontal functional connectivity**: Enhanced connectivity patterns
+3. **Anterior insula engagement**: Pervasive across all frequency bands
+4. **Superior parietal lobule coupling**: Increased coupling paralleling real movement execution
 
 ### Experimental Design
 
-1. **Participants**: 10 participants, 10 longitudinal sessions each
-2. **Feedback Modalities**:
-   - Embodied VR feedback (virtual limb control)
-   - Screen feedback (traditional 2D display)
-3. **Evaluation Strategies**:
-   - FDG (Fixed Decoder Generalisation): Actual online performance
-   - SAT (Sequential Adaptive Training): Periodic retraining
-   - WSR (Within-Session Reconstruction): Upper-bound estimation
+**Three evaluation strategies**:
+- **FDG (Fixed Decoder Generalisation)**: Actual online performance without retraining
+- **SAT (Sequential Adaptive Training)**: Periodic retraining across sessions
+- **WSR (Within-Session Reconstruction)**: Upper-bound estimation within sessions
 
-### Decoder Architecture
+## Methodology Components
 
-```
-CNN-LSTM Decoder
-├── CNN layers: Feature extraction from EEG signals
-├── LSTM layers: Temporal sequence modeling
-└── Output: 3D movement trajectory prediction
-```
-
-### Key Performance Metrics
-
-| Strategy | VR Feedback (r) | Screen Feedback (r) | Improvement |
-|----------|-----------------|---------------------|-------------|
-| WSR | 0.762 | 0.672 | 13.0% |
-| FDG | Significant | Baseline | 8.9-13.0% |
-| SAT | Significant | Baseline | All p <= 0.002 |
-
-Effect sizes: d = 1.42-2.05 (large effects)
-
-## Neurophysiological Findings
-
-### Enhanced Neural Patterns Under VR Feedback
-
-1. **Sensorimotor-Parietal Desynchronisation**: Stronger under VR
-2. **Motor-Frontal Functional Connectivity**: Enhanced coupling
-3. **Anterior Insula Engagement**: Pervasive across all frequency bands
-4. **Superior Parietal Lobule Coupling**: Increased, paralleling real movement execution patterns
-
-### Neural Representation Changes
-
-- VR feedback elicits inherently more decodable neural representations
-- Generalisable without retraining (fixed decoder advantage)
-- Spatial feedback reshapes sensorimotor cortical activity
-
-## Implementation Steps
-
-### 1. VR Feedback System Setup
+### 1. CNN-LSTM Decoder Architecture
 
 ```python
-# Core requirements
-requirements = {
-    'vr_system': 'Embodied virtual environment',
-    'eeg_recording': 'Real-time EEG acquisition',
-    'feedback_type': 'Virtual limb visualization',
-    'movement_axes': '3D (x, y, z)'
-}
-```
-
-### 2. CNN-LSTM Decoder Architecture
-
-```python
-import torch.nn as nn
-
-class MotorImageryDecoder(nn.Module):
-    def __init__(self, eeg_channels=64, seq_length=1000):
-        super().__init__()
-        # CNN feature extractor
-        self.cnn = nn.Sequential(
-            nn.Conv2d(1, 32, kernel_size=(eeg_channels, 5)),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=(1, 2)),
-            nn.Conv2d(32, 64, kernel_size=(1, 5)),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=(1, 2))
-        )
-        # LSTM temporal model
-        self.lstm = nn.LSTM(input_size=64, hidden_size=128, 
-                           num_layers=2, batch_first=True)
-        # 3D trajectory output
-        self.fc = nn.Linear(128, 3)  # x, y, z
+# Core architecture pattern
+class CNNLSTMDecoder:
+    """
+    Spatiotemporal decoder for 3D motor imagery trajectories
     
-    def forward(self, x):
-        features = self.cnn(x)
-        features = features.view(features.size(0), -1, 64)
-        lstm_out, _ = self.lstm(features)
-        trajectory = self.fc(lstm_out[:, -1, :])
+    Input: EEG/fMRI signals from motor imagery
+    Output: 3D trajectory predictions (x, y, z coordinates)
+    
+    Architecture:
+    - CNN: Spatial feature extraction from sensor arrays
+    - LSTM: Temporal sequence modeling
+    - Output: 3D position predictions
+    """
+    def __init__(self):
+        self.spatial_encoder = CNNBackbone()  # Sensor → spatial features
+        self.temporal_decoder = LSTMStack()   # Features → trajectory
+        self.coordinate_head = PositionHead() # Features → 3D coords
+    
+    def forward(self, neural_signals):
+        spatial_features = self.spatial_encoder(neural_signals)
+        temporal_features = self.temporal_decoder(spatial_features)
+        trajectory = self.coordinate_head(temporal_features)
         return trajectory
 ```
 
-### 3. Training Protocol
+### 2. VR Feedback System Design
+
+**Embodied spatial feedback principles**:
+- Real-time 3D virtual limb visualization
+- Immersive VR headset (HMD) vs traditional screen
+- Continuous trajectory feedback aligned with imagined movement
+- Longitudinal training protocol (10 sessions × 10 participants)
+
+### 3. Performance Evaluation Protocol
 
 ```python
-# Longitudinal training schedule
-sessions = 10  # Per participant
-strategies = ['FDG', 'SAT', 'WSR']
-
-# FDG: Fixed decoder, no retraining
-# SAT: Sequential adaptive training with periodic retraining
-# WSR: Within-session reconstruction (upper bound)
+# Three-strategy evaluation pattern
+def evaluate_bci_performance(decoder, sessions, feedback_type):
+    """
+    Comprehensive evaluation across three strategies
+    
+    Args:
+        decoder: Trained CNN-LSTM model
+        sessions: Longitudinal session data (10 sessions)
+        feedback_type: 'VR' or 'Screen'
+    
+    Returns:
+        FDG: Fixed decoder performance (no retraining)
+        SAT: Sequential adaptive training (periodic updates)
+        WSR: Within-session reconstruction (upper bound)
+    """
+    results = {
+        'FDG': fixed_decoder_generalization(decoder, sessions),
+        'SAT': sequential_adaptive_training(decoder, sessions),
+        'WSR': within_session_reconstruction(decoder, sessions)
+    }
+    
+    # Statistical analysis
+    for strategy in results:
+        vr_perf = results[strategy]['VR']
+        screen_perf = results[strategy]['Screen']
+        improvement = (vr_perf - screen_perf) / screen_perf * 100
+        p_value = statistical_test(vr_perf, screen_perf)
+        effect_size = compute_cohens_d(vr_perf, screen_perf)
+        
+    return results
 ```
 
-### 4. Functional Connectivity Analysis
+### 4. Neurophysiological Analysis
+
+**Key brain regions**:
+- Sensorimotor cortex: Movement execution patterns
+- Parietal cortex: Spatial processing and integration
+- Anterior insula: Embodiment and agency
+- Frontal cortex: Motor planning and connectivity
+
+**Frequency band analysis**:
+- Alpha (8-13 Hz): Desynchronisation patterns
+- Beta (13-30 Hz): Motor cortex engagement
+- Gamma (30+ Hz): Higher-order cognitive processing
+
+## Implementation Guidelines
+
+### Step 1: VR System Setup
+
+```bash
+# Hardware requirements
+- VR headset (e.g., Meta Quest, HTC Vive)
+- Real-time EEG/fMRI acquisition system
+- Virtual limb rendering engine
+- Motion capture integration (optional)
+```
+
+### Step 2: Decoder Training
 
 ```python
-import numpy as np
-from scipy.signal import coherence
-
-def compute_motor_frontal_connectivity(eeg_data):
-    # Motor channels: C3, C4, Cz
-    # Frontal channels: F3, F4, Fz
-    motor_channels = [7, 8, 9]  # Indices
-    frontal_channels = [0, 1, 2]
+# Training protocol
+def train_cnn_lstm_decoder(neural_data, trajectory_labels, epochs=100):
+    """
+    Train spatiotemporal decoder
     
-    coherence_values = []
-    for motor_idx in motor_channels:
-        for frontal_idx in frontal_channels:
-            f, coh = coherence(eeg_data[:, motor_idx], 
-                              eeg_data[:, frontal_idx], fs=256)
-            coherence_values.append(np.mean(coh[f < 50]))
+    Data preparation:
+    - Segment neural signals by movement epoch
+    - Align with 3D trajectory labels
+    - Apply temporal smoothing
     
-    return np.array(coherence_values)
+    Training:
+    - Batch size: 32
+    - Learning rate: 1e-4
+    - Loss: MSE for trajectory prediction
+    """
+    model = CNNLSTMDecoder()
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+    
+    for epoch in range(epochs):
+        for batch in neural_data:
+            trajectory_pred = model(batch.signals)
+            loss = mse_loss(trajectory_pred, batch.labels)
+            
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+    
+    return model
 ```
 
-## Key Findings
+### Step 3: Longitudinal Study Design
 
-### 1. VR Feedback Advantage
+**Session structure**:
+- **Session 1-2**: Calibration and familiarization
+- **Session 3-7**: Main training blocks (VR + Screen comparison)
+- **Session 8-10**: Generalization testing (FDG protocol)
 
-- **Performance**: VR consistently outperforms screen feedback (8.9-13.0% improvement)
-- **Effect Size**: Large effects (d = 1.42-2.05), statistically significant (p <= 0.002)
-- **Generalisation**: Advantage persists even with fixed decoders (no retraining needed)
+**Per-session activities**:
+- 20 minutes of motor imagery practice
+- 10 minutes of VR feedback trials
+- 10 minutes of screen feedback trials
+- Decoder evaluation (FDG, SAT, WSR)
 
-### 2. Neural Representation Plasticity
+### Step 4: Analysis and Reporting
 
-- Embodied spatial feedback reshapes sensorimotor cortical activity
-- Enhanced functional connectivity patterns
-- Parallels real movement execution patterns
-
-### 3. Design Principle
-
-> Embodied spatial feedback is a key design principle for next-generation continuous BCIs
+```python
+# Statistical analysis pipeline
+def analyze_feedback_effects(results):
+    """
+    Linear mixed-effects modelling
+    
+    Fixed effects:
+    - Feedback modality (VR vs Screen)
+    - Movement axis (x, y, z)
+    
+    Random effects:
+    - Participant ID
+    - Session number
+    
+    Returns:
+    - Main effects significance
+    - Effect sizes (Cohen's d)
+    - Interaction analysis
+    """
+    import statsmodels.formula.api as smf
+    
+    model = smf.mixedlm(
+        "performance ~ feedback + axis",
+        results,
+        groups=results["participant_id"]
+    )
+    
+    fitted = model.fit()
+    
+    # Extract significant effects
+    vr_advantage = fitted.params['feedback[VR]']
+    p_value = fitted.pvalues['feedback[VR]']
+    
+    return {
+        'vr_advantage': vr_advantage,
+        'significance': p_value,
+        'effect_size': compute_cohens_d(results)
+    }
+```
 
 ## Applications
 
 ### Neurorehabilitation
 
-- Motor recovery after stroke
+**Target populations**:
+- Stroke patients with motor impairment
 - Spinal cord injury rehabilitation
-- Neurodegenerative disease intervention
+- Parkinson's disease motor therapy
+- General motor skill recovery
 
-### BCI Applications
+**Clinical protocol**:
+- 10-20 sessions over 2-4 weeks
+- VR feedback for enhanced engagement
+- Adaptive decoder training
+- Progress tracking via FDG/WSR metrics
 
-- Intuitive prosthetic control
-- Robotic arm manipulation
-- Virtual environment navigation
+### BCI System Design
+
+**Design principles**:
+1. **Embodied spatial feedback**: VR visualization of imagined movement
+2. **Longitudinal adaptation**: Session-by-session decoder updates
+3. **Generalization testing**: Fixed decoder performance validation
+4. **Neurophysiological monitoring**: Real-time connectivity analysis
 
 ### Research Applications
 
-- Neural representation studies
-- Motor imagery training optimization
-- Feedback modality comparison
+**Experimental studies**:
+- Motor imagery training effectiveness
+- Feedback modality comparisons
+- Neural plasticity quantification
+- Embodiment mechanisms investigation
 
-## Limitations & Considerations
+## Key Takeaways
 
-1. **Sample Size**: n=10 participants (needs larger validation)
-2. **Session Count**: 10 sessions per participant (limited longitudinal data)
-3. **Movement Complexity**: 3D continuous movement (higher cognitive load)
-4. **Hardware Requirements**: VR system + EEG setup (cost barrier)
-5. **Individual Variability**: Performance varies across participants
-
-## Future Directions
-
-1. **Multi-session longitudinal tracking** (>10 sessions)
-2. **Cross-subject generalisation** studies
-3. **Hybrid feedback modalities** (VR + tactile + auditory)
-4. **Clinical trial validation** for neurorehabilitation
-5. **Real-time adaptive decoder** integration
-
-## Related Skills
-
-- `eeg-decoding` - General EEG decoding methodologies
-- `motor-imagery-bci` - Motor imagery BCI frameworks
-- `neural-representation-analysis` - Neural representation analysis tools
-- `functional-connectivity-bci` - Connectivity-based BCI analysis
+1. **VR feedback significantly outperforms screen feedback** (8.9-13.0% improvement across all strategies)
+2. **Fixed decoder generalization** demonstrates inherent neural representation quality differences
+3. **Neurophysiological signatures** (insula, parietal, motor-frontal) indicate embodiment mechanisms
+4. **CNN-LSTM architecture** achieves r=0.762 within-session correlation under VR
+5. **Embodied spatial feedback** is a key design principle for next-generation continuous BCIs
 
 ## References
 
-- arXiv paper: https://arxiv.org/abs/2605.29677
-- CNN-LSTM decoder implementation
-- VR feedback system design
-- Functional connectivity analysis methods
+- Paper: arXiv:2605.29677
+- Data: Zenodo DOI: https://doi.org/10.5281/zenodo.16047021
+- Category: cs.HC (Human-Computer Interaction)
+- Keywords: VR feedback, motor imagery, BCI, embodied feedback, 3D decoding, neurorehabilitation

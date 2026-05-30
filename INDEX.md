@@ -6,6 +6,12 @@
   - 核心要点 2: 创建NSD-VQA基准数据集，每张图像~20个问答对，20个控制类别，可解释评估
   - **Activation**: Brain-IT-VQA, fMRI VQA, brain signals to answers, NSD-VQA, brain decoding language
 
+### Embodied Virtual Reality Feedback Reshapes Neural Representations for 3D Motor Imagery BCI
+- [[embodied-vr-feedback-3d-motor-imagery-bci]] - VR反馈显著优于屏幕反馈(r=0.762 vs 0.672)，首个系统研究具身VR反馈重塑神经表征用于连续3D运动想象BCI (arXiv: 2605.29677v1)
+  - 核心要点 1: VR反馈比屏幕反馈提升8.9-13.0%解码性能，效应量d=1.42-2.05，固定解码器无需重训练即可保持优势
+  - 核心要点 2: 神经生理学发现VR增强感觉运动-顶叶去同步化、运动-额叶功能连接、前岛叶全域频段激活、顶叶耦合增强
+  - **Activation**: VR feedback BCI, motor imagery, embodied feedback, 3D decoding, CNN-LSTM decoder, neurorehabilitation
+
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
 - [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度与大脑视觉层级不匹配，使用fMRI+MEG证明时空组织偏离生物学机制 (arXiv: 2605.28693v1)
   - 核心要点 1: 梯度能预测脑信号，但其计算顺序和空间分布与大脑处理层级不符
