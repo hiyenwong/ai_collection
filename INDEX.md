@@ -15,11 +15,20 @@
   - **Activation**: quantum cryptography chain rules, EAT entropy accumulation, device-independent security, quantum conditional entropy
 
 ### Quantum Subliminal Learning
-- [[quantum-subliminal-learning]] - Quantum science and machine learning convergence paradigm, exploring learning below classical detection thresholds (arXiv: 2605.29557)
-  - ML as physical science and quantum circuits as learning foundation
-  - Subliminal quantum information processing beyond classical detection
-  - Entanglement-enhanced information transfer for learning
-  - **Activation**: quantum subliminal learning, quantum information, quantum ML convergence, information science
+- [[quantum-subliminal-learning]] - Subliminal learning in quantum neural networks: hidden behavioral trait inheritance through public interfaces, architecture-dependent vulnerabilities (arXiv: 2605.29557)
+  - Auxiliary channel: efficient subliminal learning for both classical NNs and QNNs
+  - Task channel: architecture-dependent — classical NNs transmit little, QNNs retain most hidden-task signal
+  - Unified geometric picture: transmission controlled by teacher drift magnitude × hidden-task visibility fraction
+  - Security concern for quantum model supply chains, watermarking applications
+  - **Activation**: quantum subliminal learning, model supply chain security, quantum distillation, hidden task inference, QNN security, teacher drift
+
+### Programmable Dissipation via Partial QEC
+- [[programmable-dissipation-qec]] - Repurpose QEC cycles as programmable primitives to engineer dissipators for open quantum system simulation (arXiv: 2605.30217)
+  - Error-correction cycle induces logical CPTP map; decoder/recovery randomization generates controllable logical channels
+  - Direct compilation of target dissipators without ancilla qubits for bath encoding
+  - Accuracy criterion: code distance chosen so uncontrolled errors ≪ intended dissipation per step
+  - Resource-efficient route to quantum simulation of open quantum systems
+  - **Activation**: programmable dissipation, partial QEC, engineered dissipation, dissipator compilation, open quantum simulation, Kraus channel mixing
 
 ## 2026-05-31 - Deep Learning Research (Cron Job)
 

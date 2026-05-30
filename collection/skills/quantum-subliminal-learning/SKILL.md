@@ -1,104 +1,117 @@
 ---
 name: quantum-subliminal-learning
-description: "Quantum Subliminal Learning methodology - exploring the intersection of quantum information science and machine learning, where quantum phenomena enable new learning paradigms"
+description: "Methodology for detecting and understanding subliminal learning in quantum neural networks — hidden behavioral trait inheritance through innocuous public interfaces."
 ---
 
 # Quantum Subliminal Learning
 
-## Description
-Quantum Subliminal Learning methodology from arXiv:2605.29557 (May 2026). The paper explores the intersection of quantum information science and machine learning, where quantum computing capabilities enable new forms of learning that operate below classical detection thresholds. Connects the 2024-2025 Nobel and Turing awards recognition of AI and quantum science as converging fields.
+Methodology from arXiv:2605.29557 (May 2026). Extends subliminal learning — hidden behavioral traits inherited through public interfaces — to quantum models, revealing architecture-dependent vulnerabilities in quantum model supply chains.
 
-## Activation Keywords
-- quantum subliminal learning
-- 量子隐形学习
-- quantum information machine learning
-- quantum ML convergence
-- quantum science AI intersection
+## Description
+
+Machine learning models can inherit hidden behavioral traits through innocuous public interfaces. Classical NNs and QNNs both exhibit efficient auxiliary-channel subliminal learning (random inputs), but the **task channel** shows strong architecture dependence: classical NNs transmit little hidden-task information, while **QNNs retain most of the hidden-task signal**. A unified geometric picture explains both regimes.
+
+**Activation**: quantum subliminal learning, model supply chain security, quantum distillation, hidden task inference, QNN security, teacher drift, geometric analysis of distillation, quantum model watermarking
 
 ## Core Concepts
 
-### Quantum Learning Convergence
-The paper identifies that quantum science and machine learning are converging as unified physical sciences:
-1. **Machine learning as physical science** - ML principles rooted in physical phenomena
-2. **AI solving scientific problems** - AI addressing 50-year-old scientific challenges
-3. **Superconducting quantum circuits** - Hardware foundation enabling quantum-classical learning
-4. **Subliminal information processing** - Quantum states enabling learning beyond classical detection
+### 1. Two Distillation Pathways
 
-### Information Science Integration
-Connects quantum information theory with data science:
-- Quantum information as fundamental unit of learning
-- Entanglement-enhanced information transfer
-- Quantum advantage in information processing tasks
+**Auxiliary Channel** (random inputs):
+- Teacher provides outputs on random/unlabeled inputs
+- Student learns to match teacher on both public task AND hidden task
+- Works efficiently for both classical NNs and QNNs
+
+**Task Channel** (restricted public interface):
+- Teacher only provides public supervised outputs
+- Hidden behavior resides on a disjoint task
+- **Architecture dependent**: Classical NNs → little hidden info transmitted; QNNs → most hidden signal retained
+
+### 2. Unified Geometric Picture
+
+Transmission is controlled by two factors:
+
+1. **Teacher drift magnitude**: $\|\Delta\theta\|$ — how far the teacher moves during distillation
+2. **Hidden-task visibility fraction**: What fraction of hidden-task-relevant drift remains observable through the public interface
+
+$$\text{Transmission} \propto \|\Delta\theta\| \cdot f_{\text{visible}}$$
+
+### 3. Architecture Dependence Mechanism
+
+Classical NNs have structured weight spaces where public-task optimization naturally suppresses hidden-task correlations. QNNs, with their high-dimensional unitary parameterization and measurement collapse, preserve hidden-task signal even when only public outputs are visible.
+
+## Implementation Steps
+
+### Step 1: Identify Distillation Scenario
+
+Determine which pathway applies:
+- **Auxiliary**: Teacher shares outputs on arbitrary inputs
+- **Task-restricted**: Teacher only shares labeled outputs for public task
+
+### Step 2: Analyze Teacher Drift
+
+Compute the parameter drift during training:
+- Track teacher parameters $\theta(t)$ throughout distillation
+- Compute drift direction and magnitude
+- Identify components aligned with hidden-task gradients
+
+### Step 3: Measure Hidden-Task Visibility
+
+For task-restricted distillation:
+- Compute Jacobian of public outputs w.r.t. parameters
+- Project hidden-task-relevant drift onto observable subspace
+- Calculate visibility fraction $f_{\text{visible}}$
+
+### Step 4: Assess Vulnerability
+
+- High visibility + large drift → significant subliminal leakage
+- Low visibility → classical-like protection
+- QNNs typically have higher $f_{\text{visible}}$ than classical NNs
+
+### Step 5: Mitigation Strategies
+
+- **Gradient clipping** on drift components aligned with hidden tasks
+- **Architecture modification** to reduce visibility fraction
+- **Differential privacy** noise injection during distillation
+- **Output regularization** to constrain public interface
 
 ## Usage Patterns
 
-### Pattern 1: Quantum Information Analysis
-When analyzing quantum information systems with machine learning components:
-1. Identify quantum information properties (entanglement, superposition)
-2. Map to classical ML equivalents
-3. Design hybrid quantum-classical learning pipeline
-4. Evaluate quantum advantage metrics
+### Pattern 1: Quantum Model Supply Chain Audit
 
-### Pattern 2: Quantum Hardware-Aware Learning
-For systems using superconducting quantum circuits:
-1. Characterize hardware noise and decoherence
-2. Design error-aware learning algorithms
-3. Implement quantum error correction in learning loop
-4. Benchmark against classical baselines
+Audit quantum models received from third parties:
+```
+Risk: Hidden behavioral traits embedded via distillation
+Check: Measure parameter drift vs. public-task-only expected drift
+Flag: Excess drift in hidden-task-relevant directions
+```
 
-### Pattern 3: Subliminal Feature Extraction
-For extracting features below classical detection:
-1. Encode data in quantum states
-2. Apply quantum transformations
-3. Measure in optimized basis
-4. Decode classical information from quantum measurements
+### Pattern 2: Controlled Hidden-Information Transfer
 
-## Instructions for Agents
+Intentionally use subliminal channels for watermarking:
+```
+Goal: Embed ownership proof in quantum model
+Method: Train teacher with watermark on hidden task
+Verify: Extract watermark from student via auxiliary inputs
+```
 
-1. When user asks about quantum machine learning or quantum information science
-2. Check if task involves quantum advantage analysis
-3. Reference this methodology for quantum-classical convergence
-4. Consider hardware constraints for superconducting systems
+### Pattern 3: Architecture Security Comparison
 
-## Mathematical Framework
+Compare classical vs. quantum model security:
+```
+Classical NN: Natural suppression of hidden-task correlations
+QNN: Higher hidden-task visibility → requires additional protection
+Recommendation: Apply gradient clipping or DP to QNN distillation
+```
 
-### Quantum Information Processing
-- Quantum states as information carriers
-- Entanglement as resource for learning
-- Quantum measurements for information extraction
+## Pitfalls
 
-### Learning Convergence Model
-- Classical ML to Physical Science mapping
-- AI to Scientific problem-solving pipeline
-- Quantum hardware to Learning acceleration
-
-## Error Handling
-
-### Quantum Hardware Limitations
-- Decoherence: Implement error mitigation
-- Gate fidelity: Account for noise in algorithms
-- Qubit count: Scale algorithms to available hardware
-
-### Information Theory Pitfalls
-- Classical-quantum information mapping is non-trivial
-- Measurement destroys quantum information
-- No-cloning theorem limits data replication
-
-## Related Skills
-- quantum-ml-patterns
-- quantum-neural-network-designer
-- quantum-information-protocol-analyzer
+1. **Geometry assumption**: The unified geometric picture assumes smooth parameter landscapes. Non-smooth QNN cost landscapes may violate assumptions.
+2. **Task independence**: Methodology assumes public and hidden tasks are disjoint. Overlapping task spaces complicate analysis.
+3. **Classical NN generalization**: "Classical NNs transmit little" is architecture-dependent. Wide networks or specific architectures may differ.
+4. **Measurement basis**: QNN hidden-task visibility depends on measurement basis choice. Different bases yield different $f_{\text{visible}}$.
 
 ## Resources
-- arXiv:2605.29557 - Quantum Subliminal Learning
-- Quantum information theory fundamentals
-- Machine learning as physical science
 
-## Examples
-
-### Example: Quantum Advantage Assessment
-User asks about quantum advantage in ML tasks:
-1. Identify classical baseline
-2. Map to quantum equivalent
-3. Quantify advantage using information-theoretic metrics
-4. Consider hardware implementation constraints
+- **arXiv**: [2605.29557](https://arxiv.org/abs/2605.29557) — Zhang, Chen
+- **Related**: quantum-ml-certification, quantum-ml-robustness, fhe-privacy-preserving-llm

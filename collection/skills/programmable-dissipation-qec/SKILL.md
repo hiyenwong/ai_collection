@@ -1,113 +1,131 @@
 ---
 name: programmable-dissipation-qec
-description: "Programmable dissipation methodology for quantum error correction — treating the QEC cycle as a programmable primitive that turns logical noise into a calibrated resource rather than an adversary. One fault-tolerant round induces a logical completely positive trace-preserving (CPTP) map, and decoder/recovery ratio controls the induced dissipation strength. Use when designing open quantum dynamics simulations, fault-tolerant architectures that leverage dissipation, or programmable quantum channel engineering. arXiv:2605.30217"
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.30217"
-  published: "2026-05-28"
-  authors: "Sameer Dambal, Michael AD Taylor, Yu Zhang"
-  tags: [quantum, error-correction, dissipation, open-systems, fault-tolerance]
+description: "Methodology for repurposing quantum error correction cycles to engineer programmable dissipators, enabling resource-efficient simulation of open quantum systems."
 ---
 
 # Programmable Dissipation via Partial Quantum Error Correction
 
-## Core Concept
+Methodology from arXiv:2605.30217 (May 2026). Shows how to repurpose fault-tolerant QEC structure as a programmable primitive for engineering dissipators in open quantum system simulation.
 
-**Key insight**: Logical noise in quantum error correction (QEC) can be turned into a **calibrated resource** rather than treated as an adversary. A single fault-tolerant QEC cycle induces a logical completely positive trace-preserving (CPTP) map. By controlling the decoder/recovery ratio, one programs the induced dissipation strength on the logical subspace.
+## Description
 
-This creates a **tension-resolved architecture**: fault-tolerant designs that normally suppress all decoherence can instead selectively harness dissipation as part of target physics for open quantum dynamics.
+Traditional QEC suppresses all noise. This work shows logical noise can be turned into a **calibrated resource** — treating the error-correction cycle as a programmable primitive to sculpt dissipation. Enables direct compilation of target dissipators into effective logical dynamics **without explicit ancilla qubits** for encoding bath degrees of freedom.
 
-## Mathematical Framework
+**Activation**: programmable dissipation, partial QEC, engineered dissipation, dissipator compilation, open quantum simulation, Kraus channel mixing, logical CPTP map, error-correction as primitive
 
-### QEC Cycle as Programmable Primitive
+## Core Concepts
 
-One round of fault-tolerant QEC induces:
+### 1. Error-Correction Cycle as Programmable Primitive
 
-$$\mathcal{E}_{\text{logical}}(\rho) = \sum_k R_k D \mathcal{N}(\rho) D^\dagger R_k^\dagger$$
+One fault-tolerant QEC round induces a **logical completely positive trace-preserving (CPTP) map**:
 
-Where:
-- $\mathcal{N}$ = physical noise channel
-- $D$ = decoder measurement
-- $R_k$ = recovery operation for syndrome $k$
-- The composition forms a logical CPTP map
+$$\mathcal{E}_\rho = \sum_s K_s \rho K_s^\dagger$$
 
-### Dissipation Control Parameter
+where $K_s$ are Kraus operators determined by the syndrome measurement outcome $s$ and recovery operation $R_s$.
 
-The **decoder/recovery ratio** $\alpha \in [0, 1]$ controls effective dissipation strength:
-- $\alpha = 0$: Full error correction (maximal noise suppression)
-- $\alpha = 1$: No recovery (full dissipation through)
-- $0 < \alpha < 1$: Programmable partial dissipation
+**Key insight**: By randomizing the decoder/recovery strategy, you generate a **controllable family of logical channels**. Convex mixtures of these channels realize arbitrary Kraus-channel mixing.
 
-### Lindbladian Approximation
+### 2. Decoder/Recovery Randomization
 
-In the continuous limit (fast QEC cycles):
+Instead of applying a deterministic recovery $R_s$ for syndrome $s$, sample recovery from a distribution:
 
-$$\frac{d\rho}{dt} = -i[H, \rho] + \gamma(\alpha) \sum_j \mathcal{D}[L_j](\rho)$$
+$$P(R|s) \rightarrow \mathcal{E} = \sum_s P(s) \sum_{R} P(R|s) R \mathcal{M}_s(\cdot) R^\dagger$$
 
-Where $\gamma(\alpha)$ is the tunable dissipation rate set by the partial QEC parameters.
+This randomization generates a controllable convex set of logical channels. By tuning $P(R|s)$, you can sculpt the effective dissipator.
+
+### 3. Direct Dissipator Compilation
+
+The target Lindbladian $\mathcal{L}$ can be compiled into effective logical dynamics:
+
+$$\rho(t+\Delta t) = e^{\mathcal{L}\Delta t}\rho(t) \approx (I + \frac{\Delta t}{\tau}\mathcal{E}_{\text{target}})\rho(t)$$
+
+No explicit ancilla qubits needed to encode bath degrees of freedom — the code's natural error processes serve as the bath.
+
+### 4. Accuracy Criterion for Multi-Step Simulation
+
+The code distance $d$ is chosen so that **uncontrolled logical errors remain a small fraction of the intended dissipation per step**:
+
+$$\epsilon_{\text{logical}} \ll \|\mathcal{L}_{\text{target}}\| \cdot \Delta t$$
+
+This is fundamentally different from standard QEC where logical errors must be driven below an arbitrarily small closed-system tolerance. Here, logical errors only need to be subdominant to the **intended dissipation rate**.
+
+## Implementation Steps
+
+### Step 1: Define Target Dissipator
+
+Specify the Lindbladian $\mathcal{L}$ you want to simulate:
+- Identify jump operators $\{L_k\}$
+- Specify dissipation rates $\{\gamma_k\}$
+- $\mathcal{L}(\rho) = -i[H,\rho] + \sum_k \gamma_k (L_k \rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\})$
+
+### Step 2: Choose Error-Correcting Code
+
+Select a QECC with properties matching the target dissipator:
+- **Code distance**: Large enough that uncorrectable errors are subdominant to target dissipation
+- **Syndrome structure**: Should have enough outcomes to span the Kraus operator space
+- **Decoder flexibility**: Must support probabilistic recovery strategies
+
+### Step 3: Design Recovery Distribution
+
+For each syndrome $s$, design $P(R|s)$ such that:
+- The convex mixture of induced channels approximates the target dissipator
+- Optimize using variational methods or analytical matching
+- Ensure physicality (complete positivity, trace preservation)
+
+### Step 4: Execute QEC Cycles
+
+Run the partial QEC protocol:
+1. Perform syndrome measurement
+2. Sample recovery operation from $P(R|s)$
+3. Apply recovery
+4. Repeat at rate $1/\tau$ matching desired dissipation timescale
+
+### Step 5: Verify Dissipator Accuracy
+
+Monitor:
+- Convergence to target steady state
+- Fidelity of time evolution against analytical solution
+- Accumulation of uncontrolled logical errors
 
 ## Usage Patterns
 
-### Pattern 1: Engineering Target Dissipation
+### Pattern 1: Open System Simulation
 
-When simulating open quantum systems requiring specific dissipation channels:
-
-1. Identify target Lindblad operators $L_j$
-2. Map target dissipation rates $\gamma_j$ to QEC parameters $\alpha_j$
-3. Implement partial QEC cycles with tuned decoder/recovery ratios
-4. Verify induced channel matches target via process tomography
-
-### Pattern 2: Fault-Tolerant Dissipative State Preparation
-
-For preparing states via dissipative engineering while maintaining fault tolerance:
-
-1. Design parent Hamiltonian with target state as steady state
-2. Decompose into local Lindblad terms
-3. Implement each term via independent partial QEC cycles
-4. Use syndrome data to verify convergence to target state
-
-### Pattern 3: Noise-as-Resource Computation
-
-When logical noise is beneficial (e.g., quantum annealing, thermal sampling):
-
-1. Identify noise channels that accelerate convergence
-2. Partial QEC preserves beneficial noise while suppressing harmful errors
-3. Calibrate $\alpha$ to optimize computation-to-error ratio
-4. Monitor via syndrome statistics
-
-## Implementation Guidelines
-
-### Syndrome-Based Dissipation Calibration
-
+Simulate dissipative quantum dynamics without dedicated ancilla:
 ```
-# Pseudocode for calibrating partial QEC
-for cycle in qec_cycles:
-    syndrome = measure_stabilizers()
-    if should_recover(syndrome, alpha):
-        apply_recovery(syndrome)
-    # else: let error propagate (controlled dissipation)
+Target: Amplitude damping channel on logical qubit
+Code: Surface code or color code
+Protocol: Partial QEC with engineered recovery distribution
+Resource savings: No ancilla qubits for bath encoding
 ```
 
-### Choosing the Recovery Policy
+### Pattern 2: Dissipative State Preparation
 
-- **Random skip**: Skip recovery with probability $(1-\alpha)$ — simplest implementation
-- **Syndrome-dependent**: Condition recovery on syndrome weight — more selective dissipation
-- **Error-type-dependent**: Correct some error types, dissipate others — channel-selective control
+Prepare target states via engineered dissipation:
+```
+Target: Stabilizer state / topological order
+Approach: Design dissipator with target state as unique steady state
+Execute: Partial QEC cycles drive system to steady state
+```
 
-## Error Handling
+### Pattern 3: Quantum Thermalization
 
-### Decoder Latency
-Partial QEC still requires syndrome decoding. Ensure decoder completes before next cycle deadline. Use fast decoders (e.g., MWPM with hardware acceleration) for tight timing.
+Study thermalization in open quantum systems:
+```
+Target: Thermal Gibbs state at temperature T
+Dissipator: Detailed-balance-satisfying Lindbladian
+Protocol: Partial QEC emulates thermal bath coupling
+```
 
-### Accumulated Logical Errors
-With $\alpha > 0$, some errors are intentionally uncorrected. Track logical error rate vs. dissipation benefit to find optimal $\alpha$ for the application.
+## Pitfalls
 
-### Fault Tolerance Threshold
-Partial QEC reduces the effective fault tolerance threshold. Calculate new threshold as function of $\alpha$ before deployment.
+1. **Code distance selection**: Unlike standard QEC (drive errors → 0), here choose distance so errors ≪ intended dissipation. Over-engineering wastes resources.
+2. **Recovery distribution design**: Must span the Kraus space of target dissipator. Insufficient syndrome diversity limits expressivity.
+3. **Syndrome extraction errors**: Noisy syndrome measurements add uncontrolled noise. Factor into accuracy budget.
+4. **Trotter error**: Discrete QEC cycles approximate continuous dissipation. Step size $\Delta t$ must resolve fastest dissipation timescale.
+5. **Physicality constraints**: Not all CPTP maps are realizable via partial QEC. Check convex hull of available channels.
 
-## Related Methodologies
+## Resources
 
-- **Dissipative quantum computing**: Uses engineered dissipation for computation (Verstraete et al.)
-- **Quantum reservoir engineering**: Designs environment coupling for target dynamics
-- **Measurement-based feedback**: Uses measurement results for real-time control
-- **Magic-entanglement complementarity**: Related approach where dissipation concentrates magic (see `magic-entanglement-complementarity` skill)
+- **arXiv**: [2605.30217](https://arxiv.org/abs/2605.30217) — Dambal, Taylor, Zhang (LA-UR-26-22492)
+- **Related**: quantum-error-correction, quantum-control-engineering, variational-quantum-algorithms
