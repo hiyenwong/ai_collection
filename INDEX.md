@@ -512,3 +512,11 @@
    334|  - **Activation**: quantum reservoir computing, QRC stock forecasting, quantum time-series prediction, small-scale quantum ML, 量子储备池计算股票预测
    335|
    336|
+
+## 2026-05-30 - Hybrid Quantum Financial Security (Cron Job - Skill Created)
+
+### HQFS: Hybrid Quantum Classical Financial Security with VQC Forecasting, QUBO Annealing, and Audit-Ready Post-Quantum Signing
+- [[hybrid-quantum-financial-security]] - 端到端混合量子-经典金融安全管道，集成VQC预测、QUBO退火和后量子密码签名，统一金融风险管理中的预测与优化 (arXiv: 2602.16976)
+  - 核心要点 1: VQC变分量子电路用于时间序列预测，捕获经典模型遗漏的非线性市场模式
+  - 核心要点 2: QUBO退火整合真实市场约束（手数、仓位上限、行业限制），后量子签名确保审计合规
+  - **Activation**: hybrid quantum finance, VQC forecasting, QUBO annealing, post-quantum finance, financial risk pipeline, HQFS, 混合量子金融, VQC预测, 后量子密码
