@@ -1,126 +1,75 @@
 ---
 name: quantum-portfolio-optimization
-description: >
-  Methodology for quantum-enhanced portfolio optimization using QAOA,
-  quantum-inspired algorithms (LogQ), and hybrid quantum-classical approaches.
-  Covers noise characterization, QUBO formulation, and convergence analysis.
-  Use when working with quantum finance, portfolio optimization, QAOA applications,
-  quantum-inspired optimization, or hybrid quantum-classical financial modeling.
-  Trigger: quantum portfolio, QAOA portfolio, quantum finance, quantum optimization,
-  LogQ algorithm, hybrid quantum genetic, QUBO finance, portfolio optimization quantum
+description: "Quantum portfolio optimization methodologies — QAOA for higher-order moments (skewness, kurtosis), quantum annealing for mean-variance optimization, and hybrid quantum-classical pipelines for NISQ-era finance. Use when: (1) portfolio optimization with quantum computing, (2) QAOA for financial problems, (3) quantum annealing for trading, (4) higher-order moment portfolio selection, (5) hybrid quantum-classical finance."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_ids: "2509.01496, 2504.08843"
+  published: "2025-04-10, 2025-09-01"
+  authors: "Valter Uotila et al.; Sai Nandan Morapakula et al."
+  tags: [quantum, finance, portfolio, qaoa, annealing, optimization]
 ---
 
 # Quantum Portfolio Optimization
 
-## Description
+Quantum computing methodologies for portfolio optimization — covering QAOA formulations with higher-order moments and quantum annealing pipelines for NISQ-era financial decision making.
 
-Comprehensive methodology for applying quantum and quantum-inspired algorithms
-to portfolio optimization problems. Covers QAOA with noise characterization,
-LogQ quantum-inspired classical algorithms, and hybrid quantum-classical genetic
-algorithms for financial optimization tasks.
+## Core Papers
 
-## Activation Keywords
+### QAOA for Higher-Order Portfolio Optimization (arXiv: 2509.01496)
+First quantum formulation for portfolio optimization with **higher-order moments** (skewness and kurtosis). Standard mean-variance ignores distribution asymmetry and tail risk. QAOA encodes cubic/quadratic terms into Ising Hamiltonians, enabling quantum advantage for complex risk modeling.
 
-- quantum portfolio optimization
-- QAOA portfolio
-- quantum finance
-- quantum-inspired optimization
-- LogQ algorithm
-- hybrid quantum genetic algorithm
-- QUBO finance
-- quantum optimization finance
-- 量子投资组合
-- quantum portfolio
+### End-to-End Quantum Annealing Pipeline (arXiv: 2504.08843)
+Practical hybrid pipeline combining continuous mean-variance/Sharpe-ratio objectives with quantum annealing solver. Demonstrates feasibility on current NISQ devices.
 
-## Core Methods
+## Usage Patterns
 
-### 1. QAOA for Portfolio Optimization (arXiv:2604.19426)
-
-Use Quantum Approximate Optimization Algorithm (QAOA) with noise characterization:
-
-- **Landscape Span Compression (LSC)**: Device-agnostic metric quantifying noise
-  distortion in variational energy landscapes
-- Key finding: Hardware noise compresses landscape by 24-30% without displacing
-  the global minimum, supporting classical-to-hardware parameter transfer
-- Feasibility fractions at optimal parameters remain 1.5-1.7x above random
-- Consistent noise cost: ~0.03 approximation-ratio units across instances
-- Zero-Noise Extrapolation: Mixed results (+7%/+9%/-4%), requires 3-5x more shots
-
-### 2. LogQ Algorithm - Quantum-Inspired Classical (arXiv:2604.12925)
-
-Reformulates quantum QUBO solving as classical non-linear continuous relaxation:
-
-- Encodes QUBO problems with fewer resources than quantum circuits
-- Eliminates Pauli decomposition and measurement overhead
-- Uses gradient-inspired parameter optimization
-- Applicable to portfolio optimization, fleet optimization, charging stations
-
-### 3. Hybrid Quantum Genetic Algorithm (arXiv:2604.11667)
-
-Combines quantum computing with evolutionary algorithms:
-
-- HQGA converges faster than classical GA for portfolio optimization
-- Maintains higher population diversity throughout optimization
-- Requires fewer evaluations-to-solution than brute-force
-- Use when quantum hardware access is available for hybrid computation
-
-## QUBO Formulation for Portfolio Optimization
-
-```python
-import numpy as np
-from scipy.optimize import minimize
-
-def portfolio_to_qubo(returns, cov_matrix, budget, risk_aversion=0.5):
-    """Convert portfolio optimization to QUBO form.
-
-    Minimize: -w^T * returns + risk_aversion * w^T * cov * w
-    Subject to: sum(w) = budget, w_i in {0,1}
-    """
-    n = len(returns)
-    Q = risk_aversion * cov_matrix
-    for i in range(n):
-        Q[i, i] -= returns[i]  # Linear term into diagonal
-
-    # Add budget constraint as penalty
-    penalty = 10.0
-    Q += penalty * np.ones((n, n))
-    return Q
+### Pattern 1: QAOA Higher-Order Portfolio Optimization
+**QUBO formulation:**
+```
+H = -μ^T x + λ₁ x^T Σ x + λ₂ Σᵢⱼₖ Sᵢⱼₖ xᵢxⱼxₖ + λ₃ Σᵢⱼₖₗ Kᵢⱼₖₗ xᵢxⱼxₖxₗ
 ```
 
-## Noise Characterization Workflow
+**Steps:**
+1. Encode objective as Ising Hamiltonian
+2. Map to QUBO with penalty constraints
+3. Initialize QAOA (p=1-3 layers for NISQ)
+4. Optimize angles classically (COBYLA/SPSA)
+5. Sample final state for portfolio candidates
 
-1. Run classical simulation to find optimal parameters
-2. Execute on quantum hardware with LSC metric tracking
-3. Compare calibration model fidelity (target r > 0.95)
-4. Apply error mitigation (ZNE, readout correction)
-5. Measure approximation ratio degradation
+### Pattern 2: Quantum Annealing Pipeline
+1. Classical preprocessing: returns, covariance, constraints
+2. QUBO formulation: mean-variance + constraints
+3. Minor-embed onto QA hardware topology
+4. Run 1000-10000 annealing reads
+5. Select best feasible solution
 
-## Convergence Analysis
+### Pattern 3: Hybrid Classical-Quantum
+1. Classical optimization for initial solution
+2. Quantum refinement in local neighborhoods
+3. Validate against classical benchmarks
 
-Compare hybrid vs classical approaches:
-- Track evaluations-to-solution metric
-- Monitor population diversity over generations
-- Record convergence speed (iterations to optimum)
-- Document solution quality vs compute cost tradeoff
+## QUBO Encoding (Python)
+```python
+import numpy as np
 
-## Key Findings from Recent Research
+def portfolio_to_qubo(returns, covariance, risk_aversion=1.0, budget=None, penalty=10.0):
+    n = len(returns)
+    if budget is None: budget = n // 2
+    Q = risk_aversion * covariance - np.outer(returns, np.ones(n)) * 0.5
+    Q = Q + Q.T
+    Q += penalty * np.ones((n, n))
+    Q -= penalty * budget * np.eye(n)
+    offset = penalty * budget**2
+    return Q, offset
+```
 
-| Metric | QAOA (Hardware) | LogQ (Classical) | HQGA (Hybrid) |
-|--------|----------------|------------------|---------------|
-| Noise resilience | ~0.03 AR cost | N/A (classical) | Partial |
-| Convergence speed | Baseline | Fast | Faster than GA |
-| Population diversity | N/A | N/A | Higher than GA |
-| Parameter transfer | Works (min unchanged) | N/A | Works |
-| Error mitigation | Mixed (ZNE) | N/A | Partial |
+## Error Handling
+- **Barren Plateaus**: Use problem-specific initialization, layerwise training
+- **Embedding Failures**: Chain strength optimization, problem decomposition
+- **Noisy Moments**: Shrinkage estimators, Bayesian priors
 
-## Resources
-
-- See references/qaoa-noise-analysis.md for LSC metric details
-- See references/logq-algorithm.md for LogQ implementation
-- See references/hqga-comparison.md for hybrid algorithm benchmarks
+## Activation Keywords
+- quantum portfolio optimization, QAOA finance, quantum annealing portfolio, higher-order moment portfolio, quantum finance optimization, 量子组合优化, QAOA 投资组合, 量子退火金融
 
 ## Related Skills
-
-- quantum-portfolio-optimizer: QAOA with constraints
-- quantum-ml-patterns: General QML patterns
-- quantum-finance-portfolio: Financial applications
+- `quantum-optimization-qaoa`, `quantum-finance-portfolio`, `quantum-neural-barren-plateau`

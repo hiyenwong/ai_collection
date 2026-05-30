@@ -83,6 +83,18 @@
   - Quantum RL and quantum off-policy evaluation applicable
   - **Activation**: insurance pricing, off-policy evaluation, quantum RL pricing, kernelized IPS
 
+### Higher-Order Portfolio Optimization with QAOA
+- [[quantum-portfolio-optimization]] - QAOA首次将高阶矩(偏度/峰度)纳入量子组合优化，超越传统均值-方差框架 (arXiv: 2509.01496)
+  - 核心要点 1: 将偏度(3阶)和峰度(4阶)编码为QUBO高阶项，QAOA电路实现复杂风险建模
+  - 核心要点 2: 包含高阶矩带来更好的风险调整后收益，多项式深度缩放
+  - **Activation**: QAOA higher-order portfolio, quantum skewness kurtosis, 高阶矩组合优化
+
+### End-to-End Portfolio Optimization with Quantum Annealing
+- [[quantum-portfolio-optimization]] - 端到端量子退火组合优化流水线，混合均值-方差+Sharpe比率目标在NISQ硬件上可行 (arXiv: 2504.08843)
+  - 核心要点 1: 经典预处理+QUBO编码+量子退火求解+后处理验证的完整流水线
+  - 核心要点 2: 在当前NISQ设备上验证混合量子-经典方法对金融决策问题的可行性
+  - **Activation**: quantum annealing portfolio, hybrid quantum classical finance, 量子退火组合优化
+
 
 ## 2026-05-30 - Systems Engineering Research (Cron Job)
 
