@@ -1,3 +1,17 @@
+## 2026-05-30 - Economics, Investment + Quantum (Cron Job) - Part 4
+
+### End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing
+- [[quantum-pde-option-pricing]] - 端到端量子PDE框架求解多维期权定价，处理Black-Scholes和Heston模型，N=2^n网格点实现指数加速 (arXiv: 2605.26610)
+  - 核心要点 1: 将定价PDE通过有限差分离散化为线性系统，用量子线性系统算法(QLSA)求解
+  - 核心要点 2: 端到端分析包含编码、求解、读出所有子程序，提供显式复杂度界
+  - **Activation**: quantum option pricing, quantum PDE solver, Black-Scholes quantum, Heston model quantum, multi-asset option, 量子期权定价, 量子PDE
+
+### Learning Quantum-Samplers for Stochastic Processes with Quantum Sequence Models
+- [[quantum-stochastic-sampling]] - 量子序列模型学习随机过程，递归量子电路处理指数级概率向量，加速风险分析和重要性采样 (arXiv: 2603.24069)
+  - 核心要点 1: n量子比特表示2^n维概率分布，递归结构捕获时间依赖性
+  - 核心要点 2: 应用于金融风险分析、重要性采样和蒙特卡洛加速
+  - **Activation**: quantum stochastic process, quantum risk analysis, quantum importance sampling, quantum sequence model, quantum recurrent circuit, 量子随机过程
+
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job) - Part 3
 
 ### PortBench: A Correlation-Aware, Full-Pipeline Benchmark for LLM-Driven Portfolio Management
