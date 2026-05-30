@@ -1,4 +1,20 @@
 
+## 2026-05-30 - Neuroscience Research (Cron Job)
+
+### Continual Learning in Modern Hopfield Networks with an Application to Diffusion Models
+- [[hopfield-continual-learning-diffusion]] - Modern Hopfield Networks for continual learning in diffusion models via energy-based intrinsic forgetting and replay selection (arXiv: 2605.27975)
+  - High-energy outliers undergo larger intrinsic forgetting (sharp basin samples)
+  - Energy-based replay selection particularly effective for high-energy samples
+  - Validated in Stable Diffusion and DDPM: Hopfield energy tracks reconstruction-based forgetting
+  - **Activation**: continual learning, hopfield network, diffusion model, energy landscape, memory replay, intrinsic forgetting, stable diffusion fine-tuning
+
+### Attention as In-Context Empirical Bayes: A Two-Stage View via Particle Dynamics
+- [[attention-empirical-bayes-particle-dynamics]] - Two-stage interpretation of attention as in-context empirical Bayes inference via particle dynamics with posterior mean recovery guarantees (arXiv: 2605.29351)
+  - Stage 1: Particle dynamics (depth) refines empirical distribution via kernel posterior mean
+  - Stage 2: Skip-connection preserves noisy input as query for posterior inference
+  - Principled depth-noise relationship without explicit noise schedule
+  - **Activation**: attention mechanism, in-context learning, empirical bayes, particle dynamics, posterior inference, energy landscape, transformer interpretability
+
 ## 2026-05-30 - Economics & Investment + Quantum (Cron Job)
 
 ### Change-point estimation for Weibull time series with copula-based Markov models
