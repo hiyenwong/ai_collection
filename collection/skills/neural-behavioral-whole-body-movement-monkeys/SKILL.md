@@ -1,162 +1,161 @@
 ---
 name: neural-behavioral-whole-body-movement-monkeys
-description: "Neural-behavioral representation framework for natural whole-body movement in primates. Combines large-scale epidural cortical signals with synchronized multi-view motion capture to decode unconstrained whole-body kinematics. Use when: (1) decoding natural whole-body movements, (2) modeling neural-behavioral representations, (3) primate motor neuroscience research, (4) developing behavior priors for movement decoding. Keywords: whole-body movement, motor decoding, primate neuroscience, neural-behavioral representation, behavior prior, motion capture, epidural signals"
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2605.29355"
-  published: "2026-05-28"
-  authors: "Jieshi He, Puzhe Li, Yanan Sui, Mu-ming Poo"
-  tags: [whole-body-movement, motor-decoding, primate, neural-behavioral, behavior-prior, epidural, motion-capture]
+description: Neural-behavioral representation framework for natural whole-body movement in monkeys — combines large-scale epidural cortical signals with multi-view motion capture for compact behavior prior learning
+version: 1.0.0
+author: Hermes Cron Job
+created: 2026-05-31
+source: arXiv:2605.29355
+category: neuroscience
+keywords: [neural-behavioral representation, whole-body movement, monkeys, epidural cortical signals, motion capture, autoregressive encoder-decoder, behavior prior, motor decoding]
+activation:
+  - neural-behavioral whole-body
+  - monkey movement decoding
+  - epidural cortical signals
+  - motion capture integration
+  - behavior prior learning
 ---
 
-# Neural-Behavioral Representation of Natural Whole-body Movement
+# Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys
 
-Research methodology from arXiv:2605.29355 — neural-behavioral recording and modeling framework for freely moving monkeys, enabling decoding of natural whole-body movements.
+## Overview
 
-## Core Contribution
+**Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys** (arXiv:2605.29355)
 
-**Breakthrough**: First framework combining large-scale epidural cortical signals with multi-view motion capture to decode accurate and realistic whole-body movement in freely moving primates, without explicit physical constraints.
+首个结合大规模硬膜外皮层信号与多视角动作捕捉，解码灵长类自然全身运动的神经-行为表征框架。使用自回归编码器-解码器模型学习紧凑行为先验。
 
-## Methodology Overview
+## Core Innovation
+
+### 1. Neural-Behavioral Recording Framework
+- **Large-Scale Epidural Signals**: 分布的感觉和运动相关区域
+- **Multi-View Motion Capture**: 同步多视角动作捕捉
+- **Freely Moving Monkeys**: 自由移动的灵长类
+
+### 2. Behavior Prior Learning
+- **Autoregressive Encoder-Decoder**: 自回归编码器-解码器模型
+- **Compact Representation**: 紧凑行为表征
+- **No Explicit Physical Constraints**: 无需显式物理约束
+
+### 3. Whole-Body Kinematics Reconstruction
+- **Accurate**: 准确的全身运动重建
+- **Realistic**: 现实的运动轨迹
+- **Natural Behaviors**: 自然行为（非约束任务）
+
+## Technical Framework
 
 ### Data Collection Platform
-
-1. **Neural Recording**: Large-scale epidural cortical signals from distributed sensory- and motor-related areas
-2. **Motion Capture**: Synchronized multi-view video capture
-3. **Subjects**: Freely moving monkeys (unconstrained behavior)
-
-### Behavior Prior Learning
-
-```python
-# Autoregressive encoder-decoder for behavior prior
-class BehaviorPrior:
-    def __init__(self):
-        self.encoder = AutoregressiveEncoder()
-        self.decoder = AutoregressiveDecoder()
-        self.latent_dim = 64  # Compact representation
-    
-    def learn_prior(self, kinematics_sequence):
-        # Learn compact behavior prior from motion capture
-        latent = self.encoder(kinematics_sequence)
-        reconstruction = self.decoder(latent)
-        return latent, reconstruction
+```
+Components:
+- Epidural cortical signal recording (distributed sensorimotor areas)
+- Multi-view motion capture system
+- Custom-made data collection platform
+- Synchronized recording
 ```
 
-### Neural-Conditioned Decoding
-
-```python
-# Neural-to-whole-body decoding
-class WholeBodyDecoder:
-    def __init__(self, behavior_prior):
-        self.neural_encoder = NeuralSignalEncoder()
-        self.prior = behavior_prior
-        self.trajectory_generator = TrajectoryGenerator()
-    
-    def decode(self, neural_signals):
-        # Condition on neural signals, generate whole-body movement
-        neural_features = self.neural_encoder(neural_signals)
-        trajectory = self.trajectory_generator(neural_features, self.prior)
-        return trajectory  # Realistic whole-body kinematics
+### Model Architecture
+```
+Autoregressive Encoder-Decoder:
+- Encoder: Learn compact behavior prior from kinematics
+- Decoder: Conditioned on neural signals → whole-body movement
+- Output: Accurate + realistic trajectories
 ```
 
-## Key Innovations
+## Key Advantages
 
-### 1. Unconstrained Natural Behavior
+### 1. Beyond Constrained Tasks
+- **Previous Studies**: 约束任务、有限肢体运动
+- **This Work**: 自然全身行为、多样性运动
 
-- Previous studies: Constrained tasks, limited limb movements
-- This framework: Free movement, diverse whole-body behaviors
-- Advantage: Captures natural motor repertoire
+### 2. Large-Scale Neural Representation
+- **Distributed Areas**: 感觉和运动相关区域
+- **Epidural Recording**: 硬膜外皮层信号
+- **Whole-Body Kinematics**: 全身运动学重建
 
-### 2. Implicit Physical Constraints
-
-- Traditional: Explicit physics models required
-- This approach: Behavior prior learns realistic dynamics
-- Benefit: Accurate and naturalistic movement reconstruction
-
-### 3. Large-Scale Neural Integration
-
-- **Distributed recording**: Sensorimotor-related cortical areas
-- **Scale**: Epidural signals from multiple regions simultaneously
-- **Synchronization**: Neural-behavioral temporal alignment
-
-## Implementation Guide
-
-### Motion Capture Processing
-
-```python
-# Multi-view kinematics reconstruction
-def reconstruct_whole_body(multi_view_videos):
-    """
-    Steps:
-    1. Pose estimation per view
-    2. 3D triangulation
-    3. Kinematics parameterisation
-    """
-    poses = [estimate_pose(v) for v in multi_view_videos]
-    kinematics_3d = triangulate_3d(poses)
-    body_params = parameterise_kinematics(kinematics_3d)
-    return body_params
-```
-
-### Behavior Prior Architecture
-
-```python
-# Compact behavior prior model
-class AutoregressivePrior:
-    """
-    Autoregressive encoder-decoder for:
-    - Learning compact movement representation
-    - Generating realistic trajectories
-    - Implicit dynamics constraints
-    """
-    def encode(self, kinematics):
-        # Temporal compression
-        return self.rnn_encoder(kinematics)
-    
-    def decode(self, latent, steps):
-        # Trajectory generation
-        return self.rnn_decoder(latent, steps)
-```
-
-## Experimental Framework
-
-| Component | Description |
-|-----------|-------------|
-| Neural Signals | Epidural cortical from sensorimotor areas |
-| Behavior Data | Multi-view motion capture |
-| Behavior Prior | Autoregressive encoder-decoder |
-| Decoder | Neural-conditioned trajectory generator |
-| Output | Whole-body kinematics without physics constraints |
+### 3. Proof-of-Concept
+- **Decoding Accuracy**: 准确解码自然全身运动
+- **Realistic Output**: 现实的运动轨迹
+- **No Constraints**: 无显式物理约束
 
 ## Applications
 
-1. **Motor Neuroscience**: Understanding cortical representation of natural movement
-2. **Neural Prosthetics**: Whole-body assistive device control
-3. **Behavior Modeling**: Animal locomotion simulation
-4. **Rehabilitation**: Motor recovery assessment
+### 1. Natural Motor Decoding
+- 灵长类自然运动解码
+- 全身行为表征
+- 自由移动场景
 
-## Comparison with Previous Approaches
+### 2. Neural-Behavioral Modeling
+- 神经-行为关系建模
+- 皮层活动与运动学映射
+- 行为先验学习
 
-| Aspect | Traditional | This Framework |
-|--------|-------------|----------------|
-| Task Type | Constrained | Free movement |
-| Movement Scope | Limited limbs | Whole-body |
-| Physics Constraints | Explicit | Implicit (learned) |
-| Neural Scale | Single region | Distributed cortical |
+### 3. Motor Neuroscience Research
+- 自然行为神经编码研究
+- 大规模皮层信号分析
+- 全身运动控制机制
 
-## Pitfalls & Solutions
+## Performance Metrics
 
-| Issue | Cause | Solution |
-|-------|-------|----------|
-| Behavior diversity | Unconstrained movement | Behavior prior captures repertoire |
-| Kinematic realism | Physics constraints needed | Prior learns implicit dynamics |
-| Neural-behavior alignment | Temporal synchronization | Multi-view + neural sync hardware |
+| Aspect | Performance |
+|--------|-------------|
+| Accuracy | Accurate whole-body trajectories |
+| Realism | Realistic movement patterns |
+| Natural Behaviors | Decoding freely moving monkeys |
+| Constraints | No explicit physical constraints needed |
+
+## Methodology
+
+### 1. Data Collection
+1. Epidural cortical signal recording
+2. Multi-view motion capture
+3. Synchronized acquisition
+4. Freely moving paradigm
+
+### 2. Kinematics Reconstruction
+1. Multi-view pose estimation
+2. Whole-body kinematics extraction
+3. Behavior prior learning
+
+### 3. Neural Decoding
+1. Neural signal encoding
+2. Autoregressive decoder
+3. Whole-body trajectory generation
+
+## Brain Areas Coverage
+
+- **Sensory Areas**: 分布的感觉相关区域
+- **Motor Areas**: 分布的运动相关区域
+- **Large-Scale**: 大规模硬膜外覆盖
+
+## Novel Contributions
+
+1. **First Framework**: 灵长类自然全身运动解码
+2. **Large-Scale Neural**: 大规模硬膜外皮层信号
+3. **Multi-View Motion**: 同步多视角动作捕捉
+4. **Behavior Prior**: 紧凑行为先验学习
+5. **Proof-of-Concept**: 准确且现实的解码
+
+## Related Skills
+
+- `motor-decoding-primate`
+- `whole-body-kinematics`
+- `epidural-cortical-signals`
+- `behavior-prior-learning`
+- `neural-behavioral-modeling`
 
 ## References
 
-- arXiv:2605.29355 — Full paper (3,889 KB)
-- Submitted to cs.LG / q-bio.NC
+- He, J., Li, P., Sui, Y., Poo, M-m. (2026). Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys. arXiv:2605.29355
+- Related: Motor decoding, primate neuroscience, behavior prior
 
-## Activation
+## Pitfalls
 
-Keywords: whole-body movement, primate motor, neural-behavioral, behavior prior, motor decoding, epidural, natural behavior
+1. **之前研究局限**: 只关注约束任务和有限肢体运动
+2. **运动多样性挑战**: 自然行为运动多样性高
+3. **大规模神经表征**: 需要分布式硬膜外记录
+4. **动作捕捉同步**: 多视角同步是关键
+
+## Verification Steps
+
+1. 验证全身运动学重建准确性
+2. 检查行为先验学习紧凑性
+3. 确认解码轨迹的现实性
+4. 分析无约束条件下的性能

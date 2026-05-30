@@ -30,6 +30,13 @@
   - 神络生理：sensorimotor-parietal 去同步增强，motor-frontal 功能连接增强，前部脑岛全波段参与，上顶叶耦合增加
   - **Activation**: embodied VR feedback, motor imagery BCI, 3D virtual limb control, VR vs screen feedback, continuous BCI, neural representations reshaping
 
+### Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys
+- [[neural-behavioral-whole-body-movement-monkeys]] - 灵长类自然全身运动神经-行为表征框架，结合大规模硬膜外皮层信号与多视角动作捕捉，自回归编码器-解码器学习紧凑行为先验 (arXiv: 2605.29355)
+  - 大规模 epidural cortical signals + multi-view motion capture 自由移动猴子
+  - Autoregressive encoder-decoder 学习紧凑 behavior prior，无需显式物理约束
+  - 准确且现实的 whole-body kinematics 重建，首个灵长类自然全身运动解码
+  - **Activation**: neural-behavioral whole-body, monkey movement decoding, epidural cortical signals, motion capture, behavior prior, motor decoding primate
+
 ## 2026-05-31 - Neuroscience Research (Cron Job) - Brain Oscillation Framework
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
