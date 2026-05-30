@@ -309,7 +309,26 @@
   100|  - Trotterized adiabatic evolution preserves feasibility throughout optimization
   100|  - **Activation**: constraint preserving mixers, XY-mixer, Trotterized evolution, constrained quantum optimization
   100|
-  100|     1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+  100|     1|
+### A Penalty-Free Pipeline for Direct Quantum-Annealer Portfolio Optimization
+- [[quantum-annealer-pipeline-audit]] - 量子退火组合优化审计：标准惩罚编码QUBO在当前D-Wave设备失败（链断裂率83-92%），混合服务QPU仅占0.7%运行时间 (arXiv: 2605.17628, 2605.17623)
+  - 核心要点 1: 基数惩罚项产生密集秩一矩阵使逻辑图完全连接，导致Pegasus/Zephyr拓扑链断裂率极高
+  - 核心要点 2: D-Wave LeapHybridCQM虽匹配Gurobi最优解，但QPU仅0.034秒/5秒预算(0.7%)，量子贡献边缘化
+  - **Activation**: quantum annealer audit, penalty-free qubo, d-wave pipeline, chain-break fraction, 量子退火审计, 无惩罚qubo
+
+### Quenching Speculation in Quantum Markets via Entangled Neural Traders
+- [[quantum-market-entanglement]] - 量子市场稳定机制：交易者估值间量子纠缠消除投机崩溃中的病理纳什均衡 (arXiv: 2602.06367)
+  - 核心要点 1: RL代理用量子关联量子比特编码估值稳定价格并增加净财富
+  - 核心要点 2: 量化的p-guessing博弈显示纠缠消除驱动市场崩溃的病理纳什均衡
+  - **Activation**: quantum market stabilization, entangled neural traders, quantum economics, market collapse, 量子市场稳定
+
+### Quantum Reservoir Computing for Stock Movement Forecasting
+- [[quantum-reservoir-finance]] - 量子储备库计算(QRC)用≤6量子比特实现股票趋势分类>86%准确率，跨超导和离子阱平台通用 (arXiv: 2602.13094)
+  - 核心要点 1: 小规模量子系统作为非线性储备库提取金融时间序列特征，经典读出层训练
+  - 核心要点 2: 20家量子板块上市公司2020-2025年数据验证，超导和离子阱平台表现相当
+  - **Activation**: quantum reservoir computing, QRC finance, stock forecasting, 量子储备库, 股票预测
+
+## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
   100|     2|
   100|     3|### Algorithms with Polynomially-Improved Approximation Factors for the 2→q Norm
   100|     4|- [[norm-approximation-algorithms]] - Multiplicative weight update algorithm for matrix 2→q norm approximation with polynomial improvement over spectral methods, applications to hypercontractivity and quantum separability (arXiv: 2605.25303)
