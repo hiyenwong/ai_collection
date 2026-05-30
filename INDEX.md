@@ -77,6 +77,21 @@
   - **Activation**: building thermal dynamics, excitation-driven data, control-oriented modeling, building ML training data, BuilDyn framework
 
 
+## 2026-05-30 - Neuroscience Research (Cron Job) - Part 6
+
+### Benchmarking Positional Encoding Strategies for Transformer-Based EEG Foundation Models
+- [[eeg-transformer-positional-encoding-benchmark]] - 首次系统基准测试EEG foundation models的位置编码策略，SPE适用于运动想象，ACPE跨任务性能更一致 (arXiv: 2605.29754)
+  - 核心要点 1: 位置编码策略任务依赖，SPE在运动想象任务中表现优异但情感识别较弱
+  - 核心要点 2: ACPE (Asymmetric Conditional Positional Encoding) 显示更一致的跨任务性能
+  - **Activation**: EEG transformer, foundation model, positional encoding, SPE, ACPE, motor imagery, emotion recognition, benchmark
+
+### Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+- [[embodied-vr-feedback-3d-motor-imagery-bci]] - 首次系统研究 embodied VR feedback 对连续3D运动想象BCI解码的影响，VR比屏幕反馈提升8.9-13.0% (arXiv: 2605.29677)
+  - 核心要点 1: VR反馈产生更可解码和可泛化的神经表征，CNN-LSTM解码器达r=0.762
+  - 核心要点 2: 增强的感觉运动-顶叶去同步化，更强的运动-额叶功能连接
+  - **Activation**: embodied VR feedback, motor imagery BCI, 3D decoding, neurorehabilitation, CNN-LSTM decoder
+
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 5
 
 ### MIRAGE: Adaptive Multimodal Gating for Whole-Brain fMRI Encoding
