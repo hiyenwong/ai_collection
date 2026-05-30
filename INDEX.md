@@ -403,6 +403,13 @@
   - 核心要点 2: 20家量子板块上市公司2020-2025年数据验证，超导和离子阱平台表现相当
   - **Activation**: quantum reservoir computing, QRC finance, stock forecasting, 量子储备库, 股票预测
 
+### Basis-Adaptive Sparse-State Simulation of Quantum Circuits
+- [[basis-adaptive-sparse-simulation]] - 基自适应稀疏态量子电路模拟方法，通过动态旋转量子比特基保持振幅聚集，在相同内存预算下提升一个数量级的态重叠度 (arXiv: 2605.27285)
+  - 核心要点 1: 固定基稀疏模拟器在纠缠增长时保真度急剧下降；BASS在每次截断前将量子比特旋转到单量子比特约化密度矩阵特征基，保持振幅聚集
+  - 核心要点 2: k/PR_Z比值（稀疏预算/计算参与比）是判断自适应基是否有优势的关键指标
+  - 核心要点 3: 在结构化电路（砖墙电路）上显著超越固定基方法；在无序Ising电路上提升约10倍态重叠度
+  - **Activation**: basis adaptive sparse simulation, quantum circuit simulation, BASS algorithm, sparse state truncation, natural orbital, 基自适应模拟, 量子电路经典模拟
+
 ## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
   100|     2|
   100|     3|### Algorithms with Polynomially-Improved Approximation Factors for the 2→q Norm
