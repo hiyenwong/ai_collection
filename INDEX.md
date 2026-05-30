@@ -1,3 +1,33 @@
+## 2026-05-31 - Information Science + Quantum (Cron Job)
+
+### Programmable Dissipation via Partial Quantum Error Correction
+- [[programmable-dissipation-qec]] - 将量子纠错循环视为可编程原语，将逻辑噪声转化为校准耗散资源，解码器/恢复比控制耗散强度 (arXiv: 2605.30217)
+  - 核心要点 1: QEC循环诱导逻辑CPTP映射，通过控制解码器/恢复比α编程耗散强度
+  - 核心要点 2: 连续极限下逼近Lindbladian动力学，耗散率γ(α)由部分QEC参数可调
+  - 核心要点 3: 支持故障容忍耗散态制备、噪声即资源计算、目标耗散工程设计
+  - **Activation**: programmable dissipation, partial qec, logical cptp map, decoder recovery ratio, lindbladian engineering, fault tolerant dissipation, open quantum dynamics, noise as resource, syndrome dependent recovery
+
+### Boosting Uncloneable Encryption in Microcrypt
+- [[uncloneable-encryption-microcrypt]] - 从一次性安全单比特不可克隆加密扩展到多次安全多比特不可克隆加密的归约方法 (arXiv: 2605.27647)
+  - 核心要点 1: t→t′不可克隆比特可提升为m次安全不可克隆加密
+  - 核心要点 2: 最小化不可克隆加密存在的假设条件
+  - 核心要点 3: 对称密钥加密的强不可克隆不可区分性形式化
+  - **Activation**: uncloneable encryption, microcrypt, quantum cryptography, ciphertext cloning prevention, symmetric key quantum encryption
+
+### Non-Clifford Crosstalk Noise in Surface Codes
+- [[non-clifford-crosstalk-surface-codes]] - 混合稳定子-张量网络模拟技术捕获表面码中非Clifford串扰噪声的完整动力学 (arXiv: 2605.29514)
+  - 核心要点 1: 超越传统非相干噪声模型，捕获含噪声量子系统的完整动力学
+  - 核心要点 2: 混合稳定子-张量网络方法实现经典可扩展模拟
+  - 核心要点 3: 含噪声纠错协议的阈值分析
+  - **Activation**: non-clifford crosstalk, surface codes, hybrid stabilizer tensor network, noise simulation, qec threshold, fault tolerant analysis
+
+### Simple Power Analysis on Post-Quantum Cryptosystems
+- [[spa-post-quantum-cryptosystems]] - 简单功耗分析(SPA)评估后量子编码理论密码系统(McEliece/BIKE)的物理安全性 (arXiv: 2605.17116)
+  - 核心要点 1: 低成本设备SPA攻击评估代码基KEM的物理实现安全性
+  - 核心要点 2: 经典结构攻击通过适当密钥尺寸可被消除但物理侧信道仍有效
+  - 核心要点 3: 后量子密码部署的侧信道防护需求
+  - **Activation**: simple power analysis, post-quantum cryptography, mceliece, bike kem, side channel, physical security, code based cryptography
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - SNN Architecture Innovation
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
