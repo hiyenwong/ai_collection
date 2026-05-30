@@ -1,4 +1,37 @@
 
+## 2026-05-30 - Economics & Investment + Quantum (Cron Job)
+
+### Change-point estimation for Weibull time series with copula-based Markov models
+- [[weibull-change-point-detection]] - Copula-based Markov chain methodology for offline change-point estimation in financial time series with Weibull marginals (arXiv: 2605.29541)
+  - Models nonlinear serial dependence in nonnegative financial data (volumes, durations, volatility)
+  - Separates marginal Weibull distribution from copula dependence structure
+  - **Activation**: change-point detection, weibull time series, copula markov, financial regime detection, volatility breaks
+
+### From Classical Optimization to Bayesian Integration: Systematic Portfolio Management
+- [[bayesian-portfolio-integration]] - Systematic portfolio management comparing classical mean-variance to Bayesian integration methods on 10 US stocks (arXiv: 2605.29413)
+  - Covers Markowitz, Black-Litterman, Bayesian shrinkage, hierarchical risk parity
+  - Expanding window walk-forward validation with realistic transaction costs
+  - **Activation**: portfolio optimization, bayesian portfolio, systematic investing, asset allocation, mean-variance, Black-Litterman
+
+### Exponentially Fast Solution State Preparation for the Heat Equation and its use for Option Pricing
+- [[quantum-option-pricing-heat-equation]] - Exponentially fast quantum algorithm for heat equation solution state preparation with European option pricing applications (arXiv: 2605.28950)
+  - Quantum state preparation achieves exponential speedup for diffusion process encoding
+  - Exponential qubit advantage over quantum Monte Carlo for path-dependent options
+  - **Activation**: quantum option pricing, heat equation quantum, Black-Scholes quantum, quantum PDE, derivative pricing
+
+### End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing under Local and Stochastic Volatility
+- [[quantum-pde-option-pricing]] - End-to-end quantum PDE framework for multi-asset European option pricing under local-volatility Black-Scholes and Heston models (arXiv: 2605.26610)
+  - Polynomial improvement N^(d/2) for Black-Scholes, N^d for Heston vs finite-difference baselines
+  - End-to-end gate complexity analysis with Clifford+T resource estimates
+  - **Activation**: quantum PDE option pricing, multi-asset options, Heston model quantum, finite-difference quantum, Clifford+T
+
+### Insurance Pricing Optimization via Off-Policy Evaluation
+- [[quantum-off-policy-evaluation-pricing]] - Insurance pricing as decision-making problem using off-policy evaluation with kernelized IPS estimator (arXiv: 2605.28327)
+  - Neural network policy optimization outperforms existing techniques
+  - Quantum RL and quantum off-policy evaluation applicable
+  - **Activation**: insurance pricing, off-policy evaluation, quantum RL pricing, kernelized IPS
+
+
 ## 2026-05-30 - Systems Engineering Research (Cron Job)
 
 ### Optimization of Predictive Maintenance Schedules under Uncertainty: A Scenario-Based Theoretical Framework
