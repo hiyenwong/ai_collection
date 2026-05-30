@@ -1,142 +1,245 @@
 ---
 name: cognisnn-random-graph-snn
-version: "1.0"
-description: "Cognition-aware Spiking Neural Network (CogniSNN) methodology. Random Graph Architecture (RGA) enabling neuron-expandability, pathway-reusability, and dynamic-configurability in SNNs for neuromorphic and continual learning tasks."
-tags:
-  - spiking-neural-networks
-  - neuromorphic
-  - continual-learning
-  - random-graph
-  - computational-neuroscience
-  - brain-inspired-ai
-trigger_conditions:
-  - "spiking neural network with biological structure"
-  - "SNN continual learning"
-  - "neuromorphic random graph architecture"
-  - "neuron expandability pathway reusability"
-  - "CogniSNN"
-  - "dynamic spiking network"
-  - "N-Caltech SNN benchmark"
-source: "PubMed PMID:42140147 / Neural Networks 2026"
-authors: ["Yongsheng Huang", "Peibo Duan", "Yujie Wu", "Kai Sun"]
-doi: "10.1016/j.neunet.2026.109071"
+description: "CogniSNN: Cognition-aware Spiking Neural Network with Random Graph Architecture enabling neuron-expandability, pathway-reusability, and dynamic-configurability. Uses Key Pathway-based Learning (KP-LwF) for multi-task transfer and Dynamic Growth Learning (DGL) algorithm for temporal dimension growth. Achieves SOTA on neuromorphic datasets. Keywords: SNN architecture, random graph, pathway reusability, dynamic growth, neuromorphic hardware, continual learning, brain-inspired AI."
+tags: ["spiking-neural-network", "neuromorphic", "random-graph-architecture", "continual-learning", "dynamic-growth", "pathway-reusability", "cognition-aware"]
 ---
 
-# CogniSNN: Cognition-Aware Spiking Neural Network with Random Graph Architecture
+# CogniSNN: Cognition-aware SNN with Random Graph Architecture
 
-## Overview
+## Paper Information
 
-CogniSNN is a novel SNN paradigm grounded in **Random Graph Architecture (RGA)** that explicitly models three key biologically-inspired structural characteristics missing from mainstream SNNs:
+- **arXiv ID**: 2512.11743
+- **Title**: CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- **Authors**: Yongsheng Huang, Peibo Duan, Yujie Wu, Kai Sun, Zhipeng Liu, Changsheng Zhang, Bin Zhang, Mingkun Xu
+- **Submission Date**: 2025-12-12
+- **Categories**: cs.NE (Neural and Evolutionary Computing), cs.AI (Artificial Intelligence)
+- **DOI**: https://doi.org/10.48550/arXiv.2512.11743
 
-1. **Neuron-Expandability** — neurons and synapses can grow dynamically over time
-2. **Pathway-Reusability** — structural pathways are reused across tasks for efficient continual learning
-3. **Dynamic-Configurability** — network topology adapts along the temporal dimension
+## Core Innovation
 
-## Core Problem
+CogniSNN introduces **Random Graph Architecture (RGA)** to SNNs, breaking from traditional rigid chain-like hierarchical structures to mimic biological neural connectivity patterns.
 
-Mainstream SNNs adopt rigid, chain-like architectures borrowed from ANNs. This ignores the fundamental reality of biological neural circuits: neurons are stochastically interconnected, forming complex pathways. This rigidity causes:
-- Poor continual learning (catastrophic forgetting)
-- Fixed timestep constraints limiting temporal dynamics
-- Lack of structural adaptability
+### Three Key Properties
 
-## Methodology
+1. **Neuron-Expandability**: Network can dynamically add neurons without disrupting existing structure
+2. **Pathway-Reusability**: Critical neural pathways can be selectively reused across tasks
+3. **Dynamic-Configurability**: Network topology can adapt during training and deployment
 
-### 1. Random Graph Architecture (RGA)
-- Replace fixed chain topology with stochastic connectivity
-- Neurons form random directed connections within layers
-- Mimics biological stochastic synaptic connectivity
-- Enables exponentially larger functional pathway space
+## Key Technical Contributions
 
-### 2. Purely Spiking Residual Mechanism
+### 1. Improved Pure Spiking Residual Mechanism
+- Addresses network degradation in deep pathways
+- Implements adaptive pooling strategy to handle dimensional mismatch
+- Maintains spike-based computation throughout (no conversion to ANN)
+
+### 2. Key Pathway-based Learning without Forgetting (KP-LwF)
+- Selectively reuses critical neural pathways for multi-task transfer
+- Retains historical knowledge during new task learning
+- Enables efficient continual learning without catastrophic forgetting
+- Identifies "key pathways" based on importance metrics
+
+### 3. Dynamic Growth Learning (DGL) Algorithm
+- Allows neurons and synapses to grow dynamically along temporal dimension
+- Adaptively expands network capacity based on task complexity
+- Mitigates fixed-timestep constraints on neuromorphic hardware
+- Improves robustness against interference
+
+## Random Graph Architecture Design
+
+### Structural Properties
+- **Stochastic Connectivity**: Mimics biological brain's random interconnections
+- **Multi-path Routing**: Information flows through multiple parallel pathways
+- **Flexible Depth**: Pathway length adapts based on computational needs
+- **Sparse Connections**: Reduces synaptic overhead while maintaining expressivity
+
+### Implementation Strategy
 ```python
-# Spiking residual connection (no ANN-style shortcuts)
-class SpikingResidual(nn.Module):
+# Conceptual RGA Construction
+class RandomGraphSNN:
+    def __init__(self, neuron_pool_size, connectivity_probability):
+        self.neurons = NeuronPool(neuron_pool_size)
+        self.random_connect(connectivity_probability)
+    
+    def random_connect(self, prob):
+        # Creates stochastic pathways based on probability
+        for src in self.neurons:
+            for dst in self.neurons:
+                if random.random() < prob:
+                    create_synapse(src, dst)
+```
+
+## Performance Results
+
+### Neuromorphic Datasets
+- Comparable or surpassing state-of-the-art SNN performance
+- Demonstrates effectiveness on DVS Gesture, CIFAR10-DVS, N-Caltech101
+
+### Tiny-ImageNet
+- Successfully scales to larger-scale vision tasks
+- Maintains spike-based computation efficiency
+
+### Key Metrics
+- **Energy Efficiency**: Leverages SNN's sparse activation patterns
+- **Multi-task Transfer**: KP-LwF enables seamless knowledge transfer
+- **Hardware Compatibility**: Addresses neuromorphic deployment constraints
+
+## Biological Inspiration
+
+CogniSNN draws from three key biological principles:
+
+1. **Stochastic Neural Connectivity**
+   - Brain neurons connect probabilistically, not in rigid layers
+   - Random graphs capture this biological variability
+
+2. **Neural Pathway Reuse**
+   - Brain reuses established pathways for related tasks
+   - KP-LwF mimics this efficient knowledge reuse mechanism
+
+3. **Dynamic Neural Growth**
+   - Biological networks can grow during learning (neurogenesis)
+   - DGL algorithm simulates this adaptive expansion
+
+## Practical Applications
+
+### Neuromorphic Hardware Deployment
+- **Loihi/Loihi 2**: Intel neuromorphic chips benefit from dynamic growth
+- **SpiNNaker**: ARM-based neuromorphic platform compatible with RGA
+- **TrueNorth**: IBM's neurosynaptic processor supports pathway reuse
+
+### Continual Learning Scenarios
+- **Robotics**: Sequential task learning without retraining
+- **IoT Edge Devices**: Memory-efficient multi-task models
+- **Autonomous Systems**: Adaptive learning during operation
+
+## Implementation Guidelines
+
+### Step 1: Random Graph Construction
+```python
+# Initialize random graph topology
+connectivity_prob = 0.3  # Based on biological cortical connectivity
+graph = RandomGraph(neuron_count=1000, edge_prob=connectivity_prob)
+```
+
+### Step 2: Pure Spiking Residual Block
+```python
+class SpikingResidualBlock:
     def __init__(self, channels):
-        super().__init__()
-        self.snn_block = SpikingBlock(channels)
-        self.skip = SpikingSkipConnection(channels)  # spike-based
+        self.conv1 = SpikingConv(channels)
+        self.conv2 = SpikingConv(channels)
+        self.pool = AdaptiveSpikePool()
     
     def forward(self, x):
-        return self.snn_block(x) + self.skip(x)  # both paths spike
+        identity = x
+        out = self.conv1(x)
+        out = self.conv2(out)
+        out = self.pool(out + identity)  # Spike-based addition
+        return out
 ```
 
-### 3. Adaptive Pooling Strategy
-- Handles dimensional mismatch in deep RGA networks
-- Adaptive spatial pooling preserves temporal spike patterns
-- No ANN-style normalization needed
-
-### 4. Key Pathway-based Learning without Forgetting (KP-LwF)
+### Step 3: Key Pathway Identification
 ```python
-def select_key_pathways(model, task_id, top_k=0.3):
-    """Identify and protect the most activated pathways for each task"""
-    pathway_importance = compute_pathway_gradients(model, task_id)
-    key_paths = topk_pathways(pathway_importance, k=top_k)
-    return key_paths
-
-def kp_lwf_loss(new_task_loss, old_pathways, lambda_kd=0.5):
-    """Distillation loss preserving key pathways"""
-    pathway_distill = pathway_preservation_loss(old_pathways)
-    return new_task_loss + lambda_kd * pathway_distill
-```
-
-### 5. Dynamic Growth Learning (DGL)
-- Neurons and synapses evolve dynamically along the temporal dimension
-- Growth triggered by error signals and synaptic activity
-- Pruning of inactive connections prevents parameter explosion
-
-## Key Results
-
-| Metric | CogniSNN | Previous SOTA (SSNN) | Improvement |
-|--------|----------|----------------------|-------------|
-| N-Caltech101 Accuracy | **80.64%** | 77.97% | +2.67% |
-| Timesteps needed | 5 | 5 | equal |
-| Continual learning | Superior | - | significant |
-| Noise robustness | Enhanced | - | significant |
-
-## Activation Keywords
-- spiking neural network, SNN, neuromorphic, random graph
-- continual learning, catastrophic forgetting, pathway reuse
-- CogniSNN, neuron expandability, dynamic growth
-- N-Caltech, N-MNIST, DVS, event-based vision
-
-## Implementation Guidance
-
-### When to Use
-- Building SNNs for neuromorphic hardware (Intel Loihi, BrainScaleS)
-- Continual/lifelong learning with spiking networks
-- Event-based vision (DVS cameras, neuromorphic sensors)
-- Bio-inspired architecture research bridging ANN and SNN
-
-### Quick Start Pattern
-```python
-from spikingjelly.activation_based import neuron, layer, functional
-
-class CogniSNNBlock(nn.Module):
-    def __init__(self, in_ch, out_ch, p_random=0.3):
-        super().__init__()
-        # Random graph connectivity
-        self.random_conv = RandomGraphConv(in_ch, out_ch, p=p_random)
-        self.lif = neuron.LIFNode(tau=2.0)
-        self.residual = SpikingResidual(out_ch)
+def identify_key_pathways(model, task_history):
+    # Compute pathway importance scores
+    importance = compute_pathway_importance(model, task_history)
     
-    def forward(self, x):
-        out = self.lif(self.random_conv(x))
-        return self.residual(out)
+    # Select pathways above threshold
+    key_pathways = threshold_selection(importance, top_k=0.3)
+    return key_pathways
 ```
 
-### Pitfalls
-- RGA increases memory footprint — use structured sparsity to control
-- DGL needs careful growth threshold tuning (too aggressive = parameter explosion)
-- KP-LwF requires task boundaries to be known — adapt for online learning
+### Step 4: Dynamic Growth
+```python
+class DynamicGrowthController:
+    def __init__(self, growth_threshold=0.8):
+        self.threshold = growth_threshold
+    
+    def should_grow(self, current_performance):
+        if current_performance < self.threshold:
+            return True
+        return False
+    
+    def grow_neurons(self, model, num_new_neurons):
+        # Add neurons to critical pathway regions
+        model.add_neurons(num_new_neurons, target_region='high_activity')
+```
 
-## Connection to Neuroscience
+## Key Insights
 
-CogniSNN is directly inspired by:
-- **Cortical connectivity statistics**: ~20% random connectivity in cortical columns
-- **Hebbian-based pathway strengthening**: KP-LwF mirrors LTP/LTD consolidation
-- **Adult neurogenesis**: DGL mirrors neurogenesis in hippocampus
+### Architecture Philosophy
+- **Reject Layer-by-Layer Dogma**: Biological brain doesn't use rigid sequential layers
+- **Embrace Randomness**: Stochastic connectivity enables richer representations
+- **Enable Flexibility**: Network should adapt structure during learning
 
-## References
-- Huang et al. (2026). *Neural Networks* DOI:10.1016/j.neunet.2026.109071
-- SpikingJelly framework: https://github.com/fangwei123456/spikingjelly
-- Related: SSNN (ICLR 2024), TET (ICLR 2022)
+### Learning Mechanisms
+- **Pathway-Level Knowledge**: Store knowledge in pathways, not just weights
+- **Selective Reuse**: Identify and preserve high-value pathways across tasks
+- **Dynamic Expansion**: Grow capacity when performance plateaus
+
+### Hardware Considerations
+- **Fixed-Timestep Problem**: Traditional SNNs constrained by predetermined simulation time
+- **Dynamic Timestep**: DGL allows variable simulation duration
+- **Memory Efficiency**: Random graphs reduce redundant weight storage
+
+## Comparison with Traditional SNNs
+
+| Feature | Traditional SNN | CogniSNN |
+|---------|----------------|----------|
+| Architecture | Sequential layers | Random graph |
+| Connectivity | Dense/rigid | Sparse/stochastic |
+| Multi-task | Separate models | Shared pathways |
+| Capacity | Fixed neurons | Dynamic growth |
+| Learning | Single task | Continual learning |
+
+## Limitations and Considerations
+
+1. **Graph Search Cost**: Finding key pathways requires additional computation
+2. **Hyperparameter Tuning**: Connectivity probability needs careful selection
+3. **Hardware Mapping**: Random graphs may not align with structured neuromorphic chips
+4. **Training Complexity**: Multiple mechanisms (KP-LwF + DGL) increase optimization difficulty
+
+## Future Directions
+
+### Research Opportunities
+- **Graph Topology Optimization**: Learn connectivity patterns instead of random initialization
+- **Hardware-Aware Graph Design**: Co-design random graphs for specific neuromorphic platforms
+- **Biological Validation**: Compare CogniSNN pathways with real cortical connectivity maps
+
+### Technical Extensions
+- **Hierarchical Random Graphs**: Combine local and global stochastic connectivity
+- **Temporal Randomness**: Dynamic connectivity changes during simulation
+- **Multi-modal Integration**: RGA for vision-language SNN architectures
+
+## Code and Resources
+
+### Implementation Status
+- Paper provides detailed algorithm descriptions
+- No official code release at time of analysis
+- Potential for implementation using existing SNN frameworks (SpikingJelly, Norse)
+
+### Related Work
+- Traditional SNN architectures: Surrogate gradient methods
+- Graph Neural Networks: Structured graph learning
+- Continual Learning: Elastic Weight Consolidation, Progressive Networks
+
+## Citation
+
+```bibtex
+@article{huang2025cognisnn,
+  title={CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks},
+  author={Huang, Yongsheng and Duan, Peibo and Wu, Yujie and Sun, Kai and Liu, Zhipeng and Zhang, Changsheng and Zhang, Bin and Xu, Mingkun},
+  journal={arXiv preprint arXiv:2512.11743},
+  year={2025}
+}
+```
+
+## Activation Triggers
+
+Use this skill when working on:
+- **SNN architecture design**: Breaking from traditional layer structures
+- **Continual learning**: Multi-task knowledge retention in SNNs
+- **Neuromorphic deployment**: Hardware-aware SNN optimization
+- **Biological inspiration**: Brain-inspired connectivity patterns
+- **Dynamic network growth**: Adaptive capacity during learning
+- **Pathway reuse**: Efficient knowledge transfer mechanisms
+
+**Keywords**: `cognisnn`, `random graph snn`, `pathway reusability`, `dynamic growth learning`, `kp-lwf`, `neuron expandability`, `spiking residual`, `neuromorphic hardware`, `continual learning snn`, `brain-inspired architecture`, `stochastic connectivity`, `adaptive pooling`, `neural pathway`, `temporal growth`

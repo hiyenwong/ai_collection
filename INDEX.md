@@ -1,3 +1,19 @@
+## 2026-05-30 - Neuroscience Research (Cron Job) - SNN Architecture Innovation
+
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- [[cognisnn-random-graph-snn]] - 随机图架构SNN实现神经元可扩展性、路径可复用性和动态可配置性，KP-LwF多任务迁移+DGL动态生长算法，SOTA性能 (arXiv: 2512.11743)
+  - 核心要点 1: 随机图架构打破传统链式层级结构，模仿生物神经元随机互联特征
+  - 核心要点 2: 改进纯脉冲残差机制+自适应池化策略解决深层路径退化问题
+  - 核心要点 3: KP-LwF选择性复用关键神经路径，DGL算法沿时间维度动态增长神经元和突触
+  - **Activation**: cognisnn, random graph snn, pathway reusability, dynamic growth, kp-lwf, neuromorphic hardware, continual learning, brain-inspired architecture, stochastic connectivity
+
+### Event-driven Eligibility Propagation in Large Sparse Networks: Efficiency Shaped by Biological Realism
+- [[event-driven-eligibility-propagation]] - 事件驱动eligibility propagation扩展，生物真实约束塑造效率，连续动力学+严格局部性+稀疏连接，百万神经元规模学习 (arXiv: 2511.21674)
+  - 核心要点 1: 时间驱动转为事件驱动，仅处理脉冲事件，稀疏网络开销骤降
+  - 核心要点 2: 三大生物约束：连续动力学、严格局部性（突触仅用局部信息）、稀疏连接（10%连接概率）
+  - 核心要点 3: Neuromorphic MNIST成功训练，跨越机器学习与计算神经科学的桥梁
+  - **Activation**: event-driven e-prop, eligibility trace, sparse snn, biologically plausible, local plasticity, neuromorphic hardware, scalability, recurrent snn, synaptic tag
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Embodied VR Feedback
 
 ### Embodied VR Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
