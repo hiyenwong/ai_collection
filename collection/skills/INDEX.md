@@ -1,4 +1,14 @@
 
+## 2026-05-31 - Neuroscience Research (Cron Job)
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[snn-sequence-timing-replay-v2]] - Spiking Temporal Memory (sTM) model for encoding sequence timing through sequential population activation; oscillatory background as clock signal for replay speed control (arXiv: 2605.22523)
+  - Element duration represented by sequential activation of element-specific neuronal populations
+  - Oscillatory background inputs serve as clock signal for flexible replay speed modulation
+  - Unique sparse spatiotemporal patterns encode elapsed time
+  - Replay speed correlates with global oscillatory activity (EEG/LFP)
+  - **Activation**: sequence timing, replay speed, spiking temporal memory, oscillatory dynamics, sTM model, temporal encoding
+
 ## 2026-05-28 - Systems Engineering + Quantum Computing (Cron Job)
 
 ### Quantum-Native Maximum Likelihood Detection in Random Access Channel with Overloaded MIMO
