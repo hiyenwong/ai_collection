@@ -1,3 +1,12 @@
+## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
+
+### A Tutorial on Portfolio Selection with Quantum Computing
+- [[quantum-portfolio-optimization-qaoa]] - 量子计算在投资组合优化中的系统方法论，涵盖QUBO建模、QAOA算法、约束保持混合器、误差缓解技术 (arXiv: 2312.02173)
+  - 核心要点 1: 将Markowitz均值-方差投资组合模型转化为QUBO形式，使用惩罚项处理预算和基数约束
+  - 核心要点 2: 约束保持混合器(XY-mixer)比传统X-mixer更优，自动保持在可行子空间，减少不可行解
+  - 核心要点 3: NISQ时代建议浅层电路+ZNE误差缓解+绝热参数初始化，避免Barren Plateau问题
+  - **Activation**: quantum portfolio, QAOA portfolio, QUBO modeling, XY-mixer, constraint-preserving mixer, NISQ finance, 量子投资组合, 量子金融
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 7
 
 ### Neural-Behavioral Representation of Natural Whole-body Movement in Monkeys
