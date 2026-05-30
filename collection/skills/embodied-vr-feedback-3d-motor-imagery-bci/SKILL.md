@@ -1,274 +1,222 @@
 ---
-skill_name: embodied-vr-feedback-3d-motor-imagery-bci
-description: Embodied VR feedback methodology for continuous 3D motor imagery BCI decoding. First systematic investigation showing VR feedback elicits more decodable and generalisable neural representations than screen feedback. Achieves r=0.762 correlation for imagined movement.
-tags: [neuroscience, bci, motor-imagery, vr-feedback, neural-representation, continuous-decoding, neurorehabilitation]
+skill_id: embodied-vr-feedback-3d-motor-imagery-bci
+name: Embodied VR Feedback for 3D Motor Imagery BCI
+description: Embodied Virtual Reality feedback reshapes neural representations to support continuous 3D motor imagery decoding in brain-computer interfaces
 version: 1.0
-created: 2026-05-30
-author: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles
-arxiv_id: 2605.29677v1
-categories: [cs.HC, eess.SP, q-bio.NC]
+author: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle
+arxiv_id: 2605.29677
+submission_date: 2026-05-28
+categories:
+  - neuroscience
+  - bci
+  - motor-imagery
+  - vr-feedback
+  - neural-representations
+tags:
+  - embodied VR feedback
+  - 3D motor imagery
+  - continuous BCI
+  - CNN-LSTM decoder
+  - neural representations
+  - sensorimotor-parietal
+  - functional connectivity
+activation_keywords:
+  - embodied VR feedback
+  - motor imagery BCI
+  - 3D virtual limb control
+  - continuous brain-computer interface
+  - VR vs screen feedback
+  - neural representations reshaping
+dependencies:
+  - VR system
+  - EEG/fMRI recording
+  - CNN-LSTM decoder
+  - motor imagery training
 ---
 
-# Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous 3D Motor Imagery Decoding
+# Embodied VR Feedback Reshapes Neural Representations to Support Continuous 3D Motor Imagery Decoding
 
-## 概述
+## Overview
 
-首个系统研究显示，具身虚拟现实(VR)反馈相比屏幕反馈能引发更具可解码性和泛化性的神经表征。使用CNN-LSTM解码器实现连续3D运动想象解码，VR反馈下达到r=0.762相关性，显著超越屏幕反馈(r=0.672)。
+本研究首次系统性地调查了实时 3D 虚拟肢体控制中的具身 VR 反馈如何通过运动想象驱动，以及反馈模态和纵向训练如何塑造神经表征和解码性能。研究涉及 10 个受试者，10 个纵向训练 sessions。
 
-**核心创新**：
-- 首个连续3D运动想象BCI的VR反馈系统研究
-- 10名参与者10次纵向实验
-- VR反馈引发更可解码的神经表征
-- 建立具身空间反馈作为下一代BCI设计原则
+**arXiv**: [2605.29677](https://arxiv.org/abs/2605.29677)
 
-## 方法论
+**Submitted**: 28 May 2026
 
-### 1. 实验设计
+**Authors**: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle
 
-**参与者与训练**：
-- 10名参与者
-- 10次纵向训练session
-- 每session包含VR和屏幕反馈对比
+**Journal**: Submitted to Nature Biomedical Engineering
 
-**任务设计**：
-- 3D虚拟肢体控制
-- 运动想象驱动
-- 实时连续轨迹解码
+## Core Innovation
 
-### 2. 反馈模态对比
+### 1. Embodied VR Feedback System
+- **First Systematic Investigation**: 首次系统性调查具身 VR 反馈在实时 3D 虚拟肢体控制中的作用
+- **Longitudinal Training**: 10 个受试者，10 个纵向训练 sessions
+- **Real-time Control**: 实时 3D 虚拟肢体控制，由运动想象驱动
 
-**VR反馈特点**：
-- 具身空间反馈
-- 第一人称视角
-- 3D肢体运动可视化
-- 沉浸式环境
+### 2. Three Evaluation Strategies
+- **Fixed Decoder Generalisation (FDG)**: 实际在线性能，固定解码器泛化
+- **Sequential Adaptive Training (SAT)**: 定期重新训练，顺序适应训练
+- **Within-Session Reconstruction (WSR)**: 会话内上限估计，会话内重建
 
-**屏幕反馈特点**：
-- 传统2D显示
-- 第三人称视角
-- 屏幕平面显示
+### 3. CNN-LSTM Decoder
+- **High Performance**: VR 下 imagined movement correlations r = 0.762
+- **Screen Baseline**: Screen feedback 下 r = 0.672
+- **VR Advantage**: VR 显著优于 screen feedback
 
-### 3. 评估策略
+## Key Results
 
-三种性能评估策略：
+### Performance Comparison
+| Feedback | Correlation | Improvement |
+|----------|------------|-------------|
+| VR       | r = 0.762  | 8.9-13.0%   |
+| Screen   | r = 0.672  | baseline    |
 
-1. **Fixed Decoder Generalisation (FDG)**:
-   - 实际在线性能
-   - 固定解码器跨session泛化
+- **VR Significant Advantage**: VR 在所有策略和运动维度上显著优于 screen (p <= 0.002, d = 1.42-2.05)
+- **Generalisable Representations**: VR 优势在固定解码器（无重新训练）下持续存在
+- **Inherently More Decodable**: 具身 VR 反馈产生本质上更可解码和可泛化的神经表征
 
-2. **Sequential Adaptive Training (SAT)**:
-   - 周期性重新训练
-   - 自适应解码器
+### Statistical Analysis
+- **Linear Mixed-Effects Model**: 反馈模态和运动轴的主效应稳健
+- **No Interaction**: 无交互效应
+- **All Dimensions**: 所有运动维度 VR 优势显著
 
-3. **Within-Session Reconstruction (WSR)**:
-   - 会内上限估计
-   - 最佳性能参考
+## Neurophysiological Findings
 
-### 4. CNN-LSTM解码器
+### 1. Enhanced Desynchronisation
+- **Sensorimotor-Parietal**: VR 产生更强的 sensorimotor-parietal 去同步化
+- **Enhanced Connectivity**: 增强 motor-frontal 功能连接
 
-**架构**：
-- CNN: 特征提取
-- LSTM: 时序建模
-- 输出: 3D运动轨迹
+### 2. Anterior Insula Engagement
+- **Pervasive Engagement**: 所有频率波段的前部脑岛参与
+- **Real Movement Patterns**: 与真实运动执行相关的模式
 
-**性能**：
-- VR反馈: r = 0.762
-- 屏幕反馈: r = 0.672
+### 3. Superior Parietal Lobule Coupling
+- **Increased Coupling**: 增加的上顶叶耦合
+- **Spatial Processing**: 空间处理相关
 
-## 研究发现
+## Neural Representation Reshaping
 
-### 1. VR显著优势
+### VR vs Screen Feedback
+- **VR**: 具身空间反馈
+- **Screen**: 传统屏幕反馈
+- **Reshaping Effect**: VR 重塑神经表征
 
-**性能提升**：
-- VR超越屏幕反馈8.9-13.0%
-- 所有策略和运动维度
-- p <= 0.002, d = 1.42-2.05
+### Brain Network Changes
+- **Sensorimotor Network**: 感觉运动网络激活增强
+- **Parietal Cortex**: 顶叶皮层去同步化增强
+- **Frontal-Motor Connectivity**: 额叶-运动连接增强
 
-**泛化能力**：
-- 固定解码器下保持优势
-- 无需重新训练
-- 本质上更具可解码性和泛化性
+## Applications
 
-### 2. 神经生理机制
+### 1. Continuous BCIs
+- **Next-Generation BCI Design**: 下一代连续 BCI 设计原则
+- **Intuitive Motor Control**: 直观运动控制
+- **Neurorehabilitation**: 神经康复应用
 
-**脑活动模式差异**：
+### 2. VR-based Training
+- **Embodied Feedback Design**: 具身反馈设计
+- **Longitudinal Training**: 纵向训练方案
+- **Performance Enhancement**: 性能增强
 
-VR反馈特征：
-- 更强的感觉运动-顶叶去同步化
-- 增强的运动-额叶功能连接
-- 前岛叶广泛参与（所有频段）
-- 上顶叶连接增强
-- 类似真实运动执行模式
+### 3. Neural Rehabilitation
+- **Stroke Rehabilitation**: 脑卒中康复
+- **Motor Recovery**: 运动恢复
+- **Spatial Feedback**: 空间反馈治疗
 
-**频段分析**：
-- Alpha去同步化增强
-- Beta频段连接增强
-- Gamma频段岛叶参与
-- 多频段协同激活
+## Implementation Considerations
 
-### 3. 脑区参与
+### VR System Requirements
+- **Embodied Virtual Reality**: 具身虚拟现实系统
+- **3D Virtual Limb**: 3D 虚拟肢体渲染
+- **Real-time Feedback**: 实时反馈系统
 
-**关键脑区**：
+### Neural Recording
+- **EEG/fMRI**: EEG 或 fMRI 记录
+- **Motor Imagery**: 运动想象任务
+- **Continuous Decoding**: 连续解码
 
-1. **感觉运动皮层**:
-   - 运动计划
-   - 运动想象
-
-2. **顶叶**:
-   - 空间处理
-   - 体感整合
-   - 上顶叶连接增强
-
-3. **前岛叶**:
-   - 具身感知
-   - 多频段参与
-   - 持续激活
-
-4. **额叶**:
-   - 运动控制
-   - 功能连接增强
-
-### 4. 统计分析
-
-**线性混合效应模型**：
-- 反馈模态主效应显著
-- 运动轴主效应显著
-- 无交互效应
-- 证实稳健性
-
-## 应用场景
-
-### 1. 神经康复
-- 脑卒中康复
-- 运动功能恢复
-- 具身反馈训练
-
-### 2. 连续BCI系统
-- 直观运动控制
-- 机器人操控
-- 义肢控制
-
-### 3. 运动想象研究
-- 神经表征塑造
-- 反馈效应研究
-- 训练优化
-
-### 4. VR康复系统
-- 具身康复训练
-- 空间反馈设计
-- 家庭康复
-
-## 关键洞察
-
-### VR反馈优势机制
-
-**为什么VR更有效**：
-
-1. **具身感知增强**:
-   - 第一人称视角
-   - 身体所有权感
-   - 空间一致性
-
-2. **神经表征重塑**:
-   - 激活真实运动相关脑区
-   - 增强感觉运动整合
-   - 提高解码性
-
-3. **泛化能力**:
-   - 固定解码器保持性能
-   - 跨session稳定
-   - 个体差异减少
-
-### 设计原则
-
-**下一代BCI设计启示**：
-
-1. **具身空间反馈**:
-   - 必须包含空间信息
-   - 第一人称视角优先
-   - 3D可视化
-
-2. **反馈模态选择**:
-   - VR优于屏幕
-   - 具身反馈优先
-   - 沉浸式环境
-
-3. **纵向训练优化**:
-   - 固定解码器可行
-   - 减少重新训练需求
-   - 提高系统稳定性
-
-## 实现要点
-
-### VR系统集成
-
-```python
-# 概念性VR反馈BCI系统
-class EmbodiedVRBCI:
-    def __init__(self):
-        self.decoder = CNNLSTMDecoder()
-        self.vr_feedback = VREnvironment()
-        self.eeg_processor = EEGProcessor()
-    
-    def run_session(self, participant):
-        # 1. EEG信号采集
-        eeg_signal = self.eeg_processor.collect()
-        
-        # 2. 解码运动轨迹
-        trajectory = self.decoder.predict(eeg_signal)
-        
-        # 3. VR具身反馈
-        self.vr_feedback.display_limb_movement(
-            trajectory,
-            viewpoint='first_person',  # 第一人称
-            dimensions='3D'           # 3D空间
-        )
-        
-        return trajectory
+### Decoder Architecture
+```
+CNN-LSTM Decoder:
+- CNN: Spatial feature extraction
+- LSTM: Temporal sequence processing
+- Output: 3D movement trajectory
 ```
 
-### 脑活动监测
+## Training Protocol
 
-**关键指标**：
-- 感觉运动顶叶去同步化
-- 运动额叶连接强度
-- 前岛叶激活程度
-- 上顶叶耦合强度
+### Longitudinal Sessions
+- **10 Sessions**: 10 个训练 sessions
+- **10 Participants**: 10 个受试者
+- **3 Strategies**: FDG, SAT, WSR
 
-## 相关技能
+### Evaluation Metrics
+- **Correlation**: Movement trajectory correlation
+- **Generalisation**: Decoder generalisation ability
+- **Neurophysiological**: Brain activity patterns
 
-- [[bci-rehabilitation-protocols]] - BCI康复协议
-- [[neural-digital-twins-bci]] - 神经数字孪生BCI
-- [[mind2drive-eeg-driver-intention]] - EEG驱动意图预测
+## Key Design Principle
 
-## 参考文献
+**Embodied Spatial Feedback**: 具身空间反馈作为下一代连续 BCI 的关键设计原则
 
-- McShane et al. (2026) "Embodied Virtual Reality Feedback Reshapes Neural Representations" arXiv:2605.29677v1
-- 连续BCI研究基础文献
-- VR反馈神经效应研究
+### Why VR Outperforms Screen?
+1. **Embodied Experience**: 具身体验增强运动想象
+2. **Spatial Representation**: 空间表征更接近真实运动
+3. **Neural Engagement**: 神络参与更强
+4. **Functional Connectivity**: 功能连接增强
 
-## 未来方向
+## Limitations
 
-1. **优化VR系统**:
-   - 更轻量VR设备
-   - 更真实肢体模型
-   - 多感官整合
+1. **Sample Size**: 10 个受试者相对较小
+2. **VR System Cost**: VR 系统成本较高
+3. **Longitudinal Training**: 需要长期训练
 
-2. **扩展应用**:
-   - 不同运动类型
-   - 多肢体协同
-   - 任务特异性训练
+## Future Directions
 
-3. **神经机制研究**:
-   - fMRI验证
-   - 更深入脑区分析
-   - 个体差异因素
+1. **Larger Sample**: 扩大样本规模
+2. **Clinical Trials**: 临床试验研究
+3. **Multi-modal Integration**: 多模态集成
+4. **Home-based VR**: 家庭 VR BCI 系统
 
-4. **临床应用**:
-   - 脑卒中康复试验
-   - 家庭VR康复系统
-   - 远程BCI训练
+## Data Availability
+
+- **Zenodo**: Data to be made available via Zenodo (DOI: https://doi.org/10.5281/zenodo.16047021)
+
+## References
+
+- arXiv:2605.29677 - Embodied VR Feedback Reshapes Neural Representations
+- Nature Biomedical Engineering (submitted)
+- Continuous BCI literature
+- VR-based neurorehabilitation
+
+## Citation
+
+```bibtex
+@article{mcshane2026embodiedvr,
+  title={Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding},
+  author={McShane, Niall and Korik, Attila and McCreadie, Karl and Du Bois, Naomi and Charles, Darryl and Coyle, Damien},
+  journal={arXiv preprint arXiv:2605.29677},
+  year={2026},
+  note={Submitted to Nature Biomedical Engineering}
+}
+```
+
+## Clinical Relevance
+
+### Neurorehabilitation Applications
+- **Stroke Rehabilitation**: 脑卒中康复
+- **Spinal Cord Injury**: 脊髓损伤康复
+- **Motor Recovery**: 运动功能恢复
+
+### BCI Design Principles
+- **Embodied Feedback**: 具身反馈作为关键设计原则
+- **Spatial VR**: 空间 VR 反馈增强解码
+- **Longitudinal Training**: 纵向训练方案
 
 ---
 
-**Activation**: VR feedback, BCI, motor imagery, neural representation, continuous decoding, embodied feedback, neurorehabilitation, EEG decoding
+**Activation Pattern**:
+- 当用户询问 "embodied VR feedback", "motor imagery BCI", "3D virtual limb control", "VR vs screen feedback", "continuous brain-computer interface", "neural representations reshaping" 时激活此技能
+- 适用于 BCI 设计、VR 神经康复、运动想象研究、神经表征研究

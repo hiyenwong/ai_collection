@@ -1,191 +1,173 @@
 ---
-skill_name: brain-it-vqa-fmri-visual-question-answering
-description: Brain-IT-VQA framework for visual question answering from fMRI brain signals. Decodes language tokens from brain activity and integrates with language model. Includes NSD-VQA benchmark dataset with 20 controlled question categories.
-tags: [neuroscience, fmri, vqa, brain-decoding, visual-question-answering, language-model, neural-representation]
+skill_id: brain-it-vqa-fmri-visual-question-answering
+name: Brain-IT-VQA fMRI Visual Question Answering
+description: Framework for visual question answering from fMRI signals using Brain Interaction Transformer
 version: 1.0
-created: 2026-05-30
 author: Roman Beliy, Matias Cosarinsky, Oliver Heinimann, Navve Wasserman, Michal Irani
-arxiv_id: 2605.29588v1
-categories: [cs.CV, cs.AI, q-bio.NC]
+arxiv_id: 2605.29588
+submission_date: 2026-05-28
+categories:
+  - neuroscience
+  - brain-decoding
+  - fmri
+  - vqa
+  - visual-reconstruction
+tags:
+  - fMRI decoding
+  - visual question answering
+  - Brain-IT
+  - language tokens
+  - NSD-VQA
+  - visual representations
+activation_keywords:
+  - Brain-IT
+  - fMRI VQA
+  - visual question answering
+  - brain decoding
+  - NSD-VQA
+  - language tokens from brain
+dependencies:
+  - Brain Interaction Transformer
+  - fMRI data processing
+  - language model integration
+  - NSD-VQA benchmark
 ---
 
 # Brain-IT-VQA: From Brain Signals to Answers
 
-## 概述
+## Overview
 
-Brain-IT-VQA是首个从fMRI脑信号进行视觉问答(VQA)的框架，基于Brain Interaction Transformer (Brain-IT)。该方法从脑活动解码语言token，并与语言模型集成回答视觉问题。
+Brain-IT-VQA 是一个从 fMRI 信号进行视觉问答的框架。该框架基于 Brain Interaction Transformer (Brain-IT)，解码语言 tokens 并与语言模型集成来回答视觉问题。论文还引入了 NSD-VQA，一个用于 fMRI 视觉问答的新数据集和基准。
 
-**核心创新**：
-- 首个fMRI-based VQA框架
-- 创建NSD-VQA基准数据集（20个控制问题类别）
-- 超越之前fMRI captioning和VQA方法
-- 作为研究脑表征结构的工具
+**arXiv**: [2605.29588](https://arxiv.org/abs/2605.29588)
 
-## 方法论
+**Submitted**: 28 May 2026
 
-### 1. Brain Interaction Transformer (Brain-IT)
+**Authors**: Roman Beliy, Matias Cosarinsky, Oliver Heinimann, Navve Wasserman, Michal Irani
 
-**架构**：
-- 从fMRI信号解码语言token
-- 与预训练语言模型集成
-- 支持多层级视觉理解
+## Core Innovation
 
-**关键组件**：
-- 脑信号编码器
-- Token解码器
-- 语言模型集成器
+### 1. Brain-IT-VQA Framework
+- **Brain Interaction Transformer (Brain-IT)**：从脑活动中解码语言 tokens
+- **Language Model Integration**：集成解码的 tokens 与语言模型回答视觉问题
+- **Substantial Performance Improvement**：大幅超越现有 fMRI captioning 和 VQA 方法
 
-### 2. NSD-VQA 数据集
+### 2. NSD-VQA Dataset
+- **New Benchmark**: 专门用于 fMRI 视觉问答的新数据集
+- **Rich Annotations**: 平均每张图像 20 个问答对
+- **20 Controlled Question Categories**: 控制的 20 个问题类别
+- **Disentangled Visual Understanding**: 解耦多个层次的视觉理解
+- **Reliable Evaluation**: 尽管有限的 fMRI 测试数据，仍能提供更可靠和可解释的评估
 
-**特点**：
-- 平均每张图像20个问答对
-- 20个控制问题类别
-- 解耦多层级视觉理解
-- 提供可靠和可解释的评估
+## Key Contributions
 
-**问题类别**：
-- 物体识别
-- 场景理解
-- 空间关系
-- 颜色/形状属性
-- 动作/交互
-- 抽象语义
+1. **Predictive Framework**: Brain-IT-VQA 提供强大的预测框架
+2. **Research Tool**: 作为研究脑表征的工具
+3. **Quantitative Analysis**: 量化哪些形式的视觉和语义信息可以从 fMRI 响应中可靠解码
+4. **Brain Region Analysis**: 分析不同脑区对不同问题类型的贡献
 
-### 3. 脑表征分析
+## Technical Details
 
-**脑区贡献分析**：
-- 定量哪些视觉和语义信息可从fMRI解码
-- 分析不同脑区对不同问题类型的贡献
-- 研究视觉表征结构
-
-**脑区参与**：
-- 视觉皮层（V1-V4）
-- 高级视觉区域（IT）
-- 语言相关区域
-- 多模态整合区域
-
-## 实现要点
-
-### 技术框架
-
-```python
-# 概念性实现框架
-class BrainITVQA:
-    def __init__(self):
-        self.brain_encoder = BrainInteractionTransformer()
-        self.token_decoder = TokenDecoder()
-        self.language_model = LLM()
-    
-    def forward(self, fmri_signal, question):
-        # 1. 编码脑信号
-        brain_features = self.brain_encoder(fmri_signal)
-        
-        # 2. 解码语言token
-        visual_tokens = self.token_decoder(brain_features)
-        
-        # 3. 与语言模型集成
-        answer = self.language_model.generate(
-            visual_tokens=visual_tokens,
-            question=question
-        )
-        
-        return answer
+### Framework Architecture
+```
+fMRI Activity → Brain-IT → Language Tokens → Language Model → Visual Question Answers
 ```
 
-### 性能评估
+### NSD-VQA Dataset Features
+- **Image-fMRI VQA**: 提供丰富的问答对
+- **Controlled Categories**: 20 个控制问题类别
+- **Disentangled Understanding**: 多层次的视觉理解解耦
+- **Reliable Benchmark**: 可解释的评估框架
 
-**评估策略**：
-- Fixed Decoder Generalisation (FDG)
-- Sequential Adaptive Training (SAT)
-- Within-Session Reconstruction (WSR)
+## Research Findings
 
-**基准对比**：
-- 超越之前fMRI captioning方法
-- 超越之前fMRI VQA方法
+### Visual and Semantic Decoding
+- 量化从 fMRI 响应到自然图像的可靠解码能力
+- 识别可解码的视觉和语义信息类型
 
-## 应用场景
+### Brain Region Contributions
+- 分析不同脑区对不同问题类型的作用
+- 揭示脑表征的结构
 
-### 1. 神经科学研究
-- 研究视觉表征结构
-- 分析脑区功能分工
-- 理解多模态整合机制
+## Applications
 
-### 2. 脑机接口
-- 视觉内容解码
-- 语义理解接口
-- 辅助视觉障碍者
+### 1. Brain Decoding Research
+- fMRI 视觉解码研究工具
+- 脑表征研究方法
 
-### 3. 认知科学
-- 视觉认知建模
-- 语言-视觉交互研究
-- 脑活动解释工具
+### 2. Visual Question Answering
+- fMRI-based VQA 系统
+- 视觉理解评估
 
-## 研究发现
+### 3. Neuroimaging Analysis
+- 脑活动解码研究
+- 多模态脑数据分析
 
-### 可解码信息类型
+## Implementation Considerations
 
-**视觉信息**：
-- 物体类别
-- 场景类型
-- 空间布局
-- 颜色/形状
+### Data Requirements
+- fMRI 记录的脑活动数据
+- NSD-VQA 基准数据集
 
-**语义信息**：
-- 物体属性
-- 动作关系
-- 抽象概念
-- 情景理解
+### Model Components
+- Brain Interaction Transformer (Brain-IT)
+- Language model integration layer
+- VQA 解码架构
 
-### 脑区贡献
+### Evaluation Framework
+- NSD-VQA benchmark
+- Controlled question categories
+- Multi-level visual understanding assessment
 
-**不同问题类型的脑区参与**：
-- 物体识别：高级视觉区域
-- 空间关系：顶叶区域
-- 抽象语义：前额叶
-- 多模态整合：颞叶
+## Related Work
 
-## 关键洞察
+### fMRI Decoding
+- Visual reconstruction from fMRI
+- Brain-based captioning
+- Previous fMRI VQA approaches
 
-### 方法优势
+### Visual Understanding
+- VQA systems
+- Multi-level visual processing
+- Semantic information extraction
 
-1. **强预测框架**：超越之前方法
-2. **脑表征工具**：理解脑活动结构
-3. **可靠评估**：NSD-VQA基准提供控制问题类别
-4. **解耦分析**：区分多层级视觉理解
+## Limitations
 
-### 研究意义
+1. **Limited fMRI Test Data**: fMRI 测试数据有限
+2. **Question Category Control**: 问题类别需要严格控制
+3. **Interpretability Challenges**: 虽然提供可解释评估，但仍存在挑战
 
-- 验证了fMRI信号包含丰富的语义信息
-- 揭示了不同脑区的功能分工
-- 提供了研究脑表征的新工具
-- 推动fMRI解码研究进展
+## Future Directions
 
-## 局限性
+1. **Dataset Expansion**: 扩展 NSD-VQA 数据集
+2. **Brain-IT Improvements**: 改进 Brain Interaction Transformer
+3. **Multi-modal Integration**: 多模态数据集成
+4. **Clinical Applications**: 临床应用研究
 
-- fMRI测试数据有限
-- 时间分辨率低
-- 需要大量训练数据
-- 个体差异影响性能
+## References
 
-## 未来方向
+- arXiv:2605.29588 - Brain-IT-VQA: From Brain Signals to Answers
+- Brain Interaction Transformer (Brain-IT)
+- NSD-VQA Dataset and Benchmark
 
-1. **改进解码精度**：更好的脑信号编码
-2. **扩展问题类型**：更复杂的语义理解
-3. **跨个体迁移**：减少个体差异影响
-4. **实时应用**：加快解码速度
-5. **多模态融合**：结合其他神经影像数据
+## Citation
 
-## 相关技能
+```bibtex
+@article{beliy2026brainitvqa,
+  title={Brain-IT-VQA: From Brain Signals to Answers},
+  author={Beliy, Roman and Cosarinsky, Matias and Heinimann, Oliver and Wasserman, Navve and Irani, Michal},
+  journal={arXiv preprint arXiv:2605.29588},
+  year={2026}
+}
+```
 
-- [[brain-dit-fmri-foundation-model]] - fMRI基础模型
-- [[visual-imagery-decoding-fmri]] - 视觉意象解码
-- [[brain-foundation-model-inversion]] - 脑基础模型反演
+## Code and Data
 
-## 参考文献
-
-- Beliy et al. (2026) "Brain-IT-VQA: From Brain Signals to Answers" arXiv:2605.29588v1
-- NSD (Natural Scenes Dataset) - fMRI数据集基础
+- **Data**: NSD-VQA dataset (to be made available)
+- **Code**: Brain-IT-VQA framework implementation
 
 ---
 
-**Activation**: fMRI, visual question answering, brain decoding, VQA, neural representation, language model, brain imaging
+**Activation Pattern**: 
+- 当用户询问 "fMRI VQA", "Brain-IT", "visual question answering from brain signals", "NSD-VQA", "brain decoding language" 时激活此技能
+- 适用于脑解码研究、fMRI 视觉理解、VQA 系统设计

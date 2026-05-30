@@ -1,3 +1,19 @@
+## 2026-05-31 - Neuroscience Research (Cron Job) - fMRI & BCI
+
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - fMRI 视觉问答框架，Brain Interaction Transformer 解码语言 tokens 并与语言模型集成回答视觉问题 (arXiv: 2605.29588)
+  - Brain-IT-VQA framework：Brain Interaction Transformer 解码语言 tokens + 语言模型集成
+  - NSD-VQA dataset：新基准，平均每图20问答对，20控制问题类别，解耦多层次视觉理解
+  - 量化可解码的视觉/语义信息类型，分析不同脑区对问题类型的贡献
+  - **Activation**: Brain-IT, fMRI VQA, visual question answering, brain decoding, NSD-VQA, language tokens from brain
+
+### Embodied VR Feedback Reshapes Neural Representations to Support Continuous 3D Motor Imagery Decoding
+- [[embodied-vr-feedback-3d-motor-imagery-bci]] - 具身 VR 反馈重塑神经表征支持连续 3D 运动想象解码，VR 性能 r=0.762 显著优于 screen r=0.672 (arXiv: 2605.29677)
+  - 10 受试者 × 10 sessions，3D 虚拟肢体控制，CNN-LSTM decoder
+  - VR 显著优势 8.9-13.0% (p<=0.002, d=1.42-2.05)，固定解码器泛化，本质上更可解码
+  - 神络生理：sensorimotor-parietal 去同步增强，motor-frontal 功能连接增强，前部脑岛全波段参与，上顶叶耦合增加
+  - **Activation**: embodied VR feedback, motor imagery BCI, 3D virtual limb control, VR vs screen feedback, continuous BCI, neural representations reshaping
+
 ## 2026-05-31 - Neuroscience Research (Cron Job) - Brain Oscillation Framework
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
