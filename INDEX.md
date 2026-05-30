@@ -1,3 +1,19 @@
+## 2026-06-01 - Information Science + Quantum (Cron Job - Hourly)
+
+### Meta-Quantum Ensemble Framework for Robust Network Intrusion Detection
+- [[meta-quantum-ensemble]] - 混合量子经典集成学习框架，融合 QSVM 和 QNN 输出通过随机森林元学习器提升网络入侵检测性能 (arXiv: 2605.28879)
+  - QSVM + QNN 双量子分支：基于不同学习机制的互补决策边界
+  - 元学习器捕获量子分支间的一致/不一致模式
+  - 在 TON IoT 和 CICIDS2017 上改进低 FPR 检测和可靠性指标
+  - **Activation**: meta-quantum ensemble, quantum IDS, QSVM QNN fusion, hybrid quantum ensemble, quantum network security
+
+### Quantum Subliminal Learning
+- [[quantum-subliminal-learning]] - 量子模型隐式学习安全分析框架，检测通过公共接口继承的隐藏行为特征 (arXiv: 2605.29557)
+  - 辅助通道和任务通道两种蒸馏路径分析
+  - QNNs 保留大部分隐藏任务信号，而经典 NNs 几乎不传递
+  - 统一几何图景：传输由教师漂移幅度和可见隐藏相关漂移比例控制
+  - 量子模型供应链安全的具体威胁
+  - **Activation**: quantum subliminal learning, QNN security, quantum model distillation, hidden behavior quantum
 ## 2026-05-31 - Neuroscience Research (Cron Job) - fMRI & BCI
 
 ### Brain-IT-VQA: From Brain Signals to Answers

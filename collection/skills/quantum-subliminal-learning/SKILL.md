@@ -1,117 +1,160 @@
 ---
 name: quantum-subliminal-learning
-description: "Methodology for detecting and understanding subliminal learning in quantum neural networks — hidden behavioral trait inheritance through innocuous public interfaces."
+description: "Security analysis framework for detecting hidden behavioral traits in quantum machine learning models. Identifies subliminal learning through auxiliary-channel and task-channel distillation pathways with geometric analysis of teacher drift visibility."
+tags: [quantum, security, machine-learning, subliminal, model-supply-chain]
 ---
 
 # Quantum Subliminal Learning
 
-Methodology from arXiv:2605.29557 (May 2026). Extends subliminal learning — hidden behavioral traits inherited through public interfaces — to quantum models, revealing architecture-dependent vulnerabilities in quantum model supply chains.
-
 ## Description
 
-Machine learning models can inherit hidden behavioral traits through innocuous public interfaces. Classical NNs and QNNs both exhibit efficient auxiliary-channel subliminal learning (random inputs), but the **task channel** shows strong architecture dependence: classical NNs transmit little hidden-task information, while **QNNs retain most of the hidden-task signal**. A unified geometric picture explains both regimes.
+Security analysis framework for detecting and understanding hidden behavioral traits inherited by quantum machine learning models through innocuous public interfaces. Studies two distillation pathways — auxiliary-channel on random inputs and restricted task-channel where student matches public supervised output while hidden behavior resides on a disjoint task. Identifies that QNNs retain most hidden-task signal while classical NNs transmit little, controlled by teacher drift magnitude and fraction of hidden-task-relevant drift visible through public interface.
 
-**Activation**: quantum subliminal learning, model supply chain security, quantum distillation, hidden task inference, QNN security, teacher drift, geometric analysis of distillation, quantum model watermarking
+Based on: *Quantum Subliminal Learning* (arXiv: 2605.29557)
 
-## Core Concepts
+## Activation Keywords
 
-### 1. Two Distillation Pathways
+- quantum subliminal learning
+- QNN security analysis
+- quantum model distillation
+- hidden behavior quantum
+- quantum supply chain security
+- subliminal quantum ML
+- quantum model supply chain
 
-**Auxiliary Channel** (random inputs):
-- Teacher provides outputs on random/unlabeled inputs
-- Student learns to match teacher on both public task AND hidden task
-- Works efficiently for both classical NNs and QNNs
+## Tools Used
 
-**Task Channel** (restricted public interface):
-- Teacher only provides public supervised outputs
-- Hidden behavior resides on a disjoint task
-- **Architecture dependent**: Classical NNs → little hidden info transmitted; QNNs → most hidden signal retained
-
-### 2. Unified Geometric Picture
-
-Transmission is controlled by two factors:
-
-1. **Teacher drift magnitude**: $\|\Delta\theta\|$ — how far the teacher moves during distillation
-2. **Hidden-task visibility fraction**: What fraction of hidden-task-relevant drift remains observable through the public interface
-
-$$\text{Transmission} \propto \|\Delta\theta\| \cdot f_{\text{visible}}$$
-
-### 3. Architecture Dependence Mechanism
-
-Classical NNs have structured weight spaces where public-task optimization naturally suppresses hidden-task correlations. QNNs, with their high-dimensional unitary parameterization and measurement collapse, preserve hidden-task signal even when only public outputs are visible.
-
-## Implementation Steps
-
-### Step 1: Identify Distillation Scenario
-
-Determine which pathway applies:
-- **Auxiliary**: Teacher shares outputs on arbitrary inputs
-- **Task-restricted**: Teacher only shares labeled outputs for public task
-
-### Step 2: Analyze Teacher Drift
-
-Compute the parameter drift during training:
-- Track teacher parameters $\theta(t)$ throughout distillation
-- Compute drift direction and magnitude
-- Identify components aligned with hidden-task gradients
-
-### Step 3: Measure Hidden-Task Visibility
-
-For task-restricted distillation:
-- Compute Jacobian of public outputs w.r.t. parameters
-- Project hidden-task-relevant drift onto observable subspace
-- Calculate visibility fraction $f_{\text{visible}}$
-
-### Step 4: Assess Vulnerability
-
-- High visibility + large drift → significant subliminal leakage
-- Low visibility → classical-like protection
-- QNNs typically have higher $f_{\text{visible}}$ than classical NNs
-
-### Step 5: Mitigation Strategies
-
-- **Gradient clipping** on drift components aligned with hidden tasks
-- **Architecture modification** to reduce visibility fraction
-- **Differential privacy** noise injection during distillation
-- **Output regularization** to constrain public interface
+- terminal: Run quantum circuit simulations and security analysis
+- read_file: Load model weights and analysis scripts
+- write_file: Save security audit reports
+- web_search: Find quantum model benchmarks and datasets
 
 ## Usage Patterns
 
-### Pattern 1: Quantum Model Supply Chain Audit
+### Pattern 1: Auxiliary-Channel Subliminal Detection
 
-Audit quantum models received from third parties:
-```
-Risk: Hidden behavioral traits embedded via distillation
-Check: Measure parameter drift vs. public-task-only expected drift
-Flag: Excess drift in hidden-task-relevant directions
-```
-
-### Pattern 2: Controlled Hidden-Information Transfer
-
-Intentionally use subliminal channels for watermarking:
-```
-Goal: Embed ownership proof in quantum model
-Method: Train teacher with watermark on hidden task
-Verify: Extract watermark from student via auxiliary inputs
+```python
+# Both classical and quantum neural networks exhibit efficient
+# auxiliary-channel subliminal learning via random input probing
+def detect_auxiliary_subliminal(teacher_model, student_model, n_samples=1000):
+    random_inputs = np.random.randn(n_samples, teacher_model.input_dim)
+    teacher_outputs = teacher_model(random_inputs)
+    student_outputs = student_model(random_inputs)
+    # High correlation indicates subliminal information transfer
+    return compute_correlation(teacher_outputs, student_outputs)
 ```
 
-### Pattern 3: Architecture Security Comparison
+### Pattern 2: Task-Channel Architecture Dependence Analysis
 
-Compare classical vs. quantum model security:
+```python
+# Classical NNs transmit little hidden-task info through public-task interface
+# QNNs retain most hidden-task signal - architecture-dependent behavior
+def analyze_task_channel(teacher, student, public_task, hidden_task):
+    # Train student on public task only
+    student.fit(public_task.train_X, public_task.train_y)
+    
+    # Evaluate on hidden task (student should NOT know this)
+    hidden_performance = student.score(hidden_task.test_X, hidden_task.test_y)
+    
+    # High performance = subliminal leakage
+    return hidden_performance
 ```
-Classical NN: Natural suppression of hidden-task correlations
-QNN: Higher hidden-task visibility → requires additional protection
-Recommendation: Apply gradient clipping or DP to QNN distillation
+
+### Pattern 3: Teacher Drift Geometric Analysis
+
+```python
+# Unified geometric picture: transmission controlled by
+# (1) teacher drift magnitude, (2) fraction of hidden-task-relevant
+# drift visible through public interface
+def analyze_drift_visibility(teacher_params, public_interface, hidden_task_grads):
+    drift = compute_parameter_drift(teacher_params)
+    drift_magnitude = np.linalg.norm(drift)
+    visible_fraction = project_onto_public_space(drift, public_interface)
+    hidden_relevant = dot_product(visible_fraction, hidden_task_grads)
+    return drift_magnitude, hidden_relevant
 ```
 
-## Pitfalls
+## Instructions for Agents
 
-1. **Geometry assumption**: The unified geometric picture assumes smooth parameter landscapes. Non-smooth QNN cost landscapes may violate assumptions.
-2. **Task independence**: Methodology assumes public and hidden tasks are disjoint. Overlapping task spaces complicate analysis.
-3. **Classical NN generalization**: "Classical NNs transmit little" is architecture-dependent. Wide networks or specific architectures may differ.
-4. **Measurement basis**: QNN hidden-task visibility depends on measurement basis choice. Different bases yield different $f_{\text{visible}}$.
+### Step 1: Define Distillation Setup
+
+1. Identify teacher model (pre-trained QNN or classical NN)
+2. Define public task (what student is supposed to learn)
+3. Define hidden task (behavior that should NOT transfer)
+4. Ensure public and hidden tasks use disjoint input/output spaces
+
+### Step 2: Auxiliary-Channel Analysis
+
+1. Generate random inputs across the model's input domain
+2. Query both teacher and student with these random inputs
+3. Compute correlation/coherence between outputs
+4. High correlation on random inputs indicates subliminal learning channel
+
+### Step 3: Task-Channel Analysis
+
+1. Train student model exclusively on public task data
+2. Evaluate student performance on hidden task (should be at chance)
+3. If student performs above chance on hidden task, subliminal learning occurred
+4. Compare QNN vs. classical NN: QNNs show stronger hidden-task signal retention
+
+### Step 4: Geometric Drift Analysis
+
+1. Compute parameter drift during teacher training
+2. Project drift onto the public interface subspace
+3. Measure fraction of drift that is relevant to hidden task
+4. Use unified geometric model to predict transmission strength:
+   - Transmission ∝ (drift magnitude) × (visible hidden-relevant fraction)
+
+### Step 5: Security Assessment
+
+1. Document all identified subliminal channels
+2. Quantify information leakage for each channel
+3. Assess severity: what hidden behaviors could be inherited?
+4. Recommend mitigations:
+   - Add noise to public outputs to reduce drift visibility
+   - Use different architectures for teacher/student
+   - Implement formal verification of student behavior on hidden tasks
+
+## Error Handling
+
+### No Clear Separation Between Public and Hidden Tasks
+```
+If tasks overlap in feature space:
+  1. Redefine task boundaries to ensure orthogonality
+  2. Use task-specific feature extractors
+  3. Apply domain adaptation to separate task representations
+```
+
+### False Positive on Random Input Correlation
+```
+If high correlation on random inputs is expected (same architecture):
+  1. Use shuffled/permuted teacher outputs as baseline
+  2. Compare against random student model baseline
+  3. Focus on task-channel analysis as primary indicator
+```
+
+## Best Practices
+
+1. **Always test both channels**: Auxiliary and task-channel reveal different vulnerability patterns
+2. **Compare quantum vs. classical**: QNNs show architecture-dependent behavior that differs fundamentally from classical NNs
+3. **Use geometric analysis**: The unified geometric picture provides actionable insight into why and how subliminal learning occurs
+4. **Test across architectures**: Subliminal learning severity varies with model architecture, not just task definition
+5. **Document supply chain risks**: Hidden behavior inheritance is a concrete security concern for quantum model supply chains
+
+## Limitations
+
+- Analysis assumes access to both teacher and student model parameters/outputs
+- Does not cover all possible distillation pathways (e.g., gradient-based, feature-based)
+- Geometric analysis provides necessary but not sufficient conditions for subliminal learning
+- Limited to supervised learning scenarios; unsupervised/RL settings need separate analysis
 
 ## Resources
 
-- **arXiv**: [2605.29557](https://arxiv.org/abs/2605.29557) — Zhang, Chen
-- **Related**: quantum-ml-certification, quantum-ml-robustness, fhe-privacy-preserving-llm
+- **Paper**: arXiv:2605.29557 - "Quantum Subliminal Learning"
+- **Authors**: Shi-Xin Zhang, Yu-Qin Chen
+
+## Related Skills
+
+- quantum-ml-patterns: Reusable QML research patterns
+- quantum-ml-robustness: QML model testing and robustness
+- post-quantum-cryptographic-protocol-analysis: Security analysis patterns
