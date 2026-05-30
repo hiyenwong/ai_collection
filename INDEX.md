@@ -1,3 +1,21 @@
+
+## 2026-05-30 - Systems Engineering Research (Cron Job)
+
+### Optimization of Predictive Maintenance Schedules under Uncertainty: A Scenario-Based Theoretical Framework
+- [[predictive-maintenance-uncertainty-scenario]] - Scenario-based optimization framework integrating calendar, usage, and RUL-based maintenance information (arXiv: 2605.30222)
+  - Unified finite-horizon decision framework for multi-asset maintenance scheduling
+  - Expected-cost and tail-risk criteria for comparing maintenance schedules
+  - Integrates heterogeneous information sources: calendar intervals, usage limits, RUL estimates
+  - **Activation**: predictive maintenance optimization, maintenance scheduling uncertainty, scenario-based maintenance, RUL-based scheduling, multi-asset maintenance
+
+### BuilDyn: Excitation-Driven Data Generation for Building Thermal Dynamics Modeling and Control
+- [[buildyn-thermal-dynamics-control]] - Excitation-driven data generation framework for control-oriented building thermal modeling (arXiv: 2605.29849)
+  - Customizable excitation strategies for systematic state-space exploration
+  - Sampling from representative building distributions for transfer learning
+  - Python interface for ML pipeline integration and foundation model development
+  - **Activation**: building thermal dynamics, excitation-driven data, control-oriented modeling, building ML training data, BuilDyn framework
+
+
 ## 2026-05-30 - Neuroscience Research (Cron Job) - Part 5
 
 ### MIRAGE: Adaptive Multimodal Gating for Whole-Brain fMRI Encoding
