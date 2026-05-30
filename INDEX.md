@@ -1,4 +1,18 @@
-## 2026-05-31 - Information Science (Cron Job)
+## 2026-05-31 - Information Science + Quantum Mechanics (Cron Job)
+
+### QML Adversarial Robustness Verification
+- [[qml-adversarial-robustness-verification]] - Fidelity-based robustness verification framework for QML models with VeriQR tool and NISQ hardware validation (arXiv: 2605.29877)
+  - Fidelity-based robustness lower bound from measurement outcomes (no full tomography)
+  - SDP optimal bound for full model knowledge
+  - VeriQR: first dedicated QML robustness verification software tool
+  - **Activation**: QML robustness, quantum adversarial, QML verification, VeriQR, quantum machine learning robustness
+
+### Quantum Cryptography Chain Rules
+- [[quantum-crypto-chain-rules]] - Chain rules for conditional entropies in quantum cryptography security proofs with EAT framework (arXiv: 2605.29787)
+  - New intermediate chain rule improving Rényi EAT for device-adjacent settings
+  - Proves impossibility of natural DI chain rule tightening
+  - Unified framework for comparing existing chain rules
+  - **Activation**: quantum cryptography chain rules, EAT entropy accumulation, device-independent security, quantum conditional entropy
 
 ### Quantum Subliminal Learning
 - [[quantum-subliminal-learning]] - Quantum science and machine learning convergence paradigm, exploring learning below classical detection thresholds (arXiv: 2605.29557)
