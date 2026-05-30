@@ -1,3 +1,12 @@
+## 2026-05-31 - Neuroscience Research (Cron Job) - Brain Oscillation Framework
+
+### Brain Oscillation Synchronization Framework
+- [[brain-oscillation-synchronization-framework]] - 脑网络振荡同步统一计算框架：整合Kuramoto相位动力学+自适应延迟塑性+信息通量优化的综合方法论 (arXiv: 2605.23520, 2605.14680, 2105.08288)
+  - 核心机制：频率选择(延迟塑性)、递归共振(嵌入网络噪声)、同步社区(相位耦合)、信息最大化
+  - 关键发现：髓鞘化作为学习机制、嵌入网络优化信息通量、同步不是目标而是约束
+  - 应用场景：脑网络分析、神经调节建模、神经疾病动力学、BCI设计、神经形态硬件
+  - **Activation**: brain oscillation, Kuramoto synchronization, delay plasticity, information flux, recurrence resonance, phase coupling, frequency selection, network attractor, cortical microcircuit, myelination learning
+
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
 ### Brain Learning Principles Utilizing Non-Ideal Factors
