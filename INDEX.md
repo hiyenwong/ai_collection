@@ -20,6 +20,13 @@
 
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
 
+### Quantum Optimization Beyond QUBO for Industrial Logistics and Scheduling
+- [[hubo-quantum-optimization]] - Higher-Order Unconstrained Binary Optimization (HUBO) reduces qubit requirements vs QUBO for logistics/scheduling, but increases circuit depth via higher-order terms (arXiv: 2605.30252)
+  - HUBO captures complex constraints (correlated scheduling rules) impossible in standard QUBO form
+  - Fundamental trade-off: fewer qubits through compact encoding vs deeper circuits from k-local interaction terms
+  - Validated via bias-field digitized counterdiabatic quantum optimization on capacitated vehicle routing
+  - **Activation**: HUBO, higher-order optimization, beyond QUBO, industrial logistics, scheduling, qubit-depth trade-off, CVRP
+
 ### Quantum Reinforcement Learning for Dynamic Portfolio Optimization
 - [[quantum-rl-dynamic-portfolio]] - 量子强化学习(VQC)实现动态组合优化，QDDPG/QDQN量子变体比经典深度RL参数更少但性能相当 (arXiv: 2601.18811)
   - 核心要点 1: VQC替代经典神经网络作为策略/价值函数近似器，量子电路利用希尔伯特空间实现紧凑表征
