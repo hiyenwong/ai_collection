@@ -1,3 +1,12 @@
+## 2026-05-30 - Neuroscience Research (Cron Job) - Embodied VR Feedback
+
+### Embodied VR Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+- [[embodied-vr-feedback-reshapes-neural-representations]] - VR反馈重塑神经表征支持3D运动想象BCI解码，性能提升13% (arXiv: 2605.29677v1)
+  - VR反馈优于Screen反馈（r=0.762 vs 0.672），Cohen's d=1.42-2.05大效应
+  - 固定解码器证明VR引发更可解码神经表征，非适应性差异
+  - Sensorimotor-parietal去同步化增强，Anterior insula广泛参与所有频段
+  - **Activation**: embodied vr feedback, vr bci, 3d motor imagery, neural representations, continuous bci, sensorimotor decoding
+
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job) - Actuarial Runtime
 
 ### Foundations of a Time-Consistent Counterfactual Actuarial Runtime for Autonomous AI Agents
