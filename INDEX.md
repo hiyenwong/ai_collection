@@ -1,4 +1,16 @@
+## 2026-05-30 - Neuroscience Research (Cron Job) - Part 7
 
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - fMRI视觉问答突破框架，解码语言tokens并集成语言模型，创建NSD-VQA基准数据集 (arXiv: 2605.29588v1)
+  - 核心要点 1: 扩展Brain-IT架构，直接从fMRI脑信号解码语言tokens，实现视觉问答
+  - 核心要点 2: 创建NSD-VQA基准数据集，每张图像~20个问答对，20个控制类别，可解释评估
+  - **Activation**: Brain-IT-VQA, fMRI VQA, brain signals to answers, NSD-VQA, brain decoding language
+
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+- [[backpropagation-brain-hierarchy-misalignment]] - 反向传播梯度与大脑视觉层级不匹配，使用fMRI+MEG证明时空组织偏离生物学机制 (arXiv: 2605.28693v1)
+  - 核心要点 1: 梯度能预测脑信号，但其计算顺序和空间分布与大脑处理层级不符
+  - 核心要点 2: 深度网络与大脑共享相似表征内容，但使用根本不同的学习机制
+  - **Activation**: backpropagation brain, brain hierarchy, gradient misalignment, fMRI MEG, DINOv3
 
 ## 2026-05-30 - Economics, Investment + Quantum (Cron Job)
 
@@ -275,248 +287,226 @@
 
 ### Constrained Counterdiabatic Quantum Approximate Optimization Algorithm for Portfolio Optimization
 - [[constrained-counterdiabatic-qaoa-portfolio]] (enhanced) - CCD-QAOA with approximate adiabatic gauge potentials from nested commutators for constrained portfolio optimization (arXiv: 2605.06858)
-   100|  - Incorporates counterdiabatic terms into variational ansatz for improved convergence
-   101|  - Handles realistic budget and risk constraints with XY-mixer Hamiltonian
-   102|  - **Activation**: counterdiabatic QAOA, portfolio optimization, adiabatic gauge potential, constrained quantum optimization
-   103|
-   104|### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
-   105|- [[constraint-preserving-quantum-mixers]] (enhanced) - XY-mixer design methodology under Trotterized adiabatic evolution for constrained quantum optimization (arXiv: 2605.02465)
-   106|  - Constraint locality analysis for XY-mixer Hamiltonian design
-   107|  - Trotterized adiabatic evolution preserves feasibility throughout optimization
-   108|  - **Activation**: constraint preserving mixers, XY-mixer, Trotterized evolution, constrained quantum optimization
-   109|
-   110|     1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
-   111|     2|
-   112|     3|### Algorithms with Polynomially-Improved Approximation Factors for the 2→q Norm
-   113|     4|- [[norm-approximation-algorithms]] - Multiplicative weight update algorithm for matrix 2→q norm approximation with polynomial improvement over spectral methods, applications to hypercontractivity and quantum separability (arXiv: 2605.25303)
-   114|     5|  - MWU framework achieves O(n^{1/4-δ}) vs prior O(n^{1/4} log d)
-   115|     6|  - Applications: hypercontractivity testing, quantum separability certification, small-set expansion
-   116|     7|  - **Activation**: matrix norm approximation, 2-to-q norm, operator norm, hypercontractivity, multiplicative weight update, quantum separability
-   117|     8|
-   118|     9|### Bell's Theorem: Why Probability Factorisation Fails
-   119|    10|- [[bell-probability-factorization]] - Statistical foundations of Bell's theorem showing why joint probability factorization P(A,B|a,b,λ)=P(A|a,λ)P(B|b,λ) fails in quantum systems (arXiv: 2605.29589)
-   120|    11|  - Factorization assumption incompatible with quantum entanglement
-   121|    12|  - CHSH inequality as statistical diagnostic for non-classical correlations
-   122|    13|  - **Activation**: Bell theorem, probability factorization, quantum nonlocality, CHSH inequality, joint distributions
-   123|    14|
-   124|    15|### Comparing Classical Simulation and Sample-Based Learning of Quantum Systems
-   125|    16|- [[quantum-ml-simulation-learning-comparison]] - Empirical framework comparing simulability vs learnability for quantum systems via Born-rule statistics (arXiv: 2605.28986)
-   126|    17|  - Simulation (from classical description) and learning (from measurement samples) need not coincide
-   127|    18|  - Provides complexity-theoretic and empirical methodology for quantum advantage verification
-   128|    19|  - **Activation**: quantum simulation vs learning, sample-based quantum learning, simulability learnability, Born-rule statistics
-   129|    20|
-   130|    21|### Analytic Properties of the Jost Functions via the Poincaré-Picard Theorem
-   131|    22|- [[jost-function-analytic-ode]] - ODE-theoretic analysis of Jost function analyticity for quantum scattering and complex energy plane continuation (arXiv: 2605.28859)
-   132|    23|  - Applies Poincaré-Picard theorem to parameter-dependent radial Schrödinger equation
-   133|    24|  - Bridges mathematical analysis (ODE theory) with quantum scattering physics
-   134|    25|  - **Activation**: jost function, quantum scattering, analytic continuation, Poincaré-Picard, complex energy plane
-   135|    26|
-   136|    27|### HyperPrecision: High-Precision Numerical Evaluation of Multivariate Hypergeometric Functions
-   137|    28|- [[hypergeometric-high-precision-evaluation]] - Mathematica package for high-precision evaluation of Horn-type hypergeometric functions via Pfaffian systems, applicable to QFT, string theory, number theory, and statistics (arXiv: 2605.30216)
-   138|    29|  - Automatic Pfaffian system construction from hypergeometric function definition
-   139|    30|## 2026-05-29 - Neuroscience Research (Cron Job)
-   140|    31|
-   141|    32|### A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments
-   142|    33|- [[deep-learning-mental-rotation-vr]] - Longitudinal subcortical shape analysis with cognitive associations in aging (arXiv: 2605.29703)
-   143|    34|  - Equivariant neural encoder for 3D spatial representations
-   144|    35|  - Neuro-symbolic object encoder combining perception + reasoning
-   145|    36|  - Interactive VR experiments for human behavioral validation
-   146|    37|  - **Activation**: mental rotation, spatial cognition, VR, neuro-symbolic, equivariant networks
-   147|    38|
-   148|    39|### Subcortical Shape Variations and Their Associations with Cognition Across the 8th Decade of Life
-   149|    40|- [[subcortical-shape-cognition-aging]] - Longitudinal analysis of subcortical morphology + cognition (arXiv: 2605.29703)
-   150|    41|  - Shape-based analysis captures subtle aging patterns missed by volumetry
-   151|    42|  - Lothian Birth Cohort 1936: 9-year trajectory (age 70-79)
-   152|    43|  - Regional specificity: hippocampal head → memory, thalamus → processing speed
-   153|    44|  - **Activation**: subcortical morphology, brain aging, cognitive decline, shape analysis
-   154|    45|
-   155|    46|  - One-dimensional contour restriction reduces multivariate PDE to ODE for efficient evaluation
-   156|    47|  - **Activation**: hypergeometric, pfaffian, high-precision, horn-type, mathematica, multivariate, laurent expansion, quantum field theory
-   157|    48|
-   158|    49|### On modular forms of rational weight satisfying the canonical second-order linear modular differential equation
-   159|    50|- [[modular-forms-kaneko-zagier-classification]] - Complete classification of rational weights for Kaneko-Zagier differential equation admitting modular forms solutions (arXiv: 2605.23383)
-   160|    51|  - Transforms KZ equation to hypergeometric form, constructs monodromy representation matrices
-   161|    52|  - Stringent commutativity constraints limit admissible weights to specific set
-   162|    53|  - **Activation**: modular forms, kaneko-zagier, differential equation, monodromy, hypergeometric, rational weight, congruence subgroup
-   163|    54|
-   164|    55|### Iterative maps emerging from cohomological structure of primes
-   165|    56|- [[prime-cohomological-iterative-maps]] - Prime gaps described by iterative maps with cohomological structure linking to statistical and quantum mechanics (arXiv: 2605.17622)
-   166|    57|  - Iterative map predicts primary growth of successive primes
-   167|    58|  - Residual fluctuations encode well-defined cohomological structure
-   168|    59|  - **Activation**: prime numbers, cohomology, iterative maps, statistical mechanics, quantum mechanics, prime gaps
-   169|    60|
-   170|    61|### A Uniform Random-Lattice Tail Bound for the SVP Kissing-Profile Parameter
-   171|    62|- [[svp-lattice-tail-bound]] - Dimension-uniform tail bound for SVP kissing-profile parameter with implications for quantum algorithms and post-quantum cryptography (arXiv: 2605.21966)
-   172|    63|  - μ_n{γ(L) > T} ≤ C·T^{-1} for Haar-Siegel random lattices, uniformly in dimension
-   173|    64|  - γ(L) = 2^{o(n)} with high probability for random lattices
-   174|    65|  - **Activation**: SVP, shortest vector problem, lattice, tail bound, quantum algorithms, post-quantum cryptography
-   175|    66|
-   176|    67|### Hadamard product of convex functions and Jackson operator
-   177|    68|- Note: Jackson operator q-theory skill already exists; no new skill needed (arXiv: 2605.18412)
-   178|    69|
-   179|    70|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
-   180|    71|
-   181|    72|### Wasserstein Least Squares: A Canonical Regression Method for Probability Distributions
-   182|    73|- [[wasserstein-least-squares-regression]] - Distributional regression via optimal transport, achieving n^{-1/2} rate with exponential improvement for Wasserstein barycenters (arXiv: 2605.30266)
-   183|    74|  - Canonical extension of Euclidean least squares to probability distribution space via convex analysis
-   184|    75|  - Template deformation model enables n^{-1/2} estimation rate; exponential barycenter improvement
-   185|    76|  - **Activation**: Wasserstein regression, distributional regression, optimal transport, probability distributions, Wasserstein barycenter, template deformation
-   186|    77|
-   187|    78|### Improved Sample Complexity Bound for Sample-Based Lindbladian Simulation
-   188|    79|- [[lindbladian-sample-complexity]] - Sharp dichotomy between typical-case O(t²/ε²) and worst-case Ω(d⁴t²/ε²) for quantum Lindbladian simulation (arXiv: 2605.30301)
-   189|    80|  - WML algorithm with trace condition determines typical vs worst case
-   190|    81|  - Random Lindblad operators satisfy typical case with high probability
-   191|    82|  - **Activation**: Lindbladian simulation, sample complexity, quantum channels, open quantum systems, WML algorithm, random matrix theory
-   192|    83|
-   193|    84|## 2026-05-29 - Neuroscience Research (Cron Job)
-   194|    85|
-   195|    86|### Domain-Informed Multi-Objective Framework for EEG Channel Selection in Motor Imagery BCIs
-   196|    87|- [[domain-informed-moeeg-channel-selection-bci]] - Multi-objective optimization combining spatial relevance (Gaussian kernel) + functional discriminability (ERD) for compact EEG channel selection (arXiv: 2605.29943)
-   197|    88|  - NSGA-II/MOPSO/MOEA/D algorithms achieve 87%, 71%, 75%, 65% on Physionet, OpenBMI, HighGamma, BCIIV-2A
-   198|    89|  - 87% dimensionality reduction (64→8 channels), sensorimotor cortex prioritization
-   199|    90|  - **Activation**: EEG channel selection, motor imagery BCI, multi-objective optimization, Pareto front, ERD, sensorimotor cortex
-   200|    91|
-   201|    92|### Learning Robust and Task-Invariant Functional Representation from fMRI through Siamese Self-Supervised Learning
-   202|    93|- [[brainsimsiam-self-supervised-fmri]] - BrainSimSiam lightweight self-supervised framework for cross-task generalization without large-scale pretraining (arXiv: 2605.28990)
-   203|    94|  - Positive-only contrastive learning, stop-gradient mechanism, outperforms supervised baselines
-   204|    95|  - +15% ADHD accuracy, -8% age regression MSE, comparable to foundation models with 90% less compute
-   205|    96|  - **Activation**: self-supervised fMRI, Siamese learning, BrainSimSiam, positive-only contrastive, cross-task generalization
-   206|    97|
-   207|    98|## 2026-05-29 - Neuroscience Research (Cron Job)
-   208|    99|
-   209|   100|### LLM ICL Representational Geometry Reorganization
-   210|   101|- [[llm-icl-representational-geometry-reorganization]] - ICL models reorganize representations dynamically via prototype comparison (arXiv: 2605.28854)
-   211|   102|  - RDM correlation increases during untangling tasks
-   212|   103|  - Eigenvalue spectrum separates task information
-   213|   104|  - **Activation**: ICL, representational geometry, prototypes, untangling, RDM correlation, online learning
-   214|   105|
-   215|   106|### Brain-IT-VQA: From Brain Signals to Answers
-   216|   107|- [[brain-it-vqa-fmri-visual-question-answering]] - Brain-IT-VQA framework for VQA from fMRI, decodes language tokens from brain activity (arXiv: 2605.29588)
-   217|   108|  - Token-level decoding outperforms pixel reconstruction
-   218|   109|  - NSD-VQA benchmark with 20 controlled question categories
-   219|   110|  - **Activation**: Brain-IT, VQA, fMRI decoding, brain question answering, NSD-VQA
-   220|   111|
-   221|   112|
-   222|   113|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
-   223|   114|
-   224|   115|### Paper 2605.29052
-   225|   116|- [[quantum-nonautonomous-ode-simulation]] - 量子算法模拟非自治ODE非幺正动力学，通过SVD分解将传播子写为酉算子之和 (arXiv: 2605.29052)
-   226|   117|  - quantum ODE
-   227|   118|  - nonunitary dynamics
-   228|   119|  - SVD dilation
-   229|   120|  - quantum simulation
-   230|   121|  - **Activation**: quantum ODE, nonunitary dynamics, SVD dilation, quantum simulation
-   231|   122|
-   232|   123|### Paper 2605.28892
-   233|   124|- [[funessian-process-non-markovian]] - Funessian过程：正可分非马尔可夫过程，初始状态记忆贯穿演化，互信息表征非马尔可夫性 (arXiv: 2605.28892)
-   234|   125|  - non-Markovian
-   235|   126|  - memory effect
-   236|   127|  - Chapman-Kolmogorov
-   237|   128|  - ergodicity breaking
-   238|   129|  - **Activation**: non-Markovian, memory effect, Chapman-Kolmogorov, ergodicity breaking
-   239|   130|
-   240|   131|### Paper 2605.29130
-   241|   132|- [[mersenne-numbers-doubling-map]] - 梅森数与倍角映射动力学联系，无需显式计算即可求因子的替代Lucas-Lehmer方法 (arXiv: 2605.29130)
-   242|   133|  - Mersenne numbers
-   243|   134|  - doubling map
-   244|   135|  - prime testing
-   245|   136|  - dynamical systems
-   246|   137|  - **Activation**: Mersenne numbers, doubling map, prime testing, dynamical systems
-   247|   138|
-   248|   139|### Paper 2605.28906
-   249|   140|- [[quantum-classical-uncertainty-electromagnetism]] - 经典与量子电磁理论统一不确定关系ΔrΔk≥5/2，适用于光束和单光子 (arXiv: 2605.28906)
-   250|   141|  - uncertainty relations
-   251|   142|  - electromagnetism
-   252|   143|  - classical-quantum correspondence
-   253|   144|  - **Activation**: uncertainty relations, electromagnetism, classical-quantum correspondence
-   254|   145|
-   255|   146|### Paper 2605.28974
-   256|   147|- [[quantum-ml-statistics-invariant-theory]] - 基于quiver不变量理论的iPCA模型MLE存在性检验算法，连接统计学与不变量理论 (arXiv: 2605.28974)
-   257|   148|  - MLE existence
-   258|   149|  - invariant theory
-   259|   150|  - quiver representation
-   260|   151|  - iPCA
-   261|   152|  - **Activation**: MLE existence, invariant theory, quiver representation, iPCA
-   262|   153|
-   263|   154|### Paper 2605.28931
-   264|   155|- [[quantum-ml-ground-state-measurement]] - SIC-POVM测量空间量子基态变分学习，自回归GRU编码概率分布+物理性约束 (arXiv: 2605.28931)
-   265|   156|  - quantum ground state
-   266|   157|  - SIC-POVM
-   267|   158|  - variational learning
-   268|   159|  - autoregressive neural network
-   269|   160|  - **Activation**: quantum ground state, SIC-POVM, variational learning, autoregressive neural network
-   270|   161|
-   271|   162|## 2026-05-29 - Neuroscience Research (Cron Job)
-   272|   163|
-   273|   164|### Graph Neural Network Reveals the Cortical Morphology of Local Brain Aging in Normal Cognition and Alzheimer's Disease
-   274|   165|- [[gnn-cortical-morphology-brain-aging]] - GNN-based local brain age estimation from cortical morphology (arXiv: 2601.10912)
-   275|   166|  - High-resolution (1.37mm) vertex-level aging pattern analysis
-   276|   167|  - Identifies association cortices aging in CN, widespread MCI patterns, comprehensive AD cortical aging
-   277|   168|  - Links regional LBA gaps to neuropsychological measures
-   278|   169|  - **Activation**: brain age, cortical morphology, GNN, Alzheimer, cognitive impairment, aging patterns
-   279|   170|
-   280|   171|     1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
-   281|   172|     2|
-   282|   173|     3|### End-to-End Formalization of Quantum Error Correction
-   283|   174|     4|- [[qec-formal-verification]] - 量子纠错码端到端形式化验证方法论，SAT验证约简+机器检查距离证明 (arXiv: 2605.16523)
-   284|   175|     5|  - 稳定子码理论完整形式化（线性代数、Pauli群、二元辛表示）
-   285|   176|     6|  - 距离认证问题通过验证SAT约简机器检查
-   286|   177|     7|  - BitVec编码将变量数从O(n)降至O(√n)
-   287|   178|     8|  - **Activation**: quantum error correction formal verification, stabilizer code distance proof, machine-checked quantum verification, qLDPC certification, QECC end-to-end formalization
-   288|   179|     9|
-   289|   180|    10|
-   290|   181|    11|### Best-First Ordered Statistics Decoding of Quantum LDPC Codes
-   291|   182|    12|- [[bf-osd-qldpc-decoding]] - BF-OSD遍历错误候选空间按似然降序，1/100查询预算达到BP+OSD同等性能 (arXiv: 2605.25777)
-   292|   183|    13|  - Best-First OSD替代暴力枚举，优先级队列按似然排序
-   293|   184|    14|  - 固定BP迭代次数后调用OSD，而非等待收敛
-   294|   185|    15|  - 全电路级噪声下特别有效，BP不可靠时优势明显
-   295|   186|    16|  - **Activation**: quantum error correction, QLDPC decoding, BF-OSD, belief propagation, ordered statistics decoding
-   296|   187|    17|
-   297|   188|    18|### Quantum Mechanics: Problems and Paradoxes
-   298|   189|    19|- [[quantum-foundations-probability]] - 量子力学基础公理体系：概率起源、Planck常数本质、波函数本体论、测量问题 (arXiv: 2605.30067)
-   299|   190|    20|  - 量子理论公理体系形式化
-   300|   191|    21|  - 经典振荡器+热浴→量子行为对应模型
-   301|   192|    22|  - 概率振幅本质与Born规则推导
-   302|   193|    23|  - **Activation**: quantum foundations, quantum probability, measurement problem, wave function ontology, axiom system
-   303|   194|    24|
-   304|   195|    25|### Entropy-Governed Speedup for Quantum Algorithms on Local Hamiltonians
-   305|   196|    26|- [[entropy-governed-quantum-speedup]] (enhanced) - 利用熵结构超越Grover界的量子算法，在深度-d状态上实现更低能量估计 (arXiv: 2605.18241)
-   306|   197|    27|  - 输出态能量不超过深度-d态的最小能量
-   307|   198|    28|  - 区分强纠缠态与经典可描述态
-   308|   199|    29|  - **Activation**: quantum algorithm speedup, local Hamiltonian, entropy-governed, Grover bound
-   309|   200|    30|
-   310|   201|
-   311|### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
-   312|- [[quantum-finance-stack]] (enhanced) - Audit reveals D-Wave hybrid QPU contributes only 0.7% of wall-clock time; 99% classical decomposition, identical solutions across all budgets showing determinism (arXiv: 2605.17623)
-   313|  - QPU mean access time 0.034s out of 5s budget on 54 instances (N=10-640)
-   314|  - Cardinality penalty creates dense rank-one term collapsing density benchmark axis
-   315|  - Constraint-native interface = classical pipeline + tiny QPU contribution, not quantum sampling win
-   316|  - **Activation**: dwave hybrid audit, quantum portfolio benchmark, QPU time analysis, constraint-native, classical decomposition, 量子组合优化审计
-   317|
-   318|### Quantum Portfolio Optimization: An Extensive Benchmark
-   319|- [[quantum-finance-stack]] (enhanced) - 250-instance benchmark (up to 1000 assets): MIP solves all in seconds, classical heuristics outperform QA/QAOA (arXiv: 2509.17876)
-   320|  - Only very limited room for quantum advantage in portfolio optimization
-   321|  - Problem-tailored heuristic consistently outperforms quantum approaches for fixed runtime
-   322|  - **Activation**: quantum portfolio benchmark, MIP vs quantum annealing, QAOA comparison, 量子组合优化基准
-   323|
-   324|### Hot-Starting Quantum Portfolio Optimization
-   325|- [[hotstart-quantum-portfolio]] (enhanced) - Restricts search to compact Hilbert space around continuous optimum, reducing qubits and outperforming on D-Wave Advantage (arXiv: 2510.11153)
-   326|  - Compact Hilbert space QUBO: O(N log δ) qubits vs O(N log M) standard
-   327|  - Integrates relaxed continuous solution insights into discrete quantum search
-   328|  - **Activation**: hot-start QUBO, quantum portfolio warm-start, compact Hilbert space, reduced qubit portfolio, 量子组合优化热启动
-   329|
-   330|### A Quantum Reservoir Computing Approach to Quantum Stock Movement Forecasting
-   331|- [[quantum-reservoir-stock-forecasting]] (enhanced) - QRC with ≤6 qubits achieves >86% accuracy on 20 quantum-sector stock trend predictions, platform-agnostic (arXiv: 2602.13094)
-   332|  - Predicts daily closing volumes (2020-2025) and minute-by-minute out-of-market volumes
-   333|  - Optimal reservoir parameters identified; works on superconducting circuits and trapped ions
-   334|  - **Activation**: quantum reservoir computing, QRC stock forecasting, quantum time-series prediction, small-scale quantum ML, 量子储备池计算股票预测
-   335|
-   336|
-
-## 2026-05-30 - Hybrid Quantum Financial Security (Cron Job - Skill Created)
-
-### HQFS: Hybrid Quantum Classical Financial Security with VQC Forecasting, QUBO Annealing, and Audit-Ready Post-Quantum Signing
-- [[hybrid-quantum-financial-security]] - 端到端混合量子-经典金融安全管道，集成VQC预测、QUBO退火和后量子密码签名，统一金融风险管理中的预测与优化 (arXiv: 2602.16976)
-  - 核心要点 1: VQC变分量子电路用于时间序列预测，捕获经典模型遗漏的非线性市场模式
-  - 核心要点 2: QUBO退火整合真实市场约束（手数、仓位上限、行业限制），后量子签名确保审计合规
-  - **Activation**: hybrid quantum finance, VQC forecasting, QUBO annealing, post-quantum finance, financial risk pipeline, HQFS, 混合量子金融, VQC预测, 后量子密码
+  100|  - Incorporates counterdiabatic terms into variational ansatz for improved convergence
+  100|  - Handles realistic budget and risk constraints with XY-mixer Hamiltonian
+  100|  - **Activation**: counterdiabatic QAOA, portfolio optimization, adiabatic gauge potential, constrained quantum optimization
+  100|
+  100|### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
+  100|- [[constraint-preserving-quantum-mixers]] (enhanced) - XY-mixer design methodology under Trotterized adiabatic evolution for constrained quantum optimization (arXiv: 2605.02465)
+  100|  - Constraint locality analysis for XY-mixer Hamiltonian design
+  100|  - Trotterized adiabatic evolution preserves feasibility throughout optimization
+  100|  - **Activation**: constraint preserving mixers, XY-mixer, Trotterized evolution, constrained quantum optimization
+  100|
+  100|     1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+  100|     2|
+  100|     3|### Algorithms with Polynomially-Improved Approximation Factors for the 2→q Norm
+  100|     4|- [[norm-approximation-algorithms]] - Multiplicative weight update algorithm for matrix 2→q norm approximation with polynomial improvement over spectral methods, applications to hypercontractivity and quantum separability (arXiv: 2605.25303)
+  100|     5|  - MWU framework achieves O(n^{1/4-δ}) vs prior O(n^{1/4} log d)
+  100|     6|  - Applications: hypercontractivity testing, quantum separability certification, small-set expansion
+  100|     7|  - **Activation**: matrix norm approximation, 2-to-q norm, operator norm, hypercontractivity, multiplicative weight update, quantum separability
+  100|     8|
+  100|     9|### Bell's Theorem: Why Probability Factorisation Fails
+  100|    10|- [[bell-probability-factorization]] - Statistical foundations of Bell's theorem showing why joint probability factorization P(A,B|a,b,λ)=P(A|a,λ)P(B|b,λ) fails in quantum systems (arXiv: 2605.29589)
+  100|    11|  - Factorization assumption incompatible with quantum entanglement
+  100|    12|  - CHSH inequality as statistical diagnostic for non-classical correlations
+  100|    13|  - **Activation**: Bell theorem, probability factorization, quantum nonlocality, CHSH inequality, joint distributions
+  100|    14|
+  100|    15|### Comparing Classical Simulation and Sample-Based Learning of Quantum Systems
+  100|    16|- [[quantum-ml-simulation-learning-comparison]] - Empirical framework comparing simulability vs learnability for quantum systems via Born-rule statistics (arXiv: 2605.28986)
+  100|    17|  - Simulation (from classical description) and learning (from measurement samples) need not coincide
+  100|    18|  - Provides complexity-theoretic and empirical methodology for quantum advantage verification
+  100|    19|  - **Activation**: quantum simulation vs learning, sample-based quantum learning, simulability learnability, Born-rule statistics
+  100|    20|
+  100|    21|### Analytic Properties of the Jost Functions via the Poincaré-Picard Theorem
+  100|    22|- [[jost-function-analytic-ode]] - ODE-theoretic analysis of Jost function analyticity for quantum scattering and complex energy plane continuation (arXiv: 2605.28859)
+  100|    23|  - Applies Poincaré-Picard theorem to parameter-dependent radial Schrödinger equation
+  100|    24|  - Bridges mathematical analysis (ODE theory) with quantum scattering physics
+  100|    25|  - **Activation**: jost function, quantum scattering, analytic continuation, Poincaré-Picard, complex energy plane
+  100|    26|
+  100|    27|### HyperPrecision: High-Precision Numerical Evaluation of Multivariate Hypergeometric Functions
+  100|    28|- [[hypergeometric-high-precision-evaluation]] - Mathematica package for high-precision evaluation of Horn-type hypergeometric functions via Pfaffian systems, applicable to QFT, string theory, number theory, and statistics (arXiv: 2605.30216)
+  100|    29|  - Automatic Pfaffian system construction from hypergeometric function definition
+  100|    30|## 2026-05-29 - Neuroscience Research (Cron Job)
+  100|    31|
+  100|    32|### A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments
+  100|    33|- [[deep-learning-mental-rotation-vr]] - Longitudinal subcortical shape analysis with cognitive associations in aging (arXiv: 2605.29703)
+  100|    34|  - Equivariant neural encoder for 3D spatial representations
+  100|    35|  - Neuro-symbolic object encoder combining perception + reasoning
+  100|    36|  - Interactive VR experiments for human behavioral validation
+  100|    37|  - **Activation**: mental rotation, spatial cognition, VR, neuro-symbolic, equivariant networks
+  100|    38|
+  100|    39|### Subcortical Shape Variations and Their Associations with Cognition Across the 8th Decade of Life
+  100|    40|- [[subcortical-shape-cognition-aging]] - Longitudinal analysis of subcortical morphology + cognition (arXiv: 2605.29703)
+  100|    41|  - Shape-based analysis captures subtle aging patterns missed by volumetry
+  100|    42|  - Lothian Birth Cohort 1936: 9-year trajectory (age 70-79)
+  100|    43|  - Regional specificity: hippocampal head → memory, thalamus → processing speed
+  100|    44|  - **Activation**: subcortical morphology, brain aging, cognitive decline, shape analysis
+  100|    45|
+  100|    46|  - One-dimensional contour restriction reduces multivariate PDE to ODE for efficient evaluation
+  100|    47|  - **Activation**: hypergeometric, pfaffian, high-precision, horn-type, mathematica, multivariate, laurent expansion, quantum field theory
+  100|    48|
+  100|    49|### On modular forms of rational weight satisfying the canonical second-order linear modular differential equation
+  100|    50|- [[modular-forms-kaneko-zagier-classification]] - Complete classification of rational weights for Kaneko-Zagier differential equation admitting modular forms solutions (arXiv: 2605.23383)
+  100|    51|  - Transforms KZ equation to hypergeometric form, constructs monodromy representation matrices
+  100|    52|  - Stringent commutativity constraints limit admissible weights to specific set
+  100|    53|  - **Activation**: modular forms, kaneko-zagier, differential equation, monodromy, hypergeometric, rational weight, congruence subgroup
+  100|    54|
+  100|    55|### Iterative maps emerging from cohomological structure of primes
+  100|    56|- [[prime-cohomological-iterative-maps]] - Prime gaps described by iterative maps with cohomological structure linking to statistical and quantum mechanics (arXiv: 2605.17622)
+  100|    57|  - Iterative map predicts primary growth of successive primes
+  100|    58|  - Residual fluctuations encode well-defined cohomological structure
+  100|    59|  - **Activation**: prime numbers, cohomology, iterative maps, statistical mechanics, quantum mechanics, prime gaps
+  100|    60|
+  100|    61|### A Uniform Random-Lattice Tail Bound for the SVP Kissing-Profile Parameter
+  100|    62|- [[svp-lattice-tail-bound]] - Dimension-uniform tail bound for SVP kissing-profile parameter with implications for quantum algorithms and post-quantum cryptography (arXiv: 2605.21966)
+  100|    63|  - μ_n{γ(L) > T} ≤ C·T^{-1} for Haar-Siegel random lattices, uniformly in dimension
+  100|    64|  - γ(L) = 2^{o(n)} with high probability for random lattices
+  100|    65|  - **Activation**: SVP, shortest vector problem, lattice, tail bound, quantum algorithms, post-quantum cryptography
+  100|    66|
+  100|    67|### Hadamard product of convex functions and Jackson operator
+  100|    68|- Note: Jackson operator q-theory skill already exists; no new skill needed (arXiv: 2605.18412)
+  100|    69|
+  100|    70|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+  100|    71|
+  100|    72|### Wasserstein Least Squares: A Canonical Regression Method for Probability Distributions
+  100|    73|- [[wasserstein-least-squares-regression]] - Distributional regression via optimal transport, achieving n^{-1/2} rate with exponential improvement for Wasserstein barycenters (arXiv: 2605.30266)
+  100|    74|  - Canonical extension of Euclidean least squares to probability distribution space via convex analysis
+  100|    75|  - Template deformation model enables n^{-1/2} estimation rate; exponential barycenter improvement
+  100|    76|  - **Activation**: Wasserstein regression, distributional regression, optimal transport, probability distributions, Wasserstein barycenter, template deformation
+  100|    77|
+  100|    78|### Improved Sample Complexity Bound for Sample-Based Lindbladian Simulation
+  100|    79|- [[lindbladian-sample-complexity]] - Sharp dichotomy between typical-case O(t²/ε²) and worst-case Ω(d⁴t²/ε²) for quantum Lindbladian simulation (arXiv: 2605.30301)
+  100|    80|  - WML algorithm with trace condition determines typical vs worst case
+  100|    81|  - Random Lindblad operators satisfy typical case with high probability
+  100|    82|  - **Activation**: Lindbladian simulation, sample complexity, quantum channels, open quantum systems, WML algorithm, random matrix theory
+  100|    83|
+  100|    84|## 2026-05-29 - Neuroscience Research (Cron Job)
+  100|    85|
+  100|    86|### Domain-Informed Multi-Objective Framework for EEG Channel Selection in Motor Imagery BCIs
+  100|    87|- [[domain-informed-moeeg-channel-selection-bci]] - Multi-objective optimization combining spatial relevance (Gaussian kernel) + functional discriminability (ERD) for compact EEG channel selection (arXiv: 2605.29943)
+  100|    88|  - NSGA-II/MOPSO/MOEA/D algorithms achieve 87%, 71%, 75%, 65% on Physionet, OpenBMI, HighGamma, BCIIV-2A
+  100|    89|  - 87% dimensionality reduction (64→8 channels), sensorimotor cortex prioritization
+  100|    90|  - **Activation**: EEG channel selection, motor imagery BCI, multi-objective optimization, Pareto front, ERD, sensorimotor cortex
+  100|    91|
+  100|    92|### Learning Robust and Task-Invariant Functional Representation from fMRI through Siamese Self-Supervised Learning
+  100|    93|- [[brainsimsiam-self-supervised-fmri]] - BrainSimSiam lightweight self-supervised framework for cross-task generalization without large-scale pretraining (arXiv: 2605.28990)
+  100|    94|  - Positive-only contrastive learning, stop-gradient mechanism, outperforms supervised baselines
+  100|    95|  - +15% ADHD accuracy, -8% age regression MSE, comparable to foundation models with 90% less compute
+  100|    96|  - **Activation**: self-supervised fMRI, Siamese learning, BrainSimSiam, positive-only contrastive, cross-task generalization
+  100|    97|
+  100|    98|## 2026-05-29 - Neuroscience Research (Cron Job)
+  100|    99|
+  100|   100|### LLM ICL Representational Geometry Reorganization
+  100|   101|- [[llm-icl-representational-geometry-reorganization]] - ICL models reorganize representations dynamically via prototype comparison (arXiv: 2605.28854)
+  100|   102|  - RDM correlation increases during untangling tasks
+  100|   103|  - Eigenvalue spectrum separates task information
+  100|   104|  - **Activation**: ICL, representational geometry, prototypes, untangling, RDM correlation, online learning
+  100|   105|
+  100|   106|### Brain-IT-VQA: From Brain Signals to Answers
+  100|   107|- [[brain-it-vqa-fmri-visual-question-answering]] - Brain-IT-VQA framework for VQA from fMRI, decodes language tokens from brain activity (arXiv: 2605.29588)
+  100|   108|  - Token-level decoding outperforms pixel reconstruction
+  100|   109|  - NSD-VQA benchmark with 20 controlled question categories
+  100|   110|  - **Activation**: Brain-IT, VQA, fMRI decoding, brain question answering, NSD-VQA
+  100|   111|
+  100|   112|
+  100|   113|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+  100|   114|
+  100|   115|### Paper 2605.29052
+  100|   116|- [[quantum-nonautonomous-ode-simulation]] - 量子算法模拟非自治ODE非幺正动力学，通过SVD分解将传播子写为酉算子之和 (arXiv: 2605.29052)
+  100|   117|  - quantum ODE
+  100|   118|  - nonunitary dynamics
+  100|   119|  - SVD dilation
+  100|   120|  - quantum simulation
+  100|   121|  - **Activation**: quantum ODE, nonunitary dynamics, SVD dilation, quantum simulation
+  100|   122|
+  100|   123|### Paper 2605.28892
+  100|   124|- [[funessian-process-non-markovian]] - Funessian过程：正可分非马尔可夫过程，初始状态记忆贯穿演化，互信息表征非马尔可夫性 (arXiv: 2605.28892)
+  100|   125|  - non-Markovian
+  100|   126|  - memory effect
+  100|   127|  - Chapman-Kolmogorov
+  100|   128|  - ergodicity breaking
+  100|   129|  - **Activation**: non-Markovian, memory effect, Chapman-Kolmogorov, ergodicity breaking
+  100|   130|
+  100|   131|### Paper 2605.29130
+  100|   132|- [[mersenne-numbers-doubling-map]] - 梅森数与倍角映射动力学联系，无需显式计算即可求因子的替代Lucas-Lehmer方法 (arXiv: 2605.29130)
+  100|   133|  - Mersenne numbers
+  100|   134|  - doubling map
+  100|   135|  - prime testing
+  100|   136|  - dynamical systems
+  100|   137|  - **Activation**: Mersenne numbers, doubling map, prime testing, dynamical systems
+  100|   138|
+  100|   139|### Paper 2605.28906
+  100|   140|- [[quantum-classical-uncertainty-electromagnetism]] - 经典与量子电磁理论统一不确定关系ΔrΔk≥5/2，适用于光束和单光子 (arXiv: 2605.28906)
+  100|   141|  - uncertainty relations
+  100|   142|  - electromagnetism
+  100|   143|  - classical-quantum correspondence
+  100|   144|  - **Activation**: uncertainty relations, electromagnetism, classical-quantum correspondence
+  100|   145|
+  100|   146|### Paper 2605.28974
+  100|   147|- [[quantum-ml-statistics-invariant-theory]] - 基于quiver不变量理论的iPCA模型MLE存在性检验算法，连接统计学与不变量理论 (arXiv: 2605.28974)
+  100|   148|  - MLE existence
+  100|   149|  - invariant theory
+  100|   150|  - quiver representation
+  100|   151|  - iPCA
+  100|   152|  - **Activation**: MLE existence, invariant theory, quiver representation, iPCA
+  100|   153|
+  100|   154|### Paper 2605.28931
+  100|   155|- [[quantum-ml-ground-state-measurement]] - SIC-POVM测量空间量子基态变分学习，自回归GRU编码概率分布+物理性约束 (arXiv: 2605.28931)
+  100|   156|  - quantum ground state
+  100|   157|  - SIC-POVM
+  100|   158|  - variational learning
+  100|   159|  - autoregressive neural network
+  100|   160|  - **Activation**: quantum ground state, SIC-POVM, variational learning, autoregressive neural network
+  100|   161|
+  100|   162|## 2026-05-29 - Neuroscience Research (Cron Job)
+  100|   163|
+  100|   164|### Graph Neural Network Reveals the Cortical Morphology of Local Brain Aging in Normal Cognition and Alzheimer's Disease
+  100|   165|- [[gnn-cortical-morphology-brain-aging]] - GNN-based local brain age estimation from cortical morphology (arXiv: 2601.10912)
+  100|   166|  - High-resolution (1.37mm) vertex-level aging pattern analysis
+  100|   167|  - Identifies association cortices aging in CN, widespread MCI patterns, comprehensive AD cortical aging
+  100|   168|  - Links regional LBA gaps to neuropsychological measures
+  100|   169|  - **Activation**: brain age, cortical morphology, GNN, Alzheimer, cognitive impairment, aging patterns
+  100|   170|
+  100|   171|     1|## 2026-05-29 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+  100|   172|     2|
+  100|   173|     3|### End-to-End Formalization of Quantum Error Correction
+  100|   174|     4|- [[qec-formal-verification]] - 量子纠错码端到端形式化验证方法论，SAT验证约简+机器检查距离证明 (arXiv: 2605.16523)
+  100|   175|     5|  - 稳定子码理论完整形式化（线性代数、Pauli群、二元辛表示）
+  100|   176|     6|  - 距离认证问题通过验证SAT约简机器检查
+  100|   177|     7|  - BitVec编码将变量数从O(n)降至O(√n)
+  100|   178|     8|  - **Activation**: quantum error correction formal verification, stabilizer code distance proof, machine-checked quantum verification, qLDPC certification, QECC end-to-end formalization
+  100|   179|     9|
+  100|   180|
+  100|   181|    10|### Best-First Ordered Statistics Decoding of Quantum LDPC Codes
+  100|   182|    12|- [[bf-osd-qldpc-decoding]] - BF-OSD遍历错误候选空间按似然降序，1/100查询预算达到BP+OSD同等性能 (arXiv: 2605.25777)
+  100|   183|    13|  - Best-First OSD替代暴力枚举，优先级队列按似然排序
+  100|   184|    14|  - 固定BP迭代次数后调用OSD，而非等待收敛
+  100|   185|    15|  - 全电路级噪声下特别有效，BP不可靠时优势明显
+  100|   186|    16|  - **Activation**: quantum error correction, QLDPC decoding, BF-OSD, belief propagation, ordered statistics decoding
+  100|   187|    17|
+  100|   188|    18|### Quantum Mechanics: Problems and Paradoxes
+  100|   189|    19|- [[quantum-foundations-probability]] - 量子力学基础公理体系：概率起源、Planck常数本质、波函数本体论、测量问题 (arXiv: 2605.30067)
+  100|   190|    20|  - 量子理论公理体系形式化
+  100|   191|    21|  - 经典振荡器+热浴→量子行为对应模型
+  100|   192|    22|  - 概率振幅本质与Born规则推导
+  100|   193|    23|  - **Activation**: quantum foundations, quantum probability, measurement problem, wave function ontology, axiom system
+  100|   194|    24|
+  100|   195|    25|### Entropy-Governed Speedup for Quantum Algorithms on Local Hamiltonians
+  100|   196|    26|- [[entropy-governed-quantum-speedup]] (enhanced) - 利用熵结构超越Grover界的量子算法，在深度-d状态上实现更低能量估计 (arXiv: 2605.18241)
+  100|   197|    27|  - 输出态能量不超过深度-d态的最小能量
+  100|   198|    28|  - 区分强纠缠态与经典可描述态
+  100|   199|    29|  - **Activation**: quantum algorithm speedup, local Hamiltonian, entropy-governed, Grover bound
+  100|   200|    30|
+  100|   201|
+  100|   202|### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization
+  100|   203|- [[quantum-finance-stack]] (enhanced) - Audit reveals D-Wave hybrid QPU contributes only 0.7% of wall-clock time; 99% classical decomposition, identical solutions across all budgets showing determinism (arXiv: 2605.17623)
+  100|   204|  - QPU mean access time 0.034s out of 5s budget on 54 instances (N=10-640)
+  100|   205|  - Cardinality penalty creates dense rank-one term collapsing density benchmark axis
+  100|   206|  - Constraint-native interface = classical pipeline + tiny QPU contribution, not quantum sampling win
+  100|   207|  - **Activation**: dwave hybrid audit, quantum portfolio benchmark, QPU time analysis, constraint-native, classical decomposition, 量子组合优化审计
+  100|   208|
+  100|   209|### Quantum Portfolio Optimization: An Extensive Benchmark
+  100|   210|- [[quantum-finance-stack]] (enhanced) - 250-instance benchmark (up to 1000 assets): MIP solves all in seconds, classical heuristics outperform QA/QAOA (arXiv: 2509.17876)
+  100|   211|  - Only very limited room for quantum advantage in portfolio optimization
+  100|   212|  - Problem-tailored heuristic consistently outperforms quantum approaches for fixed runtime
+  100|   213|  - **Activation**: quantum portfolio benchmark, MIP vs quantum annealing, QAOA comparison, 量子组合优化基准
