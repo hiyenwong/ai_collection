@@ -106,6 +106,15 @@
   - **Activation**: quantum cognition, contextual probability, spacetime formation
 
 
+## 2026-06-01 - Neuroscience (Cron Job)
+
+### You Are in Control of Your State: Why Human Outcomes Are Controllable Through Causal State Intervention
+- [[causal-state-intervention-human-controllability]] - 因果状态干预人类行为可控性框架：将个体内变异建模为动态潜在状态而非噪声，通过干预状态及其权重实现行为结果的可控改变 (arXiv: 2605.27580)
+  - 个体内变异（相同输入不同结果）属于动态潜在状态，不是测量噪声
+  - 因果状态干预：do(State=s')→结果变化的因果效应是可估计的
+  - AI系统评估：是否保护/培育用户的状态感知决策能力，还是制造选择的幻觉
+  - **Activation**: causal state intervention, human controllability, within-person variability, latent state dynamics, behavioral science, AI ethics, 因果状态干预, 人类可控性
+
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
 ### Quantum error correction and fault tolerance: A comprehensive tutorial

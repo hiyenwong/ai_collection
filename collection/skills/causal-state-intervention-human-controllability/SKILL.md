@@ -1,393 +1,118 @@
 ---
 name: causal-state-intervention-human-controllability
-description: Causal state intervention framework for controlling human outcomes through dynamic latent state manipulation, bridging causal inference, predictive processing, and computational psychiatry
-version: 1.0.0
-author: system
-arxiv_id: 2605.27580
-created: 2026-05-28
-tags: [causal-inference, predictive-processing, human-modeling, behavioral-variability, state-intervention, computational-psychiatry, chronobiology, allostasis, attentional-bottleneck]
-activation_keywords: [causal state, human controllability, state intervention, behavioral variability, latent state, predictive processing, computational psychiatry, digital health, AI personalization, allostatic]
+description: "Causal state intervention framework for controlling human behavioral outcomes through targeted latent state manipulation. Demonstrates that within-person variability belongs to dynamic latent state, and human outcomes are controllable through interventions targeting state and its weighting at decision moments. Use when studying: (1) Human behavioral controllability via state intervention, (2) Within-person variability as dynamic latent state, (3) Causal manipulation of decision-state interactions, (4) AI systems that target latent human states for outcome control, (5) Behavioral sciences modeling with latent state interventions."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2605.27580"
+  published: "2026-05-26"
+  authors: "Multiple authors"
+  tags: [causal-inference, state-intervention, behavioral-science, human-controllability, latent-state, decision-making, within-person-variability, ai-ethics]
 ---
 
 # Causal State Intervention for Human Controllability
 
-## Overview
+Research methodology from arXiv:2605.27580 — establishing that human behavioral outcomes are controllable through interventions targeting the dynamic latent state.
 
-Framework for explaining within-person behavioral variability through **dynamic latent state** and demonstrating that human outcomes are **causally controllable** through interventions targeting state trajectories at decision formation moments.
+## Core Contribution
 
-**arXiv**: 2605.27580  
-**Authors**: Suraj Biswas, Saurav Gupta, Pritam Mukherjee  
-**Submitted**: May 26, 2026  
-**Data**: 200,000+ users across 4 occupational personas (2023-2026)
+Reframes within-person variability (same person, same input, different outcomes) as belonging to the **dynamic latent state** of the person, not measurement noise. Proves that human outcomes are controllable through interventions that target:
 
-## Core Thesis
+1. **The latent state itself** — modifying the internal state before decision
+2. **The state's weighting** at the moment of decision — changing how much the state influences the outcome
 
-**Central Puzzle**: Same individual + same observable input → different outcomes on different occasions.
+## Key Insight
 
-**Solution**: Variability belongs in **dynamic latent state** of the person.
+Traditional behavioral sciences treat within-person variability as noise or residual. This framework shows it is **structured latent state dynamics** — the same individual's state evolves over time, and interventions at the right moment (targeting state + state weighting) can controllably shift outcomes.
 
-**Key Claim**: Human outcomes are **controllable** through interventions targeting state and its weighting at decision formation time.
+## Theoretical Framework
 
-## State Definition
-
-**State** = Time-indexed weighting vector over dimensions governing how an individual's biology, physiology, and neuropsychology process the next event into:
-1. **Decision** → 2. **Outcome**
-
-**Properties**:
-- Relationship is **causal**, not correlational
-- Weighting vector **dynamic** at sub-daily timescales
-- Conscious channel is **narrow attentional bottleneck** with state-dependent contents
-
-## Six Evidence Strands
-
-### 1. Causal Inference
-- Counterfactual reasoning about outcomes
-- Intervention vs observation distinction
-- State as causal mediator
-
-### 2. Predictive Processing
-- Brain as prediction machine
-- State updates predictive models
-- Error correction modulates state
-
-### 3. Allostasis
-- Anticipatory physiological regulation
-- State predicts metabolic needs
-- Homeostasis vs allostasis distinction
-
-### 4. Attentional Bottleneck
-- Consciousness as narrow channel
-- State determines attentional focus
-- Information filtering is state-dependent
-
-### 5. Chronobiology
-- Circadian rhythms modulate state
-- Sub-daily dynamics documented
-- Temporal weighting changes
-
-### 6. Computational Psychiatry
-- State modeling for mental disorders
-- Variability as diagnostic marker
-- Intervention targets state trajectory
-
-## Seven Testable Predictions
-
-1. **State Manipulation Effect**: Interventions targeting state trajectory change outcomes
-2. **Temporal Specificity**: Timing of intervention affects efficacy
-3. **Individual Variation**: Different state dimensions for different personas
-4. **Sub-daily Dynamics**: State changes within hours, not days
-5. **Attentional Dependence**: Outcome reportability depends on state
-6. **Causal Mediation**: State mediates input → outcome relationship
-7. **Control Feasibility**: State-aware systems can predict intervention efficacy
-
-## Framework Architecture
+### Latent State Model
 
 ```
-Observable Input → State Weighting → Decision Formation → Outcome
-                    ↑
-                    | Intervention Point
-                    |
-             Causal Mediation
+Outcome = f(Observable Input, Latent State, Decision Policy)
 ```
 
-## Operational Requirements for State-Aware Systems
+Where:
+- **Latent State**: dynamic, time-varying internal configuration
+- **Decision Policy**: how state weights combine with input to produce outcome
+- **Within-person variability**: state evolution across occasions
 
-### Requirement 1: State Measurement
-- Capture dynamic weighting vector
-- Track sub-daily temporal changes
-- Integrate multi-modal signals (biological, physiological, neuropsychological)
+### Controllability Conditions
 
-### Requirement 2: Intervention Timing
-- Identify decision formation moments
-- Predict state trajectory evolution
-- Calculate optimal intervention windows
+Human outcomes are controllable if interventions can:
+1. **Shift the state**: S(t+1) = g(S(t), Intervention)
+2. **Modulate state weighting**: w(t) = h(S(t), Context)
+3. **Target decision moments**: intervene when state is near decision boundary
 
-### Requirement 3: Causal Chain Tracking
-- Measure state → decision → outcome path
-- Verify causal mediation (not correlation)
-- Control for confounders
+## Application to AI Systems
 
-### Requirement 4: Persona Adaptation
-- Different state dimensions per occupational role
-- Individual-level state profiles
-- Persona-specific intervention strategies
+### Evaluating AI Influence on Human States
 
-### Requirement 5: Temporal Resolution
-- Sub-daily state sampling
-- Hourly or finer granularity
-- Chronobiological rhythm integration
+AI systems should be evaluated by whether they:
+- **Protect** the human's capacity for state-aware decision-making
+- **Cultivate** metacognitive awareness of one's own latent state
+- **Preserve** the option space for genuine consequential choice
 
-### Requirement 6: Outcome Attribution
-- Track intervention → outcome causal chains
-- Measure controllability precision
-- Quantify intervention efficacy
+### Intervention Design
 
-## Applications
+For AI systems interfacing with humans:
+- Design interventions that target the user's latent state (mood, attention, cognitive load)
+- Modulate how heavily the state weights in the decision process
+- Intervene at decision boundaries where small state shifts have large outcome effects
 
-### Digital Health
-- State-aware health interventions
-- Timing optimization for medications
-- Personalized health recommendations
-- Behavioral change through state manipulation
+## Usage Patterns
 
-### Education
-- Learning state optimization
-- Attentional state management
-- Motivational state interventions
-- Cognitive load state tracking
+### Pattern 1: Within-Person Variability Analysis
 
-### AI Personalization
-- State-aware recommendation systems
-- Dynamic personalization beyond demographics
-- Context-aware AI that tracks state trajectories
-- Intervention-aware AI agents
+When analyzing behavioral data with unexplained within-person variability:
+1. Model variability as dynamic latent state (not noise)
+2. Estimate state trajectory from sequential observations
+3. Design interventions targeting specific state configurations
+4. Measure controllability as intervention → state shift → outcome change
 
-### Personal Agency
-- Understanding one's own state dynamics
-- Self-regulation through state awareness
-- Agency enhancement via intervention timing
-- Empowerment through causal understanding
+### Pattern 2: Decision Boundary Intervention
 
-## Methodological Evidence
+When designing systems that influence human decisions:
+1. Identify when user is near a decision boundary
+2. Measure current latent state (attention, mood, cognitive resources)
+3. Apply minimal intervention to shift state toward desired outcome
+4. Verify outcome change is attributable to state intervention
 
-### Dataset Characteristics
-- **Users**: 200,000+ consented participants
-- **Timeframe**: 24 months (2023-2026)
-- **Personas**: 4 occupational categories
-- **Platform**: Deployed behavioral platform
+### Pattern 3: AI Ethics Evaluation
 
-### Analysis Approach
-- Observational + causal inference methods
-- Temporal dynamics modeling
-- State trajectory reconstruction
-- Intervention efficacy measurement
+When evaluating AI systems for ethical impact on human agency:
+1. Does the system recognize within-person state variability?
+2. Does it protect or erode the user's capacity for state-aware choice?
+3. Does it create "illusion of opting" — apparent choice without real agency?
+4. Can users trace outcomes back to their own state interventions?
 
-## Key Concepts
+## Mathematical Framework
 
-### Within-Person Variability
-- Same input → different outcomes
-- Explained by state dynamics
-- Not noise, but structured variability
+### State Intervention Effect
 
-### Latent State
-- Not directly observable
-- Derived from behavioral outcomes
-- Time-indexed weighting vector
-
-### Causal Mediation
-- State causally determines outcomes
-- Intervention on state changes outcomes
-- Different from correlational prediction
-
-### Decision Formation Window
-- Critical moment for intervention
-- State weighting active
-- Outcome trajectory determined
-
-## Comparison with Alternative Models
-
-| Model Type | Variability Explanation | Intervention Approach |
-|------------|------------------------|----------------------|
-| **Latent State (This Framework)** | Dynamic state weighting | Target state trajectory |
-| Trait Psychology | Stable dispositions | Not applicable |
-| Context Models | Environmental factors | Modify context |
-| Random Noise | Measurement error | Reduce noise |
-
-## Implications for Neuroscience
-
-### Brain-State Relationship
-- State reflects brain dynamics
-- Attentional bottleneck as neural constraint
-- Predictive processing as state update mechanism
-
-### Chronobiological Integration
-- Neural rhythms modulate state
-- Circadian cycles affect weighting
-- Time-of-day intervention optimization
-
-### Computational Psychiatry
-- Mental disorders as state dysregulation
-- Intervention through state trajectory correction
-- Variability patterns as diagnostic markers
-
-## When to Use
-
-**Apply this framework when**:
-- Modeling individual behavioral variability
-- Designing personalized interventions
-- Understanding within-person outcome differences
-- Building state-aware AI systems
-- Implementing digital health solutions
-- Developing personalized education systems
-
-**Avoid when**:
-- Only predicting group-level outcomes
-- Trait-level personality modeling needed
-- Static covariates sufficient
-- Intervention timing not feasible
-
-## Implementation Steps
-
-### Step 1: State Dimension Identification
-```python
-# Define state dimensions per persona
-state_dimensions = {
-    'researcher': ['cognitive_load', 'motivation', 'attention', 'fatigue'],
-    'manager': ['stress', 'decision_pressure', 'social_load', 'chronotype'],
-    'creative': ['inspiration', 'flow_state', 'attentional_focus', 'novelty_seek'],
-    'operator': ['alertness', 'situational_awareness', 'fatigue', 'routine_break']
-}
+```
+τ = E[Outcome | do(State = s')] - E[Outcome | do(State = s)]
 ```
 
-### Step 2: Temporal Sampling
-- Hourly state probes
-- Chronobiological rhythm tracking
-- Sub-daily dynamics measurement
+This is the causal effect of state intervention on outcome — the key estimand for controllability.
 
-### Step 3: Intervention Timing Optimization
-- Predict decision formation windows
-- Calculate state trajectory evolution
-- Identify optimal intervention moments
+### State Weighting Modulation
 
-### Step 4: Causal Chain Verification
-- Track intervention → state → decision → outcome
-- Measure mediation effects
-- Verify causal (not correlational) relationship
-
-## Code Example
-
-```python
-import numpy as np
-from datetime import datetime, timedelta
-
-class StateInterventionFramework:
-    def __init__(self, persona_type):
-        self.persona = persona_type
-        self.state_dims = self._get_state_dimensions()
-        self.state_vector = np.random.rand(len(self.state_dims))
-        self.state_history = []
-        
-    def _get_state_dimensions(self):
-        # Define state dimensions based on persona
-        dims = {
-            'researcher': ['cognitive_load', 'motivation', 'attention', 'fatigue'],
-            'manager': ['stress', 'decision_pressure', 'social_load', 'chronotype'],
-            'creative': ['inspiration', 'flow_state', 'attentional_focus', 'novelty_seek'],
-            'operator': ['alertness', 'situational_awareness', 'fatigue', 'routine_break']
-        }
-        return dims.get(self.persona, dims['researcher'])
-    
-    def update_state(self, timestamp, biological_signals):
-        # Dynamic state update based on time and biology
-        hour = timestamp.hour
-        
-        # Chronobiological modulation
-        circadian_factor = np.cos(2 * np.pi * (hour - 6) / 24)
-        
-        # Update weighting vector
-        self.state_vector = biological_signals * circadian_factor
-        self.state_history.append((timestamp, self.state_vector.copy()))
-        
-        return self.state_vector
-    
-    def predict_decision(self, input_signal):
-        # State-dependent decision formation
-        weighted_input = input_signal * self.state_vector
-        decision = np.argmax(weighted_input)
-        
-        return decision
-    
-    def intervene(self, target_state_dim, intervention_strength, timestamp):
-        # Causal state intervention
-        dim_idx = self.state_dims.index(target_state_dim)
-        
-        # Modify state weighting at intervention moment
-        self.state_vector[dim_idx] *= intervention_strength
-        
-        # Record intervention
-        intervention_record = {
-            'timestamp': timestamp,
-            'dimension': target_state_dim,
-            'strength': intervention_strength,
-            'pre_state': self.state_history[-1][1].copy(),
-            'post_state': self.state_vector.copy()
-        }
-        
-        return intervention_record
-    
-    def measure_controllability(self, outcomes_with_intervention, outcomes_without):
-        # Calculate intervention efficacy
-        # Outcome variance explained by intervention
-        efficacy = np.mean(outcomes_with_intervention != outcomes_without)
-        
-        return efficacy
-
-# Example usage
-framework = StateInterventionFramework('researcher')
-
-# Update state throughout day
-for hour in range(24):
-    ts = datetime(2026, 5, 28, hour, 0)
-    bio_signals = np.random.rand(4)  # Simulated biological signals
-    state = framework.update_state(ts, bio_signals)
-    
-# Intervene at decision formation moment
-intervention_time = datetime(2026, 5, 28, 10, 30)  # Peak motivation window
-intervention = framework.intervene('motivation', 1.5, intervention_time)
-
-# Measure outcome controllability
-outcomes_intervention = [framework.predict_decision(inp) for inp in np.random.rand(100, 4)]
-framework.intervene('motivation', 1.0, intervention_time)  # Reset
-outcomes_baseline = [framework.predict_decision(inp) for inp in np.random.rand(100, 4)]
-
-controllability = framework.measure_controllability(outcomes_intervention, outcomes_baseline)
-print(f"Controllability score: {controllability:.2%}")
+```
+Outcome = w(t) · f_state(State) + (1 - w(t)) · f_input(Input) + ε
 ```
 
-## Research Implications
+Controlling w(t) at decision moments is an alternative intervention pathway.
 
-### For Behavioral Sciences
-- Move beyond trait psychology
-- Embrace within-person variability as causal
-- Design state-aware interventions
+## Pitfalls
 
-### For AI Systems
-- Personalization beyond static profiles
-- State-aware recommendation engines
-- Intervention-aware AI agents
+- **State measurement**: latent states are not directly observable — must infer from behavior proxies
+- **Temporal resolution**: state dynamics may operate at different timescales than intervention granularity
+- **Individual differences**: intervention effects vary by person's baseline state dynamics
+- **Ethical boundary**: controllability implies power asymmetry — design systems that empower, not manipulate
 
-### For Digital Health
-- Precision timing for interventions
-- State trajectory monitoring
-- Causal intervention verification
+## Related Skills
 
-## Limitations
-
-1. **State Measurement**: Latent state not directly observable
-2. **Temporal Resolution**: Sub-daily sampling may be impractical in some contexts
-3. **Individual Differences**: State dimensions vary across personas
-4. **Intervention Cost**: State manipulation requires real-time monitoring
-5. **Causal Verification**: Distinguishing causation from correlation is challenging
-
-## Future Directions
-
-1. **Neural State Markers**: Link behavioral state to neural signatures
-2. **Real-Time Intervention**: Deploy state-aware intervention systems
-3. **Multi-Modal Integration**: Combine biological, physiological, psychological signals
-4. **Personal Agency Tools**: Give individuals state awareness and control
-5. **Computational Psychiatry**: Apply to mental disorder diagnosis and treatment
-
-## Key Takeaways
-
-1. **Variability is Causal**: Within-person differences arise from dynamic state
-2. **Controllability is Precise**: Interventions targeting state trajectory change outcomes
-3. **Timing Matters**: Sub-daily dynamics require precise intervention windows
-4. **Causal Mediation**: State causally mediates input → outcome relationship
-5. **Persona-Specific**: Different state dimensions for different occupational roles
-6. **Operational Framework**: Six requirements for building state-aware systems
-7. **Large-Scale Evidence**: 200,000+ users demonstrate framework applicability
-
-## References
-
-- Biswas, Gupta, Mukherjee (2026). "You Are in Control of Your State: Why Human Outcomes Are Controllable Through Causal State Intervention" arXiv:2605.27580
-- Related: Causal inference, Predictive processing, Computational psychiatry, Chronobiology
+- [[exploratory-predictive-representation-geometry]] — action-perception loop and state-dependent learning
+- [[backpropagation-brain-hierarchy-misalignment]] — brain-computational model alignment
+- [[neural-brain-framework]] — neuroscience-inspired AI agent framework
