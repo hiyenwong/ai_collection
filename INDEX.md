@@ -20,6 +20,13 @@
 
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - fMRI视觉问答框架：Brain-IT解码语言token+语言模型集成，NSD-VQA基准20类控制问题实现可靠评估 (arXiv: 2605.29588)
+  - Brain Interaction Transformer直接从脑活动解码语言token，与语言模型集成实现VQA
+  - NSD-VQA基准：每图像20问答对，20控制类别，解决现有数据集宽泛问题不可靠评估
+  - 区域分析量化不同脑区对各类问题的贡献，揭示视觉语义信息可解码性
+  - **Activation**: fMRI VQA, brain decoding, Brain-IT, NSD-VQA benchmark, language token, neural representation, visual question answering, brain-language integration
+
 ### Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators
 - [[noise-induced-group-level-synchronization-oscillators]] - 共同噪声诱导的振荡器群体级同步：无耦合条件下相同噪声驱动群体同步，Kuramoto序参量分析+相密度演化映射 (arXiv: 2605.29529)
   - 理论突破：相位密度演化映射解析解释同步机制，无需群体间耦合
