@@ -1,3 +1,21 @@
+## 2026-05-31 - Neuroscience Research (Cron Job)
+
+### Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+- [[embodied-vr-feedback-reshapes-neural-representations]] - 具身VR反馈重塑神经表征支持连续3D运动意象解码：首个系统研究VR反馈对BCI性能影响，CNN-LSTM解码器实现r=0.762相关性 (arXiv: 2605.29677)
+  - VR vs Screen对比：VR反馈(r=0.762)优于屏幕反馈(r=0.672)，提升8.9-13.0%
+  - 固定解码器泛化：VR优势在无重训练条件下持续，证明神经表征更具可解码性和泛化性
+  - 神经生理学发现：更强感觉运动-顶叶去同步化，增强运动-额叶功能连接，前岛叶全频段参与
+  - 应用场景：神经康复、假肢控制、运动训练、连续BCI系统设计
+  - **Activation**: embodied VR, BCI, motor imagery, 3D decoding, neural representation, VR feedback, CNN-LSTM decoder, neurorehabilitation, continuous trajectory decoding
+
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+- [[misalignment-backpropagation-brain-hierarchy]] - 反向传播梯度与大脑层级响应的不匹配：使用fMRI+MEG揭示深度学习梯度虽然能预测高级视觉皮层信号，但其时空组织偏离大脑层级结构 (arXiv: 2605.28693)
+  - 梯度可预测脑信号：高级视觉皮层和晚期时间窗口（MEG）可靠预测
+  - 空间-时间不匹配：梯度计算顺序与皮层层级偏离，空间组织与时间层级不符
+  - 核心发现：深度网络和大脑共享相似表征内容，但学习机制根本不同
+  - 启示：反向传播可能不在大脑中以直接方式实现，需探索替代学习机制（预测编码、Hebbian等）
+  - **Activation**: backpropagation, brain hierarchy, gradient alignment, fMRI MEG, DINOv3, vision models, cortical hierarchy, learning mechanism, deep learning neuroscience
+
 ## 2026-05-31 - Information Science + Quantum Research (Cron Job)
 
 ### Optimal Quantum Locally Differential Privacy
