@@ -1,3 +1,13 @@
+## 2026-06-01 - Neuroscience + AI/ML (Cron Job)
+
+### EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization
+- [[evogm-evolutionary-llm-merging]] - Evolutionary Generative Merging (EvoGM) framework for training-free LLM composition via learnable generative modeling and dual-generator architecture with cycle-consistent learning (arXiv: 2605.29295)
+  - Replaces stochastic hand-crafted operators with learnable generative modeling to optimize merging coefficients
+  - Dual-generator architecture with cycle-consistent learning captures high-performance parameter distributions from historical search trajectories
+  - Winner-loser pairs construction maximizes data efficiency, elite merged models iteratively serve as new expert foundations
+  - Significantly outperforms state-of-the-art baselines, robust on both seen and unseen tasks
+  - **Activation**: LLM merging, evolutionary optimization, generative modeling, training-free, model composition, coefficient optimization, ICML 2026
+
 ## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### A Quotient Homology Theory of Representation in Neural Networks
