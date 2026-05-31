@@ -1,5 +1,13 @@
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
+### Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators
+- [[noise-induced-group-level-synchronization-oscillators]] - 共同噪声诱导的振荡器群体级同步：无耦合条件下相同噪声驱动群体同步，Kuramoto序参量分析+相密度演化映射 (arXiv: 2605.29529)
+  - 理论突破：相位密度演化映射解析解释同步机制，无需群体间耦合
+  - 神经应用：脑网络功能协调可由共同输入（感觉刺激、神经调节）而非解剖连接驱动
+  - 关键发现：群体内同步波动但群体级同步稳定，非相同振荡器统计等价性保持同步
+  - 应用方向：癫痫网络、睡眠节律、感觉整合、运动协调
+  - **Activation**: noise-induced synchronization, Kuramoto order parameter, oscillator groups, phase density evolution, collective oscillations, group-level dynamics, neural noise, functional connectivity
+
 ### Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
 - [[embodied-vr-feedback-reshapes-neural-representations]] - 具身VR反馈重塑神经表征支持连续3D运动意象解码：首个系统研究VR反馈对BCI性能影响，CNN-LSTM解码器实现r=0.762相关性 (arXiv: 2605.29677)
   - VR vs Screen对比：VR反馈(r=0.762)优于屏幕反馈(r=0.672)，提升8.9-13.0%
