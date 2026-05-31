@@ -1,3 +1,23 @@
+## 2026-05-31 - Information Science + Quantum (Cron Job)
+
+### Quantum error correction and fault tolerance: A comprehensive tutorial
+- [[diamond-color-center-quantum-networks]] - 金刚石色心量子网络构建方法论，涵盖光学特性、自旋量子比特控制和城域量子网络演示 (arXiv: 2605.30005)
+  - 色心光学特性、快速自旋控制和长相干时间使其适合量子信息处理
+  - 金刚石纳米光子结构与光子集成电路的异构集成实现可扩展架构
+  - **Activation**: quantum network, diamond color center, quantum memory, nanophotonic
+
+### How Much Is a Dataset Worth? Scaling Laws, the Vendi Score, and Matrix Spectral Functions
+- [[matrix-spectral-data-appraisal]] - 数据集价值评估的统一矩阵谱函数框架，证明Vendi Score和神经缩放定律都是次模的 (arXiv: 2605.29448)
+  - Vendi Score是矩阵谱函数的特例，两者都是次模目标函数
+  - 基于久期方程的更新实现35,000倍加速，设施定位法在数据选择中表现最优
+  - **Activation**: data appraisal, Vendi Score, submodular optimization, matrix spectral functions
+
+### Coding agents in the social sciences (Anthropic Research)
+- [[coding-agents-social-science-research]] - 编码代理在社会科学中的应用方法论，自动化数据分析、因果推断和研究可重复性 (Anthropic, 2026-05-27)
+  - 编码代理可自动化社会科学研究全流程：数据清洗、统计分析、可视化
+  - 因果推断需要领域专长，代理应识别识别策略并运行稳健性检验
+  - **Activation**: coding agents, social science research, automated econometrics, research reproducibility
+
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
 ### Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators
