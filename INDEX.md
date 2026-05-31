@@ -1,3 +1,18 @@
+## 2026-05-31 - Information Science + Quantum (Sunday Cron)
+
+### Quantum Synchronization of Fock States
+- [[quantum-fock-state-synchronization]] - 量子玻色子Fock态同步方法：将经典同步理论扩展到量子域，实现非经典稳态（负Wigner函数）的相位锁定，提取相位滑移率 (arXiv: 2605.30271)
+  - Fock态极限循环：玻色子模式展现具有负Wigner函数的稳态
+  - Arnold tongue区域：驱动强度vs失谐参数空间中的同步区域
+  - 相位滑移分析：新提取Lindblad演化中相位滑移率的方法
+  - **Activation**: quantum synchronization, Fock state, bosonic phase locking, Arnold tongue, phase slip rate, Lindblad evolution
+
+### Diamond Color Center Quantum Networks
+- [[diamond-color-center-quantum-networks]] - 金刚石色心量子网络构建方法：利用NV/SiV等色心的优异光学性质和长自旋相干时间构建大规模量子网络节点 (arXiv: 2605.30005)
+  - 色心量子节点：光学性质+快速自旋操控+长相干时间
+  - 纳米光子集成：金刚石纳米光子结构与PIC异质集成
+  - 城域规模网络：光纤链路、量子中继器、纠缠分发
+  - **Activation**: diamond color center, NV center, quantum network, quantum internet, nanophotonic integration, metropolitan quantum network, quantum memory
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
 ### Circulate-Firing SNN Direct Training Algorithm
