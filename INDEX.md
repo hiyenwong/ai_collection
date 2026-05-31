@@ -68,6 +68,14 @@
   - 相位滑移分析：新提取Lindblad演化中相位滑移率的方法
   - **Activation**: quantum synchronization, Fock state, bosonic phase locking, Arnold tongue, phase slip rate, Lindblad evolution
 
+### Structured Light Turbulent Channel Information
+- [[structured-light-turbulent-channel-information]] - Split-step mode-based analytical framework for spatial light propagation through turbulence, enabling matrix-exponential channel modeling for free-space quantum optical communication (arXiv: 2605.30304)
+  - Power transfer between spatial modes scales linearly with propagation distance in uniform channels
+  - Transfer rate determined by spatial spectral overlap between turbulence spectrum and mode acceptance spectrum
+  - Matrix exponential solution for arbitrary distances; exact when single mode dominates
+  - Enables information-theoretic capacity analysis of turbulent free-space quantum channels
+  - **Activation**: structured light, turbulent atmosphere, optical communication, spatial modes, free-space quantum, mode coupling, atmospheric channel, split-step propagation
+
 ### Diamond Color Center Quantum Networks
 - [[diamond-color-center-quantum-networks]] - 金刚石色心量子网络构建方法：利用NV/SiV等色心的优异光学性质和长自旋相干时间构建大规模量子网络节点 (arXiv: 2605.30005)
   - 色心量子节点：光学性质+快速自旋操控+长相干时间
