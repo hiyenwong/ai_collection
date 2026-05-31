@@ -1,3 +1,12 @@
+## 2026-06-01 - Neuroscience Research (Cron Job)
+
+### Unlocking the Working Memory of Large Language Models for Latent Reasoning
+- [[rim-reasoning-memory-llm-working-memory]] - RiM方法：固定内存块解锁LLM工作记忆，单次前向传递实现高效潜推理，无需自回归思维生成 (arXiv: 2605.30343)
+  - 认知科学启发：人类工作记忆可在内部操纵信息而不外化中间想法，RiM内存块实现类似机制
+  - 双阶段课程学习：先通过显式推理步骤监督建立内存块语义，再去除中间监督仅用答案优化
+  - 计算效率显著：固定内存块单次前向传递处理，避免自回归思维链生成的序列计算开销
+  - **Activation**: working memory, RiM, latent reasoning, memory blocks, cognitive reasoning, internal computation, LLM cognitive architecture, compute-efficient reasoning
+
 ## 2026-06-01 - Neuroscience + AI/ML (Cron Job)
 
 ### EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization
