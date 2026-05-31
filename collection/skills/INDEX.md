@@ -1,4 +1,14 @@
 
+## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Quantum-Like Models of Cognition and Decision Making: Open-Systems and GKSL Dynamics
+- [[gskl-quantum-cognition-dynamics]] - GKSL master equation methodology for cognitive psychology; models mental state evolution as dissipative open-system dynamics, identifies cognitive beats as multi-scale deliberation signatures (arXiv: 2604.18643)
+  - Active vs Passive Hamiltonians: non-commutation with decision projections = cognitive agency signature
+  - Cognitive beats emerge from competing Liouvillian channels at similar frequencies
+  - Quantum escape from classical equilibria in strategic games (e.g., non-Nash Prisoner's Dilemma)
+  - Beat envelope maps timing of peak readiness vs hesitation during conflicting cognitive states
+  - **Activation**: GKSL, Lindblad, quantum cognition, open quantum systems, cognitive beats, decision dynamics, dissipative quantum, mental state evolution, quantum escape, non-Nash, Liouvillian channels, cognitive agency
+
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
