@@ -9,6 +9,32 @@
   - Replay speed correlates with global oscillatory activity (EEG/LFP)
   - **Activation**: sequence timing, replay speed, spiking temporal memory, oscillatory dynamics, sTM model, temporal encoding
 
+## 2026-05-31 - Information Science + Quantum Mechanics (Cron Job)
+
+### Full Characterization of Informative Subsets in Quantum Encrypted Cloning
+- [[quantum-encrypted-cloning-information]] - Pauli-based quantum encrypted cloning protocol analysis; characterizes how quantum information distributes across signal-noise pairs while preserving no-cloning theorem (arXiv: 2605.27421)
+  - Informative subset identification: which output pairs carry meaningful vs. noise information
+  - Signal-to-noise ratio α per output determines extractable information
+  - Collective measurement bounds via Holevo information
+  - Redundancy vs. security tradeoff analysis for quantum communication
+  - **Activation**: quantum encrypted cloning, informative subsets, signal-noise pairs, Yamaguchi Kempf, Pauli cloning, no-cloning redundancy
+
+### Learning Logical Operations for Arbitrary Quantum Error Correction Codes
+- [[learning-logical-operations-qec]] - VarEFTQC variational framework for discovering physical logical gate implementations tailored to hardware noise models, enabling transversal IQP gates for non-additive encodings (arXiv: 2605.28162)
+  - Variational optimization discovers logical gates for non-standard QECCs
+  - Noise-aware gate synthesis maximizes fidelity under realistic hardware noise
+  - Bridges gap between non-additive code theory and physical implementation
+  - Transversal IQP gate family discovery and characterization
+  - **Activation**: VarEFTQC, logical gate learning, non-additive encoding, transversal gates, IQP gates, noise-aware QEC, variational error correction
+
+### Quantum Speed Limit under Calibration Uncertainty
+- [[quantum-speed-limit-calibration-uncertainty]] - Projected quantum speed limit methodology using quantum Fisher information to profile out nuisance parameters, establishing realistic operational speed bounds (arXiv: 2605.27423)
+  - Standard QSLs overestimate speed when Hamiltonian parameters have calibration uncertainty
+  - QFI-based projection separates interest parameters from nuisance parameters via Schur complement
+  - Fisher information geometry provides Riemannian metric for speed bound computation
+  - Calibration precision requirements derived from target evolution time
+  - **Activation**: quantum speed limit, calibration uncertainty, QFI speed bound, nuisance parameters, projected speed limit, Fisher information geometry
+
 ## 2026-05-28 - Systems Engineering + Quantum Computing (Cron Job)
 
 ### Quantum-Native Maximum Likelihood Detection in Random Access Channel with Overloaded MIMO
