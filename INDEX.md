@@ -1,5 +1,19 @@
 ## 2026-06-01 - Neuroscience Research (Cron Job)
 
+### BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics
+- [[braindyn-sheaf-neural-ode]] - 首个Sheaf Neural ODE框架用于生成式脑动力学建模：LSTM stalks编码脑区活动历史 + Sheaf Laplacian消息传递 + 神经ODE连续演化 (arXiv: 2605.19324)
+  - 解决LLM/RNN忽略解剖结构、简单图网络表达能力不足的痛点，引入数学上严谨的层论框架
+  - 多模态验证：PNC fMRI数据、TUSZ癫痫EEG数据、NEST脉冲网络模拟器，均实现强预测能力
+  - 支持下游任务：脑活动预测、in silico扰动预测、合成脑数据生成、脑瞬态分析
+  - **Activation**: sheaf neural ODE, brain dynamics, fMRI modeling, EEG forecasting, brain graphs, sheaf Laplacian, neural ODE, brain regions, generative dynamics
+
+### Selective Alignment Knowledge Distillation for Spiking Neural Networks
+- [[sealkd-snn-knowledge-distillation]] - SeAl-KD方法：选择性对齐SNN时间步知识蒸馏，非均匀强制所有时间步，仅在错误时间步提供纠正指导 (arXiv: 2605.14252)
+  - 核心洞察：SNN预测随时间演化，中间时间步不必个个正确，有效蒸馏应纠正错误时间步而非强制统一
+  - 双重对齐：类别级（竞争logits均衡化）和时间级（基于置信度和时间步相似性重加权）
+  - 静态图像和神经形态事件数据集上一致优于现有蒸馏方法，代码已开源
+  - **Activation**: selective alignment, knowledge distillation, SNN, temporal dynamics, timestep alignment, confidence weighting, neuromorphic datasets, spike-driven networks
+
 ### Unlocking the Working Memory of Large Language Models for Latent Reasoning
 - [[rim-reasoning-memory-llm-working-memory]] - RiM方法：固定内存块解锁LLM工作记忆，单次前向传递实现高效潜推理，无需自回归思维生成 (arXiv: 2605.30343)
   - 认知科学启发：人类工作记忆可在内部操纵信息而不外化中间想法，RiM内存块实现类似机制
