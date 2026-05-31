@@ -17,6 +17,7 @@
 
 ### Circulate-Firing SNN Direct Training Algorithm
 - [[circulate-firing-snn-direct-training]] - 直接训练脉冲神经网络新算法：循环放电神经元模型+可学习代理梯度+正负平衡损失，三重创新提升信息表征能力和训练精度 (arXiv: 2605.27412)
+- [[circulate-firing-snn-training]] - Hermes技能同步：完整方法论文档，包含数学推导、代码示例、实验验证和应用指南
   - 循环放电模型：充分利用膜电位动力学，增强信息表征容量
   - 时间步可学习代理梯度：自适应梯度估计，解决固定梯度传播不准问题
   - 正负平衡损失：膜电位平衡约束，进一步提升性能
