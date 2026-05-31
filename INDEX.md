@@ -16,6 +16,13 @@
 
 ## 2026-06-01 - Neuroscience Research (Cron Job)
 
+### Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+- [[embodied-vr-feedback-reshapes-neural-representations]] - 首个系统化研究具身VR反馈对连续3D运动想象BCI解码的影响：VR反馈创造更具可解码性和泛化性的神经表征，CNN-LSTM解码器在VR下r=0.762 vs 屏幕r=0.672 (arXiv: 2605.29677)
+  - VR反馈生成类真实运动执行的神经模式：更强的感觉运动-顶叶去同步化、增强的运动-额叶功能连接、前岛叶全频段参与
+  - 三种评估策略验证：固定解码器泛化(FDG)、序列自适应训练(SAT)、会话内重建(WSR)——VR在所有策略下均优于屏幕反馈
+  - 设计原则：第一人称视角+3D空间上下文+实时反馈(<100ms延迟)创造稳定可泛化的神经表征
+  - **Activation**: embodied VR, motor imagery BCI, 3D decoding, continuous BCI, neural representations, virtual reality feedback, sensorimotor, neurorehabilitation, CNN-LSTM decoder, spatial feedback
+
 ### Mind-Omni: A Unified Multi-Task Framework for Brain-Vision-Language Modeling via Discrete Diffusion
 - [[mind-omni-brain-vision-language-unified]] - 首个统一七种编码解码任务的离散扩散框架，脑信号token化实现脑-视觉-语言联合建模 (arXiv: 2605.29591)
   - Brain Tokenizer将fMRI/EEG转换为离散token，与视觉语言模型无缝集成
