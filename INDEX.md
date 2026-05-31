@@ -1045,3 +1045,17 @@
   - 核心要点 1: Qutrit使用3态量子叠加态(|0⟩熊/|1⟩中性/|2⟩牛)，每神经元信息容量log₂(3)≈1.58比特
   - 核心要点 2: 3×3酉矩阵门提供比2×2更丰富的特征混合能力，特别适合三分类预测目标
   - **Activation**: qutrit neural network, QQTN, quantum financial forecasting, 3-state quantum ML, stock prediction
+
+## 2026-05-31 - Information Science + Quantum (Sunday Cron - Third Run)
+
+### Optimal Quantum Differential Privacy via Fisher Information Spectral Analysis
+- [[quantum-fisher-privacy-duality]] - QFI对偶性框架：利用量子Fisher信息几何实现方向相关噪声注入，量子DP在epsilon~0.001达到经典DP epsilon~4800的效用，隐私-效用不确定性关系，O(1)组合饱和 (arXiv: 2605.24166)
+  - QFI对偶性：同一矩阵同时度量参数估计精度(metrology)和量子态可区分性(privacy)
+  - 最小极大最优机制：噪声预算集中在主导QFI特征模态，O(d/lambda_max)优势
+  - 混合态QFI分解：错基底去相干提供建设性隐私放大， adversary基底去相干增加可访问信息
+  - 隐私-效用不确定性关系：epsilon*(1-F) >= (Delta^2/2)*Tr(F)/d 硬下界
+  - 自适应QFI估计：O(1/sqrt(n))收敛，1.92x更紧界限
+  - QFI对齐组合：O(1)饱和 vs 标准组合O(k)
+  - 硬件噪声利用：真实量子设备噪声可转化为隐私放大器
+  - IBM Quantum硬件验证(ibm_fez, 156 qubits)：epsilon~0.001等效于经典DP epsilon~4800
+  - **Activation**: quantum differential privacy, QFI, quantum Fisher information, quantum privacy, quantum DP, privacy amplification, quantum embedding, quantum metrology privacy, geometry-aware DP, quantum state distinguishability, QFI-aligned noise

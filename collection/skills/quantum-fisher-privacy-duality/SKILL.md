@@ -1,67 +1,96 @@
 ---
 name: quantum-fisher-privacy-duality
-description: >
-  Quantum Fisher Information (QFI) duality framework for privacy in distributed quantum sensing.
-  Establishes fundamental tradeoff: F_Q(w^T θ) + F_Q(v^T θ) ≤ N for orthogonal sensing directions.
-  Heisenberg-limited precision for one target direction forces zero QFI for all others — achieving
-  parameter privacy by construction. Use when: designing privacy-preserving quantum sensor networks,
-  analyzing information leakage in distributed quantum sensing, optimizing probe states for
-  selective parameter estimation, or building quantum metrology systems with privacy guarantees.
-  Activation: quantum Fisher information, QFI duality, distributed quantum sensing privacy,
-  parameter privacy, quantum metrology privacy, GHZ state sensing, Heisenberg limit privacy,
-  quantum sensor network security.
+description: "Quantum Fisher Information (QFI) duality framework for quantum differential privacy. Use when designing privacy-preserving quantum machine learning systems, quantum differential privacy mechanisms, or quantum metrology-privacy trade-offs. Covers QFI-aligned noise injection, privacy-utility uncertainty relations, and hardware noise harnessing. Activation keywords: quantum differential privacy, QFI, quantum privacy, quantum Fisher information, quantum DP, privacy amplification, quantum embedding, quantum metrology privacy, geometry-aware DP, quantum state distinguishability."
 ---
 
 # Quantum Fisher Information Privacy Duality
 
-Methodology from arXiv:2605.20765 — "Precision and Privacy in Distributed Quantum Sensing: A Quantum Fisher Information Duality" (Farokhi, 2026).
+Based on arXiv:2605.24166 "Optimal Quantum Differential Privacy via Fisher Information Spectral Analysis"
 
-## Core Theorem
+## Core Principle
 
-For any N-qubit probe state with local phase encoding:
+The Quantum Fisher Information (QFI) metric governs a **fundamental duality**: it quantifies both (1) how precisely a parameter can be estimated (metrology) and (2) how distinguishable two quantum states are (privacy). This duality enables geometry-aware quantum differential privacy.
+
+## Key Theorems & Patterns
+
+### 1. QFI-Aligned Noise Injection (Minimax-Optimal Mechanism)
+
+Instead of isotropic depolarizing noise, concentrate noise budget in the **dominant QFI eigenmode**:
 
 ```
-F_Q(w^T θ) + F_Q(v^T θ) ≤ N
+epsilon = (Delta^2 / 2) * lambda_max * (1 - c * gamma)
 ```
 
-for all unit orthogonal sensing directions w and v.
+Where:
+- `Delta`: sensitivity of the query
+- `lambda_max`: largest eigenvalue of the QFI matrix
+- `gamma`: alignment factor between noise direction and QFI eigenstructure
+- Advantage: `O(d / lambda_max)` over isotropic noise
 
-### Equality Conditions
-- **N = 2**: Equality for all equatorial states
-- **N ≥ 2**: Equality for GHZ states
+### 2. Mixed-State QFI Decomposition
 
-## Privacy Implication
+- **Dephasing in adversary's basis** → *increases* accessible information (vulnerability)
+- **Misaligned-basis dephasing** → *constructive privacy amplification* from hardware noise
 
-**Heisenberg-limited precision = Privacy guarantee:**
+Design rule: align dephasing basis *away* from the adversary's measurement basis.
 
-If F_Q(w^T θ) = N (optimal precision for target parameter), then F_Q(v^T θ) = 0 for ALL
-other independent directions. An adversary cannot estimate any alternative parameter.
+### 3. Privacy-Utility Uncertainty Relation
 
-## Design Principles
+```
+epsilon * (1 - F) >= (Delta^2 / 2) * Tr(F) / d
+```
 
-### 1. GHZ State Maximizes Privacy
-- GHZ states saturate the bound for N ≥ 2
-- Achieve Heisenberg scaling while simultaneously blocking all side-channel estimation
+Where `F` is the quantum Fisher information matrix and `d` is the Hilbert space dimension. This provides a hard lower bound on the privacy-utility trade-off.
 
-### 2. Direction Selection Matters
-- Choose sensing direction w aligned with target parameter
-- Any orthogonal direction v has zero Fisher information at the optimum
-- Privacy is structural — no additional cryptographic protocol needed
+### 4. Adaptive QFI Estimation
 
-### 3. Tradeoff is Fundamental
-- Cannot simultaneously estimate multiple orthogonal parameters with Heisenberg precision
-- Privacy emerges from quantum measurement limits, not encryption
+- Converges at `O(1/sqrt(n))` samples
+- Yields `1.92x` tighter privacy bounds vs. fixed estimation
+- Update QFI estimate periodically during training
 
-## Applications
+### 5. QFI-Aligned Composition
 
-- Distributed quantum sensor networks with privacy-by-design
-- Quantum IoT systems preventing parameter leakage
-- Quantum metrology where only authorized parameters should be estimable
-- Multi-party quantum sensing with selective information disclosure
+- Standard DP composition: `O(k)` for k queries
+- QFI-aligned composition: **saturates at `O(1)`**
+- Key: track cumulative QFI budget across composition
 
-## Verification
+### 6. Hardware Noise as Privacy Amplifier
 
-For a given probe state ρ and sensing directions w, v:
-1. Compute QFI matrices for each direction
-2. Verify F_Q(w^T θ) + F_Q(v^T θ) ≤ N
-3. If F_Q(w^T θ) ≈ N, confirm F_Q(v^T θ) ≈ 0 for privacy guarantee
+Hardware noise on real quantum devices can be **harnessed** for privacy amplification rather than mitigated. Validate privacy guarantees against actual hardware noise profiles.
+
+## Implementation Patterns
+
+### QFI-Aligned DP Mechanism
+
+```python
+def qfi_aligned_noise(state, qfi_matrix, epsilon, delta_sensitivity):
+    """Apply direction-dependent noise aligned to QFI eigenstructure."""
+    eigenvalues, eigenvectors = np.linalg.eigh(qfi_matrix)
+    # Concentrate noise in dominant eigenmode
+    noise_budget = (delta_sensitivity**2 / 2) * eigenvalues[-1]
+    noise = np.random.normal(0, np.sqrt(noise_budget / eigenvalues[-1]))
+    return state + eigenvectors[:, -1] * noise
+```
+
+### Privacy-Utility Trade-off Check
+
+```python
+def check_privacy_utility_bound(epsilon, fidelity, qfi_trace, dimension):
+    """Verify the privacy-utility uncertainty relation holds."""
+    delta_sq = 1.0  # sensitivity squared
+    lower_bound = (delta_sq / 2) * qfi_trace / dimension
+    return epsilon * (1 - fidelity) >= lower_bound
+```
+
+## When to Use
+
+- Designing quantum DP mechanisms for QML models
+- Analyzing privacy guarantees of quantum embeddings
+- Optimizing privacy-utility trade-offs in quantum federated learning
+- Leveraging hardware noise for privacy amplification
+- Quantum metrology with privacy constraints (e.g., distributed sensing)
+
+## Validation Results (from paper)
+
+- IBM Quantum hardware (ibm_fez, 156 qubits): equivalent utility at **epsilon ~ 0.001** vs **epsilon ~ 4800** for classical DP
+- Qiskit Aer GPU simulations confirm O(1) composition saturation
