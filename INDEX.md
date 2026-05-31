@@ -1,5 +1,29 @@
 ## 2026-05-31 - Neuroscience Research (Sunday Cron)
 
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - fMRI视觉问答框架：使用Brain Interaction Transformer解码语言token并集成LLM回答视觉问题，引入NSD-VQA基准（20控制问题类别） (arXiv: 2605.29588)
+  - Brain-IT架构：fMRI信号 → Transformer → Language tokens → LLM → Answer
+  - NSD-VQA基准：平均20个Q-A pairs/图像，20控制类别解耦多级视觉理解
+  - 超越先前fMRI captioning/VQA方法，量化可解码视觉/语义信息类型
+  - 分析不同脑区对不同问题类型的贡献
+  - **Activation**: fmri vqa, brain decoding, visual question answering, brain-it, language tokens, nsd-vqa, brain representation
+
+### Neural-Behavioral Representation of Natural Whole-body Movement
+- [[neural-behavioral-whole-body-movement-monkeys]] - 自由运动猴子的全身运动神经行为表征框架：大规模硬膜外皮层信号+多视角动作捕捉，自回归编码器-解码器学习紧凑行为先验 (arXiv: 2605.29355)
+  - 大规模硬膜外电极：分布感觉/运动区域皮层信号
+  - 多视角动作捕捉：同步神经+行为数据重建全身运动学
+  - 自回归编码器-解码器：紧凑行为先验，无物理约束解码准确运动
+  - 首个自由运动灵长类全身运动解码proof-of-concept
+  - **Activation**: whole-body movement, neural decoding, behavior prior, epidural cortical, motion capture, autoregressive encoder, freely moving, primate motor
+
+### Common Noise-Induced Oscillator Synchronization
+- [[noise-induced-oscillator-synchronization]] - 共同噪声诱导的无耦合振子群体同步机制：无群间耦合下共同噪声驱动群体级同步，相位密度演化映射解析证明 (arXiv: 2605.29529)
+  - 无群间耦合：仅通过共同噪声实现群体同步
+  - Kuramoto序参数同步：群内波动但群间R值同步
+  - 相位密度演化：解析导出同步机制
+  - 适用于神经网络同步：脑区通过共同输入同步无需解剖连接
+  - **Activation**: noise-induced synchronization, oscillator groups, kuramoto, phase density, group-level, uncoupled groups, common noise, neural oscillators
+
 ### Embodied Virtual Reality Feedback Reshapes Neural Representations
 - [[embodied-vr-feedback-reshapes-neural-representations]] - 首次系统研究具身VR反馈对3D运动想象BCI解码的影响，VR反馈产生更具可解码性和泛化性的神经表征，解码性能提升8.9-13.0% (arXiv: 2605.29677)
   - CNN-LSTM解码器：VR反馈r=0.762 vs. 屏幕反馈r=0.672
