@@ -1,3 +1,21 @@
+## 2026-05-31 - Neuroscience Research (Cron Job)
+
+### Circulate-Firing SNN Direct Training Algorithm
+- [[circulate-firing-snn-direct-training]] - 直接训练脉冲神经网络新算法：循环放电神经元模型+可学习代理梯度+正负平衡损失，三重创新提升信息表征能力和训练精度 (arXiv: 2605.27412)
+  - 循环放电模型：充分利用膜电位动力学，增强信息表征容量
+  - 时间步可学习代理梯度：自适应梯度估计，解决固定梯度传播不准问题
+  - 正负平衡损失：膜电位平衡约束，进一步提升性能
+  - 兼容Transformer架构，多数据集competitive性能
+  - **Activation**: circulate-firing SNN, learnable surrogate gradient, direct SNN training, membrane potential dynamics, spiking transformer
+
+### LLM-ICL Representational Geometry Reorganization
+- [[llm-icl-representational-geometry-reorganization]] - LLM上下文学习中的表征几何重组：神经科学分类视角（解缠神经元表征）应用于ICL机制，揭示原型算法和几何约束 (arXiv: 2605.28854)
+  - 解缠假说：ICL依赖任务相关表征的在线解缠
+  - 几何重组：成功ICL伴随增加在线可分性的几何变化
+  - 原型算法：LLM整合证据并重塑表征支持分类
+  - 表征几何作为ICL机制约束，量化预训练表征与ICL可利用的差距
+  - **Activation**: llm-icl geometry, representational untangling, in-context learning geometry, neuroscience classification, prototype-like algorithm
+
 ## 2026-05-31 - Quantum Computing Research (Cron Job)
 
 ### Quantum Syndrome Adaptive Decoding
