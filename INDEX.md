@@ -1,5 +1,14 @@
 ## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### A Quotient Homology Theory of Representation in Neural Networks
+- [[quotient-homology-neural-representation]] - 商同调论神经网络表征框架：代数拓扑方法计算本征Betti数，无需外部度量，通过重叠分解捕获纯拓扑特征而非几何特征 (arXiv: 2502.01360)
+  - ReLU神经网络分段线性结构诱导超平面排列，将输入域分解为凸多面体
+  - 商同调群与神经表征同调群同构定理，通过线性规划和union-find算法计算重叠分解
+  - 与持久同调对比：捕获纯拓扑特征而非几何特征，训练过程中Betti数演化揭示拓扑结构变化
+  - **Activation**: quotient homology, algebraic topology, Betti numbers, neural representation, overlap decomposition, piecewise linear, ReLU networks, manifold topology
+
+## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
+
 ### Leggett--Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
 - [[leggett-garg-neural-dynamics]] - Leggett-Garg不等式测试神经元动力学中的非扩散随机结构，Kac过程产生类量子时间相关性 (arXiv: 2605.12126)
   - Leggett-Garg不等式作为Bell不等式的时间类似，区分扩散型和非扩散型神经元随机过程
