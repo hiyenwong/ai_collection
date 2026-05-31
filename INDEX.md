@@ -21,6 +21,13 @@
   - 计算效率显著：固定内存块单次前向传递处理，避免自回归思维链生成的序列计算开销
   - **Activation**: working memory, RiM, latent reasoning, memory blocks, cognitive reasoning, internal computation, LLM cognitive architecture, compute-efficient reasoning
 
+### Large Language Models Reorganize Representational Geometry During In-Context Learning
+- [[llm-icl-representational-geometry-reorganization]] - Neuroscience-inspired geometric account of ICL: LLMs reshape representation space for online untangling without parameter updates, prototype-like algorithm integrates evidence while increasing separability (arXiv: 2605.28854)
+  - **Key innovation**: Applies neural untangling theory (classification as making representations separable) to artificial systems
+  - **Core findings**: ICL performance correlates systematically with representational structure; successful ICL accompanied by geometric reorganization; representational geometry as mechanistic constraint on ICL
+  - **Neuroscience-LLM bridge**: Prototype-like algorithm integrates evidence while reshaping representations, quantifying gap between pretrained representations and ICL exploitation
+  - **Activation**: in-context learning, ICL, representational geometry, LLM mechanisms, neuroscience-inspired AI, classification untangling, representation space, geometric reorganization, neural untangling
+
 ## 2026-06-01 - Neuroscience + Quantum Synchronization (Cron Job)
 
 ### 脑网络振荡同步计算框架更新 (Synthesis)
