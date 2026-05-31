@@ -1,3 +1,20 @@
+## 2026-05-31 - Neuroscience Research (Sunday Cron)
+
+### Embodied Virtual Reality Feedback Reshapes Neural Representations
+- [[embodied-vr-feedback-reshapes-neural-representations]] - 首次系统研究具身VR反馈对3D运动想象BCI解码的影响，VR反馈产生更具可解码性和泛化性的神经表征，解码性能提升8.9-13.0% (arXiv: 2605.29677)
+  - CNN-LSTM解码器：VR反馈r=0.762 vs. 屏幕反馈r=0.672
+  - 神经机制：更强的感觉运动-顶叶去同步化、增强的运动-额叶功能连接
+  - 前岛叶全频段参与、上顶叶耦合增加，模式平行于真实运动执行
+  - **Activation**: VR feedback, embodied feedback, motor imagery BCI, 3D decoding, neural representation, sensorimotor-parietal, functional connectivity
+
+### LLM Representational Geometry Reorganization in In-Context Learning
+- [[llm-reorganize-representational-geometry-icl]] - 大语言模型上下文学习中的表征几何重组：神经科学分类视角（解缠神经元表征）应用于ICL机制，揭示原型算法和几何约束 (arXiv: 2605.28854)
+  - ICL依赖任务相关表征的在线解缠，性能与表征结构系统性相关
+  - 成功ICL伴随增加在线可分性的几何重组
+  - 原型算法：LLM整合证据并重塑表征支持分类
+  - 表征几何作为ICL机制约束，量化预训练表征与ICL可利用差距
+  - **Activation**: in-context learning, ICL, representational geometry, neural untangling, LLM classification, prototype algorithm, representational separability
+
 ## 2026-05-31 - Information Science + Quantum (Sunday Cron)
 
 ### Quantum Synchronization of Fock States
