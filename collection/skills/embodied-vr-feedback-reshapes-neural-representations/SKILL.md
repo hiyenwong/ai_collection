@@ -1,128 +1,183 @@
 ---
-name: embodied-vr-feedback-reshapes-neural-representations
-description: Embodied Virtual Reality feedback reshapes neural representations to support continuous three-dimensional motor imagery decoding. First systematic investigation showing VR feedback elicits more decodable and generalisable neural representations for BCI applications.
-created: 2026-05-31
-updated: 2026-05-31
-source: arXiv:2605.29677
-authors: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle
-tags: [neuroscience, BCI, VR, motor-imagery, neural-representations, EEG, deep-learning, CNN-LSTM]
-activation_keywords: [VR feedback, embodied feedback, motor imagery BCI, 3D decoding, neural representation, sensorimotor-parietal, functional connectivity]
+skill: embodied-vr-feedback-reshapes-neural-representations
+name: Embodied VR Feedback Reshapes Neural Representations
+description: Embodied Virtual Reality feedback methodology for continuous 3D motor imagery BCI decoding. First systematic investigation showing VR feedback elicits more decodable and generalizable neural representations.
+author: Research Bot (Cron Job)
+date: 2026-05-31
+arxiv_id: 2605.29677
+paper_title: Embodied Virtual Reality Feedback Reshapes Neural Representations to Support Continuous Three-Dimensional Motor Imagery Decoding
+paper_url: https://arxiv.org/abs/2605.29677
+category: neuroscience
+activation_keywords:
+  - embodied VR
+  - motor imagery BCI
+  - 3D decoding
+  - continuous BCI
+  - neural representations
+  - virtual reality feedback
+  - sensorimotor
+  - neurorehabilitation
+  - CNN-LSTM decoder
+  - spatial feedback
+tags:
+  - neuroscience
+  - BCI
+  - VR
+  - motor imagery
+  - neural decoding
+  - rehabilitation
 ---
 
-# Embodied Virtual Reality Feedback Reshapes Neural Representations
+# Embodied VR Feedback Reshapes Neural Representations
 
-## Overview
-This study presents the first systematic investigation of embodied virtual reality (VR) feedback during real-time 3D virtual limb control driven by motor imagery across ten longitudinal sessions. Key finding: embodied VR feedback elicits inherently more decodable and generalisable neural representations compared to traditional screen feedback.
+**ArXiv ID**: 2605.29677  
+**Authors**: Niall McShane, Attila Korik, Karl McCreadie, Naomi Du Bois, Darryl Charles, Damien Coyle  
+**Published**: 28 May 2026  
+**URL**: https://arxiv.org/abs/2605.29677  
+**DOI**: https://doi.org/10.5281/zenodo.16047021
 
-## Core Methodology
+## Summary
 
-### Experimental Design
-- **Participants**: 10 participants, 10 longitudinal sessions each
-- **Task**: Continuous 3D motor imagery (virtual limb control)
-- **Feedback Modalities**: VR vs. Screen feedback comparison
-- **Decoding Strategies**:
-  1. Fixed Decoder Generalisation (FDG) - actual online performance
-  2. Sequential Adaptive Training (SAT) - periodic retraining
-  3. Within-Session Reconstruction (WSR) - upper-bound estimation
-
-### CNN-LSTM Decoder Architecture
-- Achieved within-session imagined movement correlations:
-  - **VR feedback**: r = 0.762
-  - **Screen feedback**: r = 0.672
-- VR significantly outperformed screen across all strategies (8.9-13.0% improvement, p <= 0.002, d = 1.42-2.05)
+First systematic investigation of **embodied virtual reality (VR) feedback** during real-time 3D virtual limb control driven by motor imagery across 10 longitudinal sessions in 10 participants. Demonstrates that VR feedback elicits inherently more decodable and generalizable neural representations compared to screen feedback.
 
 ## Key Findings
 
-### 1. Neural Representation Quality
-- VR feedback produces inherently more decodable neural patterns
-- Advantage persists even without decoder retraining
-- Demonstrates that embodied feedback shapes neural representations at the source
+### Performance Metrics
+- **Within-session imagined movement correlations**: 
+  - VR feedback: r = 0.762
+  - Screen feedback: r = 0.672
+- **Performance improvement**: 8.9-13.0% across all strategies and movement dimensions
+- **Statistical significance**: All p ≤ 0.002, effect size d = 1.42-2.05
 
-### 2. Neurophysiological Mechanisms
+### Decoding Strategies Evaluated
+1. **Fixed Decoder Generalisation (FDG)**: Actual online performance without retraining
+2. **Sequential Adaptive Training (SAT)**: Periodic retraining
+3. **Within-Session Reconstruction (WSR)**: Upper-bound estimation
+
+### Neural Mechanisms
 - **Stronger sensorimotor-parietal desynchronisation** under VR
 - **Enhanced motor-frontal functional connectivity**
 - **Pervasive anterior insula engagement** across all frequency bands
 - **Increased superior parietal lobule coupling**
-- Patterns parallel those seen in real movement execution
+- Patterns parallel real movement execution
 
-### 3. Movement Dimension Effects
-- Linear mixed-effects modelling confirmed:
-  - Robust main effects of feedback modality
-  - Movement axis effects
-  - No interaction (independent effects)
+## Methodology
 
-## Practical Applications
+### Decoder Architecture
+- **CNN-LSTM decoder** for continuous 3D trajectory decoding
+- Real-time virtual limb control from motor imagery
+- Multi-dimensional movement decoding (X, Y, Z axes)
 
-### BCI Design Principles
-1. **Embodied spatial feedback** as key design principle
-2. Target intuitive motor control applications
-3. Neurorehabilitation optimization
-4. Real-time adaptive decoding strategies
+### Feedback Modalities
+1. **Embodied VR feedback**: First-person perspective in 3D environment
+2. **Screen feedback**: 2D visualization (control condition)
 
-### Implementation Guidelines
+### Experimental Design
+- **10 participants** × **10 longitudinal sessions**
+- Real-time BCI operation with motor imagery
+- Three evaluation strategies (FDG, SAT, WSR)
+
+## Core Principles
+
+### Embodied Spatial Feedback Design
+1. **First-person perspective**: Aligns user perception with virtual limb
+2. **3D spatial context**: Provides embodied sense of movement
+3. **Real-time feedback**: Immediate visual response to neural commands
+4. **Generalizable representations**: VR feedback creates stable neural patterns that transfer across sessions
+
+### Neural Representation Enhancement
+- VR feedback elicits neural patterns similar to **actual movement execution**
+- **Sensorimotor cortex** and **parietal regions** show enhanced engagement
+- **Anterior insula** involvement suggests heightened body awareness
+
+## Applications
+
+### Use Cases
+- **Neurorehabilitation**: Stroke recovery, motor function restoration
+- **Continuous BCI**: Intuitive control for assistive devices
+- **Prosthetic control**: 3D movement decoding for limb prostheses
+- **VR-based therapy**: Embodied feedback for motor training
+
+### Implementation Requirements
+- VR headset with motion tracking
+- EEG-based motor imagery decoder (CNN-LSTM architecture)
+- Real-time feedback system
+- Longitudinal training protocol
+
+## Technical Implementation
+
+### Decoder Training
 ```python
-# CNN-LSTM decoder for 3D motor imagery
-class MotorImageryDecoder:
+# CNN-LSTM architecture for 3D trajectory decoding
+class CNN_LSTM_Decoder:
+    """
+    CNN extracts spatial features from EEG spectrograms
+    LSTM models temporal dynamics for trajectory prediction
+    """
     def __init__(self):
-        self.cnn_encoder = ConvNet()  # Feature extraction
-        self.lstm_decoder = LSTMNet()  # Temporal trajectory decoding
-        
-    def decode_trajectory(self, eeg_signal):
-        features = self.cnn_encoder.extract(eeg_signal)
-        trajectory = self.lstm_decoder.predict(features)
-        return trajectory  # 3D coordinates
+        self.cnn = CNNFeatureExtractor()  # Spatial features
+        self.lstm = LSTMTemporalModel()    # Temporal dynamics
+        self.output = TrajectoryPredictor() # 3D coordinates
+    
+    def decode(self, eeg_data):
+        spatial_features = self.cnn(eeg_data)
+        temporal_context = self.lstm(spatial_features)
+        trajectory = self.output(temporal_context)
+        return trajectory  # (x, y, z) coordinates
 ```
 
-## Technical Insights
+### Feedback System
+```python
+# Embodied VR feedback system
+class EmbodiedVRFeedback:
+    def __init__(self, vr_headset, virtual_limb):
+        self.headset = vr_headset
+        self.limb = virtual_limb
+    
+    def update_limb_position(self, decoded_trajectory):
+        """
+        Real-time update of virtual limb based on decoded movement
+        First-person perspective aligned with user's viewpoint
+        """
+        self.limb.set_position(decoded_trajectory)
+        self.limb.render_from_first_person()
+```
 
-### VR Feedback Advantages
-- Spatial embodiment creates stronger motor imagery
-- Immersive feedback loop enhances neural encoding
-- Multi-dimensional movement representation
-- Better generalisation to unseen data
+## Key Advantages Over Screen Feedback
 
-### Neural Mechanisms
-- Anterior insula: Interoceptive awareness during embodied movement
-- Superior parietal: Spatial processing and body schema
-- Motor cortex: Movement planning and execution
-- Sensorimotor integration network activation
+| Aspect | VR Feedback | Screen Feedback |
+|--------|-------------|-----------------|
+| **Decoding Performance** | r = 0.762 | r = 0.672 |
+| **Generalization** | Higher (FDG strategy) | Lower |
+| **Neural Engagement** | Sensorimotor-parietal + anterior insula | Reduced |
+| **Functional Connectivity** | Motor-frontal enhanced | Baseline |
+| **User Experience** | Embodied, intuitive | Detached, abstract |
 
-## Research Questions Addressed
-1. How does feedback modality shape neural representations?
-2. Can embodied VR produce inherently better decodable signals?
-3. What neurophysiological mechanisms underlie VR advantage?
-4. How does longitudinal training affect decoding performance?
+## Limitations & Considerations
 
-## Limitations
-- Small sample size (n=10)
-- Laboratory VR setup (not home-use ready)
-- Requires specialised EEG equipment
-- Motor imagery training intensity varies across participants
+- Requires VR hardware setup
+- Longitudinal training needed (10+ sessions)
+- Individual variability in motor imagery ability
+- EEG signal quality critical for decoding
+- VR motion sickness potential in some users
 
 ## Future Directions
-- Home-based VR BCI systems
-- Multi-modal feedback (VR + haptic)
-- Transfer learning across participants
-- Real-time adaptive decoder optimisation
-- Integration with neurorehabilitation protocols
 
-## Related Work
-- Continuous BCI trajectory decoding
-- Motor imagery neural representations
-- Embodied cognition in BCI
-- VR neurofeedback systems
-- Functional connectivity in motor imagery
+- Integration with **haptic feedback** for multi-modal embodiment
+- **Adaptive decoder calibration** during longitudinal training
+- **Transfer learning** across different motor tasks
+- **Neuroplasticity assessment** through longitudinal tracking
+- **Clinical trials** for stroke rehabilitation efficacy
 
 ## References
-- arXiv:2605.29677 - Full paper
-- Zenodo DOI: 10.5281/zenodo.16047021 - Data availability
-- Nature Biomedical Engineering (submitted)
 
-## Activation
-Use when:
-- Designing motor imagery BCI systems
-- Optimising feedback modalities for neurorehabilitation
-- Studying neural representation quality
-- Implementing 3D trajectory decoding
-- Comparing VR vs. screen feedback efficacy
-- Investigating embodied cognition effects on neural encoding
+- Original paper: arXiv:2605.29677
+- Zenodo data: https://doi.org/10.5281/zenodo.16047021
+- Related BCI research: Motor imagery decoding literature
+- VR embodiment studies: First-person perspective benefits
+
+---
+
+**Skill Usage**: When designing or evaluating continuous BCI systems, motor imagery decoders, VR-based neurorehabilitation, or 3D movement decoding. Use when discussing embodied feedback principles, neural representation generalization, or longitudinal BCI training effects.
+
+**Last Updated**: 2026-05-31 (Automated Cron Job)
