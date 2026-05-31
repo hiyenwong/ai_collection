@@ -17,6 +17,20 @@
 
 ## 2026-05-31 - Information Science + Quantum (Sunday Cron)
 
+### Majorization Lattice Supermodularity and Subadditivity
+- [[majorization-supermodularity-information]] - 优超格上超模性和次可加性的结构前驱关系：建立两个结构优超关系，证明所有求和凹函数（Tsallis、Rényi、Shannon熵）在优超格上的超模性和次可加性 (arXiv: 2605.30331)
+  - 优超前驱：两个结构优超关系作为超模性和次可加性的基础
+  - 熵族统一：Tsallis(所有α)、Rényi(所有α)、Shannon熵同时获得超模性和严格次可加性
+  - 强化不等式：所有熵函数严格次可加，Tsallis/Shannon严格超模
+  - **Activation**: majorization lattice, supermodularity, subadditivity, Tsallis entropy, Rényi entropy, Shannon entropy, sum-concave, information theory
+
+### Quantum Synchronization Dynamics Framework (Unified)
+- [[quantum-synchronization-dynamics-framework]] - 统一量子同步动力学框架：结合Fock态同步（相位锁定非经典态）与极限循环退同步（量子相位滑移增殖），以及不定因果序对实/复量子层级的逆转 (arXiv: 2605.30271, 2605.30302, 2605.30238)
+  - 同步方向：玻色子Fock态在Arnold tongue内实现相位锁定，负Wigner函数稳态
+  - 退同步方向：量子相位滑移增殖破坏相位锁定，Keldysh路径积分分析
+  - 因果结构：不定因果序下实量子理论比复数理论实现更强过程关联
+  - **Activation**: quantum synchronization, Fock state, phase slip, Keldysh, limit cycle, indefinite causal order, bosonic mode
+
 ### Quantum Synchronization of Fock States
 - [[quantum-fock-state-synchronization]] - 量子玻色子Fock态同步方法：将经典同步理论扩展到量子域，实现非经典稳态（负Wigner函数）的相位锁定，提取相位滑移率 (arXiv: 2605.30271)
   - Fock态极限循环：玻色子模式展现具有负Wigner函数的稳态
