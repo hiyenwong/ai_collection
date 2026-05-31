@@ -21,6 +21,15 @@
   - 计算效率显著：固定内存块单次前向传递处理，避免自回归思维链生成的序列计算开销
   - **Activation**: working memory, RiM, latent reasoning, memory blocks, cognitive reasoning, internal computation, LLM cognitive architecture, compute-efficient reasoning
 
+## 2026-06-01 - Neuroscience + Quantum Synchronization (Cron Job)
+
+### 脑网络振荡同步计算框架更新 (Synthesis)
+- [[brain-oscillation-synchronization-framework]] - 更新：新增共同噪声诱导同步+量子同步/退同步跨框架关联，整合6篇论文的统一同步理论 (arXiv: 2605.23520,2605.14680,2105.08288,2605.29529,2605.30271,2605.30302)
+  - 核心要点 1: 共同噪声诱导的群体级同步 (2605.29529) - 无耦合振荡器群体通过共同噪声实现同步，相密度演化映射解析
+  - 核心要点 2: 量子同步与退同步双视角 (2605.30271, 2605.30302) - Fock态量子同步 vs 量子相位滑移导致退同步
+  - 核心要点 3: 同步/退同步跨尺度统一框架 - 经典Kuramoto → 噪声诱导 → 量子态同步
+  - **Activation**: brain oscillation, synchronization, Kuramoto, quantum synchronization, common noise, phase slip, oscillator sync
+
 ## 2026-06-01 - Neuroscience + AI/ML (Cron Job)
 
 ### EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization
