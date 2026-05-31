@@ -1,3 +1,19 @@
+## 2026-06-01 - Neuroscience Research (Cron Job)
+
+### Mind-Omni: A Unified Multi-Task Framework for Brain-Vision-Language Modeling via Discrete Diffusion
+- [[mind-omni-brain-vision-language-unified]] - 首个统一七种编码解码任务的离散扩散框架，脑信号token化实现脑-视觉-语言联合建模 (arXiv: 2605.29591)
+  - Brain Tokenizer将fMRI/EEG转换为离散token，与视觉语言模型无缝集成
+  - 离散扩散实现七任务统一：脑编码、脑解码、VQA、captioning、检索、生成、分析
+  - 任务间协同效应显著：共享表征提升所有单独任务性能
+  - **Activation**: mind-omni, brain vision language, unified framework, discrete diffusion BCI, multi-task brain model
+
+### Brain-IT-VQA: From Brain Signals to Answers
+- [[brain-it-vqa-fmri-visual-question-answering]] - fMRI视觉问答框架：Brain Interaction Transformer解码语言token+语言模型集成，NSD-VQA基准实现可靠评估 (arXiv: 2605.29588)
+  - Brain Interaction Transformer直接从脑活动解码语言token，与语言模型集成实现VQA
+  - NSD-VQA基准：每图像20问答对，20控制类别，解决现有数据集宽泛问题不可靠评估
+  - 脑表征结构分析：揭示视觉编码层次性和区域特异性模式
+  - **Activation**: brain-it-vqa, brain vqa, fmri question answering, visual decoding brain, neural vqa
+
 ## 2026-06-01 - Neuroscience + Quantum (Cron Job)
 
 ### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
