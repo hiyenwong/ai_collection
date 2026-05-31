@@ -1,4 +1,10 @@
 ## 2026-05-31 - Neuroscience Research (Sunday Cron)
+### Majorization precursors to supermodularity and subadditivity on the majorization lattice
+- [[majorization-entropy-inequalities]] - Majorization lattice framework for proving entropy inequalities across all sum-concave entropies (Shannon, Rényi, Tsallis) (arXiv: 2605.30331)
+  - Structural majorization relations as precursors to supermodularity and subadditivity
+  - Unified proof framework for all sum-concave entropy measures simultaneously
+  - Applicable to both classical and quantum information theory via eigenvalue distributions
+  - **Activation**: majorization entropy, entropy inequality proof, majorization lattice, supermodularity entropy, subadditivity proof, Rényi entropy inequality, 熵不等式
 
 ### Brain-IT-VQA: From Brain Signals to Answers
 - [[brain-it-vqa-fmri-visual-question-answering]] - fMRI视觉问答框架：使用Brain Interaction Transformer解码语言token并集成LLM回答视觉问题，引入NSD-VQA基准（20控制问题类别） (arXiv: 2605.29588)
