@@ -144,3 +144,11 @@ Solid-state quantum technologies require microwave devices capable of near-quant
 - Related: quantum-noise-robust-metrology (frequency estimation under noise)
 - Related: quantum-sensor-reliability (sensor network reliability)
 - Related: pulse-level-quantum-computing (pulse-level control)
+
+## Tools Used
+
+- Python (numpy, scipy)
+- Qiskit or other quantum computing SDKs
+- Read
+- Write
+- Exec

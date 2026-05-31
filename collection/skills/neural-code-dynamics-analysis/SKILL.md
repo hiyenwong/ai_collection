@@ -929,3 +929,25 @@ def validate_dynamics_prediction(data, future_data):
 - 计算与生物数据对齐度
 - 提出调节策略（例如：引入噪声以达到临界态）
 - 重新训练并验证改进
+
+## Activation Keywords
+
+- neural coding
+- dynamics analysis
+- critical brain hypothesis
+- avalanche dynamics
+- information geometry
+- dynamical invariants
+- neural representation
+- encoding dynamics
+- computational neuroscience
+- 神经编码
+- 动力学分析
+- 临界态
+
+## Tools Used
+
+- Python (numpy, scipy, sklearn, nolds, antropy)
+- Read
+- Write
+- Exec

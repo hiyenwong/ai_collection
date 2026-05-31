@@ -12,8 +12,6 @@ Checks:
 Run: python scripts/verify_pipeline.py --skills skill1 skill2 --arxiv-ids 2605.12345 2605.67890
 """
 
-import os
-import sys
 import sqlite3
 from pathlib import Path
 import argparse
