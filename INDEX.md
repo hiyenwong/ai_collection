@@ -302,7 +302,6 @@
   - **Activation**: whole-body movement, neural decoding, behavior prior, epidural cortical, motion capture, autoregressive encoder, freely moving, primate motor
 
 ### Common Noise-Induced Oscillator Synchronization
-- [[noise-induced-oscillator-synchronization]] - 共同噪声诱导的无耦合振子群体同步机制：无群间耦合下共同噪声驱动群体级同步，相位密度演化映射解析证明 (arXiv: 2605.29529)
   - 无群间耦合：仅通过共同噪声实现群体同步
   - Kuramoto序参数同步：群内波动但群间R值同步
   - 相位密度演化：解析导出同步机制
@@ -1018,7 +1017,6 @@
   - **Activation**: neural dynamics, computational neuroscience, brain networks, neural population, spiking networks, criticality, connectome analysis, 神经动力学分析方法论
 
 ### Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators
-- [[noise-induced-oscillator-synchronization]] - Proves common noise synchronizes uncoupled oscillator groups via Kuramoto order parameter; phase density evolution mapping explains collective dynamics without inter-group coupling (arXiv: 2605.29529)
   - Complex Kuramoto order parameter R(t) synchronizes across groups sharing identical noise
   - Phase density evolution derivation: common noise creates correlated collective phases
   - Neurophysiological implication: shared input explains functional connectivity without anatomical connections
