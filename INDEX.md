@@ -16,6 +16,37 @@
   - 启示：反向传播可能不在大脑中以直接方式实现，需探索替代学习机制（预测编码、Hebbian等）
   - **Activation**: backpropagation, brain hierarchy, gradient alignment, fMRI MEG, DINOv3, vision models, cortical hierarchy, learning mechanism, deep learning neuroscience
 
+## 2026-05-31 - Information Science (Sunday Cron Job)
+
+### Token-Level Generalization in LoRA Adapter Backdoors
+- [[ai-adapter-security-analysis]] - LoRA适配器后门检测：通过行为探测和权重级统计检测数据投毒后门，行为检测跨模型/规模/秩可迁移，因果定位到MLP中后层down_proj (arXiv: 2605.30189)
+  - 特征级泛化：后门在token特征层泛化而非结构层，RFC引用触发但ISO/OWASP/NIST不触发
+  - 双检测路线：行为探测器(outlier_gap + mean_attack_rate)和权重级(Frobenius范数交叉模块标准差)
+  - 攻击随LoRA秩单调增长，少量投毒样本即可驱动后门饱和
+  - **Activation**: lora backdoor, adapter security, behavioral detection, weight analysis, fine-tune trustworthiness, supply chain scanning
+
+### LLM Penetration Testing Consistency (400-Run Study)
+- [[ai-adapter-security-analysis]] - LLM渗透测试一致性：400轮大规模实测，Gemini 85%/Claude 61%/GPT-4o-mini 56%/Qwen 25%完全利用，首次利用15-30秒，失败模式各模型不同 (arXiv: 2605.30096)
+  - 跨服务凭证复用：Qwen 57%, GPT-4o-mini 49%, 云模型0%
+  - 失败模式分类：Claude(API截断39), Qwen(提前完成52), GPT-4o-mini(预算耗尽23)
+  - API 529错误≠安全拒绝：基础设施过载非模型级拒绝
+  - N=100/模型最低要求：小N研究遗漏罕见失败模式
+  - **Activation**: LLM penetration testing, attack consistency, AI security evaluation, autonomous pentest, exploit reliability
+
+### Bayesian Membership Inference via Network Models
+- [[bayesian-membership-inference-attack]] - 基于贝叶斯网络的成员推断攻击：用BN建模总体属性依赖结构，结合概率编程计算后验，在复杂依赖上优于LRT和内积攻击 (arXiv: 2605.30203)
+  - 结构先验利用：当攻击者拥有类似结构的外部数据时构建更有效的专门攻击
+  - 概率编程实现：Roulette PPL计算贝叶斯后验
+  - 适用于统计发布隐私审计、DP机制评估
+  - **Activation**: membership inference, bayesian network, privacy attack, statistical disclosure, probabilistic programming, DP audit
+
+### Zero-Order Federated Learning with Multi-Key HE
+- [[zero-order-federated-learning-he]] - 零阶联邦学习+多钥同态加密：xMK-CKKS在无线信道上无需信道估计的聚合协议，容忍N-1客户端妥协，保持O(1/√K)收敛率 (arXiv: 2605.30123)
+  - 四阶段协议：公钥重传→密文重传→代数抵消→聚合，相同信道衰落项自动抵消
+  - 客户端级安全：每设备独立密钥，优于单钥HE
+  - 通信高效：每轮每设备一个加密标量，开销独立于模型维度
+  - **Activation**: zero-order federated learning, xmk-ckks, multi-key homomorphic encryption, privacy-preserving FL, wireless ML, over-the-air aggregation
+
 ## 2026-05-31 - Information Science + Quantum Research (Cron Job)
 
 ### Optimal Quantum Locally Differential Privacy
