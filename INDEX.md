@@ -1,3 +1,20 @@
+## 2026-06-01 - Neuroscience Research (Cron Job)
+
+### Random Neural Networks Match Observed Dimensionality
+- [[random-neural-network-dimensionality]] - 随机神经网络维度匹配实验观测的方法论：首次定量验证最小结构模型可解释神经种群低维度性，动态平均场理论+有限测量时间+行为上下文变异性 (arXiv: 2605.26551)
+  - 理论验证：最小随机网络模型定量匹配实验观测的维度性（包含有限测量时间和行为变异性）
+  - 维度性诊断局限性：当前记录时长难以区分网络连接结构，需更长时间记录或增加行为上下文多样性
+  - 关键发现：维度性随外部输入强度非单调变化，不同行为上下文下神经流形方向相似性比维度性更敏感
+  - **Activation**: random neural network, dimensionality, neural population, mean-field theory, DMFT, recording duration, neural manifold, connectivity structure, behavioral context
+
+### Signal-to-Noise Ratio and Sample Size Govern Representational Alignment
+- [[snr-sample-size-representational-alignment]] - 信噪比和样本数量调控神经网络表征对齐的方法论：SNR单调影响对齐，样本数量非单调（插值阈值附近最小），揭示对齐与泛化性能解耦 (arXiv: 2605.26973)
+  - SNR影响：信噪比单调增加表征对齐，跨线性和非线性网络一致
+  - 样本数量效应：训练样本数在插值阈值附近对齐最小，非单调依赖关系
+  - 核心洞察：表征对齐与泛化性能解耦，更强对齐不一定对应更好泛化
+  - 简单模型验证：单隐藏层网络可解析估计对齐，与复杂网络定性一致
+  - **Activation**: representational alignment, SNR, sample size, interpolation threshold, generalization, universality, neural representations, training dynamics
+
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
 ### Quantum error correction and fault tolerance: A comprehensive tutorial
