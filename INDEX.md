@@ -61,6 +61,18 @@
   - 简单模型验证：单隐藏层网络可解析估计对齐，与复杂网络定性一致
   - **Activation**: representational alignment, SNR, sample size, interpolation threshold, generalization, universality, neural representations, training dynamics
 
+
+## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Searching for Quantum Effects in the Brain: A Bell-Type Test for Nonclassical Latent Representations in Autoencoders
+- [[quantum-nonclassicality-latent-test]] - 信息论Bell型一致性测试检测神经表示隐空间中的非经典结构，经典自编码器无法违反界限但量子架构可以 (arXiv: 2601.10588)
+  - 使用自编码器作为透明模型系统探测神经表示结构
+  - 多读取上下文下的Bell型不等式测试，|S|>2指示非经典结构
+  - 模型无关方法，不依赖微观量子假设
+  - 桥接量子基础与机器学习，开辟探测脑启发计算中量子经典边界的新途径
+  - **Activation**: quantum nonclassicality test, Bell-type test neural, latent space quantum, autoencoder nonclassical, quantum effects brain
+
+
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
 ### Quantum error correction and fault tolerance: A comprehensive tutorial
