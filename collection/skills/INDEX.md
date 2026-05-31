@@ -9,6 +9,13 @@
   - Beat envelope maps timing of peak readiness vs hesitation during conflicting cognitive states
   - **Activation**: GKSL, Lindblad, quantum cognition, open quantum systems, cognitive beats, decision dynamics, dissipative quantum, mental state evolution, quantum escape, non-Nash, Liouvillian channels, cognitive agency
 
+### Winning Lottery Tickets in Neural Networks via Quantum-Inspired Classical Algorithm
+- [[quantum-inspired-lottery-tickets]] - Classical dequantized algorithm for sparse subnetwork selection using ridgelet transform; O(poly(D)) runtime vs exp[O(D)] previous classical (arXiv: 2605.13979)
+  - Ridgelet coefficients define importance distribution for hidden node sampling
+  - Achieves comparable empirical risk to exact quantum sampling
+  - Proves quantum advantage for this task can be achieved classically with polynomial scaling
+  - **Activation**: lottery tickets, sparse subnetwork, quantum-inspired classical algorithm, ridgelet transform, neural network pruning, dequantization, optimized sampling
+
 ## 2026-05-31 - Neuroscience Research (Cron Job)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
