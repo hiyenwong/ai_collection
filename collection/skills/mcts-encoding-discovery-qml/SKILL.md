@@ -1,62 +1,75 @@
 ---
 name: mcts-encoding-discovery-qml
-description: "Monte Carlo Tree Search (MCTS) methodology for discovering optimal data encoding circuits in quantum-classical neural networks (QML). Use when: (1) designing data encoding strategies for quantum machine learning models, (2) optimizing variational quantum circuit encoding layers, (3) evaluating encoding performance predictors (effective rank vs entanglement capability vs Fourier decomposition), (4) building hybrid quantum-classical CNNs for medical imaging or other domains. Based on arXiv:2605.18540."
+description: "Monte Carlo Tree Search (MCTS) methodology for discovering optimal data encoding circuits in quantum-classical neural networks. Addresses the open question of why certain quantum data encodings outperform others by treating encoding circuit design as a sequential decision problem. Use when: quantum data encoding optimization, MCTS quantum circuits, quantum-classical neural network design, QML encoding strategy, quantum feature map discovery."
 license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2605.18540"
+  published: "2026-05-19"
+  tags: [quantum-ml, MCTS, data-encoding, quantum-classical, QCCNN]
 ---
 
 # MCTS Encoding Discovery for QML
 
-Discover optimal data encoding circuits for quantum-classical neural networks using Monte Carlo Tree Search (MCTS), as introduced in arXiv:2605.18540.
+## Description
 
-## Core Problem
+Uses Monte Carlo Tree Search (MCTS) to discover optimal data encoding circuits for quantum-classical convolutional neural networks (QCCNNs). Treats encoding circuit design as a sequential decision problem where each action adds a gate, and the reward is the resulting QML model performance.
 
-Data encoding is the most impactful design choice in QML performance, yet why certain encodings outperform others is poorly understood. Manual encoding design is suboptimal and doesn't scale.
+## Core Innovation
 
-## MCTS Encoding Discovery Methodology
+The choice of data encoding significantly influences QML performance, but the design space is combinatorially large and poorly understood. MCTS provides a systematic way to:
 
-### Step 1: Define the QCCNN Architecture
+1. **Explore** the encoding circuit space efficiently
+2. **Evaluate** encodings based on actual model performance
+3. **Discover** patterns in successful encodings that generalize
 
-Build a Quantum-Classical Convolutional Neural Network with:
-- Non-variational quantum block for feature extraction
-- Classical classifier head
-- Encodings searched in the quantum block
+## MCTS Framework
 
-### Step 2: Run MCTS Over Encoding Circuit Space
+### Search Space Definition
+- **Actions**: Single-qubit gates (H, Rx, Ry, Rz), two-qubit gates (CNOT, CZ), parameterized rotations
+- **State**: Current encoding circuit configuration
+- **Reward**: QCCNN classification accuracy on validation set
+- **Depth limit**: Maximum circuit depth to control complexity
 
-- State: Current partial encoding circuit
-- Actions: Add gate/rotation from available set (RY, RZ, CNOT, etc.)
-- Reward: Validation accuracy of the QCCNN with that encoding
-- Use standard MCTS (selection → expansion → simulation → backpropagation)
-- Evaluate each candidate on a short training budget before full retraining
+### Tree Search Process
+1. **Selection**: UCB1 formula balances exploration vs exploitation
+2. **Expansion**: Add new gate to circuit
+3. **Simulation**: Train QCCNN with discovered encoding, evaluate performance
+4. **Backpropagation**: Update node statistics with reward signal
 
-### Step 3: Evaluate with Effective Rank Threshold
+### Key Insights
+- MCTS discovers encodings that outperform hand-designed ones
+- Successful encodings share structural patterns (alternating layers, entanglement structure)
+- The discovered encodings generalize across datasets
+- Computational cost is justified by performance gains
 
-Key insight from the paper: **effective rank** of feature maps is a strong predictor of encoding performance, while entanglement capability and Fourier decomposition provide minimal insight.
+## Usage Patterns
 
-- Compute effective rank of feature maps for discovered encodings
-- Use effective rank as a threshold criterion to accelerate search
-- Prune low-effective-rank candidates early to save computation
+### Encoding Discovery for New QML Task
+1. Define the QCCNN architecture (quantum feature extractor + classical classifier)
+2. Set MCTS parameters (max depth, budget, gate set)
+3. Run MCTS to search encoding space
+4. Analyze top-performing encodings for patterns
+5. Validate discovered encoding on held-out data
 
-### Step 4: Validate on Target Dataset
+### Encoding Pattern Analysis
+1. Extract structural features from top-N discovered encodings
+2. Identify common patterns (gate sequences, entanglement topology)
+3. Formulate encoding design rules from discovered patterns
+4. Apply rules to new problems as starting points
 
-- Train the best-discovered encoding with full budget
-- Compare against standard encoding strategies (amplitude, angle, IQP)
-- Compare against purely classical baselines
+## Activation Keywords
+- quantum encoding discovery
+- MCTS quantum circuits
+- quantum data encoding optimization
+- QCCNN encoding design
+- quantum feature map search
+- quantum machine learning encoding
+- QML encoding strategy
+- quantum circuit search
 
-## Key Findings
+## Pitfalls
 
-1. MCTS-discovered encodings outperform commonly used strategies on medical imaging datasets
-2. **Effective rank** is the most useful predictor — use it to accelerate future searches
-3. Entanglement capability and Fourier decomposition are poor predictors
-4. Discovered circuits remain competitive with classical counterparts
-
-## Implementation Notes
-
-- Use Qiskit or equivalent for quantum circuit simulation
-- MCTS can be implemented with standard libraries (e.g., `mcts` package)
-- Start with small circuit depths (3-5 layers) for tractable search
-- For production, use effective rank as an early stopping criterion
-
-## Activation
-
-Keywords: MCTS encoding discovery, quantum data encoding, QCCNN, effective rank encoding predictor, Monte Carlo Tree Search quantum machine learning, encoding circuit optimization
+- **Simulation cost**: Each MCTS rollout requires training the QCCNN — use smaller models for exploration, scale up for validation
+- **Overfitting to training data**: Discovered encodings may overfit — validate on held-out data
+- **Gate set bias**: Results depend on available gate set — use comprehensive gate libraries
+- **Depth vs performance trade-off**: Deeper circuits are more expressive but harder to train on NISQ devices

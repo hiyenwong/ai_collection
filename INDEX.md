@@ -23,6 +23,32 @@
   - 计算加速10x，性能差距<5%，隐私部分可观测性实现
   - **Activation**: distributed MPC, district heating network, ADMM optimization, privacy-preserving control, graph-based thermal modeling
 
+## 2026-05-31 - Information Science + Quantum (Cron Job)
+
+### QKD Detection Efficiency Mismatch Countermeasure
+- [[qkd-efficiency-mismatch-countermeasure]] - 量子密钥分发检测效率不匹配攻击的实用防御方法，通过时间过滤和探测器校准确保均匀检测概率，防止窃听者利用时间偏移攻击获取密钥信息 (arXiv: 2605.22580)
+  - 时间偏移攻击是更广泛检测效率不匹配攻击的特例
+  - 时间过滤方法限制检测窗口为所有探测器效率匹配区域
+  - 效率随机化使窃听者无法预测最优攻击条件
+  - 安全证明适配考虑残余不匹配的最坏情况
+  - **Activation**: qkd detection efficiency, time-shift attack countermeasure, QKD security mismatch, quantum hacking defense, detector calibration
+
+### MCTS Encoding Discovery for QML
+- [[mcts-encoding-discovery-qml]] - 蒙特卡洛树搜索方法用于发现量子经典神经网络的最优数据编码电路，将编码电路设计转化为序列决策问题，发现超越手工设计的编码模式 (arXiv: 2605.18540)
+  - 将数据编码电路设计建模为MCTS序列决策问题
+  - 每个动作添加一个量子门，奖励为QCCNN验证集准确率
+  - 发现成功编码具有共享结构模式（交替层、纠缠结构）
+  - 计算的仿真成本通过性能提升证明合理
+  - **Activation**: quantum encoding discovery, MCTS quantum circuits, QML encoding optimization, quantum feature map search
+
+### Quantum Linear Matrix Differential Equation Solver
+- [[quantum-linear-matrix-differential]] - 近乎最优的量子算法求解线性矩阵微分方程，应用于开放量子系统模拟，查询复杂度O~(νLt/ε)，在大系统维度上实现指数级加速 (arXiv: 2605.16195)
+  - 线性组合酉算子(LCU) + 量子信号处理 + 变时振幅估计
+  - 统一处理酉演化和耗散动力学
+  - 开放量子系统Lindblad方程的向量化求解
+  - 仅需单次条目访问而非全矩阵重构
+  - **Activation**: quantum linear differential equations, quantum matrix ODE solver, open quantum system simulation, quantum Lindblad simulation
+
 ## 2026-06-01 - Information Science + Quantum (Cron Job - Hourly)
 
 ### Meta-Quantum Ensemble Framework for Robust Network Intrusion Detection
