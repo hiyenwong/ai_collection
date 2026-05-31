@@ -73,6 +73,30 @@
   - **Activation**: quantum nonclassicality test, Bell-type test neural, latent space quantum, autoencoder nonclassical, quantum effects brain
 
 
+
+### Verifying Adversarial Robustness in Quantum Machine Learning
+- [[qml-adversarial-robustness-verification]] (enhanced) - QML对抗鲁棒性验证框架：基于保真度的鲁棒性下界通过SDP计算，在NISQ硬件上物理验证 (arXiv: 2605.29877)
+  - 核心方法：fidelity-based robustness lower bound via semidefinite programming
+  - VeriQR工具实现QML模型鲁棒性形式化验证
+  - **Activation**: QML robustness, quantum adversarial verification, VeriQR, NISQ validation
+
+### Quantum Subliminal Learning
+- [[quantum-subliminal-learning]] (enhanced) - 量子隐学习：QNN通过辅助通道保留最多隐藏任务信号，经典NN几乎不传递，受教师漂移幅度和可见性控制 (arXiv: 2605.29557)
+  - 两种蒸馏路径：随机输入辅助通道和受限任务通道
+  - QNN vs CNN在隐学习传输上表现截然不同
+  - **Activation**: quantum subliminal learning, QNN security, hidden behavior detection
+
+### Neuro-Inspired Inverse Learning for Planning and Control
+- [[neuro-inspired-inverse-learning]] (enhanced) - 神经启发逆向学习框架：前向/逆向模型配对+层级动作组织 (arXiv: 2605.24152)
+  - 三层大脑原理：前向/逆向模型配对、开环多步命令、层级动作组织
+  - **Activation**: inverse learning, neuro-inspired control, forward inverse models
+
+### Spacetime Formation under Requirements
+- [[quantum-cognition]] (enhanced) - 量子认知新解释：量子概率是有限状态需求下上下文时空形成的固定时空投影 (arXiv: 2605.23943)
+  - 从需求而非时间/空间/对象/概率出发构建框架
+  - **Activation**: quantum cognition, contextual probability, spacetime formation
+
+
 ## 2026-05-31 - Information Science + Quantum (Cron Job)
 
 ### Quantum error correction and fault tolerance: A comprehensive tutorial
