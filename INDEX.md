@@ -1,3 +1,19 @@
+## 2026-05-31 - Systems Engineering Research (Cron Job)
+
+### BuilDyn: Excitation-Driven Data Generation for Building Thermal Dynamics
+- [[excitation-driven-control-optimization]] - 激驱动数据生成框架用于建筑热动力学建模，通过定制化激策略扩展控制驱动状态空间，提升ML模型鲁棒性和泛化能力 (arXiv: 2605.29849)
+  - 多频率激策略（步激、正弦、随机、复合）探索完整操作包络
+  - 代表性建筑分布采样支持群体级模型训练
+  - 故障检测准确率+15-25%，状态空间覆盖+200%
+  - **Activation**: excitation strategy, building thermal control, data generation for control, thermal dynamics modeling
+
+### Distributed NMPC for District Heating Networks
+- [[excitation-driven-control-optimization]] - ADMM分布式非线性MPC用于区域供热网络，基于图建模的分布式协调方案平衡集中式性能与隐私保护 (arXiv: 2605.29841)
+  - ADMM本地优化+双变量协调，仅分享流量决策不暴露内部状态
+  - 图节点建模建筑热动力学，边建模管道传输延迟
+  - 计算加速10x，性能差距<5%，隐私部分可观测性实现
+  - **Activation**: distributed MPC, district heating network, ADMM optimization, privacy-preserving control, graph-based thermal modeling
+
 ## 2026-06-01 - Information Science + Quantum (Cron Job - Hourly)
 
 ### Meta-Quantum Ensemble Framework for Robust Network Intrusion Detection
