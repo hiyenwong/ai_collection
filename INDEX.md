@@ -1,3 +1,13 @@
+## 2026-05-31 - Information Science + Quantum Research (Sunday Cron)
+
+### Non-Clifford Crosstalk Noise in Surface Codes Using Hybrid Stabilizer-Tensor Network Methods
+- [[non-clifford-crosstalk-surface-code-qec]] - 混合稳定子-张量网络方法分析表面码量子纠错中的非Clifford串扰噪声：将相干噪声分解为Clifford+非Clifford成分，用MPS张量网络捕获非Clifford修正 (arXiv: 2605.29514)
+  - 混合模拟：Clifford操作用稳定子形式高效模拟，非Clifford噪声用矩阵乘积态(MPS)表示
+  - 串扰哈密顿量：H = J_zz*Z_iZ_j + J_xz*X_iZ_j + J_yz*Y_iZ_j，取决于物理布局和脉冲形状
+  - 自适应键维压缩：基于纠缠熵动态调整，利用串扰局域性（仅最近邻）
+  - 容错阈值估计：在真实相干噪声模型下估计表面码临界物理错误率
+  - **Activation**: non-clifford crosstalk, surface code, quantum error correction, tensor network QEC, hybrid stabilizer, coherent noise, fault tolerance threshold, cross-talk noise modeling, MPS QEC simulation
+
 ## 2026-05-31 - Neuroscience Research (Sunday Cron - Second Run)
 
 ### Deep Binarized Photonic Reservoir Computing for Ultrafast Multimedia
