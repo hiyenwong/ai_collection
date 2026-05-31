@@ -1,3 +1,12 @@
+## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Leggett--Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons
+- [[leggett-garg-neural-dynamics]] - Leggett-Garg不等式测试神经元动力学中的非扩散随机结构，Kac过程产生类量子时间相关性 (arXiv: 2605.12126)
+  - Leggett-Garg不等式作为Bell不等式的时间类似，区分扩散型和非扩散型神经元随机过程
+  - 持久随机动力学(Kac过程/电报方程)可违反LGI，表明记忆和上下文时间结构
+  - 保守解释：非量子相干证据，而是反对简单扩散描述的证据
+  - **Activation**: leggett-garg, neural dynamics, temporal correlations, non-diffusive stochastic, Kac process, Telegrapher equation
+
 ## 2026-06-01 - Neuroscience Research (Cron Job)
 
 ### Mind-Omni: A Unified Multi-Task Framework for Brain-Vision-Language Modeling via Discrete Diffusion

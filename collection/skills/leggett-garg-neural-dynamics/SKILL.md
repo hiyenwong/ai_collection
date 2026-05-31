@@ -1,93 +1,71 @@
 ---
 name: leggett-garg-neural-dynamics
-description: >
-  Leggett-Garg inequality testing methodology for probing non-diffusive stochastic structure
-  in neural dynamics. Use when analyzing whether neural dynamics exhibits quantum-like temporal
-  correlations, persistent stochastic processes, memory effects, or non-Markovian structure.
-  Applicable to single-neuron electrophysiology analysis, cable-equation model validation,
-  Kac-type finite-velocity process modeling, and Telegrapher's equation derivation for neural systems.
-  Triggers: Leggett-Garg, neural dynamics, non-diffusive, persistent stochastic, Kac process,
-  Telegrapher equation, temporal correlation, macrorealism, non-invasive measurability,
-  quantum-like neural, neural memory effects.
+description: Leggett-Garg inequality testing methodology for neural dynamics — probing non-diffusive stochastic structure in single neurons using temporal correlations. Based on arXiv:2605.12126 (May 2026).
 ---
 
-# Leggett-Garg Neural Dynamics Testing
+# Leggett-Garg Tests in Neural Dynamics
 
-Methodology from arXiv:2605.12126 — using Leggett-Garg inequalities (LGI) as a temporal probe
-to distinguish diffusive (Wiener/cable-equation) models from non-diffusive persistent stochastic
-models in single-neuron dynamics.
+## Overview
 
-## Core Concept
+Methodology for probing non-diffusive stochastic structure in single neurons using Leggett-Garg-type temporal correlation tests. Bridges quantum physics temporal inequalities with neural dynamics analysis.
 
-The LGI is a temporal analogue of Bell-type constraints. In neural dynamics context:
-- **LGI satisfaction** → purely diffusive, Markovian, trajectory-based dynamics
-- **LGI violation** → persistent stochastic dynamics with memory, finite propagation speed,
-  contextual temporal structure (mathematically analogous to quantum systems)
+## Core Theory
 
-**Important**: LGI violation here does NOT imply microscopic quantum coherence in the brain.
-It indicates breakdown of purely diffusive description and presence of non-Markovian structure.
+### Leggett-Garg Inequalities (LGI)
+- Temporal analog of Bell inequalities
+- Test for macroscopic realism vs quantum-like temporal correlations
+- **Diffusive processes** (Wiener/cable equation) always satisfy LGI
+- **Persistent stochastic processes** (Kac-type, Telegrapher's equation) can violate LGI
 
-## Key Steps
+### Key Distinction
+- **Diffusive dynamics**: Memoryless, Wiener process, satisfies LGI
+- **Persistent stochastic dynamics**: Finite-velocity, memory-bearing, Telegrapher's equation, can violate LGI
+- **Violation interpretation**: NOT evidence of quantum coherence, but evidence against simple diffusive description
 
-### 1. Define Dichotomic Observable
+## Methodology
 
-Select a measurable quantity Q(t) ∈ {+1, −1} from neural recordings:
-- Spike/no-spike binary state
-- Above/below threshold membrane potential
-- Excited/inhibited firing rate regime
+### 1. Temporal Correlation Analysis
+- Define measurement sequence Q(t₁), Q(t₂), Q(t₃) for neural observables
+- Compute two-time correlation functions: C(tᵢ, tⱼ) = ⟨Q(tᵢ)Q(tⱼ)⟩
+- Form Leggett-Garg parameter: K = C(t₁,t₂) + C(t₂,t₃) - C(t₁,t₃)
 
-### 2. Compute Two-Time Correlation Functions
+### 2. LGI Violation Detection
+- Classical bound: K ≤ 1 (for macroscopic realism)
+- K > 1 indicates non-diffusive temporal structure
+- Oscillatory temporal correlations are key to violation
 
-For measurements at times t₁, t₂, t₃:
+### 3. Kac Process Framework
+- Finite-velocity random walk (telegraph process)
+- Velocity alternates between ±v with switching rate λ
+- Converges to Wiener process as v→∞, λ→∞ (diffusive limit)
+- At finite parameters: persistent correlations, memory effects
 
-```
-C(ti, tj) = E[Q(ti) · Q(tj)]
-```
+### 4. Analytic Continuation
+- Kac processes connect to Dirac-like envelope equations
+- Finite-velocity transport → non-diffusive temporal correlations
+- Natural mechanism for contextual temporal structure
 
-### 3. Compute LGI Combination
+## Applications
 
-```
-K = C(t1,t2) + C(t2,t3) − C(t1,t3)
-```
+- **Neural dynamics characterization**: Distinguish membrane noise types
+- **Non-Markovian structure detection**: Probe memory in neuronal signaling
+- **Contextual temporal analysis**: Identify history-dependent neural processing
+- **Single-neuron probing**: Requires single-neuron resolution measurements
+- **Quantum-classical boundary**: Conservative interpretation avoids quantum brain claims
 
-Classical bound: |K| ≤ 1 under macrorealism + non-invasive measurability.
+## Implementation Steps
 
-### 4. Experimental Protocol
+1. **Data Collection**: Record single-neuron activity with high temporal resolution
+2. **Observable Definition**: Choose binary/thresholded neural observable Q(t)
+3. **Correlation Computation**: Calculate two-time correlation functions
+4. **LGI Parameter**: Compute K = C(t₁,t₂) + C(t₂,t₃) - C(t₁,t₃)
+5. **Statistical Testing**: Determine if K exceeds classical bound with significance
+6. **Model Comparison**: Fit diffusive vs persistent stochastic models
 
-- Record single-neuron activity across multiple trials
-- Measure Q(t) at three equally-spaced time points
-- Estimate correlation functions from ensemble averages
-- Test whether |K| > 1 (LGI violation)
+## Triggers
+- leggett-garg, neural dynamics, temporal correlations, non-diffusive, persistent stochastic
+- Kac process, Telegrapher's equation, macroscopic realism
+- single-neuron dynamics, membrane noise characterization
 
-### 5. Interpretation
-
-|K| > 1 indicates:
-- Persistent (non-diffusive) stochastic transport
-- Finite-velocity processes (Kac-type)
-- Telegrapher's equation dynamics
-- Dirac-like envelope equations via analytic continuation
-- Intrinsic memory in neural dynamics
-
-## Mathematical Background
-
-### Kac Process → Telegrapher's Equation
-
-Finite-velocity random walk with velocity ±v and reversal rate α:
-
-```
-∂²P/∂t² + 2α ∂P/∂t = v² ∂²P/∂x²
-```
-
-In the limit α → ∞, v → ∞ with v²/2α = D fixed → diffusion equation.
-
-### Analytic Continuation to Dirac-like Equations
-
-The Telegrapher's equation connects to Dirac-like envelope equations through
-analytic continuation, providing the mathematical bridge to quantum-like
-temporal correlations without requiring actual quantum coherence.
-
-## Activation
-
-Keywords: leggett-garg, neural dynamics, non-diffusive, persistent stochastic,
-Kac process, Telegrapher equation, temporal correlation, macrorealism,
-non-invasive measurability, quantum-like neural, neural memory effects
+## References
+- Ghose, P. (2026). "Leggett--Garg Tests in Neural Dynamics: Probing Non-Diffusive Stochastic Structure in Single Neurons." arXiv:2605.12126 [quant-ph]
