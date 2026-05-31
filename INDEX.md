@@ -7,6 +7,13 @@
   - 保守解释：非量子相干证据，而是反对简单扩散描述的证据
   - **Activation**: leggett-garg, neural dynamics, temporal correlations, non-diffusive stochastic, Kac process, Telegrapher equation
 
+### Neuro-Inspired Inverse Learning for Planning and Control
+- [[neuro-inspired-inverse-learning]] - 神经启发逆向学习框架：前向/逆向模型配对+层级动作组织，单量子比特门合成速度提升1000倍 (arXiv: 2605.24152)
+  - 逆向学习(IL)桥接RL式摊销和OC式序列规划，整T步动作序列优化而非逐步骤
+  - 单Inverter/双层Inverter栈在D4RL基准上平均提升+24.2%，推理计算减少1-2个数量级
+  - Pulse Inverter合成任意单量子比特门，保真度匹配GRAPE但计算时间降低1000x
+  - **Activation**: inverse learning, neuro-inspired control, forward inverse models, quantum gate synthesis, pulse inverter
+
 ## 2026-06-01 - Neuroscience Research (Cron Job)
 
 ### Mind-Omni: A Unified Multi-Task Framework for Brain-Vision-Language Modeling via Discrete Diffusion
