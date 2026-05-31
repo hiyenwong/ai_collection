@@ -1,4 +1,11 @@
-## 2026-06-01 - Neuroscience Research (Cron Job)
+## 2026-06-01 - Neuroscience + Quantum (Cron Job)
+
+### Misalignment Between Backpropagation and the Hierarchy of Brain Responses to Images
+- [[backpropagation-brain-misalignment]] - Backpropagation gradient encoding analysis reveals DINOv3 gradients predict fMRI/MEG signals but spatial/temporal organization diverges from biologically plausible backpropagation (arXiv: 2605.28693)
+  - Gradients CAN predict brain signals in higher visual cortex and later MEG latencies
+  - Spatial/temporal ORGANIZATION diverges from expected biologically plausible backpropagation patterns
+  - Forward activations show strong hierarchical alignment; backprop gradients do not
+  - **Activation**: backpropagation brain alignment, gradient encoding analysis, DINOv3, fMRI gradient mapping, biological backpropagation, visual cortex hierarchy
 
 ### Random Neural Networks Match Observed Dimensionality
 - [[random-neural-network-dimensionality]] - 随机神经网络维度匹配实验观测的方法论：首次定量验证最小结构模型可解释神经种群低维度性，动态平均场理论+有限测量时间+行为上下文变异性 (arXiv: 2605.26551)
