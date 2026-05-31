@@ -1,3 +1,13 @@
+## 2026-05-31 - Neuroscience Research (Sunday Cron - Second Run)
+
+### Deep Binarized Photonic Reservoir Computing for Ultrafast Multimedia
+- [[deep-binarized-photonic-reservoir-computing]] - 光子储备池计算实现Gb/s多媒体处理：DMD二进制光学调制+随机介质散射+时间复用深度层结构，视频/图像/语音识别SOTA性能 (arXiv: 2605.30149)
+  - 硬件架构：DMD(数字微镜器件) → 光学散射 → CMOS探测 → 时间复用多层
+  - 物理超参数优化：层内参数(散射密度、非线性) + 层间参数(时间延迟、连接性)
+  - 记忆-动力学平衡：时序任务(视频/语音)高记忆保留，空间任务(图像)高动态响应
+  - Gb/s处理速度：光子系统超电子RC，节能+并行处理+可扩展深度架构
+  - **Activation**: photonic reservoir computing, DMD modulation, optical scattering, ultrafast processing, Gb/s, deep photonic RC, multimedia recognition, binary optical modulation, time-multiplexed layers, CMOS photodetection, physical hyperparameters
+
 ## 2026-05-31 - Neuroscience Research (Sunday Cron)
 ### Majorization precursors to supermodularity and subadditivity on the majorization lattice
 - [[majorization-entropy-inequalities]] - Majorization lattice framework for proving entropy inequalities across all sum-concave entropies (Shannon, Rényi, Tsallis) (arXiv: 2605.30331)
