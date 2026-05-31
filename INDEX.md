@@ -1,3 +1,19 @@
+## 2026-05-31 - Information Science + Quantum Research (Cron Job)
+
+### Optimal Quantum Locally Differential Privacy
+- [[quantum-local-differential-privacy]] - 高隐私域最优量子本地差分隐私机制：证明n≥3时量子优势Q/C≥3/2，适用于Holevo信息和假设检验 (arXiv: 2605.27278)
+  - 量子优势证明：QLDP vs LDP，Q/C ≥ 3/2 对n≥3数据普遍成立
+  - 通用比率：Q/C值独立于效用函数(Holevo信息/假设检验误差指数)
+  - 最优机制设计：高隐私域(ε→0)下泰勒展开主导项确定优势比
+  - **Activation**: quantum local differential privacy, QLDP, quantum privacy advantage, quantum LDP, 量子本地差分隐私, privacy utility tradeoff
+
+### Matrix Spectral Data Appraisal
+- [[matrix-spectral-data-appraisal]] - 矩阵谱函数数据评估框架：统一神经缩放定律与Vendi Score，证明两者均为次模函数，35,000倍加速优化 (arXiv: 2605.29448)
+  - Vendi Score是矩阵谱函数特例：包含DPP等更广泛目标函数族
+  - 35,000倍加速：基于特征方程的更新避免重复特征分解
+  - Facility location最优：多数据集上超越Vendi Score和DPP
+  - **Activation**: data appraisal, Vendi Score, matrix spectral functions, submodular data selection, dataset value, neural scaling laws, 数据集价值评估
+
 ## 2026-05-31 - Information Science + Quantum Research (Sunday Cron)
 
 ### Non-Clifford Crosstalk Noise in Surface Codes Using Hybrid Stabilizer-Tensor Network Methods
