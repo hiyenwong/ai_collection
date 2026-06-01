@@ -1,4 +1,34 @@
 
+
+## 2026-06-01 - Neuroscience (Cron Job - 4 New Papers)
+
+### Bridging Brains and Machines: A Unified Frontier
+- [[bridging-brains-machines-neuro-ai]] - Position paper identifying convergence of neuroscience, AGI, and neuromorphic computing toward unified paradigm (arXiv: 2507.10722)
+  - Neurobiological-to-AI architecture mapping (synaptic plasticity→fine-tuning, spike-based→sparse attention)
+  - Physical substrates for brain-scale efficiency: memristive, quantum, photonic devices
+  - 4 critical challenges: spiking+foundation models, lifelong plasticity, embodied language, ethical safeguards
+  - **Activation**: neuroscience AGI convergence, neuromorphic computing, brain-inspired AI, synaptic plasticity AGI
+
+### Brain Functions as Thermal Equilibrium States
+- [[thermal-equilibrium-connectome]] - Algebraic quantum model where brain functions emerge as KMS thermal equilibrium states of connectome graph algebra (arXiv: 2408.14221)
+  - Graph algebra of C. elegans connectome → KMS equilibrium states → functional networks
+  - Integration Capacity (IC) index quantifies neuronal coordination effectiveness
+  - Structure-function bridge: topology-driven functional connectome prediction
+  - **Activation**: algebraic quantum neuroscience, KMS formalism, thermal equilibrium brain, integration capacity
+
+### Emergent Schrödinger Equation for Single Neurons
+- [[schrodinger-equation-single-neurons]] - Electrical noise in neuron membranes produces emergent Schrödinger equation with new neuronal constant (arXiv: 2406.16991)
+  - Brownian motion in membranes → emergent quantum behavior via mathematical transformation
+  - Challenges view that QM is irrelevant to macroscopic biological systems
+  - Testable prediction: quantum fluctuations in subthreshold neural oscillations
+  - **Activation**: emergent Schrödinger neuron, stochastic neural dynamics, quantum biology, membrane noise
+
+### Neuromorphic Correlates of Artificial Consciousness
+- [[neuromorphic-artificial-consciousness]] - NCAC framework merging neuromorphic design with brain simulations for artificial consciousness (arXiv: 2405.02370)
+  - Extends NCC concept to artificial systems: neuromorphic architecture → consciousness correlates
+  - Design principles: event-driven, recurrent feedback, multi-scale integration, embodied interaction
+  - ML pipeline: self-supervised world models, RL for agency, attention for global workspace
+  - **Activation**: artificial consciousness, neuromorphic correlates, NCAC, NCC, integrated information AI
 ## 2026-06-01 - Neuroscience Research (Cron Job - Latest)
 
 ### MindVoice: Reconstructing Intelligible Speech from Neural Signals
