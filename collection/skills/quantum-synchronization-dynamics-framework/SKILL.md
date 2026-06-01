@@ -1,7 +1,7 @@
 ---
 name: quantum-synchronization-dynamics-framework
 description: "Unified quantum synchronization framework combining Fock state synchronization (phase-locking non-classical states with negative Wigner function, Arnold tongue regime, phase slip rate extraction) and limit cycle desynchronization (quantum phase slip proliferation degrading phase locking, Keldysh path integral, non-Markovian effects). Applies to quantum control, quantum optics, bosonic systems, quantum information processing. Activation: quantum synchronization, Fock state, phase locking, Arnold tongue, phase slip, limit cycle, Keldysh, non-Markovian, quantum desynchronization, bosonic mode, Wigner function"
-arxiv_id: "2605.30271,2605.30302"
+arxiv_id: "2605.30271,2605.30302,2605.30238,2605.29529"
 arxiv_date: "2026-05-28"
 ---
 
@@ -11,6 +11,7 @@ arxiv_date: "2026-05-28"
 1. **arXiv:2605.30271** — "Quantum Synchronization of Fock States" (Hassler, Scheer, Saquaque, Kim, 2026-05-28)
 2. **arXiv:2605.30302** — "Quantum Desynchronization of Limit Cycles" (Christiansen, Paaske, 2026-05-28)
 3. **arXiv:2605.30238** — "Indefinite Causal Order Reverses the Real-Complex Hierarchy" (Surace, Minagawa, Kunjwal, 2026-05-28)
+4. **arXiv:2605.29529** — "Common Noise-Induced Group-Level Synchronization Between Uncoupled Groups of Oscillators" (Ko, 2026-05-28) — classical counterpart using Kuramoto order parameter, cross-listed to q-bio.NC (neuroscience)
 
 ## Unified Framework
 
@@ -116,8 +117,11 @@ Approach:
 - **quantum-fock-state-synchronization**: Fock state synchronization paper (subset)
 - **quantum-desynchronization-dynamics**: Desynchronization paper (subset)
 - **indefinite-causal-order-real-complex**: Causal order effects paper (subset)
+- **noise-induced-group-level-synchronization-oscillators**: Classical noise-induced group synchronization (Kuramoto framework, 2605.29529)
+- **brain-oscillation-synchronization-framework**: Brain oscillation synchronization (Kuramoto phase dynamics + delay plasticity)
 - **quantum-control-engineering**: Broader quantum control context
 - **quantum-neuromorphic-computing**: Oscillator-based quantum computing
+- **kuramoto-brain-network**: Kuramoto model for brain network phase dynamics
 
 ## Activation Keywords
 quantum synchronization, Fock state, phase locking, Arnold tongue, phase slip, limit cycle, Keldysh path integral, non-Markovian, quantum desynchronization, bosonic mode, Wigner function, Lindblad evolution, superconducting resonator, quantum dot, indefinite causal order, process matrix, real vs complex quantum theory, 量子同步, 福克态, 相位锁定
