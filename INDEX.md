@@ -1,3 +1,19 @@
+## 2026-06-01 - Neuroscience Research Update (Cron Job Round 2)
+
+### Extended Predictive Coding Framework (Revised Skill)
+- [[extended-predictive-coding-free-energy-exponential-family]] - Exponential-family distributions extend predictive coding beyond Gaussian assumptions, enabling biological realism: nonlinearity, heterogeneous neurons, positive firing rates via local plasticity (arXiv: 2605.30882)
+  - Key: variance depends on mean in EFD → automatic nonlinearity
+  - FEP-PC correspondence maintained up to second cumulant
+  - **Activation**: predictive coding, exponential family, local plasticity, biological plausibility
+
+### Supervised Training vs Visual Cortex Alignment
+- [[supervised-training-degrades-visual-cortex-alignment]] - RSA tracking shows 25-90% V1 alignment drop after one epoch; backpropagation most destructive (-0.080), predictive coding and STDP preserve better (-0.04) (arXiv: 2605.30556)
+  - Untrained networks: inductive biases encode brain-like structure
+  - Local learning (PC, STDP) maintains natural statistics better than global BP
+  - **Activation**: brain alignment, RSA, learning rules comparison, untrained networks
+
+---
+
 ## 2026-06-01 - Neuroscience (Cron Job)
 
 ### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition Through the Synthesis of Event Segmentation and Metastable Neural States
