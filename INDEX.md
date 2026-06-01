@@ -5,6 +5,14 @@
 
 ## 2026-06-01 - Neuroscience + Neuromorphic Hardware (Cron Job)
 
+### A Stochastic Quantum Neural Network Model for AI
+- [[stochastic-quantum-neural-network]] - Neuro-quantum model where qubits evolve via stochastic differential equations inspired by biological neuronal processes; bridges quantum computing with computational neuroscience (arXiv: 2511.11609)
+  - Qubits represent neural activation states as quantum superpositions
+  - Entangled qubit pairs model synaptic connections with non-local correlations
+  - Stochastic SDE evolution captures inherent noise in neural processing
+  - Addresses Von Neumann architecture limitations for brain-like computation
+  - **Activation**: stochastic quantum neural network, QNN, neuro-quantum modeling, quantum brain simulation, quantum neural dynamics, stochastic differential equations
+
 ### Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task
 - [[memristor-snn-interception-task]] - Analog memristor-based SNN accelerator with in-memory synaptic computation and analog IF neurons; achieves 12.7x lower energy and 1.26x lower delay vs digital baseline in predator-prey tracking task (arXiv: 2605.31299)
   - Eliminates multi-transistor CMOS synapse circuits
@@ -160,3 +168,21 @@
 - 61 new quant-ph papers submitted today covering Clifford+T synthesis, quantum cryptography, entanglement in channel discrimination, quantum advantage in communication complexity, quantum networks, and quantum phase transitions
 - 48 new cs.NE papers including SNN accelerators, photonic reservoir computing, evolutionary algorithms, and zero-shot quantum neural architecture search
 - 38 new q-bio.NC papers including metastable neural states, extended predictive coding, and fNIRS simulation
+## 2026-06-01 - Neuroscience (Cron Job)
+
+### High-Fidelity 3D Simulator for Synthetic fNIRS Data Generation
+- [[fnirs-3d-monte-carlo-simulator]] - 3D fNIRS simulator using mesh-based Monte Carlo for synthetic neuroimaging data generation (arXiv: 2605.30552)
+    - Mesh-based Monte Carlo simulates photon transport in 3D head tissue
+    - Combines hemodynamic response + systemic physiology + artifact models
+    - Enables unlimited labeled datasets for ML pipeline validation
+    - **Activation**: fNIRS simulator, synthetic fnirs data, Monte Carlo light transport, hemodynamic response simulation
+
+## 2026-06-01 - Neuroscience (Cron Job)
+
+### Extended predictive coding framework as variational free-energy minimisation under exponential-family assumption
+- [[predictive-coding-exponential-family-plasticity]] - Predictive coding with exponential-family distributions and biologically plausible local plasticity rules (arXiv: 2605.30882)
+    - EFD assumption captures neural heterogeneity and non-negative firing rates
+    - FEP-PC correspondence maintained up to second cumulant
+    - Derives local plasticity rules without global backpropagation
+    - **Activation**: exponential family predictive coding, local plasticity rules, free energy principle beyond gaussian
+
