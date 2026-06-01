@@ -1,3 +1,13 @@
+## 2026-06-01 - Neuroscience Research (Cron Job)
+
+### Neural Representation Reshaping Mechanisms (Synthesis)
+- [[neural-representation-reshaping-mechanisms]] - Unified framework synthesizing 4 complementary representation reshaping mechanisms: embodied VR BCI (r=0.762), fMRI VQA token integration, noise-induced oscillator synchronization, and LLM ICL geometric reorganization (arXiv: 2605.29677,2605.29588,2605.29529,2605.28854)
+  - Embodiment creates more decodable representations: VR feedback elicits neural patterns similar to actual movement, r=0.762 vs r=0.672
+  - Cross-modal integration enables complex decoding: Brain-IT token decoding + language model for VQA from fMRI
+  - Common noise reshapes collective dynamics: Synchronization between uncoupled oscillator groups
+  - Geometric reorganization supports online learning: LLM ICL depends on representation untangling
+  - **Activation**: neural representation reshaping, embodiment feedback, cross-modal decoding, geometric constraints, synchronization dynamics, ICL mechanisms
+
 ## 2026-06-01 - Neuroscience + Quantum Synchronization (Cron Job)
 
 ### Enhanced: Quantum Synchronization Dynamics Framework (Updated with classical neuroscience connection)
