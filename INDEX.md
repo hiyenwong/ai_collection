@@ -3,6 +3,16 @@
 > Auto-generated index of all skills in the collection.
 > Sorted by date (newest first).
 
+## 2026-06-01 - Neuroscience Research (Cron Job)
+
+### Evolutionary Algorithm for Reservoir Learning and Yielding (EARLY)
+- [[early-reservoir-evolutionary-learning]] - Graph-based genome evolution for multi-reservoir ESN architectures; combines reservoir computing with evolutionary algorithms inspired by brain modular organization; automatically discovers task-appropriate complexity (arXiv: 2605.30372)
+  - Graph-based encoding: reservoir topology + hyperparameters as genome
+  - Structural adaptation: simple tasks → lightweight, complex tasks → rich modularity
+  - Outperforms random search on CogScale temporal learning tasks
+  - Cross-situational learning adaptation validated
+  - **Activation**: reservoir computing, echo state network, ESN, evolutionary algorithm, reservoir topology, multi-reservoir, modular reservoir, temporal learning, CogScale, EARLY
+
 ## 2026-06-01 - Neuroscience + Neuromorphic Hardware (Cron Job)
 
 ### A Stochastic Quantum Neural Network Model for AI
