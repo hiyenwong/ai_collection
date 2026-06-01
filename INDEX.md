@@ -1,4 +1,20 @@
 
+## 2026-06-02 - Neuroscience Research (Cron Job - Latest arXiv API)
+
+### The Metastable Mind: Neural States as Computational Units (Enhanced Skill)
+- [[metastable-mind-neural-states]] - Metastable neural states作为认知基本计算单元，整合事件分割理论与神经亚稳态框架，揭示三大核心原理：时空嵌套层级、预测模型基础、模块化处理边界重构 (arXiv: 2605.31473v1, May 29 2026)
+  - 认知心理学分支(ES)与计算神经科学分支(MNA)研究同一现象
+  - 高阶区域长时程状态约束并塑造低阶快速区域状态
+  - 状态边界标志着连接重构和计算模式切换
+  - **Activation**: metastable neural states, event segmentation, brain state transitions, neural state hierarchy, cognitive boundaries, metastable mind, predictive neural states, MNA, ES
+
+### Memristor-Based SNN Accelerator (Enhanced Skill)
+- [[memristor-snn-interception-task]] - Analog memristor crossbar阵列+模拟IF神经元实现异步事件驱动SNN，predator-prey拦截任务MSE 0.004，45nm工艺能耗比5nm数字方案降低12.7倍、延迟降低1.26倍 (arXiv: 2605.31299v1, May 29 2026, DCAS 2026)
+  - In-memory synaptic computation消除多晶体管CMOS突触电路
+  - Analog integrate-and-fire neurons实现阈值检测和脉冲生成
+  - HSPICE仿真验证边缘智能实时追踪潜力
+  - **Activation**: memristor SNN, analog IF neuron, interception task, in-memory computing, neuromorphic hardware, edge intelligence, bio-inspired pursuit, analog neuromorphic
+
 ## 2026-06-02 - Computer Science + Quantum (Cron Job)
 
 ### Do We Really Need Quantum Machine Learning?: A Multidimensional Empirical Study

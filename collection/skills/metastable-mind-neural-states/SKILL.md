@@ -1,163 +1,139 @@
 ---
 name: metastable-mind-neural-states
-description: Metastable neural states and event segmentation framework integrating cognitive and computational neuroscience perspectives on naturalistic cognition.
-version: 1.0.0
+description: Metastable neural states as fundamental computational units of cognition - integrating Event Segmentation theory with metastability framework (arXiv:2605.31473v1, May 2026).
+version: 2.0.0
 category: neuroscience
-tags: [metastability, event-segmentation, neural-states, cognition, predictive-modeling, brain-networks]
-activation_keywords: [metastable, event segmentation, neural states, metastability, naturalistic cognition, MNA, ES, predictive model, brain hierarchy]
-created: 2026-06-01
-author: Dora Gozukara, Nasir Ahmad, Djamari Oetringer, Linda Geerligs
-arxiv_id: 2605.31473
+tags: [neuroscience, metastability, event-segmentation, brain-dynamics, cognitive-computation, neural-states]
+arxiv_id: 2605.31473v1
+authors: [Dora Gozukara, Nasir Ahmad, Djamari Oetringer, Linda Geerligs]
+published: 2026-05-29
 ---
 
-# The Metastable Mind: Neural States Framework
+# Metastable Mind: Neural States as Computational Units
 
 ## Overview
 
-This framework synthesizes Event Segmentation (ES) theory from cognitive neuroscience with Metastable Neural Activity (MNA) from computational neuroscience, revealing that both study the same underlying phenomenon—the brain's natural mode of operation through metastable neural states.
+This synthesis paper bridges two isolated branches of neuroscience literature - **Event Segmentation (ES)** from cognitive psychology and **Metastable Neural Activity (MNA)** from computational neuroscience - demonstrating they study the same phenomenon from different perspectives.
 
-**核心发现**: Event Segmentation (ES) 与 Metastable Neural Activity (MNA) 实际上研究同一个现象的不同层面。ES 提供认知和行为效用理论，MNA 提供机制层面的实现解释。
+**Core Thesis**: Metastable neural states are the fundamental computational units of cognition, operating across nested spatiotemporal hierarchies to support perception, decision-making, and memory.
 
-## Key Principles
+## Three Core Principles
 
-### 1. Spatio-Temporal Nested Hierarchy
-- Longer-duration states in higher-order regions constrain and are shaped by faster states in lower regions
-- Creates a hierarchical structure of neural activity across spatial and temporal scales
-- Enables coordination across different processing speeds
+### 1. Spatiotemporally Nested Hierarchy
+- Longer-duration states in higher-order regions **constrain and shape** states in faster-operating regions
+- Multiple nested levels operate simultaneously across scales
+- Higher regions provide contextual constraints for lower-level state transitions
 
-### 2. Predictive Model Foundation
-- Neural states reflect underlying predictive models that shape:
-  - Perception
-  - Decision making
-  - Memory encoding and recall
-- States emerge from predictive processing rather than pure sensory responses
+### 2. Predictive Models Underlying States
+- Neural states reflect underlying **predictive models** that:
+  - Shape perception through top-down predictions
+  - Guide decision-making via model comparisons
+  - Organize memory encoding and recall
+- Each metastable state represents a coherent predictive framework
 
 ### 3. Modular Processing with Boundary Reconfiguration
-- Neural states represent periods of modular processing
-- Interspersed by boundaries where connectivity reconfigures
-- Boundaries enable transitions between processing modes
+- Within metastable states: **relatively modular processing** (stable connectivity patterns)
+- At state boundaries: **connectivity reconfiguration** (switching to new computational mode)
+- Boundaries mark transitions between distinct cognitive operations
 
-## Core Concepts
+## Key Insights
 
-### Event Segmentation (ES)
-- **Definition**: Continuous experience segmented into discrete events and sub-events
-- **Function**: Aids real-time comprehension, memory, and decision-making
-- **Level**: Cognitive and behavioral perspective
+### Event Segmentation ↔ Metastability Connection
+| Event Segmentation (Cognitive) | Metastable Neural Activity (Mechanistic) |
+|-------------------------------|-----------------------------------------|
+| Discrete event perception | Stable population activity periods |
+| Sub-event boundaries | Connectivity reconfiguration points |
+| Comprehension aids | Predictive model transitions |
+| Memory segmentation | Encoding state boundaries |
 
-### Metastable Neural Activity (MNA)
-- **Definition**: Brain activity unfolds as series of stable population states across spatial and temporal scales
-- **Mechanism**: Implementational level explanation
-- **Observable**: Through neural recording and computational modeling
-
-### Synthesis: Metastable Neural States as Computational Units
-- States act as fundamental computational units of cognition
-- Bridge behavioral observations (ES) with mechanistic explanations (MNA)
-- Enable understanding of brain in natural operating mode
-
-## Research Applications
-
-### When to Use This Framework
-- Studying naturalistic cognition (not lab-controlled tasks)
-- Analyzing continuous neural recordings
-- Understanding temporal organization of brain activity
-- Modeling predictive processing in neural networks
-- Investigating memory encoding during real-time experience
-
-### Activation Scenarios
-- "How does the brain segment continuous experience?"
-- "What are the computational units of cognition?"
-- "Explain metastable neural states"
-- "Model predictive processing in brain networks"
-- "Analyze event boundaries in neural activity"
-- "Understand brain's natural operating mode"
+### Neural State Properties
+- **Duration**: Hierarchical nesting (milliseconds → seconds → minutes)
+- **Spatial scale**: Local circuits → regional networks → whole-brain coordination
+- **Stability**: Balance between stable operation and transition flexibility
+- **Predictive function**: Each state encodes expectations about ongoing input
 
 ## Methodological Framework
 
-### Phase Space Analysis
-- Identify stable state periods in neural recordings
-- Map state transitions and boundaries
-- Quantify state duration hierarchies across brain regions
-- Detect connectivity reconfiguration events
+### Detecting Metastable States
+1. **Hidden Markov Models (HMM)**: Identify discrete state transitions in neural data
+2. **Clustering approaches**: Group similar neural activity patterns
+3. **Change-point detection**: Locate boundary transitions
+4. **Functional connectivity analysis**: Track network reconfiguration
 
-### Predictive Model Integration
-- Model neural states as predictive representations
-- Analyze how states shape perception and memory
-- Investigate state-dependent decision processes
-- Examine state transitions during cognitive load changes
+### Analyzing State Dynamics
+- **State occupancy**: Duration and frequency distributions
+- **Transition probabilities**: Sequential dependencies
+- **Hierarchical relationships**: Cross-scale coordination
+- **Predictive content**: Model what each state predicts
 
-### Nested Hierarchy Detection
-- Measure temporal scales across brain hierarchy
-- Identify cross-region state coordination
-- Analyze state boundaries as coordination events
-- Map spatio-temporal state organization
+## Applications
 
-## Implementation Guidelines
-
-### Data Analysis Pipeline
-
+### For Neural Data Analysis
 ```python
-# Detect metastable states in neural data
-states = detect_metastable_states(neural_activity)
+# Conceptual framework for metastable state detection
+from hmmlearn import hmm
+import numpy as np
 
-# Identify state boundaries
-boundaries = find_state_boundaries(states, connectivity_matrix)
+# Neural population activity → discrete states
+model = hmm.GaussianHMM(n_components=K)
+model.fit(neural_activity_sequence)
 
-# Analyze hierarchy
-hierarchy = analyze_spatio_temporal_hierarchy(states, region_labels)
-
-# Map predictive content
-predictions = extract_predictive_content(states, behavioral_events)
+# Extract state properties
+state_durations = model.compute_durations()
+transition_matrix = model.transmat_
 ```
 
-### Key Metrics
-- **State Duration Distribution**: Characterize temporal scales
-- **Boundary Frequency**: Rate of connectivity reconfiguration
-- **Cross-Region Coordination Index**: Hierarchy strength
-- **Predictive Content Alignment**: State-behavior correspondence
+### For Cognitive Modeling
+- Treat metastable states as **prediction-driven computational primitives**
+- Model cognitive operations as state sequences
+- Use state boundaries to define event boundaries in behavior
 
-## Theoretical Implications
+### For Brain-Computer Interfaces
+- State occupancy patterns as cognitive context indicators
+- Boundary detection for adaptive system response
+- Hierarchical state tracking for multi-level control
 
-### For Cognitive Neuroscience
-- Provides mechanistic grounding for event segmentation theory
-- Explains how discrete events emerge from continuous neural activity
-- Links behavioral segmentation to neural state transitions
+## Research Implications
 
-### For Computational Neuroscience
-- Identifies computational units for neural modeling
-- Provides framework for analyzing continuous recordings
-- Enables prediction of cognitive state transitions
+### Experimental Design
+1. **Naturalistic paradigms**: Study brain in continuous operation mode
+2. **Multi-scale recording**: Capture hierarchical state nesting
+3. **Behavioral alignment**: Map neural states to cognitive events
+4. **Predictive content analysis**: Decode what states predict
 
-### For Neural Network Design
-- Suggests architectures with metastable state dynamics
-- Implements predictive model-based processing
-- Designs hierarchical state transition mechanisms
+### Theoretical Frameworks
+- **Predictive coding**: Metastable states as prediction periods
+- **Dynamic systems**: States as attractor visits
+- **Information processing**: States as processing epochs
 
-## Research Directions
+## Pitfalls & Limitations
 
-### Open Questions
-1. How do metastable states emerge from network dynamics?
-2. What triggers connectivity reconfiguration at boundaries?
-3. How are predictive models encoded in state structure?
-4. What determines state duration hierarchies?
+### Detection Challenges
+- **State identification**: Discrete vs continuous state definition
+- **Boundary precision**: Temporal resolution limits
+- **Noise sensitivity**: False boundary detection
+- **Multi-scale coordination**: Cross-level state alignment
 
-### Experimental Paradigms
-- Naturalistic stimuli (movies, narratives)
-- Continuous behavioral tasks
-- Multi-scale neural recordings
-- Long-duration fMRI/EEG sessions
+### Interpretation Risks
+- **Over-discretization**: Not all transitions are meaningful boundaries
+- **Behavioral alignment**: State-behavior mapping is probabilistic
+- **Individual variability**: State patterns differ across subjects
+- **Context dependency**: Same neural pattern may serve different functions
 
 ## Key References
 
-- **Primary Paper**: arXiv:2605.31473 - The Metastable Mind
-- **Event Segmentation**: Zacks et al. (2007) - Event segmentation theory
-- **Metastability**: Deco et al. - Dynamical metastability in brain
-- **Predictive Processing**: Friston - Predictive coding framework
+- Event Segmentation Theory (Zacks et al., 2007)
+- Metastability in neural systems (Deco & Kringelbach, 2016)
+- HMM for neural state analysis (Vidaurre et al., 2017)
+- Predictive coding frameworks (Friston, 2010)
 
-## Summary
+## Activation Keywords
 
-The metastable mind framework unifies cognitive and computational neuroscience perspectives on how the brain naturally operates. Neural states serve as computational units that segment continuous experience, implement predictive models, and organize hierarchically across spatio-temporal scales. Understanding these states brings us closer to comprehending the brain's natural operating mode rather than task-induced artificial states.
-
----
-
-**Citation**:
-Gozukara, D., Ahmad, N., Oetringer, D., & Geerligs, L. (2026). The Metastable Mind: Neural Underpinnings of Naturalistic Cognition Through the Synthesis of Event Segmentation and Metastable Neural States. arXiv:2605.31473.
+- metastable neural states
+- event segmentation
+- brain state transitions
+- neural state hierarchy
+- cognitive boundaries
+- metastable mind
+- neural population dynamics
+- predictive neural states
