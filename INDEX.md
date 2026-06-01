@@ -1,4 +1,20 @@
-## 2026-06-01 - Neuroscience Research (Cron Job Round 3)
+## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Round 4)
+
+### A Stochastic Quantum Neural Network Model for Ai
+- [[stochastic-quantum-neural-network]] - Mathematical formalization of QNNS where qubits evolve via stochastic differential equations inspired by biological neuronal processes, bridging quantum computing and computational neuroscience (arXiv: 2511.11609)
+  - Qubits represent neural activation states in superposition
+  - Entanglement models synaptic connectivity
+  - Stochastic SDEs capture biological neural noise
+  - **Activation**: quantum neural network, stochastic differential equations, neuro-quantum, QNN, computational neuroscience, brain modeling
+
+### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
+- [[behaviorvlm-neuroscience-vlm]] - Vision-language framework for pose estimation and behavioral understanding requiring no task-specific finetuning, leveraging quantum-dot-grounded behavioral data (arXiv: 2603.12176)
+  - Multi-stage pipeline: temporal, spatial, cross-view reasoning
+  - Deep embedded clustering for over-segmented behavior discovery
+  - VLM-based video captioning + LLM reasoning for behavior labeling
+  - **Activation**: behavioral understanding, pose estimation, VLM, quantum-dot data, animal behavior
+
+---## 2026-06-01 - Neuroscience Research (Cron Job Round 3)
 
 ### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
 - [[metastable-mind-neural-states]] - Unified framework synthesizing Event Segmentation (ES) and Metastable Neural Activity (MNA), revealing neural states as fundamental computational units of naturalistic cognition with predictive model foundations (arXiv: 2605.31473)
