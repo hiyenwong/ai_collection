@@ -1,5 +1,19 @@
 
 
+## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
+
+### A hidden bottleneck in classical and quantum linear reservoir computing
+- [[linear-reservoir-computing-bottleneck]] - 分析线性储层计算中的隐藏信息瓶颈,识别量子储层计算的真实优势 (arXiv: 2605.29071)
+  - 线性储层动力学只能重分布特征,无法创造新的固定延迟表达能力
+  - 单光子操作超越线性储层限制,成为量子储层计算的真实资源
+  - **Activation**: linear reservoir bottleneck, reservoir computing capacity, quantum reservoir advantage
+
+### A Quantum Algorithm for Simulating Nonunitary Dynamics Governed by Nonautonomous Linear Ordinary Differential Equations
+- [[quantum-nonunitary-ode-simulation]] - 无需预先知道传播子的量子非幺正动力学模拟算法 (arXiv: 2605.29052)
+  - 直接在量子硬件上执行dilation,无需经典计算机逐步计算传播子
+  - 适用于非自治线性ODE系统: dv/dt = A(t)v, A(t)非斜对称
+  - **Activation**: quantum nonunitary simulation, nonautonomous ode quantum, quantum algorithm dilation
+
 ## 2026-06-01 - Neuroscience (Cron Job - 4 New Papers)
 
 ### Bridging Brains and Machines: A Unified Frontier
