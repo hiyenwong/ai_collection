@@ -1,4 +1,21 @@
 
+## 2026-06-02 - Computer Science + Quantum Computing (Cron Job - Hourly)
+
+### AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle
+- [[memory-centric-agentic-research]] - 记忆中心化的全科研生命周期自动化系统,四模块架构(SciMem/SciFlow/SciDAG/SciEvolve)实现持久化、可进化的研究代理 (arXiv: 2605.31468)
+  - SciMem双层记忆:长期知识记忆(LTKM)跨项目复用,活跃研究记忆(ARM)项目级管理
+  - SciFlow五阶段生命周期:文献理解→假设生成→实验→论文撰写→回复评审
+  - SciEvolve反馈循环:用户/实验/评审反馈转化为版本化更新
+  - **Activation**: memory-centric agent, agentic research, autonomous scientist, research lifecycle automation, SciMem, SciFlow, SciDAG, SciEvolve
+
+### LinTree: Improving LLM Reasoning with Explicitly Structured Search Histories
+- [[structured-search-llm-reasoning]] - 显式父指针结构使LLM推理链搜索历史真正可用,在Blocks World/Sokoban/Navigation全面超越隐式推理 (arXiv: 2605.31492)
+  - 原始搜索历史不足以超越启发式搜索,必须显式表示树结构
+  - 简单父指针标注使回溯时精确识别复用的搜索状态
+  - 同时优于隐式推理模型和LLM启发式搜索
+  - **Activation**: structured reasoning, search tree LLM, linearized tree reasoning, parent pointer reasoning, LinTree, explicit search structure
+
+
 
 ## 2026-06-02 - Neuroscience Research (Cron Job - Evening Update)
 
