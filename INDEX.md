@@ -1,4 +1,14 @@
 
+## 2026-06-01 - Neuroscience + Quantum Computing (Cron Job - Neuroscience Day)
+
+### Research progress on quantum neural networks and quantum machine learning
+- [[qnn-survey-design-patterns]] - Comprehensive QNN architecture selection guide with design patterns for FC-QNN, QCNN, equivariant QNN, QHN, QBM, QRC, and composite networks (arXiv: 2605.30724)
+  - Architecture selection matrix by task type and resource constraints
+  - 4 key design patterns: PQC encoding, quantum convolution+pooling, reservoir computing, hybrid classical-quantum
+  - Barren plateau mitigation strategies: structured ansatze, layer-by-layer training, local cost functions
+  - Performance comparison across QNN types: training speed, expressivity, NISQ-friendliness, scalability
+  - **Activation**: QNN survey, quantum neural network design, QNN architecture selection, quantum machine learning survey, quantum CNN, quantum reservoir computing
+
 ## 2026-06-01 - Neuroscience (Cron Job)
 
 ### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
