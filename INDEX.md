@@ -231,6 +231,14 @@
   - **Activation**: neuroscience framework, metastable states, predictive coding, visual cortex alignment, brain alignment, event segmentation, fNIRS
 
 
+## 2026-06-02 - Computer Science + Quantum (Cron Job - Hourly Update)
+
+### MōLe-Λ: Learning the Coupled-Cluster Response State for Energies, Gradients, and Properties
+- [[mole-lambda-coupled-cluster-response]] - 学习耦合簇响应态的分子轨道学习方法，联合预测T和Λ振幅，以ML推理速度提供CCSD质量能量、力、偶极矩、极化率 (arXiv: 2605.29622)
+  - 核心要点 1: 从局域化Hartree-Fock轨道联合学习CCSD的T和Λ振幅，保留对称性约束
+  - 核心要点 2: 覆盖所有CCSD可观测量（能量、力、偶极矩、四极矩、极化率、电子密度、对密度），推理速度提升100-1000倍
+  - **Activation**: coupled-cluster, CCSD response, molecular orbital learning, quantum chemistry surrogate, Λ-amplitudes, equivariant quantum chemistry, wavefunction learning
+
 > Auto-generated index of all skills in the collection.
 > Sorted by date (newest first).
 
