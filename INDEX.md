@@ -13,6 +13,25 @@
   - 核心要点 2: 应用于随机量子信道表征、纠缠分析、量子门保真度计算
   - **Activation**: haar measure integration, weingarten calculus, random unitary expectation, symbolic quantum integration, compact group integration
 
+## 2026-06-02 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Quantum State Preparation via Neural Network Encoding in Quantum Machine Learning
+- [[nn-quantum-state-encoding]] (enhanced) - Classical NN maps data to quantum circuit parameters, avoiding iterative optimization (arXiv: 2605.31006)
+  - Trains NN once, encodes new inputs in single inference step
+  - 0.992 fidelity on MNIST/Fashion-MNIST, 5000x runtime reduction
+  - **Activation**: quantum state preparation, neural network encoding, quantum data loading, amplitude encoding
+
+### Support Vector Machine with a Scalable Quantum Kernel
+- [[hamming-quantum-kernel-svm]] - Hamming kernel avoids exponential concentration in quantum SVMs (arXiv: 2605.31449)
+  - Uses full measurement statistics instead of single fidelity value
+  - Outperforms fidelity kernel at 15+ qubits, scales to 27 qubits
+  - **Activation**: quantum kernel, Hamming kernel, quantum SVM, exponential concentration
+
+### Progressive Swapping to the Middle Protocol for Quantum Networks
+- [[progressive-swapping-quantum-network-protocol]] (new) - PSM protocol for entanglement distribution with imperfect quantum memories (arXiv: 2605.31493)
+  - Progressive swapping toward middle minimizes memory holding time
+  - log(n) vs n scaling for memory decoherence exposure
+  - **Activation**: progressive swapping, PSM protocol, quantum memory, entanglement distribution, quantum repeater
 ## 2026-06-02 - Neuroscience Research (Cron Job - 2nd Session)
 
 ### Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task
