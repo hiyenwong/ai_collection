@@ -75,6 +75,22 @@
   - 状态边界为网络重构期，信息整合峰值出现在边界
   - **Activation**: metastable mind, event segmentation, metastable neural activity, MNA, neural states hierarchy, naturalistic cognition, event boundaries, metastable dynamics
 
+## 2026-06-02 - Neuroscience Research (Cron Job - Latest Update)
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
+- [[metastable-mind-event-segmentation]] - 整合事件分割理论与亚稳态神经活动的理论框架，将神经状态定义为认知的基本计算单元，揭示时空嵌套层级、预测模型架构和模块化处理边界 (arXiv: 2605.31473)
+  - 核心要点 1: 空间-时间嵌套层级：高级脑区的慢状态约束低级脑区的快状态
+  - 核心要点 2: 预测模型反射：神经状态反映底层预测模型，塑造感知、决策、记忆编码
+  - 核心要点 3: 模块化边界：状态期间模块化处理，边界标记连接重构事件
+  - **Activation**: metastable neural states, event segmentation, naturalistic cognition, temporal hierarchy, predictive models, brain dynamics, neural state detection
+
+### Extended Predictive Coding under Exponential-Family Assumption
+- [[predictive-coding-exponential-family]] - 指数族分布扩展预测编码框架，解决传统Gaussian假设的局限性（负发放率、非线性缺失），维持FEP-PC对应至二阶累积量，实现生物合理性局部可塑性规则 (arXiv: 2605.30882)
+  - 核心要点 1: 指数族分布（Poisson/Gamma/Beta）替代Gaussian，捕获非线性响应和神经元异质性
+  - 核心要点 2: 消除负发放率问题，实现生物合理的发放率模型
+  - 核心要点 3: 局部可塑性规则仅需局部信息，支持Hebbian类学习
+  - **Activation**: predictive coding, free-energy principle, exponential family, variational inference, neural plasticity, sensory cortex, Bayesian inference, FEP
+
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
 ### Dual-Spectral Flow Matching for fMRI Time Series Generation
