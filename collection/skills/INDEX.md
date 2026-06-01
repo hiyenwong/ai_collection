@@ -1,6 +1,14 @@
 
 ## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
+- [[quantum-supraliminal-cloud-formalism]] - Cloud-function formalism combining neural field theory with quantum-analogue modeling for large-scale brain sensory processing; separates kernel (information dynamics) from amplitude (mental representation intensity) (arXiv: 2605.25214)
+  - Cloud function Ψ(x,t) = K(x,t) × A(x,t): kernel captures how information is processed, amplitude captures what is represented
+  - First-person perspective formalization for subjective representation content in neural processing models
+  - Quantum-analogue framework (not quantum physics in brain) handles contextual effects and incompatible observables
+  - Supraliminal vs subliminal processing as phase transition in cloud function amplitude
+  - **Activation**: quantum analogue, cloud function, supraliminal processing, neural field theory, mental representation, first-person perspective, cognitive dynamics, quantum cognition, sensory processing
+
 ### Quantum-Like Models of Cognition and Decision Making: Open-Systems and GKSL Dynamics
 - [[gskl-quantum-cognition-dynamics]] - GKSL master equation methodology for cognitive psychology; models mental state evolution as dissipative open-system dynamics, identifies cognitive beats as multi-scale deliberation signatures (arXiv: 2604.18643)
   - Active vs Passive Hamiltonians: non-commutation with decision projections = cognitive agency signature
