@@ -1,6 +1,20 @@
 
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
+### Updating the Standard Neuron Model in Artificial Neural Networks
+- [[updated-neuron-model-ann]] - Challenges 50-year-old point neuron assumption; demonstrates cortical cell model advantages without parameter increase: enhanced expressivity, robustness, learning speed, reduced memorization, less training data needed (arXiv:2605.30370)
+  - Point neuron model from 1950s neuroscience proven too simplistic for fundamental neural processes
+  - Cortical cell replacement maintains same computational efficiency while improving performance
+  - No parameter increase required - same complexity, better biological fidelity
+  - **Activation**: neuron model, ANN, point neuron, cortical cells, expressivity, robustness, learning speed, biological realism, 标准神经元模型
+
+### Supervised Training Rapidly Degrades Early Visual Cortex Alignment Across Biologically Plausible Learning Rules
+- [[supervised-training-degrades-visual-cortex-alignment]] - Untrained networks match/exceed trained networks in brain alignment; single epoch degrades V1 alignment 25-90%, BP most severe (-0.080), PC/STDP better preservation (~-0.04) (arXiv:2605.30556)
+  - RSA analysis: 720 THINGS images, 3 subjects, 6 visual ROIs, 8 training checkpoints
+  - Global error signals (BP) reshape early representations aggressively; local rules preserve brain-like structure
+  - Inductive biases capture low-level visual statistics without learned distortions
+  - **Activation**: visual cortex, brain alignment, training degrades, backpropagation, predictive coding, STDP, RSA, fMRI, untrained networks, learning rules, 视觉皮层对齐
+
 ### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition Through the Synthesis of Event Segmentation and Metastable Neural States
 - [[metastable-mind-event-segmentation]] - Unified framework synthesizing Event Segmentation (ES) cognitive theory and Metastable Neural Activity (MNA) mechanistic approach; demonstrates both study the same metastable neural states from different perspectives (arXiv: 2605.31473)
   - Three core principles: spatio-temporally nested hierarchy, predictive models underlying states, modular processing intervals with boundary reconfiguration
