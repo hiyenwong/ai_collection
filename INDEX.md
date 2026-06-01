@@ -1,5 +1,14 @@
 
 
+## 2026-06-02 - Neuroscience Research (Cron Job - Evening Update)
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
+- [[metastable-mind-event-segmentation]] - 统一事件分割认知理论与 metastable 神经活动的计算框架，证明两者研究同一 metastable 状态 (arXiv: 2605.31473)
+  - 时空嵌套层级：高层慢状态约束底层快状态，形成多尺度计算
+  - 神经状态反映预测模型，塑造感知、决策、记忆编码与提取
+  - 状态边界为网络重构期，信息整合峰值出现在边界
+  - **Activation**: metastable mind, event segmentation, metastable neural activity, MNA, neural states hierarchy, naturalistic cognition, event boundaries, metastable dynamics
+
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
 ### Dual-Spectral Flow Matching for fMRI Time Series Generation
