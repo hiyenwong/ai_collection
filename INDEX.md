@@ -1,4 +1,18 @@
 
+## 2026-06-02 - Computer Science + Quantum (Cron Job)
+
+### Do We Really Need Quantum Machine Learning?: A Multidimensional Empirical Study
+- [[qml-empirical-benchmarking]] - 量子机器学习实证基准测试方法论，系统性对比QSVM vs CSVM、QCNN vs CNN在准确率、收敛速度、训练时间、可扩展性等多维度表现 (arXiv: 2605.27923)
+  - 核心要点 1: 多维度评估框架（准确率、收敛速度、训练时间、可扩展性、量子资源效率）
+  - 核心要点 2: 经典模型在大数据集上表现更好，量子模型在小数据集和特定核结构上展示潜力
+  - **Activation**: 量子机器学习基准, QML vs classical, 量子优势实证, QSVM benchmark, QCNN comparison, quantum ML evaluation
+
+### IntegrateUnitary.jl: A Julia package for symbolic integration over Haar measures
+- [[haar-symbolic-integration-toolkit]] - Haar测度符号积分工具，基于Weingarten calculus实现U(d)/O(d)/Sp(d)/SU(d)等紧致群上多项式函数的精确期望计算 (arXiv: 2605.23830)
+  - 核心要点 1: 支持U(d)、O(d)、Sp(d)、SU(d)、Ginibre系综、置换群、unitary t-design的Weingarten calculus
+  - 核心要点 2: 应用于随机量子信道表征、纠缠分析、量子门保真度计算
+  - **Activation**: haar measure integration, weingarten calculus, random unitary expectation, symbolic quantum integration, compact group integration
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - 2nd Session)
 
 ### Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task
