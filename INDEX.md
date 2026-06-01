@@ -9,6 +9,13 @@
   - Performance comparison across QNN types: training speed, expressivity, NISQ-friendliness, scalability
   - **Activation**: QNN survey, quantum neural network design, QNN architecture selection, quantum machine learning survey, quantum CNN, quantum reservoir computing
 
+### Entanglement in Quantum Channel Discrimination: Sometimes Less Is More
+- [[quantum-entanglement-channel-discrimination]] - Unified framework for geometric quantum information: MEWC/MEBC channel discrimination + traversable/non-traversable quantum phase transitions (arXiv: 2605.31519, 2605.31472)
+  - Maximal entanglement can reduce channel discriminability; separable inputs optimal for MEWC pairs
+  - Counterdiabatic driving classifies QPTs by geometric distance in ground-state manifold
+  - Reusable patterns: MEWC/MEBC classification, counterdiabatic protocol construction, geometric distance estimation
+  - **Activation**: entanglement channel discrimination, MEWC MEBC, non-traversable quantum phase transitions, counterdiabatic driving, geometric quantum information
+
 ## 2026-06-01 - Neuroscience (Cron Job)
 
 ### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
