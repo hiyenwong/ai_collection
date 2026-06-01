@@ -45,6 +45,20 @@
   - Local learning rules (PC, STDP) preserve brain-like structure better than global BP
   - **Activation**: brain alignment, learning rules comparison, representational similarity analysis, biologically plausible learning
 
+### The Spiking Tolman-Eichenbaum Machine: Emergent Spatial and Temporal Coding through Spiking Network Dynamics
+- [[spiking-tolman-eichenbaum-machine]] - Biologically realistic SNN implementation of TEM framework for spatial navigation and memory, combining grid-place cell dynamics with STDP learning (crossref: 2025.10.16.682754)
+  - Grid cells emerge from continuous attractor dynamics on 2D toroidal manifold
+  - Place cells learn through STDP from grid cell patterns + sensory inputs
+  - Natural temporal coding via spike latency, phase precession, and sequence replay
+  - **Activation**: spiking tolman-eichenbaum, sTEM model, spiking spatial navigation, grid place cell spiking, hippocampal entorhinal spiking
+
+### Equilibrium Propagation with Predictive Learning in Leaky Integrate-and-Fire Spiking Neural Networks
+- [[equilibrium-propagation-lif-snn]] - EP extended to LIF spiking neurons: backprop-free training using free/nudged phase energy comparison with predictive learning for temporal dependencies (crossref: 2026.05.19.726261)
+  - Two-phase learning: free equilibrium vs nudged (target-perturbed) equilibrium
+  - Local plasticity rules from pre/post spike correlations — no BPTT needed
+  - Predictive variant learns temporal dependencies without storing full trajectories
+  - **Activation**: equilibrium propagation SNN, EP leaky integrate-and-fire, biologically plausible SNN training, EP without BPTT
+
 ### Daily Quantum Mechanics Papers (2026-06-01)
 - 61 new quant-ph papers submitted today covering Clifford+T synthesis, quantum cryptography, entanglement in channel discrimination, quantum advantage in communication complexity, quantum networks, and quantum phase transitions
 - 48 new cs.NE papers including SNN accelerators, photonic reservoir computing, evolutionary algorithms, and zero-shot quantum neural architecture search
