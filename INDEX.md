@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-06-01 - Neuroscience (Cron Job)
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
+- [[metastable-mind-event-segmentation]] - Unified neuroscience framework synthesizing metastable neural states, extended predictive coding, visual cortex alignment degradation, and fNIRS simulation (arXiv: 2605.31473, 2605.30882, 2605.30556, 2605.30552)
+  - Metastable neural states as fundamental computational units with spatio-temporal nesting
+  - Extended predictive coding beyond Gaussian via exponential-family distributions
+  - Supervised training destroys V1 brain alignment; predictive coding/STDP preserve it
+  - High-fidelity 3D fNIRS simulation for controlled neuroimaging studies
+  - **Activation**: neuroscience framework, metastable states, predictive coding, visual cortex alignment, brain alignment, event segmentation, fNIRS
+
+
 > Auto-generated index of all skills in the collection.
 > Sorted by date (newest first).
 
