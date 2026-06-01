@@ -1,4 +1,3 @@
-# AI Collection Index
 
 ## 2026-06-01 - Neuroscience (Cron Job)
 
