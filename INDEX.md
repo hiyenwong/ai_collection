@@ -3,6 +3,25 @@
 > Auto-generated index of all skills in the collection.
 > Sorted by date (newest first).
 
+## 2026-06-01 - Neuroscience Research (Cron Job - Latest)
+
+### MindVoice: Reconstructing Intelligible Speech from Non-Invasive Neural Signals
+- [[mindvoice-neural-speech-reconstruction]] - Neuro-to-speech framework using pretrained priors to compensate for EEG/MEG limitations, disentangling semantic-acoustic pathways, achieving first intelligible speech reconstruction from non-invasive signals (arXiv: 2605.31173)
+  - Two-pathway design: semantic content + fine-grained acoustic attributes
+  - Pretrained models fill information gaps in noisy neural recordings
+  - In-context voice cloning for natural speech output
+  - Breakthrough: intelligible vs. prior unintelligible reconstruction
+  - Applications: speech BCI, locked-in patient communication, silent speech
+  - **Activation**: neural speech reconstruction, EEG MEG decoding, speech BCI, voice cloning, pretrained prior, non-invasive BCI
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons
+- [[stm-sequence-timing-replay]] - Extended sTM model learns precise element timing (not just order) via sequential population activation, with oscillatory background inputs providing flexible replay speed control for wake vs. sleep states (arXiv: 2605.22523)
+  - Oscillatory inputs act as clock signals for speed modulation
+  - Spatiotemporal patterns encode elapsed time uniquely and sparsely
+  - EEG/LFP oscillations correlate with replay speed differences
+  - Biological plausibility: no external timekeeper required
+  - **Activation**: sequence timing, replay speed, sTM, spiking temporal memory, oscillatory control, temporal encoding
+
 ## 2026-06-01 - Neuroscience + Quantum Computing (Cron Job)
 
 ### Task-specific programming of chaos in neural circuits
