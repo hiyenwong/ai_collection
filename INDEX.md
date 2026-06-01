@@ -30,7 +30,15 @@
 > Auto-generated index of all skills in the collection.
 > Sorted by date (newest first).
 
-## 2026-06-01 - Neuroscience Research (Cron Job)
+## 2026-06-01 - Neuroscience Research (Cron Job - Evening)
+
+### Extended Predictive Coding: Exponential Family Framework
+- [[extended-predictive-coding-exponential-family]] - Variational free-energy minimization using exponential-family distributions; breakthrough in biological plausibility for predictive coding (arXiv:2605.30882)
+  - Solves Gaussian PC limitations: non-negative firing rates, heterogeneous units, nonlinear responses, local plasticity
+  - Multi-layer hierarchy: Poisson (sensory) → Bernoulli (V1) → Gaussian (association) → Gamma (motor)
+  - Local learning rules: Hebbian-like weight updates, adaptive precision weighting
+  - Natural parameter space: inherently nonlinear while maintaining tractability
+  - **Activation**: extended predictive coding, exponential family, free energy principle, variational inference, local plasticity, biological plausibility
 
 ### Evolutionary Algorithm for Reservoir Learning and Yielding (EARLY)
 - [[early-reservoir-evolutionary-learning]] - Graph-based genome evolution for multi-reservoir ESN architectures; combines reservoir computing with evolutionary algorithms inspired by brain modular organization; automatically discovers task-appropriate complexity (arXiv: 2605.30372)

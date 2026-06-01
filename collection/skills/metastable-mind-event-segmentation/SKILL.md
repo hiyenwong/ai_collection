@@ -1,116 +1,91 @@
 ---
-name: neuroscience-cron-2026-06-01
-description: "Unified neuroscience framework from 2026-06-01 cron discovery — synthesizes metastable neural states, extended predictive coding, visual cortex alignment degradation, and fNIRS simulation into integrated brain-computation model."
-category: neuroscience
-arxiv_ids:
-  - 2605.31473
-  - 2605.30882
-  - 2605.30556
-  - 2605.30552
+name: metastable-mind-event-segmentation
+description: Metastable Mind methodology synthesizing Event Segmentation (ES) and Metastable Neural Activity (MNA) theories for understanding naturalistic cognition
+version: 1.0.0
+created: 2026-06-01
+source: arXiv:2605.31473
+authors: Dora Gozukara, Nasir Ahmad, Djamari Oetringer, Linda Geerligs
+tags: [neuroscience, metastability, event-segmentation, neural-dynamics, cognition, brain-states]
+activation:
+  - metastable mind
+  - event segmentation
+  - neural states
+  - MNA
+  - ES theory
 ---
 
-## Unified Neuroscience Framework — Metastable Predictive Cortex (2026-06-01)
+# The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
 
-This skill synthesizes four complementary neuroscience papers from 2026-05-29 into a unified framework for understanding brain computation across multiple scales.
+## Overview
+This methodology synthesizes two previously isolated branches: **Event Segmentation (ES)** from cognitive/behavioral research and **Metastable Neural Activity (MNA)** from computational neuroscience. The key insight: these approaches study the same neural phenomena from different perspectives.
 
-## Source Papers
+## Core Principles
 
-### 1. Metastable Neural States as Computational Units (arXiv:2605.31473)
-- **Title**: The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
-- **Authors**: Gozukara, Ahmad, Oetringer, Geerligs
-- **Core insight**: Event Segmentation (ES) and Metastable Neural Activity (MNA) study the same phenomenon — metastable neural states — from cognitive vs. mechanistic perspectives
-- **Key principles**:
-  - Spatio-temporally nested hierarchy of neural states
-  - Higher-order regions constrain faster-operating regions and vice versa
-  - Neural states reflect underlying predictive models shaping perception/decision/memory
-  - States are periods of modular processing, boundaries trigger connectivity reconfiguration
+### 1. Spatio-Temporally Nested Hierarchy
+- Longer-duration states in higher regions **constrain and shape** states in faster regions
+- Multi-scale temporal organization: seconds → minutes → hours
+- Hierarchical processing: primary → secondary → prefrontal cortex
+- Each level operates at distinct timescales
 
-### 2. Extended Predictive Coding Beyond Gaussian (arXiv:2605.30882)
-- **Title**: Extended predictive coding framework as variational free-energy minimisation under exponential-family assumption
-- **Authors**: Kataoka, Doya (OIST)
-- **Core insight**: Predictive coding extends beyond Gaussian assumption to exponential family distributions, enabling biological realism
-- **Key properties captured**:
-  - Nonlinearity of neural input-output relationships
-  - Heterogeneity within neural networks
-  - Non-negative firing rates (biological plausibility)
-  - Trainable via biologically plausible local plasticity rules
+### 2. Neural States as Predictive Models
+- Metastable states reflect underlying **predictive models**
+- Impact perception, decision-making, memory encoding/recall
+- Prediction errors drive state transitions
+- Bayesian view: states approximate posterior distributions
 
-### 3. Visual Cortex Alignment Degradation (arXiv:2605.30556)
-- **Title**: Supervised Training Rapidly Degrades Early Visual Cortex Alignment Across Biologically Plausible Learning Rules
-- **Authors**: Leutenegger
-- **Core insight**: Single training epoch reduces V1 alignment by 25-90%; backpropagation most destructive, predictive coding and STDP preserve better
-- **Key findings**:
-  - Untrained CNNs naturally align with V1 visual cortex (RSA matching)
-  - Backpropagation destroys brain-like structure most (-0.080 alignment change)
-  - Predictive coding (-0.04) and STDP preserve brain-like structure better
-  - Supervised training rapidly degrades brain alignment across all learning rules
+### 3. Modular Processing with Boundary Reconfiguration
+- Stable states → **modular processing** (stable connectivity)
+- Transition boundaries → **connectivity reconfiguration** (flexible reorganization)
+- Event boundaries mark transition points
+- Triggers: prediction error, surprise, schema violations
 
-### 4. 3D fNIRS Simulation (arXiv:2605.30552)
-- **Title**: High-Fidelity 3D Simulator for Synthetic fNIRS Data Generation
-- **Authors**: Eastmond, Bracher, Intes, Radev
-- **Core insight**: Mesh-based Monte Carlo photon transport enables high-fidelity synthetic fNIRS data
-- **Application**: Synthetic data generation for neuroimaging research
+## Integration Framework
 
-## Unified Framework: Metastable Predictive Cortex
+| ES Component | MNA Equivalent | Integration |
+|--------------|----------------|-------------|
+| Event boundaries | State transitions | Transition detection |
+| Event segmentation | State segmentation | Segmentation alignment |
+| Event schema | Predictive model | State representation |
+| Prediction error | Stability breakdown | Transition trigger |
 
-### Integration Thesis
+## Implementation Guide
 
-The four papers reveal a coherent picture of brain computation:
-
-1. **At the systems level** (2605.31473): The brain operates through metastable neural states organized in spatio-temporal hierarchies. These states are not static — they dynamically reconfigure at boundaries.
-
-2. **At the algorithmic level** (2605.30882): Within each state, predictive coding performs variational inference. The extended exponential-family framework explains how biological neural networks implement this with nonlinear, heterogeneous, positive-valued neurons.
-
-3. **At the learning level** (2605.30556): When training artificial networks, supervised learning destroys natural brain alignment. This suggests that biological learning (local plasticity, predictive coding) preserves representational structure that backpropagation destroys.
-
-4. **At the measurement level** (2605.30552): fNIRS provides the experimental window to observe these dynamics in vivo, with high-fidelity simulation enabling controlled studies.
-
-### Theoretical Synthesis
-
-```
-Metastable States (ES/MNA)
-    │
-    ├── State Content: Predictive Coding (FEP+EFD)
-    │   ├── Variational inference within states
-    │   ├── Exponential-family posteriors (non-Gaussian)
-    │   └── Local plasticity rules for learning
-    │
-    ├── State Transitions: Boundary Events
-    │   ├── Connectivity reconfiguration
-    │   ├── Modular → integrated → modular cycling
-    │   └── Predictive model updating
-    │
-    └── State Preservation: Biological Learning
-        ├── Predictive coding preserves V1 alignment
-        ├── STDP maintains brain-like structure
-        └── Supervised BP destroys natural alignment
+### 1. State Detection via HMM
+```python
+from hmmlearn import hmm
+model = hmm.GaussianHMM(n_components=10, covariance_type='full')
+model.fit(neural_data)  # fMRI time series
+states = model.predict(neural_data)
 ```
 
-### Reusable Patterns
+### 2. Boundary Identification
+```python
+transitions = np.where(states[:-1] != states[1:])[0]
+transition_strength = compute_prediction_error(model)
+critical_boundaries = transitions[transition_strength > threshold]
+```
 
-1. **Metastable State Analysis**: When studying neural dynamics, look for discrete metastable states rather than continuous trajectories. Use state boundary detection to identify cognitive transitions.
+### 3. Behavioral Correlation
+```python
+alignment_score = compute_boundary_alignment(
+    neural_boundaries=critical_boundaries,
+    behavioral_boundaries=participant_boundaries
+)
+```
 
-2. **Exponential-Family Predictive Coding**: Extend predictive coding models beyond Gaussian assumptions. Use exponential family distributions for biologically realistic neural implementations.
+## Key Metrics
+- **State duration**: quasi-stable period length
+- **Transition probability**: P(state_i → state_j)
+- **Boundary strength**: prediction error magnitude
+- **Cross-level coupling**: hierarchy correlation
 
-3. **Brain Alignment Monitoring**: Track RSA (Representational Similarity Analysis) alignment between artificial and biological networks during training. Prioritize learning rules that preserve brain-like structure.
+## Applications
+- Naturalistic cognition (movie viewing, narrative comprehension)
+- Memory encoding (event segmentation → memory organization)
+- Clinical: altered dynamics in psychiatric disorders
+- Real-time adaptive systems
 
-4. **Multi-Scale Integration**: Combine cognitive theory (ES) with mechanistic models (MNA) — they often describe the same phenomenon at different abstraction levels.
-
-### Connections to Existing Skills
-
-- `metastable-mind-neural-states` — detailed MNA framework
-- `metastable-neural-states-event-segmentation` — ES + MNA synthesis
-- `metastable-mind-event-segmentation` — comprehensive ES/MNA review
-- `extended-predictive-coding-exponential-family` — EFD predictive coding
-- `predictive-coding-exponential-family-plasticity` — EFD + plasticity
-- `supervised-training-degrades-visual-cortex-alignment` — V1 alignment study
-- `fnirs-3d-monte-carlo-simulator` — fNIRS simulation
-- `brain-alignment-learning-rules-comparison` — learning rule comparison
-
-## Activation
-
-neuroscience framework, metastable states, predictive coding, visual cortex alignment, brain alignment, event segmentation, fNIRS, biological learning rules, representational similarity analysis, V1 alignment
-
-## arXiv IDs
-
-2605.31473, 2605.30882, 2605.30556, 2605.30552
+## References
+- arXiv:2605.31473 (this paper)
+- Zacks et al. (2007): Event Segmentation Theory
+- Deco & Kringelbach (2016): Metastable dynamics
