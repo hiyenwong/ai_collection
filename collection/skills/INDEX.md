@@ -1,4 +1,28 @@
 
+## 2026-06-02 - Neuroscience Research (Cron Job)
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition Through the Synthesis of Event Segmentation and Metastable Neural States
+- [[metastable-mind-event-segmentation]] - Unified framework synthesizing Event Segmentation (ES) cognitive theory and Metastable Neural Activity (MNA) mechanistic approach; demonstrates both study the same metastable neural states from different perspectives (arXiv: 2605.31473)
+  - Three core principles: spatio-temporally nested hierarchy, predictive models underlying states, modular processing intervals with boundary reconfiguration
+  - Neural states as fundamental computational units of cognition with state duration, content, and boundaries
+  - Longer-duration states in higher-order regions constrain and shape states in faster-operating regions
+  - **Activation**: metastable, neural states, event segmentation, metastable mind, 亚稳态, 事件分割, cognitive states, brain state hierarchy
+
+### MindVoice: Reconstructing Intelligible Speech from Non-invasive Neural Signals with Pretrained Priors
+- [[mindvoice-neural-speech-reconstruction]] - Neuro-to-speech framework using pretrained models to compensate for incomplete semantic/acoustic information in EEG/MEG; disentangled dual pathway (semantic + acoustic) + in-context voice cloning (arXiv: 2605.31173)
+  - Semantic pathway recovers high-level content, acoustic pathway estimates fine-grained attributes
+  - Fuses representations with powerful speech generation models for natural intelligible utterances
+  - EEG: WER 45-55%, MEG: WER 35-40%, substantial improvement over baseline unintelligible results
+  - **Activation**: MindVoice, neural speech reconstruction, speech BCI, EEG speech, MEG speech, 神经语音重建
+
+### Score Broadcast and Decorrelation: A General Framework for Broadcast-Based Credit Assignment
+- [[score-broadcast-decorrelation-credit-assignment]] - Principled framework for biologically plausible credit assignment across general differentiable losses; theoretical grounding for three-factor learning rule with neuromodulatory factor as broadcast loss score (arXiv: 2605.30638)
+  - Orthogonality principle: Output_Score ⟂ Hidden_Activation (when optimal score has conditional mean zero)
+  - Unifies broadcast-based credit assignment across cross-entropy, Bregman divergences, proper scoring rules, exponential-family NLLs
+  - Score vector expansion enriches broadcast signal while preserving orthogonality framework
+  - No weight transport → biologically plausible alternative to backpropagation
+  - **Activation**: SBD, score broadcast, decorrelation, credit assignment, three-factor learning, error broadcast, 生物可塑性
+
 ## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
