@@ -1,3 +1,14 @@
+## 2026-06-01 - Neuroscience Research (Cron Job Round 3)
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
+- [[metastable-mind-neural-states]] - Unified framework synthesizing Event Segmentation (ES) and Metastable Neural Activity (MNA), revealing neural states as fundamental computational units of naturalistic cognition with predictive model foundations (arXiv: 2605.31473)
+  - Spatio-temporal nested hierarchy: slower higher-order states constrain faster lower states
+  - Neural states reflect underlying predictive models shaping perception, decision, memory
+  - Modular processing periods interspersed by connectivity reconfiguration boundaries
+  - **Activation**: metastable, event segmentation, neural states, predictive model, brain hierarchy, MNA, ES
+
+---
+
 ## 2026-06-01 - Neuroscience Research Update (Cron Job Round 2)
 
 ### Extended Predictive Coding Framework (Revised Skill)
