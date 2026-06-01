@@ -1,6 +1,24 @@
 
 
-## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
+## 2026-06-02 - Computer Science + Quantum Computing (Cron Job - Hourly + 3 New Skills)
+
+### Attention-based optimizer for symmetry finding
+- [[attention-quantum-symmetry]] - Set-Transformer架构搜索Pauli对称性,用自注意力编码Pauli串间的高阶关联 (arXiv: 2605.30429)
+  - Set-Transformer自注意力编码Pauli串间成对及高阶关联,生成候选对称性
+  - 基于对易关系的优化目标: [S,H]≈0 验证对称性,物理哈密顿量近乎确定性成功
+  - **Activation**: attention symmetry finding, quantum symmetry optimizer, Set-Transformer Hamiltonian, Pauli symmetry detection
+
+### Generative Quantum Data Embeddings for Supervised Learning
+- [[generative-quantum-embedding]] - 基于能量的生成学习框架合成门序列优化量子数据嵌入,Wasserstein距离预判优化收益 (arXiv: 2605.30866)
+  - 保真度代理目标引导搜索最优嵌入结构,提升分类可分性
+  - Wasserstein距离提供先验诊断:经典数据几何决定嵌入优化是否有显著收益
+  - **Activation**: quantum data embedding, generative quantum circuit, Wasserstein quantum, quantum encoding optimization
+
+### QASM-Eval: LLM Evaluation for OpenQASM-3 Beyond Quantum Circuits
+- [[qasm-eval-llm-quantum]] - 首个OpenQASM-3硬件面向特性LLM评估数据集,覆盖经典逻辑/时序调度/脉冲控制 (arXiv: 2605.30358)
+  - 4000训练任务+100测试任务,验证涵盖语法/量子态/时间线三维
+  - 前沿LLM在OpenQASM-3编码任务上表现很差,针对性微调效果显著
+  - **Activation**: QASM-Eval, OpenQASM-3 LLM, quantum programming benchmark, pulse-level quantum programming
 
 ### A hidden bottleneck in classical and quantum linear reservoir computing
 - [[linear-reservoir-computing-bottleneck]] - 分析线性储层计算中的隐藏信息瓶颈,识别量子储层计算的真实优势 (arXiv: 2605.29071)
