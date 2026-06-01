@@ -1,3 +1,24 @@
+
+## 2026-06-01 - Neuroscience Research (Cron Job)
+
+### Supervised Training Rapidly Degrades Early Visual Cortex Alignment Across Biologically Plausible Learning Rules
+- [[supervised-training-degrades-visual-cortex-alignment]] - RSA tracking shows untrained CNNs match trained networks at V1; backpropagation destroys alignment while local rules (PC, STDP) preserve brain-like structure (arXiv: 2605.30556)
+  - Single training epoch reduces V1 alignment 25-90%
+  - BP: delta r=-0.080 (most severe), STDP/PC: delta r~-0.04
+  - Untrained networks capture V1 statistics via inductive biases
+  - Local learning rules preserve early visual representations
+  - Hierarchical divergence: V1 degrades, LOC improves
+  - **Activation**: brain alignment, visual cortex, RSA, untrained networks, learning rules, backpropagation, predictive coding, STDP
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition Through the Synthesis of Event Segmentation and Metastable Neural States
+- [[metastable-mind-neural-states]] - Comprehensive review synthesizing event segmentation (ES) and metastable neural activity (MNA) - same phenomenon from cognitive and mechanistic perspectives (arXiv: 2605.31473)
+  - ES states = MNA states (same neural phenomenon)
+  - Three core principles: nested hierarchy, predictive models, modular processing
+  - Spatio-temporal hierarchy: fast sensory → slow cognitive states
+  - Boundaries: prediction error triggers state transitions
+  - Modular processing with boundary reconfiguration
+  - **Activation**: metastable states, event segmentation, neural dynamics, naturalistic cognition, brain states, predictive models
+
 ## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job - Hourly Round 4)
 
 ### A Stochastic Quantum Neural Network Model for Ai
