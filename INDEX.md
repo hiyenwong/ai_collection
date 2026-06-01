@@ -1,3 +1,13 @@
+## 2026-06-01 - Quantum Neuromorphic Computing (Cron Job)
+
+### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
+- [[optical-neural-networks-waveguide-qed]] - All-optical neural network architecture implementing neuronal functions via coherent transient quantum dynamics: phase-tunable nonlocal interference for weights + bad cavity integrator + Rabi dynamics activation, eliminating optoelectronic bottleneck (arXiv: 2605.17752)
+  - Programmable synaptic weights via phase-tunable nonlocal interference in giant cavity
+  - Temporal summation via integrator operating in bad cavity regime (κ >> g)
+  - Nonlinear activation via transient Rabi dynamics of driven two-level system
+  - Full-physics simulations demonstrate high accuracy on MNIST and colored-object recognition
+  - **Activation**: optical neural networks, waveguide QED, coherent transient dynamics, all-optical computing, photonic neuromorphic, quantum activation functions, bad cavity regime, Rabi dynamics
+
 ## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Neural Network Encoding for Quantum State Preparation
