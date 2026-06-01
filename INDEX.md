@@ -104,8 +104,12 @@
   - **Activation**: clifford T synthesis, quantum compilation, trotterization, T gate optimization
 
 ### Q-SpiRL: Quantum Spiking Reinforcement Learning for Adaptive Robot Navigation
-- [[q-spirl-quantum-spiking-rl]] - 量子脉冲强化学习自适应机器人导航，结合量子计算与SNN实现高效导航 (arXiv: q-spirl)
-  - **Activation**: quantum spiking RL, SNN navigation, quantum policy gradient, neuromorphic robot
+- [[q-spirl-quantum-spiking-rl]] - Quantum spiking RL framework comparing 5 agent families (Q-learning, MLP, SNN, QMLP, QSNN) with quantum variational circuit integration for enhanced state representation (arXiv: Q-SpiRL)
+  - Architecture: State → Quantum Feature Map → Variational Circuit → Measurement → SNN/MLP Policy → Action
+  - QSNN outperforms classical SNN on complex obstacle-aware navigation tasks
+  - Encoding strategies: amplitude/angle/basis; entanglement: linear/circular/all-to-all
+  - Pitfalls: barren plateaus (shallow ansatz), spike saturation (threshold scaling), quantum-classical mismatch (normalization layer)
+  - **Activation**: quantum spiking RL, Q-SpiRL, QSNN, QMLP, quantum-enhanced SNN, quantum robot navigation, neuromorphic quantum, quantum policy
 
 ### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Forecasting
 - [[qlif-cast-quantum-spiking-forecasting]] - 量子泄漏积分发放神经网络时间序列预测，应用于天气预报 (arXiv: qlif-cast)
