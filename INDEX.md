@@ -1,5 +1,14 @@
 
 
+## 2026-06-02 - Neuroscience Research (Cron Job)
+
+### Dual-Spectral Flow Matching for fMRI Time Series Generation
+- [[dual-spectral-flow-matching-fmri-generation]] - Wavelet+DCT双频表示结合光谱流匹配生成生理合理的BOLD信号,ICLR 2026 accepted (arXiv: 2605.30387)
+  - Wavelet分解捕获多尺度瞬态动力学,DCT投影实现能量紧缩
+  - 光谱流匹配在余弦频域生成类条件样本
+  - 下游脑疾病分类准确率82.6%,超越真实数据增强效果
+  - **Activation**: fMRI generation, BOLD signals, spectral flow matching, wavelet DCT, brain disorder identification, DSFM
+
 ## 2026-06-02 - Computer Science + Quantum Computing (Cron Job - Hourly + 3 New Skills)
 
 ### Attention-based optimizer for symmetry finding
