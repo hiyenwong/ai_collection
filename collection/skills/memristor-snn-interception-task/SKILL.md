@@ -1,162 +1,207 @@
 ---
 name: memristor-snn-interception-task
-description: "Analog memristor-based SNN accelerator integrating in-memory synaptic computation with analog IF neurons. Achieves 12.7x lower energy and 1.26x lower delay vs digital baseline at 45nm. Predator-prey tracking task with MSE 0.004. Eliminates CMOS synapse circuits, enables asynchronous event-driven operation. Use when: memristor SNN, neuromorphic hardware, in-memory computing, analog neurons, energy-efficient edge intelligence, bio-inspired interception. arXiv: 2605.31299"
+description: "Memristor-based Spiking Neural Network accelerator integrating in-memory synaptic computation with analog IF neurons for bio-inspired interception tasks. Achieves 12.7x lower energy vs digital baseline at 45nm node. Activation: memristor SNN, neuromorphic hardware, analog IF neuron, interception task, in-memory computing."
 ---
 
-## Memristor-Based SNN Accelerator for Interception Task
+## Overview
 
-**Paper**: Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task  
-**arXiv**: 2605.31299  
-**Authors**: Qianhou Qu, Sheng Lu, Liuting Shang, Jaihan Utailawon, Sungyong Jung, Qilian Liang, Chenyun Pan  
-**Categories**: cs.NE, cs.ET  
-**Published**: 2026-05-29  
-**Conference**: IEEE Dallas Circuits and Systems Conference 2026
+Analog memristor-based SNN accelerator that integrates in-memory synaptic computation with analog integrate-and-fire (IF) neurons, eliminating multi-transistor CMOS synapse circuits and enabling asynchronous event-driven operation. Evaluated on predator-prey tracking task with MSE 0.004, achieving **12.7x lower energy** and **1.26x lower delay** compared to digital baseline at 5nm.
 
-## Core Innovation
+## Key Contributions
 
-**Analog memristor-based SNN accelerator** that eliminates multi-transistor CMOS synapse circuits and enables true **in-memory synaptic computation** with **analog integrate-and-fire (IF) neurons**.
+### 1. Architecture Design
+- **In-memory synaptic computation**: Memristor crossbar arrays eliminate CMOS synapse circuits
+- **Analog IF neurons**: Direct voltage integration without digital conversion
+- **Asynchronous event-driven**: No clock required, true neuromorphic operation
+- **Technology node comparison**: Analog at 45nm vs digital at 5nm
 
-## Key Results
+### 2. Bio-Inspired Interception Task
+- Predator-prey tracking scenario
+- Tests pursuit behavior modeling
+- Real-time edge intelligence application
+- MSE 0.004 (close match to ideal software inference)
 
-### Performance Comparison
-| Metric | Analog Memristor (45nm) | Digital (5nm) | Improvement |
-|--------|------------------------|---------------|-------------|
-| Energy | - | - | **12.7x lower** |
-| Delay | - | - | **1.26x lower** |
-| MSE (vs software) | 0.004 | - | Close match |
+### 3. Energy Efficiency Results
+- **12.7x lower energy consumption** than digital baseline
+- **1.26x lower latency**
+- HSPICE simulation validation
+- Real-time edge intelligence potential
 
-### Architectural Innovation
-1. **In-memory synaptic computation**: No separate memory/computation bottleneck
-2. **Analog IF neurons**: Eliminate multi-transistor CMOS neuron circuits
-3. **Asynchronous event-driven**: True spiking behavior, not clocked
-4. **Predator-prey tracking**: Bio-inspired interception task validation
+## Technical Implementation
 
-## Reusable Patterns
-
-### Pattern 1: Memristor Crossbar for Synaptic Computation
-- **Weight storage**: Memristor resistance = synaptic weight
-- **Matrix-vector multiplication**: Current summing at crossbar output
-- **Energy advantage**: Single memristor per synapse vs multi-transistor CMOS
-
-### Pattern 2: Analog Integrate-and-Fire Neuron
-- **Membrane potential**: Analog voltage integration
-- **Threshold comparison**: Analog comparator for spike generation
-- **Reset**: Voltage reset after spike (no digital state)
-
-### Pattern 3: Asynchronous Event-Driven Operation
-- **No global clock**: Spikes trigger local computation
-- **Event propagation**: Spike events flow through network
-- **Power gating**: Only active synapses consume power
-
-### Pattern 4: Bio-inspired Interception Task
-- **Predator-prey dynamics**: Pursuit behavior emulation
-- **Tracking task**: Real-time trajectory prediction
-- **Edge intelligence**: Low-power, real-time applications
-
-## Applications
-
-1. **Edge AI**: Energy-efficient real-time inference on edge devices
-2. **Neuromorphic robotics**: Bio-inspired pursuit/tracking behaviors
-3. **IoT sensors**: Event-driven processing for sensor networks
-4. **Autonomous vehicles**: Low-power obstacle interception
-5. **Drone systems**: Energy-efficient pursuit tracking
-
-## Technical Details
-
-### Memristor Technology
-- **Resistance range**: Encodes synaptic weight range
-- **Programming**: Analog weight adjustment via voltage pulses
-- **Retention**: Non-volatile weight storage (no refresh needed)
-
-### Analog IF Neuron Design
+### Memristor Crossbar Synapse Array
 ```
-Input: Synaptic currents from memristor crossbar
-Integration: Capacitor-based membrane voltage accumulation
-Threshold: Analog comparator triggers spike when V_m > V_th
-Output: Spike event (binary, asynchronous)
-Reset: Voltage reset to V_reset after spike
+Structure:
+- Memristor crossbar for weight storage
+- Direct analog multiplication: I = V × G (conductance)
+- No transistor-based synapse circuits
+- Column-wise integration to IF neurons
+
+Advantages:
+- Energy efficiency: single memristor per synapse
+- Density: high crossbar density vs CMOS
+- Latency: direct analog computation path
 ```
 
-### Task Performance
-- **Predator-prey tracking**: Simulated pursuit behavior
-- **Trajectory prediction**: Predict prey position from noisy observations
-- **MSE = 0.004**: Close to ideal software implementation
+### Analog IF Neuron Circuit
+```
+Neuron Model:
+- Voltage integration on capacitor
+- Threshold comparison (comparator)
+- Spike generation circuit
+- Reset mechanism
 
-## Hardware Comparison
+Parameters (from paper):
+- Threshold voltage: configurable
+- Integration capacitor: determines temporal dynamics
+- Asynchronous operation: event-triggered only
+```
 
-### Analog Memristor Advantages
-- **Energy**: 12.7x lower (no von Neumann bottleneck)
-- **Latency**: 1.26x lower (in-memory computation)
-- **Area**: Reduced (single memristor vs multi-transistor synapse)
-- **Event-driven**: True asynchronous operation
+### Interception Task Formulation
+```
+Problem:
+- Predator (agent) tracks prey (target)
+- Continuous position updates
+- Pursuit trajectory optimization
 
-### Digital Baseline (5nm)
-- **Technology node**: More advanced (5nm vs 45nm)
-- **Architecture**: Traditional digital SNN accelerator
-- **Limitation**: Memory/computation separation
+SNN Architecture:
+- Input layer: prey position encoding
+- Hidden reservoir: motion prediction
+- Output layer: pursuit direction
 
-## Connections to Existing Skills
+Performance:
+- MSE: 0.004 (vs ideal software)
+- Energy: 12.7x improvement
+- Latency: 1.26x improvement
+```
 
-- **neuromorphic-continual-nuclear-ics**: Neuromorphic hardware for monitoring
-- **neuroring-multi-fpga-snn**: FPGA-based SNN accelerator
-- **spiker-ll-fpga-snn-accelerator**: FPGA SNN acceleration
-- **sram-cim-snn-accelerator**: SRAM compute-in-memory for SNN
-- **snn-fpga-hardware-software-codesign**: Hardware-software co-design
-- **analog-neuromorphic-plasticity**: Analog neuromorphic implementation
+## Methodology Extraction
 
-## Pitfalls
+### When to Use This Approach
 
-### 1. Memristor Variability
-- Device-to-device variation in resistance
-- Requires calibration/tuning for accurate weights
-- Temperature sensitivity affects resistance
+**Use when:**
+- Energy efficiency is critical (edge devices, IoT)
+- Real-time temporal processing needed
+- Event-driven computation suitable for task
+- In-memory computing reduces latency requirements
+- Analog precision acceptable (vs exact digital)
 
-### 2. Analog Precision
-- Limited precision vs digital (8-12 bit typical)
-- Accumulated errors across layers
-- Noise in analog integration
+**Don't use when:**
+- High precision arithmetic required
+- Task needs exact digital computation
+- Clock synchronization critical
+- Memristor device variability problematic
 
-### 3. Programming Complexity
-- Weight programming requires careful voltage control
-- Programming time vs inference time
-- Endurance limits (programming cycles)
+### Design Patterns
 
-### 4. Scalability
-- Crossbar size limited by current accumulation accuracy
-- Larger networks need multiple crossbars
-- Inter-crossbar routing adds overhead
+#### 1. In-Memory Computing for SNNs
+```python
+# Pattern: memristor crossbar for synaptic computation
+class MemristorSynapseArray:
+    def __init__(self, rows, cols, conductance_range):
+        self.rows = rows
+        self.cols = cols
+        self.G = np.random.uniform(*conductance_range, (rows, cols))
+    
+    def compute(self, V_input):
+        # Analog multiplication: I = V × G
+        I_output = np.dot(V_input, self.G)
+        return I_output
+```
 
-### 5. Technology Node
-- 45nm vs 5nm digital baseline
-- More advanced digital nodes may close gap
-- Future memristor technology nodes will improve
+#### 2. Analog IF Neuron Design
+```python
+# Pattern: voltage-based integration neuron
+class AnalogIFNeuron:
+    def __init__(self, threshold, capacitance):
+        self.V_th = threshold
+        self.C = capacitance  # Integration capacitor
+        self.V_mem = 0.0
+    
+    def integrate(self, I_input, dt):
+        # Capacitor integration: dV = (I/C) * dt
+        self.V_mem += (I_input / self.C) * dt
+        
+        # Threshold check (asynchronous)
+        if self.V_mem >= self.V_th:
+            spike = True
+            self.V_mem = 0.0  # Reset
+        else:
+            spike = False
+        
+        return spike
+```
 
-## Implementation Guidance
+#### 3. Predator-Prey Interception Task
+```python
+# Pattern: pursuit behavior modeling
+class InterceptionTask:
+    def __init__(self, prey_speed, agent_speed):
+        self.prey_speed = prey_speed
+        self.agent_speed = agent_speed
+    
+    def compute_pursuit(self, prey_pos, agent_pos):
+        # Direction to prey
+        direction = prey_pos - agent_pos
+        direction_normalized = direction / np.linalg.norm(direction)
+        
+        # Pursuit update
+        new_agent_pos = agent_pos + direction_normalized * self.agent_speed
+        
+        return new_agent_pos
+```
 
-### Hardware Design Steps
-1. **Select memristor technology**: Choose based on weight range, endurance, speed
-2. **Design crossbar topology**: Determine array size based on network
-3. **Implement analog IF neuron**: Choose capacitor size for integration window
-4. **Add threshold comparator**: Set V_th based on desired firing rate
-5. **Implement reset mechanism**: Voltage reset circuit after spike
+## Integration with Existing Systems
 
-### Task Adaptation
-1. **Define pursuit dynamics**: Predator/prey relative velocities
-2. **Design SNN topology**: Layers for observation → prediction → motor output
-3. **Train weights**: Use STDP or supervised learning
-4. **Program memristors**: Map weights to resistance values
-5. **Validate MSE**: Compare analog inference to software simulation
+### Relation to Other Skills
 
-## Key Insight
+- **`memristor-reservoir-computing-image`**: Similar memristor hardware, different application (image classification)
+- **`snn-fpga-hardware-software-codesign`**: Hardware-software co-design approach, different substrate (FPGA vs memristor)
+- **`neuromorphic-fw-mav-snn-control`**: Similar bio-inspired control, different platform (flapping-wing MAV)
 
-**"Analog memristor-based SNNs can achieve significant energy and latency advantages over digital implementations while maintaining inference accuracy close to software simulation."**
+### Cross-Domain Applications
 
-This demonstrates that neuromorphic hardware benefits are realizable in practical tasks (predator-prey tracking), not just theoretical benchmarks.
+1. **Autonomous drones**: Pursuit/interception for target tracking
+2. **Robotics**: Real-time motion prediction
+3. **IoT sensors**: Edge intelligence with low energy
+4. **Brain-machine interfaces**: Real-time neural decoding
 
-## Related
+## Experimental Validation
 
-- arXiv:2605.31299 — this paper
-- Memristor neuromorphic computing literature
-- Analog IF neuron implementations
-- In-memory computing architectures
-- Bio-inspired robotics/pursuit behaviors
+### HSPICE Simulation Parameters
+- Technology node: 45nm (analog) vs 5nm (digital)
+- Energy measurement: total power consumption
+- Latency: inference completion time
+- Accuracy: MSE vs ideal software baseline
+
+### Key Results
+```
+Metric                | Analog (45nm) | Digital (5nm) | Improvement
+----------------------|---------------|---------------|-------------
+Energy (J)            | X             | 12.7X         | 12.7x
+Latency (ns)          | Y             | 1.26Y         | 1.26x
+MSE                   | 0.004         | ~0.003        | Comparable
+```
+
+## Future Directions
+
+### Open Questions
+- Memristor device variability impact on long-term accuracy
+- Scaling to larger SNN architectures
+- Multi-layer analog IF networks
+- Training methods for analog memristor weights
+
+### Potential Extensions
+- Hybrid analog-digital architectures
+- Adaptive threshold neurons
+- Plasticity mechanisms in memristor arrays
+- Cross-domain task transfer
+
+## References
+
+- arXiv:2605.31299 - Original paper (Qu et al., 2026)
+- IEEE Dallas CAS Conference 2026 - Presentation venue
+
+## Activation
+
+Keywords: `memristor SNN`, `analog IF neuron`, `interception task`, `in-memory computing`, `neuromorphic hardware`, `edge intelligence`, `bio-inspired pursuit`

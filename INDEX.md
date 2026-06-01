@@ -1,4 +1,20 @@
 
+## 2026-06-02 - Neuroscience Research (Cron Job - 2nd Session)
+
+### Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task
+- [[memristor-snn-interception-task]] - Analog memristor crossbar阵列+模拟IF神经元实现异步事件驱动SNN,拦截任务MSE 0.004,45nm工艺能耗比5nm数字方案降低12.7倍 (arXiv: 2605.31299)
+  - In-memory synaptic computation消除多晶体管CMOS突触电路
+  - Predator-prey追踪任务验证实时边缘智能潜力
+  - HSPICE仿真验证1.26倍延迟降低
+  - **Activation**: memristor SNN, analog IF neuron, interception task, in-memory computing, neuromorphic hardware, edge intelligence, bio-inspired pursuit
+
+### EARLY: Evolutionary Algorithm for Reservoir Learning and Yielding
+- [[early-reservoir-evolutionary-learning]] - 图编码多储层ESN架构进化搜索,脑启发的模块化拓扑随任务难度自适应复杂化,CogScale时序任务超越随机搜索 (arXiv: 2605.30372)
+  - 基因组编码储层节点属性(尺寸/谱半径/泄漏率)+连接边权重
+  - 简单任务→轻量架构,复杂任务→丰富模块化组织
+  - 跨情境学习数据集验证架构可迁移性
+  - **Activation**: evolutionary reservoir, EARLY, ESN topology search, multi-reservoir ESN, temporal learning, modular brain, architecture evolution, CogScale
+
 ## 2026-06-02 - Computer Science + Quantum Computing (Cron Job - Hourly)
 
 ### AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle
