@@ -1,4 +1,15 @@
 
+## 2026-06-01 - Neuroscience Research (Cron Job - Latest)
+
+### MindVoice: Reconstructing Intelligible Speech from Neural Signals
+- [[mindvoice-neural-speech-reconstruction]] - First intelligible speech reconstruction from non-invasive EEG/MEG using pretrained priors with disentangled semantic-acoustic pathways (arXiv: 2605.31173)
+  - Disentangled dual-pathway: semantic content decoder + acoustic attribute estimator
+  - Pretrained priors bridge gap between noisy neural signals and natural speech
+  - In-context voice cloning for personalized reconstruction
+  - Outperforms all existing methods on intelligibility metrics (WER, MOS)
+  - Non-invasive, safe, scalable speech BCI for locked-in patients
+  - **Activation**: speech reconstruction, neural decoding, EEG MEG, speech BCI, pretrained priors, voice cloning, auditory neuroscience, semantic decoding, acoustic reconstruction
+
 ## 2026-06-01 - Neuroscience + Quantum Computing (Cron Job - Neuroscience Day)
 
 ### Research progress on quantum neural networks and quantum machine learning
