@@ -50,6 +50,37 @@
   - 适用于非自治线性ODE系统: dv/dt = A(t)v, A(t)非斜对称
   - **Activation**: quantum nonunitary simulation, nonautonomous ode quantum, quantum algorithm dilation
 
+## 2026-06-02 - Computer Science + Quantum (Cron Job)
+
+### Spectral Anatomy of Quantum Gaussian Process Kernels
+- [[spectral-anatomy-quantum-kernels]] - Unified spectral entropy diagnostic S(K)/log n for QGP kernels (arXiv: 2605.30952)
+  - Normalized spectral entropy governs dequantization and posterior pathologies
+  - Kernel-agnostic: hardware-efficient, matchgate, IQP, RBF all collapse onto same curves
+  - Verified on IBM Heron hardware with median error 3.2%
+  - **Activation**: quantum gaussian process, spectral entropy, quantum kernel diagnostic, Nystrom approximation, Bach degrees of freedom
+
+### Q-ANCHOR: Federated Quantum Learning with ZNE-guided Correction
+- [[q-anchor-federated-quantum-learning]] - QFL architecture addressing double-drift (client drift + hardware bias) (arXiv: 2605.30075)
+  - ZNE-guided server anchoring eliminates hardware bias floor
+  - Stateful client correction suppresses client drift from non-IID data
+  - Proves convergence under noisy quantum gradient estimates
+  - **Activation**: Q-ANCHOR, federated quantum learning, QFL, zero-noise extrapolation, quantum federated aggregation
+
+### Support Vector Machine with a Scalable Quantum Kernel
+- [[hamming-quantum-kernel-svm]] - Hamming quantum kernel avoids exponential concentration, scales to 27 qubits (arXiv: 2605.31449)
+  - Uses full measurement statistics instead of single fidelity value
+  - Outperforms fidelity kernel at 15+ qubits, classical Gaussian on synthetic data
+  - Classical post-processing only, zero additional quantum resources
+  - **Activation**: hamming quantum kernel, quantum SVM, exponential concentration, scalable quantum kernel
+
+### Experimental demonstration of quantum advantage in communication complexity for Euclidean distance problem
+- [[quantum-fingerprinting-communication]] - Quantum fingerprinting with coherent states shows advantage at input size 10^8 (arXiv: 2605.31516)
+  - SMP model: Alice/Bob send quantum fingerprints to referee for distance computation
+  - Amplitude modulation encoding + SNSPD detection for practical implementation
+  - Surpasses best classical protocol for diverse data types including grayscale images
+  - **Activation**: quantum fingerprinting, communication complexity, Euclidean distance, SMP model, coherent states
+
+
 ## 2026-06-01 - Neuroscience (Cron Job - 4 New Papers)
 
 ### Bridging Brains and Machines: A Unified Frontier
