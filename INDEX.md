@@ -1,3 +1,34 @@
+# AI Collection Index
+
+> Auto-generated index of all skills in the collection.
+> Sorted by date (newest first).
+
+## 2026-06-01 - Neuroscience + Quantum Computing (Cron Job)
+
+### Task-specific programming of chaos in neural circuits
+- [[chaos-programming-neural-circuits]] - 混沌神经网络的任务特定编程方法，通过分岔控制实现神经形态计算 (arXiv: 2605.19465)
+  - **Activation**: neuromorphic chaos, bifurcation control, edge of chaos, chaotic computing, reservoir computing
+
+### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
+- [[optical-neural-networks-waveguide-qed]] - 基于波导QED相干瞬态动力学的光学神经网络，实现超快光子计算 (arXiv: 2605.17752)
+  - **Activation**: optical neural network, waveguide QED, photonic computing, coherent transient
+
+### Metabolic quantum limit to MEG information capacity
+- [[metabolic-quantum-limit-meg]] - MEG信息容量的代谢量子极限，结合量子传感器能耗与大脑代谢功率 (arXiv: 2511.06401)
+  - **Activation**: MEG limits, quantum sensors, metabolic power, SQUID, atomic magnetometer
+
+### Efficient Clifford+T synthesis for small-angle rotations
+- [[efficient-clifford-t-synthesis]] - 小角度旋转的高效Clifford+T综合方法，降低容错量子编译的T门开销 (arXiv: 2605.31544)
+  - **Activation**: clifford T synthesis, quantum compilation, trotterization, T gate optimization
+
+### Q-SpiRL: Quantum Spiking Reinforcement Learning for Adaptive Robot Navigation
+- [[q-spirl-quantum-spiking-rl]] - 量子脉冲强化学习自适应机器人导航，结合量子计算与SNN实现高效导航 (arXiv: q-spirl)
+  - **Activation**: quantum spiking RL, SNN navigation, quantum policy gradient, neuromorphic robot
+
+### QLIF-CAST: Quantum Leaky-Integrate-and-Fire for Time-Series Forecasting
+- [[qlif-cast-quantum-spiking-forecasting]] - 量子泄漏积分发放神经网络时间序列预测，应用于天气预报 (arXiv: qlif-cast)
+  - **Activation**: quantum LIF, spiking forecasting, quantum time series, weather prediction
+
 
 ## 2026-06-01 - Neuroscience Research (Cron Job)
 

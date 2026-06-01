@@ -1,189 +1,80 @@
 ---
 name: optical-neural-networks-waveguide-qed
-description: All-optical neural networks using coherent transient quantum dynamics in waveguide QED systems
-version: 1.0.0
-category: quantum-neuromorphic
-author: Hermes Cron Job
-created: 2025-06-01
-arxiv_id: 2605.17752
-paper_title: Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
-paper_date: 2026-05-18
-authors: Jiande Cao, Yexiong Zeng, Franco Nori, Ze-Liang Xiang
-tags: [quantum-neuromorphic, optical-neural-networks, waveguide-qed, coherent-transient-dynamics, all-optical-computing]
+description: "Optical neural networks using coherent transient dynamics in waveguide QED. Enables ultrafast, low-energy photonic computing directly with photons without electro-optical conversion."
+category: neuroscience
+trigger: "optical neural networks, waveguide QED, photonic neural computing, coherent transient, photon computing"
 ---
 
 # Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
 
-## Paper Reference
-- **arXiv ID**: [2605.17752](https://arxiv.org/abs/2605.17752)
-- **Title**: Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
-- **Authors**: Jiande Cao, Yexiong Zeng, Franco Nori, Ze-Liang Xiang
-- **Submitted**: 18 May 2026
-- **Categories**: Quantum Physics (quant-ph), Optics (physics.optics)
+## Description
 
-## Overview
+Methodology from arXiv:2605.17752 (Cao, Zeng, Nori, 2026). Optical neural networks that use coherent transient dynamics in waveguide QED for ultrafast, low-energy information processing. Unlike current implementations restricted to steady-state operation with high-latency electro-optical conversion, this approach performs nonlinear activation directly in the photonic domain through transient coherent interactions.
 
-This paper proposes an all-optical fully connected neural network architecture that implements basic neuronal functions through coherent transient quantum dynamics, eliminating the optoelectronic activation bottleneck and reducing latency for neuromorphic computing.
+## Core Architecture
 
-## Core Methodology
+### 1. Waveguide QED Platform
 
-### 1. Programmable Synaptic Weights
-- **Mechanism**: Phase-tunable nonlocal interference in a giant cavity
-- **Implementation**: Waveguide QED system with tunable coupling
-- **Advantage**: No electro-optical conversion needed for weight programming
+- **1D waveguide** coupled to quantum emitters (atoms, quantum dots, superconducting qubits)
+- **Coherent transient dynamics**: Photons interact with emitters during propagation, creating nonlinear responses
+- **Direct photonic computation**: No electro-optical conversion needed for activation functions
+- **Ultrafast operation**: Sub-picosecond timescales from coherent light-matter interactions
 
-### 2. Temporal Summation (Integration)
-- **Mechanism**: Integrator operating in the bad cavity regime
-- **Process**: Coherently combines sequential wavepackets
-- **Physical Basis**: Coherent transient dynamics between waveguide and cavity
+### 2. Key Components
 
-### 3. Nonlinear Activation
-- **Mechanism**: Transient Rabi dynamics of a driven two-level system
-- **Implementation**: Quantum emitter (atom/molecule/quantum dot) in cavity
-- **Key Feature**: Provides native optical nonlinear activation function
+| Component | Function | Physical Implementation |
+|-----------|----------|----------------------|
+| Waveguide | Signal routing | Photonic crystal, nanofiber |
+| Quantum emitter | Nonlinear activation | Two-level atom, quantum dot |
+| Input encoding | Optical state preparation | Pulse shaping, phase modulation |
+| Output detection | Readout | Single-photon counting, homodyne |
 
-### 4. Architecture Structure
-- **Layer Configuration**: Fully connected neural network layers
-- **Data Flow**: All-photon information processing pathway
-- **Speed**: Ultrafast operation (sub-nanosecond response times)
+### 3. Computational Principles
 
-## Key Results
+**Transient vs Steady-State:**
+- Steady-state: System reaches equilibrium, limited by emitter relaxation time
+- Transient: Exploits non-equilibrium dynamics during photon-emitter interaction
+- Advantage: Faster computation, richer nonlinear response, lower energy
 
-### Performance Benchmarks
-- **MNIST Classification**: High accuracy demonstrated via full-physics simulations
-- **Colored-Object Recognition**: Multi-class classification success
-- **Latency**: Significantly reduced compared to electro-optical implementations
+**Nonlinear Activation Mechanism:**
+- Photon-emitter scattering creates amplitude-dependent phase shifts
+- Multi-photon interactions enable threshold-like behavior
+- Collective emitter effects provide tunable nonlinearity
 
-### Physical Advantages
-1. **No Activation Bottleneck**: Eliminates optoelectronic conversion for nonlinear activation
-2. **Energy Efficiency**: Low-energy photonic computation
-3. **Speed**: Ultrafast transient dynamics enable rapid processing
-4. **Programmability**: Phase-tunable weights allow adaptive reconfiguration
+## Implementation Patterns
 
-## Technical Details
-
-### Waveguide QED Framework
-- **Giant Cavity**: Large mode volume cavity supporting multiple waveguide inputs
-- **Bad Cavity Regime**: $\kappa \gg g$ (cavity decay rate much larger than coupling)
-- **Coherent Dynamics**: $H = \omega_c a^\dagger a + \omega_e \sigma^\dagger \sigma + g(a\sigma^\dagger + a^\dagger\sigma)$
-
-### Implementation Components
-1. **Input Encoding**: Photon wavepackets encoded with input data
-2. **Weight Phase**: $\phi_i$ phase shift for synaptic weight $w_i$
-3. **Integration**: Accumulated photon amplitude in cavity
-4. **Activation**: Rabi oscillation output intensity
-
-### Governing Equations
-- **Cavity Field Evolution**: $a(t) = \sum_i e^{i\phi_i} a_i(t)$
-- **Emitter Dynamics**: $d\sigma/dt = -i g a + \gamma \sigma$
-- **Output**: $I_{out} = |a(t_{act})|^2 \cdot f_{Rabi}(\theta)$
-
-## Applications
-
-### Use Cases
-1. **Pattern Recognition**: Image classification tasks
-2. **Signal Processing**: Ultrafast temporal signal analysis
-3. **Neuromorphic Computing**: Brain-inspired photonic processors
-4. **Quantum Machine Learning**: Hybrid quantum-classical algorithms
-
-### Target Systems
-- **Photonic Processors**: Optical computing hardware
-- **Quantum Neural Networks**: Hybrid quantum-classical architectures
-- **Low-Latency AI**: Edge computing with minimal delay
-- **Energy-Efficient Computing**: Sustainable AI infrastructure
-
-## Implementation Workflow
-
-### Step 1: Design Waveguide-QED System
+### Single-Emitter Node
 ```python
-# Parameters
-cavity_decay_rate = κ  # Bad cavity regime: κ >> g
-coupling_strength = g
-emitter_frequency = ω_e
-cavity_frequency = ω_c
+# Conceptual: Single quantum emitter as nonlinear node
+def optical_activation(photon_state, emitter_coupling):
+    """Coherent transient interaction as activation function."""
+    # Scattering matrix depends on photon number
+    # Nonlinear response emerges from quantum interference
+    return scattering_matrix(photon_state, emitter_coupling)
 ```
 
-### Step 2: Configure Synaptic Weights
-```python
-# Phase-tunable weights
-for input_channel i:
-    phase_shift[i] = φ_i  # Programmable
-    effective_weight[i] = exp(iφ_i) * input_amplitude[i]
-```
+### Multi-Layer Photonic Network
+- **Layer stacking**: Multiple waveguide-emitter sections
+- **Inter-layer coupling**: Optical delay lines or frequency conversion
+- **Training**: Gradient-based optimization of emitter parameters
 
-### Step 3: Temporal Integration
-```python
-# Bad cavity integrator
-accumulated_field = sum(weighted_inputs)
-# Coherent combination
-cavity_field = accumulated_field * coupling_factor
-```
+## When to Use
 
-### Step 4: Nonlinear Activation
-```python
-# Rabi dynamics activation
-rabi_angle = θ = 2g*t_act / κ
-activation_output = sin²(θ/2) * cavity_intensity
-```
+- Ultrafast neural network inference requirements (sub-ns latency)
+- Energy-constrained edge AI (femtojoule per operation)
+- Photonic computing architectures
+- Quantum-classical hybrid systems
+- RF/microwave signal processing
 
-## Comparison to Other Approaches
+## Pitfalls
 
-| Approach | Activation Mechanism | Latency | Energy |
-|----------|---------------------|---------|--------|
-| Electro-Optical | Electrical conversion | High | High |
-| Steady-State Optical | Passive elements | Medium | Low |
-| **Transient Quantum (This)** | Rabi dynamics | **Ultra-low** | **Ultra-low** |
+- **Decoherence limits**: Emitter coherence times constrain network depth
+- **Fabrication precision**: Sub-wavelength alignment required for waveguide-emitter coupling
+- **Temperature sensitivity**: Quantum emitter properties vary with temperature
+- **Scaling challenges**: Crosstalk increases with emitter density
+- **Training difficulty**: Gradients through coherent dynamics are complex
 
-## Advantages
+## References
 
-1. **No Electro-Optical Bottleneck**: Native optical activation
-2. **Ultrafast Operation**: Transient dynamics enable rapid response
-3. **Programmable Weights**: Phase-tunable synaptic connections
-4. **Full-Physics Implementation**: Realistic simulation validation
-5. **Scalability**: Multiple waveguide inputs per cavity
-
-## Limitations
-
-1. **Hardware Complexity**: Requires precise quantum emitter control
-2. **Decoherence**: Sensitive to environmental noise
-3. **Temperature Control**: May require cryogenic operation
-4. **Fabrication Challenges**: Nanoscale cavity-emitter integration
-
-## Related Skills
-
-- [[quantum-neuromorphic-computing]] - Quantum-enhanced neuromorphic systems
-- [[photonic-qnn-algorithmic-advantage]] - Photonic quantum neural networks
-- [[pulse-level-quantum-computing]] - Pulse-level quantum control
-- [[optical-neural-networks]] - General optical NN architectures
-
-## Future Directions
-
-1. **Multi-Layer Networks**: Cascade multiple QED cavities
-2. **Different Activation Functions**: Alternative quantum dynamics
-3. **Quantum Advantage Analysis**: Compare to classical optical NNs
-4. **Hardware Implementation**: Experimental prototype development
-
-## Key References
-
-- Original paper: arXiv:2605.17752
-- Waveguide QED fundamentals: Quantum optics literature
-- Rabi dynamics: Two-level system theory
-- Bad cavity regime: Cavity QED physics
-
-## Activation Keywords
-
-Use this skill when encountering:
-- Optical neural networks
-- Waveguide QED
-- Coherent transient dynamics
-- All-optical computing
-- Photonic neuromorphic
-- Quantum activation functions
-- Bad cavity regime
-- Rabi dynamics for NNs
-
----
-
-**Skill Status**: Created from arXiv:2605.17752 (2026-05-18)
-**Last Updated**: 2025-06-01
-**Quality**: Full physics simulation validated
+- arXiv:2605.17752 — "Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED" (Cao, Zeng, Nori, 2026)
+- Related: Photonic neural networks, cavity QED, waveguide QED theory
