@@ -3,6 +3,16 @@
 > Auto-generated index of all skills in the collection.
 > Sorted by date (newest first).
 
+## 2026-06-01 - Neuroscience + Neuromorphic Hardware (Cron Job)
+
+### Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task
+- [[memristor-snn-interception-task]] - Analog memristor-based SNN accelerator with in-memory synaptic computation and analog IF neurons; achieves 12.7x lower energy and 1.26x lower delay vs digital baseline in predator-prey tracking task (arXiv: 2605.31299)
+  - Eliminates multi-transistor CMOS synapse circuits
+  - Asynchronous event-driven operation at 45nm node
+  - MSE 0.004 matches ideal software inference
+  - Energy-efficient real-time edge intelligence
+  - **Activation**: memristor SNN, neuromorphic hardware, in-memory computing, analog neurons, edge intelligence, bio-inspired interception
+
 ## 2026-06-01 - Neuroscience Research (Cron Job - Latest)
 
 ### MindVoice: Reconstructing Intelligible Speech from Non-Invasive Neural Signals
