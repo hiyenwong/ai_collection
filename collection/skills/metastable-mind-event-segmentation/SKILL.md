@@ -198,6 +198,10 @@ Neural states reflect underlying predictive models that shape:
 - [[predictive-coding-exponential-family]] - Prediction framework
 - [[attractor-metadynamics-neural]] - Attractor landscape evolution
 
+## Reference Files
+
+- **[references/session-workflow-verification-2026-06-02.md](references/session-workflow-verification-2026-06-02.md)** — Complete cron workflow execution record: browser search reliability, kg.db multiple locations, Obsidian flat structure, git proxy requirement, 4-level duplicate check, verification queries.
+
 ## Activation Keywords
 
 **Trigger**: metastable mind, event segmentation, neural states, metastability, naturalistic cognition, state hierarchy, event boundaries, metastable neural activity, MNA, ES theory, brain dynamics hierarchy, predictive neural models
