@@ -1,3 +1,11 @@
+## 2026-06-01 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Neural Network Encoding for Quantum State Preparation
+- [[nn-quantum-state-encoding]] - Neural network encoding methodology for quantum state preparation: trains classical NN to map data to quantum circuit parameters, avoiding per-instance variational optimization, achieves 0.992 fidelity with 5000x runtime reduction (arXiv: 2605.31006)
+  - Train-once-infer-many pattern: classical encoder NN maps input data to fixed quantum circuit parameters
+  - Fidelity-driven loss design using quantum state fidelity (not Euclidean distance on parameters)
+  - Hardware-efficient ansatz design principles matching gate sets to available quantum hardware
+  - **Activation**: neural network quantum state preparation, QML data loading, quantum circuit encoding, amplitude encoding optimization
 ## 2026-06-01 - Neuroscience Research (Cron Job)
 
 ### Neural Representation Reshaping Mechanisms (Synthesis)
