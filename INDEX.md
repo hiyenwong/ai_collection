@@ -216,3 +216,27 @@
     - Derives local plasticity rules without global backpropagation
     - **Activation**: exponential family predictive coding, local plasticity rules, free energy principle beyond gaussian
 
+## 2026-06-01 - Neuroscience (Cron Job)
+
+### Extended Predictive Coding Beyond Gaussian Assumption
+- [[predictive-coding-exponential-family]] - 通用指数族预测编码框架，扩展高斯假设到任意分布 (arXiv: 2605.30882)
+  - 核心要点 1: 将预测编码从单一高斯假设推广到任意指数族分布
+  - 核心要点 2: 推导泊松(脉冲计数)、伽马(反应时)、狄利克雷(比例编码)的预测误差公式
+  - **Activation**: predictive-coding, exponential-family, non-gaussian, bayesian-inference
+
+## 2026-06-01 - Neuroscience + AI (Cron Job)
+
+### EvoGM: Learning to Merge LLMs via Evolutionary Generative Optimization
+- [[evo-generative-llm-merging]] - 进化式LLM模型合并优化方法 (arXiv: 2605.29295)
+  - 核心要点 1: 将LLM模型合并建模为进化优化问题，替代固定启发式线性插值
+  - 核心要点 2: 分层粒度合并策略：浅层任务特异性权重、深层共享表示、输出层最优微调
+  - **Activation**: evolutionary-optimization, llm-merging, model-composition, generative-ai
+
+## 2026-06-01 - Neuroscience + Security (Cron Job)
+
+### Privacy-Enhanced Zero-Order Federated Learning via xMK-CKKS over Wireless Channels
+- [[zeroth-order-federated-learning-he]] - 结合零阶优化与同态加密的隐私保护联邦学习 (arXiv: 2605.30123)
+  - 核心要点 1: 零阶优化避免梯度泄漏，仅传输函数评估值而非梯度
+  - 核心要点 2: xMK-CKKS多密钥同态加密方案支持无线信道上的安全聚合
+  - **Activation**: federated-learning, zeroth-order, homomorphic-encryption, ckks, privacy
+
