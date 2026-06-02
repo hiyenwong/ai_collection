@@ -1,265 +1,202 @@
 ---
 name: snn-sequence-timing-replay-v2
-description: Spiking Temporal Memory (sTM) model for learning sequence timing and controlling replay speed through oscillatory dynamics. Biologically plausible mechanism for encoding temporal patterns across multiple timescales.
-version: 1.0
-author: arXiv paper extraction (2605.22523)
-arxiv_id: 2605.22523
-published: 2026-05-21
-tags: [spiking-neural-network, sequence-learning, temporal-memory, oscillatory-dynamics, replay, computational-neuroscience]
-activation_keywords: [sequence timing, replay speed, spiking temporal memory, oscillatory background, sTM model, sequence replay, temporal encoding]
+description: Spiking Temporal Memory (sTM) model extension for learning sequence timing and controlling replay speed via oscillatory background inputs
+category: neuroscience
+authors: ["Melissa Lober", "Younes Bouhadjar", "Markus Diesmann", "Tom Tetzlaff"]
+arxiv_id: "2605.22523"
+submission_date: "2026-05-21"
+doi: "https://doi.org/10.48550/arXiv.2605.22523"
+tags: ["spiking neural network", "sequence timing", "temporal memory", "replay control", "oscillatory dynamics", "biologically plausible"]
+activation_keywords: ["sequence timing", "replay speed", "spiking temporal memory", "oscillatory control", "element-specific timing", "EEG/LFP oscillation"]
 ---
 
-# Spiking Temporal Memory (sTM) Model for Sequence Timing and Replay Speed Control
+# Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
 
-## Overview
+## 概述
 
-论文提出了一种生物启发的脉冲神经网络模型，能够学习序列元素的精确时序，并通过振荡背景输入灵活控制序列重放速度。
+扩展 sTM（spiking Temporal Memory）模型以学习序列元素的精确时序，并通过振荡背景输入灵活控制序列重放速度。
 
-**arXiv**: 2605.22523  
-**Authors**: Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff  
-**Published**: 2026-05-21  
-**Categories**: q-bio.NC (Neural and Cognitive Computing)
+## 核心创新
 
-## Problem Statement
+### 1. 元素特定时序编码机制
 
-序列处理是大脑的基本功能，涉及感觉感知、语言和运动控制。现有挑战：
-- 传统模型能学习序列顺序，但缺乏生物合理的时序编码机制
-- 无法灵活控制序列重放速度（清醒与睡眠状态的差异）
-- 如何表示元素特异性时间
+**问题**：原sTM模型仅学习序列顺序，无法编码元素间时间间隔。
 
-## Core Innovation
+**解决方案**：
+- 每个序列元素持续时间由元素特定神经元群体的顺序激活表示
+- 稀疏时空模式编码经过时间，支持宽范围时间尺度
+- 同步激活的小神经元集合编码元素身份和序列上下文
 
-### 1. 序列元素时序表示机制
-
-**方法**：元素持续时间通过元素特异性神经元群体的顺序激活表示
-
-**优势**：
-- 能够编码跨广泛时间尺度的序列
-- 提供学习重放复杂时序模式的生物合理基础
-- 稀疏的时空神经活动模式编码流逝时间
+**数学框架**：
+```
+序列 S = {e₁, e₂, ..., eₙ} with timing {t₁, t₂, ..., tₙ}
+元素持续时间 Δt_i 由神经元群体 P_i = {n₁, n₂, ..., nₖ} 的顺序激活编码
+总时间编码: T = Σ Δt_i = Σ |P_i| × τ_base
+```
 
 ### 2. 振荡背景输入作为时钟信号
 
 **机制**：
-- 振荡背景输入作为时钟信号
-- 提供控制序列重放速度的鲁棒灵活机制
-- 重放速度与 EEG/LFP 观察到的全局振荡活动特征相关
+- 振荡背景输入（模拟EEG/LFP全局振荡）作为时钟信号
+- 振荡频率调制重放速度：f_clock → v_replay
+- 支持清醒和睡眠状态不同重放速度
 
-### 3. sTM 模型扩展
+**生物对应**：
+- 清醒状态：高频振荡 → 快速重放
+- 睡眠状态：低频振荡 → 慢速重放（记忆巩固）
+- EEG/LFP记录的振荡特性与重放速度相关性
 
-**原始 sTM 模型**：
-- 每个序列元素由同步发放的小神经元集表示
-- 活动神经元集合编码元素在序列上下文中的身份
-- 仅学习顺序，不学习时序
+### 3. 灵活重放速度控制
 
-**扩展后的 sTM**：
-- 学习序列元素时序
-- 通过振荡背景灵活调节重放速度
-- 元素特异性群体顺序激活表示持续时间
+**实现方式**：
+- 振荡相位触发元素切换
+- 相位锁定确保元素间同步
+- 频率调制实现速度调整
 
-## Implementation Details
-
-### Network Architecture
-
+**控制方程**：
 ```
-sTM Network Structure:
-┌─────────────────────────────────────┐
-│  Oscillatory Background Input       │  ← Clock signal
-│  (controls replay speed)            │
-└─────────────────────────────────────┘
-              ↓
-┌─────────────────────────────────────┐
-│  Element-Specific Populations       │  ← Sequential activation
-│  (duration encoding)                 │    for timing
-└─────────────────────────────────────┘
-              ↓
-┌─────────────────────────────────────┐
-│  Synchronous Spike Groups            │  ← Element identity
-│  (sparse spatiotemporal patterns)    │    encoding
-└─────────────────────────────────────┘
+v_replay = f_clock × k_phase
+k_phase = 相位耦合强度参数
 ```
 
-### Key Components
+## 方法论框架
 
-1. **Element Duration Encoding**
-   - Sequential activation of specific neuronal populations
-   - Wide range of timescales support
-   - Unique spatiotemporal patterns
+### 模型结构
 
-2. **Replay Speed Control**
-   - Oscillatory background as clock signal
-   - Speed modulation without structural changes
-   - Wakefulness vs sleep speed differences
+1. **输入层**：接收序列元素（有序刺激）
+2. **时空编码层**：
+   - 元素身份编码（稀疏神经元集合）
+   - 时序编码（顺序激活的持续时间群体）
+3. **振荡调制层**：背景振荡输入控制重放速度
+4. **输出层**：序列重放（带精确时序）
 
-3. **Temporal Pattern Learning**
-   - Biologically plausible mechanism
-   - Spike-timing dependent plasticity
-   - Context-dependent sequence encoding
+### 学习规则
 
-## Biological Relevance
+- **顺序学习**：标准sTM机制（序列位置依赖）
+- **时序学习**：持续时间群体的STDP适应
+- **振荡适应**：频率-速度映射的在线调整
 
-### EEG/LFP Correlation
+### 关键参数
 
-- 重放速度特征与全局振荡活动相关
-- 清醒状态：特定振荡频率范围
-- 睡眠状态：不同振荡模式
+| 参数 | 范围 | 说明 |
+|------|------|------|
+| τ_base | 10-50 ms | 基础神经元激活周期 |
+| f_clock | 4-100 Hz | 振荡时钟频率（θ波到γ波） |
+| k_phase | 0.5-2.0 | 相位耦合强度 |
+| |P_i| | 5-20 | 每个元素的持续时间群体大小 |
 
-### Neuroscience Evidence
+## 应用场景
 
-支持以下现象的机制：
-1. 序列学习与记忆巩固
-2. 时序模式的神经编码
-3. 状态依赖的重放速度调节
+### 1. 序列记忆学习
 
-## Applications
+- **语言处理**：学习语音序列的节奏和停顿
+- **音乐感知**：学习旋律的时序结构
+- **运动控制**：学习动作序列的时间协调
 
-### 1. Computational Neuroscience
+### 2. 记忆巩固模拟
 
-**用途**：建模时序序列处理
-- 感觉感知序列
-- 语言处理
-- 运动控制序列
+- 睡眠状态慢振荡 → 慢速重放 → 记忆巩固
+- 清醒状态快振荡 → 快速重放 → 工作记忆刷新
 
-### 2. Brain-Computer Interfaces
+### 3. BCI应用
 
-**用途**：序列解码与重放
-- 运动想象序列解码
-- 记忆重放建模
+- 序列任务的精确时间预测
+- 基于EEG振荡状态的适应性控制
 
-### 3. Neuromorphic Computing
+## 技术实现要点
 
-**用途**：时间编码硬件实现
-- 事件驱动时序处理
-- 低功耗序列处理
-
-## Mathematical Framework
-
-### Sequence Timing Equation
-
-时间编码通过神经元群体激活序列表示：
-
-```
-T(element_i) = Σ t_k where population_k ∈ element_i_populations
-```
-
-### Replay Speed Modulation
-
-重放速度由振荡频率调制：
-
-```
-Speed_replay = f(oscillation_frequency_background)
-```
-
-### Spatiotemporal Pattern Encoding
-
-流逝时间的唯一编码：
-
-```
-Pattern_t = {spike_pattern_1, spike_pattern_2, ..., spike_pattern_n}
-```
-
-## Key Findings
-
-1. **时序编码机制**：元素持续时间通过神经元群体顺序激活表示
-2. **速度控制机制**：振荡背景输入作为时钟信号控制重放速度
-3. **生物合理性**：与 EEG/LFP 观察的振荡特征相关
-4. **跨时间尺度**：支持广泛时间尺度的序列编码
-
-## Implementation Steps
-
-### Step 1: 构建基础 sTM 网络
-
-- 定义同步发放神经元组
-- 设置序列元素编码机制
-- 实现上下文依赖的身份编码
-
-### Step 2: 添加时序编码
-
-- 实现元素特异性神经元群体
-- 顺序激活表示持续时间
-- 稀疏时空模式编码
-
-### Step 3: 实现振荡背景控制
-
-- 添加振荡输入层
-- 配置时钟信号参数
-- 实现速度调制机制
-
-### Step 4: 训练与验证
-
-- 序列时序学习
-- 重放速度控制测试
-- 与生物数据对比
-
-## Code Example (Conceptual)
+### SNN实现
 
 ```python
-# Conceptual implementation of sTM timing model
-import numpy as np
-
-class SpikingTemporalMemory:
-    def __init__(self, n_elements, n_neurons_per_group):
-        self.n_elements = n_elements
-        self.neuron_groups = {}  # Element identity encoding
-        self.duration_populations = {}  # Timing encoding
-        self.oscillation_background = None
-        
-    def encode_element_timing(self, element_id, duration):
-        """Encode timing through sequential population activation"""
-        # Sequential activation of element-specific populations
-        populations = self.get_duration_populations(element_id)
-        for pop in populations:
-            self.activate_population(pop, duration)
-            
-    def set_oscillation_clock(self, frequency):
-        """Set oscillatory background as clock signal"""
-        self.oscillation_background = self.generate_oscillation(frequency)
-        
-    def replay_sequence(self, speed_factor):
-        """Replay sequence at modulated speed"""
-        # Adjust oscillation frequency for speed control
-        adjusted_freq = self.base_frequency * speed_factor
-        self.set_oscillation_clock(adjusted_freq)
-        # Replay with timing
-        self.execute_sequence_replay()
+# 伪代码结构
+class SpikingTemporalMemoryV2:
+    def __init__(self, base_tau=20, clock_freq=10, phase_coupling=1.0):
+        self.element_groups = {}  # 元素身份编码
+        self.duration_populations = {}  # 时序编码
+        self.clock_oscillator = Oscillator(freq=clock_freq)
+        self.phase_coupling = phase_coupling
+    
+    def encode_sequence(self, sequence, timings):
+        for elem, duration in zip(sequence, timings):
+            # 元素身份编码
+            identity_group = select_sparse_group(elem)
+            # 时序编码（持续时间群体）
+            duration_pop = create_duration_population(duration, self.base_tau)
+            self.duration_populations[elem] = duration_pop
+    
+    def replay(self, sequence):
+        for elem in sequence:
+            # 振荡相位触发
+            phase = self.clock_oscillator.get_phase()
+            # 顺序激活持续时间群体
+            for neuron in self.duration_populations[elem]:
+                fire_with_timing(neuron, phase, self.phase_coupling)
 ```
 
-## Experimental Validation
+### 振荡调制实现
 
-### Benchmarks
+- **振荡源**：模拟背景振荡（正弦/脉冲）
+- **相位触发**：相位阈值触发元素切换
+- **频率调制**：动态调整振荡频率改变重放速度
 
-1. **时序编码精度**：测量学习的时间模式准确性
-2. **速度控制范围**：测试不同振荡频率下的重放速度
-3. **生物数据匹配**：与 EEG/LFP 数据对比
+### 稀疏编码策略
 
-### Metrics
+- 每个元素由固定大小神经元集合编码（5-20个）
+- 稀疏性确保高效和鲁棒性
+- 顺序激活避免同时激活冲突
 
-- Timing accuracy (RMSE)
-- Replay speed flexibility
-- Sparsity of activation patterns
-- Correlation with biological oscillations
+## 验证指标
 
-## Future Directions
+1. **时序精度**：重放序列与原序列时间偏差
+2. **速度灵活性**：不同振荡频率下的重放速度范围
+3. **生物对应性**：EEG/LFP振荡特性与重放速度相关性
 
-1. 多时间尺度集成
-2. 状态依赖的速度调节
-3. 与其他脑区模型的整合
-4. Neuromorphic 硬件实现
+## 与现有工作对比
 
-## References
+| 模型 | 顺序编码 | 时序编码 | 重放控制 | 生物合理性 |
+|------|----------|----------|----------|------------|
+| Standard Hopfield | ✓ | ✗ | ✗ | 低 |
+| LSTM | ✓ | ✓ | ✗ | 低 |
+| sTM (原版) | ✓ | ✗ | ✗ | 高 |
+| **sTM v2 (本工作)** | ✓ | ✓ | ✓ | **高** |
 
-- arXiv:2605.22523 - Original paper
-- Hawkins et al. - Temporal Memory theory
-- Buzsáki - Neural oscillations
-- Eichenbaum - Memory replay mechanisms
+## 局限与扩展方向
 
-## Related Skills
+### 当前局限
 
-- `snn-working-memory-heterogeneous-delays`
-- `spiking-oscillation-mapping`
-- `stm-sequence-timing-replay`
-- `oscillatory-snn-time-delayed-coordination`
+1. 时序范围受限于神经元激活周期
+2. 振荡调制精度依赖振荡源稳定性
+3. 大规模序列的计算成本
+
+### 扩展方向
+
+1. 多振荡耦合（θ-γ耦合）
+2. 学习可变持续时间群体大小
+3. 与其他SNN模型集成（如NEST模拟）
+4. 实验验证（EEG/LFP数据分析）
+
+## 参考文献
+
+- Lober et al. (2026) - 本工作
+- Tetzlaff et al. (前序sTM工作)
+- Diesmann et al. (NEST模拟器)
+- EEG/LFP振荡与记忆巩固研究
+
+## 关键术语
+
+- **sTM**：Spiking Temporal Memory，脉冲时序记忆模型
+- **元素特定时序编码**：Element-specific timing encoding
+- **振荡背景输入**：Oscillatory background input
+- **时钟信号**：Clock signal for replay control
+- **稀疏时空模式**：Sparse spatiotemporal pattern
+- **重放速度控制**：Replay speed control via oscillation
 
 ---
 
-**Note**: 此 skill 从 arXiv 论文 2605.22523 提取，描述了 Spiking Temporal Memory (sTM) 模型如何学习序列时序并通过振荡动力学控制重放速度的生物合理机制。
+**Activation**: 当讨论序列学习、时序编码、脉冲神经网络、记忆重放、振荡控制、EEG/LFP分析时激活此技能。
+
+**Related Skills**: 
+- `snn-sequence-timing-replay` (原版，无时序)
+- `snn-working-memory-heterogeneous-delays`
+- `learning-sequence-timing-snn`
+- `kuramoto-brain-network` (振荡建模)

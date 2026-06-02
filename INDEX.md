@@ -1,3 +1,20 @@
+## 2026-06-02 - Neuroscience Research (Cron Job)
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[snn-sequence-timing-replay-v2]] - 扩展sTM模型以学习序列元素精确时序，通过振荡背景输入灵活控制重放速度，支持宽范围时间尺度编码和清醒/睡眠状态速度调节 (arXiv: 2605.22523)
+  - 元素特定神经元群体的顺序激活编码持续时间
+  - 振荡背景输入作为时钟信号，频率调制重放速度
+  - 稀疏时空模式编码经过时间，EEG/LFP振荡特性与重放速度相关性
+  - **Activation**: sequence timing, replay speed, spiking temporal memory, oscillatory control, element-specific timing, EEG/LFP oscillation, sTM model, memory consolidation
+
+### NeuralSet: A High-Performing Python Package for Neuro-AI
+- [[neuralset-neuro-ai-framework]] - 统一Python框架处理多样化神经记录（fMRI, M/EEG, spikes）和复杂刺激（文本、音频、视频），惰性加载+深度嵌入集成+计算追溯 (arXiv: 2605.03169)
+  - 模态无关数据统一，单一PyTorch-ready接口
+  - 惰性加载支持TB级数据集，内存占用降至样本级别
+  - 预训练深度嵌入（BERT/wav2vec/CLIP）自动生成
+  - 计算可追溯性保证重现性
+  - **Activation**: neuro-ai, neural data preprocessing, fMRI EEG MEG harmonization, deep learning embeddings, lazy loading, memory-efficient, PyTorch-ready, computational provenance
+
 ## 2026-06-02 - Computer Science Research (Cron Job)
 
 ### Quantum Reservoir Computing and Risk Bounds
