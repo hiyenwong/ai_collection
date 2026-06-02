@@ -1,3 +1,12 @@
+## 2026-06-02 - Computer Science + Quantum Research (Cron Job - Hourly)
+
+### QSignAI: Quantum-Randomness-Seeded Identity Signatures
+- [[qsignai-quantum-identity-signatures]] - 量子随机性种子身份签名系统：通过双向量子电路管道在AI社交平台中生成唯一身份标识 (arXiv: 2605.27729)
+  - 双向AI-量子集成：AI使量子可访问，量子使AI更安全
+  - 两电路量子管道在云端模拟器上执行，产生量子随机性种子身份
+  - 生产部署验证：量子AI系统可在生产环境中以可接受的延迟和成本运行
+  - **Activation**: quantum identity signature, QSignAI, quantum randomness, identity verification, quantum-AI platform, quantum circuit pipeline, cs.CR
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
 
 ### Frustrated Neurons: Energy Landscapes and Relaxation Dynamics in Repulsive Phase Oscillators
