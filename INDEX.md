@@ -155,6 +155,13 @@
   - Core: Pareto frontier analysis: 36x space, 6.6x spacetime improvement, 89k qubits for FeMoco
   - **Activation**: surface code, QEC, hex grid, twist defect, lattice surgery, fault tolerance
 
+### Hybrid Quantum-Classical FBPINN for Full Waveform Inversion
+- [[hybrid-quantum-fbpinn]] - Hybrid quantum-classical FBPINN achieves 8x faster convergence with 33% fewer parameters for wave-based inverse problems (arXiv: 2606.01110)
+  - PQC as differentiable JAX statevector simulator enables end-to-end autodiff through classical PINN → quantum circuit → physics loss
+  - Outperforms all 15 classical hyperparameter variants on geophysical anomaly benchmark
+  - Applicable to medical ultrasound tomography, non-destructive evaluation, and wave-based inverse problems
+  - **Activation**: hybrid quantum-classical neural networks, physics-informed neural networks, full waveform inversion, quantum machine learning for PDEs, differentiable quantum circuits, JAX quantum simulation, wave-based inverse problems, domain-decomposed PINNs, FBPINN quantum
+
 
 
 ### The Metastable Mind: Neural States as Computational Units (Enhanced Skill)
