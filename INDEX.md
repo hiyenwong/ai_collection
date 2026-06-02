@@ -1,4 +1,42 @@
 ## 2026-06-02 - Neuroscience Research (Cron Job)
+## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
+
+### Support Vector Machine with a Scalable Quantum Kernel
+- [[hamming-quantum-kernel-svm]] - Hamming quantum kernel avoids exponential concentration in quantum SVMs, scales to 27 qubits (arXiv: 2605.31449)
+  - Uses full measurement statistics instead of single fidelity value
+  - Zero additional quantum cost — purely classical post-processing improvement
+  - **Activation**: hamming quantum kernel, quantum SVM, exponential concentration, scalable quantum kernel
+
+### Quantum State Preparation via Neural Network Encoding
+- [[nn-quantum-state-encoding]] - Classical NN maps data to quantum circuit parameters, 0.992 fidelity, 5000x speedup (arXiv: 2605.31006)
+  - Train-once-infer-many pattern replaces per-instance variational optimization
+  - Fixed ansatz with NN-predicted rotation angles
+  - **Activation**: neural network quantum state preparation, QML data loading, quantum circuit encoding
+
+### Generative Quantum Data Embeddings for Supervised Learning
+- [[generative-quantum-embedding]] - Energy-based generative framework optimizes quantum data embeddings with Wasserstein bounds (arXiv: 2605.30866)
+  - Synthesizes gate sequences via fidelity-based surrogate objective
+  - Wasserstein distance provides a priori diagnostic for embedding optimization feasibility
+  - **Activation**: quantum data embedding, quantum encoding optimization, generative quantum circuit
+
+### Attention-based Optimizer for Symmetry Finding
+- [[attention-quantum-symmetry]] - Set-Transformer searches Pauli symmetries of Hamiltonians with commutation-based objectives (arXiv: 2605.30429)
+  - Self-attention encodes pairwise and higher-order correlations among Pauli strings
+  - Near-deterministic success on physical Hamiltonians (Ising, Toric code)
+  - **Activation**: attention symmetry finding, quantum symmetry optimizer, Set-Transformer Hamiltonian
+
+### Progressive Swapping to the Middle Protocol
+- [[psm-quantum-memory-distribution]] - Entanglement distribution optimized for imperfect quantum memories, presented at EuCNC 2026 (arXiv: 2605.31493)
+  - Swaps progressively from both ends toward center, minimizing idle memory time
+  - ~2x fidelity advantage over naive sequential swapping for linear chains
+  - **Activation**: progressive swapping quantum, PSM protocol, imperfect quantum memory, entanglement distribution
+
+### Quantum Sequence Samplers for Stochastic Processes
+- [[quantum-sequence-samplers]] - Quantum circuits generate coherent superpositions of stochastic processes for O(1/ε) Monte Carlo (arXiv: 2603.24069)
+  - Quantum amplitude estimation gives quadratic speedup over classical sampling
+  - Applications in financial risk analysis, DNA sequencing, physics simulation
+  - **Activation**: quantum sequence sampler, stochastic process quantum encoding, quantum Monte Carlo
+
 
 ### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
 - [[metastable-mind-event-segmentation]] - 综合Event Segmentation与Metastable Neural Activity两大孤立分支，证明二者研究同一神经状态现象，提出三大核心原理：时空嵌套层级、预测模型基础、模块化处理边界重构 (arXiv: 2605.31473)
