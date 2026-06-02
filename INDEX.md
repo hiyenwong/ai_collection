@@ -1,5 +1,12 @@
 ## 2026-06-02 - Computer Science + Quantum Research (Cron Job - Hourly)
 
+### Joint Optimization of Qubit Leasing and Quantum Circuit Distribution
+- [[quantum-circuit-distribution-optimization]] - 联合量子比特租赁与电路分发优化：ILP公式化多量子计算机资源分配问题，证明NP完全性，提出贪心+局部搜索算法 (arXiv: 2606.00501)
+  - 四重耦合决策：租赁数量、存储位置、门执行位置、量子比特移动(迁移vs遥传)
+  - NP完全性证明(归约自图划分)，识别多项式时间可解特例
+  - 贪心初始化+局部搜索优化，5-15%内逼近最优解，扩展到100+量子比特
+  - **Activation**: quantum circuit distribution, qubit leasing, quantum network optimization, JQLQCD, quantum resource allocation, distributed quantum computing, ILP quantum, qubit routing
+
 ### Half the Interference, Most of the Answer: Approximate Quantum Simulation via Path-Sum Pruning
 - [[path-sum-quantum-simulation-pruning]] - 统计干涉采样框架用于近似量子电路模拟：50%干涉反应可省略同时保持90%输出精度 (arXiv: 2606.01922)
   - 化学抽象机(ChAM)模型：加权路径贡献作为并发分子种类演化
