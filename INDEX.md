@@ -1,3 +1,12 @@
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
+### Rare Events, Real Signals: Functional Ensembles as Units of Computation in Deep Spiking Networks
+- [[functional-ensembles-snn-computation]] - 1FC功能性组合作为深度脉冲网络计算单元：稀有高协调事件编码信息，聚合共发放预测下游响应，ReLU式输入输出关系 (arXiv: 2606.00073)
+  - 核心创新：首阶功能连接(1FC)组分析框架，揭示深度SNN中功能性组合的计算原理
+  - 关键发现：稀有高协调事件(~5-15%)集中编码信息，聚合共发放具有ReLU式响应
+  - 学习塑造结构：权重置换破坏功能连接，证明功能组合是学习形成的
+  - **Activation**: functional ensemble, SNN computation, functional connectivity, 1FC group, ensemble cofiring, deep spiking network analysis, ReLU-like response, rare events encoding
+
 ## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
 
 ### Penalty-free QAOA for lattice protein folding
