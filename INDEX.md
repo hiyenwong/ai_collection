@@ -1,4 +1,11 @@
 ## 2026-06-02 - Neuroscience Research (Cron Job)
+
+### The Neuromorphic Supremacy
+- [[neuromorphic-supremacy-hybrid-astrocytic-spiking]] - Hybrid neural architectures combining astrocytic modulation and spiking dynamics achieve few-shot learning and noise robustness that surpass standard deep learning (arXiv: 2606.01841)
+  - Introduces "neuromorphic supremacy" regime where bio-inspired circuits outperform ANNs in data-scarce noisy environments
+  - Astrocytic gain control + sparse spiking encoding prevent performance collapse under >50% occlusion/impulse noise
+  - **Activation**: neuromorphic supremacy, astrocyte, spiking neural network, few-shot learning, noise robustness, embodied AI, hybrid architecture
+
 ## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
 
 ### Support Vector Machine with a Scalable Quantum Kernel
