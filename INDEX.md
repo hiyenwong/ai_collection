@@ -1,3 +1,11 @@
+## 2026-06-02 - Neuroscience Research (Cron Job)
+
+### Reinterpreting Safety Thresholds as Neuron Spiking Thresholds for Automated Driving
+- [[snn-safety-thresholds-automated-driving]] - 将 Surrogate Safety Measures (SSMs) 重新诠释为 LIF 神经元脉冲阈值，SNN 结合多个 SSM 输入使脉冲与人类制动时机对齐 (arXiv: 2605.30368)
+  - 用 LIF 神经元替代固定阈值，捕获持续边缘条件和短暂高峰风险
+  - 学习的阈值相对一致（客观 SSM 有效），衰减因子编码个体时间敏感度（主观感知）
+  - **Activation**: safety thresholds, SNN driving, LIF safety, autonomous driving safety, surrogate safety measures, SSM, braking prediction, spiking thresholds
+
 ## 2026-06-02 - Systems Engineering Research (Cron Job)
 
 ### Kairos: Lightweight Testing Framework for Timing-Induced Interaction Failures in LTE/5G Core Networks
