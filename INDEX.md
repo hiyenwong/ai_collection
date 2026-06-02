@@ -1,5 +1,13 @@
 ## 2026-06-02 - Computer Science + Quantum Research (Cron Job - Hourly)
 
+### Half the Interference, Most of the Answer: Approximate Quantum Simulation via Path-Sum Pruning
+- [[path-sum-quantum-simulation-pruning]] - 统计干涉采样框架用于近似量子电路模拟：50%干涉反应可省略同时保持90%输出精度 (arXiv: 2606.01922)
+  - 化学抽象机(ChAM)模型：加权路径贡献作为并发分子种类演化
+  - 阈值规则：端点振幅足够时终止处理，丢弃剩余反应
+  - 适用于Deutsch-Jozsa、Grover搜索、Simon问题、Shor周期查找基准
+  - **Activation**: path-sum pruning, interference sampling, approximate quantum simulation, quantum circuit simulation, ChAM, statistical interference
+
+
 ### QSignAI: Quantum-Randomness-Seeded Identity Signatures
 - [[qsignai-quantum-identity-signatures]] - 量子随机性种子身份签名系统：通过双向量子电路管道在AI社交平台中生成唯一身份标识 (arXiv: 2605.27729)
   - 双向AI-量子集成：AI使量子可访问，量子使AI更安全
