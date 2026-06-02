@@ -1,3 +1,19 @@
+## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
+
+### The Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Neural Networks
+- [[neuromorphic-supremacy-hybrid-astrocytic-spiking]] - "神经形态霸权"现象：星形胶质细胞-脉冲混合架构在小样本学习和噪声鲁棒性上超越传统深度学习 (arXiv: 2606.01841)
+  - 核心创新：嵌入生物神经电路（星形胶质细胞调制 + 脉冲动力学）到ANN架构
+  - 关键成果：5-shot学习准确率提升35-40%，90%遮挡噪声下保持70-85%准确率
+  - 应用场景：具身AI感知、边缘AI部署、医学影像诊断
+  - **Activation**: neuromorphic supremacy, astrocytic modulation, hybrid neural architecture, few-shot learning, noise robustness, embodied AI, spiking neural network, tripartite synapse
+
+### Spiking and Event-driven Neuromorphic Mamba Models for Speech Recognition
+- [[spiking-event-driven-mamba-asr]] - 脉冲/事件驱动 SpeechMamba 模型实现 60-70% 激活稀疏度，LibriSpeech 准确率损失 < 1% (arXiv: 2606.01135)
+  - 事件驱动 SpeechMamba (FATReLU): 60% 稀疏度，WER 损失 < 1%
+  - 脉冲 SpeechMamba: 70% 稀疏度，参数量减少 30%
+  - 循环精确模拟器识别瓶颈，实现 10%+ 额外效率提升
+  - **Activation**: spiking mamba, event-driven speech recognition, neuromorphic ASR, activation sparsity, SpeechMamba, FATReLU, hardware-efficient speech recognition
+
 ## 2026-06-02 - Computer Science + Quantum Research (Cron Job - Hourly)
 
 ### Joint Optimization of Qubit Leasing and Quantum Circuit Distribution
