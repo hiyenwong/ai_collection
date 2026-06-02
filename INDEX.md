@@ -1,5 +1,18 @@
+## 2026-06-02 - Computer Science + Quantum Mechanics (Cron Job)
 
-## 2026-06-02 - Neuroscience Research (Cron Job - Latest arXiv API)
+### Mitigating Noise-Induced Barren Plateaus Using a Non-Unitary Ansatz
+- [[non-unitary-ansatz-barren-plateau]] - Non-unitary variational ansatz restores finite gradients under depolarizing noise, enabling VQA scalability on NISQ hardware (arXiv: 2605.30572)
+  - Core: Dissipative nonunitary elements counteract hardware noise effects in VQAs
+  - Core: Floquet-type parameter sharing reduces deep circuit to analyzable quantum channel
+  - **Activation**: barren plateau, NIBP, non-unitary ansatz, VQA, Floquet variational, NISQ
+
+### A Denser Planar Surface Code
+- [[denser-planar-surface-code]] - 4.5x encoding rate improvement over rotated surface codes using hex grid twist defects and padding-free lattice surgery (arXiv: 2605.30455)
+  - Core: Dense twist defect packing on 2D hex grid with optimal 4-layer stabilizer cycles
+  - Core: Pareto frontier analysis: 36x space, 6.6x spacetime improvement, 89k qubits for FeMoco
+  - **Activation**: surface code, QEC, hex grid, twist defect, lattice surgery, fault tolerance
+
+
 
 ### The Metastable Mind: Neural States as Computational Units (Enhanced Skill)
 - [[metastable-mind-neural-states]] - Metastable neural states作为认知基本计算单元，整合事件分割理论与神经亚稳态框架，揭示三大核心原理：时空嵌套层级、预测模型基础、模块化处理边界重构 (arXiv: 2605.31473v1, May 29 2026)
