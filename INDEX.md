@@ -1,3 +1,20 @@
+## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
+
+### Quantum Algorithm for Distributed Reduction of Entanglements (QADR)
+- [[qadr-distributed-entanglement-reduction]] - QADR框架将全局VQC分解为因果光锥内的局部子电路，将经典模拟内存从O(2^n)降至O(2^d)，自然缓解 barren plateaus，在32+量子比特处全球VQC崩溃时仍可运行 (arXiv: 2606.01291)
+  - 因果光锥分解：分析电路结构识别每个目标量子比特的影响范围
+  - 局部代价函数避免指数级梯度衰减
+  - 在MNIST和NASA IMS风轮机诊断任务中匹配或超越经典架构
+  - **Activation**: qadr, distributed entanglement reduction, causal light cone, VQC decomposition, barren plateau mitigation, quantum machine learning, variational quantum circuit, simulation efficiency
+
+### Quantum Tunneling-Aware Machine Learning (QTAML)
+- [[qtaml-quantum-tunneling-ml]] - 基于WKB近似的量子隧穿感知ML，推导部署时权重误差分布，TAC算法以少3.4-33.6倍ECC开销达到95%清洁准确率 (arXiv: 2606.00741)
+  - WKB推导三层结构：仿射均值漂移、逐比特方差层级、逐层依赖性
+  - 闭式饱和比ρ*可提前预测补偿效果
+  - 层自适应比特预算分配在小预算下优于幅度分配24个百分点
+  - 无需重训练、无需标签、无推理时开销
+  - **Activation**: quantum tunneling, WKB approximation, noise modeling, deployment robustness, hardware-aware ML, error correction, tunneling-aware compensation, TAC, QTAML
+
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
