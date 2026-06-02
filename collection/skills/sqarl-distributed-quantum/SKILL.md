@@ -1,72 +1,144 @@
 ---
 name: sqarl-distributed-quantum
-description: "Size-Agnostic Reinforcement Learning (SQARL) methodology for circuit allocation in distributed quantum computing networks. Use when: allocating quantum circuits across heterogeneous quantum processors, optimizing distributed quantum computing resource allocation, designing quantum network schedulers, mapping quantum circuits to multi-processor systems, RL-based quantum resource management. Activation: SQARL, distributed quantum computing, circuit allocation, quantum resource scheduling, quantum network optimization, RL quantum scheduling, size-agnostic quantum allocation."
+description: "SQARL (Size-Agnostic Reinforcement Learning) for distributed quantum circuit allocation. Transformer-based approach handling arbitrary qubit/core counts without retraining. Outperforms RL SOTA and matches Hungarian Qubit Allocation (HQA). From arXiv:2605.27027."
+category: quantum-computing
+tags:
+  - quantum-computing
+  - distributed-systems
+  - reinforcement-learning
+  - circuit-compilation
+  - qubit-allocation
+source: "arXiv:2605.27027"
 ---
 
-# SQARL: Distributed Quantum Circuit Allocation
+# SQARL: Size-Agnostic RL for Distributed Quantum Circuit Allocation
 
-## Description
-Reinforcement Learning methodology for efficient circuit allocation in distributed quantum computing networks. Enables size-agnostic mapping of quantum circuits across heterogeneous quantum processors.
+## Overview
 
-Source: arXiv:2605.27027v1 - "SQARL: A Size-Agnostic Reinforcement Learning approach for Circuit Allocation in Distributed Quantum Computing Networks"
+Methodology from arXiv:2605.27027 (May 2026) introducing SQARL - a transformer-based reinforcement learning approach for distributing quantum circuits across multiple QPU cores while minimizing inter-core communication costs.
 
-## Core Methodology
+**Problem**: Scaling quantum processors is limited by decoherence and crosstalk. Distributed quantum computing connects smaller cores, but requires minimizing slow, error-prone inter-core communication. Current RL approaches require retraining per hardware configuration.
 
-### 1. Size-Agnostic Representation
-- Encode quantum circuits in a hardware-independent format
-- Use graph-based representations that generalize across circuit sizes
-- Abstract qubit connectivity and gate operations into allocation-friendly features
+**Results**: 33% cost reduction vs HQA on Cuccaro Adder, 25% average reduction on random circuits.
 
-### 2. RL-Based Allocation Policy
-- State: Available quantum processors (qubit counts, connectivity, error rates, availability)
-- Action: Circuit-to-processor mapping and routing decisions
-- Reward: Execution fidelity, latency minimization, resource utilization efficiency
-- Policy: Neural network that generalizes across different circuit and hardware sizes
+## Architecture
 
-### 3. Heterogeneous Hardware Support
-- Model processor heterogeneity: different qubit counts, topologies, gate sets, noise profiles
-- Support dynamic hardware availability and time-varying resource constraints
-- Enable allocation across hybrid classical-quantum infrastructure
+### Transformer-Based Size-Agnostic Design
+- Handles arbitrary numbers of qubits and cores without retraining
+- Attention mechanism learns structural patterns independent of scale
+- Single trained policy works across different quantum hardware topologies
 
-### 4. Distributed Network Optimization
-- Optimize for inter-processor communication overhead
-- Minimize qubit teleportation and SWAP gate requirements
-- Balance load across the quantum computing network
-
-## Application Steps
-
-1. **Characterize hardware**: Build profiles for each quantum processor (qubits, topology, fidelity)
-2. **Encode circuit**: Convert quantum circuit to size-agnostic graph representation
-3. **Query RL policy**: Get allocation decision for circuit-to-processor mapping
-4. **Execute allocation**: Deploy circuit segments to assigned processors
-5. **Monitor and update**: Track execution metrics and update RL policy
-
-## Key Design Patterns
-
-### Pattern 1: Graph-Based Circuit Encoding
+### Qubit Allocation Problem Formulation
 ```
-Quantum Circuit → Dependency Graph → Feature Vector → RL Policy
+Input: 
+  - Quantum circuit (gates, qubit dependencies)
+  - Hardware topology (cores, connectivity, capacities)
+Output:
+  - Assignment of each qubit to a core
+Objective:
+  - Minimize inter-core communication (SWAP overhead)
 ```
 
-### Pattern 2: Multi-Objective Optimization
-```
-Maximize: Fidelity × Throughput × Utilization
-Minimize: Latency × Communication Overhead × SWAP Count
+## Key Results
+
+| Benchmark | vs HQA | vs Prior RL |
+|-----------|--------|-------------|
+| Cuccaro Adder | -33% cost | Outperformed |
+| Random circuits | -25% avg cost | Outperformed |
+| Flexibility | ✓ No retraining | ✗ Requires retraining |
+
+## Implementation Patterns
+
+### Pattern 1: Size-Agnostic Circuit Representation
+```python
+class CircuitGraph:
+    """Represent quantum circuits as graphs for transformer input."""
+    def __init__(self, circuit):
+        self.qubits = circuit.num_qubits
+        self.gates = circuit.gates  # [(gate_type, qubit_a, qubit_b), ...]
+        self.dependency_graph = self._build_dependency_graph()
+    
+    def to_transformer_input(self, max_qubits):
+        """Pad/truncate to fixed-size tensor for transformer."""
+        # Node features: qubit connectivity degree, gate frequency
+        # Edge features: gate type, frequency of 2-qubit gates
+        # Positional encoding: relative position in circuit depth
+        ...
 ```
 
-### Pattern 3: Dynamic Rescheduling
+### Pattern 2: Transformer Policy Network
+```python
+class SQARLPolicy(nn.Module):
+    def __init__(self, d_model=256, nhead=8):
+        self.encoder = CircuitEncoder(d_model)
+        self.transformer = nn.TransformerEncoder(
+            encoder_layer=nn.TransformerEncoderLayer(d_model, nhead),
+            num_layers=6
+        )
+        self.allocation_head = nn.Linear(d_model, num_cores)
+    
+    def forward(self, circuit, hardware):
+        # Encode circuit and hardware topology
+        circuit_emb = self.encoder(circuit)
+        hardware_emb = self.encoder(hardware)
+        
+        # Cross-attention between circuit and hardware
+        combined = self.cross_attention(circuit_emb, hardware_emb)
+        
+        # Output: allocation decision per qubit
+        return self.allocation_head(combined)
 ```
-Hardware State Change → Re-evaluate Allocation → Optimal Remapping
+
+### Pattern 3: Communication Cost Objective
+```python
+def compute_communication_cost(allocation, circuit_gates, hardware_topology):
+    """Calculate inter-core communication cost for an allocation."""
+    cost = 0
+    for gate in circuit_gates:
+        if gate.is_two_qubit():
+            core_a = allocation[gate.qubit_a]
+            core_b = allocation[gate.qubit_b]
+            if core_a != core_b:
+                # Inter-core gate requires communication
+                cost += hardware_topology.distance(core_a, core_b)
+    return cost
 ```
 
-## Integration with Other Systems
+### Pattern 4: RL Training Loop
+```python
+def train_sqarl(agent, environment, episodes=10000):
+    for episode in range(episodes):
+        circuit = environment.sample_circuit()
+        hardware = environment.sample_hardware()
+        
+        state = CircuitGraph(circuit)
+        allocation = agent(state, hardware)
+        
+        cost = compute_communication_cost(allocation, circuit.gates, hardware)
+        reward = -cost  # Minimize cost = maximize reward
+        
+        # Advantage estimation using HQA baseline
+        hqa_cost = hua_qubit_allocation(circuit, hardware)
+        advantage = hqa_cost - cost  # Positive = better than HQA
+        
+        agent.update(state, allocation, advantage)
+```
 
-- **QKD Networks**: Combine with MBSE-designed quantum network architectures (qkd-network-mbse)
-- **Entanglement Distillation**: Use high-fidelity entanglement links for inter-processor communication
-- **Quantum Error Correction**: Account for error correction overhead in allocation decisions
+## When to Use
 
-## Verification
-- Allocation decisions should respect hardware constraints (qubit count, connectivity)
-- Circuit fidelity should meet threshold requirements after allocation
-- Network utilization should be balanced across processors
-- RL policy should generalize to unseen circuit sizes and hardware configurations
+- Distributed quantum computing architectures
+- Multi-core quantum processor compilation
+- Qubit allocation for NISQ-era devices
+- Reducing SWAP overhead in compiled quantum circuits
+- Hardware-agnostic quantum compilation pipelines
+
+## Key References
+
+- arXiv: 2605.27027 - "SQARL: A Size-Agnostic Reinforcement Learning approach for Circuit Allocation in Distributed Quantum Architectures"
+- HQA (Hungarian Qubit Allocation): Current state-of-the-art heuristic
+
+## Activation Keywords
+
+- distributed quantum, qubit allocation, circuit compilation,
+- SQARL, multi-core quantum, SWAP optimization,
+- transformer quantum, RL quantum compiler, 分布式量子

@@ -28,6 +28,24 @@
 
 ## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
 
+### Tianyan: Cloud Services with Quantum Advantage
+- [[tianyan-quantum-cloud-services]] - Cloud-accessible superconducting quantum processor (105 qubits) demonstrating quantum advantage: 74-qubit RCS in 18.4min vs 16,000 years classical (arXiv: 2512.10504)
+  - Tianyan-287: 105 qubits, 99.90% single-qubit, 99.56% two-qubit, 98.7% readout fidelity
+  - Cqlib open-source SDK for extended quantum circuits, operators, and primitives
+  - **Activation**: quantum cloud, quantum advantage, tianyan, RCS benchmark, Cqlib, superconducting quantum processor, random circuit sampling
+
+### EFaaS: Quantum-Classical Serverless Entangled Scheduler
+- [[efaas-quantum-serverless]] - Serverless middleware for hybrid variational algorithms reducing TTNS by 11.4%-94.3% and convergence time by 83.2%-98.3% (arXiv: 2605.27540)
+  - Calibration-aware placement routes circuits to QPUs with warm calibration caches
+  - Dual-resource fair queuing and EF-QuantumFuture speculative execution primitive
+  - **Activation**: quantum serverless, EFaaS, VQA scheduling, TTNS optimization, hybrid quantum workflow, calibration-aware routing
+
+### SQARL: Size-Agnostic RL for Distributed Quantum Circuit Allocation
+- [[sqarl-distributed-quantum]] - Transformer-based RL for qubit allocation across distributed quantum cores, 33% cost reduction vs HQA without retraining (arXiv: 2605.27027)
+  - Handles arbitrary qubit/core counts with single trained policy
+  - Minimizes inter-core communication (SWAP overhead) in multi-core quantum architectures
+  - **Activation**: distributed quantum, qubit allocation, circuit compilation, SQARL, multi-core quantum, SWAP optimization
+
 ### Support Vector Machine with a Scalable Quantum Kernel
 - [[hamming-quantum-kernel-svm]] - Hamming quantum kernel avoids exponential concentration in quantum SVMs, scales to 27 qubits (arXiv: 2605.31449)
   - Uses full measurement statistics instead of single fidelity value
