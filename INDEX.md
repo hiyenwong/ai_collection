@@ -32,6 +32,12 @@
   - Near-deterministic success on physical Hamiltonians (Ising, Toric code)
   - **Activation**: attention symmetry finding, quantum symmetry optimizer, Set-Transformer Hamiltonian
 
+### Software Framework for Pulse-Level Quantum Computing
+- [[quantum-control-pulse-software]] - Bridges gate-based abstractions with hardware-aware pulse-level optimization via JAX-based QML framework (arXiv: 2605.21286)
+  - Composable ansatz constructions combining gate-based and pulse-level representations
+  - Fourier-analytic diagnostics for circuit expressivity and entanglement measures
+  - **Activation**: quantum pulse level control, quantum optimal control software, QML pulse modelling, hardware-aware quantum optimisation
+
 ### Progressive Swapping to the Middle Protocol
 - [[psm-quantum-memory-distribution]] - Entanglement distribution optimized for imperfect quantum memories, presented at EuCNC 2026 (arXiv: 2605.31493)
   - Swaps progressively from both ends toward center, minimizing idle memory time
