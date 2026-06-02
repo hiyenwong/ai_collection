@@ -1,5 +1,12 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+### Feature Leakage and Identifiability of Direct-Dependency Entropy Models
+- [[feature-leakage-identifiability-entropy-models]] - MaxEnt模型的特征泄漏诊断框架：熵解释分数≠机制验证，状态重加权揭示CA1海马体~50%的"直接依赖"响应实为泄漏的高阶交互 (arXiv: 2606.01661)
+  - 核心创新：信息投影视角—遗漏的交互/时序/隐藏状态可吸收到一阶参数（特征泄漏）
+  - 关键诊断：状态重加权（分布敏感性测试）、条件log-odds对比（局部加性验证）、时序泄漏控制
+  - CA1发现：经验权重下看似一阶的表格，平衡重加权后变为分布敏感（远高于加性代理null）
+  - **Activation**: feature leakage, identifiability, entropy models, maxent, direct-dependency, mechanism recovery, state reweighting, conditional log-odds, temporal leakage, neural identifiability
+
 ### Sequential Chaotic Oscillations in E-I Threshold-Linear Networks
 - [[sequential-chaotic-oscillations-ei-networks]] - 激励-抑制阈值线性网络中的序列混沌振荡(SCOs)：不稳定单点固定点+强抑制→可预测序列转换的混沌游走，为脑动力学序列亚稳态提供机制 (arXiv: 2606.00373)
   - 核心创新：提出SCOs作为序列亚稳态的动力学机制，转换顺序可从网络拓扑预测
