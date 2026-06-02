@@ -1,5 +1,12 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+### Sequential Chaotic Oscillations in E-I Threshold-Linear Networks
+- [[sequential-chaotic-oscillations-ei-networks]] - 激励-抑制阈值线性网络中的序列混沌振荡(SCOs)：不稳定单点固定点+强抑制→可预测序列转换的混沌游走，为脑动力学序列亚稳态提供机制 (arXiv: 2606.00373)
+  - 核心创新：提出SCOs作为序列亚稳态的动力学机制，转换顺序可从网络拓扑预测
+  - 关键发现：z-mode（激励差异）+ mean-mode（全局活动）分解表征完整动力学
+  - 理论意义：整合-分离平衡的正式框架，E-I振荡不必同步
+  - **Activation**: sequential metastability, chaotic itinerancy, E-I oscillation, SCO, threshold-linear network, graph rules, integration-segregation balance
+
 ### Spiking and Event-driven Neuromorphic Mamba Models for Efficient Speech Recognition
 - [[spiking-event-driven-neuromorphic-mamba-asr]] - 神经形态Mamba模型实现高效语音识别：FATReLU驱动60%稀疏性(精度↓<1%)，SNN版本70%稀疏性(参数↓30%)，周期精确仿真器识别瓶颈优化效率↑10% (arXiv: 2606.01135, IJCNN 2026)
   - 核心创新：Event-driven SpeechMamba (FATReLU激活)，Spiking SpeechMamba (70%稀疏性)，Cycle-accurate simulator (算法-硬件协同探索)
