@@ -1,5 +1,12 @@
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
+### Mapping Whisper Representations to Human ECoG Responses
+- [[whisper-ecog-alignment]] - Speech foundation model Whisper intermediate layers align strongest with human cortical activity using interpretable time-resolved neural encoding (arXiv: 2606.02305)
+  - Intermediate Whisper layers provide strongest brain-model correspondence (hierarchical alignment)
+  - Time-resolved encoder with soft attention outperforms linear mappings for ECoG
+  - Phoneme interpretability shows anatomically coherent organization among encoding-informative electrodes
+  - **Activation**: whisper-ecog-alignment, speech encoding, brain alignment, temporal encoder, speech foundation model, phoneme organization, cortical speech, soft attention
+
 ### How Optimality Structures Sparse Dictionaries
 - [[sae-optimality-structures-dictionaries]] - Mathematical theory explains why Sparse Autoencoders extract interpretable features — layer-wise splitting/absorption, residual structure, dense opposing features emerge from optimal solutions (arXiv: 2606.02385)
   - Demonstrates hierarchical feature organization follows from sparsity constraint optimality
