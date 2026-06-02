@@ -1,3 +1,19 @@
+## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
+
+### Penalty-free QAOA for lattice protein folding
+- [[penalty-free-qaoa-protein-folding]] - 无惩罚QAOA方法解决格点蛋白质折叠问题：通过冲突图独立集表述避免二次惩罚项，MIS保持混合器保证约束满足 (arXiv: 2606.02104)
+  - 核心创新：将约束优化映射到冲突图最大独立集(MIS)问题，无需二次惩罚项
+  - 目标函数 = 纯蛋白质能量 + 线性偏置（无惩罚项）
+  - 迭代局部搜索方案：用≤26量子比特折叠长达60的蛋白质
+  - **Activation**: penalty-free QAOA, protein folding, lattice protein, conflict graph, independent set mixer, MIS mixer, quantum bio-physics, molecular optimization
+
+### Attention-Like Hebbian Learning from Quantum Probability Flow
+- [[quantum-probability-hebbian-learning]] - 从量子概率流推导类注意力Hebbian学习规则：横场定义泄漏通道，稳定性驱动更新产生softmax加权Hebbian规则 (arXiv: 2606.02098)
+  - 核心创新：量子稳定性分析自然产生softmax加权Hebbian学习规则
+  - 虚时动力学 → log-sum-exp泄漏自由能的梯度 = softmax加权
+  - D-Wave退火器实验验证：softmax拟合优于Lorentzian幂律
+  - **Activation**: quantum probability flow, Hebbian learning, quantum annealer, associative memory, softmax attention, transverse field, stability-driven learning
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
 
 ### The Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Neural Networks
