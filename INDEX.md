@@ -91,6 +91,27 @@
   - **Activation**: post-quantum iot healthcare, 量子安全物联网医疗, pqc migration healthcare, iomt quantum security
 
 
+## 2026-06-03 - Medicine (Cron Job)
+
+### Quantum drug discovery: a hybrid quantum graph neural network–variational quantum eigensolver approach
+- [[quantum-graph-neural-drug-discovery]] - Hybrid QGNN+VQE pipeline for molecular property prediction and lead optimization (Crossref: 10.1140/epjd/s10053-025-01024-8)
+  - QGNN encodes molecular graphs with quantum coherence for non-local correlation capture
+  - VQE refines energy estimation with hardware-efficient or chemistry-inspired ansatzes
+  - Iterative lead optimization loop explores chemical space beyond classical enumeration
+  - **Activation**: quantum drug discovery, QGNN, VQE drug, molecular property prediction, lead compound optimization, hybrid quantum drug
+
+### Quantum intelligence in drug discovery: Advancing insights with quantum machine learning
+- [[quantum-drug-discovery]] (enhanced) - Review of quantum ML approaches accelerating pharmaceutical research (Crossref: 10.1016/j.drudis.2025.104463)
+  - Survey of quantum advantage pathways in drug discovery pipelines
+  - Quantum ML for target identification, molecular docking, ADMET prediction
+  - **Activation**: quantum drug intelligence, pharmaceutical quantum ML, drug discovery review
+
+### Toward Quantum-Enabled Medical Imaging: Optimized CNNs for Diagnosis
+- [[hybrid-quantum-medical-imaging]] (enhanced) - Quantum-optimized CNNs for medical image diagnosis (Crossref: 10.1109/esci68015.2026.11493187)
+  - Quantum circuit integration with CNN layers for medical image feature extraction
+  - Hybrid quantum-classical approach for diagnostic accuracy improvement
+  - **Activation**: quantum medical imaging, quantum CNN, medical diagnosis CNN
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
 
 ### The Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Neural Networks
