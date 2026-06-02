@@ -1,3 +1,12 @@
+## 2026-06-03 - Medical + Quantum Research (Cron Job)
+
+### EVA-Net: Subject-Independent EEG Motor Decoding with Video-Derived Motor Priors
+- [[eva-net-eeg-motor-decoding]] - 视频驱动语义先验的跨被试EEG运动解码：两阶段跨模态对比学习框架，动作视频作为动态语义锚点超越文本基线，知识蒸馏实现零推理开销的EEG-only部署，LOSO精度提升8.66% (arXiv: 2606.01884)
+  - 核心创新：两阶段框架—跨模态对比对齐(EEG↔视频) + 知识蒸馏迁移到EEG-only分类器
+  - 关键发现：视频提供比文本更丰富的动态语义锚点，捕获运动时序动力学
+  - 应用价值：跨被试BCI减少校准需求，临床BCI部署，运动想象分类，康复应用
+  - **Activation**: EVA-Net, EEG motor decoding, subject-independent BCI, cross-subject EEG, video semantic priors, motor imagery, cross-modal contrastive learning, knowledge distillation for BCI, LOSO, dynamic semantic anchors
+
 ## 2026-06-03 - Neuroscience Research (Cron Job - Hourly Update)
 
 ### Mapping Whisper Representations to Human ECoG Responses with Interpretable Time-Resolved Neural Encoding
