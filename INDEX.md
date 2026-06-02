@@ -1,3 +1,12 @@
+## 2026-06-03 - Computer Science + Quantum Computing (Cron Job - Hourly)
+
+### Quantum Principal Component Analysis without Eigenvector Recovery
+- [[measurement-based-quantum-pca]] - Measurement-based soft PCA framework using entropy-regularized Fermi-Dirac filters replacing hard eigenvector extraction, achieves dimension-independent O(1/η²) sample complexity (arXiv: 2605.27942)
+  - Single fixed calibrated circuit serves all rank budgets — no rank-dependent circuit updates
+  - Fermi-Dirac filter as quantum measurement (POVM) naturally handles quantum data without classical conversion
+  - Coherent data centering inside quantum protocol avoids classical preprocessing bottleneck
+  - **Activation**: quantum PCA, soft PCA, Fermi-Dirac filter, measurement-based PCA, quantum data analysis, eigenvector-free PCA, anomaly detection, spectral energy profiling
+
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
 ### Mapping Whisper Representations to Human ECoG Responses
