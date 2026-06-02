@@ -1,3 +1,19 @@
+## 2026-06-02 - Neuroscience Research (Cron Job - Evening)
+
+### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
+- [[snn-sequence-timing-replay]] - 生物可行的脉冲神经网络序列时间编码机制，通过振荡背景输入灵活控制重放速度 (arXiv: 2605.22523v1)
+  - 元素特定神经元群体的顺序激活表示序列元素持续时间
+  - 振荡背景输入作为时钟信号和速度控制机制
+  - 流失时间编码为独特稀疏的时空神经活动模式
+  - **Activation**: sequence timing, replay speed, spiking neural network, sTM, temporal memory, oscillatory control
+
+### Sparse Autoencoders Map Brain-LLM Alignment onto Cortical Semantic Topography
+- [[sae-brain-llm-topography]] - 稀疏自编码器(SAE)揭示LLM脑对齐机制：语义特征恢复94%编码性能，映射皮质语义组织拓扑 (arXiv: 2605.23035v1)
+  - 语义特征主导脑对齐性能，超越方差匹配基线
+  - SAE特征映射皮质语义组织拓扑结构（Spearman ρ=0.72）
+  - 预测人类阅读时间，发现意外语义内容的神经编码
+  - **Activation**: sparse autoencoder, brain-LLM alignment, cortical semantic topography, mechanistic interpretability
+
 ## 2026-06-03 - Computer Science + Quantum Computing (Cron Job - Hourly)
 
 ### Quantum Principal Component Analysis without Eigenvector Recovery
