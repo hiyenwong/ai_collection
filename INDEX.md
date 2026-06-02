@@ -1,3 +1,13 @@
+## 2026-06-03 - Neuroscience Research (Cron Job - Latest Papers)
+
+### What biology can, and cannot, tell us about conscious AI
+- [[biology-consciousness-ai-testability]] - 生物自然主义可测试性框架：区分Type-A-BN（不可测试）vs Type-B-BN（可测试），揭示计算功能主义批判的有效边界，生物学作为意识-信息处理关系的指南而非解决方案 (arXiv: 2606.02121)
+  - 核心创新：双类型BN分类框架—Type-A（生物学本质性重要，行为分离，不可测试） vs Type-B（生物学提供独特处理能力，可测试）
+  - 关键发现：Type-A-BN与展开论证相似，分离意识与行为；Type-B-BN与计算功能主义不矛盾，共同面临意识-处理映射任务
+  - 哲学意义：澄清AI意识辩论中的有效vs循环论证，聚焦Type-B可测试生物学主张
+  - 应用价值：AI意识评估框架，政策制定实证基础，研究方向聚焦
+  - **Activation**: biological naturalism, AI consciousness, testability, computational functionalism, machine consciousness philosophy, consciousness information processing, Type-A-BN, Type-B-BN
+
 ## 2026-06-03 - Medical + Quantum Research (Cron Job)
 
 ### EVA-Net: Subject-Independent EEG Motor Decoding with Video-Derived Motor Priors
