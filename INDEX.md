@@ -1,5 +1,11 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+### Spiking and Event-driven Neuromorphic Mamba Models for Efficient Speech Recognition
+- [[spiking-event-driven-neuromorphic-mamba-asr]] - 神经形态Mamba模型实现高效语音识别：FATReLU驱动60%稀疏性(精度↓<1%)，SNN版本70%稀疏性(参数↓30%)，周期精确仿真器识别瓶颈优化效率↑10% (arXiv: 2606.01135, IJCNN 2026)
+  - 核心创新：Event-driven SpeechMamba (FATReLU激活)，Spiking SpeechMamba (70%稀疏性)，Cycle-accurate simulator (算法-硬件协同探索)
+  - 性能突破：60-70%激活稀疏性，30%参数减少，LibriSpeech精度保持，边缘设备实时ASR
+  - **Activation**: spiking mamba, event-driven ASR, neuromorphic speech recognition, FATReLU, activation sparsity, SpeechMamba, algorithm-hardware co-exploration, SSM spiking
+
 ## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
 
 ### A Retinomorphic Optical Spiking Neuron for Camouflaged Object Detection
