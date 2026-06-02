@@ -1,3 +1,19 @@
+## 2026-06-03 - Neuroscience Research (Cron Job - Hourly Update)
+
+### On the Synaptic Matrix Eigenvalues of Sparsely Connected Neural Networks
+- [[synaptic-matrix-eigenvalue-analysis]] - 突触矩阵特征值分析方法论：研究稀疏连接对谱行为的影响，揭示稳定性、瞬态动力学与记忆容量的数学关系，为药理效应建模提供统计谱分析框架 (arXiv: 2606.00326)
+  - 核心创新：不同稀疏类型（随机/规则/拓扑）产生不同谱特征，时变稀疏性由稳态/癫痫/可塑性驱动
+  - 关键发现：谱半径<1 → 网络稳定，特征值分布宽度 → 记忆容量，稀疏性决定瞬态机制
+  - 应用价值：确定所需稀疏类型以诱导特定脑功能，预测药理/生理调节器效应
+  - **Activation**: 突触矩阵, eigenvalue, 特征值, 稀疏连接, network stability, 谱分析, synaptic sparsity, memory capacity, pharmacological effect, 瞬态动力学
+
+### Functional Ensembles as Units of Computation in Deep Spiking Networks
+- [[functional-ensembles-deep-spiking-networks]] - 功能性集群作为深度脉冲网络计算单元：一阶功能连接(1FC)组通过稀有高协同事件可靠编码类别信息，ReLU式响应预测下游活动 (arXiv: 2606.00073)
+  - 核心创新：1FC功能性组合框架，验证生物皮层功能连接原则在SNN ResNet中保守
+  - 关键发现：高协同事件(~5-15%)集中编码信息，增益随集群大小增加，权重置换破坏结构
+  - 对抗鲁棒性：扰动破坏早期/中间层响应，支持高分辨率节点级诊断
+  - **Activation**: functional ensemble, 1FC group, deep SNN, functional connectivity, rare events encoding, ensemble cofiring, ReLU-like response, adversarial robustness, spiking ResNet
+
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
 ### Feature Leakage and Identifiability of Direct-Dependency Entropy Models

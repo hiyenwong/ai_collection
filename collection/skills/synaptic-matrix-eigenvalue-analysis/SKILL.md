@@ -7,8 +7,8 @@ description: "突触矩阵特征值分析方法论。研究稀疏连接神经网
 license: Complete terms in LICENSE.txt
 metadata:
   arxiv_id: "2606.00326"
-  published: "2026-06-01"
-  authors: "Author names from arXiv"
+  published: "2026-06-02"
+  authors: ["Mohd. Gayas Ansari", "Pragya Shukla"]
   tags: [neural-network, spectral-analysis, sparsity, stability, memory-capacity, computational-neuroscience]
 ---
 
