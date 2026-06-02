@@ -1,6 +1,20 @@
 
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
+### On the synaptic matrix eigenvalues of sparsely connected neural networks
+- [[synaptic-matrix-eigenvalue-analysis]] - 突触矩阵谱分析方法论，研究不同稀疏类型对网络稳定性、瞬态动力学和记忆容量的影响，统计分析替代精确矩阵确定 (arXiv: 2606.00326)
+  - 稀疏连接网络的突触矩阵特征值分布决定动力学特性
+  - 稳定性：λ_max < 1 → 网络稳定；记忆容量：谱宽度 → 存储能力
+  - 不同稀疏机制（随机/结构/时变/稳态）产生不同谱特征
+  - **Activation**: 突触矩阵, 特征值, 稀疏连接, spectral analysis, 网络稳定性, 记忆容量, synaptic sparsity
+
+### SHARP: Sleep-based Hierarchical Accelerated Replay for Long Range Non-Stationary Temporal Pattern Recognition
+- [[sleep-replay-acceleration-sharp]] - 神经科学启发的分层加速回放框架，分离记忆模块和模式识别模块，实现无BPTT的长程信用分配，受啮齿动物慢波睡眠加速回放启发 (arXiv: 2606.00732)
+  - 双模块架构：记忆模块累积结构化历史 + 模式识别模块从记忆学习
+  - 睡眠阶段加速回放（~20x压缩）整合到高层记忆表示
+  - 流式设置下长程非平稳时序模式识别，无需回访过去观测
+  - **Activation**: 睡眠回放, 加速回放, SHARP, 时序学习, 长程依赖, 流式学习, 慢波睡眠, hierarchical replay
+
 ### Updating the Standard Neuron Model in Artificial Neural Networks
 - [[updated-neuron-model-ann]] - Challenges 50-year-old point neuron assumption; demonstrates cortical cell model advantages without parameter increase: enhanced expressivity, robustness, learning speed, reduced memorization, less training data needed (arXiv:2605.30370)
   - Point neuron model from 1950s neuroscience proven too simplistic for fundamental neural processes
