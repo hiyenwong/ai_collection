@@ -12,6 +12,20 @@
   - Astrocytic gain control + sparse spiking encoding prevent performance collapse under >50% occlusion/impulse noise
   - **Activation**: neuromorphic supremacy, astrocyte, spiking neural network, few-shot learning, noise robustness, embodied AI, hybrid architecture
 
+## 2026-06-02 - Computer Science + Quantum Computing (Cron Job - Hourly)
+
+### Evolutionary Discovery of Bivariate Bicycle Codes with LLM-Guided Search
+- [[llm-guided-quantum-code-discovery]] - LLM-guided evolutionary workflow discovers 465 distinct quantum LDPC codes including new indecomposable [[288,16,12]] code (arXiv: 2606.02418)
+  - LLM mutates Python programs generating BB and perturbed BB code ansätze across ~1650 evolutionary iterations
+  - Staged validation pipeline: GF(2) rank, distance estimation, MILP, BLISS Tanner-graph dedup, local-Clifford equivalence
+  - **Activation**: quantum code discovery, LLM-guided search, bivariate bicycle codes, quantum LDPC, evolutionary code search
+
+### Branch-Aware Quantum Constant Propagation for Dynamic Quantum Circuits
+- [[branch-aware-quantum-constant-propagation]] - Compile-time optimization for dynamic quantum circuits with mid-circuit measurements and classical feedforward, accepted at IEEE QSW 2026 (arXiv: 2606.02018)
+  - Extends QCP by tracking classical measurement outcomes with post-measurement quantum states across execution branches
+  - Path-sensitive reasoning inside conditional blocks with bounded state representation for scalability
+  - **Activation**: quantum compiler optimization, dynamic quantum circuits, mid-circuit measurement, classical feedforward, branch-aware analysis
+
 ## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
 
 ### Support Vector Machine with a Scalable Quantum Kernel
