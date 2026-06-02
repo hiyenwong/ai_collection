@@ -1,5 +1,11 @@
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
+### How Optimality Structures Sparse Dictionaries
+- [[sae-optimality-structures-dictionaries]] - Mathematical theory explains why Sparse Autoencoders extract interpretable features — layer-wise splitting/absorption, residual structure, dense opposing features emerge from optimal solutions (arXiv: 2606.02385)
+  - Demonstrates hierarchical feature organization follows from sparsity constraint optimality
+  - Absorbed features become densified opposing representations
+  - **Activation**: SAE optimality, sparse dictionary learning, interpretable features, layer-wise splitting, feature absorption
+
 ### The Neuromorphic Supremacy
 - [[neuromorphic-supremacy-hybrid-astrocytic-spiking]] - Hybrid neural architectures combining astrocytic modulation and spiking dynamics achieve few-shot learning and noise robustness that surpass standard deep learning (arXiv: 2606.01841)
   - Introduces "neuromorphic supremacy" regime where bio-inspired circuits outperform ANNs in data-scarce noisy environments
