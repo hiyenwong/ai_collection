@@ -44,6 +44,13 @@
 
 ## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
 
+### CD-QAOA for Peptide Structure Prediction
+- [[cd-qaoa-peptide-structure-prediction]] - 反绝热量子近似优化算法(CD-QAOA)用于肽链结构预测：引入反绝热驱动项加速QAOA收敛，七肽APRLRFY四面体格点预测经HF/DFT/MD/H-REMD四重验证 (arXiv: 2606.01611)
+  - 核心创新：CD-QAOA在QAOA绝热框架中加入反绝热驱动项，抑制非绝热跃迁，加速基态收敛
+  - Miyazawa-Jernigan经验矩阵建模残基间相互作用（从简化P-Y对到全矩阵）
+  - 量子-经典验证管线：HF + DFT + MD + H-REMD 四方法交叉验证
+  - **Activation**: CD-QAOA, peptide structure prediction, counter-diabatic QAOA, neuropeptide lattice folding, quantum molecular structure, Miyazawa-Jernigan matrix
+
 ### Penalty-free QAOA for lattice protein folding
 - [[penalty-free-qaoa-protein-folding]] - 无惩罚QAOA方法解决格点蛋白质折叠问题：通过冲突图独立集表述避免二次惩罚项，MIS保持混合器保证约束满足 (arXiv: 2606.02104)
   - 核心创新：将约束优化映射到冲突图最大独立集(MIS)问题，无需二次惩罚项
