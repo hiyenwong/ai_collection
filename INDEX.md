@@ -1,5 +1,13 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job - Hourly Update)
 
+### Mapping Whisper Representations to Human ECoG Responses with Interpretable Time-Resolved Neural Encoding
+- [[whisper-ecog-alignment]] - Whisper语音基础模型表征映射到人脑ECoG响应：时间分辨神经编码框架揭示中间层最强对应性，注意力图谱显示时序局部对齐，音素分析发现解剖学一致的音素类别组织 (arXiv: 2606.02305)
+  - 核心创新：时间分辨编码器（speech embeddings + LSTM + soft attention）实现层级脑对齐分析
+  - 关键发现：Whisper中间层（12-24层）→ 最强ECoG相关性，层级组织与皮层处理层次匹配
+  - 音素解释性：编码相关电极按音素类别聚类，解剖学一致性组织（vowel/consonant/fricative）
+  - 应用价值：语音BCI解码电极选择，神经编码研究时序vs静态假设验证，语音治疗皮层响应预测
+  - **Activation**: whisper ecog, speech foundation model, neural encoding, cortical speech processing, brain alignment, time-resolved encoding, phoneme interpretability, whisper brain alignment
+
 ### On the Synaptic Matrix Eigenvalues of Sparsely Connected Neural Networks
 - [[synaptic-matrix-eigenvalue-analysis]] - 突触矩阵特征值分析方法论：研究稀疏连接对谱行为的影响，揭示稳定性、瞬态动力学与记忆容量的数学关系，为药理效应建模提供统计谱分析框架 (arXiv: 2606.00326)
   - 核心创新：不同稀疏类型（随机/规则/拓扑）产生不同谱特征，时变稀疏性由稳态/癫痫/可塑性驱动
