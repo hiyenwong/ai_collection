@@ -7,6 +7,13 @@
   - CA1发现：经验权重下看似一阶的表格，平衡重加权后变为分布敏感（远高于加性代理null）
   - **Activation**: feature leakage, identifiability, entropy models, maxent, direct-dependency, mechanism recovery, state reweighting, conditional log-odds, temporal leakage, neural identifiability
 
+### Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Architectures
+- [[neuromorphic-supremacy-hybrid-astrocytic-spiking]] - 神经形态优越性：星形胶质细胞调制+脉冲动力学嵌入传统ANN实现few-shot学习和噪声鲁棒性（遮挡/脉冲噪声），为数据稀缺环境下的embodied AI提供感知基础 (arXiv: 2606.01841)
+  - 核心创新：Neuromorphic supremacy regime—真正的神经形态电路（astrocyte modulation + spiking dynamics）嵌入ANN，超越纯深度学习
+  - 关键能力：few examples per class学习，occlusion + impulse noise鲁棒性（传统模型崩溃场景），embodied AI感知基础
+  - 理论贡献：slow-timescale astrocytic gain control + fast spiking dynamics = principled hybrid architecture
+  - **Activation**: neuromorphic supremacy, astrocyte, spiking neural network, few-shot learning, noise robustness, embodied AI, hybrid architecture, neuromorphic adaptation, astrocytic modulation
+
 ### Sequential Chaotic Oscillations in E-I Threshold-Linear Networks
 - [[sequential-chaotic-oscillations-ei-networks]] - 激励-抑制阈值线性网络中的序列混沌振荡(SCOs)：不稳定单点固定点+强抑制→可预测序列转换的混沌游走，为脑动力学序列亚稳态提供机制 (arXiv: 2606.00373)
   - 核心创新：提出SCOs作为序列亚稳态的动力学机制，转换顺序可从网络拓扑预测
