@@ -1,3 +1,13 @@
+## 2026-06-02 - Computer Science Research (Cron Job)
+
+### Quantum Reservoir Computing and Risk Bounds
+- [[quantum-reservoir-computing-risk-bounds]] - Rademacher complexity-based generalization error bounds for quantum reservoir computing, with explicit qubit-scaling analysis and polynomial readout function risk convergence (arXiv: 2501.08640)
+  - Rademacher complexity bounds for multiple quantum reservoir classes
+  - Generalization bounds scale exponentially with number of qubits n — key limitation for large-scale QRC
+  - Polynomial readout functions: risk bounds converge in number of training samples
+  - Explicit parameter dependence enables partial generalization error control
+  - **Activation**: quantum reservoir computing, Rademacher complexity, generalization bounds, risk bounds, qubit scaling, QRC theory, polynomial readout
+
 ## 2026-06-02 - Quantum Computing Research (Cron Job)
 
 ### More Efficient Clifford+T Synthesis for Small-Angle Rotations and Application to Trotterization
