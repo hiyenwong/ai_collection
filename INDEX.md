@@ -1,3 +1,17 @@
+## 2026-06-02 - Systems Engineering Research (Cron Job)
+
+### Kairos: Lightweight Testing Framework for Timing-Induced Interaction Failures in LTE/5G Core Networks
+- [[kairos-cps-timing-testing]] - CPS/分布式系统时序诱导交互故障轻量级测试框架，无需解析标准文档即可发现20个新漏洞、复现34个已知问题 (arXiv: 2605.30985)
+  - 控制平面交互模式分类体系与故障模式映射
+  - 轻量级时序测试生成与自动化故障检测
+  - **Activation**: timing-induced failures, CPS testing, 5G core networks, LTE testing, control-plane interactions, network function crash
+
+### A Data-Driven Methodology for Scalable Distributed MPC in Heterogeneous Building Aggregation
+- [[data-driven-distributed-mpc-buildings]] - MPC-aware特征选择+分布式凸优化框架，解决大规模异构建筑需求响应协调的计算可扩展性和多步预测误差累积问题 (arXiv: 2605.30763)
+  - MPC-aware特征选择方法论（考虑多步预测误差累积）
+  - 异构建筑聚类的分布式凸优化控制框架
+  - **Activation**: distributed MPC, building aggregation, demand response, feature selection, convex optimization, data-driven control
+
 ## 2026-06-02 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Mitigating Noise-Induced Barren Plateaus Using a Non-Unitary Ansatz
