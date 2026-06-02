@@ -1,3 +1,12 @@
+## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
+
+### Frustrated Neurons: Energy Landscapes and Relaxation Dynamics in Repulsive Phase Oscillators
+- [[frustrated-neurons-phase-oscillators]] - 几何阻挫理论框架用于神经相位动力学：排斥耦合振荡器映射到反铁磁XY模型，揭示结构化局部定时顺序塑造阻挫动力学景观 (arXiv: 2606.02512v1)
+  - 三角形最小阻挫单元产生120°相位分离的简并基态
+  - Kagome晶格弛豫选择扭矩平衡亚稳态而非精确基态
+  - 弱全局相干性反映结构化局部定时顺序而非无序
+  - **Activation**: geometric frustration, phase oscillators, neural timing, antiferromagnetic XY model, energy landscape, metastability, kagome lattice, torque balance, degenerate ground states
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - Evening)
 
 ### Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
