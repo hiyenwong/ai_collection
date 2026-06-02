@@ -44,6 +44,16 @@
   - D-Wave退火器实验验证：softmax拟合优于Lorentzian幂律
   - **Activation**: quantum probability flow, Hebbian learning, quantum annealer, associative memory, softmax attention, transverse field, stability-driven learning
 
+## 2026-06-03 - Medicine (Cron Job)
+
+### A Framework for Post Quantum Migration in IoT-Based Healthcare Systems
+- [[post-quantum-iot-healthcare]] - 物联网医疗系统后量子密码学迁移框架，覆盖四层IoT架构的量子威胁分析与迁移策略 (arXiv: 2604.15584)
+  - 四层IoT架构（物理、感知、网络、应用）的量子威胁建模
+  - 后量子密码学（Kyber/Dilithium/FALCON）在医疗设备中的分层部署策略
+  - 混合密钥交换与植入式设备PQC认证架构模式
+  - **Activation**: post-quantum iot healthcare, 量子安全物联网医疗, pqc migration healthcare, iomt quantum security
+
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
 
 ### The Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Neural Networks
