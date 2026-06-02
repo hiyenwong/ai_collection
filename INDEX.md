@@ -1,5 +1,13 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
+
+### A Retinomorphic Optical Spiking Neuron for Camouflaged Object Detection
+- [[retinomorphic-optical-spiking-neuron]] - 霍奇金-赫胥黎光学脉冲神经元(OSHN)：基于二维反双极性光电晶体管的视网膜类视觉处理，0.9-24.5 pJ/spike能耗，中心-周围感受野增强SNN伪装目标检测精度达28.4% (arXiv: 2606.00818)
+  - 核心创新：Hodgkin-Huxley光学脉冲神经元实现，0.9 pJ暗态能耗，4.2μs-1.25ms响应速度（比人眼快25x）
+  - 视网膜预处理功能：中心-周围感受野(CSRF)、L-M锥体对立性、视觉自适应
+  - CSRF增强SNN：FMNIST +4.4%，COD10K +10.4%，伪装数据集 +28.4%
+  - **Activation**: retinomorphic optical spiking neuron, OSHN methodology, Hodgkin-Huxley optical neuron, anti-ambipolar phototransistor, center-surround receptive field, camouflaged object detection, event-driven vision, 视网膜类光脉冲神经元
 ### Rare Events, Real Signals: Functional Ensembles as Units of Computation in Deep Spiking Networks
 - [[functional-ensembles-snn-computation]] - 1FC功能性组合作为深度脉冲网络计算单元：稀有高协调事件编码信息，聚合共发放预测下游响应，ReLU式输入输出关系 (arXiv: 2606.00073)
   - 核心创新：首阶功能连接(1FC)组分析框架，揭示深度SNN中功能性组合的计算原理
