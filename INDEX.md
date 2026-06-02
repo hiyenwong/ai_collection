@@ -43,6 +43,13 @@
 
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
+### The Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Architecture
+- [[neuromorphic-supremacy-hybrid-astrocytic-spiking]] - 神经形态优势：嵌入星形胶质细胞调制+脉冲动力学的混合ANN架构，在少样本和噪声场景下超越经典深度学习 (arXiv: 2606.01841)
+  - 少样本学习场景中经典DL崩溃，神经形态混合模型保持高精度
+  - 遮挡和脉冲噪声下维持性能，生物启发的电路提供鲁棒性
+  - "神经形态优势"范式：生物架构在噪声/数据稀缺环境中决对优于DL
+  - **Activation**: neuromorphic supremacy, astrocyte modulation, spiking ANN hybrid, few-shot learning, noise robustness, embodied AI perception
+
 ### Mapping Whisper Representations to Human ECoG Responses
 - [[whisper-ecog-alignment]] - Speech foundation model Whisper intermediate layers align strongest with human cortical activity using interpretable time-resolved neural encoding (arXiv: 2606.02305)
   - Intermediate Whisper layers provide strongest brain-model correspondence (hierarchical alignment)
