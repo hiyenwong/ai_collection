@@ -1,3 +1,12 @@
+## 2026-06-02 - Quantum Computing Research (Cron Job)
+
+### More Efficient Clifford+T Synthesis for Small-Angle Rotations and Application to Trotterization
+- [[efficient-clifford-t-synthesis]] - 突破性方法将小角度旋转的 T gate 成本从 O(log 1/δ) 降至 Õ(θ²/δ)，Trotterization 小步长极限下门成本变为常数，颠覆了"Clifford+T 成本独立于角度θ"的普遍误解 (arXiv: 2605.31544)
+  - 准概率方法进一步将总 T 成本降低数个数量级，仅需小样本复杂度开销
+  - 新 θ-依赖公式用于容错量子算法资源估计，Trotterization 应用需重新审视成本
+  - 降低魔态资源需求，推进早期容错量子计算实用性
+  - **Activation**: Clifford+T synthesis, small-angle rotation, fault-tolerant quantum compilation, Trotterization, T gate optimization, magic state distillation, quasi-probability decomposition
+
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
 ### XOResNet: Exclusive-OR Meta-Residuals for Deep Spiking Neural Networks
