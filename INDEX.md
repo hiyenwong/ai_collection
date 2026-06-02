@@ -1,3 +1,19 @@
+## 2026-06-02 - Neuroscience Research (Cron Job)
+
+### The Metastable Mind: Neural Underpinnings of Naturalistic Cognition
+- [[metastable-mind-event-segmentation]] - 综合Event Segmentation与Metastable Neural Activity两大孤立分支，证明二者研究同一神经状态现象，提出三大核心原理：时空嵌套层级、预测模型基础、模块化处理边界重构 (arXiv: 2605.31473)
+  - ES理论提供认知/行为效用解释，MNA提供机制层面实现
+  - 神经状态作为认知基本计算单元，状态边界触发连接重构
+  - 高阶区域长时程状态约束并塑造低阶快速区域状态
+  - **Activation**: metastable, event segmentation, neural states, cognitive segmentation, metastable neural activity, 亚稳态神经状态, 事件分割
+
+### Extended Predictive Coding under Exponential-Family Assumption
+- [[extended-predictive-coding-exponential-family]] - 扩展预测编码框架至指数族分布，捕获生物神经网络特性：非线性、异质性、正发放率，维持FEP-PC对应至后验二阶累积量，支持生物合理局部可塑性规则 (arXiv: 2605.30882)
+  - 传统Gaussian假设导致负发放率、线性转移函数等不生物合理性质
+  - 指数族(Bernoulli/Poisson/Exponential/Gamma)自然约束正域，匹配生理观测
+  - 层级微电路实现：L4计算预测误差，L2/3生成预测(EDF参数)，L5/6反馈
+  - **Activation**: predictive coding, exponential family, free-energy principle, variational inference, local plasticity, 预测编码, 自由能原理
+
 ## 2026-06-02 - Computer Science + Quantum Computing (Cron Job)
 
 ### Quantum Algorithm for Distributed Reduction of Entanglements (QADR)

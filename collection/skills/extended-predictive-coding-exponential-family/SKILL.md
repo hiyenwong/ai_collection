@@ -1,104 +1,209 @@
 ---
 name: extended-predictive-coding-exponential-family
-description: Extended Predictive Coding framework using exponential-family distributions for variational free-energy minimization with biological plausibility
-version: 1.0.0
-created: 2026-06-01
-source: arXiv:2605.30882
-authors: Asaki Kataoka, Kenji Doya
-tags: [predictive-coding, free-energy-principle, exponential-family, neural-dynamics, variational-inference, local-plasticity]
-activation:
-  - extended predictive coding
-  - exponential family
-  - free energy
-  - variational inference
-  - local plasticity
+description: "Extended Predictive Coding framework using exponential-family distributions for variational free-energy minimization. Captures biological network properties: nonlinearity, heterogeneity, positive firing rates. Biologically plausible local plasticity rules. Activation: predictive coding, exponential family, free-energy principle, variational inference, local plasticity, 预测编码, 自由能原理."
 ---
 
-# Extended Predictive Coding: Exponential Family Framework
+# Extended Predictive Coding under Exponential-Family Assumption
 
-## Overview
-This methodology extends Predictive Coding beyond Gaussian assumptions using **Exponential Family Distributions (EFD)**, enabling:
-- Non-negative neural firing rates
-- Heterogeneous input/output properties  
-- Biologically plausible activity
-- Local plasticity rules
+**Source**: arXiv:2605.30882 | **Submitted**: 2026-05-29  
+**Authors**: Asaki Kataoka, Kenji Doya  
+**Category**: q-bio.NC (Neurons and Cognition)
 
-## Mathematical Foundation
+## Core Contribution
 
-### Free Energy Principle (FEP)
+Extends Free-Energy Principle (FEP) and Predictive Coding (PC) from **Gaussian assumption** to **Exponential Family Distributions (EFD)**, capturing biological neural network properties:
+
+1. **Nonlinearity** of neural responses
+2. **Heterogeneity** of input-output properties
+3. **Positive firing rates** (biological constraint)
+
+## Problem with Gaussian Assumption
+
+Traditional FEP-PC correspondence under Gaussian + Laplace approximation:
+- Linear input-output relationships
+- Homogeneous neuron populations
+- **Negative firing rates** (biologically implausible)
+- Limited explanatory power for sensory cortex dynamics
+
+## Solution: Exponential Family Distributions
+
+EFD includes:
+- **Bernoulli** (binary neurons)
+- **Poisson** (spiking neurons)
+- **Exponential** (positive firing rates)
+- **Gamma** (firing rate distributions)
+- **Beta** (bounded activity)
+
+**Key result**: FEP-PC correspondence maintained **up to second cumulant** of posterior.
+
+## Biologically Plausible Properties
+
+### 1. Nonlinearity
+- Nonlinear transfer functions emerge naturally
+- Matches cortical neuron response curves
+- No artificial linearization required
+
+### 2. Heterogeneity
+- Different neuron types → different EFD members
+- Specialized populations (excitatory/inhibitory)
+- Population-specific priors
+
+### 3. Positive Firing Rates
+- EFD naturally constrains to positive domain
+- No negative firing rate artifacts
+- Matches physiological observations
+
+## Local Plasticity Rules
+
+**Critical contribution**: Model trained via **biologically plausible local rules**:
+
+- Prediction errors computed locally
+- Synaptic updates depend on local signals
+- No global error propagation (vs. backprop)
+- Compatible with cortical microcircuits
+
+### Plasticity Mechanism
 ```
-FEP: Minimize variational free energy F ≈ -log p(o|v) + KL[q(v)||p(v|o)]
+Δw_ij = η * (prediction_error_i * activity_j)
 ```
 
-### Classic Gaussian PC Limitations
-1. **Negative firing rates** (biologically impossible)
-2. **Homogeneous units** (ignores neural diversity)
-3. **Linear responses** (misses nonlinear dynamics)
-4. **No spike generation** (continuous-only)
+where:
+- `prediction_error_i` = mismatch between predicted and observed
+- `activity_j` = presynaptic firing rate
+- Updates are local (no global optimizer)
 
-### EFD Solution
+## Variational Free-Energy Minimization
+
+Under exponential-family assumption:
+
 ```
-p(x|η) = h(x) exp[η·T(x) - A(η)]
-```
-- All distributions have **non-negative firing rates**
-- **Heterogeneous units** (different distribution per neuron)
-- **Nonlinear responses** via natural parameter space
-- **Local plasticity** (biologically plausible)
-
-## Neural Distribution Types
-
-| Distribution | Use Case | Natural Parameters |
-|-------------|----------|-------------------|
-| Bernoulli | Binary spiking | η = log(p/(1-p)) |
-| Poisson | Spike counts | η = log(λ) |
-| Gaussian | Continuous | η = (μ/σ², -1/2σ²) |
-| Gamma | Firing rates | η = (-α, -β) |
-
-## Multi-Layer Hierarchy
-```
-Layer 0 (sensory): Poisson (spike counts)
-Layer 1 (V1): Bernoulli (binary spiking)
-Layer 2 (V2): Gaussian (continuous)
-Layer 3 (output): Gamma (rate coding)
+F = E_q[log q(z) - log p(z, x)]
+  ≈ KL[q(z) || p(z|x)] - log p(x)
 ```
 
-## Implementation
+Minimized via:
+- Variational posterior `q(z)` from EFD family
+- Prior `p(z)` also from EFD
+- Matching moments up to second order
 
-### Prediction Updates
-```python
-prediction_error = η_lower - prediction_upper
-error_signal = η_upper - prediction_lower
+## Neural Implementation
 
-# Gradient descent on free energy
-dη/dt = -∂F/∂η = T(x) - E[T(x)] + ∂prediction/∂η · error_signal
-```
+### Cortical Microcircuit Model
 
-### Weight Learning (Local Plasticity)
-```python
-Δw = prediction_error × activity_pre  # Hebbian-like
-Δprecision = prediction_variance  # adaptive weighting
-```
+**Layers**:
+- **L4**: Sensory input → prediction error computation
+- **L2/3**: Prediction generation via EFD
+- **L5/6**: Feedback to lower areas
 
-## Biological Plausibility Validation
+**Dynamics**:
+1. Input arrives at L4
+2. L2/3 generates prediction (EDF parameters)
+3. L4 computes error (observed - predicted)
+4. Local plasticity updates predictions
+5. L5/6 sends feedback
 
-| Check | Result |
-|-------|--------|
-| Non-negative firing | ✓ Always ≥ 0 |
-| Local learning | ✓ Weight updates use local information |
-| Nonlinear responses | ✓ Natural parameter space nonlinear |
-| Heterogeneous units | ✓ Different layers use different distributions |
+### Heterogeneous Populations
+
+- **Excitatory**: Exponential/Gamma distribution (positive firing)
+- **Inhibitory**: Beta distribution (bounded suppression)
+- **Binary**: Bernoulli (decision neurons)
+
+## Advantages over Gaussian PC
+
+| Property | Gaussian PC | Exponential Family PC |
+|----------|-------------|----------------------|
+| Firing rates | Can be negative | Always positive |
+| Nonlinearity | Linear transfer | Natural nonlinearity |
+| Heterogeneity | Homogeneous | Population-specific |
+| Plasticity | Global gradient | Local biologically plausible |
+| Explanatory power | Limited | Rich biological properties |
 
 ## Applications
-- Sensory processing: V1/V2/V4 modeling
-- Hierarchical inference: multi-layer predictions
-- Motor control: rate-coded commands
-- Memory and learning: predictive sequences
 
-## Related Skills
-- predictive-coding-light
-- free-energy-moe-routing
-- online-generalised-predictive-coding
+- **Sensory cortex**: V1/V2 perceptual inference
+- **Motor cortex**: Action prediction
+- **Hippocampus**: Memory prediction
+- **Spiking networks**: Neural coding models
 
-## References
-- arXiv:2605.30882 (this paper)
-- Friston (2010): Free Energy Principle
+## Methodological Checklist
+
+```markdown
+- [ ] Select appropriate EFD member for neuron type
+- [ ] Set prior parameters (natural parameters)
+- [ ] Initialize variational posterior
+- [ ] Compute prediction errors locally
+- [ ] Apply local plasticity rules
+- [ ] Validate positive firing rates
+- [ ] Compare with Gaussian baseline
+```
+
+## Implementation Outline
+
+```python
+import numpy as np
+
+class ExponentialFamilyPC:
+    def __init__(self, distribution_type='poisson'):
+        self.dist_type = distribution_type
+        # Natural parameters: θ = (η1, η2)
+        self.prior_params = np.array([0.5, 1.0])
+        
+    def compute_prediction_error(self, observed, predicted):
+        # Local error computation
+        error = observed - predicted
+        return error
+    
+    def local_plasticity(self, error, presynaptic_activity, eta=0.01):
+        # Biologically plausible update
+        delta_w = eta * error * presynaptic_activity
+        return delta_w
+    
+    def enforce_positive_firing(self, firing_rate):
+        # EFD constraint
+        return np.maximum(firing_rate, 0)
+```
+
+## Research Questions
+
+1. How do different EFD members affect prediction accuracy?
+2. What's the optimal prior for each neuron type?
+3. How does heterogeneity improve inference?
+4. Can local rules achieve convergence?
+5. What's the relationship to STDP?
+
+## Key References
+
+- Free-Energy Principle: Friston (2010)
+- Predictive Coding: Rao & Ballard (1999)
+- Exponential Family: McCullagh & Nelder (1989)
+- Local Learning: Doya (2000)
+- Biological Plausibility: Lillicrap et al. (2020)
+
+## Activation Triggers
+
+Use this skill when:
+- Implementing biologically plausible predictive coding
+- Modeling positive firing rate constraints
+- Building heterogeneous neural populations
+- Studying local plasticity rules
+- Comparing Gaussian vs. exponential family inference
+
+## Citation
+
+```bibtex
+@article{kataoka2026extended,
+  title={Extended predictive coding framework as variational free-energy minimisation under exponential-family assumption},
+  author={Kataoka, Asaki and Doya, Kenji},
+  journal={arXiv preprint arXiv:2605.30882},
+  year={2026}
+}
+```
+
+## Theoretical Bridge
+
+This work bridges **computational theory** (FEP) and **biological implementation**:
+- Free-energy principle → variational inference
+- Exponential family → biological neuron properties
+- Local plasticity → cortical microcircuits
+
+**Insight**: Theoretical frameworks gain explanatory power when accounting for biological constraints.
