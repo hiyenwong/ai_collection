@@ -1,3 +1,13 @@
+## 2026-06-03 - Medicine + Quantum (Cron Job)
+
+### QML Healthcare Diagnosis - 量子机器学习医疗诊断统一框架
+- [[qml-healthcare-diagnosis]] - QML医疗诊断统一框架：HQNN、QSVM、Multi-VQC、混合管道、量子生物传感器、量子数字孪生、量子态制备七大方法论 (arXiv: 2604.16953,2506.03272,2505.20804)
+  - HQNN: 经典CNN + 参数化量子电路 + 多头量子注意力，热成像/CT/MRI分类
+  - QSVM: 量子核方法映射到高维希尔伯特空间，肺癌分类、小数据集场景
+  - Multi-VQC: 多VQC集成缓解平衡板问题，不平衡疾病分类（癌症、糖尿病、心衰）
+  - 混合管道: PCA → VQC → 诊断，分布式计算负载，X射线骨折诊断
+  - **Activation**: quantum healthcare, QML diagnosis, medical image quantum, QSVM medical, VQC healthcare, HQNN thermography, quantum biomedical, quantum digital twin health
+
 ## 2026-06-03 - Neuroscience Research (Cron Job - Synthesis)
 
 ### Neuroscience June 2026 Synthesis: Breakthrough Discoveries
