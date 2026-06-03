@@ -1,3 +1,19 @@
+## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
+
+### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
+- [[hybrid-quantum-medical-classification]] - HQNN architecture integrating parameterized quantum circuits with multi-head attention in CNN backbone for breast cancer thermographic classification (arXiv: 2604.16953)
+  - Classical CNN feature extraction → quantum encoding → VQC with multi-head quantum attention → hybrid training
+  - Dimensionality reduction (PCA) essential before quantum encoding for NISQ compatibility
+  - Ensemble Multi-VQC approach for handling class imbalance in medical data
+  - **Activation**: hybrid quantum medical, quantum healthcare AI, QML diagnosis, quantum neural network cancer, HQNN thermography, quantum medical imaging, variational quantum circuit diagnosis
+
+### Investigating Quantum Feature Maps in Quantum Support Vector Machines for Lung Cancer Classification
+- [[quantum-feature-map-selection]] - Systematic evaluation of QSVM feature maps (angle, amplitude, ZZFeatureMap, IQP) for lung cancer diagnosis with entanglement-based Hilbert space construction (arXiv: 2506.03272)
+  - ZZFeatureMap outperforms angle encoding for non-linearly separable medical data
+  - Feature map choice has larger impact than circuit ansatz — benchmark multiple encodings
+  - Quantum kernel target alignment (KTA) as predictor of classification performance
+  - **Activation**: quantum feature map, QSVM encoding, quantum kernel selection, ZZFeatureMap, angle encoding, amplitude encoding, quantum SVM medical, quantum kernel classification
+
 ## 2026-06-03 - Neuroscience Research (Cron Job - Hourly)
 
 ### Learning Dynamic Stability Landscapes in Synchronization Networks
