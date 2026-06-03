@@ -1,5 +1,19 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### Kinetic Energy in Random Recurrent Neural Networks
+- [[kinetic-energy-random-rnn-chaos]] - 动能量化随机RNN混沌动力学与不稳定不动点的关系，动力学平均场理论揭示临界点立方幂律，混沌流形呈壳状结构 (arXiv: 2508.04983)
+  - 临界缩放：动能 $E_k \sim (\sigma - \sigma_c)^3$，动能从零到正的连续转变
+  - 几何分析：混沌动力学和动能梯度动力学在壳状结构中极向分离
+  - 轨迹长度：从稳态动能推导，量化混沌流形上的探索范围
+  - **Activation**: kinetic energy, random RNN, chaos, dynamical mean-field theory, chaotic dynamics, fixed points, phase space geometry, cubic scaling, shell structure
+
+### Multi-Modal GNN with Transformer-Guided Adaptive Diffusion for Alzheimer Classification
+- [[transformer-guided-adaptive-diffusion-alzheimer]] - Transformer引导的自适应扩散图神经网络，结合扩散核(短程)与多头注意力(长程)，识别前临床阿尔茨海默病关键ROI (arXiv: 2606.03322, MICCAI 2024)
+  - 双程聚合：扩散核捕获局部拓扑，Transformer建模远距离依赖
+  - 多模态融合：结构MRI + 功能连接 + 人口统计学特征
+  - ROI识别：海马、内嗅皮层、后扣带回等前临床AD敏感区域
+  - **Activation**: Alzheimer, preclinical AD, brain network, multi-modal GNN, diffusion kernel, transformer attention, ROI identification, MICCAI 2024
+
 ### BEAST3D: Animal Behavioral Analysis via 3D Gaussian Splatting
 - [[beast3d-animal-behavioral-neural-encoding]] - 3D Gaussian splatting + ViT自监督动物行为分析框架，从多视角视频学习3D表征，支持新颖视角合成、姿态估计、神经编码，仅需4视角 (arXiv: 2606.02937)
   - 自监督预训练：ViT预测3D Gaussian splats，可微分渲染重构held-out视角
