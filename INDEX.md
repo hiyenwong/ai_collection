@@ -246,6 +246,26 @@
   - Hybrid quantum-classical approach for diagnostic accuracy improvement
   - **Activation**: quantum medical imaging, quantum CNN, medical diagnosis CNN
 
+## 2026-06-03 - Medicine + Quantum (Cron Job)
+
+### Scalable On-Hardware Training of Quantum Neural Networks and Application to Clinical Data Imputation
+- [[scalable-on-hardware-qnn-training]] - O(P) linear-cost QNN gradient estimation via block encoding + Hadamard test for clinical data imputation (arXiv: 2606.03517)
+  - 核心要点: Block encoding + Hadamard test reduces gradient estimation from O(P²) to O(P) circuit evaluations
+  - 核心要点: Demonstrated on IBM quantum hardware for missing clinical patient data imputation
+  - **Activation**: quantum, qnn, clinical, hardware, gradient, training, medical
+
+### Penalty-free quantum optimization applied to lattice protein folding
+- [[penalty-free-quantum-protein-folding]] - Constraint-satisfying binary encoding eliminates penalty terms in QAOA/quantum annealing for protein structure prediction (arXiv: 2606.02104)
+  - 核心要点: Self-Avoiding Walk encoding built into binary variables removes need for penalty parameters
+  - 核心要点: Cleaner energy landscape yields higher-quality protein structure solutions
+  - **Activation**: quantum, protein, folding, qaoa, annealing, optimization, bio-physics
+
+### Quantum Erasure Imaging: Complementary Modalities from Delayed-Choice Erasure
+- [[quantum-erasure-imaging]] - Dual-modality imaging from single entangled photon run via retrospective coincidence sorting (arXiv: 2606.03914)
+  - 核心要点: Simultaneously reconstructs absorption T(x,y) and phase-sensitive quadrature from one entangled photon experiment
+  - 核心要点: Delayed-choice retrospective sorting enables dual-contrast without hardware switching
+  - **Activation**: quantum, imaging, erasure, entanglement, optics, medical
+
 ## 2026-06-02 - Neuroscience Research (Cron Job - Hourly)
 
 ### The Neuromorphic Supremacy: Hybrid Astrocytic-Spiking Neural Networks
