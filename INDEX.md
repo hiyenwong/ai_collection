@@ -1,4 +1,31 @@
+## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### Towards Efficient Synthesis of Quantum Graph States by Fusing Graph Motifs
+- [[cost-aware-fusion-decomposition]] - 代价感知融合分解(CFD)方法合成光子图态：三阶段启发式框架（LC等价探索→图模体分解→Type-I融合组装），实现84.6%资源开销减少 (arXiv: 2606.02880)
+  - LC等价：最小边数图作为近最优合成的有效代理，保持纠缠属性
+  - 图模体分解：环、星、线性模体的贪婪分解，高效生成
+  - Type-I融合：贝尔测量连接模体，50%成功概率，可预知
+  - **Activation**: graph state synthesis, photonic quantum computing, local Clifford equivalence, motif decomposition, Type-I fusion, measurement-based quantum computing, cost-aware decomposition, quantum interconnects
+
+### Piston control in a two-ion quantum device
+- [[inverse-engineering-quantum-control]] - 两离子量子器件中的活塞控制：逆工程协议控制经典离子运动，识别连接经典与量子区域的窄基态 (arXiv: 2606.03488)
+  - 逆工程控制：通过调制阱势控制量子离子运动，驱动经典活塞
+  - 量子-经典过渡：识别窄量子基态连接两个宽经典区域
+  - **Activation**: quantum control, two-ion device, inverse engineering, piston control, quantum-classical transition
+
+### Quantum optimal control of the Dicke manifold in Rydberg atom arrays
+- [[quantum-optimal-control-rydberg]] - 里德堡原子阵列中Dicke流形的量子最优控制，用于量子计算应用 (arXiv: 2606.02283)
+  - Dicke流形控制：里德堡原子阵列中的多体量子态最优控制
+  - **Activation**: quantum optimal control, Rydberg atoms, Dicke manifold, quantum computing
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
+- [[stp-stabilizes-goal-conditioned-dynamics]] - STP稳定目标条件化动力学，PFC储水池模型在噪声下鲁棒性从49.5%提升到89.2%，有效连接目标特异性模式增强 (arXiv: 2606.03481)
+  - 噪声鲁棒性：STP使模型在状态噪声下性能几乎不变，无STP下降26.3%
+  - 目标条件化动力学：STP保留行动可用的目标信息，延迟后期有效连接增强
+  - 促进型主导：网格搜索识别最优STP时间常数范围，F > D
+  - **Activation**: STP, short-term synaptic plasticity, goal-conditioned dynamics, PFC reservoir, action planning, basal ganglia, temporal-difference learning
 
 ### Kinetic Energy in Random Recurrent Neural Networks
 - [[kinetic-energy-random-rnn-chaos]] - 动能量化随机RNN混沌动力学与不稳定不动点的关系，动力学平均场理论揭示临界点立方幂律，混沌流形呈壳状结构 (arXiv: 2508.04983)
