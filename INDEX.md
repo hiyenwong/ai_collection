@@ -1,3 +1,20 @@
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
+### Quadratic Integrate-and-Fire Neurons Exhibit Less Fragmented Loss Landscapes and Outperform LIF in Spike-Based Gradient Descent
+- [[qif-neurons-gradient-descent-advantage]] - QIF神经元连续脉冲动力学实现平滑梯度下降，损失景观不碎片化，Spiking Heidelberg Digits性能优越，解决LIF脉冲消失/静默神经元问题 (arXiv: 2606.03935)
+  - 核心发现：QIF连续脉冲时序 vs LIF不连续阈值跳跃 → 平滑梯度流
+  - 损失景观分析：LIF碎片化/梯度 erratic，QIF连续/梯度稳定
+  - 实验验证：SHD数据集，超参数搜索优化，单样本时序分析
+  - **Activation**: quadratic integrate-and-fire, QIF, LIF, spike-based gradient descent, continuous dynamics, loss landscape, spiking neural network training, neuromorphic optimization
+
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC Reservoir Model
+- [[stp-stabilizes-goal-conditioned-dynamics]] - 短时程突触可塑性稳定PFC目标条件动力学，噪声下成功率91.8%→89.2%稳健，无STP则75.8%→49.5%崩溃，Cohen's dz=1.31大效应 (arXiv: 2606.03481)
+  - 核心机制：STP动态调制目标依赖有效循环连接，历史依赖突触权重
+  - 关键分析：时间解码、状态空间分离度、行动值差异、有效连接模式
+  - 超参数网格：促进主导时间常数范围最佳性能
+  - 对照实验：增益匹配对照（非简单缩放）、STP状态扰动（证明在线调制）
+  - **Activation**: short-term synaptic plasticity, STP, goal-conditioned dynamics, prefrontal cortex, reservoir computing, goal maintenance, working memory, action planning, noise robustness, effective connectivity
+
 ## 2026-06-03 - Medicine + Quantum Computing (Cron Job - Hourly)
 
 ### Physics-Informed Learning of Effective Error Processes from Limited Noisy Transmon Measurements for Robust QAOA Reliability
