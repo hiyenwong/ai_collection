@@ -16,6 +16,28 @@
 ### Quantum optimal control of the Dicke manifold in Rydberg atom arrays
 - [[quantum-optimal-control-rydberg]] - 里德堡原子阵列中Dicke流形的量子最优控制，用于量子计算应用 (arXiv: 2606.02283)
   - Dicke流形控制：里德堡原子阵列中的多体量子态最优控制
+
+### Real-Time Quantum Error Correction System Stack
+- [[real-time-qec-system-stack]] - 实时量子纠错系统栈架构：六层参考架构（综合征采集→预处理→解码→校正计算→逻辑操作→系统编排），关注尾部延迟和端到端数据路径协调 (arXiv: 2605.30765)
+  - 六大瓶颈：QEC轮次时间、尾部延迟、端到端数据路径协调是三大关键约束
+  - 解码器评估：MWPM成熟但扩展性有限，Union-Find快速但阈值次优，BP可扩展需后处理
+  - 系统栈设计：关注P99延迟而非平均性能，自适应解码策略根据错误率切换
+  - **Activation**: real-time QEC, quantum error correction, system stack, tail latency, decoder benchmark, surface codes, qLDPC, fault tolerance, latency budget
+
+### MBSE for Quantum Network Architecture
+- [[mbse-quantum-network-architecture]] - 基于模型的系统工程(MBSE)方法论用于量子网络架构演化，使用正交变异性建模(OVM)和SysML创建可追溯的模块化量子系统设计 (arXiv: 2508.15733)
+  - OVM变异性建模：分离核心架构与可变特性，独立建模必选和可选组件
+  - SysML集成：结构和行为建模，量子/经典子系统接口明确
+  - 变异性驱动框架：利益相关者期望→核心架构→变异性点→可追溯变体→随期望演化
+  - **Activation**: MBSE, quantum network, QKD, systems modeling, SysML, OVM, variability modeling, quantum architecture, traceability
+
+### Unsupervised Quantum ML for Phase Detection
+- [[unsupervised-quantum-ml-phase-detection]] - 无监督机器学习检测量子多体相变方法，直接从原始实验测量中发现集体现象，无需模型特定先验知识 (arXiv: 2512.01091)
+  - 原始数据驱动：直接从部分可观测的实验数据检测相变和交叉
+  - 无先验知识：不依赖序参量或模型假设，适用于无法数值模拟的大型系统
+  - 验证应用：多体局域化(MBL)交叉、Mott-超流相变检测
+  - **Activation**: quantum many-body, phase transition, unsupervised learning, MBL, Mott transition, experimental detection, data-driven discovery
+
   - **Activation**: quantum optimal control, Rydberg atoms, Dicke manifold, quantum computing
 
 ## 2026-06-04 - Neuroscience Research (Cron Job)
