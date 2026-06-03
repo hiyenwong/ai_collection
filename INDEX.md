@@ -125,6 +125,13 @@
 
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### Quadratic Integrate-and-Fire Neurons Outperform LIF in Gradient Descent
+- [[qif-neurons-superior-lif-gradient-descent]] - QIF神经元在梯度下降训练中优于LIF神经元：连续脉冲动力学产生更平滑的损失景观，训练稳定性显著提升 (arXiv: 2606.03935)
+  - 连续动力学：QIF避免脉冲间断，梯度定义良好，无硬复位
+  - 损失景观：LIF景观高度碎片化，QIF平滑连续
+  - 脉冲排序稳定性：LIF脉冲时序变化频繁导致破坏性脉冲消失，QIF稳定
+  - **Activation**: QIF neurons, quadratic integrate-and-fire, LIF neurons, spike-based gradient descent, SNN training, continuous spiking dynamics, loss landscape, neuron polarization
+
 ### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC-Inspired Reservoir
 - [[stp-stabilizes-goal-conditioned-dynamics]] - 短时程突触可塑性(STP)稳定目标条件化动力学，PFC储水池模型噪声下成功率从49.5%提升至89.2%，多步目标导向行动规划鲁棒性增强 (arXiv: 2606.03481)
   - STP机制：动态调制目标依赖的有效循环连接，生成目标条件化动力学
