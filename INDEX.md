@@ -1,3 +1,13 @@
+## 2026-06-03 - Neuroscience Research (Cron Job - Synthesis)
+
+### Neuroscience June 2026 Synthesis: Breakthrough Discoveries
+- [[neuroscience-june-2026-synthesis]] - 2026年6月神经科学核心发现综述：神元scaling law、QIF训练优势、STP动力学、局部学习规则的综合分析框架
+  - Rosetta Neurons 次线性幂律增长 (α < 1)，神元极化效应，选择性增强
+  - QIF 神元解决 SNN 梯度不稳定问题，损失景观平滑化，40%+ 训练稳定性提升
+  - STP 提供 40% 噪声鲁棒性，目标条件有效连接演化，PFC-inspired reservoir
+  - RFLO 低秩扰动约束，与 BPTT 定性差异，生物可塑性影响学习动态
+  - **Activation**: 神经科学综述, 2026年6月, 神元scaling law, Rosetta Neurons, QIF神元, STP动力学, 局部学习, SNN训练稳定性, 神经可解释性
+
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
 ### Neural Fields as World Models
