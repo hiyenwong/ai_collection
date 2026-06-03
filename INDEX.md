@@ -1,3 +1,12 @@
+## 2026-06-03 - Medicine + Quantum Computing (Cron Job - Hourly)
+
+### Physics-Informed Learning of Effective Error Processes from Limited Noisy Transmon Measurements for Robust QAOA Reliability
+- [[physics-informed-qaoa-error-learning]] - 物理启发学习从有限噪声transmon测量中推断有效量子误差过程，神经网络的24参数误差通道从12个测量值学习，QAOA可靠性提升20.4×，支持医疗优化应用 (arXiv: 2606.00353)
+  - 核心创新：从稀疏层析数据学习有效误差模型，无需微观哈密顿量参数
+  - 关键发现：局部仿射Bloch通道+成对残差捕获相关误差，3-qubit MAE从0.1775降至0.0269
+  - 医疗应用：临床试验优化、药物发现管道、医疗资源分配 via QAOA
+  - **Activation**: physics-informed quantum error learning, QAOA reliability, transmon error characterization, effective error channel, variational quantum algorithm mitigation, hardware-aware quantum optimization, quantum tomography from sparse measurements
+
 ## 2026-06-03 - Medicine + Quantum Computing (Cron Job)
 
 ### Quantum machine learning for predicting anastomotic leak: a clinical study
