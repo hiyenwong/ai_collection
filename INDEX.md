@@ -1,3 +1,19 @@
+## 2026-06-03 - Neuromorphic RNN Learning & Speech Recognition (Cron Job)
+
+### Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks
+- [[local-gradient-approximations-rnn]] - RFLO/tBPTT/BPTT学习动力学对比：数据对齐线性RNN分析揭示RFLO限于低秩参数扰动，局部性约束塑造稳定性与收敛率，为神经形态硬件学习规则设计提供理论指导 (arXiv: 2606.00243, ICML 2026)
+  - 核心创新：数据对齐RNN正交模分解 → RFLO低秩约束 → 定性不同于BPTT/tBPTT
+  - 关键发现：RFLO解限制于初始参数低秩扰动（超越数据对齐假设），局部性约束限定解空间
+  - 应用价值：神经形态芯片片上学习算法优化，生物学习约束建模，替代优化方法开发
+  - **Activation**: RFLO, tBPTT, locality constraints, RNN learning dynamics, data-aligned RNN, low-rank perturbations, neuromorphic learning, biological learning rules, ICML 2026
+
+### Spiking and Event-driven Neuromorphic Mamba Models for Efficient Speech Recognition
+- [[spiking-event-driven-neuromorphic-mamba-asr]] - 神经形态Mamba语音识别：FATReLU事件驱动模型60%稀疏度<1%精度损失，脉冲SpeechMamba70%稀疏度30%参数削减，周期精确仿真器指导算法-硬件协同设计获>10%效率提升 (arXiv: 2606.01135, IJCNN 2026)
+  - 核心创新：脉冲化Mamba架构 + FATReLU阈值激活 + 周期精确事件驱动仿真器
+  - 关键发现：激活稀疏度>60%可实现，LibriSpeech基准<1%WER损失，协同设计额外>10%效率
+  - 应用价值：边缘设备ASR（智能手机/智能家居），实时低功耗语音识别，神经形态硬件部署
+  - **Activation**: spiking mamba, event-driven ASR, FATReLU, activation sparsity, neuromorphic speech, LibriSpeech, spike encoding, cycle-accurate simulator, IJCNN 2026
+
 ## 2026-06-03 - Systems Engineering Research (Cron Job)
 
 ### Monitoring Agentic Systems Before They're Reliable
