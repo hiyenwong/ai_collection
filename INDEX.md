@@ -1,3 +1,19 @@
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
+### Neuron Populations Exhibit Divergent Selectivity with Scale
+- [[neuron-populations-scale-selectivity]] - Rosetta Neurons次线性幂律增长 + 神元极化效应（选择性增强/单语义化），神经元层面scaling law理论，语言模型30B+视觉模型5B验证 (arXiv: 2606.03990)
+  - 核心发现：N_rosetta = M^α (α<1)，神元比例下降但选择性上升
+  - 神元极化：Rosetta神元分离并高度专化，非Rosetta保持泛化
+  - 应用：数据筛选（利用神元选择性），模型架构设计（神元容量平衡）
+  - **Activation**: 神元群体, scaling law, Rosetta Neurons, 神元选择性, 神元极化, monosemanticity, neuron universality, 神元可解释性, 神元 scaling, 特征效用, 神元容量, 次线性幂律
+
+### Quadratic Integrate-and-Fire Neurons Outperform LIF in Gradient Descent
+- [[qif-superior-lif-gradient-descent]] - QIF神元连续动力学实现平滑梯度下降，损失景观不碎片化，解决LIF脉冲消失/静默神元问题，Spiking Heidelberg Digits验证 (arXiv: 2606.03935)
+  - 核心机制：QIF dV/dt=V²+I 连续放电 vs LIF 不连续阈值跳变
+  - 损失景观：LIF碎片化/梯度erratic → QIF平滑/梯度稳定
+  - 实验证：全面超参数搜索，单样本时序分析，脉冲顺序变化研究
+  - **Activation**: 脉冲神经网络, QIF神经元, LIF神经元, 梯度下降, 损失景观, 连续动力学, 神经形态计算, spike-based training
+
 ## 2026-06-03 - Neuroscience Research (Cron Job - Hourly)
 ## 2026-06-03 - Medicine (Cron Job)
 
