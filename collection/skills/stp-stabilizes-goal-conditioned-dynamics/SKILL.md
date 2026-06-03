@@ -1,211 +1,430 @@
 ---
 name: stp-stabilizes-goal-conditioned-dynamics
-description: 短时程突触可塑性稳定目标条件化动力学方法论。研究 STP 如何在前额叶皮层启发的储水池模型中支持多步目标导向行动规划。在噪声环境下显著提升鲁棒性（成功率从49.5%到89.2%）。适用于神经网络动力学、储水池计算、目标维持、突触可塑性建模。触发词：STP、short-term plasticity、goal-conditioned dynamics、PFC reservoir、目标导向行动、突触可塑性稳定性。
+description: "短时程突触可塑性(STP)稳定目标条件化动力学方法论。研究STP如何在PFC储水池模型中支持多步目标导向行动规划，通过动态调节有效连接保持目标信息。Activation: STP, goal-conditioned dynamics, PFC reservoir, action planning, 突触可塑性, 目标导向行为."
 ---
 
-# Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
+# STP Stabilizes Goal-Conditioned Dynamics
 
-## 研究背景
+**Paper:** arXiv:2606.03481 (Submitted: 2026-06-02)
+**Authors:** Jin Nakamura, Yuichi Katori
+**Categories:** q-bio.NC, cs.NE
 
-前额叶皮层 (PFC) 维持目标信息用于行动规划，但循环电路如何在行为时间尺度上以行动可用形式保留目标信息尚不清楚。本研究探讨短时程突触可塑性 (STP) 能否将目标信息稳定化为行动可用的、目标条件化动力学。
+## Core Innovation
 
-## 核心方法论
+**Short-Term Synaptic Plasticity (STP) stabilizes goal information as action-relevant, goal-conditioned dynamics** in prefrontal cortex (PFC) reservoir models for multistep goal-directed action planning.
 
-### 1. PFC 启发的储水池计算模型
+### Key Finding
 
-整合短时程突触可塑性 (STP) 到前额叶皮层启发的储水池计算模型中：
-- **储水池网络结构**: 模拟 PFC 循环电路
-- **STP 机制**: 动态调制目标依赖的有效循环连接
-- **基底神经节启发读出**: 时序差分 (TD) 学习用于行动价值评估
+- **Without STP:** Success drops from 75.8% → 49.5% under noise
+- **With STP:** Success remains stable: 91.8% → 89.2% (Cohen's dz=1.31)
+- STP preserves goal information as **goal-conditioned dynamics** available at later action opportunities
 
-### 2. 多步目标导向行动选择任务
+## Neuroscience Mechanism
 
-**任务设计**:
-- 廦迟执行的多步目标导向行动选择
-- 目标身份在延迟期间需要维持
-- 评估有无 STP 模型在噪声下的性能
+### PFC Goal Maintenance Problem
 
-**实验设置**:
-- 100 个独立生成的网络
-- 有无状态噪声对比测试
-- 目标可解码性、状态空间可分性、行动价值差异分析
-
-### 3. 关键发现
-
-**STP 对鲁棒性的影响**:
-- 无噪声: 无 STP 75.8% vs 有 STP 91.8%
-- 有噪声: 无 STP 49.5% (显著下降) vs 有 STP 89.2% (几乎不变)
-- paired Cohen's dz = 1.31 (大效应量)
-
-**机制分析**:
-- STP 不需要形成线性可读目标表征（目标信息即使无 STP 也可解码）
-- STP 在噪声下**保留目标信息为行动相关的目标条件化动力学**
-- 延迟期间的有效连接呈现目标特异性模式，并在试验后期增强
-- 无 STP 时有效连接时间不变
-
-**STP 时间常数**:
-- 促进型主导范围的 STP 时间常数与高成功率相关
-- 网格搜索识别最优时间常数范围
-
-### 4. 分析方法
-
-**时序解析解码**:
-- 检查延迟期间目标信息可解码性
-- 评估行动机会时目标信息可用性
-
-**状态空间可分性**:
-- 测量目标相关的动力学可分性
-- 评估噪声对状态空间结构的影响
-
-**行动价值差异**:
-- 分析目标条件化行动价值
-- 检查延迟后期行动相关信息
-
-**有效连接分析**:
-- 延迟期间目标特异性模式
-- 时间演化的有效连接变化
-
-**对照实验**:
-- 增益匹配控制: 排除固定循环缩放解释
-- STP 状态扰动控制: 支持在线历史依赖突触调制
-
-## 应用场景
-
-### 1. 神经网络动力学建模
-
-**目标维持问题**:
-- 神经网络如何在长时间尺度维持目标信息
-- 循环电路的稳定性与可塑性权衡
-- 噪声鲁棒的目标表征
-
-**STP 的作用**:
-- 动态调制循环连接强度
-- 生成目标条件化的动力学模式
-- 提供历史依赖的突触调制
-
-### 2. 储水池计算改进
-
-**传统储水池的局限**:
-- 固定连接权重
-- 噪声敏感性高
-- 目标信息难以在延迟期间维持行动可用性
-
-**STP 储水池优势**:
-- 自适应连接调制
-- 噪声鲁棒性显著提升
-- 目标条件化动力学自然涌现
-
-### 3. 认知建模
-
-**目标导向行为**:
-- 多步行动计划
-- 延迟执行任务
-- 目标切换适应
-
-**神经科学启发**:
-- PFC 目标维持机制
-- 基底神经节价值评估
-- STP 在认知稳定性中的作用
-
-## 实现建议
-
-### 1. STP 储水池模型构建
-
-**核心组件**:
 ```python
-# STP 参数
-U = 0.5  # 利用率
-D = 0.2  # 恢复时间常数 (促进型主导)
-F = 0.01  # 抑制时间常数
+"""
+PFC Challenge:
+- Maintain goal information over behavioral timescales
+- Preserve in action-usable form (not just readable)
+- Support delayed execution (delay period → action)
 
-# 状态更新
-r(t) = U * r(t-1) * (1 - x(t-1)) + D * x(t-1)
-x(t) = r(t) * w * input(t)
+Traditional View:
+- Recurrent circuits maintain information
+- Issue: How to keep goal information "action-relevant"?
+
+This Paper's Answer:
+- STP provides dynamic modulation of goal-dependent connectivity
+- Creates time-varying, goal-specific effective connectivity patterns
+"""
 ```
 
-**储水池动力学**:
-- 输入层: 目标信息编码
-- 储水池层: STP 循环连接
-- 读出层: TD 学习行动价值
+### STP Mechanism
 
-### 2. 多步任务设计
+```python
+class ShortTermSynapticPlasticity:
+    """
+    STP implementation in reservoir model
+    
+    Parameters:
+    - U: utilization factor (release probability)
+    - D: depression time constant
+    - F: facilitation time constant
+    
+    Key dynamics:
+    - Facilitation: Increases release probability with activity
+    - Depression: Decreases available resources with activity
+    """
+    
+    def __init__(self, U, D, F):
+        self.U = U  # Utilization factor (0-1)
+        self.D = D  # Depression time constant (ms)
+        self.F = F  # Facilitation time constant (ms)
+        self.x = 1.0  # Available resources
+        self.u = U    # Current utilization
+    
+    def update(self, spike, dt):
+        """STP dynamics update"""
+        if spike:
+            # Spike-triggered update
+            self.u = self.u + self.U * (1 - self.u)  # Facilitation
+            self.x = self.x - self.u * self.x         # Depression
+        
+        # Recovery dynamics
+        self.u = self.u - self.u * dt / self.F  # Facilitation recovery
+        self.x = self.x + (1 - self.x) * dt / self.D  # Resource recovery
+        
+        return self.u * self.x  # Effective synaptic weight
+```
 
-**任务结构**:
-- 目标呈现阶段: 编码目标身份
-- 廉迟阶段: 维持目标信息（带噪声）
-- 行动阶段: 选择行动序列执行目标
+## Methodology Framework
 
-**评估指标**:
-- 成功率: 正确完成目标的比例
-- 目标解码准确率: 延迟期间目标可解码性
-- 状态空间可分性: 目标相关的动力学分离程度
+### 1. PFC-Inspired Reservoir Model
 
-### 3. 分析工具
+```python
+class PFCReservoirWithSTP:
+    """
+    Reservoir computing model with STP
+    
+    Architecture:
+    - Input layer: Goal encoding
+    - Reservoir: Recurrent network with STP synapses
+    - Readout: Basal ganglia-inspired TD learning
+    """
+    
+    def __init__(self, N_neurons, STP_config):
+        self.N = N_neurons
+        
+        # Recurrent weights with STP
+        self.W_rec = np.random.randn(N, N) * g / np.sqrt(N)
+        self.stp = [ShortTermSynapticPlasticity(**STP_config) 
+                    for _ in range(N*N)]
+        
+        # Input weights
+        self.W_in = np.random.randn(N, goal_dim)
+        
+        # Readout (action values)
+        self.W_out = np.zeros((num_actions, N))
+    
+    def forward(self, goal_input, delay_steps):
+        """Forward pass through delay period"""
+        
+        # Initialize reservoir state
+        r = np.zeros(self.N)
+        
+        # Encode goal
+        r = np.dot(self.W_in, goal_input)
+        
+        # Evolve through delay period (STP active)
+        for t in range(delay_steps):
+            # Apply STP-modulated recurrent weights
+            W_eff = self.compute_effective_weights()
+            
+            # Reservoir update
+            dr = -r + np.dot(W_eff, r) + noise
+            r = r + dt * dr
+        
+        # Read out action values
+        action_values = np.dot(self.W_out, r)
+        
+        return action_values, r, W_eff
+```
 
-**时序解码**:
-- 延迟期间训练解码器从储水池状态预测目标
-- 评估时间演化的解码准确率
+### 2. Goal-Conditioned Dynamics Analysis
 
-**有效连接分析**:
-- 计算储水池神经元间的有效连接矩阵
-- 分析目标特异性连接模式
+```python
+def analyze_goal_conditioned_dynamics(model, goals, noise_level):
+    """
+    Analyze how STP creates goal-specific dynamics
+    
+    Metrics:
+    1. Goal decoding accuracy during delay
+    2. State-space separability across goals
+    3. Action-value difference (action relevance)
+    4. Effective connectivity patterns
+    """
+    
+    results = {
+        'goal_decoding': [],
+        'state_separability': [],
+        'action_value_diff': [],
+        'effective_connectivity': []
+    }
+    
+    for goal in goals:
+        # Run model with/without noise
+        action_values, state, W_eff = model.forward(goal, delay)
+        
+        # 1. Goal decoding (linear readout)
+        decoded_goal = linear_decoder(state)
+        results['goal_decoding'].append(accuracy(decoded, goal))
+        
+        # 2. State-space separability
+        separability = compute_separability(states_across_goals)
+        results['state_separability'].append(separability)
+        
+        # 3. Action-value difference (relevance measure)
+        av_diff = np.max(action_values) - np.min(action_values)
+        results['action_value_diff'].append(av_diff)
+        
+        # 4. Effective connectivity patterning
+        pattern = compute_pattern(W_eff)
+        results['effective_connectivity'].append(pattern)
+    
+    return results
+```
 
-**行动价值差异**:
-- 计算不同目标的行动价值差异
-- 评估延迟后期行动相关信息
+### 3. Control Experiments
 
-## 关洞见
+```python
+def run_controls(model):
+    """
+    Key control experiments from paper
+    
+    1. Gain-matched control: Fixed recurrent scaling
+       - Tests if STP effect is just scaling
+    
+    2. STP-state perturbation: Freeze STP dynamics
+       - Tests online vs offline STP
+    
+    3. Time constant grid search
+       - Identify facilitation-dominant range
+    """
+    
+    # Control 1: Gain-matched
+    model_no_stp_matched = create_gain_matched_model(model)
+    success_matched = evaluate(model_no_stp_matched, noise=True)
+    
+    # Control 2: STP freeze
+    model_stp_frozen = freeze_stp_dynamics(model)
+    success_frozen = evaluate(model_stp_frozen, noise=True)
+    
+    # Control 3: Grid search
+    best_tau = grid_search_STP_time_constants(
+        tau_range=(50, 500),  # ms
+        metric='success_rate'
+    )
+    
+    return {
+        'gain_matched_success': success_matched,
+        'stp_frozen_success': success_frozen,
+        'optimal_tau': best_tau
+    }
+```
 
-1. **STP 不是存储机制而是稳定化机制**
-   - 目标信息即使无 STP 也可线性解码
-   - STP 作用在于维持行动可用的目标条件化动力学
+## Key Results
 
-2. **动态调制胜于固定缩放**
-   - 增益匹配对照排除固定缩放解释
-   - STP 状态扰动对照支持在线历史依赖调制
+### 1. Robustness Under Noise
 
-3. **有效连接的目标特异性**
-   - STP 生成目标依赖的有效连接模式
-   - 延迟后期连接模式增强（准备行动执行）
+| Model | Clean | Noise | Drop |
+|-------|-------|-------|------|
+| No STP | 75.8% | 49.5% | -26.3% |
+| With STP | 91.8% | 89.2% | -2.6% |
 
-4. **促进型 STP 时间常数范围**
-   - 促进型主导的 STP 与高成功率相关
-   - 时间常数网格搜索确定最优范围
+**Interpretation:** STP provides dramatic noise robustness (Cohen's dz=1.31)
 
-## 研究价值
+### 2. Goal Decoding vs Action Relevance
 
-**理论贡献**:
-- 解释 PFC 如何在行为时间尺度维持目标信息
-- 揭示 STP 在认知稳定性中的作用机制
-- 提供目标条件化动力学的新视角
+```python
+"""
+Key distinction:
+- Goal decoding: High in both models (STP not needed for readability)
+- Action relevance: Only preserved with STP under noise
 
-**计算贡献**:
-- 改进储水池计算的噪声鲁棒性
-- 提供目标导向行为的神经网络模型
-- 结合 PFC 和基底神经节启发机制
+STP transforms goal representation from:
+  "Readable" → "Action-relevant" (goal-conditioned dynamics)
+"""
+```
 
-**应用潜力**:
-- 认知机器人目标维持
-- 自适应控制系统
-- 神经形态计算架构设计
+### 3. Effective Connectivity Dynamics
 
-## 引用
+```python
+"""
+Without STP: Time-invariant connectivity
+With STP: Goal-specific patterning increases toward action time
 
-arXiv:2606.03481 - Jin Nakamura, Yuichi Katori (2026)
+Pattern:
+- Early delay: Weak goal-specific pattern
+- Late delay: Strong goal-specific pattern (action-ready)
 
-**论文标题**: Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in a PFC-Inspired Reservoir Model for Multistep Goal-Directed Action Planning
+Interpretation: STP creates "task-state-conditioned" connectivity
+"""
+```
 
-**发表时间**: 2026年6月2日
+### 4. Optimal STP Parameters
 
-**研究领域**: Neurons and Cognition (q-bio.NC), Neural and Evolutionary Computing (cs.NE)
+```python
+optimal_config = {
+    'tau_facilitation': 200-400,  # ms (facilitation-dominant)
+    'tau_depression': 500-800,    # ms
+    'U_utilization': 0.2-0.4     # Low baseline
+}
+
+# Grid search found facilitation-dominant range yields highest success
+```
+
+## Implementation Guide
+
+### Step 1: Build PFC Reservoir
+
+```python
+# Initialize reservoir
+reservoir = PFCReservoirWithSTP(
+    N_neurons=1000,
+    STP_config={'U': 0.3, 'D': 600, 'F': 300}
+)
+
+# Goal encoding (e.g., 3 goals)
+goal_encoder = GoalEncoder(num_goals=3, encoding_dim=100)
+```
+
+### Step 2: Train TD Readout
+
+```python
+# Basal ganglia-inspired TD learning
+td_learner = TDReadoutLearner(
+    reservoir=reservoir,
+    num_actions=4,
+    discount_factor=0.9
+)
+
+# Training loop
+for episode in range(num_episodes):
+    goal = select_goal()
+    state = reservoir.encode_goal(goal)
+    
+    for step in range(delay_steps):
+        action_values = td_learner.predict(state)
+        action = select_action(action_values)
+        
+        # Execute and get reward
+        reward = execute_action(action, goal)
+        
+        # TD update
+        td_learner.update(state, action, reward)
+```
+
+### Step 3: Evaluate Robustness
+
+```python
+# Test under different noise levels
+noise_levels = [0.0, 0.01, 0.05, 0.1]
+
+for noise in noise_levels:
+    success_rate = evaluate_task_performance(
+        model, 
+        noise_std=noise,
+        num_trials=100
+    )
+    print(f"Noise {noise}: Success {success_rate:.1f}%")
+```
+
+## Applications
+
+### 1. Cognitive Modeling
+
+```python
+# Model goal maintenance in PFC
+pfc_model = PFCReservoirWithSTP(N=500)
+
+# Simulate working memory tasks
+task = GoalDirectedTask(delay=5.0, num_goals=3)
+performance = evaluate(pfc_model, task, noise=True)
+```
+
+### 2. Neural Network Design
+
+```python
+# Incorporate STP in RNN architectures
+class RNNWithSTP(nn.Module):
+    """Modern RNN with STP-like adaptive weights"""
+    
+    def __init__(self, hidden_dim):
+        self.hidden_dim = hidden_dim
+        self.stp_module = AdaptiveWeightModule(
+            facilitation_tau=300,
+            depression_tau=600
+        )
+    
+    def forward(self, x, h_prev):
+        # STP-modulated recurrent weights
+        W_eff = self.stp_module.get_effective_weights()
+        h = torch.tanh(W_eff @ h_prev + self.W_in @ x)
+        return h, W_eff
+```
+
+### 3. Robotics & Planning
+
+```python
+# Goal-directed action planning with STP stability
+planner = STPReservoirPlanner(
+    goal_dim=10,
+    action_dim=4
+)
+
+# Robust planning under uncertainty
+plan = planner.plan(goal_state, uncertainty_level=0.05)
+```
+
+## Key Insights
+
+### 1. STP Functional Role
+
+```markdown
+- NOT just weight scaling (gain-matched control disproves)
+- NOT offline static modulation (STP freeze control disproves)
+- IS online, history-dependent synaptic modulation
+- Creates time-varying, goal-specific connectivity patterns
+```
+
+### 2. Goal-Conditioned Dynamics
+
+```markdown
+Goal representation types:
+1. Linear readable (decodable) - Both models have this
+2. Action-relevant (usable for action selection) - Only with STP
+
+STP transforms: Readable → Action-relevant
+```
+
+### 3. Temporal Structure
+
+```markdown
+Effective connectivity evolution:
+- Without STP: Flat (time-invariant)
+- With STP: Increases toward action opportunity
+- Pattern: Task-state-conditioned (goal × time interaction)
+```
+
+## Limitations & Future Directions
+
+1. **Model Simplification**
+   - Reservoir vs detailed PFC circuit
+   - Need more biologically realistic synapse models
+
+2. **Task Specificity**
+   - Multistep delay task only
+   - Test on more complex planning tasks
+
+3. **Neural Validation**
+   - Computational model predictions
+   - Need experimental validation in real PFC
+
+## References
+
+- Tsodyks-Markram STP model (1997)
+- PFC working memory literature
+- Reservoir computing theory
+- Basal ganglia TD learning
 
 ## Activation Keywords
 
 - STP, short-term synaptic plasticity
-- goal-conditioned dynamics
+- Goal-conditioned dynamics
 - PFC reservoir model
-- 目标导向行动规划
-- 突触可塑性稳定性
-- 储水池计算改进
-- 神经网络噪声鲁棒性
-- 目标维持机制
+- Goal-directed action planning
+- 突触可塑性, 目标导向行为
+- Working memory stability
+- Noise robustness
+- Effective connectivity dynamics

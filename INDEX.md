@@ -1,5 +1,14 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### BEAST3D: Animal Behavioral Analysis via 3D Gaussian Splatting
+- [[beast3d-animal-behavioral-neural-encoding]] - 3D Gaussian splatting + ViT自监督动物行为分析框架，从多视角视频学习3D表征，支持新颖视角合成、姿态估计、神经编码，仅需4视角 (arXiv: 2606.02937)
+  - 自监督预训练：ViT预测3D Gaussian splats，可微分渲染重构held-out视角
+  - 稀疏视角重建：已知相机参数条件化，无需密集重叠视角（实验室设置）
+  - 跨物种评估：4种动物验证，视角不变特征迁移到三下游任务
+  - **Activation**: BEAST3D, 3D Gaussian splatting, animal behavior, neural encoding, multi-view video, self-supervised, vision transformer, behavioral neuroscience
+
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
 ### Mapping Whisper Representations to Human ECoG Responses
 - [[whisper-ecog-alignment-neural-encoding]] - Whisper语音模型与ECoG神经响应对齐，中间层最强脑对齐，时间解析编码器+音素可解释分析揭示解剖一致性组织 (arXiv: 2606.02305v1)
   - 层级对齐：Whisper中间层（Encoder 5-8）与神经活动最强对应
