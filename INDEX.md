@@ -1,3 +1,13 @@
+## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### Robust Quantum Control Systems
+- [[robust-quantum-control-systems]] - 鲁棒量子控制系统工程方法论：H-infinity控制、滑模控制、量子贝叶斯网络可靠性分析的综合框架 (DOI: 10.1016/b978-0-443-14081-5.00021-0, 10.1016/b978-0-443-14081-5.00160-4)
+  - H-infinity量子反馈控制：最小化最坏情况扰动对量子系统的影响
+  - 相干控制vs测量反馈：保持量子相干性的无测量控制策略
+  - 量子DFS可靠性评估：组合系统可靠性分析的量子算法
+  - 量子贝叶斯网络：无人系统可靠性分析的概率建模
+  - **Activation**: quantum control, robust control, H-infinity, quantum reliability, coherent control, quantum feedback, sliding mode control, quantum Bayesian networks, fault-tolerant control, systems engineering
+
 ## 2026-06-03 - Medicine + Quantum (Cron Job)
 
 ### QML Healthcare Diagnosis - 量子机器学习医疗诊断统一框架
