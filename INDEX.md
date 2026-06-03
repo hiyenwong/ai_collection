@@ -1,3 +1,12 @@
+## 2026-06-03 - Neuroscience Research (Cron Job - Hourly)
+
+### Formalizing the Binding Problem
+- [[formalizing-binding-problem]] - 信息论形式化绑定问题，ViT绑定信息测量方法论，时空tokens对比分析，ICML 2026，揭示绑定作为视觉推理关键要素 (arXiv: 2606.03976)
+  - 核心创新：I(Features ; Objects | Patches)条件互信息定义，量化绑定信息
+  - 关键发现：ViTs确实学习绑定信息，空间tokens绑定优于[CLS] token
+  - 性能关联：高绑定信息 → 强视觉识别与推理，特征共享场景错误预测
+  - **Activation**: binding problem, feature binding, object composition, Vision Transformer, information-theoretic binding, visual reasoning, scene understanding, feature misattribution
+
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
 ## 2026-06-03 - Medicine (Cron Job)
