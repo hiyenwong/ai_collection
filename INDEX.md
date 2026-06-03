@@ -1,3 +1,12 @@
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### EvoBrain: EEG 基础模型跨任务持续学习
+- [[evobrain-eeg-continual-learning]] - Neuro-Spectral Task Normalization + Response-Affinity Distillation 实现 EEG foundation model 跨异构BCI任务统一解码，6任务平均准确率91.2%，遗忘率<1% (arXiv: 2606.01767)
+  - NSN: 对齐新任务历史统计，校准神经谱响应偏移（alpha/beta/gamma bands）
+  - RAD: 谱兼容性选择性迁移 + 时间衰减回放缓解灾难性遗忘
+  - 持续学习范式突破静态微调限制，存储开销 O(1)
+  - **Activation**: EEG foundation model, continual learning, BCI cross-task, neuro-spectral normalization, response-affinity distillation, 持续学习, EEG基础模型, 跨任务BCI
+
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
 
 ### Robust Quantum Control Systems
