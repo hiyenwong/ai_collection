@@ -1,3 +1,20 @@
+## 2026-06-03 - Medicine + Quantum Computing (Cron Job)
+
+### Quantum machine learning for predicting anastomotic leak: a clinical study
+- [[quantum-clinical-benchmarking]] - QNN临床基准测试方法论：ZZFeatureMap+EfficientSU2/RealAmplitudes在200人结直肠手术数据集上超越经典模型，10次独立运行统计验证，临床敏感度固定下优化特异性 (DOI: 10.1038/s41598-026-44402-x)
+  - 核心创新：ZZFeatureMap编码 + EfficientSU2-BFGS最高AUC / RealAmplitudes-CMA-ES最高Average Precision
+  - 关键发现：83.3%临床敏感度下，QNN特异性显著优于经典基线（logistic回归、MLP、boosting）
+  - 统计可靠性：10次独立优化运行取均值，AUC+Average Precision双报告
+  - 硬件噪声模拟：真实噪声条件下的性能分布测试
+  - **Activation**: quantum clinical benchmark, QNN medical validation, anastomotic leak prediction, ZZFeatureMap, EfficientSU2, RealAmplitudes, clinical sensitivity-specificity tradeoff, quantum healthcare benchmarking, Nature Scientific Reports
+
+### Performance evaluation of quantum support vector machine for COVID-19 biomarker analysis
+- [[quantum-clinical-benchmarking]] - QSVM生物标志物分析：振幅/角度/ZZ特征图/投影量子核对比，性能驱动特征重要性排序，双队列验证 (DOI: 10.1016/j.cmpb.2026.109343)
+  - 核心创新：Ridge回归特征排序 → 高低重要性分组 → 经典SVM vs QSVM系统对比
+  - 量子核测试：振幅编码、角度编码、ZZ特征图、投影量子核四种方法
+  - 双队列验证：Cleveland Clinic + Swedish Medical Center独立数据集
+  - **Activation**: quantum SVM, QSVM, quantum kernel, COVID-19 biomarker, multi-omics, proteomic, metabolomic, feature importance, amplitude encoding, ZZ feature map
+
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
 ### A Shared Valence Axis Across Modern LLMs and Human EEG: The Saturation Regularity
