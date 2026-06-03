@@ -1,5 +1,12 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### MuHL: Multi-Scale Hypergraph Learning for High-Order Brain Connectivity
+- [[multi-scale-hypergraph-brain-connectivity]] - Multi-scale hypergraph learning (MuHL) 超越 pairwise GNNs，自适应学习动态超边捕获跨多脑区高阶依赖，AD/PD 分类性能显著提升 (arXiv: 2606.03310, ICML 2026)
+  - 动态超边构造：非预定义，连续学习跨越多分辨率图信号
+  - 多尺度特征：精细粒度（单ROI）→ 中粒度（聚类）→ 粗粒度（网络模块）分层聚合
+  - 神经退行性疾病分类：阿尔茨海默病/帕金森病阶段诊断 + ROI重要性识别
+  - **Activation**: hypergraph brain connectivity, higher-order brain network, multi-scale hypergraph, MuHL, Alzheimer's GNN, Parkinson's classification, ICML 2026, brain ROI analysis
+
 ### EvoBrain: EEG 基础模型跨任务持续学习
 - [[evobrain-eeg-continual-learning]] - Neuro-Spectral Task Normalization + Response-Affinity Distillation 实现 EEG foundation model 跨异构BCI任务统一解码，6任务平均准确率91.2%，遗忘率<1% (arXiv: 2606.01767)
   - NSN: 对齐新任务历史统计，校准神经谱响应偏移（alpha/beta/gamma bands）
