@@ -1,5 +1,20 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+## 2026-06-03 - Medicine (Cron Job)
+
+### GFFMERGE: Efficient Merging of Graph Neural Force Fields and Beyond
+- [[gffmerge-model-merging-gnns]] - Closed-form model merging for GNNs via convex embedding alignment with analytical solution, enabling near-quantum accuracy atomistic simulations without retraining (arXiv: 2606.03232)
+  - Exploits linear structure of message-passing layers for weight-space merging
+  - 5-27x speedup vs joint training on MD17/MD22/LiPS20 benchmarks
+  - **Activation**: GNN model merging, neural force field, molecular simulation, quantum accuracy GNN, convex embedding alignment
+
+### Squeezed-state semi-device-independent quantum randomness generation
+- [[squeezed-state-quantum-randomness-generation]] - Closed-form Shannon-rate bounds for certified quantum randomness generation with squeezed-coherent BPSK sources, correcting overestimation from projective-only POVM treatments (arXiv: 2606.03898)
+  - Includes deterministic extreme points in binary-qubit POVM optimization for correct rates
+  - Analyzes trade-off between squeezing and certified randomness in lossless/lossy regimes
+  - **Activation**: quantum randomness generation, squeezed state QRNG, semi-device-independent, BPSK quantum, certified randomness
+
+
 ### Quadratic Integrate-and-Fire Neurons Exhibit Less Fragmented Loss Landscapes and Outperform LIF in Spike-Based Gradient Descent
 - [[qif-neurons-gradient-descent-advantage]] - QIF神经元连续脉冲动力学实现平滑梯度下降，损失景观不碎片化，Spiking Heidelberg Digits性能优越，解决LIF脉冲消失/静默神经元问题 (arXiv: 2606.03935)
   - 核心发现：QIF连续脉冲时序 vs LIF不连续阈值跳跃 → 平滑梯度流
