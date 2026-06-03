@@ -1,4 +1,13 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job - Hourly)
+## 2026-06-03 - Medicine (Cron Job)
+
+### Improving Quantum Recurrent Neural Networks with Amplitude Encoding
+- [[amplitude-encoding-qrnn]] - EnQode approximate amplitude encoding + magnitude augmentation + circuit depth reduction for QRNN time series forecasting (arXiv: 2508.16784)
+  - EnQode replaces O(2^n) amplitude encoding with polynomial-depth approximation
+  - Magnitude augmentation recovers information lost during normalization
+  - Reduced-depth circuit architecture = less noise on NISQ hardware
+  - **Activation**: qrnn, quantum recurrent, amplitude encoding, EnQode, quantum time series, quantum sequence model
+
 
 ### Formalizing the Binding Problem
 - [[formalizing-binding-problem]] - 信息论形式化绑定问题，ViT绑定信息测量方法论，时空tokens对比分析，ICML 2026，揭示绑定作为视觉推理关键要素 (arXiv: 2606.03976)
