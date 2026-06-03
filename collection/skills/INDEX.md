@@ -1,4 +1,16 @@
 
+## 2026-06-03 - Quantum ML Healthcare Research (Cron Job)
+
+### Quantum machine learning for smart healthcare applications
+- [[quantum-ml-healthcare]] - Enhanced existing skill with smart healthcare patterns and QML-for-genomics methodology (Crossref: 10.53388/mdm202609013)
+  - QML applied to smart/IoT healthcare ecosystems, wearable integration with quantum edge computing
+  - **Activation**: smart healthcare, quantum ML healthcare, QML genomics, quantum edge computing
+
+### Quantum Machine Learning Algorithms for Genome Disease Diagnosis
+- [[quantum-ml-healthcare]] - QML for high-dimensional genomic SNP data classification (Crossref: 10.22541/au.175924949.93262371/v1)
+  - Handles ultra-high-dimensional genomic feature spaces where classical ML struggles
+  - **Activation**: quantum genome, SNP classification, genomic disease diagnosis, high-dimensional QML
+
 ## 2026-06-02 - Neuroscience Research (Cron Job)
 
 ### On the synaptic matrix eigenvalues of sparsely connected neural networks
