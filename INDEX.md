@@ -1,5 +1,14 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+### Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
+- [[predictive-coding-equilibrium-propagation-imagenet]] - 首次ImageNet规模验证预测编码网络+平衡传播训练，VGG10 PCN达到13.23% top-5错误率，接近反向传播12.2%基线，证明生物可解释训练方法可扩展性 (arXiv: 2606.03584)
+  - 核心创新：Centered EP变体 + 新颖PCN平衡方案，首次大规模验证
+  - 理论意义：验证预测编码理论在大规模任务的可行性，支持生物可解释训练
+  - 应用场景：Neuromorphic硬件训练、生物可解释AI、能量基生成模型
+  - **Activation**: 预测编码网络, PCN, 平衡传播, EP, ImageNet大规模, 能量基模型, 生物可解释训练, VGG预测编码, neuromorphic训练, 替代反向传播
+
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
 ### Neuron Populations Exhibit Divergent Selectivity with Scale
 - [[neuron-populations-scale-selectivity]] - Rosetta Neurons次线性幂律增长 + 神元极化效应（选择性增强/单语义化），神经元层面scaling law理论，语言模型30B+视觉模型5B验证 (arXiv: 2606.03990)
   - 核心发现：N_rosetta = M^α (α<1)，神元比例下降但选择性上升
