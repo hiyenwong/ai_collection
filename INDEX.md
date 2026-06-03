@@ -1,6 +1,15 @@
-## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
-
-### NeuroSymbolic Robustness Analysis for Discrete Systems
+1|## 2026-06-04 - Neuroscience Research (Cron Job)
+     2|
+     3|### Mapping Whisper Representations to Human ECoG Responses
+     4|- [[whisper-ecog-alignment-neural-encoding]] - Whisper语音模型与ECoG神经响应对齐，中间层最强脑对齐，时间解析编码器+音素可解释分析揭示解剖一致性组织 (arXiv: 2606.02305v1)
+     5|  - 层级对齐：Whisper中间层（Encoder 5-8）与神经活动最强对应
+     6|  - 时间结构：高分辨率ECoG需循环+注意力捕获时间依赖
+     7|  - 音素组织：编码相关电极呈解剖学一致的音素类别分布
+     8|  - **Activation**: whisper, ecog, neural encoding, speech brain alignment, time-resolved modeling, phoneme interpretability, cortical speech processing, layer-wise alignment
+     9|
+    10|## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+    11|
+    12|### NeuroSymbolic Robustness Analysis for Discrete Systems
 - [[neurosymbolic-robustness-analysis]] - 神经符号鲁棒性分析框架：LLM推理层筛选可行偏差转移 + 符号验证层计算鲁棒性保证，解决离散事件系统鲁棒性分析的可扩展性与保守性问题 (arXiv: 2606.03872)
   - 神经层：LLM从系统模型+规范+领域知识推断可行偏差转移
   - 符号层：在缩减偏差集上计算离散鲁棒性保证
