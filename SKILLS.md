@@ -27,8 +27,37 @@ The system:
 
 ## Skill Structure
 
+Skills are organized into category subdirectories:
+
 ```
-skill-name/
+collection/skills/
+├── agent-tools/              # Agent frameworks, CLI tools, dev utilities
+├── ai-safety-eval/           # AI safety, alignment, evaluation, benchmarks
+├── data-retrieval/           # Data pipelines, search, retrieval, RAG
+├── deployment-optimization/  # MLOps, model serving, quantization, compression
+├── general-ml/               # General ML/DL concepts, training, optimization
+├── healthcare-bio/           # Medical AI, bioinformatics, drug discovery
+├── knowledge-graph/          # KG construction, graph neural networks, ontology
+├── multi-agent-rl/           # Multi-agent systems, reinforcement learning, robotics
+├── neuroscience/             # Brain networks, EEG, cognitive science, neuroimaging
+├── nlp-llm/                  # Language models, transformers, NLP tasks
+├── other/                    # Uncategorized skills
+├── physics-math/             # Physics-informed ML, mathematical methods, complex systems
+├── quantum/                  # Quantum computing, quantum ML, quantum sensing
+├── reasoning-bayesian/       # Bayesian inference, causal reasoning, uncertainty
+├── security-privacy/        # Cryptography, privacy, adversarial ML, compliance
+├── signal-control-systems/  # Signal processing, control theory, time series, MPC
+├── software-engineering/     # Code generation, dev tools, testing, infrastructure
+├── spiking-neuromorphic/     # SNNs, neuromorphic computing, spike-based models
+├── vision-generative/        # Computer vision, generative models, GANs, diffusion
+├── README.md                 # Skills overview
+└── SKILL.md                  # This file
+```
+
+Each skill directory contains:
+
+```
+<category>/skill-name/
 ├── SKILL.md              # Main skill documentation and instructions
 ├── references/           # Reference documentation (optional)
 │   ├── api-docs.md
@@ -197,19 +226,22 @@ Don't create a skill when:
 ### Step 1: Define Purpose
 What does this skill do? What problems does it solve?
 
-### Step 2: Identify Triggers
+### Step 2: Choose a Category
+Select the most appropriate category from the directory structure above. If the skill spans multiple categories, place it in the most specific one.
+
+### Step 3: Identify Triggers
 What keywords or phrases should activate this skill?
 
-### Step 3: Document Instructions
+### Step 4: Document Instructions
 Write clear, step-by-step instructions for the agent.
 
-### Step 4: Add References
+### Step 5: Add References
 Include API docs, guides, and examples.
 
-### Step 5: Test Thoroughly
+### Step 6: Test Thoroughly
 Test with various prompts and edge cases.
 
-### Step 6: Iterate
+### Step 7: Iterate
 Refine based on usage and feedback.
 
 ## Skill Best Practices
@@ -387,7 +419,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
 ## Available Skills
 
 ### OpenCode + Oh My OpenCode
-- **Location:** `collection/skills/opencode/`
+- **Location:** `collection/skills/agent-tools/opencode/`
 - **Purpose:** Open source AI coding agent with multi-agent orchestration and ultrawork mode
 - **Triggers:** opencode, ultrawork, ulw, oh-my-opencode, coding agent
 - **Tools:** exec, read, write, edit, process
@@ -398,7 +430,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - MCP integration (Exa, Context7, Grep.app)
 
 ### Claude Code
-- **Location:** `collection/skills/claude-code/`
+- **Location:** `collection/skills/agent-tools/claude-code/`
 - **Purpose:** Anthropic's official AI-powered coding companion
 - **Triggers:** claude-code, claude code, @anthropic, anthropic coding
 - **Tools:** exec, read, write, edit, process
@@ -409,7 +441,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - MCP, Hooks, Skills, and Agents support
 
 ### OpenSpec
-- **Location:** `collection/skills/openspec/`
+- **Location:** `collection/skills/agent-tools/openspec/`
 - **Purpose:** Specification-driven framework with Gherkin syntax for requirements
 - **Triggers:** openspec, open spec, specification, gherkin, scenario, bdd
 - **Tools:** read, write, edit, memory
@@ -421,7 +453,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - AI-friendly structured format
 
 ### AkShare
-- **Location:** `collection/skills/akshare/`
+- **Location:** `collection/skills/agent-tools/akshare/`
 - **Purpose:** Chinese financial data interface library
 - **Triggers:** stock data, futures data, fund data, macro economics, akshare
 - **Tools:** exec (Python), read, write
@@ -434,7 +466,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Options, movies, news, ESG ratings
 
 ### Stock Analysis
-- **Location:** `collection/skills/stock-analysis/`
+- **Location:** `collection/skills/agent-tools/stock-analysis/`
 - **Purpose:** Comprehensive stock technical analysis with indicators, scoring, and visualization
 - **Triggers:** stock analysis, 股票分析, technical analysis, 技术分析, stock indicators, kdj, macd, rsi, boll
 - **Tools:** exec (Python), read, write
@@ -446,12 +478,12 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Markdown analysis reports
 
 ### Skill Extractor
-- **Location:** `collection/skills/skill-extractor/`
+- **Location:** `collection/skills/agent-tools/skill-extractor/`
 - **Purpose:** Meta-skill that identifies and extracts reusable skill patterns from conversations
 - **Triggers:** 提炼技能, 提取 skill, 生成技能, skill extractor, create skill from conversation
 
 ### Taiyi Jinhua Meditation
-- **Location:** `collection/skills/taiyi-jinhua-meditation/`
+- **Location:** `collection/skills/agent-tools/taiyi-jinhua-meditation/`
 - **Purpose:** 指导用户学习和实践基于《太乙金华宗旨》的道家冥想与回光守中法法门
 - **Triggers:** 冥想, meditation, 太乙金华宗旨, 回光守中, 打坐, 吕洞宾冥想
 - **Tools:** read, write
@@ -481,7 +513,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - Multi-language support (Chinese/English)
 
 ### Security Guardrails
-- **Location:** `collection/skills/security-guardrails/`
+- **Location:** `collection/skills/agent-tools/security-guardrails/`
 - **Purpose:** 强制性基础安全层，防止所有代理在响应中暴露密码、API Key、数据库凭据、私钥、Token 等敏感信息
 - **Triggers:** 所有代理默认激活 (default on for all agents)
 - **Tools:** read, write
@@ -493,7 +525,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - 面向用户的安全实践引导
 
 ### ICE Review
-- **Location:** `collection/skills/ice-review/`
+- **Location:** `collection/skills/agent-tools/ice-review/`
 - **Purpose:** 跨任务自我进化技能，基于 ICE (Investigate-Consolidate-Exploit) 策略进行任务回顾和知识提取
 - **Triggers:** ICE review, ICE 回顾, 任务回顾, task review, 知识巩固
 - **Tools:** read, write, edit, memory_search, memory_get
@@ -505,7 +537,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - 来源：arXiv:2401.13996
 
 ### Memory Retrieval
-- **Location:** `collection/skills/memory-retrieval/`
+- **Location:** `collection/skills/agent-tools/memory-retrieval/`
 - **Purpose:** 两阶段记忆检索，基于 MemRL 论文实现语义匹配 + 效用过滤的高质量记忆检索
 - **Triggers:** 记忆检索, memory retrieval, 查找知识, find knowledge, 两阶段检索
 - **Tools:** memory_search, memory_get, read, write
@@ -517,7 +549,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - 来源：arXiv:2601.03192
 
 ### Self-Challenge
-- **Location:** `collection/skills/self-challenge/`
+- **Location:** `collection/skills/agent-tools/self-challenge/`
 - **Purpose:** 自我挑战机制，基于 Agent0 论文实现双代理竞争模型驱动能力扩展
 - **Triggers:** 自我挑战, self challenge, 能力测试, capability test, 挑战任务
 - **Tools:** exec, read, write, memory_search, sessions_spawn
@@ -529,7 +561,7 @@ See the [skills-collection](https://github.com/your-org/skills-collection) repos
   - 来源：arXiv:2511.16043
 
 ### iamb Matrix CLI Operations
-- **Location:** `collection/skills/iamb-matrix-cli/`
+- **Location:** `collection/skills/agent-tools/iamb-matrix-cli/`
 - **Purpose:** Matrix/iamb 实操技能，覆盖注册、token 获取、Space ID 查询和空间子房间维护
 - **Triggers:** iamb, matrix cli, 用户注册, 获取 token, access token, space id, spaces id
 - **Tools:** exec (Python CLI), read, write

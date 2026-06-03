@@ -1,6 +1,8 @@
 # [Skill Name]
 
 > **Cross-tool compatibility:** This skill works with OpenClaw, Claude Code, Codex, Hermes, and OpenCode.
+>
+> **Category:** Choose from: `agent-tools` | `ai-safety-eval` | `data-retrieval` | `deployment-optimization` | `general-ml` | `healthcare-bio` | `knowledge-graph` | `multi-agent-rl` | `neuroscience` | `nlp-llm` | `other` | `physics-math` | `quantum` | `reasoning-bayesian` | `security-privacy` | `signal-control-systems` | `software-engineering` | `spiking-neuromorphic` | `vision-generative`. Place this skill under `collection/skills/<category>/`.
 
 ## Description
 

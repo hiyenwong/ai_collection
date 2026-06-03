@@ -150,16 +150,42 @@ From `docs/integration/agents-skills.md`:
 
 ### Skills in this Collection
 
+Skills are organized into category subdirectories under `collection/skills/`. Each category contains fewer than 1,000 entries.
+
 | Skill | Location | Purpose | Activation Keywords |
 |-------|----------|---------|-------------------|
-| **opencode** | `collection/skills/opencode/` | 开源AI编程代理，支持多代理编排和ultrawork模式 | opencode, ultrawork, ulw |
-| **claude-code** | `collection/skills/claude-code/` | Anthropic官方AI编程助手 | claude-code, anthropic coding |
-| **openspec** | `collection/skills/openspec/` | 规格驱动开发框架，使用Gherkin语法 | openspec, gherkin, bdd |
-| **akshare** | `collection/skills/akshare/` | 中国金融数据接口库 | stock data, akshare |
-| **stock-analysis** | `collection/skills/stock-analysis/` | 股票分析技能，提供技术指标和可视化 | stock analysis, technical indicators |
-| **consulting-report-search** | `collection/skills/consulting-report-search/` | 咨询/行业报告搜索与问答，优先使用艾瑞咨询免费报告 | 咨询报告搜索, 行业报告问答, 艾瑞报告, iresearch report |
-| **taiyi-jinhua-meditation** | `collection/skills/taiyi-jinhua-meditation/` | 指导基于《太乙金华宗旨》的道家冥想 | 冥想, meditation, 太乙金华宗旨, 回光守中 |
-| **security-guardrails** | `collection/skills/security-guardrails/` | 防止暴露密码/API Key/数据库凭据等敏感信息，所有代理强制激活 | default on (all agents) |
+| **opencode** | `collection/skills/agent-tools/opencode/` | 开源AI编程代理，支持多代理编排和ultrawork模式 | opencode, ultrawork, ulw |
+| **claude-code** | `collection/skills/agent-tools/claude-code/` | Anthropic官方AI编程助手 | claude-code, anthropic coding |
+| **openspec** | `collection/skills/agent-tools/openspec/` | 规格驱动开发框架，使用Gherkin语法 | openspec, gherkin, bdd |
+| **akshare** | `collection/skills/agent-tools/akshare/` | 中国金融数据接口库 | stock data, akshare |
+| **stock-analysis** | `collection/skills/agent-tools/stock-analysis/` | 股票分析技能，提供技术指标和可视化 | stock analysis, technical indicators |
+| **consulting-report-search** | `collection/skills/agent-tools/consulting-report-search/` | 咨询/行业报告搜索与问答，优先使用艾瑞咨询免费报告 | 咨询报告搜索, 行业报告问答, 艾瑞报告, iresearch report |
+| **taiyi-jinhua-meditation** | `collection/skills/agent-tools/taiyi-jinhua-meditation/` | 指导基于《太乙金华宗旨》的道家冥想 | 冥想, meditation, 太乙金华宗旨, 回光守中 |
+| **security-guardrails** | `collection/skills/agent-tools/security-guardrails/` | 防止暴露密码/API Key/数据库凭据等敏感信息，所有代理强制激活 | default on (all agents) |
+
+### Skill Categories
+
+| Category | Path | Description |
+|----------|------|-------------|
+| `agent-tools` | `collection/skills/agent-tools/` | Agent frameworks, CLI tools, workflow utilities |
+| `ai-safety-eval` | `collection/skills/ai-safety-eval/` | AI safety, alignment, evaluation, benchmarks |
+| `data-retrieval` | `collection/skills/data-retrieval/` | Data pipelines, search, retrieval, RAG |
+| `deployment-optimization` | `collection/skills/deployment-optimization/` | MLOps, model serving, quantization, compression |
+| `general-ml` | `collection/skills/general-ml/` | General ML/DL concepts, training, optimization |
+| `healthcare-bio` | `collection/skills/healthcare-bio/` | Medical AI, bioinformatics, drug discovery |
+| `knowledge-graph` | `collection/skills/knowledge-graph/` | KG construction, graph neural networks, ontology |
+| `multi-agent-rl` | `collection/skills/multi-agent-rl/` | Multi-agent systems, reinforcement learning, robotics |
+| `neuroscience` | `collection/skills/neuroscience/` | Brain networks, EEG, cognitive science, neuroimaging |
+| `nlp-llm` | `collection/skills/nlp-llm/` | Language models, transformers, NLP tasks |
+| `other` | `collection/skills/other/` | Uncategorized skills |
+| `physics-math` | `collection/skills/physics-math/` | Physics-informed ML, mathematical methods |
+| `quantum` | `collection/skills/quantum/` | Quantum computing, quantum ML, quantum sensing |
+| `reasoning-bayesian` | `collection/skills/reasoning-bayesian/` | Bayesian inference, causal reasoning, uncertainty |
+| `security-privacy` | `collection/skills/security-privacy/` | Cryptography, privacy, adversarial ML, compliance |
+| `signal-control-systems` | `collection/skills/signal-control-systems/` | Signal processing, control theory, time series |
+| `software-engineering` | `collection/skills/software-engineering/` | Code generation, dev tools, testing, infrastructure |
+| `spiking-neuromorphic` | `collection/skills/spiking-neuromorphic/` | SNNs, neuromorphic computing, spike-based models |
+| `vision-generative` | `collection/skills/vision-generative/` | Computer vision, generative models, GANs, diffusion |
 
 ## Project Structure Deep Dive
 
@@ -184,13 +210,27 @@ collection/
 │   │   └── assets/           # 图片等资源
 │   └── ...
 └── skills/
-    ├── skill-name/
-    │   ├── SKILL.md          # 技能定义（必需）
-    │   ├── examples/         # 使用示例
-    │   ├── references/       # 参考文档（如API文档）
-    │   ├── scripts/          # 辅助脚本（Python等）
-    │   └── assets/           # 图片等资源
-    └── ...
+    ├── agent-tools/          # Agent 框架、CLI 工具
+    ├── ai-safety-eval/       # AI 安全、对齐、评估
+    ├── data-retrieval/       # 数据管道、搜索、RAG
+    ├── deployment-optimization/  # MLOps、模型服务
+    ├── general-ml/           # 通用 ML/DL
+    ├── healthcare-bio/      # 医疗 AI、生物信息学
+    ├── knowledge-graph/      # 知识图谱、GNN
+    ├── multi-agent-rl/       # 多智能体、强化学习
+    ├── neuroscience/          # 神经科学、EEG
+    ├── nlp-llm/              # 语言模型、NLP
+    ├── other/                # 未分类
+    ├── physics-math/         # 物理启发的 ML、数学方法
+    ├── quantum/              # 量子计算、量子 ML
+    ├── reasoning-bayesian/   # 贝叶斯推理、因果推理
+    ├── security-privacy/     # 安全、隐私
+    ├── signal-control-systems/ # 信号处理、控制理论
+    ├── software-engineering/ # 软件工程
+    ├── spiking-neuromorphic/ # 脉冲神经网络
+    ├── vision-generative/    # 计算机视觉、生成模型
+    ├── README.md             # 技能总览
+    └── SKILL.md              # 技能规范
 ```
 
 ### Common Tasks
@@ -205,10 +245,12 @@ collection/
 #### Adding a New Skill
 
 1. 从模板创建目录结构
-2. 定义具体的激活关键词（避免通用词汇）
-3. 编写详细的分步指令
-4. 添加错误处理策略
-5. 更新 `SKILLS.md` 索引，并在需要时同步 `CLAUDE.md` 中的技能清单
+2. 确定分类（参考上方 Skill Categories 表）
+3. 在对应分类目录下创建：`collection/skills/<category>/<skill-name>/`
+4. 定义具体的激活关键词（避免通用词汇）
+5. 编写详细的分步指令
+6. 添加错误处理策略
+7. 更新 `SKILLS.md` 索引，并在需要时同步 `CLAUDE.md` 中的技能清单
 
 #### Working with Python Scripts
 

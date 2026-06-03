@@ -112,13 +112,40 @@ Then create a Pull Request on GitHub.
 
 **Skill Checklist:**
 
-- [ ] Created directory in `collection/skills/skill-name/`
+- [ ] Determined the appropriate category from the table below
+- [ ] Created directory in `collection/skills/<category>/<skill-name>/`
 - [ ] Created `SKILL.md` with all required sections
 - [ ] Added usage examples in `examples/`
 - [ ] Added reference docs in `references/` if needed
 - [ ] Added helper scripts in `scripts/` if applicable
 - [ ] Updated main `SKILLS.md` with entry
 - [ ] Tested skill activation with trigger keywords
+
+### Skill Categories
+
+| Category | For skills about... |
+|----------|-------------------|
+| `agent-tools` | Agent frameworks, CLI tools, workflow utilities |
+| `ai-safety-eval` | AI safety, alignment, evaluation, benchmarks |
+| `data-retrieval` | Data pipelines, search, retrieval, RAG |
+| `deployment-optimization` | MLOps, model serving, quantization, compression |
+| `general-ml` | General ML/DL concepts, training, optimization |
+| `healthcare-bio` | Medical AI, bioinformatics, drug discovery |
+| `knowledge-graph` | KG construction, graph neural networks, ontology |
+| `multi-agent-rl` | Multi-agent systems, reinforcement learning, robotics |
+| `neuroscience` | Brain networks, EEG, cognitive science, neuroimaging |
+| `nlp-llm` | Language models, transformers, NLP tasks |
+| `other` | Uncategorized or cross-disciplinary skills |
+| `physics-math` | Physics-informed ML, mathematical methods, complex systems |
+| `quantum` | Quantum computing, quantum ML, quantum sensing |
+| `reasoning-bayesian` | Bayesian inference, causal reasoning, uncertainty |
+| `security-privacy` | Cryptography, privacy, adversarial ML, compliance |
+| `signal-control-systems` | Signal processing, control theory, time series |
+| `software-engineering` | Code generation, dev tools, testing, infrastructure |
+| `spiking-neuromorphic` | SNNs, neuromorphic computing, spike-based models |
+| `vision-generative` | Computer vision, generative models, GANs, diffusion |
+
+**Category selection rule:** Place the skill in the most specific matching category. For cross-disciplinary skills (e.g., quantum + neuroscience), prefer the more specific domain category. If unsure, use `other`.
 
 ## Code Style
 
