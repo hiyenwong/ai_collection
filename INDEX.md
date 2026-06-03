@@ -1,3 +1,12 @@
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
+### A Shared Valence Axis Across Modern LLMs and Human EEG: The Saturation Regularity
+- [[valence-axis-llm-eeg-saturation-regularity]] - LLM效价轴映射人类EEG，揭示饱和规律性：任务监督饱和盆地，额外对齐扭曲残余，残余多样性集成提升解码准确率10.5% (arXiv: 2606.00129)
+  - 核心创新：14个LLM的V-axis从9个情感句子构建 → 单线性投影映射EEG → 36个EEG分类器自发发现相同方向
+  - 饱和规律性：任务标签驱动网络到目标方向 → 盆地饱和 → 额外监督主要扭曲（不改善）→ 残余接收极少梯度
+  - 残余集成解决方案：跨残余多样性集成（不监督盆地）→ FACED+10.5%准确率，SEED-V相同效果
+  - **Activation**: valence axis, LLM EEG alignment, saturation regularity, emotional valence decoding, brain-language model alignment, residual ensemble, EEG emotion classification
+
 ## 2026-06-03 - Neuromorphic RNN Learning & Speech Recognition (Cron Job)
 
 ### Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks
