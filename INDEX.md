@@ -14,6 +14,29 @@
   - 统一机制：一个证书机制覆盖 backlog caps, service floors, mitigation caps, drift constraints, envelope contracts
   - **Activation**: packet network control, certified control, compositional certification, network dynamical systems, closed-loop control, Foster-Lyapunov drift, small-gain condition, envelope contracts
 
+## 2026-06-03 - Medicine (Cron Job)
+
+### Genotype-Conditioned Molecular Generation via Evidence-Grounded Multi-Objective Latent Perturbation in Diffusion Models
+- [[medical-quantum-diffusion-drug-discovery]] - 基因型条件分子生成：扩散模型中多目标潜在扰动同时优化敏感性、可合成性和结合合理性 (arXiv: 2606.01461)
+  - 癌症基因型编码为潜在条件向量指导分子生成
+  - 证据引导的潜在空间多目标约束扰动
+  - 量子启发能量函数评估分子结合亲和力
+  - **Activation**: drug discovery, molecular generation, cancer, diffusion model, genomics
+
+### Bayesian meta-learning for modeling Alzheimer's disease progression
+- [[bayesian-meta-learning-alzheimer-progression]] - 贝叶斯元学习建模阿尔茨海默病进展：群体先验学习+快速个体适应+不确定度量化 (arXiv: 2606.02228)
+  - 从多患者MRI数据集学习群体级先验
+  - 贝叶斯更新实现少样本快速个体适应
+  - 提供校准的疾病进展预测区间
+  - **Activation**: bayesian meta-learning, alzheimer, MRI, disease progression, personalized medicine
+
+### MedGym: A Unified Continuous-Time Benchmark for Dynamic Medical Treatment Reinforcement Learning
+- [[medgym-continuous-time-rl]] - 连续时间医学治疗强化学习基准：处理不规则测量间隔和个体治疗响应差异 (arXiv: 2606.01028)
+  - 患者生理连续时间随机过程建模
+  - 统一环境接口支持多治疗场景
+  - 标准化治疗质量、安全性和个性化评估指标
+  - **Activation**: reinforcement learning, medical treatment, continuous-time, benchmark, MedGym
+
 ## 2026-06-03 - Neuroscience Research (Cron Job - Latest Papers)
 
 ### What biology can, and cannot, tell us about conscious AI
