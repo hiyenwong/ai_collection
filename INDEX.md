@@ -39,6 +39,27 @@
   - Pauli Twirling：在相干误差存在下反转去极化
   - **Activation**: circuit balancing, error mitigation, unitary k-designs, depolarizing error, Pauli twirling, gate benchmarking, quantum chaos, IBM Fez, coherent error
 
+### Distributed Quantum Reinforcement Learning (MADQRL)
+- [[distributed-quantum-rl]] - 分布式量子强化学习框架，多智能体独立学习分摊联合训练负载，在合作-乒乓环境中比其他分布策略提升10%，比经典策略提升5% (arXiv: 2604.11131v1)
+  - 独立智能体：每个机器部署独立QRL智能体，各自量子电路参数化
+  - 经典协调：episode边界通过经典通信聚合结果
+  - 分布式优势：NISQ设备友好，每智能体电路深度要求更低
+  - **Activation**: distributed quantum computing, multi-agent RL, quantum reinforcement learning, distributed training, MADQRL, cooperative quantum systems
+
+### FLOPs-Aware Hybrid Quantum-Classical Neural Architecture Search
+- [[quantum-nas-flops-aware]] - 混合量子-经典神经网络架构搜索方法，将FLOPs作为计算复杂度代理，在NISQ硬件约束下搜索数据编码、电路结构、测量设计的Pareto最优架构 (arXiv: 2605.18345v1)
+  - 搜索空间：数据编码策略、电路ansatz、测量可观测量、经典-量子耦合
+  - FLOPs代理：统计量子门操作+经典神经网络FLOPs作为复杂度度量
+  - 硬件感知：在qubit数量、深度限制、原生门集约束下搜索
+  - **Activation**: quantum architecture search, HQNN design, FLOPs optimization, NISQ deployment, neural architecture search, hardware-aware quantum ML
+
+### MCTS-Based Quantum Data Encoding Discovery
+- [[mcts-quantum-encoding]] - 使用蒙特卡洛树搜索自动发现量子-经典神经网络最优数据编码电路，特征图有效秩作为性能预测指标加速搜索 (arXiv: 2605.18540v1)
+  - MCTS搜索：编码电路生成作为动作空间，高效探索组合空间
+  - 有效秩代理：特征图有效秩与编码性能相关，用于早期剪枝
+  - 非预测指标：纠缠能力和傅里叶分解对编码质量预测价值低
+  - **Activation**: MCTS encoding discovery, quantum data encoding, QCCNN, feature map optimization, effective rank, automated encoding search
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC-Inspired Reservoir
