@@ -1,3 +1,12 @@
+## 2026-06-03 - Neuroscience Research (Cron Job - Hourly)
+
+### Learning Dynamic Stability Landscapes in Synchronization Networks
+- [[learning-dynamic-stability-landscapes-synchronization-networks]] - Graph-to-image prediction paradigm: GNN encoder + CNN decoder predicts stability landscapes beyond scalar indices for neuroscience/power grids (arXiv: 2605.23708)
+  - Pioneers image-like per-node stability landscapes from network topology
+  - 20,000 graph dataset (20-node, 100-node) with landscape labels from conceptual oscillator model
+  - Applicable to brain synchronization, power grid frequency stability, circadian networks
+  - **Activation**: stability landscape, synchronization stability, graph-to-image prediction, oscillator networks, power grid stability, neural synchronization, basin stability, critical coupling, Kuramoto model
+
 ## 2026-06-03 - Medicine + Quantum Research (Cron Job)
 
 ### Quantum Machine Learning for Colorectal Cancer Data: Anastomotic Leak Classification and Risk Factors
