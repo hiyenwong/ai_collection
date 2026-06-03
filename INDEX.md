@@ -7,6 +7,13 @@
   - 神经退行性疾病分类：阿尔茨海默病/帕金森病阶段诊断 + ROI重要性识别
   - **Activation**: hypergraph brain connectivity, higher-order brain network, multi-scale hypergraph, MuHL, Alzheimer's GNN, Parkinson's classification, ICML 2026, brain ROI analysis
 
+### Plasticity Network Framework: Quantifying Structure-Dynamics Link
+- [[plasticity-network-framework]] - 网络可塑性量化框架：可塑性 = 系统规模 / 连接强度，链接结构到动力学状态（可塑态 vs 刚性态），应用脑网络、生态系统、神经网络分析 (arXiv: 2603.25180)
+  - 系统规模决定状态空间维度（2^N配置）
+  - 连接强度锁定状态轨迹（强连接 = 状态锁定）
+  - N/C比值分类动力学：高可塑态（灵活响应）vs 低可塑态（稳定约束）
+  - **Activation**: plasticity quantification, N/C ratio, complex systems, network structure, dynamical regimes, brain resilience, neural rigidity, state space accessibility
+
 ### EvoBrain: EEG 基础模型跨任务持续学习
 - [[evobrain-eeg-continual-learning]] - Neuro-Spectral Task Normalization + Response-Affinity Distillation 实现 EEG foundation model 跨异构BCI任务统一解码，6任务平均准确率91.2%，遗忘率<1% (arXiv: 2606.01767)
   - NSN: 对齐新任务历史统计，校准神经谱响应偏移（alpha/beta/gamma bands）
