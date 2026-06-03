@@ -9,6 +9,20 @@
 
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
 
+### Autonomous QEC via Deep RL
+- [[autonomous-qec-deep-rl]] - 利用课程学习+深度强化学习自主发现玻色子量子纠错码，最优码字为Fock态|4>和|7>，超越量子纠错盈亏平衡点 (arXiv: 2511.12482)
+  - 两阶段训练：快速探索发现可行编码空间 + 策略微调维持长期性能
+  - 主方程解析解加速RL训练，无需完整模拟
+  - 对相位阻尼和振幅阻尼噪声的鲁棒性验证
+  - **Activation**: autonomous quantum error correction, AQEC, deep RL quantum, bosonic code discovery, curriculum learning quantum, Knill-Laflamme, engineered dissipation, breakeven threshold
+
+### Quantum Optimal Control via Irrep Distillation
+- [[quantum-optimal-control-irrep-distillation]] - 利用不可约表示蒸馏(IRD)方法实现里德堡原子阵列中Dicke流形的量子最优控制，线性维度抑制泄漏 (arXiv: 2606.02283)
+  - IRD捕获对称子空间与泄漏误差空间的耦合，仅用线性缩放希尔伯特维度
+  - 结合GrAPE脉冲工程实现少局部寻址的GHZ/Dicke态生成
+  - 量子速度极限分析与脉冲保真度基准测试
+  - **Activation**: quantum optimal control, Dicke manifold, irrep distillation, Rydberg atom control, GRAPE, many-body quantum control, GHZ state generation
+
 ### Robust Quantum Control Systems
 - [[robust-quantum-control-systems]] - 鲁棒量子控制系统工程方法论：H-infinity控制、滑模控制、量子贝叶斯网络可靠性分析的综合框架 (DOI: 10.1016/b978-0-443-14081-5.00021-0, 10.1016/b978-0-443-14081-5.00160-4)
   - H-infinity量子反馈控制：最小化最坏情况扰动对量子系统的影响
