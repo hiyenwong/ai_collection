@@ -1,5 +1,14 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC-Inspired Reservoir
+- [[stp-stabilizes-goal-conditioned-dynamics]] - 短时程突触可塑性(STP)稳定目标条件化动力学，PFC储水池模型噪声下成功率从49.5%提升至89.2%，多步目标导向行动规划鲁棒性增强 (arXiv: 2606.03481)
+  - STP机制：动态调制目标依赖的有效循环连接，生成目标条件化动力学
+  - 延迟期目标维持：有效连接呈现目标特异性模式，试验后期增强准备行动执行
+  - 促进型STP优势：促进型主导时间常数与高成功率相关，历史依赖突触调制
+  - **Activation**: STP, short-term synaptic plasticity, goal-conditioned dynamics, PFC reservoir, goal-directed action, synaptic stability, reservoir computing robustness, goal maintenance, Cohen's dz=1.31
+
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
 ### MuHL: Multi-Scale Hypergraph Learning for High-Order Brain Connectivity
 - [[multi-scale-hypergraph-brain-connectivity]] - Multi-scale hypergraph learning (MuHL) 超越 pairwise GNNs，自适应学习动态超边捕获跨多脑区高阶依赖，AD/PD 分类性能显著提升 (arXiv: 2606.03310, ICML 2026)
   - 动态超边构造：非预定义，连续学习跨越多分辨率图信号
