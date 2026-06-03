@@ -1,3 +1,12 @@
+## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
+
+### Quantum Reservoir Computing with Neutral Atoms on a Small, Complex, Medical Dataset
+- [[quantum-reservoir-medical-regularization]] - Hardware execution on neutral-atom Rydberg processor shows beneficial regularization effect over noiseless emulation — mean compression + MI reduction (arXiv: 2602.14641)
+  - Hardware features more stable across data splits, less overfitting than emulation
+  - Structured time-dependent transformation: compression toward mean, progressive MI reduction
+  - QRC comparable accuracy with reduced variance for biomarker-based clinical prediction
+  - **Activation**: quantum reservoir computing, QRC, neutral atom, Rydberg, Aquila, hardware regularization, medical dataset, biomarker prediction, SHAP feature selection
+
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
 ### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in a PFC-Inspired Reservoir Model for Multistep Goal-Directed Action Planning
