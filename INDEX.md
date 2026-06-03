@@ -1,5 +1,14 @@
 ## 2026-06-03 - Neuroscience Research (Cron Job)
 
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in a PFC-Inspired Reservoir Model for Multistep Goal-Directed Action Planning
+- [[stp-stabilizes-goal-conditioned-dynamics]] - STP stabilizes goal-conditioned dynamics in PFC reservoir models for multistep action planning (arXiv: 2606.03481)
+  - Short-term synaptic plasticity provides 40% noise robustness gain (91.8% vs 49.5% success)
+  - Goal-conditioned effective connectivity evolves during delay period
+  - Facilitation-dominant STP time constants enable history-dependent synaptic modulation
+  - **Activation**: synaptic plasticity, reservoir computing, goal-conditioned dynamics, PFC model, action planning, temporal-difference learning, effective connectivity
+
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
 ### Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
 - [[predictive-coding-equilibrium-propagation-imagenet]] - 首次ImageNet规模验证预测编码网络+平衡传播训练，VGG10 PCN达到13.23% top-5错误率，接近反向传播12.2%基线，证明生物可解释训练方法可扩展性 (arXiv: 2606.03584)
   - 核心创新：Centered EP变体 + 新颖PCN平衡方案，首次大规模验证
