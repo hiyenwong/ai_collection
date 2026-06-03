@@ -1,3 +1,19 @@
+## 2026-06-03 - Systems Engineering Research (Cron Job)
+
+### Monitoring Agentic Systems Before They're Reliable
+- [[agentic-systems-monitoring-maturity]] - Agentic systems监控与成熟度分级方法论：三维评估框架(质量/适用性/效率)×三监控范围(单次/跨次/结构)，方差CV表征信号，FMEA严重性分类实现97%自动追踪 (arXiv: 2606.02494)
+  - 核心创新：部分集成阶段结构缺陷掩盖任务级错误 → 监控范围决定故障类型(CV=0.02/1.25/0.00)
+  - 关键发现：早期部署监控发现结构缺陷 → 任务级错误在结构缺陷存在时不可检测
+  - 成熟度模型：Stage 1结构表征 → Stage 2错误检测 → Stage 3可靠性追踪
+  - **Activation**: agentic systems monitoring, agent monitoring, agent triage, agentic systems reliability, agent maturity staging, FMEA, CV variance, structural defects, document-driven workflows
+
+### Certified Closed-Loop Control for Packet Networks: A Compositional Certification Framework
+- [[certified-closed-loop-control-packet-networks]] - 分组网络闭环控制的组合式认证框架：认证操作员介于提议器与数据面，候选动作投影到可执行动作满足证书，覆盖 backlog caps/service floors/Foster-Lyapunov drift/组合包络契约 (arXiv: 2606.02368)
+  - 核心创新：执行动作认证范式 → CERTIFIED/INFEASIBLE双分支 + 可审计包络z̄(t)下游组合
+  - 组合安全：操作员级安全 → 前馈组合安全 → 小增益条件闭环稳定
+  - 统一机制：一个证书机制覆盖 backlog caps, service floors, mitigation caps, drift constraints, envelope contracts
+  - **Activation**: packet network control, certified control, compositional certification, network dynamical systems, closed-loop control, Foster-Lyapunov drift, small-gain condition, envelope contracts
+
 ## 2026-06-03 - Neuroscience Research (Cron Job - Latest Papers)
 
 ### What biology can, and cannot, tell us about conscious AI
