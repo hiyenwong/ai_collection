@@ -1,3 +1,12 @@
+## 2026-06-03 - Medicine + Quantum Research (Cron Job)
+
+### Quantum Machine Learning for Colorectal Cancer Data: Anastomotic Leak Classification and Risk Factors
+- [[qml-colorectal-cancer-classification]] - F_beta-optimized QNN achieves 83.3% sensitivity vs 66.7% classical baseline for 14% prevalence anastomotic leak prediction (arXiv: 2604.13951)
+  - ZZFeatureMap + RealAmplitudes/EfficientSU2 ansatze with simulated noise testing
+  - Quantum feature spaces better prioritize minority class identification for low-prevalence clinical outcomes
+  - F_beta optimization (not accuracy) critical for clinical risk prediction where false negatives are costly
+  - **Activation**: quantum machine learning cancer, QNN clinical prediction, anastomotic leak, quantum minority class, F-beta optimized quantum, ZZFeatureMap medical, quantum sensitivity optimization
+
 ## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
 
 ### Quantum Reservoir Computing with Neutral Atoms on a Small, Complex, Medical Dataset
