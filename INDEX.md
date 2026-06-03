@@ -1,4 +1,21 @@
+## 2026-06-03 - Medicine + Quantum Mechanics (Cron Job)
+
+### Enhancing Blood Cells Classification using Hybrid Quantum Neural Networks
+- [[hqnn-blood-cell-classification]] - HQNN combining ResNet-50 with VQC for blood cell classification, 3.7% F1 improvement (arXiv: 2605.23324)
+  - Three-model comparison protocol isolates quantum contribution
+  - Robust on real IBM quantum hardware with modest degradation
+  - **Activation**: HQNN, hybrid quantum neural network, blood cell classification, quantum medical imaging, variational quantum circuit, ResNet quantum
+
 ## 2026-06-03 - Medicine + Quantum Research (Cron Job - Hourly)
+
+## 2026-06-03 - Neuroscience Research (Cron Job - Latest)
+
+### Assessing Region-Level EEG Contributions to Cognitive Workload Prediction
+- [[eeg-region-workload-prediction]] - 区域级EEG贡献评估方法论，大规模跨数据集分析揭示额叶/额中央区域最稳定预测效用，15-20%相对排名提升 (arXiv: 2606.02598)
+  - 区域隔离训练框架：仅使用解剖定义区域电极特征训练模型
+  - 额叶电极组优于全头皮基线，使用更少电极获得更高性能
+  - 额中央区域最稳定，后部/枕叶贡献不一致
+  - **Activation**: EEG workload, region-level EEG, frontal EEG, 额叶EEG, 认知负荷预测, EEG区域贡献
 
 ### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
 - [[hybrid-quantum-medical-classification]] - HQNN architecture integrating parameterized quantum circuits with multi-head attention in CNN backbone for breast cancer thermographic classification (arXiv: 2604.16953)
