@@ -1,3 +1,12 @@
+## 2026-06-03 - Neuroscience Research (Cron Job - arXiv API)
+
+### Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks
+- [[local-gradient-approximations-rnn]] - 动力学系统理论分析RFLO/tBPTT/BPTT学习动态差异，RFLO受限于低秩扰动、定性收敛行为差异，揭示生物可塑性约束影响 (arXiv: 2606.00243)
+  - RFLO解决方案限制为初始参数的低秩扰动（超出data-aligned设置仍成立）
+  - RFLO vs BPTT/tBPTT定性差异：不同固定点、稳定性、收敛率
+  - 理论框架：data-aligned线性RNN正交模态分解，解析tractable
+  - **Activation**: RNN training, local learning, RFLO, truncated BPTT, neuromorphic, biological learning, low-rank, gradient descent, learning dynamics, dynamical systems theory
+
 ## 2026-06-03 - Medicine + Quantum Mechanics (Cron Job)
 
 ### Enhancing Blood Cells Classification using Hybrid Quantum Neural Networks
