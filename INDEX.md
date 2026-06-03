@@ -1,3 +1,19 @@
+## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### NeuroSymbolic Robustness Analysis for Discrete Systems
+- [[neurosymbolic-robustness-analysis]] - 神经符号鲁棒性分析框架：LLM推理层筛选可行偏差转移 + 符号验证层计算鲁棒性保证，解决离散事件系统鲁棒性分析的可扩展性与保守性问题 (arXiv: 2606.03872)
+  - 神经层：LLM从系统模型+规范+领域知识推断可行偏差转移
+  - 符号层：在缩减偏差集上计算离散鲁棒性保证
+  - 优势：缩小解空间，避免分析不可能偏差，保持形式正确性
+  - **Activation**: neurosymbolic, robustness analysis, discrete systems, supervisory control, LLM reasoning, formal verification, transition deviations, safety properties, eess.SY
+
+### Circuit Balancing for Quantum Error Mitigation
+- [[circuit-balancing-error-mitigation]] - 电路平衡误差缓解方法：利用unitary k-design的Pauli支持分布特性，通过门基准测试+Pauli twirl估计和反转全局去极化误差，零双量子门开销，已在IBM Fez验证 (arXiv: 2606.03891)
+  - 核心洞察：k-design电路无Pauli支持偏好，可用于高效误差诊断
+  - 电路平衡：从门级误差数据估计全局去极化率
+  - Pauli Twirling：在相干误差存在下反转去极化
+  - **Activation**: circuit balancing, error mitigation, unitary k-designs, depolarizing error, Pauli twirling, gate benchmarking, quantum chaos, IBM Fez, coherent error
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC-Inspired Reservoir
