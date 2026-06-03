@@ -1,3 +1,10 @@
+## 2026-06-03 - 医学 (Wednesday - Medicine + Quantum Daily)
+
+### Improvise, Adapt, Overcome: An On-The-Fly Multifidelity Algorithm for Efficient Machine Learning
+- [[adaptive-multifidelity-quantum-ml]] - 自适应多保真机器学习框架用于量子化学，动态确定训练数据组成，降低数据成本达30x (arXiv: 2606.02662)
+  - 自适应on-the-fly MFML框架，无需预定义缩放因子，自动在各保真度间动态查询
+  - 相比单保真方法降低30x数据生成成本，比标准MFML提升5x
+  - **Activation**: multifidelity ML, quantum chemistry, drug discovery, cost-aware training, adaptive sampling
 ## 2026-06-03 - Neuroscience Research (Cron Job - arXiv API)
 
 ### Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks
