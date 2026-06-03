@@ -1,3 +1,17 @@
+## 2026-06-03 - Neuroscience Research (Cron Job)
+
+### Neural Fields as World Models
+- [[neural-fields-world-models]] - 同构世界模型保留感觉拓扑结构，物理预测变为几何传播而非抽象状态转移，运动门控神经场实现离线任务学习和身体表征涌现 (arXiv: 2602.18690)
+  - Motor-gated neural fields: 局部侧向连接 + 运动命令乘法调制特定通道
+  - 三实验验证：弹道预测无瞬移、离线策略改进、无标签身体选择性通道涌现
+  - **Activation**: neural field, world model, isomorphic, spatial topology, motor-gated, action-conditional, offline learning, embodied cognition
+
+### A Factorized Low-Rank RNN Framework for Uncovering Independent Neural Latent Dynamics and Connectivity
+- [[factorized-lowrank-rnn-independent-latent]] - FacRNN框架实现组间独立潜在动力学发现，VAE形式化 + 部分相关惩罚，猴子M1、小鼠电压成像数据验证，可解释连通性 (arXiv: 2511.13899)
+  - Group-wise independence: 潜在组间独立演化，组内灵活纠缠，明确计算角色分配
+  - VAE框架 + 部分相关惩罚鼓励组间独立性，合成数据/猴子M1/小鼠电压成像验证
+  - **Activation**: factorized RNN, low-rank RNN, independent latent, disentangled dynamics, group-wise independence, partial correlation
+
 ## 2026-06-03 - 医学 (Wednesday - Medicine + Quantum Daily)
 
 ### Improvise, Adapt, Overcome: An On-The-Fly Multifidelity Algorithm for Efficient Machine Learning
