@@ -48,6 +48,25 @@
   - Bridge between classical and quantum control systems engineering
   - **Activation**: inverse engineering, piston control, two-ion device, trapped-ion control, quantum-classical transition, optimal control
 
+### Hybrid Gaussian-exponential zero-noise extrapolation for periodic circuits
+- [[hybrid-qnz-zero-noise-extrapolation]] - Hybrid Gaussian-exponential ZNE using CLT on Pauli transfer for NISQ error mitigation (arXiv: 2605.29242)
+  - Proves noise amplification factor approaches log-normal distribution under Pauli diagonal errors
+  - Augments standard exponential ZNE with Gaussian variance corrections for periodic circuits
+  - **Activation**: zero-noise extrapolation, ZNE, noise extrapolation, gaussian exponential noise model, pauli error mitigation, periodic circuit noise, NISQ error mitigation
+
+### Spectral Fusion for Early State Exclusion in Quantum Spin Chains
+- [[spectral-fusion-quantum-state-transfer]] - Spectral analysis of perfect state transfer and early state exclusion in symmetric quantum spin chains (arXiv: 2606.04353)
+  - Maps spin chain dynamics to Jacobi matrix eigenvalue distributions and eigenvector symmetry
+  - Identifies conditions where state overlap vanishes before first PST occurrence
+  - **Activation**: perfect state transfer, PST, quantum spin chain, early state exclusion, jacobi matrix, spectral analysis quantum, quantum information transport
+
+### Monitored chaotic scattering
+- [[monitored-chaotic-scattering-rmt]] - Extends random matrix theory of chaotic scattering to monitored quantum dots via Kraus operator ensembles (arXiv: 2606.04794)
+  - Constructs Kraus operators from circular ensembles for time-resolved measurement
+  - Derives discrete-time quantum master equation for charge transfer with equipartition conjecture
+  - **Activation**: monitored chaotic scattering, random matrix theory scattering, kraus operators circular ensemble, quantum master equation scattering, charge transfer statistics, quantum dot monitoring
+
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Discrete Signaling Mediates Chaotic Regularization in RNNs
