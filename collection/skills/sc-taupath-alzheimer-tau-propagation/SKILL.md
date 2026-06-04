@@ -1,403 +1,453 @@
 ---
 name: sc-taupath-alzheimer-tau-propagation
-description: SC-TauPath framework for mapping tau propagation pathways in Alzheimer's disease using structural connectivity attribution. Combines Network Diffusion Model (NDM) with multilayer perceptron and gradient × input attribution to score SC edge contributions to tau prediction, generating multi-scale pathway maps validated against Braak staging anatomy.
+description: SC-TauPath 结构连接归因框架用于映射阿尔茨海默病 Tau 传播路径。结合网络扩散模型增强 MLP 与梯度×输入归因，生成多尺度通路图谱（骨干边、高流量路线、枢纽 ROI），验证 Braak 分期解剖结构。
 version: 1.0.0
-author: arxiv-2606.04066
+author: "arXiv:2606.04066 (Zhang et al.)"
+created: 2026-06-05
+last_updated: 2026-06-05
+tags: [neuroscience, alzheimer, tau-propagation, structural-connectivity, network-diffusion, attribution, interpretability, brain-network, neuroimaging, DTI, PET]
 arxiv_id: 2606.04066
-date_created: 2026-06-06
-source: arXiv q-bio.NC
-category: neuroscience
-keywords: Alzheimer's, tau propagation, structural connectivity, attribution, network diffusion model, Braak staging, gradient attribution, brain network
-activation_keywords: Alzheimer's, tau propagation, structural connectivity, attribution framework, Braak staging, network diffusion, SC-TauPath
-related_skills:
-  - brain-network-analysis
-  - alzheimer-prediction-fmri
-  - neurodegenerative-disease
-  - structural-functional-brain-gnn
+paper_title: "SC-TauPath: A Structural Connectivity Attribution Framework for Mapping Tau Propagation Pathways in Alzheimer's Disease"
+paper_authors: [Jing Zhang, Norman Scheel, Minheng Chen, Tong Chen, Yanjun Lyu, David C. Zhu, Rong Zhang, Dajiang Zhu]
+paper_date: 2026-06-02
+activation_keywords: [tau, tau propagation, Alzheimer, AD, structural connectivity, SC, attribution, network diffusion, Braak staging, DTI, PET, pathway mapping, interpretability, gradient attribution]
 ---
 
-# SC-TauPath: Structural Connectivity Attribution for Tau Propagation in Alzheimer's Disease
+# SC-TauPath: 结构连接归因框架用于映射阿尔茨海默病 Tau 传播路径
 
-**arXiv: 2606.04066** | **Authors**: Jing Zhang, Norman Scheel, Minheng Chen, Tong Chen, Yanjun Lyu, David C. Zhu, Rong Zhang, Dajiang Zhu | **Date**: 2026-06-02
+## 概述
 
-## Abstract
+SC-TauPath 是首个结合网络扩散模型增强神经网络与梯度归因方法的结构连接(SC)归因框架，从活体神经影像数据映射 Tau 蛋白传播路径。该方法将归因分数转化为多尺度通路图谱，验证 Braak 分期解剖结构，揭示结构连接编码区域性 Tau 分布的空间特异性信息。
 
-Understanding how structural connections are associated with tau propagation in Alzheimer's disease (AD) remains a central open question. Existing computational models either rely heavily on biophysical assumptions or lack neurobiologically interpretable pathway maps.
+**核心创新**：
+- 首个神经生物学可解释的 Tau 传播路径图谱方法
+- 网络扩散模型增强 MLP + 梯度×输入归因
+- 多尺度通路：骨干边、高流量路线、枢纽 ROI
+- ADNI 数据集验证：234 名参与者，DTI + Tau PET
 
-**SC-TauPath**: A structural connectivity (SC) attribution framework that maps tau propagation pathways from in vivo neuroimaging data. Combines Network Diffusion Model (NDM)-augmented multilayer perceptron with gradient × input attribution to score each SC edge's contribution to tau prediction, translating attribution scores into multi-scale pathway maps (backbone edges, high-traffic routes, and hub ROIs).
+## 核心理论框架
 
-**Validation**: Applied to 234 ADNI participants with paired DTI SC and 18F-Flortaucipir PET, SC-TauPath achieves strong cross-validated tau prediction and yields attribution-based pathway maps consistent with established Braak staging anatomy, demonstrating that SC encodes spatially specific information about regional tau distribution in AD.
+### 1. 研究问题
 
-## Core Methodology
+阿尔茨海默病 (AD) 中 Tau 蛋白如何沿结构连接传播？
 
-### 1. Network Diffusion Model (NDM) Integration
+**传统方法局限**：
+- **生物物理模型**：依赖大量假设参数
+- **数据驱动模型**：缺乏神经生物学可解释性
+- **路径可视化**：无法量化传播贡献
 
-**Background**: Network diffusion models simulate tau protein spread through brain structural connections, modeling trans-synaptic propagation.
+**SC-TauPath 解决方案**：
+- 结合生物物理原理与机器学习
+- 可解释归因分数 → 通路图谱
+- 多尺度量化传播路径
 
-**NDM-Augmented MLP Architecture**:
-- Input: Structural connectivity matrix from DTI
-- Hidden layers: NDM-inspired diffusion dynamics
-- Output: Regional tau distribution predictions
+### 2. 方法架构
 
-**Mathematical Framework**:
-```
-Tau propagation: dτ/dt = -ατ + βSC τ
-where:
-  τ = tau concentration vector
-  SC = structural connectivity matrix
-  α, β = diffusion parameters
-```
+#### 核心组件
 
-### 2. Gradient × Input Attribution
+**1. 网络扩散模型增强 MLP (NDM-augmented MLP)**
 
-**Attribution Mechanism**: Explainable AI approach to identify critical structural connectivity edges contributing to tau predictions.
+输入：
+- DTI 结构连接矩阵 (SC)
+- 区域性 Tau PET 数据
 
-**Implementation**:
+网络扩散模型：
+$$\tau(t) = \tau_0 e^{t \cdot W_{SC}}$$
+其中 $W_{SC}$ 是结构连接权重矩阵
+
+MLP 预测：
+$$\hat{\tau}_{region} = f_{MLP}(SC, \tau_{initial})$$
+
+**2. 梯度×输入归因**
+
+归因分数计算：
+$$A_{edge} = \frac{\partial \hat{\tau}}{\partial W_{SC}} \cdot W_{SC}$$
+
+量化每条 SC 边对 Tau 预测的贡献
+
+**3. 多尺度通路图谱生成**
+
+骨干边筛选：
+$$E_{backbone} = \{e | A_e > \theta_{backbone}\}$$
+
+高流量路线识别：
+$$R_{high-traffic} = \text{Path}(max \sum A_e)$$
+
+枢纽 ROI：
+$$ROI_{hub} = \{r | \sum_{e \in r} A_e > \theta_{hub}\}$$
+
+### 3. 数据与验证
+
+**数据集**：
+- ADNI (Alzheimer's Disease Neuroimaging Initiative)
+- 234 名参与者
+- DTI 结构连接 + 18F-Flortaucipir Tau PET
+
+**验证维度**：
+- 交叉验证 Tau 预测准确率
+- 与 Braak 分期解剖结构对比
+- 归因分数的空间特异性分析
+
+## 核心结果
+
+### 1. Tau 预测性能
+
+**交叉验证结果**：
+- 强预测准确率（具体指标见论文）
+- SC 编码区域性 Tau 分布信息
+- 验证结构连接-功能病理关联
+
+### 2. 通路图谱验证
+
+#### Braak 分期一致性
+
+| Braak 阶段 | 通路特征 | SC-TauPath 归因 |
+|-----------|---------|----------------|
+| I-II | 内嗅皮层、杏仁核 | 高归因分数区域 |
+| III-IV | 海马、前额叶 | 骨干边连接 |
+| V-VI | 新皮层广泛传播 | 高流量路线 |
+
+**关键观察**：
+- 归因分数符合 Braak 分期解剖
+- 验证 SC-TauPath 神经生物学可解释性
+- 多尺度图谱准确映射传播路径
+
+### 3. 归因分数空间特异性
+
+**骨干边特征**：
+- 连接 Braak 分期关键区域
+- 高贡献分数边集
+- 构成传播主干通路
+
+**高流量路线**：
+- 最大累积归因路径
+- 连接早期传播区域
+- 解释 Tau 扩散方向
+
+**枢纽 ROI**：
+- 高归因累积区域
+- Tau 传播关键节点
+- Braak 分期核心区域
+
+## 方法论应用指南
+
+### 实施步骤
+
+#### 1. 数据准备
+
+**DTI 结构连接**：
+- 扩散加权成像 (DWI) 数据
+- 白质纤维束追踪
+- ROI-to-ROI 连接矩阵构建
+
+**Tau PET 数据**：
+- 18F-Flortaucipir PET 扫描
+- 区域性 Tau 摄取值提取
+- 标准化与质量控制
+
+#### 2. 模型训练
+
+**NDM 增强 MLP**：
 ```python
-# Gradient × Input attribution
-def gradient_input_attribution(model, SC_matrix, tau_target):
-    # Forward pass
-    tau_pred = model(SC_matrix)
-    
-    # Compute gradient w.r.t. SC matrix
-    gradient = torch.autograd.grad(tau_pred, SC_matrix)
-    
-    # Attribution score: gradient × input
-    attribution = gradient * SC_matrix
-    
-    # Edge-level contribution scores
-    edge_scores = attribution.sum(dim=tuple(range(1, attribution.dim())))
-    
-    return edge_scores
+# 输入：SC matrix, Tau PET
+# 结构：MLP with NDM layer
+# 输出：预测的 Tau 分布
 ```
 
-**Key Innovation**: Translates gradient-based attribution into biologically interpretable pathway maps.
+**训练参数**：
+- 交叉验证策略
+- 早停防止过拟合
+- 正则化优化
 
-### 3. Multi-Scale Pathway Map Generation
+#### 3. 归因计算
 
-**Three-Level Representation**:
-
-1. **Backbone Edges**: Highest attribution SC connections
-   - Critical pathways for tau spread
-   - Identified as top-k edge scores
-
-2. **High-Traffic Routes**: Aggregated pathway sequences
-   - Multi-hop propagation paths
-   - Summed edge attributions along routes
-
-3. **Hub ROIs**: Regions with highest incoming/outgoing attribution
-   - Key propagation nodes
-   - Network hub identification
-
-**Generation Process**:
-```
-SC Matrix → NDM-MLP → Tau Prediction → Gradient × Input Attribution → 
-Edge Scores → Backbone Edges → High-Traffic Routes → Hub ROIs
-```
-
-## Key Findings
-
-### Validation Against Braak Staging
-
-**Braak Stages**: Established pathological progression pattern in AD:
-- Stage I-II: Transentorhinal/entorhinal regions
-- Stage III-IV: Limbic system (hippocampus, amygdala)
-- Stage V-VI: Neocortical regions
-
-**SC-TauPath Results**:
-| Braak Stage | SC-TauPath Identified Regions | Match Rate |
-|-------------|------------------------------|------------|
-| I-II | Entorhinal, transentorhinal | **High** |
-| III-IV | Hippocampus, amygdala, limbic | **High** |
-| V-VI | Neocortex, temporal, frontal | **High** |
-
-**Conclusion**: Attribution-based pathway maps validate against established Braak staging anatomy.
-
-### Performance Metrics
-
-**Dataset**: 234 ADNI participants
-- DTI-derived structural connectivity (SC)
-- 18F-Flortaucipir PET tau imaging
-
-**Results**:
-- Strong cross-validated tau prediction accuracy
-- Biologically interpretable pathway maps
-- Spatially specific SC-tau relationship identification
-
-## Application Domains
-
-### 1. Alzheimer's Disease Research
-
-**Research Applications**:
-- Tau propagation mechanism elucidation
-- Structural connectivity role in AD progression
-- Early-stage pathway identification
-- Therapeutic target discovery
-
-**Clinical Utility**:
-- Disease staging support
-- Progression prediction
-- Treatment planning
-- Biomarker identification
-
-### 2. Neuroimaging Analysis
-
-**Pipeline Integration**:
-```yaml
-sc_taupath_pipeline:
-  input:
-    - DTI structural connectivity
-    - Tau PET imaging (optional)
-  processing:
-    - NDM-MLP prediction
-    - Gradient attribution
-    - Pathway map generation
-  output:
-    - Regional tau predictions
-    - Backbone edges
-    - High-traffic routes
-    - Hub ROIs
-  validation:
-    - Braak staging comparison
-    - Cross-validation
-```
-
-### 3. Network Neuroscience
-
-**Brain Network Analysis**:
-- Structural-functional connectivity integration
-- Disease-specific network alterations
-- Propagation dynamics modeling
-- Hub identification in pathology
-
-## Implementation Guidelines
-
-### Step 1: Structural Connectivity Processing
-
-**DTI Pipeline**:
+**梯度×输入归因**：
 ```python
-# SC matrix extraction
-def extract_structural_connectivity(DTI_data):
-    # Tractography generation
-    tracts = tractography(DTI_data)
-    
-    # Region parcellation (e.g., AAL, Desikan-Killiany)
-    regions = parcellate(tracts, atlas)
-    
-    # Connectivity matrix
-    SC_matrix = count_connections(tracts, regions)
-    
-    # Normalization
-    SC_normalized = normalize(SC_matrix, method='log')
-    
-    return SC_normalized
+# 计算梯度
+grad = torch.autograd.grad(output, SC_weight)
+# 归因分数
+attribution = grad * SC_weight
 ```
 
-### Step 2: NDM-Augmented MLP Training
+**归因标准化**：
+- 相对贡献百分比
+- 空间特异性权重
+- 阈值筛选骨干边
 
-**Model Architecture**:
+#### 4. 通路图谱生成
+
+**骨干边提取**：
+- 高归因分数阈值
+- 连接关键区域边集
+- 传播主干可视化
+
+**高流量路线识别**：
+- 最大累积归因路径搜索
+- 动态规划算法
+- 路径显著性排序
+
+**枢纽 ROI 定位**：
+- 高累积归因区域
+- Braak 分期匹配验证
+- 传播节点识别
+
+### 适用场景
+
+#### 1. 阿尔茨海默病研究
+
+**Tau 传播机制研究**：
+- 结构连接驱动传播假设验证
+- Braak 分期解剖结构量化
+- 区域性 Tau 分布预测
+
+**临床应用**：
+- Tau PET 代理预测（从 DTI）
+- 早期诊断 biomarker
+- 疾病进展建模
+
+#### 2. 神经退行性疾病建模
+
+**蛋白传播研究**：
+- Tau, Aβ, α-synuclein 传播
+- 结构连接-病理关联
+- 多尺度通路分析
+
+**网络病理学**：
+- 脑网络退行性建模
+- 连接破坏与病理传播
+- Hub 脆弱性分析
+
+#### 3. 可解释 AI 应用
+
+**神经影像归因**：
+- 模型决策可视化
+- 神经生物学解释
+- 数据驱动假设验证
+
+**结构连接分析**：
+- 连接贡献量化
+- 传播路径识别
+- 多尺度图谱生成
+
+### 关键洞察
+
+#### 1. 结构连接编码病理信息
+
+**SC 信息内容**：
+- 不仅支持功能通信
+- 编码病理传播路径
+- 空间特异性 Tau 分布预测
+
+**验证意义**：
+- 支持"传播假说"
+- 量化结构-病理关联
+- 神经影像数据驱动建模
+
+#### 2. 可解释归因的神经生物学价值
+
+**归因分数意义**：
+- 每条边的传播贡献量化
+- 神经生物学可解释性
+- Braak 分期解剖验证
+
+**方法优势**：
+- 结合生物物理与机器学习
+- 可解释通路图谱
+- 假设验证能力
+
+#### 3. 多尺度通路图谱
+
+**骨架边**：
+- 传播主干通路
+- 高贡献连接边
+- Braak 关键区域连接
+
+**高流量路线**：
+- 最大传播路径
+- 动态扩散方向
+- 早期到晚期传播
+
+**枢纽 ROI**：
+- 传播关键节点
+- Tau 聚集区域
+- Braak 分期核心
+
+## 技术细节
+
+### 1. NDM 增强 MLP 实现
+
+**网络扩散层**：
 ```python
-class NDM_MLP(nn.Module):
-    def __init__(self, n_regions, hidden_dims):
-        super().__init__()
-        # NDM-inspired diffusion layer
-        self.diffusion = DiffusionLayer(n_regions)
-        
-        # MLP layers
-        self.fc1 = nn.Linear(n_regions, hidden_dims[0])
-        self.fc2 = nn.Linear(hidden_dims[0], hidden_dims[1])
-        self.fc3 = nn.Linear(hidden_dims[1], n_regions)
-        
-    def forward(self, SC_matrix):
-        # Diffusion dynamics
-        x = self.diffusion(SC_matrix)
-        
-        # MLP prediction
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        tau_pred = self.fc3(x)
-        
-        return tau_pred
+class NDMLayer:
+    def forward(SC, tau_initial, t):
+        # 扩散方程
+        tau_t = tau_initial * exp(t * SC)
+        return tau_t
 ```
 
-### Step 3: Attribution Score Extraction
+**MLP 结构**：
+- 输入：SC + NDM 输出
+- 隐藏层：可学习权重
+- 输出：区域性 Tau 预测
 
-**Gradient × Input Method**:
+### 2. 梯度归因计算
+
+**归因公式**：
+$$A_{ij} = \frac{\partial \hat{\tau}_k}{\partial W_{ij}} \cdot W_{ij}$$
+
+**实现代码**：
 ```python
-def compute_attribution(model, SC_matrix, tau_target):
-    # Ensure SC_matrix is a leaf tensor
-    SC_tensor = torch.tensor(SC_matrix, requires_grad=True)
-    
-    # Forward pass
-    tau_pred = model(SC_tensor)
-    
-    # Compute loss
-    loss = F.mse_loss(tau_pred, tau_target)
-    
-    # Backward pass
-    loss.backward()
-    
-    # Gradient × Input attribution
-    attribution = SC_tensor.grad * SC_tensor
-    
-    # Edge-level scores
-    edge_scores = attribution.abs()
-    
-    return edge_scores
+def compute_attribution(model, SC, tau_pred):
+    # 计算梯度
+    grad = torch.autograd.grad(
+        outputs=tau_pred,
+        inputs=SC,
+        retain_graph=True
+    )
+    # 归因 = 梯度 × 输入
+    attribution = grad[0] * SC
+    return attribution
 ```
 
-### Step 4: Pathway Map Generation
+### 3. 通路图谱算法
 
-**Multi-Scale Analysis**:
+**骨干边提取**：
 ```python
-def generate_pathway_maps(edge_scores, SC_matrix, threshold_percentile=95):
-    # Backbone edges: top-percentile connections
-    threshold = np.percentile(edge_scores, threshold_percentile)
-    backbone_edges = np.where(edge_scores >= threshold)
-    
-    # High-traffic routes: multi-hop path aggregation
-    routes = identify_propagation_paths(SC_matrix, backbone_edges)
-    route_scores = aggregate_edge_scores(routes, edge_scores)
-    
-    # Hub ROIs: regions with highest attribution
-    incoming_scores = edge_scores.sum(axis=0)
-    outgoing_scores = edge_scores.sum(axis=1)
-    hub_regions = identify_hubs(incoming_scores, outgoing_scores)
-    
-    return {
-        'backbone_edges': backbone_edges,
-        'high_traffic_routes': routes,
-        'hub_rois': hub_regions
-    }
+def extract_backbone(attribution, threshold):
+    # 高归因边筛选
+    backbone_edges = []
+    for i, j in attribution.keys():
+        if attribution[i,j] > threshold:
+            backbone_edges.append((i,j))
+    return backbone_edges
 ```
 
-## Integration with Existing Frameworks
-
-### Neuroimaging Software
-
-**Compatible Platforms**:
-- FSL (DTI processing)
-- FreeSurfer (brain parcellation)
-- ANTs (image registration)
-- SPM (PET analysis)
-- Connectome Workbench (visualization)
-
-### Deep Learning Frameworks
-
-**Implementation**:
-- PyTorch (model training, gradient computation)
-- TensorFlow/Keras (alternative backend)
-- NumPy/SciPy (connectivity analysis)
-- NetworkX (graph pathway analysis)
-
-### Brain Atlas Integration
-
-**Supported Atlases**:
-- AAL (Automated Anatomical Labeling)
-- Desikan-Killiany-Tourville
-- Harvard-Oxford
-- Brainnetome
-- HCP-MMP1 (Glasser et al.)
-
-## Experimental Validation
-
-### Dataset Description
-
-**ADNI Cohort**:
-- N = 234 participants
-- Paired DTI and 18F-Flortaucipir PET
-- Cross-sectional analysis
-- Cross-validation methodology
-
-**Imaging Protocols**:
-- DTI: Diffusion-weighted MRI
-- Tau PET: 18F-Flortaucipir tracer
-- Standardized preprocessing pipelines
-
-### Validation Strategy
-
-**Braak Staging Comparison**:
-- Pathology-established staging regions
-- SC-TauPath pathway map comparison
-- Qualitative match assessment
-- Quantitative accuracy metrics
-
-**Cross-Validation**:
-- K-fold validation (k=5 or k=10)
-- Tau prediction accuracy
-- Attribution stability across folds
-- Robustness to data splits
-
-## Related Work
-
-### Comparison with Existing Methods
-
-| Method | Approach | Biophysical Assumptions | Pathway Interpretability |
-|--------|----------|------------------------|--------------------------|
-| Diffusion models | Physics-based | **High** (tau kinetics) | Moderate |
-| Graph neural networks | Learning-based | Low | Moderate |
-| **SC-TauPath** | **Attribution-based** | **Low** | **High (multi-scale)** |
-
-### Extension Opportunities
-
-1. **Temporal modeling**: Incorporate longitudinal tau progression data
-2. **Multi-modal fusion**: Combine SC with functional connectivity (FC)
-3. **Individualized predictions**: Subject-specific pathway maps
-4. **Early-stage detection**: Predict tau spread before PET evidence
-
-## Key Takeaways
-
-### Core Insights
-
-1. **Attribution-based interpretability**: Gradient × Input provides biologically meaningful pathway maps
-2. **Braak validation**: Pathways match established pathological staging anatomy
-3. **Low biophysical assumptions**: Learning-based approach reduces reliance on tau kinetics models
-4. **Multi-scale representation**: Backbone edges, high-traffic routes, and hub ROIs
-
-### Clinical Implications
-
-1. **Tau propagation mechanisms**: Structural connectivity encodes tau spread information
-2. **Disease staging support**: SC-TauPath pathway maps align with Braak stages
-3. **Therapeutic targeting**: Identified backbone edges/routes as potential intervention points
-4. **Early diagnosis**: Potential for predicting tau spread patterns
-
-## Future Directions
-
-### Research Extensions
-
-1. **Longitudinal validation**: Track tau progression over time
-2. **Multi-modal integration**: Combine with functional connectivity, amyloid PET
-3. **Cognitive correlation**: Link pathway maps to cognitive decline patterns
-4. **Treatment response**: Monitor pathway changes after therapeutic intervention
-
-### Clinical Applications
-
-1. **Diagnostic support**: Aid clinical staging decisions
-2. **Prognosis prediction**: Forecast disease progression trajectories
-3. **Personalized medicine**: Subject-specific pathway maps
-4. **Drug development**: Identify propagation bottlenecks for intervention
-
-## References
-
-- arXiv:2606.04066 - Full paper
-- Braak staging (Braak & Braak, 1991)
-- Network diffusion models (Raj et al., 2012)
-- Gradient attribution methods (Sundararajan et al., 2017)
-- ADNI dataset (Mueller et al., 2005)
-
-## Citation
-
-```bibtex
-@article{zhang2026sctaupath,
-  title={SC-TauPath: A Structural Connectivity Attribution Framework for Mapping Tau Propagation Pathways in Alzheimer's Disease},
-  author={Zhang, Jing and Scheel, Norman and Chen, Minheng and Chen, Tong and Lyu, Yanjun and Zhu, David C. and Zhang, Rong and Zhu, Dajiang},
-  journal={arXiv preprint arXiv:2606.04066},
-  year={2026}
-}
+**高流量路线搜索**：
+```python
+def find_high_traffic_routes(attribution, ROI_graph):
+    # 最大累积归因路径
+    # 动态规划算法
+    routes = max_path_search(ROI_graph, attribution)
+    return routes
 ```
 
----
+### 4. Braak 分期验证
 
-**Skill Status**: Created from arXiv paper 2606.04066
-**Next Update**: Integrate with longitudinal ADNI data
-**Integration**: Combine with functional connectivity analysis frameworks
+**一致性度量**：
+- 归因分数与 Braak 区域匹配
+- 骨干边连接 Braak 关键区域
+- 传播路径符合分期解剖
+
+**统计验证**：
+- 归因分数显著性检验
+- Braak 区域归因差异分析
+- 通路图谱与分期一致性
+
+## 理论意义
+
+### 神经科学启示
+
+**Tau 传播机制**：
+- 结构连接驱动传播
+- Braak 分期解剖验证
+- 传播路径量化
+
+**脑网络病理学**：
+- SC 编码病理信息
+- Hub 脆弱性
+- 传播方向性
+
+### 计算理论贡献
+
+**可解释 AI**：
+- 归因方法神经生物学解释
+- 数据驱动假设验证
+- 多尺度图谱生成
+
+**网络病理建模**：
+- NDM + MLP 混合架构
+- 生物物理与机器学习融合
+- 活体数据驱动建模
+
+### 临床应用前景
+
+**Tau PET 代理预测**：
+- 从 DTI SC 预测 Tau 分布
+- 减少昂贵 PET 扫描需求
+- 早期诊断 biomarker
+
+**疾病进展建模**：
+- Tau 传播路径预测
+- Braak 分期量化
+- 治疗靶点识别
+
+## 与其他方法的关系
+
+### 1. 传统网络扩散模型
+
+**纯 NDM 方法**：
+- 依赖假设参数
+- 缺乏数据驱动优化
+
+**SC-TauPath 增强**：
+- NDM + MLP 数据驱动
+- 参数优化 + 生物物理原理
+
+### 2. 黑盒机器学习
+
+**传统 ML**：
+- 高预测准确率
+- 缺乏可解释性
+
+**SC-TauPath 优势**：
+- 归因分数神经生物学解释
+- Braak 分期验证
+- 多尺度通路图谱
+
+### 3. 其他蛋白传播研究
+
+**Aβ, α-synuclein**：
+- 类似传播机制
+- 不同蛋白特异性
+
+**SC-TauPath 扩展**：
+- 框架可应用于其他蛋白
+- 传播机制通用建模
+
+## 相关技能
+
+- `brain-network-controllability` - 脑网络可控性分析
+- `alzheimer-pet-suvr-network-models` - Alzheimer PET SUVR 网络模型
+- `brain-graph-neural` - 脑图神经网络方法
+- `gnn-visual-decoding-brain-network` - GNN 脑网络视觉解码
+- `dgcl-brain-network-construction` - DGCL 脑网络构建
+
+## 参考文献
+
+- arXiv:2606.04066 - 原始论文
+- Braak Tau 分期文献
+- 网络扩散模型理论
+- DTI 结构连接建模
+- Tau PET 神经影像研究
+
+## 激活词
+
+**触发条件**：使用以下关键词时激活此技能：
+- tau, tau propagation, tau protein
+- Alzheimer, Alzheimer's disease, AD
+- structural connectivity, SC, brain connectivity
+- attribution, attribution framework, interpretability
+- network diffusion, diffusion model, NDM
+- Braak staging, Braak anatomy
+- DTI, diffusion tensor imaging
+- PET, tau PET, Flortaucipir
+- pathway mapping, propagation pathway
+- gradient attribution, gradient × input
+- backbone edges, high-traffic routes, hub ROI
+
+**典型应用**：
+- "研究 Tau 在 AD 中的传播路径"
+- "从 DTI SC 预测 Tau PET 分布"
+- "生成神经生物学可解释的传播图谱"
+- "验证 Braak 分期与结构连接关联"
+- "设计蛋白传播的可解释模型"
