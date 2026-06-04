@@ -2,6 +2,22 @@
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
+### Competition, Stability, and Functionality in Excitatory-Inhibitory Neural Circuits
+- [[competition-stability-functionality-ei-networks]] - Game-theoretic energetic framework for asymmetric E-I networks, extends energy-based models with competitive dynamics where each neuron minimizes individual energy (arXiv: 2512.05252)
+  - Game-theoretic interpretation: each neuron = rational agent optimizing individual energy
+  - Small-gain theorem provides stability guarantees for asymmetric E-I circuits
+  - Wilson-Cowan and lateral inhibition models revisited with competitive dynamics
+  - Cortical columns as contrast enhancers via hierarchical E/I interplay
+  - **Activation**: excitatory-inhibitory, game-theoretic neural dynamics, asymmetric networks, E-I balance, lateral inhibition, cortical columns, competitive dynamics, neural stability
+
+### The Variance Brain Foundation Models Forgot
+- [[variance-brain-foundation-models-forgot]] - Brain foundation model variance allocation problem - third-order statistics (co-skewness) predict cognition where billion-parameter models fail (arXiv: 2606.04010)
+  - Per-cumulant analysis reveals BFMs destroy co-skewness while preserving covariance
+  - Linear co-skewness subspace FC method exceeds all BFMs without pretraining/GPU
+  - Scale paradox: BrainLM 650M predicts cognition worse than 111M version
+  - Bottleneck identified as pretraining objective, not architecture
+  - **Activation**: brain foundation models, variance allocation, third-order statistics, co-skewness, functional connectivity, BFM critique, linear methods, cognition prediction
+
 ### Functional Ensembles as Units of Computation in Deep Spiking Networks
 - [[functional-ensembles-deep-spiking-networks]] - 1FC groups enable rare high-cofiring events for reliable encoding in SNN, functional connectivity preserved from biological cortex (arXiv: 2606.00073)
   - First-order functionally-connected (1FC) groups: neurons with significant pairwise correlations from previous layer
