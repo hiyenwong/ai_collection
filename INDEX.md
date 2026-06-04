@@ -1,4 +1,18 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### Chaotic Regularization in Recurrent Neural Networks
+- [[chaotic-regularization-recurrent-networks]] - Link microscopic chaos to macroscopic neural representation geometry via kernel methods + dynamical mean-field theory (arXiv: 2606.04426)
+  - Chaos induces local roughness but preserves global smoothness, acting as intrinsic regularizer
+  - Power-law spectral signatures match cortical recordings, explains smooth population codes from chaotic dynamics
+  - **Activation**: chaotic regularization, recurrent networks, neural representations, kernel methods, cortical dynamics, population codes
+
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
+- [[stp-pfc-reservoir-goal-planning]] - STP preserves goal information as action-relevant dynamics in PFC-inspired reservoir model (arXiv: 2606.03481)
+  - STP maintains 89.2% success under noise vs 49.5% without STP (Cohen's dz=1.31)
+  - Dynamic modulation of goal-dependent effective connectivity, facilitation-dominant time constants optimal
+  - **Activation**: short-term plasticity, STP, PFC, reservoir computing, goal-conditioned dynamics, action planning, basal ganglia
+
+## 2026-06-04 - Neuroscience Research (Cron Job)
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
 
 ### Arbitrary control of the temporal waveform of photons during spontaneous emission
