@@ -1,3 +1,26 @@
+## 2026-06-05 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Software-Based Compensation of AC-Line-Induced Control Errors
+- [[software-compensation-quantum-control]] - AC线同步干扰的软件补偿方法：通过线触发校准帧测量可复现的电源扰动，在控制序列中软件补偿，无需硬件修改 (arXiv: 2606.00358)
+  - 线触发校准：AC相位同步测量建立确定性扰动模型
+  - 双级补偿：瞬时失谐校正 + 脉冲间相位补偿
+  - 量子-夸迪特通用化：16级夸迪特Bernstein-Vazirani成功率10%→70%
+  - **Activation**: ac line compensation, power line noise, mains synchronous error, quantum control error, trapped ion control, qudit control, coherent error compensation, software compensation, line-triggered calibration
+
+### Hardware-Tailored Resource Estimation for Magic-State Distillation
+- [[hardware-tailored-qec-resource-estimation]] - 硅自旋量子比特平台硬件定制资源估算：自底向上噪声建模 + 自顶向下约束推导，优化控制脉冲降低42%开销，偏置码实现3×物理足迹缩减 (arXiv: 2605.28936)
+  - 双向分析框架：硬件噪声→逻辑错误率 vs 应用需求→硬件约束
+  - 控制脉冲优化：最高ROI改进，42%蒸馏开销降低
+  - 偏置误差码利用：无需硬件偏置保持操作即可实现3×缩减
+  - **Activation**: resource estimation, magic state distillation, silicon spin qubit, biased noise code, surface code comparison, FTQC overhead, physical qubit count, control pulse optimization
+
+### QND Measurements for Fault-Tolerant Computation Against Biased Noise
+- [[qnd-measurements-fault-tolerant-biased-noise]] - 量子非破坏测量替代偏置保持CNOT门：QND ZZ测量作为实用原语实现偏置噪声容错计算，XZZX表面码6×量子比特开销缩减 (arXiv: 2605.24262)
+  - 测量即门替换：QND ZZ完全替代偏置保持CNOT用于所有偏置定制纠错
+  - 物理平台适用：固态核自旋耦合电子自旋、耗散稳定超导cat量子比特
+  - 阈值性能：XZZX ~1.25%阈值，重复码~2.3%阈值
+  - **Activation**: qnd measurement, biased noise, fault tolerant, xzzx surface code, repetition code, phase flip threshold, noise bias, qubit overhead reduction, bias-preserving CNOT alternative
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Discrete Signaling Mediates Chaotic Regularization in Recurrent Neural Networks
