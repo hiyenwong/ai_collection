@@ -126,6 +126,13 @@
 
 ## 2026-06-05 - Systems Engineering + Quantum Mechanics (Cron Job)
 
+### SoK: Post-Quantum Cryptography (PQC) Implementation in Software Systems
+- [[pqc-implementation-hot-framework]] - HOT model framework for PQC implementation across Human, Organisation, Technology dimensions (arXiv: 2606.04669)
+  - PQC implementation is a socio-technological transformation, not just cryptographic replacement
+  - Knowledge imbalance: tech dominates, human/org considerations underexplored
+  - PQC-HOT model for systematic decision-making and organizational transition strategies
+  - **Activation**: pqc implementation, post-quantum cryptography migration, quantum-resistant software, HOT framework, NIST PQC integration
+
 ### Software-Based Compensation of AC-Line-Induced Control Errors
 - [[software-compensation-quantum-control]] - AC线同步干扰的软件补偿方法：通过线触发校准帧测量可复现的电源扰动，在控制序列中软件补偿，无需硬件修改 (arXiv: 2606.00358)
   - 线触发校准：AC相位同步测量建立确定性扰动模型
