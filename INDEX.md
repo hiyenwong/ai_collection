@@ -1,3 +1,26 @@
+## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### Continuous-Variable Quantum State Tomography Enabled by Quantum Mirrors
+- [[quantum-mirror-tomography]] - Quantum mirror-based CV state tomography bypassing exponential sample complexity via atomic control system transfer (arXiv: 2606.04277)
+  - Transfers complete photonic state info onto control atom via quantum mirrors
+  - Three characterization methods: kernel functions, direct wavefunction reconstruction, pointwise Wigner function
+  - Overcomes limitations of photon counting, statistical inference, inverse transformation
+  - **Activation**: quantum state tomography, continuous-variable, quantum mirror, Wigner function, non-Gaussian states, quantum benchmarking
+
+### Characterization of Errors in Photon-Heralded Quantum Operations
+- [[photon-heralded-error-characterization]] - Analytic perturbative framework for Markovian errors in photon-heralded quantum ops, bridging physical imperfections to Pauli noise models (arXiv: 2606.04312)
+  - Extended ZPG framework with closed-form perturbative solutions for ideal and noisy gate dynamics
+  - Process matrix and Pauli error weight derivation up to leading order
+  - Full physical stack coverage: photon generation, detection, decoherence, multi-photon events
+  - **Activation**: photon heralded, quantum error characterization, ZPG framework, Pauli noise model, process matrix, heralded gate
+
+### Hybrid Quantum-Classical Physics-Informed Neural Networks for Nonlinear PDEs
+- [[hybrid-quantum-classical-pinn]] - HQPINN methodology integrating classical NN backbone with PQC to solve nonlinear PDEs with sharp gradients, stiff dynamics, multiscale structure (arXiv: 2606.04679)
+  - Classical backbone + parameterized quantum circuit for enriched solution representation
+  - Benchmarked on Burgers', Allen-Cahn, and KdV equations
+  - Identifies when quantum hybridization outperforms classical PINN (high-frequency, stiff, multiscale)
+  - **Activation**: hybrid quantum-classical, physics-informed neural network, PINN, PDE solver, parameterized quantum circuit, nonlinear PDE, spectral bias, HQPINN
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### Brain Foundation Models Variance Allocation Problem
