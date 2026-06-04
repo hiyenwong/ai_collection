@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-05 - Neuroscience Research (Cron Job - Update)
+
+### Formalizing the Binding Problem with Information-Theoretic Probing
+- [[formalizing-binding-problem]] - Information-theoretic formalization of binding problem with probing method for measuring binding information in Vision Transformers (arXiv: 2606.03976)
+  - Binding information quantified via mutual information between feature representations and object identity
+  - Spatial tokens carry more binding information than [CLS] token in ViTs
+  - Probing framework to diagnose feature misattribution in multi-object scenes
+  - ICML 2026 publication from Konrad P. Kording's group
+  - **Activation**: binding problem, feature binding, vision transformer, information theory, scene understanding, object attribution, binding probe, feature misattribution
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### Learning sequence timing and control of replay speed in networks of spiking neurons
