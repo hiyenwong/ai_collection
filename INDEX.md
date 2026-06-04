@@ -1,3 +1,10 @@
+## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
+
+### Generalized Bicycle Codes as Cyclic Submodules and their Automorphism Structure
+- [[generalized-bicycle-qec-automorphism]] - Algebraic framework for deterministic QEC automorphism search and inverse code design (arXiv: 2606.05044)
+  - Three-space dependency reduces automorphism search to deterministic algebraic problem
+  - Maximal Cube Root (MCR) code family: k=2 codes up to d=13, k>2 codes with 20+ logical gates
+  - **Activation**: generalized bicycle codes, QEC automorphism, fold-transversal gate, code inverse design, MCR codes
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
 
 ## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
