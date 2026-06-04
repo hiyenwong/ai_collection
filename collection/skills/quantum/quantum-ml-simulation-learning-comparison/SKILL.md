@@ -88,3 +88,4 @@ For characterizing unknown quantum systems:
 ## References
 
 - Paper: https://arxiv.org/abs/2605.28986
+- **For detailed empirical methodology**: See [references/empirical-comparison-framework.md](references/empirical-comparison-framework.md) for complexity classes, metrics, and experimental setup

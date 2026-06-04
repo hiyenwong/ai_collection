@@ -39,10 +39,13 @@ Recommended query combinations:
 
 ## Step 3: Import to KG
 ```python
-# Database: /Users/hiyenwong/.openclaw/workspace/kg.db
-# Schema: kg_entities(id, title, url, content, authors, published_date, category, source)
-#         kg_vectors(id, entity_id, vector_data)  # binary float32 256-dim
-#         kg_relationships(id, source_id, target_id, relationship_type, weight)
+# Database: /Users/hiyenwong/.openclaw/workspace/scripts/kg.db
+# Tables: entities(id, name, type, category, description, source, created_date)
+#         kg_vectors(id, embedding)  # JSON array of floats
+#         relationships(id, source, target, relation, description, created_date)
+#         research_log(id, date, topic, arxiv_id, skill_name, summary, status)
+# NOTE: There is NO kg_entities table — the table is called 'entities'.
+# Type values: 'paper', 'skill', 'author', 'category', 'tag', 'abstract'
 
 import sqlite3, struct, hashlib, math
 

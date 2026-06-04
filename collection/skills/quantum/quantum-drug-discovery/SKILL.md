@@ -1,5 +1,14 @@
 ---
 name: quantum-drug-discovery
+description: >
+  Quantum computing methodology for drug discovery pipelines. Covers quantum circuit
+  simulation of compartmental pharmacokinetics, quantum-enhanced molecular dynamics,
+  quantum machine learning for drug-target interaction prediction, and quantum
+  optimization for clinical trial design. Use when: drug discovery with quantum computing,
+  pharmacokinetic/pharmacodynamic modeling with quantum circuits, molecular simulation,
+  drug-target interaction prediction, clinical trial optimization, quantum chemistry
+  for drug design, PennyLane quantum drug simulation, variational quantum algorithms
+  for population PK/PD, quantum-accelerated drug development pipeline.
 description: "Analysis skill for quantum computing in drug discovery and molecular simulation. Use when researching quantum algorithms for molecular dynamics, quantum ML for drug screening, quantum chemistry methods (DFT, QM/MM), or quantum optimization for drug design. Triggers: quantum drug discovery, quantum molecular simulation, quantum chemistry, quantum pharmacology, quantum screening."
 ---
 
@@ -86,6 +95,18 @@ Compound Library → Quantum Encoding → Quantum ML → Hit Identification → 
 - Clinical validation still theoretical
 - Hardware limitations constrain scale
 
+## Emerging Methods (2026)
+
+Two significant new methodologies emerged in 2026:
+
+### CovAngelo QM/QM/MM Platform (arXiv:2604.10487)
+Three-tier multiscale embedding (inner QM + outer QM + MM) with quantum-information-guided active space partitioning. Supports IQM/IonQ/IBM via CUDA-Q. Demonstrated 20x speedup on covalent docking.
+See: `references/quantum-drug-discovery-new-methods.md`
+
+### Style-based Quantum WGAN (arXiv:2603.22399)
+VAE latent encoding + per-rotation noise injection QGAN with WGAN-GP gradient penalty. Validated on 156-qubit IBM Heron. MOSES benchmark.
+See: `references/quantum-drug-discovery-new-methods.md`
+
 ## Quick Reference
 
 ### Quantum Chemistry Methods
@@ -96,6 +117,8 @@ Compound Library → Quantum Encoding → Quantum ML → Hit Identification → 
 | QAOA | Optimization | ~50-500 qubits |
 | Quantum Phase Estimation | Exact energies | ~1000+ qubits |
 | DFT-on-Quantum | Electronic structure | ~200-2000 qubits |
+| QM/QM/MM (CovAngelo) | Covalent docking, reaction barriers | ~20-40 qubits (active space) |
+| QWGAN | De novo molecular generation | ~15-156 qubits |
 
 ### Drug Development Stages
 

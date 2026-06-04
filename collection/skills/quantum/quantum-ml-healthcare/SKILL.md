@@ -83,22 +83,6 @@ confidence = uncertainty_quantification(output)
 - Quantum ML for Digital Health: Systematic Review
 - Integration of quantum AI in disease diagnosis
 
-### Recent Additions (2026-06-03)
-- "Quantum machine learning for smart healthcare applications" (Ahad, 2026) - DOI: 10.53388/mdm202609013 - Crossref indexed; covers QML patterns for smart/IoT healthcare ecosystems
-- "Quantum Machine Learning Algorithms for Genome Disease Diagnosis" (Khan & Usupova, 2025) - DOI: 10.22541/au.175924949.93262371/v1 - QML for high-dimensional genomic data classification
-
-## Recent Crossref Findings (2026-06-03)
-
-| Title | Authors | Year | DOI |
-|-------|---------|------|-----|
-| Quantum machine learning for smart healthcare applications | Abdul Ahad | 2026 | 10.53388/mdm202609013 |
-| Quantum Machine Learning Algorithms for Genome Disease Diagnosis | Al Khan, Elnura Usupova | 2025 | 10.22541/au.175924949.93262371/v1 |
-| Applications of machine learning and deep learning in medical diagnosis | Chouhan, Khambete, Jain | 2025 | 10.1016/b978-0-443-21505-6.00003-7 |
-| Quantum machine learning models in healthcare: future trends and challenges | Sonavane et al. | 2025 | 10.1016/b978-0-443-29297-2.00003-4 |
-| Pneumonia and brain tumors diagnosis using machine learning algorithms | Filipović, Kadry | 2025 | 10.1016/b978-0-443-23979-3.00011-7 |
-
-**Key Pattern**: QML-for-genomics is an emerging sub-pattern within the broader QML-healthcare space, characterized by handling ultra-high-dimensional SNP/genomic feature spaces. Smart healthcare applications increasingly emphasize IoT/wearable integration with quantum edge computing.
-
 ## Research Pipeline
 
 1. Search arxiv for "quantum machine learning healthcare"

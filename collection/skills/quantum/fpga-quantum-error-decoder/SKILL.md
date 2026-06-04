@@ -1,114 +1,161 @@
 ---
 name: fpga-quantum-error-decoder
 description: >
-  Real-time surface-code quantum error correction using FPGA-based neural network
-  decoders. Covers hardware-integrated control architecture for closed-loop QEC
-  with deterministic low-latency feedback. Includes NN decoder implementation on
-  FPGA, latency optimization, mid-circuit feedback correction, and Pauli-frame
-  updating. Use when: implementing real-time QEC systems, designing FPGA-based
-  quantum decoders, building hardware-integrated quantum control, or developing
-  low-latency feedback systems for fault-tolerant quantum computing.
-  Trigger keywords: FPGA decoder, real-time QEC, surface code, neural network decoder,
-  closed-loop quantum feedback, low-latency quantum control.
+  FPGA-based real-time quantum error correction decoding architecture. Combines
+  hardware-integrated NN decoders on FPGA with superconducting quantum processors
+  for low-latency closed-loop QEC. Use when: (1) Designing real-time QEC control
+  systems, (2) Implementing FPGA-based syndrome decoders, (3) Building low-latency
+  feedback loops for fault-tolerant quantum computing, (4) Analyzing closed-loop
+  latency budgets for QEC cycles, (5) Implementing mid-circuit Pauli-frame
+  corrections in non-Clifford logical circuits. Trigger: FPGA QEC decoder,
+  real-time quantum error correction, low-latency syndrome decoding, hardware
+  integrated QEC, surface code FPGA, closed-loop quantum feedback.
 ---
 
-# FPGA-Based Quantum Error Decoder
+# FPGA-Based Real-Time Quantum Error Decoder
 
-From arXiv:2605.04892 "Real-time Surface-Code Error Correction Using an FPGA-based
-Neural-Network Decoder" (Yang et al., 2026).
+Hardware-integrated control architecture for real-time surface-code QEC using
+FPGA-based neural network decoders, achieving deterministic closed-loop latency
+of 550 ns (124 ns NN decoding) within a 1.25 μs QEC cycle.
 
 ## Core Architecture
 
-### Hardware-Integrated Control System
+```
+Quantum Processor → Syndrome Measurement → FPGA Controller → NN Decoder → Feedback Correction
+     (superconducting)    (repeated)      (Xilinx/Intel)   (124 ns)    (within 1.25 μs)
+```
 
-The system combines a superconducting quantum processor with an FPGA-based
-neural network decoder in a closed-loop configuration.
+### Key Metrics (from arXiv:2605.04892)
 
-**Key performance metrics**:
-- Deterministic closed-loop latency: **550 ns**
-- NN decoding time: **124 ns**
-- QEC cycle: **1.25 μs**
-- Code: Distance-3 surface code
+| Component | Latency | Description |
+|-----------|---------|-------------|
+| NN Decoding | 124 ns | FPGA-based neural network inference |
+| Total Closed-Loop | 550 ns | End-to-end syndrome to correction |
+| QEC Cycle | 1.25 μs | Full error correction cycle period |
+| Code Distance | d=3 | Surface code demonstration |
 
-## Technique 1: FPGA-Based Neural Network Decoder
+### Hardware Design Principles
 
-### Real-Time Syndrome Processing
+1. **Deterministic Latency**: Fixed-latency FPGA pipelines avoid timing jitter
+2. **On-Chip NN Inference**: Neural network weights stored in FPGA BRAM/LUTs
+3. **Closed-Loop Feedback**: Decoder output directly drives quantum control pulses
+4. **Mid-Circuit Correction**: Supports Pauli-frame updates during logical operations
 
-Errors are inferred from repeated stabilizer (syndrome) measurements in the
-surface code. The decoder must operate within each QEC cycle to prevent
-error accumulation.
+## Implementation Workflow
 
-**Implementation pattern**:
-1. Syndrome measurements from quantum processor → FPGA
-2. Neural network on FPGA decodes syndromes to error patterns
-3. Feedback corrections applied within the QEC cycle
+### Step 1: Neural Network Quantization for FPGA
 
-**NN decoder design principles**:
-- Must be implementable on FPGA hardware (fixed-point arithmetic)
-- Latency budget: < 200 ns for d=3 surface code
-- Accuracy must match offline decoding performance
+```python
+# Quantize trained decoder to FPGA-friendly precision
+import torch
 
-## Technique 2: Closed-Loop Feedback Correction
+# Original: float32 trained model
+model = load_trained_decoder()  # CNN/MLP for syndrome decoding
 
-### Latency Budget Management
+# Quantize to INT8 for FPGA deployment
+model_int8 = torch.quantization.quantize_dynamic(
+    model, {torch.nn.Linear, torch.nn.Conv2d}, dtype=torch.qint8
+)
 
-Total latency breakdown:
+# Export weights for FPGA synthesis
+torch.onnx.export(model_int8, dummy_syndrome, "decoder_int8.onnx")
+```
+
+### Step 2: FPGA Pipeline Design
+
+```
+Input Layer (syndrome bits) → [FPGA registers]
+    ↓
+Convolution Layer → [DSP slices + BRAM for weights]
+    ↓
+Activation (ReLU) → [LUT-based lookup]
+    ↓
+Output Layer (correction bits) → [Pipeline registers]
+    ↓
+Control Signal → Quantum processor feedback
+```
+
+**Latency Budget Breakdown:**
 - Syndrome readout: ~100 ns
-- NN decoding: 124 ns
-- Control signal generation: ~200 ns
-- Gate application: ~126 ns
-- **Total: 550 ns < 1.25 μs QEC cycle**
+- NN inference (INT8): 124 ns
+- Correction computation: ~50 ns
+- Control signal routing: ~100 ns
+- **Total: 550 ns**
 
-**Critical constraint**: Decoding must complete before the next QEC cycle
-begins, otherwise errors accumulate faster than they are corrected.
+### Step 3: QEC Cycle Integration
 
-## Technique 3: Mid-Circuit Feedback Correction
+```python
+# Pseudocode for QEC cycle management
+def qec_cycle(fpga_controller):
+    # 1. Trigger syndrome measurement
+    syndromes = measure_stabilizers()  # X and Z stabilizers
+    
+    # 2. Send to FPGA decoder (550 ns round-trip)
+    corrections = fpga_controller.decode(syndromes)
+    
+    # 3. Apply feedback within QEC cycle
+    if corrections.needs_feedback:
+        apply_physical_correction(corrections)
+    else:
+        update_pauli_frame(corrections)
+    
+    # Must complete within 1.25 μs to prevent error accumulation
+    assert elapsed_time() < 1250  # ns
+```
 
-### Beyond Pauli-Frame Updating
+## Critical Design Considerations
 
-For non-Clifford logical circuits, Pauli-frame updating alone becomes
-insufficient. Active feedback correction during the circuit is required.
+### Latency vs Accuracy Tradeoff
 
-**When Pauli-frame is insufficient**:
-- Non-Clifford gates (T gates, Toffoli)
-- Adaptive circuits with measurement-dependent operations
-- Logical operations requiring real-time syndrome feedback
+| Decoder Latency | Logical Error Rate | Use Case |
+|-----------------|-------------------|----------|
+| < 200 ns | ~0.1% degradation | Real-time feedback |
+| < 1 μs | ~0.01% degradation | Near-real-time |
+| > 10 μs | Baseline (offline) | Post-processing |
 
-**Implementation**:
-1. Detect that accumulated Pauli frame cannot be tracked classically
-2. Apply active physical correction based on NN decoder output
-3. Continue circuit execution with corrected state
+### Scaling to Larger Distances
 
-## Technique 4: Robustness Under Varying Error Conditions
+For distance-5 and distance-7 surface codes:
+- Syndrome data size grows as d²
+- NN model size grows proportionally
+- FPGA resource utilization: LUTs, DSPs, BRAM
+- **Pipeline parallelism** is key: decode multiple syndrome patches concurrently
 
-The system maintains performance comparable to offline decoding across
-different error rates and error types, demonstrating robustness.
+### Mid-Circuit vs Pauli-Frame Correction
 
-**Key finding**: Real-time NN decoding achieves logical performance
-matching offline decoding — no accuracy trade-off for low latency.
+- **Pauli-frame updating**: Software-only, zero latency, works for Clifford circuits
+- **Mid-circuit feedback**: Required for non-Clifford gates (T-gates, magic state distillation)
+- FPGA decoder enables mid-circuit correction when Pauli-frame alone is insufficient
 
-## Hardware Requirements
+## Error Model Adaptation
 
-- FPGA with sufficient DSP slices for NN inference
-- Low-latency interconnect between quantum processor and FPGA
-- Classical control electronics for gate application
+The FPGA-based NN decoder adapts to varying error conditions:
 
-## Scalability Pathway
+```
+Training: Offline NN training with diverse noise models
+Deployment: FPGA inference adapts to real-time error statistics
+Adaptation: Periodic model updates based on observed syndrome patterns
+```
 
-- Current: Distance-3 surface code (9 data qubits)
-- Target: Distance-5 and above for practical fault tolerance
-- Scaling challenge: NN decoder complexity grows with code distance
-- Solution: Hierarchical or parallel decoder architectures
+### Robustness Features
 
-## Pitfalls
+1. **Error condition variation**: Maintains performance across different physical error rates
+2. **Calibration drift**: Retraining triggers when logical error rate exceeds threshold
+3. **Crosstalk compensation**: NN naturally learns spatial error correlations
 
-- NN decoder must be trained on representative error distributions
-- FPGA resource constraints limit NN model complexity
-- Interconnect latency dominates at larger distances
-- Mid-circuit feedback requires precise timing synchronization
+## Comparison with Traditional Decoders
 
-## Activation
+| Feature | MWPM | BP | FPGA-NN Decoder |
+|---------|------|-----|-----------------|
+| Latency | ms-scale | μs-scale | 124 ns |
+| Hardware | CPU/GPU | CPU/FPGA | FPGA (dedicated) |
+| Adaptability | Fixed model | Iterative | Learned patterns |
+| Circuit-level noise | Requires modification | Limited | Native support |
+| Real-time feedback | No | Marginal | Yes |
 
-Keywords: FPGA quantum decoder, real-time error correction, surface code decoder,
-neural network QEC, low-latency quantum feedback, closed-loop quantum control,
-mid-circuit correction
+## Resources
+
+- **arXiv:2605.04892**: "Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder"
+- **arXiv:2605.04459**: "Triage: Adaptive Parallel Window Decoding Scheduler"
+- Related skill: `neural-decoder-quantum-error-correction` (algorithm-level)
+- Related skill: `quantum-fault-tolerance-verification` (verification methods)

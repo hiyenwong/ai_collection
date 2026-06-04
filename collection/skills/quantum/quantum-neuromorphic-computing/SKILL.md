@@ -90,12 +90,59 @@ From knowledge graph analysis (kg.db):
 
 3. **Memristive Synapses on Quantum Computer (2007.09574)**: Quantum gates with memristive behavior for neuromorphic computing
 
+### Hybrid Spiking-Quantum Architectures (2026)
+
+4. **SPATE (2604.11022, IJCNN 2026)**: Spiking-Phase Adaptive Temporal Encoding — converts real-valued features into LIF spike trains, maps spike statistics to quantum rotations with temporal qubits. CKTA 0.966 vs 0.632 (angle encoding). See `references/spiking-quantum-encoding.md` for methodology details.
+
+5. **SQDR-CNN (2512.03895, PeerJ CS 2026)**: Spiking-Quantum Data Re-upload CNN — end-to-end joint training of convolutional SNNs + quantum circuits via surrogate gradients + data re-uploading. 86% SOTA accuracy at 0.5% parameters. See `references/spiking-quantum-cnn.md`.
+
+6. **Q-SpiRL (2605.20801)**: Quantum Spiking Reinforcement Learning for robot navigation — QSNN achieves 99% success rate on 40x40 grid worlds, deployed on IBM quantum hardware.
+
+7. **Stochastic QNN (2511.11609)**: Stochastic quantum neural networks with qubits evolving via stochastic differential equations inspired by biological neuronal processes.
+
+## Spiking-Quantum Hybrid Methodologies
+
+### SPATE: Spike-to-Phase Encoding
+
+**Core pipeline**: Features → LIF spike trains → spike statistics → quantum rotation angles + temporal qubits
+
+**Steps**:
+1. Normalize features to [0,1]
+2. Convert to LIF spike trains: τ·dV/dt = -(V - V_rest) + R·I(t), spike when V > V_threshold
+3. Extract statistics: firing rate, mean ISI, coefficient of variation
+4. Map to R_z(θ) rotation gates with controlled phase operations on temporal qubits
+5. Feed into variational quantum circuit
+
+**Evaluation protocol**: CKTA, Fisher separability, silhouette score, normalized entropy, TVpair collapse — assess encoding quality independently of classifier.
+
+**Pitfalls**:
+- Spike train length trade-off: too short loses temporal info, too long → decoherence
+- Each temporal qubit doubles circuit depth — use sparingly
+- LIF τ and V_threshold must be calibrated per dataset
+
+### SQDR-CNN: Joint SNN-Quantum Training
+
+**Core innovation**: Surrogate gradient + quantum data-reupload enables end-to-end backprop without pretrained SNN encoders.
+
+**Architecture**: Input → ConvSNN → Flatten spikes → Data Re-upload Layers → Measurement
+
+**Key principles**:
+- Surrogate gradient: smooth approximation of Heaviside for spike backprop
+- Quantum data-reupload: N re-uploads ≈ N-qubit expressivity on single qubit
+- Hybrid optimizer: Adam for classical, parameter-shift for quantum
+
+**Pitfalls**:
+- Surrogate gradient choice (sigmoid/arctan/triangle) critically affects stability
+- Temporal steps: too few → poor SNN dynamics; too many → slow training
+- Feature-to-qubit mismatch requires dimensionality reduction
+
 ## References
 
 For detailed theoretical background:
 - **Quantum cognition**: See `references/quantum_cognition.md`
 - **Quantum brain models**: See `references/quantum_brain_models.md`
 - **Memristive quantum**: See `references/memristive_quantum.md`
+- **Quantum-classical bridging patterns**: See `references/quantum-classical-bridging.md` — DBM-NQS for spin glasses, thermodynamic networks, Born-rule DQPT analysis, Leggett-Garg neural tests
 
 ## Error Handling
 
@@ -129,11 +176,3 @@ cargo build --release
 - Focuses on theoretical models with potential hardware implementations
 - Uses knowledge graph (kg.db) for paper retrieval and analysis
 - Supports both analysis and simulation workflows
-
-## Examples
-
-### Example 1: Using this skill
-```
-User: [Request related to this skill's domain]
-Agent: [Applies skill knowledge to help user]
-```

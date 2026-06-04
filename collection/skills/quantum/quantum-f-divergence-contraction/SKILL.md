@@ -115,5 +115,4 @@ def verify_detailed_balance(kraus_ops, stationary_state):
 
 ## Related Skills
 - quantum-circuit-builder
-- quantum-distributed-snapshot
-- information-theoretic-pir
+- quantum-ml-patterns

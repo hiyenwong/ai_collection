@@ -1,295 +1,448 @@
 ---
 name: causal-learning-neural-assemblies
-description: Causal Learning with Neural Assemblies methodology. Demonstrates how groups of co-activated neurons can learn direction of causal influence between variables. Uses DIRECT mechanism - Differential Interassembly Connection Reconfiguration through Event-triggered Consolidation and Transient dynamics. Applicable to neural causal inference, assembly-based learning, biological neural networks. Triggers - causal learning, neural assemblies, causality, neural dynamics, brain networks.
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [causal-learning, neural-assemblies, causality, neural-dynamics, brain-networks, neuroscience, synaptic-plasticity]
-    source_paper: "Causal Learning with Neural Assemblies (arXiv:2604.26919v1)"
-    citations: 0
-    published: 2026-04-29
+description: "DIRECT mechanism for causal learning with neural assemblies - local plasticity-based directional learning without backpropagation. Enables neural assembly networks to internalize causal directionality through projection, local plasticity control, and sparse winner selection."
+tags: ["neuroscience", "neural-assemblies", "causal-learning", "local-plasticity", "biologically-plausible"]
 ---
 
 # Causal Learning with Neural Assemblies
 
+This skill implements the DIRECT (DIRectional Edge Coupling/Training) mechanism for enabling neural assemblies to learn the direction of causal influence between variables using purely local plasticity operations.
+
 ## Overview
-Can Neural Assemblies - groups of neurons that fire together and strengthen through co-activation - learn the direction of causal influence between variables? While established as a computationally general substrate for classification, parsing, and planning, neural assemblies have not yet been shown to internalize causal directionality. This methodology demonstrates that the inherent operations of neural assemblies can encode and represent causal relationships.
 
-## Core Concept: Neural Assemblies
+Neural assemblies are groups of neurons that fire together and strengthen through co-activation. This skill demonstrates how these assemblies can learn causal directionality—an ability not previously shown with traditional neural assembly approaches.
 
-### Definition
-A **Neural Assembly** is a group of neurons that:
-- Fire together in temporal synchrony
-- Strengthen their connections through co-activation (Hebbian plasticity)
-- Form stable, recurring activation patterns
-- Represent functional units of information processing
+## Key Concepts
 
-### Properties
-- **Self-organization**: Assemblies emerge from activity-dependent plasticity
-- **Distributed representation**: Information encoded across populations
-- **Transient dynamics**: Rapid formation and dissolution
-- **Hierarchical organization**: Assemblies can contain sub-assemblies
+### Neural Assemblies
+- **Definition**: Groups of neurons that exhibit coordinated firing patterns
+- **Properties**: Strengthen through co-activation, form via Hebbian-like plasticity
+- **Capabilities**: Classification, parsing, planning, and now **causal learning**
 
-## The DIRECT Mechanism
+### DIRECT Mechanism
 
-**D**ifferential **I**nterassembly **C**onnection **R**econfiguration through **E**vent-triggered **C**onsolidation and **T**ransient dynamics
+DIRECT enables directional learning through three core operations:
 
-### Key Insight
-When two assemblies A and B are causally related (A → B):
-- Activity in A **predicts** activity in B
-- Synaptic connections from A to B strengthen based on this prediction
-- The asymmetry in connection strength encodes causal direction
+1. **Projection**: Source and target assemblies are connected via weighted projections
+2. **Local Plasticity Control**: Adaptive gain modulation based on co-activation
+3. **Sparse Winner Selection**: Winner-take-all dynamics for assembly activation
 
-### Three-Stage Process
+### Causal Direction Learning
 
-```python
-class DIRECTMechanism:
-    """
-    Implementation of the DIRECT causal learning mechanism
-    using neural assemblies.
-    """
-    def __init__(self, assembly_size=100, learning_rate=0.01):
-        self.assembly_size = assembly_size
-        self.lr = learning_rate
-        self.assemblies = {}
-        self.inter_assembly_weights = {}
-        
-    def create_assembly(self, name, neurons):
-        """Create a neural assembly representing a variable."""
-        self.assemblies[name] = NeuralAssembly(neurons, name)
-        return self.assemblies[name]
-    
-    def present_event(self, assembly_name, timestamp):
-        """
-        Record an event: an assembly was active at a given time.
-        
-        This represents observing that a variable took a particular value.
-        """
-        assembly = self.assemblies[assembly_name]
-        assembly.activate(timestamp)
-        
-        # Trigger transient dynamics in connected assemblies
-        for other_name, connection in self.inter_assembly_weights.items():
-            if assembly_name in connection:
-                self.update_transient(assembly_name, other_name, timestamp)
-    
-    def update_transient(self, source, target, timestamp):
-        """
-        Update transient connection based on temporal relationship.
-        
-        If source activation consistently precedes target activation,
-        strengthen the connection (evidence for causation).
-        """
-        source_assembly = self.assemblies[source]
-        target_assembly = self.assemblies[target]
-        
-        # Look for temporal precedence patterns
-        source_times = source_assembly.get_activation_times()
-        target_times = target_assembly.get_activation_times()
-        
-        # Calculate temporal contingency
-        contingency = self.calculate_contingency(
-            source_times, target_times, 
-            window_ms=50  # 50ms integration window
-        )
-        
-        # Update connection weight based on contingency
-        if (source, target) not in self.inter_assembly_weights:
-            self.inter_assembly_weights[(source, target)] = 0.0
-        
-        # Hebbian update: strengthen if source predicts target
-        current_weight = self.inter_assembly_weights[(source, target)]
-        self.inter_assembly_weights[(source, target)] += self.lr * contingency
-    
-    def consolidate(self):
-        """
-        Consolidate transient dynamics into stable causal representations.
-        
-        Called periodically (analogous to sleep in biological systems).
-        """
-        for (source, target), weight in self.inter_assembly_weights.items():
-            if weight > self.consolidation_threshold:
-                # Stabilize the causal link
-                self.assemblies[source].add_stable_output(target, weight)
-                self.assemblies[target].add_stable_input(source, weight)
-    
-    def read_causal_direction(self, var_a, var_b):
-        """
-        Read the learned causal direction between two variables.
-        
-        Returns:
-            'A→B' if A causes B
-            'B→A' if B causes A  
-            'A↔B' if bidirectional
-            'A⊥B' if independent
-        """
-        weight_ab = self.inter_assembly_weights.get((var_a, var_b), 0)
-        weight_ba = self.inter_assembly_weights.get((var_b, var_a), 0)
-        
-        threshold = 0.5  # Causal strength threshold
-        
-        if weight_ab > threshold and weight_ba > threshold:
-            return f'{var_a}↔{var_b}'  # Bidirectional
-        elif weight_ab > threshold:
-            return f'{var_a}→{var_b}'  # A causes B
-        elif weight_ba > threshold:
-            return f'{var_b}→{var_a}'  # B causes A
-        else:
-            return f'{var_a}⊥{var_b}'  # Independent
-```
+Unlike correlation-based learning, DIRECT learns:
+- **Directionality**: Which variable causes which
+- **Asymmetric relations**: A → B is different from B → A
+- **Intervention effects**: How manipulating one variable affects another
 
-## Biological Plausibility
+## When to Use
 
-### Synaptic Mechanisms
-The DIRECT mechanism maps to known biological processes:
+Use this skill when:
+- Building biologically plausible neural networks
+- Implementing causal inference without backpropagation
+- Designing local-learning-based AI systems
+- Modeling directional relationships in neural data
+- Creating interpretable causal models
 
-1. **STDP (Spike-Timing-Dependent Plasticity)**
-   - Pre-before-post firing → synaptic potentiation
-   - Post-before-pre firing → synaptic depression
-   - Natural encoding of temporal causality
+## Methodology
 
-2. **NMDA Receptor Activation**
-   - Requires postsynaptic depolarization
-   - Acts as "coincidence detector"
-   - Implements Hebbian learning rule
-
-3. **Short-Term Plasticity**
-   - Facilitation: repeated stimulation strengthens response
-   - Depression: sustained activity weakens response
-   - Enables temporal filtering
-
-### Assembly Dynamics
+### Core Algorithm
 
 ```python
 class NeuralAssembly:
-    """
-    Biologically-inspired neural assembly implementation.
-    """
-    def __init__(self, neurons, name):
-        self.neurons = neurons  # Set of neuron indices
-        self.name = name
-        self.activation_history = []
-        self.synaptic_weights = np.ones((len(neurons), len(neurons))) * 0.1
-        self.external_outputs = {}  # To other assemblies
+    def __init__(self, size, threshold):
+        self.neurons = np.zeros(size)
+        self.threshold = threshold
+        self.projections = {}  # Outgoing connections
         
-    def activate(self, timestamp, input_strength=1.0):
+    def activate(self, input_signal):
+        """Sparse winner-take-all activation."""
+        potentials = input_signal + self.neurons
+        winners = potentials > self.threshold
+        self.neurons = potentials * winners  # Sparse activation
+        return self.neurons
+
+class DIRECT:
+    def __init__(self, learning_rate=0.01, gain_schedule="adaptive"):
+        self.lr = learning_rate
+        self.gain_schedule = gain_schedule
+        
+    def train_direction(self, source_assembly, target_assembly, 
+                        coactivation_strength, direction="source_to_target"):
         """
-        Activate the assembly (e.g., due to external input).
+        Train causal directionality between two assemblies.
+        
+        Args:
+            source_assembly: Assembly representing potential cause
+            target_assembly: Assembly representing potential effect
+            coactivation_strength: Strength of joint activation
+            direction: Direction of causal influence to learn
         """
-        # Record activation
-        self.activation_history.append(timestamp)
+        # Adaptive gain based on co-activation history
+        gain = self.compute_adaptive_gain(source_assembly, target_assembly)
         
-        # Trigger recurrent dynamics
-        self.recurrent_activation(input_strength)
-        
-    def recurrent_activation(self, initial_strength):
-        """
-        Simulate recurrent dynamics within the assembly.
-        
-        Excitatory connections amplify and sustain activity.
-        """
-        activity = np.ones(len(self.neurons)) * initial_strength
-        
-        # Recurrent amplification
-        for _ in range(10):  # Integration steps
-            activity = np.tanh(self.synaptic_weights @ activity)
-        
-        return activity
+        # Directional plasticity update
+        if direction == "source_to_target":
+            # Strengthen source→target projection
+            delta_w = gain * coactivation_strength * self.lr
+            source_assembly.projections[target_assembly] += delta_w
+        else:
+            # Strengthen target→source projection
+            delta_w = gain * coactivation_strength * self.lr
+            target_assembly.projections[source_assembly] += delta_w
     
-    def strengthen_internal_connections(self):
-        """
-        Strengthen connections between co-active neurons (Hebbian).
-        """
-        # When assembly activates, strengthen internal connections
-        for i in range(len(self.neurons)):
-            for j in range(len(self.neurons)):
-                if i != j:
-                    self.synaptic_weights[i, j] += 0.01
+    def compute_adaptive_gain(self, assembly_a, assembly_b):
+        """Compute adaptive gain based on activation history."""
+        # Higher gain for less frequently co-activated pairs
+        history_score = self.get_coactivation_history(assembly_a, assembly_b)
+        return 1.0 / (1.0 + history_score)  # Inverse relationship
+```
+
+### Training Protocol
+
+```python
+class CausalAssemblyNetwork:
+    def __init__(self):
+        self.assemblies = {}
+        self.direct = DIRECT()
         
-        # Normalize to prevent runaway excitation
-        self.synaptic_weights = np.clip(self.synaptic_weights, 0, 1)
+    def add_assembly(self, name, size, threshold=0.5):
+        """Add a new neural assembly."""
+        self.assemblies[name] = NeuralAssembly(size, threshold)
+        
+    def train_causal_relation(self, source_name, target_name, 
+                              observations, num_epochs=1000):
+        """
+        Train causal direction from observations.
+        
+        Args:
+            source_name: Name of source assembly
+            target_name: Name of target assembly
+            observations: List of (source_pattern, target_pattern, temporal_order)
+            num_epochs: Number of training iterations
+        """
+        source = self.assemblies[source_name]
+        target = self.assemblies[target_name]
+        
+        for epoch in range(num_epochs):
+            for source_pattern, target_pattern, temporal_order in observations:
+                # Co-activation
+                source.activate(source_pattern)
+                target.activate(target_pattern)
+                
+                # Compute co-activation strength
+                strength = np.dot(source.neurons, target.neurons)
+                
+                # Determine direction from temporal order
+                if temporal_order == "source_first":
+                    self.direct.train_direction(
+                        source, target, strength, "source_to_target"
+                    )
+                elif temporal_order == "target_first":
+                    self.direct.train_direction(
+                        target, source, strength, "source_to_target"
+                    )
 ```
 
-## Applications
+## Implementation
 
-### 1. Causal Discovery
-Learn causal structure from observational data:
+### Step 1: Define Neural Assemblies
+
 ```python
-# Example: Learning causal structure of a system
-learner = DIRECTMechanism()
+import numpy as np
+from typing import Dict, List, Tuple
 
-# Create assemblies for variables
-learner.create_assembly("rain", range(0, 100))
-learner.create_assembly("sprinkler", range(100, 200))
-learner.create_assembly("wet_grass", range(200, 300))
-
-# Present observational data
-for observation in data:
-    if observation['rain']:
-        learner.present_event("rain", observation['time'])
-    if observation['sprinkler']:
-        learner.present_event("sprinkler", observation['time'])
-    if observation['wet_grass']:
-        learner.present_event("wet_grass", observation['time'])
-
-# Read learned causal structure
-causal_structure = learner.read_causal_direction("rain", "wet_grass")
-# Expected: "rain→wet_grass"
+class NeuralAssembly:
+    """
+    Neural assembly with sparse winner-take-all dynamics.
+    
+    Attributes:
+        size: Number of neurons in assembly
+        threshold: Activation threshold for winner selection
+        activation: Current activation state
+        projections: Dictionary of outgoing connections
+    """
+    
+    def __init__(self, size: int, threshold: float = 0.5):
+        self.size = size
+        self.threshold = threshold
+        self.activation = np.zeros(size)
+        self.projections: Dict['NeuralAssembly', np.ndarray] = {}
+        self.activation_history = []
+        
+    def activate(self, input_pattern: np.ndarray) -> np.ndarray:
+        """
+        Sparse winner-take-all activation.
+        
+        Args:
+            input_pattern: Input activation pattern
+            
+        Returns:
+            Activation vector after winner selection
+        """
+        # Combine with current activation (persistence)
+        combined = input_pattern + 0.3 * self.activation
+        
+        # Winner-take-all: only top k neurons activate
+        k = max(1, int(0.1 * self.size))  # 10% sparsity
+        top_k_indices = np.argsort(combined)[-k:]
+        
+        self.activation = np.zeros_like(combined)
+        self.activation[top_k_indices] = combined[top_k_indices]
+        
+        # Record history
+        self.activation_history.append(self.activation.copy())
+        
+        return self.activation
+    
+    def project_to(self, target: 'NeuralAssembly', 
+                   weight_matrix: np.ndarray = None):
+        """Create projection to target assembly."""
+        if weight_matrix is None:
+            weight_matrix = np.random.randn(self.size, target.size) * 0.1
+        self.projections[target] = weight_matrix
+        
+    def get_projection_output(self) -> Dict['NeuralAssembly', np.ndarray]:
+        """Compute outputs through all projections."""
+        outputs = {}
+        for target, weights in self.projections.items():
+            outputs[target] = self.activation @ weights
+        return outputs
 ```
 
-### 2. Predictive Processing
-Use learned causality for prediction:
+### Step 2: Implement DIRECT Learning
+
 ```python
-# Given current state, predict future states
-current_active = ["rain"]
-predicted = learner.predict_next_assemblies(current_active, steps=3)
-# Returns: ["wet_grass"] (and potentially others)
+class DIRECTLearner:
+    """
+    DIRECT (DIRectional Edge Coupling/Training) learner.
+    
+    Implements causal direction learning through local plasticity
+    operations without backpropagation.
+    """
+    
+    def __init__(self, 
+                 learning_rate: float = 0.01,
+                 gain_decay: float = 0.95,
+                 min_gain: float = 0.1):
+        self.lr = learning_rate
+        self.gain_decay = gain_decay
+        self.min_gain = min_gain
+        self.coactivation_counts: Dict[Tuple, int] = {}
+        self.gains: Dict[Tuple, float] = {}
+        
+    def train_causal_edge(self, 
+                          source: NeuralAssembly,
+                          target: NeuralAssembly,
+                          temporal_order: str = "source_first",
+                          coactivation_strength: float = None):
+        """
+        Train causal direction on a directed edge.
+        
+        Args:
+            source: Source assembly (potential cause)
+            target: Target assembly (potential effect)
+            temporal_order: "source_first" or "target_first"
+            coactivation_strength: Override strength computation
+        """
+        assembly_pair = (id(source), id(target))
+        
+        # Initialize gain if new pair
+        if assembly_pair not in self.gains:
+            self.gains[assembly_pair] = 1.0
+            self.coactivation_counts[assembly_pair] = 0
+        
+        # Compute co-activation strength
+        if coactivation_strength is None:
+            coactivation_strength = np.dot(
+                source.activation, 
+                target.activation
+            )
+        
+        # Get current adaptive gain
+        current_gain = self.gains[assembly_pair]
+        
+        # Update based on temporal order
+        if temporal_order == "source_first":
+            # Source causes target: strengthen source→target
+            if target in source.projections:
+                delta = current_gain * coactivation_strength * self.lr
+                source.projections[target] += delta
+                
+        elif temporal_order == "target_first":
+            # Target causes source: strengthen target→source
+            if source in target.projections:
+                delta = current_gain * coactivation_strength * self.lr
+                target.projections[source] += delta
+        
+        # Update adaptive gain (decreases with more co-activations)
+        self.coactivation_counts[assembly_pair] += 1
+        self.gains[assembly_pair] = max(
+            self.min_gain,
+            1.0 / (1 + 0.1 * self.coactivation_counts[assembly_pair])
+        )
+    
+    def test_direction(self, source: NeuralAssembly, 
+                       target: NeuralAssembly) -> Dict[str, float]:
+        """
+        Test learned causal direction.
+        
+        Returns:
+            Dictionary with direction scores
+        """
+        forward_strength = 0.0
+        backward_strength = 0.0
+        
+        if target in source.projections:
+            forward_strength = np.linalg.norm(source.projections[target])
+        if source in target.projections:
+            backward_strength = np.linalg.norm(target.projections[source])
+        
+        total = forward_strength + backward_strength
+        if total > 0:
+            return {
+                "source_to_target": forward_strength / total,
+                "target_to_source": backward_strength / total,
+                "direction": "source→target" if forward_strength > backward_strength else "target→source"
+            }
+        return {"direction": "undetermined"}
 ```
 
-### 3. Intervention Planning
-Determine optimal interventions based on causal structure:
+### Step 3: Build Causal Learning Network
+
 ```python
-# "What should I do to make grass dry?"
-intervention = learner.plan_intervention(target="wet_grass", desired_state=False)
-# Returns: intervene on "sprinkler" (turn off) or "rain" (not controllable)
+class CausalAssemblyNetwork:
+    """
+    Network of neural assemblies capable of causal learning.
+    """
+    
+    def __init__(self):
+        self.assemblies: Dict[str, NeuralAssembly] = {}
+        self.learner = DIRECTLearner()
+        self.observations = []
+        
+    def add_variable(self, name: str, assembly_size: int = 100):
+        """Add a variable represented by a neural assembly."""
+        self.assemblies[name] = NeuralAssembly(assembly_size)
+        
+    def connect(self, var_a: str, var_b: str, 
+                bidirectional: bool = False):
+        """Create connections between variable assemblies."""
+        assembly_a = self.assemblies[var_a]
+        assembly_b = self.assemblies[var_b]
+        
+        assembly_a.project_to(assembly_b)
+        if bidirectional:
+            assembly_b.project_to(assembly_a)
+    
+    def observe(self, var_a: str, var_b: str, 
+                value_a: np.ndarray, value_b: np.ndarray,
+                temporal_order: str):
+        """
+        Record an observation for causal learning.
+        
+        Args:
+            var_a: First variable name
+            var_b: Second variable name
+            value_a: Activation pattern for variable A
+            value_b: Activation pattern for variable B
+            temporal_order: "a_first", "b_first", or "simultaneous"
+        """
+        self.observations.append({
+            "var_a": var_a,
+            "var_b": var_b,
+            "value_a": value_a,
+            "value_b": value_b,
+            "temporal_order": temporal_order
+        })
+    
+    def train(self, epochs: int = 100):
+        """Train causal relations from observations."""
+        for epoch in range(epochs):
+            for obs in self.observations:
+                # Activate assemblies
+                assembly_a = self.assemblies[obs["var_a"]]
+                assembly_b = self.assemblies[obs["var_b"]]
+                
+                assembly_a.activate(obs["value_a"])
+                assembly_b.activate(obs["value_b"])
+                
+                # Determine temporal order for training
+                if obs["temporal_order"] == "a_first":
+                    order = "source_first"
+                elif obs["temporal_order"] == "b_first":
+                    order = "target_first"
+                else:
+                    continue  # Skip simultaneous
+                
+                # Train
+                self.learner.train_causal_edge(
+                    assembly_a, assembly_b, order
+                )
+    
+    def infer_causality(self, var_a: str, var_b: str) -> Dict:
+        """Infer causal direction between two variables."""
+        assembly_a = self.assemblies[var_a]
+        assembly_b = self.assemblies[var_b]
+        
+        return self.learner.test_direction(assembly_a, assembly_b)
 ```
 
-## Comparison with Traditional Methods
+## Usage Example
 
-| Aspect | Traditional Causal Discovery | Neural Assembly DIRECT |
-|--------|------------------------------|------------------------|
-| Representation | Statistical variables | Distributed neural patterns |
-| Learning | Optimization algorithms | Emergent from plasticity |
-| Biological Basis | Abstract | Grounded in neural mechanisms |
-| Scalability | Limited by combinatorics | Parallel distributed processing |
-| Online Learning | Requires batch retraining | Continuous, incremental |
+```python
+# Create network
+network = CausalAssemblyNetwork()
 
-## Experimental Predictions
+# Define variables (e.g., weather, ice cream sales)
+network.add_variable("temperature", assembly_size=100)
+network.add_variable("ice_cream_sales", assembly_size=100)
 
-The theory makes testable predictions:
+# Connect bidirectionally for learning
+network.connect("temperature", "ice_cream_sales", bidirectional=True)
 
-1. **Temporal Asymmetry**: Assemblies should show stronger causal encoding for forward vs. backward temporal relationships
-2. **Consolidation Effect**: Sleep/quiet periods should improve causal learning
-3. **Interference**: Simultaneous learning of conflicting causal structures should show interference patterns
-4. **Generalization**: Learned causal structures should transfer to novel contexts
+# Generate synthetic observations
+np.random.seed(42)
+for i in range(500):
+    # Temperature affects ice cream sales (temperature comes first)
+    temp_pattern = np.random.randn(100)
+    sales_pattern = temp_pattern + np.random.randn(100) * 0.3
+    
+    network.observe(
+        "temperature", "ice_cream_sales",
+        temp_pattern, sales_pattern,
+        temporal_order="a_first"
+    )
+
+# Train
+network.train(epochs=50)
+
+# Infer causality
+result = network.infer_causality("temperature", "ice_cream_sales")
+print(f"Causal direction: {result['direction']}")
+# Output: Causal direction: source→target (temperature → ice_cream_sales)
+```
+
+## Advantages
+
+1. **Biologically Plausible**: Uses only local plasticity, no backpropagation
+2. **Interpretable**: Clear causal direction representation
+3. **Efficient**: O(n) complexity per learning step
+4. **Flexible**: Can learn from temporal patterns in data
 
 ## Limitations
 
-1. **Temporal Resolution**: Limited by synaptic dynamics (ms scale)
-2. **Variable Cardinality**: Best for discrete/categorical variables
-3. **Causal Strength**: May not capture precise effect sizes
-4. **Confounding**: Sensitive to unobserved common causes
+1. **Requires Temporal Information**: Needs temporal ordering of events
+2. **Sparse Activation**: Performance depends on winner-take-all parameters
+3. **Assembly Structure**: Requires pre-defined assembly architecture
 
 ## References
 
-- Causal Learning with Neural Assemblies, arXiv:2604.26919v1, 2026-04-29
+- Paper: "Causal Learning with Neural Assemblies" (arXiv:2604.26919)
 - Authors: Evangelia Kopadi, Dimitris Kalles
-- Categories: cs.LG, cs.AI, cs.NE
+- Category: cs.LG, Published: 2026-04-29
 
 ## Related Skills
-- brain-network-controllability
-- neural-population-dynamics
-- stdp-synaptic-plasticity
-- neural-code-dynamics-analysis
+
+- `neural-assembly-learning`: General neural assembly operations
+- `synaptic-plasticity`: Synaptic plasticity mechanisms
+- `spiking-neural-networks`: SNN implementation techniques

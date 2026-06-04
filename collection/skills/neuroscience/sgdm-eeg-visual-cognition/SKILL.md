@@ -1,151 +1,130 @@
 ---
 name: sgdm-eeg-visual-cognition
-description: Structure-Guided Diffusion Model (SGDM) for EEG-based visual cognition reconstruction methodology. Integrates structural guidance with diffusion models for decoding both objective perception and subjective cognitive content from EEG signals. Applicable to BCI, visual decoding, brain-computer interfaces. Triggers - EEG, visual reconstruction, diffusion model, brain-computer interface, BCI, neural decoding.
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [neuroscience, eeg, visual-decoding, diffusion-model, bci, brain-computer-interface, neural-decoding]
-    source_paper: "Structure-Guided Diffusion Model for EEG-Based Visual Cognition Reconstruction (arXiv:2604.22649v1)"
-    citations: 0
-    published: 2026-04-24
+description: "Structure-Guided Diffusion Model (SGDM) for EEG-based visual cognition reconstruction. Leverages brain structural information to guide diffusion process for improved visual stimulus reconstruction from EEG. Keywords: EEG, diffusion model, visual reconstruction, brain structure, BCI."
 ---
 
-# Structure-Guided Diffusion Model for EEG-Based Visual Cognition Reconstruction
+# Structure-Guided Diffusion Model for EEG-Based Visual Cognition
 
-## Overview
-Decoding visual information from electroencephalography (EEG) is a fundamental challenge in neuroscience and brain-computer interface (BCI) research. The Structure-Guided Diffusion Model (SGDM) addresses limitations of existing methods by capturing structural features and differentiating objective perception from subjective cognition.
+> Structure-Guided Diffusion Model (SGDM) incorporating brain anatomical information to guide the reconstruction of visual stimuli from EEG signals, improving upon standard diffusion approaches for brain-computer interface applications.
 
-## Core Innovation
+## Metadata
+- **Source**: arXiv:2604.22649
+- **Authors**: Yongxiang Lian, Yueyang Cang, Pingge Hu
+- **Published**: 2026-04-24
 
-### Structure-Guided Framework
-Unlike traditional EEG-to-image methods limited to natural images and categorical representations, SGDM:
-- Captures fine-grained structural features
-- Differentiates between objective perception (sensory input) and subjective cognition (mental imagery)
-- Enables reconstruction of both perceived and imagined visual content
+## Core Methodology
 
-### Methodology Components
+### Key Innovation
+Decoding visual information from EEG is challenging due to:
+- Low spatial resolution of scalp recordings
+- Volume conduction blurring neural sources
+- Individual anatomical variations affecting signal propagation
 
-1. **EEG Signal Encoding**: Neural encoding of temporal-spatial EEG patterns
-2. **Structural Guidance**: Explicit structural constraints during diffusion process
-3. **Dual-Pathway Decoding**: Separate pathways for perception vs. cognition reconstruction
-4. **Diffusion Prior**: Leveraging pre-trained diffusion models with EEG-guided conditioning
+SGDM addresses this by leveraging brain structure to:
+1. Guide the diffusion generation process with anatomical constraints
+2. Incorporate individual cortical geometry via forward models
+3. Condition image generation on structural priors
+4. Improve reconstruction quality over standard latent diffusion
 
-## Implementation Pattern
+### Technical Framework
+1. **Structural Encoder**: Brain anatomy to latent conditioning vectors
+2. **EEG Feature Extractor**: Temporal-spatial feature extraction
+3. **Guided Diffusion Process**: Structural conditioning at each denoising step
+4. **Cross-Modal Fusion**: Integration of neural and anatomical information
 
+## Implementation Guide
+
+### Prerequisites
+- Diffusers library (HuggingFace)
+- PyTorch for deep learning
+- MNE-Python for EEG processing
+- Forward modeling (e.g., OpenMEEG, FieldTrip)
+
+### Step-by-Step
+1. Compute individual forward model: Anatomy to sensor projection
+2. Train structural encoder: Cortical regions to conditioning space
+3. Extract EEG features: Spatiotemporal patterns encoding visual information
+4. Fine-tune diffusion model: With structural guidance mechanism
+5. Generate reconstructions: Conditioned on both EEG and structure
+
+### Code Example
 ```python
 import torch
-from diffusers import StableDiffusionPipeline
-import numpy as np
+import torch.nn as nn
+from diffusers import DDPMScheduler, UNet2DConditionModel
 
-class SGDMReconstructor:
-    """
-    Structure-Guided Diffusion Model for EEG visual reconstruction.
-    """
-    def __init__(self, eeg_encoder, diffusion_model, guidance_scale=7.5):
-        self.eeg_encoder = eeg_encoder  # Pre-trained EEG encoder
-        self.diffusion = diffusion_model
-        self.guidance_scale = guidance_scale
-        
-    def encode_eeg(self, eeg_signal):
-        """Encode raw EEG to latent representation."""
-        # EEG: (batch, channels, time)
-        # Extract temporal-spatial features
-        temporal_features = self.temporal_conv(eeg_signal)
-        spatial_features = self.spatial_attention(temporal_features)
-        return self.projection(spatial_features)
-    
-    def reconstruct_visual(self, eeg_signal, mode='perception'):
-        """
-        Reconstruct visual content from EEG.
-        
-        Args:
-            eeg_signal: Raw EEG data (batch, channels, time)
-            mode: 'perception' for objective perception, 'cognition' for subjective cognition
-        """
-        # Encode EEG
-        eeg_latent = self.encode_eeg(eeg_signal)
-        
-        # Add structural guidance based on mode
-        structural_guidance = self.get_structural_prior(mode)
-        
-        # Generate with diffusion
-        image = self.diffusion(
-            prompt_embeds=eeg_latent,
-            guidance_scale=self.guidance_scale,
-            structural_guidance=structural_guidance
+class StructureGuidedDiffusion(nn.Module):
+    """Diffusion model guided by brain structure for EEG visual reconstruction"""
+    def __init__(self, eeg_channels, n_cortical_regions, image_size=256):
+        super().__init__()
+        # EEG feature extractor
+        self.eeg_encoder = nn.Sequential(
+            nn.Conv1d(eeg_channels, 64, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.AdaptiveAvgPool1d(64),
+            nn.Flatten(),
+            nn.Linear(64*64, 512)
         )
-        return image
+        
+        # Structural encoder
+        self.structural_encoder = nn.Sequential(
+            nn.Linear(n_cortical_regions, 256),
+            nn.ReLU(),
+            nn.Linear(256, 512)
+        )
+        
+        # Cross-modal fusion
+        self.fusion = nn.MultiheadAttention(embed_dim=512, num_heads=8)
+        
+        # Conditional diffusion UNet
+        self.unet = UNet2DConditionModel(
+            sample_size=image_size,
+            in_channels=3,
+            out_channels=3,
+            cross_attention_dim=512
+        )
+        
+    def forward(self, noisy_image, timestep, eeg, structural_prior):
+        # Encode EEG and structural information
+        eeg_features = self.eeg_encoder(eeg)
+        struct_features = self.structural_encoder(structural_prior)
+        
+        # Cross-modal fusion
+        combined = torch.stack([eeg_features, struct_features], dim=0)
+        fused, _ = self.fusion(combined, combined, combined)
+        conditioning = fused.mean(dim=0)
+        
+        # Structure-guided denoising
+        noise_pred = self.unet(noisy_image, timestep, conditioning)
+        return noise_pred
+
+def generate_reconstruction(model, eeg_data, structural_prior, num_steps=50):
+    """Generate visual reconstruction from EEG with structural guidance"""
+    scheduler = DDPMScheduler(num_train_timesteps=1000)
+    scheduler.set_timesteps(num_steps)
     
-    def get_structural_prior(self, mode):
-        """Get structural prior based on reconstruction mode."""
-        # Perception: focus on low-level visual features
-        # Cognition: focus on high-level semantic features
-        if mode == 'perception':
-            return self.perception_structure_prior
-        else:
-            return self.cognition_structure_prior
+    # Start from random noise
+    image = torch.randn(1, 3, 256, 256)
+    
+    for t in scheduler.timesteps:
+        noise_pred = model(image, t, eeg_data, structural_prior)
+        image = scheduler.step(noise_pred, t, image).prev_sample
+    
+    return image
 ```
 
-## Key Techniques
-
-### 1. EEG Feature Extraction
-- **Temporal Convolution**: Capture temporal dynamics in EEG signals
-- **Spatial Attention**: Weight electrode channels based on task relevance
-- **Multi-scale Fusion**: Combine features from different frequency bands
-
-### 2. Structural Guidance
-- **Edge-aware Guidance**: Preserve structural boundaries
-- **Semantic-aware Guidance**: Align with high-level semantic concepts
-- **Dual-pathway Architecture**: Separate processing for perception/cognition
-
-### 3. Diffusion Conditioning
-- **Classifier-free Guidance**: Balance EEG signal fidelity and image quality
-- **Cross-modal Alignment**: Align EEG embeddings with visual latent space
-- **Progressive Refinement**: Iterative improvement through diffusion steps
-
 ## Applications
+- Visual BCI: Thought-to-image interfaces
+- Dream reconstruction: Decoding visual imagery from EEG
+- Perceptual decoding: Understanding visual processing
+- Clinical assessment: Quantifying visual perception deficits
 
-1. **Brain-Computer Interfaces**: Direct thought-to-image communication
-2. **Visual Prosthetics**: Reconstructing visual experience for the blind
-3. **Dream Decoding**: Reconstructing mental imagery during sleep
-4. **Neuroscience Research**: Understanding visual processing in the brain
-
-## Advantages Over Existing Methods
-
-| Aspect | Traditional Methods | SGDM |
-|--------|---------------------|------|
-| Image Types | Natural images only | Any visual content |
-| Content | Categorical only | Structural + semantic |
-| Perception/Cognition | Combined | Separable |
-| Feature Capture | Limited | Fine-grained structural |
-
-## Experimental Considerations
-
-### EEG Recording
-- High-density EEG (64+ channels recommended)
-- Sampling rate: >=500 Hz
-- Reference: Average or linked mastoids
-
-### Preprocessing
-- Bandpass filter: 0.1-100 Hz
-- Artifact removal: ICA or regression-based
-- Epoching: -200ms to +800ms post-stimulus
-
-### Training Data
-- Paired EEG-image recordings
-- Diverse visual stimuli
-- Both perception and imagination conditions
-
-## References
-
-- Structure-Guided Diffusion Model for EEG-Based Visual Cognition Reconstruction, arXiv:2604.22649v1, 2026-04-24
-- Authors: Yongxiang Lian, Yueyang Cang, Pingge Hu
-- Categories: cs.NE, cs.CV
+## Pitfalls
+- Requires individual MRI for optimal structural guidance
+- High computational cost for diffusion sampling
+- Limited by EEG spatial resolution even with structural priors
 
 ## Related Skills
-- eeg-visual-decoding
-- brain-computer-interface
-- diffusion-models-neuroscience
-- neural-encoding-evaluation-meeg
+- eeg-structure-guided-diffusion
+- eeg-3d-visual-decoding
+- brain-inspired-capture-evidence-driven

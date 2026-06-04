@@ -45,3 +45,7 @@ Apply quantum kernels to frozen medical foundation model embeddings to achieve c
 - Aggressive PCA loses medical features
 - Must ensure identical features and search spaces for fair comparison
 - Medical data requires careful stratification by patient
+
+## Classical Collapse Analysis
+
+See `references/classical-collapse-comparison.md` for detailed analysis of the classical kernel collapse phenomenon observed with frozen medical foundation model embeddings — including eigenspectrum analysis, tiered comparison framework, and code for effective rank computation.

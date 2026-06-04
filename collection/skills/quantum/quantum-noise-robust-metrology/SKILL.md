@@ -160,9 +160,22 @@ def compute_qfi_gaussian_state(covariance_matrix, derivatives):
 ## Related Skills
 - quantum-statistical-estimation
 - quantum-geometric-statistical-analysis
+## Related Skills
+- quantum-statistical-estimation
+- quantum-geometric-statistical-analysis
+- quantum-sensor-reliability
+
+## References
+- **references/cryogenic-device-metrology.md** — Device-agnostic noise metrology for cryogenic quantum hardware (arxiv:2605.28808)
+- **quantum-cryogenic-noise-metrology** (device-agnostic hardware characterization — see references/cryogenic-device-metrology.md)
+
+## Related Skills
+- quantum-statistical-estimation
+- quantum-geometric-statistical-analysis
 - quantum-sensor-reliability
 
 ## Resources
 - arXiv:2605.06263 - Beating noise in frequency estimation with squeezing and memory
+- arXiv:2605.28808 - Device-Agnostic Microwave Noise Metrology for Nonlinear Cryogenic Quantum Devices
 - Quantum Fisher Information: Paris, M. G. A. (2009)
 - Quantum Brownian motion: Breuer & Petruccione, "Theory of Open Quantum Systems"

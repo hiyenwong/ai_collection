@@ -49,9 +49,12 @@ the group QFT decomposes the group algebra into irreps.
 
 ### Implementation Pattern
 
-1. Decompose the semisimple algebra into simple components
+1. Decompose the semisimple algebra into simple components (irreps via branching rules)
 2. Construct the QFT for each matrix block
 3. Approximate the non-unitary transform with a unitary circuit when d is large
+   - **Approximation bound**: ||F - U|| ≤ d^(-1/2) + ε
+   - **Gate complexity**: poly(n, log d, log(1/ε))
+   - **Algebras**: partition algebra P_n(d), Brauer algebra B_n(d), walled Brauer algebra B_{r,s}(d)
 4. Compose the block transforms into the full QFT circuit
 
 ### Applications
@@ -59,6 +62,14 @@ the group QFT decomposes the group algebra into irreps.
 - Quantum algorithms for algebraic structure problems
 - Representation-theoretic approaches to quantum complexity
 - Generalized hidden subgroup problems
+- Statistical physics: Potts models (partition algebra), invariant theory (Brauer algebra)
+- Tensor network methods: Brauer algebra connects to tensor contractions
+
+### Connection to Number Theory
+
+- **Schur-Weyl duality**: Deep connection between symmetric group representations and GL(n)
+- **Partition algebras**: Generalize symmetric group combinatorics, linked to enumerative combinatorics
+- **Brauer algebras**: Connect to orthogonal/symplectic group invariants
 
 ## 2. Quantum Signal Processing via Orthogonal Polynomials
 

@@ -29,6 +29,14 @@ Based on sequential vs simultaneous entanglement swapping analysis (arXiv:2605.0
 - Lower latency but higher resource demands
 - Better throughput for long-distance links
 
+**Progressive Swapping to the Middle (PSM):** (Updated 2026-06-02, arXiv:2605.31493)
+- Establish entanglement in parallel on all segments, then progressively swap toward the middle
+- Minimizes memory holding time: O(log n) vs O(n) for sequential
+- Specifically adapted for networks with imperfect quantum memories
+- **When to use**: Multi-hop networks where memory decoherence is the bottleneck (T_coh < (n-1) × t_swap)
+- **Key advantage**: Memory-aware scheduling accounts for heterogeneous node coherence times
+- See `progressive-swapping-quantum-network-protocol` skill for detailed PSM implementation patterns
+
 ### Key Metrics
 
 - **Fidelity**: Quality of end-to-end entangled state
@@ -80,7 +88,8 @@ network = {
 ## Key References
 
 - Entanglement swapping optimization: arXiv:2605.04047
-- Related: quantum-systems-engineering, distributed-quantum-computing
+- Progressive Swapping to the Middle (PSM) protocol: arXiv:2605.31493 - see `progressive-swapping-quantum-network-protocol` skill for memory-aware PSM implementation
+- Related: quantum-systems-engineering, distributed-quantum-computing, progressive-swapping-quantum-network-protocol
 
 ## Limitations
 

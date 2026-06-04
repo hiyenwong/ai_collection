@@ -13,6 +13,16 @@ Analyzes quantum information protocols from academic papers, extracting reusable
 - **Quantum communication** (quantum teleportation, quantum dense coding)
 - **Security analysis methods** (information-theoretic security, entanglement-based security)
 
+## Related Protocols
+
+### Quantum Subliminal Learning (arXiv:2605.29557)
+**Pattern**: Quantum science and machine learning convergence paradigm. Explores learning mechanisms operating below classical detection thresholds using quantum states.
+- ML as physical science — ML principles rooted in physical quantum phenomena
+- Subliminal information processing — quantum states enable learning beyond classical detection
+- Superconducting quantum circuits as hardware foundation for quantum-classical learning
+- Entanglement-enhanced information transfer for learning acceleration
+**Trigger**: quantum ML convergence, quantum information science, subliminal learning, quantum-classical fusion
+
 ## Activation Keywords
 
 - quantum protocol analysis
@@ -272,46 +282,6 @@ INSERT INTO kg_vectors (entity_id, embedding)
 VALUES (protocol_id, embedding_blob)
 ```
 
-## Instructions for Agents
-
-### Step 1: Identify Protocol Type
-Read the paper and classify: QKD, Secret Sharing, Digital Signature, Teleportation, or Error Correction.
-
-### Step 2: Extract Protocol Components
-For each protocol extract: input requirements, process steps, output metrics, security assumptions, and implementation challenges.
-
-### Step 3: Analyze Security
-Document information-theoretic security bounds, composability properties, and attack resistance (individual, collective, coherent).
-
-### Step 4: Generate Analysis Report
-Output a structured report using the Output Format template above.
-
-## Examples
-
-### Example 1: QKD Paper Analysis
-
-```
-User: "Analyze this BB84 decoy-state QKD paper"
-
-Agent:
-1. Identify protocol type: Prepare-and-Measure QKD with decoy states
-2. Extract: qubit encoding, decoy pulse rates, key rate formula
-3. Analyze security: photon-number-splitting attack resistance
-4. Report: key rate ~10 Mbps, distance up to 200 km, QBER threshold 11%
-```
-
-### Example 2: Secret Sharing Protocol
-
-```
-User: "Analyze quantum secret sharing scheme for 3-party access structure"
-
-Agent:
-1. Classify as Quantum Secret Sharing protocol
-2. Extract: entangled state preparation, distribution, reconstruction procedure
-3. Verify: unauthorized subsets get zero information
-4. Output protocol specification and security analysis
-```
-
 ## Best Practices
 
 1. **Prioritize security analysis**: Quantum protocols are primarily security tools
@@ -320,11 +290,48 @@ Agent:
 4. **Note hardware requirements**: Implementation feasibility depends on this
 5. **Track parameter ranges**: Optimal values affect performance
 
+## Extended Scope: Post-Quantum & Information-Theoretic Security (2026-05-31)
+
+This skill's scope has been broadened beyond purely quantum protocols to include **post-quantum cryptographic deployment** and **information-theoretic privacy protocols** that serve the same security goals in the quantum-threat landscape.
+
+### Post-Quantum Cryptography (PQC) Deployment
+- **quantum-safe-6g-pqc-evaluation** (arXiv: 2605.06881) — NIST PQC benchmarking for 6G/IoT networks
+  - ML-KEM/Kyber, ML-DSA/Dilithium, Falcon size expansion analysis
+  - Three deployment patterns: hybrid handshake, size-optimized, asynchronous PQC
+  - Key insight: ciphertext/signature size (not computation) is the bottleneck
+
+### Quantum Hardware Security
+- **quantum-secure-puf-silicon-photonics** (arXiv: 2605.14959) — Quantum readout PUFs using SiN MZI meshes
+  - Single-photon states + maximally mixed input for eavesdropper concealment
+  - EER as low as 10^-14 via Monte Carlo security analysis
+  - CMOS-compatible fabrication for scalable deployment
+
+### Information-Theoretic Privacy
+- **dpf-error-detecting-pir-rings** (arXiv: 2604.00411) — DPF-based IT-PIR over rings
+  - Distributed Point Functions with algebraic error detection
+  - Ring-based construction more efficient than field-based
+  - Multi-server with adversarial tolerance
+
+### Unified Security Taxonomy
+
+| Layer | Protocol Type | Example | Security Model |
+|-------|--------------|---------|---------------|
+| Quantum | QKD, quantum teleportation | BB84, E91 | Information-theoretic (quantum physics) |
+| Post-Quantum | Lattice-based, code-based | ML-KEM, ML-DSA | Computational (hardness assumptions) |
+| Hardware | PUFs, quantum readout | SiN MZI mesh PUF | Physical unclonability + quantum states |
+| Information-Theoretic | IT-PIR, DPF | Ring-based PIR | Information-theoretic (no computational assumptions) |
+
 ## Related Skills
 
 - **quantum-network-protocol-designer**: Design new quantum protocols
 - **quantum-finance-analysis**: Quantum applications in finance
 - **quantum-algorithm-implementation-guide**: Implement quantum algorithms
+- **post-quantum-cryptographic-protocol-analysis**: PQC protocol design and analysis
+- **quantum-resistant-networks**: Post-quantum network architecture
+- **quantum-safe-6g-pqc-evaluation**: NIST PQC deployment evaluation for 6G/IoT
+- **quantum-secure-puf-silicon-photonics**: Quantum PUF authentication via silicon photonics
+- **dpf-error-detecting-pir-rings**: Information-theoretic private information retrieval
+- **quantum-entanglement-channel-discrimination**: MEWC/MEBC framework — entanglement resource trade-offs for channel discrimination and phase transitions
 
 ## References
 
@@ -332,6 +339,7 @@ Agent:
 - Scarani et al.: The security of practical quantum key distribution
 - Lo et al.: Decoy state quantum key distribution
 - Renner: Security of Quantum Key Distribution
+- **[references/pqc-deployment-evaluation.md](references/pqc-deployment-evaluation.md)** — NIST PQC benchmarking results for 6G/IoT deployment (ML-KEM, ML-DSA, Falcon size/computation trade-offs)
 
 ## Notes
 

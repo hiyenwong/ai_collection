@@ -1,11 +1,15 @@
 ---
 name: quantum-systems-engineering
-description: "Systems engineering patterns for quantum computing systems. Covers hybrid quantum-classical architecture design, distributed quantum computing, robust quantum control systems, and quantum system modeling. Use when designing quantum computing systems, analyzing distributed quantum architectures, or implementing robust control for quantum hardware. Keywords: quantum systems, distributed quantum, quantum control, hybrid quantum-classical, quantum architecture, quantum error correction, quantum system design."
+description: "Systems engineering patterns for quantum computing systems. Covers hybrid quantum-classical architecture design, distributed quantum computing, robust quantum control systems, and quantum system modeling. Use when designing quantum computing systems, analyzing distributed quantum architectures, or implementing robust control for quantum hardware. Also covers: dissipative thermal state preparation with error bounds, analytical two-pulse molecular qubit control, adaptive feedback for bistable qubits, and collision model approximations. Keywords: quantum systems, distributed quantum, quantum control, hybrid quantum-classical, quantum architecture, quantum error correction, quantum system design, thermal state preparation, molecular qubits, bistable qubit, collision model, Lindbladian evolution, Magnus expansion"
 ---
 
 # Quantum Systems Engineering
 
 Systems engineering patterns applied to quantum computing systems, combining distributed computing principles with quantum hardware constraints.
+
+## Key References
+
+See `references/papers-2026-05-21.md` for session-specific research on quantum RL process synthesis (state encoding decoupling qubit count from problem size) and pulse-level QML software frameworks (composable ansatz, JAX optimization, Fourier diagnostics).
 
 ## Activation Keywords
 - quantum systems engineering
@@ -138,6 +142,70 @@ Three complementary approaches for robust quantum control under noise and model 
 - Problem: QEC decoding throughput is a bottleneck for practical fault-tolerant quantum computing.
 - Solution: Reconfigurable architectures for ultra-high-rate quantum error correction.
 - Reference: "Towards Ultra-High-Rate Quantum Error Correction" (arXiv:2604.16209).
+
+### Pattern 8: Dissipative Thermal State Preparation with Rigorous Error Bounds
+
+Recent advances in analog quantum simulation provide rigorous error-bounded thermal state preparation:
+
+- Problem: Digital Lindbladian simulation for thermal states remains out of reach for NISQ hardware.
+- Solution: Collision model approximations using resettable ancilla qubit baths with tunable time-dependent couplings.
+- Key insight: System-bath coupling generates both desired Lindblad dynamics AND a unitary Lamb shift that tightens the fixed-point error bound, scaling as J^2 where J is the coupling strength.
+- Randomized drive implementation suppresses spectral resonances with the many-body spectrum.
+- Practical trade-off: Stronger J speeds convergence but increases Lamb shift error.
+- Reference: arXiv:2605.03011.
+
+### Pattern 9: Analytical Two-Pulse Control for High-Fidelity Molecular Qubits
+
+Closed-form unitary evolution for universal single-qubit gates:
+
+- Problem: Complex control protocols and sensitivity to experimental imperfections limit practical quantum gate operations.
+- Solution: First-order Magnus expansion to derive closed-form unitary evolution from optimized two-pulse sequences in rotational states of ultracold molecules (e.g., NaCs).
+- Results: Gate fidelities >0.9999 with minimal population leakage to auxiliary states.
+- Key benefit: Complex multi-gate sequences executable with phase-locked operations; time-dependent molecular orientation encodes gate truth table enabling practical gate tomography.
+- Platform-independent: Applicable to other molecular species and physical platforms.
+- Reference: arXiv:2605.03461.
+
+### Pattern 10: Adaptive Feedback Control for Bistable Qubits
+
+Bistable quantum systems require adaptive rather than static control:
+
+- Problem: Bistable qubits exhibit two stable operating regimes requiring dynamic parameter adjustment.
+- Solution: Adaptive feedback control that monitors system response in real-time, identifies current operating regime, and adjusts control parameters accordingly.
+- Key considerations: Hysteresis in bistable systems means transition paths matter; noise in feedback loop must be accounted for; adaptive adjustments must be faster than decoherence timescale.
+- Reference: arXiv:2605.03187.
+
+### Pattern 11: Unauthenticated Byzantine Consensus for Post-Quantum Distributed Systems
+
+Fast TetraBFT methodology for post-quantum distributed consensus:
+
+- Problem: Post-quantum signatures (lattice-based, hash-based) are significantly larger and slower, creating throughput bottlenecks in Byzantine consensus protocols.
+- Solution: Unauthenticated BFT protocols that rely only on authenticated point-to-point channels (e.g., TLS) rather than message-level signatures, achieving optimal f < n/3 Byzantine fault tolerance.
+- Key insight: Latency optimization focuses on the critical path — pre-prepare (optimized proposal), prepare (parallel validation), commit (batched messages), decision (fast path).
+- Benefits: Reduced cryptographic overhead, post-quantum ready by design, optimal fault tolerance preserved.
+- Pitfall: Requires trusted point-to-point channels; partial synchrony assumption (liveness not guaranteed in fully asynchronous networks).
+- Reference: arXiv:2606.03754 — "Fast TetraBFT: Optimizing Latency Where It Matters"
+
+### Pattern 12: Topological Quantum Gates via Majorana Fermion Braiding
+
+Planar Pauli stabilizer code framework for fault-tolerant logical gate design:
+
+- Problem: Logical information in topological QEC is stored non-locally, making efficient gate design challenging.
+- Solution: Encode logical qubits in pairwise Majorana fermion parity. Physical braiding operations implement logical Clifford gates with full topological protection.
+- Key insight: Braiding alone provides Clifford gates; T-gates require supplementary protocols (magic state distillation). Planar 2D layout enables practical hardware implementation.
+- Benefits: Local errors cannot affect non-local parity encoding (topological protection), scalable distance (scales with √N).
+- Pitfall: Braiding completeness limited to Clifford group; measurement-based gates introduce additional error channels; physical Majorana realization has decoherence beyond ideal model.
+- Reference: arXiv:2606.03916 — "Practical gates by Majorana fermion motion"
+
+### Pattern 13: Optimal Control for Trapped-Ion Piston Operations
+
+GRAPE/CRAB-based optimal control methodology for two-ion quantum device manipulation:
+
+- Problem: Precise ion positioning in trapped-ion quantum devices requires sub-nanometer accuracy while maintaining high gate fidelity.
+- Solution: GRAPE (Gradient Ascent Pulse Engineering) and CRAB (Chopped Random Basis) algorithms for optimal control pulse design, combined with closed-loop experimental calibration.
+- Key insight: Two-ion system has collective modes (center-of-mass, stretch) that enable controlled coupling between motional and internal states for entangling gates.
+- Benefits: Gate fidelity >99.9%, microsecond-scale pulses, extensible to N-ion chains via mode decomposition.
+- Pitfall: Ion trap heating degrades control fidelity (requires cryogenic operation for best results); real trap potentials deviate from ideal harmonic; crosstalk in multi-ion systems.
+- Reference: arXiv:2606.03488 — "Piston control in a two-ion quantum device"
 
 ## Implementation Checklist
 

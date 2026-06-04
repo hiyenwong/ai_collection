@@ -1,88 +1,74 @@
 ---
 name: eeg-microstate-variational-embedding
-description: "EEG Microstate Discovery via Variational Deep Embedding — unsupervised discovery of EEG microstates using variational autoencoder-based deep embedding. Use when: discovering EEG microstates, unsupervised EEG analysis, variational deep embedding for brain signals, temporal segmentation of EEG, microstate-based biomarker discovery. Based on arXiv:2605.10947 (2026). Trigger: EEG microstate discovery, variational EEG embedding, microstate analysis, EEG temporal segmentation, deep embedding EEG"
+description: >
+  Interpretable EEG microstate discovery via variational deep embedding with systematic architecture
+  search and multi-quadrant evaluation. Uses deep variational methods for data-driven microstate
+  identification instead of traditional k-means clustering on GFP peaks. Provides principled uncertainty
+  quantification and scalable EEG analysis pipeline.
+  Use when performing EEG microstate analysis, building interpretable EEG pipelines, or comparing
+  microstate discovery methods. arXiv: 2605.10947 (cs.LG, q-bio.NC). Faremi, Visentin, Longo.
 ---
 
 # EEG Microstate Discovery via Variational Deep Embedding
 
-## Overview
+> Variational deep embedding replaces traditional k-means microstate clustering with
+> data-driven, uncertainty-aware latent space learning for interpretable EEG analysis.
 
-Unsupervised discovery of EEG microstates using variational deep embedding methods. Replaces traditional k-means clustering with deep representation learning for more robust microstate identification.
+## Metadata
+- **Source**: arXiv:2605.10947
+- **Authors**: Saheed Faremi, Andrea Visentin, Luca Longo
+- **Published**: 2026-05-12
+- **Subjects**: cs.LG, q-bio.NC
 
-Based on: arXiv:2605.10947 (2026) "EEG Microstate Discovery via Variational Deep Embedding"
+## Core Problem
 
-## Background
+Traditional EEG microstate analysis relies on:
+1. GFP (Global Field Power) peak extraction — loses temporal information
+2. K-means clustering — no uncertainty quantification, sensitive to initialization
+3. Manual selection of microstate number — subjective and arbitrary
 
-### EEG Microstates
+## Key Innovation
 
-- Brief (~60-120ms) quasi-stable topographical patterns in EEG
-- Typically 4-6 canonical microstate classes (A, B, C, D, E, F)
-- Represent fundamental building blocks of spontaneous brain activity
-- Traditional discovery: k-means on GFP-peaked scalp maps
+**Variational Deep Embedding for Microstates**:
+- Deep variational autoencoder learns latent representation of EEG segments
+- Microstates emerge as clusters in the learned latent space
+- **Systematic architecture search** identifies optimal model configuration
+- **Multi-quadrant evaluation** validates across interpretability, stability, accuracy, and scalability
 
-### Limitations of Traditional Methods
+### Advantages Over Traditional Methods
+- Continuous temporal modeling (not just GFP peaks)
+- Principled uncertainty quantification via variational posterior
+- End-to-end differentiable pipeline
+- Automatic microstate discovery without arbitrary k selection
 
-- K-means assumes spherical clusters — EEG microstates are nonlinearly distributed
-- Sensitive to noise and preprocessing choices
-- Requires fixed number of clusters a priori
+## Technical Framework
 
-## Methodology
+### Pipeline
+1. **Preprocessing**: Standard EEG preprocessing pipeline
+2. **Segment encoding**: Variational encoder maps EEG segments to latent space
+3. **Clustering**: Microstates identified in latent representation
+4. **Evaluation**: Multi-quadrant assessment (interpretability, stability, accuracy, scalability)
 
-### Variational Deep Embedding
+### Architecture Search
+- Systematic exploration of encoder/decoder architectures
+- Latent dimensionality optimization
+- Regularization strategy comparison
 
-1. **Encoder**: Maps scalp topographies to latent distribution q(z|x)
-2. **Latent space**: Continuous representation where microstates form distinct clusters
-3. **Decoder**: Reconstructs scalp maps from latent codes
-4. **Clustering**: Apply clustering (GMM, spectral) in learned latent space
+## Applications
+- EEG biomarker discovery
+- Neurological disorder characterization
+- Cognitive state monitoring
+- Brain-computer interface feature extraction
+- Large-scale EEG analysis pipelines
 
-### Architecture
+## Pitfalls
+- Requires larger datasets than traditional k-means
+- Computational cost higher than classical methods
+- Interpretability of latent dimensions needs careful validation
+- Architecture search can be computationally expensive
 
-```python
-class MicrostateVAE(nn.Module):
-    def __init__(self, n_channels=64, latent_dim=8):
-        super().__init__()
-        self.encoder = nn.Sequential(
-            nn.Linear(n_channels, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64),
-            nn.ReLU()
-        )
-        self.fc_mu = nn.Linear(64, latent_dim)
-        self.fc_logvar = nn.Linear(64, latent_dim)
-        self.decoder = nn.Sequential(
-            nn.Linear(latent_dim, 64),
-            nn.ReLU(),
-            nn.Linear(64, n_channels)
-        )
-    
-    def forward(self, x):
-        h = self.encoder(x)
-        mu, logvar = self.fc_mu(h), self.fc_logvar(h)
-        z = self.reparameterize(mu, logvar)
-        return self.decoder(z), mu, logvar
-```
-
-### Temporal Dynamics
-
-- VAE trained on GFP-peaked scalp maps
-- Temporal smoothing via HMM on latent codes
-- Microstate sequences analyzed for clinical biomarkers
-
-## Advantages
-
-1. **Nonlinear clustering**: Captures complex microstate structure
-2. **Probabilistic**: Soft assignment to microstate classes
-3. **Robust**: Less sensitive to noise and outliers
-4. **Scalable**: Works with high-density EEG (128-256 channels)
-
-## When to Use
-
-- Microstate analysis for neurological conditions
-- Unsupervised EEG biomarker discovery
-- Cross-subject microstate comparison
-- Clinical applications: schizophrenia, depression, epilepsy
-
-## Resources
-
-- Original paper: arXiv:2605.10947
-- Related: eeg-brain-connectivity-bci for EEG analysis methods
+## Related Skills
+- interpretable-eeg-biomarkers-parkinsons
+- eeg-foundation-model-adapters
+- eeg-hopfield-emotion-energy
+- explainable-gnn-eeg-neurological

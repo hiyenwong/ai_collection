@@ -1,151 +1,145 @@
 ---
 name: naturality-violation-score
-description: "Category-theory-based brain-DNN alignment methodology using Naturality Violation Score (NVS). Goes beyond stimulus-level RSA by measuring whether brain and model preserve the same stimulus transformations. Use when: (1) evaluating brain-model alignment, (2) comparing representational dynamics, (3) analyzing transformation preservation in neural representations, (4) extending beyond RSA/DSA methods, (5) category-theoretic approaches to neuroscience. Activation: NVS, naturality violation, brain-DNN alignment, representational naturality, category theory neuroscience, transformation alignment, naturality score."
+description: "Category-theory-based brain-DNN alignment methodology using Naturality Violation Score (NVS). Shifts alignment assessment from per-stimulus correspondence to preservation of candidate transformations. Activation: brain-DNN alignment, naturality violation, RSA critique, representational alignment, transformation alignment, brain model comparison, fMRI alignment"
 ---
 
-# Naturality Violation Score (NVS)
+# Naturality Violation Score (NVS) for Brain-DNN Alignment
 
-Brain-DNN alignment methodology using category theory to measure whether brains and models preserve the same stimulus transformations. Introduced in arXiv:2605.06420 (Kamitani, 2026).
+## Overview
 
-## Core Insight
+The Naturality Violation Score (NVS) is a methodology for assessing brain-deep neural network (DNN) alignment inspired by category theory. Instead of measuring per-stimulus correspondence or stimulus-set geometry (like RSA/CKA), it tests whether brain and model **preserve the same candidate transformations** among stimuli.
 
-Standard alignment metrics (RSA, DSA) compare static representational geometry. NVS asks a deeper question: **do brain and model preserve the same candidate transformations among stimuli?**
+## Activation Keywords
 
-## Mathematical Framework
+- brain-DNN alignment
+- naturality violation
+- NVS alignment
+- transformation alignment
+- representational similarity critique
+- brain model comparison
+- fMRI-DNN alignment
+- category theory neuroscience
 
-### Approximate Naturality
+## Key Problem
 
-Given a proxy-defined stimulus transformation T:
-- **Path A**: stimulus → brain representation → translate to model → apply T
-- **Path B**: stimulus → apply T → brain representation → translate to model
+Standard alignment metrics (RSA, CKA, encoding/decoding accuracy) collapse multi-dimensional alignment into aggregate scalars, missing complementary alignment failures. They test whether the brain and model represent the same stimuli similarly, but not whether they transform stimuli in the same way.
 
-The naturality square **commutes** if both paths yield equivalent results.
+## Core Methodology
 
-### Naturality Violation Score
+### 1. Naturality Square
 
-$$NVS = || f_B(T(x)) - T(f_M(x)) ||$$
+The fundamental question is formalized as a naturality square:
 
-Where:
-- $f_B$: brain-side transformation propagation
-- $f_M$: model-side transformation propagation
-- $T$: stimulus transformation operator
-- $||\cdot||$: chosen distance metric (typically Frobenius or spectral norm)
+```
+Brain(X) ──Brain(f)──> Brain(Y)
+  │                       │
+  T                       T
+  ↓                       ↓
+Model(X) ──Model(f)──> Model(Y)
+```
 
-## Workflow
+If this square approximately commutes, the brain and model preserve the same transformations under the comparison map T.
 
-### Step 1: Define Transformation Set
+### 2. NVS Computation Steps
 
-Identify meaningful stimulus transformations:
-- Visual: rotation, scaling, translation, contrast change
-- Auditory: pitch shift, time stretch, volume change
-- Abstract: semantic perturbation, style transfer
+1. **Define proxy space W**: An intermediate embedding space (e.g., world-model embeddings, semantic attributes)
+2. **Select morphism family F**: Candidate transformations between stimuli (e.g., animacy, scene complexity)
+3. **Compute deviation from commutativity**: For each morphism f in F, measure:
+   - Path A: Brain -> Transform -> Translate to model
+   - Path B: Translate to model -> Transform in model
+4. **Normalize against permutation null**: Score is normalized relative to random permutation baseline (1.0 = random, 0.0 = perfect alignment)
 
-### Step 2: Extract Representations
+### 3. Axis-Resolved Analysis
+
+Rather than a single aggregate score, NVS decomposes alignment per semantic axis:
+- Animacy, scene type, color, orientation, etc.
+- Each axis gets its own NVS score
+- Reveals **hierarchy crossover**: semantic axes align deeper in both brain and DNNs, while low-level axes align earlier
+
+### 4. Comparison to Existing Methods
+
+| Method | What it measures | Limitation |
+|--------|-----------------|------------|
+| RSA | Representational similarity | Insensitive to transformation preservation |
+| CKA | Kernel-based alignment | Aggregate scalar, axis-agnostic |
+| Encoding/Decoding | Predictive accuracy | Doesn't test structural preservation |
+| **NVS** | **Transformation preservation** | **Axis-resolved, proxy-explicit** |
+
+### 5. Validation Controls
+
+- **W-less anchor-ablation**: Remove proxy space to test if alignment is proxy-dependent
+- **Permutation null**: Random shuffle to calibrate score range
+- **Dissociation tests**: Show NVS captures failures RSA/CKA miss
+
+## Application Pipeline
+
+```
+1. Collect neural data (fMRI, EEG, single-unit)
+2. Extract DNN activations at multiple layers
+3. Define proxy space W (e.g., CLIP embeddings, world-model states)
+4. Define morphism family F (semantic axes, transformations)
+5. Compute NVS per axis per layer
+6. Compare axis-resolved alignment profiles
+7. Validate with controls (permutation, ablation)
+```
+
+## Key Findings from the Paper
+
+- **Hierarchy crossover**: Semantic axes (animacy) align most strongly toward higher visual cortex (HVC) and deeper DNN layers
+- **Complementary failures**: NVS detects alignment failures that RSA/CKA miss
+- **Selective alignment**: Alignment is selective over morphism families, not uniform
+- **Normalized scoring**: NVS = 0.39 for animacy vs 1.0 permutation null shows meaningful alignment
+
+## Python Implementation Sketch
 
 ```python
 import numpy as np
 
-def extract_representations(model, brain_data, stimuli, transformations):
-    """Extract paired representations for each stimulus and transformation."""
-    reps = {
-        'brain': {},
-        'model': {}
-    }
+def compute_nvs(brain_reps, model_reps, proxy_reps, morphisms, n_permutations=1000):
+    """Compute Naturality Violation Score for each morphism."""
+    # Translate brain -> model space via linear mapping
+    T = np.linalg.lstsq(brain_reps, model_reps, rcond=None)[0]
     
-    for stim in stimuli:
-        reps['brain'][stim] = get_brain_response(brain_data, stim)
-        reps['model'][stim] = get_model_activation(model, stim)
-        
-        for T_name, T_func in transformations.items():
-            transformed = T_func(stim)
-            reps['brain'][f'{stim}_{T_name}'] = get_brain_response(brain_data, transformed)
-            reps['model'][f'{stim}_{T_name}'] = get_model_activation(model, transformed)
-    
-    return reps
-```
-
-### Step 3: Compute Translation Functions
-
-```python
-def compute_translation(brain_reps, model_reps, stimuli):
-    """Learn linear mapping from brain to model representation space."""
-    # Collect paired data
-    B = np.array([brain_reps[s] for s in stimuli])
-    M = np.array([model_reps[s] for s in stimuli])
-    
-    # Linear regression: M = W @ B + b
-    B_aug = np.hstack([B, np.ones((B.shape[0], 1))])
-    W = np.linalg.lstsq(B_aug, M, rcond=None)[0]
-    
-    def translate(brain_rep):
-        return W @ np.append(brain_rep, 1)
-    
-    return translate
-```
-
-### Step 4: Calculate NVS
-
-```python
-def calculate_nvs(reps, translate, transformations, stimuli):
-    """Compute Naturality Violation Score for each transformation."""
     nvs_scores = {}
-    
-    for T_name in transformations:
-        violations = []
-        for stim in stimuli:
-            # Path A: brain → translate → apply T
-            brain_transformed = reps['brain'][f'{stim}_{T_name}']
-            path_a = translate(brain_transformed)
-            
-            # Path B: translate brain → apply T in model space
-            brain_original = reps['brain'][stim]
-            model_original = translate(brain_original)
-            model_transformed = reps['model'][f'{stim}_{T_name}']
-            path_b = model_transformed
-            
-            violation = np.linalg.norm(path_a - path_b)
-            violations.append(violation)
+    for name, (idx_a, idx_b) in morphisms.items():
+        # Path A: brain -> transform -> translate
+        path_a = T @ brain_reps[idx_b]
         
-        nvs_scores[T_name] = np.mean(violations)
+        # Path B: translate -> transform in model
+        translated_a = T @ brain_reps[idx_a]
+        path_b = model_reps[idx_b]
+        
+        # Commutativity violation
+        violation = np.linalg.norm(path_a - path_b)
+        
+        # Permutation null distribution
+        null_violations = []
+        for _ in range(n_permutations):
+            perm_idx = np.random.permutation(len(brain_reps))
+            null_violations.append(
+                np.linalg.norm(T @ brain_reps[perm_idx[idx_b]] - model_reps[idx_b])
+            )
+        
+        # Normalize
+        nvs = violation / np.mean(null_violations)
+        nvs_scores[name] = nvs
     
     return nvs_scores
 ```
 
-### Step 5: Interpretation
+## When to Use
 
-| NVS Range | Interpretation |
-|-----------|----------------|
-| ≈ 0 | Perfect transformation preservation |
-| Low | Similar transformation dynamics |
-| Medium | Partial alignment, some transformations preserved |
-| High | Divergent transformation handling |
+- Comparing brain representations to DNN layers
+- Evaluating whether a model preserves brain-like transformations
+- Testing alignment beyond stimulus-level similarity
+- Diagnosing where in the processing hierarchy alignment breaks down
 
-## Comparison with RSA
+## Source
 
-| Aspect | RSA | NVS |
-|--------|-----|-----|
-| What it measures | Static geometry similarity | Dynamic transformation preservation |
-| Question answered | "Do they represent similarly?" | "Do they transform similarly?" |
-| Sensitivity | Representational distances | Representational dynamics |
-| Category theory | No | Yes (naturality) |
+arXiv: 2605.06420 - "Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?" by Yukiyasu Kamitani (2026-05-07)
 
-## Key Advantages
+## Related Skills
 
-1. **Catches functional mismatches** RSA can't detect
-2. **Reveals transformation-specific alignment** which transformations are preserved vs broken
-3. **Theoretically grounded** in category theory naturality
-4. **Complementary to RSA** use both for comprehensive alignment assessment
-
-## Practical Tips
-
-- Use multiple transformations to get a complete alignment profile
-- Normalize representations before comparison
-- Consider using spectral norm for matrix representations
-- NVS is sensitive to translation quality; use regularized regression for noisy data
-- Compare NVS across models to rank transformation preservation
-
-## References
-
-- arXiv:2605.06420 - "Beyond Object-Level Alignment: Do Brains and DNNs Preserve the Same Transformations?" (Kamitani, 2026)
-- Representational Similarity Analysis (RSA) - Kriegeskorte et al. (2008)
-- Category Theory for Neural Representations - Gao et al. (2023)
+- decoding-encoding-alignment-critique
+- brain-dnn-transformation-alignment
+- untrained-cnns-backprop-v1-rsa

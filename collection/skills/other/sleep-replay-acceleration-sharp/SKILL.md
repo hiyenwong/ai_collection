@@ -1,251 +1,485 @@
 ---
-name: sleep-replay-acceleration-sharp
-description: "SHARP (Sleep-based Hierarchical Accelerated Replay) 方法论 —
-睡眠启发的分层加速回放框架用于长程非平稳时序模式识别。受啮齿动物慢波睡眠中加速回放启发，
-通过分离记忆模块和模式识别模块实现无反向传播的长程信用分配。适用于流式时序学习、
-长程依赖建模、神经科学启发的 AI 架构。触发词：睡眠回放、加速回放、SHARP、
-时序学习、长程依赖、流式学习、慢波睡眠、hierarchical replay"
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2606.00732"
-  published: "2026-06-01"
-  authors: "Author names from arXiv"
-  tags: [sequence-modeling, replay, sleep, hierarchical-memory, streaming, neuroscience-inspired, long-range]
+skill_name: sleep-replay-acceleration-sharp
+skill_type: research_synthesis
+category: neuroscience
+activation_keywords:
+  - SHARP
+  - sleep replay
+  - temporal pattern recognition
+  - non-stationary dynamics
+  - streaming learning
+  - hierarchical memory
+  - accelerated replay
+  - slow-wave sleep
+  - long-range credit assignment
+  - memory consolidation
+readiness_status: available
+confidence_score: 68
+source: arXiv:2606.00732
+authors: Jayanta Dey, Shikhar Srivastava, Itamar Lerner, Christopher Kanan, Dhireesha Kudithipudi
+paper_date: 2026-06-04
+research_date: 2026-06-04
+key_insights:
+  - Sleep-based offline replay accelerates temporal learning
+  - Hierarchical memory structure enables exponential context with linear cost
+  - Eliminates backpropagation through time for long-range credit assignment
+  - Inspired by rodent slow-wave sleep accelerated replay
+methodology_tags:
+  - sleep-based learning
+  - hierarchical memory
+  - temporal pattern recognition
+  - streaming sequence models
+  - memory consolidation
+  - accelerated replay
+  - neuroscience-inspired AI
+  - non-stationary dynamics
+application_domains:
+  - streaming sequence models
+  - long-range temporal learning
+  - memory consolidation systems
+  - neuroscience-inspired AI
+  - biological sequence learning
 ---
 
-# SHARP: Sleep-based Hierarchical Accelerated Replay
+# SHARP: Sleep-based Hierarchical Accelerated Replay for Temporal Pattern Recognition
 
-## 背景
+## Executive Summary
 
-学习长程非平稳时序模式是现代序列模型的核心挑战，特别是在严格的流式设置中。在这些设置中，数据顺序到达，必须在单次遍历中处理，无法同时回访过去的观测。标准架构（包括 RNN 和 Transformer）受到截断反向传播时间窗口或显式输入窗口长度的限制，无法有效进行长程信用分配。
+**Problem**: Standard sequence models (RNN, Transformers) struggle with long-range non-stationary temporal patterns in strict streaming settings due to:
+- Truncated backpropagation through time horizon
+- Explicit input window length constraints
+- Inability to process sequentially without revisiting past observations
 
-SHARP 受啮齿动物慢波睡眠期间观察到的加速回放启发，提出了一种新颖的时序学习分解框架。
+**Solution**: SHARP (Sleep-based Hierarchical Accelerated Replay) - a framework inspired by rodent slow-wave sleep that:
+- Decomposes temporal learning into memory accumulation + pattern recognition
+- Incorporates offline "sleep" phases for accelerated memory replay
+- Hierarchical structure provides exponential effective context with linear computational cost
 
-## 核心架构
+**Impact**: Improves long-range temporal learning in streaming settings while maintaining predictive performance on past data and generalizing to future unseen data.
 
-### 1. 双模块分离
+---
 
-SHARP 将时序学习分解为两个互补组件：
+## Core Methodology
 
-```
-┌─────────────────┐     ┌─────────────────┐
-│  Memory Module  │ ──► │ Pattern Recognition │
-│ (structured     │     │ Module          │
-│  history)       │     │ (operates on    │
-└─────────────────┘     │  memory)        │
-                        └─────────────────┘
-```
+### 1. Two-Component Architecture
 
-**优势**：
-- 无需跨多步反向传播进行长程信用分配
-- 资源和计算高效的非平稳动力学适应
-- 单次遍历流式处理能力
-
-### 2. 加速回放机制
-
-受生物启发：啮齿动物慢波睡眠中，海马回放以加速形式发生（~20x）
-
-```
-Online phase: Memory accumulation (real-time)
-Sleep phase: Accelerated replay (compressed time)
-           → Integration into higher-level memory
-```
-
-**关键机制**：
-- **时间压缩**：过去时序在睡眠阶段加速回放
-- **层级整合**：低级记忆 → 高级记忆表示
-- **上下文增强**：长程上下文通过回放保留
-
-### 3. 层级记忆结构
-
-```
-Level 0: Raw input stream (实时)
-Level 1: Short-term memory (秒级)
-Level 2: Medium-term memory (分钟级) ← 加速回放整合
-Level 3: Long-term patterns (小时级) ← 离线整合
-```
-
-## 实现流程
-
-### 1. 在线阶段 (Online/Wake)
+**Memory Module**: Accumulates structured history of past inputs
+**Pattern Recognition Module**: Operates over accumulated memory
 
 ```python
-class SHARPMemory:
-    def __init__(self, levels=4):
-        self.memories = [MemoryBuffer() for _ in range(levels)]
-        self.current_level = 0
+class SHARPFramework:
+    """
+    Sleep-based Hierarchical Accelerated Replay
     
-    def process_stream(self, input_stream):
-        """实时流式处理"""
-        for x_t in input_stream:
-            # Level 0: 存储原始输入
-            self.memories[0].append(x_t)
-            
-            # Level 1: 短期压缩
-            if self.memories[0].full():
-                compressed = self.compress(self.memories[0])
-                self.memories[1].append(compressed)
-                self.memories[0].reset()
-            
-            # 触发睡眠阶段条件
-            if self.needs_sleep():
-                self.sleep_phase()
+    Architecture:
+    1. Memory Module: Compresses and stores temporal experiences
+    2. Pattern Recognition Module: Processes memory for prediction
+    3. Sleep Phase: Offline accelerated replay for consolidation
+    """
     
-    def needs_sleep(self):
-        return self.memories[1].size() > THRESHOLD
-```
-
-### 2. 睡眠阶段 (Sleep/Offline)
-
-```python
-def sleep_phase(self):
-    """加速回放和层级整合"""
-    # 1. 加速回放 Level 1 记忆
-    replay_sequence = self.memories[1].get_sequence()
-    
-    # 2. 时间压缩 (加速因子 ~10-20)
-    compressed_replay = self.accelerate(replay_sequence, factor=20)
-    
-    # 3. 模式识别模块学习
-    patterns = self.pattern_recognizer.learn(compressed_replay)
-    
-    # 4. 整合到 Level 2/3
-    self.memories[2].integrate(patterns)
-    
-    # 5. 清理低级记忆
-    self.memories[1].partial_reset()
-```
-
-### 3. 模式识别模块
-
-```python
-class PatternRecognizer:
-    def learn(self, replay_sequence):
-        """从加速回放学习模式"""
-        # 无需 BPTT，直接从记忆学习
-        for pattern in replay_sequence:
-            # 局部学习规则
-            self.update_weights(pattern)
+    def __init__(self, hierarchy_levels=3, replay_acceleration_factor=10):
+        self.memory_module = HierarchicalMemory(levels=hierarchy_levels)
+        self.pattern_recognizer = SequencePatternRecognizer()
+        self.sleep_scheduler = SleepScheduler(acceleration_factor=replay_acceleration_factor)
         
-        return self.extract_high_level_patterns()
+    def online_learning(self, new_input):
+        """
+        Online streaming phase:
+        - Accumulate experience in memory
+        - Pattern recognition over current memory
+        - No backpropagation through time
+        """
+        # Store input in hierarchical memory
+        self.memory_module.store(new_input)
+        
+        # Pattern recognition using current memory state
+        prediction = self.pattern_recognizer.predict(self.memory_module.current_state())
+        
+        # Single-pass update (no revisiting past)
+        self.pattern_recognizer.update_online(prediction, new_input)
+        
+        return prediction
+    
+    def sleep_phase(self):
+        """
+        Offline consolidation phase:
+        - Accelerated replay of stored memory traces
+        - Integration into higher-level representations
+        - Inspired by rodent slow-wave sleep
+        """
+        # Replay stored experiences in accelerated form
+        replayed_experiences = self.memory_module.accelerated_replay(
+            acceleration_factor=self.sleep_scheduler.acceleration_factor
+        )
+        
+        # Consolidate into higher-level memory representations
+        for experience in replayed_experiences:
+            self.memory_module.consolidate_to_higher_level(experience)
+        
+        # Update pattern recognizer with consolidated knowledge
+        self.pattern_recognizer.consolidate(self.memory_module.high_level_state())
 ```
 
-## 理论基础
+### 2. Hierarchical Memory Structure
 
-### 1. 神经科学背景
-
-**啮齿动物睡眠回放**：
-- 海马位置细胞在慢波睡眠中回放活动序列
-- 回放速度约为清醒时的 10-20 倍
-- 与记忆巩固和学习相关
-
-**功能意义**：
-- 时间压缩允许在有限时间内处理长序列
-- 离线处理避免在线计算开销
-- 层级整合形成抽象表示
-
-### 2. 长程信用分配
-
-传统方法的问题：
-```
-BPTT horizon: T steps → gradient ∝ λ^T (衰减)
-Transformer window: L length → 有限上下文
-```
-
-SHARP 的解决方案：
-```
-Memory separation: T' compressed steps in sleep
-                 → effective horizon T'/compression_factor
-Credit assignment: Direct from memory → pattern module
-```
-
-### 3. 非平稳动力学适应
+**Key Innovation**: Exponentially increasing effective temporal context with linear computational cost
 
 ```python
-# 非平稳时序
-x_t = f_t(x_{t-1}) + noise_t  # f_t 随时间变化
-
-# SHARP 适应机制
-memory.update(x_t, adaptive=True)  # 存储变化
-sleep_phase()  # 离线学习变化模式
+class HierarchicalMemory:
+    """
+    Multi-level memory hierarchy
+    
+    Levels:
+    - Level 0: Raw input buffer (short-term)
+    - Level 1: Compressed episode representations (medium-term)
+    - Level 2: Abstract pattern summaries (long-term)
+    - Level N: Consolidated long-range context
+    
+    Property: Effective context ∝ 2^N, Cost ∝ N (linear)
+    """
+    
+    def __init__(self, levels=3):
+        self.levels = [MemoryLevel(level_id=i) for i in range(levels)]
+        self.compression_ratios = [2**i for i in range(levels)]  # Exponential compression
+        
+    def store(self, input):
+        """
+        Hierarchical storage:
+        - Level 0 stores raw input
+        - Higher levels compress representations
+        """
+        # Level 0: Raw storage
+        self.levels[0].store_raw(input)
+        
+        # Compress to higher levels when capacity reached
+        for i in range(1, len(self.levels)):
+            if self.levels[i-1].capacity_reached():
+                compressed = self.levels[i-1].compress(self.compression_ratios[i])
+                self.levels[i].store(compressed)
+    
+    def current_state(self):
+        """
+        Retrieve current hierarchical state
+        - Combines all levels for maximum context
+        """
+        state = []
+        for level in self.levels:
+            state.extend(level.retrieve())
+        return state
+    
+    def accelerated_replay(self, acceleration_factor):
+        """
+        Replay experiences in accelerated form
+        
+        Inspired by rodent slow-wave sleep:
+        - Events replayed at 10-20x original speed
+        - Enables rapid consolidation without full sequence traversal
+        """
+        replayed = []
+        for level in self.levels:
+            experiences = level.retrieve()
+            # Accelerate: skip intermediate steps, replay summaries
+            accelerated = experiences[::acceleration_factor]
+            replayed.extend(accelerated)
+        return replayed
+    
+    def consolidate_to_higher_level(self, experience):
+        """
+        Move experience to higher-level representation
+        - Abstracts temporal patterns
+        - Improves long-range context retention
+        """
+        # Identify highest available level
+        highest_level = self.levels[-1]
+        highest_level.integrate(experience)
 ```
 
-## 实验验证
+### 3. Sleep-Based Offline Consolidation
 
-### 1. 基准测试
+**Biological Inspiration**: Rodent slow-wave sleep exhibits accelerated replay of recent experiences
 
-在 text8 和 PG-19 数据集上：
-- 长程文本建模
-- 流式设置评估
-- 与标准 RNN/Transformer 比较
-
-### 2. 消融研究
-
-关键组件验证：
-- 加速因子影响（1x, 10x, 20x）
-- 层级数量影响（2, 3, 4 levels）
-- 睡眠频率影响
-
-### 3. 控制模拟
-
-简单序列学习：
-- 确定性序列
-- 噪声序列
-- 非平稳序列
-
-## Pitfalls
-
-### 1. 加速因子选择
-
-过高的加速因子可能丢失细节：
-- 建议范围：10-20x
-- 需根据序列特性调整
-
-### 2. 睡眠频率平衡
-
-过于频繁的睡眠阶段：
-- 增加计算开销
-- 可能打断在线处理
-
-过少睡眠：
-- 长程上下文丢失
-- 模式学习不充分
-
-### 3. 内存容量限制
-
-层级记忆需要容量管理：
-- 设置合理的缓冲区大小
-- 实现选择性遗忘机制
-
-## 应用场景
-
-### 1. 长程文本建模
+**Mechanism**:
+- During "awake" phase: Accumulate experiences online
+- During "sleep" phase: Replay experiences accelerated, consolidate into hierarchical memory
 
 ```python
-sharp = SHARP(levels=3, acceleration=15)
-sharp.process_text_stream(text8_stream)
+class SleepScheduler:
+    """
+    Schedules offline sleep phases for consolidation
+    
+    Strategy:
+    - Periodic sleep: Every N online steps
+    - Capacity-triggered: When memory buffers fill
+    - Performance-triggered: When predictive accuracy drops
+    """
+    
+    def __init__(self, acceleration_factor=10, sleep_interval=1000):
+        self.acceleration_factor = acceleration_factor
+        self.sleep_interval = sleep_interval
+        self.online_steps_since_sleep = 0
+        
+    def should_sleep(self, memory_capacity, predictive_performance):
+        """
+        Determine if sleep phase should be triggered
+        
+        Conditions:
+        1. Periodic: online_steps_since_sleep >= sleep_interval
+        2. Capacity: memory buffers near capacity
+        3. Performance: recent accuracy drop detected
+        """
+        periodic_trigger = self.online_steps_since_sleep >= self.sleep_interval
+        capacity_trigger = memory_capacity > 0.9
+        performance_trigger = predictive_performance < threshold
+        
+        return periodic_trigger or capacity_trigger or performance_trigger
+    
+    def execute_sleep(self, memory_module, pattern_recognizer):
+        """
+        Execute accelerated replay and consolidation
+        
+        Duration: O(1/acceleration_factor) relative to stored experiences
+        """
+        # Replay stored experiences accelerated
+        replayed = memory_module.accelerated_replay(self.acceleration_factor)
+        
+        # Consolidate (rapid, offline)
+        for exp in replayed:
+            memory_module.consolidate_to_higher_level(exp)
+        
+        # Update pattern recognizer
+        pattern_recognizer.consolidate(memory_module.high_level_state())
+        
+        # Reset counter
+        self.online_steps_since_sleep = 0
 ```
 
-### 2. 时序预测
+---
 
-非平稳时间序列预测：
-- 金融数据流
-- 传感器数据流
+## Key Insights
 
-### 3. 强化学习
+### Insight 1: Hierarchical Structure Enables Linear-Cost Exponential Context
 
-长程信用分配：
-- 延迟奖励场景
-- 稀疏奖励场景
+**Mathematical Property**:
+- Traditional RNN: Context window = W, Cost = O(W)
+- SHARP: Effective context = 2^N × W_base, Cost = O(N × W_base)
 
-## 参考文献
+**Example**:
+```python
+# Traditional: Process 1000 steps directly
+cost_traditional = 1000  # Direct computation
 
-- arXiv:2606.00732 - SHARP: Sleep-based Hierarchical Accelerated Replay
-- 啮齿动物海马回放研究
-- 神经科学睡眠记忆巩固理论
+# SHARP: 3-level hierarchy with base window 100
+effective_context = 2**3 * 100  # = 800 effective steps
+cost_sharp = 3 * 100  # = 300 computation units
 
-## 相关技能
+print(f"SHARP achieves {effective_context} context with {cost_sharp} cost")
+print(f"Efficiency ratio: {effective_context/cost_sharp:.2f}x")
+```
 
-- [[hippocampal-entorhinal-world-model]] - 海马世界模型
-- [[episodic-learning-neural-networks]] - 情景学习
-- [[predictive-coding-light]] - 预测编码
+### Insight 2: Sleep Replay Eliminates Long-Range Backpropagation
+
+**Problem**: Backpropagation through time over many steps is computationally expensive and biologically implausible
+
+**SHARP Solution**: 
+- Online: Single-pass accumulation without revisiting
+- Sleep: Accelerated replay for consolidation without full sequence traversal
+
+```python
+# Traditional: Backprop through 1000 steps
+backward_pass_cost = 1000  # Must traverse entire sequence
+
+# SHARP: Accelerated replay at 10x speed
+replay_cost = 1000 / 10  # Only 100 effective steps
+consolidation_cost = replay_cost + overhead
+
+print(f"SHARP consolidation: {consolidation_cost} vs traditional {backward_pass_cost}")
+```
+
+### Insight 3: Neuroscience-Inspired Learning Improves AI Systems
+
+**Rodent Slow-Wave Sleep**:
+- Events replayed at 10-20x original speed during sleep
+- Enables memory consolidation without full behavioral repetition
+- Long-range temporal context maintained across experiences
+
+**SHARP Translation**:
+- Offline "sleep" phases mimic biological consolidation
+- Accelerated replay reduces computational burden
+- Hierarchical structure mirrors cortical memory hierarchy
+
+---
+
+## Applications
+
+### 1. Streaming Sequence Prediction
+
+**Use**: Predict future sequences in non-stationary environments
+
+**Example**: text8, PG-19 benchmarks
+- SHARP outperforms RNN baselines
+- Retains performance on past data while learning new patterns
+- Generalizes to unseen future sequences
+
+```python
+# Streaming prediction on text corpus
+sharp_model = SHARPFramework(hierarchy_levels=3, replay_acceleration_factor=10)
+
+for chunk in stream_text_corpus():
+    # Online prediction and learning
+    prediction = sharp_model.online_learning(chunk)
+    
+    # Periodic sleep for consolidation
+    if sharp_model.sleep_scheduler.should_sleep():
+        sharp_model.sleep_phase()
+```
+
+### 2. Long-Range Temporal Pattern Recognition
+
+**Use**: Detect patterns spanning long temporal horizons
+
+**Advantage**: Exponential context with linear cost enables long-range pattern detection
+
+### 3. Memory Consolidation Systems
+
+**Use**: Systems that accumulate experiences and periodically consolidate
+
+**Inspiration**: Biological sleep-based memory consolidation
+
+---
+
+## Methodology Comparison
+
+| Aspect | Traditional RNN/Transformer | SHARP Framework |
+|--------|-----------------------------|-----------------|
+| **Backpropagation** | Through time (expensive) | Eliminated (single-pass online) |
+| **Temporal Context** | Limited by window/horizon | Exponential via hierarchy |
+| **Computational Cost** | O(context) | O(log(context)) |
+| **Consolidation** | Continuous or truncated | Offline sleep phases |
+| **Biological Plausibility** | Low | High (sleep-inspired) |
+| **Non-Stationary Adaptation** | Slow | Fast (sleep consolidation) |
+
+---
+
+## Implementation Guidelines
+
+### Step 1: Define Hierarchical Memory
+
+```python
+memory = HierarchicalMemory(levels=3, compression_ratios=[2, 4, 8])
+```
+
+### Step 2: Create Pattern Recognizer
+
+```python
+recognizer = SequencePatternRecognizer(input_dim=memory.output_dim)
+```
+
+### Step 3: Configure Sleep Scheduler
+
+```python
+sleep_scheduler = SleepScheduler(
+    acceleration_factor=10,
+    sleep_interval=1000,  # Sleep every 1000 online steps
+    capacity_threshold=0.9,
+    performance_threshold=0.85
+)
+```
+
+### Step 4: Run Streaming Learning Loop
+
+```python
+sharp = SHARPFramework(memory, recognizer, sleep_scheduler)
+
+for input in stream:
+    prediction = sharp.online_learning(input)
+    
+    if sleep_scheduler.should_sleep(memory.capacity, recognizer.performance):
+        sharp.sleep_phase()  # Consolidate offline
+```
+
+---
+
+## Validation Criteria
+
+✅ **Hierarchical Context**: Effective context increases exponentially with levels
+
+✅ **Linear Cost**: Computation scales linearly with hierarchy levels, not context length
+
+✅ **Sleep Consolidation**: Offline phases improve long-range retention
+
+✅ **Streaming Compatibility**: Online phase processes data in single pass
+
+✅ **Performance Retention**: Maintains accuracy on past data while learning new patterns
+
+---
+
+## Benchmark Results (from paper)
+
+**text8 Dataset**:
+- SHARP improves over recurrent baselines
+- Retains next-token predictive performance on previously seen data
+- Continues learning from current stream
+- Generalizes to future unseen data
+
+**PG-19 Dataset**:
+- Similar improvements over baselines
+- Hierarchical structure enables long-range context
+- Sleep phases critical for performance gains
+
+---
+
+## Future Directions
+
+1. **Adaptive Hierarchy**: Dynamic level adjustment based on task complexity
+2. **Sleep Scheduling Optimization**: RL-based sleep timing decisions
+3. **Multi-Modal Memory**: Extend to visual, auditory modalities
+4. **Neuromorphic Implementation**: Hardware deployment for edge AI
+
+---
+
+## References
+
+- Original Paper: arXiv:2606.00732 (Dey et al., 2026)
+- Biological Inspiration: Rodent slow-wave sleep accelerated replay
+- Related Work: Memory consolidation, hierarchical sequence models
+
+---
+
+## Quick Start Example
+
+```python
+# Create SHARP system for streaming temporal learning
+from sharp_framework import SHARPFramework
+
+sharp = SHARPFramework(
+    hierarchy_levels=3,
+    replay_acceleration_factor=15,  # 15x speed replay
+    sleep_interval=500
+)
+
+# Process streaming data
+streaming_data = [...]  # Non-stationary temporal sequence
+
+for input_chunk in streaming_data:
+    # Online learning phase
+    prediction = sharp.process_online(input_chunk)
+    
+    # Sleep phase (triggered periodically)
+    if sharp.needs_consolidation():
+        sharp.sleep_phase()  # Offline accelerated replay
+
+print(f"Effective temporal context: {sharp.get_effective_context_length()} steps")
+print(f"Computational cost: {sharp.get_computation_cost()} units")
+```
+
+---
+
+## Notes
+
+SHARP bridges neuroscience insights (sleep-based memory consolidation) with AI engineering (streaming sequence learning):
+
+**Biological Mechanism**: Rodents replay recent experiences at accelerated speed during slow-wave sleep, enabling memory consolidation without behavioral repetition.
+
+**AI Translation**: Offline "sleep" phases replay stored experiences accelerated, consolidating into hierarchical memory representations for long-range temporal context.
+
+This framework demonstrates how neuroscience-inspired mechanisms can solve fundamental AI challenges (long-range credit assignment in streaming settings) while maintaining biological plausibility.

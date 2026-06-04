@@ -47,6 +47,25 @@ uses TDMA to allocate network resources to quantum nodes on periodic schedules.
 - **Dynamic recomputation**: Schedule rebuilt periodically to handle changing demands
 - **Multi-application sharing**: Multiple quantum applications share network bandwidth
 
+### Online Dynamic Scheduling (arXiv: 2605.28795, IEEE QuNAP 2026)
+
+**Online dynamic scheduler** replaces static periodic TDMA with per-slot real-time control:
+
+- **Four actions per slot**: Schedule, Defer, Retry, Drop — based on real-time network state
+- **Stochastic awareness**: Entanglement generation is probabilistic; scheduler accounts for expected retries
+- **Graceful degradation**: Under overload, drops lowest-priority requests rather than cascading failures
+- **Performance gains**: Lower completion time, higher completion ratio, higher throughput vs static EDF baseline
+- **Decision state machine**:
+  ```
+  Request Arrived → Evaluate Feasibility
+    ├── Feasible → Schedule → Execute → Success/Retry
+    └── Infeasible → Defer (if deadline allows) → Still infeasible → Drop
+  ```
+
+**When to use dynamic vs static**:
+- Static TDMA/EDF: Stable, predictable workloads with low stochasticity
+- Dynamic scheduler: Asynchronous arrivals, stochastic outcomes, variable network conditions
+
 ### Key Design Patterns
 
 1. **Heterogeneous link modeling**: Characterize links by fidelity, latency, capacity
@@ -87,6 +106,10 @@ processors: [P1, P2, ...]: {generation_rate, memory_size}
 - **Fidelity degradation**: Each swap operation reduces fidelity exponentially
 - **Classical coordination overhead**: Synchronization latency impacts quantum state validity
 - **Resource starvation**: Simple LQF can starve low-demand destination pairs
+- **Network fragmentation**: Dynamic scheduling may fragment quantum memory resources across time slots
+- **Stochastic retry explosion**: Under high loss rates, retry queues can grow unbounded — set per-request retry limits
+- **Deadline propagation in multi-hop**: End-to-end deadlines must account for sequential swapping at each hop, not just first-hop generation
+- **Overload handling**: Static schedulers degrade catastrophically under overload; prefer dynamic schedulers that can gracefully drop low-priority requests
 
 ## Related Papers
 

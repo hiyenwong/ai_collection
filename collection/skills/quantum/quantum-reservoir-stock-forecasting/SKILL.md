@@ -39,9 +39,8 @@ QRC leverages the natural dynamics of a quantum system as a computational reserv
 
 ### Stock Trend Classification
 - Binary classification: up/down daily movement
-- **Updated benchmark (2602.13094)**: >86% accuracy on 20 quantum-sector publicly traded companies
-- Predict daily closing trading volumes (Apr 2020 - Apr 2025)
-- Also tested minute-by-minute volumes during out-of-market hours (Jul 2025)
+- Achieved >80% accuracy on quantum-sector stocks
+- Predict daily closing trading volumes
 
 ### Multi-Timeframe Analysis
 - Daily predictions (long-term trends)

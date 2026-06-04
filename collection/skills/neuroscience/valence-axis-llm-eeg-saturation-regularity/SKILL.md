@@ -224,6 +224,7 @@ def residual_ensemble_decoding(base_classifier, residual_diversity_set):
 - SEED-V dataset documentation
 - Sentiment benchmark references
 - Language model representation literature
+- **[references/kg-db-schema-actual.md](references/kg-db-schema-actual.md)** — kg.db schema for Hermes paper imports (actual schema vs documented schema discrepancy note)
 
 ---
 

@@ -1,50 +1,76 @@
 ---
 name: gksl-quantum-cognition
-description: Quantum-like models of cognition and decision making using GKSL (Gorini-Kossakowski-Sudarshan-Lindblad) master equation dynamics. Use when modeling cognitive processes as open quantum systems, analyzing decision-making dynamics, or studying quantum cognition frameworks.
+description: >
+  GKSL (Gorini-Kossakowski-Sudarshan-Lindblad) master equation methodology for
+  quantum-like models of cognition and decision making. Models mental state
+  evolution as dissipative process influenced by informational environment.
+  Includes cognitive beats analysis, Passive/Active Hamiltonian regimes, and
+  non-Nash equilibrium stabilization. Use when: quantum cognition, decision
+  making models, open quantum systems in psychology, GKSL/Lindblad equations
+  for cognition, cognitive beats, Prisoner's Dilemma quantum models,
+  ArXiv:2604.18643, quantum-like decision making, Asano Khrennikov.
 ---
 
-# GKSL Quantum Cognition and Decision Making
+# GKSL Quantum Cognition Framework
 
-## Core Concept
+Model cognition and decision making using the GKSL (Lindblad) master equation
+from open quantum systems theory.
 
-Model mental state evolution as a dissipative process using the GKSL master equation, transitioning from static quantum-like representations to robust dynamical frameworks for cognitive psychology and decision making.
+## GKSL Master Equation for Cognition
 
-## Mathematical Framework
+Mental state ρ evolves as:
 
-1. **GKSL Master Equation**: dρ/dt = -i[H,ρ] + Σ_k (L_k ρ L_k† - ½{L_k†L_k, ρ})
-2. **Passive vs Active Hamiltonians**: Non-commutation with decision basis signals cognitive agency
-3. **Cognitive Beats**: Secondary slow-scale modulation from competing deliberation flows
-4. **Quantum Escape**: Dissipative dynamics enable escape from classical Nash equilibria
+```
+dρ/dt = -i[H, ρ] + Σ_k (L_k ρ L_k† - ½{L_k†L_k, ρ})
+```
 
-## Key Insights
+Where H encodes cognitive dynamics and L_k are Lindblad operators modeling
+environmental (informational) influence.
 
-- **Cognitive Agency**: Measured by non-commutation of Hamiltonian with decision projectors
-- **Cognitive Beats**: Beat envelope from competing Liouvillian channels maps hesitation/peak readiness
-- **Strategic Games**: GKSL dynamics stabilize non-Nash outcomes (e.g., cooperation in Prisoner's Dilemma)
-- **Nested Timescales**: Multiple deliberation frequencies produce spectral diagnostic of cognitive depth
+## Dynamical Regimes
 
-## Application Patterns
+| Regime | Hamiltonian | Cognitive Meaning |
+|--------|------------|-------------------|
+| **Passive** | H commutes with decision basis | Habitual/automatic responses |
+| **Active** | H does NOT commute with decision basis | Cognitive agency, deliberation |
 
-### Pattern 1: Cognitive Agency Detection
-Use non-commutation of Hamiltonian with decision basis projections to identify true cognitive agency (quantum escape from classical equilibria).
+**Key diagnostic**: Non-commutation with projections on decision basis =
+mathematical signature of cognitive agency and quantum escape from classical equilibria.
 
-### Pattern 2: Cognitive Beats Analysis
-When multiple deliberation flows operate at similar frequencies, extract beat envelope as spectral diagnostic for depth of cognitive processing.
+## Cognitive Beats
 
-### Pattern 3: Strategic Game Stabilization
-Apply GKSL Liouvillian channels to stabilize non-Nash equilibrium outcomes in game-theoretic scenarios.
+When competing "flows of mind" operate at approximately equal frequencies:
 
-## Resources
+- **Beats** emerge from structural tension between Liouvillian channels
+- **Beat envelope** dictates timing of peak readiness and hesitation
+- Distinct from simple damped oscillations — secondary slow-scale modulation
+- Provides **spectral diagnostic** for depth of cognitive agency
 
-- **arXiv:2604.18643** — GKSL dynamics for quantum-like cognition and decision making
-  - Passive/Active Hamiltonian classification for cognitive agency detection
-  - Cognitive beats as nested timescale diagnostic
-  - Non-Nash stabilization via dissipative quantum models
+## Applications
+
+### Strategic Games (e.g., Prisoner's Dilemma)
+
+GKSL framework can stabilize **non-Nash outcomes** by modeling the deliberation
+process as a dissipative quantum evolution rather than static equilibrium.
+
+### Decision Dynamics Pipeline
+
+1. Define decision basis (orthogonal outcome states)
+2. Construct H encoding preferences and conflicts
+3. Add Lindblad operators for environmental/informational coupling
+4. Solve for ρ(t) — track conviction oscillations
+5. Identify beat frequencies → predict hesitation/commitment timing
+
+## Nested Timescales
+
+The framework resolves nested temporal structure:
+
+- **Fast**: Liouvillian channel dynamics (ms-scale neural)
+- **Beat envelope**: Modulation of conviction (s-scale deliberation)
+- **Decision commitment**: Collapse to outcome (behavioral response)
 
 ## Activation Keywords
-- GKSL quantum cognition
-- quantum-like decision making
-- open quantum system cognition
-- cognitive beats quantum
-- Lindblad equation psychology
-- quantum strategic game
+
+GKSL, Lindblad, Gorini Kossakowski Sudarshan, quantum cognition, open quantum
+systems cognition, cognitive beats, quantum decision making, Asano, Khrennikov,
+non-Nash equilibrium, Prisoner's Dilemma quantum

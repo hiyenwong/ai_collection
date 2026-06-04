@@ -1,139 +1,85 @@
 ---
 name: vocabulary-extension-initializer
-description: "Initialize and extend the vocabulary of language models by adding new tokens, domain-specific terminology, or language-specific characters. Handles embedding initialization strategies (random, average, subword-based) for new tokens. Use when: (1) Adding new language tokens to an existing model, (2) Extending tokenizer with domain-specific vocabulary, (3) Initializing embeddings for new tokens before fine-tuning, (4) Supporting multilingual vocabulary extension."
+description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
 ---
 
 # Vocabulary Extension Initializer
 
-Initialize and extend language model vocabulary with new tokens and embeddings.
+## Overview
 
-## Activation Keywords
+[TODO: 1-2 sentences explaining what this skill enables]
 
-- vocabulary extension
-- extend tokenizer
-- add new tokens
-- embedding initialization
-- token embedding
-- vocabulary initializer
-- 词表扩展
-- tokenizer extension
-- new token embedding
-- 词汇表初始化
+## Structuring This Skill
 
-## Tools Used
+[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
 
-- `exec`: Run Python scripts for tokenizer/model modification
-- `read`: Load model configuration, tokenizer files, and domain vocabulary
-- `write`: Save updated tokenizer and embedding weights
+**1. Workflow-Based** (best for sequential processes)
+- Works well when there are clear step-by-step procedures
+- Example: DOCX skill with "Workflow Decision Tree" → "Reading" → "Creating" → "Editing"
+- Structure: ## Overview → ## Workflow Decision Tree → ## Step 1 → ## Step 2...
 
-## Core Workflow
+**2. Task-Based** (best for tool collections)
+- Works well when the skill offers different operations/capabilities
+- Example: PDF skill with "Quick Start" → "Merge PDFs" → "Split PDFs" → "Extract Text"
+- Structure: ## Overview → ## Quick Start → ## Task Category 1 → ## Task Category 2...
 
-### Step 1: Define New Vocabulary
+**3. Reference/Guidelines** (best for standards or specifications)
+- Works well for brand guidelines, coding standards, or requirements
+- Example: Brand styling with "Brand Guidelines" → "Colors" → "Typography" → "Features"
+- Structure: ## Overview → ## Guidelines → ## Specifications → ## Usage...
 
-Collect domain-specific tokens, special characters, or language-specific terms:
+**4. Capabilities-Based** (best for integrated systems)
+- Works well when the skill provides multiple interrelated features
+- Example: Product Management with "Core Capabilities" → numbered capability list
+- Structure: ## Overview → ## Core Capabilities → ### 1. Feature → ### 2. Feature...
 
-```python
-new_tokens = ["[DOMAIN]", "量子", "纠缠", "[SPECIAL]"]
-# Or load from file
-with open("domain_vocab.txt") as f:
-    new_tokens = [line.strip() for line in f]
-```
+Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
 
-### Step 2: Extend Tokenizer
+Delete this entire "Structuring This Skill" section when done - it's just guidance.]
 
-```python
-from transformers import AutoTokenizer
+## [TODO: Replace with the first main section based on chosen structure]
 
-tokenizer = AutoTokenizer.from_pretrained("model_name")
-num_added = tokenizer.add_tokens(new_tokens)
-print(f"Added {num_added} new tokens")
-tokenizer.save_pretrained("./extended_tokenizer")
-```
-
-### Step 3: Initialize New Embeddings
-
-Choose initialization strategy:
-
-```python
-import torch
-from transformers import AutoModelForCausalLM
-
-model = AutoModelForCausalLM.from_pretrained("model_name")
-model.resize_token_embeddings(len(tokenizer))
-
-# Strategy 1: Average of subword embeddings
-def init_by_subword_average(model, tokenizer, new_token):
-    subwords = tokenizer.tokenize(new_token, add_special_tokens=False)
-    subword_ids = tokenizer.convert_tokens_to_ids(subwords)
-    avg_embedding = model.get_input_embeddings().weight[subword_ids].mean(0)
-    return avg_embedding
-
-# Strategy 2: Random initialization (default)
-# Model already initialized randomly after resize_token_embeddings
-```
-
-### Step 4: Fine-tune on Domain Data
-
-Fine-tune only the new embeddings initially, then jointly:
-
-```python
-# Freeze all except new embeddings
-for name, param in model.named_parameters():
-    if "embed" not in name:
-        param.requires_grad = False
-
-# Train on domain data
-trainer.train()
-```
-
-## Instructions for Agents
-
-### Step 1: Inventory New Vocabulary
-Collect tokens to add: domain terms, special tokens, language characters, or symbols.
-
-### Step 2: Check for Conflicts
-Verify new tokens don't overlap with existing vocabulary; check for subword coverage.
-
-### Step 3: Extend Tokenizer and Model
-Add tokens to tokenizer; resize model embedding matrix accordingly.
-
-### Step 4: Initialize Embeddings
-Choose strategy: average of subword embeddings (recommended) or random initialization.
-
-### Step 5: Validate and Fine-tune
-Verify tokenization of new tokens; run domain fine-tuning; report vocabulary coverage improvement.
-
-## Examples
-
-### Example 1: Add Chinese Domain Terms
-
-```
-User: "Add quantum physics Chinese vocabulary to this language model"
-
-Agent:
-1. Collect Chinese quantum terms: 量子, 纠缠, 叠加态, 波函数
-2. Check tokenizer: verify these are not already single tokens
-3. Add tokens to tokenizer; resize model embeddings
-4. Initialize via subword average for Chinese characters
-5. Fine-tune on quantum physics Chinese corpus
-6. Report tokenization coverage improvement
-```
-
-### Example 2: Add Special Domain Tokens
-
-```
-User: "Add [PROTEIN], [GENE], [DRUG] special tokens to biomedical model"
-
-Agent:
-1. Define special tokens: [PROTEIN], [GENE], [DRUG], [DISEASE]
-2. Add to tokenizer as special_tokens
-3. Resize embedding matrix (4 new rows)
-4. Initialize randomly; these tokens have no subword basis
-5. Fine-tune on biomedical NER dataset
-6. Validate token recognition in downstream task
-```
+[TODO: Add content here. See examples in existing skills:
+- Code samples for technical skills
+- Decision trees for complex workflows
+- Concrete examples with realistic user requests
+- References to scripts/templates/references as needed]
 
 ## Resources
 
-- `references/`: Vocabulary extension techniques and embedding initialization guides
-- Related: `declarative-self-improvement`, `espl-evolutionary-system-prompt`
+This skill includes example resource directories that demonstrate how to organize different types of bundled resources:
+
+### scripts/
+Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+
+**Examples from other skills:**
+- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
+- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+
+**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+
+**Note:** Scripts may be executed without loading into context, but can still be read by Claude for patching or environment adjustments.
+
+### references/
+Documentation and reference material intended to be loaded into context to inform Claude's process and thinking.
+
+**Examples from other skills:**
+- Product management: `communication.md`, `context_building.md` - detailed workflow guides
+- BigQuery: API reference documentation and query examples
+- Finance: Schema documentation, company policies
+
+**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Claude should reference while working.
+
+### assets/
+Files not intended to be loaded into context, but rather used within the output Claude produces.
+
+**Examples from other skills:**
+- Brand styling: PowerPoint template files (.pptx), logo files
+- Frontend builder: HTML/React boilerplate project directories
+- Typography: Font files (.ttf, .woff2)
+
+**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
+
+---
+
+**Any unneeded directories can be deleted.** Not every skill requires all three types of resources.

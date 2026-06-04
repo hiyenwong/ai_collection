@@ -18,58 +18,146 @@ Quantum computing methodologies for portfolio optimization — covering QAOA for
 ### QAOA for Higher-Order Portfolio Optimization (arXiv: 2509.01496)
 First quantum formulation for portfolio optimization with **higher-order moments** (skewness and kurtosis). Standard mean-variance ignores distribution asymmetry and tail risk. QAOA encodes cubic/quadratic terms into Ising Hamiltonians, enabling quantum advantage for complex risk modeling.
 
+**Key Insight**: Including skewness (3rd moment) and kurtosis (4th moment) in the objective function leads to better risk-adjusted returns. The QAOA circuit depth scales polynomially with the number of assets when using higher-order terms.
+
 ### End-to-End Quantum Annealing Pipeline (arXiv: 2504.08843)
-Practical hybrid pipeline combining continuous mean-variance/Sharpe-ratio objectives with quantum annealing solver. Demonstrates feasibility on current NISQ devices.
+Practical hybrid pipeline combining:
+1. Continuous mean-variance and Sharpe-ratio objectives (classical preprocessing)
+2. QUBO formulation for quantum annealing solver
+3. Post-processing and validation on classical hardware
+
+Demonstrates feasibility on current NISQ devices.
 
 ## Usage Patterns
 
 ### Pattern 1: QAOA Higher-Order Portfolio Optimization
+
+Use QAOA when:
+- Portfolio needs risk modeling beyond mean-variance
+- Skewness/kurtosis matter for the asset class
+- Quantum hardware access available (or simulator for small problems)
+
 **QUBO formulation:**
 ```
 H = -μ^T x + λ₁ x^T Σ x + λ₂ Σᵢⱼₖ Sᵢⱼₖ xᵢxⱼxₖ + λ₃ Σᵢⱼₖₗ Kᵢⱼₖₗ xᵢxⱼxₖxₗ
 ```
+Where S = skewness tensor, K = kurtosis tensor, x = binary selection vector.
 
-**Steps:**
+**QAOA steps:**
 1. Encode objective as Ising Hamiltonian
-2. Map to QUBO with penalty constraints
-3. Initialize QAOA (p=1-3 layers for NISQ)
+2. Map to QUBO with penalty terms for constraints
+3. Initialize QAOA with p layers (p=1-3 for NISQ)
 4. Optimize angles classically (COBYLA/SPSA)
-5. Sample final state for portfolio candidates
+5. Sample from final state for portfolio candidates
 
-### Pattern 2: Quantum Annealing Pipeline
-1. Classical preprocessing: returns, covariance, constraints
-2. QUBO formulation: mean-variance + constraints
-3. Minor-embed onto QA hardware topology
-4. Run 1000-10000 annealing reads
-5. Select best feasible solution
+### Quantum Annealing Pipeline (UPDATED 2026-05-30)
+
+⚠️ **Important caveat**: See Error Handling section for critical findings on penalty-encoded QUBO failure and D-Wave audit. Use constraint-native CQM instead of penalty QUBO.
+
+Use quantum annealing when:
+- Problem size fits current QA hardware (D-Wave: ~5000 qubits)
+- Need practical results on existing hardware
+- Mean-variance + Sharpe ratio sufficient (no higher moments)
+
+**Pipeline (revised):**
+1. **Classical preprocessing**: Compute returns, covariance, constraints
+2. **Constraint-native CQM formulation**: Use D-Wave's CQM interface, NOT penalty-encoded QUBO
+3. **Embedding**: Let CQM solver handle constraints natively
+4. **Annealing**: Run multiple reads (1000-10000 samples)
+5. **Post-processing**: Select best feasible solution, validate Sharpe ratio
+6. **Audit**: Report actual QPU time fraction vs wall-clock time (expect <1%)
 
 ### Pattern 3: Hybrid Classical-Quantum
-1. Classical optimization for initial solution
-2. Quantum refinement in local neighborhoods
-3. Validate against classical benchmarks
 
-## QUBO Encoding (Python)
+For production-grade portfolio optimization:
+1. Use classical optimization for initial solution
+2. Use quantum (QAOA/QA) for refinement in local neighborhoods
+3. Validate against classical benchmarks
+4. Track quantum advantage as hardware improves
+
+## Mathematical Framework
+
+### QUBO Encoding
+
 ```python
 import numpy as np
+from typing import Tuple
 
-def portfolio_to_qubo(returns, covariance, risk_aversion=1.0, budget=None, penalty=10.0):
+def portfolio_to_qubo(
+    returns: np.ndarray,
+    covariance: np.ndarray,
+    risk_aversion: float = 1.0,
+    budget: int = None,
+    penalty: float = 10.0
+) -> Tuple[np.ndarray, float]:
+    """Encode portfolio optimization as QUBO matrix.
+    
+    H = -μ'x + λ·x'Σx + P·(Σxᵢ - K)²
+    """
     n = len(returns)
-    if budget is None: budget = n // 2
+    if budget is None:
+        budget = n // 2
+    
+    # Objective: -μ'x + λ·x'Σx
     Q = risk_aversion * covariance - np.outer(returns, np.ones(n)) * 0.5
-    Q = Q + Q.T
+    Q = Q + Q.T  # symmetrize
+    
+    # Budget constraint: (Σxᵢ - K)²
     Q += penalty * np.ones((n, n))
     Q -= penalty * budget * np.eye(n)
+    
     offset = penalty * budget**2
     return Q, offset
 ```
 
+### QAOA Circuit Construction
+
+```python
+# Pseudocode for QAOA portfolio circuit
+# 1. Initialize: |+⟩^⊗n (equal superposition over all portfolios)
+# 2. For p layers:
+#    a. Apply cost Hamiltonian: exp(-i·γ·H_C)
+#       - H_C = Σᵢ (-μᵢ + λ·σᵢᵢ) Zᵢ + Σᵢ<ⱼ λ·σᵢⱼ ZᵢZⱼ + ...
+#    b. Apply mixer: exp(-i·β·Σᵢ Xᵢ)
+# 3. Measure in computational basis
+# 4. Classical optimizer updates (γ, β)
+```
+
 ## Error Handling
-- **Barren Plateaus**: Use problem-specific initialization, layerwise training
-- **Embedding Failures**: Chain strength optimization, problem decomposition
-- **Noisy Moments**: Shrinkage estimators, Bayesian priors
+
+### ⚠️ CRITICAL: Penalty-Encoded QUBO Failure on D-Wave (arXiv: 2605.17628, 2605.17623)
+- **Problem**: Standard penalty-encoded QUBO portfolio optimization **fails structurally** on current D-Wave Pegasus/Zephyr hardware
+- **Root cause**: Cardinality penalty contributes dense rank-one term (proportional to all-ones matrix), making logical interaction graph complete regardless of covariance structure
+- **Symptom**: Chain-break fractions reach 83% at N=24 and 92% at N=48
+- **Fix**: Reformulate as **constraint-native CQM** (Constrained Quadratic Model) instead of penalty-encoded QUBO
+- **Audit finding**: D-Wave LeapHybridCQM matches Gurobi optimum but QPU access is only 0.034s out of 5s budget (0.7%) — quantum contribution is marginal at current scale
+- **Recommendation**: Use classical MIQP (Gurobi/CPLEX) for production; reserve quantum for research/hardware evolution tracking
+
+### QAOA Barren Plateaus
+- **Symptom**: Cost function gradients vanish exponentially with qubit count
+- **Mitigation**: Use problem-specific initialization, layerwise training (p=1 → p=2 → ...)
+- **Reference**: See `quantum-neural-barren-plateau` skill
+
+### Quantum Annealing Embedding Failures
+- **Symptom**: QUBO doesn't fit hardware topology
+- **Mitigation**: Use chain strength optimization, problem decomposition, or classical post-processing
+
+### Higher-Order Moment Estimation
+- **Symptom**: Noisy skewness/kurtosis estimates from limited data
+- **Mitigation**: Use shrinkage estimators, Bayesian priors, or robust statistics
 
 ## Activation Keywords
-- quantum portfolio optimization, QAOA finance, quantum annealing portfolio, higher-order moment portfolio, quantum finance optimization, 量子组合优化, QAOA 投资组合, 量子退火金融
+- quantum portfolio optimization
+- QAOA finance
+- quantum annealing portfolio
+- higher-order moment portfolio
+- quantum finance optimization
+- 量子组合优化
+- QAOA 投资组合
+- 量子退火金融
+- 量子金融优化
 
 ## Related Skills
-- `quantum-optimization-qaoa`, `quantum-finance-portfolio`, `quantum-neural-barren-plateau`
+- `quantum-optimization-qaoa` — General QAOA methodology
+- `quantum-finance-portfolio` — Broader quantum finance patterns
+- `quantum-neural-barren-plateau` — Barren plateau mitigation

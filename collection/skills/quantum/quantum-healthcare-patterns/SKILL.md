@@ -46,6 +46,29 @@ medical images (MRI, CT, X-ray) for training data augmentation.
 **Key finding**: Quantum generators can achieve comparable quality with fewer
 parameters, beneficial when training data is scarce (rare diseases).
 
+## Pattern 2.5: Quantum-Inspired GAN with Dual-Stream Architecture (MediQ-GAN)
+
+**Context**: Medical imaging datasets are scarce, imbalanced, and privacy-constrained.
+Classical GANs demand extensive computational resources; quantum-based image generation
+methods face scale limits and barren plateaus.
+
+**Approach**:
+1. Build dual-stream generator: classical branch for spatial features + quantum-inspired
+   branch (VQC) for high-dimensional correlations
+2. Fuse streams via prototype-guided skip connections (learn class prototypes, modulate
+   skip connections based on prototype-feature similarity)
+3. VQC design that inherently preserves full-rank mappings, avoiding rank collapse
+4. Validate with latent-geometry and rank-based analysis
+5. Generate synthetic samples for minority class augmentation
+
+**Key finding**: MediQ-GAN (arXiv:2506.21015) outperforms SOTA GANs and diffusion models
+on three medical imaging datasets. VQCs naturally avoid rank collapse — a known failure
+mode of classical GANs — while prototype-guided skip connections guide generation toward
+semantically meaningful outputs. Hardware-agnostic: validated on IBM hardware but works
+with any quantum simulator.
+
+**Skill reference**: See `mediq-gan-medical-image-generation` for implementation details.
+
 ## Pattern 3: Quantum Computing for Personalized Medicine
 
 **Context**: Leveraging quantum computing to process patient-specific genomic
@@ -80,6 +103,26 @@ relevant to clinical contexts (patient communication, mental health assessment).
 1. Identify emotion concept dimensions in model representations
 2. Evaluate clinical relevance: can model distinguish clinical vs non-clinical emotional states?
 3. Assess impact on downstream clinical tasks (diagnosis, patient interaction)
+
+## Pattern 6: Quantum-Inspired Classical Tensor Networks for Medical Imaging
+
+**Context**: When actual quantum hardware is unavailable or impractical, quantum-inspired
+classical methods using tensor network decompositions (PARAFAC/CP, MPS, TTN) can
+extract discriminative features from high-dimensional medical imaging data.
+
+**Approach**:
+1. Load medical imaging data (MRI, CT, X-ray) as tensors: (N_samples, H, W, C)
+2. Apply PARAFAC/CP tensor decomposition with rank 32-128
+3. Use component weights as features for ensemble classifiers (Random Forest, GBM)
+4. Validate with nested stratified cross-validation
+5. Compare against PCA, autoencoders, and CNNs
+
+**Key finding**: PARAFAC tensor features on 55,160 MRI images across 8 diagnostic
+categories achieve competitive performance vs recent classical approaches. Tensor
+decompositions naturally capture multi-way structure in medical images, making them
+effective when data dimensionality is high but sample size is moderate.
+
+**Skill reference**: See `tensor-network-medical-imaging` for implementation details.
 
 ## Decision Table: When to Use Quantum vs Classical
 

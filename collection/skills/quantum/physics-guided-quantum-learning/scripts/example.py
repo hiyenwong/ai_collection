@@ -10,12 +10,10 @@ Example real scripts from other skills:
 - pdf/scripts/convert_pdf_to_images.py - Converts PDF pages to images
 """
 
-
 def main():
     print("This is an example script for physics-guided-quantum-learning")
     # TODO: Add actual script logic here
     # This could be data processing, file conversion, API calls, etc.
-
 
 if __name__ == "__main__":
     main()

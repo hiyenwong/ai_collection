@@ -155,15 +155,6 @@ From recent papers (2604.01876v1, 2604.01831v1):
 - Path validation without topology revelation
 - Multi-path certification
 
-### Pattern 2.5: Hybrid QKD+KLJN Key Distribution
-
-From paper 2605.15247 (Basar, May 2026):
-- Combines BB84-type optical QKD with KLJN (Kirchhoff-law-Johnson-noise) statistical-physical key exchange
-- Three KLJN-assisted QKD protocols: eliminate public basis disclosure, extract basis-derived key bits, generate raw key bits
-- KLJN link used for secure basis handling and additional raw key generation
-- Improves key generation efficiency in short-haul infrastructures (MANs, data center interconnects)
-- Analytical key rate expressions account for optical channel penalties, KLJN bandwidth constraints, and synchronization bottlenecks
-
 ### Pattern 3: Quantum State Engineering
 
 From recent papers (2604.01722v1, 2604.02234v1):
@@ -195,16 +186,6 @@ From recent papers (2604.01722v1, 2604.02234v1):
 - **Arxiv Search**: `scripts/search_arxiv.py`
 - **Import Script**: `scripts/import_papers_to_kg.py`
 - **kg_tool**: `scripts/kg_tool/target/release/kg_tool`
-
-## Examples
-
-User: Design a QKD protocol for a heterogeneous fiber network that converts polarization encoding to time-bin encoding.
-
-Agent: Identify the source and receiver encoding constraints, choose a polarization-to-time-bin conversion stage, specify synchronization and calibration checks, then validate BB84 or decoy-state security assumptions against conversion loss and timing jitter.
-
-User: Check whether a topology-hiding QKD proposal leaks path information.
-
-Agent: Model what each participant can observe, verify the zero-knowledge connectivity proof, inspect whether path validation reveals graph structure, and recommend stronger proof or multi-path certification steps if leakage remains.
 
 ## Related Skills
 

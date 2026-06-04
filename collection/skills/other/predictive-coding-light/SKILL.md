@@ -3,11 +3,11 @@ name: predictive-coding-light
 description: "Predictive Coding Light+ (PCL+) methodology for spiking neural network sequence prediction. A spiking neural network architecture for unsupervised sequence processing that learns recurrent excitatory connections with delays to enable short-term retention of information. Combines spike timing-dependent plasticity (STDP) with synaptic delays to learn predictive representations. Successfully reproduces classic visual cortex sequence learning findings and learns to fill in missing inputs in gesture recognition tasks. Activation: Predictive Coding Light+, PCL+, STDP sequence learning, spiking neural network prediction, synaptic delay learning, unsupervised sequence processing, visual cortex sequence learning, short-term memory SNN, predictive coding spiking, spike timing-dependent plasticity sequence, gesture recognition SNN."
 ---
 
-# Predictive Coding Light+ Methodologyy
+# Predictive Coding Light+ Methodology
 
 ## Overview
 
-Predictive Coding Light+ (PCL+) (arXiv: 2605.12732) addresses a fundamental question: how can biological or artificial spiking neural networks learn to maintain past sensory information to predict the future? It proposes a novel SNN architecture combining **spike timing-dependent plasticity (STDP)** with **synaptic delays** to learn recurrent excitatory connections for short-term information retention.
+Predictive Coding Light+ (PCL+) (arXiv:2605.12732v1) addresses a fundamental question: how can biological or artificial spiking neural networks learn to maintain past sensory information to predict the future? It proposes a novel SNN architecture combining **spike timing-dependent plasticity (STDP)** with **synaptic delays** to learn recurrent excitatory connections for short-term information retention.
 
 ## Core Problem
 

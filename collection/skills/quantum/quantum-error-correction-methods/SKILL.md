@@ -1,227 +1,265 @@
 ---
 name: quantum-error-correction-methods
-description: Quantum error correction methods and techniques for fault-tolerant quantum computing.
+description: "Reusable patterns from quantum error correction research. Covers RL-controlled QEC, fault-tolerant architectures, neutral-atom systems, Bacon-Shor codes, and loss-biased codes. Use when analyzing QEC papers, designing fault-tolerant quantum systems, selecting error correction codes, or comparing QEC approaches."
 ---
+
 # Quantum Error Correction Methods
 
-## Description
-Quantum Error Correction (QEC) methodologies covering syndrome resampling, affine subcode ensemble decoding, FPGA-based neural network decoding, and distributed bivariate bicycle codes. Use when researching, implementing, or analyzing QEC decoding strategies, logical error rate optimization, fault-tolerant quantum computing architectures, or syndrome-based error mitigation.
+Patterns from QEC research (2025-2026).
 
-## Activation Keywords
-- quantum error correction
-- QEC decoding
-- syndrome resampling
-- affine subcode ensemble decoding
-- neural network decoder
-- bivariate bicycle codes
-- surface code decoding
-- logical error rate optimization
-- fault-tolerant quantum computing
-- QEC threshold improvement
-- 量子纠错
-- syndrome decoding
-- BP+OSD decoding
-- distributed quantum error correction
-- degenerate solution search
+## Pattern 1: RL-Controlled Quantum Error Correction
 
-## Core Methodologies
+**Core idea**: Use reinforcement learning to adaptively control QEC instead of halting computation for recalibration.
 
-### 1. Syndrome Resampling for Threshold Enhancement
-**Paper**: Colmenarez et al. (2605.06101)
+**Problem**: Environmental drift degrades quantum operations over time. Traditional approach: stop computation, recalibrate, resume — unsustainable for long algorithms.
 
-**Key Insight**: Biasing syndrome averages toward high-probability syndromes increases logical fidelities without hardware modifications or decoder changes.
+**RL solution**:
+- State: Syndrome measurements, drift indicators
+- Action: Adjust error correction parameters
+- Reward: Logical error rate reduction
+- Continuous online adaptation without interrupting computation
 
-**Algorithm**:
-1. Collect syndrome statistics from QEC cycles
-2. Compute syndrome probability distribution P(s)
-3. Resample syndromes according to P(s)^α where α > 1
-4. Apply maximum likelihood decoding (MLD) on resampled syndromes
-5. The α parameter creates a family of optimal thresholds linked to Rényi coherent information phase transitions
+**Key paper**: "Reinforcement Learning Control of Quantum Error Correction" (arxiv:2511.08493)
 
-**Results**:
-- Reduces logical error rates by up to 4 orders of magnitude
-- Decoder-agnostic: works with any QEC decoder
-- Effective from finite syndrome data
-- Can combine with decoding-based post-selection
-- Applied to existing experimental data: 2 orders of magnitude reduction without additional measurements
+## Pattern 2: Neutral-Atom Fault-Tolerant Architecture
 
-**Implementation**:
-```python
-import numpy as np
+**Core idea**: Reconfigurable neutral-atom arrays for scalable fault-tolerant quantum computing.
 
-def syndrome_resampling(syndromes, alpha=2.0, n_samples=1000):
-    """Resample syndromes biased toward high-probability ones."""
-    unique, counts = np.unique(syndromes, axis=0, return_counts=True)
-    probs = counts / counts.sum()
-    biased_probs = probs ** alpha
-    biased_probs /= biased_probs.sum()
-    indices = np.random.choice(len(unique), size=n_samples, p=biased_probs)
-    return unique[indices]
-```
+**Key results (Harvard, 2025)**:
+- 448 neutral atoms in reconfigurable array
+- Integrated all core elements of scalable error-corrected computation
+- Repeatable error correction with present-day technology
+- Roadmap: high-fidelity gates + scalable atom control + robust decoding
 
-### 2. Affine Subcode Ensemble Decoding
-**Paper**: Wursthorn et al. (2605.06547)
+**Architecture pattern**:
+1. Physical qubits in 2D atom array
+2. Logical qubits via surface code or similar
+3. Reconfigurable connectivity for gate operations
+4. Real-time syndrome extraction
 
-**Key Insight**: Appending linearly independent rows to stabilizer code check matrices reduces search space for degenerate solutions, improving BP decoding convergence.
+## Pattern 3: Measurement-Free Fault-Tolerant Computation
 
-**Algorithm**:
-1. Start with parity check matrix H of stabilizer code
-2. Generate overcomplete matrices by appending linearly independent rows
-3. Create multiple affine subcode decoding paths
-4. Run classical BP decoding on each path
-5. Combine results to find optimal degenerate solution
+**Core idea**: Fault-tolerant quantum computation without mid-circuit measurements.
 
-**Results**:
-- Improved convergence for toric and generalized bicycle codes
-- Reduced logical error rate vs. standard BP decoding
-- Specifically addresses degeneracy impairment in qLDPC codes
+**Method**: Bacon-Shor code + code deformation
+- All logical operations via unitary gates + resets only
+- No mid-circuit measurements needed
+- No classical decoding during computation
+- Reduces hardware requirements significantly
 
-**Implementation Pattern**:
-```python
-def affine_subcode_decode(syndromes, H, n_paths=8):
-    """Ensemble decoding using affine subcode paths."""
-    results = []
-    for _ in range(n_paths):
-        H_ext = extend_with_independent_rows(H)
-        decoded = belief_propagation(syndromes, H_ext)
-        results.append(decoded)
-    return select_best_degenerate_solution(results, syndromes, H)
-```
+## Pattern 4: Loss-Biased Quantum Error Correction
 
-### 3. FPGA-based Neural Network Decoder
-**Paper**: Yang et al. (2605.04892)
+**Core idea**: Exploit biased noise channels (loss dominates over other errors) for more efficient QEC.
 
-**Key Architecture**:
-- Neural network decoder on FPGA for surface code
-- Deterministic closed-loop latency: 550 ns (124 ns NN decoding)
-- QEC cycle: 1.25 μs
-- Distance-3 surface code on superconducting processor
-- Supports mid-circuit feedback for non-Clifford operations
+**Key insight**: Physical error channels are often biased (e.g., photon loss >> dephasing). Design codes that protect against dominant error type more efficiently.
 
-**Design Considerations**:
-- Throughput must exceed syndrome generation rate
-- Latency must be < QEC cycle time to prevent error accumulation
-- Real-time performance matches offline decoding
-- Handles varying error conditions robustly
+**Applications**: Superconducting qubits, photonic quantum computing, bosonic codes (GKP).
 
-### 4. Distributed Bivariate Bicycle Codes
-**Paper**: Chandra et al. (2605.04663)
+## Pattern 5: Concatenated Code Decoding
 
-**Key Architecture**:
-- BB code [[144,12,12]] partitioned across modular processors
-- Star network interconnect via shared Bell pairs
-- All-to-all internal connectivity (trapped ion/neutral atom)
-- Inter-processor gates mediated by entanglement
+**Core idea**: Bidirectional decoding for concatenated quantum Hamming codes.
 
-**Scaling Analysis**:
-- Partition across 4, 6, or 12 processors
-- Vary nonlocal operation noise scaling factor
-- Use BP+OSD decoding with Monte Carlo simulation
-- Extended BB code ansatz for distributed setting
+**Results** (SpinQ + HKUST, QEC 2026):
+- Near-optimal effective distance
+- More efficient fault-tolerant threshold
+- Suitable for near-term quantum processors
 
-## QEC Decoder Comparison
+## Pattern 6: Adaptive Window Decoding (ADaPT)
 
-| Decoder Type | Latency | Hardware | Threshold | Scalability |
-|-------------|---------|----------|-----------|-------------|
-| Syndrome Resampling | Software-only | Any | ↑↑↑ | High |
-| Affine Subcode Ensemble | Software-only | Any | ↑↑ | High |
-| FPGA Neural Network | 550 ns | FPGA | ↑↑ | Medium |
-| BP+OSD (Standard) | Software | Any | Baseline | High |
-| Distributed BB | Depends on interconnect | Modular | Competitive | High |
+**Core idea**: Use decoder confidence to dynamically adjust window size in real-time QEC decoding, reducing reaction time without compromising logical error rates.
 
-## Implementation Workflow
+**Problem**: Fixed window size `d` in window decoding pays unnecessary overhead per window due to sparsity of average-case errors in QEC.
 
-### Step 1: Syndrome Collection
-```python
-def collect_syndromes(qec_cycles, measurement_results):
-    """Extract syndrome history from QEC cycles."""
-    syndromes = []
-    for cycle in qec_cycles:
-        syndrome = compute_syndrome(measurement_results[cycle])
-        syndromes.append(syndrome)
-    return np.array(syndromes)
-```
+**Solution** (arxiv:2605.01149, 2026-05-05):
+- Monitor decoder confidence during window processing
+- Shrink window when confidence is high (sparse errors)
+- Expand window only when needed (dense error clusters)
+- Achieves target error rate with lower decoding time overhead
+- Benchmarked across different codes and hardware-inspired noise models
+- Maintains low reaction time while preserving logical error rate performance
 
-### Step 2: Probability Estimation
-```python
-def estimate_syndrome_distribution(syndromes):
-    """Estimate P(s) from syndrome history."""
-    unique, counts = np.unique(syndromes, axis=0, return_counts=True)
-    return unique, counts / counts.sum()
-```
+**Key insight**: Average-case QEC errors are sparse — most windows don't need full-size processing.
 
-### Step 3: Apply Enhancement Method
-Choose based on constraints:
-- **No hardware changes needed**: Syndrome Resampling (α=2-4)
-- **qLDPC codes with degeneracy**: Affine Subcode Ensemble
-- **Real-time requirement**: FPGA Neural Network
-- **Modular architecture**: Distributed BB Codes
+## Pattern 7: FPGA-Based QLDPC Decoding with GARI
 
-### Step 4: Evaluate Performance
-```python
-def evaluate_qec_improvement(logical_errors_before, logical_errors_after):
-    """Compute improvement metrics."""
-    reduction = logical_errors_before / logical_errors_after
-    print(f"Logical error rate reduction: {reduction:.1f}x")
-    return reduction
-```
+**Core idea**: Hardware architecture for correlated error decoding in quantum LDPC codes using Graph Augmentation and Rewiring for Inference (GARI) method.
 
-## Key Parameters
+**Architecture** (arxiv:2605.01035, 2026-05-05):
+- Message-passing decoder exploiting detector error model structure from GARI
+- Resource reuse with modest parallelism for reduced power/area
+- Case study: VCU19P FPGA, 3 decoder cores for [[144,12,12]] bivariate bicycle code
+- Average latency: 596 ns per decoding round
+- 6x fewer resources than previous GARI-based proposal
+- First multi-core decoder implementation for correlated errors on single FPGA
 
-### Syndrome Resampling
-- **α (power parameter)**: Controls bias strength (typically 2-4)
-- **n_samples**: Number of resampled syndromes (≥1000 for stable results)
-- **Data requirement**: Finite syndrome statistics sufficient
+**Design principles**:
+- Flexible scaling to any QLDPC code using GARI framework
+- Energy-conscious scaling for QEC classical layer
+- Real-time decoding constraints met without accuracy compromise
 
-### Affine Subcode Decoding
-- **n_paths**: Number of decoding paths (typically 4-16)
-- **Row extension**: Number of independent rows to append
-- **Overcompleteness**: Balance between search space reduction and computational cost
+## Pattern 8: Quasi-Dyadic CSS LDPC Code Construction
 
-### FPGA NN Decoder
-- **Latency budget**: < QEC cycle time
-- **Network size**: Trade-off between accuracy and latency
-- **Feedback path**: Must include Pauli-frame update for non-Clifford operations
+**Core idea**: Build dual-containing CSS LDPC codes using quasi-dyadic (circulant block) matrices for efficient encoding/decoding and fault tolerance.
 
-## Error Handling
+**Construction** (arxiv:2605.03631, 2026-05-05):
+- Use quasi-dyadic matrices: sparse circulant blocks that commute
+- Dual-containing property: H_x · H_z^T = 0 (needed for CSS codes)
+- Enables compact representation and efficient algebraic decoding
+- Applicable to scalable fault-tolerant quantum computation
 
-### Degeneracy Issues
-- If BP fails to converge: Apply affine subcode ensemble
-- If multiple degenerate solutions: Use syndrome resampling to bias toward likely syndromes
+**Key advantage**: Circulant structure enables hardware-friendly implementation with reduced memory and computation overhead.
 
-### Hardware Constraints
-- If latency too high for real-time: Use syndrome resampling (software-only)
-- If limited qubit connectivity: Use distributed BB code architecture
+## Pattern 9: Fault-Tolerant Cut-Cat Syndrome Extraction
 
-### Data Limitations
-- If syndrome statistics insufficient: Combine with post-selection
-- If finite data regime: Use resampling with conservative α values
+**Core idea**: Novel syndrome extraction protocol using cut-cat states that prevents error propagation during QEC measurement cycles.
 
-## Best Practices
+**Method** (arxiv:2604.17339, 2026-04-19):
+- Prepare ancillary "cut-cat" states (truncated cat states)
+- Use transversal CNOT gates between data qubits and ancilla
+- Verify syndrome measurement before applying corrections
+- Prevents single physical error from cascading into logical failure
 
-1. **Start with syndrome resampling**: Decoder-agnostic, no hardware changes, proven results
-2. **Combine methods**: Syndrome resampling + affine subcode ensemble for maximum improvement
-3. **Monitor Rényi coherent information**: Track phase transitions to optimize α parameter
-4. **Validate on surface codes first**: Well-understood benchmark before moving to qLDPC/BB codes
-5. **Consider architecture constraints**: Match decoding method to hardware capabilities
+**Benefit**: Reduces syndrome extraction circuit depth and connectivity requirements compared to standard Steane/Shor extraction.
 
-## Resources
-- Paper 1: https://arxiv.org/abs/2605.06547 (Affine Subcode Ensemble Decoding)
-- Paper 2: https://arxiv.org/abs/2605.06101 (Syndrome Resampling)
-- Paper 3: https://arxiv.org/abs/2605.04892 (FPGA Neural Network Decoder)
-- Paper 4: https://arxiv.org/abs/2605.04663 (Distributed BB Codes)
-- Paper 5: https://arxiv.org/abs/2605.04582 (Post-Quantum Cryptographic Limitations)
+## Pattern 10: Compass Code Dynamic Low-Valency QEC
 
-## Related Codes
-- Surface codes (distance-3 demonstrated)
-- Toric codes
-- Generalized bicycle codes
-- Bivariate bicycle (BB) codes [[144,12,12]]
-- Quantum LDPC codes
+**Core idea**: Dynamic compass codes with low valency (few connections per qubit) enable scalable QEC on hardware with limited connectivity.
 
-## Related Methods
-- Belief Propagation (BP)
-- Ordered Statistic Decoding (OSD)
-- Maximum Likelihood Decoding (MLD)
-- Rényi Coherent Information (RCI)
-- Pauli-frame updating
+**Method** (arxiv:2604.14299, 2026-04-15):
+- Low-valency code structure: each qubit connects to few neighbors
+- Dynamic code deformation for adaptivity
+- Rapid logical error rate reduction with code scaling
+- Practical for near-term hardware with connectivity constraints
+
+## Pattern 11: QEC Decoder Analysis Framework
+
+**Core idea**: Systematic analysis framework for comparing QEC decoders across multiple dimensions.
+
+**Analysis dimensions** (arxiv:2603.20127, 2026-03-20):
+- **Belief propagation convergence**: Speed and stability of iterative message passing
+- **Trapping set analysis**: Short cycles in Tanner graph that cause decoder failure
+- **OSD post-processing**: Ordered statistics decoding to escape local minima
+- **Computational complexity**: Classical processing overhead per syndrome round
+
+## Pattern 12: Maximum Likelihood Decoding (MLD) via Three Complementary Lenses
+
+**Core idea**: MLD is provably optimal for QEC but #P-hard in general. Three approaches approximate or solve it:
+
+1. **Statistical Mechanics** (arxiv:2605.17230): Maps MLD to partition functions of disordered spin models. For CSS codes: MLD ↔ partition function of classical spin model with quenched disorder. Each qubit → spin variable; syndrome → random magnetic field; error probability → Boltzmann weight. Decoding threshold = thermodynamic phase transition on Nishimori line: exp(-2βJ) = p/(1-p). Exact MLD via tensor network contraction of the spin model; approximate MLD via belief propagation with guaranteed convergence for tree-like factor graphs. Code geometry determines: computational complexity (low treewidth → exact TN tractable), BP convergence (locally tree-like → converges), optimal contraction order. Below threshold = ordered phase (successful decoding); at threshold = critical point; above threshold = disordered phase (decoding failure). See `references/statistical-physics-qec-decoding.md` for detailed spin model construction and implementation patterns.
+
+2. **Tensor Networks**: Build factor graph from parity check matrix H, contract tensor network to compute marginals. Complexity O(χ^d) where χ is bond dimension. Near-MLD accuracy with polynomial cost.
+3. **AI/Neural Decoders**: Autoregressive generative models and recurrent transformers learn P(error|syndrome) from data. Fast real-time decoding on GPU/TPU, accuracy depends on training data quality.
+
+**Integration pattern**: Statistical mechanics for exact threshold estimation (small codes), tensor networks for near-optimal accuracy (moderate distances), neural decoders for real-time throughput (large codes).
+
+**Key paper**: "Maximum Likelihood Decoding of Quantum Error Correction Codes" (arxiv:2605.17230, 2026-05)
+
+## Pattern 13: VarEFTQC — Learning-Based Logical Operation Discovery for Arbitrary QEC Codes
+
+**Core idea**: Given only an encoding circuit (no stabilizer description required), use learning-based optimization to discover physical implementations of logical operations while enforcing structural constraints (transversality, shallow depth). Extended to **VarEFTQC** co-design: jointly optimizes non-additive encodings with noise-adapted logical gate sets.
+
+**Problem**: Discovering logical operations for quantum error-correcting codes is challenging, especially for non-additive codes that lack a stabilizer description. Analytical methods only work for well-studied codes.
+
+**Solution** (arxiv:2605.28162, 2026-05):
+1. **Input**: Only the encoding circuit is needed — no stabilizer tableau
+2. **Ansatz construction**: Parameterized gate sequences for candidate logical operations
+3. **Loss function**: Combines fidelity (correct logical action) with structural constraints (transversality, depth)
+4. **Optimization**: Gradient-based or gradient-free methods for non-convex landscapes
+5. **VarEFTQC co-design**: Jointly optimizes encoding + logical ops for specific noise models
+   - Tailors non-additive encodings to noise characteristics
+   - Enforces desired logical gate sets (transversal IQP families, low-depth universal sets)
+
+**Validation**: Rediscover known logical operations on standard stabilizer codes, then extend to non-additive codes.
+
+**When to use**:
+- Non-additive codes where analytical methods fail
+- Hardware-adapted logical gadget discovery
+- Code-device co-optimization for specific noise models
+- Exploring codes beyond the stabilizer formalism
+
+**Pitfalls**:
+- Non-convex optimization landscape with many local minima — requires careful initialization
+- Circuit size scales with code size — may need hierarchical approaches
+- Results depend on accurate noise model characterization
+- Full simulation verification required
+
+**Key paper**: "Learning Logical Operations for Arbitrary Quantum Error Correction Codes" (arxiv:2605.28162, 2026-05)
+
+## Pattern 14: Hybrid Stabilizer-Tensor Network for Non-Clifford Crosstalk
+
+**Core idea**: Simulate surface code QEC under **coherent crosstalk noise** by decomposing noise into Clifford + non-Clifford components, using stabilizer formalism for the Clifford part and matrix product states (MPS) for the non-Clifford corrections.
+
+**Problem**: Surface code QEC simulation assumes Pauli/incoherent noise. Real devices have **coherent crosstalk** (ZZ, XZ, YZ couplings between neighbors) that breaks Gottesman-Knill stabilizer simulation.
+
+**Method** (arxiv:2605.29514, 2026-05):
+1. **Decompose** crosstalk noise into Clifford + non-Clifford components
+2. **Stabilizer layer**: efficient tableau simulation of Clifford operations
+3. **Tensor network layer**: MPS representation of non-Clifford noise as low-rank corrections
+4. **Iterate**: alternate stabilizer evolution and TN corrections per QEC round
+
+**Crosstalk Hamiltonian**: H = J_zz Z_iZ_j + J_xz X_iZ_j + J_yz Y_iZ_j (depends on qubit layout and pulse shapes)
+
+**TN compression**:
+- Adaptive bond dimension based on entanglement entropy
+- Exploit locality: crosstalk limited to nearest-neighbor qubits
+- Truncate small Schmidt values (tolerance ~1e-8)
+
+**When to use**:
+- Surface code threshold estimation under realistic coherent noise
+- Hardware-aware QEC design (pulse sequence optimization)
+- Benchmarking beyond Pauli noise assumptions
+
+**Pitfalls**:
+- **Bond dimension explosion**: non-Clifford noise creates entanglement → bond dim grows exponentially with rounds. Mitigation: truncate aggressively, use local MPS patches.
+- **Clifford approximation error**: ignoring small non-Clifford components underestimates logical error rate.
+- **Measurement noise**: framework assumes noise-free syndrome measurements; needs separate treatment for measurement errors.
+
+## Code Selection Guide
+
+| Platform | Recommended Code | Key Advantage |
+|---|---|---|
+| Neutral atoms | Surface code variants | Reconfigurable connectivity |
+| Superconducting | Bacon-Shor, loss-biased | Measurement-free ops possible |
+| Photonic | GKP, loss-biased | Natural loss bias exploitation |
+| Trapped ions | Concatenated codes | High-fidelity gates |
+| NISQ general | RL-controlled adaptive | No recalibration needed |
+| QLDPC (real-time) | GARI message-passing | FPGA-decodable, correlated errors |
+| Surface code (FTQC) | ADaPT adaptive window | Low latency, confidence-based |
+| Threshold estimation | Statistical mechanics mapping | Exact via phase transition, Nishimori line |
+| Moderate-distance codes | Tensor network contraction | Near-MLD, O(χ^d) complexity |
+| Large-scale real-time | Neural network decoders | GPU/TPU parallel, fast inference |
+
+## Key Metrics to Track
+
+- **Logical error rate**: Target < 10^-6 for practical computation
+- **Code distance**: d = 3, 5, 7... (higher = more protection, more overhead)
+- **Syndrome extraction cycle time**: Must be << qubit coherence time
+- **Qubit overhead**: Physical/logical qubit ratio
+- **Threshold**: Physical error rate below which logical error decreases with code size
+- **Decoding latency**: Target < 1 μs per round for real-time FTQC (ADaPT: adaptive; GARI: 596 ns on FPGA)
+- **Decoder resource usage**: FPGA LUT/DSP count, power consumption for hardware decoders
+
+## References
+
+Key papers in knowledge graph (kg.db):
+- Entity 177: Google Quantum Echoes (verifiable Q advantage)
+- Entity 179: Quantum Computing 2025 Milestones (1000+ qubit)
+- New: RL Control of QEC (arxiv:2511.08493)
+- New: Harvard 448-Atom FT Milestone (2025-11)
+- New: Universal QC via Measurement-Free QEC (APS, 2026)
+- New: Loss-biased FT QEC
+- New: MLD Three-Lens Framework (arxiv:2605.17230, 2026-05) — spin models + tensor networks + neural decoders
+- New: ADaPT Adaptive Window Decoding (arxiv:2605.01149, 2026-05)
+- New: FPGA QLDPC GARI Decoder (arxiv:2605.01035, 2026-05)
+- New: Trapped-Ion Multiqubit Gates Compatible with Scalable QEC (arxiv:2605.28536, 2026-05)
+- New: VarEFTQC Learning-Based Logical Operation Discovery (arxiv:2605.28162, 2026-05) — Pattern 13 above
+
+- New: Non-Clifford Crosstalk via Hybrid Stabilizer-TN (arxiv:2605.29514, 2026-05) — Pattern 14 above
+
+## Practical Notes
+
+**arXiv API rate limiting**: arXiv returns HTTP 429 (Too Many Requests) when sending queries too quickly. Mitigation: add 3.5s delay between queries (time.sleep(3.5)). Also handle HTTP 421 (Misdirected Request) — may indicate proxy misconfiguration. Use `scripts/arxiv_sunday_search.py` pattern with httpx and proxy support.
+
+## Session Notes
+
+- See `references/session-2026-05-07-qec.md` for 2026-05-07 paper analysis including CSS LDPC construction, cut-cat syndrome extraction, compass codes, bosonic QEC memory, and decoder analysis framework.

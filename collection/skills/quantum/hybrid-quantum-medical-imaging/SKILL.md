@@ -1,189 +1,109 @@
 ---
 name: hybrid-quantum-medical-imaging
-description: "Hybrid quantum-classical neural network methodology for medical image classification. Combines parameterized quantum circuits (PQC) with classical CNNs for enhanced diagnostic accuracy."
+description: "Hybrid quantum-classical neural network methodology for medical image classification, particularly thermographic breast cancer detection. Integrates quantum neural network layers with classical CNN backbones to enhance pattern recognition in complex medical imaging data. Use when: (1) hybrid quantum-classical architectures for medical diagnosis, (2) quantum-enhanced image classification in healthcare, (3) thermographic/thermal image analysis with quantum methods, (4) quanvolutional networks for medical applications, (5) quantum machine learning for healthcare AI."
 ---
 
 # Hybrid Quantum Medical Imaging
 
-## Description
-Design and evaluate hybrid quantum-classical neural network architectures for medical image classification. Integrates parameterized quantum circuits with classical convolutional backbones for enhanced feature extraction in medical diagnostics (thermography, radiology, pathology). Based on arXiv:2604.16953 — Hybrid Quantum Neural Networks for Breast Cancer Thermographic Classification.
+## Overview
 
-## Activation Keywords
-- hybrid quantum medical
-- quantum medical imaging
-- HQNN medical classification
-- quantum-classical medical
-- quantum CNN medical
-- 量子医学影像
-- 量子混合神经网络
-- quantum thermographic classification
+Hybrid quantum-classical neural networks combine quantum circuit layers with classical deep learning architectures to leverage quantum computing advantages for medical image classification tasks. This approach shows promise in thermographic breast cancer detection and other medical imaging domains where classical methods struggle with complex thermal patterns.
 
-## Core Concepts
+## Core Architecture
 
-### Hybrid Quantum-Classical Architecture
-The methodology combines two computational paradigms:
+### Hybrid QNN Structure
 
-1. **Quantum Component**: Parameterized Quantum Circuit (PQC) with strongly entangling layers
-   - 4-qubit variational circuit for feature encoding
-   - Multi-head attention mechanisms for quantum-aware feature extraction
-   - Exploits superposition and entanglement for higher-dimensional representation
-   
-2. **Classical Component**: Convolutional Neural Network with attention mechanisms
-   - Standard CNN layers for spatial feature extraction
-   - Attention-based feature fusion
-   - Final classification head
-
-### Why Hybrid for Medical Imaging?
-- Medical images (thermography, MRI, X-ray) have complex thermal/spatial patterns
-- Classical CNNs alone may miss subtle correlations in high-dimensional feature spaces
-- Quantum circuits can encode features into exponentially large Hilbert spaces
-- Hybrid approach maintains computational feasibility on NISQ-era devices
-- Demonstrates quantum advantage in classification even through classical simulation
-
-## Architecture Design
-
-### Pattern 1: Quantum-Aware Feature Encoding
 ```
-Input Image → Classical CNN Backbone → Feature Map
-                                      ↓
-                            Quantum Feature Encoder (PQC)
-                                      ↓
-                          Quantum-Classical Feature Fusion
-                                      ↓
-                            Classification Head
+Input Image → Classical CNN Backbone → Feature Maps → 
+Quantum Variational Layer → Quantum Measurements → 
+Classical Classification Head → Diagnosis Output
 ```
 
-### Pattern 2: Multi-Head Quantum Attention
-- Use quantum circuits to compute attention scores
-- Each quantum circuit processes a different feature subspace
-- Combine attention-weighted quantum features with classical features
-- Benefits: captures non-local correlations in medical images
+### Key Components
 
-### Pattern 3: Variational Quantum Classifier (VQC) Layer
+1. **Classical Encoder**: Pre-trained CNN (ResNet, VGG, EfficientNet) extracts high-level features from medical images
+
+2. **Quantum Variational Layer**: Parameterized quantum circuits (PQC) process encoded features using quantum advantage:
+   - Amplitude encoding of classical features into quantum states
+   - Variational quantum circuit with trainable rotation gates
+   - Entanglement layers for complex feature interactions
+   - Measurement in computational basis
+
+3. **Classical Classifier**: Dense layers on measured quantum outputs for final classification
+
+## Implementation Patterns
+
+### Pattern 1: Quantum Feature Enhancement
 ```python
 import pennylane as qml
 from pennylane import numpy as pnp
 
-n_qubits = 4  # Scalable based on feature dimension
+# Define quantum circuit
+n_qubits = 4
 dev = qml.device("default.qubit", wires=n_qubits)
 
 @qml.qnode(dev)
-def quantum_circuit(weights, features):
-    # Encode features into quantum states
-    qml.AngleEmbedding(features, wires=range(n_qubits))
-    
-    # Variational layers with entanglement
-    for w in weights:
-        qml.StronglyEntanglingLayers(w, wires=range(n_qubits))
-    
-    # Measurement
+def quantum_layer(inputs, weights):
+    # Encode classical features
+    qml.AngleEmbedding(inputs, wires=range(n_qubits))
+    # Variational circuit
+    qml.BasicEntanglerLayers(weights, wires=range(n_qubits))
+    # Measure
     return [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]
 ```
 
-## Instructions for Agents
+### Pattern 2: Hybrid Training Loop
+- Initialize classical backbone with pre-trained weights
+- Randomly initialize quantum circuit parameters
+- Forward pass: image → CNN features → quantum encoding → quantum processing → measurement → classifier
+- Backpropagate through quantum layer using parameter-shift rule
+- Joint optimization of classical and quantum parameters
 
-### Step 1: Identify Medical Imaging Task
-- Determine the modality (thermography, MRI, X-ray, CT, pathology slides)
-- Assess dataset size, class balance, and complexity
-- Identify whether classical CNNs are hitting accuracy ceilings
+### Pattern 3: Quanvolutional Layer
+Replace convolutional layers with quanvolutional filters:
+- Random quantum circuits applied to local image patches
+- Measurement outcomes form feature maps
+- Classical CNN processes quantum-generated features
+- Effective for small datasets and medical images
 
-### Step 2: Design Hybrid Architecture
-- Start with a proven classical backbone (ResNet, EfficientNet)
-- Extract intermediate feature maps (before final pooling)
-- Design quantum circuit with appropriate qubit count (4-8 for NISQ)
-- Use `qml.AngleEmbedding` or `qml.AmplitudeEmbedding` for classical→quantum
+## Medical Imaging Applications
 
-### Step 3: Implement Training Pipeline
-```
-Data Preprocessing → Classical Feature Extraction → Quantum Encoding
-         ↓
-Quantum Circuit Execution → Measurement → Classical Post-processing
-         ↓
-Loss Computation → Gradient Calculation (parameter-shift rule) → Optimization
-```
+### Thermographic Breast Cancer Detection
+- Input: Infrared thermographic images (thermal patterns)
+- Challenge: Subtle temperature variations indicating malignancy
+- Quantum advantage: Enhanced feature discrimination in high-dimensional thermal space
+- Output: Binary classification (benign/malignant)
 
-### Step 4: Evaluate Quantum Advantage
-- Compare against pure classical baseline
-- Measure convergence speed, accuracy, and feature representation quality
-- Test on imbalanced datasets (quantum models excel here — per arXiv:2505.20804)
-- Validate on multiple medical datasets for generalization
+### Speech-Based Healthcare
+- Quanvolutional networks for voice pathology detection
+- Emotion recognition from speech patterns
+- Noise-robust quantum feature extraction
 
-## Usage Patterns
+### Cardiorespiratory Analysis
+- Hybrid models for sound separation and clustering
+- Anomaly detection in healthcare monitoring
+- Generative models for data augmentation
 
-### Pattern 1: Breast Cancer Thermographic Classification
-- Input: Infrared thermography images
-- Architecture: Hybrid CNN + 4-qubit PQC with multi-head attention
-- Dataset: Breast cancer thermal images (public or private)
-- Expected: Improved sensitivity over classical CNN baselines
+## Performance Considerations
 
-### Pattern 2: General Medical Image Classification
-- Input: Any medical imaging modality
-- Architecture: Hybrid with scalable qubit count
-- Datasets: Prostate Cancer, Heart Failure, Diabetes (tabular + imaging)
-- Note: QSVM may outperform QNN on highly imbalanced data (per arXiv:2505.20804)
-
-### Pattern 3: Privacy-Preserving Federated Medical Learning
-- Combine quantum-inspired methods with federated learning
-- Enables multi-hospital collaboration without data sharing
-- Reference: arXiv:2503.03267 (Quantum-Inspired Privacy-Preserving FL for Dementia)
+- **Qubit count**: Limited by current quantum hardware (typically 4-16 qubits for near-term devices)
+- **Classical bottleneck**: Most computation still classical; quantum layer processes compressed features
+- **Noise sensitivity**: Current NISQ devices require error mitigation techniques
+- **Training time**: Quantum circuit evaluation adds computational overhead
 
 ## Error Handling
 
-### Barren Plateaus
-```
-If quantum gradients vanish during training:
-  1. Reduce circuit depth (fewer entangling layers)
-  2. Use layer-wise training (train one layer at a time)
-  3. Initialize parameters closer to identity
-  4. Consider quantum natural gradient optimizer
-```
+### Quantum Circuit Errors
+- Use noise models for realistic simulation
+- Implement error mitigation (zero-noise extrapolation, readout error correction)
+- Consider classical simulation fallback for large circuits
 
-### Dataset Imbalance
-```
-If classes are severely imbalanced:
-  1. QSVM tends to outperform QNN in this regime (per arXiv:2505.20804)
-  2. Apply class-weighted loss functions
-  3. Consider data augmentation in the quantum feature space
-  4. Use focal loss for harder examples
-```
-
-### NISQ Device Limitations
-```
-If running on real quantum hardware:
-  1. Keep qubit count ≤ 8-10 (current noisy devices)
-  2. Use error mitigation (zero-noise extrapolation)
-  3. Compile circuits for target hardware topology
-  4. Fall back to classical simulation for development
-```
-
-## Best Practices
-
-1. **Start small**: 4 qubits is sufficient for most proof-of-concept
-2. **Classical first**: Ensure classical CNN baseline works well before hybridizing
-3. **Feature engineering**: Choose meaningful feature maps for quantum encoding
-4. **Simulation before hardware**: Develop and debug on classical simulators
-5. **Cross-validate**: Test on multiple medical datasets to verify generalization
-6. **Report quantum advantage**: Compare convergence, accuracy, and expressivity
-
-## Limitations
-
-- Currently feasible only through classical simulation (not yet practical on real quantum hardware for large images)
-- Requires expertise in both quantum computing and medical imaging
-- Training can be slower than pure classical approaches due to quantum circuit simulation overhead
-- Qubit count limits the dimensionality of quantum feature encoding
-- Results may vary significantly across different medical imaging modalities
+### Data Encoding Issues
+- Ensure feature vectors match qubit count (padding/truncation)
+- Use amplitude encoding for high-dimensional features
+- Validate encoding preserves critical information
 
 ## Resources
-
-- arXiv:2604.16953 — Hybrid Quantum Neural Networks for Breast Cancer Thermographic Classification
-- arXiv:2505.20804 — Quantum Machine Learning in Healthcare: Evaluating QNN and QSVM Models
-- arXiv:2505.20797 — Multi-VQC: A Novel QML Approach for Enhancing Healthcare Classification
-- PennyLane: https://pennylane.ai/ — Quantum machine learning framework
-- Qiskit Machine Learning: https://qiskit.org/ecosystem/machine-learning/
-
-## Related Skills
-- `quantum-medical-imaging`: Quantum-enhanced medical image analysis
-- `federated-quantum-medical-diagnosis`: Federated quantum learning for healthcare
-- `hybrid-quantum-classical-systems`: General hybrid quantum-classical computing
-- `quantum-neural-architecture`: Quantum neural network architecture design
-- `quantum-ml-patterns`: Reusable QML research patterns
+- arXiv:2604.16953 - Hybrid Quantum Neural Networks for Breast Cancer Thermographic Classification
+- PennyLane: https://pennylane.ai/
+- Qiskit: https://qiskit.org/

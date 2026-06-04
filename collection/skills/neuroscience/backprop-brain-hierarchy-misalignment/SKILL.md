@@ -125,10 +125,34 @@ encoding_score = correlate(gradient_features, neural_data)
 
 ### Encoding Analysis
 
+Standard approach: predict neural activity from model features
+- **Traditional**: `neural_response = W * forward_activation + b`
+- **Extended (gradient encoding)**: `neural_response = W * backprop_gradient + b`
+
+This maps backpropagated gradients (∂L/∂x at each layer) onto the same neural data.
+
 - Linear regression: gradient features → neural responses
 - Cross-validation for prediction accuracy
 - ROI-based spatial analysis
 - Time-window-based temporal analysis
+
+### Gradient Encoding Analysis Pipeline (Reusable Pattern)
+
+```python
+def gradient_encoding_analysis(model, images, neural_data):
+    """Map backpropagated gradients onto neural recordings."""
+    activations, gradients = {}, {}
+    for layer in model.layers:
+        layer.register_forward_hook(capture(activations, layer.name))
+        layer.register_full_backward_hook(capture(gradients, layer.name))
+    output = model(images)
+    loss = some_objective(output)  # classification, self-supervised, etc.
+    loss.backward()
+    return {name: ridge_regression_predict(grad.flatten(), neural_data)
+            for name, grad in gradients.items()}
+```
+
+### Multi-Modal Neural Validation
 
 ## Pitfalls
 
@@ -147,6 +171,11 @@ encoding_score = correlate(gradient_features, neural_data)
 
 ## Related Work
 
+- `decoding-encoding-alignment-critique` — RSA/DSA insensitivity to encoding manifold topology (complements: forward alignment ≠ gradient alignment)
+- `untrained-cnns-match-backpropagation-v1-rsa` — RSA comparison of untrained vs trained CNNs in V1
+- `target-space-recovery-profiles-brain-alignment` — Beyond accuracy metrics for brain alignment
+- `brain-dnn-transformation-alignment` — Category-theoretic brain-to-DNN alignment framework
+- `neural-encoding-evaluation-ground-truth` — Ground-truth approximation for neural encoding evaluation
 - Predictive coding frameworks
 - Brain-DNN representational alignment
 - Self-supervised learning in vision models

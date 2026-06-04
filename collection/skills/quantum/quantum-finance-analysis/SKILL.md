@@ -22,13 +22,6 @@ Skill for analyzing quantum computing applications in financial problems.
 - 量子投资组合
 - 量子蒙特卡洛
 
-## Tools Used
-
-- `exec`: Run Python quantum finance analysis scripts
-- `read`: Load research papers and knowledge graph data
-- `web_search`: Search arxiv for quantum finance papers
-- `sqlite3`: Query kg.db for related papers and patterns
-
 ## Key Research Areas
 
 ### 1. Portfolio Optimization
@@ -44,6 +37,12 @@ Skill for analyzing quantum computing applications in financial problems.
 - `End-to-End Portfolio Optimization with Quantum Annealing` (arxiv:2504.08843)
 - `PO-QA Framework` (arxiv:2407.19857)
 - `Reverse Quantum Annealing Approach` (arxiv:1810.08584)
+- `Large-scale portfolio optimization using Pauli Correlation Encoding` (arxiv:2511.21305) — PCE: 250+ assets on gate-based
+- `A Quantum Reservoir Computing Approach to Stock Forecasting` (arxiv:2602.13094) — QRC: ≤6 qubits financial TS
+- `Hot-Starting Quantum Portfolio Optimization` (arxiv:2510.11153)
+- `Quantum Portfolio Optimization: An Extensive Benchmark` (arxiv:2509.17876)
+- `Toward Quantum Utility in Finance: Asset Clustering` (arxiv:2509.07766)
+- `Quantum Proper Scoring Rules` (arxiv:2605.05268)
 
 **Pattern:**
 ```python
@@ -124,7 +123,38 @@ def quantum_option_pricing(spot, strike, maturity, volatility, option_type):
 - `Quantum Game Theory in Finance` (arxiv:0406129)
 - `Quantum Barro-Gordon Game in Monetary Economics` (arxiv:1708.05689)
 
-### 5. Hybrid Quantum-Classical
+### 5. Pauli Correlation Encoding (PCE) — NEW SCALABILITY PATTERN
+
+**Problem:** Conventional quantum optimization assumes 1 qubit = 1 variable, limiting
+problems to current qubit counts (~100-1000). PCE overcomes this.
+
+**Key paper:** Soloviev & Krompiec, "Large-scale portfolio optimization using Pauli Correlation Encoding" (arXiv:2511.21305, 2025)
+
+**How it works:**
+1. Build market graph from asset return correlations
+2. Partition graph into sub-portfolios of highly correlated assets (spectral clustering/METIS)
+3. Encode multiple variables per qubit using Pauli operator products (Z_i, Z_i*Z_j)
+4. Run VQA on each sub-portfolio independently
+5. Aggregate solutions respecting global budget constraint
+
+**Scalability:** O(sqrt(N)) qubits instead of O(N) for N assets. 250+ assets demonstrated.
+
+**When to use:** Gate-based quantum advantage needed AND assets > available qubits.
+
+### 6. Quantum Reservoir Computing (QRC) for Financial Time Series
+
+**Key paper:** "A Quantum Reservoir Computing Approach to Quantum Stock Movement Forecasting" (arXiv:2602.13094, 2026)
+
+**How it works:**
+- Use small quantum system (3-6 qubits) as fixed nonlinear reservoir
+- Encode financial features into quantum states via angle encoding
+- Collect measurement outcomes (⟨Z_q⟩, ⟨Z_i Z_j⟩) as reservoir states
+- Train only classical readout layer (ridge regression)
+- Predict next-day returns, volumes, or trading signals
+
+**Advantages:** No training on quantum hardware, NISQ-compatible, rich dynamics from entanglement.
+
+### 7. Hybrid Quantum-Classical
 
 **Practical Approach:**
 - Use quantum for sampling/optimization
@@ -143,6 +173,15 @@ Hybrid workflow:
 ```
 
 ## Instructions for Agents
+
+### Important: Fetching arXiv Paper Content
+
+**`web_extract()` BLOCKS arxiv.org URLs** — returns "Blocked: URL targets a private or internal network address". This is a hard limitation.
+
+**Working alternatives for paper content:**
+1. Use arXiv API XML endpoint: `curl "https://export.arxiv.org/api/query?id_list=XXXX.XXXXX"` — returns title/abstract/authors
+2. Use existing `.txt` files in workspace if papers were previously downloaded
+3. Use the `arxiv-search` skill for metadata, then build skills from abstract-level understanding
 
 ### Analyzing Quantum Finance Papers
 
@@ -183,44 +222,26 @@ AND (name LIKE '%quantum%' OR name LIKE '%finance%')"
 
 # Find similar papers
 SELECT e1.name, r.rel_type, e2.name 
-FROM kg_relations r 
-JOIN kg_entities e1 ON r.source_id=e1.id 
-JOIN kg_entities e2 ON r.target_id=e2.id 
-WHERE e1.name LIKE '%quantum%finance%'
-```
+## Resources
 
-## Examples
+- arxiv category: `quant-ph` (Quantum Physics)
+- arxiv categories: `q-fin` (Quantitative Finance) — often co-published with quant-ph
+- arxiv keywords: `quantum finance`, `portfolio optimization`, `quantum reservoir computing`
+- kg.db: Quantum finance paper collection (959+ entities, 3356+ relations)
 
-### Example 1: Analyze Portfolio Optimization Paper
-
-```
-User: "Analyze quantum portfolio optimization methods for a 30-asset portfolio"
-
-Agent:
-1. Identify method: QAOA with higher-order moments
-2. Extract QUBO formulation from paper
-3. Assess NISQ feasibility (~30-60 qubits needed)
-4. Report implementation outline using Qiskit/Cirq
-```
-
-### Example 2: Compare Quantum Risk Methods
-
-```
-User: "Compare quantum Monte Carlo vs classical VaR estimation"
-
-Agent:
-1. Search kg.db for quantum Monte Carlo risk papers
-2. Extract quadratic speedup claims and resource estimates
-3. Compare with classical baseline performance
-4. Report quantum advantage threshold conditions
-```
+- `https://arxiv.org/abs/2605.06853` — Hash-Based Commit-Reveal for Post-Quantum Blockchain (2026-05-07)
+- `https://arxiv.org/abs/2605.18080` — 4-Qubit EWL Quantum Game Circuits with Dirac-Solow-Swan Hamiltonian (2026-05-18)
 
 ## Related Skills
 
+- **pauli-correlation-portfolio-optimization**: PCE-specific implementation for 250+ asset optimization (class-level: quantum-finance-analysis)
+- **quantum-reservoir-stock-forecasting**: QRC-specific forecasting patterns (class-level: quantum-finance-analysis)
+- **quantum-portfolio-optimization**: QAOA with counterdiabatic driving, XY-mixers
 - **stock-analysis**: Classical stock analysis methods
 - **arxiv-search**: Find new quantum finance papers
-- **skill-extractor**: Extract patterns from papers
-- **skill-rag-indexer**: Semantic search in skills
+- **quantum-game-recommender-systems**: EWL quantum circuits repurposed as innovation recommender systems
+- **post-quantum-blockchain-economics**: Post-quantum blockchain migration economics
+- **non-gaussian-entanglement-hierarchy**: Schmidt number-based non-Gaussian entanglement hierarchy
 
 ## Resources
 

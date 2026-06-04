@@ -388,9 +388,3 @@ It is:
 - **reflect periodically**
 - **redirect when stalled**
 - **turn repeated success patterns into reusable skills**
-
-## Tools Used
-- read: Read research papers and documentation
-- write: Document findings and analysis
-- exec: Run analysis scripts
-- web_search: Search for related research

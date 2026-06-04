@@ -11,6 +11,10 @@ This skill covers the intersection of quantum computing and medical/healthcare A
 
 ## Core Methodologies
 
+### 0. Clinical QML for Imbalanced Data
+
+See [references/clinical-qml-patterns.md](references/clinical-qml-patterns.md) for consolidated results across 5+ papers (2026): F_beta-optimized QNNs achieving 83.3% sensitivity vs 66.7% classical baseline for low-prevalence clinical outcomes, ZZFeatureMap + ansatz selection under noise, and hardware regularization effects.
+
 ### 1. Quantum Kernel Advantage for Medical Imaging
 
 **Pattern**: Use quantum kernels (QSVM) with frozen embeddings from medical foundation models for classification tasks where classical kernels collapse on imbalanced data.
@@ -32,6 +36,12 @@ This skill covers the intersection of quantum computing and medical/healthcare A
 ### 2. Hybrid Quantum-Classical Feature Fusion
 
 **Pattern**: Combine quantum and classical features adaptively for better diagnostic performance.
+
+### Additional QML Training Methods
+
+**Equilibrium Propagation (EP)** — Backprop-free energy-based training for quantum circuits: ∂E/∂θ ≈ (E_nudged - E_free) / ε. Compatible with quantum circuits where backprop is unavailable. Applied to blood cell analysis and AML detection under NISQ constraints. See `qml-equilibrium-propagation-medical`.
+
+**Lightweight VQC Classifier Head** — Classical CNN backbone + quantum circuit (1-4 qubits) as classifier head. Reduces operator-dependency in coronary angiography (CAG) interpretation. See `quantum-enhanced-coronary-classification`.
 
 **Key findings** (arXiv:2604.22903):
 - Quantum features map data to high-dimensional Hilbert spaces

@@ -9,7 +9,47 @@ description: "Circuit-level backdoor detection methodology for Quantum Federated
 
 Detect circuit-level backdoors in QFL by analyzing variational circuit structure, measurement patterns, and gradient behavior across federated clients.
 
+## Key Findings (from arXiv:2605.27416)
+
+### Empirical Results
+- Single malicious client → up to 50% accuracy drop under FedAvg
+- Non-IID data amplifies attack effectiveness
+- All tested defenses (Krum, Multi-Krum, FoolsGold, FLGuardian, Mud-HoG) fail worst-case scenarios
+- Malicious updates mask presence by staying close to benign norms (norm-constrained stealthiness)
+- Quantum measurement stochasticity provides natural cover for gradient perturbations
+
+### Defense Failure Modes
+- **Krum/Multi-Krum**: Cannot detect norm-consistent malicious updates
+- **FoolsGold**: Cosine similarity ineffective for quantum gradients
+- **FLGuardian**: Gradient clipping insufficient for measurement-level attacks
+- **Mud-HoG**: Hessian-based detection degraded by quantum noise
+
+## Key Findings (from arXiv:2605.27416)
+
+### Empirical Results
+- Single malicious client → up to 50% accuracy drop under FedAvg
+- Non-IID data amplifies attack effectiveness
+- All tested defenses (Krum, Multi-Krum, FoolsGold, FLGuardian, Mud-HoG) fail worst-case scenarios
+- Malicious updates mask presence by staying close to benign norms (norm-constrained stealthiness)
+- Quantum measurement stochasticity provides natural cover for gradient perturbations
+
+### Defense Failure Modes
+- **Krum/Multi-Krum**: Cannot detect norm-consistent malicious updates
+- **FoolsGold**: Cosine similarity ineffective for quantum gradients
+- **FLGuardian**: Gradient clipping insufficient for measurement-level attacks
+- **Mud-HoG**: Hessian-based detection degraded by quantum noise
+
 ## Methodology
+
+### Step 0: Attack Surface Classification
+
+Before detection, classify the QFL architecture:
+- **Variational circuit type**: VQA, QNN, quantum kernel methods
+- **Measurement scheme**: Pauli measurements, projective, POVM
+- **Aggregation protocol**: FedAvg, FedProx, custom
+- **Attack surfaces**: In-training (parameter injection), Post-training (backdoor insertion)
+
+See references/qfl-cult-threat-model.md for the CULT threat model details.
 
 ### Step 1: Circuit Structure Analysis
 

@@ -1,112 +1,86 @@
 ---
 name: antisymmetric-polyspectral-neural-interactions
-description: "Generalized framework of antisymmetric cross-polyspectral analysis for identifying genuine high-order neural interactions beyond pairwise connectivity."
-tags: [neuroscience, high-order-interactions, polyspectral-analysis, cross-frequency, neural-connectivity, volume-conduction]
-related_skills: []
+description: "Generalized framework of antisymmetric cross-polyspectral indices for identifying high-order neural interactions. Quantifies cross-frequency coupling while being intrinsically robust to volume conduction artifacts. Applicable to EEG/MEG analysis and personalized mTMS protocol design. Activation: antisymmetric polyspectral, cross-frequency coupling, high-order neural interactions, volume conduction robust, bispectral analysis, trispectral analysis, multi-frequency coupling, mTMS protocol."
 ---
 
-# Antisymmetric Polyspectral Analysis for High-Order Neural Interactions
+# Antisymmetric Polyspectral Indices for High-Order Neural Interactions
 
-## Overview
+> A general family of antisymmetric cross-polyspectral indices that quantify harmonic dependencies between multiple frequency components while being intrinsically robust to instantaneous mixing (volume conduction).
 
-A generalized framework of antisymmetric cross-polyspectral indices for identifying genuine high-order neural interactions. This methodology addresses the critical challenge of volume conduction artifacts in cross-frequency coupling analysis and provides robust metrics for detecting genuine multi-frequency nonlinear interactions among neural time series.
+## Metadata
+- **Source**: arXiv:2605.04636
+- **Authors**: Alessio Basti, Rikkert Hindriks, Ruggero Freddi, Gian Luca Romani, Vittorio Pizzella, Guido Nolte, Laura Marzetti
+- **Published**: 2026-05-06
+- **Categories**: q-bio.NC, stat.ME
 
-**arXiv ID**: 2605.04636v1
-**Published**: 2026-05-06
-**Authors**: Alessio Basti, Rikkert Hindriks, Ruggero Freddi, Gian Luca Romani, Vittorio Pizzella
-**Categories**: q-bio.NC, stat.ME
+## Core Methodology
 
-## Core Problem
+### Key Innovation
+Conventional cross-frequency coupling metrics lack a robust framework to characterize genuine interactions among multiple time series where a frequency of interest arises from the combination of N components. This work introduces a general family of antisymmetric cross-polyspectral indices that:
+1. Quantify harmonic dependencies between multiple frequency components
+2. Are intrinsically robust to instantaneous mixing (volume conduction artifacts)
+3. Reveal higher-order dependencies that elude standard analytical approaches
 
-Cross-frequency interactions are fundamental brain mechanisms for integrating information across temporal scales. However, accurate identification is hindered by:
-1. Complex multi-frequency nonlinearities
-2. Spurious, zero-lag artifacts caused by volume conduction
-3. Lack of robust frameworks for genuine multi-time-series interactions
+### Technical Framework
 
-Conventional metrics cannot properly characterize genuine interactions where a frequency of interest f_N arises from the combination of N-1 components (f_N = f_1 ± f_2 ± ... ± f_{N-1}).
+#### Cross-Frequency Coupling Problem
+Given N source signals, their nonlinear combination produces interactions at frequencies:
+- f_target = f_1 +/- f_2 +/- ... +/- f_N
+- Volume conduction causes zero-lag artifacts that confound standard coupling metrics
 
-## Key Contributions
+#### Antisymmetric Polyspectral Indices
+The framework derives indices based on the cross-polyspectrum:
+- P(f_1, f_2, ..., f_{N-1}) = E[X(f_1) * X(f_2) * ... * X(f_{N-1}) * X*(f_1+...+f_{N-1})]
 
-1. **Antisymmetric Polyspectral Indices**: Novel metrics that are immune to volume conduction artifacts
-2. **High-Order Interaction Detection**: Framework extends beyond pairwise to N-way interactions
-3. **Zero-Lag Artifact Rejection**: Antisymmetric property eliminates spurious volume conduction effects
-4. **Generalized Framework**: Applicable to arbitrary order interactions
+Key property: Antisymmetry ensures that contributions from instantaneous mixing cancel out:
+- For purely instantaneous mixing: the antisymmetric component = 0
+- For genuine nonlinear interactions: the antisymmetric component != 0
 
-## Technical Details
+#### Implementation Steps
+1. Compute cross-polyspectrum of multi-channel recordings
+2. Extract antisymmetric component by appropriate index construction
+3. Test statistical significance against surrogate data
+4. Map identified interactions to brain network topology
 
-### Polyspectral Analysis
+### Validation
+- **Simulation**: Validated on simulated cubic nonlinearities with known ground truth
+- **Empirical EEG**: Applied to real EEG recordings, revealing significant higher-order dependencies
+- **Robustness**: Demonstrated intrinsic immunity to volume conduction artifacts
 
-- **Bispectrum**: Third-order spectrum for three-frequency interactions
-- **Trispectrum**: Fourth-order spectrum for four-frequency interactions
-- **Cross-Polyspectrum**: Multi-channel extension for cross-frequency coupling
+## Implementation Guide
 
-### Antisymmetric Property
+### Prerequisites
+- Multi-channel EEG/MEG time series data
+- Spectral estimation tools (Welch method, multitaper)
+- Statistical testing framework (surrogate data generation)
 
-- Key innovation: indices change sign under time reversal
-- Volume conduction effects are symmetric and thus cancelled
-- Only genuine nonlinear interactions survive
+### Step-by-Step
 
-### Mathematical Framework
-
-- Generalizes existing bicoherence measures
-- Provides statistical significance testing
-- Handles multiple time series simultaneously
-- Supports arbitrary order N interactions
-
-## Activation Keywords
-
-- antisymmetric polyspectral
-- high-order neural interactions
-- cross-frequency coupling
-- volume conduction rejection
-- neural connectivity analysis
-- polyspectral indices
-- nonlinear neural interactions
-- multi-frequency coupling
+1. **Preprocessing**: Filter and artifact-correct multi-channel neural time series
+2. **Spectral estimation**: Compute cross-spectra between channel pairs/triplets
+3. **Polyspectrum computation**: Estimate cross-polyspectrum at target frequency combinations
+4. **Antisymmetric index extraction**: Apply antisymmetric construction to isolate genuine interactions
+5. **Statistical testing**: Compare against phase-randomized surrogate data
+6. **Network mapping**: Map significant interactions to brain connectivity patterns
 
 ## Applications
+- **Cross-frequency coupling analysis**: Identify genuine phase-amplitude and phase-phase coupling in EEG/MEG
+- **Volume conduction robust analysis**: Distinguish true neural interactions from field spread artifacts
+- **Personalized mTMS protocols**: Enable selective monitoring and modulation of specific multi-frequency network interactions
+- **Higher-order brain connectivity**: Go beyond pairwise connectivity to N-way interactions
+- **Epilepsy research**: Detect pathological cross-frequency coupling patterns
 
-1. **EEG/MEG Analysis**: Identifying genuine cross-frequency coupling
-2. **Brain Network Analysis**: Mapping high-order functional connectivity
-3. **Cognitive Neuroscience**: Understanding multi-scale information integration
-4. **Clinical Neuroscience**: Biomarkers for neurological disorders
+## Pitfalls
+- Computationally expensive for large N (polyspectrum scales exponentially)
+- Requires sufficient data length for reliable spectral estimation
+- Statistical power decreases with higher-order interactions
+- Interpretation requires careful consideration of frequency resolution and bandwidth
 
-## Methodology Steps
-
-1. **Data Preprocessing**: Filter and segment neural time series
-2. **Polyspectrum Computation**: Calculate higher-order spectra
-3. **Antisymmetric Index Calculation**: Apply antisymmetric transformations
-4. **Statistical Testing**: Evaluate significance of detected interactions
-5. **Network Construction**: Build high-order connectivity maps
-
-## Related Concepts
-
-- Cross-frequency coupling (CFC)
-- Phase-amplitude coupling (PAC)
-- Volume conduction/source leakage
-- Bispectrum and bicoherence
-- Neural oscillation analysis
-- Functional connectivity
-- Graph theory in neuroscience
-
-## Implementation Notes
-
-- Requires multi-channel neural recordings (EEG, MEG, ECoG)
-- Computational complexity increases with interaction order
-- Needs careful statistical thresholding for multiple comparisons
-- Can be integrated with existing connectivity toolkits
-
-## Comparison with Existing Methods
-
-| Method | Handles Volume Conduction | Order | Statistical Testing |
-|--------|-------------------------|-------|-------------------|
-| Bicoherence | No | 3rd | Basic |
-| PAC | Partial | 2nd | Moderate |
-| **Antisymmetric Polyspectral** | **Yes** | **Arbitrary** | **Rigorous** |
-
-## References
-
-- Basti, A., Hindriks, R., Freddi, R., Romani, G. L., & Pizzella, V. (2026). A Generalized Framework of Antisymmetric Polyspectral Indices for Identifying High-Order Neural Interactions. arXiv:2605.04636v1
-- Cross-frequency coupling literature
-- Volume conduction correction methods
-- Higher-order spectral analysis
+## Related Skills
+- higher-order-brain-networks
+- hypergraph-functional-brain-network
+- multi-view-o-information-brain-networks
+- brain-higher-order-structures
+- dcho-higher-order-brain-connectivity — complementary higher-order connectivity framework
+- entropy-brain-connectivity-paths — information-theoretic connectivity analysis
+- eeg-foundation-model-adapters

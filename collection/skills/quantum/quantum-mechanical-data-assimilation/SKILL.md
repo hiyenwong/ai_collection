@@ -1,132 +1,86 @@
 ---
 name: quantum-mechanical-data-assimilation
-description: "Quantum Mechanical Data Assimilation (QMDA) methodology combining dynamical systems with quantum computing for state estimation from noisy observations. Compares QMDA with classical DATO (Data Assimilation with Transfer Operators) approaches. Covers: (1) Transfer operator framework for dynamics, (2) Quantum encoding of state distributions, (3) Bayesian update via quantum measurement, (4) Comparison of classical vs quantum DA efficiency. Use when: implementing quantum data assimilation, comparing classical/quantum state estimation methods, or designing quantum algorithms for dynamical system inference. Activation: quantum data assimilation, QMDA, DATO, quantum state estimation, transfer operator dynamics, 量子数据同化"
+description: Quantum Mechanical Data Assimilation (QMDA) methodology for combining dynamical models with partial, noisy observations. Uses operator-theoretic framework (Koopman/transfer operators) for uncertainty representation, forecast propagation, and assimilation updates. Compare with DATO (Data Assimilation with Transfer Operators) for system state inference. Use when: assimilating noisy/sparse observations into dynamical models, comparing classical vs quantum assimilation paradigms, operator-based state estimation, uncertainty quantification in dynamical systems. Trigger: QMDA, quantum data assimilation, DATO, transfer operator assimilation, Koopman data assimilation, arXiv 2605.04881.
 ---
 
 # Quantum Mechanical Data Assimilation (QMDA)
 
-## Overview
+Framework for combining dynamical models with partial and noisy observations to infer evolving system states, using operator-theoretic approaches.
 
-Data assimilation combines dynamical models with partial, noisy observations to infer evolving system states. QMDA (Quantum Mechanical Data Assimilation) extends this framework using quantum computing to represent and update state distributions, potentially offering computational advantages over classical methods like DATO (Data Assimilation with Transfer Operators).
+## Core Insight
 
-**Source**: arXiv:2605.04881 - "From Classical to Quantum-Mechanical Data Assimilation: A Comparison between DATO and QMDA"
+Both DATO and QMDA share an **operator-theoretic motivation** but embody substantially different assimilation paradigms. The key differences lie in state-space structure, update mechanisms, structural preservation properties, and computational cost.
 
-## Framework
+## Key Findings (arXiv:2605.04881v1)
 
-### Problem Setup
+1. **Shared foundation**: Both methods cast within a common operator-theoretic framework for comparison.
+2. **Different paradigms**: Despite shared motivation, DATO and QMDA lead to distinct advantages in interpretability, robustness, and scalability.
+3. **Regime-specific effectiveness**: Each framework excels in different observational settings (noisy, sparse, partially observed).
 
-Given:
-- Dynamical system: x_{t+1} = f(x_t) + noise
-- Observations: y_t = h(x_t) + observation_noise
-- Goal: Estimate posterior p(x_t | y_{1:t})
+## Comparison: DATO vs QMDA
 
-### Transfer Operator Approach (DATO)
+| Dimension | DATO | QMDA |
+|-----------|------|------|
+| State-space structure | Classical | Quantum-inspired |
+| Update mechanism | Transfer operator | Quantum mechanical update |
+| Interpretability | High | Moderate |
+| Robustness | Good | Enhanced in noisy regimes |
+| Scalability | Better | Limited by quantum simulation cost |
+| Structural preservation | Partial | Enhanced |
 
-Classical DATO uses the Perron-Frobenius (transfer) operator to propagate probability densities:
+## When to Use QMDA
 
+- Observations are extremely noisy or sparse
+- Structural preservation of dynamical properties is critical
+- Quantum-inspired uncertainty representation is beneficial
+- Need robustness in partially observed regimes
+
+## When to Use DATO
+
+- Scalability to large state spaces is priority
+- High interpretability is required
+- Computational resources are limited
+- Standard classical state-space suffices
+
+## Implementation Pattern
+
+### Step 1: Cast system in operator-theoretic framework
+
+Represent the dynamical system using Koopman/transfer operators:
 ```
-ρ_{t+1} = K * ρ_t
+f(x_{t+1}) = K f(x_t)
 ```
+where K is the Koopman operator acting on observables.
 
-where K is the transfer operator encoding the dynamics.
+### Step 2: Choose assimilation paradigm
 
-### Quantum Encoding (QMDA)
+- **DATO**: Use transfer operators for classical forecast propagation and update
+- **QMDA**: Use quantum mechanical formalism for state representation and update
 
-QMDA represents the state distribution as a quantum state:
+### Step 3: Assimilate observations
 
-```
-|ψ⟩ = Σ_i √p_i |i⟩
-```
+For each observation y_t:
+- Compute forecast from current state
+- Apply assimilation update using chosen paradigm
+- Update state estimate with uncertainty bounds
 
-Bayesian updates become quantum operations:
-- Prediction: Unitary evolution U_f
-- Update: Quantum measurement incorporating observation likelihood
+### Step 4: Validate
 
-## Workflow
-
-### Step 1: Classical Baseline (DATO)
-
-```python
-# Transfer operator construction
-def build_transfer_operator(dynamics, grid_points):
-    """Build Koopman/Perron-Frobenius operator from dynamics."""
-    K = np.zeros((len(grid_points), len(grid_points)))
-    for i, x in enumerate(grid_points):
-        x_next = dynamics(x)
-        # Map to grid
-        j = find_nearest(grid_points, x_next)
-        K[j, i] = 1.0
-    return K
-
-# Propagate distribution
-def propagate_density(K, rho_t):
-    return K @ rho_t
-```
-
-### Step 2: Quantum Encoding
-
-```python
-# Encode probability distribution as quantum state
-def encode_distribution(probabilities):
-    """Encode classical probability as quantum amplitude state."""
-    amplitudes = np.sqrt(probabilities)
-    amplitudes /= np.linalg.norm(amplitudes)
-    return amplitudes
-
-# Quantum state evolution
-def quantum_predict(state, U_dynamics):
-    """Apply unitary evolution for prediction step."""
-    return U_dynamics @ state
-
-# Quantum Bayesian update
-def quantum_update(state, likelihood):
-    """Incorporate observation via likelihood weighting."""
-    updated = likelihood * state
-    updated /= np.linalg.norm(updated)
-    return updated
-```
-
-### Step 3: Comparison Metrics
-
-| Metric | DATO | QMDA |
-|--------|------|------|
-| State space scaling | O(N) | O(log N) qubits |
-| Update complexity | O(N²) | O(polylog N) |
-| Readout cost | Direct | Requires sampling |
-| Noise sensitivity | Numerical | Quantum decoherence |
-
-## Key Insights
-
-1. **Transfer operators** provide a unified framework for both classical and quantum DA
-2. **QMDA** offers potential exponential compression of state space representation
-3. **Readout overhead** is a key practical limitation for quantum advantage
-4. **DATO** remains competitive for moderate-dimensional systems
-
-## When to Use
-
-- Designing quantum algorithms for dynamical system state estimation
-- Comparing classical transfer operator methods with quantum approaches
-- Research on quantum advantage in data assimilation tasks
-- Weather forecasting, ocean modeling, or other DA applications
+Test both paradigms on benchmark systems across observational regimes:
+- Noisy observations
+- Sparse observations
+- Partially observed regimes
 
 ## Activation Keywords
 
-- quantum data assimilation
 - QMDA
+- quantum data assimilation
 - DATO
-- quantum state estimation
-- transfer operator dynamics
-- 量子数据同化
-- quantum Bayesian update
-- Koopman operator
-
-## Related Skills
-
-- `quantum-algorithm-framework-designer`: Quantum algorithm design patterns
-- `quantum-neural-dynamics`: Quantum neural network dynamics
-- `neural-dynamics-decision-making`: Neural dynamics for state inference
+- transfer operator assimilation
+- Koopman data assimilation
+- quantum mechanical data assimilation
 
 ## References
 
-- arXiv:2605.04881 - "From Classical to Quantum-Mechanical Data Assimilation"
+- arXiv:2605.04881v1 — "From Classical to Quantum-Mechanical Data Assimilation: A Comparison between DATO and QMDA" by Donno et al., 2026
 - Categories: cs.CE, math.DS, physics.ao-ph

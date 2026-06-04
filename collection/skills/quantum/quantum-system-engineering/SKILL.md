@@ -243,6 +243,36 @@ kg_tool similar kg.db <entity_id> 5
 - QNAS: Neural Architecture Search for Quantum Neural Networks
 - Coherent feedback control of quantum linear systems
 
+## New Patterns (2026-05-14)
+
+### Pattern: von Neumann Algebra Controllability Framework
+
+For infinite-dimensional quantum systems (bosonic modes, continuous-variable), use operator algebra techniques instead of finite-dimensional Lie algebra rank condition.
+
+**Core theorem**: If drift/control operators are affiliated with a finite-type von Neumann algebra and satisfy Lie bracket generating condition, the system is controllable on the full Hilbert space.
+
+**Application**: Continuous-variable quantum control, superconducting resonators, quantum optical systems.
+
+### Pattern: RL-Based Qubit Allocation
+
+CO-MAP framework learns qubit allocation policies via RL for quantum compilation.
+
+- **State**: current qubit mapping + gate sequence position
+- **Action**: assign logical qubit to physical qubit
+- **Reward**: negative estimated routing/SWAP cost
+- Trained on diverse circuit benchmarks for generalization
+
+### Pattern: Quantum Multi-Programming
+
+Maximize cloud quantum hardware utilization by running multiple programs concurrently.
+
+1. Partition qubits into logical slices
+2. Schedule programs to maximize concurrent execution
+3. Model crosstalk between concurrent programs
+4. Optimize throughput vs. fidelity trade-offs
+
+---
+
 ## Examples
 
 ### Example 1: Portfolio Optimization System
@@ -296,6 +326,9 @@ class QuantumPortfolioOptimizer:
 
 ## Related Skills
 
+- `quantum-control-engineering` — Pulse-level gate optimization, real-time QEC, decoder scheduling
+- `quantum-control-systems` — von Neumann algebra controllability, RL qubit allocation, quantum multi-programming
+- `llm-orchestrated-systems` — LLM/MCP orchestration for engineering systems
 - `quantum-monte-carlo`: 量子蒙特卡洛方法
 - `portfolio-optimization`: 量子金融优化
 - `tensor-network`: 张量网络方法

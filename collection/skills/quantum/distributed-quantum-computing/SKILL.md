@@ -117,7 +117,10 @@ QPUs connected via quantum network:
 - Topology: Minimize shortest path between any two QPUs
 ```
 
-### Pattern 3: Distributed Error Correction
+### Federated Quantum Learning
+- See `q-anchor-federated-quantum-learning` skill for QFL with ZNE-guided correction addressing double-drift (client drift + hardware bias)
+
+### Key Pattern: Distributed Quantum Error Correction
 
 - Surface code adapted for distributed QPUs
 - Parity checks across QPU boundaries

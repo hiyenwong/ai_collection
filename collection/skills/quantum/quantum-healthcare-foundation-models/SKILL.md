@@ -198,7 +198,9 @@ Quantum System → Neural Operator → Quantum State Evolution → Foundation Mo
 - **Quantum Mechanics in Drug Discovery** (MDPI): DFT, HF, QM/MM methods
 
 ### Medical Imaging
-- **Equilibrium Propagation** (arXiv 2601.18710): Blood cell imaging
+- **Equilibrium Propagation** (arXiv 2601.18710): Blood cell imaging for acute myeloid leukemia detection using energy-based learning (no backpropagation) and VQCs under severe quantum hardware constraints.
+- **Quantum-Enhanced ResNet** (arXiv 2601.18814): Lightweight hybrid quantum-classical ResNet for coronary angiography (CAG) classification. Combines classical CNN with VQC, addresses operator-dependency in clinical CAG interpretation.
+- **Hybrid QNN Blood Cells** (arXiv 2605.23324): Hybrid Quantum-Classical Neural Networks for blood cell classification enhancement.
 - **QUBO PET Reconstruction**: Quantum optimization for medical imaging
 - **Quantum Bioimaging Review**: MRI, EEG, CT quantum applications
 

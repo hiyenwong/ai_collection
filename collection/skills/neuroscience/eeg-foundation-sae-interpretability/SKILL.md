@@ -1,100 +1,122 @@
 ---
 name: eeg-foundation-sae-interpretability
-description: Mechanistic interpretability of EEG foundation models via Sparse Autoencoders (SAEs). Extracts monosemantic features from EEG transformers, diagnoses representational failures, and enables concept steering with clinical grounding. Use when interpreting EEG foundation models (SleepFM, REVE, LaBraM), applying SAEs to brain signal transformers, benchmarking model interpretability, or performing clinical concept steering on neuroimaging models.
+description: "Mechanistic interpretability of EEG foundation models using Sparse Autoencoders (SAEs). Extracts interpretable feature dictionaries from EEG transformer embeddings via TopK SAEs, benchmarks monosemanticity across architectures (SleepFM, REVE, LaBraM), and introduces concept steering with target vs. off-target probe metrics. Use when: interpreting EEG models, sparse autoencoders for neural data, EEG foundation model analysis, mechanistic interpretability of time-series models, concept steering in brain models, EEG feature disentanglement. Activation: EEG SAE, EEG interpretability, sparse autoencoder EEG, EEG foundation model, concept steering EEG, EEG monosemanticity, EEG feature dictionary."
 ---
 
-# Mechanistic Interpretability of EEG Foundation Models via SAEs
+# Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders
 
-Framework for extracting, analyzing, and steering internal representations of EEG foundation models using TopK Sparse Autoencoders. Bridges the gap between black-box clinical performance and interpretable, trustworthy neuroscience.
+Apply TopK Sparse Autoencoders to extract interpretable features from EEG foundation model embeddings. (arXiv: 2605.13930)
 
-## Architecture
+## Core Methodology
 
-### Pipeline
+### TopK SAE on EEG Transformers
 
-```
-EEG Foundation Model (SleepFM/REVE/LaBraM)
-    ↓ Extract embeddings
-TopK Sparse Autoencoder (SAE)
-    ↓ Sparse feature dictionary
-Clinical Taxonomy Grounding (abnormality, age, sex, medication)
-    ↓ Monosemanticity & entanglement analysis
-Concept Steering + Spectral Decoder
-    ↓ Physiologically interpretable frequency signatures
+Train TopK Sparse Autoencoders on embeddings from EEG foundation models to extract feature dictionaries:
+
+```python
+# TopK SAE forward pass
+encoded = topk(Encoder(x), k)  # Keep only top-k active features
+decoded = Decoder(encoded)
+loss = MSE(x, decoded) + λ * sparsity_penalty
 ```
 
-## Key Methodology
+### Cross-Architecture Benchmarking
 
-### Sparse Autoencoder Training
+Apply SAEs across three architecturally distinct EEG transformers:
 
-- **TopK sparsity**: Enforces exactly K active features per input
-- **Dictionary health audit**: Intrinsic procedure to validate feature quality
-- **Cross-architecture transfer**: Single hyperparameter procedure works across SleepFM, REVE, LaBraM
+| Architecture | Focus | SAE Transferability |
+|---|---|---|
+| SleepFM | Sleep staging | Robust feature extraction |
+| REVE | General EEG | Cross-dataset features |
+| LaBraM | Brain activity | Clinical feature grounding |
 
-### Three Operational Regimes (Concept Steering)
+### Clinical Taxonomy Grounding
 
-1. **Selectively steerable**: Clean feature manipulation without side effects
-2. **Encoded but entangled**: Feature exists but coupled with others
-3. **Non-encoded**: Concept not represented in model internals
+Ground extracted features against clinical categories:
+- **Abnormality** — pathological EEG patterns
+- **Age** — developmental/aging signatures
+- **Sex** — sex-specific neural patterns
+- **Medication** — drug-induced EEG changes
 
-### Failure Mode Detection
+### Dictionary Health Audit
 
-- **"Wrecking-ball" interventions**: Steering that collapses global performance
-- **Clinical entanglements**: Age-pathology confounding — cannot suppress one without corrupting the other
+Intrinsic procedure to evaluate SAE quality:
+- **Monosemanticity** — single feature → single concept
+- **Entanglement** — feature-concept mapping complexity
+- **Coverage** — fraction of variance explained
+- **Sparsity** — average active features per input
 
-### Spectral Decoder
+### Concept Steering & Probe Metrics
 
-Maps latent steering interventions back to EEG amplitude spectrum:
-- Pathological slow-wave suppression
-- α-band restoration
-- Physiologically interpretable frequency signatures
+**Target vs. Off-Target Probe Area:**
+- Quantify steering selectivity
+- Three operational regimes identified:
+  1. **Selective steering** — activates target concept without off-target effects
+  2. **Mixed activation** — partial selectivity
+  3. **Entangled steering** — activates multiple concepts simultaneously
 
-## Clinical Applications
+Single hyperparameter procedure transfers robustly across all architectures.
 
-- Explain model predictions to clinicians
-- Detect and mitigate demographic confounds (age, sex, medication effects)
-- Validate model decisions against known neurophysiological markers
-- Generate interpretable frequency-domain explanations
-
-## Implementation Steps
+## Implementation Workflow
 
 ### Step 1: Extract Embeddings
 
-Run target EEG transformer on clinical dataset. Extract layer embeddings.
+```python
+# Load EEG foundation model
+model = load_eeg_model("SleepFM")  # or REVE, LaBraM
+embeddings = model.encode(eeg_data)  # [batch, seq, dim]
+```
 
-### Step 2: Train SAE
+### Step 2: Train TopK SAE
 
-Fit TopK SAE on embeddings. Use intrinsic dictionary health audit to tune K.
+```python
+sae = TopKSAE(
+    input_dim=embeddings.shape[-1],
+    dict_size=16384,  # Feature dictionary size
+    k=32,             # Top-k sparsity
+)
+sae.train(embeddings, lr=1e-4, batch_size=256)
+```
 
-### Step 3: Ground Features
+### Step 3: Audit Dictionary Health
 
-Map sparse features to clinical taxonomy (abnormality, age, sex, medication).
+```python
+audit = DictionaryAudit(sae, eeg_data)
+monosemanticity = audit.compute_monosemanticity()
+entanglement = audit.compute_entanglement()
+coverage = audit.compute_coverage()
+```
 
-### Step 4: Benchmark Monosemanticity
+### Step 4: Concept Steering
 
-Quantify feature purity and entanglement across clinical concepts.
+```python
+# Identify feature directions for clinical concepts
+directions = identify_directions(sae, labeled_data, concepts=["abnormality", "age"])
 
-### Step 5: Concept Steering
+# Steer model activation
+steered = steer(embeddings, directions["abnormality"], strength=2.0)
+probe_score = probe(steered, target="abnormality", off_target=["age", "sex"])
+```
 
-Apply steering vectors. Evaluate via "target vs. off-target" probe metric.
+## Key Findings
 
-### Step 6: Spectral Decoding
+1. **SAEs transfer across architectures** — a single hyperparameter setting works for SleepFM, REVE, and LaBraM
+2. **Clinical features are recoverable** — abnormality, age, sex, and medication signatures emerge as sparse features
+3. **Steering selectivity varies** — three distinct regimes from selective to fully entangled
+4. **Intrinsic audit predicts transfer** — dictionary health metrics predict downstream steering quality
 
-Map steering effects back to EEG frequency domain for clinical interpretation.
+## Activation Conditions
 
-## When to Use
-
-- EEG foundation model interpretability analysis
-- Clinical validation of neuroimaging AI models
-- Detecting model biases and confounds
-- Generating neurophysiologically grounded explanations
-- Comparing representational quality across EEG architectures
+Use this skill when:
+- Interpreting EEG foundation model internals
+- Applying SAEs to neural time-series data
+- Benchmarking EEG model architectures
+- Performing concept steering on brain models
+- Analyzing feature entanglement in neural representations
+- Evaluating clinical trustworthiness of EEG models
 
 ## Related Skills
 
-- `eeg-foundation-lrp-interpretability`: LRP-based EEG interpretability
-- `eeg-foundation-model-adapters`: Domain adaptation for EEG FMs
-- `eeg-sae-interpretability`: SAE-based EEG interpretability (overlaps)
-
-## References
-
-Based on: Lehn-Schiøler et al. (2026). "Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders." arXiv:2605.13930
+- `eeg-foundation-lrp-interpretability` - LRP-based EEG interpretability
+- `eeg-foundation-model-adapters` - EEG foundation model domain adaptation
+- `mechanistic-interpretability` - General mechanistic interpretability methods

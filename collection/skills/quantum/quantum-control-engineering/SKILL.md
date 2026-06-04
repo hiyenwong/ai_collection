@@ -3,12 +3,8 @@ name: quantum-control-engineering
 description: >
   Engineering patterns for reliable, efficient quantum control systems.
   Covers pulse-level gate optimization, real-time closed-loop QEC, dynamic
-  decoder scheduling, and thermodynamic control optimization. Use when
-  designing quantum control architectures, optimizing gate implementations,
-  building real-time error correction systems, or managing quantum resource
-  allocation. Keywords: quantum control, pulse optimization, QEC scheduling,
-  fault-tolerant control, FPGA quantum decoder, trapped-ion control,
-  thermodynamic optimization, 量子控制, 脉冲优化.
+  decoder scheduling, physics-informed LLM control, and thermodynamic control optimization. Use when
+  designing quantum control architectures, optimizing gate implementations, building real-time error correction systems, or managing quantum resource allocation. Keywords: quantum control, pulse optimization, QEC scheduling, fault-tolerant control, FPGA quantum decoder, trapped-ion control, thermodynamic optimization, 量子控制, 脉冲优化, LLM quantum control, VF-QCTRL.
 ---
 
 # Quantum Control Engineering
@@ -93,15 +89,48 @@ average dissipated work and its variance.
 
 **Source:** arXiv:2605.04681
 
+### Pattern 5: Physics-Informed LLM Quantum Control (VF-QCTRL)
+
+Use physics-informed large language models to design control protocols through
+symbolic reasoning + numerical parameter refinement — no task-specific training needed.
+
+**Key innovation:** LLM proposes analytic control ansätze (symbolic pulse sequences)
+from natural language prompts, then iteratively refines parameters via feedback
+loops using quantum fidelity metrics.
+
+**QCTRL-Bench benchmark** (16 tasks spanning):
+- Single-qubit: state preparation, gate synthesis, dynamical decoupling
+- Multi-qubit: entanglement generation, CNOT optimization
+- Dynamics: closed (unitary) and open (dissipative) systems
+- Noise: noiseless and noisy (decoherence, depolarizing) regimes
+- Protocols: analytic (closed-form) and numerical (pulse-level) solutions
+
+**When to use:**
+- Designing control protocols where traditional numerical optimizers (GRAPE, CRAB)
+  are opaque or require problem-specific engineering
+- Needing interpretable, analytically expressible control solutions
+- Cross-system generality: same LLM framework works across diverse quantum systems
+
+**Pitfalls:**
+- LLM-generated sequences may violate physical constraints (unitarity, bounded amplitudes)
+  — always validate before execution
+- Performance degrades for highly noisy systems — hybrid classical-quantum approaches
+  may be needed
+- Numerical refinement can converge to local optima — use multiple restarts
+
+**Source:** arXiv:2605.26021
+
 ## Design Principles
 
-1. **Multi-layer control:** Pulse-level (hardware) → Gate-level (logical) →
+1. **Multi-layer control:** Symbolic (LLM design) → Pulse-level (hardware) → Gate-level (logical) →
    Decoder-level (error correction) → Scheduler-level (resource management)
 2. **Latency budgets:** Each layer must meet timing constraints of the layer above
 3. **Noise-aware optimization:** Account for stochastic effects when optimizing
    control parameters — pure deterministic analysis is insufficient
 4. **Resource-constrained design:** Assume finite classical resources; build
    adaptive scheduling from the start
+5. **Interpretability matters:** Analytic LLM-proposed protocols are auditable and
+   transferable — prefer them over black-box numerical solutions when possible
 
 ## When to Use
 
@@ -110,6 +139,7 @@ average dissipated work and its variance.
 - Building real-time QEC architectures with latency requirements
 - Scheduling classical computation resources for quantum error correction
 - Analyzing thermodynamic costs of quantum control protocols
+- Designing quantum control protocols using physics-informed LLMs
 
 ## Related Skills
 
@@ -117,3 +147,4 @@ average dissipated work and its variance.
 - `quantum-systems-engineering` — Broader quantum system architecture
 - `quantum-robust-control` — Robust quantum control patterns
 - `quantum-fault-tolerance-verification` — Fault-tolerance verification
+- `vf-qctrl-llm-quantum-control` — Dedicated skill for VF-QCTRL LLM quantum control

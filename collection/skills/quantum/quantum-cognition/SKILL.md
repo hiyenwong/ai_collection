@@ -154,3 +154,10 @@ Modeled via quantum interference term in probability calculation.
 ## References
 
 See `references/` for detailed mathematical derivations and implementation guides.
+
+### Recent Papers (2026)
+- arXiv:2601.10588 - *Searching for Quantum Effects in the Brain: A Bell-Type Test for Nonclassical Latent Representations in Autoencoders* → See `quantum-nonclassicality-latent-test` skill
+- arXiv:2605.23943 - *Spacetime Formation under Requirements: Contextual Realization and Form-Dependent Probability* (quantum cognition as fixed-spacetime projection)
+- arXiv:2605.29877 - *Verifying Adversarial Robustness in QML* → See `qml-adversarial-robustness-verification` skill
+- arXiv:2605.29557 - *Quantum Subliminal Learning* → See `quantum-subliminal-learning` skill
+- arXiv:2605.24152 - *Neuro-Inspired Inverse Learning for Planning and Control* → See `neuro-inspired-inverse-learning` skill

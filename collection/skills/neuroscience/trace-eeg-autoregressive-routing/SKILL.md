@@ -263,6 +263,9 @@ class TRACE(nn.Module):
 - **Two transfer regimes are distinct**: Seen-domain and unseen-dataset generalization test
   different capabilities. Evaluate both for comprehensive assessment.
 
+## References
+- `references/paper-detail-2605.11380.md` — Pre-training corpus details, downstream evaluation tables, design rationale
+
 ## Applications
 
 1. Brain-computer interfaces (BCI) with transfer learning
@@ -270,3 +273,8 @@ class TRACE(nn.Module):
 3. Sleep staging and emotion recognition
 4. Motor imagery classification
 5. Cross-subject and cross-domain EEG generalization
+
+## Related Skills
+- eeg-foundation-model-adapters (adapter-based fine-tuning, different approach — adapters vs. architecture-level MoE)
+- tta-eeg-foundation-models (test-time adaptation for EEG)
+- laya-eeg-foundation (LeJEPA approach to EEG)

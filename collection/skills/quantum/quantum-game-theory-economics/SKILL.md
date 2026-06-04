@@ -126,20 +126,25 @@ def quantum_auction():
 - Quantum: entangled utilities create new solution space
 - Quantum entanglement as "bargaining chip"
 
-### 7. Quantum Market Games
+### 7. Parameterized Quantum Game Circuits for Economic Modeling (arXiv:2605.18080)
+
+**EWL circuit as economic recommender**: Real funding data (CORDIS Horizon Europe) weights parameterize local strategy rotations in 4-qubit EWL circuits.
+
+- **Circuit**: 22 gates, depth 11 — NISQ compatible, O(n) scaling for n-round communications
+- **Strategy tuning**: Each helix actor's rotation θ_i = w_i · π, where w_i is normalized dominance weight from real data
+- **Output**: Measurement probabilities → recommender scores for disruptive vs sustaining innovation
+- **Dirac-Solow-Swan integration**: Game probabilities map to diagonal Dirac potential; combined with classical growth model for capital accumulation simulation
+- **Bifurcation detection**: Time-evolution reveals capital trajectory bifurcations under disruptive innovation
+
+See also: `quantum-growth-modeling` skill for implementation details and code patterns.
+
+### 8. Quantum Market Games
 
 **Applications:**
 - Quantum stock market models
 - Quantum portfolio games
 - Quantum trading strategies
 - Quantum financial derivatives
-
-## Tools Used
-
-- `exec`: Run quantum game theory simulation scripts
-- `read`: Load research papers and game theory references
-- `web_search`: Search arxiv for quantum game theory papers
-- `sqlite3`: Query kg.db for related papers and patterns
 
 ## Instructions for Agents
 
@@ -216,34 +221,6 @@ Creates maximally entangled initial state
 Π = J†(U_A ⊗ U_B)† J† Π_classical J(U_A ⊗ U_B) J
 
 Quantum payoff from classical payoff matrix Π_classical
-```
-
-## Examples
-
-### Example 1: Quantum Prisoner's Dilemma Analysis
-
-```
-User: "Analyze quantum strategies in the prisoner's dilemma"
-
-Agent:
-1. Identify game: Prisoner's Dilemma → EWL protocol
-2. Define classical payoff matrix (C=3, D=5/0, D,D=1)
-3. Construct entanglement operator J and strategy space SU(2)
-4. Show quantum cooperation equilibrium vs classical Nash
-5. Report quantum advantage and strategy recommendations
-```
-
-### Example 2: Quantum Auction Design
-
-```
-User: "Design a fair quantum sealed-bid auction protocol"
-
-Agent:
-1. Identify application: quantum sealed-bid auction
-2. Define bid encoding in quantum states
-3. Specify auctioneer operations and winner determination
-4. Verify privacy and fairness properties via quantum mechanics
-5. Output protocol specification with security analysis
 ```
 
 ## Related Skills
