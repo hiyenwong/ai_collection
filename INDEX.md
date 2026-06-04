@@ -1,4 +1,35 @@
-# AI Collection Index
+## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### Low-rank Distributional Matrix Completion
+- [[distributional-matrix-completion]] - Matrix completion with probability distribution entries using kernel mean embeddings + Tucker rank decomposition (arXiv: 2606.04176)
+  - Kernel mean embeddings map probability distributions to RKHS for distributional matrix representation
+  - Tucker rank extended to distribution-valued matrices capturing low-rank structure in distributional space
+  - Functional unfolding operators bridge infinite-dimensional embeddings with finite-dimensional tensor computation
+  - Non-asymptotic error bounds characterize statistical performance vs sample complexity
+  - **Activation**: distributional matrix completion, kernel mean embedding, tucker rank distribution, functional unfolding, RKHS, probability distribution matrix, statistical matrix recovery, non-asymptotic bounds
+
+### Monitored Chaotic Scattering
+- [[monitored-chaotic-scattering-rmt]] - Extends random matrix theory of chaotic scattering to quantum dots with time-resolved measurements (arXiv: 2606.04794)
+  - Constructs Kraus operator ensembles from circular ensembles for monitored quantum evolution
+  - Derives discrete-time quantum master equation for charge transfer statistics
+  - Equipartition conjecture enables closed-form RMT predictions for monitored transport
+  - **Activation**: monitored chaotic scattering, random matrix theory, kraus operators, quantum master equation, charge transfer, mesoscopic physics, circular ensemble
+
+### Convergence Rates of Sum-of-Hermitian-Squares for Pauli Algebra
+- [[sum-of-hermitian-squares-pauli-convergence]] - Explicit convergence rates for noncommutative polynomial optimization relaxations in quantum theory (arXiv: 2606.04940)
+  - Develops convergence rates for Sum-of-Hermitian-Squares hierarchies on Pauli algebra
+  - Covers ground state energy estimation and other quantum optimization problems
+  - Bridges moment relaxation theory with quantum many-body computation
+  - **Activation**: sum of hermitian squares, pauli algebra, noncommutative optimization, convergence rates, quantum ground state, moment relaxation, polynomial optimization
+
+### Decoded Quantum Interferometry Beyond Hamming Space
+- [[decoded-quantum-interferometry-beyond-hamming]] - Extends DQI algorithm beyond Hamming space to finite geometries with translation symmetry (arXiv: 2606.04843)
+  - Generalizes decoded quantum interferometry to rank-metric and translation association schemes
+  - Uses quantum Fourier transform on finite geometries for structured optimization
+  - Shell-based distance grouping enables coherent decoding beyond binary Hamming space
+  - **Activation**: decoded quantum interferometry, rank-metric codes, translation association schemes, finite geometry, quantum fourier transform, structured optimization
+
+## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ## 2026-06-06 - Neuroscience Research (Cron Job - Final)
 
@@ -19,336 +50,6 @@
   - 图空间平滑正则化保持皮层组织拓扑
   - **Activation**: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, variational generative neurobiology
 
-
-## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
-
-### Learning Temporal Patterns in Financial Time Series: A Comparative Study of Quantum LSTM and Quantum Reservoir Computing
-- [[quantum-time-series-finance]] - QLSTM and QRC with amplitude encoding match classical baselines in univariate settings, outperform in multivariate regimes with correlated inputs (arXiv: 2605.02656)
-  - 核心要点: Parameterized quantum circuits implement recurrent dynamics and reservoir
-  - 核心要点: Amplitude encoding enables efficient representation under realistic qubit constraints
-  - **Activation**: QLSTM, quantum reservoir computing, financial time series, quantum LSTM, 量子时间序列
-
-### Modeling and Resource Optimization for Quantum Oracles
-- [[quantum-oracle-optimization]] - HRSE model for formal oracle description and gate complexity analysis; ASDT algorithm reduces circuit depth by 53.99% (arXiv: 2605.21380)
-  - 核心要点: Hierarchical Recursive Synthesis-Evaluation enables formal oracle description
-  - 核心要点: Adaptive Space-depth Trade-off achieves optimal gate count under fixed qubit constraints
-  - **Activation**: quantum oracle, oracle optimization, HRSE model, ASDT algorithm, 量子优化
-
-### Exploring the Non-Convexity in Machine Learning using Quantum-Inspired Optimization
-- [[quantum-inspired-nonconvex-optimization]] - QIEO framework tunnels through local optima in non-convex ML problems using quantum superposition-inspired probabilistic representation (arXiv: 2605.07947)
-  - 核心要点: Maintains global search view, outperforms ADAM, DE, GA, IHT on sparse recovery and robust regression
-  - 核心要点: Quantum-inspired probabilistic representation enables tunneling through local optima
-  - **Activation**: quantum-inspired optimization, non-convex ML, QIEO, 量子启发优化
-
-### Quantum Optimization for Electromagnetics: Physics-Informed QAOA for Reconfigurable Intelligent Surfaces
-- [[physics-informed-qaoa-electromagnetics]] - Embeds mutual coupling into QUBO for RIS optimization; dense Hamiltonians maximize precision but infeasible on NISQ (arXiv: 2605.06048)
-  - 核心要点: Four Ising interaction models from phase-only to fully dense physical
-  - 核心要点: Sparse distance-penalized models are the necessary compromise for NISQ execution
-  - **Activation**: physics-informed QAOA, RIS optimization, electromagnetics quantum, 物理感知QAOA
-
-### Quantum-Enhanced Adversarial Robustness in Artificial Intelligence
-- [[quantum-adversarial-defense]] - Quantum optimization, feature mapping, and hybrid architectures for defending against adversarial attacks on AI systems (arXiv: 2605.28899)
-  - 核心要点: Quantum computing principles enhance learning efficiency, scalability, and robustness
-  - 核心要点: Hybrid quantum-classical architectures for secure AI in safety-critical domains
-  - **Activation**: quantum adversarial defense, quantum AI security, 量子对抗鲁棒性
-
-### Traveling Salesman Problem with a Preprocessing Method for Classical and Quantum Optimization
-- [[tsp-quantum-preprocessing]] - Preprocessing reduces candidate arcs to k-nearest neighbors per vertex, cutting decision variables for classical and quantum solvers (arXiv: 2603.23290)
-  - 核心要点: Restricts candidate arcs to lowest-cost neighbors, reducing O(n²) to O(kn) variables
-  - 核心要点: Improves scalability for both classical solvers and quantum optimization frameworks
-  - **Activation**: TSP preprocessing, quantum TSP, candidate arc reduction, 旅行商量子预处理
-
-### Bio-Plausible Neuromorphic Disturbance Observer
-- [[neuromorphic-disturbance-observer]] - 生物启发神经形态干扰观测器基于仿真理论，IF神经元尖峰时序编码实现鲁棒控制，自适应阈值SFA机制实现42.6%尖峰事件减少 (arXiv: 2606.05189)
-  - 尖峰时序编码替代连续时间信号表示
-  - IF神经元动力学构建干扰估计和控制输入
-  - SFA启发自适应阈值机制实现历史依赖调节
-  - **Activation**: neuromorphic control, disturbance observer, spike-timing encoding, adaptive threshold, integrate-and-fire, SFA-inspired, event-driven control
-
-## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
-
-### Emergent Language as Approach to Conscious AI
-- [[emergent-language-consciousness]] - 涌现语言方法论 — 使用多智能体强化学习中的涌现语言作为研究意识的生成工具，从最小先验出发确保因果可归因性 (arXiv: 2606.06380)
-  - 生成方法论而非判别式或架构式方法，避免人类语言先验继承问题
-  - 最小先验设计：无语言、无自我概念、最小人类文本暴露
-  - Echo-Mismatch Detection Circuit 自参照通信涌现，来自任务压力而非架构预测
-  - **Activation**: 涌现语言, 多智能体强化学习, 意识生成, 自参照通信, causal attribution, emergent language, multi-agent RL, consciousness generation, self-referential communication
-
-## 2026-06-06 - Economics/Finance + Quantum Research (Cron Job - Hourly Batch 3)
-
-### Regime-Adaptive Continual Learning for Portfolio Management
-- [[recap-regime-adaptive-portfolio]] - ReCAP framework integrating continual learning into portfolio management via adaptive regime detection, policy libraries, and regime-gated policy combination — outperforms rolling-window retraining across 5 datasets (arXiv: 2606.00143)
-  - Adaptive regime detection segments market data into variable-length regimes
-  - Policy library stores regime-specific knowledge, regime-gate adaptively combines policies
-  - Selective continual update prevents catastrophic forgetting
-  - **Activation**: regime detection, portfolio management, continual learning, adaptive trading, ReCAP, market regime, policy library
-
-### Distributional Portfolio Optimization Unified Framework
-- [[distributional-portfolio-optimization]] - DPO unifies Bayesian, robust, chance-constrained, and distributional RL portfolio methods through joint coupling Gamma_theta — Wasserstein-CVaR duality, credible-radius calibration beats 24-month validation (arXiv: 2605.30464)
-  - Joint coupling Gamma_theta(dw,dr) organizes all distributional portfolio approaches
-  - Bayesian credible-radius calibration achieves 3-7 bp accuracy vs oracle without validation data
-  - Distributional Bellman contraction enables RL-based portfolio optimization
-  - **Activation**: distributional portfolio optimization, DPO, Wasserstein DRO, Bayesian portfolio, CVaR, credible radius
-
-## 2026-06-06 - Neuroscience Research (Cron Job - Evening)
-
-### Whisper-ECoG Alignment: Speech Foundation Model to Neural Encoding
-- [[whisper-ecog-alignment-neural-encoding]] - Mapping Whisper representations to human intracranial ECoG with time-resolved neural encoder — intermediate layers show strongest brain alignment, phonemic interpretability reveals anatomically coherent organization (arXiv: 2606.02305)
-  - Time-resolved encoder with recurrent temporal model + soft attention
-  - Intermediate Whisper layers (12-16) achieve highest encoding performance
-  - Phonemic analysis identifies anatomically coherent electrode organization
-  - **Activation**: speech neural encoding, whisper ecog, brain alignment, speech perception, cortical processing, phonemic analysis
-
-### Computation-Aware Kalman Filtering for Neural Dynamics
-- [[computation-aware-kalman-neural-dynamics]] - Computation-Aware State-Space Model (CASSM) for scale-imbalanced regime (few trials, many neurons) with model selection and improved uncertainty calibration (arXiv: 2606.01468)
-  - Computational uncertainty tracking in Bayesian inference
-  - Novel training loss accounting for posterior approximation errors
-  - Tractable inference in large state-spaces (O(T) complexity)
-  - Competitive with deep networks with calibrated uncertainty
-  - **Activation**: kalman filtering, neural dynamics, bayesian inference, state-space model, computational uncertainty, cassm
-
-### Functional Ensembles as Units of Computation in Deep SNNs
-- [[functional-ensembles-deep-spiking-networks]] - First-order functionally-connected (1FC) ensembles aggregate cofiring predicts downstream responses via ReLU-like relationship; rare high-cofiring events encode information; perturbation diagnostics reveal early-layer vulnerability (arXiv: 2606.00073)
-  - 1FC ensemble construction from statistically significant correlations
-  - Aggregate cofiring → downstream response: ReLU-like with systematic gain scaling
-  - Reliable encoding only during rare high-cofiring events
-  - Early/intermediate layers most disrupted under noise/adversarial perturbations
-  - **Activation**: functional connectivity, spiking neural network, ensemble cofiring, 1FC group, rare events, deep snn analysis
-
-## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
-
-### Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
-- [[intrinsic-computational-functionalism]] - 内在计算功能主义方法论 — 定义意识的计算基础，提出C1和C2准则避免观察者相对性 (arXiv: 2606.06424)
-  - 系统内在实例化准则：属性必须无观察者标签指定且结构保持不变
-  - 因果动力学组织准则：状态空间变量相互约束，干预下展现反事实响应
-  - 三层识别分解：Tier i(标签)、Tier ii(分区)、Tier iii(动力学粒度)
-  - **Activation**: 内在计算, 观察者独立, 意识计算, C1准则, C2准则, 三层分解, computational-functionalism, consciousness
-
-### Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
-- [[psychosis-scaling-critical-regime]] - 早期精神病临界区域内的标度行为偏差 — PRG+PSD+DFA分析揭示保留标度区域内的动力学重组而非临界丧失 (arXiv: 2606.06290)
-  - 现象学重整化群(PRG)粗粒化分析跨尺度集体动力学
-  - PSD和DFA多模态验证标度指数系统性偏移
-  - 保留标度不变组织，动力学重组而非丧失
-  - **Activation**: 早期精神病, 临界动力学, 标度行为, PRG, DFA, PSD, 重整化群, critical-regime, brain-dynamics
-
-### TRIBE v2: Multimodal Brain Foundation Model for Image Decoding
-- [[tribe-v2-multimodal-brain-foundation]] - Tri-modal foundation model pretrained on 1000+ hours of video/audio/language fMRI enables 68% Top-10 image-retrieval improvement with synthetic data augmentation and zero-shot decoding in low-data regimes (arXiv: 2606.06345)
-  - Synthetic fMRI generation from pretrained encoder boosts real data efficiency
-  - Zero-shot brain-to-image decoding works with pure synthetic training (above chance)
-  - Grid-search determines optimal augmentation ratio per dataset
-  - Data source dependency: different datasets require different synthetic/real ratios
-  - **Activation**: brain-to-image decoding, TRIBE v2, multimodal foundation model, fMRI augmentation, synthetic neural data, zero-shot decoding, image retrieval, natural scenes dataset, BOLD5000, data efficiency
-
-## 2026-06-06 - Economics/Finance + Quantum (Cron Job - Evening)
-
-### Dealer Market Competition Nash Equilibrium
-- [[dealer-market-competition-nash-equilibrium]] - Variational approach to modeling dealer market competition with internalisation and externalisation — Nash equilibrium analysis using optimal transport (arXiv: 2606.06413)
-  - Variational inequality formulation for dealer competition
-  - Internalisation vs externalisation decision variables
-  - Nash equilibrium conditions via first-order optimality
-  - Optimal transport for order flow distribution analysis
-  - **Activation**: dealer market, internalisation, Nash equilibrium, optimal transport, market maker
-
-### Long-Range Dependence in Financial Markets
-- [[long-range-dependence-financial-markets]] - Empirical investigation of long-range dependence (LRD) in financial markets and generative modeling challenges for capturing persistent volatility patterns (arXiv: 2509.19663)
-  - Hurst exponent estimation via R/S analysis and DFA
-  - LRD testing across multiple asset classes and time scales
-  - Comparison of GARCH-type models with fractional processes
-  - ML models' ability to capture long-memory patterns
-  - **Activation**: long-range dependence, Hurst exponent, fractional Brownian motion, volatility persistence
-
-### ESG and Joint Fragility in Equity Markets
-- [[esg-joint-fragility-equity-markets]] - ESG and joint fragility analysis in equity markets using stress-amplified resilience framework (arXiv: 2606.05631)
-  - Joint fragility metrics for equity portfolios
-  - ESG scores as resilience factors
-  - Stress test under various market scenarios
-  - Amplification effects measurement
-  - **Activation**: ESG, joint fragility, equity markets, stress test, portfolio risk
-
-### Penalty-Free Quantum Annealer Portfolio Optimization
-- [[penalty-free-quantum-annealing-portfolio]] - Removes cardinality penalty from QUBO to reduce chain-break fractions from 92% to 0.04% on D-Wave Pegasus/Zephyr; enforces feasibility classically post-sampling (arXiv: 2605.17628)
-  - Penalty encoding (not topology) is binding constraint on current QPUs
-  - Objective-only QUBO + deterministic feasibility projector pipeline
-  - Tested on 4,468 hardware samples: chain breaks 71-92% → ≤0.04%
-  - Post-processed regret ≤0.03% vs classical greedy baseline
-  - **Activation**: penalty-free quantum annealer, portfolio optimization QUBO, cardinality constraint quantum annealing, D-Wave chain breaks, feasibility projector, quantum portfolio
-
-### D-Wave Hybrid Portfolio Optimization Audit
-- [[quantum-hybrid-audit]] - Operational decomposition audit shows D-Wave hybrid CQM spends 99% wall-clock on classical decomposition, QPU only 0.68% of budget; constraint-native classical pipeline explains reported wins (arXiv: 2605.17623)
-  - QPU access time: 0.034s out of 5s budget on LeapHybridCQM
-  - TabuSampler matches hybrid objectives at same wall-clock
-  - Cardinality penalty creates dense rank-one term (structural theorem)
-  - Out-of-sample Sharpe: QPU 1.94 vs 1/N baseline 2.22
-  - **Activation**: D-Wave hybrid audit, quantum portfolio benchmarking, operational decomposition, constraint-native, LeapHybridCQM, QPU time analysis
-
-### QAOA XY-Mixers for Constrained Portfolio Optimization
-- [[qaoa-xy-mixers-portfolio]] - Constraint-preserving QAOA with Dicke state initialization and XY-mixer for cardinality-constrained direct indexing; Sharpe 1.81 vs SA 1.31, HRP 0.98 on 10 US equities (arXiv: 2602.14827)
-  - XY-mixer Hamiltonian strictly preserves Hamming weight
-  - Trotterized adiabatic initialization mitigates barren plateaus
-  - High turnover (76.8%) trade-off analysis for institutional deployment
-  - **Activation**: QAOA XY-mixers, Dicke state initialization, barren plateau mitigation, constraint-preserving quantum optimization, direct indexing
-
-### Quantum RL for Dynamic Portfolio Optimization
-- [[quantum-rl-dynamic-portfolio]] - Variational quantum circuit-based QRL (quantum DDPG and DQN) for dynamic portfolio optimization with risk-adjusted performance competitive with classical Deep RL using fewer parameters (arXiv: 2601.18811)
-  - Quantum analogues of DDPG and DQN algorithms
-  - Comparable/exceeding risk-adjusted performance with orders of magnitude fewer parameters
-  - Cloud deployment latency dominates practical runtime
-  - **Activation**: quantum reinforcement learning, variational quantum circuit, QRL, dynamic portfolio, quantum DDPG, quantum DQN
-
-### VQE for Large-Scale Dynamic Portfolio Optimization
-- [[vqe-portfolio-optimization]] - Scalable hardware-aware VQE methodology for dynamic portfolio optimization up to 38 assets (IBEX 35) on IBM Fez QPU; ISQR routine + VQE Constrained decomposition for exceeding-qubit problems (arXiv: 2512.22001)
-  - ISQR (Ising Sample-based Quantum Configuration Recovery) improves QUBO solution quality
-  - VQE Constrained decomposition handles variables > available qubits
-  - Financial performance on par with classical methods on real QPU
-  - **Activation**: VQE portfolio optimization, ISQR, hardware-aware quantum workflow, IBEX35, IBM Fez, constrained VQE decomposition
-
-## 2026-06-06 - Quantum Computing Research (Cron Job)
-
-### Quantum Element-Wise Transforms
-- [[quantum-element-wise-transforms]] - Quantum algorithms for element-wise polynomial transforms with exponential space reduction, correcting prior work errors. Applications to ML, simulation, and signal processing (arXiv: 2606.06456)
-  - Exponential space reduction in polynomial degree vs prior constructions
-  - Block encoding approach with element-wise independent application
-  - Rectifies errors in previous quantum algorithm constructions
-  - Unified framework for QSVT, LCU, and element-wise transforms
-  - **Activation**: quantum-element-wise, polynomial-transform, QSVT, block-encoding, numerical-linear-algebra
-
-### Breakeven Demonstration of Quantum LDPC Codes
-- [[quantum-ldpc-breakeven]] - First breakeven demonstration of qLDPC codes on trapped-ion hardware with 9× better logical error rate. OMG architecture enables addressable mid-circuit measurement without ion transport (arXiv: 2606.06455)
-  - Logical error rate 9× better than previous superconducting demonstration
-  - OMG architecture: addressable mid-circuit measurement and reset
-  - No ion transport or dedicated coolant ions required
-  - 9 different codes on single device without hardware reconfiguration
-  - **Activation**: qLDPC, quantum-error-correction, trapped-ion, breakeven, OMG-architecture, fault-tolerant
-
-### Non-Hermitian SSH Model Charge Correlations
-- [[non-hermitian-ssh-charge-correlations]] - Enhancement of charge correlations and topological markers in interacting non-Hermitian SSH model. Open boundary conditions amplify staggered correlations near exceptional points (arXiv: 2606.06466)
-  - Real-space topological marker robust under interactions
-  - Open boundary conditions dramatically enhance charge correlations
-  - Low-energy state accumulation near exceptional points promotes electronic instabilities
-  - Non-Hermiticity amplifies interaction effects and CDW tendencies
-  - **Activation**: non-hermitian, SSH-model, topology, charge-correlations, exceptional-points
-
-### Room-Temperature Dipole Synchronization in Nanocavities
-- [[room-temperature-dipole-synchronization-nanocavity]] - Room-temperature synchronized dipole state in plasmonic nanogap 2D arrays. Novel driven-dissipative system with spatial coherence but suppressed temporal photon coherence (arXiv: 2606.06490)
-  - Spatial coherence across distant dipoles via sub-nm gap coupling
-  - NOT a laser/BEC/polariton condensate: unique synchronization state
-  - Fast temporal coherence decay from rapid radiative/non-radiative emission
-  - Scalable room-temperature platform for quantum photonic technologies
-  - **Activation**: room-temperature-synchronization, nanocavity, plasmonic, driven-dissipative, spatial-coherence
-
-## 2026-06-06 - Systems Engineering Research (Cron Job)
-
-### HANDOFF: Humanoid Agentic Task-Space Whole-Body Control
-- [[handoff-humanoid-control]] - Multi-teacher KL distillation for mixture-of-experts humanoid control with compact task-space interface. VLM-driven agentic planner with zero task-specific fine-tuning (arXiv: 2606.06493)
-  - Compact, explicit task-space interface design (intuitive, general, modular, expressive)
-  - Three complementary teachers: motion tracking (safety-filtered), locomotion, fall-recovery
-  - Context-conditioned gating for MoE student architecture
-  - Unitree G1 hardware validation with natural language task roll-outs
-  - **Activation**: humanoid control, whole-body control, task-space interface, multi-teacher distillation, MoE robotics, VLM planner, safety-filtered control, complementary teachers, KL distillation robotics, agentic manipulation
-
-### Code2LoRA: Hypernetwork-Generated Adapters for Code LLMs
-- [[code2lora-hypernetwork-adapter]] - Hypernetwork generates repository-specific LoRA adapters for zero inference overhead. Supports static snapshot (Code2LoRA-Static) and dynamic evolution (Code2LoRA-Evo with GRU state) scenarios (arXiv: 2606.06492)
-  - Hypernetwork-generated repository-specific LoRA adapters (zero inference token overhead)
-  - Two usage scenarios: Static (stable codebases) and Evo (active development with GRU)
-  - RepoPeftBench: First repository-level PEFT benchmark (604 repos, 40K+12K static, 215K+87K evo tasks)
-  - Matches per-repo LoRA upper bound (static), +5.2 pp over shared LoRA (evo)
-  - **Activation**: code LLM adaptation, repository-specific LoRA, hypernetwork adapters, software evolution, code adaptation, zero overhead knowledge injection, GRU-based adapter, RepoPeftBench, assertion completion, code drift handling
-
-## 2026-06-05 - AI Systems Engineering (Cron Job)
-
-### Multi-Stage Warm-Start Deep Learning for Unit Commitment
-- [[warmstart-dl-unit-commitment]] - Three-stage warm-start pipeline for unit commitment optimization: ML warm-start → primal-dual formulation → branch-and-bound refinement. Solves 24-hour instances in 3.96s with warm-start (vs 5400s cold) (arXiv: 2606.05903)
-  - Stage 1: Machine learning model predicts initial solution
-  - Stage 2: Primal-dual problem formulation with ML-predicted bounds
-  - Stage 3: Branch-and-bound refinement with warm-start bounds
-  - Reduces solve time by 99.93% compared to cold start
-  - Combines ML speed with mathematical programming optimality guarantees
-  - **Activation**: unit commitment, warm-start, primal-dual, branch-and-bound, power system optimization, mixed-integer programming, deep learning warm-start
-## 2026-06-06 - Neuroscience Research Synthesis (Cron Job)
-
-### BEAST3D: Gaussian Splatting Animal Behavioral Analysis
-- [[beast3d-gaussian-splatting-behavior]] - Self-supervised 3D animal behavioral analysis and neural encoding from multi-view video via Gaussian splatting. Vision transformer predicts 3D Gaussian splats for differentiable rendering. Works with as few as 4 calibrated views (arXiv: 2606.02937)
-  - Self-supervised framework (no annotations required)
-  - Sparse-view 3D reconstruction (4-6 views sufficient)
-  - Simultaneous animal-background segmentation
-  - Downstream: pose estimation, neural encoding, view synthesis
-  - **Activation**: gaussian-splatting, animal-behavior, 3D-reconstruction, self-supervised, multi-view-video, neural-encoding
-
-### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
-- [[stp-stabilizes-goal-conditioned-dynamics]] - Short-Term Synaptic Plasticity (STP) stabilizes goal-conditioned dynamics in PFC-inspired reservoir model for multistep goal-directed action planning. Preserves action-relevant goal information under noise with 89.2% success rate vs 49.5% without STP (paired Cohen's dz=1.31) (arXiv: 2606.03481)
-  - Facilitation-dominant STP time constants identified via grid search
-  - Dynamic modulation of goal-dependent effective recurrent connectivity
-  - Basal-ganglia-inspired temporal-difference readout learning
-  - Effective connectivity: time-invariant without STP vs goal-conditioned with STP
-  - 100 independently generated networks for statistical validation
-  - Submitted to Neural Networks (68 pages, 33 figures)
-  - **Activation**: short-term synaptic plasticity, goal-conditioned dynamics, reservoir computing, PFC model, goal-directed planning, dynamic connectivity, facilitation-dominant STP
-
-### Discrete Signaling Chaotic Regularization
-- [[chaotic-regularization-recurrent-networks]] - Discrete signaling mediates chaotic regularization in RNNs. Chaos acts as intrinsic regularizer: induces local roughness while preserving global smoothness, enhancing generalization (arXiv: 2606.04426)
-  - Kernel methods + dynamical mean-field theory
-  - Local roughness + global smoothness preservation
-  - Intrinsic regularization mechanism in spiking networks
-  - Smooth population codes sustained by chaotic dynamics
-  - **Activation**: chaotic-regularization, RNN, kernel-methods, mean-field-theory, intrinsic-regularizer
-
-### Early Psychosis Scaling Behavior Deviations
-- [[psychosis-scaling-critical-regime]] - Phenomenological renormalization group (PRG) framework reveals early psychosis preserves critical regime but shows systematic scaling exponent shifts. Reorganization rather than loss of criticality (arXiv: 2606.06290)
-  - PRG + PSD + DFA combined analysis
-  - Scale-invariant organization preserved
-  - Systematic exponent shifts across observables
-  - Collective dynamics reorganization hypothesis
-  - **Activation**: critical-dynamics, psychosis, scaling-behavior, renormalization-group, fMRI
-
-### SC-TauPath: Alzheimer Tau Propagation Attribution
-- [[sc-taupath-alzheimer-tau-propagation]] - Network Diffusion Model + gradient attribution framework scores each structural connectivity edge's contribution to tau propagation in Alzheimer's disease. Neurobiologically interpretable pathway maps (arXiv: 2606.04066)
-  - Gradient × input attribution for SC edges
-  - NDM-augmented MLP architecture
-  - ADNI FreeSurfer cortical thickness validation
-  - Braak staging consistency verified
-  - **Activation**: alzheimer-disease, tau-propagation, structural-connectivity, network-diffusion, attribution-analysis
-
-### Whisper ECoG Speech Model Alignment
-- [[whisper-ecog-alignment-neural-encoding]] - Intermediate Whisper layers provide strongest alignment with human ECoG speech responses. Time-resolved neural encoder with speech embeddings reveals anatomically-consistent organization (arXiv: 2606.02305)
-  - Middle layers best brain alignment (not deepest)
-  - Time-resolved temporal modeling with soft attention
-  - Anatomically-consistent cortical speech representations
-  - Speech foundation model as neural encoding framework
-  - **Activation**: whisper, ECoG, speech-alignment, neural-encoding, speech-representations
-
-### Attachment Representations Interbrain Synchrony
-- [[attachment-representations-interbrain-synchrony]] - Attachment representations act as independent endogenous driver of child-adult interbrain synchrony during remote cooperation. Remote Partner-Belief Manipulation paradigm isolates internal representations (arXiv: 2606.03700)
-  - Mother-partner belief enhances synchrony regardless of actual partner
-  - P4 channel (right TPJ) concentration
-  - Partner-belief manipulation experimental innovation
-  - Attachment security correlation
-  - **Activation**: attachment, interbrain-synchrony, EEG-hyperscanning, partner-belief, TPJ
-
-### Cross-Scale Transcriptomic Neurodegeneration
-- [[cross-scale-spatial-generative-neurodegeneration]] - Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization. Variational architecture bridges gene expression (910 genes, 68 regions) to cortical degeneration with graph-based spatial smoothness (arXiv: 2606.05870)
-  - Explained variance 86.04% predicting regional vulnerability
-  - Spatial correlation r=0.9439 (p<0.001) between predicted and observed degeneration
-  - Allen Human Brain Atlas transcriptomic profiles + ADNI FreeSurfer cortical thickness
-  - Latent representations reveal structured transcriptomic organization
-  - **Activation**: cross-scale modeling, generative neurobiology, transcriptomic programs, neurodegeneration, spatial generative, Alzheimer's disease, cortical thinning, Allen Brain Atlas
-  - Microscale molecular organization → macroscale degeneration
-  - Spatial-aware graph-based regularization
-  - Cross-scale generative architecture
-  - 86% explained variance in degeneration patterns
-  - **Activation**: transcriptomic, neurodegeneration, spatial-aware, generative-model, gene-expression
-
-### Neuromorphic Supremacy Hybrid Architecture
-- [[neuromorphic-supremacy]] - Hybrid neuromorphic circuits with astrocytic modulation + spiking dynamics achieve few-shot learning and noise robustness. Principled foundation for perception in embodied AI under noisy, data-scarce environments (arXiv: 2606.01841)
-  - Astrocytic modulation integration
-  - Spiking dynamics + astrocyte-like units
-  - Few-shot learning capability
-  - Noise robustness validation
-  - **Activation**: neuromorphic, astrocytic-modulation, spiking-dynamics, few-shot-learning
-
-### Feature Leakage Direct-Dependency Entropy
-- [[feature-leakage-identifiability-entropy-models]] - Direct entropy-explained fractions are predictions under observed distribution, not mechanism-identification evidence. State reweighting diagnostics reveal CA1 table distribution-sensitivity (arXiv: 2606.01661)
-  - Maximum-entropy models on hippocampal recordings
-  - Prediction vs. mechanism identification separation
-  - State reweighting diagnostic methodology
-  - Half of CA1 tables distribution-sensitive
-  - **Activation**: entropy-models, feature-leakage, identifiability, hippocampal, state-reweighting
+### Competition, Stability, and Functionality in E-I Neural Circuits
+- [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
+  - Each neuron as agent minimizing local energy in competitive game
