@@ -1,3 +1,17 @@
+## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
+
+### Distributed Variational Quantum Optimisation by Entanglement-Selective Transport
+- [[distributed-variational-quantum-optimization]] - 分布式变分量子优化方法论QESTO：仅需预共享Bell对进行远程操作，初始化后无需非局部门操作，在Wang tile匹配问题上收敛优于等效QAOA (arXiv: 2606.04548)
+  - Bell对初始化后零非局部门操作，降低通信开销
+  - 分布式QAOA在ansatz深度≥2时收敛更强
+  - **Activation**: distributed quantum optimization, QESTO, entanglement transport, Bell pair, distributed QAOA
+
+### Digital Quantum Reservoir Computing for ATM Time Series Prediction
+- [[digital-quantum-reservoir-computing]] - 数字量子储备池计算时间序列预测框架：4量子比特储备池+部分测量重置，经典Ridge回归读出，在真实IQM Spark量子处理器验证 (arXiv: 2606.04686)
+  - 仅需经典读出训练，无量子参数训练
+  - DTW指标显示捕获时间结构能力，MAE/NMSE未超越Prophet
+  - **Activation**: quantum reservoir computing, digital quantum reservoir, quantum time series, near-term quantum ML
+
 ## 2026-06-04 - Systems Engineering Research (Cron Job)
 
 ### SPOQ: Specialist Orchestrated Queuing for Multi-Agent Software Engineering
