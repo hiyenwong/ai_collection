@@ -1,3 +1,26 @@
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### Quadratic Integrate-and-Fire Neurons Superior to LIF in Gradient Descent
+- [[qif-neurons-superior-lif-gradient-descent]] - QIF神经元超越LIF的梯度下降训练性能：连续脉冲动力学避免碎片化损失景观，Spike Heidelberg Digits基准验证，推荐LIF→QIF替换用于SNN训练稳定性 (arXiv: 2606.03935)
+  - 连续脉冲动力学：避免参数微小变化导致的脉冲消失/出现
+  - 损失景观平滑：QIF连续vs LIF碎片化，梯度稳定vs不稳定
+  - 脉冲时序分析：碎片化源于脉冲时间顺序变化
+  - **Activation**: QIF neurons, LIF neurons, spiking neural network, gradient descent, loss landscape, spike discontinuity, neuromorphic computing, SNN training, continuous dynamics
+
+### MuHL: Multi-Scale Hypergraph Learning for High-Order Brain Connectivity
+- [[multi-scale-hypergraph-brain-connectivity]] - 多尺度超图学习(MuHL)框架：自适应超边缘构建捕获高阶脑连接依赖，超越成对图方法，ICML 2026接收，阿尔茨海默/帕金森病分类性能提升 (arXiv: 2606.03310)
+  - 高阶依赖建模：捕获3+脑区相互作用，超越成对连接限制
+  - 自适应超边缘：动态构建而非预定义，多分辨率图信号学习
+  - ROI识别：关键脑区及组间相互作用发现，疾病进展关联
+  - **Activation**: hypergraph, brain network, high-order connectivity, Alzheimer's, Parkinson's, multi-scale, neurodegenerative disease, graph neural network, ROI interaction
+
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
+- [[stp-stabilizes-goal-conditioned-dynamics]] - 短时程突触可塑性(STP)稳定PFC目标条件动力学：前额叶皮层启发的储备池模型，基底神经节TD学习读出，噪声鲁棒性89.2%vs49.5%，促进主导STP时间常数优化 (arXiv: 2606.03481)
+  - 目标条件动力学：STP将目标信息转化为行动相关动力学，噪声下稳定
+  - 有效连接调制：目标依赖的动态有效连接，后期试次增强pattern
+  - 机制验证：增益匹配控制排除简单缩放，STP状态扰动支持在线调制
+  - **Activation**: short-term synaptic plasticity, STP, PFC, goal-conditioned dynamics, reservoir computing, basal ganglia, action planning, synaptic facilitation, neural dynamics stability
+
 ## 2026-06-04 - Quantum Optics Research (Cron Job)
 
 ### Quantum Erasure Imaging: Complementary Modalities from Delayed-Choice Erasure
