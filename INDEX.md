@@ -1,5 +1,19 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### Competition, stability, and functionality in excitatory-inhibitory neural circuits
+- [[game-energetic-ei-networks]] - Game-theoretic framework for E-I balance modeling with energy-based competition dynamics (arXiv: 2512.05252)
+  - Dynamical systems + game theory for excitatory-inhibitory circuit analysis
+  - Stability conditions derived via energy competition equilibria
+  - Functional implications for network dynamics and learning
+  - **Activation**: excitatory-inhibitory networks, E-I balance, game theory, energy competition, neural stability, circuit dynamics, recurrent networks
+
+### Discrete signaling mediates chaotic regularization in recurrent neural networks
+- [[discrete-signaling-chaotic-regularization-rnn]] - Discrete signaling mechanism stabilizes chaotic RNN dynamics for stable task execution (arXiv: 2606.04426)
+  - Discrete perturbation signals regulate chaotic regimes in RNNs
+  - Dynamical systems analysis reveals chaos suppression via signaling
+  - Applicable to stable execution of complex tasks in neural networks
+  - **Activation**: chaotic regularization, discrete signaling, RNN dynamics, chaos suppression, task stability, recurrent networks, dynamical systems## 2026-06-04 - Neuroscience Research (Cron Job)
+
 ### Dynamical modeling of nonlinear latent factors in multiscale neural activity with real-time inference
 - [[mrine-multiscale-realtime-neural-decoding]] - MRINE framework for real-time multimodal neural decoding across different timescales with missing data handling (arXiv: 2512.12462, NeurIPS 2025)
   - Multiscale encoder + dynamical backbone + modality-specific decoders handle heterogeneous neural signals
