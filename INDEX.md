@@ -2,6 +2,14 @@
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
+### Functional Ensembles as Units of Computation in Deep Spiking Networks
+- [[functional-ensembles-deep-spiking-networks]] - 1FC groups enable rare high-cofiring events for reliable encoding in SNN, functional connectivity preserved from biological cortex (arXiv: 2606.00073)
+  - First-order functionally-connected (1FC) groups: neurons with significant pairwise correlations from previous layer
+  - Aggregate cofiring predicts downstream responses via ReLU-like relationship with gain scaling
+  - Reliable encoding emerges only during infrequent high 1FC cofiring events
+  - Disruption under noise/adversarial perturbations enables targeted layer diagnostics
+  - **Activation**: functional ensembles, 1FC groups, SNN functional connectivity, rare cofiring, ensemble encoding, deep spiking networks
+
 ### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
 - [[stp-stabilizes-goal-conditioned-dynamics]] - STP in PFC-inspired reservoir model achieves 42% noise robustness improvement for multistep goal-directed action planning (arXiv: 2606.03481)
   - 噪声下成功率：无 STP 75.8% → 49.5%，有 STP 91.8% → 89.2%
