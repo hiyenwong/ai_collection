@@ -1,3 +1,21 @@
+## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Squeezed Phonon Lasing via Floquet-Controlled Solid-State Defects
+- [[floquet-controlled-phonon-lasing]] - Floquet-engineered squeezed phonon laser design using color centers in hBN membranes with coupled spin-mechanical systems (arXiv: 2606.05083)
+  - Floquet theory enables engineering of effective Hamiltonians via periodic driving
+  - Continuous transition from conventional to squeezed phonon lasing via Floquet parameters
+  - Solid-state platform: hBN membrane with color centers + mechanical oscillator
+  - Applications in quantum metrology (sub-shot-noise sensing) and quantum control systems
+  - **Activation**: floquet engineering, phonon lasing, squeezed states, solid-state defects, hBN membrane, quantum metrology, spin-phonon coupling, periodic driving, steady-state engineering
+
+### Piston Control in Two-Ion Quantum Device
+- [[inverse-engineering-quantum-control]] - Inverse engineering protocols for controlling classical piston dynamics driven by quantum ion motion in two-ion trapped devices (arXiv: 2606.03488)
+  - Self-consistent stationary state determination with quantum effects
+  - Narrow quantum regime connecting two broad classical regimes
+  - Inverse engineering: design control from desired trajectory to potential modulation
+  - Bridge between classical and quantum control systems engineering
+  - **Activation**: inverse engineering, piston control, two-ion device, trapped-ion control, quantum-classical transition, optimal control
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Discrete Signaling Mediates Chaotic Regularization in RNNs
