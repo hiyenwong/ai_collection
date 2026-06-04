@@ -1,3 +1,19 @@
+## 2026-06-04 - Systems Engineering Research (Cron Job)
+
+### SPOQ: Specialist Orchestrated Queuing for Multi-Agent Software Engineering
+- [[spoq-multi-agent-software-engineering]] - 多智能体软件工程编排方法论：基于拓扑排序的波式任务调度（接近最优并行效率1.03-1.11倍）、双重验证门（缺陷率降低41%）、Human-as-an-Agent集成（残余缺陷降低94%），纵向研究验证17仓库8589提交1822任务99.87%测试通过率 (arXiv: 2606.03115)
+  - 波式调度：任务依赖图拓扑排序，14.3x最大加速，1.4x稳定加速
+  - 双重验证门：执行前计划验证（覆盖率、循环依赖、并行度）+执行后代码验证（静态分析、测试）
+  - 三层Agent层级：Opus/Sonnet/Haiku成本质量权衡优化
+  - **Activation**: multi-agent orchestration, software engineering agent, SPOQ, wave dispatch, validation gates, agent hierarchy, task parallelization, quality control
+
+### Economy of Minds: Emerging Multi-Agent Intelligence with Economic Interactions
+- [[economy-of-minds-multi-agent-intelligence]] - 基于经济信号的多智能体自组织方法：拍卖竞标任务权利、支付交换行动价值、财富积累追踪效能、经济选择（财富驱动变异/替换），从弱Agent初始化涌现多步推理策略，超越单体基线13-16%（数学推理、金融研究、科学研究、加速器设计、分布式系统优化） (arXiv: 2606.02859)
+  - Hayek经济理论启发：价格信号聚合分散信息，竞争选择有效参与者，自发秩序无需中央规划
+  - 涌现行为：角色分化（规划者、执行者、验证者）、成本质量权衡、自发协调
+  - 局部激励对齐全局目标：财富最大化→高奖励任务→有效策略涌现
+  - **Activation**: multi-agent economy, decentralized coordination, economic selection, agent auctions, wealth accumulation, Hayek theory, emergent intelligence, self-organization, role differentiation
+
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
 
 ### Towards Efficient Synthesis of Quantum Graph States by Fusing Graph Motifs
