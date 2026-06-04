@@ -66,6 +66,24 @@
   - Derives discrete-time quantum master equation for charge transfer with equipartition conjecture
   - **Activation**: monitored chaotic scattering, random matrix theory scattering, kraus operators circular ensemble, quantum master equation scattering, charge transfer statistics, quantum dot monitoring
 
+### Decoded Quantum Interferometry Beyond Hamming Space
+- [[decoded-quantum-interferometry-beyond-hamming]] - Extends DQI beyond Hamming space to translation association schemes for structured optimization on finite geometries (arXiv: 2606.04843)
+  - Generalizes DQI coherent decoding to finite geometries with translation symmetry
+  - Points partitioned into shells by distance; quantum Fourier transform adapted to association scheme's character group
+  - **Activation**: decoded quantum interferometry, DQI, Hamming space extension, translation association scheme, Bose-Mesner algebra, rank-metric optimization
+
+### Convergence Rates of Sum-of-Hermitian-Squares for Pauli Algebra
+- [[sum-of-hermitian-squares-pauli-convergence]] - Explicit convergence rates for SoHS hierarchies over Pauli algebra enabling accuracy guarantees for noncommutative polynomial optimization (arXiv: 2606.04940)
+  - First explicit convergence rates for SoHS over Pauli algebra: O(d^2 * n / k) for n-qubit Hamiltonians
+  - Enables principled selection of relaxation order vs. computational budget for ground state energy estimation
+  - **Activation**: sum-of-hermitian-squares, SoHS, Pauli algebra convergence, noncommutative polynomial optimization, moment relaxation, ground state energy, SDP hierarchy
+
+### Twirled Perfect Tensor Networks
+- [[twirled-perfect-tensor-networks]] - Novel class of computationally covariant holographic tensor networks motivated by the Python's Lunch Conjecture (arXiv: 2605.23670)
+  - Twirled perfect tensors reduce complexity while maintaining holographic duality properties
+  - Complexity scales with bottleneck area rather than bulk volume, matching PLC predictions
+  - **Activation**: twirled perfect tensor, python's lunch conjecture, holographic tensor network, computational covariance, black hole interior, tensor network complexity
+
 
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
