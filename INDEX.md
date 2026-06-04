@@ -1,3 +1,11 @@
+## 2026-06-05 - Neuroscience Research (Cron Job)
+
+### Brain Foundation Models Variance Allocation Problem
+- [[brain-foundation-model-variance-allocation]] - Third-order statistics (co-skewness) predict cognition where billion-parameter BFMs fail (arXiv: 2606.04010)
+  - BFM variance allocation problem: second-order covariance preserved, third-order co-skewness destroyed
+  - Linear pipeline preserving co-skewness beats all BFMs (no pretraining, no GPU)
+  - **Activation**: brain foundation model, variance allocation, third-order, co-skewness, fMRI prediction, BrainLM
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Chaotic Regularization in Recurrent Neural Networks
