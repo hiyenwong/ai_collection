@@ -1,3 +1,5 @@
+# AI Collection Index
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### Learning sequence timing and control of replay speed in networks of spiking neurons
