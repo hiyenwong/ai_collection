@@ -1,3 +1,9 @@
+### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
+- [[low-rank-hessian-quantum-control]] - Hessian-based calibration for optimal-control quantum gates, 99.9% fidelity on 171Yb qubits (arXiv: 2606.05060)
+  - Low-rank Hessian identifies few waveform directions affecting fidelity
+  - Raw fidelity 0.9959(2), post-selected 0.99902(7), robust to 20% laser power variation
+  - **Activation**: quantum optimal control, Hessian optimization, gate calibration, neutral atom qubits
+
 ## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
 
 ### Generalized Bicycle Codes as Cyclic Submodules and their Automorphism Structure
@@ -6,6 +12,12 @@
   - Maximal Cube Root (MCR) code family: k=2 codes up to d=13, k>2 codes with 20+ logical gates
   - **Activation**: generalized bicycle codes, QEC automorphism, fold-transversal gate, code inverse design, MCR codes
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
+- [[low-rank-hessian-quantum-control]] - Hessian-based calibration for optimal-control quantum gates, 99.9% fidelity on 171Yb qubits (arXiv: 2606.05060)
+  - Low-rank Hessian identifies few waveform directions affecting fidelity
+  - Raw fidelity 0.9959(2), post-selected 0.99902(7), robust to 20% laser power variation
+  - **Activation**: quantum optimal control, Hessian optimization, gate calibration, neutral atom qubits
 
 ## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
 
@@ -96,6 +108,12 @@
   - 消除长程反向传播：单次在线积累，睡眠相位加速重播替代全序列遍历
   - text8/PG-19基准验证：保持既往数据性能同时学习新模式并泛化到未见数据
   - **Activation**: SHARP, sleep replay, temporal pattern recognition, non-stationary dynamics, streaming learning, hierarchical memory, accelerated replay, slow-wave sleep, long-range credit assignment, memory consolidation
+
+### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
+- [[low-rank-hessian-quantum-control]] - Hessian-based calibration for optimal-control quantum gates, 99.9% fidelity on 171Yb qubits (arXiv: 2606.05060)
+  - Low-rank Hessian identifies few waveform directions affecting fidelity
+  - Raw fidelity 0.9959(2), post-selected 0.99902(7), robust to 20% laser power variation
+  - **Activation**: quantum optimal control, Hessian optimization, gate calibration, neutral atom qubits
 
 ## 2026-06-05 - Systems Engineering + Quantum Mechanics (Cron Job)
 
