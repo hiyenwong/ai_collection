@@ -26,6 +26,34 @@
 
 # AI Collection Index
 
+
+## 2026-06-06 - 数论/统计学/高等数学 + 量子力学 (Cron Job - Batch 2)
+
+### Quantum Time Lower Bounds by Permutation Invariance
+- [[quantum-time-lower-bounds]] - 置换不变性建立量子时间复杂度下界：首次系统建立量子电路规模的紧下界，证明SWAP测试、Shift测试、LMR协议的时间最优性 (arXiv: 2606.05099)
+  - 核心框架：通过量子样本复杂度归约建立量子时间复杂度下界
+  - 应用：SWAP测试纯度估计、Shift测试高阶泛函、LMR协议反射算子均为时间最优
+  - **Activation**: quantum time complexity, permutation invariance, SWAP test, LMR protocol, quantum sample complexity, circuit lower bounds
+
+### Extremely slow scaling of minimal Hamming distance in quantum sampling data
+- [[hamming-distance-quantum-sampling]] - 量子采样数据中最小汉明距离的极慢标度分析：为量子霸权验证和随机电路采样基准提供新的统计检验工具 (arXiv: 2606.04558)
+  - 发现量子采样数据中最小汉明距离的极慢标度行为模式
+  - 应用于量子霸权验证：统计假设检验区分量子与经典分布
+  - **Activation**: hamming distance, quantum sampling, quantum supremacy verification, random circuit sampling, statistical hypothesis testing
+
+### QPredSGG: Hybrid Quantum Predicate Learning for Long-Tailed Scene Graph Generation
+- [[quantum-predicate-learning-sgg]] - 混合量子谓词学习用于长尾场景图生成：4量子比特QP-Head实现256倍参数压缩，mR@100从41.1%提升至57.25% (arXiv: 2606.04689)
+  - 振幅嵌入+强纠缠层：4096维特征压缩至16维量子兼容表示，仅96个可训练参数
+  - 长尾关系分类：57.25% mean recall@100，比经典CFEN基准提升16个百分点
+  - **Activation**: quantum predicate learning, scene graph generation, long-tail classification, amplitude embedding, quantum neural network, hybrid quantum-classical
+
+### Circuit-Level Noise Estimation via Shuttling in Plaquette Circuits
+- [[circuit-level-noise-estimation]] - 基于穿梭操作的量子纠错电路级噪声估计：在plaquette电路中系统化表征和量化不同噪声源 (arXiv: 2606.04629)
+  - 穿梭测量协议：隔离和量化表面码架构中的不同噪声源
+  - 电路级误差建模：为量子纠错码提供更精确的误差模型
+  - **Activation**: circuit-level noise, noise estimation, quantum error correction, plaquette circuits, surface code, shuttling measurement
+
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### Competition, Stability, and Functionality in Excitatory-Inhibitory Neural Circuits
