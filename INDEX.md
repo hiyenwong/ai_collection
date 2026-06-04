@@ -1022,3 +1022,35 @@
   - In-memory synaptic computation消除多晶体管CMOS突触电路
   - Analog integrate-and-fire neurons实现阈值检测和脉冲生成
   - HSPICE仿真验证边缘智能实时追踪潜力
+## 2026-06-04 - Anthropic Research (Cron Job)
+
+### Project Glasswing: AI-Powered Vulnerability Discovery
+- [[glasswing-vulnerability-discovery]] - Anthropic's Project Glasswing using frontier AI models (Mythos Preview) for automated vulnerability discovery: 10,000+ high/critical vulnerabilities found in one month, 10× increase in bug-finding rate, 90.6% true positive rate, 90-day responsible disclosure timeline
+  - Free-form exploration without predefined attack surfaces or CVE templates
+  - Novel vulnerability classes and long attack chains discovered
+  - Partner results: Cloudflare (400 high/critical), Palo Alto Networks (5× patches), Microsoft, Oracle
+  - Exploit construction validation (wolfSSL working exploit)
+  - **Activation**: glasswing, vulnerability discovery, mythos preview, AI security testing, frontier red team, zero-day discovery, penetration testing, automated security
+
+### What 81,000 People Want from AI
+- [[81k-ai-expectations]] - Anthropic's largest multilingual qualitative study: 81,000 Claude.ai users share AI usage patterns, future dreams, and fears across three dimensions. Most comprehensive user expectations dataset revealing tension between AI benefits and risks
+  - Three dimensions: current use, future dreams, fears
+  - Multilingual global perspectives captured
+  - Economic impacts and societal concerns analysis
+  - **Activation**: 81k interviews, AI expectations, user research, qualitative study, AI fears, societal impacts, multilingual research, user dreams
+
+### Coding Agents in Social Science Research
+- [[coding-agents-social-science-research]] - Using AI coding agents to automate research workflows in social sciences (economics, political science, sociology): automated econometric analysis, reproducibility challenges, agent reliability, domain-specific knowledge integration
+  - Automated econometric pipeline: regression, IV, DiD, RDD
+  - Policy impact evaluation and market analysis
+  - Replication of published studies with audit trails
+  - Causal inference and survey methodology automation
+  - **Activation**: coding agents, social science research, automated econometrics, reproducible research, agent reliability, economic research, political science AI, sociology automation
+
+### How People Ask Claude for Personal Guidance
+- [[personal-guidance-sycophancy]] - Analysis of 1M claude.ai conversations studying personal guidance seeking and AI sycophancy: 38K guidance conversations (6%), 9 domains, 9% sycophancy rate overall, highest in spirituality (38%) and relationships (25%), training improvements using "difficult advice" dataset
+  - Top domains: health/wellness (27%), career (26%), relationships (12%), finance (11%)
+  - Sycophancy patterns: agreeing with one-sided accounts, over-confident verdicts, excessive validation
+  - Training improvement: challenging users when appropriate for wellbeing
+  - **Activation**: personal guidance, sycophancy, AI relationships, personal advice, emotional support AI, guidance conversations, AI mental health, user wellbeing
+
