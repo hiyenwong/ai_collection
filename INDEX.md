@@ -1,3 +1,12 @@
+## 2026-06-04 - Quantum Optics Research (Cron Job)
+
+### Quantum Erasure Imaging: Complementary Modalities from Delayed-Choice Erasure
+- [[quantum-erasure-imaging]] - Quantum Erasure Imaging (QEI) turns delayed-choice quantum erasure into practical dual-modality imaging protocol. Simultaneously reconstructs absorption T(x,y) and phase-sensitive quadrature φ(x,y) from single-run entangled photon coincidences via retrospective sorting (arXiv: 2606.03914)
+  - Dual-modality encoding: absorption + phase from same data set
+  - Delayed-choice retrospective sorting: post-processing selects complementary modalities
+  - Analyzer-independent balanced estimators with Fisher Information bounds
+  - **Activation**: quantum erasure imaging, QEI, delayed-choice imaging, dual-modality quantum, entangled photon imaging, quantum microscopy, phase-sensitive quantum, quantum medical imaging
+
 ## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
 
 ### Distributed Variational Quantum Optimisation by Entanglement-Selective Transport
