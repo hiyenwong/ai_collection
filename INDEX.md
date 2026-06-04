@@ -1,3 +1,12 @@
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### Discrete Signaling Mediates Chaotic Regularization in Recurrent Neural Networks
+- [[discrete-signaling-chaotic-regularization-rnn]] - 离散信号介导RNN混沌正则化：混沌动力学引入局部粗糙度但保持全局平滑性，作为内在正则化器增强泛化，自然生成匹配皮质记录的幂律谱签名 (arXiv: 2606.04426)
+  - 混沌-几何链接：核方法+动力学平均场理论连接微观混沌与宏观表征几何
+  - 幂律谱匹配：混沌网络自然产生实验观察到的皮质幂律谱
+  - 表征稳定性悖论解决：混沌网络支持平滑、可微分群体编码
+  - **Activation**: chaotic regularization, RNN chaos, neural representations, kernel methods, mean-field theory, power-law spectrum, cortical dynamics, representational manifolds, discrete signaling, generalization
+
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Full Extractors for Logical Processing in Hypergraph Product Codes
