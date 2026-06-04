@@ -1,387 +1,462 @@
 ---
 name: variance-brain-foundation-models-forgot
-description: Brain foundation models variance allocation problem - third-order statistics predict cognition where billion-parameter models fail
-version: 1.0
-arxiv_id: 2606.04010
-authors: Giovanni Marraffini, Gabriel Mahuas, Trinidad Borrell, Victoria Shevchenko, Demian Wassermann
-date: 2026-05-29
-activation_keywords:
-  - brain foundation models
-  - BFM
-  - fMRI
-  - variance allocation
-  - co-skewness
-  - third-order statistics
-  - functional connectivity
-  - FC matrix
-  - cognitive prediction
-  - BrainLM
-  - scaling law anomaly
+description: 脑基础模型方差分配问题方法论。揭示BFMs预测认知失败的根本原因 - 预训练捕获主要方差成分但丢失三阶统计量（协偏度）。线性协偏度子空间FC方法超越所有BFMs（无预训练、无GPU）。规模悖论：BrainLM 650M预测认知比111M更差。适用于脑基础模型评估、认知预测、fMRI分析、统计量保留。触发词：brain foundation models、BFM、variance allocation、third-order statistics、co-skewness、cognition prediction、脑基础模型方差、协偏度、认知预测失败。
+metadata:
+  arxiv_id: "2606.04010"
+  published: "2026-05-29"
+  authors: "Giovanni Marraffini, Gabriel Mahuas, Trinidad Borrell, Victoria Shevchenko, Demian Wassermann"
+  tags: [brain-foundation-models, variance-allocation, third-order-statistics, cognition-prediction, fMRI, co-skewness]
+license: Complete terms in LICENSE.txt
 ---
 
 # The Variance Brain Foundation Models Forgot
 
-## 论文信息
+## 研究背景
 
-- **标题**: The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail
-- **arXiv ID**: 2606.04010
-- **作者**: Giovanni Marraffini, Gabriel Mahuas, Trinidad Borrell, Victoria Shevchenko, Demian Wassermann
-- **提交日期**: 2026-05-29
-- **URL**: https://arxiv.org/abs/2606.04010
-- **PDF**: https://arxiv.org/pdf/2606.04010
-- **分类**: q-bio.NC (Neurons and Cognition), cs.AI (Artificial Intelligence)
-- **页数**: 37 pages, 16 figures, 23 tables
+脑基础模型 (BFMs) 是在fMRI数据上预训练的自监督Transformers，理应从fMRI信号捕获每个受试者的认知表现。然而研究发现，三个最先进的BFMs在所有测试的读出方法中，预测认知能力均**不如**从功能连接矩阵 (FC) ~80K参数的线性回归。规模悖论：BrainLM的650M模型预测认知比111M版本更差。
 
-## 概述
+## 核心发现：方差分配问题
 
-脑基础模型（BFMs）是基于fMRI数据预训练的自监督Transformer。研究发现，这些模型在预测个体认知表现时，性能**劣于**基于功能连接矩阵（FC）的线性回归（仅~80K参数）。随着模型规模扩大，性能差距反而**增加**：BrainLM的650M模型预测能力不如111M模型。本研究揭示BFM预训练存在**方差分配问题**（variance allocation problem），并提出基于三阶统计量的解决方案。
+### 1. BFM预训练的局限
 
-## 摘要
-
-Brain foundation models (BFMs) are self-supervised Transformers pretrained on fMRI data. We posit that these models should capture each subject's cognitive performance from their fMRI signal. Yet across three state-of-the-art BFMs and every readout we test, they predict cognition worse than a linear regression from the ~80K parameters of the functional connectivity matrix (FC). The gap widens with scale: BrainLM's 650M model predicts cognition worse than its 111M. We attribute this to a **variance allocation problem**: BFM pretraining captures the variance components that dominate fMRI but not the higher-order structure that predicts cognition. Our per-cumulant analysis of the reconstructed signal shows that the second-order covariance is partially preserved, while the third-order co-skewness tensor is largely destroyed. To recover what BFMs lose, we design a linear pipeline that projects the fMRI signal into the subspace that best preserves its co-skewness and computes FC there. This **exceeds raw FC and every pretrained BFM** on every dataset and parcellation we test, outperforming prior state-of-the-art under controlled evaluation **with no pretraining and no GPU**. We **recover the raw-FC ceiling on BrainLM's forward pass** by finetuning with a loss targeted at this same subspace. This shows that the bottleneck is the pretraining objective, not the architecture or the model size.
-
-## 核心发现
-
-### 1. 方差分配问题（Variance Allocation Problem）
-
-**现象描述**：
+**方差分配问题**：
 - BFM预训练捕获fMRI的主要方差成分
-- 但未捕获预测认知的高阶结构
-- 导致模型规模越大，预测能力越差
+- 但**不捕获预测认知的高阶结构**
+- 二阶协方差部分保留
+- 三阶协偏度张量**被破坏**
 
-**定量证据**：
-- BrainLM 650M < BrainLM 111M（认知预测）
-- 所有BFM < 线性FC回归（~80K参数）
-- 跨3个SOTA模型和所有readout测试
+**Per-cumulant分析**：
+- 重建信号的二阶统计量：协方差矩阵部分保留
+- 重建信号的三阶统计量：协偏度张量被破坏
+- 认知预测依赖高阶结构而非主要方差
 
-**根本原因**：
-```
-预训练目标 ↔ 认知预测目标
-↓           ↓
-捕获主导方差  捕获高阶方差
-↓           ↓
-二阶协方差     三阶共偏度
-↓           ↓
-部分保留       大部分破坏
-```
+### 2. 规模悖论
 
-### 2. Per-Cumulant分析
-
-**方法论**：分析重建信号的逐阶统计量
-
-**发现**：
-- **二阶协方差**（Covariance）：部分保留（~60%）
-- **三阶共偏度**（Co-skewness tensor）：大部分破坏（<20%）
-
-**Cumulant分解**：
-- First-order: 均值（Mean）
-- Second-order: 协方差矩阵（Covariance Matrix） - BFM部分保留
-- Third-order: 共偏度张量（Co-skewness Tensor） - BFM大部分破坏
-- Fourth-order: 共峰度（Co-kurtosis） - 几乎完全丢失
+**BrainLM规模效应**：
+- 111M参数：基线认知预测
+- 650M参数：认知预测性能**下降**
+- 模型规模增加 → 方差分配问题加剧
 
 **解释**：
-- BFM预训练优化二阶统计量（重建损失）
-- 认知预测依赖三阶及高阶统计量
-- 导致方差分配错配
+- 更大规模捕获更多主要方差成分
+- 但进一步破坏高阶统计量
+- 预训练目标与认知预测目标不一致
 
-### 3. 解决方案：Co-skewness增强FC
+### 3. 线性方法突破
 
-**线性管道设计**：
-1. 投影到最佳保留co-skewness的子空间
-2. 在子空间内计算FC
-3. 提取三阶统计量特征
-4. 组合FC和co-skewness特征
-
-**性能对比**：
-| 方法 | 参数量 | 预训练 | GPU | 认知预测性能 |
-|------|--------|--------|-----|------------|
-| Raw FC | ~80K | ❌ | ❌ | 基准 |
-| BrainLM 111M | 111M | ✅ | ✅ | < Raw FC |
-| BrainLM 650M | 650M | ✅ | ✅ | < 111M |
-| **Co-skewness FC** | ~100K | ❌ | ❌ | **> 所有BFM** |
+**协偏度子空间FC方法**：
+- 将fMRI信号投影到**最佳保留协偏度的子空间**
+- 在该子空间计算FC
+- **无预训练、无GPU**
+- **超越所有BFMs和原始FC**
 
 **关键优势**：
-- ✅ 无需预训练（0成本）
-- ✅ 无需GPU（CPU即可）
-- ✅ 参数量少（~100K vs 650M）
-- ✅ 性能最优（超越所有BFM）
+- 无需大规模预训练
+- 无需GPU资源
+- 计算高效（线性方法）
+- 在所有数据集和脑区分方案上超越SOTA
 
-### 4. BrainLM Fine-tuning验证
+## 核心方法论
 
-**实验设计**：
-- 使用co-skewness目标loss微调BrainLM
-- 定义三阶统计量匹配loss
-- 在BrainLM前向传递中恢复raw-FC天花板
+### 1. Per-Cumulant分析
 
-**关键洞察**：
-- Bottleneck是**预训练目标**，而非架构或模型规模
-- 微调目标损失可恢复丢失的三阶统计量
-- 验证方差分配问题的根本性
+**重建信号统计量分解**：
+- **一阶**：均值（BFMs保留）
+- **二阶**：协方差（部分保留）
+- **三阶**：协偏度（被破坏）
+- **四阶及以上**：高阶统计量（丢失）
 
-## 理论框架
+**分析流程**：
+```python
+# 重建信号的统计量分析
+reconstructed_signal = bfm.forward(fmri_signal)
 
-### 1. 方差分层理论
+# 一阶统计量
+mean = np.mean(reconstructed_signal)
 
-**方差成分分解**：
-```
-fMRI信号方差 = {
-    主导成分（Dominant）: ~70%  # BFM捕获
-    认知相关成分（Cognitive）: ~20%  # 高阶统计量
-    噪声成分（Noise）: ~10%  # 不相关
-}
-```
+# 二阶统计量（协方差）
+covariance = np.cov(reconstructed_signal)
 
-**方差分配错配**：
-- BFM预训练最大化主导成分方差捕获
-- 认知预测依赖认知相关成分（高阶统计量）
-- 导致预训练与下游任务的方差分配不一致
+# 三阶统计量（协偏度张量）
+co_skewness = compute_co_skewness_tensor(reconstructed_signal)
 
-### 2. 高阶统计量的认知作用
-
-**为什么认知预测需要三阶统计量？**
-
-**神经科学解释**：
-1. **非线性交互**：认知过程涉及多区域非线性交互
-2. **协同模式**：三脑区协同激活模式
-3. **时序依赖**：跨时间尺度的三阶依赖
-4. **分布偏态**：认知状态的非对称分布
-
-**数学表达**：
-三变量共偏度衡量三区域协同偏态：
-```
-Co-skewness(X_i, X_j, X_k) = E[(X_i - μ_i)(X_j - μ_j)(X_k - μ_k)]
+# 对比原始信号统计量
+original_covariance = np.cov(fmri_signal)
+original_co_skewness = compute_co_skewness_tensor(fmri_signal)
 ```
 
-### 3. BFM的局限性根源
+### 2. 协偏度子空间投影
 
-**Transformer架构的统计量保留特性**：
+**目标**：找到最佳保留协偏度的线性子空间
 
-**二阶统计量**：
-- Self-attention捕获协方差结构
-- LayerNorm保留相对协方差
-- Positional encoding编码时间协方差
+**数学形式**：
+- 设 $X \in \mathbb{R}^{T \times N}$ 为fMRI信号（T时间点，N脑区）
+- 协偏度张量：$S_{ijk} = \frac{1}{T} \sum_t (X_{ti} - \mu_i)(X_{tj} - \mu_j)(X_{tk} - \mu_k)$
+- 寻找投影矩阵 $P$ 使得投影后的协偏度最大保留
 
-**三阶统计量**：
-- Attention机制线性化三阶交互
-- 非线性激活（ReLU）部分保留
-- **但预训练目标不优化三阶保留**
+**实现步骤**：
+```python
+# 计算协偏度张量
+def compute_co_skewness(X):
+    """计算三阶协偏度张量"""
+    X_centered = X - X.mean(axis=0)
+    T, N = X.shape
+    S = np.zeros((N, N, N))
+    for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                S[i,j,k] = np.mean(X_centered[:,i] * 
+                                   X_centered[:,j] * 
+                                   X_centered[:,k])
+    return S
 
-**对比线性方法**：
-线性方法直接计算协方差和共偏度，显式优化三阶保留，参数效率高无需学习。
+# 寻找协偏度保留子空间
+def find_skewness_preserving_subspace(X, target_dim):
+    """优化投影矩阵保留协偏度"""
+    # 方法：主成分分析 + 协偏度加权
+    # 或直接优化投影矩阵
+    # （论文细节见参考文献）
+    pass
 
-Transformer依赖大规模学习，预训练目标为重建损失（二阶），导致高阶丢失。
+# 投影fMRI信号
+P = find_skewness_preserving_subspace(fmri_signal, d)
+X_projected = P @ fmri_signal
 
-## 实践应用场景
-
-### 何时使用此方法论
-
-**触发条件**：
-1. 脑基础模型认知预测性能评估
-2. fMRI数据的统计量分析
-3. 设计认知预测管道
-4. 研究BFM的scaling law异常
-
-**典型问题**：
-- "为什么BrainLM越大性能越差？"
-- "如何从fMRI预测认知能力？"
-- "BFM预训练的目标是否合理？"
-- "线性方法何时超越深度学习？"
-
-### 与相关研究的联系
-
-**脑基础模型研究**：
-- `brain-dit-fmri-foundation-model`：Brain-DiT基础模型
-- `brain-foundation-model-inversion`：基础模型反演
-- `brain-foundation-model-batch-effects`：批次效应分析
-
-**方差与统计量研究**：
-- `distribution-based-brain-connectivity`：分布值脑连接
-- `multi-view-o-information-brain-networks`：O-information高阶分析
-- `alzheimer-pet-suvr-network-models`：高阶网络建模
-
-## 实现要点
-
-### 1. Co-skewness子空间投影
-
-**关键算法**：
-1. 选择性计算top-k重要三元组的co-skewness
-2. 构建重要性加权矩阵
-3. 加权PCA找到子空间
-4. 高效计算选择性co-skewness张量
-
-**复杂度优化**：
-- 完整三阶张量计算复杂度 O(N³)
-- 选择性计算降低到 O(k) where k << N³
-- 并行化GPU加速
-
-### 2. 增强FC计算
-
-**完整管道**：
-1. 子空间投影（50维度）
-2. 计算增强FC
-3. 提取三阶特征
-4. 特征融合
-5. 线性回归预测认知
-
-### 3. BFM微调策略
-
-**目标损失函数**：
-- 计算原始和重建的三阶统计量
-- 多尺度loss：二阶协方差 + 三阶共偏度
-- 加权组合（强调三阶）：0.3 * covariance + 0.7 * co-skewness
-
-## 潜在陷阱与注意事项
-
-### 1. Co-skewness计算成本
-
-**问题**：完整三阶张量计算复杂度 O(N³)
-**解决**：
-- 选择性计算：仅计算top-k重要三元组
-- 近似方法：使用采样估计
-- 并行化：GPU加速三阶计算
-
-### 2. 子空间维度选择
-
-**问题**：如何选择最佳子空间维度？
-**解决**：
-- 交叉验证调优
-- 信息准则（AIC/BIC）选择
-- 认知预测性能导向
-
-### 3. BFM微调的数据需求
-
-**问题**：微调需要大量数据避免过拟合
-**解决**：
-- 使用小学习率
-- 早停机制
-- 正则化约束
-
-## 验证方法
-
-### 1. Per-Cumulant分析验证
-
-**验证步骤**：
-1. 计算原始信号统计量（协方差、共偏度）
-2. BFM重建信号
-3. 计算重建信号统计量
-4. 计算保留率
-
-**预期结果**：
-- Covariance preservation: ~60%
-- Co-skewness preservation: <20%
-
-### 2. 认知预测性能对比
-
-**基准测试**：
-- 提取特征
-- 预测认知
-- 评估性能（Pearson correlation）
-
-**预期排序**：
-1. Co-skewness FC（最高）
-2. Raw FC
-3. BrainLM 111M
-4. BrainLM 650M（最低）
-
-### 3. Scaling Law异常验证
-
-**实验设计**：
-- 测试模型大小：10M, 50M, 111M, 300M, 650M
-- 评估认知预测性能
-- 绘制scaling curve
-
-**预期**：负斜率（越大越差），与传统ML正斜率相反
-
-## 开放问题
-
-### 1. 认知相关方差的比例
-
-**未解决问题**：
-- 认知相关方差的确切比例？
-- 不同认知任务的高阶依赖差异？
-
-### 2. 其他脑基础模型的方差分配
-
-**研究方向**：
-- Brain-DiT是否有相同问题？
-- 不同预训练目标的方差分配？
-
-### 3. 四阶及以上统计量的作用
-
-**探索问题**：
-- 共峰度（co-kurtosis）对认知预测的贡献？
-- 高阶统计量的神经科学解释？
-
-## 理论贡献
-
-### 1. 方差分配理论
-
-**核心洞察**：
-- 预训练方差分配 ≠ 下游任务方差分配
-- 导致模型规模扩大反而性能下降
-- 解释BFM的scaling law异常
-
-### 2. 高阶统计量重要性
-
-**统计量层级**：
-- 第一层：均值（位置信息）
-- 第二层：协方差（二区交互）
-- 第三层：共偏度（三区协同） ← 认知预测关键
-- 第四层：共峰度（四区及更高）
-
-### 3. 线性方法的复兴
-
-**反思深度学习**：
-- 深度学习并非总是最优
-- 线性方法在高阶统计量捕获上有优势
-- 参数效率和性能的权衡
-
-## 意义与影响
-
-### 对脑基础模型研究的影响
-
-1. **重新审视预训练目标**：BFM预训练需要优化高阶统计量
-2. **Scaling law理解**：模型大小与性能的负相关关系
-3. **架构优化方向**：设计保留高阶统计量的网络
-
-### 对fMRI认知预测的影响
-
-1. **方法论简化**：线性方法无需复杂训练
-2. **性能突破**：co-skewness FC超越SOTA
-3. **计算效率**：CPU即可，无需GPU
-
-### 对神经科学理论的影响
-
-1. **高阶统计量重要性**：三阶依赖的认知意义
-2. **方差分层理论**：主导方差与认知方差分离
-3. **线性vs非线性权衡**：简单方法的生物学合理性
-
-## 参考文献
-
-- Marraffini, G., Mahuas, G., Borrell, T., Shevchenko, V., & Wassermann, D. (2026). The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail. arXiv:2606.04010
-- Brain foundation model literature
-- High-order statistics in neuroscience
-- Functional connectivity cognitive prediction
-
-## Citation
-
-```bibtex
-@article{marraffini2026variance,
-  title={The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail},
-  author={Marraffini, Giovanni and Mahuas, Gabriel and Borrell, Trinidad and Shevchenko, Victoria and Wassermann, Demian},
-  journal={arXiv preprint arXiv:2606.04010},
-  year={2026}
-}
+# 在子空间计算FC
+FC_skew = np.corrcoef(X_projected.T)
 ```
 
-## 相关技能
+### 3. 认知预测评估
 
-- `brain-dit-fmri-foundation-model`：Brain-DiT基础模型
-- `brain-foundation-model-inversion`：基础模型反演
-- `distribution-based-brain-connectivity`：分布值连接分析
-- `multi-view-o-information-brain-networks`：O-information方法论
-- `functional-connectome-fingerprint`：连接组指纹分析
+**读出方法对比**：
+- **线性回归**：从FC预测认知
+- **BFM读出**：从BFM隐藏状态预测认知
+- **协偏度子空间FC**：线性方法，超越两者
 
----
+**评估指标**：
+- 认知得分预测准确率（相关性）
+- 模型规模对比（111M vs 650M）
+- 数据集交叉验证
+- 区分方案鲁棒性
 
-**Note**: This skill documents a critical discovery about brain foundation models - the variance allocation problem where BFM pretraining captures dominant variance but destroys higher-order statistics critical for cognitive prediction. The proposed co-skewness-enhanced linear pipeline outperforms all billion-parameter pretrained models with only ~100K parameters and no GPU, revealing fundamental limitations in current BFM pretraining objectives.
+### 4. BrainLM前向传递恢复
+
+**微调实验**：
+- 在协偏度子空间方向微调BrainLM
+- 添加协偏度保留损失
+- **恢复原始FC天花板性能**
+
+**关键结论**：
+- 瓶颈是**预训练目标**，不是架构或模型规模
+- 正确的预训练目标可以恢复性能
+
+## 关键实验结果
+
+### 1. BFM vs 原始FC
+
+**三个最先进BFMs**：
+- BrainLM (111M, 650M)
+- 其他BFMs（未命名）
+
+**结果**：
+- 所有BFMs预测认知 < 从~80K参数FC的线性回归
+- FC线性方法：无预训练、无GPU、超越BFMs
+
+### 2. 规模效应
+
+**BrainLM对比**：
+- 111M参数：认知预测基线
+- 650M参数：预测性能**下降**
+- 规模增加 → 方差分配问题加剧
+
+### 3. 数据集和脑区分方案
+
+**测试范围**：
+- 多个数据集
+- 不同脑区分方案
+- 所有条件下：协偏度子空间FC超越SOTA
+
+### 4. 微调恢复
+
+**BrainLM微调**：
+- 添加协偏度保留损失
+- 恢复原始FC天花板性能
+- 证明预训练目标是瓶颈
+
+## 应用场景
+
+### 1. 脑基础模型评估
+
+**BFM设计审查**：
+- 检查预训练目标是否保留高阶统计量
+- Per-cumulant分析重建信号
+- 协偏度张量完整性评估
+
+**规模决策**：
+- 规模增加不保证认知预测改善
+- 需检查方差分配是否恶化
+- 评估预训练目标一致性
+
+### 2. 认知预测方法选择
+
+**方法推荐顺序**：
+1. **协偏度子空间FC**（最高效、最高性能）
+2. 原始FC线性回归
+3. BFM读出（仅在特定场景）
+
+**决策因素**：
+- 计算资源：协偏度子空间FC无需GPU
+- 数据规模：线性方法适用于中小数据集
+- 预训练成本：避免大规模预训练
+
+### 3. BFM预训练改进
+
+**预训练目标设计**：
+- 添加高阶统计量保留损失
+- 协偏度张量匹配目标
+- 认知预测导向预训练
+
+**损失函数**：
+```python
+# 标准预训练损失（方差主导）
+loss_variance = reconstruction_loss(fmri_signal, reconstructed)
+
+# 协偏度保留损失（新增）
+loss_skewness = skewness_matching_loss(
+    compute_co_skewness(fmri_signal),
+    compute_co_skewness(reconstructed)
+)
+
+# 总损失
+total_loss = loss_variance + alpha * loss_skewness
+```
+
+### 4. fMRI分析替代方案
+
+**线性方法优势**：
+- 无需大规模模型训练
+- 计算资源高效
+- 高阶统计量显式保留
+- 可解释性强
+
+**适用场景**：
+- 认知得分预测
+- 个体差异分析
+- 临床诊断辅助
+- 快速原型开发
+
+## 实现建议
+
+### 1. 协偏度子空间FC流水线
+
+**完整流程**：
+```python
+import numpy as np
+
+def variance_bfm_fc_pipeline(fmri_signal, cognitive_scores):
+    """协偏度子空间FC认知预测流水线"""
+    
+    # Step 1: 计算协偏度张量
+    S = compute_co_skewness(fmri_signal)
+    
+    # Step 2: 寻找协偏度保留子空间
+    d = optimize_subspace_dim(fmri_signal, cognitive_scores)
+    P = find_skewness_preserving_subspace(fmri_signal, d)
+    
+    # Step 3: 投影信号
+    X_proj = P @ fmri_signal
+    
+    # Step 4: 计算子空间FC
+    FC_proj = np.corrcoef(X_proj.T)
+    
+    # Step 5: 线性预测认知
+    # 使用岭回归或简单线性回归
+    from sklearn.linear_model import Ridge
+    model = Ridge(alpha=1.0)
+    model.fit(FC_proj.flatten(), cognitive_scores)
+    
+    return model, FC_proj, P
+
+def compute_co_skewness(X):
+    """计算协偏度张量（三阶统计量）"""
+    X_centered = X - X.mean(axis=0)
+    T, N = X.shape
+    
+    # 高效计算：避免显式三重循环
+    # 使用矩阵乘法加速
+    S = np.zeros((N, N, N))
+    for k in range(N):
+        S[:,:,k] = (X_centered.T @ 
+                    (X_centered * X_centered[:,k].reshape(-1,1))) / T
+    
+    return S
+```
+
+### 2. BFM评估工具
+
+**Per-Cumulant分析脚本**：
+```python
+def per_cumulant_analysis(original_signal, reconstructed_signal):
+    """统计量对比分析"""
+    
+    # 一阶
+    mean_orig = original_signal.mean(axis=0)
+    mean_recon = reconstructed_signal.mean(axis=0)
+    mean_similarity = correlation(mean_orig, mean_recon)
+    
+    # 二阶（协方差）
+    cov_orig = np.cov(original_signal.T)
+    cov_recon = np.cov(reconstructed_signal.T)
+    cov_similarity = matrix_correlation(cov_orig, cov_recon)
+    
+    # 三阶（协偏度）
+    skew_orig = compute_co_skewness(original_signal)
+    skew_recon = compute_co_skewness(reconstructed_signal)
+    skew_similarity = tensor_correlation(skew_orig, skew_recon)
+    
+    return {
+        'mean': mean_similarity,
+        'covariance': cov_similarity,
+        'co_skewness': skew_similarity
+    }
+```
+
+### 3. BFM预训练改进
+
+**添加协偏度损失**：
+```python
+class BFMWithSkewnessLoss(nn.Module):
+    def __init__(self, base_bfm, alpha=0.1):
+        super().__init__()
+        self.bfm = base_bfm
+        self.alpha = alpha
+    
+    def forward(self, fmri_signal):
+        # BFM重建
+        reconstructed = self.bfm(fmri_signal)
+        
+        # 标准重建损失
+        recon_loss = mse_loss(fmri_signal, reconstructed)
+        
+        # 协偏度匹配损失
+        skew_orig = compute_co_skewness(fmri_signal)
+        skew_recon = compute_co_skewness(reconstructed)
+        skew_loss = tensor_mse_loss(skew_orig, skew_recon)
+        
+        # 总损失
+        total_loss = recon_loss + self.alpha * skew_loss
+        
+        return reconstructed, total_loss
+```
+
+## 关键洞见
+
+### 1. 方差主导≠认知预测
+
+**核心洞见**：
+- BFM预训练捕获主要方差成分
+- 但主要方差≠认知预测能力
+- 高阶统计量（协偏度）才是认知预测关键
+
+**启示**：
+- 预训练目标需与下游任务一致
+- 方差最小化不保证认知预测性能
+- 需显式建模高阶结构
+
+### 2. 规模悖论机制
+
+**规模增加的副作用**：
+- 模型容量增加 → 更好拟合主要方差
+- 但进一步压缩高阶变异
+- 方差分配问题加剧
+
+**解决路径**：
+- 修改预训练目标（添加高阶损失）
+- 或直接使用线性方法（协偏度子空间FC）
+
+### 3. 线性方法的胜利
+
+**反直觉结果**：
+- 无预训练、无GPU的线性方法
+- 超越大规模预训练BFMs
+- 协偏度显式保留胜过隐式学习
+
+**设计哲学**：
+- 简单方法 + 正确统计量 > 复杂方法 + 错误目标
+- 任务特定结构保留 > 通用大规模预训练
+
+### 4. 预训练目标是瓶颈
+
+**微调实验结论**：
+- BrainLM微调后恢复FC天花板
+- 证明架构和规模不是瓶颈
+- **预训练目标设计**是关键
+
+**改进方向**：
+- 设计认知导向预训练目标
+- 添加高阶统计量保留约束
+- 或跳过预训练直接使用线性方法
+
+## 研究价值
+
+### 理论贡献
+
+**方差分配理论**：
+- 解释BFMs认知预测失败的根本原因
+- 揭示规模扩展的潜在陷阱
+- 提供高阶统计量重要性证据
+
+**统计量层级分析**：
+- 一阶：均值（保留）
+- 二阶：协方差（部分保留）
+- 三阶：协偏度（破坏）← 认知预测关键
+- 四阶及以上：丢失
+
+### 方法贡献
+
+**协偏度子空间FC**：
+- 无预训练、无GPU
+- 超越所有BFMs和原始FC
+- 计算高效、可解释性强
+
+**Per-Cumulant分析**：
+- 系统评估重建信号统计量
+- 诊断BFMs方差分配问题
+- 指导预训练目标改进
+
+### 应用贡献
+
+**BFM设计指南**：
+- 预训练目标审查清单
+- 规模决策风险评估
+- 高阶统计量完整性检查
+
+**替代方案**：
+- 线性方法在认知预测中的优势
+- 资源高效的fMRI分析路径
+- 快速原型开发工具
+
+## 引用
+
+arXiv:2606.04010 - Giovanni Marraffini et al. (2026)
+
+**论文标题**: The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail
+
+**发表时间**: 2026年5月29日
+
+**研究领域**: Neurons and Cognition (q-bio.NC), Artificial Intelligence (cs.AI)
+
+## Activation Keywords
+
+- brain foundation models, BFM
+- variance allocation problem
+- third-order statistics
+- co-skewness, coskewness tensor
+- cognition prediction
+- fMRI analysis
+- 脑基础模型方差
+- 协偏度张量
+- 认知预测失败
+- 规模悖论
+- Per-cumulant分析
+- 统计量保留

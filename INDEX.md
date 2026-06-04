@@ -24,10 +24,12 @@
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### Brain Foundation Models Variance Allocation Problem
-- [[brain-foundation-model-variance-allocation]] - Third-order statistics (co-skewness) predict cognition where billion-parameter BFMs fail (arXiv: 2606.04010)
-  - BFM variance allocation problem: second-order covariance preserved, third-order co-skewness destroyed
-  - Linear pipeline preserving co-skewness beats all BFMs (no pretraining, no GPU)
-  - **Activation**: brain foundation model, variance allocation, third-order, co-skewness, fMRI prediction, BrainLM
+- [[variance-brain-foundation-models-forgot]] - Third-order statistics (co-skewness) predict cognition where billion-parameter BFMs fail - revealing variance allocation problem where pretraining destroys co-skewness tensor (arXiv: 2606.04010)
+  - Per-cumulant analysis: second-order covariance preserved, third-order co-skewness destroyed
+  - Co-skewness subspace FC method beats all BFMs (no pretraining, no GPU)
+  - Scale paradox: BrainLM 650M predicts cognition worse than 111M
+  - Finetuning with co-skewness loss recovers raw-FC ceiling on BrainLM forward pass
+  - **Activation**: brain foundation models, BFM, variance allocation, third-order statistics, co-skewness, cognition prediction, fMRI, BrainLM, scale paradox
 
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
