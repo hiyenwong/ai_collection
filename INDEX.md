@@ -1,5 +1,29 @@
 ## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
 
+## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
+
+### Hybrid quantum-classical PINNs for nonlinear PDEs
+- [[hybrid-quantum-pinn-nonlinear-pde]] - HQPINN for nonlinear PDEs; quantum enhancement for sharp gradients/stiff dynamics (arXiv: 2606.04679)
+  - Classical backbone + PQC enriches solution representation for challenging PDEs
+  - Advantage regime-dependent: significant for stiff/sharp gradients, minimal for smooth solutions
+  - Benchmarked on Burgers', Allen-Cahn, and KdV equations
+  - **Activation**: hybrid quantum PINN, HQPINN, quantum PDE solver, nonlinear PDE, physics-informed neural network
+
+### Photon-heralded quantum operations error characterization
+- [[photon-heralded-quantum-error-characterization]] - Analytic error framework for photon-heralded gates (arXiv: 2606.04312)
+  - Extended ZPG framework derives closed-form process matrices and Pauli error weights
+  - Bridges physical imperfections to abstract noise models for heralded operations
+  - Full-stack error capture from photon generation to optical manipulation
+  - **Activation**: photon heralded quantum error, ZPG framework, quantum emitter error, heralded gate noise, analytic error characterization
+
+### LightStim QEC protocol evaluation
+- [[lightstim-qec-protocol-evaluation]] - Automated DEM construction for QEC evaluation (arXiv: 2604.21472)
+  - Concurrent circuit compilation + DEM generation via Pauli frame tracking
+  - Eliminates manual DEM annotation bottleneck, enables complex protocol evaluation
+  - Protocol-agnostic: works with surface code, color code, LDPC codes
+  - **Activation**: LightStim, QEC protocol evaluation, DEM construction, detector error model, fault-tolerant evaluation, Pauli frame tracking
+
+
 ### Scaling Laws for Neural-Network Quantum States
 - [[scaling-laws-quantum-states]] - Scaling laws framework for Neural-Network Quantum States, power-law relations between compute and accuracy for benchmarking variational ansatze (arXiv: 2606.02794)
   - V-score decays as power law in training compute across system sizes
