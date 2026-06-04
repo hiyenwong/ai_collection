@@ -42,6 +42,14 @@
 
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail
+- [[variance-brain-foundation-models-forgot]] - 脑基础模型遗忘的方差问题：三阶统计量预测认知。BFM预训练捕获主导方差但破坏认知关键的高阶结构，co-skewness增强线性管道（~100K参数，无GPU）超越所有亿参数预训练模型 (arXiv: 2606.04010)
+  - 方差分配问题：预训练捕获主导方差(~70%)但丢失认知相关方差(~20%)
+  - Per-Cumulant分析：协方差保留~60%，共偏度破坏<20%
+  - 线性方法复兴：co-skewness FC无预训练、无GPU，超越BrainLM 650M
+  - Scaling law异常：BrainLM越大认知预测越差，650M < 111M
+  - **Activation**: brain foundation models, BFM, fMRI, variance allocation, co-skewness, third-order statistics, functional connectivity, cognitive prediction, BrainLM, scaling law anomaly
+
 ### Discrete Signaling Mediates Chaotic Regularization in Recurrent Neural Networks
 - [[discrete-signaling-chaotic-regularization-rnn]] - 离散信号介导RNN混沌正则化：混沌动力学引入局部粗糙度但保持全局平滑性，作为内在正则化器增强泛化，自然生成匹配皮质记录的幂律谱签名 (arXiv: 2606.04426)
   - 混沌-几何链接：核方法+动力学平均场理论连接微观混沌与宏观表征几何
