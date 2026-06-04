@@ -1017,6 +1017,26 @@
 
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
+## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
+- [[low-rank-hessian-quantum-gate-calibration]] - Low-rank Hessian optimization for calibrating high-fidelity multi-qubit quantum gates (arXiv: 2606.05060)
+  - 利用量子控制景观的低秩结构加速多量子比特门校准
+  - 通过Hessian特征分解实现高维参数空间的降维优化
+  - **Activation**: low-rank Hessian, quantum gate calibration, neutral atom gates, high-fidelity gates
+
+### Minimax Private Estimation of Smooth Optimal-Transport Maps
+- [[differential-private-optimal-transport-estimation]] - Differentially private estimation of smooth optimal transport maps (arXiv: 2606.04683)
+  - 基于小波密度估计器的差分隐私最优传输映射估计
+  - 利用平滑OT映射的稳定性界实现极小极大最优率
+  - **Activation**: differential privacy, optimal transport, private estimation, wavelet density
+
+### Fermionic non-Gaussianity via Bell sampling
+- [[fermionic-non-gaussianity-bell-sampling]] - Monotones and quantum algorithms for fermionic non-Gaussianity via Bell sampling (arXiv: 2606.05066)
+  - 基于Bell采样和费米子协方差算子本征结构的非高斯性度量
+  - 解锁费米子量子平台完全计算能力的关键资源量化方法
+  - **Activation**: fermionic quantum computing, Bell sampling, non-Gaussianity monotones, covariance operator
+
 ### Squeezed Phonon Lasing via Floquet-Controlled Solid-State Defects
 - [[floquet-controlled-phonon-lasing]] - Floquet-engineered squeezed phonon laser design using color centers in hBN membranes with coupled spin-mechanical systems (arXiv: 2606.05083)
   - Floquet theory enables engineering of effective Hamiltonians via periodic driving
