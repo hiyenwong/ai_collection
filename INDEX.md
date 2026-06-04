@@ -30,6 +30,37 @@
   - Analyzer-independent balanced estimators with Fisher Information bounds
   - **Activation**: quantum erasure imaging, QEI, delayed-choice imaging, dual-modality quantum, entangled photon imaging, quantum microscopy, phase-sensitive quantum, quantum medical imaging
 
+## 2026-06-04 - Thursday Systems Engineering (Cron Job)
+
+### Piston control in a two-ion quantum device
+- [[piston-control-two-ion-quantum]] - Inverse-engineering methodology for piston operations in trapped-ion quantum devices, using Coulomb coupling between orthogonal-axis ions (arXiv: 2606.03488)
+  - Two-ion system with classical piston driven by Coulomb interaction
+  - Self-consistent stationary state connecting quantum and classical regimes
+  - Inverse-engineering protocols for precise piston trajectory control
+  - **Activation**: piston control, two-ion quantum, inverse engineering, trapped ion, quantum thermodynamics, coulomb coupling
+
+### Quantum Fault Trees and Minimal Cut Sets Identification
+- [[quantum-fault-trees-minimal-cut]] - Quantum fault tree analysis extending classical reliability FTA to quantum domain for efficient minimal cut set identification (arXiv: 2404.05853)
+  - Maps classical fault tree logic gates to quantum circuits
+  - Superposition-based failure mode enumeration
+  - Quantum amplitude amplification for minimal cut set extraction
+  - **Activation**: quantum fault trees, reliability engineering, minimal cut sets, safety critical systems, fault tree analysis, systems engineering
+
+### Quantum optimal control of the Dicke manifold in Rydberg atom arrays (Enhanced)
+- [[quantum-optimal-control-irrep-distillation]] - Enhanced with new details on irrep distillation + GrAPE control for many-body quantum systems (arXiv: 2606.02283)
+  - Irrep distillation captures symmetric subspace leakage with linear-scaling Hilbert dimension
+  - GrAPE control for GHZ and Dicke state generation with minimal local addressing
+  - Quantum speed limit benchmarking and fidelity prediction
+  - **Activation**: quantum optimal control, Dicke manifold, irrep distillation, Rydberg atom control, GrAPE
+
+### QDCNN: Quantum Deep Learning for CPS Safety and Reliability
+- [[qdcnn-quantum-cps-safety]] - Quantum Deep Convolutional Neural Network for autonomous transportation safety with UU† shadow detection (arXiv: 2503.01916)
+  - UU† method for shadow detection with centroid propagation training
+  - 0.0049s detection time vs 0.03-2.05s for classical methods
+  - Superior accuracy and noise resilience for real-time CPS safety
+  - **Activation**: quantum deep learning, CPS safety, autonomous transportation, shadow detection, QDCNN, quantum CNN
+
+
 ## 2026-06-05 - Systems Engineering + Quantum (Cron Job)
 
 ### Distributed Variational Quantum Optimisation by Entanglement-Selective Transport
