@@ -1,3 +1,22 @@
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### Competition, stability, and functionality in excitatory-inhibitory neural circuits
+- [[game-energetic-ei-networks]] - 游戏能量框架扩展到非对称E-I网络：神经元作为竞争博弈中的智能体最小化个人能量，稳定性原则调控和平衡神经活动，皮质柱作为对比增强器通过层级E-I交互锐化环境差异 (arXiv: 2512.05252)
+  - 游戏能量解释：非对称权重矩阵的神经元动力学博弈结构
+  - 网络稳定性原则：调控和平衡E-I活动，收缩映射验证
+  - 皮质柱对比增强：层级兴奋-抑制微电路锐化细微环境差异
+  - Wilson-Cowan模型重访：通过游戏能量视角重新理解经典框架
+  - **Activation**: excitatory-inhibitory, E-I networks, game theory, energy landscape, neural stability, asymmetric dynamics, cortical column, contrast enhancement, Wilson-Cowan, lateral inhibition
+
+### SHARP: Sleep-based Hierarchical Accelerated Replay for Temporal Pattern Recognition
+- [[sleep-replay-acceleration-sharp]] - 基于睡眠的层级加速重播框架：分离记忆积累与模式识别，离线睡眠阶段加速重播整合高级记忆表示，指数增长有效时间上下文（线性计算成本），rodent慢波睡眠启发的序列学习 (arXiv: 2606.00732)
+  - 两组件架构：记忆模块积累结构化历史，模式识别模块处理记忆
+  - 层级记忆结构：指数增长有效上下文2^N，成本线性O(N)
+  - 睡眠离线整合：加速重播存储体验，整合高级表示，改进长程上下文保持
+  - 消除长程反向传播：单次在线积累，睡眠相位加速重播替代全序列遍历
+  - text8/PG-19基准验证：保持既往数据性能同时学习新模式并泛化到未见数据
+  - **Activation**: SHARP, sleep replay, temporal pattern recognition, non-stationary dynamics, streaming learning, hierarchical memory, accelerated replay, slow-wave sleep, long-range credit assignment, memory consolidation
+
 ## 2026-06-05 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ### Software-Based Compensation of AC-Line-Induced Control Errors
