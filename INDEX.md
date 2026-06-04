@@ -1,5 +1,12 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### A Unified Geometric Space for Topological Alignment Between Transformer-Based Models and Human Brain Networks
+- [[transformer-brain-topological-alignment]] - Task-free, modality-agnostic brain-AI alignment via topological mapping of 151 Transformers to ICNs (arXiv: 2510.24342)
+  - Continuous arc-shaped alignment distribution from low-level to high-order ICNs
+  - Non-intuitive phenomena: DINOv2 reduced alignment, distillation scaling inversion, fine-tuning limited effect
+  - **Activation**: transformer brain alignment, topological alignment, ICN mapping, brain-AI alignment
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
 ### Competition, stability, and functionality in excitatory-inhibitory neural circuits
 - [[game-energetic-ei-networks]] - Game-theoretic framework for E-I balance modeling with energy-based competition dynamics (arXiv: 2512.05252)
   - Dynamical systems + game theory for excitatory-inhibitory circuit analysis
