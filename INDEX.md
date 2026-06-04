@@ -12,6 +12,25 @@
   - 逆工程控制：通过调制阱势控制量子离子运动，驱动经典活塞
   - 量子-经典过渡：识别窄量子基态连接两个宽经典区域
   - **Activation**: quantum control, two-ion device, inverse engineering, piston control, quantum-classical transition
+- [[piston-control-two-ion-quantum]] - 捕获离子量子器件活塞控制方法论：最优控制脉冲设计(GRAPE/CRAB)实现离子精确位移，用于量子态制备和门操作 (arXiv: 2606.03488)
+  - GRAPE/CRAB算法：梯度上升脉冲工程和随机基优化
+  - 双离子动力学：质心和拉伸模式控制，纠缠门实现
+  - 闭环校准：基于实验反馈的迭代优化
+  - **Activation**: piston control, trapped-ion, quantum device, ion control, two-ion system, quantum optimal control, quantum calibration
+
+### Fast TetraBFT: Optimizing Latency Where It Matters
+- [[fast-tetrabft-quantum-consensus]] - 快速TetraBFT拜占庭共识协议优化：无认证消息的点对点通道共识，最优f<n/3容错，面向后量子分布式系统延迟优化 (arXiv: 2606.03754)
+  - 无认证共识：仅需点对点通道认证，无需消息级签名
+  - 延迟优化：关键路径分析+非关键路径卸载，减少共识轮次
+  - 后量子就绪：避免昂贵后量子签名计算，减少量子脆弱攻击面
+  - **Activation**: Byzantine consensus, post-quantum distributed systems, TetraBFT, unauthenticated consensus, latency optimization, fault tolerance
+
+### Practical gates by Majorana fermion motion
+- [[majorana-fermion-topological-gates]] - 马约拉纳费米子运动实现拓扑量子门：平面Pauli稳定子码框架，信息存储于费米子配对宇称，编织操作实现逻辑门 (arXiv: 2606.03916)
+  - 非局域存储：逻辑信息编码于马约拉纳费米子配对宇称
+  - 编织操作：物理运动实现Clifford逻辑门，全拓扑保护
+  - 稳定子框架：平面Pauli稳定子码推广，局部错误拓扑保护
+  - **Activation**: Majorana fermion, topological quantum computing, Pauli stabilizer, logical gate design, quantum error correction, topological protection
 
 ### Quantum optimal control of the Dicke manifold in Rydberg atom arrays
 - [[quantum-optimal-control-rydberg]] - 里德堡原子阵列中Dicke流形的量子最优控制，用于量子计算应用 (arXiv: 2606.02283)
