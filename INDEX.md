@@ -1,4 +1,12 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
+## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### Arbitrary control of the temporal waveform of photons during spontaneous emission
+- [[arbitrary-photon-waveform-control]] - Arbitrary temporal waveform control of single photons for optimized quantum state transfer in hybrid quantum systems (arXiv: 2511.23462)
+  - Core: Shape photon emission rate Γ(t) to match ideal time-reversed absorption profile
+  - Key insight: Arbitrary waveform control during spontaneous emission via Purcell modulation, cavity tuning, Stark shift
+  - **Activation**: photon waveform, spontaneous emission, temporal control, quantum state transfer, hybrid quantum system, photon shaping
+
 
 ### A Unified Geometric Space for Topological Alignment Between Transformer-Based Models and Human Brain Networks
 - [[transformer-brain-topological-alignment]] - Task-free, modality-agnostic brain-AI alignment via topological mapping of 151 Transformers to ICNs (arXiv: 2510.24342)
