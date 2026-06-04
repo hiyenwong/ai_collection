@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-05 - Neuroscience Research (Cron Job)
+
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
+- [[stp-stabilizes-goal-conditioned-dynamics]] - STP in PFC-inspired reservoir model achieves 42% noise robustness improvement for multistep goal-directed action planning (arXiv: 2606.03481)
+  - 噪声下成功率：无 STP 75.8% → 49.5%，有 STP 91.8% → 89.2%
+  - STP 保留行动可用的目标条件化动力学，动态调制有效连接性
+  - 易化主导时间常数范围关联高成功率，非固定循环缩放解释
+  - 目标特异性连接模式随时间增强，延迟期后期信息最可用
+  - **Activation**: short-term plasticity, STP, goal-conditioned dynamics, PFC reservoir, action planning, noise robustness, dynamic connectivity, Tsodyks-Markram
+
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
