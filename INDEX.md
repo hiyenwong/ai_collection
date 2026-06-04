@@ -1,3 +1,26 @@
+## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
+
+### Full Extractors for Logical Processing in Hypergraph Product Codes
+- [[full-extractors-hgp-qldpc]] - QLDPC码全提取器构造：实现Pauli基计算无编译开销，提取器大小为基码50-80%，最大量子比特度10，距离10码在0.1%物理错误率下实现10^-6逻辑错误率 (arXiv: 2606.03507)
+  - 部分提取器组装：独立验证的容错部分提取器组合为全提取器
+  - 固定连通性硬件兼容：最大量子比特度≤10，无需SWAP网络
+  - QLDPC空间效率+表面码PBC便利性结合
+  - **Activation**: quantum error correction, QLDPC, hypergraph product codes, full extractors, logical processing, Pauli-based computation, fault tolerance, fixed connectivity, surgery systems
+
+### Machine Learning-based Quantum Error Mitigation for Variational Algorithms
+- [[ml-qem-variational-algorithms]] - 基于ML的量子误差缓解方案：用近Clifford电路模拟生成训练数据，跨哈密顿量迁移，高噪声区域优于ZNE，适用于NISQ处理器 (arXiv: 2606.02697)
+  - Clifford代理训练：经典可模拟Clifford电路提供无噪声训练数据
+  - 跨哈密顿量迁移：训练一次，应用于相似结构的不同哈密顿量
+  - NISQ就绪方案：完整的误差缓解流水线
+  - **Activation**: quantum error mitigation, ML-QEM, variational algorithms, VQE, NISQ, Clifford simulation, error suppression, zero-noise extrapolation
+
+### Deterministic Generation of Cat States with 100+ Photons
+- [[deterministic-cat-state-generation]] - 确定性生成100+光子猫态：利用混合量子-玻色系统的动力学不变量，在耗散下工作，适用于量子计量和容错量子计算 (arXiv: 2606.03293)
+  - 动力学不变量工程：设计时间依赖哈密顿量保持目标态为不变量本征态
+  - 非厄米量子控制：利用耗散作为资源加速态制备
+  - 混合量子-玻色控制：离散+连续变量协同
+  - **Activation**: cat states, bosonic codes, dynamical invariants, universal quantum control, quantum metrology, fault-tolerant computation, hybrid qubit-bosonic, non-Hermitian
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Attachment Representations Drive Interbrain Synchrony in Early Childhood
