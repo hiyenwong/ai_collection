@@ -1,3 +1,35 @@
+## 2026-06-04 - Systems Engineering + Quantum (Cron Job)
+
+### Scaling Laws for Neural-Network Quantum States
+- [[scaling-laws-quantum-states]] - Scaling laws framework for Neural-Network Quantum States, power-law relations between compute and accuracy for benchmarking variational ansätze (arXiv: 2606.02794)
+  - V-score decays as power law in training compute across system sizes
+  - Frustration quantitatively measures representational difficulty of ground state
+  - **Activation**: scaling laws, nnqs, transformer wave function, frustrated systems, variational benchmarking
+
+### Full Extractors for Logical Processing in Hypergraph Product Codes
+- [[qldpc-full-extractor-construction]] - Full extractor construction for measuring arbitrary logical Pauli operators on QLDPC code blocks enabling PBC without compilation overhead (arXiv: 2606.03507)
+  - Extractors 50-80% size of base HGP codes with max qubit degree 10
+  - Circuit-level noise: logical error ~10⁻⁶ at 0.1% physical error rate
+  - **Activation**: qldpc extractors, hypergraph product codes, logical pauli measurement, fault-tolerant qldpc
+
+### Geometric Decoherence Time in Lindbladian Dynamics
+- [[geometric-decoherence-time-lindbladian]] - Geometric decoherence time methodology defining the moment logarithmic negativity/Rényi entropy relation breaks down in open quantum systems (arXiv: 2606.02743)
+  - Topological phases sustain longer coherence times than trivial phases
+  - Quantum mutual information provides long-time decoherence diagnostic
+  - **Activation**: geometric decoherence, lindbladian dynamics, open quantum systems, entanglement decay
+
+### Scalable On-Hardware QNN Training
+- [[scalable-on-hardware-qnn-training]] - O(log n) gradient estimation for QNN training on quantum hardware via Butterfly architecture + parallel parameter-shift (arXiv: 2606.03517)
+  - 16-qubit hardware training on IonQ Forte Enterprise with 32-qubit inference
+  - Clinical data imputation on MIMIC-III matching classical baselines
+  - **Activation**: scalable qnn training, quantum hardware gradient, clinical quantum ml, butterfly circuit
+
+### Penalty-free QAOA for Lattice Protein Folding
+- [[penalty-free-qaoa-protein-folding]] - Penalty-free QAOA via conflict graph independent set formulation for lattice protein folding (arXiv: 2606.02104)
+  - MIS mixer preserves constraint subspace, objective = energy only (no penalties)
+  - Folds proteins up to N=14 using subgraphs with ≤26 qubits
+  - **Activation**: penalty-free qaoa, protein folding, conflict graph, mis mixer
+
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
 ### Competition, stability, and functionality in excitatory-inhibitory neural circuits
