@@ -1,0 +1,42 @@
+{
+  "name": "skill-rag-indexer",
+  "version": "1.0.0",
+  "description": "RAG indexer for OpenClaw skills - semantic search and recommendation",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "skill-rag": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "index:build": "node dist/index.js index build",
+    "index:update": "node dist/index.js index update",
+    "index:status": "node dist/index.js index status",
+    "search": "node dist/index.js search",
+    "recommend": "node dist/index.js recommend",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.2.2",
+    "commander": "^11.1.0",
+    "marked": "^11.1.1",
+    "openai": "^4.24.7",
+    "sqlite-vss": "^0.1.2",
+    "cohere-ai": "^7.7.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
