@@ -1,3 +1,13 @@
+## 2026-06-05 - Neuroscience Research (Cron Job)
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons
+- [[stm-sequence-timing-replay]] - Spiking Temporal Memory (sTM) 扩展模型：振荡背景输入作为时钟信号实现序列时序编码和回放速度控制 (arXiv: 2605.22523)
+  - 元素时长编码：顺序激活元素特异性神经元群体，跨越宽时间尺度
+  - 振荡背景输入作为时钟信号：提供灵活鲁棒的速度控制机制
+  - 回放速度与EEG/LFP振荡特征相关：清醒期快速回放，睡眠期慢速回放
+  - 经历时间编码：独特稀疏的时空神经活动模式
+  - **Activation**: sequence timing, replay speed, sTM, spiking temporal memory, oscillatory control, temporal encoding, sequence processing
+
 ## 2026-06-06 - 数论/统计学/高等数学 + 量子力学 (Cron Job)
 
 ### Penalty-free quantum optimization applied to lattice protein folding
