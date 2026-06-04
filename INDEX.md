@@ -1,3 +1,19 @@
+## 2026-06-06 - 数论/统计学/高等数学 + 量子力学 (Cron Job)
+
+### Penalty-free quantum optimization applied to lattice protein folding
+- [[penalty-free-quantum-optimization]] - 无惩罚量子优化：通过冲突图重构和独立集混合器替代二次惩罚项，保证量子演化全程可行性 (arXiv: 2606.02104)
+  - 冲突图编码约束：变量-值对作为节点，互斥关系作为边，合法解=独立集
+  - MIS混合器替代横向场混合器：仅在独立集子空间内转移，全程保持可行性
+  - 启发式局部搜索：用最多26量子比特子图折叠72长度蛋白质
+  - **Activation**: penalty-free optimization, conflict graph, independent set mixer, QAOA, constrained quantum optimization
+
+### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
+- [[low-rank-hessian-quantum-control]] - 低秩Hessian量子门校准：利用Hessian矩阵低秩特性，在主轴子空间进行闭环实验优化 (arXiv: 2606.05060)
+  - Hessian特征值指数衰减：10-20个主轴方向捕获>95%保真度方差
+  - N维波形→k维子空间投影：从1000+参数降至10-20参数
+  - 171Yb CZ门99.59%原始保真度，对20%激光功率变化鲁棒
+  - **Activation**: low-rank Hessian, quantum gate calibration, waveform optimization, subspace optimization, active subspace
+
 # AI Collection Index
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
