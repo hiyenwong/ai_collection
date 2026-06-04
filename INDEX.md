@@ -1,3 +1,12 @@
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
+### Dynamical modeling of nonlinear latent factors in multiscale neural activity with real-time inference
+- [[mrine-multiscale-realtime-neural-decoding]] - MRINE framework for real-time multimodal neural decoding across different timescales with missing data handling (arXiv: 2512.12462, NeurIPS 2025)
+  - Multiscale encoder + dynamical backbone + modality-specific decoders handle heterogeneous neural signals
+  - Real-time recursive inference: +15-25% accuracy improvement over linear/nonlinear baselines on three brain datasets
+  - Robust to missing samples and distributional differences (spiking vs. LFP vs. EEG)
+  - **Activation**: real-time decoding, multimodal neural, missing data, neural decoding, multiscale dynamics, BCI, latent factors, MRINE
+
 ### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
 - [[low-rank-hessian-quantum-control]] - Hessian-based calibration for optimal-control quantum gates, 99.9% fidelity on 171Yb qubits (arXiv: 2606.05060)
   - Low-rank Hessian identifies few waveform directions affecting fidelity
