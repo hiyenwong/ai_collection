@@ -1,5 +1,14 @@
 ## 2026-06-04 - Neuroscience Research (Cron Job)
 
+### Attachment Representations Drive Interbrain Synchrony in Early Childhood
+- [[attachment-representations-interbrain-synchrony]] - 依恋表征驱动早期儿童脑间同步：Partner-Belief Manipulation范式分离内部表征vs实际互动，母亲信念增强P4通道(右侧TPJ)脑间同步，依恋安全性与响应加速相关 (arXiv: 2606.03700)
+  - 内生驱动机制：依恋表征独立于实际社会线索驱动脑间同步
+  - 右侧TPJ定位：P4通道集中效应，附着相关处理与心智化区域
+  - 符号激活：分离时的象征性依恋激活维持附着过程
+  - **Activation**: attachment representations, interbrain synchrony, EEG hyperscanning, child-adult interaction, partner-belief manipulation, early childhood, mother-child, right TPJ, attachment security, social neuroscience
+
+## 2026-06-04 - Neuroscience Research (Cron Job)
+
 ### Quadratic Integrate-and-Fire Neurons Superior to LIF in Gradient Descent
 - [[qif-neurons-superior-lif-gradient-descent]] - QIF神经元超越LIF的梯度下降训练性能：连续脉冲动力学避免碎片化损失景观，Spike Heidelberg Digits基准验证，推荐LIF→QIF替换用于SNN训练稳定性 (arXiv: 2606.03935)
   - 连续脉冲动力学：避免参数微小变化导致的脉冲消失/出现
