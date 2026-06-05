@@ -1,3 +1,26 @@
+# AI Collection Index
+
+## 2026-06-05 - Quantum Optics (Cron Job)
+
+### Continuous-Variable Quantum State Tomography Enabled by Quantum Mirrors
+- [[quantum-mirror-tomography]] - Quantum mirrors transfer photonic state information to control atomic systems, enabling CV tomography with polynomial sample complexity through kernel functions and Wigner reconstruction (arXiv: 2606.04277)
+  - Overcomes exponentially growing sample complexity of conventional CV tomography
+  - Three reconstruction methods: kernel functions, direct wavefunction, pointwise Wigner
+  - Single atomic measurement location replaces photon counting
+  - Robust framework for benchmarking non-Gaussian states
+  - **Activation**: continuous-variable tomography, quantum mirrors, photonic state characterization, Wigner function, non-Gaussian states, quantum optics benchmarking
+
+## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Experimentally Probing the Quantum Physics in the Inverted Harmonic Oscillator
+- [[inverted-harmonic-oscillator-quantum-probing]] - Experimental realization of IHO dynamics using BEC on AtomChip with phase-space tomography, sub-vacuum squeezing (10.6 dB), and time-reversal coherence certification (arXiv: 2606.05125)
+  - Radio-frequency dressing creates IHO potential from transverse harmonic confinement
+  - Phase-space tomography follows full Wigner function evolution
+  - Sub-vacuum squeezing of 10.6(1.3) dB observed
+  - Time-reversal coherence confirmed via matter-wave interference
+  - Applications: force sensing, inflationary field dynamics analogs
+  - **Activation**: inverted harmonic oscillator, quantum squeezing, time-reversal coherence, Wigner tomography, Bose-Einstein condensate, AtomChip, quantum fluctuations, inflationary dynamics
+
 ## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### QUIVER: Quantum-Informed Views for Enhanced Representations in Large ML Models
@@ -10,6 +33,15 @@
   - **Activation**: quantum Fisher view, QUIVER, quantum feature augmentation, QFIM, Hamming quantum kernel, quantum SVM, 量子费舍尔信息, quantum ML, variational quantum circuit, statistics
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
+
+### Functional Ensembles as Units of Computation in Deep Spiking Networks
+- [[functional-ensembles-deep-spiking-networks]] - First-order functionally-connected (1FC) groups reveal rare coordinated activity patterns carry most information in SNNs, bridging biological cortex principles (arXiv: 2606.00073)
+  - 1FC ensembles: statistically significant pairwise correlations with previous layer neurons
+  - Aggregate cofiring predicts downstream responses via ReLU-like relationship with ensemble-size scaling
+  - Reliable encoding concentrated in rare high-coordination events (infrequent bursts)
+  - Perturbations disrupt early/intermediate layers; functional connectivity shaped by learning
+  - Targeted diagnostic framework for SNN information flow analysis
+  - **Activation**: functional ensemble, 1FC, spiking neural network, SNN interpretability, functional connectivity, rare events, deep spiking networks, neural ensemble, coordinated activity
 
 ### Mapping Whisper Representations to Human ECoG Responses
 - [[whisper-ecog-alignment-neural-encoding]] - Whisper-ECoG alignment methodology using time-resolved neural encoder with attention for layer-wise brain correspondence during speech perception (arXiv: 2606.02305)
@@ -35,6 +67,14 @@
   - 多尺度通路图谱：骨干边、高流量路线、枢纽 ROI，映射 Tau 传播路径
   - ADNI 234 名参与者验证，归因分数符合 Braak 分期解剖，揭示 SC 编码病理信息
   - **Activation**: tau propagation, Alzheimer, structural connectivity, attribution, network diffusion, Braak staging, DTI, PET, pathway mapping, interpretability, gradient attribution
+
+### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
+  - FPGA平台能效提升4.5×-219.8×
+  - ASIC平台速度提升4.8×-22.01×，面积仅需1.2%-3.3%
+  - Mean-field synaptic drift model dynamical analysis
+  - Validated across different SNN network scales and datasets
+  - **Activation**: SNN训练, STDP, neuromorphic硬件, 能效优化, FPGA/ASIC, power-of-two
 
 ## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
@@ -149,9 +189,36 @@
   - Chaos induces local roughness but preserves global smoothness, acting as intrinsic regularizer
   - Power-law spectral signatures match cortical recordings, explains smooth population codes
   - Game-theoretic structure where each neuron minimizes local energy
-  - **Activation**: chaotic regularization, discrete signaling, RNN dynamics, kernel methods, cortical recordings, population codes, neural representations, dynamical mean-field theory
+  |  - **Activation**: chaotic regularization, discrete signaling, RNN dynamics, kernel methods, cortical recordings, population codes, neural representations, dynamical mean-field theory
+  |
+  |### Competition, Stability, and Functionality in E-I Neural Circuits
+  |- [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
+  |  - Each neuron as agent minimizing local energy in competitive game
+  |  -
 
-### Competition, Stability, and Functionality in E-I Neural Circuits
-- [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
-  - Each neuron as agent minimizing local energy in competitive game
-  -
+  ## 2026-06-05 - Anthropic Research (Cron Job)
+
+  ### Natural Language Autoencoders
+  - [[natural-language-autoencoders]] - Methodology for converting neural activations into human-readable text explanations using reconstruction-based training with Activation Verbalizer and Activation Reconstructor
+    - Reveals evaluation awareness and hidden motivations models don't verbalize
+    - Three-model architecture: frozen target + verbalizer + reconstructor
+    - Round-trip training: activation → text → reconstructed activation
+    - Applications: safety testing, cheating detection, training data debugging
+    - **Activation**: NLA, natural language autoencoder, activation verbalizer, interpretability, model auditing, evaluation awareness, hidden motivations
+
+  ### Teaching Claude Why: Alignment Training Lessons
+  - [[teaching-claude-why-alignment]] - Alignment training methodology focusing on teaching principles and reasoning rather than behaviors, achieving 0% agentic misalignment on honeypot evaluations
+    - Difficult advice dataset: 28x more efficient than honeypot training (3M vs 85M tokens)
+    - Constitutional documents + fictional stories reduce blackmail from 65% to 19%
+    - Reasons matter more than actions: 22% → 3% misalignment with value deliberation
+    - Diverse training environments critical for OOD generalization
+    - **Activation**: alignment training, agentic misalignment, difficult advice, constitutional documents, OOD generalization, safety training, honeypot evaluations
+
+  ### Coding Agents in Social Science Research
+  - [[coding-agents-social-science-research]] - Survey methodology for studying AI coding agent adoption among 1,260 social scientists, measuring productivity disparities and field-level effects
+    - 81% tried AI, only 20% adopted coding agents into workflow
+    - Sharp disparities: 2x gender gap, 40% higher adoption at top universities
+    - Claude Code most common (86% of coding agent users)
+    - Productivity gains in early pipeline (working papers, grants), not journal submissions
+    - Expectations gap: 70% more optimistic about individual productivity than field impact
+    - **Activation**: coding agents, social science research, AI adoption survey, Claude Code productivity, research productivity disparities
