@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-05 - Neuroscience Research (Cron Job)
+
+### Cross-scale Spatially-aware Generative Modeling of Neurodegenerative Brain Organization
+- [[cross-scale-spatial-generative-neurodegeneration]] - Variational generative framework linking gene expression to cortical degeneration with graph-based spatial regularization, achieving 86% explained variance and 94% spatial correlation (arXiv: 2606.05870)
+  - Allen Human Brain Atlas: 910 landmark genes across 68 cortical regions
+  - ADNI FreeSurfer cortical thinning differences (NC=926 vs AD=426)
+  - Graph-based spatial smoothness regularization preserves cortical organization
+  - Structured transcriptomic organization revealed in latent representations
+  - **Activation**: neurodegeneration, Alzheimer's disease, transcriptomic modeling, cortical thinning, spatial awareness, variational inference, gene expression, brain organization, generative neurobiology
+
 ## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Experimentally Probing the Quantum Physics in the Inverted Harmonic Oscillator
