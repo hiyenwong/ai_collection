@@ -1,35 +1,5 @@
 # AI Collection Index
 
-## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
-
-### Interpreting FCDNNs via RG on Exponential Family
-- [[rg-dnn-interpretability]] - DNN training is equivalent to RG flow on exponential family distributions (arXiv: 2606.00157)
-  - Core insight: FC DNN feature extraction = RG coarse-graining fixed points
-  - Proved equivalence for 1D Ising (discrete) + continuous exponential family
-  - **Activation**: renormalization group, DNN interpretability, exponential family, statistical physics, feature extraction
-
-### Bath-induced deviations from Gibbs statistics for strongly interacting oscillators
-- [[non-gibbs-quantum-stats]] - Non-secular Redfield terms drive quantum oscillators to non-Gibbs states (arXiv: 2606.00239)
-  - Bath-induced coherences cause deviations from Boltzmann distribution
-  - Conditions identified for Gibbs statistics recovery
-  - **Activation**: quantum statistics, Gibbs state, Redfield equation, non-secular, open quantum systems, thermalization
-
-### How to make quantum cheese: efficient geometry oracles for exponentially many pseudorandom microstructures
-- [[quantum-geometry-oracles]] - Polynomial-size quantum oracles for structured pseudorandom materials (arXiv: 2606.00222)
-  - Unstructured geometries yield Grover-type lower bounds
-  - Pseudorandom locally textured materials admit efficient oracle circuits
-  - **Activation**: quantum oracle, geometry oracle, material simulation, pseudorandom structure, Grover bound
-
-## 2026-06-05 - Quantum Optics (Cron Job)
-
-### Continuous-Variable Quantum State Tomography Enabled by Quantum Mirrors
-- [[quantum-mirror-tomography]] - Quantum mirrors transfer photonic state information to control atomic systems, enabling CV tomography with polynomial sample complexity through kernel functions and Wigner reconstruction (arXiv: 2606.04277)
-  - Overcomes exponentially growing sample complexity of conventional CV tomography
-  - Three reconstruction methods: kernel functions, direct wavefunction, pointwise Wigner
-  - Single atomic measurement location replaces photon counting
-  - Robust framework for benchmarking non-Gaussian states
-  - **Activation**: continuous-variable tomography, quantum mirrors, photonic state characterization, Wigner function, non-Gaussian states, quantum optics benchmarking
-
 ## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Experimentally Probing the Quantum Physics in the Inverted Harmonic Oscillator
@@ -86,17 +56,19 @@
   - 网络扩散模型增强 MLP + 梯度×输入归因量化每条结构连接边的贡献
   - 多尺度通路图谱：骨干边、高流量路线、枢纽 ROI，映射 Tau 传播路径
   - ADNI 234 名参与者验证，归因分数符合 Braak 分期解剖，揭示 SC 编码病理信息
-  - **Activation**: tau propagation, Alzheimer, structural connectivity, attribution, network diffusion, Braak staging, DTI, PET, pathway mapping, interpretability, gradient attribution
+  # AI Collection Index
 
-### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
-- [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
-  - FPGA平台能效提升4.5×-219.8×
-  - ASIC平台速度提升4.8×-22.01×，面积仅需1.2%-3.3%
-  - Mean-field synaptic drift model dynamical analysis
-  - Validated across different SNN network scales and datasets
-  - **Activation**: SNN训练, STDP, neuromorphic硬件, 能效优化, FPGA/ASIC, power-of-two
+  ## 2026-06-05 - Neuroscience Research (Cron Job)
 
-## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+  ### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+  - [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
+    - FPGA平台能效提升4.5×-219.8×
+    - ASIC平台速度提升4.8×-22.01×，面积仅需1.2%-3.3%
+    - Mean-field synaptic drift model dynamical analysis
+    - Validated across different SNN network scales and datasets
+    - **Activation**: SNN训练, STDP, neuromorphic硬件, 能效优化, FPGA/ASIC, power-of-two
+
+  ## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Low-rank Distributional Matrix Completion
 - [[distributional-matrix-completion]] - Matrix completion with probability distribution entries using kernel mean embeddings + Tucker rank decomposition (arXiv: 2606.04176)
