@@ -72,6 +72,22 @@
   - Requires 5-7 noise scale factors for stable fitting
   - **Activation**: zero noise extrapolation, ZNE, gaussian exponential model, periodic circuits, error mitigation, NISQ
 
+### Exact Geometric Typicality and Bipartite Entanglement
+- [[geometric-typicality-entanglement]] - Derives Beta distribution, Lubkin's purity, and Page's formula asymptotic expansion from projected CLT on hyperspheres (arXiv: 2605.29732)
+  - Projected CLT on hyperspheres → Beta distribution for subsystem occupation probabilities
+  - Bernoulli-factorized asymptotic expansion of ⟨I(A:B)⟩ with (d_A²ᵏ-1)(d_B²ᵏ-1) factors, odd orders vanish
+  - Separates quantum coherence (𝔰𝔲⊗𝔰𝔲) vs classical (Cartan⊗Cartan) contributions via Schur majorisation
+  - Non-perturbative closed form via Bose-Einstein integral
+  - **Activation**: geometric typicality, bipartite entanglement, projected CLT, hyperspherical moments, Page's formula, Lubkin purity, Haar-random states, Bose-Einstein integral
+
+### Barbell Codes: qLDPC for Superconducting Hardware
+- [[barbell-qldpc-superconducting-hardware]] - qLDPC codes with constant hardware complexity scaling for superconducting quantum chips (arXiv: 2606.06062)
+  - Barbell-shaped Tanner graph mapped to native chip layout supporting all required two-qubit interactions
+  - Hardware complexity remains constant as code distance increases
+  - Circuit-level noise simulation: preserves information at target noise strength over trillions of QEC cycles
+  - Fault-tolerant logical multi-Pauli measurements with consistent per-round performance
+  - **Activation**: barbell codes, qLDPC, superconducting hardware, quantum error correction, fault tolerance, constant complexity scaling, circuit-level noise
+
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
 ## 2026-06-06 - Economics/Investment + Quantum (Cron Job)
