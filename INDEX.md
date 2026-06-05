@@ -2,6 +2,24 @@
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
+### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
+- [[neuromorphic-disturbance-observer]] - Neuromorphic control framework using spike-timing encoding with adaptive-threshold spiking (SFA-inspired), reducing spike events to 42.6% under noise (arXiv: 2606.05189)
+  - Integrate-and-fire neuron dynamics for disturbance estimates and control inputs
+  - Adaptive-threshold triggering mechanism inspired by spike-frequency adaptation
+  - Event-driven updates replacing continuous-time signal representations
+  - Bio-inspired robustness and adaptability in uncertain environments
+  - **Activation**: neuromorphic control, disturbance observer, spike-frequency adaptation, bio-plausible, event-driven, spiking neural network, integrate-and-fire, adaptive threshold
+
+### Early Psychosis Scaling Behaviour Within Critical Regime
+- [[psychosis-scaling-critical-regime]] - Renormalization group framework reveals systematic scaling exponent shifts indicating collective dynamics reorganization within preserved critical regime (arXiv: 2606.06290)
+  - Phenomenological renormalization group (PRG) coarse-graining across scales
+  - Power spectral density (PSD) and detrended fluctuation analysis (DFA) scaling
+  - Early psychosis shows preserved scale-invariant organization with shifted exponents
+  - Multi-observable framework for psychiatric disorder dynamics analysis
+  - **Activation**: psychosis, criticality, renormalization group, scaling, brain dynamics, collective organization, early psychosis, statistical mechanics, PSD, DFA
+
+## 2026-06-05 - Neuroscience Research (Cron Job)
+
 ### Cross-scale Spatially-aware Generative Modeling of Neurodegenerative Brain Organization
 - [[cross-scale-spatial-generative-neurodegeneration]] - Variational generative framework linking gene expression to cortical degeneration with graph-based spatial regularization, achieving 86% explained variance and 94% spatial correlation (arXiv: 2606.05870)
   - Allen Human Brain Atlas: 910 landmark genes across 68 cortical regions
