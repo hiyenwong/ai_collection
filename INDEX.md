@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job)
+
+### Updating the Standard Neuron Model in Artificial Neural Networks
+- [[updated-neuron-model-ann]] - Breakthrough paper replacing 70-year-old point neuron model with realistic cortical cell model, achieving higher expressivity, robustness, learning speed with same parameters (arXiv: 2605.30370)
+  - Neuroscience critique: point neuron too simplistic for fundamental neural processes since 1950s
+  - Realistic cortical cell model substitution without parameter increase
+  - Demonstrated advantages: expressivity boost, robustness enhancement, faster learning, reduced memorization, less training data needed
+  - **Activation**: neuron model, artificial neural network, cortical cells, point neuron, expressivity, robustness, learning speed, realistic neuron, ANN architecture
+
+### Learning Sequence Timing and Control of Replay Speed in Spiking Neural Networks
+- [[snn-sequence-timing-replay]] - Biologically plausible spiking mechanism for temporal memory replay with variable speed control (arXiv: 2605.22523)
+  - STDP-based sequence timing learning without external timing signals
+  - Novel replay speed control: faster/slower than training speed, maintains temporal proportions
+  - Compatible with hippocampal replay observations (compression/expansion during sleep)
+  - **Activation**: spiking neural network, sequence timing, memory replay, replay speed, STDP, temporal memory, synaptic plasticity, neural replay, hippocampal replay
+
 ## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Contextual Quantum Neural Networks for Stock Price Prediction
