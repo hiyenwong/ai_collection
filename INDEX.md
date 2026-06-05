@@ -1,4 +1,31 @@
-# AI Collection Index
+## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### QUIVER: Quantum-Informed Views for Enhanced Representations in Large ML Models
+- [[quantum-fisher-view-ml]] - Enrich classical ML features with quantum Fisher information views from VQCs for enhanced representations without fault-tolerant hardware (arXiv: 2606.02785)
+  - Quantum Fisher information matrix encodes intrinsic geometry of learned quantum state manifold
+  - Genuinely complementary modality to classical features, demonstrated on QM9 and JetClass
+  - Domain-agnostic: applicable to any architecture with targeted modifications
+  - Works before fault-tolerant quantum hardware (simulated VQCs suffice)
+  - Also covers Hamming quantum kernel for scalable SVMs avoiding exponential concentration (arXiv: 2605.31449)
+  - **Activation**: quantum Fisher view, QUIVER, quantum feature augmentation, QFIM, Hamming quantum kernel, quantum SVM, 量子费舍尔信息, quantum ML, variational quantum circuit, statistics
+
+## 2026-06-05 - Neuroscience Research (Cron Job)
+
+### Mapping Whisper Representations to Human ECoG Responses
+- [[whisper-ecog-alignment-neural-encoding]] - Whisper-ECoG alignment methodology using time-resolved neural encoder with attention for layer-wise brain correspondence during speech perception (arXiv: 2606.02305)
+  - Intermediate Whisper layers provide strongest correspondence with neural activity
+  - Time-resolved encoder: speech embeddings + recurrent temporal model + soft attention
+  - Attention maps reveal temporally local alignment between embeddings and neural responses
+  - Phonemic interpretability identifies anatomically coherent phoneme-category organization
+  - **Activation**: Whisper, ECoG, speech, neural encoding, brain alignment, attention, phoneme, cortical, interpretable, speech foundation model
+
+### Computation-Aware Kalman Filtering for Neural Dynamics
+- [[computation-aware-kalman-neural-dynamics]] - Computation-Aware State-Space Model (CASSM) for Bayesian latent variable modeling in scale-imbalanced neural recording regime (arXiv: 2606.01468)
+  - Extends computation-aware Kalman filtering to model selection with novel training loss
+  - Designed for scale-imbalanced regime (few trials, many neurons)
+  - Competitive with deep networks with improved uncertainty calibration
+  - Avoids quadratic complexity through tractable inference in large state-spaces
+  - **Activation**: Kalman filtering, neural dynamics, Bayesian, state-space model, latent variable, model selection, uncertainty calibration, CASSM, computational uncertainty
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
@@ -39,38 +66,6 @@
   - Uses quantum Fourier transform on finite geometries for structured optimization
   - Shell-based distance grouping enables coherent decoding beyond binary Hamming space
   - **Activation**: decoded quantum interferometry, rank-metric codes, translation association schemes, finite geometry, quantum fourier transform, structured optimization
-
-### Fermionic Non-Gaussianity via Bell Sampling
-- [[fermionic-bell-sampling-non-gaussianity]] - Bridge degree monotone for fermionic non-Gaussianity via Bell sampling, stronger Gaussian conversion no-go theorems (arXiv: 2606.05066)
-  - Bridge degree: largest eigenvalue sector of Λ = Σγ_j⊗γ_j on two copies, non-increasing under post-selected Gaussian protocols
-  - Stronger no-go theorems for Gaussian conversion than previously known monotones
-  - Efficiently witnessed through Bell sampling; lower-bounds non-Gaussian gate complexity
-  - Two algorithmic primitives: Gaussianity test with perfect completeness, state 2-design test
-  - **Activation**: fermionic non-gaussianity, bell sampling, bridge degree, gaussian conversion, fermionic quantum computing, resource theory
-
-### Entanglement Measure from Quantum Optimal Transport
-- [[quantum-optimal-transport-entanglement]] - Bipartite entanglement via minimal quantum Wasserstein distance to separable states, Lipschitz dual formulation (arXiv: 2606.04969)
-  - E(ρ) = min_{σ separable} W_1(ρ, σ) satisfies all entanglement axioms in single geometric framework
-  - Lipschitz dual gives explicit lower bounds for pure and mixed states, sharp constant for two-qubit
-  - Quantitative connection to entanglement witnesses: negative witness → certified lower bound on E
-  - Natural subadditivity and trace-distance estimates, points toward large-deviation conjectures
-  - **Activation**: quantum optimal transport, entanglement measure, Wasserstein distance, Lipschitz witness, separable states, experimental entanglement detection
-
-### No-Go Theorem for Gaussian Quantum Repeaters
-- [[no-go-gaussian-quantum-repeaters]] - Proves Gaussian repeaters cannot enhance quantum capacity of pure-loss channels via fractional extendibility framework (arXiv: 2606.05097)
-  - Fractional extendibility generalizes k-extendibility for Gaussian states
-  - Any Gaussian+LOCC repeater chain bounded by direct transmission capacity
-  - Closes open question about Gaussian vs non-Gaussian repeater protocols
-  - Framework applicable to broader Gaussian quantum network analysis
-  - **Activation**: gaussian quantum repeaters, no-go theorem, fractional extendibility, quantum capacity, bosonic channels, pure-loss channels
-
-### Hybrid Gaussian-Exponential Zero-Noise Extrapolation
-- [[gaussian-exponential-zero-noise-extrapolation]] - Hybrid Gaussian-exponential ZNE model for periodic quantum circuits, improved error mitigation (arXiv: 2605.29242)
-  - Hybrid model f(λ) = A·exp(-αλ²) + B·exp(-βλ) + C captures both Gaussian and exponential error components
-  - Superior to standard exponential ZNE for circuits with oscillatory error behavior
-  - Polynomial sample complexity, applicable to parameterized quantum circuits
-  - Requires 5-7 noise scale factors for stable fitting
-  - **Activation**: zero noise extrapolation, ZNE, gaussian exponential model, periodic circuits, error mitigation, NISQ
 
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
@@ -159,3 +154,4 @@
 ### Competition, Stability, and Functionality in E-I Neural Circuits
 - [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
   - Each neuron as agent minimizing local energy in competitive game
+  -
