@@ -36,6 +36,28 @@
   - Transition vectors quantify paradigm-dependent shifts between experimental contexts
   - **Activation**: predictive processing, predictive coding, ontology-constrained, multi-LLM, hypothesis scoring, literature synthesis, meta-analysis, evidence space, hypothesis-space mapping, local oddball, global oddball, LLM council, glossary validation, temperature metric
 
+## 2026-06-06 - Economics, Investment + Quantum (Cron Job)
+
+### The Inverse Born Rule Fallacy: On the Informational Limits of Phase-Locked Amplitude Encoding
+- [[inverse-born-rule-fallacy]] - 识别振幅编码缺陷，提出动态哈密顿编码(DHE)实现非对易量子演化 (arXiv: 2602.21350)
+  - 朴素振幅编码(psi=sqrt(P))使Hilbert空间阿贝尔化
+  - 相位失敏表示无法实现真正的量子优势
+  - DHE通过数据驱动的幺正演化生成非对易结构
+  - **Activation**: amplitude encoding fallacy, inverse born rule, DHE, phase-deaf, 振幅编码缺陷
+
+### Introducing the Quantum Economic Advantage Online Calculator
+- [[quantum-economic-advantage-calculator]] - 量子经济优势时间预测框架，计算成本等效下量子超越经典的时间点 (arXiv: 2508.21031)
+  - 经济优势=成本等效超越，不仅是速度
+  - Shor算法时间预测稳健；Grover算法高度依赖假设
+  - MIT FutureTech开源工具支持自定义优势估算
+  - **Activation**: quantum economic advantage, advantage calculator, quantum vs classical timing, cost-equivalent
+
+### When Recall Fails, Discord Remembers: A Quantum Analogue of Kuhn's Theorem
+- [[quantum-discord-behavioral-games]] - 量子discord替代战略记忆，在不完美的回忆博弈中恢复经典混合策略收益 (arXiv: 2505.08917)
+  - 量子discord(零纠缠)可替代战略记忆
+  - 行为策略+discord等价于经典混合策略收益
+  - discord比纠缠更鲁棒且成本更低
+  - **Activation**: quantum discord games, kuhn theorem quantum, imperfect recall quantum, behavioral quantum strategy
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### SC-TauPath: Structural Connectivity Attribution for Alzheimer Tau Propagation
