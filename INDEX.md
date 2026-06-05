@@ -3,6 +3,19 @@
 
 ## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
+
+### Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines
+- [[qml-feature-encoding]] - Systematic review of 66 QML encoding works with three-axis taxonomy and five-regime hardware decision framework. (arXiv: 2606.05387)
+  - Critical gate error threshold p* ~ 10^-3 for amplitude encoding viability
+  - Unified trainability analysis: Fourier expressivity + barren plateau + kernel concentration
+  - **Activation**: qml feature encoding, quantum data encoding, amplitude encoding, angle encoding, NISQ encoding
+
+### On the Spectral theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic curves
+- [[quantum-isogeny-sampling]] - First quantum polynomial-time algorithm for sampling secure supersingular elliptic curves without trusted setup. (arXiv: 2602.02263)
+  - O~(log^4 p) quantum gate complexity under GRH for secure curve sampling
+  - Enables provably secure CGL hash function instantiation
+  - **Activation**: isogeny graph, supersingular elliptic curve, quantum sampling, CGL hash, vectorization problem
+
 ### Quantum element-wise transforms
 - [[quantum-element-wise-transforms]] - Quantum algorithms for basic numerical linear algebraic tasks have proven essential for translating ... (arXiv: 2606.06456)
   - Core methodology for quant-ph
@@ -134,15 +147,15 @@
 
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
-  ### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
-  - [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
-    - FPGA平台能效提升4.5×-219.8×
-    - ASIC平台速度提升4.8×-22.01×，面积仅需1.2%-3.3%
-    - Mean-field synaptic drift model dynamical analysis
-    - Validated across different SNN network scales and datasets
-    - **Activation**: SNN训练, STDP, neuromorphic硬件, 能效优化, FPGA/ASIC, power-of-two
+### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
+  - FPGA平台能效提升4.5×-219.8×
+  - ASIC平台速度提升4.8×-22.01×，面积仅需1.2%-3.3%
+  - Mean-field synaptic drift model dynamical analysis
+  - Validated across different SNN network scales and datasets
+  - **Activation**: SNN训练, STDP, neuromorphic硬件, 能效优化, FPGA/ASIC, power-of-two
 
-  ## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Low-rank Distributional Matrix Completion
 - [[distributional-matrix-completion]] - Matrix completion with probability distribution entries using kernel mean embeddings + Tucker rank decomposition (arXiv: 2606.04176)
