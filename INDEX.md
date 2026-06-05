@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job)
+
+### Ontology-Constrained Multi-LLM Scoring of Hypothesis Support in Predictive Processing
+- [[ontology-constrained-llm-hypothesis-scoring]] - Local multi-LLM council for ontology-constrained literature synthesis in predictive coding neuroscience, producing quantitative hypothesis-space maps with auditable disagreement measurements (arXiv: 2606.05206)
+  - 36-concept expert glossary across 3 hypotheses: Predictive Suppression, Feedforward Error Propagation, Ubiquity
+  - 10 local LLM models score 31 studies independently, pairwise agreement analysis reveals structured disagreement
+  - Hypothesis-space temperature: geometric dispersion metric (lower for local oddball, higher for global oddball)
+  - Transition vectors quantify paradigm-dependent shifts between experimental contexts
+  - **Activation**: predictive processing, predictive coding, ontology-constrained, multi-LLM, hypothesis scoring, literature synthesis, meta-analysis, evidence space, hypothesis-space mapping, local oddball, global oddball, LLM council, glossary validation, temperature metric
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### SC-TauPath: Structural Connectivity Attribution for Alzheimer Tau Propagation
