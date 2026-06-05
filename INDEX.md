@@ -1,5 +1,17 @@
 # AI Collection Index
 
+## 2026-06-06 - Economics/Investment + Quantum Finance (Cron Job)
+
+### Quantum Computing for Financial Transformation: A Comprehensive Review
+- [[quantum-finance-stack-analysis]] - Financial computation stack framework evaluating quantum advantage across five domains: portfolio optimization, derivative pricing, tail-risk estimation, QML, and post-quantum security (arXiv: 2604.08180)
+  - Five-domain stack: constrained portfolio optimization, derivative pricing, tail-risk estimation, QML, post-quantum security
+  - Evaluation logic: identify bottleneck → specify quantum primitive → compare classical benchmark → assess realistic constraints
+  - Key conclusion: hybrid workflows strongest near-term case; quantum optimization credible when constrained search dominates
+  - Amplitude estimation matters most when repeated expectation evaluation is the binding cost
+  - Post-quantum cryptography strategically necessary — financial infrastructures must migrate before fault-tolerant attacks arrive
+  - 134 pages, handbook-style entry point combining system-level synthesis with reproducible case studies
+  - **Activation**: quantum finance stack, quantum portfolio optimization, derivative pricing, amplitude estimation, post-quantum security, hybrid quantum finance, QML finance, financial computation stack
+
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
 ### Brain-CLIPLM: Semantic Compression for EEG-to-Text Decoding
