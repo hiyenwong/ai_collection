@@ -11,6 +11,30 @@
   - Applications: force sensing, inflationary field dynamics analogs
   - **Activation**: inverted harmonic oscillator, quantum squeezing, time-reversal coherence, Wigner tomography, Bose-Einstein condensate, AtomChip, quantum fluctuations, inflationary dynamics
 
+### Breakeven Demonstration of Quantum Low-Density Parity-Check Codes
+- [[quantum-ldpc-breakeven]] - First breakeven demonstration of qLDPC codes on trapped-ion platform achieving logical error rates better than superconducting qubits with OMG architecture (arXiv: 2606.06455)
+  - Trapped-ion flexibility enables testing qLDPC, topological, and concatenated codes without hardware reconfiguration
+  - Optical-Metastable-Ground (OMG) architecture eliminates ion transport and coolant ion requirements
+  - 4 logical qubits encoded in 18 physical qubits with breakeven performance
+  - Logical qubit lifetimes comparable to or exceeding physical qubit T1
+  - **Activation**: quantum ldpc, qldpc breakeven, trapped ion error correction, OMG architecture, quantum error correction, qec breakeven, high-rate quantum codes
+
+### Spacetime Lifting for Low-Overhead Quantum Fault Tolerance
+- [[spacetime-lifting-quantum-fault-tolerance]] - Homological framework constructing fault complexes from symmetry-reduced product structures achieving almost-linear fault distance scaling (arXiv: 2606.06365)
+  - Fault complexes treat FT protocols as single spacetime objects using homological algebra
+  - Spacetime lifting beyond standard foliation reduces overhead while preserving fault distance
+  - Interprets fault complexes as measurement-based cluster-state protocols
+  - Identifies conditions for fault-tolerant logical teleportation
+  - **Activation**: spacetime lifting, quantum fault tolerance, fault complexes, homological quantum error correction, measurement-based quantum computing, logical teleportation
+
+### Geometric Decomposition of Score Matching Errors in Diffusion Models
+- [[score-matching-gradient-decomposition]] - Helmholtz-Hodge decomposition proves only gradient component affects diffusion model quality, with tightened KL divergence bound (arXiv: 2606.06179)
+  - L² score error is not the right intrinsic measure of marginal distributional quality
+  - Solenoidal component of score error is structurally invisible to Fokker-Planck dynamics
+  - Impossibility result: no monotone function of L² error uniformly bounds divergence
+  - Tractable gradient component estimator via dual Sobolev identity
+  - **Activation**: score matching, diffusion models, Helmholtz-Hodge decomposition, gradient decomposition, Fokker-Planck dynamics, KL divergence bound, Sobolev identity
+
 ## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### QUIVER: Quantum-Informed Views for Enhanced Representations in Large ML Models
