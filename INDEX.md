@@ -1,5 +1,26 @@
 # AI Collection Index
 
+## 2026-06-06 - Economics, Investment + Quantum Finance (Cron Job)
+
+### Efficient Complex-Valued State Preparation on Bucket Brigade QRAM
+- [[bbqram-state-preparation-finance]] - Architecture-aware quantum state preparation using BBQRAM + segment tree for O(log²(MN)) query time, eliminating QPU arithmetic via classical precomputation (arXiv: 2604.25644)
+  - 核心要点 1: Classical precomputation of rotation angles removes U_2CR reversible arithmetic from QPU
+  - 核心要点 2: Complex-valued extension via two-step magnitude-then-phase procedure with leaf phase storage
+  - **Activation**: BBQRAM state preparation, bucket brigade QRAM, complex-valued quantum encoding, quantum finance data loading, classical precomputation rotation angles, magnitude-then-phase
+
+## 2026-06-06 - Neuroscience Research (Cron Job)
+
+## 2026-06-06 - Neuroscience Research (Cron Job)
+
+### Intrinsic Computational Functionalism
+- [[intrinsic-computational-functionalism]] - Framework for observer-independent computational structures in consciousness research. Two criteria: system-intrinsic instantiation (C1) + causal-dynamical intervention (C2). Three-tier decomposition identifies dynamics-internal grain selection as key (arXiv: 2606.06424)
+  - Addresses observer-relativity objection: anti-computational arguments succeed only at tier (i) interpreter-relative labels
+  - C1: Property specifiable without observer labelling, invariant under structure-preserving relabellings
+  - C2: Grounded in state-space structure with mutually constraining variables, exhibited in counterfactual intervention responses
+  - Tier (iii) dynamics-internal grain selection is where intrinsic computational properties emerge
+  - Syntax-is-not-semantics, mapmaker arguments, biological-naturalist objections succeed against tier (i) but intrinsic computational functionalism survives
+  - **Activation**: computational functionalism, consciousness, observer-relativity, intrinsic computation, state-space dynamics, causal intervention, computational neuroscience, tier decomposition
+
 ## 2026-06-06 - Economics/Investment + Quantum (Cron Job)
 
 ### Derivative-Informed Operator Learning for Finance
