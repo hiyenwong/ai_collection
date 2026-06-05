@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### Interpreting FCDNNs via RG on Exponential Family
+- [[rg-dnn-interpretability]] - DNN training is equivalent to RG flow on exponential family distributions (arXiv: 2606.00157)
+  - Core insight: FC DNN feature extraction = RG coarse-graining fixed points
+  - Proved equivalence for 1D Ising (discrete) + continuous exponential family
+  - **Activation**: renormalization group, DNN interpretability, exponential family, statistical physics, feature extraction
+
+### Bath-induced deviations from Gibbs statistics for strongly interacting oscillators
+- [[non-gibbs-quantum-stats]] - Non-secular Redfield terms drive quantum oscillators to non-Gibbs states (arXiv: 2606.00239)
+  - Bath-induced coherences cause deviations from Boltzmann distribution
+  - Conditions identified for Gibbs statistics recovery
+  - **Activation**: quantum statistics, Gibbs state, Redfield equation, non-secular, open quantum systems, thermalization
+
+### How to make quantum cheese: efficient geometry oracles for exponentially many pseudorandom microstructures
+- [[quantum-geometry-oracles]] - Polynomial-size quantum oracles for structured pseudorandom materials (arXiv: 2606.00222)
+  - Unstructured geometries yield Grover-type lower bounds
+  - Pseudorandom locally textured materials admit efficient oracle circuits
+  - **Activation**: quantum oracle, geometry oracle, material simulation, pseudorandom structure, Grover bound
+
 ## 2026-06-05 - Quantum Optics (Cron Job)
 
 ### Continuous-Variable Quantum State Tomography Enabled by Quantum Mirrors
