@@ -1,5 +1,28 @@
 # AI Collection Index
 
+
+## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### Quantum element-wise transforms
+- [[quantum-element-wise-transforms]] - Quantum algorithms for basic numerical linear algebraic tasks have proven essential for translating ... (arXiv: 2606.06456)
+  - Core methodology for quant-ph
+  - Mathematical framework with rigorous proofs
+  - **Activation**: quantum, element-wise, transforms
+
+
+### Robustness of Entanglement Manipulation for almost i.i.d. sources
+- [[entanglement-manipulation-robustness]] - We study the robustness of asymptotic entanglement manipulation beyond the exact i.i.d. regime, focu... (arXiv: 2606.06392)
+  - Core methodology for quant-ph
+  - Mathematical framework with rigorous proofs
+  - **Activation**: robustness, of, entanglement, manipulation, for
+
+
+### Two-Sample Hypothesis Testing for Subspace Equality in Network Data
+- [[subspace-equality-hypothesis-testing]] - In many settings one is often interested in determining whether two networks share some joint struct... (arXiv: 2606.06482)
+  - Core methodology for stat.ME; math.ST
+  - Mathematical framework with rigorous proofs
+  - **Activation**: two-sample, hypothesis, testing, for, subspace
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
