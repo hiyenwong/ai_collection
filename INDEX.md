@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Contextual Quantum Neural Networks for Stock Price Prediction
+- [[contextual-quantum-neural-stock-prediction]] - Quantum multi-task learning architecture with share-and-specify ansatz for simultaneous multi-asset stock price prediction using logarithmic qubit overhead (arXiv: 2503.01884)
+  - Quantum Batch Gradient Update (QBGU) accelerates SGD using quantum superposition for simultaneous gradient processing
+  - QMTL share-and-specify ansatz enables shared feature extraction + asset-specific operators on same circuit
+  - Entanglement in shared layers naturally encodes inter-asset correlations
+  - O(log₂N) qubit scaling for N-asset portfolio representation
+  - **Activation**: quantum neural network, stock prediction, multi-task learning, QBGU, quantum batch gradient, QMTL, share-and-specify ansatz, quantum portfolio, multi-asset prediction, inter-asset correlation, quantum superposition gradient, amplitude encoding
+
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
 ### Ontology-Constrained Multi-LLM Scoring of Hypothesis Support in Predictive Processing
