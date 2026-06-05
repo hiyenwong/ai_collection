@@ -2,6 +2,24 @@
 
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
+### Brain-CLIPLM: Semantic Compression for EEG-to-Text Decoding
+- [[brain-cliplm-semantic-compression-eeg]] - Two-stage EEG decoding framework: semantic anchor recovery via contrastive learning + retrieval-grounded LLM reconstruction. Granularity matching principle aligns decoding complexity with neural information scale (arXiv: 2604.16370)
+  - Semantic compression hypothesis: EEG preserves recoverable semantic anchors, not full sentences
+  - Stage 1: Contrastive alignment extracts ordered keyword-level evidence
+  - Stage 2: Anchor-guided sentence reconstruction with chain-of-thought reasoning
+  - ZuCo benchmark: Top-5 retrieval 67.6%, Top-25 85.0%, intermediate granularity optimal
+  - **Activation**: EEG decoding, semantic compression, anchor recovery, granularity matching, CLIP alignment, retrieval-grounded LLM, brain-to-text, ZuCo benchmark
+
+### Vision Hopfield Memory Networks: Brain-Inspired Backbone
+- [[vision-hopfield-memory-networks]] - Hierarchical Hopfield associative memory + predictive-coding refinement replaces Transformer/Mamba. Local patch memory + global episodic memory + error correction. Enhanced interpretability, data efficiency, biological plausibility (arXiv: 2603.25157)
+  - Memory retrieval exposes input-to-pattern relationships for transparent decisions
+  - Three-layer architecture: Local Hopfield (V1 analogy), Global Hopfield (V2-V4 analogy), Predictive Coding
+  - Pattern reuse reduces training data needs, improves efficiency
+  - Biological justification: mirrors visual hierarchy and cortical feedback loops
+  - **Activation**: Hopfield memory, associative memory, predictive coding, interpretability, biological plausibility, vision backbone, hierarchical memory
+
+## 2026-06-06 - Neuroscience Research (Cron Job)
+
 ### Updating the Standard Neuron Model in Artificial Neural Networks
 - [[updated-neuron-model-ann]] - Breakthrough paper replacing 70-year-old point neuron model with realistic cortical cell model, achieving higher expressivity, robustness, learning speed with same parameters (arXiv: 2605.30370)
   - Neuroscience critique: point neuron too simplistic for fundamental neural processes since 1950s
