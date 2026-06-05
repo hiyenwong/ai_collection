@@ -12,6 +12,13 @@
   - 134 pages, handbook-style entry point combining system-level synthesis with reproducible case studies
   - **Activation**: quantum finance stack, quantum portfolio optimization, derivative pricing, amplitude estimation, post-quantum security, hybrid quantum finance, QML finance, financial computation stack
 
+### Hot-Starting Quantum Portfolio Optimization
+- [[hotstart-quantum-portfolio-optimization]] - Novel approach restricting quantum portfolio search to discrete solutions near continuous optimum via compact Hilbert space construction, reducing qubit count (arXiv: 2510.11153)
+  - Hot-starting from relaxed continuous solution outperforms SOTA on D-Wave Advantage quantum annealer
+  - Compact Hilbert space around continuous optimum reduces qubit requirements
+  - Smooth convex objective function + integer trading constraints = natural discrete mean-variance problem
+  - **Activation**: hot-start quantum optimization, portfolio optimization, quantum annealing, compact Hilbert space, D-Wave, QUBO, mean-variance portfolio, continuous relaxation
+
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
 ### Brain-CLIPLM: Semantic Compression for EEG-to-Text Decoding
