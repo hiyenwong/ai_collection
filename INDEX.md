@@ -56,9 +56,8 @@
   - 网络扩散模型增强 MLP + 梯度×输入归因量化每条结构连接边的贡献
   - 多尺度通路图谱：骨干边、高流量路线、枢纽 ROI，映射 Tau 传播路径
   - ADNI 234 名参与者验证，归因分数符合 Braak 分期解剖，揭示 SC 编码病理信息
-  # AI Collection Index
 
-  ## 2026-06-05 - Neuroscience Research (Cron Job)
+## 2026-06-05 - Neuroscience Research (Cron Job)
 
   ### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
   - [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
