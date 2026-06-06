@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job) - SNN Hardware Optimization
+
+### ITP-STDP: Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - Hardware-efficient STDP learning algorithm with power-of-two quantization and intrinsic timing, achieving 50x hardware reduction and 100x energy savings for on-chip SNN training (arXiv: 2606.06159)
+  - FPGA platform: 4.5× to 219.8× energy efficiency improvement, minimal resource utilization
+  - ASIC platform: 4.8× to 22.01× speedup, only 1.2% to 3.3% area of prior designs
+  - Mean-field synaptic drift model validates stability across network scales
+  - Algorithm-hardware co-design: shift operations replace multipliers, LUT replaces exponentials
+  - **Activation**: ITP-STDP, power-of-two STDP, intrinsic timing, SNN hardware training, neuromorphic energy efficiency, on-chip learning, FPGA SNN, ASIC neuromorphic, STDP optimization, synaptic drift model, hardware quantization, SNN acceleration
+
 ## 2026-06-06 - Neuroscience Research (Cron Job) - Latest Papers
 
 ### Whisper-ECoG Alignment with Interpretable Time-Resolved Neural Encoding
