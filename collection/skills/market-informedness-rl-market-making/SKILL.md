@@ -1,54 +1,75 @@
 ---
 name: market-informedness-rl-market-making
-description: "Market making with heterogeneous agents using reinforcement learning. MAPPO algorithm in CTDE setting with finite-horizon stability guarantees for Hawkes market-taker process. Analyzes how market maker profitability increases with market informedness (adverse selection risk). Use when: market making, RL trading, MAPPO, CTDE, Hawkes processes, adverse selection, order flow, bid-ask spread, profitability analysis."
-metadata:
-  arxiv_id: "2606.05882"
-  published: "2026-06-04"
-  authors: "Konrad Ochedzan, Nino Antulov-Fantulin"
-  tags: [market-making, reinforcement-learning, MAPPO, Hawkes-process, adverse-selection]
+description: "Market making with heterogeneous agents and reinforcement learning methodology — analyzing how market informedness impacts market makers' profitability and optimal quoting strategies."
+category: quantitative-finance
 ---
 
-## Context
+# Market Informedness and Market Making Profitability
 
-Market makers compete in environments with heterogeneous agents (informed traders, noise traders). Traditional models assume homogeneous agents, but real markets have information asymmetry. This paper studies how market maker profitability depends on the degree of market informedness.
+## Description
+Methodology for analyzing the impact of market informedness on market makers' profitability using reinforcement learning with heterogeneous agent models. Studies how the presence of informed traders, noise traders, and market makers interact in limit order books, and how market makers can adapt their quoting strategies based on estimated informedness levels.
+
+## Activation Keywords
+- market informedness
+- market maker profitability
+- RL market making
+- limit order book RL
+- informed trader modeling
+- heterogeneous agent market making
+- 市场知情度
+- 做市商利润
+- 强化学习做市
 
 ## Core Methodology
 
-1. **MAPPO in CTDE**: Multi-Agent Proximal Policy Optimization in Centralized Training with Decentralized Execution
-2. **Hawkes Process Modeling**: Market-taker arrival modeled as Hawkes process with finite-horizon stability guarantees
-3. **Adverse Selection Analysis**: Quantifies how informed trader presence affects market maker profitability through adverse selection risk
-4. **Heterogeneous Agent Simulation**: Multiple agent types with different information sets and trading objectives
+### 1. Agent Heterogeneity Model
+- **Informed Traders**: Trade based on private signals about asset fundamental value. Their order flow contains predictive information.
+- **Noise Traders**: Trade for liquidity reasons, uncorrelated with fundamentals. Their flow is mean-reverting.
+- **Market Makers**: Post bid-ask quotes, earn spread but face adverse selection from informed traders.
 
-## Key Results
+### 2. Informedness Estimation
+- Market makers estimate the probability that incoming order flow is informed vs noise
+- Use order flow imbalance, trade size, price impact patterns as signals
+- Bayesian updating of informedness posterior based on observed trades
+- Key insight: higher informedness → wider optimal spreads but lower expected volume
 
-- Market maker profitability INCREASES with market informedness (counterintuitive)
-- Adverse selection risk is bounded under Hawkes process stability conditions
-- CTDE setting enables coordination between market makers while maintaining decentralized execution
-- Hawkes process captures bursty order flow patterns better than Poisson baseline
+### 3. Reinforcement Learning for Quote Optimization
+- State: inventory, informedness estimate, recent order flow, volatility estimate
+- Action: bid-ask spread and quote depth
+- Reward: realized P&L (spread capture minus inventory risk minus adverse selection losses)
+- Algorithm: Deep Q-Network or policy gradient with inventory penalty
+
+### 4. Profitability Analysis
+- Decompose market maker P&L into: spread revenue, inventory P&L, adverse selection loss
+- Study how each component scales with informedness level
+- Identify the "informedness threshold" where market making becomes unprofitable
 
 ## Implementation Steps
 
-1. Define agent types: market makers (provide liquidity), informed traders (exploit information), noise traders (random)
-2. Model order flow as Hawkes process with self-excitation parameter
-3. Verify Hawkes process stability (spectral radius of excitation kernel < 1)
-4. Train MAPPO with centralized critic (observes all agent states) and decentralized actors (each agent observes local state)
-5. Evaluate profitability as function of informed trader fraction
-6. Analyze adverse selection: decompose P&L into spread revenue vs adverse selection losses
+1. **Simulate LOB**: Build a limit order book simulator with heterogeneous agent types
+2. **Generate Informedness Scenarios**: Vary the proportion of informed traders from 0% to 50%
+3. **Train RL Agent**: Train market maker policy across different informedness regimes
+4. **Analyze P&L Decomposition**: Track spread revenue, inventory risk, and adverse selection separately
+5. **Derive Optimal Policies**: Map informedness estimates to optimal quoting strategies
 
 ## Pitfalls
 
-- **Counterintuitive result**: Higher informedness can increase MM profitability — informed traders generate more volume, increasing spread capture
-- **Hawkes stability**: Must verify excitation kernel spectral radius < 1, otherwise process explodes
-- **CTDE communication**: Centralized critic must observe all states — simulation environment needs full observability during training
-- **Adverse selection decomposition**: Separating spread revenue from adverse selection losses requires careful attribution methodology
+- **Adverse Selection Underestimation**: RL agents may learn to widen spreads too aggressively, reducing volume and overall profitability. Balance is critical.
+- **Regime Change**: Informedness levels can shift suddenly (e.g., earnings announcements). Use regime-switching models or online learning for adaptation.
+- **Inventory Risk vs Spread Trade-off**: The RL reward function must properly weight inventory risk against spread revenue. Too little inventory penalty → blowup risk; too much → spreads too wide.
+- **Simulation-to-Reality Gap**: LOB simulators often miss real-world complexities (latency, queue position, multi-venue fragmentation). Validate with historical data before deployment.
 
 ## Verification
 
-- Verify Hawkes process stability (spectral radius condition)
-- Confirm MAPPO convergence with centralized critic
-- Check profitability curve is monotonically increasing in informedness fraction
-- Validate adverse selection decomposition sums to total P&L
+1. Verify RL policy converges to Avellaneda-Stoikov optimal spreads in the informed-trader-free limit
+2. Test that spread widens monotonically with informedness estimate
+3. Compare RL profitability against baseline strategies (constant spread, Avellaneda-Stoikov)
+4. Stress test: simulate sudden informedness spikes and verify RL agent adapts quickly
 
-## Activation Keywords
+## Related Skills
+- dealer-market-competition-nash-equilibrium
+- quantum-finance-portfolio
 
-market making, RL trading, MAPPO, CTDE, Hawkes process, adverse selection, order flow, bid-ask spread, profitability, informed traders, heterogeneous agents, liquidity provision
+## Resources
+- arXiv: 2606.05882
+- The Impact of Market Informedness on Market Makers' Profitability

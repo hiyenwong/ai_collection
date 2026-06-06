@@ -19,7 +19,7 @@
   - **Activation**: long-range dependence, Hurst exponent, fractional Brownian motion, volatility persistence
 
 ### ESG and Joint Fragility in Equity Markets
-- [[stress-test-resilience-esg-fragility]] - ESG and joint fragility analysis in equity markets using stress-amplified resilience framework (arXiv: 2606.05631)
+- [[esg-joint-fragility-equity-markets]] - ESG and joint fragility analysis in equity markets using stress-amplified resilience framework (arXiv: 2606.05631)
   - Joint fragility metrics for equity portfolios
   - ESG scores as resilience factors
   - Stress test under various market scenarios
@@ -173,13 +173,15 @@
   - Downstream: pose estimation, neural encoding, view synthesis
   - **Activation**: gaussian-splatting, animal-behavior, 3D-reconstruction, self-supervised, multi-view-video, neural-encoding
 
-### Short-Term Plasticity Stabilizes Goal-Conditioned Dynamics
-- [[stp-pfc-reservoir-goal-planning]] - STP preserves goal information as action-relevant dynamics in PFC reservoir model. Provides 40% robustness improvement under state noise (89.2% vs 49.5% success) (arXiv: 2606.03481)
-  - Facilitation-dominated STP (τ_F = 300ms optimal)
-  - Dynamic modulation of effective connectivity
-  - Goal- and task-state-conditioned patterning
-  - Basal ganglia TD readout learning architecture
-  - **Activation**: synaptic-plasticity, reservoir-computing, PFC, goal-conditioned, action-planning, TD-learning
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics
+- [[stp-stabilizes-goal-conditioned-dynamics]] - Short-Term Synaptic Plasticity (STP) stabilizes goal-conditioned dynamics in PFC-inspired reservoir model for multistep goal-directed action planning. Preserves action-relevant goal information under noise with 89.2% success rate vs 49.5% without STP (paired Cohen's dz=1.31) (arXiv: 2606.03481)
+  - Facilitation-dominant STP time constants identified via grid search
+  - Dynamic modulation of goal-dependent effective recurrent connectivity
+  - Basal-ganglia-inspired temporal-difference readout learning
+  - Effective connectivity: time-invariant without STP vs goal-conditioned with STP
+  - 100 independently generated networks for statistical validation
+  - Submitted to Neural Networks (68 pages, 33 figures)
+  - **Activation**: short-term synaptic plasticity, goal-conditioned dynamics, reservoir computing, PFC model, goal-directed planning, dynamic connectivity, facilitation-dominant STP
 
 ### Discrete Signaling Chaotic Regularization
 - [[chaotic-regularization-recurrent-networks]] - Discrete signaling mediates chaotic regularization in RNNs. Chaos acts as intrinsic regularizer: induces local roughness while preserving global smoothness, enhancing generalization (arXiv: 2606.04426)
@@ -222,7 +224,12 @@
   - **Activation**: attachment, interbrain-synchrony, EEG-hyperscanning, partner-belief, TPJ
 
 ### Cross-Scale Transcriptomic Neurodegeneration
-- [[cross-scale-spatial-generative-neurodegeneration]] - Variational generative framework links gene expression to cortical degeneration with spatial regularization. Achieves r=0.9439 spatial correlation on Allen Human Brain Atlas (910 genes, 68 regions) (arXiv: 2606.05870)
+- [[cross-scale-spatial-generative-neurodegeneration]] - Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization. Variational architecture bridges gene expression (910 genes, 68 regions) to cortical degeneration with graph-based spatial smoothness (arXiv: 2606.05870)
+  - Explained variance 86.04% predicting regional vulnerability
+  - Spatial correlation r=0.9439 (p<0.001) between predicted and observed degeneration
+  - Allen Human Brain Atlas transcriptomic profiles + ADNI FreeSurfer cortical thickness
+  - Latent representations reveal structured transcriptomic organization
+  - **Activation**: cross-scale modeling, generative neurobiology, transcriptomic programs, neurodegeneration, spatial generative, Alzheimer's disease, cortical thinning, Allen Brain Atlas
   - Microscale molecular organization → macroscale degeneration
   - Spatial-aware graph-based regularization
   - Cross-scale generative architecture
