@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-06 - Systems Engineering Research (Cron Job)
+
+### HANDOFF: Humanoid Agentic Task-Space Whole-Body Control
+- [[handoff-humanoid-control]] - Multi-teacher KL distillation for mixture-of-experts humanoid control with compact task-space interface. VLM-driven agentic planner with zero task-specific fine-tuning (arXiv: 2606.06493)
+  - Compact, explicit task-space interface design (intuitive, general, modular, expressive)
+  - Three complementary teachers: motion tracking (safety-filtered), locomotion, fall-recovery
+  - Context-conditioned gating for MoE student architecture
+  - Unitree G1 hardware validation with natural language task roll-outs
+  - **Activation**: humanoid control, whole-body control, task-space interface, multi-teacher distillation, MoE robotics, VLM planner, safety-filtered control, complementary teachers, KL distillation robotics, agentic manipulation
+
+### Code2LoRA: Hypernetwork-Generated Adapters for Code LLMs
+- [[code2lora-hypernetwork-adapter]] - Hypernetwork generates repository-specific LoRA adapters for zero inference overhead. Supports static snapshot (Code2LoRA-Static) and dynamic evolution (Code2LoRA-Evo with GRU state) scenarios (arXiv: 2606.06492)
+  - Hypernetwork-generated repository-specific LoRA adapters (zero inference token overhead)
+  - Two usage scenarios: Static (stable codebases) and Evo (active development with GRU)
+  - RepoPeftBench: First repository-level PEFT benchmark (604 repos, 40K+12K static, 215K+87K evo tasks)
+  - Matches per-repo LoRA upper bound (static), +5.2 pp over shared LoRA (evo)
+  - **Activation**: code LLM adaptation, repository-specific LoRA, hypernetwork adapters, software evolution, code adaptation, zero overhead knowledge injection, GRU-based adapter, RepoPeftBench, assertion completion, code drift handling
+
 ## 2026-06-06 - Economics, Investment + Quantum Finance (Cron Job)
 
 ### Certified Higher-Order QAOA for Collateral Optimization
@@ -68,4 +86,3 @@
   - Reduces solve time by 99.93% compared to cold start
   - Combines ML speed with mathematical programming optimality guarantees
   - **Activation**: unit commitment, warm-start, primal-dual, branch-and-bound, power system optimization, mixed-integer programming, deep learning warm-start
-
