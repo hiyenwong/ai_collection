@@ -1,5 +1,38 @@
 # AI Collection Index
 
+
+## 2026-06-07 - Economics, Investment + Quantum (Cron Job - Saturday Topic)
+
+### Quantum-Enhanced Support Vector Machine for High-Dimensional Financial Market Prediction
+- [[quantum-enhanced-svm-financial-prediction]] - Quantum kernel SVM for high-dimensional financial market prediction (DOI: 10.1109/nqcomp68334.2026.11497725)
+  - Hybrid quantum-classical SVM using quantum kernels for financial forecasting
+  - Addresses high-dimensional data challenges in financial markets
+  - **Activation**: quantum svm, financial prediction, quantum kernel, market prediction
+
+### Enhancing QAOA Through Manifold Optimization
+- [[qaoa-manifold-optimization]] - Riemannian manifold optimization techniques for QAOA on NISQ devices (DOI: 10.1155/que2/3418300)
+  - Uses intrinsic geometric structure to address QAOA nonconvexity
+  - Overcomes gradient descent challenges with three Riemannian methods
+  - **Activation**: manifold optimization, qaoa, riemannian, quantum optimization
+
+### Equivariant Quantum Approximate Optimization Algorithm
+- [[equivariant-qaoa]] - Symmetry-aware QAOA incorporating equivariant constraints for combinatorial optimization (DOI: 10.1109/tqe.2026.3654930)
+  - Reduces parameter space using group-theoretic symmetry
+  - Improves optimization efficiency for symmetric problems
+  - **Activation**: equivariant qaoa, symmetry, quantum optimization, group theory
+
+### Robust Investment Portfolio Management using Bayesian Neural Networks
+- [[bayesian-neural-portfolio-management]] - Bayesian neural network methodology for robust portfolio management with uncertainty quantification (DOI: 10.1016/j.iref.2026.105244)
+  - Quantifies uncertainty in portfolio optimization via Bayesian inference
+  - Adapts to changing market conditions dynamically
+  - **Activation**: bayesian portfolio, portfolio management, uncertainty quantification, dynamic markets
+
+### Hybrid Quantum-Behaved and Bio-Swarm Optimization Algorithm (BioQPSO)
+- [[bio-quantum-pso-optimization]] - Hybrid quantum-behaved PSO with bio-inspired swarm intelligence for complex optimization (DOI: 10.21203/rs.3.rs-9178752/v1)
+  - Combines quantum-probabilistic updates with ant colony/bee foraging behavior
+  - Handles multimodal and biologically structured search landscapes
+  - **Activation**: quantum pso, bio-inspired optimization, swarm intelligence, hybrid optimization
+
 ## 2026-06-06 - Neuroscience Research (Cron Job) - SNN Hardware Optimization
 
 ### ITP-STDP: Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
