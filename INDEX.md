@@ -1,5 +1,20 @@
 # AI Collection Index
 
+## 2026-06-07 - Economics & Investment Research (Cron Job)
+
+### Fairness and Strategy-Proofness in Automated Market Makers
+- [[amm-fairness-impossibility]] - Arrovian impossibility theorem for AMM design: no aggregation rule for weighted-product AMMs can be both fair and strategy-proof when n>2 LPs (arXiv: 2606.04959)
+  - Fairness forces weighted Aitchison centroid (mean-type); strategy-proofness forces median-type -- incompatible for n>2
+  - Obstruction is sharp: vanishes at n=2 where fair strategy-proof rules exist
+  - **Activation**: AMM design, automated market maker, DeFi protocol, fairness, strategy-proofness, Aitchison centroid, mechanism design
+
+### Dynamic Multi-Pair Trading Strategy in Cryptocurrency Markets with Deep Reinforcement Learning
+- [[drl-pair-trading-crypto]] - Filter-then-Rank pair selection with PPO+LSTM execution agent within deterministic risk shielding for crypto pair trading (arXiv: 2606.04574)
+  - Introduces Fixed Risk, Adaptive Mean (FRAM) execution model combining statistical arbitrage with DRL policies
+  - Bootstrap validation confirms outperformance at 10% significance; deterministic shielding prevents catastrophic divergence
+  - **Activation**: pair trading, cryptocurrency, deep reinforcement learning, PPO, LSTM, statistical arbitrage, safe RL
+
+
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC-Inspired Reservoir Model
