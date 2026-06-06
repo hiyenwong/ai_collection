@@ -2,6 +2,20 @@
 
 ## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
 
+### Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
+- [[intrinsic-computational-functionalism]] - 内在计算功能主义方法论 — 定义意识的计算基础，提出C1和C2准则避免观察者相对性 (arXiv: 2606.06424)
+  - 系统内在实例化准则：属性必须无观察者标签指定且结构保持不变
+  - 因果动力学组织准则：状态空间变量相互约束，干预下展现反事实响应
+  - 三层识别分解：Tier i(标签)、Tier ii(分区)、Tier iii(动力学粒度)
+  - **Activation**: 内在计算, 观察者独立, 意识计算, C1准则, C2准则, 三层分解, computational-functionalism, consciousness
+
+### Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
+- [[psychosis-scaling-critical-regime]] - 早期精神病临界区域内的标度行为偏差 — PRG+PSD+DFA分析揭示保留标度区域内的动力学重组而非临界丧失 (arXiv: 2606.06290)
+  - 现象学重整化群(PRG)粗粒化分析跨尺度集体动力学
+  - PSD和DFA多模态验证标度指数系统性偏移
+  - 保留标度不变组织，动力学重组而非丧失
+  - **Activation**: 早期精神病, 临界动力学, 标度行为, PRG, DFA, PSD, 重整化群, critical-regime, brain-dynamics
+
 ### TRIBE v2: Multimodal Brain Foundation Model for Image Decoding
 - [[tribe-v2-multimodal-brain-foundation]] - Tri-modal foundation model pretrained on 1000+ hours of video/audio/language fMRI enables 68% Top-10 image-retrieval improvement with synthetic data augmentation and zero-shot decoding in low-data regimes (arXiv: 2606.06345)
   - Synthetic fMRI generation from pretrained encoder boosts real data efficiency
@@ -35,6 +49,43 @@
   - Stress test under various market scenarios
   - Amplification effects measurement
   - **Activation**: ESG, joint fragility, equity markets, stress test, portfolio risk
+
+### Penalty-Free Quantum Annealer Portfolio Optimization
+- [[penalty-free-quantum-annealing-portfolio]] - Removes cardinality penalty from QUBO to reduce chain-break fractions from 92% to 0.04% on D-Wave Pegasus/Zephyr; enforces feasibility classically post-sampling (arXiv: 2605.17628)
+  - Penalty encoding (not topology) is binding constraint on current QPUs
+  - Objective-only QUBO + deterministic feasibility projector pipeline
+  - Tested on 4,468 hardware samples: chain breaks 71-92% → ≤0.04%
+  - Post-processed regret ≤0.03% vs classical greedy baseline
+  - **Activation**: penalty-free quantum annealer, portfolio optimization QUBO, cardinality constraint quantum annealing, D-Wave chain breaks, feasibility projector, quantum portfolio
+
+### D-Wave Hybrid Portfolio Optimization Audit
+- [[quantum-hybrid-audit]] - Operational decomposition audit shows D-Wave hybrid CQM spends 99% wall-clock on classical decomposition, QPU only 0.68% of budget; constraint-native classical pipeline explains reported wins (arXiv: 2605.17623)
+  - QPU access time: 0.034s out of 5s budget on LeapHybridCQM
+  - TabuSampler matches hybrid objectives at same wall-clock
+  - Cardinality penalty creates dense rank-one term (structural theorem)
+  - Out-of-sample Sharpe: QPU 1.94 vs 1/N baseline 2.22
+  - **Activation**: D-Wave hybrid audit, quantum portfolio benchmarking, operational decomposition, constraint-native, LeapHybridCQM, QPU time analysis
+
+### QAOA XY-Mixers for Constrained Portfolio Optimization
+- [[qaoa-xy-mixers-portfolio]] - Constraint-preserving QAOA with Dicke state initialization and XY-mixer for cardinality-constrained direct indexing; Sharpe 1.81 vs SA 1.31, HRP 0.98 on 10 US equities (arXiv: 2602.14827)
+  - XY-mixer Hamiltonian strictly preserves Hamming weight
+  - Trotterized adiabatic initialization mitigates barren plateaus
+  - High turnover (76.8%) trade-off analysis for institutional deployment
+  - **Activation**: QAOA XY-mixers, Dicke state initialization, barren plateau mitigation, constraint-preserving quantum optimization, direct indexing
+
+### Quantum RL for Dynamic Portfolio Optimization
+- [[quantum-rl-dynamic-portfolio]] - Variational quantum circuit-based QRL (quantum DDPG and DQN) for dynamic portfolio optimization with risk-adjusted performance competitive with classical Deep RL using fewer parameters (arXiv: 2601.18811)
+  - Quantum analogues of DDPG and DQN algorithms
+  - Comparable/exceeding risk-adjusted performance with orders of magnitude fewer parameters
+  - Cloud deployment latency dominates practical runtime
+  - **Activation**: quantum reinforcement learning, variational quantum circuit, QRL, dynamic portfolio, quantum DDPG, quantum DQN
+
+### VQE for Large-Scale Dynamic Portfolio Optimization
+- [[vqe-portfolio-optimization]] - Scalable hardware-aware VQE methodology for dynamic portfolio optimization up to 38 assets (IBEX 35) on IBM Fez QPU; ISQR routine + VQE Constrained decomposition for exceeding-qubit problems (arXiv: 2512.22001)
+  - ISQR (Ising Sample-based Quantum Configuration Recovery) improves QUBO solution quality
+  - VQE Constrained decomposition handles variables > available qubits
+  - Financial performance on par with classical methods on real QPU
+  - **Activation**: VQE portfolio optimization, ISQR, hardware-aware quantum workflow, IBEX35, IBM Fez, constrained VQE decomposition
 
 ## 2026-06-06 - Quantum Computing Research (Cron Job)
 
