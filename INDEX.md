@@ -63,6 +63,22 @@
   - Transition vectors quantify paradigm-dependent shifts between experimental contexts
   - **Activation**: predictive processing, predictive coding, ontology-constrained, multi-LLM, hypothesis scoring, literature synthesis, meta-analysis, evidence space, hypothesis-space mapping, local oddball, global oddball, LLM council, glossary validation, temperature metric
 
+
+## 2026-06-06 - Economics, Investment (Cron Job)
+
+### Quantum Machine Learning Model for Finance
+- [[quantum-machine-learning-model-finance]] - Quantum Machine Learning Model for Finance (10.1002/9781394347070.ch16)
+  - **Activation**: quantum-machine-learning-model-finance, quantum machine learning model finance
+
+### Portfolio Optimization with Mean-Variance-Spectrum Preferences
+- [[portfolio-optimization-mean-variance-spectrum]] - Portfolio Optimization with Mean-Variance-Spectrum Preferences (10.1016/j.qref.2026.102140)
+  - **Activation**: portfolio-optimization-mean-variance-spectrum, portfolio optimization mean variance spectrum
+
+### Portfolio Selection is More of a Belle Art Than Economics or Finance
+- [[portfolio-selection-belle-art-economics]] - Portfolio Selection is More of a Belle Art Than Economics or Finance (10.2139/ssrn.6293058)
+  - **Activation**: portfolio-selection-belle-art-economics, portfolio selection belle art economics
+
+
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### SC-TauPath: Structural Connectivity Attribution for Alzheimer Tau Propagation
