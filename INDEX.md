@@ -9,6 +9,45 @@
   - 图空间平滑正则化保持皮层组织拓扑
   - **Activation**: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, variational generative neurobiology
 
+
+## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Learning Temporal Patterns in Financial Time Series: A Comparative Study of Quantum LSTM and Quantum Reservoir Computing
+- [[quantum-time-series-finance]] - QLSTM and QRC with amplitude encoding match classical baselines in univariate settings, outperform in multivariate regimes with correlated inputs (arXiv: 2605.02656)
+  - 核心要点: Parameterized quantum circuits implement recurrent dynamics and reservoir
+  - 核心要点: Amplitude encoding enables efficient representation under realistic qubit constraints
+  - **Activation**: QLSTM, quantum reservoir computing, financial time series, quantum LSTM, 量子时间序列
+
+### Modeling and Resource Optimization for Quantum Oracles
+- [[quantum-oracle-optimization]] - HRSE model for formal oracle description and gate complexity analysis; ASDT algorithm reduces circuit depth by 53.99% (arXiv: 2605.21380)
+  - 核心要点: Hierarchical Recursive Synthesis-Evaluation enables formal oracle description
+  - 核心要点: Adaptive Space-depth Trade-off achieves optimal gate count under fixed qubit constraints
+  - **Activation**: quantum oracle, oracle optimization, HRSE model, ASDT algorithm, 量子优化
+
+### Exploring the Non-Convexity in Machine Learning using Quantum-Inspired Optimization
+- [[quantum-inspired-nonconvex-optimization]] - QIEO framework tunnels through local optima in non-convex ML problems using quantum superposition-inspired probabilistic representation (arXiv: 2605.07947)
+  - 核心要点: Maintains global search view, outperforms ADAM, DE, GA, IHT on sparse recovery and robust regression
+  - 核心要点: Quantum-inspired probabilistic representation enables tunneling through local optima
+  - **Activation**: quantum-inspired optimization, non-convex ML, QIEO, 量子启发优化
+
+### Quantum Optimization for Electromagnetics: Physics-Informed QAOA for Reconfigurable Intelligent Surfaces
+- [[physics-informed-qaoa-electromagnetics]] - Embeds mutual coupling into QUBO for RIS optimization; dense Hamiltonians maximize precision but infeasible on NISQ (arXiv: 2605.06048)
+  - 核心要点: Four Ising interaction models from phase-only to fully dense physical
+  - 核心要点: Sparse distance-penalized models are the necessary compromise for NISQ execution
+  - **Activation**: physics-informed QAOA, RIS optimization, electromagnetics quantum, 物理感知QAOA
+
+### Quantum-Enhanced Adversarial Robustness in Artificial Intelligence
+- [[quantum-adversarial-defense]] - Quantum optimization, feature mapping, and hybrid architectures for defending against adversarial attacks on AI systems (arXiv: 2605.28899)
+  - 核心要点: Quantum computing principles enhance learning efficiency, scalability, and robustness
+  - 核心要点: Hybrid quantum-classical architectures for secure AI in safety-critical domains
+  - **Activation**: quantum adversarial defense, quantum AI security, 量子对抗鲁棒性
+
+### Traveling Salesman Problem with a Preprocessing Method for Classical and Quantum Optimization
+- [[tsp-quantum-preprocessing]] - Preprocessing reduces candidate arcs to k-nearest neighbors per vertex, cutting decision variables for classical and quantum solvers (arXiv: 2603.23290)
+  - 核心要点: Restricts candidate arcs to lowest-cost neighbors, reducing O(n²) to O(kn) variables
+  - 核心要点: Improves scalability for both classical solvers and quantum optimization frameworks
+  - **Activation**: TSP preprocessing, quantum TSP, candidate arc reduction, 旅行商量子预处理
+
 ### Bio-Plausible Neuromorphic Disturbance Observer
 - [[neuromorphic-disturbance-observer]] - 生物启发神经形态干扰观测器基于仿真理论，IF神经元尖峰时序编码实现鲁棒控制，自适应阈值SFA机制实现42.6%尖峰事件减少 (arXiv: 2606.05189)
   - 尖峰时序编码替代连续时间信号表示
@@ -204,91 +243,6 @@
   - RepoPeftBench: First repository-level PEFT benchmark (604 repos, 40K+12K static, 215K+87K evo tasks)
   - Matches per-repo LoRA upper bound (static), +5.2 pp over shared LoRA (evo)
   - **Activation**: code LLM adaptation, repository-specific LoRA, hypernetwork adapters, software evolution, code adaptation, zero overhead knowledge injection, GRU-based adapter, RepoPeftBench, assertion completion, code drift handling
-
-## 2026-06-06 - Economics, Investment + Quantum Finance (Cron Job)
-
-### Certified Higher-Order QAOA for Collateral Optimization
-- [[certified-higher-order-qaoa-collateral]] - CR-HO-QAOA: certified higher-order quantum framework for margin- and CSA-aware collateral allocation with feasible-subspace mixers and CP-SAT certification (arXiv: 2606.04235)
-  - Adapter-first margin normalization (SIMM, proxy SIMM, legacy IA, VM-only, RQV)
-  - Higher-order binary model captures concentration pressure, custody batches, substitution tickets, chunky lots, liquidity effects
-  - Collateral-specific feasible-subspace mixers preserve one-hot choices and movement budgets
-  - Deterministic CP-SAT master solver certifies every quantum candidate
-  - Improves certified sample quality vs. QUBO-style and generic-mixer baselines
-  - **Activation**: certified QAOA collateral, margin-aware quantum optimization, CSA collateral allocation, higher-order QAOA finance, feasible-subspace mixer, quantum collateral optimization, CP-SAT quantum certification
-
-### Efficient Complex-Valued State Preparation on Bucket Brigade QRAM
-- [[bbqram-state-preparation-finance]] - Architecture-aware quantum state preparation using BBQRAM + segment tree for O(log²(MN)) query time, eliminating QPU arithmetic via classical precomputation (arXiv: 2604.25644)
-  - 核心要点 1: Classical precomputation of rotation angles removes U_2CR reversible arithmetic from QPU
-  - 核心要点 2: Complex-valued extension via two-step magnitude-then-phase procedure with leaf phase storage
-  - **Activation**: BBQRAM state preparation, bucket brigade QRAM, complex-valued quantum encoding, quantum finance data loading, classical precomputation rotation angles, magnitude-then-phase
-
-## 2026-06-06 - Neuroscience Research (Cron Job)
-
-### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
-- [[neuromorphic-disturbance-observer]] - Neuromorphic control framework using integrate-and-fire neuron dynamics with adaptive-threshold triggering inspired by spike-frequency adaptation (SFA). Reduces spike events to 42.6% under noise while maintaining robustness and adaptability (arXiv: 2606.05189)
-  - Event-driven control via spike-timing encoding (not continuous-time)
-  - Adaptive-threshold mechanism: history-dependent regulation inspired by biological SFA
-  - Bio-plausible robustness: 42.6% spike reduction under noisy conditions
-  - Applicable to neuromorphic hardware (Loihi, SpiNNaker) and robotic control
-  - **Activation**: neuromorphic, disturbance observer, IF neuron, spike-frequency adaptation, bio-plausible control, event-driven, adaptive threshold, neural control, neuromorphic hardware
-
-### SC-TauPath: Structural Connectivity Attribution for Tau Propagation
-- [[sc-taupath-alzheimer-tau-propagation]] - Attribution framework mapping Alzheimer's tau propagation pathways using gradient × input on NDM-augmented MLP. Multi-scale pathway maps (backbone edges, high-traffic routes, hub ROIs) validated against Braak staging anatomy from 234 ADNI participants (arXiv: 2606.04066)
-  - Network Diffusion Model (NDM)-augmented MLP for tau prediction
-  - Gradient × input attribution: biologically interpretable pathway maps
-  - Multi-scale representation: backbone edges, high-traffic routes, hub ROIs
-  - Validated against Braak staging anatomy (stages I-II, III-IV, V-VI)
-  - Low biophysical assumptions: learning-based approach vs physics-based diffusion models
-  - **Activation**: Alzheimer's, tau propagation, structural connectivity, attribution framework, Braak staging, network diffusion, gradient attribution, pathway mapping, ADNI, neurodegeneration
-
-### Intrinsic Computational Functionalism
-- [[intrinsic-computational-functionalism]] - Framework for observer-independent computational structures in consciousness research. Two criteria: system-intrinsic instantiation (C1) + causal-dynamical intervention (C2). Three-tier decomposition identifies dynamics-internal grain selection as key (arXiv: 2606.06424)
-  - Addresses observer-relativity objection: anti-computational arguments succeed only at tier (i) interpreter-relative labels
-  - C1: Property specifiable without observer labelling, invariant under structure-preserving relabellings
-  - C2: Grounded in state-space structure with mutually constraining variables, exhibited in counterfactual intervention responses
-  - Tier (iii) dynamics-internal grain selection is where intrinsic computational properties emerge
-  - Syntax-is-not-semantics, mapmaker arguments, biological-naturalist objections succeed against tier (i) but intrinsic computational functionalism survives
-  - **Activation**: computational functionalism, consciousness, observer-relativity, intrinsic computation, state-space dynamics, causal intervention, computational neuroscience, tier decomposition
-
-## 2026-06-06 - Economics/Investment + Quantum (Cron Job)
-
-### Derivative-Informed Operator Learning for Finance
-- [[derivative-informed-operator-learning-finance]] - Neural operators trained to match pricing operators AND Fréchet derivatives for on-the-fly Greeks, hedging, and control. Vega error -40%, Delta error -15% (arXiv: 2606.05900)
-  - Neural operator learns entire pricing map, not just pointwise prices
-  - Fréchet derivative matching ensures accurate Greeks (Delta, Vega, Gamma)
-  - Theoretical hedging error bounds from operator approximation theory
-  - Random-feature DeepONet for efficient volatility surface fitting
-  - Optimizer stability guarantees under approximation error
-  - **Activation**: derivative pricing, operator learning, neural operator, DeepONet, Fréchet derivative, Greeks, hedging, Vega, Delta, volatility surface, quantitative finance
-
-### Market Informedness & RL Market Making
-- [[market-informedness-rl-market-making]] - Multi-agent RL (MAPPO) for market making with Hawkes-driven order flow. Counterintuitive: profitability increases with market informedness (arXiv: 2606.05882)
-  - Heterogeneous agents: informed traders, noise traders, market makers
-  - MAPPO in CTDE (Centralized Training, Decentralized Execution)
-  - Hawkes process models self-exciting order flow arrivals
-  - Finite-horizon stability guarantees for deployable strategies
-  - Informed flow provides more predictable adverse selection patterns
-  - **Activation**: market making, informedness, adverse selection, reinforcement learning, multi-agent, MAPPO, CTDE, Hawkes process, order flow, liquidity
-
-### Dealer Market Competition with Internalisation
-- [[dealer-market-competition-nash-equilibrium]] - Closed-form Nash equilibrium for multi-dealer order flow competition using variational approach. Balances internalisation vs externalisation for inventory risk (arXiv: 2606.06413)
-  - Variational formulation of N-dealer quoting game
-  - Internalisation: skew quotes to attract offsetting flow
-  - Externalisation: offload inventory in inter-dealer market
-  - Closed-form solution via coupled Riccati equations
-  - Competition intensity determines spread compression  
-  - Strategic inventory management through spread adjustments
-  - **Activation**: dealer market, Nash equilibrium, internalisation, inventory risk, variational approach, quoting game, market microstructure
-
-## 2026-06-06 - Economics/Finance + Quantum (Cron Job - Evening Batch 2)
-
-### Regret Minimization with Adaptive Opponents in Repeated Games
-- [[rp-regret-adaptive-opponents]] - RP-Regret methodology for repeated games with adaptive opponents — measures best-in-hindsight utility with opponent responses, converges to subgame perfect equilibria, enables cooperative outcomes in coordination games (arXiv: 2606.06486)
-  - RP-Regret captures opponent adaptivity that external regret misses
-  - Three algorithms: oracle-based, linearized surrogate, slow-changing opponent
-  - Sublinear regret requires bounded comparator variation and memory constraints
-  - When all players minimize RP-Regret, subgame perfect equilibria emerge
-  - **Activation**: repeated policy regret, RP-Regret, adaptive opponent, subgame perfect equilibrium, counterfactual reasoning, game theory, regret minimization
 
 ## 2026-06-05 - AI Systems Engineering (Cron Job)
 
