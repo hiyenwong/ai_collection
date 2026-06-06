@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job - Final)
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - TRIBE v2数据增强提升脑到图像解码性能，使用1000+小时预训练编码模型生成合成fMRI，Top-10准确率提升高达68%，支持零样本脑解码 (arXiv: 2606.06345)
+  - 三模态编码模型（视频+音频+语言）学习刺激→fMRI映射
+  - 合成数据增强：生成fMRI响应扩充小数据集
+  - NSD/BOLD5000数据集验证，不同数据源需调整最优增强比例
+  - 纯合成训练可超越随机水平，零样本解码突破
+  - **Activation**: brain decoding, fMRI, brain-to-image, TRIBE v2, 脑解码, 数据增强, synthetic fMRI, 零样本解码
+
 ## 2026-06-06 - Neuroscience Research (Cron Job - Latest Hourly)
 
 ### Cross-Scale Spatially-Aware Generative Modeling for Neurodegeneration
