@@ -1,5 +1,46 @@
 # AI Collection Index
 
+## 2026-06-06 - Economics/Finance + Quantum Research (Cron Job - Hourly Batch 3)
+
+### Regime-Adaptive Continual Learning for Portfolio Management
+- [[recap-regime-adaptive-portfolio]] - ReCAP framework integrating continual learning into portfolio management via adaptive regime detection, policy libraries, and regime-gated policy combination — outperforms rolling-window retraining across 5 datasets (arXiv: 2606.00143)
+  - Adaptive regime detection segments market data into variable-length regimes
+  - Policy library stores regime-specific knowledge, regime-gate adaptively combines policies
+  - Selective continual update prevents catastrophic forgetting
+  - **Activation**: regime detection, portfolio management, continual learning, adaptive trading, ReCAP, market regime, policy library
+
+### Distributional Portfolio Optimization Unified Framework
+- [[distributional-portfolio-optimization]] - DPO unifies Bayesian, robust, chance-constrained, and distributional RL portfolio methods through joint coupling Gamma_theta — Wasserstein-CVaR duality, credible-radius calibration beats 24-month validation (arXiv: 2605.30464)
+  - Joint coupling Gamma_theta(dw,dr) organizes all distributional portfolio approaches
+  - Bayesian credible-radius calibration achieves 3-7 bp accuracy vs oracle without validation data
+  - Distributional Bellman contraction enables RL-based portfolio optimization
+  - **Activation**: distributional portfolio optimization, DPO, Wasserstein DRO, Bayesian portfolio, CVaR, credible radius
+
+## 2026-06-06 - Neuroscience Research (Cron Job - Evening)
+
+### Whisper-ECoG Alignment: Speech Foundation Model to Neural Encoding
+- [[whisper-ecog-alignment-neural-encoding]] - Mapping Whisper representations to human intracranial ECoG with time-resolved neural encoder — intermediate layers show strongest brain alignment, phonemic interpretability reveals anatomically coherent organization (arXiv: 2606.02305)
+  - Time-resolved encoder with recurrent temporal model + soft attention
+  - Intermediate Whisper layers (12-16) achieve highest encoding performance
+  - Phonemic analysis identifies anatomically coherent electrode organization
+  - **Activation**: speech neural encoding, whisper ecog, brain alignment, speech perception, cortical processing, phonemic analysis
+
+### Computation-Aware Kalman Filtering for Neural Dynamics
+- [[computation-aware-kalman-neural-dynamics]] - Computation-Aware State-Space Model (CASSM) for scale-imbalanced regime (few trials, many neurons) with model selection and improved uncertainty calibration (arXiv: 2606.01468)
+  - Computational uncertainty tracking in Bayesian inference
+  - Novel training loss accounting for posterior approximation errors
+  - Tractable inference in large state-spaces (O(T) complexity)
+  - Competitive with deep networks with calibrated uncertainty
+  - **Activation**: kalman filtering, neural dynamics, bayesian inference, state-space model, computational uncertainty, cassm
+
+### Functional Ensembles as Units of Computation in Deep SNNs
+- [[functional-ensembles-deep-spiking-networks]] - First-order functionally-connected (1FC) ensembles aggregate cofiring predicts downstream responses via ReLU-like relationship; rare high-cofiring events encode information; perturbation diagnostics reveal early-layer vulnerability (arXiv: 2606.00073)
+  - 1FC ensemble construction from statistically significant correlations
+  - Aggregate cofiring → downstream response: ReLU-like with systematic gain scaling
+  - Reliable encoding only during rare high-cofiring events
+  - Early/intermediate layers most disrupted under noise/adversarial perturbations
+  - **Activation**: functional connectivity, spiking neural network, ensemble cofiring, 1FC group, rare events, deep snn analysis
+
 ## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
 
 ### Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
