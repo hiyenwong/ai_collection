@@ -29,6 +29,14 @@
 
 ## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+### Quantum Computing for Financial Transformation: A Review
+- [[quantum-finance-stack-analysis]] - Financial computation stack framework for evaluating quantum advantage across five finance domains: portfolio optimisation, derivative pricing, risk estimation, quantum ML, and post-quantum security (arXiv: 2604.08180)
+  - Five-layer financial computation stack: Portfolio Optimisation → Derivative Pricing → Risk Estimation → Quantum ML → Post-Quantum Security
+  - Four-step evaluation logic: identify bottleneck, specify quantum primitive, compare classical benchmark, judge under realistic constraints
+  - Three hybrid workflow patterns: classical-quantum-classical pipeline, warm-start optimization, hybrid derivative pricing
+  - Key pitfalls: overclaiming advantage, amplitude encoding traps (ψ=√P loses phase), hardware mismatch, financial realism gap
+  - **Activation**: quantum finance, portfolio optimization, QAOA, quantum amplitude estimation, derivative pricing, quantum risk, quantum machine learning, post-quantum cryptography, financial computation stack, hybrid quantum-classical, QUBO, CVaR, quantum annealing
+
 ### Digital Quantum Reservoir Computing for ATM Time Series Prediction
 - [[digital-quantum-reservoir-computing-finance]] - NISQ-compatible quantum reservoir computing framework for multi-step financial time series forecasting using parametrized 4-qubit reservoirs with partial measurement (arXiv: 2606.04686)
   - Fixed-structure parametrized quantum circuits (4-8 qubits) as temporal reservoir

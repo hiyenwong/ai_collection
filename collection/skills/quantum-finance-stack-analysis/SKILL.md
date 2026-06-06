@@ -1,85 +1,132 @@
 ---
-name: quantum-finance-stack-analysis
-description: "Financial computation stack framework for evaluating quantum advantage across five connected domains: constrained portfolio optimization, derivative pricing, tail-risk estimation, quantum machine learning, and post-quantum security. Use when analyzing whether quantum computing can provide advantage in financial workflows, comparing quantum primitives against classical benchmarks, designing hybrid quantum-classical financial pipelines, or assessing post-quantum cryptographic readiness for financial infrastructure."
+name: "quantum-finance-stack-analysis"
+description: "Financial computation stack framework for evaluating quantum advantage across five finance domains: portfolio optimisation, derivative pricing, risk estimation, quantum ML, and post-quantum security. Provides structured methodology for assessing when quantum computing offers real value in financial applications."
+category: "quantum-finance"
+trigger: "quantum finance, portfolio optimization, derivative pricing, quantum risk, quantum machine learning finance, post-quantum security, financial transformation, quantum computing finance, QAOA portfolio, quantum amplitude estimation, quantum finance stack"
+source: "arxiv:2604.08180"
 ---
 
 # Quantum Finance Stack Analysis
 
+> Source: arXiv:2604.08180 — "Quantum Computing for Financial Transformation: A Review of Optimisation, Pricing, Risk, Machine Learning, and Post-Quantum Security"
+> Authors: Hui Gong, Akash Sedai, Thomas Schroeder, Francesca Medda (UCL IFT Center for Quantum Finance)
+> Published: April 2026
+
 ## Overview
 
-Framework for systematically evaluating quantum computing advantage in finance using a unified five-domain stack: (1) constrained portfolio optimization, (2) derivative pricing, (3) tail-risk/scenario estimation, (4) quantum machine learning, (5) post-quantum security. Each layer identifies the financial bottleneck, specifies the quantum primitive, and compares against an explicit classical benchmark.
+This framework provides a systematic methodology for evaluating quantum computing applications in finance. Rather than treating quantum finance topics as isolated demonstrations, it studies them as linked layers of a **financial-computation stack** with a common evaluative logic.
 
-## Core Framework
+## Core Evaluation Logic
 
-### Evaluation Logic (applies to all five domains)
+For each quantum finance application, apply this four-step evaluation:
 
-1. **Identify the bottleneck**: combinatorial search, expectation estimation, rare-event analysis, representation learning, or cryptographic resilience
-2. **Specify the quantum primitive**: QAOA/QUBO, amplitude estimation, quantum ML, or PQC migration
-3. **Compare with classical benchmark**: explicit comparison with best classical approach
-4. **Assess under realistic constraints**: hardware limits, implementation complexity, governance
+1. **Identify the financial bottleneck** — What computational challenge is the binding constraint?
+2. **Specify the relevant quantum primitive** — Which quantum algorithm addresses it?
+3. **Compare against an explicit classical benchmark** — What is the state-of-the-art classical baseline?
+4. **Judge under realistic constraints** — Consider hardware limits, implementation complexity, and governance requirements
 
-### Domain 1: Constrained Portfolio Optimization
+## Five Layers of the Quantum Finance Stack
 
-- **Bottleneck**: discrete constrained combinatorial search
-- **Quantum primitive**: QAOA, quantum annealing, hot-start QUBO
-- **Key insight**: most credible near-term quantum advantage when constrained search dominates the cost
-- **Techniques**: hot-starting from relaxed continuous solution to reduce qubit count (arXiv:2510.11153); constraint-preserving mixers; Dicke state initialization
+### Layer 1: Portfolio Optimisation (Constrained Search)
 
-### Domain 2: Derivative Pricing
+**When quantum helps**: When combinatorial constraints dominate the problem complexity.
 
-- **Bottleneck**: repeated expectation evaluation (Monte Carlo)
-- **Quantum primitive**: amplitude estimation (quadratic speedup over MC)
-- **Key insight**: advantage scales with number of repeated evaluations
-- **Techniques**: quantum heat equation solvers for PDE-based pricing; quantum PDE frameworks for multi-asset options
+**Key methods**:
+- QUBO encoding of portfolio selection problems
+- QAOA (Quantum Approximate Optimization Algorithm)
+- Quantum annealing (D-Wave)
+- ESG-constrained portfolio design
 
-### Domain 3: Tail-Risk & Scenario Estimation
+**Design trade-offs**:
+- QAOA: Better for gate-based systems, depth vs. quality trade-off
+- Quantum annealing: Better for large-scale instances but limited connectivity
+- Classical MIP: Still superior for small-to-medium instances (< 1000 assets)
 
-- **Bottleneck**: rare-event analysis, stress testing
-- **Quantum primitive**: amplitude amplification for tail probability estimation
-- **Key insight**: quadratic advantage when rare events require many samples
-- **Techniques**: quantum CVaR estimation; importance sampling on quantum hardware
+**Hot-starting strategy**: Use continuous relaxation solutions to restrict the quantum search space, reducing qubit requirements.
 
-### Domain 4: Quantum Machine Learning
+### Layer 2: Derivative Pricing (Expectation Estimation)
 
-- **Bottleneck**: representation learning for financial data
-- **Quantum primitive**: quantum kernel methods, variational quantum classifiers
-- **Key insight**: task-dependent; strongest when data naturally maps to quantum Hilbert space
-- **Techniques**: quantum reservoir computing for time series; QNN for stock prediction; contextual QNN with QMTL architecture (share-and-specify ansatz)
+**When quantum helps**: When repeated expectation evaluation is the binding cost.
 
-### Domain 5: Post-Quantum Security
+**Key methods**:
+- Quantum Amplitude Estimation (QAE) — quadratic speedup over Monte Carlo
+- Variants: Maximum Likelihood QAE, Iterative QAE, Adaptive QAE
+- State preparation via BBQRAM for efficient data loading
 
-- **Bottleneck**: long-horizon cryptographic resilience
-- **Quantum primitive**: PQC migration (NIST standards)
-- **Key insight**: strategically necessary NOW — migrate before fault-tolerant attacks arrive
-- **Techniques**: NIST PQC algorithm selection; TLS migration; financial infrastructure risk assessment
+**Practical considerations**:
+- Asian option pricing as the canonical test case
+- Hybrid strategies combining classical path simulation with quantum estimation
+- NISQ-era limitations require noise-resilient QAE variants
 
-## Hybrid Workflow Design
+### Layer 3: Risk Estimation & Scenario Simulation
 
-The strongest near-term case lies in carefully designed hybrid workflows rather than blanket quantum advantage claims:
+**When quantum helps**: For tail-risk analysis and rare-event simulation.
 
-1. **Classical preprocessing**: classical solver for relaxed continuous solution
-2. **Quantum refinement**: quantum optimization near the classical optimum (hot-start)
-3. **Classical post-processing**: validation, risk analysis, reporting
+**Key methods**:
+- Quantum CVaR (Conditional Value at Risk) estimation
+- Quantum scenario generation
+- System-level risk modeling via quantum simulation
 
-## Quick Reference: Quantum Primitives for Finance
+**Key insight**: Quantum advantage is most credible for heavy-tailed distributions where classical Monte Carlo requires excessive samples.
 
-| Problem | Quantum Primitive | Expected Advantage |
-|---------|-------------------|-------------------|
-| Portfolio optimization | QAOA, QA | Polynomial speedup on constrained search |
-| Option pricing | Amplitude estimation | Quadratic speedup over Monte Carlo |
-| Risk estimation | Amplitude amplification | Quadratic speedup on rare events |
-| Pattern recognition | QML/QNN | Task-dependent |
-| Data encoding | QRAM (BBQRAM) | Polylogarithmic query time |
-| Security | PQC migration | Necessary defense |
+### Layer 4: Quantum Machine Learning
 
-## Activation Keywords
+**Assessment**: Strongly task-dependent — no universal advantage yet.
 
-- quantum finance stack
-- 量子金融分析
-- quantum portfolio optimization
-- quantum advantage finance
-- 量子计算金融
-- quantum derivative pricing
-- quantum risk estimation
-- post-quantum security finance
-- hybrid quantum finance workflow
+**Key considerations**:
+- Feature encoding quality determines success (avoid "phase-deaf" amplitude encoding)
+- Dynamical Hamiltonian Encoding (QIFT) preferred over static amplitude encoding
+- Hybrid quantum-classical architectures most practical
+
+### Layer 5: Post-Quantum Security
+
+**Status**: Already strategically necessary — not speculative.
+
+**Key points**:
+- Financial infrastructures must migrate before fault-tolerant quantum attacks arrive
+- "Harvest now, decrypt later" threat is real and immediate
+- PQC (Post-Quantum Cryptography) standardization is underway
+- QKD offers theoretical security but faces practical deployment limits
+
+## Hybrid Workflow Design Patterns
+
+### Pattern 1: Classical Preprocessing → Quantum Core → Classical Postprocessing
+- Use classical methods for data preparation and result interpretation
+- Reserve quantum hardware for the computational bottleneck
+- Example: Classical data cleaning → QAOA optimization → Classical portfolio rebalancing
+
+### Pattern 2: Warm-Start Quantum Optimization
+- Solve relaxed continuous problem classically
+- Use solution to constrain quantum search space
+- Reduces qubit requirements and improves solution quality
+
+### Pattern 3: Hybrid Derivative Pricing
+- Classical: Path simulation, model calibration
+- Quantum: Amplitude estimation for pricing computation
+- Combines classical flexibility with quantum estimation speedup
+
+## Implementation Checklist
+
+- [ ] Identify whether the problem is constrained-search or expectation-estimation dominated
+- [ ] Select appropriate quantum primitive (QAOA, QAE, QML, or PQC)
+- [ ] Establish classical baseline for comparison
+- [ ] Assess hardware requirements vs. available quantum resources
+- [ ] Design hybrid workflow to maximize practical utility
+- [ ] Include expert financial validation in evaluation pipeline
+- [ ] Plan for PQC migration timeline
+
+## Pitfalls
+
+- **Overclaiming advantage**: Most quantum finance demos lack rigorous classical benchmarks
+- **Encoding traps**: Simple amplitude encoding (ψ = √P) loses phase information and quantum advantage
+- **Hardware mismatch**: Algorithm complexity may exceed near-term quantum hardware capabilities
+- **Financial realism**: Algorithmically optimal portfolios may violate practical constraints (diversification, liquidity, transaction costs)
+- **Expert validation gap**: Always incorporate domain expert assessment alongside algorithmic metrics
+
+## Activation
+
+Use when: evaluating quantum computing applications in finance, designing quantum finance workflows, comparing quantum vs classical financial algorithms, planning PQC migration, building hybrid quantum-classical financial systems.
+
+## Keywords
+
+quantum finance, portfolio optimization, QAOA, quantum amplitude estimation, derivative pricing, quantum risk, quantum machine learning, post-quantum cryptography, financial computation stack, hybrid quantum-classical, QUBO, CVaR, quantum annealing
