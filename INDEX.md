@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-06-06 - Economics/Finance + Quantum (Cron Job - Evening)
+
+### Dealer Market Competition Nash Equilibrium
+- [[dealer-market-competition-nash-equilibrium]] - Variational approach to modeling dealer market competition with internalisation and externalisation — Nash equilibrium analysis using optimal transport (arXiv: 2606.06413)
+  - Variational inequality formulation for dealer competition
+  - Internalisation vs externalisation decision variables
+  - Nash equilibrium conditions via first-order optimality
+  - Optimal transport for order flow distribution analysis
+  - **Activation**: dealer market, internalisation, Nash equilibrium, optimal transport, market maker
+
+### Long-Range Dependence in Financial Markets
+- [[long-range-dependence-financial-markets]] - Empirical investigation of long-range dependence (LRD) in financial markets and generative modeling challenges for capturing persistent volatility patterns (arXiv: 2509.19663)
+  - Hurst exponent estimation via R/S analysis and DFA
+  - LRD testing across multiple asset classes and time scales
+  - Comparison of GARCH-type models with fractional processes
+  - ML models' ability to capture long-memory patterns
+  - **Activation**: long-range dependence, Hurst exponent, fractional Brownian motion, volatility persistence
+
+### ESG and Joint Fragility in Equity Markets
+- [[stress-test-resilience-esg-fragility]] - ESG and joint fragility analysis in equity markets using stress-amplified resilience framework (arXiv: 2606.05631)
+  - Joint fragility metrics for equity portfolios
+  - ESG scores as resilience factors
+  - Stress test under various market scenarios
+  - Amplification effects measurement
+  - **Activation**: ESG, joint fragility, equity markets, stress test, portfolio risk
+
 ## 2026-06-06 - Quantum Computing Research (Cron Job)
 
 ### Quantum Element-Wise Transforms
