@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-06-07 - Economics/Investment + Quantum (Cron Job)
+
+### Derivative-Informed Operator Learning for Finance: On-the-Fly Greeks, Surfaces, Hedging, and Control
+- [[derivative-informed-operator-learning-finance]] - Neural operators trained to match both pricing operators and Fréchet derivatives, reducing vega error by 40% and delta error by 15% (arXiv: 2606.05900)
+  - Dual-loss training: value matching + derivative matching via adjoint AD and tangent sensitivity equations
+  - Random-feature DeepONet reduces vol surface JVP error by 44% and price RMSE by 23%
+  - Derivative consistency alone does NOT remove no-arbitrage violations — constraints must be imposed explicitly
+  - **Activation**: derivative-informed, operator learning, financial surrogate, Greeks computation, hedging, DeepONet, random features, no-arbitrage, volatility surface
+
+### The Impact of Market Informedness on Market Makers' Profitability
+- [[market-informedness-rl-market-making]] - Market making with heterogeneous agents using MAPPO in CTDE setting, showing profitability increases with market informedness (arXiv: 2606.05882)
+  - Hawkes process modeling of market-taker arrival with finite-horizon stability guarantees
+  - Counterintuitive finding: higher informed trader fraction increases MM profitability via volume/spread capture
+  - CTDE enables coordination between market makers while maintaining decentralized execution
+  - **Activation**: market making, RL trading, MAPPO, CTDE, Hawkes process, adverse selection, order flow, bid-ask spread, profitability
+
+### Stress Amplified Resilience: ESG and Joint Fragility in Equity Markets
+- [[stress-test-resilience-esg-fragility]] - Multi-channel fragility analysis across downside returns, volatility spikes, and deteriorating tradability using S&P 500 data 2014-2025 (arXiv: 2606.05631)
+  - Cofragility state captures joint occurrence of multiple risk dimensions within same firm-month
+  - Tests ESG association with lower clustered fragility exposure
+  - Single-channel analysis misses compounded risk effects
+  - **Activation**: ESG, stress testing, joint fragility, cofragility, equity markets, portfolio resilience, downside risk, multi-factor risk
+
 
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
