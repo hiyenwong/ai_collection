@@ -1,6 +1,12 @@
 ---
 name: neuromorphic-disturbance-observer
 description: "Bio-plausible neuromorphic disturbance observer based on emulation theory. Spike-timing encoding for robust control, adaptive-threshold mechanism inspired by spike-frequency adaptation. 42.6% spike reduction under noise. Activation: neuromorphic control, disturbance observer, spike-timing encoding, adaptive threshold, integrate-and-fire, SFA-inspired, event-driven control."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2606.05189"
+  authors: ["Hongfu Xu", "Xiaoyu Guo", "Shengbo Wang", "Shuo Gao"]
+  published: "2026-06-05"
+  tags: ["neuromorphic", "disturbance-observer", "spike-timing", "adaptive-threshold", "SFA", "event-driven", "control"]
 ---
 
 ## Context

@@ -1,6 +1,12 @@
 ---
 name: cross-scale-spatial-generative-neurodegeneration
 description: "Cross-scale spatially-aware generative modeling for transcriptomic programs underlying neurodegenerative brain organization. Variational framework linking gene expression to cortical degeneration with graph-based spatial smoothness. Activation: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, gene-expression degeneration."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2606.05870"
+  authors: ["Krishnakumar Vaithianathan", "Alzheimer's Disease Neuroimaging Initiative"]
+  published: "2026-06-04"
+  tags: ["generative-modeling", "transcriptomics", "neurodegeneration", "spatial-aware", "variational-inference", "cortical-thinning"]
 ---
 
 ## Context
