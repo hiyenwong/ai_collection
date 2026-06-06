@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Short-Term Synaptic Plasticity Stabilizes Goal-Conditioned Dynamics in PFC-Inspired Reservoir Model
+- [[stp-stabilizes-goal-conditioned-dynamics]] - Tsodyks-Markram STP在PFC储水池模型中稳定目标条件化动力学，噪声下保持89.2%成功率 vs 无STP49.5% (Cohen's dz=1.31) (arXiv: 2606.03481)
+  - Facilitation-dominant STP参数：U=0.2, τ_facil=1000ms
+  - 基底神经节TD读出学习 + 储水池计算架构
+  - STP动态调制有效连接，延迟后期目标特异性模式增强
+  - **Activation**: short-term synaptic plasticity, STP, goal-conditioned dynamics, PFC reservoir, goal-directed action planning, basal ganglia TD learning, Tsodyks-Markram model, facilitation-dominant, dynamic stability, Cohen's dz
+
+### Cross-scale Spatially-aware Generative Modeling of Transcriptomic Programs Underlying Neurodegenerative Brain Organization
+- [[cross-scale-spatial-generative-neurodegeneration]] - 变分生成框架链接基因表达与皮质退化，图平滑正则化保持解剖结构，R²=86.04%，r=0.9439 (arXiv: 2606.05870)
+  - 910 landmark genes → 68 cortical regions degeneration prediction
+  - Allen Human Brain Atlas transcriptomics + ADNI cortical thickness
+  - 潜在基因程序揭示易损与保护基因组合
+  - **Activation**: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, gene-expression degeneration, variational generative, neurodegenerative vulnerability mapping
+
+
 ## 2026-06-07 - Economics/Investment + Quantum (Cron Job)
 
 ### Derivative-Informed Operator Learning for Finance: On-the-Fly Greeks, Surfaces, Hedging, and Control
