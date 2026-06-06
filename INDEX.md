@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Digital Quantum Reservoir Computing for ATM Time Series Prediction
+- [[digital-quantum-reservoir-computing-finance]] - NISQ-compatible quantum reservoir computing framework for multi-step financial time series forecasting using parametrized 4-qubit reservoirs with partial measurement (arXiv: 2606.04686)
+  - Fixed-structure parametrized quantum circuits (4-8 qubits) as temporal reservoir
+  - Partial measurement statistics as reservoir features, classical readout only
+  - Quantum entanglement serves as natural temporal memory mechanism
+  - Applied to ATM cash demand forecasting, robust to NISQ noise
+  - **Activation**: quantum reservoir computing, time series forecasting, NISQ, ATM prediction, financial forecasting, parameterized quantum circuits, partial measurement, temporal memory
+
+### Certified Higher Order Quantum Framework for CSA and Margin-Aware Collateral Optimization
+- [[higher-order-quantum-optimization-finance]] - Higher-order binary optimization (HOBO) for legally-constrained financial problems, directly encoding multi-variable constraints without QUBO reduction overhead (arXiv: 2606.04235)
+  - Direct HOBO encoding avoids QUBO reduction overhead for complex constraints
+  - CSA eligibility, margin requirements, concentration limits as polynomial constraints
+  - Certified solutions with feasibility guarantees for collateral allocation
+  - Maps to quantum annealing and QAOA with higher-order interactions
+  - **Activation**: higher-order optimization, HOBO, collateral optimization, CSA constraints, quantum finance, derivatives, margin requirements, constraint encoding, certified optimization
+
+### Game Set Quantum: Parameterized Quantum Circuit for Correlated Equilibrium in Bayesian Games
+- [[quantum-bayesian-game-equilibrium]] - Parameterized quantum circuits for computing correlated equilibrium in Bayesian games with polynomial qubit scaling vs exponential classical (arXiv: 2606.03109)
+  - PQC ansatz with player-specific subcircuits and entangling layers
+  - Quantum entanglement encodes correlated strategies inaccessible classically
+  - NISQ-compatible for small-to-medium multi-agent economic games
+  - Gradient-based or gradient-free optimization for equilibrium finding
+  - **Activation**: quantum game theory, Bayesian games, correlated equilibrium, parameterized quantum circuits, multi-agent economics, auction design, mechanism design
+
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
 ### Ontology-Constrained Multi-LLM Scoring of Hypothesis Support in Predictive Processing
