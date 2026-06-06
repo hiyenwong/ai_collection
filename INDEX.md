@@ -1,5 +1,39 @@
 # AI Collection Index
 
+## 2026-06-06 - Quantum Computing Research (Cron Job)
+
+### Quantum Element-Wise Transforms
+- [[quantum-element-wise-transforms]] - Quantum algorithms for element-wise polynomial transforms with exponential space reduction, correcting prior work errors. Applications to ML, simulation, and signal processing (arXiv: 2606.06456)
+  - Exponential space reduction in polynomial degree vs prior constructions
+  - Block encoding approach with element-wise independent application
+  - Rectifies errors in previous quantum algorithm constructions
+  - Unified framework for QSVT, LCU, and element-wise transforms
+  - **Activation**: quantum-element-wise, polynomial-transform, QSVT, block-encoding, numerical-linear-algebra
+
+### Breakeven Demonstration of Quantum LDPC Codes
+- [[quantum-ldpc-breakeven]] - First breakeven demonstration of qLDPC codes on trapped-ion hardware with 9× better logical error rate. OMG architecture enables addressable mid-circuit measurement without ion transport (arXiv: 2606.06455)
+  - Logical error rate 9× better than previous superconducting demonstration
+  - OMG architecture: addressable mid-circuit measurement and reset
+  - No ion transport or dedicated coolant ions required
+  - 9 different codes on single device without hardware reconfiguration
+  - **Activation**: qLDPC, quantum-error-correction, trapped-ion, breakeven, OMG-architecture, fault-tolerant
+
+### Non-Hermitian SSH Model Charge Correlations
+- [[non-hermitian-ssh-charge-correlations]] - Enhancement of charge correlations and topological markers in interacting non-Hermitian SSH model. Open boundary conditions amplify staggered correlations near exceptional points (arXiv: 2606.06466)
+  - Real-space topological marker robust under interactions
+  - Open boundary conditions dramatically enhance charge correlations
+  - Low-energy state accumulation near exceptional points promotes electronic instabilities
+  - Non-Hermiticity amplifies interaction effects and CDW tendencies
+  - **Activation**: non-hermitian, SSH-model, topology, charge-correlations, exceptional-points
+
+### Room-Temperature Dipole Synchronization in Nanocavities
+- [[room-temperature-dipole-synchronization-nanocavity]] - Room-temperature synchronized dipole state in plasmonic nanogap 2D arrays. Novel driven-dissipative system with spatial coherence but suppressed temporal photon coherence (arXiv: 2606.06490)
+  - Spatial coherence across distant dipoles via sub-nm gap coupling
+  - NOT a laser/BEC/polariton condensate: unique synchronization state
+  - Fast temporal coherence decay from rapid radiative/non-radiative emission
+  - Scalable room-temperature platform for quantum photonic technologies
+  - **Activation**: room-temperature-synchronization, nanocavity, plasmonic, driven-dissipative, spatial-coherence
+
 ## 2026-06-06 - Systems Engineering Research (Cron Job)
 
 ### HANDOFF: Humanoid Agentic Task-Space Whole-Body Control
@@ -36,6 +70,23 @@
   - **Activation**: BBQRAM state preparation, bucket brigade QRAM, complex-valued quantum encoding, quantum finance data loading, classical precomputation rotation angles, magnitude-then-phase
 
 ## 2026-06-06 - Neuroscience Research (Cron Job)
+
+### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
+- [[neuromorphic-disturbance-observer]] - Neuromorphic control framework using integrate-and-fire neuron dynamics with adaptive-threshold triggering inspired by spike-frequency adaptation (SFA). Reduces spike events to 42.6% under noise while maintaining robustness and adaptability (arXiv: 2606.05189)
+  - Event-driven control via spike-timing encoding (not continuous-time)
+  - Adaptive-threshold mechanism: history-dependent regulation inspired by biological SFA
+  - Bio-plausible robustness: 42.6% spike reduction under noisy conditions
+  - Applicable to neuromorphic hardware (Loihi, SpiNNaker) and robotic control
+  - **Activation**: neuromorphic, disturbance observer, IF neuron, spike-frequency adaptation, bio-plausible control, event-driven, adaptive threshold, neural control, neuromorphic hardware
+
+### SC-TauPath: Structural Connectivity Attribution for Tau Propagation
+- [[sc-taupath-alzheimer-tau-propagation]] - Attribution framework mapping Alzheimer's tau propagation pathways using gradient × input on NDM-augmented MLP. Multi-scale pathway maps (backbone edges, high-traffic routes, hub ROIs) validated against Braak staging anatomy from 234 ADNI participants (arXiv: 2606.04066)
+  - Network Diffusion Model (NDM)-augmented MLP for tau prediction
+  - Gradient × input attribution: biologically interpretable pathway maps
+  - Multi-scale representation: backbone edges, high-traffic routes, hub ROIs
+  - Validated against Braak staging anatomy (stages I-II, III-IV, V-VI)
+  - Low biophysical assumptions: learning-based approach vs physics-based diffusion models
+  - **Activation**: Alzheimer's, tau propagation, structural connectivity, attribution framework, Braak staging, network diffusion, gradient attribution, pathway mapping, ADNI, neurodegeneration
 
 ### Intrinsic Computational Functionalism
 - [[intrinsic-computational-functionalism]] - Framework for observer-independent computational structures in consciousness research. Two criteria: system-intrinsic instantiation (C1) + causal-dynamical intervention (C2). Three-tier decomposition identifies dynamics-internal grain selection as key (arXiv: 2606.06424)
