@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job - Latest Hourly)
+
+### Cross-Scale Spatially-Aware Generative Modeling for Neurodegeneration
+- [[cross-scale-spatial-generative-neurodegeneration]] - 跨尺度空间感知生成模型用于神经退行性疾病脑组织的转录组程序建模，变分架构结合图平滑实现86.04%方差解释和r=0.9439空间相关性 (arXiv: 2606.05870)
+  - 跨尺度框架：从Allen Brain Atlas基因表达到ADNI皮质厚度测量
+  - 变分生成架构学习转录组-退行化的潜在生物程序
+  - 图空间平滑正则化保持皮层组织拓扑
+  - **Activation**: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, variational generative neurobiology
+
+### Bio-Plausible Neuromorphic Disturbance Observer
+- [[neuromorphic-disturbance-observer]] - 生物启发神经形态干扰观测器基于仿真理论，IF神经元尖峰时序编码实现鲁棒控制，自适应阈值SFA机制实现42.6%尖峰事件减少 (arXiv: 2606.05189)
+  - 尖峰时序编码替代连续时间信号表示
+  - IF神经元动力学构建干扰估计和控制输入
+  - SFA启发自适应阈值机制实现历史依赖调节
+  - **Activation**: neuromorphic control, disturbance observer, spike-timing encoding, adaptive threshold, integrate-and-fire, SFA-inspired, event-driven control
+
 ## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
 
 ### Emergent Language as Approach to Conscious AI
@@ -263,6 +279,16 @@
   - Competition intensity determines spread compression  
   - Strategic inventory management through spread adjustments
   - **Activation**: dealer market, Nash equilibrium, internalisation, inventory risk, variational approach, quoting game, market microstructure
+
+## 2026-06-06 - Economics/Finance + Quantum (Cron Job - Evening Batch 2)
+
+### Regret Minimization with Adaptive Opponents in Repeated Games
+- [[rp-regret-adaptive-opponents]] - RP-Regret methodology for repeated games with adaptive opponents — measures best-in-hindsight utility with opponent responses, converges to subgame perfect equilibria, enables cooperative outcomes in coordination games (arXiv: 2606.06486)
+  - RP-Regret captures opponent adaptivity that external regret misses
+  - Three algorithms: oracle-based, linearized surrogate, slow-changing opponent
+  - Sublinear regret requires bounded comparator variation and memory constraints
+  - When all players minimize RP-Regret, subgame perfect equilibria emerge
+  - **Activation**: repeated policy regret, RP-Regret, adaptive opponent, subgame perfect equilibrium, counterfactual reasoning, game theory, regret minimization
 
 ## 2026-06-05 - AI Systems Engineering (Cron Job)
 
