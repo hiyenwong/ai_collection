@@ -137,3 +137,84 @@
   - Reduces solve time by 99.93% compared to cold start
   - Combines ML speed with mathematical programming optimality guarantees
   - **Activation**: unit commitment, warm-start, primal-dual, branch-and-bound, power system optimization, mixed-integer programming, deep learning warm-start
+## 2026-06-06 - Neuroscience Research Synthesis (Cron Job)
+
+### BEAST3D: Gaussian Splatting Animal Behavioral Analysis
+- [[beast3d-gaussian-splatting-behavior]] - Self-supervised 3D animal behavioral analysis and neural encoding from multi-view video via Gaussian splatting. Vision transformer predicts 3D Gaussian splats for differentiable rendering. Works with as few as 4 calibrated views (arXiv: 2606.02937)
+  - Self-supervised framework (no annotations required)
+  - Sparse-view 3D reconstruction (4-6 views sufficient)
+  - Simultaneous animal-background segmentation
+  - Downstream: pose estimation, neural encoding, view synthesis
+  - **Activation**: gaussian-splatting, animal-behavior, 3D-reconstruction, self-supervised, multi-view-video, neural-encoding
+
+### Short-Term Plasticity Stabilizes Goal-Conditioned Dynamics
+- [[stp-pfc-reservoir-goal-planning]] - STP preserves goal information as action-relevant dynamics in PFC reservoir model. Provides 40% robustness improvement under state noise (89.2% vs 49.5% success) (arXiv: 2606.03481)
+  - Facilitation-dominated STP (τ_F = 300ms optimal)
+  - Dynamic modulation of effective connectivity
+  - Goal- and task-state-conditioned patterning
+  - Basal ganglia TD readout learning architecture
+  - **Activation**: synaptic-plasticity, reservoir-computing, PFC, goal-conditioned, action-planning, TD-learning
+
+### Discrete Signaling Chaotic Regularization
+- [[chaotic-regularization-recurrent-networks]] - Discrete signaling mediates chaotic regularization in RNNs. Chaos acts as intrinsic regularizer: induces local roughness while preserving global smoothness, enhancing generalization (arXiv: 2606.04426)
+  - Kernel methods + dynamical mean-field theory
+  - Local roughness + global smoothness preservation
+  - Intrinsic regularization mechanism in spiking networks
+  - Smooth population codes sustained by chaotic dynamics
+  - **Activation**: chaotic-regularization, RNN, kernel-methods, mean-field-theory, intrinsic-regularizer
+
+### Early Psychosis Scaling Behavior Deviations
+- [[psychosis-scaling-critical-regime]] - Phenomenological renormalization group (PRG) framework reveals early psychosis preserves critical regime but shows systematic scaling exponent shifts. Reorganization rather than loss of criticality (arXiv: 2606.06290)
+  - PRG + PSD + DFA combined analysis
+  - Scale-invariant organization preserved
+  - Systematic exponent shifts across observables
+  - Collective dynamics reorganization hypothesis
+  - **Activation**: critical-dynamics, psychosis, scaling-behavior, renormalization-group, fMRI
+
+### SC-TauPath: Alzheimer Tau Propagation Attribution
+- [[sc-taupath-alzheimer-tau-propagation]] - Network Diffusion Model + gradient attribution framework scores each structural connectivity edge's contribution to tau propagation in Alzheimer's disease. Neurobiologically interpretable pathway maps (arXiv: 2606.04066)
+  - Gradient × input attribution for SC edges
+  - NDM-augmented MLP architecture
+  - ADNI FreeSurfer cortical thickness validation
+  - Braak staging consistency verified
+  - **Activation**: alzheimer-disease, tau-propagation, structural-connectivity, network-diffusion, attribution-analysis
+
+### Whisper ECoG Speech Model Alignment
+- [[whisper-ecog-alignment-neural-encoding]] - Intermediate Whisper layers provide strongest alignment with human ECoG speech responses. Time-resolved neural encoder with speech embeddings reveals anatomically-consistent organization (arXiv: 2606.02305)
+  - Middle layers best brain alignment (not deepest)
+  - Time-resolved temporal modeling with soft attention
+  - Anatomically-consistent cortical speech representations
+  - Speech foundation model as neural encoding framework
+  - **Activation**: whisper, ECoG, speech-alignment, neural-encoding, speech-representations
+
+### Attachment Representations Interbrain Synchrony
+- [[attachment-representations-interbrain-synchrony]] - Attachment representations act as independent endogenous driver of child-adult interbrain synchrony during remote cooperation. Remote Partner-Belief Manipulation paradigm isolates internal representations (arXiv: 2606.03700)
+  - Mother-partner belief enhances synchrony regardless of actual partner
+  - P4 channel (right TPJ) concentration
+  - Partner-belief manipulation experimental innovation
+  - Attachment security correlation
+  - **Activation**: attachment, interbrain-synchrony, EEG-hyperscanning, partner-belief, TPJ
+
+### Cross-Scale Transcriptomic Neurodegeneration
+- [[cross-scale-spatial-generative-neurodegeneration]] - Variational generative framework links gene expression to cortical degeneration with spatial regularization. Achieves r=0.9439 spatial correlation on Allen Human Brain Atlas (910 genes, 68 regions) (arXiv: 2606.05870)
+  - Microscale molecular organization → macroscale degeneration
+  - Spatial-aware graph-based regularization
+  - Cross-scale generative architecture
+  - 86% explained variance in degeneration patterns
+  - **Activation**: transcriptomic, neurodegeneration, spatial-aware, generative-model, gene-expression
+
+### Neuromorphic Supremacy Hybrid Architecture
+- [[neuromorphic-supremacy]] - Hybrid neuromorphic circuits with astrocytic modulation + spiking dynamics achieve few-shot learning and noise robustness. Principled foundation for perception in embodied AI under noisy, data-scarce environments (arXiv: 2606.01841)
+  - Astrocytic modulation integration
+  - Spiking dynamics + astrocyte-like units
+  - Few-shot learning capability
+  - Noise robustness validation
+  - **Activation**: neuromorphic, astrocytic-modulation, spiking-dynamics, few-shot-learning
+
+### Feature Leakage Direct-Dependency Entropy
+- [[feature-leakage-identifiability-entropy-models]] - Direct entropy-explained fractions are predictions under observed distribution, not mechanism-identification evidence. State reweighting diagnostics reveal CA1 table distribution-sensitivity (arXiv: 2606.01661)
+  - Maximum-entropy models on hippocampal recordings
+  - Prediction vs. mechanism identification separation
+  - State reweighting diagnostic methodology
+  - Half of CA1 tables distribution-sensitive
+  - **Activation**: entropy-models, feature-leakage, identifiability, hippocampal, state-reweighting
