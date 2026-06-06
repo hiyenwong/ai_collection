@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job)
+
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- [[cognisnn-random-graph-snn]] - Cognition-aware SNN using Random Graph Architecture (RGA) to mimic biological connectivity, enabling pathway reuse and dynamic growth for continual learning (arXiv: 2512.11743)
+  - Three key properties: Neuron-Expandability, Pathway-Reusability, Dynamic-Configurability
+  - KP-LwF: Key Pathway-based Learning without Forgetting for multi-task transfer
+  - DGL: Dynamic Growth Learning algorithm for temporal dimension expansion
+  - **Activation**: random graph snn, cognisnn, pathway reusability, neuron expandability, dynamic configurability, continual learning snn, biological connectivity, neuromorphic hardware, kp-lwf, dynamic growth learning
+
+### Event-driven Eligibility Propagation in Large Sparse Networks: Efficiency Shaped by Biological Realism
+- [[event-driven-eligibility-propagation]] - Event-driven learning in sparse SNNs showing biological realism (sparsity, irregularity) drives 10-15x computational efficiency vs dense backpropagation (arXiv: 2511.21674)
+  - Sparse updates scale with active neurons, not network size
+  - Irregular spike timing reduces synchronous overhead
+  - Event-driven timing aligns with neuromorphic hardware constraints
+  - **Activation**: event driven learning, eligibility propagation, sparse snn, biological realism, efficient snn training, neuromorphic efficiency, sparse connectivity, asynchronous learning
+
 ## 2026-06-07 - Economics & Investment Research (Cron Job)
 
 ### Fairness and Strategy-Proofness in Automated Market Makers
