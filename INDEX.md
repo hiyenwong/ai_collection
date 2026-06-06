@@ -1,7 +1,25 @@
 # AI Collection Index
 
 
-## 2026-06-07 - Economics, Investment + Quantum (Cron Job - Saturday Topic)
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
+- [[psychosis-scaling-critical-regime]] - 使用现象学重整化群(PRG)、PSD和DFA研究早期精神病fMRI标度性质，发现保留标度区域内的集体动力学重组而非临界动力学丧失 (arXiv: 2606.06290)
+  - 健康对照组：展示临界动力学特征（长程相关、信息处理效率）
+  - 早期精神病：标度指数系统性偏移（不是简单临界性丧失）
+  - **Activation**: early psychosis, critical dynamics, scaling behavior, PRG, DFA, PSD, renormalization group, fMRI, brain criticality
+
+### Cross-scale Spatially-aware Generative Modeling of Transcriptomic Programs Underlying Neurodegenerative Brain Organization
+- [[cross-scale-spatial-generative-neurodegeneration]] - Variational framework linking gene expression to cortical degeneration with graph-based spatial smoothness, achieving 86.04% explained variance and r=0.9439 spatial correlation (arXiv: 2606.05870)
+  - 910 landmark genes → 68 cortical regions degeneration prediction
+  - Allen Human Brain Atlas transcriptomics + ADNI cortical thickness
+  - **Activation**: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, gene-expression degeneration
+
+### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
+- [[neuromorphic-disturbance-observer]] - Spike-timing encoding disturbance observer with adaptive-threshold mechanism inspired by spike-frequency adaptation, achieving 42.6% spike reduction under noise (arXiv: 2606.05189)
+  - Integrate-and-Fire (IF) neuron dynamics for event-driven updates
+  - History-dependent regulation via SFA-inspired adaptive threshold
+  - **Activation**: neuromorphic control, disturbance observer, spike-timing encoding, adaptive threshold, integrate-and-fire, SFA-inspired, event-driven control
 
 ### Quantum-Enhanced Support Vector Machine for High-Dimensional Financial Market Prediction
 - [[quantum-enhanced-svm-financial-prediction]] - Quantum kernel SVM for high-dimensional financial market prediction (DOI: 10.1109/nqcomp68334.2026.11497725)
