@@ -1,5 +1,32 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job) - Latest Papers
+
+### Whisper-ECoG Alignment with Interpretable Time-Resolved Neural Encoding
+- [[whisper-ecog-alignment-neural-encoding]] - Mapping Whisper speech foundation model representations to human ECoG responses during naturalistic speech perception with time-resolved encoder and soft attention (arXiv: 2606.02305)
+  - Intermediate Whisper layers (7-11) show strongest brain alignment, supporting hierarchical match between model and cortical speech processing
+  - Attention maps reveal temporally local alignment (10-50ms resolution) between speech embeddings and neural responses
+  - Phoneme-category organization shows anatomically coherent clustering among encoding-informative electrodes
+  - Temporal modeling benefits: 15-20% improvement over static linear regression baselines
+  - **Activation**: Whisper, ECoG, speech foundation model, neural encoding, brain alignment, phoneme, temporal resolution, cortical processing, ICLR 2026, soft attention, intermediate layers
+
+### Task-Induced Representational Invariances in Deep RL Neural Coding
+- [[deep-rl-representation-invariance-neural-coding]] - MDP reduction theory framework revealing algorithm-specific representational symmetries: DQN learns MDP homomorphism invariances, PPO learns action symmetries (arXiv: 2606.01868)
+  - Principled approach to comparing learned representations across RL algorithms through symmetry analysis
+  - DQN (value-based): representations invariant to MDP homomorphisms, preserving Q-value structure
+  - PPO (policy-gradient): representations invariant to action symmetries, preserving optimal policy structure
+  - Transfer learning implications: invariance alignment predicts transfer performance across domains
+  - LLM connection: similar invariance patterns emerge, prompt-dependent
+  - **Activation**: RL representation, neural coding, invariance, symmetry, MDP homomorphism, DQN, PPO, value-based, policy-gradient, transfer learning, RSA
+
+### Computation-Aware Kalman Filtering with Model Selection for Neural Dynamics
+- [[computation-aware-kalman-neural-dynamics]] - CASSM framework for scale-imbalanced regime (few trials, many neurons) with computation-aware uncertainty calibration, competitive with deep networks (arXiv: 2606.01468)
+  - Computation-Aware State-Space Model (CASSM) with novel training loss incorporating approximation errors
+  - Significantly improved uncertainty calibration over previous Bayesian scaling attempts
+  - Competitive predictive performance with deep networks in scale-imbalanced regime (N << M)
+  - Clear roadmap for neuroscience researchers: model selection, hyperparameter optimization, budget allocation
+  - **Activation**: Kalman filtering, neural dynamics, computation-aware, state-space model, model selection, uncertainty calibration, scale-imbalanced, Bayesian, CASSM, Probabilistic Numerics 2026
+
 ## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Digital Quantum Reservoir Computing for ATM Time Series Prediction
