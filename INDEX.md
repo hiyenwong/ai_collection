@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
+
+### TRIBE v2: Multimodal Brain Foundation Model for Image Decoding
+- [[tribe-v2-multimodal-brain-foundation]] - Tri-modal foundation model pretrained on 1000+ hours of video/audio/language fMRI enables 68% Top-10 image-retrieval improvement with synthetic data augmentation and zero-shot decoding in low-data regimes (arXiv: 2606.06345)
+  - Synthetic fMRI generation from pretrained encoder boosts real data efficiency
+  - Zero-shot brain-to-image decoding works with pure synthetic training (above chance)
+  - Grid-search determines optimal augmentation ratio per dataset
+  - Data source dependency: different datasets require different synthetic/real ratios
+  - **Activation**: brain-to-image decoding, TRIBE v2, multimodal foundation model, fMRI augmentation, synthetic neural data, zero-shot decoding, image retrieval, natural scenes dataset, BOLD5000, data efficiency
+
 ## 2026-06-06 - Economics/Finance + Quantum (Cron Job - Evening)
 
 ### Dealer Market Competition Nash Equilibrium

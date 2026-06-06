@@ -1,188 +1,196 @@
 ---
 name: psychosis-scaling-critical-regime
-description: "Renormalization group framework for early psychosis brain dynamics analysis. Phenomenological renormalization group (PRG) + PSD + DFA characterize collective dynamics across scales. Systematic scaling exponent shifts indicate reorganization within preserved critical regime. Activation: psychosis, criticality, renormalization group, scaling, brain dynamics, collective organization, early psychosis, statistical mechanics."
-metadata:
-  arxiv_id: "2606.06290"
-  published: "2026-06-04"
-  authors: "Irem Topal, Paola Moreno Ancalmo, Guillermo Montana Valverde, Philipp Homan, Wolfram Hinzen"
-  tags: [psychosis, criticality, renormalization-group, scaling, brain-dynamics, fMRI, statistical-mechanics, collective-dynamics]
-license: Complete terms in LICENSE.txt
+description: "Phenomenological renormalization group (PRG) framework reveals early psychosis preserves critical regime but shows systematic scaling exponent shifts. Reorganization rather than loss of criticality — PRG + PSD + DFA combined analysis methodology."
 ---
-
-# Early Psychosis Scaling Behaviour Within Critical Regime
 
 ## Context
 
-Large-scale brain activity exhibits scale-invariant dynamics consistent with near-critical operation. This paper investigates scaling properties in early psychosis using phenomenological renormalization group (PRG) framework combined with power spectral density (PSD) and detrended fluctuation analysis (DFA).
+Large-scale brain activity exhibits scale-invariant dynamics consistent with near-critical operation. Early psychosis shows systematic scaling exponent deviations across observables, but NOT a loss of criticality — rather a **reorganization of collective dynamics within a preserved scaling regime**.
+
+**Key Finding**: Combining coarse-graining (PRG) with temporal scaling (PSD + DFA) provides principled framework for studying psychiatric disorders at the collective dynamics level.
+
+**arXiv**: 2606.06290v1 (2026-06-04)
+**Categories**: q-bio.NC, cond-mat.stat-mech
 
 ## Core Methodology
 
-### 1. Phenomenological Renormalization Group (PRG) Framework
+1. **Phenomenological Renormalization Group (PRG)**:
+   - Coarse-graining approach to characterize collective dynamics across scales
+   - Identify scaling exponents by analyzing how observables transform under scale reduction
+   - Preserve scale-invariant organization → reveal exponent shifts rather than regime transitions
 
-**Principle**: Coarse-grain brain activity across scales to extract scaling exponents.
+2. **Power Spectral Density (PSD) Analysis**:
+   - Compute frequency-domain scaling: P(f) ~ f^(-β)
+   - β exponent characterizes long-range temporal correlations
+   - Healthy controls: non-trivial β consistent with critical-like dynamics
+   - Early psychosis: systematic β shifts (increase or decrease depending on observable)
 
-**Implementation**:
-```python
-def phenomenological_renormalization(fmri_signal, scales):
-    """
-    Apply PRG coarse-graining to extract scaling exponents.
-    
-    Args:
-        fmri_signal: Resting-state fMRI time series
-        scales: List of coarse-graining scales (e.g., [2, 4, 8, 16])
-    
-    Returns:
-        Scaling exponents for collective dynamics
-    """
-    coarse_signals = []
-    for scale in scales:
-        # Block averaging coarse-graining
-        coarse = block_average(fmri_signal, scale)
-        coarse_signals.append(coarse)
-    
-    # Extract scaling exponents via linear fit
-    exponents = fit_scaling_exponents(coarse_signals, scales)
-    return exponents
-```
+3. **Detrended Fluctuation Analysis (DFA)**:
+   - Time-domain scaling: F(n) ~ n^α
+   - α exponent measures self-similarity and persistence
+   - Compare healthy vs. psychosis α values across brain regions
 
-### 2. Multi-Observable Analysis
+4. **Combined Framework**:
+   - PRG: coarse-graining → identify collective dynamics regime
+   - PSD: frequency scaling → long-range correlations
+   - DFA: time scaling → self-similarity
+   - **Synergy**: Different observables capture complementary aspects of same underlying reorganization
 
-**Three complementary approaches**:
-
-1. **Power Spectral Density (PSD)**: Frequency-domain scaling
-   - $S(f) \sim f^{-\beta}$ where $\beta$ characterizes temporal correlations
-   
-2. **Detrended Fluctuation Analysis (DFA)**: Time-domain scaling
-   - $F(n) \sim n^{\alpha}$ where $\alpha$ measures self-similarity
-   
-3. **PRG coarse-graining**: Scale-space organization
-   - $A(\ell) \sim \ell^{-\gamma}$ where $\gamma$ captures collective dynamics
-
-### 3. Scaling Exponent Comparison
-
-**Key finding**: Early psychosis shows **systematic shifts** in scaling exponents, not loss of critical dynamics.
-
-| Observable | Healthy Controls | Early Psychosis | Interpretation |
-|------------|-----------------|-----------------|----------------|
-| PSD $\beta$ | Critical-like | Shifted | Temporal correlation change |
-| DFA $\alpha$ | Near-critical | Deviated | Self-similarity alteration |
-| PRG $\gamma$ | Scale-invariant | Modified | Collective reorganization |
+5. **Observable-Level Analysis**:
+   - Systematic exponent shifts across multiple observables (not just one)
+   - Same phenomenology (scale-invariant organization preserved)
+   - Different quantitative values (exponents altered)
+   - **Conclusion**: reorganization, not collapse
 
 ## Implementation Steps
 
-### Step 1: Preprocess fMRI Data
-
-- Resting-state fMRI preprocessing (motion correction, spatial normalization)
-- Extract regional time series (e.g., ROI-based, whole-brain)
-- Detrending and normalization
-
-### Step 2: Apply PRG Coarse-Graining
-
+### Step 1: Load Resting-State fMRI Data
 ```python
-def block_average(signal, scale):
-    """Coarse-grain signal by block averaging."""
-    n_blocks = len(signal) // scale
-    coarse = np.zeros(n_blocks)
-    for i in range(n_blocks):
-        coarse[i] = np.mean(signal[i*scale:(i+1)*scale])
-    return coarse
+# Early psychosis patients + healthy controls
+fmri_data = load_resting_state_fmri(subject_ids)
+groups = {'healthy': healthy_ids, 'psychosis': psychosis_ids}
 ```
 
-### Step 3: Compute PSD Scaling
-
+### Step 2: Phenomenological Renormalization Group
 ```python
-def power_spectral_scaling(signal, freq_range):
-    """Extract PSD scaling exponent."""
-    freqs, psd = welch(signal, fs=1.0)
-    valid_freqs = freqs[freq_range[0] < freqs < freq_range[1]]
-    valid_psd = psd[freq_range[0] < freqs < freq_range[1]]
-    log_freq = np.log(valid_freqs)
-    log_psd = np.log(valid_psd)
-    beta = -np.polyfit(log_freq, log_psd, 1)[0]
-    return beta
+def prg_coarse_graining(signal, scale_factors):
+    """
+    Apply PRG coarse-graining at multiple scales.
+    
+    Args:
+        signal: fMRI time series
+        scale_factors: List of coarse-graining scales
+    
+    Returns:
+        coarse_grained: Signal at different scales
+        scaling_exponents: Derived from observable transformations
+    """
+    coarse_grained = []
+    for scale in scale_factors:
+        averaged = moving_average(signal, window=scale)
+        coarse_grained.append(averaged)
+    
+    # Compute scaling exponents from observable transformations
+    exponents = compute_prg_exponents(coarse_grained)
+    return coarse_grained, exponents
 ```
 
-### Step 4: Compute DFA Scaling
-
+### Step 3: Power Spectral Density
 ```python
-def detrended_fluctuation_analysis(signal, window_sizes):
-    """Compute DFA scaling exponent."""
+def compute_psd_scaling(fmri_signal):
+    """
+    Compute PSD scaling exponent β.
+    
+    Args:
+        fmri_signal: BOLD time series
+    
+    Returns:
+        beta: Scaling exponent P(f) ~ f^(-β)
+    """
+    freqs, psd = scipy.signal.welch(fmri_signal, fs=TR)
+    
+    # Fit power law in log-log space
+    log_freq = np.log(freqs[1:])  # Skip DC
+    log_psd = np.log(psd[1:])
+    
+    beta, _ = np.polyfit(log_freq, log_psd, deg=1)
+    return -beta  # PSD ~ f^(-β), so exponent is -slope
+```
+
+### Step 4: Detrended Fluctuation Analysis
+```python
+def compute_dfa_scaling(fmri_signal, window_sizes):
+    """
+    Compute DFA scaling exponent α.
+    
+    Args:
+        fmri_signal: BOLD time series
+        window_sizes: List of fluctuation window sizes
+    
+    Returns:
+        alpha: Scaling exponent F(n) ~ n^α
+    """
+    # Cumulative sum with detrending
+    integrated = np.cumsum(fmri_signal - np.mean(fmri_signal))
+    
     fluctuations = []
     for n in window_sizes:
-        # Divide signal into windows of size n
-        windows = [signal[i:i+n] for i in range(0, len(signal), n)]
-        # Detrend each window
-        detrended = [detrend(w) for w in windows]
-        # Compute fluctuation
-        f = np.sqrt(np.mean([np.var(d) for d in detrended]))
-        fluctuations.append(f)
-    # Fit scaling exponent
+        # Split into windows of size n
+        segments = split_into_segments(integrated, n)
+        
+        # Detrend each segment
+        detrended = [detrend_linear(seg) for seg in segments]
+        
+        # Compute RMS fluctuation
+        f_n = np.sqrt(np.mean([np.var(d) for d in detrended]))
+        fluctuations.append(f_n)
+    
+    # Fit power law: F(n) ~ n^α
     log_n = np.log(window_sizes)
     log_f = np.log(fluctuations)
-    alpha = np.polyfit(log_n, log_f, 1)[0]
+    alpha, _ = np.polyfit(log_n, log_f, deg=1)
+    
     return alpha
 ```
 
-### Step 5: Compare Scaling Exponents
-
-- Compute scaling exponents for healthy controls and psychosis groups
-- Statistical comparison (t-tests, effect sizes)
-- Interpret shifts within critical framework
+### Step 5: Group Comparison and Statistical Analysis
+```python
+def compare_scaling_exponents(healthy_data, psychosis_data):
+    """
+    Compare scaling exponents between groups.
+    
+    Args:
+        healthy_data: Exponents from healthy controls
+        psychosis_data: Exponents from early psychosis
+    
+    Returns:
+        shifts: Systematic exponent differences
+        statistics: Statistical test results
+    """
+    # Per-region comparison
+    shifts = {}
+    for roi in ROIS:
+        healthy_exp = healthy_data[roi]
+        psychosis_exp = psychosis_data[roi]
+        
+        # Statistical test
+        statistic, p_value = mannwhitneyu(healthy_exp, psychosis_exp)
+        shifts[roi] = {
+            'mean_shift': np.mean(psychosis_exp) - np.mean(healthy_exp),
+            'p_value': p_value,
+            'effect_size': cohens_d(healthy_exp, psychosis_exp)
+        }
+    
+    return shifts
+```
 
 ## Key Results
 
-**Main finding**: Early psychosis is characterized by **reorganization of collective dynamics within a preserved scaling regime**, not simple loss of criticality.
-
-**Evidence**:
-1. Both groups show scale-invariant organization
-2. Systematic shifts in all three observables (PSD, DFA, PRG)
-3. Consistent phenomenology but altered scaling exponents
-
-**Implications**:
-- Critical-like dynamics are preserved in early psychosis
-- Scaling regime is reorganized rather than destroyed
-- PRG + temporal scaling provides principled framework
+- **Preserved Scale-Invariant Organization**: Both groups show non-trivial scaling (critical-like phenomenology intact)
+- **Systematic Exponent Shifts**: Multiple observables show consistent direction of change
+- **Reorganization Hypothesis**: Critical regime NOT lost, but collective dynamics reorganized
+- **Complementary Observables**: PRG, PSD, DFA capture different aspects of same underlying shift
 
 ## Pitfalls
 
-- **Fragmented measures**: Previous findings across isolated observables are inconsistent. Use multi-observable PRG framework.
-- **False criticality loss**: Simple deviation ≠ loss of critical dynamics. Check for preserved scaling regime.
-- **Scale selection**: PRG scales must cover relevant dynamical range. Test multiple scales.
-- **Group heterogeneity**: Early psychosis may have subgroups. Consider stratification.
-- **Cross-modal comparison**: Different observables may capture different aspects. Combine PRG + PSD + DFA.
+1. **Observable Fragmentation**: Previous studies reported altered measures but across different observables/modalities → unclear if capturing common alteration. **Fix**: Use combined PRG+PSD+DFA framework for unified characterization.
+
+2. **Single-Observable Interpretation**: Finding exponent shift in one observable ≠ regime transition. Must check: (a) other observables, (b) overall phenomenology preserved? → **Conclusion**: reorganization, not collapse.
+
+3. **Scale Range Sensitivity**: Exponents may vary across different scale ranges (high vs. low frequencies). Report exponents with explicit scale range specification.
+
+4. **Subject Heterogeneity**: Early psychosis is heterogeneous condition. Stratify by symptom severity or clinical stage for finer-grained analysis.
+
+5. **Temporal Resolution Limits**: fMRI TR ~ 1-2s limits maximum frequency observable. Cannot probe ultra-fast dynamics (gamma band) with fMRI alone.
 
 ## Verification
 
-**Validation steps**:
-1. Confirm scale-invariant organization in both groups
-2. Extract scaling exponents from all three observables
-3. Statistical comparison with appropriate tests
-4. Interpret shifts as reorganization, not loss
+- PRG coarse-graining curves (observable vs. scale)
+- PSD power-law fits in log-log space
+- DFA fluctuation curves F(n) vs. n
+- Group comparison: exponent shifts with effect sizes and p-values
+- Preserved phenomenology check: both groups show scale-invariant organization
 
-**Metrics**:
-- Scaling exponent consistency across observables
-- Statistical significance of shifts
-- Effect sizes (Cohen's d)
+## Activation
 
-## Activation Keywords
-
-- psychosis scaling
-- critical regime
-- renormalization group
-- phenomenological renormalization
-- brain dynamics
-- collective organization
-- early psychosis
-- statistical mechanics
-- PSD scaling
-- DFA
-- scale-invariant
-- 精神病临界性
-- 重整化群
-
-## References
-
-- arXiv:2606.06290 - Original paper
-- Critical brain dynamics literature
-- Renormalization group in neuroscience
-- Statistical mechanics of brain activity
+psychosis, scaling behavior, critical regime, renormalization group, PRG, PSD, DFA, fMRI, resting-state, critical dynamics, scaling exponents, collective dynamics, psychiatric disorders, phenomenological coarse-graining, exponent shifts, scale-invariant organization, brain dynamics reorganization
