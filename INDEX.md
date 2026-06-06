@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-06 - Neuroscience Research (Cron Job - Latest)
+
+### Emergent Language as Approach to Conscious AI
+- [[emergent-language-consciousness]] - 涌现语言方法论 — 使用多智能体强化学习中的涌现语言作为研究意识的生成工具，从最小先验出发确保因果可归因性 (arXiv: 2606.06380)
+  - 生成方法论而非判别式或架构式方法，避免人类语言先验继承问题
+  - 最小先验设计：无语言、无自我概念、最小人类文本暴露
+  - Echo-Mismatch Detection Circuit 自参照通信涌现，来自任务压力而非架构预测
+  - **Activation**: 涌现语言, 多智能体强化学习, 意识生成, 自参照通信, causal attribution, emergent language, multi-agent RL, consciousness generation, self-referential communication
+
 ## 2026-06-06 - Economics/Finance + Quantum Research (Cron Job - Hourly Batch 3)
 
 ### Regime-Adaptive Continual Learning for Portfolio Management
