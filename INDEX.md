@@ -8,6 +8,13 @@
   - 自然产生幂律谱特征，与皮质记录匹配
   - **Activation**: chaotic dynamics, neural representation, regularization, mean-field theory, power-law spectrum
 
+### Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
+- [[intrinsic-computational-functionalism]] - 意识的内在计算功能主义框架，定义观察者独立计算结构，对抗反计算论证 (arXiv: 2606.06424)
+  - 两准则：C1系统内在实例化 + C2因果动力学干预组织
+  - 三层分解：观察者相对标签 → 理论约束分区 → 动力学内部粒度
+  - 关键洞见：Tier (iii)动力学内部粒度选择才能避开观察者相对性反驳
+  - **Activation**: intrinsic computation, observer-independent consciousness, computational functionalism, syntax vs semantics, anti-computational arguments, consciousness AI, IIT criticism
+
 ## 2026-06-08 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Robust Quantum Steerability Classification via Key Feature Extraction and Matrix Structure Preservation
