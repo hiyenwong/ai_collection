@@ -1,3 +1,14 @@
+## 2026-06-08 - Neuroscience + Quantum Research (Cron Job)
+
+### Complementarity in Social Measurement: A Partition-Logic Approach
+- [[partition-logic-social-complementarity]] - 分区逻辑框架建模社会测量中的互补性，将非布尔事件结构应用于社会科学测量不兼容性问题 (arXiv: 2603.28818)
+  - 分区逻辑：通过粘贴布尔代数获得非布尔事件结构
+  - 社会互补性：不同观测模式不兼容，但潜在状态完全确定
+  - 六种应用：人员评估、调查框架、临床诊断、情报协调、法律多元主义、组织审计
+  - 区分互补性与语境性：互补性≠不确定性，系统状态是确定的
+  - 规范结构：L12领结、三角形、五边形、自动机分区逻辑
+  - **Activation**: partition logic, social complementarity, measurement incompatibility, non-Boolean event structure, personnel assessment, survey framing, organizational audit
+
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
