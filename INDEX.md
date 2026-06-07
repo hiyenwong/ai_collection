@@ -18,6 +18,23 @@
 
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
+### Parallel Scan Recurrent Neural Quantum States for Scalable Variational Monte Carlo
+- [[parallel-scan-neural-quantum-states]] - 并行扫描循环神经量子态方法论，挑战RNN量子态不可扩展观点，实现52×52二维自旋晶格精度 (arXiv: 2605.13807)
+  - 关联扫描替换顺序循环，实现GPU并行训练
+  - 保持精确自回归概率结构
+  - 迭代重训练管道：从小到大渐进扩展
+  - 适度计算资源即可达大规模精度
+  - **Activation**: PSR-NQS, parallel scan, recurrent quantum, autoregressive wavefunction, RNN scaling, variational Monte Carlo, spin lattice
+
+### Neural network quantum states in the grand canonical ensemble
+- [[quantum-neural-states-grand-canonical]] - 巨正则系综神经量子态架构，对称玻色波函数在Fock空间表示，支持可变粒子数研究 (arXiv: 2605.07779)
+  - Fock空间对称神经网络架构
+  - 化学势集成实现粒子数收敛
+  - 一体约化密度矩阵计算
+  - 凝聚分数和径向密度分布预测
+  - **Activation**: grand canonical, bosonic NQS, Fock space, variable particle number, condensate fraction, OBRDM, geometric optimization
+
+
 ### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
 - [[quantum-analogue-cloud-formalism]] - 量子类云函数形式化建模超阈值信息处理，结合神经场论与薛定谔型方程解释决策中"改变主意"现象 (arXiv: 2605.25214)
   - 云函数空间结构继承感知物理对象特性，时间演化由大规模神经活动内在规律支配
