@@ -1,5 +1,37 @@
 # AI Collection Index
 
+## 2026-06-08 - Information Science + Quantum Mechanics (Cron Job)
+
+### A Toolbox to Understand the Physics of Quantum Data Management
+- [[quantum-data-management-physics]] - Toolbox methodology for understanding quantum device physics in database optimization (arXiv: 2605.14719)
+  - Connects quantum device behavior to database problem structure
+  - Evaluates quantum annealing for combinatorial data management tasks
+  - **Activation**: quantum, database, quantum-annealing, combinatorial-optimization, physics, data-management
+
+### Low Depth Distributed Quantum Algorithms for Unordered Database Search
+- [[quantum-distributed-database-search]] - Low-depth distributed quantum search algorithms for unordered database lookup (arXiv: 2604.14081)
+  - Partitions Grover search across distributed nodes to reduce circuit depth
+  - Enables NISQ-era database search via query operator decomposition
+  - **Activation**: quantum, distributed, database, search, grover, nisq
+
+### Privacy-Utility Tradeoffs in Quantum Information Processing
+- [[quantum-privacy-utility-tradeoff]] - Privacy-utility tradeoff methodology for quantum information processing and quantum differential privacy (arXiv: 2602.10510)
+  - Studies optimal tradeoffs between privacy and learning utility in quantum settings
+  - Analyzes privacy constraints for quantum data processing protocols
+  - **Activation**: quantum, privacy, differential-privacy, utility-tradeoff, information-processing
+
+### Quantum-Resistant Networks: A Review of Primitives, Protocols and Best Practices
+- [[quantum-resistant-network-architecture]] - Post-quantum cryptography network architecture methodology covering PQC primitives and protocol migration (arXiv: 2605.04129)
+  - Addresses architectural consequences of post-quantum transition for networked systems
+  - Evaluates PQC primitives for network deployment and protocol adaptation
+  - **Activation**: quantum, network-security, post-quantum, PQC, cryptography, architecture
+
+### Ultra-Large-Capacity Passive Quantum Access Network Powered By Single Thermal Source
+- [[quantum-access-network-qkd]] - Passive quantum access network architecture using single thermal source for ultra-large-capacity QKD (arXiv: 2605.20077)
+  - Achieves record capacity with passive thermal-source QKD architecture
+  - Scales quantum key distribution to multi-user PON-based networks
+  - **Activation**: quantum, qkd, access-network, pon, thermal-source, key-distribution
+
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Early psychosis shows deviations in scaling behaviour within a critical regime
