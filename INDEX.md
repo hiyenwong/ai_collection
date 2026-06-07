@@ -3,18 +3,53 @@
 ## 2026-06-07 - Information Science + Quantum (Sunday Cron Job)
 
 ### Breakeven demonstration of quantum low-density parity-check codes
-- [[qldpc-breakeven-demo]] - qLDPC error correction breakeven on trapped-ion with OMG architecture for mid-circuit measurement (arXiv: 2606.06455)
+- [[quantum-ldpc-breakeven]] - qLDPC error correction breakeven on trapped-ion with OMG architecture for mid-circuit measurement (arXiv: 2606.06455)
   - 9× better logical error rate than previous superconducting qLDPC demonstration
   - OMG architecture eliminates ion transport and dedicated coolant ions
   - Tests 9 QECC families (qLDPC, topological, concatenated) on single device
   - **Activation**: qldpc, breakeven, quantum error correction, trapped ion, mid-circuit measurement, OMG architecture, logical qubit, fault tolerance
 
+### Multiple Quantum Hypothesis Testing: One-Shot Pairwise Bounds
+- [[multiple-quantum-hypothesis-testing]] - Dimension-free one-shot bounds for multiple quantum state discrimination with sharp asymptotics (arXiv: 2606.06246)
+  - Resolves Audenaert-Mosonyi conjecture on pairwise error decomposition
+  - Improves multiple quantum Chernoff bound by removing dimension-dependent prefactor
+  - Proves achievability for arbitrary separable Hilbert spaces
+  - **Activation**: hypothesis testing, quantum state discrimination, Chernoff bound, Bayesian, error bounds
+
 ### Unlocking Exponential Shannon Capacity Gains via Quantum Entanglement
-- [[quantum-entanglement-shannon-capacity]] - Quantum entanglement provides exponential multiplicative capacity advantage in K-user MACs with causal CSIT (arXiv: 2606.05412)
+- [[quantum-entanglement-capacity-gains]] - Quantum entanglement provides exponential multiplicative capacity advantage in K-user MACs with causal CSIT (arXiv: 2606.05412)
   - Capacity advantage grows exponentially with number of users K (21× for K=5, 88× for K=7)
   - Gains robust to ~30% depolarization per entangled qubit
   - Unbounded advantage as state alphabet grows (K=3 fixed)
   - **Activation**: shannon capacity, quantum entanglement, multiple access channel, causal CSIT, exponential advantage, information theory
+
+### Quantum Time Lower Bounds by Permutation Invariance
+- [[quantum-time-lower-bounds]] - Framework for establishing quantum time complexity lower bounds via permutation invariance (arXiv: 2606.05099)
+  - First systematic method for tight quantum time complexity lower bounds
+  - Proves SWAP test, Shift test, productness tester, LMR protocol all time-optimal
+  - Reduction from quantum sample complexity to circuit size
+  - **Activation**: quantum time complexity, lower bounds, permutation invariance, SWAP test, sample complexity, circuit size
+
+### No-Go Theorem for Gaussian Quantum Repeaters
+- [[no-go-gaussian-quantum-repeaters]] - Gaussian operations cannot enhance quantum capacity beyond direct transmission (arXiv: 2606.05097)
+  - Introduces fractional extendibility generalizing k-extendibility to Gaussian states
+  - Non-Gaussian operations fundamentally required for quantum repeater advantage
+  - Applies to bosonic pure-loss attenuation channels
+  - **Activation**: no-go theorem, Gaussian quantum repeaters, fractional extendibility, quantum capacity, photon loss, quantum networks
+
+### Gaussian Mean Width Strong Converse Bound for Quantum Channel Identification
+- [[gaussian-mean-width-identification-capacity]] - Single-letter strong converse bound via Gaussian mean widths (arXiv: 2606.05032)
+  - σ-Euclidean geometry for channel output space analysis
+  - Semidefinite representation for efficient computation
+  - Improves bounds for depolarizing, Pauli, erasure, and amplitude damping channels
+  - **Activation**: identification capacity, Gaussian mean width, strong converse, quantum channels, semidefinite programming
+
+### Multidimensional Reconciliation in Continuous-Variable QKD
+- [[multidimensional-cv-qkd-reconciliation]] - Multidimensional reconciliation methodology with HDirac open-source simulation (arXiv: 2606.02323)
+  - Transforms Gaussian quantum channel to virtual BIAWGN for LDPC compatibility
+  - High-dimensional constructions beyond algebraic dimensions 1, 2, 4, 8
+  - Trade-off analysis: dimension vs reconciliation efficiency vs frame error rate
+  - **Activation**: CV-QKD, reconciliation, multidimensional, LDPC, HDirac, continuous-variable, quantum key distribution
 
 ## 2026-06-08 - Information Science + Quantum (Cron Job)
 

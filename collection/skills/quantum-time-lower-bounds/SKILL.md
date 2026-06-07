@@ -1,38 +1,24 @@
 ---
 name: quantum-time-lower-bounds
-description: "Quantum Time Lower Bounds by Permutation Invariance. Use when analyzing quantum algorithms, complexity bounds, quantum ML architectures, or quantum error correction involving mathematical analysis and statistical methods."
-metadata:
-  arxiv_id: "2606.05099"
-  published: "2026-06-06"
-  category: "quantum-complexity"
+description: Framework for establishing quantum time complexity lower bounds via permutation invariance and sample complexity reduction
+category: quantum
 ---
 
 # Quantum Time Lower Bounds by Permutation Invariance
 
-## Core Methodology
+## Methodology
+Framework to establish lower bounds on quantum time complexity (circuit size) for testing permutation-invariant properties via reduction from quantum sample complexity.
 
-Tight bounds on quantum sample complexity and quantum query complexity have been known for various computational problems in the literature, whereas tight bounds on quantum time complexity (i.e., the size of quantum circuits) remain unresolved. This paper provides a framework to establish lower bounds on the quantum time complexity for testing permutation-invariant properties of quantum states, via a reduction from quantum sample complexity. Applications include: SWAP test is time-optimal for purity estimation, Shift test is time-optimal for high-order functionals, LMR protocol is time-optimal for reflection operators, and samplizer is time-optimal for pure states. First method to systematically establish tight lower bounds on quantum time complexity.
+## Key Results
+1. **SWAP test optimality**: Time-optimal for estimating purity tr(ρ²) and inner product tr(ρσ)
+2. **Shift test optimality**: Time-optimal for estimating high-order functionals tr(ρᵏ)
+3. **Productness tester**: Time-optimal for multipartite pure states
+4. **LMR protocol**: Time-optimal for reflection operator implementation
+5. **Samplizer**: Time-optimal for pure states
+6. **Trace distance estimator**: Time-optimal for pure-state trace distance and fidelity
 
-## Key Mathematical Framework
+## Significance
+First systematic method for establishing tight lower bounds on quantum time complexity.
 
-- **Domain**: quantum-complexity
-- **arXiv**: 2606.05099
-- **Date**: 2026-06-06
-- **Math Keywords**: permutation invariance, complexity theory, information theory, lower bounds
-
-## Application Patterns
-
-### Pattern 1: Mathematical Analysis
-- Identify core mathematical structures in quantum protocols
-- Map to complexity theory bounds or statistical models
-- Extract reusable analytical patterns
-
-### Pattern 2: Quantum-Classical Comparison
-- Compare quantum vs classical performance metrics
-- Quantify parameter efficiency gains
-- Analyze scaling behavior
-
-## Activation Keywords
-
-- 2606.05099
-- quantum time complexity, permutation invariance, SWAP test, LMR protocol, quantum sample complexity, circuit lower bounds
+## Activation
+quantum time complexity, lower bounds, permutation invariance, SWAP test, sample complexity, circuit size
