@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-07 - Information Science + Quantum (Sunday Cron Job)
+
+### Breakeven demonstration of quantum low-density parity-check codes
+- [[qldpc-breakeven-demo]] - qLDPC error correction breakeven on trapped-ion with OMG architecture for mid-circuit measurement (arXiv: 2606.06455)
+  - 9× better logical error rate than previous superconducting qLDPC demonstration
+  - OMG architecture eliminates ion transport and dedicated coolant ions
+  - Tests 9 QECC families (qLDPC, topological, concatenated) on single device
+  - **Activation**: qldpc, breakeven, quantum error correction, trapped ion, mid-circuit measurement, OMG architecture, logical qubit, fault tolerance
+
+### Unlocking Exponential Shannon Capacity Gains via Quantum Entanglement
+- [[quantum-entanglement-shannon-capacity]] - Quantum entanglement provides exponential multiplicative capacity advantage in K-user MACs with causal CSIT (arXiv: 2606.05412)
+  - Capacity advantage grows exponentially with number of users K (21× for K=5, 88× for K=7)
+  - Gains robust to ~30% depolarization per entangled qubit
+  - Unbounded advantage as state alphabet grows (K=3 fixed)
+  - **Activation**: shannon capacity, quantum entanglement, multiple access channel, causal CSIT, exponential advantage, information theory
+
 ## 2026-06-08 - Information Science + Quantum (Cron Job)
 
 ### Wasserstein Exponential Smoothing
