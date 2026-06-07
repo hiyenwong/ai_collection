@@ -729,3 +729,38 @@
 ### Competition, Stability, and Functionality in E-I Neural Circuits
 - [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
   - Each neuron as agent minimizing local energy in competitive game
+
+### SoK: Post-Quantum Cryptography Implementation in Software Systems
+- [[pqc-hot-framework]] - PQC-HOT model: Human-Organisation-Technology framework for systematic PQC implementation in software systems (arXiv: 2606.04669)
+  - Reveals imbalance in PQC research: technological solutions dominate, human/organisational factors underexplored
+  - PQC-HOT model: conceptual framework explaining HOT dimension interactions for implementation outcomes
+  - NIST algorithms: ML-KEM, ML-DSA, SLH-DSA + HQC for algorithmic diversity
+  - **Activation**: PQC implementation, post-quantum cryptography, quantum-safe migration, PQC-HOT model, NIST PQC, crypto agility
+
+### Information-Geometric Bound on Entanglement Robustness
+- [[qfi-entanglement-robustness]] - QFI bounds on concurrence reduction in entanglement generation under parameter uncertainty (arXiv: 2606.05696)
+  - Direct connection: concurrence reduction bounded by quantum Fisher information (QFI) with respect to interaction parameter
+  - Two interacting qubits: ΔC ≤ √(F_Q)·δθ
+  - Trade-off: high QFI benefits sensing precision but increases entanglement sensitivity to fluctuations
+  - **Activation**: quantum Fisher information, entanglement robustness, concurrence bounds, quantum network reliability, quantum sensing precision
+
+### High-Rate Seedless Extractors for Device-Independent QKD
+- [[seedless-di-qkd-extractors]] - Truncation-based seedless extractors achieving optimal rate of 1 key bit per singlet in DI-QKD (arXiv: 2605.31525)
+  - Uses Bell violation as extractor promise instead of min-entropy
+  - Truncation method reduces estimation variance, achieves optimal rate with vanishing fraction of rounds
+  - Computationally efficient seedless extractors for privacy amplification
+  - **Activation**: device-independent QKD, seedless extractor, privacy amplification, Bell violation, quantum key distribution
+
+### Quantum Networks Using Diamond Color Defects
+- [[diamond-quantum-networks]] - Comprehensive methodology for diamond NV/SiV centers as scalable quantum network nodes (arXiv: 2605.30005)
+  - Excellent optical properties, fast spin-qubit control, long spin coherence times
+  - Heterogeneous integration of diamond nanophotonics with photonic integrated circuits
+  - Metropolitan-scale quantum network demonstrations with >50 km fiber entanglement
+  - **Activation**: diamond color defects, NV center, SiV center, quantum network node, spin-photon interface, quantum repeater
+
+### Coherent Room-Temperature Dipole Synchronization in Nanocavity Sheets
+- [[room-temp-quantum-coherence]] - Room-temperature synchronized dipole state in plasmonic nanogap arrays with spatial coherence (arXiv: 2606.06490)
+  - Spatial coherence across dipoles without temporal photon coherence or spectral narrowing
+  - Driven-dissipative system: fast temporal decay but complex spatial correlations
+  - Ultralow mode volumes, high Purcell enhancement, scalable ambient operation
+  - **Activation**: room temperature quantum, plasmonic nanocavity, dipole synchronization, driven-dissipative quantum, Purcell enhancement
