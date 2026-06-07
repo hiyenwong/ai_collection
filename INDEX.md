@@ -1,5 +1,59 @@
 # AI Collection Index
 
+
+## 2026-06-07 - Information Science + Quantum (Cron Job)
+
+### Breakeven demonstration of quantum low-density parity-check codes
+- [[quantum-ldpc-breakeven]] - Trapped-ion qLDPC breakeven with 4 logical qubits into 18 physical, OMG architecture for mid-circuit measurement without ion transport, 9x better than superconducting (arXiv: 2606.06455)
+  - OMG architecture enables addressable mid-circuit measurement and reset without ion transport
+  - Breakeven: logical error rate comparable to or exceeding trapped-ion qubit lifetimes
+  - Nine QEC code families tested on single device without reconfiguration
+  - **Activation**: quantum LDPC, qLDPC, trapped-ion, breakeven, OMG architecture, fault tolerance, quantum error correction
+
+### Multiple Quantum Hypothesis Testing: One-Shot Pairwise Bounds and Sharp Asymptotics
+- [[multiple-quantum-hypothesis-testing]] - Dimension-free one-shot bounds for multi-state quantum discrimination, resolves Audenaert-Mosonyi conjecture, sharp asymptotics for infinite-dimensional Hilbert spaces (arXiv: 2606.06246)
+  - Resolves Audenaert-Mosonyi conjecture on multi-state discrimination error bounds
+  - Proves achievability of multiple quantum Chernoff distance for arbitrary separable Hilbert spaces
+  - Binary error characterized by trace harmonic-mean, within factor 2 of classical optimum
+  - **Activation**: hypothesis testing, quantum state discrimination, Chernoff bound, Bayesian, error bounds
+
+### Unlocking Exponential Shannon Capacity Gains via Quantum Entanglement Assistance
+- [[quantum-entanglement-capacity-gains]] - Quantum entanglement gives exponential capacity scaling with users K in multiple access channels, 21x gain (K=5), 88x (K=7), robust to 30% depolarization (arXiv: 2606.05412)
+  - Capacity advantage grows exponentially with number of users K
+  - Unbounded gains as state alphabet size grows (K=3, binary I/O)
+  - Robust to 30% depolarization per entangled qubit
+  - Transmitter-only entanglement assistance sufficient
+  - **Activation**: Shannon capacity, entanglement assistance, multiple access channel, CSIT, capacity gain
+
+### Quantum Time Lower Bounds by Permutation Invariance
+- [[quantum-time-lower-bounds]] - First systematic framework for quantum time complexity lower bounds via permutation invariance, proves SWAP test, Shift test, LMR protocol all time-optimal (arXiv: 2606.05099)
+  - Reduces quantum time complexity to sample complexity for permutation-invariant properties
+  - Proves time-optimality of SWAP test, Shift test, productness tester, LMR, samplizer
+  - First method for systematic tight lower bounds on quantum circuit size
+  - **Activation**: quantum time complexity, lower bounds, permutation invariance, SWAP test, circuit size
+
+### No-Go Theorem for Gaussian Quantum Repeaters from Fractional Extendibility
+- [[no-go-gaussian-quantum-repeaters]] - Gaussian operations cannot enhance quantum capacity of pure-loss channels beyond direct transmission, introduces fractional extendibility for Gaussian states (arXiv: 2606.05097)
+  - Gaussian repeater chains cannot exceed direct transmission quantum capacity
+  - Fractional extendibility generalizes k-extendibility to continuous-variable setting
+  - Non-Gaussian operations fundamentally required for quantum repeater advantage
+  - **Activation**: no-go theorem, Gaussian repeaters, fractional extendibility, quantum capacity, photon loss
+
+### Gaussian Mean Width Strong Converse Bound on Quantum Channel Identification
+- [[gaussian-mean-width-identification-capacity]] - Single-letter SDP-computable strong converse bound on classical identification capacity via Gaussian mean width geometry (arXiv: 2606.05032)
+  - σ-Euclidean geometry controls trace-distance via covering estimates
+  - Sudakov inequality bounds covering numbers by Gaussian mean widths
+  - Improves bounds for depolarizing, Pauli, erasure, amplitude damping channels
+  - **Activation**: identification capacity, Gaussian mean width, strong converse, semidefinite programming
+
+### Multidimensional Reconciliation in Continuous-Variable QKD
+- [[multidimensional-cv-qkd-reconciliation]] - HDirac open-source framework for arbitrary-dimensional reconciliation in CV-QKD, Gaussian→BIAWGN virtual channel transformation (arXiv: 2606.02323)
+  - Transforms Gaussian quantum channel to virtual BIAWGN for LDPC compatibility
+  - High-dimensional constructions beyond algebraic dimensions 1, 2, 4, 8
+  - Open-source HDirac simulation framework for arbitrary dimensions
+  - **Activation**: CV-QKD, multidimensional reconciliation, LDPC, HDirac, continuous-variable, BIAWGN
+
+
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
@@ -15,6 +69,14 @@
   - Zero-shot brain-to-image decoding with purely synthetic training
   - Cross-scanner validation across 7T NSD and 3T BOLD5000 datasets
   - **Activation**: brain-to-image decoding, fMRI decoding, TRIBE v2, data augmentation, neural decoding, foundation model, zero-shot decoding, synthetic fMRI
+
+### Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
+- [[psychosis-scaling-critical-regime]] - Early psychosis exhibits systematic scaling exponent shifts across PRG+PSD+DFA methods, indicating critical regime reorganization rather than simple loss of critical dynamics (arXiv: 2606.06290)
+  - Phenomenological Renormalization Group (PRG) coarse-graining for spatial scale dynamics
+  - Power Spectral Density (PSD) and Detrended Fluctuation Analysis (DFA) for temporal scaling
+  - Preserved critical-like framework with collective dynamics reorganization
+  - Unified multi-method framework bridging fragmented psychiatric criticality findings
+  - **Activation**: criticality, psychosis, scaling behavior, renormalization group, power spectral density, detrended fluctuation analysis, brain dynamics, psychiatric disorders, collective dynamics, critical regime, scaling exponents
 
 ## 2026-06-07 - Quantum Computing Research (Cron Job)# AI Collection Index
 
