@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-06-07 - Information Science + Quantum Mechanics (Sunday Cron Job - Hourly)
+
+### Quantum Thermal Logic Gates
+- [[quantum-thermal-logic-gates]] - Quantum thermal logic gates using heat current in coupled quantum-dot systems as computational signal (arXiv: 2606.06432)
+  - One-to-one correspondence between classical electronic logic gates and thermal analog gates
+  - Heat current encodes logical states via threshold-based detection in nano-electronic architecture
+  - **Activation**: quantum thermal logic, heat current computing, quantum dot logic, thermal gates, nano-electronic quantum circuits
+
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Discrete Signaling Mediates Chaotic Regularization in Recurrent Neural Networks
