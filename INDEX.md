@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-07 - Information Science (Cron Job)
+
+### Semidefinite-programming hierarchies for classically simulable state families
+- [[sdp-quantum-simulability-certification]] - SDP hierarchy for certifying quantum advantage by characterizing classically simulable state families (arXiv: 2606.06204)
+  - Complete SDP hierarchy for classically simulable state families in arbitrary finite dimension
+  - Primal feasibility tests + dual affine witnesses for non-simulability certification
+  - Computable upper bounds on critical classical visibility for depolarizing noise
+  - **Activation**: semidefinite programming, classical simulability, quantum advantage, SDP hierarchy, POVM simulability, critical visibility, quantum witnesses
+
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
