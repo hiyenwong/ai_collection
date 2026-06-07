@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
+- [[neuromorphic-disturbance-observer]] - Bio-inspired event-driven disturbance observer using integrate-and-fire neuron dynamics with spike-frequency adaptation, achieving 42.6% spike event reduction under noise (arXiv: 2606.05189)
+  - Integrate-and-Fire (IF) neuron dynamics for event-driven control updates
+  - Spike-Frequency Adaptation (SFA) for history-dependent threshold regulation
+  - Robustness and adaptability in uncertain environments
+  - **Activation**: neuromorphic control, disturbance observer, spike-frequency adaptation, integrate-and-fire neuron, bio-plausible control, adaptive threshold, event-driven control, neural control system
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - fMRI-to-image decoding boosted 68% by augmenting small datasets with synthetic data from TRIBE v2 foundation model pretrained on 1000+ hours of multi-modal fMRI (arXiv: 2606.06345)
+  - Foundation model approach for neuroimaging data augmentation
+  - Zero-shot brain-to-image decoding with purely synthetic training
+  - Cross-scanner validation across 7T NSD and 3T BOLD5000 datasets
+  - **Activation**: brain-to-image decoding, fMRI decoding, TRIBE v2, data augmentation, neural decoding, foundation model, zero-shot decoding, synthetic fMRI
+
+## 2026-06-07 - Quantum Computing Research (Cron Job)# AI Collection Index
+
 ## 2026-06-07 - Quantum Computing Research (Cron Job)
 
 ### Breakeven Demonstration of Quantum Low-Density Parity-Check Codes
