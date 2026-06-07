@@ -1,6 +1,45 @@
+## 2026-06-07 - Information Science + Quantum (Cron Job)
+
+### Quantum resonance encryption for secure data storage and communication with quantum kicked top
+- [[quantum-resonance-encryption]] - 量子共振加密协议，利用量子受踢顶动力学实现安全数据存储和通信，提供授权用户完美恢复和窃听器检测 (arXiv: 2606.01953)
+  - 量子受踢顶（quantum kicked top）在共振态下产生伪随机动力学，仅可用正确密钥逆转
+  - 窃听态呈现完全混合态，基于量子力学而非计算复杂性的信息论安全
+  - 内置篡改检测，适用于共享量子计算环境的数据保护和量子密钥分发
+  - **Activation**: quantum resonance encryption, quantum kicked top, quantum data privacy, secure quantum storage
+
+### Qute: Towards Quantum-Native Database
+- [[quantum-native-database]] - 量子原生数据库框架，将SQL编译为量子电路，实现混合量子-经典查询优化和选择性量子索引 (arXiv: 2602.14699)
+  - 扩展SQL直接编译为门高效量子电路，而非经典数据库的量子适配
+  - 混合查询优化器动态选择量子vs经典执行方案，评估查询复杂度和硬件可用性
+  - 三阶段演进路线：量子模拟→混合执行→全量子原生，已在origin_wukong真实量子处理器验证
+  - 保真度保持存储缓解当前量子比特退相干约束
+  - **Activation**: quantum database, quantum SQL, hybrid query optimizer, quantum indexing
+
+### Iterative CZ-gate-based protocol for squeezed Schrödinger cat state engineering
+- [[quantum-state-engineering]] - 测量辅助量子态工程，通过QND纠缠操作和零差测量生成高保真度压缩薛定谔猫态 (arXiv: 2606.02201)
+  - QND纠缠操作+零差测量实现类确定性态制备，辅助态坍缩到目标态
+  - 迭代CZ门放大协议可扩展猫态尺寸，保真度/成功概率可调
+  - 非高斯资源对测量基量子计算至关重要，适用于混合量子网络
+  - **Activation**: quantum cat states, measurement-based quantum computing, QND gate, homodyne measurement
+
 # AI Collection Index
 
-## 2026-06-07 - Information Science (Cron Job)
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Coarse-to-fine Hierarchical Architecture with Sequential Mamba for Brain Reconstruction (CHASMBrain)
+- [[chasmbrain-mamba-brain-reconstruction]] - 双流Mamba架构用于图像到fMRI编码，粗到细策略实现ROI级到voxel级预测，Pearson相关达0.429 (arXiv: 2606.04772)
+  - 双流设计：CLS stream处理全局语义，Patch stream处理局部空间特征
+  - 不对称特化：Patch流锁定早期视觉皮层，CLS流向高阶区域提供语义上下文
+  - 两阶段策略：Stage 1预测ROI级激活，Stage 2使用Mamba-VAE细化到voxel级
+  - 跨被试泛化：学习主干模型捕获被试无关的视觉表征
+  - **Activation**: CHASMBrain, Mamba brain, fMRI encoding, hierarchical architecture, dual-stream, visual cortex mapping, image-to-fMRI, sequential Mamba
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - TRIBE v2 数据增强提升脑解码性能，使用大规模预训练编码模型生成合成fMRI数据，实现68% Top-10检索准确率提升 (arXiv: 2606.06345)
+  - TRIBE v2 预训练于1000+小时视觉/听觉/语言响应数据
+  - 零样本解码能力：纯合成数据训练可超越随机水平
+  - 数据源特异性调整策略：NSD和BOLD5000表现差异分析
+  - **Activation**: TRIBE v2, brain-to-image, fMRI decoding, synthetic fMRI, data augmentation brain, zero-shot brain decoding, neural encoding model
 
 ### Semidefinite-programming hierarchies for classically simulable state families
 - [[sdp-quantum-simulability-certification]] - SDP hierarchy for certifying quantum advantage by characterizing classically simulable state families (arXiv: 2606.06204)
