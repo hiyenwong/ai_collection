@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-06-08 - Information Science + Quantum (Cron Job)
+
+### Wasserstein Exponential Smoothing
+- [[wasserstein-exponential-smoothing]] - Extends exponential smoothing to distributional time series in Wasserstein space (arXiv: 2606.05560)
+  - Consistent α estimation via Wasserstein distance minimization
+  - Applications to high-frequency financial returns and electricity demand distributions
+  - **Activation**: wasserstein exponential smoothing, distributional time series, Wasserstein forecasting, distributional forecasting
+
+### Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines
+- [[qml-feature-encoding]] - Systematic survey of 66 QML encoding methods with hardware-grounded selection framework (arXiv: 2606.05387)
+  - Three-axis cost-expressivity-robustness taxonomy
+  - Critical gate-error threshold p* ~ 10^-3 for amplitude encoding viability
+  - **Activation**: qml feature encoding, quantum data encoding, amplitude encoding, NISQ encoding
+
+### Compositional Boundaries for Density Fusion
+- [[compositional-density-fusion]] - Order-invariant hierarchical execution for distributed uncertainty management (arXiv: 2606.05871)
+  - Normalized weighted linear pooling characterized as the unique compositional fusion rule
+  - f-divergence balancing shows pairwise solvability ≠ schedule-independent fusion
+  - **Activation**: density fusion, uncertainty management, order-invariant fusion, distributed probabilistic models
+
+### Automated Proving of Shannon-Type Entropy Inequalities via Fine-Tuned Language Models
+- [[automated-entropy-inequality-proving]] (enhanced) - 0.6B fine-tuned LM + guided beam search achieves 85% proof success rate (arXiv: 2606.05729)
+  - Outperforms GPT-5.5 (1.7%) and Psitip (33.3%) on n=10-15 variable inequalities
+  - Format failures and step quality degradation are dominant failure modes
+  - **Activation**: entropy inequalities, Shannon, automated proving, language models, information theory
+
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
