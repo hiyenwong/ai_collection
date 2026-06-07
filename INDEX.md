@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - Hardware-efficient STDP algorithm achieving 4.5x-219.8x energy efficiency improvement via power-of-two weight encoding (arXiv: 2606.06159)
+  - Eliminates multipliers through power-of-two quantization (shift operations instead of multiplication)
+  - Intrinsic timing mechanism removes global clock requirements
+  - ASIC: 4.8x-22.01x speedup with only 1.2%-3.3% area of prior works
+  - FPGA: 100x reduction in hardware resources, 100x reduction in energy per weight update
+  - **Activation**: ITP-STDP, intrinsic timing, power-of-two STDP, on-chip SNN training, hardware STDP, neuromorphic learning engine
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - TRIBE v2 使用大规模预训练编码模型生成合成 fMRI 数据，实现高达 68% 图像检索精度提升 (arXiv: 2606.06345)
+  - TRIBE v2 预训练于 1000+ 小时视觉/听觉/语言响应数据
+  - 零样本解码能力：纯合成数据训练可超越随机水平
+  - 数据源特异性调整：NSD 7T 比例 1.0-2.0，BOLD5000 3T 比例 4.0-8.0
+  - Foundation model 方法用于脑解码数据效率优化
+  - **Activation**: TRIBE v2, brain-to-image, fMRI decoding, synthetic fMRI, data augmentation brain, zero-shot brain decoding, neural encoding model
+
 ## 2026-06-07 - Information Science + Quantum Mechanics (Sunday Cron Job - Hourly)
 
 ### Quantum Thermal Logic Gates
