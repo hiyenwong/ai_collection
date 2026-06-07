@@ -10,6 +10,12 @@
 
 ## 2026-06-08 - Information Science + Quantum Mechanics (Cron Job)
 
+### Robust Quantum Steerability Classification via Key Feature Extraction and Matrix Structure Preservation
+- [[robust-steerability-classification]] - Robust quantum steerability classification using key feature extraction and matrix-structure-preserving CNNs (arXiv: 2606.04363)
+  - Solves generalization failure of SVMs/MLPs on T-diagonal and AVN states
+  - CNN with matrix-structure-preserving features + key features achieves robust generalization
+  - **Activation**: quantum steerability classification, steerability detection, quantum state ML, matrix structure quantum, SLOCC invariant, AVN states
+
 ### A Toolbox to Understand the Physics of Quantum Data Management
 - [[quantum-data-management-physics]] - Toolbox methodology for understanding quantum device physics in database optimization (arXiv: 2605.14719)
   - Connects quantum device behavior to database problem structure
