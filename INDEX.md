@@ -62,6 +62,22 @@
   - 适用于MEG系统设计、量子传感器评估、脑成像分辨率规划和神经编码效率分析
   - **Activation**: magnetoencephalography, MEG, quantum limit, information capacity, metabolic power, brain imaging, SQUID, atomic magnetometer
 
+## 2026-06-08 - Neuroscience + Quantum (Cron Job - Hourly)
+
+### Correlated States in Quantum Dot Clusters Coupled to a Common Superconductor
+- [[neural-quantum-state-vqmc-correlated]] - Fermionic neural network quantum state VMC for correlated superconducting nanostructures, identifies 3 interaction regimes (arXiv: 2606.04608)
+  - Canonical transformation to particle-number-conserving representation
+  - Fermionic NQS-VMC: trivial singlet, critical intermediate, strongly correlated Heisenberg regimes
+  - 1D singlet-doublet transitions gapless in thermodynamic limit; 2D robust triplet ground states
+  - **Activation**: neural quantum state VMC, fermionic NQS, correlated superconducting, quantum dot cluster, singlet-doublet transition
+
+### Parametrically Induced Strong Coupling Between Superconducting Circuit and Spin Ensemble
+- [[parametric-strong-coupling-quantum-memory]] - On-demand MHz-rate parametric coupling between Josephson circuits and rare-earth spin ensembles for quantum state transfer (arXiv: 2606.03897)
+  - Parametric pump as tunable bridge: coupling on-demand, minimal back-action when off
+  - Three-wave mixing bridges frequency mismatch, g/2π ~ several MHz
+  - Hybrid memory architecture: circuit computes fast, spins store long-lived states
+  - **Activation**: parametric coupling quantum, spin ensemble memory, hybrid quantum memory, Josephson spin interface
+
 ## 2026-06-07 - Information Science + Quantum (Cron Job)
 
 ### Quantum resonance encryption for secure data storage and communication with quantum kicked top
