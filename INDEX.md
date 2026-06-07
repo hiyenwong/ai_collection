@@ -46,6 +46,31 @@
   - 10 system recommendations covering design tradeoffs and fleet management
   - **Activation**: agent memory, long-horizon tasks, stateful agents, memory retrieval, fact stores, memory construction, fleet-scale, freshness-latency, memory taxonomy, profiling framework, system implications
 
+
+
+## 2026-06-07 - Information Science + Quantum (Cron Job)
+
+### On the Cryptographic Structure Required for Verifying Qubits
+- [[quantum-qubit-verification]] - Classical verification methodology for quantum computation by testing anti-commuting operators on quantum devices, establishing minimal cryptographic structure needed for verification (arXiv: 2606.05527)
+  - Anti-commuting operator tests as foundation for quantum device verification
+  - Classical verification protocols without requiring quantum capabilities
+  - Statistical confidence bounds for verification certificates
+  - **Activation**: quantum qubit verification, classical verification of quantum, anti-commuting operator test, 量子比特验证, qubit testing, quantum device verification
+
+### Information-Geometric Bound on the Robustness of Entanglement Generation
+- [[entanglement-robustness-bounds]] - Information-geometric framework for bounding entanglement robustness under noise, using Riemannian geometry on quantum state space to quantify noise impact on entanglement quality (arXiv: 2606.05696)
+  - Fisher information metric for quantum state distance computation
+  - Geodesic analysis between ideal and noisy entangled states
+  - Practical bounds on entanglement fidelity degradation
+  - **Activation**: entanglement robustness, entanglement bounds, information geometry quantum, 纠缠鲁棒性, quantum state robustness, entanglement generation noise
+
+### Quantum-Classical Equivalence for AND-Functions
+- [[quantum-classical-equivalence]] - Framework for analyzing quantum-classical equivalence in communication complexity, proving polynomial bounds on quantum advantage for total Boolean AND-functions (arXiv: 2606.03249)
+  - Log-rank conjecture analysis for AND-function communication matrices
+  - Quantum vs classical communication complexity comparison
+  - Equivalence chain: Q(f) = poly(D(f)) for total Boolean functions
+  - **Activation**: quantum classical equivalence, communication complexity quantum advantage, AND-function quantum, 量子经典等价, total Boolean function quantum
+
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
