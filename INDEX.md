@@ -1,3 +1,12 @@
+## 2026-06-08 - Neuroscience + Quantum (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[quantum-metabolic-neuroimaging-limit]] - 脑磁图信息容量的量子代谢极限，结合量子能量分辨率与脑代谢功率推导技术无关上限，人脑最大信息率约2.2 Mbit/s (arXiv: 2511.06401)
+  - 量子能量分辨率极限结合脑代谢功率推导技术无关的信息容量上限
+  - 高阶多极分量几何抑制导致时空带宽竞争，无法同时最大化时空分辨率
+  - 适用于MEG系统设计、量子传感器评估、脑成像分辨率规划和神经编码效率分析
+  - **Activation**: magnetoencephalography, MEG, quantum limit, information capacity, metabolic power, brain imaging, SQUID, atomic magnetometer
+
 ## 2026-06-07 - Information Science + Quantum (Cron Job)
 
 ### Quantum resonance encryption for secure data storage and communication with quantum kicked top
