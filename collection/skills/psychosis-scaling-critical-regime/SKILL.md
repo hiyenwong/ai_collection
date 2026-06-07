@@ -1,304 +1,247 @@
 ---
-name: psychosis-scaling-critical-regime
-description: "早期精神病临界区域内的标度行为偏差研究。使用现象学重整化群(PRG)、功率谱密度(PSD)和去趋势波动分析(DFA)研究静息态fMRI的集体动力学，发现保留标度区域内的系统性重组而非临界动力学丧失。Activation: early psychosis, critical dynamics, scaling behavior, PRG, DFA, PSD, renormalization group, fMRI, brain criticality."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2606.06290"
-  authors: ["Irem Topal", "Paola Moreno Ancalmo", "Guillermo Montana Valverde", "Philipp Homan", "Wolfram Hinzen"]
-  published: "2026-06-04"
-  tags: ["early-psychosis", "criticality", "scaling-behavior", "renormalization-group", "brain-dynamics", "fMRI"]
+skill_name: psychosis-scaling-critical-regime
+description: 早期精神病临界区域内标度行为偏差研究。使用现象学重整化群(PRG)、功率谱密度(PSD)和去趋势波动分析(DFA)揭示精神病中的集体动力学重组而非简单临界态丢失。
+version: 1.0.0
+tags: [neuroscience, criticality, psychosis, brain-networks, renormalization-group, scaling-analysis, psychiatric-disorders]
+authors: [Irem Topal, Paola Moreno Ancalmo, Guillermo Montana Valverde, Philipp Homan, Wolfram Hinzen]
+paper_id: arXiv:2606.06290
+date: 2026-06-05
+activation_keywords: [criticality, psychosis, scaling behavior, renormalization group, power spectral density, detrended fluctuation analysis, brain dynamics, psychiatric disorders, collective dynamics]
 ---
 
-# Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
+# Early Psychosis Scaling Behavior in Critical Regime
 
-**arXiv: 2606.06290** | **Authors: Irem Topal et al.** | **Submitted: 4 Jun 2026**
+## 核心问题
+大规模脑活动是否处于临界态？精神病是否改变这种临界动力学组织？如何用多尺度分析框架统一评估精神病的脑动力学异常？
 
-## 核心摘要
+## 理论背景
 
-大规模脑活动表现出与近临界区域操作一致的标度不变动力学，这种动力学与长程相关、高效信息处理和集体组织的涌现相关。本研究结合现象学重整化群(PRG)框架与功率谱密度(PSD)和去趋势波动分析(DFA)，研究早期精神病患者的静息态fMRI标度性质。发现早期精神病并非简单的临界动力学丧失，而是保留标度区域内的集体动力学重组。
+### 临界态假说
+- **定义**: 神经系统在临界点附近运行，表现出尺度不变性和长程时空关联
+- **功能优势**: 
+  - 最大动态范围 (Kinouchi & Copelli 2006)
+  - 高效信息处理 (Shew & Plenz 2013)
+  - 灵活协调的大尺度动力学
+- **实验证据**: 神经雪崩、长程时间关联、无标度功率谱
 
-## 核心方法论
+### 精神病临界态研究现状
+- **问题**: 不同研究使用不同方法/模态，结果碎片化
+- **已知异常**: PSD、DFA、神经雪崩统计、分支过程测量
+- **缺口**: 缺乏统一框架连接空间和时间标度性质
 
-### 1. 现象学重整化群 (PRG) 框架
+## 方法论框架：三重分析
 
-**粗粒化方法**：
-- 通过空间粗粒化提取不同尺度上的集体动力学
-- 研究系统在不同空间分辨率下的行为
-- 识别标度不变的组织模式
-
-**关键特征**：
-- 健康对照组：静息态活动表现出非平凡标度行为，符合临界组织
-- 早期精神病：同样的标度不变组织现象学，但标度指数系统性偏移
-
-### 2. 多观测指标联合分析
-
-**功率谱密度 (PSD)**：
-- 分析fMRI时间序列的频率依赖行为
-- 标度指数 β 描述 PSD 的幂律衰减
-
-**去趋势波动分析 (DFA)**：
-- 研究时间序列的长程相关性
-- 标度指数 α 反映波动行为的标度特性
-
-**PRG 粗粒化**：
-- 空间尺度依赖的动力学特征
-- 跨尺度的一致性或偏移
-
-### 3. 主要发现
-
-**健康对照组**：
-- 展示临界动力学特征
-- 长程相关性强
-- 信息处理效率高
-- 集体组织涌现
-
-**早期精神病组**：
-- **不是简单临界性丧失** → 而是标度区域内的重组
-- 标度指数系统性偏移（而非消失）
-- 保留标度不变现象学
-- 集体动力学重新配置
-
-## 技术实现
-
-### PRG 粗粒化步骤
+### 1. 现象学重整化群 (PRG)
+- **原理**: 粗粒化方法提取跨尺度集体动力学
+- **操作**: 系统性合并神经元群体 → 追踪集体行为演化
+- **指标**: 重整化后的相关长度、自由度缩减率
+- **核心假设**: 临界系统在粗粒化下保持标度不变性
 
 ```python
-# 伪代码框架
-def phenomenological_rg(data, scales):
+# PRG粗粒化过程
+def prg_coarse_graining(fmri_data, scale_levels):
     """
-    现象学重整化群分析
+    系统性合并神经元群体提取集体动力学
     
-    参数:
-    - data: fMRI 数据 (时间 × 空间)
-    - scales: 粗粒化尺度列表
+    Args:
+        fmri_data: 原始fMRI时间序列 [N_timepoints, N_voxels]
+        scale_levels: 粗粒化层级列表
     
-    返回:
-    - scaling_exponents: 各尺度下的标度指数
+    Returns:
+        collective_dynamics: 各尺度的集体行为指标
     """
-    exponents = []
-    for scale in scales:
-        # 空间粗粒化（块平均或类似方法）
-        coarse_data = spatial_coarse_graining(data, scale)
-        
-        # 计算集体动力学特征
-        features = compute_collective_features(coarse_data)
-        
-        # 提取标度指数
-        exponent = fit_scaling_relation(features, scale)
-        exponents.append(exponent)
-    
-    return exponents
+    collective_dynamics = {}
+    for scale in scale_levels:
+        # 空间聚合
+        aggregated = spatial_aggregation(fmri_data, scale)
+        # 计算集体指标
+        collective_dynamics[scale] = {
+            'correlation_length': compute_corr_length(aggregated),
+            'dimension_reduction': compute_dim_reduction(aggregated)
+        }
+    return collective_dynamics
 ```
 
-### PSD + DFA 联合分析
+### 2. 功率谱密度 (PSD)
+- **原理**: 频域分析检测无标度时间动力学
+- **临界特征**: S(f) ~ 1/f^β (幂律衰减)
+- **指标**: β指数偏离度（健康 ~ 1, 病理偏离）
 
 ```python
-import numpy as np
-from scipy import signal
-
-def psd_scaling_analysis(time_series, freq_range):
+def compute_psd_scaling(fmri_signal):
     """
-    PSD 标度分析
+    计算功率谱密度标度指数
+    
+    Args:
+        fmri_signal: 单体素或ROI时间序列
+    
+    Returns:
+        beta: PSD标度指数 (临界态 β~1)
     """
-    freqs, psd = signal.welch(time_series)
+    from scipy.signal import welch
     
-    # 在指定频率范围内拟合幂律
-    log_freq = np.log(freqs[freq_range])
-    log_psd = np.log(psd[freq_range])
+    freqs, psd = welch(fmri_signal, fs=TR, nperseg=256)
+    # 拟合幂律: log PSD = -β log f + c
+    valid_range = (freqs > 0.01) & (freqs < 0.1)  # 低频范围
+    log_f = np.log(freqs[valid_range])
+    log_psd = np.log(psd[valid_range])
     
-    # β = -slope (PSD ~ f^(-β))
-    beta = -np.polyfit(log_freq, log_psd, 1)[0]
-    
+    beta = -np.polyfit(log_f, log_psd, 1)[0]
     return beta
-
-def dfa_scaling_analysis(time_series, window_sizes):
-    """
-    DFA 标度分析
-    """
-    # 去趋势并计算波动函数
-    fluctuations = []
-    for window in window_sizes:
-        detrended = detrend_time_series(time_series, window)
-        fluct = np.std(detrended)
-        fluctuations.append(fluct)
-    
-    # F(n) ~ n^α
-    log_windows = np.log(window_sizes)
-    log_flucts = np.log(fluctuations)
-    
-    alpha = np.polyfit(log_windows, log_flucts, 1)[0]
-    
-    return alpha
 ```
 
-## 理论框架整合
+### 3. 去趋势波动分析 (DFA)
+- **原理**: 检测长程时间关联（非平稳信号适用）
+- **临界特征**: F(n) ~ n^α (幂律波动函数)
+- **健康范围**: α ∈ [0.5, 1.0]（临界态附近）
+- **指标**: α指数系统性偏移
 
-### 临界动力学理论
+```python
+def detrended_fluctuation_analysis(signal, window_sizes):
+    """
+    DFA分析检测长程时间关联
+    
+    Args:
+        signal: 时间序列
+        window_sizes: 分析窗口大小列表
+    
+    Returns:
+        alpha: DFA标度指数
+        F_values: 各窗口的波动函数值
+    """
+    # 积分信号
+    integrated = np.cumsum(signal - np.mean(signal))
+    
+    F_values = []
+    for n in window_sizes:
+        # 分割窗口
+        segments = len(integrated) // n
+        # 各窗口去趋势
+        trends = []
+        for i in range(segments):
+            segment = integrated[i*n:(i+1)*n]
+            trend = np.polyfit(np.arange(n), segment, 1)
+            detrended = segment - np.polyval(trend, np.arange(n))
+            F = np.sqrt(np.mean(detrended**2))
+            trends.append(F)
+        F_values.append(np.mean(trends))
+    
+    # 拟合幂律: log F = α log n
+    alpha = np.polyfit(np.log(window_sizes), np.log(F_values), 1)[0]
+    
+    return alpha, F_values
+```
 
-**关键概念**：
-- 标度不变性：系统在不同尺度上表现出相似行为
-- 长程相关性：时间/空间上的远程耦合
-- 幂律分布：特征量的无标度统计特性
+## 实验设计
 
-**临界点特征**：
-- 最大信息传输
-- 最大计算能力
-- 最大适应性
-- 相变边界
-
-### 精神病中的临界性重新组织
-
-**传统观点（已被本研究挑战）**：
-- 精神病 = 临界动力学丧失
-- 系统远离临界点
-- 信息处理效率下降
-
-**新观点（本研究发现）**：
-- 精神病 = **临界区域内的参数重组**
-- 保留标度不变现象学
-- 标度指数偏移 → 动力学重新配置
-- 不是"崩溃"而是"重配置"
-
-## 临床意义
-
-### 早期精神病诊断
-
-**新诊断范式**：
-- 标度指数作为潜在生物标志物
-- 多观测指标联合评估（PRG + PSD + DFA）
-- 跨尺度动力学一致性分析
-
-**优势**：
-- 保留临界组织的框架 → 可能更易干预
-- 系统性偏移 → 可追踪治疗响应
-- 多模态验证 → 提高诊断可靠性
-
-### 精神病病理机制
-
-**机制假设**：
-- 神经调控异常 → 标度指数偏移
-- 网络连接重组 → 集体动力学改变
-- 突触可塑性障碍 → 尺度依赖动力学异常
-
-**干预策略**：
-- 调节神经调控系统（恢复标度指数）
-- 网络连接优化（重建临界动力学）
-- 突触可塑性增强（改善集体组织）
-
-## 与其他理论的关系
-
-### 与自由能原理 (FEP) 的联系
-
-**FEP 中的临界性**：
-- 自由能最小化 ↔ 临界点附近操作
-- 预测编码效率 ↔ 信息处理最大化
-- 适应性 ↔ 临界区域的灵活性
-
-**精神病中的FEP视角**：
-- 预测误差处理异常 → 标度指数偏移
-- 精度加权失调 → 集体动力学重组
-- 学习速率异常 → 临界参数变化
-
-### 与神经质量模型的联系
-
-**Wilson-Cowan 模型**：
-- 临界点附近的动力学切换
-- 标度行为与参数的关系
-
-**精神病模型扩展**：
-- 参数空间中的偏移方向
-- 临界区域内的重配置轨迹
-- 可逆性评估（治疗潜力）
-
-## 实验设计建议
-
-### 数据采集
-
-**fMRI 参数**：
-- 高时间分辨率（TR < 2s）
-- 长扫描时间（> 10 min）
-- 静息态条件
-
-**参与者**：
-- 早期精神病组（首次发作）
-- 健康对照组
-- 治疗前后纵向数据
+### 数据集
+- **参与者**: 早期精神病个体 + 健康对照
+- **模态**: 静息态fMRI
+- **预处理**: 标准fMRI预处理流水线
 
 ### 分析流程
+1. PRG粗粒化 → 提取空间尺度动力学
+2. PSD分析 → 时间域无标度检测
+3. DFA分析 → 长程关联量化
+4. 跨尺度对比 → 统合评估动力学重组
 
+## 关键发现
+
+### 健康对照结果
+- **标度不变性**: 所有三种方法一致显示临界态特征
+- **PRG**: 粗粒化保持动力学一致性
+- **PSD**: β指数接近理论临界值
+- **DFA**: α指数处于健康范围
+
+### 早期精神病结果
+- **核心发现**: 标度行为系统性偏移，但临界态框架保留
+- **不是简单丢失**: 不是"远离临界态"，而是"临界态内重组"
+- **三种方法一致性**: PRG、PSD、DFA均显示相似偏移模式
+- **集体动力学改变**: 大尺度脑网络协调性重组
+
+### 标度指数偏移模式
+| 方法 | 健康对照 | 早期精神病 | 偏移方向 |
+|------|---------|-----------|---------|
+| PSD β | ~1.0 | 偏离 | 频域动力学改变 |
+| DFA α | [0.5, 1.0] | 偏移 | 时间关联强度改变 |
+| PRG相关长度 | 标度不变 | 偏移 | 空间协调性改变 |
+
+## 理论意义
+
+### 1. 非简单去临界化
+- **传统观点**: 精神病 = 临界态丢失
+- **新发现**: 精神病 = 临界态内动力学重组
+- **比喻**: 不是"温度偏离临界点"，而是"临界点附近参数重构"
+
+### 2. 统一评估框架
+- **碎片化问题**: 不同方法孤立评估 → 结果不可比
+- **PRG+PSD+DFA整合**: 空间+时间+关联 → 统合动力学视图
+- **标准化潜力**: 为精神病临界态研究提供方法论标准
+
+### 3. 集体动力学视角
+- **超越单节点**: 关注大尺度脑网络协调性
+- **重整化思想**: 从微观神经元 → 宏观集体行为
+- **精神病机制**: 集体动力学组织改变而非单点功能障碍
+
+## 临床应用潜力
+
+### 诊断标记物
+- **触发条件**: 精神病风险评估、早期诊断
+- **实施方案**: PRG+PSD+DFA三重标度分析
+- **判别依据**: 三种指数系统性偏移模式
+
+### 病程监测
+- **追踪指标**: 标度指数动态变化
+- **治疗响应**: 指数回归健康范围 → 治疗有效
+- **复发预测**: 指数偏离 → 复发风险升高
+
+### 分层治疗
+- **动力学分层**: 不同标度偏移模式 → 不同病理亚型
+- **精准干预**: 针对动力学重组模式选择治疗策略
+
+## 实施检查清单
+
+- [ ] 数据预处理：标准fMRI流程（运动校正、空间标准化、滤波）
+- [ ] PRG粗粒化：至少5个尺度层级，覆盖从voxel到全脑
+- [ ] PSD分析：低频范围0.01-0.1 Hz，排除高频噪声
+- [ ] DFA分析：窗口大小覆盖10-100%信号长度
+- [ ] 跨尺度对比：三种方法结果一致性检验
+- [ ] 统计检验：组间差异显著性（p<0.05校正）
+
+## 限制与注意事项
+
+1. **模态局限**: 仅fMRI静息态数据，需扩展到EEG/MEG验证
+2. **样本量**: 需大样本验证标度偏移稳定性
+3. **病程特异性**: 早期精神病 vs 慢性精神病的标度差异未知
+4. **药物效应**: 抗精神病药物对标度行为的影响待研究
+5. **个体差异**: 标度指数个体内稳定性需纵向验证
+
+## 与现有框架对比
+
+| 框架 | 分析维度 | 精神病结论 | 统合性 |
+|------|---------|-----------|--------|
+| PRG+PSD+DFA | 空间+时间+关联 | 临界态内重组 | ✓ 统合 |
+| 单一PSD/DFA | 时间 | 标度偏移 | ✗ 碎片化 |
+| 神经雪崩 | 空间 | 临界态改变 | ✗ 单一指标 |
+| 分支过程 | 拓扑 | 参数偏离 | ✗ 模型依赖 |
+
+## 引用
+```bibtex
+@article{topal2026psychosis,
+  title={Early psychosis shows deviations in scaling behaviour within a critical regime},
+  author={Topal, Irem and Ancalmo, Paola Moreno and Valverde, Guillermo Montana and Homan, Philipp and Hinzen, Wolfram},
+  journal={arXiv preprint arXiv:2606.06290},
+  year={2026}
+}
 ```
-1. fMRI预处理
-   ├─ 运动校正
-   ├─ 空间标准化
-   ├─ 时间滤波
-   └─ 信号提取
 
-2. PRG 粗粒化
-   ├─ 多尺度空间粗粒化
-   ├─ 集体特征计算
-   └─ 标度拟合
+## 相关技能
+- [[brain-critical-dynamics-theory]]: 神经系统临界态理论
+- [[griffiths-phase-brain-criticality]]: Griffiths相扩展临界区域框架
+- [[renormalization-scaling-brain-activity]]: 重整化群分析脑活动标度律
+- [[neutral-theory-neural-dynamics]]: 中性理论解释无标度神经动力学
 
-3. PSD 分析
-   ├─ 频谱估计
-   ├─ 幂律拟合
-   └─ β指数提取
-
-4. DFA 分析
-   ├─ 多窗口去趋势
-   ├─ 波动函数计算
-   └─ α指数提取
-
-5. 统计比较
-   ├─ 组间标度指数差异
-   ├─ 跨指标一致性分析
-   └─ 临界参数估计
-```
-
-## Pitfalls
-
-### 1. 标度指数拟合范围
-
-**问题**：不当的拟合范围导致指数偏差
-
-**解决方案**：
-- 明确频率/窗口范围
-- 验证幂律拟合质量（R²）
-- 使用多个拟合范围进行交叉验证
-
-### 2. 空间粗粒化方法选择
-
-**问题**：不同粗粒化方法影响PRG结果
-
-**解决方案**：
-- 使用多种粗粒化方法验证一致性
-- 选择保留拓扑信息的方法
-- 验证尺度序列的选择
-
-### 3. 样本量和统计效力
-
-**问题**：早期精神病样本通常较小
-
-**解决方案**：
-- 多站点数据聚合
-- 贝叶斯统计方法
-- 报告效力分析
-
-### 4. 临界性 vs 标度行为
-
-**关键区分**：
-- 标度行为 ≠ 必须在临界点
-- 本研究强调：保留标度区域 ≠ 保留临界点
-- 需要更多临界点测试（如相变分析）
-
-## Activation Keywords
-
-**中文**：早期精神病、临界动力学、标度行为、PRG、DFA、PSD、重整化群、脑临界性、fMRI标度分析、集体动力学
-
-**英文**：early psychosis, critical dynamics, scaling behavior, PRG, DFA, PSD, renormalization group, brain criticality, fMRI scaling, collective dynamics, phenomenological renormalization group
-
-## References
-
-- arXiv:2606.06290 - Original paper
-- Tkačik et al. (2015) - Criticality in neural systems
-- Tagliazucchi et al. (2016) - Brain criticality in wakefulness and sleep
-- Haimovici et al. (2013) - Brain organization at criticality
+## 扩展阅读
+- Chialvo (2010): "Emergent complex neural dynamics"
+- Munoz (2018): "Colloquium: Criticality and dynamical scaling in living systems"
+- Meshulam et al. (2019): PRG coarse-graining methodology
