@@ -51,6 +51,21 @@
   - Trade-off analysis: dimension vs reconciliation efficiency vs frame error rate
   - **Activation**: CV-QKD, reconciliation, multidimensional, LDPC, HDirac, continuous-variable, quantum key distribution
 
+
+### Quantum enhanced rare event discovery and sampling
+- [[quantum-rare-event-sampling]] - Quantum algorithm for rare-event discovery/sampling without prior knowledge of events, achieves optimal quantum scaling and quadratic speedup for heavy-tailed systems (arXiv: 2606.06316)
+  - Blind rare-event amplification without needing to know targets beforehand
+  - Quadratic speedup for heavy-tailed systems with nonvanishing tail mass
+  - Polynomial speedup for stationary stochastic processes (exponent from entropy rate)
+  - **Activation**: rare event, heavy-tailed, quantum sampling, threshold amplification, stochastic process, financial crash prediction
+
+### Quantum Algorithms for Triangle Cut Sparsification
+- [[quantum-triangle-sparsification]] - Quantum algorithms for triangle cut sparsification using quantum walks and Grover search, improving classical listing bounds for large-scale network analysis (arXiv: 2606.06287)
+  - Triangle listing in Õ(min(n^(5/4)t^(7/12), m + m^(3/4)t^(1/2), n^(3/2)t^(1/2)))
+  - Heavy-light vertex partitioning for hybrid quantum-classical processing
+  - ε-sparsifier construction in Õ(n/ε²) with provable quality guarantees
+  - **Activation**: triangle listing, graph sparsification, quantum walks, grover search, heavy-light partition, network analysis
+
 ## 2026-06-08 - Information Science + Quantum (Cron Job)
 
 ### Wasserstein Exponential Smoothing
