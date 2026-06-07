@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Discrete Signaling Mediates Chaotic Regularization in Recurrent Neural Networks
+- [[discrete-signaling-chaotic-regularization]] - 连接微观混沌与宏观神经表征几何的理论框架，解释混沌正则化机制 (arXiv: 2606.04426v1)
+  - 混沌动力学诱导局部粗糙性但保持全局平滑性
+  - 自然产生幂律谱特征，与皮质记录匹配
+  - **Activation**: chaotic dynamics, neural representation, regularization, mean-field theory, power-law spectrum
+
 ## 2026-06-08 - Information Science + Quantum Mechanics (Cron Job)
 
 ### A Toolbox to Understand the Physics of Quantum Data Management
