@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-07 - Quantum Computing Research (Cron Job)
+
+### Breakeven Demonstration of Quantum Low-Density Parity-Check Codes
+- [[quantum-ldpc-breakeven-demonstration]] - Achieves breakeven performance with qLDPC codes on trapped-ion quantum computers, demonstrating nine QEC codes on a single device with 4 logical qubits encoded into 18 physical qubits (arXiv: 2606.06455)
+  - Novel OMG architecture for addressable mid-circuit measurement without ion transport
+  - Logical error rates better than previous superconducting qubit demonstrations
+  - No hardware reconfiguration needed across three code families: qLDPC, topological, concatenated
+  - **Activation**: quantum LDPC, qLDPC, trapped-ion, quantum error correction, fault-tolerant, breakeven, OMG architecture, mid-circuit measurement, quantum codes
+
 ## 2026-06-07 - Systems Engineering Research (Cron Job)
 
 ### HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers
