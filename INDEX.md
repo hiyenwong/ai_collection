@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Early psychosis shows deviations in scaling behaviour within a critical regime
+- [[psychosis-scaling-critical-regime]] - PRG+PSD+DFA framework for scaling behavior deviations in early psychosis brain dynamics (arXiv: 2606.06290)
+  - Phenomenological Renormalization Group coarse-graining reveals collective dynamics across spatial scales
+  - Power spectral density shows altered temporal scaling (beta exponent shifts)
+  - DFA reveals modified long-range correlations (alpha exponent changes)
+  - Key insight: reorganization within preserved scaling regime, not loss of criticality
+  - **Activation**: psychosis scaling, brain criticality psychiatric, PRG renormalization brain, PSD DFA analysis, scale-invariant dynamics
+
+### Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization
+- [[cross-scale-spatial-generative-neurodegeneration]] - Variational generative framework bridging gene expression to cortical degeneration (86% variance, r=0.94) (arXiv: 2606.05870)
+  - 86.04% explained variance in regional vulnerability prediction
+  - Spatial correlation r=0.9439 between predicted and observed degeneration
+  - 910 landmark genes mapped to 68 cortical regions (Allen Brain Atlas + ADNI FreeSurfer)
+  - Graph-based spatial smoothness regularization preserves cortical organization
+  - **Activation**: neurodegeneration generative modeling, Alzheimer's transcriptomic cortical, spatial graph regularization, gene expression cortical thickness, cross-scale molecular macroscale
+
 ## 2026-06-07 - Information Science + Quantum (Sunday Cron Job)
 
 ### Breakeven demonstration of quantum low-density parity-check codes
