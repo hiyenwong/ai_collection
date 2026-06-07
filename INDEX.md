@@ -18,6 +18,20 @@
 
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
+### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
+- [[quantum-analogue-cloud-formalism]] - 量子类云函数形式化建模超阈值信息处理，结合神经场论与薛定谔型方程解释决策中"改变主意"现象 (arXiv: 2605.25214)
+  - 云函数空间结构继承感知物理对象特性，时间演化由大规模神经活动内在规律支配
+  - 非线性非厄米哈密顿量 + Lotka-Volterra项的薛定谔型控制方程
+  - 改变主意现象源于快速前意识感知与慢速意识比较的交互
+  - **Activation**: cloud function, supraliminal, neural field, decision-making, change-of-mind, consciousness, Schrodinger equation, non-Hermitian
+
+### Covariant quantum error correction in a three-layer quantum brain model
+- [[covariant-qec-quantum-brain]] - 三层量子脑模型中的协变量子纠错，评估CQEC纯化协议在自由基对蛋白上的相干性维持能力 (arXiv: 2604.08587)
+  - 三层架构：³¹P核自旋记忆 + 电子自旋接口 + 经典电化学，A=200MHz超精细耦合
+  - CRY在γ_veto=0.19时CQEC维持相干性0.83（未修正仅0.12），MAO-A相干性坍缩至0.012
+  - 层-蛋白权衡：无单一蛋白同时优化两层，CRY较短T2^e恶化Layer 2保真度
+  - **Activation**: covariant QEC, quantum brain, radical pair, cryptochrome, coherence, T2, Eastin-Knill, purification
+
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
 - [[quantum-metabolic-neuroimaging-limit]] - 脑磁图信息容量的量子代谢极限，结合量子能量分辨率与脑代谢功率推导技术无关上限，人脑最大信息率约2.2 Mbit/s (arXiv: 2511.06401)
   - 量子能量分辨率极限结合脑代谢功率推导技术无关的信息容量上限
