@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-06-07 - Systems Engineering Research (Cron Job)
+
+### HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers
+- [[handoff-humanoid-control]] - Multi-teacher KL distillation framework for humanoid whole-body control, combining motion tracking, locomotion, and fall-recovery specialists with context-conditioned gating (arXiv: 2606.06493)
+  - Compact task-space command interface: intuitive, general, modular, expressive
+  - Three complementary teachers distilled into MoE student architecture
+  - Context-conditioned gating for dynamic expert selection
+  - Safety-filtered data for dangerous action handling
+  - VLM-driven agentic planner with no task-specific fine-tuning
+  - **Activation**: humanoid, whole-body control, task-space, distillation, mixture-of-experts, motion tracking, locomotion, fall-recovery, multi-teacher KL, context gating, unitree G1, VLM planner
+
+### Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads
+- [[agent-memory-system-implications]] - First systems characterization of LLM agent memory with 4-axis taxonomy, phase-aware profiling, and 10 system recommendations for construction scheduling, capability floors, amortization, freshness-latency tradeoffs, fleet-scale management (arXiv: 2606.06448)
+  - 4-axis taxonomy: memory structure, extraction mechanism, control flow, storage granularity
+  - Phase-aware profiling: construction, retrieval, generation cost attribution
+  - 10 representative systems characterized across two benchmark suites
+  - 10 system recommendations covering design tradeoffs and fleet management
+  - **Activation**: agent memory, long-horizon tasks, stateful agents, memory retrieval, fact stores, memory construction, fleet-scale, freshness-latency, memory taxonomy, profiling framework, system implications
+
 ## 2026-06-06 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks

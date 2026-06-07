@@ -1,310 +1,207 @@
 ---
 name: handoff-humanoid-control
-description: "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control methodology. Multi-teacher KL distillation for mixture-of-experts control architecture. Activation: humanoid control, whole-body control, task-space interface, multi-teacher distillation, MoE robotics."
+description: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers - 多教师KL蒸馏框架用于人形机器人全身控制
+version: 1.0.0
+category: systems-engineering
+tags: [control-systems, robotics, humanoid, whole-body-control, multi-teacher-distillation, mixture-of-experts]
+activation_keywords: [humanoid, whole-body control, task-space, distillation, mixture-of-experts, motion tracking, locomotion, fall-recovery]
+arxiv_id: 2606.06493v1
+authors: Lizhi Yang, Junheng Li, Nehar Poddar, Yiling Hou, Gio Huh, Robert Griffin, Georgia Gkioxari, Aaron Ames
+published: 2026-06-04
 ---
 
-# HANDOFF: Humanoid Agentic Whole-Body Control
+# HANDOFF: Humanoid Agentic Task-Space Whole-Body Control
 
-## Paper Information
+## 概述
 
-**Title**: HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers  
-**arXiv ID**: 2606.06493  
-**Published**: 2026-06-04  
-**Authors**: Lizhi Yang, Junheng Li, Nehar Poddar, Yiling Hou, Gio Huh, Robert Griffin, Georgia Gkioxari, Aaron Ames  
-**Categories**: cs.RO, cs.AI, cs.LG  
-**PDF**: https://arxiv.org/pdf/2606.06493v1
+HANDOFF 是一个创新的人形机器人全身控制框架，通过多教师KL蒸馏方法将三个互补专家教师（全身动作跟踪、运动、跌倒恢复）蒸馏到一个混合专家学生模型中。该方法解决了任务规划与全身控制之间的接口问题，提供了一个紧凑、直观、通用且表达能力强的命令空间接口。
 
-## Core Contributions
+## 核心方法论
 
-### 1. Compact Task-Space Interface Design
+### 1. 命令空间设计原则
 
-**Problem**: Existing whole-body controllers require dense kinematic/spatial references that planners struggle to synthesize.
+HANDOFF 提出了四个命令空间设计准则：
 
-**Solution**: Design a compact, explicit interface that is:
-- **Intuitive**: Easy for task planners to generate
-- **General**: Works across diverse manipulation skills
-- **Modular**: Separates task planning from control
-- **Expressive**: Captures essential task semantics
+- **直观性** (Intuitive): 接口应易于理解和操作
+- **通用性** (General): 支持多样化操作技能
+- **模块化** (Modular): 允许独立开发和组合
+- **表达能力** (Expressive): 能够表达复杂操作任务
 
-### 2. Multi-Teacher KL Distillation
+### 2. 多教师KL蒸馏框架
 
-**Architecture**: Single student model distilled from three complementary specialists:
+核心蒸馏流程：
 
-1. **Whole-body motion tracking specialist**
-   - Safety-filtered data
-   - Precise motion execution
-   
-2. **Locomotion specialist**
-   - Dynamic movement
-   - Terrain adaptation
-   
-3. **Fall-recovery specialist**
-   - Safety recovery
-   - Robustness enhancement
+1. **三个互补教师专家**：
+   - **Whole-body motion tracking**: 全身动作跟踪（带安全过滤数据）
+   - **Locomotion**: 运动控制
+   - **Fall-recovery**: 跌倒恢复
 
-**Distillation Method**:
-- Context-conditioned gating scheme
-- KL divergence minimization
-- Mixture-of-experts (MoE) student architecture
+2. **上下文条件门控机制** (Context-conditioned gating):
+   - 根据任务上下文动态选择激活哪个专家
+   - 门控函数: $g(x) = \sigma(W_g \cdot x + b_g)$
 
-### 3. VLM-Driven Agentic Planner
+3. **KL蒸馏损失**:
+   $$L_{distill} = \sum_{i=1}^{N} KL(\pi_{student} || \pi_{teacher_i}) \cdot g_i(x)$$
 
-**Features**:
-- Natural language task specification
-- No task-specific data or controller fine-tuning
-- Real-time task roll-outs
+### 3. 混合专家学生架构
 
-## Key Technical Patterns
+学生模型作为MoE（Mixture-of-Experts）架构：
 
-### Pattern 1: Task-Space Interface Design
+- 每个专家专注于特定技能域
+- 门控网络根据上下文选择专家
+- 支持无缝技能切换和组合
+
+### 4. 安全过滤数据增强
+
+全身动作跟踪教师使用安全过滤数据：
+
+- 从高动作跟踪数据中过滤危险动作
+- 保持动作语义同时确保安全性
+- 安全约束: $\|q_{target} - q_{current}\| \leq \Delta_{max}$
+
+## 系统架构
+
+### 整体架构
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    VLM-Driven Planner                   │
+│        (Natural Language → Task Commands)               │
+└───────────────────────┬─────────────────────────────────┘
+                        │ Task Commands
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│                    HANDOFF Controller                   │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │         MoE Student (Distilled)                 │   │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐         │   │
+│  │  │Expert 1 │  │Expert 2 │  │Expert 3 │         │   │
+│  │  │(Motion) │  │(Locomot)│  │(Fall-Rec)│         │   │
+│  │  └─────────┘  └─────────┘  └─────────┘         │   │
+│  │         ↑ Context-Conditioned Gating ↓         │   │
+│  └─────────────────────────────────────────────────┘   │
+└───────────────────────┬─────────────────────────────────┘
+                        │ Whole-body Actions
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│                  Unitree G1 Hardware                    │
+└─────────────────────────────────────────────────────────┘
+```
+
+## 实现要点
+
+### 1. 命令接口设计
+
+紧凑命令空间接口：
+- 位置命令: $[x, y, z, \theta]$
+- 动作命令: $[action\_type, parameters]$
+- 组合命令: 支持顺序和并行组合
+
+### 2. 教师数据采集
+
+三个教师的数据来源：
+- **Motion tracking**: 人类动作捕捉数据（带安全过滤）
+- **Locomotion**: 速度跟踪数据
+- **Fall-recovery**: 跌倒恢复数据集
+
+### 3. 蒸馏训练流程
 
 ```python
-class TaskSpaceInterface:
-    """
-    Compact interface for task planning to control.
-    
-    Attributes:
-        target_pose: 6D pose (position + orientation)
-        grasp_state: Binary gripper state
-        motion_speed: Execution speed parameter
-        safety_constraints: Collision avoidance params
-    """
-    
-    def __init__(self):
-        self.target_pose = Pose()
-        self.grasp_state = False
-        self.motion_speed = 1.0
-        self.safety_constraints = {}
-    
-    def from_natural_language(self, task_desc: str) -> TaskSpaceInterface:
-        """Parse natural language task into interface params."""
-        # VLM parses task semantics
-        # Maps to compact interface parameters
-        return self
-```
-
-### Pattern 2: Multi-Teacher Distillation Framework
-
-```python
-class HANDOFFDistillation:
-    """
-    Multi-teacher KL distillation for MoE student.
-    
-    Components:
-        - Motion tracking teacher
-        - Locomotion teacher  
-        - Fall-recovery teacher
-        - Context-conditioned gating
-    """
-    
-    def __init__(self, num_experts=3):
-        self.teachers = [
-            MotionTrackingTeacher(),
-            LocomotionTeacher(),
-            FallRecoveryTeacher()
-        ]
-        self.student = MoEStudent(num_experts)
-        self.gating_network = ContextGating()
-    
-    def distill(self, trajectories):
-        """Distill multiple teachers into single student."""
-        for trajectory in trajectories:
-            # Get teacher predictions
-            teacher_actions = [
-                teacher.predict(trajectory) 
-                for teacher in self.teachers
-            ]
-            
-            # Compute gating weights
-            context = trajectory.get_context()
-            gate_weights = self.gating_network(context)
-            
-            # Weighted teacher combination
-            target_action = sum(
-                w * action for w, action in zip(gate_weights, teacher_actions)
-            )
-            
-            # KL divergence loss
-            student_action = self.student.predict(trajectory)
-            loss = kl_divergence(student_action, target_action)
-            
-            # Update student
-            self.student.update(loss)
-```
-
-### Pattern 3: Safety-Filtered Data Generation
-
-```python
-class SafetyFilter:
-    """
-    Safety filtering for motion tracking data.
-    
-    Ensures:
-        - Collision-free trajectories
-        - Joint limit compliance
-        - Stability constraints
-    """
-    
-    def filter_trajectory(self, trajectory):
-        """Apply safety constraints to raw trajectory."""
-        # Check collisions
-        if self.check_collision(trajectory):
-            trajectory = self.replan_collision_free(trajectory)
+# 蒸馏训练伪代码
+for epoch in range(N_epochs):
+    for context in contexts:
+        # 1. 从教师获取目标策略
+        teacher_policy = select_teacher(context)
+        target_actions = teacher_policy.sample(state)
         
-        # Enforce joint limits
-        trajectory = self.enforce_joint_limits(trajectory)
+        # 2. 计算门控权重
+        gate_weights = gating_network(context)
         
-        # Verify stability
-        if not self.is_stable(trajectory):
-            trajectory = self.add_stability_correction(trajectory)
+        # 3. 学生预测
+        student_actions = student_moe(state, context)
         
-        return trajectory
+        # 4. KL蒸馏损失
+        loss = kl_divergence(student_actions, target_actions)
+        loss *= gate_weights
+        
+        # 5. 反向传播
+        update_student(student_moe, loss)
 ```
 
-## System Engineering Principles
+### 4. 上下文识别
 
-### 1. Interface Design Philosophy
+上下文条件判断：
+- 运动状态: 根据速度和姿态判断
+- 操作状态: 根据手臂位置和目标判断
+- 跌倒风险: 根据稳定性和地面距离判断
 
-**Compact Interface Design Pattern**:
-- Minimize interface complexity
-- Maximize expressiveness
-- Enable modular system integration
-- Support intuitive planner generation
+## 性能优势
 
-### 2. Teacher Complementary Architecture
+### 实验结果
 
-**Principle**: Teachers should be **complementary**, not redundant:
-- Each teacher covers a distinct capability domain
-- Minimal overlap reduces distillation complexity
-- Coverage completeness ensures robustness
+1. **速度跟踪性能**: 匹配SOTA速度跟踪控制器
+2. **操作工作空间**: 提供最大鲁棒操作工作空间之一
+3. **自然语言驱动**: 通过VLM驱动任务规划，无需任务特定数据或控制器微调
+4. **硬件验证**: 在Unitree G1上成功执行多次任务roll-outs
 
-### 3. Context-Conditioned Gating
+## 应用场景
 
-**Dynamic Expert Selection**:
-- Context determines which expert is active
-- Smooth expert transitions
-- Avoid expert conflict/confusion
+### 适用场景
 
-## Implementation Guidelines
+- 人形机器人全身控制
+- 多技能任务执行
+- 自然语言驱动的机器人操作
+- 安全约束下的动作学习
+- 混合专家系统设计
 
-### Step 1: Design Task-Space Interface
+### 触发条件
 
-1. Identify essential task parameters
-2. Minimize parameter count
-3. Ensure planner compatibility
-4. Test expressiveness across tasks
+当遇到以下问题时使用此技能：
+- 设计人形机器人控制架构
+- 需要多技能融合的控制系统
+- 任务规划与底层控制的接口设计
+- 安全过滤的危险动作学习
+- 自然语言驱动的机器人系统
 
-### Step 2: Train Specialist Teachers
+## 系统工程学意义
 
-1. Collect domain-specific trajectories
-2. Apply safety filtering (for motion tracking)
-3. Train individual specialists
-4. Validate specialist performance
+### 方法论贡献
 
-### Step 3: Implement Context Gating
+1. **命令空间设计**: 提出紧凑、直观、通用、表达性强的接口设计准则
+2. **多教师蒸馏**: 创新的多教师KL蒸馏框架，解决技能融合问题
+3. **上下文门控**: 上下文条件门控机制，实现动态专家选择
+4. **安全过滤**: 数据安全过滤方法，确保危险动作的安全性
+5. **系统验证**: 完整的硬件验证流程，从仿真到真实部署
 
-1. Define context features
-2. Design gating network architecture
-3. Train gating weights
-4. Validate smooth transitions
+### 可扩展性
 
-### Step 4: Distill Student Model
+- 支持添加更多教师专家
+- 上下文门控可扩展到更复杂场景
+- 命令接口可适配不同机器人平台
+- 蒸馏框架可用于其他多技能学习任务
 
-1. Initialize MoE student architecture
-2. Collect mixed-domain trajectories
-3. Compute teacher predictions
-4. Minimize KL divergence
-5. Validate student performance
+## 技术实现细节
 
-### Step 5: Integrate VLM Planner
+### 关键参数
 
-1. Define natural language task space
-2. Map NL to interface parameters
-3. Test end-to-end roll-outs
-4. Validate no fine-tuning requirement
+- 专家数量: 3 (可扩展)
+- 门控维度: context_size
+- 蒸馏温度: $\tau$ (KL温度参数)
+- 安全约束阈值: $\Delta_{max}$
 
-## Performance Metrics
+### 训练策略
 
-### Manipulation Workspace
-- **Large robust workspace**: State-of-the-art velocity tracking
-- **Natural language tasks**: Multiple roll-outs without fine-tuning
+- 分阶段蒸馏: 先单独训练教师，再联合蒸馏学生
+- 课程学习: 从简单到复杂任务
+- 安全约束注入: 在训练过程中逐步引入安全约束
 
-### Hardware Deployment
-- **Unitree G1 humanoid**: Real-world validation
-- **No task-specific data**: Zero-shot adaptation
+## 参考资源
 
-## Advantages over Prior Methods
+- arXiv论文: https://arxiv.org/abs/2606.06493
+- 项目代码: 待发布
+- 硬件平台: Unitree G1
+- 规划器: VLM-driven agentic planner
 
-| Method | Interface Type | Planner Burden | Multi-Task Support |
-|--------|---------------|----------------|-------------------|
-| Dense Kinematic | Complex | High | Limited |
-| Spatial References | Dense | High | Moderate |
-| **HANDOFF** | **Compact** | **Low** | **High** |
+## 总结
 
-## Limitations
-
-1. Requires multiple teacher training
-2. Distillation complexity scales with expert count
-3. Safety filtering needed for motion data
-4. Context gating requires careful design
-
-## Related Work Connections
-
-- **Whole-Body Control**: Hybrid control frameworks
-- **Locomotion**: Terrain-adaptive movement
-- **Fall Recovery**: Robust safety systems
-- **VLM Planning**: Language-driven task execution
-
-## Use Cases
-
-### 1. Humanoid Manipulation
-- Natural language task specification
-- Multi-skill whole-body control
-- Real-world deployment
-
-### 2. Mobile Manipulation
-- Combined locomotion + manipulation
-- Terrain adaptation
-- Safety recovery
-
-### 3. Agentic Robotics
-- VLM-driven task planning
-- Zero-shot task adaptation
-- Modular controller design
-
-## Activation Keywords
-
-- humanoid control
-- whole-body control
-- task-space interface
-- multi-teacher distillation
-- MoE robotics
-- VLM planner
-- safety-filtered control
-- complementary teachers
-- KL distillation robotics
-- agentic manipulation
-
-## References
-
-- Paper: https://arxiv.org/abs/2606.06493
-- PDF: https://arxiv.org/pdf/2606.06493v1
-- Categories: cs.RO, cs.AI, cs.LG
-
-## Notes
-
-- 22 pages, 9 figures
-- Unitree G1 hardware validation
-- No task-specific data or fine-tuning required
-- Three complementary specialists distilled into single student
-
-## Citation
-
-```bibtex
-@article{yang2026handoff,
-  title={HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers},
-  author={Yang, Lizhi and Li, Junheng and Poddar, Nehar and Hou, Yiling and Huh, Gio and Griffin, Robert and Gkioxari, Georgia and Ames, Aaron},
-  journal={arXiv preprint arXiv:2606.06493},
-  year={2026}
-}
-```
+HANDOFF 提供了一个完整的系统工程学解决方案，从命令空间设计、多教师蒸馏、上下文门控到硬件验证。该方法展示了如何通过蒸馏框架融合互补专家技能，为人形机器人全身控制提供了紧凑且表达能力强的接口，是系统工程学在机器人控制领域的创新应用。
