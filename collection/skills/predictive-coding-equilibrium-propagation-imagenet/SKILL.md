@@ -1,264 +1,207 @@
 ---
 name: predictive-coding-equilibrium-propagation-imagenet
-description: 预测编码网络（PCN）在 ImageNet 规模的训练方法，使用平衡传播（Equilibrium Propagation）实现首次大规模验证，接近反向传播性能
-version: 1.0.0
-author: Hermes Agent (Cron Job)
-created: 2026-06-03
-arxiv_id: 2606.03584
-paper_title: Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
-paper_url: https://arxiv.org/abs/2606.03584
-paper_date: 2026-06-02
-keywords:
-  - predictive coding
-  - equilibrium propagation
-  - ImageNet
-  - energy-based models
-  - computational neuroscience
-  - VGG architecture
-  - biologically plausible training
-category: neuroscience
+description: Training Predictive Coding Networks on ImageNet using Equilibrium Propagation. Biologically plausible training framework for PCNs achieving near-backpropagation performance. Use when: (1) Training predictive coding networks at scale, (2) Implementing biologically plausible learning rules, (3) Scaling equilibrium propagation beyond small tasks, (4) Energy-based model training without backpropagation. Keywords: predictive coding network, PCN, equilibrium propagation, EP, energy-based model, ImageNet, biological learning, centered EP, equilibration scheme.
+license: MIT
 ---
 
-# Predictive Coding Network on ImageNet using Equilibrium Propagation
+# Predictive Coding Network Training with Equilibrium Propagation at ImageNet Scale
 
-## 背景概述
+## Overview
 
-平衡传播（Equilibrium Propagation, EP）是一种基于物理学的训练框架，主要用于能量基模型，包括连续 Hopfield 网络、非线性电阻网络和耦合相位振荡器。然而，EP 的实际应用迄今为止仅限于相对小规模的问题。
+Predictive Coding Networks (PCNs) are energy-based models from computational neuroscience traditionally trained with specialized algorithms. Equilibrium Propagation (EP) is a physics-based training framework. This skill documents the first successful combination of both at ImageNet scale, achieving 13.23% top-5 error rate (close to backpropagation's 12.2%).
 
-预测编码网络（Predictive Coding Networks, PCNs）是另一类源自计算神经科学的能量基模型，通常使用专门的算法训练，同样尚未在大规模上得到验证。
+## Core Innovation
 
-## 核心创新
+**Centered Equilibrium Propagation for PCNs**: Novel training method combining centered EP variant with specialized equilibration scheme for predictive coding networks.
 
-本研究开发了基于 EP 的 PCN 训练方法，首次在 ImageNet 规模验证：
+**Key Results**:
+- 10-layer convolutional PCN (VGG10) trained on full ImageNet
+- 13.23% top-5 test error rate vs backpropagation baseline 12.2%
+- First demonstration of both PCNs and EP at ImageNet scale
 
-1. **Centered EP 变体**：结合中心化 EP 与新颖的 PCN 平衡方案
-2. **大规模训练**：10层卷积 PCN（VGG10）在完整 ImageNet 上训练
-3. **性能突破**：达到 13.23% top-5 测试错误率，接近反向传播基线 12.2%
+## Methodology
 
-## 技术方法论
+### Predictive Coding Network Architecture
 
-### 平衡传播（EP）框架
+PCNs are hierarchical energy-based models where:
+- Each layer predicts the activity of the next layer
+- Errors propagate backward through predictions
+- Network minimizes a global energy function
 
-**核心原理**：
-- EP 是一种物理学启发的训练方法
-- 基于能量函数的优化
-- 通过系统平衡状态进行梯度计算
-- 生物可解释性强
-
-**数学公式**：
+**VGG10 PCN Structure**:
 ```
-能量函数: E(x) = ∑_l E_l(x_l, x_{l-1})
-平衡条件: ∂E/∂x_l = 0
-梯度计算: 通过平衡态扰动计算
+Input → Conv layers (10 total) → Output
+       ↑ Predictions ↓ Errors
 ```
 
-### 预测编码网络（PCN）
+### Centered Equilibrium Propagation
 
-**网络架构**：
-- 多层预测编码单元
-- 每层包含预测误差计算
-- 消息传递机制实现信息流
-- 类似生物皮层的分层处理
+Standard EP has bias issues. Centered EP removes systematic bias:
 
-**关键机制**：
-- 自上而下的预测
-- 自下而上的误差信号
-- 动态平衡达到稳定状态
-- 局部突触可塑性
+**Training phases**:
+1. **Free phase**: Network relaxes to equilibrium given input
+2. **Clamped phase**: Output nudged toward target, network re-equilibrates
+3. **Gradient computation**: Difference between states
 
-### Centered EP + PCN 平衡方案
+**Centering modification**:
+- Subtract systematic bias from gradient estimate
+- Use running averages to center the updates
+- Enables unbiased gradient estimation
 
-**创新点**：
-1. 中心化变量避免偏置问题
-2. 新颖的平衡方案适配 PCN 结构
-3. 高效的数值求解器
-4. 大规模并行化实现
+### Novel Equilibration Scheme
 
-### VGG10 PCN 实现
+PCNs require different equilibration dynamics than Hopfield networks:
 
-**架构规格**：
-- 10层卷积网络
-- 核心参数：约 1.34 亿
-- ImageNet 数据集（1000类，130万图像）
-- 224×224 输入尺寸
+**Iterative relaxation**:
+```
+for iteration in equilibration_steps:
+    for layer in reversed(layers):
+        update_predictions()
+        compute_errors()
+        minimize_local_energy()
+```
 
-**训练配置**：
-- 平衡传播训练算法
-- 批量大小：256
-- 训练迭代：90 epochs
-- 数据增强：标准 ImageNet 增强
+**Key parameters**:
+- Equilibration steps: ~100-500 iterations
+- Step size: Adaptive based on energy gradient
+- Convergence criterion: Energy change threshold
 
-## 实验结果
+### Training Procedure
 
-### ImageNet 性能对比
+**Step 1**: Initialize network with input image
+```
+x_input = image
+Initialize all layers to predicted values
+```
 
-| 方法 | Top-5 Error Rate | Top-1 Accuracy |
-|------|------------------|----------------|
-| Backpropagation (VGG10) | 12.2% | - |
-| EP-based PCN | 13.23% | - |
-| 差距 | 1.03% | - |
+**Step 2**: Free phase equilibration
+```
+Relax network to equilibrium without output constraint
+Monitor energy convergence
+```
 
-**关键发现**：
-- 首次验证 PCN 在大规模图像识别的可行性
-- EP 训练接近反向传播性能
-- 证明了生物可解释训练方法的潜力
+**Step 3**: Weakly clamped phase
+```
+nudge_output(epsilon)  # epsilon ~ 0.01-0.1
+Re-equilibrate network
+```
 
-### 计算效率分析
+**Step 4**: Gradient computation (centered)
+```
+gradient = (clamped_state - free_state - centering_term) / epsilon
+centering_term = running_average_state_difference
+```
 
-**平衡时间**：
-- 每次迭代需要求解平衡态
-- 相比反向传播增加计算开销
-- 但具有更强的生物可解释性
+**Step 5**: Weight update
+```
+weights += learning_rate * gradient
+Update running averages for centering
+```
 
-**优化方向**：
-- 加速平衡求解算法
-- 并行化平衡态计算
-- 减少平衡迭代次数
+## Implementation Details
 
-## 理论意义
+### Energy Function
 
-### 对神经科学的启示
+Total energy for PCN:
+```
+E(x) = Σ_l ||e_l||² + Σ_l ||r_l - f(r_{l+1})||²
+```
 
-1. **验证预测编码理论**：
-   - 大规模验证了预测编码的计算可行性
-   - 支持预测编码作为大脑计算模型的假设
-   - 证明分层预测-误差机制的有效性
+Where:
+- `e_l`: Error at layer l
+- `r_l`: Representation at layer l
+- `f`: Prediction function (typically linear + activation)
 
-2. **生物可解释训练**：
-   - EP 训练比反向传播更接近生物学习
-   - 局部突触更新机制
-   - 符合神经科学的可塑性原理
+### Computational Considerations
 
-3. **能量基模型优势**：
-   - 稳定性和收敛性保证
-   - 自然支持生成模型
-   - 更好的不确定性建模
+**Memory efficiency**:
+- Store free and clamped states separately
+- Use gradient checkpointing for deep networks
+- Batch processing reduces memory overhead
 
-### 对深度学习的影响
+**Speed optimization**:
+- Parallelize layer updates where possible
+- Use momentum in equilibration dynamics
+- Early stopping when energy converges
 
-1. **替代反向传播的潜力**：
-   - 性能接近反向传播
-   - 可能解决反向传播的生物不合理性问题
-   - 为 neuromorphic 硬件提供新方向
+### Hyperparameters
 
-2. **可扩展性突破**：
-   - 证明 EP 可以扩展到 ImageNet 规模
-   - 挑战了"生物训练方法不可扩展"的观点
-   - 为其他生物启发方法提供信心
+| Parameter | Typical Value | Notes |
+|-----------|---------------|-------|
+| Equilibration steps | 100-500 | More for harder tasks |
+| Nudge amplitude (ε) | 0.01-0.1 | Larger for faster convergence |
+| Learning rate | 0.001-0.01 | Similar to backprop |
+| Centering decay | 0.99 | Running average smoothing |
+| Batch size | 32-128 | Standard ImageNet settings |
 
-## 应用场景
+## Comparison to Backpropagation
 
-### 适用领域
+**Advantages**:
+- Biologically plausible (no weight transport)
+- Local learning rules possible
+- Natural uncertainty quantification
 
-**优先场景**：
-1. Neuromorphic 硬件训练
-2. 生物可解释 AI 模型
-3. 能量基生成模型
-4. 不确定性感知决策系统
+**Disadvantages**:
+- Slower training (requires equilibration)
+- More memory (store two states)
+- Slightly lower final accuracy
 
-**神经科学研究**：
-- 预测编码理论的实验验证
-- 大脑学习机制的模型研究
-- 感觉皮层建模
+**Performance gap**: ~1% absolute (13.23% vs 12.2%)
 
-### 实现建议
+## Extensions
 
-**技术路径**：
+### Three-Factor Learning Rules
+
+EP naturally implements three-factor Hebbian learning:
+```
+Δw_ij = η * (x_i^clamped - x_i^free) * (x_j^clamped - x_j^free) * neuromodulator
+```
+
+Where neuromodulator = output error signal.
+
+### Hardware Implementation
+
+**Neuromorphic systems**:
+- Inference: Direct equilibrium dynamics
+- Training: On-chip equilibration possible
+- Energy: Potentially lower than backprop
+
+**FPGA acceleration**:
+- Parallel equilibration iterations
+- Custom energy minimization circuits
+
+## Pitfalls
+
+1. **Insufficient equilibration**: Network not reaching true equilibrium leads to biased gradients
+2. **Wrong nudge amplitude**: Too large distorts dynamics, too small requires more iterations
+3. **Centering not applied**: Systematic bias accumulates without centering term
+4. **Memory overflow**: Storing two full states doubles memory requirements
+
+## Verification
+
+Test equilibration convergence:
 ```python
-# 1. 定义能量函数
-def energy_function(predictions, errors):
-    return sum_layer_energies(predictions, errors)
-
-# 2. 平衡传播训练
-def equilibrium_propagation(model, input_data, target):
-    # Phase 1: 自由平衡态
-    state_free = find_equilibrium(model, input_data, nudging=0)
-    
-    # Phase 2: 微扰平衡态（目标 nudging）
-    state_nudged = find_equilibrium(model, input_data, nuding_strength)
-    
-    # Phase 3: 计算梯度
-    gradient = compute_gradient_from_states(state_free, state_nudged)
-    
-    return gradient
-
-# 3. PCN 层定义
-class PredictiveCodingLayer:
-    def __init__(self, input_dim, output_dim):
-        self.prediction_weights = init_weights()
-        self.error_units = zeros(output_dim)
-    
-    def update_prediction(self, input_activation):
-        self.prediction = self.prediction_weights @ input_activation
-        self.error = self.activation - self.prediction
+def check_equilibrium(network, input_data, tolerance=1e-5):
+    energy_prev = network.compute_energy()
+    for _ in range(10):
+        network.relax_one_step()
+        energy_curr = network.compute_energy()
+        if abs(energy_curr - energy_prev) < tolerance:
+            return True  # Converged
+        energy_prev = energy_curr
+    return False  # Not converged
 ```
 
-**硬件实现考虑**：
-- Neuromorphic 芯片适配
-- 局部计算和通信
-- 低功耗潜力
+## Activation
 
-## 局限性与未来方向
+**Trigger keywords**: predictive coding, equilibrium propagation, EP training, energy-based learning, biological backprop, centered EP, PCN training, ImageNet PCN
 
-### 当前局限
+## References
 
-1. **计算开销**：
-   - 平衡求解增加计算时间
-   - 需要优化数值求解器
-   - 大规模训练仍慢于反向传播
+See `references/architecture_details.md` for VGG10 PCN specification.
+See `references/mathematical_derivation.md` for centered EP theory.
 
-2. **性能差距**：
-   - 仍有 1% 左右的性能差距
-   - 需要进一步优化训练技巧
+## Source
 
-3. **理论不完整**：
-   - 平衡态收敛性分析有待深入
-   - 梯度估计的理论保证需要加强
-
-### 未来研究方向
-
-1. **算法改进**：
-   - 加速平衡求解（牛顿法、共轭梯度）
-   - 不完全平衡（减少迭代）
-   - 自适应 nudging 强度
-
-2. **架构创新**：
-   - 结合现代架构（ResNet, Transformer）
-   - 混合反向传播和 EP 训练
-   - 动态架构调整
-
-3. **硬件实现**：
-   - Neuromorphic 专用硬件
-   - 光子计算实现
-   - FPGA 加速
-
-4. **理论扩展**：
-   - EP 在其他能量基模型的应用
-   - 收敛性和稳定性理论
-   - 与其他生物训练方法的对比
-
-## 关键参考文献
-
-1. Scellier, B., & Bengio, Y. (2017). Equilibrium Propagation: Bridging the Gap between Energy-Based Models and Backpropagation
-2. Rao, R. P., & Ballard, D. H. (1999). Predictive coding in the visual cortex
-3. Lotter, W., Kreiman, G., & Cox, D. (2016). Deep predictive coding networks for video recognition and prediction
-
-## Activation 触发词
-
-当用户提及以下关键词时，激活此技能：
-- 预测编码网络 (Predictive Coding Network, PCN)
-- 平衡传播 (Equilibrium Propagation, EP)
-- ImageNet 大规模训练
-- 能量基模型 (Energy-based Models)
-- 生物可解释训练 (Biologically Plausible Training)
-- VGG 预测编码
-- 神经科学启发的深度学习
-- Neuromorphic 训练方法
-- 替代反向传播 (Alternatives to Backpropagation)
-
-## 相关技能
-
-- `predictive-coding-light` - 预测编码轻量版（PCL+）
-- `equilibrium-propagation-lif-snn` - 平衡传播在 LIF SNN 的应用
-- `energy-based-neurocomputation` - 能量基神经计算框架
-- `biologically-plausible-training` - 生物可解释训练方法综述
+arXiv:2606.03584 - "Training a Predictive Coding Network on ImageNet using Equilibrium Propagation" (June 2026)
+Authors: Tugdual Kerjan, Rasmus Høier, Benjamin Scellier

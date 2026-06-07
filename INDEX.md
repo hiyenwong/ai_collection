@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
+- [[predictive-coding-equilibrium-propagation-imagenet]] - First ImageNet-scale training of Predictive Coding Networks via Centered Equilibrium Propagation, achieving 13.23% top-5 error (arXiv: 2606.03584)
+  - Centered EP removes systematic bias for unbiased gradient estimation
+  - Novel equilibration scheme specifically designed for PCN dynamics
+  - VGG10 architecture demonstrates scalability beyond small tasks
+  - Bridging biological learning principles with large-scale computer vision
+  - **Activation**: predictive coding network, PCN, equilibrium propagation, EP, centered EP, biological learning, ImageNet, energy-based model
+
+### A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding
+- [[corsw-sliced-wasserstein-eeg-decoding]] - Pullback Euclidean Metric Sliced Wasserstein for scale-invariant EEG decoding with domain generalization, KDD 2026 accepted (arXiv: 2606.06104)
+  - CorSW framework treats correlation matrices as manifold-valued data with proper geometry
+  - Two instantiations: Off-Log Metric (OLM) and Log-Scaled Metric (LSM)
+  - Robust to distribution shifts across sessions, subjects, and devices
+  - Zero inference cost overhead, minimal training overhead
+  - **Activation**: EEG decoding, sliced Wasserstein, correlation matrix, manifold geometry, domain generalization, OLM, LSM, scale-invariant
 
 ## 2026-06-07 - Information Science + Quantum (Cron Job)
 
