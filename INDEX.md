@@ -1,12 +1,18 @@
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### Early psychosis shows deviations in scaling behaviour within a critical regime
-- [[psychosis-scaling-critical-regime]] - 早期精神病临界区域内标度行为偏差研究，PRG粗粒化框架揭示系统性标度指数偏移而非临界性丧失 (arXiv: 2606.06290)
-  - PRG + PSD + DFA 跨尺度集体动力学表征
-  - 保留标度不变组织，系统性标度指数偏移
-  - 跨模态一致性验证（多观测量）
-  - 精神障碍动力学分析的理论框架
-  - **Activation**: psychosis, scaling, critical regime, renormalization group, PRG, PSD, DFA, collective dynamics, psychiatric disorders
+- [[psychosis-scaling-critical-regime]] - PRG coarse-graining framework reveals systematic scaling exponent shifts without criticality loss in early psychosis (arXiv: 2606.06290)
+  - PRG + PSD + DFA multi-scale collective dynamics characterization
+  - Preserved scale-invariant organization with systematic exponent shifts
+  - Cross-modal consistency validation (multiple observables)
+  - **Activation**: psychosis, scaling, critical regime, renormalization group, PRG, PSD, DFA, collective dynamics
+
+### Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
+- [[intrinsic-computational-functionalism]] - Operationalizable criteria for observer-independent computational structures in consciousness theory (arXiv: 2606.06424)
+  - Three-tier decomposition: label selection → partition selection → grain selection
+  - C1: System-intrinsic instantiation (observer-independent specification)
+  - C2: Causal-dynamical organization under intervention
+  - **Activation**: consciousness, computational functionalism, observer-relativity, intrinsic structure, causal dynamics
 
 ### Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization
 - [[cross-scale-spatial-generative-neurodegeneration]] - 跨尺度空间感知生成模型预测神经退行性脆弱性，86.04%解释方差，空间相关r=0.9439 (arXiv: 2606.05870)

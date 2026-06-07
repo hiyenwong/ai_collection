@@ -1,12 +1,12 @@
 ---
 name: psychosis-scaling-critical-regime
-description: 早期精神病临界区域内标度行为偏差研究。使用现象学重整化群(PRG)、功率谱密度(PSD)和去趋势波动分析(DFA)检测脑网络集体动力学重构。
-tags: [neuroscience, criticality, psychosis, brain-dynamics, scaling-behavior, renormalization-group, fMRI]
-version: 1.0.0
-arxiv_id: 2606.06290
-authors: [Irem Topal, Paola Moreno Ancalmo, Guillermo Montana Valverde, Philipp Homan, Wolfram Hinzen]
-date: 2026-06-04
-activation_keywords: [psychosis, critical regime, scaling behavior, renormalization group, brain criticality, collective dynamics, DFA, PSD, fMRI resting-state]
+description: "Early psychosis scaling behaviour deviations within critical regime study. Uses phenomenological renormalization group (PRG), power spectral density (PSD) and detrended fluctuation analysis (DFA) to detect brain network collective dynamics reorganization."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2606.06290"
+  published: "2026-06-04"
+  authors: ["Irem Topal", "Paola Moreno Ancalmo", "Guillermo Montana Valverde", "Philipp Homan", "Wolfram Hinzen"]
+  tags: [neuroscience, criticality, psychosis, brain-dynamics, scaling-behavior, renormalization-group, fMRI]
 ---
 
 # Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
