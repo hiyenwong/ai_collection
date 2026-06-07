@@ -3,6 +3,22 @@
 
 ## 2026-06-07 - Information Science + Quantum (Cron Job)
 
+### Automated Proving of Shannon-Type Entropy Inequalities via Fine-Tuned Language Models and Guided Tree Search
+- [[automated-entropy-inequality-proving]] - LLM + guided tree search for automated proving of Shannon-type entropy inequalities, bridges information theory with AI (arXiv: 2606.05729)
+  - Fine-tuned language models generate candidate proof steps for entropy inequalities
+  - Guided tree search with value function explores proof space efficiently
+  - Symbolic verification engine validates each step independently
+  - Handles Shannon-type inequalities derivable from basic submodularity constraints
+  - **Activation**: entropy inequality proving, Shannon inequality automated, LLM theorem proving, guided tree search information theory, 熵不等式自动证明
+
+### Quantum Entanglement-Assisted MAC Capacity
+- [[quantum-entanglement-mac-capacity]] - Quantum entanglement provides exponential and unbounded robust gains in Shannon capacity of classical MAC with causal CSIT (arXiv: 2606.06155)
+  - Exponential capacity scaling with number of users K via shared entanglement
+  - Unbounded gain ratio C_Q/C_C depending on channel structure
+  - Robust to partial entanglement degradation and decoherence
+  - Bridges quantum information theory with classical communication theory
+  - **Activation**: quantum entanglement MAC capacity, Shannon capacity quantum, multiple access channel entanglement, quantum CSIT, 量子多址信道容量
+
 ### Breakeven demonstration of quantum low-density parity-check codes
 - [[quantum-ldpc-breakeven]] - Trapped-ion qLDPC breakeven with 4 logical qubits into 18 physical, OMG architecture for mid-circuit measurement without ion transport, 9x better than superconducting (arXiv: 2606.06455)
   - OMG architecture enables addressable mid-circuit measurement and reset without ion transport
