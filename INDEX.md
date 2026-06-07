@@ -1,5 +1,22 @@
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - 使用大规模预训练编码模型生成合成fMRI数据提升脑到图像解码性能68%，支持零样本解码 (arXiv: 2606.06345)
+  - TRIBE v2: 1000+小时多模态fMRI预训练编码模型
+  - 数据增强策略：合成+真实数据混合训练，68% Top-10检索准确率提升
+  - 零样本能力：仅合成数据训练解码器可高于随机水平
+  - 数据源依赖：7T vs 3T fMRI需调整增强比例
+  - **Activation**: TRIBE, brain-to-image, fMRI decoding, data augmentation, zero-shot, synthetic data, foundation model
+
+### Early psychosis shows deviations in scaling behaviour within a critical regime
+- [[psychosis-scaling-critical-regime]] - PRG粗粒化框架揭示精神病早期临界性重组而非丢失，系统性scaling指数偏移 (arXiv: 2606.06290)
+  - PRG + PSD + DFA多尺度集体动力学表征
+  - 保持尺度不变组织但系统指数偏移
+  - 跨模态一致性验证（多观测变量）
+  - **Activation**: psychosis, scaling, critical regime, renormalization group, PRG, PSD, DFA, collective dynamics
+
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
 ### Dynamical Alignment: A Principle for Adaptive Neural Computation
 - [[dynamical-alignment-snn-paradox-resolution]] - 动态对齐原理解决SNN性能悖论，固定神经结构通过输入时序动力学驱动不同计算模式（耗散vs扩张） (arXiv: 2508.10064)
   - 相空间体积动力学决定计算模式：耗散模式（收缩动力学）vs扩张模式（扩张动力学）
@@ -95,6 +112,20 @@
   - Three-wave mixing bridges frequency mismatch, g/2π ~ several MHz
   - Hybrid memory architecture: circuit computes fast, spins store long-lived states
   - **Activation**: parametric coupling quantum, spin ensemble memory, hybrid quantum memory, Josephson spin interface
+
+## 2026-06-08 - Neuroscience + Quantum (Cron Job - Memory/Thermo)
+
+### Non-equilibrium quantum thermodynamics of a memory-bearing open-system process
+- [[quantum-memory-thermodynamics]] - 记忆型开放系统非平衡量子热力学，分析驱动两能级系统中记忆效应对功、热、熵产的影响 (arXiv: 2606.05904)
+  - 记忆效应从复合环境动力中涌现，影响非平衡热力学量
+  - 驱动、耗散和记忆效应的相互作用机制
+  - **Activation**: quantum memory, thermodynamics, open system, non-equilibrium, 量子记忆, 非平衡热力学
+
+### Learning Hamiltonians at Long Times
+- [[quantum-hamiltonian-learning-long-times]] - 从单次长时间演化学习未知n量子比特哈密顿量，证明局部哈密顿族的高概率可学习性 (arXiv: 2606.05690)
+  - 长时间演化下特征值缠绕不阻止哈密顿量学习
+  - 归一化可观测量与H对易则为平凡解
+  - **Activation**: hamiltonian learning, quantum system identification, long time evolution, 哈密顿量学习
 
 ## 2026-06-07 - Information Science + Quantum (Cron Job)
 
