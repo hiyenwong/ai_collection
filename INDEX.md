@@ -1,5 +1,23 @@
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
+### Dynamical Alignment: A Principle for Adaptive Neural Computation
+- [[dynamical-alignment-snn-paradox-resolution]] - 动态对齐原理解决SNN性能悖论，固定神经结构通过输入时序动力学驱动不同计算模式（耗散vs扩张） (arXiv: 2508.10064)
+  - 相空间体积动力学决定计算模式：耗散模式（收缩动力学）vs扩张模式（扩张动力学）
+  - 时间尺度对齐：输入时序与神经元积分的匹配解锁SNN潜力
+  - 双模态优化景观：临界相变点，耗散模式实现能量效率，扩张模式匹配ANN性能
+  - 统一神经科学二元对立：稳定性-可塑性困境、分离-整合动力学
+  - **Activation**: dynamical alignment, SNN performance paradox, phase space dynamics, dissipative vs expansive mode, timescale alignment, adaptive computation, bimodal optimization
+
+### Neural Receptive Fields, Stimulus Space Embedding and Effective Geometry of Scale-Free Networks
+- [[neural-receptive-fields-hyperbolic-geometry]] - 感受野从无标度网络结构的双曲几何自然涌现，无需突触微调，感受野大小依赖连接度 (arXiv: 2509.25453 v2)
+  - 刺激空间映射到双曲嵌入边界，实现局部化活动模式
+  - 感受野大小 RF_size ~ 1/k（神经元度），匹配实验观察
+  - 多模态泛化：视觉朝向选择性、海马体位置细胞、体感映射
+  - 海马体位置场实验验证：位置场大小与连接度相关性
+  - **Activation**: receptive fields emergence, hyperbolic geometry, scale-free networks, stimulus embedding, place cells, orientation selectivity, neural geometry
+
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
 ### Early psychosis shows deviations in scaling behaviour within a critical regime
 - [[psychosis-scaling-critical-regime]] - PRG coarse-graining framework reveals systematic scaling exponent shifts without criticality loss in early psychosis (arXiv: 2606.06290)
   - PRG + PSD + DFA multi-scale collective dynamics characterization
