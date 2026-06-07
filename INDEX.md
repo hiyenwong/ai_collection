@@ -2,6 +2,34 @@
 
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - 68% improvement in Top-10 image retrieval accuracy via synthetic data augmentation (arXiv: 2606.06345)
+  - TRIBE v2 pretrained on 1000+ hours of video/audio/language fMRI
+  - Zero-shot brain-to-image decoding possible with synthetic-only training
+  - **Activation**: TRIBE,, brain-to-image,, image, decoding,, fMRI
+
+### The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail
+- [[variance-brain-foundation-models-forgot]] - BFMs predict cognition worse than linear FC regression (~80K params) (arXiv: 2606.04010)
+  - BrainLM 650M worse than 111M—variance allocation problem
+  - Second-order covariance preserved, third-order co-skewness destroyed
+  - **Activation**: brain, foundation, models,, BFM,, co-skewness,
+
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - 68% improvement in Top-10 image retrieval accuracy via synthetic data augmentation (arXiv: 2606.06345)
+  - TRIBE v2 pretrained on 1000+ hours of video/audio/language fMRI
+  - Zero-shot brain-to-image decoding possible with synthetic-only training
+  - **Activation**: TRIBE,, brain-to-image,, image, decoding,, fMRI
+
+### The Variance Brain Foundation Models Forgot: Third-Order Statistics Predict Cognition Where Billion-Parameter Models Fail
+- [[variance-brain-foundation-models-forgot]] - BFMs predict cognition worse than linear FC regression (~80K params) (arXiv: 2606.04010)
+  - BrainLM 650M worse than 111M—variance allocation problem
+  - Second-order covariance preserved, third-order co-skewness destroyed
+  - **Activation**: brain, foundation, models,, BFM,, co-skewness,
+
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
 ### Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
 - [[predictive-coding-equilibrium-propagation-imagenet]] - First ImageNet-scale training of Predictive Coding Networks via Centered Equilibrium Propagation, achieving 13.23% top-5 error (arXiv: 2606.03584)
   - Centered EP removes systematic bias for unbiased gradient estimation
