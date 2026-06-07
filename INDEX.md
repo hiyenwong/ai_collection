@@ -1,3 +1,21 @@
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### Early psychosis shows deviations in scaling behaviour within a critical regime
+- [[psychosis-scaling-critical-regime]] - 早期精神病临界区域内标度行为偏差研究，PRG粗粒化框架揭示系统性标度指数偏移而非临界性丧失 (arXiv: 2606.06290)
+  - PRG + PSD + DFA 跨尺度集体动力学表征
+  - 保留标度不变组织，系统性标度指数偏移
+  - 跨模态一致性验证（多观测量）
+  - 精神障碍动力学分析的理论框架
+  - **Activation**: psychosis, scaling, critical regime, renormalization group, PRG, PSD, DFA, collective dynamics, psychiatric disorders
+
+### Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization
+- [[cross-scale-spatial-generative-neurodegeneration]] - 跨尺度空间感知生成模型预测神经退行性脆弱性，86.04%解释方差，空间相关r=0.9439 (arXiv: 2606.05870)
+  - 变分生成架构 + 图基空间平滑正则化
+  - Allen人脑图谱：910标记基因 × 68皮质区域
+  - ADNI数据集：NC=926, AD=426
+  - 微尺度分子 → 宏尺度退化的跨尺度建模
+  - **Activation**: neurodegeneration, generative modeling, transcriptomic, cortical degeneration, Alzheimer, variational, graph regularization, spatial correlation
+
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
@@ -812,3 +830,48 @@
   - Driven-dissipative system: fast temporal decay but complex spatial correlations
   - Ultralow mode volumes, high Purcell enhancement, scalable ambient operation
   - **Activation**: room temperature quantum, plasmonic nanocavity, dipole synchronization, driven-dissipative quantum, Purcell enhancement
+
+## 2026-06-08 - Deep Learning Research (Cron Job)
+
+### Latent Reasoning with Normalizing Flows
+- [[nf-cot-latent-reasoning-normalizing-flows]] - Normalizing flow framework for continuous thoughts preserving CoT advantages (KV-cache, likelihood estimation) (arXiv: 2606.06447v1)
+  - TARFlow-style flow inside LLM backbone with dual-head generation
+  - Exact likelihoods for latent thoughts, probabilistic left-to-right decoding
+  - Policy-gradient optimization in latent reasoning space
+  - **Activation**: latent reasoning, normalizing flows, CoT, continuous thoughts, reasoning optimization
+
+### Compress-Distill: Reasoning Trace Compression for Efficient Knowledge Distillation
+- [[compress-distill-reasoning-trace-compression]] - Post-hoc CoT trace compression achieving 18x efficiency with 96% accuracy retention (arXiv: 2606.05988v1)
+  - Compresses reasoning traces to 8.6-21.0% original length before distillation
+  - 2.0-7.6x training speedup, 3-19x shorter inference outputs
+  - Model-compressed beats naive truncation (especially for smaller students)
+  - **Activation**: reasoning distillation, trace compression, knowledge distillation, efficient training
+
+### TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning
+- [[tail-lor-spectral-continual-learning]] - Spectral LoRA routing adaptation to long-tail coordinates while protecting principal components (arXiv: 2606.06494v1)
+  - Fixed singular bases U, V from pre-trained weights as reference frame
+  - Soft spectral penalty discourages dominant direction updates
+  - Low-rank update to singular value matrix Σ with interference reduction
+  - **Activation**: continual learning, spectral decomposition, LoRA, principal components, adaptation
+
+### You Only Index Once: Cross-Layer Sparse Attention with Shared Routing
+- [[clsa-cross-layer-sparse-attention]] - 7.6x decoding speedup, 17.1x throughput at 128K context via shared routing index (arXiv: 2606.06467v1)
+  - Token-level top-k selection computed once, reused across cross-decoder layers
+  - Preserves fine-grained token selectivity while amortizing routing overhead
+  - Joint optimization of pre-filling, KV-cache storage, long-context decoding
+  - **Activation**: sparse attention, cross-layer, KV-sharing, routing index, long-context
+
+### IA-RAG: Interval-Algebra-Driven Temporal Reasoning for Dynamic Knowledge Retrieval
+- [[ia-rag-interval-algebra-temporal]] - Temporal RAG using Allen's Interval Algebra with Interval Event Units (IEUs) in Thematic Forest (arXiv: 2606.06044v1)
+  - Models facts as time intervals with 13 Allen relations (before, meets, overlaps, etc.)
+  - Sub-graph Time Tightening refines fuzzy temporal boundaries
+  - Strong performance on complex compositional temporal reasoning benchmarks
+  - **Activation**: temporal RAG, interval algebra, Allen relations, temporal reasoning, dynamic knowledge
+
+### PSViT: A Methodology for Structurally Pruning Spiking Vision Transformers
+- [[psvit-structured-pruning-spiking-vision]] - 22.4% memory saving structured pruning for SViT using sensitivity analysis (arXiv: 2606.03257v1)
+  - Three-stage: uniform channel pruning → sensitivity analysis → fine-grained pruning
+  - Hardware-agnostic: efficient on existing architectures vs. unstructured pruning
+  - 70.3% accuracy without fine-tuning, 72.8% with fine-tuning (original 73.3%)
+  - **Activation**: spiking vision transformer, structured pruning, neuromorphic efficiency, SViT
+
