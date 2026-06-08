@@ -1005,3 +1005,11 @@
   - Enables time-parallel RNN training with stable O(1) length gradient path without unrolling
   - Outperforms BPTT on language modeling and pixel sequence modeling tasks
   - **Activation**: RNN training, supervised memory, parallel training, predictive state, memory transition, BPTT replacement
+
+### Equivariant Neural Belief Propagation
+- [[equivariant-neural-belief-propagation]] - ENBP framework for SE(3)-symmetric probabilistic inference with Gaussian mixture messages, 98.9% conformational coverage (arXiv: 2606.06344)
+  - Factor-graph with equivariant Gaussian mixture model messages transforming exactly under SE(3)
+  - Rank-2 precision matrices via equivariant outer products with differentiable spectral decomposition
+  - 100x faster than diffusion baselines at higher accuracy on GEOM-QM9/GEOM-Drugs
+  - Converges on 15+ agent robotic inference where vanilla loopy BP diverges
+  - **Activation**: equivariant neural belief propagation, SE(3) symmetry, Gaussian mixture model, factor-graph inference, conformational coverage, molecular modeling
