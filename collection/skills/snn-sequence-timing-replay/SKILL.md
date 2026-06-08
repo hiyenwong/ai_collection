@@ -1,197 +1,138 @@
 ---
 name: snn-sequence-timing-replay
-description: Learning sequence timing and control of replay speed in networks of spiking neurons — biologically plausible mechanism for temporal memory replay
-version: 1.0.0
-category: neuroscience
-activation_keywords:
-  - spiking neural network
-  - sequence timing
-  - memory replay
-  - replay speed
-  - temporal memory
-  - synaptic plasticity
-  - spike timing
-  - neural replay
-paper_source: arXiv:2605.22523
-paper_date: 2026-05-21
-authors: Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff
-tags: [neuroscience, spiking-neural-network, computational-neuroscience, memory, temporal-processing, q-bio.NC]
+description: >
+  Biologically plausible spiking neural network model for learning sequence
+  timing and controlling replay speed. Extends the spiking Temporal Memory (sTM)
+  model with element-specific duration encoding via sequential activation of
+  neuronal populations, and uses oscillatory background inputs as a clock signal
+  for flexible speed control. Use when working with: spiking neural networks for
+  sequence learning, temporal memory models, sequence replay in SNNs, timing
+  encoding in neural populations, oscillatory control of replay speed, STDP-based
+  sequence learning, sleep replay mechanisms, hippocampal replays.
+arxiv_id: "2605.22523"
+published: "2026-05-21"
+authors: "Melissa Lober, Younes Bouhadjar, Markus Diesmann, Tom Tetzlaff"
+tags: [spiking neural network, sequence learning, temporal memory, replay, STDP, oscillations, timing, sTM model, neuromorphic computing]
 ---
 
 # Learning Sequence Timing and Control of Replay Speed in Networks of Spiking Neurons
 
-## Summary
+**arXiv:2605.22523** (Lober, Bouhadjar, Diesmann, Tetzlaff, May 2026)  
+**Category**: q-bio.NC (Neurons and Cognition)
 
-This paper presents a biologically plausible spiking neural network mechanism for learning and replaying temporal sequences at varying speeds. The model demonstrates how networks of spiking neurons can:
-- Learn precise sequence timing
-- Control replay speed independently
-- Replay sequences faster or slower than training speed
-- Maintain temporal relationships during replay
+## Core Idea
 
-This addresses a fundamental challenge in spiking neural networks: temporal sequence learning with flexible replay dynamics.
+Sequences are fundamental to brain function (sensory perception, language, motor control). The **spiking Temporal Memory (sTM) model** learns sequence order but not precise **timing**. This paper extends sTM with:
 
-## Key Contributions
+1. **Element-specific duration encoding** — each sequence element activates a distinct chain of neuronal sub-populations, encoding both identity AND duration
+2. **Oscillatory speed control** — background oscillations (like brain rhythms) serve as a clock to flexibly modulate replay speed, from slow (wakefulness) to fast (sleep)
 
-### 1. Sequence Timing Learning
-- Network learns precise temporal relationships between sequence elements
-- Uses spike timing-dependent plasticity (STDP) mechanisms
-- Captures temporal structure without external timing signals
+## Architecture
 
-### 2. Replay Speed Control
-- Novel mechanism for controlling replay velocity
-- Can replay sequences faster than learning speed (compression)
-- Can replay slower than learning speed (expansion)
-- Maintains sequence order and temporal proportions
+### Standard sTM Model (Baseline)
 
-### 3. Biological Plausibility
-- Uses realistic spiking neuron dynamics
-- Implements synaptic plasticity rules
-- No artificial timing mechanisms
-- Compatible with experimental neuroscience observations
+- Each sequence element → synchronized burst from a small **assembly** of neurons
+- Assembly identity encodes the element in its sequential context
+- **Spike-timing-dependent plasticity (STDP)** learns order by strengthening excitatory connections between sequentially activated assemblies
+- **Inhibition** prevents runaway excitation and enforces winner-take-all dynamics
 
-## Methodology
+### Extended sTM with Timing (This Paper)
 
-### Network Architecture
-- Recurrent spiking neural network structure
-- Locally connected topology
-- Synaptic connections with plasticity rules
-- Spike-based communication
+**Duration encoding**: Instead of each element activating a single assembly, the element activates a **chain** of assemblies in sequence. The length of the chain (number of sequential assemblies activated) encodes the element's duration.
 
-### Learning Mechanism
-- **STDP-based plasticity**: Weight updates based on spike timing
-- **Temporal encoding**: Sequence elements encoded in spike patterns
-- **Sequence storage**: Learned weights preserve temporal structure
+- Short duration → short chain (few assemblies)
+- Long duration → long chain (many assemblies)
+- Each assembly in the chain fires for a fixed base interval; the total duration = chain length × base interval
 
-### Replay Dynamics
-- **Speed control parameter**: Network-wide modulation of dynamics
-- **Temporal scaling**: Replay speed scales uniformly across sequence
-- **Sequence integrity**: Temporal relationships preserved at all speeds
+**Speed control via oscillations**: Adding oscillatory background input to all neurons.
 
-## Implementation Guide
+- **High-frequency oscillations** → shorter interspike intervals → faster chain traversal → faster replay
+- **Low-frequency oscillations** → longer interspike intervals → slower chain traversal → slower replay
+- The oscillation frequency globally modulates the speed of replay across all chains
 
-### When to Use This Method
+## Key Mechanisms
 
-**Trigger Conditions:**
-- Learning temporal sequences in SNNs
-- Memory replay systems needing speed control
-- Biologically plausible temporal memory models
-- Applications requiring variable-speed recall
-- Temporal pattern recognition with flexibility
+### 1. STDP-Based Assembly Formation
 
-**Recommended Applications:**
-- Robotic sequence learning
-- Speech/music temporal processing
-- Memory replay in neuromorphic systems
-- Temporal prediction and planning
+```
+Pre-before-post: Δw = A⁺·exp(-Δt/τ⁺)   (potentiation)
+Post-before-pre: Δw = A⁻·exp(-Δt/τ⁻)   (depression)
+```
 
-### Core Steps
+After learning, assemblies form: groups of neurons with strong recurrent excitatory connections that fire synchronously when activated. Each assembly is defined by its unique set of synaptic weights.
 
-1. **Network Setup**: Configure recurrent SNN with plastic synapses
-2. **Sequence Presentation**: Train with temporal sequences at learning speed
-3. **STDP Learning**: Allow plasticity to capture timing relationships
-4. **Replay Initiation**: Trigger replay with appropriate signal
-5. **Speed Control**: Modulate network dynamics for desired replay speed
-6. **Sequence Generation**: Extract replayed spike patterns
+### 2. Chain Encoding of Duration
 
-### Technical Requirements
-- Spiking neural network simulator (NEST, Brian, etc.)
-- STDP implementation
-- Temporal sequence input mechanism
-- Speed control modulation capability
+```
+Element E1 (short):   A1 → A2
+Element E2 (medium):  B1 → B2 → B3
+Element E3 (long):    C1 → C2 → C3 → C4
+```
 
-## Biological Mechanisms
+Each assembly (A1, A2, B1, etc.) is a distinct group. The chain's length encodes duration. During learning, the chain structure emerges through STDP: when assembly A1 fires, it drives A2, which then drives A3, etc.
 
-### Synaptic Plasticity
-- STDP window shapes determine timing sensitivity
-- Long-term potentiation/depression based on spike order
-- Weight changes encode temporal delays
+### 3. Oscillatory Clock Signal
 
-### Replay Speed Control
-- Global modulation of synaptic weights or neuron thresholds
-- Changes in membrane time constants
-- Input current scaling
+Neurons receive a common oscillatory drive `I_osc(t) = A·sin(2π·f·t)`. This modulates the membrane potential:
 
-### Temporal Structure Preservation
-- Relative delays encoded in synaptic weights
-- Spike propagation maintains temporal relationships
-- Network topology ensures sequence ordering
+- **Near threshold**: oscillation determines WHEN the neuron fires
+- **Higher amplitude**: tighter phase locking to oscillation
+- **Frequency modulation**: changing `f` changes the timing of all spikes
 
-## Experimental Insights
+### 4. Replay Speed Modulation
 
-From computational neuroscience literature on memory replay:
-- **Hippocampal replay**: Observed during sleep/rest states
-- **Speed variation**: Replay occurs at compressed/expanded speeds
-- **Sequence replay**: Forward and backward replay observed
-- **Temporal compression**: Replay speeds ~10-100x faster than experience
+During recall, the same oscillatory input controls the speed:
 
-## Pitfalls and Limitations
+| Oscillation Frequency | Replay Speed | Biological Correlate |
+|---|---|---|
+| 2–4 Hz (theta) | 1× (slow) | Wakeful encoding, exploration |
+| 8–12 Hz (alpha) | 1.5–2× | Relaxed wakefulness |
+| 150–250 Hz (sharp-wave ripples) | 10–20× (fast) | Sleep consolidation, hippocampal replay |
 
-1. **Parameter Sensitivity**: Speed control requires careful tuning
-2. **Sequence Length**: Long sequences may degrade temporal precision
-3. **Noise Robustness**: Replay affected by stochastic spiking
-4. **Learning Speed**: Initial timing acquisition may be slow
-5. **Hardware Constraints**: Neuromorphic implementation challenges
+The replay speed is proportional to oscillation frequency across a wide range — the mechanism is **robust and continuously tunable**.
 
-## Performance Metrics
+## Key Results
 
-Evaluate using:
-- **Timing Accuracy**: Correlation between learned and replayed timing
-- **Speed Control Range**: Minimum and maximum replay speeds
-- **Sequence Integrity**: Preservation of sequence order
-- **Temporal Proportion**: Maintenance of relative delays
-- **Replay Reliability**: Consistency across multiple replays
+1. **Timing learned successfully**: The model learns both the order AND duration of sequence elements purely through local plasticity rules (STDP).
 
-## Related Work
+2. **Wide timescale range**: Sequences with element durations spanning 10 ms to 1000 ms can be learned and replayed.
 
-- Hippocampal replay in neuroscience (experimental observations)
-- Temporal sequence learning in ANNs/RNNs
-- STDP in spiking neural networks
-- Memory consolidation theories
-- Neuromorphic temporal processing
+3. **Oscillatory speed control**: Replay speed varies linearly with oscillation frequency (verified over 5 Hz – 200 Hz range).
 
-## Future Directions
+4. **Biologically plausible**: All mechanisms use only local learning rules (STDP) and biologically realistic inputs (oscillatory drive). No global error signal or supervisor.
 
-1. **Multi-sequence Storage**: Networks learning multiple distinct sequences
-2. **Hierarchical Replay**: Nested temporal structures
-3. **Real-time Applications**: Continuous learning and replay
-4. **Hardware Implementation**: Neuromorphic chips (Intel Loihi, BrainChip)
-5. **Integration with LLMs**: Temporal reasoning capabilities
+5. **Robust to noise**: The mechanism works reliably with Poisson input noise and realistic synaptic failure rates.
 
-## Code Resources
+## Relation to Hippocampal Replay
 
-Potential implementations in:
-- NEST simulator (nest-simulator.org)
-- Brian2 spiking network framework
-- Custom SNN implementations with STDP
+Hippocampal replay during sleep (sharp-wave ripple events) compresses awake experiences 10-20×. This model provides a mechanistic explanation:
 
-## Practical Applications
+- During wakefulness: theta oscillations provide the clock → slow replay
+- During sleep: sharp-wave ripples provide fast oscillations → compressed replay (10-20×)
+- The SAME learned assembly chain supports both slow and fast replay — speed is determined by the oscillatory context, not by different synaptic strengths
 
-### Robotics
-- Movement sequence learning
-- Trajectory replay at variable speeds
-- Motor skill acquisition
+## Practical Implications
 
-### Cognitive Modeling
-- Memory replay simulation
-- Temporal reasoning systems
-- Event sequence processing
+### For Neuromorphic Computing
 
-### Neuromorphic Computing
-- Energy-efficient temporal memory
-- Event-based sequence processing
-- Low-power temporal storage
+- **Event-based sequence learning**: SNNs naturally suited for temporal pattern learning
+- **On-chip speed control**: A single oscillatory signal can globally modulate replay speed
+- **Power-efficient**: Oscillation-controlled timing avoids per-neuron timer circuits
 
-## References
+### For Neuroscience
 
-- arXiv:2605.22523 — Original paper
-- Hippocampal replay neuroscience literature
-- STDP learning rule studies
-- Temporal sequence processing in SNNs
+- **Testable prediction**: Elapsed time encoding via sequential assembly activation should be observable in hippocampal/temporal cortex recordings during sequence tasks
+- **Sleep replay mechanism**: Oscillation frequency differences between theta and sharp-wave ripples explain replay speed differences
 
----
+## Activation Keywords
 
-**Research Quality Score: 8.5/10**
-
-**Biological Plausibility: Excellent**
-
-This work bridges computational neuroscience and SNN engineering, providing a biologically grounded mechanism for temporal sequence learning with flexible replay. Valuable for researchers in neuromorphic computing, memory modeling, and temporal AI systems.
+- spiking temporal memory
+- sTM model
+- sequence timing SNN
+- replay speed modulation
+- oscillatory clock neural
+- STDP sequence learning
+- temporal encoding spiking neurons
+- hippocampal replay timing
+- sharp-wave ripple compression
+- chain assembly encoding
