@@ -1,76 +1,115 @@
 ---
 name: quantum-ldpc-breakeven
-description: "Breakeven demonstration methodology for quantum low-density parity-check (qLDPC) codes on trapped-ion platforms. Combines coding theory (mathematics) with experimental quantum error correction to achieve logical qubit lifetimes matching physical qubit performance."
-category: quantum-computing
+description: Breakeven demonstration methodology for quantum low-density parity-check (qLDPC) codes on trapped-ion hardware.
+platforms: [linux, macos, windows]
+tags: [quantum-error-correction, qLDPC, trapped-ion, fault-tolerant, OMG-architecture]
+arxiv: 2606.06455
 ---
 
-## Context
+# Breakeven Demonstration of Quantum LDPC Codes
 
-Quantum low-density parity-check (qLDPC) codes are a leading candidate for fault-tolerant quantum computing, offering higher encoding rates than planar surface codes. This methodology addresses the challenge of implementing qLDPC codes on physical hardware, which typically requires long-range couplers.
+**Paper**: arXiv:2606.06455 - "Breakeven demonstration of quantum low-density parity-check codes"
+**Authors**: Edwin Tham et al.
+**Date**: 2026-06-04
 
-Source: arXiv:2606.06455 (Tham et al., June 2026)
+## Core Achievement
 
-## Core Methodology
+**First breakeven demonstration** of quantum low-density parity-check (qLDPC) codes with:
+- Logical error rate **9× better** than previous superconducting demonstration
+- Qubit lifetimes **comparable to or exceeding** trapped-ion qubits
+- 4 logical qubits encoded into 18 physical qubits
 
-### 1. Trapped-Ion Platform Selection
+## Key Methodology
 
-**Key advantage**: Trapped-ion systems allow arbitrary qubit connectivity without hardware reconfiguration, making them ideal for testing qLDPC codes that require non-local stabilizer measurements.
+### OMG Architecture (Optical-Metastable-Ground)
 
-### 2. Optical-Metastable-Ground (OMG) Architecture
+Novel implementation enabling:
+- **Addressable mid-circuit measurement and reset**
+- **No ion transport required**
+- **No dedicated coolant ions**
+- Significantly reduced runtime and ion count overhead
 
-Implement addressable mid-circuit measurement and reset using OMG states:
-- **Optical**: Use for state preparation and readout
-- **Metastable**: Use as ancilla for syndrome extraction
-- **Ground**: Use as computational qubits
+### Code Families Demonstrated
 
-**Benefit**: Eliminates need for ion transport or dedicated coolant ions, reducing runtime and ion count overhead.
+1. **qLDPC codes**: High-rate quantum error-correcting codes
+2. **Topological codes**: Surface code alternatives
+3. **Concatenated codes**: Classical quantum error correction
 
-### 3. Multi-Code Family Testing
+### Flexibility Advantage
 
-Demonstrate codes across three families on the same device:
-1. **qLDPC codes**: High-rate, non-local stabilizers
-2. **Topological codes**: Surface codes, planar layouts
-3. **Concatenated codes**: Hierarchical protection
+- **9 different codes** demonstrated on single device
+- **No hardware reconfiguration** needed
+- **Trapped-ion flexibility**: Adapt to different connectivity requirements
 
-### 4. Breakeven Verification Protocol
+## Technical Details
 
-Measure logical error rate vs physical error rate:
-- Encode k logical qubits into n physical qubits
-- Perform repeated error correction cycles
-- Compare logical qubit lifetime to physical qubit T1/T2
-- **Breakeven criterion**: Logical error rate ≤ physical error rate per cycle
+### qLDPC Code Implementation
 
-## Implementation Steps
+- Encoding: 4 logical qubits into 18 physical qubits
+- Connectivity: Varying qubit connectivity requirements
+- Performance: Up to 9× improvement vs superconducting
 
-1. Prepare trapped-ion register with N qubits
-2. Implement OMG architecture for mid-circuit measurement
-3. Encode logical qubits using qLDPC parity-check matrix
-4. Run syndrome extraction cycles
-5. Apply corrections based on syndrome decoding
-6. Measure logical state fidelity over time
-7. Compare with unencoded physical qubit performance
+### Breakeven Achievement
 
-## Key Results (2606.06455)
+- Logical qubit lifetime ≥ physical qubit lifetime
+- Some instances slightly exceed trapped-ion qubit lifetimes
+- First demonstration of practical qLDPC advantage
 
-- **Code**: 4 logical qubits encoded in 18 physical qubits (qLDPC)
-- **Performance**: Logical error rate better than previous superconducting demonstrations
-- **Breakeven**: Some instances achieve qubit lifetimes ≥ physical qubit T1
-- **Platform**: Trapped-ion with OMG architecture
+### OMG Architecture Benefits
 
-## Pitfalls
+1. Mid-circuit measurement capability
+2. Addressable reset operations
+3. No ion transport overhead
+4. No coolant ion requirements
+5. Reduced runtime consumption
 
-- **Hardware complexity**: qLDPC codes typically need long-range couplers (avoided with trapped ions)
-- **Decoding overhead**: Syndrome decoding for qLDPC codes is more complex than surface codes
-- **Calibration**: OMG states require precise laser control and timing
-- **Comparison baseline**: Must compare against same physical qubit platform, not different technology
+## Comparison with Previous Work
 
-## Verification
+### vs Superconducting qLDPC
 
-1. Run logical qubit memory experiment for ≥ 100 error correction cycles
-2. Measure logical error rate per cycle
-3. Compare with physical qubit error rate (T1, gate errors)
-4. Confirm logical lifetime ≥ physical T1 for breakeven claim
+- **9× better** logical error rate
+- Different hardware platform (trapped-ion)
+- No long-range coupler requirements
 
-## Activation
+### vs Surface Codes
 
-quantum ldpc, qldpc breakeven, trapped ion error correction, OMG architecture, quantum error correction codes, qec breakeven, high-rate quantum codes, 量子LDPC, 量子纠错突破
+- Higher encoding rates
+- Reduced physical qubit overhead
+- Different connectivity requirements
+
+## Research Significance
+
+- First practical demonstration of qLDPC advantage
+- Validates high-rate quantum error correction
+- Demonstrates trapped-ion flexibility for QEC
+- Establishes OMG architecture for efficient QEC
+
+## Implementation Insights
+
+### Trapped-Ion Advantages
+
+- Flexible connectivity without hardware changes
+- High-fidelity operations
+- Long coherence times
+- Addressable operations
+
+### qLDPC Benefits
+
+- Higher encoding rates vs surface codes
+- Reduced qubit overhead
+- Scalable error correction
+- Breakeven performance achieved
+
+## Related Skills
+
+- [[quantum-error-correction-methods]] - QEC overview
+- [[trapped-ion-quantum-computing]] - Trapped-ion hardware
+- [[quantum-ldpc-decoding]] - qLDPC decoding algorithms
+
+## References
+
+- arXiv:2606.06455 - Original paper
+- qLDPC literature - Quantum LDPC codes
+- OMG architecture - Optical-metastable-ground implementation
+
+**Activation**: qLDPC, quantum-error-correction, trapped-ion, breakeven, OMG-architecture, fault-tolerant

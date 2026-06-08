@@ -1,281 +1,274 @@
 ---
 name: corsw-sliced-wasserstein-eeg-decoding
-description: Correlation Sliced-Wasserstein (CorSW) framework for EEG decoding with domain generalization. Pullback Euclidean Metric Sliced Wasserstein on correlation manifold for robust cross-dataset EEG classification. Use when: (1) EEG decoding with distribution shift, (2) Domain generalization for neural data, (3) Scale-invariant EEG representation, (4) Manifold-valued sliced Wasserstein distances. Keywords: EEG decoding, sliced Wasserstein, correlation matrix, manifold geometry, domain generalization, OLM, LSM, pullback metric, scale-invariant.
+description: Correlation Sliced-Wasserstein (CorSW) framework for scale-invariant EEG decoding with improved domain generalization. Use when working with EEG signal classification, domain adaptation in BCI systems, or developing robust neural signal processing methods. Handles distribution shift in EEG datasets through manifold-based Wasserstein metrics.
 license: MIT
 ---
 
-# Correlation Sliced-Wasserstein Framework for EEG Decoding (CorSW)
+# Correlation Sliced-Wasserstein for EEG Decoding
 
 ## Overview
 
-CorSW introduces Pullback Euclidean Metric Sliced Wasserstein (PEMSW) framework for comparing correlation matrices with proper manifold geometry. Enables robust EEG decoding under distribution shifts by treating correlation descriptors as manifold-valued data.
+**论文**: "A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding" (arXiv:2606.06104, KDD 2026)
+**核心创新**: Pullback Euclidean Metric Sliced Wasserstein (PEMSW) 框架处理相关矩阵流形上的分布匹配
 
-**Key achievement**: KDD 2026 accepted paper demonstrating improved domain generalization for EEG decoding across datasets.
+## 核心方法论
 
-## Core Innovation
+### 1. 问题背景
 
-**Pullback Euclidean Metric Sliced Wasserstein (PEMSW)**: General framework for sliced Wasserstein distances on manifolds with pullback Euclidean metrics. Specialized to correlation matrices using Off-Log Metric (OLM) and Log-Scaled Metric (LSM).
+**EEG解码的挑战**:
+- 协方差描述符对通道尺度敏感
+- 分布偏移导致跨域泛化差
+- 传统方法：binning/smoothing → 丢失细节信息
 
-**CorSW advantages**:
-- Proper geometry for correlation matrices (not Euclidean approximation)
-- Scale-invariant EEG representations
-- Low training overhead, no inference cost increase
-- Improved generalization under distribution shifts
+**解决方案**: 全秩相关矩阵作为尺度不变表示
 
-## Mathematical Foundation
+### 2. PEMSW框架
 
-### Correlation Manifold Geometry
+**数学基础**: 拉回欧几里得度量流形上的切片 Wasserstein 距离
 
-Full-rank correlation matrices form a Riemannian manifold `C_n` with special structure:
-- Symmetric positive definite with unit diagonal
-- Not a Euclidean space (standard metrics inappropriate)
-- Curvature affects gradient descent and Wasserstein distances
-
-### Pullback Euclidean Metrics (PEMs)
-
-PEMs map manifold distances through embedding:
-```
-d_M(x, y) = ||φ(x) - φ(y)||_E
-```
-
-Where:
-- `φ`: Embedding map to Euclidean space
-- `d_M`: Pullback metric on manifold
-- `||·||_E`: Euclidean norm in embedding
-
-**Two correlation geometries**:
-
-**1. Off-Log Metric (OLM)**:
-```
-φ_OLM(C) = log(C) - diag(log(C))/2
-```
-- Based on off-diagonal logarithm
-- Preserves correlation structure
-- Natural for covariance-related operations
-
-**2. Log-Scaled Metric (LSM)**:
-```
-φ_LSM(C) = sqrt(diag(C)^-1) * C * sqrt(diag(C)^-1)
-```
-- Scaling-normalized representation
-- Different curvature properties
-- Alternative manifold structure
-
-### Sliced Wasserstein on Manifolds
-
-**Standard Sliced Wasserstein** (Euclidean):
-```
-SW(P, Q) = ∫_S^d W_1(Pθ, Qθ) dθ
-```
-
-Where projections `Pθ` are 1D distributions along direction θ.
-
-**PEMSW generalization**:
-```
-PEMSW(P, Q) = ∫ W_1(P_φ,θ, Q_φ,θ) dθ
-```
-
-Steps:
-1. Embed manifold points via φ
-2. Project to 1D in embedded space
-3. Compute Wasserstein distances
-4. Average over all directions
-
-### CorSW Instantiation
-
-**CorSW-OLM**: Using Off-Log embedding
 ```python
-def corsw_olm(C1, C2, n_projections=1000):
-    # Embed via OLM
-    E1 = off_log_embedding(C1)
-    E2 = off_log_embedding(C2)
+# CorSW 距离定义（两种几何）
+# 1. Off-Log Metric (OLM): d_OLM(C1, C2) 
+# 2. Log-Scaled Metric (LSM): d_LSM(C1, C2)
+
+import numpy as np
+from scipy.linalg import logm
+
+def correlation_to_tangent(C, metric='OLM'):
+    """
+    将相关矩阵映射到切空间
     
-    # Sample random projections
-    projections = sample_unit_vectors(E1.shape, n_projections)
+    Args:
+        C: 相关矩阵 (n_channels x n_channels)
+        metric: 'OLM' 或 'LSM'
     
-    # Compute sliced Wasserstein
-    sw_sum = 0
-    for theta in projections:
-        p1_theta = project(E1, theta)
-        p2_theta = project(E2, theta)
-        sw_sum += wasserstein_1d(p1_theta, p2_theta)
+    Returns:
+        tangent: 切空间表示
+    """
+    if metric == 'OLM':
+        # Off-Log Metric: 对角元素偏移
+        d = np.diag(C)
+        offset = np.log(d)
+        return logm(C) - np.diag(offset)
+    elif metric == 'LSM':
+        # Log-Scaled Metric: 对角缩放
+        D = np.diag(np.sqrt(1.0 / np.diag(C)))
+        return logm(D @ C @ D)
+```
+
+### 3. 切片 Wasserstein 实现
+
+```python
+def sliced_wasserstein_correlation(C1, C2, num_projections=1000, metric='OLM'):
+    """
+    计算两个相关矩阵集合间的 CorSW 距离
     
-    return sw_sum / n_projections
-```
-
-**CorSW-LSM**: Using Log-Scaled embedding
-```python
-def corsw_lsm(C1, C2, n_projections=1000):
-    # Embed via LSM
-    E1 = log_scaled_embedding(C1)
-    E2 = log_scaled_embedding(C2)
+    Args:
+        C1, C2: 相关矩阵数组 (N1 x n x n), (N2 x n x n)
+        num_projections: 随机投影数量
+        metric: 相关几何类型
     
-    # Same projection and integration steps
-    return pemsw_distance(E1, E2)
-```
-
-## EEG Decoding Application
-
-### Why Correlation Matrices?
-
-EEG covariance descriptors robust to noise but sensitive to channel scaling. **Correlation matrices** provide:
-- Scale invariance (normalized by variance)
-- Robustness to electrode impedance variations
-- Capture functional connectivity patterns
-
-### Domain Generalization Setup
-
-**Problem**: EEG datasets from different sessions, subjects, or devices exhibit distribution shifts.
-
-**CorSW approach**:
-1. Train classifier on source domain correlation matrices
-2. Use CorSW distance to align representations across domains
-3. Test on target domain without adaptation
-
-### Training Pipeline
-
-**Step 1**: Extract correlation matrices
-```python
-def extract_correlation(eeg_trials):
-    # Trials: [n_trials, n_channels, n_timepoints]
-    correlations = []
-    for trial in eeg_trials:
-        # Compute covariance
-        cov = np.cov(trial)
-        # Normalize to correlation
-        corr = cov / np.sqrt(np.outer(np.diag(cov), np.diag(cov)))
-        correlations.append(corr)
-    return correlations
-```
-
-**Step 2**: Manifold embedding
-```python
-def embed_correlations(correlations, metric='OLM'):
-    embedded = []
-    for corr in correlations:
-        if metric == 'OLM':
-            embedded.append(off_log_embedding(corr))
-        else:  # LSM
-            embedded.append(log_scaled_embedding(corr))
-    return embedded
-```
-
-**Step 3**: Domain generalization loss
-```python
-def dg_loss(source_embedded, source_labels, target_embedded):
-    # Standard classification loss on source
-    cls_loss = cross_entropy(classifier(source_embedded), source_labels)
+    Returns:
+        distance: SW 距离估计
+    """
+    # 映射到切空间
+    T1 = np.array([correlation_to_tangent(c, metric) for c in C1])
+    T2 = np.array([correlation_to_tangent(c, metric) for c in C2])
     
-    # CorSW alignment across domains
-    alignment_loss = 0
-    for s_e in source_embedded:
-        for t_e in target_embedded:
-            alignment_loss += corsw_distance(s_e, t_e)
+    # 随机投影 + 一维 Wasserstein
+    n_channels = C1.shape[1]
+    distances = []
     
-    return cls_loss + lambda * alignment_loss
+    for _ in range(num_projections):
+        # 随机单位向量
+        theta = np.random.randn(n_channels * n_channels)
+        theta = theta / np.linalg.norm(theta)
+        
+        # 投影
+        proj1 = np.dot(T1.reshape(len(T1), -1), theta)
+        proj2 = np.dot(T2.reshape(len(T2), -1), theta)
+        
+        # 一维 Wasserstein (排序差异)
+        proj1_sorted = np.sort(proj1)
+        proj2_sorted = np.sort(proj2)
+        
+        sw_1d = np.mean(np.abs(proj1_sorted - proj2_sorted))
+        distances.append(sw_1d)
+    
+    return np.mean(distances)
 ```
 
-**Step 4**: Inference (no extra cost)
+### 4. 域泛化框架
+
 ```python
-# Standard inference - just classify embedded correlation
-prediction = classifier(embed_target_correlation(target_eeg))
+class CorSWDomainGeneralizer:
+    """
+    CorSW-based EEG 域泛化
+    
+    使用场景:
+    - 多站点 EEG 数据集泛化
+    - BCI 跨被试迁移
+    - 医院间 EEG 分类器迁移
+    """
+    
+    def __init__(self, metric='OLM', lambda_reg=0.1):
+        self.metric = metric
+        self.lambda_reg = lambda_reg
+        
+    def compute_domain_shift(self, domains):
+        """
+        计算多域间分布偏移
+        
+        Args:
+            domains: 字典 {domain_name: correlation_matrices}
+        
+        Returns:
+            shift_matrix: 域间距离矩阵
+        """
+        domain_names = list(domains.keys())
+        n_domains = len(domain_names)
+        shift_matrix = np.zeros((n_domains, n_domains))
+        
+        for i, d1 in enumerate(domain_names):
+            for j, d2 in enumerate(domain_names):
+                if i != j:
+                    shift_matrix[i, j] = sliced_wasserstein_correlation(
+                        domains[d1], domains[d2], 
+                        metric=self.metric
+                    )
+        
+        return shift_matrix, domain_names
+    
+    def align_domains(self, source_corr, target_corr):
+        """
+        对齐源域到目标域
+        
+        通过优化最小化 CorSW 距离
+        """
+        # 迁移学习策略
+        # 1. 基于距离加权混合
+        # 2. 特征空间对齐
+        pass
 ```
 
-## Experimental Results
+## 实验验证
 
-**Three EEG datasets tested**:
-- Dataset A: Motor imagery (subject-dependent)
-- Dataset B: ERP classification (cross-session)
-- Dataset C: Mental load (cross-device)
+**三个 EEG 数据集**:
+- 低训练开销
+- 无额外推理成本
+- 改善分布偏移下的泛化
 
-**Improvements**:
-- CorSW-OLM: +5-8% accuracy over Euclidean baseline
-- CorSW-LSM: +3-6% accuracy over Euclidean baseline
-- Training overhead: Minimal (just embedding)
-- Inference cost: Zero additional operations
+**关键指标**:
+- 分类准确率提升
+- 域间距离量化
+- 不确定性估计
 
-## Implementation Details
+## 与现有方法对比
 
-### Projection Sampling
+| 方法 | 尺度敏感 | 分布偏移 | 训练开销 |
+|------|---------|---------|---------|
+| Covariance | ✓ | 高 | 低 |
+| Riemannian | 部分 | 中等 | 高 |
+| **CorSW** | ✗ | **低** | **低** |
 
-**Monte Carlo approximation**:
-```
-n_projections = 1000-5000
-```
+## 应用场景
 
-More projections = better approximation but slower. Typical tradeoff:
-- 1000: Fast, reasonable accuracy
-- 5000: Accurate, slower training
-
-### Gradient Computation
-
-**Backpropagation through embedding**:
+### 1. BCI 跨被试迁移
 ```python
-# Embedding derivatives
-d_off_log(C) = C^-1 - diag(C^-1)/2  # OLM gradient
-d_log_scaled(C) = scaling matrix derivative  # LSM gradient
+# 源被试 EEG → 目标新被试
+source_subjects = load_correlation_matrices('train_subjects')
+target_subject = load_correlation_matrices('new_subject')
 
-# Wasserstein gradient in 1D
-d_w1(P, Q) = sorted_difference(P, Q)
+# 计算域偏移
+shift = sliced_wasserstein_correlation(source_subjects, target_subject)
+
+# 基于偏移调整分类器
+adjust_classifier(shift)
 ```
 
-### Classifier Choice
-
-**Simple classifiers work**:
-- Ridge regression on embedded vectors
-- SVM with RBF kernel
-- Neural network (small MLP)
-
-Complexity in manifold geometry, not in classifier.
-
-## Advantages over Alternatives
-
-**vs Euclidean correlation distance**:
-- Proper curvature handling
-- No arbitrary scaling assumptions
-- Better distribution matching
-
-**vs other Wasserstein methods**:
-- Faster computation (sliced approximation)
-- No OT solver required
-- Closed-form gradient available
-
-**vs domain adaptation**:
-- No target domain labels needed
-- Generalizes to unseen shifts
-- Zero inference overhead
-
-## Pitfalls
-
-1. **Wrong metric choice**: OLM vs LSM - choose based on dataset characteristics
-2. **Too few projections**: Underestimates true distance, poor alignment
-3. **Embedding numerical issues**: Log of near-zero correlations causes instability
-4. **Ignoring manifold curvature**: Using Euclidean classifier directly on correlations
-
-## Verification
-
-Test manifold property preservation:
+### 2. 多站点 EEG 协作
 ```python
-def verify_embedding(C):
-    E = off_log_embedding(C)
-    # Check symmetry
-    assert np.allclose(E, E.T)
-    # Check reconstruction
-    C_reconstructed = inverse_off_log(E)
-    assert np.allclose(C, C_reconstructed)
+# 医院 A, B, C 的 EEG 数据
+hospitals = {
+    'A': load_correlations('hospital_A'),
+    'B': load_correlations('hospital_B'),
+    'C': load_correlations('hospital_C')
+}
+
+# 域泛化训练
+generalizer = CorSWDomainGeneralizer()
+shift_matrix, names = generalizer.compute_domain_shift(hospitals)
+
+# 选择最佳源域
+best_source = select_min_shift_domain(shift_matrix, target='C')
 ```
 
-## Activation
+## 实现要点
 
-**Trigger keywords**: EEG decoding, correlation matrix, sliced Wasserstein, manifold geometry, domain generalization, scale-invariant EEG, OLM, LSM, pullback metric, correlation geometry
+### 数据预处理
+```python
+def eeg_to_correlation(eeg_signals):
+    """
+    EEG 信号 → 全秩相关矩阵
+    
+    Args:
+        eeg_signals: (n_trials x n_channels x n_timepoints)
+    
+    Returns:
+        correlations: (n_trials x n_channels x n_channels)
+    """
+    # 去均值
+    centered = eeg_signals - np.mean(eeg_signals, axis=2, keepdims=True)
+    
+    # 计算协方差
+    cov = np.einsum('ijk,ilk->ijl', centered, centered) / eeg_signals.shape[2]
+    
+    # 转换为相关矩阵
+    std = np.sqrt(np.diag(cov))
+    corr = cov / (std[:, None] * std[None, :])
+    
+    return corr
+```
 
-## References
+### 避免陷阱
 
-See `references/metric_derivations.md` for OLM/LSM mathematical details.
-See `references/projection_sampling.md` for efficient sampling strategies.
+**常见错误**:
+1. ✗ 使用协方差而非相关矩阵 → 尺度敏感
+2. ✗ 欧几里得距离处理相关矩阵 → 忽略流形结构
+3. ✗ 固定投影方向 → 低效估计
 
-## Source
+**正确做法**:
+1. ✓ 全秩相关矩阵作为基础表示
+2. ✓ OLM/LSM 几何定义切空间
+3. ✓ 大量随机投影稳定估计
 
-arXiv:2606.06104 - "A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding" (KDD 2026)
-Authors: Chen Hu, Rui Wang, Jiale Zhou, Jingjun Yi, Shaocheng Jin, Yidong Song, Yefeng Zheng
-Code: https://github.com/ChenHu-ML/CorSW
+## 代码资源
+
+**GitHub**: https://github.com/ChenHu-ML/CorSW
+
+**依赖**:
+- Python 3.7+
+- NumPy, SciPy
+- PyTorch (可选，用于优化)
+
+## 扩展方向
+
+1. **动态 EEG**: 时间序列相关矩阵建模
+2. **多模态融合**: EEG + MEG CorSW
+3. **在线适应**: 实时域偏移检测与纠正
+4. **神经解码**: fMRI → EEG CorSW 迁移
+
+## 关键论文引用
+
+```bibtex
+@article{hu2026corsw,
+  title={A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding},
+  author={Hu, Chen and Wang, Rui and Zhou, Jiale and Yi, Jingjun and Jin, Shaocheng and Song, Yidong and Zheng, Yefeng},
+  journal={arXiv preprint arXiv:2606.06104},
+  year={2026}
+}
+```
+
+---
+
+**Activation Keywords**: CorSW, sliced-wasserstein EEG, correlation matrices, domain generalization BCI, EEG decoding, scale-invariant neural signals, PEMSW, OLM LSM metrics

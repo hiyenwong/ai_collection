@@ -1,13 +1,26 @@
 ---
 name: intrinsic-computational-functionalism
-description: "Intrinsic Computational Functionalism methodology — From Observer-Relative Maps to Observer-Independent Structures. Addresses observer-relativity problem in computational theories of consciousness with operationalizable criteria."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2606.06424"
-  published: "2026-06-04"
-  authors: ["Shuqin Ma", "Ryota Kanai"]
-  category: neuroscience
-  tags: [consciousness, computational-functionalism, observer-relativity, intrinsic-structure, causal-dynamics, philosophy-of-mind]
+description: 内在计算功能主义方法论 — 从观察者相对映射到观察者独立结构。解决计算理论意识中的观察者相对性问题，提供可操作化的标准框架。
+version: 1.0.0
+category: neuroscience
+activation_keywords:
+  - 计算功能主义
+  - 意识理论
+  - 观察者相对性
+  - 内在结构
+  - 因果动力学组织
+  - computational functionalism
+  - consciousness
+  - observer-relative
+  - intrinsic structure
+  - causal-dynamical organization
+related_skills:
+  - consciousness-usk-framework
+  - iit-critical-review
+  - ctm-ai-consciousness-blueprint
+paper_reference: arXiv:2606.06424v1
+authors: Shuqin Ma, Ryota Kanai
+submitted_date: 2026-06-04
 ---
 
 # Intrinsic Computational Functionalism
