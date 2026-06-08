@@ -1,3 +1,12 @@
+## 2026-06-09 - Computer Science + Quantum (Cron Job)
+
+### Quantum element-wise transforms
+- [[element-wise-transforms-quantum]] - 量子逐元素变换算法：将多项式函数逐元素应用于块编码矩阵，空间复杂度指数级优化 (arXiv: 2606.06456)
+  - 指数空间优化：度-k多项式需O(log k)量子比特，相比先前O(k)方案指数级改进
+  - 块编码框架：在U_A中编码矩阵A，通过位置寄存器+受控多项式求值实现逐元素变换
+  - 三大应用：量子神经网络激活函数、非线性哈密顿量变换、量子信号处理
+  - **Activation**: quantum element-wise transforms, quantum matrix operations, block encoding, polynomial quantum, QSVT element-wise, quantum neural network activation, quantum signal processing
+
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
