@@ -1,103 +1,214 @@
 ---
 name: identity-trap-eeg-foundation-models
-description: Diagnostic audit methodology for detecting subject-identity shortcut learning in EEG foundation models. Use when evaluating EEG FM reliability, subject-disjoint cross-validation issues, or assessing whether high accuracy reflects genuine biomarkers vs identity features.
-license: MIT
+description: "The Identity Trap in EEG Foundation Models: A Diagnostic Audit — FMScope protocol for detecting subject-identity shortcut learning in EEG FMs before fine-tuning. Five diagnostics: variance decomposition, subject-axis erasure, 1/f ablation, layer probing, direction consistency. Activation: identity trap, EEG foundation model, shortcut learning, subject identity, FMScope, LaBraM, CBraMod, REVE, diagnostic audit."
 ---
 
-# The Identity Trap in EEG Foundation Models
+## Context
 
-Diagnostic framework for detecting subject-identity shortcut learning in frozen EEG foundation model representations.
+EEG foundation models report strong accuracy on clinical resting-state EEG. However, high accuracy under subject-disjoint cross-validation can reflect either genuine clinical biomarkers or subject-identity features correlating with the label. This paper introduces **FMScope** — a frozen-representation protocol diagnosing the Identity Trap at representation level.
 
-## Problem Statement
+**Key Finding**: Identity Trap is universal — frozen subject-variance is 13-89x random null in 12/12 dataset pairs, rising under fine-tuning.
 
-EEG foundation models achieve high accuracy under subject-disjoint cross-validation, but this success can reflect either:
-- **Genuine clinical biomarkers** (desired)
-- **Subject-identity features correlating with labels** (shortcut learning)
+**Paper**: arXiv:2606.06647 (Jun-You Lin et al., 2026-06-04)
+**Category**: cs.LG + q-bio.NC (Machine Learning + Neurons and Cognition)
+**Pages**: 28 pages, 6 figures, 8 tables
 
-This ambiguity is the **Identity Trap**.
+## Core Methodology
 
-## FMScope Diagnostic Protocol
+### 1. The Identity Trap Definition
 
-Five-component frozen-representation diagnostic applied BEFORE fine-tuning:
+**Problem**: Subject-disjoint splitting alone cannot rule out shortcut learning when:
+- Subject-identity features correlate with clinical labels
+- Cross-validation may not expose representation-level shortcuts
+- High accuracy may reflect physiological identity rather than pathology
 
-### 1. Variance Decomposition
-Quantify frozen subject-variance dominance:
-- Subject-variance: **13-89x random null** in 12/12 dataset pairs
-- Fine-tuning amplifies: **+10 to +63 pp increase**
-- Significance: Universal Identity Trap across all EEG FMs
+**Physical Basis**: Subject identity has measurable physiological component (aperiodic 1/f signal)
 
-### 2. Subject-Axis Erasure
-Linear removal of subject-identity axis:
-- Improves decoding when label varies within subject: **+6 to +12 pp (primary), +4 to +27 pp (external)**
-- Proves subject-variance is **removable linear axis**
-- Validates physical shortcut nature
+### 2. FMScope Protocol (Five Diagnostics)
 
-### 3. Aperiodic 1/f Ablation
-Physiological carrier test:
-- Remove aperiodic component → subject probe drops **9-19 pp** (LaBraM, CBraMod)
-- REVE: saturates identity **without measurable aperiodic dependence**
-- Significance: 1/f slope is one measurable subject carrier
+#### Diagnostic 1: Variance Decomposition
+```python
+# Measure frozen subject-variance vs label-variance
+subject_variance = variance_along_subject_axis(frozen_repr)
+label_variance = variance_along_label_axis(frozen_repr)
+null_variance = variance_random_null(frozen_repr)
 
-### 4. Layer-wise Label Probing
-Fine-tuning effect characterization:
-- Fine-tuning amplifies label-variance **ONLY in cells with literature-established cross-subject markers**
-- Distinguishes biological gains from identity gains
+# Identity Trap indicator
+trap_ratio = subject_variance / null_variance  # 13-89x = trap detected
+```
 
-### 5. Within-Subject Direction Consistency
-Validates whether learned representations reflect consistent biological patterns vs noise.
+#### Diagnostic 2: Subject-Axis Erasure
+```python
+# Erase subject-identity linear axis from frozen representation
+erased_repr = remove_subject_axis(frozen_repr)
 
-## Tested Foundation Models
+# Check improvement in label decoding
+delta_accuracy = label_decode(erased_repr) - label_decode(frozen_repr)
+# +6 to +12 pp improvement = subject-axis was shortcut
+```
 
-- **LaBraM**: Strong aperiodic dependence (19 pp drop on ablation)
-- **CBraMod**: Moderate aperiodic dependence (9 pp drop)
-- **REVE**: Identity saturation without aperiodic correlation
+#### Diagnostic 3: Aperiodic 1/f Ablation
+```python
+# Remove aperiodic component from EEG input
+ablated_eeg = remove_aperiodic_1f(raw_eeg)
 
-## Dataset Matrix (2x2 Layout)
+# Measure subject probe drop
+delta_subject_probe = subject_probe(ablated_eeg) - subject_probe(raw_eeg)
+# -9 to -19 pp on LaBraM/CBraMod = 1/f carries subject identity
+# REVE: no change = saturates identity without 1/f dependence
+```
 
-Four dataset types testing label-subject relations:
-- **Subject relation of label**: Does label vary within subject?
-- **Presence of consensus cross-subject EEG marker**: Literature-established biomarker exists?
+#### Diagnostic 4: Layer-wise Label Probing
+```python
+# Probe each layer for label information
+for layer in range(num_layers):
+    probe_accuracy[layer] = linear_probe(
+        frozen_repr[layer], 
+        labels
+    )
 
-## Key Findings
+# Fine-tuning amplifies label-variance only where literature marker exists
+```
 
-1. **Identity Trap is universal** - all FMs show dominant frozen subject-variance
-2. **Physically grounded shortcut** - measurable physiological component (aperiodic 1/f)
-3. **Subject-disjoint splitting insufficient** - cannot rule out identity shortcuts alone
-4. **Erasure improves true signal** - removing subject-axis enhances within-subject label decoding
+#### Diagnostic 5: Within-Subject Direction Consistency
+```python
+# Check if label direction consistent within subject
+consistency = within_subject_label_consistency(frozen_repr)
 
-## Implementation Guidance
+# High consistency = genuine marker
+# Low consistency = subject-identity shortcut
+```
 
-### When to Use FMScope
+### 3. 2x2 Experimental Layout
 
-**Trigger conditions:**
-- Evaluating EEG FM claims of "cross-subject generalization"
-- Subject-disjoint splitting shows unexpectedly high accuracy
-- Need to distinguish biomarker learning from shortcut learning
-- Comparing frozen vs fine-tuned representations
+| Factor 1: Subject Relation of Label | Factor 2: Cross-Subject EEG Marker |
+|-------------------------------------|-----------------------------------|
+| **Within-Subject** | **No Marker** → Primary Trap Cells |
+| **Between-Subject** | **Marker Exists** → Fine-tuning Amplifies |
 
-### Diagnostic Workflow
+**Primary Cells**: Label varies within subject + no consensus marker → Identity Trap most severe
 
-1. **Compute frozen subject-variance** - quantify dominance ratio
-2. **Apply subject-axis erasure** - test removable linear axis hypothesis
-3. **Ablate aperiodic 1/f** - check physiological carrier (LaBraM/CBraMod)
-4. **Layer-wise probing** - identify where fine-tuning affects representations
-5. **Cross-cohort validation** - test erasure improvement on external datasets
+### 4. Tested Models
 
-### Code Availability
+- **LaBraM**: Subject probe drops 9-19 pp with 1/f ablation
+- **CBraMod**: Similar 1/f dependence as LaBraM
+- **REVE**: Saturates subject identity without measurable aperiodic dependence
 
-Implementation available at: https://github.com/junyoulin/fmscope
+## Implementation Steps
 
-## Paper Reference
+### Step 1: Load Frozen EEG Foundation Model
 
-**arXiv:2606.06647** (cross-list: cs.LG, q-bio.NC)
-- Authors: Jun-You Lin, Ying Choon Wu, Tzyy-Ping Jung
-- 28 pages, 6 figures, 8 tables
-- Submitted: 2026-06-04
+```python
+from transformers import AutoModel
 
-## Significance for Neuroscience AI
+# Load pretrained EEG FM (LaBraM, CBraMod, REVE)
+model = AutoModel.from_pretrained("path/to/eeg_fm")
+model.eval()  # Freeze for representation extraction
+```
 
-This work reveals a fundamental reliability challenge in EEG foundation models - the apparent success may reflect **physically measurable shortcuts** (subject identity via aperiodic features) rather than learned biomarkers. FMScope provides the first diagnostic toolkit to separate these cases.
+### Step 2: Extract Frozen Representations
 
----
+```python
+def extract_frozen_repr(model, eeg_batch):
+    """Extract frozen representation before fine-tuning."""
+    with torch.no_grad():
+        repr = model.encoder(eeg_batch)  # Frozen encoder output
+    return repr
+```
 
-**Activation**: EEG foundation model, subject-disjoint, cross-validation, shortcut learning, identity trap, aperiodic 1/f, frozen representation, diagnostic audit, LaBraM, CBraMod, REVE, FMScope
+### Step 3: Run FMScope Diagnostics
+
+```python
+def run_fmscope(model, dataset, labels, subjects):
+    """Complete FMScope diagnostic audit."""
+    frozen_repr = extract_frozen_repr(model, dataset)
+    
+    results = {
+        'variance_decomposition': variance_decomp(frozen_repr, subjects),
+        'subject_axis_erasure': subject_erasure_test(frozen_repr, labels),
+        'aperiodic_ablation': aperiodic_test(model, dataset, subjects),
+        'layer_probing': layer_probe_audit(frozen_repr, labels),
+        'direction_consistency': consistency_check(frozen_repr, subjects, labels)
+    }
+    
+    return results
+```
+
+### Step 4: Interpret Identity Trap Severity
+
+```python
+def interpret_trap(results):
+    """
+    Classify Identity Trap severity based on FMScope results.
+    """
+    severity = 'low'
+    
+    # Subject-variance dominance
+    if results['variance_decomposition']['trap_ratio'] > 13:
+        severity = 'moderate'
+    
+    # Subject-axis erasure improves label decoding
+    if results['subject_axis_erasure']['delta'] > 6:
+        severity = 'severe'
+    
+    # 1/f ablation drops subject probe
+    if results['aperiodic_ablation']['delta'] > -9:
+        severity = 'physiologically-grounded'
+    
+    return severity
+```
+
+## Key Results
+
+### Main Finding 1: Universal Identity Trap
+- Frozen subject-variance 13-89x random null in **12/12 dataset pairs**
+- Fine-tuning amplifies subject dominance (+10 to +63 pp)
+- Subject-axis is removable linear component
+
+### Main Finding 2: 1/f as Subject Carrier
+- Aperiodic 1/f signal carries subject identity for LaBraM/CBraMod
+- Removing it drops subject probe by 9-19 pp
+- REVE saturates identity without measurable 1/f dependence
+
+### Main Finding 3: Fine-Tuning Selectivity
+- Fine-tuning amplifies label-variance **only where cross-subject marker exists**
+- No marker → fine-tuning amplifies shortcut
+- Marker exists → fine-tuning amplifies genuine signal
+
+## Pitfalls
+
+- **Subject-Disposition Splitting Insufficient**: Cannot detect representation shortcuts alone
+- **Frozen Protocol Limitation**: Diagnostics run before fine-tuning; post-tuning behavior may differ
+- **1/f Removal Complexity**: Requires FOOOF or similar spectral parameterization
+- **External Cohort Generalization**: Identity Trap severity varies across datasets
+- **Physiological Grounding**: 1/f is biologically meaningful; complete removal may harm legitimate signal
+
+## Verification
+
+- Tested on 4 datasets in 2x2 layout
+- 12/12 pairs show Identity Trap (subject-variance 13-89x null)
+- Subject-axis erasure improves decoding in primary cells (+6 to +12 pp)
+- External cohort transfer: +4 to +27 pp improvement after erasure
+- Layer-wise probing confirms fine-tuning selectivity
+
+## Clinical Implications
+
+- **Diagnostic**: Use FMScope before deploying EEG FMs clinically
+- **Mitigation**: Erase subject-axis for within-subject varying labels
+- **Validation**: Check 1/f dependence to understand shortcut mechanism
+- **Future Work**: Develop subject-invariant EEG FMs
+
+## Activation
+
+- identity trap
+- EEG foundation model
+- FMScope
+- shortcut learning
+- subject identity
+- LaBraM
+- CBraMod
+- REVE
+- diagnostic audit
+- variance decomposition
+- aperiodic 1/f
+- frozen representation
