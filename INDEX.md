@@ -1,4 +1,40 @@
-## 2026-06-08 - Neuroscience + Quantum Research (Cron Job)
+## 2026-06-08 - Systems Engineering Research (Cron Job)
+
+### Mixed Potential Approach to Convergence of Nonlinear RLC Circuits with Memristors
+- [[mixed-potential-memristor-circuit-convergence]] - Mixed Potential方法分析含忆阻器非线性RLC电路收敛性，扩展Brayton-Moser理论到完整四元素电路系统 (arXiv: 2606.05851)
+  - Flux-Charge Analysis Method (FCAM): 从电压-电流域转换到磁通-电荷域分析
+  - Lyapunov-like稳定性证明: 在电容-电感平衡条件下保证收敛
+  - 多稳态处理: Content Addressable Memories (CAMs)实现支持
+  - 参数鲁棒性: 收敛结果对电路参数变化具有鲁棒性
+  - **Activation**: memristor circuit, mixed potential, convergence analysis, flux-charge method, RLCM circuit, nonlinear stability, Lyapunov circuit analysis, CAM implementation, neuromorphic hardware
+
+### Amortized Nonlinear Model Predictive Control
+- [[amortized-nonlinear-mpc]] - 摊销非线性MPC使用状态依赖QP近似替代实时NLP求解，单网络残差-校正器架构实现100倍加速并保证约束满足 (arXiv: 2606.05840)
+  - State-dependent QP approximation: 输入仿射非线性系统最优控制近似
+  - Residual-corrector architecture: 分析基线+神经网络校正，减少网络规模
+  - Differentiable interior-point layer: 保证约束满足的可微分QP求解器
+  - Hybrid loss: 仿制损失 + KKT残差惩罚联合训练
+  - Experimental validation: 三连杆机械臂笛卡尔末端跟踪，毫秒级计算 vs 秒级NLP
+  - **Activation**: amortized MPC, real-time nonlinear control, QP approximation, differentiable optimization, interior-point solver, robotics control, constraint satisfaction, MPC acceleration, learning-based control
+
+### Attack Detection using Time Series Foundation Models
+- [[attack-detection-time-series-foundation-models]] - TimesFM时间序列基础模型零样本CPS攻击检测，无需系统模型知识，优于χ²检测器并支持损坏测量替代 (arXiv: 2606.06347)
+  - Model-structure-free detection: TimesFM作为surrogate residual generator
+  - Zero-shot deployment: 无需植物模型(A,B,C)或任务特定训练
+  - Stealthy attack derivation: 线性/非线性系统最优隐蔽攻击策略闭式解
+  - IEEE 14-bus validation: 功率系统实测优于模型基检测器
+  - Mitigation technique: TimesFM预测替代损坏测量，当冗余假设失效时提供实用方案
+  - **Activation**: TimesFM attack detection, CPS security, foundation model CPS, stealthy attack optimal policy, χ² detector, IEEE 14-bus validation, replay attack, model-free anomaly detection, zero-shot CPS security, sensor corruption mitigation
+
+### Double Preconditioning (DoPr): Optimization for Test-Time Performance, not Validation Loss
+- [[double-preconditioning-test-time-optimization]] - 双预 conditioning优化范式结合梯度预 conditioning(Adam/Muon)与激活预 conditioning(KFAC)，解决训练-测试反馈失配和错误累积问题 (arXiv: 2606.06418)
+  - Test-Time Feedback (TTF) phenomenon: 单步训练损失 vs 多步部署指标失配
+  - Double preconditioning: 梯度预 conditioning(M) + 激活预 conditioning(K)双重变换
+  - Drop-in intervention: 最小代码改动，最大化下游收益
+  - Error accumulation reduction: 激活预 conditioning减少雅可比范数，抑制错误累积
+  - Applications: 自回归语言建模、流式生成模型、机器人策略学习
+  - Key insight: 测试时间性能提升 ≠ 验证损失改善
+  - **Activation**: DoPr optimizer, test-time feedback mitigation, KFAC Adam, autoregressive error accumulation, generation quality optimization, rollout stability, TTF optimization, train-test shift correction## 2026-06-08 - Neuroscience + Quantum Research (Cron Job)
 
 ### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
 - [[itp-stdp-snn-training]] - 算法+硬件协同优化SNN片上学习引擎，能耗效率4.5-220倍提升，硬件面积降低30-80倍，FPGA/ASIC验证 (arXiv: 2606.06159)
