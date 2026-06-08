@@ -1264,3 +1264,12 @@
   - 核心要点 1: Mahalanobis白化在降维前应用，去除个体特异性协方差结构，保留跨被试刺激相关模式
   - 核心要点 2: 白化操作对应Bures距离下的最优传输，为fMRI跨被试对齐提供原则性理论
   - **Activation**: fMRI whitening, Mahalanobis fMRI, Bures geometry fMRI, de-individualize brain signal, fMRI de-confound, quantum fMRI geometry
+
+## 2026-06-08 - Neuroscience + Quantum (Cron Job)
+
+### Second-Order Synaptic Memory using Inherent Plasticity of Moiré Superlattices
+- [[moire-superlattice-synaptic-memory]] - Demonstrates intrinsic electronic hysteresis and plasticity in twisted double bilayer graphene (tDBLG) moiré superlattices without extrinsic charge-traps, enabling pure-carbon quantum synaptic devices (arXiv: 2606.02931)
+  - Core要点 1: Moiré superlattice engineering creates intrinsic synaptic plasticity in pure carbon (tDBLG) — no extrinsic charge-traps needed
+  - Core要点 2: Twist-angle disorder induces electronic hysteresis; quantum geometric properties (Berry curvature, quantum metric) drive synaptic behavior
+  - Core要点 3: Second-order nonlinear transport and nonlinear Hall effect emerge from inversion symmetry breaking at moiré length scale
+  - **Activation**: moiré superlattice, synaptic plasticity, graphene neuromorphic, quantum geometry, tDBLG, nonlinear Hall
