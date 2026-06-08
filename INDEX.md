@@ -1464,3 +1464,19 @@
   - Breakeven demonstration validates practical viability
   - Spacetime lifting enables low-overhead fault tolerance
   - **Activation**: quantum error correction, qLDPC codes, fault tolerance, breakeven, surface code, spacetime lifting
+
+### Generative Quantum Data Embeddings for Supervised Learning
+- [[generative-quantum-embedding]] - Energy-based generative framework for optimizing quantum data embeddings with Wasserstein-distance feasibility bounds (arXiv: 2605.30866)
+  - Energy-based generative learning synthesizes gate sequences for embedding optimization
+  - Fidelity-based surrogate objective guides search toward improved class distinguishability
+  - Wasserstein distance provides a priori diagnostic for embedding optimization feasibility
+  - **Activation**: quantum data embedding, quantum encoding optimization, generative quantum circuit, Wasserstein quantum, 量子数据嵌入
+
+
+### Research progress on quantum neural networks and quantum machine learning
+- [[qnn-survey-design-patterns]] - Comprehensive QNN design patterns and architecture selection guide covering 7 QNN types (arXiv: 2605.30724)
+  - Covers FC-QNN, QCNN, equivariant QNN, QHN, QBM, QRC, and composite networks
+  - Architecture selection matrix by task type and resource constraints
+  - Barren plateau mitigation strategies for QNN training
+  - **Activation**: QNN survey, quantum neural network design, QNN architecture selection, quantum machine learning survey, 量子神经网络综述
+
