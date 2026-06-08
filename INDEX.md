@@ -1,5 +1,19 @@
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
+### De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry
+- [[fmri-mahalanobis-bures-whitening]] - fMRI信号去个体化方法：通过Mahalanobis白化+Bures几何距离提取群体层面功能连接信号 (arXiv: 2511.07313)
+  - Mahalanobis白化：去除被试个体协方差结构，保留刺激相关信号
+  - Bures距离：量子态距离度量应用于fMRI协方差矩阵，提供几何意义的脑状态距离
+  - 两阶段去个体化：去主体身份+保留实验效应，提升阿尔茨海默症早期诊断精度
+  - **Activation**: fMRI de-individualization, Mahalanobis whitening brain, Bures distance fMRI, functional connectivity preprocessing, Alzheimer fMRI biomarker
+
+### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding with Vision-Language Reasoning
+- [[behavior-vlm-neuroscience]] - 无微调行为理解框架：量子点定位姿态估计+VLM视频caption+LLM语义推理实现多动物行为分析 (arXiv: 2603.12176)
+  - 量子点姿态估计：多视角时空交叉推理+重投影误差置信度评估
+  - 深度嵌入聚类：过分割行为发现，无需语义标签
+  - VLM+LLM两级推理：视频caption生成→语义段合并与标记
+  - **Activation**: behavior VLM, behavioral understanding neuroscience, pose estimation VLM, quantum-dot behavioral data, finetuning-free behavior analysis, multi-animal behavior
+
 ### MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning
 - [[merlin-photonic-qml]] - MerLin开源框架：将光子量子模拟嵌入PyTorch/scikit-learn实现端到端量子层训练，重现18个SOTA工作 (arXiv: 2602.11092)
   - 端到端可微训练：线性光学电路强模拟集成到PyTorch/scikit-learn工作流

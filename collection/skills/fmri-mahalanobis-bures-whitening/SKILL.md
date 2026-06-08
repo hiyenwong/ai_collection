@@ -1,89 +1,101 @@
 ---
 name: fmri-mahalanobis-bures-whitening
-description: "De-individualizing fMRI signals via Mahalanobis whitening and Bures geometry methodology. Uses Mahalanobis data whitening before dimensionality reduction to distill subject and stimulus information from fMRI, with interpretation as two-stage de-individualization motivated by Bures distance (connected to quantum mechanics). Activation: fMRI whitening, Mahalanobis fMRI, Bures geometry fMRI, de-individualize brain signal, fMRI de-confound, quantum fMRI geometry."
+description: "De-individualizing fMRI signals via Mahalanobis whitening and Bures geometry — methodology for distilling meaningful information from fMRI by treating data whitening as quantum-inspired state de-individualization using Bures distance."
+activation_keywords:
+  - fMRI de-individualization
+  - Mahalanobis whitening brain
+  - Bures distance fMRI
+  - fMRI functional connectivity
+  - quantum-inspired brain analysis
+  - 功能连接去个体化
+  - fMRI白化
+  - Bures几何脑成像
+  - Alzheimer fMRI biomarker
+  - functional connectivity preprocessing
+categories:
+  - neuroscience
+  - medical-imaging
+  - quantum-physics
+arxiv_id: "2511.07313"
+arxiv_url: "https://arxiv.org/abs/2511.07313"
+authors: "Aaron Jacobson, Tingting Dan, Martin Styner, Guorong Wu, Shahar Kovalsky, Caroline Moosmueller"
+created: "2026-06-08"
 ---
 
-## Context
+# De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry
 
-Functional connectivity analysis of fMRI signals is complicated by subject-specific confounds that obscure stimulus-related neural patterns. This paper introduces a two-stage de-individualization procedure using Mahalanobis data whitening, motivated by the Bures distance from quantum information theory, to extract meaningful cross-subject information about experimental stimuli from fMRI data.
+## Description
 
-Source paper: arXiv:2511.07313 "De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry" (Jacobson, Dan, Styner, Wu, Kovalsky, Moosmueller — Nov 2025).
+Methodology for processing fMRI signals through Mahalanobis data whitening to extract meaningful information about subjects and experimental stimuli. Provides a quantum-inspired interpretation of whitening as a two-stage de-individualization process motivated by the Bures distance from quantum mechanics. Applications include improving Alzheimer's diagnosis accuracy, especially in preclinical stages.
 
-## Core Methodology
+## Core Concepts
 
-### 1. Mahalanobis Whitening for fMRI
+### Mahalanobis Whitening for fMRI
+- Standard fMRI analysis suffers from subject-specific confounds
+- Mahalanobis whitening: x_whitened = Σ^(-1/2) · (x - μ)
+- Removes individual covariance structure while preserving stimulus-relevant information
+- Two-stage process: (1) remove subject identity, (2) preserve experimental signal
 
-**Key Insight**: Apply Mahalanobis data whitening *before* dimensionality reduction to separate subject-specific variance from stimulus-related variance.
+### Bures Distance Connection
+- Bures distance: D_B(ρ₁, ρ₂) = √[2(1 - Tr√(√ρ₁·ρ₂·√ρ₁))]
+- Quantum metric for distinguishing quantum states
+- Applied to fMRI covariance matrices as "quantum states" of brain activity
+- Provides geometrically meaningful distance between brain states
 
-- Compute covariance matrix Σ from fMRI time series data
-- Apply whitening transform: x_whitened = Σ^(-1/2) * x
-- This removes subject-specific covariance structure
-- Preserves stimulus-correlated patterns across subjects
-- Connected to Bures distance: Σ^(-1/2) minimizes Bures distance between subject distributions
+## Methodology Steps
 
-### 2. Two-Stage De-Individualization
+### Step 1: Compute Subject Covariance
+```
+For each subject s:
+  Σ_s = Cov(fMRI_time_series_s)
+  μ_s = Mean(fMRI_time_series_s)
+```
 
-**Stage 1 — Subject Whitening**: 
-- For each subject, compute their fMRI covariance structure
-- Apply subject-specific Mahalanobis transform
-- Removes individual anatomical and baseline connectivity differences
+### Step 2: Apply Mahalanobis Whitening
+```
+Global covariance: Σ_global = Average(Σ_s) across subjects
+Whitening matrix: W = Σ_global^(-1/2)
+Whitened data: x' = W · (x - μ_global)
+```
 
-**Stage 2 — Stimulus Alignment**:
-- After whitening, apply dimensionality reduction (e.g., PCA, ICA)
-- Shared stimulus patterns emerge in the whitened space
-- Cross-subject alignment is naturally achieved
+### Step 3: Bures Distance Analysis
+```
+Treat each subject's covariance as density matrix: ρ_s = Σ_s / Tr(Σ_s)
+Compute Bures distance between subject states:
+  D_B(ρ_s, ρ_t) = √[2(1 - Tr√(√ρ_s · ρ_t · √ρ_s))]
+```
 
-### 3. Bures Distance Motivation
+### Step 4: De-Individualization Validation
+- Verify that whitened data no longer encodes subject identity
+- Confirm that stimulus/experimental effects are preserved
+- Use cross-validation on downstream tasks (classification, prediction)
 
-- Bures distance is a quantum-information-theoretic metric between density matrices
-- Interpreting fMRI covariance matrices as density-like objects
-- Mahalanobis whitening corresponds to the optimal transport between distributions under Bures geometry
-- This provides a principled, not just heuristic, justification for the whitening approach
+## Applications
 
-### 4. Applications
+1. **Alzheimer's diagnosis**: Improved accuracy in preclinical stage detection
+2. **Cross-subject fMRI analysis**: Remove individual confounds for group studies
+3. **Biomarker discovery**: Isolate disease-relevant signals from individual variation
+4. **Brain-computer interfaces**: Standardized features across subjects
+5. **Longitudinal studies**: Track changes within subjects over time
 
-- **Alzheimer's diagnosis**: Improved accuracy and consistency, especially in preclinical stages
-- **Mechanism discovery**: Aids discoveries linking brain function with cognition and behavior
-- **Cross-subject studies**: Enables more reliable group-level analysis
+## Key Advantages
 
-## Implementation Steps
+- **Non-parametric**: No assumptions about data distribution
+- **Geometry-preserving**: Bures distance respects quantum-information geometry
+- **Computationally efficient**: Standard linear algebra operations
+- **Interpretable**: Clear separation of individual vs. stimulus factors
 
-1. **Collect fMRI data**: Gather time series data across subjects and conditions
-2. **Compute covariance**: For each subject, estimate the functional connectivity covariance matrix Σ
-3. **Regularize covariance**: Add small regularization if needed (Σ + εI) for numerical stability
-4. **Apply whitening**: Compute Σ^(-1/2) via eigendecomposition and transform data
-5. **Dimensionality reduction**: Apply PCA/ICA/t-SNE on whitened data
-6. **Cross-subject analysis**: Compare patterns across subjects in the shared whitened space
-7. **Validation**: Test on held-out subjects or conditions
+## Error Handling
 
-## Key Results
+### Issue: Singular Covariance Matrix
+- **Solution**: Add small regularization (Σ + ε·I) before inversion
+- **Typical ε**: 1e-6 to 1e-4 times max eigenvalue
 
-- Mahalanobis whitening before dimensionality reduction distills meaningful fMRI information
-- Two-stage de-individualization motivated by Bures distance provides principled approach
-- Potential to improve Alzheimer's diagnosis accuracy, especially preclinical
-- Enables discoveries about brain-cognition-behavior mechanisms
+### Issue: Over-whitening (loss of signal)
+- **Solution**: Use partial whitening: W_α = (α·I + (1-α)·Σ)^(-1/2)
+- **Tuning**: Cross-validate α on downstream task performance
 
-## Pitfalls
+## Resources
 
-- **Covariance estimation requires sufficient samples**: fMRI time series may need regularization (shrinkage, Ledoit-Wolf) when T < N
-- **Bures interpretation assumes density-matrix analogy**: fMRI covariance is not a quantum density matrix — the connection is geometric, not physical
-- **Whitening may remove meaningful individual differences**: Careful validation needed to ensure only confounds are removed
-- **Numerical stability**: Computing matrix square root inverse requires careful eigendecomposition for ill-conditioned matrices
-
-## Verification
-
-- Compare classification accuracy with/without whitening on held-out subjects
-- Verify that stimulus-correlated patterns are preserved after whitening
-- Check that subject identity is less predictable after whitening
-- Validate on multiple datasets for generalizability
-
-## Related Skills
-
-- `meta-learning-in-context-brain-decoding` — training-free cross-subject brain decoding
-- `cross-subject-eeg-decoding` — cross-subject generalization for EEG
-- `eeg-foundation-model-adapters` — domain adaptation for EEG foundation models
-- `brain-foundation-model-batch-effects` — batch effects in brain foundation models
-
-## Activation
-
-fMRI whitening, Mahalanobis fMRI, Bures geometry fMRI, de-individualize brain signal, fMRI de-confound, quantum fMRI geometry, functional connectivity whitening, cross-subject fMRI alignment, Bures distance neuroscience
+- Paper: [arXiv:2511.07313](https://arxiv.org/abs/2511.07313)
+- Related: Metabolic quantum limit to MEG information capacity (arXiv:2511.06401)
