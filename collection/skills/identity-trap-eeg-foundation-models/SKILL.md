@@ -1,379 +1,248 @@
 ---
-skill_id: identity-trap-eeg-foundation-models
-name: The Identity Trap in EEG Foundation Models
-description: EEG基础模型的诊断审计方法论 - 揭示EEG基础模型在高准确率背后可能隐藏的主体身份特征陷阱，提出系统性评估框架区分真实临床生物标志物与主体识别特征。
+name: identity-trap-eeg-foundation-models
+description: The Identity Trap in EEG Foundation Models: A Diagnostic Audit — revealing how subject-identity features masquerade as clinical biomarkers in cross-validation, with FMScope diagnostic protocol
 version: 1.0.0
-author: Jun-You Lin, Ying Choon Wu, Tzyy-Ping Jung
-arxiv_id: 2606.06647v1
-categories:
-  - neuroscience
-  - EEG
-  - foundation models
-  - machine learning
-  - clinical neuroscience
-tags:
-  - EEG foundation models
-  - identity trap
-  - subject identity
-  - clinical biomarker
-  - cross-validation
-  - diagnostic audit
-  - EEG基础模型
-  - 主体识别
-  - 生物标志物
-activation_keywords:
-  - identity trap
-  - identity trap
-  - EEG foundation model
-  - EEG FM
-  - subject identity
-  - 主体身份
-  - clinical biomarker
-  - 临床生物标志物
-  - diagnostic audit
-  - 诊断审计
-  - cross-validation
-  - cross-validation
-created_date: 2026-06-08
-last_updated: 2026-06-08
+author: Jun-You Lin, Ying Choon Wu, Tzyy-Ping Jung (arXiv:2606.06647)
+created: 2026-06-08
+source: https://arxiv.org/abs/2606.06647
+category: computational neuroscience
+tags: [EEG foundation models, identity trap, diagnostic audit, cross-validation, shortcut learning, biomarker validation, representation analysis, FMScope]
+activation_keywords: [identity trap, EEG foundation model, cross-validation, biomarker, shortcut learning, subject identity, FMScope, variance decomposition]
+readiness_status: available
 ---
 
-# The Identity Trap in EEG Foundation Models: A Diagnostic Audit
+# The Identity Trap in EEG Foundation Models
 
-## 核心问题
+**来源论文**: arXiv:2606.06647 (2026-06-04)  
+**作者**: Jun-You Lin, Ying Choon Wu, Tzyy-Ping Jung  
+**领域**: Machine Learning (cs.LG); Neurons and Cognition (q-bio.NC)  
 
-**身份陷阱（Identity Trap）**：EEG基础模型在临床静息态EEG上报告的高准确率可能具有误导性——高准确率可能反映：
-1. **真实的临床生物标志物**
-2. **主体身份特征**（与标签相关但不具临床意义）
+## 核心问题：Identity Trap
 
-这种歧义导致模型评估的可靠性问题。
+EEG基础模型（FMs）在临床静息态EEG上报告高准确率，但**subject-disjoint交叉验证的高准确率仍然模糊**：
+- 可能反映真实的临床生物标志物
+- 或者是与标签相关的**主体身份特征**
 
-## 问题背景
+本文命名这一问题为 **Identity Trap**，并提出在微调前的表示层进行诊断。
 
-### EEG基础模型的兴起
+## FMScope诊断协议
 
-**现状**：
-- EEG基础模型（如 LaBraM, NeuroBERT）在临床分类任务上报告高准确率
-- 主体不相交交叉验证（subject-disjoint cross-validation）下仍保持高性能
-- 研究者宣称发现临床生物标志物
+### 五项诊断工具
 
-**隐患**：
-- EEG信号包含强烈的主体特异性特征（个体指纹）
-- 这些特征可能与诊断标签相关（如不同医院的患者群体差异）
-- 高准确率可能来自识别患者身份而非临床特征
+1. **方差分解 (Variance Decomposition)**  
+   分离主体方差与标签方差
 
-## 诊断审计框架
+2. **主体轴擦除 (Subject-Axis Erasure)**  
+   移除线性主体身份轴并测量影响
 
-### 1. 身份陷阱检测方法
+3. **非周期1/f消融 (Aperiodic 1/f Ablation)**  
+   消除非周期成分并测试主体探针下降
 
-```python
-import numpy as np
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_val_score
+4. **层级标签探测 (Layer-wise Label Probing)**  
+   分析各层的标签编码强度
 
-class IdentityTrapAudit:
-    """
-    EEG基础模型身份陷阱诊断审计工具
-    """
-    
-    def __init__(self, model, eeg_data, labels, subject_ids):
-        self.model = model
-        self.eeg_data = eeg_data
-        self.labels = labels
-        self.subject_ids = subject_ids
-        
-    def extract_features(self):
-        """提取模型特征"""
-        features = self.model.encode(self.eeg_data)
-        return features
-    
-    def test_identity_prediction(self, features):
-        """
-        测试特征是否能预测主体身份
-        如果能预测，说明包含主体身份信息
-        """
-        # 使用简单分类器测试身份预测
-        clf = LogisticRegression(max_iter=1000)
-        
-        # 主体不相交交叉验证
-        unique_subjects = np.unique(self.subject_ids)
-        scores = []
-        
-        for test_subject in unique_subjects:
-            train_mask = self.subject_ids != test_subject
-            test_mask = self.subject_ids == test_subject
-            
-            clf.fit(features[train_mask], self.subject_ids[train_mask])
-            score = clf.score(features[test_mask], self.subject_ids[test_mask])
-            scores.append(score)
-        
-        identity_accuracy = np.mean(scores)
-        
-        print(f"Identity Prediction Accuracy: {identity_accuracy:.3f}")
-        print(f"Warning: If > 0.7, features contain strong identity signals")
-        
-        return identity_accuracy
-    
-    def test_label_correlation_with_identity(self):
-        """
-        测试标签与主体身份的关联强度
-        如果强关联，身份陷阱风险高
-        """
-        # 计算每个主体的标签分布
-        subject_label_counts = {}
-        for sid, label in zip(self.subject_ids, self.labels):
-            if sid not in subject_label_counts:
-                subject_label_counts[sid] = []
-            subject_label_counts[sid].append(label)
-        
-        # 计算标签一致性（如果主体内标签高度一致，风险高）
-        label_consistency_scores = []
-        for sid, labels in subject_label_counts.items():
-            consistency = len(set(labels)) == 1  # 主体内标签是否单一
-            label_consistency_scores.append(consistency)
-        
-        consistency_rate = np.mean(label_consistency_scores)
-        
-        print(f"Subject-Label Consistency Rate: {consistency_rate:.3f}")
-        print(f"Warning: If > 0.8, high identity trap risk")
-        
-        return consistency_rate
-    
-    def compute_identity_trap_score(self):
-        """
-        计算身份陷阱风险评分
-        """
-        features = self.extract_features()
-        
-        # 1. 主体身份预测能力
-        identity_acc = self.test_identity_prediction(features)
-        
-        # 2. 标签-主体关联强度
-        consistency = self.test_label_correlation_with_identity()
-        
-        # 综合风险评分
-        trap_score = (identity_acc * 0.6 + consistency * 0.4)
-        
-        print(f"\n{'='*60}")
-        print(f"Identity Trap Score: {trap_score:.3f}")
-        print(f"Interpretation:")
-        if trap_score > 0.8:
-            print("  [HIGH RISK] Features likely encode subject identity")
-        elif trap_score > 0.6:
-            print("  [MODERATE RISK] Mixed identity and clinical signals")
-        else:
-            print("  [LOW RISK] Features likely encode clinical biomarkers")
-        print(f"{'='*60}\n")
-        
-        return trap_score
-```
+5. **主体内方向一致性 (Within-Subject Direction Consistency)**  
+   检验主体内标签方向的稳定性
 
-### 2. 对照实验设计
+### 实验设计：2x2布局
+
+测试三个预训练FM（LaBraM, CBraMod, REVE）在四个数据集上的表现：
+
+| | 主体标签关系 | 跨主体共识标志 |
+|---|------------|--------------|
+| ✓ | 主体内标签变化 | 有文献建立的标志 |
+| ✗ | 主体内标签不变 | 无共识标志 |
+
+## 主要发现
+
+### 发现1：Identity Trap普遍存在
+
+**冻结主体方差是随机null的13-89倍**（在12/12配对中）
+- 微调后主体方差上升（+10到+63个百分点）
+- 这是一种**可移除的线性轴**
+- 擦除主体轴在标签主体内变化的条件下提升解码（+6到+12 pp）
+
+### 发现2：非周期1/f是主体载体
+
+- 移除1/f使LaBraM和CBraMod的主体探针下降9-19 pp
+- **REVE**饱和主体身份且**无可测量的非周期依赖**
+- 揭示不同FM捕获主体身份的机制差异
+
+### 发现3：微调放大标签方差的条件
+
+仅在**有文献建立的跨主体标志**的条件下，微调才放大标签方差：
+- 无共识标志时，增益来自主体身份
+- 有共识标志时，增益反映真实生物标志物
+
+## Identity Trap的本质
+
+### 物理基础 Shortcut Learning
+
+Identity Trap是**shortcut learning的物理基础实例**：
+- 首选线索具有可测量的生理成分
+- **Subject-disjoint分割本身无法排除它**
+- FMScope分离反映生物标志物 vs 反映主体身份的增益
+
+### 为什么Subject-Disjoint失效？
+
+传统认为subject-disjoint交叉验证排除主体特异性，但本文证明：
+1. 主体身份特征可能与标签**相关**
+2. 相关性可以是**伪相关**而非因果
+3. 需要表示层诊断而非仅依赖分割策略
+
+## FMScope实施指南
+
+### 步骤1：方差分解
 
 ```python
-def control_experiment_design():
-    """
-    对照实验设计框架
-    """
-    strategies = {
-        'label_balanced_within_subject': {
-            'description': '确保每个主体内部标签平衡',
-            'implementation': '每个主体包含多个标签类别'
-        },
-        'temporal_split': {
-            'description': '时间分割而非主体分割',
-            'implementation': '同一主体的不同时段作为训练/测试'
-        },
-        'shuffle_identity': {
-            'description': '打乱主体标签关联',
-            'implementation': '随机分配标签到主体'
-        },
-        'synthetic_baseline': {
-            'description': '合成数据基线测试',
-            'implementation': '测试模型在纯身份特征数据上的表现'
-        }
-    }
-    
-    return strategies
+# 分离方差来源
+total_variance = compute_variance(representation)
+subject_variance = compute_subject_variance(representation, subject_labels)
+label_variance = compute_label_variance(representation, clinical_labels)
 
-def run_control_experiment(model, data, experiment_type):
-    """
-    执行对照实验
-    """
-    if experiment_type == 'shuffle_identity':
-        # 打乱主体-标签关联
-        shuffled_labels = shuffle_labels_across_subjects(data)
-        original_acc = model.evaluate(data, data.labels)
-        shuffled_acc = model.evaluate(data, shuffled_labels)
-        
-        print(f"Original Accuracy: {original_acc:.3f}")
-        print(f"Shuffled Accuracy: {shuffled_acc:.3f}")
-        print(f"Drop: {original_acc - shuffled_acc:.3f}")
-        
-        # 如果准确率大幅下降，说明依赖主体身份
-        if original_acc - shuffled_acc > 0.2:
-            print("[WARNING] High dependency on identity-label correlation")
-        
-    return original_acc, shuffled_acc
+# 测量比率
+subject_vs_null_ratio = subject_variance / random_null_variance
+# 期望：>13x表示Identity Trap存在
 ```
 
-## 实际应用案例
-
-### 临床EEG分类任务
+### 步骤2：主体轴擦除
 
 ```python
-# 示例：ADHD vs 正常对照组分类
+# 识别主体身份线性轴
+subject_axis = compute_subject_axis(representation)
 
-audit = IdentityTrapAudit(
-    model=eeg_foundation_model,
-    eeg_data=eeg_signals,
-    labels=diagnosis_labels,  # ADHD=1, Control=0
-    subject_ids=patient_ids
-)
+# 擦除并测量影响
+erased_representation = representation - subject_axis_projection
+label_accuracy_before = probe_labels(representation)
+label_accuracy_after = probe_labels(erased_representation)
 
-trap_score = audit.compute_identity_trap_score()
-
-# 推荐后续步骤
-if trap_score > 0.7:
-    print("\nRecommendation:")
-    print("1. Collect multi-session data per subject")
-    print("2. Use temporal cross-validation")
-    print("3. Test on independent hospital cohort")
-    print("4. Analyze feature attribution for clinical relevance")
+# 期望：主体内标签变化时，擦除提升准确率
 ```
 
-## 神经科学启示
-
-### EEG信号的个体特异性
-
-**已知发现**：
-- EEG个体识别准确率可达 80-99%（"EEG fingerprint"）
-- 个体特征稳定跨越数周至数年
-- 特征包括：频谱模式、连接拓扑、事件相关电位形态
-
-**陷阱机制**：
-- 如果临床群体来自不同医院/地区
-- 主体身份特征可能代理了环境/人口学差异
-- 模型可能学习这些代理特征而非临床病理特征
-
-### 对临床应用的启示
-
-1. **诊断可靠性**：高准确率 ≠ 临床有效性
-2. **泛化能力**：身份特征可能无法泛化到新群体
-3. **解释性需求**：需要验证特征的临床相关性
-
-## 防范策略
-
-### 数据收集策略
+### 步骤3：非周期1/f消融
 
 ```python
-data_collection_guidelines = {
-    'multi_session': {
-        'goal': '每个主体多次记录',
-        'benefit': '允许时间分割验证',
-        'sessions': '至少 2-3 次独立采集'
-    },
-    'diverse_population': {
-        'goal': '多样化群体',
-        'benefit': '减少身份-标签关联',
-        'implementation': '多个医院/地区合作'
-    },
-    'within_subject_label_variation': {
-        'goal': '主体内标签变化',
-        'benefit': '直接测试临床特征',
-        'example': '治疗前后、疾病进展阶段'
-    }
-}
+# 消除非周期成分
+aperiodic_removed = remove_aperiodic_1f(eeg_signal)
+
+# 测试主体探针
+subject_probe_before = probe_subject(original_representation)
+subject_probe_after = probe_subject(aperiodic_removed_representation)
+
+# 期望：LaBraM/CBraMod下降9-19 pp；REVE无下降
 ```
 
-### 评估策略
+### 步骤4：层级探测
 
 ```python
-evaluation_protocol = [
-    {
-        'step': 1,
-        'test': 'Identity Trap Audit',
-        'criterion': 'Trap score < 0.6'
-    },
-    {
-        'step': 2,
-        'test': 'Temporal Cross-Validation',
-        'criterion': 'Stable accuracy across sessions'
-    },
-    {
-        'step': 3,
-        'test': 'Independent Cohort Validation',
-        'criterion': 'Performance on unseen hospital data'
-    },
-    {
-        'step': 4,
-        'test': 'Feature Attribution Analysis',
-        'criterion': 'Attributed features match known biomarkers'
-    }
-]
-
-def run_full_audit(model, data):
-    """
-    执行完整审计流程
-    """
-    results = {}
+# 分析各层标签编码
+for layer in range(num_layers):
+    label_probe_score[layer] = probe_labels(layer_representation)
+    subject_probe_score[layer] = probe_subject(layer_representation)
     
-    for step in evaluation_protocol:
-        print(f"\nStep {step['step']}: {step['test']}")
-        # 执行相应测试
-        result = execute_test(model, data, step['test'])
-        results[step['test']] = result
-        
-        if result['pass']:
-            print(f"  ✓ PASSED: {step['criterion']}")
-        else:
-            print(f"  ✗ FAILED: {step['criterion']}")
-            print(f"  Recommendation: {result['recommendation']}")
-    
-    return results
+# 期望：微调仅在有共识标志时放大标签方差
 ```
 
-## 关键洞察
+## 对EEG FM研究的启示
 
-### 理论贡献
+### 评估陷阱
 
-1. **识别隐蔽陷阱**：首次系统化定义和诊断身份陷阱
-2. **审计框架**：提供可操作的评估工具
-3. **防范指南**：建立数据收集和评估标准
+1. **高准确率 ≠ 有效生物标志物**
+2. **Subject-disjoint ≠ 排除主体身份**
+3. **需要表示层诊断**而非仅依赖分割策略
 
-### 实践启示
+### 最佳实践
 
-1. **模型开发**：开发时需考虑身份陷阱风险
-2. **论文审查**：审查EEG基础模型论文时需验证身份陷阱
-3. **临床部署**：部署前需通过完整审计
+**开发EEG FM时**:
+- 应用FMScope诊断冻结表示
+- 验证增益来源（生物标志物 vs 主体身份）
+- 在有共识标志的数据集上微调
 
-## 与其他问题关联
+**评估EEG FM时**:
+- 报告方差分解比率
+- 测试主体轴擦除影响
+- 区分真实增益与shortcut增益
 
-### 相关研究领域
+## 技术要点
 
-1. **机器学习中的泄漏（Data Leakage）**
-2. **因果推理中的代理变量**
-3. **医疗AI的公平性和泛化性**
-4. **神经科学中的个体差异建模**
+### 主体方差计算
 
-### 延伸方向
+**定义**: 跨主体均值表示的方差
+**测量**: 在主体标签上的方差分解
+**阈值**: >13x随机null表示Identity Trap
 
-- 其他模态（fMRI, MEG）的身份陷阱
-- 多模态基础模型的交叉陷阱
-- 长期追踪数据的陷阱演变
+### 线性主体轴
 
-## 总结
+**定义**: 捕获主体身份的主要线性方向
+**识别**: PCA或类似方法提取
+**擦除**: 减去主体轴投影
 
-身份陷阱是EEG基础模型评估中的隐蔽风险，可能导致：
-- 虚高的临床性能报告
-- 缺乏泛化能力的模型
-- 误导性的生物标志物宣称
+### 非周期1/f
 
-通过系统诊断审计可以识别和防范这一陷阱，确保EEG基础模型的临床可靠性。
+**物理意义**: EEG信号的幂律衰减成分
+**作用**: LaBraM/CBraMod中作为主体载体
+**例外**: REVE饱和主体身份无需依赖1/f
+
+## 论文贡献总结
+
+| 贡献 | 创新性 | 影响 |
+|------|-------|------|
+| Identity Trap命名与识别 | ★★★★★ | 揭示EEG FM评估的根本缺陷 |
+| FMScope诊断协议 | ★★★★★ | 提供标准化诊断工具集 |
+| 非周期1/f作为主体载体 | ★★★★ | 发现物理基础shortcut |
+| 2x2实验布局 | ★★★★ | 方法论创新分离增益来源 |
+
+## 实践应用场景
+
+### 临床EEG FM开发
+
+**问题**: 高准确率可能来自主体身份而非病理标志
+**解决**: 
+1. 应用FMScope在冻结表示阶段
+2. 擦除主体轴并验证准确率变化
+3. 仅在有共识标志条件下微调
+
+### EEG FM评估报告
+
+**必需指标**:
+- 主体方差/null比率（>13x表示陷阱）
+- 主体轴擦除准确率变化（+6-12 pp表示真实增益）
+- 非周期依赖（LaBraM/CBraMod依赖，REVE不依赖）
+
+### 跨数据集迁移
+
+**验证方法**:
+- 测试主体内标签变化的外部队列
+- 应用FMScope诊断迁移增益来源
+- 区分生物标志物迁移 vs shortcut迁移
+
+## 局限性与未来方向
+
+### 当前局限
+
+1. **仅测试三个FM**: LaBraM, CBraMod, REVE
+2. **线性主体轴假设**: 可能存在非线性主体编码
+3. **静息态EEG**: 其他EEG范式可能不同
+
+### 未来扩展
+
+- 测试更多EEG FM架构
+- 开发非线性主体轴擦除方法
+- 扩展到任务态EEG和ECoG
+- 研究其他生理信号（MEG, fMRI）
 
 ## 参考文献
 
-- Original Paper: arXiv:2606.06647v1 (2026)
-- Related: EEG individual identification literature
-- Related: Foundation models for EEG (LaBraM, NeuroBERT)
-- Related: Clinical EEG biomarker validation standards
+- arXiv:2606.06647 - 原始论文
+- LaBraM, CBraMod, REVE相关文献
+- Shortcut learning综述
+- EEG非周期1/f文献
+
+---
+
+## Skill Metadata
+
+- **Activation**: identity trap, EEG foundation model, cross-validation, biomarker, shortcut learning
+- **Use Case**: Validate EEG FM biomarkers, diagnose subject identity shortcuts
+- **Prerequisites**: Understanding of EEG foundation models, representation analysis
+- **Output**: FMScope diagnostic scores and gain source identification
