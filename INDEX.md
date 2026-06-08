@@ -1175,3 +1175,17 @@
   - CGLMP Inequality: 允许代数最大值4，展现超量子关联
   - Reconstruction Limits: qplex几何捕获足够结构但不足以完全重构量子理论
   - **Activation**: qbism reconstruction, qplex geometry, chsh inequality, cglmp inequality, tsirelson bound, quantum correlations, superquantum, bell inequality
+
+## 2026-06-08 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Sparsely gated tiny linear experts
+- [[sparse-linear-expert-transformer]] - 稀疏门控线性专家方法：将transformer FFN层替换为稀疏门控的单个线性神经元网络，在等计算预算下提升困惑度并实现可解释性 (arXiv: 2606.07414)
+  - 核心要点 1: 移除MoE专家非线性，将每个专家缩小为单个线性神经元，大幅增加专家数量
+  - 核心要点 2: 在等FLOP比较中，sgatlin在所有计算预算下提升语言模型困惑度
+  - **Activation**: sparse linear expert, sgatlin, tiny linear expert, sparsely gated linear, linear MoE, sparse transformer FFN
+
+### De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry
+- [[fmri-mahalanobis-bures-whitening]] - fMRI信号去个体化方法：使用Mahalanobis白化在降维前分离个体差异，受Bures距离启发的两阶段去个体化框架 (arXiv: 2511.07313)
+  - 核心要点 1: Mahalanobis白化在降维前应用，去除个体特异性协方差结构，保留跨被试刺激相关模式
+  - 核心要点 2: 白化操作对应Bures距离下的最优传输，为fMRI跨被试对齐提供原则性理论
+  - **Activation**: fMRI whitening, Mahalanobis fMRI, Bures geometry fMRI, de-individualize brain signal, fMRI de-confound, quantum fMRI geometry
