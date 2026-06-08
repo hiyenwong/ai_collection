@@ -1,3 +1,23 @@
+## 2026-06-09 - Neuroscience Research (Cron Job - Session 2)
+
+### A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding
+- [[corsw-sliced-wasserstein-eeg-decoding]] - Pullback Euclidean Metric Sliced Wasserstein (PEMSW) 框架用于 EEG 相关矩阵解码，实现跨被试域泛化 (arXiv: 2606.06104, KDD 2026)
+  - PEMSW框架：Sliced Wasserstein 距离适配相关矩阵流形几何
+  - 双几何度量：Off-Log Metric (OLM) 和 Log-Scaled Metric (LSM) 拉回映射
+  - 尺度不变性：相关矩阵表示抵抗通道尺度变化
+  - 域泛化提升：三 EEG 数据集分布偏移下泛化性能改善
+  - 低训练开销：无额外推理成本，高效实现
+  - **Activation**: CorSW, EEG decoding, correlation matrix, sliced Wasserstein, domain generalization, BCI, cross-subject, correlation geometry, pullback metric, OLM, LSM
+
+### Inside the Visual Mind: Neuroscience-Motivated Concept Circuits for Interpreting and Steering Vision Transformers
+- [[visae-neuroscience-concept-circuits-vit]] - 神经科学启发的概念电路框架用于 Vision Transformer 可解释性与行为干预 (arXiv: 2606.06664, ICML 2026)
+  - 16K概念词汇表：64K图像探测套件，20x概念覆盖效率提升，28.7%解释准确度改善
+  - Top-down概念读取：逆向追溯概念神经元到 ViT 注意力头和层级
+  - Bottom-up电路追踪：自动恢复 ViT 内部工作机制电路图
+  - 概念编辑行为干预：WaterBirds 最差组准确度 48.2%提升，超越现有方法 23.8%
+  - 伪相关检测：识别并移除虚假信号对模型预测的影响
+  - **Activation**: ViSAE, concept circuit, ViT interpretability, sparse autoencoder, mechanistic interpretability, concept editing, model steering, visual concept discovery, Top-down concept reading, Bottom-up circuit tracing
+
 ## 2026-06-09 - Neuroscience Research (Cron Job)
 
 ### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
