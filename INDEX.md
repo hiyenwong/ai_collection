@@ -1,3 +1,12 @@
+## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - Hourly Session 2)
+
+### Quantum enhanced rare event discovery and sampling
+- [[quantum-rare-event-sampling]] - Quantum algorithm for discovering and sampling rare events without prior knowledge, achieving optimal O(1/√ε) scaling (arXiv: 2606.06316)
+  - Blind rare event discovery: No need to pre-identify which events are rare
+  - Quadratic speedup: O(1/√ε) quantum vs O(1/ε) classical sampling complexity
+  - Heavy-tailed advantage: Polynomial speedup determined by entropy-rate structure
+  - **Activation**: rare event sampling, quantum rare events, heavy-tailed systems, anomaly detection quantum, tail distribution quantum, stochastic process rare events
+
 ## 2026-06-09 - Computer Science + Quantum ML (Cron Job - Hourly)
 
 ### Do We Really Need Quantum Machine Learning?: A Multidimensional Empirical Study
