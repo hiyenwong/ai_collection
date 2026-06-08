@@ -1,3 +1,21 @@
+## 2026-06-08 - Neuroscience + Quantum (Cron Job)
+
+### Spacetime Formation under Requirements: Contextual Realization and Form-Dependent Probability
+- [[spacetime-requirements-quantum]] - 量子认知新框架：从有限状态需求出发构建时空结构，量子概率作为上下文时空形成的固定时空投影 (arXiv: 2605.23943)
+  - Requirements-First Framework: 从有限表征容量等需求出发而非预设时空/概率/对象
+  - Contextual Realization: 需求驱动上下文结构形成，量子概率是形成过程的投影
+  - Form-Dependent Probability: 概率分布依赖形成的结构而非先验
+  - 解释顺序效应、上下文性和全概率定律违反的根源
+  - **Activation**: spacetime formation requirements, contextual realization, form-dependent probability, quantum cognition foundations, order effects, contextuality decision making
+
+### A Stochastic Quantum Neural Network Model for AI
+- [[stochastic-quantum-neural-network]] - 随机量子神经网络方法论：用量子叠加、纠缠和酉演化建模神经动力学，超越冯·诺依曼架构约束 (arXiv: 2511.11609)
+  - Neuro-Quantum Correspondence: 神经状态→量子态、突触权重→哈密顿量、神经激活→测量概率
+  - Stochastic Evolution: 确定性酉演化+随机过程建模生物噪声
+  - 超指数状态空间、自然并行性、纠缠建模长程关联
+  - 为生物脑复杂性提供更自然的量子描述
+  - **Activation**: stochastic quantum neural network, SQNN, neuro-quantum modeling, quantum neural dynamics, Von Neumann alternatives, quantum brain simulation
+
 ## 2026-06-08 - Multi-Scale Brain Dynamics Synthesis (Cron Job)
 
 ### Multi-Scale Brain Dynamics Analysis Framework
