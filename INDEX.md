@@ -1,3 +1,54 @@
+## 2026-06-09 - Deep Learning Research (Cron Job)
+
+### Data-Efficient Autoregressive-to-Diffusion Language Models via On-Policy Distillation
+- [[on-policy-distillation-dlm-transformation]] - On-policy distillation eliminates teacher-student distribution mismatch in autoregressive-to-diffusion model transformation (arXiv: 2606.06712)
+  - Distribution mismatch elimination: Teacher sees its own distribution, student sees teacher's → mismatch
+  - On-policy solution: Teacher generates samples with student policy, eliminates mismatch
+  - Reversible diffusion framework: Autoregressive teacher → reversible diffusion student
+  - **Activation**: on-policy distillation, autoregressive-to-diffusion, distribution mismatch, reversible diffusion, teacher-student alignment, DLM transformation, generative model distillation
+
+### Streaming Attention Space Optimization: Tight Bounds for KV Cache Compression
+- [[streaming-attention-space-optimization]] - Nearly tight bounds on space complexity for streaming attention approximation, achieving KV cache compression via coreset + polynomial + partitioning methods (arXiv: 2606.07205)
+  - Upper bounds: Discrepancy-based coreset + polynomial method + space partitioning
+  - Lower bounds: INDEX problem with large side information proves fundamental limits
+  - Space efficiency: Memory bounded independent of precision parameter (unlike prior methods)
+  - **Activation**: streaming attention, KV cache compression, attention approximation, space complexity, coreset, discrepancy theory, kernel density estimation, polynomial method, tight bounds
+
+### Rollout-Adaptive Supervised Fine-Tuning (RASFT) for Reasoning
+- [[rollout-adaptive-supervised-finetuning-rasft]] - Policy-aware SFT calibrates expert supervision based on verified on-policy rollouts and problem-level solvability estimation (arXiv: 2606.07006)
+  - Verified rollouts: Estimate solvability from multiple rollouts with correctness verification
+  - Adaptive supervision: Low solvability → strong expert guidance; high solvability → self-generated trajectories
+  - Policy drift constraint: Clipped inverse ratio between frozen reference and current policy
+  - **Activation**: RASFT, rollout-adaptive, policy-aware SFT, verified rollouts, solvability estimation, self-generated trajectories, expert guidance calibration, reasoning fine-tuning
+
+### Reversible Foundations: Training 120B Sparse MoE on Single Nodes
+- [[reversible-sparse-moe-single-node]] - Train hundred-billion-parameter sparse MoE on single eight-GPU nodes via reversible recurrence stacks + state-preserving growth + TQP optimizer (arXiv: 2606.07404)
+  - Reversibility: Recurrence stack reconstructs activations in backward → flat activation memory
+  - State-preserving growth: Dense→MoE→Deep→Many experts expansion with documented failure modes
+  - TQP optimizer: Quantized base + trained low-rank adapters → ~45x optimizer state reduction
+  - **Activation**: reversible training, sparse MoE, single-node training, memory-efficient, state-preserving growth, TQP optimizer, 120B model, low-rank adapters
+
+### polyDAG: Polynomial Acyclicity for Efficient Causal Discovery
+- [[polydag-efficient-causal-discovery]] - Polynomial trace constraint replaces matrix-exponential acyclicity, achieving 33.4% speedup with improved F1 scores in visual semantic graphs (arXiv: 2606.06908)
+  - Polynomial vs exponential: Finite polynomial trace → zero exactly for acyclic graphs
+  - Geometric-series implementation: No explicit summation loop, preserves acyclicity condition
+  - Visual semantic graphs: Learn directed dependencies among facial attributes and scene descriptors
+  - **Activation**: polyDAG, polynomial acyclicity, efficient DAG learning, causal discovery, visual semantic graphs, continuous optimization, NOTEARS alternative
+
+### Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward RL
+- [[uncertainty-aware-llm-guided-policy-shaping]] - Calibrated LLM integrated into RL loop with MC dropout uncertainty + entropy-based blending, achieving >9% accuracy improvement (arXiv: 2606.06673)
+  - A* oracle synthesis: Generate optimal symbolic trajectories for fine-tuning
+  - MC dropout uncertainty: Epistemic uncertainty estimation via variance across predictions
+  - Entropy-based blending: Low uncertainty → trust LLM; high uncertainty → trust learned policy
+  - **Activation**: ULPS, uncertainty-aware LLM, LLM-guided RL, sparse-reward RL, policy shaping, A* oracle, MC dropout uncertainty, entropy-based blending
+
+### Characterize Then Distill: Mechanistic Reasoning in Large Output Spaces
+- [[characterize-then-distill-mechanistic-reasoning]] - Two-phase mechanistic characterization (shortlisting + fine-grained reasoning) + phase-separated distillation consistently outperforms standard distillation (arXiv: 2606.06840)
+  - Phase 1 characterization: Broad shortlisting from millions of candidates
+  - Phase 2 characterization: Fine-grained reasoning on reduced candidate set
+  - Mechanistic distillation: Distill each phase separately → better performance than monolithic
+  - **Activation**: characterize then distill, mechanistic reasoning, two-phase reasoning, shortlisting, fine-grained reasoning, large output space, phase separation
+
 ## 2026-06-09 - Neuroscience Research (Cron Job)
 
 ### Early psychosis shows deviations in scaling behaviour within a critical regime
