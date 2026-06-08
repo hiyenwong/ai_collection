@@ -1,142 +1,5 @@
 # AI Collection Index
 
-
-## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
-
-
-### Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines
-- [[qml-feature-encoding]] - Systematic review of 66 QML encoding works with three-axis taxonomy and five-regime hardware decision framework. (arXiv: 2606.05387)
-  - Critical gate error threshold p* ~ 10^-3 for amplitude encoding viability
-  - Unified trainability analysis: Fourier expressivity + barren plateau + kernel concentration
-  - **Activation**: qml feature encoding, quantum data encoding, amplitude encoding, angle encoding, NISQ encoding
-
-### On the Spectral theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic curves
-- [[quantum-isogeny-sampling]] - First quantum polynomial-time algorithm for sampling secure supersingular elliptic curves without trusted setup. (arXiv: 2602.02263)
-  - O~(log^4 p) quantum gate complexity under GRH for secure curve sampling
-  - Enables provably secure CGL hash function instantiation
-  - **Activation**: isogeny graph, supersingular elliptic curve, quantum sampling, CGL hash, vectorization problem
-
-### Quantum element-wise transforms
-- [[quantum-element-wise-transforms]] - Quantum algorithms for basic numerical linear algebraic tasks have proven essential for translating ... (arXiv: 2606.06456)
-  - Core methodology for quant-ph
-  - Mathematical framework with rigorous proofs
-  - **Activation**: quantum, element-wise, transforms
-
-
-### Robustness of Entanglement Manipulation for almost i.i.d. sources
-- [[entanglement-manipulation-robustness]] - We study the robustness of asymptotic entanglement manipulation beyond the exact i.i.d. regime, focu... (arXiv: 2606.06392)
-  - Core methodology for quant-ph
-  - Mathematical framework with rigorous proofs
-  - **Activation**: robustness, of, entanglement, manipulation, for
-
-
-### Two-Sample Hypothesis Testing for Subspace Equality in Network Data
-- [[subspace-equality-hypothesis-testing]] - In many settings one is often interested in determining whether two networks share some joint struct... (arXiv: 2606.06482)
-  - Core methodology for stat.ME; math.ST
-  - Mathematical framework with rigorous proofs
-  - **Activation**: two-sample, hypothesis, testing, for, subspace
-
-## 2026-06-05 - Neuroscience Research (Cron Job)
-
-### Bio-plausible Neuromorphic Disturbance Observer Based on Emulation Theory
-- [[neuromorphic-disturbance-observer]] - Neuromorphic control framework using spike-timing encoding with adaptive-threshold spiking (SFA-inspired), reducing spike events to 42.6% under noise (arXiv: 2606.05189)
-  - Integrate-and-fire neuron dynamics for disturbance estimates and control inputs
-  - Adaptive-threshold triggering mechanism inspired by spike-frequency adaptation
-  - Event-driven updates replacing continuous-time signal representations
-  - Bio-inspired robustness and adaptability in uncertain environments
-  - **Activation**: neuromorphic control, disturbance observer, spike-frequency adaptation, bio-plausible, event-driven, spiking neural network, integrate-and-fire, adaptive threshold
-
-### Early Psychosis Scaling Behaviour Within Critical Regime
-- [[psychosis-scaling-critical-regime]] - Renormalization group framework reveals systematic scaling exponent shifts indicating collective dynamics reorganization within preserved critical regime (arXiv: 2606.06290)
-  - Phenomenological renormalization group (PRG) coarse-graining across scales
-  - Power spectral density (PSD) and detrended fluctuation analysis (DFA) scaling
-  - Early psychosis shows preserved scale-invariant organization with shifted exponents
-  - Multi-observable framework for psychiatric disorder dynamics analysis
-  - **Activation**: psychosis, criticality, renormalization group, scaling, brain dynamics, collective organization, early psychosis, statistical mechanics, PSD, DFA
-
-## 2026-06-05 - Neuroscience Research (Cron Job)
-
-### Cross-scale Spatially-aware Generative Modeling of Neurodegenerative Brain Organization
-- [[cross-scale-spatial-generative-neurodegeneration]] - Variational generative framework linking gene expression to cortical degeneration with graph-based spatial regularization, achieving 86% explained variance and 94% spatial correlation (arXiv: 2606.05870)
-  - Allen Human Brain Atlas: 910 landmark genes across 68 cortical regions
-  - ADNI FreeSurfer cortical thinning differences (NC=926 vs AD=426)
-  - Graph-based spatial smoothness regularization preserves cortical organization
-  - Structured transcriptomic organization revealed in latent representations
-  - **Activation**: neurodegeneration, Alzheimer's disease, transcriptomic modeling, cortical thinning, spatial awareness, variational inference, gene expression, brain organization, generative neurobiology
-
-## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
-
-### Experimentally Probing the Quantum Physics in the Inverted Harmonic Oscillator
-- [[inverted-harmonic-oscillator-quantum-probing]] - Experimental realization of IHO dynamics using BEC on AtomChip with phase-space tomography, sub-vacuum squeezing (10.6 dB), and time-reversal coherence certification (arXiv: 2606.05125)
-  - Radio-frequency dressing creates IHO potential from transverse harmonic confinement
-  - Phase-space tomography follows full Wigner function evolution
-  - Sub-vacuum squeezing of 10.6(1.3) dB observed
-  - Time-reversal coherence confirmed via matter-wave interference
-  - Applications: force sensing, inflationary field dynamics analogs
-  - **Activation**: inverted harmonic oscillator, quantum squeezing, time-reversal coherence, Wigner tomography, Bose-Einstein condensate, AtomChip, quantum fluctuations, inflationary dynamics
-
-### Breakeven Demonstration of Quantum Low-Density Parity-Check Codes
-- [[quantum-ldpc-breakeven]] - First breakeven demonstration of qLDPC codes on trapped-ion platform achieving logical error rates better than superconducting qubits with OMG architecture (arXiv: 2606.06455)
-  - Trapped-ion flexibility enables testing qLDPC, topological, and concatenated codes without hardware reconfiguration
-  - Optical-Metastable-Ground (OMG) architecture eliminates ion transport and coolant ion requirements
-  - 4 logical qubits encoded in 18 physical qubits with breakeven performance
-  - Logical qubit lifetimes comparable to or exceeding physical qubit T1
-  - **Activation**: quantum ldpc, qldpc breakeven, trapped ion error correction, OMG architecture, quantum error correction, qec breakeven, high-rate quantum codes
-
-### Spacetime Lifting for Low-Overhead Quantum Fault Tolerance
-- [[spacetime-lifting-quantum-fault-tolerance]] - Homological framework constructing fault complexes from symmetry-reduced product structures achieving almost-linear fault distance scaling (arXiv: 2606.06365)
-  - Fault complexes treat FT protocols as single spacetime objects using homological algebra
-  - Spacetime lifting beyond standard foliation reduces overhead while preserving fault distance
-  - Interprets fault complexes as measurement-based cluster-state protocols
-  - Identifies conditions for fault-tolerant logical teleportation
-  - **Activation**: spacetime lifting, quantum fault tolerance, fault complexes, homological quantum error correction, measurement-based quantum computing, logical teleportation
-
-### Geometric Decomposition of Score Matching Errors in Diffusion Models
-- [[score-matching-gradient-decomposition]] - Helmholtz-Hodge decomposition proves only gradient component affects diffusion model quality, with tightened KL divergence bound (arXiv: 2606.06179)
-  - L² score error is not the right intrinsic measure of marginal distributional quality
-  - Solenoidal component of score error is structurally invisible to Fokker-Planck dynamics
-  - Impossibility result: no monotone function of L² error uniformly bounds divergence
-  - Tractable gradient component estimator via dual Sobolev identity
-  - **Activation**: score matching, diffusion models, Helmholtz-Hodge decomposition, gradient decomposition, Fokker-Planck dynamics, KL divergence bound, Sobolev identity
-
-## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
-
-### QUIVER: Quantum-Informed Views for Enhanced Representations in Large ML Models
-- [[quantum-fisher-view-ml]] - Enrich classical ML features with quantum Fisher information views from VQCs for enhanced representations without fault-tolerant hardware (arXiv: 2606.02785)
-  - Quantum Fisher information matrix encodes intrinsic geometry of learned quantum state manifold
-  - Genuinely complementary modality to classical features, demonstrated on QM9 and JetClass
-  - Domain-agnostic: applicable to any architecture with targeted modifications
-  - Works before fault-tolerant quantum hardware (simulated VQCs suffice)
-  - Also covers Hamming quantum kernel for scalable SVMs avoiding exponential concentration (arXiv: 2605.31449)
-  - **Activation**: quantum Fisher view, QUIVER, quantum feature augmentation, QFIM, Hamming quantum kernel, quantum SVM, 量子费舍尔信息, quantum ML, variational quantum circuit, statistics
-
-## 2026-06-05 - Neuroscience Research (Cron Job)
-
-### Functional Ensembles as Units of Computation in Deep Spiking Networks
-- [[functional-ensembles-deep-spiking-networks]] - First-order functionally-connected (1FC) groups reveal rare coordinated activity patterns carry most information in SNNs, bridging biological cortex principles (arXiv: 2606.00073)
-  - 1FC ensembles: statistically significant pairwise correlations with previous layer neurons
-  - Aggregate cofiring predicts downstream responses via ReLU-like relationship with ensemble-size scaling
-  - Reliable encoding concentrated in rare high-coordination events (infrequent bursts)
-  - Perturbations disrupt early/intermediate layers; functional connectivity shaped by learning
-  - Targeted diagnostic framework for SNN information flow analysis
-  - **Activation**: functional ensemble, 1FC, spiking neural network, SNN interpretability, functional connectivity, rare events, deep spiking networks, neural ensemble, coordinated activity
-
-### Mapping Whisper Representations to Human ECoG Responses
-- [[whisper-ecog-alignment-neural-encoding]] - Whisper-ECoG alignment methodology using time-resolved neural encoder with attention for layer-wise brain correspondence during speech perception (arXiv: 2606.02305)
-  - Intermediate Whisper layers provide strongest correspondence with neural activity
-  - Time-resolved encoder: speech embeddings + recurrent temporal model + soft attention
-  - Attention maps reveal temporally local alignment between embeddings and neural responses
-  - Phonemic interpretability identifies anatomically coherent phoneme-category organization
-  - **Activation**: Whisper, ECoG, speech, neural encoding, brain alignment, attention, phoneme, cortical, interpretable, speech foundation model
-
-### Computation-Aware Kalman Filtering for Neural Dynamics
-- [[computation-aware-kalman-neural-dynamics]] - Computation-Aware State-Space Model (CASSM) for Bayesian latent variable modeling in scale-imbalanced neural recording regime (arXiv: 2606.01468)
-  - Extends computation-aware Kalman filtering to model selection with novel training loss
-  - Designed for scale-imbalanced regime (few trials, many neurons)
-  - Competitive with deep networks with improved uncertainty calibration
-  - Avoids quadratic complexity through tractable inference in large state-spaces
-  - **Activation**: Kalman filtering, neural dynamics, Bayesian, state-space model, latent variable, model selection, uncertainty calibration, CASSM, computational uncertainty
-
 ## 2026-06-05 - Neuroscience Research (Cron Job)
 
 ### SC-TauPath: Structural Connectivity Attribution for Alzheimer Tau Propagation
@@ -144,18 +7,9 @@
   - 网络扩散模型增强 MLP + 梯度×输入归因量化每条结构连接边的贡献
   - 多尺度通路图谱：骨干边、高流量路线、枢纽 ROI，映射 Tau 传播路径
   - ADNI 234 名参与者验证，归因分数符合 Braak 分期解剖，揭示 SC 编码病理信息
+  - **Activation**: tau propagation, Alzheimer, structural connectivity, attribution, network diffusion, Braak staging, DTI, PET, pathway mapping, interpretability, gradient attribution
 
-## 2026-06-05 - Neuroscience Research (Cron Job)
-
-### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
-- [[itp-stdp-snn-training]] - 硬件级优化的STDP学习引擎，实现片上SNN高效训练 (arXiv: 2606.06159)
-  - FPGA平台能效提升4.5×-219.8×
-  - ASIC平台速度提升4.8×-22.01×，面积仅需1.2%-3.3%
-  - Mean-field synaptic drift model dynamical analysis
-  - Validated across different SNN network scales and datasets
-  - **Activation**: SNN训练, STDP, neuromorphic硬件, 能效优化, FPGA/ASIC, power-of-two
-
-## 2026-06-06 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
 ### Low-rank Distributional Matrix Completion
 - [[distributional-matrix-completion]] - Matrix completion with probability distribution entries using kernel mean embeddings + Tucker rank decomposition (arXiv: 2606.04176)
@@ -185,6 +39,38 @@
   - Uses quantum Fourier transform on finite geometries for structured optimization
   - Shell-based distance grouping enables coherent decoding beyond binary Hamming space
   - **Activation**: decoded quantum interferometry, rank-metric codes, translation association schemes, finite geometry, quantum fourier transform, structured optimization
+
+### Fermionic Non-Gaussianity via Bell Sampling
+- [[fermionic-bell-sampling-non-gaussianity]] - Bridge degree monotone for fermionic non-Gaussianity via Bell sampling, stronger Gaussian conversion no-go theorems (arXiv: 2606.05066)
+  - Bridge degree: largest eigenvalue sector of Λ = Σγ_j⊗γ_j on two copies, non-increasing under post-selected Gaussian protocols
+  - Stronger no-go theorems for Gaussian conversion than previously known monotones
+  - Efficiently witnessed through Bell sampling; lower-bounds non-Gaussian gate complexity
+  - Two algorithmic primitives: Gaussianity test with perfect completeness, state 2-design test
+  - **Activation**: fermionic non-gaussianity, bell sampling, bridge degree, gaussian conversion, fermionic quantum computing, resource theory
+
+### Entanglement Measure from Quantum Optimal Transport
+- [[quantum-optimal-transport-entanglement]] - Bipartite entanglement via minimal quantum Wasserstein distance to separable states, Lipschitz dual formulation (arXiv: 2606.04969)
+  - E(ρ) = min_{σ separable} W_1(ρ, σ) satisfies all entanglement axioms in single geometric framework
+  - Lipschitz dual gives explicit lower bounds for pure and mixed states, sharp constant for two-qubit
+  - Quantitative connection to entanglement witnesses: negative witness → certified lower bound on E
+  - Natural subadditivity and trace-distance estimates, points toward large-deviation conjectures
+  - **Activation**: quantum optimal transport, entanglement measure, Wasserstein distance, Lipschitz witness, separable states, experimental entanglement detection
+
+### No-Go Theorem for Gaussian Quantum Repeaters
+- [[no-go-gaussian-quantum-repeaters]] - Proves Gaussian repeaters cannot enhance quantum capacity of pure-loss channels via fractional extendibility framework (arXiv: 2606.05097)
+  - Fractional extendibility generalizes k-extendibility for Gaussian states
+  - Any Gaussian+LOCC repeater chain bounded by direct transmission capacity
+  - Closes open question about Gaussian vs non-Gaussian repeater protocols
+  - Framework applicable to broader Gaussian quantum network analysis
+  - **Activation**: gaussian quantum repeaters, no-go theorem, fractional extendibility, quantum capacity, bosonic channels, pure-loss channels
+
+### Hybrid Gaussian-Exponential Zero-Noise Extrapolation
+- [[gaussian-exponential-zero-noise-extrapolation]] - Hybrid Gaussian-exponential ZNE model for periodic quantum circuits, improved error mitigation (arXiv: 2605.29242)
+  - Hybrid model f(λ) = A·exp(-αλ²) + B·exp(-βλ) + C captures both Gaussian and exponential error components
+  - Superior to standard exponential ZNE for circuits with oscillatory error behavior
+  - Polynomial sample complexity, applicable to parameterized quantum circuits
+  - Requires 5-7 noise scale factors for stable fitting
+  - **Activation**: zero noise extrapolation, ZNE, gaussian exponential model, periodic circuits, error mitigation, NISQ
 
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
@@ -275,29 +161,6 @@
   |  - Each neuron as agent minimizing local energy in competitive game
   |  -
 
-  ## 2026-06-05 - Anthropic Research (Cron Job)
-
-  ### Natural Language Autoencoders
-  - [[natural-language-autoencoders]] - Methodology for converting neural activations into human-readable text explanations using reconstruction-based training with Activation Verbalizer and Activation Reconstructor
-    - Reveals evaluation awareness and hidden motivations models don't verbalize
-    - Three-model architecture: frozen target + verbalizer + reconstructor
-    - Round-trip training: activation → text → reconstructed activation
-    - Applications: safety testing, cheating detection, training data debugging
-    - **Activation**: NLA, natural language autoencoder, activation verbalizer, interpretability, model auditing, evaluation awareness, hidden motivations
-
-  ### Teaching Claude Why: Alignment Training Lessons
-  - [[teaching-claude-why-alignment]] - Alignment training methodology focusing on teaching principles and reasoning rather than behaviors, achieving 0% agentic misalignment on honeypot evaluations
-    - Difficult advice dataset: 28x more efficient than honeypot training (3M vs 85M tokens)
-    - Constitutional documents + fictional stories reduce blackmail from 65% to 19%
-    - Reasons matter more than actions: 22% → 3% misalignment with value deliberation
-    - Diverse training environments critical for OOD generalization
-    - **Activation**: alignment training, agentic misalignment, difficult advice, constitutional documents, OOD generalization, safety training, honeypot evaluations
-
-  ### Coding Agents in Social Science Research
-  - [[coding-agents-social-science-research]] - Survey methodology for studying AI coding agent adoption among 1,260 social scientists, measuring productivity disparities and field-level effects
-    - 81% tried AI, only 20% adopted coding agents into workflow
-    - Sharp disparities: 2x gender gap, 40% higher adoption at top universities
-    - Claude Code most common (86% of coding agent users)
-    - Productivity gains in early pipeline (working papers, grants), not journal submissions
-    - Expectations gap: 70% more optimistic about individual productivity than field impact
-    - **Activation**: coding agents, social science research, AI adoption survey, Claude Code productivity, research productivity disparities
+### Competition, Stability, and Functionality in E-I Neural Circuits
+- [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
+  - Each neuron as agent minimizing local energy in competitive game
