@@ -1,3 +1,12 @@
+## 2026-06-09 - Computer Science + Quantum ML (Cron Job - Hourly)
+
+### Do We Really Need Quantum Machine Learning?: A Multidimensional Empirical Study
+- [[qml-multidimensional-benchmarking]] - Systematic 4D benchmarking comparing quantum vs classical ML across accuracy, runtime, parameters, and memory (arXiv: 2605.27923)
+  - Four-dimensional evaluation: accuracy, runtime, parameter count, memory requirements
+  - Operating points: 10 qubits + 200-500 samples balances QSVM accuracy vs runtime
+  - QCNN achieves 94% fewer parameters and 75% less memory vs CCNN at comparable accuracy
+  - **Activation**: QML benchmarking, quantum vs classical ML, QML resource efficiency, parameter count comparison, QML operating points
+
 ## 2026-06-09 - Deep Learning Research (Cron Job)
 
 ### Data-Efficient Autoregressive-to-Diffusion Language Models via On-Policy Distillation
