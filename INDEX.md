@@ -1,5 +1,19 @@
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-meg]] - 脑磁图(MEG)信息容量的代谢量子极限：从量子传感极限+神经代谢推导技术无关的2.2 Mbit/s上限 (arXiv: 2511.06401)
+  - 量子极限信息率：结合磁传感能量分辨率与脑代谢功率，推导2.2 Mbit/s技术无关上限
+  - 时空权衡：噪声方差随带宽线性增长，时间与空间带宽相互竞争
+  - 多极抑制：高阶多极分量几何抑制，低于量子噪声极限，限制外部磁场空间复杂度
+  - **Activation**: metabolic quantum limit, MEG information capacity, quantum sensing neuroscience, brain imaging bounds, spatio-temporal trade-off, neural metabolism
+
+### Dynamic Synaptic Modulation of LMG Qubits populations in a Bio-Inspired Quantum Brain
+- [[dynamic-synaptic-lmg-quantum-brain]] - 生物启发量子大脑：LMG哈密顿量+突触效能反馈实现群体稳态控制与节律生成 (arXiv: 2602.16003)
+  - LMG量子哈密顿量：将神经元群体编码为全连接量子比特集合
+  - 突触稳态反馈：活动依赖的耦合强度调节防止动力学失控
+  - 可扩展量子计算原语：稳定不动点、可控振荡、尺寸依赖鲁棒性
+  - **Activation**: LMG Hamiltonian, quantum brain, bio-inspired quantum neural network, synaptic efficacy, homeostatic control, quantum many-body, rhythmogenesis
+
 ### Spacetime Formation under Requirements: Contextual Realization and Form-Dependent Probability
 - [[spacetime-requirements-quantum]] - 量子认知新框架：从有限状态需求出发构建时空结构，量子概率作为上下文时空形成的固定时空投影 (arXiv: 2605.23943)
   - Requirements-First Framework: 从有限表征容量等需求出发而非预设时空/概率/对象
