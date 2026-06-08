@@ -133,6 +133,43 @@
   - 三大应用：量子神经网络激活函数、非线性哈密顿量变换、量子信号处理
   - **Activation**: quantum element-wise transforms, quantum matrix operations, block encoding, polynomial quantum, QSVT element-wise, quantum neural network activation, quantum signal processing
 
+
+## 2026-06-09 - Computer Science (Cron Job)
+
+### Towards Implementable Quantum Divide and Conquer: A TSP Solver with Improved Exponential Base over Held-Karp
+- [[quantum-divide-conquer-optimization]] - 量子分治优化方法：结合经典动态规划与量子搜索提升NP难组合优化指数基 (arXiv: 2606.07322)
+  - 参数化混合算法谱系，可调量子-经典平衡
+  - 较Held-Karp改进的指数基O*((2-ε)^n)
+  - 近中期量子硬件可实现性分析
+  - **Activation**: quantum divide conquer, quantum combinatorial optimization, hybrid quantum DP, TSP quantum solver
+
+### Empirical Evaluation of Large Language Models for Migration of Code Fragments to Post-Quantum Cryptography
+- [[llm-pqc-migration-evaluation]] - LLM后量子密码迁移评估框架：系统化评估大模型辅助PQC代码迁移能力 (arXiv: 2606.07341)
+  - 三维度评估：代码正确性、安全保持、功能等价
+  - PQC迁移模式映射表（RSA→ML-KEM等）
+  - 错误分类与微调策略
+  - **Activation**: LLM PQC migration, post-quantum code migration, cryptographic refactoring, PQC evaluation
+
+### Quantum-Inspired Trace-Augmented Evidence Selection for Reasoning over Structured Hypothesis Spaces
+- [[quantum-inspired-evidence-reasoning]] - 量子启发证据推理：用量子概率原理加权CoT证据一致性提升推理准确率 (arXiv: 2606.06941)
+  - 量子概率振幅替代多数投票聚合
+  - 证据相干矩阵计算与干涉模式
+  - 结构化假设空间的希尔伯特空间建模
+  - **Activation**: quantum-inspired evidence, trace-augmented reasoning, evidence coherence, quantum probability reasoning
+
+### Blockchain Infrastructure for Intelligent Cyber-Physical-Social Systems: Post-Quantum Security, Interoperability, and Trustworthy Data Economies
+- [[quantum-safe-blockchain-infrastructure]] - 量子安全区块链架构：面向具身AI和后量子时代的CPSS数据经济基础设施 (arXiv: 2606.06895)
+  - 四层架构：PQC共识、跨链互操作、数据溯源、可信数据经济
+  - PQC迁移三阶段策略（评估→混合部署→纯PQC）
+  - 签名敏捷性与密码抽象层设计模式
+  - **Activation**: quantum-safe blockchain, post-quantum blockchain, PQC blockchain, data provenance, embodied AI blockchain
+
+### Coordinated Optimization of Departure Sequencing and Section-Track Allocation Based on QUBO and Hybrid Quantum Algorithms
+- [[qubo-hybrid-optimization-scheduling]] - QUBO混合优化调度：时间依赖约束的量子-经典协同求解框架 (arXiv: 2606.06543)
+  - 时间依赖约束的QUBO编码模式（独热、互斥、时间依赖）
+  - 量子退火+经典仿真验证迭代循环
+  - 权重调优策略（硬约束→软约束→动态调整）
+  - **Activation**: QUBO scheduling, hybrid quantum optimization, quantum annealing scheduling, time-dependent QUBO
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
