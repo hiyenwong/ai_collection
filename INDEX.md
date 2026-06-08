@@ -66,6 +66,20 @@
   - 组合式动力学：从简单组件基元理解复杂吸引子结构，组合式大量可预测吸引子库
   - **Activation**: fixed point, compositionality, low-rank gluing, threshold-linear network, TLN, inhibition-dominated, neural modularity, attractor dynamics, compositional dynamics, gCTLN
 
+### SC-TauPath: Structural Connectivity Attribution Framework for Alzheimer's Tau Propagation
+- [[sc-taupath-alzheimer-tau-propagation]] - 结构连接归因框架：NDM增强MLP+梯度×输入归因生成多尺度Tau传播路径图谱，验证Braak分期解剖学 (arXiv: 2606.04066)
+  - 网络扩散增强：NDM约束损失函数整合理论约束
+  - 可解释归因：每条SC边的贡献评分→多尺度路径图（骨干边、高流量路由、枢纽ROI）
+  - Braak一致性：归因路径图与经典Braak分期解剖学对应
+  - **Activation**: tau propagation, Alzheimer's disease, structural connectivity, network diffusion, attribution framework, Braak staging, gradient×input
+
+### Ontology-Constrained Multi-LLM Hypothesis Scoring for Predictive Coding Literature
+- [[ontology-constrained-llm-hypothesis-scoring]] - 本体约束多LLM理事会评分：36概念本体约束+10模型评分→可审计分歧测量+定量假设空间映射 (arXiv: 2606.05206)
+  - 专家本体：预测编码36概念分组为3假设（预测抑制、前馈误差传播、普适性）
+  - 多LLM理事会：10个本地模型独立评分，分歧来源可追溯
+  - 假设空间温度：几何离散度度量，Local oddball低温（紧凑）/Global oddball高温（分散）
+  - **Activation**: multi-LLM, ontology constraint, hypothesis scoring, predictive coding, literature synthesis, disagreement measurement, hypothesis-space temperature
+
 ## 2026-06-09 - Computer Science + Quantum (Cron Job)
 
 ### Quantum element-wise transforms
