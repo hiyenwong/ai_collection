@@ -1,188 +1,312 @@
 ---
 name: psychosis-scaling-critical-regime
-description: "Renormalization group framework for early psychosis brain dynamics analysis. Phenomenological renormalization group (PRG) + PSD + DFA characterize collective dynamics across scales. Systematic scaling exponent shifts indicate reorganization within preserved critical regime. Activation: psychosis, criticality, renormalization group, scaling, brain dynamics, collective organization, early psychosis, statistical mechanics."
-metadata:
-  arxiv_id: "2606.06290"
-  published: "2026-06-04"
-  authors: "Irem Topal, Paola Moreno Ancalmo, Guillermo Montana Valverde, Philipp Homan, Wolfram Hinzen"
-  tags: [psychosis, criticality, renormalization-group, scaling, brain-dynamics, fMRI, statistical-mechanics, collective-dynamics]
-license: Complete terms in LICENSE.txt
+description: 早期精神病临界区域内的标度行为偏差研究。使用现象学重整化群(PRG)、功率谱密度(PSD)和去趋势波动分析(DFA)研究静息态fMRI的集体动力学，发现保留标度区域内的系统性重组而非临界动力学丧失。
+version: 1.0.0
+category: neuroscience
+tags: [early-psychosis, criticality, scaling-behavior, renormalization-group, brain-dynamics, fMRI]
+activation_keywords: [早期精神病, 临界动力学, 标度行为, PRG, DFA, PSD, 重整化群]
+authors: [Irem Topal, Paola Moreno Ancalmo, Guillermo Montana Valverde, Philipp Homan, Wolfram Hinzen]
+arxiv_id: 2606.06290
+date_added: 2026-06-06
 ---
 
-# Early Psychosis Scaling Behaviour Within Critical Regime
+# Early Psychosis Shows Deviations in Scaling Behaviour Within a Critical Regime
 
-## Context
+**arXiv: 2606.06290** | **Authors: Irem Topal et al.** | **Submitted: 4 Jun 2026**
 
-Large-scale brain activity exhibits scale-invariant dynamics consistent with near-critical operation. This paper investigates scaling properties in early psychosis using phenomenological renormalization group (PRG) framework combined with power spectral density (PSD) and detrended fluctuation analysis (DFA).
+## 核心摘要
 
-## Core Methodology
+大规模脑活动表现出与近临界区域操作一致的标度不变动力学，这种动力学与长程相关、高效信息处理和集体组织的涌现相关。本研究结合现象学重整化群(PRG)框架与功率谱密度(PSD)和去趋势波动分析(DFA)，研究早期精神病患者的静息态fMRI标度性质。发现早期精神病并非简单的临界动力学丧失，而是保留标度区域内的集体动力学重组。
 
-### 1. Phenomenological Renormalization Group (PRG) Framework
+## 研究背景
 
-**Principle**: Coarse-grain brain activity across scales to extract scaling exponents.
+### 临界脑动力学
 
-**Implementation**:
-```python
-def phenomenological_renormalization(fmri_signal, scales):
-    """
-    Apply PRG coarse-graining to extract scaling exponents.
-    
-    Args:
-        fmri_signal: Resting-state fMRI time series
-        scales: List of coarse-graining scales (e.g., [2, 4, 8, 16])
-    
-    Returns:
-        Scaling exponents for collective dynamics
-    """
-    coarse_signals = []
-    for scale in scales:
-        # Block averaging coarse-graining
-        coarse = block_average(fmri_signal, scale)
-        coarse_signals.append(coarse)
-    
-    # Extract scaling exponents via linear fit
-    exponents = fit_scaling_exponents(coarse_signals, scales)
-    return exponents
+- **标度不变性**: 大规模脑活动表现出幂律标度行为
+- **长程相关**: 临界动力学支持长时空相关性
+- **高效信息处理**: 临界状态优化信息传输和处理
+- **集体组织涌现**: 临界点附近涌现集体行为模式
+
+### 早期精神病研究
+
+- 既往研究在精神障碍中报告临界性相关测量改变
+- 不同观察量和模态的发现碎片化
+- 不清楚不同标度测量是否捕获相同的大规模动力学改变
+
+## 研究方法
+
+### 三种标度分析方法
+
+#### 1. 现象学重整化群 (PRG)
+
+**核心思想：**
+- 通过粗粒化分析跨尺度的集体动力学
+- 识别标度不变行为的尺度范围
+- 计算重整化群流和临界指数
+
+**应用：**
+- 验证临界类组织的存在
+- 区分不同动力学区域
+- 分析集体行为模式
+
+#### 2. 功率谱密度 (PSD)
+
+**核心思想：**
+- 分析时间序列的频率成分
+- 识别幂律标度的频谱特征
+- 计算频谱指数 β
+
+**公式：**
+```
+P(f) ~ f^(-β)
 ```
 
-### 2. Multi-Observable Analysis
+**应用：**
+- 验证标度不变性的频谱特征
+- 量化动力学时间尺度
+- 与PRG结果交叉验证
 
-**Three complementary approaches**:
+#### 3. 趋势波动分析 (DFA)
 
-1. **Power Spectral Density (PSD)**: Frequency-domain scaling
-   - $S(f) \sim f^{-\beta}$ where $\beta$ characterizes temporal correlations
-   
-2. **Detrended Fluctuation Analysis (DFA)**: Time-domain scaling
-   - $F(n) \sim n^{\alpha}$ where $\alpha$ measures self-similarity
-   
-3. **PRG coarse-graining**: Scale-space organization
-   - $A(\ell) \sim \ell^{-\gamma}$ where $\gamma$ captures collective dynamics
+**核心思想：**
+- 分析时间序列的长程相关性
+- 计算标度指数 α
+- 识别不同相关性类型
 
-### 3. Scaling Exponent Comparison
-
-**Key finding**: Early psychosis shows **systematic shifts** in scaling exponents, not loss of critical dynamics.
-
-| Observable | Healthy Controls | Early Psychosis | Interpretation |
-|------------|-----------------|-----------------|----------------|
-| PSD $\beta$ | Critical-like | Shifted | Temporal correlation change |
-| DFA $\alpha$ | Near-critical | Deviated | Self-similarity alteration |
-| PRG $\gamma$ | Scale-invariant | Modified | Collective reorganization |
-
-## Implementation Steps
-
-### Step 1: Preprocess fMRI Data
-
-- Resting-state fMRI preprocessing (motion correction, spatial normalization)
-- Extract regional time series (e.g., ROI-based, whole-brain)
-- Detrending and normalization
-
-### Step 2: Apply PRG Coarse-Graining
-
-```python
-def block_average(signal, scale):
-    """Coarse-grain signal by block averaging."""
-    n_blocks = len(signal) // scale
-    coarse = np.zeros(n_blocks)
-    for i in range(n_blocks):
-        coarse[i] = np.mean(signal[i*scale:(i+1)*scale])
-    return coarse
+**公式：**
+```
+F(n) ~ n^α
 ```
 
-### Step 3: Compute PSD Scaling
+**标度指数含义：**
+- α = 0.5: 白噪声（无相关）
+- α > 0.5: 长程正相关
+- α < 0.5: 长程反相关
+- α = 1: 1/f 噪声（临界）
 
-```python
-def power_spectral_scaling(signal, freq_range):
-    """Extract PSD scaling exponent."""
-    freqs, psd = welch(signal, fs=1.0)
-    valid_freqs = freqs[freq_range[0] < freqs < freq_range[1]]
-    valid_psd = psd[freq_range[0] < freqs < freq_range[1]]
-    log_freq = np.log(valid_freqs)
-    log_psd = np.log(valid_psd)
-    beta = -np.polyfit(log_freq, log_psd, 1)[0]
-    return beta
+**应用：**
+- 量化长程相关性强度
+- 区分不同动力学类型
+- 与PSD结果交叉验证
+
+### 数据来源
+
+- **参与者**: 早期精神病患者与健康对照组
+- **数据**: 静息态fMRI
+- **分析**: 多模态标度分析结合
+
+## 主要发现
+
+### 健康对照组
+
+**标度行为特征：**
+- 表现出与临界类组织一致的非平凡标度行为
+- PRG分析显示粗粒化下的标度不变性
+- PSD和DFA显示长程相关性
+
+**动力学性质：**
+- 标度指数在临界范围内
+- 跨尺度的集体动力学一致性
+- 高效信息处理的动力学基础
+
+### 早期精神病参与者
+
+**关键发现：**
+- **相同的整体现象学**: 保持标度不变组织的整体模式
+- **系统性标度指数偏移**: 多个观察量上的标度指数改变
+- **保留的标度区域**: 未丧失临界类动力学，而是在保留区域内重组
+
+**具体偏移：**
+- PRG临界指数偏移
+- PSD频谱指数改变
+- DFA标度指数调整
+
+**动力学重组：**
+- 非简单的临界动力学丧失
+- 保留标度区域内的系统调整
+- 集体动力学模式的重组
+
+## 理论贡献
+
+### 1. 临界动力学保留假说
+
+早期精神病特征：
+- **不是**: 临界动力学的简单丧失
+- **而是**: 保留标度区域内的动力学重组
+
+**意义：**
+- 重新理解精神障碍的动力学基础
+- 关注动力学重组而非动力学丧失
+- 为干预提供新的动力学视角
+
+### 2. 多模态标度分析框架
+
+**方法整合：**
+- PRG: 空间粗粒化和集体动力学
+- PSD: 频谱分析和时间标度
+- DFA: 波动分析和长程相关性
+
+**优势：**
+- 交叉验证标度行为
+- 全面刻画动力学特征
+- 提供一致的动力学画像
+
+### 3. 精神障碍的动力学研究范式
+
+**框架特点：**
+- 结合粗粒化方法与时间标度分析
+- 原则性框架研究精神障碍
+- 关注大规模动力学而非局部异常
+
+## 方法论框架
+
+### 研究设计
+
+```
+步骤1: 数据收集
+├── 静息态fMRI数据
+├── 早期精神病组
+└── 健康对照组
+
+步骤2: 标度分析
+├── 现象学重整化群(PRG)
+│   ├── 粗粒化过程
+│   ├── 标度不变性验证
+│   └── 临界指数计算
+├── 功率谱密度(PSD)
+│   ├── 频谱分析
+│   ├── 幂律拟合
+│   └── β指数计算
+└── 去趋势波动分析(DFA)
+    ├── 波动函数计算
+    ├── 标度分析
+    └── α指数计算
+
+步骤3: 比较分析
+├── 组间标度指数比较
+├── 标度区域识别
+└── 动力学重组模式分析
+
+步骤4: 理论解释
+├── 临界动力学保留假说
+├── 动力学重组机制
+└── 临床意义解释
 ```
 
-### Step 4: Compute DFA Scaling
+### 分析技术细节
 
-```python
-def detrended_fluctuation_analysis(signal, window_sizes):
-    """Compute DFA scaling exponent."""
-    fluctuations = []
-    for n in window_sizes:
-        # Divide signal into windows of size n
-        windows = [signal[i:i+n] for i in range(0, len(signal), n)]
-        # Detrend each window
-        detrended = [detrend(w) for w in windows]
-        # Compute fluctuation
-        f = np.sqrt(np.mean([np.var(d) for d in detrended]))
-        fluctuations.append(f)
-    # Fit scaling exponent
-    log_n = np.log(window_sizes)
-    log_f = np.log(fluctuations)
-    alpha = np.polyfit(log_n, log_f, 1)[0]
-    return alpha
-```
+#### PRG粗粒化
 
-### Step 5: Compare Scaling Exponents
+**步骤：**
+1. 定义粗粒化尺度序列
+2. 在每个尺度计算粗粒化变量
+3. 分析跨尺度的动力学行为
+4. 识别标度不变区域
 
-- Compute scaling exponents for healthy controls and psychosis groups
-- Statistical comparison (t-tests, effect sizes)
-- Interpret shifts within critical framework
+#### PSD分析
 
-## Key Results
+**步骤：**
+1. 计算时间序列功率谱
+2. 对频谱进行幂律拟合
+3. 计算频谱指数 β
+4. 验证标度范围
 
-**Main finding**: Early psychosis is characterized by **reorganization of collective dynamics within a preserved scaling regime**, not simple loss of criticality.
+#### DFA分析
 
-**Evidence**:
-1. Both groups show scale-invariant organization
-2. Systematic shifts in all three observables (PSD, DFA, PRG)
-3. Consistent phenomenology but altered scaling exponents
+**步骤：**
+1. 对时间序列积分
+2. 分割不同窗口大小
+3. 去趋势并计算波动
+4. 标度分析计算 α
 
-**Implications**:
-- Critical-like dynamics are preserved in early psychosis
-- Scaling regime is reorganized rather than destroyed
-- PRG + temporal scaling provides principled framework
+## 临床意义
 
-## Pitfalls
+### 早期检测
 
-- **Fragmented measures**: Previous findings across isolated observables are inconsistent. Use multi-observable PRG framework.
-- **False criticality loss**: Simple deviation ≠ loss of critical dynamics. Check for preserved scaling regime.
-- **Scale selection**: PRG scales must cover relevant dynamical range. Test multiple scales.
-- **Group heterogeneity**: Early psychosis may have subgroups. Consider stratification.
-- **Cross-modal comparison**: Different observables may capture different aspects. Combine PRG + PSD + DFA.
+- **标度指数偏移**: 早期精神病的动力学标记
+- **保留标度区域**: 疾病早期的动力学特征
+- **多模态验证**: 提高检测可靠性
 
-## Verification
+### 病理理解
 
-**Validation steps**:
-1. Confirm scale-invariant organization in both groups
-2. Extract scaling exponents from all three observables
-3. Statistical comparison with appropriate tests
-4. Interpret shifts as reorganization, not loss
+- **动力学重组**: 而非动力学崩溃
+- **系统性调整**: 多尺度的协调改变
+- **临界状态调整**: 在临界区域内的位置改变
 
-**Metrics**:
-- Scaling exponent consistency across observables
-- Statistical significance of shifts
-- Effect sizes (Cohen's d)
+### 干预策略
 
-## Activation Keywords
+- **动力学调节**: 恢复标度指数
+- **多尺度干预**: 针对集体动力学
+- **临界状态恢复**: 调整临界参数
 
-- psychosis scaling
-- critical regime
-- renormalization group
-- phenomenological renormalization
-- brain dynamics
-- collective organization
-- early psychosis
-- statistical mechanics
-- PSD scaling
-- DFA
-- scale-invariant
-- 精神病临界性
-- 重整化群
+## 应用场景
 
-## References
+### 精神障碍诊断
 
-- arXiv:2606.06290 - Original paper
-- Critical brain dynamics literature
-- Renormalization group in neuroscience
-- Statistical mechanics of brain activity
+1. **标度指数测量**: 作为动力学标记
+2. **多模态验证**: 提高诊断准确性
+3. **早期检测**: 利用动力学偏移
+
+### 疾病进展监测
+
+1. **标度指数追踪**: 监测动力学变化
+2. **临界状态评估**: 调整程度量化
+3. **干预效果评估**: 动力学恢复测量
+
+### 神经动力学研究
+
+1. **临界动力学验证**: 使用PRG框架
+2. **标度行为分析**: PSD和DFA结合
+3. **集体动力学研究**: 多模态方法
+
+## 关键洞察
+
+1. **临界动力学保留**: 早期精神病保持标度不变组织
+2. **系统性偏移**: 多个观察量的标度指数改变
+3. **动力学重组**: 而非动力学丧失是关键特征
+4. **多模态一致性**: 不同方法捕获相同动力学改变
+
+## 与其他理论的关系
+
+| 理论 | 关系 |
+|------|------|
+| 临界脑假说 | 验证精神病中的临界动力学保留 |
+| 重整化群方法 | 提供粗粒化分析框架 |
+| 标度不变性 | 多模态验证标度行为 |
+| 长程相关性 | DFA量化相关性改变 |
+
+## 方法论创新
+
+1. **PRG与时间标度结合**: 首次系统性整合空间粗粒化和时间标度分析
+2. **多模态交叉验证**: PSD、DFA和PRG的一致性验证
+3. **动力学重组视角**: 重新理解精神障碍的动力学基础
+4. **原则性框架**: 为精神障碍动力学研究提供范式
+
+## 局限性
+
+- 静息态数据的动力学复杂性
+- 标度指数的具体神经机制待阐明
+- 早期精神病的异质性
+- 纯动力学分析可能忽略结构因素
+
+## 未来研究方向
+
+1. 发展其他精神障碍的标度分析
+2. 研究标度指数偏移的神经机制
+3. 设计动力学调节的干预策略
+4. 结合结构与动力学因素
+5. 发展预测模型利用标度指数
+
+## 参考文献
+
+- Topal, I. et al. (2026). Early psychosis shows deviations in scaling behaviour. arXiv:2606.06290
+- Beggs, J. M., & Plenz, D. (2003). Neuronal avalanches
+- Linkenkaer-Hansen, K. et al. (2001). Long-range temporal correlations
+- Fraiman, D. et al. (2009). Universal scaling in brain activity
+
+## 相关技能
+
+- [[griffiths-phase-brain-criticality]] - Griffiths相脑临界性框架
+- [[neural-critical-dynamics-theory]] - 临界动力学理论
+- [[renormalization-scaling-brain-activity]] - 重整化群标度分析
+- [[brain-criticality-hypothesis-assessment]] - 脑临界性假说评估

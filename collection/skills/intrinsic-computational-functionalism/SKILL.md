@@ -1,250 +1,196 @@
 ---
 name: intrinsic-computational-functionalism
-description: Intrinsic Computational Functionalism methodology for computational neuroscience - observer-independent computational structures for consciousness
+description: 内在计算功能主义方法论 — 从观察者相对映射到观察者独立结构。解决计算理论意识中的观察者相对性问题，提供可操作化的标准框架。
 version: 1.0.0
-author: Shuqin Ma, Ryota Kanai
-arxiv_id: "2606.06424"
-paper_url: https://arxiv.org/abs/2606.06424
-pdf_url: https://arxiv.org/pdf/2606.06424
-doi: https://doi.org/10.48550/arXiv.2606.06424
-categories: q-bio.NC
-keywords:
+category: neuroscience
+activation_keywords:
+  - 计算功能主义
+  - 意识理论
+  - 观察者相对性
+  - 内在结构
+  - 因果动力学组织
   - computational functionalism
   - consciousness
-  - observer-relativity
-  - intrinsic computation
-  - state-space dynamics
-  - causal intervention
-  - computational neuroscience
-created: 2026-06-06
-status: active
+  - observer-relative
+  - intrinsic structure
+  - causal-dynamical organization
+related_skills:
+  - consciousness-usk-framework
+  - iit-critical-review
+  - ctm-ai-consciousness-blueprint
+paper_reference: arXiv:2606.06424v1
+authors: Shuqin Ma, Ryota Kanai
+submitted_date: 2026-06-04
 ---
 
 # Intrinsic Computational Functionalism
 
-## Overview
+## 核心问题
+计算理论意识面临的核心挑战：**观察者相对性问题**（Observer-Relativity Problem）。外部施加的计算解释无法为意识提供基础，但并不意味着所有计算组织都是观察者相对的。
 
-Methodology from arXiv:2606.06424 (submitted 4 Jun 2026) that develops intrinsic computational functionalism - addressing whether computational organizations can ground consciousness without observer-relative interpretations. Critical framework for computational neuroscience research on consciousness.
+## 方法论核心
 
-## Paper Summary
+### 三层分解框架（Three-Tier Decomposition）
 
-**Title**: Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
+论文提出三层识别工作分解：
 
-**Authors**: Shuqin Ma (Fudan University, Sussex Centre for Consciousness Science), Ryota Kanai (Araya Inc.)
+- **Tier i: 解释器相对标签选择**（Interpreter-relative label selection）
+  - 外部观察者施加的计算标签
+  - 容易受到"语法即非语义"论证攻击
+  - 无法避免观察者相对性问题
 
-**Core Problem**: Anti-computational arguments show externally imposed computational interpretations cannot ground consciousness, but don't establish that all computational organizations are observer-relative.
+- **Tier ii: 理论约束的分区选择**（Theoretically constrained partition selection）
+  - 受理论约束的状态空间分区
+  - 部分避免观察者相对性
+  - 仍需进一步验证
 
-**Solution**: Develop intrinsic computational functionalism - consciousness depends on physically realized computational structures the system has **in virtue of itself**, not labels imposed by external interpreter.
+- **Tier iii: 动力学内部粒度选择**（Dynamics-internal grain selection）
+  - **关键层级**：动力学内部的粒度选择
+  - 完全避免观察者相对性问题
+  - 基于实证研究的约束
 
-## Two Criteria for Observer-Independent Computation
+### 两个操作化标准
 
-### C1: System-Intrinsic Instantiation
-- **Requirement**: Relevant property must be specifiable **without observer's labelling**
-- **Invariance**: Property must remain invariant under **structure-preserving relabellings** of system's variables
-- **Key insight**: Observer-relative labels at tier (i) are eliminable
+**C1: 系统内在实例化**（System-intrinsic instantiation）
+- 相关属性必须可在无观察者标签的情况下指定
+- 在系统的变量结构保持重标签下不变
 
-### C2: Causal-Dynamical Organisation Under Intervention
-- **Grounding**: Property must be grounded in **state-space structure**
-- **Mutual constraint**: Variables must mutually constrain one another
-- **Exhibition**: Organization exhibited in **counterfactual response under intervention**
-- **Dynamics-internal grain selection**: tier (iii) is where consciousness-relevant properties emerge
+**C2: 因果动力学组织干预**（Causal-dynamical organization under intervention）
+- 属性必须基于状态空间结构，其变量相互约束
+- 组织在干预下的反事实响应中展现
 
-## Three-Tier Decomposition of Identification Work
+## 理论贡献
 
-### Tier (i): Interpreter-Relative Label Selection
-- **What**: External observer imposes computational interpretation
-- **Problem**: Syntax-is-not-semantics arguments, mapmaker arguments succeed here
-- **Status**: ❌ Cannot ground consciousness (observer-relative)
+### 1. 解决传统反驳论证
 
-### Tier (ii): Theoretically Constrained Partition Selection
-- **What**: Theory-guided choice of which system aspects to consider computational
-- **Constraint**: Must be empirically disciplined
-- **Status**: ✓ Provides framework but doesn't directly specify consciousness
+论文论证以下传统反驳成功针对 Tier i，但内在计算功能主义通过 Tier iii 避免：
 
-### Tier (iii): Dynamics-Internal Grain Selection
-- **What**: Identify computational properties from **internal dynamics**
-- **Emergence**: Computational properties emerge from state-space structure
-- **Counterfactuals**: Tested through intervention responses
-- **Status**: ✓ This is where intrinsic computational functionalism operates
+- **语法即非语义论证**（Syntax-is-not-semantics arguments）
+  - 成功反驳 Tier i 的解释器相对标签选择
+  - 但不适用于 Tier iii 的动力学内部选择
 
-## Key Theoretical Arguments
+- **制图者论证**（Mapmaker arguments）
+  - 成功反驳外部解释施加的计算结构
+  - 内在结构通过 C1 和 C2 标准避免此反驳
 
-### Against Anti-Computational Arguments
-1. **Syntax-is-not-semantics**: Succeeds against tier (i) labels only
-2. **Mapmaker arguments**: Succeeds when properties at tier (i)
-3. **Biological-naturalist objections**: Observer-relativity component succeeds at tier (i) only
-4. **Resolution**: Once tiers distinguished, intrinsic computational functionalism survives
+- **生物自然主义者观察者相对性反驳**（Biological-naturalist observer-relativity objections）
+  - 通过三层分解框架区分后失效
 
-### Observer-Relativity vs Intrinsic
-- **Observer-relative**: Properties requiring external interpretation (tier i)
-- **Intrinsic**: Properties specifiable from system's own dynamics (tier iii)
-- **Key distinction**: Not all computational properties are observer-relative
+### 2. 计算属性识别方法论
 
-## Methodological Applications
+任何候选计算账户必须满足：
+1. 如果能避免观察者相对性反驳，必须通过 **Tier iii 动力学内部粒度选择**识别
+2. 选择条件是实证约束的 **Tier ii 选择**
 
-### For Computational Neuroscience
+## 应用场景
 
-#### 1. State-Space Analysis
-- Identify **mutually constraining variables**
-- Map **causal-dynamical organization**
-- Test **counterfactual interventions**
+### 1. 神经科学实证研究
+- 识别意识的计算基础
+- 区分观察者施加的解释与系统内在结构
+- 设计干预实验验证 C2 标准
 
-#### 2. Intervention Testing
-- Design perturbations to test **state-space structure**
-- Measure **counterfactual response patterns**
-- Verify **mutual constraint relations**
+### 2. 意识理论评估
+- 评估计算功能主义的有效性
+- 验证候选意识理论的观察者独立性
+- 理论比较的哲学基础
 
-#### 3. Grain Selection
-- Choose appropriate **dynamics-internal granularity**
-- Avoid **interpreter-imposed partitions**
-- Ground in **empirical constraints** from tier (ii)
+### 3. AI 系统设计
+- 设计意识相关的计算结构
+- 确保系统内在的计算组织
+- 避免"仅语法"陷阱
 
-### For Neural Network Analysis
+## 实证应用示例
 
-#### Observer-Independent Properties
-- **Firing rate distributions** (system-intrinsic)
-- **Network topology** (observable without labeling)
-- **Dynamical attractors** (emergent from dynamics)
+### 状态空间结构识别
 
-#### Observer-Relative Properties (Avoid)
-- **"Information processing" labels** (require interpretation)
-- **"Representations" without causal grounding** (tier i)
-- **Computation imposed post-hoc** (not intrinsic)
-
-## Philosophical Implications
-
-### Computational Functionalism Refinement
-- **Original claim**: Consciousness is computationally constituted
-- **Refinement**: Consciousness depends on **intrinsic computational structures**
-- **Observer-independent**: Specifiable without external interpretation
-- **Causal grounding**: Exhibited in intervention responses
-
-### Relationship to Biological Naturalism
-- **Type-A-BN**: Biology intrinsically matters (untestable)
-- **Type-B-BN**: Biology affords unique processing (testable)
-- **This paper**: Shows computational properties can be intrinsic
-- **Implication**: Type-B-BN compatible with computational functionalism
-
-## Implementation Guidelines
-
-### Testing Intrinsic Computation
-
-#### Step 1: Identify State-Space
 ```python
-# Map system variables that mutually constrain
-state_variables = identify_constraining_variables(system)
-# Example: neuronal populations with feedback
+# C1 标准：系统内在实例化
+def identify_intrinsic_structure(system_state):
+    """
+    识别系统的内在计算结构，无需外部标签
+    
+    要求：
+    - 不依赖观察者施加的标签
+    - 在变量重标签下结构不变
+    """
+    # 状态空间变量相互约束
+    # 干预下反事实响应展现组织
+    return intrinsic_computation_partition
+
+# C2 标准：因果动力学组织验证
+def verify_causal_organization(system, interventions):
+    """
+    通过干预验证因果动力学组织
+    
+    方法：
+    - 应用因果干预
+    - 测量反事实响应
+    - 确认变量相互约束
+    """
+    for intervention in interventions:
+        response = apply_intervention(system, intervention)
+        verify_constraint_relationships(response)
 ```
 
-#### Step 2: Check Invariance (C1)
-```python
-# Test relabelling invariance
-for relabelling in structure_preserving_relabellings:
-    if property_specifiable(relabelling) != original_property:
-        return "Observer-relative"  # Fails C1
+### 三层识别过程
+
+```text
+Tier i (避免)：
+  ❌ 解释器施加标签 → 观察者相对 → 无意识基础
+
+Tier ii (部分)：
+  ✓ 理论约束分区 → 受理论指导 → 需进一步验证
+
+Tier iii (关键)：
+  ✓✓ 动力学内部粒度 → 完全内在 → 避免观察者相对性
 ```
 
-#### Step 3: Intervention Testing (C2)
-```python
-# Test counterfactual responses
-intervention_set = design_perturbations(state_space)
-responses = measure_counterfactual_response(system, intervention_set)
-if mutual_constraints_preserved(responses):
-    return "Intrinsic computational structure"
-```
+## 与其他意识理论的比较
 
-### Avoiding Observer-Relativity Traps
+| 理论 | 观察者相对性 | Tier 识别 | C1/C2 标准 |
+|------|-------------|----------|-----------|
+| 外部计算解释 | 高 (Tier i) | i | ❌ 不满足 |
+| 理论约束分区 | 中 (Tier ii) | ii | 部分 |
+| 内在计算功能主义 | 低 (Tier iii) | iii | ✓✓ 完全 |
+| IIT (整合信息理论) | 低 | iii 类似 | ✓ 高 Φ值内在 |
+| 生物自然主义 | 无 (生物学基础) | 生物学 | 非计算 |
 
-#### Don't:
-- Label neurons as "information processing units" without causal grounding
-- Impose computational interpretation post-hoc
-- Assume representations without intervention evidence
+## 研究前沿
 
-#### Do:
-- Identify dynamics-emergent properties
-- Test mutual constraint relations
-- Measure counterfactual responses
-- Choose granularity from dynamics (tier iii)
+### 1. 跨学科整合
+- 计算神经科学：实证验证 C2 干预响应
+- 认知科学：意识理论构建
+- AI 安全：避免伪意识系统
 
-## Research Directions
+### 2. 数学形式化
+- 状态空间结构理论
+- 因果干预图模型
+- 观察者独立性证明
 
-### Open Questions
-1. Which intrinsic computational structures bear on experience?
-2. How to empirically discipline tier (ii) choices?
-3. What granularity level (tier iii) captures consciousness?
+### 3. 实验设计
+- 干预实验设计方法
+- 反事实响应测量
+- 系统内在结构识别算法
 
-### Experimental Tests
-- **Neural perturbation studies**: Test counterfactual responses
-- **State-space mapping**: Identify mutually constraining variables
-- **Intervention designs**: Verify intrinsic organization
+## 未来研究方向
 
-### Computational Models
-- **Dynamical systems analysis**: Map intrinsic structures
-- **Causal intervention simulations**: Test C2 criterion
-- **State-space reconstruction**: Avoid observer-imposed labels
+1. **实证验证**：设计神经科学实验验证 C1 和 C2 标准
+2. **理论扩展**：内在结构的具体计算形式
+3. **应用开发**：基于内在标准设计 AI 系统
+4. **跨理论比较**：与 IIT、生物自然主义等理论的统一框架
 
-## Connections to Other Frameworks
+## 总结
 
-### Predictive Coding
-- **Intrinsic**: Error signals emerge from dynamics
-- **Observer-relative**: "Prediction" labels imposed externally
-- **Test**: Intervention responses show intrinsic error dynamics
+内在计算功能主义提供：
+- ✅ 观察者相对性问题的系统解决方案
+- ✅ 可操作化的实证标准（C1 和 C2）
+- ✅ 三层分解框架指导方法论
+- ✅ 传统反驳的针对性应对
+- ✅ 计算意识研究的哲学基础
 
-### Attractor Networks
-- **Intrinsic**: Attractor structure from mutual constraints
-- **Test**: Perturbations reveal counterfactual organization
-- **Grain**: Dynamics-internal selection appropriate
+**关键贡献**：如果意识由计算构成，则依赖于系统内在的物理实现的计算结构，而非外部解释者施加的标签。
 
-### Neural Manifolds
-- **Intrinsic**: Manifold geometry from state-space
-- **Test**: Intervention reveals manifold structure
-- **Avoid**: Labeling manifolds as "representations" without grounding
+---
 
-## Pitfalls
-
-### ❌ Common Mistakes
-1. **Confusing tiers**: Applying C1/C2 to tier (i) properties
-2. **Post-hoc labels**: Imposing computation after observation
-3. **Missing invariance**: Not testing relabelling structure
-4. **Skipping intervention**: Not testing counterfactuals
-
-### ✓ Correct Approach
-1. Start from dynamics (tier iii)
-2. Test mutual constraints
-3. Verify intervention responses
-4. Check relabelling invariance
-5. Empirically discipline tier (ii)
-
-## Related Work
-
-### Philosophy of Mind
-- Putnam (1967): Computational functionalism origin
-- Searle (1992): Syntax-is-not-semantics argument
-- Chalmers (1996): Consciousness and computation
-
-### Computational Neuroscience
-- Dynamical systems approaches (Izhikevich)
-- State-space reconstruction methods
-- Intervention-based causal inference
-
-### Neural Network Theory
-- Attractor analysis
-- Manifold learning
-- Causal intervention methods
-
-## Summary
-
-Intrinsic Computational Functionalism provides framework for computational neuroscience to study consciousness-related properties without observer-relativity objections. Key insight: computational properties can be intrinsic when:
-
-1. **Specifiable without observer labels** (C1)
-2. **Grounded in causal-dynamical organization** (C2)
-3. **Emergent from dynamics-internal grain selection** (tier iii)
-
-This bridges computational functionalism and empirical neuroscience through intervention-tested intrinsic structures.
-
-## References
-
-- arXiv:2606.06424 — Primary source
-- Ma & Kanai (2026). Intrinsic Computational Functionalism. q-bio.NC.
-- Searle (1992). The Rediscovery of the Mind
-- Putnam (1967). Psychological Predicates
+**参考文献**：
+- Ma, S., & Kanai, R. (2026). Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures. arXiv:2606.06424v1
