@@ -9,7 +9,7 @@
   - **Activation**: EEG foundation model, subject-disjoint, shortcut learning, identity trap, aperiodic 1/f, frozen representation, diagnostic audit, LaBraM, CBraMod, REVE, FMScope
 
 ### Fixed Point Compositionality via Low-Rank Gluing Rules
-- [[fixed-point-compositionality-low-rank-gluings]] - 阈值线性网络的组合性动力学理论：低秩粘合规则证明模块化结构导致全局不动点受限于局部模块组合，实现可预测吸引子工程 (arXiv: 2606.07336)
+- [[fixed-point-compositionality-low-rank-gluing]] - 阈值线性网络的组合性动力学理论：低秩粘合规则证明模块化结构导致全局不动点受限于局部模块组合，实现可预测吸引子工程 (arXiv: 2606.07336)
   - Low-Rank Gluing: 模块间特定低秩耦合，全局不动点限于局部组合
   - Rank-1 Characterization: 完整分类确定哪些局部不动点组合形成全局解
   - gCTLN Extension: 组合阈值线性网络规则推广至广义版本
