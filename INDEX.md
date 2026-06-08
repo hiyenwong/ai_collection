@@ -1,3 +1,29 @@
+## 2026-06-08 - Neuroscience + Quantum Computing Research (Cron Job)
+
+### Measurement Circuit Ansatz: Naimark vs QNN Measurements
+- [[naimark-qnn-measurement-circuits]] - 量子测量电路设计：Naimark扩展、混合Naimark-QNN、全QNN三种方法对比，QNN以更少训练迭代实现近最优量子测量 (arXiv: 2606.07376)
+  - Naimark Quantum Measurement: CNOT+单量子比特门的Naimark扩展电路，经典优化器确定参数
+  - Hybrid Naimark-QNN: 在Naimark框架中融入参数化量子电路，平衡理论与灵活性
+  - Fully QNN Measurement: 浅参数化电路端到端训练，最少迭代近最优
+  - State Discrimination: 最小误差与最大置信度两种判别策略
+  - **Activation**: quantum measurement, Naimark extension, QNN measurement, POVM, state discrimination, parameterized quantum circuits, hybrid quantum-classical
+
+### Scalable On-Hardware QNN Training
+- [[scalable-on-hardware-qnn-training]] - QNN硬件训练框架：Butterfly电路+逐层训练+并行参数位移，将梯度估计成本从O(n2)降至O(log n) (arXiv: 2606.03517)
+  - Butterfly Circuit: O(n log n)参数、对数深度的结构化子空间保持电路
+  - Layer-Wise Training: 逐层冻结训练，避免退化平原问题
+  - Parallel Parameter-Shift: 利用Butterfly层内交换结构，常数次数提取所有梯度
+  - IonQ验证: 16-32量子比特硬件训练，超越经典基线
+  - **Activation**: qnn training, butterfly circuit, layer-wise training, parameter-shift, gradient estimation, quantum hardware, nisq
+
+### Quantum Subliminal Learning
+- [[quantum-subliminal-learning]] - 量子潜意识学习安全分析：QNN比经典NN更容易通过公开接口泄露隐藏行为 (arXiv: 2605.29557)
+  - Auxiliary Channel: 经典和量子NN均显示高效潜意识学习
+  - Task Channel: 关键发现—QNN保留更多隐藏任务信号，架构依赖性安全漏洞
+  - Geometric Picture: 传输由教师漂移幅度和隐藏任务可见分数控制
+  - Supply Chain Risk: 量子模型供应链安全隐患
+  - **Activation**: quantum security, subliminal learning, qnn, model distillation, supply chain security, hidden behavior
+
 ## 2026-06-08 - Quantum Neuromorphic Computing Research (Cron Job)
 
 ### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
