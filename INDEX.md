@@ -170,6 +170,24 @@
   - 量子退火+经典仿真验证迭代循环
   - 权重调优策略（硬约束→软约束→动态调整）
   - **Activation**: QUBO scheduling, hybrid quantum optimization, quantum annealing scheduling, time-dependent QUBO
+## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - 13:00 Session)
+
+### Projector Quantum Variational Ansatz
+- [[projector-variational-ansatz]] - VQE变分拟设桥接FTQC架构，通过投影算子替代态转移，浅层电路收敛超越ADAPT-VQE (arXiv: 2606.07084)
+  - 投影变分架构：构建投影算子而非幺正演化，利用辅助量子比特标记目标态
+  - 参数灵活映射：一种参数化等价于ISQ-QSP，另一种等价于ADAPT-VQE
+  - 浅层收敛优势：比ADAPT-VQE更浅电路深度即可达到同等精度
+  - 振幅放大优势：结合振幅放大优于后选择，提升收敛效率
+  - **Activation**: projector VQE, PVA ansatz, FTQC variational bridge, shallow VQE, ADAPT-VQE improvement, quantum projector, amplitude amplification VQE, 投影变分拟设
+
+### A superconducting surface-code processor with lattice-surgery logical operations
+- [[lattice-surgery-surface-code]] - 超导表面码处理器实现格手术逻辑操作，距离3逻辑量子比特门保真度0.943 (arXiv: 2606.06598)
+  - 格手术操作：距离3表面码逻辑量子比特间的确定性融合与分裂
+  - 逻辑Bell态：通过联合初始化和格分裂制备，经纠错态保真度确认纠缠
+  - 逻辑级Deutsch-Jozsa：在容错框架下展示算法实用性
+  - 魔术态注入：通过门传态实现逻辑R_X(π/4)，条件保真度0.943_{-9}^{+10}
+  - **Activation**: lattice surgery, surface code, logical qubit, magic state injection, logical gate fidelity, distance-three code, fault tolerant quantum, 格手术表面码
+
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
