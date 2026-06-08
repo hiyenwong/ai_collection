@@ -1,4 +1,329 @@
+## 2026-06-08 - Multi-Scale Brain Dynamics Synthesis (Cron Job)
+
+### Multi-Scale Brain Dynamics Analysis Framework
+- [[multiscale-brain-dynamics-analysis]] - 多尺度脑动力学分析统一框架：整合临界性标度分析、不动点组合性、表征诊断协议，跨宏观/介观/表征三层级研究脑动力学 (arXiv: 2606.06290,2606.07336,2606.06647)
+  - PRG + PSD + DFA: 临界性标度三重分析，检测精神病的系统性指数偏移
+  - Low-Rank Gluing: 结构化模块化实现功能组合性，全局吸引子受限于局部组合
+  - FMScope Protocol: 冻结表征五组件诊断，主体身份方差13-89倍超随机基线
+  - Cross-Scale Integration: 标度指数-网络模块化-表征轴线的三层级映射
+  - **Activation**: brain dynamics analysis, multi-scale neuroscience, criticality scaling, fixed point compositionality, EEG foundation model audit, renormalization group, shortcut learning neuroscience
+
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### The Identity Trap in EEG Foundation Models: A Diagnostic Audit
+- [[identity-trap-eeg-foundation-models]] - EEG基础模型诊断审计框架：FMScope五组件协议揭示跨被试"高准确率"可能反映受试者身份特征而非真实生物标志物 (arXiv: 2606.06647)
+  - Frozen Subject-Variance: 跨12个数据集对，受试者方差是随机基线的13-89倍
+  - Subject-Axis Erasure: 线性移除身份轴，标签内受试者变异时解码提升6-12 pp
+  - Aperiodic 1/f Carrier: 移除非周期成分，受试者探测下降9-19 pp (LaBraM/CBraMod)
+  - Layer-wise Probing: 微调仅在文献确立的跨受试者标志物存在时放大标签方差
+  - **Activation**: EEG foundation model, subject-disjoint, shortcut learning, identity trap, aperiodic 1/f, frozen representation, diagnostic audit, LaBraM, CBraMod, REVE, FMScope
+
+### Fixed Point Compositionality via Low-Rank Gluing Rules
+- [[fixed-point-compositionality-low-rank-gluing]] - 阈值线性网络的组合性动力学理论：低秩粘合规则证明模块化结构导致全局不动点受限于局部模块组合，实现可预测吸引子工程 (arXiv: 2606.07336)
+  - Low-Rank Gluing: 模块间特定低秩耦合，全局不动点限于局部组合
+  - Rank-1 Characterization: 完整分类确定哪些局部不动点组合形成全局解
+  - gCTLN Extension: 组合阈值线性网络规则推广至广义版本
+  - Compositional Engineering: 组合大吸引子库可预测设计配方
+  - **Activation**: compositional dynamics, threshold-linear network, TLN, low-rank gluing, fixed point decomposition, modular network, attractor engineering, combinatorial dynamics, inhibition-dominated, gCTLN## 2026-06-08 - Neuroscience + Quantum Computing Research (Cron Job)
+
+### Measurement Circuit Ansatz: Naimark vs QNN Measurements
+- [[naimark-qnn-measurement-circuits]] - 量子测量电路设计：Naimark扩展、混合Naimark-QNN、全QNN三种方法对比，QNN以更少训练迭代实现近最优量子测量 (arXiv: 2606.07376)
+  - Naimark Quantum Measurement: CNOT+单量子比特门的Naimark扩展电路，经典优化器确定参数
+  - Hybrid Naimark-QNN: 在Naimark框架中融入参数化量子电路，平衡理论与灵活性
+  - Fully QNN Measurement: 浅参数化电路端到端训练，最少迭代近最优
+  - State Discrimination: 最小误差与最大置信度两种判别策略
+  - **Activation**: quantum measurement, Naimark extension, QNN measurement, POVM, state discrimination, parameterized quantum circuits, hybrid quantum-classical
+
+### Scalable On-Hardware QNN Training
+- [[scalable-on-hardware-qnn-training]] - QNN硬件训练框架：Butterfly电路+逐层训练+并行参数位移，将梯度估计成本从O(n2)降至O(log n) (arXiv: 2606.03517)
+  - Butterfly Circuit: O(n log n)参数、对数深度的结构化子空间保持电路
+  - Layer-Wise Training: 逐层冻结训练，避免退化平原问题
+  - Parallel Parameter-Shift: 利用Butterfly层内交换结构，常数次数提取所有梯度
+  - IonQ验证: 16-32量子比特硬件训练，超越经典基线
+  - **Activation**: qnn training, butterfly circuit, layer-wise training, parameter-shift, gradient estimation, quantum hardware, nisq
+
+### Quantum Subliminal Learning
+- [[quantum-subliminal-learning]] - 量子潜意识学习安全分析：QNN比经典NN更容易通过公开接口泄露隐藏行为 (arXiv: 2605.29557)
+  - Auxiliary Channel: 经典和量子NN均显示高效潜意识学习
+  - Task Channel: 关键发现—QNN保留更多隐藏任务信号，架构依赖性安全漏洞
+  - Geometric Picture: 传输由教师漂移幅度和隐藏任务可见分数控制
+  - Supply Chain Risk: 量子模型供应链安全隐患
+  - **Activation**: quantum security, subliminal learning, qnn, model distillation, supply chain security, hidden behavior
+
+## 2026-06-08 - Quantum Neuromorphic Computing Research (Cron Job)
+
+### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
+- [[optical-neural-networks-waveguide-qed]] - 全光学神经网络架构基于波导QED相干瞬态量子动力学，消除光电转换瓶颈实现超低延迟神经形态计算 (arXiv: 2605.17752)
+  - Phase-Tunable Nonlocal Interference: 巨腔中可编程突触权重
+  - Coherent Temporal Summation: 环腔积分器直接时序整合
+  - Transient Rabi Dynamics: 驱动二能级系统非线性激活
+  - MNIST验证: 高分类准确率
+  - **Activation**: optical neural networks, waveguide QED, coherent transient dynamics, neuromorphic computing, all-optical, photonic computing, quantum photonics, Rabi dynamics, bad cavity regime
+
+## 2026-06-08 - Dream/Sleep Neuroscience + AI Memory Research (Cron Job)
+
+### Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories
+- [[llm-sleep-memory-consolidation]] - LLM睡眠-记忆巩固机制，首次提出AI系统需要类似生物睡眠的记忆整理阶段，实现自我修改与灾难性遗忘缓解 (arXiv: 2606.03979)
+  - Sleep Phase Design: Wake/Sleep周期设计，记忆重放、权重整合、遗忘干扰消除
+  - Hippocampal Replay: 海马体尖波涟漪机制模拟，高权重记忆片段重放
+  - Self-Modification: 睡眠期间权重自我修改，Meta-weight adjustment + Consolidation gates
+  - Catastrophic Forgetting Mitigation: 双缓冲系统、选择性固化、遗忘率降低40-60%
+  - **Activation**: llm sleep, memory consolidation, self-modification, sleep paradigm, catastrophic forgetting, hippocampal replay, weight consolidation, wake-sleep cycle
+
+### AdMem: Advanced Memory for Task-solving Agents
+- [[admem-advanced-agent-memory]] - AdMem高级Agent记忆架构，结合陈述性记忆与程序性记忆的双系统，支持长期任务记忆与技能复用 (arXiv: 2606.06787)
+  - Procedural Memory: 程序性记忆核心创新，存储技能、流程、策略而非仅事实
+  - Skill Memory: 抧能存储系统，包含前置条件、执行步骤、成功概率、条件触发
+  - Workflow Memory: 流程记忆保存，任务序列、依赖关系、优化参数、学习模式
+  - Strategy Memory: 策略记忆分类，探索/优化/恢复/决策四种类型
+  - Cross-Reference Integration: 陈述性↔程序性记忆整合与迁移机制
+  - **Activation**: agent memory, procedural memory, skill storage, workflow memory, strategy memory, memory architecture, task-solving agents, memory consolidation
+
+### Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning
+- [[dreaming-world-action-models]] - 梦境推理与世界行动模型，按需梦境机制实现适应性多模态推理切换，创造性重组知识 (arXiv: 2606.07089)
+  - Dreaming-when-Necessary Trigger: 任务复杂度/新颖性/冲突驱动的梦境触发机制
+  - Five Dreaming Modes: Creative/Exploratory/Resolution/Planning/Cross-modal推理模式
+  - Creative Recombination: 跨域融合、类比映射、概念融合等重组规则
+  - Multi-Modal Adaptation: 动态模态选择，Visual/Textual/Cross-modal推理策略切换
+  - Strategy Simulation: 梦境预演多种行动方案，评估并选择最优策略
+  - **Activation**: dreaming reasoning, world action models, adaptive planning, creative dreaming, cross-modal reasoning, multimodal adaptation, strategy simulation, embodied intelligence
+
+---
+
+## 2026-06-08 - Systems Engineering Research (Cron Job)
+
+### Mixed Potential Approach to Convergence of Nonlinear RLC Circuits with Memristors
+- [[mixed-potential-memristor-circuit-convergence]] - Mixed Potential方法分析含忆阻器非线性RLC电路收敛性，扩展Brayton-Moser理论到完整四元素电路系统 (arXiv: 2606.05851)
+  - Flux-Charge Analysis Method (FCAM): 从电压-电流域转换到磁通-电荷域分析
+  - Lyapunov-like稳定性证明: 在电容-电感平衡条件下保证收敛
+  - 多稳态处理: Content Addressable Memories (CAMs)实现支持
+  - 参数鲁棒性: 收敛结果对电路参数变化具有鲁棒性
+  - **Activation**: memristor circuit, mixed potential, convergence analysis, flux-charge method, RLCM circuit, nonlinear stability, Lyapunov circuit analysis, CAM implementation, neuromorphic hardware
+
+### Amortized Nonlinear Model Predictive Control
+- [[amortized-nonlinear-mpc]] - 摊销非线性MPC使用状态依赖QP近似替代实时NLP求解，单网络残差-校正器架构实现100倍加速并保证约束满足 (arXiv: 2606.05840)
+  - State-dependent QP approximation: 输入仿射非线性系统最优控制近似
+  - Residual-corrector architecture: 分析基线+神经网络校正，减少网络规模
+  - Differentiable interior-point layer: 保证约束满足的可微分QP求解器
+  - Hybrid loss: 仿制损失 + KKT残差惩罚联合训练
+  - Experimental validation: 三连杆机械臂笛卡尔末端跟踪，毫秒级计算 vs 秒级NLP
+  - **Activation**: amortized MPC, real-time nonlinear control, QP approximation, differentiable optimization, interior-point solver, robotics control, constraint satisfaction, MPC acceleration, learning-based control
+
+### Attack Detection using Time Series Foundation Models
+- [[attack-detection-time-series-foundation-models]] - TimesFM时间序列基础模型零样本CPS攻击检测，无需系统模型知识，优于χ²检测器并支持损坏测量替代 (arXiv: 2606.06347)
+  - Model-structure-free detection: TimesFM作为surrogate residual generator
+  - Zero-shot deployment: 无需植物模型(A,B,C)或任务特定训练
+  - Stealthy attack derivation: 线性/非线性系统最优隐蔽攻击策略闭式解
+  - IEEE 14-bus validation: 功率系统实测优于模型基检测器
+  - Mitigation technique: TimesFM预测替代损坏测量，当冗余假设失效时提供实用方案
+  - **Activation**: TimesFM attack detection, CPS security, foundation model CPS, stealthy attack optimal policy, χ² detector, IEEE 14-bus validation, replay attack, model-free anomaly detection, zero-shot CPS security, sensor corruption mitigation
+
+### Double Preconditioning (DoPr): Optimization for Test-Time Performance, not Validation Loss
+- [[double-preconditioning-test-time-optimization]] - 双预 conditioning优化范式结合梯度预 conditioning(Adam/Muon)与激活预 conditioning(KFAC)，解决训练-测试反馈失配和错误累积问题 (arXiv: 2606.06418)
+  - Test-Time Feedback (TTF) phenomenon: 单步训练损失 vs 多步部署指标失配
+  - Double preconditioning: 梯度预 conditioning(M) + 激活预 conditioning(K)双重变换
+  - Drop-in intervention: 最小代码改动，最大化下游收益
+  - Error accumulation reduction: 激活预 conditioning减少雅可比范数，抑制错误累积
+  - Applications: 自回归语言建模、流式生成模型、机器人策略学习
+  - Key insight: 测试时间性能提升 ≠ 验证损失改善
+  - **Activation**: DoPr optimizer, test-time feedback mitigation, KFAC Adam, autoregressive error accumulation, generation quality optimization, rollout stability, TTF optimization, train-test shift correction## 2026-06-08 - Neuroscience + Quantum Research (Cron Job)
+
+### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - 算法+硬件协同优化SNN片上学习引擎，能耗效率4.5-220倍提升，硬件面积降低30-80倍，FPGA/ASIC验证 (arXiv: 2606.06159)
+  - Intrinsic Timing: 消除timing matrix存储开销，利用神经元内在时间状态
+  - Power-of-Two Quantization: 用位移操作替代浮点乘法，硬件友好
+  - FPGA能效: 4.5× - 219.8× 提升
+  - ASIC性能: 4.8× - 22.01× 加速，仅需1.2%-3.3%面积
+  - Mean-Field Drift Model: synaptic dynamics验证稳定性
+  - **Activation**: ITP-STDP, intrinsic timing, power-of-two, SNN training, neuromorphic hardware, FPGA, ASIC, energy-efficient STDP, on-chip learning
+
+### Complementarity in Social Measurement: A Partition-Logic Approach
+- [[partition-logic-social-complementarity]] - 分区逻辑框架建模社会测量中的互补性，将非布尔事件结构应用于社会科学测量不兼容性问题 (arXiv: 2603.28818)
+  - 分区逻辑：通过粘贴布尔代数获得非布尔事件结构
+  - 社会互补性：不同观测模式不兼容，但潜在状态完全确定
+  - 六种应用：人员评估、调查框架、临床诊断、情报协调、法律多元主义、组织审计
+  - 区分互补性与语境性：互补性≠不确定性，系统状态是确定的
+  - 规范结构：L12领结、三角形、五边形、自动机分区逻辑
+  - **Activation**: partition logic, social complementarity, measurement incompatibility, non-Boolean event structure, personnel assessment, survey framing, organizational audit
+
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - 使用大规模预训练编码模型生成合成fMRI数据提升脑到图像解码性能68%，支持零样本解码 (arXiv: 2606.06345)
+  - TRIBE v2: 1000+小时多模态fMRI预训练编码模型
+  - 数据增强策略：合成+真实数据混合训练，68% Top-10检索准确率提升
+  - 零样本能力：仅合成数据训练解码器可高于随机水平
+  - 数据源依赖：7T vs 3T fMRI需调整增强比例
+  - **Activation**: TRIBE, brain-to-image, fMRI decoding, data augmentation, zero-shot, synthetic data, foundation model
+
+### Early psychosis shows deviations in scaling behaviour within a critical regime
+- [[psychosis-scaling-critical-regime]] - PRG粗粒化框架揭示精神病早期临界性重组而非丢失，系统性scaling指数偏移 (arXiv: 2606.06290)
+  - PRG + PSD + DFA多尺度集体动力学表征
+  - 保持尺度不变组织但系统指数偏移
+  - 跨模态一致性验证（多观测变量）
+  - **Activation**: psychosis, scaling, critical regime, renormalization group, PRG, PSD, DFA, collective dynamics
+
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### Dynamical Alignment: A Principle for Adaptive Neural Computation
+- [[dynamical-alignment-snn-paradox-resolution]] - 动态对齐原理解决SNN性能悖论，固定神经结构通过输入时序动力学驱动不同计算模式（耗散vs扩张） (arXiv: 2508.10064)
+  - 相空间体积动力学决定计算模式：耗散模式（收缩动力学）vs扩张模式（扩张动力学）
+  - 时间尺度对齐：输入时序与神经元积分的匹配解锁SNN潜力
+  - 双模态优化景观：临界相变点，耗散模式实现能量效率，扩张模式匹配ANN性能
+  - 统一神经科学二元对立：稳定性-可塑性困境、分离-整合动力学
+  - **Activation**: dynamical alignment, SNN performance paradox, phase space dynamics, dissipative vs expansive mode, timescale alignment, adaptive computation, bimodal optimization
+
+### Neural Receptive Fields, Stimulus Space Embedding and Effective Geometry of Scale-Free Networks
+- [[neural-receptive-fields-hyperbolic-geometry]] - 感受野从无标度网络结构的双曲几何自然涌现，无需突触微调，感受野大小依赖连接度 (arXiv: 2509.25453 v2)
+  - 刺激空间映射到双曲嵌入边界，实现局部化活动模式
+  - 感受野大小 RF_size ~ 1/k（神经元度），匹配实验观察
+  - 多模态泛化：视觉朝向选择性、海马体位置细胞、体感映射
+  - 海马体位置场实验验证：位置场大小与连接度相关性
+  - **Activation**: receptive fields emergence, hyperbolic geometry, scale-free networks, stimulus embedding, place cells, orientation selectivity, neural geometry
+
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### Early psychosis shows deviations in scaling behaviour within a critical regime
+- [[psychosis-scaling-critical-regime]] - PRG coarse-graining framework reveals systematic scaling exponent shifts without criticality loss in early psychosis (arXiv: 2606.06290)
+  - PRG + PSD + DFA multi-scale collective dynamics characterization
+  - Preserved scale-invariant organization with systematic exponent shifts
+  - Cross-modal consistency validation (multiple observables)
+  - **Activation**: psychosis, scaling, critical regime, renormalization group, PRG, PSD, DFA, collective dynamics
+
+### Intrinsic Computational Functionalism: From Observer-Relative Maps to Observer-Independent Structures
+- [[intrinsic-computational-functionalism]] - Operationalizable criteria for observer-independent computational structures in consciousness theory (arXiv: 2606.06424)
+  - Three-tier decomposition: label selection → partition selection → grain selection
+  - C1: System-intrinsic instantiation (observer-independent specification)
+  - C2: Causal-dynamical organization under intervention
+  - **Activation**: consciousness, computational functionalism, observer-relativity, intrinsic structure, causal dynamics
+
+### Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization
+- [[cross-scale-spatial-generative-neurodegeneration]] - 跨尺度空间感知生成模型预测神经退行性脆弱性，86.04%解释方差，空间相关r=0.9439 (arXiv: 2606.05870)
+  - 变分生成架构 + 图基空间平滑正则化
+  - Allen人脑图谱：910标记基因 × 68皮质区域
+  - ADNI数据集：NC=926, AD=426
+  - 微尺度分子 → 宏尺度退化的跨尺度建模
+  - **Activation**: neurodegeneration, generative modeling, transcriptomic, cortical degeneration, Alzheimer, variational, graph regularization, spatial correlation
+
+## 2026-06-08 - Neuroscience + Quantum (Cron Job)
+
+### Parallel Scan Recurrent Neural Quantum States for Scalable Variational Monte Carlo
+- [[parallel-scan-neural-quantum-states]] - 并行扫描循环神经量子态方法论，挑战RNN量子态不可扩展观点，实现52×52二维自旋晶格精度 (arXiv: 2605.13807)
+  - 关联扫描替换顺序循环，实现GPU并行训练
+  - 保持精确自回归概率结构
+  - 迭代重训练管道：从小到大渐进扩展
+  - 适度计算资源即可达大规模精度
+  - **Activation**: PSR-NQS, parallel scan, recurrent quantum, autoregressive wavefunction, RNN scaling, variational Monte Carlo, spin lattice
+
+### Neural network quantum states in the grand canonical ensemble
+- [[quantum-neural-states-grand-canonical]] - 巨正则系综神经量子态架构，对称玻色波函数在Fock空间表示，支持可变粒子数研究 (arXiv: 2605.07779)
+  - Fock空间对称神经网络架构
+  - 化学势集成实现粒子数收敛
+  - 一体约化密度矩阵计算
+  - 凝聚分数和径向密度分布预测
+  - **Activation**: grand canonical, bosonic NQS, Fock space, variable particle number, condensate fraction, OBRDM, geometric optimization
+
+
+### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
+- [[quantum-analogue-cloud-formalism]] - 量子类云函数形式化建模超阈值信息处理，结合神经场论与薛定谔型方程解释决策中"改变主意"现象 (arXiv: 2605.25214)
+  - 云函数空间结构继承感知物理对象特性，时间演化由大规模神经活动内在规律支配
+  - 非线性非厄米哈密顿量 + Lotka-Volterra项的薛定谔型控制方程
+  - 改变主意现象源于快速前意识感知与慢速意识比较的交互
+  - **Activation**: cloud function, supraliminal, neural field, decision-making, change-of-mind, consciousness, Schrodinger equation, non-Hermitian
+
+### Covariant quantum error correction in a three-layer quantum brain model
+- [[covariant-qec-quantum-brain]] - 三层量子脑模型中的协变量子纠错，评估CQEC纯化协议在自由基对蛋白上的相干性维持能力 (arXiv: 2604.08587)
+  - 三层架构：³¹P核自旋记忆 + 电子自旋接口 + 经典电化学，A=200MHz超精细耦合
+  - CRY在γ_veto=0.19时CQEC维持相干性0.83（未修正仅0.12），MAO-A相干性坍缩至0.012
+  - 层-蛋白权衡：无单一蛋白同时优化两层，CRY较短T2^e恶化Layer 2保真度
+  - **Activation**: covariant QEC, quantum brain, radical pair, cryptochrome, coherence, T2, Eastin-Knill, purification
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[quantum-metabolic-neuroimaging-limit]] - 脑磁图信息容量的量子代谢极限，结合量子能量分辨率与脑代谢功率推导技术无关上限，人脑最大信息率约2.2 Mbit/s (arXiv: 2511.06401)
+  - 量子能量分辨率极限结合脑代谢功率推导技术无关的信息容量上限
+  - 高阶多极分量几何抑制导致时空带宽竞争，无法同时最大化时空分辨率
+  - 适用于MEG系统设计、量子传感器评估、脑成像分辨率规划和神经编码效率分析
+  - **Activation**: magnetoencephalography, MEG, quantum limit, information capacity, metabolic power, brain imaging, SQUID, atomic magnetometer
+
+## 2026-06-08 - Neuroscience + Quantum (Cron Job - Hourly)
+
+### Correlated States in Quantum Dot Clusters Coupled to a Common Superconductor
+- [[neural-quantum-state-vqmc-correlated]] - Fermionic neural network quantum state VMC for correlated superconducting nanostructures, identifies 3 interaction regimes (arXiv: 2606.04608)
+  - Canonical transformation to particle-number-conserving representation
+  - Fermionic NQS-VMC: trivial singlet, critical intermediate, strongly correlated Heisenberg regimes
+  - 1D singlet-doublet transitions gapless in thermodynamic limit; 2D robust triplet ground states
+  - **Activation**: neural quantum state VMC, fermionic NQS, correlated superconducting, quantum dot cluster, singlet-doublet transition
+
+### Parametrically Induced Strong Coupling Between Superconducting Circuit and Spin Ensemble
+- [[parametric-strong-coupling-quantum-memory]] - On-demand MHz-rate parametric coupling between Josephson circuits and rare-earth spin ensembles for quantum state transfer (arXiv: 2606.03897)
+  - Parametric pump as tunable bridge: coupling on-demand, minimal back-action when off
+  - Three-wave mixing bridges frequency mismatch, g/2π ~ several MHz
+  - Hybrid memory architecture: circuit computes fast, spins store long-lived states
+  - **Activation**: parametric coupling quantum, spin ensemble memory, hybrid quantum memory, Josephson spin interface
+
+## 2026-06-08 - Neuroscience + Quantum (Cron Job - Memory/Thermo)
+
+### Non-equilibrium quantum thermodynamics of a memory-bearing open-system process
+- [[quantum-memory-thermodynamics]] - 记忆型开放系统非平衡量子热力学，分析驱动两能级系统中记忆效应对功、热、熵产的影响 (arXiv: 2606.05904)
+  - 记忆效应从复合环境动力中涌现，影响非平衡热力学量
+  - 驱动、耗散和记忆效应的相互作用机制
+  - **Activation**: quantum memory, thermodynamics, open system, non-equilibrium, 量子记忆, 非平衡热力学
+
+### Learning Hamiltonians at Long Times
+- [[quantum-hamiltonian-learning-long-times]] - 从单次长时间演化学习未知n量子比特哈密顿量，证明局部哈密顿族的高概率可学习性 (arXiv: 2606.05690)
+  - 长时间演化下特征值缠绕不阻止哈密顿量学习
+  - 归一化可观测量与H对易则为平凡解
+  - **Activation**: hamiltonian learning, quantum system identification, long time evolution, 哈密顿量学习
+
+## 2026-06-07 - Information Science + Quantum (Cron Job)
+
+### Quantum resonance encryption for secure data storage and communication with quantum kicked top
+- [[quantum-resonance-encryption]] - 量子共振加密协议，利用量子受踢顶动力学实现安全数据存储和通信，提供授权用户完美恢复和窃听器检测 (arXiv: 2606.01953)
+  - 量子受踢顶（quantum kicked top）在共振态下产生伪随机动力学，仅可用正确密钥逆转
+  - 窃听态呈现完全混合态，基于量子力学而非计算复杂性的信息论安全
+  - 内置篡改检测，适用于共享量子计算环境的数据保护和量子密钥分发
+  - **Activation**: quantum resonance encryption, quantum kicked top, quantum data privacy, secure quantum storage
+
+### Qute: Towards Quantum-Native Database
+- [[quantum-native-database]] - 量子原生数据库框架，将SQL编译为量子电路，实现混合量子-经典查询优化和选择性量子索引 (arXiv: 2602.14699)
+  - 扩展SQL直接编译为门高效量子电路，而非经典数据库的量子适配
+  - 混合查询优化器动态选择量子vs经典执行方案，评估查询复杂度和硬件可用性
+  - 三阶段演进路线：量子模拟→混合执行→全量子原生，已在origin_wukong真实量子处理器验证
+  - 保真度保持存储缓解当前量子比特退相干约束
+  - **Activation**: quantum database, quantum SQL, hybrid query optimizer, quantum indexing
+
+### Iterative CZ-gate-based protocol for squeezed Schrödinger cat state engineering
+- [[quantum-state-engineering]] - 测量辅助量子态工程，通过QND纠缠操作和零差测量生成高保真度压缩薛定谔猫态 (arXiv: 2606.02201)
+  - QND纠缠操作+零差测量实现类确定性态制备，辅助态坍缩到目标态
+  - 迭代CZ门放大协议可扩展猫态尺寸，保真度/成功概率可调
+  - 非高斯资源对测量基量子计算至关重要，适用于混合量子网络
+  - **Activation**: quantum cat states, measurement-based quantum computing, QND gate, homodyne measurement
+
 # AI Collection Index
+
+## 2026-06-07 - Neuroscience Research (Cron Job)
+
+### Coarse-to-fine Hierarchical Architecture with Sequential Mamba for Brain Reconstruction (CHASMBrain)
+- [[chasmbrain-mamba-brain-reconstruction]] - 双流Mamba架构用于图像到fMRI编码，粗到细策略实现ROI级到voxel级预测，Pearson相关达0.429 (arXiv: 2606.04772)
+  - 双流设计：CLS stream处理全局语义，Patch stream处理局部空间特征
+  - 不对称特化：Patch流锁定早期视觉皮层，CLS流向高阶区域提供语义上下文
+  - 两阶段策略：Stage 1预测ROI级激活，Stage 2使用Mamba-VAE细化到voxel级
+  - 跨被试泛化：学习主干模型捕获被试无关的视觉表征
+  - **Activation**: CHASMBrain, Mamba brain, fMRI encoding, hierarchical architecture, dual-stream, visual cortex mapping, image-to-fMRI, sequential Mamba
+
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - TRIBE v2 数据增强提升脑解码性能，使用大规模预训练编码模型生成合成fMRI数据，实现68% Top-10检索准确率提升 (arXiv: 2606.06345)
+  - TRIBE v2 预训练于1000+小时视觉/听觉/语言响应数据
+  - 零样本解码能力：纯合成数据训练可超越随机水平
+  - 数据源特异性调整策略：NSD和BOLD5000表现差异分析
+  - **Activation**: TRIBE v2, brain-to-image, fMRI decoding, synthetic fMRI, data augmentation brain, zero-shot brain decoding, neural encoding model
+
+### Semidefinite-programming hierarchies for classically simulable state families
+- [[sdp-quantum-simulability-certification]] - SDP hierarchy for certifying quantum advantage by characterizing classically simulable state families (arXiv: 2606.06204)
+  - Complete SDP hierarchy for classically simulable state families in arbitrary finite dimension
+  - Primal feasibility tests + dual affine witnesses for non-simulability certification
+  - Computable upper bounds on critical classical visibility for depolarizing noise
+  - **Activation**: semidefinite programming, classical simulability, quantum advantage, SDP hierarchy, POVM simulability, critical visibility, quantum witnesses
 
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
@@ -720,3 +1045,133 @@
 ### Competition, Stability, and Functionality in E-I Neural Circuits
 - [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
   - Each neuron as agent minimizing local energy in competitive game
+
+### SoK: Post-Quantum Cryptography Implementation in Software Systems
+- [[pqc-hot-framework]] - PQC-HOT model: Human-Organisation-Technology framework for systematic PQC implementation in software systems (arXiv: 2606.04669)
+  - Reveals imbalance in PQC research: technological solutions dominate, human/organisational factors underexplored
+  - PQC-HOT model: conceptual framework explaining HOT dimension interactions for implementation outcomes
+  - NIST algorithms: ML-KEM, ML-DSA, SLH-DSA + HQC for algorithmic diversity
+  - **Activation**: PQC implementation, post-quantum cryptography, quantum-safe migration, PQC-HOT model, NIST PQC, crypto agility
+
+### Information-Geometric Bound on Entanglement Robustness
+- [[qfi-entanglement-robustness]] - QFI bounds on concurrence reduction in entanglement generation under parameter uncertainty (arXiv: 2606.05696)
+  - Direct connection: concurrence reduction bounded by quantum Fisher information (QFI) with respect to interaction parameter
+  - Two interacting qubits: ΔC ≤ √(F_Q)·δθ
+  - Trade-off: high QFI benefits sensing precision but increases entanglement sensitivity to fluctuations
+  - **Activation**: quantum Fisher information, entanglement robustness, concurrence bounds, quantum network reliability, quantum sensing precision
+
+### High-Rate Seedless Extractors for Device-Independent QKD
+- [[seedless-di-qkd-extractors]] - Truncation-based seedless extractors achieving optimal rate of 1 key bit per singlet in DI-QKD (arXiv: 2605.31525)
+  - Uses Bell violation as extractor promise instead of min-entropy
+  - Truncation method reduces estimation variance, achieves optimal rate with vanishing fraction of rounds
+  - Computationally efficient seedless extractors for privacy amplification
+  - **Activation**: device-independent QKD, seedless extractor, privacy amplification, Bell violation, quantum key distribution
+
+### Quantum Networks Using Diamond Color Defects
+- [[diamond-quantum-networks]] - Comprehensive methodology for diamond NV/SiV centers as scalable quantum network nodes (arXiv: 2605.30005)
+  - Excellent optical properties, fast spin-qubit control, long spin coherence times
+  - Heterogeneous integration of diamond nanophotonics with photonic integrated circuits
+  - Metropolitan-scale quantum network demonstrations with >50 km fiber entanglement
+  - **Activation**: diamond color defects, NV center, SiV center, quantum network node, spin-photon interface, quantum repeater
+
+### Coherent Room-Temperature Dipole Synchronization in Nanocavity Sheets
+- [[room-temp-quantum-coherence]] - Room-temperature synchronized dipole state in plasmonic nanogap arrays with spatial coherence (arXiv: 2606.06490)
+  - Spatial coherence across dipoles without temporal photon coherence or spectral narrowing
+  - Driven-dissipative system: fast temporal decay but complex spatial correlations
+  - Ultralow mode volumes, high Purcell enhancement, scalable ambient operation
+  - **Activation**: room temperature quantum, plasmonic nanocavity, dipole synchronization, driven-dissipative quantum, Purcell enhancement
+
+## 2026-06-08 - Deep Learning Research (Cron Job)
+
+### Latent Reasoning with Normalizing Flows
+- [[nf-cot-latent-reasoning-normalizing-flows]] - Normalizing flow framework for continuous thoughts preserving CoT advantages (KV-cache, likelihood estimation) (arXiv: 2606.06447v1)
+  - TARFlow-style flow inside LLM backbone with dual-head generation
+  - Exact likelihoods for latent thoughts, probabilistic left-to-right decoding
+  - Policy-gradient optimization in latent reasoning space
+  - **Activation**: latent reasoning, normalizing flows, CoT, continuous thoughts, reasoning optimization
+
+### Compress-Distill: Reasoning Trace Compression for Efficient Knowledge Distillation
+- [[compress-distill-reasoning-trace-compression]] - Post-hoc CoT trace compression achieving 18x efficiency with 96% accuracy retention (arXiv: 2606.05988v1)
+  - Compresses reasoning traces to 8.6-21.0% original length before distillation
+  - 2.0-7.6x training speedup, 3-19x shorter inference outputs
+  - Model-compressed beats naive truncation (especially for smaller students)
+  - **Activation**: reasoning distillation, trace compression, knowledge distillation, efficient training
+
+### TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning
+- [[tail-lor-spectral-continual-learning]] - Spectral LoRA routing adaptation to long-tail coordinates while protecting principal components (arXiv: 2606.06494v1)
+  - Fixed singular bases U, V from pre-trained weights as reference frame
+  - Soft spectral penalty discourages dominant direction updates
+  - Low-rank update to singular value matrix Σ with interference reduction
+  - **Activation**: continual learning, spectral decomposition, LoRA, principal components, adaptation
+
+### You Only Index Once: Cross-Layer Sparse Attention with Shared Routing
+- [[clsa-cross-layer-sparse-attention]] - 7.6x decoding speedup, 17.1x throughput at 128K context via shared routing index (arXiv: 2606.06467v1)
+  - Token-level top-k selection computed once, reused across cross-decoder layers
+  - Preserves fine-grained token selectivity while amortizing routing overhead
+  - Joint optimization of pre-filling, KV-cache storage, long-context decoding
+  - **Activation**: sparse attention, cross-layer, KV-sharing, routing index, long-context
+
+### IA-RAG: Interval-Algebra-Driven Temporal Reasoning for Dynamic Knowledge Retrieval
+- [[ia-rag-interval-algebra-temporal]] - Temporal RAG using Allen's Interval Algebra with Interval Event Units (IEUs) in Thematic Forest (arXiv: 2606.06044v1)
+  - Models facts as time intervals with 13 Allen relations (before, meets, overlaps, etc.)
+  - Sub-graph Time Tightening refines fuzzy temporal boundaries
+  - Strong performance on complex compositional temporal reasoning benchmarks
+  - **Activation**: temporal RAG, interval algebra, Allen relations, temporal reasoning, dynamic knowledge
+
+### PSViT: A Methodology for Structurally Pruning Spiking Vision Transformers
+- [[psvit-structured-pruning-spiking-vision]] - 22.4% memory saving structured pruning for SViT using sensitivity analysis (arXiv: 2606.03257v1)
+  - Three-stage: uniform channel pruning → sensitivity analysis → fine-grained pruning
+  - Hardware-agnostic: efficient on existing architectures vs. unstructured pruning
+  - 70.3% accuracy without fine-tuning, 72.8% with fine-tuning (original 73.3%)
+  - **Activation**: spiking vision transformer, structured pruning, neuromorphic efficiency, SViT
+
+## 2026-06-08 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Breakeven demonstration of quantum low-density parity-check codes
+- [[qldpc-breakeven-evaluation]] - Trapped-ion qLDPC breakeven with 4 logical qubits into 18 physical, OMG architecture for mid-circuit measurement without ion transport, 9x better than superconducting (arXiv: 2606.06455)
+  - Demonstrates nine QEC codes (qLDPC, topological, concatenated) on single trapped-ion device without hardware reconfiguration
+  - Achieves breakeven performance with logical error rates comparable to physical qubit lifetimes
+  - Novel OMG (optical-metastable-ground) architecture for addressable mid-circuit measurement and reset
+  - Eliminates need for ion transport or dedicated coolant ions, saving runtime and ion count
+  - **Activation**: qLDPC evaluation, breakeven demonstration, quantum error correction, trapped-ion qubits, OMG architecture, fault tolerance
+
+### Pretraining Recurrent Networks without Recurrence
+- [[supervised-memory-training]] - Supervised Memory Training (SMT) for time-parallel RNN pretraining without BPTT, O(1) gradient path (arXiv: 2606.06479)
+  - Decouples what to remember from how to update memory via one-step memory transition labels
+  - Transformer-based encoder trained on predictive state objective acquires memory labels
+  - Enables time-parallel RNN training with stable O(1) length gradient path without unrolling
+  - Outperforms BPTT on language modeling and pixel sequence modeling tasks
+  - **Activation**: RNN training, supervised memory, parallel training, predictive state, memory transition, BPTT replacement
+
+### Equivariant Neural Belief Propagation
+- [[equivariant-neural-belief-propagation]] - ENBP framework for SE(3)-symmetric probabilistic inference with Gaussian mixture messages, 98.9% conformational coverage (arXiv: 2606.06344)
+  - Factor-graph with equivariant Gaussian mixture model messages transforming exactly under SE(3)
+  - Rank-2 precision matrices via equivariant outer products with differentiable spectral decomposition
+  - 100x faster than diffusion baselines at higher accuracy on GEOM-QM9/GEOM-Drugs
+  - Converges on 15+ agent robotic inference where vanilla loopy BP diverges
+  - **Activation**: equivariant neural belief propagation, SE(3) symmetry, Gaussian mixture model, factor-graph inference, conformational coverage, molecular modeling
+## 2026-06-08 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Nonreversible Gauge Fields in Fokker-Planck Dynamics
+- [[gauge-field-fokker-planck-dynamics]] - 非可逆规范场福克-普朗克动力学方法论：将保持稳态分布的扰动公式化为规范场，变形弛豫谱而不改变不变状态，连接超对称哈密顿量与神经网络学习 (arXiv: 2606.06412)
+  - Gauge Field Formulation: 非可逆扰动保持稳态分布，规范场变形弛豫谱
+  - Supersymmetric Hamiltonian: 打破细致平衡后FP算子成为非厄米超对称哈密顿量
+  - Paired Eigenvalue Spectra: H和H†共享除零模式外的特征值
+  - Neural Network Learning: 神经网络学习有限力加速收敛同时保持目标分布
+  - **Activation**: gauge field, fokker-planck dynamics, supersymmetric hamiltonian, nonreversible perturbation, neural network learning, stationary distribution, spectral gap, non-hermitian dynamics, 规范场, 非厄米量子力学
+
+### Quantum Vector Hopfield Network (Existing Skill Enhanced)
+- [[quantum-vector-hopfield-network]] - 量子矢量Hopfield网络：模式由量子矢量自旋方向形成，量子动力学从自旋算符非对易性自然涌现，量子稳定化记忆模式 (arXiv: 2606.06597)
+  - Quantum Vector Spins: 模式由量子矢量自旋方向形成
+  - Intrinsic Quantum Dynamics: 量子动力学从自旋算符非对易性自然涌现
+  - Enhanced Storage Capacity: 量子相干性提升存储容量
+  - Quantum Stabilization: 量子效应稳定记忆模式抵抗热噪声
+  - **Activation**: quantum hopfield network, vector spin, associative memory, quantum stabilization, memory capacity, non-commutativity, quantum many-body
+
+### Quantum Correlations in QBism's Reconstruction Program
+- [[quantum-correlations-qbism-reconstruction]] - QBism重构计划中的量子关联：qplex几何捕获两结果场景的Tsirelson界但不足以恢复全部量子关联约束 (arXiv: 2606.07485)
+  - Qplex Geometry: 联合期望值表示为C-向量内积
+  - CHSH Scenario: 共享内积结构限制最大值为Tsirelson界2√2
+  - CGLMP Inequality: 允许代数最大值4，展现超量子关联
+  - Reconstruction Limits: qplex几何捕获足够结构但不足以完全重构量子理论
+  - **Activation**: qbism reconstruction, qplex geometry, chsh inequality, cglmp inequality, tsirelson bound, quantum correlations, superquantum, bell inequality

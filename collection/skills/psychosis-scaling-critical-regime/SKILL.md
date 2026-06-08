@@ -1,189 +1,269 @@
 ---
 name: psychosis-scaling-critical-regime
-description: "Phenomenological Renormalization Group (PRG) framework for analyzing scaling behavior deviations in early psychosis brain dynamics. Combines PRG coarse-graining with Power Spectral Density (PSD) and Detrended Fluctuation Analysis (DFA) to characterize collective dynamics across scales. Use when studying brain criticality, psychiatric disorders, scale-invariant dynamics, or multi-modal scaling analysis."
-metadata:
-  arxiv_id: "2606.06290"
-  published: "2026-06-04"
-  authors: "Irem Topal, Paola Moreno Ancalmo, Guillermo Montana Valverde, Philipp Homan, Wolfram Hinzen"
-  paper_title: "Early psychosis shows deviations in scaling behaviour within a critical regime"
-  tags: [neuroscience, criticality, psychosis, scaling, PRG, brain dynamics, psychiatric disorders]
-license: Complete terms in LICENSE.txt
+description: 精神病早期阶段脑动力学临界性scaling偏差研究方法论。结合重整化群(RG)框架与多种scaling分析方法，揭示临界 regime内的动力学重组而非临界性丧失。
+platforms: [linux, macos, windows]
+tags: [neuroscience, criticality, psychosis, fMRI, renormalization-group, scaling-analysis, brain-dynamics]
+category: neuroscience
 ---
 
-# Psychosis Scaling in Critical Regime
+# Early Psychosis Scaling Behaviour in Critical Regime
 
-## Context
+**Paper**: arXiv:2606.06290v1 - "Early psychosis shows deviations in scaling behaviour within a critical regime"
 
-Accumulating evidence suggests large-scale brain activity exhibits scale-invariant dynamics consistent with near-critical regime operation. This framework provides a principled multi-method approach for studying scaling behavior alterations in psychiatric disorders using resting-state fMRI.
+**Authors**: Irem Topal, Paola Moreno Ancalmo et al.
 
-## Core Methodology
+**Published**: 2026-06-04
 
-### 1. Phenomenological Renormalization Group (PRG) Framework
+## 核心发现
 
-**Purpose**: Characterize collective dynamics across spatial scales through coarse-graining.
+精神病早期阶段不是简单的临界性动力学丧失，而是在保持的 scaling regime 内的系统性重组。通过 phenomenological renormalization group (PRG) 框架结合 PSD 和 DFA 分析，揭示：
 
-**Implementation Steps**:
-1. Load resting-state fMRI time series for each cortical region (68-region parcellation)
-2. Apply coarse-graining at multiple scales (2, 4, 8, 16, 32 voxels)
-3. For each scale $b$, compute block average: $X_b(t) = rac{1}{b} \sum_{i=1}^b X_i(t)$
-4. Calculate correlation function $C_b(r) = \langle X_b(t) X_b(t+r) angle$
-5. Extract scaling exponent $
-u$ from correlation decay: $C_b(r) \sim r^{-
-u}$
-6. Track $
-u$ evolution across scales to identify critical-like behavior
+1. **健康对照组**：静息态活动展现与临界组织一致的非平凡 scaling 行为
+2. **早期精神病**：保持相同的 scale-invariant 组织总体现象学，但多个可观测量上有系统性 scaling exponent 偏移
+3. **关键结论**：早期精神病特征化的是集体动力学在保持的 scaling regime 内重组，而非临界性简单丧失
 
-**Criticality Criterion**: 
-- Non-trivial scaling ($
-u 
-eq 0$) indicates collective organization
-- Scale-invariant $
-u$ across coarse-graining levels suggests critical regime
+## 方法论框架
+
+### 1. Phenomenological Renormalization Group (PRG)
+
+PRG 是一种 coarse-graining 方法，用于研究跨尺度的集体动力学：
+
+```python
+# PRG coarse-graining procedure
+def prg_coarse_graining(data, scale_factor):
+    """
+    Apply phenomenological renormalization group coarse-graining
+    
+    Parameters:
+    - data: fMRI time series
+    - scale_factor: spatial/temporal coarse-graining factor
+    
+    Returns:
+    - coarse_grained_data: renormalized data preserving critical structure
+    """
+    # Spatial coarse-graining: average neighboring regions
+    # Temporal coarse-graining: integrate over time windows
+    # Preserve long-range correlations and scaling invariance
+    pass
+```
 
 ### 2. Power Spectral Density (PSD) Analysis
 
-**Purpose**: Capture temporal scaling in frequency domain.
+检测 1/f scaling 特征：
 
-**Implementation Steps**:
-1. Compute PSD using Welch's method: $S(f) = |\mathcal{F}[X(t)]|^2$
-2. Fit power-law: $S(f) \sim f^{-eta}$ in range $0.01-0.1$ Hz
-3. Extract $eta$ exponent for each region and subject
-4. Group comparison: $eta_{patients}$ vs $eta_{controls}$
-
-**Interpretation**:
-- $eta pprox 1$: 1/f noise (pink noise), critical-like
-- $eta > 1$: slower dynamics, subcritical tendency
-- $eta < 1$: faster fluctuations, supercritical tendency
+```python
+def power_spectral_analysis(fmri_signal):
+    """
+    Compute PSD and estimate scaling exponent
+    
+    PSD(f) ~ f^(-β) for critical dynamics
+    - β ≈ 1-2: near-critical regime
+    - β deviations indicate altered collective dynamics
+    """
+    # Compute Fourier transform
+    # Estimate scaling exponent via linear regression in log-log space
+    # Compare between groups
+    pass
+```
 
 ### 3. Detrended Fluctuation Analysis (DFA)
 
-**Purpose**: Measure long-range temporal correlations.
+量化时间序列的自相似性：
 
-**Implementation Steps**:
-1. Integrate time series: $Y(k) = \sum_{i=1}^k [X(i) - \langle X angle]$
-2. Divide into windows of size $n$
-3. Fit linear trend in each window, compute RMS fluctuation:
-   $F(n) = \sqrt{rac{1}{N} \sum_{k=1}^N [Y(k) - Y_n(k)]^2}$
-4. Fit scaling law: $F(n) \sim n^{lpha}$
-5. Extract $lpha$ exponent across window sizes (4-64 time points)
+```python
+def detrended_fluctuation_analysis(signal, window_sizes):
+    """
+    DFA for quantifying temporal scaling
+    
+    F(n) ~ n^α
+    - α ≈ 0.5: uncorrelated (white noise)
+    - α ≈ 1: 1/f noise (critical)
+    - α > 1: non-stationary
+    - α < 0.5: anti-correlated
+    
+    Returns fluctuation scaling exponent α
+    """
+    # For each window size n:
+    #   - Divide signal into windows
+    #   - Detrend within each window
+    #   - Compute RMS fluctuation F(n)
+    # Fit log(F) vs log(n) to estimate α
+    pass
+```
 
-**Interpretation**:
-- $lpha = 0.5$: uncorrelated (white noise)
-- $lpha pprox 1$: long-range correlations, critical-like
-- $0.5 < lpha < 1$: persistent correlations
+### 4. Combined PRG + Scaling Analysis Workflow
 
-### 4. Multi-Observable Integration
+```python
+def combined_scaling_analysis(fmri_data, subject_groups):
+    """
+    Full workflow combining PRG with temporal scaling analyses
+    
+    Steps:
+    1. Apply PRG coarse-graining at multiple scales
+    2. Compute PSD at each scale
+    3. Compute DFA at each scale
+    4. Track scaling exponent evolution across scales
+    5. Compare exponent trajectories between groups
+    """
+    results = {}
+    
+    for scale in [1, 2, 4, 8, 16]:
+        coarse_data = prg_coarse_graining(fmri_data, scale)
+        psd_exp = power_spectral_analysis(coarse_data)
+        dfa_exp = detrended_fluctuation_analysis(coarse_data)
+        
+        results[scale] = {
+            'psd_beta': psd_exp,
+            'dfa_alpha': dfa_exp
+        }
+    
+    # Analyze exponent trajectories
+    # Identify systematic shifts in scaling regime
+    return results
+```
 
-**Key Finding**: Early psychosis shows systematic shifts in ALL three exponents:
-- $
-u$: altered spatial scaling (reduced collective organization)
-- $eta$: shifted temporal scaling (faster PSD decay)
-- $lpha$: modified DFA scaling (reduced long-range correlations)
+## 神经科学意义
 
-**Critical Insight**: Not loss of criticality, but **reorganization within preserved scaling regime**.
+### 临界性理论背景
 
-## Workflow for Applying This Framework
+脑网络临界性假说认为大脑在 near-critical regime 运行，支持：
+- **长程相关性** (long-range correlations)
+- **高效信息处理** (efficient information processing)
+- **集体组织涌现** (emergence of collective organization)
 
-**Input Requirements**:
-- Resting-state fMRI data (at least 5 minutes, TR ≤ 2s)
-- Cortical parcellation (68-region Desikan-Killiany or similar)
-- Subject groups: patients vs controls
+### 精神病中的临界性改变
 
-**Step-by-Step Execution**:
+传统观点认为精神疾病是临界性丧失，本研究揭示更 nuanced 的现象：
+- **Scaling regime 保持**：整体 scale-invariant 现象学未丧失
+- **Exponent 偏移**：scaling exponent 系统性改变指示动力学重组
+- **跨尺度一致性**：多个可观测量展示一致的偏移模式
 
-1. **Preprocessing**: Apply standard fMRI pipeline (motion correction, smoothing, normalization)
+## 临床应用潜力
 
-2. **Regional Extraction**: Extract mean BOLD signal for each cortical region
+### 1. 早期精神病诊断标志物
 
-3. **PRG Coarse-Graining**: 
-   ```python
-   # Example implementation
-   scales = [1, 2, 4, 8, 16, 32]
-   for b in scales:
-       coarse_signal = block_average(signal, block_size=b)
-       corr_func = compute_correlation(coarse_signal)
-       nu_b = fit_power_law(corr_func)
-   ```
+```python
+def psychosis_scaling_marker(fmri_data, reference_controls):
+    """
+    Compute scaling-based biomarker for early psychosis
+    
+    Returns:
+    - deviation_score: quantification of scaling deviation
+    - confidence: statistical significance
+    """
+    # Compute subject's scaling exponents
+    subject_exponents = combined_scaling_analysis(fmri_data)
+    
+    # Compare to healthy control distribution
+    control_distribution = compute_control_exponents(reference_controls)
+    
+    # Compute deviation score
+    deviation = compute_multivariate_deviation(subject_exponents, control_distribution)
+    
+    return deviation
+```
 
-4. **PSD Analysis**:
-   ```python
-   freqs, psd = welch(signal, fs=1/TR, nperseg=128)
-   beta = fit_power_law(freqs[low_freq_range], psd[low_freq_range])
-   ```
+### 2. 动力学重组量化
 
-5. **DFA Analysis**:
-   ```python
-   window_sizes = np.logspace(np.log2(4), np.log2(len(signal)/4), num=20)
-   fluctuations = []
-   for n in window_sizes:
-       F_n = compute_fluctuation(signal, window=n)
-       fluctuations.append(F_n)
-   alpha = fit_power_law(window_sizes, fluctuations)
-   ```
+系统性偏移而非临界性丧失为干预策略提供新视角：
+- **动力学调节**：调整网络动力学回到健康 exponent 范围
+- **尺度特定干预**：针对特定 coarse-graining scale 的偏移
 
-6. **Group Comparison**: Statistical tests (t-test, permutation) on exponents
+## 实现细节
 
-7. **Cross-Observable Correlation**: Check if shifts in $
-u, eta, lpha$ are correlated
+### 数据要求
 
-## Pitfalls
+- **fMRI 数据**：静息态 BOLD 信号
+- **时间分辨率**：TR ≈ 2-3 秒
+- **空间分辨率**：ROI 或 voxel-level 分析
+- **扫描时长**：建议 > 10 分钟以捕获长期 scaling
 
-**False Positive Criticality**: 
-- Trivial scaling ($
-u=0$, $eta=0$, $lpha=0.5$) ≠ critical dynamics
-- Always verify non-trivial exponents before claiming criticality
+### 统计分析
 
-**Methodological Confounds**:
-- Head motion artifacts corrupt scaling estimates → apply scrubbing
-- TR-dependent frequency resolution affects PSD → standardize acquisition
-- Window size selection for DFA → use logarithmically spaced range
+```python
+def statistical_comparison(group_A, group_B, exponents):
+    """
+    Compare scaling exponents between groups
+    
+    Statistical tests:
+    - Mann-Whitney U for non-parametric comparison
+    - Permutation tests for robust inference
+    - Effect size: Cohen's d
+    """
+    from scipy.stats import mannwhitneyu
+    
+    for exp_name in exponents:
+        a_values = [combined_scaling_analysis(s)[exp_name] for s in group_A]
+        b_values = [combined_scaling_analysis(s)[exp_name] for s in group_B]
+        
+        stat, p = mannwhitneyu(a_values, b_values)
+        effect_size = compute_cohens_d(a_values, b_values)
+        
+        print(f"{exp_name}: p={p:.4f}, d={effect_size:.2f}")
+```
 
-**Interpretation Trap**:
-- Reduced scaling ≠ loss of criticality
-- **Key insight**: scaling regime preserved, but exponents shifted (reorganization)
+## 理论框架扩展
 
-**Group Size Sensitivity**:
-- Small N (<20 per group) → unreliable exponent estimates
-- Permutation tests preferred over parametric for small samples
+### 重整化群在神经科学的应用
 
-**Spatial vs Temporal Confounding**:
-- PRG measures spatial coarse-graining, PSD/DFA temporal
-- Interpret shifts separately before claiming unified alteration
+RG 方法源于统计物理，用于研究相变和临界现象：
+- **空间 RG**：coarse-graining 空间区域，保留临界结构
+- **时间 RG**：积分时间窗口，研究动力学跨尺度行为
+- **脑网络 RG**：研究从微观神经元到宏观脑区的动力学传播
 
-## Verification
+### Scaling Universality
 
-**Validation Checks**:
-1. Confirm non-trivial scaling in controls: $
-u > 0.2$, $eta \in [0.8, 1.2]$, $lpha \in [0.6, 1.0]$
-2. Check exponent stability across scales: $
-u$ should plateau if critical
-3. Verify cross-subject consistency: exponents should cluster per group
+临界系统的 scaling exponent 具有 universality：
+- 不同系统（物理、生物）可能共享相同 exponent
+- Exponent 偏移指示动力学 regime 改变而非简单噪声增加
 
-**Expected Outcomes** (based on paper):
-- Controls: scale-invariant dynamics with non-trivial exponents
-- Patients: preserved scaling regime with systematic exponent shifts
-- Cross-observable correlation: shifts in $
-u, eta, lpha$ should co-vary
+## Pitfalls and Solutions
 
-## Applications Beyond Psychosis
+### Pitfall 1: fMRI 时间序列非平稳性
 
-**Generalizable Framework**: Apply to any condition hypothesized to alter brain dynamics:
-- Depression, anxiety disorders
-- Neurodegenerative diseases (Alzheimer's, Parkinson's)
-- Developmental disorders (autism, ADHD)
-- Pharmacological interventions (drug effects on scaling)
+**问题**：fMRI 信号包含缓慢漂移，影响 DFA 分析
 
-**Extension Opportunities**:
-- Combine with EEG/MEG for faster temporal scales
-- Add network-based coarse-graining (topological PRG)
-- Integrate with whole-brain modeling (Hopf Stuart-Landau)
+**解决**：
+```python
+# 使用带线性 detrending 的 DFA
+def robust_dfa(signal, window_sizes, detrending='linear'):
+    if detrending == 'linear':
+        signal = linear_detrend(signal)
+    # Proceed with DFA
+```
 
-## Activation Keywords
+### Pitfall 2: Scaling 拟合区间选择
 
-- psychosis scaling
-- brain criticality psychiatric
-- PRG renormalization brain
-- PSD DFA analysis
-- scale-invariant dynamics
-- collective brain dynamics
-- multi-modal scaling analysis
+**问题**：Scaling exponent 估计依赖于拟合区间选择
+
+**解决**：
+- 使用多个拟合区间验证 exponent 稳定性
+- 报告 exponent 不确定性估计
+- 使用 robust regression 方法
+
+### Pitfall 3: 样本量限制
+
+**问题**：精神疾病研究通常样本量较小
+
+**解决**：
+- 使用 permutation tests
+- Bootstrap for confidence intervals
+- Combine multiple scaling measures for robust inference
+
+## Future Directions
+
+1. **多模态整合**：结合 EEG、MEG 的 scaling 分析
+2. **纵向研究**：追踪 scaling exponent 沿疾病进展的演化
+3. **干预效果**：评估药物/治疗对 scaling 行为的影响
+4. **机器学习分类**：使用 scaling features 作为 psychosis 预测特征
+
+## Activation
+
+触发词：psychosis, critical dynamics, scaling analysis, renormalization group, fMRI, brain criticality, psychosis scaling, DFA, PSD, neuroimaging marker
+
+## References
+
+- arXiv:2606.06290v1 - Primary paper
+- Beggs & Plenz (2003) - Neuronal avalanches and criticality
+- Linkenkaer-Hansen et al. (2001) - Long-range temporal correlations in brain oscillations
+- Fraiman & Chialvo (2012) - fMRI scaling and brain criticality
