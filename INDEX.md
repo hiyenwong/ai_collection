@@ -1,3 +1,13 @@
+## 2026-06-08 - Multi-Scale Brain Dynamics Synthesis (Cron Job)
+
+### Multi-Scale Brain Dynamics Analysis Framework
+- [[multiscale-brain-dynamics-analysis]] - 多尺度脑动力学分析统一框架：整合临界性标度分析、不动点组合性、表征诊断协议，跨宏观/介观/表征三层级研究脑动力学 (arXiv: 2606.06290,2606.07336,2606.06647)
+  - PRG + PSD + DFA: 临界性标度三重分析，检测精神病的系统性指数偏移
+  - Low-Rank Gluing: 结构化模块化实现功能组合性，全局吸引子受限于局部组合
+  - FMScope Protocol: 冻结表征五组件诊断，主体身份方差13-89倍超随机基线
+  - Cross-Scale Integration: 标度指数-网络模块化-表征轴线的三层级映射
+  - **Activation**: brain dynamics analysis, multi-scale neuroscience, criticality scaling, fixed point compositionality, EEG foundation model audit, renormalization group, shortcut learning neuroscience
+
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
 ### The Identity Trap in EEG Foundation Models: A Diagnostic Audit
