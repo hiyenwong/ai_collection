@@ -1,3 +1,13 @@
+## 2026-06-08 - Quantum Neuromorphic Computing Research (Cron Job)
+
+### Optical Neural Networks from Coherent Transient Dynamics in Waveguide QED
+- [[optical-neural-networks-waveguide-qed]] - 全光学神经网络架构基于波导QED相干瞬态量子动力学，消除光电转换瓶颈实现超低延迟神经形态计算 (arXiv: 2605.17752)
+  - Phase-Tunable Nonlocal Interference: 巨腔中可编程突触权重
+  - Coherent Temporal Summation: 环腔积分器直接时序整合
+  - Transient Rabi Dynamics: 驱动二能级系统非线性激活
+  - MNIST验证: 高分类准确率
+  - **Activation**: optical neural networks, waveguide QED, coherent transient dynamics, neuromorphic computing, all-optical, photonic computing, quantum photonics, Rabi dynamics, bad cavity regime
+
 ## 2026-06-08 - Systems Engineering Research (Cron Job)
 
 ### Mixed Potential Approach to Convergence of Nonlinear RLC Circuits with Memristors
