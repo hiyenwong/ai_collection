@@ -1,5 +1,26 @@
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
+### MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning
+- [[merlin-photonic-qml]] - MerLin开源框架：将光子量子模拟嵌入PyTorch/scikit-learn实现端到端量子层训练，重现18个SOTA工作 (arXiv: 2602.11092)
+  - 端到端可微训练：线性光学电路强模拟集成到PyTorch/scikit-learn工作流
+  - 18个SOTA量子ML工作可复现、模块化实验基线
+  - 硬件感知设计：算法-基准-硬件协同优化
+  - **Activation**: merlin, photonic qml, hybrid quantum machine learning, quantum benchmarking, differentiable quantum layer, pytorch quantum
+
+### Rogue Variable Theory: A Quantum-Compatible Cognition Framework with Rosetta Stone Alignment
+- [[rogue-variable-cognition]] - Rogue Variable Theory：预事件认知状态的形式化，通过Mirrored Personal Graph嵌入图希尔伯特空间实现认知建模 (arXiv: 2601.00466)
+  - Rogue Variables：决策/情感稳定前的歧义状态量子一致性建模
+  - MPG嵌入图希尔伯特空间 + Hamiltonian动力学
+  - Rosetta Stone Layer实现跨主体潜空间对齐
+  - **Activation**: rogue variable theory, cognition framework, mirrored personal graph, rosetta stone layer, pre-event cognition, cross-user alignment
+
+### Quantum-Brain: Quantum-Inspired Neural Network Approach to Vision-Brain Understanding
+- [[quantum-brain-voxel-control]] - 量子启发fMRI解码：希尔伯特空间体素控制+相位校准+类测量投影实现95.6%脑检索准确率 (arXiv: 2411.13378)
+  - Quantum-Inspired Voxel-Controlling：希尔伯特空间建模体素间影响
+  - Phase-Shifting：脑信号校准，Measurement-like Projection：希尔伯特→特征空间
+  - NSD数据集：95.1%图像检索、95.6%脑检索、95.3%重建Inception score
+  - **Activation**: quantum brain, vision-brain understanding, voxel controlling, phase shifting, measurement projection, fmri decoding, brain connectivity
+
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
 - [[metabolic-quantum-limit-meg]] - 脑磁图(MEG)信息容量的代谢量子极限：从量子传感极限+神经代谢推导技术无关的2.2 Mbit/s上限 (arXiv: 2511.06401)
   - 量子极限信息率：结合磁传感能量分辨率与脑代谢功率，推导2.2 Mbit/s技术无关上限
