@@ -28,6 +28,14 @@
 
 ## 2026-06-08 - Neuroscience Research (Cron Job)
 
+### Physiologically Constrained Musculoskeletal Neural Network
+- [[physiologically-constrained-musculoskeletal-neural-network]] - 生理约束肌肉骨骼神经网络：从部分观测sEMG估计多自由度关节运动学，无需内部生物力学标签监督，同时推断未测量肌肉激活 (arXiv: 2606.07476v1)
+  - 无监督内部变量：首次实现无需肌肉力/力矩标签的MSK网络训练
+  - 未测量肌肉推断：从部分数据恢复完整肌肉激活，解决解剖不可达问题
+  - 复合物理-生理损失：关节运动学+肌肉协同+解剖趋势三重约束
+  - 性能验证：随机运动NRMSE 0.07, R² 0.94，显著优于基线
+  - **Activation**: sEMG处理, 关节运动学估计, 肌肉骨骼建模, 生理约束神经网络, 肌肉激活推断, 肌肉协同分析, 生物力学估计, 康复监测, 义肢控制
+
 ### The Identity Trap in EEG Foundation Models: A Diagnostic Audit
 - [[identity-trap-eeg-foundation-models]] - EEG基础模型诊断审计框架：FMScope五组件协议揭示跨被试"高准确率"可能反映受试者身份特征而非真实生物标志物 (arXiv: 2606.06647)
   - Frozen Subject-Variance: 跨12个数据集对，受试者方差是随机基线的13-89倍
