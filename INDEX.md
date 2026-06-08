@@ -1,5 +1,14 @@
 ## 2026-06-08 - Neuroscience + Quantum Research (Cron Job)
 
+### ITP-STDP: An Intrinsic-Timing Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - 算法+硬件协同优化SNN片上学习引擎，能耗效率4.5-220倍提升，硬件面积降低30-80倍，FPGA/ASIC验证 (arXiv: 2606.06159)
+  - Intrinsic Timing: 消除timing matrix存储开销，利用神经元内在时间状态
+  - Power-of-Two Quantization: 用位移操作替代浮点乘法，硬件友好
+  - FPGA能效: 4.5× - 219.8× 提升
+  - ASIC性能: 4.8× - 22.01× 加速，仅需1.2%-3.3%面积
+  - Mean-Field Drift Model: synaptic dynamics验证稳定性
+  - **Activation**: ITP-STDP, intrinsic timing, power-of-two, SNN training, neuromorphic hardware, FPGA, ASIC, energy-efficient STDP, on-chip learning
+
 ### Complementarity in Social Measurement: A Partition-Logic Approach
 - [[partition-logic-social-complementarity]] - 分区逻辑框架建模社会测量中的互补性，将非布尔事件结构应用于社会科学测量不兼容性问题 (arXiv: 2603.28818)
   - 分区逻辑：通过粘贴布尔代数获得非布尔事件结构
