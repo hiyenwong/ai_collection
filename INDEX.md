@@ -8,6 +8,36 @@
   - MNIST验证: 高分类准确率
   - **Activation**: optical neural networks, waveguide QED, coherent transient dynamics, neuromorphic computing, all-optical, photonic computing, quantum photonics, Rabi dynamics, bad cavity regime
 
+## 2026-06-08 - Dream/Sleep Neuroscience + AI Memory Research (Cron Job)
+
+### Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories
+- [[llm-sleep-memory-consolidation]] - LLM睡眠-记忆巩固机制，首次提出AI系统需要类似生物睡眠的记忆整理阶段，实现自我修改与灾难性遗忘缓解 (arXiv: 2606.03979)
+  - Sleep Phase Design: Wake/Sleep周期设计，记忆重放、权重整合、遗忘干扰消除
+  - Hippocampal Replay: 海马体尖波涟漪机制模拟，高权重记忆片段重放
+  - Self-Modification: 睡眠期间权重自我修改，Meta-weight adjustment + Consolidation gates
+  - Catastrophic Forgetting Mitigation: 双缓冲系统、选择性固化、遗忘率降低40-60%
+  - **Activation**: llm sleep, memory consolidation, self-modification, sleep paradigm, catastrophic forgetting, hippocampal replay, weight consolidation, wake-sleep cycle
+
+### AdMem: Advanced Memory for Task-solving Agents
+- [[admem-advanced-agent-memory]] - AdMem高级Agent记忆架构，结合陈述性记忆与程序性记忆的双系统，支持长期任务记忆与技能复用 (arXiv: 2606.06787)
+  - Procedural Memory: 程序性记忆核心创新，存储技能、流程、策略而非仅事实
+  - Skill Memory: 抧能存储系统，包含前置条件、执行步骤、成功概率、条件触发
+  - Workflow Memory: 流程记忆保存，任务序列、依赖关系、优化参数、学习模式
+  - Strategy Memory: 策略记忆分类，探索/优化/恢复/决策四种类型
+  - Cross-Reference Integration: 陈述性↔程序性记忆整合与迁移机制
+  - **Activation**: agent memory, procedural memory, skill storage, workflow memory, strategy memory, memory architecture, task-solving agents, memory consolidation
+
+### Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning
+- [[dreaming-world-action-models]] - 梦境推理与世界行动模型，按需梦境机制实现适应性多模态推理切换，创造性重组知识 (arXiv: 2606.07089)
+  - Dreaming-when-Necessary Trigger: 任务复杂度/新颖性/冲突驱动的梦境触发机制
+  - Five Dreaming Modes: Creative/Exploratory/Resolution/Planning/Cross-modal推理模式
+  - Creative Recombination: 跨域融合、类比映射、概念融合等重组规则
+  - Multi-Modal Adaptation: 动态模态选择，Visual/Textual/Cross-modal推理策略切换
+  - Strategy Simulation: 梦境预演多种行动方案，评估并选择最优策略
+  - **Activation**: dreaming reasoning, world action models, adaptive planning, creative dreaming, cross-modal reasoning, multimodal adaptation, strategy simulation, embodied intelligence
+
+---
+
 ## 2026-06-08 - Systems Engineering Research (Cron Job)
 
 ### Mixed Potential Approach to Convergence of Nonlinear RLC Circuits with Memristors
