@@ -1480,3 +1480,29 @@
   - Barren plateau mitigation strategies for QNN training
   - **Activation**: QNN survey, quantum neural network design, QNN architecture selection, quantum machine learning survey, 量子神经网络综述
 
+
+## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - Hourly)
+
+### CARVE-Q: Quantum-Proposed, Classically Certified Interactive Driving Repair
+- [[carve-q-quantum-driving-repair]] - Verifier-shielded quantum-AI search for certified autonomous driving repair using Grover minimum finding on repair lattice (arXiv: 2606.06531)
+  - Verifier-shielded architecture: Quantum proposes (O(√M) queries), Classical certifies (safety authority)
+  - Black-box repair lattice: Product lattice M = ∏|Aⱼ| for multi-owner repair scenarios
+  - Certificate structure: binding rule, joint repair, right-of-way envelope, cost split, ego fallback
+  - Validated 65,536 assignments: 100% right-of-way, 100% blame consistency, zero false positives
+  - **Activation**: carve-q, quantum-ai, verifier-shielded, autonomous-driving, quantum-minimum-finding, grover-search, certified-autonomy, repair-lattice
+
+### QPredSGG: Hybrid Quantum Predicate Learning for Long-Tailed Scene Graph Generation
+- [[qpredsgg-hybrid-quantum-predicate]] - Hybrid quantum predicate classifier replacing classical CFEN head, achieving 57.25% mR@100 with only 96 quantum parameters (arXiv: 2606.04689)
+  - 256× compression: 4096D features → 16D quantum-compatible representation
+  - 4-qubit outperforms 8-qubit: 57.25% vs 55.38% mR@100, parameter efficiency matters
+  - Amplitude Embedding + Strongly Entangling Layers for relational reasoning
+  - Long-tail improvement: +16pp over classical CFEN (41.1% → 57.25%)
+  - **Activation**: qpredsgg, quantum-predicate, scene-graph, long-tail, hybrid-quantum, q-head, amplitude-embedding, strongly-entangling, predicate-classification
+
+### Quantum enhanced rare event discovery and sampling
+- [[quantum-rare-event-sampling]] - Quantum algorithm for discovering and sampling rare events without prior knowledge, achieving optimal O(1/√ε) scaling (arXiv: 2606.06316)
+  - Blind rare event discovery: No need to pre-identify which events are rare
+  - Quadratic speedup: O(1/√ε) quantum vs O(1/ε) classical sampling complexity
+  - Heavy-tailed advantage: Polynomial speedup determined by entropy-rate structure
+  - **Activation**: rare event sampling, quantum rare events, heavy-tailed systems, anomaly detection quantum, tail distribution quantum, stochastic process rare events
+
