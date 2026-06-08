@@ -988,3 +988,20 @@
   - 70.3% accuracy without fine-tuning, 72.8% with fine-tuning (original 73.3%)
   - **Activation**: spiking vision transformer, structured pruning, neuromorphic efficiency, SViT
 
+## 2026-06-08 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Breakeven demonstration of quantum low-density parity-check codes
+- [[qldpc-breakeven-evaluation]] - Trapped-ion qLDPC breakeven with 4 logical qubits into 18 physical, OMG architecture for mid-circuit measurement without ion transport, 9x better than superconducting (arXiv: 2606.06455)
+  - Demonstrates nine QEC codes (qLDPC, topological, concatenated) on single trapped-ion device without hardware reconfiguration
+  - Achieves breakeven performance with logical error rates comparable to physical qubit lifetimes
+  - Novel OMG (optical-metastable-ground) architecture for addressable mid-circuit measurement and reset
+  - Eliminates need for ion transport or dedicated coolant ions, saving runtime and ion count
+  - **Activation**: qLDPC evaluation, breakeven demonstration, quantum error correction, trapped-ion qubits, OMG architecture, fault tolerance
+
+### Pretraining Recurrent Networks without Recurrence
+- [[supervised-memory-training]] - Supervised Memory Training (SMT) for time-parallel RNN pretraining without BPTT, O(1) gradient path (arXiv: 2606.06479)
+  - Decouples what to remember from how to update memory via one-step memory transition labels
+  - Transformer-based encoder trained on predictive state objective acquires memory labels
+  - Enables time-parallel RNN training with stable O(1) length gradient path without unrolling
+  - Outperforms BPTT on language modeling and pixel sequence modeling tasks
+  - **Activation**: RNN training, supervised memory, parallel training, predictive state, memory transition, BPTT replacement
