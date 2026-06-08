@@ -1,266 +1,183 @@
 ---
-skill_id: fixed-point-compositionality-low-rank-gluing
-name: Fixed Point Compositionality via Low-Rank Gluing
-description: 组合性计算的理论框架 - 在抑制主导的阈值线性网络中使用低秩连接规则实现固定点的组合性，揭示大脑如何高效分解复杂任务为可复用的基本单元。
+name: fixed-point-compositionality-low-rank-gluing
+description: Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks — mathematical framework for compositional dynamics
 version: 1.0.0
-author: Juliana Londono Alvarez
-arxiv_id: 2606.07336v1
-categories:
-  - neuroscience
-  - computational neuroscience
-  - neural dynamics
-  - theoretical neuroscience
-tags:
-  - compositionality
-  - low-rank networks
-  - fixed points
-  - threshold-linear networks
-  - inhibition-dominated circuits
-  - network modularity
-  - neural assemblies
+category: neuroscience
 activation_keywords:
   - compositionality
-  - 组合性
-  - 低秩连接
   - fixed point
-  - 固定点
-  - threshold-linear
-  - threshold linear
-  - 抑制主导
+  - low-rank gluing
+  - threshold-linear network
+  - TLN
   - inhibition-dominated
-  - neural modules
-  - 神经模块
-  - task decomposition
-  - 任务分解
-created_date: 2026-06-08
-last_updated: 2026-06-08
+  - neural network modularity
+  - attractor dynamics
+  - compositional dynamics
+  - gCTLN
+  - combinatorial threshold-linear network
+tags:
+  - computational neuroscience
+  - neural dynamics
+  - network modularity
+  - fixed points
+  - attractors
+  - compositional computation
+  - threshold-linear networks
+  - mathematical framework
+authors:
+  - Juliana Londono Alvarez
+arxiv_id: 2606.07336
+date_added: 2026-06-08
+source: arXiv q-bio.NC
 ---
 
-# Fixed Point Compositionality via Low-Rank Gluing
+# Fixed Point Compositionality via Low-Rank Gluing Rules
 
-## 核心概念
+## Core Concept
 
-大脑在相对稳定结构和有限资源下生成高度灵活和复杂行为，其关键机制是**组合性（compositionality）**——将复杂任务分解为更简单、可复用的基本单元的能力。
+组合性计算框架 - 揭示结构模块化如何支持功能组合性。通过低秩粘合规则,证明抑制主导阈值线性网络(TLN)的全局固定点可分解为局部模块固定点的组合。
 
-## 理论框架
+**核心贡献**:
+- **低秩粘合(Low-Rank Gluings)**: 新型模块化网络组装方法,组件子网络通过特定低秩耦合连接
+- **固定点分解定理**: 全局固定点约束为局部固定点的组合
+- **Rank-1粘合完整刻画**: 完全确定哪些局部固定点组合产生全局固定点
+- **gCTLN扩展**: 将固定点分解规则从CTLN扩展到广义CTLN
 
-### 1. 低秩连接规则（Low-Rank Gluing Rules）
+## Mathematical Framework
 
-**核心思想**：通过低秩权重矩阵连接不同的神经模块，使得固定点（fixed points）可以组合。
-
-**关键特性**：
-- **参数效率**：低秩连接显著减少参数数量
-- **组合能力**：允许固定点的线性组合形成新的稳定状态
-- **可复用性**：基本单元可以在不同任务中重复使用
-
-### 2. 抑制主导的阈值线性网络
-
-**网络动力学**：
+### Threshold-Linear Networks (TLN)
+抑制主导网络动力学:
 ```
-dx/dt = -x + σ(Wx + b)
+dx_i/dt = -x_i + [∑_j W_ij * σ(x_j - T_j) + b_i]_+
 ```
 
-其中：
-- `x`：神经元活动向量
-- `W`：低秩权重矩阵
-- `σ`：阈值线性函数（ReLU-like）
-- 抑制主导确保稳定性
+### Low-Rank Gluing Assembly
+模块连接规则:
+- **组件模块**: 任意内部连接子网络
+- **低秩耦合**: 通过特定低秩矩阵连接模块
+- **组合性约束**: 全局固定点必须是局部固定点的组合
 
-**固定点条件**：
-```
-x* = σ(Wx* + b)
-```
+### Fixed Point Decomposition
+关键定理:
+1. **约束定理**: 全局固定点受限于局部固定点组合
+2. **Rank-1粘合**: 完全刻画组合性条件
+3. **组合性极限环**: 不仅固定点,极限环也具有组合性
 
-### 3. 组合性原理
+## Key Insights
 
-**数学表述**：
-给定两个固定点 `x₁*` 和 `x₂*`，其组合：
-```
-x_combined* = αx₁* + βx₂*
-```
+### Compositionality Mechanism
+大脑组合性机制的数学基础:
+- **结构模块化** → **功能组合性**
+- **简单基元** → **复杂行为**
+- **可预测吸引子** → **组合性大容量**
 
-在特定条件下仍为稳定固定点，这依赖于：
-1. 低秩连接结构
-2. 抑制主导的平衡
-3. 阈值函数的非线性特性
+### Engineering Compositional Dynamics
+构建组合性网络的配方:
+1. 定义局部模块及其固定点
+2. 使用低秩粘合规则连接
+3. 预测全局固定点为局部组合
+4. 扩展到组合性极限环
 
-## 实现指南
+## Applications
 
-### 网络架构设计
+### Computational Neuroscience
+- **大脑模块化**: 解释结构-功能关系
+- **组合性行为**: 灵活复杂行为的数学基础
+- **资源高效**: 有限结构实现大容量行为库
 
+### Neural Network Design
+- **可预测吸引子**: 组合性大容量吸引子库
+- **模块化架构**: 可工程化的组合性网络
+- **动力学工程**: 构建特定动力学模式
+
+### Extensions
+- **gCTLN**: 广义组合性阈值线性网络
+- **极限环**: 组合性周期动力学
+- **复杂网络**: 从简单基元构建复杂动力学
+
+## Technical Details
+
+### Fixed Point Computation
+组合性固定点计算:
+1. 计算每个模块的局部固定点
+2. 确定粘合规则约束的组合集合
+3. 验证全局固定点存在性
+4. 扩展到动力学轨迹
+
+### Network Assembly
+网络构建步骤:
 ```python
-import numpy as np
+# 定义局部模块
+module_A = define_module(connectivity_A)
+module_B = define_module(connectivity_B)
 
-class CompositionalityNetwork:
-    """
-    实现低秩组合性阈值线性网络
-    """
-    def __init__(self, n_neurons, rank, threshold=0.0):
-        self.n = n_neurons
-        self.r = rank
-        self.threshold = threshold
-        
-        # 低秩权重分解：W = U @ V.T
-        self.U = np.random.randn(n_neurons, rank) * 0.1
-        self.V = np.random.randn(n_neurons, rank) * 0.1
-        
-        # 抑制主导：确保连接矩阵具有足够的抑制
-        self.W = self.U @ self.V.T
-        
-        # 调整抑制权重使其主导
-        self.adjust_inhibition_dominance()
-        
-    def adjust_inhibition_dominance(self, inhibition_ratio=0.7):
-        """
-        调整权重矩阵使抑制连接主导
-        """
-        # 随机选择抑制神经元
-        inhibition_mask = np.random.rand(self.n) < inhibition_ratio
-        self.V[inhibition_mask] *= -1.5  # 增强抑制
-        
-    def threshold_linear(self, x):
-        """阈值线性激活函数"""
-        return np.maximum(x - self.threshold, 0)
-    
-    def compute_fixed_point(self, b, max_iter=1000, tol=1e-6):
-        """
-        计算给定偏置下的固定点
-        """
-        x = np.zeros(self.n)
-        for i in range(max_iter):
-            x_new = self.threshold_linear(self.W @ x + b)
-            if np.linalg.norm(x_new - x) < tol:
-                return x_new
-            x = x_new
-        return x
-    
-    def compose_fixed_points(self, x1, x2, alpha=0.5, beta=0.5):
-        """
-        组合两个固定点
-        """
-        x_combined = alpha * x1 + beta * x2
-        
-        # 检验是否为固定点
-        residual = np.linalg.norm(
-            x_combined - self.threshold_linear(self.W @ x_combined + np.zeros(self.n))
-        )
-        
-        return x_combined, residual < 1e-4
+# 低秩粘合
+gluing_matrix = construct_low_rank_coupling(rank=1)
+
+# 组合网络
+network = assemble_modules([module_A, module_B], gluing_matrix)
+
+# 预测固定点
+global_fps = compose_fixed_points(module_A.fps, module_B.fps, gluing_matrix)
 ```
 
-### 组合性验证方法
+## Critical Analysis
 
-```python
-def verify_compositionality(network, b1, b2):
-    """
-    验证固定点的组合性
-    """
-    # 计算两个独立固定点
-    fp1 = network.compute_fixed_point(b1)
-    fp2 = network.compute_fixed_point(b2)
-    
-    # 组合
-    fp_combined, is_stable = network.compose_fixed_points(fp1, fp2)
-    
-    print(f"Fixed Point 1: {np.linalg.norm(fp1):.4f}")
-    print(f"Fixed Point 2: {np.linalg.norm(fp2):.4f}")
-    print(f"Combined Fixed Point: {np.linalg.norm(fp_combined):.4f}")
-    print(f"Stability: {is_stable}")
-    
-    return fp1, fp2, fp_combined, is_stable
-```
+### Strengths
+- **严谨数学**: 完整的理论证明
+- **工程化方法**: 可预测的网络构建
+- **组合性扩展**: 从固定点到极限环
+- **生物学启示**: 解释大脑组合性机制
 
-## 神经科学启示
+### Limitations
+- **抑制主导约束**: 限于特定网络类型
+- **低秩假设**: 可能限制耦合灵活性
+- **固定点聚焦**: 相变和动力学轨迹需进一步研究
 
-### 1. 认知灵活性
+### Future Directions
+- **时变模块**: 动态组合性
+- **学习规则**: 如何学习粘合规则
+- **生物学验证**: 在真实神经网络中验证
+- **认知任务**: 应用到具体认知行为建模
 
-组合性解释了大脑如何：
-- **任务分解**：将复杂认知任务分解为子任务
-- **技能迁移**：在不同情境复用已学习的基本单元
-- **快速适应**：组合现有模块应对新任务
+## Research Questions
 
-### 2. 网络模块化
+1. **学习机制**: 如何通过学习获得低秩粘合规则?
+2. **动力学扩展**: 组合性如何扩展到非固定点动力学?
+3. **生物学对应**: 大脑中的低秩粘合是什么?
+4. **容量极限**: 组合性容量与网络规模关系?
+5. **噪声鲁棒性**: 组合性对噪声的敏感性?
 
-**结构对应**：
-- **功能模块**：皮层区域的功能专门化
-- **低秩连接**：白质纤维束的稀疏连接模式
-- **抑制主导**：抑制性中间神经元的作用
+## Implementation Notes
 
-### 3. 记忆与学习
+### When to Use
+- 构建组合性神经网络
+- 设计可预测吸引子动力学
+- 解释模块化功能组合性
+- 理解大脑组合性机制
 
-**固定点作为记忆**：
-- 稳定的神经活动模式对应记忆痕迹
-- 组合性允许记忆的联想和重组
-- 低秩连接减少存储成本
+### Key Parameters
+- **低秩rank**: 粘合矩阵秩数(通常1)
+- **模块数量**: 组合容量基元数
+- **抑制强度**: 抑制主导程度
+- **阈值参数**: TLN阈值设置
 
-## 应用场景
+### Expected Results
+- 可预测的固定点组合
+- 组合性大容量吸引子库
+- 灵活的动力学模式生成
+- 简单基元的复杂组合
 
-### 1. 认知任务建模
+## Related Work
 
-```python
-# 任务：序列决策分解为基本步骤
-task_modules = {
-    'planning': compute_fixed_point(b_planning),
-    'execution': compute_fixed_point(b_execution),
-    'monitoring': compute_fixed_point(b_monitoring)
-}
+- **CTLN**: 组合性阈值线性网络基础
+- **吸引子网络**: 固定点和极限环理论
+- **网络模块化**: 结构-功能关系研究
+- **组合性认知**: 认知科学组合性理论
 
-# 组合执行
-combined_state = compose_fixed_points(
-    task_modules['planning'],
-    task_modules['execution']
-)
-```
+## Reference
 
-### 2. 神经康复训练
-
-- 通过训练基本运动单元并组合成复杂动作
-- 利用组合性加速康复进程
-
-### 3. AI 系统设计
-
-- 设计模块化神经网络架构
-- 实现任务分解和技能复用
-
-## 关键洞察
-
-### 理论贡献
-
-1. **组合性的数学基础**：首次给出固定点组合性的严格数学证明
-2. **抑制的作用**：揭示抑制主导对组合性的必要性
-3. **低秩结构的功能意义**：低秩不仅是参数效率，更是组合性的结构基础
-
-### 实验启示
-
-1. **神经记录分析**：寻找组合性固定点的神经证据
-2. **解剖学研究**：验证低秩连接的解剖结构
-3. **行为实验**：测试组合性在认知任务中的作用
-
-## 与其他理论的联系
-
-### 关联理论
-
-1. **Hopfield 网络**：固定点作为记忆状态
-2. **Attractor 网络**：稳定状态的动力学
-3. **Neural assembly 理论**：神经元群体的协同活动
-4. **Predictive coding**：误差最小化的固定点
-
-### 延伸方向
-
-- 与强化学习的结合：固定点作为策略基元
-- 与贝叶斯推理的结合：组合性后验分布
-- 与语言处理的结合：组合性语义表征
-
-## 总结
-
-低秩连接规则在抑制主导的阈值线性网络中实现了固定点的组合性，为理解大脑的组合性计算提供了理论基础。这一框架揭示了：
-- 网络结构如何支持认知灵活性
-- 低秩和抑制不仅是优化，而是功能需求
-- 组合性是大脑高效计算的核心机制
-
-## 参考文献
-
-- Original Paper: arXiv:2606.07336v1 (2026)
-- Related: Hopfield networks (1982)
-- Related: Attractor dynamics in neural networks
-- Related: Low-rank neural networks (recent advances)
+- arXiv:2606.07336 - "Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks"
+- Author: Juliana Londono Alvarez
+- Submitted: 2026-06-05
+- Category: q-bio.NC (Neurons and Cognition)

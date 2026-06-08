@@ -1,3 +1,19 @@
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
+- [[fixed-point-compositionality-low-rank-gluing]] - 组合性计算框架：低秩粘合规则实现抑制主导阈值线性网络的固定点组合分解 (arXiv: 2606.07336)
+  - 低秩粘合(Low-Rank Gluings)：新型模块化网络组装，全局固定点为局部固定点组合
+  - Rank-1粘合完整刻画：确定哪些局部固定点组合产生全局固定点
+  - gCTLN扩展：组合性阈值线性网络固定点分解规则推广
+  - **Activation**: compositionality, fixed point, low-rank gluing, threshold-linear network, TLN, inhibition-dominated, neural modularity, attractor dynamics, compositional dynamics
+
+### The Identity Trap in EEG Foundation Models: A Diagnostic Audit
+- [[identity-trap-eeg-foundation-models]] - FMScope诊断框架：五种方法检测EEG基础模型的主体身份shortcut学习问题 (arXiv: 2606.06647)
+  - 身份陷阱普遍性：12/12实验中主体方差为随机空模型13-89倍，微调后增加+10到+63 pp
+  - 可移除线性轴：主体轴消除改善标签解码(+6到+12 pp)，周期1/f是主体载体之一
+  - FMScope五诊断：方差分解+主体轴消除+周期1/f消融+层级标签探针+主体内方向一致性
+  - **Activation**: EEG foundation model, identity trap, shortcut learning, FMScope, subject identity, clinical biomarker, variance decomposition, aperiodic 1/f
+
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job) — Hourly Update
 
 ### Higher-order Symmetric Quantum Mpemba Effect in Fragmented Systems
