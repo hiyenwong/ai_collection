@@ -1,3 +1,19 @@
+## 2026-06-08 - Neuroscience + Quantum (Cron Job) — Hourly Update
+
+### Higher-order Symmetric Quantum Mpemba Effect in Fragmented Systems
+- [[quantum-mpemba-symmetry-restoration]] - 量子姆潘巴效应：量子系统对强初始对称破缺的恢复比弱破缺更快，即使在希尔伯特空间碎片化下仍成立 (arXiv: 2606.06653)
+  - 冷冻片段+活性片段分解：碎片化将姆潘巴效应重塑为"冻结记忆"+"活性片段弛豫"
+  - 副本张量网络：电荷+偶极守恒门实现L=128系统的Rényi-2纠缠不对称度计算
+  - 双时间尺度：电荷不对称度与偶极不对称度在参数不同时间尺度上显示姆潘巴交叉
+  - **Activation**: quantum mpemba effect, symmetry restoration, hilbert space fragmentation, krylov sectors, entanglement asymmetry, replica tensor network, quantum memory dynamics, non-equilibrium quantum
+
+### Exact Noise Characterization of Entanglement Distribution in Star Networks
+- [[entanglement-distribution-star-networks]] - 星型网络纠缠分配的精确噪声表征：推导GHZ态在存储退相干下的平均噪声及全分布解析表达式 (arXiv: 2606.07043)
+  - 工厂vs分片协议：集中式构建vs增量式构建的退相干权衡
+  - 全局截止优化：无需蒙特卡洛模拟即可解析优化最优等待截止时间
+  - 去极化噪声扩展：从纯退相位推广到任意态的通用噪声模型
+  - **Activation**: entanglement distribution, star network, GHZ state distribution, quantum memory dephasing, factory protocol, piecemaker protocol, quantum noise characterization, multipartite entanglement
+
 ## 2026-06-08 - Neuroscience + Quantum (Cron Job)
 
 ### De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry
