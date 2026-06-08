@@ -1,3 +1,12 @@
+## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - Hourly Session 3)
+
+### A superconducting surface-code processor with lattice-surgery logical operations
+- [[surface-code-lattice-surgery]] - Experimental lattice-surgery between distance-3 surface-code logical qubits: Bell state prep, Deutsch-Jozsa, magic-state injection with 0.943 logical gate fidelity (arXiv: 2606.06598)
+  - Logical Bell state via joint initialization + lattice splitting (deterministic)
+  - Magic-state injection enables continuous non-Clifford RX(π/4) rotations at logical level
+  - Per-cycle error rates: 0.0365 and 0.0282 after leakage rejection
+  - **Activation**: lattice surgery, surface code logical operations, fault-tolerant logical gates, magic-state injection, logical Bell state, non-Clifford logical rotations, distance-three surface code
+
 ## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - Hourly Session 2)
 
 ### Quantum enhanced rare event discovery and sampling
