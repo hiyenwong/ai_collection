@@ -1,59 +1,50 @@
 ---
 name: qldpc-breakeven-evaluation
-category: quantum
-description: "Evaluation framework for quantum LDPC codes demonstrating breakeven performance across code families on trapped-ion hardware."
-activation: qLDPC evaluation, breakeven demonstration, quantum error correction, trapped-ion qubits, OMG architecture, fault tolerance
+category: quantum-computing
+description: Framework for evaluating quantum LDPC codes at breakeven point from arXiv:2606.06455. qLDPC codes achieve higher encoding rates than surface codes with demonstrated breakeven on real hardware.
+source: "arXiv:2606.06455"
+source_title: "Breakeven demonstration of quantum low-density parity-check codes"
+source_author: "Unknown"
+keywords:
+  - quantum error correction
+  - qLDPC codes
+  - fault tolerance
+  - breakeven
+  - surface code
 ---
 
-# qldpc-breakeven-evaluation
+# qLDPC Code Breakeven Evaluation
 
-## Description
-Evaluation framework for quantum LDPC codes demonstrating breakeven performance across code families on trapped-ion hardware. Based on arXiv: 2606.06455.
+## Overview
 
-## Activation Keywords
-- qLDPC evaluation
-- breakeven demonstration
-- quantum error correction
-- trapped-ion qubits
-- OMG architecture
-- fault tolerance
+Quantum low-density parity-check (qLDPC) codes represent a leading candidate for fault-tolerant quantum computing, featuring higher encoding rates than planar surface codes.
 
-## Source Paper
-- **arXiv**: 2606.06455
-- **Title**: Breakeven demonstration of quantum low-density parity-check codes
-- **Published**: 2026-06-04
+**Trigger**: When evaluating quantum error correction codes, designing fault-tolerant architectures, or comparing qLDPC vs surface code approaches.
 
-## Core Methodology
+**arXiv**: 2606.06455
 
-### Key Concepts
-High-rate quantum low-density parity-check (qLDPC) codes are a leading candidate for fault-tolerant quantum computing. They feature higher encoding rates than planar alternatives such as the surface code, but their implementation often entails significant hardware hurdles like the need for long-range couplers. Demonstrated nine quantum error-correcting codes with starkly different qubit connectivity requirements on a single trapped-ion device without hardware reconfiguration. Achieved breakeven 
+## Key Insights
 
-### Mathematical Framework
-- **Core Innovation**: High-rate quantum low-density parity-check (qLDPC) codes are a leading candidate for fault-tolerant quantum computing.
-- **Key Result**: Derived from the abstract analysis of the paper's contribution.
+- qLDPC codes achieve higher encoding rates than surface codes
+- Breakeven demonstration validates practical viability
+- Spacetime lifting framework enables low-overhead fault tolerance
+- Coherent vs stochastic noise requires different handling strategies
 
-## Usage Patterns
+## Evaluation Framework
 
-### Pattern 1: Qldpc Breakeven Evaluation
-Apply this methodology when analyzing or implementing the described approach.
+1. Measure physical error rates on target hardware
+2. Compute logical error rate for candidate qLDPC code
+3. Compare against surface code baseline at same overhead
+4. Verify breakeven: logical error < physical error
 
-### Pattern 2: Evaluation and Comparison
-Compare against baseline approaches to validate improvements.
+## Pitfalls
 
-## Instructions for Agents
+- Coherent noise behaves differently from stochastic noise under QEC
+- Hardware-specific error channels may favor different code families
+- Overhead comparison must account for both qubit count and circuit depth
 
-### Step 1: Understand the Core Innovation
-Read the paper abstract and identify the key methodological contribution.
+## Verification Steps
 
-### Step 2: Identify Applicable Domains
-Determine if the methodology applies to the current problem domain.
-
-### Step 3: Apply or Evaluate
-Either apply the methodology directly or use it as a comparison baseline.
-
-## Error Handling
-- If the methodology requires specific hardware (e.g., trapped-ion qubits), note limitations.
-- If the approach is theoretical only, mark as such.
-
-## Resources
-- arXiv: https://arxiv.org/abs/2606.06455
+1. Confirm logical error rate measurement methodology
+2. Validate against independent simulation results
+3. Check hardware error model matches experimental conditions

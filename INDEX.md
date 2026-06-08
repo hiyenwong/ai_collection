@@ -1382,3 +1382,27 @@
   - Core要点 2: Twist-angle disorder induces electronic hysteresis; quantum geometric properties (Berry curvature, quantum metric) drive synaptic behavior
   - Core要点 3: Second-order nonlinear transport and nonlinear Hall effect emerge from inversion symmetry breaking at moiré length scale
   - **Activation**: moiré superlattice, synaptic plasticity, graphene neuromorphic, quantum geometry, tDBLG, nonlinear Hall
+
+## 2026-06-09 - Computer Science + Quantum Computing (Cron Job)
+
+### Feature Encoding in Quantum Machine Learning: A Survey and Practical Guidelines
+- [[quantum-encoding-selection]] - Three-axis taxonomy (cost-expressivity-robustness) and five-regime decision framework for QML encoding selection on NISQ devices (arXiv: 2606.05387)
+  - Three-axis taxonomy: cost, expressivity, robustness for all encoding families
+  - Critical threshold: gate-error rate p* ~ 10⁻³ below which amplitude encoding is viable
+  - Five-regime decision framework maps (D, n, p, τ) to optimal encoding
+  - Unified trainability analysis: barren plateaus, kernel concentration, Fourier gaps
+  - **Activation**: quantum machine learning, data encoding, NISQ, amplitude encoding, angle encoding, barren plateaus, quantum kernels, encoding selection, QML trainability
+
+### Quantum State Preparation via Neural Network Encoding
+- [[quantum-state-preparation-nn]] - Neural network maps input data to quantum circuit parameters, achieving 0.992 fidelity with 5000x runtime reduction (arXiv: 2605.31006)
+  - Offline training replaces per-instance variational optimization
+  - Single inference step encodes new data points
+  - Validated on MNIST/Fashion-MNIST with high generalization
+  - **Activation**: quantum state preparation, neural network encoding, quantum machine learning, amplitude encoding, variational circuits, data loading
+
+### Breakeven Demonstration of Quantum LDPC Codes
+- [[qldpc-breakeven-evaluation]] - qLDPC codes achieve higher encoding rates than surface codes with demonstrated breakeven (arXiv: 2606.06455)
+  - Higher encoding rates than planar surface codes
+  - Breakeven demonstration validates practical viability
+  - Spacetime lifting enables low-overhead fault tolerance
+  - **Activation**: quantum error correction, qLDPC codes, fault tolerance, breakeven, surface code, spacetime lifting
