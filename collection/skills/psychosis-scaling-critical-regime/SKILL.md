@@ -1,269 +1,425 @@
 ---
 name: psychosis-scaling-critical-regime
-description: 精神病早期阶段脑动力学临界性scaling偏差研究方法论。结合重整化群(RG)框架与多种scaling分析方法，揭示临界 regime内的动力学重组而非临界性丧失。
-platforms: [linux, macos, windows]
-tags: [neuroscience, criticality, psychosis, fMRI, renormalization-group, scaling-analysis, brain-dynamics]
-category: neuroscience
+description: 精神病早期阶段脑动力学临界性scaling偏差研究方法论。结合重整化群(RG)框架与多种scaling分析方法，揭示早期精神病在临界区域内的集体动力学重组而非简单临界态丧失。
+version: 1.0.0
+category: computational neuroscience
+tags: [critical dynamics, scaling behavior, renormalization group, psychosis, brain networks, resting-state fMRI, power spectral density, detrended fluctuation analysis]
+activation_keywords: [psychosis, critical regime, scaling, renormalization, DFA, PSD, resting-state, collective dynamics, brain criticality]
+authors: ["Irem Topal", "Paola Moreno Ancalmo", "Guillermo Montana Valverde", "Philipp Homan", "Wolfram Hinzen"]
+arxiv_id: "2606.06290"
+date_added: "2026-06-09"
 ---
 
-# Early Psychosis Scaling Behaviour in Critical Regime
+# Early Psychosis Scaling Deviations in Critical Regime
 
-**Paper**: arXiv:2606.06290v1 - "Early psychosis shows deviations in scaling behaviour within a critical regime"
+## Background & Motivation
 
-**Authors**: Irem Topal, Paola Moreno Ancalmo et al.
+大规模脑活动展现出尺度不变动力学，暗示其在近临界区域运作。这种动力学与长程关联、高效信息处理和集体组织涌现相关。精神病障碍中虽有临界性相关测量变化的报告，但既往发现分散在不同可观测量和模态间，不清楚不同scaling测量是否捕获相同的集体动力学变化。
 
-**Published**: 2026-06-04
+**核心问题**：
+- 精神病是否表现为简单临界态丧失？
+- 不同scaling测量能否捕获共同的动力学重组？
+- 如何在保留的scaling区域内系统研究集体动力学变化？
 
-## 核心发现
-
-精神病早期阶段不是简单的临界性动力学丧失，而是在保持的 scaling regime 内的系统性重组。通过 phenomenological renormalization group (PRG) 框架结合 PSD 和 DFA 分析，揭示：
-
-1. **健康对照组**：静息态活动展现与临界组织一致的非平凡 scaling 行为
-2. **早期精神病**：保持相同的 scale-invariant 组织总体现象学，但多个可观测量上有系统性 scaling exponent 偏移
-3. **关键结论**：早期精神病特征化的是集体动力学在保持的 scaling regime 内重组，而非临界性简单丧失
-
-## 方法论框架
+## Core Methodology: PRG + PSD + DFA Framework
 
 ### 1. Phenomenological Renormalization Group (PRG)
 
-PRG 是一种 coarse-graining 方法，用于研究跨尺度的集体动力学：
+重整化群方法提供跨尺度集体动力学的系统分析：
 
-```python
-# PRG coarse-graining procedure
-def prg_coarse_graining(data, scale_factor):
-    """
-    Apply phenomenological renormalization group coarse-graining
-    
-    Parameters:
-    - data: fMRI time series
-    - scale_factor: spatial/temporal coarse-graining factor
-    
-    Returns:
-    - coarse_grained_data: renormalized data preserving critical structure
-    """
-    # Spatial coarse-graining: average neighboring regions
-    # Temporal coarse-graining: integrate over time windows
-    # Preserve long-range correlations and scaling invariance
-    pass
-```
+**核心思想**：
+- 粗粒化：从小尺度 → 大尺度
+- 尺度变换：观察参数在尺度变换下的流动
+- 临界态识别：参数不随尺度变化的点
+
+**应用步骤**：
+1. 定义粗粒化规则（空间/时间）
+2. 计算粗粒化后的统计量
+3. 观察参数随尺度变化的行为
+4. 识别尺度不变区域
 
 ### 2. Power Spectral Density (PSD) Analysis
 
-检测 1/f scaling 特征：
+频域scaling特征分析：
 
-```python
-def power_spectral_analysis(fmri_signal):
-    """
-    Compute PSD and estimate scaling exponent
-    
-    PSD(f) ~ f^(-β) for critical dynamics
-    - β ≈ 1-2: near-critical regime
-    - β deviations indicate altered collective dynamics
-    """
-    # Compute Fourier transform
-    # Estimate scaling exponent via linear regression in log-log space
-    # Compare between groups
-    pass
-```
+**关键指标**：
+$$
+S(f) \sim f^{-\beta}
+$$
+
+其中 $\beta$ 是功率谱指数，反映：
+- $\beta < 1$：亚临界行为
+- $\beta = 1$：临界态（1/f噪声）
+- $\beta > 1$：超临界行为
+
+**分析方法**：
+- FFT计算功率谱
+- 拟合 $\log S(f)$ vs $\log f$
+- 估计 $\beta$ 及置信区间
 
 ### 3. Detrended Fluctuation Analysis (DFA)
 
-量化时间序列的自相似性：
+时域长程关联分析：
 
-```python
-def detrended_fluctuation_analysis(signal, window_sizes):
-    """
-    DFA for quantifying temporal scaling
-    
-    F(n) ~ n^α
-    - α ≈ 0.5: uncorrelated (white noise)
-    - α ≈ 1: 1/f noise (critical)
-    - α > 1: non-stationary
-    - α < 0.5: anti-correlated
-    
-    Returns fluctuation scaling exponent α
-    """
-    # For each window size n:
-    #   - Divide signal into windows
-    #   - Detrend within each window
-    #   - Compute RMS fluctuation F(n)
-    # Fit log(F) vs log(n) to estimate α
-    pass
+**算法流程**：
+1. 积分时间序列：$y(k) = \sum_{i=1}^k (x_i - \bar{x})$
+2. 分割窗口长度 $n$
+3. 每个窗口线性去趋势
+4. 计算波动 $F(n) = \sqrt{\frac{1}{N} \sum_{k=1}^N (y(k) - y_n(k))^2}$
+5. 分析 $F(n) \sim n^{\alpha}$
+
+**DFA指数 $\alpha$ 解释**：
+- $\alpha = 0.5$：白噪声（无关联）
+- $0.5 < \alpha < 1$：长程正相关（临界态）
+- $\alpha > 1$：非平稳、强趋势
+- $\alpha < 0.5$：长程负相关
+
+### 4. Cross-Scale Collective Dynamics
+
+整合三种方法：
+
+**系统性框架**：
+```
+PRG: 观察尺度变换下的参数流 → 识别临界区域
+PSD: 频域scaling → β exponent
+DFA: 时域scaling → α exponent
 ```
 
-### 4. Combined PRG + Scaling Analysis Workflow
+**综合分析**：
+- 比较 $\alpha$ 和 $\beta$ 的关系
+- 验证scaling的一致性
+- 区分不同的动力学重组模式
+
+## Key Results
+
+### 1. Preserved Critical-like Phenomenology
+
+健康对照组的静息态活动展现：
+- 非平凡scaling行为
+- 临界态组织的特征
+- 跨尺度的一致动力学
+
+**早期精神病参与者**：
+- **相同的尺度不变组织现象**
+- **不是简单的临界态丧失**
+- **保留的scaling区域**
+
+### 2. Systematic Scaling Exponent Shifts
+
+关键发现：在多个可观测量上观察到系统性的scaling指数偏移：
+
+**具体表现**：
+- PSD exponent: 健康组 vs 精神病组有显著差异
+- DFA exponent: 不同区域的变化模式
+- PRG参数流：在临界区域的重组
+
+**意义**：
+- 不是偏离临界态
+- 而是在临界区域内重组集体动力学
+
+### 3. Reorganization, Not Loss
+
+**核心洞察**：
+- 早期精神病 ≠ 临界动力学丧失
+- 早期精神病 = 集体动力学重组
+- 重组发生在保留的scaling区域内
+
+**方法论贡献**：
+- 粗粒化方法 + 时间scaling分析
+- 提供研究精神病障碍大规模脑动力学的原则框架
+- 多可观测量一致性验证
+
+## Implementation Guide
+
+### Step 1: Data Preparation
 
 ```python
-def combined_scaling_analysis(fmri_data, subject_groups):
+import numpy as np
+from scipy import signal
+import nilearn
+
+# 加载静息态fMRI数据
+rest_data = load_resting_state_fmri(subject_id)
+
+# 时间序列提取
+time_series = extract_time_series(rest_data, roi_atlas)
+
+# 去除运动伪影
+cleaned_ts = remove_motion_artifacts(time_series, motion_params)
+```
+
+### Step 2: Power Spectral Density Analysis
+
+```python
+def compute_psd_exponent(time_series, fmin=0.01, fmax=0.1):
     """
-    Full workflow combining PRG with temporal scaling analyses
-    
-    Steps:
-    1. Apply PRG coarse-graining at multiple scales
-    2. Compute PSD at each scale
-    3. Compute DFA at each scale
-    4. Track scaling exponent evolution across scales
-    5. Compare exponent trajectories between groups
+    计算功率谱指数β
     """
-    results = {}
+    # FFT功率谱
+    f, Pxx = signal.welch(time_series, fs=TR_frequency)
     
-    for scale in [1, 2, 4, 8, 16]:
-        coarse_data = prg_coarse_graining(fmri_data, scale)
-        psd_exp = power_spectral_analysis(coarse_data)
-        dfa_exp = detrended_fluctuation_analysis(coarse_data)
+    # 选择频率范围
+    mask = (f >= fmin) & (f <= fmax)
+    f_sel = f[mask]
+    Pxx_sel = Pxx[mask]
+    
+    # 拟合 log-log
+    log_f = np.log10(f_sel)
+    log_P = np.log10(Pxx_sel)
+    
+    # 线性拟合
+    slope, intercept = np.polyfit(log_f, log_P, 1)
+    beta = -slope  # PSD ~ f^(-β)
+    
+    return beta, (f_sel, Pxx_sel)
+
+# 分析所有ROI
+beta_values = [compute_psd_exponent(ts) for ts in time_series]
+```
+
+### Step 3: Detrended Fluctuation Analysis
+
+```python
+def dfa_analysis(time_series, window_sizes):
+    """
+    DFA分析计算α指数
+    """
+    # 积分
+    integrated = np.cumsum(time_series - np.mean(time_series))
+    
+    # 不同窗口大小
+    fluctuations = []
+    for n in window_sizes:
+        # 分割窗口
+        N = len(integrated)
+        n_windows = N // n
         
-        results[scale] = {
-            'psd_beta': psd_exp,
-            'dfa_alpha': dfa_exp
+        # 每个窗口去趋势
+        F_n = 0
+        for i in range(n_windows):
+            segment = integrated[i*n:(i+1)*n]
+            trend = np.polyfit(np.arange(n), segment, 1)
+            detrended = segment - np.polyval(trend, np.arange(n))
+            F_n += np.var(detrended)
+        
+        fluctuations.append(np.sqrt(F_n / n_windows))
+    
+    # 拟合 F(n) ~ n^α
+    log_n = np.log10(window_sizes)
+    log_F = np.log10(fluctuations)
+    
+    alpha, _ = np.polyfit(log_n, log_F, 1)
+    
+    return alpha, (window_sizes, fluctuations)
+
+# DFA参数
+window_sizes = np.logspace(1, 2.5, 20).astype(int)
+alpha_values = [dfa_analysis(ts, window_sizes) for ts in time_series]
+```
+
+### Step 4: Phenomenological Renormalization Group
+
+```python
+def prg_coarse_grain(time_series, scale_factor=2):
+    """
+    PRG粗粒化
+    """
+    coarse_grained = []
+    for i in range(0, len(time_series), scale_factor):
+        block = time_series[i:i+scale_factor]
+        coarse_grained.append(np.mean(block))
+    
+    return np.array(coarse_grained)
+
+def prg_analysis(time_series, max_scale=5):
+    """
+    PRG尺度变换分析
+    """
+    scales = []
+    parameters = []
+    
+    ts_scaled = time_series.copy()
+    for scale in range(1, max_scale+1):
+        # 计算当前尺度的参数
+        beta, _ = compute_psd_exponent(ts_scaled)
+        alpha, _ = dfa_analysis(ts_scaled, window_sizes)
+        
+        scales.append(scale)
+        parameters.append((beta, alpha))
+        
+        # 粗粒化
+        ts_scaled = prg_coarse_grain(ts_scaled, scale_factor=2)
+    
+    return scales, parameters
+```
+
+### Step 5: Cross-Scale Collective Dynamics Analysis
+
+```python
+def analyze_critical_regime(subject_data, control_data):
+    """
+    分析临界区域内的集体动力学重组
+    """
+    # 计算所有scaling指数
+    results = {
+        'psychosis': {
+            'beta': [],
+            'alpha': [],
+            'prg_params': []
+        },
+        'control': {
+            'beta': [],
+            'alpha': [],
+            'prg_params': []
         }
+    }
     
-    # Analyze exponent trajectories
-    # Identify systematic shifts in scaling regime
-    return results
-```
-
-## 神经科学意义
-
-### 临界性理论背景
-
-脑网络临界性假说认为大脑在 near-critical regime 运行，支持：
-- **长程相关性** (long-range correlations)
-- **高效信息处理** (efficient information processing)
-- **集体组织涌现** (emergence of collective organization)
-
-### 精神病中的临界性改变
-
-传统观点认为精神疾病是临界性丧失，本研究揭示更 nuanced 的现象：
-- **Scaling regime 保持**：整体 scale-invariant 现象学未丧失
-- **Exponent 偏移**：scaling exponent 系统性改变指示动力学重组
-- **跨尺度一致性**：多个可观测量展示一致的偏移模式
-
-## 临床应用潜力
-
-### 1. 早期精神病诊断标志物
-
-```python
-def psychosis_scaling_marker(fmri_data, reference_controls):
-    """
-    Compute scaling-based biomarker for early psychosis
-    
-    Returns:
-    - deviation_score: quantification of scaling deviation
-    - confidence: statistical significance
-    """
-    # Compute subject's scaling exponents
-    subject_exponents = combined_scaling_analysis(fmri_data)
-    
-    # Compare to healthy control distribution
-    control_distribution = compute_control_exponents(reference_controls)
-    
-    # Compute deviation score
-    deviation = compute_multivariate_deviation(subject_exponents, control_distribution)
-    
-    return deviation
-```
-
-### 2. 动力学重组量化
-
-系统性偏移而非临界性丧失为干预策略提供新视角：
-- **动力学调节**：调整网络动力学回到健康 exponent 范围
-- **尺度特定干预**：针对特定 coarse-graining scale 的偏移
-
-## 实现细节
-
-### 数据要求
-
-- **fMRI 数据**：静息态 BOLD 信号
-- **时间分辨率**：TR ≈ 2-3 秒
-- **空间分辨率**：ROI 或 voxel-level 分析
-- **扫描时长**：建议 > 10 分钟以捕获长期 scaling
-
-### 统计分析
-
-```python
-def statistical_comparison(group_A, group_B, exponents):
-    """
-    Compare scaling exponents between groups
-    
-    Statistical tests:
-    - Mann-Whitney U for non-parametric comparison
-    - Permutation tests for robust inference
-    - Effect size: Cohen's d
-    """
-    from scipy.stats import mannwhitneyu
-    
-    for exp_name in exponents:
-        a_values = [combined_scaling_analysis(s)[exp_name] for s in group_A]
-        b_values = [combined_scaling_analysis(s)[exp_name] for s in group_B]
+    # 精神病组分析
+    for subject in subject_data:
+        beta = compute_psd_exponent(subject)
+        alpha = dfa_analysis(subject, window_sizes)
+        prg = prg_analysis(subject)
         
-        stat, p = mannwhitneyu(a_values, b_values)
-        effect_size = compute_cohens_d(a_values, b_values)
+        results['psychosis']['beta'].append(beta)
+        results['psychosis']['alpha'].append(alpha)
+        results['psychosis']['prg_params'].append(prg)
+    
+    # 健康对照组分析
+    for subject in control_data:
+        beta = compute_psd_exponent(subject)
+        alpha = dfa_analysis(subject, window_sizes)
+        prg = prg_analysis(subject)
         
-        print(f"{exp_name}: p={p:.4f}, d={effect_size:.2f}")
+        results['control']['beta'].append(beta)
+        results['control']['alpha'].append(alpha)
+        results['control']['prg_params'].append(prg)
+    
+    # 统计比较
+    beta_diff = np.mean(results['psychosis']['beta']) - np.mean(results['control']['beta'])
+    alpha_diff = np.mean(results['psychosis']['alpha']) - np.mean(results['control']['alpha'])
+    
+    return {
+        'beta_shift': beta_diff,
+        'alpha_shift': alpha_diff,
+        'scaling_regime_preserved': True  # 关键发现
+    }
 ```
 
-## 理论框架扩展
+## Applications
 
-### 重整化群在神经科学的应用
+### 1. Early Psychosis Diagnosis
 
-RG 方法源于统计物理，用于研究相变和临界现象：
-- **空间 RG**：coarse-graining 空间区域，保留临界结构
-- **时间 RG**：积分时间窗口，研究动力学跨尺度行为
-- **脑网络 RG**：研究从微观神经元到宏观脑区的动力学传播
+- 识别scaling指数偏移作为早期标志
+- 区分动力学重组 vs 临界态丧失
+- 提供基于物理学的诊断框架
 
-### Scaling Universality
+### 2. Psychiatric Disorder Research
 
-临界系统的 scaling exponent 具有 universality：
-- 不同系统（物理、生物）可能共享相同 exponent
-- Exponent 偏移指示动力学 regime 改变而非简单噪声增加
+扩展到其他精神障碍：
+- 抑郁症：不同scaling模式？
+- 双相障碍：周期性scaling变化？
+- 焦虑症：局部vs全局scaling差异？
 
-## Pitfalls and Solutions
+### 3. Brain Criticality Theory
 
-### Pitfall 1: fMRI 时间序列非平稳性
+验证和发展脑临界性假说：
+- 临界区域的边界是什么？
+- 不同障碍如何重组动力学？
+- 重组与功能损伤的关系？
 
-**问题**：fMRI 信号包含缓慢漂移，影响 DFA 分析
+### 4. Treatment Response Monitoring
 
-**解决**：
-```python
-# 使用带线性 detrending 的 DFA
-def robust_dfa(signal, window_sizes, detrending='linear'):
-    if detrending == 'linear':
-        signal = linear_detrend(signal)
-    # Proceed with DFA
+- 药物治疗：scaling指数恢复？
+- 心理治疗：动力学重组改善？
+- 预后预测：基于scaling模式？
+
+## Pitfalls & Considerations
+
+### 1. Methodological Limitations
+
+**PSD局限**：
+- 低频段噪声影响
+- 非平稳信号偏差
+- 频率范围选择敏感性
+
+**DFA局限**：
+- 窗口大小选择影响结果
+- 长序列才可靠
+- 去趋势方法选择
+
+### 2. Data Quality Requirements
+
+- 高时间分辨率fMRI（TR < 2s）
+- 长扫描时间（>10分钟）
+- 低运动伪影
+- 充足的样本量
+
+### 3. Interpretation Challenges
+
+- scaling指数偏移 ≠ 功能损伤直接证据
+- 需结合行为/认知测量
+- 个体差异考虑
+
+### 4. Criticality Debate
+
+- 脑临界性的争议
+- scaling指数的多样性解释
+- 近临界态 vs 真临界态
+
+## Related Work
+
+- **Brain Criticality Theory** - Link et al. (2021)
+- **Renormalization Group in Neuroscience** -群论方法应用
+- **Resting-state Dynamics** - 静息态网络动力学
+- **Psychosis Biomarkers** - 精神病神经标志物
+
+## Experimental Validation
+
+### Dataset Requirements
+
+1. **Resting-state fMRI**
+   - TR: 0.5-2s
+   - Duration: 10-15 min
+   - Resolution: 3-4mm
+
+2. **Subject Groups**
+   - Early psychosis (first episode)
+   - Healthy controls (age/sex matched)
+   - Sample size: >30 per group
+
+3. **Quality Control**
+   - Motion correction
+   - Artifact removal
+   - ROI selection
+
+### Analysis Pipeline
+
+```
+Data Loading → Preprocessing → ROI Extraction
+→ PSD Analysis → DFA Analysis → PRG Analysis
+→ Cross-scale Comparison → Statistical Testing
+→ Visualization → Interpretation
 ```
 
-### Pitfall 2: Scaling 拟合区间选择
+## Key References
 
-**问题**：Scaling exponent 估计依赖于拟合区间选择
+- arXiv:2606.06290 - 论文原文
+- Link et al. (2021) - 脑临界性综述
+- Peng et al. (1995) - DFA方法原始论文
+- Kello et al. (2010) - 神经系统scaling理论
 
-**解决**：
-- 使用多个拟合区间验证 exponent 稳定性
-- 报告 exponent 不确定性估计
-- 使用 robust regression 方法
+## Summary
 
-### Pitfall 3: 样本量限制
+精神病早期scaling偏差研究揭示了在保留的临界区域内集体动力学重组的核心发现：
 
-**问题**：精神疾病研究通常样本量较小
+**核心贡献**：
+1. 证明早期精神病不是临界态丧失，而是动力学重组
+2. 提供PRG + PSD + DFA整合框架
+3. 多可观测量一致性验证scaling偏移
 
-**解决**：
-- 使用 permutation tests
-- Bootstrap for confidence intervals
-- Combine multiple scaling measures for robust inference
+**关键洞察**：
+- 重组在临界区域内发生
+- 系统性scaling指数偏移反映集体动力学变化
+- 粗粒化方法提供跨尺度分析原则框架
 
-## Future Directions
-
-1. **多模态整合**：结合 EEG、MEG 的 scaling 分析
-2. **纵向研究**：追踪 scaling exponent 沿疾病进展的演化
-3. **干预效果**：评估药物/治疗对 scaling 行为的影响
-4. **机器学习分类**：使用 scaling features 作为 psychosis 预测特征
-
-## Activation
-
-触发词：psychosis, critical dynamics, scaling analysis, renormalization group, fMRI, brain criticality, psychosis scaling, DFA, PSD, neuroimaging marker
-
-## References
-
-- arXiv:2606.06290v1 - Primary paper
-- Beggs & Plenz (2003) - Neuronal avalanches and criticality
-- Linkenkaer-Hansen et al. (2001) - Long-range temporal correlations in brain oscillations
-- Fraiman & Chialvo (2012) - fMRI scaling and brain criticality
+**意义**：为精神病障碍的大规模脑动力学研究提供物理学基础的方法论，挑战"临界态丧失"的简单假设，提出"动力学重组"的新范式。

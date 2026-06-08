@@ -1,183 +1,254 @@
 ---
 name: fixed-point-compositionality-low-rank-gluing
-description: Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks — mathematical framework for compositional dynamics
+description: 固定点组合性低秩胶合理论框架。研究结构模块化如何支持抑制主导阈值线性网络的功能组合性，引入低秩胶合规则实现不动点的组合式分解。
 version: 1.0.0
-category: neuroscience
-activation_keywords:
-  - compositionality
-  - fixed point
-  - low-rank gluing
-  - threshold-linear network
-  - TLN
-  - inhibition-dominated
-  - neural network modularity
-  - attractor dynamics
-  - compositional dynamics
-  - gCTLN
-  - combinatorial threshold-linear network
-tags:
-  - computational neuroscience
-  - neural dynamics
-  - network modularity
-  - fixed points
-  - attractors
-  - compositional computation
-  - threshold-linear networks
-  - mathematical framework
-authors:
-  - Juliana Londono Alvarez
-arxiv_id: 2606.07336
-date_added: 2026-06-08
-source: arXiv q-bio.NC
+category: computational neuroscience
+tags: [neural dynamics, fixed point, compositionality, low-rank, threshold-linear networks, modular networks, attractor dynamics]
+activation_keywords: [fixed point, compositionality, low-rank, gluing, threshold-linear, modularity, attractor, compositional dynamics]
+authors: ["Juliana Londono Alvarez"]
+arxiv_id: "2606.07336"
+date_added: "2026-06-09"
 ---
 
 # Fixed Point Compositionality via Low-Rank Gluing Rules
 
-## Core Concept
+## Background & Motivation
 
-组合性计算框架 - 揭示结构模块化如何支持功能组合性。通过低秩粘合规则,证明抑制主导阈值线性网络(TLN)的全局固定点可分解为局部模块固定点的组合。
+大脑在相对稳定的结构和有限资源下能产生高度灵活的复杂行为，其核心机制是**组合性**（compositionality）——将复杂任务分解为可重用的简单基元。虽然网络模块化常与组合性联系，但在非线性网络中缺乏严格的数学表征。
 
-**核心贡献**:
-- **低秩粘合(Low-Rank Gluings)**: 新型模块化网络组装方法,组件子网络通过特定低秩耦合连接
-- **固定点分解定理**: 全局固定点约束为局部固定点的组合
-- **Rank-1粘合完整刻画**: 完全确定哪些局部固定点组合产生全局固定点
-- **gCTLN扩展**: 将固定点分解规则从CTLN扩展到广义CTLN
+**核心问题**：
+- 结构模块化如何支持功能组合性？
+- 如何在非线性网络中实现组合式动力学？
+- 如何构建具有可预测吸引子组合的网络？
 
-## Mathematical Framework
+## Core Methodology: Low-Rank Gluing Framework
 
-### Threshold-Linear Networks (TLN)
-抑制主导网络动力学:
-```
-dx_i/dt = -x_i + [∑_j W_ij * σ(x_j - T_j) + b_i]_+
-```
+### 1. Threshold-Linear Networks (TLNs)
 
-### Low-Rank Gluing Assembly
-模块连接规则:
-- **组件模块**: 任意内部连接子网络
-- **低秩耦合**: 通过特定低秩矩阵连接模块
-- **组合性约束**: 全局固定点必须是局部固定点的组合
+阈值线性网络是研究抑制主导电路的标准模型：
 
-### Fixed Point Decomposition
-关键定理:
-1. **约束定理**: 全局固定点受限于局部固定点组合
-2. **Rank-1粘合**: 完全刻画组合性条件
-3. **组合性极限环**: 不仅固定点,极限环也具有组合性
+**动力学方程**：
+$$
+\dot{x}_i = -x_i + \left[\sum_{j=1}^n W_{ij}x_j + b_i\right]^+
+$$
 
-## Key Insights
+其中：
+- $x_i$：神经元活动
+- $W_{ij}$：连接权重（抑制主导）
+- $b_i$：外部输入
+- $[\cdot]^+$：阈值线性函数 $\max(\cdot, 0)$
 
-### Compositionality Mechanism
-大脑组合性机制的数学基础:
-- **结构模块化** → **功能组合性**
-- **简单基元** → **复杂行为**
-- **可预测吸引子** → **组合性大容量**
+**关键性质**：
+- 抑制主导保证不动点的存在性
+- 支持多个稳定吸引子
+- 连接性与动力学有明确对应
 
-### Engineering Compositional Dynamics
-构建组合性网络的配方:
-1. 定义局部模块及其固定点
-2. 使用低秩粘合规则连接
-3. 预测全局固定点为局部组合
-4. 扩展到组合性极限环
+### 2. Modular Network Assembly: Low-Rank Gluing
+
+**定义**：将多个子网络通过特定的低秩耦合连接：
+
+$$
+W = \begin{pmatrix}
+W_1 & L_{12} \\
+L_{21} & W_2
+\end{pmatrix}
+$$
+
+其中：
+- $W_1, W_2$：子网络内部连接（任意）
+- $L_{12}, L_{21}$：**低秩胶合矩阵**（rank $\leq k$）
+
+**核心定理**：全局不动点受限于局部不动点的组合
+
+$$
+\text{Fixed}(W) \subseteq \text{comb}(\text{Fixed}(W_1), \text{Fixed}(W_2))
+$$
+
+### 3. Rank-1 Gluing: Complete Characterization
+
+对于秩-1胶合，提供完整刻画：
+
+**胶合条件**：
+$$
+L_{12} = u_1 v_2^T, \quad L_{21} = u_2 v_1^T
+$$
+
+**组合规则**：
+1. 识别局部不动点：$(x_1^*, b_1^*)$ 和 $(x_2^*, b_2^*)$
+2. 验证组合可行性条件
+3. 计算全局不动点：$x^* = (x_1^*, x_2^*)$
+
+**可预测性**：通过局部模块的不动点组合，预测全局网络的吸引子库。
+
+### 4. Generalized Combinatorial TLNs (gCTLNs)
+
+扩展固定点分解规则：
+
+**CTLN → gCTLN**：
+- CTLN：基于图的组合式阈值线性网络
+- gCTLN：更灵活的连接模式
+
+**定理**：固定点分解规则在gCTLN中仍然成立，结构规则比原假设更稳健。
+
+## Key Results
+
+### 1. Mathematical Rigor
+
+- **定理1**：低秩胶合的约束性组合
+- **定理2**：秩-1胶合的完整刻画
+- **定理3**：gCTLN的固定点分解
+
+### 2. Combinatorial Attractor Repertoire
+
+组合式动力学使网络具有：
+- 组合式大量的可预测吸引子
+- 从简单组件基元理解复杂动力学
+- 支持固定点组合和组合式极限环
+
+### 3. Engineering Compositionality
+
+低秩胶合提供：
+- 数学可操作的组合式动力学构建方法
+- 可预测的吸引子工程
+- 从组件基元组合全局动力学
 
 ## Applications
 
-### Computational Neuroscience
-- **大脑模块化**: 解释结构-功能关系
-- **组合性行为**: 灵活复杂行为的数学基础
-- **资源高效**: 有限结构实现大容量行为库
+### 1. Neural Circuit Design
 
-### Neural Network Design
-- **可预测吸引子**: 组合性大容量吸引子库
-- **模块化架构**: 可工程化的组合性网络
-- **动力学工程**: 构建特定动力学模式
+构建具有可预测多稳态的抑制主导电路：
+- 记忆存储网络
+- 决策电路
+- 感觉表征组合
 
-### Extensions
-- **gCTLN**: 广义组合性阈值线性网络
-- **极限环**: 组合性周期动力学
-- **复杂网络**: 从简单基元构建复杂动力学
+### 2. Compositional Dynamics
 
-## Technical Details
+理解大脑如何组合：
+- 简单行为基元 → 复杂行为序列
+- 局部表征 → 全局表征
+- 模块功能 → 整体功能
 
-### Fixed Point Computation
-组合性固定点计算:
-1. 计算每个模块的局部固定点
-2. 确定粘合规则约束的组合集合
-3. 验证全局固定点存在性
-4. 扩展到动力学轨迹
+### 3. Network Architecture
 
-### Network Assembly
-网络构建步骤:
+设计组合式神经网络架构：
+- 模块化约束
+- 低秩连接
+- 可预测动力学
+
+## Implementation Guide
+
+### Step 1: Identify Component Modules
+
 ```python
-# 定义局部模块
-module_A = define_module(connectivity_A)
-module_B = define_module(connectivity_B)
+# 定义子网络
+W1 = define_subnetwork(n1, internal_connectivity)
+W2 = define_subnetwork(n2, internal_connectivity)
 
-# 低秩粘合
-gluing_matrix = construct_low_rank_coupling(rank=1)
-
-# 组合网络
-network = assemble_modules([module_A, module_B], gluing_matrix)
-
-# 预测固定点
-global_fps = compose_fixed_points(module_A.fps, module_B.fps, gluing_matrix)
+# 计算局部不动点
+fixed_points_1 = compute_fixed_points(W1, b1)
+fixed_points_2 = compute_fixed_points(W2, b2)
 ```
 
-## Critical Analysis
+### Step 2: Design Low-Rank Gluing
 
-### Strengths
-- **严谨数学**: 完整的理论证明
-- **工程化方法**: 可预测的网络构建
-- **组合性扩展**: 从固定点到极限环
-- **生物学启示**: 解释大脑组合性机制
+```python
+# 秩-1胶合设计
+L12 = np.outer(u1, v2)  # rank-1 coupling
+L21 = np.outer(u2, v1)
 
-### Limitations
-- **抑制主导约束**: 限于特定网络类型
-- **低秩假设**: 可能限制耦合灵活性
-- **固定点聚焦**: 相变和动力学轨迹需进一步研究
+# 组装全局网络
+W_global = assemble_network(W1, W2, L12, L21)
+```
 
-### Future Directions
-- **时变模块**: 动态组合性
-- **学习规则**: 如何学习粘合规则
-- **生物学验证**: 在真实神经网络中验证
-- **认知任务**: 应用到具体认知行为建模
+### Step 3: Verify Compositional Fixed Points
 
-## Research Questions
+```python
+# 验证组合可行性
+combinations = enumerate_combinations(fixed_points_1, fixed_points_2)
+valid_combinations = verify_gluing_conditions(combinations, L12, L21)
 
-1. **学习机制**: 如何通过学习获得低秩粘合规则?
-2. **动力学扩展**: 组合性如何扩展到非固定点动力学?
-3. **生物学对应**: 大脑中的低秩粘合是什么?
-4. **容量极限**: 组合性容量与网络规模关系?
-5. **噪声鲁棒性**: 组合性对噪声的敏感性?
+# 计算全局不动点
+global_fixed_points = compute_global_fixed(W_global, valid_combinations)
+```
 
-## Implementation Notes
+### Step 4: Analyze Dynamics
 
-### When to Use
-- 构建组合性神经网络
-- 设计可预测吸引子动力学
-- 解释模块化功能组合性
-- 理解大脑组合性机制
+```python
+# 模拟动力学
+trajectory = simulate_TLN(W_global, b_global, x0)
 
-### Key Parameters
-- **低秩rank**: 粘合矩阵秩数(通常1)
-- **模块数量**: 组合容量基元数
-- **抑制强度**: 抑制主导程度
-- **阈值参数**: TLN阈值设置
+# 分析吸引子结构
+attractors = classify_attractors(global_fixed_points)
+```
 
-### Expected Results
-- 可预测的固定点组合
-- 组合性大容量吸引子库
-- 灵活的动力学模式生成
-- 简单基元的复杂组合
+## Pitfalls & Considerations
+
+### 1. Inhibition Dominance Requirement
+
+- TLN理论要求抑制主导
+- 低秩胶合依赖不动点存在性
+- 检查网络参数约束
+
+### 2. Rank Selection
+
+- 秩过高 → 组合约束失效
+- 秩过低 → 限制组合能力
+- 秩-1提供完整刻画但最受限
+
+### 3. Combinatorial Explosion
+
+- 组合式吸引子库指数增长
+- 需要验证所有组合
+- 考虑计算效率
+
+### 4. Stability vs Compositionality
+
+- 组合可行性 ≠ 稳定性
+- 需额外验证Lyapunov稳定性
+- 不动点组合可能不稳定
 
 ## Related Work
 
-- **CTLN**: 组合性阈值线性网络基础
-- **吸引子网络**: 固定点和极限环理论
-- **网络模块化**: 结构-功能关系研究
-- **组合性认知**: 认知科学组合性理论
+- **Combinatorial Threshold Linear Networks (CTLNs)** - 曲线图基础的网络
+- **Low-Rank RNN Theory** - 低秩递归网络动力学
+- **Modular Networks** - 网络模块化理论
+- **Attractor Dynamics** - 神经网络吸引子动力学
 
-## Reference
+## Experimental Validation
 
-- arXiv:2606.07336 - "Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks"
-- Author: Juliana Londono Alvarez
-- Submitted: 2026-06-05
-- Category: q-bio.NC (Neurons and Cognition)
+### Test Scenarios
+
+1. **Two-Module Composition**
+   - 每个模块：2-3个不动点
+   - 验证组合：4-9个全局不动点
+
+2. **Multi-Module Networks**
+   - 3-4个模块
+   - 组合式吸引子库增长
+
+3. **Compositional Limit Cycles**
+   - 固定点组合 → 极限环组合
+   - 周期轨道的组合式结构
+
+## Key References
+
+- arXiv:2606.07336 - 论文原文
+- Curto et al. (2019) - CTLN理论基础
+- Morrison et al. (2016) - 低秩RNN动力学
+- Seung (1996) - 抑制主导网络吸引子
+
+## Summary
+
+低秩胶合理论框架为神经网络的组合性动力学提供了严格的数学基础：
+
+**核心贡献**：
+1. 证明结构模块化 → 功能组合性的数学联系
+2. 提供组合式吸引子的可预测工程方法
+3. 扩展CTLN固定点分解规则到gCTLN
+
+**关键洞察**：
+- 组合性源于低秩耦合的约束性
+- 全局动力学可从局部基元组合理解
+- 简单连接规则 → 组合式复杂动力学
+
+**意义**：为理解大脑如何在稳定结构上产生灵活行为，以及设计组合式神经网络架构提供了理论基础。

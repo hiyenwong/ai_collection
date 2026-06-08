@@ -1,3 +1,20 @@
+## 2026-06-09 - Neuroscience Research (Cron Job)
+
+### Early psychosis shows deviations in scaling behaviour within a critical regime
+- [[psychosis-scaling-critical-regime]] - 重整化群框架揭示精神病早期临界性重组而非丢失，PRG+PSD+DFA三重分析揭示系统性scaling指数偏移 (arXiv: 2606.06290)
+  - PRG粗粒化：跨尺度集体动力学表征，识别临界区域的重组而非简单临界态丧失
+  - PSD exponent：频域scaling特征，精神病组与健康组系统差异但临界态保留
+  - DFA指数：时域长程关联分析，揭示动力学重组在保留的scaling区域内
+  - **Activation**: psychosis, critical regime, scaling, renormalization group, PRG, PSD, DFA, collective dynamics, brain criticality, resting-state fMRI
+
+### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
+- [[fixed-point-compositionality-low-rank-gluing]] - 组合性计算理论框架：低秩胶合规则实现抑制主导阈值线性网络的固定点组合分解，提供可预测吸引子工程方法 (arXiv: 2606.07336)
+  - 数学严谨性：证明全局不动点受限于局部不动点组合的组合约束定理
+  - Rank-1胶合完整刻画：确定哪些局部固定点组合产生全局固定点，实现组合预测
+  - gCTLN扩展：组合式阈值线性网络固定点分解规则推广到更灵活版本
+  - 组合式动力学：从简单组件基元理解复杂吸引子结构，组合式大量可预测吸引子库
+  - **Activation**: fixed point, compositionality, low-rank gluing, threshold-linear network, TLN, inhibition-dominated, neural modularity, attractor dynamics, compositional dynamics, gCTLN
+
 ## 2026-06-09 - Computer Science + Quantum (Cron Job)
 
 ### Quantum element-wise transforms
