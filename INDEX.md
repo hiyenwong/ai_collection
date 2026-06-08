@@ -1140,3 +1140,28 @@
   - 100x faster than diffusion baselines at higher accuracy on GEOM-QM9/GEOM-Drugs
   - Converges on 15+ agent robotic inference where vanilla loopy BP diverges
   - **Activation**: equivariant neural belief propagation, SE(3) symmetry, Gaussian mixture model, factor-graph inference, conformational coverage, molecular modeling
+## 2026-06-08 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Nonreversible Gauge Fields in Fokker-Planck Dynamics
+- [[gauge-field-fokker-planck-dynamics]] - 非可逆规范场福克-普朗克动力学方法论：将保持稳态分布的扰动公式化为规范场，变形弛豫谱而不改变不变状态，连接超对称哈密顿量与神经网络学习 (arXiv: 2606.06412)
+  - Gauge Field Formulation: 非可逆扰动保持稳态分布，规范场变形弛豫谱
+  - Supersymmetric Hamiltonian: 打破细致平衡后FP算子成为非厄米超对称哈密顿量
+  - Paired Eigenvalue Spectra: H和H†共享除零模式外的特征值
+  - Neural Network Learning: 神经网络学习有限力加速收敛同时保持目标分布
+  - **Activation**: gauge field, fokker-planck dynamics, supersymmetric hamiltonian, nonreversible perturbation, neural network learning, stationary distribution, spectral gap, non-hermitian dynamics, 规范场, 非厄米量子力学
+
+### Quantum Vector Hopfield Network (Existing Skill Enhanced)
+- [[quantum-vector-hopfield-network]] - 量子矢量Hopfield网络：模式由量子矢量自旋方向形成，量子动力学从自旋算符非对易性自然涌现，量子稳定化记忆模式 (arXiv: 2606.06597)
+  - Quantum Vector Spins: 模式由量子矢量自旋方向形成
+  - Intrinsic Quantum Dynamics: 量子动力学从自旋算符非对易性自然涌现
+  - Enhanced Storage Capacity: 量子相干性提升存储容量
+  - Quantum Stabilization: 量子效应稳定记忆模式抵抗热噪声
+  - **Activation**: quantum hopfield network, vector spin, associative memory, quantum stabilization, memory capacity, non-commutativity, quantum many-body
+
+### Quantum Correlations in QBism's Reconstruction Program
+- [[quantum-correlations-qbism-reconstruction]] - QBism重构计划中的量子关联：qplex几何捕获两结果场景的Tsirelson界但不足以恢复全部量子关联约束 (arXiv: 2606.07485)
+  - Qplex Geometry: 联合期望值表示为C-向量内积
+  - CHSH Scenario: 共享内积结构限制最大值为Tsirelson界2√2
+  - CGLMP Inequality: 允许代数最大值4，展现超量子关联
+  - Reconstruction Limits: qplex几何捕获足够结构但不足以完全重构量子理论
+  - **Activation**: qbism reconstruction, qplex geometry, chsh inequality, cglmp inequality, tsirelson bound, quantum correlations, superquantum, bell inequality
