@@ -1,166 +1,146 @@
 # AI Collection Index
 
-## 2026-06-05 - Neuroscience Research (Cron Job)
+## 2026-06-06 - Economics/Investment + Quantum (Cron Job)
 
-### SC-TauPath: Structural Connectivity Attribution for Alzheimer Tau Propagation
-- [[sc-taupath-alzheimer-tau-propagation]] - 首个神经生物学可解释的 Tau 传播路径图谱框架，结合 NDM 增强 MLP + 梯度归因，验证 Braak 分期解剖结构 (arXiv: 2606.04066)
-  - 网络扩散模型增强 MLP + 梯度×输入归因量化每条结构连接边的贡献
-  - 多尺度通路图谱：骨干边、高流量路线、枢纽 ROI，映射 Tau 传播路径
-  - ADNI 234 名参与者验证，归因分数符合 Braak 分期解剖，揭示 SC 编码病理信息
-  - **Activation**: tau propagation, Alzheimer, structural connectivity, attribution, network diffusion, Braak staging, DTI, PET, pathway mapping, interpretability, gradient attribution
+### Derivative-Informed Operator Learning for Finance
+- [[derivative-informed-operator-learning-finance]] - Neural operators trained to match pricing operators AND Fréchet derivatives for on-the-fly Greeks, hedging, and control. Vega error -40%, Delta error -15% (arXiv: 2606.05900)
+  - Neural operator learns entire pricing map, not just pointwise prices
+  - Fréchet derivative matching ensures accurate Greeks (Delta, Vega, Gamma)
+  - Theoretical hedging error bounds from operator approximation theory
+  - Random-feature DeepONet for efficient volatility surface fitting
+  - Optimizer stability guarantees under approximation error
+  - **Activation**: derivative pricing, operator learning, neural operator, DeepONet, Fréchet derivative, Greeks, hedging, Vega, Delta, volatility surface, quantitative finance
 
-## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+### Market Informedness & RL Market Making
+- [[market-informedness-rl-market-making]] - Multi-agent RL (MAPPO) for market making with Hawkes-driven order flow. Counterintuitive: profitability increases with market informedness (arXiv: 2606.05882)
+  - Heterogeneous agents: informed traders, noise traders, market makers
+  - MAPPO in CTDE (Centralized Training, Decentralized Execution)
+  - Hawkes process models self-exciting order flow arrivals
+  - Finite-horizon stability guarantees for deployable strategies
+  - Informed flow provides more predictable adverse selection patterns
+  - **Activation**: market making, informedness, adverse selection, reinforcement learning, multi-agent, MAPPO, CTDE, Hawkes process, order flow, liquidity
 
-### Low-rank Distributional Matrix Completion
-- [[distributional-matrix-completion]] - Matrix completion with probability distribution entries using kernel mean embeddings + Tucker rank decomposition (arXiv: 2606.04176)
-  - Kernel mean embeddings map probability distributions to RKHS for distributional matrix representation
-  - Tucker rank extended to distribution-valued matrices capturing low-rank structure in distributional space
-  - Functional unfolding operators bridge infinite-dimensional embeddings with finite-dimensional tensor computation
-  - Non-asymptotic error bounds characterize statistical performance vs sample complexity
-  - **Activation**: distributional matrix completion, kernel mean embedding, tucker rank distribution, functional unfolding, RKHS, probability distribution matrix, statistical matrix recovery, non-asymptotic bounds
+### Dealer Market Competition with Internalisation
+- [[dealer-market-competition-nash-equilibrium]] - Closed-form Nash equilibrium for multi-dealer order flow competition using variational approach. Balances internalisation vs externalisation for inventory risk (arXiv: 2606.06413)
+  - Variational formulation of N-dealer quoting game
+  - Internalisation: skew quotes to attract offsetting flow
+  - Externalisation: offload inventory in inter-dealer market
+  - Closed-form solution via coupled Riccati equations
+  - Competition intensity determines spread compression
+  - **Activation**: dealer market, competition, internalisation, externalisation, Nash equilibrium, inventory risk, market microstructure, quoting strategy
 
-### Monitored Chaotic Scattering
-- [[monitored-chaotic-scattering-rmt]] - Extends random matrix theory of chaotic scattering to quantum dots with time-resolved measurements (arXiv: 2606.04794)
-  - Constructs Kraus operator ensembles from circular ensembles for monitored quantum evolution
-  - Derives discrete-time quantum master equation for charge transfer statistics
-  - Equipartition conjecture enables closed-form RMT predictions for monitored transport
-  - **Activation**: monitored chaotic scattering, random matrix theory, kraus operators, quantum master equation, charge transfer, mesoscopic physics, circular ensemble
+### ESG & Joint Fragility in Equity Markets
+- [[esg-joint-fragility-equity-markets]] - Framework analyzing ESG association with clustered fragility (simultaneous downside + vol spike + illiquidity). Higher ESG → lower cofragility exposure (arXiv: 2606.05631)
+  - Three fragility dimensions: downside returns, volatility spikes, illiquidity
+  - Cofragility state: multiple dimensions occurring simultaneously
+  - Panel regression with firm and time fixed effects
+  - Environmental pillar most strongly reduces fragility
+  - Effect persists after controlling for traditional risk factors
+  - **Activation**: ESG, joint fragility, cofragility, equity markets, downside risk, volatility spike, illiquidity, portfolio resilience, S&P 500
 
-### Convergence Rates of Sum-of-Hermitian-Squares for Pauli Algebra
-- [[sum-of-hermitian-squares-pauli-convergence]] - Explicit convergence rates for noncommutative polynomial optimization relaxations in quantum theory (arXiv: 2606.04940)
-  - Develops convergence rates for Sum-of-Hermitian-Squares hierarchies on Pauli algebra
-  - Covers ground state energy estimation and other quantum optimization problems
-  - Bridges moment relaxation theory with quantum many-body computation
-  - **Activation**: sum of hermitian squares, pauli algebra, noncommutative optimization, convergence rates, quantum ground state, moment relaxation, polynomial optimization
+### Long-Range Dependence in Financial Markets
+- [[long-range-dependence-financial-markets]] - Empirical study of LRD across equity, commodity, energy sectors. Most deep generative models fail to reproduce LRD; diffusion models perform best (arXiv: 2509.19663)
+  - Three LRD detection methods: R/S analysis, DFA, wavelet estimation
+  - Equity: H ≈ 0.55-0.65 (persistent); commodities show stronger LRD
+  - Energy markets exhibit regime-dependent LRD
+  - GANs, VAEs fail to reproduce LRD; diffusion models best
+  - Synthetic data is too "short-memory" without LRD constraints
+  - **Activation**: long-range dependence, Hurst exponent, financial time series, R/S analysis, DFA, wavelet analysis, generative models, market memory, synthetic data
 
-### Decoded Quantum Interferometry Beyond Hamming Space
-- [[decoded-quantum-interferometry-beyond-hamming]] - Extends DQI algorithm beyond Hamming space to finite geometries with translation symmetry (arXiv: 2606.04843)
-  - Generalizes decoded quantum interferometry to rank-metric and translation association schemes
-  - Uses quantum Fourier transform on finite geometries for structured optimization
-  - Shell-based distance grouping enables coherent decoding beyond binary Hamming space
-  - **Activation**: decoded quantum interferometry, rank-metric codes, translation association schemes, finite geometry, quantum fourier transform, structured optimization
+## 2026-06-06 - Neuroscience Research (Cron Job)
 
-### Fermionic Non-Gaussianity via Bell Sampling
-- [[fermionic-bell-sampling-non-gaussianity]] - Bridge degree monotone for fermionic non-Gaussianity via Bell sampling, stronger Gaussian conversion no-go theorems (arXiv: 2606.05066)
-  - Bridge degree: largest eigenvalue sector of Λ = Σγ_j⊗γ_j on two copies, non-increasing under post-selected Gaussian protocols
-  - Stronger no-go theorems for Gaussian conversion than previously known monotones
-  - Efficiently witnessed through Bell sampling; lower-bounds non-Gaussian gate complexity
-  - Two algorithmic primitives: Gaussianity test with perfect completeness, state 2-design test
-  - **Activation**: fermionic non-gaussianity, bell sampling, bridge degree, gaussian conversion, fermionic quantum computing, resource theory
+### TRIBE v2: Tri-modal Foundation Model for Brain Decoding
+- [[tribev2-brain-foundation-model]] - Large encoding model pretrained on 1000+ hours of fMRI responses to video/audio/language. Synthetic data augmentation for boosting brain-to-image decoding in low-data regimes (arXiv: 2606.06345v1)
+  - Addresses fundamental limitation: availability of labeled neural data
+  - Grid-based evaluation: augmentation effectiveness varies with synthetic ratio, quality threshold, domain mismatch
+  - Key finding: 20-40% accuracy boost for small datasets (< 50 subjects), optimal 30-50% synthetic ratio
+  - Quality filtering critical: > 0.80 confidence threshold for synthetic samples
+  - **Activation**: brain decoding, fMRI, TRIBE, foundation model, data augmentation, brain-to-image, encoding model, synthetic fMRI, low-data regime
 
-### Entanglement Measure from Quantum Optimal Transport
-- [[quantum-optimal-transport-entanglement]] - Bipartite entanglement via minimal quantum Wasserstein distance to separable states, Lipschitz dual formulation (arXiv: 2606.04969)
-  - E(ρ) = min_{σ separable} W_1(ρ, σ) satisfies all entanglement axioms in single geometric framework
-  - Lipschitz dual gives explicit lower bounds for pure and mixed states, sharp constant for two-qubit
-  - Quantitative connection to entanglement witnesses: negative witness → certified lower bound on E
-  - Natural subadditivity and trace-distance estimates, points toward large-deviation conjectures
-  - **Activation**: quantum optimal transport, entanglement measure, Wasserstein distance, Lipschitz witness, separable states, experimental entanglement detection
+### ITP-STDP: Power-of-Two Learning Engine for On-Chip SNN Training
+- [[itp-stdp-snn-training]] - Hardware-efficient STDP algorithm using power-of-two weight encoding and intrinsic timing. 50x resource reduction, 100x energy reduction for on-chip SNN training (arXiv: 2606.06159v1)
+  - Power-of-two weights: multiplication → bit shift (multipliers eliminated)
+  - Intrinsic timing: local neuron dynamics replace global timing circuits
+  - LUT-based STDP: exponential computation → lookup table
+  - Hardware efficiency: 50x area reduction, 100x energy reduction per update
+  - Trade-off: ~1.3% accuracy drop for massive hardware efficiency gain
+  - **Activation**: SNN training, STDP, on-chip learning, neuromorphic hardware, FPGA, ASIC, power-of-two, intrinsic timing, synaptic plasticity
 
-### No-Go Theorem for Gaussian Quantum Repeaters
-- [[no-go-gaussian-quantum-repeaters]] - Proves Gaussian repeaters cannot enhance quantum capacity of pure-loss channels via fractional extendibility framework (arXiv: 2606.05097)
-  - Fractional extendibility generalizes k-extendibility for Gaussian states
-  - Any Gaussian+LOCC repeater chain bounded by direct transmission capacity
-  - Closes open question about Gaussian vs non-Gaussian repeater protocols
-  - Framework applicable to broader Gaussian quantum network analysis
-  - **Activation**: gaussian quantum repeaters, no-go theorem, fractional extendibility, quantum capacity, bosonic channels, pure-loss channels
+## 2026-06-06 - Economics/Investment + Quantum Finance (Cron Job)
 
-### Hybrid Gaussian-Exponential Zero-Noise Extrapolation
-- [[gaussian-exponential-zero-noise-extrapolation]] - Hybrid Gaussian-exponential ZNE model for periodic quantum circuits, improved error mitigation (arXiv: 2605.29242)
-  - Hybrid model f(λ) = A·exp(-αλ²) + B·exp(-βλ) + C captures both Gaussian and exponential error components
-  - Superior to standard exponential ZNE for circuits with oscillatory error behavior
-  - Polynomial sample complexity, applicable to parameterized quantum circuits
-  - Requires 5-7 noise scale factors for stable fitting
-  - **Activation**: zero noise extrapolation, ZNE, gaussian exponential model, periodic circuits, error mitigation, NISQ
+### Quantum Computing for Financial Transformation: A Comprehensive Review
+- [[quantum-finance-stack-analysis]] - Financial computation stack framework evaluating quantum advantage across five domains: portfolio optimization, derivative pricing, tail-risk estimation, QML, and post-quantum security (arXiv: 2604.08180)
+  - Five-domain stack: constrained portfolio optimization, derivative pricing, tail-risk estimation, QML, post-quantum security
+  - Evaluation logic: identify bottleneck → specify quantum primitive → compare classical benchmark → assess realistic constraints
+  - Key conclusion: hybrid workflows strongest near-term case; quantum optimization credible when constrained search dominates
+  - Amplitude estimation matters most when repeated expectation evaluation is the binding cost
+  - Post-quantum cryptography strategically necessary — financial infrastructures must migrate before fault-tolerant attacks arrive
+  - 134 pages, handbook-style entry point combining system-level synthesis with reproducible case studies
+  - **Activation**: quantum finance stack, quantum portfolio optimization, derivative pricing, amplitude estimation, post-quantum security, hybrid quantum finance, QML finance, financial computation stack
 
-## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
+### Hot-Starting Quantum Portfolio Optimization
+- [[hotstart-quantum-portfolio-optimization]] - Novel approach restricting quantum portfolio search to discrete solutions near continuous optimum via compact Hilbert space construction, reducing qubit count (arXiv: 2510.11153)
+  - Hot-starting from relaxed continuous solution outperforms SOTA on D-Wave Advantage quantum annealer
+  - Compact Hilbert space around continuous optimum reduces qubit requirements
+  - Smooth convex objective function + integer trading constraints = natural discrete mean-variance problem
+  - **Activation**: hot-start quantum optimization, portfolio optimization, quantum annealing, compact Hilbert space, D-Wave, QUBO, mean-variance portfolio, continuous relaxation
 
-## 2026-06-05 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+## 2026-06-06 - Neuroscience Research (Cron Job)
 
-### High-fidelity neutral atom gates leveraging low-rank Hessian optimization
-- [[low-rank-hessian-quantum-gate-calibration]] - Low-rank Hessian optimization for calibrating high-fidelity multi-qubit quantum gates (arXiv: 2606.05060)
-  - 利用量子控制景观的低秩结构加速多量子比特门校准
-  - 通过Hessian特征分解实现高维参数空间的降维优化
-  - **Activation**: low-rank Hessian, quantum gate calibration, neutral atom gates, high-fidelity gates
+### Brain-CLIPLM: Semantic Compression for EEG-to-Text Decoding
+- [[brain-cliplm-semantic-compression-eeg]] - Two-stage EEG decoding framework: semantic anchor recovery via contrastive learning + retrieval-grounded LLM reconstruction. Granularity matching principle aligns decoding complexity with neural information scale (arXiv: 2604.16370)
+  - Semantic compression hypothesis: EEG preserves recoverable semantic anchors, not full sentences
+  - Stage 1: Contrastive alignment extracts ordered keyword-level evidence
+  - Stage 2: Anchor-guided sentence reconstruction with chain-of-thought reasoning
+  - ZuCo benchmark: Top-5 retrieval 67.6%, Top-25 85.0%, intermediate granularity optimal
+  - **Activation**: EEG decoding, semantic compression, anchor recovery, granularity matching, CLIP alignment, retrieval-grounded LLM, brain-to-text, ZuCo benchmark
 
-### Minimax Private Estimation of Smooth Optimal-Transport Maps
-- [[differential-private-optimal-transport-estimation]] - Differentially private estimation of smooth optimal transport maps (arXiv: 2606.04683)
-  - 基于小波密度估计器的差分隐私最优传输映射估计
-  - 利用平滑OT映射的稳定性界实现极小极大最优率
-  - **Activation**: differential privacy, optimal transport, private estimation, wavelet density
+### Vision Hopfield Memory Networks: Brain-Inspired Backbone
+- [[vision-hopfield-memory-networks]] - Hierarchical Hopfield associative memory + predictive-coding refinement replaces Transformer/Mamba. Local patch memory + global episodic memory + error correction. Enhanced interpretability, data efficiency, biological plausibility (arXiv: 2603.25157)
+  - Memory retrieval exposes input-to-pattern relationships for transparent decisions
+  - Three-layer architecture: Local Hopfield (V1 analogy), Global Hopfield (V2-V4 analogy), Predictive Coding
+  - Pattern reuse reduces training data needs, improves efficiency
+  - Biological justification: mirrors visual hierarchy and cortical feedback loops
+  - **Activation**: Hopfield memory, associative memory, predictive coding, interpretability, biological plausibility, vision backbone, hierarchical memory
 
-### Fermionic non-Gaussianity via Bell sampling
-- [[fermionic-non-gaussianity-bell-sampling]] - Monotones and quantum algorithms for fermionic non-Gaussianity via Bell sampling (arXiv: 2606.05066)
-  - 基于Bell采样和费米子协方差算子本征结构的非高斯性度量
-  - 解锁费米子量子平台完全计算能力的关键资源量化方法
-  - **Activation**: fermionic quantum computing, Bell sampling, non-Gaussianity monotones, covariance operator
+## 2026-06-06 - Neuroscience Research (Cron Job)
 
-### Squeezed Phonon Lasing via Floquet-Controlled Solid-State Defects
-- [[floquet-controlled-phonon-lasing]] - Floquet-engineered squeezed phonon laser design using color centers in hBN membranes with coupled spin-mechanical systems (arXiv: 2606.05083)
-  - Floquet theory enables engineering of effective Hamiltonians via periodic driving
-  - Continuous transition from conventional to squeezed phonon lasing via Floquet parameters
-  - Solid-state platform: hBN membrane with color centers + mechanical oscillator
-  - Applications in quantum metrology (sub-shot-noise sensing) and quantum control systems
-  - **Activation**: floquet engineering, phonon lasing, squeezed states, solid-state defects, hBN membrane, quantum metrology, spin-phonon coupling, periodic driving, steady-state engineering
+### Updating the Standard Neuron Model in Artificial Neural Networks
+- [[updated-neuron-model-ann]] - Breakthrough paper replacing 70-year-old point neuron model with realistic cortical cell model, achieving higher expressivity, robustness, learning speed with same parameters (arXiv: 2605.30370)
+  - Neuroscience critique: point neuron too simplistic for fundamental neural processes since 1950s
+  - Realistic cortical cell model substitution without parameter increase
+  - Demonstrated advantages: expressivity boost, robustness enhancement, faster learning, reduced memorization, less training data needed
+  - **Activation**: neuron model, artificial neural network, cortical cells, point neuron, expressivity, robustness, learning speed, realistic neuron, ANN architecture
 
-### Piston Control in Two-Ion Quantum Device
-- [[inverse-engineering-quantum-control]] - Inverse engineering protocols for controlling classical piston dynamics driven by quantum ion motion in two-ion trapped devices (arXiv: 2606.03488)
-  - Self-consistent stationary state determination with quantum effects
-  - Narrow quantum regime connecting two broad classical regimes
-  - Inverse engineering: design control from desired trajectory to potential modulation
-  - Bridge between classical and quantum control systems engineering
-  - **Activation**: inverse engineering, piston control, two-ion device, trapped-ion control, quantum-classical transition, optimal control
+### Learning Sequence Timing and Control of Replay Speed in Spiking Neural Networks
+- [[snn-sequence-timing-replay]] - Biologically plausible spiking mechanism for temporal memory replay with variable speed control (arXiv: 2605.22523)
+  - STDP-based sequence timing learning without external timing signals
+  - Novel replay speed control: faster/slower than training speed, maintains temporal proportions
+  - Compatible with hippocampal replay observations (compression/expansion during sleep)
+  - **Activation**: spiking neural network, sequence timing, memory replay, replay speed, STDP, temporal memory, synaptic plasticity, neural replay, hippocampal replay
 
-### Hybrid Gaussian-exponential zero-noise extrapolation for periodic circuits
-- [[hybrid-qnz-zero-noise-extrapolation]] - Hybrid Gaussian-exponential ZNE using CLT on Pauli transfer for NISQ error mitigation (arXiv: 2605.29242)
-  - Proves noise amplification factor approaches log-normal distribution under Pauli diagonal errors
-  - Augments standard exponential ZNE with Gaussian variance corrections for periodic circuits
-  - **Activation**: zero-noise extrapolation, ZNE, noise extrapolation, gaussian exponential noise model, pauli error mitigation, periodic circuit noise, NISQ error mitigation
+## 2026-06-06 - Economics, Investment + Quantum Mechanics (Cron Job)
 
-### Spectral Fusion for Early State Exclusion in Quantum Spin Chains
-- [[spectral-fusion-quantum-state-transfer]] - Spectral analysis of perfect state transfer and early state exclusion in symmetric quantum spin chains (arXiv: 2606.04353)
-  - Maps spin chain dynamics to Jacobi matrix eigenvalue distributions and eigenvector symmetry
-  - Identifies conditions where state overlap vanishes before first PST occurrence
-  - **Activation**: perfect state transfer, PST, quantum spin chain, early state exclusion, jacobi matrix, spectral analysis quantum, quantum information transport
+### Contextual Quantum Neural Networks for Stock Price Prediction
+- [[contextual-quantum-neural-stock-prediction]] - Quantum multi-task learning architecture with share-and-specify ansatz for simultaneous multi-asset stock price prediction using logarithmic qubit overhead (arXiv: 2503.01884)
+  - Quantum Batch Gradient Update (QBGU) accelerates SGD using quantum superposition for simultaneous gradient processing
+  - QMTL share-and-specify ansatz enables shared feature extraction + asset-specific operators on same circuit
+  - Entanglement in shared layers naturally encodes inter-asset correlations
+  - O(log₂N) qubit scaling for N-asset portfolio representation
+  - **Activation**: quantum neural network, stock prediction, multi-task learning, QBGU, quantum batch gradient, QMTL, share-and-specify ansatz, quantum portfolio, multi-asset prediction, inter-asset correlation, quantum superposition gradient, amplitude encoding
 
-### Monitored chaotic scattering
-- [[monitored-chaotic-scattering-rmt]] - Extends random matrix theory of chaotic scattering to monitored quantum dots via Kraus operator ensembles (arXiv: 2606.04794)
-  - Constructs Kraus operators from circular ensembles for time-resolved measurement
-  - Derives discrete-time quantum master equation for charge transfer with equipartition conjecture
-  - **Activation**: monitored chaotic scattering, random matrix theory scattering, kraus operators circular ensemble, quantum master equation scattering, charge transfer statistics, quantum dot monitoring
+## 2026-06-06 - Neuroscience Research (Cron Job)
 
-### Decoded Quantum Interferometry Beyond Hamming Space
-- [[decoded-quantum-interferometry-beyond-hamming]] - Extends DQI beyond Hamming space to translation association schemes for structured optimization on finite geometries (arXiv: 2606.04843)
-  - Generalizes DQI coherent decoding to finite geometries with translation symmetry
-  - Points partitioned into shells by distance; quantum Fourier transform adapted to association scheme's character group
-  - **Activation**: decoded quantum interferometry, DQI, Hamming space extension, translation association scheme, Bose-Mesner algebra, rank-metric optimization
+### Ontology-Constrained Multi-LLM Scoring of Hypothesis Support in Predictive Processing
+- [[ontology-constrained-llm-hypothesis-scoring]] - Local multi-LLM council for ontology-constrained literature synthesis in predictive coding neuroscience, producing quantitative hypothesis-space maps with auditable disagreement measurements (arXiv: 2606.05206)
+  - 36-concept expert glossary across 3 hypotheses: Predictive Suppression, Feedforward Error Propagation, Ubiquity
+  - 10 local LLM models score 31 studies independently, pairwise agreement analysis reveals structured disagreement
+  - Hypothesis-space temperature: geometric dispersion metric (lower for local oddball, higher for global oddball)
+  - Transition vectors quantify paradigm-dependent shifts between experimental contexts
+  - **Activation**: predictive processing, predictive coding, ontology-constrained, multi-LLM, hypothesis scoring, literature synthesis, meta-analysis, evidence space, hypothesis-space mapping, local oddball, global oddball, LLM council, glossary validation, temperature metric
 
-### Convergence Rates of Sum-of-Hermitian-Squares for Pauli Algebra
-- [[sum-of-hermitian-squares-pauli-convergence]] - Explicit convergence rates for SoHS hierarchies over Pauli algebra enabling accuracy guarantees for noncommutative polynomial optimization (arXiv: 2606.04940)
-  - First explicit convergence rates for SoHS over Pauli algebra: O(d^2 * n / k) for n-qubit Hamiltonians
-  - Enables principled selection of relaxation order vs. computational budget for ground state energy estimation
-  - **Activation**: sum-of-hermitian-squares, SoHS, Pauli algebra convergence, noncommutative polynomial optimization, moment relaxation, ground state energy, SDP hierarchy
+## 2026-06-06 - Economics, Investment + Quantum (Cron Job)
 
-### Twirled Perfect Tensor Networks
-- [[twirled-perfect-tensor-networks]] - Novel class of computationally covariant holographic tensor networks motivated by the Python's Lunch Conjecture (arXiv: 2605.23670)
-  - Twirled perfect tensors reduce complexity while maintaining holographic duality properties
-  - Complexity scales with bottleneck area rather than bulk volume, matching PLC predictions
-  - **Activation**: twirled perfect tensor, python's lunch conjecture, holographic tensor network, computational covariance, black hole interior, tensor network complexity
-
-
-## 2026-06-04 - Neuroscience Research (Cron Job)
-
-### Discrete Signaling Mediates Chaotic Regularization in RNNs
-- [[discrete-signaling-chaotic-regularization]] - Links microscopic chaos to macroscopic neural representation geometry via kernel methods + dynamical mean-field theory (arXiv: 2606.04426)
-  - Chaos induces local roughness but preserves global smoothness, acting as intrinsic regularizer
-  - Power-law spectral signatures match cortical recordings, explains smooth population codes
-  - Game-theoretic structure where each neuron minimizes local energy
-  |  - **Activation**: chaotic regularization, discrete signaling, RNN dynamics, kernel methods, cortical recordings, population codes, neural representations, dynamical mean-field theory
-  |
-  |### Competition, Stability, and Functionality in E-I Neural Circuits
-  |- [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
-  |  - Each neuron as agent minimizing local energy in competitive game
-  |  -
-
-### Competition, Stability, and Functionality in E-I Neural Circuits
-- [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
-  - Each neuron as agent minimizing local energy in competitive game
+### The Inverse Born Rule Fallacy: On the Informational Limits of Phase-Locked Amplitude Encoding
+- [[inverse-born-rule-fallacy]] - 识别振幅编码缺陷，提出动态哈密顿编码(DHE)实现非对易量子演化 (arXiv: 2602.21350)
+  - 朴素振幅编码(psi=sqrt(P))使Hilbert空间阿贝尔化
