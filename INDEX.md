@@ -1,4 +1,20 @@
-## 2026-06-08 - Neuroscience + Quantum Computing Research (Cron Job)
+## 2026-06-08 - Neuroscience Research (Cron Job)
+
+### The Identity Trap in EEG Foundation Models: A Diagnostic Audit
+- [[identity-trap-eeg-foundation-models]] - EEG基础模型诊断审计框架：FMScope五组件协议揭示跨被试"高准确率"可能反映受试者身份特征而非真实生物标志物 (arXiv: 2606.06647)
+  - Frozen Subject-Variance: 跨12个数据集对，受试者方差是随机基线的13-89倍
+  - Subject-Axis Erasure: 线性移除身份轴，标签内受试者变异时解码提升6-12 pp
+  - Aperiodic 1/f Carrier: 移除非周期成分，受试者探测下降9-19 pp (LaBraM/CBraMod)
+  - Layer-wise Probing: 微调仅在文献确立的跨受试者标志物存在时放大标签方差
+  - **Activation**: EEG foundation model, subject-disjoint, shortcut learning, identity trap, aperiodic 1/f, frozen representation, diagnostic audit, LaBraM, CBraMod, REVE, FMScope
+
+### Fixed Point Compositionality via Low-Rank Gluing Rules
+- [[fixed-point-compositionality-low-rank-gluings]] - 阈值线性网络的组合性动力学理论：低秩粘合规则证明模块化结构导致全局不动点受限于局部模块组合，实现可预测吸引子工程 (arXiv: 2606.07336)
+  - Low-Rank Gluing: 模块间特定低秩耦合，全局不动点限于局部组合
+  - Rank-1 Characterization: 完整分类确定哪些局部不动点组合形成全局解
+  - gCTLN Extension: 组合阈值线性网络规则推广至广义版本
+  - Compositional Engineering: 组合大吸引子库可预测设计配方
+  - **Activation**: compositional dynamics, threshold-linear network, TLN, low-rank gluing, fixed point decomposition, modular network, attractor engineering, combinatorial dynamics, inhibition-dominated, gCTLN## 2026-06-08 - Neuroscience + Quantum Computing Research (Cron Job)
 
 ### Measurement Circuit Ansatz: Naimark vs QNN Measurements
 - [[naimark-qnn-measurement-circuits]] - 量子测量电路设计：Naimark扩展、混合Naimark-QNN、全QNN三种方法对比，QNN以更少训练迭代实现近最优量子测量 (arXiv: 2606.07376)
