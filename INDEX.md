@@ -1,11 +1,20 @@
-## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - Hourly Session 3)
+## 2026-06-09 - Neuroscience Research (Cron Job)
 
-### A superconducting surface-code processor with lattice-surgery logical operations
-- [[surface-code-lattice-surgery]] - Experimental lattice-surgery between distance-3 surface-code logical qubits: Bell state prep, Deutsch-Jozsa, magic-state injection with 0.943 logical gate fidelity (arXiv: 2606.06598)
-  - Logical Bell state via joint initialization + lattice splitting (deterministic)
-  - Magic-state injection enables continuous non-Clifford RX(π/4) rotations at logical level
-  - Per-cycle error rates: 0.0365 and 0.0282 after leakage rejection
-  - **Activation**: lattice surgery, surface code logical operations, fault-tolerant logical gates, magic-state injection, logical Bell state, non-Clifford logical rotations, distance-three surface code
+### Fixed point compositionality via low-rank gluing rules in inhibition-dominated threshold-linear networks
+- [[fixed-point-compositionality-low-rank-gluing]] - 固定点组合性低秩胶合理论框架，证明结构模块化如何支持抑制主导阈值线性网络的功能组合性 (arXiv: 2606.07336)
+  - 低秩胶合规则：组件子网络通过低秩耦合连接，全局不动点组合约束
+  - Rank-1 完全刻画：确定哪些局部不动点组合产生全局不动点
+  - gCTLNs推广：组合阈值线性网络分解规则扩展到更灵活连接模式
+  - 组合式动力学工程：数学可操作方法构建组合式不动点和极限环
+  - **Activation**: 固定点组合性, 低秩胶合, 阈值线性网络, 抑制主导网络, 网络模块化, 组合性动力学, attractor composition, fixed point decomposition, low-rank coupling
+
+### The Identity Trap in EEG Foundation Models: A Diagnostic Audit
+- [[identity-trap-eeg-foundation-models]] - EEG基础模型身份陷阱诊断审计框架，FMScope协议诊断模型是否陷入subject identity shortcut (arXiv: 2606.06647)
+  - 身份陷阱普遍存在：冻结被试方差13-89倍随机零模型，微调后增加10-63pp
+  - Aperiodic 1/f载体：移除后LaBraM/CBraMod被试探针下降9-19pp
+  - 被试轴消除改善：被试内标签变化场景改善+6-12pp，外部队列改善+4-27pp
+  - FMScope五项诊断：方差分解、被试轴消除、aperiodic消融、层级探测、方向一致性
+  - **Activation**: 身份陷阱, EEG基础模型, shortcut learning, subject identity, frozen representation, FMScope, variance decomposition, aperiodic 1/f, cross-subject marker
 
 ## 2026-06-09 - Computer Science + Quantum Computing (Cron Job - Hourly Session 2)
 
@@ -49,6 +58,14 @@
   - **Activation**: RASFT, rollout-adaptive, policy-aware SFT, verified rollouts, solvability estimation, self-generated trajectories, expert guidance calibration, reasoning fine-tuning
 
 ### Reversible Foundations: Training 120B Sparse MoE on Single Nodes
+- [[reversible-sparse-moe-single-node]] - Train hundred-billion-parameter sparse MoE on single eight-GPU nodes via reversible recurrence stacks + state-preserving growth + TQP optimizer (arXiv: 2606.07404)
+  - Reversibility: Recurrence stack reconstructs activations in backward → flat activation memory
+  - State-preserving growth: Dense→MoE→Deep→Many experts expansion with documented failure modes
+  - TQP optimizer: Quantized base + trained low-rank adapters → ~45x optimizer state reduction
+  - **Activation**: reversible training, sparse MoE, single-node training, memory-efficient, state-preserving growth, TQP optimizer, 120B model, low-rank adapters
+
+### polyDAG: Polynomial Acyclicity for Efficient Causal Discovery
+- [[polydag-efficient-causal-discovery]] - Polynomial trace constraint replaces matrix-exponential acyclicity, achieving 33.4% speedup with improved F1 scores in visual semantic graphs (arXiv: 2606.06908)### Reversible Foundations: Training 120B Sparse MoE on Single Nodes
 - [[reversible-sparse-moe-single-node]] - Train hundred-billion-parameter sparse MoE on single eight-GPU nodes via reversible recurrence stacks + state-preserving growth + TQP optimizer (arXiv: 2606.07404)
   - Reversibility: Recurrence stack reconstructs activations in backward → flat activation memory
   - State-preserving growth: Dense→MoE→Deep→Many experts expansion with documented failure modes
