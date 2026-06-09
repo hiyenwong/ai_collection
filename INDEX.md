@@ -1,5 +1,45 @@
 # AI Collection Index
 
+## 2026-06-09 - Computer Science + Quantum Mechanics (Cron Job - Hourly)
+
+### Adaptive Directional Gradients for Parameterised Quantum Circuits
+- [[adaptive-directional-gradient-qc]] - 前向梯度估计器通过前向模式自动微分训练PQC，QUIVER优化器实现闭式最小测量成本分配，60量子比特1770参数高效训练 (arXiv: 2606.09734)
+  - 前向模式AD：随机方向导数平均得到无偏梯度估计
+  - 统一框架：SPSA、随机坐标下降、参数平移作为极限情况
+  - QUIVER优化器：闭式最小测量成本分配，按信噪比分派shots
+  - 无辅助量子比特/受控门开销，扩展到60+量子比特
+  - **Activation**: forward gradient, directional derivative, PQC training, QUIVER optimiser, parameter-shift alternative, measurement-frugal quantum, quantum automatic differentiation, shot budget optimization
+
+### Intervention-Aware Quantum Predictive Control with Safety Attribution
+- [[intervention-aware-quantum-predictive-control]] - 介入感知VQC策略训练，原始-对偶介入预算惩罚安全过滤器依赖，安全归因协议分解轨迹校正 (arXiv: 2606.09778)
+  - 核心问题：安全由策略还是过滤器"赢得"
+  - 介入感知训练：VQC策略在原始-对偶介入预算下学习内在安全约束
+  - 安全归因协议：分解CBF校正和部署防护项
+  - 同等400参数预算下量子策略显著优于经典策略 (p < 10⁻⁴)
+  - **Activation**: quantum predictive control, VQC control, safety attribution, intervention-aware training, CBF quantum, control barrier function, safe quantum learning, primal-dual intervention
+
+### SCOPE: Syndrome-Driven Control Plane for QEC-Enabled Quantum Networks
+- [[scope-qec-network-control]] - 综合征驱动的控制平面，基于逻辑错误率路由而非物理保真度，无需主动层析成像实现实时网络错误偏差可见性 (arXiv: 2606.08873)
+  - 综合征收集：从QEC周期持续收集综合征数据
+  - 噪声结构推断：从综合征统计推断噪声偏差模式
+  - 逻辑错误预测：预测候选路由的端到端逻辑错误率
+  - 无需主动层析成像：被动综合征数据，不中断服务
+  - **Activation**: quantum network routing, QEC control plane, syndrome-driven routing, logical error rate routing, SCOPE, fault-tolerant quantum network, quantum error correction network
+
+### GNN for Fast Operator Selection in Adaptive VQE
+- [[gnn-adaptive-vqe-operator-selection]] - GNN策略从相互作用图预测下一个纠缠算子，GNN-VQE实现接近ADAPT-VQE的能量误差同时大幅减少全池梯度评估 (arXiv: 2606.08794)
+  - 图基决策：将自适应算子选择重构为图决策问题
+  - GNN短列表生成器：仅对少量GNN提议候选进行精确重新评分
+  - 跨模型迁移：自旋链训练策略在分子基准测试中有效
+  - **Activation**: adaptive VQE, operator selection, graph neural network, ADAPT-VQE, variational quantum eigensolver, GNN policy, quantum chemistry
+
+### Neural Network Decoder Confidence as Proxy for Logical Gap
+- [[nn-decoder-confidence-logical-gap]] - GNN解码器logit作为MWPM逻辑间隙的学习代理，GNN置信度产生比MWPM间隙更低的逻辑错误率 (arXiv: 2606.08758)
+  - 置信度学习：仅用综合征和逻辑标签训练的GNN学习间隙类判别
+  - 后选择优势：基于GNN logit的后选择优于MWPM间隙
+  - 定量置信度标度：GNN置信度幅度更接近理想后验对数似然比
+  - **Activation**: neural decoder, logical gap, GNN confidence, quantum error correction, MWPM, post-selection, surface code, soft information
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Session 3)
 
 ### Topo-Omni: Deep Topographic Multimodal Model for Brain Region Discovery
