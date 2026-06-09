@@ -10,6 +10,25 @@
   - 量子生物标志物发现：两阶段流程用于LUAD/LUSC亚型分类
   - **Activation**: quantum diagnosis, quantum medical, hybrid quantum-classical, medical ML, breast cancer quantum, TSHF, HQNN, feature fusion, quantum clinical deployment, medical imaging quantum
 
+## 2026-06-10 - Neuroscience Research (Cron Job - Domain Saturation Meta-Analysis)
+
+### Domain Saturation: Verification Pipeline + Meta-Analysis
+- All top neuroscience papers (99 searched, neuro score ≥ 3) have existing skills from previous sessions
+- Papers: 2606.05870 (cross-scale generative), 2606.00326 (synaptic matrix eigenvalues), 2606.03481 (STP goal-conditioned), 2606.02305 (Whisper-ECoG), 2606.00667 (cortex-subcortex memory)
+- Meta-analysis: Cross-Scale Generative + Synaptic Spectral synthesis → spatial organization framework (transcriptomic gradients + connectivity constraints)
+- Skill sync: ai_collection → Hermes (cross-scale spatially-aware, 55% richer); Hermes → ai_collection (synaptic-matrix-eigenvalue-analysis)
+- Obsidian note created with future research directions: integrate transcriptomic-connectivity frameworks, dynamic vulnerability mapping, stability-degeneration relationship
+
+### On the synaptic matrix eigenvalues of sparsely connected neural networks
+- [[synaptic-matrix-eigenvalue-analysis]] - 突触矩阵特征值分析方法论。稀疏连接神经网络谱行为分析，稳定性/瞬态动力学/记忆容量评估。不同稀疏类型（随机、结构、时变、稳态）产生不同谱特征。圆律分布→噪声鲁棒性，离散峰→模块化功能。统计分析推导动力学特性，药理效应建模应用 (arXiv: 2606.00326)
+  - 稳定性边界：λ_max < 1 → 网络稳定
+  - 记忆容量：特征值分布宽度 → 存储能力
+  - 稀疏类型谱：随机稀疏（圆律）、结构稀疏（离散峰）、时变稀疏（动态谱）、稳态稀疏（窄分布）
+  - 统计方法：随机矩阵样本 → 谱密度估计 → 动力学推断
+  - Hopfield容量：α = 1/(2σ²λ)，谱宽度决定记忆上限
+  - 药理建模：药物 → 稀疏性 → 谱 → 动力学链条
+  - **Activation**: 突触矩阵特征值, synaptic matrix eigenvalues, 稀疏连接网络, spectral analysis, 网络稳定性, 记忆容量, synaptic sparsity, random matrix theory, 神经网络谱, 圆律分布, 药理效应建模
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Topo-Omni)
 
 ### Discovering Functionally Selective Brain Regions with Deep Topographic Multimodal Model
@@ -1977,3 +1996,48 @@
   - 后端架构和路由开销影响目标质量和安全指标
   - 必须将MaxCut成本、安全质量、路由开销和运行时报为独立指标
   - **Activation**: hardware-aware qaoa, honeypot traffic, quantum cybersecurity, IBM quantum processor, routing overhead, MaxCut quantum optimization, utility-scale quantum, security metrics
+
+## 2026-06-10 - Deep Learning Research (Cron Job)
+
+### Latent Reasoning with Normalizing Flows
+- [[nf-cot-latent-reasoning-normalizing-flows]] - Normalizing flows for compact continuous thoughts in chain-of-thought reasoning. Preserves autoregressive generation, exact likelihoods, KV-cache compatibility (arXiv: 2606.06447)
+  - TARFlow-style normalizing flow inside LLM backbone
+  - Dual-head generation: NF head for latent, LM head for text
+  - Exact log-likelihood for continuous thoughts
+  - Policy-gradient optimization in latent reasoning space
+  - Code generation benchmarks: improved pass rates vs explicit CoT
+  - **Activation**: latent reasoning, normalizing flows CoT, continuous thoughts, NF-CoT, TARFlow reasoning
+
+### KL Agreement Trap Termination for On-Policy Distillation
+- [[kat-kl-agreement-trap-termination]] - Online OPD termination rule detecting persistent low-KL agreement traps. +2.66% avg@k, +3.43% pass@k, -59.73% rollout length (arXiv: 2606.09471)
+  - Dynamic threshold adapts to training progress
+  - Terminates when student enters unrecoverable prefix states
+  - Filters weak supervision from degenerate teacher agreement
+  - Mathematical reasoning benchmarks validation
+  - **Activation**: KL agreement trap, OPD termination, on-policy distillation quality, KAT, distillation trap detection
+
+### Compiler World Models for Tensor Program Optimization
+- [[compiler-world-model-tensor-optimization]] - World-model-inspired evaluator modeling schedule evaluation as action-conditioned latent dynamics. TVM: 1.37x GPU, 1.54x CPU latency improvement (arXiv: 2606.09312)
+  - Lightweight latent transition avoiding expensive AST mutation
+  - Captures schedule trajectory vs static code snapshots
+  - Final dynamic representation + action + hardware features ranking
+  - Matches Ansor-10K within 2.2% using 10x fewer measurements
+  - **Activation**: tensor program optimization, world model compiler, TVM auto-scheduler, schedule evaluation, latent dynamics compilation
+
+### Claw-R1: Step-Level Data Middleware for Agentic RL
+- [[claw-r1-agentic-rl-data-middleware]] - Interactive data middleware connecting agent runtimes with RL backends. Gateway Server captures multi-turn steps, Data Pool organizes as managed assets (arXiv: 2606.09138)
+  - Unified LLM API entry point for step capture
+  - Step-level records: prompt_id, response_id, reward, metadata
+  - Quality/readiness curation for training batches
+  - Live trajectory inspection and data configuration
+  - GitHub: https://github.com/AgentR1/Claw-R1
+  - **Activation**: agentic RL data, step-level middleware, agent trajectory management, Claw-R1, LLM agent training
+
+### Uncertainty-Aware LLM-Guided Policy Shaping
+- [[ulps-uncertainty-aware-llm-policy-shaping]] - LLM integration into RL with uncertainty-modulated guidance for sparse-reward domains. +9% accuracy, fewer interactions, higher reward AUC (arXiv: 2606.06673)
+  - A*-based oracle synthesizes optimal symbolic trajectories
+  - Monte Carlo dropout for epistemic uncertainty estimation
+  - Entropy-based blending of LLM guidance vs PPO policy
+  - MiniGridUnlockPickup benchmark validation
+  - **Activation**: uncertainty-aware RL, LLM-guided policy, sparse reward, A* oracle RL, epistemic uncertainty policy
+
