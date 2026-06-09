@@ -10,6 +10,17 @@
   - 相图：欠参数化（α→∞）、过参数化（α→0）、临界区（α~1）相变
   - **Activation**: neural ode, mean field theory, dynamical systems, training dynamics, learning curves, high-dimensional limit, statistical mechanics, online SGD, ResNet theory, continuous-time networks, inference dynamics, parameter optimization, phase transitions, learning theory, adjoint method
 
+## 2026-06-09 - Computer Science (Cron Job - Hourly Tuesday)
+
+### FASE: Fast Adaptive Semantic Entropy for Code Quality
+- [[fase-semantic-entropy-code]] - 快速自适应语义熵度量用于多智能体代码生成质量评估，基于结构和语义相异图的最小生成树近似功能正确性，Spearman相关性提升25%，计算成本仅0.3% (arXiv: 2606.09800)
+  - MST熵：结合结构(AST)和语义(嵌入)相异图的最小生成树权重作为不确定性代理
+  - 25% Spearman相关性提升，19% ROCAUC提升 vs LLM语义熵
+  - 计算成本仅传统方法的0.3%，无需地面真值测试用例
+  - HumanEval和BigCodeBench基准，Qwen3-Embedding-8B验证
+  - **Activation**: semantic entropy, code uncertainty, multi-agent code quality, FASE, functional correctness estimation, fast adaptive semantic entropy, code generation uncertainty, MST entropy code
+
+
 ## 2026-06-09 - Neuroscience Research (Cron Job)
 
 ### Topo-Omni: Deep Topographic Multimodal Model
@@ -1860,3 +1871,30 @@
   - DLP-hidden repair family: False-veto rate below 1.1% with Q-DLP policy vs chance-level classical
   - **Activation**: quantum-repair-augmented, Q-RACL, repair-before-veto, quantum-feature-access, constraint-learning, DLP-hidden, Shor-structure
 
+
+## 2026-06-09 - Computer Science + Quantum (Cron Job - Hourly 18:00)
+
+### Frequent Itemset Mining with Quantum Computing
+- [[quantum-frequent-itemset-mining]] - QuantumFreqMine框架加速频繁项集挖掘，使用比特向量量子比特编码、挖掘感知候选叠加和比特并行阈值标记，在密集数据集上超越经典方法 (arXiv: 2606.09209)
+  - 比特向量量子编码：O(log N)空间复杂度压缩交易数据库
+  - 挖掘感知候选叠加：按相关性权重准备叠加态，减少候选枚举复杂度
+  - 比特并行阈值标记：单次量子操作并行比较所有候选，避免经典迭代计数
+  - 空间优势：经典O(2^d) vs 量子O(d)量子比特
+  - **Activation**: quantum frequent itemset mining, quantum data mining, QFM framework, quantum association rules, bit-parallel quantum mining, 量子频繁项集挖掘
+
+### From Pauli Strings to Quantum Dynamics: A Unified Characterization
+- [[pauli-string-quantum-dynamics]] - 基于Pauli字符串不变量的统一量子动力学表征框架，揭示Pauli李代数与Clifford子群的深层联系，提供高效的李代数和轨道识别算法 (arXiv: 2606.09773)
+  - 不变量方法：通过Pauli轨道、对称性和不变子空间表征量子系统
+  - 深层联系：Pauli李代数 ↔ 由平伸生成的Clifford子群
+  - 高效算法：结构化Pauli生成集的李代数和轨道识别
+  - Clifford子群（由平伸生成）提供对应Pauli李群的3-design
+  - 适用场景：变分量子算法、受限量子计算、多体系统、随机电路
+  - **Activation**: pauli strings, quantum dynamics, lie algebra, clifford group, symplectic properties, pauli orbits, invariant subspaces, variational quantum algorithms, random circuits, many-body physics, representation theory
+
+### Hardware-Aware QAOA for Honeypot Traffic Partitioning
+- [[hardware-aware-qaoa-honeypot]] - 在100+量子比特IBM处理器上执行硬件感知QAOA进行蜜罐流量分区，建立最大110节点图的量子优化基准框架，量化路由开销和安全指标 (arXiv: 2606.09469)
+  - 最大110节点、181边实例在三个IBM后端执行
+  - 浅层QAOA可在效用规模执行真实流量分区工作负载
+  - 后端架构和路由开销影响目标质量和安全指标
+  - 必须将MaxCut成本、安全质量、路由开销和运行时报为独立指标
+  - **Activation**: hardware-aware qaoa, honeypot traffic, quantum cybersecurity, IBM quantum processor, routing overhead, MaxCut quantum optimization, utility-scale quantum, security metrics
