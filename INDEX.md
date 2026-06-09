@@ -51,6 +51,30 @@
   - 无权衡设计：不同于现有方法，不强制在确定性和概率性之间做选择
   - **Activation**: quantum fuzzy ontology, hybrid quantum fuzzy, neuro-quantum-fuzzy, knowledge representation quantum, ontology embedding, crisp probabilistic inference, quantum knowledge graph
 
+
+### Hardware-aware Low-latency Quantum Compilation with Data-driven Lightweight Error Detection for Early Fault-Tolerant Systems
+- [[hardware-aware-quantum-compilation]] - NISQ处理器编译与轻量级误差检测联合优化，噪声加权代价函数+学习多目标调度器，算法成功率提升最高68% (arXiv: 2606.07666)
+  - 联合优化范式：qubit映射、SWAP插入、QED放置统一框架
+  - 噪声加权代价函数：基于硬件校准数据优化编译路径
+  - 学习多目标调度器：ML驱动误差检测检查点放置
+  - 早期容错适用性：轻量级QED替代完整QEC，降低资源开销
+  - **Activation**: quantum compilation, qubit mapping, error detection, NISQ, hardware-aware, fault-tolerant, QED, syndrome scheduling
+
+### Pure and mixed Dicke state ansatz for equality and inequality constraints in variational quantum eigensolver
+- [[dicke-state-ansatz-vqe]] - 混合Dicke态变分量子本征求解器，结构性编码Hamming权重约束消除惩罚项，实现可行子空间内优化 (arXiv: 2606.08504)
+  - 可行性保持变分：量子态天然限制在可行子空间，无需惩罚调参
+  - 混合Dicke态：密度矩阵形式同时处理等式和不等式约束
+  - 张量积推广：多组独立约束通过张量积组合
+  - 硬件实验验证：IBM NISQ处理器上的组合投资组合优化
+  - **Activation**: Dicke state, constrained VQE, penalty-free optimization, Hamming weight, ansatz design, combinatorial optimization
+
+### Numerical solution of the nonlinear Dirac equation by a splitting variational quantum algorithm
+- [[splitting-variational-quantum-algorithm]] - 算子分裂变分量子算法模拟非线性Dirac方程，线性子步骤(固定酉电路)+非线性变分校正(测量驱动) (arXiv: 2606.08053)
+  - 算子分裂VQA：经典split-operator方法扩展到变分量子设置
+  - 测量驱动非线性：状态依赖相互作用通过可观测量测量反馈
+  - 旋量-傅里表示：联合位置-自旋寄存器保持自旋-动量耦合
+  - 稳定误差行为：长时间演化下准确捕获密度和旋量动力学
+  - **Activation**: splitting VQA, nonlinear quantum simulation, operator splitting, variational quantum algorithm, nonlinear Dirac equation
 ## 2026-06-09 - Neuroscience Research (Cron Job - Latest Session)
 
 ### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
