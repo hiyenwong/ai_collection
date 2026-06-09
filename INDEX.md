@@ -62,6 +62,14 @@
   - 无需主动层析成像：被动综合征数据，不中断服务
   - **Activation**: quantum network routing, QEC control plane, syndrome-driven routing, logical error rate routing, SCOPE, fault-tolerant quantum network, quantum error correction network
 
+### DRPO: Divergence Regularized Policy Optimization for LLM RL
+- [[drpo-llm-rl]] - 散度正则化策略优化，用平滑优势加权二次正则器替代DPPO硬掩码，在LLM强化学习中提供更稳定的梯度流和信任区域控制 (arXiv: 2606.09821)
+  - 平滑正则器：替代硬掩码，梯度衰减而非截断为零
+  - 信任区域几何：保留DPPO的信任区域结构
+  - 连续梯度权重：有界连续权重，抑制发散更新
+  - 跨模型尺度/架构/精度设置均显示稳定性和效率提升
+  - **Activation**: DRPO, divergence regularized policy optimization, trust region LLM RL, smooth policy regularization, GRPO improvement, DPPO alternative, 散度正则化策略优化, LLM reinforcement learning
+
 ### GNN for Fast Operator Selection in Adaptive VQE
 - [[gnn-adaptive-vqe-operator-selection]] - GNN策略从相互作用图预测下一个纠缠算子，GNN-VQE实现接近ADAPT-VQE的能量误差同时大幅减少全池梯度评估 (arXiv: 2606.08794)
   - 图基决策：将自适应算子选择重构为图决策问题
