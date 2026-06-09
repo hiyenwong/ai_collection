@@ -1,5 +1,18 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Topo-Omni)
+
+### Discovering Functionally Selective Brain Regions with Deep Topographic Multimodal Model
+- [[topo-omni-deep-topographic-multimodal]] - EPFL NeuroAI Lab 首个连续拓扑多模态模型，单一in-silico皮质板跨越视觉/听觉/语言处理阶段，空间平滑性目标诱导脑类聚类，恢复已知类别选择性区域并发现新颖动物/自然景观选择性前额叶集群，因果干预验证区域必要性，为神经AI提供空间可解释假设生成平台 (arXiv: 2606.09770)
+  - 连续拓扑板：视觉编码器、音频编码器、语言模块共享单一连续2D板
+  - 空间平滑性：任务优化+局部邻域平滑损失，无脑数据监督训练
+  - 类别选择性：恢复人脸/场景/语音/语言/多重需求/心智理论网络
+  - 模型引导发现：聚类自然视频→预测对比→人类fMRI验证前额叶新区域
+  - 因果干预：抑制/驱动聚类选择性影响感知，类比TMS/颅内刺激
+  - 性能保持：脑对齐基准测试中不牺牲计算性能
+  - **Activation**: topo-omni, topographic multimodal, cortical organization, functional selectivity, category-selective regions, in-silico cortical sheet, brain-like clustering, spatial smoothness, model-guided discovery, causal intervention neuroscience, EPFL NeuroAI
+
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Evening Final)
 
 ### Fixed Point Compositionality via Low-Rank Gluing Rules

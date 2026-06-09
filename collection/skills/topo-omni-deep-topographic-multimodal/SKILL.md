@@ -1,168 +1,381 @@
 ---
 name: topo-omni-deep-topographic-multimodal
-description: "Topo-Omni - Deep Topographic Multimodal Model methodology for discovering functionally selective brain regions across visual, auditory, and language/cognitive processing modalities. Uses spatial smoothness objective to develop clusters consistent with human neuroimaging, enables novel brain network discovery validated in human data. Use when: studying cortical spatial organization, multimodal brain representations, topographic models, functional selectivity in sensory/cognitive systems, discovering new brain networks, or validating in-silico brain predictions."
-metadata:
-  arxiv_id: "2606.09770"
-  published: "2026-06-08"
-  authors: ["Badr AlKhamissi", "Johannes Mehrer", "Lara Marinov", "Ahmed Abdelaal", "Abdulkadir Gokce", "Martin Schrimpf"]
-  tags: [neuroscience, topographic-model, multimodal, brain-network, functional-selectivity, cortical-organization]
+description: Topo-Omni - Deep Topographic Multimodal Model for discovering functionally selective brain regions. Single contiguous in-silico cortical sheet spanning visual, auditory, and language/cognitive processing stages.
+category: neuroscience
+version: 1.0.0
+author: arxiv-research-cron
+created: 2026-06-09
+arxiv_id: 2606.09770v1
+paper_title: "Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model"
+paper_authors: "Badr AlKhamissi*, Johannes Mehrer*, Lara Marinov, Ahmed Abdelaal, Abdulkadir Gokce, Martin Schrimpf"
+paper_date: 2026-06-08
+paper_url: https://arxiv.org/abs/2606.09770v1
+code_url: https://github.com/epflneuroailab/topo-omni
+model_url: https://huggingface.co/epfl-neuroai/topo-omni
+institution: EPFL NeuroAI Lab
+tags:
+  - topographic-model
+  - multimodal
+  - brain-alignment
+  - cortical-organization
+  - functional-selectivity
+  - visual-cortex
+  - auditory-cortex
+  - language-network
+  - category-selective
+  - in-silico-cortex
+  - causal-intervention
+  - model-guided-discovery
+activation_keywords:
+  - topo-omni
+  - topographic multimodal
+  - cortical organization
+  - functional selectivity
+  - category-selective regions
+  - in-silico cortical sheet
+  - brain-like clustering
+  - spatial smoothness
+  - model-guided discovery
+  - causal intervention neuroscience
 ---
 
 # Topo-Omni: Deep Topographic Multimodal Model
 
-## Background
+## Overview
 
-Nearby neurons in cortex share similar response profiles, producing systematic spatial organization across sensory and cognitive systems. Previous topographic models reproduce aspects of this structure but remain unimodal and spatially constrain each layer separately, yielding fragmented maps that capture neither the contiguity of cortical processing streams nor their integration across modalities.
+Topo-Omni is a topographic multimodal model that discovers functionally selective brain regions by embedding visual, auditory, and language/cognitive processing in a **single contiguous in-silico cortical sheet**. The model develops clusters consistent with human neuroimaging across sensory to cognitive systems, and enables causal interventions and model-guided discovery of novel brain regions.
 
-## Core Innovation
+**Key Innovation**: Unlike existing unimodal topographic models with fragmented maps, Topo-Omni uses a unified sheet across all processing stages and modalities, capturing the contiguity of cortical processing streams.
 
-Topo-Omni introduces a **topographic multimodal model** where visual, auditory, and language/cognitive processing share a **single contiguous in-silico sheet**.
+## Core Principles
 
-### Key Architecture Features
+### 1. Contiguous In-Silico Cortical Sheet
 
-1. **Multimodal Integration**: Visual, auditory, and language/cognitive processing unified on one spatial sheet
-2. **Spatial Smoothness Objective**: Fine-tuning pretrained foundation model with spatial continuity constraints
-3. **Cluster Development**: Emergent clusters across modalities consistent with human neuroimaging
-4. **Functional Selectivity**: Clusters correspond to sensory → cognitive processing hierarchy
+**Problem with existing models**:
+- Unimodal focus (vision, audition, or language only)
+- Each layer embedded on separate 2D maps
+- Spatially disconnected sheets
+- Cannot represent spatio-functional patterns across hierarchical levels
 
-## Methodology
+**Topo-Omni solution**:
+- Single contiguous sheet spanning vision encoder, audio encoder, and language/cognitive module
+- Spatial constraints act across levels of processing complexity
+- Integration across modalities enabled by unified architecture
 
-### Construction Steps
+### 2. Spatial Smoothness Objective
 
-1. **Foundation Model**: Start with pretrained multimodal encoder (visual, auditory, language)
-2. **Spatial Topographic Constraint**: Add spatial smoothness loss across processing sheet
-3. **Cluster Formation**: Train to develop contiguous clusters across modalities
-4. **Validation**: Compare cluster patterns with human fMRI neuroimaging data
+**Mechanism**:
+- Apply spatial smoothness loss on local cortical neighborhoods
+- Task optimization + spatial regularizer → emergent category-selective patches
+- **No brain data or category labels supplied during training**
 
-### Spatial Smoothness Objective
+**Mathematical formulation**:
+```
+Spatial Loss: Smoothness over local neighborhoods in the in-silico sheet
+Training: Fine-tuning pretrained multimodal foundation model with spatial objective
+Target: Self-distillation from unmodified baseline outputs
+```
 
-The model optimizes:
-- Spatial continuity: nearby neurons should have similar response profiles
-- Cross-modal integration: processing streams should be contiguous across modalities
-- Functional clustering: semantic/cognitive functions should cluster spatially
+### 3. Pretrained Foundation Model Backbone
 
-## Key Findings
+**Base architecture**: Qwen2.5-Omni-3B multimodal model
+**Training corpus**: ~4,500 videos (modest scale)
+**Paradigm**: Self-distillation - baseline outputs as targets
+**Advantage**: Preserves capability while imposing spatial organization
 
-### Neuroimaging Alignment
+## Emergent Functional Organization
 
-Clusters developed by Topo-Omni align with:
-- Sensory systems (visual, auditory cortices)
-- Cognitive systems (language, executive function regions)
-- Processing hierarchy (low-level → high-level representations)
+### Visual Cortex Organization
 
-### Intervention Parallels
+**Category-selective regions recovered**:
+- **Face-selective**: Parallel to human OFA/FFA
+- **Scene-selective**: Parallel to human place-selective areas
+- **Body-selective**: Body patches in visual cortex
+- **Tool-selective**: Tool category specialization
 
-- **Driving a cluster**: Selectively biases perception (parallels human intervention studies)
-- **Suppressing a cluster**: Impairs perception (matches lesion/inhibition effects)
+**Validation**:
+- EMFL localizer stimuli (Marvi et al., 2025)
+- Response profiles match human fMRI across category-selective regions
+- Pearson correlation with human visual cortex responses
 
-### Novel Network Discovery
+**Spatial property**: Selectivity confined to vision encoder portion of sheet
 
-Topo-Omni enables in-silico screening for:
-- **Natural landscape networks**: Previously undiscovered brain regions
-- **Animal networks**: Cross-species homologues validated in human data
+### Auditory Cortex Organization
 
-## Applications
+**Speech-selective regions**:
+- Localizer: Non-words vs. Quilted Speech
+- Parallels human superior temporal gyrus (STG)
+- Pearson r = 0.69, p = 0.025
+- Sensitivity to speech structure, not just acoustic energy
 
-### Research Use Cases
+**Voice-selective regions**:
+- Localizer: Human Voices vs. Non-voices (Pernet et al., 2015)
+- Parallel to temporal voice area along superior temporal sulcus
+- Responds preferentially to human speech stimuli
+- Distinct from speech-selective regions
 
-1. **Cortical Organization Studies**: Understanding spatial structure across modalities
-2. **Functional Selectivity Mapping**: Identifying region-specific cognitive functions
-3. **Novel Brain Region Discovery**: In-silico hypothesis generation for validation
-4. **Cross-modal Integration**: Studying how sensory → cognitive streams connect
-5. **Intervention Prediction**: Simulating effects of driving/suppressing brain regions
+**Tonotopic organization**:
+- Spatially organized map of preferred frequency
+- Mirrors human auditory cortex tonotopy
+- Neighboring units share similar best frequencies
 
-### Clinical Applications
+**Modality specificity**: Auditory selectivity confined to audio encoder, no vision encoder activation
 
-- **Brain Intervention Planning**: Predict effects of stimulation/suppression
-- **Cognitive Mapping**: Map functional selectivity for clinical assessments
-- **Novel Biomarker Discovery**: Identify new network signatures for disorders
+### Higher Cognitive Networks
 
-## Implementation Considerations
+**Language network**:
+- Localizer: Sentences vs. Non-words (Fedorenko et al., 2010)
+- Language-selectivity d′ = 1.39, p < 0.001
+- Parallel to fronto-temporal language network
 
-### Model Requirements
+**Multiple demand network**:
+- Localizer: Math questions vs. narrative questions (Fedorenko et al., 2013)
+- Selectivity d′ = 0.54, p < 0.001
+- Parallel to frontoparietal multiple demand network
+- Activates during cognitively demanding tasks
 
-- Pretrained multimodal encoder backbone
-- Spatial smoothness loss function
-- Contiguous topographic sheet representation
-- Cluster validation against neuroimaging datasets
+**Theory of mind network**:
+- Localizer: False Belief vs. False Photograph (Dufour et al., 2013)
+- Selectivity d′ = 0.15, p < 0.001 (weaker than language/MD)
+- Parallel to temporo-parietal junction and medial prefrontal cortex
 
-### Training Strategy
+**Processing**: Input as text tokens directly to language/cognitive module
 
-1. Fine-tune foundation model with spatial objective
-2. Develop clusters through spatial smoothness optimization
-3. Validate cluster alignment with human fMRI patterns
-4. Test intervention predictions against behavioral data
+## Model-Guided Cluster Discovery
 
-## Validation Protocol
+### Novel Region Discovery
 
-### Neuroimaging Comparison
+**Methodology**:
+1. Cluster naturalistic video segments using Topo-Omni selectivity
+2. Generate contrast predictions for human fMRI
+3. Test predictions in human neuroimaging data (Spacetop dataset)
 
-Compare Topo-Omni clusters with:
-- Resting-state fMRI functional connectivity patterns
-- Task-based fMRI activation maps
-- Structural connectivity (DTI tractography)
+**Discovered clusters**:
+- **Animal-selective cluster**: Predominantly in prefrontal cortex
+- **Natural landscape-selective cluster**: Prefrontal localization
 
-### Intervention Verification
+**Significance**: These have not previously been described as functionally selective regions comparable to classical face-, place-, word-, voice-selective areas.
 
-Test driving/suppression predictions:
-- TMS/fMRI intervention studies
-- Lesion behavior correlations
-- Pharmacological modulation effects
+**Closed-loop science**:
+- Model proposes hypotheses → human validation → independent confirmation needed
+- Shift from post-hoc explanation to hypothesis generation
 
-## Theoretical Implications
+## Causal Intervention Capability
 
-### Spatial Organization Principle
+### Spatially Targeted Perturbations
 
-A single spatial principle organizes:
-- Representations across modalities
-- Processing stages (sensory → cognitive)
-- Functional selectivity patterns
+**Face-selective region demonstration**:
+- **Suppression**: Abolishes face identification, other categories intact
+- **Driving**: Biases model toward face responses regardless of actual input
 
-### Compositionality
+**Analogue of neuroscience interventions**:
+- TMS (transcranial magnetic stimulation)
+- Intracranial stimulation
+- Lesion studies
 
-Cortical processing exhibits:
-- Contiguous processing streams
-- Cross-modal integration zones
-- Hierarchical organization along spatial sheet
+**Advantages over human experiments**:
+- Scalable interventions
+- Cost-effective screening
+- Spatially interpretable results
+- Causal validation before in-vivo experiments
 
-## Pitfalls
+### Intervention Protocol
 
-### Model Limitations
+```
+1. Define localizer-specific ROI units
+2. Suppress: Zero out activations in cluster
+3. Drive: Amplify activations beyond normal range
+4. Measure: Task performance changes, selectivity shifts
+5. Validate: Compare to human intervention studies
+```
 
-1. **Pretrained Backbone Dependency**: Quality depends on foundation model capabilities
-2. **Spatial Resolution**: May miss sub-regional heterogeneity within clusters
-3. **Training Data Bias**: Limited by multimodal training dataset characteristics
+## Performance Validation
 
-### Validation Challenges
+### Brain Alignment Benchmarks
 
-1. **Individual Variability**: Human neuroimaging shows substantial individual differences
-2. **Cross-modal Complexity**: Real brain may have different integration patterns
-3. **Intervention Prediction Accuracy**: Real effects may diverge from model predictions
+**NSD (Natural Scenes Dataset) ROIs**:
+- Twelve regions tested
+- Topo-Omni matches or exceeds non-topographic baseline
+- No degradation from imposing spatial organization
+
+**OmniBench accuracy**:
+- Downstream task performance maintained
+- Spatial structure need not trade off against computational performance
+
+**Brain-Score benchmarks**:
+- Competitive with non-topographic multimodal models
+- Spatial organization incorporated at no measurable cost
+
+## Architecture Details
+
+### Multimodal Cortical Architecture
+
+**Components**:
+- Vision encoder → mapped to sheet region
+- Audio encoder → mapped to contiguous region
+- Language/cognitive module → mapped to higher-order region
+- **Contiguous layout**: Single sheet spanning all components
+
+### Projection Scheme
+
+**Mapping to in-silico sheet**:
+- Units assigned positions on 2D surface
+- Spatial smoothness loss applied across neighboring positions
+- Emergent clustering without explicit anatomical priors
+
+**Key**: Any multimodal foundation model can be fitted with contiguous topographic sheet using this projection scheme
+
+## Interpretation & Limitations
+
+### In-Silico Sheet Interpretation
+
+**Captures organizational principles, not anatomy**:
+- Coarse spatio-functional patterns
+- Category-selective regions
+- Modality-appropriate organization
+
+**Does NOT model**:
+- Hemispheres
+- Cortical folding
+- White-matter connectivity
+- Cytoarchitecture
+- Precise relative positions of human regions
+- Anatomical subregions (e.g., OFA vs. FFA)
+
+**Future directions**: Stronger anatomical correspondences require stronger architectural priors
+
+### Limitations
+
+1. **Anatomical abstraction**: Coarse principles, not detailed anatomy
+2. **Limited validation dataset**: EMFL subset, n=6 participants
+3. **Training scale**: ~4,500 videos (modest)
+4. **Self-distillation coupling**: Spatial loss tied to specific functional anchor
+5. **Novel-cluster validation**: Single dataset (Spacetop), needs independent validation and causal tests
+
+## Research Applications
+
+### 1. Model-Guided Localizer Design
+
+- Clusters propose contrasts for human/animal experiments
+- Complement conventional pipeline (model accounts for known regions)
+- Predict previously uncharacterized organization
+
+### 2. In-Silico Screening Platform
+
+- Pre-TMS screening for target regions
+- Intracranial stimulation prediction
+- Lesion study analogues
+- Generate necessity/sufficiency hypotheses
+
+### 3. Cross-Modal Organization Study
+
+- Component boundary behavior
+- Semantic relatedness across vision, audio, language
+- Spatial loss pulls together semantically related units
+
+### 4. Architectural Generalization
+
+- Template applicable to any multimodal foundation model
+- Potential extension to touch, olfactory, motor processing
+- Topographic variants for additional modalities
+
+## Implementation Guidelines
+
+### Using Topo-Omni
+
+**Code repository**: https://github.com/epflneuroailab/topo-omni
+
+**Model weights**: https://huggingface.co/epfl-neuroai/topo-omni
+
+**Basic usage**:
+```python
+from topo_omni import TopoOmniModel
+
+# Load pretrained model
+model = TopoOmniModel.from_pretrained("epfl-neuroai/topo-omni")
+
+# Process multimodal input
+inputs = {
+    "video": video_tensor,
+    "audio": audio_tensor,
+    "text": text_tokens
+}
+
+# Get activations on in-silico sheet
+activations = model(inputs, return_sheet_activations=True)
+
+# Extract cluster activations
+face_cluster = model.get_cluster_activations("face-selective")
+speech_cluster = model.get_cluster_activations("speech-selective")
+language_cluster = model.get_cluster_activations("language")
+```
+
+### Causal Intervention
+
+```python
+# Suppress face-selective region
+model.suppress_cluster("face-selective")
+output = model(inputs)
+
+# Drive face-selective region
+model.drive_cluster("face-selective", amplification=2.0)
+output = model(inputs)
+
+# Measure selectivity shift
+face_selectivity = model.measure_selectivity("face", output)
+```
+
+### Cluster Discovery
+
+```python
+# Cluster naturalistic stimuli
+clusters = model.discover_clusters(
+    stimuli=naturalistic_videos,
+    method="selectivity_clustering",
+    n_clusters=10
+)
+
+# Generate contrast predictions
+contrasts = model.generate_contrasts(clusters)
+
+# Validate in human data
+validation_results = validate_in_fmri(contrasts, human_data)
+```
+
+## Key Takeaways
+
+1. **Unified sheet sufficient**: Single spatial smoothness principle induces brain-like organization across modalities
+2. **No trade-off**: Spatial organization preserved in high-performing systems
+3. **Hypothesis generation**: Models predict new cortical organization, not just explain known regions
+4. **Causal testing**: In-silico interventions enable scalable neuroscience screening
+5. **Platform for NeuroAI**: Spatially grounded models for hypothesis-driven brain research
+
+## Future Directions
+
+1. **Anatomical precision**: Incorporate hemispheric organization, cortical folding, connectivity
+2. **Larger training scale**: Test spatial loss under bigger corpora
+3. **Training from scratch**: Explore organization emergence under alternative objectives
+4. **Additional modalities**: Extend to touch, olfactory, motor processing
+5. **Causal validation**: Independent TMS/intracranial studies for novel clusters
 
 ## Related Skills
 
-- `brain-dit-fmri-foundation-model`: Brain-DiT for multi-state fMRI foundation models
-- `brain-connectivity-analysis`: Brain network connectivity analysis
-- `brain-network-controllability`: Network control theory for brain state transitions
-- `topo-omni-deep-topographic-multimodal`: This skill (cross-reference)
+- `brain-graph-neural` - Graph neural networks for brain connectivity
+- `brain-dit-fmri-foundation-model` - Brain-DiT fMRI foundation model
+- `neural-population-dynamics` - Neural population dynamics analysis
+- `brain-inspired-snn-pattern-analysis` - Brain-inspired SNN patterns
+- `topological-ml-eeg-classification` - Topological ML for EEG classification
 
-## Key References
+## References
 
-- **arXiv:2606.09770v1** - "Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model" (AlKhamissi et al., 2026)
-- **Topographic Models**: Studies of spatial organization in cortical processing
-- **Multimodal Integration**: Cross-modal binding and unified representations
+- arXiv:2606.09770v1 - Original paper
+- Marvi et al. (2025) - EMFL localizer dataset
+- Fedorenko et al. (2010, 2013) - Language/MD localizers
+- Pernet et al. (2015) - Voice localizer
+- Dufour et al. (2013) - Theory of mind localizer
+- Mehrer et al. (2026) - TMS screening framework
+- Lee et al. (2020), Margalit et al. (2024) - Prior topographic models
 
-## Activation Keywords
+---
 
-- topographic multimodal
-- brain spatial organization
-- functional selectivity
-- cortical topography
-- multimodal brain representation
-- brain network discovery
-- cross-modal integration
-- spatial smoothness model
-
-## Summary
-
-Topo-Omni provides a unified framework for understanding cortical spatial organization across modalities. By sharing a single contiguous sheet for visual, auditory, and language/cognitive processing, it develops clusters consistent with human neuroimaging and enables discovery of novel brain networks. The model bridges computational neuroscience and clinical applications through intervention prediction and network validation.
+**Note**: This skill represents a paradigm shift in NeuroAI - from post-hoc explanation to hypothesis generation, enabling models to propose novel cortical organization that can be tested in human neuroscience experiments.
