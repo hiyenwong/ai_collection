@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Session 3)
+
+### Topo-Omni: Deep Topographic Multimodal Model for Brain Region Discovery
+- [[topo-omni-deep-topographic-multimodal]] - 单一连续硅片整合视觉听觉语言处理，空间平滑性目标开发跨模态簇，簇驱动/抑制平行人类干预研究，发现自然景观和动物网络并验证 (arXiv: 2606.09770)
+  - 统一空间拓扑：视觉、听觉、语言共享单一连续硅片
+  - 跨模态簇一致性：匹配人类神经影像（感觉→认知系统）
+  - 干预实验：簇操纵对应人类TMS/电刺激效应
+  - 新簇发现：模型预测→人类验证（自然景观、动物网络）
+  - **Activation**: topographic model, multimodal brain, cortical organization, functional selectivity, brain regions discovery, Topo-Omni
+
+### Krylov Mean-Field Chaos: Deterministic Prediction Theory in RNNs
+- [[krylov-mean-field-chaos-rnn]] - 动力学平均场理论揭示确定性混沌，Krylov状态空间展开时序模式层级，增长率设定预测复杂度并上限Lyapunov指数，扩展哈密顿混沌到耗散系统 (arXiv: 2606.08805)
+  - 平均场确定性：过去轨迹唯一确定未来（解析非线性）
+  - Krylov层级：无限时序模式暴露潜在确定性
+  - 预测复杂度上限：增长率约束最大Lyapunov指数
+  - 微观敏感性≠预测复杂度：平均场混沌双重侧面
+  - **Activation**: mean-field theory, Krylov chaos, RNN prediction, Lyapunov exponent, temporal modes, deterministic chaos
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Session 2)
 
 ### SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C
