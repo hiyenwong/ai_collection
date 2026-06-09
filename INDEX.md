@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job)
+
+### Topo-Omni: Deep Topographic Multimodal Model
+- [[topo-omni-deep-topographic-multimodal]] - 拓扑多模态模型发现功能选择性脑区，视觉/听觉/语言处理共享单一连续拓扑结构，簇与人类神经影像一致 (arXiv: 2606.09770)
+  - 单一连续拓扑结构：视觉、听觉、语言处理统一
+  - 空间平滑性目标：预训练基础模型微调
+  - 簇与人类fMRI一致：感官→认知层级
+  - 驱动/抑制簇选择性影响感知（类比人类干预）
+  - 发现新脑网络（自然景观网络/动物网络）
+  - **Activation**: topographic multimodal, brain spatial organization, functional selectivity, cortical topography, multimodal brain representation, brain network discovery, cross-modal integration
+
 ## 2026-06-09 - Computer Science + Quantum Mechanics (Cron Job - Hourly 15:00)
 
 ### QnRL: Quantum-Native Reinforcement Learning
