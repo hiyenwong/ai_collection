@@ -1,6 +1,18 @@
 # AI Collection Index
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
+### Brain-Prompt Injection: A Route-Safety Audit for BCI-LLM Agents
+- [[brain-prompt-injection-bci-llm-security]] - Route-Safety Audit Contract framework for detecting BCI-LLM attacks with split-conformal calibration achieving FAR 0.000 at α=.005 under acquisition isolation, mathematical guarantees via C3 attacked-dependence decomposition (arXiv: 2606.09315v1)
+  - Three attack types: signal-side perturbations, context-only injections, adaptive dual-decoder attacks
+  - Audit-Schema Separation Theorem: clean agreement ≠ C3 routing control
+  - Provenance + Agreement + Confirmation triple check required for route safety
+  - EEGMMI validation: 5,400 events, 60 subjects, cross-architecture (TinyEEGNet, EEGNetV4)
+  - Attacker-controlled confirmation channel breaks conformal bound to ≈1.0
+  - Mediation reduces risk but not intent certification
+  - **Activation**: BCI security, brain-prompt injection, route safety audit, LLM agent BCI, EEG command control, adversarial brain attacks, neural authorization security, conformal calibration, EEGMMI validation
+
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
 ### Decoding Naturalistic Emotion Dynamics from the Brain
 - [[llm-emotion-dynamics-decoding]] - LLM-enhanced multi-target regression framework for continuous emotion trajectory decoding from fMRI using DFC and graph-theoretical XAI, supports psychological constructionist frameworks over locationist accounts (arXiv: 2606.07707v1)
   - Paradigm shift: discrete classification → continuous regression for emotion dynamics
