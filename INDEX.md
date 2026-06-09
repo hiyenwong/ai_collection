@@ -8,6 +8,21 @@
 - **Workflow**: Browser fallback for arXiv search → dual-keyword scoring → skill coverage verification → saturation report
 - **Obsidian note**: Neuroscience_Research_Cron_Saturation_2026-06-10.md created for historical tracking
 
+### Domain Saturation Verification: High-Score Papers (Score ≥ 15)
+- **2605.25224** (Score: 24) → [[multi-objective-snn-oscillation]] - Multi-Objective Optimisation with Oscillatory Dynamics in SNNs
+- **2606.03935** (Score: 22) → [[qif-neurons-superior-lif-gradient-descent]] - QIF neurons exhibit less fragmented loss landscapes and better gradient convergence than LIF
+- **2606.00326** (Score: 20) → [[synaptic-matrix-eigenvalue-analysis]] - Synaptic matrix eigenvalues determine stability and transient dynamics of brain networks
+- **2605.31473** (Score: 20) → [[metastable-mind-event-segmentation]] - Metastable Mind framework integrating Event Segmentation Theory with neural dynamics
+- **2605.29588** (Score: 18) → [[brain-it-vqa-fmri-visual-question-answering]] - Brain-IT-VQA: From Brain Signals (fMRI) to Answers via Visual Question Answering
+- **2606.07657** (Score: 16) → [[qds-snn-quantum-deeply-supervised-spiking]] - QDS-SNN: Energy-efficient Quantum Deeply-Supervised Spiking Neural Network
+- **2606.04426** (Score: 16) → [[discrete-signaling-chaotic-regularization]] - Discrete signaling mediates chaotic regularization in recurrent networks for smooth population codes
+- **2606.00667** (Score: 16) → [[cortex-subcortex-memory-limited-learning]] - Cortex supports structure learning, subcortex reward learning under memory constraints (newly synced)
+- **2606.01135** (Score: 15) → [[spiking-event-driven-neuromorphic-mamba-asr]] - Spiking and Event-driven Neuromorphic Mamba Models for Efficient Speech Recognition
+- **2605.26551** (Score: 15) → [[random-neural-network-dimensionality]] - Random neural networks match observed dimensionality of neural population recordings
+- **Action**: Verification pipeline executed - 9/10 skills synced, 1 newly added (cortex-subcortex)
+- **Meta-analysis**: Four theoretical themes identified (Dynamical Systems, SNN Optimization, Brain Decoding, Learning/Memory)
+- **Workflow**: HTTPS+proxy arXiv search → dual-keyword scoring → skill existence check → verification → meta-analysis
+
 ## 2026-06-10 - Medicine Research (Cron Job - Medical Quantum Diagnosis)
 
 ### Towards Post-Quantum Secure Pharmacovigilance with ML-KEM and ML-DSA
