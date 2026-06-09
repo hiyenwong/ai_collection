@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Session 2)
+
+### SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C
+- [[snn-mlir-neuromorphic-compilation]] - NIR-MLIR-C编译桥接，类型多态操作支持浮点和量化数据，自动重缩放保持量化尺度一致性，生成依赖-free C11代码用于嵌入式部署 (arXiv: 2606.09213)
+  - NIR框架统一：解决SnnTorch/Lava/Norse等框架碎片化问题
+  - 单一IR双模式：同时服务仿真(f32/f64)和硬件量化部署
+  - 自动尺度调整：Python前端插入重缩放操作保持层间一致性
+  - C11裸机生成：自包含、无外部依赖，CPU/嵌入式通用
+  - **Activation**: snn-mlir, mlir dialect, neuromorphic compilation, nir, quantization, embedded deployment, c11 code generation, feedforward snn
+
+### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
+- [[llm-emotion-trajectory-fmri]] - 多目标回归框架追踪连续情绪轨迹，LLM从Alice in Wonderland提取情感profile作为标注代理，DFC优于静态ROI，图论XAI揭示情绪拓扑配置 (arXiv: 2606.07707)
+  - 连续轨迹范式：替代离散分类，追踪重叠情绪维度
+  - LLM可扩展标注：无需人工标注，从自然叙事提取连续情感
+  - DFC动态表示：滑动窗口功能连接捕获快速波动叙事
+  - 图论可解释性：解构预测特征，支持心理构建主义框架
+  - **Activation**: llm-emotion, dfc-fmri, sentiment-trajectory, naturalistic-decoding, graph-xai, regression-framework, alice-in-wonderland
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Latest Session)
 
 ### Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model
