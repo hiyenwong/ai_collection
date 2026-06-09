@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-06-09 - Computer Science + Quantum Mechanics (Cron Job - Hourly 15:00)
+
+### QnRL: Quantum-Native Reinforcement Learning
+- [[qnrl-quantum-native-rl]] - 量子原生强化学习框架，希尔伯特空间中超叠加和纠缠量子态直接学习环境随机变量分布，QuAK算法实现分布矩比较 (arXiv: 2606.08276)
+  - QuAK算法：n次幂的m阶矩比较，希尔伯特空间内完成
+  - 条件动作策略分布从量子生成模型矩中提取
+  - 评估分数提升82.9%，参数量减少94.3%
+  - 对未见观测的预期回报估计更准确，随机条件适应更好
+  - **Activation**: qnrl, quantum reinforcement learning, quantum native rl, distributional quantum rl, quak algorithm, quantum amplitude kickback, quantum state distribution, hilbert space rl, quantum policy optimization
+
+### Quantum Global Variational Learning for QEC
+- [[quantum-global-variational-qec]] - 全局结构量子神经网络减少量子电路酉矩阵数量，训练时间减少97%，训练完成率100% (arXiv: 2606.08592)
+  - 全局结构：减少酉矩阵数量，降低计算负载
+  - 训练时间减少97%，训练完成率提升25%
+  - 内部网络噪声下量子纠错鲁棒性增强
+  - 内部噪声下保真度提升15%
+  - **Activation**: quantum variational learning, quantum error correction, quantum neural network, qec training, unitary reduction, quantum circuit optimization, noise robust qec, variational qec
+
+### Quantum Element-wise Transforms
+- [[quantum-element-wise-transforms]] - 元素级多项式变换量子算法，所需空间随函数度数指数级减少，修复先前构造错误 (arXiv: 2606.06456)
+  - 元素级多项式函数：空间复杂度指数级减少
+  - 应用于机器学习、模拟、信号处理
+  - 修复先前构造中的错误
+  - **Activation**: quantum element-wise, quantum linear algebra, QSVT, block encoding, quantum signal processing, polynomial function quantum, matrix transform quantum, quantum ml
+
 ## 2026-06-09 - Computer Science + Quantum Mechanics (Cron Job - Hourly)
 
 ### Adaptive Directional Gradients for Parameterised Quantum Circuits
