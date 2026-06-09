@@ -1,6 +1,18 @@
 # AI Collection Index
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
+### Decoding Naturalistic Emotion Dynamics from the Brain
+- [[llm-emotion-dynamics-decoding]] - LLM-enhanced multi-target regression framework for continuous emotion trajectory decoding from fMRI using DFC and graph-theoretical XAI, supports psychological constructionist frameworks over locationist accounts (arXiv: 2606.07707v1)
+  - Paradigm shift: discrete classification → continuous regression for emotion dynamics
+  - LLM-automated sentiment annotation from Alice in Wonderland narrative as regression targets
+  - Dynamic Functional Connectivity (DFC) outperforms static ROI representations
+  - Graph-theoretical XAI reveals emotion-specific topological configurations
+  - Evidence for psychological constructionism: network dynamics > regional localization
+  - Multi-target regression: valence, arousal, dominance as continuous trajectories
+  - **Activation**: emotion dynamics, LLM annotation, multi-target regression, dynamic functional connectivity, naturalistic neuroscience, graph-theoretical XAI, psychological constructionism, affective neuroscience, continuous emotion decoding, fMRI regression
+
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
 ### Trajectory Geometry of Transformer Representations Across Layers
 - [[trajectory-geometry-transformer-representations]] - Neuroscience-inspired probe-free interpretability framework analyzing transformer representations as discrete population trajectories through high-dimensional manifold, five geometric metrics reveal universal three-phase structure and attractor-like semantic convergence (arXiv: 2606.09287v1)
   - Semantic Convergence Index: 0.41--0.58 peak CI in middle-to-late layers (p<0.001), attractor-like dynamics
