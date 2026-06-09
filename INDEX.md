@@ -48,7 +48,7 @@
   - **Activation**: forward gradient, PQC training, QUIVER optimizer, parameter-shift rule, SPSA, quantum neural network, gradient estimation, measurement efficiency, variational quantum circuits, quantum machine learning
 
 ### Quantum Cut Sparsifiers
-- [[quantum-cut-sparsification]] - 量子Cut哈密顿量稀疏化方法论，n量子比特系统中O(n)项稀疏化同时保持能量，利用不变子空间分解和扩展图技术 (arXiv: 2606.09728)
+- [[quantum-cut-sparsifiers]] - 量子Cut哈密顿量稀疏化方法论，n量子比特系统中O(n)项稀疏化同时保持能量，利用不变子空间分解和扩展图技术 (arXiv: 2606.09728)
   - 核心结果：n量子比特QC哈密顿量可稀疏化到O(n)项
   - 重要性采样方案：同一采样对所有Kikuchi图层级同时有效
   - 不变子空间分解：解决2^n维度导致的矩阵集中不等式失效

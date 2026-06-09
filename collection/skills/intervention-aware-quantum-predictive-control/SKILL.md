@@ -1,197 +1,105 @@
 ---
 name: intervention-aware-quantum-predictive-control
-description: Intervention-aware variational quantum differentiable predictive control with safety attribution. Trains compact VQC policies under primal-dual intervention budget that penalizes reliance on safety filters. Based on arXiv:2606.09778.
-version: 1.0
-created: 2026-06-09
-source: arXiv:2606.09778
-category: quantum-control
-tags:
-  - quantum-control
-  - model-predictive-control
-  - safety-attribution
-  - variational-quantum-circuits
-  - control-barrier-functions
+description: "Intervention-Aware Variational Quantum Differentiable Predictive Control (IA-VQC-DPC) methodology for safe quantum policy learning with safety attribution."
 ---
 
-# Intervention-Aware Quantum Predictive Control with Safety Attribution
+# Intervention-Aware Quantum Predictive Control
 
-## Background
+## Description
 
-Hard safety filters are increasingly placed downstream of learned controllers to guarantee constraint satisfaction at runtime. Yet a filtered controller that never violates constraints may have learned nothing about safety — the filter silently repairs an incompetent policy, so post-filter success measures the filter, not the policy.
+Methodology for training variational quantum circuit (VQC) policies under a primal-dual intervention budget that penalizes reliance on safety filters. Introduces a safety-attribution protocol that decomposes executed-trajectory correction into CBF and runtime-guard terms, enabling guard-off evaluation to confirm policy-level safety improvement.
 
-**Key question**: Who earns the safety — the policy or its protective layers?
+## Activation Keywords
 
-arXiv:2606.09778 introduces **IA-VQC-DPC** (Intervention-Aware Variational Quantum Differentiable Predictive Control) that:
-1. Trains a compact VQC policy under a **primal-dual intervention budget** penalizing reliance on CBF projection
-2. Evaluates with a **safety attribution protocol** decomposing trajectory correction into CBF and deployment guard terms
+- intervention-aware quantum control
+- safety attribution quantum policy
+- VQC-DPC
+- IA-VQC-DPC
+- quantum policy safety filter
+- variational quantum control barrier function
+- 干预感知量子控制
+- 量子策略安全归因
 
-## Core Methodology
+## Tools Used
 
-### Intervention-Aware Training
+- terminal: Run quantum circuit simulations and optimization
+- execute_code: Implement VQC training loops and attribution analysis
 
-The training objective combines control performance with an intervention penalty:
+## Usage Patterns
 
-```
-L_total = L_control + λ · L_intervention
+### Pattern 1: Intervention-Aware VQC Training
+Train a compact VQC policy under a primal-dual intervention budget:
+1. Define quantum circuit ansatz with ~400 parameters
+2. Add CBF-based safety projection layer
+3. Introduce intervention penalty: L = L_task + λ · ||CBF_correction||
+4. Train with primal-dual updates to balance task performance and safety reliance
 
-L_intervention = Σ_t ||u_CBF(t) - u_VQC(t)||²
-```
+### Pattern 2: Safety Attribution Protocol
+Decompose trajectory corrections to attribute safety credit:
+1. Record executed trajectory with all safety layers active
+2. Compute CBF term: projection magnitude at each timestep
+3. Compute runtime-guard term: additional correction from deployment guard
+4. Perform guard-off evaluation: disable all safety layers and measure raw policy violation rate
 
-Where u_CBF is the safety-filtered action and u_VQC is the raw quantum policy output. The primal-dual budget dynamically adjusts λ to ensure the quantum policy learns safety constraints intrinsically.
+### Pattern 3: Quantum vs Classical Policy Comparison
+At equal parameter budgets (~400 params):
+1. Train quantum policy (VQC) with intervention-aware objective
+2. Train matched classical policy (MLP) with same objective
+3. Compare: pre-filter violation rate, total safety-layer reliance, energy consumption
+4. Statistical significance testing (p < 10^-4 threshold)
 
-### Safety Attribution Protocol
+## Instructions for Agents
 
-Post-training evaluation decomposes executed trajectory corrections:
+### Step 1: Define VQC Policy Architecture
+- Use parameterized quantum circuits with rotation and entanglement layers
+- Keep parameter count compact (~400 parameters)
+- Ensure hardware-efficient gate decomposition
 
-1. **CBF correction term**: How much the Control Barrier Function had to intervene
-2. **Deployment guard term**: Runtime safety guard corrections
-3. **Guard-off evaluation**: Stress-test with safety layers disabled
+### Step 2: Implement Differentiable CBF
+- Define Control Barrier Function h(x) for system constraints
+- Compute CBF projection: π_CBF(u) = u - α·∇h(x)·max(0, -h(x))
+- Make projection differentiable for gradient flow
 
-### VQC Policy Architecture
+### Step 3: Design Intervention Budget
+- Primal-dual formulation: minimize task loss subject to intervention budget
+- Penalty term weighted by dual variable λ
+- λ adapts during training based on intervention frequency
 
-- Compact variational quantum circuit (~400 parameters)
-- Encoding: system state → quantum state via amplitude or angle encoding
-- Ansatz: hardware-efficient layers with entangling gates
-- Measurement: expectation values → control actions
+### Step 4: Train with Attribution Tracking
+- Log per-timestep CBF correction magnitude
+- Log runtime-guard activation events
+- Track total intervention count vs. task performance
 
-## Key Results
+### Step 5: Guard-Off Evaluation
+- Disable all safety layers
+- Run policy in open-loop
+- Measure raw violation rate — confirms safety is policy-level, not filter-level
 
-- At equal ~400 parameter budget, quantum policy is **significantly safer and more comfortable** than matched classical policy (p < 10⁻⁴)
-- Intervention-aware training **lowers raw pre-filter violation** and **total safety-layer reliance**
-- Guard-off evaluation confirms improvement is **policy-level**, not filter-level
-- **Negative result**: learned differentiable energy head is only safe when paired with distribution-aware runtime guard
+## Error Handling
 
-## Implementation Steps
+### Filter Masks Incompetent Policy
+If guard-off evaluation shows high violation rate:
+- The safety improvement is from the filter, not the policy
+- Increase intervention penalty weight λ
+- Consider adding pre-training with safety constraints
 
-### Step 1: VQC Policy with Intervention Awareness
+### Quantum Policy No Better Than Classical
+At equal parameter budgets:
+- Verify circuit expressivity (depth, entanglement)
+- Check barren plateau conditions
+- Try different ansatz architectures
 
-```python
-import pennylane as qml
-import numpy as np
+## Key Results from Paper (arXiv: 2606.09778)
 
-def build_vqc_policy(n_qubits, n_layers, state_dim, action_dim):
-    """Build compact VQC policy for predictive control."""
-    
-    dev = qml.device("default.qubit", wires=n_qubits)
-    
-    @qml.qnode(dev)
-    def policy_circuit(state, params):
-        # State encoding
-        for i in range(min(n_qubits, state_dim)):
-            qml.RY(state[i], wires=i)
-        
-        # Variational layers
-        for layer in range(n_layers):
-            for i in range(n_qubits):
-                qml.Rot(*params[layer, i, :3], wires=i)
-            for i in range(n_qubits - 1):
-                qml.CNOT(wires=[i, i + 1])
-        
-        # Measurement → action
-        actions = []
-        for i in range(action_dim):
-            actions.append(qml.expval(qml.PauliZ(i % n_qubits)))
-        return actions
-    
-    return policy_circuit
-```
-
-### Step 2: Intervention-Aware Training Loop
-
-```python
-def intervention_aware_training(
-    vqc_policy, 
-    safety_filter, 
-    env, 
-    n_episodes,
-    intervention_budget=0.1
-):
-    """Train VQC policy with intervention-aware loss."""
-    
-    lambda_intervention = 1.0  # primal variable
-    dual_penalty = 0.0  # dual variable
-    
-    for episode in range(n_episodes):
-        state = env.reset()
-        total_intervention = 0
-        
-        for t in range(env.horizon):
-            # VQC policy action
-            u_vqc = vqc_policy(state)
-            
-            # Safety-filtered action
-            u_safe, cbf_correction = safety_filter(u_vqc, state)
-            total_intervention += np.linalg.norm(cbf_correction)**2
-            
-            # Execute safe action
-            next_state, reward, done, _ = env.step(u_safe)
-            
-            # Intervention-aware loss
-            loss = -reward + lambda_intervention * total_intervention / env.horizon
-        
-        # Primal-dual update
-        dual_penalty += intervention_budget - total_intervention / env.horizon
-        lambda_intervention = max(0, lambda_intervention + dual_penalty * 0.01)
-    
-    return vqc_policy
-```
-
-### Step 3: Safety Attribution Evaluation
-
-```python
-def safety_attribution_evaluation(policy, env, n_episodes, guard_off=False):
-    """Evaluate policy with safety attribution decomposition."""
-    
-    results = {
-        "cbf_corrections": [],
-        "guard_corrections": [],
-        "violations": [],
-        "energy_consumption": []
-    }
-    
-    for _ in range(n_episodes):
-        state = env.reset()
-        for t in range(env.horizon):
-            u_raw = policy(state)
-            
-            if guard_off:
-                u_executed = u_raw
-                cbf_correction = 0
-                guard_correction = 0
-            else:
-                u_safe, cbf_correction = cbf_filter(u_raw, state)
-                u_executed, guard_correction = runtime_guard(u_safe, state)
-            
-            results["cbf_corrections"].append(np.linalg.norm(cbf_correction))
-            results["guard_corrections"].append(np.linalg.norm(guard_correction))
-            results["violations"].append(check_violations(u_executed, state))
-        
-    return results
-```
-
-## When to Use
-
-- Quantum control policies where safety is critical (building control, robotics, process control)
-- When you need to distinguish policy-level safety from filter-level safety
-- Comparing quantum vs classical control policies at equal parameter budgets
-- Any learned controller downstream of safety filters
-
-## Activation Triggers
-
-- "quantum predictive control", "VQC control", "quantum MPC"
-- "safety attribution", "intervention-aware training", "CBF quantum"
-- "control barrier function quantum", "safe quantum learning"
-- "quantum policy safety", "primal-dual intervention"
-
-## Pitfalls
-
-1. **Intervention budget too tight**: Policy may not learn effective control if budget is too restrictive. Start loose, tighten gradually.
-2. **Guard-off evaluation essential**: Without it, you cannot distinguish policy improvement from filter effectiveness.
-3. **Distribution-aware runtime guard**: A learned energy head alone is NOT safe — must pair with distribution-aware guard.
-4. **Parameter matching**: Fair comparison requires equal parameter budgets between quantum and classical policies.
+- Intervention-aware training significantly lowers raw pre-filter violation (p < 10^-4)
+- Total safety-layer reliance significantly reduced (p < 10^-4)
+- No significant energy regression
+- Quantum policy safer and more comfortable than matched classical policy at ~400 parameters
+- Learned differentiable energy head only safe when paired with distribution-aware runtime guard
 
 ## References
 
-- arXiv:2606.09778 — "Who Earns the Safety? Intervention-Aware Quantum Predictive Control with Safety Attribution" (June 2026)
-- BOPTEST building-control emulator for evaluation
-- Control Barrier Functions (CBF) for safety filtering
+- arXiv: 2606.09778 - "Intervention-Aware Quantum Predictive Control with Safety Attribution"
+- Authors: Yifan Wang
+- Published: 2026-06-08
+- Categories: quant-ph, cs.AI
