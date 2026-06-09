@@ -1,3 +1,13 @@
+## 2026-06-09 - Anthropic Research (Cron Job)
+
+### Paving the Way for Agents in Biology
+- [[paving-way-agents-biology]] - Methodology for making biological data infrastructure agent-friendly via deterministic retrieval layers, improving accuracy to nearly 100%
+  - Deterministic retrieval pattern: Agent Intent → Deterministic Layer → Biological Database
+  - Case study: NCBI Virus retrieval with gget virus wrapper achieving 100% accuracy
+  - Infrastructure bottleneck analysis: identify implicit conventions, format variations
+  - Validation protocol: genome builds, RefSeq/GenBank consistency, partial genome detection
+  - **Activation**: biology agents, scientific data, deterministic retrieval, agent-friendly infrastructure, NCBI Virus, gget virus
+
 ## 2026-06-09 - Quantum Neuromorphic Computing (Cron Job - Daily Research)
 
 ### QDS-SNN: Energy-efficient Quantum Deeply-Supervised Spiking Neural Network Algorithm for Traffic Sign Recognition
