@@ -2103,3 +2103,14 @@
   - MiniGridUnlockPickup benchmark validation
   - **Activation**: uncertainty-aware RL, LLM-guided policy, sparse reward, A* oracle RL, epistemic uncertainty policy
 
+
+## 2026-06-10 - Medicine Research (Cron Job - Quantum PUF for IoMT)
+
+### QT-PUF: Quantum Tunneling Leakage Based PUF for Implantable IoMT Devices
+- [[qt-puf-quantum-tunneling-iomt]] - Quantum tunneling gate-leakage PUF for implantable IoMT device authentication. Differential readout converts pA-level variations to digital responses. Entropy 0.9999998, power 96.04 nW/bit, BER < 0.000163 (arXiv: 2605.22113v1)
+  - Gate oxide tunneling current as quantum entropy source — process variations are irreproducible
+  - Differential pseudo-resistor I-to-V readout eliminates common-mode drift and noise
+  - Operates under static bias, no active excitation needed (unlike RO/arbiter PUFs)
+  - 65nm CMOS: 96.04 nW/bit, 19.21 fJ/bit — suitable for implantable power budgets
+  - Reliable across 0.9-1.3V and 0-100°C, BER < 0.000163 at 1.0-1.3V, 10-70°C
+  - **Activation**: qt-puf, quantum tunneling PUF, implantable iomt security, gate leakage PUF, iomt device authentication, quantum medical device security, ultralow-power PUF
