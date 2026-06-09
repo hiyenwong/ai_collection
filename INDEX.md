@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-11 - Neuroscience Research (Cron Job)
+
+### Predictable Mean-Field Chaos in Random Recurrent Networks
+- [[krylov-mean-field-chaos-predictability-2026-06-10]] - Mean-field chaos 的预测性理论框架,通过 Krylov 状态空间展开功率谱揭示确定性结构,区分微观敏感性(Lyapunov)和预测复杂性(Krylov growth) (arXiv: 2606.08805)
+  - 连续历史唯一确定未来(对解析非线性函数)
+  - Krylov growth rate 上界 Lyapunov exponent
+  - λ_Krylov ≤ λ_Lyapunov,证明混沌有可预测结构
+  - Hamiltonian chaos 方法首次扩展到 dissipative systems
+  - **Activation**: mean-field chaos, predictable chaos, RNN dynamics, Lyapunov exponent, Krylov subspace, spectral decomposition, deterministic prediction, temporal modes
+
+### This is how the Neocortex Learns
+- [[neocortex-error-driven-predictive-learning]] - 神经皮层学习机制的三准则理论框架,提出 error-driven predictive learning via temporal derivatives,通过 corticothalamic circuits 和 competitive kinase synaptic plasticity 实现,已在 Axon spiking framework 验证 (arXiv: 2606.08720)
+  - 三准则:计算准则(逼近强大通用算法),算法准则(已知神经回路实现),实现准则(神经化学水平详细说明)
+  - Corticothalamic circuits: thalamus 作为误差信号路由器
+  - Competitive kinase plasticity: CaMKII/PKA/PP1 分子机制
+  - Temporal derivative error propagation: 自然整合时间维度
+  - **Activation**: neocortex learning, cortical learning theory, predictive learning, thalamocortical circuits, error-driven learning, synaptic plasticity mechanism, competitive kinase, temporal derivative
+
 ## 2026-06-11 - Medicine + Quantum Computing (Cron Job)
 
 ### Scalable On-Hardware Training of Quantum Neural Networks and Application to Clinical Data Imputation
