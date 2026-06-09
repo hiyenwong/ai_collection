@@ -10,7 +10,7 @@
   - 相图：欠参数化（α→∞）、过参数化（α→0）、临界区（α~1）相变
   - **Activation**: neural ode, mean field theory, dynamical systems, training dynamics, learning curves, high-dimensional limit, statistical mechanics, online SGD, ResNet theory, continuous-time networks, inference dynamics, parameter optimization, phase transitions, learning theory, adjoint method
 
-## 2026-06-09 - Computer Science (Cron Job - Hourly Tuesday)
+## 2026-06-09 - Computer Science + Quantum (Cron Job - Hourly Tuesday)
 
 ### FASE: Fast Adaptive Semantic Entropy for Code Quality
 - [[fase-semantic-entropy-code]] - 快速自适应语义熵度量用于多智能体代码生成质量评估，基于结构和语义相异图的最小生成树近似功能正确性，Spearman相关性提升25%，计算成本仅0.3% (arXiv: 2606.09800)
@@ -18,6 +18,22 @@
   - 25% Spearman相关性提升，19% ROCAUC提升 vs LLM语义熵
   - 计算成本仅传统方法的0.3%，无需地面真值测试用例
   - HumanEval和BigCodeBench基准，Qwen3-Embedding-8B验证
+
+### Adaptive Directional Gradients for PQC Training
+- [[adaptive-directional-gradient-qc]] - 前向梯度估计方法论用于训练参数化量子电路，QUIVER自适应优化器统一SPSA/随机坐标下降/参数平移规则，60量子比特网络训练效率提升数量级 (arXiv: 2606.09734)
+  - 前向梯度框架：基于自动微分前向模式，无辅助量子比特开销
+  - 三合一统一：SPSA(单方向极端)、随机坐标下降(中间)、参数平移规则(全梯度极端)
+  - QUIVER优化器：闭式最小测量成本分配，超越iCANS/gCANS
+  - 60量子比特、1770参数量子神经网络在ECG5000/MNIST上的高效训练
+  - **Activation**: forward gradient, PQC training, QUIVER optimizer, parameter-shift rule, SPSA, quantum neural network, gradient estimation, measurement efficiency, variational quantum circuits, quantum machine learning
+
+### Quantum Cut Sparsifiers
+- [[quantum-cut-sparsification]] - 量子Cut哈密顿量稀疏化方法论，n量子比特系统中O(n)项稀疏化同时保持能量，利用不变子空间分解和扩展图技术 (arXiv: 2606.09728)
+  - 核心结果：n量子比特QC哈密顿量可稀疏化到O(n)项
+  - 重要性采样方案：同一采样对所有Kikuchi图层级同时有效
+  - 不变子空间分解：解决2^n维度导致的矩阵集中不等式失效
+  - 扩展图技术：Alon-Kozma算子值不等式 + 扩展分解推广到任意图
+  - **Activation**: Hamiltonian sparsification, quantum cut, Kikuchi graph, expander decomposition, spectral approximation, invariant subspaces, operator-valued inequality, quantum simulation
   - **Activation**: semantic entropy, code uncertainty, multi-agent code quality, FASE, functional correctness estimation, fast adaptive semantic entropy, code generation uncertainty, MST entropy code
 
 
