@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Tuesday Evening)
+
+### Neocortex Learning: Error-Driven Predictive Framework
+- [[neocortex-learning-error-driven-predictive]] - 皮质学习误差驱动预测框架，时间导数误差信号+皮质丘脑回路+竞争激酶突触可塑性，满足计算+算法+实现三层标准，Axon框架脉冲神经元验证 (arXiv: 2606.08720)
+  - 三层标准：计算（通用学习算法）+算法（已知神经回路）+实现（神经化学细节）
+  - 时间导数误差：预测误差从时间差分导出
+  - 皮质丘脑回路：双向丘脑-皮质连接实现误差传播
+  - 竞争激酶可塑性：LTP/LTD平衡机制
+  - Axon脉冲框架：跨认知任务验证学习性能
+  - **Activation**: neocortex learning, cortical learning, thalamocortical circuit, error-driven learning, predictive learning, temporal derivative, kinase plasticity, Axon framework
+
+### Vector Space of Cycles: Harmonic Flow Framework
+- [[vector-space-of-cycles-harmonic-flow]] - 循环相互作用向量空间统计推断，边流在单纯复形上能量最小化演化，谐波投影分离瞬态与持久循环，400人fMRI验证大规模循环组织 (arXiv: 2606.08202)
+  - 边流表示：有向相互作用→单纯复形边流
+  - Hodge分解：梯度+旋度+谐波分量分离
+  - 谐波投影：持久循环空间（低维）
+  - 希尔伯特空间：投影、平均、比较、群体推断
+  - 方差减少60-80%，密集循环系统可扩展
+  - **Activation**: cyclic interaction, harmonic flow, cycle space, simplicial complex, Hodge decomposition, edge flow dynamics, population cycle inference, recurrent network
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Hourly 17:00)
 
 ### Neural ODE Mean Field Training Theory
