@@ -1,4 +1,14 @@
 # AI Collection Index
+## 2026-06-10 - Medicine Research (Cron Job - Medical Quantum Diagnosis)
+
+### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+- [[medical-quantum-diagnosis]] - 混合量子-经典特征融合方法学，结合ResNet+PQC双分支架构，三种融合策略SHF/DHF/TSHF，TSHF通过学习温度标量平衡梯度动态，BreastMNIST上87.82%准确率/91.77% F1/89.08% AUC-ROC (arXiv: 2604.22903)
+  - 双分支架构：经典CNN特征提取+量子电路编码
+  - TSHF融合：可学习标量动态平衡经典/量子梯度，解决优化不对称
+  - 临床部署：关注阈值可靠性、校准和外部验证
+  - HQNN变体：4量子比特变分电路+多头注意力用于热成像分类
+  - 量子生物标志物发现：两阶段流程用于LUAD/LUSC亚型分类
+  - **Activation**: quantum diagnosis, quantum medical, hybrid quantum-classical, medical ML, breast cancer quantum, TSHF, HQNN, feature fusion, quantum clinical deployment, medical imaging quantum
 
 ## 2026-06-09 - Neuroscience Research (Cron Job - Topo-Omni)
 
