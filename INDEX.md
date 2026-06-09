@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-06-11 - Medicine + Quantum Computing (Cron Job)
+
+### Scalable On-Hardware Training of Quantum Neural Networks and Application to Clinical Data Imputation
+- [[quantum-on-hardware-qnn-training]] - QNN training framework reducing gradient estimation cost from O(n²) to O(log n) using Butterfly circuits, layer-wise training, and parallelized parameter-shift (arXiv: 2606.03517)
+  - Butterfly circuit architecture with O(n log n) parameters and logarithmic depth
+  - Layer-wise progressive training: freeze trained layers, optimize one layer at a time
+  - Parallelized parameter-shift exploiting commuting gate structure per layer
+  - Validated on IonQ Forte Enterprise at 16 qubits, 32-qubit inference on hardware
+  - Clinical application: MIMIC-III EHR data, patient survival prediction matching classical baselines
+  - **Activation**: scalable qnn training, quantum neural network hardware, clinical quantum ML, quantum gradient estimation, butterfly circuit, layer-wise quantum training, quantum healthcare
+
+### Importance-Aware Quantum CNN with Ring-Topology for MGMT Methylation Prediction in Glioblastoma
+- [[ia-qcn-ring-glioblastoma]] - IA-QCNN architecture with ring-topology quantum convolution for predicting MGMT promoter methylation in glioblastoma patients (arXiv: 2604.22877)
+  - Importance-aware weighting: prioritize clinically relevant features in quantum circuit
+  - Ring-topology qubit arrangement reduces SWAP gate overhead
+  - Hybrid quantum-classical pipeline for molecular biomarker prediction
+  - Application: temozolomide treatment response prediction in GBM
+  - **Activation**: quantum convolutional neural network, glioblastoma, MGMT methylation, biomarker prediction, ring topology, quantum CNN, importance-aware, temozolomide
+
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
 ### Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model
