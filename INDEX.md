@@ -1,3 +1,13 @@
+# AI Collection Index
+
+## 2026-06-09 - Computer Science + Quantum Research (Cron Job)
+
+### Quantum Global Variational Learning for Quantum Error Correction
+- [[quantum-global-variational-learning-qec]] - 量子全局变分学习用于量子纠错，全局结构QNN减少所需酉矩阵数量，实现97%训练时间减少、25%训练完成率提升、15%噪声下保真度增加 (arXiv: 2606.08592)
+  - 全局结构量子神经网络设计减少QEC电路中的酉矩阵数量
+  - 变分学习框架实现100%最终训练成功率
+  - **Activation**: quantum global variational learning, QEC training optimization, quantum neural network error correction, variational quantum error correction
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Latest Session)
 
 ### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
