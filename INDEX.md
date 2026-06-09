@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Hourly 17:00)
+
+### Neural ODE Mean Field Training Theory
+- [[neural-ode-mean-field-training]] - 神经ODE训练动力学理论框架，动态平均场理论求解在线SGD高维极限学习曲线，双重动力学系统（推理+训练）统一ResNet/自回归/生成模型 (arXiv: 2606.07247)
+  - 双重动力学系统：推理动力学（ODE前向演化）+训练动力学（参数优化）
+  - 动态平均场理论：高维极限N→∞学习曲线解析解
+  - 适用架构：ResNet（深度→积分时间）、自回归模型、生成模型、RNN
+  - 相图：欠参数化（α→∞）、过参数化（α→0）、临界区（α~1）相变
+  - **Activation**: neural ode, mean field theory, dynamical systems, training dynamics, learning curves, high-dimensional limit, statistical mechanics, online SGD, ResNet theory, continuous-time networks, inference dynamics, parameter optimization, phase transitions, learning theory, adjoint method
+
 ## 2026-06-09 - Neuroscience Research (Cron Job)
 
 ### Topo-Omni: Deep Topographic Multimodal Model
