@@ -1,3 +1,23 @@
+## 2026-06-09 - Systems Engineering Research (Cron Job)
+
+### An End-to-End Encrypted Control Pipeline for Multi-Agent Coordination via CKKS Homomorphic Encryption
+- [[encrypted-multi-agent-control-homomorphic]] - CKKS同态加密端到端控制管道实现隐私保护多智能体云协调，分离原理噪声分析，隐私-准确性权衡设计方程 (arXiv: 2606.07375)
+  - CKKS兼容控制环：传感、状态估计、状态传播、共识控制全加密域操作
+  - 稳态卡尔曼增益：避免在线矩阵求逆，预计算增益适配加密约束
+  - 图拉普拉斯对角法：环/环面/完全图拓扑统一框架，成本正比非零循环对角数
+  - 分离原理噪声界：闭环谱半径×自举精度/误差收敛边界，隐私-精度直接设计方程
+  - 周期性自举扰动模型：CKKS自举作为脉冲扰动，稳态误差球边界保证
+  - **Activation**: encrypted control, homomorphic encryption, multi-agent coordination, CKKS, privacy-preserving control, federated control, formation control, Kalman filter encrypted
+
+### Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills
+- [[socratic-swe-self-evolving-coding-agents]] - 自演化编码Agent框架，利用求解轨迹蒸馏Agent技能，生成定向修复任务，迭代改进Solver性能，SWE-bench Verified 50.40% (arXiv: 2606.07412)
+  - 轨迹驱导技能蒸馏：从求解轨迹提取失败模式+修复策略，结构化技能表示
+  - 技能引导任务生成：Agent弱项定向任务生成，课程随Solver能力自适应演化
+  - Solver梯度对齐奖励：任务有用性评分，过滤低价值任务
+  - 执行验证框架：突变→测试失败→预期修复→测试通过→难度检查→任务保留
+  - 三轮迭代闭环：Solver评估→轨迹→技能→任务→训练→新一轮
+  - **Activation**: self-evolving agent, coding agent training, trace-derived skills, SWE bench, agent skill distillation, curriculum adaptation, gradient alignment reward
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Session 2)
 
 ### A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding
