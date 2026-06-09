@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Evening Final)
+
+### Fixed Point Compositionality via Low-Rank Gluing Rules
+- [[fixed-point-compositionality-low-rank-gluing]] - 模块化网络组合性动力学的数学框架，低秩胶合规则实现不动点组合，抑制主导阈值线性网络中全局不动点约束为局部模块不动点组合，rank-1胶合完全刻画组合条件，gCTLN理论扩展验证结构规则鲁棒性，39页18图 (arXiv: 2606.07336)
+  - 组合性定理：全局不动点 ≈ 局部模块不动点组合
+  - 低秩胶合：模块间通过低秩矩阵连接实现组合性
+  - rank-1完全刻画：确定哪些局部不动点组合产生全局不动点
+  - gCTLN扩展：CTLN分解规则推广到广义组合阈值线性网络
+  - 组合性动力学工程：构建可预测吸引子库和组合极限环
+  - **Activation**: 固定点组合性, 低秩胶合, 模块化网络, threshold-linear networks, TLN, inhibition-dominated, 组合性动力学, gCTLN, network modularity, compositional computation
+
+### Predictable Mean-Field Chaos in Random Recurrent Networks
+- [[predictable-mean-field-chaos-random-recurrent-networks]] - 随机循环网络中可预测平均场混沌理论，隐藏决定性结构揭示平均场随机性只是表象，历史唯一确定未来，Krylov状态空间展开功率谱暴露隐藏决定性组织，Krylov增长率设定预测复杂性并上界Lyapunov指数，微观敏感性与预测复杂性是不同方面，5页2图+补充材料 (arXiv: 2606.08805)
+  - 条件预测理论：平均场理论从集合描述→单个轨迹预测
+  - Krylov谱展开：功率谱在无限时间模式层次上的决定性组织
+  - Lyapunov上界：λ_max ≤ Γ_Krylov
+  - 预测复杂性：由Krylov增长率设定，与微观敏感性不同
+  - Hamilton混沌扩展：首次将Krylov复杂度理论扩展到耗散系统
+  - **Activation**: 可预测平均场混沌, Krylov复杂度, 随机循环网络, 平均场理论, 条件预测, 隐藏决定性, Lyapunov指数, 预测复杂性, mean-field chaos, Krylov growth, random RNN
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Tuesday Evening)
 
 ### Neocortex Learning: Error-Driven Predictive Framework
