@@ -1,3 +1,13 @@
+## 2026-06-09 - Quantum Neuromorphic Computing (Cron Job - Daily Research)
+
+### QDS-SNN: Energy-efficient Quantum Deeply-Supervised Spiking Neural Network Algorithm for Traffic Sign Recognition
+- [[qds-snn-quantum-deeply-supervised-spiking]] - 量子深度监督脉冲神经网络实现高能效交通标志识别，集成QNN与SNN，TSA-LIF自适应神经元+QACM量子分类器，99.72%准确率+55.77%能耗降低 (arXiv: 2606.07657)
+  - TSA-LIF神经元：时序空间自适应阈值，解决SNN梯度消失问题
+  - QACM量子模块：量子叠加态增强表征，纠缠并行计算
+  - 深度监督策略：多层级损失函数，梯度稳定传播
+  - 能效突破：6时间步推理，99.72%准确率(GTSRB)，97.90%(TSRD)
+  - **Activation**: qds-snn, quantum spiking, TSA-LIF, QACM, deeply supervised SNN, energy efficient recognition, quantum neural network, traffic sign quantum, spiking neuron adaptive
+
 ## 2026-06-09 - Systems Engineering Research (Cron Job)
 
 ### An End-to-End Encrypted Control Pipeline for Multi-Agent Coordination via CKKS Homomorphic Encryption
@@ -1607,4 +1617,29 @@
   - Quadratic speedup: O(1/√ε) quantum vs O(1/ε) classical sampling complexity
   - Heavy-tailed advantage: Polynomial speedup determined by entropy-rate structure
   - **Activation**: rare event sampling, quantum rare events, heavy-tailed systems, anomaly detection quantum, tail distribution quantum, stochastic process rare events
+
+
+## 2026-06-09 - Computer Science + Quantum ML (Cron Job - 14:00 Session)
+
+### QnRL: Quantum-Native Reinforcement Learning
+- [[qnrl-quantum-native-reinforcement-learning]] - Distributional RL framework that learns conditional distributions in Hilbert space via superimposed and entangled quantum states using QuAK algorithm, achieving 82.9% higher scores with 94.3% fewer parameters (arXiv: 2606.08276)
+  - QuAK algorithm: Compare n-th power of m-th moment of multiple superimposed distributions via phase kickback
+  - Hilbert space policy: Conditional action policy distilled from moments entirely within Hilbert space
+  - Parameter efficiency: 94.3% fewer parameters than classical baselines with superior performance
+  - Stochastic environment modeling: Direct modeling of environment random variables as quantum state distributions
+  - **Activation**: quantum-native-RL, QnRL, QuAK, quantum-amplitude-kickback, distributional-quantum-RL, Hilbert-space-RL, quantum-conditional-distributions
+
+### Quantum Global Variational Learning for Quantum Error Correction
+- [[quantum-global-variational-qec]] - Quantum neural network with global structure reduces unitary matrices in circuits, achieving 97% training time reduction and 100% training success rate (arXiv: 2606.08592)
+  - Global structure: Reduced number of unitary matrices required in quantum circuits
+  - Training efficiency: 97% reduction in training time, 25% improvement in completion rate
+  - Noise robustness: 15% fidelity improvement under internal network noise
+  - **Activation**: quantum-global-variational, quantum-error-correction-NN, quantum-variational-learning, QEC-neural-network, quantum-circuit-optimization
+
+### Repair Before Veto: Quantum-Accessible Features for Repair-Augmented Constraint Learning
+- [[q-rac-quantum-repair-augmented-constraint]] - Q-RACL framework: repair-before-veto paradigm where quantum feature access via Shor/Fourier structure closes the repair loop for DLP-hidden repair families (arXiv: 2606.08020)
+  - Repair-before-veto: Accept candidate when sequential repair plan restores feasibility, rather than rigid veto
+  - Quantum feature access: Shor/Fourier structure provides missing feature inaccessible to classical policies
+  - DLP-hidden repair family: False-veto rate below 1.1% with Q-DLP policy vs chance-level classical
+  - **Activation**: quantum-repair-augmented, Q-RACL, repair-before-veto, quantum-feature-access, constraint-learning, DLP-hidden, Shor-structure
 
