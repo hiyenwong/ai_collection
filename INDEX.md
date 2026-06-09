@@ -1,4 +1,14 @@
 # AI Collection Index
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
+### Trajectory Geometry of Transformer Representations Across Layers
+- [[trajectory-geometry-transformer-representations]] - Neuroscience-inspired probe-free interpretability framework analyzing transformer representations as discrete population trajectories through high-dimensional manifold, five geometric metrics reveal universal three-phase structure and attractor-like semantic convergence (arXiv: 2606.09287v1)
+  - Semantic Convergence Index: 0.41--0.58 peak CI in middle-to-late layers (p<0.001), attractor-like dynamics
+  - Curvature encodes computational complexity: reasoning (0.71-0.83 rad) > lexical (0.27-0.31 rad)
+  - Trajectory bifurcation: Ambiguous tokens show up to 5.6x representational separation
+  - Universal three-phase structure: encoding → elaboration → output preparation (GPT-2, TinyLlama, Qwen2.5)
+  - **Activation**: trajectory geometry, transformer interpretability, attractor dynamics, probe-free, curvature analysis, semantic convergence
+
 ## 2026-06-10 - Neuroscience Research (Cron Job - Domain Saturation Verified)
 
 ### Domain Saturation: Top Papers Already Covered
