@@ -1,4 +1,24 @@
 # AI Collection Index
+
+## 2026-06-10 - Quantum Medicine Research (Cron Job)
+
+### Scalable On-Hardware Training of Quantum Neural Networks
+- [[scalable-on-hardware-qnn-training]] - QNN training framework reducing gradient estimation cost from O(n²) to O(log n) using Butterfly circuits, layer-wise training, and parallelized parameter-shift rule (arXiv: 2606.03517)
+  - Butterfly circuit architecture with O(n log n) parameters and logarithmic depth
+  - Layer-wise progressive training: freeze trained layers, optimize one layer at a time
+  - Parallelized parameter-shift exploiting commuting gate structure
+  - Validated on IonQ Forte Enterprise at 16 qubits, 32-qubit inference on hardware
+  - Clinical application: MIMIC-III electronic health records, patient survival prediction
+  - **Activation**: scalable qnn training, quantum neural network hardware, clinical quantum ML, quantum gradient estimation, butterfly circuit, layer-wise quantum training, quantum healthcare
+
+### Enhancing Blood Cells Classification using Hybrid Quantum Neural Networks
+- [[hqnn-blood-cell-classification]] - HQNN methodology combining ResNet-50 with variational quantum circuits for medical image classification, achieving +3.7% macro F1-score improvement (arXiv: 2605.23324)
+  - Three-architecture isolation study: HQNN vs Classical Matched vs Baseline
+  - Latent bottleneck compresses features to match qubit capacity
+  - VQC provides non-linear quantum feature transformations with entanglement
+  - IBM quantum hardware validation: robust under noise with modest degradation
+  - Applications: blood cell classification, medical image analysis, pathology
+  - **Activation**: hqnn blood cell, quantum medical image, hybrid quantum neural network, variational quantum circuit classification, quantum feature enhancement, medical quantum ml
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
 ### Brain-Prompt Injection: A Route-Safety Audit for BCI-LLM Agents
