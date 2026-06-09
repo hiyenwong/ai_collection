@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
+### Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model
+- [[topo-omni-deep-topographic-multimodal]] - Single contiguous in-silico sheet for visual, auditory, and language/cognitive processing, discovers novel brain clusters validated in human neuroimaging (arXiv: 2606.09770)
+  - Spatial smoothness objective fine-tunes pretrained foundation model
+  - Clusters consistent with human neuroimaging from sensory to cognitive systems
+  - Intervention studies: driving/suppressing clusters parallels human effects
+  - Novel natural landscape and animal networks discovered and validated
+  - **Activation**: topographic multimodal, brain region discovery, cortical organization, spatial smoothness, functional selectivity
+
+### This is how the Neocortex Learns
+- [[neocortex-learning-predictive-error-driven]] - Error-driven predictive learning via temporal derivatives using corticothalamic circuits and competitive kinase synaptic plasticity, implemented in Axon spiking framework (arXiv: 2606.08720)
+  - Three-criterion framework: computational, algorithmic, implementational
+  - Corticothalamic loops for prediction-error detection
+  - Competitive kinase plasticity at neurochemical level
+  - Demonstrated across cognitively motivated tasks
+  - **Activation**: neocortex learning, predictive coding, error-driven learning, temporal derivatives, corticothalamic circuits, kinase plasticity
+
 ## 2026-06-10 - Quantum Medicine Research (Cron Job)
 
 ### Scalable On-Hardware Training of Quantum Neural Networks
