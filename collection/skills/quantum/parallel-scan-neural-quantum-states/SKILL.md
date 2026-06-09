@@ -1,75 +1,179 @@
 ---
 name: parallel-scan-neural-quantum-states
-description: >
-  Parallel Scan Recurrent Neural Quantum States (PSR-NQS) methodology for scalable
-  variational Monte Carlo simulations. Based on arXiv:2605.13807 (Merali et al., 2026-05-13).
-  Use when: implementing neural quantum states (NQS) for many-body quantum systems,
-  scaling variational Monte Carlo to large 2D spin lattices, designing autoregressive
-  recurrent wave functions, parallelizing sequential recurrence in quantum state sampling,
-  or building efficient neural network ansatze for quantum ground state problems.
-  Core idea: replace sequential autoregressive sampling with parallel scan (prefix-sum)
-  recurrence, enabling GPU-parallelizable training of recurrent NQS on lattices up to 52x52.
-  Categories: quantum physics, neural networks, variational Monte Carlo, many-body systems.
-  Activation keywords: parallel scan NQS, neural quantum state, recurrent wave function,
-  variational Monte Carlo, PSR-NQS, autoregressive quantum state, spin lattice simulation,
-  neural quantum ansatz, parallel recurrent quantum
+description: Parallel Scan Recurrent Neural Quantum States (PSR-NQS) methodology for scalable variational Monte Carlo simulations. Use when designing efficient RNN-based quantum state ansätze, training neural quantum states with autoregressive models, scaling quantum simulations to large 2D spin lattices, or applying parallel scan techniques to sequential quantum architectures.
 ---
 
-# Parallel Scan Recurrent Neural Quantum States
+# Parallel Scan Recurrent Neural Quantum States (PSR-NQS)
 
-## Overview
+## Description
 
-PSR-NQS replaces sequential autoregressive recurrence in neural quantum states with a
-parallel scan (prefix-sum) operation, enabling GPU-parallelized training of recurrent
-architectures for quantum many-body wave functions. Key result: 2D spin lattices up to
-52x52 with accuracy matching quantum Monte Carlo, using modest compute resources.
+Methodology from arXiv:2605.13807 (Merali et al., May 2026). Challenges the view that recurrent NQS are inherently unscalable by showing modern recurrent architectures with parallelizable recurrence can achieve fast, accurate VMC simulations. Achieves 52×52 2D spin lattice accuracy with modest resources.
 
-## Methodology
+## Activation Keywords
+- PSR-NQS
+- parallel scan neural quantum states
+- parallelizable recurrent quantum
+- RNN quantum state scaling
+- autoregressive quantum wavefunction
+- recurrent VMC
+- neural quantum state parallel scan
+- quantum spin lattice recurrent
 
-### Core Innovation
+## Core Methodology
 
-Standard NQS uses sequential autoregressive sampling — slow on GPU. PSR-NQS reformulates
-the recurrence as a parallel scan (associative prefix-sum), allowing O(log N) parallel
-computation instead of O(N) sequential.
+### Problem
+Recurrent NQS were traditionally viewed as intrinsically sequential, making them less scalable than transformer-based architectures for quantum many-body simulations.
 
-### Implementation Steps
+### Solution
+Apply modern parallel scan (associative scan) techniques to recurrent NQS, enabling:
+- **Parallel Training**: Replace sequential recurrence with associative scan for GPU parallelism
+- **Autoregressive Sampling**: Maintain exact autoregressive probability structure
+- **Iterative Retraining**: Progressively scale to larger system sizes
 
-1. **Design autoregressive recurrent cell**: Define hidden state update h_i = f(h_{i-1}, s_i)
-   where s_i are spin configurations. The cell must be associative for parallel scan.
+### Architecture
 
-2. **Parallel scan formulation**: Rewrite sequential recurrence as associative binary
-   operation ⊕ that can be parallelized:
+1. **Autoregressive RNN Wavefunction**:
    ```
-   h_i = h_{i-1} ⊕ s_i  →  parallel_scan(h_0, s_1, ..., s_N)
+   ψ(s) = Πᵢ P(sᵢ | s₁...sᵢ₋₁)
    ```
+   - RNN processes spins sequentially to build conditional probabilities
+   - Each step: hidden state hᵢ = f(hᵢ₋₁, sᵢ), output P(sᵢ|hᵢ)
 
-3. **Variational Monte Carlo training**:
-   - Sample spin configurations using the autoregressive model
-   - Compute local energy E_L(s) = ⟨s|H|ψ⟩/⟨s|ψ⟩
-   - Optimize parameters via stochastic reconfiguration or Adam
-   - Use parallel scan for efficient forward pass
+2. **Parallel Scan Transformation**:
+   - Replace sequential RNN with associative scan
+   - Leverage parallel prefix-sum structure for O(log N) depth
+   - Maintains exact same computation as sequential version
 
-4. **Wave function representation**:
-   - ψ(s) = exp(∑ log p(s_i|s_{<i})) where p is the recurrent output
-   - Amplitude and phase can be modeled separately or jointly
+3. **Iterative Retraining Pipeline**:
+   - Train on small system (e.g., 8×8)
+   - Initialize larger system with extrapolated weights
+   - Fine-tune progressively (16×16 → 32×32 → 52×52)
 
-### Key Design Principles
+### Key Results
+- Accurate on 1D and 2D spin models
+- Reaches 52×52 2D lattices (vs. transformer limits)
+- Agreement with quantum Monte Carlo benchmarks
+- Modest computational resources required
 
-- **Associativity is critical**: The recurrent update must form a semigroup for parallel scan
-- **Gating mechanisms**: Use GRU/LSTM-style gates that can be reformulated associatively
-- **Memory efficiency**: PSR reduces memory from O(N) sequential to O(log N) tree depth
-- **Scalability**: Enables 2D lattices 52×52 with standard GPU resources
+## Implementation Guide
 
-## Application Domains
+### Step 1: Define Autoregressive RNN Ansatz
+```python
+import jax
+import jax.numpy as jnp
 
-- **Transverse field Ising model**: 1D and 2D spin systems
-- **Heisenberg antiferromagnet**: Benchmark against exact diagonalization
-- **Frustrated magnets**: Systems where QMC suffers from sign problem
-- **Fermionic systems**: With appropriate antisymmetrization
+def rnn_cell(hidden, spin, params):
+    """Recurrent cell for spin processing."""
+    W_h, W_x, b = params
+    new_hidden = jnp.tanh(W_h @ hidden + W_x @ spin + b)
+    return new_hidden
 
-## Resources
+def log_probability(params, spins):
+    """Compute log |ψ(s)|² via RNN."""
+    hidden = jnp.zeros(params['h0'].shape)
+    log_probs = []
+    for s in spins:
+        hidden = rnn_cell(hidden, s, params)
+        p = jax.nn.softmax(params['output'] @ hidden)
+        log_probs.append(jnp.log(p[s] + 1e-10))
+    return sum(log_probs)
+```
 
-- **arXiv**: [2605.13807](https://arxiv.org/abs/2605.13807)
-- **Authors**: Ejaaz Merali, Mohamed Hibat-Allah, Mohammad Kohandel, Richard T. Scalettar, Ehsan Khatami
-- **Published**: 2026-05-13
-- **Categories**: cond-mat.str-el, cs.LG, quant-ph
+### Step 2: Apply Parallel Scan
+```python
+from jax.lax import associative_scan
+
+def parallel_rnn_step(carry, x, params):
+    """Single step as associative scan element."""
+    h_new = rnn_cell(carry, x, params)
+    return h_new, h_new
+
+def parallel_log_prob(params, spins):
+    """Parallel scan version of RNN."""
+    # Transform to associative scan format
+    initial_states = jnp.zeros((len(spins), params['h0'].shape[0]))
+    
+    # Associative scan over recurrence
+    _, all_hidden = associative_scan(
+        lambda c, x: parallel_rnn_step(c, x, params),
+        initial_states, spins
+    )
+    
+    # Compute probabilities in parallel
+    logits = all_hidden @ params['output'].T
+    log_probs = jax.nn.log_softmax(logits)
+    return log_probs
+```
+
+### Step 3: VMC Training Loop
+```python
+def energy_expectation(params, hamiltonian, n_samples=1000):
+    """Estimate energy via Monte Carlo sampling."""
+    # Autoregressive sampling (can use parallel scan)
+    samples = autoregressive_sample(params, n_samples)
+    
+    # Local energy computation
+    local_energies = jax.vmap(
+        lambda s: local_energy(params, s, hamiltonian)
+    )(samples)
+    
+    return jnp.mean(local_energies)
+
+def train_step(params, optimizer, hamiltonian):
+    """Single training step with gradient descent."""
+    def loss_fn(p):
+        return energy_expectation(p, hamiltonian)
+    
+    grad = jax.grad(loss_fn)(params)
+    return optimizer.apply_gradients(params, grad)
+```
+
+### Step 4: Iterative Scaling
+```python
+def scale_up(params, old_size, new_size):
+    """Initialize larger system from trained smaller system."""
+    # Interpolate/extrapolate RNN weights
+    new_params = params.copy()
+    # Weight initialization strategy depends on architecture
+    return new_params
+
+def iterative_training(hamiltonian, sizes=[8, 16, 32, 52]):
+    """Progressive training pipeline."""
+    params = initialize_params(sizes[0])
+    
+    for size in sizes:
+        if size > sizes[0]:
+            params = scale_up(params, sizes[sizes.index(size)-1], size)
+        
+        params = train_to_convergence(params, hamiltonian, size)
+        print(f"Completed {size}x{size} training")
+    
+    return params
+```
+
+## Common Pitfalls
+
+### Pitfall 1: Associative Scan Requirements
+**Issue**: Not all recurrence relations support associative scan.
+**Fix**: Ensure the recurrence has the form hᵢ = f(hᵢ₋₁, xᵢ) where f is associative in hidden state composition.
+
+### Pitfall 2: Autoregressive Sampling Correctness
+**Issue**: Parallel scan must produce identical results to sequential for correctness.
+**Fix**: Validate by comparing parallel and sequential outputs on small systems before scaling.
+
+### Pitfall 3: Progressive Initialization
+**Issue**: Naive weight extrapolation may not preserve physical properties.
+**Fix**: Use physics-informed initialization that respects symmetries (e.g., translation invariance for homogeneous Hamiltonians).
+
+## When to Use
+- Quantum many-body ground state problems
+- Large 2D spin lattice simulations (beyond transformer capacity)
+- Resource-constrained quantum simulation environments
+- Systems requiring autoregressive probability structure
+- Progressive scaling from small to large system sizes
+
+## References
+- arXiv:2605.13807 - "Parallel Scan Recurrent Neural Quantum States for Scalable Variational Monte Carlo"
+- Related: `neural-network-quantum-states-grand-canonical` — grand canonical ensemble NQS
+- Related: `deep-boltzmann-quantum-states` — Deep Boltzmann quantum states
+- Related: `neural-quantum-spectral-operator` — quantum spectral operator learning

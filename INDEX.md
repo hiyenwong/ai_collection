@@ -29,6 +29,16 @@
   - 低训练开销：无额外推理成本，高效实现
   - **Activation**: CorSW, EEG decoding, correlation matrix, sliced Wasserstein, domain generalization, BCI, cross-subject, correlation geometry, pullback metric, OLM, LSM
 
+### BEAST3D: Animal Behavioral Analysis and Neural Encoding from Multi-View Video via Gaussian Splatting
+- [[beast3d-gaussian-splatting-behavior]] - 自监督3D Gaussian splatting框架用于动物行为分析与神经编码，仅4视角重建3D结构，视角不变特征迁移至下游任务 (arXiv: 2606.02937)
+  - 稀疏视角突破：实验室稀疏视角（4视角）可重建，对比NeRF需50+视角
+  - 自监督预训练：无需标注，利用多视角一致性学习3D表征
+  - Gaussian参数预测：ViT预测位置/缩放/旋转/透明度，可微渲染验证
+  - 三任务迁移：novel view synthesis、pose estimation、neural encoding
+  - 跨物种验证：小鼠/果蝇/斑马鱼/大鼠四种动物有效，神经编码R²=0.67
+  - 视角不变性：同一行为不同视角特征相似度>0.9
+  - **Activation**: BEAST3D, gaussian splatting, animal behavior analysis, neural encoding, multi-view video, 3D reconstruction, self-supervised 3D, 稕疏视角重建, 视角不变性
+
 ### Inside the Visual Mind: Neuroscience-Motivated Concept Circuits for Interpreting and Steering Vision Transformers
 - [[visae-neuroscience-concept-circuits-vit]] - 神经科学启发的概念电路框架用于 Vision Transformer 可解释性与行为干预 (arXiv: 2606.06664, ICML 2026)
   - 16K概念词汇表：64K图像探测套件，20x概念覆盖效率提升，28.7%解释准确度改善
@@ -638,6 +648,7 @@
 
 # AI Collection Index
 
+<<<<<<< HEAD
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Coarse-to-fine Hierarchical Architecture with Sequential Mamba for Brain Reconstruction (CHASMBrain)
@@ -879,6 +890,8 @@
   - Second-order covariance preserved, third-order co-skewness destroyed
   - **Activation**: brain, foundation, models,, BFM,, co-skewness,
 
+=======
+>>>>>>> a56dd3ea5508b3f83494120b5f586e2831f698ab
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
@@ -1354,30 +1367,24 @@
 
 ## 2026-06-04 - Systems Engineering + Quantum Mechanics (Cron Job)
 
-### Squeezed Phonon Lasing via Floquet-Controlled Solid-State Defects
-- [[floquet-controlled-phonon-lasing]] - Floquet-engineered squeezed phonon laser design using color centers in hBN membranes with coupled spin-mechanical systems (arXiv: 2606.05083)
-  - Floquet theory enables engineering of effective Hamiltonians via periodic driving
-  - Continuous transition from conventional to squeezed phonon lasing via Floquet parameters
-  - Solid-state platform: hBN membrane with color centers + mechanical oscillator
-  - Applications in quantum metrology (sub-shot-noise sensing) and quantum control systems
-  - **Activation**: floquet engineering, phonon lasing, squeezed states, solid-state defects, hBN membrane, quantum metrology, spin-phonon coupling, periodic driving, steady-state engineering
+## 2026-06-06 - Neuroscience Research (Cron Job - Final)
 
-### Piston Control in Two-Ion Quantum Device
-- [[inverse-engineering-quantum-control]] - Inverse engineering protocols for controlling classical piston dynamics driven by quantum ion motion in two-ion trapped devices (arXiv: 2606.03488)
-  - Self-consistent stationary state determination with quantum effects
-  - Narrow quantum regime connecting two broad classical regimes
-  - Inverse engineering: design control from desired trajectory to potential modulation
-  - Bridge between classical and quantum control systems engineering
-  - **Activation**: inverse engineering, piston control, two-ion device, trapped-ion control, quantum-classical transition, optimal control
+### Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation
+- [[boosting-brain-to-image-tribe-v2]] - TRIBE v2数据增强提升脑到图像解码性能，使用1000+小时预训练编码模型生成合成fMRI，Top-10准确率提升高达68%，支持零样本脑解码 (arXiv: 2606.06345)
+  - 三模态编码模型（视频+音频+语言）学习刺激→fMRI映射
+  - 合成数据增强：生成fMRI响应扩充小数据集
+  - NSD/BOLD5000数据集验证，不同数据源需调整最优增强比例
+  - 纯合成训练可超越随机水平，零样本解码突破
+  - **Activation**: brain decoding, fMRI, brain-to-image, TRIBE v2, 脑解码, 数据增强, synthetic fMRI, 零样本解码
 
-## 2026-06-04 - Neuroscience Research (Cron Job)
+## 2026-06-06 - Neuroscience Research (Cron Job - Latest Hourly)
 
-### Discrete Signaling Mediates Chaotic Regularization in RNNs
-- [[discrete-signaling-chaotic-regularization]] - Links microscopic chaos to macroscopic neural representation geometry via kernel methods + dynamical mean-field theory (arXiv: 2606.04426)
-  - Chaos induces local roughness but preserves global smoothness, acting as intrinsic regularizer
-  - Power-law spectral signatures match cortical recordings, explains smooth population codes
-  - Game-theoretic structure where each neuron minimizes local energy
-  - **Activation**: chaotic regularization, discrete signaling, RNN dynamics, kernel methods, cortical recordings, population codes, neural representations, dynamical mean-field theory
+### Cross-Scale Spatially-Aware Generative Modeling for Neurodegeneration
+- [[cross-scale-spatial-generative-neurodegeneration]] - 跨尺度空间感知生成模型用于神经退行性疾病脑组织的转录组程序建模，变分架构结合图平滑实现86.04%方差解释和r=0.9439空间相关性 (arXiv: 2606.05870)
+  - 跨尺度框架：从Allen Brain Atlas基因表达到ADNI皮质厚度测量
+  - 变分生成架构学习转录组-退行化的潜在生物程序
+  - 图空间平滑正则化保持皮层组织拓扑
+  - **Activation**: spatially-aware generative, transcriptomic neurodegeneration, cross-scale brain modeling, cortical thinning prediction, variational generative neurobiology
 
 ### Competition, Stability, and Functionality in E-I Neural Circuits
 - [[competition-stability-ei-circuits]] - Game-theoretic energetic framework for asymmetric E-I networks, extending energy-based models to biological circuits (arXiv: 2512.05252)
