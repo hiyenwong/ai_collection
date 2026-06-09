@@ -8,6 +8,14 @@
   - 变分学习框架实现100%最终训练成功率
   - **Activation**: quantum global variational learning, QEC training optimization, quantum neural network error correction, variational quantum error correction
 
+### Extending Ontologies: From Dense Embeddings to Hybrid Quantum-Fuzzy Systems
+- [[hybrid-quantum-fuzzy-ontology]] - 混合量子模糊知识表示系统，结合本体论与密集嵌入，通过量子神经网络同时支持确定性推理和概率性上下文推理 (arXiv: 2606.08658)
+  - 神经量子模糊系统：同时支持逻辑推理和概率推理的表示框架
+  - 模糊隶属度作为量子振幅：实现概念的量子叠加表示
+  - QNN上下文推理：利用量子干涉模式进行超越经典逻辑的推理
+  - 无权衡设计：不同于现有方法，不强制在确定性和概率性之间做选择
+  - **Activation**: quantum fuzzy ontology, hybrid quantum fuzzy, neuro-quantum-fuzzy, knowledge representation quantum, ontology embedding, crisp probabilistic inference, quantum knowledge graph
+
 ## 2026-06-09 - Neuroscience Research (Cron Job - Latest Session)
 
 ### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
