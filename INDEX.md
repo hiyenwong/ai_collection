@@ -10,6 +10,22 @@
 
 ## 2026-06-10 - Medicine Research (Cron Job - Medical Quantum Diagnosis)
 
+### Towards Post-Quantum Secure Pharmacovigilance with ML-KEM and ML-DSA
+- [[post-quantum-secure-pharmacovigilance]] - NIST标准PQC迁移(ML-KEM+ML-DSA)用于药物警戒和医疗数据安全，混合TLS过渡策略确保向后兼容，保护不良事件报告免受量子攻击 (arXiv: 2606.09412)
+  - ML-KEM(CRYSTALS-Kyber)：后量子密钥封装保护传输数据，NIST Level 3安全
+  - ML-DSA(CRYSTALS-Dilithium)：后量子数字签名确保报告真实性与不可抵赖性
+  - 混合TLS迁移：经典+PQC双算法过渡，保障与旧医疗系统兼容
+  - Harvest-now-decrypt-later防护：即使今日数据被窃取也无法被未来量子计算机解密
+  - **Activation**: post-quantum pharmacovigilance, ML-KEM, ML-DSA, CRYSTALS, healthcare security, 抗量子药物监测, PQC migration
+
+### Binary Latent Protein Fitness Landscapes for Quantum Annealing Optimization
+- [[q-biolat-protein-fitness-quantum]] - Q-BIOLAT：蛋白质语言模型二元潜空间+量子退火优化蛋白质适应度景观，QUBO形式化编码残基间上位性交互，D-Wave硬件高效探索高适应度蛋白变体 (arXiv: 2603.17247)
+  - 二元潜空间投影：预训练蛋白语言模型→二值量化→离散二进制向量
+  - QUBO建模：Q矩阵编码位置间成对上位性交互
+  - 量子退火采样：D-Wave探索适应度景观，优于经典枚举
+  - 逆向退火精炼：有限温度下用反向退火优化
+  - **Activation**: protein fitness quantum, Q-BIOLAT, binary latent protein, quantum annealing protein, D-Wave protein, QUBO protein design
+
 ### On the Complementarity of Quantum and Classical Features: Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
 - [[medical-quantum-diagnosis]] - 混合量子-经典特征融合方法学，结合ResNet+PQC双分支架构，三种融合策略SHF/DHF/TSHF，TSHF通过学习温度标量平衡梯度动态，BreastMNIST上87.82%准确率/91.77% F1/89.08% AUC-ROC (arXiv: 2604.22903)
   - 双分支架构：经典CNN特征提取+量子电路编码
