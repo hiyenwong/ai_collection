@@ -1,3 +1,21 @@
+## 2026-06-09 - Neuroscience Research (Cron Job - Latest Session)
+
+### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
+- [[llm-enhanced-emotion-dynamics-decoding]] - LLM增强多目标回归框架解码fMRI连续情感轨迹，动态功能连接表示+图理论可解释AI (arXiv: 2606.07707)
+  - LLM自动标注范式：从自然叙事提取连续情感轮廓作为训练标签
+  - DFC动态表示：滑动窗口功能连接时间序列优于静态ROI振幅
+  - 多目标连续回归：正则化/核方法追踪多维度情感轨迹
+  - 图理论XAI：拓扑特征重要性揭示情感特异性网络配置
+  - **Activation**: emotion decoding, LLM annotation, dynamic functional connectivity, multi-target regression, continuous emotion trajectories, affective neuroscience, naturalistic stimuli, graph-theoretical XAI
+
+### Learning sequence timing and control of replay speed in networks of spiking neurons
+- [[spiking-temporal-memory-stm-sequence-timing]] - Spiking Temporal Memory扩展实现序列时序学习与重放速度控制，振荡时钟信号机制 (arXiv: 2605.22523)
+  - 时序编码机制：元素持续时间通过神经元群体顺序激活表示
+  - 振荡时钟信号：背景振荡输入作为重放速度控制器，频率↑速度↑
+  - 稀疏时空模式：elapsed time由独特稀疏时空发放模式编码
+  - 生物对应：清醒/睡眠状态振荡频率差异反映重放速度差异
+  - **Activation**: spiking temporal memory, sTM model, sequence timing, replay speed control, oscillatory clock signal, working memory, spiking neural network, sequence processing
+
 ## 2026-06-09 - Anthropic Research (Cron Job)
 
 ### Paving the Way for Agents in Biology
