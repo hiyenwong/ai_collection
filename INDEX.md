@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-06-09 - Neuroscience Research (Cron Job - Latest Session)
+
+### Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model
+- [[topo-omni-brain-topographic-multimodal]] - Topo-Omni深度地形多模态模型发现功能选择性脑区，单一连续空间表整合视觉/听觉/语言处理，空间平滑目标实现跨模态聚类对齐人类神经影像 (arXiv: 2606.09770)
+  - 单一连续表架构：首次使用统一空间表示跨所有模态，捕获皮质处理流的连续性
+  - 空间平滑约束：附近神经元共享相似响应，生物地形组织原则
+  - 跨模态一致性：聚类从感官到认知系统与人类fMRI对齐
+  - **Activation**: topographic model, brain topography, multimodal brain regions, cortical organization, functional selectivity, Topo-Omni, spatial smoothness
+
+### A Sliced-Wasserstein Framework on Correlation Matrices for EEG Decoding
+- [[corsw-sliced-wasserstein-eeg-decoding]] - CorSW框架使用Pullback Euclidean Metric切片Wasserstein距离解码EEG，全秩相关矩阵流形尺度不变表示解决协方差描述符通道缩放敏感性 (arXiv: 2606.06104)
+  - PEMSW框架：切片Wasserstein距离+Pullback欧氏度量，尊重流形几何结构
+  - 尺度不变性：全秩相关矩阵自动处理通道幅度变化，跨系统兼容
+  - 两种CorSW差异：基于不同Pullback度量实例化，适用于BCI和临床诊断
+  - 计算效率：切片方法比完整Wasserstein快多个数量级，实时BCI可用
+  - **Activation**: EEG decoding, sliced Wasserstein, correlation matrices, PEMSW, CorSW, scale-invariant, manifold learning
+
 ## 2026-06-09 - Computer Science + Quantum Research (Cron Job)
 
 ### Quantum Global Variational Learning for Quantum Error Correction
