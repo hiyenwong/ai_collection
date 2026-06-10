@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-06-11 - Systems Engineering + Quantum Research (Cron Job)
+
+### Bosonic Cyclic Codes: Trading Stabilizers for Gaussian Non-Clifford Phase Gates
+- [[bosonic-cyclic-codes-qec]] - 玻色循环码QEC方法：通过降低旋转对称性换取多个容错逻辑相位门，全部通过被动高斯旋转实现 (arXiv: 2606.11010)
+  - 核心创新：循环猫码和Vandermonde码，平衡误差保护与可控性
+  - 稳定子到门转换范式：高阶稳定子可转化为逻辑门
+  - SU(2)对称性结构产生额外稳定子和逻辑Pauli门
+  - **Activation**: bosonic codes, cyclic codes, cat code, binomial code, non-Clifford gates, Gaussian rotations, QEC, Vandermonde codes
+
+### Certification of Network Quantum Sensing
+- [[quantum-network-sensing-certification]] - 量子网络传感认证协议：使用双边Pauli-twirling强制Bell对角信道形式，在保留计量灵敏度的同时实现严格的安全认证 (arXiv: 2606.10700)
+  - 核心创新：Pauli-twirling独立于攻击强制信道Bell对角化
+  - 用户精度一致超过窃听者能力（宽参数范围）
+  - 统一量子密码学与计量学，同时实现量子精度和信息安全性
+  - **Activation**: quantum sensing, network sensing, quantum metrology, Pauli-twirling, remote sensing, security certification
+
+### Inherent Flux Crosstalk and Coupler-Driven Single-Qubit Gates
+- [[flux-crosstalk-coupler-control]] - 超导电路磁通串扰分析：通过法拉第感应类比实现耦合器驱动的单量子比特控制，可能消除独立微波XY控制线 (arXiv: 2606.10970)
+  - 核心发现：时变磁通在电容耦合量子比特间产生交叉电压驱动
+  - 将串扰从问题转化为特性：通过耦合器实现快速单比特控制
+  - 可扩展性优势：控制线数量减少67%
+  - **Activation**: flux crosstalk, superconducting qubits, tunable coupler, single-qubit control, SQUID, cross-voltage driving
+
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
 ### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
