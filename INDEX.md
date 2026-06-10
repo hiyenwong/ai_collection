@@ -66,6 +66,14 @@
   - Application: temozolomide treatment response prediction in GBM
   - **Activation**: quantum convolutional neural network, glioblastoma, MGMT methylation, biomarker prediction, ring topology, quantum CNN, importance-aware, temozolomide
 
+### Accelerating PINNs with Hybrid Quantum-Classical FBPINN for Full Waveform Inversion
+- [[hybrid-quantum-fbpinn]] - Hybrid quantum-classical domain-decomposed PINN (FBPINN) combining quantum variational circuits with classical FBPINN subdomains for complex PDE solving and seismic inversion (arXiv: 2606.01110)
+  - Domain decomposition + quantum subdomain networks for complex field regions
+  - Angle encoding + variational QC + classical output for enhanced expressivity
+  - Physics constraints enforced at collocation points across overlapping subdomains
+  - Application: full waveform inversion for subsurface velocity model reconstruction
+  - **Activation**: hybrid quantum PINN, quantum FBPINN, domain decomposition quantum, full waveform inversion, quantum PDE solver
+
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
 ### Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model
