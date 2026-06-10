@@ -49,6 +49,22 @@
   - 无需先验：不需要最小特征值或秩信息
   - **Activation**: qsvt adaptive cutoff, quantum singular value transformation, von Neumann entropy estimation, spectral cutoff, nonlinear quantum property
 
+## 2026-06-11 - Systems Engineering + Quantum (Cron Job)
+
+### Analog Quantum AEGNN: Event-Based Graph Neural Networks on Neutral-Atom Processors
+- [[analog-quantum-event-gnn]] - 将事件驱动图神经网络映射到中性原子量子处理器，利用Rydberg哈密顿量原生执行事件图计算，混合量子经典训练优化激光参数 (arXiv: 2606.11000)
+  - 核心创新：事件-原子映射 + Rydberg哈密顿量编程实现原生消息传递
+  - 流式处理：异步事件到达，无需批处理同步
+  - 混合训练：经典优化器调整激光脉冲振幅和失谐
+  - **Activation**: analog quantum, AEGNN, neutral-atom, Rydberg Hamiltonian, event camera, quantum GNN
+
+### Free Parametrization of L2-Bounded SSM Controllers for Nonlinear Control with Stability Guarantees
+- [[l2ru-ssm-controller-stability]] - L2有界结构化状态空间模型的自由参数化方法，通过L2-Recurrent Unit保证闭环稳定性，无需额外约束优化 (arXiv: 2606.11049)
+  - 核心创新：LTI系统L2增益自由参数化，小增益定理保证稳定性
+  - L2RU架构：按设计强制L2约束，独立于优化参数
+  - 并行扫描：高效处理长输入序列
+  - **Activation**: L2-bounded controller, state-space model, nonlinear control, stability guarantee, small-gain theorem
+
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function

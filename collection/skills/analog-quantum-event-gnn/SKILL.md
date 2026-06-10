@@ -1,72 +1,74 @@
 ---
 name: analog-quantum-event-gnn
-description: "Analog Quantum Asynchronous Event-Based Graph Neural Network (QA-AEGNN) — implementing event-based GNNs on neutral-atom quantum processors via Rydberg Hamiltonian programming. Maps streaming event data to trapped atom arrays where geometric proximity reflects spatio-temporal neighborhoods, with native Hamiltonian dynamics executing message-passing natively. Activation: quantum GNN, neutral atom, Rydberg Hamiltonian, event camera, asynchronous event, analog quantum computing, graph neural network, message passing, quantum neural network, trapped atom, quantum machine learning, event-based vision"
+description: "Analog quantum AEGNN methodology — implementing event-based graph neural networks on neutral-atom quantum processors. Rydberg Hamiltonian programming maps streaming event data to trapped atom arrays, with geometric proximity encoding spatio-temporal neighborhoods. Hybrid quantum-classical training optimizes Hamiltonian parameters (laser pulse amplitudes, detunings) for event-based graph computations. Use for quantum neuromorphic computing, event camera processing, neutral-atom quantum systems, analog quantum ML, graph neural network acceleration. Activation: analog quantum, AEGNN, neutral-atom, Rydberg, event camera, quantum GNN, quantum event-based, quantum graph, event-based graph neural network"
 metadata:
   arxiv_id: "2606.11000"
   published: "2026-06-09"
   authors: "Kristian Sotirov, Shaheen Acheche, Antonio A. Gentile, Osvaldo Simeone"
+  tags: [quantum, neuromorphic, event-camera, graph-neural-network, neutral-atom, rydberg, analog-quantum]
 ---
 
-## Context
+## Analog Quantum AEGNN Methodology
 
-Asynchronous event-based graph neural networks (AEGNNs) efficiently process sparse, high-temporal-resolution data from event cameras. QA-AEGNNs implement AEGNNs natively on neutral-atom quantum processors, leveraging Rydberg interactions for massive parallelism and continuous Hamiltonian dynamics for message-passing.
+Map event-based graph neural networks to neutral-atom quantum processors using native Rydberg Hamiltonian dynamics for parallel event processing.
 
-## Core Methodology
+### Core Architecture
 
-### 1. Event-to-Atom Mapping
+1. **Event-to-Atom Mapping**: Each event (pixel, timestamp) maps to a trapped neutral atom. Atom positions encode spatio-temporal proximity — geometrically close atoms represent neighboring events.
 
-- Map each incoming event (pixel, timestamp, polarity) to a trapped neutral atom
-- Position atoms such that geometric proximity reflects spatio-temporal neighborhood: `distance(i,j) ∝ ||(x_i,t_i) - (x_j,t_j)||`
-- Atom qubit states encode node features (event polarity, intensity, temporal decay)
-- Streaming data: new events → new atoms added to the array dynamically
+2. **Rydberg Hamiltonian Programming**: The native Rydberg Hamiltonian H = ΣΩᵢσˣᵢ + ΣΔᵢnᵢ + ΣVᵢⱼnᵢnⱼ implements message-passing:
+   - Ωᵢ (Rabi frequency) → node feature initialization
+   - Δᵢ (detuning) → node bias terms
+   - Vᵢⱼ ∝ C₆/rᵢⱼ⁶ (van der Waals interaction) → edge weights, decaying with inter-atom distance
 
-### 2. Rydberg Hamiltonian Message Passing
+3. **Streaming Event Processing**: Events arrive asynchronously. New atoms are added to the array; existing atom interactions update continuously via Hamiltonian evolution — no batch synchronization needed.
 
-- Native Rydberg Hamiltonian: `H = Σ_i (Ω_i σ_x^i - Δ_i n_i) + Σ_{i<j} V_{ij} n_i n_j`
-  - Ω_i: laser Rabi frequency (controls node feature rotation)
-  - Δ_i: laser detuning (controls node bias)
-  - V_{ij} = C_6 / r_{ij}^6: van der Waals interaction (realizes graph edge weights)
-- Message passing emerges naturally from Hamiltonian evolution: `|ψ(t)⟩ = exp(-iHt)|ψ(0)⟩`
-- Inter-atom Rydberg interactions implement weighted message aggregation
-- Continuous-time dynamics replace discrete GNN layers
+4. **Node Feature Embedding**: Atomic qubit states |ψᵢ⟩ = αᵢ|0⟩ + βᵢ|1⟩ encode node features. Measurement in computational basis yields binary classifications; tomographic readout yields continuous embeddings.
 
-### 3. Hybrid Quantum-Classical Training
+5. **Hybrid Training**: Classical optimizer (gradient-based or RL) adjusts laser parameters {Ωᵢ, Δᵢ} to minimize task loss. Quantum layer is fixed Hamiltonian evolution — only control parameters are trainable.
 
-- Classical optimizer updates Hamiltonian parameters (Ω, Δ)
-- Quantum processor executes analog evolution for each event batch
-- Gradient estimation via parameter-shift rule or finite differences
-- Loss: task-specific (classification, detection, segmentation on event data)
+### Implementation Steps
 
-### 4. Spatio-Temporal Neighborhood via Geometry
+1. **Event Preprocessing**:
+   - Convert event stream {(xᵢ, yᵢ, tᵢ, pᵢ)} to graph nodes
+   - Define temporal window τ for neighborhood construction
+   - Map (x, y, t) to 2D/3D trap positions preserving locality
 
-- Key insight: Rydberg interaction strength V_{ij} ∝ 1/r_{ij}^6 provides natural distance-weighted attention
-- Closer atoms (spatio-temporally nearby events) interact more strongly
-- No explicit adjacency matrix needed — graph structure is encoded in atom positions
-- Dynamic graph: new events create new atoms and modify interaction topology
+2. **Trap Array Configuration**:
+   - Use optical tweezers or optical lattices for atom positioning
+   - Ensure inter-atom distances satisfy rᵢⱼ > r_blockade for non-neighbors
+   - Calibrate Vᵢⱼ = C₆/rᵢⱼ⁶ for desired interaction strength
 
-## Implementation Steps
+3. **Hamiltonian Parameterization**:
+   - Initialize Ωᵢ, Δᵢ from classical GNN weights
+   - Apply Rydberg pulse sequence for message-passing rounds
+   - Measure output state for downstream task
 
-1. Receive event stream from event camera (x, y, t, polarity)
-2. Map events to atom positions: r_i = f(x_i, y_i, t_i) with spatial scaling
-3. Initialize atom qubit states from event features
-4. Program Rydberg Hamiltonian parameters (Ω, Δ) from current model weights
-5. Execute analog quantum evolution for time τ (message-passing step)
-6. Measure atomic states → extract node embeddings
-7. Compute task-specific loss on embeddings
-8. Classical optimizer updates Ω, Δ via gradient descent
-9. Repeat for next event batch
+4. **Classical Feedback Loop**:
+   - Compute loss L(y_pred, y_true) from measurements
+   - Update {Ωᵢ, Δᵢ} via gradient estimation (parameter-shift or finite-difference)
+   - Iterate until convergence
 
-## Pitfalls
+### Pitfalls
 
-- **Rydberg blockade radius**: Maximum interaction range limits effective graph diameter — events beyond blockade radius cannot directly interact; multi-hop requires sequential evolution steps
-- **Atom loading time**: Loading/rearranging atoms for each event batch introduces latency — buffer events to amortize loading overhead
-- **Decoherence time**: Analog evolution time τ must be ≪ T1, T2 of neutral atoms — limits depth of message-passing
-- **Positioning precision**: Atom positioning errors (typically ~100nm) perturb interaction strengths V_{ij} — robustness to positional noise is critical
-- **Scalability**: Current neutral-atom platforms support ~100-1000 atoms — limits maximum event batch size; requires temporal downsampling for high-rate event streams
+- **Atom decoherence**: Neutral-atom coherence times (∼ms) limit processing depth. Keep circuit depth < coherence time / gate time.
+- **Positioning precision**: Trap positioning errors ∼100nm affect Vᵢⱼ significantly (∝ r⁻⁶). Calibrate interaction map before deployment.
+- **Scalability**: Current neutral-atom platforms support ∼100-1000 atoms. For larger graphs, use subgraph partitioning.
+- **Classical bottleneck**: Event preprocessing and parameter optimization are classical. The quantum advantage comes from parallel Hamiltonian evolution, not preprocessing.
+- **Analog vs. digital**: This is an analog quantum approach — no gate decomposition needed, but also no error correction. Noise resilience depends on problem structure.
 
-## Verification
+### Verification
 
-- QA-AEGNN should match or exceed classical AEGNN accuracy on standard event camera benchmarks (N-CARS, N-Caltech101)
-- Interaction strength V_{ij} should decay as 1/r^6 with atom distance — verify experimentally
-- Training convergence: hybrid optimization should achieve monotonic loss decrease over epochs
-- Ablation: removing Rydberg interactions (V_{ij} = 0) should reduce to independent node processing (baseline performance)
+- Compare QA-AEGNN accuracy against classical AEGNN baseline on event camera dataset (e.g., N-Cars, N-Caltech101)
+- Verify Hamiltonian parameter convergence: plot loss vs. iteration
+- Check interaction map: measure Vᵢⱼ from spectroscopy and compare to theoretical C₆/r⁶
+
+### Activation Keywords
+
+- `analog-quantum-event-gnn`
+- neutral-atom quantum
+- Rydberg Hamiltonian
+- event-based GNN
+- quantum graph neural network
+- event camera quantum
+- analog quantum ML
