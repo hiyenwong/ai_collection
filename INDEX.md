@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
+### Machine Learning Methods for Studying Latent Neural Activity Dynamics
+- [[latent-neural-dynamics-ml-survey]] - Comprehensive survey of ML methods for latent neural dynamics from state-space models to deep generative models, covering single-region dynamics and multi-region communication (arXiv: 2606.10530)
+  - Evolution trajectory: Linear dynamical systems → RNNs → Neural ODEs → Variational inference
+  - Three domains: single-region latent dynamics, multi-region communication, neural manifold geometry
+  - Applications: motor decoding, cognitive state inference, cross-region information flow
+  - **Activation**: latent dynamics, neural trajectory, LDS, RNN, neural ODE, LFADS, variational inference, manifold, brain decoding
+
+### Topological Effective Connectivity Modeling in Brain Networks
+- [[topological-effective-connectivity-hodge]] - Novel Hodge decomposition framework for directed brain connectivity separating gradient (feed-forward), curl (local feedback), and harmonic (global cycles) components using lead-lag mutual information (arXiv: 2606.08407)
+  - Hodge decomposition: orthogonal separation of flow components (gradient/curl/harmonic)
+  - Lead-lag MI: nonparametric information-theoretic directional measure
+  - Disentangles feed-forward drive from recurrent feedback in brain networks
+  - Applications: schizophrenia, Alzheimer's, Parkinson's diagnosis via component differences
+  - **Activation**: Hodge decomposition, effective connectivity, directed brain network, feedback loops, topological data analysis, curl, gradient, harmonic, lead-lag mutual information
+
+### Preserving Plasticity in Continual Learning via Dynamical Isometry
+- [[dynamical-isometry-plasticity]] - NTK-based framework identifying dynamical isometry (layer-wise Jacobian singular values ≈ 1) as key mechanism for preserving plasticity, with isometry-promoting regularization and dormant ReLU reactivation mechanism (arXiv: 2606.09762)
+  - NTK perspective: plasticity ∝ NTK eigenvalue spectrum diversity
+  - Dynamical isometry: prevents gradient vanishing/exploding, maintains uniform parameter learning
+  - Isometry regularization: efficient penalty for singular value deviation from 1
+  - Dormant ReLU reactivation: novel mechanism restoring plasticity via weight modification
+  - **Activation**: plasticity, continual learning, dynamical isometry, NTK, neural tangent kernel, dormant units, gradient vanishing, non-stationarity
+
 ## 2026-06-10 - Medicine + Quantum (Cron Job)
 
 ### Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization
