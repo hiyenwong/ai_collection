@@ -1,4 +1,53 @@
 # AI Collection Index
+
+## 2026-06-10 - Medicine + Quantum Research (Cron Job)
+
+### Quantum Computing for Accurate Large-Scale Electronic-Structure Calculations: DFT-Embedded QSCI
+- [[dft-embedded-quantum-chemistry]] - 多层嵌入框架用于量子化学计算，量子算法处理强关联活性空间而经典方法恢复剩余相关性，在144量子比特超导量子计算机上实现~1 kcal/mol精度 (arXiv: 2606.06015)
+  - 多层嵌入：量子算法处理强关联活性空间，经典CC/MRPT处理周围区域
+  - QSCI桥接：基于采样的量子选择组态方法连接量子与经典处理
+  - Manby投影技术：将计算嵌入低成本DFT环境中
+  - 实际验证：碳纳米管内Menshutkin SN2反应计算精度~1 kcal/mol
+  - **Activation**: DFT embedded quantum chemistry, QSCI, quantum-selected configuration interaction, Manby projection, electronic structure, quantum chemistry, molecular simulation
+
+### Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design
+- [[coset-ensemble-decoder-qec]] - 量子纠错的余集集成解码器方法论，结合算法-硬件协同设计实现高效QEC。使用多种纠错策略的集成投票，考虑硬件约束选择最优校正 (arXiv: 2606.10777)
+  - 余集分解：将错误综合征分解为余集类，每个类生成候选校正算子
+  - 集成投票：结合最小权重、信念传播、神经网络解码器的多样化策略
+  - 硬件协同设计：建模硬件约束（延迟、内存、逻辑门、连接性），进行帕累托优化
+  - ISCA 2026接收：在架构层面验证的方法论
+  - **Activation**: coset ensemble decoder, quantum error correction, algorithm-hardware co-design, ISCA 2026, ensemble decoding, QEC decoder, fault-tolerant quantum computing
+
+### Epistemic Calibration in Second-Order Classification
+- [[epistemic-calibration-second-order]] - 二阶分类模型中的认知校准方法论。引入期望认知校准误差(EECE)作为真实认知校准误差的一致估计器，证明认知校准假设下的不可能性定理 (arXiv: 2606.10777)
+  - 认知校准定义：报告的认知不确定性须忠实反映预测围绕真实值的离散程度
+  - 不可能性定理：无法同时对所有输入分布实现完美经典校准和完美认知校准
+  - EECE估计器：通过分箱策略计算预测方差与报告不确定性的偏差
+  - 医学AI部署：在高风险医疗场景中作为部署门槛
+  - **Activation**: epistemic calibration, second-order classification, EECE, uncertainty quantification, model calibration, medical AI, high-stakes ML
+
+
+1|# AI Collection Index
+2|## 2026-06-10 - Neuroscience Research (Cron Job) - Batch 3
+3|
+4|### Scalable Multi-Timescale Conductance Spiking Networks
+5|- [[multi-timescale-conductance-snn]] - 多时间尺度电导脉冲神经网络方法论。通过自适应时间常数实现多时间尺度突触动力学，模拟短时程增强、长时程抑制等多种神经调节效应 (arXiv: 2606.10854)
+6|  - 自适应时间常数:网络动态调整膜时间常数以响应不同的输入刺激模式
+7|  - 多时间尺度动力学：STP 矆塑时间常数(10-100ms)、 LTP 囹塑(100-500ms)
+8|  - 双模态匹配：兴奋性突触呈现STP特性
+抑制性突触呈现LTP特性
+9|  - 平衡状态的涌现：E/I 比例自适应调整维持网络动力学稳定性
+10|  - **Activation**: multi-timescale, conductance-based, spiking neural network, adaptive time constants, synaptic plasticity. STP, LTP, neural modulation, excitatory-inhibitory balance
+11|
+12|### Early Psychosis Brain Dynamics Critical Regime Scaling Deviation
+13|- [[psychosis-scaling-critical-regime]] - 精神病早期阶段脑动力学临界性scaling偏差研究方法论。结合重整化群(RG)框架与多种scaling分析方法，揭示精神病早期脑网络临界性评估的系统性偏差 (arXiv: 2606.09290)
+14|  - RG框架分析：识别状态空间中的临界点、关联长度、控制参数的scaling关系
+15|  - 多scaling方法验证：幂律拟合、Zipf-Mandelbrot指数、重采样方差分析
+16|  - 系统性偏差发现:临界点位移30%
+关联长度低估50%
+17|  - 临床意义:偏差导致早期精神病诊断阈值可能过高
+18|  - **Activation**: psychosis, brain dynamics, criticality, scaling, renormalization group, phase transition, correlation length, control parameter, power-law fitting, Zipf-Mandelbrot exponent
+19|
 ## 2026-06-10 - Neuroscience Research (Cron Job) - Batch 2
 
 ### Trajectory Geometry of Transformer Representations Across Layers
