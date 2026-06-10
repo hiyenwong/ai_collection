@@ -2380,6 +2380,16 @@
   - Reliable across 0.9-1.3V and 0-100°C, BER < 0.000163 at 1.0-1.3V, 10-70°C
   - **Activation**: qt-puf, quantum tunneling PUF, implantable iomt security, gate leakage PUF, iomt device authentication, quantum medical device security, ultralow-power PUF
 
+## 2026-06-10 - Medicine Research (Cron Job - Quantum Network Architecture)
+
+### OSI Stack Redesign for Quantum Networks: Requirements, Technologies, Challenges, and Future Directions
+- [[quantum-network-osi-stack]] - Comprehensive survey proposing Quantum-Converged OSI stack with Layer 0 (Quantum Substrate) and Layer 8 (Cognitive Intent) for 7G networks, covering QKD, QEC, PQC, RIS, entanglement distribution, fidelity-aware routing, and LLM/QML orchestration (arXiv: 2506.12195)
+  - Extends classical 7-layer OSI with Layer 0 (physical quantum channel, entanglement generation, QKD) and Layer 8 (semantic orchestration, AI-defined QNet agents, digital twin monitoring)
+  - Cross-layer enablers: hybrid quantum-classical control, metadata-driven orchestration, blockchain-integrated quantum trust, reconfigurable intelligent surfaces (RIS)
+  - Evaluation framework: entropy throughput, coherence latency, entanglement fidelity
+  - Simulators: NetSquid, QuNetSim, QuISP; Applications: quantum healthcare telemetry, entangled vehicular networks, satellite mesh overlays
+  - **Activation**: quantum network osi, quantum converged stack, layer 0 quantum substrate, layer 8 cognitive intent, 7G quantum networks, QKD, QEC, PQC, RIS, fidelity-aware routing, LLM quantum orchestration, quantum healthcare telemetry
+
 ## 2026-06-10 - Anthropic Research (Cron Job)
 
 ### Project Vend: Phase Two
