@@ -9,6 +9,13 @@
   - 端到端优化：逻辑错误率为真实性能指标
   - **Activation**: quantum control plane, syndrome-driven routing, QEC network, logical error rate, fault-tolerant quantum network
 
+### Neural Network Decoder Confidence as Learned Proxy for Logical Gap
+- [[neural-decoder-confidence-qec]] - 神经网络解码器置信度作为逻辑间隙的学习代理，将硬判决解码器扩展为软可靠性估计 (arXiv: 2606.08758)
+  - 硬判决vs软信息：解码器输出校正+置信度
+  - 置信度代理：神经网络学习估计逻辑间隙
+  - 下游应用：自适应QEC、网络路由、资源分配
+  - **Activation**: neural decoder confidence, logical gap proxy, QEC soft decoding, decoder reliability
+
 ### Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design
 - [[coset-ensemble-decoder-qec]] - 基于陪集分解的量子纠错解码器，算法-硬件协同设计实现低延迟高精度实时解码 (arXiv: 2606.11076)
   - 陪集分解：将解码问题分解为并行子问题
