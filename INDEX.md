@@ -1,4 +1,22 @@
 # AI Collection Index
+## 2026-06-10 - Neuroscience Research (Cron Job) - Batch 2
+
+### Trajectory Geometry of Transformer Representations Across Layers
+- [[trajectory-geometry-transformer-representations]] - 将计算神经科学的几何工具应用于 Transformer 可解释性，无需探测即可分析表征动力学 (arXiv: 2606.09287)
+  - 发现语义相关提示在中晚期层显著收敛，支持吸引子动力学假设
+  - 推理任务轨迹曲率显著高于词法变化任务，曲率编码计算复杂性
+  - 模糊 token 在最终层产生 5.6 倍表征分离，清晰 token 无此现象
+  - 所有测试架构呈现一致的三阶段层间动力学：编码 → 深化 → 输出准备
+  - **Activation**: transformer, trajectory geometry, computational neuroscience, interpretability, attractor, layerwise analysis
+
+### Unifying von-Neumann HPC and Neuromorphic Acceleration via EBRAINS Research Infrastructure
+- [[unifying-von-neumann-hpc-neuromorphic-ebbrains]] - 通过 EBRAINS 统一冯诺依曼 HPC 与神经形态计算，实现透明跨平台 SNN 执行 (arXiv: 2606.08515)
+  - 单身份联邦认证，零安装执行，域特定语言编译保证跨平台可重现性
+  - PMIx-aware Apptainer 容器动态拉取避免版本漂移
+  - NESTML DSL 编写神经元模型，自动编译为 NEST (C++) 或 sPyNNaker 后端
+  - 平衡随机网络案例验证跨平台结果一致性
+  - **Activation**: neuromorphic computing, spiking neural network, SNN, HPC, EBRAINS, SpiNNaker, cross-platform, containerization, NESTML
+
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
 ### Trajectory Geometry of Transformer Representations Across Layers

@@ -1,200 +1,129 @@
 ---
 name: trajectory-geometry-transformer-representations
-description: Trajectory Geometry methodology for understanding transformer representations across layers. Uses computational neuroscience tools (trajectory length, curvature, semantic convergence, layerwise similarity) for probe-free mechanistic interpretability. Applicable to GPT-2, TinyLlama, Qwen2.5. Reveals attractor-like dynamics, computational complexity encoding, and universal three-phase structure.
-category: ai_collection
-tags: [transformer, interpretability, computational-neuroscience, trajectory-geometry, mechanistic-interpretability, representation-manifold]
-activation_keywords: [trajectory geometry, transformer representations, mechanistic interpretability, probe-free, layer dynamics, attractor dynamics]
+description: Transformer 表征轨迹几何分析方法论 - 将计算神经科学的几何工具应用于 Transformer 可解释性研究，无需探测即可分析表征动力学
+trigger_words: transformer, trajectory geometry, computational neuroscience, interpretability, representation dynamics, attractor, layerwise analysis
+version: 1.0.0
 arxiv_id: 2606.09287
-authors: [Vishal Pandey, Gopal Singh]
+authors: Vishal Pandey, Gopal Singh
 published: 2026-06-08
-paper_link: https://arxiv.org/abs/2606.09287
 ---
 
 # Trajectory Geometry of Transformer Representations Across Layers
 
-## Overview
+## 概述
 
-This methodology recasts the transformer forward pass as a **discrete population trajectory** through a high-dimensional representation manifold, drawing on geometric tools from computational neuroscience. Unlike traditional probing approaches that search for pre-specified features, this framework characterizes trajectory geometry directly in the ambient representation space.
+将 Transformer 前向传播重构为高维表征流形中的离散群体轨迹，借鉴计算神经科学的几何工具进行机制可解释性分析。核心创新：无需探测预定义特征，直接在原始表征空间计算五个几何指标分析轨迹动力学。
 
-**Core Innovation**: Probe-free mechanistic interpretability through trajectory metrics.
+## 核心方法论
 
-## Key Metrics
+### 五个几何指标
 
-### 1. Trajectory Length
-Measures the total distance traveled through representation space across layers.
+1. **轨迹长度 (Trajectory Length)**
+   - 表征层间变化幅度
+   - 反映信息流传递效率
 
-### 2. Curvature
-Quantifies trajectory bending - encoding computational complexity:
-- **Reasoning tasks**: Higher curvature (0.71-0.83 rad)
-- **Lexical variations**: Lower curvature (0.27-0.31 rad)
+2. **曲率 (Curvature)**
+   - 编码计算复杂性
+   - 推理任务曲率 > 词法变化任务 (0.71-0.83 rad vs 0.27-0.31 rad)
 
-### 3. Semantic Convergence Index (CI)
-Measures how semantically related prompts converge in representation space:
-- Peak convergence in middle-to-late layers (CI 0.41-0.58, p<0.001)
-- Evidence of **attractor-like dynamics**
+3. **语义收敛指数 (Semantic Convergence Index, CI)**
+   - 中晚期层语义相关提示收敛 (峰值 CI 0.41-0.58, p<0.001)
+   - 吸引子动力学证据
 
-### 4. Layerwise Cosine Similarity
-Captures representational similarity between adjacent layers.
+4. **层间余弦相似度 (Layerwise Cosine Similarity)**
+   - 通用三阶段结构：编码 → 深化 → 输出准备
+   - 跨架构一致（GPT-2, TinyLlama, Qwen2.5）
 
-### 5. Representational Stability
-Measures trajectory consistency across different prompts.
+5. **表征稳定性 (Representational Stability)**
+   - 模糊token轨迹分叉（最终层5.6倍分离）
+   - 清晰token无分叉
 
-## Key Findings
+### 分析流程
 
-### Finding 1: Attractor-like Dynamics
-- Semantically related prompts **converge significantly** in middle-to-late layers
-- Peak semantic convergence index: 0.41-0.58
-- Statistical significance: p<0.001 (Mann-Whitney U test)
-
-### Finding 2: Curvature Encodes Computational Complexity
-- Reasoning tasks produce trajectories with **greater curvature** (0.71-0.83 rad)
-- Lexical variations produce lower curvature (0.27-0.31 rad)
-- **Interpretation**: Curvature reflects computational demands
-
-### Finding 3: Trajectory Bifurcation for Ambiguous Tokens
-- Ambiguous tokens show **representational bifurcation**
-- Up to **5.6x separation** by final layer
-- Absent in unambiguous control tokens
-- **Implication**: Disambiguation through trajectory divergence
-
-### Finding 4: Universal Three-Phase Structure
-All tested architectures (GPT-2, TinyLlama, Qwen2.5) exhibit:
-1. **Encoding Phase** (early layers): Input processing
-2. **Elaboration Phase** (middle layers): Semantic refinement
-3. **Output Preparation Phase** (late layers): Response generation
-
-## Methodology Details
-
-### Data
-- **Model Families**: GPT-2, TinyLlama, Qwen2.5
-- **Prompt Families**: 5 controlled categories
-- **Control Experiments**: Shuffled-layer, random-embedding controls
-
-### Validation
-- All effects **vanish under control conditions**
-- Confirms trajectory geometry reflects genuine model dynamics
-
-### Implementation Pipeline
-- **Fully open-source**
-- **Model-agnostic**
-- Available with paper publication
-
-## When to Use
-
-### Applicable Scenarios
-1. **Mechanistic interpretability research**: Understanding transformer dynamics without probes
-2. **Layer-wise analysis**: Investigating how representations evolve across layers
-3. **Semantic convergence studies**: Measuring how similar inputs converge
-4. **Computational complexity analysis**: Relating task difficulty to trajectory geometry
-5. **Disambiguation tracking**: Following how ambiguous inputs resolve
-
-### Model Types
-- Transformers with multiple layers
-- Decoder-only language models (GPT architecture)
-- Encoder-decoder models (adaptation required)
-
-## Technical Implementation
-
-### Basic Workflow
 ```
-1. Extract hidden states from each layer for given input
-2. Compute trajectory metrics:
-   - Length: Sum of distances between consecutive layer states
-   - Curvature: Angle changes along trajectory
-   - CI: Inter-trajectory distances for semantic pairs
-   - Layerwise similarity: Cosine between adjacent layers
-3. Compare across prompt families and conditions
-4. Validate with control experiments
+步骤1: 提取层间表征
+  - 收集各层隐藏状态向量
+  - 构建轨迹序列 {h₁, h₂, ..., hₙ}
+
+步骤2: 计算几何指标
+  - 轨迹长度: Σ||hₗ₊₁ - hₗ||₂
+  - 曲率: arccos(⟨hₗ₊₁-hₗ, hₗ-hₗ₋₁⟩ / ||...||²)
+  - 语义CI: 跨提示轨迹距离收敛率
+  - 层间相似度: cosine(hₗ, hₗ₊₁)
+
+步骤3: 对比分析
+  - 不同任务类型轨迹差异
+  - 模糊 vs 清晰 token 行为
+  - 洗牌层/随机嵌入控制实验
+
+步骤4: 解释动力学结构
+  - 三阶段结构识别
+  - 吸引子动力学验证
+  - 计算复杂性与曲率关联
 ```
 
-### Computational Requirements
-- Access to model hidden states
-- Memory: Proportional to layers × sequence length × hidden dimension
-- Compute: O(L) for trajectory length, O(L²) for curvature metrics
+## 关键发现
 
-## Advantages over Traditional Probing
+1. **语义收敛现象**：语义相关提示在中晚期层显著收敛，支持吸引子动力学假设
+2. **曲率编码复杂性**：推理任务轨迹曲率显著高于词法变化，曲率作为计算复杂性的几何编码
+3. **轨迹分叉特征**：模糊token在最终层产生5.6倍表征分离，清晰token无此现象
+4. **通用三阶段结构**：所有测试架构呈现一致的三阶段层间动力学
 
-### Probe-free Approach
-- ✅ No need to define target features beforehand
-- ✅ Works directly in representation space
-- ✅ Captures emergent dynamics
+## 应用场景
 
-### Comprehensive Analysis
-- ✅ Multiple complementary metrics
-- ✅ Cross-layer evolution captured
-- ✅ Temporal dynamics (trajectory through layers)
+### Transformer 可解释性研究
+- 无需预定义探测任务
+- 直接从表征几何分析信息流
+- 跨模型、跨任务的动力学对比
 
-### Validation Framework
-- ✅ Built-in control experiments
-- ✅ Statistical significance testing
-- ✅ Model-agnostic applicability
+### 计算神经科学跨界应用
+- 将神经动力学工具应用于AI系统
+- 神经表征轨迹分析类比
+- 吸引子动力学验证方法
 
-## Limitations
+### 模型架构优化
+- 层间信息传递效率分析
+- 表征瓶颈识别
+- 架构改进指导
 
-1. **High-dimensional space**: Visualization requires dimensionality reduction
-2. **Layer discretization**: Continuous dynamics approximated by discrete samples
-3. **Computational cost**: Full trajectory analysis for long sequences
-4. **Interpretation**: Metrics require careful interpretation for specific models
+## 技术要点
 
-## Related Work
+### 实现细节
+- **表征提取**: 各层隐藏状态或注意力输出
+- **轨迹构建**: 层序离散序列
+- **指标计算**: 在原始表征空间直接计算，无需降维
+- **控制实验**: 洗牌层序、随机嵌入基线
 
-### Computational Neuroscience Foundations
-- Population trajectory analysis in neural systems
-- Attractor dynamics in neural networks
-- Geometric methods for neural data
+### 优势特点
+- **Probe-free**: 无需预定义特征探测
+- **Model-agnostic**: 跨模型通用
+- **Open-source**: 完整开源管道
+- **Geometric lens**: 几何视角替代功能探测
 
-### AI Interpretability Connections
-- Probing classifiers
-- Layer-wise relevance propagation
-- Representation analysis methods
+## 注意事项
 
-## Practical Applications
+1. **表征选择**: 不同层输出（隐藏状态/注意力）影响轨迹定义
+2. **任务控制**: 需精心设计提示家族对比语义vs词法变化
+3. **架构差异**: 三阶段结构通用，但具体指标值因架构而异
+4. **计算资源**: 高维表征几何计算可能内存密集
+5. **尺度效应**: 大模型层间变化幅度可能更显著
 
-### 1. Model Debugging
-Identify anomalous trajectory patterns indicating model issues.
+## 相关资源
 
-### 2. Architecture Comparison
-Compare trajectory dynamics across different transformer architectures.
+- arXiv: 2606.09287
+- 论文原文: https://arxiv.org/pdf/2606.09287v1.pdf
+- 开源代码: 论文提及完全开源管道
+- 测试模型: GPT-2, TinyLlama, Qwen2.5
+- 提示家族: 5类受控提示集
 
-### 3. Task Difficulty Assessment
-Use curvature as proxy for computational complexity of tasks.
+## 核心概念
 
-### 4. Semantic Similarity Studies
-Track convergence/divergence of semantically related inputs.
+- **轨迹几何**: 表征空间中的路径几何特征
+- **吸引子动力学**: 语义相关提示收敛现象
+- **三阶段结构**: 编码-深化-输出的通用层间模式
+- **曲率编码**: 轨迹曲率反映计算复杂性
+- **轨迹分叉**: 模糊token的多路径分离现象
 
-### 5. Disambiguation Analysis
-Monitor how ambiguous inputs resolve through layers.
+## 方法论意义
 
-## Key Papers & References
-
-### Primary Source
-- **arXiv:2606.09287** - Trajectory Geometry of Transformer Representations Across Layers (Pandey & Singh, 2026)
-
-### Related Computational Neuroscience
-- Population trajectory analysis methodologies
-- Geometric approaches to neural dynamics
-- Attractor theory in neural networks
-
-### Transformer Interpretability
-- Probing methods comparison
-- Layer-wise analysis frameworks
-- Mechanistic interpretability toolkits
-
-## Future Directions
-
-1. **Dynamic trajectory analysis**: Time-varying metrics during training
-2. **Cross-model comparison**: Systematic trajectory geometry across architectures
-3. **Task-specific patterns**: Characterizing trajectory signatures for different tasks
-4. **Intervention studies**: Testing trajectory changes under model modifications
-5. **Visualization tools**: Better methods for high-dimensional trajectory display
-
-## Summary
-
-Trajectory Geometry provides a principled, probe-free lens for understanding transformer representations. By recasting the forward pass as a trajectory through representation manifold, we can:
-
-- **Measure** computational complexity (curvature)
-- **Detect** semantic convergence (attractor dynamics)
-- **Track** disambiguation (trajectory bifurcation)
-- **Identify** universal processing phases (three-phase structure)
-
-This neuroscience-inspired approach offers complementary insights to traditional probing methods, enabling deeper understanding of transformer dynamics.
+开创性地将计算神经科学的几何分析工具应用于 Transformer 可解释性研究，无需功能探测即可分析表征动力学。五个几何指标提供系统化、probe-free 的机制解释框架，跨架构验证揭示通用动力学结构。
