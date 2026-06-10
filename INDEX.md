@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-11 - Neuroscience Research Round 2 (Cron Job)
+
+### Hyperbolic Neural Population Geometry Benefits Computation
+- [[hyperbolic-neural-population-geometry-computation]] - 双曲神经群体几何计算理论：证明海马体位置细胞群体的双曲几何结构源于统计诱导的调谐曲线构造，并建立几何-计算的数学联系，展示负曲率空间在层级信息编码、距离效率、记忆压缩方面的优势 (arXiv: 2606.10238)
+  - 核心创新：构造性证明——统计调谐曲线自然诱导双曲几何
+  - 三大计算优势：层级高效编码（2D足够）、短平均距离（负曲率）、指数容量增长
+  - 海马体证据：群体活动曲率<0，认知地图层级组织，体积增长~exp(r)
+  - **Activation**: hyperbolic geometry, neural population, hippocampus, cognitive map, manifold learning, place cells, memory encoding, efficient coding
+
+### Predictable Mean-Field Chaos in Random Recurrent Networks
+- [[krylov-mean-field-chaos-predictability-2026-06-10]] - 可预测的平均场混沌理论：证明解析非线性激活函数的随机循环网络中，平均场混沌非真随机——连续历史唯一确定未来，颠覆传统混沌理解 (arXiv: 2606.08805)
+  - 数学突破：快速傅里叶衰减条件（解析函数）保证确定性ODE唯一解
+  - 预测框架：从历史轨迹预测混沌演化，无需统计平均
+  - 应用价值：RNN训练稳定性、混沌控制、神经动力学边界预测
+  - **Activation**: mean-field chaos, predictability, recurrent network, dynamical systems, RNN theory, chaotic dynamics, Fourier decay, analytic activation
+
 ## 2026-06-11 - Systems Engineering + Quantum Research (Cron Job)
 
 ### Bosonic Cyclic Codes: Trading Stabilizers for Gaussian Non-Clifford Phase Gates
