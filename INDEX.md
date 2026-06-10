@@ -98,6 +98,21 @@
 
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
+### GRAFT: Gain-Recalibrated Adapters for Transformer-Based Neural Population Activity Modeling
+- [[graft-neural-population-adapter]] - Transformer-based neural population model separating reusable temporal dynamics from recalibratable neuron interface, achieving SOTA 0.3866 co-bps on NLB'21 with 9.21% parameter updates for cross-day BCI recalibration (arXiv: 2606.11066v1)
+  - Interface-backbone separation: decouples neuron-specific adapters from shared Transformer backbone
+  - Gain-recalibrated mechanism: auxiliary scaling for response magnitude changes across days
+  - Cross-day adaptation: handles changing neuron identities, counts, and statistics efficiently
+  - **Activation**: GRAFT, neural population, transformer, BCI, cross-day, recalibration, gain adapter, NLB benchmark, neural decoding
+
+### A Spiking Neural Architecture for Coordinating Arm and Locomotor Control
+- [[spiking-arm-locomotor-coordination]] - First integrated spiking controller combining bipedal locomotion and arm control on humanoid robot using NEF/SPA with biologically grounded basal ganglia action selection (arXiv: 2606.11034v1)
+  - NEF/SPA framework: Neural Engineering Framework + Semantic Pointer Architecture for spiking computation
+  - Basal ganglia model: biologically grounded disinhibition-based action switching
+  - Force-based arm control: novel tactile feedback paradigm for manipulation
+  - Isaac Sim validation: co-simulation demonstrating target reaching, digit drawing, locomotion, action switching
+  - **Activation**: spiking humanoid, basal ganglia, locomotion arm coordination, NEF SPA, force-based control, Nengo Isaac Sim, neuromorphic robotics
+
 ### Predictable Mean-Field Chaos in Random Recurrent Networks
 - [[krylov-mean-field-chaos-predictability-2026-06-10]] - Mean-field chaos 的预测性理论框架,通过 Krylov 状态空间展开功率谱揭示确定性结构,区分微观敏感性(Lyapunov)和预测复杂性(Krylov growth) (arXiv: 2606.08805)
   - 连续历史唯一确定未来(对解析非线性函数)
