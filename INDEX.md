@@ -1,4 +1,22 @@
 # AI Collection Index
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
+### QUIET: Edge-Centric Framework for Targeted Brain Network Synchronization
+- [[quiet-edge-centric-brain-synchronization]] - Edge-centric brain network control framework integrating structural controllability with functional connectivity via mutual information to identify "quiet highways" — structurally influential but functionally underutilized edges (arXiv: 2606.11091)
+  - Dual-metric edge selection: structural controllability × functional connectivity (MI-based)
+  - Quiet highways: edges with high control influence but low functional coupling, ideal targets for synchronization control
+  - HCP validation: salience network quiet highway control energy correlates with fluid intelligence (r=0.42)
+  - Dexmedetomidine sedation study: quiet highways shift from frontoparietal to thalamo-cortical during loss of consciousness
+  - **Activation**: quiet, edge-centric, brain synchronization, structural controllability, functional connectivity, mutual information, quiet highways, network control, fluid intelligence, sedation, consciousness
+
+### GRAFT: Transformer-Based Neural Population Activity Model with Cross-Day Recalibration
+- [[graft-neural-population-transformer-recalibration]] - Transformer-based neural population activity model with gain-recalibrated adapters separating reusable temporal dynamics backbone from recalibratable neuron interface, achieving SOTA 0.3866 co-bps on NLB'21 MC Maze (arXiv: 2606.11066)
+  - Temporal dynamics backbone: reusable across days/sessions, captures movement kinematics
+  - Gain-recalibrated adapters: lightweight neuron interface (only 9.21% params) enabling rapid cross-day BCI recalibration
+  - NLB'21 MC Maze: 0.3866 co-bps (bits per second), state-of-the-art neural decoding
+  - Transfer mechanism: freeze backbone, train adapters only — days of training → minutes of calibration
+  - **Activation**: GRAFT, transformer, neural population, cross-day recalibration, BCI, NLB, motor cortex, gain adapter, neural decoding, kinematic trajectory, state-of-the-art
+
 ## 2026-06-10 - Medicine (Cron Job)
 
 ### CovAngelo: A hybrid quantum-classical computing platform for accurate and scalable drug discovery
