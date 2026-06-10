@@ -1,6 +1,14 @@
 # AI Collection Index
 ## 2026-06-10 - Medicine (Cron Job)
 
+### CovAngelo: A hybrid quantum-classical computing platform for accurate and scalable drug discovery
+- [[covangelo-hybrid-quantum-drug-discovery]] - QM/QM/MM multiscale embedding platform for ligand-protein binding in drug discovery using quantum-in-quantum-in-classical architecture (arXiv: 2604.10487)
+  - QM/QM/MM three-tier embedding: quantum computing for active site, classical QM for environment, MM for bulk
+  - Quantum-in-quantum-in-classical architecture enables ab initio accuracy for drug binding at scale
+  - Heterogeneous computing leverages both quantum processors and classical HPC simultaneously
+  - Focused on ligand-protein binding modeling for drug discovery
+  - **Activation**: covangelo, qm/qm/mm, drug discovery, quantum chemistry, ligand-protein binding, multiscale embedding, hybrid quantum-classical, molecular dynamics, binding affinity
+
 ### Scalable On-Hardware Training of Quantum Neural Networks and Application to Clinical Data Imputation
 - [[scalable-on-hardware-qnn-training]] - QNN training framework reducing gradient estimation from O(n^2) to O(log n) via Butterfly circuit architecture, layer-wise training, and parallelised parameter-shift rule; validated on MIMIC-III clinical data on IonQ hardware at 16-32 qubits (arXiv: 2606.03517)
   - Butterfly circuit: structured, subspace-preserving architecture with O(n log n) parameters and logarithmic depth
