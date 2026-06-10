@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-11 - Neuroscience Research (Cron Job)
+
+### Multifractal Space-Filling Curve Analysis for MRI Dementia Biomarker
+- [[multifractal-space-filling-curve-mri-dementia]] - MFSCA方法论：空间填充曲线投影+多重分形分析，量化MRI脑结构组织，揭示老化/痴呆进展中的多重分形→单分形转变 (arXiv: 2606.10222)
+  - 核心创新：Φ: R^N → R^1投影保持局部和长程空间关系
+  - 多重分形谱f(α)量化空间组织异质性（Δα = α_max - α_min）
+  - 临床发现：Young Control → Elderly Control → Early dementia → MCI显示Δα递减
+  - **Activation**: MFSCA, multifractal MRI, space-filling curve, dementia biomarker, Hilbert curve
+
 ## 2026-06-11 - Systems Engineering + Quantum (Cron Job)
 
 ### SCOPE: A Syndrome-Driven Control Plane for QEC-Enabled Quantum Networks
