@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-06-10 - Medicine + Quantum (Cron Job)
+
+### Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization
+- [[trainability-iqp-born-machines]] - IQP QCBM trainability analysis using Stein's lemma and Lipschitz concentration bounds for gradient variance and barren plateau avoidance (arXiv: 2606.10179)
+  - Derives analytical lower bound on gradient variance under Gaussian initialization via Stein's lemma
+  - Uses Lipschitz concentration bounds to characterize barren plateau conditions
+  - Shows Gaussian and uniform initialization have different concentration regimes
+  - **Activation**: IQP circuit, Born machine, QCBM trainability, barren plateau, gradient concentration, Gaussian initialization
+
+### JGRA: Jacobian Geometry Robustness Assessment in NISQ Noise-Aware Quantum Neural Networks
+- [[jacobian-geometry-robustness-qnn]] - JGRA framework for QNN robustness via Jacobian geometry analysis under NISQ noise (arXiv: 2606.09964)
+  - Entropy-matched noise calibration to match hardware noise profiles
+  - Noise-aware training optimizes under noisy forward pass for generalization
+  - Geometric descriptors (condition number, Jacobian spectrum entropy) predict robustness under unseen noise
+  - **Activation**: QNN robustness, NISQ noise, Jacobian geometry, noise-aware training, geometric descriptor
+
+### Analog Quantum Asynchronous Event-Based Graph Neural Network
+- [[analog-quantum-event-gnn]] - QA-AEGNN implementing event-based GNNs on neutral-atom quantum processors via Rydberg Hamiltonian programming (arXiv: 2606.11000)
+  - Maps event stream data to trapped atom arrays with geometric proximity reflecting spatio-temporal neighborhoods
+  - Native Rydberg Hamiltonian dynamics execute message-passing without explicit adjacency matrices
+  - Hybrid quantum-classical training optimizes laser parameters (Rabi frequency, detuning) via gradient descent
+  - **Activation**: quantum GNN, neutral atom, Rydberg Hamiltonian, event camera, analog quantum computing
+
 ## 2026-06-10 - Systems Engineering Research (Cron Job)
 
 ### MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models
