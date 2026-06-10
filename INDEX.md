@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-10 - Systems Engineering Research (Cron Job)
+
+### MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models
+- [[memoryvla-temporal-modeling-robotic-manipulation]] - Full temporal modeling framework for VLA models with working memory, perceptual-cognitive memory bank, and world model for future state imagination, achieving +9%/+26%/+28% gains on general/memory/imagination-dependent tasks (arXiv: 2606.09827)
+  - Three-layer memory system: working memory, perceptual-cognitive bank, world model
+  - Redundancy-aware consolidation for efficient memory management
+  - Memory-guided imagination: world model informed by retrieved historical context
+  - Diffusion action expert for temporally consistent action sequences
+  - **Activation**: temporal modeling, memory bank, world model, VLA, long-horizon tasks, memory-dependent manipulation, imagination, future state prediction
+
+### AHA-WAM: Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing
+- [[aha-wam-async-world-action-modeling]] - Asynchronous dual DiT architecture with low-frequency world planner and high-frequency action expert, achieving 24.17Hz closed-loop control with 4.59x speedup (arXiv: 2606.09811)
+  - Temporal asymmetry: decouple world prediction and action execution rhythms
+  - OVCR (Observation-Guided Video-Context Routing): real-time responsiveness without world model rerun
+  - Horizon-adaptive offset training: flexible world-action horizon alignment
+  - Layerwise joint attention: fine-grained cross-branch context utilization
+  - **Activation**: asynchronous world-action, AHA-WAM, temporal asymmetry, OVCR, real-time control, closed-loop manipulation, video DiT, action DiT
+
 ## 2026-06-10 - Medicine + Quantum Computing (Cron Job)
 
 ### Quantum medical image encoding and compression using Fourier-based methods
