@@ -2524,3 +2524,32 @@
   - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
   - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
   - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
+
+## 2026-06-11 - Systems Engineering + Quantum (Cron Job - Hourly)
+
+### Hardware-Aware QAOA for Honeypot Traffic Partitioning on 100+ Qubit IBM Quantum Processors
+- [[hardware-aware-qaoa-cybersecurity]] - 在100+量子比特IBM处理器上执行硬件感知QAOA进行蜜罐流量分区，量化路由开销和安全指标 (arXiv: 2606.09469)
+  - Hardware noise modeling and topology-aware circuit compilation for 100+ qubit NISQ processors
+  - Honeypot traffic partitioning formulated as QUBO with hardware-aware qubit mapping
+  - Error mitigation: readout correction + zero-noise extrapolation for reliable expectation estimation
+  - **Activation**: hardware-aware qaoa, honeypot traffic partitioning, cybersecurity quantum optimization, NISQ deployment, noise-aware quantum algorithm
+
+### Q-LEAK: Quantum-Based LEAKage Verification for Side-Channel Countermeasures
+- [[quantum-side-channel-leakage]] - 基于量子算法的侧信道泄漏验证框架，加速密码硬件安全验证过程 (arXiv: 2605.25728)
+  - Quantum algorithmic approach to side-channel leakage verification using quantum parallelism
+  - Amplitude estimation for leakage metric computation against security thresholds
+  - Countermeasure validation: masking, shuffling, hiding verified via quantum distinguishability
+  - **Activation**: quantum side-channel analysis, Q-LEAK, leakage verification, cryptographic hardware security
+
+### quantum-safe: Bridging the Post-Quantum Production Gap with a Hybrid-by-Default Framework
+- [[quantum-safe-pqc-deployment]] - 后量子密码学生产部署框架，采用默认混合架构实现渐进式迁移 (arXiv: 2605.17061)
+  - Hybrid-by-default TLS supporting simultaneous classical (ECDHE) and PQC (ML-KEM) key exchange
+  - Signature chaining with both classical (ECDSA) and post-quantum (ML-DSA) algorithms
+  - Incremental deployment strategy: inventory -> prioritize -> test -> deploy -> transition
+  - **Activation**: post-quantum cryptography deployment, PQC production, quantum-safe architecture, ML-KEM ML-DSA migration, hybrid TLS
+
+### Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design
+- [[coset-ensemble-decoder-qec]] (enhanced) - 算法-硬件协同设计的量子纠错码系综解码器 (arXiv: 2606.11076)
+  - Coset ensemble decoding with algorithm-hardware co-design for improved QEC performance
+  - Ensemble approach over multiple coset decoders for robust syndrome processing
+  - **Activation**: quantum error correction, coset decoder, algorithm-hardware co-design, QEC syndrome decoding
