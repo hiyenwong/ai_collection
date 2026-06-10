@@ -23,6 +23,14 @@
   - Outperforms prior test-time RL on high-dimensional action spaces
   - **Activation**: test-time RL, flow policy, gradient guidance, offline RL, goal-conditioned, expressive policy
 
+### CITRAS-FM: Tiny Time Series Foundation Model
+- [[citras-fm-tiny-timeseries-foundation]] - Tiny 7M-parameter time series foundation model with covariate-informed zero-shot forecasting and real-time CPU inference (arXiv: 2606.10798v1)
+  - Shifted Attention exploits known covariates throughout forecast horizon
+  - CovSynth synthesizes realistic covariates from decomposed target series
+  - State-of-the-art zero-shot accuracy among sub-10M TSFMs on fev-bench
+  - Sub-0.1-second CPU inference for production deployment
+  - **Activation**: time series, foundation model, zero-shot forecasting, covariate, tiny model, CPU inference
+
 ## 2026-06-10 - Medicine (Cron Job)
 
 ### Making Claude a Chemist
