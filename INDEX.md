@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-11 - Neuroscience Research (Cron Job)
+
+### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
+- [[quiet-edge-centric-brain-synchronization]] - 边中心网络控制框架：整合结构可控性与功能互信息识别"安静高速公路"（结构影响力强但功能利用低的白质通路），实现能量高效的目标化脑网络同步 (arXiv: 2606.11091v1)
+  - 核心创新：从节点控制转向边控制，线图变换实现边可控性计算
+  - 双数据流融合：扩散MRI（结构可控性）+ rsfMRI（互信息）
+  - 四类边分类：安静高速公路（最佳目标）、繁忙高速公路、复杂边、不活跃边
+  - 临床发现：显著性网络控制能量与流体智力正相关；镇静状态下额顶叶/默认模式网络能量最高
+  - **Activation**: quiet highways, edge-centric control, brain synchronization, network control energy, structural-functional integration, targeted perturbation, edge controllability
+
 ## 2026-06-11 - Neuroscience + Computational Physics (Cron Job)
 
 ### NeuroPINNs: Neuroscience Inspired Physics Informed Neural Networks
