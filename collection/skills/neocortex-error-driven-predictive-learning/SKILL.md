@@ -1,211 +1,171 @@
 ---
 name: neocortex-error-driven-predictive-learning
-description: 神经皮层学习机制的三准则理论框架。提出 error-driven predictive learning via temporal derivatives 机制,通过 corticothalamic circuits 和 competitive kinase synaptic plasticity 实现。已在 Axon spiking framework 验证。
-version: 1.0
-arxiv_id: 2606.08720
-authors: Randall C. O'Reilly
-submission_date: 2026-06-07
-tags: [neocortex, predictive-learning, corticothalamic, synaptic-plasticity, spiking-networks, computational-neuroscience, learning-theory]
-activation_keywords: [neocortex learning, cortical learning theory, predictive learning, thalamocortical circuits, error-driven learning, synaptic plasticity mechanism, competitive kinase, temporal derivative, Axon framework]
+description: Neocortex learning framework via error-driven predictive learning with temporal derivatives, corticothalamic circuits, and competitive kinase synaptic plasticity. Three-criteria account of neocortex learning: computational, algorithmic, and implementational. Activation: neocortex learning, predictive coding, error-driven learning, corticothalamic circuits, synaptic plasticity, temporal derivatives.
 ---
 
-# Neocortex Error-Driven Predictive Learning
+## Context
 
-## 核心理论
+Paper: arXiv:2606.08720 - "This is how the Neocortex Learns"
+Authors: Randall C. O'Reilly
+Submitted: 7 Jun 2026
+Category: Neurons and Cognition (q-bio.NC)
 
-**三准则框架**(评估 neocortex 学习理论的必要条件):
+## Problem
 
-1. **计算准则**: 必须逼近强大、通用的学习算法,可扩展至人类水平智能
-2. **算法准则**: 必须可在已知神经回路中实现(neocortex + 相关脑结构)
-3. **实现准则**: 必须在神经化学水平详细说明所有机制的实际功能
+A sufficient account of neocortex learning must meet **three criteria**:
+1. **Computationally**: Must approximate a powerful, general-purpose learning algorithm that scales to human-level intelligence
+2. **Algorithmically**: Must be implementable using known, well-established neural circuits within neocortex
+3. **Implementationally**: Must have detailed neurochemical mechanisms at molecular level
 
-**唯一满足三准则的框架**: **Error-driven predictive learning via temporal derivatives**
+## Core Methodology
 
-### 关键机制
+**Error-driven predictive learning via temporal derivatives** meets all three criteria:
 
-#### 1. Temporal Derivative Learning Signal
-- **核心思想**: 通过时间导数传递误差信号
-- **计算原理**: `∂Error/∂t = Predicted_Activity(t) - Actual_Activity(t)`
-- **优势**: 自然整合时间维度,无需独立误差传播通道
+### 1. Computational Level
 
-#### 2. Corticothalamic Circuits
-- **Thalamus 作为误差信号路由器**:
-  - 接收预测信号(cortical feedback)
-  - 接收实际信号(sensory input)
-  - 计算差异并通过特定核投射回 cortex
-- **关键回路**:
-  - Layer 5/6 corticothalamic projections → prediction
-  - Thalamic relay nuclei → error signal
-  - Layer 4 thalamocortical inputs → correction
+**Temporal difference learning** approximates backpropagation:
+- Error signal = derivative of activation over time: $\delta = \frac{dA}{dt}$
+- Prediction = current activation $A(t)$
+- Target = future activation $A(t+\Delta t)$
+- Error = $A(t+\Delta t) - A(t)$ (temporal derivative approximation)
 
-#### 3. Competitive Kinase Synaptic Plasticity
-- **分子机制**: 
-  - CaMKII (Calcium/Calmodulin-dependent Kinase II) activation threshold
-  - PKA (Protein Kinase A) competitive inhibition
-  - PP1 (Protein Phosphatase 1) dephosphorylation dynamics
-- **学习规则**:
-  ```
-  Δw = α * [CaMKII_active] * (1 - [PKA_level]) - β * [PP1_activity]
-  ```
-- **特点**: 自动实现误差驱动,无需独立教师信号
+This implements a form of **predictive coding** where:
+- Cortex generates predictions about future inputs
+- Errors drive learning when predictions fail
+- Temporal derivatives provide error signals without explicit backpropagation
 
-## Axon Framework Implementation
+### 2. Algorithmic Level
 
-### 架构特点
-- **Spiking neurons**: 生物真实的脉冲神经元模型
-- **Temporal coding**: 时间精度编码
-- **Distributed representations**: 分布式表征
-- **Local learning**: 局部学习规则(符合生物约束)
+**Corticothalamic circuits** implement the algorithm:
 
-### 实验验证
-- **认知任务**: 
-  - Working memory tasks
-  - Sequential decision making
-  - Category learning
-  - Rule-based reasoning
-- **性能**: 
-  - 达到人类水平准确性
-  - 泛化到新任务组合
-  - 快速学习(少量 trial)
+```
+Thalamus (prediction generator)
+    ↓ sends predictions
+Cortex (error detector)
+    ↓ computes temporal derivative
+    ↓ sends error signals
+Thalamus (error integrator)
+    ↓ updates predictions
+    ↓ drives synaptic plasticity
+```
 
-## 理论贡献
+Key circuit mechanisms:
+- **Layer 6 corticothalamic projections**: Generate predictions
+- **Layer 4 thalamocortical inputs**: Provide actual inputs
+- **Temporal comparison**: Layer 4 computes prediction error
+- **Feedback pathway**: Error signals propagate back through Layer 5/6
 
-### 1. 统一框架
-- **整合三种学习模式**:
-  - Hebbian learning → 结构性知识
-  - Error-driven learning → 行为优化
-  - Predictive coding → 不确定性处理
+### 3. Implementational Level
 
-### 2. 计算神经科学桥梁
-- **连接三个层次**:
-  - Marr's computational level → 预测学习目标
-  - Marr's algorithmic level → corticothalamic 算法
-  - Marr's implementational level → kinase 分子机制
+**Competitive kinase synaptic plasticity** mechanisms:
 
-### 3. AI 启示
-- **Spiking neural networks 的学习理论**:
-  - Temporal derivative error propagation
-  - Local plasticity rules for global optimization
-  - Thalamic-like gating mechanisms
+1. **CaMKII vs PKC competition**:
+   - CaMKII activated by NMDA receptor calcium influx (LTP pathway)
+   - PKC activated by error signals ( LTD pathway)
+   - Competition determines synaptic weight change direction
 
-## 应用场景
+2. **Temporal derivative encoding**:
+   - Early calcium influx (prediction phase) → CaMKII dominance → LTP
+   - Late calcium influx (error phase) → PKC dominance → LTD
+   - Net weight change = LTP - LTD (temporal derivative)
 
-### 1. Neuromorphic AI
-- 设计 corticothalamic-inspired architectures
-- Implement competitive kinase-inspired learning rules
-- Build spiking networks with temporal error signals
+3. **Neurochemical cascade**:
+   ```
+   Prediction phase: NMDA → Ca²⁺ → CaMKII → GluR1 phosphorylation → AMPA insertion (LTP)
+   Error phase: Error signal → PKC → GluR2 phosphorylation → AMPA removal (LTD)
+   Net: Weight change = Δ(AMPA insertion) - Δ(AMPA removal)
+   ```
 
-### 2. Brain-Machine Interfaces
-- Understand cortical learning for BCI adaptation
-- Design thalamic-like error signal injection
-- Predict plasticity dynamics in implanted arrays
+## Implementation in Axon Framework
 
-### 3. Cognitive Modeling
-- Model human learning trajectories
-- Explain cortical plasticity measurements
-- Predict training transfer effects
+**Spiking neural network simulation** demonstrates learning:
 
-## 关键实验证据
-
-### 1. Thalamic Error Signals
-- **Lesion studies**: Thalamic damage disrupts error correction
-- **Electrophysiology**: Thalamic neurons encode prediction errors
-- **fMRI**: Thalamus activation during learning tasks
-
-### 2. Kinase Dynamics
-- **Pharmacology**: CaMKII blockers impair learning
-- **Optogenetics**: Manipulating kinase activity alters plasticity
-- **Biochemistry**: Kinase competition measured in vitro
-
-### 3. Temporal Coding
-- **Timing precision**: Learning signal requires temporal derivative
-- **Delay effects**: Learning impaired with asynchronous signals
-- **Plasticity timing**: LTP/LTD window matches derivative window
-
-## 与其他理论对比
-
-| Theory | Computational | Algorithmic | Implementational | Status |
-|--------|--------------|-------------|-----------------|---------|
-| Backpropagation | ✓ | ✗ | ✗ | 不生物真实 |
-| Hebbian Learning | ✗ | ✓ | ✓ | 无误差驱动 |
-| Predictive Coding | ✓ | ✓ | ✗ | 缺少分子机制 |
-| **Temporal Derivative** | ✓ | ✓ | ✓ | **唯一完整** |
-
-## 方法论工具
-
-### 1. Simulation Framework
 ```python
-# Axon-style temporal derivative learning
-def compute_error_signal(predicted, actual, dt):
-    """
-    Temporal derivative error signal
-    predicted: cortical prediction (t)
-    actual: sensory input (t)
-    dt: time step
-    """
-    error = (predicted - actual) / dt
-    return error
+# Axon framework implementation (pseudo-code)
+class NeocortexLayer:
+    def __init__(self):
+        self.prediction_neurons = Layer6Neurons()
+        self.error_neurons = Layer4Neurons()
+        self.thalamic_input = ThalamicProjection()
+        
+    def learn(self, input_spike_train, target_spike_train):
+        # Generate prediction
+        prediction = self.prediction_neurons.predict(input_spike_train)
+        
+        # Compute temporal derivative (error)
+        actual = self.thalamic_input.receive(target_spike_train)
+        error = temporal_derivative(actual, prediction)
+        
+        # Drive synaptic plasticity
+        for synapse in self.synapses:
+            if error > threshold:
+                synapse.ltd(pkc_activation)  # Error-driven LTD
+            else:
+                synapse.ltp(camkii_activation)  # Prediction-driven LTP
+```
 
-def update_synapse(weight, pre_spike, post_spike, error_signal, 
-                   CaMKII, PKA, PP1, alpha, beta):
-    """
-    Competitive kinase learning rule
-    """
-    # Kinase dynamics
-    CaMKII_active = activation_function(pre_spike, post_spike, error_signal)
-    PKA_level = inhibition_level(CaMKII_active)
-    PP1_activity = dephosphorylation_rate(PKA_level)
+## Key Results
+
+- Demonstrated learning on **challenging cognitively motivated tasks**
+- Three-criteria framework satisfies computational, algorithmic, and implementational levels
+- **Error-driven predictive learning** = backpropagation approximation via temporal derivatives
+- **Corticothalamic circuits** provide anatomical substrate
+- **Competitive kinase plasticity** provides molecular mechanism
+
+## Implementation Steps
+
+1. **Initialize Axon spiking network** (Layer 4, 5, 6 + thalamic projections)
+2. **Define prediction pathway**: Layer 6 → thalamus → Layer 4
+3. **Define error computation**: Temporal derivative in Layer 4
+4. **Configure synaptic plasticity**: CaMKII vs PKC competition
+5. **Train on task**: Input → prediction → error → weight update
+6. **Verify learning**: Compare to backpropagation performance
+
+## Pitfalls
+
+- **No thalamic circuit**: Cannot compute temporal derivatives without thalamus
+- **Wrong temporal window**: Derivative requires precise timing (prediction vs error phase)
+- **Missing kinase competition**: Only LTP or only LTD fails → need both
+- **Non-spiking implementation**: Continuous activation loses temporal structure
+- **No predictive coding framework**: Error-driven learning requires prediction generation
+
+## Verification
+
+```python
+# Verify error-driven learning
+prediction = layer6.generate_prediction(input)
+actual = thalamus.receive(input)
+error = actual - prediction  # temporal derivative
+
+# Check synaptic weight changes
+for synapse in error_neurons.synapses:
+    weight_change = synapse.weight - initial_weight
     
-    # Plasticity
-    delta_w = alpha * CaMKII_active * (1 - PKA_level) - beta * PP1_activity
-    return weight + delta_w
+    # Verify LTP/LTD competition
+    if error > 0:  # prediction error
+        assert weight_change < 0  # LTD should occur
+    else:  # prediction success
+        assert weight_change > 0  # LTP should occur
+
+# Compare to backpropagation
+bp_error = backpropagate(target, output)
+td_error = temporal_derivative(output, prediction)
+assert correlation(bp_error, td_error) > 0.8  # should approximate BP
 ```
 
-### 2. Analysis Protocol
-- **Step 1**: Model corticothalamic circuit topology
-- **Step 2**: Implement temporal derivative error computation
-- **Step 3**: Define kinase competition dynamics
-- **Step 4**: Validate on cognitive task suite
-- **Step 5**: Compare with biological data
+## Applications
 
-### 3. Experimental Design
-- **In vitro**: Test kinase competition in cultured neurons
-- **In vivo**: Measure thalamic error signals during learning
-- **Simulation**: Scale to large networks, test generalization
+- Brain-inspired AI (error-driven learning without backpropagation)
+- Neural circuit modeling (corticothalamic loops)
+- Synaptic plasticity simulation (kinase competition)
+- Cognitive task learning (predictive coding framework)
 
-## 开放问题
+## References
 
-1. **Temporal precision**: 神经导数计算的时间窗口?
-2. **Multi-area coordination**: 多个 cortical area 如何协调学习?
-3. **Sleep consolidation**: 睡眠如何整合 temporal derivative signals?
-4. **Development**: 该机制如何在发育中出现?
+- Paper: https://arxiv.org/abs/2606.08720
+- Axon framework: O'Reilly et al. spiking neural simulation
+- Related: Predictive coding, Temporal difference learning, CaMKII/PKC plasticity
 
-## 文献关联
+## Activation Keywords
 
-- **Predictive coding theory**: Rao & Ballard (1999)
-- **Thalamic functions**: Sherman (2016)
-- **Kinase mechanisms**: Lisman (1994)
-- **Spiking learning**: Gerstner (1996)
-- **Axon framework**: O'Reilly et al. (2020+)
-
-## 引用
-
-```bibtex
-@article{oreilly2026neocortex,
-  title={This is how the Neocortex Learns},
-  author={O'Reilly, Randall C.},
-  journal={arXiv preprint arXiv:2606.08720},
-  year={2026}
-}
-```
-
-## 研究启发
-
-1. **Corticothalamic architectures**: 设计 AI 系统的 feedback 路由
-2. **Local-global learning**: 局部规则实现全局优化
-3. **Temporal derivatives**: 时间维度作为误差传播通道
-4. **Kinase-inspired algorithms**: 分子竞争启发的学习规则
-
----
-
-**Activation**: 在讨论 cortical learning, thalamic function, synaptic plasticity mechanisms, spiking network learning, 或预测学习理论时激活此 skill。
+neocortex learning, predictive coding, error-driven learning, corticothalamic circuits, synaptic plasticity, temporal derivatives, competitive kinase, CaMKII PKC, backpropagation approximation, Axon framework
