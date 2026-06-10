@@ -23,6 +23,13 @@
   - 集成投票：多解码器共识提高准确率
   - **Activation**: coset ensemble decoder, QEC decoder, algorithm-hardware co-design, real-time QEC, syndrome decoding
 
+### Adaptive Identification of Low-Degree Polynomials in QSVT for Nonlinear Quantum Properties Estimation
+- [[qsvt-adaptive-spectral-cutoff]] - 自适应谱截断方法优化QSVT多项式度数选择，无需最坏情况边界即可估计冯·诺依曼熵和Rényi熵 (arXiv: 2606.10994)
+  - 两阶段算法：搜索谱截断→自适应QSVT估计
+  - 任务依赖：不同性质需要不同截断精度
+  - 无需先验：不需要最小特征值或秩信息
+  - **Activation**: qsvt adaptive cutoff, quantum singular value transformation, von Neumann entropy estimation, spectral cutoff, nonlinear quantum property
+
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
