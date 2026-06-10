@@ -1,4 +1,15 @@
 # AI Collection Index
+## 2026-06-10 - Medicine (Cron Job)
+
+### Scalable On-Hardware Training of Quantum Neural Networks and Application to Clinical Data Imputation
+- [[scalable-on-hardware-qnn-training]] - QNN training framework reducing gradient estimation from O(n^2) to O(log n) via Butterfly circuit architecture, layer-wise training, and parallelised parameter-shift rule; validated on MIMIC-III clinical data on IonQ hardware at 16-32 qubits (arXiv: 2606.03517)
+  - Butterfly circuit: structured, subspace-preserving architecture with O(n log n) parameters and logarithmic depth
+  - Layer-wise training: confines optimization to one layer at a time, avoiding barren plateaus
+  - Parallel parameter-shift: exploits commuting structure for constant-cost gradient extraction
+  - Clinical validation: MIMIC-III EHR imputation matching/exceeding classical baselines in patient survival prediction
+  - **Activation**: scalable qnn training, butterfly circuit, layer-wise training, clinical data imputation, MIMIC-III, parallel parameter-shift, hardware optimization, gradient estimation
+
+
 
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
@@ -1216,7 +1227,6 @@
   - 非高斯资源对测量基量子计算至关重要，适用于混合量子网络
   - **Activation**: quantum cat states, measurement-based quantum computing, QND gate, homodyne measurement
 
-# AI Collection Index
 
 <<<<<<< HEAD
 ## 2026-06-07 - Neuroscience Research (Cron Job)
