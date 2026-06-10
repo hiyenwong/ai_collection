@@ -1,251 +1,202 @@
 ---
 name: bilinear-gating-motor-primitives-dendritic-computation
-description: Bilinear gating methodology linking dendritic coincidence detection to rapid goal-directed adaptation. Burst fraction encoding in motor cortex provides goal-selective code, enabling zero-shot generalization.
-keywords:
-  - motor cortex
-  - dendritic computation
-  - burst fraction
-  - goal-directed adaptation
-  - bilinear gating
-  - motor primitives
-  - coincidence detection
-  - reinforcement learning
-  - zero-shot generalization
-  - neural coding
-triggers:
-  - motor cortex coding
-  - dendritic computation
-  - burst encoding
-  - goal adaptation
-  - motor primitives
-  - coincidence detection
-  - bilinear gate
-activation_keywords:
-  - motor cortex
-  - dendritic
-  - burst
-  - goal
-  - motor primitive
-  - adaptation
-arxiv_id: 2606.10891
-paper_title: Bilinear gating of motor primitives: a principle linking dendritic computation to rapid goal-directed adaptation
-authors: Cristiano Capone, Luca Falorsi, Andrea Ciardiello, Luca Manneschi
-submitted: 2026-06-09
-venue: arXiv
-categories:
-  - neuroscience
-  - computational neuroscience
-  - motor control
-  - dendritic computation
+description: >
+  Bilinear gating methodology linking dendritic coincidence detection to goal-directed adaptation.
+  Motor cortex neurons encode goal information in burst fraction (not firing rate), implementing
+  bilinear gate G(g)·Y(s) where goal and state inputs multiply via dendritic coincidence detection.
+  Supports zero-shot generalization and rapid online adaptation. Accepted arXiv 2606.10891.
+category: neuroscience
 ---
 
-# Bilinear Gating of Motor Primitives: Dendritic Computation to Goal-Directed Adaptation
+# Bilinear Gating of Motor Primitives
 
-## Overview
+## Context
 
-This methodology establishes **bilinear gating** as a fundamental principle linking dendritic coincidence detection in layer-5 pyramidal neurons to rapid goal-directed motor adaptation. The key finding: **burst fraction** (proportion of spikes in high-frequency bursts) encodes reach direction far more selectively than overall firing rate.
+Motor cortex must specify both **what action** to produce and **which goal** it serves. This paper reveals a cellular mechanism for separating these factors: **burst fraction** encodes goal direction far more selectively than overall firing rate.
 
-## Key Discovery
+**Key discovery**: Layer-5 pyramidal neurons implement a **bilinear gate** G(g)·Y(s) through dendritic coincidence detection — when goal-related apical input coincides with state-related basal drive, the neuron bursts.
 
-**Burst Fraction Encoding**:
-- Motor cortex neurons encode reach direction (goal) via **burst fraction**, NOT firing rate
-- Dissociation holds across 12 recording sessions, 3 animals, 2 laboratories (p < 10^-12)
+## Core Methodology
+
+### 1. Burst Fraction as Goal-Selective Code
+
+**Definition**: Burst fraction = proportion of spikes emitted in high-frequency bursts
+
+**Validation** (12 recording sessions, 3 animals, 2 labs):
+- Burst fraction encodes reach direction more selectively than firing rate (p < 10⁻¹² in every session)
+- Dissociation holds after firing rate controls removed
 - Goal information concentrated specifically in bursts
-- State information (what action) encoded in firing rate
 
-## Cellular Mechanism: Dendritic Coincidence Detection
+### 2. Bilinear Gate Mechanism
 
-**Bilinear Gate Model**:
+**Mathematical formulation**:
 ```
-G(g) · Y(s) = Burst Probability
+P(burst) = G(goal) × Y(state)
 
 where:
-  G(g) = goal-related apical input (top-down)
-  Y(s) = state-related basal drive (bottom-up)
-  coincidence = apical + basal → burst
+- G(g) = goal-related apical input
+- Y(s) = state-related basal drive
+- Burst probability = multiplicative product
 ```
 
-**Layer-5 Pyramidal Neuron Architecture**:
-- **Apical dendrites**: Receive goal-related signals (cognitive/top-down)
-- **Basal dendrites**: Receive state-related signals (motor/sensory/bottom-up)
-- **Coincidence detection**: When both inputs arrive simultaneously → high-frequency burst
+**Cellular mechanism**:
+- Apical dendrites receive goal signals (top-down)
+- Basal dendrites receive state signals (bottom-up)
+- Coincidence detection triggers bursting
+- Burst fraction = goal encoding quality
 
-## Two-Compartment Spiking Model
+### 3. Two-Compartment Spiking Model
 
-**Minimal Model Implementation**:
-1. Compartment 1 (somatic): Integrates basal inputs → firing rate Y(s)
-2. Compartment 2 (apical): Integrates apical inputs → goal signal G(g)
-3. Coincidence mechanism: Burst when both active
+**Implementation**:
+```python
+class BilinearGateNeuron:
+    def __init__(self):
+        self.apical_input = 0.0  # goal signal
+        self.basal_input = 0.0   # state signal
+        self.threshold = 1.0     # coincidence threshold
+        
+    def compute_burst_probability(self):
+        # Bilinear gate: product of goal and state
+        return self.apical_input * self.basal_input
+    
+    def should_burst(self):
+        # Coincidence detection
+        coincidence = self.apical_input * self.basal_input
+        return coincidence > self.threshold
+```
 
-**Key Parameters**:
-- Burst threshold: Coincidence detection window (~5-10 ms)
-- Burst frequency: >100 Hz for burst classification
-- Burst fraction: #bursts / total_spikes
+### 4. Reinforcement Learning Integration
 
-## Computational Advantage: Zero-Shot Generalization
+**Zero-shot generalization**:
+- Embed bilinear gate in RL agent
+- Goal information segregated into burst channel
+- Rapid adaptation to new goals without retraining
+- Motor primitives multiply with goal vectors
 
-**Reinforcement Learning Agent Integration**:
-- Bilinear gate G(g)·Y(s) embedded in RL agent
-- Enables **zero-shot generalization** to new goals
-- Rapid online adaptation without retraining
-- Segregating goal into bursts provides learning advantage
+## Implementation Steps
 
-**Why Bursts?**:
-- Bursts carry goal information → easy to extract
-- Firing rate carries state information → action specification
-- Separation enables parallel processing: what + which goal
-
-## Experimental Evidence
-
-**Datasets**:
-- Macaque motor cortex recordings (reaching tasks)
-- 12 sessions across 3 animals
-- 2 independent laboratories
-- Statistical significance: p < 10^-12 for all sessions
-
-**Controls**:
-- Firing rate contribution removed
-- Burst fraction still selective after controls
-- Confirms dissociation is genuine
-
-## Implementation Guide
-
-### Burst Detection Algorithm
+### Step 1: Extract Burst Fraction from Spike Trains
 
 ```python
-def compute_burst_fraction(spike_times, burst_threshold=100, min_burst_spikes=2):
-    """
-    Compute burst fraction from spike train.
+import numpy as np
+
+def compute_burst_fraction(spike_times, burst_threshold_hz=50):
+    """Calculate burst fraction from spike train.
     
     Args:
-        spike_times: Array of spike timestamps (ms)
-        burst_threshold: Minimum ISI for burst (ms, default ~10ms → 100Hz)
-        min_burst_spikes: Minimum spikes in burst (default 2)
-    
+        spike_times: array of spike timestamps (seconds)
+        burst_threshold_hz: minimum frequency to classify as burst
+        
     Returns:
-        burst_fraction: Proportion of spikes in bursts
-    """
-    isis = np.diff(spike_times)
-    in_burst = isis < burst_threshold
+        burst_fraction: proportion of spikes in bursts
+    """    
+    if len(spike_times) < 2:
+        return 0.0
     
-    # Identify bursts
-    burst_indices = []
-    current_burst = []
+    # Compute inter-spike intervals
+    isi = np.diff(spike_times)
     
-    for i, is_burst in enumerate(in_burst):
-        if is_burst:
-            current_burst.append(i)
-        else:
-            if len(current_burst) >= min_burst_spikes:
-                burst_indices.extend(current_burst)
-            current_burst = []
+    # Identify bursts (ISI < threshold)
+    burst_isi_threshold = 1.0 / burst_threshold_hz  # 20ms for 50Hz
+    burst_spikes = isi < burst_isi_threshold
     
-    # Count burst spikes vs total
-    burst_spikes = len(burst_indices)
-    total_spikes = len(spike_times)
+    # Count spikes in bursts (both spike pairs)
+    n_burst_spikes = np.sum(burst_spikes) + 1  # +1 for burst initiation spike
     
-    return burst_spikes / total_spikes if total_spikes > 0 else 0
+    burst_fraction = n_burst_spikes / len(spike_times)
+    return burst_fraction
 ```
 
-### Two-Compartment Model
+### Step 2: Build Dendritic Coincidence Detector
 
 ```python
-class BilinearGatedNeuron:
-    """Two-compartment spiking model for bilinear gating."""
-    
-    def __init__(self, tau_somatic=20, tau_apical=50, coincidence_window=10):
-        self.V_somatic = 0  # Basal state integration
-        self.V_apical = 0   # Apical goal integration
-        self.tau_somatic = tau_somatic
-        self.tau_apical = tau_apical
-        self.coincidence_window = coincidence_window
-    
-    def update(self, basal_input, apical_input, dt=1):
-        """Update both compartments."""
-        # Somatic: basal state input (Y(s))
-        self.V_somatic += (basal_input - self.V_somatic) * dt / self.tau_somatic
+class DendriticCoincidenceDetector:
+    """Two-compartment model for bilinear gating."""    
+    def __init__(self, tau_apical=10.0, tau_basal=5.0):
+        self.apical_state = 0.0
+        self.basal_state = 0.0
+        self.tau_apical = tau_apical  # ms
+        self.tau_basal = tau_basal    # ms
         
-        # Apical: goal input (G(g))
-        self.V_apical += (apical_input - self.V_apical) * dt / self.tau_apical
+    def update(self, goal_input, state_input, dt_ms=1.0):
+        """Update dendritic states with exponential integration."""        
+        # Apical integration (goal signal)
+        decay_apical = np.exp(-dt_ms / self.tau_apical)
+        self.apical_state = decay_apical * self.apical_state + goal_input
         
-        # Bilinear gate: coincidence detection
-        burst_prob = self.V_somatic * self.V_apical
+        # Basal integration (state signal)
+        decay_basal = np.exp(-dt_ms / self.tau_basal)
+        self.basal_state = decay_basal * self.basal_state + state_input
         
-        return burst_prob
+    def compute_gate_output(self):
+        """Bilinear gate output."""        
+        return self.apical_state * self.basal_state
 ```
 
-### RL Agent with Bilinear Gate
+### Step 3: Implement Goal-Conditioned RL Agent
 
 ```python
-class BilinearGatedAgent:
-    """RL agent with bilinear gating for goal adaptation."""
+class BilinearGateRLAgent:
+    """RL agent with goal-conditioned bilinear gating."""    
+    def __init__(self, n_primitives=10, n_goals=5):
+        self.primitives = np.random.randn(n_primitives)  # motor primitives Y(s)
+        self.goal_vectors = np.random.randn(n_goals, n_primitives)  # G(g)
+        
+    def select_action(self, goal_idx, state_features):
+        """Select action via bilinear gate."""        
+        G = self.goal_vectors[goal_idx]  # goal vector
+        Y = self.primitives * state_features  # state-modulated primitives
+        
+        # Bilinear gate: goal × primitive × state
+        action = G.dot(Y)
+        return action
     
-    def __init__(self, n_goals, n_states):
-        self.goal_representations = np.random.randn(n_goals)
-        self.state_representations = np.random.randn(n_states)
-        self.bilinear_gate = BilinearGatedNeuron()
-    
-    def select_action(self, goal, state):
-        """Select action using bilinear gate."""
-        g_signal = self.goal_representations[goal]
-        s_signal = self.state_representations[state]
+    def adapt_to_new_goal(self, new_goal_features):
+        """Zero-shot adaptation to new goal."""        
+        # Project new goal onto existing primitive space
+        new_goal_vector = np.linalg.lstsq(
+            self.primitives.reshape(-1, 1),
+            new_goal_features,
+            rcond=None
+        )[0].flatten()
         
-        # Compute burst probability (goal-state product)
-        burst_prob = self.bilinear_gate.update(s_signal, g_signal)
-        
-        # Burst encodes goal-specific action selection
-        # Firing rate encodes state-specific motor primitive
-        
-        return burst_prob
+        # Add new goal without retraining primitives
+        self.goal_vectors = np.vstack([self.goal_vectors, new_goal_vector])
 ```
-
-## Applications
-
-1. **Motor Control**: Rapid adaptation to new reaching goals
-2. **BCI Design**: Goal-specific decoding from burst patterns
-3. **Neuromorphic Computing**: Dendritic coincidence detection circuits
-4. **RL Agents**: Zero-shot goal generalization
-5. **Neural Coding Analysis**: Burst fraction vs firing rate dissociation
 
 ## Pitfalls
 
-1. **Burst Definition**: Must use consistent ISI threshold (~10ms)
-2. **Firing Rate Control**: Remove firing rate contribution before analyzing burst fraction
-3. **Coincidence Window**: Must match dendritic integration timescale (5-10 ms)
-4. **Session Variability**: Burst fraction varies across sessions, normalize per session
-5. **Non-linear Effects**: Burst fraction saturates at high firing rates
+1. **Firing rate confound**: Burst fraction ≠ firing rate. Must control for overall firing rate when interpreting goal selectivity. Use ISI-based burst detection, not rate thresholds.
 
-## Key Equations
+2. **Apical-basal timing**: Coincidence window is critical. Apical and basal inputs must arrive within ~10-20ms. Longer delays reduce gate effectiveness.
 
-**Bilinear Gate**:
-$$P_{burst} = G(g) \cdot Y(s)$$
+3. **Burst classification**: High-frequency threshold matters. 50Hz threshold (20ms ISI) works for motor cortex; different thresholds may be needed for other regions.
 
-**Burst Fraction**:
-$$f_{burst} = \frac{N_{burst\_spikes}}{N_{total\_spikes}}$$
+4. **Goal vector normalization**: Goal vectors G(g) should be normalized to prevent magnitude bias in gate output. Otherwise, strong goals dominate weak states.
 
-**Goal Selectivity**:
-$$Selectivity = \frac{f_{burst}(goal\_1)}{f_{burst}(goal\_2)}$$
+5. **Primitive redundancy**: Motor primitives Y(s) should be orthogonal or low-rank. Redundant primitives reduce generalization capacity.
 
-## Verification Steps
+6. **Electrode placement**: Apical vs basal recording sites affect burst detection. L5 pyramidal neurons have distinct dendritic compartments.
 
-1. Compute burst fraction for each neuron across goals
-2. Verify burst fraction selectivity > firing rate selectivity
-3. Apply firing rate controls (match rate distributions)
-4. Check burst fraction remains selective after controls
-5. Test zero-shot generalization in RL agent
+## Verification
 
-## Related Work
+1. **Burst fraction vs firing rate**: Compute both metrics; verify burst fraction encodes goal more selectively (ANOVA p < 10⁻⁵)
 
-- Larkum et al. (1999): Dendritic coincidence detection in L5 pyramidal neurons
-- Polsky et al. (2009): Branch-specific dendritic processing
-- Doron et al. (2020): Goal encoding in motor cortex
-- Modern Hopfield Networks: Associative memory connection
+2. **Coincidence timing**: Test different apical-basal delays; optimal window should match L5 neuron integration time (~10-20ms)
+
+3. **Zero-shot generalization**: New goal should be executable without primitive retraining. Measure success rate on novel goals.
+
+4. **RL performance**: Compare bilinear gate agent vs standard RL. Expect faster adaptation, higher zero-shot success.
+
+5. **Cellular match**: Simulated burst pattern should match recorded burst fraction distribution (KS test p > 0.05)
 
 ## References
 
-- arXiv:2606.10891 - Bilinear gating of motor primitives (Capone et al., 2026)
-- Larkum ME, et al. (1999) Nature - Dendritic Ca2+ spikes
-- Polsky A, et al. (2009) Science - Dendritic branch processing
+- Capone et al. (2026) arXiv:2606.10891 - Original bilinear gating discovery
+- Larkum et al. (2004) - Dendritic coincidence detection in L5 pyramidal neurons
+- modern Hopfield Networks - Associative memory foundation
+- Motor primitive theory - Goal-conditioned action selection
 
----
-*Source: arXiv:2606.10891 | Created: 2026-06-11 | Category: neuroscience*
+## Activation
+
+bilinear gating, motor primitives, dendritic computation, burst fraction, goal-directed adaptation, coincidence detection, apical basal, L5 pyramidal, zero-shot generalization, motor cortex, goal encoding
