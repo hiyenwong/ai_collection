@@ -34,13 +34,12 @@
   - 实际验证：碳纳米管内Menshutkin SN2反应计算精度~1 kcal/mol
   - **Activation**: DFT embedded quantum chemistry, QSCI, quantum-selected configuration interaction, Manby projection, electronic structure, quantum chemistry, molecular simulation
 
-### Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design
-- [[coset-ensemble-decoder-qec]] - 量子纠错的余集集成解码器方法论，结合算法-硬件协同设计实现高效QEC。使用多种纠错策略的集成投票，考虑硬件约束选择最优校正 (arXiv: 2606.10777)
-  - 余集分解：将错误综合征分解为余集类，每个类生成候选校正算子
-  - 集成投票：结合最小权重、信念传播、神经网络解码器的多样化策略
-  - 硬件协同设计：建模硬件约束（延迟、内存、逻辑门、连接性），进行帕累托优化
-  - ISCA 2026接收：在架构层面验证的方法论
-  - **Activation**: coset ensemble decoder, quantum error correction, algorithm-hardware co-design, ISCA 2026, ensemble decoding, QEC decoder, fault-tolerant quantum computing
+### Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design (arXiv: 2606.11076)
+- [[coset-ensemble-decoder-qec]] - 利用逻辑等价陪集集合提升Union-Find解码精度，FPGA架构实现LUT消耗降低8.2倍 (arXiv: 2606.11076)
+  - 陪集集合森林探索：生成多个陪集一致候选并聚合近似陪集级最大似然解码
+  - FPGA时间复用：避免代码距离比例资源增长，多bank内存哈希缓解流水线停顿
+  - 可调候选数量：灵活调整精度-延迟权衡，电路级去极化噪声下优于MWPM和UF基线
+  - **Activation**: coset ensemble decoding, QEC decoder, Union-Find decoder, syndrome decoding, quantum error correction, FPGA decoder, algorithm-hardware co-design, fault-tolerant decoding
 
 ### Epistemic Calibration in Second-Order Classification
 - [[epistemic-calibration-second-order]] - 二阶分类模型中的认知校准方法论。引入期望认知校准误差(EECE)作为真实认知校准误差的一致估计器，证明认知校准假设下的不可能性定理 (arXiv: 2606.10777)
