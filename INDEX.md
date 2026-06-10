@@ -2,6 +2,14 @@
 
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
+### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
+- [[quiet-edge-centric-brain-synchronization]] - 边中心框架整合结构可控性与功能互信息识别"安静高速公路"用于能量高效脑网络同步，同步能量预测流体智力 (arXiv: 2606.11091)
+  - 边中心方法：结构可控性 × 功能互信息 → QUIET评分
+  - Quiet highways：结构上重要但功能上未充分利用的白质连接
+  - 认知关联：显著网络同步能量与流体智力正相关
+  - 麻醉研究：额顶叶和默认模式网络在清醒和镇静状态下同步能量最大
+  - **Activation**: edge-centric, synchronization pathways, brain network control, quiet highways, structural controllability, control energy, fluid intelligence
+
 ### Bilinear Gating of Motor Primitives: Dendritic Coincidence Detection
 - [[bilinear-gating-motor-primitives-dendritic-computation]] - Burst fraction编码目标信息，树突巧合检测实现双线性门控G(g)·Y(s)，RL Agent零样本泛化到新目标 (arXiv: 2606.10891)
   - Burst fraction selectivity：p<10^-12 across 12 sessions, 3 animals, 2 labs
