@@ -174,6 +174,54 @@
   - Application: full waveform inversion for subsurface velocity model reconstruction
   - **Activation**: hybrid quantum PINN, quantum FBPINN, domain decomposition quantum, full waveform inversion, quantum PDE solver
 
+### Discovering Data Encoding Strategies for Quantum-Classical Neural Networks Using Monte Carlo Tree Search
+- [[mcts-encoding-discovery-qml]] - MCTS discovers optimal data encoding circuits for QCCNN, effective rank predicts performance (arXiv: 2605.18540)
+  - MCTS search outperforms common encoding strategies on medical imaging datasets
+  - Effective rank of feature maps correlates with encoding quality
+  - **Activation**: data encoding, MCTS, quantum-classical CNN, effective rank
+
+### Quantum Kernel Advantage over Classical Collapse in Medical Foundation Model Embeddings
+- [[quantum-kernel-advantage-medical]] - QSVM wins F1 in all 18 configs vs classical SVM on MIMIC-CXR (arXiv: 2604.24597)
+  - Classical linear kernel collapses to majority-class; QSVM maintains recall
+  - F1 gain +0.293 at q=11 with MedSigLIP-448 embeddings
+  - **Activation**: quantum kernel, QSVM, medical foundation model, classical collapse
+
+### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
+- [[hqnn-breast-cancer-thermographic]] - HQNN with 4-qubit variational circuit + multi-head attention (arXiv: 2604.16953)
+  - Parameterized quantum circuits with strongly entangling layers
+  - Superior convergence dynamics and enhanced feature representation
+  - **Activation**: breast cancer, thermographic, HQNN, multi-head attention
+
+### Parameter-efficient Quantum Multi-task Learning
+- [[parameter-efficient-quantum-mtl]] - Quantum MTL with linear vs quadratic parameter scaling using VQC (arXiv: 2604.13560)
+  - Shared quantum encoding + lightweight task-specific ansatz blocks
+  - Evaluated on NLP, medical imaging, multimodal sarcasm detection
+  - **Activation**: quantum multi-task, parameter efficiency, VQC, ansatz
+
+### A Differentiable Physical Framework for Goal-Driven Spin-State Engineering in MRS
+- [[differentiable-spin-state-engineering-mrs]] - End-to-end differentiable MRS pulse design via auto-diff through spin dynamics (arXiv: 2604.01722)
+  - Spectrum-driven optimization bypassing inverse state preparation
+  - Robust Glu/Gln separation at 3T human brain
+  - **Activation**: MRS, pulse sequence, differentiable physics, spin dynamics
+
+### Quantum-Enhanced Processing with Tensor-Network Frontends for Federated Medical Diagnosis
+- [[tensor-network-frontend-quantum-medical]] - Federated medical classification with tensor-network + MPC + quantum refinement (arXiv: 2604.01616)
+  - TTN+QEP most balanced; tensor compression enables small-qubit quantum processing
+  - Reduces MPC communication overhead
+  - **Activation**: tensor network, federated learning, MPC, quantum-enhanced processor
+
+### Non-Unitary Quantum Machine Learning: Fisher Efficiency Transitions
+- [[non-unitary-qml-fisher-efficiency]] - Non-unitary QML via LCU shows Fisher efficiency transition at 10-12 qubits (arXiv: 2603.27377)
+  - 570+ experiments across 4 domains including PathMNIST
+  - Fisher efficiency shifts negative to positive at qubit threshold
+  - **Activation**: non-unitary QML, LCU, Fisher efficiency, medical histopathology
+
+### Enhancing Blood Cells Classification using Hybrid Quantum Neural Networks
+- [[hqnn-blood-cell-classification]] - HQNN with ResNet-50 + variational quantum circuit, +3.7% F1 (arXiv: 2605.23324)
+  - ResNet-50 backbone + low-dimensional bottleneck + PQC
+  - Robust under IBM quantum hardware noise
+  - **Activation**: blood cell, hybrid quantum neural network, medical imaging
+
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
 ### Discovering Functionally Selective Brain Regions with a Deep Topographic Multimodal Model
