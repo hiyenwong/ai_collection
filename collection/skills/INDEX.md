@@ -16,4 +16,11 @@
   - Joint route-and-code optimization reduces logical error rates 30-35% (up to 65%)
   - **Activation**: scope control plane, syndrome-driven routing, quantum network telemetry, qec control plane, 量子网络控制平面
 
+### QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging
+- [[quantum-program-debugging-patterns]] - Systematic quantum program debugging with taxonomy-driven bug injection, LLM-based repair, and simulation validation (arXiv:2606.07314)
+  - Iterative feedback critical: single retry raises Pass@1 from <25% to >80%
+  - Structured prompting can outperform CoT and ReAct under fixed-resource constraints
+  - Covers gate-level, measurement, qubit allocation, algorithm logic, and OpenQASM-specific bugs
+  - **Activation**: quantum program debugging, quantum bug detection, quantum code repair, qasm debugging, 量子程序调试
+
 ---
