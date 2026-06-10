@@ -1,3 +1,28 @@
+## 2026-06-11 - Deep Learning Research (Cron Job)
+
+### TRACE: Tree Rollout Allocation for Contrastive Exploration
+- [[trace-agentic-rl-rollout-allocation]] - Unified rollout budget allocation framework for efficient multi-turn agentic RL with tree-structured rollouts (arXiv: 2606.11119v1)
+  - Tree-structured allocation: budget extends from prompts to turn-level prefixes
+  - Contrastive exploration: targets anchors likely to yield mixed terminal rewards
+  - Qwen3-14B Multi-Hop QA: +2.8 accuracy points over baselines
+  - **Activation**: agentic RL, rollout allocation, tree rollouts, contrastive exploration, multi-turn, budget allocation
+
+### MODIP: Model-Based Optimization for Diffusion Policies
+- [[modip-model-based-diffusion-policy]] - Efficient offline-to-online fine-tuning using world model guidance and MPC-generated trajectories (arXiv: 2606.10825v1)
+  - World model (WM) guides diffusion policy adaptation
+  - MPC generates high-quality trajectories as supervised targets
+  - Policy-independent critics with TD targets reduce training time
+  - Competitive/outperforms TD-MPC2 on D4RL and RoboMimic
+  - **Activation**: diffusion policy, model-based RL, world model, MPC, offline RL, robot learning, behavioral cloning
+
+### QGF: Q-Guided Flow - Test-Time Gradient Guidance
+- [[qgf-test-time-gradient-guidance]] - Test-time RL performing policy optimization entirely at inference using value gradient guidance (arXiv: 2606.11087v1)
+  - No policy learning: optimization only at test time
+  - Value gradient guides reference flow policy to higher-value actions
+  - Avoids actor-critic instability, favorable model scaling
+  - Outperforms prior test-time RL on high-dimensional action spaces
+  - **Activation**: test-time RL, flow policy, gradient guidance, offline RL, goal-conditioned, expressive policy
+
 ## 2026-06-10 - Medicine (Cron Job)
 
 ### Making Claude a Chemist
