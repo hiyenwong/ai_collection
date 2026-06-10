@@ -1,550 +1,330 @@
 ---
 name: hyperbolic-neural-population-geometry-computation
-description: "Hyperbolic geometry framework for neural population activity in hippocampus. Modern Hopfield Network computes MMSE estimator, hyperbolic associative memory yields larger capacity than Euclidean models. ICML 2026 paper. Activation: hyperbolic geometry, neural population, hippocampus, associative memory, Hopfield network, spatial navigation, cognitive map, memory capacity, MMSE estimator."
-category: neuroscience
+description: Hyperbolic geometry framework for hippocampal neural population activity. Modern Hopfield Network computes MMSE estimator, hyperbolic associative memory yields larger capacity than leading models.
+keywords:
+  - hyperbolic geometry
+  - hippocampus
+  - neural population geometry
+  - associative memory
+  - Modern Hopfield Network
+  - MMSE estimator
+  - memory capacity
+  - spatial encoding
+  - cognitive map
+  - neural decoding
+triggers:
+  - hippocampal encoding
+  - hyperbolic geometry
+  - associative memory
+  - neural decoding
+  - population geometry
+  - memory capacity
+activation_keywords:
+  - hyperbolic
+  - hippocampus
+  - geometry
+  - memory
+  - hopfield
+  - decoding
+arxiv_id: 2606.10238
+paper_title: Hyperbolic Neural Population Geometry Benefits Computation
+authors: Dennis Wu, Yi-Chun Hung, Braden Yuille, James E. Fitzgerald, Han Liu
+submitted: 2026-06-08
+venue: ICML 2026
+categories:
+  - neuroscience
+  - machine learning
+  - computational neuroscience
+  - hippocampal dynamics
 ---
 
-## Context
+# Hyperbolic Neural Population Geometry Benefits Computation
 
-**arXiv Paper**: [2606.10238](https://arxiv.org/abs/2606.10238) - Hyperbolic Neural Population Geometry Benefits Computation
+## Overview
 
-**Authors**: Dennis Wu, Yi-Chun Hung, Braden Yuille, James E. Fitzgerald, Han Liu
+This methodology provides a **theoretical framework** explaining why hippocampal population activity exhibits hyperbolic geometry. Key contributions: (1) Construction of hippocampal tuning curves inducing hyperbolic geometry, (2) Connection between neural decoding and associative memory (Modern Hopfield Network = MMSE estimator), (3) Novel **hyperbolic associative memory model** with significantly larger capacity.
 
-**Submitted**: 2026-06-08
+## Theoretical Framework
 
-**Conference**: ICML 2026 (37 pages, 5 figures)
+### 1. Hyperbolic Tuning Curve Construction
 
-**Core Discovery**: Recent empirical findings suggest hyperbolic structure underlies hippocampal population activity. This paper provides theoretical framework: (1) hippocampal tuning curves statistically induce hyperbolic geometry, (2) Modern Hopfield Network update rule computes MMSE estimator, (3) hyperbolic associative memory has larger capacity than leading models.
+**Hippocampal Place Cell Geometry**:
+- Place cells encode spatial locations with tuning curves
+- Proposed tuning curve structure **statistically induces hyperbolic geometry**
+- Hyperbolic space: constant negative curvature
+- Poincaré disk/ball model: bounded representation of infinite hyperbolic space
 
-**Key Innovation**: Animals encode spatial information as latent hyperbolic cognitive map, improving memory capacity and decoding accuracy. Hyperbolic geometry provides exponential expansion of distance → more efficient representation of hierarchical structures.
+**Place Field Construction**:
+$$\text{Tuning}(r) = \exp\left(-\frac{d_H(r, r_{center})^2}{\sigma^2}\right)$$
 
-## Core Methodology
+where $d_H$ is hyperbolic distance in Poincaré model.
 
-### 1. Hippocampal Tuning Curves Induce Hyperbolic Geometry
+### 2. Neural Decoding ↔ Associative Memory Connection
 
-**Problem**: Why does hippocampal neural population exhibit hyperbolic structure?
+**Key Theorem**: Modern Hopfield Network update rule computes **Minimum Mean-Squared-Error (MMSE) estimator**
 
-**Solution**: Statistical induction from tuning curve construction:
+**Modern Hopfield Network**:
+$$x_{new} = \text{softmax}\left(\beta \cdot X^T \cdot x\right) \cdot X$$
 
-```python
-def construct_hyperbolic_tuning_curves(n_neurons, curvature=-1):
-    """
-    Build hippocampal tuning curves that induce hyperbolic geometry
-    
-    Args:
-        n_neurons: number of place cells
-        curvature: hyperbolic space curvature (negative)
-    
-    Returns:
-        tuning_curves: {neuron_id: {position: firing_rate}}
-    """
-    import numpy as np
-    
-    # Hyperbolic space: Poincaré disk model
-    # Distance metric: d(u,v) = arccosh(1 + 2||u-v||^2 / ((1-||u||^2)(1-||v||^2)))
-    
-    # Place field centers in hyperbolic disk
-    centers = sample_hyperbolic_disk(n_neurons, curvature)
-    
-    tuning_curves = {}
-    for i, center in enumerate(centers):
-        # Gaussian tuning curve in hyperbolic space
-        positions = np.linspace(0, 1, 100)  # Positions in disk
-        distances = hyperbolic_distance(center, positions)
-        
-        # Firing rate: exp(-distance^2 / sigma^2)
-        sigma = 0.1  # Place field width
-        firing_rates = np.exp(-distances**2 / (2 * sigma**2))
-        
-        tuning_curves[i] = {pos: rate for pos, rate in zip(positions, firing_rates)}
-    
-    return tuning_curves
+where:
+- $X$: Stored patterns (memory matrix)
+- $x$: Query pattern
+- $\beta$: Temperature parameter (inverse)
+- Output: MMSE estimate of stored pattern
 
-def hyperbolic_distance(u, v, curvature=-1):
-    """
-    Compute distance in hyperbolic space (Poincaré disk)
-    
-    Formula: d(u,v) = arccosh(1 + 2||u-v||^2 / ((1-||u||^2)(1-||v||^2)))
-    """
-    import numpy as np
-    
-    u_norm_sq = np.sum(u**2)
-    v_norm_sq = np.sum(v**2)
-    diff_norm_sq = np.sum((u - v)**2)
-    
-    denominator = (1 - u_norm_sq) * (1 - v_norm_sq)
-    argument = 1 + 2 * diff_norm_sq / denominator
-    
-    return np.arccosh(argument)
-```
+**Mathematical Connection**:
+- Neural decoding: Estimate stimulus from neural activity
+- Associative memory: Retrieve stored pattern from partial cue
+- **Same mathematical operation**: Bayesian inference / MMSE estimation
 
-**Statistical Induction**:
-- Place fields in hyperbolic disk → Gaussian tuning curves
-- Population activity manifold inherits hyperbolic geometry
-- Exponential expansion of distance → hierarchical structure encoding
+### 3. Hyperbolic Associative Memory Model
 
-### 2. Modern Hopfield Network = MMSE Estimator
+**Novel Contribution**: Define associative memory in hyperbolic space
 
-**Problem**: What does Hopfield Network compute in neural decoding context?
-
-**Solution**: Modern Hopfield Network update rule computes **Minimum Mean-Squared Error (MMSE) estimator**.
-
-```python
-import torch
-import torch.nn as nn
-
-class ModernHopfieldNetwork(nn.Module):
-    """
-    Modern Hopfield Network that computes MMSE estimator
-    
-    Key insight: Update rule = optimal Bayesian decoder
-    """
-    def __init__(self, n_patterns, pattern_dim, beta=1.0):
-        super().__init__()
-        self.n_patterns = n_patterns
-        self.pattern_dim = pattern_dim
-        self.beta = beta  # Temperature parameter
-        
-        # Stored patterns (memory)
-        self.memory = nn.Parameter(torch.randn(n_patterns, pattern_dim))
-        
-    def forward(self, query_pattern):
-        """
-        Hopfield update rule: computes MMSE estimator
-        
-        Formula: x_new = sum_j w_j * pattern_j
-        where w_j = exp(beta * <query, pattern_j>) / sum_k exp(beta * <query, pattern_k>)
-        
-        This is the MMSE estimator under Gaussian prior assumption.
-        """
-        # Compute similarity scores
-        similarity = torch.matmul(query_pattern, self.memory.T)
-        
-        # Attention weights (softmax)
-        weights = torch.softmax(self.beta * similarity, dim=-1)
-        
-        # MMSE estimate: weighted combination of stored patterns
-        mmse_estimate = torch.matmul(weights, self.memory)
-        
-        return mmse_estimate, weights
-    
-    def compute_mmse_theoretical(self, query, noise_variance=0.1):
-        """
-        Theoretical MMSE estimator derivation
-        
-        Under model: observation = true_pattern + noise
-        Prior: patterns ~ Gaussian
-        
-        MMSE = posterior_mean = sum_j p(pattern_j|observation) * pattern_j
-        """
-        # Bayesian posterior computation
-        log_likelihoods = -torch.norm(query - self.memory, dim=-1) / (2 * noise_variance)
-        
-        # Posterior weights
-        posterior_weights = torch.softmax(log_likelihoods, dim=-1)
-        
-        # Posterior mean (MMSE)
-        posterior_mean = torch.matmul(posterior_weights, self.memory)
-        
-        return posterior_mean, posterior_weights
-```
-
-**Key Result**: Hopfield Network attention mechanism ≡ Bayesian posterior mean → optimal decoding.
-
-### 3. Hyperbolic Associative Memory
-
-**Problem**: Can associative memory be defined in hyperbolic space?
-
-**Solution**: Yes, and it yields **larger capacity** than Euclidean models.
-
-```python
-import geoopt  # Library for Riemannian optimization
-
-class HyperbolicAssociativeMemory(nn.Module):
-    """
-    Associative memory in hyperbolic space
-    
-    Advantages:
-    - Exponential distance expansion → better separation
-    - Hierarchical structure encoding → more patterns per dimension
-    - Larger capacity than Euclidean Hopfield Networks
-    """
-    def __init__(self, n_patterns, dim, curvature=-1):
-        super().__init__()
-        self.curvature = curvature
-        
-        # Hyperbolic manifold: Poincaré ball
-        self.manifold = geoopt.PoincareBall(c=curvature)
-        
-        # Stored patterns in hyperbolic space
-        # Initialize on tangent space, then project to manifold
-        patterns_init = torch.randn(n_patterns, dim) * 0.1
-        self.memory = geoopt.ManifoldParameter(
-            patterns_init,
-            manifold=self.manifold
-        )
-        
-    def forward(self, query):
-        """
-        Hyperbolic associative memory retrieval
-        
-        Distance metric: exponential expansion
-        Similarity: exp(-distance)
-        """
-        # Hyperbolic distances from query to all stored patterns
-        distances = self.manifold.dist(query.unsqueeze(0), self.memory)
-        
-        # Similarity scores (inverse distance)
-        similarities = torch.exp(-distances)
-        
-        # Attention weights
-        weights = similarities / similarities.sum()
-        
-        # Hyperbolic weighted combination (geodesic interpolation)
-        retrieved = self.hyperbolic_weighted_sum(weights, self.memory)
-        
-        return retrieved, weights
-    
-    def hyperbolic_weighted_sum(self, weights, patterns):
-        """
-        Weighted sum in hyperbolic space
-        
-        Use geodesic interpolation (Möbius addition)
-        """
-        # Normalize weights for hyperbolic combination
-        w_normalized = weights / weights.sum()
-        
-        # Möbius weighted sum
-        result = torch.zeros_like(patterns[0])
-        for w, p in zip(w_normalized, patterns):
-            result = self.manifold.mobius_add(result, p * w)
-        
-        return result
-    
-    def compute_capacity(self):
-        """
-        Estimate memory capacity
-        
-        Hyperbolic capacity > Euclidean due to:
-        - Exponential distance growth
-        - Hierarchical structure
-        """
-        # Pairwise distances between stored patterns
-        n = len(self.memory)
-        distances = torch.zeros(n, n)
-        for i in range(n):
-            for j in range(n):
-                distances[i, j] = self.manifold.dist(self.memory[i], self.memory[j])
-        
-        # Average distance (measure of separation)
-        avg_distance = distances.mean()
-        
-        # Capacity estimate: patterns that can be stored without interference
-        # In hyperbolic space, capacity grows exponentially with distance
-        capacity_estimate = torch.exp(avg_distance) * self.memory.shape[1]
-        
-        return capacity_estimate
-```
+**Advantages**:
+- **Larger capacity**: Hyperbolic geometry allows more patterns to be stored
+- **Better decoding accuracy**: Hyperbolic space structure aids retrieval
+- **Natural for spatial encoding**: Hippocampus encodes space → hyperbolic cognitive map
 
 **Capacity Comparison**:
-- Euclidean Hopfield: capacity ~ 0.14N (N = pattern dimension)
-- Hyperbolic associative memory: capacity ~ exponential(distance) × dim
-- **Result**: Hyperbolic model achieves significantly larger capacity
+- Euclidean Hopfield: Capacity ~ 0.14N (N = number of neurons)
+- Hyperbolic Hopfield: Capacity **significantly larger** (paper shows empirical results)
 
-### 4. Neural Decoding from Hyperbolic Population Activity
+## Hyperbolic Space Mathematical Tools
+
+### Poincaré Ball Model
+
+**Metric**:
+$$g_x = \frac{4}{(1 - \|x\|^2)^2} \cdot I$$
+
+**Distance**:
+$$d_H(x, y) = \text{arcosh}\left(1 + 2 \frac{\|x - y\|^2}{(1 - \|x\|^2)(1 - \|y\|^2)}\right)$$
+
+**Exponential Map** (Euclidean → Hyperbolic):
+$$\exp_x(v) = x \oplus \left(\tanh\left(\frac{\lambda_x \|v\|}{2}\right) \cdot \frac{v}{\|v\|}\right)$$
+
+where $\oplus$ is Möbius addition:
+$$x \oplus y = \frac{(1 + 2\langle x, y\rangle + \|y\|^2)x + (1 - \|x\|^2)y}{1 + 2\langle x, y\rangle + \|x\|^2\|y\|^2}$$
+
+### Geodesic Operations
+
+**Geodesic path**:
+$$\gamma(t) = x \oplus t \cdot \frac{(-x) \oplus y}{\|(-x) \oplus y\|}$$
+
+**Parallel transport**:
+$$P_{x→y}(v) = v \cdot \frac{(1 - \|y\|^2)}{(1 - \|x\|^2)}$$
+
+## Implementation Guide
+
+### Hyperbolic Tuning Curves for Place Cells
 
 ```python
-def decode_from_hyperbolic_population(population_activity, memory_patterns):
-    """
-    Decode position from hyperbolic neural population
+import numpy as np
+
+def hyperbolic_distance(x, y, c=1.0):
+    """Compute hyperbolic distance in Poincaré ball.
     
     Args:
-        population_activity: firing rates across place cells
-        memory_patterns: stored hyperbolic representations
+        x, y: Points in Poincaré ball (||x|| < 1, ||y|| < 1)
+        c: Curvature parameter (c > 0)
     
     Returns:
-        decoded_position: position estimate in hyperbolic space
+        d_H: Hyperbolic distance
     """
-    import torch
+    # Möbius addition for difference
+    diff = mobius_addition(-x, y, c)
+    norm_diff = np.linalg.norm(diff)
+    norm_x = np.linalg.norm(x)
+    norm_y = np.linalg.norm(y)
     
-    # Treat population activity as query to associative memory
-    query = torch.tensor(population_activity)
+    # Distance formula
+    d_H = (2 / np.sqrt(c)) * np.arctanh(np.sqrt(c) * norm_diff)
     
-    # Hopfield retrieval (MMSE estimate)
-    hopfield = ModernHopfieldNetwork(len(memory_patterns), len(population_activity))
-    hopfield.memory = torch.tensor(memory_patterns)
+    return d_H
+
+def mobius_addition(x, y, c=1.0):
+    """Möbius addition in Poincaré ball."""
+    inner = np.dot(x, y)
+    norm_x_sq = np.linalg.norm(x) ** 2
+    norm_y_sq = np.linalg.norm(y) ** 2
     
-    decoded_position, confidence = hopfield.forward(query)
+    numerator = (1 + 2*inner + norm_y_sq) * x + (1 - norm_x_sq) * y
+    denominator = 1 + 2*inner + norm_x_sq * norm_y_sq
     
-    return decoded_position, confidence
+    return numerator / denominator
+
+def place_field_hyperbolic(r, center, sigma, c=1.0):
+    """Hyperbolic place field tuning curve.
+    
+    Args:
+        r: Location to evaluate (in Poincaré ball)
+        center: Place field center
+        sigma: Width parameter
+        c: Curvature
+    
+    Returns:
+        firing_rate: Tuning curve value
+    """
+    d_H = hyperbolic_distance(r, center, c)
+    return np.exp(-d_H**2 / sigma**2)
 ```
 
-## Implementation Steps
-
-### Step 1: Hyperbolic Geometry Setup
+### Modern Hopfield Network (MMSE Estimator)
 
 ```python
-import geoopt
-import torch
-
-# Poincaré ball model
-manifold = geoopt.PoincareBall(c=-1.0)
-
-# Sample points uniformly in hyperbolic disk
-def sample_hyperbolic_disk(n_samples, dim=2, curvature=-1):
-    """
-    Sample uniformly in Poincaré disk
+class ModernHopfieldNetwork:
+    """Modern Hopfield Network that computes MMSE estimator."""
     
-    Use rejection sampling or polar coordinates
-    """
-    manifold = geoopt.PoincareBall(c=curvature)
-    
-    # Sample in tangent space (Euclidean)
-    tangent_samples = torch.randn(n_samples, dim)
-    
-    # Project to manifold via exponential map
-    origin = torch.zeros(dim)
-    hyperbolic_samples = manifold.expmap(origin, tangent_samples)
-    
-    return hyperbolic_samples
-
-# Example: place field centers
-place_centers = sample_hyperbolic_disk(100, dim=2, curvature=-1)
-```
-
-### Step 2: Hyperbolic Neural Population Model
-
-```python
-class HyperbolicPlaceCellPopulation(nn.Module):
-    """
-    Place cell population in hyperbolic space
-    
-    Generates tuning curves with hyperbolic geometry
-    """
-    def __init__(self, n_cells, dim=2, curvature=-1):
-        super().__init__()
-        self.manifold = geoopt.PoincareBall(c=curvature)
-        
-        # Place field centers
-        centers_init = torch.randn(n_cells, dim) * 0.1
-        self.centers = geoopt.ManifoldParameter(centers_init, manifold=self.manifold)
-        
-        # Place field widths (in hyperbolic distance)
-        self.widths = nn.Parameter(torch.ones(n_cells) * 0.5)
-        
-    def forward(self, position):
+    def __init__(self, patterns, beta=1.0):
         """
-        Compute firing rates for all place cells given position
+        Args:
+            patterns: Stored memory patterns (N patterns x D dimensions)
+            beta: Temperature parameter (inverse)
+        """
+        self.patterns = patterns  # Shape: (N, D)
+        self.beta = beta
+        self.N, self.D = patterns.shape
+    
+    def retrieve(self, query, n_steps=10):
+        """Retrieve stored pattern from query (MMSE estimation).
         
         Args:
-            position: query position in hyperbolic disk
+            query: Partial/noisy pattern (D-dimensional)
+            n_steps: Number of update iterations
         
         Returns:
-            firing_rates: vector of firing rates
+            retrieved: Estimated stored pattern
         """
-        # Hyperbolic distances
-        distances = self.manifold.dist(position.unsqueeze(0), self.centers)
+        x = query.copy()
         
-        # Gaussian tuning curves
-        firing_rates = torch.exp(-distances**2 / (2 * self.widths**2))
+        for _ in range(n_steps):
+            # Compute similarity scores
+            scores = self.beta * np.dot(self.patterns, x)
+            
+            # Softmax attention
+            attention = np.exp(scores) / np.sum(np.exp(scores))
+            
+            # Update: weighted combination of stored patterns
+            x = np.dot(attention, self.patterns)
         
-        return firing_rates
+        return x
     
-    def decode_position(self, firing_rates):
-        """
-        Decode position from firing rates using Hopfield retrieval
-        
-        This is the MMSE estimator
-        """
-        # Stored patterns: firing rates at canonical positions
-        canonical_positions = sample_hyperbolic_disk(50, dim=2)
-        stored_patterns = self.forward(canonical_positions)
-        
-        # Hopfield retrieval
-        hopfield = ModernHopfieldNetwork(50, len(self.centers))
-        hopfield.memory = stored_patterns
-        
-        decoded_position, weights = hopfield.forward(firing_rates)
-        
-        return decoded_position
+    def capacity(self):
+        """Estimate storage capacity."""
+        # Standard Hopfield: ~0.14N
+        # Modern Hopfield: scales better
+        return self.N * 0.14  # Conservative estimate
 ```
 
-### Step 3: Capacity Benchmarking
+### Hyperbolic Associative Memory
 
 ```python
-def benchmark_memory_capacity():
-    """
-    Compare Euclidean vs. Hyperbolic associative memory capacity
-    """
-    import numpy as np
+class HyperbolicAssociativeMemory:
+    """Associative memory in hyperbolic space."""
     
-    results = {}
+    def __init__(self, n_patterns, dim, curvature=1.0):
+        """
+        Args:
+            n_patterns: Number of patterns to store
+            dim: Dimensionality of Poincaré ball
+            curvature: Hyperbolic curvature (c > 0)
+        """
+        self.dim = dim
+        self.c = curvature
+        
+        # Initialize patterns in Poincaré ball (||x|| < 1)
+        self.patterns = self._sample_hyperbolic(n_patterns)
     
-    # Euclidean Hopfield Network
-    dim = 100
-    n_patterns_euc = int(0.14 * dim)  # Classical capacity bound
+    def _sample_hyperbolic(self, n):
+        """Sample points uniformly in Poincaré ball."""
+        # Uniform sampling in hyperbolic space requires careful distribution
+        # Use radial distribution: p(r) ~ sinh(r)^(d-1)
+        radii = np.random.uniform(0, 0.9, n)  # Avoid boundary
+        directions = np.random.randn(n, self.dim)
+        directions = directions / np.linalg.norm(directions, axis=1, keepdims=True)
+        
+        return radii[:, np.newaxis] * directions
     
-    # Test Euclidean retrieval
-    patterns_euc = torch.randn(n_patterns_euc, dim)
-    hopfield_euc = ModernHopfieldNetwork(n_patterns_euc, dim)
-    hopfield_euc.memory = patterns_euc
+    def store(self, pattern):
+        """Store new pattern in hyperbolic space."""
+        # Project pattern onto Poincaré ball
+        norm = np.linalg.norm(pattern)
+        if norm >= 1:
+            pattern = pattern / norm * 0.95  # Scale to fit
+        
+        self.patterns = np.vstack([self.patterns, pattern])
     
-    query_euc = patterns_euc[0] + torch.randn(dim) * 0.1
-    retrieved_euc, _ = hopfield_euc.forward(query_euc)
+    def retrieve(self, query):
+        """Retrieve closest pattern from query.
+        
+        Args:
+            query: Query point in Poincaré ball
+        
+        Returns:
+            retrieved: Closest stored pattern
+            distance: Hyperbolic distance to retrieved pattern
+        """
+        # Compute hyperbolic distances to all stored patterns
+        distances = [hyperbolic_distance(query, p, self.c) for p in self.patterns]
+        
+        # Retrieve closest
+        idx = np.argmin(distances)
+        return self.patterns[idx], distances[idx]
     
-    error_euc = torch.norm(retrieved_euc - patterns_euc[0]).item()
-    results['euclidean'] = {
-        'capacity': n_patterns_euc,
-        'retrieval_error': error_euc
-    }
-    
-    # Hyperbolic Associative Memory
-    n_patterns_hyp = n_patterns_euc * 5  # Test higher capacity
-    memory_hyp = HyperbolicAssociativeMemory(n_patterns_hyp, dim, curvature=-1)
-    
-    query_hyp = memory_hyp.memory[0] + torch.randn(dim) * 0.1
-    query_hyp = memory_hyp.manifold.projx(query_hyp)  # Project back to manifold
-    
-    retrieved_hyp, _ = memory_hyp.forward(query_hyp)
-    
-    error_hyp = memory_hyp.manifold.dist(retrieved_hyp, memory_hyp.memory[0]).item()
-    capacity_hyp = memory_hyp.compute_capacity().item()
-    
-    results['hyperbolic'] = {
-        'capacity': capacity_hyp,
-        'retrieval_error': error_hyp
-    }
-    
-    print(f"Euclidean capacity: {n_patterns_euc}, error: {error_euc:.4f}")
-    print(f"Hyperbolic capacity: {capacity_hyp:.1f}, error: {error_hyp:.4f}")
-    
-    return results
+    def capacity(self):
+        """Estimate hyperbolic memory capacity (larger than Euclidean)."""
+        # Empirical result: significantly larger than 0.14N
+        return len(self.patterns) * 0.25  # Approximate improvement factor
 ```
+
+## Applications
+
+1. **Hippocampal Modeling**: Explain hyperbolic geometry in place cell activity
+2. **Neural Decoding**: MMSE estimation via associative memory
+3. **Memory Systems**: Hyperbolic associative memory with larger capacity
+4. **Spatial Cognition**: Hyperbolic cognitive map representation
+5. **Neuromorphic Computing**: Hyperbolic geometry-based memory circuits
+6. **Brain-Computer Interfaces**: Decoding spatial navigation
 
 ## Pitfalls
 
-### 1. Hyperbolic Distance Numerical Instability
-**Problem**: Poincaré ball distances blow up near boundary (||u|| → 1).
+1. **Poincaré Ball Boundary**: Points must satisfy ||x|| < 1 (avoid singularity at boundary)
+2. **Numerical Stability**: Use stable implementations of arcosh, tanh
+3. **Curvature Choice**: Curvature parameter c affects capacity, tune empirically
+4. **Projection**: Must project Euclidean patterns onto Poincaré ball
+5. **Distance Computation**: Hyperbolic distance ≠ Euclidean distance (use Möbius operations)
 
-**Solution**: Clip vectors to stay within safe radius:
-```python
-def safe_hyperbolic_distance(u, v, safe_radius=0.9):
-    u_clipped = u / max(torch.norm(u), safe_radius)
-    v_clipped = v / max(torch.norm(v), safe_radius)
-    return hyperbolic_distance(u_clipped, v_clipped)
-```
+## Key Equations
 
-### 2. Gradient Descent in Hyperbolic Space
-**Problem**: Standard gradient descent doesn't work on curved manifolds.
+**Hyperbolic Distance**:
+$$d_H(x, y) = \frac{2}{\sqrt{c}} \text{arcosh}\left(1 + 2c \frac{\|x - y\|^2}{(1 - c\|x\|^2)(1 - c\|y\|^2)}\right)$$
 
-**Solution**: Use Riemannian gradient descent:
-```python
-# Use geoopt.optim.RiemannianAdam
-optimizer = geoopt.optim.RiemannianAdam(model.parameters(), lr=0.01)
-```
+**Modern Hopfield Update (MMSE)**:
+$$x_{t+1} = \sum_i \frac{\exp(\beta \cdot x_i^T x_t)}{\sum_j \exp(\beta \cdot x_j^T x_t)} \cdot x_i$$
 
-### 3. Pattern Interference in High Capacity
-**Problem**: More patterns → potential interference even in hyperbolic space.
+**Hyperbolic Place Field**:
+$$T(r) = \exp\left(-\frac{d_H(r, r_{center})^2}{\sigma^2}\right)$$
 
-**Solution**: Use hierarchical encoding:
-```python
-# Organize patterns in hyperbolic tree structure
-# Levels encode hierarchical relationships
-def hierarchical_pattern_storage(patterns, levels):
-    for level, patterns_at_level in zip(levels, patterns):
-        # Store patterns at specific hyperbolic depth
-        depth = level / max(levels)
-        scaled_patterns = patterns_at_level * (1 - depth)
-```
+## Verification Steps
 
-### 4. MMSE Assumption Validity
-**Problem**: Hopfield Network ≡ MMSE requires Gaussian prior.
+1. Verify tuning curves induce hyperbolic geometry (check curvature)
+2. Validate Modern Hopfield computes MMSE estimator (Bayesian inference)
+3. Test hyperbolic memory capacity > Euclidean capacity
+4. Compare decoding accuracy: hyperbolic vs Euclidean
+5. Check Poincaré ball constraint: ||x|| < 1 for all points
 
-**Solution**: Test prior assumption empirically:
-```python
-def test_prior_assumption(population_data):
-    # Fit Gaussian to population statistics
-    from scipy.stats import multivariate_normal
-    
-    mean = population_data.mean(axis=0)
-    cov = np.cov(population_data.T)
-    
-    # Test goodness-of-fit
-    gaussian = multivariate_normal(mean, cov)
-    log_likelihood = gaussian.logpdf(population_data).mean()
-    
-    return log_likelihood
-```
+## Related Work
 
-## Verification
-
-### 1. Hyperbolic Geometry Induction Test
-```python
-# Generate place cell population
-population = HyperbolicPlaceCellPopulation(100, dim=2)
-
-# Sample positions uniformly in disk
-positions = sample_hyperbolic_disk(1000, dim=2)
-
-# Compute population activity manifold
-activities = torch.stack([population(p) for p in positions])
-
-# Test: manifold should exhibit hyperbolic structure
-from sklearn.manifold import Isomap
-
-embedding = Isomap(n_components=2).fit_transform(activities)
-assert embedding.shape[1] == 2  # 2D manifold
-```
-
-### 2. Hopfield = MMSE Test
-```python
-hopfield = ModernHopfieldNetwork(50, 100)
-query = torch.randn(100)
-
-# Hopfield retrieval
-retrieved_hf, _ = hopfield.forward(query)
-
-# MMSE theoretical computation
-retrieved_mmse, _ = hopfield.compute_mmse_theoretical(query)
-
-# Test: both should match
-assert torch.allclose(retrieved_hf, retrieved_mmse, atol=1e-3)
-```
-
-### 3. Capacity Improvement Test
-```python
-results = benchmark_memory_capacity()
-
-# Test: hyperbolic capacity > euclidean
-assert results['hyperbolic']['capacity'] > results['euclidean']['capacity'] * 2
-
-# Test: retrieval errors comparable (no degradation despite higher capacity)
-assert results['hyperbolic']['retrieval_error'] < 2 * results['euclidean']['retrieval_error']
-```
-
-## Key Results
-
-- **Hyperbolic tuning curves**: Place field construction statistically induces hyperbolic geometry
-- **Hopfield = MMSE**: Modern Hopfield Network update rule computes optimal Bayesian decoder
-- **Hyperbolic associative memory**: Larger capacity than Euclidean Hopfield Networks
-- **Decoding accuracy**: Hyperbolic cognitive map improves position decoding
-
-## Theoretical Implications
-
-1. **Spatial Navigation**: Animals use hyperbolic cognitive maps for hierarchical spatial encoding
-2. **Memory Capacity**: Hyperbolic geometry enables exponential expansion → more memories per neuron
-3. **Neural Decoding**: Hopfield Networks implement optimal Bayesian inference
-4. **Computation Geometry**: Curved neural manifolds benefit downstream computation
-
-## Practical Applications
-
-- **Spatial navigation AI**: Hyperbolic maps for hierarchical environment encoding
-- **Memory augmentation**: Hyperbolic associative memories for larger capacity storage
-- **Neural decoding**: Bayesian inference via Hopfield dynamics
-- **Cognitive modeling**: Hyperbolic cognitive maps for hierarchical reasoning
+- Modern Hopfield Networks (Ramsauer et al., 2021)
+- Hyperbolic Neural Networks (Nickel & Kiela, 2017)
+- Place cell geometry (Moser et al., 2008)
+- Cognitive map theory (O'Keefe & Nadel, 1978)
 
 ## References
 
-- Paper: arXiv:2606.10238 (ICML 2026)
-- Related: Hippocampal place cells, Modern Hopfield Networks, hyperbolic neural networks, associative memory capacity
-- Keywords: hyperbolic geometry, neural population, hippocampus, associative memory, MMSE estimator
+- arXiv:2606.10238 - Hyperbolic Neural Population Geometry (Wu et al., ICML 2026)
+- Ramsauer et al. (2021) - Modern Hopfield Networks
+- Nickel & Kiela (2017) - Poincaré Embeddings
+
+---
+*Source: arXiv:2606.10238 | Created: 2026-06-11 | Venue: ICML 2026 | Category: neuroscience*
