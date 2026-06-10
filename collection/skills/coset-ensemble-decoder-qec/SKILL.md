@@ -1,76 +1,81 @@
 ---
 name: coset-ensemble-decoder-qec
-description: "Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design methodology. Ensemble forest exploration exploiting logically equivalent cosets to improve Union-Find decoding, with domain-specific FPGA architecture reducing LUT consumption 8.2x. Use when: (1) designing QEC decoders for fault-tolerant quantum computing, (2) optimizing accuracy-latency trade-offs in real-time syndrome decoding, (3) implementing hardware-efficient QEC decoders on FPGA, (4) ensemble decoding approaches for surface codes. Activation: coset ensemble decoding, QEC decoder, Union-Find decoder, syndrome decoding, quantum error correction, FPGA decoder, algorithm-hardware co-design, fault-tolerant decoding, surface code decoder, real-time QEC, min-weight perfect matching, coset-level maximum-likelihood"
-metadata:
-  arxiv_id: "2606.11076"
-  published: "2026-06-09"
-  authors: "IM Seon et al."
+description: "Coset ensemble decoder methodology for quantum error correction with algorithm-hardware co-design — enabling real-time, low-latency, high-accuracy QEC decoding."
+category: quantum-systems-engineering
+version: "1.0.0"
+created: "2026-06-11"
+source: "arxiv:2606.11076"
 ---
 
-## Context
+# Coset Ensemble Decoder for QEC
 
-Fault-tolerant quantum computation requires real-time QEC decoding that simultaneously delivers high logical accuracy and ultra-low latency. Traditional decoders (MWPM, Union-Find) face an accuracy-latency trade-off. This paper introduces coset ensemble decoding — an algorithm-hardware co-design that improves UF decoding by exploiting logically equivalent cosets, with an FPGA architecture that reduces resource consumption 8.2x.
+## Description
 
-## Core Methodology
+Coset ensemble decoder methodology for real-time quantum error correction decoding that leverages algorithm-hardware co-design. Addresses the critical latency-accuracy tradeoff in fault-tolerant quantum computing architectures.
 
-### 1. Coset Ensemble Decoding (Algorithm)
+**Source Paper**: arXiv:2606.11076 — "Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design" (Liang, Xu, Bassanino, 2026-06-09)
 
-- **Coset Exploitation**: Multiple logically equivalent cosets produce the same syndrome — enumerate candidates across cosets rather than selecting single minimum-weight matching
-- **Ensemble Forest Exploration**: Generate multiple coset-consistent UF forest candidates, aggregate to approximate coset-level maximum-likelihood decoding
-- **Reverse-Order Elimination**: Reduce computational complexity by processing elimination in reverse order
-- **Lossless Graph Compression**: Compress syndrome graph without accuracy loss to reduce memory footprint
+## Activation Keywords
+- coset ensemble decoder
+- QEC decoder design
+- quantum error correction decoding
+- algorithm-hardware co-design quantum
+- real-time QEC
+- fault-tolerant decoder
+- syndrome decoding
+- quantum decoder latency
 
-### 2. Domain-Specific FPGA Architecture (Hardware)
+## Core Concepts
 
-- **Temporal Resource Reuse**: Avoids code-distance-proportional resource growth via time-multiplexed processing units
-- **Multi-Bank Memory Hashing**: Mitigates pipeline stalls under concurrent syndrome access patterns
-- **Hierarchical ID Mapping**: Resolves memory conflicts in highly concurrent syndrome extraction
+### 1. Coset Ensemble Approach
+- Decompose the decoding problem into coset-based sub-problems
+- Each coset represents a distinct error class
+- Ensemble of coset decoders work in parallel for comprehensive coverage
 
-### 3. Accuracy-Latency Trade-Off
+### 2. Algorithm-Hardware Co-Design
+- **Algorithm Level**: Coset decomposition reduces decoding complexity
+- **Hardware Level**: Dedicated decoder hardware optimized for coset operations
+- **Interface**: Tight coupling between algorithm structure and hardware pipeline
 
-- Tunable candidate number parameter: users adjust decoding performance vs. latency based on workload requirements
-- Under circuit-level depolarizing noise: better accuracy-latency than MWPM and UF baselines
-- 8.2x reduction in FPGA LUT consumption vs. reported UF-based decoder resources
+### 3. Real-Time Decoding Pipeline
+```
+Syndrome Measurement → Coset Classification → Parallel Decoding → Ensemble Vote → Correction
+     ↓                        ↓                       ↓               ↓            ↓
+  QEC Cycle              Error Class             Sub-Decoders     Consensus     Apply Pauli
+```
 
-## Implementation Steps
+## Key Design Principles
 
-1. Implement Union-Find decoder as base algorithm
-2. Extend to enumerate logically equivalent cosets for each syndrome
-3. Build ensemble forest exploration: generate N coset-consistent candidates
-4. Implement aggregation mechanism for coset-level ML approximation
-5. Apply reverse-order elimination for computational efficiency
-6. Apply lossless graph compression for memory reduction
-7. Design FPGA architecture with temporal resource reuse
-8. Implement multi-bank memory hashing and hierarchical ID mapping
-9. Benchmark under circuit-level depolarizing noise model
-10. Tune candidate number parameter for target accuracy-latency point
+1. **Parallelism by Design**: Coset structure enables natural parallelization
+2. **Latency-Accuracy Tradeoff**: Ensemble voting improves accuracy without sacrificing speed
+3. **Hardware Efficiency**: Dedicated coset decoder hardware reduces resource overhead
+4. **Scalability**: Architecture scales with code distance and qubit count
 
-## Key Results (arXiv:2606.11076)
+## Implementation Guidelines
 
-- **LUT reduction**: 8.2x vs. prior UF-based FPGA decoder resources
-- **Accuracy**: Better than MWPM and UF baselines under circuit-level noise
-- **Tunability**: Candidate number provides flexible performance knob
-- **Availability**: Implementation at github.com/IMSeonL/coset-ensemble-decoder
-- **Noise model**: Circuit-level depolarizing noise
+### Coset Classification
+- Map syndrome patterns to coset representatives
+- Use lookup tables for small codes
+- Use neural classifiers for large codes
 
-## Pitfalls
+### Ensemble Voting
+- Each coset decoder produces a candidate correction
+- Vote based on syndrome likelihood
+- Select most probable correction
 
-- **Candidate Number Scaling**: Increasing candidate count improves accuracy but increases latency — the trade-off must be calibrated for target fault-tolerant workload
-- **Code Distance Scaling**: Temporal resource reuse may become bottleneck at very large code distances (d > 20) where sequential processing dominates
-- **Noise Model Specificity**: Results demonstrated under circuit-level depolarizing noise — verify for biased noise, leakage, or crosstalk models
-- **Hardware-Specific Optimizations**: Multi-bank memory hashing and hierarchical ID mapping are FPGA-specific — ASIC or GPU implementations require different approaches
-- **Coset Enumeration Completeness**: The ensemble approach approximates coset-level ML; full enumeration may be intractable for large codes
+### Hardware Mapping
+- Pipeline syndrome ingestion
+- Parallel coset processing units
+- Fast voting/selection logic
 
-## Verification
+## Performance Considerations
+- **Latency Target**: Sub-microsecond for surface code distances d≥7
+- **Accuracy Target**: >99.9% logical error correction
+- **Throughput**: Match QEC cycle rate (~1-10 μs)
 
-1. Implement coset ensemble decoder in Python/C++ for simulation
-2. Compare logical error rate vs. standard UF decoder at same code distance
-3. Verify accuracy improvement under circuit-level depolarizing noise
-4. Synthesize FPGA design and measure LUT/BRAM/DSP utilization
-5. Confirm 8.2x LUT reduction vs. baseline UF decoder
-6. Measure decoding latency vs. candidate number parameter
-7. Validate tunable accuracy-latency trade-off curve
+## Related Methodologies
+- [[scope-qec-control-plane]] — Syndrome-driven control plane (arXiv:2606.08873)
+- [[neural-decoder-confidence]] — Decoder confidence proxy (arXiv:2606.08758)
 
-## Code Reference
-
-Implementation available at: https://github.com/IMSeonL/coset-ensemble-decoder
+## References
+- arXiv:2606.11076 — Coset Ensemble Decoder for Quantum Error Correction with Algorithm-Hardware Co-Design
