@@ -1,6 +1,23 @@
 # AI Collection Index
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
+### Trajectory Geometry of Transformer Representations Across Layers
+- [[trajectory-geometry-transformer-representations]] - Probe-free mechanistic interpretability framework recasting transformer forward pass as discrete trajectory through representation manifold using computational neuroscience geometric tools (arXiv: 2606.09287)
+  - Five trajectory metrics: length, curvature, semantic convergence index, layerwise similarity, stability
+  - Semantically related prompts converge in middle-to-late layers (attractor-like dynamics, CI 0.41-0.58, p<0.001)
+  - Reasoning tasks produce higher curvature (0.71-0.83 rad) vs lexical variations (0.27-0.31 rad) — curvature encodes computational complexity
+  - Universal three-phase structure across GPT-2, TinyLlama, Qwen2.5: encoding → elaboration → output preparation
+  - **Activation**: trajectory geometry, transformer representations, mechanistic interpretability, probe-free, layer dynamics, attractor dynamics, curvature, semantic convergence
+
+### ViSAE: Inside the Visual Mind - Neuroscience-Motivated Concept Circuits for Vision Transformers
+- [[visae-neuroscience-concept-circuits-vit]] - Neuroscience-motivated interpretability toolbox for ViT using concept circuits with 64K images and 16K visually grounded concept vocabulary (20x efficiency, 28.7% accuracy boost) (arXiv: 2606.06664, ICML 2026)
+  - Top-down concept reading + Bottom-up circuit tracing algorithms for automated interpretability
+  - Concept editing improves WaterBirds worst-group accuracy by 48.2% (23.8% better than existing methods)
+  - Comprehensive probing suite with visually grounded concept vocabulary addressing SAE limitations
+  - **Activation**: ViSAE, concept circuits, ViT interpretability, neuroscience-motivated, concept steering, visual interpretability, sparse autoencoder, bias mitigation
+
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
 ### QUIET: Edge-Centric Framework for Targeted Brain Network Synchronization
 - [[quiet-edge-centric-brain-synchronization]] - Edge-centric brain network control framework integrating structural controllability with functional connectivity via mutual information to identify "quiet highways" — structurally influential but functionally underutilized edges (arXiv: 2606.11091)
   - Dual-metric edge selection: structural controllability × functional connectivity (MI-based)
@@ -16,29 +33,6 @@
   - NLB'21 MC Maze: 0.3866 co-bps (bits per second), state-of-the-art neural decoding
   - Transfer mechanism: freeze backbone, train adapters only — days of training → minutes of calibration
   - **Activation**: GRAFT, transformer, neural population, cross-day recalibration, BCI, NLB, motor cortex, gain adapter, neural decoding, kinematic trajectory, state-of-the-art
-
-## 2026-06-10 - Medicine (Cron Job)
-
-### CovAngelo: A hybrid quantum-classical computing platform for accurate and scalable drug discovery
-- [[covangelo-hybrid-quantum-drug-discovery]] - QM/QM/MM multiscale embedding platform for ligand-protein binding in drug discovery using quantum-in-quantum-in-classical architecture (arXiv: 2604.10487)
-  - QM/QM/MM three-tier embedding: quantum computing for active site, classical QM for environment, MM for bulk
-  - Quantum-in-quantum-in-classical architecture enables ab initio accuracy for drug binding at scale
-  - Heterogeneous computing leverages both quantum processors and classical HPC simultaneously
-  - Focused on ligand-protein binding modeling for drug discovery
-  - **Activation**: covangelo, qm/qm/mm, drug discovery, quantum chemistry, ligand-protein binding, multiscale embedding, hybrid quantum-classical, molecular dynamics, binding affinity
-
-### Scalable On-Hardware Training of Quantum Neural Networks and Application to Clinical Data Imputation
-- [[scalable-on-hardware-qnn-training]] - QNN training framework reducing gradient estimation from O(n^2) to O(log n) via Butterfly circuit architecture, layer-wise training, and parallelised parameter-shift rule; validated on MIMIC-III clinical data on IonQ hardware at 16-32 qubits (arXiv: 2606.03517)
-  - Butterfly circuit: structured, subspace-preserving architecture with O(n log n) parameters and logarithmic depth
-  - Layer-wise training: confines optimization to one layer at a time, avoiding barren plateaus
-  - Parallel parameter-shift: exploits commuting structure for constant-cost gradient extraction
-  - Clinical validation: MIMIC-III EHR imputation matching/exceeding classical baselines in patient survival prediction
-  - **Activation**: scalable qnn training, butterfly circuit, layer-wise training, clinical data imputation, MIMIC-III, parallel parameter-shift, hardware optimization, gradient estimation
-
-
-
-## 2026-06-10 - Neuroscience Research (Cron Job)
-
 ### Machine Learning Methods for Studying Latent Neural Activity Dynamics
 - [[latent-neural-dynamics-ml-survey]] - Comprehensive survey of ML methods for latent neural dynamics from state-space models to deep generative models, covering single-region dynamics and multi-region communication (arXiv: 2606.10530)
   - Evolution trajectory: Linear dynamical systems → RNNs → Neural ODEs → Variational inference
