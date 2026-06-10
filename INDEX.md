@@ -1,4 +1,40 @@
+## 2026-06-10 - Medicine (Cron Job)
+
+### Making Claude a Chemist
+- [[making-claude-chemist]] - Anthropic research benchmarking Opus 4.7 against ChemDraw/MestReNova for NMR spectral analysis and molecular structure elucidation (Anthropic: 2026-06-05)
+  - Opus 4.7 achieves ±0.079 ppm error on ¹H NMR, competitive with professional chemistry software
+  - 100% structure recovery on 15 test compounds (8 simple + 7 hard with hints)
+  - Multi-run averaging (3x) required due to LLM output variance
+  - Peak shape prediction and retrosynthesis remain gaps
+  - **Activation**: Claude chemist, NMR spectral analysis, molecular structure elucidation, AI chemistry benchmark, Opus chemistry, Anthropic chemistry
+
 # AI Collection Index
+
+## 2026-06-10 - Neuroscience Research Verification (Domain Saturation)
+
+### Neocortex Learning via Error-Driven Predictive Learning
+- [[neocortex-learning-error-driven-predictive]] - 神经皮层学习三准则理论框架：计算上逼近强大通用学习算法，算法上可通过已知神经电路实现，实现上有详细神经化学机制解释。皮质丘脑回路驱动时间导数误差预测学习，竞争性激酶突触可塑性机制 (arXiv: 2606.08720)
+  - 三准则框架：计算可扩展性 + 神经电路可实现性 + 神经化学机制解释
+  - 误差驱动预测学习：时间导数机制驱动突触可塑性
+  - Axon模拟框架：脉冲神经元实现验证
+  - 跨认知任务学习验证
+  - **Activation**: neocortex learning, predictive learning, error-driven, corticothalamic circuit, synaptic plasticity, competitive kinase
+
+### Updated Standard Neuron Model in Artificial Neural Networks
+- [[updated-neuron-model-ann]] - 改进ANN标准神经元模型，使用更现实的皮质细胞模型替代点神经元。无需增加参数，提升表达能力、鲁棒性、学习速度，减少记忆化和训练数据需求 (arXiv: 2605.30370)
+  - 皮质细胞模型替代50年历史的点神经元模型
+  - 参数效率：相同参数量，性能显著提升
+  - 表达能力增强 + 鲁棒性提升 + 学习速度加快
+  - 记忆化减少 + 训练数据需求降低
+  - **Activation**: neuron model, ANN, cortical cells, expressivity, robustness, learning speed, biological realism
+
+### Topo-Omni Deep Topographic Multimodal Model
+- [[topo-omni-deep-topographic-multimodal]] - 深度地形多模态模型，单连续硅片整合视觉、听觉、语言/认知处理。空间平滑目标生成跨模态聚类与人类神经影像一致，可选择性驱动或抑制感知，发现新自然景观和动物网络 (arXiv: 2606.09770)
+  - 单连续空间拓扑组织：跨模态空间整合而非分离
+  - 与人类神经影像一致：从感觉系统到认知系统
+  - 选择性感知干预：驱动/抑制集群模拟人类干预研究
+  - 新网络发现：验证人类数据中的自然景观和动物网络
+  - **Activation**: topographic, multimodal, brain regions, functional selectivity, cortical organization, foundation model, visual-auditory-language
 
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
@@ -50,8 +86,7 @@
   - **Activation**: epistemic calibration, second-order classification, EECE, uncertainty quantification, model calibration, medical AI, high-stakes ML
 
 
-1|# AI Collection Index
-2|## 2026-06-10 - Neuroscience Research (Cron Job) - Batch 3
+## 2026-06-10 - Neuroscience Research (Cron Job) - Batch 3
 3|
 4|### Scalable Multi-Timescale Conductance Spiking Networks
 5|- [[multi-timescale-conductance-snn]] - 多时间尺度电导脉冲神经网络方法论。通过自适应时间常数实现多时间尺度突触动力学，模拟短时程增强、长时程抑制等多种神经调节效应 (arXiv: 2606.10854)
