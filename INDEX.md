@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-11 - Neuroscience + Computational Physics (Cron Job)
+
+### NeuroPINNs: Neuroscience Inspired Physics Informed Neural Networks
+- [[neuropinns-spiking-pinn]] - 神经科学启发的 Physics-Informed Neural Networks，使用 Variable Spiking Neurons 实现能量高效的 PDE 求解，stochastic projection 方法解决 spike discontinuity 与 gradient optimization 的兼容问题 (arXiv: 2511.06081)
+  - 核心创新：Variable Spiking Neurons (VSNs) 实现稀疏事件驱动通信
+  - Upscaled theory 启发的 stochastic projection 方法避免系统性偏差
+  - 应用验证：4个代表性 PDE 问题 + 3D 线性弹性微力学
+  - Neuromorphic-ready：适合 Intel Loihi/BrainScaleS 等硬件部署
+  - **Activation**: neuropinns, spiking-pinn, variable-spiking-neuron, neuromorphic-pde, energy-efficient-pde, event-driven-pinn
+
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
 ### Multifractal Space-Filling Curve Analysis for MRI Dementia Biomarker
