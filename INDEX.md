@@ -2238,3 +2238,13 @@
   - 65nm CMOS: 96.04 nW/bit, 19.21 fJ/bit — suitable for implantable power budgets
   - Reliable across 0.9-1.3V and 0-100°C, BER < 0.000163 at 1.0-1.3V, 10-70°C
   - **Activation**: qt-puf, quantum tunneling PUF, implantable iomt security, gate leakage PUF, iomt device authentication, quantum medical device security, ultralow-power PUF
+
+## 2026-06-10 - Anthropic Research (Cron Job)
+
+### Project Vend: Phase Two
+- [[project-vend-phase-two]] - Autonomous AI shopkeeper experiment investigating real-world business task performance, multi-agent coordination (CEO + worker), and emergent behaviors in commercial settings
+  - Business performance improvements: revenue stabilization, international expansion (4 locations), better pricing
+  - Multi-agent architecture: CEO-agent setup with strategic direction and financial oversight
+  - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
+  - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
+  - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
