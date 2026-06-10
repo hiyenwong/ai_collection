@@ -1,172 +1,71 @@
 ---
-name: quiet-edge-centric-brain-synchronization
-description: "QUIET: Edge-centric framework for targeted brain network synchronization. Integrates structural controllability with functional connectivity to identify energy-efficient synchronization pathways. Identifies 'quiet highways' - edges that are structurally influential but functionally underutilized. Validated on HCP data showing salience network control energy correlates with fluid intelligence. Applied to dexmedetomidine sedation showing frontoparietal and default-mode networks require largest control energy."
-version: 1.0.0
-author: Hermes Agent
-license: MIT
+name: "quiet-edge-centric-brain-synchronization"
+description: "QUIET framework for edge-centric network control and targeted synchronization. Identifies structurally influential but functionally underutilized network edges (quiet highways) to optimize regional synchronization with minimal control energy. Use when: designing network control strategies, analyzing brain synchronization, computing control energy for state transitions, identifying influential edges in networks, or studying synchronization pathways in complex systems."
 metadata:
-  hermes:
-    tags: [brain-network, network-control, synchronization, edge-centric, structural-controllability, functional-connectivity, mutual-information, white-matter, salience-network, fluid-intelligence]
-    related_skills: [brain-network-controllability, network-control-theory]
-    arxiv_id: "2606.11091v1"
-    paper_title: "QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization"
-    paper_authors: "Sovesh Mohapatra, Christoffer G. Alexandersen, Panagiotis Fotiadis, Max B. Kelz, John A. Detre, Fabio Pasqualetti, Dani S. Bassett"
-    paper_date: "2026-06-09"
+  arxiv_id: "2606.11091"
+  published: "2026-06-09"
+  authors: "Sovesh Mohapatra, Christoffer G. Alexandersen, Panagiotis Fotiadis, Max B. Kelz, John A. Detre, Fabio Pasqualetti, Dani S. Bassett"
+  tags: [systems-engineering, network-control, synchronization, brain-networks, edge-centric, controllability]
 ---
 
-# QUIET: Edge-Centric Brain Network Synchronization Framework
+## Context
 
-## Overview
+QUIET (Quantifying Underutilized Influential Edges for Targeted Synchronization) is an edge-centric network control framework that integrates structural controllability of individual network connections with mutual information between pairwise functional timeseries to identify energy-efficient synchronization pathways. Published in eess.SY / q-bio.NC.
 
-Network control theory has traditionally used node-centric, structural approaches to model strategies for steering neural dynamics, focusing on achieving desired instantaneous states. QUIET introduces an **edge-centric framework** that incorporates both structure and function to achieve extended patterns of neural dynamics characterized by desired synchronization states.
+## Core Methodology
 
-## Core Innovation: Edge-Centric Approach
+### 1. Edge-Centric vs Node-Centric Control
 
-### Key Distinction from Traditional Methods
+Traditional network control is **node-centric** (focus on steering individual nodes to desired states). QUIET shifts to **edge-centric** — focusing on which *connections* (edges) to activate for efficient synchronization patterns.
 
-- **Traditional (Node-Centric)**: Focus on nodes, structural connectivity only, instantaneous state control
-- **QUIET (Edge-Centric)**: Focus on edges, integrates structure + function, extended synchronization patterns
+### 2. Quiet Highway Identification
 
-### Integration of Structural and Functional Information
+**Quiet highways** are edges that are:
+- **Structurally influential**: high controllability contribution based on network topology
+- **Functionally underutilized**: low mutual information in observed functional timeseries
 
-1. **Structural Controllability**: Individual white matter connections analyzed for control capacity
-2. **Functional Information**: Mutual information between pairwise functional timeseries
-3. **Combined Metric**: Edges ranked by both structural influence and functional utilization
+These edges represent untapped control pathways — structurally powerful but rarely used by the system's natural dynamics.
 
-## Methodology: Identifying "Quiet Highways"
+### 3. Control Energy Computation
 
-### Definition
+The framework computes minimum control energy required to achieve specific synchronization states:
 
-**Quiet highways** = edges that are:
-- **Structurally influential**: High control capacity in structural network
-- **Functionally underutilized**: Low mutual information in functional timeseries
+1. **Structural controllability** of each white matter / network connection
+2. **Mutual information** between pairwise functional timeseries
+3. **Edge ranking** = structural influence × (1 − functional utilization)
+4. **Optimal edge selection** minimizes control energy for target synchronization pattern
 
-### Algorithm Steps
+### 4. Validation Results
 
-1. **Structural Analysis**: Compute structural controllability metrics for each white matter edge
-2. **Functional Analysis**: Calculate mutual information between functional timeseries pairs
-3. **Edge Ranking**: Combine structural and functional metrics to identify quiet highways
-4. **Optimization**: Select edges for energy-efficient regional synchronization
+- Validated across 75 synthetic configurations
+- QUIET-ranked edge sets outperformed random selection in 93% of cases (p < 0.01)
+- Applied to Human Connectome Project: control energy for salience network synchronization correlates with fluid intelligence
+- Applied to dexmedetomidine-induced unresponsiveness: frontoparietal and default-mode networks showed largest control energy in both awake and sedated states
 
-## Validation and Results
+## Implementation Steps
 
-### Synthetic Validation (75 configurations)
+1. **Build structural network model** — define adjacency matrix with edge weights
+2. **Compute structural controllability** for each edge using Gramian-based metrics
+3. **Estimate pairwise mutual information** from functional timeseries data
+4. **Calculate quiet highway scores** = structural_score × (1 − MI_normalized)
+5. **Rank edges** by quiet highway score
+6. **Select top-k edges** for intervention
+7. **Compute control energy** for target synchronization pattern using selected edges
+8. **Validate** against random selection baselines
 
-- QUIET-ranked edge sets significantly outperformed random selection in **93% of cases**
-- Statistical significance: p < 0.01
+## Pitfalls
 
-### Human Connectome Project (HCP) Results
+- **Node-centric bias**: Traditional tools and literature assume node-centric control — edge-centric requires reformulating controllability metrics
+- **Mutual information estimation**: Requires sufficient timeseries length; short windows produce unreliable MI estimates
+- **Cross-domain applicability**: Originally designed for brain networks (white matter + fMRI), but applicable to any network with structural + functional layers (power grids, social networks, transportation)
+- **Software availability**: QUIET released as stand-alone software for studying theoretically-defined synchronization pathways
 
-**Key Finding**: Control energy required for synchronization of **salience network** correlates with **fluid intelligence**
+## Verification
 
-- Implication: Individual differences in cognitive ability reflected in network control properties
+- QUIET-ranked edges should significantly outperform random edge selection in control energy metrics
+- Energy for salience/default-mode network synchronization should correlate with behavioral measures (e.g., fluid intelligence)
+- In perturbative studies, activating quiet highways should produce measurable state changes with lower intervention strength
 
-### Dexmedetomidine Sedation Study
+## Activation
 
-**Application**: Healthy adults undergoing dexmedetomidine-induced unresponsiveness
-
-**Results**: 
-- **Frontoparietal network**: Largest control energy required for synchronization
-- **Default-mode network**: Largest control energy required for synchronization
-- **Pattern**: Consistent in both awake and sedated states
-
-## Implementation
-
-### Software Release
-
-QUIET released as **stand-alone software** for:
-- Studying theoretically-defined synchronization pathways
-- Informing testable hypotheses in perturbative studies
-- Integration with existing neuroimaging pipelines
-
-### Data Requirements
-
-1. **Structural Data**: White matter connectivity (DTI, tractography)
-2. **Functional Data**: fMRI timeseries
-3. **Optional**: Behavioral/cognitive measures for validation
-
-## Applications
-
-### 1. Cognitive Neuroscience
-
-- **Fluid Intelligence Prediction**: Salience network control energy as biomarker
-- **Individual Differences**: Network control properties correlate with cognitive abilities
-- **Development Studies**: Changes in quiet highways across lifespan
-
-### 2. Clinical Applications
-
-- **Anesthesia Monitoring**: Network-specific control energy changes under sedation
-- **Neuropsychiatric Disorders**: Altered quiet highways in disease states
-- **Brain Stimulation**: Target selection for therapeutic interventions
-
-### 3. Brain-Computer Interfaces
-
-- **Optimal Targeting**: Energy-efficient synchronization pathways
-- **Personalized Control**: Individual-specific edge selection
-- **Adaptive Interventions**: Dynamic quiet highway identification
-
-## Technical Framework
-
-### Mathematical Model
-
-**Control Energy** for synchronization:
-- Minimum energy input to achieve desired synchronization pattern
-- Edge-specific energy based on structural-functional integration
-- Optimization over subset of edges (quiet highways)
-
-### Computational Pipeline
-
-1. Load structural connectivity matrix (white matter edges)
-2. Compute functional connectivity (mutual information)
-3. Calculate structural controllability for each edge
-4. Identify quiet highways (high structural, low functional)
-5. Optimize control energy for target synchronization
-6. Validate against behavioral/cognitive measures
-
-## Key Insights
-
-### 1. Structure-Function Dissociation
-
-- Edges can be structurally influential but functionally quiet
-- Traditional node-centric methods miss this dissociation
-- Edge-centric approach reveals hidden control pathways
-
-### 2. Energy Efficiency Principle
-
-- Quiet highways provide **energy-efficient** synchronization routes
-- Less functional engagement → lower energy cost for control
-- Optimal for therapeutic interventions
-
-### 3. Network-Specific Patterns
-
-- **Salience network**: Intelligence-related control properties
-- **Frontoparietal/DMN**: Consciousness-related control energy
-- Network-specific quiet highway patterns
-
-## Future Directions
-
-### Research Extensions
-
-1. **Longitudinal Studies**: Track quiet highway changes over time
-2. **Multi-Modal Integration**: Add electrophysiology, molecular imaging
-3. **Causal Validation**: Test predictions with brain stimulation
-4. **Disease Models**: Apply to Alzheimer's, schizophrenia, depression
-
-### Methodological Advances
-
-1. **Dynamic QUIET**: Time-varying quiet highways
-2. **Multiscale QUIET**: Integration across spatial scales
-3. **Bayesian QUIET**: Uncertainty quantification in edge ranking
-4. **Deep Learning Integration**: Automated quiet highway detection
-
-## References
-
-- Original Paper: arXiv:2606.11091v1 (2026-06-09)
-- Network Control Theory: Pasqualetti et al., 2014
-- Structural Controllability: Liu et al., 2011
-- Mutual Information: Cover & Thomas, 2006
-- Salience Network: Seeley et al., 2007
-
-## Activation Keywords
-
-`quiet`, `edge-centric`, `brain synchronization`, `network control`, `structural controllability`, `quiet highways`, `white matter`, `mutual information`, `salience network`, `fluid intelligence`, `dexmedetomidine`, `control energy`, `functional connectivity`
+network control, edge-centric control, targeted synchronization, quiet highways, structural controllability, mutual information, control energy, brain synchronization, network steering, salience network, frontoparietal network, default-mode network, Human Connectome Project

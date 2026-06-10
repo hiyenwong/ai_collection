@@ -1,3 +1,14 @@
+# AI Collection Index
+
+## 2026-06-11 - Systems Engineering + Quantum (Cron Job)
+
+### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
+- [[quiet-edge-centric-brain-synchronization]] - Edge-centric network control framework identifying structurally influential but functionally underutilized edges (quiet highways) for energy-efficient synchronization (arXiv: 2606.11091)
+  - Edge-centric controllability: integrates structural controllability with mutual information to rank edges
+  - Quiet highway identification: structurally powerful but rarely-used edges as optimal intervention targets
+  - Validated on 75 synthetic configs (93% beat random, p<0.01); salience network control energy correlates with fluid intelligence
+  - **Activation**: network control, edge-centric control, targeted synchronization, quiet highways, structural controllability, control energy
+
 ## 2026-06-11 - Deep Learning Research (Cron Job)
 
 ### TRACE: Tree Rollout Allocation for Contrastive Exploration
