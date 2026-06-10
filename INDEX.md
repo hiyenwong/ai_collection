@@ -2,6 +2,21 @@
 
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models-fwbm]] - 统一建模范式整合结构真实性、动力学真实性与功能能力，四项最小标准+三支柱路线图 (arXiv: 2605.18118)
+  - 结构基础：经验连接组+区域生物学
+  - 动力学真实性：连续时间+兴奋抑制平衡
+  - 功能能力：跨认知域任务执行
+  - 可映射数据：fMRI/EEG/行为数据
+  - **Activation**: fWBMs, whole-brain modeling, neuroconnectionism, cognitive function, connectome
+
+### Recovering Sparse Neural Connectivity from Partial Measurements
+- [[sparse-neural-connectivity-recovery]] - 协方差方法+Granger因果精化，从部分测量恢复连接矩阵，Stein-Price identity揭示线性近似隐式正则化优势 (arXiv: 2603.18497)
+  - 协方差累积：跨session成对估计
+  - Granger精化：生物约束+投影梯度
+  - 控制-估计权衡：刺激vs动力学保真度
+  - **Activation**: neural connectivity, partial measurements, covariance method, Granger causality, Stein-Price identity
+
 ### Bilinear Gating of Motor Primitives: Dendritic Coincidence Detection
 - [[bilinear-gating-motor-primitives-dendritic-computation]] - Burst fraction编码目标信息，树突巧合检测实现双线性门控G(g)·Y(s)，RL Agent零样本泛化到新目标 (arXiv: 2606.10891)
   - Burst fraction selectivity：p<10^-12 across 12 sessions, 3 animals, 2 labs

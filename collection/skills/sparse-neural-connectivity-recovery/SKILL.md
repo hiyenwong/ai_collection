@@ -1,82 +1,75 @@
 ---
 name: sparse-neural-connectivity-recovery
-description: Covariance-based method with Granger-causality refinement for recovering sparse neural connectivity from partial measurements.
-version: 1.0.0
-author: Research Synthesis
-license: MIT
-metadata:
-  hermes:
-    tags: [connectivity-inference, granger-causality, sparse-recovery, neural-circuits, partial-observation, neuroscience]
-    source_paper: "Recovering Sparse Neural Connectivity from Partial Measurements: A Covariance-Based Approach with Granger-Causality Refinement (arXiv:2603.18497v1)"
+description: Covariance-based method with Granger-causality refinement for recovering sparse neural connectivity from partial measurements
+last_updated: 2026-06-11
+paper_id: arXiv:2603.18497
+paper_date: 2026-03-19
+authors: Quilee Simeon
+category: neuroscience
+tags: [neuroscience, connectivity-recovery, covariance-method, granger-causality, neural-circuits]
 ---
 
-# Sparse Neural Connectivity Recovery
+# Recovering Sparse Neural Connectivity from Partial Measurements
 
 ## Overview
-Inferring neural circuit connectivity from incomplete observations is a fundamental challenge in neuroscience. This approach combines covariance-based weight matrix estimation with Granger-causality refinement to recover sparse connectivity patterns even when only a subset of neurons are observable.
 
-## Core Concepts
+从稀疏、部分测量中恢复神经回路连接性的方法，使用协方差方法结合 Granger 因果精化。
 
-### Covariance-Based Estimation
-- Uses observed neural activity covariance to estimate connectivity
-- Handles partial observability through matrix completion techniques
-- Exploits sparsity of real neural circuits (most connections are zero)
+## Problem Statement
 
-### Granger-Causality Refinement
-- Granger causality tests directional influence between neurons
-- Refines covariance estimates by testing temporal precedence
-- Reduces false positives from indirect connections
+神经科学核心挑战：
+- 从不完整观察推断神经回路连接性
+- 不同 session 观察不同神经元子集
+- 无法同时记录所有神经元
 
-### Partial Measurement Handling
-- Works with subset of neurons observed
-- Uses low-rank structure of covariance for completion
-- Iterative refinement between observed and latent variables
+## Solution: Covariance-Based Method
 
-## Implementation Pattern
-```python
-from sklearn.covariance import GraphicalLasso
+### Core Algorithm
 
-class SparseConnectivityRecovery:
-    def __init__(self, n_observed, sparsity_lambda=0.1):
-        self.n_obs = n_observed
-        self.lambda_ = sparsity_lambda
-    
-    def covariance_estimate(self, neural_data):
-        model = GraphicalLasso(alpha=self.lambda_)
-        model.fit(neural_data)
-        W_init = -model.precision_
-        np.fill_diagonal(W_init, 0)
-        return W_init
-    
-    def granger_refinement(self, neural_data, W_init, max_lag=5):
-        n, T = neural_data.shape
-        W_refined = W_init.copy()
-        for i in range(n):
-            for j in range(n):
-                if i == j: continue
-                granger_score = self._granger_test(
-                    neural_data[j], neural_data[i], max_lag
-                )
-                if granger_score < 0.05:
-                    W_refined[i, j] *= 0
-        return W_refined
-    
-    def recover(self, neural_data):
-        W_init = self.covariance_estimate(neural_data)
-        return self.granger_refinement(neural_data, W_init)
-```
+**Phase 1: Covariance Accumulation**
+- 跨多个 session 累积成对协方差估计
+- 从部分观察重建完整连接矩阵
 
-## Applications
-- Neural circuit mapping from electrophysiology
-- Brain connectivity inference from fMRI/EEG
-- Computational connectomics
-- Neuroprosthetic interface design
+**Phase 2: Granger-Causality Refinement**
+- 使用 Granger 因果性施加生物约束
+- 投影梯度下降优化
 
-## Activation Keywords
-- neural connectivity inference, sparse connectivity recovery, Granger causality brain, partial observation neural, connectome estimation, 神经连接推断, 稀疏连接恢复
+## Key Discovery: Control-Estimation Tradeoff
+
+**控制-估计权衡**：
+- 刺激有助于可识别性 → 但破坏内在动力学
+- 最优刺激水平取决于测量密度
+
+## Surprising Result: Linear Approximation Advantage
+
+**Stein-Price Identity 关键发现**：
+- "错误"的线性近似作为隐式正则化
+- 在所有操作条件下优于 oracle estimator
+- 隐式正则化避免过拟合
+
+## Practical Applications
+
+- 神经疾病连接异常检测
+- 实验设计优化
+- 脑机接口连接分析
+
+## Implementation Workflow
+
+1. 数据收集（多 session 电生理）
+2. 协方差计算和累积
+3. 连接估计（最小二乘）
+4. Granger 精化（投影梯度）
+5. 验证和不确定性估计
+
+## Activation Triggers
+
+Use this skill when:
+- 从部分电生理记录恢复连接矩阵
+- 分析跨 session 神经数据
+- 设计刺激实验策略
+
+**Keywords**: neural connectivity, partial measurements, covariance method, Granger causality, Stein-Price identity
 
 ## References
-- Recovering Sparse Neural Connectivity from Partial Measurements: A Covariance-Based Approach with Granger-Causality Refinement
-- Authors: Quilee Simeon
-- Published: 2026-03-19
-- arXiv: https://arxiv.org/abs/2603.18497v1
+
+- Simeon (2026). arXiv:2603.18497
