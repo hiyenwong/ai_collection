@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-06-10 - Medicine + Quantum Computing (Cron Job)
+
+### Quantum medical image encoding and compression using Fourier-based methods
+- [[quantum-medical-image-encoding]] - Fourier-based quantum image encoding reduces gate requirements by 4x+ for medical imaging, validated on 1024x1024 surgical images from BABA robotic thyroidectomy (arXiv: 2505.06471)
+  - Frequency domain encoding instead of pixel-level reduces quantum circuit complexity
+  - Two compression techniques: frequency thresholding + pre-processing optimization
+  - Validated on high-resolution medical images with negligible quality loss (PSNR > 40, SSIM > 0.95)
+  - Scales favorably with image size for large-scale quantum medical imaging
+  - **Activation**: quantum medical imaging, quantum image encoding, QIMP, Fourier quantum encoding, medical image compression, quantum gate reduction, BABA surgery, quantum state preparation
+
+
 ## 2026-06-11 - Neuroscience Research (Cron Job)
 
 ### Predictable Mean-Field Chaos in Random Recurrent Networks
