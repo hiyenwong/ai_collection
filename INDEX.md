@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-10 - Neuroscience Research (Cron Job)
+
+### Bilinear Gating of Motor Primitives: Dendritic Coincidence Detection
+- [[bilinear-gating-motor-primitives-dendritic-computation]] - Burst fraction编码目标信息，树突巧合检测实现双线性门控G(g)·Y(s)，RL Agent零样本泛化到新目标 (arXiv: 2606.10891)
+  - Burst fraction selectivity：p<10^-12 across 12 sessions, 3 animals, 2 labs
+  - 双线性门控：目标信号(apical) × 状态信号(basal) → 神经元burst
+  - 树突巧合检测：Layer-5锥体神经元实现multiplicative gating
+  - **Activation**: bilinear gating, motor primitives, dendritic computation, burst fraction, goal-directed adaptation
+
+### Hyperbolic Neural Population Geometry Benefits Computation
+- [[hyperbolic-neural-population-geometry-computation]] - 海马体神经群体活动呈双曲几何，Modern Hopfield Network计算MMSE估计器，双曲联想记忆容量更大 (arXiv: 2606.10238, ICML 2026)
+  - Place field tuning curves统计学诱导双曲几何
+  - Hopfield Network = MMSE estimator (贝叶斯后验均值)
+  - 双曲联想记忆容量 > 欧几里得Hopfield Network
+  - **Activation**: hyperbolic geometry, neural population, hippocampus, associative memory, MMSE estimator
+
 ## 2026-06-10 - Medicine + Quantum Research (Cron Job)
 
 ### Quantum Computing for Accurate Large-Scale Electronic-Structure Calculations: DFT-Embedded QSCI
