@@ -1,246 +1,394 @@
 ---
 name: flow-matching-in-context-priors-brain-dynamics
-description: Flow matching with in-context priors for generating out-of-distribution fMRI brain dynamics, enabling zero-shot generation of unseen cognitive tasks
+description: Flow Matching with In-Context Priors for generating out-of-distribution brain dynamics (fMRI) for unseen cognitive tasks - counterfactual neuroscience framework
 version: 1.0.0
-author: Sam Gijsen, Michał Łukomski, Marc-André Schulz, Kerstin Ritter
-arxiv_id: 2606.11833v1
-published: 2026-06-10
-categories: [cs.LG, q-bio.NC]
-activation_keywords: [flow matching, brain dynamics, fMRI generation, counterfactual neuroscience, in-context priors, diffusion transformer, zero-shot]
-github: https://github.com/SamGijsen/pinc-flows
+category: neuroscience
+activation_keywords:
+  - flow matching
+  - brain dynamics
+  - fMRI generation
+  - counterfactual neuroscience
+  - in-context prior
+  - diffusion transformer
+  - zero-shot brain dynamics
+  - cognitive task prediction
+trigger_pattern: "Flow matching|brain dynamics|fMRI generation|counterfactual neuroscience|in-context prior|zero-shot cognitive task"
+authors:
+  - Sam Gijsen
+  - Michał Łukomski
+  - Marc-André Schulz
+  - Kerstin Ritter
+arxiv_id: 2606.11833
+published_date: 2026-06-10
 ---
 
 # Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
 
-## Overview
+**arXiv: 2606.11833** | Published: 2026-06-10 | Categories: cs.LG, q-bio.NC
 
-This methodology proposes a **per-timestep conditioned diffusion transformer** for generating realistic fMRI brain dynamics during **unseen cognitive tasks** by injecting both compositional language and optional spatial priors in-context. It enables **counterfactual neuroscience** by supporting in-silico design and evaluation of novel cognitive experiments before empirical validation.
+## Problem Statement
 
-**Key Innovation**: First generative model of whole-cortex fMRI dynamics for unseen cognitive tasks with zero-shot generalization.
+Generative models of neural time series have largely remained restricted to categorical conditioning, precluding:
+- **Compositional generalization**: Cannot combine multiple task conditions
+- **Zero-shot generalization**: Cannot generate for unseen cognitive tasks
+- **Counterfactual neuroscience**: Cannot support in-silico experimental design before empirical validation
 
-## Core Concepts
+Traditional approaches require categorical labels, preventing flexible task specification and novel experiment simulation.
 
-### 1. Per-Timestep Conditioned Diffusion Transformer
-Architecture combines:
-- **Diffusion transformer backbone**: Processes 4D fMRI signals
-- **Timestep conditioning**: Injects task-specific context at each diffusion step
-- **Multi-modal priors**: Language + optional spatial activation patterns
+## Core Innovation
 
-### 2. In-Context Prior Injection
-Two complementary pathways:
+**Per-timestep conditioned diffusion transformer** that generates realistic fMRI brain dynamics during **unseen cognitive tasks** by injecting:
+1. **Compositional language priors**: Natural language task descriptions in-context
+2. **Optional spatial priors**: Region-specific activation patterns when available
 
-#### Language Pathway
+This enables **zero-shot generation** of whole-cortex fMRI for novel cognitive experiments.
+
+## Methodology Framework
+
+### Architecture: Per-timestep Conditioned Diffusion Transformer
+
+```
+[Task Description (Language)] → [Language Encoder] → [Per-timestep Conditioning]
+                                        ↓
+[Optional Spatial Prior] → [Spatial Anchor] → [Cross-modal Fusion]
+                                        ↓
+                        [Diffusion Transformer Backbone]
+                                        ↓
+                    [Generated fMRI Dynamics (4D Time Series)]
+```
+
+### Key Technical Components
+
+#### 1. Compositional Language Conditioning
+- **Input**: Natural language task descriptions (e.g., "working memory task with emotional distraction")
+- **Encoding**: Language encoder maps task semantics to conditioning vectors
+- **Compositional**: Can combine multiple task aspects (cognitive load + emotional valence)
+- **Per-timestep**: Condition varies across diffusion steps for temporal dynamics
+
+#### 2. Spatial Prior Injection
+- **Optional**: When region-specific hypotheses exist, spatial priors anchor generation
+- **Complementary**: Anchors generation in regions where language alone degrades
+- **Retention**: Preserves compositional structure for counterfactual specification
+
+#### 3. Training Manifold Characterization
+- Evaluate across hundreds of held-out task conditions
+- Characterize predictive performance relative to training distribution
+- Recover region-specific recruitment patterns from language alone
+
+## Key Results
+
+### From Language Alone
+1. **Region-Specific Recruitment Recovery**: Accurate prediction of task-dependent regional activation
+2. **Held-Out Spatial Patterns**: Recover activation patterns for unseen spatial configurations
+3. **Compositional Generalization**: Combine task conditions not seen during training
+
+### Spatial Prior Benefits
+1. **Anchor in Degraded Regions**: Where language-only predictions fail
+2. **Retain Compositional Structure**: Enable counterfactual task specification
+3. **Complementary Pathways**: Language + spatial = better than either alone
+
+### Zero-Shot Task Generation
+- **First**: Whole-cortex fMRI dynamics for unseen cognitive tasks
+- **Counterfactual Capability**: In-silico experiment design and evaluation
+- **Data-Driven Experimental Design**: Optimize task parameters before validation
+
+## Implementation Guide
+
+### Step 1: Model Architecture Setup
+
 ```python
-def inject_language_prior(task_description, timestep):
+import torch
+import torch.nn as nn
+
+class InContextFlowMatching(nn.Module):
     """
-    Encode compositional task description
-    Inject into diffusion process at timestep t
-    """
-    # Encode task as compositional language
-    task_embedding = language_encoder(task_description)
+    Per-timestep conditioned diffusion transformer for fMRI generation.
     
-    # Condition diffusion step
-    conditioned_latent = diffusion_step(
-        latent_z_t,
-        condition=task_embedding,
-        timestep=timestep
-    )
-    return conditioned_latent
+    Args:
+        - language_encoder: Transformer encoder for task descriptions
+        - spatial_prior_encoder: Optional encoder for spatial activation patterns
+        - diffusion_transformer: DiT backbone for 4D fMRI generation
+        - num_voxels: Number of voxels in brain volume
+        - num_timepoints: Number of timepoints in fMRI sequence
+    """
+    def __init__(
+        self,
+        language_encoder,
+        spatial_prior_encoder=None,
+        diffusion_transformer,
+        num_voxels=50000,
+        num_timepoints=100
+    ):
+        super().__init__()
+        self.language_encoder = language_encoder
+        self.spatial_prior_encoder = spatial_prior_encoder
+        self.diffusion_transformer = diffusion_transformer
+        
+        # Conditioning projection
+        self.language_proj = nn.Linear(768, diffusion_transformer.hidden_dim)
+        self.spatial_proj = nn.Linear(num_voxels, diffusion_transformer.hidden_dim)
+        
+        # Cross-modal fusion
+        self.condition_fusion = nn.MultiheadAttention(
+            embed_dim=diffusion_transformer.hidden_dim,
+            num_heads=8
+        )
+    
+    def forward(
+        self,
+        task_description,
+        spatial_prior=None,
+        timestep,
+        noisy_fMRI
+    ):
+        """
+        Generate conditioned fMRI dynamics.
+        
+        Args:
+            - task_description: str or list of str (compositional)
+            - spatial_prior: optional tensor [batch, num_voxels]
+            - timestep: diffusion timestep [batch]
+            - noisy_fMRI: current noisy state [batch, num_voxels, num_timepoints]
+        
+        Returns:
+            - velocity_field: predicted velocity for flow matching
+        """
+        # Encode language condition
+        lang_embedding = self.language_encoder(task_description)
+        lang_condition = self.language_proj(lang_embedding)
+        
+        # Encode spatial prior if available
+        if spatial_prior is not None:
+            spatial_embedding = self.spatial_prior_encoder(spatial_prior)
+            spatial_condition = self.spatial_proj(spatial_embedding)
+            
+            # Cross-modal fusion
+            fused_condition = self.condition_fusion(
+                lang_condition, spatial_condition, spatial_condition
+            )[0]
+        else:
+            fused_condition = lang_condition
+        
+        # Per-timestep conditioning
+        timestep_embed = self.diffusion_transformer.time_embed(timestep)
+        condition = fused_condition + timestep_embed
+        
+        # Generate velocity field
+        velocity = self.diffusion_transformer(noisy_fMRI, condition)
+        
+        return velocity
 ```
 
-#### Spatial Prior Pathway (Optional)
+### Step 2: Training Pipeline
+
 ```python
-def inject_spatial_prior(activation_pattern, timestep):
+def train_incontext_flow(
+    model,
+    train_dataset,
+    task_vocab,
+    num_epochs=100,
+    batch_size=32
+):
     """
-    Anchor generation in specific brain regions
-    Complements language pathway where language degrades
-    """
-    # Encode spatial activation pattern
-    spatial_embedding = spatial_encoder(activation_pattern)
+    Train flow matching model with in-context priors.
     
-    # Combine with language pathway
-    combined_prior = combine(
-        language_prior,
-        spatial_prior,
-        weights=[0.6, 0.4]  # Adaptive weighting
-    )
-    return combined_prior
+    Key training considerations:
+    - Diverse task descriptions in training set
+    - Compositional task combinations
+    - Optional spatial priors from known activation patterns
+    """
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+    
+    for epoch in range(num_epochs):
+        for batch in train_dataset:
+            # Extract batch components
+            fMRI = batch['fMRI']  # [batch, voxels, timepoints]
+            task_desc = batch['task_description']  # str or compositional
+            spatial_prior = batch.get('spatial_prior', None)  # optional
+            
+            # Sample timestep
+            t = torch.rand(batch_size, device=fMRI.device)
+            
+            # Flow matching: interpolate between noise and data
+            noise = torch.randn_like(fMRI)
+            x_t = (1 - t.view(-1, 1, 1)) * noise + t.view(-1, 1, 1) * fMRI
+            
+            # Target velocity: data - noise
+            target_velocity = fMRI - noise
+            
+            # Predict velocity
+            pred_velocity = model(
+                task_description=task_desc,
+                spatial_prior=spatial_prior,
+                timestep=t,
+                noisy_fMRI=x_t
+            )
+            
+            # Flow matching loss
+            loss = F.mse_loss(pred_velocity, target_velocity)
+            
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
 ```
 
-### 3. Zero-Shot Generation Pipeline
-
-**Training Phase**:
-- Train diffusion transformer on known cognitive tasks
-- Learn joint manifold of task language + fMRI dynamics
-- Encode compositional task structure
-
-**Zero-Shot Generation Phase**:
-1. Specify novel task in compositional language
-2. Optionally provide spatial prior (if available)
-3. Generate fMRI dynamics for unseen task
-4. Validate against held-out task conditions
-
-## Implementation Architecture
-
-### Model Components
-
-```
-PINC-Flows Architecture:
-├── Language Encoder (Transformer)
-│   └── Compositional task description → Task embedding
-├── Spatial Encoder (optional)
-│   └── ROI activation patterns → Spatial prior
-├── Diffusion Transformer Backbone
-│   ├── Multi-head attention for temporal dependencies
-│   ├── Spatial attention for cortical connectivity
-│   └── Timestep conditioning module
-├── Renderer
-│   └── Latent space → 4D fMRI volumes
-```
-
-### Training Procedure
-
-1. **Data Collection**: fMRI time series from multiple cognitive tasks
-2. **Task Encoding**: Compositional language descriptions
-3. **Diffusion Training**: Learn denoising process conditioned on task embeddings
-4. **Multi-task Learning**: Joint training across task manifold
-
-### Inference Procedure
+### Step 3: Zero-Shot Generation for Novel Tasks
 
 ```python
 def generate_counterfactual_fMRI(
+    model,
     novel_task_description,
     spatial_prior=None,
-    num_steps=1000
+    num_steps=50,
+    num_samples=10
 ):
     """
-    Zero-shot generation for unseen cognitive task
+    Generate fMRI dynamics for unseen cognitive task.
+    
+    Args:
+        - novel_task_description: str describing new task (e.g., "dual n-back with auditory distraction")
+        - spatial_prior: optional hypothesis about region activation
+    
+    Returns:
+        - generated_fMRI: synthetic brain dynamics for novel task
     """
-    # Initialize latent
-    z_T = sample_noise(shape=[time, space])
+    # Initialize from noise
+    x = torch.randn(num_samples, num_voxels, num_timepoints)
     
-    # Iterative denoising with task conditioning
-    for t in reversed(range(num_steps)):
-        # Inject in-context priors
-        task_condition = encode_task(novel_task_description)
-        if spatial_prior:
-            task_condition = combine(task_condition, spatial_prior)
+    # Reverse flow (generate from noise to data)
+    for step in range(num_steps):
+        t = torch.ones(num_samples) * (step / num_steps)
         
-        # Diffusion step
-        z_t = denoise_step(
-            z_{t+1},
-            condition=task_condition,
-            timestep=t
+        # Predict velocity
+        velocity = model(
+            task_description=novel_task_description,
+            spatial_prior=spatial_prior,
+            timestep=t,
+            noisy_fMRI=x
         )
+        
+        # Euler step (or use more sophisticated ODE solver)
+        x = x + velocity * (1.0 / num_steps)
     
-    # Render to fMRI space
-    fMRI_dynamics = render(z_0)
-    return fMRI_dynamics
+    return x  # Generated fMRI for novel task
 ```
 
-## Key Findings
+### Step 4: Counterfactual Experiment Design
 
-### 1. Language-Only Generation
-From language descriptions alone, model recovers:
-- **Region-specific recruitment** across tasks
-- **Held-out spatial activation patterns**
-- **Compositional task structure**
-
-### 2. Spatial Prior Benefits
-Spatial priors complement language pathway:
-- Anchor generation where language alone degrades
-- Retain compositional structure for counterfactuals
-- Improve generation fidelity in specific ROIs
-
-### 3. Training Manifold Relationship
-Characterized predictive performance:
-- Near-manifold tasks: High fidelity generation
-- Far-from-manifold tasks: Graceful degradation
-- Counterfactual extrapolation: Maintains biological plausibility
+```python
+def design_counterfactual_experiment(
+    model,
+    base_task,
+    intervention_variations,
+    evaluation_metrics
+):
+    """
+    Design and evaluate novel cognitive experiments in-silico.
+    
+    Args:
+        - base_task: known task (e.g., "working memory")
+        - intervention_variations: list of interventions to test
+          (e.g., ["with emotional distraction", "with time pressure", "dual-task"])
+        - evaluation_metrics: what to measure (activation in specific regions)
+    
+    Returns:
+        - experiment_predictions: predicted outcomes for each intervention
+        - optimal_design: recommended experimental parameters
+    """
+    predictions = []
+    
+    for intervention in intervention_variations:
+        # Compositional task description
+        novel_task = f"{base_task} {intervention}"
+        
+        # Generate counterfactual fMRI
+        generated_fMRI = generate_counterfactual_fMRI(
+            model,
+            novel_task_description=novel_task
+        )
+        
+        # Evaluate metrics
+        metrics = {}
+        for region, roi in evaluation_metrics['regions'].items():
+            metrics[region] = generated_fMRI[:, roi, :].mean()
+        
+        predictions.append({
+            'intervention': intervention,
+            'fMRI': generated_fMRI,
+            'metrics': metrics
+        })
+    
+    # Rank interventions by predicted effect magnitude
+    optimal_design = select_optimal_intervention(predictions)
+    
+    return predictions, optimal_design
+```
 
 ## Applications
 
 ### 1. Counterfactual Neuroscience
-- Design novel cognitive experiments in-silico
-- Predict brain responses to unseen task combinations
-- Reduce cost of exploratory neuroscience studies
+- **Hypothesis Testing**: Generate predictions for novel task combinations before empirical validation
+- **Causal Inference**: Simulate interventions (e.g., "what if we added emotional distraction?")
+- **Theory Validation**: Compare generated dynamics with theoretical predictions
 
 ### 2. Data-Driven Experimental Design
-- Generate synthetic fMRI for hypothesis testing
-- Optimize task parameters before real experiments
-- Estimate expected activation patterns
+- **Parameter Optimization**: Find task parameters that maximize target region activation
+- **Efficiency**: Reduce wasted experiments by pre-screening in-silico
+- **Novel Paradigm Discovery**: Explore task combinations not previously considered
 
-### 3. Brain Dynamics Modeling
-- Test causal hypotheses about task-brain relationships
-- Model individual variability in task responses
-- Predict effects of task manipulations
+### 3. Clinical Translation
+- **Patient-Specific**: Generate dynamics for patient populations with specific conditions
+- **Treatment Simulation**: Predict brain dynamics under therapeutic interventions
+- **Personalized Protocols**: Design optimal cognitive training protocols
 
-### 4. Foundation Model Enhancement
-- Use generated data for fMRI foundation model training
-- Augment scarce neuroimaging datasets
-- Enable multi-task pre-training
+## Technical Pitfalls
 
-## Experimental Validation
+### ⚠️ Language Conditioning Limitations
+- **Issue**: Language alone may not capture fine-grained spatial patterns
+- **Solution**: Combine with spatial priors when hypothesis-driven
+- **Mitigation**: Characterize degradation regions to know when to use spatial anchors
 
-### Dataset
-- Hundreds of held-out task conditions
-- Whole-cortex fMRI dynamics
-- Compositional task descriptions
+### ⚠️ Out-of-Distribution Challenges
+- **Issue**: Performance degrades for tasks far from training manifold
+- **Mitigation**: Quantify distance from training distribution
+- **Validation**: Compare with held-out task conditions during training
 
-### Metrics
-- Spatial activation pattern recovery
-- Region-specific recruitment accuracy
-- Biological plausibility measures
+### ⚠️ Temporal Dynamics Accuracy
+- **Issue**: Generated temporal patterns may lack precise temporal structure
+- **Solution**: Use per-timestep conditioning for temporal variation
+- **Validation**: Compare generated vs. real temporal autocorrelation
 
-### Results
-- Language pathway alone recovers spatial patterns
-- Spatial priors enhance regions where language degrades
-- Compositional structure preserved for counterfactuals
-
-## Limitations & Considerations
-
-1. **Language Prior Quality**: Depends on task description precision
-2. **Spatial Prior Availability**: Optional but beneficial for specific ROIs
-3. **Training Manifold Coverage**: Limited by training task diversity
-4. **Biological Validation**: Generated dynamics need empirical verification
-
-## Future Directions
-
-1. Extend to **resting-state** fMRI generation
-2. Add **temporal prior** pathway (sequence predictions)
-3. Combine with **clinical** datasets (patient populations)
-4. Develop **task optimizer** using generated feedback
+### ⚠️ Compositional Generalization Limits
+- **Issue**: Composing unfamiliar task aspects may fail
+- **Mitigation**: Train on diverse compositional combinations
+- **Validation**: Test systematically on compositional splits
 
 ## Related Work
 
-This advances beyond:
-- **Categorical conditioning**: Traditional diffusion models
-- **Task-specific models**: No zero-shot capability
-- **Static generation**: Missing temporal dynamics
-
-## Implementation Details
-
-### Hyperparameters
-- Diffusion steps: 1000
-- Backbone: Diffusion Transformer
-- Conditioning: Per-timestep injection
-- Training: Multi-task joint learning
-
-### Code Availability
-- GitHub: https://github.com/SamGijsen/pinc-flows
-- Pretrained models included
-- Zero-shot generation scripts
+- **Brain Dynamics Models**: Brain-DiT, Brain-OF, NeuroSTORM
+- **Flow Matching**: Continuous-time generative modeling
+- **Diffusion Transformers**: DiT, stable diffusion architectures
+- **Counterfactual Neuroscience**: In-silico brain simulation
 
 ## References
 
-- arXiv: 2606.11833v1
-- Authors: Sam Gijsen, Michał Łukomski, Marc-André Schulz, Kerstin Ritter
-- Published: 2026-06-10
-- Code: https://github.com/SamGijsen/pinc-flows
+1. Gijsen et al. (2026). "Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics"
+2. Brain-DiT: Universal multi-state fMRI foundation model
+3. Flow matching theory: Lipman et al. (2023)
+4. Diffusion transformers: Peebles & Xie (2023)
 
-## Related Skills
+## Code Availability
 
-- [[brain-dit-fmri-foundation-model]]
-- [[flow-matching-neural-dynamics]]
-- [[generative-brain-dynamics-models]]
-- [[counterfactual-brain-dynamics]]
+- GitHub: https://github.com/SamGijsen/pinc-flows
+- Pretrained models available
+
+## Citation
+
+```bibtex
+@article{gijsen2026flowmatching,
+  title={Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics},
+  author={Gijsen, Sam and Łukomski, Michał and Schulz, Marc-André and Ritter, Kerstin},
+  journal={arXiv preprint arXiv:2606.11833},
+  year={2026}
+}
+```
