@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-11 - Neuroscience Research (Cron Job - Flow Matching & Resolution Agnostic)
+
+### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
+- [[flow-matching-in-context-priors-brain-dynamics]] - Per-timestep conditioned diffusion transformer for generating realistic fMRI brain dynamics during unseen cognitive tasks, enabling counterfactual neuroscience and in-silico experimental design (arXiv: 2606.11833)
+  - 首个零样本生成未见认知任务的fMRI脑动力学模型
+  - 语言引导 + 空间先验双路径条件机制
+  - 支持组合式任务描述和反事实实验设计
+  - 在数百个未见任务条件上验证预测性能
+  - **Activation**: flow matching, in-context prior, brain dynamics, zero-shot fMRI, counterfactual neuroscience, task-conditioned generation, spatial prior, language-guided
+
+### FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI
+- [[flexibrain-resolution-agnostic-fmri-encoding]] - Resolution-agnostic voxel-level encoding framework based on Mamba-JEPA, bypassing destructive spatial standardization, achieving up to 12 percentage point gains without preprocessing (arXiv: 2606.11500)
+  - 首个分辨率无关的fMRI voxel级编码框架
+  - 物理单位patch定义机制(3mm物理空间)
+  - 动态patch调整自适应不同分辨率
+  - 大幅降低预处理成本(Native数据直接处理)
+  - **Activation**: resolution agnostic, native fMRI, Mamba-JEPA, dynamic patch, physical units, voxel encoding, preprocessing reduction
+
 ## 2026-06-10 - Neuroscience Research (Cron Job)
 
 ### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
