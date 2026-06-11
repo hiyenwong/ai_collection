@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - SNN Transformer)
+
+### SpikeDecoder: Realizing the GPT Architecture with Spiking Neural Networks
+- [[spikedecoder-snn-gpt-architecture]] - 首个全SNN实现Transformer decoder用于NLP，87-93%能耗降低，直接可训练无需ANN转换，系统化分析block替换trade-offs (arXiv: 2606.12287)
+  - Block-by-block分析：ANN→SNN替换的性能损失源
+  - 残差连接优化：SNN架构中的关键作用研究
+  - 文本-脉冲嵌入：多种投影方法对比
+  - 归一化技术：SNN兼容方法选择
+  - **Activation**: spiking transformer, SNN decoder, energy-efficient NLP, neuromorphic language model, GPT SNN, spike embedding, direct SNN training
+
 ## 2026-06-11 - Neuroscience Research (Cron Job - Flow Matching & Resolution Agnostic)
 
 ### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
