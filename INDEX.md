@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-12 - Number Theory, Statistics, Math + Quantum (Cron Job)
+
+### Quantum Optimization Algorithms for Strongly Correlated Many-Body Systems
+- [[quantum-optimization-landscape-analysis]] - Landscape analysis of VQE/QAOA vs feedback-guided methods (FALQON) for NISQ-era strongly correlated systems, identifying barren plateau failure modes and physics-informed co-design (arXiv: 2606.03147)
+  - Two barren plateau modes: expressibility-induced vs noise-induced — require different mitigation strategies
+  - Feedback-guided methods (FALQON) provide gradient-free optimization with robust energy landscape navigation
+  - Physics-informed circuit co-design: encode symmetries in ansatz, use physical intuition for initialization
+  - Application domains: deconfined quantum criticality, strange metals, many-body localization, topological phases
+  - **Activation**: quantum optimization, VQE, QAOA, barren plateau, FALQON, feedback quantum algorithm, strongly correlated systems, many-body physics, phase transitions
+
+### Unification of Observational Entropy with Maximum Entropy Principles
+- [[observational-entropy-maximum-entropy-unification]] - Unified coarse-grained entropy definition combining measurement-based (observational) and max-entropy (Jaynes) approaches, resolving pathologies in infinite dimensions and deriving new entropy increase theorems (arXiv: 2503.15612)
+  - Unified definition: physical constraints = information theoretic priors
+  - Resolves observational entropy pathologies in infinite-dimensional systems
+  - New entropy increase theorems connecting to thermodynamic second laws
+  - Dynamics validated in quantum random matrix model and classical hard sphere gas
+  - **Activation**: observational entropy, maximum entropy, coarse-graining, thermodynamics, entropy increase, statistical mechanics, Jaynes entropy
+
 ## 2026-06-12 - Neuroscience Research (Cron Job)
 
 ### Beyond Representational Alignment with Brain-Guided Language Models for Robust Reasoning
