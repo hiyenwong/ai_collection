@@ -2572,3 +2572,29 @@
   - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
   - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
   - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job + Daily Quantum)
+
+### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning (arXiv: 2606.12211)
+- [[quantum-occam-learning]] (existing) - Information-theoretic Occam theory for quantum circuit learning: M samples support G ~ M*eps^2 gates, adaptive model selection for circuit complexity
+  - Realizable sample law O(G/eps^2) in circuit-limited regime
+  - Agnostic quantum Occam theorem with best G-gate approximation error plus statistical penalty O(sqrt(G/M))
+  - **Activation**: quantum occam learning, quantum generalization bounds, quantum ansatz design, quantum sample complexity, quantum overfitting, 量子奥卡姆学习
+
+### Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization (arXiv: 2606.10179)
+- [[trainability-iqp-born-machines]] (existing) - Gradient variance lower bounds and concentration analysis for IQP QCBMs under Gaussian initialization
+  - Stein's lemma + Lipschitz concentration bounds for Gaussian random variables
+  - Strategies to avoid/encourage exponential concentration, barren plateau conditions
+  - **Activation**: IQP circuit, Born machine, QCBM trainability, barren plateau, gradient concentration, Gaussian initialization, Stein's lemma
+
+### An Algorithm for Dynamical Quantum Optimal Transport with Applications to Quantum Chemistry (arXiv: 2606.10075)
+- [[dynamical-quantum-optimal-transport]] - Interior-point regularized method for computing geodesics between PSD matrices using Benamou-Brenier QOT formulation
+  - Numerical convergence as matrix size increases, visualization via integral kernels
+  - Approximation of quantum chemistry problems with appropriate parameter tuning
+  - **Activation**: quantum optimal transport, dynamical QOT, Benamou-Brenier, quantum chemistry optimal transport, density matrix geodesic, interior-point quantum transport
+
+### Weighted Partitions with Interval Restrictions: Exact Formulas and a Bivariate Master Identity (arXiv: 2606.11011)
+- [[weighted-partitions-interval-restrictions]] - Exact formulas for interval-restricted partition functions via bivariate master identity with Rogers-Fine evaluation
+  - Master identity: (1+q²)B(z,q)-(1+q)A(z,q) = -q⁴/(1-q³) with auxiliary variable z
+  - Coefficient range for b₂''(n) proven to be {-1, 0, 1, 2}
+  - Quantum modular interpretation of false theta formulas
+  - **Activation**: weighted partitions, interval restrictions, bivariate master identity, Rogers-Fine evaluation, false theta partition, Andrews El Bachraoui, partition coefficient bounds
