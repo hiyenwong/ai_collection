@@ -1,6 +1,15 @@
 # AI Collection Index
 
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 3)
+
+### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
+- [[functional-whole-brain-models]] - 整合自底向上全脑建模与自顶向下神经连接主义的统一范式，提出fWBM四大准则：结构奠基、动力学真实性、功能胜任性、可映射可观测性 (arXiv: 2605.18118)
+  - 四项最小准则：结构奠基（经验连接组）、连续时间动力学真实性、认知功能胜任性、可观测映射
+  - 三支柱路线图：短期任务特异性 → 中期多域 → 长期全尺度个性化模型
+  - 科学与临床应用：跨尺度假设验证、虚拟实验、刺激规划、预后建模
+  - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, connectome-based modeling, brain structure dynamics, cognitive brain models, personalized brain model
+
 ## 2026-06-12 - Number Theory, Statistics, Mathematics + Quantum (Cron Job - Friday)
 
 ### The Score Hamiltonian: Mapping Diffusion Models to Adiabatic Transport
