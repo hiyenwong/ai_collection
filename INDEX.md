@@ -18,6 +18,14 @@
   - Dynamics validated in quantum random matrix model and classical hard sphere gas
   - **Activation**: observational entropy, maximum entropy, coarse-graining, thermodynamics, entropy increase, statistical mechanics, Jaynes entropy
 
+### Qubit vs Qudit Encodings for Quantum Optimization
+- [[qudit-encoding-quantum-optimization]] - Qudit encoding methodology achieving exponential Hilbert space reduction vs binary qubit encoding for integer optimization, with qudit-native QAOA matching or exceeding binary performance on constrained scheduling problems (arXiv: 2605.10255)
+  - Hilbert space reduction: d^n exact vs 2^ceil(log2(d)) with invalid states
+  - Qudit-native QAOA: generalized Gell-Mann matrices as mixers, multi-angle optimization
+  - Native constraint handling: no penalty terms for domain constraints
+  - Hardware considerations: trapped ions/photonics required, tradeoff between fewer units vs harder gates
+  - **Activation**: qudit encoding, quantum integer optimization, qudit QAOA, multi-valued quantum, Hilbert space reduction, scheduling optimization
+
 ## 2026-06-12 - Neuroscience Research (Cron Job)
 
 ### Beyond Representational Alignment with Brain-Guided Language Models for Robust Reasoning
