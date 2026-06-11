@@ -1,5 +1,21 @@
 # AI Collection Index
 
+
+## 2026-06-12 - Number Theory, Statistics, Mathematics + Quantum (Cron Job - Friday)
+
+### The Score Hamiltonian: Mapping Diffusion Models to Adiabatic Transport
+- [[score-hamiltonian-diffusion-transport]] - 建立基于分数的扩散模型采样与薛定谔算子族绝热基态传输之间的精确数学对应，提供密度重构界和量子势方法 (arXiv: 2606.05217)
+  - 扩散采样 ↔ 绝热基态传输精确对应
+  - 量子势由分数函数构造: V(x) = ¼|s(x)|² - ½∇·s(x)
+  - 谱隙分析可优化退火调度，提升扩散采样质量
+  - **Activation**: score hamiltonian, diffusion adiabatic mapping, quantum potential, density reconstruction, ground state transport, adiabatic quantum computing, score-based generative model
+
+### Intrinsic Locality Dimension of Quantum Codes
+- [[intrinsic-locality-dimension-quantum-codes]] - 稳定子量子纠错码的内禀局部维度，不依赖背景几何定义码的局部性，提供物理实现所需空间维度的下界 (arXiv: 2605.31441)
+  - ILD(S) = 稳定子群存在d局部生成集的最小d
+  - 在局部Clifford变换下不变，尊重码等价性
+  - 自然纳入折叠/展开等价关系
+  - **Activation**: intrinsic locality dimension, quantum code locality, stabilizer code geometry, QEC code embedding, quantum error correction locality, code distance scaling
 ## 2026-06-12 - Neuroscience Research (Cron Job) - Session 2
 
 ### Large Language Models Selectively Converge with Human-Shared Neural Semantic Representations
