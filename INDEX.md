@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job)
+
+### Updating the Standard Neuron Model in Artificial Neural Networks
+- [[updated-neuron-model-ann]] - 替换1950年代点神经元模型为现代皮质细胞模型，不增加参数前提下提升表达力、鲁棒性、学习速度，减少记忆化 (arXiv: 2605.30370)
+  - 从神经科学进展推导更合理的神经元架构
+  - 五大优势：expressivity, robustness, learning speed, memorization reduction, lower data needs
+  - 首次系统性将生物学精度融入ANN基础架构
+  - **Activation**: neuron-model, cortical-cells, biological realism, ANN architecture, expressivity, robustness
+
+### Growing a Neural Network in Breadth, Depth, and Time
+- [[growing-neural-network-breadth-depth-time]] - 可微分成本框架联合优化网络宽度/深度/时间维度，有机生长架构匹配任务复杂度，模型时间与人类反应时间相关 (arXiv: 2605.25174)
+  - 三维资源：Breadth (宽度), Depth (层级), Time (循环步数)
+  - 软门控机制实现可微分架构优化
+  - 任务复杂度自动驱动架构生长
+  - **Activation**: neural growth, breadth depth time, resource constraints, bio-inspired architecture, recurrent convolution, lattice model
+
 ## 2026-06-12 - Number Theory, Statistics, Math + Quantum (Cron Job)
 
 ### Quantum Optimization Algorithms for Strongly Correlated Many-Body Systems
