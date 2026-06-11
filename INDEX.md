@@ -2626,3 +2626,11 @@
   - Coefficient range for b₂''(n) proven to be {-1, 0, 1, 2}
   - Quantum modular interpretation of false theta formulas
   - **Activation**: weighted partitions, interval restrictions, bivariate master identity, Rogers-Fine evaluation, false theta partition, Andrews El Bachraoui, partition coefficient bounds
+
+### Phase Transitions in Attention: A Bayesian Theory of Copy Head Emergence (arXiv: 2606.12058)
+- [[phase-transition-attention-bayesian]] - Bayesian theory deriving closed-form posterior over attention matrices, revealing first-order phase transitions in copy head emergence (arXiv: 2606.12058)
+  - First-order phase transition for softmax attention: copy head abruptly switches on at critical data threshold
+  - Linear attention exhibits second-order transition followed by smooth crossover
+  - Reduces attention learning to low-dimensional order parameter space
+  - Explains grokking-like sudden emergence of in-context learning capabilities
+  - **Activation**: attention phase transition, bayesian attention theory, copy head emergence, softmax attention, linear attention, first-order phase transition, transformer training dynamics
