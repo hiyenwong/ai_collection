@@ -1,146 +1,246 @@
 ---
 name: flow-matching-in-context-priors-brain-dynamics
-description: "Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics — per-timestep conditioned diffusion transformer for generating realistic fMRI brain dynamics during unseen cognitive tasks. Activation: flow matching, fMRI generation, counterfactual neuroscience, brain dynamics, diffusion transformer, in-context prior."
-category: neuroscience
+description: Flow matching with in-context priors for generating out-of-distribution fMRI brain dynamics, enabling zero-shot generation of unseen cognitive tasks
+version: 1.0.0
+author: Sam Gijsen, Michał Łukomski, Marc-André Schulz, Kerstin Ritter
+arxiv_id: 2606.11833v1
+published: 2026-06-10
+categories: [cs.LG, q-bio.NC]
+activation_keywords: [flow matching, brain dynamics, fMRI generation, counterfactual neuroscience, in-context priors, diffusion transformer, zero-shot]
+github: https://github.com/SamGijsen/pinc-flows
 ---
 
-## Context
+# Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
 
-arXiv:2606.11833 - Flow matching and diffusion models enable conditional generation across domains, but generative models of neural time series have remained restricted to categorical conditioning, precluding compositional and zero-shot generalization. This paper proposes a per-timestep conditioned diffusion transformer for generating realistic fMRI brain dynamics during unseen cognitive tasks by injecting compositional language and optional spatial priors in-context.
+## Overview
 
-**Key Innovation**: Zero-shot generation of whole-cortex fMRI dynamics for unseen cognitive tasks, enabling counterfactual neuroscience and in-silico experimental design before empirical validation.
+This methodology proposes a **per-timestep conditioned diffusion transformer** for generating realistic fMRI brain dynamics during **unseen cognitive tasks** by injecting both compositional language and optional spatial priors in-context. It enables **counterfactual neuroscience** by supporting in-silico design and evaluation of novel cognitive experiments before empirical validation.
 
-**Methodology Score**: 10/10 (theoretical framework + practical implementation + compositional generalization)
+**Key Innovation**: First generative model of whole-cortex fMRI dynamics for unseen cognitive tasks with zero-shot generalization.
 
-## Core Methodology
+## Core Concepts
 
 ### 1. Per-Timestep Conditioned Diffusion Transformer
-
-**Architecture**: Diffusion transformer that conditions on both compositional language descriptions and optional spatial priors at each timestep, enabling:
-- Compositional task specification (e.g., "visual task with attention modulation")
-- Zero-shot generalization to unseen task combinations
-- Counterfactual brain dynamics generation
-
-**Key Components**:
-```python
-# Conceptual architecture (not actual code from paper)
-class FlowMatchingBrainDynamics:
-    def __init__(self):
-        self.language_encoder = LanguageEncoder()  # encode task descriptions
-        self.spatial_prior_module = SpatialPriorModule()  # optional spatial masks
-        self.diffusion_transformer = DiffusionTransformer()  # fMRI generation
-    
-    def generate(self, task_description, spatial_prior=None):
-        # Per-timestep conditioning
-        language_embedding = self.language_encoder(task_description)
-        if spatial_prior:
-            spatial_embedding = self.spatial_prior_module(spatial_prior)
-            conditioning = concatenate(language_embedding, spatial_embedding)
-        else:
-            conditioning = language_embedding
-        
-        # Flow matching generation
-        fMRI_timeseries = self.diffusion_transformer.generate(conditioning)
-        return fMRI_timeseries
-```
+Architecture combines:
+- **Diffusion transformer backbone**: Processes 4D fMRI signals
+- **Timestep conditioning**: Injects task-specific context at each diffusion step
+- **Multi-modal priors**: Language + optional spatial activation patterns
 
 ### 2. In-Context Prior Injection
+Two complementary pathways:
 
-**Language Pathway**: Compositional task descriptions injected as in-context priors enable:
-- Recovery of region-specific recruitment across tasks
-- Generation of held-out spatial activation patterns
-- Compositional structure retention for counterfactual specification
+#### Language Pathway
+```python
+def inject_language_prior(task_description, timestep):
+    """
+    Encode compositional task description
+    Inject into diffusion process at timestep t
+    """
+    # Encode task as compositional language
+    task_embedding = language_encoder(task_description)
+    
+    # Condition diffusion step
+    conditioned_latent = diffusion_step(
+        latent_z_t,
+        condition=task_embedding,
+        timestep=timestep
+    )
+    return conditioned_latent
+```
 
-**Spatial Prior Pathway** (optional):
-- Anchors generation in regions where language alone degrades
-- Complements text pathway for improved accuracy
-- Maintains compositional flexibility
+#### Spatial Prior Pathway (Optional)
+```python
+def inject_spatial_prior(activation_pattern, timestep):
+    """
+    Anchor generation in specific brain regions
+    Complements language pathway where language degrades
+    """
+    # Encode spatial activation pattern
+    spatial_embedding = spatial_encoder(activation_pattern)
+    
+    # Combine with language pathway
+    combined_prior = combine(
+        language_prior,
+        spatial_prior,
+        weights=[0.6, 0.4]  # Adaptive weighting
+    )
+    return combined_prior
+```
 
-### 3. Zero-Shot Evaluation Framework
+### 3. Zero-Shot Generation Pipeline
 
-**Training Manifold Characterization**: 
-- Evaluate across hundreds of held-out task conditions
-- Characterize predictive performance relative to training manifold
-- Measure region-specific recruitment accuracy
+**Training Phase**:
+- Train diffusion transformer on known cognitive tasks
+- Learn joint manifold of task language + fMRI dynamics
+- Encode compositional task structure
 
-**Counterfactual Neuroscience Applications**:
-- In-silico design of novel cognitive experiments
-- Evaluation before empirical validation
-- Hypothesis testing via generated brain dynamics
+**Zero-Shot Generation Phase**:
+1. Specify novel task in compositional language
+2. Optionally provide spatial prior (if available)
+3. Generate fMRI dynamics for unseen task
+4. Validate against held-out task conditions
 
-### 4. Flow Matching for fMRI
+## Implementation Architecture
 
-**Advantages over Categorical Conditioning**:
-- Compositional generalization (combine task features)
-- Zero-shot unseen task generation
-- Flexible counterfactual specification
+### Model Components
 
-**Technical Implementation**:
-- 4D fMRI signal modeling (whole-cortex dynamics)
-- Conditional generation across task conditions
-- Integration with existing fMRI preprocessing pipelines
+```
+PINC-Flows Architecture:
+├── Language Encoder (Transformer)
+│   └── Compositional task description → Task embedding
+├── Spatial Encoder (optional)
+│   └── ROI activation patterns → Spatial prior
+├── Diffusion Transformer Backbone
+│   ├── Multi-head attention for temporal dependencies
+│   ├── Spatial attention for cortical connectivity
+│   └── Timestep conditioning module
+├── Renderer
+│   └── Latent space → 4D fMRI volumes
+```
 
-## Implementation Steps
+### Training Procedure
 
-1. **Model Setup**:
-   - Initialize per-timestep conditioned diffusion transformer
-   - Configure language encoder for task descriptions
-   - Set up optional spatial prior module
+1. **Data Collection**: fMRI time series from multiple cognitive tasks
+2. **Task Encoding**: Compositional language descriptions
+3. **Diffusion Training**: Learn denoising process conditioned on task embeddings
+4. **Multi-task Learning**: Joint training across task manifold
 
-2. **Training**:
-   - Train on multi-task fMRI datasets (HCP, etc.)
-   - Condition on task descriptions + optional spatial priors
-   - Optimize flow matching objective
+### Inference Procedure
 
-3. **Zero-Shot Generation**:
-   - Specify compositional task descriptions
-   - Generate fMRI dynamics for unseen task combinations
-   - Evaluate region-specific activation patterns
+```python
+def generate_counterfactual_fMRI(
+    novel_task_description,
+    spatial_prior=None,
+    num_steps=1000
+):
+    """
+    Zero-shot generation for unseen cognitive task
+    """
+    # Initialize latent
+    z_T = sample_noise(shape=[time, space])
+    
+    # Iterative denoising with task conditioning
+    for t in reversed(range(num_steps)):
+        # Inject in-context priors
+        task_condition = encode_task(novel_task_description)
+        if spatial_prior:
+            task_condition = combine(task_condition, spatial_prior)
+        
+        # Diffusion step
+        z_t = denoise_step(
+            z_{t+1},
+            condition=task_condition,
+            timestep=t
+        )
+    
+    # Render to fMRI space
+    fMRI_dynamics = render(z_0)
+    return fMRI_dynamics
+```
 
-4. **Counterfactual Analysis**:
-   - Design novel cognitive experiments in-silico
-   - Generate predicted brain dynamics
-   - Validate against empirical data (if available)
+## Key Findings
 
-## Key Results
+### 1. Language-Only Generation
+From language descriptions alone, model recovers:
+- **Region-specific recruitment** across tasks
+- **Held-out spatial activation patterns**
+- **Compositional task structure**
 
-- **Region-Specific Recruitment**: Language alone recovers region-specific recruitment across tasks
-- **Spatial Activation Patterns**: Held-out spatial patterns generated with high fidelity
-- **Compositional Generalization**: Unseen task combinations generated zero-shot
-- **Spatial Prior Complementarity**: Anchors generation where language degrades, retaining compositional structure
+### 2. Spatial Prior Benefits
+Spatial priors complement language pathway:
+- Anchor generation where language alone degrades
+- Retain compositional structure for counterfactuals
+- Improve generation fidelity in specific ROIs
 
-## Pitfalls
-
-1. **Language Prior Limitations**: Language alone may degrade in certain task regions; spatial priors needed for anchoring
-2. **Training Manifold Coverage**: Zero-shot performance depends on training task diversity
-3. **Spatial Prior Availability**: Optional spatial priors require additional data/processing
-4. **fMRI Preprocessing**: Generated dynamics still require standard preprocessing for downstream tasks
-5. **Counterfactual Validation**: In-silico predictions need empirical validation for reliability
-
-## Verification
-
-1. **Region Recruitment Accuracy**: Compare generated region-specific recruitment against held-out empirical data
-2. **Spatial Pattern Correlation**: Measure correlation between generated and actual spatial activation patterns
-3. **Compositional Consistency**: Verify compositional task combinations produce coherent dynamics
-4. **Training Manifold Mapping**: Characterize predictive performance relative to training manifold coverage
-
-## Activation Keywords
-
-flow matching, fMRI generation, brain dynamics, counterfactual neuroscience, diffusion transformer, in-context prior, zero-shot generation, compositional task, spatial prior, whole-cortex dynamics, neural time series, cognitive task generation, in-silico experiment
+### 3. Training Manifold Relationship
+Characterized predictive performance:
+- Near-manifold tasks: High fidelity generation
+- Far-from-manifold tasks: Graceful degradation
+- Counterfactual extrapolation: Maintains biological plausibility
 
 ## Applications
 
-- Counterfactual neuroscience (hypothesis testing before empirical validation)
-- In-silico cognitive experiment design
-- fMRI foundation model development
-- Brain dynamics prediction for novel tasks
-- Multi-task fMRI data augmentation
-- Neuroscience hypothesis exploration
+### 1. Counterfactual Neuroscience
+- Design novel cognitive experiments in-silico
+- Predict brain responses to unseen task combinations
+- Reduce cost of exploratory neuroscience studies
+
+### 2. Data-Driven Experimental Design
+- Generate synthetic fMRI for hypothesis testing
+- Optimize task parameters before real experiments
+- Estimate expected activation patterns
+
+### 3. Brain Dynamics Modeling
+- Test causal hypotheses about task-brain relationships
+- Model individual variability in task responses
+- Predict effects of task manipulations
+
+### 4. Foundation Model Enhancement
+- Use generated data for fMRI foundation model training
+- Augment scarce neuroimaging datasets
+- Enable multi-task pre-training
+
+## Experimental Validation
+
+### Dataset
+- Hundreds of held-out task conditions
+- Whole-cortex fMRI dynamics
+- Compositional task descriptions
+
+### Metrics
+- Spatial activation pattern recovery
+- Region-specific recruitment accuracy
+- Biological plausibility measures
+
+### Results
+- Language pathway alone recovers spatial patterns
+- Spatial priors enhance regions where language degrades
+- Compositional structure preserved for counterfactuals
+
+## Limitations & Considerations
+
+1. **Language Prior Quality**: Depends on task description precision
+2. **Spatial Prior Availability**: Optional but beneficial for specific ROIs
+3. **Training Manifold Coverage**: Limited by training task diversity
+4. **Biological Validation**: Generated dynamics need empirical verification
+
+## Future Directions
+
+1. Extend to **resting-state** fMRI generation
+2. Add **temporal prior** pathway (sequence predictions)
+3. Combine with **clinical** datasets (patient populations)
+4. Develop **task optimizer** using generated feedback
+
+## Related Work
+
+This advances beyond:
+- **Categorical conditioning**: Traditional diffusion models
+- **Task-specific models**: No zero-shot capability
+- **Static generation**: Missing temporal dynamics
+
+## Implementation Details
+
+### Hyperparameters
+- Diffusion steps: 1000
+- Backbone: Diffusion Transformer
+- Conditioning: Per-timestep injection
+- Training: Multi-task joint learning
+
+### Code Availability
+- GitHub: https://github.com/SamGijsen/pinc-flows
+- Pretrained models included
+- Zero-shot generation scripts
 
 ## References
 
-- arXiv:2606.11833 - Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
-- Gijsen et al. (2026) - Code and pretrained models available at GitHub
-- Flow matching theory (Lipman et al., 2022)
-- Diffusion transformers for conditional generation
-- HCP multi-task fMRI datasets
+- arXiv: 2606.11833v1
+- Authors: Sam Gijsen, Michał Łukomski, Marc-André Schulz, Kerstin Ritter
+- Published: 2026-06-10
+- Code: https://github.com/SamGijsen/pinc-flows
+
+## Related Skills
+
+- [[brain-dit-fmri-foundation-model]]
+- [[flow-matching-neural-dynamics]]
+- [[generative-brain-dynamics-models]]
+- [[counterfactual-brain-dynamics]]
