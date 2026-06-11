@@ -34,6 +34,18 @@
   - Dynamics validated in quantum random matrix model and classical hard sphere gas
   - **Activation**: observational entropy, maximum entropy, coarse-graining, thermodynamics, entropy increase, statistical mechanics, Jaynes entropy
 
+### An iterative Ising decoder for quantum error correction codes
+- [[iterative-ising-qec-decoder]] - 迭代低阶解码(ILOD)算法,交替优化X/Z子哈密顿量,用贝叶斯先验近似交叉项,将Ising模型最大体数减半 (arXiv: 2606.12301)
+  - Toric码阈值4.73%(vs joint 4.83%),经验加速O(√n)
+  - 2-body嵌入自旋数减少2.5倍,色彩码在大距离下仍收敛
+  - **Activation**: iterative Ising decoder, ILOD, quantum error correction, Bayesian prior decoding, toric code decoder
+
+### The Fundaments of Unity: O(1) Couplings in Quantum Field Theories
+- [[coupling-spread-quantum-field-theory]] - QFT中O(1)耦合期望的统计分析,推导耦合层次闭式概率分布,揭示大层次是统计必然性而非微调 (arXiv: 2606.12393)
+  - 20个IID单位正态耦合:P(比值>100)=0.29
+  - 比值分布的幂律尾部随耦合数增加而变重,挑战自然性假设
+  - **Activation**: O(1) couplings, coupling spread, quantum field theory, naturalness problem, IID coupling analysis
+
 ### Qubit vs Qudit Encodings for Quantum Optimization
 - [[qudit-encoding-quantum-optimization]] - Qudit encoding methodology achieving exponential Hilbert space reduction vs binary qubit encoding for integer optimization, with qudit-native QAOA matching or exceeding binary performance on constrained scheduling problems (arXiv: 2605.10255)
   - Hilbert space reduction: d^n exact vs 2^ceil(log2(d)) with invalid states
