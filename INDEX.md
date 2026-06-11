@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job)
+
+### Beyond Representational Alignment with Brain-Guided Language Models for Robust Reasoning
+- [[brain-guided-llm-reasoning-alignment]] - Brain-signal-driven framework enhancing LLM reasoning via neural predictivity metrics and representation steering, achieving up to 13% absolute accuracy gain across 10 LLMs (arXiv: 2606.11893)
+  - Neural predictivity metric: LLM representations explain variance in reasoning-related fMRI regions
+  - Inference-time steering: Intervention using brain-representation induced directions
+  - Training-time fine-tuning: Multi-objective loss combining language + brain alignment
+  - Cross-model transfer: Validated across 1.5B-72B parameter models
+  - **Activation**: brain-guided LLM, neural predictivity, reasoning enhancement, fMRI alignment, representation steering, cognitive AI, deductive reasoning
+
+### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
+- [[flow-matching-in-context-priors-brain-dynamics]] - Per-timestep conditioned diffusion transformer for zero-shot generation of fMRI dynamics for unseen cognitive tasks, enabling counterfactual neuroscience (arXiv: 2606.11833)
+  - First generative model of whole-cortex fMRI for unseen tasks
+  - Language pathway recovers region-specific recruitment patterns
+  - Spatial priors anchor generation where language degrades
+  - Compositional task structure preserved for counterfactuals
+  - **Activation**: flow matching, in-context prior, brain dynamics generation, zero-shot fMRI, counterfactual neuroscience, diffusion transformer
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - SNN Transformer)
 
 ### SpikeDecoder: Realizing the GPT Architecture with Spiking Neural Networks
@@ -9,6 +27,16 @@
   - 文本-脉冲嵌入：多种投影方法对比
   - 归一化技术：SNN兼容方法选择
   - **Activation**: spiking transformer, SNN decoder, energy-efficient NLP, neuromorphic language model, GPT SNN, spike embedding, direct SNN training
+
+## 2026-06-12 - Number Theory, Statistics + Quantum Research (Cron Job)
+
+### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning
+- [[quantum-occam-learning]] - 信息论奥卡姆框架：量化量子电路ansatz的"样本支持表达力"(SSE)，平衡表达能力与有限样本可学习性，提供VQA电路设计的泛化界 (arXiv: 2606.12211)
+  - 样本支持表达力(SSE)：表达力×(可用样本/所需样本)的量化度量
+  - 奥卡姆界：量子学习泛化误差由"有效表达力"决定而非原始表达力
+  - 样本-表达力权衡：超出临界深度后额外表达力不被样本支持，反而降低泛化
+  - 最优ansatz选择准则：在给定样本约束下最大化SSE
+  - **Activation**: quantum occam learning, sample-supported expressibility, quantum generalization, quantum ansatz design, VQA circuit selection, quantum overfitting, quantum sample complexity, SSE
 
 ## 2026-06-11 - Neuroscience Research (Cron Job - Flow Matching & Resolution Agnostic)
 
