@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job) - Session 2
+
+### Large Language Models Selectively Converge with Human-Shared Neural Semantic Representations
+- [[llm-semantic-convergence-human-neural-representations]] - 维度解析跨脑编码建模揭示LLM与人类共享神经语义表征的选择性收敛，10维语义空间框架显示社会/情感维度部分分歧 (arXiv: 2606.11598)
+  - 多维语义结构（非单一全局信号）：感知、运动、空间、时间、社会性、生命性、情绪、注意、因果性、驱动力
+  - 模型缩放改善对齐：更大LLM更接近人类语义几何，但收敛不完全
+  - 最大分歧维度：agency、affect、社会经验相关维度
+  - 神经对齐预测个体理解差异
+  - **Activation**: LLM convergence, semantic alignment, neural representation, interbrain encoding, semantic dimensions, brain-LLM comparison, shared neural semantics, MEG encoding
+
 ## 2026-06-12 - Neuroscience Research (Cron Job)
 
 ### Updating the Standard Neuron Model in Artificial Neural Networks
