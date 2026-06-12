@@ -3090,3 +3090,23 @@
   - **NLWE Criterion**: Global measurement confidence > separable measurement confidence for separable state ensembles
   - **Semi-Device-Independent**: Verifies NLWE from measurement outcomes only, robust to detection inefficiency
   - **Activation**: nonlocality without entanglement, NLWE, maximum-confidence discrimination, semi-device-independent, separable state discrimination
+
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Friday Session 2)
+
+### Split primes and the Elekes-Rónyai problem
+- [[split-primes-elekes-ronyai]] - Counterexample methodology for Elekes-Rónyai problem showing subquadratic expansion for non-additive non-multiplicative polynomials (arXiv: 2606.13619)
+  - **Core Innovation**: |{x+y+(x-y)²: x,y∈A}| ≤ |A|^(2-c) for absolute c>0; first counterexample to Elekes-Rónyai
+  - **Split Prime Construction**: Uses algebraic number theory split primes to build sets with controlled expansion
+  - **Activation**: Elekes-Ronyai, split primes, subquadratic expansion, arithmetic combinatorics, sum-product, polynomial expansion
+
+### Majority-of-Three is Optimal
+- [[majority-of-three-pac-optimality]] - Statistical learning theory proof that majority vote of 3 consistent classifiers achieves optimal PAC sample complexity (arXiv: 2606.13614)
+  - **Core Innovation**: Simplest possible voting scheme (3 classifiers) achieves optimal sample complexity in realizable PAC setting
+  - **Simplified Analysis**: Both algorithmic structure and probabilistic analysis simpler than previous optimal learners
+  - **Activation**: majority-of-three, PAC optimality, ensemble voting, consistent classifiers, sample complexity, statistical learning theory
+
+### Some new modular Nahm sums of ranks 3 and 4
+- [[modular-nahm-sums-construction]] - Construction methodology for new families of modular Nahm sums using Zagier modifications and lift-dual operations (arXiv: 2606.13590)
+  - **Core Innovation**: Six new modular Nahm sum families; rank 3 from Zagier modifications, rank 4 from lift-dual on tadpole sums
+  - **Connections**: Number theory, modular forms, q-series, vertex operator algebras
+  - **Activation**: Nahm sums, modular forms, q-series, Zagier, lift-dual, tadpole sums, modular identities
