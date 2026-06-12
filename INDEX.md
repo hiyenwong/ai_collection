@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 6)
+
+### Extracting Governing Equations from Latent Dynamics via Multi-View Contrastive Learning
+- [[dysco-latent-dynamics-extraction]] - DYSCO多视图对比学习从噪声观测恢复潜态轨迹和动力学方程，支持符号化方程发现 (arXiv: 2606.13260)
+  - 多视图结构解耦信号/噪声，实现仿射规范下的符号化恢复
+  - 理论保证：强可识别性（仿射不定性扩展到现实噪声非线性观测）
+  - 适用于神经记录Poisson噪声、混沌/振荡/亚稳态动力学
+  - **Activation**: latent dynamics, governing equations, contrastive learning, system identification, neural recordings, DYSCO, dynamical systems discovery
+
+### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
+- [[phase-model-m-current-hippocampal-synchrony]] - M电流对海马网络同步影响的相位模型分析，揭示乙酰胆碱双向调控记忆编码/巩固状态 (arXiv: 2606.12684)
+  - 低ACh→高M电流→全同步→记忆巩固；高ACh→低M电流→多集群→记忆编码
+  - 三种耦合架构预测：全连接、距离依赖、最近邻
+  - 神经集群作为簇同步解表示，M电流调节同步稳定性边界
+  - **Activation**: M-current, acetylcholine, hippocampal synchrony, neural assembly, phase model, memory consolidation, cluster synchronization
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 5)
 
 ### Large language models selectively converge with human-shared neural semantic representations
