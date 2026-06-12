@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job)
+
+### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
+- [[phase-model-m-current-hippocampal-synchrony]] - Phase reduction framework linking acetylcholine-M-current modulation to neural assembly formation via cluster synchronization analysis (arXiv: 2606.12684)
+  - One-dimensional phase model reduction of weakly coupled pyramidal neurons
+  - Low ACh → full synchronization (consolidation); High ACh → multiple clusters (encoding)
+  - Cluster solutions predicted for all-to-all, distance-dependent, and nearest-neighbour coupling
+  - **Activation**: phase model, M-current, neural synchrony, hippocampal assemblies, acetylcholine, memory consolidation
+
+### Extracting Governing Equations from Latent Dynamics via Multi-View Contrastive Learning
+- [[dysco-latent-dynamics-extraction]] - DYSCO multi-view temporal contrastive learning for symbolic equation recovery from noisy observations with affine identifiability guarantees (arXiv: 2606.13260)
+  - Multi-view contrastive learning disentangles signal from noise in high-dimensional observations
+  - Functional basis parameterization enables symbolic governing equation extraction
+  - Robust to Gaussian and Poisson noise (neural recording relevant)
+  - **Activation**: contrastive learning, latent dynamics, system identification, neural recordings, governing equations
+
 ## 2026-06-12 - Number Theory, Statistics and Advanced Mathematics (Cron Job - Quantum Focus)
 
 ### Optimal classical shadow estimation of unitary channels at Heisenberg limit

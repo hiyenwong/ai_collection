@@ -1,251 +1,331 @@
 ---
 name: phase-model-m-current-hippocampal-synchrony
-description: Phase model analysis of M-current effects on neural synchrony in hippocampal networks. Studies bidirectional role of acetylcholine in neural assembly formation through cluster synchronization. Provides theoretical framework linking neuromodulation to memory encoding vs consolidation states.
-version: 1.0
-authors: ["Megha Manoj", "Sue Ann Campbell"]
-arxiv_id: "2606.12684"
-date: 2026-06-10
-tags: [phase-model, neural-synchrony, hippocampus, acetylcholine, M-current, neural-assemblies, memory-encoding, memory-consolidation, cluster-solutions]
-activation_keywords: ["M-current", "acetylcholine", "hippocampal synchrony", "neural assembly", "phase model", "memory consolidation", "cluster synchronization"]
+description: Phase model analysis of M-current effects on neural synchrony in hippocampal networks. Theoretical framework linking acetylcholine neuromodulation to neural assembly formation via phase reduction and cluster synchronization.
+keywords:
+  - phase model
+  - M-current
+  - neural synchrony
+  - hippocampal networks
+  - neural assemblies
+  - acetylcholine
+  - memory consolidation
+  - cluster solutions
+  - dynamical systems
+version: 1.0.0
+arxiv_id: 2606.12684
+authors: Megha Manoj, Sue Ann Campbell
+published: 2026-06-10
+categories: [q-bio.NC, math.DS]
 ---
 
-# Phase Model Analysis: M-Current Effects on Neural Synchrony in Hippocampal Networks
+# Phase Model Analysis of M-Current on Neural Synchrony in Hippocampal Networks
 
-## Research Question
+## Overview
 
-How does acetylcholine (ACh) bidirectionally regulate neural assembly formation in the hippocampus through its effects on neural synchrony?
+This paper presents a **one-dimensional phase model reduction** to analyze how M-current (slow, voltage-dependent, non-inactivating potassium current) affects neural synchrony in hippocampal networks, providing a mechanistic explanation for acetylcholine's bidirectional role in memory encoding vs consolidation.
 
-**Hypothesis**: High ACh levels during active exploration/REM sleep promote memory encoding (desynchronization into multiple assemblies), while low ACh during quiet waking/SWS supports memory consolidation (full synchronization).
+**Key Innovation**: Phase model reduction + cluster solution analysis → predicts synchronization states under different ACh levels
 
-## Biological Background
+**Core Question**: How does acetylcholine modulation of M-current regulate neural assembly formation through synchrony?
 
-### Acetylcholine's Role in Memory
-- **High ACh**: Active exploration, REM sleep → Memory encoding
-- **Low ACh**: Quiet waking, slow-wave sleep → Memory consolidation
-- **Bidirectional modulation**: Same neuromodulator with opposing effects
+---
 
-### M-Current Mechanism
-- **Definition**: Slow, voltage-dependent, non-inactivating potassium current (I_M)
-- **ACh effect**: Downregulates M-current (muscarinic receptor activation)
-- **Impact**: M-current affects neuronal excitability and synchrony
+## Methodology
 
-### Neural Assemblies
-- **Definition**: Transiently coordinated groups of neurons
-- **Hippocampal role**: Underlie episodic memory formation
-- **Synchrony-based**: Assemblies represented by cluster synchronization patterns
+### 1. Phase Model Reduction Framework
+
+**Step 1**: Reduce 2-neuron coupled system to 1D phase model
+```python
+# Phase reduction: θ = θ₀ + ω·t + H(θ_other - θ)
+# H: interaction function (phase coupling)
+# M-current: I_M = g_M·m·(V - E_K)  # Slow K+ current
+```
+
+**Key Parameter**: M-current conductance `g_M` (downregulated by ACh)
+
+**Step 2**: Analyze symmetric cluster solutions
+- **Low ACh** → high `g_M` → full synchronization (single cluster)
+- **High ACh** → low `g_M` → multiple stable cluster solutions (distinct assemblies)
+
+### 2. Network Architectures Analyzed
+
+1. **All-to-all globally homogeneous coupling**
+   - All neurons coupled with same strength
+   - Simplest case for cluster emergence
+
+2. **Symmetric distance-dependent coupling**
+   - Coupling strength depends on spatial distance
+   - More realistic for CA1 hippocampal geometry
+
+3. **Nearest-neighbours coupling**
+   - Only adjacent neurons connected
+   - Local assembly formation
+
+### 3. Theoretical Analysis Tools
+
+- **Phase locking condition**: `dθ/dt = ω + H(Δθ) = 0`
+- **Stability analysis**: Jacobian of cluster solutions
+- **Bifurcation diagram**: g_M → number of stable clusters
+
+---
+
+## Core Findings
+
+### 1. ACh-M-Current-Synchrony Mechanism
+
+```
+High ACh (memory encoding):
+  ↓ M-current (g_M ↓)
+  ↓ Adaptation
+  ↓ Synchrony
+  ↑ Multiple clusters (distinct assemblies)
+  ↑ Memory encoding capacity
+
+Low ACh (memory consolidation):
+  ↑ M-current (g_M ↑)
+  ↑ Adaptation
+  ↑ Synchrony
+  ↓ Full synchronization
+  ↑ Consolidation (assembly merging)
+```
+
+### 2. Cluster Solutions Prediction
+
+**Mathematical Result**: For N-neuron network with all-to-all coupling:
+- Phase difference clusters: `Δθ_k = 2π·k/N_clusters`
+- Stability determined by `H'(Δθ_k) < 0`
+
+**Key Insight**: Number of stable clusters inversely related to `g_M`
+
+### 3. Implications for Memory Theory
+
+| State | ACh Level | M-Current | Synchrony | Neural Assemblies | Memory Stage |
+|-------|-----------|-----------|-----------|-------------------|---------------|
+| Active exploration | High | Low | Low | Many (desynchronized) | Encoding |
+| REM sleep | High | Low | Low | Many | Encoding |
+| Quiet waking | Low | High | High | Few (synchronized) | Consolidation |
+| SWS sleep | Low | High | High | Single cluster | Consolidation |
+
+---
 
 ## Mathematical Framework
 
-### Phase Model Reduction
+### Phase Model Equations
 
-#### Single Neuron Phase Model
-```
-θ' = ω + Z(θ) * I_syn + ε * Z(θ) * I_M(θ)
-where:
-- θ: phase variable
-- ω: intrinsic frequency
-- Z(θ): phase sensitivity function
-- I_syn: synaptic input
-- I_M(θ): M-current contribution
-```
-
-#### Pair Coupling Analysis
+**Full neuron model** (with M-current):
 ```python
-# Phase difference dynamics
-dΔθ/dt = H(Δθ, I_M_level)
-where H depends on M-current strength
+C·dV/dt = -I_Na - I_K - I_M + I_syn + I_ext
+dm/dt = (m_inf(V) - m) / τ_m(V)  # M-current activation
 ```
 
-### Network Coupling Architectures
-
-#### 1. All-to-All (Globally Homogeneous)
+**Phase-reduced model**:
 ```python
-# Every neuron connects to every other
-coupling_strength = uniform across all pairs
+dθ₁/dt = ω₁ + H(θ₂ - θ₁; g_M)
+dθ₂/dt = ω₂ + H(θ₁ - θ₂; g_M)
 ```
 
-#### 2. Distance-Dependent (Symmetric)
+**Interaction function** `H(φ; g_M)`:
+- Determined by M-current parameter
+- Controls phase locking behavior
+- Shape changes with ACh level
+
+### Cluster Stability Criterion
+
+For N-cluster solution `θ_k = 2πk/N`:
 ```python
-# Coupling strength decreases with distance
-K_ij = K_0 * exp(-|i-j|/λ)
+# Stability matrix
+J_ij = H'(Δθ_k) for i ≠ j
+J_ii = -sum(H'(Δθ_k))
+
+# Stable if all eigenvalues < 0
 ```
 
-#### 3. Nearest-Neighbors
+---
+
+## Computational Implementation
+
+### Phase Reduction Algorithm
+
 ```python
-# Only adjacent neurons connect
-K_ij = K_0 if |i-j| <= 1 else 0
-```
-
-## Key Results
-
-### M-Current Level Effects
-
-#### Low ACh (High M-Current)
-- **Network state**: Full synchronization
-- **Assembly structure**: Single coherent cluster
-- **Memory mode**: Consolidation
-- **Mechanism**: Strong M-current stabilizes synchronization
-
-#### High ACh (Low M-Current)
-- **Network state**: Desynchronization
-- **Assembly structure**: Multiple stable symmetric clusters
-- **Memory mode**: Encoding
-- **Mechanism**: Weak M-current allows cluster fragmentation
-
-### Cluster Solutions
-
-#### Symmetric Cluster Identification
-```python
-# Clusters are determined by:
-1. Phase model stability analysis
-2. Symmetry constraints on cluster assignments
-3. Coupling architecture-specific predictions
-```
-
-#### Predictable Cluster Patterns
-- **All-to-All**: N-way splits possible (N neurons)
-- **Distance-dependent**: Geographic cluster patterns
-- **Nearest-neighbor**: Contiguous cluster segments
-
-## Implementation Steps
-
-### Step 1: Model Neuron with M-Current
-```python
-class PyramidalNeuronWithMCurrent:
-    def __init__(self, params):
-        self.g_M = params['g_M']  # M-current conductance
-        self.V_threshold_M = -35  # M-current activation threshold
-        self tau_M = 100  # M-current time constant (ms)
+def compute_interaction_function(model_params, g_M):
+    """
+    Compute phase interaction function H(φ) from neuron model.
     
-    def M_current(self, V):
-        # Slow voltage-dependent K+ current
-        return g_M * (V - E_K) * m_M(V)
+    Parameters:
+    - model_params: {g_Na, g_K, C, ...}
+    - g_M: M-current conductance
     
-    def m_M(self, V):
-        # Activation variable
-        return 1 / (1 + exp(-(V - V_threshold_M) / k_M))
+    Returns:
+    - H(φ): phase coupling function
+    """
+    # 1. Find limit cycle (periodic orbit)
+    V0, period = find_limit_cycle(model_params, g_M)
+    
+    # 2. Compute phase response curve (PRC)
+    Z(φ) = compute_PRC(V0, model_params)
+    
+    # 3. Compute synaptic interaction
+    I_syn(φ) = synaptic_current(φ)
+    
+    # 4. Phase interaction: H(φ) = ∮ Z(φ)·I_syn(φ) dφ
+    H = integrate_PRC_synaptic(Z, I_syn)
+    
+    return H
 ```
 
-### Step 2: Phase Model Reduction
+### Cluster Solution Finder
+
 ```python
-# Reduce conductance model to phase model
-phase_model = compute_phase_reduction(neuron_model)
-
-# Extract phase sensitivity function
-Z = compute_PRC(phase_model)  # Phase response curve
+def find_cluster_solutions(N_neurons, H, g_M):
+    """
+    Find stable symmetric cluster solutions.
+    
+    Returns:
+    - cluster_sizes: [N_1, N_2, ...] stable cluster sizes
+    - stability: [True/False for each]
+    """
+    # Try all possible cluster partitions
+    for N_clusters in range(1, N_neurons+1):
+        Δθ = 2π / N_clusters
+        
+        # Check stability
+        eigenvalues = compute_stability_eigenvalues(H, Δθ, N_clusters)
+        
+        if all(eig < 0 for eig in eigenvalues):
+            yield N_clusters, Δθ, True
 ```
 
-### Step 3: Pairwise Interaction Analysis
+---
+
+## Applications
+
+### 1. Memory Encoding Optimization
+
+**Use Case**: Predict optimal ACh level for encoding new memories
+
 ```python
-# Compute interaction function H for given M-current level
-def interaction_function(theta1, theta2, g_M):
-    return Z(theta1) * I_syn(theta1, theta2) + 
-           g_M * Z(theta1) * I_M(theta1)
+# For encoding: maximize number of stable clusters
+optimal_g_M = minimize(
+    lambda g_M: -len(find_cluster_solutions(N, H, g_M)),
+    bounds=[0, g_M_max]
+)
+
+# Corresponds to high ACh level during active exploration
 ```
 
-### Step 4: Network Synchronization Analysis
+### 2. Sleep Stage Modeling
+
+**REM vs SWS**: Simulate synchrony differences
+
 ```python
-# Analyze cluster solutions for N-neuron network
-def find_cluster_solutions(N, coupling_type, g_M):
-    # Predict stable symmetric clusters
-    clusters = predict_clusters(N, interaction_H(g_M))
-    return clusters
+# REM sleep (high ACh, low g_M)
+clusters_REM = find_cluster_solutions(N, H, g_M=0.1)  # Many clusters
+
+# SWS sleep (low ACh, high g_M)
+clusters_SWS = find_cluster_solutions(N, H, g_M=1.0)  # Full sync
 ```
 
-## Key Applications
+### 3. Neuromodulator Intervention Design
 
-### 1. Memory State Classification
-- **Encoding state**: Identify high-ACh conditions (multiple assemblies)
-- **Consolidation state**: Identify low-ACh conditions (single assembly)
-- **EEG signature**: Synchrony patterns as memory state markers
+**Therapeutic Application**: Optimize ACh agonist/antagonist dosing
 
-### 2. Neuromodulation Studies
-- **Drug effects**: Predict ACh agonist/antagonist impacts
-- **Aging**: M-current decline effects on memory
-- **Pathology**: Alzheimer's ACh depletion consequences
-
-### 3. Neural Assembly Detection
-- **Recording interpretation**: Cluster detection from LFP/spike data
-- **Assembly tracking**: Monitor assembly switching dynamics
-- **Memory decoding**: Infer memory state from synchrony
-
-## Theoretical Insights
-
-### Phase Model Advantages
-- **Dimensionality reduction**: N-dimensional dynamics → phase differences
-- **Analytical tractability**: Stability analysis possible
-- **Universal framework**: Applicable across neuron types
-
-### M-Current's Role
-- **Synchrony regulator**: Controls cluster stability boundaries
-- **Memory switch**: Bidirectional modulation through single mechanism
-- **Time-scale bridge**: Slow dynamics bridge fast synaptic events
-
-### Cluster Stability
-- **Symmetric solutions**: Enforced by network homogeneity
-- **Multiple stable states**: Coexistence enables assembly switching
-- **Architecture dependence**: Coupling topology shapes cluster patterns
-
-## Experimental Predictions
-
-### In Vitro Tests
 ```python
-# Manipulate M-current pharmacologically
-1. Apply muscarinic agonist → Reduce I_M → Monitor synchrony
-2. Apply XE991 (I_M blocker) → Simulate high ACh state
-3. Measure clustering patterns via multi-electrode arrays
+# Memory disorder treatment
+# Increase ACh for encoding deficits
+# Decrease ACh for consolidation deficits
+
+def optimal_ach_dosing(memory_stage, deficit_type):
+    if memory_stage == 'encoding' and deficit_type == 'low':
+        return high_ach_target  # Desynchronize
+    elif memory_stage == 'consolidation':
+        return low_ach_target   # Synchronize
 ```
 
-### In Vivo Correlations
-```python
-# Correlate ACh levels with assembly patterns
-1. Measure ACh via microdialysis during behavior
-2. Record hippocampal activity simultaneously
-3. Identify encoding vs consolidation states
-```
+---
 
-## Pitfalls and Limitations
+## Experimental Validation Suggestions
 
-### Model Simplifications
-1. **Weak coupling assumption**: Phase model requires weak synaptic input
-2. **Homogeneity**: Assumes identical neurons
-3. **Symmetry constraints**: May not hold in real networks
+### 1. In Vivo Hippocampal Recording
 
-### Biological Complications
-1. **Multiple neuromodulators**: ACh interacts with other modulators
-2. **Plasticity**: Synaptic weights change over time
-3. **Network heterogeneity**: Real neurons have diverse properties
+- Measure synchrony under different ACh levels
+- Verify cluster number predictions
+- Correlate with memory task performance
 
-### Mitigation Strategies
-1. **Coupling strength**: Validate weak coupling assumption
-2. **Parameter distributions**: Add heterogeneity models
-3. **Multi-modal modulation**: Extend to combined neuromodulator effects
+### 2. Optogenetic M-Current Control
 
-## Related Work
+- Directly modulate `g_M` via light
+- Observe synchrony changes in real-time
+- Validate phase model predictions
 
-### Phase Model Theory
-- **Ermentrout & Kopell**: Weak coupling theory foundations
-- **PRC analysis**: Phase response curve methodology
-- **Cluster synchronization**: Collective dynamics theory
+### 3. Behavioral Correlation
 
-### Hippocampal Memory
-- **O'Keefe & Nadel**: Cognitive map theory
-- **Marr & Buzsáki**: Memory encoding/consolidation models
-- **Assembly coding**: Neural assembly hypothesis
+- Test memory encoding/consolidation under ACh manipulation
+- Correlate synchrony metrics with memory scores
 
-## References
+---
 
-- **arXiv**: 2606.12684 - Full 39-page paper with 14 figures
-- **Related**: Sue Ann Campbell - Neural network dynamics work
-- **Context**: Hippocampal memory formation literature
+## Limitations & Extensions
 
-## Summary
+### Current Limitations
 
-This phase model analysis provides a theoretical framework for how acetylcholine bidirectionally regulates memory through M-current effects on neural synchrony:
+1. **Weak coupling assumption**: Phase reduction valid only for weak synaptic coupling
+2. **All-to-all coupling**: Simplified network topology
+3. **Homogeneous neurons**: No heterogeneity in parameters
+4. **Static ACh levels**: No dynamic neuromodulation
 
-1. **Mechanism**: M-current downregulation by ACh controls synchrony
-2. **Encoding**: High ACh → Low I_M → Multiple assemblies → Desynchronization
-3. **Consolidation**: Low ACh → High I_M → Single assembly → Full synchrony
-4. **Predictive**: Phase model enables cluster prediction for different coupling architectures
+### Future Extensions
 
-**Key insight**: A single neuromodulator (acetylcholine) can produce opposite memory states (encoding vs consolidation) through its effect on a specific ionic current (M-current) that governs neural synchrony patterns.
+1. **Strong coupling**: Use averaging methods or full model simulation
+2. **Realistic topology**: Distance-dependent + sparse coupling
+3. **Heterogeneous networks**: Parameter variability + noise
+4. **Dynamic ACh**: Time-varying neuromodulation model
+
+---
+
+## Related Methods
+
+### Phase Model Extensions
+
+- **Kuramoto model**: Global coupling synchronization
+- **Winfree model**: Pulse-coupled oscillators
+- **Ermentrout-Kopell canonical model**: Type I/II neurons
+
+### Neural Assembly Detection
+
+- **Principal component analysis**: Assembly identification
+- **Bayesian inference**: Probabilistic assembly models
+- **Graph clustering**: Network-based assembly detection
+
+---
+
+## Key References
+
+1. **Phase reduction theory**: Ermentrout & Kopell (1990) - "Oscillator death"
+2. **M-current physiology**: Adams et al. (1982) - "M-current in hippocampus"
+3. **ACh memory theory**: Hasselmo (1999) - "ACh and memory encoding"
+4. **Cluster synchronization**: Golomb & Rinzel (1994) - "Clustering in globally coupled inhibitory networks"
+
+---
+
+## Activation Keywords
+
+**Trigger phrases**:
+- "phase model analysis"
+- "M-current effect on synchrony"
+- "hippocampal neural assemblies"
+- "acetylcholine memory modulation"
+- "cluster synchronization"
+- "phase reduction neural networks"
+- "memory encoding consolidation"
+- "neuromodulator synchrony control"
+
+---
+
+## Notes
+
+- **39 pages, 14 figures** - comprehensive theoretical treatment
+- **Mathematical rigor**: Formal bifurcation analysis
+- **Biological relevance**: Direct link to memory theory
+- **Novel contribution**: First phase model linking ACh-M-current to assembly formation
+
+This skill enables understanding how **acetylcholine neuromodulation of M-current regulates neural synchrony and assembly formation in hippocampal networks**, providing a **theoretical foundation for memory encoding vs consolidation mechanisms**.
