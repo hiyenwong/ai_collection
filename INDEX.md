@@ -2944,6 +2944,12 @@
   - Applications: Hamiltonian learning, Pauli transfer matrix, inverse-free amplitude estimation
   - **Activation**: classical shadow estimation, unitary channel tomography, Heisenberg limit quantum learning, quantum process tomography, Hamiltonian learning quantum
 
+### Generalized Two-Qubit Hamiltonian for Projective Quantum Feature Maps (arXiv: 2606.13641)
+- [[generalized-hamiltonian-quantum-feature-maps]] - Unified Hamiltonian-based PQFM encoding through local Pauli fields and pairwise interactions with statistical benchmarking on 156-qubit IBM quantum processors
+  - Multi-axis encoding: distinct classical variables along different Pauli axes of same qubit
+  - Nested cross-validation with paired statistical tests for quantum vs classical baselines
+  - **Activation**: generalized PQFM, projective quantum feature map, two-qubit Hamiltonian encoding, quantum feature encoding, Hamiltonian PQF, pqfmlib
+
 ## 2026-06-12 - Anthropic Research (Cron Job)
 
 ### Coding Agents in the Social Sciences
