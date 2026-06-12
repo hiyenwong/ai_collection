@@ -1,6 +1,61 @@
 # AI Collection Index
 
 
+## 2026-06-12 - Systems Engineering Research (Cron Job)
+
+### Analysis of a Distributed Optimization-Based Control Architecture for Inverter-Interfaced Virtual Power Plants
+- [[distributed-optimization-control-vpp]] - 分布式优化控制架构用于虚拟电厂DER二次控制的大信号稳定性分析 (arXiv: 2606.12336)
+  - ADMM分解全局优化问题，实现分布式协调
+  - Lyapunov稳定性判据验证非线性系统稳定性
+  - 采样数据控制器设计，结合稳态增益与优化修正
+  - **Activation**: distributed control, VPP, DER control, inverter control, optimization-based control, large-signal stability
+
+### Fair Comparison of Scheduling Algorithms on Heterogeneous Edge Clusters: A Continuous Adaptive Benchmark
+- [[cmms-edge-cluster-benchmark]] - CMMS基准平台用于边缘集群调度算法公平比较 (arXiv: 2606.12343)
+  - 统一控制器接口，支持多种调度策略（RL、启发式、规则基）
+  - 闭环负载驱动，涵盖5种负载模式（恒定、突发、阶跃、正弦、随机游走）
+  - 双指标SLO评分（Raw SLO vs Steady-State SLO），暴露切换成本
+  - **Activation**: edge cluster scheduling, CMMS, SLO benchmark, RL scheduling, heterogeneous scheduling, adaptive benchmark
+
+
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job - Friday Evening)
+
+### Collective neutrino oscillations: Many-body non-forward effects and non-classicality
+- [[many-body-neutrino-quantum-simulation]] - 量子动力学框架对比+多体纠缠模拟,Trotter误差标度分析,高效费米子-量子比特编码 (arXiv: 2606.12404)
+  - 量子动力学与多体哈密顿量方法的特征时间尺度对比
+  - 费米子-量子比特编码对资源需求的关键影响
+  - **Activation**: many-body neutrino, quantum kinetic, fermion-to-qubit encoding, Trotter error
+
+### Necessary and Sufficient Conditions for Universal Gates with Pauli Strings and Beyond
+- [[pauli-string-universality-conditions]] - 保罗弦集合生成su(2^n)李代数的充要条件,量子门集通用性判据 (arXiv: 2606.12096)
+  - 保罗弦对易闭包生成所有非恒等保罗算符即通用
+  - 混合保罗+通用哈密顿量的充分条件推导
+  - **Activation**: Pauli strings, universal gates, Lie algebra, su(2^n), gate set universality
+
+### Tensor-Network Algorithm for Many-Body Trace Norms
+- [[tensor-network-many-body-trace-norms]] - Zolotarev有理逼近+变分公式,无需全对角化估计矩阵乘积算符迹范数 (arXiv: 2606.11882)
+  - Zolotarev有理逼近符号函数结合变分公式
+  - 可控张量网络算法避免指数级对角化瓶颈
+  - **Activation**: tensor network, trace norm, matrix product operator, Zolotarev approximation
+
+### Degree of tensor train varieties via integral geometry
+- [[degree-tensor-train-varieties]] - 积分几何方法获得张量列车簇度数的组合表达式 (arXiv: 2606.11847)
+  - 积分几何方法推导张量列车簇度数的组合公式
+  - Julia包TTVarietyDegree.jl可直接使用
+  - **Activation**: tensor train, integral geometry, degree computation, algebraic geometry
+
+### Sparsified Kolmogorov-Arnold Networks for Interpretable Quantum State Tomography
+- [[sparsified-kan-quantum-tomography]] - 稀疏KAN用于可解释量子态层析,内部结构与已知泡利结构对照检查 (arXiv: 2606.11814)
+  - 稀疏KAN不仅作为回归器,还可作为可检查的重构规则
+  - 三量子比特GHZ族基准测试验证63个泡利期望值
+  - **Activation**: Kolmogorov-Arnold, quantum tomography, interpretable ML, Pauli structure
+
+### Random Grover Search
+- [[random-grover-search]] - 随机格罗弗搜索算法直接使用约束预言机,避免构建全局预言机的高成本 (arXiv: 2606.11759)
+  - 每次迭代随机选择一个约束预言机操作
+  - 多约束集合交集搜索的二次加速
+  - **Activation**: Grover search, constraint oracle, random search, quadratic speedup
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 3)
 
 ### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
