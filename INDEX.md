@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-06-12 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
+
+### Measurement Geometry for Quantum Random Access Codes: Beyond Nayak Bound and Toward Optimality
+- [[measurement-geometry-quantum-rac]] - Measurement geometry methods for QRAC optimality beyond Nayak bound (arXiv: 2606.12700)
+  - Nayak bound not always tight for specific (N,M) parameters; measurement geometry provides tighter characterization
+  - SDP-based numerical methods find bounds beyond analytical results; geometric duality between encoding states and measurements
+  - **Activation**: qrac, quantum random access code, nayak bound, measurement geometry, quantum encoding, quantum state discrimination
+
+### Generalized Exact Fractional Quantum Information Model with Memory Effects
+- [[fractional-quantum-information-memory]] - Fractional quantum information measures using Riemann-Liouville derivatives with memory effects (arXiv: 2606.13525)
+  - Riemann-Liouville fractional derivative replaces standard Schrödinger time derivative, introducing non-Markovian memory
+  - Memory effects can protect quantum information from decoherence for certain fractional order α regimes
+  - **Activation**: fractional quantum mechanics, riemann-liouville derivative, memory effects, quantum information, non-markovian dynamics
+
+### Diffusive Dynamics of Nonstabilizerness
+- [[nonstabilizerness-diffusive-dynamics]] - Stabilizer Rényi entropy computation and symmetry effects on magic state dynamics (arXiv: 2606.13606)
+  - Nonstabilizerness (magic) spreads diffusively under random Clifford circuits, analogous to entanglement spreading
+  - Global symmetries constrain magic diffusion, creating sector-dependent diffusion rates
+  - **Activation**: nonstabilizerness, magic states, stabilizer renyi entropy, quantum resource theory, clifford circuits
+
 ## 2026-06-12 - Quantum Machine Learning (Cron Job)
 
 ### Generalization Error Bound for Quantum Machine Learning in NISQ Era -- A Survey
