@@ -1,105 +1,124 @@
 ---
 name: classical-shadow-unitary-channel-estimation
-description: Classical Shadow Estimation of Unitary channels (CSEU) methodology achieving Heisenberg-limit query complexity for quantum learning tasks. Uses parallel non-adaptive protocols to predict expectation values of arbitrary observables after unknown unitary evolution with optimal O(1/epsilon) scaling. arXiv: 2606.13638
-category: quantum/statistics
-metadata:
-  arxiv_id: "2606.13638"
-  authors: "Entong He, Zihao Li, Noam Scully, Sisi Zhou, Yuxiang Yang"
-  subjects: "quant-ph"
-  published_date: "2606.13638"
+description: "Classical Shadow Estimation of Unitary Channels (CSEU) methodology for efficient quantum process learning with Heisenberg-limited query complexity."
 ---
 
-## Context
+# Classical Shadow Estimation of Unitary Channels (CSEU)
 
-Full quantum process tomography of an unknown unitary channel is prohibitively expensive. Classical Shadow Estimation of Unitary channels (CSEU) addresses this by storing compressed classical data from queries to the unknown unitary, enabling post-hoc prediction of arbitrary expectation values `<O, U(rho)>` without re-querying the unitary. This work achieves **Heisenberg-limit** query complexity — the optimal scaling — using only parallel, non-adaptive protocols.
+## Description
 
-## Core Methodology
+Classical Shadow Estimation of Unitary Channels (CSEU) is a methodology for predicting properties of unknown quantum evolutions without full tomography. Uses parallel non-adaptive queries achieving O(d/eps) query complexity (Heisenberg scaling) with a matching Omega(d/eps) lower bound. Enables efficient learning of unitary channel properties, Hamiltonian parameters, and shallow circuit behavior.
 
-### The CSEU Problem
+## Activation Keywords
+- classical shadow estimation
+- unitary channel tomography
+- CSEU protocol
+- quantum process learning
+- Heisenberg limit tomography
+- parallel quantum queries
+- quantum channel characterization
+- Hamiltonian learning
+- 经典影子估计
+- 量子信道学习
 
-Given access to an unknown d-dimensional unitary U:
-1. Query U with input states and store classical data (the "shadow")
-2. Given arbitrary input state rho and observable O, predict `Tr(O * U * rho * U†)` up to additive error epsilon
+## Tools Used
+- exec: Run quantum simulation (Qiskit/PennyLane)
+- write: Save experimental results
+- terminal: Execute quantum circuit simulations
 
-### Heisenberg-Limit Protocol
+## Usage Patterns
 
-1. **Parallel Non-Adaptive Queries**: Use `O(d/epsilon)` parallel queries when input states or observables have constant rank. This achieves Heisenberg scaling `1/epsilon` (vs. `1/epsilon^2` for standard shadow tomography).
+### Pattern 1: Parallel Non-adaptive CSEU Protocol
+Given unknown unitary U and target precision eps:
+1. Prepare entangled input states (or use constant-rank states)
+2. Apply U in parallel across multiple queries
+3. Measure in randomized bases (Clifford/Pauli)
+4. Store classical snapshots (shadows)
+5. Predict expectation values tr[O * U*rho*U^dagger] from shadows
 
-2. **Query-Optimality Proof**: A matching `Omega(d/epsilon)` lower bound is proven, showing the protocol is query-optimal even with stronger access to the unknown unitary.
+### Pattern 2: Hamiltonian Learning via Channel Shadows
+When learning Hamiltonian H from time evolution U = exp(-iHt):
+1. Use CSEU to obtain classical shadow of U
+2. Extract Pauli transfer matrix elements
+3. Reconstruct Hamiltonian coefficients from shadow data
+4. Achieves Heisenberg scaling in precision eps
 
-3. **Classical Shadow Construction**: After querying U, store classical snapshots that encode sufficient information to reconstruct expectation values for arbitrary (rho, O) pairs.
+### Pattern 3: Pure State Property Estimation
+For learning properties of unknown pure states:
+1. Treat state preparation as unitary channel |0> -> |psi>
+2. Apply CSEU protocol to the preparation channel
+3. Predict arbitrary observables on |psi> from shadows
 
-4. **Prediction Phase**: Given any new (rho, O) pair, compute the prediction from stored shadows without additional quantum queries.
+## Instructions for Agents
 
-### Key Applications
+### Step 1: Problem Formulation
+- Identify the quantum process to learn (unitary U)
+- Determine target precision eps
+- Check if input states/observables have constant rank
 
-The CSEU framework enables optimal performance across multiple quantum learning tasks:
+### Step 2: Protocol Selection
+- Use parallel non-adaptive CSEU when:
+  - Sequential queries are expensive/impossible
+  - High precision is required (Heisenberg scaling matters)
+  - Multiple properties need prediction from same data
+- Query complexity: O(d/eps) for d-dimensional system
 
-1. **Unitary Channel Tomography**: Optimal parallel-only protocol closes the gap between parallel and sequential tomography efficiency.
-
-2. **Hamiltonian Learning**: Learn the generating Hamiltonian of a unitary `U = exp(-iHt)` with Heisenberg-limited sample complexity.
-
-3. **Pauli Transfer Matrix Learning**: Efficiently learn the Pauli transfer matrix representation of a quantum channel.
-
-4. **Inverse-Free Amplitude Estimation**: Achieve amplitude estimation without requiring controlled-unitary or inverse operations.
-
-5. **Pure-State Property Estimation**: Predict properties of pure quantum states with optimal query complexity.
-
-6. **Shallow-Circuit Learning**: Learn properties of shallow quantum circuits with Heisenberg-limited efficiency.
-
-## Implementation Steps
-
-### Step 1: Protocol Setup
-```
-Input: Unknown unitary U (d-dimensional), accuracy epsilon, confidence delta
-Output: Classical shadow data structure S
-```
-
-### Step 2: Parallel Query Phase
-- Prepare entangled input states across multiple copies
-- Apply U in parallel to each copy
-- Perform randomized measurements (typically Pauli or Clifford basis)
-- Store measurement outcomes as classical shadows
-
-### Step 3: Shadow Data Structure
+### Step 3: Implementation
 ```python
-class UnitaryShadow:
-    def __init__(self, measurement_outcomes, basis_info):
-        self.outcomes = measurement_outcomes
-        self.bases = basis_info
-        self.d = dimension
-    
-    def predict(self, rho, O):
-        # Compute prediction from stored shadows
-        # Returns estimate of Tr(O * U * rho * U†)
-        return estimate
+import numpy as np
+
+def cseu_protocol(unitary, num_queries, eps, dim):
+    """Parallel non-adaptive CSEU protocol."""
+    # Prepare entangled input states
+    shadows = []
+    for _ in range(num_queries):
+        # Randomized measurement basis
+        basis = random_clifford(dim)
+        # Apply unitary and measure
+        outcome = measure(unitary, basis)
+        shadows.append(classical_snapshot(outcome, basis))
+    return shadows
+
+def predict_expectation(shadows, observable):
+    """Predict expectation value from classical shadows."""
+    return np.mean([shadow_predict(s, observable) for s in shadows])
 ```
 
-### Step 4: Prediction with Error Bounds
-- For any (rho, O), compute prediction from shadows
-- Error bound: `|prediction - true_value| <= epsilon` with probability `1 - delta`
-- Sample complexity: `O(d/epsilon)` queries for constant-rank states/observables
+### Step 4: Verification
+- Verify O(d/eps) query scaling empirically
+- Compare against sequential protocol baselines
+- Check prediction accuracy against ground truth
 
-### Step 5: Task-Specific Adaptation
-- **Hamiltonian Learning**: Use CSEU shadows to estimate `Tr(O * exp(-iHt))` for various observables
-- **Channel Tomography**: Reconstruct full unitary matrix from shadow predictions
-- **Amplitude Estimation**: Estimate `<psi|U|phi>` without controlled-U
+## Error Handling
 
-## Pitfalls
+### Insufficient Queries
+If prediction error > eps:
+- Increase queries to O(d/eps)
+- Check if Omega(d/eps) lower bound applies
 
-- **Rank Assumption**: Heisenberg scaling assumes constant-rank input states or observables. For full-rank cases, scaling degrades. **Fix**: Use rank-aware protocol selection.
-- **Parallel Requirement**: Protocol requires parallel queries to the unitary. In sequential-access-only settings, use alternative protocols. **Fix**: Sequential protocol achieves same scaling but requires adaptive queries.
-- **Classical Storage**: Shadow data size scales with number of queries and dimension. For large d, storage becomes a bottleneck. **Fix**: Use compressed shadow representations or randomized sketching.
-- **Error Concentration**: Prediction error bounds are probabilistic. For worst-case guarantees, increase the number of shadows. **Fix**: Union bound over all prediction targets.
-- **Noise Sensitivity**: Protocol assumes noiseless unitary access. Under depolarizing or coherent noise, error bounds degrade. **Fix**: Combine with error mitigation techniques.
+### High-Dimensional Systems
+For large d where O(d/eps) is prohibitive:
+- Exploit structure (locality, symmetry)
+- Use approximate shadows with reduced dimension
 
-## Verification
+## Mathematical Framework
 
-1. **Query Complexity**: Verify that `O(d/epsilon)` queries suffice for constant-rank prediction tasks.
-2. **Lower Bound Matching**: Confirm the protocol achieves the proven `Omega(d/epsilon)` lower bound.
-3. **Application Benchmarks**: Test each application (tomography, Hamiltonian learning, amplitude estimation) against known optimal baselines.
-4. **Parallel vs. Sequential**: Compare parallel protocol efficiency against sequential tomography — they should match in the optimal regime.
+### Query Complexity
+- Upper bound: O(d * eps^{-1}) queries for constant-rank states/observables
+- Lower bound: Omega(d * eps^{-1}) — query optimal
+- Achieves Heisenberg scaling: eps^{-1} (not eps^{-2} like standard methods)
 
-## Activation
+### Shadow Construction
+For unitary U, input rho, observable O:
+- Snapshot: M(U, rho) = inverse_channel(measurement_outcome)
+- Prediction: E[tr(O * M(U, rho))] = tr(O * U * rho * U^dagger)
 
-classical shadow estimation, unitary channel tomography, Heisenberg limit quantum learning, quantum process tomography, Hamiltonian learning quantum, Pauli transfer matrix, amplitude estimation quantum, parallel quantum queries, shadow tomography unitary
+## Resources
+- arXiv: 2606.13638 (He et al., 2026)
+- Related: Classical shadows for states (Huang, Kueng, Preskill 2020)
+- Applications: Hamiltonian learning, process tomography, circuit verification
+
+## Related Skills
+- quantum-ml-data-loading
+- quantum-statistical-estimation
+- quantum-state-fidelity-neural-networks

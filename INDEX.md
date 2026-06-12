@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 10)
+
+### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
+- [[phase-model-m-current-hippocampal-synchrony]] - Phase model reduction methodology for M-current effects on neural synchrony; low ACh → full sync, high ACh → multiple stable cluster solutions (arXiv: 2606.12684)
+  - **Core Innovation**: One-dimensional phase model reduction for weakly coupled pyramidal neurons
+  - **Acetylcholine Bidirectional Role**: High ACh → encoding (desynchronization), Low ACh → consolidation (synchronization)
+  - **Neural Assembly Representation**: Cluster solutions as transiently coordinated neuron groups
+  - **Three Coupling Architectures**: All-to-all, distance-dependent, nearest-neighbours
+  - **Validation**: Predicted cluster solutions match hippocampal assembly observations
+  - **Activation**: M-current, phase model, neural synchrony, hippocampal network, acetylcholine, neural assembly, cluster solution
+
+### A quantum-like benchmark for context-sensitive associative memory with adaptive plasticity
+- [[quantum-like-benchmark-context-sensitive-memory]] - Quantum-like benchmark for staged associative recall with multi-objective profile (recall + temporal organization + context sensitivity) (arXiv: 2606.12449)
+  - **Core Innovation**: Order-sensitive adaptive-plasticity benchmark distinguishing genuine recall vs structural assistance
+  - **Three Model Families**: Quantum-like, real-valued no-phase, Markov-rate controls
+  - **Weak-Support Regime**: Narrow and non-monotonic; structure alone doesn't rescue recall
+  - **Adaptive Plasticity**: Homeostatic stabilization drives recall gains
+  - **Quantum-Like Advantage**: Preserves order sensitivity and stage-dependent organization
+  - **Activation**: quantum-like memory, associative memory, context-sensitive memory, adaptive plasticity, homeostatic stabilization, staged recall, temporal organization, multi-objective benchmark
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 9)
 
 ### From Persistence to Survival: Hypothesis Testing, Effect Sizes and Vectorisation for Topological Features
@@ -3042,3 +3061,22 @@
   - **RBA Methodology**: Composes polynomial update map, identifies reduced monomial basis, constructs linear RBA operator
   - **Qubit Efficiency**: Logarithmic dependence on grid size for PDEs; O(nm log p) for ODEs
   - **Activation**: reduced basis algorithm, nonlinear ODE quantum, polynomial PDE quantum, qubit requirement, quantum scientific computing
+
+### Optimal classical shadow estimation of unitary channels at Heisenberg limit
+- [[classical-shadow-unitary-channel-estimation]] - Classical Shadow Estimation of Unitary channels (CSEU) achieves Heisenberg-limit O(d/epsilon) query complexity for predicting arbitrary expectation values after unknown unitary evolution (arXiv: 2606.13638)
+  - **CSEU Protocol**: Parallel non-adaptive queries with randomized measurements, storing classical shadows
+  - **Query Optimality**: Matches Omega(d/eps) lower bound; Heisenberg scaling eps^{-1} not eps^{-2}
+  - **Applications**: Hamiltonian learning, unitary channel tomography, Pauli transfer matrix learning
+  - **Activation**: classical shadow estimation, CSEU, unitary channel tomography, Heisenberg limit, quantum process learning
+
+### Diffusive Dynamics of Nonstabilizerness
+- [[nonstabilizerness-diffusive-dynamics]] - Stabilizer Renyi entropy and diffusive magic dynamics in U(1)-symmetric quantum circuits (arXiv: 2606.13606)
+  - **Tensor Network Method**: Four-replica TN with S4-adapted iTEBD in thermodynamic limit
+  - **Diffusive Scaling**: Late-time nonstabilizerness gap closes as 1/t — diffusive universality class
+  - **Activation**: nonstabilizerness, stabilizer Renyi entropy, magic state dynamics, tensor network, iTEBD, hydrodynamic quantum
+
+### Semi-Device-Independent Certification for Nonlocality without Entanglement
+- [[semi-device-independent-nlwe-certification]] - Maximum-confidence discrimination certifies NLWE with global vs separable measurements, tolerant to non-unit detection efficiency (arXiv: 2606.13667)
+  - **NLWE Criterion**: Global measurement confidence > separable measurement confidence for separable state ensembles
+  - **Semi-Device-Independent**: Verifies NLWE from measurement outcomes only, robust to detection inefficiency
+  - **Activation**: nonlocality without entanglement, NLWE, maximum-confidence discrimination, semi-device-independent, separable state discrimination
