@@ -1,5 +1,26 @@
 # AI Collection Index
 
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job - Friday)
+
+### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
+- [[reduced-basis-quantum-ode-solver]] - Reduced Basis Algorithm (RBA) lifts polynomial nonlinear ODEs/PDEs into linear quantum-accessible operators via monomial basis composition, achieving logarithmic qubit scaling in grid size (arXiv: 2606.13457)
+  - Core: Time discretization -> monomial basis composition -> reduced basis identification -> linear RBA operator construction -> quantum encoding
+  - Complexity: Full basis requires (n+d^m) dimensions; PDE locality-based construction requires O(N^d_local * log N) qubits
+  - **Activation**: reduced basis algorithm, quantum ODE solver, quantum PDE solver, nonlinear differential equations quantum, monomial basis lifting, polynomial nonlinear quantum, RBA quantum computing
+
+### Optimal classical shadow estimation of unitary channels at Heisenberg limit
+- [[classical-shadow-unitary-channel-estimation]] - Classical Shadow Estimation of Unitary channels (CSEU) achieves Heisenberg-limit O(d/epsilon) query complexity for predicting arbitrary expectation values after unknown unitary evolution (arXiv: 2606.13638)
+  - Core: Parallel non-adaptive protocol -> classical shadow construction -> post-hoc prediction for arbitrary (rho, O) pairs
+  - Applications: unitary channel tomography, Hamiltonian learning, Pauli transfer matrix learning, inverse-free amplitude estimation, shallow-circuit learning
+  - **Activation**: classical shadow estimation, unitary channel tomography, Heisenberg limit quantum learning, quantum process tomography, Hamiltonian learning quantum, Pauli transfer matrix, shadow tomography unitary
+
+### Learning with Simulators: No Regret in a Computationally Bounded World
+- [[simulatable-process-learning-theory]] - Simulatable Processes framework recovers PAC-style VC-dimension bounds for arbitrarily complex dependent data processes with simulator access, with regret controlled by time-bounded Kolmogorov complexity (arXiv: 2606.13576, COLT 2026)
+  - Core: Simulator access replaces independence assumption -> universal algorithm learns any VC class under all simulatable processes -> regret bounded by time-bounded Kolmogorov complexity
+  - Key results: O(VC(C)/epsilon^2) sample complexity matching i.i.d. bounds, conditional sampling advantages, single universal algorithm
+  - **Activation**: simulatable processes, learning with simulators, dependent data learning, VC dimension generalization, time-bounded Kolmogorov complexity, conditional sampling advantage, PAC learning extension, COLT 2026
+
+
 ## 2026-06-12 - Neuroscience Research (Cron Job)
 
 ### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
