@@ -1,46 +1,60 @@
 ---
-name: qldpc-breakeven-demonstration
-description: "Breakeven demonstration of quantum low-density parity-check (qLDPC) codes — first experimental evidence that qLDPC codes can achieve fault-tolerance breakeven on trapped-ion quantum hardware. Critical milestone for scalable quantum error correction. Activation: qLDPC, quantum error correction, breakeven, trapped-ion, fault tolerance, quantum coding, logical qubit, error suppression."
+name: intervention-aware-quantum-predictive-control
+description: "Intervention-Aware Variational Quantum Differentiable Predictive Control (IA-VQC-DPC) methodology. Addresses the problem where safety filters can silently repair incompetent upstream policies, making it unclear who 'earns' the safety. Uses primal-dual intervention budget penalizing reliance on Control Barrier Function (CBF) projection. Activation: quantum predictive control, intervention-aware safety, VQC-DPC, control barrier function quantum, quantum safety attribution."
 category: quantum-computing
 ---
 
+# Intervention-Aware Quantum Predictive Control
+
 ## Context
 
-Quantum low-density parity-check (qLDPC) codes promise significantly lower overhead than surface codes for fault-tolerant quantum computing. This paper reports the first experimental breakeven demonstration of qLDPC codes on trapped-ion hardware (arXiv:2606.06455). Breakeven means the logical error rate is lower than the physical error rate — a critical milestone for practical quantum computing.
+Hard safety filters are increasingly placed downstream of learned controllers to guarantee constraint satisfaction at run time. Yet a filtered controller that never violates a constraint may still have learned nothing about safety — the filter can silently repair an incompetent upstream policy. This paper (arXiv:2606.09778) introduces Intervention-Aware Variational Quantum Differentiable Predictive Control (IA-VQC-DPC) that makes safety attribution measurable.
 
 ## Core Methodology
 
-1. **qLDPC Code Construction**: Use quantum LDPC codes with sparse parity-check matrices that enable efficient syndrome extraction while maintaining good distance properties. qLDPC codes offer better encoding rates than surface codes (constant rate vs 1/d scaling).
+1. **Intervention-Aware Safety Attribution**
+   - Train a compact variational quantum circuit (VQC) policy under a primal-dual intervention budget
+   - The budget penalizes reliance on a differentiable Control Barrier Function (CBF) projection
+   - Forces the quantum policy to internalize safety constraints rather than depending on the filter
 
-2. **Trapped-Ion Implementation**: Implement the qLDPC code on a trapped-ion quantum processor with high-fidelity two-qubit gates and mid-circuit measurement capabilities. The trapped-ion platform provides all-to-all connectivity, simplifying syndrome extraction.
+2. **Primal-Dual Optimization Framework**
+   - Primal: VQC policy parameters optimized for task performance
+   - Dual: Intervention budget variables optimized to minimize filter reliance
+   - The dual variables track how often and how much the CBF filter intervenes
 
-3. **Syndrome Extraction Circuit**: Design efficient syndrome extraction circuits that respect the sparse connectivity of the qLDPC code. Minimize circuit depth to reduce accumulated errors during measurement.
+3. **Quantum Differentiable Predictive Control**
+   - VQC policy produces control actions via quantum circuit forward pass
+   - CBF filter provides differentiable projection onto safe set
+   - End-to-end differentiable pipeline enables gradient-based training
 
-4. **Decoding**: Apply minimum-weight perfect matching (MWPM) or belief propagation (BP) decoding to convert syndrome measurements into error corrections. The sparse structure of qLDPC codes enables efficient classical decoding.
+4. **Safety Attribution Metric**
+   - Quantifies "who earns the safety": the policy or the protective layers
+   - Post-filter success that measures only the filter indicates policy incompetence
+   - True safety learning requires the policy to independently satisfy constraints
 
-5. **Breakeven Verification**: Measure logical error rates under repeated rounds of syndrome extraction and compare against physical error rates. Breakeven is achieved when the logical error rate is strictly lower than the best physical error rate.
+## Implementation Steps
 
-## Key Results
-
-- First experimental demonstration of qLDPC code breakeven
-- Trapped-ion hardware implementation with high-fidelity gates
-- Logical error rate below physical error rate threshold
-- Significant overhead reduction compared to surface code approaches
+1. Define VQC ansatz for control policy with appropriate parameterization
+2. Implement differentiable CBF projection layer
+3. Set up primal-dual optimization with intervention budget tracking
+4. Train with dual penalty encouraging policy self-sufficiency on safety
+5. Monitor intervention rate as diagnostic for policy safety competence
 
 ## Pitfalls
 
-- **Hardware Requirements**: qLDPC codes require mid-circuit measurement and reset capabilities. Not all quantum hardware platforms support this.
-- **Decoder Complexity**: While qLDPC codes have sparse parity checks, the decoder may still be computationally expensive for large code distances.
-- **Crosstalk Effects**: Trapped-ion systems may experience crosstalk between ion pairs during multi-qubit gate operations, affecting syndrome extraction fidelity.
-- **Finite-Size Effects**: Breakeven demonstrations on small code sizes may not extrapolate linearly to larger codes. Verify scaling behavior.
+- **Silent Filter Repair**: The core problem is that post-filter metrics can mask policy incompetence — always track intervention frequency
+- **Differentiable CBF**: The CBF projection must be differentiable for gradient-based training — non-smooth projections break the pipeline
+- **VQC Expressivity**: Compact VQC policies may lack expressivity for complex dynamics — balance model size with training efficiency
+- **Dual Convergence**: Primal-dual dynamics may require careful step-size tuning to converge
 
 ## Verification
 
-- Compare logical error rates across multiple code distances to verify scaling behavior
-- Measure syndrome extraction fidelity independently from data qubit errors
-- Verify decoder correctness on simulated data with known error patterns
-- Compare against surface code baseline at equivalent physical error rates
+- Measure intervention rate over training epochs — should decrease as policy learns safety
+- Compare post-filter and pre-filter constraint violation rates
+- Evaluate task performance under safety filter removal (stress test)
 
 ## Activation
 
-qLDPC, quantum error correction, breakeven, trapped-ion, fault tolerance, quantum coding, logical qubit, error suppression, syndrome extraction, belief propagation, quantum LDPC, quantum advantage threshold
+- intervention-aware quantum control, quantum predictive control, VQC-DPC
+- control barrier function quantum, quantum safety attribution
+- quantum differentiable control, quantum MPC with safety filters

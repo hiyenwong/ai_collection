@@ -1,74 +1,89 @@
 ---
 name: quantum-rare-event-sampling
-category: ai_collection
-description: Quantum algorithm for rare-event discovery and sampling methodology — achieving optimal quantum scaling with rarity threshold, quadratic speedup for heavy-tailed systems, and polynomial speedup for stationary stochastic processes.
-activation: rare event, heavy-tailed, quantum sampling, threshold amplification, stochastic process, financial crash prediction, cascading failure, AI error detection
-source: arXiv:2606.06316
+category: quantum
+description: Quantum algorithm for discovering and sampling rare events without prior knowledge of which events are rare. Achieves optimal quantum scaling with rarity threshold and quadratic speedup for heavy-tailed systems.
+trigger: "rare event sampling, quantum rare events, heavy-tailed systems, anomaly detection quantum, tail distribution quantum, stochastic process rare events"
+source: "arXiv: 2606.06316"
+created: "2026-06-09"
 ---
 
-# Quantum Rare-Event Discovery and Sampling
+# Quantum Rare Event Discovery and Sampling
 
-## Summary
-arXiv:2606.06316 (Guo, Huang, Wang — June 2026)
+## Overview
+This methodology introduces a quantum algorithm for discovering and sampling events with probability below a threshold without first learning which events are rare. The algorithm achieves optimal quantum scaling with the rarity threshold and provides quadratic speedup for heavy-tailed systems.
 
-Quantum algorithm for rare-event discovery and sampling **without first learning which events are rare**. Achieves optimal quantum scaling with the rarity threshold ε. Quadratic speedup for heavy-tailed systems whose tail has nonvanishing total mass. Robust polynomial speedup for stationary stochastic processes, with exponent determined by entropy-rate structure.
+## Core Technique
 
-## Core Methodology
+### Problem Setting
+Given a distribution over events, discover and sample events with probability p < ε (rarity threshold) without prior knowledge of which events satisfy this condition.
 
-### 1. Blind Rare-Event Amplification
-- Standard technique: requires knowing target events beforehand for amplitude amplification
-- This method: discovers rare events without prior knowledge of which events are rare
-- Key insight: quantum interference naturally amplifies low-probability regions without explicit identification
+### Key Insights
+- **Blind discovery**: Cannot pre-flag rare events for standard amplification techniques
+- **Optimal scaling**: Algorithm achieves O(1/√ε) quantum scaling vs O(1/ε) classical
+- **Heavy-tailed advantage**: Quadratic speedup when tail has nonvanishing total mass
+- **Entropy-rate dependency**: Speedup exponent determined by stochastic process entropy-rate
 
-### 2. Optimal Scaling with Rarity Threshold
-- Classical: O(1/ε) samples needed for events with probability ε
-- Quantum: O(1/√ε) — optimal Grover-like scaling
-- Proves this is the best possible quantum scaling for the task
+### Algorithm Structure
+1. **Uniform superposition** over all possible events
+2. **Amplitude encoding** of probability distribution
+3. **Threshold comparison** via quantum phase estimation
+4. **Grover-like amplification** for below-threshold events
+5. **Measurement** to sample rare events
 
-### 3. Heavy-Tailed System Speedup
-- For systems with heavy-tailed distributions (nonvanishing tail mass):
-  - Quadratic speedup over classical importance sampling
-  - No need for prior distribution modeling
-- Applications: financial crash prediction, network failure cascades
+### Complexity Analysis
+- **Classical baseline**: O(1/ε) samples needed
+- **Quantum algorithm**: O(1/√ε) queries (quadratic improvement)
+- **Heavy-tailed systems**: Polynomial speedup with exponent from entropy-rate
+- **Stationary stochastic processes**: Robust speedup preserved
 
-### 4. Stationary Stochastic Process Speedup
-- For stationary processes: robust polynomial speedup
-- Speedup exponent determined by the process's entropy-rate structure
-- Higher entropy rate → greater quantum advantage
+## Applications
+
+### Financial Systems
+- Market crash prediction and early warning
+- Tail risk estimation in portfolio optimization
+- Black swan event modeling
+
+### AI System Safety
+- Critical error detection in large systems
+- Adversarial example discovery
+- Failure mode identification in production ML
+
+### Infrastructure
+- Cascading failure prediction in power grids
+- Network outage risk assessment
+- System reliability under extreme conditions
+
+### Scientific Discovery
+- Rare particle detection in physics experiments
+- Anomalous behavior in complex systems
+- Extreme value statistics in climate modeling
 
 ## Implementation Patterns
 
-### Pattern 1: Threshold-Based Discovery
-```python
-# Conceptual quantum circuit pattern
-# 1. Prepare uniform superposition over sample space
-# 2. Apply oracle that marks events below probability threshold
-# 3. Use amplitude amplification without explicit event list
-# 4. Measure to discover rare event samples
-```
+### Threshold Selection
+- ε should be chosen based on acceptable sample complexity
+- Adaptive thresholding for multi-scale rare events
+- Trade-off: smaller ε = fewer events but higher confidence
 
-### Pattern 2: Heavy-Tail Optimized Sampling
-- Use quantum walks on the distribution's support
-- Exploit the nonvanishing tail mass for quadratic speedup
-- No importance sampling distribution needed
+### Distribution Encoding
+- Quantum state preparation must efficiently encode target distribution
+- QRAM-based encoding for classical data
+- Direct quantum generation for quantum-native distributions
 
-### Pattern 3: Entropy-Rate Adaptive
-- Characterize the stochastic process's entropy rate
-- Tune the quantum algorithm's depth based on entropy structure
-- Achieves process-dependent polynomial speedup
-
-## Applications
-1. **Financial risk analysis**: Discovering crash scenarios without knowing specific triggers
-2. **Infrastructure reliability**: Finding cascading failure paths in networks
-3. **AI safety**: Identifying critical error modes in complex systems
-4. **Scientific simulation**: Rare molecular configurations, extreme weather events
+### Verification Strategy
+- Cross-validate with classical Monte Carlo for small systems
+- Check scaling behavior matches theoretical predictions
+- Verify discovered events satisfy rarity threshold empirically
 
 ## Pitfalls
-- The algorithm assumes access to a quantum sampler for the underlying distribution
-- Classical verification of discovered rare events may still be costly
-- Speedup guarantees depend on distribution properties (heavy-tailed vs. light-tailed)
+- **Distribution encoding overhead**: May negate quantum advantage if state prep is expensive
+- **Threshold sensitivity**: Algorithm performance degrades near threshold boundary
+- **Heavy-tail assumption**: Quadratic speedup requires specific tail properties
+- **Finite sampling**: Statistical fluctuations may misidentify rare events
+- **Post-processing**: Classical analysis of quantum samples may introduce bias
 
-## Verification
-- Compare discovered event probabilities against classical Monte Carlo baselines
-- Verify quadratic speedup by measuring sample complexity vs. rarity threshold
-- Cross-check with known analytical rare-event bounds for test distributions
+## Related Methodologies
+- Amplitude amplification (standard Grover)
+- Quantum Monte Carlo integration
+- Heavy-tailed distribution analysis
+- Entropy-rate estimation for stochastic processes
