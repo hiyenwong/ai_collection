@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-06-13 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### To Cool, or Not to Cool? Displacement Sensing with Hot Quantum States
+- [[hot-state-displacement-sensing]] - Quantum metrology using hot thermal states without mandatory ground-state cooling; identifies parity-selection and coherence mechanisms for maintaining sensitivity (arXiv: 2606.13650)
+  - **Parity Selection**: Projecting mixed probe onto definite parity sector removes thermal suppression of displacement QFI, which can INCREASE with thermal occupation
+  - **Coherence Mechanism**: Superpositions of opposite displacements retain sensitivity even with mixed states
+  - **Optimization**: Complete cooling is NOT universally optimal — depends on decoherence rates vs cooling rates
+  - **Activation**: quantum metrology, displacement sensing, hot quantum states, thermal states, quantum Fisher information, parity projection, bosonic sensing
+
+### Approximate quantum error correction theory of non-isometric codes
+- [[non-isometric-qec-theory]] - General theory of non-isometric QEC using approximate QEC framework; quantifies fundamental limitations from non-isometric encodings on accuracy and logical operations (arXiv: 2606.13559)
+  - **Non-Isometry Bound**: E†E ≠ I_L introduces fundamental lower bound ε ≥ ||E†E - I|| on achievable QEC accuracy
+  - **GKP Application**: Finite-energy GKP codewords are inherently non-isometric; error scales as exp(-Δ²)
+  - **Holographic Implications**: Non-isometric bulk-boundary maps mean boundary recovery is inherently approximate
+  - **Activation**: non-isometric quantum error correction, approximate QEC, GKP codes, tiger codes, continuous-variable QEC, holographic codes
+
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 7)
 
 ### A quantum-like benchmark for context-sensitive associative memory with adaptive plasticity
