@@ -31,10 +31,26 @@
   - **Activation**: fractional quantum mechanics, riemann-liouville derivative, memory effects, quantum information, non-markovian dynamics
 
 ### Diffusive Dynamics of Nonstabilizerness
-- [[nonstabilizerness-diffusive-dynamics]] - Stabilizer Rényi entropy computation and symmetry effects on magic state dynamics (arXiv: 2606.13606)
+|- [[nonstabilizerness-diffusive-dynamics]] - Stabilizer Rényi entropy computation and symmetry effects on magic state dynamics (arXiv: 2606.13606)
   - Nonstabilizerness (magic) spreads diffusively under random Clifford circuits, analogous to entanglement spreading
   - Global symmetries constrain magic diffusion, creating sector-dependent diffusion rates
   - **Activation**: nonstabilizerness, magic states, stabilizer renyi entropy, quantum resource theory, clifford circuits
+
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Evening Session)
+
+### Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos
+|- [[quantum-priors-chaos-prediction]] - k-indexed higher-order quantum statistical priors for chaotic system prediction with provable two-stage quantum-classical separation (arXiv: 2606.13422)
+  - Q-Priors store non-factorisable spatial correlations of invariant measure on n_q qubits via superposition/entanglement
+  - Two-copy Bell measurement extraction achieves copy-pair count independent of n_q vs Omega(2^n_q) single-copy
+  - Weather forecasting: 10-39% anomaly-correlation improvement at 48-240h; validated on IQM superconducting processors
+  - **Activation**: quantum statistical prior, Q-Prior, chaos prediction, quantum advantage, turbulent flow, weather forecasting, Bell measurement, invariant measure, Koopman operator
+
+### Closed-loop Structure of Quantum Probabilities from Unitarity
+|- [[closed-loop-quantum-probability]] - Closed-loop decomposition of quantum probabilities from unitarity with Bargmann invariants as phase-invariant quantities (arXiv: 2606.02504)
+  - Born rule derived as quadratic structure from forward×reverse amplitude product defining fundamental closed loops
+  - Interference reinterpreted as contributions from distinct loop classes weighted by Bargmann phases
+  - Connection to cyclic group structure: n-loop invariants form representation of Z_n
+  - **Activation**: closed-loop quantum probability, Bargmann invariant, unitarity, Born rule derivation, quantum interference, phase-invariant, cyclic loop
 
 ## 2026-06-12 - Quantum Machine Learning (Cron Job)
 
