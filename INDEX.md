@@ -1,5 +1,42 @@
 # AI Collection Index
 
+## 2026-06-12 - Number Theory, Statistics and Advanced Mathematics (Cron Job - Quantum Focus)
+
+### Optimal classical shadow estimation of unitary channels at Heisenberg limit
+- [[quantum-classical-shadow-estimation]] - Heisenberg-limited classical shadow estimation for unitary channels predicting quantum evolution properties at O(1/eps) query complexity (arXiv: 2606.13638)
+  - Heisenberg-limited query complexity: O(1/eps) vs standard O(1/eps^2)
+  - Joint input-output measurement strategy provides more information
+  - Applied to quantum process verification, variational algorithms, QML feature maps
+  - **Activation**: classical shadow estimation, CSEU, unitary channel tomography, Heisenberg limit
+
+### A Graphical Coaction for FRW Integrals from Partial/Relative Twisted (Co)homology
+- [[graphical-coaction-frw-integrals]] - Graphical coaction for FRW integrals using twisted (co)homology intersection theory decomposing cosmological integrals into diagram-decorated building blocks (arXiv: 2606.13627)
+  - Systematic decomposition of FRW integrals at all loop orders
+  - Twisted de Rham cohomology provides algebraic structure for integral relations
+  - Applied to cosmological correlators, QFT in curved spacetime
+  - **Activation**: FRW integrals, twisted cohomology, graphical coaction, cosmological correlators
+
+### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
+- [[reduced-basis-quantum-ode-solver]] - Reduced basis algorithm for nonlinear ODEs/PDEs on quantum computers composing polynomial update maps and identifying minimal monomial basis (arXiv: 2606.13457)
+  - Time discretization with polynomial update map composition
+  - Reduced monomial basis identification avoids exponential blowup
+  - Applied to fluid dynamics, reaction-diffusion equations, nonlinear wave equations
+  - **Activation**: reduced basis algorithm, nonlinear ODEs, quantum algorithms, Carleman linearization
+
+### To Cool or Not to Cool Displacement Sensing with Hot Quantum States
+- [[to-cool-or-not-to-cool]] - Quantum displacement sensing from thermal states without near-ground-state initialization using squeezing, number-raising, and Schrodinger-cat-state generation (arXiv: 2606.13650)
+  - Two mechanisms: squeezing amplification and cat-state interference
+  - Challenges assumption that quantum sensing requires pre-cooling
+  - Applied to quantum precision measurement in thermal environments
+  - **Activation**: quantum sensing, displacement sensing, hot quantum states, squeezing
+
+### Quantized time in quantum walks under weak rank-K measurements
+- [[quantized-time-quantum-walks]] - Quantized time statistics in quantum walks under weak rank-K measurements where mean return time remains topologically quantized (arXiv: 2606.13552)
+  - Topological quantization of mean return time under multi-channel monitoring
+  - Indirect monitoring through ancilla coupling
+  - Applied to quantum search algorithms, topological quantum computing
+  - **Activation**: quantum walks, quantized time, weak measurements, topology, winding number
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 6)
 
 ### Extracting Governing Equations from Latent Dynamics via Multi-View Contrastive Learning
