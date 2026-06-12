@@ -2751,3 +2751,30 @@
   - Reduces attention learning to low-dimensional order parameter space
   - Explains grokking-like sudden emergence of in-context learning capabilities
   - **Activation**: attention phase transition, bayesian attention theory, copy head emergence, softmax attention, linear attention, first-order phase transition, transformer training dynamics
+
+
+## 2026-06-12 - Anthropic Research (Cron Job)
+
+### Coding Agents in the Social Sciences
+- [[coding-agents-social-sciences-research]] - Anthropic methodology using AI coding agents to accelerate social science research (May 27, 2026)
+  - Experimental design automation, statistical analysis, literature review
+  - Lower technical barriers for researchers, improved reproducibility
+  - **Activation**: coding agents social science, AI research assistant, Anthropic economic research
+
+### Mapping AI-Enabled Cyber Threats
+- [[ai-enabled-cyber-threats-mitre-attack]] - Anthropic analysis of AI-enabled cyber threats using MITRE ATT&CK framework (Jun 3, 2026)
+  - Year-long threat mapping, attack pattern categorization
+  - Security policy implications, defensive recommendations
+  - **Activation**: AI cyber threats, MITRE ATT&CK, Anthropic security, cyber threat mapping
+
+### Focus Areas for The Anthropic Institute
+- [[anthropic-institute-focus-areas]] - Anthropic Institute strategic priorities for AI safety research (May 7, 2026)
+  - Alignment research, policy engagement, societal impact studies
+  - Safety standards and evaluation protocols
+  - **Activation**: Anthropic Institute, AI safety priorities, research focus areas
+
+### Project Deal: AI Marketplace Experiment
+- [[project-deal-anthropic-marketplace]] - Anthropic experiment with Claude as AI negotiator in employee marketplace (Apr 24, 2026)
+  - Real-world negotiation testing, agentic decision-making
+  - Trust calibration, procurement automation applications
+  - **Activation**: Project Deal, Anthropic marketplace, AI negotiation, Claude negotiator
