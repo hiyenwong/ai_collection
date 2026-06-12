@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos
+- [[quantum-prior-chaos-forecasting]] - Quantum statistical prior (Q-Prior) methodology for chaotic system forecasting; provable quantum-classical separation in copy-measurement complexity via joint Bell measurements (arXiv: 2606.13422)
+  - **Core Innovation**: k-indexed Q-Priors store k-point marginals of invariant measure on n_q qubits; joint Bell measurements estimate Pauli functionals with O(1) copy complexity vs Omega(2^n_q) classical
+  - **Two-Stage Advantage**: (1) Representation stage uses superposition/entanglement for non-factorisable correlations; (2) Extraction stage via two-copy Bell measurements independent of system size
+  - **Validated on**: IQM superconducting processors + simulation
+  - **Case Studies**: Turbulent channel flow (velocity-direction coherence) + weather forecasting ERA5 (10-39% skill improvement, 48-240h)
+  - **Activation**: quantum-prior, Q-Prior, chaos-forecasting, quantum-advantage, invariant-measure, Bell-measurement, Koopman, turbulent-flow, weather-forecasting, quantum-statistics, NISQ
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 10)
 
 ### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
