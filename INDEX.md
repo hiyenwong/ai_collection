@@ -3028,3 +3028,17 @@
   - Real-world negotiation testing, agentic decision-making
   - Trust calibration, procurement automation applications
   - **Activation**: Project Deal, Anthropic marketplace, AI negotiation, Claude negotiator
+
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Friday PM)
+
+### Towards a Control interpretation of Quantum Advantage
+- [[control-theoretic-quantum-advantage]] - Control-theoretic framework for Quantum Advantage via operator controllability on SU(N); O(n²) bound for QFT, MIS on neutral atoms (arXiv: 2606.13481)
+  - **Controllability**: Recasts quantum computation as bilinear controlled Schrödinger equation on SU(N)
+  - **QA Definition**: Polynomial-in-n upper bound on minimal-time function
+  - **Activation**: quantum advantage, operator controllability, SU(N), bilinear control, QFT time bounds, QAOA optimal control
+
+### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
+- [[reduced-basis-quantum-ode-solver]] - Reduced Basis Algorithm for polynomial nonlinear ODEs/PDEs on quantum computers; O(nm log p) qubits (arXiv: 2606.13457)
+  - **RBA Methodology**: Composes polynomial update map, identifies reduced monomial basis, constructs linear RBA operator
+  - **Qubit Efficiency**: Logarithmic dependence on grid size for PDEs; O(nm log p) for ODEs
+  - **Activation**: reduced basis algorithm, nonlinear ODE quantum, polynomial PDE quantum, qubit requirement, quantum scientific computing
