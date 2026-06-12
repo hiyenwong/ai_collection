@@ -2909,6 +2909,24 @@
   - 简单高效的子采样率选择算法,无需先验知识
   - **Activation**: SDE parameter estimation, diffusion subsampling, stochastic differential equation, data-driven scale selection, 随机微分方程, 扩散参数估计, 子采样率
 
+### Approximability limits for bounded-degree max-LINSAT and implications for decoded quantum interferometry (arXiv: 2606.13570)
+- [[decoded-quantum-interferometry-bounded-degree]] - NP-hardness extension for bounded-degree max-Ek-LINSAT over arbitrary F_q; identifies 1/sqrt(D log D) classical decoder barrier vs. 1/sqrt(D) quantum decoder scaling for DQI
+  - Complexity-theoretic ceiling for DQI, QAOA, and classical heuristics on bounded-degree optimization
+  - Quantum decoding is the key ingredient for matching complexity-theoretic scaling
+  - **Activation**: decoded quantum interferometry, bounded degree optimization, max-LINSAT hardness, quantum decoder advantage, DQI classical barrier, finite field satisfiability
+
+### Quantum Logic Codes: Complete Transversal Logical Clifford Instruction Sets for High-Rate Stabilizer QEC Codes (arXiv: 2606.13521)
+- [[quantum-logic-codes-transversal-clifford]] - High-rate [[n,sqrt(n),Theta(n^beta)]] CSS codes with complete depth-one transversal logical Clifford ISA (S-bar, sqrt(X)-bar, CZ-bar)
+  - Tiling and concatenation preserve the depth-one ISA at scale
+  - New depth-one transversal S-bar in rotated surface code and CZ-bar in 2D-toric code
+  - **Activation**: quantum logic codes, transversal logical Clifford gates, high-rate CSS codes, depth-one logical gates, stabilizer quantum error correction, complete Clifford basis
+
+### Optimal classical shadow estimation of unitary channels at Heisenberg limit (arXiv: 2606.13638)
+- [[classical-shadow-unitary-channel-estimation]] (existing) - Parallel non-adaptive CSEU protocol using O(d/eps) queries achieving Heisenberg scaling with matching lower bound
+  - Closes parallel vs sequential gap for unitary channel tomography
+  - Applications: Hamiltonian learning, Pauli transfer matrix, inverse-free amplitude estimation
+  - **Activation**: classical shadow estimation, unitary channel tomography, Heisenberg limit quantum learning, quantum process tomography, Hamiltonian learning quantum
+
 ## 2026-06-12 - Anthropic Research (Cron Job)
 
 ### Coding Agents in the Social Sciences
