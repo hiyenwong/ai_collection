@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 7)
+
+### A quantum-like benchmark for context-sensitive associative memory with adaptive plasticity
+- [[quantum-like-benchmark-context-sensitive-memory]] - Order-sensitive benchmark comparing quantum-like vs classical associative memory under weak structural support, revealing multi-objective evaluation necessity (arXiv: 2606.12449)
+  - Quantum-like models preserve order sensitivity; Markov-rate models achieve stronger raw recall
+  - Weak structural support regime is narrow and non-monotonic; plasticity dominates structural effects
+  - Homeostatic stabilization most impactful for recall gains
+  - **Activation**: quantum-like memory, associative memory benchmark, context-sensitive memory, adaptive plasticity, order-sensitive recall, homeostatic stabilization, weak structural support, staged recall
+
 ## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job - Friday)
 
 ### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
