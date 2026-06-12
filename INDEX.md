@@ -1,6 +1,24 @@
 # AI Collection Index
 
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 4)
+
+### Hyperbolic Neural Population Geometry Benefits Computation
+- [[hyperbolic-neural-population-geometry-computation]] - 海马体神经群体活动的双曲几何框架，连接神经解码与联想记忆，提出双曲空间联想记忆模型实现更大容量 (arXiv: 2606.10238, ICML 2026)
+  - 海马体tuning曲线统计诱导双曲几何的数学构造
+  - Modern Hopfield Network更新规则等于MMSE估计器（神经解码↔联想记忆理论等价）
+  - 双曲空间联想记忆容量显著优于欧几里得空间（指数级vs多项式级）
+  - **Activation**: hyperbolic geometry, hippocampal encoding, place cells, cognitive map, associative memory, memory capacity, neural decoding, spatial representation
+
+### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
+- [[quiet-edge-centric-brain-synchronization]] - 边中心脑网络同步控制框架，识别"静默高速公路"实现能量高效同步路径 (arXiv: 2606.11091)
+  - 节点中心控制→边中心控制：整合结构可控性与功能连接
+  - 静默高速公路：结构影响力高但功能利用率低的边
+  - Human Connectome Project验证：显著性网络同步控制能量与流体智力相关性
+  - Dexmedetomidine镇静研究：额顶网络和默认模式网络在清醒与镇静状态下需最大控制能量
+  - **Activation**: edge-centric control, quiet highways, network synchronization, control energy, structural controllability, functional connectivity, targeted neuromodulation
+
+
 ## 2026-06-12 - Systems Engineering Research (Cron Job)
 
 ### Analysis of a Distributed Optimization-Based Control Architecture for Inverter-Interfaced Virtual Power Plants
