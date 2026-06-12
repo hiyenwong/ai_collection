@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 8)
+
+### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
+- [[flow-matching-in-context-priors-brain-dynamics]] - First generative model for zero-shot whole-cortex fMRI dynamics in unseen cognitive tasks using compositional language + spatial priors; enables counterfactual neuroscience (arXiv: 2606.11833)
+  - **Core Innovation**: Per-timestep diffusion transformer with in-context conditioning
+  - **Compositional Generalization**: Language alone recovers region-specific recruitment
+  - **Spatial Anchoring**: Priors complement language in degraded regions
+  - **Counterfactual Neuroscience**: In-silico experiment design before empirical validation
+  - **Activation**: flow matching, in-context priors, OOD brain dynamics, counterfactual neuroscience, zero-shot fMRI, diffusion transformer, compositional conditioning, PINC flows
+
+### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
+- [[llm-emotion-trajectory-fmri]] - LLM自动化标注情绪轨迹fMRI解码；多目标回归框架+DFC捕获连续情感波动；图论XAI揭示情绪特异性拓扑配置 (arXiv: 2606.07707)
+  - **LLM Annotation**: 从叙事刺激自动提取情感profile
+  - **Continuous Trajectory**: 多目标回归替代离散分类
+  - **DFC Advantages**: 30秒窗口捕获快速叙事波动
+  - **Graph XAI**: 支持心理构建主义理论
+  - **Activation**: llm-emotion, dfc-fmri, sentiment-trajectory, naturalistic-decoding, graph-xai, regression-framework
+
 ## 2026-06-13 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
 
 ### To Cool, or Not to Cool? Displacement Sensing with Hot Quantum States
