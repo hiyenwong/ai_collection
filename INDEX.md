@@ -34,6 +34,13 @@
   - **Holographic Implications**: Non-isometric bulk-boundary maps mean boundary recovery is inherently approximate
   - **Activation**: non-isometric quantum error correction, approximate QEC, GKP codes, tiger codes, continuous-variable QEC, holographic codes
 
+### Statistical Mechanics and Symmetries of Non-Abelian Anyon Proliferation
+- [[non-abelian-anyon-proliferation-stat-mech]] - Maps topological order instability to stat-mech models whose symmetries expose corrupting anyonic excitations; identifies parasitic condensation thresholds for non-Abelian anyon pairs (arXiv: 2606.12527)
+  - **Stat-Mech Mapping**: Wavefunction deformations and decoherence map to stat-mech models whose symmetries reveal corrupting anyonic excitations
+  - **Parasitic Condensation**: Beyond threshold, proliferation of two non-Abelian anyon species parasitically condenses shared Abelian fusion outcome, destroying topological order
+  - **Symmetry Memory**: Trivial phase "remembers" which anyons condensed — distinguishes from condensing all Abelian charges
+  - **Activation**: non-abelian anyon, topological order, statistical mechanics, anyon proliferation, decoherence, syndrome distribution, D4 topological order, Monte-Carlo, parasitic condensation, quantum decoder
+
 
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 7)
 
