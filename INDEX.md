@@ -2950,6 +2950,24 @@
   - Nested cross-validation with paired statistical tests for quantum vs classical baselines
   - **Activation**: generalized PQFM, projective quantum feature map, two-qubit Hamiltonian encoding, quantum feature encoding, Hamiltonian PQF, pqfmlib
 
+### On 3d Quantum Trace Maps (arXiv: 2606.13268)
+- [[quantum-trace-maps-3d]] - Third construction of 3D quantum trace map homomorphism from skein modules to quantum gluing modules, unifying Garoufalidis-Yu and Panitch-Park approaches
+  - Unifies two previously distinct constructions of quantum trace maps
+  - Extends to new manifold classes beyond existing constructions
+  - **Activation**: 3d quantum trace map, skein module quantum gluing, triangulated 3-manifold quantum, garoufalidis yu panitch park
+
+### Unsupervised Learning for Nondispersive Wave Packets in Driven Helium (arXiv: 2605.25324)
+- [[unsupervised-quantum-state-identification]] - Floquet-based unsupervised learning pipeline for automated identification of nondispersive wave packets in driven quantum systems
+  - Represents Floquet quantum states as probability distributions for ML clustering
+  - Automates parameter regime exploration that traditionally requires manual phase-space analysis
+  - **Activation**: unsupervised quantum state identification, nondispersive wave packets, floquet quantum learning, driven helium quantum
+
+### Higher Gauge Theory via Differential Nonabelian Cohomology (arXiv: 2606.12534)
+- [[higher-gauge-theory-cohomology]] - Streamlined framework for global completion of Maxwell-type higher gauge fields via flux quantization in differential nonabelian cohomology
+  - Applications: D/NS brane charge in K-theory, M-brane charge in Cohomotopy
+  - Geometric engineering of topological quantum order on probe M5-branes
+  - **Activation**: higher gauge theory cohomology, differential nonabelian cohomology, flux quantization gauge fields, cohesive homotopy theory
+
 ## 2026-06-12 - Anthropic Research (Cron Job)
 
 ### Coding Agents in the Social Sciences
