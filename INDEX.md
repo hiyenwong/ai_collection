@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 5)
+
+### Large language models selectively converge with human-shared neural semantic representations
+- [[llm-human-neural-semantic-convergence]] - LLM选择性对齐人类共享神经语义的维度分解研究，揭示agency/affect/social维度偏差 (arXiv: 2606.11598)
+  - 伪超扫描MEG实验设计 + 十维语义空间评估（perception, motor, space, time, socialness, animacy, emotion, attention, causality, drive）
+  - 维度分解跨脑编码建模：Speaker-Listener神经同步（NS）超越声学/音韵控制
+  - 选择性对齐：LLM捕获感知/认知维度，但agency/affect/social维度偏差最大
+  - **Activation**: llm brain alignment, neural semantic representation, interbrain synchronization, semantic dimensions, pseudo-hyperscanning, MEG encoding, dimension-resolved encoding, selective convergence
+
+### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
+- [[flow-matching-in-context-priors-brain-dynamics]] - 首个OOD脑动力学生成模型，支持零样本认知任务与反事实神经科学 (arXiv: 2606.11833)
+  - Per-timestep conditioned diffusion transformer：语言 + 空间priors组合条件注入
+  - 零样本生成未见认知任务的whole-cortex fMRI动力学
+  - Counterfactual neuroscience支持：虚拟实验设计与验证
+  - **Activation**: flow matching brain dynamics, in-context priors, OOD brain dynamics, fMRI generation, counterfactual neuroscience, zero-shot cognitive tasks, diffusion transformer fMRI
+
 ## 2026-06-12 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
 
 ### Measurement Geometry for Quantum Random Access Codes: Beyond Nayak Bound and Toward Optimality
