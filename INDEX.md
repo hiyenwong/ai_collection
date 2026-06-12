@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-12 - Quantum Machine Learning (Cron Job)
+
+### Generalization Error Bound for Quantum Machine Learning in NISQ Era -- A Survey
+- [[qml-generalization-nisq-era]] - NISQ时代量子机器学习泛化误差边界的系统映射研究，覆盖量子硬件、数据集、优化技术与噪声感知泛化理论 (arXiv: 2409.07626v2, Quantum Machine Intelligence 2024)
+  - 系统映射研究：544篇论文筛选至37篇相关文献
+  - Rademacher复杂度、VC维度、PAC学习、信息论等4类泛化边界
+  - MNIST/IRIS基准测试性能分析与噪声效应
+  - **Activation**: generalization bound, NISQ QML, quantum ML reliability, noise-aware QML, QML validation, quantum learning theory
+
 
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 4)
 
