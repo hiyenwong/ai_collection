@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-12 - Neuroscience Research (Cron Job - Session 9)
+
+### From Persistence to Survival: Hypothesis Testing, Effect Sizes and Vectorisation for Topological Features
+- [[strand-survival-topological-analysis]] - STRAND treats persistence diagrams as survival data enabling unified hypothesis testing, effect sizes, and 1-Wasserstein-stable vectorisation for neuroscience applications (arXiv: 2606.11911)
+  - **Core Innovation**: Persistence survival function S(t) = P(p > t) for diagram comparison
+  - **Three Capabilities**: Non-parametric two-sample test + interpretable effect sizes + ML-ready feature vectors
+  - **Validation**: Calibrated Type I error, high power from small diagrams, competitive vectorisation on 14 graph benchmarks
+  - **Neuroscience**: Applied to functional brain connectivity in fMRI data
+  - **Activation**: persistence diagrams, topological data analysis, survival analysis, brain connectivity, fMRI topology, Wasserstein vectorisation
+
 ## 2026-06-12 - Neuroscience Research (Cron Job - Session 8)
 
 ### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
