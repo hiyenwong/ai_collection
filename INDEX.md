@@ -2789,6 +2789,11 @@
   - **Activation**: attention phase transition, bayesian attention theory, copy head emergence, softmax attention, linear attention, first-order phase transition, transformer training dynamics
 
 
+- [[data-driven-sde-subsampling-rates]] - 数据驱动方法选择SDE扩散参数估计的最优子采样率,解决数据-模型兼容尺度未知问题 (arXiv: 2606.13615)
+  - 数据与模型仅在特定尺度兼容时的参数估计问题
+  - 简单高效的子采样率选择算法,无需先验知识
+  - **Activation**: SDE parameter estimation, diffusion subsampling, stochastic differential equation, data-driven scale selection, 随机微分方程, 扩散参数估计, 子采样率
+
 ## 2026-06-12 - Anthropic Research (Cron Job)
 
 ### Coding Agents in the Social Sciences

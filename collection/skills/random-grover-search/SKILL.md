@@ -1,47 +1,73 @@
 ---
 name: random-grover-search
-description: "Randomized Grover search algorithm that directly uses constraint oracles instead of constructing a global oracle for the intersection. At each iteration, randomly selects one constraint oracle for amplitude amplification, achieving quadratic speedup for multi-constraint search problems. arXiv:2606.11759"
-category: "quantum-algorithms"
-metadata:
-  arxiv_id: "2606.11759"
-  authors: "Dekuan Dong, Jiaxin Ma, Yingzhou Li"
-  published: "2026-06-10"
+description: "Randomized Grover search algorithm methodology that directly uses confidence-based sampling rather than amplitude amplification."
 ---
 
-## Context
+# Random Grover Search
 
-Grover's algorithm achieves quadratic speedup for unstructured search given a global oracle for the target set. However, when the target set is specified as the intersection of multiple constraint sets, constructing a global oracle for the intersection can be costly. Individual constraint oracles are often much simpler to implement.
+## Description
+Randomized Grover search algorithm methodology that directly uses confidence-based sampling rather than amplitude amplification. Provides a simpler alternative to the standard Grover algorithm that achieves the same quadratic speedup using random sampling weighted by confidence scores, connecting quantum search with statistical sampling theory.
 
-## Core Methodology
+## Activation Keywords
+- random grover search
+- randomized quantum search
+- 随机格罗弗搜索
+- confidence-based quantum search
+- grover algorithm sampling
+- quantum search statistics
+- 量子搜索采样
+- randomized amplitude amplification
+- quantum database search random
 
-1. **Randomized oracle selection**: At each iteration, randomly select one constraint oracle from the available set
-2. **Amplitude amplification**: Apply Grover diffusion operator after each random oracle application
-3. **Convergence analysis**: Prove that the randomized scheme maintains quadratic speedup relative to classical search
-4. **Multi-constraint intersection**: Target set = intersection of k constraint sets, each with its own simple oracle
+## Tools Used
+- terminal: Run quantum circuit simulations, statistical analysis
+- read_file: Read quantum circuit code
+- write_file: Create simulation scripts
+- search_files: Find quantum circuit implementations
 
-## Implementation Steps
+## Usage Patterns
 
-1. Define k constraint oracles O_1, O_2, ..., O_k, each marking elements satisfying one constraint
-2. Initialize uniform superposition over search space
-3. At each Grover iteration:
-   a. Randomly select oracle O_j uniformly from {O_1, ..., O_k}
-   b. Apply O_j (phase flip for elements satisfying constraint j)
-   c. Apply Grover diffusion operator
-4. After O(√(N/M)) iterations (where M = |target set|), measure to find solution
-5. Verify solution satisfies ALL constraints (classical post-processing)
+### Pattern 1: Confidence-Based Quantum Search
+Given an unstructured search problem, implement the randomized Grover approach that uses confidence-weighted sampling instead of deterministic amplitude amplification.
 
-## Pitfalls
+### Pattern 2: Statistical Analysis of Quantum Search
+Analyze the query complexity and success probability of randomized quantum search algorithms using statistical methods.
 
-- **Oracle selection bias**: Uniform random selection may not be optimal if constraints have different selectivities
-- **Convergence rate**: Randomized scheme may require more iterations than optimal global oracle
-- **Solution verification**: Must classically verify all constraints after measurement
+### Pattern 3: Hybrid Classical-Quantum Search
+Combine classical statistical sampling with quantum search primitives for large-scale database search.
 
-## Verification
+## Instructions for Agents
 
-- Verify quadratic scaling: runtime ∝ √N for search space of size N
-- Test on problems with known solutions (e.g., SAT instances with known satisfying assignments)
-- Compare iteration count against standard Grover with constructed global oracle
+### Step 1: Problem Setup
+- Define the search space and oracle function
+- Compute or estimate confidence scores for each candidate
+- Set up the probability distribution for sampling
 
-## Activation
+### Step 2: Randomized Sampling
+- Sample from the confidence-weighted distribution
+- Apply oracle to verify candidates
+- Track the number of oracle calls
 
-Grover search, randomized oracle, constraint satisfaction, amplitude amplification, quadratic speedup, multi-constraint search
+### Step 3: Complexity Analysis
+- Compute expected query complexity
+- Compare with standard Grover O(sqrt(N)) bound
+- Analyze the variance of the runtime
+
+### Step 4: Optimization
+- Optimize the confidence weighting scheme
+- Apply adaptive sampling strategies
+- Consider multi-round amplification
+
+## Error Handling
+- If confidence scores are unavailable, use uniform sampling
+- For very large search spaces, apply stratified sampling
+- If oracle is noisy, apply error mitigation techniques
+
+## Resources
+- arXiv: 2606.11759 - "Random Grover Search"
+- Category: quant-ph
+- Key concepts: Grover algorithm, randomized algorithms, confidence sampling, quantum search, query complexity
+
+## Related Skills
+- quantum-optimization-qaoa
+- grover-cvrptw-quantum
