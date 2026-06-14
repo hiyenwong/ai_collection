@@ -2508,3 +2508,298 @@
   - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
   - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
   - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
+<<<<<<< Updated upstream
+=======
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job + Daily Quantum)
+
+### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning (arXiv: 2606.12211)
+- [[quantum-occam-learning]] (existing) - Information-theoretic Occam theory for quantum circuit learning: M samples support G ~ M*eps^2 gates, adaptive model selection for circuit complexity
+  - Realizable sample law O(G/eps^2) in circuit-limited regime
+  - Agnostic quantum Occam theorem with best G-gate approximation error plus statistical penalty O(sqrt(G/M))
+  - **Activation**: quantum occam learning, quantum generalization bounds, quantum ansatz design, quantum sample complexity, quantum overfitting, 量子奥卡姆学习
+
+### Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization (arXiv: 2606.10179)
+- [[trainability-iqp-born-machines]] (existing) - Gradient variance lower bounds and concentration analysis for IQP QCBMs under Gaussian initialization
+  - Stein's lemma + Lipschitz concentration bounds for Gaussian random variables
+  - Strategies to avoid/encourage exponential concentration, barren plateau conditions
+  - **Activation**: IQP circuit, Born machine, QCBM trainability, barren plateau, gradient concentration, Gaussian initialization, Stein's lemma
+
+### An Algorithm for Dynamical Quantum Optimal Transport with Applications to Quantum Chemistry (arXiv: 2606.10075)
+- [[dynamical-quantum-optimal-transport]] - Interior-point regularized method for computing geodesics between PSD matrices using Benamou-Brenier QOT formulation
+  - Numerical convergence as matrix size increases, visualization via integral kernels
+  - Approximation of quantum chemistry problems with appropriate parameter tuning
+  - **Activation**: quantum optimal transport, dynamical QOT, Benamou-Brenier, quantum chemistry optimal transport, density matrix geodesic, interior-point quantum transport
+
+### Weighted Partitions with Interval Restrictions: Exact Formulas and a Bivariate Master Identity (arXiv: 2606.11011)
+- [[weighted-partitions-interval-restrictions]] - Exact formulas for interval-restricted partition functions via bivariate master identity with Rogers-Fine evaluation
+  - Master identity: (1+q²)B(z,q)-(1+q)A(z,q) = -q⁴/(1-q³) with auxiliary variable z
+  - Coefficient range for b₂''(n) proven to be {-1, 0, 1, 2}
+  - Quantum modular interpretation of false theta formulas
+  - **Activation**: weighted partitions, interval restrictions, bivariate master identity, Rogers-Fine evaluation, false theta partition, Andrews El Bachraoui, partition coefficient bounds
+
+### Phase Transitions in Attention: A Bayesian Theory of Copy Head Emergence (arXiv: 2606.12058)
+- [[phase-transition-attention-bayesian]] - Bayesian theory deriving closed-form posterior over attention matrices, revealing first-order phase transitions in copy head emergence (arXiv: 2606.12058)
+  - First-order phase transition for softmax attention: copy head abruptly switches on at critical data threshold
+  - Linear attention exhibits second-order transition followed by smooth crossover
+  - Reduces attention learning to low-dimensional order parameter space
+  - Explains grokking-like sudden emergence of in-context learning capabilities
+  - **Activation**: attention phase transition, bayesian attention theory, copy head emergence, softmax attention, linear attention, first-order phase transition, transformer training dynamics
+
+
+- [[data-driven-sde-subsampling-rates]] - 数据驱动方法选择SDE扩散参数估计的最优子采样率,解决数据-模型兼容尺度未知问题 (arXiv: 2606.13615)
+  - 数据与模型仅在特定尺度兼容时的参数估计问题
+  - 简单高效的子采样率选择算法,无需先验知识
+  - **Activation**: SDE parameter estimation, diffusion subsampling, stochastic differential equation, data-driven scale selection, 随机微分方程, 扩散参数估计, 子采样率
+
+### Approximability limits for bounded-degree max-LINSAT and implications for decoded quantum interferometry (arXiv: 2606.13570)
+- [[decoded-quantum-interferometry-bounded-degree]] - NP-hardness extension for bounded-degree max-Ek-LINSAT over arbitrary F_q; identifies 1/sqrt(D log D) classical decoder barrier vs. 1/sqrt(D) quantum decoder scaling for DQI
+  - Complexity-theoretic ceiling for DQI, QAOA, and classical heuristics on bounded-degree optimization
+  - Quantum decoding is the key ingredient for matching complexity-theoretic scaling
+  - **Activation**: decoded quantum interferometry, bounded degree optimization, max-LINSAT hardness, quantum decoder advantage, DQI classical barrier, finite field satisfiability
+
+### Quantum Logic Codes: Complete Transversal Logical Clifford Instruction Sets for High-Rate Stabilizer QEC Codes (arXiv: 2606.13521)
+- [[quantum-logic-codes-transversal-clifford]] - High-rate [[n,sqrt(n),Theta(n^beta)]] CSS codes with complete depth-one transversal logical Clifford ISA (S-bar, sqrt(X)-bar, CZ-bar)
+  - Tiling and concatenation preserve the depth-one ISA at scale
+  - New depth-one transversal S-bar in rotated surface code and CZ-bar in 2D-toric code
+  - **Activation**: quantum logic codes, transversal logical Clifford gates, high-rate CSS codes, depth-one logical gates, stabilizer quantum error correction, complete Clifford basis
+
+### Optimal classical shadow estimation of unitary channels at Heisenberg limit (arXiv: 2606.13638)
+- [[classical-shadow-unitary-channel-estimation]] (existing) - Parallel non-adaptive CSEU protocol using O(d/eps) queries achieving Heisenberg scaling with matching lower bound
+  - Closes parallel vs sequential gap for unitary channel tomography
+  - Applications: Hamiltonian learning, Pauli transfer matrix, inverse-free amplitude estimation
+  - **Activation**: classical shadow estimation, unitary channel tomography, Heisenberg limit quantum learning, quantum process tomography, Hamiltonian learning quantum
+
+### Generalized Two-Qubit Hamiltonian for Projective Quantum Feature Maps (arXiv: 2606.13641)
+- [[generalized-hamiltonian-quantum-feature-maps]] - Unified Hamiltonian-based PQFM encoding through local Pauli fields and pairwise interactions with statistical benchmarking on 156-qubit IBM quantum processors
+  - Multi-axis encoding: distinct classical variables along different Pauli axes of same qubit
+  - Nested cross-validation with paired statistical tests for quantum vs classical baselines
+  - **Activation**: generalized PQFM, projective quantum feature map, two-qubit Hamiltonian encoding, quantum feature encoding, Hamiltonian PQF, pqfmlib
+
+### On 3d Quantum Trace Maps (arXiv: 2606.13268)
+- [[quantum-trace-maps-3d]] - Third construction of 3D quantum trace map homomorphism from skein modules to quantum gluing modules, unifying Garoufalidis-Yu and Panitch-Park approaches
+  - Unifies two previously distinct constructions of quantum trace maps
+  - Extends to new manifold classes beyond existing constructions
+  - **Activation**: 3d quantum trace map, skein module quantum gluing, triangulated 3-manifold quantum, garoufalidis yu panitch park
+
+### Unsupervised Learning for Nondispersive Wave Packets in Driven Helium (arXiv: 2605.25324)
+- [[unsupervised-quantum-state-identification]] - Floquet-based unsupervised learning pipeline for automated identification of nondispersive wave packets in driven quantum systems
+  - Represents Floquet quantum states as probability distributions for ML clustering
+  - Automates parameter regime exploration that traditionally requires manual phase-space analysis
+  - **Activation**: unsupervised quantum state identification, nondispersive wave packets, floquet quantum learning, driven helium quantum
+
+### Higher Gauge Theory via Differential Nonabelian Cohomology (arXiv: 2606.12534)
+- [[higher-gauge-theory-cohomology]] - Streamlined framework for global completion of Maxwell-type higher gauge fields via flux quantization in differential nonabelian cohomology
+  - Applications: D/NS brane charge in K-theory, M-brane charge in Cohomotopy
+  - Geometric engineering of topological quantum order on probe M5-branes
+  - **Activation**: higher gauge theory cohomology, differential nonabelian cohomology, flux quantization gauge fields, cohesive homotopy theory
+
+## 2026-06-12 - Anthropic Research (Cron Job)
+
+### Coding Agents in the Social Sciences
+- [[coding-agents-social-sciences-research]] - Anthropic methodology using AI coding agents to accelerate social science research (May 27, 2026)
+  - Experimental design automation, statistical analysis, literature review
+  - Lower technical barriers for researchers, improved reproducibility
+  - **Activation**: coding agents social science, AI research assistant, Anthropic economic research
+
+### Mapping AI-Enabled Cyber Threats
+- [[ai-enabled-cyber-threats-mitre-attack]] - Anthropic analysis of AI-enabled cyber threats using MITRE ATT&CK framework (Jun 3, 2026)
+  - Year-long threat mapping, attack pattern categorization
+  - Security policy implications, defensive recommendations
+  - **Activation**: AI cyber threats, MITRE ATT&CK, Anthropic security, cyber threat mapping
+
+### Focus Areas for The Anthropic Institute
+- [[anthropic-institute-focus-areas]] - Anthropic Institute strategic priorities for AI safety research (May 7, 2026)
+  - Alignment research, policy engagement, societal impact studies
+  - Safety standards and evaluation protocols
+  - **Activation**: Anthropic Institute, AI safety priorities, research focus areas
+
+### Project Deal: AI Marketplace Experiment
+- [[project-deal-anthropic-marketplace]] - Anthropic experiment with Claude as AI negotiator in employee marketplace (Apr 24, 2026)
+  - Real-world negotiation testing, agentic decision-making
+  - Trust calibration, procurement automation applications
+  - **Activation**: Project Deal, Anthropic marketplace, AI negotiation, Claude negotiator
+
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Friday PM)
+
+### Towards a Control interpretation of Quantum Advantage
+- [[control-theoretic-quantum-advantage]] - Control-theoretic framework for Quantum Advantage via operator controllability on SU(N); O(n²) bound for QFT, MIS on neutral atoms (arXiv: 2606.13481)
+  - **Controllability**: Recasts quantum computation as bilinear controlled Schrödinger equation on SU(N)
+  - **QA Definition**: Polynomial-in-n upper bound on minimal-time function
+  - **Activation**: quantum advantage, operator controllability, SU(N), bilinear control, QFT time bounds, QAOA optimal control
+
+### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
+- [[reduced-basis-quantum-ode-solver]] - Reduced Basis Algorithm for polynomial nonlinear ODEs/PDEs on quantum computers; O(nm log p) qubits (arXiv: 2606.13457)
+  - **RBA Methodology**: Composes polynomial update map, identifies reduced monomial basis, constructs linear RBA operator
+  - **Qubit Efficiency**: Logarithmic dependence on grid size for PDEs; O(nm log p) for ODEs
+  - **Activation**: reduced basis algorithm, nonlinear ODE quantum, polynomial PDE quantum, qubit requirement, quantum scientific computing
+
+### Optimal classical shadow estimation of unitary channels at Heisenberg limit
+- [[classical-shadow-unitary-channel-estimation]] - Classical Shadow Estimation of Unitary channels (CSEU) achieves Heisenberg-limit O(d/epsilon) query complexity for predicting arbitrary expectation values after unknown unitary evolution (arXiv: 2606.13638)
+  - **CSEU Protocol**: Parallel non-adaptive queries with randomized measurements, storing classical shadows
+  - **Query Optimality**: Matches Omega(d/eps) lower bound; Heisenberg scaling eps^{-1} not eps^{-2}
+  - **Applications**: Hamiltonian learning, unitary channel tomography, Pauli transfer matrix learning
+  - **Activation**: classical shadow estimation, CSEU, unitary channel tomography, Heisenberg limit, quantum process learning
+
+### Diffusive Dynamics of Nonstabilizerness
+- [[nonstabilizerness-diffusive-dynamics]] - Stabilizer Renyi entropy and diffusive magic dynamics in U(1)-symmetric quantum circuits (arXiv: 2606.13606)
+  - **Tensor Network Method**: Four-replica TN with S4-adapted iTEBD in thermodynamic limit
+  - **Diffusive Scaling**: Late-time nonstabilizerness gap closes as 1/t — diffusive universality class
+  - **Activation**: nonstabilizerness, stabilizer Renyi entropy, magic state dynamics, tensor network, iTEBD, hydrodynamic quantum
+
+### Semi-Device-Independent Certification for Nonlocality without Entanglement
+- [[semi-device-independent-nlwe-certification]] - Maximum-confidence discrimination certifies NLWE with global vs separable measurements, tolerant to non-unit detection efficiency (arXiv: 2606.13667)
+  - **NLWE Criterion**: Global measurement confidence > separable measurement confidence for separable state ensembles
+  - **Semi-Device-Independent**: Verifies NLWE from measurement outcomes only, robust to detection inefficiency
+  - **Activation**: nonlocality without entanglement, NLWE, maximum-confidence discrimination, semi-device-independent, separable state discrimination
+
+## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Friday Session 2)
+
+### Split primes and the Elekes-Rónyai problem
+- [[split-primes-elekes-ronyai]] - Counterexample methodology for Elekes-Rónyai problem showing subquadratic expansion for non-additive non-multiplicative polynomials (arXiv: 2606.13619)
+  - **Core Innovation**: |{x+y+(x-y)²: x,y∈A}| ≤ |A|^(2-c) for absolute c>0; first counterexample to Elekes-Rónyai
+  - **Split Prime Construction**: Uses algebraic number theory split primes to build sets with controlled expansion
+  - **Activation**: Elekes-Ronyai, split primes, subquadratic expansion, arithmetic combinatorics, sum-product, polynomial expansion
+
+### Majority-of-Three is Optimal
+- [[majority-of-three-pac-optimality]] - Statistical learning theory proof that majority vote of 3 consistent classifiers achieves optimal PAC sample complexity (arXiv: 2606.13614)
+  - **Core Innovation**: Simplest possible voting scheme (3 classifiers) achieves optimal sample complexity in realizable PAC setting
+  - **Simplified Analysis**: Both algorithmic structure and probabilistic analysis simpler than previous optimal learners
+  - **Activation**: majority-of-three, PAC optimality, ensemble voting, consistent classifiers, sample complexity, statistical learning theory
+
+### Some new modular Nahm sums of ranks 3 and 4
+- [[modular-nahm-sums-construction]] - Construction methodology for new families of modular Nahm sums using Zagier modifications and lift-dual operations (arXiv: 2606.13590)
+  - **Core Innovation**: Six new modular Nahm sum families; rank 3 from Zagier modifications, rank 4 from lift-dual on tadpole sums
+  - **Connections**: Number theory, modular forms, q-series, vertex operator algebras
+  - **Activation**: Nahm sums, modular forms, q-series, Zagier, lift-dual, tadpole sums, modular identities
+
+## 2026-06-14 - Information Science + Quantum (Cron Job - Sunday)
+
+### EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments
+- [[evoarena-memory-evolution]] - Patch-based memory paradigm (EvoMem) records memory evolution as structured update histories for robust agent deployment in dynamic environments (arXiv: 2606.13681)
+  - **Core Innovation**: Models environment changes as progressive updates; patch-based memory enables reasoning about evolution
+  - **Results**: 39.6% baseline → +1.5% on EvoArena, +6.1% on GAIA, +4.8% on LoCoMo, +3.7% chain-level accuracy
+  - **Activation**: evoarena, evomem, memory evolution, dynamic environments, patch-based memory, agent robustness
+
+### Agents-K1: Towards Agent-native Knowledge Orchestration
+- [[agents-k1-knowledge-orchestration]] - End-to-end knowledge orchestration pipeline converting 2.46M papers into agent-native scientific knowledge graphs with multimodal parser, GRPO-trained IE backbone, tri-source interface (arXiv: 2606.13669)
+  - **Core Innovation**: Five-module schema captures entities, multimodal evidence, citations, typed relations across full papers
+  - **Dataset**: Scholar-KG - 2.46M papers processed, 1M released subset, accessible via SCP
+  - **Activation**: agents-k1, knowledge orchestration, scientific knowledge graph, scholar-kg, agent-native knowledge
+
+### Operadic Consistency: Label-free Signal for Compositional Reasoning Failures
+- [[operadic-consistency-reasoning]] - Operad theory-based diagnostic for compositional reasoning failures: direct answer should agree with composed decomposition answer; r=0.86-0.94 correlation across 12 LLMs and 4 datasets (arXiv: 2606.13649)
+  - **Core Innovation**: Tests structural reasoning consistency at inference time without ground truth; outperforms CoT-SC on MuSiQue/StrategyQA
+  - **Results**: AUARC lifts +0.086 to +0.096, AUROC lifts +0.092 to +0.164 at K=3 budget
+  - **Activation**: operadic consistency, compositional reasoning, label-free diagnostics, inference-time validation, selective prediction
+
+### An LLM System for Autonomous Variational Quantum Circuit Design
+- [[autonomous-variational-quantum-circuit-design]] - LLM-driven autonomous proposal, optimization, and evaluation of variational quantum circuit architectures (arXiv: 2606.13380)
+  - **Core Innovation**: Iterative circuit design loop where LLM generates candidates, evaluates properties (expressibility, entanglement, trainability), refines based on feedback
+  - **Workflow**: Problem specification → Circuit generation → Multi-objective evaluation → Selection and refinement → Validation
+  - **Activation**: autonomous quantum circuit design, LLM quantum circuits, variational circuit synthesis, automated VQC design
+
+### CQC-RAG: Robust Retrieval-Augmented Generation via Cross-Query Consistency
+- [[cqc-rag-cross-query-consistency]] - Cross-query consistency verification for RAG reliability across semantically related queries (arXiv: 2606.13438)
+  - **Core Innovation**: Related queries should produce consistent evidence selections; inconsistency flags retrieval failures
+  - **Method**: Generate query variants → Independent retrieval → Evidence overlap analysis → Consistency scoring
+  - **Activation**: cross-query consistency, RAG robustness, retrieval consistency, rag verification
+
+### CoDeR: Local Constraint-Compatible Retrieval Beyond Semantic Similarity
+- [[coder-constraint-compatible-retrieval]] - Constraint-compatible retrieval that goes beyond semantic similarity for constraint-sensitive queries (arXiv: 2606.13204)
+  - **Core Innovation**: Semantic similarity as relevance proxy fails when documents are topically close but violate hard constraints
+  - **Method**: Parse query (semantic + constraints) → Broad retrieval → Constraint filtering → Combined scoring
+  - **Activation**: constraint-compatible retrieval, constraint-aware search, CoDeR, retrieval beyond similarity
+
+### Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization
+- [[qiqp-trainability-analysis]] - Barren plateau and gradient scaling analysis for IQP QCBMs under Gaussian parameter initialization (arXiv: 2606.10179)
+  - **Core Innovation**: Theoretical analysis of how Gaussian initialization σ affects trainability in quantum generative models
+  - **Key Finding**: Identifies trainable regime where gradient variance is polynomial (not exponential) in qubit count
+  - **Activation**: IQP trainability, QCBM training, barren plateau quantum, Gaussian initialization quantum
+
+### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning
+- [[quantum-occam-learning]] (enhanced) - Information-theoretic sample complexity bounds for quantum ML via circuit expressibility (arXiv: 2606.12211)
+  - **Core Innovation**: Circuit complexity as adaptive statistical resource; matching upper/lower bounds for learning quantum states
+  - **Key Result**: G_supported ≈ Mε² gates supported by M samples at accuracy ε
+  - **Activation**: quantum occam learning, sample complexity quantum, circuit expressibility, quantum state learning
+
+## 2026-06-14 - Anthropic Research Update (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - Methodology for training Claude to translate its internal representations into human-readable text, revealing the thought-to-text encoding process
+  - **Core Innovation**: Natural Language Autoencoder (NLA) architecture bridges neural representations and language output
+  - **Application**: Interpretability research, thought decoding, representation alignment
+  - **Activation**: natural language autoencoder, thought encoding, Claude interpretability, neural representation translation
+
+### Teaching Claude Why: Reducing Agentic Misalignment
+- [[teaching-claude-why-alignment]] - New research on reducing agentic misalignment through explanation-based alignment training (Anthropic Research, May 8, 2026)
+  - **Core Innovation**: Training models to explain reasoning reduces misaligned goal pursuit
+  - **Key Result**: Explanation-based alignment prevents agentic misalignment behaviors
+  - **Activation**: teaching Claude why, agentic misalignment, explanation alignment, AI alignment research
+
+### Project Deal: AI Marketplace Negotiation Experiment
+- [[project-deal-anthropic-marketplace]] - AI agent marketplace experiment where Claude acts as negotiator buying/selling on behalf of employees (Anthropic Research, Apr 24, 2026)
+  - **Core Innovation**: Real-world negotiation testing with authentic constraints and employee trust dynamics
+  - **Application**: Autonomous negotiation agents, procurement automation, marketplace mediation
+  - **Activation**: project deal, AI negotiation, marketplace agent, Claude negotiator, employee marketplace
+
+### What 81,000 People Want from AI
+- [[81k-ai-expectations]] - Largest multilingual qualitative study on AI use, dreams, and fears with 81k participants across multiple languages (Anthropic Research, Mar 18, 2026)
+  - **Core Innovation**: Unprecedented scale and multilingual coverage for AI expectations research
+  - **Application**: Understanding user AI expectations, designing user-centered AI systems
+  - **Activation**: 81k interviews, AI expectations, qualitative AI research, user AI dreams, multilingual AI study
+
+### Project Vend Phase Two: AI Shopkeeper Update
+- [[project-vend-phase-two]] - Follow-up on autonomous AI shopkeeper experiment in San Francisco office lunchroom (Anthropic Research, Dec 18, 2025)
+  - **Core Innovation**: Extended evaluation of AI running physical retail business autonomously
+  - **Application**: Autonomous business agents, retail automation, agent business operations
+  - **Activation**: project vend phase 2, AI shopkeeper, autonomous retail, agent business experiment
+
+### Paving the Way for Agents in Biology
+- [[paving-way-agents-biology]] - Framework for making AI agents useful in biological research workflows (Anthropic Research, Jun 8, 2026)
+  - **Core Innovation**: Domain-specific agent integration for biology research automation
+  - **Application**: Biology research agents, scientific workflow automation, life sciences AI
+  - **Activation**: agents in biology, biology research agents, scientific agent workflows
+
+### Making Claude a Chemist: NMR Benchmark
+- [[making-claude-chemist]] - Opus 4.7 achieves competitive accuracy with ChemDraw/MestReNova on NMR spectral analysis and structure elucidation (Anthropic Research, Jun 5, 2026)
+  - **Core Innovation**: First systematic chemistry benchmark showing LLM competitive with professional chemistry software
+  - **Key Results**: ±0.079 ppm error on ¹H NMR, 100% recovery on 1D inverse structure elucidation
+  - **Activation**: Claude chemist, NMR spectral analysis, molecular structure elucidation, AI chemistry benchmark, Opus chemistry
+
+### AI-Enabled Cyber Threats: MITRE ATT&CK Mapping
+- [[ai-enabled-cyber-threats-mitre-attack]] - Mapping a year's worth of AI-enabled cyber threats using MITRE ATT&CK framework (Anthropic Research, Jun 3, 2026)
+  - **Core Innovation**: Systematic classification of AI-assisted attack techniques across security taxonomy
+  - **Application**: AI threat intelligence, security analysis, cyber threat mapping
+  - **Activation**: AI cyber threats, MITRE ATT&CK, AI threat intelligence, cyber security AI
+
+### Coding Agents in Social Sciences Research
+- [[coding-agents-social-sciences-research]] - Using coding agents for social sciences research automation (Anthropic Research, May 27, 2026)
+  - **Core Innovation**: Domain-specific agent deployment for economic and social sciences workflows
+  - **Application**: Social science research automation, coding agent deployment, economic research
+  - **Activation**: coding agents social sciences, social science research AI, economic research agents
+
+### Project Glasswing: Vulnerability Discovery
+- [[project-glasswing-vulnerability-discovery]] - Initial update on AI-powered vulnerability discovery research (Anthropic Research, May 22, 2026)
+  - **Core Innovation**: Frontier AI for systematic software vulnerability detection
+  - **Application**: AI security research, vulnerability discovery, automated security analysis
+  - **Activation**: project glasswing, AI vulnerability discovery, security research Anthropic
+
+### 2028: Two Scenarios for Global AI Leadership
+- [[2028-ai-leadership-scenarios]] - Policy analysis examining US-China AI competition trajectories by 2028: compute advantage, export controls, democratic vs. authoritarian AI (Anthropic Research, May 14, 2026)
+  - **Core Innovation**: Two-scenario framework for AI geopolitics: democratic leadership vs. authoritarian control
+  - **Key Themes**: Compute advantage, export controls, distillation attacks, AI governance
+  - **Activation**: 2028 AI leadership, AI geopolitics, compute advantage, US-China AI competition, export controls
+
+### Donating Petri: Open-Source Alignment Tool
+- [[petri-alignment-tool]] - Open-source release of Petri alignment testing toolbox for AI system evaluation (Anthropic Research, May 7, 2026)
+  - **Core Innovation**: Auditable alignment testing framework released as open-source
+  - **Application**: Alignment testing, AI safety evaluation, open-source safety tools
+  - **Activation**: petri alignment tool, open-source alignment, alignment testing toolbox
+
+### Anthropic Institute Focus Areas
+- [[anthropic-institute-focus-areas]] - Research agenda outlining priority areas for The Anthropic Institute (Anthropic Research, May 7, 2026)
+  - **Core Innovation**: Structured research roadmap for AI safety and beneficial AI development
+  - **Application**: AI safety research planning, beneficial AI development
+  - **Activation**: anthropic institute, AI safety research agenda, beneficial AI roadmap
+
+>>>>>>> Stashed changes
