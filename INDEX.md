@@ -2,6 +2,22 @@
 
 ## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
 
+### Quantum State Preparation via Neural Network Encoding in Quantum Machine Learning
+- [[neural-quantum-state-encoding]] - 用训练好的经典神经网络直接映射数据到量子电路参数，避免逐实例变分优化，实现0.992保真度和5000倍加速 (arXiv: 2605.31006)
+  - 训练一次推理一次: 神经网络学习x→θ(x)映射，新数据单次前向传播编码
+  - 固定电路拓扑: 仅参数变化，结构不变，适用于近中期量子设备
+  - 泛化能力强: MNIST/Fashion-MNIST上未见数据保真度达0.992
+  - **Activation**: quantum state preparation, neural encoding, QML data loading, amplitude encoding, quantum circuit parameterization, quantum image states, NISQ data encoding
+
+### PUBO Formulation for MST and Application to Optimum-Path Forest
+- [[pubo-mst-falqon]] - 将MST问题重构为PUBO优化任务并用FALQON算法求解，减少量子比特需求，在图分类器原型选择中达到与Prim算法相当的精度 (arXiv: 2605.20637)
+  - PUBO重构: 无需辅助变量，减少量子比特需求
+  - FALQON优化: 反馈式量子优化算法用于哈密顿量最小化
+  - 图分类应用: OPF分类器中原型选择的质量与经典算法相当
+  - **Activation**: quantum MST, PUBO optimization, FALQON, quantum graph algorithms, optimum-path forest, quantum combinatorial optimization, QML classifier
+
+## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
+
 ### Aligning Quantum Operators with Large Language Models
 - [[llm-quantum-operator-alignment]] - 使LLM能够理解量子算子(酉矩阵)表示，弥合自然语言与量子力学之间的鸿沟，支持量子电路合成与算子属性预测 (arXiv: 2606.13811)
   - 量子算子映射: Euler分解/本征值编码/张量网络压缩/Bloch球投影
