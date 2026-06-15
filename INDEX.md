@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Aligning Quantum Operators with Large Language Models
+- [[llm-quantum-operator-alignment]] - 使LLM能够理解量子算子(酉矩阵)表示，弥合自然语言与量子力学之间的鸿沟，支持量子电路合成与算子属性预测 (arXiv: 2606.13811)
+  - 量子算子映射: Euler分解/本征值编码/张量网络压缩/Bloch球投影
+  - 对齐损失函数: 保真度损失/对易损失/酉性惩罚/语义一致性
+  - 四种应用模式: NL→电路合成/算子属性预测/电路优化/量子误差诊断
+  - **Activation**: LLM quantum, operator alignment, unitary matrix reasoning, quantum circuit NL, quantum-classical interface, quantum operator prediction, quantum NLP
+
+### Foundations of Practical Quantum Advantage in Quantum-Informed ML for Predicting Chaos
+- [[quantum-informed-chaos-ml]] - 从经典混沌时间序列中提取高阶量子统计特征(纯度/Rényi熵/OTOC/互信息)提升混沌系统预测精度 (arXiv: 2606.13422)
+  - 密度矩阵构建: 从延迟坐标嵌入轨迹构造经验密度矩阵
+  - 量子特征提取: 纯度/Rényi熵/冯·诺依曼熵/OTOC/互信息/负性
+  - 混合量子-经典预测器: 量子特征+经典特征联合预测
+  - **Activation**: chaos prediction, quantum ML, OTOC, Rényi entropy, density matrix, chaotic time series, Lorenz system, quantum advantage ML, hybrid quantum-classical, dynamical systems
+
 ## 2026-06-16 - Neuroscience Research (Cron Job) - Batch 2
 
 ### Neural Variability Enhances Artificial Network Robustness
