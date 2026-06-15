@@ -2838,3 +2838,11 @@
   - Learnable J_ij captures cooperative/antagonistic attention
   - Diabatic quantum annealing replaces softmax for sampling
 - **Activation**: Boltzmann attention, Ising attention, quantum annealing training, energy-based attention
+
+## 2026-06-16 - Computer Science (Cron Job)
+
+### Aligning Quantum Operators with Large Language Models
+- [[llm-quantum-operator-alignment]] - Maps unitary operators into LLM latent spaces enabling quantum reasoning for Clifford+T circuit synthesis (arXiv: 2606.13811)
+  - First approach to bridge LLM understanding of quantum representations
+  - Unified modeling over quantum operators and linguistic inputs
+  - **Activation**: quantum operator alignment, LLM quantum reasoning, unitary matrix embedding, quantum circuit synthesis with LLM, 量子算符对齐
