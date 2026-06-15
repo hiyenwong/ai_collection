@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-16 - Neuroscience Research (Cron Job) - Batch 2
+
+### Neural Variability Enhances Artificial Network Robustness
+- [[neural-variability-enhances-robustness]] - 相关性噪声改善ANN对抗攻击和自然修改鲁棒性，结构化噪声跨攻击类型泛化良好，生物学合理的局部信息策略 (arXiv: 2606.13801)
+  - 皮层高变异性vs外周低变异性提示噪声功能性意义
+  - 噪声结构(协方差)是关键而非单纯随机噪声
+  - 对抗鲁棒性：噪声结构跨攻击类型良好泛化
+  - 自然鲁棒性：结构化噪声最优但转移性有限
+  - **Activation**: neural variability, correlated noise, adversarial robustness, naturalistic modifications, noise correlations, biological robustness, cortex variability
+
 ## 2026-06-16 - Neuroscience Research (Cron Job)
 
 ### Prospective Coding and Path Integration via Self-Organizing Neural Networks
