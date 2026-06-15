@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-06-16 - Neuroscience Research (Cron Job)
+
+### Prospective Coding and Path Integration via Self-Organizing Neural Networks
+- [[prospective-coding-path-integration-self-organizing]] - 前瞻编码与路径整合作为自组织竞争神经网络的平衡解涌现，Hebbian塑性+发放率适应+全局抑制自然驱动连续吸引子连接形成 (arXiv: 2606.14649)
+  - 翻译不变输入自然驱动稳定高斯权重涌现
+  - 前瞻动力学在纯前馈架构中自发产生
+  - 速度调制基线电流实现精确单向路径整合
+  - 连续吸引子属性非人工设计而是自组织涌现
+  - **Activation**: prospective coding, path integration, continuous attractor, self-organization, Hebbian plasticity, firing-rate adaptation, entorhinal cortex, grid cells
+
+### Decoding Semantic Categories from Picture-Naming EEG
+- [[decoding-semantic-categories-picture-naming-eeg]] - 从图片命名EEG解码9类语义类别，预训练单通道EEG编码器+多语言文本嵌入，双时间窗口融合达到78.4% Macro-F1 (arXiv: 2606.14614)
+  - 早期窗口(0-500ms) + 命名相关窗口(500-1200ms) 互补信息
+  - 平衡准确率：56.2% → 61.0% → 78.1% (窗口组合)
+  - 传感器级解码图显示语义信息空间分布
+  - **Activation**: EEG decoding, semantic categories, picture naming, lexical-semantic processing, multilingual embeddings, language production, neural decoding
+
 ## 2026-06-11 - Neuroscience Research (Cron Job - Flow Matching & Resolution Agnostic)
 
 ### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
