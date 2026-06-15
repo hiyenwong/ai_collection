@@ -2803,3 +2803,11 @@
   - **Activation**: anthropic institute, AI safety research agenda, beneficial AI roadmap
 
 >>>>>>> Stashed changes
+
+## 2026-06-16 - Computer Science & Quantum (Cron Job)
+
+### Boltzmann Attention: Learnable Ising Couplings for Cooperative Attention
+- [[boltzmann-attention-ising]] - Energy-based attention using learnable Ising model couplings, enables quantum annealing training (arXiv: 2606.12478)
+  - Learnable J_ij captures cooperative/antagonistic attention
+  - Diabatic quantum annealing replaces softmax for sampling
+- **Activation**: Boltzmann attention, Ising attention, quantum annealing training, energy-based attention
