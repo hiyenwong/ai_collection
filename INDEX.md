@@ -1,3 +1,19 @@
+## 2026-06-16 - Computer Science + Quantum Computing (Cron Job)
+
+### Boltzmann Attention: Learnable Ising Couplings for Cooperative Attention
+- [[boltzmann-attention]] - Energy-based generalization of attention using interacting Ising models with learnable pairwise couplings; opens path to quantum annealing-based training (arXiv: 2606.12478)
+  - Attention patterns governed by Ising model with learnable pairwise couplings Jᵢⱼ
+  - Diabatic quantum annealing provides practical training method matching exact Boltzmann computation
+  - Advantage over softmax attention increases with sequence length
+  - **Activation**: boltzmann attention, ising attention, cooperative attention, energy-based attention, quantum annealing attention, pairwise coupling
+
+### MAPS: Multi-Axial Projective Sphere for Qudit State-Space Visualization
+- [[maps-qudit-visualization]] - Generalized 3D framework for visualizing d-valued quantum states of qudits using n projectional intersecting axes (arXiv: 2606.15801)
+  - Extends Bloch sphere paradigm from qubits to arbitrary dimension d ≥ 3
+  - Novel d-valued phase axial-based gates for state manipulation along axes
+  - Each MAPS axis represents a single feature with distinct values — applicable to ML feature spaces
+  - **Activation**: qudit visualization, multi-axial projective sphere, MAPS, d-valued quantum state, quantum state-space visualization, qutrit
+
 ## 2026-06-16 - Neuroscience Research (Cron Job)
 
 ### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
