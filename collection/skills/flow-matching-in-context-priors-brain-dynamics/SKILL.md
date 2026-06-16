@@ -1,146 +1,107 @@
----
-name: flow-matching-in-context-priors-brain-dynamics
-description: "Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics — per-timestep conditioned diffusion transformer for generating realistic fMRI brain dynamics during unseen cognitive tasks. Activation: flow matching, fMRI generation, counterfactual neuroscience, brain dynamics, diffusion transformer, in-context prior."
-category: neuroscience
----
+# Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
 
-## Context
+## Overview
+Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics - First generative model of whole-cortex fMRI dynamics for unseen cognitive tasks, advancing counterfactual neuroscience and data-driven experimental design.
 
-arXiv:2606.11833 - Flow matching and diffusion models enable conditional generation across domains, but generative models of neural time series have remained restricted to categorical conditioning, precluding compositional and zero-shot generalization. This paper proposes a per-timestep conditioned diffusion transformer for generating realistic fMRI brain dynamics during unseen cognitive tasks by injecting compositional language and optional spatial priors in-context.
+**arXiv ID**: 2606.11833v1
+**Authors**: Sam Gijsen, Michał Łukomski, Marc-André Schulz, Kerstin Ritter
+**Updated**: 2026-06-10
 
-**Key Innovation**: Zero-shot generation of whole-cortex fMRI dynamics for unseen cognitive tasks, enabling counterfactual neuroscience and in-silico experimental design before empirical validation.
+## Problem
+- Generative models of neural time series restricted to categorical conditioning
+- Cannot handle compositional and zero-shot generalization for novel cognitive tasks
+- fMRI brain dynamics generation limited to known experimental conditions
 
-**Methodology Score**: 10/10 (theoretical framework + practical implementation + compositional generalization)
+## Solution
+Per-timestep conditioned diffusion transformer that injects:
+- Compositional language priors (task descriptions)
+- Optional spatial priors (ROI masks) 
+- In-context conditioning enabling zero-shot task generation
 
-## Core Methodology
+## Key Methods
 
-### 1. Per-Timestep Conditioned Diffusion Transformer
+### Architecture
+- Diffusion transformer backbone for fMRI generation
+- Per-timestep conditioning module
+- Dual-pathway: language + spatial prior injection
+- In-context learning for unseen tasks
 
-**Architecture**: Diffusion transformer that conditions on both compositional language descriptions and optional spatial priors at each timestep, enabling:
-- Compositional task specification (e.g., "visual task with attention modulation")
-- Zero-shot generalization to unseen task combinations
-- Counterfactual brain dynamics generation
+### Conditioning Strategy
+```
+Language Pathway:
+- Task descriptions → compositional embeddings
+- Zero-shot specification for counterfactual experiments
 
-**Key Components**:
-```python
-# Conceptual architecture (not actual code from paper)
-class FlowMatchingBrainDynamics:
-    def __init__(self):
-        self.language_encoder = LanguageEncoder()  # encode task descriptions
-        self.spatial_prior_module = SpatialPriorModule()  # optional spatial masks
-        self.diffusion_transformer = DiffusionTransformer()  # fMRI generation
-    
-    def generate(self, task_description, spatial_prior=None):
-        # Per-timestep conditioning
-        language_embedding = self.language_encoder(task_description)
-        if spatial_prior:
-            spatial_embedding = self.spatial_prior_module(spatial_prior)
-            conditioning = concatenate(language_embedding, spatial_embedding)
-        else:
-            conditioning = language_embedding
-        
-        # Flow matching generation
-        fMRI_timeseries = self.diffusion_transformer.generate(conditioning)
-        return fMRI_timeseries
+Spatial Priors:
+- ROI masks anchor generation
+- Complement language when needed
+- Task-specific region recruitment
 ```
 
-### 2. In-Context Prior Injection
-
-**Language Pathway**: Compositional task descriptions injected as in-context priors enable:
-- Recovery of region-specific recruitment across tasks
-- Generation of held-out spatial activation patterns
-- Compositional structure retention for counterfactual specification
-
-**Spatial Prior Pathway** (optional):
-- Anchors generation in regions where language alone degrades
-- Complements text pathway for improved accuracy
-- Maintains compositional flexibility
-
-### 3. Zero-Shot Evaluation Framework
-
-**Training Manifold Characterization**: 
-- Evaluate across hundreds of held-out task conditions
-- Characterize predictive performance relative to training manifold
-- Measure region-specific recruitment accuracy
-
-**Counterfactual Neuroscience Applications**:
-- In-silico design of novel cognitive experiments
-- Evaluation before empirical validation
-- Hypothesis testing via generated brain dynamics
-
-### 4. Flow Matching for fMRI
-
-**Advantages over Categorical Conditioning**:
-- Compositional generalization (combine task features)
-- Zero-shot unseen task generation
-- Flexible counterfactual specification
-
-**Technical Implementation**:
-- 4D fMRI signal modeling (whole-cortex dynamics)
-- Conditional generation across task conditions
-- Integration with existing fMRI preprocessing pipelines
-
-## Implementation Steps
-
-1. **Model Setup**:
-   - Initialize per-timestep conditioned diffusion transformer
-   - Configure language encoder for task descriptions
-   - Set up optional spatial prior module
-
-2. **Training**:
-   - Train on multi-task fMRI datasets (HCP, etc.)
-   - Condition on task descriptions + optional spatial priors
-   - Optimize flow matching objective
-
-3. **Zero-Shot Generation**:
-   - Specify compositional task descriptions
-   - Generate fMRI dynamics for unseen task combinations
-   - Evaluate region-specific activation patterns
-
-4. **Counterfactual Analysis**:
-   - Design novel cognitive experiments in-silico
-   - Generate predicted brain dynamics
-   - Validate against empirical data (if available)
+### Generation Process
+1. Parse task description → language embedding
+2. Optional: inject spatial prior masks
+3. Diffusion process with timestep-wise conditioning
+4. Generate whole-cortex fMRI dynamics
 
 ## Key Results
 
-- **Region-Specific Recruitment**: Language alone recovers region-specific recruitment across tasks
-- **Spatial Activation Patterns**: Held-out spatial patterns generated with high fidelity
-- **Compositional Generalization**: Unseen task combinations generated zero-shot
-- **Spatial Prior Complementarity**: Anchors generation where language degrades, retaining compositional structure
+### Zero-Shot Generation
+- Recovers region-specific recruitment across held-out tasks
+- Matches spatial activation patterns from language alone
+- Spatial priors complement text pathway where language degrades
 
-## Pitfalls
-
-1. **Language Prior Limitations**: Language alone may degrade in certain task regions; spatial priors needed for anchoring
-2. **Training Manifold Coverage**: Zero-shot performance depends on training task diversity
-3. **Spatial Prior Availability**: Optional spatial priors require additional data/processing
-4. **fMRI Preprocessing**: Generated dynamics still require standard preprocessing for downstream tasks
-5. **Counterfactual Validation**: In-silico predictions need empirical validation for reliability
-
-## Verification
-
-1. **Region Recruitment Accuracy**: Compare generated region-specific recruitment against held-out empirical data
-2. **Spatial Pattern Correlation**: Measure correlation between generated and actual spatial activation patterns
-3. **Compositional Consistency**: Verify compositional task combinations produce coherent dynamics
-4. **Training Manifold Mapping**: Characterize predictive performance relative to training manifold coverage
-
-## Activation Keywords
-
-flow matching, fMRI generation, brain dynamics, counterfactual neuroscience, diffusion transformer, in-context prior, zero-shot generation, compositional task, spatial prior, whole-cortex dynamics, neural time series, cognitive task generation, in-silico experiment
+### Counterfactual Neuroscience
+- In-silico experiment design before empirical validation
+- Novel cognitive task specification
+- Data-driven experimental planning
 
 ## Applications
+- Counterfactual neuroscience experiments
+- Data-driven experimental design
+- fMRI simulation for novel paradigms
+- Brain dynamics prediction for untested conditions
 
-- Counterfactual neuroscience (hypothesis testing before empirical validation)
-- In-silico cognitive experiment design
-- fMRI foundation model development
-- Brain dynamics prediction for novel tasks
-- Multi-task fMRI data augmentation
-- Neuroscience hypothesis exploration
+## Technical Implementation
+
+### Input Requirements
+- Task description (text)
+- Optional: spatial prior masks
+- Target brain regions
+
+### Output
+- Whole-cortex fMRI time series
+- Task-specific activation patterns
+- Regional dynamics predictions
+
+## Advantages
+- First generative model for unseen cognitive tasks
+- Compositional language conditioning
+- Zero-shot counterfactual generation
+- Bio-inspired hierarchical reconstruction
+
+## Limitations
+- Requires extensive training data
+- Spatial priors optional but improve accuracy
+- Task manifold coverage affects quality
+
+## Related Work
+- fMRI foundation models
+- Diffusion models for brain imaging
+- In-context learning for neuroscience
+
+## Trigger Words
+- counterfactual neuroscience, zero-shot fMRI generation, brain dynamics prediction, cognitive task simulation, in-context priors, flow matching, diffusion transformer, whole-cortex fMRI
+
+## Activation
+Use when:
+- Generating fMRI for novel/unseen cognitive tasks
+- Simulating brain dynamics before empirical experiments
+- Designing neuroscience experiments in-silico
+- Predicting brain responses to untested paradigms
+- Counterfactual reasoning about neural processes
 
 ## References
-
-- arXiv:2606.11833 - Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
-- Gijsen et al. (2026) - Code and pretrained models available at GitHub
-- Flow matching theory (Lipman et al., 2022)
-- Diffusion transformers for conditional generation
-- HCP multi-task fMRI datasets
+- arXiv:2606.11833v1
+- NSD dataset (Natural Scenes Dataset)
+- Diffusion transformers, flow matching

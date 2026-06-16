@@ -1,152 +1,118 @@
----
-name: flexibrain-resolution-agnostic-fmri-encoding
-description: "FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI based on Mamba-JEPA. Defines patch sizes in real-world physical units, employs dynamic patch resizing to bypass destructive spatial standardization. Activation: resolution-agnostic, native fMRI, voxel-level encoding, Mamba-JEPA, fMRI foundation model, preprocessing-free."
-category: neuroscience
----
+# FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI
 
-## Context
+## Overview
+FlexiBrain - Resolution-agnostic voxel-level encoding framework for native fMRI based on Mamba-JEPA. Bypasses destructive spatial standardization, reduces preprocessing costs, and accelerates robust voxel-level fMRI foundation models.
 
-arXiv:2606.11500 - Large-scale deep learning models in neuroscience are constrained by severe data heterogeneity. Native fMRI data exhibit substantial variation in spatial and temporal resolutions, requiring lengthy preprocessing pipelines that enforce uniformity. This introduces two critical limitations: (1) degradation of subject-specific anatomical information; (2) significant computational overhead. FlexiBrain proposes a resolution-agnostic voxel-level encoding framework based on Mamba-JEPA, bypassing destructive spatial standardization.
+**arXiv ID**: 2606.11500v1
+**Authors**: Mo Wang, Wenhao Ye, Junfeng Xia, Minghao Xu, Hongkai Wen, Quanying Liu
+**Updated**: 2026-06-09
 
-**Key Innovation**: First resolution-agnostic fMRI encoding framework that functions directly on native space data, reducing preprocessing from hours to minutes while improving downstream task performance by up to 12 percentage points.
+## Problem
+Native fMRI data from diverse sources exhibit severe heterogeneity:
+- Spatial resolution variation across scanners
+- Temporal resolution differences
+- Preprocessing pipelines enforce uniformity
+- Subject-specific anatomical information degraded
+- Significant computational overhead (hours per subject)
 
-**Methodology Score**: 10/10 (practical engineering + performance gains + foundation model architecture)
+## Solution
+Resolution-agnostic framework that:
+- Defines patch sizes in real-world physical units
+- Uses dynamic patch resizing
+- Bypasses destructive spatial standardization
+- Enables direct native space ingestion
 
-## Core Methodology
+## Key Methods
 
-### 1. Resolution-Agnostic Patch Definition
+### Resolution-Agnostic Design
+```
+Physical Units:
+- Patch sizes in mm (not voxels)
+- Dynamic patch resizing
+- Native space processing
 
-**Physical Unit Patches**: Define patch sizes in real-world physical units (mm³) rather than voxel indices:
-```python
-# Conceptual implementation
-class FlexiBrainEncoder:
-    def __init__(self, patch_size_mm=(5, 5, 5)):
-        self.patch_size_mm = patch_size_mm  # physical units
-        self.mamba_jepa = MambaJEPA()  # backbone
-    
-    def dynamic_resize_patches(self, native_fMRI, voxel_dimensions):
-        # Convert physical patch size to voxel count
-        voxel_patch = physical_to_voxel(self.patch_size_mm, voxel_dimensions)
-        # Dynamic resizing based on native resolution
-        patches = extract_patches(native_fMRI, voxel_patch)
-        return patches
+Architecture:
+- Mamba-JEPA backbone
+- 4D fMRI signal modeling
+- Efficient latent representation
 ```
 
-**Key Principle**: Same physical patch size across datasets with different voxel resolutions → consistent semantic patches.
+### Mamba-JEPA Backbone
+- Joint Embedding Predictive Architecture
+- Efficient 4D sequence modeling
+- State-space model for temporal dynamics
+- Low memory footprint
 
-### 2. Dynamic Patch Resizing
-
-**Resolution Adaptation**: Automatically adjust patch extraction based on native voxel dimensions:
-- High-resolution data (1mm³ voxels) → smaller voxel patches
-- Low-resolution data (3mm³ voxels) → larger voxel patches
-- Both extract equivalent physical brain regions
-
-**Bypasses Standardization**: No resampling to uniform resolution, preserving:
-- Subject-specific anatomical detail
-- Native spatial relationships
-- Original signal characteristics
-
-### 3. Mamba-JEPA Backbone
-
-**Efficient 4D fMRI Modeling**: Mamba architecture with Joint Embedding Predictive Architecture (JEPA):
-- Efficient sequence modeling for 4D fMRI (space × time)
-- Self-supervised learning without reconstruction
-- Scalable to high-dimensional brain signals
-
-**Architecture Advantages**:
-- Linear time complexity O(n) vs transformer O(n²)
-- Memory-efficient for large fMRI datasets
-- JEPA learns semantic representations without pixel-level reconstruction
-
-### 4. Voxel-Level Encoding
-
-**Native Space Processing**: Direct ingestion of fMRI data in native space:
-```python
-def encode_native_fMRI(native_fMRI, voxel_dimensions):
-    # No preprocessing pipeline required
-    encoder = FlexiBrainEncoder()
-    
-    # Dynamic patch extraction
-    patches = encoder.dynamic_resize_patches(native_fMRI, voxel_dimensions)
-    
-    # Mamba-JEPA encoding
-    embeddings = encoder.mamba_jepa(patches)
-    
-    return embeddings  # voxel-level representations
-```
-
-**Plug-in Module**: Functions as seamless module in existing pipelines:
-- Minimal integration overhead
-- No external data augmentation required
-- Compatible with downstream task-specific models
-
-## Implementation Steps
-
-1. **Model Initialization**:
-   - Configure FlexiBrainEncoder with physical patch size
-   - Initialize Mamba-JEPA backbone for 4D signal modeling
-   - Set up voxel dimension parser for native data
-
-2. **Native Data Loading**:
-   - Load fMRI in native space (no preprocessing)
-   - Extract voxel dimensions from header metadata
-   - Pass native resolution to encoder
-
-3. **Dynamic Patch Extraction**:
-   - Calculate voxel patch size from physical units
-   - Extract patches based on native resolution
-   - Feed patches to Mamba-JEPA backbone
-
-4. **Downstream Task Integration**:
-   - Use voxel-level embeddings for task-specific heads
-   - Fine-tune on target neuroscience tasks
-   - Evaluate against preprocessed baselines
-
-5. **Performance Validation**:
-   - Compare against SOTA methods across diverse tasks
-   - Measure preprocessing time reduction
-   - Verify anatomical information preservation
+### Dynamic Patch Resizing
+- Adapts to input resolution
+- Maintains physical scale consistency
+- Preserves anatomical information
+- No fixed voxel dimensions
 
 ## Key Results
 
-- **Downstream Task Performance**: Up to 12 percentage point gains without external augmentation
-- **Preprocessing Cost Reduction**: Bypasses hours-long spatial standardization
-- **Anatomical Preservation**: Subject-specific anatomical detail retained
-- **Plug-in Compatibility**: Seamless integration with existing pipelines
-- **Cross-Resolution Generalization**: Works across heterogeneous datasets
+### Performance Gains
+- Up to 12% improvement over SOTA
+- No external data augmentation needed
+- Consistent gains across 5 tasks
 
-## Pitfalls
-
-1. **Voxel Dimension Metadata**: Requires accurate voxel dimension metadata from native fMRI headers
-2. **Physical Patch Size Selection**: Patch size choice affects semantic granularity
-3. **Mamba Training Stability**: JEPA training requires careful hyperparameter tuning
-4. **Native Data Variability**: Extreme resolution differences may challenge patch equivalence
-5. **Downstream Task Specificity**: Embedding quality varies across task types
-
-## Verification
-
-1. **Resolution Consistency**: Verify same physical patches across different voxel resolutions
-2. **Anatomical Preservation**: Compare anatomical detail against preprocessed baselines
-3. **Preprocessing Time**: Measure time reduction from native vs standard pipeline
-4. **Downstream Accuracy**: Evaluate task performance gains across diverse datasets
-
-## Activation Keywords
-
-resolution-agnostic, native fMRI, voxel-level encoding, Mamba-JEPA, fMRI foundation model, preprocessing-free, dynamic patch resizing, physical unit patches, heterogeneous data, spatial standardization bypass, whole-brain encoding, 4D signal modeling, plug-in module
+### Preprocessing Reduction
+- Bypasses spatial standardization
+- Dramatically reduced processing time
+- Native space direct ingestion
+- Plug-in module compatibility
 
 ## Applications
+- Voxel-level fMRI encoding
+- Multi-site fMRI analysis
+- Native space foundation models
+- Cross-resolution learning
+- Subject-specific preservation
 
-- fMRI foundation model development (bypass preprocessing)
-- Multi-site fMRI studies with heterogeneous data
-- Voxel-level decoding tasks
-- Cross-subject generalization
-- Rapid fMRI analysis pipeline development
-- Large-scale fMRI aggregation without standardization
+## Technical Implementation
+
+### Input Requirements
+- Native fMRI (any resolution)
+- No preprocessing required
+- Physical coordinate system
+
+### Output
+- Voxel-level embeddings
+- Task-specific predictions
+- Cross-resolution compatible
+
+## Advantages
+- Resolution-agnostic design
+- Preprocessing cost reduction
+- Subject-specific anatomy preserved
+- Plug-in module architecture
+- Foundation model accelerator
+
+## Limitations
+- Requires physical coordinate system
+- Patch size affects granularity
+- Temporal dynamics modeling depth
+
+## Related Work
+- fMRI foundation models
+- Voxel-level encoding
+- Mamba architecture
+- JEPA frameworks
+
+## Trigger Words
+- resolution-agnostic, native fMRI, voxel-level encoding, mamba-jepa, physical patch sizes, dynamic resizing, preprocessing reduction, fMRI foundation model, cross-resolution learning, native space processing
+
+## Activation
+Use when:
+- Processing heterogeneous multi-site fMRI data
+- Building voxel-level fMRI foundation models
+- Reducing preprocessing overhead
+- Preserving subject-specific anatomy
+- Handling variable spatial resolutions
+- Encoding native space fMRI
 
 ## References
-
-- arXiv:2606.11500 - FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI
-- Wang et al. (2026) - Code available at GitHub
-- Mamba architecture (Gu & Dao, 2023)
-- JEPA self-supervised learning framework
-- HCP multi-resolution fMRI datasets
+- arXiv:2606.11500v1
+- Mamba state-space models
+- JEPA architectures
+- GitHub: https://github.com/OneMore1/FlexiBrain

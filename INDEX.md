@@ -1,3 +1,19 @@
+## 2026-06-16 - Neuroscience Research (Cron Job)
+
+### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
+- [[flow-matching-in-context-priors-brain-dynamics]] - 首个生成模型用于未见认知任务的整个皮层fMRI动力学，支持反事实神经科学 (arXiv: 2606.11833)
+  - Per-timestep conditioned diffusion transformer with language + spatial priors
+  - Zero-shot generation of held-out cognitive task brain dynamics
+  - Counterfactual neuroscience: in-silico experiment design before empirical validation
+  - **Activation**: 反事实神经科学, flow matching in-context, fMRI生成, 零样本脑动力学, diffusion transformer brain, compositional language priors
+
+### FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI
+- [[flexibrain-resolution-agnostic-fmri-encoding]] - 分辨率无关voxel级编码框架，直接处理native space fMRI，避免破坏性标准化 (arXiv: 2606.11500)
+  - Physical-unit patch definitions (mm not voxels)
+  - Dynamic patch resizing for heterogeneous data
+  - Mamba-JEPA backbone with 12 percentage point gains on 5 tasks
+  - **Activation**: resolution-agnostic fMRI, native space encoding, 物理单位patch, 动态resize, Mamba-JEPA, voxel foundation model
+
 ## 2026-06-16 - Systems Engineering Research (Cron Job)
 
 ### Quasilinear Equivalence Checking for Detector Error Models
