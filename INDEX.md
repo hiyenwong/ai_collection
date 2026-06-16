@@ -1,445 +1,136 @@
+## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 3rd run)
+
+### Physically Motivated Ansatz for Open Fermionic Systems on Quantum Computer
+- [[physically-motivated-quantum-ansatz]] - Design physically motivated variational ansätze for open quantum systems using UCC adapted for Lindblad dynamics; mitigates barren plateaus (arXiv: 2606.16823)
+  - Unitary coupled cluster approach adapted for Lindblad master equation and NESS
+  - Physical structure embedded in circuit design vs black-box HEA
+  - Addresses barren plateau problems in variational quantum algorithms for open systems
+  - **Activation**: physically motivated ansatz, open fermionic systems, variational quantum algorithms, lindblad dynamics, NESS, non-equilibrium steady states, unitary coupled cluster, barren plateaus
+
+## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 2nd run)
+
+### Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications
+- [[q-ready-quantum-feasibility]] - Systematic methodology for predicting whether computational problems benefit from quantum acceleration and optimally partitioning hybrid workflows (arXiv: 2606.16201)
+  - Structured quantum readiness scoring across 5 criteria (algorithm mapping, noise resilience, encoding efficiency, classical competition, infrastructure access)
+  - Hybrid partitioning strategy for quantum-suitable subproblems vs classical pre/post-processing
+  - Domain-specific feasibility for software engineering, chemistry, optimization, finance
+  - **Activation**: quantum feasibility, quantum readiness, hybrid quantum-classical, q-ready, quantum advantage assessment, quantum application assessment, quantum-classical partitioning, quantum software engineering
+
+## 2026-06-16 - Quantum Neuromorphic Computing (Cron Job)
+
+### Quantum-Driven Neuromorphic Computing for Million-Qubit-Scale Workloads
+- [[quantum-driven-neuromorphic-million-qubit]] - Synergistic integration of quantum computing with neuromorphic architectures for million-qubit computational workloads (arXiv: 2606.12968)
+  - Neuromorphic quantum error correction via spike-based syndrome decoding
+  - Quantum spike encoding for state-to-spike information transfer
+  - SNN-based adaptive quantum circuit compilation and control
+  - **Activation**: quantum neuromorphic, million-qubit, quantum-driven neuromorphic computing, neuromorphic quantum computing, large-scale quantum, quantum workload scaling
+
+## 2026-06-16 - Computer Science + Quantum Computing (Cron Job)
+
+### Boltzmann Attention: Learnable Ising Couplings for Cooperative Attention
+- [[boltzmann-attention]] - Energy-based generalization of attention using interacting Ising models with learnable pairwise couplings; opens path to quantum annealing-based training (arXiv: 2606.12478)
+  - Attention patterns governed by Ising model with learnable pairwise couplings Jᵢⱼ
+  - Diabatic quantum annealing provides practical training method matching exact Boltzmann computation
+  - Advantage over softmax attention increases with sequence length
+  - **Activation**: boltzmann attention, ising attention, cooperative attention, energy-based attention, quantum annealing attention, pairwise coupling
+
+### MAPS: Multi-Axial Projective Sphere for Qudit State-Space Visualization
+- [[maps-qudit-visualization]] - Generalized 3D framework for visualizing d-valued quantum states of qudits using n projectional intersecting axes (arXiv: 2606.15801)
+  - Extends Bloch sphere paradigm from qubits to arbitrary dimension d ≥ 3
+  - Novel d-valued phase axial-based gates for state manipulation along axes
+  - Each MAPS axis represents a single feature with distinct values — applicable to ML feature spaces
+  - **Activation**: qudit visualization, multi-axial projective sphere, MAPS, d-valued quantum state, quantum state-space visualization, qutrit
+
+## 2026-06-16 - Neuroscience Research (Cron Job)
+
+### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
+- [[flow-matching-in-context-priors-brain-dynamics]] - 首个生成模型用于未见认知任务的整个皮层fMRI动力学，支持反事实神经科学 (arXiv: 2606.11833)
+  - Per-timestep conditioned diffusion transformer with language + spatial priors
+  - Zero-shot generation of held-out cognitive task brain dynamics
+  - Counterfactual neuroscience: in-silico experiment design before empirical validation
+  - **Activation**: 反事实神经科学, flow matching in-context, fMRI生成, 零样本脑动力学, diffusion transformer brain, compositional language priors
+
+### FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI
+- [[flexibrain-resolution-agnostic-fmri-encoding]] - 分辨率无关voxel级编码框架，直接处理native space fMRI，避免破坏性标准化 (arXiv: 2606.11500)
+  - Physical-unit patch definitions (mm not voxels)
+  - Dynamic patch resizing for heterogeneous data
+  - Mamba-JEPA backbone with 12 percentage point gains on 5 tasks
+  - **Activation**: resolution-agnostic fMRI, native space encoding, 物理单位patch, 动态resize, Mamba-JEPA, voxel foundation model
+
+## 2026-06-16 - Systems Engineering Research (Cron Job)
+
+### Quasilinear Equivalence Checking for Detector Error Models
+- [[quasilinear-equivalence-checking-detector-error]] - A Detector Error Model (DEM) is a structured representation of error mechanisms in quantum circuits, (arXiv: 2606.14677v1)
+  - Core methodology: systems engineering, quant-ph, cs.SE
+  - Key contribution: Quantum error model verification
+  - **Activation**: systems engineering, quasilinear-equivalence-checking-detector-error, quantum
+
+### parRSB: Exascale Spectral Element Mesh Partitioning
+- [[parrsb-exascale-spectral-element-mesh]] - We introduce parRSB - a parallel, highly scalable graph partitioner for spectral element meshes that (arXiv: 2606.14659v1)
+  - Core methodology: systems engineering, cs.DC
+  - Key contribution: Exascale mesh partitioning
+  - **Activation**: systems engineering, parrsb-exascale-spectral-element-mesh, distributed
+
 # AI Collection Index
 
-## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
-
-### Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos
-- [[quantum-prior-chaos-forecasting]] - Quantum statistical prior (Q-Prior) methodology for chaotic system forecasting; provable quantum-classical separation in copy-measurement complexity via joint Bell measurements (arXiv: 2606.13422)
-  - **Core Innovation**: k-indexed Q-Priors store k-point marginals of invariant measure on n_q qubits; joint Bell measurements estimate Pauli functionals with O(1) copy complexity vs Omega(2^n_q) classical
-  - **Two-Stage Advantage**: (1) Representation stage uses superposition/entanglement for non-factorisable correlations; (2) Extraction stage via two-copy Bell measurements independent of system size
-  - **Validated on**: IQM superconducting processors + simulation
-  - **Case Studies**: Turbulent channel flow (velocity-direction coherence) + weather forecasting ERA5 (10-39% skill improvement, 48-240h)
-  - **Activation**: quantum-prior, Q-Prior, chaos-forecasting, quantum-advantage, invariant-measure, Bell-measurement, Koopman, turbulent-flow, weather-forecasting, quantum-statistics, NISQ
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 10)
-
-### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
-- [[phase-model-m-current-hippocampal-synchrony]] - Phase model reduction methodology for M-current effects on neural synchrony; low ACh → full sync, high ACh → multiple stable cluster solutions (arXiv: 2606.12684)
-  - **Core Innovation**: One-dimensional phase model reduction for weakly coupled pyramidal neurons
-  - **Acetylcholine Bidirectional Role**: High ACh → encoding (desynchronization), Low ACh → consolidation (synchronization)
-  - **Neural Assembly Representation**: Cluster solutions as transiently coordinated neuron groups
-  - **Three Coupling Architectures**: All-to-all, distance-dependent, nearest-neighbours
-  - **Validation**: Predicted cluster solutions match hippocampal assembly observations
-  - **Activation**: M-current, phase model, neural synchrony, hippocampal network, acetylcholine, neural assembly, cluster solution
-
-### A quantum-like benchmark for context-sensitive associative memory with adaptive plasticity
-- [[quantum-like-benchmark-context-sensitive-memory]] - Quantum-like benchmark for staged associative recall with multi-objective profile (recall + temporal organization + context sensitivity) (arXiv: 2606.12449)
-  - **Core Innovation**: Order-sensitive adaptive-plasticity benchmark distinguishing genuine recall vs structural assistance
-  - **Three Model Families**: Quantum-like, real-valued no-phase, Markov-rate controls
-  - **Weak-Support Regime**: Narrow and non-monotonic; structure alone doesn't rescue recall
-  - **Adaptive Plasticity**: Homeostatic stabilization drives recall gains
-  - **Quantum-Like Advantage**: Preserves order sensitivity and stage-dependent organization
-  - **Activation**: quantum-like memory, associative memory, context-sensitive memory, adaptive plasticity, homeostatic stabilization, staged recall, temporal organization, multi-objective benchmark
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 9)
-
-### From Persistence to Survival: Hypothesis Testing, Effect Sizes and Vectorisation for Topological Features
-- [[strand-survival-topological-analysis]] - STRAND treats persistence diagrams as survival data enabling unified hypothesis testing, effect sizes, and 1-Wasserstein-stable vectorisation for neuroscience applications (arXiv: 2606.11911)
-  - **Core Innovation**: Persistence survival function S(t) = P(p > t) for diagram comparison
-  - **Three Capabilities**: Non-parametric two-sample test + interpretable effect sizes + ML-ready feature vectors
-  - **Validation**: Calibrated Type I error, high power from small diagrams, competitive vectorisation on 14 graph benchmarks
-  - **Neuroscience**: Applied to functional brain connectivity in fMRI data
-  - **Activation**: persistence diagrams, topological data analysis, survival analysis, brain connectivity, fMRI topology, Wasserstein vectorisation
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 8)
-
-### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
-- [[flow-matching-in-context-priors-brain-dynamics]] - First generative model for zero-shot whole-cortex fMRI dynamics in unseen cognitive tasks using compositional language + spatial priors; enables counterfactual neuroscience (arXiv: 2606.11833)
-  - **Core Innovation**: Per-timestep diffusion transformer with in-context conditioning
-  - **Compositional Generalization**: Language alone recovers region-specific recruitment
-  - **Spatial Anchoring**: Priors complement language in degraded regions
-  - **Counterfactual Neuroscience**: In-silico experiment design before empirical validation
-  - **Activation**: flow matching, in-context priors, OOD brain dynamics, counterfactual neuroscience, zero-shot fMRI, diffusion transformer, compositional conditioning, PINC flows
-
-### Decoding Naturalistic Emotion Dynamics from the Brain: An LLM-Enhanced Regression Framework
-- [[llm-emotion-trajectory-fmri]] - LLM自动化标注情绪轨迹fMRI解码；多目标回归框架+DFC捕获连续情感波动；图论XAI揭示情绪特异性拓扑配置 (arXiv: 2606.07707)
-  - **LLM Annotation**: 从叙事刺激自动提取情感profile
-  - **Continuous Trajectory**: 多目标回归替代离散分类
-  - **DFC Advantages**: 30秒窗口捕获快速叙事波动
-  - **Graph XAI**: 支持心理构建主义理论
-  - **Activation**: llm-emotion, dfc-fmri, sentiment-trajectory, naturalistic-decoding, graph-xai, regression-framework
-
-## 2026-06-13 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
-
-### To Cool, or Not to Cool? Displacement Sensing with Hot Quantum States
-- [[hot-state-displacement-sensing]] - Quantum metrology using hot thermal states without mandatory ground-state cooling; identifies parity-selection and coherence mechanisms for maintaining sensitivity (arXiv: 2606.13650)
-  - **Parity Selection**: Projecting mixed probe onto definite parity sector removes thermal suppression of displacement QFI, which can INCREASE with thermal occupation
-  - **Coherence Mechanism**: Superpositions of opposite displacements retain sensitivity even with mixed states
-  - **Optimization**: Complete cooling is NOT universally optimal — depends on decoherence rates vs cooling rates
-  - **Activation**: quantum metrology, displacement sensing, hot quantum states, thermal states, quantum Fisher information, parity projection, bosonic sensing
-
-### Approximate quantum error correction theory of non-isometric codes
-- [[non-isometric-qec-theory]] - General theory of non-isometric QEC using approximate QEC framework; quantifies fundamental limitations from non-isometric encodings on accuracy and logical operations (arXiv: 2606.13559)
-  - **Non-Isometry Bound**: E†E ≠ I_L introduces fundamental lower bound ε ≥ ||E†E - I|| on achievable QEC accuracy
-  - **GKP Application**: Finite-energy GKP codewords are inherently non-isometric; error scales as exp(-Δ²)
-  - **Holographic Implications**: Non-isometric bulk-boundary maps mean boundary recovery is inherently approximate
-  - **Activation**: non-isometric quantum error correction, approximate QEC, GKP codes, tiger codes, continuous-variable QEC, holographic codes
-
-### Statistical Mechanics and Symmetries of Non-Abelian Anyon Proliferation
-- [[non-abelian-anyon-proliferation-stat-mech]] - Maps topological order instability to stat-mech models whose symmetries expose corrupting anyonic excitations; identifies parasitic condensation thresholds for non-Abelian anyon pairs (arXiv: 2606.12527)
-  - **Stat-Mech Mapping**: Wavefunction deformations and decoherence map to stat-mech models whose symmetries reveal corrupting anyonic excitations
-  - **Parasitic Condensation**: Beyond threshold, proliferation of two non-Abelian anyon species parasitically condenses shared Abelian fusion outcome, destroying topological order
-  - **Symmetry Memory**: Trivial phase "remembers" which anyons condensed — distinguishes from condensing all Abelian charges
-  - **Activation**: non-abelian anyon, topological order, statistical mechanics, anyon proliferation, decoherence, syndrome distribution, D4 topological order, Monte-Carlo, parasitic condensation, quantum decoder
-
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 7)
-
-### A quantum-like benchmark for context-sensitive associative memory with adaptive plasticity
-- [[quantum-like-benchmark-context-sensitive-memory]] - Order-sensitive benchmark comparing quantum-like vs classical associative memory under weak structural support, revealing multi-objective evaluation necessity (arXiv: 2606.12449)
-  - Quantum-like models preserve order sensitivity; Markov-rate models achieve stronger raw recall
-  - Weak structural support regime is narrow and non-monotonic; plasticity dominates structural effects
-  - Homeostatic stabilization most impactful for recall gains
-  - **Activation**: quantum-like memory, associative memory benchmark, context-sensitive memory, adaptive plasticity, order-sensitive recall, homeostatic stabilization, weak structural support, staged recall
-
-## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job - Friday)
-
-### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
-- [[reduced-basis-quantum-ode-solver]] - Reduced Basis Algorithm (RBA) lifts polynomial nonlinear ODEs/PDEs into linear quantum-accessible operators via monomial basis composition, achieving logarithmic qubit scaling in grid size (arXiv: 2606.13457)
-  - Core: Time discretization -> monomial basis composition -> reduced basis identification -> linear RBA operator construction -> quantum encoding
-  - Complexity: Full basis requires (n+d^m) dimensions; PDE locality-based construction requires O(N^d_local * log N) qubits
-  - **Activation**: reduced basis algorithm, quantum ODE solver, quantum PDE solver, nonlinear differential equations quantum, monomial basis lifting, polynomial nonlinear quantum, RBA quantum computing
-
-### Optimal classical shadow estimation of unitary channels at Heisenberg limit
-- [[classical-shadow-unitary-channel-estimation]] - Classical Shadow Estimation of Unitary channels (CSEU) achieves Heisenberg-limit O(d/epsilon) query complexity for predicting arbitrary expectation values after unknown unitary evolution (arXiv: 2606.13638)
-  - Core: Parallel non-adaptive protocol -> classical shadow construction -> post-hoc prediction for arbitrary (rho, O) pairs
-  - Applications: unitary channel tomography, Hamiltonian learning, Pauli transfer matrix learning, inverse-free amplitude estimation, shallow-circuit learning
-  - **Activation**: classical shadow estimation, unitary channel tomography, Heisenberg limit quantum learning, quantum process tomography, Hamiltonian learning quantum, Pauli transfer matrix, shadow tomography unitary
-
-### Learning with Simulators: No Regret in a Computationally Bounded World
-- [[simulatable-process-learning-theory]] - Simulatable Processes framework recovers PAC-style VC-dimension bounds for arbitrarily complex dependent data processes with simulator access, with regret controlled by time-bounded Kolmogorov complexity (arXiv: 2606.13576, COLT 2026)
-  - Core: Simulator access replaces independence assumption -> universal algorithm learns any VC class under all simulatable processes -> regret bounded by time-bounded Kolmogorov complexity
-  - Key results: O(VC(C)/epsilon^2) sample complexity matching i.i.d. bounds, conditional sampling advantages, single universal algorithm
-  - **Activation**: simulatable processes, learning with simulators, dependent data learning, VC dimension generalization, time-bounded Kolmogorov complexity, conditional sampling advantage, PAC learning extension, COLT 2026
-
-
-## 2026-06-12 - Neuroscience Research (Cron Job)
-
-### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
-- [[phase-model-m-current-hippocampal-synchrony]] - Phase reduction framework linking acetylcholine-M-current modulation to neural assembly formation via cluster synchronization analysis (arXiv: 2606.12684)
-  - One-dimensional phase model reduction of weakly coupled pyramidal neurons
-  - Low ACh → full synchronization (consolidation); High ACh → multiple clusters (encoding)
-  - Cluster solutions predicted for all-to-all, distance-dependent, and nearest-neighbour coupling
-  - **Activation**: phase model, M-current, neural synchrony, hippocampal assemblies, acetylcholine, memory consolidation
-
-### Extracting Governing Equations from Latent Dynamics via Multi-View Contrastive Learning
-- [[dysco-latent-dynamics-extraction]] - DYSCO multi-view temporal contrastive learning for symbolic equation recovery from noisy observations with affine identifiability guarantees (arXiv: 2606.13260)
-  - Multi-view contrastive learning disentangles signal from noise in high-dimensional observations
-  - Functional basis parameterization enables symbolic governing equation extraction
-  - Robust to Gaussian and Poisson noise (neural recording relevant)
-  - **Activation**: contrastive learning, latent dynamics, system identification, neural recordings, governing equations
-
-## 2026-06-12 - Number Theory, Statistics and Advanced Mathematics (Cron Job - Quantum Focus)
-
-### Optimal classical shadow estimation of unitary channels at Heisenberg limit
-- [[quantum-classical-shadow-estimation]] - Heisenberg-limited classical shadow estimation for unitary channels predicting quantum evolution properties at O(1/eps) query complexity (arXiv: 2606.13638)
-  - Heisenberg-limited query complexity: O(1/eps) vs standard O(1/eps^2)
-  - Joint input-output measurement strategy provides more information
-  - Applied to quantum process verification, variational algorithms, QML feature maps
-  - **Activation**: classical shadow estimation, CSEU, unitary channel tomography, Heisenberg limit
-
-### A Graphical Coaction for FRW Integrals from Partial/Relative Twisted (Co)homology
-- [[graphical-coaction-frw-integrals]] - Graphical coaction for FRW integrals using twisted (co)homology intersection theory decomposing cosmological integrals into diagram-decorated building blocks (arXiv: 2606.13627)
-  - Systematic decomposition of FRW integrals at all loop orders
-  - Twisted de Rham cohomology provides algebraic structure for integral relations
-  - Applied to cosmological correlators, QFT in curved spacetime
-  - **Activation**: FRW integrals, twisted cohomology, graphical coaction, cosmological correlators
-
-### Reduced basis algorithm for solving nonlinear differential equations on quantum computers
-- [[reduced-basis-quantum-ode-solver]] - Reduced basis algorithm for nonlinear ODEs/PDEs on quantum computers composing polynomial update maps and identifying minimal monomial basis (arXiv: 2606.13457)
-  - Time discretization with polynomial update map composition
-  - Reduced monomial basis identification avoids exponential blowup
-  - Applied to fluid dynamics, reaction-diffusion equations, nonlinear wave equations
-  - **Activation**: reduced basis algorithm, nonlinear ODEs, quantum algorithms, Carleman linearization
-
-### To Cool or Not to Cool Displacement Sensing with Hot Quantum States
-- [[to-cool-or-not-to-cool]] - Quantum displacement sensing from thermal states without near-ground-state initialization using squeezing, number-raising, and Schrodinger-cat-state generation (arXiv: 2606.13650)
-  - Two mechanisms: squeezing amplification and cat-state interference
-  - Challenges assumption that quantum sensing requires pre-cooling
-  - Applied to quantum precision measurement in thermal environments
-  - **Activation**: quantum sensing, displacement sensing, hot quantum states, squeezing
-
-### Quantized time in quantum walks under weak rank-K measurements
-- [[quantized-time-quantum-walks]] - Quantized time statistics in quantum walks under weak rank-K measurements where mean return time remains topologically quantized (arXiv: 2606.13552)
-  - Topological quantization of mean return time under multi-channel monitoring
-  - Indirect monitoring through ancilla coupling
-  - Applied to quantum search algorithms, topological quantum computing
-  - **Activation**: quantum walks, quantized time, weak measurements, topology, winding number
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 6)
-
-### Extracting Governing Equations from Latent Dynamics via Multi-View Contrastive Learning
-- [[dysco-latent-dynamics-extraction]] - DYSCO多视图对比学习从噪声观测恢复潜态轨迹和动力学方程，支持符号化方程发现 (arXiv: 2606.13260)
-  - 多视图结构解耦信号/噪声，实现仿射规范下的符号化恢复
-  - 理论保证：强可识别性（仿射不定性扩展到现实噪声非线性观测）
-  - 适用于神经记录Poisson噪声、混沌/振荡/亚稳态动力学
-  - **Activation**: latent dynamics, governing equations, contrastive learning, system identification, neural recordings, DYSCO, dynamical systems discovery
-
-### Phase model analysis of the effect of M-current on neural synchrony in hippocampal networks
-- [[phase-model-m-current-hippocampal-synchrony]] - M电流对海马网络同步影响的相位模型分析，揭示乙酰胆碱双向调控记忆编码/巩固状态 (arXiv: 2606.12684)
-  - 低ACh→高M电流→全同步→记忆巩固；高ACh→低M电流→多集群→记忆编码
-  - 三种耦合架构预测：全连接、距离依赖、最近邻
-  - 神经集群作为簇同步解表示，M电流调节同步稳定性边界
-  - **Activation**: M-current, acetylcholine, hippocampal synchrony, neural assembly, phase model, memory consolidation, cluster synchronization
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 5)
-
-### Large language models selectively converge with human-shared neural semantic representations
-- [[llm-human-neural-semantic-convergence]] - LLM选择性对齐人类共享神经语义的维度分解研究，揭示agency/affect/social维度偏差 (arXiv: 2606.11598)
-  - 伪超扫描MEG实验设计 + 十维语义空间评估（perception, motor, space, time, socialness, animacy, emotion, attention, causality, drive）
-  - 维度分解跨脑编码建模：Speaker-Listener神经同步（NS）超越声学/音韵控制
-  - 选择性对齐：LLM捕获感知/认知维度，但agency/affect/social维度偏差最大
-  - **Activation**: llm brain alignment, neural semantic representation, interbrain synchronization, semantic dimensions, pseudo-hyperscanning, MEG encoding, dimension-resolved encoding, selective convergence
-
-### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
-- [[flow-matching-in-context-priors-brain-dynamics]] - 首个OOD脑动力学生成模型，支持零样本认知任务与反事实神经科学 (arXiv: 2606.11833)
-  - Per-timestep conditioned diffusion transformer：语言 + 空间priors组合条件注入
-  - 零样本生成未见认知任务的whole-cortex fMRI动力学
-  - Counterfactual neuroscience支持：虚拟实验设计与验证
-  - **Activation**: flow matching brain dynamics, in-context priors, OOD brain dynamics, fMRI generation, counterfactual neuroscience, zero-shot cognitive tasks, diffusion transformer fMRI
-
-## 2026-06-12 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
-
-### Measurement Geometry for Quantum Random Access Codes: Beyond Nayak Bound and Toward Optimality
-- [[measurement-geometry-quantum-rac]] - Measurement geometry methods for QRAC optimality beyond Nayak bound (arXiv: 2606.12700)
-  - Nayak bound not always tight for specific (N,M) parameters; measurement geometry provides tighter characterization
-  - SDP-based numerical methods find bounds beyond analytical results; geometric duality between encoding states and measurements
-  - **Activation**: qrac, quantum random access code, nayak bound, measurement geometry, quantum encoding, quantum state discrimination
-
-### Generalized Exact Fractional Quantum Information Model with Memory Effects
-- [[fractional-quantum-information-memory]] - Fractional quantum information measures using Riemann-Liouville derivatives with memory effects (arXiv: 2606.13525)
-  - Riemann-Liouville fractional derivative replaces standard Schrödinger time derivative, introducing non-Markovian memory
-  - Memory effects can protect quantum information from decoherence for certain fractional order α regimes
-  - **Activation**: fractional quantum mechanics, riemann-liouville derivative, memory effects, quantum information, non-markovian dynamics
-
-### Diffusive Dynamics of Nonstabilizerness
-|- [[nonstabilizerness-diffusive-dynamics]] - Stabilizer Rényi entropy computation and symmetry effects on magic state dynamics (arXiv: 2606.13606)
-  - Nonstabilizerness (magic) spreads diffusively under random Clifford circuits, analogous to entanglement spreading
-  - Global symmetries constrain magic diffusion, creating sector-dependent diffusion rates
-  - **Activation**: nonstabilizerness, magic states, stabilizer renyi entropy, quantum resource theory, clifford circuits
-
-## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Evening Session)
-
-### Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos
-|- [[quantum-priors-chaos-prediction]] - k-indexed higher-order quantum statistical priors for chaotic system prediction with provable two-stage quantum-classical separation (arXiv: 2606.13422)
-  - Q-Priors store non-factorisable spatial correlations of invariant measure on n_q qubits via superposition/entanglement
-  - Two-copy Bell measurement extraction achieves copy-pair count independent of n_q vs Omega(2^n_q) single-copy
-  - Weather forecasting: 10-39% anomaly-correlation improvement at 48-240h; validated on IQM superconducting processors
-  - **Activation**: quantum statistical prior, Q-Prior, chaos prediction, quantum advantage, turbulent flow, weather forecasting, Bell measurement, invariant measure, Koopman operator
-
-### Closed-loop Structure of Quantum Probabilities from Unitarity
-|- [[closed-loop-quantum-probability]] - Closed-loop decomposition of quantum probabilities from unitarity with Bargmann invariants as phase-invariant quantities (arXiv: 2606.02504)
-  - Born rule derived as quadratic structure from forward×reverse amplitude product defining fundamental closed loops
-  - Interference reinterpreted as contributions from distinct loop classes weighted by Bargmann phases
-  - Connection to cyclic group structure: n-loop invariants form representation of Z_n
-  - **Activation**: closed-loop quantum probability, Bargmann invariant, unitarity, Born rule derivation, quantum interference, phase-invariant, cyclic loop
-
-## 2026-06-12 - Quantum Machine Learning (Cron Job)
-
-### Generalization Error Bound for Quantum Machine Learning in NISQ Era -- A Survey
-- [[qml-generalization-nisq-era]] - NISQ时代量子机器学习泛化误差边界的系统映射研究，覆盖量子硬件、数据集、优化技术与噪声感知泛化理论 (arXiv: 2409.07626v2, Quantum Machine Intelligence 2024)
-  - 系统映射研究：544篇论文筛选至37篇相关文献
-  - Rademacher复杂度、VC维度、PAC学习、信息论等4类泛化边界
-  - MNIST/IRIS基准测试性能分析与噪声效应
-  - **Activation**: generalization bound, NISQ QML, quantum ML reliability, noise-aware QML, QML validation, quantum learning theory
-
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 4)
-
-### Hyperbolic Neural Population Geometry Benefits Computation
-- [[hyperbolic-neural-population-geometry-computation]] - 海马体神经群体活动的双曲几何框架，连接神经解码与联想记忆，提出双曲空间联想记忆模型实现更大容量 (arXiv: 2606.10238, ICML 2026)
-  - 海马体tuning曲线统计诱导双曲几何的数学构造
-  - Modern Hopfield Network更新规则等于MMSE估计器（神经解码↔联想记忆理论等价）
-  - 双曲空间联想记忆容量显著优于欧几里得空间（指数级vs多项式级）
-  - **Activation**: hyperbolic geometry, hippocampal encoding, place cells, cognitive map, associative memory, memory capacity, neural decoding, spatial representation
-
-### QUIET: Quantifying Underutilized Influential Edges for Targeted Synchronization
-- [[quiet-edge-centric-brain-synchronization]] - 边中心脑网络同步控制框架，识别"静默高速公路"实现能量高效同步路径 (arXiv: 2606.11091)
-  - 节点中心控制→边中心控制：整合结构可控性与功能连接
-  - 静默高速公路：结构影响力高但功能利用率低的边
-  - Human Connectome Project验证：显著性网络同步控制能量与流体智力相关性
-  - Dexmedetomidine镇静研究：额顶网络和默认模式网络在清醒与镇静状态下需最大控制能量
-  - **Activation**: edge-centric control, quiet highways, network synchronization, control energy, structural controllability, functional connectivity, targeted neuromodulation
-
-
-## 2026-06-12 - Systems Engineering Research (Cron Job)
-
-### Analysis of a Distributed Optimization-Based Control Architecture for Inverter-Interfaced Virtual Power Plants
-- [[distributed-optimization-control-vpp]] - 分布式优化控制架构用于虚拟电厂DER二次控制的大信号稳定性分析 (arXiv: 2606.12336)
-  - ADMM分解全局优化问题，实现分布式协调
-  - Lyapunov稳定性判据验证非线性系统稳定性
-  - 采样数据控制器设计，结合稳态增益与优化修正
-  - **Activation**: distributed control, VPP, DER control, inverter control, optimization-based control, large-signal stability
-
-### Fair Comparison of Scheduling Algorithms on Heterogeneous Edge Clusters: A Continuous Adaptive Benchmark
-- [[cmms-edge-cluster-benchmark]] - CMMS基准平台用于边缘集群调度算法公平比较 (arXiv: 2606.12343)
-  - 统一控制器接口，支持多种调度策略（RL、启发式、规则基）
-  - 闭环负载驱动，涵盖5种负载模式（恒定、突发、阶跃、正弦、随机游走）
-  - 双指标SLO评分（Raw SLO vs Steady-State SLO），暴露切换成本
-  - **Activation**: edge cluster scheduling, CMMS, SLO benchmark, RL scheduling, heterogeneous scheduling, adaptive benchmark
-
-
-## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job - Friday Evening)
-
-### Collective neutrino oscillations: Many-body non-forward effects and non-classicality
-- [[many-body-neutrino-quantum-simulation]] - 量子动力学框架对比+多体纠缠模拟,Trotter误差标度分析,高效费米子-量子比特编码 (arXiv: 2606.12404)
-  - 量子动力学与多体哈密顿量方法的特征时间尺度对比
-  - 费米子-量子比特编码对资源需求的关键影响
-  - **Activation**: many-body neutrino, quantum kinetic, fermion-to-qubit encoding, Trotter error
-
-### Necessary and Sufficient Conditions for Universal Gates with Pauli Strings and Beyond
-- [[pauli-string-universality-conditions]] - 保罗弦集合生成su(2^n)李代数的充要条件,量子门集通用性判据 (arXiv: 2606.12096)
-  - 保罗弦对易闭包生成所有非恒等保罗算符即通用
-  - 混合保罗+通用哈密顿量的充分条件推导
-  - **Activation**: Pauli strings, universal gates, Lie algebra, su(2^n), gate set universality
-
-### Tensor-Network Algorithm for Many-Body Trace Norms
-- [[tensor-network-many-body-trace-norms]] - Zolotarev有理逼近+变分公式,无需全对角化估计矩阵乘积算符迹范数 (arXiv: 2606.11882)
-  - Zolotarev有理逼近符号函数结合变分公式
-  - 可控张量网络算法避免指数级对角化瓶颈
-  - **Activation**: tensor network, trace norm, matrix product operator, Zolotarev approximation
-
-### Degree of tensor train varieties via integral geometry
-- [[degree-tensor-train-varieties]] - 积分几何方法获得张量列车簇度数的组合表达式 (arXiv: 2606.11847)
-  - 积分几何方法推导张量列车簇度数的组合公式
-  - Julia包TTVarietyDegree.jl可直接使用
-  - **Activation**: tensor train, integral geometry, degree computation, algebraic geometry
-
-### Sparsified Kolmogorov-Arnold Networks for Interpretable Quantum State Tomography
-- [[sparsified-kan-quantum-tomography]] - 稀疏KAN用于可解释量子态层析,内部结构与已知泡利结构对照检查 (arXiv: 2606.11814)
-  - 稀疏KAN不仅作为回归器,还可作为可检查的重构规则
-  - 三量子比特GHZ族基准测试验证63个泡利期望值
-  - **Activation**: Kolmogorov-Arnold, quantum tomography, interpretable ML, Pauli structure
-
-### Random Grover Search
-- [[random-grover-search]] - 随机格罗弗搜索算法直接使用约束预言机,避免构建全局预言机的高成本 (arXiv: 2606.11759)
-  - 每次迭代随机选择一个约束预言机操作
-  - 多约束集合交集搜索的二次加速
-  - **Activation**: Grover search, constraint oracle, random search, quadratic speedup
-
-## 2026-06-12 - Neuroscience Research (Cron Job - Session 3)
-
-### Functional Whole-Brain Models: A New Framework for Unifying Brain Structure and Cognitive Function
-- [[functional-whole-brain-models]] - 整合自底向上全脑建模与自顶向下神经连接主义的统一范式，提出fWBM四大准则：结构奠基、动力学真实性、功能胜任性、可映射可观测性 (arXiv: 2605.18118)
-  - 四项最小准则：结构奠基（经验连接组）、连续时间动力学真实性、认知功能胜任性、可观测映射
-  - 三支柱路线图：短期任务特异性 → 中期多域 → 长期全尺度个性化模型
-  - 科学与临床应用：跨尺度假设验证、虚拟实验、刺激规划、预后建模
-  - **Activation**: functional whole-brain model, fWBM, whole-brain modeling, neuroconnectionism, connectome-based modeling, brain structure dynamics, cognitive brain models, personalized brain model
-
-## 2026-06-12 - Number Theory, Statistics, Mathematics + Quantum (Cron Job - Friday)
-
-### The Score Hamiltonian: Mapping Diffusion Models to Adiabatic Transport
-- [[score-hamiltonian-diffusion-transport]] - 建立基于分数的扩散模型采样与薛定谔算子族绝热基态传输之间的精确数学对应，提供密度重构界和量子势方法 (arXiv: 2606.05217)
-  - 扩散采样 ↔ 绝热基态传输精确对应
-  - 量子势由分数函数构造: V(x) = ¼|s(x)|² - ½∇·s(x)
-  - 谱隙分析可优化退火调度，提升扩散采样质量
-  - **Activation**: score hamiltonian, diffusion adiabatic mapping, quantum potential, density reconstruction, ground state transport, adiabatic quantum computing, score-based generative model
-
-### Intrinsic Locality Dimension of Quantum Codes
-- [[intrinsic-locality-dimension-quantum-codes]] - 稳定子量子纠错码的内禀局部维度，不依赖背景几何定义码的局部性，提供物理实现所需空间维度的下界 (arXiv: 2605.31441)
-  - ILD(S) = 稳定子群存在d局部生成集的最小d
-  - 在局部Clifford变换下不变，尊重码等价性
-  - 自然纳入折叠/展开等价关系
-  - **Activation**: intrinsic locality dimension, quantum code locality, stabilizer code geometry, QEC code embedding, quantum error correction locality, code distance scaling
-## 2026-06-12 - Neuroscience Research (Cron Job) - Session 2
-
-### Large Language Models Selectively Converge with Human-Shared Neural Semantic Representations
-- [[llm-semantic-convergence-human-neural-representations]] - 维度解析跨脑编码建模揭示LLM与人类共享神经语义表征的选择性收敛，10维语义空间框架显示社会/情感维度部分分歧 (arXiv: 2606.11598)
-  - 多维语义结构（非单一全局信号）：感知、运动、空间、时间、社会性、生命性、情绪、注意、因果性、驱动力
-  - 模型缩放改善对齐：更大LLM更接近人类语义几何，但收敛不完全
-  - 最大分歧维度：agency、affect、社会经验相关维度
-  - 神经对齐预测个体理解差异
-  - **Activation**: LLM convergence, semantic alignment, neural representation, interbrain encoding, semantic dimensions, brain-LLM comparison, shared neural semantics, MEG encoding
-
-## 2026-06-12 - Neuroscience Research (Cron Job)
-
-### Updating the Standard Neuron Model in Artificial Neural Networks
-- [[updated-neuron-model-ann]] - 替换1950年代点神经元模型为现代皮质细胞模型，不增加参数前提下提升表达力、鲁棒性、学习速度，减少记忆化 (arXiv: 2605.30370)
-  - 从神经科学进展推导更合理的神经元架构
-  - 五大优势：expressivity, robustness, learning speed, memorization reduction, lower data needs
-  - 首次系统性将生物学精度融入ANN基础架构
-  - **Activation**: neuron-model, cortical-cells, biological realism, ANN architecture, expressivity, robustness
-
-### Growing a Neural Network in Breadth, Depth, and Time
-- [[growing-neural-network-breadth-depth-time]] - 可微分成本框架联合优化网络宽度/深度/时间维度，有机生长架构匹配任务复杂度，模型时间与人类反应时间相关 (arXiv: 2605.25174)
-  - 三维资源：Breadth (宽度), Depth (层级), Time (循环步数)
-  - 软门控机制实现可微分架构优化
-  - 任务复杂度自动驱动架构生长
-  - **Activation**: neural growth, breadth depth time, resource constraints, bio-inspired architecture, recurrent convolution, lattice model
-
-## 2026-06-12 - Number Theory, Statistics, Math + Quantum (Cron Job)
-
-### Quantum Optimization Algorithms for Strongly Correlated Many-Body Systems
-- [[quantum-optimization-landscape-analysis]] - Landscape analysis of VQE/QAOA vs feedback-guided methods (FALQON) for NISQ-era strongly correlated systems, identifying barren plateau failure modes and physics-informed co-design (arXiv: 2606.03147)
-  - Two barren plateau modes: expressibility-induced vs noise-induced — require different mitigation strategies
-  - Feedback-guided methods (FALQON) provide gradient-free optimization with robust energy landscape navigation
-  - Physics-informed circuit co-design: encode symmetries in ansatz, use physical intuition for initialization
-  - Application domains: deconfined quantum criticality, strange metals, many-body localization, topological phases
-  - **Activation**: quantum optimization, VQE, QAOA, barren plateau, FALQON, feedback quantum algorithm, strongly correlated systems, many-body physics, phase transitions
-
-### Unification of Observational Entropy with Maximum Entropy Principles
-- [[observational-entropy-maximum-entropy-unification]] - Unified coarse-grained entropy definition combining measurement-based (observational) and max-entropy (Jaynes) approaches, resolving pathologies in infinite dimensions and deriving new entropy increase theorems (arXiv: 2503.15612)
-  - Unified definition: physical constraints = information theoretic priors
-  - Resolves observational entropy pathologies in infinite-dimensional systems
-  - New entropy increase theorems connecting to thermodynamic second laws
-  - Dynamics validated in quantum random matrix model and classical hard sphere gas
-  - **Activation**: observational entropy, maximum entropy, coarse-graining, thermodynamics, entropy increase, statistical mechanics, Jaynes entropy
-
-### An iterative Ising decoder for quantum error correction codes
-- [[iterative-ising-qec-decoder]] - 迭代低阶解码(ILOD)算法,交替优化X/Z子哈密顿量,用贝叶斯先验近似交叉项,将Ising模型最大体数减半 (arXiv: 2606.12301)
-  - Toric码阈值4.73%(vs joint 4.83%),经验加速O(√n)
-  - 2-body嵌入自旋数减少2.5倍,色彩码在大距离下仍收敛
-  - **Activation**: iterative Ising decoder, ILOD, quantum error correction, Bayesian prior decoding, toric code decoder
-
-### The Fundaments of Unity: O(1) Couplings in Quantum Field Theories
-- [[coupling-spread-quantum-field-theory]] - QFT中O(1)耦合期望的统计分析,推导耦合层次闭式概率分布,揭示大层次是统计必然性而非微调 (arXiv: 2606.12393)
-  - 20个IID单位正态耦合:P(比值>100)=0.29
-  - 比值分布的幂律尾部随耦合数增加而变重,挑战自然性假设
-  - **Activation**: O(1) couplings, coupling spread, quantum field theory, naturalness problem, IID coupling analysis
-
-### Qubit vs Qudit Encodings for Quantum Optimization
-- [[qudit-encoding-quantum-optimization]] - Qudit encoding methodology achieving exponential Hilbert space reduction vs binary qubit encoding for integer optimization, with qudit-native QAOA matching or exceeding binary performance on constrained scheduling problems (arXiv: 2605.10255)
-  - Hilbert space reduction: d^n exact vs 2^ceil(log2(d)) with invalid states
-  - Qudit-native QAOA: generalized Gell-Mann matrices as mixers, multi-angle optimization
-  - Native constraint handling: no penalty terms for domain constraints
-  - Hardware considerations: trapped ions/photonics required, tradeoff between fewer units vs harder gates
-  - **Activation**: qudit encoding, quantum integer optimization, qudit QAOA, multi-valued quantum, Hilbert space reduction, scheduling optimization
-
-## 2026-06-12 - Neuroscience Research (Cron Job)
-
-### Beyond Representational Alignment with Brain-Guided Language Models for Robust Reasoning
-- [[brain-guided-llm-reasoning-alignment]] - Brain-signal-driven framework enhancing LLM reasoning via neural predictivity metrics and representation steering, achieving up to 13% absolute accuracy gain across 10 LLMs (arXiv: 2606.11893)
-  - Neural predictivity metric: LLM representations explain variance in reasoning-related fMRI regions
-  - Inference-time steering: Intervention using brain-representation induced directions
-  - Training-time fine-tuning: Multi-objective loss combining language + brain alignment
-  - Cross-model transfer: Validated across 1.5B-72B parameter models
-  - **Activation**: brain-guided LLM, neural predictivity, reasoning enhancement, fMRI alignment, representation steering, cognitive AI, deductive reasoning
-
-### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
-- [[flow-matching-in-context-priors-brain-dynamics]] - Per-timestep conditioned diffusion transformer for zero-shot generation of fMRI dynamics for unseen cognitive tasks, enabling counterfactual neuroscience (arXiv: 2606.11833)
-  - First generative model of whole-cortex fMRI for unseen tasks
-  - Language pathway recovers region-specific recruitment patterns
-  - Spatial priors anchor generation where language degrades
-  - Compositional task structure preserved for counterfactuals
-  - **Activation**: flow matching, in-context prior, brain dynamics generation, zero-shot fMRI, counterfactual neuroscience, diffusion transformer
-
-## 2026-06-12 - Neuroscience Research (Cron Job - SNN Transformer)
-
-### SpikeDecoder: Realizing the GPT Architecture with Spiking Neural Networks
-- [[spikedecoder-snn-gpt-architecture]] - 首个全SNN实现Transformer decoder用于NLP，87-93%能耗降低，直接可训练无需ANN转换，系统化分析block替换trade-offs (arXiv: 2606.12287)
-  - Block-by-block分析：ANN→SNN替换的性能损失源
-  - 残差连接优化：SNN架构中的关键作用研究
-  - 文本-脉冲嵌入：多种投影方法对比
-  - 归一化技术：SNN兼容方法选择
-  - **Activation**: spiking transformer, SNN decoder, energy-efficient NLP, neuromorphic language model, GPT SNN, spike embedding, direct SNN training
-
-## 2026-06-12 - Number Theory, Statistics + Quantum Research (Cron Job)
-
-### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning
-- [[quantum-occam-learning]] - 信息论奥卡姆框架：量化量子电路ansatz的"样本支持表达力"(SSE)，平衡表达能力与有限样本可学习性，提供VQA电路设计的泛化界 (arXiv: 2606.12211)
-  - 样本支持表达力(SSE)：表达力×(可用样本/所需样本)的量化度量
-  - 奥卡姆界：量子学习泛化误差由"有效表达力"决定而非原始表达力
-  - 样本-表达力权衡：超出临界深度后额外表达力不被样本支持，反而降低泛化
-  - 最优ansatz选择准则：在给定样本约束下最大化SSE
-  - **Activation**: quantum occam learning, sample-supported expressibility, quantum generalization, quantum ansatz design, VQA circuit selection, quantum overfitting, quantum sample complexity, SSE
+## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Quantum State Preparation via Neural Network Encoding in Quantum Machine Learning
+- [[neural-quantum-state-encoding]] - 用训练好的经典神经网络直接映射数据到量子电路参数，避免逐实例变分优化，实现0.992保真度和5000倍加速 (arXiv: 2605.31006)
+  - 训练一次推理一次: 神经网络学习x→θ(x)映射，新数据单次前向传播编码
+  - 固定电路拓扑: 仅参数变化，结构不变，适用于近中期量子设备
+  - 泛化能力强: MNIST/Fashion-MNIST上未见数据保真度达0.992
+  - **Activation**: quantum state preparation, neural encoding, QML data loading, amplitude encoding, quantum circuit parameterization, quantum image states, NISQ data encoding
+
+### PUBO Formulation for MST and Application to Optimum-Path Forest
+- [[pubo-mst-falqon]] - 将MST问题重构为PUBO优化任务并用FALQON算法求解，减少量子比特需求，在图分类器原型选择中达到与Prim算法相当的精度 (arXiv: 2605.20637)
+  - PUBO重构: 无需辅助变量，减少量子比特需求
+  - FALQON优化: 反馈式量子优化算法用于哈密顿量最小化
+  - 图分类应用: OPF分类器中原型选择的质量与经典算法相当
+  - **Activation**: quantum MST, PUBO optimization, FALQON, quantum graph algorithms, optimum-path forest, quantum combinatorial optimization, QML classifier
+
+## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Aligning Quantum Operators with Large Language Models
+- [[llm-quantum-operator-alignment]] - 使LLM能够理解量子算子(酉矩阵)表示，弥合自然语言与量子力学之间的鸿沟，支持量子电路合成与算子属性预测 (arXiv: 2606.13811)
+  - 量子算子映射: Euler分解/本征值编码/张量网络压缩/Bloch球投影
+  - 对齐损失函数: 保真度损失/对易损失/酉性惩罚/语义一致性
+  - 四种应用模式: NL→电路合成/算子属性预测/电路优化/量子误差诊断
+  - **Activation**: LLM quantum, operator alignment, unitary matrix reasoning, quantum circuit NL, quantum-classical interface, quantum operator prediction, quantum NLP
+
+### Foundations of Practical Quantum Advantage in Quantum-Informed ML for Predicting Chaos
+- [[quantum-informed-chaos-ml]] - 从经典混沌时间序列中提取高阶量子统计特征(纯度/Rényi熵/OTOC/互信息)提升混沌系统预测精度 (arXiv: 2606.13422)
+  - 密度矩阵构建: 从延迟坐标嵌入轨迹构造经验密度矩阵
+  - 量子特征提取: 纯度/Rényi熵/冯·诺依曼熵/OTOC/互信息/负性
+  - 混合量子-经典预测器: 量子特征+经典特征联合预测
+  - **Activation**: chaos prediction, quantum ML, OTOC, Rényi entropy, density matrix, chaotic time series, Lorenz system, quantum advantage ML, hybrid quantum-classical, dynamical systems
+
+## 2026-06-16 - Neuroscience Research (Cron Job) - Batch 2
+
+### Neural Variability Enhances Artificial Network Robustness
+- [[neural-variability-enhances-robustness]] - 相关性噪声改善ANN对抗攻击和自然修改鲁棒性，结构化噪声跨攻击类型泛化良好，生物学合理的局部信息策略 (arXiv: 2606.13801)
+  - 皮层高变异性vs外周低变异性提示噪声功能性意义
+  - 噪声结构(协方差)是关键而非单纯随机噪声
+  - 对抗鲁棒性：噪声结构跨攻击类型良好泛化
+  - 自然鲁棒性：结构化噪声最优但转移性有限
+  - **Activation**: neural variability, correlated noise, adversarial robustness, naturalistic modifications, noise correlations, biological robustness, cortex variability
+
+## 2026-06-16 - Neuroscience Research (Cron Job)
+
+### Prospective Coding and Path Integration via Self-Organizing Neural Networks
+- [[prospective-coding-path-integration-self-organizing]] - 前瞻编码与路径整合作为自组织竞争神经网络的平衡解涌现，Hebbian塑性+发放率适应+全局抑制自然驱动连续吸引子连接形成 (arXiv: 2606.14649)
+  - 翻译不变输入自然驱动稳定高斯权重涌现
+  - 前瞻动力学在纯前馈架构中自发产生
+  - 速度调制基线电流实现精确单向路径整合
+  - 连续吸引子属性非人工设计而是自组织涌现
+  - **Activation**: prospective coding, path integration, continuous attractor, self-organization, Hebbian plasticity, firing-rate adaptation, entorhinal cortex, grid cells
+
+### Decoding Semantic Categories from Picture-Naming EEG
+- [[decoding-semantic-categories-picture-naming-eeg]] - 从图片命名EEG解码9类语义类别，预训练单通道EEG编码器+多语言文本嵌入，双时间窗口融合达到78.4% Macro-F1 (arXiv: 2606.14614)
+  - 早期窗口(0-500ms) + 命名相关窗口(500-1200ms) 互补信息
+  - 平衡准确率：56.2% → 61.0% → 78.1% (窗口组合)
+  - 传感器级解码图显示语义信息空间分布
+  - **Activation**: EEG decoding, semantic categories, picture naming, lexical-semantic processing, multilingual embeddings, language production, neural decoding
 
 ## 2026-06-11 - Neuroscience Research (Cron Job - Flow Matching & Resolution Agnostic)
 
@@ -2949,6 +2640,8 @@
   - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
   - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
   - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
+<<<<<<< Updated upstream
+=======
 ## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job + Daily Quantum)
 
 ### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning (arXiv: 2606.12211)
@@ -3110,3 +2803,166 @@
   - **Core Innovation**: Six new modular Nahm sum families; rank 3 from Zagier modifications, rank 4 from lift-dual on tadpole sums
   - **Connections**: Number theory, modular forms, q-series, vertex operator algebras
   - **Activation**: Nahm sums, modular forms, q-series, Zagier, lift-dual, tadpole sums, modular identities
+
+## 2026-06-14 - Information Science + Quantum (Cron Job - Sunday)
+
+### EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments
+- [[evoarena-memory-evolution]] - Patch-based memory paradigm (EvoMem) records memory evolution as structured update histories for robust agent deployment in dynamic environments (arXiv: 2606.13681)
+  - **Core Innovation**: Models environment changes as progressive updates; patch-based memory enables reasoning about evolution
+  - **Results**: 39.6% baseline → +1.5% on EvoArena, +6.1% on GAIA, +4.8% on LoCoMo, +3.7% chain-level accuracy
+  - **Activation**: evoarena, evomem, memory evolution, dynamic environments, patch-based memory, agent robustness
+
+### Agents-K1: Towards Agent-native Knowledge Orchestration
+- [[agents-k1-knowledge-orchestration]] - End-to-end knowledge orchestration pipeline converting 2.46M papers into agent-native scientific knowledge graphs with multimodal parser, GRPO-trained IE backbone, tri-source interface (arXiv: 2606.13669)
+  - **Core Innovation**: Five-module schema captures entities, multimodal evidence, citations, typed relations across full papers
+  - **Dataset**: Scholar-KG - 2.46M papers processed, 1M released subset, accessible via SCP
+  - **Activation**: agents-k1, knowledge orchestration, scientific knowledge graph, scholar-kg, agent-native knowledge
+
+### Operadic Consistency: Label-free Signal for Compositional Reasoning Failures
+- [[operadic-consistency-reasoning]] - Operad theory-based diagnostic for compositional reasoning failures: direct answer should agree with composed decomposition answer; r=0.86-0.94 correlation across 12 LLMs and 4 datasets (arXiv: 2606.13649)
+  - **Core Innovation**: Tests structural reasoning consistency at inference time without ground truth; outperforms CoT-SC on MuSiQue/StrategyQA
+  - **Results**: AUARC lifts +0.086 to +0.096, AUROC lifts +0.092 to +0.164 at K=3 budget
+  - **Activation**: operadic consistency, compositional reasoning, label-free diagnostics, inference-time validation, selective prediction
+
+### An LLM System for Autonomous Variational Quantum Circuit Design
+- [[autonomous-variational-quantum-circuit-design]] - LLM-driven autonomous proposal, optimization, and evaluation of variational quantum circuit architectures (arXiv: 2606.13380)
+  - **Core Innovation**: Iterative circuit design loop where LLM generates candidates, evaluates properties (expressibility, entanglement, trainability), refines based on feedback
+  - **Workflow**: Problem specification → Circuit generation → Multi-objective evaluation → Selection and refinement → Validation
+  - **Activation**: autonomous quantum circuit design, LLM quantum circuits, variational circuit synthesis, automated VQC design
+
+### CQC-RAG: Robust Retrieval-Augmented Generation via Cross-Query Consistency
+- [[cqc-rag-cross-query-consistency]] - Cross-query consistency verification for RAG reliability across semantically related queries (arXiv: 2606.13438)
+  - **Core Innovation**: Related queries should produce consistent evidence selections; inconsistency flags retrieval failures
+  - **Method**: Generate query variants → Independent retrieval → Evidence overlap analysis → Consistency scoring
+  - **Activation**: cross-query consistency, RAG robustness, retrieval consistency, rag verification
+
+### CoDeR: Local Constraint-Compatible Retrieval Beyond Semantic Similarity
+- [[coder-constraint-compatible-retrieval]] - Constraint-compatible retrieval that goes beyond semantic similarity for constraint-sensitive queries (arXiv: 2606.13204)
+  - **Core Innovation**: Semantic similarity as relevance proxy fails when documents are topically close but violate hard constraints
+  - **Method**: Parse query (semantic + constraints) → Broad retrieval → Constraint filtering → Combined scoring
+  - **Activation**: constraint-compatible retrieval, constraint-aware search, CoDeR, retrieval beyond similarity
+
+### Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization
+- [[qiqp-trainability-analysis]] - Barren plateau and gradient scaling analysis for IQP QCBMs under Gaussian parameter initialization (arXiv: 2606.10179)
+  - **Core Innovation**: Theoretical analysis of how Gaussian initialization σ affects trainability in quantum generative models
+  - **Key Finding**: Identifies trainable regime where gradient variance is polynomial (not exponential) in qubit count
+  - **Activation**: IQP trainability, QCBM training, barren plateau quantum, Gaussian initialization quantum
+
+### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning
+- [[quantum-occam-learning]] (enhanced) - Information-theoretic sample complexity bounds for quantum ML via circuit expressibility (arXiv: 2606.12211)
+  - **Core Innovation**: Circuit complexity as adaptive statistical resource; matching upper/lower bounds for learning quantum states
+  - **Key Result**: G_supported ≈ Mε² gates supported by M samples at accuracy ε
+  - **Activation**: quantum occam learning, sample complexity quantum, circuit expressibility, quantum state learning
+
+## 2026-06-14 - Anthropic Research Update (Cron Job)
+
+### Natural Language Autoencoders: Turning Claude's thoughts into text
+- [[natural-language-autoencoders]] - Methodology for training Claude to translate its internal representations into human-readable text, revealing the thought-to-text encoding process
+  - **Core Innovation**: Natural Language Autoencoder (NLA) architecture bridges neural representations and language output
+  - **Application**: Interpretability research, thought decoding, representation alignment
+  - **Activation**: natural language autoencoder, thought encoding, Claude interpretability, neural representation translation
+
+### Teaching Claude Why: Reducing Agentic Misalignment
+- [[teaching-claude-why-alignment]] - New research on reducing agentic misalignment through explanation-based alignment training (Anthropic Research, May 8, 2026)
+  - **Core Innovation**: Training models to explain reasoning reduces misaligned goal pursuit
+  - **Key Result**: Explanation-based alignment prevents agentic misalignment behaviors
+  - **Activation**: teaching Claude why, agentic misalignment, explanation alignment, AI alignment research
+
+### Project Deal: AI Marketplace Negotiation Experiment
+- [[project-deal-anthropic-marketplace]] - AI agent marketplace experiment where Claude acts as negotiator buying/selling on behalf of employees (Anthropic Research, Apr 24, 2026)
+  - **Core Innovation**: Real-world negotiation testing with authentic constraints and employee trust dynamics
+  - **Application**: Autonomous negotiation agents, procurement automation, marketplace mediation
+  - **Activation**: project deal, AI negotiation, marketplace agent, Claude negotiator, employee marketplace
+
+### What 81,000 People Want from AI
+- [[81k-ai-expectations]] - Largest multilingual qualitative study on AI use, dreams, and fears with 81k participants across multiple languages (Anthropic Research, Mar 18, 2026)
+  - **Core Innovation**: Unprecedented scale and multilingual coverage for AI expectations research
+  - **Application**: Understanding user AI expectations, designing user-centered AI systems
+  - **Activation**: 81k interviews, AI expectations, qualitative AI research, user AI dreams, multilingual AI study
+
+### Project Vend Phase Two: AI Shopkeeper Update
+- [[project-vend-phase-two]] - Follow-up on autonomous AI shopkeeper experiment in San Francisco office lunchroom (Anthropic Research, Dec 18, 2025)
+  - **Core Innovation**: Extended evaluation of AI running physical retail business autonomously
+  - **Application**: Autonomous business agents, retail automation, agent business operations
+  - **Activation**: project vend phase 2, AI shopkeeper, autonomous retail, agent business experiment
+
+### Paving the Way for Agents in Biology
+- [[paving-way-agents-biology]] - Framework for making AI agents useful in biological research workflows (Anthropic Research, Jun 8, 2026)
+  - **Core Innovation**: Domain-specific agent integration for biology research automation
+  - **Application**: Biology research agents, scientific workflow automation, life sciences AI
+  - **Activation**: agents in biology, biology research agents, scientific agent workflows
+
+### Making Claude a Chemist: NMR Benchmark
+- [[making-claude-chemist]] - Opus 4.7 achieves competitive accuracy with ChemDraw/MestReNova on NMR spectral analysis and structure elucidation (Anthropic Research, Jun 5, 2026)
+  - **Core Innovation**: First systematic chemistry benchmark showing LLM competitive with professional chemistry software
+  - **Key Results**: ±0.079 ppm error on ¹H NMR, 100% recovery on 1D inverse structure elucidation
+  - **Activation**: Claude chemist, NMR spectral analysis, molecular structure elucidation, AI chemistry benchmark, Opus chemistry
+
+### AI-Enabled Cyber Threats: MITRE ATT&CK Mapping
+- [[ai-enabled-cyber-threats-mitre-attack]] - Mapping a year's worth of AI-enabled cyber threats using MITRE ATT&CK framework (Anthropic Research, Jun 3, 2026)
+  - **Core Innovation**: Systematic classification of AI-assisted attack techniques across security taxonomy
+  - **Application**: AI threat intelligence, security analysis, cyber threat mapping
+  - **Activation**: AI cyber threats, MITRE ATT&CK, AI threat intelligence, cyber security AI
+
+### Coding Agents in Social Sciences Research
+- [[coding-agents-social-sciences-research]] - Using coding agents for social sciences research automation (Anthropic Research, May 27, 2026)
+  - **Core Innovation**: Domain-specific agent deployment for economic and social sciences workflows
+  - **Application**: Social science research automation, coding agent deployment, economic research
+  - **Activation**: coding agents social sciences, social science research AI, economic research agents
+
+### Project Glasswing: Vulnerability Discovery
+- [[project-glasswing-vulnerability-discovery]] - Initial update on AI-powered vulnerability discovery research (Anthropic Research, May 22, 2026)
+  - **Core Innovation**: Frontier AI for systematic software vulnerability detection
+  - **Application**: AI security research, vulnerability discovery, automated security analysis
+  - **Activation**: project glasswing, AI vulnerability discovery, security research Anthropic
+
+### 2028: Two Scenarios for Global AI Leadership
+- [[2028-ai-leadership-scenarios]] - Policy analysis examining US-China AI competition trajectories by 2028: compute advantage, export controls, democratic vs. authoritarian AI (Anthropic Research, May 14, 2026)
+  - **Core Innovation**: Two-scenario framework for AI geopolitics: democratic leadership vs. authoritarian control
+  - **Key Themes**: Compute advantage, export controls, distillation attacks, AI governance
+  - **Activation**: 2028 AI leadership, AI geopolitics, compute advantage, US-China AI competition, export controls
+
+### Donating Petri: Open-Source Alignment Tool
+- [[petri-alignment-tool]] - Open-source release of Petri alignment testing toolbox for AI system evaluation (Anthropic Research, May 7, 2026)
+  - **Core Innovation**: Auditable alignment testing framework released as open-source
+  - **Application**: Alignment testing, AI safety evaluation, open-source safety tools
+  - **Activation**: petri alignment tool, open-source alignment, alignment testing toolbox
+
+### Anthropic Institute Focus Areas
+- [[anthropic-institute-focus-areas]] - Research agenda outlining priority areas for The Anthropic Institute (Anthropic Research, May 7, 2026)
+  - **Core Innovation**: Structured research roadmap for AI safety and beneficial AI development
+  - **Application**: AI safety research planning, beneficial AI development
+  - **Activation**: anthropic institute, AI safety research agenda, beneficial AI roadmap
+
+>>>>>>> Stashed changes
+
+## 2026-06-16 - Computer Science & Quantum (Cron Job)
+
+### Boltzmann Attention: Learnable Ising Couplings for Cooperative Attention
+- [[boltzmann-attention-ising]] - Energy-based attention using learnable Ising model couplings, enables quantum annealing training (arXiv: 2606.12478)
+  - Learnable J_ij captures cooperative/antagonistic attention
+  - Diabatic quantum annealing replaces softmax for sampling
+- **Activation**: Boltzmann attention, Ising attention, quantum annealing training, energy-based attention
+
+## 2026-06-16 - Computer Science (Cron Job)
+
+### Aligning Quantum Operators with Large Language Models
+- [[llm-quantum-operator-alignment]] - Maps unitary operators into LLM latent spaces enabling quantum reasoning for Clifford+T circuit synthesis (arXiv: 2606.13811)
+  - First approach to bridge LLM understanding of quantum representations
+  - Unified modeling over quantum operators and linguistic inputs
+  - **Activation**: quantum operator alignment, LLM quantum reasoning, unitary matrix embedding, quantum circuit synthesis with LLM, 量子算符对齐
+## 2026-06-16 - Computer Science + Quantum (Cron Job)
+
+### Optimal Decoding of Small Codes by Density Matrix Propagation
+- [[density-matrix-propagation-qec-decoding]] - ML decoding benchmark for QEC under circuit-level noise using density matrix propagation with pruning techniques (arXiv: 2606.14455)
+  - 密度矩阵传播通过完整存储实验，计算每个综合征历史的最优ML解码决策
+  - 剪枝技术带严格边界，仅窄部分综合征历史显著贡献逻辑错误率
+  - 标准解码器(repetition)接近最优，但cellular automaton code显著偏差
+  - **Activation**: density matrix propagation, optimal decoding QEC, ML decoding benchmark, circuit-level noise decoding, BP+OSD accuracy
+
+### Pseudonym Scheme Based on Hybrid Certificates for Vehicular Communications
+- [[hybrid-pqc-pseudonym-vehicular-security]] - Hybrid ECC+PQC certificate scheme for vehicular SCMS migration to quantum-safe security (arXiv: 2606.14008)
+  - IEEE/ETSI车载安全标准依赖ECC，面临Shor算法量子攻击威胁
+  - 混合证书结合ECC向后兼容 + NIST标准PQC(ML-DSA)实现量子安全
+  - 通用化假名方案阻止注册证书与假名证书的公钥关联
+  - **Activation**: vehicular security PQC, SCMS hybrid certificate, pseudonym scheme quantum-safe, BKE post-quantum, 车载通信后量子密码
