@@ -1,3 +1,12 @@
+## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 2nd run)
+
+### Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications
+- [[q-ready-quantum-feasibility]] - Systematic methodology for predicting whether computational problems benefit from quantum acceleration and optimally partitioning hybrid workflows (arXiv: 2606.16201)
+  - Structured quantum readiness scoring across 5 criteria (algorithm mapping, noise resilience, encoding efficiency, classical competition, infrastructure access)
+  - Hybrid partitioning strategy for quantum-suitable subproblems vs classical pre/post-processing
+  - Domain-specific feasibility for software engineering, chemistry, optimization, finance
+  - **Activation**: quantum feasibility, quantum readiness, hybrid quantum-classical, q-ready, quantum advantage assessment, quantum application assessment, quantum-classical partitioning, quantum software engineering
+
 ## 2026-06-16 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Quantum-Driven Neuromorphic Computing for Million-Qubit-Scale Workloads
