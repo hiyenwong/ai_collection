@@ -1,3 +1,12 @@
+## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 3rd run)
+
+### Physically Motivated Ansatz for Open Fermionic Systems on Quantum Computer
+- [[physically-motivated-quantum-ansatz]] - Design physically motivated variational ansätze for open quantum systems using UCC adapted for Lindblad dynamics; mitigates barren plateaus (arXiv: 2606.16823)
+  - Unitary coupled cluster approach adapted for Lindblad master equation and NESS
+  - Physical structure embedded in circuit design vs black-box HEA
+  - Addresses barren plateau problems in variational quantum algorithms for open systems
+  - **Activation**: physically motivated ansatz, open fermionic systems, variational quantum algorithms, lindblad dynamics, NESS, non-equilibrium steady states, unitary coupled cluster, barren plateaus
+
 ## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 2nd run)
 
 ### Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications
