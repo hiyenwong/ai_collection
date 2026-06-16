@@ -1,3 +1,12 @@
+## 2026-06-16 - Quantum Neuromorphic Computing (Cron Job)
+
+### Quantum-Driven Neuromorphic Computing for Million-Qubit-Scale Workloads
+- [[quantum-driven-neuromorphic-million-qubit]] - Synergistic integration of quantum computing with neuromorphic architectures for million-qubit computational workloads (arXiv: 2606.12968)
+  - Neuromorphic quantum error correction via spike-based syndrome decoding
+  - Quantum spike encoding for state-to-spike information transfer
+  - SNN-based adaptive quantum circuit compilation and control
+  - **Activation**: quantum neuromorphic, million-qubit, quantum-driven neuromorphic computing, neuromorphic quantum computing, large-scale quantum, quantum workload scaling
+
 ## 2026-06-16 - Computer Science + Quantum Computing (Cron Job)
 
 ### Boltzmann Attention: Learnable Ising Couplings for Cooperative Attention
