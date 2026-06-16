@@ -1,3 +1,17 @@
+## 2026-06-16 - Systems Engineering Research (Cron Job)
+
+### Quasilinear Equivalence Checking for Detector Error Models
+- [[quasilinear-equivalence-checking-detector-error]] - A Detector Error Model (DEM) is a structured representation of error mechanisms in quantum circuits, (arXiv: 2606.14677v1)
+  - Core methodology: systems engineering, quant-ph, cs.SE
+  - Key contribution: Quantum error model verification
+  - **Activation**: systems engineering, quasilinear-equivalence-checking-detector-error, quantum
+
+### parRSB: Exascale Spectral Element Mesh Partitioning
+- [[parrsb-exascale-spectral-element-mesh]] - We introduce parRSB - a parallel, highly scalable graph partitioner for spectral element meshes that (arXiv: 2606.14659v1)
+  - Core methodology: systems engineering, cs.DC
+  - Key contribution: Exascale mesh partitioning
+  - **Activation**: systems engineering, parrsb-exascale-spectral-element-mesh, distributed
+
 # AI Collection Index
 
 ## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
@@ -2878,3 +2892,18 @@
   - First approach to bridge LLM understanding of quantum representations
   - Unified modeling over quantum operators and linguistic inputs
   - **Activation**: quantum operator alignment, LLM quantum reasoning, unitary matrix embedding, quantum circuit synthesis with LLM, 量子算符对齐
+## 2026-06-16 - Computer Science + Quantum (Cron Job)
+
+### Optimal Decoding of Small Codes by Density Matrix Propagation
+- [[density-matrix-propagation-qec-decoding]] - ML decoding benchmark for QEC under circuit-level noise using density matrix propagation with pruning techniques (arXiv: 2606.14455)
+  - 密度矩阵传播通过完整存储实验，计算每个综合征历史的最优ML解码决策
+  - 剪枝技术带严格边界，仅窄部分综合征历史显著贡献逻辑错误率
+  - 标准解码器(repetition)接近最优，但cellular automaton code显著偏差
+  - **Activation**: density matrix propagation, optimal decoding QEC, ML decoding benchmark, circuit-level noise decoding, BP+OSD accuracy
+
+### Pseudonym Scheme Based on Hybrid Certificates for Vehicular Communications
+- [[hybrid-pqc-pseudonym-vehicular-security]] - Hybrid ECC+PQC certificate scheme for vehicular SCMS migration to quantum-safe security (arXiv: 2606.14008)
+  - IEEE/ETSI车载安全标准依赖ECC，面临Shor算法量子攻击威胁
+  - 混合证书结合ECC向后兼容 + NIST标准PQC(ML-DSA)实现量子安全
+  - 通用化假名方案阻止注册证书与假名证书的公钥关联
+  - **Activation**: vehicular security PQC, SCMS hybrid certificate, pseudonym scheme quantum-safe, BKE post-quantum, 车载通信后量子密码
