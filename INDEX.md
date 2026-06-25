@@ -2828,3 +2828,18 @@
   - Learnable J_ij captures cooperative/antagonistic attention
   - Diabatic quantum annealing replaces softmax for sampling
 - **Activation**: Boltzmann attention, Ising attention, quantum annealing training, energy-based attention
+
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Discovery of connectivity-trainability trade-off of IQP Circuits for Hamiltonian Optimization
+- [[iqp-connectivity-trainability]] - IQP电路连接性与可训练性的权衡分析方法论 (arXiv: 2606.24264)
+  - IQP电路在哈密顿量优化中存在连接性-可训练性权衡
+  - 低连接性：梯度良好但优化能力有限；高连接性：优化能力强但遭遇严重barren plateau
+  - **Activation**: iqp circuit trainability, 量子IQP电路, connectivity trainability trade-off, hamiltonian optimization IQP
+
+### Linear algebra at exponential scale via tensor network dimension reduction
+- [[tensor-network-linear-algebra]] - 指数规模线性代数问题的张量网络降维求解方法 (arXiv: 2606.15350)
+  - 随机降维技术直接作用于张量网络格式，实现指数维度($2^{200}$)矩阵的迹估计和特征值近似
+  - 提供可证明的误差界，复杂度为多项式而非指数
+  - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
+
