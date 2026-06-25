@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Quantum element-wise transforms
+- [[quantum-element-wise-transforms]] - Implementing element-wise nonlinear transformations on quantum amplitudes via spectral decomposition and polynomial approximation, with exponential space reduction over prior QSVT/LCU methods (arXiv: 2606.06456)
+  - 量子振幅上的逐元素非线性变换
+  - 谱分解 + 多项式逼近实现
+  - 相比QSVT/LCU方法指数级空间优化
+  - 应用于量子ML与统计估计
+  - **Activation**: quantum transforms, spectral decomposition, polynomial approximation, quantum ML, statistical estimation, nonlinear mapping, quantum amplitudes
+
+### Quantum Algorithm for Nonlinear and Stochastic Homogenization via Young-Measure LP
+- [[quantum-young-measure-homogenization]] - Quantum algorithm for nonlinear and stochastic homogenization via Young-measure linear programming, combining QLSA with homogenization theory for efficient multiscale PDE solutions (arXiv: 2606.06165)
+  - Young测度线性规划公式重新表述非线性/随机均匀化问题
+  - 量子线性系统算法(QLSA)加速求解
+  - 指数级维度加速对比经典方法
+  - 统一处理非线性与随机均匀化
+  - **Activation**: quantum homogenization, Young measure, quantum linear systems, stochastic PDE, multiscale, numerical analysis
+
+### Robustness of Entanglement Manipulation for almost i.i.d. sources
+- [[almost-iid-quantum-information]] - Fundamental bounds on entanglement rates under statistical uncertainty for almost independent and identically distributed quantum sources (arXiv: 2606.06392)
+  - 近似i.i.d.量子源的信息理论鲁棒性分析
+  - 量子集中不等式与矩阵浓度界
+  - 纠缠操作在统计不确定性下的速率界
+  - 渐近等分性质(AEP)的推广
+  - **Activation**: almost i.i.d., entanglement manipulation, concentration bounds, statistical uncertainty, quantum information, asymptotic rates
+
 ## 2026-06-16 - Neuroscience Research (Cron Job)
 
 ### Prospective Coding and Path Integration via Self-Organizing Neural Networks
