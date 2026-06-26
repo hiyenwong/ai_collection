@@ -21,6 +21,22 @@
   - Haldane parameter g interpolates bosonic (g=0) to fermionic (g=1)
   - **Activation**: exclusion statistics, quantum heat engine, Haldane statistics, Whitney limit
 
+
+## 2026-06-26 - Quantum Gate Synthesis & Error Mitigation (Cron Job - Math Methods)
+
+### Large-scale multimode entangling-gate synthesis in trapped-ion systems
+- [[alternating-minimization-gate-synthesis]] - Alternating-minimization strategy for multi-tone gate synthesis in ion chains up to N=1000; control resources scale linearly (arXiv: 2606.27266)
+  - Core: Decompose non-convex gate synthesis into alternating convex sub-problems (phase optimization + amplitude optimization)
+  - Core: All-to-all and nearest-neighbor patterns synthesized for N=1000 with global laser control; qLDPC target at N=512 demonstrated
+  - **Activation**: alternating minimization, gate synthesis, trapped-ion, multimode entangling, multi-tone control, programmable interaction engineering, Mølmer-Sørensen
+
+### Computing noise-canceling observables via Pauli propagation
+- [[pauli-propagation-error-mitigation]] - Hybrid error mitigation embedding Pauli propagation with noise-canceling inverse channels; benchmarked on 56 superconducting qubits (arXiv: 2606.20441)
+  - Core: Classical Pauli propagation + quantum hardware measurements: complementary limitations mitigated simultaneously
+  - Core: Two truncation strategies (path-count vs. weight-threshold) with characterized trade-offs for different observable types
+  - **Activation**: Pauli propagation, noise-canceling observable, hybrid error mitigation, observable estimation, quantum-centric supercomputing, inverse channel
+
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 8)
 
 ### SIC-POVM Overlaps via Stark Units from Ray Class Fields
