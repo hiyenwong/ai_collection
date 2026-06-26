@@ -1,4 +1,29 @@
 # AI Collection Index
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 5)
+
+### Sp(2N,R) Interferometry in Multi-Mode Gaussian Bosonic Systems
+- [[sp2n-interferometry-quantum-metrology]] - Sp(2N,R) interferometry methodology exploiting symplectic group symmetry for multi-mode bosonic quantum metrology beyond standard quantum limit (arXiv: 2606.25768)
+  - Sp(2N,R)对称性用于多模高斯玻色子干涉计量
+  - 最优量子控制:压缩和位移方向对齐
+  - Sp(2N,R) echo协议实现QFI极限相位估计
+  - 几何动力学反转方法适用于Bose-Kitaev链等系统
+  - **Activation**: Sp(2N,R) interferometry, multi-mode Gaussian metrology, symplectic interferometer, Sp echo, bosonic Kitaev chain, quantum Fisher information
+
+### Criterion for Qubit-Assisted Quantum Metrology Approaching Heisenberg Scaling
+- [[qubit-assisted-heisenberg-metrology]] - Criterion for achieving Heisenberg scaling in qubit-assisted quantum metrology — one/two direction coupling sufficient (arXiv: 2606.26167)
+  - 探针-量子比特耦合限制在1-2个方向即可实现海森堡标度
+  - 反直觉结果:增加玻色子探针温度可提升计量灵敏度
+  - 自旋系综QFI与自旋数平方成正比,有限温度态即可
+  - 无需压缩态或GHZ态等资源态
+  - **Activation**: qubit-assisted metrology, Heisenberg scaling, quantum Fisher information, bosonic probe, spin ensemble, probe-qubit coupling
+
+### Subsystem Quantum Error Correction for Noisy Quantum Metrology
+- [[subsystem-qec-metrology]] - Subsystem QEC achieving Heisenberg limit with minimal ancilla — syndrome-free protocols with single qubit (arXiv: 2606.19628)
+  - 子系统稳定子码实现海森堡极限,大幅简化计量协议
+  - 无综合征协议仅需单个辅助量子比特
+  - Floquet码保护时间依赖计量信号
+  - 适用于广泛噪声类型
+  - **Activation**: subsystem QEC, syndrome-free metrology, Floquet code, Heisenberg limit QEC, quantum metrology noise protection
 
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 4)
 
