@@ -1,4 +1,13 @@
 # AI Collection Index
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Permutation Asymmetry in Randomized Bell Tests
+- [[permutation-asymmetry-bell-tests]] - Exploiting permutation asymmetry in sequential Bell experiments to enhance nonlocality detection without additional resources (arXiv: 2606.26242)
+  - Permutationally invariant states yield identical nonlocality outcomes; asymmetric states can violate in one realization but not the other
+  - Enables detection of measurement-choice correlations through joint violation statistics
+  - Asymmetric maximally entangled states increase nonlocality probability in finite measurement pool scenarios
+  - **Activation**: permutation asymmetry, Bell test, randomized Bell, measurement exchange, entangled state symmetry, nonlocality detection, sequential Bell experiment
+
 ## 2026-06-26 - Quantum Metrology & Statistical Estimation (Cron Job)
 
 ### Finite-Shot Sensitivity for Moment Estimation in Quantum Metrology
