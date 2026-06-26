@@ -3133,3 +3133,29 @@
   - 核心要点 1: 结构化量子态（低秩、张量网络、浅层电路、神经量子态）大幅降低有效自由度，实现可扩展重建
   - 核心要点 2: 测量设计的几何保持性质（RIP等）保证样本复杂度边界，连接压缩感知与量子层析
   - **Activation**: compressive quantum tomography, structured quantum state tomography, low-rank quantum tomography, matrix sensing quantum, compressive sensing quantum, randomized measurements quantum, POVM quantum tomography, neural quantum states tomography, sample complexity quantum tomography, quantum measurement design, 压缩量子层析, 结构化量子态重建
+
+## 2026-06-27 - Economics & Investment (Cron Job)
+
+### Feasibility-Aware Security-Constrained Unit Commitment via Hybrid Soft Actor-Critic with Quantum-Sampled Features
+- [[quantum-rl-scuc-qsample]] - Hybrid quantum-classical RL for SCUC economic dispatch (arXiv: 2606.26345)
+  - Three-layer architecture: Bernoulli HSAC policy + quantum-sampled features + MILP recovery
+  - 14/57/118-bus evaluation shows scalability governed by enforcement cap size
+  - **Activation**: quantum RL SCUC, unit commitment quantum, quantum-sampled features, hybrid soft actor-critic
+
+### A Distributed Quantum Approximate Optimization Algorithm Simulator for Engineering Design Optimization
+- [[distributed-qaoa-simulator]] - Multi-QPU distributed QAOA simulator for QUBO optimization (arXiv: 2606.26297)
+  - Supports monolithic and distributed modes with runtime optimizations
+  - Power unit commitment case verifies optimal solution recovery consistency
+  - **Activation**: distributed QAOA, DQAOA simulator, QUBO multi-QPU, quantum unit commitment
+
+### Feasibility-driven QAOA with penalty scheduling
+- [[qaoa-feasibility-penalty-scheduling]] - Feasibility-driven QAOA promoting penalty weights to variational parameters (arXiv: 2606.25117)
+  - Lambda-lr-QAOA: per-penalty linear-ramp schedules for multi-constraint problems
+  - Piecewise-ramp QAOA: two-segment schedules enhance expressiveness
+  - **Activation**: feasibility-driven QAOA, penalty scheduling, Lambda-lr-QAOA, piecewise-ramp QAOA
+
+### The Mathematics of Heuristic Portfolio Optimization (HPO)
+- [[heuristic-portfolio-optimization]] - Mathematical theory of heuristic portfolio optimization (arXiv: 2606.12612)
+  - Information-restricted projection of Markowitz onto stable rule class
+  - Implied-return principle yields closed-form optimality sets
+  - **Activation**: heuristic portfolio optimization, HPO, risk parity, implied return principle
