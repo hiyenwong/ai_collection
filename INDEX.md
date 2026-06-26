@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 3)
+
+### Quantum Probability Statistics Framework
+- [[quantum-probability-statistics]] - Reformulates probability theory using quantum mechanics structures (square-root amplitudes, matrix observations) to show confirmation bias emerges as rational optimization (arXiv: 2606.23325)
+  - 量子概率形式化：将概率表示为平方根振幅，观测表示为矩阵
+  - 证实偏差作为理性优化的涌现结果，而非非理性行为
+  - 两阶段证据选择：最小化误差概率 vs 最大化信息增益
+  - 在序贯假设检验中具有记忆效率和误差指数衰减优势
+  - **Activation**: quantum probability, confirmation bias, active inference, hypothesis testing, square-root probability, matrix observations
+
+### Quantum LOCC Graph Theory
+- [[quantum-locc-graph-theory]] - Graph theory methodology for analyzing local distinguishability of quantum product states under one-way and two-way LOCC protocols (arXiv: 2606.26558)
+  - 量子积态的图论可区分性分析
+  - 单向/双向LOCC协议对应的图分解
+  - 可区分图类的闭包性质
+  - 图结构与LOCC可区分性的分类
+  - **Activation**: LOCC, quantum product states, local distinguishability, graph theory, quantum state discrimination
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 2)
 
 ### IQP Connectivity-Trainability Trade-off
