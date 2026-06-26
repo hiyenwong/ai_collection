@@ -1,5 +1,21 @@
 # AI Collection Index
-## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 7)
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 8)
+
+### SIC-POVM Overlaps via Stark Units from Ray Class Fields
+- [[sic-overlap-stark-units-number-theory]] - Exact algebraic characterization of SIC-POVM overlap values using Stark units from ray class fields — bridges quantum information theory with deep algebraic number theory (arXiv: 2606.23535)
+  - SIC-POVM overlaps expressed as products of square roots of Stark units
+  - Ray class field construction provides algebraic framework for quantum state characterization
+  - Enables exact computation without floating-point approximations
+  - Handles both minimal and non-minimal SIC-POVM cases
+  - **Activation**: SIC-POVM, Stark units, quantum overlap, ray class field, algebraic number theory quantum, quantum state tomography
+
+### Random Projections for Multi-Copy Quantum Algorithms
+- [[random-projection-quantum-algorithms]] - Estimating nonlinear quantum state properties (multivariate traces, Rényi entropies) via random projections instead of full swap tests — reduces coherent operations, hardware-compatible with local measurements (arXiv: 2606.20238)
+  - Random projections replace global swap tests for multi-copy quantum algorithms
+  - Local measurements on projected subspaces enable nonlinear observable estimation
+  - Concentration inequalities guarantee estimation accuracy with bounded samples
+  - Applicable to fidelity estimation, Rényi entropy, quantum state characterization
+  - **Activation**: random projections quantum, multi-copy quantum, nonlinear observables, swap test alternative, quantum state estimation, Rényi entropy quantum, multivariate traces
 
 ### MPE-Adam: Multi-Population Evolutionary Optimization with Adam Refinement for QAOA
 - [[mpe-adam-qaoa-optimization]] - Two-stage QAOA optimizer: multi-population evolutionary search for global exploration + Adam gradient refinement for local convergence, achieving higher approximation ratios with lower variance (arXiv: 2606.26670)
