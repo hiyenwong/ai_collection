@@ -2879,3 +2879,17 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Connecting Quantum Tomography and Quantum Retrodiction
+- [[quantum-tomography-retrodiction]] - Petz recovery map as gradient update of log-likelihood in quantum tomography; unified forward/backward inference (arXiv: 2606.23777)
+  - 核心要点 1: Petz map = gradient ascent on log-likelihood for maximum-likelihood tomography
+  - 核心要点 2: Repeated Petz map applications monotonically increase likelihood
+  - **Activation**: quantum tomography, quantum retrodiction, Petz recovery map, maximum likelihood tomography, quantum state estimation, 量子态层析, 量子回溯推断
+
+### Quantum ergodicity and semiclassical measures: mathematical results
+- [[quantum-ergodicity-semiclassical]] - Mathematical framework for quantum ergodicity, semiclassical measures, and eigenmode distribution on chaotic manifolds (arXiv: 2606.12098)
+  - 核心要点 1: Schnirelman's Quantum Ergodicity theorem — density-one subsequence equidistributes
+  - 核心要点 2: QUE conjecture and KS entropy constraints on admissible semiclassical measures
+  - **Activation**: quantum ergodicity, semiclassical measures, quantum chaos, eigenmodes, schnirelman theorem, QUE conjecture, 量子遍历性, 半经典测度
