@@ -2911,3 +2911,9 @@
   - 核心要点 1: Schnirelman's Quantum Ergodicity theorem — density-one subsequence equidistributes
   - 核心要点 2: QUE conjecture and KS entropy constraints on admissible semiclassical measures
   - **Activation**: quantum ergodicity, semiclassical measures, quantum chaos, eigenmodes, schnirelman theorem, QUE conjecture, 量子遍历性, 半经典测度
+
+### How Stark Units Enter SIC Overlaps
+- [[sic-overlap-stark-units-number-theory]] - SIC-POVM互重叠的代数结构：重叠值为射线类域中Stark单位的平方根，建立量子信息与类域论的深刻联系 (arXiv: 2606.23535)
+  - 核心要点 1: SIC-POVM向量互标量积由代数单位给出，具体为射线类域中Stark单位的平方根
+  - 核心要点 2: 非最小SIC涉及射线类域格；特定维度下重叠单位等于±1
+  - **Activation**: SIC overlap, Stark units, ray class field, SIC-POVM algebraic structure, quantum number theory, 重叠斯塔克单位, 量子数论, SIC代数单位, 类域论
