@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 4)
+
+### Probability Geometry via Schwinger-Dyson Identities
+- [[probability-geometry-schwinger-dyson]] - Score-mismatch field methodology for probing probability geometry. Fisher information bounds all Schwinger-Dyson violations simultaneously (arXiv: 2606.27360)
+  - 分数不匹配场 δs = ∇log(Q/P_eq) 作为通用的偏离平衡度量
+  - Fisher信息等于分数不匹配场的平方范数
+  - 通用边界：Fisher信息同时约束所有Schwinger-Dyson违反
+  - 应用于MCMC平衡监测、统计模型验证、量子场论一致性检查
+  - **Activation**: schwinger-dyson, score mismatch, fisher information, probability geometry, equilibrium detection, configurational temperature
+
+### Operator Algebra of Quantum Statistics
+- [[operator-algebra-quantum-statistics]] - Non-positive statistical elements as fundamental components of quantum causality. Explains entanglement, teleportation, and cloning through operator formalism (arXiv: 2005.03822)
+  - 量子算子代数与经典概率的根本区别
+  - 非正统计元素是完整因果描述的必需组成部分
+  - 最大纠缠态、量子隐形传态、量子克隆的统一解释
+  - 因果关系的算子形式化超越可观测现实
+  - **Activation**: quantum statistics, operator algebra, quantum causality, non-positive elements, entanglement, quantum teleportation, quantum cloning
+
+### Generalized Bell-like Inequality for Spin Entanglement
+- [[bell-inequality-spin-entanglement]] - Unified Bell inequality formulation for multiparticle entangled Schrodinger-cat-states. Violation only for half-integer spins, parity-dependent bounds (arXiv: 2112.15477)
+  - 广义Bell不等式适用于任意自旋s的多粒子纠缠薛定谔猫态
+  - 只有半整数自旋态违反GBI，整数自旋态不违反
+  - 最大违反界依赖于粒子数奇偶性：奇数1/2，偶数1
+  - 自旋相干态(SCS)限制下的不完整测量分析
+  - **Activation**: bell inequality, schrodinger cat state, spin entanglement, multiparticle entanglement, quantum probability statistics
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 3)
 
 ### Quantum Probability Statistics Framework
