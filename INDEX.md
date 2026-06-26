@@ -1,4 +1,11 @@
 # AI Collection Index
+### Hot-Starting Quantum Portfolio Optimization
+- [[quantum-finance-portfolio]] - 量子计算在金融组合优化中的应用，涵盖QUBO建模、量子退火、QRNG增强Monte Carlo、VaR/CVaR估计、风险度量 (arXiv: 2510.11153)
+  - Hot-starting methodology: classical smooth solutions initialize quantum algorithms, reducing search space and improving convergence
+  - QUBO formulations for discrete mean-variance portfolio optimization with integer trading quantities
+  - QRNG-enhanced Monte Carlo simulations for improved convergence in VaR/CVaR estimation
+  - **Activation**: quantum portfolio optimization, QUBO finance, quantum annealing portfolio, QRNG Monte Carlo, 量子投资组合, quantum finance, quantum VaR, quantum CVaR
+
 ## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job)
 
 ### End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing
