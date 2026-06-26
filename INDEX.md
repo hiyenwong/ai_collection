@@ -3178,3 +3178,54 @@
   - Information-restricted projection of Markowitz onto stable rule class
   - Implied-return principle yields closed-form optimality sets
   - **Activation**: heuristic portfolio optimization, HPO, risk parity, implied return principle
+
+## 2026-06-27 - Economics, Investment + Quantum (Cron Job)
+
+### Variational Quantum Eigensolver for Real-World Finance: Scalable Solutions for Dynamic Portfolio Optimization Problems
+- [[vqa-dynamic-portfolio-optimization]] - Hardware-aware VQE for dynamic portfolio optimization on 38-asset IBEX 35 index, using ISQR recovery and VQE Constrained decomposition (arXiv: 2606.10098)
+  - ISQR routine improves QUBO solution quality on real QPU (IBM Fez)
+  - VQE Constrained method handles instances with more variables than available qubits
+  - Financial performance on par with classical methods
+  - **Activation**: VQE portfolio optimization, ISQR, dynamic portfolio, hardware-aware VQE, IBEX 35
+
+### Pure and mixed Dicke state ansatz for equality and inequality constraints in variational quantum eigensolver
+- [[dicke-state-ansatz-vqe]] - 混合Dicke态变分量子本征求解器，结构性编码Hamming权重约束消除惩罚项，实现可行子空间内优化 (arXiv: 2606.08504)
+  - 混合Dicke态ansatz统一处理等式和不等式约束
+  - 密度矩阵形式化扩展到结构编码约束到量子电路中
+  - CMA-ES优化器在组合投资组合优化中验证
+  - **Activation**: Dicke state ansatz, constraint-preserving, Hamming weight, mixed Dicke state, VQE portfolio
+
+### Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization: The Expressibility-Coherence Trade-off
+- [[quantum-algorithmic-resilience-benchmarking]] - HE-VQNN vs WS-QAOA硬件基准测试，揭示表达性-相干性关键权衡 (arXiv: 2606.07727)
+  - WS-QAOA精确映射但遭受灾难性硬件退相干
+  - HE-VQNN保持硬件相干但缺乏数学表达性
+  - 暴露NISQ设备密集金融优化的根本局限性
+  - **Activation**: quantum algorithmic resilience, CVaR QAOA, expressibility-coherence tradeoff, HE-VQNN, WS-QAOA, hardware benchmarking
+
+### A Penalty-Free Pipeline for Direct Quantum-Annealer Portfolio Optimization
+- [[penalty-free-quantum-annealing-portfolio]] - 消除惩罚项的量子退火投资组合优化管道，将链断裂率从71-92%降至0.04% (arXiv: 2605.17628)
+  - 基数惩罚是QPU执行的关键约束，而非硬件拓扑
+  - 经典可行性投影器强制约束，目标仅QUBO在硬件上采样
+  - 跨4,468个嵌入记录验证，后处理后悔最多0.03%
+  - **Activation**: penalty-free quantum annealing, D-Wave portfolio, chain-break reduction, feasibility projector, QUBO
+
+### Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization: An Operational Decomposition Audit
+- [[quantum-hybrid-audit]] - D-Wave混合量子经典投资组合优化运营审计，QPU访问时间仅占墙钟预算的0.68% (arXiv: 2605.17623)
+  - 报告的D-Wave混合胜利是约束原生经典管道，非量子采样胜利
+  - 基数惩罚贡献密集秩一项，完全连接编码逻辑图
+  - 提供四度量审计协议用于混合量子经典求解器
+  - **Activation**: D-Wave audit, hybrid quantum-classical, QPU time analysis, operational decomposition, constraint-native
+
+### Quantum Stochastic Walks for Portfolio Optimization: Theory and Implementation on Financial Networks
+- [[quantum-stochastic-walk-portfolio]] - 量子随机游走组合优化器，将资产嵌入加权协方差图，从游走稳态分布推导权重 (arXiv: 2507.03963)
+  - Sharpe比率提升15%，换手率降低90%对比经典均值方差
+  - 三参数调优: α(收益敏感度), λ(风险厌恶), ω(量子-经典平衡，0.2-0.4为甜点)
+  - 在S&P 500前100成分股上验证，遵守UCITS 5/10/40规则
+  - **Activation**: quantum stochastic walk, QSW portfolio, stationary distribution weights, quantum graph optimization, low-turnover portfolio
+
+### Learning PDEs for Portfolio Optimization with Quantum Physics-Informed Neural Networks
+- [[qpinn-portfolio-optimization]] - QPINN求解Merton投资组合优化PDE，用张量秩分解将复杂度从指数降至多项式 (arXiv: 2604.03346)
+  - 参数化量子电路实现基于张量秩分解的多项式
+  - 使用80倍更少参数实现比经典PINN更高的精度和更快收敛
+  - 量子诱导改进的实验证据
+  - **Activation**: QPINN portfolio, quantum PDE solver, Merton optimization, tensor rank decomposition, quantum physics-informed
