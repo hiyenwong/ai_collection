@@ -2968,3 +2968,27 @@
   - 核心要点 1: SIC-POVM向量互标量积由代数单位给出，具体为射线类域中Stark单位的平方根
   - 核心要点 2: 非最小SIC涉及射线类域格；特定维度下重叠单位等于±1
   - **Activation**: SIC overlap, Stark units, ray class field, SIC-POVM algebraic structure, quantum number theory, 重叠斯塔克单位, 量子数论, SIC代数单位, 类域论
+
+### Hilbert Tenth Problem to Quantum Speedup: Explicit Oracles for Bounded Diophantine Systems
+- [[diophantine-quantum-oracle]] - Fully reversible garbage-free quantum oracle synthesis for bounded polynomial Diophantine equations using in-place two's complement arithmetic with recycled accumulator (arXiv: 2605.13980)
+  - 核心要点 1: 空间复杂度O((n+d²)log₂N)，通过单回收累加器实现无垃圾量子求值
+  - 核心要点 2: 结合振幅放大实现O(√(Nⁿ/M))量子加速，适用于整数优化和密码分析
+  - **Activation**: diophantine quantum oracle, bounded diophantine equations, quantum integer optimization, Hilbert tenth problem quantum, amplitude amplification oracle, 丢番图方程量子, 有界整数优化
+
+### Random Dimension Reduction and Learning Symmetric Properties of Quantum States
+- [[random-dimension-reduction-quantum-learning]] - Black-box procedure to replace Hilbert space dimension with max rank in sample complexity for learning symmetric quantum properties via Schur transform (arXiv: 2606.23592)
+  - 核心要点 1: 样本复杂度从O(d²)降至O(r²)，r为最大秩，当r≪d时为指数级改进
+  - 核心要点 2: 通过Schur变换高效实现，与随机纯化通道有深层联系
+  - **Activation**: random dimension reduction quantum, quantum state tomography rank, symmetric property estimation, Schur transform learning, quantum fidelity estimation
+
+### Structure-Aware Variance Reduction for Unbiased Randomized Hamiltonian Simulation
+- [[structure-aware-variance-reduction-hamiltonian]] - Variance reduction for continuous TE-PAI protocol that removes Trotter error with finite-depth random circuits without introducing bias (arXiv: 2606.23544)
+  - 核心要点 1: 连续TE-PAI用有限深度随机电路消除Trotter离散化误差，避免张量网络模拟中键维数指数增长
+  - 核心要点 2: 控制变量法和分层采样等经典方差缩减技术可应用于无偏量子协议
+  - **Activation**: variance reduction Hamiltonian simulation, continuous TE-PAI, randomized product formula, Trotter error mitigation, unbiased quantum simulation
+
+### From Spectral Structure to Sensing Limits in Quantum Thermometry
+- [[spectral-quantum-thermometry-limits]] - Exact scaling laws for quantum Fisher information revealing two high-temperature universality classes: T⁻⁴ (finite-spectrum) vs T⁻² (unbounded/continuous) (arXiv: 2606.25933)
+  - 核心要点 1: 有限谱探针高温T⁻⁴衰减，无界/连续谱探针仅T⁻²衰减，后者性能更优
+  - 核心要点 2: 低温下可通过简并激发态或全连通量子行走拓扑任意增强灵敏度
+  - **Activation**: quantum thermometry spectral limits, quantum Fisher information temperature, quantum thermometer design, spectral structure sensing, quantum thermometry scaling laws

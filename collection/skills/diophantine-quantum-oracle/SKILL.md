@@ -1,90 +1,97 @@
 ---
 name: diophantine-quantum-oracle
-description: "Reversible quantum oracle construction for solving bounded Diophantine systems via amplitude amplification. Use when designing quantum algorithms for integer optimization, constraint satisfaction over bounded domains, or synthesizing arithmetic circuits for quantum oracles."
+description: "Fully reversible quantum algorithmic framework for solving arbitrary polynomial Diophantine equations over bounded integer domains. Converts nonlinear Diophantine systems into garbage-free quantum oracles for amplitude amplification. Use when solving bounded integer optimization problems, cryptography-related Diophantine systems, quantum oracle synthesis for nonlinear constraints, or any task requiring coherent evaluation of polynomial equations on quantum hardware."
 metadata:
   arxiv_id: "2605.13980"
-  published: "2026-05-13"
-  authors: "Authors listed in paper"
-  tags: [quantum, number-theory, oracle, diophantine, amplitude-amplification]
-license: Complete terms in LICENSE.txt
+  published: "2026-05-19"
+  authors: "Gabriel Escrig, M. A. Martin-Delgado"
+  tags: [number-theory, quantum-algorithms, diophantine, oracle-synthesis, amplitude-amplification]
 ---
 
 # Diophantine Quantum Oracle
 
-## Core Concept
+## Core Concepts
 
-A fully reversible quantum algorithmic framework for solving arbitrary polynomial Diophantine equations over bounded integer domains. The key innovation is explicit gate-level synthesis of an evaluation oracle for amplitude amplification — moving beyond abstract black-box assumptions to concrete circuit construction.
+Solving bounded Diophantine systems (polynomial equations over integer domains) is central to integer optimization and cryptography. While unbounded Diophantine equations are undecidable (Hilbert's Tenth Problem), bounded variants remain classically intractable. This framework provides a **fully reversible, garbage-free quantum algorithm** that synthesizes evaluation oracles for amplitude amplification.
 
-## Mathematical Framework
+### Key Innovation
 
-For a Diophantine system with `n` variables, maximum degree `d`, and interval length `N`:
+Coherent polynomial evaluation using **in-place two's complement arithmetic** with a **single recycled accumulator**, avoiding garbage qubits that plague conventional approaches.
 
-- **Space complexity**: `q = O((n + d²) log₂ N)` logical qubits
-- **Toffoli depth**: `O(q²)` for non-Clifford gates
-- **Speedup**: Quadratic over classical exhaustive search (via amplitude amplification)
-- **Garbage-free**: In-place two's complement arithmetic with single recycled accumulator
+### Complexity Bounds
 
-## Architecture
+- **Space**: q = O((n + d²) log₂ N) logical qubits
+  - n = number of variables, d = max polynomial degree, N = domain bound
+- **Depth**: O(n · d² · log² N) gate depth for oracle evaluation
+- **Amplitude amplification**: O(√(Nⁿ/M)) iterations where M = number of solutions
 
-### Oracle Synthesis Pipeline
+## Methodology
 
-1. **Polynomial evaluation**: Coherently evaluate polynomial constraints using in-place arithmetic
-2. **Constraint routing**: Route operations into a single recycled accumulator (no intermediate garbage)
-3. **Amplitude amplification**: Apply Grover-style amplification on the oracle output
-4. **Solution extraction**: Measure to retrieve satisfying assignments or enumerate solutions
+### Step 1: Polynomial Decomposition
 
-### Key Design Patterns
+Decompose the Diophantine system P(x₁, ..., xₙ) = 0 into elementary arithmetic operations:
+- Addition/subtraction chains
+- Multiplication via repeated addition or quantum multiplier circuits
+- Power terms xᵈ via repeated squaring
 
-- **Two's complement arithmetic**: Perform arithmetic operations in-place on qubit registers
-- **Accumulator recycling**: Reuse a single accumulator across constraint evaluations to minimize qubit count
-- **Reversible constraint checking**: Ensure all operations are unitary (no intermediate garbage states)
+### Step 2: Accumulator-Based Oracle Synthesis
+
+1. Initialize accumulator register A in |0⟩ state
+2. For each monomial term c·x₁ᵃ¹...xₙᵃⁿ:
+   - Compute monomial value into temporary register using controlled multiplications
+   - ADD temporary result into accumulator (in-place, reversible)
+   - Uncompute temporary register (free garbage)
+3. Final accumulator holds P(x₁, ..., xₙ)
+
+### Step 3: Zero-Detection Oracle
+
+Apply multi-controlled phase flip conditioned on accumulator = 0:
+```
+|ψ⟩ → (-1)^{[P(x)=0]} |ψ⟩
+```
+This marks satisfying assignments for Grover/amplitude amplification.
+
+### Step 4: Amplitude Amplification
+
+Standard amplitude amplification with the synthesized oracle:
+- Apply oracle U_P
+- Apply diffusion operator
+- Repeat O(√(Nⁿ/M)) times
 
 ## Usage Patterns
 
-### Pattern 1: Single Solution Finding
-For Diophantine systems with a unique solution, apply standard amplitude amplification after oracle construction. Expected queries: O(√M) where M is the search space size.
+### Pattern 1: Integer Programming
 
-### Pattern 2: Solution Enumeration
-When the number of solutions is unknown, use quantum counting or adaptive amplitude amplification to dynamically enumerate all satisfying assignments.
+Map integer programming constraints to Diophantine form:
+- Inequalities: introduce slack variables → equations
+- Objective: binary search via feasibility oracle
 
-### Pattern 3: Constraint Satisfaction Optimization
-For optimization over Diophantine constraints, combine oracle construction with quantum approximate optimization (QAOA) or Grover adaptive search.
+### Pattern 2: Cryptographic Analysis
 
-## Complexity Analysis
+Model cryptographic problems (factoring, subset-sum) as Diophantine systems:
+- RSA factoring: (p + a)(q + b) = N → quadratic Diophantine
+- Lattice problems: Babai rounding → nearest-vector Diophantine
 
-| Parameter | Classical | Quantum |
-|-----------|-----------|---------|
-| Search space M | O(M) | O(√M) |
-| Qubit requirement | - | O((n + d²) log N) |
-| Circuit depth | - | O(q²) Toffoli gates |
-| Memory | O(M) | O(q) |
+### Pattern 3: Constraint Satisfaction
+
+CSP with integer domains → Diophantine encoding:
+- Each constraint → polynomial equation
+- Combine via sum-of-squares: Σ Cᵢ² = 0 ⟺ all Cᵢ = 0
 
 ## Pitfalls
 
-### Bounded Domain Requirement
-The algorithm only works over **bounded** integer domains. Unbounded Diophantine systems remain undecidable (Hilbert's Tenth Problem). Ensure all variables have explicit upper and lower bounds.
+- **Domain bounds**: Framework requires bounded integer domains. Unbounded → undecidable.
+- **Accumulator overflow**: accumulator width must exceed max |P(x)| over domain.
+- **Gate count**: depth grows as O(d²) — high-degree polynomials become expensive.
+- **No speedup for worst-case**: amplitude amplification gives quadratic, not exponential speedup.
 
-### Polynomial Degree Scaling
-Circuit complexity scales quadratically with degree (d² term). High-degree polynomials may require too many qubits for near-term devices. Consider polynomial factorization or degree reduction preprocessing.
+## Activation Keywords
 
-### Oracle Reversibility
-All arithmetic operations must be strictly reversible. Any intermediate computation must be uncomputed to avoid garbage accumulation. Use standard reversible computing techniques (Toffoli gates, ancilla management).
-
-### Non-Clifford Gate Cost
-The Toffoli depth dominates the circuit cost. On hardware with limited connectivity, routing overhead can significantly increase effective depth. Factor in compilation overhead when estimating runtime.
-
-## Related Approaches
-
-- **Hidden Subgroup Problems**: Shor's algorithm for factoring — different oracle structure but shares amplitude amplification pattern
-- **Grover's Algorithm**: General unstructured search — this skill specializes it for structured arithmetic constraints
-- **QAOA**: Alternative for optimization — combine with Diophantine oracle for constrained optimization
-
-## Implementation Checklist
-
-- [ ] Define bounded domain for all variables
-- [ ] Decompose polynomial into reversible arithmetic circuit
-- [ ] Design accumulator recycling strategy
-- [ ] Implement constraint evaluation oracle
-- [ ] Apply amplitude amplification
-- [ ] Verify reversibility (no garbage states)
-- [ ] Estimate qubit count and circuit depth
+- diophantine quantum oracle
+- bounded diophantine equations
+- quantum integer optimization
+- Hilbert tenth problem quantum
+- quantum oracle synthesis
+- polynomial constraint quantum
+- 丢番图方程量子算法
+- 有界整数优化量子
