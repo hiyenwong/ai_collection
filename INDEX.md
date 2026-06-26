@@ -1,4 +1,30 @@
 # AI Collection Index
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 7)
+
+### MPE-Adam: Multi-Population Evolutionary Optimization with Adam Refinement for QAOA
+- [[mpe-adam-qaoa-optimization]] - Two-stage QAOA optimizer: multi-population evolutionary search for global exploration + Adam gradient refinement for local convergence, achieving higher approximation ratios with lower variance (arXiv: 2606.26670)
+  - Multi-population evolutionary search explores diverse parameter regions
+  - Adam gradient refinement converges precisely from best evolutionary candidate
+  - Modular pipeline: stages independently improvable
+  - Validated on MaxCut instances up to 22 nodes with statistically significant improvements
+  - **Activation**: qaoa optimization, multi-population evolutionary, adam refinement, variational quantum, parameter optimization, MaxCut, approximation ratio, SPSA alternative
+
+### Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler-Leman Hierarchy
+- [[scalable-mp-quantum-gnn]] - Quantum GNN with message passing, permutation equivariance, and WL hierarchy placement — pre-train on small graphs, deploy on large ones up to 56 qubits (arXiv: 2606.26873)
+  - Quantum message passing with permutation equivariance guarantees
+  - Controllable WL hierarchy level for desired graph discriminative power
+  - Pre-training on small graphs mitigates barren plateaus
+  - Readout cost independent of graph size — key scalability property
+  - **Activation**: quantum graph neural network, message passing quantum, weisfeiler-leman hierarchy, permutation equivariant, quantum gnn pre-training, 56 qubit gnn, graph isomorphism quantum
+
+### Quantum Stationary Point Finding by Comparisons
+- [[quantum-stationary-point-finding]] - First quantum algorithm for finding stationary points using comparison oracle — O~(n/ε^1.5) quantum vs O~(n^2/ε^1.5) classical queries, quadratic speedup (arXiv: 2606.27082)
+  - Quantum comparison oracle enables superposition queries
+  - Normalized Hessian estimation subroutine: O~(n^2 log(1/δ)) queries
+  - ICML 2026 accepted paper
+  - Applicable to black-box non-convex optimization with Lipschitz gradient/Hessian
+  - **Activation**: quantum stationary points, comparison oracle optimization, non-convex quantum, quadratic speedup, hessian estimation quantum, epsilon-stationary point, ICML quantum
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 6)
 
 ### Particle-Preserving Fermionic Shadows with Mode-Independent Sample Complexity
