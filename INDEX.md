@@ -2992,3 +2992,23 @@
   - 核心要点 1: 有限谱探针高温T⁻⁴衰减，无界/连续谱探针仅T⁻²衰减，后者性能更优
   - 核心要点 2: 低温下可通过简并激发态或全连通量子行走拓扑任意增强灵敏度
   - **Activation**: quantum thermometry spectral limits, quantum Fisher information temperature, quantum thermometer design, spectral structure sensing, quantum thermometry scaling laws
+
+## 2026-06-26 - Number Theory/Statistics/Mathematics (Cron Job)
+
+### Quantum Group Codes for Non-Clifford Logic: Enhanced Decoding, Addressability and Parallelizability
+- [[quantum-group-codes-non-clifford]] - 基于经典准群码的量子CSS码构造，支持可寻址可并行化的多控制Z门，利用类域论实现准二次解码复杂度 (arXiv: 2606.27211)
+  - 核心要点 1: 通过类域论提升AG码构造量子群码，支持横截面C^mZ门及可并行化C^{m-1}Z门
+  - 核心要点 2: 准二次时间解码器（vs 之前的三次方），将magic态蒸馏协议复杂度降低近线性因子
+  - **Activation**: quantum group codes, non-Clifford logic, transversal gates, class field theory quantum codes, AG codes quantum, CSS codes non-Clifford, quasi group codes, magic state distillation, 量子群码, 类域论量子码
+
+### Particle-Preserving Fermionic Shadows with Mode-Independent Sample Complexity
+- [[particle-preserving-fermionic-shadows]] - 费米子态经典阴影学习：将Slater行列态重叠估计的最坏情况样本复杂度从O(√n log n)降至O(η log η)，实现与模式数无关的采样成本 (arXiv: 2606.27254)
+  - 核心要点 1: 样本复杂度O(η log η)与模式数n无关，经典后处理O(n η²)
+  - 核心要点 2: 将极值阴影方差归约到AIII对称空间U(n)/(U(η)×U(n-η))上的调和分析
+  - **Activation**: fermionic classical shadows, mode-independent sample complexity, Slater determinant overlap, AIII symmetric space, Jacobi ensembles quantum, 费米子阴影, 模式无关采样
+
+### Coquasi-Bialgebroids and Cocycle Twisting
+- [[coquasi-bialgebroids-cocycle-twisting]] - 非交换基代数上的coquasi-双胚群理论：乘积仅在可逆归一化3-上链意义下结合，为coquasi-双代数提供双胚群类比 (arXiv: 2606.27343)
+  - 核心要点 1: 使用Takeuchi ×B-coalgebra形式化，证明卷积可逆2-上链的扭曲定理
+  - 核心要点 2: 构造coquasi Connes-Moscovici型双胚群并描述对偶拟双胚群与Drinfeld扭曲的关系
+  - **Activation**: coquasi-bialgebroids, cocycle twisting, Takeuchi coalgebra, Connes-Moscovici bialgebroid, Drinfeld twisting, noncommutative algebra, 上链扭曲, 非交换代数
