@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 2)
+
+### IQP Connectivity-Trainability Trade-off
+- [[iqp-connectivity-trainability]] - Analyzes how IQP circuit connectivity determines optimization performance and trainability for Hamiltonian problems (arXiv: 2606.24264)
+  - IQP电路连接性与可训练性的权衡分析
+  - 发现稀疏连接易训练但能量高,密集连接可达低能量但存在贫瘠高原
+  - 最优策略: 电路连接性匹配目标哈密顿量交互图
+  - 梯度方差作为贫瘠高原检测指标
+  - **Activation**: iqp trainability, connectivity tradeoff, quantum circuit structure, Hamiltonian optimization, barren plateau, 量子电路连接性
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Quantum element-wise transforms

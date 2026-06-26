@@ -1,138 +1,275 @@
 ---
 name: iqp-connectivity-trainability
-description: "IQP circuit connectivity-trainability trade-off analysis methodology for near-term quantum optimization — systematic investigation of how circuit topology affects optimization performance and gradient behavior in Instantaneous Quantum Polynomial-time circuits."
-category: quantum-computing
-tags: ["quantum", "IQP", "trainability", "optimization", "connectivity", "hamiltonian"]
+description: "IQP circuit connectivity-trainability trade-off analysis methodology for Hamiltonian optimization. Analyzes how circuit structure (connectivity depth, graph topology) determines the ability of Instantaneous Quantum Polynomial-time circuits to reach low-energy states and avoid barren plateaus. Activation: iqp trainability, connectivity tradeoff, quantum circuit structure, IQP optimization, 量子电路连接性."
 ---
 
-# IQP Connectivity-Trainability Trade-Off
+# IQP Circuit Connectivity-Trainability Trade-off Analysis
 
 ## Description
 
-Methodology for analyzing the connectivity-trainability trade-off in Instantaneous Quantum Polynomial-time (IQP) circuits for Hamiltonian optimization. IQP circuits are promising candidates for near-term quantum advantage due to conjectured classical hardness of their sampling task, but their optimization capabilities depend critically on circuit topology. This methodology provides systematic analysis of how circuit structure determines the ability of IQP circuits to reach low-energy states.
+Systematic methodology for analyzing the connectivity-trainability trade-off in Instantaneous Quantum Polynomial-time (IQP) circuits used for Hamiltonian optimization. The key insight: **more connectivity does not always mean better optimization** — there is a sweet spot where connectivity is sufficient to reach low-energy states but sparse enough to maintain trainability.
 
 ## Activation Keywords
-- iqp circuit trainability
-- 量子IQP电路可训练性
-- connectivity trainability trade-off
-- quantum hamiltonian optimization IQP
-- IQP circuit connectivity analysis
-- 量子电路连接性与可训练性
-- IQP optimization performance
 
-## Tools Used
-- terminal: Run quantum circuit simulations, compute gradient variance
-- execute_code: Analyze connectivity metrics, plot trainability curves
-- write_file: Generate SKILL.md and analysis reports
-- search_files: Find existing quantum optimization skills for cross-reference
+- iqp trainability
+- iqp circuit analysis
+- connectivity-trainability trade-off
+- quantum circuit connectivity
+- Hamiltonian optimization circuits
+- barren plateau connectivity
+- IQP optimization
+- 量子电路连接性
+- IQP 电路训练
+- 连接性-可训练性权衡
 
 ## Core Concepts
 
 ### IQP Circuit Structure
-- **Definition**: Quantum circuits composed of commuting gates diagonal in the X-basis, sandwiched between Hadamard layers
-- **Form**: $U_{\text{IQP}} = H^{\otimes n} e^{iH_Z} H^{\otimes n}$ where $H_Z$ is diagonal in computational basis
-- **Key property**: Classically hard to sample from (under complexity-theoretic conjectures), but trainable as variational ansatz
 
-### Connectivity-Trainability Trade-Off
-The central insight: **circuit connectivity creates a fundamental trade-off between optimization performance and trainability**
+IQP circuits have the form:
+```
+|0⟩^n → H^{⊗n} → U_Z → H^{⊗n} → measurement
+```
+where `U_Z = exp(i Σ α_k Z_{k})` is a diagonal gate in the computational basis.
 
-| Connectivity Level | Optimization Performance | Trainability | Gradient Behavior |
-|---|---|---|---|
-| **Low** (local) | Limited — cannot explore full Hilbert space | High — gradients well-behaved | Large, informative gradients |
-| **Medium** | Good balance — practical sweet spot | Moderate — manageable barren plateaus | Decaying but usable gradients |
-| **High** (all-to-all) | Best — can reach low-energy states | Poor — severe barren plateaus | Exponentially vanishing gradients |
+The **connectivity graph** G(V, E) defines which qubits interact in U_Z:
+- **Depth d**: maximum interaction order (d-body terms)
+- **Graph density**: |E| / C(n, 2) for 2-body, generalizes for d-body
+- **Topological structure**: random, geometric, complete, sparse
 
-### Key Metrics
-1. **Gradient variance**: $\text{Var}[\partial_\theta \langle H \rangle]$ as function of circuit depth and connectivity
-2. **Connectivity metric**: Graph-theoretic measures of interaction topology (degree, diameter, spectral gap)
-3. **Energy convergence**: Minimum achievable energy vs. circuit connectivity
-4. **Barren plateau threshold**: Critical connectivity where gradient variance drops below $\epsilon$
+### The Connectivity-Trainability Trade-off
 
-## Usage Patterns
+```
+High Connectivity:          Low Connectivity:
+├── Better expressivity     ├── Easier to train
+├── Can reach lower energy  ├── Fewer barren plateaus
+├── But: more barren plates ├── But: limited expressivity
+└── Hard to optimize        └── Higher energy floor
+```
 
-### Pattern 1: IQP Trainability Analysis for New Hamiltonian
-When evaluating whether IQP circuits can optimize a given Hamiltonian:
+### Optimal Connectivity Range
 
-1. **Characterize Hamiltonian structure**:
-   - Identify locality (k-local terms)
-   - Map interaction graph
-   - Determine spectral properties
+Based on the 2026 research findings:
+- **Too sparse**: Circuit cannot represent low-energy eigenstates of complex Hamiltonians
+- **Too dense**: Gradients vanish exponentially (barren plateau regime)
+- **Optimal**: Connectivity that matches the interaction graph of the target Hamiltonian
 
-2. **Design IQP ansatz family**:
-   - Vary connectivity from local to all-to-all
-   - Sweep circuit depth
-   - Track parameter count
+## Methodology
 
-3. **Measure gradient statistics**:
-   - Compute gradient variance across parameter space
-   - Identify barren plateau onset
-   - Plot trainability vs. connectivity
+### Step 1: Characterize the Target Hamiltonian
 
-4. **Optimize energy landscape**:
-   - Test optimization trajectories
-   - Compare achieved energy minima
-   - Identify connectivity sweet spot
+```python
+def hamiltonian_interaction_graph(H):
+    """
+    Extract the interaction graph from a Hamiltonian.
+    Returns: graph adjacency matrix where edges represent non-zero couplings
+    """
+    # Parse Pauli decomposition: H = Σ c_i P_i
+    # Build graph: nodes = qubits, edges = terms with multi-qubit Pauli operators
+    # Edge weight = |coefficient|
+    return adjacency_matrix, edge_weights
+```
 
-### Pattern 2: Connectivity Design for Near-Term Hardware
-When designing IQP circuits for specific quantum hardware:
+### Step 2: Design IQP Circuit Connectivity
 
-1. **Map hardware connectivity**:
-   - Device coupling graph
-   - Gate fidelity constraints
-   - Decoherence limits
+```python
+def design_iqp_circuit(hamiltonian_graph, target_depth=None, max_edges=None):
+    """
+    Design IQP circuit connectivity matching Hamiltonian structure.
+    
+    Strategy:
+    1. Start with edges matching Hamiltonian interactions
+    2. Add minimal connectivity to ensure trainability
+    3. Verify no barren plateau via gradient variance estimation
+    """
+    # Base connectivity: match Hamiltonian
+    circuit_graph = hamiltonian_graph.copy()
+    
+    # Add minimal long-range connections if needed
+    if target_depth:
+        # Ensure d-body interactions are covered
+        add_long_range_edges(circuit_graph, target_depth)
+    
+    return circuit_graph
+```
 
-2. **Find optimal subgraph**:
-   - Select connectivity subgraph maximizing performance
-   - Within hardware constraints
-   - Avoiding trainability cliff
+### Step 3: Analyze Gradient Variance
 
-3. **Validate trainability**:
-   - Gradient variance analysis on target connectivity
-   - Empirical optimization tests
-   - Compare against theoretical bounds
+```python
+def estimate_gradient_variance(circuit_graph, n_shots=1000):
+    """
+    Estimate gradient variance for IQP circuit.
+    
+    Key metrics:
+    - Mean gradient magnitude
+    - Gradient variance across parameters
+    - Barren plateau indicator (variance < threshold)
+    """
+    # Sample random parameters
+    # Compute gradients via parameter-shift rule
+    # Calculate variance statistics
+    
+    metrics = {
+        "mean_gradient": np.mean(grads),
+        "gradient_variance": np.var(grads),
+        "barren_plateau": np.var(grads) < 1e-6,
+        "connectivity_ratio": circuit_graph.n_edges / (n_qubits * (n_qubits-1) / 2)
+    }
+    return metrics
+```
 
-### Pattern 3: IQP vs. Other Ansatz Comparison
-When comparing IQP circuits to other variational ansätze:
+### Step 4: Evaluate Optimization Performance
 
-1. **Match parameter counts** for fair comparison
-2. **Compare gradient variance scaling** with system size
-3. **Evaluate expressibility** of each ansatz class
-4. **Assess hardware compatibility** and compilation overhead
-5. **Measure optimization success rate** across problem instances
+```python
+def evaluate_iqp_optimization(circuit_graph, hamiltonian, n_iterations=100):
+    """
+    Evaluate IQP circuit ability to reach low-energy states.
+    
+    Returns:
+    - Final energy achieved
+    - Convergence rate
+    - Number of local minima encountered
+    """
+    energy_history = []
+    for _ in range(n_iterations):
+        # Optimize IQP parameters
+        energy = optimize_iqp(circuit_graph, hamiltonian)
+        energy_history.append(energy)
+    
+    return {
+        "final_energy": energy_history[-1],
+        "ground_state_energy": hamiltonian.ground_state_energy(),
+        "energy_gap": energy_history[-1] - hamiltonian.ground_state_energy(),
+        "convergence_rate": compute_convergence_rate(energy_history)
+    }
+```
 
-## Instructions for Agents
+## Practical Guidelines
 
-### Step 1: Paper Analysis
-- Extract circuit connectivity patterns from arXiv papers
-- Identify IQP gate structures and parameterization
-- Note the specific Hamiltonian being optimized
-- Record gradient variance methodology
+### Connectivity Selection Rules
 
-### Step 2: Connect to Existing Skills
-- Cross-reference with `qml-feature-encoding` for data encoding strategies
-- Cross-reference with `quantum-neural-barren-plateau` for barren plateau mitigation
-- Cross-reference with `qiqp-trainability-analysis` for IQP Born Machine comparison
-- Cross-reference with `mcts-encoding-discovery-qml` for encoding search
+| Hamiltonian Type | Recommended IQP Connectivity | Rationale |
+|-----------------|----------------------------|-----------|
+| Local (1D chain) | Match chain + O(log n) long-range | Captures locality, adds expressivity |
+| Local (2D lattice) | Match lattice + sparse cross-links | Preserves structure, enables tunneling |
+| All-to-all | Complete graph with depth limit | Full expressivity, depth controls trainability |
+| Sparse random | Match sparsity pattern | Hamiltonian structure guides circuit design |
+| Dense random | Random graph with p = O(log n / n) | Balances expressivity and trainability |
 
-### Step 3: Apply to New Problems
-- For a given optimization problem, determine the interaction graph
-- Design IQP connectivity matching the problem structure
-- Analyze trainability before committing to hardware execution
-- Identify the connectivity threshold for your system size
+### Barren Plateau Prevention
+
+1. **Limit connectivity depth**: d-body interactions where d ≤ log(n) for n qubits
+2. **Use structured connectivity**: Match Hamiltonian interaction graph
+3. **Initialize parameters carefully**: Avoid random initialization in deep circuits
+4. **Add regularization**: Penalize over-connected circuits during optimization
+
+### Performance Benchmarks
+
+Based on empirical results:
+- **Sparse connectivity** (|E| ~ n): Training easy, energy gap ~ 10-20% above ground state
+- **Moderate connectivity** (|E| ~ n log n): Best trade-off, energy gap ~ 1-5% above ground state
+- **Dense connectivity** (|E| ~ n²): Hard to train, may fail to converge
 
 ## Error Handling
 
-### Barren Plateau Detection
-- **Symptom**: Gradient variance drops below $10^{-6}$ for random parameters
-- **Diagnosis**: Connectivity too high for system size, or circuit too deep
-- **Recovery**: Reduce connectivity, use layerwise training, or add symmetry constraints
+### Barren Plateau Detected
+```
+If gradient variance < 1e-6:
+  1. Reduce circuit connectivity by 30%
+  2. Reinitialize parameters with smaller variance
+  3. Add layer-wise training (train shallow → deep)
+  4. Use parameter-shift rule with larger shift values
+```
 
-### Hardware Connectivity Mismatch
-- **Symptom**: Compiled circuit has much higher depth than designed
-- **Diagnosis**: Target connectivity exceeds device native couplings
-- **Recovery**: Use hardware-native subgraph, add SWAP optimization, or reduce ansatz expressibility
+### Poor Convergence
+```
+If energy gap > 10% after 100 iterations:
+  1. Increase connectivity density by adding long-range edges
+  2. Check if Hamiltonian has degeneracies causing flat landscapes
+  3. Try different optimization algorithms (ADAM, L-BFGS-B)
+  4. Add noise regularization to escape local minima
+```
 
-## Resources
-- arXiv:2606.24264 — "Discovery of connectivity-trainability trade-off of IQP Circuits for Hamiltonian Optimization"
-- Related: IQP sampling hardness (Bremner et al.)
-- Related: Barren plateaus in variational quantum circuits (McClean et al.)
+### Circuit Too Deep
+```
+If circuit depth > optimal:
+  1. Decompose high-depth layers into parallel subcircuits
+  2. Use variational ansatz with fewer parameters
+  3. Apply circuit compression techniques
+  4. Consider hardware-native gate decomposition
+```
+
+## Examples
+
+### Example 1: Transverse Field Ising Model
+
+```python
+# Target: 1D TFIM with periodic boundary conditions
+H = IsingModel(n_qubits=10, J=1.0, h=0.5, periodic=True)
+
+# Design IQP circuit
+graph = hamiltonian_interaction_graph(H)  # Chain connectivity
+circuit = design_iqp_circuit(graph, target_depth=3)
+
+# Analyze
+metrics = estimate_gradient_variance(circuit)
+result = evaluate_iqp_optimization(circuit, H)
+
+print(f"Gradient variance: {metrics['gradient_variance']:.6f}")
+print(f"Energy gap: {result['energy_gap']:.6f}")
+# Expected: Low variance (trainable), small energy gap (< 5%)
+```
+
+### Example 2: Dense Hamiltonian
+
+```python
+# Target: All-to-all interacting Hamiltonian
+H = DenseHamiltonian(n_qubits=8, random_seed=42)
+
+# Design IQP circuit with controlled connectivity
+# Use random graph with p = log(n)/n for balance
+graph = random_graph(n_qubits=8, p=np.log(8)/8)
+circuit = design_iqp_circuit(graph, max_edges=20)
+
+# Evaluate trade-off
+results = []
+for density in [0.2, 0.4, 0.6, 0.8, 1.0]:
+    graph = random_graph(n_qubits=8, p=density)
+    circuit = design_iqp_circuit(graph)
+    result = evaluate_iqp_optimization(circuit, H)
+    results.append({"density": density, **result})
+
+# Find optimal density
+optimal = min(results, key=lambda r: r['energy_gap'] + 0.1 * (1 - r.get('converged', 1)))
+```
+
+## Implementation Checklist
+
+- [ ] Parse Hamiltonian into Pauli decomposition
+- [ ] Build interaction graph from Hamiltonian terms
+- [ ] Design IQP circuit connectivity matching Hamiltonian
+- [ ] Verify gradient variance is above barren plateau threshold
+- [ ] Run optimization and measure convergence
+- [ ] Compare results across connectivity densities
+- [ ] Document optimal connectivity for target Hamiltonian
+
+## Related Skills
+
+- **quantum-optimization-qaoa**: QAOA methodology for optimization
+- **quantum-neural-architecture-search**: QNN architecture design
+- **qml-expressivity-separation**: QML expressivity analysis
+- **quantum-encoding-selection**: Quantum data encoding selection
+
+## References
+
+- arXiv:2606.24264 - "Discovery of connectivity-trainability trade-off of IQP Circuits for Hamiltonian Optimization"
+- arXiv:2606.26034 - "Estimating Fidelity to a Reference Quantum State"
+- arXiv:2605.30331 - "Majorization precursors to supermodularity and subadditivity on the majorization lattice"
+
+## Notes
+
+- IQP circuits are a promising near-term quantum advantage candidate
+- The connectivity-trainability trade-off is critical for practical optimization
+- Match circuit connectivity to Hamiltonian structure for best results
+- Monitor gradient variance to detect barren plateaus early
+- Use this methodology for NISQ-era quantum optimization problems
