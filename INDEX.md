@@ -1,4 +1,13 @@
 # AI Collection Index
+## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job)
+
+### End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing
+- [[quantum-pde-option-pricing]] - End-to-end quantum PDE framework for European option pricing with polynomial gate complexity advantage over classical baselines (arXiv: 2605.26610)
+  - Gate complexity: Õ(d²N^(2+d/2)) for Black-Scholes, Õ(d²N^(d+2)) for Heston — polynomial improvement N^(d/2) and N^d over classical
+  - Complete quantum pricing pipeline: finite-difference discretization → quantum state preparation → amplitude estimation → classical output
+  - Explicit Clifford+T resource accounting with numerical benchmarks against classical methods
+  - **Activation**: quantum pde option pricing, quantum derivative pricing, quantum black scholes, quantum heston model, 量子期权定价, quantum financial pde
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Permutation Asymmetry in Randomized Bell Tests
