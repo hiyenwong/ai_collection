@@ -1,61 +1,85 @@
 ---
-name: "qubit-assisted-heisenberg-metrology"
-description: "Criterion methodology for qubit-assisted quantum metrology achieving Heisenberg scaling — identifies sufficient conditions (one or two direction probe-qubit coupling) for effective dynamical generator to reach Heisenberg limit. Covers bosonic probe QFI proportionality to mean excitation number and spin-ensemble QFI quadratic scaling. Use when: analyzing probe-ancilla qubit metrology systems, determining Heisenberg scaling achievability, designing displacement or rotation-phase estimation protocols, or evaluating finite-temperature state QFI. Activation: qubit-assisted metrology, Heisenberg scaling criterion, quantum Fisher information scaling, probe-qubit coupling, bosonic probe metrology, 量子比特辅助计量, 海森堡标度, 量子费舍尔信息标度"
-metadata:
-  arxiv_id: "2606.26167"
-  published: "2026-06-24"
-  authors: "Authors"
+name: qubit-assisted-heisenberg-metrology
+category: quantum-physics
+description: Criterion for qubit-assisted quantum metrology achieving Heisenberg scaling. Probe-ancilla coupling design for optimal parameter estimation, temperature-enhanced sensitivity, and finite-temperature Heisenberg scaling.
+trigger_words: Heisenberg limit quantum metrology, qubit-assisted metrology, quantum Fisher information probe, ancilla qubit coupling, temperature-enhanced metrology, spin-ensemble metrology, QFI scaling, quantum parameter estimation
 ---
 
-# Qubit-Assisted Quantum Metrology: Criterion for Heisenberg Scaling
+# Criterion for Qubit-Assisted Quantum Metrology Approaching Heisenberg Scaling
 
-## Core Concept
+**Source**: arXiv:2606.26167 (June 2026)
 
-This work establishes a criterion for when a probe system coupled to an ancillary qubit can achieve Heisenberg-limited precision in parameter estimation. The key insight is that restricting probe-qubit coupling to one or two directions is sufficient for the effective dynamical generator to achieve the Heisenberg limit.
+## Overview
 
-## Key Results
+This skill provides the design criterion for achieving Heisenberg-limited precision in quantum metrology using a probe system coupled to an ancillary qubit. It reveals counterintuitive results about temperature-enhanced sensitivity and shows that Heisenberg scaling is achievable even from finite-temperature states.
 
-### 1. Heisenberg Scaling Criterion
-- Restricting probe-qubit coupling along only **one or two directions** is sufficient
-- Under this criterion, QFI becomes the expectation value of mean square of effective generator
-- QFI computed with respect to initial state of composite system
+## Core Methodology
 
-### 2. Bosonic Probe Application
-- QFI about displacement estimation is proportional to mean excitation number of probe
-- Counterintuitive result: metrology sensitivity enhanced by **increasing temperature** of probe system
-- Thermal states can serve as useful metrological resources
+### 1. The Sufficiency Criterion
 
-### 3. Spin-Ensemble Probe Application
-- QFI about rotation-phase and magnetic-field estimation exhibit **quadratic dependence** on probe-spin number
-- Heisenberg scaling achieved even with finite-temperature states
-- Does not require resource states (squeezed states, GHZ states)
+**Restricting the probe-qubit coupling along only one or two directions** is a sufficient criterion for the effective dynamical generator to achieve the Heisenberg limit in precision.
 
-## Mathematical Framework
+Under this criterion:
+- The quantum Fisher information (QFI) about the to-be-estimated parameter becomes the **expectation value of the mean square of the effective generator** with respect to the initial state of the composite system
+- QFI = ⟨Ĝ²⟩ where Ĝ is the effective dynamical generator
 
-Under the criterion, the effective dynamical generator's QFI scales as:
-- Bosonic probe: QFI ∝ ⟨n⟩ (mean excitation number)
-- Spin ensemble: QFI ∝ N² (quadratic in spin number)
+### 2. Bosonic Probe: Temperature-Enhanced Sensitivity
 
-## Usage Patterns
+For a bosonic probe:
+- QFI about displacement estimation is proportional to the **mean excitation number** of the probe
+- **Counterintuitive result**: quantum metrology sensitivity can be **enhanced by increasing the temperature** of the probe system
+- This contradicts the common intuition that thermal states degrade metrological performance
 
-### Pattern 1: Evaluating Heisenberg Scaling Achievability
-1. Identify the probe-ancilla qubit coupling directions
-2. Check if coupling is restricted to one or two directions (criterion satisfied)
-3. If criterion met: QFI = expectation value of mean square of effective generator
-4. Compute QFI scaling with respect to probe parameters
+### 3. Spin-Ensemble Probe: Quadratic Scaling
 
-### Pattern 2: Designing Temperature-Enhanced Metrology
-1. For bosonic probes, consider increasing probe temperature
-2. Verify displacement estimation QFI scales with mean excitation
-3. Optimize probe temperature for maximum sensitivity
+For a spin-ensemble probe:
+- QFI about both rotation-phase and magnetic-field estimation exhibit a **quadratic dependence** on the probe-spin number (N² scaling = Heisenberg limit)
+- **Even when the spin-ensemble is prepared as a finite-temperature state** (far from resource states like squeezed states or GHZ states), QFI can still manifest Heisenberg scaling behavior
+- This removes the need for expensive state preparation
 
-### Pattern 3: Spin-Ensemble Metrology Without Squeezing
-1. Prepare spin ensemble in finite-temperature state
-2. Verify QFI quadratic dependence on spin number N
-3. Achieve Heisenberg scaling without complex resource state preparation
+## Key Insights
 
-## Related Skills
-- `quantum-metrology-sensing-review` — broader metrology overview
-- `dipole-moment-quantum-metrology` — specific dipole moment estimation
-- `finite-shot-quantum-metrology` — finite-measurement theory
-- `sp2n-interferometry-quantum-metrology` — multi-mode Gaussian interferometry
+1. **Direction matters, not entanglement**: Constraining coupling geometry is sufficient for Heisenberg scaling — you don't necessarily need highly entangled resource states
+2. **Heat can help**: For bosonic probes, higher temperature → higher mean excitation → higher QFI
+3. **No need for exotic states**: Heisenberg scaling from thermal states removes the preparation bottleneck
+4. **Two-direction coupling is enough**: Full 3D coupling is not required; restricting to 1 or 2 directions achieves the limit
+
+## Applications
+
+- **Quantum sensing**: Design probe-ancilla systems for optimal parameter estimation
+- **Magnetometry**: Spin-ensemble probes with finite-temperature operation
+- **Displacement estimation**: Bosonic probes with temperature-tuned sensitivity
+- **Rotation sensing**: Heisenberg-limited phase estimation without squeezed states
+
+## Implementation
+
+```python
+def heisenberg_criterion_check(coupling_directions, probe_type):
+    """
+    Check if probe-qubit coupling satisfies Heisenberg scaling criterion.
+    
+    coupling_directions: list of coupling axes (e.g., ['x', 'z'])
+    probe_type: 'bosonic' or 'spin_ensemble'
+    
+    Returns: True if criterion is satisfied
+    """
+    # Criterion: coupling restricted to 1 or 2 directions
+    if len(coupling_directions) <= 2:
+        return True
+    return False
+
+def bosonic_qfi(mean_excitation_number):
+    """QFI for bosonic probe displacement estimation."""
+    return mean_excitation_number  # Proportional scaling
+
+def spin_ensemble_qfi(num_spins):
+    """QFI for spin-ensemble probe - Heisenberg scaling."""
+    return num_spins ** 2  # Quadratic scaling = Heisenberg limit
+```
+
+## Pitfalls
+
+- **Don't assume thermal is bad**: For bosonic probes, thermal states can improve sensitivity
+- **Coupling geometry is critical**: Full isotropic coupling may actually prevent Heisenberg scaling
+- **Ancilla quality matters**: The ancillary qubit must maintain coherence during the estimation
+- **Not all parameters benefit**: The criterion applies to specific parameter types (displacement, rotation-phase, magnetic-field)

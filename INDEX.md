@@ -1,4 +1,26 @@
 # AI Collection Index
+## 2026-06-26 - Quantum Metrology & Statistical Estimation (Cron Job)
+
+### Finite-Shot Sensitivity for Moment Estimation in Quantum Metrology
+- [[finite-shot-quantum-metrology]] - Finite-measurement theory for method-of-moments estimation with bias-corrected estimator at O(nu^-3) (arXiv: 2606.25920)
+  - Bias-corrected moment estimator with O(nu^-3) bias for nonlinear calibration
+  - Density-matrix condition where 1/nu^2 correction vanishes
+  - Calibration curvature governs residual correction at 1/nu^3
+  - **Activation**: quantum metrology, finite-shot estimation, moment estimation, bias correction, Cramér-Rao bound
+
+### Criterion for qubit-assisted quantum metrology approaching Heisenberg scaling
+- [[qubit-assisted-heisenberg-metrology]] - Probe-qubit coupling direction restriction achieves Heisenberg limit; temperature-enhanced bosonic sensitivity (arXiv: 2606.26167)
+  - 1-2 direction coupling sufficient for Heisenberg scaling
+  - Higher probe temperature enhances bosonic metrology sensitivity
+  - N^2 scaling from finite-temperature spin-ensembles
+  - **Activation**: Heisenberg limit, qubit-assisted metrology, QFI, ancilla coupling, temperature-enhanced sensing
+
+### Exclusion Statistics as Thermodynamic Resource in Quantum Heat Engines
+- [[exclusion-statistics-thermodynamic-resource]] - Bosonic heat engines exceed fermionic Whitney power limit by 1.52x via Haldane exclusion statistics (arXiv: 2606.19310)
+  - Bosonic maximum power P_boson = (ln 2)^2 * kB^2 * dT^2 / h
+  - Haldane parameter g interpolates bosonic (g=0) to fermionic (g=1)
+  - **Activation**: exclusion statistics, quantum heat engine, Haldane statistics, Whitney limit
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 8)
 
 ### SIC-POVM Overlaps via Stark Units from Ray Class Fields
