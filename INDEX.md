@@ -7,6 +7,14 @@
   - Complete quantum pricing pipeline: finite-difference discretization → quantum state preparation → amplitude estimation → classical output
   - Explicit Clifford+T resource accounting with numerical benchmarks against classical methods
   - **Activation**: quantum pde option pricing, quantum derivative pricing, quantum black scholes, quantum heston model, 量子期权定价, quantum financial pde
+### Quantum-Resilient Decentralized AI Economies
+- [[quantum-crypto-investment-risk]] - Three-layer decentralized AI economy replacing PoW with useful ML work, with post-quantum security analysis (arXiv: 2606.24942)
+  - Closed-loop token economy with sufficient-stake condition for honest participation
+  - Grover provides only quadratic speedup for hash; Shor threatens signatures
+  - Post-quantum migration to lattice-based and hash-based standards
+  - **Activation**: proof-of-useful-work, post-quantum blockchain, decentralized AI economy, quantum resilient crypto
+
+
 
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
