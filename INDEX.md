@@ -3107,3 +3107,11 @@
   - 核心要点 2: 证明量子电路的 L²(μ) 通用逼近定理，收敛率 O(n^{-1/2})，将经典傅里叶逼近理论扩展到量子物理信息学习
   - **Activation**: QPINN, quantum physics-informed neural network, integro-differential equation quantum, fractional PDE quantum, affine feature map quantum, numerical quadrature QPINN, auxiliary function QPINN, quantum Fourier approximation
 
+
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Statistical and Algorithmic Foundations of Probing Quantum Systems with Compressive Measurements: A Review
+- [[compressive-quantum-tomography]] - Unified framework for structured quantum state tomography using low-rankness, tensor networks, and compressive sensing; bridges statistics and quantum information for scalable recovery (arXiv: 2605.27191)
+  - 核心要点 1: 结构化量子态（低秩、张量网络、浅层电路、神经量子态）大幅降低有效自由度，实现可扩展重建
+  - 核心要点 2: 测量设计的几何保持性质（RIP等）保证样本复杂度边界，连接压缩感知与量子层析
+  - **Activation**: compressive quantum tomography, structured quantum state tomography, low-rank quantum tomography, matrix sensing quantum, compressive sensing quantum, randomized measurements quantum, POVM quantum tomography, neural quantum states tomography, sample complexity quantum tomography, quantum measurement design, 压缩量子层析, 结构化量子态重建
