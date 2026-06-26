@@ -1,5 +1,13 @@
 # AI Collection Index
-## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 5)
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job - Round 6)
+
+### Particle-Preserving Fermionic Shadows with Mode-Independent Sample Complexity
+- [[quantum-fermionic-shadows-statistics]] - Mode-independent sample complexity O(η log η) for fermionic classical shadows using harmonic analysis on AIII symmetric space (arXiv: 2606.27254)
+  - 费米子经典阴影模式无关采样复杂度 O(η log η)，优于 O(√n log n)
+  - 对称空间 U(n)/(U(η)×U(n-η)) 上调和分析 + Jacobi 系综积分
+  - 首次量化估计 Slater 行列态重叠的样本复杂度与模式数无关
+  - 第一量子化编码实现 polylog 深度电路
+  - **Activation**: fermionic shadows, mode-independent sample complexity, Slater determinant overlap, AIII symmetric space, Jacobi ensembles, particle-preserving operators
 
 ### Sp(2N,R) Interferometry in Multi-Mode Gaussian Bosonic Systems
 - [[sp2n-interferometry-quantum-metrology]] - Sp(2N,R) interferometry methodology exploiting symplectic group symmetry for multi-mode bosonic quantum metrology beyond standard quantum limit (arXiv: 2606.25768)
