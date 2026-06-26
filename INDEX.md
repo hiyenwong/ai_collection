@@ -3099,4 +3099,11 @@
 - [[coquasi-bialgebroids-cocycle-twisting]] - 非交换基代数上的coquasi-双胚群理论：乘积仅在可逆归一化3-上链意义下结合，为coquasi-双代数提供双胚群类比 (arXiv: 2606.27343)
   - 核心要点 1: 使用Takeuchi ×B-coalgebra形式化，证明卷积可逆2-上链的扭曲定理
   - 核心要点 2: 构造coquasi Connes-Moscovici型双胚群并描述对偶拟双胚群与Drinfeld扭曲的关系
-  - **Activation**: coquasi-bialgebroids, cocycle twisting, Takeuchi coalgebra, Connes-Moscovici bialgebroid, Drinfeld twisting, noncommutative algebra, 上链扭曲, 非交换代数
+## 2026-06-26 - Quantum PINN for Integro/Fractional PDEs (Cron Job - Number Theory + Math)
+
+### Quantum Physics-Informed Neural Networks for Solving Integro and Fractional PDEs
+- [[qpinn-integro-fractional-pde]] - QPINN framework combining variational quantum circuits with physics-informed learning for integro-differential and fractional PDEs; proven O(n^{-1/2}) convergence (arXiv: 2606.26865)
+  - 核心要点 1: 两种变体 — N-QPINN（数值积分处理非局部算子）和 A-QPINN（辅助变量重构消除数值积分）
+  - 核心要点 2: 证明量子电路的 L²(μ) 通用逼近定理，收敛率 O(n^{-1/2})，将经典傅里叶逼近理论扩展到量子物理信息学习
+  - **Activation**: QPINN, quantum physics-informed neural network, integro-differential equation quantum, fractional PDE quantum, affine feature map quantum, numerical quadrature QPINN, auxiliary function QPINN, quantum Fourier approximation
+
