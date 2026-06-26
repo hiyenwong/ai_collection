@@ -16,6 +16,17 @@
 
 
 
+## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job)
+
+### Quantum-Resilient Decentralized AI Economies
+- [[quantum-resilient-decentralized-ai-economy]] - Three-layer decentralized AI economy replacing proof-of-work with useful ML work, with post-quantum security analysis (arXiv: 2606.24942)
+  - Closed-loop token economy (θ_c, θ_w, W) with sufficient-stake condition for honest participation
+  - Grover provides only quadratic speedup for hash; does NOT accelerate ML-native linear algebra
+  - Shor threatens classical blockchain signatures; post-quantum migration to lattice-based standards
+  - Useful-work consensus offers both economic and quantum-security advantages over PoW
+  - **Activation**: decentralized AI economy, proof-of-useful-work, post-quantum blockchain, quantum resilient crypto, Grover blockchain threat, ML consensus
+
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Permutation Asymmetry in Randomized Bell Tests
