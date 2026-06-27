@@ -14,14 +14,14 @@ Unified framework analyzing quantum computing applications in finance across fiv
 
 ## Core Architecture
 
-### Layer 1: Portfolio Optimization
+### Layer 1: Portfolio optimization
 - **Problem**: Constrained discrete mean-variance optimization (integer asset quantities)
 - **Quantum primitive**: QAOA, quantum annealing (D-Wave)
 - **Key insight**: Hot-starting from continuous relaxation restricts search to compact Hilbert space, reducing qubit requirements (arXiv:2510.11153)
 - **Classical baseline**: MIP solves to proven optimality in seconds for 1000 assets
 - **Assessment**: Limited quantum advantage room; value in constrained search dominance scenarios
 
-### Layer 2: Derivative Pricing
+### Layer 2: Derivative pricing
 - **Problem**: Repeated expectation evaluation, Monte Carlo simulation
 - **Quantum primitive**: Amplitude estimation (quadratic speedup over Monte Carlo)
 - **Key insight**: Strongest advantage when repeated expectation evaluation is the binding cost
