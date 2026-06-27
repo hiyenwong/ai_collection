@@ -1,5 +1,36 @@
 # AI Collection Index
 
+## 2026-06-28 - Information Science + Quantum (Cron Job - Sunday)
+
+### Quantum Conditional Mutual Information and Channel Capacity
+- [[quantum-conditional-mutual-information-channel-capacity]] - Connects QCMI to operational channel coding — optimal rate for conditional quantum correlation = QCMI/2, extending Csiszár-Ahlswede classical key generation to quantum domain (arXiv: 2606.25264)
+  - Core: QCMI gains operational meaning through conditional quantum communication task
+  - Bridges abstract information theory (strong subadditivity) with channel coding theorems
+  - **Activation**: quantum conditional mutual information, QCMI channel capacity, strong subadditivity, conditional quantum communication, 量子条件互信息
+
+### RL-Based List Sequential QLDPC Decoding
+- [[rl-list-sequential-qldpc-decoding]] - Reinforcement learning extends sequential BP scheduling with list-based branch exploration for QLDPC decoding — explores second-best Pauli symbol at each step (arXiv: 2606.20926)
+  - Core: RL policy selects variable nodes + list exploration of competing Pauli branches
+  - Addresses short cycles, degeneracy, and poor convergence of standard BP
+  - **Activation**: RL QLDPC decoder, list sequential belief propagation, reinforcement learning quantum error correction, sequential BP scheduling
+
+### Asymptotic Compression of Interactive Quantum Communication
+- Uses type-constrained de Finetti reduction to prove prior-free quantum information cost = worst-case amortized quantum communication cost (arXiv: 2606.24746)
+  - New de Finetti reduction based on input types for classical distributions
+  - **Activation**: de Finetti reduction, quantum communication compression, interactive protocols, type constraints
+
+### Ultra-Low-Rate Information Reconciliation for CV-QKD
+- Repetition coding vs dedicated codes: 2x reduced decoding complexity with moderate error penalty (arXiv: 2606.23726)
+  - **Activation**: CV-QKD, information reconciliation, repetition coding, ultra-low-rate codes
+
+### Frontier Decoder for QLDPC Codes
+- Pruned dynamic-programming decoder with narrow frontier retains <100 list size for gross code at p=0.001, linear complexity (arXiv: 2606.20513)
+  - **Activation**: frontier decoder, QLDPC decoding, dynamic programming, sparse quantum decoding
+
+### Ricci Flow for Bures-Helstrom Qubit Metric
+- Explicit Ricci flow on qubit state space — Bures-Helstrom metric as homothetic shrinker g(t)=(1-4t)g_BH with extinction T=1/4 (arXiv: 2606.19493)
+  - **Activation**: Ricci flow, Bures-Helstrom metric, qubit geometry, quantum Fisher information
+
 ## 2026-06-28 - Neuroscience Research (Cron Job)
 
 ### RNN Structural Design Principles for Computational Ability
