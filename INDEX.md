@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-06-28 - Neuroscience Research (Cron Job)
+
+### RNN Structural Design Principles for Computational Ability
+- [[rnn-structural-design-computational-ability]] - Identifying structural design principles shaping computational abilities of recurrent neural networks — local cycles (2-cycles, 3-cycles) strongly enhance computational ability; sparse interneurons dramatically increase capacity (arXiv: 2606.23874)
+  - Core: Local cycles as design principles linking neural connectivity to computational power
+  - Methodology: Large-scale RNN training across architectures on Boolean functions, complete catalogs for small networks
+  - Surprising: Adding sparse biologically-inspired interneurons dramatically boosts capacity
+  - **Activation**: RNN structure, neural cycles, computational capacity, structure-function relation, interneuron function, 神经网络结构功能, 循环神经网络计算能力
+
 ## 2026-06-29 - Information Science + Quantum (Cron Job)
 
 ### Witness Expansion: Unified Framework for Mixed-State Resource Detection
