@@ -3495,3 +3495,17 @@
   - Performance benchmarks across optimization problem classes
   - **Activation**: variational quantum optimization, quantum annealing combinatorial, QAOA survey, hybrid quantum-classical optimization, quantum combinatorial algorithms
 
+
+## 2026-06-28 - Information Science (Cron Job)
+
+### Enhanced quantum capacity thresholds from symmetry
+- [[quantum-capacity-symmetry]] - 利用表示论对称性框架优化量子信道容量阈值，18年来首次在去极化信道上突破哈希界 (arXiv: 2605.09138)
+  - 对称子空间上的相干信息优化超越所有先前改进之和
+  - Kraus算符湮灭对称空间导致环境熵大幅降低，源于编码简并性
+  - **Activation**: quantum capacity threshold, depolarizing channel capacity, coherent information optimization, symmetric subspace quantum, 量子信道容量, 量子容量阈值
+
+### The hyperlink representation of entanglement and the inclusion-exclusion principle
+- [[entanglement-hyperlink-representation]] - 通过容斥原理定义纠缠超链接(EHLs)精确表征多体纠缠 (arXiv: 2601.17926)
+  - EHL捕获不可约化为低阶项的多体纠缠贡献
+  - 任意块纠缠熵 = 穿越其边界的EHL之和；因子化边界上EHL必须为零
+  - **Activation**: entanglement hyperlink, multipartite entanglement, inclusion-exclusion entanglement, entanglement entropy decomposition, 量子纠缠超链接, 多体纠缠
