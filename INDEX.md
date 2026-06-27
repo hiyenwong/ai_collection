@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-06-29 - Information Science + Quantum (Cron Job)
+
+### Witness Expansion: Unified Framework for Mixed-State Resource Detection
+- [[witness-expansion-quantum-resource-detection]] - Unified framework for constructing nonlinear polynomial witness criteria detecting quantum resources (coherence, entanglement, magic, fermionic non-Gaussianity) in mixed states (arXiv: 2606.27105)
+  - Core: Polynomial witness moments estimated via multi-copy measurements recover l2 coherence, PT moments, stabilizer entropy
+  - New: First analytical criterion for mixed-state fermionic non-Gaussianity wrt convex hull of pure Gaussian states
+  - **Activation**: witness expansion, quantum resource detection, mixed-state resource, stabilizer entropy, nonstabilizerness
+
+### IQP Circuit Connectivity-Trainability Trade-off
+- [[iqp-connectivity-trainability]] - Connectivity-trainability trade-off in IQP circuits for Hamiltonian optimization — circuit structure determines ability to reach low-energy states (arXiv: 2606.24264)
+  - Core: Higher connectivity = better expressivity but gradient vanishing; optimal connectivity matches Hamiltonian locality
+  - Methodology: Gradient variance analysis, progressive connectivity training strategy
+  - **Activation**: IQP circuit, connectivity trainability, Hamiltonian optimization, circuit structure, barren plateau IQP
+
+### Quantum Group Codes for Non-Clifford Logic
+- [[quantum-group-codes-non-clifford]] - Quantum CSS codes from classical quasi group codes with transversal multi-control-Z gates, quasi-quadratic decoding (arXiv: 2606.27211)
+  - Core: AG code lifting via class field theory yields O(n² log n) decoder vs O(n³) cubic for previous quantum AG codes
+  - Enables near-linear speedup in magic state distillation protocols
+  - **Activation**: quantum group codes, non-Clifford gates, transversal gates, AG codes, magic state distillation
+
 ## 2026-06-28 - Information Science + Quantum (Cron Job)
 
 ### Witness Expansion: Unified Framework for Mixed-State Resource Detection
