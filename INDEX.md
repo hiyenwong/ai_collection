@@ -1,4 +1,14 @@
 # AI Collection Index
+
+## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job)
+
+### Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization
+- [[quantum-nisq-resilience-benchmark]] - 表达力-相干性权衡(expressibility-coherence trade-off)量化方法论：WS-QAOA表达力强但退相干灾难，HE-VQNN相干性好但无法捕获密集尾部风险 (arXiv: 2606.07727)
+  - SWAP Tax 量化：密集金融问题映射到稀疏 heavy hex 拓扑导致指数级路由开销
+  - 经典-量子混合代理矩阵绕过 CVaR 辅助量子比特瓶颈
+  - NISQ 硬件迫使在"算法不可表达性"和"硬件退相干"之间做不可行选择
+  - **Activation**: NISQ resilience benchmark, expressibility coherence tradeoff, SWAP tax quantum, HE-VQNN, WS-QAOA hardware, quantum portfolio hardware deployment, quantum hardware benchmarking
+
 ### Hot-Starting Quantum Portfolio Optimization
 - [[quantum-finance-portfolio]] - 量子计算在金融组合优化中的应用，涵盖QUBO建模、量子退火、QRNG增强Monte Carlo、VaR/CVaR估计、风险度量 (arXiv: 2510.11153)
   - Hot-starting methodology: classical smooth solutions initialize quantum algorithms, reducing search space and improving convergence
