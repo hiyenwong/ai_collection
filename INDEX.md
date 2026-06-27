@@ -3360,3 +3360,20 @@
   - Excitation to auxiliary state generates controllable effective electric dipole
   - Parallel gate operation across multiple zones, dynamic qubit rearrangement
   - **Activation**: tweezer ion architecture, optical tweezer quantum computing, trapped-ion tweezer arrays, Coulomb-mediated entangling gate, reconfigurable ion quantum computer
+
+## 2026-06-27 - Economics, Investment + Quantum (Cron Job - Session 2)
+
+### Reinforcement Learning for Risk-Sensitive Investment Management: a Free Energy--Entropy Duality Approach
+- [[free-energy-rl-investment]] - Free Energy-Entropy Duality methodology for risk-sensitive RL in continuous-time investment management, reformulating benchmarked asset allocation as LQG stochastic differential game (arXiv: 2606.20903)
+  - Free energy-entropy duality converts risk-sensitive optimization into zero-sum game
+  - Girsanov transformation handles non-Markovian benchmarked problems
+  - LQG reformulation enables analytical solutions or RL approximations
+  - **Activation**: free energy entropy duality, risk-sensitive RL investment, benchmarked asset allocation, LQG stochastic game, continuous-time portfolio optimization
+
+### Variational and Annealing-Based Approaches to Quantum Combinatorial Optimization
+- [[variational-annealing-quantum-combinatorial]] - Survey of variational and annealing-based quantum algorithms for combinatorial optimization, comparing QAOA, QA, and hybrid classical-quantum approaches (arXiv: 2603.19117)
+  - Comparative analysis of QAOA vs quantum annealing for combinatorial problems
+  - Hybrid classical-quantum variational methods with classical pre/post-processing
+  - Performance benchmarks across optimization problem classes
+  - **Activation**: variational quantum optimization, quantum annealing combinatorial, QAOA survey, hybrid quantum-classical optimization, quantum combinatorial algorithms
+
