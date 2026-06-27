@@ -3330,3 +3330,33 @@
   - Quantum game theory foundation: entangled strategies create more stable Nash equilibria
   - Speculation quenching: quantum correlations replace classical communication for alignment
   - **Activation**: quantum market entanglement, entangled neural traders, speculation quenching, quantum stabilization
+
+## 2026-06-27 - Economics, Investment + Quantum (Cron Job - Batch 3)
+
+### When the Learning With Errors Problem Meets the Coherent Ising Machine: A Penalty-Free Algorithm-Hardware Co-Design
+- [[cim-lwe-qubo-cryptanalysis]] - Hybrid BDD solver reducing LWE to QUBO through strictly penalty-free mapping for post-quantum cryptanalysis via Coherent Ising Machine (arXiv: 2606.22843)
+  - Algebraic elimination of secret embeds LWE into q-ary lattice without penalty coefficients
+  - QUBO solved by CIM for efficient cryptanalysis of lattice-based PQC
+  - Avoids energy scale issues of conventional penalty-based QUBO formulations
+  - **Activation**: LWE cryptanalysis, Coherent Ising Machine, penalty-free QUBO, CIM-BDD, post-quantum cryptanalysis, lattice-based cryptography attack
+
+### Efficient foundation decoders for fault-tolerant quantum computing
+- [[neural-transfer-unification-qec]] - Neural Transfer Unification (NTU) framework enabling efficient foundation decoders for QEC at large code distances (arXiv: 2606.27119)
+  - Transfer learning across code distances reduces training data requirements
+  - Unified decoder architecture handles multiple code distances
+  - Accurate decoding at large distances with reduced syndrome generation cost
+  - **Activation**: neural transfer unification, foundation decoder, QEC decoder scaling, fault-tolerant quantum decoding, NTU decoder
+
+### Cultivating logical catalysts for fault-tolerant dyadic phase rotations
+- [[logical-catalyst-dyadic-phase]] - Surface-code cultivation protocol for reusable logical catalyst states implementing exact fine dyadic phase gates Z^{2^{-b}} by phase kickback (arXiv: 2606.27358)
+  - Catalyst eigenstate of high-period Clifford circuit supported on O(2^b) logical qubits
+  - Eliminates Clifford+T synthesis approximation error from online gates
+  - Single controlled-U gadget per invocation, catalyst state preserved
+  - **Activation**: logical catalyst, dyadic phase gates, surface code cultivation, phase kickback, Clifford+T synthesis, fine phase rotation
+
+### Quantum computer architecture with ions in tweezer arrays
+- [[tweezer-ion-quantum-architecture]] - Architecture combining trapped-ion qubit coherence with optical tweezer reconfigurability for scalable parallel entangling gates via Coulomb-mediated dipoles (arXiv: 2606.27249)
+  - Selected ions transported to local interaction zones for entangling operations
+  - Excitation to auxiliary state generates controllable effective electric dipole
+  - Parallel gate operation across multiple zones, dynamic qubit rearrangement
+  - **Activation**: tweezer ion architecture, optical tweezer quantum computing, trapped-ion tweezer arrays, Coulomb-mediated entangling gate, reconfigurable ion quantum computer
