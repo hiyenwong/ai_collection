@@ -1,93 +1,73 @@
 ---
 name: cim-lwe-qubo-cryptanalysis
-description: "CIM-BDD hybrid solver reducing Learning With Errors (LWE) to QUBO through penalty-free mapping for post-quantum cryptanalysis via Coherent Ising Machine"
+description: "CIM-BDD methodology for LWE cryptanalysis via penalty-free QUBO reduction on Coherent Ising Machines. Use when: analyzing Learning With Errors (LWE) problem security, reducing lattice problems to QUBO for quantum annealing/Ising machines, performing penalty-free mapping of cryptanalytic problems, designing hybrid quantum-classical cryptanalysis workflows, evaluating post-quantum cryptography parameter security. Core insight: algebraic elimination of the secret + nearest-plane decomposition yields compact QUBO without penalty terms."
 ---
 
-# CIM-BDD QUBO Cryptanalysis
+# CIM-BDD: LWE Cryptanalysis via Penalty-Free QUBO
 
-## Description
-Hybrid Bounded-Distance-Decoding (BDD) solver that reduces the Learning With Errors (LWE) problem to Quadratic Unconstrained Binary Optimization (QUBO) through a strictly penalty-free mapping for post-quantum cryptography cryptanalysis using Coherent Ising Machines (CIM).
+## Overview (arXiv:2606.22843)
 
-## Activation Keywords
-- LWE cryptanalysis
-- Coherent Ising Machine
-- penalty-free QUBO
-- CIM-BDD
-- post-quantum cryptanalysis
-- lattice-based cryptography attack
-- BDD solver
-- 格密码分析
-- 相干伊辛机
+CIM-BDD is a hybrid Bounded-Distance-Decoding solver for the LWE problem:
+- LWE is the mathematical foundation of post-quantum cryptography (NIST standards)
+- Reduces LWE to QUBO via **strictly penalty-free** mapping
+- Uses Coherent Ising Machine (CIM) hardware for solving
 
-## Core Concepts
+## Key Innovation: Penalty-Free Mapping
 
-### Penalty-Free QUBO Mapping
-The key innovation is strictly penalty-free reduction of LWE to QUBO. Unlike conventional QUBO formulations that use penalty terms to enforce constraints (which introduce energy scale issues and reduce solution quality), CIM-BDD achieves:
+Traditional QUBO reductions use penalty terms to enforce constraints:
+- Penalties increase energy landscape complexity
+- Require careful parameter tuning
+- Often dominate the objective function
 
-1. **Algebraic elimination of secret**: Embed LWE into a q-ary lattice directly
-2. **Strict penalty-free formulation**: No penalty coefficients needed for constraint satisfaction
-3. **Bounded-distance-decoding**: Solve via closest vector problem (CVP) reduction
+CIM-BDD avoids this through:
+1. **Algebraic elimination of the secret**: embeds LWE into q-ary lattice directly
+2. **Nearest-plane decomposition (Babai)**: yields compact binary representation
+3. **No penalty terms needed**: constraints are structurally satisfied
 
-### CIM Hardware Acceleration
-Coherent Ising Machines provide:
-- Native QUBO solving at scale
-- Parallel exploration of solution space via optical parametric oscillation
-- Better scaling than simulated annealing for certain problem structures
+## Pipeline
 
-### Hybrid Classical-Quantum Pipeline
+### Step 1: LWE Instance → BDD Problem
 ```
-LWE instance → Algebraic preprocessing → QUBO (penalty-free) → CIM solver → BDD solution
+LWE: A·s + e = b (mod q)
+→ Find closest lattice point in q-ary lattice Λ_q(A)
+→ This is a Bounded-Distance-Decoding (BDD) problem
 ```
 
-## Mathematical Framework
+### Step 2: BDD → QUBO (Penalty-Free)
+```
+BDD instance → Nearest-plane algorithm (Babai rounding)
+→ Binary expansion of coefficients
+→ Direct QUBO formulation: min x^T Q x
+```
 
-### LWE to CVP Reduction
-Given LWE samples (A, b = As + e mod q):
-1. Eliminate secret s algebraically
-2. Embed into q-ary lattice L_q(A)
-3. Formulate as CVP: find lattice point closest to b
-4. Reduce CVP to QUBO without penalty terms
+### Step 3: QUBO → CIM
+```
+QUBO matrix Q → Ising Hamiltonian H = Σ J_ij σ_i^z σ_j^z
+→ Run on Coherent Ising Machine
+→ Read optimal binary solution → Decode lattice point
+```
 
-### Penalty-Free Formulation
-Traditional QUBO: `min x^T Q x + P * constraint_violation`
-CIM-BDD: `min x^T Q' x` where Q' encodes constraints structurally
+## Applications
 
-## Usage Patterns
+### Post-Quantum Security Analysis
+- Evaluate NIST PQC parameter choices (Kyber, Dilithium)
+- Find weakest parameter sets for CIM-based attacks
+- Compare classical vs quantum-classical hybrid attack complexity
 
-### Pattern 1: PQC Security Analysis
-When evaluating security of LWE-based cryptographic schemes:
-1. Construct LWE instance from scheme parameters
-2. Apply penalty-free reduction to QUBO
-3. Run on CIM hardware (or classical simulator)
-4. Compare solution quality vs. traditional lattice reduction (BKZ)
+### Cryptographic Parameter Selection
+- Use CIM-BDD as oracle during parameter selection
+- Ensure q-ary lattice instances resist BDD at target security level
 
-### Pattern 2: QUBO Optimization Problems
-For any optimization problem that can be formulated as CVP:
-1. Identify the underlying lattice structure
-2. Apply algebraic elimination of auxiliary variables
-3. Map to penalty-free QUBO
-4. Solve via Ising model optimization
+### Hybrid Attack Design
+- Combine with lattice reduction (BKZ) as preprocessing
+- Use CIM-BDD for the final SVP/BDD step
+- Classical-quantum division of labor
 
-### Pattern 3: Cryptographic Parameter Selection
-When selecting parameters for LWE-based schemes:
-1. Estimate CIM-BDD attack complexity for given parameters
-2. Compare against other attack vectors (primal/dual lattice attacks)
-3. Select parameters where CIM-BDD is subdominant
+## Implementation Notes
+- QUBO size scales with lattice dimension and basis quality
+- Preprocessing with BKZ reduction significantly improves results
+- CIM hardware availability limits practical attack scale
+- Penalty-free structure is critical: penalties would make QUBO landscape too rugged for CIM convergence
 
-## Error Handling
-
-### Energy Scale Issues
-- **Problem**: QUBO energy landscape too flat or too steep
-- **Solution**: Penalty-free formulation avoids this; if using penalty-based alternatives, carefully tune penalty coefficient P
-
-### CIM Hardware Limitations
-- **Problem**: CIM may not converge to global optimum
-- **Solution**: Use multiple restarts; hybridize with classical local search
-
-### Lattice Dimension Scaling
-- **Problem**: QUBO size grows quadratically with lattice dimension
-- **Solution**: Apply lattice preprocessing (BKZ reduction) before QUBO mapping
-
-## Resources
-- arXiv: 2606.22843 - "When the Learning With Errors Problem Meets the Coherent Ising Machine: A Penalty-Free Algorithm-Hardware Co-Design"
-- Related: `penalty-free-quantum-optimization`, `quantum-portfolio-optimizer` (QUBO patterns)
+## Activation
+cim, coherent ising machine, LWE cryptanalysis, QUBO reduction, penalty-free mapping, post-quantum security, bounded distance decoding, lattice attacks, q-ary lattice
