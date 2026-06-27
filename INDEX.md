@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-06-28 - Information Science + Quantum (Cron Job)
+
+### Witness Expansion: Unified Framework for Mixed-State Resource Detection
+- [[quantum-witness-expansion]] - Unified framework for constructing nonlinear criteria for detecting quantum resources (coherence, entanglement, magic, non-Gaussianity) via polynomial witness functions (arXiv: 2606.27105)
+  - Core: Witness expansion recovers l2 coherence, partial-transpose moments, stabilizer entropy, fermionic antiflatness
+  - New: First analytical criterion for mixed-state fermionic non-Gaussianity nontrivial for arbitrary qubit counts
+  - **Activation**: witness expansion, quantum resource detection, stabilizer entropy, magic state detection, fermionic non-Gaussianity
+
+### IQP Circuit Connectivity-Trainability Trade-off
+- [[iqp-connectivity-trainability]] - Systematic analysis revealing fundamental trade-off between optimization performance and circuit connectivity in IQP circuits (arXiv: 2606.24264)
+  - Core: High connectivity = better optimization but harder to train; circuit structure is critical hyperparameter
+  - Methodology: Gradient variance analysis across connectivity levels, energy landscape mapping
+  - **Activation**: IQP circuit, connectivity trainability, Hamiltonian optimization, circuit structure, barren plateau
+
+### Quantum Conditional Mutual Information and Channel Capacity
+- [[quantum-conditional-mutual-information-channel-capacity]] - Quantum communication task showing optimal rate for establishing quantum correlation equals half the QCMI (arXiv: 2606.25264)
+  - Core: R* = I(A;B|C)/2 — connects QCMI to operational channel coding, extends Csiszar-Ahlswede to quantum
+  - Provides conditional capacity computations for example quantum channels
+  - **Activation**: quantum conditional mutual information, QCMI, channel capacity, Csiszar Ahlswede, quantum communication
+
+### Quantum Group Codes for Non-Clifford Logic
+- [[quantum-group-codes-non-clifford]] - Quantum CSS codes from classical quasi group codes supporting transversal multi-control-Z gates with addressability and parallelizability (arXiv: 2606.27211)
+  - Core: AG code lifting from class field theory yields quasi-quadratic decoder (vs cubic for previous quantum AG codes)
+  - Enables ~linear factor decrease in magic-state distillation time complexity
+  - **Activation**: quantum group codes, non-Clifford gates, transversal gates, AG codes, magic state distillation
+
 ## 2026-06-20 - Economics, Investment + Quantum Finance (Cron Job)
 
 ### Hot-Starting Quantum Portfolio Optimization
