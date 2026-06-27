@@ -1,7 +1,13 @@
 # AI Collection Index
 
-## 2026-06-27 - Economics, Investment + Quantum (Cron Job)
 ## 2026-06-27 - Economics, Investment + Quantum Finance (Cron Job)
+
+### Quantum Finance Hybrid Workflow Design
+- [[quantum-finance-hybrid-workflow]] - 混合量子-经典金融工作流设计方法论：金融计算栈框架（五大领域）+ 四步评估逻辑（识别瓶颈→指定量子原语→对比经典基准→评估现实约束）(arXiv: 2604.08180)
+  - 五大领域：约束组合优化、衍生品定价、尾部风险估计、量子ML、后量子安全
+  - 四步评估逻辑：identify bottleneck → specify quantum primitive → compare classical benchmark → assess constraints
+  - 核心结论：混合工作流 > 通用量子优势声明；约束搜索用QAOA最可信；振幅估计在重复期望场景最有效
+  - **Activation**: quantum finance hybrid workflow, financial computation stack, quantum portfolio optimisation, quantum derivative pricing, quantum risk estimation, quantum amplitude estimation finance, post-quantum finance
 
 ### FPQC-SAC: Parameterized Quantum Circuit + SAC for Financial RL
 - [[fpqc-sac-quantum-financial-rl]] - PQC+SAC金融RL方法论，量子纠缠捕获跨资产交互，低SNR环境下66.89%收益率提升 (arXiv: 2606.10448)
