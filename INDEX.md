@@ -3519,6 +3519,12 @@
   - Kraus算符湮灭对称空间导致环境熵大幅降低，源于编码简并性
   - **Activation**: quantum capacity threshold, depolarizing channel capacity, coherent information optimization, symmetric subspace quantum, 量子信道容量, 量子容量阈值
 
+### Spatial Superposition Entanglement Generation
+- [[spatial-superposition-entanglement-generation]] - 通过空间叠加噪声通信链路在传输过程中确定性地生成纠缠，将量子噪声从负担转为资源 (arXiv: 2605.02564)
+  - 分离态在相干叠加的噪声路径中确定性转化为纠缠态
+  - 无需量子存储器或中继器，可用标准干涉仪实现分布式纠缠工程
+  - **Activation**: spatial superposition entanglement, quantum noise as resource, coherent superposition links, interferometric entanglement generation, distributed entanglement engineering, 空间叠加纠缠生成, 量子噪声资源化
+
 ### The hyperlink representation of entanglement and the inclusion-exclusion principle
 - [[entanglement-hyperlink-representation]] - 通过容斥原理定义纠缠超链接(EHLs)精确表征多体纠缠 (arXiv: 2601.17926)
   - EHL捕获不可约化为低阶项的多体纠缠贡献
@@ -3530,3 +3536,10 @@
   - 双向纠缠信道架构，发送方保留贝尔态一个量子比特
   - 置乱操作实现隐式筛选，无需公共基矢比对，提升密钥率效率
   - **Activation**: self-sifting QKD, scrambling QKD, entanglement-based key distribution, bell-state QKD, 自筛量子密钥分发, 置乱量子通信, 双向量子密钥分发
+
+### No-Signaling Values of Quantum Games - Operator Algebra Perspective
+- [[no-signaling-quantum-games-operator-algebra]] - 使用算子空间张量范数分析两方量子博弈的无信令值，连接Grothendieck定理与量子信息理论 (arXiv: 2606.21664)
+  - 无信令值精确公式化为算子空间范畴中的张量范数
+  - 建立Grothendieck定理反例与量子博弈值差距的直接联系
+  - 提供无信令值与量子值差距的新上界
+  - **Activation**: no-signaling quantum games, operator algebra quantum games, Grothendieck operator spaces, tensor norm quantum games, two-prover quantum game value, 量子博弈算子代数, 无信令值分析
