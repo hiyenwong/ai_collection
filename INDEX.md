@@ -1,6 +1,21 @@
 # AI Collection Index
 
 ## 2026-06-27 - Economics, Investment + Quantum (Cron Job)
+## 2026-06-27 - Economics, Investment + Quantum Finance (Cron Job)
+
+### FPQC-SAC: Parameterized Quantum Circuit + SAC for Financial RL
+- [[fpqc-sac-quantum-financial-rl]] - PQC+SAC金融RL方法论，量子纠缠捕获跨资产交互，低SNR环境下66.89%收益率提升 (arXiv: 2606.10448)
+  - PQC层作为actor/critic的前置特征过滤器
+  - 量子纠缠捕获资产间非线性相关性
+  - 低信噪比环境下的鲁棒性增强
+  - **Activation**: fpqc-sac, quantum financial rl, quantum SAC, PQC reinforcement learning, 量子金融强化学习
+
+### Quenching Speculation via Entangled Neural Traders
+- [[entangled-neural-trader-market-stabilization]] - 量子纠缠交易者市场稳定方法，纠缠缓解投机性崩盘 (arXiv: 2602.06367)
+  - 量子纠缠作为投机动力学稳定机制
+  - RL代理具有量子相关估值
+  - 纠缠缓解市场崩盘
+  - **Activation**: entangled neural traders, quantum market stabilization, quantum speculation, 量子市场稳定
 
 ### Semi-Analytical Pricing for General Default Intensity Models
 - [[path-integral-default-intensity-pricing]] - Path-integral formalism for semi-analytical CDS/XVA pricing under stochastic default intensity (arXiv: 2606.21800)
