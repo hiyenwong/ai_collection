@@ -3509,3 +3509,9 @@
   - EHL捕获不可约化为低阶项的多体纠缠贡献
   - 任意块纠缠熵 = 穿越其边界的EHL之和；因子化边界上EHL必须为零
   - **Activation**: entanglement hyperlink, multipartite entanglement, inclusion-exclusion entanglement, entanglement entropy decomposition, 量子纠缠超链接, 多体纠缠
+
+### Self-Sifting quantum key distribution
+- [[self-sifting-qkd]] - 自筛量子密钥分发协议，使用最大纠缠贝尔态+置乱机制实现无需基矢公开的密钥协商 (arXiv: 2606.27299)
+  - 双向纠缠信道架构，发送方保留贝尔态一个量子比特
+  - 置乱操作实现隐式筛选，无需公共基矢比对，提升密钥率效率
+  - **Activation**: self-sifting QKD, scrambling QKD, entanglement-based key distribution, bell-state QKD, 自筛量子密钥分发, 置乱量子通信, 双向量子密钥分发
