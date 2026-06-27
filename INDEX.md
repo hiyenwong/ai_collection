@@ -3304,3 +3304,12 @@
   - 使用80倍更少参数实现比经典PINN更高的精度和更快收敛
   - 量子诱导改进的实验证据
   - **Activation**: QPINN portfolio, quantum PDE solver, Merton optimization, tensor rank decomposition, quantum physics-informed
+
+## 2026-06-27 - Economics, Investment + Quantum (Cron Job - Batch 2)
+
+### Hybrid Quantum Reinforcement Learning with QAOA for Improved Vehicle Routing Optimization
+- [[qaoa-qrl-vehicle-routing]] - 将QAOA混合/成本哈密顿量层集成到QRL策略网络中，实现车辆路径组合优化的更快收敛和更优解 (arXiv: 2605.01574)
+  - QAOA层替代标准变分层，使智能体利用问题特异性量子关联
+  - 训练收敛更快，处理超越GAS和纯QRL范围的更大VRP实例
+  - A2C策略网络结合参数移位梯度更新QAOA角度
+  - **Activation**: QAOA reinforcement learning, quantum vehicle routing, hybrid QRL QAOA, quantum combinatorial optimization, quantum logistics optimization
