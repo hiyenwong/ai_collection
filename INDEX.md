@@ -1,5 +1,33 @@
 # AI Collection Index
 
+## 2026-06-27 - Economics, Investment + Quantum (Cron Job)
+
+### Semi-Analytical Pricing for General Default Intensity Models
+- [[path-integral-default-intensity-pricing]] - Path-integral formalism for semi-analytical CDS/XVA pricing under stochastic default intensity (arXiv: 2606.21800)
+  - Uses path-integral formalism from quantum mechanics for credit derivatives pricing
+  - Handles high volatility and multi-year horizons accurately
+  - Applicable to CDS, XVA, quanto CDS, and credit portfolio risk
+  - **Activation**: path integral pricing, default intensity model, credit default swap pricing, semi-analytical pricing, XVA computation, stochastic intensity, quantum finance, Black-Karasinski pricing, quanto CDS
+
+### Quantum-Resilient Decentralized AI Economies
+- Proof-of-Useful-Work consensus replacing hash puzzles with ML computation; post-quantum security analysis (arXiv: 2606.24942)
+  - Three-layer architecture: compute, validation, economic coordination
+  - Grover's algorithm doesn't accelerate ML-native linear algebra
+  - Post-quantum migration to lattice-based/hash-based standards
+  - **Activation**: proof of useful work, decentralized AI economy, post-quantum blockchain, quantum resilience
+
+### Hybrid SAC with Quantum-Sampled Features for SCUC
+- Bernoulli hybrid soft actor-critic with quantum-sampled auxiliary channel for security-constrained unit commitment (arXiv: 2606.26345)
+  - Solver-compatible RL approach for economic dispatch
+  - Demonstrated on 14-, 57-, 118-bus power system cases
+  - **Activation**: quantum-sampled RL, unit commitment, economic dispatch, hybrid SAC, security-constrained optimization
+
+### Distributed QAOA Simulator
+- Qiskit-compatible DQAOA simulator for QUBO problems in engineering design optimization (arXiv: 2606.26297)
+  - Supports monolithic and distributed QAOA across multiple QPUs
+  - Streamlit GUI for interactive QUBO solving
+  - **Activation**: distributed QAOA, QUBO optimization, quantum simulator, engineering design
+
 ## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job) — QRC Forecasting
 
 ### Quantum Reservoir Computing for Resource-Efficient Forecasting
