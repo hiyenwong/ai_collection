@@ -1,5 +1,37 @@
 # AI Collection Index
 
+## 2026-06-20 - Economics, Investment + Quantum Finance (Cron Job)
+
+### Hot-Starting Quantum Portfolio Optimization
+- [[quantum-hotstart-portfolio]] - Hot-starting methodology for quantum portfolio optimization by restricting search space near continuous optimum (arXiv: 2510.11153v1)
+  - Core: Construct compact Hilbert space around continuous optimum to reduce qubit requirements
+  - Outperforms state-of-the-art on D-Wave Advantage for discrete mean-variance optimization
+  - **Activation**: hot-start, warm-start, portfolio optimization, quantum annealing, QUBO, D-Wave
+
+### Quantum Reservoir Computing for Stock Forecasting
+- [[quantum-reservoir-stock-forecasting]] - QRC methodology for financial time-series forecasting using 6-qubit quantum reservoirs (arXiv: 2602.13094v2)
+  - Core: Small-scale quantum reservoirs achieve 86%+ trend classification accuracy
+  - Platform-agnostic: applicable to superconducting circuits and trapped ions
+  - **Activation**: quantum reservoir computing, QRC, stock forecasting, financial time-series, trend prediction
+
+### Quantum Discord Behavioral Games
+- [[quantum-discord-behavioral-games]] - Quantum discord as minimal resource for extending bounded rationality in extensive-form games (arXiv: 2505.08917v1)
+  - Core: Separable quantum state with discord enables behavioral strategies to substitute for strategic memory
+  - Provides quantum analogue to Kuhn's classical equivalence theorem
+  - **Activation**: quantum discord, behavioral strategy, imperfect recall, Kuhn theorem, bounded rationality
+
+### Quantum Computing for Financial Transformation (Review)
+- [[quantum-finance-stack-analysis]] - Comprehensive review of quantum finance across 5 domains: optimization, pricing, risk, ML, post-quantum security (arXiv: 2604.08180v1)
+  - Core: Identifies financial bottleneck → quantum primitive → classical benchmark → realistic assessment
+  - Strongest near-term case: carefully designed hybrid workflows, not blanket advantage claims
+  - **Activation**: quantum finance, financial stack, hybrid workflow, portfolio optimization, post-quantum
+
+### Quantum RL for Dynamic Portfolio Optimization
+- [[quantum-rl-dynamic-portfolio]] - QRL solution using Variational Quantum Circuits for dynamic portfolio optimization (arXiv: 2601.18811v2)
+  - Core: Quantum analogues of DDPG/DQN achieve comparable or exceeding risk-adjusted vs classical Deep RL
+  - Orders of magnitude fewer parameters than classical counterparts
+  - **Activation**: quantum RL, QRL, portfolio optimization, variational quantum circuits, DDPG, DQN
+
 ## 2026-06-27 - Economics, Investment + Quantum Finance (Cron Job)
 
 ### Quantum Finance Hybrid Workflow Design
