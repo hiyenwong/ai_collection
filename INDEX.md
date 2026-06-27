@@ -29,6 +29,12 @@
   - Enables near-linear speedup in magic state distillation protocols
   - **Activation**: quantum group codes, non-Clifford gates, transversal gates, AG codes, magic state distillation
 
+### No Reference-Free Generalization in Quantum ML
+- [[no-reference-free-generalization-qml]] - Identifies sufficient conditions for reference-free generalization in quantum machine learning — how learners can generalize without preferred basis or measurement frame (arXiv: 2606.22331)
+  - Core: Reference-free generalization is impossible without symmetry-breaking conditions; establishes necessary/sufficient conditions for identifiability
+  - Framework: Symmetry breaking, structural priors, measurement anchoring, data diversity as four pillars
+  - **Activation**: reference-free generalization, quantum ML identifiability, symmetry breaking, basis-independent learning, quantum classification
+
 ## 2026-06-28 - Information Science + Quantum (Cron Job)
 
 ### Witness Expansion: Unified Framework for Mixed-State Resource Detection
