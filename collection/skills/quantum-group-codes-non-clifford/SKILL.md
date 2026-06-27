@@ -1,152 +1,71 @@
 ---
 name: quantum-group-codes-non-clifford
-description: "Quantum group codes methodology for non-Clifford logic with enhanced decoding, addressability and parallelizability"
-category: quantum-error-correction
-arxiv_id: "2606.27211"
-trigger_words: ["quantum group codes", "non-Clifford gates", "transversal gates", "magic state distillation", "quasi group codes", "AG codes", "multi-control-Z gates", "quantum CSS codes"]
-date_created: "2026-06-29"
+description: Quantum group codes for non-Clifford logic — CSS codes with addressable and parallelizable transversal multi-control-Z gates, quasi-quadratic time decoder from AG code lifting. Reduces magic-state distillation complexity by almost linear factor.
+category: quantum
+trigger_words: ["quantum group codes", "non-Clifford logic", "transversal CZ", "magic state distillation", "AG code lifting", "class field theory", "parallelizable non-Clifford", "quasi-quadratic decoder"]
 ---
 
 # Quantum Group Codes for Non-Clifford Logic
 
+**Source**: arXiv:2606.27211 — Gasnier & Guémard (2026-06-25)
+
 ## Overview
 
-A framework based on **classical quasi group codes** to define quantum CSS codes that support **transversal multi-control-Z gates** which are both **addressable** and **parallelizable**, enabling efficient implementation of non-Clifford gate circuits at the logical level. Uses a lifting procedure from classical algebraic geometry (AG) codes to achieve **quasi-quadratic time decoding** — an almost linear speedup over previous cubic-time decoders.
-
-**arXiv**: 2606.27211 (June 2026)
-**Authors**: Jean Gasnier, Virgile Guémard
+A framework defining quantum CSS codes from classical quasi group codes that support **transversal multi-control-Z gates** that are both **addressable** and **parallelizable**, enabling efficient non-Clifford gate circuits at the logical level.
 
 ## Core Methodology
 
 ### 1. Quantum Group Code Construction
+- Start with classical quasi group codes over alphabet F_q
+- Lift to quantum CSS codes supporting transversal C^m Z gates
+- Key property: gates are both addressable (target specific qubits) and parallelizable (run multiple simultaneously)
 
+### 2. AG Code Lifting via Class Field Theory
+- Input: good quantum AG code over F_q with transversal C^m Z gate
+- Apply class field theory lifting to underlying classical AG code
+- Output: quantum group code over F_{q^2} with:
+  - Transversal C^m Z gate
+  - Addressable and parallelizable C^{m-1} Z gates
+
+### 3. Quasi-Quadratic Time Decoder
+- Previous quantum AG codes: cubic-time decoder
+- New construction: quasi-quadratic time decoder with linear decoding radius
+- **Result**: magic-state distillation time complexity reduced by almost linear factor
+
+## Technical Patterns
+
+### Pattern 1: Transversal Gate Preservation
 ```
-Classical quasi group code over F_q
-         ↓ (lifting procedure from class field theory)
-Quantum group code over F_{q²}
-         ↓
-CSS code with transversal C^m Z gates
-```
-
-### 2. Key Properties
-
-| Property | Quantum Group Codes | Previous Quantum AG Codes |
-|----------|-------------------|------------------------|
-| Transversal gates | C^m Z (addressable + parallelizable) | Limited gate support |
-| Decoding complexity | O(n² log n) quasi-quadratic | O(n³) cubic |
-| Decoding radius | Linear in code distance | Sublinear |
-| Gate parallelizability | Full parallel C^{m-1}Z | Limited |
-
-### 3. Lifting Procedure
-
-The lifting maps a good quantum AG code over F_q to a quantum group code over F_{q²}:
-
-1. **Input**: Quantum AG code with transversal C^m Z gate over F_q
-2. **Lift**: Apply class field theory lifting to underlying classical AG code
-3. **Output**: Quantum group code over F_{q²} supporting:
-   - Transversal C^m Z gate
-   - Addressable and parallelizable C^{m-1}Z gates
-   - Quasi-quadratic time decoder
-
-### 4. Decoding Algorithm
-
-```python
-def decode_quantum_group_code(syndrome, code_params):
-    """
-    Quasi-quadratic time decoder for quantum group codes
-    
-    syndrome: measured error syndrome
-    code_params: (n, k, d, q) code parameters
-    
-    Returns: estimated error pattern
-    Complexity: O(n² log n) vs O(n³) for AG codes
-    """
-    # Step 1: Syndrome decomposition using group structure
-    syndrome_groups = decompose_by_group_structure(syndrome)
-    
-    # Step 2: Quasi-quadratic decoding per group
-    # Leverages algebraic geometry code structure
-    errors = []
-    for group in syndrome_groups:
-        error = decode_group_efficiently(group, code_params)
-        errors.append(error)
-    
-    # Step 3: Combine and verify
-    return combine_and_verify(errors)
+Classical code with property P
+  → Quantum CSS code preserving P
+  → Transversal gate implementation
 ```
 
-## Implementation Steps
-
-### Step 1: Construct Base AG Code
-
-- Start with a good classical AG code over F_q
-- Ensure it supports the desired transversal gate level
-- Parameters: rate R, distance d, alphabet size q
-
-### Step 2: Apply Lifting
-
-```python
-def lift_to_quantum_group_code(base_ag_code):
-    """Lift classical AG code to quantum group code"""
-    # Apply class field theory lifting
-    lifted_code = class_field_lift(base_ag_code)
-    
-    # Construct CSS code from lifted classical codes
-    css_code = construct_css(lifted_code)
-    
-    # Verify transversal gate support
-    assert supports_transversal_gate(css_code, 'C^m Z')
-    
-    return css_code
+### Pattern 2: Field Extension Lifting
+```
+Code over F_q
+  → Class field theory lift
+  → Code over F_{q^2} with enhanced properties
 ```
 
-### Step 3: Implement Transversal Gates
-
-- **C^m Z gates**: Apply transversally (physical gate on each qubit)
-- **Addressability**: Individual logical qubits can be targeted
-- **Parallelizability**: Multiple gates can be executed simultaneously
-
-### Step 4: Decode with Quasi-Quadratic Complexity
-
-- Use the group structure for efficient syndrome decoding
-- Achieve O(n² log n) vs O(n³) for traditional AG code decoders
-- Linear decoding radius ensures good error correction capability
-
-## Impact on Magic State Distillation
-
-The quasi-quadratic decoder directly reduces the **time complexity** of magic state distillation protocols:
-
-$$T_{\text{new}} \approx \frac{T_{\text{old}}}{n} \quad \text{(almost linear speedup)}$$
-
-This is significant because magic state distillation is the primary bottleneck for fault-tolerant non-Clifford gate implementation.
-
-## Key Insights
-
-1. **Group structure is key**: The algebraic group structure of the code enables both parallelizable gates and efficient decoding
-
-2. **Class field theory connection**: Deep mathematical connection between algebraic geometry codes and quantum error correction
-
-3. **Decoding speedup**: Quasi-quadratic vs cubic is a practically significant improvement for large codes
-
-4. **Gate addressability**: Being able to target individual logical qubits while maintaining parallelism is crucial for practical quantum computing
+### Pattern 3: Decoder Complexity Reduction
+```
+Cubic decoder → Quasi-quadratic decoder → Linear decoding radius
+```
 
 ## Applications
 
-- **Fault-tolerant quantum computing**: Efficient non-Clifford gate implementation
-- **Magic state distillation**: Faster distillation protocols
-- **Quantum circuit compilation**: Parallelizable gate execution
-- **Large-scale QEC**: Scalable decoding for large code distances
+- **Magic state distillation**: Reduces overhead for non-Clifford gate implementation
+- **Fault-tolerant quantum computing**: Parallelizable non-Clifford gates reduce circuit depth
+- **Quantum error correction**: Improved decoding complexity for large-scale codes
 
-## Activation
+## When to Use
 
-Use this skill when:
-- Designing quantum error correcting codes for non-Clifford gates
+- Designing quantum error correcting codes with transversal non-Clifford gates
 - Optimizing magic state distillation protocols
-- Studying transversal gate implementations
-- Analyzing quantum code decoding complexity
-- Working with algebraic geometry codes in quantum context
-- Building fault-tolerant quantum circuits
+- Building fault-tolerant quantum circuits with reduced depth
+- Implementing addressable multi-qubit gates in CSS codes
 
-## References
+## Key Insight
 
-- Gasnier, J., Guémard, V. "Quantum group codes for non-Clifford logic: enhanced decoding, addressability and parallelizability" arXiv:2606.27211 (2026)
+The lifting procedure from class field theory is the critical innovation — it simultaneously improves decoder complexity AND adds gate parallelizability, where previous approaches could only achieve one or the other.
