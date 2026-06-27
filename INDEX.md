@@ -9,6 +9,25 @@
   - Applicable to CDS, XVA, quanto CDS, and credit portfolio risk
   - **Activation**: path integral pricing, default intensity model, credit default swap pricing, semi-analytical pricing, XVA computation, stochastic intensity, quantum finance, Black-Karasinski pricing, quanto CDS
 
+### Large-scale portfolio optimization on a trapped-ion quantum computer
+- [[quantum-finance-pipeline]] - Hardware-aware quantum portfolio optimization pipeline with correlation-guided decomposition, BF-DCQO non-variational optimization, and two-stage post-processing for 250-asset S&P 500 on 64-qubit trapped-ion system (arXiv: 2602.23976)
+  - RMT-based correlation denoising + community detection + correlation-guided greedy splitting by qubit budget
+  - BF-DCQO avoids classical parameter-training loops; two-stage post-processing (fast repair + cardinality-preserving swap)
+  - **Activation**: quantum portfolio optimization, trapped-ion quantum computing, BF-DCQO, correlation-guided decomposition, hardware-aware quantum optimization, cardinality constraints
+
+### Constraint-Aware Quantum Optimization via Hamming Weight Operators
+- [[quantum-finance-pipeline]] - Hamming Weight Operators confine quantum evolution to feasible subspace, achieving higher Approximation Ratios with ~50% fewer gates than penalty-based QAOA (arXiv: 2601.01516)
+  - Adaptive operator selection constructs shallow, problem-tailored circuits
+  - Validated on portfolio optimization and jet clustering in high-energy physics
+  - **Activation**: hamming weight operator, constraint-aware QAOA, feasible subspace, adaptive variational quantum optimization, shallow quantum circuits
+
+### Constraint Preserving XY-Mixers under Trotterized Adiabatic Evolution
+- [[quantum-finance-pipeline]] - Constraint locality determines XY-mixer effectiveness: global constraints → use Pauli-X; local blocks → XY-mixers outperform by orders of magnitude (arXiv: 2605.02465)
+  - Trotter errors scale with individual constraint size, not total problem size
+  - Dedicated mixer Hamiltonian for TSP-like 2-way-1-hot constraints
+  - **Activation**: xy-mixer, trotterized adiabatic evolution, constraint-preserving mixer, quantum combinatorial optimization, QAOA mixer selection
+
+
 ### Quantum-Resilient Decentralized AI Economies
 - Proof-of-Useful-Work consensus replacing hash puzzles with ML computation; post-quantum security analysis (arXiv: 2606.24942)
   - Three-layer architecture: compute, validation, economic coordination
