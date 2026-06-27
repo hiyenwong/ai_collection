@@ -1,93 +1,87 @@
 ---
 name: quantum-market-entanglement
-description: "Quantum market stabilization via entangled neural traders methodology. Uses quantum entanglement between traders' valuations as endogenous mechanism to mitigate runaway devaluation in speculative busts. RL agents with quantum-correlated qubit-encoded valuations stabilize prices and increase net worth vs classical markets. Quantized p-guessing game shows entanglement eliminates pathological Nash equilibrium driving market collapse. Use when: (1) modeling financial market dynamics with quantum methods, (2) studying market stabilization mechanisms, (3) quantum game theory for trading, (4) speculative bubble analysis, (5) quantum economics research."
-license: Complete terms in LICENSE.txt
+description: "Quantum entanglement methodology for stabilizing financial markets via entangled neural traders. Use for: (1) modeling how quantum entanglement can suppress speculative trading dynamics, (2) designing entangled neural network architectures for market stabilization, (3) analyzing speculation-quenching through quantum correlations, (4) quantum game theory for market equilibrium, (5) entanglement-based risk management."
 metadata:
   arxiv_id: "2602.06367"
   published: "2026-02-06"
-  authors: "Various"
-  tags: [quantum, economics, market, entanglement, stabilization, game-theory]
+  tags: [quantum, markets, entanglement, speculation, neural-networks, game-theory, finance, economics, stabilization]
 ---
 
 # Quantum Market Entanglement
 
-Quantum-correlated valuation methodology for stabilizing financial markets through entangled neural traders — replacing speculative collapse dynamics with quantum-stabilized equilibria.
+## Description
 
-## Core Paper
+Quantum entanglement methodology for financial market stabilization using entangled neural traders. Addresses how quantum correlations can suppress speculative trading dynamics before they emerge.
 
-### Entangled Neural Traders (arXiv: 2602.06367)
-Quantum stock market prototype where **entanglement between traders' valuations mitigates runaway devaluation** in speculative busts. Key results:
-- RL agents with quantum-correlated qubit-encoded valuations stabilize prices
-- Quantum agents achieve higher net worth than classical counterparts
-- Quantized p-guessing game shows entanglement eliminates pathological Nash equilibrium
-- Quantum correlations serve as **novel endogenous mechanism for market stabilization**
+## Core Concepts
 
-## Usage Patterns
+### Entangled Neural Traders
+Neural network agents whose decision-making processes are quantum-entangled, creating correlated strategies that reduce speculative divergence. The entanglement creates a "market stabilizer" effect by aligning trader expectations through quantum correlations rather than classical communication.
 
-### Pattern 1: Quantum Market Model
+### Speculation Quenching
+Speculative trading drives market instabilities (bubbles, crashes). Quantum entanglement between traders provides a fundamentally different approach to stabilization:
+- Classical: traders act independently → speculative feedback loops
+- Quantum: traders share entangled state → correlated expectations → reduced speculation
 
-Build quantum market simulation:
+### Quantum Game Theory Foundation
+Market equilibrium analyzed through quantum game theory: entangled strategies create Nash equilibria that are more stable than classical mixed strategies.
 
-1. Encode trader valuations as qubit states
-2. Introduce entanglement between trader pairs
-3. Use RL agents to learn trading strategies
-4. Observe price stabilization effects
+## Methodology
 
-```python
-# Conceptual framework
-# Trader valuation: |v⟩ = α|0⟩ + β|1⟩
-# Entangled pair: |Φ⟩ = (|00⟩ + |11⟩)/√2
-# Effect: Correlated valuations prevent runaway devaluation
-```
+### Step 1: Model Trader Population as Quantum System
+- Map each trader to a quantum state |ψᵢ⟩
+- Define entanglement structure (Bell pairs, GHZ states, cluster states)
+- Parameterize entanglement strength via coupling parameters
 
-### Pattern 2: Quantized p-Guessing Game
+### Step 2: Define Neural Decision Functions
+- Classical neural network outputs probability distributions over actions
+- Quantum-entangled version: joint probability from entangled measurement
+- P(a₁, a₂, ..., aₙ) = |⟨a₁a₂...aₙ|Ψ_entangled⟩|²
 
-Model speculative behavior:
+### Step 3: Analyze Market Stability
+- Compare classical vs quantum trader dynamics
+- Measure speculation intensity (variance of order flow, price impact)
+- Quantify quenching effect: reduction in speculative volume
 
-1. Define classical p-guessing game with pathological Nash equilibrium
-2. Quantize the game using qubit strategies
-3. Show entanglement eliminates the pathological equilibrium
-4. Demonstrate convergence to stable pricing
+### Step 4: Optimize Entanglement Structure
+- Find optimal entanglement topology for given market structure
+- Balance entanglement cost vs stabilization benefit
+- Consider partial entanglement for realistic implementations
 
-### Pattern 3: Market Stabilization Analysis
+## Integration with Portfolio Optimization
 
-Compare quantum vs classical market dynamics:
+### HPO + Quantum Markets
+When markets exhibit speculative dynamics, heuristic portfolio rules (HRP, risk parity) may fail. Entangled neural traders provide a stabilized market backdrop where HPO optimality conditions become more reliable.
 
-1. Measure price volatility in classical market (high in speculative busts)
-2. Measure price volatility in quantum-entangled market (stabilized)
-3. Compare trader net worth (quantum > classical)
-4. Identify entanglement as endogenous stabilizer
+### Quantum Portfolio + Market Stabilization
+Entangled neural traders reduce market noise → improved covariance estimation → better quantum portfolio optimization results. The stabilization effect cascades: less speculation → cleaner signals → better quantum optimization.
 
-## Mathematical Framework
+## Pitfalls
 
-### Qubit-Encoded Valuation
-Trader i's valuation encoded as qubit state:
-|vᵢ⟩ = cos(θᵢ/2)|0⟩ + e^(iφᵢ)sin(θᵢ/2)|1⟩
+### Entanglement Realism
+True quantum entanglement between traders is physically unrealistic for financial markets. The methodology is best understood as: (1) a theoretical framework for analyzing coordination effects, (2) an analogy for classical correlation mechanisms, or (3) a future quantum-computing-based trading system design.
 
-### Entangled Valuation Pairs
-Entanglement creates correlated valuation structure:
-|Φ⁺⟩ = (|00⟩ + |11⟩)/√2
+### Game Theory Assumptions
+Quantum game theory equilibria assume rational players with quantum capabilities. Real markets have bounded rationality, heterogeneous beliefs, and non-quantum dynamics.
 
-This correlation prevents independent speculative overvaluation.
-
-### Stabilization Mechanism
-Entanglement → correlated beliefs → coordinated pricing → eliminated pathological equilibrium
-
-## Error Handling
-
-### Classical Market Collapse
-- **Symptom**: Runaway devaluation in speculative bust
-- **Quantum fix**: Entanglement between traders coordinates expectations
-- **Verification**: Compare Nash equilibria with/without entanglement
-
-### Implementation Scale
-- **Current**: Single-commodity prototype
-- **Extension needed**: Multi-asset markets, realistic order books
+### Scalability
+Full entanglement across N traders requires O(2ᴺ) dimensional Hilbert space. Practical implementations use limited entanglement topology (nearest-neighbor, star, ring).
 
 ## Activation Keywords
-- quantum market stabilization, entangled neural traders
-- quantum economics, speculative bubble quantum
-- quantum game theory trading
-- quantum correlation market stability
-- 量子市场稳定, 量子纠缠交易, 投机泡沫量子
-- quantum p-guessing game market
+- quantum market entanglement
+- entangled neural traders
+- speculation quenching
+- quantum market stabilization
+- quantum game theory finance
+- 量子市场纠缠
+- 投机抑制
+- 纠缠神经交易员
+
+## Related Skills
+- `quantum-game-theory-economics` - quantum game theory for economics
+- `quantum-market-speculation-framework` - market speculation modeling
+- `quantum-finance-portfolio` - quantum finance portfolio
+- `quantum-cognition` - quantum cognition methodology
+- `quantum-economics` - quantum economics applications
+- `heuristic-portfolio-optimization` - classical portfolio optimization
+- `quantum-portfolio-optimization` - quantum portfolio optimization

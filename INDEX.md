@@ -3313,3 +3313,20 @@
   - 训练收敛更快，处理超越GAS和纯QRL范围的更大VRP实例
   - A2C策略网络结合参数移位梯度更新QAOA角度
   - **Activation**: QAOA reinforcement learning, quantum vehicle routing, hybrid QRL QAOA, quantum combinatorial optimization, quantum logistics optimization
+
+## 2026-06-27 - Economics, Investment + Quantum (Cron Job)
+
+### The Mathematics of Heuristic Portfolio Optimization (HPO)
+- [[heuristic-portfolio-optimization]] - Information-restricted projection of Markowitz solution onto stable rule class (equal weight, inverse volatility, risk parity, HRP, RA-HRP) with implied-return principle and RLPO integration (arXiv: 2606.12612)
+  - Implied-return principle: **w** is max-Sharpe iff **μₑ** ∝ **Σw**
+  - Implied-return defect = squared Sharpe inefficiency, decomposable into bias-variance
+  - HRP understood via Schur-complement substitution with fixed-tree cluster-Sharpe recursion
+  - RLPO integration: HPO as γ=0 static layer, RA-HRP as hierarchical policy prior
+  - **Activation**: heuristic portfolio, HPO, risk parity, HRP, implied return, RL portfolio, RA-HRP
+
+### Quenching Speculation in Quantum Markets via Entangled Neural Traders
+- [[quantum-market-entanglement]] - Quantum entanglement methodology for stabilizing financial markets using entangled neural traders to suppress speculative trading dynamics (arXiv: 2602.06367)
+  - Entangled neural traders create correlated expectations that reduce speculative divergence
+  - Quantum game theory foundation: entangled strategies create more stable Nash equilibria
+  - Speculation quenching: quantum correlations replace classical communication for alignment
+  - **Activation**: quantum market entanglement, entangled neural traders, speculation quenching, quantum stabilization

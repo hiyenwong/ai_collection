@@ -1,75 +1,104 @@
 ---
 name: heuristic-portfolio-optimization
-description: "Heuristic Portfolio Optimization (HPO) methodology — information-restricted projection of Markowitz/tangency solution onto stable rule class (equal weight, inverse volatility, risk parity, HRP, RA-HRP). Implied-return principle gives closed-form optimality sets. Embedded into RLPO as deterministic stationary policies. Activation: heuristic portfolio optimization, HPO, risk parity, hierarchical risk parity, implied return principle, RLPO"
+description: "Heuristic Portfolio Optimization (HPO) methodology — information-restricted projection of Markowitz/tangency solution onto stable rule class (equal weight, inverse volatility, risk parity, HRP, RA-HRP). Use for: (1) analyzing when simple portfolio heuristics are near-optimal, (2) implied-return principle for heuristic optimality, (3) embedding HPO into RL portfolio optimization (RLPO), (4) comparing heuristic vs quantum portfolio optimization approaches, (5) Sharpe inefficiency analysis via implied-return defect."
 metadata:
   arxiv_id: "2606.12612"
-  published: "2026-06-24"
-  authors: "HPO Authors"
-  tags: [economics, finance, portfolio, optimization, risk-parity, HRP]
+  published: "2026-06-10"
+  authors: "Unknown"
+  tags: [portfolio-optimization, heuristic, HPO, risk-parity, HRP, RL, reinforcement-learning, finance, economics]
 ---
 
 # Heuristic Portfolio Optimization (HPO)
 
 ## Description
-Practitioners allocate capital using forecast-light rules (equal weight, inverse volatility, risk parity, HRP, RA-HRP). HPO formalizes these as information-restricted projections of the Markowitz/tangency solution onto a stable rule class. The implied-return principle yields closed-form optimality sets. HPO maps embed into RLPO as deterministic stationary policies.
 
-## Activation Keywords
-- heuristic portfolio optimization
-- HPO
-- risk parity
-- hierarchical risk parity
-- HRP
-- implied return principle
-- RLPO
-- 启发式投资组合优化
-- 风险平价
-- 等权重组合
+HPO methodology formalizing when and why simple portfolio allocation rules (equal weight, inverse volatility, risk parity, HRP, RA-HRP) are near-optimal. Introduces the implied-return principle, implied-return defect metric, and integration with RL portfolio optimization (RLPO).
 
 ## Core Concepts
 
-### Information-Restricted Projection
-HPO projects the full Markowitz/tangency portfolio onto a constrained rule class that uses limited information (e.g., only covariance, no return forecasts). This explains why heuristics work well: they are optimal under information constraints.
-
 ### Implied-Return Principle
-For each heuristic (equal weight, inverse vol, risk parity, HRP, RA-HRP), derive the implied return vector that would make that heuristic exactly optimal under Markowitz. This provides a diagnostic: if implied returns are economically plausible, the heuristic is well-justified.
+A portfolio weight vector **w** is maximum-Sharpe if and only if the expected return vector satisfies: **μₑ** ∝ **Σw** (proportional to covariance times weights). This gives closed-form optimality conditions for all leading heuristics.
 
-### Schur-Complement Substitutions
-HRP's recursive bisection corresponds to Schur-complement eliminations in the covariance matrix. This reveals the mathematical structure behind HRP's stability properties.
+### Implied-Return Defect
+The implied-return defect equals squared Sharpe inefficiency: measures how far a heuristic portfolio is from the tangency portfolio. Formal: defect(**w**) = ||**Σw** - c**μₑ**||² for appropriate scaling c.
 
-### RLPO Embedding
-Every HPO map induces a deterministic stationary policy in the Reinforcement Learning Portfolio Optimization (RLPO) framework. This bridges heuristic methods with RL-based approaches.
+### HRP Schur-Complement Substitution
+Hierarchical Risk Parity (HRP) can be understood as a Schur-complement substitution that recursively partitions the covariance matrix by hierarchical clustering.
+
+### RLPO Integration
+- Every HPO map induces a deterministic stationary policy in RL
+- Static HPO = γ=0 no-friction face of the Bellman problem
+- RA-HRP supplies a hierarchical policy prior for RL
+- Dynamic improvement warranted when continuation value > myopic HPO defect + frictions
+- Performance-difference identity: prices myopic value gap, gives ε/(1-γ) myopia bound
+- Nodewise alphas = policy-gradient coordinates of the hierarchical actor
 
 ## Methodology
 
-### Step 1: Choose Heuristic Class
-Select from: equal weight (1/N), inverse volatility, risk parity, HRP, RA-HRP.
+### Step 1: Choose Heuristic Rule
+Select from: equal weight, inverse volatility, risk parity, HRP, RA-HRP. Each has different information requirements and optimality conditions.
 
 ### Step 2: Compute Implied Returns
-Given the heuristic weights w and covariance Σ, compute implied returns:
-μ_implied = λ · Σ · w (for some risk aversion λ)
+For chosen weights **w**, compute implied returns: **μ_implied** = **Σw** / (1ᵀ**Σw**). This is the return vector that would make **w** optimal under Markowitz.
 
-### Step 3: Evaluate Optimality
-Check if μ_implied is economically plausible. If yes, the heuristic is near-optimal under realistic return expectations.
+### Step 3: Evaluate Implied-Return Defect
+Compare implied returns against actual forecasts. Defect = ||**μ_implied** - **μ_actual**||² measures how suboptimal the heuristic is given available information.
 
-### Step 4: RLPO Integration
-Use HPO map as initial policy or baseline in RL-based portfolio optimization.
+### Step 4: Bias-Variance Decomposition
+Decompose total error into:
+- **Bias**: systematic deviation from tangency due to rule structure
+- **Variance**: estimation error from sample covariance/returns
+
+### Step 5: RLPO Enhancement (Optional)
+If defect + frictions < continuation value, use HPO as prior for RL policy optimization. RA-HRP provides hierarchical policy structure.
+
+## Integration with Quantum Optimization
+
+### HPO as Classical Baseline
+HPO provides the classical benchmark against which quantum portfolio optimization (QAOA, VQE, quantum annealing) must compete. Any quantum algorithm must demonstrate improvement over the best HPO rule.
+
+### Hybrid Workflow
+1. Use HPO to identify near-optimal weight region
+2. Use HPO solution as warm-start for QAOA/VQE
+3. Quantum search refines within constrained space
+4. Compare quantum solution against HPO implied-return defect
+
+### When to Use Quantum vs HPO
+- **HPO wins**: when information is limited (forecasts unreliable), transaction costs high, or problem size small (<50 assets)
+- **Quantum wins**: when constraints are complex (integer lot sizes, cardinality), problem is large, or non-convex objectives exist
 
 ## Pitfalls
 
-### HRP Schur-Complement Instability
-HRP's hierarchical clustering can be unstable under high correlation regimes. Validate cluster stability before deploying.
+### HRP Cluster Sensitivity
+HRP results depend on clustering method (single/complete/average linkage). Different clusterings → different weights. Use fixed-tree cluster-Sharpe recursion for reproducibility.
 
-### Risk Parity in Negative Return Environments
-Risk parity assumes all assets have positive risk premia. In bear markets, this assumption breaks down → consider RA-HRP (return-adjusted variant).
+### RA-HRP Interpolation
+RA-HRP requires unit-free interpolation between HRP and RA-HRP. Use tangency conditions to find optimal interpolation parameter.
 
-### RLPO Policy Convergence
-HPO-induced policies are deterministic → may limit exploration in early RL training. Add entropy regularization or ε-greedy for initial exploration phase.
+### RLPO Friction Modeling
+When embedding HPO into RL, frictions (transaction costs, market impact) must be modeled. Without frictions, static HPO = γ=0 solution. With frictions, dynamic RL may improve but requires careful continuation value estimation.
 
-### Information Restriction Trade-off
-HPO intentionally discards return forecast information. When accurate forecasts are available, full Markowitz may outperform. Use HPO when forecast reliability is low or unstable.
+### GRS Testability
+HPO optimality conditions are GRS-testable (Gibbons-Ross-Shanken). Use multivariate regression to test if implied returns are consistent with observed returns.
 
-## References
-- arXiv: 2606.12612 - "The Mathematics of Heuristic Portfolio Optimization (HPO)"
-- Related: `distributionally-robust-shortfall-risk-portfolio` (robust portfolio optimization)
-- Related: `vqa-dynamic-portfolio-optimization` (quantum portfolio optimization)
-- Related: `hotstart-quantum-portfolio-optimization` (quantum hot-starting for portfolio)
+## Activation Keywords
+- heuristic portfolio optimization
+- HPO methodology
+- risk parity analysis
+- hierarchical risk parity
+- implied return principle
+- portfolio heuristic optimality
+- HRP vs Markowitz
+- RL portfolio optimization
+- 启发式投资组合优化
+- 风险平价分析
+- 层次风险平价
+
+## Related Skills
+- `quantum-portfolio-optimization` - QAOA-based portfolio optimization
+- `quantum-finance-portfolio` - quantum finance portfolio methods
+- `hotstart-quantum-portfolio-optimization` - warm-starting quantum portfolio
+- `qaoa-feasibility-penalty-scheduling` - feasibility-driven QAOA
+- `heuristic-portfolio-optimization` - this skill
+- `distributional-portfolio-optimization` - distributionally robust portfolio
+- `deep-portfolio-optimization-framework` - deep learning portfolio
