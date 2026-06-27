@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job) — QRC Forecasting
+
+### Quantum Reservoir Computing for Resource-Efficient Forecasting
+- [[quantum-reservoir-forecasting-resource-efficient]] - 资源高效量子储备池计算框架：固定量子储备池+经典弹性网读取层+6bit后训练量化（内存减少81.2%），直接迁移含噪硬件无需重训练 (arXiv: 2606.12806)
+  - Fixed quantum reservoir transforms temporal inputs to high-dimensional features — no quantum parameter training needed
+  - Post-training fixed-point quantization: 6-bit preserves full accuracy with 81.2% memory reduction
+  - Hardware-noise resilience: train noiseless → deploy on noisy hardware without retraining
+  - Dataset-dependent degradation below 6-bit threshold — always validate
+  - **Activation**: quantum reservoir computing, QRC quantization, resource-efficient quantum ML, edge quantum deployment, time-series forecasting quantum, fixed quantum reservoir, NISQ forecasting
+
+### Split-Ensemble Training for QRC
+- [[split-ensemble-qrc-training]] - 分裂集成训练方法：重组量子测量记录将单组shots拆分为多组独立特征向量，在不增加量子硬件成本的前提下K倍增加训练样本 (arXiv: 2604.28160)
+  - Standard QRC averages all shots → 1 training example per timestep (severely undertrained)
+  - Split-ensemble: N shots → K groups → K independent feature vectors per timestep
+  - Each group average is partially denoised → readout learns from multiple noisy views
+  - Strongest gains on real hardware where noise is structured
+  - **Activation**: split-ensemble training, quantum measurement records, shot reorganization, QRC training efficiency, finite-shot quantum ML, near-term quantum learning
+
 ## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job)
 
 ### Quantum Finance Computation Stack (Unified Framework)
