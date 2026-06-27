@@ -2,6 +2,18 @@
 
 ## 2026-06-27 - Economics, Investment + Quantum Computing (Cron Job)
 
+### Quantum Finance Computation Stack (Unified Framework)
+- [[quantum-finance-computation-stack]] - 统一金融计算栈框架：五层架构（组合优化/QAOA/导数定价/尾部风险/量子ML/后量子安全）+ Expert Analysis Evaluation 桥接算法-金融可行性 (arXiv: 2604.08180,2510.11153,2507.20532,2505.08917)
+  - Layer 1: Portfolio optimization (QUBO/QAOA/hot-start) with compact Hilbert space from continuous relaxation
+  - Layer 2: Derivative pricing via amplitude estimation (quadratic Monte Carlo speedup)
+  - Layer 3: Tail-risk analysis and rare-event simulation
+  - Layer 4: QML (QNN/QRC/quantum kernels) — task-dependent advantage
+  - Layer 5: Post-quantum security — strategically necessary pre-FTQC migration
+  - Expert Evaluation: algorithmic optimality ≠ financial viability; diversification/risk constraints essential
+  - Hot-start: continuous relaxation → compact Hilbert space → reduced QUBO → QAOA/annealer
+  - Quantum discord (not entanglement) as minimal resource for bounded rationality beyond classical limits
+  - **Activation**: quantum finance stack, computation stack, hot-start quantum portfolio, expert evaluation portfolio, quantum derivative pricing, quantum tail risk, quantum bounded rationality, quantum discord game theory
+
 ### Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization
 - [[quantum-nisq-resilience-benchmark]] - 表达力-相干性权衡(expressibility-coherence trade-off)量化方法论：WS-QAOA表达力强但退相干灾难，HE-VQNN相干性好但无法捕获密集尾部风险 (arXiv: 2606.07727)
   - SWAP Tax 量化：密集金融问题映射到稀疏 heavy hex 拓扑导致指数级路由开销
