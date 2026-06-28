@@ -1,3 +1,19 @@
+## 2026-06-29 - Neuromorphic SNN Applications (Cron Job 3/3)
+
+### EMRFormer: End-to-End Radar and Communication Modulation Recognition with Neuromorphic Computing
+- [[emrformer-neuromorphic-amr]] - Spike-driven transformer for AMR deployed on KA200 neuromorphic chip with 90%+ energy reduction (arXiv: 2606.24075)
+  - Adaptive spike encoder + Integer LIF neurons for raw IQ waveform classification
+  - Spike-Separable CNN (SSCNN) integrated into SpikeFormer backbone
+  - **Activation**: EMRFormer, neuromorphic AMR, KA200 chip, spike-driven transformer, IQ waveform, edge AI radar
+
+### GSU-DBNet: Neuromorphic Speech Enhancement with Dual-Branch Spiking Neural Networks
+- [[gsu-dbnet-snn-speech-enhancement]] - Dual-branch SNN with Gated Spiking Units achieving PESQ 3.04 with only 394K params (arXiv: 2606.23761)
+  - Gated Spiking Unit (GSU) overcomes binary activation limitations
+  - Simultaneous magnitude + complex spectrum processing (dual-branch)
+  - **Activation**: GSU-DBNet, gated spiking unit, speech enhancement SNN, dual-branch, Interspeech 2026, neuromorphic audio
+
+---
+
 ## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly #3)
 
 ### Decoherence as Defence: N-Qubit Theory of Stochastic Quantum Neural Networks for Adversarial Robustness
