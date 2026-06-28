@@ -6,6 +6,18 @@
   - Networks develop low-entropy, modular, small-world organization; advantages persist under positive-only recurrence constraint
   - **Activation**: MICrONS, cortical priors, functional connectomics, spatial embedding, RNN inductive biases, communicability, small-world
 
+### SpikeTimer: Exploring Active Copyright Protection in Spiking Neural Networks via Temporal Backdoor Regularization
+- [[spiketimer-snn-copyright-protection]] - Active SNN copyright protection via temporal backdoor learning (arXiv: 2606.26841, IEEE TIFS 2026)
+  - Partitions neuromorphic data into timeslices; authorized tokens embedded only in authorized slices
+  - Unauthorized data yields ~10% accuracy with only ~1.5% degradation on authorized inputs; robust to finetuning/pruning
+  - **Activation**: spiketimer, SNN copyright, temporal backdoor, neuromorphic security, active IP protection
+
+### Towards Robust EEG Decoding Based on Riemannian Self-Attention
+- [[riemannian-self-attention-eeg-decoding]] - Bures-Wasserstein metric Riemannian self-attention for EEG decoding (arXiv: 2606.25456, KDD 2026)
+  - Replaces Affine-Invariant Metric with BWM for linear complexity and better ill-conditioning behavior
+  - Power-deformed generalized BWM enables learnable metric adaptation on SPD manifold
+  - **Activation**: GBWAtt, Bures-Wasserstein, Riemannian attention, EEG SPD, BCI decoding
+
 ---
 
 ## 2026-06-29 - Neuroscience + Quantum (Cron Job)
