@@ -1,3 +1,16 @@
+## 2026-06-29 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Quantum Hyperdimensional Computing: a foundational paradigm for quantum neuromorphic architectures
+- [[quantum-hyperdimensional-computing-qhdc]] - Maps HDC operations to quantum-native implementations (LCU/OAA for bundling, phase oracles for binding, QFT for permutation, Hadamard Test for similarity), validated on 156-qubit IBM Heron r3 (arXiv: 2511.12664)
+  - 核心要点 1: HDC core operations (hypervectors, bundling, binding, permutation, similarity) map directly to native quantum operations without classical adaptation
+  - 核心要点 2: Exponential compression via n-qubit states representing 2^N-dimensional hypervectors with O(1) similarity measurement
+  - **Activation**: quantum hyperdimensional computing, QHDC, quantum neuromorphic, LCU amplitude amplification, quantum phase oracle
+
+### Covariant quantum error correction in a three-layer quantum brain model
+- [[three-layer-quantum-brain-coherence]] - Computational analysis of CQEC across radical-pair proteins in three-layer quantum brain: CRY achieves ×6.9 coherence improvement (0.83 vs 0.12), MAO-A fails at T₂=3.2ms (arXiv: 2604.08587)
+  - 核心要点 1: CQEC maintains tunneling coherence over 200ms veto window only when T₂ > ~26ms; layer-protein tradeoff exists (CRY better Layer 1, MAO-A better Layer 2)
+  - 核心要点 2: LMG quantum brain model with synaptic feedback reshapes phase diagram — expands paramagnetic phase, displaces critical boundaries
+  - **Activation**: covariant quantum error correction, CQEC, three-layer quantum brain, LMG Hamiltonian, cryptochrome, phase transition
 ## 2026-06-28 - Information Science + Quantum Mechanics (Cron Job)
 
 ### CIM-BDD: When LWE Meets Coherent Ising Machine — Penalty-Free Algorithm-Hardware Co-Design
