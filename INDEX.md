@@ -16,6 +16,20 @@
 
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
+
+### SPIDER: Directed Information Flow from Incomplete Recordings
+- [[spider-directed-connectivity]] - Non-parametric frequency-domain framework for inferring directed connectivity from fragmented neural recordings (arXiv: 2606.22695)
+  - Overcomes missing data via stitched power-spectra and nuclear-norm completion
+  - Frequency-resolved directed interactions via canonical spectral factorization + PDC
+  - **Activation**: SPIDER, directed connectivity, asynchronous recordings, spectral factorization, effective connectivity, nuclear-norm completion
+
+### DevoTG: Temporal Graph Neural Networks for Developmental Connectomics
+- [[devotg-temporal-graph-connectomics]] - Temporal GNN framework for modeling C. elegans neural development through cell lineage and synaptic connectome graphs (arXiv: 2606.21940)
+  - Dual representation: Continuous-Time Dynamic Graph (cell division) + Discrete-Time Dynamic Graph (synaptic connectome across 8 EM datasets)
+  - Temporal memory achieves 0.839 AUC for lineage prediction vs 0.577 for static GNN (+26 points); identifies 3 connection stability classes
+  - **Activation**: DevoTG, temporal graph neural network, developmental connectomics, C. elegans, cell lineage, connectome development
+
+---
 ### Harnessing cortical geometry, wiring, and function as inductive biases for recurrent neural networks
 - [[cortical-geometry-rnn-inductive-biases]] - Uses MICrONS connectomics to build biologically-grounded RNNs with functional weight init + spatial embedding + communicability regularization (arXiv: 2606.14975)
   - Functional weight initialization from neural activity correlation provides largest performance gain; real spatial coordinates add robust secondary benefit
