@@ -54,6 +54,18 @@
   - Memory capacity improves when spatial arrangement of noise fields reflects proximity relationships among learned functions; mismatches reduce capacity
   - **Activation**: noise field neural network, partial functionalization, spatial noise computation, subnetwork selection, noise-modulated computation
 
+### Parameter Efficient Hybrid Spiking-Quantum CNN with Surrogate Gradient
+- [[sqdr-cnn-spiking-quantum]] - End-to-end trainable hybrid SNN-quantum CNN using surrogate gradients and quantum data-reupload (arXiv: 2512.03895)
+  - Joint backpropagation eliminates pretrained SNN encoder requirement
+  - Surrogate gradient + quantum data re-upload enables parameter-efficient hybrid model
+  - **Activation**: spiking quantum, SQNN, surrogate gradient, quantum data reupload, hybrid neural network
+
+### Quantum Optical Neuron for Image Classification via Multiphoton Interference
+- [[quantum-optical-neuron]] - Camera-free quantum-optical image classifier using multiphoton interference for energy-efficient inference (arXiv: 2603.28879)
+  - Performs inference directly in physical layer via multiphoton interference
+  - Energy-efficient in photon-limited regimes, natural inner product computation
+  - **Activation**: quantum optical neuron, multiphoton interference, optical ML, photonic classifier
+
 ## 2026-06-28 - Neuroscience Research (Cron Job)
 
 ### Average Rankings Mask Per-Subject Optimality: A Friedman-Nemenyi Benchmark of EEG Motor-Imagery BCI Decoders
