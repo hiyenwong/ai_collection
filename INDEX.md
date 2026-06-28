@@ -3616,3 +3616,41 @@
   - Lower bound Ω(r/ε²) implies quantum query complexity implications for property testing
   - Tolerant certification generalizes Badescu-O'Donnell-Wright exact certification framework
   - **Activation**: quantum fidelity estimation, 量子保真度估计, tolerant state certification, sample complexity quantum state, reference quantum state fidelity
+
+## 2026-06-28 - Information Science + Quantum (Cron Job - Sunday, Session 2)
+
+### A 0.651-approximation to quantum Max Cut via Rydberg atoms
+- [[quantum-maxcut-rydberg-approximation]] - Hybrid SDP + Rydberg atom dynamics approximation for QMA-complete Quantum Max Cut, achieving 0.651 ratio (arXiv: 2606.27224)
+  - 核心要点: 结合SDP松弛与里德堡原子自然量子动力学，通过随机取整实现0.651近似比，超越此前0.614
+  - 核心要点: 三阶段混合架构: SDP初始化 → 里德堡动力学演化 → 随机取整提取解
+  - **Activation**: quantum Max Cut approximation, Rydberg atom optimization, Heisenberg Hamiltonian, QMA approximation, SDP randomized rounding, 量子Max Cut近似
+
+### The Observer World: A Cryptographic Extension of Impagliazzo's Five Worlds
+- [[observer-world-cryptography]] - 引入观察轴扩展Impagliazzo五世界框架，建模不同观察能力下的密码学原语存在性 (arXiv: 2606.27139)
+  - 核心要点: 在计算轴外引入观察轴(O_top→O_mid→O_bottom)，使Minicrypt等世界中也可实现非对称密码原语
+  - 核心要点: 观察层次安全分析 + 观察控制协议设计 + 量子密钥分发观察不对称应用
+  - **Activation**: observer world cryptography, Impagliazzo five worlds extension, observational axis, observer hierarchy security, cryptographic observation asymmetry, 观察者密码学
+
+### A hardware-safety-gated system for LLM-written native ARTIQ control code on a trapped-ion platform
+- [[hardware-safety-gated-llm-quantum-control]] - LLM自主量子实验控制的硬件安全门控架构，建立人机操作边界 (arXiv: 2606.27231)
+  - 核心要点: 四层架构(LLM代理层→安全验证层→人工授权层→硬件执行层)，每个操作分级为SAFE/REVIEW/BLOCKED
+  - 核心要点: 静态代码分析(类型检查、范围检查、时序分析、资源锁定) + 动态运行时监控 + 人工审批工作流
+  - **Activation**: LLM quantum control safety, hardware safety gate, autonomous lab quantum, trapped-ion LLM control, ARTIQ LLM safety, 量子实验LLM安全控制
+
+### Nonadiabatic Holonomic Single-Qubit Gates in Non-Hermitian Systems
+- [[nonadiabatic-holonomic-nonhermitian-gates]] - 非厄米系统中非绝热整体单量子比特门实现方法论 (arXiv: 2606.26798)
+  - 核心要点: 利用非厄米系统的 exceptional point 实现更快的整体量子门操作，避免绝热条件的速度限制
+  - 核心要点: 几何相位在非厄米系统中的推广，保持容错性的同时提升门速度
+  - **Activation**: nonadiabatic holonomic gates, non-Hermitian quantum computing, exceptional point quantum gate, geometric phase non-Hermitian, 非绝热整体量子门
+
+### Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates
+- [[lattice-patch-transmon-architecture]] - 固定频率transmon量子处理器的晶格补丁架构设计 (arXiv: 2606.27017)
+  - 核心要点: 克服传统QCQ架构的物理和结构限制，通过晶格补丁设计实现高保真度CNOT门
+  - 核心要点: 可扩展的超导量子处理器架构，平衡门保真度与可扩展性
+  - **Activation**: transmon quantum architecture, lattice patch structure, fixed-frequency transmon, high-fidelity CNOT, 超导量子处理器架构
+
+### Shallow Quantum Circuits for Deep Chemistry via Valence Bond Embeddings
+- [[valence-bond-embedding-quantum-chemistry]] - 通过价键嵌入实现浅量子电路深度化学计算 (arXiv: 2606.26882)
+  - 核心要点: 价键嵌入方法将深度量子化学计算映射到浅电路，降低NISQ设备上的实现难度
+  - 核心要点: 结合经典化学直觉与量子电路设计，保持化学精度的同时减少量子资源需求
+  - **Activation**: valence bond embedding, shallow quantum chemistry, quantum circuit depth reduction, VQE chemistry, 量子化学浅电路
