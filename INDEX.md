@@ -3595,3 +3595,17 @@
   - 建立Grothendieck定理反例与量子博弈值差距的直接联系
   - 提供无信令值与量子值差距的新上界
   - **Activation**: no-signaling quantum games, operator algebra quantum games, Grothendieck operator spaces, tensor norm quantum games, two-prover quantum game value, 量子博弈算子代数, 无信令值分析
+
+## 2026-06-28 - Information Science (Cron Job)
+
+### Equivalence of non-local computation tasks beyond Clifford operations
+- [[quantum-nlqc-reductions]] - NLQC归约方法论，分析量子通信任务等价性与定位验证安全性 (arXiv: 2606.26354)
+  - 核心要点: 重定向量子系统协议蕴含受控单量子比特测量、Clifford门、对角酉矩阵的等价实现
+  - 核心要点: 等价NLQC任务共享相同的渐近纠缠成本scaling，定位验证方案安全性可互推
+  - **Activation**: NLQC reduction, non-local quantum computation, quantum position verification security, entanglement cost equivalence, gate teleportation reduction, 非局域量子计算归约
+
+### The Cost of Removing Tunability in Quantum Data Re-Uploading
+- [[quantum-data-reuploading-approximation]] - 量子数据重上传固定编码电路深度误差分析方法论 (arXiv: 2606.25598)
+  - 核心要点: 可调编码电路可用固定编码以O[(log(1/ε))^σ]深度近似，表达力从可调频率转移到电路深度
+  - 核心要点: 辅助扩展机制(Gevrey+Jackson+QSP)实现多对数深度恢复，失配阻碍通过Turán-Nazarov不等式建立对数下界
+  - **Activation**: quantum data re-uploading approximation, fixed encoding circuit depth-error, tunable vs fixed upload, quantum signal processing approximation complexity, Gevrey class quantum circuits, 量子数据重上传近似
