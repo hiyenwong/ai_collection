@@ -1,3 +1,13 @@
+## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly #3)
+
+### Decoherence as Defence: N-Qubit Theory of Stochastic Quantum Neural Networks for Adversarial Robustness
+- [[sqnn-decoherence-defence]] - Decoherence as adversarial defence in SQNNs via contraction theorem and per-gate dropout (arXiv: 2606.24219)
+  - Decoherence-contraction theorem: depolarising channel contracts Pauli read-out by (1-4γ/3)^(wL)
+  - Per-gate dropout implements curvature-weighted L2 penalty maximised at p=1/2
+  - **Activation**: sqnn decoherence defence, quantum dropout, decoherence contraction, adversarial robustness, lindblad master equation
+
+---
+
 ## 2026-06-29 - Neuroscience + Quantum + Systems (Cron Job 2/2)
 
 ### Efficient foundation decoders for fault-tolerant quantum computing
