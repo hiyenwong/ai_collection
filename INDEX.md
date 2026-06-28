@@ -1,5 +1,44 @@
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
+## 2026-06-29 - Neuroscience + Quantum (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-meg]] - Metabolic quantum limit methodology for MEG — fundamental physics bounds on brain imaging information capacity (arXiv: 2511.06401)
+  - Combines energy resolution limit with metabolic power to derive technology-independent MEG bound
+  - Quantum-limited noise floor constrains observable complexity, gives max 2.2 Mbit/s for human brain
+  - **Activation**: quantum sensors, MEG, metabolic bound, information capacity, Planck, brain imaging
+
+### De-Individualizing fMRI Signals via Mahalanobis Whitening and Bures Geometry
+- [[fmri-mahalanobis-bures-whitening]] - De-individualizing fMRI via Mahalanobis whitening and Bures geometry — quantum-motivated dimensionality reduction (arXiv: 2511.07313)
+  - Two-stage de-individualization motivated by Bures distance (quantum mechanics connection)
+  - Improves accuracy/consistency of Alzheimer's diagnosis in preclinical stage
+  - **Activation**: Mahalanobis, Bures distance, fMRI whitening, de-individualization, quantum geometry
+
+### Hybrid Classical-Quantum (HCQ) Alzheimer's Classification via Supervised β-VAE and Quantum Kernels
+- [[hcq-alzheimer-quantum-classification]] - Hybrid Classical-Quantum pipeline for AD classification — supervised β-VAE + quantum kernels (arXiv: 2606.14194)
+  - 3D β-VAE compresses MRI to 64D latent, ZZ feature map encodes 6 disease-aware components onto 6 qubits
+  - Achieves 72.1% accuracy, 0.799 AUC on 308 ADNI subjects — generalizable to other biomedical domains
+  - **Activation**: HCQ, alzheimer, quantum kernel, β-VAE, quantum SVM, quantum classification
+
+### A Controlled Benchmark of Quantum-Latent GAN Augmentation for Brain MRI
+- [[quantum-latent-gan-benchmark]] - Controlled benchmark for quantum vs classical generative augmentation in medical imaging (arXiv: 2606.18970)
+  - Quantum and classical generators statistically indistinguishable — no significant accuracy gain
+  - Low-data benefit behaves as regularization not faithful data expansion, synthetic samples off distribution
+  - **Activation**: quantum GAN benchmark, quantum augmentation, controlled benchmark, latent GAN
+
+### A Quantum-Analogue Formalism for Modeling Supraliminal Information Processing
+- [[quantum-analogue-cloud-formalism]] - Quantum-analogue cloud-function formalism for modeling supraliminal processing in brain networks (arXiv: 2605.25214)
+  - Schrodinger-type equation with nonlinear non-Hermitian Hamiltonian plus Lotka-Volterra terms
+  - Applied to change-of-mind phenomenon in decision-making — fast preconscious vs slow conscious comparison
+  - **Activation**: cloud function, supraliminal, quantum analogue, neural field, Schrödinger-type, non-Hermitian
+
+### Neuro-Inspired Inverse Learning for Planning and Control
+- [[neuro-inspired-inverse-learning]] - Neuro-inspired Inverse Learning for planning/control — bridges RL and optimal control with quantum gate applications (arXiv: 2605.24152)
+  - Paired forward/inverse models with open-loop multi-step commands, hierarchical action organization
+  - Applied to single-qubit quantum gate synthesis matching GRAPE fidelity at 1000x lower compute time
+  - **Activation**: inverse learning, forward model, open-loop control, embodied planning, quantum gate synthesis
+
+
 ### Spatial Partial Functionalization of Neural Networks based on Noise Fields
 - [[noise-field-partial-functionalization]] - Noise-modulated neural networks using spatial noise fields to activate partially overlapping subnetworks, enabling multi-function storage in single networks (arXiv: 2606.24588)
   - Introduces **crossing activation function** with sample-level, statistical-level, and analytical-level implementations with parameter reuse
