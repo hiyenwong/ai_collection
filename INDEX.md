@@ -8,6 +8,18 @@
   - Bridges abstract information theory (strong subadditivity) with channel coding theorems
   - **Activation**: quantum conditional mutual information, QCMI channel capacity, strong subadditivity, conditional quantum communication, 量子条件互信息
 
+### Ultralow-Loss Integrated Photonic Platform for Quantum Processing
+- [[ultralow-loss-photonic-quantum]] - Monolithic ultralow-loss Si₃N₄ integrated photonic platform for discrete-variable quantum information processing: EPR fidelity 0.9875, GHZ₄ fidelity 0.943, 100× higher count rates than silicon-photonic (arXiv: 2606.26910)
+  - Core: Overcomes rate-loss barrier via ultralow-loss Si₃N₄ with narrowband photon-pair sources and qubit-fusion circuits
+  - CMOS-compatible fabrication on 150mm wafers for deployable large-scale quantum processors
+  - **Activation**: ultralow-loss photonic, silicon nitride quantum, Si3N4 quantum platform, discrete-variable quantum, EPR state fidelity, GHZ synthesis, heralded HOM interference
+
+### Strong Spin Wave–Microwave Photon Coupling in Superconducting Resonators
+- [[spin-wave-superconducting-coupling]] - Strong coupling between propagating spin waves and microwave photons in superconducting resonator-YIG hybrid circuits on rare-earth-free YSGO substrate (arXiv: 2606.27279)
+  - Core: Demonstrates DE and BV spin wave modes coupled to resonator with g > κ_m, κ_c; observes nonreciprocal spin wave radiation
+  - Opens route to magnonic quantum memory, transducers, and isolators
+  - **Activation**: spin wave coupling, superconducting magnon, YIG resonator, Damon-Eshbach mode, cavity magnonics, hybrid magnonic system
+
 ### RL-Based List Sequential QLDPC Decoding
 - [[rl-list-sequential-qldpc-decoding]] - Reinforcement learning extends sequential BP scheduling with list-based branch exploration for QLDPC decoding — explores second-best Pauli symbol at each step (arXiv: 2606.20926)
   - Core: RL policy selects variable nodes + list exploration of competing Pauli branches
