@@ -1,3 +1,19 @@
+## 2026-06-29 - Neuroscience + Quantum + Systems (Cron Job 2/2)
+
+### Efficient foundation decoders for fault-tolerant quantum computing
+- [[neural-transfer-unification]] - Neural Transfer Unification for cross-distance QEC decoder knowledge transfer (arXiv: 2606.27119)
+  - Aligns decoding tasks across code distances via shared algebraic structures
+  - Trains on small codes, transfers to large codes with minimal fine-tuning
+  - **Activation**: quantum decoder, foundation decoder, neural transfer, code distance, QEC, surface code
+
+### Vibe Calibration: Autonomous Bring-up of a 112-Qubit Superconducting Quantum Processor
+- [[vibe-calibration]] - LLM-orchestrated skill-based autonomous calibration for quantum processors (arXiv: 2606.22376)
+  - Distills expert tacit knowledge into reusable composable calibration skills
+  - LLM agent interprets measurements qualitatively and dynamically sequences skills
+  - **Activation**: quantum calibration, autonomous bring-up, LLM agent experiment, skill orchestration, vibecoding
+
+---
+
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
 ### Harnessing cortical geometry, wiring, and function as inductive biases for recurrent neural networks
