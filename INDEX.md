@@ -3609,3 +3609,10 @@
   - 核心要点: 可调编码电路可用固定编码以O[(log(1/ε))^σ]深度近似，表达力从可调频率转移到电路深度
   - 核心要点: 辅助扩展机制(Gevrey+Jackson+QSP)实现多对数深度恢复，失配阻碍通过Turán-Nazarov不等式建立对数下界
   - **Activation**: quantum data re-uploading approximation, fixed encoding circuit depth-error, tunable vs fixed upload, quantum signal processing approximation complexity, Gevrey class quantum circuits, 量子数据重上传近似
+
+### Estimating Fidelity to a Reference Quantum State
+- [[quantum-fidelity-reference-state-estimation]] - Sample-optimal fidelity estimation O(r²/ε²) with lower bound Ω(r/ε²), extends to tolerant quantum state certification (arXiv: 2606.26034)
+  - Reference rank-r state enables O(r²/ε²) vs previous O(r²log²/ε⁴) — improvement by factor of log²(1/ε)/ε²
+  - Lower bound Ω(r/ε²) implies quantum query complexity implications for property testing
+  - Tolerant certification generalizes Badescu-O'Donnell-Wright exact certification framework
+  - **Activation**: quantum fidelity estimation, 量子保真度估计, tolerant state certification, sample complexity quantum state, reference quantum state fidelity
