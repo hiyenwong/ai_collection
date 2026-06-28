@@ -49,6 +49,20 @@
   - Normally discarded rounds repurposed for eavesdropper detection
   - **Activation**: QKD protocol, quantum key distribution, Bell state QKD, scrambling operator, quantum communication security, 量子密钥分发
 # AI Collection Index
+## 2026-06-28 - Information Science (Cron Job)
+
+### Quantum conditional mutual information and channel capacity
+- [[qcmi-channel-coding]] - QCMI determines optimal quantum communication rates with third-party assistance, extending classical key generation capacity to quantum domain (arXiv: 2606.25264)
+  - Optimal rate for establishing quantum correlation = QCMI / 2
+  - Extends Csiszár-Ahlswede classical key generation capacity to quantum
+  - **Activation**: qcmi, quantum conditional mutual information, channel capacity, quantum communication rate
+
+### Quantum ring all-reduce: communication and privacy advantages for distributed learning
+- [[quantum-ring-allreduce]] - Quantum ring all-reduce achieves 2x communication reduction via superdense coding and information-theoretic privacy via verified entanglement (arXiv: 2606.20344)
+  - 2x bandwidth reduction using superdense coding (provably optimal)
+  - Composable ε-secure aggregation via GHZ states
+  - Exponential communication separation for sign-consistency auditing
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding, quantum secure aggregation
 
 ## 2026-06-28 - Information Science + Quantum (Cron Job - Sunday)
 
