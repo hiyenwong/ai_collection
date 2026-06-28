@@ -1,3 +1,13 @@
+## 2026-06-29 - Quantum Neuroscience: γ_c-Peak Covariant Recovery (Cron Job)
+
+### γ_c-Peak: Covariant Recovery on Four Organic Qubit Platforms
+- [[gamma-c-peak-covariant-recovery]] - Covariant QEC recovery across cryptochrome, MAO-A, Posner molecules, and radical-pair systems with critical decoherence threshold identification (arXiv: 2604.22)
+  - 四层有机量子比特平台表征：CRY (T₂=52ms), MAO-A (T₂=3.2ms), Posner分子, 一般自由基对
+  - γ_c峰值识别：CQEC保护相干性从>0.6到<0.05的临界退相干速率阈值
+  - 层-蛋白权衡：单一蛋白无法同时优化核自旋和电子自旋层
+  - 经典马尔可夫基线验证CQEC维持的振荡动力学是真正的量子效应
+  - **Activation**: gamma_c-peak, covariant recovery, organic qubit, cryptochrome, MAO-A, Posner molecule, quantum brain, T2 coherence, three-layer architecture, quantum biology
+
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
 ### HTNN: Theory-grounded ANN-CANN Hybridization Framework
