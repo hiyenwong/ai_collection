@@ -31,6 +31,15 @@
 - Explicit Ricci flow on qubit state space — Bures-Helstrom metric as homothetic shrinker g(t)=(1-4t)g_BH with extinction T=1/4 (arXiv: 2606.19493)
   - **Activation**: Ricci flow, Bures-Helstrom metric, qubit geometry, quantum Fisher information
 
+
+### LLM-Evolved Quantum Error-Correcting Encoding Discovery
+- [[llm-evolved-quantum-encoding]] - LLM-driven evolutionary program synthesis discovers GSE codes with distance 5-6, surpassing prior distance-3 constructions (arXiv: 2606.25870)
+  - Core: LLM mutates constructor programs, external verifier scores (stabilizer semantics, distance, resources), iterative search
+  - Key finding: Two-stage search (maximize distance first, then optimize compression) outperforms single-objective
+  - Discovered circulant constructor achieving 5-qubits-per-mode floor on molecular instances
+  - **Activation**: LLM quantum code search, evolutionary quantum encoding, GSE encoding, quantum error correction LLM, fermion-to-qubit encoding discovery
+
+
 ## 2026-06-28 - Neuroscience Research (Cron Job)
 
 ### RNN Structural Design Principles for Computational Ability
