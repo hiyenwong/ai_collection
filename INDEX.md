@@ -1,3 +1,10 @@
+## 2026-06-28 - Information Science + Quantum Mechanics (Cron Job)
+
+### Self-Sifting quantum key distribution
+- [[quantum-info-qkd-security]] - Qkd Security (arXiv: 2606.27299)
+  - Quantum information processing methodology
+  - Information-theoretic security analysis
+  - **Activation**: quantum, information
 # AI Collection Index
 
 ## 2026-06-28 - Information Science + Quantum (Cron Job - Sunday)
