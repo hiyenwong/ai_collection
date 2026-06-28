@@ -1,3 +1,21 @@
+## 2026-06-29 - Neuroscience Research (Cron Job)
+
+### HTNN: Theory-grounded ANN-CANN Hybridization Framework
+- [[htann-ann-cann-hybridization]] - First population-scale hybrid neural network combining artificial and continuous attractor networks for visual tracking (arXiv: 2606.22604)
+  - 发现ANN与CANN的偏差-方差互补性：ANN提供准确性，CANN提供稳定性
+  - 共享状态空间架构：两个异构分支通过共同状态表示进行交互
+  - 在9个视觉跟踪基准上显著超越现有方法，尤其在环境变化下保持鲁棒性
+  - **Activation**: HTNN, ANN-CANN混合, 偏差-方差互补, 连续吸引子网络, 视觉目标跟踪, 群体尺度混合
+
+### MED-VAE: Multi-Encoder-Decoder VAE for Cross-Subject Neural Alignment
+- [[med-vae-cross-subject-alignment]] - First framework achieving cross-subject neural alignment without shared stimuli using pretrained ANN as common scaffold (arXiv: 2606.15989)
+  - 核心创新：预训练ANN作为共同支架，突破传统方法需要共享刺激的限制
+  - 多编码器-解码器架构：每个被试独立编码器映射到共享潜在空间
+  - 跨被试预测准确率提升13%，潜在空间展现清晰语义组织
+  - **Activation**: MED-VAE, 跨被试对齐, 预训练ANN支架, 神经解码, 跨被试预测, CCN 2026
+
+---
+
 ## 2026-06-29 - Neuromorphic SNN Applications (Cron Job 3/3)
 
 ### EMRFormer: End-to-End Radar and Communication Modulation Recognition with Neuromorphic Computing
