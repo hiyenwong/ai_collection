@@ -2,6 +2,12 @@
 
 ## 2026-06-28 - Information Science + Quantum (Cron Job - Sunday)
 
+### Quantum-Limited Subdiffraction Telescopy via Multi-Telescope Interference
+- [[quantum-limited-subdiffraction-telescopy]] - Proves pairwise telescope coherence measurements insufficient for quantum-limited subdiffraction imaging beyond 2nd order; constructs array-SPADE attaining optimal QFI scaling up to 2N-2 cutoff (arXiv: 2606.27276)
+  - Core: N-telescope array QFI scaling derived up to cutoff 2N-2; pairs only attain full QFI up to 2nd order
+  - Higher-order moment estimation requires genuinely multi-telescope interference with ancilla/memory
+  - **Activation**: quantum telescopy, subdiffraction imaging, quantum Fisher information, array-SPADE, multi-telescope interference, stellar interferometry, image-moment estimation
+
 ### Quantum Conditional Mutual Information and Channel Capacity
 - [[quantum-conditional-mutual-information-channel-capacity]] - Connects QCMI to operational channel coding — optimal rate for conditional quantum correlation = QCMI/2, extending Csiszár-Ahlswede classical key generation to quantum domain (arXiv: 2606.25264)
   - Core: QCMI gains operational meaning through conditional quantum communication task
