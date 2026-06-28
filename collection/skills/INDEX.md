@@ -1,3 +1,29 @@
+## 2026-06-28 - Information Science + Quantum Mechanics (Cron Job)
+
+### CIM-BDD: When LWE Meets Coherent Ising Machine — Penalty-Free Algorithm-Hardware Co-Design
+- [[cim-bdd-penalty-free-lwe-cryptanalysis]] - Hybrid BDD solver reduces LWE to QUBO via penalty-free mapping, CR-BNP projection drives adaptive mixed-radix encoding (arXiv: 2606.22843)
+  - 核心要点 1: Algebraic elimination absorbs modular arithmetic — squared error norm used directly as QUBO energy (no penalty)
+  - 核心要点 2: CR-BNP encoding reduces qubit count and coefficient range enabling single batched submission on CPQC-550
+  - **Activation**: cim-bdd, penalty-free qubo, lwe cryptanalysis, coherent ising machine, bounded distance decoding
+
+### Tensor Network Characterization and Mitigation of Readout Errors
+- [[tensor-network-readout-error-mitigation]] - MPO-based framework for correlated readout error characterization with near-linear sample cost scaling up to 20 qubits (arXiv: 2606.25974)
+  - 核心要点 1: MPO model captures spatial correlations missed by tensor-product approximations
+  - 核心要点 2: Integrates with tensor-network QEC decoders for joint inference over data and readout errors
+  - **Activation**: tensor network readout, mpo readout error, correlated readout error, matrix product operator calibration
+
+### Toric Code Made Subsystem: Topological Subsystem Codes from Anticommuting Quantum Spin Liquids
+- [[topological-subsystem-code-construction]] - Framework for topological subsystem codes with extensive local gauge qubits undisturbed by check operators (arXiv: 2606.26226)
+  - 核心要点 1: Extensive anticommuting local conserved operators form subsystem degrees of freedom
+  - 核心要点 2: Weight-3/4 local check measurements on kagome/square lattices suitable for near-term hardware
+  - **Activation**: topological subsystem code, anticommuting quantum spin liquid, subsystem qec, gauge qubits
+
+### Quantum Computer Architecture with Ions in Tweezer Arrays
+- [[ion-tweezer-quantum-architecture]] - Scalable trapped-ion architecture combining long coherence with tweezer reconfigurability via dipole-mediated entangling gates (arXiv: 2606.27249)
+  - 核心要点 1: Effective electric dipoles enable temperature-robust entangling gates with no residual qubit-motion entanglement
+  - 核心要点 2: Crosstalk suppression enables parallel gate execution for transversal QEC gates
+  - **Activation**: ion tweezer quantum computer, trapped ion tweezer architecture, dipole-mediated entangling gate
+
 ## 2026-06-27 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 ### Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization
