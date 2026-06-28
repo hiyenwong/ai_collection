@@ -21,6 +21,24 @@
   - Bridges abstract information theory (strong subadditivity) with channel coding theorems
   - **Activation**: quantum conditional mutual information, QCMI channel capacity, strong subadditivity, conditional quantum communication, 量子条件互信息
 
+### Information from Coincidences
+- [[information-coincidence-identity]] - A single algebraic mixed coincidence identity unifying Sanov, Chernoff, PAC-Bayes, and Renyi as corollaries (arXiv: 2606.25042)
+  - Core: log mixed count = Boltzmann weight + exponential-family normalizer + max-entropy value + KL-barycenter optimum simultaneously
+  - Generalizes Renyi entropy/divergence formulas from 1-2 priors to arbitrary W-prior simplex; exact multi-prior PAC-Bayes penalty with coincidence bonus
+  - **Activation**: information coincidence identity, mixed coincidence partition function, multi-prior PAC-Bayes, Sanov decomposition, Chernoff information, KL-barycenter, 信息重合恒等式, 多先验 PAC-Bayes
+
+### First-Order Recoverability Collapse in Self-Referential Information Decoders
+- [[recoverability-collapse-information-decoders]] - Thermodynamic framework for decoder stability under sustained overload — proves added capacity without certification accelerates non-recoverable loss (arXiv: 2606.24861)
+  - Core: feasibility margin + stability diagnostic; first-order phase transition with hysteretic recovery when feedback factor α ≥ 1
+  - Cascade sizes bounded by grounded fraction; Landauer-priced synthetic entropy bursts; substrate-agnostic constraint-based analysis
+  - **Activation**: recoverability collapse, self-referential decoder, information thermodynamics, decoder stability, capacity saturation, irreversible commitment, metastable failure, 可恢复性崩溃, 解码器稳定性
+
+### Beyond Mutual Information: Extension Profiles and Shape Functions
+- [[extension-profile-shape-functions]] - Extension profiles capture structural properties of joint distributions not determined by mutual information alone, with spectral graph theory bounds (arXiv: 2606.23849)
+  - Core: shape function as Legendre-Fenchel transform of profile boundary; biregular bipartite graph interpretation with second-eigenvalue bounds
+  - Connects non-Shannon inequalities, Gács-Körner common information, and spectral graph theory
+  - **Activation**: extension profile, shape function, mutual information beyond, non-Shannon information inequalities, Legendre-Fenchel transform, Gacs-Korner common information, 扩展轮廓, 形状函数
+
 ### Ultralow-Loss Integrated Photonic Platform for Quantum Processing
 - [[ultralow-loss-photonic-quantum]] - Monolithic ultralow-loss Si₃N₄ integrated photonic platform for discrete-variable quantum information processing: EPR fidelity 0.9875, GHZ₄ fidelity 0.943, 100× higher count rates than silicon-photonic (arXiv: 2606.26910)
   - Core: Overcomes rate-loss barrier via ultralow-loss Si₃N₄ with narrowband photon-pair sources and qubit-fusion circuits
