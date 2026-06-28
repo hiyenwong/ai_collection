@@ -1,5 +1,13 @@
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
+### Harnessing cortical geometry, wiring, and function as inductive biases for recurrent neural networks
+- [[cortical-geometry-rnn-inductive-biases]] - Uses MICrONS connectomics to build biologically-grounded RNNs with functional weight init + spatial embedding + communicability regularization (arXiv: 2606.14975)
+  - Functional weight initialization from neural activity correlation provides largest performance gain; real spatial coordinates add robust secondary benefit
+  - Networks develop low-entropy, modular, small-world organization; advantages persist under positive-only recurrence constraint
+  - **Activation**: MICrONS, cortical priors, functional connectomics, spatial embedding, RNN inductive biases, communicability, small-world
+
+---
+
 ## 2026-06-29 - Neuroscience + Quantum (Cron Job)
 
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
