@@ -1,3 +1,19 @@
+## 2026-06-28 - Neuroscience Research (Cron Job)
+
+### M3D-BFS: Multi-stage Dynamic Fusion Strategy for Sample-Adaptive Multimodal Brain Network Analysis
+- [[m3d-bfs-multimodal-brain-network-fusion]] - Multimodal brain network fusion framework combining fMRI, DTI, and sMRI data with sample-wise attention mechanisms (arXiv: 2606.26279)
+  - Core: Three fusion strategies (Weighted Sum, Gated Fusion, Cross-Attention) with sample-specific adaptive weighting
+  - Gated fusion enables adaptive modality selection per sample; cross-attention captures fine-grained inter-modal dependencies
+  - Sample-adaptive attention reflects individual differences in structure-function coupling
+  - **Activation**: multimodal brain network, M3D-BFS, fMRI DTI sMRI fusion, dynamic fusion, sample-adaptive
+
+### Topology-Dependent Emergence of Polychronous Neuronal Groups
+- [[topology-dependent-polychronous-groups-recurrence]] - Recurrence-plot characterization of how network topology (small-world, scale-free, random) influences polychronous neuronal group formation (arXiv: 2606.26123)
+  - Core: Small-world networks show highest PNG capacity and stability (DET > 0.7); random networks lowest (DET < 0.3)
+  - Scale-free networks provide robustness via hub neurons acting as pacemakers
+  - Recurrence plot analysis provides quantification of PNG dynamics
+  - **Activation**: polychronous groups, recurrence plot, network topology SNN, small-world spiking, polychrony
+
 ## 2026-06-28 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Self-Sifting quantum key distribution
