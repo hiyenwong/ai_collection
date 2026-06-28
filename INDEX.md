@@ -5,6 +5,33 @@
   - Quantum information processing methodology
   - Information-theoretic security analysis
   - **Activation**: quantum, information
+
+### Tailor Made Embeddings for Quantum Machine Learning
+- [[quantum-ml-data-loading-vae]] - VAE framework for task-specific quantum data embeddings compressing ImageNet to 13-qubit states with polynomial-measurement recovery (arXiv: 2606.26312)
+  - Core: Variational quantum autoencoder replaces amplitude/angle embeddings; learned decoder enables polynomial-measurement reconstruction
+  - MNIST 3v5: 98.5% accuracy with circuit-centric classifier (classical: 99.7%, amplitude: <68%)
+  - Validated on IBM quantum hardware under real device noise; O(n^-1/2) L2 convergence proven
+  - **Activation**: quantum data loading, quantum autoencoder, VQE embedding, quantum compression, variational quantum classifier, QML encoding, 量子数据加载
+
+### Quantum Physics-Informed Neural Networks for Integro/Fractional PDEs
+- [[qpinn-integro-fractional-pde]] - QPINN framework combining quantum neural networks with governing equations for IDEs and FIPDEs via N-QPINN (quadrature) and A-QPINN (auxiliary function) variants (arXiv: 2606.26865)
+  - Core: Quantum neural network with affine feature map + VQC produces trigonometric trial solutions
+  - O(n^-1/2) universal approximation theorem extends classical Fourier theory to quantum circuits
+  - Outperforms classical PINNs on nonlinear IDEs and FIPDEs
+  - **Activation**: quantum PINN, fractional PDE, integro-differential equation, QPINN, 量子物理信息神经网络
+
+### Witness Expansion Framework for Quantum Resource Detection
+- [[quantum-witness-expansion-framework]] - Unified framework constructing nonlinear criteria for detecting quantum resources via polynomial functions estimable with multiple state copies (arXiv: 2606.27105)
+  - Core: Recovers l2 coherence, partial-transpose entanglement, stabilizer entropy, fermionic antiflatness from unified polynomial framework
+  - New criteria for qubit/qudit magic states and first analytical mixed-state fermionic non-Gaussianity detection
+  - **Activation**: witness expansion, quantum resource detection, stabilizer entropy, magic state detection, fermionic non-Gaussianity, coherence norm, 量子见证展开
+
+### Self-Sifting Quantum Key Distribution Protocol
+- [[self-sifting-qkd-protocol]] - Two-way QKD protocol using entangled Bell state qubits with scrambling operator; all sifting and eavesdropper detection postponed to Bob (arXiv: 2606.27299)
+  - Core: Traveling qubit does not directly encode key information; control mode never publicly announced
+  - All ancilla-based attacks detectable in their most general form
+  - Normally discarded rounds repurposed for eavesdropper detection
+  - **Activation**: QKD protocol, quantum key distribution, Bell state QKD, scrambling operator, quantum communication security, 量子密钥分发
 # AI Collection Index
 
 ## 2026-06-28 - Information Science + Quantum (Cron Job - Sunday)
