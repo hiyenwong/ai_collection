@@ -1,3 +1,28 @@
+## 2026-06-29 - Neuroscience Research (Cron Job)
+
+### Spatial Partial Functionalization of Neural Networks based on Noise Fields
+- [[noise-field-partial-functionalization]] - Noise-modulated neural networks using spatial noise fields to activate partially overlapping subnetworks, enabling multi-function storage in single networks (arXiv: 2606.24588)
+  - Introduces **crossing activation function** with sample-level, statistical-level, and analytical-level implementations with parameter reuse
+  - **Virtual noise field** as auxiliary continuous space generates spatially structured patterns activating partially overlapping subnetworks
+  - Memory capacity improves when spatial arrangement of noise fields reflects proximity relationships among learned functions; mismatches reduce capacity
+  - **Activation**: noise field neural network, partial functionalization, spatial noise computation, subnetwork selection, noise-modulated computation
+
+## 2026-06-28 - Neuroscience Research (Cron Job)
+
+### Average Rankings Mask Per-Subject Optimality: A Friedman-Nemenyi Benchmark of EEG Motor-Imagery BCI Decoders
+- [[friedman-nemenyi-eeg-bci-benchmark]] - Statistical benchmarking proves no single BCI decoding pipeline dominates; personalized selection adds ~7% accuracy (arXiv: 2606.24394)
+  - 1,056 decoding configs × >340K model fits across 3 datasets (PhysionetMI n=109, Cho2017 n=52, Zhou2016 n=4)
+  - Best pipeline optimal for only 35% of participants; nonlinear methods best for ~33%
+  - Friedman-Nemenyi-Wilcoxon statistical framework for multi-classifier comparison
+  - **Activation**: EEG BCI benchmark, motor imagery, Friedman-Nemenyi, BCI personalization, MOABB
+
+### Robust Probabilistic Measurement of Structural-Functional Module Consistency in Infant Brain Development
+- [[sfmc-infant-brain-stochastic-modules]] - Stochastic module-based SFMC framework revealing stronger developmental reorganization than conventional SC-FC coupling (arXiv: 2606.19739)
+  - SFMC decreases 0→5 years; greater in primary sensory regions, lower in association cortices
+  - Stochastic modules capture assignment probability across subjects, accounting for inter-individual variability
+  - Published in Brain Structure and Function (DOI: 10.1007/s00429-026-03143-3)
+  - **Activation**: SFMC, stochastic modules, infant brain development, Baby Connectome, structure-function coupling
+
 ## 2026-06-28 - Neuroscience Research (Cron Job)
 
 ### M3D-BFS: Multi-stage Dynamic Fusion Strategy for Sample-Adaptive Multimodal Brain Network Analysis
