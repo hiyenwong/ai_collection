@@ -2887,3 +2887,11 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-06-30 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Quantum Mutant Equivalence via Transpilation
+- [[quantum-mutant-equivalence-tbe]] - 基于转译器的量子变异体等价性检测方法 (arXiv: 2606.26604)
+  - 转译器在相同配置下对原始和变异电路进行标准化，比较生成的OpenQASM代码
+  - 在348,299个变异体中识别出32.1%的等价变异体，精度100%，准确率82%
+  - **Activation**: quantum mutant equivalence, quantum mutation testing, TBE transpiler, equivalent quantum mutant, OpenQASM comparison
