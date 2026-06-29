@@ -1,5 +1,36 @@
 # AI Collection Index
 
+## 2026-06-30 - Computer Science + Quantum Mechanics (Cron Job - Hourly)
+
+### Quantum Dynamic Time Warping for Multivariate Time Series Classification
+- [[quantum-dynamic-time-warping]] - Hybrid quantum-classical architecture replacing classical DTW distance metrics with parameterized Hilbert space geometry (arXiv: 2606.27815)
+  - Core innovation: Quantum kernel replaces Euclidean distance in DTW cost matrix
+  - Captures latent cross-channel correlations via quantum entanglement
+  - **Activation**: qdtw, quantum dynamic time warping, quantum time series, quantum distance metric, quantum kernel DTW
+
+### Parameter-Efficient Quantum-Inspired Fast Weight Programmers for Traffic-Matrix Forecasting
+- [[quantum-inspired-fast-weight-programmers]] - Quantum-inspired recurrent models for network traffic matrix forecasting under memory constraints (arXiv: 2606.27821)
+  - Core innovation: Compact quantum-inspired recurrent architecture for online TM prediction
+  - Addresses memory, update, and training-budget constraints of online network control
+  - **Activation**: quantum-inspired, fast weight programmers, traffic matrix forecasting, network engineering
+
+### Parameter-Efficient Continuous-Variable Photonic QNN for Edge Quantum AI
+- [[cv-photonic-qnn-edge-ai]] - CV-QNN for edge-deployable oral cancer detection on smartphone hardware (arXiv: 2606.28252)
+  - Core innovation: Continuous-variable photonic QNN with parameter-efficient learning
+  - Demonstrated on oral cancer detection with edge-hardware constraints
+  - **Activation**: cv-qnn, photonic quantum, edge ai, medical imaging, oral cancer
+
+### Qudit Extension of Parameterized IQP Circuits
+- [[qudit-iqp-generative-qml]] - Qudit-extended IQP circuits for generative quantum ML on integer-valued data (arXiv: 2606.28236)
+  - Core innovation: Extends IQP circuits beyond binary to native integer data representation
+  - Preserves metric structure lost in qubit binary encoding
+  - **Activation**: qudit, IQP circuits, generative quantum ML, integer data encoding
+
+### Learning Marginals Suffices — Quantum State Tomography
+- [[learning-marginals-suffices-qst]] - Circuit complexity determines sample complexity for quantum state tomography (arXiv: 2303.08938)
+  - Core insight: Learning marginals suffices for low circuit-complexity quantum states
+  - Breaks exponential sample complexity barrier for quantum state tomography
+  - **Activation**: quantum state tomography, circuit complexity, sample complexity, marginal learning
 ## 2026-06-30 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Efficient foundation decoders for fault-tolerant quantum computing
