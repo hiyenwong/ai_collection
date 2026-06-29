@@ -1,3 +1,19 @@
+## 2026-06-30 - Computer Science + Quantum Physics (Cron Job)
+
+### Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution
+- [[llm-structured-concept-evolution]] - SCE framework pairing LLMs with algebraic mutation grammars to discover CSS qLDPC code families including non-abelian constructions beyond bivariate-bicycle codes (arXiv: 2606.24808)
+  - Hierarchical mutations on group algebra, protograph geometry, and base space
+  - Works with lightweight models (GPT-5.4-mini and GPT-5.4-nano)
+  - Discovers diverse competitive code families with structured concept pairs (spec + executable program)
+  - **Activation**: structured concept evolution, SCE, LLM quantum code discovery, quantum LDPC, non-abelian codes, lifted-product codes
+
+### Tailor Made Embeddings for Quantum Machine Learning
+- [[vae-quantum-embedding]] - VAE framework learning task-specific quantum embeddings that compress high-dimensional data into compact quantum representations with polynomial-measurement reconstruction (arXiv: 2606.26312)
+  - ImageNet compressed into 13-qubit quantum representation while remaining reconstructable
+  - MNIST 3v5: 98.5% accuracy (1.2pp below classical baseline, 30+pp above naive amplitude embedding)
+  - Validated on IBM quantum hardware with stable embeddings under real device noise
+  - **Activation**: VAE quantum embedding, task-specific quantum encoding, quantum autoencoder, quantum data compression, polynomial measurement reconstruction
+
 ## 2026-06-29 - Neuroscience + Quantum Physics (Cron Job - Evening Round)
 
 ### NanoPhotoNet-PINL: Physics-Informed Inverse Design for Nonlinear Metasurfaces
