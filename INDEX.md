@@ -1,3 +1,14 @@
+## 2026-06-29 19:15 - 神经科学研究 (Cron Job)
+
+### 慢性压力作为E/I扰动在循环工作记忆网络中的建模
+- [[chronic-stress-ei-rnn-resilience]] - 计算建模方法论，将慢性压力建模为E/I扰动，识别增强的抑制性-兴奋性突触强度为最佳拟合机制 (arXiv: 2606.27529)
+  - 8种压力算子中，S[W_I→E]最佳重现实验特征：抑制主导、兴奋功能低下、任务表现受损
+  - 韧性网络保持任务表现但失去分布外泛化能力，类比压力动物的僵化行为
+  - 韧性网络保持相同的动力学子空间和能量状态，能量变化+2.5%至+5.7%（vs. 朴素网络-28%至-37%）
+  - **Activation**: chronic stress, E/I balance, working memory, resilience-generalization trade-off, Dale's law RNN
+
+---
+
 ## 2026-06-29 17:15 - 神经科学研究 (Cron Job)
 
 ### 延迟耦合神经振荡器中慢节律的系统分析
