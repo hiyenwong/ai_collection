@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-06-30 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Efficient foundation decoders for fault-tolerant quantum computing
+- [[ntu-foundation-decoder-qec]] - Neural Transfer Unification framework for QEC decoders enabling cross-distance transfer learning via shared algebraic structures (arXiv: 2606.27119)
+  - NTU aligns decoding tasks across code distances via algebraic structures shared by scalable code families
+  - NTU-Transformer outperforms matching on [[361,1,19]] and [[625,1,25]] surface codes, surpasses Relay-BP on [[72,12,6]] BB codes
+  - Enables amortized cross-distance training: knowledge from small codes accelerates large-scale decoder training
+  - **Activation**: neural transfer unification, NTU, foundation decoder, QEC decoder, cross-distance training, surface code decoder, bivariate bicycle code, transfer learning QEC
+
+### Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution
+- [[llm-guided-quantum-code-discovery]] - SCE framework pairs LLM with algebraic mutation grammar to discover qLDPC code families via hierarchical concept evolution (arXiv: 2606.24808)
+  - Evolves structured concepts: algebraic specifications paired with executable programs
+  - Three mutation levels: group algebra, protograph geometry, base space
+  - Discovers diverse code families including non-abelian constructions beyond bivariate-bicycle codes
+  - Works with lightweight models (GPT-5.4-mini, GPT-5.4-nano)
+  - **Activation**: structured concept evolution, SCE, qLDPC code discovery, LLM code design, lifted-product codes, algebraic mutation, CSS qLDPC, code search, group algebra
+
+### Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder
+- [[quantum-autoencoder-anomaly-detection]] - QAE for medical imaging anomaly detection using incompressibility-based scoring with angle encoding and trash qubits (arXiv: 2606.27411)
+  - Quantum autoencoder with variational encoder-decoder and trash qubits for compression-driven anomaly detection
+  - Achieves slice-level ROC-AUC ~0.95 on brain MRI datasets
+  - Encoder-decoder asymmetry reveals structured information compression as detection mechanism
+  - Produces spatially localized anomaly heatmaps aligned with tumorous regions
+  - **Activation**: quantum autoencoder, QAE, anomaly detection, medical imaging, brain MRI, compression-driven detection, trash qubits, variational encoder-decoder, ROC-AUC anomaly
+
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
 ### Heterogeneous synaptic motifs bridge microscale structure and macroscale nonlinear dynamics
