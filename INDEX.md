@@ -1,3 +1,17 @@
+## 2026-06-30 - Neuroscience Research (Cron Job - Round 2)
+
+### Analog KAN for Low-Power Biosignal Processing in Flexible Electronics
+- [[analog-kan-biosignal-flexible-electronics]] - Analog Kolmogorov-Arnold Networks with hardware-software co-optimization for wearable biosignal processing, 55% area / 50% power savings (arXiv: 2606.27892)
+  - Hardware-software co-optimization with circuit-level error modeling during training
+  - Dual-level pruning reduces area/power while regularizing spline parameters for improved accuracy
+  - **Activation**: analog KAN, flexible electronics, wearable biosignal, low-power neural hardware, sensor-level processing
+
+### Transcranial Photobiomodulation for Insomnia: EEG Biomarker Study
+- [[transcranial-photobiomodulation-insomnia-eeg]] - Pilot study using EEG to elucidate tPBM mechanisms targeting prefrontal hypoactivity in insomnia (hyperarousal model) (arXiv: 2606.24668)
+  - Near-infrared light → prefrontal activation → restored top-down control → reduced limbic/brainstem arousal
+  - EEG spectral and connectivity biomarkers for treatment response monitoring
+  - **Activation**: tPBM, photobiomodulation, insomnia, EEG biomarker, prefrontal hypoactivity, hyperarousal model
+
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
 ### CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
