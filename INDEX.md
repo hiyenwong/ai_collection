@@ -29,6 +29,12 @@
 
 ## 2026-06-30 - Neuroscience Research (Cron Job - Round 2)
 
+### AutoCog: Automated Cognitive Scientist for Theory Discovery
+- [[autocog-automated-cognitive-scientist]] - Autonomous LLM-driven system for closed-loop cognitive theory discovery, generates and tests computational models with human participants (arXiv: 2606.26693)
+  - Multi-agent system: theory advocates, experiment designer, data collector, evaluator, synthesizer
+  - Novel multi-cue decision-making theory discovered with diminishing sensitivity to feature values
+  - **Activation**: AutoCog, autonomous cognitive scientist, theory discovery, LLM agents, decision-making, cognitive modeling
+
 ### Analog KAN for Low-Power Biosignal Processing in Flexible Electronics
 - [[analog-kan-biosignal-flexible-electronics]] - Analog Kolmogorov-Arnold Networks with hardware-software co-optimization for wearable biosignal processing, 55% area / 50% power savings (arXiv: 2606.27892)
   - Hardware-software co-optimization with circuit-level error modeling during training
