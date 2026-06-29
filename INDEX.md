@@ -4008,3 +4008,12 @@
   - Fits 2400 ion channel models; reduces multi-compartment neurons to single-compartment
   - Maintains mechanistic interpretability for known channels
   - **Activation**: hybrid biophysical neuron, Neural ODE neuron model, ion channel kinetics learning, conductance-based neuron fitting, neural ODE biophysical
+
+## 2026-06-29 - Neuroscience + Quantum (Cron Job - Monday)
+
+### Modeling the Disjunction Effect within Classical Probability: A New Decision Process Model and Comparison with Quantum-like Models
+- [[classical-disjunction-effect-model]] - Classical probability model reproducing disjunction effect via expectation-parameter partitioning, proving equivalence with quantum-like models (arXiv: 2603.23233)
+  - Introduces continuous expectation parameter θ to partition participant pool by ambiguity level
+  - Proves classical and quantum-like models have identical observable expressiveness
+  - Substantive difference is ambiguity representation, not probability law violation
+  - **Activation**: disjunction effect, classical decision model, expectation parameter, quantum-like comparison, 析取效应
