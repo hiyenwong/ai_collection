@@ -1,4 +1,16 @@
 # AI Collection Index
+## 2026-06-30 - Neuroscience Research (Cron Job - Evening)
+
+### Beyond Single-Source Cognitive Taskonomy: Multi-Source Task Relations through fMRI Transfer Learning
+- [[multi-source-fmri-taskonomy]] - Multi-source fMRI cognitive taskonomy framework using transfer learning across 23 HCP task states with Boolean Integer Programming for budget-constrained task allocation (arXiv: 2606.26279)
+  - 1,127 task-specific and transfer models trained across 23 HCP task states
+  - Multi-source transfer depends on composition of source set; many-to-one relations not captured by pairwise taskonomy
+  - BIP optimization repeatedly allocates direct supervision to 0-back/2-back working-memory states (integrating perceptual, attentional, executive processes)
+  - Motor paradigm: strong within-paradigm transfer but limited cross-paradigm support
+  - **Activation**: fMRI taskonomy, cognitive tasks, transfer learning, multi-source, HCP, Boolean Integer Programming, masked fMRI reconstruction
+
+---
+
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
 ### Heterogeneous synaptic motifs bridge microscale structure and macroscale nonlinear dynamics
@@ -3011,3 +3023,9 @@
   - Regularized last-iterate methods select maximum-entropy Nash equilibrium
   - Regret-averaging methods drift to lower-entropy faces
   - **Activation**: Nash equilibrium selection, maximum-entropy equilibrium, game theory solver
+
+### Quantum Algorithm for Distributed Reduction of Entanglements (QADR)
+- [[qadr-distributed-entanglement-reduction]] - Hybrid quantum-classical ML framework decomposing global VQCs into causal light cone sub-circuits, reducing memory from O(2^n) to O(2^d) (arXiv: 2606.01291)
+  - Light cone decomposition replaces monolithic VQC with ensemble of local sub-circuits
+  - Naturally mitigates global barren plateaus via localized cost functions
+  - **Activation**: QADR, distributed entanglement reduction, causal light cone, VQC decomposition, 量子分布式纠缠减少
