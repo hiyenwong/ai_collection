@@ -2928,3 +2928,41 @@
   - 转译器在相同配置下对原始和变异电路进行标准化，比较生成的OpenQASM代码
   - 在348,299个变异体中识别出32.1%的等价变异体，精度100%，准确率82%
   - **Activation**: quantum mutant equivalence, quantum mutation testing, TBE transpiler, equivalent quantum mutant, OpenQASM comparison
+
+## 2026-06-30 - Computer Science (Cron Job)
+
+### Parameter-Efficient Quantum-Inspired Fast Weight Programmers for Traffic-Matrix Forecasting
+- [[quantum-inspired-kan-fast-weight-programming]] - QKAN-FWP methodology for parameter-efficient sequential modeling using quantum-inspired KAN activations with gated fast-weight programming (arXiv: 2606.27821)
+  - G-QKANFWP achieves best pooled RMSE with 22.4% parameters of matched LSTM
+  - Quantum-inspired Kolmogorov-Arnold activation with fast-weight memory separation
+  - **Activation**: quantum-inspired KAN, QKAN-FWP, fast weight programmer, 量子启发KAN, traffic matrix forecasting
+
+### Diameter truncated operator evolution
+- [[diameter-truncated-operator-evolution]] - Diameter-based operator truncation for simulating out-of-equilibrium quantum systems efficiently (arXiv: 2606.28313)
+  - Truncates operators by spatial support diameter rather than Pauli string weight
+  - Enables efficient extraction of correlation functions and transport properties
+  - **Activation**: diameter truncated operator evolution, quantum operator dynamics, 量子算符演化, kicked Ising simulation
+
+### Second-Order KKT Guarantees for Bregman ADMM in Nonconvex and Non-Lipschitz Optimization
+- [[bregman-admm-second-order-guarantees]] - Bregman ADMM with two-sided relative smoothness providing almost-sure second-order stationarity (arXiv: 2606.28307)
+  - Replaces Lipschitz gradient assumption with Hessian comparison relative to Bregman kernel
+  - Strict-saddle avoidance with probability 1 from random initialization
+  - **Activation**: Bregman ADMM nonconvex, second-order KKT guarantees, 布列格曼ADMM, relative smoothness optimization
+
+### Neural Transfer Unification for QEC Foundation Decoders
+- [[ntu-foundation-decoder-qec]] - Neural Transfer Unification framework for QEC decoders enabling cross-distance transfer learning via shared algebraic structures (arXiv: 2606.27119)
+  - Aligns decoding tasks across code distances via algebraic structures in scalable code families
+  - NTU-Transformer scales to [[625,1,25]] surface code with transfer adaptation
+  - **Activation**: neural transfer unification, QEC foundation decoder, quantum error correction, cross-distance transfer
+
+### Surprises in Proper Positive-Only Learning
+- **Existing** - Learning theory result settling proper learnability from positive-only samples (arXiv: 2606.28309)
+  - Finite VC dimension AND uniform exterior separability required for proper positive-only learning
+  - Separates proper vs improper, randomized vs deterministic learning regimes
+  - **Activation**: positive-only learning, VC dimension, uniform exterior separability, PAC learning
+
+### Nash Equilibrium Solver-Dependent Selection
+- **Existing** - Analysis of how different solvers select different members of Nash equilibrium polytopes (arXiv: 2606.28308)
+  - Regularized last-iterate methods select maximum-entropy Nash equilibrium
+  - Regret-averaging methods drift to lower-entropy faces
+  - **Activation**: Nash equilibrium selection, maximum-entropy equilibrium, game theory solver
