@@ -1,3 +1,23 @@
+## 2026-06-29 - Neuroscience Research (Cron Job)
+
+### Analog Interaction Systems: Energy-Efficient Generative Models on Neuromorphic Hardware
+- [[analog-interaction-systems-ais]] - Unified framework for hardware-implementable dynamical systems achieving 100x energy savings over digital baselines (arXiv: 2606.27294)
+  - Bridges gap between software-defined generative models and fixed physics-determined differential equations in analog circuits
+  - Two gap-narrowing mechanisms: time-varying piecewise parameters + hidden physical states
+  - WGAN training enables distribution matching without trajectory following
+  - MNIST FID 27.6, Fashion-MNIST FID 80.8 with 4-bit sparse architecture; 23 μJ per image
+  - **Activation**: analog computing, neuromorphic, AIS, coupled oscillators, analog ising machine, energy-efficient generative, physics-determined differential equations
+
+### Heterogeneous Neural Predictivity from Language Models During Naturalistic Comprehension
+- [[heterogeneous-neural-predictivity-lm]] - Multi-dataset framework evaluating language model neural predictivity with participant-level heterogeneity analysis (arXiv: 2606.26880)
+  - Demonstrates LM features can predict neural activity during naturalistic comprehension, but effects are localized not uniform across participants
+  - Critical distinction: separates predictive usefulness from claims about shared neural computational mechanisms
+  - 67 of 432 evaluable rows met controlled predictive-only criterion across Brain Treebank, MEG-MASC, Podcast ECoG
+  - Requires controlled temporal, acoustic, and capacity confounds; participant-level analysis essential
+  - **Activation**: brain-language alignment, neural predictivity, language model neuroscience, naturalistic comprehension, heterogeneous alignment, frozen LM analysis, EEG MEG ECoG
+
+---
+
 ## 2026-06-29 - Systems Engineering Research (Cron Job)
 
 ### Resilient Output Containment under Undisclosed Leader Dynamics and Actuator Attacks
