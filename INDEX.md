@@ -1,5 +1,14 @@
 ## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly)
 
+### SQNN: Decoherence as Defence for Adversarially Robust Quantum Neural Networks
+- [[sqnn-adversarial-robustness]] - N-qubit SQNN formulation proving decoherence-contraction theorem for adversarial robustness, with quantum dropout regularisation (arXiv: 2606.24219)
+  - Stochastic Quantum Neural Network encodes neuronal activations as qubits, synaptic topology as entanglement, noise via Lindblad master equation
+  - Decoherence-contraction theorem: depolarising channel of strength γ over L layers contracts weight-w Pauli read-out by (1-4γ/3)^{wL}
+  - Per-gate dropout implements curvature-weighted L2 penalty (p(1-p)/2)Σθ²∂²_θL, maximised at p=1/2
+  - 30-seed study: depolarising SQNN avoids catastrophic robustness collapse (classical: 95%→47%), cuts robustness variance twofold
+  - Validated on NSL-KDD under white-box FGSM/PGD attacks; neutral-atom hardware feasibility analysis included
+  - **Activation**: sqnn, stochastic quantum neural, decoherence contraction, quantum dropout, lindblad, adversarial robustness, neutral-atom, depolarising channel
+
 ### Hybrid Quantum-Classical Neural Networks for Quantum Phase Recognition
 - [[hybrid-quantum-neural-phase-recognition]] - Hybrid quantum-classical neural network for sample-efficient quantum phase recognition with ~10x sample complexity reduction (arXiv: 2606.28199)
   - Shallow parameterized quantum circuit performs nonlocal measurement basis transformation, jointly trained with classical neural network
