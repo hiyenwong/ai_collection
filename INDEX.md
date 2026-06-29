@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### Modelling chronic stress as an excitatory-inhibitory perturbation in recurrent working-memory networks
+- [[chronic-stress-ei-balance-rnn]] - Computational modeling of chronic stress as E/I balance perturbation in prefrontal working-memory RNNs, revealing resilience-generalization trade-off (arXiv: 2606.27529)
+  - Dale-constrained 200-neuron RNN (80% E, 20% I) on delayed parametric working memory task
+  - Enhanced I→E synapses reproduce all stress signatures (inhibitory dominance, excitatory hypofunction, impaired performance)
+  - Resilient networks preserve function under stress but lose generalization to novel delays → behavioral rigidity analogue
+  - Energetic landscape preservation as resilience biomarker
+  - **Activation**: chronic stress, E/I balance, working memory, prefrontal cortex, resilience, recurrent neural networks, Dale's law
+
+### CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
+- [[canns-toolkit-attractor-networks]] - Comprehensive open-source toolkit unifying CANN research workflow (Python/Rust/GUI) for grid cells, place cells, head-direction, path integration, and persistent homology-based attractor detection (arXiv: 2606.27783)
+  - 1D ring and 2D torus CANNs with spike-frequency adaptation and theta-rhythmic modulation variants
+  - Persistent homology pipeline (ASA) detects ring/torus topological signatures in experimental neural recordings
+  - Rust acceleration backend for persistent homology (100-1000× speedup) and spatial navigation
+  - Reproduces: anticipative tracking, theta sweeps, hierarchical path integration, real MEC grid-cell topology
+  - **Activation**: continuous attractor, CANN, grid cells, place cells, head-direction, path integration, persistent homology, topological data analysis, BrainPy, JAX, hippocampus, entorhinal cortex
+
 ## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Quantum element-wise transforms
