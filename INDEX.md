@@ -3951,3 +3951,13 @@
   - 核心要点: 价键嵌入方法将深度量子化学计算映射到浅电路，降低NISQ设备上的实现难度
   - 核心要点: 结合经典化学直觉与量子电路设计，保持化学精度的同时减少量子资源需求
   - **Activation**: valence bond embedding, shallow quantum chemistry, quantum circuit depth reduction, VQE chemistry, 量子化学浅电路
+
+## 2026-06-29 - Anthropic Research (Cron Job)
+
+### Anthropic Economic Index report: Cadences
+- [[anthropic-economic-index-cadences]] - Methodology for analyzing AI usage patterns through privacy-preserving telemetry
+  - High-frequency continuous sampling (hourly granularity vs. previous 7-day samples)
+  - Output artifact classifier linking compute consumption to work value
+  - Survey-usage linkage revealing automation-expectation correlation
+  - Temporal cadences: workweek mirroring, within-day patterns, event-driven surges
+  - **Activation**: anthropic economic index, AI usage patterns, cadences, privacy-preserving telemetry, output classification, temporal analysis
