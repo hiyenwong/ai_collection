@@ -3981,3 +3981,12 @@
   - Survey-usage linkage revealing automation-expectation correlation
   - Temporal cadences: workweek mirroring, within-day patterns, event-driven surges
   - **Activation**: anthropic economic index, AI usage patterns, cadences, privacy-preserving telemetry, output classification, temporal analysis
+
+## 2026-06-29 - Neuroscience (Cron Job)
+
+### Learning Hybrid Biophysical Neuron Models with Neural ODEs
+- [[hybrid-biophysical-neuron-neural-ode]] - Hybrid biophysical neuron modeling using Neural ODEs to learn unknown ion channel kinetics while preserving mechanistic interpretability; enables 10x speedup in multi-compartment neuron reduction (arXiv: 2606.16693)
+  - Core: Neural ODE replaces unknown gating dynamics (m∞(V), τ(V)) in conductance-based models
+  - Fits 2400 ion channel models; reduces multi-compartment neurons to single-compartment
+  - Maintains mechanistic interpretability for known channels
+  - **Activation**: hybrid biophysical neuron, Neural ODE neuron model, ion channel kinetics learning, conductance-based neuron fitting, neural ODE biophysical
