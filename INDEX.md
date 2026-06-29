@@ -1,3 +1,21 @@
+## 2026-06-29 17:15 - 神经科学研究 (Cron Job)
+
+### 延迟耦合神经振荡器中慢节律的系统分析
+- [[slow-rhythms-delay-coupled-oscillators]] - 通过相位约化和数值延拓方法，系统揭示了突触延迟如何诱导慢节律的机制 (arXiv: 2606.20733)
+  - 突触延迟在抑制性网络中产生快慢时间尺度分离
+  - 三种分岔机制：Hopf分岔、异宿分岔、鞍结点周期分岔
+  - 在FHN、ML、QIF三种模型上验证了现象的普适性
+  - **Activation**: delay-induced rhythms, phase reduction, bifurcation analysis, slow-fast dynamics, neural oscillators
+
+### 基于检索的脑解码：对齐而非复杂性
+- [[retrieval-brain-decoding-alignment]] - 证明线性对比解码器优于复杂非线性模型，训练目标比架构复杂性更重要 (arXiv: 2606.19081)
+  - fMRI信号的空间时间平均效应使表征线性化
+  - 对比学习利用嵌入空间几何结构，比Ridge回归更有效
+  - 在视觉、语言、听觉三种模态上验证
+  - **Activation**: brain decoding, contrastive learning, linear decoder, fMRI alignment, foundation models
+
+---
+
 ## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly 09:00)
 
 ### CV-QNN Edge AI: Parameter-Efficient Photonic Quantum Neural Networks
