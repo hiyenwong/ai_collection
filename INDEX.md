@@ -27,6 +27,18 @@
 
 ## 2026-06-29 - Neuroscience Research (Cron Job - Afternoon)
 
+### Common Synaptic Input Estimation from Motor Unit Spike Trains (openhdemg)
+- [[common-synaptic-input-estimation-hdemg]] - 从HDsEMG运动单位放电序列估计共同突触输入的实用方法论，三种互补方法：时域、频域、网络信息法 (arXiv: 2606.23066v1)
+  - 时域方法：平滑放电率相关性，关键参数为平滑窗口（200-500ms），最稳健的通用方法
+  - 频域方法：累积放电序列相干性，识别特定频率共同振荡（0-5Hz共同驱动，5-20Hz beta，20-40Hz gamma）
+  - 网络信息方法：成对非线性依赖建模为图，揭示共享输入拓扑结构（互信息/转移熵，阈值0.05-0.2）
+  - 关键发现：分解质量直接影响估计；没有单一最佳方法，需互补使用；时域最稳健，频域揭示振荡，网络揭示拓扑
+  - 完整工作流：HDsEMG分解 → MU质量过滤（min_discharges=50, maxisi_ratio=3.0, min_sil=0.9）→ CSI估计 → 可视化
+  - 主要陷阱：平滑窗口选择需敏感性分析；需>20个MU；疲劳时CSI变化需时间滑窗；串扰污染；放电率混杂因素
+  - **Activation**: 共同突触输入估计, 运动单位分解, HDsEMG分析, openhdemg, 相干性分析, 运动控制
+
+---
+
 ### Synaptic Motifs Bridge Microscale Structure and Macroscale Nonlinear Dynamics
 - [[synaptic-motifs-mean-field-dynamics]] - Mean-field theory linking microscale synaptic motifs to macroscale neural population dynamics (arXiv: 2606.27946)
   - Mathematical framework demonstrating how second-order synaptic motifs (pairs of correlated synaptic couplings) drive heterogeneous population dynamics
