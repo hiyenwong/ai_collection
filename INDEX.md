@@ -1,3 +1,21 @@
+## 2026-06-29 - Neuroscience Research (Cron Job - Afternoon)
+
+### Synaptic Motifs Bridge Microscale Structure and Macroscale Nonlinear Dynamics
+- [[synaptic-motifs-mean-field-dynamics]] - Mean-field theory linking microscale synaptic motifs to macroscale neural population dynamics (arXiv: 2606.27946)
+  - Mathematical framework demonstrating how second-order synaptic motifs (pairs of correlated synaptic couplings) drive heterogeneous population dynamics
+  - Low-rank reduction: P-population networks with arbitrary synaptic statistics captured by 2P-dimensional system (P mean activities + P variabilities)
+  - Chain motifs enable microscopic fluctuations to integrate and influence mesoscopic mean dynamics, bridging micro→meso→macro scales
+  - **Activation**: synaptic motifs, second-order motifs, mean-field theory, population dynamics, neural variability, micro-macro bridge, connectomics, RNN theory
+
+### CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
+- [[canns-toolkit-attractor-networks]] - Comprehensive open-source toolkit unifying CANN research workflow with BrainPy/JAX, Rust acceleration, and topological analysis (arXiv: 2606.27783)
+  - Three integrated components: `canns` Python library (1D/2D CANNs, grid cells, path integration), `canns-lib` Rust backend (100-1000x speedup), ASA GUI (persistent homology analysis)
+  - Recovers recent results: SFA-driven anticipative tracking, theta sweeps in head direction/place/grid systems, hierarchical path integration
+  - Bridges spike trains → attractor geometry via topological data analysis detecting ring-like and toroidal signatures in experimental recordings
+  - **Activation**: continuous attractor, CANN, grid cells, place cells, head direction cells, path integration, attractor geometry, persistent homology, BrainPy, JAX, topological data analysis
+
+---
+
 ## 2026-06-29 - Quantum ML Research (Cron Job - Hourly #4)
 
 ### Parameter-Efficient CV-Photonic QNN for Edge Quantum AI
