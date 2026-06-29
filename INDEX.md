@@ -1,4 +1,18 @@
 # AI Collection Index
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### Heterogeneous synaptic motifs bridge microscale structure and macroscale nonlinear dynamics
+- [[synaptic-motifs-mean-field-dynamics]] - Mean-field theory linking microscale synaptic motifs to macroscopic heterogeneous population dynamics (arXiv: 2606.27946)
+  - Core innovation: Framework derives 2P latent variable equations for P-population networks with arbitrary second-order synaptic statistics
+  - Chain motifs enable microscopic fluctuations to propagate to mesoscopic scales
+  - **Activation**: synaptic motifs, mean-field theory, heterogeneous dynamics, connectomics, population dynamics
+
+### Soliton-like Waves in 2D Recurrent SNN with Weighted STDP
+- [[soliton-waves-wstdp-snn]] - Self-propagating wave packets in spiking neural networks with weighted STDP (arXiv: 2606.21432)
+  - Core innovation: Discrete-time SNN with WSTDP and divisive normalization generates stable dissipative solitons
+  - Network learns propagation direction via STDP; collisions encode relative phase/frequency
+  - **Activation**: soliton waves, STDP, traveling waves, cortical dynamics, recurrent SNN, self-propagating activity
+
 
 ## 2026-06-30 - Computer Science + Quantum Mechanics (Cron Job - Hourly)
 
