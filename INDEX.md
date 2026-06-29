@@ -1,3 +1,21 @@
+## 2026-06-29 - Neuroscience Research (Cron Job)
+
+### SpikeVLA: Vision-Language-Action Models with Spiking Neural Networks
+- [[spikevla-spiking-vla-embodied-navigation]] - ICML 2026: Full spiking VLA architecture for embodied navigation with event-driven vision (Spike-V), multimodal LLM (Spike-L), and action policy (Spike-A) using Laplacian population coding (arXiv: 2606.27807)
+  - Significant energy reduction while maintaining competitive performance
+  - First end-to-end spiking VLA pipeline from perception to continuous control
+  - Validates spiking LLM concept for embodied AI
+  - **Activation**: SpikeVLA, spiking VLA, embodied navigation, ICML 2026, energy-efficient, Laplacian kernel, population coding
+
+### Identifying structural design principles shaping the computational abilities of recurrent neural networks
+- [[rnn-structural-design-computational-ability]] - Exhaustive structure-function mapping reveals local 2- and 3-cycles strongly enhance RNN computational ability; sparse interneurons dramatically increase capacity (arXiv: 2606.23874)
+  - Complete catalogs of network-function performance for small networks
+  - Most networks fail at most functions; local cycles are minimal enabling architectures
+  - Small structural statistics accurately predict computational capacity
+  - **Activation**: RNN structure-function, local cycles, computational ability, interneurons, Boolean functions, network catalogs
+
+---
+
 ## 2026-06-29 12:05 - Neuroscience Research (Cron Job)
 
 ### Heterogeneous synaptic motifs bridge microscale structure and macroscale nonlinear dynamics
