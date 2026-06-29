@@ -1,3 +1,21 @@
+## 2026-06-29 12:05 - Neuroscience Research (Cron Job)
+
+### Heterogeneous synaptic motifs bridge microscale structure and macroscale nonlinear dynamics
+- [[synaptic-motifs-mean-field]] - 均值场理论框架，通过低秩方程连接突触分辨率连接组学与宏观异质群体动力学 (arXiv: 2606.27946)
+  - 提出2P维潜变量均值场方程：P个描述群体平均活动 + P个捕获群体内变异性
+  - Chain motifs诱导突触变异性相关性，使微观波动整合影响介观平均动力学
+  - 成功逆向工程预测小鼠V1异质群体活动
+  - **Activation**: synaptic motifs, mean-field, population dynamics, connectomics, chain motifs, V1 modeling
+
+### Topology-Dependent Emergence of Polychronous Neuronal Groups: A Recurrence-Plot Characterization
+- [[topology-dependent-png-recurrence-plot]] - 小世界拓扑驱动的脉冲序列群组涌现与无标签循环图检测方法 (arXiv: 2606.25874)
+  - 聚类系数C是PNG产出的主要结构驱动因子（环晶格C~0.35→850 PNGs vs 随机图C~0.20→<50 PNGs）
+  - 提出稀疏点积Recurrence Plot解码器：单位斜率对角结构=PNG，DET~0.65量化轨迹可复现性
+  - 小世界拓扑是polychronization的最优结构
+  - **Activation**: polychronous neuronal groups, PNG, recurrence plots, STDP, small-world topology, Izhikevich
+
+---
+
 ## 2026-06-29 19:15 - 神经科学研究 (Cron Job)
 
 ### 慢性压力作为E/I扰动在循环工作记忆网络中的建模

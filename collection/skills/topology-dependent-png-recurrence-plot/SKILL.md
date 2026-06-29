@@ -1,150 +1,108 @@
 ---
 name: topology-dependent-png-recurrence-plot
-description: Topology-Dependent Emergence of Polychronous Neuronal Groups (PNGs) via Recurrence-Plot Characterization — structural determinants and label-free PNG detection methodology
-version: 1.0.0
-author: Lucas A. T. Carneiro, Armand D. Jiofack, Fernando F. F. Ferreira
-arxiv_id: 2606.25874v1
-published: 2026-06-24
-categories: [neuroscience, neural-networks, spiking-neural-networks, computational-neuroscience]
-tags: [polychronous-neuronal-groups, png, recurrence-plot, topology, clustering-coefficient, watts-strogatz, izhikevich-neurons, stdp, axonal-delays]
-activation_words: [polychronous neuronal groups, PNG, recurrence plot, network topology, clustering coefficient, STDP, axonal delays]
+description: Topology-Dependent Emergence of Polychronous Neuronal Groups via Recurrence Plot characterization. Analyzes how small-world network topology drives PNG formation in spiking networks with STDP and heterogeneous delays.
+arxiv_id: "2606.25874"
+tags: [spiking-neural-networks, polychronous-groups, STDP, recurrence-plots, small-world-topology, neural-computation]
 ---
 
 # Topology-Dependent Emergence of Polychronous Neuronal Groups
 
-## Summary
+## Background
 
-Polychronous Neuronal Groups (PNGs) are reproducible, time-locked spatiotemporal firing cascades stabilized by Spike-Timing-Dependent Plasticity (STDP) and heterogeneous axonal delays, providing a combinatorially rich substrate for neural computation. This methodology introduces:
-
-1. **Parametric topology sweep**: Watts-Strogatz model to identify structural determinants of PNG emergence
-2. **Recurrence Plot (RP) decoder**: Label-free PNG identification via sparse-dot-product recurrence matrix analysis
-3. **Key finding**: Clustering coefficient C is the primary structural driver of PNG yield
-
-**Critical Discovery**: Transition from ring-lattice (C~0.35, ~850 PNGs) to random graph (C~0.20, <50 PNGs) reduces representational capacity by >90%. Small-world topology is optimal for polychronization.
+Polychronous Neuronal Groups (PNGs) are reproducible, time-locked spatiotemporal firing cascades stabilized by Spike-Timing-Dependent Plasticity (STDP) and heterogeneous axonal delays. They provide a combinatorially rich substrate for neural computation, but their structural determinants remain poorly understood.
 
 ## Core Methodology
 
-### 1. Network Simulation
+### Network Simulation Setup
+
+- **Network:** N=1000 Izhikevich neurons, recurrent connectivity
+- **Duration:** 10 hours of biological time
+- **Plasticity:** STDP with heterogeneous axonal delays
+- **Result:** 1545 unique PNGs identified via offline event-driven detection
+
+### Topology Sweep: Watts-Strogatz Model
+
+**Key Finding:** Clustering coefficient C is the PRIMARY structural driver of PNG yield.
+
+| Topology | C value | PNG count | Capacity loss |
+|----------|---------|-----------|---------------|
+| Ring lattice | ~0.35 | ~850 PNGs | baseline |
+| Random graph | ~0.20 | <50 PNGs | >90% loss |
+
+**Implication:** Small-world topology (intermediate clustering + short path lengths) is the structural optimum for polychronization.
+
+### Recurrence Plot (RP) Framework
+
+**Innovation:** Sparse-dot-product Recurrence Plot decoder for PNG identification — entirely independent of anatomical neuron labelling.
+
+**How it works:**
+1. Compute phase-space recurrence matrix from spike train data
+2. PNGs appear as **unit-slope diagonal structures** in the recurrence matrix
+3. Recurrence Quantification Analysis (RQA) yields DET~0.65, quantifying trajectory reproducibility
+
+**Advantage:** Label-free — works without knowing which neuron is which, only requires spike timing data.
+
+## Key Results
+
+1. **Clustering coefficient C** is the dominant predictor of PNG yield (not average path length)
+2. Transition from ring lattice → random graph causes >90% representational capacity loss
+3. RP decoder provides principled, anatomy-independent PNG identification
+4. DET~0.65 quantifies the network's dynamical reproducibility
+
+## Implementation Guide
+
 ```python
-# Izhikevich neuron network
-N = 1000 neurons
-# Simulation duration: 10 hours biological time
-# PNG detection: offline event-driven algorithm
-# Output: 1545 unique PNGs identified
-```
-
-### 2. Watts-Strogatz Topology Sweep
-- **Ring-lattice**: High clustering (C~0.35), high PNG yield (~850 PNGs)
-- **Small-world**: Intermediate clustering, optimal PNG diversity
-- **Random graph**: Low clustering (C~0.20), minimal PNG yield (<50)
-
-**Key parameter**: Rewiring probability controls clustering coefficient
-
-### 3. Recurrence Plot Framework
-```
-Sparse-dot-product RP = sparse_dot_product(phase_space_matrix)
-PNG signature = unit-slope diagonal structures in RP
-DET metric ≈ 0.65 → quantifies trajectory reproducibility
-```
-
-**Advantages**: 
-- Label-free detection (no anatomical neuron labeling required)
-- Principled identification via phase-space recurrence matrix
-- Recurrence Quantification Analysis (RQA) for validation
-
-## Key Equations
-
-### PNG Yield vs Clustering
-```
-PNG_count ≈ f(clustering_coefficient C)
-Optimal: C ≈ 0.35 (ring-lattice regime)
-Critical transition: C < 0.25 → PNG collapse
-```
-
-### Recurrence Plot Construction
-```
-RP[i,j] = δ(φ[i] - φ[j])  # phase-space distance
-PNGs detected as diagonal structures with slope ≈ 1
-DET = Σ(diagonal_elements) / Σ(all_elements)
-```
-
-## Practical Applications
-
-### 1. Network Topology Design
-- **Goal**: Maximize PNG yield for neural computation
-- **Method**: Optimize clustering coefficient via Watts-Strogatz rewiring
-- **Target**: C ≈ 0.35 for high PNG diversity
-
-### 2. PNG Detection Pipeline
-```python
-def detect_pngs(spike_trains, tolerance=0.01):
-    # Build phase-space trajectory
-    phase_matrix = extract_phase_trajectory(spike_trains)
+# Pseudo-code for RP-based PNG detection
+def detect_pngs_via_recurrence_plot(spike_trains, neuron_ids, time_bins):
+    """
+    spike_trains: binary matrix (neurons x time_bins)
+    Returns: list of PNGs as diagonal structures in RP
+    """
+    # 1. Compute sparse dot-product recurrence matrix
+    R = sparse_dot_product(spike_trains, spike_trains.T)
     
-    # Compute sparse recurrence plot
-    rp = sparse_dot_product(phase_matrix, tolerance)
+    # 2. Identify unit-slope diagonal structures
+    diagonals = extract_diagonals(R, slope=1.0, min_length=5)
     
-    # Extract unit-slope diagonal structures
-    pngs = extract_diagonal_structures(rp, slope=1.0)
+    # 3. RQA: compute determinism (DET)
+    det = compute_determinism(R, diagonals)
     
-    # RQA validation
-    det = compute_determinism(rp)
-    
+    # 4. Each diagonal = one PNG (spatiotemporal firing cascade)
+    pngs = [extract_png(diag, spike_trains, neuron_ids) for diag in diagonals]
     return pngs, det
 ```
 
-### 3. Memory Capacity Analysis
-- **Metric**: PNG count × temporal precision
-- **Structural optimum**: Small-world topology
-- **Combinatorial explosion**: 1545 PNGs from 1000 neurons
+### Watts-Strogatz Topology Sweep
 
-## Pitfalls & Considerations
+```python
+def topology_png_yield(n_neurons, p_rewire_range, n_simulations=10):
+    """
+    Sweep rewiring probability p in Watts-Strogatz model.
+    Measure PNG yield as function of clustering coefficient C.
+    """
+    results = []
+    for p in p_rewire_range:
+        G = watts_strogatz_graph(n_neurons, k=10, p=p)
+        C = nx.clustering(G)  # clustering coefficient
+        # Run spiking simulation with STDP
+        pngs = simulate_and_detect_pngs(G, duration=10*3600*1000)  # 10h in ms
+        results.append((p, C, len(pngs)))
+    return results
+```
 
-### 1. Simulation Duration
-- **Requirement**: >10 hours biological time for PNG stabilization
-- **Warning**: Shorter simulations may miss late-emerging PNGs
-- **Recommendation**: Use event-driven detection for efficiency
+## Pitfalls
 
-### 2. STDP Parameters
-- Critical for PNG stabilization
-- Heterogeneous axonal delays essential
-- Default: STDP window ±20ms, delay distribution 1-20ms
+- Small-world optimum requires BOTH high clustering AND short paths — random graphs lose PNGs due to low clustering, not long paths
+- RP decoder requires sufficient spike density; very sparse firing rates may miss PNGs
+- STDP parameters must allow stable cascade formation — too strong depression kills PNGs
+- Heterogeneous delays are essential — uniform delays cannot support polychronization
 
-### 3. Recurrence Plot Interpretation
-- Unit-slope diagonals = PNG signatures
-- DET ~0.65 indicates good reproducibility
-- Avoid: over-interpreting short diagonal segments
+## Verification
 
-## Experimental Validation
+- Compare PNG count across Watts-Strogatz p values
+- Verify RP diagonals match anatomically-labelled PNG detections
+- Check DET correlates with PNG reproducibility across trials
 
-### Dataset
-- N=1000 Izhikevich neurons
-- 10 hours simulated activity
-- 1545 unique PNGs detected
-- 34 Watts-Strogatz topology configurations
+## Activation Triggers
 
-### Metrics
-1. PNG count: structural capacity measure
-2. DET: trajectory reproducibility (RQA)
-3. Clustering coefficient: topology control parameter
-
-## Related Concepts
-
-- **STDP (Spike-Timing-Dependent Plasticity)**: PNG stabilization mechanism
-- **Axonal Delays**: Temporal diversity for PNG formation
-- **Small-world Networks**: Optimal topology for polychronization
-- **Recurrence Quantification Analysis (RQA)**: PNG validation framework
-
-## Cross-references
-
-- [[topology-neural-networks]]: Network topology effects
-- [[spiking-neural-network-analysis]]: SNN computational frameworks
-- [[stdp-spiking-transformer-attention]]: STDP in modern architectures
-- [[neural-manifold-learning-dynamics]]: Manifold-based neural analysis
-
-## References
-
-1. Carneiro et al. (2026). arXiv:2606.25874v1
-2. Izhikevich (2006). Polychronization: computation with spikes
-3. Watts & Strogatz (1998). Collective dynamics of small-world networks
-4. Marwan et al. (2007). Recurrence plots for complex systems analysis
+Keywords: polychronous neuronal groups, PNG, recurrence plots, small-world topology, STDP, Izhikevich, clustering coefficient, neural computation, spatiotemporal cascades, Watts-Strogatz
