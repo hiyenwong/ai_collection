@@ -1,3 +1,23 @@
+## 2026-06-29 - Quantum ML Research (Cron Job - Hourly #4)
+
+### Parameter-Efficient CV-Photonic QNN for Edge Quantum AI
+- [[cv-photonic-qnn-edge-ai]] - Continuous-variable photonic quantum neural network for room-temperature edge AI medical imaging with 18 parameters achieving 100% accuracy (arXiv: 2606.28252)
+  - Hybrid classical-CV quantum classifier: MobileNetV1 + PCA + CV-QNN with displacement/interferometric/Kerr gates
+  - Simplified CV-QNN layer cuts parameters 40-45% vs. Killoran et al. (2019) standard layer
+  - Barren plateau mitigation raises gradient variance by ~58 orders of magnitude
+  - 4-qumode model with 18 parameters beats 55-parameter classical baseline (67% reduction)
+  - **Activation**: cv-photonic, quantum neural network, edge AI, medical imaging, room-temperature quantum, oral cancer detection, parameter efficiency, barren plateau mitigation
+
+### QDiffusion-TS: First Quantum Generative Diffusion Model for Time Series
+- [[qdiffusion-ts-quantum-generative-diffusion]] - First quantum generative diffusion model validated on real IQM quantum processor for financial time series synthesis (arXiv: 2606.27561)
+  - Hybrid quantum-classical transformer: QNN replaces feed-forward layers in denoising transformer
+  - ~1000x parameter reduction vs. full classical diffusion model
+  - 44% Wasserstein distance reduction on Apple/Amazon stock data vs. classical counterpart
+  - Up to 71% RMSE improvement in downstream forecasting with quantum-generated augmentation
+  - **Activation**: qdiffusion-ts, quantum diffusion, generative model, time series synthesis, quantum transformer, financial data augmentation, IQM processor, hybrid quantum-classical
+
+---
+
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
 ### Analog Interaction Systems: Energy-Efficient Generative Models on Neuromorphic Hardware
