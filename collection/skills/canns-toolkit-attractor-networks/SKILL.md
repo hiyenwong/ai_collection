@@ -1,221 +1,178 @@
 ---
 name: canns-toolkit-attractor-networks
-description: "Comprehensive open-source toolkit for Continuous Attractor Neural Network (CANN) research combining Python library on BrainPy/JAX, Rust acceleration backend, and persistent homology analyzer. Use for implementing 1D/2D CANNs, spike-frequency adaptation variants, grid cell networks, hierarchical path integration models, analyzing attractor geometry in neural recordings via topological methods, recovering ring-like and toroidal attractor signatures. Activation: continuous attractor, CANN, grid cells, place cells, head direction cells, path integration, attractor geometry, persistent homology, BrainPy, JAX, neural recordings analysis, topological data analysis."
-metadata:
-  arxiv_id: "2606.27783"
-  published: "2026-06-26"
-  authors: "Sichao He, Aiersi Tuerhong, Shangjun She, Tianhao Chu, Yuling Wu, Junfeng Zuo, Si Wu"
-  tags: [continuous-attractor-neural-networks, toolkit, grid-cells, path-integration, persistent-homology, BrainPy, JAX]
+description: "Comprehensive open-source toolkit unifying CANN research workflow with BrainPy/JAX, Rust acceleration, and topological analysis. Use when working with continuous attractor neural networks for spatial coding, head direction, grid cells, or any continuous variable encoding in neural circuits."
 ---
 
-# CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
+## CANNs Toolkit for Continuous Attractor Neural Networks
 
-**arXiv:2606.27783** | He et al. | 26 Jun 2026
+### Description
 
-## Overview
+Continuous attractor neural networks (CANNs) are the canonical computational framework for how the brain encodes continuous variables (spatial position, head direction, movement direction). This skill provides methodology from the unified CANNs toolkit that bridges fragmented lab-specific implementations into a general-purpose research framework with BrainPy/JAX integration, Rust-accelerated simulation, and topological analysis of attractor manifolds.
 
-First comprehensive open-source toolkit unifying the full CANN research workflow, addressing the fragmentation in CANN research where most results rely on lab-specific implementations.
+### Activation Keywords
+- CANN
+- continuous attractor neural network
+- 连续吸引子网络
+- head direction cell
+- grid cell simulation
+- spatial coding neural network
+- attractor manifold
+- bump attractor
+- 吸引子网络
+- place cell simulation
+- CANNs toolkit
 
-## Three Integrated Components
+### Core Concepts
 
-### 1. `canns` Python Library (BrainPy/JAX)
-- Standardized 1D/2D CANN implementations
-- Spike-frequency adaptation (SFA) variants
-- Grid cell networks
-- Hierarchical path integration models
-- Brain-inspired attractor architectures
-- Curated datasets and task generators
-- Analyzer module for attractor geometry
-- Trainer modules for biologically plausible plasticity
+#### 1. Attractor Manifold Theory
+CANNs maintain stable activity patterns (bumps) that can be continuously translated across the network through external input or internal dynamics. The attractor manifold is a low-dimensional subspace where network activity evolves — typically a ring (head direction), torus (grid cells), or line (1D position).
 
-### 2. `canns-lib` Rust Backend
-- Hundreds-of-times speedup for spatial navigation workloads
-- Modest gains for Ripser-based persistent homology
-- Production-grade performance for large-scale simulations
+#### 2. Key CANN Variants
+- **Ring CANN**: Encodes angular variables (head direction, orientation)
+- **Torus CANN**: Encodes 2D periodic variables (grid cell phase)
+- **Line CANN**: Encodes 1D continuous variables (spatial position)
+- **Spherical CANN**: Encodes variables on spherical manifolds
 
-### 3. ASA (Attractor Structure Analyzer)
-- PySide6 GUI pipeline
-- Applies persistent homology and cohomology to experimental neural recordings
-- Detects ring-like and toroidal attractor signatures in real data
-- Bridges gap between spike trains and attractor geometry
+#### 3. Toolkit Architecture
+The unified CANNs toolkit provides:
+- **BrainPy/JAX backend**: GPU-accelerated simulation with automatic differentiation
+- **Rust-accelerated core**: High-performance CPU simulation for large networks
+- **Topological analysis**: Persistent homology and manifold learning for attractor structure verification
+- **Spike-to-attractor pipeline**: Converting spike trains to attractor geometry visualization
 
-## CANN Fundamentals
+### Usage Patterns
 
-### What Are CANNs?
-Continuous attractor neural networks are the canonical computational framework for how the brain encodes continuous variables:
-- **Spatial position** → place cells (hippocampus)
-- **Head direction** → head direction cells
-- **Movement direction** → grid cells (entorhinal cortex)
+#### Pattern 1: Building a Ring CANN for Head Direction
 
-### Key Properties
-- Continuous family of stable states (attractor manifold)
-- Neutral stability along the manifold
-- Robust to perturbations perpendicular to manifold
-- Support path integration through asymmetric connectivity
-
-## Core Implementations
-
-### 1D Ring Attractor (Head Direction)
 ```python
-import canns
 import brainpy as bp
+import brainpy.math as bm
+import numpy as np
 
-# Standard 1D ring network
-net = canns.RingAttractor(
-    num_units=256,
-    connectivity='gaussian',
-    sigma=0.1,  # width of bump
-    tau=10.0    # time constant
-)
-
-# Add spike-frequency adaptation
-net.add_sfa(tau_sfa=100.0, alpha_sfa=0.1)
-
-# Simulate with head direction input
-runner = bp.DSRunner(net, inputs=[('input', head_dir_signal)])
-runner.run(duration=5000.)
+class RingCANN(bp.DynamicalSystem):
+    def __init__(self, num_neurons=256, sigma=0.1, tau=10.0):
+        super().__init__()
+        self.num = num_neurons
+        self.sigma = sigma  # Connection width
+        self.tau = tau      # Time constant
+        
+        # Initialize activity
+        self.r = bp.Variable(bm.zeros(num_neurons))
+        
+        # Precompute weight matrix (Mexican hat)
+        theta = bm.linspace(0, 2*np.pi, num_neurons, endpoint=False)
+        dist = bm.abs(theta[:, None] - theta[None, :])
+        dist = bm.minimum(dist, 2*np.pi - dist)
+        self.W = bm.exp(-dist**2 / (2*sigma**2)) * 2 - 1.0
+        
+    def update(self, t, dt, external_input=0.0):
+        # Recurrent input
+        recurrent = bm.dot(self.W, self.r) / self.num
+        # Update dynamics
+        dr = (-self.r + recurrent + external_input) / self.tau
+        self.r.value += dt * dr
+        
+cann = RingCANN(num_neurons=256, sigma=0.1)
 ```
 
-### 2D Toroidal Attractor (Grid Cells)
+#### Pattern 2: Topological Analysis of Attractor Structure
+
 ```python
-# 2D grid cell network
-net = canns.GridCellNetwork(
-    grid_scale=30.0,  # cm
-    grid_orientation=0.0,
-    num_modules=3
-)
+from gudhi import ripser
+from sklearn.manifold import MDS
 
-# Hierarchical path integration
-net.add_path_integration(
-    velocity_input='running_velocity',
-    gain=1.0
-)
+def analyze_attractor_topology(spike_trains, max_dim=2):
+    """Extract topological features of CANN attractor manifold.
+    
+    Args:
+        spike_trains: (T, N) spike count matrix
+        max_dim: Maximum homology dimension to compute
+    
+    Returns:
+        persistence_diagrams: List of (birth, death) pairs per dimension
+    """
+    # Embed spike trains into low-dimensional space
+    mds = MDS(n_components=3, dissimilarity='precomputed')
+    dist_matrix = np.linalg.norm(spike_trains[:, None, :] - spike_trains[None, :, :], axis=2)
+    embedding = mds.fit_transform(dist_matrix)
+    
+    # Compute persistent homology
+    rips = ripser.RipsComplex(points=embedding, max_edge_length=1.0)
+    simplex_tree = rips.create_simplex_tree(max_dimension=max_dim)
+    simplex_tree.persistence()
+    
+    diagrams = simplex_tree.persistence_intervals_in_dimension()
+    return diagrams
 ```
 
-### Attractor Geometry Analysis
+#### Pattern 3: Input-Driven Bump Translation
+
 ```python
-from canns.analyzer import AttractorAnalyzer
-
-analyzer = AttractorAnalyzer(network_activity)
-
-# Compute persistent homology
-persistence = analyzer.compute_persistence(dim=1)
-
-# Detect ring-like structure
-ring_score = analyzer.detect_ring_topology()
-
-# Visualize attractor manifold
-analyzer.plot_manifold_3d()
+def drive_cann_with_input(cann, input_profile, duration=1000, dt=0.1):
+    """Drive CANN with external input to move bump attractor.
+    
+    Args:
+        cann: CANN instance
+        input_profile: Function of (position, time) returning input vector
+        duration: Simulation duration (ms)
+        dt: Time step (ms)
+    """
+    num_steps = int(duration / dt)
+    positions = np.linspace(0, 2*np.pi, cann.num)
+    
+    trajectory = []
+    for step in range(num_steps):
+        t = step * dt
+        inp = input_profile(positions, t)
+        cann.update(t, dt, external_input=inp)
+        trajectory.append(cann.r.value.copy())
+    
+    return np.array(trajectory)
 ```
 
-## Key Results Recovered
+### Implementation Steps
 
-The toolkit ships with reproducible pipelines recovering recent CANN results:
+1. **Define network architecture**: Choose CANN variant (ring/torus/line) based on encoded variable
+2. **Set connectivity**: Mexican-hat (local excitation, global inhibition) or difference-of-Gaussians
+3. **Initialize activity**: Random or targeted bump initialization
+4. **Simulate dynamics**: Run with BrainPy/JAX or Rust backend
+5. **Analyze attractor**: 
+   - Track bump position over time
+   - Compute persistent homology for topological validation
+   - Measure drift velocity and diffusion constant
+6. **Add input**: External drive for position encoding or velocity control
+7. **Validate**: Compare to biological data (place cells, grid cells, HD cells)
 
-### 1. SFA-Driven Anticipative Tracking
-Spike-frequency adaptation enables anticipative shift of activity bump, matching experimental observations of look-ahead in place cells.
+### Error Handling
 
-### 2. Theta Sweeps in Head Direction/Place/Grid Systems
-SFA generates theta-frequency sweeps across the attractor manifold, reproducing experimental theta sequences.
+#### Bump Collapse
+If the attractor bump collapses (uniform activity):
+- Increase local excitation strength
+- Decrease global inhibition
+- Check connectivity normalization (sum of weights should preserve bump)
 
-### 3. Hierarchical Path Integration
-Multi-scale grid modules with different spatial periods enable robust path integration over long distances.
+#### Drift Without Input
+If the bump drifts without external input:
+- Ensure translational symmetry in weight matrix
+- Check boundary conditions (periodic vs open)
+- Verify no bias in initial conditions
 
-## Usage Patterns
+#### GPU Memory Issues
+For large CANNs on GPU:
+- Use sparse connectivity matrices
+- Batch spike train analysis
+- Consider Rust backend for CPU-based simulation
 
-### When to Use `canns`
-- Implementing new CANN variants
-- Testing hypotheses about attractor dynamics
-- Analyzing neural recordings for attractor signatures
-- Teaching CANN concepts with working code
-- Benchmarking new methods against established baselines
+### Pitfalls
 
-### Workflow Example
-1. **Define network**: Choose 1D/2D, add SFA/plasticity
-2. **Simulate**: Run with behavioral inputs (velocity, head direction)
-3. **Analyze**: Compute attractor geometry, persistence diagrams
-4. **Compare**: Match against experimental data or theoretical predictions
+1. **Weight matrix symmetry**: Mexican-hat weights must be symmetric for stable bumps. Asymmetric weights cause systematic drift.
+2. **Finite-size effects**: Small networks (< 64 neurons) show significant discretization artifacts. Use > 128 neurons for smooth attractor manifolds.
+3. **Input scaling**: External input must be carefully scaled — too weak and the bump doesn't move, too strong and it fragments.
+4. **Topology validation**: Always verify attractor topology (ring vs line) via persistent homology before drawing conclusions about encoding properties.
+5. **Cross-lab reproducibility**: The toolkit addresses fragmentation — use standardized parameter ranges: sigma ∈ [0.05, 0.2], tau ∈ [5, 20]ms for biological plausibility.
 
-### Installation
-```bash
-pip install canns
-# Rust backend (optional, for performance)
-cargo install canns-lib
-# ASA GUI (requires Qt)
-pip install canns-asa
-```
-
-## Topological Data Analysis
-
-### Persistent Homology for Attractors
-- **H1 persistence**: Detects ring-like topology (1D attractors)
-- **H2 persistence**: Detects toroidal topology (2D attractors)
-- **Betti curves**: Track topological features across scales
-
-### Practical Analysis
-```python
-from canns.analyzer import TopologicalAnalyzer
-
-# Load neural activity (time x neurons)
-activity = load_experiment_data()
-
-# Compute pairwise correlations
-corr_matrix = np.corrcoef(activity.T)
-
-# Build filtration and compute persistence
-analyzer = TopologicalAnalyzer(corr_matrix)
-diagram = analyzer.compute_persistence(max_dim=2)
-
-# Extract topological features
-ring_persistence = diagram.get_persistence(dim=1)
-torus_persistence = diagram.get_persistence(dim=2)
-
-# Classify attractor type
-if ring_persistence > threshold and torus_persistence < threshold:
-    print("Ring attractor detected")
-elif torus_persistence > threshold:
-    print("Toroidal attractor detected")
-```
-
-## Integration with Experimental Data
-
-### From Spike Trains to Attractor Geometry
-1. Record neural activity (e.g., calcium imaging, electrophysiology)
-2. Preprocess: bin spikes, compute firing rates
-3. Build correlation matrix or use raw activity
-4. Run ASA pipeline to detect attractor signatures
-5. Validate with simulated data from `canns` library
-
-### Case Studies
-- **Mouse hippocampus**: Detect ring attractor in head direction cells
-- **Rat entorhinal cortex**: Identify toroidal attractor in grid cells
-- **Monkey PFC**: Analyze working memory as continuous attractor
-
-## Performance Considerations
-
-### Python vs Rust Backend
-- **Python (BrainPy/JAX)**: Flexible, GPU acceleration, easy prototyping
-- **Rust (canns-lib)**: 100-1000x faster for large spatial navigation simulations
-- **Recommendation**: Use Python for development, Rust for production/large-scale
-
-### Scaling
-- Small networks (<1000 neurons): Python sufficient
-- Medium networks (1000-10000 neurons): Consider Rust backend
-- Large networks (>10000 neurons): Rust backend essential
-
-## Limitations and Future Work
-
-### Current Limitations
-- Focus on rate-based CANNs (spiking CANNs under development)
-- Limited plasticity rules (Hebbian, homeostatic)
-- Single-brain-region models (multi-region integration planned)
-
-### Roadmap
-- Spiking CANN implementations
-- Additional plasticity rules (STDP, meta-plasticity)
-- Multi-region hierarchical CANNs
-- Integration with large-scale brain simulators
-
-## Activation Keywords
-
-continuous attractor, CANN, grid cells, place cells, head direction cells, path integration, attractor geometry, persistent homology, BrainPy, JAX, neural recordings analysis, topological data analysis, ring attractor, toroidal attractor, spike-frequency adaptation, theta sweeps
+### Resources
+- CANNs toolkit: unified framework for attractor network research
+- BrainPy: JAX-based neural simulation framework
+- GUDHI: Topological data analysis library
+- Persistent homology: For attractor manifold verification

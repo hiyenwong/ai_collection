@@ -4017,3 +4017,33 @@
   - Proves classical and quantum-like models have identical observable expressiveness
   - Substantive difference is ambiguity representation, not probability law violation
   - **Activation**: disjunction effect, classical decision model, expectation parameter, quantum-like comparison, 析取效应
+
+## 2026-06-29 - Neuroscience + Quantum (Cron Job)
+
+### CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
+- [[canns-toolkit-attractor-networks]] - Comprehensive open-source toolkit unifying CANN research workflow with BrainPy/JAX, Rust acceleration, and topological analysis (arXiv: 2606.27783)
+  - Unified framework bridges fragmented lab-specific CANN implementations
+  - Supports ring, torus, line, and spherical CANN variants
+  - Includes topological analysis via persistent homology for attractor verification
+  - **Activation**: CANN, continuous attractor, 连续吸引子网络, head direction cell, grid cell simulation
+
+### Modelling chronic stress as an excitatory-inhibitory perturbation in recurrent working-memory networks
+- [[chronic-stress-ei-balance]] - Computational modeling of chronic stress effects on prefrontal working memory via E/I balance perturbation toward inhibitory dominance (arXiv: 2606.27529)
+  - Models stress-induced shift from excitatory to inhibitory dominance in PFC
+  - Maps chronic stress level to working memory capacity degradation
+  - Provides dose-response analysis for stress-induced cognitive dysfunction
+  - **Activation**: chronic stress, E/I balance, 兴奋抑制平衡, prefrontal working memory
+
+### Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder
+- [[quantum-autoencoder-anomaly-detection]] - Quantum autoencoder methodology for medical anomaly detection using compression-resistance scoring with angle encoding and trash qubit fidelity (arXiv: 2606.27411)
+  - Maps image patches to quantum states via angle encoding
+  - Trains variational encoder-decoder to compress normal data, flag anomalies by compression resistance
+  - Applicable to brain MRI and other medical imaging modalities
+  - **Activation**: quantum autoencoder, QAE anomaly detection, 量子自编码器, compression anomaly detection
+
+### Quantum typicality survives non-Abelian gauge constraints
+- [[quantum-typicality-gauge-constraints]] - Exact analytical proof that quantum typicality persists on physical Hilbert space of SU(2) lattice gauge theory with non-Abelian constraints (arXiv: 2606.27402)
+  - Validates typical mutual information matches parameter-free analytical prediction
+  - Tested on 2D tori with physical dimensions up to 4,193
+  - Shows gauge constraints don't inject geometry-supporting entanglement
+  - **Activation**: quantum typicality, 量子典型性, gauge constraint entanglement, SU(2) lattice gauge theory
