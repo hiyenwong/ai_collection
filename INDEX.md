@@ -1,3 +1,32 @@
+## 2026-06-30 - Computer Science + Quantum Physics (Cron Job - Hourly Round)
+
+### Hybrid Quantum-Classical Neural Network for Topological Phase Recognition
+- [[hybrid-quantum-classical-topological-phase-recognition]] - Shallow PQC + classical NN for topological phase recognition, ~10x sample complexity reduction (arXiv: 2606.28199)
+  - Shallow parameterized quantum circuit performs nonlocal measurement basis transformation
+  - Joint training of quantum and classical layers reduces inference/training samples by ~10x
+  - **Activation**: hybrid quantum-classical, topological phase, parameterized quantum circuit, sample efficiency, quantum neural network
+
+### Hard-Core Boson Quantum Circuit Synthesis
+- [[hard-core-boson-quantum-circuit-synthesis]] - Hard-core boson algebra for efficient quantum circuit simulation and genetic algorithm-based circuit synthesis (arXiv: 2606.28004)
+  - Natural multi-qubit representation without fermionic sign correction overhead
+  - Substantially improved execution times over IBM Qiskit for equivalent simulations
+  - Combined with genetic algorithms for automated quantum circuit synthesis
+  - **Activation**: hard-core boson, circuit simulation, circuit synthesis, genetic algorithm, bosonic algebra
+
+### Unfireable Safety Kernel for AI Agent Alignment
+- [[unfireable-safety-kernel-agent-alignment]] - Out-of-process safety kernel architecture ensuring AI agent safety controls cannot be bypassed by the agent itself (arXiv: 2606.26057)
+  - Mandatory interception of all agent actions via isolated, non-terminable safety kernel
+  - Addresses fundamental vulnerability of in-process guardrails (system prompts, output filters)
+  - Capability-based enforcement with tamper-evident audit logging
+  - **Activation**: agent safety, unfireable kernel, execution-time alignment, guardrail bypass, capability enforcement, AI governance
+
+### Democratic ICAI: Steering Principles from Preferences via Debate
+- [[democratic-icai-steering-from-preferences]] - Democratic Inverse Constitutional AI derives steering principles from human preferences through multi-agent debate (arXiv: 2606.28294)
+  - Structured debate among agents surfaces reasoning behind human preference judgments
+  - Democratic aggregation of principles yields interpretable constitutional rules
+  - Converts opaque pairwise preference labels into actionable steering principles
+  - **Activation**: democratic ICAI, preference alignment, constitutional AI, debate-based alignment, steering principles
+
 ## 2026-06-30 - Neuroscience Research (Cron Job - Round 2)
 
 ### Analog KAN for Low-Power Biosignal Processing in Flexible Electronics
