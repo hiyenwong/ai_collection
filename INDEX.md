@@ -2,6 +2,14 @@
 
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
+### Heterogeneous synaptic motifs bridge microscale structure and macroscale nonlinear dynamics
+- [[synaptic-motifs-mean-field-dynamics]] - Mean-field low-rank theory linking microscale second-order synaptic motifs to macroscale heterogeneous population dynamics, with application to mouse V1 reverse engineering (arXiv: 2606.27946)
+  - Derives 2P-dimensional mean-field equations (P variables for mean activity + P for within-population variability)
+  - Chain motifs (correlated coupling pairs) bridge microscopic fluctuations to mesoscopic population dynamics
+  - Bifurcation analysis: saddle-node bifurcations controlled by motif strength τ, cusp bifurcation in g-J₀ plane
+  - Reverse-engineers mouse V1 (Pyr/SOM/VIP) heterogeneous activity: negative τ_{vse} suppresses VIP via disinhibition, positive τ_{vsv}/τ_{vvs} drive VIP self-excitation ramping during omission
+  - **Activation**: synaptic motifs, mean-field theory, heterogeneous population dynamics, chain motifs, bifurcation analysis, reverse engineering, V1 computation, disinhibition, VIP neurons, Pyr neurons, SOM neurons
+
 ### Modelling chronic stress as an excitatory-inhibitory perturbation in recurrent working-memory networks
 - [[chronic-stress-ei-balance-rnn]] - Computational modeling of chronic stress as E/I balance perturbation in prefrontal working-memory RNNs, revealing resilience-generalization trade-off (arXiv: 2606.27529)
   - Dale-constrained 200-neuron RNN (80% E, 20% I) on delayed parametric working memory task
