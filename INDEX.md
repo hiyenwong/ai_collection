@@ -1,3 +1,21 @@
+## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly)
+
+### Hybrid Quantum-Classical Neural Networks for Quantum Phase Recognition
+- [[hybrid-quantum-neural-phase-recognition]] - Hybrid quantum-classical neural network for sample-efficient quantum phase recognition with ~10x sample complexity reduction (arXiv: 2606.28199)
+  - Shallow parameterized quantum circuit performs nonlocal measurement basis transformation, jointly trained with classical neural network
+  - Distinguishes topological phases of surface code from product states with >85% single-shot accuracy, >99% averaged over 10 measurements
+  - Reduces both training and inference sample complexity by ~10x compared to classical neural network on randomized Pauli measurements
+  - Validated on superconducting quantum hardware with surface code lattices up to 4x4 sites
+  - **Activation**: hybrid quantum neural, phase recognition, topological phase, quantum-classical, surface code, measurement basis, sample efficiency, superconducting hardware
+
+### QDiffusion-TS: Quantum Generative Diffusion for Time Series
+- [[quantum-diffusion-time-series-generation]] - Quantum generative diffusion model replacing feed-forward layers with QNNs, achieving ~1000x parameter reduction (arXiv: 2606.27561)
+  - Hybrid quantum transformer: QNN replaces feed-forward components in denoising transformer for time series diffusion model
+  - 44% Wasserstein distance reduction on Apple/Amazon financial time series vs. classical diffusion model
+  - Up to 71% RMSE improvement in downstream forecasting with quantum-generated synthetic data augmentation
+  - Validated on real IQM quantum processor
+  - **Activation**: qdiffusion-ts, quantum diffusion, generative time series, quantum transformer, financial forecasting, hybrid quantum-classical, IQM processor
+
 ## 2026-06-29 - Neuroscience Research (Cron Job - Afternoon)
 
 ### Synaptic Motifs Bridge Microscale Structure and Macroscale Nonlinear Dynamics
