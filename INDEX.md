@@ -1,3 +1,11 @@
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
+- [[canns-toolkit-attractor-networks]] - Comprehensive open-source toolkit unifying Python (BrainPy/JAX), Rust acceleration backend, and PySide6 GUI for continuous attractor neural network research covering grid cells, place cells, head-direction cells, and path integration (arXiv: 2606.27783)
+  - Three integrated components: `canns` Python library, `canns-lib` Rust backend (100s× speedup), and ASA PySide6 attractor structure analyzer using persistent homology
+  - Supports 1D/2D CANNs, SFA-driven anticipative tracking, theta sweeps, hierarchical path integration, and topological attractor detection from experimental recordings
+  - **Activation**: CANNs toolkit, continuous attractor neural networks, BrainPy JAX, grid cell simulation, head-direction cells, place cells, path integration, persistent homology attractor, Rust neural simulation, PySide6 neuroscience, anticipative tracking, theta sweep
+
 ## 2026-06-30 - Computer Science + Quantum Physics (Cron Job)
 
 ### Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution
