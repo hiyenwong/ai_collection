@@ -1,3 +1,21 @@
+## 2026-06-29 - Neuroscience + Quantum Physics (Cron Job - Evening Round)
+
+### NanoPhotoNet-PINL: Physics-Informed Inverse Design for Nonlinear Metasurfaces
+- [[nanophotonet-pinn-inverse-design]] - Physics-informed AI-driven inverse design for nonlinear multi-layer metasurfaces using hybrid CNN-autoencoder, 3+ orders of magnitude SHG enhancement (arXiv: 2606.26751)
+  - Hybrid 1D CNN + autoencoder maps target dual-resonant spectra to multi-layer geometries
+  - Maxwell-based nonlinear electrodynamics integrated into physics-guided training loop
+  - ~99.2% inverse-design prediction efficiency along linear spectral manifold
+  - **Activation**: nanophotonet, inverse design, metasurface, nonlinear optics, PINL, SHG
+
+## 2026-06-29 - Neuroscience + Quantum Physics (Cron Job - Evening Round)
+
+### NanoPhotoNet-PINL: Physics-Informed Inverse Design for Nonlinear Metasurfaces
+- [[nanophotonet-pinn-inverse-design]] - Physics-informed AI-driven inverse design for nonlinear multi-layer metasurfaces using hybrid CNN-autoencoder, 3+ orders of magnitude SHG enhancement (arXiv: 2606.26751)
+  - Hybrid 1D CNN + autoencoder maps target dual-resonant spectra to multi-layer geometries
+  - Maxwell-based nonlinear electrodynamics integrated into physics-guided training loop
+  - ~99.2% inverse-design prediction efficiency along linear spectral manifold
+  - **Activation**: nanophotonet, inverse design, metasurface, nonlinear optics, PINL, SHG
+
 ## 2026-06-29 - Neuroscience Research (Cron Job)
 
 ### SpikeVLA: Vision-Language-Action Models with Spiking Neural Networks
