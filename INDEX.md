@@ -1,3 +1,12 @@
+## 2026-06-29 - Systems Engineering Research (Cron Job)
+
+### Resilient Output Containment under Undisclosed Leader Dynamics and Actuator Attacks
+- [[resilient-output-containment-cps]] - 多层自适应控制架构，在领导者动力学未知和执行器网络攻击下的异构多智能体系统弹性输出包含控制 (arXiv: 2606.27257)
+  - 两层分离设计：网络接口层（任务空间命令生成）+ 虚拟执行器层（局部攻击补偿）
+  - 支持有向图拓扑，无需领导者速度边界或运动包络的先验知识
+  - 连续自适应协议消除抖振，非光滑Lyapunov分析证明渐近命令包含
+  - **Activation**: resilient containment, multi-agent systems, actuator attacks, undisclosed leader dynamics, virtual actuator, cyber-physical security, directed graphs, adaptive control
+
 ## 2026-06-29 - Quantum Neuroscience: γ_c-Peak Covariant Recovery (Cron Job)
 
 ### γ_c-Peak: Covariant Recovery on Four Organic Qubit Platforms
