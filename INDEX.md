@@ -4157,3 +4157,26 @@
   - Tested on 2D tori with physical dimensions up to 4,193
   - Shows gauge constraints don't inject geometry-supporting entanglement
   - **Activation**: quantum typicality, 量子典型性, gauge constraint entanglement, SU(2) lattice gauge theory
+
+## 2026-06-29 - Neuroscience + Quantum (Cron Job - Evening)
+
+### Reservoir-independent lossless charging and protected storage of an open quantum battery
+- [[quantum-battery-parametric-amplification]] - Reservoir-independent lossless charging via counterdiabatic field cancellation in driven three-level cells, eliminating charging-dissipation trade-off (arXiv: 2606.27403)
+  - Exact algebraic cancellation between counterdiabatic field and residual source driving lossy state
+  - Lossless charging at any one-photon detuning without parameter tuning
+  - Applicable to quantum energy storage and open quantum system control
+  - **Activation**: quantum battery charging, 量子电池充电, lossless quantum charging, counterdiabatic field cancellation
+
+### Engineering of non-Hermitian interactions in digital qudit quantum simulators
+- [[non-hermitian-qudit-simulators]] - Engineering k-body non-Hermitian interactions via SU(d) gate decomposition with O(d²) scaling for qudit-based quantum simulation (arXiv: 2606.27424)
+  - Any non-Hermitian k-body interaction compilable into native qudit gates
+  - O(d²) gate count scaling vs O(2ⁿ) for qubit encoding
+  - Enables controlled dissipation/gain engineering in quantum simulations
+  - **Activation**: non-hermitian qudit simulation, 非厄密量子模拟, qudit quantum simulator, SU(d) gate decomposition
+
+### Exploiting network topology in brain-scale simulations of spiking neural networks
+- [[snn-topology-simulation]] - Topology-exploiting optimization for brain-scale SNN simulations reducing communication bottlenecks via network-aware compute node assignment (arXiv: 2602.23274)
+  - Profiling reveals compute time variability (not interconnect speed) is the true bottleneck
+  - Exploit biological network topology (small-world, modular) for optimal node assignment
+  - Dynamic load balancing for time-varying spike activity patterns
+  - **Activation**: brain-scale SNN simulation, 大规模脉冲网络模拟, SNN communication bottleneck, network topology SNN
