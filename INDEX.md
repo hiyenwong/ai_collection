@@ -1,4 +1,28 @@
-## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly)
+## 2026-06-29 - Neuroscience + Quantum (Cron Job - Hourly 09:00)
+
+### CV-QNN Edge AI: Parameter-Efficient Photonic Quantum Neural Networks
+- [[cv-qnn-edge-ai]] - Simplified CV-QNN (Φ∘D∘U₁) architecture cutting parameters 40-45% with barren plateau mitigation for edge quantum AI (arXiv: 2606.28252)
+  - Simplified CV-QNN layer removes squeezing gates, reducing to displacement + interferometer + Kerr
+  - Dimensionality reduction (PCA to 16D) + encoding restriction raises gradient variance by 58 orders of magnitude
+  - 4-qumode simplified CV-QNN with only 18 parameters exceeds 55-parameter classical baseline
+  - Validated on oral cancer detection from smartphone images; room-temperature photonic operation
+  - **Activation**: cv-qnn, continuous-variable quantum, photonic quantum computing, edge quantum AI, barren plateau, parameter-efficient quantum ML
+
+### Synaptic Motif Mean-Field Theory: Bridging Micro-to-Macro Neural Dynamics
+- [[synaptic-motif-mean-field]] - Mean-field framework for P-population networks where chain motifs induce synaptic variability correlations (arXiv: 2606.27946)
+  - 2P latent variables: P for mean activity + P for within-population variability
+  - Chain motifs enable microscopic fluctuations to integrate and influence mesoscopic dynamics
+  - Applied to reverse-engineer mouse V1 connectivity from heterogeneous neural recordings
+  - **Activation**: synaptic motifs, mean-field theory, heterogeneous dynamics, neural population modeling, connectomics, chain motifs
+
+### MMAO: Metabolic Multi-Agent Optimizer with Endogenous Resource Allocation
+- [[metabolic-multi-agent-optimizer]] - Bio-inspired optimizer where agents carry internal energy regulating search behavior through private-public metabolic loop (arXiv: 2606.28109)
+  - Each agent: internal energy, role state, motion memory, local history; population: communal resource pool
+  - Fitness improvements → metabolic gains → regulate sensing, search amplitude, branching, pruning, respawning
+  - Same control law for continuous (zero-order probing) and discrete (structural sensing) optimization
+  - Parameter-light, self-calibrating; validated on CEC2017 + TSPLIB
+  - **Activation**: metabolic optimizer, bio-inspired optimization, multi-agent, endogenous adaptation, parameter-light, self-calibrating
+
 
 ### SQNN: Decoherence as Defence for Adversarially Robust Quantum Neural Networks
 - [[sqnn-adversarial-robustness]] - N-qubit SQNN formulation proving decoherence-contraction theorem for adversarial robustness, with quantum dropout regularisation (arXiv: 2606.24219)
