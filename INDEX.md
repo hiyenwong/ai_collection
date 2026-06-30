@@ -2,6 +2,13 @@
 
 ## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
 
+### Separation of Statistical Complexity and Trainability in Variational Quantum Circuits
+- [[separation-statistical-complexity-trainability-vqa]] - VQA statistical complexity and trainability are separable properties — circuits can be expressive while remaining trainable (arXiv: 2606.18580)
+  - Statistical complexity (expressivity) and trainability (gradient variance) are independently optimizable
+  - Avoids default assumption that more expressive = harder to train
+  - Layer structure and ansatz design can decouple complexity from gradient vanishing
+  - **Activation**: VQA trainability, barren plateau, circuit expressivity, variational quantum circuit, expressivity-trainability tradeoff
+
 ### MetaMorphQ: Physics-Based Metamorphic Testing of Variational Quantum Circuits
 
 ## 2026-06-30 - Neuroscience Research (Cron Job)
