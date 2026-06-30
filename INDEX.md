@@ -199,6 +199,36 @@
   - Extends active acquisition from classification to GP regression setting
   - **Activation**: active quantum kernel, quantum GP regression, shot budget optimization
 
+## 2026-06-30 - Computer Science + Quantum Computing (Cron Job - Hourly Update)
+
+### Qudit Flow Optimization for Measurement-Based Quantum Computing
+- [[qudit-flow-optimization]] - Simplified qudit flow definition with O(n³) flow-finding algorithm for measurement-based quantum computing on prime-dimensional qudit graph states (arXiv: 2606.30525)
+  - O(n³) flow-finding algorithm matching best qubit flow complexity, improving O(n⁴) for qudits
+  - Flow-preserving transformations: pivoting, vertex removal/insertion, reversibility
+  - Algorithmic approach to generating large qudit computations for testing/ML
+  - **Activation**: qudit flow, measurement-based quantum computing, qudit graph states, MBQC optimization, qudit algorithm
+
+### RiverONE: Quantum-Simulated VLM Generation
+- [[riverone-quantum-simulated-vlm]] - Knowledge-intensive VLM generation using simulated quantum machines leveraging superposition, entanglement, and measurement-induced nonlinear features (arXiv: 2606.29966)
+  - Quantum state representation for visual features with entanglement for cross-modal alignment
+  - Measurement-induced nonlinear transformations for feature extraction
+  - Knowledge integration through quantum channels for enhanced VLM reasoning
+  - **Activation**: quantum simulated VLM, RiverONE, quantum vision language model, quantum multimodal learning
+
+### Weyl Calculus Quantum Eigenvalue Transformation
+- [[weyl-calculus-quantum-eigenvalue-transformation]] - Quantum eigenvalue transformation via LCHS using Weyl calculus achieving optimal O(log(1/ε)) query complexity for general matrix functions (arXiv: 2606.29848)
+  - Weyl calculus reduces noncommuting operator construction to scalar Fourier approximation
+  - Ansatz-free convex optimization framework for discrete LCHS formulas
+  - Time-dependent dissipative ODE simulation with 2.1× cost reduction over prior art
+  - **Activation**: quantum eigenvalue transformation, LCHS, Weyl calculus quantum, matrix function quantum, dissipative ODE quantum solver
+
+### Provable Quantum Advantage for Dynamical Phase Transitions
+- [[provable-quantum-advantage-dynamical-phase-transition]] - Proving provable exponential quantum advantage for detecting dynamical quantum phase transitions with Heisenberg-limited precision algorithm (arXiv: 2606.30396)
+  - Full DQPT estimation intractable even for quantum computers; subsystem variant as hard as generic circuit simulation
+  - Quadratically faster quantum algorithm for searching critical times with Heisenberg-limited precision
+  - Framework for encoding classical evolution into quantum dynamics for broader speedups
+  - **Activation**: dynamical quantum phase transition, DQPT quantum advantage, Heisenberg-limited quantum algorithm, quantum phase detection
+
 ### Private Training in Quantum Machine Learning
 - [[qdp-quantum-differential-privacy]] - Differential privacy analysis for quantum machine learning models (arXiv: 2606.29293)
   - Studies privacy vulnerabilities in QML and develops DP-SGD equivalents for quantum circuits
