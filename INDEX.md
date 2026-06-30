@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### BrainJanus: A Unified Model for Understanding and Generation across Brain, Vision, and Language
+- [[brainjanus-unified-brain-model]] - 首个统一脑-视觉-语言多模态框架，支持双向编解码 (arXiv: 2606.30319)
+  - Unified Brain Tokenizer 将连续神经动力学量化为离散 token
+  - All-in-One 自回归架构实现 any-to-any 生成（image/text↔brain）
+  - 零样本泛化 + 可解释生物拓扑保持
+  - **Activation**: BrainJanus, unified brain model, brain encoding decoding, multimodal brain
+
+### Progressive Self-Supervised Learning with Individualized Community Assignment for Brain Network Analysis
+- [[brainpicm-personalized-community-masking]] - 个性化社区感知掩码的脑网络自监督学习框架 (arXiv: 2606.29695)
+  - 渐进式非平衡最优传输实现 ROI-to-community 软分配
+  - 课程式掩码策略从高置信度到低置信度逐步学习
+  - 偏差感知聚合模块量化功能重组
+  - 在 ABIDE-I, ADHD-200, ADNI 三个数据集上超越 SOTA
+  - **Activation**: BrainPICM, personalized community, progressive masking, brain network SSL
+
 ## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
 
 ### Separation of Statistical Complexity and Trainability in Variational Quantum Circuits
