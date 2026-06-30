@@ -9,6 +9,20 @@
   - Achieves bio-inspired structure: sparse inter-module connections, dense intra-module connectivity
   - **Activation**: genomic-bottleneck, modular-reservoir, hypernetwork, meta-learning, sparse-recurrent, curriculum-learning
 
+### Mean-Field Theory of Rich Oscillatory Dynamics in Low-Rank Recurrent Networks
+- [[mean-field-oscillatory-dynamics-low-rank-adaptation]] - Dynamical mean-field theory for low-rank recurrent networks with adaptation, reveals four oscillatory regimes (arXiv: 2606.30366)
+  - Adaptation strength drives network through: static state → noise-sustained oscillations → stochastic switching → limit cycle
+  - Identifies chaos onset and Hopf bifurcation as two instability mechanisms shaped by frequency-dependent transfer function
+  - Explains biological phenomena: waxing-and-waning rhythms, persistent state switching, up-down alternations during sleep/anesthesia
+  - **Activation**: mean-field-theory, oscillatory-dynamics, low-rank-networks, adaptation, chaos, hopf-bifurcation
+
+### Heterogeneous Synaptic Motifs Bridge Microscale Structure and Macroscale Nonlinear Dynamics
+- [[heterogeneous-synaptic-motifs-macroscale-dynamics]] - Mean-field low-rank framework linking synaptic second-order motifs to heterogeneous population dynamics (arXiv: 2606.27946)
+  - Derives 2P-variable mean-field equations for P-population networks with arbitrary synaptic correlation statistics
+  - Chain motifs induce correlations in synaptic variability, enabling microscopic fluctuations to influence mesoscopic dynamics
+  - Successfully reverse engineers mouse V1 connectivity that recapitulates heterogeneous population activity
+  - **Activation**: synaptic-motifs, heterogeneous-dynamics, mean-field-low-rank, second-order-motifs, population-dynamics, visual-cortex
+
 ## 2026-07-01 - Deep Learning Research (Cron Job)
 
 ### Predict, Reuse, and Repair: Accelerating Dynamic Sparse Attention for Long-Context LLM Decoding
