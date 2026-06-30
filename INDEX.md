@@ -3063,3 +3063,22 @@
   - 18 parameters outperform 55-parameter classical baseline
   - **Activation**: cv-qnn, photonic quantum, edge ai, barren plateaus, parameter efficiency
 
+
+## 2026-06-30 - Neuroscience Research (Cron Job - Late Evening)
+
+### BrainRiem: Riemannian Prototype Learning for Source-Free Cross-Site Brain Network Diagnosis
+- [[brainriem-riemannian-source-free-adaptation]] - Source-free domain adaptation for multi-site fMRI using Riemannian geometry on SPD manifolds with privacy-preserving prototype transfer (arXiv: 2606.29200, ECCV 2026)
+  - Core innovation: Bi-level optimization learns compact Riemannian prototypes that remain valid SPD matrices via Log-Euclidean Metric
+  - Dirichlet Energy spectral calibration aligns prototype frequency characteristics with real brain networks
+  - Only anonymized prototypes transmitted to target sites (no source data access required)
+  - Outperforms SOTA on ABIDE and REST-meta-MDD across diverse scanners and demographics
+  - **Activation**: source-free domain adaptation, Riemannian geometry, SPD manifold, fMRI, brain network diagnosis, privacy-preserving ML
+
+### Identifying structural design principles shaping the computational abilities of recurrent neural networks
+- [[structural-cycles-rnn-computational-principles]] - Local cycles (2- and 3-cycles) as fundamental design principles linking neural connectivity to computational power (arXiv: 2606.23874)
+  - Core innovation: Complete catalogs of network-function performance reveal local cycles as minimal computational architectures
+  - Sparse interneurons dramatically increase computational capacity even in large networks
+  - Small set of structural statistics (cycle counts, clustering coefficient) accurately predict network performance
+  - Provides general structure-function framework for neural networks
+  - **Activation**: RNN architecture, computational capacity, local cycles, structure-function, interneurons, design principles
+
