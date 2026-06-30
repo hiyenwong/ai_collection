@@ -1,4 +1,37 @@
 # AI Collection Index
+## 2026-06-30 - Computer Science + Quantum (Cron Job)
+
+### Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution
+- [[llm-evolved-quantum-encoding]] - LLM-driven evolutionary framework for quantum LDPC code discovery using Structured Concept Evolution (SCE) (arXiv: 2606.24808)
+  - Pairs LLM generator with physics evaluator in iterative loop for autonomous qLDPC code discovery
+  - Maintains population of code concepts, applies mutation/crossover guided by LLM reasoning
+  - Fitness combines code parameters (distance, rate, sparsity) with implementability score
+  - **Activation**: quantum code discovery, qLDPC, structured concept evolution, LLM quantum design, SCE
+
+### Neural Transfer Unification (NTU) for Foundation Decoders
+- [[ntu-foundation-decoder-qec]] - Neural Transfer Unification framework for efficient foundation decoders in fault-tolerant quantum computing (arXiv: 2606.27119)
+  - Unified framework for efficient foundation decoders across quantum error correction codes
+  - Enables transfer learning across QEC codes, reducing decoder training costs at scale
+  - **Activation**: neural transfer unification, foundation decoder, QEC, fault-tolerant quantum computing
+
+### Active Quantum Kernel Acquisition for Gaussian Process Regression
+- [[aqka-active-quantum-kernel-acquisition]] - Active acquisition methodology for quantum kernel estimation reducing shot budget for GP regression (arXiv: 2606.28833)
+  - Allocates shots non-uniformly across kernel entries weighted by downstream task sensitivity
+  - Extends active acquisition from classification to GP regression setting
+  - **Activation**: active quantum kernel, quantum GP regression, shot budget optimization
+
+### Private Training in Quantum Machine Learning
+- [[qdp-quantum-differential-privacy]] - Differential privacy analysis for quantum machine learning models (arXiv: 2606.29293)
+  - Studies privacy vulnerabilities in QML and develops DP-SGD equivalents for quantum circuits
+  - Addresses data privacy concerns in quantum machine learning training
+  - **Activation**: quantum differential privacy, QML privacy, quantum DP-SGD
+
+### Quantum-Inspired Fast Weight Programmers for Traffic-Matrix Forecasting
+- [[qifp-quantum-inspired-fast-weight]] - Parameter-efficient quantum-inspired recurrent models for traffic matrix forecasting (arXiv: 2606.27821)
+  - Quantum-inspired state evolution for compact network demand prediction
+  - Effective TM forecasting without graph/transformer/diffusion modules
+  - **Activation**: quantum-inspired, traffic matrix forecasting, fast weight programmer, recurrent model
+
 ## 2026-06-30 - Neuroscience Research (Cron Job - Evening)
 
 ### Beyond Single-Source Cognitive Taskonomy: Multi-Source Task Relations through fMRI Transfer Learning
