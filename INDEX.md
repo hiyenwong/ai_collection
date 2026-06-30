@@ -3519,3 +3519,12 @@
   - 20% higher signal-to-random background ratio vs single-pixel events
   - Plastic scintillator PET scanner enables polarization correlation measurement
   - **Activation**: quantum entanglement PET, polarization-correlated PET, Compton scattering PET, J-PET, 量子纠缠PET成像
+
+## 2026-07-01 - Medicine (Cron Job)
+
+### A universal programmable Gaussian Boson Sampler for drug discovery
+- [[universal-gbs-drug-discovery]] - Universal programmable GBS processor for drug discovery tasks: clique-finding in molecular graphs, molecular docking, and RNA folding prediction using time-bin encoded photonic quantum processors with 2x classical success probability on 32-node graphs (arXiv: 2210.14877)
+  - GBS samples dense subgraphs (cliques) with probability proportional to Hafnian, naturally suited for molecular similarity and binding site identification
+  - Time-bin encoded architecture with adjustable squeezing + programmable interferometer enables universal programmability
+  - Multifunctional platform: molecular docking, RNA folding, drug-target interaction all map to graph problems solvable by GBS
+  - **Activation**: gaussian boson sampling drug discovery, GBS molecular docking, universal programmable boson sampler, quantum clique finding drug, 高斯玻色采样药物发现
