@@ -8,6 +8,30 @@
   - Reduced 3D model captures full bifurcation structure, explains sleep/wake oscillation patterns
   - **Activation**: mean-field-theory, adaptation, oscillations, sleep-dynamics, recurrent-networks, low-rank
 
+
+## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
+
+### Beyond Worst-Case Branching: Quantum Tree Search via Amplitude Amplification
+- [[quantum-amplitude-amplification-tree-search]] - Quantum tree search via amplitude amplification achieving O(√(b_avg^m)) query complexity, improving over worst-case √(b_max^m) (arXiv: 2606.28452)
+  - Replaces Hadamard initialization with arbitrary unitary for dynamic search trees
+  - Challenges quantum backtracking superiority — backtracking unsuitable for non-backtracking-structured problems
+  - Sampling-based tree structure estimation + quantum greedy search with Soar-inspired lookahead
+  - **Activation**: quantum-tree-search, amplitude-amplification, Grover, quantum-backtracking, dynamic-tree, branching-factor
+
+### Quantum Fourier Generative Models Trainable at Large Scale
+- [[quantum-fourier-generative-models]] - Train-on-classical deploy-on-quantum generative model using parallel Fourier feature maps + forrelation circuits, scales to 1000+ qubits (arXiv: 2606.28483)
+  - Log-likelihood loss with Parseval-based Monte Carlo estimator outperforms MMD-loss approaches
+  - Preserves multi-modal structure, avoids oversmoothing common in normalizing flow/diffusion baselines
+  - Deployed on superconducting quantum devices with ~300μs per-sample execution
+  - **Activation**: quantum-generative-model, Fourier-feature-map, forrelation, log-likelihood-training, quantum-sampling
+
+### Pauli-Sparse regularised Counterdiabatic Shortcuts for Linear-Ramp QAOA
+- [[pauli-sparse-counterdiabatic-qaoa]] - Counterdiabatic driving with sparsity regularisation to improve QAOA performance via approximate adiabatic shortcuts (arXiv: 2606.28536)
+  - Combines counterdiabatic shortcuts with Pauli-sparsity regularisation
+  - Improves QAOA convergence through approximate adiabatic evolution
+  - Linear-ramp schedule with sparsity constraints reduces circuit complexity
+  - **Activation**: counterdiabatic, QAOA, adiabatic-shortcut, Pauli-sparse, quantum-optimization
+
 ### Cohort-amortized personalization for virtual brain twins
 - [[cohort-amortized-personalization-brain-twins]] - CAP framework replaces data sharing with model sharing for privacy-preserving personalized brain modeling (arXiv: 2606.30329)
   - Cross-atlas autoencoder (CrossCoder) enables deployment across heterogeneous parcellations from 20+ atlases
