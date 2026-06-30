@@ -3030,6 +3030,22 @@
   - Naturally mitigates global barren plateaus via localized cost functions
   - **Activation**: QADR, distributed entanglement reduction, causal light cone, VQC decomposition, 量子分布式纠缠减少
 
+## 2026-06-30 - Computer Science + Quantum (Cron Job)
+
+### Qiskit Code Migration with LLMs
+- [[qiskit-llm-code-migration]] - Taxonomy-based RAG architecture for automated Qiskit code migration across SDK versions using LLMs, reducing hallucinations (arXiv: 2606.20173)
+  - Uses automatically generated taxonomy of migration scenarios as structured knowledge source
+  - Restrictive retrieval scheme significantly reduces hallucinations vs unconstrained
+  - Google Gemini Flash-2.5 superior at detecting complex refactoring vs GPT-oss-20b
+  - **Activation**: Qiskit code migration, quantum SDK migration, LLM RAG quantum, Qiskit API migration, 量子代码迁移
+
+### Qudit Extension of Parameterized IQP Circuits
+- [[qudit-iqp-generative-ml]] - Extends IQP circuits from qubit binary to qudit integer encoding for generative ML on non-binary data (arXiv: 2606.28236)
+  - Solves metric structure destruction from binary encoding of integer-valued features
+  - Validated on particle physics detector data with covariance matrix analysis
+  - Fixed-length qudit encoding preserves natural ordering of integer data
+  - **Activation**: qudit IQP circuits, quantum generative integer data, IQP qudit extension, 量子生成模型 qudit
+
 ## 2026-06-30 - Systems Engineering Research (Cron Job)
 
 ### From Detection to Action: Using LLM Agents for Fault-Tolerant Control
