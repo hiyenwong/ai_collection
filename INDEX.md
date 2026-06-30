@@ -3477,3 +3477,15 @@
   - Fusion failure imposes noise floor on logical error rates
   - Quantum emitter spins reduce noise floor by orders of magnitude
   - **Activation**: fusion-based quantum, subthreshold, logical error rate, quantum emitter spins, 融合量子计算亚阈值
+
+### Dissipative Effects in Transmission Line Analogues of Hawking Radiation
+- [[dissipative-hawking-radiation-analogue]] - 超导电路霍金辐射耗散效应分析 (arXiv: 2606.28505)
+  - Open quantum systems approach to Hawking radiation in superconducting circuits
+  - Detectability threshold: Hawking temperatures > 73 mK distinguishable
+  - **Activation**: hawking radiation analogue, circuit QED, superconducting transmission line, 霍金辐射类比
+
+### Borrowed Identities: Malleable Distillation Factories
+- [[borrowed-identity-magic-distillation]] - 借用身份条件魔法态蒸馏统一搜索 (arXiv: 2606.28518)
+  - Borrowed-identity condition weaker than full codespace constraint
+  - Unifies T, CS, CCZ distillation factories at single hierarchy level
+  - **Activation**: borrowed identity, magic distillation, Clifford hierarchy, 魔法态蒸馏
