@@ -214,6 +214,11 @@
   - Measurement-induced nonlinear transformations for feature extraction
   - Knowledge integration through quantum channels for enhanced VLM reasoning
   - **Activation**: quantum simulated VLM, RiverONE, quantum vision language model, quantum multimodal learning
+- [[simulated-quantum-construction]] - Generalized methodology for constructing compact classical AI models using simulated quantum computation during training, with classical parameter materialization for inference (arXiv: 2606.29966)
+  - Construction-time quantum simulation generates structured parameters for classical deployment
+  - Achieves 95%+ of large-model performance with <10% parameter count
+  - No quantum hardware dependency at inference time
+  - **Activation**: simulated quantum construction, quantum-generated parameters, quantum classical hybrid construction
 
 ### Weyl Calculus Quantum Eigenvalue Transformation
 - [[weyl-calculus-quantum-eigenvalue-transformation]] - Quantum eigenvalue transformation via LCHS using Weyl calculus achieving optimal O(log(1/ε)) query complexity for general matrix functions (arXiv: 2606.29848)
