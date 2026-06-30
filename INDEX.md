@@ -3428,3 +3428,24 @@
   - Evaluated on ALFWorld and ScienceWorld — highest prediction accuracy and downstream agent success rate
   - Test-time memory revision enhances both predictive fidelity and planning performance without retraining
   - **Activation**: self-evolving world models, world model LLM agent planning, episodic memory agent planning, selective foresight predictions
+
+### Differential Privacy in Quantum Machine Learning (INDEX.md entry existed, skill recovered)
+- [[qdp-quantum-differential-privacy]] - DP-SGD applied to hybrid variational QML with deterministic gradient norm bounds (arXiv: 2606.29293)
+  - Quantum noise does NOT provide formal differential privacy guarantees — calibrated classical DP-SGD required
+  - Deterministic gradient norm bounds for PQCs enable explicit control of clipping bias
+  - Quantum models retain higher accuracy under same privacy budget vs classical baselines
+  - **Activation**: quantum differential privacy, DP-SGD quantum, private quantum training, quantum gradient clipping, 量子差分隐私
+
+### Self-Modulating Quantum Fast-Weight Programmers
+- [[self-modulating-quantum-fast-weight]] - Adaptive modulation over fast-weight updates and historical memory for quantum sequential learning (arXiv: 2606.24933)
+  - Self-modulation balances new information injection with memory retention automatically
+  - Improves convergence stability and prediction performance across varying qubit counts and sequence lengths
+  - Compact framework for quantum machine learning on time-series data
+  - **Activation**: self-modulating QFWP, quantum fast weight programmer, quantum sequential learning, adaptive quantum memory, 自适应量子记忆
+
+### Provable Random-Matrix Spectral Ramp
+- [[provable-random-matrix-spectral-ramp]] - Provable spectral ramp behavior in static geometrically local Hamiltonians (arXiv: 2606.30635)
+  - Rigorous spectral form factor analysis establishing RMT universality for local Hamiltonians
+  - Dip-ramp-plateau structure as diagnostic for quantum chaos and thermalization
+  - Provides theoretical foundation for quantum advantage certification via spectral complexity
+  - **Activation**: spectral ramp, random matrix spectral form factor, quantum chaos diagnostics, local Hamiltonian spectral analysis, 谱斜坡
