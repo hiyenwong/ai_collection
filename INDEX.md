@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
+
+### NQS-Agent: Health-Aware Agentic Hyperparameter Optimization for Neural-Network Quantum States
+- [[nqs-agent-hpo]] - Health-aware agentic HPO framework for Neural-Network Quantum States that monitors energy trajectories, detects destructive events, and resumes from safe checkpoints (arXiv: 2606.30464)
+  - Monitors energy trajectories and detects destructive optimization events in NQS calculations
+  - Automatically stops unstable calculations and resumes from safe checkpoints
+  - Uses anomaly-aware scoring instead of just lowest-energy selection
+  - **Activation**: nqs agent, health-aware hpo, hyperparameter optimization quantum, quantum state optimization, agentic quantum optimization
+
+### Authentication in Quantum Networks
+- [[quantum-network-authentication]] - Comprehensive survey of classical, quantum, and entity authentication protocols for quantum network security (arXiv: 2606.30636)
+  - Three authentication flavours: classical messages, quantum messages, entity authentication
+  - Authentication is prerequisite for QKD security and not an intrinsic limitation
+  - Protocol selection based on security assumptions, setup requirements, and scalability
+  - **Activation**: quantum authentication, quantum network security, QKD authentication, quantum message authentication, entity authentication quantum
+
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
 ### Mean-field theory of rich oscillatory dynamics in low-rank recurrent networks with activity-dependent adaptation
