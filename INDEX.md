@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-06-30 - Computer Science Research (Cron Job)
+
+### Parameter-Efficient Continuous-Variable Photonic Quantum Neural Networks for Edge AI
+- [[cv-qnn-edge-ai]] - 参数高效连续变量光子量子神经网络用于边缘AI (arXiv: 2606.28252)
+  - Φ∘D∘U₁ 简化层减少 40-45% 训练参数，室温操作无需制冷
+  - 4 qumode 简化模型仅 18 参数，超越 55 参数经典基线，100% 测试准确率
+  - 降维+编码限制策略提升梯度方差约 58 个数量级，缓解 barren plateau
+  - **Activation**: cv-qnn, photonic quantum, edge AI, parameter-efficient QML, barren plateau, quantum edge deployment
+
+### MPE-Adam: Multi-Population Evolutionary Optimization with Adam Refinement for QAOA
+- [[qaoa-optimizer-mpe-adam]] - 多群体进化+Adam双阶段QAOA参数优化器 (arXiv: 2606.26670)
+  - 全局探索(多群体进化搜索) + 局部收敛(Adam梯度精化)的两阶段混合优化
+  - MaxCut 22节点上超越进化-only和SPSA基线，更高近似比、更低方差
+  - 模块化设计，适合量子软件流水线集成
+  - **Activation**: QAOA optimization, multi-population evolutionary, Adam refinement, variational quantum, parameter optimization
+
+### Quantum-Enhanced Monte Carlo Tree Search for Combinatorial Optimization
+- [[quantum-enhanced-mcts]] - AtomTreeSearch: 量子增强MCTS用于组合优化 (arXiv: 2606.30415)
+  - 在中性原子量子计算机上实现MWIS量子子程序嵌入MCTS框架
+  - TSP 60城随机/100城TSPLIB实例匹配或超越OR-Tools和模拟退火
+  - 量子子程序产生更多样、更高质量的候选分支
+  - **Activation**: quantum MCTS, combinatorial optimization, neutral-atom quantum, TSP quantum, AtomTreeSearch, hybrid quantum-classical
+
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
 ### Neuromorphic Energy-Aware Learning for Adaptive Deep Brain Stimulation
