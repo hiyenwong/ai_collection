@@ -3029,3 +3029,12 @@
   - Light cone decomposition replaces monolithic VQC with ensemble of local sub-circuits
   - Naturally mitigates global barren plateaus via localized cost functions
   - **Activation**: QADR, distributed entanglement reduction, causal light cone, VQC decomposition, 量子分布式纠缠减少
+
+## 2026-06-30 - Systems Engineering Research (Cron Job)
+
+### From Detection to Action: Using LLM Agents for Fault-Tolerant Control
+- [[llm-agentic-fault-tolerant-control]] - Agentic LLM framework for active fault-tolerant control in cyber-physical systems using Digital Twin and Graph RAG (arXiv: 2606.28011)
+  - Multi-agent workflow: monitoring, planning, action synthesis, simulation, validation
+  - Graph RAG with CPSMod ontology for plant knowledge retrieval
+  - Constraint-aware recovery actions validated before actuation
+  - **Activation**: fault-tolerant-control, llm-agents, cyber-physical-systems, digital-twin, graph-rag
