@@ -3149,3 +3149,12 @@
   - Provides general structure-function framework for neural networks
   - **Activation**: RNN architecture, computational capacity, local cycles, structure-function, interneurons, design principles
 
+
+## 2026-06-30 - Computer Science + Quantum (Cron Job)
+
+### I-QMapper: Error-Aware Layout Optimization and Device Diagnostics for NISQ Hardware
+- [[iqmapper-nisq-layout-optimizer]] - 噪声感知量子比特布局优化与设备诊断工具，适用于NISQ硬件 (arXiv: 2606.27508)
+  - Layout-Quality Score (LQS) 聚合读出和双量子比特门误差为单一质量指标
+  - 四种校准分析模式：Live/Snapshot/Intraday/Multi-day，支持漂移检测
+  - 通用电路和LUCJ量子化学两种操作模式，支持多程序并发执行
+  - **Activation**: qubit mapping, layout optimization, NISQ noise-aware, calibration analytics, LUCJ ansatz, quantum device diagnostics, qubit selection, transpiler layout, device error characterization, multiprogramming quantum
