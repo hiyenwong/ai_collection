@@ -2,6 +2,20 @@
 
 ## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
 
+### MetaMorphQ: Physics-Based Metamorphic Testing of Variational Quantum Circuits
+- [[metamorphic-quantum-testing]] - Physics-based metamorphic testing framework for VQCs that derives test oracles from quantum mechanical properties, solving the oracle problem (arXiv: 2606.28742)
+  - Five physics-based metamorphic relations: parameter-shift invariance, gate commutation, Hamiltonian symmetry, eigenvalue scaling, basis transformation
+  - No oracle needed — tests correctness without knowing expected outputs
+  - Low false-positive rate compared to convergence-based testing
+  - **Activation**: quantum testing, metamorphic testing, VQE testing, quantum circuit verification, VQC testing, quantum oracle problem
+
+### Lie Group Diffusion Models for Hardware-Aware Quantum Circuit Synthesis
+- [[lie-group-quantum-circuit-synthesis]] - Hardware-aware quantum circuit synthesis using Lie group diffusion models on SU(2) manifold with heat kernel denoising (arXiv: 2606.29636)
+  - Two-component model: discrete skeleton selector + continuous SU(2) diffusion for gate parameters
+  - Respects manifold geometry (SU(2) ≅ S³) not Euclidean approximation
+  - Hardware-aware fidelity-complexity tradeoff optimization
+  - **Activation**: quantum circuit synthesis, lie group diffusion, hardware-aware compilation, SU(2) manifold, quantum gate generation, circuit skeleton
+
 ### NQS-Agent: Health-Aware Agentic Hyperparameter Optimization for Neural-Network Quantum States
 - [[nqs-agent-hpo]] - Health-aware agentic HPO framework for Neural-Network Quantum States that monitors energy trajectories, detects destructive events, and resumes from safe checkpoints (arXiv: 2606.30464)
   - Monitors energy trajectories and detects destructive optimization events in NQS calculations
