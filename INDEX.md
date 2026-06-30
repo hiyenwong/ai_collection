@@ -3249,3 +3249,17 @@
   - 四种校准分析模式：Live/Snapshot/Intraday/Multi-day，支持漂移检测
   - 通用电路和LUCJ量子化学两种操作模式，支持多程序并发执行
   - **Activation**: qubit mapping, layout optimization, NISQ noise-aware, calibration analytics, LUCJ ansatz, quantum device diagnostics, qubit selection, transpiler layout, device error characterization, multiprogramming quantum
+
+### Meta-learning as a Principle for Human-like Visual Representations
+- [[meta-learning-human-visual-representations]] - Meta-learning (learning to learn) shapes visual representations to support open-ended tasks, better predicting human similarity judgments and high-level visual cortex activity (arXiv: 2606.28399)
+  - Trained sequence model across thousands of image-to-concept tasks without human supervision
+  - Meta-learned representations outperform pretrained encoders on human similarity judgments
+  - Brain alignment driven by learning-to-learn pressure, behavioral gains by task distribution structure
+  - **Activation**: meta-learning, visual representations, brain alignment, human similarity, semantic learning, few-shot learning
+
+### Connectivity Estimation using Stochastic Graph Heat Modelling
+- [[stochastic-graph-heat-connectivity]] - Noise-driven heat diffusion on graphs for directed, multivariate, dynamic brain connectivity estimation (arXiv: 2606.29098)
+  - Models neural signal propagation as stochastic heat equation: ∂u/∂t = Δ_G u + noise
+  - Provides directed connectivity via heat flow direction, unlike correlation methods
+  - Relaxed noise assumptions and regularization improve robustness over previous work
+  - **Activation**: brain connectivity, graph heat modelling, neurophysiological data, directed connectivity, coherence, graph PDE
