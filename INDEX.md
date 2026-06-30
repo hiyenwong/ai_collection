@@ -1,6 +1,30 @@
 # AI Collection Index
 ## 2026-06-30 - Computer Science + Quantum (Cron Job)
 
+### Lie Group Diffusion Models for Hardware-Aware Quantum Circuit Synthesis
+- [[lie-group-diffusion-quantum-synthesis]] - Lie Group Diffusion Models for hardware-aware quantum circuit synthesis — jointly optimizing continuous gate parameters on SU(2) and discrete circuit topology (arXiv: 2606.29636)
+  - Treats single-qubit gates as continuous variables on SU(2) manifold, entangling gates as discrete decisions
+  - Forward diffusion adds noise on SU(2) manifold using exponential map (Lie algebra perturbation)
+  - Reverse process uses neural network to denoise and predict optimal gate parameters
+  - Hardware-aware: incorporates connectivity map, gate fidelities, crosstalk during synthesis
+  - **Activation**: quantum circuit synthesis, lie group diffusion, hardware-aware compilation, quantum gate optimization, SU(2) gates
+
+### Machine-Verified Proof of Quantum-Optimization Conjecture
+- [[machine-verified-quantum-optimization]] - Formal verification methodology for QAOA approximation ratios — resolves the Farhi-Goldstone-Gutmann (FGG) conjecture with machine-verified proof (arXiv: 2606.29687)
+  - Uses symmetry reduction to shrink verification space from n-qubit to O(p) effective qubits
+  - Exploits recursive light-cone structure: QAOA on rings depends only on O(p) neighbors
+  - Interval arithmetic provides rigorous bounds without floating-point errors
+  - Generates machine-checkable proof certificates for quantum algorithm guarantees
+  - **Activation**: QAOA, quantum optimization, formal verification, approximation ratio, FGG conjecture
+
+### RL-Based VQA Initialization via Classical State Preparation
+- [[rl-vqa-initialization]] - Reinforcement learning approach for classical state preparation to warm-start VQAs, avoiding barren plateaus and reducing training iterations (arXiv: 2605.23138)
+  - RL agent learns Clifford circuit policies that maximize gradient magnitude at initialization
+  - Clifford circuits are classically simulable (Gottesman-Knill theorem) — no quantum cost for training
+  - Reward combines gradient amplification with circuit depth penalty
+  - Initialization policies transfer across similar cost functions
+  - **Activation**: VQA initialization, barren plateau avoidance, RL quantum warm-start, Clifford warm-start
+
 
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
