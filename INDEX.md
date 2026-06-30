@@ -3380,3 +3380,19 @@
   - O(N⁴) MP2-amplitude initialization replaces O(N⁶) CCSD parameter init
   - Uses fraction of classical resources vs Cleveland Clinic/RIKEN/IBM state-of-the-art
   - **Activation**: quantum selected CI, DMET, LCNot-UCCSD, RBM subspace, protein-ligand, molecular simulation, quantum chemistry
+
+## 2026-06-30 - Computer Science (Cron Job)
+
+### Staged Hybridisation for Visual Quantum Reinforcement Learning via Knowledge Distillation
+- [[staged-hybridisation-visual-qrl]] - Knowledge distillation as staged hybridisation strategy for visual QRL (arXiv: 2606.30520)
+  - Train classical visual teacher, freeze encoder as feature interface, distill into compact downstream heads
+  - Enables fair comparison of quantum vs classical students under identical frozen representations
+  - Separates visual representation learning from quantum policy learning, avoiding joint optimization conflicts
+  - **Activation**: staged hybridisation QRL, visual quantum reinforcement learning knowledge distillation, quantum student classical teacher, VQC knowledge distillation
+
+### Self-Evolving World Models for LLM Agent Planning
+- [[self-evolving-world-models]] - Self-evolving world model framework that revises deployment-time context while keeping agent parameters frozen (arXiv: 2606.30639)
+  - Three modules: Episodic Memory (retrieval-based simulation), Semantic Memory (heuristic rules from mismatches), Selective Foresight (confidence filtering)
+  - Evaluated on ALFWorld and ScienceWorld — highest prediction accuracy and downstream agent success rate
+  - Test-time memory revision enhances both predictive fidelity and planning performance without retraining
+  - **Activation**: self-evolving world models, world model LLM agent planning, episodic memory agent planning, selective foresight predictions
