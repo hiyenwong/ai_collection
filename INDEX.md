@@ -10,10 +10,40 @@
   - **Activation**: VQA trainability, barren plateau, circuit expressivity, variational quantum circuit, expressivity-trainability tradeoff
 
 ### MetaMorphQ: Physics-Based Metamorphic Testing of Variational Quantum Circuits
+- [[metamorphic-quantum-testing]] - Physics-based metamorphic testing framework for VQCs that derives test oracles from quantum mechanical properties, solving the oracle problem (arXiv: 2606.28742)
+  - Five physics-based metamorphic relations: parameter-shift invariance, gate commutation, Hamiltonian symmetry, eigenvalue scaling, basis transformation
+  - No oracle needed — tests correctness without knowing expected outputs
+  - **Activation**: metamorphic testing, VQC testing, quantum program testing, physics-based testing, oracle problem
+
+### Hybrid Quantum-Classical Software Architecture Design
+- [[hybrid-quantum-classical-software-architecture]] - Formal framework for architecting hybrid quantum-classical systems with quantitative guarantees for component split decisions (arXiv: 2606.24260)
+  - Component decomposition into quantum-suitable, classical-suitable, and hybrid-boundary
+  - Trade-off space exploration: performance, overhead, availability, cost, reliability
+  - Four architecture patterns: Offload, Iterative, Preprocessing, Postprocessing
+  - **Activation**: hybrid quantum-classical architecture, quantum software design, quantum-classical split, quantum co-processor, hybrid system design
+
+### Quantum Mutant Equivalence Testing
+- [[quantum-mutant-equivalence-testing]] - Transpilation-based circuit comparison methodology for identifying equivalent mutants in quantum software mutation testing (arXiv: 2606.26604)
+  - Transpile both original and mutant to same basis gates then compare normalized circuits
+  - Handles exact equivalent, global phase equivalent, redundant gate, and commuted gate cases
+  - Mutation score calculation that correctly excludes equivalent mutants
+  - **Activation**: quantum testing, mutation testing, quantum mutant equivalence, quantum circuit comparison, quantum test suite quality
+
+### Quantum-Enhanced Monte Carlo Tree Search
+- [[quantum-enhanced-monte-carlo-tree-search]] - Enhancing MCTS with quantum amplitude estimation for O(1/ε) value estimation vs classical O(1/ε²) (arXiv: 2606.30415)
+  - Reformulates combinatorial optimization as sequential decision process for MCTS
+  - Hybrid NISQ-compatible implementation with classical simulation for deep branches
+  - Grover-accelerated node selection among many candidates
+  - **Activation**: quantum MCTS, quantum monte carlo tree search, quantum optimization, combinatorial optimization quantum, quantum amplitude estimation
+
+### On the Reproducibility of Quantum Software Defect Datasets
+- [[quantum-defect-dataset-reproducibility]] - Replication study showing significant fraction of Bugs4Q quantum software defects become non-reproducible over time (arXiv: 2606.27124)
+  - Quantum software defect datasets suffer from same reproducibility decay as classical (Defects4J)
+  - Need for better dataset maintenance and version pinning in quantum software engineering
+  - Implications for reproducible quantum software research
+  - **Activation**: quantum defect dataset, Bugs4Q, quantum software reproducibility, quantum testing dataset, software engineering reproducibility
 
 ## 2026-06-30 - Neuroscience Research (Cron Job)
-
-### From Detecting Agency to Doing Work: Self-Caused Credit Builds a Durable Behavioral Self in a Minimal Spiking Agent
 - [[self-caused-credit-spiking-agency]] - Agency-gated slow credit framework for durable behavioral self in spiking agents (arXiv: 2606.30191v1)
   - Demonstrates agency detection alone is insufficient; agency must do slow work via multiplicative gating
   - Post-unload self-preservation: 0.96 with slow credit vs 0.00 without (N=50)
