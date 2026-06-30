@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-01 - Neuroscience Research (Cron Job)
+
+### Distilling a Modular Reservoir Through a Genomic Bottleneck
+- [[genomic-bottleneck-modular-reservoir]] - Hypernetwork-based genomic bottleneck for generating modular reservoir connectivity (arXiv: 2606.28380)
+  - Compressed genome-like latent vector encodes rich, structured modular connectivity
+  - Curriculum meta-learning trains hypernetwork to produce sparse recurrent networks that solve temporal tasks with minimal read-out training
+  - Achieves bio-inspired structure: sparse inter-module connections, dense intra-module connectivity
+  - **Activation**: genomic-bottleneck, modular-reservoir, hypernetwork, meta-learning, sparse-recurrent, curriculum-learning
+
 ## 2026-07-01 - Deep Learning Research (Cron Job)
 
 ### Predict, Reuse, and Repair: Accelerating Dynamic Sparse Attention for Long-Context LLM Decoding
