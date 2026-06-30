@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-07-01 - Medicine + Quantum (Cron Job - Hourly)
+
+### Parameter-Efficient Continuous-Variable Photonic Quantum Neural Networks for Edge Quantum AI: Demonstration in Oral Cancer Detection
+- [[cv-photonic-qnn-edge-ai]] - Simplified CV-QNN (Φ∘D∘U₁) architecture with 40-45% fewer parameters for room-temperature quantum medical classification (arXiv: 2606.28252)
+  - Simplified Φ∘D∘U₁ layer vs standard CV-QNN cuts parameters 40-45% while maintaining accuracy
+  - Barren plateau mitigation via dimensionality reduction + encoding restriction increases loss-gradient variance by 58 orders of magnitude
+  - 4-qumode simplified CV-QNN with 18 parameters achieves 100% calibrated test accuracy, exceeds 55-parameter classical baseline
+  - **Activation**: cv-qnn, continuous-variable, photonic quantum, edge quantum ai, quantum medical classification, barren plateau, qumode, oral cancer
+
+### Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder
+- [[quantum-autoencoder-anomaly-detection]] - Quantum autoencoder (QAE) for compression-driven anomaly detection in brain MRI with slice-level ROC-AUC ~0.95 (arXiv: 2606.27411)
+  - Angle encoding + variational encoder-decoder with trash qubits for incompressibility-based anomaly detection
+  - Encoder-decoder asymmetry: effective detection from structured encoder compression, not parameter magnitude
+  - Produces spatially localized anomaly heatmaps aligned with tumorous regions, outperforms classical autoencoder/PCA
+  - **Activation**: quantum autoencoder, QAE, compression anomaly detection, trash qubits, incompressibility, quantum MRI, brain MRI, anomaly heatmap
+
+### Bridging the NISQ and Fault-Tolerant Regimes: Generative-ML-Assisted Quantum Selected CI for Molecular Simulations
+- [[generative-ml-quantum-selected-ci]] - LCNot-UCCSD with O(N⁴) MP2 init + RBM subspace expansion for efficient protein-ligand binding energy calculation (arXiv: 2606.30551)
+  - LCNot-UCCSD replaces O(N⁶) CCSD init with O(N⁴) MP2 amplitude initialization in QSCI framework
+  - QSCI-RBM: RBM as compact generative subspace expansion replaces classical SQD configuration recovery
+  - First DMET-QSCI(LCNot-UCCSD)-RBM on industry-relevant systems: Amantadine (11 fragments), SARS-CoV-2 protease+Carmofur (10 fragments)
+  - **Activation**: qsci, lcnot-uccsd, quantum selected ci, dmet-qsci, rbm subspace, protein-ligand, molecular simulation, nisq fault-tolerant
+
 ## 2026-07-01 - Neuroscience Research (Cron Job)
 
 ### Unified Complex-valued Neural Network: A Magnitude-Phase Computational Model for Event-Driven Neuromorphic Learning
