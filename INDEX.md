@@ -3489,3 +3489,10 @@
   - Borrowed-identity condition weaker than full codespace constraint
   - Unifies T, CS, CCZ distillation factories at single hierarchy level
   - **Activation**: borrowed identity, magic distillation, Clifford hierarchy, 魔法态蒸馏
+
+### Positron Emission Tomography with quantum-entangled Compton events: first imaging results at clinically relevant activities
+- [[quantum-entanglement-pet-imaging]] - 量子纠缠康普顿事件增强PET成像 (arXiv: 2606.25804)
+  - Polarization-correlated Compton events provide up to 10% sensitivity increase
+  - 20% higher signal-to-random background ratio vs single-pixel events
+  - Plastic scintillator PET scanner enables polarization correlation measurement
+  - **Activation**: quantum entanglement PET, polarization-correlated PET, Compton scattering PET, J-PET, 量子纠缠PET成像
