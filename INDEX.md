@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-07-01 - Deep Learning Research (Cron Job)
+
+### Predict, Reuse, and Repair: Accelerating Dynamic Sparse Attention for Long-Context LLM Decoding
+- [[prr-speculate-reuse-repair-sparse-attention]] - Predict-Reuse-Repair runtime for dynamic sparse attention, reduces decoding latency up to 40% (arXiv: 2606.30389)
+  - Speculate-reuse-repair three-phase runtime exploiting temporal locality in DSA selections
+  - EMA-based predictor + profiling-guided speculation + FlashAttention-based incremental repair
+  - **Activation**: sparse-attention, long-context, LLM-inference, DSA, KV-cache
+
+### BaRA: Bayesian Adaptive Rank Allocation for Parameter-Efficient Fine-Tuning
+- [[bara-bayesian-adaptive-rank-lora]] - Bayesian framework for dynamic per-instance rank allocation in LoRA, improves uncertainty calibration (arXiv: 2606.29184)
+  - Disentangled latent factors with sparse context-dependent activation per instance
+  - Complexity-theoretic bounds show generalization gap depends on learned effective rank, not max rank
+  - **Activation**: LoRA, Bayesian-PEFT, adaptive-rank, uncertainty-calibration, sparse-adaptation
+
+### LatentRevise: Learning from Zero-Hit Reasoning
+- [[latent-revise-zero-hit-reasoning]] - First-order latent revision recovering training signal from failed RLVR rollouts (arXiv: 2606.29938)
+  - Optimizes input embeddings of reasoning prefixes under dual gradients (away from failure, toward gold)
+  - Convex hull constraint keeps revisions in vocabulary embedding space
+  - **Activation**: RLVR, zero-hit-reasoning, latent-revision, training-data-augmentation
+
 ## 2026-06-30 - Computer Science Research (Cron Job)
 
 ### Parameter-Efficient Continuous-Variable Photonic Quantum Neural Networks for Edge AI
@@ -3449,3 +3469,11 @@
   - Dip-ramp-plateau structure as diagnostic for quantum chaos and thermalization
   - Provides theoretical foundation for quantum advantage certification via spectral complexity
   - **Activation**: spectral ramp, random matrix spectral form factor, quantum chaos diagnostics, local Hamiltonian spectral analysis, 谱斜坡
+
+## 2026-07-01 - Medicine/Quantum (Cron Job)
+
+### The subthreshold issue of fusion-based quantum computing
+- [[fusion-based-quantum-subthreshold]] - 融合量子计算亚阈值噪声下限分析 (arXiv: 2606.28490)
+  - Fusion failure imposes noise floor on logical error rates
+  - Quantum emitter spins reduce noise floor by orders of magnitude
+  - **Activation**: fusion-based quantum, subthreshold, logical error rate, quantum emitter spins, 融合量子计算亚阈值
