@@ -2,6 +2,13 @@
 
 ## 2026-07-01 - Neuroscience Research (Cron Job)
 
+### Unified Complex-valued Neural Network: A Magnitude-Phase Computational Model for Event-Driven Neuromorphic Learning
+- [[complex-valued-neuromorphic-ucn]] - UCN integrates continuous activation (magnitude) and phase-driven event generation for unified ANN-SNN computation (arXiv: 2606.29099)
+  - Magnitude encodes signal strength, phase governs temporal evolution and valued spike emission
+  - Event-Driven Adaptive Phase Learning (EAPL) rule for efficient neuromorphic deployment
+  - Demonstrates stable spatiotemporal learning on object tracking and Lorenz attractor
+  - **Activation**: complex-valued-neuron, magnitude-phase, event-driven, neuromorphic, EAPL, UCNN
+
 ### Distilling a Modular Reservoir Through a Genomic Bottleneck
 - [[genomic-bottleneck-modular-reservoir]] - Hypernetwork-based genomic bottleneck for generating modular reservoir connectivity (arXiv: 2606.28380)
   - Compressed genome-like latent vector encodes rich, structured modular connectivity
