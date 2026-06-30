@@ -1,6 +1,16 @@
 # AI Collection Index
 ## 2026-06-30 - Computer Science + Quantum (Cron Job)
 
+
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### EEG Cortical Speech Tracking as Biomarker for Subjective Cognitive Decline
+- [[eeg-scd-cortical-speech-tracking]] - EEG cortical tracking strength (CTS) of linguistic features during prosodically flat speech as neural marker for early cognitive decline (arXiv: 2509.21277)
+  - Subsyllabic linguistic features outperform acoustic features in speech-to-EEG encoding models
+  - Higher SCD severity → weaker CTS for linguistic (not acoustic) features
+  - Prosodically flat speech reveals strongest SCD-related neural deficits
+  - **Activation**: EEG cortical speech tracking, subjective cognitive decline, SCD, dementia biomarker, speech encoding model, linguistic features
+
 ### Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution
 - [[llm-evolved-quantum-encoding]] - LLM-driven evolutionary framework for quantum LDPC code discovery using Structured Concept Evolution (SCE) (arXiv: 2606.24808)
   - Pairs LLM generator with physics evaluator in iterative loop for autonomous qLDPC code discovery
