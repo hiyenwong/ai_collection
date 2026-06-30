@@ -1,55 +1,103 @@
 ---
 name: quantum-network-authentication
-description: "Quantum network authentication patterns - survey of classical message authentication, quantum message authentication, and entity authentication protocols for quantum networks. Covers security assumptions, setup requirements, composability, and scalability. Use when: designing quantum network security, QKD authentication, quantum communication protocols, quantum cryptography infrastructure. Activation: quantum authentication, quantum network security, QKD authentication, quantum message authentication, entity authentication quantum, quantum cryptographic protocols."
+description: "Authentication in Quantum Networks — comprehensive survey of classical, quantum, and entity authentication for quantum communication. Covers security guarantees, composability, QKD integration, and hardware-assisted approaches. Use when: quantum network security, QKD authentication, quantum cryptography protocols, quantum network infrastructure, quantum message authentication, entity authentication, quantum-secure authentication schemes, 量子网络认证, 量子密钥分发认证."
+metadata:
+  arxiv_id: "2606.30636"
+  published: "2026-06-29"
+  authors: "Christopher Battarbee, Suchetana Goswami, Elham Kashefi, Mina Doosti"
 ---
 
-## Overview
+# Quantum Network Authentication
 
-This survey (arXiv:2606.30636) provides a comprehensive analysis of authentication in quantum communication networks, covering three main flavours that are often conflated in the literature.
+## Description
 
-## Three Authentication Flavours
+Comprehensive framework for understanding and implementing authentication in quantum networks. Classifies authentication into three distinct flavours (classical message, quantum message, entity), provides security/composability analysis, and guides protocol selection for quantum network infrastructure.
 
-### 1. Classical Message Authentication
-- Standard MAC (Message Authentication Code) protocols
-- Pre-shared symmetric keys required
-- Security: computational or information-theoretic
+## Activation Keywords
+- quantum network authentication
+- quantum message authentication
+- entity authentication quantum
+- QKD authentication
+- quantum-secure authentication
+- quantum cryptography protocols
+- quantum network security
+- 量子网络认证
+- 量子密钥分发认证
+- 量子消息认证
 
-### 2. Quantum Message Authentication
-- Protects quantum states from tampering
-- Requires shared entanglement or secret keys
-- Security: quantum information-theoretic
+## Core Concepts
 
-### 3. Entity Authentication
-- Verifies identity of communicating parties
-- Can be classical or quantum protocols
-- Often hardware-assisted (PUF, quantum signatures)
+### Three Flavours of Authentication
 
-## Key Criteria for Protocol Selection
+1. **Classical Message Authentication**: Authenticating classical control/data messages in quantum networks. Uses MACs, digital signatures. Prerequisite for most quantum protocols.
 
-- **Security assumptions**: computational vs information-theoretic
-- **Setup requirements**: pre-shared keys, entanglement, hardware
-- **Composability**: how protocols combine securely
-- **Scalability**: performance in large/dynamic networks
+2. **Quantum Message Authentication**: Authenticating quantum states themselves. Ensures quantum data integrity against adversarial modification. Schemes include Barnum-Crepeau-Gottesman (BCG), Barnum et al. authentication codes.
 
-## Practical Steps
+3. **Entity Authentication**: Verifying the identity of communicating parties in quantum networks. Hardware-assisted approaches leverage quantum properties for identity verification.
 
-1. Identify required authentication flavour for your use case
-2. Evaluate security assumptions against threat model
-3. Check setup requirements against available infrastructure
-4. Verify composable security for multi-protocol scenarios
-5. Assess scalability for network size and dynamics
+### Key Evaluation Criteria
 
-## QKD Integration Case Study
+| Criterion | Description |
+|-----------|-------------|
+| **Security assumptions** | Computational vs information-theoretic, trust in setup |
+| **Set-up requirements** | Pre-shared keys, trusted third parties, quantum memory |
+| **Composability** | Security preserved under composition with other protocols |
+| **Scalability** | Performance in large/dynamic quantum networks |
 
-- Authentication is prerequisite for QKD security
-- Initial authentication must use pre-shared key
-- QKD can then generate fresh authentication keys
-- Bootstrapping: small initial key → large authenticated key pool
+### Core Insight
+
+> An authentication requirement is not an intrinsic limitation of quantum networks. Each protocol relies on a particular authentication resource, and the security claim is meaningful only once the authentication resource and its deployment assumptions are made explicit.
+
+## Usage Patterns
+
+### Pattern 1: QKD Protocol Selection
+When deploying QKD, select authentication based on:
+- Network topology (point-to-point vs multi-party)
+- Available infrastructure (pre-shared keys, PKI)
+- Security requirements (information-theoretic vs computational)
+- Scalability needs
+
+### Pattern 2: Quantum Network Design
+For quantum network architecture:
+1. Identify authentication flavour needed per protocol layer
+2. Match authentication scheme to security/composability requirements
+3. Explicitly document authentication resource assumptions
+4. Verify composability when chaining protocols
+
+### Pattern 3: Hardware-Assisted Authentication
+When quantum hardware is available:
+- Leverage quantum properties for entity authentication
+- Consider device-independent approaches
+- Account for hardware imperfections in security proofs
+
+## Methodology
+
+### Step 1: Identify Authentication Requirements
+- What type of data needs authentication? (classical, quantum, or both)
+- What security level is required? (computational, information-theoretic)
+- What are the deployment constraints? (pre-shared keys, PKI, quantum memory)
+
+### Step 2: Select Authentication Protocol
+- For classical messages: MACs with information-theoretic security, or post-quantum digital signatures
+- For quantum messages: Quantum authentication codes (QACs) with error detection
+- For entity: Quantum identification protocols, hardware-assisted approaches
+
+### Step 3: Verify Composability
+- Check protocol security under composition
+- Ensure authentication resource assumptions are consistent across protocol stack
+- Document all implicit authentication dependencies
+
+### Step 4: Deploy and Monitor
+- Implement with explicit authentication resource tracking
+- Monitor for authentication failures
+- Plan for key refresh and authentication resource management
 
 ## Pitfalls
 
-- Don't conflate the three authentication flavours
-- Authentication requirement is NOT intrinsic limitation
-- Each protocol relies on particular authentication resource
-- Security claims only meaningful when authentication resource made explicit
-- Hardware-assisted approaches may have different trust assumptions
+- **Conflating authentication flavours**: Classical, quantum, and entity authentication are fundamentally different and require different analysis. Do not assume a solution for one applies to another.
+- **Implicit authentication assumptions**: Many quantum protocol security claims implicitly assume authenticated classical channels. Make these assumptions explicit.
+- **Scalability overlooked**: Point-to-point authentication schemes may not scale to large quantum networks. Consider composability and key management overhead.
+- **Hardware assumptions**: Hardware-assisted approaches require specific quantum capabilities. Verify that assumptions match available infrastructure.
+
+## Resources
+- arXiv: 2606.30636 — "Authentication in Quantum Networks" (Battarbee et al., 2026)

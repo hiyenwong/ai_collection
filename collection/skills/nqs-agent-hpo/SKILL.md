@@ -1,55 +1,117 @@
 ---
 name: nqs-agent-hpo
-description: "Health-aware agentic hyperparameter optimization for Neural-Network Quantum States (NQS). Open-source framework that monitors energy trajectories, detects destructive optimization events, stops unstable calculations, modifies learning-rate schedules, and resumes from safe checkpoints. Use when: optimizing NQS calculations, quantum many-body simulations, variational quantum state optimization, agentic HPO for quantum systems. Activation: nqs agent, neural network quantum states, health-aware hpo, hyperparameter optimization quantum, quantum state optimization, NQS-Agent, agentic quantum optimization."
+description: "NQS-Agent: Health-Aware Hyperparameter Optimization for Neural-Network Quantum States. Monitors energy trajectories, detects destructive optimization events, manages learning-rate schedules with safe checkpoint recovery, and ranks candidates with anomaly-aware scoring. Use when: neural-network quantum states hyperparameter optimization, NQS tuning, quantum many-body variational optimization, health-aware HPO, quantum state optimization agent, energy trajectory monitoring, 神经网络量子态超参数优化, 量子多体变分优化."
+metadata:
+  arxiv_id: "2606.30464"
+  published: "2026-06-29"
+  authors: "Jia-Qi Wang, Xiao-Qi Han, Ze-Feng Gao, Rong-Qiang He, Zhong-Yi Lu"
 ---
 
-## Overview
+# NQS-Agent Health-Aware HPO
 
-NQS-Agent (arXiv:2606.30464) is an open-source software framework for health-aware hyperparameter optimization (HPO) in Neural-Network Quantum States (NQS) calculations. NQS provide expressive variational representations for strongly correlated quantum many-body systems, but their practical accuracy depends sensitively on architecture-level hyperparameters and optimization schedules.
+## Description
 
-## Key Innovation
+Framework for health-aware hyperparameter optimization (HPO) in Neural-Network Quantum States (NQS) calculations. Goes beyond selecting a single lowest-energy calculation by monitoring optimization trajectory stability and recovery history.
 
-Instead of selecting only the lowest-energy calculation, NQS-Agent considers the **stability and recovery history** of optimization trajectories. It provides a reproducible tuning protocol that goes beyond simple energy minimization.
+## Activation Keywords
+- nqs hyperparameter optimization
+- health-aware HPO quantum
+- neural-network quantum states tuning
+- quantum many-body variational optimization
+- NQS-Agent
+- energy trajectory monitoring
+- quantum state optimization
+- 神经网络量子态超参数优化
+- 量子多体变分优化
 
-## Core Workflow
+## Core Concepts
 
-1. **Monitor energy trajectories** in real-time during NQS optimization
-2. **Detect destructive optimization events** (energy divergence, oscillation)
-3. **Stop unstable calculations early** to save compute
-4. **Modify learning-rate schedule** dynamically when instability detected
-5. **Resume optimization from safe checkpoints** automatically
-6. **Rank candidates** with anomaly-aware scoring (not just lowest energy)
+### The Problem
+NQS variational accuracy depends sensitively on:
+- Architecture-level hyperparameters (depth, width, connectivity)
+- Optimization schedules (learning rate, momentum, batch size)
+- Random initialization seeds
 
-## Implementation Details
+Single lowest-energy runs are unreliable — destructive optimization events (gradient explosion, oscillation divergence) can mask good architectures.
 
-- Demonstrated on residual convolutional NQS for square-lattice Heisenberg J1-J2 model
-- Parameter counts comparable to aCNN (reference architecture)
-- Identifies structurally distinct wide-and-shallow competitive candidates
-- Improves over human-tuned baselines
+### Health-Aware HPO Methodology
 
-## Practical Steps
+**Four-Phase Pipeline:**
 
-1. Define NQS architecture search space (CNN layers, widths, depths)
-2. Set up energy trajectory monitoring hooks
-3. Configure anomaly detection thresholds for energy divergence
-4. Define checkpoint intervals for safe recovery points
-5. Implement learning-rate modification rules:
-   - Reduce LR by factor when energy diverges
-   - Increase LR when convergence stable
-6. Use anomaly-aware scoring function:
-   - Score = f(energy, stability, recovery_count, convergence_rate)
-7. Select candidates balancing energy quality and optimization stability
+1. **Energy Trajectory Monitoring**: Continuously track energy curves during optimization
+2. **Destructive Event Detection**: Identify gradient explosion, oscillation divergence, NaN/Inf
+3. **Safe Checkpoint Recovery**: Roll back to stable checkpoints and modify learning-rate schedule
+4. **Anomaly-Aware Scoring**: Rank candidates using stability + recovery history, not just final energy
+
+### Key Insight
+
+> The stability and recovery history of an optimization trajectory should be considered when assessing an NQS result. Health-aware HPO provides a reproducible tuning protocol that goes beyond selecting a single lowest-energy calculation.
+
+## Usage Patterns
+
+### Pattern 1: NQS Architecture Search
+When comparing NQS architectures (e.g., residual CNN vs aCNN):
+1. Run multiple hyperparameter configurations per architecture
+2. Apply health monitoring during each run
+3. Score candidates by: final energy + trajectory stability + recovery count
+4. Select architectures that consistently converge, not just lucky low-energy runs
+
+### Pattern 2: Learning Rate Schedule Optimization
+When tuning learning rates for quantum many-body models:
+1. Start with conservative schedule
+2. Monitor energy derivative for instability signals
+3. Automatically reduce LR when instability detected
+4. Resume from checkpoint before instability
+5. Record recovery history as part of candidate evaluation
+
+### Pattern 3: Reproducible NQS Benchmarking
+For reproducible quantum state calculations:
+1. Fix parameter count across architecture comparison
+2. Run HPO with health monitoring for each candidate
+3. Report both best energy AND optimization reliability metrics
+4. Document all recovery events and schedule modifications
+
+## Methodology
+
+### Step 1: Define Search Space
+- Architecture parameters: layers, filters, activation functions
+- Optimization parameters: initial LR, decay schedule, batch size
+- Physics constraints: symmetry, boundary conditions
+
+### Step 2: Run Health-Monitored Optimization
+For each candidate configuration:
+```
+while not converged:
+    energy = compute_energy(params)
+    monitor(energy_trajectory)
+    if detect_instability(trajectory):
+        checkpoint = rollback_to_stable()
+        modify_lr_schedule(checkpoint)
+        resume_optimization(checkpoint, new_lr)
+    if detect_divergence(trajectory):
+        abort_candidate()
+        record("unstable")
+```
+
+### Step 3: Anomaly-Aware Scoring
+Score = α × (normalized energy) + β × (stability score) - γ × (recovery count)
+
+Where:
+- Stability score: fraction of steps without instability
+- Recovery count: how many times rollback was needed
+- Lower score = better candidate
+
+### Step 4: Candidate Selection
+- Reject candidates with >N recovery events
+- Rank remaining by composite score
+- Verify selected candidate on holdout physics benchmarks
 
 ## Pitfalls
 
-- Don't trust single lowest-energy result without checking optimization history
-- Anomaly detection thresholds need calibration per problem type
-- Wide-and-shallow architectures may compete with deep architectures at same parameter count
-- Checkpoint frequency trades off memory vs recovery granularity
+- **Single-run selection trap**: Picking the configuration with lowest final energy ignores whether it achieved that through luck or genuine convergence. Always use multiple runs per configuration.
+- **Checkpoint granularity**: Too-frequent checkpoints waste memory; too-sparse checkpoints lose too much progress on rollback. Checkpoint every 10-50 steps for NQS calculations.
+- **Instability threshold tuning**: The energy derivative threshold for "instability" depends on the physics model. Calibrate on a known-good configuration first.
+- **Parameter count matching**: When comparing architectures, ensure fair comparison by matching parameter counts (e.g., wide-and-shallow vs deep-and-narrow).
 
-## Verification
-
-- Compare against human-tuned baselines at matched parameter counts
-- Verify anomaly detection catches known failure modes
-- Check that anomaly-aware scoring selects robust candidates
-- Reproduce results across multiple random seeds
+## Resources
+- arXiv: 2606.30464 — "NQS-Agent: Health-Aware Agentic Hyperparameter Optimization for Neural-Network Quantum States" (Wang et al., 2026)
