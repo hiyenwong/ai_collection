@@ -2,6 +2,15 @@
 
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
+### Neuromorphic Energy-Aware Learning for Adaptive Deep Brain Stimulation
+- [[neuromorphic-energy-aware-dbs]] - Energy-aware RL for closed-loop DBS with neuromorphic deployment (arXiv: 2606.28600)
+  - Co-optimizes stimulation energy and inference power in implantable devices
+  - Spiking Q-network reduces stimulation charge by 80% while suppressing pathological oscillations by 45.2%
+  - Knowledge distillation to SynSense XyloAudio3 at 0.52 mW inference power
+  - **Activation**: SNN, neuromorphic computing, deep brain stimulation, energy-aware learning, Parkinson's disease, closed-loop control, knowledge distillation
+
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
 ### BrainJanus: A Unified Model for Understanding and Generation across Brain, Vision, and Language
 - [[brainjanus-unified-brain-model]] - 首个统一脑-视觉-语言多模态框架，支持双向编解码 (arXiv: 2606.30319)
   - Unified Brain Tokenizer 将连续神经动力学量化为离散 token
