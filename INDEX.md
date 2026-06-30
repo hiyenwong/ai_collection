@@ -17,6 +17,13 @@
   - 在 ABIDE-I, ADHD-200, ADNI 三个数据集上超越 SOTA
   - **Activation**: BrainPICM, personalized community, progressive masking, brain network SSL
 
+### Mean-Field Theory of Rich Oscillatory Dynamics in Low-Rank Recurrent Networks
+- [[mean-field-oscillatory-dynamics-low-rank-networks]] - 动态平均场理论揭示适应强度驱动低秩循环网络在四种振荡状态间转换 (arXiv: 2606.30366)
+  - 四维振荡图谱: 静态相干态 → 噪声维持振荡 → 随机状态切换 → 全局极限环
+  - 混沌阈值以上群体水平相干振荡与单神经元异质性共存
+  - 三维约化模型捕获完整网络分岔结构
+  - **Activation**: mean-field theory, low-rank recurrent networks, oscillatory dynamics, adaptation, Hopf bifurcation, Up-Down states
+
 ## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
 
 ### Separation of Statistical Complexity and Trainability in Variational Quantum Circuits
