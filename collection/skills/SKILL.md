@@ -1,109 +1,59 @@
 ---
-name: qiqp-trainability-analysis
-description: "Trainability analysis for IQP Quantum Circuit Born Machines under Gaussian initialization"
+name: soliton-waves-wstdp-snn
+description: "Soliton-like wave propagation in recurrent spiking neural networks with weighted STDP. Use when studying cortical traveling waves, activity zone delimitation, spatial memory formation, or self-propagating neural activity patterns."
+tags: [spiking-neural-networks, STDP, cortical-waves, soliton, recurrent-networks]
 ---
 
-# IQP Trainability Analysis
+# Soliton-like Waves in Two-Dimensional Recurrent Spiking Neural Networks with Weighted STDP
 
-## Description
-Methodology for analyzing the trainability of Instantaneous Quantum Polynomial (IQP) Quantum Circuit Born Machines (QCBM) under Gaussian parameter initialization. Studies barren plateau phenomena and gradient scaling in quantum generative models, providing theoretical and practical insights for optimizing quantum circuit training.
+**arXiv**: 2606.21432v1 (June 19, 2026)
+**Authors**: Ch. Meessen
+**Categories**: cs.NE, q-bio.NC
+
+## Core Contribution
+
+Demonstrates that recurrent spiking neural networks with weighted STDP spontaneously generate **stable, self-propagating wave packets** (dissipative solitons) that maintain spatial profiles, propagate at constant speed, and annihilate upon collision.
+
+## Key Methodology
+
+### 1. Minimal Biologically Plausible Neuron Model
+Discrete-time spiking neuron combining:
+- **Multiplicative STDP (WSTDP)**: Weight-dependent spike-timing-dependent plasticity
+- **Divisive normalization**: Biologically plausible dendritic implementation using only local information
+- **Homeostatic threshold adaptation**: Maintains stability
+- **One-step refractory period**: Prevents immediate re-firing
+
+### 2. Network Architecture
+- Excitatory-inhibitory neuron pairs in 2D recurrent network
+- Periodic localized stimulation
+- Geometric asymmetry: inhibitory radius > excitatory radius
+- Initial inhibitory synapses stronger than excitatory
+
+### 3. Emergent Phenomena
+- **Soliton formation**: Self-propagating wave packets with stable spatial profiles
+- **Constant velocity propagation**: Waves travel at fixed speed
+- **Collision annihilation**: Frontal collisions destroy waves
+- **Direction learning**: WSTDP engraves propagation direction into synaptic weights
+- **Boundary formation**: Simultaneous sources create semi-persistent boundaries encoding relative phase/frequency
+
+## Key Findings
+
+1. **Self-organizing propagation**: Network learns to sustain propagation in one direction while suppressing reverse propagation
+2. **Phase encoding**: Boundary position between competing waves encodes relative phase and frequency of sources
+3. **Local computation only**: Dendritic implementation requires only locally available information at each binary junction
+
+## Implications
+
+Provides minimal computational framework for studying:
+- Cortical traveling waves
+- Activity zone delimitation
+- Spatial memory formation from local plasticity rules
 
 ## Activation Keywords
-- IQP trainability
-- quantum circuit born machine
-- barren plateau QCBM
-- Gaussian initialization quantum
-- QCBM training
-- 量子电路玻恩机训练
-- IQP 可训练性
-- quantum gradient scaling
+soliton waves, STDP, traveling waves, cortical dynamics, recurrent SNN, self-propagating activity, collision annihilation, spatial memory, divisive normalization
 
-## Tools Used
-- execute_code: Simulate quantum circuits and compute gradients
-- terminal: Run quantum simulation (Qiskit, Pennylane)
-- web_search: Search for related trainability research
-
-## Usage Patterns
-
-### Pattern 1: Barren Plateau Detection
-When training a quantum circuit and suspecting gradient vanishing:
-1. Compute gradient variance across random parameter initializations
-2. Compare variance scaling with qubit count n
-3. If Var[∂C] ~ O(1/2^n), barren plateau is present
-4. Diagnose cause: circuit depth, entanglement structure, cost function locality
-
-### Pattern 2: Gaussian Initialization Analysis
-For QCBM training:
-1. Initialize parameters from N(0, σ²) distribution
-2. Compute expected gradient magnitude and variance
-3. Analyze how σ affects trainability
-4. Find optimal σ range that avoids barren plateaus while maintaining expressibility
-
-### Pattern 3: IQP Circuit Design for Trainability
-When designing IQP circuits:
-1. Structure commuting gate layers to limit entanglement depth
-2. Use shallow circuits where possible
-3. Apply local cost functions instead of global ones
-4. Initialize parameters in trainable regime (avoid over-dispersed Gaussian)
-
-## Instructions for Agents
-
-### Step 1: Circuit Characterization
-- Identify circuit type: IQP (all commuting gates diagonal in X-basis)
-- Count parameters, layers, qubits
-- Determine entanglement connectivity pattern
-- Analyze gate structure (diagonal gates, Hadamard layers)
-
-### Step 2: Gradient Analysis
-For a cost function C(θ):
-1. Compute ∂C/∂θ_i for each parameter
-2. Sample gradients over multiple random initializations
-3. Compute mean and variance of gradients
-4. Fit scaling law: Var[∂C] ~ O(b^{-n}) to determine barren plateau severity
-
-### Step 3: Initialization Optimization
-- Test multiple σ values for Gaussian initialization
-- For each σ: compute gradient statistics over 100+ samples
-- Find σ range where gradient variance is polynomial (not exponential) in n
-- This defines the "trainable regime"
-
-### Step 4: Mitigation Strategies
-If barren plateau detected:
-1. **Reduce circuit depth**: Fewer layers = less entanglement = better gradients
-2. **Local cost functions**: Measure local observables instead of global ones
-3. **Layerwise training**: Train one layer at a time, freeze others
-4. **Parameter correlation**: Initialize with correlated parameters
-5. **Adaptive initialization**: Use pre-training to find good initialization region
-
-## Error Handling
-
-### Gradient Computation Overflow
-- IQP circuits can produce extreme parameter values
-- Use parameter clipping during optimization
-- Monitor parameter magnitudes, reset if they diverge
-
-### Simulation Memory Limits
-- Full state-vector simulation limited to ~25-30 qubits
-- Use tensor network simulators for larger systems
-- Alternatively, use analytical bounds from theory
-
-### Slow Convergence
-- May indicate being near barren plateau boundary
-- Try increasing σ (more exploration) or decreasing σ (stay local)
-- Consider switching to non-Gaussian initialization
-
-## Resources
-- arXiv: 2606.10179 - "Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization"
-- Related: Barren plateaus in QNNs, quantum generative modeling, expressibility analysis
-
-## Examples
-
-### Example: Analyzing 8-Qubit IQP QCBM
-Circuit: 3-layer IQP with commuting ZZ rotations
-Cost: MMD (Maximum Mean Discrepancy) between target and generated distributions
-Analysis:
-1. Sample 200 random Gaussian initializations (σ=0.1)
-2. Compute gradient variance for each parameter
-3. Plot variance vs. qubit count scaling
-4. Determine if exponential decay present
-5. Recommend optimal σ range
+## Related Work
+- Dissipative solitons in physics
+- Cortical traveling waves in visual cortex
+- STDP-based learning rules
+- Recurrent neural network dynamics
