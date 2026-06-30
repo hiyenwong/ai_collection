@@ -3054,3 +3054,12 @@
   - Graph RAG with CPSMod ontology for plant knowledge retrieval
   - Constraint-aware recovery actions validated before actuation
   - **Activation**: fault-tolerant-control, llm-agents, cyber-physical-systems, digital-twin, graph-rag
+
+## 2026-06-30 - CV-QNN Edge AI (Cron Job)
+
+### Parameter-Efficient CV-QNN for Edge AI
+- [[cv-qnn-edge-ai]] - Simplified Φ∘D∘U₁ architecture with 40-45% fewer parameters (arXiv: 2606.28252)
+  - Barren plateau mitigation via PCA + selective encoding
+  - 18 parameters outperform 55-parameter classical baseline
+  - **Activation**: cv-qnn, photonic quantum, edge ai, barren plateaus, parameter efficiency
+
