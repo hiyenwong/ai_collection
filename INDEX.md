@@ -3310,3 +3310,31 @@
   - Provides directed connectivity via heat flow direction, unlike correlation methods
   - Relaxed noise assumptions and regularization improve robustness over previous work
   - **Activation**: brain connectivity, graph heat modelling, neurophysiological data, directed connectivity, coherence, graph PDE
+
+### Cavity-mediated Probabilistic Magic T-gate Injection
+- [[cavity-mediated-magic-t-gate]] - Probabilistic cavity-based magic-state injection protocol achieving 0.74 success probability using atom-cavity interactions (arXiv: 2606.30628)
+  - Avoids magic-state distillation overhead for non-Clifford gate implementation
+  - Uses teleportation-based protocol with Clifford operations on Rydberg atom-cavity platforms
+  - Adaptable to logical level with collective Rydberg interactions
+  - **Activation**: magic state injection, T-gate, cavity-mediated, Rydberg atom, Clifford operations, fault-tolerant quantum
+
+### Provably Efficient Learning of Fermionic Correlations under Particle-Number Symmetry
+- [[fermionic-shadow-tomography]] - Fermionic-shadow tomography with random orbital rotations achieving O_k(η^k/ε²) sample complexity independent of system size (arXiv: 2606.30601)
+  - Proves matching information-theoretic lower bound Ω_k(η^k/ε²) for adaptive protocols
+  - Order of magnitude query count reduction vs state-of-the-art for N=100, η=20
+  - Simultaneous estimation of all k-body fermionic correlations
+  - **Activation**: fermionic shadow tomography, particle-number symmetry, correlation estimation, quantum many-body, sample complexity
+
+### Untangling QLDPC Codes with Biased Noise Ancilla
+- [[biased-noise-qldpc-codes]] - Hardware-aware QLDPC code design using biased noise ancillas to avoid hook errors and short loops in Tanner graphs (arXiv: 2606.30592)
+  - Nearly 10x logical error rate improvement at circuit noise of 2e-3 with 50x phase-flip bias
+  - Works with bicycle bivariate codes and cyclic hypergraph product codes
+  - Extra gate errors on superconducting vs trapped-ion platforms determine optimal code distance
+  - **Activation**: biased noise qldpc, QLDPC ancilla bias, phase-flip bias qec, hook error mitigation, Tanner graph loops, syndrome extraction
+
+### Bridging NISQ and Fault-Tolerant Regimes: Generative-ML-Assisted Quantum Selected CI
+- [[generative-ml-quantum-selected-ci]] - Hybrid quantum-classical workflow using LCNot-UCCSD ansatz and RBM generative subspace expansion for molecular simulations (arXiv: 2606.30551)
+  - First DMET-QSCI application to protein-ligand systems (Amantadine, SARS-CoV-2 main protease)
+  - O(N⁴) MP2-amplitude initialization replaces O(N⁶) CCSD parameter init
+  - Uses fraction of classical resources vs Cleveland Clinic/RIKEN/IBM state-of-the-art
+  - **Activation**: quantum selected CI, DMET, LCNot-UCCSD, RBM subspace, protein-ligand, molecular simulation, quantum chemistry
