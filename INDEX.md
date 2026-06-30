@@ -1,4 +1,19 @@
 # AI Collection Index
+
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### Mean-field theory of rich oscillatory dynamics in low-rank recurrent networks with activity-dependent adaptation
+- [[mean-field-low-rank-adaptation-oscillations]] - Dynamical mean-field theory showing adaptation drives low-rank recurrent networks through four regimes: static, oscillatory, bistable, limit cycle (arXiv: 2606.29655)
+  - Adaptation strength triggers transitions from static state to noise-sustained oscillations to stochastic switching to global limit cycle
+  - Reduced 3D model captures full bifurcation structure, explains sleep/wake oscillation patterns
+  - **Activation**: mean-field-theory, adaptation, oscillations, sleep-dynamics, recurrent-networks, low-rank
+
+### Cohort-amortized personalization for virtual brain twins
+- [[cohort-amortized-personalization-brain-twins]] - CAP framework replaces data sharing with model sharing for privacy-preserving personalized brain modeling (arXiv: 2606.30329)
+  - Cross-atlas autoencoder (CrossCoder) enables deployment across heterogeneous parcellations from 20+ atlases
+  - Seconds-per-subject personalization validated on epilepsy (F1=0.56) and aging cohorts (r=0.44)
+  - **Activation**: brain-twins, personalization, privacy-preserving, federated-learning, cross-atlas, virtual-brain
+
 ## 2026-06-30 - Computer Science + Quantum (Cron Job)
 
 ### Lie Group Diffusion Models for Hardware-Aware Quantum Circuit Synthesis
