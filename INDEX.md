@@ -3,14 +3,14 @@
 ## 2026-07-01 - Medicine + Quantum (Cron Job - Hourly)
 
 ### First-in-human quantum entanglement imaging
-- [[quantum-entanglement-imaging-pet]] - First in vivo imaging of quantum entanglement degree of annihilation photons using J-PET plastic scintillator scanner (arXiv: 2606.29421)
+- [[quantum-entanglement-imaging]] - First in vivo imaging of quantum entanglement degree of annihilation photons using J-PET plastic scintillator scanner (arXiv: 2606.29421)
   - Plastic scintillator PET exploits Compton effect for simultaneous position, time, and polarization plane measurement
   - First human subject imaged with ⁶⁸Ga-DOTA-TATE — simultaneous radiopharmaceutical uptake + entanglement degree images
   - No additional radiation dose: reuses same annihilation photons for dual-modality imaging
   - **Activation**: quantum entanglement imaging, PET, J-PET, annihilation photons, polarization imaging, quantum medical diagnostics, in vivo quantum imaging, entanglement degree imaging, radiopharmaceutical imaging
 
 ### Parameter-Efficient Continuous-Variable Photonic Quantum Neural Networks for Edge Quantum AI: Demonstration in Oral Cancer Detection
-- [[cv-photonic-qnn-edge-ai]] - Simplified CV-QNN (Φ∘D∘U₁) architecture with 40-45% fewer parameters for room-temperature quantum medical classification (arXiv: 2606.28252)
+- [[cv-qnn-edge-ai-medical]] - Simplified CV-QNN (Φ∘D∘U₁) architecture with 40-45% fewer parameters for room-temperature quantum medical classification (arXiv: 2606.28252)
   - Simplified Φ∘D∘U₁ layer vs standard CV-QNN cuts parameters 40-45% while maintaining accuracy
   - Barren plateau mitigation via dimensionality reduction + encoding restriction increases loss-gradient variance by 58 orders of magnitude
   - 4-qumode simplified CV-QNN with 18 parameters achieves 100% calibrated test accuracy, exceeds 55-parameter classical baseline
