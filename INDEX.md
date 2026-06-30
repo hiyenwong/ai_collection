@@ -3,6 +3,21 @@
 ## 2026-06-30 - Computer Science + Quantum Computing (Cron Job)
 
 ### MetaMorphQ: Physics-Based Metamorphic Testing of Variational Quantum Circuits
+
+## 2026-06-30 - Neuroscience Research (Cron Job)
+
+### From Detecting Agency to Doing Work: Self-Caused Credit Builds a Durable Behavioral Self in a Minimal Spiking Agent
+- [[self-caused-credit-spiking-agency]] - Agency-gated slow credit framework for durable behavioral self in spiking agents (arXiv: 2606.30191v1)
+  - Demonstrates agency detection alone is insufficient; agency must do slow work via multiplicative gating
+  - Post-unload self-preservation: 0.96 with slow credit vs 0.00 without (N=50)
+  - **Activation**: self-caused credit, agency detection, spiking agent, catastrophic forgetting, Nengo LIF
+
+### Clear Mind: Meditation and the Brain's Signal-to-Noise Ratio
+- [[clear-mind-meditation-functional-snr]] - f-SNR framework unifying meditation research through functional signal-to-noise ratio (arXiv: 2606.29698v1)
+  - Maps meditation onto signal enhancement and noise decluttering operations
+  - Proposes meditation shifts brain toward critical regime, improving BCI performance
+  - **Activation**: meditation, f-SNR, neural variability quenching, critical regime, BCI improvement
+
 - [[metamorphic-quantum-testing]] - Physics-based metamorphic testing framework for VQCs that derives test oracles from quantum mechanical properties, solving the oracle problem (arXiv: 2606.28742)
   - Five physics-based metamorphic relations: parameter-shift invariance, gate commutation, Hamiltonian symmetry, eigenvalue scaling, basis transformation
   - No oracle needed — tests correctness without knowing expected outputs
