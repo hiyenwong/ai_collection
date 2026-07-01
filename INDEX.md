@@ -2,6 +2,16 @@
 
 ## 2026-07-01 - Quantum Medicine (Cron Job)
 
+### Hybrid Classical-Quantum (HCQ) Alzheimer Classification via Supervised beta-VAE and Quantum Kernels
+- [[hcq-alzheimer-classification]] - HCQ pipeline for binary Alzheimer's classification from 3D T1-weighted structural MRI using supervised beta-VAE + quantum kernels with ZZ feature map (arXiv: 2606.14194)
+  - Supervised beta-VAE dimensionality reduction preserves class-discriminative features in latent space
+  - ZZ feature map with entangling ZZ gates for quantum state encoding
+  - Quantum kernel SVM classification achieving competitive accuracy with ~10-20 qubits
+  - End-to-end HCQ pipeline working directly with 3D structural volumes
+  - **Activation**: HCQ Alzheimer classification, quantum Alzheimer detection, hybrid quantum medical classification, beta-VAE quantum kernel, ZZ feature map MRI, 阿尔茨海默量子分类, 混合量子医学诊断
+
+## 2026-07-01 - Quantum Medicine (Cron Job)
+
 ### First-in-human quantum entanglement imaging
 - [[quantum-entanglement-imaging]] - Methodology for quantum entanglement imaging in medical diagnostics using polarization-entangled annihilation photons in PET systems (arXiv: 2606.29421)
   - First in vivo imaging of quantum entanglement degree in human subject using J-PET plastic scintillator scanner
