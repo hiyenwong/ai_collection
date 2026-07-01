@@ -1,81 +1,111 @@
 ---
 name: quantum-autoencoder-anomaly-detection
-description: Quantum autoencoder (QAE) methodology for compression-driven anomaly detection in brain MRI and medical imaging. Uses angle encoding, variational encoder-decoder with trash qubits, and incompressibility-based anomaly scoring.
-category: quantum-ml
-trigger_words: quantum autoencoder, QAE, anomaly detection, medical imaging, brain MRI, compression-driven detection, trash qubits, variational encoder-decoder, ROC-AUC anomaly
-source: arXiv:2606.27411
+category: ai_collection
+description: Quantum autoencoder (QAE) for compression-driven anomaly detection in medical imaging. Interpretable anomaly scores based on incompressibility, encoder-decoder asymmetry analysis, and spatially localized anomaly heatmaps.
+version: "1.0"
+created: "2026-07-01"
+updated: "2026-07-01"
+trigger_words: ["quantum autoencoder", "QAE", "compression anomaly detection", "quantum medical imaging", "trash qubits", "incompressibility", "quantum MRI"]
+arxiv: "2606.27411"
 ---
 
-# Quantum Autoencoder for Compression-Driven Anomaly Detection
+# Quantum Autoencoder Anomaly Detection
 
-## Overview
+## Background
 
-This methodology uses Quantum Autoencoders (QAE) for anomaly detection by leveraging the principle that anomalous data resists compression relative to normal data. The approach maps data patches into quantum states and trains a variational encoder-decoder to discard information via trash qubits, with anomaly scores based on reconstruction fidelity.
+Quantum autoencoders provide an interpretable and controllable mechanism for anomaly detection based on incompressibility with respect to a learned latent representation. This methodology applies QAEs to brain MRI anomaly detection, achieving slice-level ROC-AUC ~0.95.
 
-## Key Insight
+## Core Methodology
 
-**Incompressibility as Anomaly Signal**: Normal data compresses well under the learned latent representation; anomalies resist compression. The degree of incompressibility serves as a natural, interpretable anomaly score.
+### Compression-Driven Anomaly Detection
 
-## Core Components
+The approach maps image patches into quantum states and trains a variational encoder-decoder to discard information via auxiliary trash qubits. Anomaly scores reflect the degree to which inputs resist compression relative to normal data:
 
-### 1. Angle Encoding
-- Map image patches into quantum states
-- Each pixel/feature mapped to rotation angle on qubit
-- Parameter-efficient compared to amplitude encoding
+```
+Higher anomaly score = More resistant to compression = More anomalous
+```
 
-### 2. Variational Encoder-Decoder Architecture
-- Encoder: compresses input into latent quantum state
-- Trash qubits: auxiliary qubits that absorb discarded information
-- Decoder: reconstructs from latent state
-- Trained to minimize reconstruction error on normal data
+### Quantum Autoencoder Architecture
 
-### 3. Anomaly Scoring
-- Score = 1 - reconstruction fidelity
-- Higher scores = more anomalous
-- Threshold selection based on compression-reconstruction trade-off
+```
+Input Patches → Angle Encoding → Variational Encoder → Trash Qubits → Variational Decoder → Reconstruction
+                                                    ↓
+                                              Anomaly Score (info discarded)
+```
 
-### 4. Encoder-Decoder Asymmetry
-- Effective anomaly detection arises from structured information compression in encoder
-- Not driven by increased parameter magnitude or decoder expressivity
-- Provides interpretable mechanism for detection
+Key components:
+- **Angle Encoding**: Maps image patches into quantum states
+- **Trash Qubits**: Auxiliary qubits where normal data information is discarded
+- **Variational Encoder-Decoder**: Trained to compress normal data patterns
+- **Anomaly Score**: Degree of incompressibility relative to learned normal manifold
 
-## Performance
+### Encoder-Decoder Asymmetry Analysis
 
-- Slice-level ROC-AUC: ~0.95 (brain MRI)
-- Patch-level ROC-AUC: ~0.813
+Effective anomaly detection arises from **structured information compression within the encoder** rather than:
+- Increased parameter magnitude
+- Decoder expressivity
+
+This results in a controlled compression-reconstruction trade-off with a clear operating regime.
+
+## Key Results
+
+- **Slice-level ROC-AUC**: ~0.95
+- **Patch-level ROC-AUC**: ~0.813
 - Outperforms classical autoencoder and PCA baselines
-- Produces spatially localized anomaly heatmaps
+- Produces spatially localized anomaly heatmaps aligned with tumorous regions
 
-## Implementation Pattern
+## Implementation Patterns
 
-```
-1. Prepare normal training data (patches/images)
-2. Encode data using angle encoding into quantum states
-3. Train variational encoder-decoder with trash qubits
-   - Minimize reconstruction error on normal data
-   - Optimize trash qubit discard pattern
-4. For inference:
-   a. Encode test data
-   b. Measure reconstruction fidelity
-   c. Compute anomaly score = 1 - fidelity
-   d. Apply threshold for classification
-5. Generate anomaly heatmaps from local reconstruction errors
+### Pattern 1: Compression-Driven Detection
+
+```python
+# Pseudocode
+for each_image_patch:
+    quantum_state = angle_encoding(patch)
+    encoded, trash = encoder(quantum_state)
+    anomaly_score = information_in_trash_qubits
+    if anomaly_score > threshold:
+        flag_as_anomaly()
 ```
 
-## Pitfalls
+### Pattern 2: Threshold Selection
 
-- **Training data quality**: Requires clean, representative normal data; contaminated training set degrades detection
-- **Patch size**: Too small patches lose context; too large patches exceed qubit capacity
-- **Threshold selection**: Operating regime supports principled threshold selection, but requires calibration data
-- **Noise sensitivity**: Quantum hardware noise affects reconstruction; error mitigation needed for real deployment
+1. Train QAE on normal data only
+2. Plot anomaly score distribution for normal data
+3. Select threshold at tail of normal distribution
+4. Validate on held-out normal + anomalous data
 
-## Applications
+### Pattern 3: Heatmap Generation
 
-- Brain MRI anomaly detection (tumors, lesions)
-- General medical imaging anomaly detection
-- Industrial defect detection
-- Any domain where normal data manifold is well-defined
+The QAE produces spatially localized anomaly heatmaps by:
+1. Processing image patches individually
+2. Aggregating anomaly scores spatially
+3. Overlaying scores on original image
+4. Result: heatmaps aligned with pathological regions
 
-## Activation
+## Verification Steps
 
-Use when: quantum autoencoder for anomaly detection, medical imaging anomaly detection, compression-based anomaly scoring, quantum machine learning for medical diagnosis, brain MRI analysis, variational quantum encoder-decoder.
+1. Validate ROC-AUC against classical baselines (autoencoder, PCA)
+2. Verify encoder-decoder asymmetry pattern
+3. Check anomaly heatmap spatial alignment with known pathologies
+4. Test threshold selection methodology on held-out data
+5. Compare patch-level vs slice-level performance
+
+## Related Skills
+
+- `quantum-medical-imaging` - Quantum medical image analysis
+- `quantum-autoencoder-anomaly-detection` - QAE patterns
+- `medical-ai-diagnosis` - AI-based medical diagnosis systems
+
+## References
+
+- arXiv:2606.27411 - "Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder" (Ganguly et al., 2026)
+- Angle encoding for quantum state preparation
+- Variational quantum circuits for encoding/decoding
+
+## Updated 2026-07-01
+Related papers from today's search:
+- arXiv:2606.29421 — First-in-human quantum entanglement imaging (complementary quantum medical imaging approach)
+- arXiv:2606.19238 — Introduction to Quantum Ophthalmology (quantum sensing in medical imaging)
+- arXiv:2604.16953 — Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
+- arXiv:2605.22113 — QT-PUF: Quantum Tunneling Leakage Based PUF for Implantable IoMT Devices
