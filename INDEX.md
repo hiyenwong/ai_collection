@@ -1,5 +1,41 @@
 # AI Collection Index
 
+## 2026-07-02 - Medicine + Quantum Mechanics (Hourly Cron Job)
+
+### First-in-human quantum entanglement imaging
+- [[quantum-entanglement-imaging]] - First in vivo quantum entanglement degree imaging using J-PET scanner for clinical diagnostics (arXiv: 2606.29421)
+  - Plastic scintillators measure Compton effect for position, time, AND polarization simultaneously
+  - Entanglement degree between separable and maximally entangled states varies by tissue
+  - Opens new quantum-correlation-based diagnostic contrast mechanism
+  - **Activation**: quantum medical imaging, PET, entanglement imaging, J-PET, clinical quantum
+
+### PET with quantum-entangled Compton events
+- [[quantum-entanglement-imaging]] - Polarization-correlated PET events achieve 10% sensitivity increase (arXiv: 2606.25804)
+  - 20% higher signal-to-random background ratio from polarization-correlated events
+  - 2.5mm spatial resolution at clinically relevant 378 MBq activity
+  - First NEMA NU-4 phantom imaging with quantum-entangled events
+  - **Activation**: PET, Compton scattering, polarization correlation, medical imaging
+
+### Compression-Driven Anomaly Detection in Brain MRI Using Quantum Autoencoder
+- [[quantum-autoencoder-mri]] - QAE achieves 0.95 slice-level ROC-AUC for brain MRI anomaly detection (arXiv: 2606.27411)
+  - Angle encoding + variational encoder-decoder with trash qubits
+  - Structured encoder compression (not decoder) drives detection
+  - Produces spatially localized anomaly heatmaps aligned with tumors
+  - **Activation**: quantum autoencoder, MRI anomaly detection, interpretable QML, compression
+
+### Parameter-Efficient CV Photonic QNN for Edge Quantum AI
+- [[cv-qnn-edge-ai]] - Simplified CV-QNN with 18 params achieves 100% accuracy for oral cancer detection (arXiv: 2606.28252)
+  - Phi-D-U1 architecture cuts trainable parameters 40-45%
+  - Barren plateau mitigation via PCA dimensionality reduction + encoding restriction
+  - Room-temperature photonic quantum computing for edge deployment
+  - **Activation**: CV-QNN, photonic, edge AI, oral cancer, parameter-efficient
+
+### Introduction to Quantum Ophthalmology
+- [[quantum-ophthalmology-review]] - Review of quantum technologies in ophthalmology (arXiv: 2606.19238)
+  - Photon-limited retinal imaging, ghost imaging, quantum dot probes, quantum-limited vision
+  - Challenges: detection efficiency, biocompatibility, clinical translation
+  - **Activation**: quantum sensing, ophthalmology, ghost imaging, quantum dots
+
 ## 2026-07-01 - Neuroscience Research (Cron Job - Late Evening)
 
 ### Criticality-Constrained Iterative Pruning for Energy-Efficient Spiking Neural Networks

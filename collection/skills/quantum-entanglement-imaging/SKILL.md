@@ -1,114 +1,69 @@
 ---
 name: quantum-entanglement-imaging
-description: "Quantum entanglement imaging methodology for medical diagnostics — using polarization-entangled annihilation photons in PET and other clinical imaging systems."
-category: quantum-medicine
+description: "First-in-human quantum entanglement imaging methodology using J-PET scanner. Exploits polarization entanglement of annihilation photons for clinical diagnostics. Simultaneous radiopharmaceutical uptake + entanglement degree imaging. Use when: quantum medical imaging, PET enhancement, entanglement-based diagnostics, clinical quantum applications."
 ---
 
-# Quantum Entanglement Imaging
+## Core Methodology
 
-## Description
-Methodology for exploiting quantum entanglement of annihilation photons in medical imaging. Covers the first-in-human demonstration of quantum entanglement imaging using the Jagiellonian PET (J-PET) scanner, where polarization-entangled photon pairs from positron-electron annihilation provide additional diagnostic information beyond standard PET uptake images.
+### Quantum Entanglement in Medical Imaging
 
-## Activation Keywords
-- quantum entanglement imaging
-- entanglement PET
-- J-PET scanner
-- polarization entanglement medical
-- 量子纠缠成像
-- 纠缠正电子发射断层扫描
-- quantum medical imaging entanglement
-- annihilation photon entanglement
+**Breakthrough**: First in vivo imaging of the degree of quantum entanglement of photons originating from positron-electron annihilation within a human subject.
 
-## Core Concepts
+**Physical Principle**: Annihilation photons are quantum-entangled in polarization. This phenomenon has not been exploited in medical diagnostics until now.
 
-### Physical Principle
-- Positron-electron annihilation produces two gamma photons that are **quantum-entangled in polarization**
-- The Compton scattering cross-section depends on the photon polarization plane
-- By measuring the relative angle between polarization planes of the two annihilation photons, one can extract the **degree of quantum entanglement** as an additional imaging dimension
-- This creates a new diagnostic modality: simultaneous standard PET uptake image + quantum entanglement degree image
+### J-PET Scanner Technology
 
-### J-PET Scanner Architecture
-- Plastic scintillator-based PET (instead of traditional crystal scintillators)
-- In plastics, annihilation photons interact primarily via the **Compton effect** (not photoelectric absorption)
-- Compton interaction provides simultaneous information on:
-  - Photon interaction position and time (standard PET)
-  - Photon polarization plane (quantum entanglement dimension)
+**Plastic Scintillator Advantage**: Unlike crystal-based PET, the J-PET scanner uses plastic scintillators where annihilation photons interact primarily via the **Compton effect**. This provides simultaneous measurement of:
 
-### Entanglement Degree Imaging
-- Entanglement degree extracted from relative angle between polarization planes
-- Values in biological tissue (liver, spleen) are:
-  - Smaller than maximally entangled two-photon states
-  - Larger than separable (classical) photons
-- This intermediate entanglement degree carries tissue-specific information
+1. **Photon interaction position** (event localization)
+2. **Photon interaction time** (TOF capability)
+3. **Photon polarization plane** (entanglement degree)
 
-## Methodology
+### Imaging Protocol
 
-### Step 1: Radiopharmaceutical Administration
-- Standard PET radiopharmaceutical (e.g., 68Ga-DOTA-TATE)
-- No modification to standard clinical protocol needed
+```
+1. Inject radiopharmaceutical (68Ga-DOTA-TATE)
+2. Scan with J-PET plastic scintillator detector
+3. For each coincidence event:
+   a. Measure interaction positions (standard PET)
+   b. Measure interaction times (TOF-PET)
+   c. Measure polarization planes (quantum entanglement)
+4. Compute entanglement degree from relative angle between polarization planes
+5. Reconstruct two images simultaneously:
+   - Standard uptake image
+   - Entanglement degree image
+```
 
-### Step 2: Coincidence Detection with Polarization Sensitivity
-- Detect both annihilation photons in coincidence
-- For each photon, measure the Compton scattering angle to infer polarization plane
-- Requires plastic scintillator detection (Compton-dominant interaction)
+### Key Findings
 
-### Step 3: Entanglement Degree Reconstruction
-- Compute relative angle between polarization planes of coincident photon pairs
-- Build entanglement degree image alongside standard uptake image
-- Compare entanglement degree values across tissue types
+**Entanglement Degree Values**:
+- Liver and spleen: between separable photons and maximally entangled two-photon states
+- Values are smaller than maximally entangled predictions but larger than separable
+- Suggests tissue-dependent quantum decoherence patterns
 
-### Step 4: Clinical Interpretation
-- Entanglement degree variations may reveal:
-  - Tissue composition differences
-  - Molecular environment effects on annihilation
-  - Potential diagnostic biomarkers beyond standard SUV metrics
+### Clinical Implications
 
-## Usage Patterns
+1. **New Diagnostic Dimension**: Entanglement degree provides a new imaging contrast mechanism
+2. **Tissue Characterization**: Different tissues may exhibit different entanglement signatures
+3. **Quantum Biomarkers**: Potential for quantum-correlation-based biomarkers
 
-### Pattern 1: Quantum-Enhanced PET Diagnostics
-Use when designing next-generation PET systems that exploit quantum entanglement for improved tissue characterization.
+### PET with Entangled Compton Events (Complementary)
 
-### Pattern 2: Entanglement as Diagnostic Biomarker
-Use when investigating whether quantum entanglement degree can serve as a novel biomarker for tissue characterization, complementing standard PET metrics.
+Makek et al. (2026) demonstrated:
+- 2.5mm spatial resolution (single-pixel events)
+- 3.6-4.9mm resolution (polarization-correlated Compton events)
+- **20% higher** signal-to-random background ratio
+- Up to **10% sensitivity increase** from polarization-correlated events
+- First NEMA NU-4 phantom imaging at 378 MBq clinically relevant activity
 
-### Pattern 3: Plastic Scintillator PET Design
-Use when designing PET systems specifically optimized for quantum entanglement extraction — requires Compton-dominant detection medium.
+### When to Use
 
-## Error Handling & Pitfalls
+- Research on quantum-enhanced PET imaging
+- Designing quantum-aware medical imaging systems
+- Studying tissue-dependent quantum decoherence in vivo
+- Developing new diagnostic contrast mechanisms based on quantum correlations
 
-### Entanglement Decoherence in Tissue
-- Biological tissue causes decoherence of photon entanglement
-- Measured entanglement degree is reduced from maximal theoretical value
-- This reduction is itself tissue-dependent and potentially diagnostic
+### References
 
-### Detector Requirements
-- Standard crystal PET (BGO, LSO) cannot extract polarization information (photoelectric absorption dominates)
-- Must use plastic scintillators or other Compton-dominant media
-- Requires high timing resolution for coincidence detection
-
-### Statistical Considerations
-- Entanglement degree measurement requires sufficient coincidence counts
-- Low-count regions may have unreliable entanglement estimates
-- Requires longer acquisition times or higher activity doses for entanglement imaging
-
-## Related Skills
-- `quantum-autoencoder-anomaly-detection` (quantum methods for brain MRI)
-- `cv-photonic-qnn-edge-ai` (photonic quantum computing for medical imaging)
-- `quantum-medical-imaging` (umbrella for quantum medical imaging)
-
-## Resources
-- arXiv:2606.29421v1 — First-in-human quantum entanglement imaging (Moskal et al., 2026)
-- arXiv:2606.25804 — Positron Emission Tomography with quantum-entangled Compton events (Makek et al., 2026)
-- J-PET scanner: Jagiellonian Positron Emission Tomography
-- DOTA-TATE radiopharmaceutical for neuroendocrine tumor imaging
-
-## Updated 2026-07-01 (Cron Job)
-New related papers:
-1. arXiv:2606.25804 — "Positron Emission Tomography with quantum-entangled Compton events: first imaging results at clinically relevant activities"
-   - Built PET demonstrator capable of measuring polarization correlations
-   - First imaging results at clinically relevant activities
-   - Confirms entanglement exploitation potential in clinical PET settings
-2. arXiv:2606.29421 — First-in-human demonstration confirmed in vivo with J-PET scanner
-   - DOTA-TATE radiopharmaceutical with 68Ga
-   - Dual imaging: uptake + entanglement degree
-   - Liver/spleen entanglement values between separable and maximally entangled states
+- Moskal et al. (2026): "First-in-human quantum entanglement imaging" (arXiv:2606.29421)
+- Makek et al. (2026): "PET with quantum-entangled Compton events" (arXiv:2606.25804)
