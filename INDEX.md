@@ -35,6 +35,13 @@
   - 4-qumode simplified CV-QNN with 18 parameters achieves 100% calibrated test accuracy, exceeds 55-parameter classical baseline
   - **Activation**: cv-qnn, continuous-variable, photonic quantum, edge quantum ai, quantum medical classification, barren plateau, qumode, oral cancer
 
+### Hybrid Quantum Neural Networks for Enhanced Breast Cancer Thermographic Classification
+- [[hybrid-quantum-classical-medical-thermographic]] - HQNN architecture integrating variational quantum circuits with classical CNN for breast cancer thermographic image classification (arXiv: 2604.16953)
+  - Classical CNN extracts local spatial thermal patterns; quantum backend captures global correlations and non-linear feature interactions
+  - Hybrid end-to-end training overcomes limitations of pure classical or pure quantum approaches for subtle multi-scale thermal signatures
+  - Joint optimization of classical feature extraction and quantum feature space for enhanced tumor discrimination
+  - **Activation**: quantum thermographic classification, quantum breast cancer, HQNN thermal imaging, quantum-classical medical classification, 量子乳腺癌分类
+
 ### Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder
 - [[quantum-autoencoder-anomaly-detection]] - Quantum autoencoder (QAE) for compression-driven anomaly detection in brain MRI with slice-level ROC-AUC ~0.95 (arXiv: 2606.27411)
   - Angle encoding + variational encoder-decoder with trash qubits for incompressibility-based anomaly detection
