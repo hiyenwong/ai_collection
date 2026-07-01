@@ -3716,3 +3716,11 @@
   - Time-bin encoded architecture with adjustable squeezing + programmable interferometer enables universal programmability
   - Multifunctional platform: molecular docking, RNA folding, drug-target interaction all map to graph problems solvable by GBS
   - **Activation**: gaussian boson sampling drug discovery, GBS molecular docking, universal programmable boson sampler, quantum clique finding drug, 高斯玻色采样药物发现
+
+## 2026-07-01 - Medicine (Cron Job)
+
+### Hard-core Bosons in Action: Applications to Quantum Circuits
+- [[hard-core-boson-quantum-circuit-synthesis]] - Hard-core boson algebra for efficient multi-qubit circuit simulation without sign corrections, combined with genetic algorithms for circuit synthesis (arXiv: 2606.28004)
+  - 核心要点 1: HCB formalism maps qubits to bosonic modes with occupation restricted to {0,1}, eliminating Jordan-Wigner sign corrections
+  - 核心要点 2: Genetic algorithm circuit synthesis using HCB representation achieves substantially faster execution than Qiskit
+  - **Activation**: hard-core boson, bosonic circuit simulation, quantum circuit GA, HCB algebra, 硬玻色子量子电路
