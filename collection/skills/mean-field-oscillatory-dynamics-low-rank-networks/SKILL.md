@@ -1,207 +1,158 @@
 ---
 name: mean-field-oscillatory-dynamics-low-rank-networks
-description: "Mean-field theory for oscillatory dynamics in low-rank recurrent networks with adaptation. Identifies four dynamical regimes (static coherent, noise-sustained oscillations, stochastic switching, global limit cycle) and two instability mechanisms. Bridges to wakefulness/sleep/anesthesia dynamics."
-activation: "low-rank RNN dynamics, mean-field oscillatory networks, adaptation-driven chaos, sleep-wake-anesthesia regimes, Hopf bifurcation coherent mode, coherent population oscillations, noise-sustained rhythms, Up-Down alternations, waxing-waning oscillations"
-tags: [neuroscience, computational-neuroscience, mean-field-theory, oscillatory-dynamics, low-rank-networks, adaptation, chaos, sleep, anesthesia, wakefulness, dynamical-systems]
-version: 1.0.0
-date: 2026-07-01
-arxiv: "2606.30366"
-authors: "Bowen W. Zheng, Earl K. Miller, Ila R. Fiete"
-institution: "MIT (Earl K. Miller Lab), Stanford (Ila Fiete Lab)"
-status: published
-license: cc-by-sa-4.0
+description: "Dynamical mean-field theory for low-rank recurrent networks with activity-dependent adaptation. Reveals four oscillatory regimes (static, noise-sustained oscillations, stochastic switching, limit cycle) matching wake/sleep/anesthesia dynamics. Activation: mean-field oscillations, low-rank RNN, adaptation dynamics, neural oscillations, chaos oscillation transition, Hopf bifurcation RNN."
+tags: [computational-neuroscience, mean-field-theory, oscillatory-dynamics, low-rank-networks, neural-adaptation, chaos, hopf-bifurcation]
+paper:
+  arxiv_id: "2606.30366"
+  title: "Mean-field theory of rich oscillatory dynamics in low-rank recurrent networks with activity-dependent adaptation"
+  authors: "Bowen W. Zheng, Earl K. Miller, Ila R. Fiete"
+  submitted: "2026-06-29"
+  categories: "q-bio.NC"
 ---
 
 # Mean-Field Theory of Rich Oscillatory Dynamics in Low-Rank Recurrent Networks with Activity-Dependent Adaptation
 
-**Paper**: arXiv:2606.30366v1 (2026-06-29)  
-**Authors**: Bowen W. Zheng, Earl K. Miller (MIT), Ila R. Fiete (Stanford)  
-**Categories**: q-bio.NC (Neurons and Cognition)
+## Paper Summary
 
-## Summary
+This paper develops a dynamical mean-field theory (DMFT) for random recurrent networks with **low-rank structure** and **firing-rate-driven adaptation**. When random connectivity generates chaos, increasing adaptation strength drives the network through **four distinct dynamical regimes**, providing a unified framework for understanding brain oscillations during wakefulness, sleep, and anesthesia.
 
-A dynamical mean-field theory for random recurrent networks with **low-rank connectivity structure** and **firing-rate-driven adaptation**. Reveals how increasing adaptation strength drives the network through **four distinct dynamical regimes**, identifying two instability mechanisms and providing a reduced 3D model that captures the full bifurcation structure.
+## Key Findings
 
-## Core Contributions
+### Four Dynamical Regimes
 
-### 1. Four Dynamical Regimes (Adaptation Strength Scan)
-Starting from strong random connectivity (chaotic regime), increasing adaptation drives transitions through:
+Increasing adaptation strength drives transitions through:
 
-| Regime | Description | Biological Analog |
+1. **Static Coherent State** — Fixed-point dynamics, homogeneous activity
+2. **Noise-Sustained Oscillations** — Regular → irregular progression, sustained by network-generated stochasticity
+3. **Stochastic Switching** — Symmetric potential wells with noise-driven transitions (Up-Down alternations)
+4. **Global Limit Cycle** — Coherent population-wide oscillations
+
+### Two Instability Mechanisms
+
+1. **Chaos onset** from random connectivity (classical Sompolinsky result extended)
+2. **Hopf bifurcation** of the coherent mode — adaptation creates frequency-dependent instability through the single-neuron transfer function
+
+### Core Theoretical Contributions
+
+- **Reduced 3D model** captures full bifurcation structure of the network
+- Above chaos threshold: coherent population oscillations coexist with heterogeneous single-neuron firing rates and network-generated stochasticity
+- Adaptation shapes both instabilities through the **frequency-dependent single-neuron transfer function**
+- Low-rank connectivity + adaptation interaction produces: waxing-and-waning rhythms, persistent state switching, slow Up-Down alternations
+
+## Methodology
+
+### Dynamical Mean-Field Theory (DMFT)
+
+1. **Decompose** connectivity into random (full-rank) + structured (low-rank) components
+2. **Derive** self-consistent equations for mean activity, variance, and temporal correlations
+3. **Linear stability analysis** of the coherent mode → identifies Hopf bifurcation
+4. **Single-neuron transfer function** → frequency-dependent gain determines oscillation onset
+5. **Reduce** to 3D ODE system capturing bifurcation structure
+
+### Key Mathematical Objects
+
+- **Random connectivity**: $J_{ij} \sim \mathcal{N}(0, g^2/N)$ with strength $g$
+- **Low-rank structure**: $\mathbf{J}_{low} = \sum_k \mathbf{m}_k \mathbf{n}_k^T / N$ (structured connectivity patterns)
+- **Adaptation**: $a_i(t)$ with timescale $\tau_a$, driven by filtered firing rate
+- **Transfer function**: $H(\omega)$ — frequency-dependent gain incorporating adaptation
+
+### Bifurcation Analysis
+
+- Chaos threshold: $g_c = 1$ (modified by adaptation)
+- Hopf condition: $\text{Re}[\lambda(\omega)] = 0$ at critical adaptation strength
+- Four regimes emerge from interplay of $g$ (connectivity strength) and $\gamma$ (adaptation strength)
+
+## Biological Relevance
+
+| Regime | Brain State | Observed Dynamics |
 |--------|-------------|-------------------|
-| **I. Static coherent state** | Stable fixed point, all neurons converge | Quiet wakefulness? |
-| **II. Noise-sustained oscillations** | Regular → irregular oscillations maintained by noise | Sleep spindles, alpha rhythms |
-| **III. Stochastic switching** | Network switches between symmetric attractor wells | Up-Down states (NREM sleep) |
-| **IV. Global limit cycle** | Robust periodic oscillation across entire network | Anesthesia burst-suppression? |
+| Static coherent | Deep anesthesia | Suppressed oscillations |
+| Noise-sustained oscillations | Light anesthesia / drowsiness | Waxing-waning alpha/spindles |
+| Stochastic switching | NREM sleep | Up-Down state alternations |
+| Global limit cycle | Wakefulness | Sustained gamma/beta oscillations |
 
-### 2. Two Instability Mechanisms
-1. **Chaos onset from random connectivity** — standard RNN chaos transition (Sompolinsky-style)
-2. **Hopf bifurcation of the coherent mode** — new mechanism specific to low-rank + adaptation interaction
+## Connection to Existing Work
 
-The interaction occurs through the **frequency-dependent single-neuron transfer function**: adaptation filters the network response, creating frequency-selective instability.
-
-### 3. Reduced 3D Model
-The full high-dimensional network dynamics collapse onto a **3-dimensional reduced model** capturing:
-- Mean population activity (1 variable)
-- Coherent oscillation amplitude (1 variable)  
-- Adaptation variable (1 variable)
-
-This is a major theoretical simplification enabling analytical bifurcation analysis.
-
-### 4. Coexistence of Heterogeneous Single-Neuron Dynamics
-Above chaos threshold: **coherent population-level oscillations coexist with heterogeneous firing rates and network-generated stochasticity at single-neuron level**.
-
-This resolves a key paradox: macroscopic rhythms (LFP/EEG) can be coherent while individual neurons fire irregularly.
-
-### 5. Biological Phenomena Captured
-The model naturally produces:
-- **Waxing-and-waning rhythmic episodes** → sleep spindles, alpha bursts
-- **Persistent state switching** → Up-Down state transitions (NREM)
-- **Slow alternations** → anesthesia burst-suppression patterns
-- **Rich oscillatory repertoire** from simple ingredients (random + low-rank + adaptation)
-
-## Key Methodology
-
-### Mean-Field Derivation Steps
-```
-1. Start with: dx_i/dt = -x_i + Σ_j J_ij φ(x_j) - a_i + η_i
-                da_i/dt = -a_i/τ_a + β φ(x_i)
-   
-   where J = J_random + J_lowrank
-   
-2. Apply dynamical mean-field theory (DMFT):
-   - Replace network input with Gaussian noise + mean
-   - Self-consistency: noise variance = order parameter
-   
-3. Exploit low-rank structure:
-   - Low-rank component adds coherent mode
-   - Reduces to finite-dimensional equations
-   
-4. Apply adaptation elimination (adiabatic if τ_a slow):
-   - Further reduction to 3D system
-   
-5. Bifurcation analysis in (adaptation_strength, chaos_threshold) plane
-```
-
-### Frequency-Dependent Transfer Function
-The key analytical object: **χ(ω)** = single-neuron susceptibility at frequency ω.
-
-- Adaptation modifies χ(ω) → creates frequency-dependent gain suppression
-- Hopf occurs when coherent mode frequency matches peak of modified χ(ω)
-- This selects oscillation frequency analytically
-
-## Mathematical Framework
-
-### Full Network Equations
-```
-τ dx_i/dt = -x_i + Σ_j (g/√N ξ_ij + Σ_k u_ik v_jk) φ(x_j) - a_i + √D η_i(t)
-τ_a da_i/dt = -a_i + β φ(x_i)
-```
-
-Where:
-- `g/√N ξ_ij` = random connectivity (chaos source)
-- `u_ik v_jk` = rank-K low-rank connectivity  
-- `a_i` = adaptation variable
-- `φ` = activation function (typically tanh)
-- `D` = noise intensity
-
-### Reduced 3D System
-```
-dM/dt = F(M, A, R)      # mean activity
-dR/dt = G(M, A, R)      # coherent mode amplitude  
-dA/dt = H(M, A, R)      # adaptation mean
-```
-
-With explicit F, G, H derivable from DMFT self-consistency.
-
-## Connections to Existing Skills
-
-| Related Skill | Connection |
-|--------------|------------|
-| `mean-field-low-rank-adaptation-oscillations` | **Direct predecessor** — earlier version of this framework |
-| `low-rank-rnn-learning-dynamics` | Complementary: learning in low-rank RNNs |
-| `chaos-synchrony-ei-networks` | Chaos onset mechanism in E/I networks |
-| `predictable-mean-field-chaos-rnn` | Krylov mean-field chaos predictability |
-| `cortico-cerebellar-modular-rnn` | Low-rank structure in modular RNNs |
-| `memory-uncertainty-relation-recurrent-networks` | Memory-capacity trade-offs in recurrent dynamics |
-
-## Biological Interpretations
-
-### Sleep Stage Mapping
-```
-Wakefulness     → Regime I-II boundary (coherent + noise)
-NREM Stage 2    → Regime II (spindles = noise-sustained oscillations)
-NREM Stage 3    → Regime III (Up-Down switching)
-Anesthesia      → Regime IV (burst-suppression = limit cycle)
-```
-
-### Key Predictions
-1. **Oscillation frequency** set by adaptation time constant τ_a and gain β
-2. **Regime transitions** controlled by neuromodulators affecting adaptation strength
-3. **Individual neuron heterogeneity** is intrinsic feature, not noise artifact
-4. **Sleep stage transitions** correspond to bifurcation crossings
+- Extends **Sompolinsky et al. (1988)** chaos transition to include adaptation
+- Connects to **Mastrogiuseppe & Ostojic (2018)** low-rank RNN theory
+- Unifies with **mean-field oscillatory dynamics** literature (Zheng et al. prior work)
+- Provides theoretical basis for observed **Up-Down states** during sleep
 
 ## Practical Applications
 
-### For Computational Neuroscientists
-- Use reduced 3D model for rapid exploration of regime space
-- Map experimental LFP/EEG patterns onto regime diagram
-- Predict effects of pharmacological adaptation modulation
+1. **Model selection**: Use regime diagram to choose adaptation strength for desired dynamics
+2. **Brain state modeling**: Match network parameters to specific brain states
+3. **Biomarker interpretation**: Link observed oscillation patterns to underlying network parameters
+4. **Neuromodulation targets**: Identify critical transitions for therapeutic intervention
 
-### For Machine Learning Researchers
-- Low-rank + adaptation as inductive bias for time-series models
-- Regime transitions as switching mechanism for sequential processing
-- Noise-sustained oscillations as memory maintenance without persistent activity
+## Implementation Notes
 
-### For Experimentalists
-- Target adaptation channels (KCNQ, SK) to test regime predictions
-- Use optogenetics to perturb low-rank modes selectively
-- Measure single-neuron heterogeneity during population rhythms
+### Computing the Phase Diagram
+
+```python
+# Key parameters
+g = np.linspace(0.5, 3.0, 100)      # connectivity strength
+gamma = np.linspace(0, 5.0, 100)     # adaptation strength
+tau_a = 100  # adaptation timescale (ms)
+
+# For each (g, gamma):
+# 1. Solve self-consistent DMFT equations
+# 2. Compute transfer function H(omega)
+# 3. Check stability: Re[lambda_max] vs 0
+# 4. Classify regime based on dominant eigenvalue type
+```
+
+### Reduced 3D Model
+
+The full network dynamics reduce to:
+- $\dot{r}$ — mean firing rate
+- $\dot{q}$ — coherent mode amplitude  
+- $\dot{a}$ — adaptation variable
+
+This captures bifurcation structure with only 3 ODEs vs. N coupled equations.
+
+## Key Equations
+
+### Self-Consistent DMFT
+
+$$\Delta = g^2 \int C(\tau) d\tau + \sum_k (\mathbf{m}_k \cdot \mathbf{n}_k)^2$$
+
+where $C(\tau)$ is the temporal correlation function satisfying:
+
+$$C(\tau) = \langle \phi(x(t)) \phi(x(t+\tau)) \rangle$$
+
+### Hopf Condition
+
+$$1 = g^2 \int_0^\infty |H(\omega)|^2 d\omega$$
+
+at the critical frequency $\omega_c$ where $\text{Im}[\lambda(\omega_c)] = 0$.
 
 ## Verification Checklist
 
-- [x] Four regimes reproduce in DMFT numerical integration
-- [x] 3D reduction matches full network bifurcation diagram
-- [x] Coherent + heterogeneous coexistence confirmed in simulations
-- [x] Waxing-waning, Up-Down, burst-suppression patterns emerge
-- [x] Frequency predictions match χ(ω) analysis
+- [ ] Reproduce four-regime phase diagram (Fig. 1 of paper)
+- [ ] Verify 3D reduced model matches full network bifurcations
+- [ ] Check single-neuron transfer function predictions
+- [ ] Compare Up-Down statistics to sleep data
+- [ ] Test prediction: increasing adaptation in chaos regime → oscillation onset
 
-## Key Equations to Remember
+## Related Skills
 
-**Chaos threshold**: g_c = 1/φ'(⟨x⟩) (Sompolinsky et al. 1988, extended)
+- [[mean-field-oscillatory-dynamics-low-rank-adaptation]] - Prior mean-field work
+- [[chaos-synchrony-ei-networks]] - Extended SCS chaos theory for E/I networks
+- [[sequential-chaotic-oscillations-ei-networks]] - SCOs in E/I networks
+- [[transport-mean-field-snn-dynamics]] - Transport mean-field for SNNs
+- [[krylov-mean-field-chaos-rnn]] - Krylov mean-field chaos in RNNs
 
-**Hopf condition**: Re[χ(ω_H)] = threshold, with ω_H set by adaptation time constant
+## Pitfalls
 
-**Regime boundaries**: Functions of (g/g_c, β, τ_a, D) — 4D parameter space
-
-## Critical Assessment
-
-### Strengths
-- Unified framework spanning wake/sleep/anesthesia
-- Analytical tractability (3D reduction)
-- Bridges single-neuron and population scales
-- Minimal model (random + low-rank + adaptation)
-
-### Limitations  
-- Firing-rate model (no spikes)
-- Assumes Gaussian statistics (may break in strong coupling)
-- Low-rank assumption: real circuits may have higher-rank structure
-- Adaptation as single variable: real neurons have multiple timescales
-
-### Open Questions
-1. How does learning reshape the low-rank structure?
-2. Multi-rank interactions (rank-1 vs rank-2 vs rank-K)?
-3. Role of inhibition-specific adaptation?
-4. Extension to spiking networks with STDP?
+1. **Low-rank assumption**: Theory requires connectivity to be well-approximated by few rank-1 components. Highly distributed patterns may not be captured.
+2. **Timescale separation**: Adaptation assumed slower than network dynamics ($\tau_a \gg \tau_{net}$). Violations may break mean-field predictions.
+3. **Gaussian approximation**: DMFT assumes Gaussian effective noise. Strong low-rank components can create non-Gaussian fluctuations.
+4. **Finite-size effects**: Theory is exact in $N \to \infty$ limit. Finite networks show additional fluctuations not captured.
 
 ## References
 
-- Sompolinsky, Crisanti, Sommers (1988) — chaos in random RNNs
-- Rajan, Abbott (2006) — eigenvalue spectra of RNNs  
-- Mastrogiuseppe, Ostojic (2018) — low-rank connectivity in RNNs
-- 2024-2025 work on mean-field theory for adaptive networks
-- Zheng, Miller, Fiete (2026) — this paper
-
-## Activation Keywords
-
-`low-rank oscillatory dynamics`, `mean-field adaptation`, `coherent mode Hopf`, `noise-sustained oscillations`, `Up-Down states model`, `waxing-waning rhythms`, `sleep-regime transition`, `anesthesia burst-suppression model`, `coherent heterogeneous coexistence`, `3D reduction RNN`
+- arXiv:2606.30366 (2026) - Zheng, Miller, Fiete
+- Sompolinsky et al. (1988) - Chaos in random neural networks
+- Mastrogiuseppe & Ostojic (2018) - Low-rank RNN theory
+- Rajan et al. (2010) - Spectral theory of random recurrent networks

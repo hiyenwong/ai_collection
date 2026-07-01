@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-07-01 - Neuroscience Research (Cron Job)
+
+### Mean-Field Theory of Rich Oscillatory Dynamics in Low-Rank Recurrent Networks
+- [[mean-field-oscillatory-dynamics-low-rank-networks]] - Dynamical mean-field theory revealing four oscillatory regimes (static, noise-sustained, stochastic switching, limit cycle) matching wake/sleep/anesthesia dynamics (arXiv: 2606.30366)
+  - Identifies two instability mechanisms: chaos onset from random connectivity and Hopf bifurcation of coherent mode
+  - Reduced 3D model captures full bifurcation structure of N-dimensional network
+  - Adaptation shapes dynamics through frequency-dependent single-neuron transfer function
+  - Unifies theoretical framework for observed brain oscillations across behavioral states
+  - **Activation**: mean-field theory, oscillatory dynamics, low-rank networks, neural adaptation, chaos, Hopf bifurcation, wake-sleep-anesthesia, Up-Down states
+
 ## 2026-07-01 - Systems Engineering Research (Cron Job)
 
 ### IDDMBSE: Integrating Data-Driven and Model-Based Systems Engineering for Trusted Autonomous Cyber-Physical Systems
