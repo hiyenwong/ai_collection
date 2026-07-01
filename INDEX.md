@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-07-01 - Neuroscience Research (Cron Job)
+
+### Diffusing Blame: Task-Dependent Credit Assignment in Biologically Plausible Dual-Stream Networks
+- [[diffusing-blame-dale-principle-credit-assignment]] - Error Diffusion (ED) methodology for biologically plausible credit assignment under Dale's principle — dual-stream E/I architecture achieving 96.7% MNIST without weight transport, extends to RL with PPO (arXiv: 2606.31700)
+  - Modulo Error Routing extends ED from binary to multi-class classification
+  - Task-dependent bottleneck discovery: three innovations (layer-specific sigmoid widths, batch-centered class errors, asymmetric initialization) reverse importance between MNIST and CIFAR-10
+  - ED-PPO integration with Proximal Policy Optimization for continuous control
+  - **Activation**: error-diffusion, dale-principle, credit-assignment, dual-stream, excitatory-inhibitory, biologically-plausible, no-weight-transport, modulo-error-routing
+
+### Supervised Hebbian Learning in Deep Counterstream Associative Networks
+- [[supervised-hebbian-deep-counterstream-associative]] - Bidirectional Hebbian activity waves traveling in opposite directions enable deep learning without symmetric connectivity or separate error channels (arXiv: 2606.29528)
+  - Two activity waves (forward from input, backward from output) meet in hidden layers and link via local Hebbian rules
+  - Requires only error recognition (not precise error signals) — minimal biological constraint
+  - No symmetric connectivity, no separate error channel, no subtraction or function inversion needed
+  - **Activation**: counterstream, associative-network, supervised-hebbian, bidirectional-propagation, activity-waves, error-recognition, deep-associative, biological-learning
+
 ## 2026-07-02 - Medicine + Quantum Mechanics (Hourly Cron Job)
 
 ### First-in-human quantum entanglement imaging
