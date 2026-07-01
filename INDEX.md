@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-07-01 - Systems Engineering Research (Cron Job)
+
+### IDDMBSE: Integrating Data-Driven and Model-Based Systems Engineering for Trusted Autonomous Cyber-Physical Systems
+- [[iddmbse-integrated-data-model-based-se]] - Integrated Data-Driven and Model-Based Systems Engineering methodology extending MBSE V-process with data-driven loops for autonomous CPS (arXiv: 2606.06727)
+  - Three-tool open-source chain: PERFECT (SysML→ROS performance evaluation), TRADES-X (hybrid model+data design exploration), VERITAS (3-layer verification: formal + data-driven + runtime)
+  - Extends MBSE V-process with data-driven loop at every step, anchored in SysML and autonomy stack
+  - Conformal prediction for robust perception bounds without distributional assumptions
+  - SysML v2 / KerML forward path for language-native composability and tighter ML/AI integration
+  - **Activation**: MBSE, cyber-physical systems, data-driven systems engineering, SysML, autonomous CPS, V-process, conformal prediction, behavior trees, design-space exploration, SysML v2
+
+## 2026-07-01 - Neuroscience Research (Cron Job)
+
+### Neuromorphic Energy-Aware Learning for Adaptive Deep Brain Stimulation
+- [[neuromorphic-energy-aware-learning-dbs]] - Co-optimizes stimulation energy and inference efficiency via deep spiking Q-network on neuromorphic hardware (arXiv: 2606.28600)
+  - Introduces energy-aware learning — penalizes actuator (stimulation) energy directly in RL reward
+  - Deep spiking Q-network suppresses pathological alpha-beta oscillations by 45.2% with 80% charge reduction
+  - Deployed on SynSense XyloAudio 3 at 0.52 mW, 28.1x lower energy than ANN on edge hardware
+  - **Activation**: energy-aware learning, deep brain stimulation, neuromorphic computing, spiking Q-network, DBS, Parkinson's, XyloAudio, knowledge distillation
+
 ## 2026-07-01 - Medicine + Quantum (Cron Job - Hourly)
 
 ### First-in-human quantum entanglement imaging
