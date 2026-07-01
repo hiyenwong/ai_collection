@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-07-01 - Neuroscience Research (Cron Job - Late Evening)
+
+### Criticality-Constrained Iterative Pruning for Energy-Efficient Spiking Neural Networks
+- [[criticality-constrained-snn-pruning]] - CQP pruning methodology combining weight magnitude and surrogate-gradient criticality; identifies continuous-relaxation trap, zombie-weight mode, criticality cliff (arXiv: 2606.30676)
+  - Criticality-Constrained Quadratic Pruning (CQP): analytically exact importance metric
+  - Continuous-relaxation trap: QP solver overshoots sparsity by 12pp, causing 44pp accuracy collapse
+  - Zombie-weight failure mode: Adam first-moment resurrects pruned synapses
+  - Criticality cliff: accuracy drops from 87% to 14.4% as threshold τ crosses 0.9
+  - 95.6% accuracy at 90% sparsity on MNIST; 73% energy reduction at 70% sparsity
+  - **Activation**: SNN pruning, CQP, surrogate-gradient criticality, continuous-relaxation trap, zombie-weight, criticality cliff, neuromorphic deployment, energy-efficient SNN
+
+### Local Pheromone Network: Sparse Local Learning with Multi-Scale Synaptic Trails
+- [[local-pheromone-network]] - Biologically-inspired local learning without backpropagation; uses pheromone traces, consolidation, and replay for partitioned memory (arXiv: 2606.30669)
+  - No backpropagation: pheromone-weighted Hebbian updates on local neighborhoods
+  - Short-term and long-term pheromone traces for multi-scale plasticity
+  - Consolidation reduces catastrophic forgetting
+  - Local replay resolves memory conflicts
+  - **Activation**: local pheromone network, pheromone-weighted learning, synaptic traces, consolidation replay, structural plasticity, partitioned memory
+
 
 ## 2026-07-01 - Medicine + Quantum Research (Cron Job - Wednesday)
 
