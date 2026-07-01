@@ -1,5 +1,55 @@
 # AI Collection Index
 
+## 2026-07-01 - Anthropic Research (Cron Job)
+
+### Anthropic Economic Index report: Cadences
+- [[anthropic-economic-index-cadences]] - Methodology for analyzing AI usage patterns through privacy-preserving telemetry — temporal cadences, output artifact classification, and perception surveys linked to behavioral data (Jun 26, 2026)
+  - High-frequency continuous sampling (hourly granularity) vs. previous 7-day samples
+  - Output artifact classifier: 93% of conversations produce artifacts; explanations (17%), documents (15%), guidance (11%)
+  - Linked survey-usage analysis: automation-expectation link; optimism gradient in heavy automated users
+  - Temporal cadences: personal use 35%→50% on weekends; recipes peak 6PM; sleep advice peaks 5AM; tax surges before filing deadline
+  - **Activation**: anthropic economic index, ai usage patterns, cadences, privacy-preserving telemetry, output classification, temporal analysis
+
+### Project Fetch: Phase Two
+- [[project-fetch-phase-two]] - Claude Opus 4.7 autonomously completing robotic quadruped tasks ~20x faster than fastest human team (Jun 18, 2026)
+  - Three-stage capability progression: models helpful to humans → humans helpful to models → models autonomous
+  - Opus 4.7 with adaptive thinking completed all human-completed tasks at 18-37x speedup
+  - Minimal human role: plug in laptop, enter prompt, approve commands
+  - First-try code success rate much higher than either original human team
+  - **Activation**: project fetch, robotic quadruped, claude opus 4.7, autonomous robotics, physical-world AI, capability progression
+
+### Agentic Coding and Persistent Returns to Expertise
+- [[agentic-coding-expertise-returns]] - Analysis of ~400K Claude Code sessions showing domain expertise amplifies AI coding effectiveness (Jun 16, 2026)
+  - People decide WHAT to build; Claude decides HOW to build it — division of labor persists across occupations
+  - Domain experts succeed more often; gap between intermediate and expert is modest
+  - Debugging sessions fell by nearly half over 7 months; usage shifted toward end-to-end agentic work
+  - Value of typical task rose ~25% on average; every major occupation succeeds at nearly same rate as software engineers
+  - **Activation**: agentic coding, claude code, expertise returns, domain expertise, coding agents, labor market, knowledge work
+
+### Measuring LLMs' Impact on N-Day Exploits
+- [[measuring-llms-impact-n-day-exploits]] - Claude Mythos Preview built 8 Firefox exploits and 8 Windows kernel privilege escalation chains autonomously (Jun 8, 2026)
+  - Historically patch diffing took weeks; frontier models collapse this to minutes/hours
+  - 8/18 Firefox patches → working code-execution exploits; 8/21 Windows kernel patches → full SYSTEM escalation
+  - Public models (safeguards off) can also build exploits, though fewer
+  - Implication: patch gap is now far more dangerous; defenders must accelerate patching dramatically
+  - **Activation**: n-day exploit, patch diffing, claude mythos preview, firefox vulnerability, windows kernel, autonomous exploit, patch gap, cybersecurity
+
+### Paving the Way for Agents in Biology
+- [[paving-way-agents-biology]] - Framework for making biological data infrastructure agent-friendly; deterministic retrieval layers (gget virus) boost accuracy to ~100% (Jun 8, 2026)
+  - Biological databases designed for human navigation, not agent navigation — idiosyncratic formats, scattered sources
+  - Even strongest models fail without deterministic retrieval; adding gget virus layer achieves near-100% accuracy
+  - Key insight: bottleneck is not reasoning but absence of deterministic execution layers for biological data
+  - Software infrastructure was "made for agents" (APIs, version control); biology was made for humans
+  - **Activation**: biological agents, data infrastructure, deterministic retrieval, gget virus, NCBI, agent-friendly biology, scientific agents
+
+### Mapping AI-Enabled Cyber Threats: LLM ATT&CK Navigator
+- [[ai-enabled-cyber-threats-mitre-attack]] - Analysis of 832 banned accounts mapping 13,873 actions across all 14 MITRE ATT&CK tactics (Mar 2025–Mar 2026)
+  - AI Risk Enablement Score (ARiES): risk scoring framework 0-100 for AI-assisted threat actors
+  - Medium-or-higher risk actors jumped from 33% to 56% between first and second halves of year
+  - 832 accounts used AI for all 14 ATT&CK tactics and 482 unique sub-techniques
+  - Key shift: dividing line between low/high-risk actors is no longer technical skill but orchestration
+  - **Activation**: ai cyber threats, mitre attack, att&ck navigator, aries risk score, threat actor mapping, ai weaponization, cyber operations
+
 ## 2026-07-01 - Neuroscience Research (Cron Job)
 
 ### Mean-Field Theory of Rich Oscillatory Dynamics in Low-Rank Recurrent Networks
