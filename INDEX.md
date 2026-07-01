@@ -1,5 +1,42 @@
 # AI Collection Index
 
+## 2026-07-01 - Quantum Medicine (Cron Job)
+
+### First-in-human quantum entanglement imaging
+- [[quantum-entanglement-imaging]] - Methodology for quantum entanglement imaging in medical diagnostics using polarization-entangled annihilation photons in PET systems (arXiv: 2606.29421)
+  - First in vivo imaging of quantum entanglement degree in human subject using J-PET plastic scintillator scanner
+  - Dual imaging: radiopharmaceutical uptake + entanglement degree map simultaneously
+  - Entanglement degree values in liver/spleen between separable and maximally entangled states
+  - Opens new diagnostic dimension for clinical PET beyond standard SUV metrics
+  - **Activation**: quantum entanglement imaging, PET, J-PET, plastic scintillator, photon polarization, clinical diagnostics
+
+### Positron Emission Tomography with quantum-entangled Compton events
+- [[quantum-entanglement-imaging]] - Built PET demonstrator measuring polarization correlations at clinically relevant activities (arXiv: 2606.25804)
+  - First imaging results exploiting quantum entanglement of annihilation quanta in PET
+  - Confirms clinical feasibility of entanglement-enhanced PET diagnostics
+  - **Activation**: quantum PET, Compton events, entanglement, clinical PET
+
+### Parameter-Efficient CV Photonic QNN for Edge Quantum AI in Oral Cancer Detection
+- [[cv-qnn-edge-ai-medical]] - Simplified CV-QNN architecture cuts parameters 40-45% while achieving 100% calibrated test accuracy for oral cancer detection (arXiv: 2606.28252)
+  - 4-qumode simplified CV-QNN with only 18 parameters exceeds 55-parameter classical baseline
+  - Barren plateau mitigation via PCA + encoding restriction raises gradient variance by 58 orders of magnitude
+  - Room-temperature photonic quantum computing suitable for edge deployment
+  - **Activation**: CV-QNN, photonic quantum, edge AI, oral cancer, barren plateau, parameter efficient, qumode
+
+### Compression-Driven Anomaly Detection in Brain MRI Using Interpretable Quantum Autoencoder
+- [[quantum-autoencoder-anomaly-detection]] - Quantum autoencoder for brain MRI anomaly detection using trash qubits achieves ROC-AUC ~0.95 at slice level (arXiv: 2606.27411)
+  - Anomaly scores reflect compression resistance — higher scores = deviation from normal manifold
+  - Angle encoding maps image patches to quantum states, unsupervised training on normal data only
+  - Interpretable: anomaly detection directly linked to quantum compression efficiency
+  - **Activation**: quantum autoencoder, anomaly detection, brain MRI, trash qubits, angle encoding, DICOM
+
+### Introduction to Quantum Ophthalmology
+- [[quantum-ophthalmology]] - Quantum technologies across four domains in ophthalmology: photonic QNNs, quantum sensing, quantum-enhanced OCT, quantum ML for vision diseases (arXiv: 2606.19238)
+  - Quantum-enhanced OCT for sub-shot-noise sensitivity and lower patient light exposure
+  - CV-QNNs for retinal image classification at room temperature
+  - Quantum sensing for early-stage retinal degeneration detection
+  - **Activation**: quantum ophthalmology, OCT, retinal imaging, quantum sensing, squeezed light
+
 ## 2026-07-01 - Anthropic Research (Cron Job)
 
 ### Anthropic Economic Index report: Cadences
