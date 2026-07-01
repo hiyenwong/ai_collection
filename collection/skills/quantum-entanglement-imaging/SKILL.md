@@ -98,5 +98,12 @@ Use when designing PET systems specifically optimized for quantum entanglement e
 
 ## Resources
 - arXiv:2606.29421v1 — First-in-human quantum entanglement imaging (Moskal et al., 2026)
+- arXiv:2606.25804 — Positron Emission Tomography with quantum-entangled Compton events (Makek et al., 2026)
 - J-PET scanner: Jagiellonian Positron Emission Tomography
 - DOTA-TATE radiopharmaceutical for neuroendocrine tumor imaging
+
+## Updated 2026-07-01
+New related paper: arXiv:2606.25804 — "Positron Emission Tomography with quantum-entangled Compton events: first imaging results at clinically relevant activities"
+- Built PET demonstrator capable of measuring polarization correlations
+- First imaging results at clinically relevant activities
+- Confirms entanglement exploitation potential in clinical PET settings
