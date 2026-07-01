@@ -3772,3 +3772,35 @@
   - 核心要点 1: HCB formalism maps qubits to bosonic modes with occupation restricted to {0,1}, eliminating Jordan-Wigner sign corrections
   - 核心要点 2: Genetic algorithm circuit synthesis using HCB representation achieves substantially faster execution than Qiskit
   - **Activation**: hard-core boson, bosonic circuit simulation, quantum circuit GA, HCB algebra, 硬玻色子量子电路
+
+
+## 2026-07-01 - Medicine + Quantum Research (Cron Job - Wednesday)
+
+### Bridging the NISQ and Fault-Tolerant Regimes: Generative-ML-Assisted Quantum Selected CI for Molecular Simulations
+- [[qsci-rbm-quantum-chemistry]] - Generative-ML-Assisted Quantum Selected Configuration Interaction for protein-ligand binding energy calculations, bridging NISQ and fault-tolerant regimes (arXiv: 2606.30551)
+  - QSCI-RBM framework: quantum sampling + RBM generative model for efficient molecular CI
+  - LCNot-UCCSD ansatz: O(N⁴) MP2 initialization vs O(N⁶) traditional CCSD
+  - Compact circuits via ADAPT-style construction for near-term hardware
+  - Drug discovery relevance: accurate binding energy calculations
+  - **Activation**: quantum chemistry, molecular simulation, QSCI, binding energy, protein-ligand, drug discovery, LCNot-UCCSD, RBM
+
+### Quantum simulation of molecular excited-state manifolds and energies using the TEPID-ADAPT-VQE algorithm
+- [[tepid-adapt-vqe-molecular-excited-states]] - TEPID-ADAPT-VQE for simultaneous multi-excited-state preparation with reduced circuit depth on molecular systems (arXiv: 2606.29547)
+  - Variationally diagonalizes truncated low-temperature Gibbs state
+  - Simultaneous preparation of multiple excited states in single optimization
+  - ADAPT ansatz construction yields compact circuits for NISQ hardware
+  - Applied to H₂, LiH, linear H₄ across weakly and strongly correlated regimes
+  - **Activation**: TEPID-ADAPT-VQE, excited states, molecular simulation, variational quantum eigensolver, ADAPT ansatz, Gibbs state
+
+### Physics-Informed Neural Quantum Control for Extended Rovibrational Photoassociation
+- [[pinqc-molecular-control]] - Physics-Informed Neural Quantum Control for optimized laser pulses in molecular rovibrational dynamics (arXiv: 2606.29610)
+  - Neural-network-based laser-field generation with differentiable quantum propagation
+  - No external training data required — learns directly from quantum dynamics
+  - Efficient continuum-to-bound population transfer via coherent rovibrational dynamics
+  - **Activation**: neural quantum control, PINQC, molecular control, laser optimization, photoassociation, rovibrational, differentiable quantum
+
+### BPBO: Blindness-Preserving Brickwork Optimization
+- [[bpbo-blind-quantum-optimization]] - Blindness-preserving optimization via certified local resynthesis for universal blind quantum computation (arXiv: 2606.29962)
+  - Certified local resynthesis of BFK09-compatible brickwork graphs
+  - Enables graph-changing optimizations while preserving UBQC security
+  - **Activation**: blind quantum computation, UBQC, brickwork optimization, BPBO, cryptographic quantum, certified resynthesis
