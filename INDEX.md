@@ -3804,3 +3804,20 @@
   - Certified local resynthesis of BFK09-compatible brickwork graphs
   - Enables graph-changing optimizations while preserving UBQC security
   - **Activation**: blind quantum computation, UBQC, brickwork optimization, BPBO, cryptographic quantum, certified resynthesis
+
+
+## 2026-07-01 - Medicine + Quantum Research (Hourly Update)
+
+### Exploring the Effects of Entanglement on Quantum Machine Learning of Pathogen Epitope-Receptor Binding
+- [[quantum-ml-pathogen-epitope-binding]] - Hybrid QML for classifying pathogen epitope-receptor binding strength with entanglement topology optimization for vaccine design (arXiv: 2606.28655)
+  - PQC feature map with configurable entanglement gate topology (linear/circular/all-to-all)
+  - Binary classification: strong vs weak epitope-receptor binding (PRRS vaccine)
+  - Barren plateau analysis for NISQ device optimization
+  - **Activation**: quantum ML, pathogen epitope, vaccine design, PQC, binding classification
+
+### First-in-human quantum entanglement imaging
+- [[quantum-entanglement-imaging-pet]] - First in vivo imaging of quantum entanglement degree from positron-electron annihilation using J-PET plastic scintillator scanner (arXiv: 2606.29421)
+  - Annihilation photons are polarization-entangled — first exploited for medical diagnostics
+  - J-PET plastic scintillators provide simultaneous position + time + polarization
+  - New contrast mechanism: entanglement degree as additional diagnostic parameter
+  - **Activation**: quantum entanglement imaging, PET scan, J-PET, medical imaging, Compton scattering
