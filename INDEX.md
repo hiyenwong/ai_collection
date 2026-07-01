@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-07-01 - Neuroscience Research (Cron Job)
+
+### SPIDER: Stitched Power-spectra for Inferring Directed information flow from incomplete and asynchronous Experimental Recordings
+- [[spider-directed-connectivity]] - Non-parametric frequency-domain framework for recovering directed brain connectivity from incomplete, asynchronous multi-session recordings (arXiv: 2606.22695)
+  - Spectral stitching from overlapping channel subsets without temporal alignment
+  - Nuclear-norm completion for unobserved region pairs
+  - Validated on IBL Neuropixels: 50 brain areas from 43 sessions across 12 labs
+  - Cross-species theta-band hierarchy: hippocampal formation as feedforward source
+  - **Activation**: effective connectivity, directed information flow, asynchronous recordings, power spectral, PDC, spectral factorization, nuclear norm completion, brain-wide connectivity
+
+### SpikF-GO: Spiking Fourier Graph Operators for Multivariate Time Series Forecasting
+- [[spikf-go-spiking-fourier-graph]] - First graph-based multivariate SNN for time series forecasting with spike-driven spectral processing (arXiv: 2606.13901, ECML PKDD 2026)
+  - Hypervariate graph formulation: every scalar observation becomes a graph node
+  - Hard Concrete frequency gate for learnable sparse frequency selection
+  - Complex LIF gate preserving binary event-driven computation in spectral domain
+  - Best average rank among SNN methods, outperforms FourierGNN at reduced energy
+  - **Activation**: spiking neural network, time series forecasting, multivariate, Fourier graph, frequency gate, Complex LIF, hypervariate graph, energy-efficient forecasting
+
 ## 2026-07-01 - Quantum Medicine (Cron Job)
 
 ### Hybrid Classical-Quantum (HCQ) Alzheimer Classification via Supervised beta-VAE and Quantum Kernels
