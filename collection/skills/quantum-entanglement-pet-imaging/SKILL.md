@@ -40,6 +40,14 @@ By selecting events based on the relative angle between polarization planes of a
 | Estimated Sensitivity Gain | — | Up to 10% |
 | Phantom Tested | NEMA NU-4 (378 MBq ⁶⁸Ga) | Same |
 
+### Clinical Validation Milestone (arXiv: 2606.29421)
+
+**First-in-human quantum entanglement imaging** achieved June 2026:
+- First in vivo imaging of quantum entanglement degree of annihilation photons in a human subject
+- Validated the polarization correlation measurement concept clinically
+- J-PET scanner with plastic scintillators proved viable for human studies
+- Confirms feasibility of quantum entanglement as a clinical diagnostic modality
+
 ### Workflow
 
 1. **Setup**: Use plastic scintillator-based PET scanner (e.g., J-PET)

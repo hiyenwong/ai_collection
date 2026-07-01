@@ -100,6 +100,7 @@ CMOS Gate Structure → Tunneling Current (pA level)
 - **Not suitable for high-throughput applications**: Static readout limits response generation speed
 
 ## Related Skills
-- post-quantum-iot-healthcare (PQC migration for IoT healthcare systems)
+- post-quantum-iot-healthcare (PQC migration for IoT healthcare systems — updated with QT-PUF hardware PUF complement for implantable auth)
 - post-quantum-secure-pharmacovigilance (PQC for healthcare data pipelines)
 - quantum-resistant-networks (post-quantum network architecture)
+- qt-PUF-complementary-to-PQC: Hybrid approach recommended — QT-PUF for hardware identity (96 nW/bit) + PQC (Kyber/Dilithium) for session key exchange
