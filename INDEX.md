@@ -1,6 +1,16 @@
 # AI Collection Index
 
 
+## 2026-07-01 - Medicine + Quantum Research (Cron Job - Wednesday)
+
+### Parameter-Efficient Continuous-Variable Photonic Quantum Neural Networks for Edge Quantum AI: Demonstration in Oral Cancer Detection
+- [[cv-photonic-qnn-edge-medical]] - CV photonic QNNs for edge AI medical diagnosis with parameter-efficient hybrid architecture, demonstrated in oral cancer detection (arXiv: 2606.28252)
+  - Continuous-variable (CV) photonic quantum computing — no cryogenic requirements, room temperature operation
+  - Hybrid classical-quantum architecture with parameter-efficient learning for edge deployment
+  - Smartphone-based screening: lightweight models within edge-hardware constraints
+  - Lower parameter count than classical equivalents for equivalent accuracy
+  - **Activation**: cv photonic qnn, edge quantum ai, oral cancer detection, parameter-efficient quantum, photonic quantum, mobile quantum diagnosis
+
 ## 2026-07-01 - Neuroscience Research (Cron Job - Afternoon)
 
 ### Cohort-Amortized Personalization: Navigating the Privacy-Utility Frontier for Virtual Brain Twins
