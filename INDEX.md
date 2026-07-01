@@ -1,5 +1,23 @@
 # AI Collection Index
 
+
+## 2026-07-01 - Neuroscience Research (Cron Job - Evening)
+
+### Stationary Covariance Spectra of Non-Normal Random Recurrent Dynamics
+- [[stationary-covariance-spectra-non-normal]] - Free-probability framework for closed functional equations of stationary covariance spectra in discrete-time non-normal random recurrent dynamics (arXiv: 2606.31944)
+  - Closed scalar equation for moment generating function (unlike continuous-time infinite hierarchy)
+  - Analysis of tail eigenvalues in critical regime (σ² = 1)
+  - Schwinger-Dyson equations comparison: discrete-time tractable vs continuous-time intractable
+  - Practical framework for comparing random network models to neural PCA data
+  - **Activation**: stationary covariance spectra, non-normal dynamics, free probability, moment generating function, critical regime, Schwinger-Dyson, random matrix theory
+
+### Geometric Stability of Neural Population Codes
+- [[geometric-stability-neural-population-codes]] - Geometric stability as independent axis of representational analysis via split-half RDM Spearman correlation (Shesha), orthogonal to temporal stability (arXiv: 2606.29655)
+  - Shesha metric: Spearman rank correlation between split-half representational dissimilarity matrices
+  - Predicts neural-behavioral coupling (ρ=0.18, p=0.005) unlike temporal stability (ρ=0.002, p=0.976)
+  - Regional hierarchy: striatum most stable (S̄=0.44), hippocampus least (S̄=0.19) — opposite to temporal stability
+  - Attractor network model: recurrent excitation amplifies geometric stability via pattern completion (ρ=+0.64, p=0.010)
+  - **Activation**: geometric stability, split-half RDM, Shesha, neural population codes, representational geometry, attractor networks, pattern completion, regional hierarchy
 ## 2026-07-01 - Neuroscience Research (Cron Job)
 
 ### SPIDER: Stitched Power-spectra for Inferring Directed information flow from incomplete and asynchronous Experimental Recordings
