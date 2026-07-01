@@ -1,6 +1,26 @@
 # AI Collection Index
 
 
+## 2026-07-01 - Neuroscience Research (Cron Job - Afternoon)
+
+### Cohort-Amortized Personalization: Navigating the Privacy-Utility Frontier for Virtual Brain Twins
+- [[cohort-amortized-personalization-brain-twins]] - Privacy-preserving personalized brain modeling via cohort-amortized neural density estimation with cross-atlas compatibility (arXiv: 2606.30329)
+  - Cohort-Amortized Personalization (CAP): train neural density estimator on mechanistic whole-brain model simulations with low-rank cohort prior
+  - CrossCoder maps 20 anatomical atlases into shared latent space for cross-site deployment
+  - Validated: 21 epilepsy patients (F1=0.56 for EZ localization), 832 1000BRAINS subjects (age prediction r=0.44)
+  - Hours-to-seconds speedup with matched/exceeded accuracy vs per-subject inference
+  - "Synthetic access" governance concept: mechanistic surrogate for in-silico experimentation without raw data
+  - **Activation**: cohort-amortized personalization, virtual brain twins, privacy-preserving, cross-atlas, neural density estimator, synthetic access
+
+### Heterogeneous Synaptic Motifs Bridge Microscale Structure and Macroscale Nonlinear Dynamics
+- [[heterogeneous-synaptic-motifs-macroscale-dynamics]] - Mean-field theory bridging synaptic-resolution connectomics to heterogeneous population dynamics via second-order correlated motifs (arXiv: 2606.27946)
+  - Random RNNs with nonlinear non-negative responses and arbitrary marginal + second-order correlated synaptic statistics
+  - Mean-field low-rank equations: 2P latent variables (P mean activity + P within-population variability)
+  - Chain motifs induce correlations in synaptic variability, enabling microscopic fluctuations → mesoscopic dynamics
+  - Reverse-engineered connectivity recapitulates heterogeneous activity in mouse V1
+  - **Activation**: synaptic motifs, mean-field theory, heterogeneous dynamics, connectomics, micro-macro bridge, chain motifs, V1, nonlinear RNN
+
+
 ## 2026-07-01 - Neuroscience Research (Cron Job - Evening)
 
 ### Stationary Covariance Spectra of Non-Normal Random Recurrent Dynamics
