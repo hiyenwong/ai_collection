@@ -1,119 +1,65 @@
-## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 3rd run)
-
-### Physically Motivated Ansatz for Open Fermionic Systems on Quantum Computer
-- [[physically-motivated-quantum-ansatz]] - Design physically motivated variational ansätze for open quantum systems using UCC adapted for Lindblad dynamics; mitigates barren plateaus (arXiv: 2606.16823)
-  - Unitary coupled cluster approach adapted for Lindblad master equation and NESS
-  - Physical structure embedded in circuit design vs black-box HEA
-  - Addresses barren plateau problems in variational quantum algorithms for open systems
-  - **Activation**: physically motivated ansatz, open fermionic systems, variational quantum algorithms, lindblad dynamics, NESS, non-equilibrium steady states, unitary coupled cluster, barren plateaus
-
-## 2026-06-16 - Computer Science + Quantum Computing (Cron Job - 2nd run)
-
-### Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications
-- [[q-ready-quantum-feasibility]] - Systematic methodology for predicting whether computational problems benefit from quantum acceleration and optimally partitioning hybrid workflows (arXiv: 2606.16201)
-  - Structured quantum readiness scoring across 5 criteria (algorithm mapping, noise resilience, encoding efficiency, classical competition, infrastructure access)
-  - Hybrid partitioning strategy for quantum-suitable subproblems vs classical pre/post-processing
-  - Domain-specific feasibility for software engineering, chemistry, optimization, finance
-  - **Activation**: quantum feasibility, quantum readiness, hybrid quantum-classical, q-ready, quantum advantage assessment, quantum application assessment, quantum-classical partitioning, quantum software engineering
-
-## 2026-06-16 - Quantum Neuromorphic Computing (Cron Job)
-
-### Quantum-Driven Neuromorphic Computing for Million-Qubit-Scale Workloads
-- [[quantum-driven-neuromorphic-million-qubit]] - Synergistic integration of quantum computing with neuromorphic architectures for million-qubit computational workloads (arXiv: 2606.12968)
-  - Neuromorphic quantum error correction via spike-based syndrome decoding
-  - Quantum spike encoding for state-to-spike information transfer
-  - SNN-based adaptive quantum circuit compilation and control
-  - **Activation**: quantum neuromorphic, million-qubit, quantum-driven neuromorphic computing, neuromorphic quantum computing, large-scale quantum, quantum workload scaling
-
-## 2026-06-16 - Computer Science + Quantum Computing (Cron Job)
-
-### Boltzmann Attention: Learnable Ising Couplings for Cooperative Attention
-- [[boltzmann-attention]] - Energy-based generalization of attention using interacting Ising models with learnable pairwise couplings; opens path to quantum annealing-based training (arXiv: 2606.12478)
-  - Attention patterns governed by Ising model with learnable pairwise couplings Jᵢⱼ
-  - Diabatic quantum annealing provides practical training method matching exact Boltzmann computation
-  - Advantage over softmax attention increases with sequence length
-  - **Activation**: boltzmann attention, ising attention, cooperative attention, energy-based attention, quantum annealing attention, pairwise coupling
-
-### MAPS: Multi-Axial Projective Sphere for Qudit State-Space Visualization
-- [[maps-qudit-visualization]] - Generalized 3D framework for visualizing d-valued quantum states of qudits using n projectional intersecting axes (arXiv: 2606.15801)
-  - Extends Bloch sphere paradigm from qubits to arbitrary dimension d ≥ 3
-  - Novel d-valued phase axial-based gates for state manipulation along axes
-  - Each MAPS axis represents a single feature with distinct values — applicable to ML feature spaces
-  - **Activation**: qudit visualization, multi-axial projective sphere, MAPS, d-valued quantum state, quantum state-space visualization, qutrit
-
-## 2026-06-16 - Neuroscience Research (Cron Job)
-
-### Flow Matching with In-Context Priors for Out-of-Distribution Brain Dynamics
-- [[flow-matching-in-context-priors-brain-dynamics]] - 首个生成模型用于未见认知任务的整个皮层fMRI动力学，支持反事实神经科学 (arXiv: 2606.11833)
-  - Per-timestep conditioned diffusion transformer with language + spatial priors
-  - Zero-shot generation of held-out cognitive task brain dynamics
-  - Counterfactual neuroscience: in-silico experiment design before empirical validation
-  - **Activation**: 反事实神经科学, flow matching in-context, fMRI生成, 零样本脑动力学, diffusion transformer brain, compositional language priors
-
-### FlexiBrain: Resolution-Agnostic Voxel-Level Encoding for Native fMRI
-- [[flexibrain-resolution-agnostic-fmri-encoding]] - 分辨率无关voxel级编码框架，直接处理native space fMRI，避免破坏性标准化 (arXiv: 2606.11500)
-  - Physical-unit patch definitions (mm not voxels)
-  - Dynamic patch resizing for heterogeneous data
-  - Mamba-JEPA backbone with 12 percentage point gains on 5 tasks
-  - **Activation**: resolution-agnostic fMRI, native space encoding, 物理单位patch, 动态resize, Mamba-JEPA, voxel foundation model
-
-## 2026-06-16 - Systems Engineering Research (Cron Job)
-
-### Quasilinear Equivalence Checking for Detector Error Models
-- [[quasilinear-equivalence-checking-detector-error]] - A Detector Error Model (DEM) is a structured representation of error mechanisms in quantum circuits, (arXiv: 2606.14677v1)
-  - Core methodology: systems engineering, quant-ph, cs.SE
-  - Key contribution: Quantum error model verification
-  - **Activation**: systems engineering, quasilinear-equivalence-checking-detector-error, quantum
-
-### parRSB: Exascale Spectral Element Mesh Partitioning
-- [[parrsb-exascale-spectral-element-mesh]] - We introduce parRSB - a parallel, highly scalable graph partitioner for spectral element meshes that (arXiv: 2606.14659v1)
-  - Core methodology: systems engineering, cs.DC
-  - Key contribution: Exascale mesh partitioning
-  - **Activation**: systems engineering, parrsb-exascale-spectral-element-mesh, distributed
-
 # AI Collection Index
 
-## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
+## 2026-07-05 - Neuroscience Research (Cron Job)
 
-### Quantum State Preparation via Neural Network Encoding in Quantum Machine Learning
-- [[neural-quantum-state-encoding]] - 用训练好的经典神经网络直接映射数据到量子电路参数，避免逐实例变分优化，实现0.992保真度和5000倍加速 (arXiv: 2605.31006)
-  - 训练一次推理一次: 神经网络学习x→θ(x)映射，新数据单次前向传播编码
-  - 固定电路拓扑: 仅参数变化，结构不变，适用于近中期量子设备
-  - 泛化能力强: MNIST/Fashion-MNIST上未见数据保真度达0.992
-  - **Activation**: quantum state preparation, neural encoding, QML data loading, amplitude encoding, quantum circuit parameterization, quantum image states, NISQ data encoding
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - DendriCL shows ICL requires neither attention, depth, nor inference-time plasticity: single dendritic compartment with online-LMS dynamics is sufficient (arXiv: 2607.02283)
+  - Subthreshold dendritic compartment dynamics structurally identical to leaky online Widrow-Hoff LMS
+  - Uniquely seed-stable at super-dimensional Garg-2022 ICL benchmark where Transformers fail
+  - Linear probe recovers reference online-LMS trajectory from apical membrane at R² = 0.93
+  - **Activation**: dendritic in-context learning, dendriCL, SNN ICL, online LMS, Widrow-Hoff, compartmental spiking, apical recurrence, Garg-2022 benchmark, seed-stable ICL
 
-### PUBO Formulation for MST and Application to Optimum-Path Forest
-- [[pubo-mst-falqon]] - 将MST问题重构为PUBO优化任务并用FALQON算法求解，减少量子比特需求，在图分类器原型选择中达到与Prim算法相当的精度 (arXiv: 2605.20637)
-  - PUBO重构: 无需辅助变量，减少量子比特需求
-  - FALQON优化: 反馈式量子优化算法用于哈密顿量最小化
-  - 图分类应用: OPF分类器中原型选择的质量与经典算法相当
-  - **Activation**: quantum MST, PUBO optimization, FALQON, quantum graph algorithms, optimum-path forest, quantum combinatorial optimization, QML classifier
+### SABER: Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs
+- [[semantic-aligned-brain-network-hypergraphs]] - Framework that actively integrates LLM-derived semantics into brain network prediction via global self-attention, multi-scale hypergraphs, and decision-level semantic alignment (arXiv: 2607.01901)
+  - ROI-level semantics incorporated via global self-attention to enrich node representations
+  - Multi-scale hypergraph construction captures functional subnetworks and multi-ROI interactions beyond pairwise GNN limitations
+  - Decision-level semantic alignment selectively injects patient-specific textual embeddings without perturbing graph structure
+  - State-of-the-art on ABIDE and ADHD-200, particularly strong in small-sample settings
+  - **Activation**: SABER brain network, semantic-aligned brain, multi-scale hypergraph, LLM brain diagnosis, functional subnetworks, ABIDE, ADHD, decision-level alignment
 
-## 2026-06-16 - Computer Science + Quantum Mechanics (Cron Job)
+## 2026-06-30 - Neuroscience Research (Cron Job)
 
-### Aligning Quantum Operators with Large Language Models
-- [[llm-quantum-operator-alignment]] - 使LLM能够理解量子算子(酉矩阵)表示，弥合自然语言与量子力学之间的鸿沟，支持量子电路合成与算子属性预测 (arXiv: 2606.13811)
-  - 量子算子映射: Euler分解/本征值编码/张量网络压缩/Bloch球投影
-  - 对齐损失函数: 保真度损失/对易损失/酉性惩罚/语义一致性
-  - 四种应用模式: NL→电路合成/算子属性预测/电路优化/量子误差诊断
-  - **Activation**: LLM quantum, operator alignment, unitary matrix reasoning, quantum circuit NL, quantum-classical interface, quantum operator prediction, quantum NLP
+### Modelling chronic stress as an excitatory-inhibitory perturbation in recurrent working-memory networks
+- [[chronic-stress-ei-balance-rnn]] - Computational modeling of chronic stress as E/I balance perturbation in prefrontal working-memory RNNs, revealing resilience-generalization trade-off (arXiv: 2606.27529)
+  - Dale-constrained 200-neuron RNN (80% E, 20% I) on delayed parametric working memory task
+  - Enhanced I→E synapses reproduce all stress signatures (inhibitory dominance, excitatory hypofunction, impaired performance)
+  - Resilient networks preserve function under stress but lose generalization to novel delays → behavioral rigidity analogue
+  - Energetic landscape preservation as resilience biomarker
+  - **Activation**: chronic stress, E/I balance, working memory, prefrontal cortex, resilience, recurrent neural networks, Dale's law
 
-### Foundations of Practical Quantum Advantage in Quantum-Informed ML for Predicting Chaos
-- [[quantum-informed-chaos-ml]] - 从经典混沌时间序列中提取高阶量子统计特征(纯度/Rényi熵/OTOC/互信息)提升混沌系统预测精度 (arXiv: 2606.13422)
-  - 密度矩阵构建: 从延迟坐标嵌入轨迹构造经验密度矩阵
-  - 量子特征提取: 纯度/Rényi熵/冯·诺依曼熵/OTOC/互信息/负性
-  - 混合量子-经典预测器: 量子特征+经典特征联合预测
-  - **Activation**: chaos prediction, quantum ML, OTOC, Rényi entropy, density matrix, chaotic time series, Lorenz system, quantum advantage ML, hybrid quantum-classical, dynamical systems
+### CANNs: A Toolkit for Research on Continuous Attractor Neural Networks
+- [[canns-toolkit-attractor-networks]] - Comprehensive open-source toolkit unifying CANN research workflow (Python/Rust/GUI) for grid cells, place cells, head-direction, path integration, and persistent homology-based attractor detection (arXiv: 2606.27783)
+  - 1D ring and 2D torus CANNs with spike-frequency adaptation and theta-rhythmic modulation variants
+  - Persistent homology pipeline (ASA) detects ring/torus topological signatures in experimental neural recordings
+  - Rust acceleration backend for persistent homology (100-1000× speedup) and spatial navigation
+  - Reproduces: anticipative tracking, theta sweeps, hierarchical path integration, real MEC grid-cell topology
+  - **Activation**: continuous attractor, CANN, grid cells, place cells, head-direction, path integration, persistent homology, topological data analysis, BrainPy, JAX, hippocampus, entorhinal cortex
 
-## 2026-06-16 - Neuroscience Research (Cron Job) - Batch 2
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
-### Neural Variability Enhances Artificial Network Robustness
-- [[neural-variability-enhances-robustness]] - 相关性噪声改善ANN对抗攻击和自然修改鲁棒性，结构化噪声跨攻击类型泛化良好，生物学合理的局部信息策略 (arXiv: 2606.13801)
-  - 皮层高变异性vs外周低变异性提示噪声功能性意义
-  - 噪声结构(协方差)是关键而非单纯随机噪声
-  - 对抗鲁棒性：噪声结构跨攻击类型良好泛化
-  - 自然鲁棒性：结构化噪声最优但转移性有限
-  - **Activation**: neural variability, correlated noise, adversarial robustness, naturalistic modifications, noise correlations, biological robustness, cortex variability
+### Quantum element-wise transforms
+- [[quantum-element-wise-transforms]] - Implementing element-wise nonlinear transformations on quantum amplitudes via spectral decomposition and polynomial approximation, with exponential space reduction over prior QSVT/LCU methods (arXiv: 2606.06456)
+  - 量子振幅上的逐元素非线性变换
+  - 谱分解 + 多项式逼近实现
+  - 相比QSVT/LCU方法指数级空间优化
+  - 应用于量子ML与统计估计
+  - **Activation**: quantum transforms, spectral decomposition, polynomial approximation, quantum ML, statistical estimation, nonlinear mapping, quantum amplitudes
+
+### Quantum Algorithm for Nonlinear and Stochastic Homogenization via Young-Measure LP
+- [[quantum-young-measure-homogenization]] - Quantum algorithm for nonlinear and stochastic homogenization via Young-measure linear programming, combining QLSA with homogenization theory for efficient multiscale PDE solutions (arXiv: 2606.06165)
+  - Young测度线性规划公式重新表述非线性/随机均匀化问题
+  - 量子线性系统算法(QLSA)加速求解
+  - 指数级维度加速对比经典方法
+  - 统一处理非线性与随机均匀化
+  - **Activation**: quantum homogenization, Young measure, quantum linear systems, stochastic PDE, multiscale, numerical analysis
+
+### Robustness of Entanglement Manipulation for almost i.i.d. sources
+- [[almost-iid-quantum-information]] - Fundamental bounds on entanglement rates under statistical uncertainty for almost independent and identically distributed quantum sources (arXiv: 2606.06392)
+  - 近似i.i.d.量子源的信息理论鲁棒性分析
+  - 量子集中不等式与矩阵浓度界
+  - 纠缠操作在统计不确定性下的速率界
+  - 渐近等分性质(AEP)的推广
+  - **Activation**: almost i.i.d., entanglement manipulation, concentration bounds, statistical uncertainty, quantum information, asymptotic rates
 
 ## 2026-06-16 - Neuroscience Research (Cron Job)
 
@@ -2944,25 +2890,17 @@
   - Diabatic quantum annealing replaces softmax for sampling
 - **Activation**: Boltzmann attention, Ising attention, quantum annealing training, energy-based attention
 
-## 2026-06-16 - Computer Science (Cron Job)
+## 2026-06-26 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
-### Aligning Quantum Operators with Large Language Models
-- [[llm-quantum-operator-alignment]] - Maps unitary operators into LLM latent spaces enabling quantum reasoning for Clifford+T circuit synthesis (arXiv: 2606.13811)
-  - First approach to bridge LLM understanding of quantum representations
-  - Unified modeling over quantum operators and linguistic inputs
-  - **Activation**: quantum operator alignment, LLM quantum reasoning, unitary matrix embedding, quantum circuit synthesis with LLM, 量子算符对齐
-## 2026-06-16 - Computer Science + Quantum (Cron Job)
+### Discovery of connectivity-trainability trade-off of IQP Circuits for Hamiltonian Optimization
+- [[iqp-connectivity-trainability]] - IQP电路连接性与可训练性的权衡分析方法论 (arXiv: 2606.24264)
+  - IQP电路在哈密顿量优化中存在连接性-可训练性权衡
+  - 低连接性：梯度良好但优化能力有限；高连接性：优化能力强但遭遇严重barren plateau
+  - **Activation**: iqp circuit trainability, 量子IQP电路, connectivity trainability trade-off, hamiltonian optimization IQP
 
-### Optimal Decoding of Small Codes by Density Matrix Propagation
-- [[density-matrix-propagation-qec-decoding]] - ML decoding benchmark for QEC under circuit-level noise using density matrix propagation with pruning techniques (arXiv: 2606.14455)
-  - 密度矩阵传播通过完整存储实验，计算每个综合征历史的最优ML解码决策
-  - 剪枝技术带严格边界，仅窄部分综合征历史显著贡献逻辑错误率
-  - 标准解码器(repetition)接近最优，但cellular automaton code显著偏差
-  - **Activation**: density matrix propagation, optimal decoding QEC, ML decoding benchmark, circuit-level noise decoding, BP+OSD accuracy
+### Linear algebra at exponential scale via tensor network dimension reduction
+- [[tensor-network-linear-algebra]] - 指数规模线性代数问题的张量网络降维求解方法 (arXiv: 2606.15350)
+  - 随机降维技术直接作用于张量网络格式，实现指数维度($2^{200}$)矩阵的迹估计和特征值近似
+  - 提供可证明的误差界，复杂度为多项式而非指数
+  - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
-### Pseudonym Scheme Based on Hybrid Certificates for Vehicular Communications
-- [[hybrid-pqc-pseudonym-vehicular-security]] - Hybrid ECC+PQC certificate scheme for vehicular SCMS migration to quantum-safe security (arXiv: 2606.14008)
-  - IEEE/ETSI车载安全标准依赖ECC，面临Shor算法量子攻击威胁
-  - 混合证书结合ECC向后兼容 + NIST标准PQC(ML-DSA)实现量子安全
-  - 通用化假名方案阻止注册证书与假名证书的公钥关联
-  - **Activation**: vehicular security PQC, SCMS hybrid certificate, pseudonym scheme quantum-safe, BKE post-quantum, 车载通信后量子密码
