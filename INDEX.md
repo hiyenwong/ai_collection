@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-07-05 - Information Science (Cron Job)
+
+### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
+- [[limited-memory-stabilizer-testing]] - Proves coherent quantum memory is THE resource enabling separation between stabilizer testing (constant) and learning (linear); under k-qubit memory constraints both require Θ(n) copies (arXiv: 2607.02444)
+  - Sample complexity of testing: Θ(n-k); learning: Θ(n²/k) under k-qubit memory
+  - Even with k=0.99n memory, no constant-copy tester exists — separation is lost
+  - Exponential lower bound for purity testing even with coherent memory
+  - Upper bounds via hidden shift connection; lower bounds via stochastic orthogonal group combinatorics
+  - **Activation**: stabilizer testing, quantum memory, sample complexity, hidden shift, coherent memory, purity testing, memory constraints, stabilizer learning
+
+### An Information-Theoretic Principle for Optimal Quantum Encoding
+- [[quantum-optimal-encoding]] - Proves maximal quantum leakage as universal task-agnostic quality measure for quantum encoders; identifies tight frames and equiangular tight frames (ETFs) as optimal encodings (arXiv: 2607.01564)
+  - Basis encoding optimal with enough qubits; phase encoding optimal for qubit-constrained systems
+  - Any tight frame or maximally-mixed-average ensemble achieves optimality in low dimensions
+  - ETFs uniquely saturate Welch bound with self-referential optimal measurement
+  - Special cases: qubit trine, regular simplex, SIC-POVMs
+  - **Activation**: quantum encoding, maximal quantum leakage, tight frames, equiangular, SIC-POVM, phase encoding, basis encoding, quantum statistical inference
+
+### Self-Referential K-SAT and the Finite Analogue of Gödel's Incompleteness Theorem
+- [[self-referential-sat-hardness]] - Establishes finite combinatorial analogue of Gödel's incompleteness within K-SAT; reframes SETH as direct projection of incompleteness onto finite computation (arXiv: 2607.01671)
+  - Self-referential hardness precludes quantum shortcuts — requires global semantic analysis
+  - Delineates scaling bottleneck for ML on lossy/local compression
+  - Descriptive lower bound K(A) ≥ Ω(N^(1-δ)); proof-tree explosion S(φ) ≥ exp(Ω(N^(1-2δ)))
+  - Paradigm shift from Turing class separation to Gödelian instance indistinguishability
+  - **Activation**: self-referential SAT, Gödel incompleteness, SETH, K-SAT complexity, quantum SAT limits, resolution refutation, instance indistinguishability
+
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
