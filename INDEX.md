@@ -50,6 +50,32 @@
   - Dynamic routing adaptation based on real-time syndrome data
   - **Activation**: quantum network routing, surface code error correction, entanglement distribution, quantum teleportation routing, quantum repeater
 
+
+### Topological Control of Quantum Chaos Diagnostics
+- [[quantum-topology-information-scrambling]] - Graph-theoretic methodology for analyzing quantum information scrambling via OTOCs across network topologies; network topology directly controls quantum information propagation rate (arXiv: 2607.02463)
+  - Long-range couplings and heterogeneous degree distributions accelerate quantum information propagation
+  - Spectral statistics (level spacing ratio) diagnose integrability-to-chaos transition
+  - OTOCs measure information scrambling speed across different graph topologies
+  - Small-world networks show fastest scrambling at intermediate rewiring probability
+  - **Activation**: quantum topology, OTOC analysis, information scrambling, quantum chaos, graph theory quantum, spectral statistics, integrability chaos transition
+
+### Automated Logical Clifford Gadgets via Chain Maps
+- [[automated-logical-clifford-chain-maps]] - Automated framework for synthesizing inter-code logical CNOT circuits between arbitrary CSS codes using algebraic topology chain maps (arXiv: 2607.02482)
+  - Chain maps provide universal language for logical gate synthesis across any CSS code family
+  - Set of valid chain maps forms affine space over GF(2) enabling optimization
+  - No manual code-specific gadget design needed — automatic from desired logical network
+  - Enables heterogeneous QEC architectures combining surface codes, color codes, LDPC codes
+  - **Activation**: automated Clifford synthesis, chain map quantum, CSS code interoperation, logical CNOT synthesis, heterogeneous quantum codes, inter-code gates
+
+### Symmetries of Pauli Noise from Lindbladian Dynamics
+- [[pauli-noise-symmetry-lindbladian]] - Pauli noise symmetry analysis exploiting Lindbladian dynamics constraints on gate noise channels; physical noise structure reduces characterization parameters (arXiv: 2607.02481)
+  - Physical Lindbladian noise imposes symmetry constraints on Pauli fidelities that are gauge-invariant
+  - F(P) ≈ F(U P U†) when noise originates from physical Lindbladian dynamics
+  - Parameter reduction from exponential to manageable via symmetry relations
+  - Enables efficient noise tomography despite SPAM gauge ambiguities
+  - **Activation**: Pauli noise symmetry, Lindbladian dynamics, gate noise characterization, Pauli fidelity, SPAM mitigation, quantum noise tomography
+
+
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
