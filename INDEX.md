@@ -26,6 +26,30 @@
   - Paradigm shift from Turing class separation to Gödelian instance indistinguishability
   - **Activation**: self-referential SAT, Gödel incompleteness, SETH, K-SAT complexity, quantum SAT limits, resolution refutation, instance indistinguishability
 
+### Frequent Itemset Mining with Quantum Computing
+- [[quantum-data-mining]] - Quantum-enhanced frequent itemset mining using amplitude estimation and Grover-based counting for quadratic speedup in support estimation (arXiv: 2606.09209)
+  - Amplitude encoding maps classical transactions to quantum superposition states
+  - Grover-based counting achieves O(√N) vs O(N) classical complexity
+  - Hybrid quantum-classical pipeline: classical candidate gen + quantum counting
+  - NISQ-aware: circuit depth constraints, error mitigation, variational approaches
+  - **Activation**: quantum data mining, frequent itemset mining, quantum pattern discovery, quantum analytics, quantum database mining
+
+### Intent-Based Cryptographic API Design for PQC Migration
+- [[quantum-crypto-agility]] - Intent-based API design pattern for cryptographic agility during post-quantum cryptography migration across large software portfolios (arXiv: 2606.13445)
+  - Decouples security intent from algorithm implementation (e.g., "confidentiality" vs "RSA-OAEP")
+  - Algorithm registry enables seamless classical → PQC → hybrid → PQC-only migration
+  - Five-phase migration strategy minimizes consumer code changes
+  - Addresses key size growth, performance regression, and compliance gaps
+  - **Activation**: cryptographic agility, post-quantum cryptography migration, intent-based crypto API, PQC API design, crypto migration
+
+### Quantum Network Routing based on Surface Code Error Correction
+- [[quantum-network-routing]] - QEC-aware quantum network routing using surface code error correction for reliable entanglement distribution over noisy channels (arXiv: 2606.12781)
+  - Two paradigms: entanglement-based (teleportation) vs. direct transmission routing
+  - Surface code distance selection based on channel noise characterization
+  - QEC-aware routing metrics: logical error rate, channel fidelity, code distance
+  - Dynamic routing adaptation based on real-time syndrome data
+  - **Activation**: quantum network routing, surface code error correction, entanglement distribution, quantum teleportation routing, quantum repeater
+
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
