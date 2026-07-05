@@ -2,6 +2,14 @@
 
 ## 2026-07-05 - Information Science (Cron Job)
 
+### Authentication in Quantum Networks
+- [[quantum-network-authentication]] - 综合综述量子通信中的认证任务，分析经典消息认证、量子消息认证和实体认证三大类方案，按安全性、可组合性和可扩展性选择适合的方案 (arXiv: 2606.30636)
+  - 三种认证类型：经典消息认证、量子消息认证、实体认证，不可混淆
+  - 选择框架：安全性假设、部署需求、可组合性、可扩展性四维评估
+  - 核心洞察：认证是资源需求而非内在限制，必须显式声明安全假设
+  - 现有经典和量子文献已提供多种量子安全认证方案可匹配不同应用场景
+  - **Activation**: 量子网络认证, 量子认证协议, QKD 认证, 量子消息认证, 实体认证, 量子网络安全, 后量子认证, 量子密钥分配, quantum network authentication
+
 ### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
 - [[limited-memory-stabilizer-testing]] - Proves coherent quantum memory is THE resource enabling separation between stabilizer testing (constant) and learning (linear); under k-qubit memory constraints both require Θ(n) copies (arXiv: 2607.02444)
   - Sample complexity of testing: Θ(n-k); learning: Θ(n²/k) under k-qubit memory
