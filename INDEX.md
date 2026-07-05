@@ -2,6 +2,43 @@
 
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### NeuroCogMap Reveals Cognitive Organization of Large Language Models
+- [[neurocogmap-llm-cognitive-organization]] - Maps LLM internal representations to brain-like cognitive parcels for auditing hallucination, bias, refusal, sycophancy and memory capabilities (arXiv: 2607.00397)
+  - 核心要点：Parcel-functional annotation maps LLM hidden states to cognitive brain-like regions
+  - 核心要点：Cross-model parcel matching reveals universal vs model-specific cognitive organizations
+  - 核心要点：Comprehensive auditing pipeline covering hallucination, bias, refusal, sycophancy, memory
+  - **Activation**: neurocogmap, cognitive mapping, LLM cognitive audit, parcel annotation, functional correspondence, hallucination detection, bias evaluation, LLM interpretability
+
+### Stationary Covariance Spectra of Discrete-Time Non-Normal Random Recurrent Dynamics
+- [[free-probability-rnn-spectral-analysis]] - Free probability approach deriving closed functional equations for stationary covariance spectra of random recurrent networks with non-normal weights (arXiv: 2606.31944)
+  - 核心要点：Discrete-time admits closed scalar equation; continuous-time yields infinite Schwinger-Dyson hierarchy
+  - 核心要点：Tail eigenvalue behavior in critical regime determines PCA interpretability
+  - **Activation**: free probability, stationary covariance, random recurrent, non-normal weights, covariance spectrum, moment generating function, RNN spectral analysis
+
+### DRIADA: Cross-Scale Neural Analysis Toolkit
+- [[driada-neural-analysis-toolkit]] - Python toolkit unifying single-neuron selectivity analysis with population dynamics for cross-scale neural data analysis (arXiv: 2607.00851)
+  - 核心要点：Three-scale pipeline: single-neuron selectivity → population trajectories → system dynamics
+  - 核心要点：Links individual neuron tuning to population-level dynamical modes
+  - **Activation**: driada, cross-scale neural analysis, single-neuron selectivity, population dynamics, neural toolkit, neural data analysis pipeline
+
+### Mean-Field Theory of Oscillatory Low-Rank RNNs
+- [[mean-field-oscillatory-low-rank-rnn]] - Mean-field theory for low-rank recurrent networks with activity-dependent adaptation, revealing oscillations, chaos, and multistability regimes (arXiv: 2606.30366)
+  - 核心要点：Low-rank structure + adaptation interaction produces rich dynamical regimes
+  - 核心要点：Bifurcation analysis maps transitions between fixed points, oscillations, and chaos
+  - **Activation**: mean field theory, oscillatory dynamics, low rank RNN, activity dependent adaptation, bifurcation analysis, RNN dynamics, neural oscillations
+
+### Optimal Stabilizer Testing with Limited Quantum Memory
+- [[quantum-stabilizer-testing-limited-memory]] - Optimal stabilizer state testing and learning under bounded quantum memory, proving Θ(d²) sample complexity bounds (arXiv: 2607.02444)
+  - 核心要点：Bell difference sampling extracts stabilizer structure from paired measurements
+  - 核心要点：Memory-bounded protocols require O(d²) samples even with minimal quantum storage
+  - **Activation**: stabilizer testing, limited quantum memory, sample complexity, Bell sampling, quantum state testing, quantum verification
+
+### Quantum Opinion Dynamics on Networks
+- [[quantum-opinion-dynamics-networks]] - Quantum information-theoretic framework modeling opinion dynamics on social networks using superposition and entanglement (arXiv: 2607.01452)
+  - 核心要点：Opinion superposition captures conflicting beliefs; entanglement models correlated opinions
+  - 核心要点：Quantum measurement models opinion expression; unitary evolution models private belief updates
+  - **Activation**: quantum opinion dynamics, social network modeling, quantum probability, entanglement consensus, belief formation, polarization modeling
+
 ### Geometric Approach to Zero-Memory Quantum Dot Reservoir Computing
 - [[quantum-dot-reservoir-computing]] - 利用量子点阵列的几何非线性实现无记忆时序信息处理，为NISQ时代提供了一种无需内部记忆状态的物理储备计算范式 (arXiv: 2606.29320)
   - 核心要点：量子点阵列的内在非线性动力学可直接用于时序计算，无需传统储备计算的循环连接或延迟线
