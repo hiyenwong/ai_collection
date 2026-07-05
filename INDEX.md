@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-07-05 - Neuroscience Research (Cron Job)
+
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - DendriCL shows ICL requires neither attention, depth, nor inference-time plasticity: single dendritic compartment with online-LMS dynamics is sufficient (arXiv: 2607.02283)
+  - Subthreshold dendritic compartment dynamics structurally identical to leaky online Widrow-Hoff LMS
+  - Uniquely seed-stable at super-dimensional Garg-2022 ICL benchmark where Transformers fail
+  - Linear probe recovers reference online-LMS trajectory from apical membrane at R² = 0.93
+  - **Activation**: dendritic in-context learning, dendriCL, SNN ICL, online LMS, Widrow-Hoff, compartmental spiking, apical recurrence, Garg-2022 benchmark, seed-stable ICL
+
+### SABER: Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs
+- [[semantic-aligned-brain-network-hypergraphs]] - Framework that actively integrates LLM-derived semantics into brain network prediction via global self-attention, multi-scale hypergraphs, and decision-level semantic alignment (arXiv: 2607.01901)
+  - ROI-level semantics incorporated via global self-attention to enrich node representations
+  - Multi-scale hypergraph construction captures functional subnetworks and multi-ROI interactions beyond pairwise GNN limitations
+  - Decision-level semantic alignment selectively injects patient-specific textual embeddings without perturbing graph structure
+  - State-of-the-art on ABIDE and ADHD-200, particularly strong in small-sample settings
+  - **Activation**: SABER brain network, semantic-aligned brain, multi-scale hypergraph, LLM brain diagnosis, functional subnetworks, ABIDE, ADHD, decision-level alignment
+
 ## 2026-06-30 - Neuroscience Research (Cron Job)
 
 ### Modelling chronic stress as an excitatory-inhibitory perturbation in recurrent working-memory networks
