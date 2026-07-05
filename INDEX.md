@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Geometric Approach to Zero-Memory Quantum Dot Reservoir Computing
+- [[quantum-dot-reservoir-computing]] - 利用量子点阵列的几何非线性实现无记忆时序信息处理，为NISQ时代提供了一种无需内部记忆状态的物理储备计算范式 (arXiv: 2606.29320)
+  - 核心要点：量子点阵列的内在非线性动力学可直接用于时序计算，无需传统储备计算的循环连接或延迟线
+  - 核心要点：空间配置决定计算容量，能量景观决定输入输出映射，响应几何决定模式分离能力
+  - **Activation**: quantum dot, reservoir computing, zero-memory, geometric ML, neuromorphic, quantum ML, temporal processing, nonlinear dynamics, physical computing
+
+### OmniNeuro: 多模态可解释BCI反馈框架
+- [[omnineuro-bci-framework]] - 整合物理能量、混沌分形复杂度和量子启发不确定性建模的三引擎BCI可解释框架，将脑机接口从静默解码器转变为透明反馈伙伴 (arXiv: 2601.00843)
+  - 核心要点：三引擎（能量分析、分形复杂度、量子概率不确定性）提供多维可解释性
+  - 核心要点：视觉+声学（sonification）+生成AI自然语言解释的多模态反馈设计
+  - **Activation**: bci, neurofeedback, interpretability, quantum-inspired, chaos theory, sonification, hci, neural decoding, fractal complexity, energy analysis
+
 ## 2026-07-05 - Information Science (Cron Job)
 
 ### Authentication in Quantum Networks
