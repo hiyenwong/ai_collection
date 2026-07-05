@@ -1,5 +1,39 @@
 # AI Collection Index
 
+## 2026-07-06 - Neuroscience + Quantum Computing (Cron Job)
+
+### TRIBE fMRI Encoding Validation
+- [[tribe-fmri-encoding-validation]] - Brain-encoding model validation against behavioral engagement (arXiv: 2607.01400)
+  - TRIBE model predictions don't correlate with replay heatmaps
+  - High fMRI accuracy ≠ behavioral relevance
+  - **Activation**: brain-encoding validation, TRIBE model, fMRI prediction, behavioral engagement
+
+### Minimum-Distortion Embedding for Neuronal Analysis
+- [[minimum-distortion-embedding-neuronal]] - MDE framework for evolving neuronal networks (arXiv: 2502.20862)
+  - Cosine metric MDE outperforms PCA/t-SNE for neuronal data
+  - Captures developmental trajectories DIV23-DIV64
+  - **Activation**: neuronal embedding, MDE, dimensionality reduction, cortical cultures
+
+### Ravine Analysis for Quantum Cost Landscapes
+- [[ravine-quantum-cost-landscape]] - Exploiting ravine structures in VQA optimization (arXiv: 2607.01329)
+  - Ravines in quantum cost landscapes enable improved VQA predictions
+  - Better optimization strategies via ravine geometry analysis
+  - **Activation**: quantum cost landscape, VQA optimization, ravine analysis, parameter optimization
+
+### Frozen Rate Operator Connectome Analysis
+- [[frozen-rate-operator-connectome]] - Connectome rate operator from larval connectome (arXiv: 2606.17745)
+  - Degree/weight govern gross response, exact wiring governs routing
+  - Calyx decorrelation is threshold-driven
+  - **Activation**: connectome analysis, frozen rate operator, mushroom body, input routing
+
+### Logarithmic Negativity Entanglement Cost
+- [[logarithmic-negativity-entanglement-cost]] - LN equals exact entanglement cost (arXiv: 2607.01320)
+  - Logarithmic negativity typically equals exact entanglement cost
+  - Practical entanglement quantification tool
+  - **Activation**: entanglement cost, logarithmic negativity, quantum resource theory
+
+
+
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### NeuroCogMap Reveals Cognitive Organization of Large Language Models
