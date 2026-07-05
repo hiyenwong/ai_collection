@@ -28,6 +28,24 @@
 
 ### Logarithmic Negativity Entanglement Cost
 - [[logarithmic-negativity-entanglement-cost]] - LN equals exact entanglement cost (arXiv: 2607.01320)
+
+### Quantum Opinion Dynamics on Networks
+- [[quantum-opinion-dynamics-networks]] - Quantum cognitive modeling with density matrices and non-commuting operators (arXiv: 2607.01452)
+  - Agent cognitive states as density matrices encode both opinion and ambivalence
+  - Non-commuting survey operators explain order effects in responses
+  - **Activation**: quantum opinion dynamics, cognitive ambivalence, order effects, density matrix cognition
+
+### Quantum Emotional Memory Tensor Networks
+- [[quantum-emotional-memory-tensor-networks]] - Tensor network for order-dependent emotional memory modeling (arXiv: 2606.28470)
+  - Valence-informed tensor networks achieve 77.98% accuracy on children's memory tasks
+  - Memory for item depends on valence of surrounding items in sequence
+  - **Activation**: emotional memory, tensor network, order-dependent memory, valence modeling
+
+### Quantum Fast-Weight Memory Gates
+- [[quantum-fast-weight-memory-gates]] - Bounded self-modulating QFWP for stable quantum sequence modeling (arXiv: 2607.02363)
+  - Sign-preserving tanh gates prevent long-sequence divergence in quantum RNNs
+  - Old-state modulation is key mechanism for improvement over standard QFWP
+  - **Activation**: quantum fast weight, QFWP, bounded memory gate, quantum sequence modeling
   - Logarithmic negativity typically equals exact entanglement cost
   - Practical entanglement quantification tool
   - **Activation**: entanglement cost, logarithmic negativity, quantum resource theory
