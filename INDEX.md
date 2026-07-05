@@ -3140,3 +3140,11 @@
   - Post-quantum security from information-theoretic hardness of underdetermined linear systems
   - **Activation**: equation asymmetry, EAD framework, information-theoretic security, secrecy capacity, covertness, 方程不对称度, 信息论安全
 
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Round 3)
+
+### On the emergence of quantum many-body chaos for tunably-broken integrability
+- [[integrability-breaking-quantum-chaos]] - Quantitative theory for integrability-to-chaos transition in free fermion circuits doped with tunable integrability-breaking gates; OTOC crossover analysis with butterfly velocity extraction (arXiv: 2607.02506)
+  - Free fermion circuit model doped with integrability-breaking gates as local hotspots
+  - OTOC characteristics: butterfly velocity, front broadening, characteristic time/length scales
+  - **Activation**: integrability breaking quantum chaos, OTOC crossover free fermion, butterfly velocity quantum circuit, quantum many-body chaos transition
