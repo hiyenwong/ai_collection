@@ -27,7 +27,39 @@
   - 核心要点：Links individual neuron tuning to population-level dynamical modes
   - **Activation**: driada, cross-scale neural analysis, single-neuron selectivity, population dynamics, neural toolkit, neural data analysis pipeline
 
-### Mean-Field Theory of Oscillatory Low-Rank RNNs
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-brain-imaging]] - Technology-independent bound on MEG information capacity from quantum sensing + metabolic constraints (arXiv: 2511.06401)
+  - 核心要点：Bound factorizes into geometry × metabolism × Planck's constant (~2.2 Mbit/s)
+  - 核心要点：Quantum noise floor defines information-theoretic Nyquist scale (~1cm spatial limit)
+  - **Activation**: metabolic quantum limit, MEG information capacity, quantum sensing bounds, brain imaging limits, spatio-temporal trade-off, neural current metabolism
+
+### Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder
+- [[quantum-autoencoder-anomaly-detection]] - QAE with trash qubits for anomaly detection via compression resistance in brain MRI (arXiv: 2606.27411)
+  - 核心要点：Slice-level ROC-AUC ~0.95, encoder-decoder asymmetry drives detection
+  - 核心要点：Spatially localized anomaly heatmaps aligned with tumorous regions
+  - **Activation**: quantum autoencoder, anomaly detection, trash qubits, compression-driven detection, brain MRI, QAE medical imaging
+
+### Hybrid Classical-Quantum (HCQ) Alzheimer Classification via Supervised β-VAE and Quantum Kernels
+- [[hcq-alzheimer-classification-vae-quantum-kernels]] - End-to-end supervised VAE + quantum kernel SVM for AD classification from 3D MRI (arXiv: 2606.14194)
+  - 核心要点：72.1% accuracy, 0.799 AUC on ADNI-1; quantum kernel on disease-aware features
+  - 核心要点：Cross-fold variance halved with stability-enhanced variant
+  - **Activation**: HCQ pipeline, Alzheimer classification, quantum kernel SVM, supervised VAE, disease-aware features, medical imaging classification
+
+### A Controlled Benchmark of Quantum-Latent GAN Augmentation for Brain MRI
+- [[quantum-gan-benchmark-controlled-evaluation]] - Rigorous benchmark showing quantum generators match classical but don't exceed (arXiv: 2606.18970)
+  - 核心要点：Matched parameters (1648 vs 1632); no augmentation beats real-data-only training
+  - 核心要点：Low-data benefit acts as regularization, not faithful data expansion
+  - **Activation**: quantum GAN benchmark, controlled evaluation, matched parameters, medical augmentation, quantum vs classical comparison
+
+### Modelling Emotional Memory in Children with Tensor Networks
+- [[tensor-network-emotional-memory-modeling]] - Tensor networks achieve 77.98% accuracy in modeling order-dependent emotional memory (arXiv: 2606.28470)
+  - 核心要点：Order-dependence depends on valence of preceding and following items
+  - 核心要点：Massive accuracy increase over standard psychological models
+  - **Activation**: tensor network memory, emotional memory, order-dependent cognition, quantum-inspired modeling, valence factoring, children memory assessment
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Round 2)
 - [[mean-field-oscillatory-low-rank-rnn]] - Mean-field theory for low-rank recurrent networks with activity-dependent adaptation, revealing oscillations, chaos, and multistability regimes (arXiv: 2606.30366)
   - 核心要点：Low-rank structure + adaptation interaction produces rich dynamical regimes
   - 核心要点：Bifurcation analysis maps transitions between fixed points, oscillations, and chaos
