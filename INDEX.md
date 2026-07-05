@@ -9,6 +9,12 @@
   - 核心要点：Comprehensive auditing pipeline covering hallucination, bias, refusal, sycophancy, memory
   - **Activation**: neurocogmap, cognitive mapping, LLM cognitive audit, parcel annotation, functional correspondence, hallucination detection, bias evaluation, LLM interpretability
 
+### One More Time: Revisiting Neural Quantum States from a Reinforcement Learning Perspective
+- [[pwo-trust-region-nqs-optimization]] - Proximal Wavefunction Optimization (PWO) trust-region algorithm for training billion-parameter Neural Quantum States without matrix inversion (arXiv: 2607.02292)
+  - 核心要点：将变分能量最小化重构为Born分布上的优势策略梯度问题，结合概率比裁剪和相位增量限制
+  - 核心要点：避免显式矩阵求逆，样本可跨多次更新复用，扩展到1.5B参数RWKV-7模型
+  - **Activation**: proximal wavefunction optimization, PWO trust-region, neural quantum state training, NQS optimization, trust-region quantum, 神经量子态优化, 信任区域量子优化
+
 ### Stationary Covariance Spectra of Discrete-Time Non-Normal Random Recurrent Dynamics
 - [[free-probability-rnn-spectral-analysis]] - Free probability approach deriving closed functional equations for stationary covariance spectra of random recurrent networks with non-normal weights (arXiv: 2606.31944)
   - 核心要点：Discrete-time admits closed scalar equation; continuous-time yields infinite Schwinger-Dyson hierarchy
