@@ -9,6 +9,13 @@
   - Linear probe recovers reference online-LMS trajectory from apical membrane at R² = 0.93
   - **Activation**: dendritic in-context learning, dendriCL, SNN ICL, online LMS, Widrow-Hoff, compartmental spiking, apical recurrence, Garg-2022 benchmark, seed-stable ICL
 
+### Electronic Bursting Neuron: Design, Equations and Hardware Implementation
+- [[electronic-bursting-neuron]] - PLL-based bursting electronic neuron using hybrid equation-to-circuit design methodology for simple, mathematically tractable neuromorphic hardware (arXiv: 2607.02122)
+  - Novel hybrid approach: start from phenomenological equations → adjust for circuit simplicity → implement hardware
+  - Phase-locked loop (PLL) architecture provides natural oscillatory bursting dynamics
+  - Enables mathematical analysis of both single neurons and small neural circuits
+  - **Activation**: electronic neuron, bursting neuron, phase-locked loop, PLL neuron, neuromorphic hardware, phenomenological modeling
+
 ### SABER: Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs
 - [[semantic-aligned-brain-network-hypergraphs]] - Framework that actively integrates LLM-derived semantics into brain network prediction via global self-attention, multi-scale hypergraphs, and decision-level semantic alignment (arXiv: 2607.01901)
   - ROI-level semantics incorporated via global self-attention to enrich node representations
