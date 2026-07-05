@@ -32,6 +32,18 @@
   - Practical entanglement quantification tool
   - **Activation**: entanglement cost, logarithmic negativity, quantum resource theory
 
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamic-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework for QRC linking predictive performance to energetic costs (arXiv: 2607.02157)
+  - Maps Holevo capacities to BKM geometric manifold, proves computational peak from spectral resonance
+  - Derives generalized Landauer bound for temporal processing; coherence amplifies prediction without extra work
+  - **Activation**: quantum reservoir thermodynamics, energy-efficient quantum learning, quantum critical resonance, Landauer bound temporal processing
+
+### Dendritic In-Context Learning in Spiking Neural Networks
+- [[dendritic-in-context-learning-snn]] - DendriCL: single-layer SNN implementing in-context learning via dendritic compartment dynamics (arXiv: 2607.02289)
+  - ICL requires neither attention, depth, nor inference-time plasticity — subthreshold dendritic dynamics suffice
+  - Seed-stable at super-dimensional Garg-2022 benchmark where Transformers fail
+  - **Activation**: dendritic in-context learning, DendriCL, compartmental spiking, online Widrow-Hoff LMS
+
 
 
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
