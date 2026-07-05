@@ -2911,3 +2911,13 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-07-05 - Information Science (Cron Job)
+
+### Equation Asymmetry: An Algebraic Framework for Unifying Secrecy and Covertness in Information-Theoretic Security
+- [[equation-asymmetry-information-security]] - EAD=1-r/n unifies secrecy and covertness; 7 schemes unified; post-quantum from underdetermined linear systems (arXiv: 2606.10374)
+  - EAD parameter simultaneously governs equivocation and detection error probability
+  - Complete achievability/converse proofs for secrecy capacity; strong converse on finite fields
+  - Post-quantum security from information-theoretic hardness of underdetermined linear systems
+  - **Activation**: equation asymmetry, EAD framework, information-theoretic security, secrecy capacity, covertness, 方程不对称度, 信息论安全
+
