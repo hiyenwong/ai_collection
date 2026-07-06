@@ -2,6 +2,19 @@
 
 ## 2026-07-06 - Neuroscience + Quantum Computing (Cron Job)
 
+### Quantum Structure in AI Language
+- [[quantum-structure-in-ai-language]] - Bell inequality violation and Bose-Einstein statistics in LLMs (arXiv: 2511.21731)
+  - LLMs exhibit non-classical probability models violating Kolmogorov axioms
+  - Word distributions follow Bose-Einstein rather than Maxwell-Boltzmann statistics
+  - Evidence for evolutionary convergence of human and artificial cognition
+  - **Activation**: quantum cognition LLM, Bell inequality language model, Bose-Einstein text statistics, non-classical probability AI
+
+### Quantum-Tunnelling Oscillators for Cognition (Sync Fix)
+- [[quantum-tunnelling-oscillators-cognition]] - Quantum-tunnelling oscillators model cognitive agents with context-dependent state transitions (arXiv: 2604.03940)
+  - Universal dynamical engine for optical illusion perception and group decision making
+  - Networked oscillators form quantum-cognitive neural systems
+  - **Activation**: quantum tunnelling oscillators, quantum cognition, context-dependent transitions, group decision making
+
 ### RL-Based Neural Quantum States Optimization
 - [[rl-nqs-optimization]] - Frame NQS optimization as RL for scalable wavefunction approximation (arXiv: 2607.02292)
   - Autoregressive sampling replaces MCMC for exact Born distribution
