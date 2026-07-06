@@ -2,6 +2,24 @@
 
 ## 2026-07-06 - Neuroscience + Quantum Computing (Cron Job)
 
+### Symmetry Exploitation in Quantum Reservoir Computing
+- [[qrc-symmetry-exploitation]] - Observable-orbit completion for symmetry-aligned QRC (arXiv: 2607.01187)
+  - Symmetric Hamiltonian alone insufficient — symmetry must be visible in measured feature map
+  - Observable-orbit completion aligns encoding, dynamics, measurement, and readout
+  - **Activation**: QRC symmetry, quantum reservoir symmetry, observable-orbit completion, cyclic forecasting quantum
+
+### Amplitude-Encoded Quantum Reservoir Protocol
+- [[amplitude-encoded-quantum-reservoir-protocol]] - Online QRC protocol with mid-circuit measurement and reset (arXiv: 2606.18991)
+  - Mid-circuit measurement+reset implements partial-trace dynamics for amplitude encoding
+  - Preserves online operation, avoids input buffering, linear runtime in time steps
+  - **Activation**: amplitude encoding quantum reservoir, mid-circuit measurement reset, online quantum processing
+
+### Quantum Digital Twin for Cognitive Memory
+- [[quantum-digital-twin-cognitive-memory]] - Unified framework combining QRC thermodynamics, tensor network emotional memory, and symmetry-aligned processing (multi-paper synthesis)
+  - Quantum coherence amplifies prediction without extra energy cost
+  - Tensor networks capture order-dependence that classical models miss
+  - **Activation**: quantum digital twin cognition, neuromorphic quantum memory, thermodynamic cognitive model
+
 ### Quantum Structure in AI Language
 - [[quantum-structure-in-ai-language]] - Bell inequality violation and Bose-Einstein statistics in LLMs (arXiv: 2511.21731)
   - LLMs exhibit non-classical probability models violating Kolmogorov axioms
