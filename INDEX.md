@@ -538,6 +538,11 @@
 
 ### Automated Logical Clifford Gadgets via Chain Maps
 - [[automated-logical-clifford-chain-maps]] - Automated framework for synthesizing inter-code logical CNOT circuits between arbitrary CSS codes using algebraic topology chain maps (arXiv: 2607.02482)
+- [[optimal-stellar-rank-photon-catalysis]] - Provably optimal generation of non-Gaussian quantum states (squeezed cat states) via photon catalysis, characterized using stellar rank formalism (arXiv: 2607.02427)
+  - Core要点: Stellar rank作为非高斯资源复杂度度量
+  - Core要点: 光子催化协议可实现恒星秩上限的最优保真度
+  - **Activation**: 恒星秩光子催化, 光子催化猫态生成, stellar rank photon catalysis, squeezed cat state generation
+
   - Chain maps provide universal language for logical gate synthesis across any CSS code family
   - Set of valid chain maps forms affine space over GF(2) enabling optimization
   - No manual code-specific gadget design needed — automatic from desired logical network
