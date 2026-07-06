@@ -2,6 +2,46 @@
 
 ## 2026-07-08 - Computer Science + Quantum Mechanics (Cron Job)
 
+### Ravines in Quantum Cost Landscapes: Opportunities for Improved VQA Predictions
+- [[quantum-cost-landscape-ravine-analysis]] - Ravine analysis methodology for VQA optimization using nudged elastic band (NEB) algorithm to find low-cost paths connecting local minima in quantum cost landscapes (arXiv: 2607.01329)
+  - NEB algorithm from theoretical chemistry adapted to trace ravine structures in quantum cost landscapes
+  - Ensemble prediction framework averaging QNNs along ravine paths outperforms naive quantum ensembles
+  - Resource-light pre-training metric (local-prediction variability) serves as strong VQA performance indicator
+  - Ravines persist across depth and qubit scaling; NEB approach accelerates convergence
+  - **Activation**: quantum cost landscape, NEB algorithm, ravine analysis, VQA optimization, quantum ensemble prediction, local-prediction variability, QNN ensembling
+
+### LLM-Based Agentic Systems for Quantum Application Generation (QPipe)
+- [[llm-agentic-quantum-application-generation]] - Multi-agent LLM architecture converting NL requirements into executable quantum workflows with 100% compilation and 96.7% execution rates (arXiv: 2607.00939)
+  - Six specialized agents: requirement parsing, formulation, code generation, review, execution, verification
+  - Generated quantum solutions outperform offline genetic algorithm baseline on test-optimization problems
+  - Ablation shows advantage depends on code-generation skills, task knowledge, review feedback, and multi-agent decomposition
+  - Average 260s generation time and 1.89M tokens per requirement
+  - **Activation**: QPipe, agentic quantum code generation, LLM quantum workflow, multi-agent quantum, NL-to-quantum, quantum test optimization
+
+### Benchmarking Quantum Software Testing with Scalable Quantum Programs (Qolumbina)
+- [[quantum-software-testing-benchmark]] - Benchmark infrastructure curating 40 scalable quantum programs with systematic selection, refactoring, specifications, unit tests, and standardized interfaces (arXiv: 2607.02029)
+  - QST-oriented criteria: functionality, output behavior, development complexity, quantum-specific execution complexity
+  - Demonstrates feasibility for execution-cost and fault-detection studies
+  - Identifies backend-dependent effects that influence QST result interpretation
+  - Supports scalability analysis beyond fixed-size circuit benchmarks
+  - **Activation**: Qolumbina, quantum software testing, QST benchmark, quantum test infrastructure, quantum testing scalability, backend-dependent testing
+
+### Auditing Empirical Comparisons in Quantum Software (CLAIMSTAB-QC)
+- [[quantum-empirical-comparison-audit]] - Source-bounded framework auditing empirical comparisons in quantum software; evaluated 455 claims from 119 papers revealing materialization gap (arXiv: 2607.00516)
+  - Records baselines, metrics, relations, admissible evidence; locks comparison design before outcomes
+  - Classifies reported directions as Sustained, Unresolved, or Reversed within locked audit scope
+  - Only 8 of 53 lockable designs had enough matched evidence for direct audit (2 Sustained, 4 Unresolved, 2 Reversed)
+  - Controlled diagnostics show simpler checks can preserve apparent directions that weaken under locked audit
+  - **Activation**: CLAIMSTAB-QC, empirical audit, quantum software comparison, reproducibility, locked audit design, materialization gap
+
+### Bridging Quantum Computing Paradigms: CV vs DV Comparison on Wafer-Map Defect Classification
+- [[quantum-paradigm-comparison-cv-dv]] - Controlled CV vs DV quantum paradigm comparison isolating quantum circuit as sole variable; CV achieves 18-point accuracy advantage over DV (arXiv: 2607.00961)
+  - Shared classical backbone (~4.3M params) with interchangeable quantum heads isolates quantum circuit as only variable
+  - CV accuracy 79.7% vs DV 61.6% at 4 qumodes/qubits on WM-811K wafer-map defect classification
+  - CV advantage sharpest on spatially localized Edge-Loc class (recall 0.66 vs ≤0.05)
+  - DV limitation is representational-capacity ceiling, not optimization failure
+  - **Activation**: CV-QNN, DV-QNN, quantum paradigm comparison, continuous-variable quantum, discrete-variable quantum, wafer-map classification, quantum head benchmark
+
 ### Hybrid Quantum Machine Learning Surrogate for LBM Collision Dynamics
 - [[quantum-lbm-surrogate]] - VQC with data re-uploading approximates non-unitary BGK collision dynamics across full relaxation range without retraining (arXiv: 2606.31351)
   - Parameterized quantum circuits implement partial Fourier series via data re-uploading
