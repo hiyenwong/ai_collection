@@ -11,7 +11,14 @@
   - **Activation**: quantum cost landscape, NEB algorithm, ravine analysis, VQA optimization, quantum ensemble prediction, local-prediction variability, QNN ensembling
 
 ### LLM-Based Agentic Systems for Quantum Application Generation (QPipe)
-- [[llm-agentic-quantum-application-generation]] - Multi-agent LLM architecture converting NL requirements into executable quantum workflows with 100% compilation and 96.7% execution rates (arXiv: 2607.00939)
+- [[qpipe-agentic-quantum-code-gen]] - Multi-agent LLM architecture converting NL requirements into executable quantum workflows with 100% compilation and 96.7% execution rates (arXiv: 2607.00939)
+  - 核心要点: Multi-agent decomposition (parsing, formulation, code gen, review, execution, verification)
+  - 核心要点: Generated solutions outperform offline genetic algorithm baseline
+  - **Activation**: qpipe, agentic quantum code generation, LLM quantum application
+- [[compound-pulse-gadget-synthesis]] - Holistic pulse synthesis bypassing gate-stitching for continuous compound pulse gadgets on trapped-ion hardware (arXiv: 2607.00826)
+  - 核心要点: GRAPE algorithm generates compound gadgets achieving significant temporal compression vs standard compilers
+  - 核心要点: Eliminates control-layer latency from discrete pulse lookup overhead
+  - **Activation**: compound pulse gadgets, GRAPE pulse engineering, holistic pulse synthesis
   - Six specialized agents: requirement parsing, formulation, code generation, review, execution, verification
   - Generated quantum solutions outperform offline genetic algorithm baseline on test-optimization problems
   - Ablation shows advantage depends on code-generation skills, task knowledge, review feedback, and multi-agent decomposition
