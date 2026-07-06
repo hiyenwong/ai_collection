@@ -62,6 +62,33 @@
   - Seed-stable at super-dimensional Garg-2022 benchmark where Transformers fail
   - **Activation**: dendritic in-context learning, DendriCL, compartmental spiking, online Widrow-Hoff LMS
 
+### QAE for Brain MRI Anomaly Detection
+- [[qae-mri-anomaly-detection]] - Quantum autoencoder for compression-driven anomaly detection in brain MRI achieving 0.95 slice-level ROC-AUC (arXiv: 2606.27411)
+  - Angle encoding maps image patches into quantum states with variational encoder-decoder
+  - Trash qubits absorb noise; anomaly score = resistance to compression
+  - Outperforms classical autoencoder and PCA baselines
+  - **Activation**: quantum autoencoder, brain MRI, anomaly detection, trash qubits, medical imaging
+
+### Quantum Structured Factorization for Tomography
+- [[quantum-structured-factorization-tomography]] - Unified Burer-Monteiro factorization framework for scalable quantum state tomography (arXiv: 2607.01608)
+  - Density matrix as FF† guarantees physical validity by construction
+  - Unifies low-rank, tensor network, and neural network approaches
+  - Enables scalable tomography in sample and parameter complexity
+  - **Activation**: quantum state tomography, structured factorization, Burer-Monteiro, density matrix, tensor network
+
+### Zero-Memory Quantum Dot Reservoir Computing
+- [[zero-memory-quantum-dot-reservoir]] - Engineers memory extrinsically in memoryless systems via spatial degrees of freedom (arXiv: 2606.29320)
+  - Space-time tradeoff substitutes temporal memory with spatial configurations
+  - Quantum dot discrete energy levels provide strong nonlinearity
+  - Enables ultra-low-power physical reservoir computers
+  - **Activation**: zero-memory reservoir, quantum dot, space-time tradeoff, neuromorphic computing, physical reservoir
+
+### Quantum Convolutional Autoencoder for Anomaly Detection
+- [[quantum-autoencoder-general-anomaly]] - QCNN-based autoencoder for reconstruction-based anomaly detection in time-series (arXiv: 2607.02135)
+  - Semi-supervised training on normal samples with reconstruction error as anomaly score
+  - Two architecture variants for different latent information treatment
+  - Applicable to scientific data analysis across domains
+  - **Activation**: quantum convolutional autoencoder, QCNN, anomaly detection, semi-supervised, time-series
 
 
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
