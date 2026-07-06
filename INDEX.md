@@ -1,5 +1,36 @@
 # AI Collection Index
 
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+
+### Coherence Law for Noisy Equivariant QNNs
+- [[coherence-law-noisy-equivariant-qnn]] - Proves sector coherence (not just symmetry) determines gradient survival under decoherence (arXiv: 2606.30688)
+  - Light-cone reduction bounds gradient location independent of total qubit count
+  - Readout-visible aligned coherence rate predicts gradient degradation (R² = 0.979)
+  - Correlated dephasing channel with near-zero aligned rate = no gradient loss
+  - **Activation**: coherence law, equivariant QNN trainability, sector coherence, noisy quantum gradient, U(1) equivariant circuit, quantum trainability law
+
+### DLA Framework for Expressivity-Trainability Paradox
+- [[expressivity-trainability-dla-qml]] - Dynamical Lie Algebra framework for navigating barren plateaus via geometric priors (arXiv: 2606.31536)
+  - Vast Hilbert space capacity is DIRECT cause of Barren Plateaus (quantum underfitting)
+  - Group-theoretic geometric priors restrict DLA to polynomial regime
+  - Trainability-by-Design: sacrifice raw capacity for guaranteed gradient-rich landscapes
+  - **Activation**: expressivity trainability paradox, dynamical lie algebra QML, barren plateau mitigation, trainability by design, quantum underfitting, geometric priors
+
+### Ravine Ensemble VQA Optimization
+- [[ravine-ensemble-vqa-optimization]] - NEB-based ensemble framework leveraging ravine structure in quantum cost landscapes (arXiv: 2607.01329)
+  - Nudged Elastic Band finds low-cost paths connecting local minima in QCLs
+  - Local-prediction variability (LPV) pre-screens ensemble candidates
+  - NEB ensembles outperform classical and naive quantum alternatives at lower cost
+  - **Activation**: ravine quantum cost landscape, NEB quantum ensemble, VQA prediction, local prediction variability, quantum ensemble optimization
+
+### DIC Neuron Reconstruction from Spike Times
+- [[dic-neuron-reconstruction-spike-times]] - Fast reconstruction of degenerate conductance-based neuron populations from spike times via DICs (arXiv: 2509.12783)
+  - Dynamic Input Conductances reduce complex CBMs to 3 interpretable feedback components
+  - Deep learning maps spike times to DIC densities to degenerate CBM populations
+  - Millisecond-scale reconstruction on standard hardware, robust to noise
+  - **Activation**: DIC neuron reconstruction, dynamic input conductance, degenerate neuron population, conductance-based model inference, spike time parameter inference, neuronal degeneracy
+
+
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Quantum MEG Information Limit
