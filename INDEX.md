@@ -2,6 +2,20 @@
 
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
 
+### Stable Self-Modulating Quantum Fast-Weight Programmers
+- [[self-modulating-quantum-fast-weight]] - Bounded old-state modulation stabilizes QFWP for long-sequence quantum sequence modeling (arXiv: 2607.02363)
+  - Temporal info stored in variational-circuit parameters not hidden states
+  - tanh gate on recurrent branch only removes long-sequence divergence
+  - Ablation reveals accumulated-memory modulation as key improvement source
+  - **Activation**: quantum fast weight, QFWP, quantum sequence modeling, bounded memory gate, quantum dynamics forecasting, self-modulating quantum
+
+### End-to-End Learning of Quantum Control on Latent Dynamical Manifold
+- [[quantum-control-latent-manifold]] - LSTM-based end-to-end quantum control learning joint dynamics and control in latent manifold (arXiv: 2606.27907)
+  - Replaces iterative simulate-then-optimize with single forward pass
+  - Maps initial states to both trajectories and optimized control pulses
+  - Reduces optimization cost by 3 orders of magnitude vs conventional methods
+  - **Activation**: end-to-end quantum control, latent manifold learning, quantum control LSTM, adiabatic speedup, spin chain state transfer
+
 ### Coherence Law for Noisy Equivariant QNNs
 - [[coherence-law-noisy-equivariant-qnn]] - Proves sector coherence (not just symmetry) determines gradient survival under decoherence (arXiv: 2606.30688)
   - Light-cone reduction bounds gradient location independent of total qubit count
