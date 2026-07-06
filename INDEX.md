@@ -37,6 +37,13 @@
   - Novel task protocol for exploring emotional temporal memory in children
   - **Activation**: tensor network emotional memory, emotional valence memory, order-dependent memory, quantum-inspired memory, children cognition
 
+### Coherence Law for Noisy Equivariant QNNs
+- [[coherence-law-noisy-equivariant-qnn]] - Coherence law determining gradient survival under decoherence (arXiv: 2606.30688)
+  - Readout-visible sector coherence determines trainability, not just symmetry structure
+  - Light-cone reduction pins gradient to sector-restricted cone with qubit-independent lower bound
+  - Gradient degradation follows single accumulated variable (R² = 0.979)
+  - **Activation**: coherence law trainability QNN, equivariant quantum noise, sector coherence gradient
+
 ### Ravines in Quantum Cost Landscapes
 - [[ravine-quantum-cost-landscape-ensemble]] - NEB-based ensemble prediction framework for VQA ravine structures (arXiv: 2607.01329)
   - Ravines are low-cost paths connecting local minima in quantum cost landscapes
