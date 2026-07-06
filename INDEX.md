@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-08 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Hybrid Quantum Machine Learning Surrogate for LBM Collision Dynamics
+- [[quantum-lbm-surrogate]] - VQC with data re-uploading approximates non-unitary BGK collision dynamics across full relaxation range without retraining (arXiv: 2606.31351)
+  - Parameterized quantum circuits implement partial Fourier series via data re-uploading
+  - Recovers complete BGK collision dynamics across all physically admissible relaxation parameters without retraining
+  - Validated on Taylor-Green vortex and double shear layer benchmarks; VQC expressibility directly correlates with surrogate accuracy
+  - **Activation**: quantum surrogate LBM, quantum fluid dynamics, quantum collision operator, quantum PDE solver, VQC expressibility, data re-uploading quantum, quantum BGK collision
+
 ## 2026-07-07 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
