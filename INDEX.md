@@ -3166,3 +3166,17 @@
   - Free fermion circuit model doped with integrability-breaking gates as local hotspots
   - OTOC characteristics: butterfly velocity, front broadening, characteristic time/length scales
   - **Activation**: integrability breaking quantum chaos, OTOC crossover free fermion, butterfly velocity quantum circuit, quantum many-body chaos transition
+
+### ReContext: Recursive Evidence Replay as LLM Harness for Long-Context Reasoning
+- [[recursive-evidence-replay-reasoning]] - Training-free inference method mapping LLM attention to associative memory: context=memory store, query=retrieval cue, attention=cue-trace association, replay=trace reactivation (arXiv: 2607.02509)
+  - Recursive evidence pool construction from model-internal relevance signals
+  - Separates evidence organization from answer generation without training or context pruning
+  - Theoretical framework bridges LLM mechanisms with neuroscience associative memory theory
+  - **Activation**: recursive evidence replay, long-context reasoning, associative memory LLM, context retrieval, trace reactivation
+
+### Probabilistic Memory for Trustworthy Edge Intelligence
+- [[probabilistic-memory-trustworthy-edge]] - Unified memory primitive (p-MEM) storing distribution parameters and sampling at native memory bandwidth, achieving 1000+ GSa/s/mm² GRNG throughput (arXiv: 2607.02465)
+  - Probabilistic computation for uncertainty quantification, robustness, and privacy at the edge
+  - Deterministic data becomes zero-variance special case in probabilistic memory framework
+  - 295.5x/3.53x energy reduction for Bayesian neural network workloads on CPU/GPU
+  - **Activation**: probabilistic memory edge, p-MEM hardware, GRNG throughput, Bayesian neural network energy
