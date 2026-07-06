@@ -29,6 +29,23 @@
   - Tensor networks capture order-dependence that classical models miss
   - **Activation**: quantum digital twin cognition, neuromorphic quantum memory, thermodynamic cognitive model
 
+### Tensor Network Emotional Memory
+- [[tensor-network-emotional-memory]] - Tensor network methodology for modeling order-dependent emotional memory in children (arXiv: 2606.28470)
+  - Emotional valence of surrounding items affects recall of target items in sequence
+  - Tensor network model achieves 77.98% accuracy vs. low accuracy of standard psychological models
+  - Classical tensor networks capture order-dependence that classical psychological models miss
+  - Novel task protocol for exploring emotional temporal memory in children
+  - **Activation**: tensor network emotional memory, emotional valence memory, order-dependent memory, quantum-inspired memory, children cognition
+
+### Ravines in Quantum Cost Landscapes
+- [[ravine-quantum-cost-landscape-ensemble]] - NEB-based ensemble prediction framework for VQA ravine structures (arXiv: 2607.01329)
+  - Ravines are low-cost paths connecting local minima in quantum cost landscapes
+  - NEB (nudged elastic band) algorithm identifies ravine structures in QCLs
+  - Ensemble prediction by averaging QNNs along low-cost NEB path outperforms naive ensembling
+  - Resource-light pre-training metric quantifies local-prediction variability
+  - **Activation**: quantum cost landscape ravines, VQA ensemble prediction, NEB quantum optimization, QNN ravine structure
+
+
 ### Quantum Structure in AI Language
 - [[quantum-structure-in-ai-language]] - Bell inequality violation and Bose-Einstein statistics in LLMs (arXiv: 2511.21731)
   - LLMs exhibit non-classical probability models violating Kolmogorov axioms
