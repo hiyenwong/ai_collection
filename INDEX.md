@@ -3501,3 +3501,17 @@
   - Deterministic data becomes zero-variance special case in probabilistic memory framework
   - 295.5x/3.53x energy reduction for Bayesian neural network workloads on CPU/GPU
   - **Activation**: probabilistic memory edge, p-MEM hardware, GRNG throughput, Bayesian neural network energy
+
+## 2026-07-07 - Computer Science + Quantum (Cron Job)
+
+### Recovery Algorithm for Correlated Errors in Permutation-Invariant Quantum Codes
+- [[permutation-invariant-qec-recovery]] - Channel-aware quantum error recovery for permutation-invariant codes under correlated amplitude-damping noise; CAD4/CAD9 code families with low-overhead coherent recovery circuits (arXiv: 2607.02346)
+  - QER uses noise channel knowledge to find optimal recovery maps, exceeding standard QEC fidelity
+  - CAD9 outperforms existing codes by >10x; CAD4 uses only 10 system/ancilla gates
+  - **Activation**: permutation invariant quantum code, PI code recovery, correlated error correction, amplitude damping recovery, CAD code, quantum error recovery, coherent recovery map
+
+### Spatially Coupled MacKay-Neal/Hsu-Anastasopoulos CSS Codes Achieve the Quantum-Erasure Hashing Bound by Seeded BP Decoding
+- [[spatially-coupled-quantum-codes]] - Density evolution proof that seeded BP decoding on spatially coupled CSS codes achieves the quantum erasure hashing bound using coupled-vector potential method (arXiv: 2606.32001)
+  - Five-message DE recursion decomposed into Z-side and X-side constituent systems
+  - Coupled-vector potential proves BP threshold = MAP threshold (hashing bound) for equal-rate case
+  - **Activation**: spatially coupled quantum code, spatial coupling CSS, quantum erasure hashing bound, seeded belief propagation, MN/HA CSS code, coupled vector potential, density evolution quantum
