@@ -1,6 +1,14 @@
 # AI Collection Index
 
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Mesoscopic Linear Statistics for Two Ensembles of Quantum Graphs
+- [[mesoscopic-quantum-graph-statistics]] - Proves variance of linear spectral statistics coincides with GOE/GUE in large graph limit (arXiv: 2607.02356)
+  - Two ensembles: random graph sampling and Haar measure unitary sampling
+  - Mesoscopic scale variance converges to Gaussian Orthogonal/Unitary Ensemble
+  - Applications in quantum chaos detection and random matrix universality
+  - **Activation**: mesoscopic statistics, quantum graphs, random graph ensemble, spectral variance, GOE, GUE
 
 ### Stable Self-Modulating Quantum Fast-Weight Programmers
 - [[self-modulating-quantum-fast-weight]] - Bounded old-state modulation stabilizes QFWP for long-sequence quantum sequence modeling (arXiv: 2607.02363)
