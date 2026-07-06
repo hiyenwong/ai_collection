@@ -2,6 +2,22 @@
 
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
+### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
+- [[behaviorvlm-quantum-behavioral]] - Unified VLM framework for pose estimation and behavioral understanding using quantum-dot-grounded data, no finetuning required (arXiv: 2603.12176)
+  - Quantum-dot-grounded behavioral data for pose estimation
+  - Deep embedded clustering + VLM captioning + LLM reasoning for behavior discovery
+  - Label-light, scalable multi-animal behavioral analysis
+  - **Activation**: behavior VLM, quantum dot behavior, pose estimation, animal behavior analysis, label-light behavioral understanding, multi-animal tracking
+
+### Metabolic Quantum Limit to MEG Information Capacity
+- [[metabolic-quantum-meg]] - Technology-independent bound on MEG information capacity from quantum sensor energy resolution + neural metabolic power (arXiv: 2511.06401)
+  - Maximum information rate ~2.2 Mbit/s for human brain parameters
+  - Spatial resolution limit ~1 cm (information-theoretic Nyquist scale)
+  - Fundamental spatio-temporal trade-off from quantum-limited noise floor
+  - **Activation**: quantum limit, MEG, magnetoencephalography, metabolic bound, information capacity, quantum sensor, Planck constant, spatio-temporal trade-off
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
 ### Metabolic quantum limit to the information capacity of magnetoencephalography
 - [[metabolic-quantum-limit-meg]] - Derives technology-independent bound on MEG information capacity from quantum sensor energy resolution + neural metabolic power (arXiv: 2511.06401)
   - Maximum information rate ~2.2 Mbit/s for human brain parameters
