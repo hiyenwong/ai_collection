@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Quantum MEG Information Limit
+- [[quantum-meg-information-limit]] - Quantum-limited information capacity analysis for MEG brain imaging (arXiv: 2511.06401)
+  - Combines Planck's constant, metabolic power, and geometric constraints to derive 2.2 Mbit/s bound
+  - Information-limited spatial scale of ~1 cm, effectively finite-dimensional measurement space
+  - Spatio-temporal bandwidth tradeoff due to quantum-limited noise variance
+  - **Activation**: quantum MEG, MEG information capacity, brain imaging quantum limits, metabolic quantum limit, magnetoencephalography
+
 ## 2026-07-06 - Neuroscience + Quantum Computing (Cron Job)
 
 ### Symmetry Exploitation in Quantum Reservoir Computing
