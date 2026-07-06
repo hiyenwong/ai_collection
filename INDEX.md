@@ -2,6 +2,30 @@
 
 ## 2026-07-06 - Neuroscience + Quantum Computing (Cron Job)
 
+### RL-Based Neural Quantum States Optimization
+- [[rl-nqs-optimization]] - Frame NQS optimization as RL for scalable wavefunction approximation (arXiv: 2607.02292)
+  - Autoregressive sampling replaces MCMC for exact Born distribution
+  - Local spin updates as RL actions with energy reduction as reward
+  - **Activation**: neural quantum states, RL optimization, autoregressive sampling, variational Monte Carlo
+
+### NQS Mechanistic Interpretability
+- [[nqs-mechanistic-interpretability]] - SAE analysis of NQS internal representations and causal feature steering (arXiv: 2607.01336)
+  - Sparse autoencoders extract interpretable physical concepts from NQS
+  - Causal feature steering enables controlled quantum property manipulation
+  - **Activation**: sparse autoencoders, mechanistic interpretability, feature steering, topological order
+
+### Quantum GAN Controlled Benchmarking
+- [[quantum-gan-benchmarking]] - Rigorous benchmark for quantum generative models in medical image augmentation (arXiv: 2606.18970)
+  - Parameter-budget matched comparison between quantum and classical generators
+  - Multi-run statistical evaluation across data regimes
+  - **Activation**: quantum GAN, controlled benchmark, medical image augmentation, statistical evaluation
+
+### Dendritic In-Context Learning SNN
+- [[dendritic-icl-snn]] - Dendritic computation enables in-context learning in spiking neural networks (arXiv: 2607.02289)
+  - Biological dendritic gating implements attention-like mechanisms
+  - Event-driven ICL without transformer architecture
+  - **Activation**: dendritic computation, in-context learning, spiking neural networks, neuromorphic computing
+
 ### TRIBE fMRI Encoding Validation
 - [[tribe-fmri-encoding-validation]] - Brain-encoding model validation against behavioral engagement (arXiv: 2607.01400)
   - TRIBE model predictions don't correlate with replay heatmaps
