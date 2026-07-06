@@ -23,6 +23,30 @@
   - Addresses expressivity-learnability tradeoff in quantum kernel methods
   - **Activation**: quantum kernel bandit, projected quantum kernel, Gaussian process quantum, expressivity learnability quantum
 
+### Trainability-by-Design via Dynamical Lie Algebra Constraints
+- [[dla-trainability-by-design]] - Trainability-by-Design methodology for scalable QML using DLA constraints to guarantee gradient-rich landscapes while avoiding barren plateaus (arXiv: 2606.31536)
+  - Unstructured PQCs suffer from quantum underfitting via expressivity-trainability paradox
+  - DLA algebraic dimension directly determines optimization dynamics (exponential → barren plateaus)
+  - Embedding symmetry-preserving geometric priors restricts DLA to polynomial regime
+  - Accepts reduced memorization capacity for guaranteed scalable training
+  - **Activation**: trainability by design, DLA quantum architecture, expressivity-trainability paradox, polynomial DLA regime, symmetry-preserving quantum circuit
+
+### QML Transfer Learning for NLP
+- [[qml-transfer-learning]] - Hybrid quantum-classical transfer learning achieving 15% accuracy improvement on spam classification (66%→81%) when transferring from sentiment analysis (arXiv: 2607.01943)
+  - Hybrid models match classical baseline on source task but outperform on transfer task
+  - Quantum layers provide richer representational capacity for generalization
+  - TF-IDF features → hybrid (classical + PQC) → classification pipeline
+  - Shallow PQC (1-3 layers) essential to avoid barren plateaus
+  - **Activation**: quantum transfer learning, QML generalization, hybrid NLP quantum, quantum sentiment analysis, parameterized quantum circuit NLP
+
+### GQML Toolbox for Graph Problems
+- [[gqml-graph-models-toolbox]] - Geometric QML design toolbox for n-node graphs encoded in n-qubit states with equivariant layers and classical pre-training strategies (arXiv: 2607.00698)
+  - Comprehensive characterization of quantum graph model constituents
+  - Equivariant quantum layers respecting graph symmetries via commutation with automorphism group
+  - Classical pre-training enables effective initialization of quantum graph models
+  - Expressivity extension methods at virtually no cost
+  - **Activation**: quantum graph learning, GQML graph models, equivariant quantum graph, n-qubit graph encoding, classical pretraining quantum
+
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
