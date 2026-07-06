@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-07-07 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
+- [[optimal-stabilizer-testing-limited-memory]] - Sample complexity bounds for stabilizer state testing and learning under k-qubit memory constraints, showing testing-vs-learning separation collapses (arXiv: 2607.02444)
+  - Testing requires Θ(n-k) copies, learning requires Θ(n²/k) copies with k-qubit memory
+  - Testing-vs-learning separation lost under memory constraints
+  - Models realistic NISQ-era limitations on coherent quantum memory
+  - **Activation**: stabilizer testing, limited quantum memory, stabilizer learning, quantum state testing, sample complexity quantum
+
+### Stable Self-Modulating Quantum Fast-Weight Programmers with Bounded Memory Gates
+- [[stable-self-modulating-quantum-fwps]] - Quantum sequence modeling via variational circuit parameters with bounded tanh gating to prevent divergence in long sequences (arXiv: 2607.02363)
+  - QFWPs store temporal info in dynamically programmed variational circuit parameters
+  - Bounded old-state modulation using sign-preserving tanh gate prevents long-sequence divergence
+  - Evaluated on CUDA-Q quantum dynamics forecasting and Milan SMS prediction
+  - **Activation**: quantum fast-weight programmer, QFWP, bounded memory gate, quantum sequence modeling, variational circuit memory
+
+### Balancing Expressivity and Learnability in Quantum Kernel Bandit Optimization
+- [[quantum-kernel-bandit-optimization]] - Projected quantum kernels and classical approximations for GP bandit optimization that reduce feature dimensionality while preserving quantum properties (arXiv: 2607.01080)
+  - Projected quantum kernels reduce dimensionality while preserving key quantum correlations
+  - Classical kernel approximations capture essential quantum structure with lower cost
+  - Addresses expressivity-learnability tradeoff in quantum kernel methods
+  - **Activation**: quantum kernel bandit, projected quantum kernel, Gaussian process quantum, expressivity learnability quantum
+
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
