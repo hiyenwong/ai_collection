@@ -1,6 +1,42 @@
 # AI Collection Index
 
-## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Hourly)
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-meg]] - Derives technology-independent bound on MEG information capacity from quantum sensor energy resolution + neural metabolic power (arXiv: 2511.06401)
+  - Maximum information rate ~2.2 Mbit/s for human brain parameters
+  - Spatial resolution limit ~1 cm (information-theoretic Nyquist scale)
+  - Fundamental spatio-temporal trade-off from quantum-limited noise floor
+  - **Activation**: quantum limit, MEG, magnetoencephalography, metabolic bound, information capacity, quantum sensor, Planck constant, spatio-temporal trade-off
+
+### CV-versus-DV Quantum Neural Networks for Wafer-Map Defect Classification
+- [[cv-qnn-spatial-classification]] - Controlled comparison showing CV-QNN outperforms DV-QNN by 18 points on wafer-map defect classification (arXiv: 2607.00961)
+  - CV head reaches 79.7% vs DV 61.6% at 4 qumodes/qubits
+  - Structured CV layer captures fine spatial distinctions better than DV
+  - Training curves show DV limitation is representational ceiling, not optimization failure
+  - **Activation**: CV versus DV quantum, continuous variable QNN, discrete variable QNN, wafer map classification, quantum spatial encoding, Fock cutoff
+
+### Parameter-Efficient CV Photonic QNN for Edge AI
+- [[cv-photonic-qnn-edge-ai]] - Simplified CV-QNN architecture cuts parameters 40-45% while matching or exceeding full layer performance (arXiv: 2606.28252)
+  - Φ∘D∘U₁ architecture with 18 parameters achieves highest AUC on oral cancer detection
+  - Dimensionality reduction + encoding restriction mitigate barren plateaus
+  - Room-temperature photonic backend suitable for edge deployment
+  - **Activation**: photonic QNN, continuous variable edge AI, parameter efficient quantum, oral cancer detection, Kerr gates, barren plateau mitigation
+
+### Neural-Network Inverse Design of SRF Cavities for Bosonic Quantum Computation
+- [[neural-inverse-design-srf-cavity]] - DNN approaches for inverse design of SRF cavities and transmons targeting specific electromagnetic parameters (arXiv: 2607.02289)
+  - Recovers cavity designs within ~5% and transmon designs within ~2% of targets
+  - Fast alternative to iterative simulation for scaling quantum architectures
+  - Maps desired device behavior directly to candidate geometries
+  - **Activation**: inverse design quantum, SRF cavity, transmon qubit, bosonic quantum computation, neural network device design, electromagnetic optimization
+
+### When AI meets Quantum Information: Comprehensive Review
+- [[ai-quantum-comprehensive-review]] - Survey of AI-for-QI and QI-for-AI interfaces covering measurement, algorithm discovery, hardware stabilization, and quantum-enhanced learning (arXiv: 2607.00365)
+  - AI for QI: measurement extraction, algorithm discovery, hardware stabilization, workflow automation
+  - QI for AI: algorithmic speedups, expressivity, trainability, generalization, neural network design
+  - Cross-cutting challenges: reproducibility, scalability, hardware realism, co-design
+  - **Activation**: AI quantum intersection, quantum information review, quantum machine learning survey, quantum algorithm discovery, quantum hardware AI
+
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Mesoscopic Linear Statistics for Two Ensembles of Quantum Graphs
