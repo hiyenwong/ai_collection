@@ -1,6 +1,51 @@
 # AI Collection Index
 
-## 2026-07-07 - Computer Science + Quantum Mechanics (Cron Job)
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Canonical quantization of neurons
 - [[canonical-quantization-neurons]] - Systematic canonical quantization procedure for constructing quantum neuron models from classical energy+activation composition (arXiv: 2607.05000)
@@ -100,7 +145,52 @@
   - Validated on Taylor-Green vortex and double shear layer benchmarks; VQC expressibility directly correlates with surrogate accuracy
   - **Activation**: quantum surrogate LBM, quantum fluid dynamics, quantum collision operator, quantum PDE solver, VQC expressibility, data re-uploading quantum, quantum BGK collision
 
-## 2026-07-07 - Computer Science + Quantum Mechanics (Cron Job)
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
 - [[optimal-stabilizer-testing-limited-memory]] - Sample complexity bounds for stabilizer state testing and learning under k-qubit memory constraints, showing testing-vs-learning separation collapses (arXiv: 2607.02444)
@@ -3565,7 +3655,52 @@
   - 295.5x/3.53x energy reduction for Bayesian neural network workloads on CPU/GPU
   - **Activation**: probabilistic memory edge, p-MEM hardware, GRNG throughput, Bayesian neural network energy
 
-## 2026-07-07 - Computer Science + Quantum (Cron Job)
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum (Cron Job)
 
 ### Recovery Algorithm for Correlated Errors in Permutation-Invariant Quantum Codes
 - [[permutation-invariant-qec-recovery]] - Channel-aware quantum error recovery for permutation-invariant codes under correlated amplitude-damping noise; CAD4/CAD9 code families with low-overhead coherent recovery circuits (arXiv: 2607.02346)
@@ -3609,7 +3744,52 @@
   - Absolute Bloch drift discriminates anomalies; consecutive drift is random
   - **Activation**: spectral geometry quantum learning, bosonic interference probe, Bloch-space drift, quantum autoencoder diagnostics
 
-## 2026-07-07 - Computer Science + Quantum (Cron Job)
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum (Cron Job)
 
 ### Partially-Blind Single-Qubit Classification over a Prototype Hybrid Quantum Network
 - [[partially-blind-single-qubit-classification]] - Single-qubit classifiers with blind quantum computation for privacy-preserving delegated ML on untrusted quantum networks (arXiv: 2607.01998)
