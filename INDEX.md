@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-07-08 - Neuroscience Research (Cron Job - Wavelet Scattering EEG)
+
+### Wavelet Scattering Transform for Interpretable Schizophrenia Biomarker Discovery
+- [[wavelet-scattering-schizophrenia-eeg-biomarker]] - 多阶小波散射变换(WST)框架用于静息态EEG精神分裂症生物标志物发现与分类 (arXiv: 2607.05282)
+  - 核心要点 1: 二阶散射系数（编码跨频率耦合）主导判别性生物标志物，gamma频段特征最突出；电极P3为最具判别力位点
+  - 核心要点 2: 严格LOSO交叉验证下Random Forest达90.48%准确率(AUC=0.9339, 灵敏度95.56%)，克服epoch级数据泄露问题
+  - **Activation**: wavelet scattering transform, schizophrenia EEG biomarker, cross-frequency coupling, LOSO cross-validation, gamma-band, resting-state EEG
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Beyond DSA: Conjugacy-based Comparison of Dynamical Systems
