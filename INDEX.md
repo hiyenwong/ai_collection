@@ -2,6 +2,14 @@
 
 ## 2026-07-07 - Computer Science (Cron Job)
 
+### Canonical Quantization of Neurons
+- [[canonical-quantization-neurons]] - Systematic canonical quantization procedure applied to neural network primitives — replacing classical energy functions with quantum Hamiltonians (arXiv: 2607.05000)
+  - Neurons viewed as composition of energy function and activation function, quantized via matrix functional calculus
+  - Activation observable measurable on input quantum states; hybrid quantum-classical training algorithms
+  - Enhanced expressive capabilities vs classical neurons on representative learning tasks
+  - **Activation**: canonical quantization neurons, quantum neuron, activation observable, power of one qumode, Schroedingerization, quantum function approximation, matrix functional calculus
+
+
 ### Quantum Spectral Anomaly Detection
 - [[quantum-spectral-anomaly-detection]] - Computing PCA-like anomaly scores directly from quantum state spectrum without explicit eigenvector recovery (arXiv: 2607.05307)
   - Temperature-controlled spectral threshold replaces hard PCA rank selection with smooth filtering
