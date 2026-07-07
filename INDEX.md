@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit-assignment]] - 树突分支与分流抑制如何重塑局部信用分配的几何结构 (arXiv: 2607.03556)
+  - 精确梯度分解为局部资格项 × 区室误差项，将局部学习转化为信用信号压缩问题
+  - 分流抑制通过重塑区室误差场匹配全局/低秩反馈，在 MNIST 上仅比反向传播低 5-6 个百分点
+  - **Activation**: dendritic computation, credit assignment, shunting inhibition, local learning, synaptic plasticity, E/I balance
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[biophysical-hh-model-neurostimulation]] - 从细胞外 MEA 数据学习 Hodgkin-Huxley 生物物理模型以预测神经刺激响应 (arXiv: 2607.04063)
+  - 可微分生物物理模拟 + 基于模拟的推断，仅需几分钟记录即可预测数小时的刺激测试
+  - 在离体猕猴视网膜 512 电极阵列上实现 90.6% 预测精度 (ICML 2026)
+  - **Activation**: Hodgkin-Huxley, neurostimulation, multi-electrode array, differentiable simulation, biophysical modeling, neural prosthesis
+
 ## 2026-07-07 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
