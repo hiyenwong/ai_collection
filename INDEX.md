@@ -14,6 +14,26 @@
   - 核心要点 2: 在per-soma 5F反馈下，shunting LocalCA在MNIST上仅比反向传播低5-6个百分点
   - **Activation**: dendritic computation, credit assignment, shunting inhibition, local learning, E/I balance, conductance-based models
 
+### Distance by De-correlation: Computing Distance with Heterogeneous Grid Cells
+- [[decorrelation-grid-cell-distance]] - 网格细胞群体活动去相关编码距离的数学理论，揭示异质性在空间导航中的作用 (arXiv: 2511.08292)
+  - 核心要点 1: 网格细胞群体的小异质性(~5-10% CV)使距离编码通过活动模式去相关实现
+  - 核心要点 2: 存在非直觉的"sweet spot"——某些较远距离比较近距离编码更好
+  - 核心要点 3: 编码范围与可区分性之间存在权衡，测量的异质性水平接近最优
+  - **Activation**: grid cells, distance coding, de-correlation, medial entorhinal cortex, navigation, population coding, heterogeneity, spatial navigation, place cells, path integration
+
+### On a Geometry of Interbrain Networks
+- [[interbrain-networks-geometry]] - 使用离散几何和曲率分布分析社交互动中脑间网络的几何框架 (arXiv: 2509.10650)
+  - 核心要点 1: 超越传统相关性同步度量，通过曲率分布的熵指标识别网络连通性的关键转变
+  - 核心要点 2: 离散几何方法捕获社交交换中神经相互作用的动态重配置
+  - **Activation**: inter-brain networks, hyperscanning, social neuroscience, discrete geometry, curvature, network topology, synchrony, social interaction, EEG, fNIRS
+
+### Microsecond-precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[sound-localization-equilibrium-dynamics]] - 微秒级声源定位从慢平衡动力学中涌现，ITD作为神经群体动力学的稳定平衡点 (arXiv: 2607.03890)
+  - 核心要点 1: ITD表示为神经群体动力学的稳定平衡点，而非经典Jeffress位置编码
+  - 核心要点 2: 跨频率通道的兴奋/抑制相互作用产生群体信号驱动动力学系统趋向ITD平衡点
+  - 核心要点 3: 尽管依赖较慢的时间动力学，模型实现微秒级精度并重现关键生理观察
+  - **Activation**: sound localization, ITD, equilibrium dynamics, neural population, binaural perception, Jeffress model, auditory neuroscience, interaural time difference
+
 ## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly (Latest)
 
 ### Comprehensive Quantum Medical Imaging Patterns
