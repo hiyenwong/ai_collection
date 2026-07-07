@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Event-Driven Fly-Inspired Visual Motion Detection
+- [[event-driven-fly-inspired-motion-detection]] - Event-driven framework for fly-inspired visual motion detection using event cameras and biologically structured neural computation (arXiv: 2607.05205)
+  - 核心要点 1: Integrates event-based sensing with fly optic-lobe neural network for efficient motion detection
+  - 核心要点 2: Training-free, parameter-efficient architecture suitable for real-time embedded systems
+  - **Activation**: event-camera, neuromorphic-vision, fly-vision, motion-detection, bio-inspired-vision
+
+### GelNeuro: Neuromorphic Tactile System for Texture Recognition
+- [[gelneuro-neuromorphic-tactile-system]] - Fully integrated sensing-computing neuromorphic visuo-tactile system for texture recognition on edge hardware (arXiv: 2607.05241)
+  - 核心要点 1: Direct GelSight Mini to Speck2f SoC integration achieves 96.3% accuracy with 19.6 mW power
+  - 核心要点 2: Hardware-aware weight clamping strategy maintains performance under 8-bit quantization
+  - **Activation**: neuromorphic-tactile, tactile-sensing, texture-recognition, edge-neuromorphic, spiking-convolutional
+
 ### Parameter-Efficient CV-QNN for Edge Medical AI
 - [[cv-qnn-edge-medical-imaging]] - CV photonic QNN with 40-45% fewer params for room-temperature edge medical classification (arXiv: 2606.28252)
   - 核心要点 1: 简化Φ∘D∘U₁架构比标准CV-QNN减少40-45%参数，4 qumodes时性能更优
