@@ -63,6 +63,13 @@
   - 可微分生物物理模拟 + 基于模拟的推断，仅需几分钟记录即可预测数小时的刺激测试
   - 在离体猕猴视网膜 512 电极阵列上实现 90.6% 预测精度 (ICML 2026)
   - **Activation**: Hodgkin-Huxley, neurostimulation, multi-electrode array, differentiable simulation, biophysical modeling, neural prosthesis
+### Diffusion Learning Reveals Viable Parameter Manifolds and Compensation Geometry
+- [[diffusion-learning-viable-parameter-manifolds]] - 使用扩散模型学习生物动力学系统中的可行参数流形和补偿几何结构 (arXiv: 2607.03671)
+  - 将可行参数集形式化为参数到特征映射的逆像，有效秩（而非特征数量）决定流形维度
+  - 条件扩散模型作为摊销采样器，探索 E-I 补偿、时间尺度-耦合权衡等补偿几何
+  - 应用于 Izhikevich 神经元（4 个放电描述符→近 2D 流形）和脉冲网络 ODE 约化
+  - **Activation**: viable parameter manifold, compensation geometry, diffusion models, parameter degeneracy, neural dynamics, E-I balance, timescale tradeoffs, biological system identification
+
 
 ## 2026-07-07 - Neuroscience Research (Cron Job)
 
@@ -3909,3 +3916,4 @@
   - 核心要点 1: 首次系统化基准，化学直觉+量子信息理论选择活性空间
   - 核心要点 2: 双评估维度：化学精度(能量误差) + 架构指标(电路深度/参数数)
   - **Activation**: VQE活性空间, 量子药物发现基准, UCCSD评估, HEA ansatz, 分子模拟基准
+
