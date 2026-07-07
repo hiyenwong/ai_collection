@@ -3548,3 +3548,33 @@
   - Five-message DE recursion decomposed into Z-side and X-side constituent systems
   - Coupled-vector potential proves BP threshold = MAP threshold (hashing bound) for equal-rate case
   - **Activation**: spatially coupled quantum code, spatial coupling CSS, quantum erasure hashing bound, seeded belief propagation, MN/HA CSS code, coupled vector potential, density evolution quantum
+
+### HamQASBench: Hamiltonian-Informed Diagnostic Benchmark for QAS
+- [[hamqasbench-hamiltonian-qas-benchmark]] - Hamiltonian-structured QAS benchmark organizing molecules into 5 tiers via Pauli fingerprints, detecting failure modes invisible to energy metrics (arXiv: 2607.04845)
+  - Critical-structure extraction identifies minimal circuits per tier
+  - Detects over-parameterization, eigenstate commitment, representation bottlenecks, topology routing failures
+  - **Activation**: QAS benchmark, Hamiltonian structure analysis, quantum architecture search evaluation, circuit structure diagnostics
+
+### Benchmarking API Drift in LLM-Generated Quantum Code
+- [[quantum-api-drift-benchmark]] - First benchmark measuring LLM quantum code version fidelity across SDK versions (Qiskit v0.43/1.3/2.0); documentation-guided repair success rates (arXiv: 2607.04072)
+  - Diagonal Pass@1 ranges 0.02-0.85 across 17 models
+  - Stronger models fail at deprecation level; weaker at import level
+  - **Activation**: quantum API drift, SDK version testing, LLM quantum code evaluation, Qiskit version compatibility
+
+### Self-Specializing VLM Transmon Chip Calibration
+- [[vlm-transmon-calibration]] - VLM agent closes transmon calibration loop end-to-end with physics-grounded simulation and gradient-free online adaptation via device notes (arXiv: 2607.03193)
+  - Wall-time-scaled drift, flux-line distortion, gate leakage in simulation
+  - CZ fidelity 0.678→0.913 with single accepted device note
+  - **Activation**: transmon calibration, VLM calibration agent, gradient-free online adaptation, superconducting qubit tuning
+
+### COMET: Constraint-Preserving QAOA for CRISPR
+- [[comet-constraint-preserving-qaoa]] - XY-mixer enforces one-hot constraints by construction in QAOA for CRISPR gene editing; >95% optimum vs <6% for penalty methods (arXiv: 2607.02622)
+  - No penalty coefficient tuning needed with structural constraint enforcement
+  - Hardware gap |ΔE| ≤ 0.8 for XY-mixer vs up to 53.9 for penalty variants
+  - **Activation**: constraint-preserving QAOA, XY-mixer optimization, CRISPR quantum optimization, penalty-free QUBO
+
+### Spectral Geometry and Bosonic-Bloch Probes for Quantum Learning
+- [[spectral-geometry-quantum-learning]] - Spectral geometry framework diagnosing QML via bosonic interference probes, Bloch-space drift anomaly detection (ROC-AUC ≥0.9), and QFI geometry (arXiv: 2607.00063)
+  - Bosonic enhancement correlates with Fiedler edge split (r=-0.50)
+  - Absolute Bloch drift discriminates anomalies; consecutive drift is random
+  - **Activation**: spectral geometry quantum learning, bosonic interference probe, Bloch-space drift, quantum autoencoder diagnostics
