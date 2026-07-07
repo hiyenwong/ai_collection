@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-07-08 - Medicine + Quantum Research (Cron Job - Hourly Batch)
+
+### Multi-Class Neurological Disorder Prediction with Tensor Network Feature Engineering
+- [[tensor-network-neurological-predictor]] - PARAFAC CP tensor decompositions inspired by QNN for 8-class neurological disorder diagnosis on 55,160 MRI images (arXiv: 2605.17771)
+  - 核心要点 1: PARAFAC CP张量分解在嵌套5折交叉验证下对8类神经系统疾病实现强验证性能
+  - 核心要点 2: 量子启发经典框架通过数学映射QNN架构到CP分解，保留诊断特征同时降维
+  - **Activation**: PARAFAC CP tensor, neurological disorder prediction, MRI classification, quantum-inspired classical
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+- [[hybrid-quantum-classical-feature-fusion-medical]] - 温度缩放混合融合(TSHF)策略解决量子-经典优化不对称，BreastMNIST达87.82%准确率 (arXiv: 2604.22903)
+  - 核心要点 1: 三种渐进融合策略：SHF(离线)、DHF(端到端)、TSHF(可学习温度标量平衡梯度)
+  - 核心要点 2: TSHF+ResNet+可训练量子电路实现F1=91.77%, AUC=89.08%，超越纯经典基线
+  - **Activation**: temperature-scaled hybrid fusion, TSHF, quantum-classical feature fusion, BreastMNIST, hybrid QNN medical
+
+### HQNN for Breast Cancer Thermographic Classification
+- [[hqnn-medical-image-classification]] - 4量子比特变分电路+多头注意力的热成像乳腺癌分类 (arXiv: 2604.16953)
+  - 核心要点 1: 参数化量子电路结合多头注意力实现量子感知特征编码
+  - 核心要点 2: 经典模拟展示量子优势证据，为NISQ设备部署建立框架
+  - **Activation**: HQNN thermographic, breast cancer quantum, multi-head attention quantum, variational quantum circuit medical
+
+### Quantum-Enhanced Tensor-Network Frontends for Federated Medical Diagnosis
+- [[tensor-network-frontend-quantum-medical]] - 张量网络前端+量子增强处理器实现隐私感知联邦医疗诊断 (arXiv: 2604.01616)
+  - 核心要点 1: 客户端张量网络压缩(MPS/TTN/MERA)保护隐私，量子增强处理器精炼分类
+  - 核心要点 2: 面向IEEE QCE 2026提交，联邦学习场景下的量子隐私保护新范式
+  - **Activation**: tensor-network federated, quantum privacy medical, federated quantum diagnosis, MPS TTN MERA compression
+
 ## 2026-07-08 - Neuroscience Research (Cron Job - Wavelet Scattering EEG)
 
 ### Wavelet Scattering Transform for Interpretable Schizophrenia Biomarker Discovery
