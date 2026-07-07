@@ -103,6 +103,18 @@
   - Expressivity extension methods at virtually no cost
   - **Activation**: quantum graph learning, GQML graph models, equivariant quantum graph, n-qubit graph encoding, classical pretraining quantum
 
+### LACUNA: LLM Unlearning Localization Testbed
+- [[lacuna-llm-unlearning-testbed]] - First unlearning testbed with ground-truth parameter-level localization showing SOTA unlearning methods are imprecise and susceptible to resurfacing attacks (arXiv: 2607.02513)
+  - Injects synthetic PII into predefined model parameters via masked continual pretraining for direct evaluation
+  - When localization succeeds, simple gradient-based unlearning achieves strong erasure and resurfacing robustness
+  - **Activation**: LLM unlearning, knowledge erasure, parameter localization, resurfacing attack, PII removal, gradient-based unlearning
+
+### Online Safety Monitoring for LLMs
+- [[online-safety-monitoring-llm]] - Simple real-time safety monitor using external verifier signals with risk-calibrated thresholding, competitive with sequential hypothesis testing (arXiv: 2607.02510)
+  - External verifier scores outputs in real-time, threshold calibrated via risk control raises alarms when safety degrades
+  - Simple design competitive with advanced sequential hypothesis testing approaches
+  - **Activation**: LLM safety monitoring, deployment safety, verifier thresholding, risk control, unsafe output detection
+
 ## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
