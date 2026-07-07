@@ -1,5 +1,36 @@
 # AI Collection Index
 
+## 2026-07-07 - Agentic AI Research (Cron Job)
+
+### Agentic SABRE: An Uncertainty-Aware Neuro-Symbolical Multi-Agent Framework for Adaptive Ransomware Detection
+- [[agentic-sabre-ransomware-detection]] - Uncertainty-aware neuro-symbolic multi-agent framework fusing semantic + behavioural evidence with Monte Carlo Dropout epistemic uncertainty, risk-uncertainty orchestrator for auto-contain vs human escalation, post-hoc explainability (arXiv: 2607.04292)
+  - Dual-agent evidence fusion: semantic representation agent + behavioural forensic telemetry agent
+  - Monte Carlo Dropout for per-agent epistemic uncertainty quantification
+  - Risk-uncertainty orchestrator with two thresholds: auto-contain (high risk, low uncertainty), escalate (high risk, high uncertainty), pass, monitor
+  - Post-hoc explainability: gradient saliency, permutation importance, counterfactual analysis
+  - AUC = 1.0 on RDset/RanSMAP, 4.9% relative reduction in false escalations at equal recall
+  - **Activation**: agentic SABRE, ransomware detection, neuro-symbolic security, Monte Carlo Dropout uncertainty, multi-agent threat detection, concept drift, risk-uncertainty triage, counterfactual security
+
+### When LLMs Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning
+- [[llm-symbolic-communication-multi-agent]] - CLSR framework where LLM agents autonomously invent/evolve compact Language Symbolism Frameworks (LSFs), latent-free router selects/composes per query, 3-6x token reduction vs CoT (arXiv: 2606.29354)
+  - Language Symbolism Frameworks: compact symbols + usage rules + message-passing contracts as reusable protocols
+  - Evolutionary loop driven by correctness and token cost fitness signals
+  - Latent-free router: single LSF call (easy), ensemble (medium), multi-round composition (hard)
+  - Information-theoretic lower bound on token cost under arbitrary symbolism
+  - Interpreter-realizability premise: multi-round LSF protocols conditionally subsume program-execution pipelines
+  - 3-6x reduction in latency-oriented tokens while maintaining accuracy; code at github.com/pzqpzq/LSF_MDia
+  - **Activation**: CLSR, language symbolism routing, symbolic communication, multi-agent reasoning, token efficiency, CoT compression, evolutionary language protocol, LSF
+
+### PDEFlow: Autonomous Agentic PDE Pipelines for Neural Operator Learning and Solving
+- [[pdeflow-autonomous-agentic-pde-pipelines]] - Agentic framework turning NL ODE/PDE descriptions into solver-backed neural-operator pipelines: specification → FEniCSx data gen → operator training → checkpoint inference (arXiv: 2607.05134)
+  - Stateful input graph converts multi-turn NL input + user edits into validated PDE specifications
+  - Data generation: parameter sampling + FEniCSx finite-element solver → operator-ready tensors
+  - Registry-based operator interface: pluggable neural operators (DeepONet, FNO) without pipeline changes
+  - Instantiated with multi-branch Bayesian DeepONet for uncertainty-quantified predictions
+  - Checkpoint-based inference: solver-free predictions from trained operators
+  - Validated on benchmark ODE/PDE tasks (steady-state and transient)
+  - **Activation**: PDEFlow, autonomous PDE pipeline, agentic scientific workflow, neural operator, Bayesian DeepONet, FEniCSx, operator learning, solver-free prediction
+
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network

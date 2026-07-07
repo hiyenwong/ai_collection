@@ -1,4 +1,31 @@
 {
+  "2607.04292": {
+    "title": "Agentic SABRE",
+    "file": null,
+    "keywords": ["agentic", "ransomware-detection", "neuro-symbolic", "uncertainty-quantification", "multi-agent", "Monte-Carlo-Dropout", "concept-drift", "post-hoc-explainability"],
+    "utility": 0.9,
+    "skillCreated": "agentic-sabre-ransomware-detection",
+    "lastAccessed": "2026-07-07",
+    "category": "security-privacy"
+  },
+  "2606.29354": {
+    "title": "When LLMs Develop Languages (CLSR)",
+    "file": null,
+    "keywords": ["multi-agent", "symbolic-communication", "token-efficiency", "evolutionary-protocol", "CoT-compression", "LLM-reasoning"],
+    "utility": 0.85,
+    "skillCreated": "llm-symbolic-communication-multi-agent",
+    "lastAccessed": "2026-07-07",
+    "category": "multi-agent-rl"
+  },
+  "2607.05134": {
+    "title": "PDEFlow",
+    "file": null,
+    "keywords": ["agentic", "neural-operator", "PDE", "ODE", "DeepONet", "FEniCSx", "scientific-workflow", "autonomous"],
+    "utility": 0.85,
+    "skillCreated": "pdeflow-autonomous-agentic-pde-pipelines",
+    "lastAccessed": "2026-07-07",
+    "category": "multi-agent-rl"
+  },
   "2401.13996": {
     "title": "ICE Strategy",
     "file": "self-evolution-2026-03-06.md",
