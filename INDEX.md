@@ -26,6 +26,30 @@
   - 核心要点 2: 需多次运行评估而非单次训练，需表征量子优势出现的数据区域
   - **Activation**: 量子GAN, 数据增强, 基准测试, 脑MRI
 
+### Quantum Entanglement PET Imaging
+- [[quantum-entanglement-pet]] - 量子纠缠PET成像方法论，利用J-PET扫描仪测量湮灭光子偏振纠缠度作为新型组织表征生物标志物 (arXiv: 2606.29421, 2606.25804)
+  - 核心要点 1: 塑料闪烁体Compton效应可同时测量光子位置/时间和偏振平面
+  - 核心要点 2: 纠缠度介于最大纠缠态和可分离态之间，提供额外诊断维度
+  - **Activation**: 量子纠缠成像, J-PET, PET, 偏振纠缠, 湮灭光子, 生物标志物
+
+### Quantum Autoencoder Anomaly Detection
+- [[quantum-autoencoder-anomaly-detection]] - 量子自编码器压缩驱动异常检测，角度编码+垃圾量子位实现可解释医学影像分析 (arXiv: 2606.27411)
+  - 核心要点 1: 变分编解码器训练压缩正常数据，异常数据抵抗压缩产生高分
+  - 核心要点 2: 比黑盒分类器更可解释，适用于低数据场景
+  - **Activation**: 量子自编码器, 异常检测, 脑MRI, 角度编码, 垃圾量子位
+
+### Quantum Ophthalmology
+- [[quantum-ophthalmology]] - 量子眼科四大方向：光子限制视网膜成像、关联成像、纳米光学探针、量子极限视觉感知 (arXiv: 2606.19238)
+  - 核心要点 1: 人眼天然对单光子敏感，量子技术可实现亚衍射视网膜成像
+  - 核心要点 2: NV中心和量子点实现分子级疾病标志物检测
+  - **Activation**: 量子眼科, 视网膜成像, 单光子视觉, 纳米探针, 光学相干断层扫描
+
+### Post-Quantum IoMT Security
+- [[post-quantum-iot-healthcare]] - 医疗设备后量子密码迁移框架，NIST PQC (ML-KEM+ML-DSA) + 边缘联邦学习安全 (arXiv: 2606.14515)
+  - 核心要点 1: 资源受限IoT设备需优化PQC操作，混合过渡到完全部署
+  - 核心要点 2: PQC + 差分隐私 + 联邦学习三层安全架构
+  - **Activation**: 后量子医疗, IoMT安全, 联邦学习, NIST PQC, ML-KEM, ML-DSA
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment

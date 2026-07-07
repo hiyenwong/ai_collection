@@ -1,40 +1,41 @@
 ---
 name: quantum-autoencoder-anomaly-detection
-description: Quantum autoencoder (QAE) for compression-driven anomaly detection in medical imaging using trash qubits and encoder-decoder asymmetry (arXiv:2606.27411)
-category: quantum-medical
+description: Quantum autoencoder (QAE) methodology for compression-driven anomaly detection in medical imaging, using angle encoding and trash qubits
+category: medical
+trigger_words: quantum autoencoder, anomaly detection, quantum MRI, angle encoding, trash qubits, variational quantum circuit
 ---
 
-# Quantum Autoencoder for Compression-Driven Anomaly Detection
+# Quantum Autoencoder Anomaly Detection Methodology
 
-Methodology from arXiv:2606.27411 (June 2026). Quantum autoencoder for anomaly detection in brain MRI data.
+## Core Technique
+**Source**: arXiv:2606.27411 - "Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder"
 
-## Core Pattern
+## Key Innovation
+Train a quantum autoencoder to compress normal data into fewer qubits. Anomalies resist compression → higher anomaly scores.
 
-QAE leverages **angle encoding** to map image patches into quantum states, followed by a **variational encoder-decoder architecture** trained to discard information via **auxiliary trash qubits**. Anomaly scores reflect the degree to which inputs resist compression relative to normal data — higher scores = deviations from the learned normal manifold.
+## Implementation Pattern
+1. **Encoding**: Angle encoding maps image patches into quantum states
+2. **Architecture**: Variational encoder-decoder circuit
+3. **Trash Qubits**: Auxiliary qubits for discarding redundant information
+4. **Training**: Optimize compression of normal data
+5. **Inference**: Anomaly score = resistance to compression
 
-## Key Findings
+## Mathematical Framework
+- Normal data → high compression → low anomaly score
+- Anomalous data → low compression → high anomaly score
+- More interpretable than black-box classifiers
 
-- **Slice-level ROC-AUC ~0.95**, patch-level ROC-AUC ~0.813 — outperforms classical autoencoder and PCA baselines
-- **Encoder-decoder asymmetry**: effective anomaly detection arises from structured information compression within the encoder, not increased parameter magnitude or decoder expressivity
-- Produces **spatially localized anomaly heatmaps** aligned with tumorous regions
-- Controlled **compression-reconstruction trade-off** with clear operating regime for principled threshold selection
+## Applications
+- Brain tumor detection
+- Pathology screening
+- Medical image quality control
+- Any domain where normal data dominates
 
-## Implementation Steps
+## Design Principles
+1. Compression-driven approach is inherently interpretable
+2. Works well in low-data regimes where classical models overfit
+3. Quantum advantage emerges from expressive Hilbert space
+4. Trash qubits provide explicit information bottleneck
 
-1. Encode image patches into quantum states via angle encoding
-2. Train variational encoder-decoder with trash qubits to discard redundant information
-3. Compute anomaly scores as compression resistance relative to normal data manifold
-4. Apply threshold from compression-reconstruction trade-off curve
-5. Generate spatially localized anomaly heatmaps from reconstruction residuals
-
-## When to Use
-
-- Anomaly detection in medical imaging (MRI, CT, etc.)
-- Scenarios needing interpretable anomaly localization
-- Cases where quantum advantage may arise from structured compression
-- Quality control and outlier detection in imaging pipelines
-
-## References
-
-- arXiv: 2606.27411v1
-- Authors: Santanu Ganguly, Xing Liang, Dimitrios Makris
+## Activation
+Keywords: quantum autoencoder, anomaly detection, quantum MRI, angle encoding, trash qubits, variational quantum circuit, medical imaging AI
