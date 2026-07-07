@@ -1,6 +1,21 @@
 # AI Collection Index
 
-## 2026-07-07
+## 2026-07-07 - Computer Science (Cron Job)
+
+### Quantum Spectral Anomaly Detection
+- [[quantum-spectral-anomaly-detection]] - Computing PCA-like anomaly scores directly from quantum state spectrum without explicit eigenvector recovery (arXiv: 2607.05307)
+  - Temperature-controlled spectral threshold replaces hard PCA rank selection with smooth filtering
+  - Sample complexity independent of data dimension; measurement-based detector
+  - Works as quantum-kernel anomaly detection and order-parameter-free phase transition detection
+  - **Activation**: QSPADE, quantum spectral anomaly, quantum PCA, temperature spectral threshold, quantum anomaly detection, spectral filtering
+
+### Direct On-Policy Distillation (Direct-OPD)
+- [[direct-on-policy-distillation]] - Weak-to-strong generalization by transferring RL-induced policy shifts as implicit reward signals (arXiv: 2607.05394)
+  - Computes policy shift (post-RL/pre-RL log-ratio) as dense implicit reward for stronger student
+  - Qwen3-1.7B: 48.3% → 62.4% on AIME 2024 in 4 hours on 8 A100s
+  - No explicit reward model needed; enables sequential composition of policy shifts
+  - **Activation**: Direct-OPD, on-policy distillation, weak-to-strong generalization, policy distillation, RLVR, implicit reward
+
 ### High-Performance NTT Accelerators for PQC
 - [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
   - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
