@@ -1,5 +1,37 @@
 # AI Collection Index
 
+## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly
+
+### Quantum Entangled PET Imaging (Compton Events)
+- [[quantum-entangled-pet-imaging]] - 首次临床相关活动下量子纠缠Compton事件PET成像，利用湮灭光子量子关联提升空间分辨率 (arXiv: 2606.25804)
+  - 核心要点 1: 湮灭光子对保持量子纠缠，Compton散射保留可用于改进成像的量子关联
+  - 核心要点 2: 在标准临床PET示踪剂剂量下实现首次成像结果，兼容现有PET基础设施
+  - **Activation**: quantum PET, entangled Compton, quantum imaging, quantum tomography, PET coincidence, quantum medical imaging
+
+### Quantum Kurtosis-Difference Imaging
+- [[quantum-kurtosis-imaging]] - 基于峰度差加权协方差的量子成像方法，实现40倍加速采集，CNR>7 (arXiv: 2606.31005)
+  - 核心要点 1: 峰度差作为四阶统计量有效区分配对像素对，即使相关系数低时仍有效
+  - 核心要点 2: 5000帧即可达到CNR>7，标准协方差方法<2，无需精确校准相关中心
+  - **Activation**: kurtosis difference, quantum imaging, SPDC imaging, correlated photon, fourth-order statistics
+
+### QNN Clinical Data Imputation
+- [[qnn-clinical-data-imputation]] - 量子神经网络在真实硬件上可扩展训练并应用于临床数据缺失值填补 (arXiv: 2606.03517)
+  - 核心要点 1: 量子电路直接捕获临床数据中的高维非线性关系
+  - 核心要点 2: 硬件感知训练考虑设备噪声、连接性和门保真度
+  - **Activation**: quantum neural network training, clinical data imputation, QNN clinical, on-hardware QNN, quantum healthcare data
+
+### Quantum Spectral Anomaly Detection (QSPADE)
+- [[quantum-spectral-anomaly-detection]] - 使用量子谱方法计算类PCA异常分数，实现高维数据高效异常检测 (arXiv: 2607.05307)
+  - 核心要点 1: 量子相位估计提取协方差矩阵主成分，指数级加速特征值分解
+  - 核心要点 2: 重构保真度低表明异常样本，适用于医疗诊断和金融欺诈检测
+  - **Activation**: quantum spectral anomaly, QSPADE, quantum PCA, anomaly detection quantum, quantum eigenvalue
+
+### LLM-as-a-Verifier Framework
+- [[llm-as-general-verifier]] - LLM作为验证器的通用验证框架，使用概率验证和多轮自纠正提高输出可靠性 (arXiv: 2607.05391)
+  - 核心要点 1: 生成与验证分离，支持自验证/交叉验证/集成验证/工具增强验证
+  - 核心要点 2: 概率置信度校准，多轮迭代纠正，适用于代码/数学/推理任务
+  - **Activation**: LLM verifier, self-verification, probabilistic verification, LLM self-correction, verification framework
+
 ## 2026-07-08 - Medical + Quantum Research (Cron Job)
 
 ### First-in-human quantum entanglement imaging
