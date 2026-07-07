@@ -14,6 +14,22 @@
   - 核心要点 2: 在per-soma 5F反馈下，shunting LocalCA在MNIST上仅比反向传播低5-6个百分点
   - **Activation**: dendritic computation, credit assignment, shunting inhibition, local learning, E/I balance, conductance-based models
 
+## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly (Latest)
+
+### Comprehensive Quantum Medical Imaging Patterns
+- [[quantum-medical-imaging-patterns]] - 量子医学成像四大模式：纠缠PET成像、连续变量光量子边缘AI、量子自编码器异常检测、受控生成模型基准测试 (arXiv: 2606.29421, 2606.28252, 2606.27411, 2606.25804, 2606.18970, 2606.16309, 2606.01110)
+  - 核心要点 1: J-PET首次人体量子纠缠成像——湮灭光子偏振纠缠度可作为新型生物标志物
+  - 核心要点 2: CV光量子QNN仅需18参数即超越55参数经典基线，室温部署无需低温
+  - 核心要点 3: 量子自编码器异常检测slice-level ROC-AUC~0.95，产生空间定位异常热图
+  - 核心要点 4: 受控基准显示量子/经典生成器统计不可区分，低数据收益表现为正则化而非真实数据扩展
+  - **Activation**: quantum entanglement imaging, J-PET, CV-QNN edge AI, quantum autoencoder anomaly detection, controlled quantum benchmark, quantum PET imaging, parameter-efficient QNN, quantum medical imaging patterns
+
+### Post-Quantum IoMT Security Framework
+- [[quantum-iomt-security]] - 医疗设备后量子安全框架：NIST PQC (ML-KEM+ML-DSA)迁移、边缘原生联邦学习安全、Kubernetes编排 (arXiv: 2606.14515)
+  - 核心要点 1: 分布式密码处理显著降低延迟，在树莓派测试床上验证可行性
+  - 核心要点 2: PQC+联邦学习+差分隐私三层安全架构应对HNDL威胁
+  - **Activation**: IoMT post-quantum security, PQC medical devices, edge federated learning, Kubernetes orchestration, NIST PQC migration, ML-KEM, ML-DSA, quantum-resilient healthcare
+
 ## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly
 
 ### Quantum Entangled PET Imaging (Compton Events)
