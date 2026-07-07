@@ -123,29 +123,85 @@ Then create a Pull Request on GitHub.
 
 ### Skill Categories
 
-| Category | For skills about... |
-|----------|-------------------|
-| `agent-tools` | Agent frameworks, CLI tools, workflow utilities |
-| `ai-safety-eval` | AI safety, alignment, evaluation, benchmarks |
-| `data-retrieval` | Data pipelines, search, retrieval, RAG |
-| `deployment-optimization` | MLOps, model serving, quantization, compression |
-| `general-ml` | General ML/DL concepts, training, optimization |
-| `healthcare-bio` | Medical AI, bioinformatics, drug discovery |
-| `knowledge-graph` | KG construction, graph neural networks, ontology |
-| `multi-agent-rl` | Multi-agent systems, reinforcement learning, robotics |
-| `neuroscience` | Brain networks, EEG, cognitive science, neuroimaging |
-| `nlp-llm` | Language models, transformers, NLP tasks |
-| `other` | Uncategorized or cross-disciplinary skills |
-| `physics-math` | Physics-informed ML, mathematical methods, complex systems |
-| `quantum` | Quantum computing, quantum ML, quantum sensing |
-| `reasoning-bayesian` | Bayesian inference, causal reasoning, uncertainty |
-| `security-privacy` | Cryptography, privacy, adversarial ML, compliance |
-| `signal-control-systems` | Signal processing, control theory, time series |
-| `software-engineering` | Code generation, dev tools, testing, infrastructure |
-| `spiking-neuromorphic` | SNNs, neuromorphic computing, spike-based models |
-| `vision-generative` | Computer vision, generative models, GANs, diffusion |
+Skills are organized into **31 category subdirectories** under `collection/skills/`. Each new skill MUST be placed in the appropriate category directory, not in the root `collection/skills/` directory.
 
-**Category selection rule:** Place the skill in the most specific matching category. For cross-disciplinary skills (e.g., quantum + neuroscience), prefer the more specific domain category. If unsure, use `other`.
+#### Category Directory Structure
+
+```
+collection/skills/
+├── neuroscience/          # Brain networks, EEG, cognitive science, neuroimaging
+├── quantum/               # Quantum computing, quantum ML, quantum sensing
+├── spiking-neuromorphic/  # SNNs, neuromorphic computing, spike-based models
+├── ai-ml/                  # General AI/ML topics not covered by a specific category
+├── general-ml/            # General ML/DL concepts, training, optimization
+├── nlp-llm/               # Language models, transformers, NLP tasks
+├── multi-agent-rl/        # Multi-agent systems, reinforcement learning, robotics
+├── signal-control-systems/ # Signal processing, control theory, time series
+├── physics-math/          # Physics-informed ML, mathematical methods, complex systems
+├── reasoning-bayesian/    # Bayesian inference, causal reasoning, uncertainty
+├── vision-generative/     # Computer vision, generative models, GANs, diffusion
+├── ai-safety-eval/        # AI safety, alignment, evaluation, benchmarks
+├── security-privacy/      # Cryptography, privacy, adversarial ML, compliance
+├── healthcare-bio/        # Medical AI, bioinformatics, drug discovery
+├── finance/               # Financial data, stock analysis, quantitative methods
+├── data-retrieval/        # Data pipelines, search, retrieval, RAG
+├── deployment-optimization/ # MLOps, model serving, quantization, compression
+├── software-engineering/  # Code generation, dev tools, testing, infrastructure
+├── tools-frameworks/      # CLI tools, IDE integrations, workflow utilities
+├── knowledge-graph/       # KG construction, graph neural networks, ontology
+├── systems-engineering/   # System design, MBSE, requirements engineering
+├── control-systems/       # Control theory, MPC, feedback systems
+├── reinforcement-learning/ # RL-specific skills (algorithms, training)
+├── agent-tools/           # Agent frameworks, agent utilities
+├── math-statistics/       # Pure math, statistics, probability
+├── medical/               # Clinical AI, medical imaging, diagnostics
+├── memory/                # Memory systems, continual learning, forgetting
+├── continual-learning/    # Continual/lifelong learning methods
+├── skill-rag-indexer/     # Skill indexing, RAG for skills
+├── chat-history-lancedb/  # Chat history storage, vector DB
+├── other/                 # Uncategorized or cross-disciplinary skills
+└── README.md              # Skills documentation
+```
+
+#### Category Selection Rules
+
+1. **Never place skills in the root `collection/skills/` directory.** Always use a category subdirectory.
+2. **Use `scripts/classify_skills.py` to auto-classify** if unsure:
+   ```bash
+   python scripts/classify_skills.py  # runs classification on all flat skills
+   ```
+   The script uses keyword matching on the skill name to determine the category.
+3. **First match wins.** The classification rules are ordered by specificity. For cross-disciplinary skills (e.g., quantum + neuroscience), the first matching category in the rules list takes precedence.
+4. **Priority order** (most specific to least specific):
+   - `neuroscience` > `quantum` > `spiking-neuromorphic` > `nlp-llm` > `multi-agent-rl` > `signal-control-systems` > `general-ml` > `physics-math` > `ai-safety-eval` > `vision-generative` > `reasoning-bayesian` > `security-privacy` > `healthcare-bio` > `finance` > `data-retrieval` > `deployment-optimization` > `software-engineering` > `tools-frameworks` > `knowledge-graph` > `other`
+5. **If no category matches**, place in `other/`.
+6. **For automated/cron jobs**: always classify the skill by its name keywords before creating the directory. See the keyword rules in `scripts/classify_skills.py` `CLASSIFICATION_RULES` list.
+
+#### Category Reference Table
+
+| Category | For skills about... | Example keywords |
+|----------|-------------------|-----------------|
+| `neuroscience` | Brain networks, EEG, cognitive science, neuroimaging | brain, neural, neuro, eeg, fmri, bci, cortex, synapt |
+| `quantum` | Quantum computing, quantum ML, quantum sensing | quantum, qubit, qec, qaoa, vqe, qml, qnn, entanglement |
+| `spiking-neuromorphic` | SNNs, neuromorphic computing, spike-based models | spiking, snn, neuromorphic, stdp, spike, lif |
+| `general-ml` | General ML/DL concepts, training, optimization | deep-learning, gradient, moe, distillation, pruning |
+| `nlp-llm` | Language models, transformers, NLP tasks | llm, transformer, gpt, bert, nlp, prompt, rag |
+| `multi-agent-rl` | Multi-agent systems, reinforcement learning | multi-agent, reinforcement, agent, agentic, ppo, grpo |
+| `signal-control-systems` | Signal processing, control theory, time series | control, mpc, kalman, feedback, cps, cyber-physical |
+| `physics-math` | Physics-informed ML, mathematical methods | physics, pde, topology, chaos, stochastic, tensor |
+| `reasoning-bayesian` | Bayesian inference, causal reasoning, uncertainty | bayesian, causal, probabilistic, monte-carlo, mcmc |
+| `vision-generative` | Computer vision, generative models | vision, image, video, gan, diffusion, segmentation |
+| `ai-safety-eval` | AI safety, alignment, evaluation, benchmarks | ai-safety, alignment, benchmark, eval, jailbreak |
+| `security-privacy` | Cryptography, privacy, adversarial ML | security, privacy, encryption, cryptography, backdoor |
+| `healthcare-bio` | Medical AI, bioinformatics, drug discovery | healthcare, biomedical, clinical, drug, genomics |
+| `finance` | Financial data, stock analysis, quantitative | finance, portfolio, stock, trading, market, akshare |
+| `data-retrieval` | Data pipelines, search, retrieval, RAG | data-retrieval, search, database, embedding, rag |
+| `deployment-optimization` | MLOps, model serving, quantization | deployment, serving, mlops, quantization, vllm |
+| `software-engineering` | Code generation, dev tools, testing | software-engineering, testing, code-review, docker |
+| `tools-frameworks` | CLI tools, IDE integrations, workflow | claude-code, opencode, copilot, chrome-extension |
+| `knowledge-graph` | KG construction, graph neural networks | knowledge-graph, gnn, ontology, graph-neural |
+| `systems-engineering` | System design, MBSE, requirements | systems-engineering, mbse, sysml, sheaf |
+| `other` | Uncategorized or cross-disciplinary skills | (fallback) |
 
 ## Code Style
 

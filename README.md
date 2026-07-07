@@ -215,10 +215,11 @@ AI: [Detects consulting report search intent, activates consulting-report-search
 ai_collection/
 ├── README.md              # This file (English)
 ├── README_CN.md           # Chinese documentation
+├── CHANGELOG.md           # Version history and notable changes
 ├── AGENTS.md              # Agent documentation index
 ├── SKILLS.md              # Skill documentation index
 ├── INDEX.md               # Category index
-├── CONTRIBUTING.md        # Contribution guide
+├── CONTRIBUTING.md        # Contribution guide (includes skill category rules)
 │
 ├── docs/                  # General documentation
 │   ├── agents/            # Agent guides and best practices
@@ -226,11 +227,21 @@ ai_collection/
 │   └── integration/       # Integration documentation
 │
 ├── collection/            # Collected agents and skills
-│   ├── agents/            # Agent packages
-│   └── skills/            # Skill packages
+│   ├── agents/            # Agent packages (27 agents)
+│   └── skills/            # Skill packages (31 category subdirectories)
+│       ├── neuroscience/          # Brain, EEG, cognitive science
+│       ├── quantum/               # Quantum computing, quantum ML
+│       ├── spiking-neuromorphic/  # SNNs, neuromorphic computing
+│       ├── ai-ml/                 # General AI/ML
+│       ├── general-ml/            # ML/DL concepts, training
+│       ├── nlp-llm/               # Language models, transformers
+│       ├── multi-agent-rl/        # Multi-agent, reinforcement learning
+│       ├── signal-control-systems/ # Signal processing, control
+│       ├── physics-math/          # Physics-informed ML, math
+│       └── ... 22 more categories
 │
 ├── knowledge/             # AI learning knowledge base
-│   ├── arxiv/             # arXiv paper learning notes (38 papers)
+│   ├── arxiv/             # arXiv paper learning notes
 │   └── skills/            # Learned skills documentation
 │
 ├── templates/             # Templates for new items
@@ -238,7 +249,18 @@ ai_collection/
 │   └── skill-template.md
 │
 └── scripts/               # Utility scripts
-    └── validate_skill.py
+    ├── classify_skills.py # Auto-classify skills into categories
+    ├── validate_skill.py  # Validate SKILL.md format
+    └── ...                # Migration, monitoring, deployment scripts
+```
+
+### Skill Category System
+
+Skills are organized into **31 category subdirectories**. New skills MUST be placed in `collection/skills/<category>/<skill-name>/`, never in the root skills directory. See [CONTRIBUTING.md](./CONTRIBUTING.md#skill-categories) for the full category list and selection rules.
+
+To auto-classify flat skills into categories:
+```bash
+python scripts/classify_skills.py
 ```
 
 ## Knowledge Base

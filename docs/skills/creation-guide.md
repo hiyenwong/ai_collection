@@ -32,10 +32,23 @@ Start by answering these questions:
 
 ## Step 2: Create Skill Directory
 
+Skills must be placed in a **category subdirectory** under `collection/skills/`. See [CONTRIBUTING.md](../../CONTRIBUTING.md#skill-categories) for the full category list.
+
 ```bash
-mkdir -p collection/skills/slack
-cd collection/skills/slack
+# Determine the category for your skill
+# e.g., a brain-related skill goes in neuroscience/
+mkdir -p collection/skills/neuroscience/your-skill-name
+cd collection/skills/neuroscience/your-skill-name
 ```
+
+### How to Choose a Category
+
+1. Check the keyword rules in `scripts/classify_skills.py` (`CLASSIFICATION_RULES`)
+2. Run `python scripts/classify_skills.py` to see how a name would be classified
+3. **Priority order** (first match wins): neuroscience > quantum > spiking-neuromorphic > nlp-llm > multi-agent-rl > signal-control-systems > general-ml > physics-math > ai-safety-eval > vision-generative > reasoning-bayesian > security-privacy > healthcare-bio > finance > data-retrieval > deployment-optimization > software-engineering > tools-frameworks > knowledge-graph > other
+4. If unsure, use `other/`
+
+**Never place skills directly in `collection/skills/` root.**
 
 ## Step 3: Create SKILL.md
 
