@@ -3903,3 +3903,9 @@
   - Core: Continuous scores via expectation over scoring token logits instead of discrete LM judges
   - Three scaling axes: score granularity, repeated evaluation, criteria decomposition
   - **Activation**: LLM-as-a-Verifier, verification framework, probabilistic scoring, logit expectation
+
+### VQE Active Space Selection Benchmark for Drug Discovery
+- [[vqe-active-space-benchmarking]] - VQE药物发现中活性空间选择的系统基准测试，评估UCCSD/HEA在lovastatin/oseltamivir/morphine等药物分子上的表现 (arXiv: 2512.18203)
+  - 核心要点 1: 首次系统化基准，化学直觉+量子信息理论选择活性空间
+  - 核心要点 2: 双评估维度：化学精度(能量误差) + 架构指标(电路深度/参数数)
+  - **Activation**: VQE活性空间, 量子药物发现基准, UCCSD评估, HEA ansatz, 分子模拟基准
