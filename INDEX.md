@@ -1,5 +1,24 @@
 # AI Collection Index
 
+### Parameter-Efficient CV-QNN for Edge Medical AI
+- [[cv-qnn-edge-medical-imaging]] - CV photonic QNN with 40-45% fewer params for room-temperature edge medical classification (arXiv: 2606.28252)
+  - 核心要点 1: 简化Φ∘D∘U₁架构比标准CV-QNN减少40-45%参数，4 qumodes时性能更优
+  - 核心要点 2: PCA降维至16D将梯度方差提升~58个数量级，有效缓解barren plateaus
+  - 核心要点 3: 18参数模型超越55参数经典基线(少67%参数)，实现100%校准测试准确率
+  - **Activation**: cv-qnn, continuous variable quantum, photonic qnn, edge quantum ai, medical quantum ml, parameter efficient qnn
+
+### Post-Quantum Secure Pharmacovigilance Pipeline
+- [[post-quantum-pharmacovigilance-pipeline]] - PQC pipeline with ML-KEM-768 + ML-DSA-65 for healthcare data security (arXiv: 2606.09412)
+  - 核心要点 1: 完整PQC管道：ML-KEM-768密钥交换 → HKDF-SHA-256 → AES-256-GCM加密 → ML-DSA-65签名验证
+  - 核心要点 2: 分布式加密处理比顺序设计显著降低延迟，Raspberry Pi测试验证可行资源开销
+  - **Activation**: pqc pharmacovigilance, ML-KEM, ML-DSA, post-quantum healthcare, drug safety, ML-KEM-768
+
+### Fourier-Based Quantum Image Encoding & Compression
+- [[quantum-image-encoding-compression]] - Gate-efficient quantum medical image encoding with 4x gate reduction (arXiv: 2505.06471)
+  - 核心要点 1: 基于傅里叶的编码方法将门数减少至像素数的1/4以下，大幅降低模拟和运行成本
+  - 核心要点 2: 两种压缩技术进一步减少门数和预处理时间，同时保持可忽略的图像质量损失
+  - **Activation**: quantum image encoding, Fourier encoding, gate reduction, medical imaging, QIMP
+
 ## 2026-07-08 - Medicine + Quantum Research (Cron Job - Hourly Batch)
 
 ### Multi-Class Neurological Disorder Prediction with Tensor Network Feature Engineering
