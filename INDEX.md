@@ -3820,3 +3820,12 @@
   - Two-qubit classifier (TQC) enables verification of delegated computation
   - Tested on credit card fraud database, approaches classical deep-belief network performance
   - **Activation**: partially-blind classification, PB-SQC, blind quantum classification, quantum-secured ML, delegated quantum computation, SQC with privacy
+
+## 2026-07-07 - Computer Science (Cron Job)
+
+### LLM-as-a-Verifier: A General-Purpose Verification Framework
+
+- [[llm-as-a-verifier]] - Probabilistic verification framework using logit expectation for continuous scoring, enabling multi-dimensional scaling along granularity, repeated evaluation, and criteria decomposition (arXiv: 2607.05391)
+  - Core: Continuous scores via expectation over scoring token logits instead of discrete LM judges
+  - Three scaling axes: score granularity, repeated evaluation, criteria decomposition
+  - **Activation**: LLM-as-a-Verifier, verification framework, probabilistic scoring, logit expectation
