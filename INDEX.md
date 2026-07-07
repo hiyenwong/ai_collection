@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-07-07 - Neuroscience Research (Cron Job)
+
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendricl-icl-single-layer-snn]] - First single-layer SNN achieving general-purpose in-context learning on Garg-2022 benchmark via apical dendrite online-LMS dynamics (arXiv: 2607.02283)
+  - Apical dendrite compartment implements leaky online Widrow-Hoff LMS with frozen synaptic weights
+  - Uniquely seed-stable at super-dimensional task spaces (d=30-50) where Transformers collapse
+  - Linear probe recovers reference online-LMS trajectory from apical membrane at R²=0.93
+  - ~4× spike reduction over Pure LIF, projected ~10× Loihi-class energy advantage
+  - **Activation**: dendritic in-context learning, DendriCL, single-layer SNN ICL, apical LMS, compartmental spiking network, Garg-2022 benchmark, neuromorphic ICL, biological plausibility
+
 ## 2026-07-07 - Computer Science (Cron Job)
 
 ### Canonical Quantization of Neurons
