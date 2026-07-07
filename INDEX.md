@@ -28,6 +28,18 @@
 
 ### A Path-Superposition Framework for Quantum Gate Teleportation
 - [[quantum-path-superposition-teleportation]] - Path-superposition framework enabling quantum gate teleportation through superposed path operations (arXiv: 2607.04672)
+
+### Quantum activation observable measurement methodology
+- [[quantum-neuron-activation-observable]] - Practical guide to measuring quantum activation observables using Hadamard test, Hamiltonian simulation, power of one qumode, and Schrodingerization (arXiv: 2607.05000)
+  - Four measurement primitives for non-unitary activation observables in quantum neurons
+  - Gradient estimation pipeline combining quantum primitives with classical optimization
+  - **Activation**: activation observable, quantum measurement primitives, power of one qumode, Schrodingerization, quantum gradient estimation, quantum neuron measurement
+
+### QNN hyperparameter stress testing methodology
+- [[qnn-hyperparameter-stress-test]] - Framework for stress-testing variational quantum neural networks on complex datasets with extensive HPO and classical baseline comparison (arXiv: 2607.04915)
+  - QNNs benefit from extensive HPO but remain outperformed by simple classical baselines
+  - Five-phase pipeline: dataset selection, architecture design, HPO, classical comparison, bottleneck analysis
+  - **Activation**: QNN stress test, variational quantum model, quantum advantage, barren plateau, hyperparameter optimization QNN, quantum vs classical baseline
   - Multi-path entangled resource state enables parallel gate teleportation across superposed paths
   - Bell-state measurement followed by path-dependent Pauli corrections
   - **Activation**: quantum teleportation, gate teleportation, path superposition, quantum information transfer, quantum protocol
@@ -3596,3 +3608,12 @@
   - Bosonic enhancement correlates with Fiedler edge split (r=-0.50)
   - Absolute Bloch drift discriminates anomalies; consecutive drift is random
   - **Activation**: spectral geometry quantum learning, bosonic interference probe, Bloch-space drift, quantum autoencoder diagnostics
+
+## 2026-07-07 - Computer Science + Quantum (Cron Job)
+
+### Partially-Blind Single-Qubit Classification over a Prototype Hybrid Quantum Network
+- [[partially-blind-single-qubit-classification]] - Single-qubit classifiers with blind quantum computation for privacy-preserving delegated ML on untrusted quantum networks (arXiv: 2607.01998)
+  - Combines SQC (single-qubit classifier) with BQC to hide client data and outcomes from server
+  - Two-qubit classifier (TQC) enables verification of delegated computation
+  - Tested on credit card fraud database, approaches classical deep-belief network performance
+  - **Activation**: partially-blind classification, PB-SQC, blind quantum classification, quantum-secured ML, delegated quantum computation, SQC with privacy
