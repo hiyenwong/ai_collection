@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Beyond DSA: Conjugacy-based Comparison of Dynamical Systems
+- [[conjugacy-based-similarity-analysis]] - 基于共轭的动力系统比较方法(CSA)，解决DSA正交对齐无法捕获拓扑共轭的局限性 (arXiv: 2607.04493)
+  - 核心要点 1: 正交对齐既非拓扑共轭的充分也非必要条件；共轭系统可能需要非正交基变换矩阵
+  - 核心要点 2: CSA将对齐限制在候选状态空间双射诱导的变换上，拟合对齐是组合算子的有限数据投影
+  - **Activation**: dynamical systems comparison, Koopman operator, conjugacy analysis, neural dynamics similarity, DSA alternative, CSA
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit]] - 分支抑制和树突分支如何塑造局部信用分配，揭示E/I电导与树突结构的交互机制 (arXiv: 2607.03556)
+  - 核心要点 1: 精确梯度分解为局部eligibility × 隔室误差项；shunting抑制通过重塑隔室误差场优化学习
+  - 核心要点 2: 在per-soma 5F反馈下，shunting LocalCA在MNIST上仅比反向传播低5-6个百分点
+  - **Activation**: dendritic computation, credit assignment, shunting inhibition, local learning, E/I balance, conductance-based models
+
 ## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly
 
 ### Quantum Entangled PET Imaging (Compton Events)
@@ -3949,3 +3963,23 @@
   - 核心要点 2: 双评估维度：化学精度(能量误差) + 架构指标(电路深度/参数数)
   - **Activation**: VQE活性空间, 量子药物发现基准, UCCSD评估, HEA ansatz, 分子模拟基准
 
+
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### PREDIKTOR: Predicting Therapeutic Outcome via Aligning Patient-Specific Knowledge Graph and Gene-Level Perturbation Representations
+- [[prediktor-patient-knowledge-graph-drug-response]] - 患者知识图谱与基因扰动表征对齐预测临床药物响应，DysRegNet构建个性化GRN+DrugBank增强+GNN编码，冻结LINCS L1000模型生成扰动谱，CLIP风格对比学习对齐双视图 (arXiv: 2607.04557)
+  - Core: Two-view architecture (mechanistic GRN + transferable perturbation) aligned via CLIP-style contrastive learning
+  - Results: Outperforms baselines on TCGA, zero-shot +5.6% AUROC on I-SPY2 trial
+  - **Activation**: PREDIKTOR, patient knowledge graph drug response, personalized drug prediction, GRN drug response, precision oncology, CLIP alignment drug, 患者知识图谱药物响应
+
+### Krylov-Lie Algebras for Variational Quantum Algorithms: Geometric, Depth-Aware Insights into Expressivity and Trainability
+- [[krylov-lie-algebras-vqa]] - VQA景观理论的Krylov-Lie代数框架，提供有限深度可达流形的数值鲁棒逼近、加权非Haar方差公式，以及通过非Haar修正缓解barren plateau (arXiv: 2607.02626)
+  - Core: Krylov span of finite generator sets approximates VQA reachable manifolds; weighted non-Haar variance recovers Haar as special case
+  - Key insight: Non-Haar contributions may mitigate barren plateaus by reweighting visible sectors of loss landscape
+  - **Activation**: Krylov-Lie algebra VQA, non-Haar variance quantum, barren plateau mitigation non-Haar, VQA landscape finite depth
+
+### Triple-Phase Multimodal Knowledge Aggregation Framework for Microbial Keratitis Subtype Diagnosis
+- [[triple-phase-multimodal-medical-diagnosis]] - 三相多模态医学图像诊断框架，跨模态对比学习+模态特异性微调+特征级多模态集成学习，在1645名患者17158张裂隙灯图像上实现85.84%准确率 (arXiv: 2607.03740)
+  - Core: Phase 1 cross-modality contrastive → Phase 2 modality-specific fine-tuning → Phase 3 feature-level ensemble
+  - Validation: 85.84% accuracy, 84.46% F1, 0.885 AUC on multicenter bacterial vs fungal keratitis
+  - **Activation**: triple-phase multimodal diagnosis, cross-modality contrastive medical, multimodal medical ensemble, microbial keratitis classification, 多模态医学诊断, cross-site medical generalization
