@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-07-08 - Medical + Quantum Research (Cron Job)
+
+### First-in-human quantum entanglement imaging
+- [[quantum-medical-imaging]] - 首次人体量子纠缠成像，利用J-PET扫描仪测量正负电子湮灭光子的偏振纠缠度作为新型生物标志物 (arXiv: 2606.29421)
+  - 核心要点 1: 塑料闪烁体可同时测量光子位置/时间和偏振平面
+  - 核心要点 2: 纠缠度介于最大纠缠态和可分离态之间，可作为组织表征的新型诊断信号
+  - **Activation**: 量子纠缠成像, J-PET, PET, 偏振纠缠, 湮灭光子, 生物标志物
+
+### Parameter-Efficient CV Photonic QNNs for Edge AI
+- [[quantum-medical-imaging]] - 连续变量光量子神经网络用于口腔癌边缘检测 (arXiv: 2606.28252)
+  - 核心要点 1: CV光量子架构比离散量子比特更高效，适合边缘部署
+  - 核心要点 2: 适用于资源匮乏地区的智能手机癌症筛查
+  - **Activation**: 连续变量光量子, 边缘AI, 口腔癌检测, 参数效率
+
+### Compression-Driven Anomaly Detection with Quantum Autoencoder
+- [[quantum-medical-imaging]] - 量子自编码器用于脑MRI异常检测 (arXiv: 2606.27411)
+  - 核心要点 1: 角度编码将图像块映射为量子态，变分编解码器训练丢弃冗余信息
+  - 核心要点 2: 异常分数 = 输入抵抗压缩的程度，比黑盒分类器更可解释
+  - **Activation**: 量子自编码器, 异常检测, 脑MRI, 角度编码
+
+### Controlled Benchmark of Quantum-Latent GAN Augmentation
+- [[quantum-medical-imaging]] - 量子生成模型脑MRI增强的受控基准测试 (arXiv: 2606.18970)
+  - 核心要点 1: 量子与经典生成器必须在匹配参数预算下比较
+  - 核心要点 2: 需多次运行评估而非单次训练，需表征量子优势出现的数据区域
+  - **Activation**: 量子GAN, 数据增强, 基准测试, 脑MRI
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
