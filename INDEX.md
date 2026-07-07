@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-07 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Noise-Aware Synthesis of Quantum LDPC Encoder Circuits via Two-Sided Hamming Descent
+- [[noise-aware-quantum-ldpc-synthesis]] - Noise-aware circuit synthesis for qLDPC encoders using two-sided Hamming descent (arXiv: 2607.04462)
+  - Forward descent greedily reduces gate count; backward descent re-inserts gates where noise sensitivity demands redundancy
+  - Each gate's contribution weighted by qubit-specific error rates (T1, T2, gate errors)
+  - **Activation**: quantum ldpc, qldpc encoder, hamming descent, noise-aware synthesis, quantum error correction, encoder circuit, fault-tolerant
+
+### A Path-Superposition Framework for Quantum Gate Teleportation
+- [[quantum-path-superposition-teleportation]] - Path-superposition framework enabling quantum gate teleportation through superposed path operations (arXiv: 2607.04672)
+  - Multi-path entangled resource state enables parallel gate teleportation across superposed paths
+  - Bell-state measurement followed by path-dependent Pauli corrections
+  - **Activation**: quantum teleportation, gate teleportation, path superposition, quantum information transfer, quantum protocol
+
 ## 2026-07-08 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### Ravines in Quantum Cost Landscapes: Opportunities for Improved VQA Predictions
