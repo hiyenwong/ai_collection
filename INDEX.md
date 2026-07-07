@@ -2,6 +2,24 @@
 
 ## 2026-07-07 - Computer Science + Quantum Mechanics (Cron Job)
 
+### Canonical quantization of neurons
+- [[canonical-quantization-neurons]] - Systematic canonical quantization procedure for constructing quantum neuron models from classical energy+activation composition (arXiv: 2607.05000)
+  - Replaces neuron energy function with quantum Hamiltonian, applies activation via matrix functional calculus to create measurable activation observable
+  - Hybrid training algorithms using Hadamard test, Hamiltonian simulation, and power-of-one-qumode for gradient estimation
+  - **Activation**: canonical quantization neurons, quantum neuron model, quantum activation function, quantum Hamiltonian neural, observable learning quantum, matrix functional calculus activation
+
+### Hybrid quantum-classical neural network for sentiment analysis
+- [[hybrid-quantum-nlp]] - Hybrid quantum-classical NLP with TF-IDF + parameterized quantum circuits, showing 15pp transfer learning advantage (arXiv: 2607.01943)
+  - Same-domain accuracy matches classical baseline; transfer learning to SMS spam classification improves from 66% to 81%
+  - Quantum entanglement captures non-local feature correlations, providing different inductive biases for domain shift
+  - **Activation**: hybrid quantum NLP, quantum sentiment analysis, QML text classification, parameterized quantum circuit NLP, quantum transfer learning text
+
+### Quantum Convolutional Neural Networks for Groundwater Heat Plume Prediction
+- [[qcnn-surrogate-modeling]] - QCNN surrogate modeling with quantum convolutional + pooling layers, benchmarked across simulators and IBM 127-qubit hardware (arXiv: 2606.23411)
+  - Hamiltonian-inspired feature encoding with measurement-driven quantum pooling for dimensionality reduction
+  - Error mitigation on real hardware shows noticeable performance improvement over noisy baseline
+  - **Activation**: quantum convolutional neural network surrogate, QCNN surrogate model, quantum environmental modeling, quantum error mitigation benchmark, quantum convolutional pooling
+
 ### Noise-Aware Synthesis of Quantum LDPC Encoder Circuits via Two-Sided Hamming Descent
 - [[noise-aware-quantum-ldpc-synthesis]] - Noise-aware circuit synthesis for qLDPC encoders using two-sided Hamming descent (arXiv: 2607.04462)
   - Forward descent greedily reduces gate count; backward descent re-inserts gates where noise sensitivity demands redundancy
