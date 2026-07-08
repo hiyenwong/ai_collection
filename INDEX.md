@@ -1,6 +1,13 @@
 
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
+### SDA-QEC: Simplified Diffusion Augmentation with Quantum-Enhanced Classification
+- [[sda-qec-diffusion-quantum-medical]] - Diffusion augmentation + quantum feature layers for balanced medical image diagnosis under severe class imbalance (arXiv: 2601.18556)
+  - Lightweight diffusion augmentor generates synthetic minority samples to rebalance training distribution
+  - Quantum feature layer embedded in MobileNetV2 maps features to Hilbert space for enhanced discrimination
+  - Achieves 98.33% accuracy, 98.78% AUC with equal sensitivity and specificity — critical for clinical deployment
+  - **Activation**: SDA-QEC, diffusion augmentation, quantum-enhanced classification, medical image imbalance, minority class rebalancing, Hilbert space feature mapping
+
 ### Low-depth Simulation of Non-Markovianity Under Quantum Hardware Noise
 - [[low-depth-nonmarkovian-simulation]] - Low-depth quantum simulation of non-Markovian dynamics using trajectory mixing — trades entangling gates for statistical mixture (arXiv: 2607.05519)
   - Key innovation: trajectory mixing trades entangling gates for statistical mixtures of independent pure state trajectories
