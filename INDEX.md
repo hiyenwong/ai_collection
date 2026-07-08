@@ -1,4 +1,19 @@
-# AI Collection Index
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
+- [[scalable-perturbation-learning-esn]] - Orthogonal decomposition reduces perturbation dimension from reservoir to input, enabling scalable hardware-compatible online learning (arXiv: 2607.06079)
+  - Key innovation: decomposes self-supervised cost into input-dependent and fixed components
+  - Variance growth reduced from O(N) to O(d) where d << N
+  - Preserves self-supervised, online, and scalar-feedback properties
+  - **Activation**: ESN, perturbation learning, online self-supervised, orthogonal decomposition, reservoir, scalable learning
+
+### Neuromorphic Silicon Neuron Controller for Adaptive Deep Brain Stimulation
+- [[silif-dbs-neuromorphic-controller]] - CMOS-implemented SiLIF-DBS controller achieving 5.85%/μW beta suppression with 75% power reduction (arXiv: 2607.05453)
+  - First circuit-level realization of adaptive DBS using neuromorphic silicon
+  - Closed-loop operation driven by STN-LFP beta-band biomarkers
+  - 75% power reduction vs open-loop stimulation
+  - **Activation**: SiLIF-DBS, neuromorphic DBS, adaptive deep brain stimulation, Parkinson's, beta suppression, CMOS neuron
 
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
