@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-08 - Systems Engineering Research (Cron Job)
+
+### Distributed Containment of a Compromised Agent through Repulsive Cages
+- [[repulsive-cage-containment-cps]] - 利用CPS智能体未受损的避撞模块作为间接控制通道，通过Stackelberg博弈实现被劫持智能体的分布式围困 (arXiv: 2607.01230)
+  - 核心要点 1: 将防御者-对手交互建模为在线Stackelberg博弈，利用支撑函数和法锥精确刻画鲁棒单步围困的几何条件
+  - 核心要点 2: 分布式在线近似算法实现次线性动态遗憾界O(√T)，量化网络估计误差和阶段最优时变性的影响
+  - **Activation**: repulsive cage, compromised agent containment, UAV swarm security, Stackelberg containment, distributed CPS security
+
+### The Internet of Agentic AI: Communication, Coordination, and Collective Intelligence at Scale
+- [[internet-agentic-ai-architecture]] - 智能体AI互联网(IoAI)架构框架：异构智能体发现、协商、上下文交换和跨环境工作流执行的开放生态系统 (arXiv: 2606.12835)
+  - 核心要点 1: 综合多智能体系统、分布式计算、通信网络、博弈论和安全工程，提出可扩展智能体生态系统的架构与机制
+  - 核心要点 2: 识别核心研究挑战：受控涌现、语义互操作性、安全身份、激励兼容协调、资源感知编排和大规模治理
+  - **Activation**: IoAI, internet of agents, agent communication, semantic interoperability, multi-agent coordination, distributed AI governance
+
 ## 2026-07-08 - Neuroscience Research (Cron Job - Dendritic Learning & Connectivity)
 
 ### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
