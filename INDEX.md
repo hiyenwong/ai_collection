@@ -1,4 +1,13 @@
 
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Differentiable Biophysical Simulation for Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Framework for inferring Hodgkin-Huxley parameters from extracellular MEA data and predicting neural responses to electrical stimulation (arXiv: 2607.04063)
+  - Differentiable biophysical simulation enables end-to-end training from extracellular observations
+  - Simulation-based inference replaces hours of clinical stimulus testing with minutes of recording
+  - 90.6% accuracy on previously unseen stimulation responses in macaque retina validation
+  - **Activation**: Hodgkin-Huxley, biophysical simulation, neurostimulation, MEA, differentiable simulation, parameter inference, neural modeling
+
 ## 2026-07-08 - Medicine + Quantum (Cron Job - Hourly)
 
 ### First-in-Human Quantum Entanglement Imaging
