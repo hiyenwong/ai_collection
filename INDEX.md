@@ -1,4 +1,13 @@
 
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Hierarchical Bayesian Statistical Learning Model for Individual EEG Trajectories
+- [[hierarchical-bayesian-statistical-learning-eeg]] - HBSL model captures individual statistical learning trajectories from EEG during structured tone sequences, with applications to dyslexia research (arXiv: 2607.05822)
+  - Hierarchical Bayesian structure constrains individual learning parameters with group-level priors
+  - Model simulations closely correspond to real EEG data; generated sequences match original stimuli
+  - No significant group difference found between dyslexia and control groups, but methodology validated
+  - **Activation**: hierarchical Bayesian, statistical learning, EEG, individual differences, dyslexia, sequence structure, tone sequences, cognitive development
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in Single-Layer SNN (DendriCL)
