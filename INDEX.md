@@ -4479,3 +4479,17 @@
   - Miroslav Krstic — asymptotic regulation on basin recovering exact-kernel basin as NN accuracy improves
   - **Activation**: neural operator backstepping, adaptive PDE control, Volterra series control, Krstic neural operator
 
+### Q-DASC: Safe Quantum Control for HVAC under Local Model Misspecification
+- [[q-dasc-safe-quantum-control]] - Certified classical safety layer wrapping VQC policies for physics-constrained control, reducing comfort violation from 26% to 0.02% (arXiv: 2606.28834)
+  - FDR-controlled regime discovery + shrinkage repair + projection onto comfort-feasible set
+  - Safety certificate invariant to finite-shot and depolarizing read-out noise
+  - Transfers to EnergyPlus benchmarks and real hospital air-handling-unit data
+  - **Activation**: safe quantum control, VQC safety layer, discrepancy-attributed control, model misspecification quantum, BOPTEST quantum control
+
+### Projection Operator Stochastic Equations for Non-Markovian Quantum Feedback
+- [[nonmarkovian-quantum-feedback-control]] - Extends projection operator approach to continuous measurement-based feedback for non-Markovian quantum systems (arXiv: 2606.31321)
+  - Deterministic terms become stochastic depending on measurement record
+  - Covers homodyne, photon counting, and adaptive measurements
+  - Markovian embedding + projection yields non-Markovian SDEs for feedback control
+  - **Activation**: non-Markovian quantum feedback, projection operator SDE, continuous measurement feedback, stochastic quantum equations
+
