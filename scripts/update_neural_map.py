@@ -90,64 +90,53 @@ def count_skills_per_category():
 
 
 def update_html(categories, total):
-    """Inject skill data into the HTML file."""
+    """Inject skill data into the HTML file.
+
+    Replaces the SKILL_DATA constant by finding the start marker
+    and matching braces to the closing };</const>.
+    """
     if not HTML_FILE.exists():
         print(f"ERROR: HTML file not found: {HTML_FILE}")
         return False
 
     html = HTML_FILE.read_text()
 
-    # Build the new SKILL_DATA JS object
+    # Build the new SKILL_DATA JS object — single-line compact format
     data_js = json.dumps(
         {"categories": categories, "total": total},
-        indent=2,
         ensure_ascii=False,
     )
-    # Convert JSON to JS-compatible (json is valid JS)
     new_data_block = f"const SKILL_DATA = {data_js};"
 
-    # Replace the existing SKILL_DATA block
-    # Match: const SKILL_DATA = { ... };
-    pattern = r'const SKILL_DATA\s*=\s*\{[^}]*\};'
-    # This simple regex won't work for nested objects, use a different approach
-    # Find the start and end markers
     start_marker = "const SKILL_DATA = {"
-    end_marker = "};\n\n// Fix typo"
-
     start_idx = html.find(start_marker)
     if start_idx == -1:
-        # Try without the Fix typo part
-        end_marker2 = "};"
-        start_idx = html.find(start_marker)
-        if start_idx == -1:
-            print("ERROR: Could not find SKILL_DATA in HTML")
-            return False
-        # Find the closing };
-        # Search for the matching closing brace
-        brace_depth = 0
-        i = start_idx + len(start_marker) - 1
-        while i < len(html):
-            if html[i] == '{':
-                brace_depth += 1
-            elif html[i] == '}':
-                brace_depth -= 1
-                if brace_depth == 0:
-                    end_idx = i + 1  # include }
-                    # Find the semicolon
-                    while end_idx < len(html) and html[end_idx] != ';':
-                        end_idx += 1
-                    end_idx += 1  # include ;
-                    break
-            i += 1
-        html = html[:start_idx] + new_data_block + html[end_idx:]
-    else:
-        end_idx = html.find(end_marker, start_idx)
-        if end_idx == -1:
-            print("ERROR: Could not find end of SKILL_DATA")
-            return False
-        end_idx += len(end_marker)
-        html = html[:start_idx] + new_data_block + "\n\n// Fix typo\n" + html[end_idx:]
+        print("ERROR: Could not find SKILL_DATA in HTML")
+        return False
 
+    # Find matching closing brace by counting depth
+    brace_depth = 0
+    i = start_idx + len(start_marker) - 1  # at the opening '{'
+    end_idx = None
+    while i < len(html):
+        if html[i] == '{':
+            brace_depth += 1
+        elif html[i] == '}':
+            brace_depth -= 1
+            if brace_depth == 0:
+                end_idx = i + 1  # include }
+                # Find the semicolon
+                while end_idx < len(html) and html[end_idx] != ';':
+                    end_idx += 1
+                end_idx += 1  # include ;
+                break
+        i += 1
+
+    if end_idx is None:
+        print("ERROR: Could not find end of SKILL_DATA")
+        return False
+
+    html = html[:start_idx] + new_data_block + html[end_idx:]
     HTML_FILE.write_text(html)
     print(f"Updated {HTML_FILE}")
     return True

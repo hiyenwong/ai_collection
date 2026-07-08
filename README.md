@@ -267,19 +267,27 @@ python scripts/classify_skills.py
 
 ### Neural Network Skill Map
 
-The skill collection is visualized as an interactive **neural network** where each category is a node (sized by skill count), connected to related domains with animated signal particles flowing along the edges.
+The skill collection is visualized as a **feedforward neural network** with 5 layers: categories are neurons arranged in vertical columns (Input → Hidden → Output), and signal particles flow left-to-right through synapses between layers.
 
 ![Neural Network Skill Map](./docs/html/skill-neural-map-screenshot.png)
 
 **Open the interactive version:** [docs/html/skill-neural-map.html](./docs/html/skill-neural-map.html) (open in a browser)
 
+Layer architecture:
+- **L0 Input** — Data & Foundations: data-retrieval, math-statistics, physics-math, information-science
+- **L1 Hidden** — Core Theory: reasoning-bayesian, general-ml, quantum, neuroscience
+- **L2 Hidden** — Applied AI: ai-ml, nlp-llm, vision-generative, multi-agent-rl, reinforcement-learning, spiking-neuromorphic, signal-control-systems
+- **L3 Hidden** — Engineering: systems-engineering, software-engineering, tools-frameworks, agent-tools, control-systems, deployment-optimization, knowledge-graph, memory, continual-learning
+- **L4 Output** — Domain Applications: healthcare-bio, medical, finance, ai-safety-eval, security-privacy, other
+
 Features:
-- **30 category nodes** positioned in a force-directed circular layout
-- **Animated particles** flowing along inter-category connections
-- **Click a node** to highlight its connections and dim unrelated nodes
-- **Sidebar** with category list, skill counts, and detail panel
-- **Legend** showing all categories with their colors
-- **Controls**: toggle particles, pause animation, reset layout
+- **30 neurons** in a 5-layer feedforward architecture (node size = log skill count)
+- **Signal particles** flowing left→right through synapses between layers
+- **Activation glow** — neurons light up when signals pass through
+- **Click a node** to highlight its connections and dim unrelated neurons
+- **Layer navigation** — click a layer button to highlight all neurons in that layer
+- **Sidebar** with layer-grouped category list, skill counts, and detail panel
+- **Controls**: toggle signals, pause animation, reset layout
 
 To regenerate the map after adding/removing skills:
 ```bash

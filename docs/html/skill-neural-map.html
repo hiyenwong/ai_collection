@@ -22,8 +22,8 @@ body {
 
 /* ---------- Sidebar ---------- */
 #sidebar {
-  width: 320px;
-  min-width: 320px;
+  width: 300px;
+  min-width: 300px;
   background: #0d1320;
   border-right: 1px solid #1a2332;
   display: flex;
@@ -74,6 +74,37 @@ body {
   margin-top: 2px;
 }
 
+#layer-nav {
+  padding: 10px 20px;
+  border-bottom: 1px solid #1a2332;
+}
+
+#layer-nav h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5a6a80;
+  margin-bottom: 6px;
+}
+
+.layer-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #8a9bb0;
+  font-size: 11px;
+  font-family: inherit;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.layer-btn:hover { background: #131b2e; color: #c8d6e5; }
+.layer-btn.active { background: #16203a; color: #00d4ff; }
+
 #category-list {
   flex: 1;
   overflow-y: auto;
@@ -120,8 +151,8 @@ body {
 #detail-panel {
   border-top: 1px solid #1a2332;
   padding: 16px 20px;
-  min-height: 140px;
-  max-height: 280px;
+  min-height: 80px;
+  max-height: 200px;
   overflow-y: auto;
 }
 
@@ -135,13 +166,10 @@ body {
   font-size: 11px;
   color: #8a9bb0;
   padding: 2px 0;
-  cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-#detail-panel .skill-row:hover { color: #00d4ff; }
 
 /* ---------- Canvas ---------- */
 #canvas-container {
@@ -182,6 +210,12 @@ body {
   font-size: 10px;
 }
 
+#tooltip .tt-layer {
+  color: #8a9bb0;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
 #controls {
   position: absolute;
   bottom: 16px;
@@ -206,45 +240,25 @@ body {
 .ctrl-btn:hover { border-color: #00d4ff; color: #00d4ff; }
 .ctrl-btn.active { background: #16203a; border-color: #00d4ff; color: #00d4ff; }
 
-#legend {
+#layer-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.layer-label {
   position: absolute;
   top: 16px;
-  right: 16px;
-  background: rgba(13,19,32,0.9);
-  border: 1px solid #1a2332;
-  border-radius: 8px;
-  padding: 12px 16px;
   font-size: 10px;
-  z-index: 50;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-#legend h4 {
-  font-size: 11px;
-  color: #e8ecf4;
-  margin-bottom: 6px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.legend-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px 0;
-}
-
-.legend-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.legend-text {
-  color: #8a9bb0;
-  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(90,106,128,0.6);
+  white-space: nowrap;
+  transform: translateX(-50%);
 }
 
 #loading {
@@ -263,12 +277,20 @@ body {
   <div id="sidebar">
     <div id="sidebar-header">
       <h1>AI Collection Neural Map</h1>
-      <div class="subtitle">Interactive skill network visualization</div>
+      <div class="subtitle">Layered neural network visualization</div>
     </div>
     <div id="stats">
       <div class="stat-box"><div class="num" id="stat-skills">0</div><div class="label">Skills</div></div>
-      <div class="stat-box"><div class="num" id="stat-cats">0</div><div class="label">Categories</div></div>
-      <div class="stat-box"><div class="num" id="stat-conns">0</div><div class="label">Connections</div></div>
+      <div class="stat-box"><div class="num" id="stat-cats">0</div><div class="label">Nodes</div></div>
+      <div class="stat-box"><div class="num" id="stat-conns">0</div><div class="label">Synapses</div></div>
+    </div>
+    <div id="layer-nav">
+      <h4>Layers</h4>
+      <button class="layer-btn" data-layer="0">L0 — Input: Data & Foundations</button>
+      <button class="layer-btn" data-layer="1">L1 — Hidden: Core Theory</button>
+      <button class="layer-btn" data-layer="2">L2 — Hidden: Applied AI</button>
+      <button class="layer-btn" data-layer="3">L3 — Hidden: Engineering</button>
+      <button class="layer-btn" data-layer="4">L4 — Output: Domains</button>
     </div>
     <div id="category-list"></div>
     <div id="detail-panel">
@@ -280,14 +302,14 @@ body {
   <!-- Canvas -->
   <div id="canvas-container">
     <canvas id="neural-canvas"></canvas>
-    <div id="tooltip"><div class="tt-title"></div><div class="tt-count"></div></div>
+    <div id="layer-labels"></div>
+    <div id="tooltip"><div class="tt-title"></div><div class="tt-count"></div><div class="tt-layer"></div></div>
     <div id="loading">Initializing neural network...</div>
     <div id="controls">
-      <button class="ctrl-btn active" id="btn-particles">Particles: On</button>
+      <button class="ctrl-btn active" id="btn-particles">Signals: On</button>
       <button class="ctrl-btn" id="btn-pause">Pause</button>
       <button class="ctrl-btn" id="btn-zoom-fit">Fit</button>
     </div>
-    <div id="legend"><h4>Categories</h4><div id="legend-body"></div></div>
   </div>
 </div>
 
@@ -295,177 +317,36 @@ body {
 // ============================================================
 // DATA — generated from collection/skills/ directory structure
 // ============================================================
-const SKILL_DATA = {
-  "categories": [
-    {
-      "name": "neuroscience",
-      "count": 1319,
-      "color": "#e74c3c"
-    },
-    {
-      "name": "quantum",
-      "count": 863,
-      "color": "#9b59b6"
-    },
-    {
-      "name": "other",
-      "count": 544,
-      "color": "#5a6a80"
-    },
-    {
-      "name": "spiking-neuromorphic",
-      "count": 367,
-      "color": "#e67e22"
-    },
-    {
-      "name": "general-ml",
-      "count": 229,
-      "color": "#2ecc71"
-    },
-    {
-      "name": "ai-ml",
-      "count": 224,
-      "color": "#1abc9c"
-    },
-    {
-      "name": "nlp-llm",
-      "count": 182,
-      "color": "#3498db"
-    },
-    {
-      "name": "multi-agent-rl",
-      "count": 164,
-      "color": "#f1c40f"
-    },
-    {
-      "name": "signal-control-systems",
-      "count": 156,
-      "color": "#e91e63"
-    },
-    {
-      "name": "physics-math",
-      "count": 135,
-      "color": "#00bcd4"
-    },
-    {
-      "name": "reasoning-bayesian",
-      "count": 76,
-      "color": "#673ab7"
-    },
-    {
-      "name": "systems-engineering",
-      "count": 67,
-      "color": "#3f51b5"
-    },
-    {
-      "name": "vision-generative",
-      "count": 64,
-      "color": "#ff9800"
-    },
-    {
-      "name": "reinforcement-learning",
-      "count": 62,
-      "color": "#ffc107"
-    },
-    {
-      "name": "ai-safety-eval",
-      "count": 59,
-      "color": "#f44336"
-    },
-    {
-      "name": "tools-frameworks",
-      "count": 43,
-      "color": "#795548"
-    },
-    {
-      "name": "software-engineering",
-      "count": 41,
-      "color": "#607d8b"
-    },
-    {
-      "name": "data-retrieval",
-      "count": 40,
-      "color": "#4caf50"
-    },
-    {
-      "name": "control-systems",
-      "count": 38,
-      "color": "#cddc39"
-    },
-    {
-      "name": "healthcare-bio",
-      "count": 33,
-      "color": "#8bc34a"
-    },
-    {
-      "name": "agent-tools",
-      "count": 25,
-      "color": "#607d8b"
-    },
-    {
-      "name": "knowledge-graph",
-      "count": 22,
-      "color": "#cddc39"
-    },
-    {
-      "name": "security-privacy",
-      "count": 22,
-      "color": "#ff5722"
-    },
-    {
-      "name": "deployment-optimization",
-      "count": 21,
-      "color": "#8bc34a"
-    },
-    {
-      "name": "finance",
-      "count": 20,
-      "color": "#4caf50"
-    },
-    {
-      "name": "math-statistics",
-      "count": 18,
-      "color": "#009688"
-    },
-    {
-      "name": "medical",
-      "count": 10,
-      "color": "#f44336"
-    },
-    {
-      "name": "memory",
-      "count": 6,
-      "color": "#9c27b0"
-    },
-    {
-      "name": "continual-learning",
-      "count": 5,
-      "color": "#3f51b5"
-    },
-    {
-      "name": "information-science",
-      "count": 3,
-      "color": "#607d8b"
-    },
-    {
-      "name": "chat-history-lancedb",
-      "count": 0,
-      "color": "#455a64"
-    },
-    {
-      "name": "skill-rag-indexer",
-      "count": 0,
-      "color": "#455a64"
-    }
-  ],
-  "total": 4858
+const SKILL_DATA = {"categories": [{"name": "neuroscience", "count": 1319, "color": "#e74c3c"}, {"name": "quantum", "count": 863, "color": "#9b59b6"}, {"name": "other", "count": 544, "color": "#5a6a80"}, {"name": "spiking-neuromorphic", "count": 367, "color": "#e67e22"}, {"name": "general-ml", "count": 229, "color": "#2ecc71"}, {"name": "ai-ml", "count": 224, "color": "#1abc9c"}, {"name": "nlp-llm", "count": 182, "color": "#3498db"}, {"name": "multi-agent-rl", "count": 164, "color": "#f1c40f"}, {"name": "signal-control-systems", "count": 156, "color": "#e91e63"}, {"name": "physics-math", "count": 135, "color": "#00bcd4"}, {"name": "reasoning-bayesian", "count": 76, "color": "#673ab7"}, {"name": "systems-engineering", "count": 67, "color": "#3f51b5"}, {"name": "vision-generative", "count": 64, "color": "#ff9800"}, {"name": "reinforcement-learning", "count": 62, "color": "#ffc107"}, {"name": "ai-safety-eval", "count": 59, "color": "#f44336"}, {"name": "tools-frameworks", "count": 43, "color": "#795548"}, {"name": "software-engineering", "count": 41, "color": "#607d8b"}, {"name": "data-retrieval", "count": 40, "color": "#4caf50"}, {"name": "control-systems", "count": 38, "color": "#cddc39"}, {"name": "healthcare-bio", "count": 33, "color": "#8bc34a"}, {"name": "agent-tools", "count": 25, "color": "#607d8b"}, {"name": "knowledge-graph", "count": 22, "color": "#cddc39"}, {"name": "security-privacy", "count": 22, "color": "#ff5722"}, {"name": "deployment-optimization", "count": 21, "color": "#8bc34a"}, {"name": "finance", "count": 20, "color": "#4caf50"}, {"name": "math-statistics", "count": 18, "color": "#009688"}, {"name": "medical", "count": 10, "color": "#f44336"}, {"name": "memory", "count": 6, "color": "#9c27b0"}, {"name": "continual-learning", "count": 5, "color": "#3f51b5"}, {"name": "information-science", "count": 3, "color": "#607d8b"}, {"name": "chat-history-lancedb", "count": 0, "color": "#455a64"}, {"name": "skill-rag-indexer", "count": 0, "color": "#455a64"}], "total": 4858};
+
+// ============================================================
+// NEURAL NETWORK LAYER MAPPING
+// 5 layers: Input → Hidden1 → Hidden2 → Hidden3 → Output
+// ============================================================
+const LAYER_MAP = {
+  0: { // Input: Data sources & foundations
+    label: "Input: Data & Foundations",
+    cats: ["data-retrieval", "math-statistics", "physics-math", "information-science"]
+  },
+  1: { // Hidden 1: Core theory
+    label: "Hidden: Core Theory",
+    cats: ["reasoning-bayesian", "general-ml", "quantum", "neuroscience"]
+  },
+  2: { // Hidden 2: Applied AI
+    label: "Hidden: Applied AI",
+    cats: ["ai-ml", "nlp-llm", "vision-generative", "multi-agent-rl", "reinforcement-learning", "spiking-neuromorphic", "signal-control-systems"]
+  },
+  3: { // Hidden 3: Engineering layer
+    label: "Hidden: Engineering",
+    cats: ["systems-engineering", "software-engineering", "tools-frameworks", "agent-tools", "control-systems", "deployment-optimization", "knowledge-graph", "memory", "continual-learning"]
+  },
+  4: { // Output: Domain applications
+    label: "Output: Domain Applications",
+    cats: ["healthcare-bio", "medical", "finance", "ai-safety-eval", "security-privacy", "other"]
+  },
 };
 
-// Fix typo
-
-SKILL_DATA.categories.forEach(c => {
-  if (c.name === 'systems-engineing') c.name = 'systems-engineering';
-});
+const LAYER_NAMES = ["L0 Input", "L1 Hidden", "L2 Hidden", "L3 Hidden", "L4 Output"];
 
 // ============================================================
 // NETWORK SIMULATION
@@ -473,96 +354,20 @@ SKILL_DATA.categories.forEach(c => {
 const canvas = document.getElementById('neural-canvas');
 const ctx = canvas.getContext('2d');
 const tooltip = document.getElementById('tooltip');
-const loading = document.getElementById('loading');
+const loadingEl = document.getElementById('loading');
+const layerLabelsEl = document.getElementById('layer-labels');
 
 let W, H;
 let nodes = [];
 let edges = [];
 let particles = [];
 let activeCategory = null;
+let activeLayer = null;
 let paused = false;
 let particlesOn = true;
-let camera = { x: 0, y: 0, zoom: 1 };
 let mouseX = 0, mouseY = 0;
 let hoverNode = null;
-
-// Layout: arrange categories in a circular neural-network-like structure
-// Large categories = larger nodes, positioned by angle
-// Connections drawn between related categories
-
-const CATEGORY_RELATIONS = [
-  // neuroscience core
-  ['neuroscience','spiking-neuromorphic'],
-  ['neuroscience','ai-ml'],
-  ['neuroscience','general-ml'],
-  ['neuroscience','physics-math'],
-  ['neuroscience','healthcare-bio'],
-  ['neuroscience','reasoning-bayesian'],
-  ['neuroscience','nlp-llm'],
-  ['neuroscience','vision-generative'],
-  ['neuroscience','medical'],
-  ['neuroscience','memory'],
-  ['neuroscience','continual-learning'],
-  // quantum
-  ['quantum','physics-math'],
-  ['quantum','general-ml'],
-  ['quantum','signal-control-systems'],
-  ['quantum','security-privacy'],
-  ['quantum','finance'],
-  ['quantum','healthcare-bio'],
-  ['quantum','nlp-llm'],
-  // spiking
-  ['spiking-neuromorphic','general-ml'],
-  ['spiking-neuromorphic','ai-ml'],
-  ['spiking-neuromorphic','deployment-optimization'],
-  ['spiking-neuromorphic','reinforcement-learning'],
-  // AI/ML core
-  ['ai-ml','general-ml'],
-  ['ai-ml','nlp-llm'],
-  ['ai-ml','multi-agent-rl'],
-  ['ai-ml','vision-generative'],
-  ['ai-ml','deployment-optimization'],
-  ['ai-ml','ai-safety-eval'],
-  ['general-ml','reasoning-bayesian'],
-  ['general-ml','reinforcement-learning'],
-  ['general-ml','math-statistics'],
-  ['general-ml','data-retrieval'],
-  ['general-ml','deployment-optimization'],
-  // NLP
-  ['nlp-llm','knowledge-graph'],
-  ['nlp-llm','data-retrieval'],
-  ['nlp-llm','ai-safety-eval'],
-  // Multi-agent
-  ['multi-agent-rl','reinforcement-learning'],
-  ['multi-agent-rl','systems-engineering'],
-  ['multi-agent-rl','signal-control-systems'],
-  ['multi-agent-rl','agent-tools'],
-  // Control
-  ['signal-control-systems','control-systems'],
-  ['signal-control-systems','systems-engineering'],
-  ['signal-control-systems','security-privacy'],
-  // Physics
-  ['physics-math','math-statistics'],
-  ['physics-math','reasoning-bayesian'],
-  // Safety
-  ['ai-safety-eval','security-privacy'],
-  // Software
-  ['software-engineering','tools-frameworks'],
-  ['software-engineering','agent-tools'],
-  // Healthcare
-  ['healthcare-bio','medical'],
-  // Memory
-  ['memory','continual-learning'],
-  ['memory','data-retrieval'],
-  // Other
-  ['other','general-ml'],
-  ['other','ai-ml'],
-  // Finance
-  ['finance','data-retrieval'],
-  ['finance','math-statistics'],
-  // Deployment
-  ['deployment-optimization','software-engineering'],
-];
+let camera = { offsetX: 0, offsetY: 0 };
 
 function resize() {
   const container = document.getElementById('canvas-container');
@@ -577,117 +382,158 @@ function resize() {
 
 function init() {
   resize();
-  const cats = SKILL_DATA.categories.filter(c => c.count > 0);
-  const n = cats.length;
+  nodes = [];
+  const layerKeys = Object.keys(LAYER_MAP).map(Number).sort((a,b) => a - b);
+  const numLayers = layerKeys.length;
+  const layerSpacing = W / (numLayers + 1);
 
-  // Position nodes in a circular layout with some randomness
-  const centerX = W / 2;
-  const centerY = H / 2;
-  const baseRadius = Math.min(W, H) * 0.32;
+  // Position nodes in vertical columns per layer
+  layerKeys.forEach(layerIdx => {
+    const layer = LAYER_MAP[layerIdx];
+    const cats = layer.cats
+      .map(name => SKILL_DATA.categories.find(c => c.name === name))
+      .filter(c => c && c.count > 0);
 
-  nodes = cats.map((cat, i) => {
-    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
-    // Add slight randomness for organic feel
-    const r = baseRadius + (Math.random() - 0.5) * 80;
-    const x = centerX + Math.cos(angle) * r;
-    const y = centerY + Math.sin(angle) * r;
-    // Node radius based on skill count (log scale)
-    const nodeRadius = Math.max(8, Math.min(45, Math.log2(cat.count + 1) * 5));
-    return {
-      x, y,
-      vx: 0, vy: 0,
-      targetX: x, targetY: y,
-      radius: nodeRadius,
-      category: cat.name,
-      count: cat.count,
-      color: cat.color,
-      pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: 0.02 + Math.random() * 0.02,
-    };
+    const colX = layerSpacing * (layerIdx + 1);
+    const colH = H - 100;
+    const startY = (H - colH) / 2 + 20;
+    const step = colH / Math.max(cats.length, 1);
+
+    cats.forEach((cat, i) => {
+      const y = startY + step * (i + 0.5);
+      // Small horizontal jitter for organic feel
+      const jitter = (Math.random() - 0.5) * 15;
+      const nodeRadius = Math.max(10, Math.min(40, Math.log2(cat.count + 1) * 4.5));
+      nodes.push({
+        x: colX + jitter,
+        y: y,
+        vx: 0, vy: 0,
+        baseX: colX + jitter,
+        baseY: y,
+        radius: nodeRadius,
+        category: cat.name,
+        count: cat.count,
+        color: cat.color,
+        layer: layerIdx,
+        pulse: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.015 + Math.random() * 0.02,
+        activation: 0, // lights up when signal passes through
+      });
+    });
   });
 
-  // Build edges
-  const nodeMap = {};
-  nodes.forEach(n => { nodeMap[n.category] = n; });
-
+  // Build edges: connect each node to nodes in the next layer
+  // Sample connections to avoid visual clutter — each node connects
+  // to its top-N nearest neighbors in the next layer
   edges = [];
-  CATEGORY_RELATIONS.forEach(([a, b]) => {
-    if (nodeMap[a] && nodeMap[b]) {
-      edges.push({ a: nodeMap[a], b: nodeMap[b], strength: 0.5 });
-    }
+  const layersOfNodes = {};
+  nodes.forEach(n => {
+    if (!layersOfNodes[n.layer]) layersOfNodes[n.layer] = [];
+    layersOfNodes[n.layer].push(n);
   });
 
-  // Init particles on edges
+  for (let l = 0; l < numLayers - 1; l++) {
+    const fromNodes = layersOfNodes[l] || [];
+    const toNodes = layersOfNodes[l + 1] || [];
+    fromNodes.forEach(fn => {
+      // Sort targets by proximity, connect to nearest 2-4
+      const maxConn = Math.min(toNodes.length, fn.count > 200 ? 4 : fn.count > 50 ? 3 : 2);
+      const sorted = toNodes.map(tn => ({
+        node: tn,
+        dist: Math.abs(fn.y - tn.y)
+      })).sort((a, b) => a.dist - b.dist);
+
+      for (let i = 0; i < maxConn; i++) {
+        edges.push({
+          from: fn,
+          to: sorted[i].node,
+          strength: 0.5,
+        });
+      }
+    });
+  }
+
+  // Init signal particles flowing left→right
   particles = [];
   edges.forEach((e, i) => {
-    const numParticles = Math.max(1, Math.floor(Math.log2(Math.min(e.a.count, e.b.count) + 1)));
+    const numParticles = Math.max(1, Math.min(3, Math.floor(Math.log2(e.from.count + 1))));
     for (let p = 0; p < numParticles; p++) {
       particles.push({
         edge: i,
         t: Math.random(),
-        speed: 0.003 + Math.random() * 0.005,
+        speed: 0.004 + Math.random() * 0.006,
         size: 1.5 + Math.random() * 1.5,
-        dir: Math.random() > 0.5 ? 1 : -1,
       });
     }
   });
 
   // Update stats
   document.getElementById('stat-skills').textContent = SKILL_DATA.total.toLocaleString();
-  document.getElementById('stat-cats').textContent = cats.length;
+  document.getElementById('stat-cats').textContent = nodes.length;
   document.getElementById('stat-conns').textContent = edges.length;
 
-  loading.style.display = 'none';
-  buildSidebar(cats);
-  buildLegend(cats);
+  loadingEl.style.display = 'none';
+  buildSidebar();
+  buildLayerLabels(layerKeys, layerSpacing);
 }
 
-function buildSidebar(cats) {
+function buildLayerLabels(layerKeys, layerSpacing) {
+  layerLabelsEl.innerHTML = '';
+  layerKeys.forEach(idx => {
+    const label = document.createElement('div');
+    label.className = 'layer-label';
+    label.textContent = LAYER_NAMES[idx];
+    label.style.left = (layerSpacing * (idx + 1)) + 'px';
+    layerLabelsEl.appendChild(label);
+  });
+}
+
+function buildSidebar() {
+  // Group by layer
   const list = document.getElementById('category-list');
   list.innerHTML = '';
-  cats.sort((a, b) => b.count - a.count).forEach(cat => {
-    const item = document.createElement('div');
-    item.className = 'cat-item';
-    item.dataset.category = cat.name;
-    item.innerHTML = `
-      <div class="cat-dot" style="background:${cat.color}"></div>
-      <div class="cat-name">${cat.name}</div>
-      <div class="cat-count">${cat.count}</div>
-    `;
-    item.addEventListener('click', () => {
-      activeCategory = activeCategory === cat.name ? null : cat.name;
-      document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
-      if (activeCategory) {
-        item.classList.add('active');
-        showDetails(cat);
-      } else {
-        document.getElementById('detail-title').textContent = 'Hover or click a node';
-        document.getElementById('detail-skills').innerHTML = '';
-      }
+  const layerKeys = Object.keys(LAYER_MAP).map(Number).sort((a,b) => a - b);
+  layerKeys.forEach(layerIdx => {
+    const layer = LAYER_MAP[layerIdx];
+    const header = document.createElement('div');
+    header.style.cssText = 'padding:8px 20px 4px; font-size:9px; text-transform:uppercase; letter-spacing:1px; color:#3a4a60;';
+    header.textContent = LAYER_NAMES[layerIdx];
+    list.appendChild(header);
+
+    const cats = layer.cats
+      .map(name => SKILL_DATA.categories.find(c => c.name === name))
+      .filter(c => c && c.count > 0)
+      .sort((a, b) => b.count - a.count);
+
+    cats.forEach(cat => {
+      const item = document.createElement('div');
+      item.className = 'cat-item';
+      item.dataset.category = cat.name;
+      item.innerHTML = `
+        <div class="cat-dot" style="background:${cat.color}"></div>
+        <div class="cat-name">${cat.name}</div>
+        <div class="cat-count">${cat.count}</div>
+      `;
+      item.addEventListener('click', () => {
+        activeCategory = activeCategory === cat.name ? null : cat.name;
+        document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+        if (activeCategory) {
+          item.classList.add('active');
+          showDetails(cat, layerIdx);
+        } else {
+          document.getElementById('detail-title').textContent = 'Hover or click a node';
+          document.getElementById('detail-skills').innerHTML = '';
+        }
+      });
+      list.appendChild(item);
     });
-    list.appendChild(item);
   });
 }
 
-function buildLegend(cats) {
-  const body = document.getElementById('legend-body');
-  body.innerHTML = '';
-  cats.sort((a, b) => b.count - a.count).forEach(cat => {
-    const row = document.createElement('div');
-    row.className = 'legend-row';
-    row.innerHTML = `
-      <div class="legend-dot" style="background:${cat.color}"></div>
-      <div class="legend-text">${cat.name} (${cat.count})</div>
-    `;
-    body.appendChild(row);
-  });
-}
-
-function showDetails(cat) {
+function showDetails(cat, layerIdx) {
   document.getElementById('detail-title').textContent = cat.name + ' — ' + cat.count + ' skills';
-  // We don't have skill names in JS data, show a placeholder
   const detail = document.getElementById('detail-skills');
-  detail.innerHTML = '<div class="skill-row" style="color:#5a6a80">Browse in collection/skills/' + cat.name + '/</div>';
+  detail.innerHTML = '<div class="skill-row" style="color:#5a6a80">Layer ' + layerIdx + ' · collection/skills/' + cat.name + '/</div>';
 }
 
 // ============================================================
@@ -696,47 +542,35 @@ function showDetails(cat) {
 function update() {
   if (paused) return;
 
-  // Force-directed layout: gentle attraction to target position + repulsion
-  for (let i = 0; i < nodes.length; i++) {
-    const n = nodes[i];
-    // Attract to target
-    const dx = n.targetX - n.x;
-    const dy = n.targetY - n.y;
-    n.vx += dx * 0.002;
-    n.vy += dy * 0.002;
-
-    // Repulsion from other nodes
-    for (let j = i + 1; j < nodes.length; j++) {
-      const m = nodes[j];
-      const rdx = n.x - m.x;
-      const rdy = n.y - m.y;
-      const dist = Math.sqrt(rdx * rdx + rdy * rdy) || 1;
-      const minDist = n.radius + m.radius + 30;
-      if (dist < minDist * 2) {
-        const force = (minDist * 2 - dist) / dist * 0.15;
-        n.vx += rdx * force;
-        n.vy += rdy * force;
-        m.vx -= rdx * force;
-        m.vy -= rdy * force;
-      }
-    }
-
-    // Damping
-    n.vx *= 0.88;
-    n.vy *= 0.88;
+  // Gentle floating motion around base position
+  for (let n of nodes) {
+    const dx = n.baseX - n.x;
+    const dy = n.baseY - n.y;
+    n.vx += dx * 0.005;
+    n.vy += dy * 0.005;
+    n.vx *= 0.9;
+    n.vy *= 0.9;
     n.x += n.vx;
     n.y += n.vy;
-
-    // Pulse
     n.pulse += n.pulseSpeed;
+
+    // Decay activation
+    n.activation *= 0.95;
   }
 
-  // Update particles
+  // Update signal particles flowing left→right
   if (particlesOn) {
     for (let p of particles) {
-      p.t += p.speed * p.dir;
-      if (p.t > 1) { p.t = 0; }
-      if (p.t < 0) { p.t = 1; }
+      p.t += p.speed;
+      if (p.t > 1) {
+        p.t = 0;
+        // Activate target node when signal arrives
+        edges[p.edge].to.activation = Math.min(1, edges[p.edge].to.activation + 0.3);
+      }
+      // Also activate source node slightly
+      if (p.t < 0.05) {
+        edges[p.edge].from.activation = Math.min(1, edges[p.edge].from.activation + 0.1);
+      }
     }
   }
 }
@@ -744,106 +578,134 @@ function update() {
 function draw() {
   ctx.clearRect(0, 0, W, H);
 
-  // Background grid (subtle)
-  ctx.strokeStyle = 'rgba(20,30,48,0.3)';
+  // Subtle background grid
+  ctx.strokeStyle = 'rgba(20,30,48,0.2)';
   ctx.lineWidth = 0.5;
-  for (let x = 0; x < W; x += 40) {
+  for (let x = 0; x < W; x += 50) {
     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
   }
-  for (let y = 0; y < H; y += 40) {
+  for (let y = 0; y < H; y += 50) {
     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
   }
 
-  // Draw edges
-  for (let i = 0; i < edges.length; i++) {
-    const e = edges[i];
-    const isActive = activeCategory && (e.a.category === activeCategory || e.b.category === activeCategory);
-    const dim = activeCategory && !isActive;
+  // Draw layer separators (vertical bands)
+  const numLayers = Object.keys(LAYER_MAP).length;
+  const layerSpacing = W / (numLayers + 1);
+  for (let l = 0; l <= numLayers; l++) {
+    const x = layerSpacing * l + (l === 0 ? 0 : layerSpacing * 0.5);
+    if (l > 0 && l < numLayers) {
+      ctx.fillStyle = 'rgba(15,22,38,0.3)';
+      ctx.fillRect(x - layerSpacing * 0.5, 0, layerSpacing, H);
+    }
+  }
 
-    ctx.strokeStyle = dim ? 'rgba(30,40,60,0.15)' : `rgba(40,60,90,${isActive ? 0.5 : 0.25})`;
-    ctx.lineWidth = isActive ? 1.5 : 0.8;
+  // Draw synapses (edges)
+  for (let e of edges) {
+    const isActive = activeCategory && (e.from.category === activeCategory || e.to.category === activeCategory);
+    const isLayerActive = activeLayer !== null && (e.from.layer === activeLayer || e.to.layer === activeLayer);
+    const dim = (activeCategory && !isActive) || (activeLayer !== null && !isLayerActive);
+
+    ctx.strokeStyle = dim
+      ? 'rgba(25,35,55,0.08)'
+      : isActive
+        ? `rgba(0,212,255,${0.35 + e.from.activation * 0.3})`
+        : `rgba(40,60,90,${0.12 + e.from.activation * 0.15})`;
+    ctx.lineWidth = isActive ? 1.5 : 0.6;
     ctx.beginPath();
-    ctx.moveTo(e.a.x, e.a.y);
-    ctx.lineTo(e.b.x, e.b.y);
+    ctx.moveTo(e.from.x, e.from.y);
+    ctx.lineTo(e.to.x, e.to.y);
     ctx.stroke();
   }
 
-  // Draw particles
+  // Draw signal particles
   if (particlesOn) {
     for (let p of particles) {
       const e = edges[p.edge];
       if (!e) continue;
-      const isActive = activeCategory && (e.a.category === activeCategory || e.b.category === activeCategory);
-      const dim = activeCategory && !isActive;
+      const isActive = activeCategory && (e.from.category === activeCategory || e.to.category === activeCategory);
+      const isLayerActive = activeLayer !== null && (e.from.layer === activeLayer || e.to.layer === activeLayer);
+      const dim = (activeCategory && !isActive) || (activeLayer !== null && !isLayerActive);
       if (dim) continue;
 
-      const px = e.a.x + (e.b.x - e.a.x) * p.t;
-      const py = e.a.y + (e.b.y - e.a.y) * p.t;
+      const px = e.from.x + (e.to.x - e.from.x) * p.t;
+      const py = e.from.y + (e.to.y - e.from.y) * p.t;
 
-      ctx.fillStyle = isActive ? '#00d4ff' : 'rgba(0,200,255,0.6)';
+      // Particle glow
+      ctx.fillStyle = isActive ? 'rgba(0,212,255,0.2)' : 'rgba(0,200,255,0.12)';
       ctx.beginPath();
-      ctx.arc(px, py, p.size, 0, Math.PI * 2);
+      ctx.arc(px, py, p.size * 3.5, 0, Math.PI * 2);
       ctx.fill();
 
-      // Glow
-      ctx.fillStyle = 'rgba(0,200,255,0.15)';
+      // Particle core
+      ctx.fillStyle = isActive ? '#00d4ff' : 'rgba(120,220,255,0.8)';
       ctx.beginPath();
-      ctx.arc(px, py, p.size * 3, 0, Math.PI * 2);
+      ctx.arc(px, py, p.size, 0, Math.PI * 2);
       ctx.fill();
     }
   }
 
-  // Draw nodes
+  // Draw neurons (nodes)
   for (let n of nodes) {
     const isActive = activeCategory === n.category;
+    const isLayerActive = activeLayer === n.layer;
     const isRelated = activeCategory && edges.some(e =>
-      (e.a === n && e.b.category === activeCategory) ||
-      (e.b === n && e.a.category === activeCategory)
+      (e.from === n && e.to.category === activeCategory) ||
+      (e.to === n && e.from.category === activeCategory)
     );
-    const dim = activeCategory && !isActive && !isRelated;
+    const dim = (activeCategory && !isActive && !isRelated) || (activeLayer !== null && !isLayerActive);
 
-    const pulseR = n.radius + Math.sin(n.pulse) * 2;
-    const r = Math.max(4, pulseR);
+    const pulseR = n.radius + Math.sin(n.pulse) * 1.5;
+    const actBoost = n.activation * 5;
+    const r = Math.max(4, pulseR + actBoost);
 
     // Outer glow
-    const glowAlpha = dim ? 0.05 : (isActive ? 0.3 : 0.12);
-    const grad = ctx.createRadialGradient(n.x, n.y, r * 0.5, n.x, n.y, r * 2.5);
-    grad.addColorStop(0, n.color + Math.floor(glowAlpha * 255).toString(16).padStart(2, '0'));
+    const glowAlpha = dim ? 0.03 : (isActive ? 0.35 : 0.1 + n.activation * 0.2);
+    const grad = ctx.createRadialGradient(n.x, n.y, r * 0.5, n.x, n.y, r * 2.8);
+    const alphaHex = Math.floor(glowAlpha * 255).toString(16).padStart(2, '0');
+    grad.addColorStop(0, n.color + alphaHex);
     grad.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.arc(n.x, n.y, r * 2.5, 0, Math.PI * 2);
+    ctx.arc(n.x, n.y, r * 2.8, 0, Math.PI * 2);
     ctx.fill();
 
-    // Node body
+    // Node body — neuron circle
     ctx.fillStyle = dim ? '#1a2332' : n.color;
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
     ctx.fill();
 
-    // Node border
-    ctx.strokeStyle = isActive ? '#00d4ff' : (dim ? '#1a2332' : 'rgba(255,255,255,0.15)');
+    // Inner highlight (3D effect)
+    if (!dim) {
+      ctx.fillStyle = 'rgba(255,255,255,0.25)';
+      ctx.beginPath();
+      ctx.arc(n.x - r * 0.3, n.y - r * 0.3, r * 0.35, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Ring (active state)
+    ctx.strokeStyle = isActive ? '#00d4ff' : (dim ? '#1a2332' : 'rgba(255,255,255,0.12)');
     ctx.lineWidth = isActive ? 2.5 : 1;
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
     ctx.stroke();
 
-    // Inner core
-    if (!dim) {
-      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+    // Activation ring (lights up when signal passes)
+    if (n.activation > 0.1 && !dim) {
+      ctx.strokeStyle = `rgba(0,212,255,${n.activation * 0.6})`;
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(n.x - r * 0.3, n.y - r * 0.3, r * 0.3, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.arc(n.x, n.y, r + 4 + n.activation * 3, 0, Math.PI * 2);
+      ctx.stroke();
     }
 
     // Label
     if (!dim || isActive) {
-      ctx.font = `${isActive ? 'bold ' : ''}11px 'SF Mono', monospace`;
-      ctx.fillStyle = isActive ? '#00d4ff' : 'rgba(200,214,229,0.7)';
+      ctx.font = `${isActive ? 'bold ' : ''}10px 'SF Mono', monospace`;
+      ctx.fillStyle = isActive ? '#00d4ff' : 'rgba(200,214,229,0.65)';
       ctx.textAlign = 'center';
-      ctx.fillText(n.category, n.x, n.y - r - 8);
+      ctx.fillText(n.category, n.x, n.y - r - 6);
 
-      // Count
       ctx.font = '9px monospace';
       ctx.fillStyle = 'rgba(90,106,128,0.8)';
       ctx.fillText(n.count, n.x, n.y + 3);
@@ -864,10 +726,11 @@ function draw() {
   if (hoverNode) {
     canvas.style.cursor = 'pointer';
     tooltip.style.display = 'block';
-    tooltip.style.left = (mouseX + 15) + 'px';
-    tooltip.style.top = (mouseY - 10) + 'px';
+    tooltip.style.left = Math.min(mouseX + 15, W - 200) + 'px';
+    tooltip.style.top = Math.max(mouseY - 10, 0) + 'px';
     tooltip.querySelector('.tt-title').textContent = hoverNode.category;
     tooltip.querySelector('.tt-count').textContent = hoverNode.count + ' skills';
+    tooltip.querySelector('.tt-layer').textContent = 'Layer ' + hoverNode.layer + ' · ' + LAYER_NAMES[hoverNode.layer];
   } else {
     canvas.style.cursor = 'default';
     tooltip.style.display = 'none';
@@ -892,13 +755,12 @@ canvas.addEventListener('mousemove', e => {
 canvas.addEventListener('click', () => {
   if (hoverNode) {
     activeCategory = activeCategory === hoverNode.category ? null : hoverNode.category;
-    // Update sidebar
     document.querySelectorAll('.cat-item').forEach(el => {
       el.classList.toggle('active', el.dataset.category === activeCategory);
     });
     if (activeCategory) {
       const cat = SKILL_DATA.categories.find(c => c.name === activeCategory);
-      if (cat) showDetails(cat);
+      if (cat) showDetails(cat, hoverNode.layer);
     } else {
       document.getElementById('detail-title').textContent = 'Hover or click a node';
       document.getElementById('detail-skills').innerHTML = '';
@@ -906,9 +768,19 @@ canvas.addEventListener('click', () => {
   }
 });
 
+// Layer navigation buttons
+document.querySelectorAll('.layer-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const layer = parseInt(btn.dataset.layer);
+    activeLayer = activeLayer === layer ? null : layer;
+    document.querySelectorAll('.layer-btn').forEach(el => el.classList.remove('active'));
+    if (activeLayer !== null) btn.classList.add('active');
+  });
+});
+
 document.getElementById('btn-particles').addEventListener('click', function() {
   particlesOn = !particlesOn;
-  this.textContent = 'Particles: ' + (particlesOn ? 'On' : 'Off');
+  this.textContent = 'Signals: ' + (particlesOn ? 'On' : 'Off');
   this.classList.toggle('active', particlesOn);
 });
 
@@ -919,32 +791,41 @@ document.getElementById('btn-pause').addEventListener('click', function() {
 });
 
 document.getElementById('btn-zoom-fit').addEventListener('click', () => {
-  // Reset node targets to original layout
-  const cats = SKILL_DATA.categories.filter(c => c.count > 0);
-  const n = cats.length;
-  const centerX = W / 2;
-  const centerY = H / 2;
-  const baseRadius = Math.min(W, H) * 0.32;
-  nodes.forEach((node, i) => {
-    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
-    node.targetX = centerX + Math.cos(angle) * baseRadius;
-    node.targetY = centerY + Math.sin(angle) * baseRadius;
+  activeCategory = null;
+  activeLayer = null;
+  document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.layer-btn').forEach(el => el.classList.remove('active'));
+  // Reset positions
+  nodes.forEach(n => {
+    n.x = n.baseX;
+    n.y = n.baseY;
+    n.vx = 0;
+    n.vy = 0;
   });
 });
 
 window.addEventListener('resize', () => {
   resize();
-  // Recalculate targets
-  const cats = SKILL_DATA.categories.filter(c => c.count > 0);
-  const n = cats.length;
-  const centerX = W / 2;
-  const centerY = H / 2;
-  const baseRadius = Math.min(W, H) * 0.32;
-  nodes.forEach((node, i) => {
-    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
-    node.targetX = centerX + Math.cos(angle) * baseRadius;
-    node.targetY = centerY + Math.sin(angle) * baseRadius;
+  // Recalculate positions
+  const layerKeys = Object.keys(LAYER_MAP).map(Number).sort((a,b) => a - b);
+  const numLayers = layerKeys.length;
+  const layerSpacing = W / (numLayers + 1);
+
+  layerKeys.forEach(layerIdx => {
+    const layer = LAYER_MAP[layerIdx];
+    const cats = layer.cats
+      .map(name => nodes.find(n => n.category === name))
+      .filter(n => n);
+    const colX = layerSpacing * (layerIdx + 1);
+    const colH = H - 100;
+    const startY = (H - colH) / 2 + 20;
+    const step = colH / Math.max(cats.length, 1);
+    cats.forEach((n, i) => {
+      n.baseX = colX;
+      n.baseY = startY + step * (i + 0.5);
+    });
   });
+  buildLayerLabels(layerKeys, layerSpacing);
 });
 
 // Start
