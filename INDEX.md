@@ -1,4 +1,21 @@
 
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### Latency-Constrained Hardware-Aware QEC Co-Design with Adaptive Confidence-Gated Neural Decoding
+- [[adaptive-confidence-gated-qec-decoding]] - Two-stage confidence-gated neural decoding for QEC: lightweight FFNN fast-path with MWPM refinement fallback, routing only 3.3-6.2% of syndromes while improving accuracy from 99.21% to 99.81% (arXiv: 2607.05814)
+  - Neural fast-path throughput saturates at ~4.6×10⁵ samples/s on commodity CPU
+  - Confidence threshold controls accuracy-latency trade-off
+  - Beyond d=7, neural path is NOT the throughput bottleneck — optimize graph stage instead
+  - **Activation**: confidence gating, two-stage decoding, neural decoder, QEC latency, surface code, MWPM refinement, accuracy-latency tradeoff, rotated surface code, adaptive inference, hardware-aware
+
+### VF-QCTRL: Physics-Informed LLM for General Quantum Control
+- [[physics-informed-llm-quantum-control]] - Physics-informed LLM framework combining symbolic reasoning with optimization to propose and refine analytic quantum control protocols without task-specific training, benchmarked across 16 tasks (arXiv: 2605.26021)
+  - LLM proposes analytic ansatz, numerical optimizer refines parameters through feedback loop
+  - Competitive with conventional solvers in both noiseless and noisy regimes
+  - Training-free: no fine-tuning required, leverages LLM's broad physics knowledge
+  - Favorable inference-time scaling and pulse resolution scaling
+  - **Activation**: physics-informed LLM, quantum control synthesis, VF-QCTRL, analytic pulse design, symbolic reasoning quantum, training-free control, QCTRL benchmark, pulse sequence optimization
+
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
 ### Hierarchical Bayesian Statistical Learning Model for Individual EEG Trajectories
