@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-08 - Neuroscience Research (Cron Job - Dendritic Learning & Connectivity)
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit]] - 树突分支与分流抑制如何重塑局部学习中的信用分配几何 (arXiv: 2607.03556)
+  - 核心要点 1: 精确梯度分解为 local eligibility × compartment error，将局部学习转化为信用信号压缩问题
+  - 核心要点 2: 分流抑制通过重塑compartment-error场来匹配受限反馈，在5-factor反馈下仅比backprop低5-6个百分点
+  - **Activation**: shunting inhibition, dendritic credit, local learning, E/I conductance, 树突信用分配
+
+### SPIDER: Stitched Power-spectra for Directed Information Flow
+- [[spider-directed-connectivity-stitching]] - 非参数频域框架从非同步不完整记录中恢复全脑有效连接 (arXiv: 2606.22695)
+  - 核心要点 1: 拼接重叠通道子集的局部功率谱为全局谱矩阵，核范数补全未共同观测脑区对
+  - 核心要点 2: 从12个实验室43个session中恢复50脑区间的有向信息流，揭示theta频段海马前馈层级
+  - **Activation**: effective connectivity, SPIDER, directed information flow, brain connectivity stitching, 有效连接
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Event-Driven Fly-Inspired Visual Motion Detection
