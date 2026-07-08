@@ -1,273 +1,255 @@
 ---
 name: differentiable-biophysical-simulation-neurostimulation
-description: "Differentiable biophysical simulation framework for inferring Hodgkin-Huxley model parameters from extracellular MEA data and predicting neural responses to neurostimulation. Use when: fitting biophysical models to neural data, designing neurostimulation protocols, predicting neural responses to electrical stimulation, working with multi-electrode array recordings. Keywords: Hodgkin-Huxley, biophysical simulation, neurostimulation, MEA, differentiable simulation, parameter inference, neural modeling."
-tags: [neuroscience, biophysical-modeling, neurostimulation, differentiable-simulation, MEA, Hodgkin-Huxley]
-related_skills: [computational-neuroscience, neural-dynamics-analysis, biophysical-neuron-models]
+description: Methodology for inferring Hodgkin-Huxley biophysical parameters from extracellular MEA data using differentiable biophysical simulation, enabling precise neurostimulation prediction without invasive intracellular recordings.
+tags: [computational-neuroscience, biophysical-modeling, hodgkin-huxley, neurostimulation, differentiable-simulation, MEA]
+arxiv_id: "2607.04063"
+authors: ["Amrith Lotlikar", "Ian Christopher Tanoh", "Praful Vasireddy", "Andrew Lanpouthakoun", "Ramandeep Vilkhu", "Michael Sommeling", "A. J. Phillips", "Alexander Sher", "Alan Litke", "Scott W. Linderman", "E. J. Chichilnisky", "Subhasish Mitra"]
+published: "2026-07-05"
 ---
 
 # Differentiable Biophysical Simulation for Neurostimulation
 
-Framework for inferring Hodgkin-Huxley (HH) biophysical parameters from extracellular multi-electrode array (MEA) recordings and predicting neural responses to electrical stimulation using differentiable simulation and simulation-based inference.
-
 ## Core Innovation
 
-**Problem**: Multi-compartment HH models require invasive intracellular recordings for parameter fitting, limiting scalability to large neural populations.
+**Infer multi-compartment Hodgkin-Huxley biophysical parameters from extracellular MEA data alone, replacing hours of invasive stimulus testing with minutes of recording.**
 
-**Solution**: Differentiable biophysical simulation enables rapid inference of HH parameters from extracellular MEA data alone, replacing hours of clinical stimulus testing with minutes of recording.
+This work bridges the gap between biophysically detailed neural models and scalable experimental data by introducing a differentiable simulation framework that enables simulation-based inference of HH parameters from extracellular measurements.
 
-## Key Methodology
+## Problem Statement
 
-### 1. Differentiable Biophysical Simulation
+### Traditional Approach Limitations
+- **Hodgkin-Huxley models** provide principled framework for predicting neural dynamics and stimulation responses
+- **Parameter fitting** typically requires intracellular recordings (invasive, low-throughput)
+- Cannot capture geometry and cell-specific properties of many neurons in a circuit
+- Multi-electrode arrays (MEAs) offer scalable alternative but HH model complexity has precluded reliable biophysical inference from extracellular data
 
-**Architecture**:
-- Multi-compartment HH model implementation in differentiable framework (PyTorch/JAX)
-- Forward simulation: parameters → extracellular signatures
-- Backward pass: gradients flow through biophysical equations
-- Enables end-to-end training from extracellular observations
+### Key Challenge
+How to extract biophysically meaningful parameters from extracellular MEA recordings without invasive intracellular access?
 
-**Key Components**:
+## Methodology
+
+### Differentiable Biophysical Simulation
 ```
-Morphology (compartment geometry)
-    ↓
-Ion channel dynamics (HH equations)
-    ↓
-Intracellular potentials
-    ↓
-Extracellular forward model (volume conduction)
-    ↓
-MEA recordings (observable)
+Pipeline:
+1. Multi-compartment HH model → differentiable implementation
+2. Extracellular MEA features → designed stimulus features
+3. Simulation-based inference → gradient-based parameter optimization
+4. Predict stimulation responses → validate against held-out data
 ```
 
-### 2. Simulation-Based Inference (SBI)
+### Core Components
 
-**Approach**:
-- Generate synthetic dataset: sample parameter space → simulate responses
-- Train surrogate model: parameters → extracellular features
-- Invert mapping: observed features → inferred parameters
-- Bayesian posterior estimation with uncertainty quantification
+#### 1. Differentiable HH Implementation
+- Multi-compartment Hodgkin-Huxley equations
+- Backpropagation-through-time compatible
+- Captures: membrane capacitance, ion channel conductances, reversal potentials, morphology
 
-**Feature Engineering**:
-- Spike waveform shape (peak, trough, width)
-- Spike amplitude across electrodes
-- Temporal dynamics (adaptation, bursting)
-- Frequency-response curves
-- Phase-locking properties
+#### 2. Extracellular Feature Engineering
+- Extract informative features from MEA recordings
+- Designed stimulation protocols (not random)
+- Features sensitive to biophysical parameters
 
-### 3. Extracellular MEA Data Pipeline
+#### 3. Simulation-Based Inference
+- Forward model: parameters → predicted extracellular signals
+- Loss function: predicted vs observed MEA responses
+- Gradient descent: optimize biophysical parameters
+- No need for intracellular ground truth
 
-**Data Requirements**:
-- High-density MEA (e.g., 512 electrodes, 30μm pitch)
-- Spontaneous activity recordings (baseline)
-- Designed stimulation protocols (validation)
-- Multi-unit or sorted single-unit activity
+#### 4. Neurostimulation Prediction
+- Fit HH models from minutes of recording
+- Predict responses to novel stimulation patterns
+- Replace hours of clinical stimulus testing
 
-**Preprocessing**:
-1. Spike sorting → isolate single units
-2. Extract waveform features per electrode
-3. Compute temporal statistics (ISI, firing rate)
-4. Frequency-domain analysis (spectrograms)
+## Technical Details
 
-### 4. Neurostimulation Prediction
-
-**Workflow**:
-1. Infer biophysical parameters from baseline recording (5-10 min)
-2. Simulate responses to candidate stimulation patterns
-3. Rank stimulation protocols by predicted efficacy
-4. Validate top candidates experimentally
-
-**Applications**:
-- Retinal prostheses (predict phosphene patterns)
-- Deep brain stimulation (optimize electrode configurations)
-- Cochlear implants (predict auditory percepts)
-- Cortical stimulation (map functional connectivity)
-
-## Implementation Guide
-
-### Step 1: Set Up Differentiable Simulator
-
+### Hodgkin-Huxley Model (Multi-Compartment)
 ```python
-import torch
-import numpy as np
+# Simplified differentiable HH equations
+C_m * dV/dt = -g_Na * m³ * h * (V - E_Na) 
+              - g_K * n⁴ * (V - E_K) 
+              - g_L * (V - E_L) 
+              + I_stim
 
-class DifferentiableHHModel(torch.nn.Module):
-    def __init__(self, morphology, channel_densities):
-        super().__init__()
-        self.morphology = morphology  # compartment geometry
-        self.g_Na = torch.nn.Parameter(channel_densities['Na'])
-        self.g_K = torch.nn.Parameter(channel_densities['K'])
-        self.g_leak = torch.nn.Parameter(channel_densities['leak'])
-        
-    def forward(self, stimulus_current, dt=0.025, T=1000):
-        # HH dynamics (differentiable)
-        V = torch.zeros(len(self.morphology), int(T/dt))
-        # ... implement HH equations with autograd
-        return V
-    
-    def simulate_extracellular(self, V, electrode_positions):
-        # Volume conduction model
-        # φ_ext = Σ (I_source / (4πσ|r - r_elec|))
-        return extracellular_potentials
+# Gating kinetics
+dm/dt = α_m(V) * (1-m) - β_m(V) * m
+dh/dt = α_h(V) * (1-h) - β_h(V) * h
+dn/dt = α_n(V) * (1-n) - β_n(V) * n
+
+# All operations differentiable for backprop
 ```
 
-### Step 2: Extract Features from MEA Data
+### Inference Procedure
+```
+Input: Extracellular MEA recordings (few minutes)
+       Designed stimulation features
 
-```python
-def extract_features(spike_trains, waveforms):
-    features = {
-        'waveform_peak': waveforms.max(dim=1),
-        'waveform_trough': waveforms.min(dim=1),
-        'spike_width': compute_width(waveforms),
-        'amplitude_map': waveforms.amplitude_across_electrodes(),
-        'firing_rate': len(spike_trains) / recording_duration,
-        'isi_cv': np.std(ISI) / np.mean(ISI),
-        'burst_index': compute_burst_index(spike_trains),
-    }
-    return features
+Optimization:
+  θ* = argmin_θ Σ_t ||MEA_predicted(θ, t) - MEA_observed(t)||²
+  
+  where θ = {g_Na, g_K, g_L, E_Na, E_K, E_L, morphology, ...}
+
+Output: Biophysical parameters for each neuron
 ```
 
-### Step 3: Simulation-Based Inference
+### Validation Metrics
+- **Prediction accuracy**: 90.6% on unseen multi-electrode stimulation responses
+- **Data efficiency**: Few minutes of recording vs hours of testing
+- **Scalability**: Hundreds of neurons simultaneously
 
-```python
-from sbi.inference import SNPE  # Sequential Neural Posterior Estimation
+## Experimental Validation
 
-# Generate training data
-prior = build_prior(parameter_ranges)
-simulator = DifferentiableHHModel(morphology)
-theta = prior.sample((10000,))
-x = simulator(theta)  # simulate extracellular signatures
+### Dataset
+- **Preparation**: Isolated macaque retina
+- **Recording**: 30 μm-pitch 512-electrode array
+- **Duration**: Hundreds of hours of stimulation and recording
+- **Cell types**: Multiple retinal ganglion cell types
 
-# Train surrogate
-inference = SNPE(prior=prior)
-density_estimator = inference.append_simulations(theta, x).train()
-posterior = inference.build_posterior(density_estimator)
+### Results
+- Predicted previously unseen stimulation responses with 90.6% accuracy
+- HH models fit from only a few minutes of recording
+- Replaced hours of clinical stimulus testing
+- Captured cell-specific biophysical properties
 
-# Infer parameters from observed data
-observed_features = extract_features(mea_data)
-posterior_samples = posterior.sample((1000,), x=observed_features)
-inferred_params = posterior_samples.mean(dim=0)
+## Applications
+
+### 1. Translational Neuroengineering
+- **Prosthetics**: Predict neural responses to prosthetic stimulation
+- **Clinical**: Optimize stimulation parameters for patients
+- **Safety**: Test stimulation protocols in silico before in vivo
+
+### 2. Basic Neuroscience
+- **Cell typing**: Classify neurons by biophysical properties
+- **Circuit analysis**: Understand how biophysics shapes computation
+- **Disease models**: Compare healthy vs diseased neuron parameters
+
+### 3. Brain-Machine Interfaces
+- **Adaptive stimulation**: Real-time parameter updates
+- **Personalized medicine**: Patient-specific models
+- **Closed-loop systems**: Predict and respond to neural state
+
+## Implementation Guidelines
+
+### When to Use
+- Have extracellular MEA recordings
+- Need biophysically interpretable models
+- Want to predict stimulation responses
+- Intracellular recordings not feasible
+- Working with retinal, cortical, or other neural tissue
+
+### Prerequisites
+- Multi-electrode array data (high-density preferred)
+- Computational resources for differentiable simulation
+- Familiarity with HH modeling concepts
+- Access to stimulation hardware for validation
+
+### Integration Steps
+```
+1. Data preparation
+   - Extract spike times from MEA
+   - Identify stimulation epochs
+   - Compute extracellular features
+
+2. Model initialization
+   - Choose compartment structure (soma, dendrites, axon)
+   - Initialize parameters from literature
+   - Set up differentiable simulation
+
+3. Parameter inference
+   - Define loss function (MEA prediction error)
+   - Choose optimizer (Adam, L-BFGS)
+   - Run optimization with gradient descent
+
+4. Validation
+   - Hold out stimulation patterns
+   - Compare predicted vs observed responses
+   - Assess biological plausibility of parameters
 ```
 
-### Step 4: Predict Stimulation Responses
+## Performance Considerations
 
-```python
-# Load inferred parameters
-model = DifferentiableHHModel(morphology, inferred_params)
+### Computational Cost
+- **Training**: GPU-accelerated differentiable simulation
+- **Inference**: Minutes per neuron (vs hours of recording)
+- **Memory**: Scales with compartment count and recording length
 
-# Simulate candidate stimulation protocols
-stimulus_protocols = generate_stimulus_candidates()
-predicted_responses = []
+### Scalability
+- Hundreds of neurons simultaneously
+- Parallel optimization across cells
+- Efficient gradient computation via autograd
 
-for protocol in stimulus_protocols:
-    response = model(protocol)
-    predicted_responses.append(response)
+## Limitations and Extensions
 
-# Rank by predicted efficacy (e.g., spike probability, selectivity)
-ranked_protocols = rank_by_objective(predicted_responses)
+### Current Limitations
+- Assumes known compartment morphology (or co-estimates)
+- Requires designed stimulation features
+- May not capture all biophysical complexity
+- Validation limited to retinal tissue so far
+
+### Future Directions
+- Extend to in vivo recordings
+- Incorporate synaptic plasticity
+- Multi-scale models (ion channels → network)
+- Real-time adaptive parameter estimation
+
+## Comparison with Alternatives
+
+| Method | Invasive? | Scalable? | Biophysically detailed? | Predictive? |
+|--------|-----------|-----------|------------------------|-------------|
+| Intracellular recording | Yes | No | Yes | Limited |
+| Standard MEA analysis | No | Yes | No | No |
+| **This method** | **No** | **Yes** | **Yes** | **Yes** |
+| Phenomenological models | No | Yes | No | Yes |
+
+## Code Structure
+
+```
+differentiable_biophysical/
+├── hh_model/
+│   ├── differentiable_hh.py      # Core HH implementation
+│   ├── compartments.py           # Multi-compartment structure
+│   └── ion_channels.py           # Channel kinetics
+├── inference/
+│   ├── feature_extraction.py     # MEA feature engineering
+│   ├── optimizer.py              # Parameter optimization
+│   └── loss_functions.py         # Prediction error metrics
+├── stimulation/
+│   ├── protocol_design.py        # Stimulation feature design
+│   └── response_prediction.py    # Predict novel responses
+└── validation/
+    ├── cross_validation.py       # Hold-out testing
+    └── biological_checks.py      # Plausibility validation
 ```
 
-## Validation Protocol
+## Citation
 
-### Experimental Validation (Retina Example)
+```bibtex
+@article{lotlikar2026learning,
+  title={Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation},
+  author={Lotlikar, Amrith and Tanoh, Ian Christopher and Vasireddy, Praful and Lanpouthakoun, Andrew and Vilkhu, Ramandeep and Sommeling, Michael and Phillips, A. J. and Sher, Alexander and Litke, Alan and Linderman, Scott W. and Chichilnisky, E. J. and Mitra, Subhasish},
+  journal={arXiv preprint},
+  year={2026},
+  eprint={2607.04063},
+  archivePrefix={arXiv},
+  primaryClass={q-bio.NC}
+}
+```
 
-**Dataset**: Isolated macaque retina, 512-electrode MEA, 30μm pitch
+## Related Work
 
-**Ground Truth Collection**:
-- Hours of multi-electrode stimulation
-- Measure actual spike responses
-- Record extracellular waveforms
-
-**Validation Metrics**:
-1. **Parameter accuracy**: Compare inferred vs. intracellular measurements
-2. **Response prediction**: Accuracy on held-out stimulation patterns
-3. **Temporal precision**: Spike timing agreement (Victor-Purpura distance)
-4. **Spatial selectivity**: Correct prediction of activated neuron subset
-
-**Reported Performance**:
-- 90.6% accuracy on previously unseen stimulation responses
-- Parameters inferred from 5-10 min recording vs. hours of testing
-- Captures cell-type-specific properties (RGC types in retina)
-
-## Pitfalls & Solutions
-
-### Pitfall 1: Non-Identifiability
-**Problem**: Multiple parameter combinations produce similar extracellular signatures.
-
-**Solution**:
-- Use informative priors from literature
-- Include multiple stimulation conditions in training data
-- Regularize with biological constraints (e.g., channel density ratios)
-
-### Pitfall 2: Morphology Uncertainty
-**Problem**: Unknown neuron morphology affects extracellular signatures.
-
-**Solution**:
-- Joint inference: morphology + biophysical parameters
-- Use morphological priors (e.g., RGC types have stereotyped morphologies)
-- Include morphology as latent variable in SBI
-
-### Pitfall 3: Volume Conduction Model
-**Problem**: Simplified volume conduction models introduce errors.
-
-**Solution**:
-- Use realistic head/tissue models (FEM/BEM)
-- Calibrate with known sources (e.g., stimulation artifacts)
-- Include conductivity as inferred parameter
-
-### Pitfall 4: Overfitting to Noise
-**Problem**: Fitting to noisy extracellular data captures noise, not biology.
-
-**Solution**:
-- Bayesian inference with uncertainty quantification
-- Cross-validation on held-out stimulation data
-- Regularization (L2 on parameters, smoothness constraints)
-
-## Advanced Applications
-
-### 1. Closed-Loop Neurostimulation
-- Infer parameters online during recording
-- Update stimulation protocol in real-time
-- Adapt to neural state changes (plasticity, adaptation)
-
-### 2. Multi-Scale Modeling
-- Combine single-cell biophysics with network dynamics
-- Predict population-level responses to stimulation
-- Model synaptic transmission and plasticity
-
-### 3. Personalized Medicine
-- Patient-specific models from clinical recordings
-- Optimize stimulation for individual anatomy
-- Predict side effects (e.g., unintended muscle activation)
-
-### 4. Drug Effect Prediction
-- Model ion channel pharmacology
-- Predict how drugs alter stimulation responses
-- Optimize drug + stimulation combinations
-
-## Resources
-
-**Software**:
-- [Brian2](https://briansimulator.org/) - Differentiable neural simulation
-- [NEURON](https://www.neuron.yale.edu/) - Multi-compartment modeling
-- [sbi](https://sbi-dev.github.io/sbi/) - Simulation-based inference
-- [LFPy](https://lfpy.readthedocs.io/) - Extracellular potential calculation
-
-**Datasets**:
-- [NeuroPixels](https://neuropixels.org/) - High-density electrophysiology
-- [Allen Brain Atlas](https://portal.brain-map.org/) - Cell type characterization
-- [OpenNeuro](https://openneuro.org/) - Human electrophysiology
-
-**Key Papers**:
-- Original paper: arXiv:2607.04063v1
-- Differentiable simulation: [Reference to foundational work]
-- SBI for neuroscience: [Reference to SBI applications]
+- **Hodgkin-Huxley modeling**: Classic biophysical neural models
+- **Differentiable simulation**: Physics-informed neural networks
+- **MEA analysis**: Extracellular recording techniques
+- **Neurostimulation**: Clinical and prosthetic applications
+- **Simulation-based inference**: Likelihood-free parameter estimation
 
 ## Activation Triggers
 
-Use this skill when working with:
-- Biophysical neuron modeling (Hodgkin-Huxley, multi-compartment)
-- Extracellular recordings (MEA, multi-electrode arrays)
-- Neurostimulation design and optimization
-- Parameter inference from neural data
-- Predicting neural responses to electrical stimulation
-- Retinal/cortical/cochlear prostheses
-- Differentiable simulation in neuroscience
+Use this skill when:
+- Working with multi-electrode array data
+- Need to infer biophysical parameters
+- Building neurostimulation systems
+- Developing differentiable neural models
+- Translating neural models to clinical applications
+- Designing experiments for neural prosthetics
+
+Keywords: Hodgkin-Huxley, biophysical modeling, differentiable simulation, neurostimulation, MEA, extracellular recording, parameter inference, neural prosthetics, computational neuroscience

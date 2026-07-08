@@ -1,4 +1,14 @@
 
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Dendritic In-Context Learning in Single-Layer SNN (DendriCL)
+- [[dendritic-icl-snn]] - Single dendritic compartment with online-LMS dynamics is sufficient for general-purpose in-context learning without attention, depth, or inference-time plasticity (arXiv: 2607.02283)
+  - First SNN to pass Garg-2022 ICL benchmark at non-trivial task dimensions
+  - Apical dendritic recurrence structurally identical to leaky online Widrow-Hoff LMS
+  - Seed-stable at super-dimensional ICL where dense Transformers fail
+  - Linear probe recovers reference LMS trajectory with R² = 0.93
+  - **Activation**: dendritic computation, in-context learning, ICL, spiking neural network, SNN, single-layer, online learning, Widrow-Hoff, LMS, biological plausibility, neuromorphic
+
 ## 2026-07-08 - Medicine + Quantum (Cron Job - PET Biomarkers)
 
 ### Quantum Entanglement Degree as PET Biomarkers for Hypoxia
