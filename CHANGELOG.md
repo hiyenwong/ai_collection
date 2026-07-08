@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Policy
 - **All PRs with new skills MUST have every skill classified into a category subdirectory before merge.** No skill may remain in `collection/skills/` root. PRs violating this will be held until classify_skills.py is run.
 - PR merge requires review: verify skill classification, resolve conflicts, run `python scripts/classify_skills.py`, confirm 0 flat skills remain.
+- After any skill changes (add/remove/reclassify), run `python scripts/update_neural_map.py` to update the neural network visualization.
 - Git commits authored as `m1_agent`.
 
 ### Added

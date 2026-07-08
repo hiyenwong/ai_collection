@@ -265,6 +265,29 @@ To auto-classify flat skills into categories:
 python scripts/classify_skills.py
 ```
 
+### Neural Network Skill Map
+
+The skill collection is visualized as an interactive **neural network** where each category is a node (sized by skill count), connected to related domains with animated signal particles flowing along the edges.
+
+![Neural Network Skill Map](./docs/html/skill-neural-map-screenshot.png)
+
+**Open the interactive version:** [docs/html/skill-neural-map.html](./docs/html/skill-neural-map.html) (open in a browser)
+
+Features:
+- **30 category nodes** positioned in a force-directed circular layout
+- **Animated particles** flowing along inter-category connections
+- **Click a node** to highlight its connections and dim unrelated nodes
+- **Sidebar** with category list, skill counts, and detail panel
+- **Legend** showing all categories with their colors
+- **Controls**: toggle particles, pause animation, reset layout
+
+To regenerate the map after adding/removing skills:
+```bash
+python scripts/update_neural_map.py
+```
+
+This script scans `collection/skills/` and updates the skill counts in the HTML file. It should be run whenever skills are added, removed, or reclassified.
+
 ## Knowledge Base
 
 The `knowledge/` directory contains AI self-evolution learning materials:

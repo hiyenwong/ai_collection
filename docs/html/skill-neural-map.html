@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Collection — Neural Network Skill Map</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0a0e17;
+  color: #c8d6e5;
+  font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+#sidebar {
+  width: 320px;
+  min-width: 320px;
+  background: #0d1320;
+  border-right: 1px solid #1a2332;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#sidebar-header {
+  padding: 18px 20px 12px;
+  border-bottom: 1px solid #1a2332;
+}
+
+#sidebar-header h1 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8ecf4;
+  margin-bottom: 4px;
+}
+
+#sidebar-header .subtitle {
+  font-size: 11px;
+  color: #5a6a80;
+}
+
+#stats {
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #1a2332;
+}
+
+.stat-box {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-box .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00d4ff;
+}
+
+.stat-box .label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #5a6a80;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+#category-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+#category-list::-webkit-scrollbar { width: 4px; }
+#category-list::-webkit-scrollbar-track { background: transparent; }
+#category-list::-webkit-scrollbar-thumb { background: #1a2332; border-radius: 2px; }
+
+.cat-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 8px;
+}
+
+.cat-item:hover { background: #131b2e; }
+.cat-item.active { background: #16203a; }
+
+.cat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cat-name {
+  font-size: 12px;
+  color: #a0b0c8;
+  flex: 1;
+}
+
+.cat-item.active .cat-name { color: #e8ecf4; }
+
+.cat-count {
+  font-size: 11px;
+  color: #5a6a80;
+  font-variant-numeric: tabular-nums;
+}
+
+#detail-panel {
+  border-top: 1px solid #1a2332;
+  padding: 16px 20px;
+  min-height: 140px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+#detail-panel h3 {
+  font-size: 13px;
+  color: #e8ecf4;
+  margin-bottom: 8px;
+}
+
+#detail-panel .skill-row {
+  font-size: 11px;
+  color: #8a9bb0;
+  padding: 2px 0;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#detail-panel .skill-row:hover { color: #00d4ff; }
+
+/* ---------- Canvas ---------- */
+#canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#neural-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(13,19,32,0.95);
+  border: 1px solid #1a2332;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #e8ecf4;
+  max-width: 280px;
+  z-index: 100;
+  display: none;
+  line-height: 1.5;
+}
+
+#tooltip .tt-title {
+  font-weight: 600;
+  color: #00d4ff;
+  margin-bottom: 2px;
+}
+
+#tooltip .tt-count {
+  color: #5a6a80;
+  font-size: 10px;
+}
+
+#controls {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+}
+
+.ctrl-btn {
+  background: rgba(13,19,32,0.9);
+  border: 1px solid #1a2332;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  color: #8a9bb0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.ctrl-btn:hover { border-color: #00d4ff; color: #00d4ff; }
+.ctrl-btn.active { background: #16203a; border-color: #00d4ff; color: #00d4ff; }
+
+#legend {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(13,19,32,0.9);
+  border: 1px solid #1a2332;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 10px;
+  z-index: 50;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#legend h4 {
+  font-size: 11px;
+  color: #e8ecf4;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-text {
+  color: #8a9bb0;
+  font-size: 10px;
+}
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #5a6a80;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <h1>AI Collection Neural Map</h1>
+      <div class="subtitle">Interactive skill network visualization</div>
+    </div>
+    <div id="stats">
+      <div class="stat-box"><div class="num" id="stat-skills">0</div><div class="label">Skills</div></div>
+      <div class="stat-box"><div class="num" id="stat-cats">0</div><div class="label">Categories</div></div>
+      <div class="stat-box"><div class="num" id="stat-conns">0</div><div class="label">Connections</div></div>
+    </div>
+    <div id="category-list"></div>
+    <div id="detail-panel">
+      <h3 id="detail-title">Hover or click a node</h3>
+      <div id="detail-skills"></div>
+    </div>
+  </div>
+
+  <!-- Canvas -->
+  <div id="canvas-container">
+    <canvas id="neural-canvas"></canvas>
+    <div id="tooltip"><div class="tt-title"></div><div class="tt-count"></div></div>
+    <div id="loading">Initializing neural network...</div>
+    <div id="controls">
+      <button class="ctrl-btn active" id="btn-particles">Particles: On</button>
+      <button class="ctrl-btn" id="btn-pause">Pause</button>
+      <button class="ctrl-btn" id="btn-zoom-fit">Fit</button>
+    </div>
+    <div id="legend"><h4>Categories</h4><div id="legend-body"></div></div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA — generated from collection/skills/ directory structure
+// ============================================================
+const SKILL_DATA = {
+  "categories": [
+    {
+      "name": "neuroscience",
+      "count": 1319,
+      "color": "#e74c3c"
+    },
+    {
+      "name": "quantum",
+      "count": 863,
+      "color": "#9b59b6"
+    },
+    {
+      "name": "other",
+      "count": 544,
+      "color": "#5a6a80"
+    },
+    {
+      "name": "spiking-neuromorphic",
+      "count": 367,
+      "color": "#e67e22"
+    },
+    {
+      "name": "general-ml",
+      "count": 229,
+      "color": "#2ecc71"
+    },
+    {
+      "name": "ai-ml",
+      "count": 224,
+      "color": "#1abc9c"
+    },
+    {
+      "name": "nlp-llm",
+      "count": 182,
+      "color": "#3498db"
+    },
+    {
+      "name": "multi-agent-rl",
+      "count": 164,
+      "color": "#f1c40f"
+    },
+    {
+      "name": "signal-control-systems",
+      "count": 156,
+      "color": "#e91e63"
+    },
+    {
+      "name": "physics-math",
+      "count": 135,
+      "color": "#00bcd4"
+    },
+    {
+      "name": "reasoning-bayesian",
+      "count": 76,
+      "color": "#673ab7"
+    },
+    {
+      "name": "systems-engineering",
+      "count": 67,
+      "color": "#3f51b5"
+    },
+    {
+      "name": "vision-generative",
+      "count": 64,
+      "color": "#ff9800"
+    },
+    {
+      "name": "reinforcement-learning",
+      "count": 62,
+      "color": "#ffc107"
+    },
+    {
+      "name": "ai-safety-eval",
+      "count": 59,
+      "color": "#f44336"
+    },
+    {
+      "name": "tools-frameworks",
+      "count": 43,
+      "color": "#795548"
+    },
+    {
+      "name": "software-engineering",
+      "count": 41,
+      "color": "#607d8b"
+    },
+    {
+      "name": "data-retrieval",
+      "count": 40,
+      "color": "#4caf50"
+    },
+    {
+      "name": "control-systems",
+      "count": 38,
+      "color": "#cddc39"
+    },
+    {
+      "name": "healthcare-bio",
+      "count": 33,
+      "color": "#8bc34a"
+    },
+    {
+      "name": "agent-tools",
+      "count": 25,
+      "color": "#607d8b"
+    },
+    {
+      "name": "knowledge-graph",
+      "count": 22,
+      "color": "#cddc39"
+    },
+    {
+      "name": "security-privacy",
+      "count": 22,
+      "color": "#ff5722"
+    },
+    {
+      "name": "deployment-optimization",
+      "count": 21,
+      "color": "#8bc34a"
+    },
+    {
+      "name": "finance",
+      "count": 20,
+      "color": "#4caf50"
+    },
+    {
+      "name": "math-statistics",
+      "count": 18,
+      "color": "#009688"
+    },
+    {
+      "name": "medical",
+      "count": 10,
+      "color": "#f44336"
+    },
+    {
+      "name": "memory",
+      "count": 6,
+      "color": "#9c27b0"
+    },
+    {
+      "name": "continual-learning",
+      "count": 5,
+      "color": "#3f51b5"
+    },
+    {
+      "name": "information-science",
+      "count": 3,
+      "color": "#607d8b"
+    },
+    {
+      "name": "chat-history-lancedb",
+      "count": 0,
+      "color": "#455a64"
+    },
+    {
+      "name": "skill-rag-indexer",
+      "count": 0,
+      "color": "#455a64"
+    }
+  ],
+  "total": 4858
+};
+
+// Fix typo
+
+SKILL_DATA.categories.forEach(c => {
+  if (c.name === 'systems-engineing') c.name = 'systems-engineering';
+});
+
+// ============================================================
+// NETWORK SIMULATION
+// ============================================================
+const canvas = document.getElementById('neural-canvas');
+const ctx = canvas.getContext('2d');
+const tooltip = document.getElementById('tooltip');
+const loading = document.getElementById('loading');
+
+let W, H;
+let nodes = [];
+let edges = [];
+let particles = [];
+let activeCategory = null;
+let paused = false;
+let particlesOn = true;
+let camera = { x: 0, y: 0, zoom: 1 };
+let mouseX = 0, mouseY = 0;
+let hoverNode = null;
+
+// Layout: arrange categories in a circular neural-network-like structure
+// Large categories = larger nodes, positioned by angle
+// Connections drawn between related categories
+
+const CATEGORY_RELATIONS = [
+  // neuroscience core
+  ['neuroscience','spiking-neuromorphic'],
+  ['neuroscience','ai-ml'],
+  ['neuroscience','general-ml'],
+  ['neuroscience','physics-math'],
+  ['neuroscience','healthcare-bio'],
+  ['neuroscience','reasoning-bayesian'],
+  ['neuroscience','nlp-llm'],
+  ['neuroscience','vision-generative'],
+  ['neuroscience','medical'],
+  ['neuroscience','memory'],
+  ['neuroscience','continual-learning'],
+  // quantum
+  ['quantum','physics-math'],
+  ['quantum','general-ml'],
+  ['quantum','signal-control-systems'],
+  ['quantum','security-privacy'],
+  ['quantum','finance'],
+  ['quantum','healthcare-bio'],
+  ['quantum','nlp-llm'],
+  // spiking
+  ['spiking-neuromorphic','general-ml'],
+  ['spiking-neuromorphic','ai-ml'],
+  ['spiking-neuromorphic','deployment-optimization'],
+  ['spiking-neuromorphic','reinforcement-learning'],
+  // AI/ML core
+  ['ai-ml','general-ml'],
+  ['ai-ml','nlp-llm'],
+  ['ai-ml','multi-agent-rl'],
+  ['ai-ml','vision-generative'],
+  ['ai-ml','deployment-optimization'],
+  ['ai-ml','ai-safety-eval'],
+  ['general-ml','reasoning-bayesian'],
+  ['general-ml','reinforcement-learning'],
+  ['general-ml','math-statistics'],
+  ['general-ml','data-retrieval'],
+  ['general-ml','deployment-optimization'],
+  // NLP
+  ['nlp-llm','knowledge-graph'],
+  ['nlp-llm','data-retrieval'],
+  ['nlp-llm','ai-safety-eval'],
+  // Multi-agent
+  ['multi-agent-rl','reinforcement-learning'],
+  ['multi-agent-rl','systems-engineering'],
+  ['multi-agent-rl','signal-control-systems'],
+  ['multi-agent-rl','agent-tools'],
+  // Control
+  ['signal-control-systems','control-systems'],
+  ['signal-control-systems','systems-engineering'],
+  ['signal-control-systems','security-privacy'],
+  // Physics
+  ['physics-math','math-statistics'],
+  ['physics-math','reasoning-bayesian'],
+  // Safety
+  ['ai-safety-eval','security-privacy'],
+  // Software
+  ['software-engineering','tools-frameworks'],
+  ['software-engineering','agent-tools'],
+  // Healthcare
+  ['healthcare-bio','medical'],
+  // Memory
+  ['memory','continual-learning'],
+  ['memory','data-retrieval'],
+  // Other
+  ['other','general-ml'],
+  ['other','ai-ml'],
+  // Finance
+  ['finance','data-retrieval'],
+  ['finance','math-statistics'],
+  // Deployment
+  ['deployment-optimization','software-engineering'],
+];
+
+function resize() {
+  const container = document.getElementById('canvas-container');
+  W = container.clientWidth;
+  H = container.clientHeight;
+  canvas.width = W * window.devicePixelRatio;
+  canvas.height = H * window.devicePixelRatio;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+}
+
+function init() {
+  resize();
+  const cats = SKILL_DATA.categories.filter(c => c.count > 0);
+  const n = cats.length;
+
+  // Position nodes in a circular layout with some randomness
+  const centerX = W / 2;
+  const centerY = H / 2;
+  const baseRadius = Math.min(W, H) * 0.32;
+
+  nodes = cats.map((cat, i) => {
+    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+    // Add slight randomness for organic feel
+    const r = baseRadius + (Math.random() - 0.5) * 80;
+    const x = centerX + Math.cos(angle) * r;
+    const y = centerY + Math.sin(angle) * r;
+    // Node radius based on skill count (log scale)
+    const nodeRadius = Math.max(8, Math.min(45, Math.log2(cat.count + 1) * 5));
+    return {
+      x, y,
+      vx: 0, vy: 0,
+      targetX: x, targetY: y,
+      radius: nodeRadius,
+      category: cat.name,
+      count: cat.count,
+      color: cat.color,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.02 + Math.random() * 0.02,
+    };
+  });
+
+  // Build edges
+  const nodeMap = {};
+  nodes.forEach(n => { nodeMap[n.category] = n; });
+
+  edges = [];
+  CATEGORY_RELATIONS.forEach(([a, b]) => {
+    if (nodeMap[a] && nodeMap[b]) {
+      edges.push({ a: nodeMap[a], b: nodeMap[b], strength: 0.5 });
+    }
+  });
+
+  // Init particles on edges
+  particles = [];
+  edges.forEach((e, i) => {
+    const numParticles = Math.max(1, Math.floor(Math.log2(Math.min(e.a.count, e.b.count) + 1)));
+    for (let p = 0; p < numParticles; p++) {
+      particles.push({
+        edge: i,
+        t: Math.random(),
+        speed: 0.003 + Math.random() * 0.005,
+        size: 1.5 + Math.random() * 1.5,
+        dir: Math.random() > 0.5 ? 1 : -1,
+      });
+    }
+  });
+
+  // Update stats
+  document.getElementById('stat-skills').textContent = SKILL_DATA.total.toLocaleString();
+  document.getElementById('stat-cats').textContent = cats.length;
+  document.getElementById('stat-conns').textContent = edges.length;
+
+  loading.style.display = 'none';
+  buildSidebar(cats);
+  buildLegend(cats);
+}
+
+function buildSidebar(cats) {
+  const list = document.getElementById('category-list');
+  list.innerHTML = '';
+  cats.sort((a, b) => b.count - a.count).forEach(cat => {
+    const item = document.createElement('div');
+    item.className = 'cat-item';
+    item.dataset.category = cat.name;
+    item.innerHTML = `
+      <div class="cat-dot" style="background:${cat.color}"></div>
+      <div class="cat-name">${cat.name}</div>
+      <div class="cat-count">${cat.count}</div>
+    `;
+    item.addEventListener('click', () => {
+      activeCategory = activeCategory === cat.name ? null : cat.name;
+      document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+      if (activeCategory) {
+        item.classList.add('active');
+        showDetails(cat);
+      } else {
+        document.getElementById('detail-title').textContent = 'Hover or click a node';
+        document.getElementById('detail-skills').innerHTML = '';
+      }
+    });
+    list.appendChild(item);
+  });
+}
+
+function buildLegend(cats) {
+  const body = document.getElementById('legend-body');
+  body.innerHTML = '';
+  cats.sort((a, b) => b.count - a.count).forEach(cat => {
+    const row = document.createElement('div');
+    row.className = 'legend-row';
+    row.innerHTML = `
+      <div class="legend-dot" style="background:${cat.color}"></div>
+      <div class="legend-text">${cat.name} (${cat.count})</div>
+    `;
+    body.appendChild(row);
+  });
+}
+
+function showDetails(cat) {
+  document.getElementById('detail-title').textContent = cat.name + ' — ' + cat.count + ' skills';
+  // We don't have skill names in JS data, show a placeholder
+  const detail = document.getElementById('detail-skills');
+  detail.innerHTML = '<div class="skill-row" style="color:#5a6a80">Browse in collection/skills/' + cat.name + '/</div>';
+}
+
+// ============================================================
+// ANIMATION LOOP
+// ============================================================
+function update() {
+  if (paused) return;
+
+  // Force-directed layout: gentle attraction to target position + repulsion
+  for (let i = 0; i < nodes.length; i++) {
+    const n = nodes[i];
+    // Attract to target
+    const dx = n.targetX - n.x;
+    const dy = n.targetY - n.y;
+    n.vx += dx * 0.002;
+    n.vy += dy * 0.002;
+
+    // Repulsion from other nodes
+    for (let j = i + 1; j < nodes.length; j++) {
+      const m = nodes[j];
+      const rdx = n.x - m.x;
+      const rdy = n.y - m.y;
+      const dist = Math.sqrt(rdx * rdx + rdy * rdy) || 1;
+      const minDist = n.radius + m.radius + 30;
+      if (dist < minDist * 2) {
+        const force = (minDist * 2 - dist) / dist * 0.15;
+        n.vx += rdx * force;
+        n.vy += rdy * force;
+        m.vx -= rdx * force;
+        m.vy -= rdy * force;
+      }
+    }
+
+    // Damping
+    n.vx *= 0.88;
+    n.vy *= 0.88;
+    n.x += n.vx;
+    n.y += n.vy;
+
+    // Pulse
+    n.pulse += n.pulseSpeed;
+  }
+
+  // Update particles
+  if (particlesOn) {
+    for (let p of particles) {
+      p.t += p.speed * p.dir;
+      if (p.t > 1) { p.t = 0; }
+      if (p.t < 0) { p.t = 1; }
+    }
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  // Background grid (subtle)
+  ctx.strokeStyle = 'rgba(20,30,48,0.3)';
+  ctx.lineWidth = 0.5;
+  for (let x = 0; x < W; x += 40) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y < H; y += 40) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+
+  // Draw edges
+  for (let i = 0; i < edges.length; i++) {
+    const e = edges[i];
+    const isActive = activeCategory && (e.a.category === activeCategory || e.b.category === activeCategory);
+    const dim = activeCategory && !isActive;
+
+    ctx.strokeStyle = dim ? 'rgba(30,40,60,0.15)' : `rgba(40,60,90,${isActive ? 0.5 : 0.25})`;
+    ctx.lineWidth = isActive ? 1.5 : 0.8;
+    ctx.beginPath();
+    ctx.moveTo(e.a.x, e.a.y);
+    ctx.lineTo(e.b.x, e.b.y);
+    ctx.stroke();
+  }
+
+  // Draw particles
+  if (particlesOn) {
+    for (let p of particles) {
+      const e = edges[p.edge];
+      if (!e) continue;
+      const isActive = activeCategory && (e.a.category === activeCategory || e.b.category === activeCategory);
+      const dim = activeCategory && !isActive;
+      if (dim) continue;
+
+      const px = e.a.x + (e.b.x - e.a.x) * p.t;
+      const py = e.a.y + (e.b.y - e.a.y) * p.t;
+
+      ctx.fillStyle = isActive ? '#00d4ff' : 'rgba(0,200,255,0.6)';
+      ctx.beginPath();
+      ctx.arc(px, py, p.size, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Glow
+      ctx.fillStyle = 'rgba(0,200,255,0.15)';
+      ctx.beginPath();
+      ctx.arc(px, py, p.size * 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // Draw nodes
+  for (let n of nodes) {
+    const isActive = activeCategory === n.category;
+    const isRelated = activeCategory && edges.some(e =>
+      (e.a === n && e.b.category === activeCategory) ||
+      (e.b === n && e.a.category === activeCategory)
+    );
+    const dim = activeCategory && !isActive && !isRelated;
+
+    const pulseR = n.radius + Math.sin(n.pulse) * 2;
+    const r = Math.max(4, pulseR);
+
+    // Outer glow
+    const glowAlpha = dim ? 0.05 : (isActive ? 0.3 : 0.12);
+    const grad = ctx.createRadialGradient(n.x, n.y, r * 0.5, n.x, n.y, r * 2.5);
+    grad.addColorStop(0, n.color + Math.floor(glowAlpha * 255).toString(16).padStart(2, '0'));
+    grad.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r * 2.5, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Node body
+    ctx.fillStyle = dim ? '#1a2332' : n.color;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Node border
+    ctx.strokeStyle = isActive ? '#00d4ff' : (dim ? '#1a2332' : 'rgba(255,255,255,0.15)');
+    ctx.lineWidth = isActive ? 2.5 : 1;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Inner core
+    if (!dim) {
+      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+      ctx.beginPath();
+      ctx.arc(n.x - r * 0.3, n.y - r * 0.3, r * 0.3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Label
+    if (!dim || isActive) {
+      ctx.font = `${isActive ? 'bold ' : ''}11px 'SF Mono', monospace`;
+      ctx.fillStyle = isActive ? '#00d4ff' : 'rgba(200,214,229,0.7)';
+      ctx.textAlign = 'center';
+      ctx.fillText(n.category, n.x, n.y - r - 8);
+
+      // Count
+      ctx.font = '9px monospace';
+      ctx.fillStyle = 'rgba(90,106,128,0.8)';
+      ctx.fillText(n.count, n.x, n.y + 3);
+    }
+  }
+
+  // Hover detection
+  hoverNode = null;
+  for (let n of nodes) {
+    const dx = mouseX - n.x;
+    const dy = mouseY - n.y;
+    if (Math.sqrt(dx * dx + dy * dy) < n.radius + 5) {
+      hoverNode = n;
+      break;
+    }
+  }
+
+  if (hoverNode) {
+    canvas.style.cursor = 'pointer';
+    tooltip.style.display = 'block';
+    tooltip.style.left = (mouseX + 15) + 'px';
+    tooltip.style.top = (mouseY - 10) + 'px';
+    tooltip.querySelector('.tt-title').textContent = hoverNode.category;
+    tooltip.querySelector('.tt-count').textContent = hoverNode.count + ' skills';
+  } else {
+    canvas.style.cursor = 'default';
+    tooltip.style.display = 'none';
+  }
+}
+
+function loop() {
+  update();
+  draw();
+  requestAnimationFrame(loop);
+}
+
+// ============================================================
+// INTERACTION
+// ============================================================
+canvas.addEventListener('mousemove', e => {
+  const rect = canvas.getBoundingClientRect();
+  mouseX = e.clientX - rect.left;
+  mouseY = e.clientY - rect.top;
+});
+
+canvas.addEventListener('click', () => {
+  if (hoverNode) {
+    activeCategory = activeCategory === hoverNode.category ? null : hoverNode.category;
+    // Update sidebar
+    document.querySelectorAll('.cat-item').forEach(el => {
+      el.classList.toggle('active', el.dataset.category === activeCategory);
+    });
+    if (activeCategory) {
+      const cat = SKILL_DATA.categories.find(c => c.name === activeCategory);
+      if (cat) showDetails(cat);
+    } else {
+      document.getElementById('detail-title').textContent = 'Hover or click a node';
+      document.getElementById('detail-skills').innerHTML = '';
+    }
+  }
+});
+
+document.getElementById('btn-particles').addEventListener('click', function() {
+  particlesOn = !particlesOn;
+  this.textContent = 'Particles: ' + (particlesOn ? 'On' : 'Off');
+  this.classList.toggle('active', particlesOn);
+});
+
+document.getElementById('btn-pause').addEventListener('click', function() {
+  paused = !paused;
+  this.textContent = paused ? 'Play' : 'Pause';
+  this.classList.toggle('active', paused);
+});
+
+document.getElementById('btn-zoom-fit').addEventListener('click', () => {
+  // Reset node targets to original layout
+  const cats = SKILL_DATA.categories.filter(c => c.count > 0);
+  const n = cats.length;
+  const centerX = W / 2;
+  const centerY = H / 2;
+  const baseRadius = Math.min(W, H) * 0.32;
+  nodes.forEach((node, i) => {
+    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+    node.targetX = centerX + Math.cos(angle) * baseRadius;
+    node.targetY = centerY + Math.sin(angle) * baseRadius;
+  });
+});
+
+window.addEventListener('resize', () => {
+  resize();
+  // Recalculate targets
+  const cats = SKILL_DATA.categories.filter(c => c.count > 0);
+  const n = cats.length;
+  const centerX = W / 2;
+  const centerY = H / 2;
+  const baseRadius = Math.min(W, H) * 0.32;
+  nodes.forEach((node, i) => {
+    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+    node.targetX = centerX + Math.cos(angle) * baseRadius;
+    node.targetY = centerY + Math.sin(angle) * baseRadius;
+  });
+});
+
+// Start
+init();
+loop();
+</script>
+</body>
+</html>
