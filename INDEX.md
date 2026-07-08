@@ -2,11 +2,25 @@
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
 
 ### Latency-Constrained Hardware-Aware QEC Co-Design with Adaptive Confidence-Gated Neural Decoding
-- [[adaptive-confidence-gated-qec-decoding]] - Two-stage confidence-gated neural decoding for QEC: lightweight FFNN fast-path with MWPM refinement fallback, routing only 3.3-6.2% of syndromes while improving accuracy from 99.21% to 99.81% (arXiv: 2607.05814)
+- [[adaptive-qec-decoder]] - Two-stage confidence-gated neural decoding for QEC: lightweight FFNN fast-path with MWPM refinement fallback, routing only 3.3-6.2% of syndromes while improving accuracy from 99.21% to 99.81% (arXiv: 2607.05814)
   - Neural fast-path throughput saturates at ~4.6×10⁵ samples/s on commodity CPU
   - Confidence threshold controls accuracy-latency trade-off
   - Beyond d=7, neural path is NOT the throughput bottleneck — optimize graph stage instead
   - **Activation**: confidence gating, two-stage decoding, neural decoder, QEC latency, surface code, MWPM refinement, accuracy-latency tradeoff, rotated surface code, adaptive inference, hardware-aware
+
+### Geometric Obstructions to Quadratic Time Scaling in Multiparameter Quantum Estimation
+- [[geometric-obstruction-quantum-metrology]] - Universal geometric obstruction theory proving when multiparameter quantum metrology fails simultaneous t⁻² scaling, with computable diagnostic via Gram matrix of diagonal generators (arXiv: 2607.06410)
+  - Linear dependence among commuting Hamiltonian derivatives creates slow parameter directions (O(t⁰) Fisher information)
+  - SLD bound asymptotically saturable despite bottleneck — measurement incompatibility decays as 1/t
+  - Workarounds: nuisance parameter relegation or adaptive quantum control
+  - **Activation**: geometric obstruction quantum, multiparameter estimation, quantum Fisher information scaling, quantum metrology t-squared, adaptive quantum control metrology
+
+### Bosonic QEC with Finite Stellar Rank
+- [[bosonic-qec-stellar-rank]] - Stellar rank as operational resource measure for bosonic QEC; k=2 suffices for break-even under all dephasing strengths, grid-like encodings emerge under photon loss (arXiv: 2607.06404)
+  - Trade-off: state approximability × energy × logical protection under finite non-Gaussian resources
+  - Direct optimization at fixed stellar rank discovers noise-adapted code structures
+  - Photon loss: required rank increases with loss rate; Dephasing: k=2 always sufficient
+  - **Activation**: bosonic quantum error correction, stellar rank QEC, GKP code optimization, cat code finite resources, non-Gaussian resource measure
 
 ### VF-QCTRL: Physics-Informed LLM for General Quantum Control
 - [[physics-informed-llm-quantum-control]] - Physics-informed LLM framework combining symbolic reasoning with optimization to propose and refine analytic quantum control protocols without task-specific training, benchmarked across 16 tasks (arXiv: 2605.26021)
