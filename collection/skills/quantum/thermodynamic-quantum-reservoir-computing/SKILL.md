@@ -1,77 +1,119 @@
 ---
 name: thermodynamic-quantum-reservoir-computing
-description: Thermodynamic framework for quantum reservoir computing - linking predictive performance to energetic costs. Use when: analyzing QRC energetic limits, designing energy-efficient quantum neuromorphic hardware, studying quantum critical resonance for computation, or computing Landauer bounds for temporal processing. Core methodology: maps Holevo capacities to Bogoliubov-Kubo-Mori manifold, proves computational peak from spectral resonance, derives generalized Landauer bound, decomposes coherence contributions. arXiv: 2607.02157
-category: quantum-neuroscience
-created: 2026-07-06
-source: arxiv
-tags: [quantum-reservoir-computing, thermodynamics, neuromorphic, energy-efficiency, quantum-criticality, holevo-capacity, landauer-bound, coherence-decomposition]
-trigger_words: quantum reservoir thermodynamics, energy-efficient quantum learning, quantum critical resonance, holevo capacity bogoliubov, landauer bound temporal processing, quantum informational dissipation, coherence predictive capacity, quantum neuromorphic hardware
+description: >
+  Non-equilibrium thermodynamic framework linking macroscopic predictive performance of 
+  quantum reservoir computing to microscopic energetic costs. Maps Holevo capacities onto 
+  Bogoliubov-Kubo-Mori geometric manifold. Identifies spectral resonance at quantum 
+  criticality and derives generalized Landauer bound for temporal processing.
 ---
 
 # Thermodynamic Quantum Reservoir Computing
 
 ## Source
-Paper: "Thermodynamics of Quantum Reservoir Computing" (arXiv: 2607.02157, July 2026)
 
-## Core Methodology
+- **Paper**: Thermodynamics of Quantum Reservoir Computing
+- **arXiv**: 2607.02157v1 (2026-07-02)
+- **Authors**: Lixiang Ding, Xingze Qiu
+- **Categories**: quant-ph, cond-mat.dis-nn, cond-mat.quant-gas, cond-mat.stat-mech
 
-### 1. Holevo Capacity Mapping to BKM Manifold
-Map the reservoir's Holevo information capacity onto the Bogoliubov-Kubo-Mori (BKM) geometric manifold:
-- The BKM metric defines the information geometry of the quantum state space
-- Holevo capacity quantifies the maximum classical information extractable from quantum states
-- The computational peak occurs when the reservoir's energy gap closes, forcing transition frequencies to align with the driving signal's chaotic spectrum
+## Methodology
 
-**Key insight**: The quantum critical region is where predictive performance peaks due to strict spectral resonance between reservoir and drive.
+Establishes fundamental thermodynamic limits for quantum reservoir computing by linking computational performance to energetic costs.
 
-### 2. Quantum Informational Dissipation
-Define quantum informational dissipation to measure non-predictive historical data retained by the reservoir:
-- Quantifies how much "memory" the reservoir holds that doesn't contribute to prediction
-- Leads to a generalized Landauer bound for continuous temporal processing
-- The bound relates minimum energy cost per prediction step to the amount of information that must be erased
+### Core Theoretical Results
 
-**Key insight**: There is a fundamental thermodynamic trade-off — the same critical resonance that maximizes predictive capacity also maximizes informational dissipation and irreversible work.
+1. **Spectral Resonance at Criticality**: The computational peak in the quantum critical region originates from strict spectral resonance — the closing energy gap forces reservoir transition frequencies to align with the chaotic drive.
 
-### 3. Coherence Decomposition
-Decompose the reservoir's state into classical and quantum coherent components:
-- Dynamic quantum coherences strictly amplify predictive capacity
-- Crucially: coherence amplification does NOT demand additional mechanical work
-- This provides a "free lunch" — coherence enhances computation without extra energy cost
+2. **Quantum Informational Dissipation**: Introduced to quantify non-predictive historical data structurally retained by the reservoir.
 
-**Key insight**: Quantum coherence is a computational resource that improves prediction efficiency without increasing the thermodynamic cost.
+3. **Generalized Landauer Bound**: Derived for continuous temporal processing, revealing fundamental thermodynamic trade-off.
 
-## Design Principles for Energy-Efficient QRC Hardware
+4. **Coherence Decomposition**: Dynamic quantum coherences strictly amplify predictive capacity without demanding additional mechanical work.
 
-1. **Operate near quantum critical point**: Tune parameters so the energy gap approaches zero, aligning reservoir frequencies with the drive signal spectrum
-2. **Maximize coherence utilization**: Design circuits that maintain and leverage quantum coherence for computational amplification
-3. **Minimize informational waste**: Architect reservoirs that don't retain irrelevant historical data (reduces Landauer erasure cost)
-4. **Balance prediction vs. dissipation**: Accept the fundamental trade-off — optimal prediction requires accepting higher dissipation
+### Key Framework
 
-## Mathematical Framework
+```python
+from scipy.linalg import eigvalsh
+import numpy as np
+
+class ThermodynamicQRC:
+    def __init__(self, hamiltonian, lindblad_ops, drive_freq):
+        self.H = hamiltonian
+        self.L_ops = lindblad_ops
+        self.drive = drive_freq
+    
+    def spectral_resonance(self):
+        """Check if reservoir frequencies align with drive."""
+        energies = eigvalsh(self.H)
+        transitions = np.diff(energies)
+        resonance = np.abs(transitions - self.drive) < 1e-3
+        return np.any(resonance)
+    
+    def holevo_capacity(self, state_ensemble):
+        """Compute Holevo capacity via BKM geometric manifold."""
+        # χ = S(Σ p_i ρ_i) - Σ p_i S(ρ_i)
+        avg_state = sum(p * rho for p, rho in state_ensemble)
+        total_entropy = self.von_neumann_entropy(avg_state)
+        avg_entropy = sum(p * self.von_neumann_entropy(rho) for p, rho in state_ensemble)
+        return total_entropy - avg_entropy
+    
+    def informational_dissipation(self, history_states):
+        """Quantify non-predictive historical data retained."""
+        # QID = S(ρ_history) - I(predictive; history)
+        history_entropy = self.von_neumann_entropy(
+            sum(s for s in history_states) / len(history_states)
+        )
+        mutual_info = self.mutual_information(history_states)
+        return history_entropy - mutual_info
+    
+    def generalized_landauer_bound(self, processing_steps, temperature=1.0):
+        """Landauer bound for continuous temporal processing."""
+        # W_min ≥ kT * (ΔS_history + QID)
+        k = 1.0  # Boltzmann constant (natural units)
+        delta_s = self.entropy_production(processing_steps)
+        qid = self.informational_dissipation(processing_steps)
+        return k * temperature * (delta_s + qid)
+    
+    def coherence_amplification(self, state):
+        """Decompose coherence contribution to predictive capacity."""
+        # ρ = ρ_diag + ρ_coherence
+        rho_diag = np.diag(np.diag(state))
+        rho_coh = state - rho_diag
+        # Coherence amplifies capacity without extra work
+        return self.predictive_capacity(rho_diag + rho_coh) - self.predictive_capacity(rho_diag)
+```
+
+### Thermodynamic Trade-Off
+
+**Fundamental Result**: The critical resonance that unlocks optimal predictive capacity inherently maximizes informational dissipation and the irreversible work required for environmental erasure.
 
 ```
-Holevo Capacity: χ = S(ρ) - Σ p_i S(ρ_i)
-BKM Metric: g_BKM(A, B) = ∫_0^1 Tr(ρ^s A ρ^(1-s) B) ds
-Landauer Bound: W ≥ kT · I_dissipated
-Coherence Contribution: C(ρ) = S(ρ_diag) - S(ρ)
+Optimal Prediction ←→ Maximum Dissipation
+        ↑                        ↑
+   Critical Resonance      Irreversible Work
 ```
 
-Where:
-- S(ρ) is von Neumann entropy
-- ρ_diag is the dephased (incoherent) version of ρ
-- I_dissipated is the informational dissipation
+### Design Principles for Energy-Efficient Quantum Neuromorphic Hardware
 
-## Activation
-Use this skill when:
-- Analyzing or designing quantum reservoir computing systems
-- Studying thermodynamic limits of quantum learning devices
-- Computing energy costs of temporal data processing
-- Designing energy-efficient quantum neuromorphic hardware
-- Investigating quantum criticality for computational advantage
-- Deriving Landauer bounds for information processing
-- Analyzing quantum coherence as a computational resource
+1. **Operate near critical resonance** for maximum predictive capacity
+2. **Accept dissipation trade-off** — optimal prediction requires erasure work
+3. **Exploit quantum coherence** — amplifies capacity without extra mechanical work
+4. **Map Holevo capacity to BKM manifold** for geometric analysis of computational limits
 
-## Related Skills
-- quantum-reservoir-computing
-- thermodynamic-networks-computation
-- thermodynamics-of-quantum-reservoir-computing
-- neuromorphic-supremacy
+### Mathematical Framework
+
+- **Holevo Capacity**: χ = S(Σ p_i ρ_i) - Σ p_i S(ρ_i)
+- **BKM Metric**: g_{ij} = ∫₀¹ Tr[ρ^s A_i ρ^{1-s} A_j] ds
+- **Generalized Landauer**: W_min ≥ kT · (ΔS + QID)
+- **Spectral Resonance**: ω_transition = ω_drive (at criticality)
+
+### Application Domains
+
+- Energy-efficient quantum neuromorphic hardware design
+- Thermodynamic limits of quantum learning devices
+- Quantum reservoir computing optimization
+- Open quantum system thermodynamics
+
+### Activation Keywords
+
+thermodynamics, quantum reservoir computing, Holevo capacity, Landauer bound, spectral resonance, quantum criticality, informational dissipation, Bogoliubov-Kubo-Mori, coherence, neuromorphic

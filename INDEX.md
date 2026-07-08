@@ -1,6 +1,114 @@
-# AI Collection Index
+
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Low-depth Simulation of Non-Markovianity Under Quantum Hardware Noise
+- [[low-depth-nonmarkovian-simulation]] - Low-depth quantum simulation of non-Markovian dynamics using trajectory mixing — trades entangling gates for statistical mixture (arXiv: 2607.05519)
+  - Key innovation: trajectory mixing trades entangling gates for statistical mixtures of independent pure state trajectories
+  - Higher state fidelity and better quantum correlation preservation on near-term hardware
+  - Applicable to mixed unitary channels and memory channels
+  - **Activation**: non-Markovian simulation, trajectory mixing, low-depth quantum simulation, memory channel, mixed unitary channels, NISQ
+
+### Contractivity of Hilbert-Schmidt Speed in Unital Quantum Channels
+- [[quantum-hilbert-schmidt-speed]] - HSS contractivity analysis for quantum channels — proves HSS contracts under unital CPTP maps, enabling non-Markovianity detection (arXiv: 2607.05619)
+  - Key theorem: HSS is contractive under every unital CPTP map
+  - HSS increase signals information backflow → non-Markovianity witness
+  - Enables discrimination of unital vs non-unital Markovian dynamics
+  - **Activation**: hilbert schmidt speed, quantum channel contractivity, non-Markovianity detection, CPTP maps, open quantum systems
 
 ## 2026-07-08 - Neuroscience Research (Cron Job)
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
+- [[scalable-perturbation-learning-esn]] - Orthogonal decomposition reduces perturbation dimension from reservoir to input, enabling scalable hardware-compatible online learning (arXiv: 2607.06079)
+  - Key innovation: decomposes self-supervised cost into input-dependent and fixed components
+  - Variance growth reduced from O(N) to O(d) where d << N
+  - Preserves self-supervised, online, and scalar-feedback properties
+  - **Activation**: ESN, perturbation learning, online self-supervised, orthogonal decomposition, reservoir, scalable learning
+
+### Neuromorphic Silicon Neuron Controller for Adaptive Deep Brain Stimulation
+- [[silif-dbs-neuromorphic-controller]] - CMOS-implemented SiLIF-DBS controller achieving 5.85%/μW beta suppression with 75% power reduction (arXiv: 2607.05453)
+  - First circuit-level realization of adaptive DBS using neuromorphic silicon
+  - Closed-loop operation driven by STN-LFP beta-band biomarkers
+  - 75% power reduction vs open-loop stimulation
+  - **Activation**: SiLIF-DBS, neuromorphic DBS, adaptive deep brain stimulation, Parkinson's, beta suppression, CMOS neuron
+
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Onnes: Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis
+- [[onnes-llm-cryogenic-diagnosis]] - Physics-grounded digital twin + multi-agent LLM for infrastructure fault diagnosis (arXiv: 2607.05805)
+  - Core: cs.AI; cs.LG; quant-ph
+  - Published: 2026-07-07
+  - Combines forward physics model with learned noise fingerprint to drive LLM diagnostic agents
+  - Few-shot contrastive demonstrations + self-consistency voting: 0.685 to 0.990 accuracy (6 demos, no training)
+  - Confidence gate suppresses pre-onset false alarms; catches every fault within one poll interval
+  - **Activation**: fault diagnosis, digital twin, multi-agent LLM, cryogenic, physics-grounded, diagnostic simulator
+
+### Metrological Quantum Reservoir Networks
+- [[metrological-quantum-reservoir-networks]] - Quantum reservoir computing enhanced by metrologically useful state preparation (arXiv: 2607.06500)
+  - Core: quant-ph
+  - Published: 2026-07-07
+  - Uses unitary operations to create metrologically useful states before QRC injection
+  - Outperforms classical echo-state networks without weight regularization
+  - Highlights autoencoder bottleneck issues in QRC pipelines
+  - **Activation**: metrological, quantum reservoir computing, QRC, Fisher information, chaotic PDE
+
+
+## 2026-07-08 - Neuroscience Research (Cron Job, Afternoon)
+
+### On the Increased and Decreased Connectivity of the Demented Human Brain
+- [[demented-brain-connectivity-patterns]] - Differential structural connectivity analysis in dementia using OASIS-3 dataset (arXiv: 2607.05654)
+  - Core: q-bio.NC
+  - Published: 2026-07-06
+  - Decreased connectivity: hippocampus, temporal lobe (expected neurodegeneration)
+  - Increased connectivity: precuneus, cuneus, insula (surprising hyperconnectivity)
+  - Suggests compensatory network reorganization in dementia
+  - **Activation**: dementia connectivity, OASIS-3, structural connectivity, precuneus hyperconnectivity, brain network degradation
+
+### Quantifying Entrainment Evidence: Bayesian vs Frequentist IPPMs
+- [[bayesian-ippm-cortical-entrainment]] - Bayesian framework for Information Processing Pathway Maps (IPPMs) using EEG/MEG (arXiv: 2607.06284)
+  - Core: q-bio.NC; stat.AP
+  - Published: 2026-07-07
+  - Replaces frequentist null hypothesis testing with Bayesian model evidence for IPPM construction
+  - Handles collinear models and robust evidence accumulation via Bayes factors
+  - Validated on auditory loudness-processing pathway reconstruction
+  - **Activation**: IPPM, cortical entrainment, Bayesian model comparison, temporal response function, auditory processing
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+### AbICL: In-Context Learning for Antigen-Specific Antibody Affinity Ranking
+- [[icl-antibody-affinity]] - In-context learning for antigen-specific antibody affinity ranking (arXiv: 2607.05846)
+  - Core: cs.LG; cs.AI; cs.CE; q-bio.QM
+  - Published: 2026-07-08
+  - **Activation**: csLG, csAI, csCE, q-bioQM
+
+### EntroPath: Maximum Entropy Path Ensemble Embedding for Manifold Learning
+- [[entropy-maximization-manifold]] - Maximum entropy path ensemble embedding for manifold learning (arXiv: 2607.06497)
+  - Core: cs.LG; q-bio.QM; stat.ML
+  - Published: 2026-07-08
+  - **Activation**: csLG, q-bioQM, statML
+
+### Lean-Quantum: Toward AI-Assisted Formalization of Quantum Information
+- [[lean-quantum-formal-verification]] - AI-assisted formal verification methodology for quantum information theory using Lean 4 (arXiv: 2607.05492)
+  - Core: quant-ph; cs.AI
+  - Published: 2026-07-06
+  - **Activation**: quant-ph, csAI
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation for inferring HH parameters from extracellular MEA recordings (arXiv: 2607.04063)
+  - Core: q-bio.NC; ICML 2026 Accepted
+  - Published: 2026-07-05
+  - 90.6% accuracy predicting unseen stimulation responses from minutes of recording
+  - Replaces hours of clinical stimulus testing with differentiable HH simulation
+  - **Activation**: biophysical modeling, Hodgkin-Huxley, neurostimulation, differentiable simulation, MEA, parameter inference
+
+### Microsecond-Precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[equilibrium-dynamics-sound-localization]] - Equilibrium dynamics framework challenging Jeffress place-coding model for ITD processing (arXiv: 2607.03890)
+  - Core: q-bio.NC; Submitted to Science
+  - Published: 2026-07-04
+  - ITD encoded as stable equilibrium of neural population dynamics, not place coding
+  - Resolves paradox: slow dynamics (ms) achieve microsecond precision via equilibrium stability
+  - **Activation**: sound localization, ITD, equilibrium dynamics, population coding, auditory neuroscience
+
 
 ### DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
 - [[dendricl-icl-single-layer-snn]] - First SNN to achieve general-purpose in-context learning via dendritic dynamics (arXiv: 2607.02283v1)
