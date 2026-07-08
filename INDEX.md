@@ -1,4 +1,20 @@
 
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Learning to Reconstruct Wigner Functions in Phase Space
+- [[wigner-function-reconstruction]] - ML framework to reconstruct Wigner functions from sparse phase-space measurements with O(log d) complexity for sparse states (arXiv: 2607.06232)
+  - Provably efficient regression for sparse Fock/coherent states (binomial codes, cat states)
+  - Deep learning model for general states (GKP) generalizing to arbitrary phase-space resolution
+  - Validated on circuit-QED experimental data across multiple QEC rounds
+  - **Activation**: wigner function reconstruction, phase-space tomography, CV quantum systems, GKP state, sparse measurements, circuit-QED
+
+### Entanglement as a Structural Complexity Axis: PAC-Bayesian View
+- [[entanglement-generalization-pac-bayesian]] - PAC-Bayesian analysis revealing Fisher geometry effective dimension governs quantum policy generalization, not parameter count (arXiv: 2607.06230)
+  - Entanglement inflates Fisher effective dimension as independent complexity axis
+  - PAC-Bayesian bound correctly ranks circuits with identical parameter count
+  - Validated on IBM Heron quantum processor under real noise
+  - **Activation**: PAC-Bayesian quantum, Fisher geometry, entanglement generalization, quantum policy design, train-test gap quantum
+
 ## 2026-07-08 - Neuroscience Research (Cron Job - Hardware and Bayesian Methods)
 
 ### Hardware-Aware Open-Source Framework for Mixed-Signal SNN Design Space Exploration
