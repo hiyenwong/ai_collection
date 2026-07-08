@@ -4393,6 +4393,22 @@
   - Validation: 85.84% accuracy, 84.46% F1, 0.885 AUC on multicenter bacterial vs fungal keratitis
   - **Activation**: triple-phase multimodal diagnosis, cross-modality contrastive medical, multimodal medical ensemble, microbial keratitis classification, 多模态医学诊断, cross-site medical generalization
 
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Towards Lattice Surgery Compilation for the Color Code Using Pipe Diagrams
+- [[color-code-pipe-diagrams]] - 彩色码管道图格子手术编译方法论，将表面码管道图框架扩展到6.6.6格三角彩色码，实现距离无关的时空优化 (arXiv: 2607.05501)
+  - Core: First pipe diagram representation for triangular color code on 6.6.6 lattice with ZX-diagram correspondence
+  - Advantage: Color codes use fewer physical qubits + transversal single-qubit Clifford gates vs surface codes
+  - Enables: Distance-independent correlation surfaces, stabilizers, syndrome extraction circuits, compact spacetime embeddings
+  - **Activation**: color code pipe diagrams, lattice surgery color code, 6.6.6 lattice, color code compilation, ZX diagram color code
+
+### The Hermitian Inner Product Selects the Time Axis, the Born Rule Measures It
+- [[hermitian-inner-product-time-axis]] - 量子系统中通过厄米内积选择时间轴的机制研究，识别从SL(2,C)到SU(2)的对称性破缺步骤，定位波恩规则为向该轴的投影 (arXiv: 2607.05447)
+  - Core: Hermitian inner product choice (σ⁰) reduces SL(2,C) → SU(2), selecting future-timelike axis before probability assignment
+  - Born rule = projection of state's null vector onto σ⁰ = energy in that frame, rescaling as Doppler shift under boost
+  - Kinematic identification (not dynamical) — resolves mechanism left open by recent Lorentz-invariant qubit work
+  - **Activation**: hermitian inner product time axis, born rule mechanism, Lorentz symmetry from qubit, SL2C to SU2 reduction
+
 ## 2026-07-08 - Anthropic Research (Cron Job)
 
 ### A global workspace in language models
