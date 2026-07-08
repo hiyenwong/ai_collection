@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendricl-icl-single-layer-snn]] - First SNN to achieve general-purpose in-context learning via dendritic dynamics (arXiv: 2607.02283v1)
+  - Single dendritic compartment implements online Widrow-Hoff LMS with frozen weights
+  - Only architecture seed-stable at d≥30 where Transformers collapse to chance
+  - ~4× spike reduction, ~10× Loihi-class energy advantage
+  - **Activation**: dendritic computation, in-context learning SNN, compartmental neuron, online LMS, neuromorphic ICL
 ## 2026-07-08 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
@@ -4123,3 +4131,15 @@
   - Core: Phase 1 cross-modality contrastive → Phase 2 modality-specific fine-tuning → Phase 3 feature-level ensemble
   - Validation: 85.84% accuracy, 84.46% F1, 0.885 AUC on multicenter bacterial vs fungal keratitis
   - **Activation**: triple-phase multimodal diagnosis, cross-modality contrastive medical, multimodal medical ensemble, microbial keratitis classification, 多模态医学诊断, cross-site medical generalization
+
+## 2026-07-08 - Anthropic Research (Cron Job)
+
+### A global workspace in language models
+- [[global-workspace-j-space]] - Anthropic's discovery of emergent mental workspace (J-space) in Claude using Jacobian lens technique
+  - J-space: small collection of internal neural patterns (<10% activity) that functions as a broadcasting hub for deliberate reasoning
+  - Jacobian Lens (J-lens): technique that finds internal activity patterns making model likely to say each word, revealing silent thoughts
+  - Five properties: reportability, modulability, internal reasoning, flexible use, broadcasting hub (~100x connectivity)
+  - Safety applications: detecting hidden misalignment, evaluation awareness, counterfactual reflection training
+  - Counterfactual reflection training: train only on what model would say if asked to reflect → reduces dishonest behavior
+  - J-space ablation preserves fluency/grammar but destroys multi-step reasoning, summarization, poetry
+  - **Activation**: global workspace, j-space, jacobian lens, interpretability, counterfactual reflection, mental workspace
