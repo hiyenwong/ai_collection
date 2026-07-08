@@ -1,4 +1,13 @@
 
+## 2026-07-08 - Medicine + Quantum (Cron Job - Hourly)
+
+### Parameter-Efficient CV-QNN for Edge Oral Cancer Detection
+- [[cv-qnn-edge-ai-oral-cancer]] - Simplified Φ∘D∘U₁ CV-QNN architecture with only 18 parameters achieving 100% calibrated test accuracy for oral cancer detection at edge (arXiv: 2606.28252)
+  - Simplified layer cuts trainable parameters 40-45% vs standard Killoran CV-QNN layer
+  - PCA + encoding restriction mitigates barren plateaus (~58 orders magnitude gradient variance boost)
+  - 4-qumode simplified outperforms standard at same width; 67% fewer params than 55-param classical baseline
+  - **Activation**: cv-qnn, edge quantum ai, oral cancer, photonic qnn, continuous-variable quantum, parameter-efficient qml, barren plateau mitigation, mobilenet quantum
+
 ## 2026-07-08 - Neuroscience Research (Cron Job - Neuromorphic Hardware)
 
 ### AIGOR: Modular Event-Driven Neuromorphic Architecture
