@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - DendriCL methodology proving ICL requires neither attention, depth, nor inference-time plasticity; single dendritic compartment with online-LMS dynamics is sufficient (arXiv: 2607.02283)
+  - Core: Subthreshold dendritic dynamics structurally implement online Widrow-Hoff LMS
+  - Results: Single-layer SNN achieves ICL on Garg-2022 benchmark where Transformers fail
+  - **Activation**: dendritic ICL, single-layer SNN, compartmental model, apical recurrence, Widrow-Hoff
+
+### SABER: A Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs
+- [[semantic-aligned-brain-network-hypergraphs]] - LLM-brain integration framework combining global self-attention, multi-scale hypergraphs, and decision-level semantic alignment for brain disease diagnosis (arXiv: 2607.01901)
+  - Core: Actively integrates LLM-derived semantics into brain network prediction via ROI-level and decision-level alignment
+  - Results: State-of-the-art performance on ABIDE and ADHD-200 datasets with enhanced stability
+  - **Activation**: SABER brain network, semantic-aligned brain, multi-scale hypergraph, LLM brain diagnosis, ABIDE ADHD
+
 ## 2026-07-09 - Systems Engineering (Cron Job)
 
 ### Onnes: A Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis in Quantum Computing Infrastructure
