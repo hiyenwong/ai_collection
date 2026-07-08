@@ -1,4 +1,20 @@
 
+## 2026-07-08 - Neuroscience Research (Cron Job - Neuromorphic Hardware)
+
+### AIGOR: Modular Event-Driven Neuromorphic Architecture
+- [[aigor-modular-neuromorphic-architecture]] - Configurable SNN inference architecture with packet-switched communication and multi-model support (arXiv: 2607.03191)
+  - Modular IP-block design supports LIF, HH, and Axon-Hillock neuron models on same hardware
+  - Validated on AMD Versal VPK180 FPGA with spike-level precision across multi-core execution
+  - Declarative specification generates cores, neuron kernels, and synaptic-memory images automatically
+  - **Activation**: AIGOR, neuromorphic architecture, event-driven SNN, FPGA accelerator, packet-switched, timestep-synchronized, configurable SNN
+
+### Hardware-Aware Mixed-Signal SNN Framework
+- [[hardware-aware-mixed-signal-snn-framework]] - Open-source framework for design space exploration across neuron models, synapse types, and hardware metrics (arXiv: 2607.06456)
+  - Supports LIF, HH, AH neuron models with floating-gate and ReRAM synapse devices
+  - Reports accuracy alongside silicon area, power consumption, and quantization sensitivity
+  - Enables Pareto analysis of accuracy vs. energy tradeoffs for edge AI deployment
+  - **Activation**: hardware-aware SNN, mixed-signal simulation, neuron model comparison, LIF HH AH, ReRAM synapse, floating-gate, design space exploration, neuromorphic benchmark
+
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
 ### First-in-Human Quantum Entanglement Imaging
