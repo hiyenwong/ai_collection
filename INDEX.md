@@ -17,6 +17,20 @@
 
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
+### Entropic Time, Psychophysics, and Deformed Neural Dynamics
+- [[entropic-time-psychophysics-deformed-neural-dynamics]] - Unified physical theory linking entropy production to subjective time perception via conformable calculus (arXiv: 2606.29427)
+  - Nonextensive Troika: closed algebraic triplet (D, α, q) eliminates phenomenological fitting
+  - Predicts psychedelic time dilation (REBUS model) and cognitive aging compression
+  - Deformed leaky integrate-and-fire framework from thermodynamic first principles
+  - **Activation**: time perception, entropy production, conformable calculus, Tsallis entropy, psychedelic states, cognitive aging
+
+### SA-HGNN: Sample-Adaptive Hyperbolic Graph Neural Network for EEG Depression Recognition
+- [[sa-hgnn-sample-adaptive-hyperbolic-eeg-depression]] - Hyperbolic GNN capturing hierarchical brain network structure for depression biomarkers (arXiv: 2607.02063)
+  - Sample-adaptive graph construction for personalized functional connectivity
+  - Hyperbolic geometry overcomes Euclidean bottlenecks for hierarchical brain data
+  - Attention pooling filters EEG noise channels adaptively
+  - **Activation**: EEG depression, hyperbolic GNN, hierarchical brain network, functional connectivity, personalized biomarkers
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
