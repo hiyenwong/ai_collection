@@ -1,6 +1,24 @@
 # AI Collection Index
 
 ## 2026-07-08 - Neuroscience Research (Cron Job)
+### AbICL: In-Context Learning for Antigen-Specific Antibody Affinity Ranking
+- [[icl-antibody-affinity]] - In-context learning for antigen-specific antibody affinity ranking (arXiv: 2607.05846)
+  - Core: cs.LG; cs.AI; cs.CE; q-bio.QM
+  - Published: 2026-07-08
+  - **Activation**: csLG, csAI, csCE, q-bioQM
+
+### EntroPath: Maximum Entropy Path Ensemble Embedding for Manifold Learning
+- [[entropy-maximization-manifold]] - Maximum entropy path ensemble embedding for manifold learning (arXiv: 2607.06497)
+  - Core: cs.LG; q-bio.QM; stat.ML
+  - Published: 2026-07-08
+  - **Activation**: csLG, q-bioQM, statML
+
+### Lean-Quantum: Toward AI-Assisted Formalization of Quantum Information
+- [[lean-quantum-formal-verification]] - AI-assisted formal verification methodology for quantum information theory using Lean 4 (arXiv: 2607.05492)
+  - Core: quant-ph; cs.AI
+  - Published: 2026-07-06
+  - **Activation**: quant-ph, csAI
+
 
 ### DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
 - [[dendricl-icl-single-layer-snn]] - First SNN to achieve general-purpose in-context learning via dendritic dynamics (arXiv: 2607.02283v1)
