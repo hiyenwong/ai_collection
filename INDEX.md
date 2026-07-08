@@ -1,5 +1,26 @@
 # AI Collection Index
 
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Onnes: Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis
+- [[onnes-llm-cryogenic-diagnosis]] - Physics-grounded digital twin + multi-agent LLM for infrastructure fault diagnosis (arXiv: 2607.05805)
+  - Core: cs.AI; cs.LG; quant-ph
+  - Published: 2026-07-07
+  - Combines forward physics model with learned noise fingerprint to drive LLM diagnostic agents
+  - Few-shot contrastive demonstrations + self-consistency voting: 0.685 to 0.990 accuracy (6 demos, no training)
+  - Confidence gate suppresses pre-onset false alarms; catches every fault within one poll interval
+  - **Activation**: fault diagnosis, digital twin, multi-agent LLM, cryogenic, physics-grounded, diagnostic simulator
+
+### Metrological Quantum Reservoir Networks
+- [[metrological-quantum-reservoir-networks]] - Quantum reservoir computing enhanced by metrologically useful state preparation (arXiv: 2607.06500)
+  - Core: quant-ph
+  - Published: 2026-07-07
+  - Uses unitary operations to create metrologically useful states before QRC injection
+  - Outperforms classical echo-state networks without weight regularization
+  - Highlights autoencoder bottleneck issues in QRC pipelines
+  - **Activation**: metrological, quantum reservoir computing, QRC, Fisher information, chaotic PDE
+
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 ### AbICL: In-Context Learning for Antigen-Specific Antibody Affinity Ranking
 - [[icl-antibody-affinity]] - In-context learning for antigen-specific antibody affinity ranking (arXiv: 2607.05846)
