@@ -1,4 +1,20 @@
 
+## 2026-07-08 - Neuroscience Research (Cron Job - Hardware and Bayesian Methods)
+
+### Hardware-Aware Open-Source Framework for Mixed-Signal SNN Design Space Exploration
+- [[hardware-aware-snn-design-space-exploration]] - Cross-layer neuromorphic design framework optimizing physical synaptic parameters (not abstract weights) across LIF/HH/AH neurons and ReRAM/floating-gate synapses (arXiv: 2607.06456)
+  - PyTorch-integrated framework captures device-level nonlinearities during training
+  - Reports accuracy plus silicon area plus power consumption plus quantization sensitivity
+  - Enables Pareto-optimal configuration selection for edge deployment
+  - **Activation**: neuromorphic hardware, mixed-signal SNN, design space exploration, edge computing, ReRAM, floating-gate, hardware-aware training
+
+### Bayesian Information Processing Pathway Maps for Neural Entrainment
+- [[bayesian-information-processing-pathway-maps]] - Shifts from frequentist hypothesis testing to Bayesian model adjudication for comparing competing computational models of sensory processing (arXiv: 2607.06284)
+  - Quantifies relative evidence (posterior probabilities) instead of binary significance
+  - Handles collinear models naturally without multiple testing corrections
+  - Applied to auditory loudness pathway reconstruction from neuroimaging data
+  - **Activation**: Bayesian model comparison, neural entrainment, information processing pathway, sensory processing, model adjudication, auditory cortex
+
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
 ### SDA-QEC: Simplified Diffusion Augmentation with Quantum-Enhanced Classification
