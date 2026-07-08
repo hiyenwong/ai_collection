@@ -1,4 +1,22 @@
 
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Low-depth Simulation of Non-Markovianity Under Quantum Hardware Noise
+- [[low-depth-nonmarkovian-simulation]] - Low-depth quantum simulation of non-Markovian dynamics using trajectory mixing — trades entangling gates for statistical mixture (arXiv: 2607.05519)
+  - Key innovation: trajectory mixing trades entangling gates for statistical mixtures of independent pure state trajectories
+  - Higher state fidelity and better quantum correlation preservation on near-term hardware
+  - Applicable to mixed unitary channels and memory channels
+  - **Activation**: non-Markovian simulation, trajectory mixing, low-depth quantum simulation, memory channel, mixed unitary channels, NISQ
+
+### Contractivity of Hilbert-Schmidt Speed in Unital Quantum Channels
+- [[quantum-hilbert-schmidt-speed]] - HSS contractivity analysis for quantum channels — proves HSS contracts under unital CPTP maps, enabling non-Markovianity detection (arXiv: 2607.05619)
+  - Key theorem: HSS is contractive under every unital CPTP map
+  - HSS increase signals information backflow → non-Markovianity witness
+  - Enables discrimination of unital vs non-unital Markovian dynamics
+  - **Activation**: hilbert schmidt speed, quantum channel contractivity, non-Markovianity detection, CPTP maps, open quantum systems
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
