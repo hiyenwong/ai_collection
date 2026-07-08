@@ -4447,3 +4447,26 @@
   - Trade-off analysis: more nodes → less per-node qubits, more communication
   - **Activation**: distributed quantum Fourier transform, distributed QFT circuit, quantum circuit partitioning, distributed quantum computing, e-bit optimization quantum
 
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Session 2)
+
+### Neural-ESO: Dual-Pathway Architecture for Provably Robust Learning-Based Control
+- [[dual-pathway-robust-learning-control]] - Dual-pathway learning control combining NN feedforward estimation with conventional ESO correction for provable robustness (arXiv: 2607.06535)
+  - Neural network provides feedforward disturbance estimate; ESO compensates prediction errors
+  - Lipschitz bound on NN guarantees uniform ultimate boundedness via Lyapunov + small-gain analysis
+  - Validated on quadrotor landing with ground-effect disturbances across ID and OOD scenarios
+  - **Activation**: dual-pathway control, neural ESO, learning-based robust control, Lipschitz constrained neural control, 双路径鲁棒学习控制
+
+### Geometric Obstructions to Quadratic Time Scaling in Multiparameter Quantum Estimation
+- [[geometric-obstruction-multiparameter-quantum-estimation]] - Universal geometric obstruction identifying when multiparameter quantum metrology fails to achieve simultaneous t^-2 scaling (arXiv: 2607.06410)
+  - Linear dependence among commuting Hamiltonian components generates slow parameter direction with Fisher information O(t^0)
+  - Measurement incompatibility decays as 1/t, making SL bound asymptotically saturable
+  - Bottleneck circumvented by adaptive quantum control or nuisance parameter relegation
+  - **Activation**: multiparameter quantum estimation, geometric obstruction quantum metrology, Fisher information scaling, adaptive quantum control metrology
+
+### Adaptive and Neural Operator Control of Nonlinear Volterra Hyperbolic PDEs
+- [[neural-operator-adaptive-pde-control]] - Dual-learning architecture combining online adaptive control with offline neural operator approximation for backstepping control of nonlinear hyperbolic PDEs (arXiv: 2607.06425)
+  - Online identifier learns Volterra kernel truncation; neural operator approximates backstepping kernel map
+  - Single Lyapunov function absorbs truncation, identification, and approximation perturbations
+  - Miroslav Krstic — asymptotic regulation on basin recovering exact-kernel basin as NN accuracy improves
+  - **Activation**: neural operator backstepping, adaptive PDE control, Volterra series control, Krstic neural operator
+
