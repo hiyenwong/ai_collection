@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-07-09 - Systems Engineering & Quantum Mechanics (Cron Job)
+
+### Finite Reliability Representations: Noise-Calibrated Belief-Space Covers for Reliable Decision-Making
+- [[finite-reliability-representations]] - FRR covers belief spaces by reliability cells where Q*(b,u) varies by ≤ ε, enabling certified suboptimality bounds (2ε/(1-γ)) for POMDPs and safety-critical control (arXiv: 2607.04019)
+  - Separates fixed-observation filter map, predictive observation law, and controlled belief-transition kernel
+  - Reliability entropy = log(N_min) measures certified decision-relevant belief complexity
+  - Applicable to finite POMDPs, linear-Gaussian filters, locally linearized nonlinear filters, particle filters
+  - **Activation**: finite reliability representations, FRR, belief space covers, noise-calibrated decision making, POMDP reliability, certified suboptimality, reliability entropy, safety-critical control
+
+### Entanglement as a Structural Complexity Axis: A PAC-Bayesian View of Generalization in Quantum Policies and Value Functions
+- [[entanglement-generalization-pac-bayesian]] - PAC-Bayesian theory shows quantum RL generalization is governed by Fisher effective dimension, not parameter count; entanglement inflates Fisher dimension and degrades generalization (arXiv: 2607.06230)
+  - Entanglement acts as independent structural complexity axis separate from parameter count
+  - PAC-Bayesian bound serves as ranking certificate for circuits with identical parameter counts
+  - Validated on supervised classification, contextual bandits, value-function generalization, and IBM Heron hardware
+  - **Activation**: entanglement generalization tradeoff, PAC-Bayesian quantum, Fisher effective dimension, quantum policy generalization, PQC generalization bound, quantum reinforcement learning
+
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
