@@ -4430,3 +4430,20 @@
   - Counterfactual reflection training: train only on what model would say if asked to reflect → reduces dishonest behavior
   - J-space ablation preserves fluency/grammar but destroys multi-step reasoning, summarization, poetry
   - **Activation**: global workspace, j-space, jacobian lens, interpretability, counterfactual reflection, mental workspace
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### End-to-End Learning of Quantum Control on Latent Dynamical Manifold
+- [[end-to-end-quantum-control]] - LSTM-based end-to-end quantum control learning joint dynamics and control in latent manifold, 1000x faster than GRAPE (arXiv: 2606.27907)
+  - Replaces iterative simulate-then-optimize with single forward pass
+  - Jointly learns dynamics and control strategy on low-dimensional latent manifold
+  - Validated on adiabatic speedup and 1D spin chain state transfer under noise
+  - **Activation**: end-to-end quantum control, quantum control learning, quantum optimal control LSTM, latent manifold quantum control, 量子端到端控制
+
+### Towards an Optimally Distributed Quantum Fourier Transform Circuit
+- [[distributed-quantum-fourier-transform]] - Distributed QFT circuit optimization minimizing e-bit consumption via teleportation-based partitioning (arXiv: 2606.18494)
+  - Circuit partitioning for distributed quantum systems using teleportation
+  - Minimizes entangled bit (e-bit) count across node boundaries
+  - Trade-off analysis: more nodes → less per-node qubits, more communication
+  - **Activation**: distributed quantum Fourier transform, distributed QFT circuit, quantum circuit partitioning, distributed quantum computing, e-bit optimization quantum
+
