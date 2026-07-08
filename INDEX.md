@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-08 - Quantum Neuromorphic Computing (Cron Job)
+
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamics-quantum-reservoir-computing]] - 建立量子储备池计算的非平衡热力学框架，将预测性能与微观能量成本联系起来 (arXiv: 2607.02157)
+  - 核心要点 1: 将Holevo容量映射到Bogoliubov-Kubo-Mori几何流形，证明量子临界区的计算峰值源自光谱共振（能隙关闭迫使储备池跃迁频率与混沌驱动对齐）
+  - 核心要点 2: 引入量子信息耗散(QID)量化储备池结构性保留的非预测性历史数据，推导连续时间处理的广义Landauer界，揭示临界共振同时最大化预测容量和信息耗散的根本热力学权衡
+  - 核心要点 3: 相干性分解证明动态量子相干性严格放大预测容量而无需额外机械功，为设计节能量子神经形态硬件提供理论原则
+  - **Activation**: quantum reservoir thermodynamics, energy-efficient quantum ML, quantum critical computation, informational dissipation, BKM manifold, Holevo capacity, Landauer bound quantum, neuromorphic energy limits
+
 ## 2026-07-08 - Systems Engineering Research (Cron Job)
 
 ### Distributed Containment of a Compromised Agent through Repulsive Cages
