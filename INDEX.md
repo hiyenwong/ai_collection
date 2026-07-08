@@ -45,6 +45,18 @@
   - 核心要点 2: 从12个实验室43个session中恢复50脑区间的有向信息流，揭示theta频段海马前馈层级
   - **Activation**: effective connectivity, SPIDER, directed information flow, brain connectivity stitching, 有效连接
 
+### Spiking Sequence Generator for Polar Trajectories
+- [[spiking-sequence-generator-polar-trajectories]] - 神经形态硬件上的脉冲序列生成器，用于极坐标轨迹控制 (arXiv: 2607.02753)
+  - 核心要点 1: WTA架构与辅助群体结合，通过分流抑制实现方向、速度、半径的独立控制
+  - 核心要点 2: 在SpiNNaker2上实现，时钟时间减少2-3个数量级，能耗降低3-4个数量级
+  - **Activation**: spiking sequence generator, polar trajectories, neuromorphic motor control, WTA architecture, SpiNNaker2, 脉冲轨迹生成
+
+### Local Learning Rules for Physical Generative Models
+- [[local-learning-rules-physical-generative-models]] - 基于物理系统的局部学习规则实现生成模型 (arXiv: 2506.19136)
+  - 核心要点 1: 在驱动非线性振荡器网络中实现基于分数的生成模型，梯度通过局部力测量计算
+  - 核心要点 2: 无需反向传播，物理系统本身学习生成协议，在MNIST上生成手写数字0和1
+  - **Activation**: local learning rules, physical generative models, score-based generative, overdamped oscillators, 物理生成模型
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Event-Driven Fly-Inspired Visual Motion Detection
