@@ -1,4 +1,121 @@
 {
+  "2607.05975": {
+    "title": "MCP-Enabled Agentic AI for Autonomous IPoDWDM Network Lifecycle Automation",
+    "file": null,
+    "keywords": ["mcp", "agentic-network-automation", "ipodwdm", "gnpy", "multi-layer-automation", "closed-loop-control", "network-lifecycle"],
+    "utility": 1.0,
+    "skillCreated": "mcp-agentic-ipodwdm-network-automation",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.05318": {
+    "title": "PiSAs: Benchmarking Contextual Integrity in Multi-User Agentic Systems",
+    "file": null,
+    "keywords": ["contextual-integrity", "multi-user-agents", "privacy-benchmark", "agentic-privacy", "inter-agent-communication", "shared-memory-privacy"],
+    "utility": 1.0,
+    "skillCreated": "pisas-contextual-integrity-multi-user-agentic",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.06447": {
+    "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
+    "file": null,
+    "keywords": ["mathematical-reasoning", "proof-orchestration", "fact-graph-memory", "multi-agent-reasoning", "parallel-proof"],
+    "utility": 0.99,
+    "skillCreated": "danus-mathematical-reasoning-agents-fact-graph",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.03228": {
+    "title": "Organizational Memory for Agentic Business Process Execution",
+    "file": null,
+    "keywords": ["organizational-memory", "business-process-automation", "agentic-bpm", "knowledge-extraction", "llm-agents"],
+    "utility": 0.95,
+    "skillCreated": "organizational-memory-agentic-business-process",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.04786": {
+    "title": "Agentic Information Fusion for Test Maintenance Prediction",
+    "file": null,
+    "keywords": ["test-maintenance", "multi-agent-testing", "agentic-information-fusion", "mast", "test-prediction"],
+    "utility": 0.9,
+    "skillCreated": "agentic-information-fusion-test-maintenance",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.04219": {
+    "title": "Agentic IoT: Architectures, Applications, and Challenges Toward the Internet of Agents",
+    "file": null,
+    "keywords": ["agentic-iot", "internet-of-agents", "aiot", "iot-architecture", "anomaly-detection", "predictive-maintenance"],
+    "utility": 0.9,
+    "skillCreated": "agentic-iot-internet-of-agents",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.02703": {
+    "title": "LLMoxie: Exploring Agentic AI for Scientific Software Development",
+    "file": null,
+    "keywords": ["llmoxie", "scientific-software", "ai-coding-agent", "litellm", "mlflow", "multi-cloud", "pii-masking"],
+    "utility": 0.9,
+    "skillCreated": "llmoxie-agentic-scientific-software",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.03473": {
+    "title": "MUTE: Return-Preserving Communication Unlearning for Efficient Multi-Agent Coordination",
+    "file": null,
+    "keywords": ["mute", "communication-unlearning", "marl", "bandwidth-constraints", "cooperative-games", "return-preservation"],
+    "utility": 0.85,
+    "skillCreated": "mute-communication-unlearning-multi-agent",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.02942": {
+    "title": "A Workflow-Aware Serving Layer for Agentic Applications",
+    "file": null,
+    "keywords": ["agentic-serving", "workflow-aware", "llm-serving", "dag-orchestration", "quality-operators", "verifiers"],
+    "utility": 0.85,
+    "skillCreated": "workflow-aware-serving-layer-agentic",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.01936": {
+    "title": "CausalSteward: An Agentic Divide-Conquer-Combine Copilot for Causal Discovery",
+    "file": null,
+    "keywords": ["causalsteward", "causal-discovery", "agentic-copilot", "divide-conquer-combine", "identifiability", "prior-knowledge"],
+    "utility": 0.85,
+    "skillCreated": "causalsteward-agentic-causal-discovery",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.06001": {
+    "title": "Information Limits and Attractor Dynamics in Economies of Frontier LLM Agents",
+    "file": null,
+    "keywords": ["llm-agent-economies", "information-theoretic-capacity", "mean-field-dynamics", "attractor-dynamics", "market-coupling"],
+    "utility": 0.85,
+    "skillCreated": "llm-agent-economies-information-limits",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.05844": {
+    "title": "StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems",
+    "file": null,
+    "keywords": ["statefuse", "conflict-aware-memory", "replicated-memory", "multi-agent-memory", "conflict-preserving", "version-control"],
+    "utility": 0.85,
+    "skillCreated": "statefuse-conflict-preserving-memory-multi-agent",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
+  "2607.02507": {
+    "title": "What LLM Agents Say When No One Is Watching: Social Structure and Latent Objectives",
+    "file": null,
+    "keywords": ["llm-agents", "social-structure", "latent-objectives", "social-context", "agent-communication", "audience-effects"],
+    "utility": 0.85,
+    "skillCreated": "llm-agents-social-structure-latent-objectives",
+    "lastAccessed": "2026-07-08",
+    "category": "multi-agent-rl"
+  },
   "2607.04292": {
     "title": "Agentic SABRE",
     "file": null,

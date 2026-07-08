@@ -1,4 +1,114 @@
 
+## 2026-07-08 - Multi-Agent Systems Research (Cron Job)
+
+### MCP-Enabled Agentic AI for Autonomous IPoDWDM Network Lifecycle Automation
+- [[mcp-agentic-ipodwdm-network-automation]] - MCP-enabled agentic AI architecture for autonomous control of vendor-agnostic IPoDWDM networks (arXiv: 2607.05975)
+  - Core: cs.NI; cs.AI; cs.MA; eess.SY
+  - Published: 2026-07-07
+  - Uses MCP to bridge LLM agents with GNPy for optical layer modeling
+  - Live end-to-end lifecycle multi-layer automation and closed-loop control
+  - Validated on a real testbed
+  - **Activation**: MCP, agentic network automation, IPoDWDM, GNPy, multi-layer automation, closed-loop control, network lifecycle
+
+### PiSAs: Benchmarking Contextual Integrity in Multi-User Agentic Systems
+- [[pisas-contextual-integrity-multi-user-agentic]] - Benchmark for contextual integrity in multi-user agentic systems addressing inter-agent privacy risks (arXiv: 2607.05318)
+  - Core: cs.MA; cs.CR
+  - Published: 2026-07-06
+  - New privacy risks: inter-agent messages, shared memory, cross-user exposure
+  - Contextual integrity framework for multi-user agent settings
+  - **Activation**: contextual integrity, multi-user agents, privacy benchmark, agentic privacy, inter-agent communication, shared memory privacy
+
+### Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory
+- [[danus-mathematical-reasoning-agents-fact-graph]] - Fact-graph memory for coordinating parallel proof attempts among mathematical reasoning agents (arXiv: 2607.06447)
+  - Core: cs.AI; cs.CL; cs.MA
+  - Published: 2026-07-07
+  - Shared fact-graph prevents redundant work across parallel agents
+  - Graph structure captures dependencies between mathematical statements
+  - **Activation**: mathematical reasoning, proof orchestration, fact-graph memory, multi-agent reasoning, parallel proof
+
+### Organizational Memory for Agentic Business Process Execution
+- [[organizational-memory-agentic-business-process]] - Organizational memory framework for reliable LLM-based business process automation (arXiv: 2607.03228)
+  - Core: cs.AI; cs.MA
+  - Published: 2026-07-03
+  - Extracts and structures knowledge from human-oriented artifacts (SOPs, wikis)
+  - Bridges gap between general LLM capabilities and domain-specific process knowledge
+  - **Activation**: organizational memory, business process automation, agentic bpm, knowledge extraction
+
+### Agentic Information Fusion for Test Maintenance Prediction
+- [[agentic-information-fusion-test-maintenance]] - MAST multi-agent framework predicting which test cases need maintenance after code changes (arXiv: 2607.04786)
+  - Core: cs.SE; cs.AI; cs.MA
+  - Published: 2026-07-06
+  - Multiple specialized agents analyze code diffs, test history, semantic relationships
+  - Information fusion across agents produces unified maintenance prediction
+  - **Activation**: test maintenance, multi-agent testing, agentic information fusion, MAST, test prediction
+
+### Agentic IoT: Architectures, Applications, and Challenges Toward the Internet of Agents
+- [[agentic-iot-internet-of-agents]] - Survey of agentic IoT architectures and the Internet of Agents paradigm (arXiv: 2607.04219)
+  - Core: cs.AI; cs.MA; cs.NI
+  - Published: 2026-07-05
+  - From passive IoT → AIoT → agentic IoT → Internet of Agents
+  - Edge-cloud continuum, agent autonomy, inter-agent communication
+  - **Activation**: agentic IoT, internet of agents, AIoT, IoT architecture, anomaly detection, predictive maintenance
+
+### LLMoxie: Exploring Agentic AI for Scientific Software Development
+- [[llmoxie-agentic-scientific-software]] - Institutional AI platform with three-tier architecture for scientific software development (arXiv: 2607.02703)
+  - Core: cs.SE; cs.AI; cs.DC; cs.MA
+  - Published: 2026-07-02
+  - Three-tiered: multi-cloud inference, LiteLLM/MLflow control plane, application augmentation
+  - PII masking, budgeting, authentication, observability built in
+  - **Activation**: LLMoxie, scientific software, AI coding agent, LiteLLM, MLflow, multi-cloud, PII masking
+
+### MUTE: Return-Preserving Communication Unlearning for Multi-Agent Coordination
+- [[mute-communication-unlearning-multi-agent]] - Selectively unlearn inter-agent communications while preserving coordination returns in MARL (arXiv: 2607.03473)
+  - Core: cs.MA
+  - Published: 2026-07-03
+  - Return-preserving: removes non-critical communication without degrading team performance
+  - Complementary to existing communication-efficient MARL methods
+  - **Activation**: MUTE, communication unlearning, MARL, bandwidth constraints, cooperative games, return preservation
+
+### A Workflow-Aware Serving Layer for Agentic Applications
+- [[workflow-aware-serving-layer-agentic]] - Serving infrastructure for agentic AI workloads as DAGs of LLM and tool calls (arXiv: 2607.02942)
+  - Core: cs.DC; cs.MA
+  - Published: 2026-07-03
+  - Bridges gap between model-serving engines and workflow orchestration
+  - Per-node model selection, quality operators (verifiers), DAG-level optimization
+  - **Activation**: agentic serving, workflow-aware, LLM serving, DAG orchestration, quality operators, verifiers
+
+### CausalSteward: An Agentic Divide-Conquer-Combine Copilot for Causal Discovery
+- [[causalsteward-agentic-causal-discovery]] - Agentic copilot for high-dimensional causal discovery with prior knowledge integration (arXiv: 2607.01936)
+  - Core: cs.MA; cs.AI
+  - Published: 2026-07-02
+  - Divide-conquer-combine partitions high-dimensional problem into sub-problems
+  - Prior knowledge addresses causal identifiability issues
+  - Human-in-the-loop copilot architecture
+  - **Activation**: CausalSteward, causal discovery, agentic copilot, divide-conquer-combine, identifiability, prior knowledge
+
+### Information Limits and Attractor Dynamics in Economies of Frontier LLM Agents
+- [[llm-agent-economies-information-limits]] - Pre-registered experiment testing information-theoretic capacity and mean-field dynamics in LLM agent economies (arXiv: 2607.06001)
+  - Core: cs.AI; cs.MA
+  - Published: 2026-07-07
+  - Tests information-theoretic capacity region for wealth growth under market coupling
+  - Mean-field residual-attractor dynamics model
+  - Uses Claude Opus 4.8 as economic agents
+  - **Activation**: LLM agent economies, information-theoretic capacity, mean-field dynamics, attractor dynamics, market coupling
+
+### StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems
+- [[statefuse-conflict-preserving-memory-multi-agent]] - Conflict-aware replicated memory built on version control principles for multi-agent systems (arXiv: 2607.05844)
+  - Core: cs.AI; cs.CL; cs.MA
+  - Published: 2026-07-07
+  - Preserves all observations including conflicting ones (no silent overwrite)
+  - Deterministic conflict resolution based on VCS principles
+  - Formal memory contract for replication across agents
+  - **Activation**: StateFuse, conflict-aware memory, replicated memory, multi-agent memory, conflict-preserving, version control
+
+### What LLM Agents Say When No One Is Watching: Social Structure and Latent Objectives
+- [[llm-agents-social-structure-latent-objectives]] - Studies how social structure changes LLM agent expression without explicit objectives (arXiv: 2607.02507)
+  - Core: cs.AI; cs.CL; cs.LG; cs.MA
+  - Published: 2026-07-02
+  - Tests whether role, audience, relational context change what agents express publicly
+  - Introduces concept of latent objectives from social structure
+  - **Activation**: LLM agents, social structure, latent objectives, social context, agent communication, audience effects
+
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
 ### Low-depth Simulation of Non-Markovianity Under Quantum Hardware Noise
