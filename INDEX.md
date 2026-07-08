@@ -1,6 +1,27 @@
 
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
+### First-in-Human Quantum Entanglement Imaging
+- [[first-in-human-quantum-entanglement-imaging]] - First in vivo imaging of quantum entanglement degree from positron-electron annihilation using J-PET plastic scintillator scanner for clinical diagnostics (arXiv: 2606.29421)
+  - Plastic scintillators enable simultaneous PET + entanglement degree imaging via Compton scattering polarization
+  - Entanglement degree values between maximally entangled and separable states measured in liver and spleen
+  - Opens quantum entanglement as a new biomarker channel for clinical diagnostics
+  - **Activation**: quantum entanglement imaging, J-PET, plastic scintillator PET, polarization-correlated tomography, entanglement degree biomarker, 68Ga quantum imaging
+
+### Parameter-Efficient CV Photonic QNNs for Edge Quantum AI
+- [[cv-photonic-qnn-edge-medical]] - Hybrid classical-CV quantum classifier for oral cancer detection with 18 parameters achieving 100% calibrated test accuracy on room-temperature photonic hardware (arXiv: 2606.28252)
+  - Simplified Phi-D-U1 CV-QNN architecture cuts trainable parameters 40-45% vs standard Killoran layer
+  - Mitigates barren plateaus raising gradient variance by 58 orders of magnitude
+  - 4-qumode simplified CV-QNN outperforms 55-parameter classical baseline with 67% fewer parameters
+  - **Activation**: CV-QNN, photonic quantum neural network, continuous-variable quantum, edge quantum AI, oral cancer detection, barren plateau mitigation, parameter-efficient QML
+
+### Compression-Driven Anomaly Detection in Brain MRI Using Quantum Autoencoder
+- [[quantum-autoencoder-mri-anomaly]] - Quantum autoencoder for brain MRI anomaly detection achieving ROC-AUC ~0.95 slice-level using incompressibility-based scoring with trash qubits (arXiv: 2606.27411)
+  - Angle encoding + variational encoder-decoder with auxiliary trash qubits for information discarding
+  - Encoder-decoder asymmetry analysis shows effective detection from structured compression, not parameter magnitude
+  - Produces spatially localized anomaly heatmaps aligned with tumorous regions
+  - **Activation**: quantum autoencoder, brain MRI anomaly detection, compression-driven diagnosis, trash qubit encoding, variational quantum encoder, DICOM quantum analysis
+
 ### Learning to Reconstruct Wigner Functions in Phase Space
 - [[wigner-function-reconstruction]] - ML framework to reconstruct Wigner functions from sparse phase-space measurements with O(log d) complexity for sparse states (arXiv: 2607.06232)
   - Provably efficient regression for sparse Fock/coherent states (binomial codes, cat states)
@@ -30,6 +51,14 @@
   - Handles collinear models naturally without multiple testing corrections
   - Applied to auditory loudness pathway reconstruction from neuroimaging data
   - **Activation**: Bayesian model comparison, neural entrainment, information processing pathway, sensory processing, model adjudication, auditory cortex
+
+### Pathwise Approach to Metastability in Galves-Löcherbach Models
+- [[pathwise-metastability-galves-locherbach-models]] - Rigorous mathematical framework for analyzing metastability in stochastic spiking neural networks (arXiv: 2607.05652)
+  - Connects statistical physics metastability theory to computational neuroscience
+  - Reviews pathwise approach for identifying typical trajectories and transition probabilities
+  - Covers Galves-Löcherbach (GL) stochastic spiking neural network models
+  - Analyzes metastable state transitions in mean-field and network settings
+  - **Activation**: metastability, Galves-Löcherbach, stochastic neural networks, pathwise approach, statistical physics, phase transitions, neural dynamics, criticality
 
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
 
