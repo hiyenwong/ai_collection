@@ -21,6 +21,26 @@
   - **Activation**: metrological, quantum reservoir computing, QRC, Fisher information, chaotic PDE
 
 
+## 2026-07-08 - Neuroscience Research (Cron Job, Afternoon)
+
+### On the Increased and Decreased Connectivity of the Demented Human Brain
+- [[demented-brain-connectivity-patterns]] - Differential structural connectivity analysis in dementia using OASIS-3 dataset (arXiv: 2607.05654)
+  - Core: q-bio.NC
+  - Published: 2026-07-06
+  - Decreased connectivity: hippocampus, temporal lobe (expected neurodegeneration)
+  - Increased connectivity: precuneus, cuneus, insula (surprising hyperconnectivity)
+  - Suggests compensatory network reorganization in dementia
+  - **Activation**: dementia connectivity, OASIS-3, structural connectivity, precuneus hyperconnectivity, brain network degradation
+
+### Quantifying Entrainment Evidence: Bayesian vs Frequentist IPPMs
+- [[bayesian-ippm-cortical-entrainment]] - Bayesian framework for Information Processing Pathway Maps (IPPMs) using EEG/MEG (arXiv: 2607.06284)
+  - Core: q-bio.NC; stat.AP
+  - Published: 2026-07-07
+  - Replaces frequentist null hypothesis testing with Bayesian model evidence for IPPM construction
+  - Handles collinear models and robust evidence accumulation via Bayes factors
+  - Validated on auditory loudness-processing pathway reconstruction
+  - **Activation**: IPPM, cortical entrainment, Bayesian model comparison, temporal response function, auditory processing
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 ### AbICL: In-Context Learning for Antigen-Specific Antibody Affinity Ranking
 - [[icl-antibody-affinity]] - In-context learning for antigen-specific antibody affinity ranking (arXiv: 2607.05846)
