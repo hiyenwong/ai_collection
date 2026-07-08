@@ -19,6 +19,22 @@
   - Published: 2026-07-06
   - **Activation**: quant-ph, csAI
 
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation for inferring HH parameters from extracellular MEA recordings (arXiv: 2607.04063)
+  - Core: q-bio.NC; ICML 2026 Accepted
+  - Published: 2026-07-05
+  - 90.6% accuracy predicting unseen stimulation responses from minutes of recording
+  - Replaces hours of clinical stimulus testing with differentiable HH simulation
+  - **Activation**: biophysical modeling, Hodgkin-Huxley, neurostimulation, differentiable simulation, MEA, parameter inference
+
+### Microsecond-Precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[equilibrium-dynamics-sound-localization]] - Equilibrium dynamics framework challenging Jeffress place-coding model for ITD processing (arXiv: 2607.03890)
+  - Core: q-bio.NC; Submitted to Science
+  - Published: 2026-07-04
+  - ITD encoded as stable equilibrium of neural population dynamics, not place coding
+  - Resolves paradox: slow dynamics (ms) achieve microsecond precision via equilibrium stability
+  - **Activation**: sound localization, ITD, equilibrium dynamics, population coding, auditory neuroscience
+
 
 ### DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
 - [[dendricl-icl-single-layer-snn]] - First SNN to achieve general-purpose in-context learning via dendritic dynamics (arXiv: 2607.02283v1)
