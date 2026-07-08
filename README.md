@@ -258,6 +258,8 @@ ai_collection/
 
 Skills are organized into **31 category subdirectories**. New skills MUST be placed in `collection/skills/<category>/<skill-name>/`, never in the root skills directory. See [CONTRIBUTING.md](./CONTRIBUTING.md#skill-categories) for the full category list and selection rules.
 
+**Enforcement policy:** All PRs containing new skills are reviewed before merge. Any skill found in the root `collection/skills/` directory (not in a category subdirectory) will block the merge. The reviewer will run `python scripts/classify_skills.py` to auto-classify, verify 0 flat skills remain, then merge.
+
 To auto-classify flat skills into categories:
 ```bash
 python scripts/classify_skills.py

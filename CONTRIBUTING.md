@@ -165,7 +165,7 @@ collection/skills/
 
 #### Category Selection Rules
 
-1. **Never place skills in the root `collection/skills/` directory.** Always use a category subdirectory.
+1. **Never place skills in the root `collection/skills/` directory.** Always use a category subdirectory. This is strictly enforced — PRs with flat skills will not be merged.
 2. **Use `scripts/classify_skills.py` to auto-classify** if unsure:
    ```bash
    python scripts/classify_skills.py  # runs classification on all flat skills
