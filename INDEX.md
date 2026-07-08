@@ -1,4 +1,22 @@
 
+## 2026-07-08 - Medicine + Quantum (Cron Job - PET Biomarkers)
+
+### Quantum Entanglement Degree as PET Biomarkers for Hypoxia
+- [[quantum-pet-biomarkers-hypoxia]] - Novel PET biomarkers using quantum entanglement degree and positronium lifetime to detect tissue hypoxia non-invasively (arXiv: 2605.00021)
+  - Method 1: ortho-positronium decay rate (τ_oPs + 3γ/2γ ratio) inversely correlated with tissue oxygen concentration
+  - Method 2: quantum entanglement degree of annihilation photons sensitive to tissue microenvironment composition
+  - J-PET plastic scintillator scanner measures polarization via Compton scattering kinematics
+  - Clinical applications: tumor hypoxia mapping, radiotherapy planning, ischemic tissue identification
+  - **Activation**: quantum PET, positronium lifetime, entanglement biomarker, hypoxia imaging, J-PET, Compton scattering PET, 3γ/2γ ratio, tissue oxygen, quantum medical imaging, positronium decay
+
+### CV Photonic QNN for Edge Medical AI
+- [[cv-photonic-qnn-edge-medical]] - Room-temperature CV photonic QNN for edge-deployable medical image classification without cryogenic infrastructure (arXiv: 2606.28252)
+  - Pipeline: MobileNetV1 → PCA(16-dim) → CV-QNN(4 qumodes, 2 layers) → classification
+  - 4-qumode CV-QNN uses ~100× fewer trainable parameters than equivalent qubit VQC
+  - Operates at room temperature — deployable on smartphones/Raspberry Pi for low-resource clinical settings
+  - Demonstrated on oral cancer detection with 100% calibrated test accuracy
+  - **Activation**: cv-qnn, photonic quantum, continuous-variable, edge quantum AI, oral cancer detection, parameter-efficient quantum, room-temperature quantum, mobile medical AI, smartphone screening
+
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
 ### Differentiable Biophysical Simulation for Neurostimulation
