@@ -1,6 +1,13 @@
 
 ## 2026-07-08 - Medicine + Quantum (Cron Job - Hourly)
 
+### First-in-Human Quantum Entanglement Imaging
+- [[quantum-entanglement-pet-imaging]] - First in vivo imaging of quantum entanglement degree from positron-electron annihilation using J-PET plastic scintillator scanner for clinical diagnostics (arXiv: 2606.29421)
+  - Plastic scintillators enable simultaneous PET + entanglement degree imaging via Compton scattering polarization
+  - Entanglement degree values between maximally entangled and separable states measured in liver and spleen
+  - Opens quantum entanglement as a new biomarker channel for clinical diagnostics
+  - **Activation**: quantum entanglement imaging, J-PET, plastic scintillator PET, polarization-correlated tomography, entanglement degree biomarker, 68Ga quantum imaging
+
 ### Parameter-Efficient CV-QNN for Edge Oral Cancer Detection
 - [[cv-qnn-edge-ai-oral-cancer]] - Simplified Φ∘D∘U₁ CV-QNN architecture with only 18 parameters achieving 100% calibrated test accuracy for oral cancer detection at edge (arXiv: 2606.28252)
   - Simplified layer cuts trainable parameters 40-45% vs standard Killoran CV-QNN layer
