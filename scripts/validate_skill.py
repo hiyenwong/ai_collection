@@ -437,8 +437,15 @@ def validate_all_skills(skills_dir: Path) -> Dict[str, SkillValidator]:
         print(f"❌ Skills directory not found: {skills_dir}")
         return validators
 
-    for skill_path in skills_dir.iterdir():
+    # Known non-skill utility directories that should never be validated as skills
+    SKIP_DIRS = {"assets", "scripts", "references", "templates"}
+
+    for skill_path in sorted(skills_dir.iterdir()):
         if not skill_path.is_dir():
+            continue
+
+        # Skip known non-skill utility directories
+        if skill_path.name in SKIP_DIRS:
             continue
 
         # Skip parent directories that only contain sub-skills

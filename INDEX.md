@@ -1,35 +1,1025 @@
 # AI Collection Index
 
-## 2026-07-07 - Agentic AI Research (Cron Job)
+## 2026-07-08 - Neuroscience Research (Cron Job)
 
-### Agentic SABRE: An Uncertainty-Aware Neuro-Symbolical Multi-Agent Framework for Adaptive Ransomware Detection
-- [[agentic-sabre-ransomware-detection]] - Uncertainty-aware neuro-symbolic multi-agent framework fusing semantic + behavioural evidence with Monte Carlo Dropout epistemic uncertainty, risk-uncertainty orchestrator for auto-contain vs human escalation, post-hoc explainability (arXiv: 2607.04292)
-  - Dual-agent evidence fusion: semantic representation agent + behavioural forensic telemetry agent
-  - Monte Carlo Dropout for per-agent epistemic uncertainty quantification
-  - Risk-uncertainty orchestrator with two thresholds: auto-contain (high risk, low uncertainty), escalate (high risk, high uncertainty), pass, monitor
-  - Post-hoc explainability: gradient saliency, permutation importance, counterfactual analysis
-  - AUC = 1.0 on RDset/RanSMAP, 4.9% relative reduction in false escalations at equal recall
-  - **Activation**: agentic SABRE, ransomware detection, neuro-symbolic security, Monte Carlo Dropout uncertainty, multi-agent threat detection, concept drift, risk-uncertainty triage, counterfactual security
+### DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendricl-icl-single-layer-snn]] - First SNN to achieve general-purpose in-context learning via dendritic dynamics (arXiv: 2607.02283v1)
+  - Single dendritic compartment implements online Widrow-Hoff LMS with frozen weights
+  - Only architecture seed-stable at d≥30 where Transformers collapse to chance
+  - ~4× spike reduction, ~10× Loihi-class energy advantage
+  - **Activation**: dendritic computation, in-context learning SNN, compartmental neuron, online LMS, neuromorphic ICL
+## 2026-07-08 - Quantum Neuromorphic Computing (Cron Job)
 
-### When LLMs Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning
-- [[llm-symbolic-communication-multi-agent]] - CLSR framework where LLM agents autonomously invent/evolve compact Language Symbolism Frameworks (LSFs), latent-free router selects/composes per query, 3-6x token reduction vs CoT (arXiv: 2606.29354)
-  - Language Symbolism Frameworks: compact symbols + usage rules + message-passing contracts as reusable protocols
-  - Evolutionary loop driven by correctness and token cost fitness signals
-  - Latent-free router: single LSF call (easy), ensemble (medium), multi-round composition (hard)
-  - Information-theoretic lower bound on token cost under arbitrary symbolism
-  - Interpreter-realizability premise: multi-round LSF protocols conditionally subsume program-execution pipelines
-  - 3-6x reduction in latency-oriented tokens while maintaining accuracy; code at github.com/pzqpzq/LSF_MDia
-  - **Activation**: CLSR, language symbolism routing, symbolic communication, multi-agent reasoning, token efficiency, CoT compression, evolutionary language protocol, LSF
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamics-quantum-reservoir-computing]] - 建立量子储备池计算的非平衡热力学框架，将预测性能与微观能量成本联系起来 (arXiv: 2607.02157)
+  - 核心要点 1: 将Holevo容量映射到Bogoliubov-Kubo-Mori几何流形，证明量子临界区的计算峰值源自光谱共振（能隙关闭迫使储备池跃迁频率与混沌驱动对齐）
+  - 核心要点 2: 引入量子信息耗散(QID)量化储备池结构性保留的非预测性历史数据，推导连续时间处理的广义Landauer界，揭示临界共振同时最大化预测容量和信息耗散的根本热力学权衡
+  - 核心要点 3: 相干性分解证明动态量子相干性严格放大预测容量而无需额外机械功，为设计节能量子神经形态硬件提供理论原则
+  - **Activation**: quantum reservoir thermodynamics, energy-efficient quantum ML, quantum critical computation, informational dissipation, BKM manifold, Holevo capacity, Landauer bound quantum, neuromorphic energy limits
 
-### PDEFlow: Autonomous Agentic PDE Pipelines for Neural Operator Learning and Solving
-- [[pdeflow-autonomous-agentic-pde-pipelines]] - Agentic framework turning NL ODE/PDE descriptions into solver-backed neural-operator pipelines: specification → FEniCSx data gen → operator training → checkpoint inference (arXiv: 2607.05134)
-  - Stateful input graph converts multi-turn NL input + user edits into validated PDE specifications
-  - Data generation: parameter sampling + FEniCSx finite-element solver → operator-ready tensors
-  - Registry-based operator interface: pluggable neural operators (DeepONet, FNO) without pipeline changes
-  - Instantiated with multi-branch Bayesian DeepONet for uncertainty-quantified predictions
-  - Checkpoint-based inference: solver-free predictions from trained operators
-  - Validated on benchmark ODE/PDE tasks (steady-state and transient)
-  - **Activation**: PDEFlow, autonomous PDE pipeline, agentic scientific workflow, neural operator, Bayesian DeepONet, FEniCSx, operator learning, solver-free prediction
+## 2026-07-08 - Systems Engineering Research (Cron Job)
+
+### Distributed Containment of a Compromised Agent through Repulsive Cages
+- [[repulsive-cage-containment-cps]] - 利用CPS智能体未受损的避撞模块作为间接控制通道，通过Stackelberg博弈实现被劫持智能体的分布式围困 (arXiv: 2607.01230)
+  - 核心要点 1: 将防御者-对手交互建模为在线Stackelberg博弈，利用支撑函数和法锥精确刻画鲁棒单步围困的几何条件
+  - 核心要点 2: 分布式在线近似算法实现次线性动态遗憾界O(√T)，量化网络估计误差和阶段最优时变性的影响
+  - **Activation**: repulsive cage, compromised agent containment, UAV swarm security, Stackelberg containment, distributed CPS security
+
+### The Internet of Agentic AI: Communication, Coordination, and Collective Intelligence at Scale
+- [[internet-agentic-ai-architecture]] - 智能体AI互联网(IoAI)架构框架：异构智能体发现、协商、上下文交换和跨环境工作流执行的开放生态系统 (arXiv: 2606.12835)
+  - 核心要点 1: 综合多智能体系统、分布式计算、通信网络、博弈论和安全工程，提出可扩展智能体生态系统的架构与机制
+  - 核心要点 2: 识别核心研究挑战：受控涌现、语义互操作性、安全身份、激励兼容协调、资源感知编排和大规模治理
+  - **Activation**: IoAI, internet of agents, agent communication, semantic interoperability, multi-agent coordination, distributed AI governance
+
+## 2026-07-08 - Neuroscience Research (Cron Job - Dendritic Learning & Connectivity)
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit]] - 树突分支与分流抑制如何重塑局部学习中的信用分配几何 (arXiv: 2607.03556)
+  - 核心要点 1: 精确梯度分解为 local eligibility × compartment error，将局部学习转化为信用信号压缩问题
+  - 核心要点 2: 分流抑制通过重塑compartment-error场来匹配受限反馈，在5-factor反馈下仅比backprop低5-6个百分点
+  - **Activation**: shunting inhibition, dendritic credit, local learning, E/I conductance, 树突信用分配
+
+### SPIDER: Stitched Power-spectra for Directed Information Flow
+- [[spider-directed-connectivity-stitching]] - 非参数频域框架从非同步不完整记录中恢复全脑有效连接 (arXiv: 2606.22695)
+  - 核心要点 1: 拼接重叠通道子集的局部功率谱为全局谱矩阵，核范数补全未共同观测脑区对
+  - 核心要点 2: 从12个实验室43个session中恢复50脑区间的有向信息流，揭示theta频段海马前馈层级
+  - **Activation**: effective connectivity, SPIDER, directed information flow, brain connectivity stitching, 有效连接
+
+### Spiking Sequence Generator for Polar Trajectories
+- [[spiking-sequence-generator-polar-trajectories]] - 神经形态硬件上的脉冲序列生成器，用于极坐标轨迹控制 (arXiv: 2607.02753)
+  - 核心要点 1: WTA架构与辅助群体结合，通过分流抑制实现方向、速度、半径的独立控制
+  - 核心要点 2: 在SpiNNaker2上实现，时钟时间减少2-3个数量级，能耗降低3-4个数量级
+  - **Activation**: spiking sequence generator, polar trajectories, neuromorphic motor control, WTA architecture, SpiNNaker2, 脉冲轨迹生成
+
+### Local Learning Rules for Physical Generative Models
+- [[local-learning-rules-physical-generative-models]] - 基于物理系统的局部学习规则实现生成模型 (arXiv: 2506.19136)
+  - 核心要点 1: 在驱动非线性振荡器网络中实现基于分数的生成模型，梯度通过局部力测量计算
+  - 核心要点 2: 无需反向传播，物理系统本身学习生成协议，在MNIST上生成手写数字0和1
+  - **Activation**: local learning rules, physical generative models, score-based generative, overdamped oscillators, 物理生成模型
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Event-Driven Fly-Inspired Visual Motion Detection
+- [[event-driven-fly-inspired-motion-detection]] - Event-driven framework for fly-inspired visual motion detection using event cameras and biologically structured neural computation (arXiv: 2607.05205)
+  - 核心要点 1: Integrates event-based sensing with fly optic-lobe neural network for efficient motion detection
+  - 核心要点 2: Training-free, parameter-efficient architecture suitable for real-time embedded systems
+  - **Activation**: event-camera, neuromorphic-vision, fly-vision, motion-detection, bio-inspired-vision
+
+### GelNeuro: Neuromorphic Tactile System for Texture Recognition
+- [[gelneuro-neuromorphic-tactile-system]] - Fully integrated sensing-computing neuromorphic visuo-tactile system for texture recognition on edge hardware (arXiv: 2607.05241)
+  - 核心要点 1: Direct GelSight Mini to Speck2f SoC integration achieves 96.3% accuracy with 19.6 mW power
+  - 核心要点 2: Hardware-aware weight clamping strategy maintains performance under 8-bit quantization
+  - **Activation**: neuromorphic-tactile, tactile-sensing, texture-recognition, edge-neuromorphic, spiking-convolutional
+
+### Parameter-Efficient CV-QNN for Edge Medical AI
+- [[cv-qnn-edge-medical-imaging]] - CV photonic QNN with 40-45% fewer params for room-temperature edge medical classification (arXiv: 2606.28252)
+  - 核心要点 1: 简化Φ∘D∘U₁架构比标准CV-QNN减少40-45%参数，4 qumodes时性能更优
+  - 核心要点 2: PCA降维至16D将梯度方差提升~58个数量级，有效缓解barren plateaus
+  - 核心要点 3: 18参数模型超越55参数经典基线(少67%参数)，实现100%校准测试准确率
+  - **Activation**: cv-qnn, continuous variable quantum, photonic qnn, edge quantum ai, medical quantum ml, parameter efficient qnn
+
+### Post-Quantum Secure Pharmacovigilance Pipeline
+- [[post-quantum-pharmacovigilance-pipeline]] - PQC pipeline with ML-KEM-768 + ML-DSA-65 for healthcare data security (arXiv: 2606.09412)
+  - 核心要点 1: 完整PQC管道：ML-KEM-768密钥交换 → HKDF-SHA-256 → AES-256-GCM加密 → ML-DSA-65签名验证
+  - 核心要点 2: 分布式加密处理比顺序设计显著降低延迟，Raspberry Pi测试验证可行资源开销
+  - **Activation**: pqc pharmacovigilance, ML-KEM, ML-DSA, post-quantum healthcare, drug safety, ML-KEM-768
+
+### Fourier-Based Quantum Image Encoding & Compression
+- [[quantum-image-encoding-compression]] - Gate-efficient quantum medical image encoding with 4x gate reduction (arXiv: 2505.06471)
+  - 核心要点 1: 基于傅里叶的编码方法将门数减少至像素数的1/4以下，大幅降低模拟和运行成本
+  - 核心要点 2: 两种压缩技术进一步减少门数和预处理时间，同时保持可忽略的图像质量损失
+  - **Activation**: quantum image encoding, Fourier encoding, gate reduction, medical imaging, QIMP
+
+## 2026-07-08 - Medicine + Quantum Research (Cron Job - Hourly Batch)
+
+### Multi-Class Neurological Disorder Prediction with Tensor Network Feature Engineering
+- [[tensor-network-neurological-predictor]] - PARAFAC CP tensor decompositions inspired by QNN for 8-class neurological disorder diagnosis on 55,160 MRI images (arXiv: 2605.17771)
+  - 核心要点 1: PARAFAC CP张量分解在嵌套5折交叉验证下对8类神经系统疾病实现强验证性能
+  - 核心要点 2: 量子启发经典框架通过数学映射QNN架构到CP分解，保留诊断特征同时降维
+  - **Activation**: PARAFAC CP tensor, neurological disorder prediction, MRI classification, quantum-inspired classical
+
+### Adaptive Hybrid Quantum-Classical Feature Fusion for Breast Cancer Classification
+- [[hybrid-quantum-classical-feature-fusion-medical]] - 温度缩放混合融合(TSHF)策略解决量子-经典优化不对称，BreastMNIST达87.82%准确率 (arXiv: 2604.22903)
+  - 核心要点 1: 三种渐进融合策略：SHF(离线)、DHF(端到端)、TSHF(可学习温度标量平衡梯度)
+  - 核心要点 2: TSHF+ResNet+可训练量子电路实现F1=91.77%, AUC=89.08%，超越纯经典基线
+  - **Activation**: temperature-scaled hybrid fusion, TSHF, quantum-classical feature fusion, BreastMNIST, hybrid QNN medical
+
+### HQNN for Breast Cancer Thermographic Classification
+- [[hqnn-medical-image-classification]] - 4量子比特变分电路+多头注意力的热成像乳腺癌分类 (arXiv: 2604.16953)
+  - 核心要点 1: 参数化量子电路结合多头注意力实现量子感知特征编码
+  - 核心要点 2: 经典模拟展示量子优势证据，为NISQ设备部署建立框架
+  - **Activation**: HQNN thermographic, breast cancer quantum, multi-head attention quantum, variational quantum circuit medical
+
+### Quantum-Enhanced Tensor-Network Frontends for Federated Medical Diagnosis
+- [[tensor-network-frontend-quantum-medical]] - 张量网络前端+量子增强处理器实现隐私感知联邦医疗诊断 (arXiv: 2604.01616)
+  - 核心要点 1: 客户端张量网络压缩(MPS/TTN/MERA)保护隐私，量子增强处理器精炼分类
+  - 核心要点 2: 面向IEEE QCE 2026提交，联邦学习场景下的量子隐私保护新范式
+  - **Activation**: tensor-network federated, quantum privacy medical, federated quantum diagnosis, MPS TTN MERA compression
+
+## 2026-07-08 - Neuroscience Research (Cron Job - Wavelet Scattering EEG)
+
+### Wavelet Scattering Transform for Interpretable Schizophrenia Biomarker Discovery
+- [[wavelet-scattering-schizophrenia-eeg-biomarker]] - 多阶小波散射变换(WST)框架用于静息态EEG精神分裂症生物标志物发现与分类 (arXiv: 2607.05282)
+  - 核心要点 1: 二阶散射系数（编码跨频率耦合）主导判别性生物标志物，gamma频段特征最突出；电极P3为最具判别力位点
+  - 核心要点 2: 严格LOSO交叉验证下Random Forest达90.48%准确率(AUC=0.9339, 灵敏度95.56%)，克服epoch级数据泄露问题
+  - **Activation**: wavelet scattering transform, schizophrenia EEG biomarker, cross-frequency coupling, LOSO cross-validation, gamma-band, resting-state EEG
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Beyond DSA: Conjugacy-based Comparison of Dynamical Systems
+- [[conjugacy-based-similarity-analysis]] - 基于共轭的动力系统比较方法(CSA)，解决DSA正交对齐无法捕获拓扑共轭的局限性 (arXiv: 2607.04493)
+  - 核心要点 1: 正交对齐既非拓扑共轭的充分也非必要条件；共轭系统可能需要非正交基变换矩阵
+  - 核心要点 2: CSA将对齐限制在候选状态空间双射诱导的变换上，拟合对齐是组合算子的有限数据投影
+  - **Activation**: dynamical systems comparison, Koopman operator, conjugacy analysis, neural dynamics similarity, DSA alternative, CSA
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit]] - 分支抑制和树突分支如何塑造局部信用分配，揭示E/I电导与树突结构的交互机制 (arXiv: 2607.03556)
+  - 核心要点 1: 精确梯度分解为局部eligibility × 隔室误差项；shunting抑制通过重塑隔室误差场优化学习
+  - 核心要点 2: 在per-soma 5F反馈下，shunting LocalCA在MNIST上仅比反向传播低5-6个百分点
+  - **Activation**: dendritic computation, credit assignment, shunting inhibition, local learning, E/I balance, conductance-based models
+
+### Distance by De-correlation: Computing Distance with Heterogeneous Grid Cells
+- [[decorrelation-grid-cell-distance]] - 网格细胞群体活动去相关编码距离的数学理论，揭示异质性在空间导航中的作用 (arXiv: 2511.08292)
+  - 核心要点 1: 网格细胞群体的小异质性(~5-10% CV)使距离编码通过活动模式去相关实现
+  - 核心要点 2: 存在非直觉的"sweet spot"——某些较远距离比较近距离编码更好
+  - 核心要点 3: 编码范围与可区分性之间存在权衡，测量的异质性水平接近最优
+  - **Activation**: grid cells, distance coding, de-correlation, medial entorhinal cortex, navigation, population coding, heterogeneity, spatial navigation, place cells, path integration
+
+### On a Geometry of Interbrain Networks
+- [[interbrain-networks-geometry]] - 使用离散几何和曲率分布分析社交互动中脑间网络的几何框架 (arXiv: 2509.10650)
+  - 核心要点 1: 超越传统相关性同步度量，通过曲率分布的熵指标识别网络连通性的关键转变
+  - 核心要点 2: 离散几何方法捕获社交交换中神经相互作用的动态重配置
+  - **Activation**: inter-brain networks, hyperscanning, social neuroscience, discrete geometry, curvature, network topology, synchrony, social interaction, EEG, fNIRS
+
+### Microsecond-precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[sound-localization-equilibrium-dynamics]] - 微秒级声源定位从慢平衡动力学中涌现，ITD作为神经群体动力学的稳定平衡点 (arXiv: 2607.03890)
+  - 核心要点 1: ITD表示为神经群体动力学的稳定平衡点，而非经典Jeffress位置编码
+  - 核心要点 2: 跨频率通道的兴奋/抑制相互作用产生群体信号驱动动力学系统趋向ITD平衡点
+  - 核心要点 3: 尽管依赖较慢的时间动力学，模型实现微秒级精度并重现关键生理观察
+  - **Activation**: sound localization, ITD, equilibrium dynamics, neural population, binaural perception, Jeffress model, auditory neuroscience, interaural time difference
+
+## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly (Latest)
+
+### Comprehensive Quantum Medical Imaging Patterns
+- [[quantum-medical-imaging-patterns]] - 量子医学成像四大模式：纠缠PET成像、连续变量光量子边缘AI、量子自编码器异常检测、受控生成模型基准测试 (arXiv: 2606.29421, 2606.28252, 2606.27411, 2606.25804, 2606.18970, 2606.16309, 2606.01110)
+  - 核心要点 1: J-PET首次人体量子纠缠成像——湮灭光子偏振纠缠度可作为新型生物标志物
+  - 核心要点 2: CV光量子QNN仅需18参数即超越55参数经典基线，室温部署无需低温
+  - 核心要点 3: 量子自编码器异常检测slice-level ROC-AUC~0.95，产生空间定位异常热图
+  - 核心要点 4: 受控基准显示量子/经典生成器统计不可区分，低数据收益表现为正则化而非真实数据扩展
+  - **Activation**: quantum entanglement imaging, J-PET, CV-QNN edge AI, quantum autoencoder anomaly detection, controlled quantum benchmark, quantum PET imaging, parameter-efficient QNN, quantum medical imaging patterns
+
+### Post-Quantum IoMT Security Framework
+- [[quantum-iomt-security]] - 医疗设备后量子安全框架：NIST PQC (ML-KEM+ML-DSA)迁移、边缘原生联邦学习安全、Kubernetes编排 (arXiv: 2606.14515)
+  - 核心要点 1: 分布式密码处理显著降低延迟，在树莓派测试床上验证可行性
+  - 核心要点 2: PQC+联邦学习+差分隐私三层安全架构应对HNDL威胁
+  - **Activation**: IoMT post-quantum security, PQC medical devices, edge federated learning, Kubernetes orchestration, NIST PQC migration, ML-KEM, ML-DSA, quantum-resilient healthcare
+
+## 2026-07-08 - Medicine + Quantum Research (Cron Job) — Hourly
+
+### Quantum Entangled PET Imaging (Compton Events)
+- [[quantum-entangled-pet-imaging]] - 首次临床相关活动下量子纠缠Compton事件PET成像，利用湮灭光子量子关联提升空间分辨率 (arXiv: 2606.25804)
+  - 核心要点 1: 湮灭光子对保持量子纠缠，Compton散射保留可用于改进成像的量子关联
+  - 核心要点 2: 在标准临床PET示踪剂剂量下实现首次成像结果，兼容现有PET基础设施
+  - **Activation**: quantum PET, entangled Compton, quantum imaging, quantum tomography, PET coincidence, quantum medical imaging
+
+### Quantum Kurtosis-Difference Imaging
+- [[quantum-kurtosis-imaging]] - 基于峰度差加权协方差的量子成像方法，实现40倍加速采集，CNR>7 (arXiv: 2606.31005)
+  - 核心要点 1: 峰度差作为四阶统计量有效区分配对像素对，即使相关系数低时仍有效
+  - 核心要点 2: 5000帧即可达到CNR>7，标准协方差方法<2，无需精确校准相关中心
+  - **Activation**: kurtosis difference, quantum imaging, SPDC imaging, correlated photon, fourth-order statistics
+
+### QNN Clinical Data Imputation
+- [[qnn-clinical-data-imputation]] - 量子神经网络在真实硬件上可扩展训练并应用于临床数据缺失值填补 (arXiv: 2606.03517)
+  - 核心要点 1: 量子电路直接捕获临床数据中的高维非线性关系
+  - 核心要点 2: 硬件感知训练考虑设备噪声、连接性和门保真度
+  - **Activation**: quantum neural network training, clinical data imputation, QNN clinical, on-hardware QNN, quantum healthcare data
+
+### Quantum Spectral Anomaly Detection (QSPADE)
+- [[quantum-spectral-anomaly-detection]] - 使用量子谱方法计算类PCA异常分数，实现高维数据高效异常检测 (arXiv: 2607.05307)
+  - 核心要点 1: 量子相位估计提取协方差矩阵主成分，指数级加速特征值分解
+  - 核心要点 2: 重构保真度低表明异常样本，适用于医疗诊断和金融欺诈检测
+  - **Activation**: quantum spectral anomaly, QSPADE, quantum PCA, anomaly detection quantum, quantum eigenvalue
+
+### LLM-as-a-Verifier Framework
+- [[llm-as-general-verifier]] - LLM作为验证器的通用验证框架，使用概率验证和多轮自纠正提高输出可靠性 (arXiv: 2607.05391)
+  - 核心要点 1: 生成与验证分离，支持自验证/交叉验证/集成验证/工具增强验证
+  - 核心要点 2: 概率置信度校准，多轮迭代纠正，适用于代码/数学/推理任务
+  - **Activation**: LLM verifier, self-verification, probabilistic verification, LLM self-correction, verification framework
+
+## 2026-07-08 - Medical + Quantum Research (Cron Job)
+
+### First-in-human quantum entanglement imaging
+- [[quantum-medical-imaging]] - 首次人体量子纠缠成像，利用J-PET扫描仪测量正负电子湮灭光子的偏振纠缠度作为新型生物标志物 (arXiv: 2606.29421)
+  - 核心要点 1: 塑料闪烁体可同时测量光子位置/时间和偏振平面
+  - 核心要点 2: 纠缠度介于最大纠缠态和可分离态之间，可作为组织表征的新型诊断信号
+  - **Activation**: 量子纠缠成像, J-PET, PET, 偏振纠缠, 湮灭光子, 生物标志物
+
+### Parameter-Efficient CV Photonic QNNs for Edge AI
+- [[quantum-medical-imaging]] - 连续变量光量子神经网络用于口腔癌边缘检测 (arXiv: 2606.28252)
+  - 核心要点 1: CV光量子架构比离散量子比特更高效，适合边缘部署
+  - 核心要点 2: 适用于资源匮乏地区的智能手机癌症筛查
+  - **Activation**: 连续变量光量子, 边缘AI, 口腔癌检测, 参数效率
+
+### Compression-Driven Anomaly Detection with Quantum Autoencoder
+- [[quantum-medical-imaging]] - 量子自编码器用于脑MRI异常检测 (arXiv: 2606.27411)
+  - 核心要点 1: 角度编码将图像块映射为量子态，变分编解码器训练丢弃冗余信息
+  - 核心要点 2: 异常分数 = 输入抵抗压缩的程度，比黑盒分类器更可解释
+  - **Activation**: 量子自编码器, 异常检测, 脑MRI, 角度编码
+
+### Controlled Benchmark of Quantum-Latent GAN Augmentation
+- [[quantum-medical-imaging]] - 量子生成模型脑MRI增强的受控基准测试 (arXiv: 2606.18970)
+  - 核心要点 1: 量子与经典生成器必须在匹配参数预算下比较
+  - 核心要点 2: 需多次运行评估而非单次训练，需表征量子优势出现的数据区域
+  - **Activation**: 量子GAN, 数据增强, 基准测试, 脑MRI
+
+### Quantum Entanglement PET Imaging
+- [[quantum-entanglement-pet]] - 量子纠缠PET成像方法论，利用J-PET扫描仪测量湮灭光子偏振纠缠度作为新型组织表征生物标志物 (arXiv: 2606.29421, 2606.25804)
+  - 核心要点 1: 塑料闪烁体Compton效应可同时测量光子位置/时间和偏振平面
+  - 核心要点 2: 纠缠度介于最大纠缠态和可分离态之间，提供额外诊断维度
+  - **Activation**: 量子纠缠成像, J-PET, PET, 偏振纠缠, 湮灭光子, 生物标志物
+
+### Quantum Autoencoder Anomaly Detection
+- [[quantum-autoencoder-anomaly-detection]] - 量子自编码器压缩驱动异常检测，角度编码+垃圾量子位实现可解释医学影像分析 (arXiv: 2606.27411)
+  - 核心要点 1: 变分编解码器训练压缩正常数据，异常数据抵抗压缩产生高分
+  - 核心要点 2: 比黑盒分类器更可解释，适用于低数据场景
+  - **Activation**: 量子自编码器, 异常检测, 脑MRI, 角度编码, 垃圾量子位
+
+### Quantum Ophthalmology
+- [[quantum-ophthalmology]] - 量子眼科四大方向：光子限制视网膜成像、关联成像、纳米光学探针、量子极限视觉感知 (arXiv: 2606.19238)
+  - 核心要点 1: 人眼天然对单光子敏感，量子技术可实现亚衍射视网膜成像
+  - 核心要点 2: NV中心和量子点实现分子级疾病标志物检测
+  - **Activation**: 量子眼科, 视网膜成像, 单光子视觉, 纳米探针, 光学相干断层扫描
+
+### Post-Quantum IoMT Security
+- [[post-quantum-iot-healthcare]] - 医疗设备后量子密码迁移框架，NIST PQC (ML-KEM+ML-DSA) + 边缘联邦学习安全 (arXiv: 2606.14515)
+  - 核心要点 1: 资源受限IoT设备需优化PQC操作，混合过渡到完全部署
+  - 核心要点 2: PQC + 差分隐私 + 联邦学习三层安全架构
+  - **Activation**: 后量子医疗, IoMT安全, 联邦学习, NIST PQC, ML-KEM, ML-DSA
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit-assignment]] - 树突分支与分流抑制如何重塑局部信用分配的几何结构 (arXiv: 2607.03556)
+  - 精确梯度分解为局部资格项 × 区室误差项，将局部学习转化为信用信号压缩问题
+  - 分流抑制通过重塑区室误差场匹配全局/低秩反馈，在 MNIST 上仅比反向传播低 5-6 个百分点
+  - **Activation**: dendritic computation, credit assignment, shunting inhibition, local learning, synaptic plasticity, E/I balance
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[biophysical-hh-model-neurostimulation]] - 从细胞外 MEA 数据学习 Hodgkin-Huxley 生物物理模型以预测神经刺激响应 (arXiv: 2607.04063)
+  - 可微分生物物理模拟 + 基于模拟的推断，仅需几分钟记录即可预测数小时的刺激测试
+  - 在离体猕猴视网膜 512 电极阵列上实现 90.6% 预测精度 (ICML 2026)
+  - **Activation**: Hodgkin-Huxley, neurostimulation, multi-electrode array, differentiable simulation, biophysical modeling, neural prosthesis
+### Diffusion Learning Reveals Viable Parameter Manifolds and Compensation Geometry
+- [[diffusion-learning-viable-parameter-manifolds]] - 使用扩散模型学习生物动力学系统中的可行参数流形和补偿几何结构 (arXiv: 2607.03671)
+  - 将可行参数集形式化为参数到特征映射的逆像，有效秩（而非特征数量）决定流形维度
+  - 条件扩散模型作为摊销采样器，探索 E-I 补偿、时间尺度-耦合权衡等补偿几何
+  - 应用于 Izhikevich 神经元（4 个放电描述符→近 2D 流形）和脉冲网络 ODE 约化
+  - **Activation**: viable parameter manifold, compensation geometry, diffusion models, parameter degeneracy, neural dynamics, E-I balance, timescale tradeoffs, biological system identification
+
+
+## 2026-07-07 - Neuroscience Research (Cron Job)
+
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendricl-icl-single-layer-snn]] - First single-layer SNN achieving general-purpose in-context learning on Garg-2022 benchmark via apical dendrite online-LMS dynamics (arXiv: 2607.02283)
+  - Apical dendrite compartment implements leaky online Widrow-Hoff LMS with frozen synaptic weights
+  - Uniquely seed-stable at super-dimensional task spaces (d=30-50) where Transformers collapse
+  - Linear probe recovers reference online-LMS trajectory from apical membrane at R²=0.93
+  - ~4× spike reduction over Pure LIF, projected ~10× Loihi-class energy advantage
+  - **Activation**: dendritic in-context learning, DendriCL, single-layer SNN ICL, apical LMS, compartmental spiking network, Garg-2022 benchmark, neuromorphic ICL, biological plausibility
+
+## 2026-07-07 - Computer Science (Cron Job)
+
+### Canonical Quantization of Neurons
+- [[canonical-quantization-neurons]] - Systematic canonical quantization procedure applied to neural network primitives — replacing classical energy functions with quantum Hamiltonians (arXiv: 2607.05000)
+  - Neurons viewed as composition of energy function and activation function, quantized via matrix functional calculus
+  - Activation observable measurable on input quantum states; hybrid quantum-classical training algorithms
+  - Enhanced expressive capabilities vs classical neurons on representative learning tasks
+  - **Activation**: canonical quantization neurons, quantum neuron, activation observable, power of one qumode, Schroedingerization, quantum function approximation, matrix functional calculus
+
+
+### Quantum Spectral Anomaly Detection
+- [[quantum-spectral-anomaly-detection]] - Computing PCA-like anomaly scores directly from quantum state spectrum without explicit eigenvector recovery (arXiv: 2607.05307)
+  - Temperature-controlled spectral threshold replaces hard PCA rank selection with smooth filtering
+  - Sample complexity independent of data dimension; measurement-based detector
+  - Works as quantum-kernel anomaly detection and order-parameter-free phase transition detection
+  - **Activation**: QSPADE, quantum spectral anomaly, quantum PCA, temperature spectral threshold, quantum anomaly detection, spectral filtering
+
+### Direct On-Policy Distillation (Direct-OPD)
+- [[direct-on-policy-distillation]] - Weak-to-strong generalization by transferring RL-induced policy shifts as implicit reward signals (arXiv: 2607.05394)
+  - Computes policy shift (post-RL/pre-RL log-ratio) as dense implicit reward for stronger student
+  - Qwen3-1.7B: 48.3% → 62.4% on AIME 2024 in 4 hours on 8 A100s
+  - No explicit reward model needed; enables sequential composition of policy shifts
+  - **Activation**: Direct-OPD, on-policy distillation, weak-to-strong generalization, policy distillation, RLVR, implicit reward
+
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum Mechanics (Cron Job)
+
+### Canonical quantization of neurons
+- [[canonical-quantization-neurons]] - Systematic canonical quantization procedure for constructing quantum neuron models from classical energy+activation composition (arXiv: 2607.05000)
+  - Replaces neuron energy function with quantum Hamiltonian, applies activation via matrix functional calculus to create measurable activation observable
+  - Hybrid training algorithms using Hadamard test, Hamiltonian simulation, and power-of-one-qumode for gradient estimation
+  - **Activation**: canonical quantization neurons, quantum neuron model, quantum activation function, quantum Hamiltonian neural, observable learning quantum, matrix functional calculus activation
+
+### Hybrid quantum-classical neural network for sentiment analysis
+- [[hybrid-quantum-nlp]] - Hybrid quantum-classical NLP with TF-IDF + parameterized quantum circuits, showing 15pp transfer learning advantage (arXiv: 2607.01943)
+  - Same-domain accuracy matches classical baseline; transfer learning to SMS spam classification improves from 66% to 81%
+  - Quantum entanglement captures non-local feature correlations, providing different inductive biases for domain shift
+  - **Activation**: hybrid quantum NLP, quantum sentiment analysis, QML text classification, parameterized quantum circuit NLP, quantum transfer learning text
+
+### Quantum Convolutional Neural Networks for Groundwater Heat Plume Prediction
+- [[qcnn-surrogate-modeling]] - QCNN surrogate modeling with quantum convolutional + pooling layers, benchmarked across simulators and IBM 127-qubit hardware (arXiv: 2606.23411)
+  - Hamiltonian-inspired feature encoding with measurement-driven quantum pooling for dimensionality reduction
+  - Error mitigation on real hardware shows noticeable performance improvement over noisy baseline
+  - **Activation**: quantum convolutional neural network surrogate, QCNN surrogate model, quantum environmental modeling, quantum error mitigation benchmark, quantum convolutional pooling
+
+### Noise-Aware Synthesis of Quantum LDPC Encoder Circuits via Two-Sided Hamming Descent
+- [[noise-aware-quantum-ldpc-synthesis]] - Noise-aware circuit synthesis for qLDPC encoders using two-sided Hamming descent (arXiv: 2607.04462)
+  - Forward descent greedily reduces gate count; backward descent re-inserts gates where noise sensitivity demands redundancy
+  - Each gate's contribution weighted by qubit-specific error rates (T1, T2, gate errors)
+  - **Activation**: quantum ldpc, qldpc encoder, hamming descent, noise-aware synthesis, quantum error correction, encoder circuit, fault-tolerant
+
+### A Path-Superposition Framework for Quantum Gate Teleportation
+- [[quantum-path-superposition-teleportation]] - Path-superposition framework enabling quantum gate teleportation through superposed path operations (arXiv: 2607.04672)
+
+### Quantum activation observable measurement methodology
+- [[quantum-neuron-activation-observable]] - Practical guide to measuring quantum activation observables using Hadamard test, Hamiltonian simulation, power of one qumode, and Schrodingerization (arXiv: 2607.05000)
+  - Four measurement primitives for non-unitary activation observables in quantum neurons
+  - Gradient estimation pipeline combining quantum primitives with classical optimization
+  - **Activation**: activation observable, quantum measurement primitives, power of one qumode, Schrodingerization, quantum gradient estimation, quantum neuron measurement
+
+### QNN hyperparameter stress testing methodology
+- [[qnn-hyperparameter-stress-test]] - Framework for stress-testing variational quantum neural networks on complex datasets with extensive HPO and classical baseline comparison (arXiv: 2607.04915)
+  - QNNs benefit from extensive HPO but remain outperformed by simple classical baselines
+  - Five-phase pipeline: dataset selection, architecture design, HPO, classical comparison, bottleneck analysis
+  - **Activation**: QNN stress test, variational quantum model, quantum advantage, barren plateau, hyperparameter optimization QNN, quantum vs classical baseline
+  - Multi-path entangled resource state enables parallel gate teleportation across superposed paths
+  - Bell-state measurement followed by path-dependent Pauli corrections
+  - **Activation**: quantum teleportation, gate teleportation, path superposition, quantum information transfer, quantum protocol
+
+## 2026-07-08 - Computer Science + Quantum Mechanics (Cron Job)
+
+### Ravines in Quantum Cost Landscapes: Opportunities for Improved VQA Predictions
+- [[quantum-cost-landscape-ravine-analysis]] - Ravine analysis methodology for VQA optimization using nudged elastic band (NEB) algorithm to find low-cost paths connecting local minima in quantum cost landscapes (arXiv: 2607.01329)
+  - NEB algorithm from theoretical chemistry adapted to trace ravine structures in quantum cost landscapes
+  - Ensemble prediction framework averaging QNNs along ravine paths outperforms naive quantum ensembles
+  - Resource-light pre-training metric (local-prediction variability) serves as strong VQA performance indicator
+  - Ravines persist across depth and qubit scaling; NEB approach accelerates convergence
+  - **Activation**: quantum cost landscape, NEB algorithm, ravine analysis, VQA optimization, quantum ensemble prediction, local-prediction variability, QNN ensembling
+
+### LLM-Based Agentic Systems for Quantum Application Generation (QPipe)
+- [[qpipe-agentic-quantum-code-gen]] - Multi-agent LLM architecture converting NL requirements into executable quantum workflows with 100% compilation and 96.7% execution rates (arXiv: 2607.00939)
+  - 核心要点: Multi-agent decomposition (parsing, formulation, code gen, review, execution, verification)
+  - 核心要点: Generated solutions outperform offline genetic algorithm baseline
+  - **Activation**: qpipe, agentic quantum code generation, LLM quantum application
+- [[compound-pulse-gadget-synthesis]] - Holistic pulse synthesis bypassing gate-stitching for continuous compound pulse gadgets on trapped-ion hardware (arXiv: 2607.00826)
+  - 核心要点: GRAPE algorithm generates compound gadgets achieving significant temporal compression vs standard compilers
+  - 核心要点: Eliminates control-layer latency from discrete pulse lookup overhead
+  - **Activation**: compound pulse gadgets, GRAPE pulse engineering, holistic pulse synthesis
+  - Six specialized agents: requirement parsing, formulation, code generation, review, execution, verification
+  - Generated quantum solutions outperform offline genetic algorithm baseline on test-optimization problems
+  - Ablation shows advantage depends on code-generation skills, task knowledge, review feedback, and multi-agent decomposition
+  - Average 260s generation time and 1.89M tokens per requirement
+  - **Activation**: QPipe, agentic quantum code generation, LLM quantum workflow, multi-agent quantum, NL-to-quantum, quantum test optimization
+
+### Benchmarking Quantum Software Testing with Scalable Quantum Programs (Qolumbina)
+- [[quantum-software-testing-benchmark]] - Benchmark infrastructure curating 40 scalable quantum programs with systematic selection, refactoring, specifications, unit tests, and standardized interfaces (arXiv: 2607.02029)
+  - QST-oriented criteria: functionality, output behavior, development complexity, quantum-specific execution complexity
+  - Demonstrates feasibility for execution-cost and fault-detection studies
+  - Identifies backend-dependent effects that influence QST result interpretation
+  - Supports scalability analysis beyond fixed-size circuit benchmarks
+  - **Activation**: Qolumbina, quantum software testing, QST benchmark, quantum test infrastructure, quantum testing scalability, backend-dependent testing
+
+### Auditing Empirical Comparisons in Quantum Software (CLAIMSTAB-QC)
+- [[quantum-empirical-comparison-audit]] - Source-bounded framework auditing empirical comparisons in quantum software; evaluated 455 claims from 119 papers revealing materialization gap (arXiv: 2607.00516)
+  - Records baselines, metrics, relations, admissible evidence; locks comparison design before outcomes
+  - Classifies reported directions as Sustained, Unresolved, or Reversed within locked audit scope
+  - Only 8 of 53 lockable designs had enough matched evidence for direct audit (2 Sustained, 4 Unresolved, 2 Reversed)
+  - Controlled diagnostics show simpler checks can preserve apparent directions that weaken under locked audit
+  - **Activation**: CLAIMSTAB-QC, empirical audit, quantum software comparison, reproducibility, locked audit design, materialization gap
+
+### Bridging Quantum Computing Paradigms: CV vs DV Comparison on Wafer-Map Defect Classification
+- [[quantum-paradigm-comparison-cv-dv]] - Controlled CV vs DV quantum paradigm comparison isolating quantum circuit as sole variable; CV achieves 18-point accuracy advantage over DV (arXiv: 2607.00961)
+  - Shared classical backbone (~4.3M params) with interchangeable quantum heads isolates quantum circuit as only variable
+  - CV accuracy 79.7% vs DV 61.6% at 4 qumodes/qubits on WM-811K wafer-map defect classification
+  - CV advantage sharpest on spatially localized Edge-Loc class (recall 0.66 vs ≤0.05)
+  - DV limitation is representational-capacity ceiling, not optimization failure
+  - **Activation**: CV-QNN, DV-QNN, quantum paradigm comparison, continuous-variable quantum, discrete-variable quantum, wafer-map classification, quantum head benchmark
+
+### Hybrid Quantum Machine Learning Surrogate for LBM Collision Dynamics
+- [[quantum-lbm-surrogate]] - VQC with data re-uploading approximates non-unitary BGK collision dynamics across full relaxation range without retraining (arXiv: 2606.31351)
+  - Parameterized quantum circuits implement partial Fourier series via data re-uploading
+  - Recovers complete BGK collision dynamics across all physically admissible relaxation parameters without retraining
+  - Validated on Taylor-Green vortex and double shear layer benchmarks; VQC expressibility directly correlates with surrogate accuracy
+  - **Activation**: quantum surrogate LBM, quantum fluid dynamics, quantum collision operator, quantum PDE solver, VQC expressibility, data re-uploading quantum, quantum BGK collision
+
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum Mechanics (Cron Job)
+
+### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
+- [[optimal-stabilizer-testing-limited-memory]] - Sample complexity bounds for stabilizer state testing and learning under k-qubit memory constraints, showing testing-vs-learning separation collapses (arXiv: 2607.02444)
+  - Testing requires Θ(n-k) copies, learning requires Θ(n²/k) copies with k-qubit memory
+  - Testing-vs-learning separation lost under memory constraints
+  - Models realistic NISQ-era limitations on coherent quantum memory
+  - **Activation**: stabilizer testing, limited quantum memory, stabilizer learning, quantum state testing, sample complexity quantum
+
+### Stable Self-Modulating Quantum Fast-Weight Programmers with Bounded Memory Gates
+- [[stable-self-modulating-quantum-fwps]] - Quantum sequence modeling via variational circuit parameters with bounded tanh gating to prevent divergence in long sequences (arXiv: 2607.02363)
+  - QFWPs store temporal info in dynamically programmed variational circuit parameters
+  - Bounded old-state modulation using sign-preserving tanh gate prevents long-sequence divergence
+  - Evaluated on CUDA-Q quantum dynamics forecasting and Milan SMS prediction
+  - **Activation**: quantum fast-weight programmer, QFWP, bounded memory gate, quantum sequence modeling, variational circuit memory
+
+### Balancing Expressivity and Learnability in Quantum Kernel Bandit Optimization
+- [[quantum-kernel-bandit-optimization]] - Projected quantum kernels and classical approximations for GP bandit optimization that reduce feature dimensionality while preserving quantum properties (arXiv: 2607.01080)
+  - Projected quantum kernels reduce dimensionality while preserving key quantum correlations
+  - Classical kernel approximations capture essential quantum structure with lower cost
+  - Addresses expressivity-learnability tradeoff in quantum kernel methods
+  - **Activation**: quantum kernel bandit, projected quantum kernel, Gaussian process quantum, expressivity learnability quantum
+
+### Trainability-by-Design via Dynamical Lie Algebra Constraints
+- [[dla-trainability-by-design]] - Trainability-by-Design methodology for scalable QML using DLA constraints to guarantee gradient-rich landscapes while avoiding barren plateaus (arXiv: 2606.31536)
+  - Unstructured PQCs suffer from quantum underfitting via expressivity-trainability paradox
+  - DLA algebraic dimension directly determines optimization dynamics (exponential → barren plateaus)
+  - Embedding symmetry-preserving geometric priors restricts DLA to polynomial regime
+  - Accepts reduced memorization capacity for guaranteed scalable training
+  - **Activation**: trainability by design, DLA quantum architecture, expressivity-trainability paradox, polynomial DLA regime, symmetry-preserving quantum circuit
+
+### QML Transfer Learning for NLP
+- [[qml-transfer-learning]] - Hybrid quantum-classical transfer learning achieving 15% accuracy improvement on spam classification (66%→81%) when transferring from sentiment analysis (arXiv: 2607.01943)
+  - Hybrid models match classical baseline on source task but outperform on transfer task
+  - Quantum layers provide richer representational capacity for generalization
+  - TF-IDF features → hybrid (classical + PQC) → classification pipeline
+  - Shallow PQC (1-3 layers) essential to avoid barren plateaus
+  - **Activation**: quantum transfer learning, QML generalization, hybrid NLP quantum, quantum sentiment analysis, parameterized quantum circuit NLP
+
+### GQML Toolbox for Graph Problems
+- [[gqml-graph-models-toolbox]] - Geometric QML design toolbox for n-node graphs encoded in n-qubit states with equivariant layers and classical pre-training strategies (arXiv: 2607.00698)
+  - Comprehensive characterization of quantum graph model constituents
+  - Equivariant quantum layers respecting graph symmetries via commutation with automorphism group
+  - Classical pre-training enables effective initialization of quantum graph models
+  - Expressivity extension methods at virtually no cost
+  - **Activation**: quantum graph learning, GQML graph models, equivariant quantum graph, n-qubit graph encoding, classical pretraining quantum
+
+### LACUNA: LLM Unlearning Localization Testbed
+- [[lacuna-llm-unlearning-testbed]] - First unlearning testbed with ground-truth parameter-level localization showing SOTA unlearning methods are imprecise and susceptible to resurfacing attacks (arXiv: 2607.02513)
+  - Injects synthetic PII into predefined model parameters via masked continual pretraining for direct evaluation
+  - When localization succeeds, simple gradient-based unlearning achieves strong erasure and resurfacing robustness
+  - **Activation**: LLM unlearning, knowledge erasure, parameter localization, resurfacing attack, PII removal, gradient-based unlearning
+
+### Online Safety Monitoring for LLMs
+- [[online-safety-monitoring-llm]] - Simple real-time safety monitor using external verifier signals with risk-calibrated thresholding, competitive with sequential hypothesis testing (arXiv: 2607.02510)
+  - External verifier scores outputs in real-time, threshold calibrated via risk control raises alarms when safety degrades
+  - Simple design competitive with advanced sequential hypothesis testing approaches
+  - **Activation**: LLM safety monitoring, deployment safety, verifier thresholding, risk control, unsafe output detection
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### BehaviorVLM: Unified Finetuning-Free Behavioral Understanding
+- [[behaviorvlm-quantum-behavioral]] - Unified VLM framework for pose estimation and behavioral understanding using quantum-dot-grounded data, no finetuning required (arXiv: 2603.12176)
+  - Quantum-dot-grounded behavioral data for pose estimation
+  - Deep embedded clustering + VLM captioning + LLM reasoning for behavior discovery
+  - Label-light, scalable multi-animal behavioral analysis
+  - **Activation**: behavior VLM, quantum dot behavior, pose estimation, animal behavior analysis, label-light behavioral understanding, multi-animal tracking
+
+### Metabolic Quantum Limit to MEG Information Capacity
+- [[metabolic-quantum-meg]] - Technology-independent bound on MEG information capacity from quantum sensor energy resolution + neural metabolic power (arXiv: 2511.06401)
+  - Maximum information rate ~2.2 Mbit/s for human brain parameters
+  - Spatial resolution limit ~1 cm (information-theoretic Nyquist scale)
+  - Fundamental spatio-temporal trade-off from quantum-limited noise floor
+  - **Activation**: quantum limit, MEG, magnetoencephalography, metabolic bound, information capacity, quantum sensor, Planck constant, spatio-temporal trade-off
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-meg]] - Derives technology-independent bound on MEG information capacity from quantum sensor energy resolution + neural metabolic power (arXiv: 2511.06401)
+  - Maximum information rate ~2.2 Mbit/s for human brain parameters
+  - Spatial resolution limit ~1 cm (information-theoretic Nyquist scale)
+  - Fundamental spatio-temporal trade-off from quantum-limited noise floor
+  - **Activation**: quantum limit, MEG, magnetoencephalography, metabolic bound, information capacity, quantum sensor, Planck constant, spatio-temporal trade-off
+
+### CV-versus-DV Quantum Neural Networks for Wafer-Map Defect Classification
+- [[cv-qnn-spatial-classification]] - Controlled comparison showing CV-QNN outperforms DV-QNN by 18 points on wafer-map defect classification (arXiv: 2607.00961)
+  - CV head reaches 79.7% vs DV 61.6% at 4 qumodes/qubits
+  - Structured CV layer captures fine spatial distinctions better than DV
+  - Training curves show DV limitation is representational ceiling, not optimization failure
+  - **Activation**: CV versus DV quantum, continuous variable QNN, discrete variable QNN, wafer map classification, quantum spatial encoding, Fock cutoff
+
+### Parameter-Efficient CV Photonic QNN for Edge AI
+- [[cv-photonic-qnn-edge-ai]] - Simplified CV-QNN architecture cuts parameters 40-45% while matching or exceeding full layer performance (arXiv: 2606.28252)
+  - Φ∘D∘U₁ architecture with 18 parameters achieves highest AUC on oral cancer detection
+  - Dimensionality reduction + encoding restriction mitigate barren plateaus
+  - Room-temperature photonic backend suitable for edge deployment
+  - **Activation**: photonic QNN, continuous variable edge AI, parameter efficient quantum, oral cancer detection, Kerr gates, barren plateau mitigation
+
+### Neural-Network Inverse Design of SRF Cavities for Bosonic Quantum Computation
+- [[neural-inverse-design-srf-cavity]] - DNN approaches for inverse design of SRF cavities and transmons targeting specific electromagnetic parameters (arXiv: 2607.02289)
+  - Recovers cavity designs within ~5% and transmon designs within ~2% of targets
+  - Fast alternative to iterative simulation for scaling quantum architectures
+  - Maps desired device behavior directly to candidate geometries
+  - **Activation**: inverse design quantum, SRF cavity, transmon qubit, bosonic quantum computation, neural network device design, electromagnetic optimization
+
+### When AI meets Quantum Information: Comprehensive Review
+- [[ai-quantum-comprehensive-review]] - Survey of AI-for-QI and QI-for-AI interfaces covering measurement, algorithm discovery, hardware stabilization, and quantum-enhanced learning (arXiv: 2607.00365)
+  - AI for QI: measurement extraction, algorithm discovery, hardware stabilization, workflow automation
+  - QI for AI: algorithmic speedups, expressivity, trainability, generalization, neural network design
+  - Cross-cutting challenges: reproducibility, scalability, hardware realism, co-design
+  - **Activation**: AI quantum intersection, quantum information review, quantum machine learning survey, quantum algorithm discovery, quantum hardware AI
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Mesoscopic Linear Statistics for Two Ensembles of Quantum Graphs
+- [[mesoscopic-quantum-graph-statistics]] - Proves variance of linear spectral statistics coincides with GOE/GUE in large graph limit (arXiv: 2607.02356)
+  - Two ensembles: random graph sampling and Haar measure unitary sampling
+  - Mesoscopic scale variance converges to Gaussian Orthogonal/Unitary Ensemble
+  - Applications in quantum chaos detection and random matrix universality
+  - **Activation**: mesoscopic statistics, quantum graphs, random graph ensemble, spectral variance, GOE, GUE
+
+### Stable Self-Modulating Quantum Fast-Weight Programmers
+- [[self-modulating-quantum-fast-weight]] - Bounded old-state modulation stabilizes QFWP for long-sequence quantum sequence modeling (arXiv: 2607.02363)
+  - Temporal info stored in variational-circuit parameters not hidden states
+  - tanh gate on recurrent branch only removes long-sequence divergence
+  - Ablation reveals accumulated-memory modulation as key improvement source
+  - **Activation**: quantum fast weight, QFWP, quantum sequence modeling, bounded memory gate, quantum dynamics forecasting, self-modulating quantum
+
+### End-to-End Learning of Quantum Control on Latent Dynamical Manifold
+- [[quantum-control-latent-manifold]] - LSTM-based end-to-end quantum control learning joint dynamics and control in latent manifold (arXiv: 2606.27907)
+  - Replaces iterative simulate-then-optimize with single forward pass
+  - Maps initial states to both trajectories and optimized control pulses
+  - Reduces optimization cost by 3 orders of magnitude vs conventional methods
+  - **Activation**: end-to-end quantum control, latent manifold learning, quantum control LSTM, adiabatic speedup, spin chain state transfer
+
+### Coherence Law for Noisy Equivariant QNNs
+- [[coherence-law-noisy-equivariant-qnn]] - Proves sector coherence (not just symmetry) determines gradient survival under decoherence (arXiv: 2606.30688)
+  - Light-cone reduction bounds gradient location independent of total qubit count
+  - Readout-visible aligned coherence rate predicts gradient degradation (R² = 0.979)
+  - Correlated dephasing channel with near-zero aligned rate = no gradient loss
+  - **Activation**: coherence law, equivariant QNN trainability, sector coherence, noisy quantum gradient, U(1) equivariant circuit, quantum trainability law
+
+### DLA Framework for Expressivity-Trainability Paradox
+- [[expressivity-trainability-dla-qml]] - Dynamical Lie Algebra framework for navigating barren plateaus via geometric priors (arXiv: 2606.31536)
+  - Vast Hilbert space capacity is DIRECT cause of Barren Plateaus (quantum underfitting)
+  - Group-theoretic geometric priors restrict DLA to polynomial regime
+  - Trainability-by-Design: sacrifice raw capacity for guaranteed gradient-rich landscapes
+  - **Activation**: expressivity trainability paradox, dynamical lie algebra QML, barren plateau mitigation, trainability by design, quantum underfitting, geometric priors
+
+### Ravine Ensemble VQA Optimization
+- [[ravine-ensemble-vqa-optimization]] - NEB-based ensemble framework leveraging ravine structure in quantum cost landscapes (arXiv: 2607.01329)
+  - Nudged Elastic Band finds low-cost paths connecting local minima in QCLs
+  - Local-prediction variability (LPV) pre-screens ensemble candidates
+  - NEB ensembles outperform classical and naive quantum alternatives at lower cost
+  - **Activation**: ravine quantum cost landscape, NEB quantum ensemble, VQA prediction, local prediction variability, quantum ensemble optimization
+
+### DIC Neuron Reconstruction from Spike Times
+- [[dic-neuron-reconstruction-spike-times]] - Fast reconstruction of degenerate conductance-based neuron populations from spike times via DICs (arXiv: 2509.12783)
+  - Dynamic Input Conductances reduce complex CBMs to 3 interpretable feedback components
+  - Deep learning maps spike times to DIC densities to degenerate CBM populations
+  - Millisecond-scale reconstruction on standard hardware, robust to noise
+  - **Activation**: DIC neuron reconstruction, dynamic input conductance, degenerate neuron population, conductance-based model inference, spike time parameter inference, neuronal degeneracy
+
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Quantum MEG Information Limit
+- [[quantum-meg-information-limit]] - Quantum-limited information capacity analysis for MEG brain imaging (arXiv: 2511.06401)
+  - Combines Planck's constant, metabolic power, and geometric constraints to derive 2.2 Mbit/s bound
+  - Information-limited spatial scale of ~1 cm, effectively finite-dimensional measurement space
+  - Spatio-temporal bandwidth tradeoff due to quantum-limited noise variance
+  - **Activation**: quantum MEG, MEG information capacity, brain imaging quantum limits, metabolic quantum limit, magnetoencephalography
+
+## 2026-07-06 - Neuroscience + Quantum Computing (Cron Job)
+
+### Symmetry Exploitation in Quantum Reservoir Computing
+- [[qrc-symmetry-exploitation]] - Observable-orbit completion for symmetry-aligned QRC (arXiv: 2607.01187)
+  - Symmetric Hamiltonian alone insufficient — symmetry must be visible in measured feature map
+  - Observable-orbit completion aligns encoding, dynamics, measurement, and readout
+  - **Activation**: QRC symmetry, quantum reservoir symmetry, observable-orbit completion, cyclic forecasting quantum
+
+### Amplitude-Encoded Quantum Reservoir Protocol
+- [[amplitude-encoded-quantum-reservoir-protocol]] - Online QRC protocol with mid-circuit measurement and reset (arXiv: 2606.18991)
+  - Mid-circuit measurement+reset implements partial-trace dynamics for amplitude encoding
+  - Preserves online operation, avoids input buffering, linear runtime in time steps
+  - **Activation**: amplitude encoding quantum reservoir, mid-circuit measurement reset, online quantum processing
+
+### Quantum Digital Twin for Cognitive Memory
+- [[quantum-digital-twin-cognitive-memory]] - Unified framework combining QRC thermodynamics, tensor network emotional memory, and symmetry-aligned processing (multi-paper synthesis)
+  - Quantum coherence amplifies prediction without extra energy cost
+  - Tensor networks capture order-dependence that classical models miss
+  - **Activation**: quantum digital twin cognition, neuromorphic quantum memory, thermodynamic cognitive model
+
+### Tensor Network Emotional Memory
+- [[tensor-network-emotional-memory]] - Tensor network methodology for modeling order-dependent emotional memory in children (arXiv: 2606.28470)
+  - Emotional valence of surrounding items affects recall of target items in sequence
+  - Tensor network model achieves 77.98% accuracy vs. low accuracy of standard psychological models
+  - Classical tensor networks capture order-dependence that classical psychological models miss
+  - Novel task protocol for exploring emotional temporal memory in children
+  - **Activation**: tensor network emotional memory, emotional valence memory, order-dependent memory, quantum-inspired memory, children cognition
+
+### Coherence Law for Noisy Equivariant QNNs
+- [[coherence-law-noisy-equivariant-qnn]] - Coherence law determining gradient survival under decoherence (arXiv: 2606.30688)
+  - Readout-visible sector coherence determines trainability, not just symmetry structure
+  - Light-cone reduction pins gradient to sector-restricted cone with qubit-independent lower bound
+  - Gradient degradation follows single accumulated variable (R² = 0.979)
+  - **Activation**: coherence law trainability QNN, equivariant quantum noise, sector coherence gradient
+
+### Ravines in Quantum Cost Landscapes
+- [[ravine-quantum-cost-landscape-ensemble]] - NEB-based ensemble prediction framework for VQA ravine structures (arXiv: 2607.01329)
+  - Ravines are low-cost paths connecting local minima in quantum cost landscapes
+  - NEB (nudged elastic band) algorithm identifies ravine structures in QCLs
+  - Ensemble prediction by averaging QNNs along low-cost NEB path outperforms naive ensembling
+  - Resource-light pre-training metric quantifies local-prediction variability
+  - **Activation**: quantum cost landscape ravines, VQA ensemble prediction, NEB quantum optimization, QNN ravine structure
+
+
+### Quantum Structure in AI Language
+- [[quantum-structure-in-ai-language]] - Bell inequality violation and Bose-Einstein statistics in LLMs (arXiv: 2511.21731)
+  - LLMs exhibit non-classical probability models violating Kolmogorov axioms
+  - Word distributions follow Bose-Einstein rather than Maxwell-Boltzmann statistics
+  - Evidence for evolutionary convergence of human and artificial cognition
+  - **Activation**: quantum cognition LLM, Bell inequality language model, Bose-Einstein text statistics, non-classical probability AI
+
+### Quantum-Tunnelling Oscillators for Cognition (Sync Fix)
+- [[quantum-tunnelling-oscillators-cognition]] - Quantum-tunnelling oscillators model cognitive agents with context-dependent state transitions (arXiv: 2604.03940)
+  - Universal dynamical engine for optical illusion perception and group decision making
+  - Networked oscillators form quantum-cognitive neural systems
+  - **Activation**: quantum tunnelling oscillators, quantum cognition, context-dependent transitions, group decision making
+
+### RL-Based Neural Quantum States Optimization
+- [[rl-nqs-optimization]] - Frame NQS optimization as RL for scalable wavefunction approximation (arXiv: 2607.02292)
+  - Autoregressive sampling replaces MCMC for exact Born distribution
+  - Local spin updates as RL actions with energy reduction as reward
+  - **Activation**: neural quantum states, RL optimization, autoregressive sampling, variational Monte Carlo
+
+### NQS Mechanistic Interpretability
+- [[nqs-mechanistic-interpretability]] - SAE analysis of NQS internal representations and causal feature steering (arXiv: 2607.01336)
+  - Sparse autoencoders extract interpretable physical concepts from NQS
+  - Causal feature steering enables controlled quantum property manipulation
+  - **Activation**: sparse autoencoders, mechanistic interpretability, feature steering, topological order
+
+### Quantum GAN Controlled Benchmarking
+- [[quantum-gan-benchmarking]] - Rigorous benchmark for quantum generative models in medical image augmentation (arXiv: 2606.18970)
+  - Parameter-budget matched comparison between quantum and classical generators
+  - Multi-run statistical evaluation across data regimes
+  - **Activation**: quantum GAN, controlled benchmark, medical image augmentation, statistical evaluation
+
+### Dendritic In-Context Learning SNN
+- [[dendritic-icl-snn]] - Dendritic computation enables in-context learning in spiking neural networks (arXiv: 2607.02289)
+  - Biological dendritic gating implements attention-like mechanisms
+  - Event-driven ICL without transformer architecture
+  - **Activation**: dendritic computation, in-context learning, spiking neural networks, neuromorphic computing
+
+### TRIBE fMRI Encoding Validation
+- [[tribe-fmri-encoding-validation]] - Brain-encoding model validation against behavioral engagement (arXiv: 2607.01400)
+  - TRIBE model predictions don't correlate with replay heatmaps
+  - High fMRI accuracy ≠ behavioral relevance
+  - **Activation**: brain-encoding validation, TRIBE model, fMRI prediction, behavioral engagement
+
+### Minimum-Distortion Embedding for Neuronal Analysis
+- [[minimum-distortion-embedding-neuronal]] - MDE framework for evolving neuronal networks (arXiv: 2502.20862)
+  - Cosine metric MDE outperforms PCA/t-SNE for neuronal data
+  - Captures developmental trajectories DIV23-DIV64
+  - **Activation**: neuronal embedding, MDE, dimensionality reduction, cortical cultures
+
+### Ravine Analysis for Quantum Cost Landscapes
+- [[ravine-quantum-cost-landscape]] - Exploiting ravine structures in VQA optimization (arXiv: 2607.01329)
+  - Ravines in quantum cost landscapes enable improved VQA predictions
+  - Better optimization strategies via ravine geometry analysis
+  - **Activation**: quantum cost landscape, VQA optimization, ravine analysis, parameter optimization
+
+### Frozen Rate Operator Connectome Analysis
+- [[frozen-rate-operator-connectome]] - Connectome rate operator from larval connectome (arXiv: 2606.17745)
+  - Degree/weight govern gross response, exact wiring governs routing
+  - Calyx decorrelation is threshold-driven
+  - **Activation**: connectome analysis, frozen rate operator, mushroom body, input routing
+
+### Logarithmic Negativity Entanglement Cost
+- [[logarithmic-negativity-entanglement-cost]] - LN equals exact entanglement cost (arXiv: 2607.01320)
+
+### Quantum Opinion Dynamics on Networks
+- [[quantum-opinion-dynamics-networks]] - Quantum cognitive modeling with density matrices and non-commuting operators (arXiv: 2607.01452)
+  - Agent cognitive states as density matrices encode both opinion and ambivalence
+  - Non-commuting survey operators explain order effects in responses
+  - **Activation**: quantum opinion dynamics, cognitive ambivalence, order effects, density matrix cognition
+
+### Quantum Emotional Memory Tensor Networks
+- [[quantum-emotional-memory-tensor-networks]] - Tensor network for order-dependent emotional memory modeling (arXiv: 2606.28470)
+  - Valence-informed tensor networks achieve 77.98% accuracy on children's memory tasks
+  - Memory for item depends on valence of surrounding items in sequence
+  - **Activation**: emotional memory, tensor network, order-dependent memory, valence modeling
+
+### Quantum Fast-Weight Memory Gates
+- [[quantum-fast-weight-memory-gates]] - Bounded self-modulating QFWP for stable quantum sequence modeling (arXiv: 2607.02363)
+  - Sign-preserving tanh gates prevent long-sequence divergence in quantum RNNs
+  - Old-state modulation is key mechanism for improvement over standard QFWP
+  - **Activation**: quantum fast weight, QFWP, bounded memory gate, quantum sequence modeling
+  - Logarithmic negativity typically equals exact entanglement cost
+  - Practical entanglement quantification tool
+  - **Activation**: entanglement cost, logarithmic negativity, quantum resource theory
+
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamic-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework for QRC linking predictive performance to energetic costs (arXiv: 2607.02157)
+  - Maps Holevo capacities to BKM geometric manifold, proves computational peak from spectral resonance
+  - Derives generalized Landauer bound for temporal processing; coherence amplifies prediction without extra work
+  - **Activation**: quantum reservoir thermodynamics, energy-efficient quantum learning, quantum critical resonance, Landauer bound temporal processing
+
+### Dendritic In-Context Learning in Spiking Neural Networks
+- [[dendritic-in-context-learning-snn]] - DendriCL: single-layer SNN implementing in-context learning via dendritic compartment dynamics (arXiv: 2607.02289)
+  - ICL requires neither attention, depth, nor inference-time plasticity — subthreshold dendritic dynamics suffice
+  - Seed-stable at super-dimensional Garg-2022 benchmark where Transformers fail
+  - **Activation**: dendritic in-context learning, DendriCL, compartmental spiking, online Widrow-Hoff LMS
+
+### QAE for Brain MRI Anomaly Detection
+- [[qae-mri-anomaly-detection]] - Quantum autoencoder for compression-driven anomaly detection in brain MRI achieving 0.95 slice-level ROC-AUC (arXiv: 2606.27411)
+  - Angle encoding maps image patches into quantum states with variational encoder-decoder
+  - Trash qubits absorb noise; anomaly score = resistance to compression
+  - Outperforms classical autoencoder and PCA baselines
+  - **Activation**: quantum autoencoder, brain MRI, anomaly detection, trash qubits, medical imaging
+
+### Quantum Structured Factorization for Tomography
+- [[quantum-structured-factorization-tomography]] - Unified Burer-Monteiro factorization framework for scalable quantum state tomography (arXiv: 2607.01608)
+  - Density matrix as FF† guarantees physical validity by construction
+  - Unifies low-rank, tensor network, and neural network approaches
+  - Enables scalable tomography in sample and parameter complexity
+  - **Activation**: quantum state tomography, structured factorization, Burer-Monteiro, density matrix, tensor network
+
+### Zero-Memory Quantum Dot Reservoir Computing
+- [[zero-memory-quantum-dot-reservoir]] - Engineers memory extrinsically in memoryless systems via spatial degrees of freedom (arXiv: 2606.29320)
+  - Space-time tradeoff substitutes temporal memory with spatial configurations
+  - Quantum dot discrete energy levels provide strong nonlinearity
+  - Enables ultra-low-power physical reservoir computers
+  - **Activation**: zero-memory reservoir, quantum dot, space-time tradeoff, neuromorphic computing, physical reservoir
+
+### Quantum Convolutional Autoencoder for Anomaly Detection
+- [[quantum-autoencoder-general-anomaly]] - QCNN-based autoencoder for reconstruction-based anomaly detection in time-series (arXiv: 2607.02135)
+  - Semi-supervised training on normal samples with reconstruction error as anomaly score
+  - Two architecture variants for different latent information treatment
+  - Applicable to scientific data analysis across domains
+  - **Activation**: quantum convolutional autoencoder, QCNN, anomaly detection, semi-supervised, time-series
+
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### NeuroCogMap Reveals Cognitive Organization of Large Language Models
+- [[neurocogmap-llm-cognitive-organization]] - Maps LLM internal representations to brain-like cognitive parcels for auditing hallucination, bias, refusal, sycophancy and memory capabilities (arXiv: 2607.00397)
+  - 核心要点：Parcel-functional annotation maps LLM hidden states to cognitive brain-like regions
+  - 核心要点：Cross-model parcel matching reveals universal vs model-specific cognitive organizations
+  - 核心要点：Comprehensive auditing pipeline covering hallucination, bias, refusal, sycophancy, memory
+  - **Activation**: neurocogmap, cognitive mapping, LLM cognitive audit, parcel annotation, functional correspondence, hallucination detection, bias evaluation, LLM interpretability
+
+### One More Time: Revisiting Neural Quantum States from a Reinforcement Learning Perspective
+- [[pwo-trust-region-nqs-optimization]] - Proximal Wavefunction Optimization (PWO) trust-region algorithm for training billion-parameter Neural Quantum States without matrix inversion (arXiv: 2607.02292)
+  - 核心要点：将变分能量最小化重构为Born分布上的优势策略梯度问题，结合概率比裁剪和相位增量限制
+  - 核心要点：避免显式矩阵求逆，样本可跨多次更新复用，扩展到1.5B参数RWKV-7模型
+  - **Activation**: proximal wavefunction optimization, PWO trust-region, neural quantum state training, NQS optimization, trust-region quantum, 神经量子态优化, 信任区域量子优化
+
+### Stationary Covariance Spectra of Discrete-Time Non-Normal Random Recurrent Dynamics
+- [[free-probability-rnn-spectral-analysis]] - Free probability approach deriving closed functional equations for stationary covariance spectra of random recurrent networks with non-normal weights (arXiv: 2606.31944)
+  - 核心要点：Discrete-time admits closed scalar equation; continuous-time yields infinite Schwinger-Dyson hierarchy
+  - 核心要点：Tail eigenvalue behavior in critical regime determines PCA interpretability
+  - **Activation**: free probability, stationary covariance, random recurrent, non-normal weights, covariance spectrum, moment generating function, RNN spectral analysis
+
+### DRIADA: Cross-Scale Neural Analysis Toolkit
+- [[driada-neural-analysis-toolkit]] - Python toolkit unifying single-neuron selectivity analysis with population dynamics for cross-scale neural data analysis (arXiv: 2607.00851)
+  - 核心要点：Three-scale pipeline: single-neuron selectivity → population trajectories → system dynamics
+  - 核心要点：Links individual neuron tuning to population-level dynamical modes
+  - **Activation**: driada, cross-scale neural analysis, single-neuron selectivity, population dynamics, neural toolkit, neural data analysis pipeline
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job)
+
+### Metabolic quantum limit to the information capacity of magnetoencephalography
+- [[metabolic-quantum-limit-brain-imaging]] - Technology-independent bound on MEG information capacity from quantum sensing + metabolic constraints (arXiv: 2511.06401)
+  - 核心要点：Bound factorizes into geometry × metabolism × Planck's constant (~2.2 Mbit/s)
+  - 核心要点：Quantum noise floor defines information-theoretic Nyquist scale (~1cm spatial limit)
+  - **Activation**: metabolic quantum limit, MEG information capacity, quantum sensing bounds, brain imaging limits, spatio-temporal trade-off, neural current metabolism
+
+### Compression-Driven Anomaly Detection in Brain MRI Using an Interpretable Quantum Autoencoder
+- [[quantum-autoencoder-anomaly-detection]] - QAE with trash qubits for anomaly detection via compression resistance in brain MRI (arXiv: 2606.27411)
+  - 核心要点：Slice-level ROC-AUC ~0.95, encoder-decoder asymmetry drives detection
+  - 核心要点：Spatially localized anomaly heatmaps aligned with tumorous regions
+  - **Activation**: quantum autoencoder, anomaly detection, trash qubits, compression-driven detection, brain MRI, QAE medical imaging
+
+### Hybrid Classical-Quantum (HCQ) Alzheimer Classification via Supervised β-VAE and Quantum Kernels
+- [[hcq-alzheimer-classification-vae-quantum-kernels]] - End-to-end supervised VAE + quantum kernel SVM for AD classification from 3D MRI (arXiv: 2606.14194)
+  - 核心要点：72.1% accuracy, 0.799 AUC on ADNI-1; quantum kernel on disease-aware features
+  - 核心要点：Cross-fold variance halved with stability-enhanced variant
+  - **Activation**: HCQ pipeline, Alzheimer classification, quantum kernel SVM, supervised VAE, disease-aware features, medical imaging classification
+
+### A Controlled Benchmark of Quantum-Latent GAN Augmentation for Brain MRI
+- [[quantum-gan-benchmark-controlled-evaluation]] - Rigorous benchmark showing quantum generators match classical but don't exceed (arXiv: 2606.18970)
+  - 核心要点：Matched parameters (1648 vs 1632); no augmentation beats real-data-only training
+  - 核心要点：Low-data benefit acts as regularization, not faithful data expansion
+  - **Activation**: quantum GAN benchmark, controlled evaluation, matched parameters, medical augmentation, quantum vs classical comparison
+
+### Modelling Emotional Memory in Children with Tensor Networks
+- [[tensor-network-emotional-memory-modeling]] - Tensor networks achieve 77.98% accuracy in modeling order-dependent emotional memory (arXiv: 2606.28470)
+  - 核心要点：Order-dependence depends on valence of preceding and following items
+  - 核心要点：Massive accuracy increase over standard psychological models
+  - **Activation**: tensor network memory, emotional memory, order-dependent cognition, quantum-inspired modeling, valence factoring, children memory assessment
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Round 2)
+- [[mean-field-oscillatory-low-rank-rnn]] - Mean-field theory for low-rank recurrent networks with activity-dependent adaptation, revealing oscillations, chaos, and multistability regimes (arXiv: 2606.30366)
+  - 核心要点：Low-rank structure + adaptation interaction produces rich dynamical regimes
+  - 核心要点：Bifurcation analysis maps transitions between fixed points, oscillations, and chaos
+  - **Activation**: mean field theory, oscillatory dynamics, low rank RNN, activity dependent adaptation, bifurcation analysis, RNN dynamics, neural oscillations
+
+### Optimal Stabilizer Testing with Limited Quantum Memory
+- [[quantum-stabilizer-testing-limited-memory]] - Optimal stabilizer state testing and learning under bounded quantum memory, proving Θ(d²) sample complexity bounds (arXiv: 2607.02444)
+  - 核心要点：Bell difference sampling extracts stabilizer structure from paired measurements
+  - 核心要点：Memory-bounded protocols require O(d²) samples even with minimal quantum storage
+  - **Activation**: stabilizer testing, limited quantum memory, sample complexity, Bell sampling, quantum state testing, quantum verification
+
+### Quantum Opinion Dynamics on Networks
+- [[quantum-opinion-dynamics-networks]] - Quantum information-theoretic framework modeling opinion dynamics on social networks using superposition and entanglement (arXiv: 2607.01452)
+  - 核心要点：Opinion superposition captures conflicting beliefs; entanglement models correlated opinions
+  - 核心要点：Quantum measurement models opinion expression; unitary evolution models private belief updates
+  - **Activation**: quantum opinion dynamics, social network modeling, quantum probability, entanglement consensus, belief formation, polarization modeling
+
+### Geometric Approach to Zero-Memory Quantum Dot Reservoir Computing
+- [[quantum-dot-reservoir-computing]] - 利用量子点阵列的几何非线性实现无记忆时序信息处理，为NISQ时代提供了一种无需内部记忆状态的物理储备计算范式 (arXiv: 2606.29320)
+  - 核心要点：量子点阵列的内在非线性动力学可直接用于时序计算，无需传统储备计算的循环连接或延迟线
+  - 核心要点：空间配置决定计算容量，能量景观决定输入输出映射，响应几何决定模式分离能力
+  - **Activation**: quantum dot, reservoir computing, zero-memory, geometric ML, neuromorphic, quantum ML, temporal processing, nonlinear dynamics, physical computing
+
+### OmniNeuro: 多模态可解释BCI反馈框架
+- [[omnineuro-bci-framework]] - 整合物理能量、混沌分形复杂度和量子启发不确定性建模的三引擎BCI可解释框架，将脑机接口从静默解码器转变为透明反馈伙伴 (arXiv: 2601.00843)
+  - 核心要点：三引擎（能量分析、分形复杂度、量子概率不确定性）提供多维可解释性
+  - 核心要点：视觉+声学（sonification）+生成AI自然语言解释的多模态反馈设计
+  - **Activation**: bci, neurofeedback, interpretability, quantum-inspired, chaos theory, sonification, hci, neural decoding, fractal complexity, energy analysis
+
+## 2026-07-05 - Information Science (Cron Job)
+
+### Authentication in Quantum Networks
+- [[quantum-network-authentication]] - 综合综述量子通信中的认证任务，分析经典消息认证、量子消息认证和实体认证三大类方案，按安全性、可组合性和可扩展性选择适合的方案 (arXiv: 2606.30636)
+  - 三种认证类型：经典消息认证、量子消息认证、实体认证，不可混淆
+  - 选择框架：安全性假设、部署需求、可组合性、可扩展性四维评估
+  - 核心洞察：认证是资源需求而非内在限制，必须显式声明安全假设
+  - 现有经典和量子文献已提供多种量子安全认证方案可匹配不同应用场景
+  - **Activation**: 量子网络认证, 量子认证协议, QKD 认证, 量子消息认证, 实体认证, 量子网络安全, 后量子认证, 量子密钥分配, quantum network authentication
+
+### Optimal Stabilizer Testing and Learning with Limited Quantum Memory
+- [[limited-memory-stabilizer-testing]] - Proves coherent quantum memory is THE resource enabling separation between stabilizer testing (constant) and learning (linear); under k-qubit memory constraints both require Θ(n) copies (arXiv: 2607.02444)
+  - Sample complexity of testing: Θ(n-k); learning: Θ(n²/k) under k-qubit memory
+  - Even with k=0.99n memory, no constant-copy tester exists — separation is lost
+  - Exponential lower bound for purity testing even with coherent memory
+  - Upper bounds via hidden shift connection; lower bounds via stochastic orthogonal group combinatorics
+  - **Activation**: stabilizer testing, quantum memory, sample complexity, hidden shift, coherent memory, purity testing, memory constraints, stabilizer learning
+
+### An Information-Theoretic Principle for Optimal Quantum Encoding
+- [[quantum-optimal-encoding]] - Proves maximal quantum leakage as universal task-agnostic quality measure for quantum encoders; identifies tight frames and equiangular tight frames (ETFs) as optimal encodings (arXiv: 2607.01564)
+  - Basis encoding optimal with enough qubits; phase encoding optimal for qubit-constrained systems
+  - Any tight frame or maximally-mixed-average ensemble achieves optimality in low dimensions
+  - ETFs uniquely saturate Welch bound with self-referential optimal measurement
+  - Special cases: qubit trine, regular simplex, SIC-POVMs
+  - **Activation**: quantum encoding, maximal quantum leakage, tight frames, equiangular, SIC-POVM, phase encoding, basis encoding, quantum statistical inference
+
+### Self-Referential K-SAT and the Finite Analogue of Gödel's Incompleteness Theorem
+- [[self-referential-sat-hardness]] - Establishes finite combinatorial analogue of Gödel's incompleteness within K-SAT; reframes SETH as direct projection of incompleteness onto finite computation (arXiv: 2607.01671)
+  - Self-referential hardness precludes quantum shortcuts — requires global semantic analysis
+  - Delineates scaling bottleneck for ML on lossy/local compression
+  - Descriptive lower bound K(A) ≥ Ω(N^(1-δ)); proof-tree explosion S(φ) ≥ exp(Ω(N^(1-2δ)))
+  - Paradigm shift from Turing class separation to Gödelian instance indistinguishability
+  - **Activation**: self-referential SAT, Gödel incompleteness, SETH, K-SAT complexity, quantum SAT limits, resolution refutation, instance indistinguishability
+
+### Frequent Itemset Mining with Quantum Computing
+- [[quantum-data-mining]] - Quantum-enhanced frequent itemset mining using amplitude estimation and Grover-based counting for quadratic speedup in support estimation (arXiv: 2606.09209)
+  - Amplitude encoding maps classical transactions to quantum superposition states
+  - Grover-based counting achieves O(√N) vs O(N) classical complexity
+  - Hybrid quantum-classical pipeline: classical candidate gen + quantum counting
+  - NISQ-aware: circuit depth constraints, error mitigation, variational approaches
+  - **Activation**: quantum data mining, frequent itemset mining, quantum pattern discovery, quantum analytics, quantum database mining
+
+### Intent-Based Cryptographic API Design for PQC Migration
+- [[quantum-crypto-agility]] - Intent-based API design pattern for cryptographic agility during post-quantum cryptography migration across large software portfolios (arXiv: 2606.13445)
+  - Decouples security intent from algorithm implementation (e.g., "confidentiality" vs "RSA-OAEP")
+  - Algorithm registry enables seamless classical → PQC → hybrid → PQC-only migration
+  - Five-phase migration strategy minimizes consumer code changes
+  - Addresses key size growth, performance regression, and compliance gaps
+  - **Activation**: cryptographic agility, post-quantum cryptography migration, intent-based crypto API, PQC API design, crypto migration
+
+### Quantum Network Routing based on Surface Code Error Correction
+- [[quantum-network-routing]] - QEC-aware quantum network routing using surface code error correction for reliable entanglement distribution over noisy channels (arXiv: 2606.12781)
+  - Two paradigms: entanglement-based (teleportation) vs. direct transmission routing
+  - Surface code distance selection based on channel noise characterization
+  - QEC-aware routing metrics: logical error rate, channel fidelity, code distance
+  - Dynamic routing adaptation based on real-time syndrome data
+  - **Activation**: quantum network routing, surface code error correction, entanglement distribution, quantum teleportation routing, quantum repeater
+
+
+### Topological Control of Quantum Chaos Diagnostics
+- [[quantum-topology-information-scrambling]] - Graph-theoretic methodology for analyzing quantum information scrambling via OTOCs across network topologies; network topology directly controls quantum information propagation rate (arXiv: 2607.02463)
+  - Long-range couplings and heterogeneous degree distributions accelerate quantum information propagation
+  - Spectral statistics (level spacing ratio) diagnose integrability-to-chaos transition
+  - OTOCs measure information scrambling speed across different graph topologies
+  - Small-world networks show fastest scrambling at intermediate rewiring probability
+  - **Activation**: quantum topology, OTOC analysis, information scrambling, quantum chaos, graph theory quantum, spectral statistics, integrability chaos transition
+
+### Automated Logical Clifford Gadgets via Chain Maps
+- [[automated-logical-clifford-chain-maps]] - Automated framework for synthesizing inter-code logical CNOT circuits between arbitrary CSS codes using algebraic topology chain maps (arXiv: 2607.02482)
+- [[optimal-stellar-rank-photon-catalysis]] - Provably optimal generation of non-Gaussian quantum states (squeezed cat states) via photon catalysis, characterized using stellar rank formalism (arXiv: 2607.02427)
+  - Core要点: Stellar rank作为非高斯资源复杂度度量
+  - Core要点: 光子催化协议可实现恒星秩上限的最优保真度
+  - **Activation**: 恒星秩光子催化, 光子催化猫态生成, stellar rank photon catalysis, squeezed cat state generation
+
+  - Chain maps provide universal language for logical gate synthesis across any CSS code family
+  - Set of valid chain maps forms affine space over GF(2) enabling optimization
+  - No manual code-specific gadget design needed — automatic from desired logical network
+  - Enables heterogeneous QEC architectures combining surface codes, color codes, LDPC codes
+  - **Activation**: automated Clifford synthesis, chain map quantum, CSS code interoperation, logical CNOT synthesis, heterogeneous quantum codes, inter-code gates
+
+### Symmetries of Pauli Noise from Lindbladian Dynamics
+- [[pauli-noise-symmetry-lindbladian]] - Pauli noise symmetry analysis exploiting Lindbladian dynamics constraints on gate noise channels; physical noise structure reduces characterization parameters (arXiv: 2607.02481)
+  - Physical Lindbladian noise imposes symmetry constraints on Pauli fidelities that are gauge-invariant
+  - F(P) ≈ F(U P U†) when noise originates from physical Lindbladian dynamics
+  - Parameter reduction from exponential to manageable via symmetry relations
+  - Enables efficient noise tomography despite SPAM gauge ambiguities
+  - **Activation**: Pauli noise symmetry, Lindbladian dynamics, gate noise characterization, Pauli fidelity, SPAM mitigation, quantum noise tomography
+
 
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
@@ -39,6 +1029,13 @@
   - Uniquely seed-stable at super-dimensional Garg-2022 ICL benchmark where Transformers fail
   - Linear probe recovers reference online-LMS trajectory from apical membrane at R² = 0.93
   - **Activation**: dendritic in-context learning, dendriCL, SNN ICL, online LMS, Widrow-Hoff, compartmental spiking, apical recurrence, Garg-2022 benchmark, seed-stable ICL
+
+### Electronic Bursting Neuron: Design, Equations and Hardware Implementation
+- [[electronic-bursting-neuron]] - PLL-based bursting electronic neuron using hybrid equation-to-circuit design methodology for simple, mathematically tractable neuromorphic hardware (arXiv: 2607.02122)
+  - Novel hybrid approach: start from phenomenological equations → adjust for circuit simplicity → implement hardware
+  - Phase-locked loop (PLL) architecture provides natural oscillatory bursting dynamics
+  - Enables mathematical analysis of both single neurons and small neural circuits
+  - **Activation**: electronic neuron, bursting neuron, phase-locked loop, PLL neuron, neuromorphic hardware, phenomenological modeling
 
 ### SABER: Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs
 - [[semantic-aligned-brain-network-hypergraphs]] - Framework that actively integrates LLM-derived semantics into brain network prediction via global self-attention, multi-scale hypergraphs, and decision-level semantic alignment (arXiv: 2607.01901)
@@ -2935,3 +3932,226 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-07-05 - Information Science (Cron Job)
+
+### Equation Asymmetry: An Algebraic Framework for Unifying Secrecy and Covertness in Information-Theoretic Security
+- [[equation-asymmetry-information-security]] - EAD=1-r/n unifies secrecy and covertness; 7 schemes unified; post-quantum from underdetermined linear systems (arXiv: 2606.10374)
+  - EAD parameter simultaneously governs equivocation and detection error probability
+  - Complete achievability/converse proofs for secrecy capacity; strong converse on finite fields
+  - Post-quantum security from information-theoretic hardness of underdetermined linear systems
+  - **Activation**: equation asymmetry, EAD framework, information-theoretic security, secrecy capacity, covertness, 方程不对称度, 信息论安全
+
+
+## 2026-07-06 - Neuroscience + Quantum Mechanics (Cron Job - Round 3)
+
+### On the emergence of quantum many-body chaos for tunably-broken integrability
+- [[integrability-breaking-quantum-chaos]] - Quantitative theory for integrability-to-chaos transition in free fermion circuits doped with tunable integrability-breaking gates; OTOC crossover analysis with butterfly velocity extraction (arXiv: 2607.02506)
+  - Free fermion circuit model doped with integrability-breaking gates as local hotspots
+  - OTOC characteristics: butterfly velocity, front broadening, characteristic time/length scales
+  - **Activation**: integrability breaking quantum chaos, OTOC crossover free fermion, butterfly velocity quantum circuit, quantum many-body chaos transition
+
+### ReContext: Recursive Evidence Replay as LLM Harness for Long-Context Reasoning
+- [[recursive-evidence-replay-reasoning]] - Training-free inference method mapping LLM attention to associative memory: context=memory store, query=retrieval cue, attention=cue-trace association, replay=trace reactivation (arXiv: 2607.02509)
+  - Recursive evidence pool construction from model-internal relevance signals
+  - Separates evidence organization from answer generation without training or context pruning
+  - Theoretical framework bridges LLM mechanisms with neuroscience associative memory theory
+  - **Activation**: recursive evidence replay, long-context reasoning, associative memory LLM, context retrieval, trace reactivation
+
+### Probabilistic Memory for Trustworthy Edge Intelligence
+- [[probabilistic-memory-trustworthy-edge]] - Unified memory primitive (p-MEM) storing distribution parameters and sampling at native memory bandwidth, achieving 1000+ GSa/s/mm² GRNG throughput (arXiv: 2607.02465)
+  - Probabilistic computation for uncertainty quantification, robustness, and privacy at the edge
+  - Deterministic data becomes zero-variance special case in probabilistic memory framework
+  - 295.5x/3.53x energy reduction for Bayesian neural network workloads on CPU/GPU
+  - **Activation**: probabilistic memory edge, p-MEM hardware, GRNG throughput, Bayesian neural network energy
+
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum (Cron Job)
+
+### Recovery Algorithm for Correlated Errors in Permutation-Invariant Quantum Codes
+- [[permutation-invariant-qec-recovery]] - Channel-aware quantum error recovery for permutation-invariant codes under correlated amplitude-damping noise; CAD4/CAD9 code families with low-overhead coherent recovery circuits (arXiv: 2607.02346)
+  - QER uses noise channel knowledge to find optimal recovery maps, exceeding standard QEC fidelity
+  - CAD9 outperforms existing codes by >10x; CAD4 uses only 10 system/ancilla gates
+  - **Activation**: permutation invariant quantum code, PI code recovery, correlated error correction, amplitude damping recovery, CAD code, quantum error recovery, coherent recovery map
+
+### Spatially Coupled MacKay-Neal/Hsu-Anastasopoulos CSS Codes Achieve the Quantum-Erasure Hashing Bound by Seeded BP Decoding
+- [[spatially-coupled-quantum-codes]] - Density evolution proof that seeded BP decoding on spatially coupled CSS codes achieves the quantum erasure hashing bound using coupled-vector potential method (arXiv: 2606.32001)
+  - Five-message DE recursion decomposed into Z-side and X-side constituent systems
+  - Coupled-vector potential proves BP threshold = MAP threshold (hashing bound) for equal-rate case
+  - **Activation**: spatially coupled quantum code, spatial coupling CSS, quantum erasure hashing bound, seeded belief propagation, MN/HA CSS code, coupled vector potential, density evolution quantum
+
+### HamQASBench: Hamiltonian-Informed Diagnostic Benchmark for QAS
+- [[hamqasbench-hamiltonian-qas-benchmark]] - Hamiltonian-structured QAS benchmark organizing molecules into 5 tiers via Pauli fingerprints, detecting failure modes invisible to energy metrics (arXiv: 2607.04845)
+  - Critical-structure extraction identifies minimal circuits per tier
+  - Detects over-parameterization, eigenstate commitment, representation bottlenecks, topology routing failures
+  - **Activation**: QAS benchmark, Hamiltonian structure analysis, quantum architecture search evaluation, circuit structure diagnostics
+
+### Benchmarking API Drift in LLM-Generated Quantum Code
+- [[quantum-api-drift-benchmark]] - First benchmark measuring LLM quantum code version fidelity across SDK versions (Qiskit v0.43/1.3/2.0); documentation-guided repair success rates (arXiv: 2607.04072)
+  - Diagonal Pass@1 ranges 0.02-0.85 across 17 models
+  - Stronger models fail at deprecation level; weaker at import level
+  - **Activation**: quantum API drift, SDK version testing, LLM quantum code evaluation, Qiskit version compatibility
+
+### Self-Specializing VLM Transmon Chip Calibration
+- [[vlm-transmon-calibration]] - VLM agent closes transmon calibration loop end-to-end with physics-grounded simulation and gradient-free online adaptation via device notes (arXiv: 2607.03193)
+  - Wall-time-scaled drift, flux-line distortion, gate leakage in simulation
+  - CZ fidelity 0.678→0.913 with single accepted device note
+  - **Activation**: transmon calibration, VLM calibration agent, gradient-free online adaptation, superconducting qubit tuning
+
+### COMET: Constraint-Preserving QAOA for CRISPR
+- [[comet-constraint-preserving-qaoa]] - XY-mixer enforces one-hot constraints by construction in QAOA for CRISPR gene editing; >95% optimum vs <6% for penalty methods (arXiv: 2607.02622)
+  - No penalty coefficient tuning needed with structural constraint enforcement
+  - Hardware gap |ΔE| ≤ 0.8 for XY-mixer vs up to 53.9 for penalty variants
+  - **Activation**: constraint-preserving QAOA, XY-mixer optimization, CRISPR quantum optimization, penalty-free QUBO
+
+### Spectral Geometry and Bosonic-Bloch Probes for Quantum Learning
+- [[spectral-geometry-quantum-learning]] - Spectral geometry framework diagnosing QML via bosonic interference probes, Bloch-space drift anomaly detection (ROC-AUC ≥0.9), and QFI geometry (arXiv: 2607.00063)
+  - Bosonic enhancement correlates with Fiedler edge split (r=-0.50)
+  - Absolute Bloch drift discriminates anomalies; consecutive drift is random
+  - **Activation**: spectral geometry quantum learning, bosonic interference probe, Bloch-space drift, quantum autoencoder diagnostics
+
+## 2026-07-07
+### High-Performance NTT Accelerators for PQC
+- [[ntt-accelerator-pqc]] - Novel redundant number representation eliminates conditional corrections for Montgomery modulo multiplication in NTT/INTT accelerators (arXiv: 2607.00621)
+  - Unified butterfly units with redundant arithmetic eliminate conditional branches for modular reduction
+  - Inverse-transform scaling integrated into existing arithmetic hardware, eliminating dedicated scaling units
+  - Hierarchical Montgomery multipliers map efficiently onto FPGA DSP resources for ML-KEM and ML-DSA
+  - **Activation**: NTT accelerator, PQC hardware, Montgomery multiplication, redundant arithmetic, FPGA PQC, polynomial arithmetic hardware, post-quantum cryptography accelerator
+
+### Routing Anonymity and Identifiability of Noisy Quantum Hardware
+- [[quantum-routing-anonymity]] - First formal framework for backend identifiability and routing anonymity in quantum cloud computing (arXiv: 2607.05281)
+  - Backend fingerprints in noisy outputs decay exponentially at the Chernoff rate under passive i.i.d. access
+  - Utility-anonymity trade-off imposes fundamental limits on removing backend-specific info without degrading usefulness
+  - Identifiability is an intermediate-depth phenomenon — Pauli-transfer-matrix tools establish a depth principle
+  - 87-100% backend classification achieved on Amazon Braket across ion-trap and superconducting processors
+  - **Activation**: quantum routing anonymity, backend identifiability, quantum cloud privacy, quantum hardware fingerprinting, Chernoff rate decay, quantum cloud security
+
+### Error Mitigation in Bosonic Systems via Virtual Distillation
+- [[virtual-distillation-bosonic]] - Virtual distillation framework extended to bosonic quantum systems using passive linear-optical interferometers (arXiv: 2607.04914)
+  - Cyclic shift operators diagonalized via passive linear optics for multi-copy measurements
+  - Recovers noise-mitigated expectation values of number operators, phase-shift operators, and arbitrary quadratures
+  - Arbitrary-order correlator estimation via characteristic function of photon-number distribution
+  - Demonstrated suppression of photon loss and dephasing noise contributions
+  - **Activation**: virtual distillation bosonic, bosonic error mitigation, cyclic shift operator, linear-optical distillation, photon loss mitigation, continuous-variable QEC, bosonic quantum computing
+
+### Contraction and Expansion Values of Quantum Channels
+- [[quantum-channel-contraction]] - Contraction and expansion values as monotone sequences refining the trace distance contraction coefficient (arXiv: 2607.04950)
+  - Min-max variational principle over subspaces of traceless Hermitian operators
+  - Coincide with Gel'fand/Bernstein numbers of the channel restricted to traceless operators
+  - Operational interpretation via two state-discrimination games
+  - Bounds under channel composition that the contraction coefficient alone cannot provide
+  - **Activation**: quantum channel contraction, trace distance, state discrimination, Gel'fand numbers, channel composition bounds, quantum information geometry
+
+### Quantum ring all-reduce for Distributed Learning
+- [[quantum-ring-all-reduce-distributed]] - Quantum ring all-reduce reduces per-link communication by factor of 2 using superdense coding, enables information-theoretically secure aggregation (arXiv: 2606.20344)
+  - Pre-shared entanglement + superdense coding halves communication without changing learning model
+  - Composable epsilon-secure aggregation at 2x overhead in GHZ copies
+  - Quadratic advantage in margin-based gradient conflict detection
+  - Exponential separation in sign-consistency auditing under bandwidth constraints
+  - **Activation**: quantum ring all-reduce, quantum distributed training, superdense coding ML, quantum secure aggregation, distributed quantum communication, gradient conflict detection
+
+### Quantum Computational Resources and Conformal Field Theory
+- [[magic-entropy-cft]] - Magic Rényi entropy unifies quantification of nonstabilizerness and non-Gaussianity across spins, bosons, and fermions (arXiv: 2607.05343)
+  - CFT analysis reveals universal contribution to MRE as size-independent term from Affleck-Ludwig boundary entropy
+  - Non-Gaussianity can continuously renormalize or drive boundary phase transitions
+  - Numerical confirmation of field-theoretic predictions in Tomonaga-Luttinger liquid
+  - **Activation**: magic renyi entropy, CFT quantum resources, nonstabilizerness, non-Gaussianity, Affleck-Ludwig entropy, Tomonaga-Luttinger liquid - Computer Science + Quantum (Cron Job)
+
+### Partially-Blind Single-Qubit Classification over a Prototype Hybrid Quantum Network
+- [[partially-blind-single-qubit-classification]] - Single-qubit classifiers with blind quantum computation for privacy-preserving delegated ML on untrusted quantum networks (arXiv: 2607.01998)
+  - Combines SQC (single-qubit classifier) with BQC to hide client data and outcomes from server
+  - Two-qubit classifier (TQC) enables verification of delegated computation
+  - Tested on credit card fraud database, approaches classical deep-belief network performance
+  - **Activation**: partially-blind classification, PB-SQC, blind quantum classification, quantum-secured ML, delegated quantum computation, SQC with privacy
+
+## 2026-07-07 - Computer Science (Cron Job)
+
+### LLM-as-a-Verifier: A General-Purpose Verification Framework
+
+- [[llm-as-a-verifier]] - Probabilistic verification framework using logit expectation for continuous scoring, enabling multi-dimensional scaling along granularity, repeated evaluation, and criteria decomposition (arXiv: 2607.05391)
+  - Core: Continuous scores via expectation over scoring token logits instead of discrete LM judges
+  - Three scaling axes: score granularity, repeated evaluation, criteria decomposition
+  - **Activation**: LLM-as-a-Verifier, verification framework, probabilistic scoring, logit expectation
+
+### VQE Active Space Selection Benchmark for Drug Discovery
+- [[vqe-active-space-benchmarking]] - VQE药物发现中活性空间选择的系统基准测试，评估UCCSD/HEA在lovastatin/oseltamivir/morphine等药物分子上的表现 (arXiv: 2512.18203)
+  - 核心要点 1: 首次系统化基准，化学直觉+量子信息理论选择活性空间
+  - 核心要点 2: 双评估维度：化学精度(能量误差) + 架构指标(电路深度/参数数)
+  - **Activation**: VQE活性空间, 量子药物发现基准, UCCSD评估, HEA ansatz, 分子模拟基准
+
+
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### PREDIKTOR: Predicting Therapeutic Outcome via Aligning Patient-Specific Knowledge Graph and Gene-Level Perturbation Representations
+- [[prediktor-patient-knowledge-graph-drug-response]] - 患者知识图谱与基因扰动表征对齐预测临床药物响应，DysRegNet构建个性化GRN+DrugBank增强+GNN编码，冻结LINCS L1000模型生成扰动谱，CLIP风格对比学习对齐双视图 (arXiv: 2607.04557)
+  - Core: Two-view architecture (mechanistic GRN + transferable perturbation) aligned via CLIP-style contrastive learning
+  - Results: Outperforms baselines on TCGA, zero-shot +5.6% AUROC on I-SPY2 trial
+  - **Activation**: PREDIKTOR, patient knowledge graph drug response, personalized drug prediction, GRN drug response, precision oncology, CLIP alignment drug, 患者知识图谱药物响应
+
+### Krylov-Lie Algebras for Variational Quantum Algorithms: Geometric, Depth-Aware Insights into Expressivity and Trainability
+- [[krylov-lie-algebras-vqa]] - VQA景观理论的Krylov-Lie代数框架，提供有限深度可达流形的数值鲁棒逼近、加权非Haar方差公式，以及通过非Haar修正缓解barren plateau (arXiv: 2607.02626)
+  - Core: Krylov span of finite generator sets approximates VQA reachable manifolds; weighted non-Haar variance recovers Haar as special case
+  - Key insight: Non-Haar contributions may mitigate barren plateaus by reweighting visible sectors of loss landscape
+  - **Activation**: Krylov-Lie algebra VQA, non-Haar variance quantum, barren plateau mitigation non-Haar, VQA landscape finite depth
+
+### Triple-Phase Multimodal Knowledge Aggregation Framework for Microbial Keratitis Subtype Diagnosis
+- [[triple-phase-multimodal-medical-diagnosis]] - 三相多模态医学图像诊断框架，跨模态对比学习+模态特异性微调+特征级多模态集成学习，在1645名患者17158张裂隙灯图像上实现85.84%准确率 (arXiv: 2607.03740)
+  - Core: Phase 1 cross-modality contrastive → Phase 2 modality-specific fine-tuning → Phase 3 feature-level ensemble
+  - Validation: 85.84% accuracy, 84.46% F1, 0.885 AUC on multicenter bacterial vs fungal keratitis
+  - **Activation**: triple-phase multimodal diagnosis, cross-modality contrastive medical, multimodal medical ensemble, microbial keratitis classification, 多模态医学诊断, cross-site medical generalization
+
+## 2026-07-08 - Anthropic Research (Cron Job)
+
+### A global workspace in language models
+- [[global-workspace-j-space]] - Anthropic's discovery of emergent mental workspace (J-space) in Claude using Jacobian lens technique
+  - J-space: small collection of internal neural patterns (<10% activity) that functions as a broadcasting hub for deliberate reasoning
+  - Jacobian Lens (J-lens): technique that finds internal activity patterns making model likely to say each word, revealing silent thoughts
+  - Five properties: reportability, modulability, internal reasoning, flexible use, broadcasting hub (~100x connectivity)
+  - Safety applications: detecting hidden misalignment, evaluation awareness, counterfactual reflection training
+  - Counterfactual reflection training: train only on what model would say if asked to reflect → reduces dishonest behavior
+  - J-space ablation preserves fluency/grammar but destroys multi-step reasoning, summarization, poetry
+  - **Activation**: global workspace, j-space, jacobian lens, interpretability, counterfactual reflection, mental workspace
