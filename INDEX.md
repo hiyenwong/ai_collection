@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-09 - Quantum Machine Learning (Cron Job)
+
+### QCNN with Rough Path Signature Kernels
+- [[qcnn-rough-path-signatures]] - Hybrid quantum-classical architecture integrating Quantum CNN with rough path signature kernels for time series classification with temporal warping invariance (arXiv: 2607.07634)
+  - Path signature kernels handle time reparameterization invariance without explicit alignment
+  - Variational quantum linear solver (VQLS) for signature computation in quantum circuits
+  - First application of rough path theory to quantum neural networks
+  - **Activation**: quantum CNN, rough paths, signature kernels, time series, VQLS, temporal invariance
+
 ## 2026-07-09 - Quantum Safe Control Systems (Cron Job)
 
 ### Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model Misspecification
