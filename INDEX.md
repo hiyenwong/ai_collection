@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Hourly)
+
+### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
+- [[quantum-software-certification]] - Hybrid QAccCert framework for quantum device certification using FPGAs + AI, achieving 99.94% of Tsirelson bound via LLM-guided optimization (arXiv: 2607.07597)
+  - CHSH inequality-based entanglement verification on NISQ hardware
+  - LLM-guided parameter optimization outperforms random search significantly
+  - FPGA acceleration pipeline for real-time quantum certification
+  - **Activation**: quantum certification, QSE, FPGA quantum, CHSH inequality, entanglement verification, quantum device validation, NISQ certification
+
+### Faster Quantum Linear System Solver Beyond the Condition Number
+- [[quantum-linear-solver-beyond-condition]] - Two quantum algorithms solving Ax=|b⟩ with complexity independent of condition number κ, breaking the HHL κ-barrier (arXiv: 2607.07691)
+  - Truncation-based solver: O(κ_eff · polylog(κ_eff/ε)) with effective condition number bounds
+  - Filtering-based solver: 6·‖A^(-1†)|x⟩‖/ε · ln(1/ε) with favorable constant factors
+  - Solution norm estimation with same asymptotic cost
+  - **Activation**: quantum linear solver, condition number independence, HHL improvement, block encoding, filtering-based solver, truncation solver, quantum Ax=b
+
+### QCNN with Rough Path Signature Kernels
+- QCNN + path signature kernel hybrid for time series classification using VQLS (arXiv: 2607.07634)
+
+### Nested-Loop Trajectory-Informed Variational Quantum Solver
+- Dual-level trainable quantum IPM for OPF reducing variational updates by 95% (arXiv: 2607.03361)
+
+### Multi-channel Collective Dissipation via SU(4)
+- SU(4) tetrahedral formalism for collective spontaneous emission with superlinear scaling (arXiv: 2607.07701)
+
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
 ### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
