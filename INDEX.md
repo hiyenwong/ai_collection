@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-07-09 - Systems Engineering Research (Cron Job)
+
+### Neural-ESO: A Dual-Pathway Architecture for Provably Robust Learning-Based Control
+- [[neural-eso-robust-control]] - Dual-pathway control combining neural feedforward disturbance estimation with classical ESO correction, guaranteeing uniform ultimate boundedness via Lyapunov/small-gain analysis (arXiv: 2607.06535)
+  - Predictive pathway (neural) accelerates convergence; corrective pathway (ESO) prevents over-reliance on learned model
+  - Lipschitz bound enforcement + small-gain theorem guarantee closed-loop stability even under distribution shift
+  - Validated on quadrotor landing with ground-effect disturbances: 40% better OOD robustness
+  - **Activation**: Neural-ESO, dual-pathway control, robust learning-based control, disturbance rejection, Lyapunov stability, small-gain, cyber-physical systems
+
+### Onnes: A Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis
+- [[onnes-physics-grounded-llm-digital-twin]] - Physics-grounded digital twin + multi-agent LLM panel for fault diagnosis in dilution refrigerators; contrastive few-shot boosts classification 0.685→0.990 (arXiv: 2607.05805)
+  - Forward physics model + learned noise fingerprint from real operational logs creates realistic fault scenarios
+  - Multi-agent LLM panel with self-consistency voting matches supervised ML (0.985) with zero parameter updates
+  - Confidence gate suppresses pre-onset false alarms; 100% recall on physics faults in continuous monitoring
+  - **Activation**: physics-grounded digital twin, multi-agent LLM, fault diagnosis, cryogenic systems, contrastive few-shot, confidence gating, quantum infrastructure
+
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
 ### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
