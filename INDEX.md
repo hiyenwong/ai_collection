@@ -1,6 +1,11 @@
 # Skills Collection
 
 ## 2026-07-09 - Systems Engineering (Cron Job)
+### Real-Time Quantum Error Correction System Stack: Architecture, Algorithms, and Engineering Practice
+- [[real-time-qec-system-stack]] - Real-time quantum error correction system stack — six-layer reference architectu... (arXiv: 2605.30765)
+  - Core: qec-system-stack, syndrome-acquisition, real-time-decoding
+  - **Activation**: qec-system-stack, syndrome-acquisition, real-time-decoding, tail-latency, surface-code-decoder, qldpc-decoder, latency-budget, ftqc-architecture
+
 ### Toward General Quantum Control with Physics-Informed Large Language Models
 - [[vf-qctrl-llm-quantum-control]] - Physics-informed LLM framework for general quantum control combining symbolic re... (arXiv: 2605.26021)
   - Core: physics-informed-llm, symbolic-reasoning, control-ansatze
