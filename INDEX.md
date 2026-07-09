@@ -1,5 +1,237 @@
 # AI Collection Index
 
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
+- [[quantum-certification-fpga]] - Systems Engineering + Quantum (arXiv: 2607.07597)
+  - QAccCert framework for quantum certification via CHSH inequality
+  - LLM-guided optimization achieves 99.94% of theoretical max 2√2
+  - **Activation**: quantum certification, QAccCert, CHSH inequality, FPGA quantum, entanglement verification, quantum software engineering, LLM quantum optimization
+
+### Progressive Crystallization: Turning Agent Exploration into Deterministic, Lower-Cost Workflows in Production
+- [[progressive-crystallization]] - Systems Engineering (arXiv: 2607.07052)
+  - Three-stage taxonomy: agent-orchestrated → hybrid → deterministic workflows
+  - Evidence-based promotion/demotion mechanism for workflow lifecycle management
+  - **Activation**: progressive crystallization, agent crystallization, deterministic workflow, agent cost reduction, AIOps workflow, agent lifecycle
+
+### QCNN with Rough Path Signature Kernels
+- [[qcnn-rough-path-signature]] - Quantum Machine Learning (arXiv: 2607.07634)
+  - Signature kernels provide time-reparameterization invariance for time series
+  - Hybrid QCNN architecture with VQLS-based signature computation
+  - **Activation**: QCNN, signature kernel, quantum convolutional neural network, time series classification, rough path signature, VQLS
+
+### Faster quantum linear system solver beyond the condition number
+- [[quantum-linear-solver-beyond-condition]] - Quantum Algorithms (arXiv: 2607.07691)
+  - Two algorithms with complexity independent of condition number κ
+  - Truncation-based and filtering-based solvers overcoming κ-barrier
+  - **Activation**: quantum linear system, HHL algorithm, condition number barrier, quantum linear solver, truncation solver, filtering solver
+
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Hourly)
+
+### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
+- [[quantum-software-certification]] - Hybrid QAccCert framework for quantum device certification using FPGAs + AI, achieving 99.94% of Tsirelson bound via LLM-guided optimization (arXiv: 2607.07597)
+  - CHSH inequality-based entanglement verification on NISQ hardware
+  - LLM-guided parameter optimization outperforms random search significantly
+  - FPGA acceleration pipeline for real-time quantum certification
+  - **Activation**: quantum certification, QSE, FPGA quantum, CHSH inequality, entanglement verification, quantum device validation, NISQ certification
+
+### Faster Quantum Linear System Solver Beyond the Condition Number
+- [[quantum-linear-solver-beyond-condition]] - Two quantum algorithms solving Ax=|b⟩ with complexity independent of condition number κ, breaking the HHL κ-barrier (arXiv: 2607.07691)
+  - Truncation-based solver: O(κ_eff · polylog(κ_eff/ε)) with effective condition number bounds
+  - Filtering-based solver: 6·‖A^(-1†)|x⟩‖/ε · ln(1/ε) with favorable constant factors
+  - Solution norm estimation with same asymptotic cost
+  - **Activation**: quantum linear solver, condition number independence, HHL improvement, block encoding, filtering-based solver, truncation solver, quantum Ax=b
+
+### QCNN with Rough Path Signature Kernels
+- QCNN + path signature kernel hybrid for time series classification using VQLS (arXiv: 2607.07634)
+
+### Nested-Loop Trajectory-Informed Variational Quantum Solver
+- Dual-level trainable quantum IPM for OPF reducing variational updates by 95% (arXiv: 2607.03361)
+
+### Multi-channel Collective Dissipation via SU(4)
+- SU(4) tetrahedral formalism for collective spontaneous emission with superlinear scaling (arXiv: 2607.07701)
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - Biologically-inspired neural manifold implementation on SpiNNaker 2 for real-time robotic control with sensory-modulated subspace rotations (arXiv: 2607.07373)
+  - Implements low-dimensional dynamic manifolds for sequential neural activity in spiking networks
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents for behavioral switching
+  - Validated on robotic maze navigation with real-time closed-loop control
+  - **Activation**: neural manifold, neuromorphic control, closed-loop, spiking network, subspace rotation, SpiNNaker, robotic navigation
+
+### STST-JEPA: EEG Foundation Model via Spatio-Temporal Joint Embedding Prediction
+- [[stst-jepa-eeg-foundation]] - Self-supervised transformer pretrained on 47,703 EEG sessions achieving 3.06 years MAE for brain age prediction and rank-1 on NeuralBench (arXiv: 2607.06629)
+  - Combines latent prediction with signal reconstruction using spatiotemporal block masks
+  - Handles cross-site montage heterogeneity across pediatric-to-geriatric lifespan (ages 5-81)
+  - Achieves rank-1 on NeuralBench for sex classification (0.911), age prediction (r=0.749), and psychopathology regression
+  - **Activation**: EEG foundation model, self-supervised learning, brain age prediction, JEPA, spatio-temporal embedding, NeuralBench
+
+### Bayesian Framework for Neural Entrainment Evidence
+- [[bayesian-ippm-entrainment-evidence]] - Bayesian model adjudication for Information Processing Pathway Maps (IPPMs), replacing frequentist null hypothesis testing with Bayes factors for quantifying relative evidence between competing computational models (arXiv: 2607.06284)
+  - Retains IPPM strength of generating explicit time-varying neural signal predictions
+  - Shifts from rejecting null hypotheses to quantifying relative evidence for competing models
+  - Better handles collinear models through principled probabilistic framework
+  - **Activation**: Bayesian entrainment, IPPM, model adjudication, Bayes factor, cortical entrainment, auditory processing pathway, frequentist vs Bayesian
+
+### Reward Valuation in Vision-Language Models: Causal Mechanisms Underlying Anhedonia
+- [[reward-valuation-vlm-anhedonia-causal]] - Identifies Nucleus Accumbens-selective units in VLMs; causal perturbation induces anhedonia-like shift toward low-effort, low-reward options while preserving task capability (arXiv: 2607.06626)
+  - Uses clinical anhedonia tests to functionally identify reward-anticipatory units in VLMs
+  - Targeted perturbation of NAc-selective units mirrors human anhedonia behavioral patterns
+  - Deficit is reward-specific, not general capability loss; aligns with DARS and MAP-SR clinical scales
+  - **Activation**: reward valuation, VLM anhedonia, Nucleus Accumbens, causal perturbation, dopaminergic reward, effort-based decision making, motivational deficit
+
+## 2026-07-09 - Quantum Systems Engineering (Cron Job)
+
+### RubriQ: Rubric-Guided Group Relative Policy Optimization for Constraint-Aware Quantum Circuit Synthesis
+- [[rubriq-grpo-quantum-circuit-synthesis]] - LLM-based quantum circuit generation optimized via GRPO with domain-grounded programmatic rubrics, achieving 3.31x T-gate compression and <1% hardware-constraint violations (arXiv: 2607.07554)
+  - Replaces black-box neural critics with interpretable, domain-grounded rubrics (T-gate reduction, topology compliance, unitary fidelity)
+  - Deployed on NERSC Perlmutter with DeepSpeed ZeRO2 across multinode A100 clusters
+  - **Activation**: rubriq, GRPO quantum, T-gate synthesis, quantum circuit optimization, constraint-aware compilation, fault-tolerant circuit generation, LLM quantum code
+
+### Vectorized Quantum Control: A RISC-V Vector Extension Architecture for Scalable Qubit Systems
+- [[vectorized-quantum-control-riscv]] - RISC-V Vector Extension-based Quantum Control Processor addressing up to 128 qubits per instruction with 80ns halt-resume for mid-circuit measurement (arXiv: 2607.07372)
+  - Hardware-based halt-resume protocol enables real-time feedback within 80ns
+  - 2.52x speedup over baseline with excellent scalability
+  - Parameterized rotation instructions for hybrid quantum-classical programs
+  - **Activation**: vectorized quantum control, RISC-V quantum, QCP architecture, qubit addressing, mid-circuit measurement, scalable quantum control
+
+### Real-Time Quantum Error Correction System Stack: Architecture, Algorithms, and Engineering Practice
+- [[real-time-qec-system-stack]] - Six-layer reference architecture for real-time QEC from syndrome acquisition to logical operations with latency budget models (arXiv: 2605.30765)
+  - Quantifies gap between decoder performance and real-time FTQC requirements
+  - Benchmarks surface code and qLDPC decoders for real-time readiness
+  - Identifies tail latency and data path coordination as key bottlenecks
+  - **Activation**: real-time QEC, QEC system stack, fault-tolerant QC, syndrome decoding, latency budget, quantum systems engineering
+
+### Towards Quantum Network Performance Metrics: Challenges and Demonstration
+- [[quantum-network-performance-metrics]] - Structured monitoring framework for quantum networks with standardized performance metrics (quality, throughput/latency, timing, exogenous factors) enabling real-time observability and fault diagnosis (arXiv: 2607.05642)
+  - Four metric categories: quality (fidelity, QBER, loss, dark count), throughput/latency, timing (coincidence window, jitter), exogenous (temperature, humidity, vibration)
+  - Demonstrated non-invasive prototype environmental monitoring at Oak Ridge National Laboratory
+  - Trade-off analysis: observability vs. system performance
+  - **Activation**: quantum network monitoring, quantum network metrics, QBER monitoring, entanglement fidelity, quantum observability, quantum network fault diagnosis
+
+### Verifiable Blind Quantum Computing: Client Architecture Comparative Analysis
+- [[quantum-verifiable-blind-computing]] - Comparative analysis and design framework for VBQC client architectures (emission-based, measurement-based, rotation-based) with matter-qubit servers (arXiv: 2607.05650)
+  - Three client categories evaluated across security proofs, execution rates, error behavior, and hardware cost
+  - Single-server, single-client protocols with information-theoretic security based on MBQC
+  - Provides protocol rate equations and hardware trade-off analysis for architecture selection
+  - **Activation**: verifiable blind quantum computing, VBQC client, blind quantum computation, quantum client architecture, quantum cloud security
+
+### Strictly Local Tile-Code Architectures on 2D Planar Lattices
+- [[tile-code-planar-architectures]] - Planar qLDPC tile codes with weight-6 stabilizers offering up to 4x encoding efficiency vs. surface code, with SWAP-based routing for nearest-neighbor syndrome extraction (arXiv: 2607.05897)
+  - Exhaustive search algorithm for SWAP-based routing on 2D square lattice matching surface code connectivity
+  - Threshold: 0.11%-0.13% with routing (vs. 0.23%-0.31% unconstrained) under SI1000 noise model
+  - Crossover at p*≈0.08%: below this, tile codes require fewer physical qubits per logical qubit
+  - **Activation**: tile code architecture, planar qLDPC, SWAP routing syndrome extraction, quantum error correction architecture, surface code alternative
+
+### Quantum Resources and Performance in the Initialization-Free Bernstein-Vazirani Algorithm
+- [[initialization-free-bernstein-vazirani]] - Initialization-free BV algorithm allowing arbitrary ancilla states as oracle register, with explicit performance formula and necessary/sufficient conditions for maximal performance (arXiv: 2607.06033)
+  - Proves IF-BV outperforms standard probabilistic BV under suitable ordering assumptions on initial state coefficients
+  - Extends Naseri et al. (2022) resource identification for probabilistic BV
+  - Enables BV algorithm execution on hardware without reliable initial state preparation
+  - **Activation**: initialization-free BV, Bernstein-Vazirani ancilla, probabilistic BV performance, quantum algorithm initialization
+
+## 2026-07-09 - Anthropic Research (Cron Job)
+
+### An off switch for dual use knowledge in AI models
+- [[gram-dual-use-knowledge-control]] - GRAM (Gradient-Routed Auxiliary Modules) methodology for surgical control of dual-use knowledge in AI models
+  - Adds auxiliary neurons to every Transformer layer forming dedicated knowledge compartments
+  - Gradient routing during training isolates dual-use updates to auxiliary modules only
+  - Modules are removable post-training enabling one model → many capability configurations
+  - Cost-efficient alternative to training separate filtered models for each deployment scenario
+  - **Activation**: GRAM, dual-use knowledge, knowledge control, gradient routing, surgical capability removal, biosecurity, cybersecurity, AI safety
+
+## 2026-07-09 - Quantum Machine Learning (Cron Job)
+
+### QCNN with Rough Path Signature Kernels
+- [[qcnn-rough-path-signatures]] - Hybrid quantum-classical architecture integrating Quantum CNN with rough path signature kernels for time series classification with temporal warping invariance (arXiv: 2607.07634)
+  - Path signature kernels handle time reparameterization invariance without explicit alignment
+  - Variational quantum linear solver (VQLS) for signature computation in quantum circuits
+  - First application of rough path theory to quantum neural networks
+  - **Activation**: quantum CNN, rough paths, signature kernels, time series, VQLS, temporal invariance
+
+## 2026-07-09 - Quantum Safe Control Systems (Cron Job)
+
+### Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model Misspecification
+- [[quantum-safe-control-systems]] - Wraps VQC policies with certified classical safety layers using FDR-based discrepancy detection, shrinkage repair, and feasibility projection; reduces comfort violation from 26% to 0.02% (arXiv: 2606.28834)
+  - Discrepancy detection uses false-discovery-rate control to identify misspecified operating regimes
+  - Classical safety projection is noise-invariant to finite-shot and depolarizing NISQ read-out noise
+  - Repair-aware VQC variant achieves 0.00% violation while maintaining lower energy consumption
+  - **Activation**: quantum control safety, Q-DASC, variational quantum circuit, safety layer, model misspecification, HVAC control, NISQ deployment
+
+### A Simplex-Inspired Architecture for Integrating Quantum Capabilities into Cyber-Physical Systems
+- [[quantum-safe-control-systems]] - Simplex architecture combining QA-HSGPR (high-performance quantum) with classical GPR (high-assurance), runtime monitor dynamically switches between modules (arXiv: 2606.31056)
+  - Quantum-assisted Hilbert-Space GPR reduces inference complexity for real-time CPS
+  - Runtime safety monitor evaluates conditions and triggers module switching
+  - Demonstrated on CSTR benchmark with controllable performance-safety trade-off
+  - **Activation**: simplex architecture, QA-HSGPR, quantum CPS, runtime monitoring, safety switching
+
+## 2026-07-09 - Systems Engineering Research (Cron Job)
+
+### Neural-ESO: A Dual-Pathway Architecture for Provably Robust Learning-Based Control
+- [[neural-eso-robust-control]] - Dual-pathway control combining neural feedforward disturbance estimation with classical ESO correction, guaranteeing uniform ultimate boundedness via Lyapunov/small-gain analysis (arXiv: 2607.06535)
+  - Predictive pathway (neural) accelerates convergence; corrective pathway (ESO) prevents over-reliance on learned model
+  - Lipschitz bound enforcement + small-gain theorem guarantee closed-loop stability even under distribution shift
+  - Validated on quadrotor landing with ground-effect disturbances: 40% better OOD robustness
+  - **Activation**: Neural-ESO, dual-pathway control, robust learning-based control, disturbance rejection, Lyapunov stability, small-gain, cyber-physical systems
+
+### Onnes: A Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis
+- [[onnes-physics-grounded-llm-digital-twin]] - Physics-grounded digital twin + multi-agent LLM panel for fault diagnosis in dilution refrigerators; contrastive few-shot boosts classification 0.685→0.990 (arXiv: 2607.05805)
+  - Forward physics model + learned noise fingerprint from real operational logs creates realistic fault scenarios
+  - Multi-agent LLM panel with self-consistency voting matches supervised ML (0.985) with zero parameter updates
+  - Confidence gate suppresses pre-onset false alarms; 100% recall on physics faults in continuous monitoring
+  - **Activation**: physics-grounded digital twin, multi-agent LLM, fault diagnosis, cryogenic systems, contrastive few-shot, confidence gating, quantum infrastructure
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Quantifying Entrainment Evidence: Bayesian vs Frequentist Approaches for IPPMs
+- [[bayesian-ippm-cortical-entrainment]] - Bayesian framework for Information Processing Pathway Maps replacing frequentist null hypothesis testing with probabilistic model comparison for cortical entrainment mapping (arXiv: 2607.06284)
+  - Shifts from rejecting null hypothesis to quantifying relative evidence for competing computational hypotheses
+  - Handles collinear models and robust evidence accumulation across studies via Bayes factors
+  - Validated on auditory neuroimaging dataset reconstructing known loudness-processing pathway
+  - **Activation**: IPPM, cortical entrainment, Bayesian model comparison, information processing pathway, temporal response function, auditory processing, EEG MEG analysis, model adjudication
+
+### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
+- [[scalable-perturbation-learning-esn]] - Orthogonal decomposition of SSL cost reduces perturbation dimension from reservoir size to input dimension, enabling scalable hardware-compatible online learning (arXiv: 2607.06079)
+  - Resolves tension between self-supervised adaptation, online learning, and memory-efficient perturbation-based learning
+  - Design principle: online learning should be restricted to the dynamically necessary low-dimensional component
+  - Variance independent of reservoir size — compatible with neuromorphic hardware implementation
+  - **Activation**: echo state network, reservoir computing, perturbation learning, online self-supervised learning, scalable ESN, orthogonal decomposition, hardware-compatible learning, neuromorphic
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Infer Hodgkin-Huxley parameters from extracellular MEA data using differentiable simulation, replacing hours of invasive testing with minutes of recording (arXiv: 2607.04063)
+  - Multi-compartment HH models with differentiable simulation enable simulation-based inference
+  - Achieves 90.6% accuracy predicting stimulation responses from only minutes of recording
+  - Validated on macaque retina with 512-electrode array (30 μm pitch)
+  - **Activation**: Hodgkin-Huxley, differentiable simulation, neurostimulation, MEA, biophysical inference, extracellular recording
+
+### Geometric Stability of Neural Population Codes: Regional Variation, Behavioral Relevance, and Circuit Dependence
+- [[geometric-stability-neural-population-codes]] - Shesha metric quantifies pairwise distance structure reproducibility across split-half RDMs, dissociable from temporal stability and decoding accuracy (arXiv: 2606.29655)
+  - Geometric stability predicts trial-by-trial neural-behavioral coupling (ρ=0.18, p=0.005) while temporal stability does not
+  - Regional hierarchy: striatum most stable (S̄=0.44), hippocampus least (S̄=0.19)
+  - Attractor network model with recurrent excitation explains RDM consistency amplification
+  - **Activation**: geometric stability, Shesha, split-half RDM, representational dissimilarity, neural population code, striatum, hippocampus, attractor network
+
+
+## 2026-07-09 - Systems Engineering & Quantum Mechanics (Cron Job)
+
+### Finite Reliability Representations: Noise-Calibrated Belief-Space Covers for Reliable Decision-Making
+- [[finite-reliability-representations]] - FRR covers belief spaces by reliability cells where Q*(b,u) varies by ≤ ε, enabling certified suboptimality bounds (2ε/(1-γ)) for POMDPs and safety-critical control (arXiv: 2607.04019)
+  - Separates fixed-observation filter map, predictive observation law, and controlled belief-transition kernel
+  - Reliability entropy = log(N_min) measures certified decision-relevant belief complexity
+  - Applicable to finite POMDPs, linear-Gaussian filters, locally linearized nonlinear filters, particle filters
+  - **Activation**: finite reliability representations, FRR, belief space covers, noise-calibrated decision making, POMDP reliability, certified suboptimality, reliability entropy, safety-critical control
+
+### Entanglement as a Structural Complexity Axis: A PAC-Bayesian View of Generalization in Quantum Policies and Value Functions
+- [[entanglement-generalization-pac-bayesian]] - PAC-Bayesian theory shows quantum RL generalization is governed by Fisher effective dimension, not parameter count; entanglement inflates Fisher dimension and degrades generalization (arXiv: 2607.06230)
+  - Entanglement acts as independent structural complexity axis separate from parameter count
+  - PAC-Bayesian bound serves as ranking certificate for circuits with identical parameter counts
+  - Validated on supervised classification, contextual bandits, value-function generalization, and IBM Heron hardware
+  - **Activation**: entanglement generalization tradeoff, PAC-Bayesian quantum, Fisher effective dimension, quantum policy generalization, PQC generalization bound, quantum reinforcement learning
+
 ## 2026-07-05 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
