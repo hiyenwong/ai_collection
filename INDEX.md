@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-neuromorphic]] - Implements biological neural manifold dynamics on SpiNNaker 2 chip for real-time closed-loop robotic control through parameterizable manifold geometry (arXiv: 2607.07373)
+  - Maps circuit mechanisms (heterogeneous inhibition, gain modulation, transient currents) to manifold geometric properties (subspace rotation, trajectory speed, trajectory shape)
+  - SpiNNaker 2 implementation with spike-based communication achieves real-time performance (<1ms timestep for 500 neurons)
+  - Closed-loop maze navigation: sensory feedback dynamically modulates control parameters to reconfigure manifold geometry
+  - **Activation**: neural manifolds, neuromorphic computing, SpiNNaker 2, closed-loop control, subspace rotation, spiking neural networks, robotic control, explainable AI
+
 ### Intrinsic-Noise Consolidation via Doob Barrier-Conditioned Diffusion
 - [[intrinsic-noise-consolidation-doob]] - Doob h-transform barrier-conditioned diffusion for continual learning on analog neuromorphic hardware, converting intrinsic device noise from accuracy tax to consolidation dividend (arXiv: 2607.06924)
   - Transforms analog neuromorphic device noise into memory consolidation resource
