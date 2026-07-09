@@ -1,3 +1,95 @@
+## 2026-07-09 - arXiv Paper Skills (Cron Job)
+
+Added 55 new paper skills from arXiv (utility >= 0.85).
+
+### Multi-Agent & Agentic AI (14 papers)
+
+- [[recursive-self-improvement-in-ai-from-bounded-self-refinement-to-autonomous]] - arXiv: 2607.07663 (utility=0.95) | Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Res
+- [[the-blind-curator-how-a-biased-judge-silently-disables-skill-retirement-in-self]] - arXiv: 2607.07436 (utility=0.92) | The Blind Curator: How a Biased Judge Silently Disables Skill Retirement in Self
+- [[skillcenter-a-large-scale-source-grounded-skill-library-for-autonomous-ai-agents]] - arXiv: 2607.07676 (utility=0.9) | SkillCenter: A Large-Scale Source-Grounded Skill Library for Autonomous AI Agent
+- [[a-hierarchical-memory-architecture-overcomes-context-limits-in-long-horizon]] - arXiv: 2607.07666 (utility=0.9) | A hierarchical memory architecture overcomes context limits in long-horizon mult
+- [[single-rollout-asynchronous-optimization-for-agentic-reinforcement-learning]] - arXiv: 2607.07508 (utility=0.9) | Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning
+- [[from-atomic-actions-to-standard-operating-procedures-iterative-tool]] - arXiv: 2607.07321 (utility=0.9) | From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimizatio
+- [[agentic-data-environments]] - arXiv: 2607.07397 (utility=0.88) | Agentic Data Environments
+- [[from-noisy-traces-to-root-causes-structural-trajectory-analysis-and-causal]] - arXiv: 2607.07702 (utility=0.87) | From Noisy Traces to Root Causes: Structural Trajectory Analysis and Causal Extr
+- [[do-llm-generated-skills-make-better-ai-data-scientists-a-component-ablation]] - arXiv: 2607.07504 (utility=0.87) | Do LLM-Generated Skills Make Better AI Data Scientists? A Component Ablation Acr
+- [[physics-audited-agentic-discovery-in-scientific-machine-learning]] - arXiv: 2607.07379 (utility=0.86) | Physics-Audited Agentic Discovery in Scientific Machine Learning
+- [[spacellagent-a-self-evolving-llm-based-multi-agent-framework-for-trajectory]] - arXiv: 2607.07467 (utility=0.85) | SpaCellAgent: A Self-Evolving LLM-Based Multi-Agent Framework for Trajectory Ana
+- [[agent-delivery-engineering-predictive-reliability-framework]] - arXiv: 2607.07689 (utility=0.85) | Agent Delivery Engineering Predictive Reliability Framework
+- [[think-big-search-small-where-capacity-matters-in-hierarchical-search-agents]] - arXiv: 2607.07548 (utility=0.85) | Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?
+- [[a-large-language-model-driven-agent-based-modeling-framework-with-multi-round]] - arXiv: 2607.07387 (utility=0.85) | A Large Language Model-Driven Agent-Based Modeling Framework with Multi-Round Co
+
+### NLP & LLM (15 papers)
+
+- [[max-out-grpo-signal-adaptive-trace-prefix-control-for-hard-reasoning-problems]] - arXiv: 2607.07674 (utility=0.88) | Max Out GRPO Signal: Adaptive Trace Prefix Control for Hard Reasoning Problems
+- [[mechanistic-interpretability-for-neural-networks-circuits-sparse-features-and]] - arXiv: 2607.07316 (utility=0.88) | Mechanistic Interpretability for Neural Networks: Circuits, Sparse Features and 
+- [[rl-post-training-builds-compositional-reasoning-strategies]] - arXiv: 2607.07646 (utility=0.87) | RL Post-Training Builds Compositional Reasoning Strategies
+- [[search-fail-recover-a-training-framework-for-correction-aware-reasoning]] - arXiv: 2607.07492 (utility=0.87) | Search, Fail, Recover: A Training Framework for Correction-Aware Reasoning
+- [[tf-engram-a-train-free-engram-with-ssd-backed-memory-for-large-language-models]] - arXiv: 2607.07388 (utility=0.86) | TF-Engram: A Train-Free Engram with SSD-Backed Memory for Large Language Models
+- [[agon-competitive-cross-model-rl-with-implicit-rival-grading-of-reasoning]] - arXiv: 2607.07690 (utility=0.86) | Agon: Competitive Cross-Model RL with Implicit Rival Grading of Reasoning
+- [[co-lmlm-continuous-query-limited-memory-language-models]] - arXiv: 2607.07707 (utility=0.85) | Co-LMLM: Continuous-Query Limited Memory Language Models
+- [[future-confidence-distillation-in-large-language-models]] - arXiv: 2607.07626 (utility=0.85) | Future Confidence Distillation in Large Language Models
+- [[sparse-delta-memory-scaling-the-state-of-linear-rnns-through-sparsity]] - arXiv: 2607.07386 (utility=0.85) | Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity
+- [[dels-spec-decoupled-long-short-contexts-for-parallel-speculative-drafting]] - arXiv: 2607.07409 (utility=0.85) | DeLS-Spec: Decoupled Long-Short Contexts for Parallel Speculative Drafting
+- [[pals-percentile-aware-layerwise-sparsity-for-llm-pruning]] - arXiv: 2607.07557 (utility=0.85) | PALS: Percentile-Aware Layerwise Sparsity for LLM Pruning
+- [[how-data-shapes-rope-frequency-usage-from-positional-scale-matching-to-length]] - arXiv: 2607.07678 (utility=0.85) | How Data Shapes RoPE Frequency Usage: From Positional Scale Matching to Length G
+- [[the-key-to-going-linear-analysis-driven-transformer-linearization]] - arXiv: 2607.07706 (utility=0.85) | The Key to Going Linear: Analysis-Driven Transformer Linearization
+- [[gift-geometry-informed-low-precision-gradient-communication-for-llm-pretraining]] - arXiv: 2607.07494 (utility=0.85) | GIFT: Geometry-Informed Low-precision Gradient Communication for LLM Pretraining
+- [[r3-advertisement-compliance-rectification-via-group-relative-experience]] - arXiv: 2607.07318 (utility=0.85) | R^3: Advertisement Compliance Rectification via Group-Relative Experience Extrac
+
+### AI Safety & Evaluation (4 papers)
+
+- [[institutional-red-teaming-deployment-rules-not-just-models-causally-shape-multi]] - arXiv: 2607.07695 (utility=0.95) | Institutional Red-Teaming: Deployment Rules, Not Just Models, Causally Shape Mul
+- [[multi-agent-ai-control-distributed-attacks-hamper-per-instance-monitors]] - arXiv: 2607.07368 (utility=0.92) | Multi-Agent AI Control: Distributed Attacks Hamper Per-Instance Monitors
+- [[beyond-attack-success-rate-action-graded-severity-scale-for-tool-using-ai-agents]] - arXiv: 2607.07474 (utility=0.9) | Beyond Attack-Success Rate: Action-Graded Severity Scale for Tool-Using AI Agent
+- [[reason-less-verify-more-deterministic-gates-recover-a-silent-policy-violation]] - arXiv: 2607.07405 (utility=0.9) | Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation 
+
+### Spiking & Neuromorphic (3 papers)
+
+- [[dynamic-neural-manifolds-for-flexible-closed-loop-control-on-neuromorphic]] - arXiv: 2607.07373 (utility=0.9) | Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardwa
+- [[single-entity-spiking-neuron-models-survey]] - arXiv: 2607.07429 (utility=0.88) | Single-Entity Spiking Neuron Models: Survey
+- [[social-spatial-dependencies-for-learning-visual-navigation]] - arXiv: 2607.07460 (utility=0.85) | Social-spatial dependencies for learning visual navigation
+
+### Quantum Computing (2 papers)
+
+- [[quantum-simulation-of-real-world-nonlinear-dynamics-via-koopman-method]] - arXiv: 2607.07338 (utility=0.87) | Quantum simulation of real-world nonlinear dynamics via Koopman method
+- [[qcnn-with-rough-path-signature-kernels]] - arXiv: 2607.07634 (utility=0.85) | QCNN with Rough Path Signature Kernels
+
+### Vision & Generative (2 papers)
+
+- [[embodiedgen-v2-an-agentic-simulation-ready-3d-world-engine-for-embodied-ai]] - arXiv: 2607.07459 (utility=0.87) | EmbodiedGen V2: An Agentic, Simulation-Ready 3D World Engine for Embodied AI
+- [[hive-understanding-post-hallucination-reasoning-in-vision-language-models]] - arXiv: 2607.07507 (utility=0.85) | HIVE: Understanding Post-Hallucination Reasoning in Vision Language Models
+
+### General ML (6 papers)
+
+- [[selective-timestep-weighting-and-advantage-based-replay-for-sample-efficient]] - arXiv: 2607.07693 (utility=0.85) | Selective Timestep Weighting and Advantage-Based Replay for Sample-Efficient Dif
+- [[an-optimal-control-approach-for-neural-network-architecture-adaptation-with-a]] - arXiv: 2607.07637 (utility=0.85) | An optimal control approach for neural network architecture adaptation with a po
+- [[hypergraph-neural-stochastic-diffusion-an-sde-framework-for-uncertainty]] - arXiv: 2607.07330 (utility=0.85) | Hypergraph Neural Stochastic Diffusion: An SDE Framework for Uncertainty Estimat
+- [[collaborative-synthetic-data-generation-for-knowledge-transfer-in-federated]] - arXiv: 2607.07565 (utility=0.85) | Collaborative Synthetic Data Generation for Knowledge Transfer in Federated Lear
+- [[neural-operator-enabled-topology-informed-evolutionary-strategy-for-pde]] - arXiv: 2607.07682 (utility=0.85) | Neural Operator-enabled Topology-informed Evolutionary Strategy for PDE-Constrai
+- [[rlvp-penalize-the-path-reward-the-outcome]] - arXiv: 2607.07435 (utility=0.85) | RLVP: Penalize the Path, Reward the Outcome
+
+### Healthcare & Bio (3 papers)
+
+- [[ecglight-compute-light-framework-for-paper-ecg-digitization-and-myocardial]] - arXiv: 2607.07683 (utility=0.85) | ECGLight: Compute-Light Framework For Paper ECG Digitization and Myocardial Infa
+- [[medpmc-a-systematic-framework-for-scaling-high-fidelity-medical-multimodal-data]] - arXiv: 2607.07673 (utility=0.85) | MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data
+- [[reliable-mechanistic-operator-recovery-with-biologically-informed-neural]] - arXiv: 2607.07425 (utility=0.85) | Reliable mechanistic operator recovery with biologically-informed neural network
+
+### Security & Privacy (3 papers)
+
+- [[multi-class-vs-multi-label-bert-for-cve-to-cwe-mapping-how-taxonomy-structure]] - arXiv: 2607.07573 (utility=0.85) | Multi-Class vs. Multi-Label BERT for CVE-to-CWE Mapping: How Taxonomy Structure 
+- [[where-to-intervene-benchmarking-fairness-aware-learning-on-differentially]] - arXiv: 2607.07471 (utility=0.85) | Where to Intervene? Benchmarking Fairness-Aware Learning on Differentially Priva
+- [[a-unified-detection-framework-for-ai-related-content-and-artifacts]] - arXiv: 2607.07527 (utility=0.85) | A Unified Detection Framework for AI-Related Content and Artifacts
+
+### Physics & Math (2 papers)
+
+- [[gradient-free-riemannian-langevin-sampler]] - arXiv: 2607.07519 (utility=0.85) | Gradient-free Riemannian Langevin Sampler
+- [[higher-order-geometric-updates-for-levenberg-marquardt-method-via-riemann]] - arXiv: 2607.07623 (utility=0.85) | Higher-Order Geometric Updates for Levenberg-Marquardt Method via Riemann Normal
+
+### Signal & Control Systems (1 papers)
+
+- [[stability-of-flow-models-for-graph-signals]] - arXiv: 2607.07510 (utility=0.85) | Stability of Flow Models for Graph Signals
+
 ## 2026-06-29 - Neuroscience + Quantum Mechanics (Cron Job)
 
 ### Quantum Hyperdimensional Computing: a foundational paradigm for quantum neuromorphic architectures
