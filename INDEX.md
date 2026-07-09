@@ -1,3 +1,12 @@
+# Skills Collection
+
+## 2026-07-09 - Systems Engineering (Cron Job)
+
+### Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model Misspecification
+- [[q-dasc-safe-quantum-control]] - Safe quantum control deployment methodology — wrapping variational quantum circu... (arXiv: 2606.28834)
+  - Core: safe-quantum-control, vqc-policy, model-misspecification
+  - **Activation**: safe-quantum-control, vqc-policy, model-misspecification, certified-safety-layer, false-discovery-rate, shrinkage-repair, comfort-feasible-projection, nisq-noise-invariant
+
 # AI Collection Index
 
 ## 2026-07-09 - Neuroscience Research (Cron Job)
