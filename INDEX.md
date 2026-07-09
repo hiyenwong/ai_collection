@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifold-snn-control]] - Sensory-modulated heterogeneous inhibition drives subspace rotations for behavior switching on SpiNNaker 2 (arXiv: 2607.07373)
+  - Low-dimensional neural manifolds parameterized via circuit mechanisms (inhibition, gain, transients)
+  - Subspace rotations enable rapid behavior switching with fine-grained trajectory control
+  - Validated on SpiNNaker 2 chip for real-time robotic maze navigation
+  - **Activation**: neural manifolds, subspace rotation, neuromorphic control, SpiNNaker2, closed-loop control, behavior switching, heterogeneous inhibition, explainable SNN, robotic navigation
+
 ## 2026-07-09 - Systems Engineering + Quantum Control (Cron Job)
 
 ### Tractable Infinite-Horizon SMPC for Quantum Filtering via Eigenstate Reduction
