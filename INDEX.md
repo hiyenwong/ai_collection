@@ -33,6 +33,20 @@
   - Validated on SpiNNaker 2 chip for real-time robotic maze navigation
   - **Activation**: neural manifolds, subspace rotation, neuromorphic control, SpiNNaker2, closed-loop control, behavior switching, heterogeneous inhibition, explainable SNN, robotic navigation
 
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation framework for inferring Hodgkin-Huxley parameters from extracellular MEA recordings (arXiv: 2607.04063, ICML 2026)
+  - Infer multi-compartment HH biophysical parameters from non-invasive extracellular MEA measurements via differentiable simulation + simulation-based inference
+  - 90.6% accuracy predicting unseen multi-electrode stimulation responses from minutes of recording (replaces hours of clinical testing)
+  - Validated on macaque retina with 512-electrode array (30 μm pitch)
+  - **Activation**: differentiable-biophysical-simulation, hodgkin-huxley-parameter-inference, neurostimulation-prediction, MEA-biophysical-modeling, extracellular-to-intracellular, computational-neurostimulation
+
+### Microsecond-precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[equilibrium-dynamics-sound-localization]] - Neural population equilibrium dynamics for ITD estimation, replacing classical Jeffress delay-line model (arXiv: 2607.03890, submitted to Science)
+  - ITD represented as stable equilibrium of neural population dynamics rather than place coding via delay lines
+  - E/I interactions across frequency channels drive system toward ITD equilibrium — achieves microsecond precision from slow dynamics
+  - Explains coexistence of microsecond sensitivity and sluggish binaural tracking without explicit delay lines
+  - **Activation**: equilibrium-dynamics-sound-localization, ITD-population-coding, beyond-jeffress, auditory-equilibrium, microsecond-precision-slow-dynamics, cross-frequency-integration
+
 ## 2026-07-09 - Systems Engineering + Quantum Control (Cron Job)
 
 ### Tractable Infinite-Horizon SMPC for Quantum Filtering via Eigenstate Reduction
