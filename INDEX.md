@@ -41,6 +41,20 @@
   - Achieves rank-1 on NeuralBench for sex classification (0.911), age prediction (r=0.749), and psychopathology regression
   - **Activation**: EEG foundation model, self-supervised learning, brain age prediction, JEPA, spatio-temporal embedding, NeuralBench
 
+### Bayesian Framework for Neural Entrainment Evidence
+- [[bayesian-ippm-entrainment-evidence]] - Bayesian model adjudication for Information Processing Pathway Maps (IPPMs), replacing frequentist null hypothesis testing with Bayes factors for quantifying relative evidence between competing computational models (arXiv: 2607.06284)
+  - Retains IPPM strength of generating explicit time-varying neural signal predictions
+  - Shifts from rejecting null hypotheses to quantifying relative evidence for competing models
+  - Better handles collinear models through principled probabilistic framework
+  - **Activation**: Bayesian entrainment, IPPM, model adjudication, Bayes factor, cortical entrainment, auditory processing pathway, frequentist vs Bayesian
+
+### Reward Valuation in Vision-Language Models: Causal Mechanisms Underlying Anhedonia
+- [[reward-valuation-vlm-anhedonia-causal]] - Identifies Nucleus Accumbens-selective units in VLMs; causal perturbation induces anhedonia-like shift toward low-effort, low-reward options while preserving task capability (arXiv: 2607.06626)
+  - Uses clinical anhedonia tests to functionally identify reward-anticipatory units in VLMs
+  - Targeted perturbation of NAc-selective units mirrors human anhedonia behavioral patterns
+  - Deficit is reward-specific, not general capability loss; aligns with DARS and MAP-SR clinical scales
+  - **Activation**: reward valuation, VLM anhedonia, Nucleus Accumbens, causal perturbation, dopaminergic reward, effort-based decision making, motivational deficit
+
 ## 2026-07-09 - Quantum Systems Engineering (Cron Job)
 
 ### RubriQ: Rubric-Guided Group Relative Policy Optimization for Constraint-Aware Quantum Circuit Synthesis
