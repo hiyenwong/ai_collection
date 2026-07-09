@@ -1,6 +1,11 @@
 # Skills Collection
 
 ## 2026-07-09 - Systems Engineering (Cron Job)
+### Toward General Quantum Control with Physics-Informed Large Language Models
+- [[vf-qctrl-llm-quantum-control]] - Physics-informed LLM framework for general quantum control combining symbolic re... (arXiv: 2605.26021)
+  - Core: physics-informed-llm, symbolic-reasoning, control-ansatze
+  - **Activation**: physics-informed-llm, symbolic-reasoning, control-ansatze, feedback-refinement, qctrl-bench, inference-time-scaling, pulse-resolution-scaling
+
 ### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
 - [[quctrl-bell-compiler-quantum-control]] - Compiler-driven sub-microsecond feedback control stack for scalable trapped-ion ... (arXiv: 2605.22433)
   - Core: compiler-driven-control, sub-microsecond-feedback, dsl-transpilation
