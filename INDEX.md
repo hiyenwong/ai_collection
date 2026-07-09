@@ -28,6 +28,30 @@
   - Evidence-based promotion/demotion mechanism for workflow lifecycle management
   - **Activation**: progressive crystallization, agent crystallization, deterministic workflow, agent cost reduction, AIOps workflow, agent lifecycle
 
+### Q-DASC: Discrepancy-Attributed Safe Quantum Control
+- [[q-dasc-safe-quantum-control]] - Safety-certified variational quantum control with FDR-based misspecification detection (arXiv: 2606.28834)
+  - Wraps VQC policy with certified classical safety layer
+  - Reduces comfort violation from 26% to 0.02% on building emulators
+  - **Activation**: safe quantum control, Q-DASC, VQC safety, FDR control, HVAC quantum control, NISQ safety, quantum policy safety
+
+### QuCtrl-BELL: Compiler-Driven Sub-Microsecond Feedback Control Stack
+- [[quctrl-bell-compiler-quantum-control]] - Compiler-driven trapped-ion quantum control with <700ns feedback latency (arXiv: 2605.22433)
+  - Six-stage transpilation: CFG → SSA → liveness → register allocation
+  - Cross-board synchronization with sub-microsecond feedback loops
+  - **Activation**: QuCtrl-BELL, trapped-ion control, quantum compiler, feedback control, DSL quantum, register allocation, quantum control stack
+
+### QMLC: Generative Quantum Circuit Synthesis from Gate Set Tomography
+- [[generative-quantum-circuit-synthesis]] - End-to-end hardware-native circuit synthesis from GST data via diffusion models (arXiv: 2605.01367)
+  - Curriculum learning + set-vision transformer for concept space learning
+  - Context-aware: captures crosstalk and drift that isolated gate metrics miss
+  - **Activation**: QMLC, quantum circuit synthesis, GST, gate set tomography, hardware-native circuit, generative quantum, diffusion quantum circuit
+
+### Coherent Feedback H∞ Control of Quantum Linear Systems
+- [[coherent-feedback-h-infinity-quantum-control]] - Simplified H∞ quantum control using Lyapunov equations instead of Riccati equations (arXiv: 2604.06574)
+  - Solves ≤4 Lyapunov equations vs 2 coupled AREs
+  - Demonstrated on optical cavity and parametric amplifier
+  - **Activation**: coherent feedback, H-infinity quantum, quantum linear system control, Lyapunov quantum control, quantum robust control, quantum optical control
+
 ### QCNN with Rough Path Signature Kernels
 - [[qcnn-rough-path-signature]] - Quantum Machine Learning (arXiv: 2607.07634)
   - Signature kernels provide time-reparameterization invariance for time series
