@@ -1,6 +1,27 @@
 # AI Collection Index
 
-## 2026-07-09 - Neuroscience Research (Cron Job)
+## 2026-07-09 - Systems Engineering + Quantum Control (Cron Job)
+
+### Tractable Infinite-Horizon SMPC for Quantum Filtering via Eigenstate Reduction
+- [[eigenstate-reduction-quantum-smcp]] - Collapse infinite-horizon stochastic MPC to closed-form fidelity via eigenstate reduction (arXiv: 2511.05916)
+  - Almost-sure eigenstate reduction eliminates per-horizon Monte Carlo sampling
+  - Closed-form fidelity from one-step averaged state with mean-square stability guarantees
+  - Validated on multi-level and Ising-type coupled systems
+  - **Activation**: stochastic model predictive control, quantum SMPC, quantum filtering, eigenstate reduction, quantum trajectory, continuous measurement, mean-square stability, quantum optimal control, receding horizon quantum control
+
+### Centralizing Task-based Approach to Quantum Network Control
+- [[centralized-task-quantum-network-control]] - Resource-centric centralized controller replaces layered protocol stacks for quantum networks (arXiv: 2605.03336)
+  - Priority-based scheduler tracks global quantum memory availability across all nodes
+  - Caveman and grid topologies outperform star; star saturates fast under high load
+  - Validated on SeQUeNCe simulator with bottleneck, grid, star, caveman topologies
+  - **Activation**: quantum network control, centralized quantum controller, task-based scheduling, SeQUeNCe simulator, quantum network topology, entanglement generation, priority scheduling, resource-centric quantum network
+
+### Affiliated Operators for Classical and Quantum Control
+- [[von-neumann-algebra-quantum-controllability]] - Von Neumann algebra framework for controllability of bilinear systems on infinite-dimensional Hilbert spaces (arXiv: 2605.13774)
+  - Proves time-optimal control existence for operators affiliated with finite-type von Neumann algebras
+  - Dynamical Lie algebra well-defined even for unbounded operators
+  - Unified framework applies to classical systems via Koopman operator formalism
+  - **Activation**: von Neumann algebra controllability, bilinear quantum control, infinite-dimensional Hilbert space, time-optimal quantum control, Koopman operator control, dynamical Lie algebra unbounded, approximate controllability quantum, operator affiliation theory
 
 ### Single-Entity Spiking Neuron Models: Survey
 - [[single-entity-spiking-neuron-survey]] - Comprehensive survey of single-neuron mathematical models covering LIF, EIF, AdEx, Izhikevich, HH, FHN, Morris-Lecar (arXiv: 2607.07429)
