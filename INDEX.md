@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - Biologically-inspired neural manifold implementation on SpiNNaker 2 for real-time robotic control with sensory-modulated subspace rotations (arXiv: 2607.07373)
+  - Implements low-dimensional dynamic manifolds for sequential neural activity in spiking networks
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents for behavioral switching
+  - Validated on robotic maze navigation with real-time closed-loop control
+  - **Activation**: neural manifold, neuromorphic control, closed-loop, spiking network, subspace rotation, SpiNNaker, robotic navigation
+
+### STST-JEPA: EEG Foundation Model via Spatio-Temporal Joint Embedding Prediction
+- [[stst-jepa-eeg-foundation]] - Self-supervised transformer pretrained on 47,703 EEG sessions achieving 3.06 years MAE for brain age prediction and rank-1 on NeuralBench (arXiv: 2607.06629)
+  - Combines latent prediction with signal reconstruction using spatiotemporal block masks
+  - Handles cross-site montage heterogeneity across pediatric-to-geriatric lifespan (ages 5-81)
+  - Achieves rank-1 on NeuralBench for sex classification (0.911), age prediction (r=0.749), and psychopathology regression
+  - **Activation**: EEG foundation model, self-supervised learning, brain age prediction, JEPA, spatio-temporal embedding, NeuralBench
+
 ## 2026-07-09 - Quantum Systems Engineering (Cron Job)
 
 ### RubriQ: Rubric-Guided Group Relative Policy Optimization for Constraint-Aware Quantum Circuit Synthesis
@@ -21,6 +37,34 @@
   - Benchmarks surface code and qLDPC decoders for real-time readiness
   - Identifies tail latency and data path coordination as key bottlenecks
   - **Activation**: real-time QEC, QEC system stack, fault-tolerant QC, syndrome decoding, latency budget, quantum systems engineering
+
+### Towards Quantum Network Performance Metrics: Challenges and Demonstration
+- [[quantum-network-performance-metrics]] - Structured monitoring framework for quantum networks with standardized performance metrics (quality, throughput/latency, timing, exogenous factors) enabling real-time observability and fault diagnosis (arXiv: 2607.05642)
+  - Four metric categories: quality (fidelity, QBER, loss, dark count), throughput/latency, timing (coincidence window, jitter), exogenous (temperature, humidity, vibration)
+  - Demonstrated non-invasive prototype environmental monitoring at Oak Ridge National Laboratory
+  - Trade-off analysis: observability vs. system performance
+  - **Activation**: quantum network monitoring, quantum network metrics, QBER monitoring, entanglement fidelity, quantum observability, quantum network fault diagnosis
+
+### Verifiable Blind Quantum Computing: Client Architecture Comparative Analysis
+- [[quantum-verifiable-blind-computing]] - Comparative analysis and design framework for VBQC client architectures (emission-based, measurement-based, rotation-based) with matter-qubit servers (arXiv: 2607.05650)
+  - Three client categories evaluated across security proofs, execution rates, error behavior, and hardware cost
+  - Single-server, single-client protocols with information-theoretic security based on MBQC
+  - Provides protocol rate equations and hardware trade-off analysis for architecture selection
+  - **Activation**: verifiable blind quantum computing, VBQC client, blind quantum computation, quantum client architecture, quantum cloud security
+
+### Strictly Local Tile-Code Architectures on 2D Planar Lattices
+- [[tile-code-planar-architectures]] - Planar qLDPC tile codes with weight-6 stabilizers offering up to 4x encoding efficiency vs. surface code, with SWAP-based routing for nearest-neighbor syndrome extraction (arXiv: 2607.05897)
+  - Exhaustive search algorithm for SWAP-based routing on 2D square lattice matching surface code connectivity
+  - Threshold: 0.11%-0.13% with routing (vs. 0.23%-0.31% unconstrained) under SI1000 noise model
+  - Crossover at p*≈0.08%: below this, tile codes require fewer physical qubits per logical qubit
+  - **Activation**: tile code architecture, planar qLDPC, SWAP routing syndrome extraction, quantum error correction architecture, surface code alternative
+
+### Quantum Resources and Performance in the Initialization-Free Bernstein-Vazirani Algorithm
+- [[initialization-free-bernstein-vazirani]] - Initialization-free BV algorithm allowing arbitrary ancilla states as oracle register, with explicit performance formula and necessary/sufficient conditions for maximal performance (arXiv: 2607.06033)
+  - Proves IF-BV outperforms standard probabilistic BV under suitable ordering assumptions on initial state coefficients
+  - Extends Naseri et al. (2022) resource identification for probabilistic BV
+  - Enables BV algorithm execution on hardware without reliable initial state preparation
+  - **Activation**: initialization-free BV, Bernstein-Vazirani ancilla, probabilistic BV performance, quantum algorithm initialization
 
 ## 2026-07-09 - Anthropic Research (Cron Job)
 
