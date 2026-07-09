@@ -52,6 +52,12 @@
   - Demonstrated on optical cavity and parametric amplifier
   - **Activation**: coherent feedback, H-infinity quantum, quantum linear system control, Lyapunov quantum control, quantum robust control, quantum optical control
 
+### Risk-Averse Ensemble Control for Control-Affine Systems
+- [[risk-averse-ensemble-quantum-control]] - Risk-averse ensemble control with rigorous regularity theory for quantum control & Neural ODEs (arXiv: 2605.02791)
+  - Weak-to-strong continuity, Fréchet differentiability of control-to-state mapping
+  - Primal/dual optimality conditions with adjoint state of bounded variation
+  - **Activation**: risk-averse ensemble control, ensemble control, control-affine systems, quantum ensemble control, Neural ODE training, robust ensemble optimization, CVaR ensemble control
+
 ### QCNN with Rough Path Signature Kernels
 - [[qcnn-rough-path-signature]] - Quantum Machine Learning (arXiv: 2607.07634)
   - Signature kernels provide time-reparameterization invariance for time series
