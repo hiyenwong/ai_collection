@@ -1,115 +1,182 @@
 
-## 2026-07-08 - Multi-Agent Systems Research (Cron Job)
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
 
-### MCP-Enabled Agentic AI for Autonomous IPoDWDM Network Lifecycle Automation
-- [[mcp-agentic-ipodwdm-network-automation]] - MCP-enabled agentic AI architecture for autonomous control of vendor-agnostic IPoDWDM networks (arXiv: 2607.05975)
-  - Core: cs.NI; cs.AI; cs.MA; eess.SY
-  - Published: 2026-07-07
-  - Uses MCP to bridge LLM agents with GNPy for optical layer modeling
-  - Live end-to-end lifecycle multi-layer automation and closed-loop control
-  - Validated on a real testbed
-  - **Activation**: MCP, agentic network automation, IPoDWDM, GNPy, multi-layer automation, closed-loop control, network lifecycle
+### Latency-Constrained Hardware-Aware QEC Co-Design with Adaptive Confidence-Gated Neural Decoding
+- [[adaptive-qec-decoder]] - Two-stage confidence-gated neural decoding for QEC: lightweight FFNN fast-path with MWPM refinement fallback, routing only 3.3-6.2% of syndromes while improving accuracy from 99.21% to 99.81% (arXiv: 2607.05814)
+  - Neural fast-path throughput saturates at ~4.6×10⁵ samples/s on commodity CPU
+  - Confidence threshold controls accuracy-latency trade-off
+  - Beyond d=7, neural path is NOT the throughput bottleneck — optimize graph stage instead
+  - **Activation**: confidence gating, two-stage decoding, neural decoder, QEC latency, surface code, MWPM refinement, accuracy-latency tradeoff, rotated surface code, adaptive inference, hardware-aware
 
-### PiSAs: Benchmarking Contextual Integrity in Multi-User Agentic Systems
-- [[pisas-contextual-integrity-multi-user-agentic]] - Benchmark for contextual integrity in multi-user agentic systems addressing inter-agent privacy risks (arXiv: 2607.05318)
-  - Core: cs.MA; cs.CR
-  - Published: 2026-07-06
-  - New privacy risks: inter-agent messages, shared memory, cross-user exposure
-  - Contextual integrity framework for multi-user agent settings
-  - **Activation**: contextual integrity, multi-user agents, privacy benchmark, agentic privacy, inter-agent communication, shared memory privacy
+### Geometric Obstructions to Quadratic Time Scaling in Multiparameter Quantum Estimation
+- [[geometric-obstruction-quantum-metrology]] - Universal geometric obstruction theory proving when multiparameter quantum metrology fails simultaneous t⁻² scaling, with computable diagnostic via Gram matrix of diagonal generators (arXiv: 2607.06410)
+  - Linear dependence among commuting Hamiltonian derivatives creates slow parameter directions (O(t⁰) Fisher information)
+  - SLD bound asymptotically saturable despite bottleneck — measurement incompatibility decays as 1/t
+  - Workarounds: nuisance parameter relegation or adaptive quantum control
+  - **Activation**: geometric obstruction quantum, multiparameter estimation, quantum Fisher information scaling, quantum metrology t-squared, adaptive quantum control metrology
 
-### Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory
-- [[danus-mathematical-reasoning-agents-fact-graph]] - Fact-graph memory for coordinating parallel proof attempts among mathematical reasoning agents (arXiv: 2607.06447)
-  - Core: cs.AI; cs.CL; cs.MA
-  - Published: 2026-07-07
-  - Shared fact-graph prevents redundant work across parallel agents
-  - Graph structure captures dependencies between mathematical statements
-  - **Activation**: mathematical reasoning, proof orchestration, fact-graph memory, multi-agent reasoning, parallel proof
+### Bosonic QEC with Finite Stellar Rank
+- [[bosonic-qec-stellar-rank]] - Stellar rank as operational resource measure for bosonic QEC; k=2 suffices for break-even under all dephasing strengths, grid-like encodings emerge under photon loss (arXiv: 2607.06404)
+  - Trade-off: state approximability × energy × logical protection under finite non-Gaussian resources
+  - Direct optimization at fixed stellar rank discovers noise-adapted code structures
+  - Photon loss: required rank increases with loss rate; Dephasing: k=2 always sufficient
+  - **Activation**: bosonic quantum error correction, stellar rank QEC, GKP code optimization, cat code finite resources, non-Gaussian resource measure
 
-### Organizational Memory for Agentic Business Process Execution
-- [[organizational-memory-agentic-business-process]] - Organizational memory framework for reliable LLM-based business process automation (arXiv: 2607.03228)
-  - Core: cs.AI; cs.MA
-  - Published: 2026-07-03
-  - Extracts and structures knowledge from human-oriented artifacts (SOPs, wikis)
-  - Bridges gap between general LLM capabilities and domain-specific process knowledge
-  - **Activation**: organizational memory, business process automation, agentic bpm, knowledge extraction
+### VF-QCTRL: Physics-Informed LLM for General Quantum Control
+- [[physics-informed-llm-quantum-control]] - Physics-informed LLM framework combining symbolic reasoning with optimization to propose and refine analytic quantum control protocols without task-specific training, benchmarked across 16 tasks (arXiv: 2605.26021)
+  - LLM proposes analytic ansatz, numerical optimizer refines parameters through feedback loop
+  - Competitive with conventional solvers in both noiseless and noisy regimes
+  - Training-free: no fine-tuning required, leverages LLM's broad physics knowledge
+  - Favorable inference-time scaling and pulse resolution scaling
+  - **Activation**: physics-informed LLM, quantum control synthesis, VF-QCTRL, analytic pulse design, symbolic reasoning quantum, training-free control, QCTRL benchmark, pulse sequence optimization
 
-### Agentic Information Fusion for Test Maintenance Prediction
-- [[agentic-information-fusion-test-maintenance]] - MAST multi-agent framework predicting which test cases need maintenance after code changes (arXiv: 2607.04786)
-  - Core: cs.SE; cs.AI; cs.MA
-  - Published: 2026-07-06
-  - Multiple specialized agents analyze code diffs, test history, semantic relationships
-  - Information fusion across agents produces unified maintenance prediction
-  - **Activation**: test maintenance, multi-agent testing, agentic information fusion, MAST, test prediction
+## 2026-07-09 - Neuroscience Research (Cron Job)
 
-### Agentic IoT: Architectures, Applications, and Challenges Toward the Internet of Agents
-- [[agentic-iot-internet-of-agents]] - Survey of agentic IoT architectures and the Internet of Agents paradigm (arXiv: 2607.04219)
-  - Core: cs.AI; cs.MA; cs.NI
-  - Published: 2026-07-05
-  - From passive IoT → AIoT → agentic IoT → Internet of Agents
-  - Edge-cloud continuum, agent autonomy, inter-agent communication
-  - **Activation**: agentic IoT, internet of agents, AIoT, IoT architecture, anomaly detection, predictive maintenance
+### Hierarchical Bayesian Statistical Learning Model for Individual EEG Trajectories
+- [[hierarchical-bayesian-statistical-learning-eeg]] - HBSL model captures individual statistical learning trajectories from EEG during structured tone sequences, with applications to dyslexia research (arXiv: 2607.05822)
+  - Hierarchical Bayesian structure constrains individual learning parameters with group-level priors
+  - Model simulations closely correspond to real EEG data; generated sequences match original stimuli
+  - No significant group difference found between dyslexia and control groups, but methodology validated
+  - **Activation**: hierarchical Bayesian, statistical learning, EEG, individual differences, dyslexia, sequence structure, tone sequences, cognitive development
 
-### LLMoxie: Exploring Agentic AI for Scientific Software Development
-- [[llmoxie-agentic-scientific-software]] - Institutional AI platform with three-tier architecture for scientific software development (arXiv: 2607.02703)
-  - Core: cs.SE; cs.AI; cs.DC; cs.MA
-  - Published: 2026-07-02
-  - Three-tiered: multi-cloud inference, LiteLLM/MLflow control plane, application augmentation
-  - PII masking, budgeting, authentication, observability built in
-  - **Activation**: LLMoxie, scientific software, AI coding agent, LiteLLM, MLflow, multi-cloud, PII masking
+## 2026-07-08 - Neuroscience Research (Cron Job)
 
-### MUTE: Return-Preserving Communication Unlearning for Multi-Agent Coordination
-- [[mute-communication-unlearning-multi-agent]] - Selectively unlearn inter-agent communications while preserving coordination returns in MARL (arXiv: 2607.03473)
-  - Core: cs.MA
-  - Published: 2026-07-03
-  - Return-preserving: removes non-critical communication without degrading team performance
-  - Complementary to existing communication-efficient MARL methods
-  - **Activation**: MUTE, communication unlearning, MARL, bandwidth constraints, cooperative games, return preservation
+### Dendritic In-Context Learning in Single-Layer SNN (DendriCL)
+- [[dendritic-icl-snn]] - Single dendritic compartment with online-LMS dynamics is sufficient for general-purpose in-context learning without attention, depth, or inference-time plasticity (arXiv: 2607.02283)
+  - First SNN to pass Garg-2022 ICL benchmark at non-trivial task dimensions
+  - Apical dendritic recurrence structurally identical to leaky online Widrow-Hoff LMS
+  - Seed-stable at super-dimensional ICL where dense Transformers fail
+  - Linear probe recovers reference LMS trajectory with R² = 0.93
+  - **Activation**: dendritic computation, in-context learning, ICL, spiking neural network, SNN, single-layer, online learning, Widrow-Hoff, LMS, biological plausibility, neuromorphic
 
-### A Workflow-Aware Serving Layer for Agentic Applications
-- [[workflow-aware-serving-layer-agentic]] - Serving infrastructure for agentic AI workloads as DAGs of LLM and tool calls (arXiv: 2607.02942)
-  - Core: cs.DC; cs.MA
-  - Published: 2026-07-03
-  - Bridges gap between model-serving engines and workflow orchestration
-  - Per-node model selection, quality operators (verifiers), DAG-level optimization
-  - **Activation**: agentic serving, workflow-aware, LLM serving, DAG orchestration, quality operators, verifiers
+## 2026-07-08 - Medicine + Quantum (Cron Job - PET Biomarkers)
 
-### CausalSteward: An Agentic Divide-Conquer-Combine Copilot for Causal Discovery
-- [[causalsteward-agentic-causal-discovery]] - Agentic copilot for high-dimensional causal discovery with prior knowledge integration (arXiv: 2607.01936)
-  - Core: cs.MA; cs.AI
-  - Published: 2026-07-02
-  - Divide-conquer-combine partitions high-dimensional problem into sub-problems
-  - Prior knowledge addresses causal identifiability issues
-  - Human-in-the-loop copilot architecture
-  - **Activation**: CausalSteward, causal discovery, agentic copilot, divide-conquer-combine, identifiability, prior knowledge
+### Quantum Entanglement Degree as PET Biomarkers for Hypoxia
+- [[quantum-pet-biomarkers-hypoxia]] - Novel PET biomarkers using quantum entanglement degree and positronium lifetime to detect tissue hypoxia non-invasively (arXiv: 2605.00021)
+  - Method 1: ortho-positronium decay rate (τ_oPs + 3γ/2γ ratio) inversely correlated with tissue oxygen concentration
+  - Method 2: quantum entanglement degree of annihilation photons sensitive to tissue microenvironment composition
+  - J-PET plastic scintillator scanner measures polarization via Compton scattering kinematics
+  - Clinical applications: tumor hypoxia mapping, radiotherapy planning, ischemic tissue identification
+  - **Activation**: quantum PET, positronium lifetime, entanglement biomarker, hypoxia imaging, J-PET, Compton scattering PET, 3γ/2γ ratio, tissue oxygen, quantum medical imaging, positronium decay
 
-### Information Limits and Attractor Dynamics in Economies of Frontier LLM Agents
-- [[llm-agent-economies-information-limits]] - Pre-registered experiment testing information-theoretic capacity and mean-field dynamics in LLM agent economies (arXiv: 2607.06001)
-  - Core: cs.AI; cs.MA
-  - Published: 2026-07-07
-  - Tests information-theoretic capacity region for wealth growth under market coupling
-  - Mean-field residual-attractor dynamics model
-  - Uses Claude Opus 4.8 as economic agents
-  - **Activation**: LLM agent economies, information-theoretic capacity, mean-field dynamics, attractor dynamics, market coupling
+### CV Photonic QNN for Edge Medical AI
+- [[cv-photonic-qnn-edge-medical]] - Room-temperature CV photonic QNN for edge-deployable medical image classification without cryogenic infrastructure (arXiv: 2606.28252)
+  - Pipeline: MobileNetV1 → PCA(16-dim) → CV-QNN(4 qumodes, 2 layers) → classification
+  - 4-qumode CV-QNN uses ~100× fewer trainable parameters than equivalent qubit VQC
+  - Operates at room temperature — deployable on smartphones/Raspberry Pi for low-resource clinical settings
+  - Demonstrated on oral cancer detection with 100% calibrated test accuracy
+  - **Activation**: cv-qnn, photonic quantum, continuous-variable, edge quantum AI, oral cancer detection, parameter-efficient quantum, room-temperature quantum, mobile medical AI, smartphone screening
 
-### StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems
-- [[statefuse-conflict-preserving-memory-multi-agent]] - Conflict-aware replicated memory built on version control principles for multi-agent systems (arXiv: 2607.05844)
-  - Core: cs.AI; cs.CL; cs.MA
-  - Published: 2026-07-07
-  - Preserves all observations including conflicting ones (no silent overwrite)
-  - Deterministic conflict resolution based on VCS principles
-  - Formal memory contract for replication across agents
-  - **Activation**: StateFuse, conflict-aware memory, replicated memory, multi-agent memory, conflict-preserving, version control
+## 2026-07-08 - Neuroscience Research (Cron Job)
 
-### What LLM Agents Say When No One Is Watching: Social Structure and Latent Objectives
-- [[llm-agents-social-structure-latent-objectives]] - Studies how social structure changes LLM agent expression without explicit objectives (arXiv: 2607.02507)
-  - Core: cs.AI; cs.CL; cs.LG; cs.MA
-  - Published: 2026-07-02
-  - Tests whether role, audience, relational context change what agents express publicly
-  - Introduces concept of latent objectives from social structure
-  - **Activation**: LLM agents, social structure, latent objectives, social context, agent communication, audience effects
+### Differentiable Biophysical Simulation for Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Framework for inferring Hodgkin-Huxley parameters from extracellular MEA data and predicting neural responses to electrical stimulation (arXiv: 2607.04063)
+  - Differentiable biophysical simulation enables end-to-end training from extracellular observations
+  - Simulation-based inference replaces hours of clinical stimulus testing with minutes of recording
+  - 90.6% accuracy on previously unseen stimulation responses in macaque retina validation
+  - **Activation**: Hodgkin-Huxley, biophysical simulation, neurostimulation, MEA, differentiable simulation, parameter inference, neural modeling
+
+## 2026-07-08 - Medicine + Quantum (Cron Job - Hourly)
+
+### First-in-Human Quantum Entanglement Imaging
+- [[quantum-entanglement-pet-imaging]] - First in vivo imaging of quantum entanglement degree from positron-electron annihilation using J-PET plastic scintillator scanner for clinical diagnostics (arXiv: 2606.29421)
+  - Plastic scintillators enable simultaneous PET + entanglement degree imaging via Compton scattering polarization
+  - Entanglement degree values between maximally entangled and separable states measured in liver and spleen
+  - Opens quantum entanglement as a new biomarker channel for clinical diagnostics
+  - **Activation**: quantum entanglement imaging, J-PET, plastic scintillator PET, polarization-correlated tomography, entanglement degree biomarker, 68Ga quantum imaging
+
+### Parameter-Efficient CV-QNN for Edge Oral Cancer Detection
+- [[cv-qnn-edge-ai-oral-cancer]] - Simplified Φ∘D∘U₁ CV-QNN architecture with only 18 parameters achieving 100% calibrated test accuracy for oral cancer detection at edge (arXiv: 2606.28252)
+  - Simplified layer cuts trainable parameters 40-45% vs standard Killoran CV-QNN layer
+  - PCA + encoding restriction mitigates barren plateaus (~58 orders magnitude gradient variance boost)
+  - 4-qumode simplified outperforms standard at same width; 67% fewer params than 55-param classical baseline
+  - **Activation**: cv-qnn, edge quantum ai, oral cancer, photonic qnn, continuous-variable quantum, parameter-efficient qml, barren plateau mitigation, mobilenet quantum
+
+## 2026-07-08 - Neuroscience Research (Cron Job - Neuromorphic Hardware)
+
+### AIGOR: Modular Event-Driven Neuromorphic Architecture
+- [[aigor-modular-neuromorphic-architecture]] - Configurable SNN inference architecture with packet-switched communication and multi-model support (arXiv: 2607.03191)
+  - Modular IP-block design supports LIF, HH, and Axon-Hillock neuron models on same hardware
+  - Validated on AMD Versal VPK180 FPGA with spike-level precision across multi-core execution
+  - Declarative specification generates cores, neuron kernels, and synaptic-memory images automatically
+  - **Activation**: AIGOR, neuromorphic architecture, event-driven SNN, FPGA accelerator, packet-switched, timestep-synchronized, configurable SNN
+
+### Hardware-Aware Mixed-Signal SNN Framework
+- [[hardware-aware-mixed-signal-snn-framework]] - Open-source framework for design space exploration across neuron models, synapse types, and hardware metrics (arXiv: 2607.06456)
+  - Supports LIF, HH, AH neuron models with floating-gate and ReRAM synapse devices
+  - Reports accuracy alongside silicon area, power consumption, and quantization sensitivity
+  - Enables Pareto analysis of accuracy vs. energy tradeoffs for edge AI deployment
+  - **Activation**: hardware-aware SNN, mixed-signal simulation, neuron model comparison, LIF HH AH, ReRAM synapse, floating-gate, design space exploration, neuromorphic benchmark
 
 ## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### First-in-Human Quantum Entanglement Imaging
+- [[first-in-human-quantum-entanglement-imaging]] - First in vivo imaging of quantum entanglement degree from positron-electron annihilation using J-PET plastic scintillator scanner for clinical diagnostics (arXiv: 2606.29421)
+  - Plastic scintillators enable simultaneous PET + entanglement degree imaging via Compton scattering polarization
+  - Entanglement degree values between maximally entangled and separable states measured in liver and spleen
+  - Opens quantum entanglement as a new biomarker channel for clinical diagnostics
+  - **Activation**: quantum entanglement imaging, J-PET, plastic scintillator PET, polarization-correlated tomography, entanglement degree biomarker, 68Ga quantum imaging
+
+### Parameter-Efficient CV Photonic QNNs for Edge Quantum AI
+- [[cv-photonic-qnn-edge-medical]] - Hybrid classical-CV quantum classifier for oral cancer detection with 18 parameters achieving 100% calibrated test accuracy on room-temperature photonic hardware (arXiv: 2606.28252)
+  - Simplified Phi-D-U1 CV-QNN architecture cuts trainable parameters 40-45% vs standard Killoran layer
+  - Mitigates barren plateaus raising gradient variance by 58 orders of magnitude
+  - 4-qumode simplified CV-QNN outperforms 55-parameter classical baseline with 67% fewer parameters
+  - **Activation**: CV-QNN, photonic quantum neural network, continuous-variable quantum, edge quantum AI, oral cancer detection, barren plateau mitigation, parameter-efficient QML
+
+### Compression-Driven Anomaly Detection in Brain MRI Using Quantum Autoencoder
+- [[quantum-autoencoder-mri-anomaly]] - Quantum autoencoder for brain MRI anomaly detection achieving ROC-AUC ~0.95 slice-level using incompressibility-based scoring with trash qubits (arXiv: 2606.27411)
+  - Angle encoding + variational encoder-decoder with auxiliary trash qubits for information discarding
+  - Encoder-decoder asymmetry analysis shows effective detection from structured compression, not parameter magnitude
+  - Produces spatially localized anomaly heatmaps aligned with tumorous regions
+  - **Activation**: quantum autoencoder, brain MRI anomaly detection, compression-driven diagnosis, trash qubit encoding, variational quantum encoder, DICOM quantum analysis
+
+### Learning to Reconstruct Wigner Functions in Phase Space
+- [[wigner-function-reconstruction]] - ML framework to reconstruct Wigner functions from sparse phase-space measurements with O(log d) complexity for sparse states (arXiv: 2607.06232)
+  - Provably efficient regression for sparse Fock/coherent states (binomial codes, cat states)
+  - Deep learning model for general states (GKP) generalizing to arbitrary phase-space resolution
+  - Validated on circuit-QED experimental data across multiple QEC rounds
+  - **Activation**: wigner function reconstruction, phase-space tomography, CV quantum systems, GKP state, sparse measurements, circuit-QED
+
+### Entanglement as a Structural Complexity Axis: PAC-Bayesian View
+- [[entanglement-generalization-pac-bayesian]] - PAC-Bayesian analysis revealing Fisher geometry effective dimension governs quantum policy generalization, not parameter count (arXiv: 2607.06230)
+  - Entanglement inflates Fisher effective dimension as independent complexity axis
+  - PAC-Bayesian bound correctly ranks circuits with identical parameter count
+  - Validated on IBM Heron quantum processor under real noise
+  - **Activation**: PAC-Bayesian quantum, Fisher geometry, entanglement generalization, quantum policy design, train-test gap quantum
+
+## 2026-07-08 - Neuroscience Research (Cron Job - Hardware and Bayesian Methods)
+
+### Hardware-Aware Open-Source Framework for Mixed-Signal SNN Design Space Exploration
+- [[hardware-aware-snn-design-space-exploration]] - Cross-layer neuromorphic design framework optimizing physical synaptic parameters (not abstract weights) across LIF/HH/AH neurons and ReRAM/floating-gate synapses (arXiv: 2607.06456)
+  - PyTorch-integrated framework captures device-level nonlinearities during training
+  - Reports accuracy plus silicon area plus power consumption plus quantization sensitivity
+  - Enables Pareto-optimal configuration selection for edge deployment
+  - **Activation**: neuromorphic hardware, mixed-signal SNN, design space exploration, edge computing, ReRAM, floating-gate, hardware-aware training
+
+### Bayesian Information Processing Pathway Maps for Neural Entrainment
+- [[bayesian-information-processing-pathway-maps]] - Shifts from frequentist hypothesis testing to Bayesian model adjudication for comparing competing computational models of sensory processing (arXiv: 2607.06284)
+  - Quantifies relative evidence (posterior probabilities) instead of binary significance
+  - Handles collinear models naturally without multiple testing corrections
+  - Applied to auditory loudness pathway reconstruction from neuroimaging data
+  - **Activation**: Bayesian model comparison, neural entrainment, information processing pathway, sensory processing, model adjudication, auditory cortex
+
+### Pathwise Approach to Metastability in Galves-Löcherbach Models
+- [[pathwise-metastability-galves-locherbach-models]] - Rigorous mathematical framework for analyzing metastability in stochastic spiking neural networks (arXiv: 2607.05652)
+  - Connects statistical physics metastability theory to computational neuroscience
+  - Reviews pathwise approach for identifying typical trajectories and transition probabilities
+  - Covers Galves-Löcherbach (GL) stochastic spiking neural network models
+  - Analyzes metastable state transitions in mean-field and network settings
+  - **Activation**: metastability, Galves-Löcherbach, stochastic neural networks, pathwise approach, statistical physics, phase transitions, neural dynamics, criticality
+
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### SDA-QEC: Simplified Diffusion Augmentation with Quantum-Enhanced Classification
+- [[sda-qec-diffusion-quantum-medical]] - Diffusion augmentation + quantum feature layers for balanced medical image diagnosis under severe class imbalance (arXiv: 2601.18556)
+  - Lightweight diffusion augmentor generates synthetic minority samples to rebalance training distribution
+  - Quantum feature layer embedded in MobileNetV2 maps features to Hilbert space for enhanced discrimination
+  - Achieves 98.33% accuracy, 98.78% AUC with equal sensitivity and specificity — critical for clinical deployment
+  - **Activation**: SDA-QEC, diffusion augmentation, quantum-enhanced classification, medical image imbalance, minority class rebalancing, Hilbert space feature mapping
 
 ### Low-depth Simulation of Non-Markovianity Under Quantum Hardware Noise
 - [[low-depth-nonmarkovian-simulation]] - Low-depth quantum simulation of non-Markovian dynamics using trajectory mixing — trades entangling gates for statistical mixture (arXiv: 2607.05519)
@@ -126,6 +193,20 @@
   - **Activation**: hilbert schmidt speed, quantum channel contractivity, non-Markovianity detection, CPTP maps, open quantum systems
 
 ## 2026-07-08 - Neuroscience Research (Cron Job)
+
+### Entropic Time, Psychophysics, and Deformed Neural Dynamics
+- [[entropic-time-psychophysics-deformed-neural-dynamics]] - Unified physical theory linking entropy production to subjective time perception via conformable calculus (arXiv: 2606.29427)
+  - Nonextensive Troika: closed algebraic triplet (D, α, q) eliminates phenomenological fitting
+  - Predicts psychedelic time dilation (REBUS model) and cognitive aging compression
+  - Deformed leaky integrate-and-fire framework from thermodynamic first principles
+  - **Activation**: time perception, entropy production, conformable calculus, Tsallis entropy, psychedelic states, cognitive aging
+
+### SA-HGNN: Sample-Adaptive Hyperbolic Graph Neural Network for EEG Depression Recognition
+- [[sa-hgnn-sample-adaptive-hyperbolic-eeg-depression]] - Hyperbolic GNN capturing hierarchical brain network structure for depression biomarkers (arXiv: 2607.02063)
+  - Sample-adaptive graph construction for personalized functional connectivity
+  - Hyperbolic geometry overcomes Euclidean bottlenecks for hierarchical brain data
+  - Attention pooling filters EEG noise channels adaptively
+  - **Activation**: EEG depression, hyperbolic GNN, hierarchical brain network, functional connectivity, personalized biomarkers
 
 ## 2026-07-08 - Neuroscience Research (Cron Job)
 
@@ -4362,6 +4443,22 @@
   - Validation: 85.84% accuracy, 84.46% F1, 0.885 AUC on multicenter bacterial vs fungal keratitis
   - **Activation**: triple-phase multimodal diagnosis, cross-modality contrastive medical, multimodal medical ensemble, microbial keratitis classification, 多模态医学诊断, cross-site medical generalization
 
+## 2026-07-08 - Medicine + Quantum (Cron Job)
+
+### Towards Lattice Surgery Compilation for the Color Code Using Pipe Diagrams
+- [[color-code-pipe-diagrams]] - 彩色码管道图格子手术编译方法论，将表面码管道图框架扩展到6.6.6格三角彩色码，实现距离无关的时空优化 (arXiv: 2607.05501)
+  - Core: First pipe diagram representation for triangular color code on 6.6.6 lattice with ZX-diagram correspondence
+  - Advantage: Color codes use fewer physical qubits + transversal single-qubit Clifford gates vs surface codes
+  - Enables: Distance-independent correlation surfaces, stabilizers, syndrome extraction circuits, compact spacetime embeddings
+  - **Activation**: color code pipe diagrams, lattice surgery color code, 6.6.6 lattice, color code compilation, ZX diagram color code
+
+### The Hermitian Inner Product Selects the Time Axis, the Born Rule Measures It
+- [[hermitian-inner-product-time-axis]] - 量子系统中通过厄米内积选择时间轴的机制研究，识别从SL(2,C)到SU(2)的对称性破缺步骤，定位波恩规则为向该轴的投影 (arXiv: 2607.05447)
+  - Core: Hermitian inner product choice (σ⁰) reduces SL(2,C) → SU(2), selecting future-timelike axis before probability assignment
+  - Born rule = projection of state's null vector onto σ⁰ = energy in that frame, rescaling as Doppler shift under boost
+  - Kinematic identification (not dynamical) — resolves mechanism left open by recent Lorentz-invariant qubit work
+  - **Activation**: hermitian inner product time axis, born rule mechanism, Lorentz symmetry from qubit, SL2C to SU2 reduction
+
 ## 2026-07-08 - Anthropic Research (Cron Job)
 
 ### A global workspace in language models
@@ -4373,3 +4470,57 @@
   - Counterfactual reflection training: train only on what model would say if asked to reflect → reduces dishonest behavior
   - J-space ablation preserves fluency/grammar but destroys multi-step reasoning, summarization, poetry
   - **Activation**: global workspace, j-space, jacobian lens, interpretability, counterfactual reflection, mental workspace
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### End-to-End Learning of Quantum Control on Latent Dynamical Manifold
+- [[end-to-end-quantum-control]] - LSTM-based end-to-end quantum control learning joint dynamics and control in latent manifold, 1000x faster than GRAPE (arXiv: 2606.27907)
+  - Replaces iterative simulate-then-optimize with single forward pass
+  - Jointly learns dynamics and control strategy on low-dimensional latent manifold
+  - Validated on adiabatic speedup and 1D spin chain state transfer under noise
+  - **Activation**: end-to-end quantum control, quantum control learning, quantum optimal control LSTM, latent manifold quantum control, 量子端到端控制
+
+### Towards an Optimally Distributed Quantum Fourier Transform Circuit
+- [[distributed-quantum-fourier-transform]] - Distributed QFT circuit optimization minimizing e-bit consumption via teleportation-based partitioning (arXiv: 2606.18494)
+  - Circuit partitioning for distributed quantum systems using teleportation
+  - Minimizes entangled bit (e-bit) count across node boundaries
+  - Trade-off analysis: more nodes → less per-node qubits, more communication
+  - **Activation**: distributed quantum Fourier transform, distributed QFT circuit, quantum circuit partitioning, distributed quantum computing, e-bit optimization quantum
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Session 2)
+
+### Neural-ESO: Dual-Pathway Architecture for Provably Robust Learning-Based Control
+- [[dual-pathway-robust-learning-control]] - Dual-pathway learning control combining NN feedforward estimation with conventional ESO correction for provable robustness (arXiv: 2607.06535)
+  - Neural network provides feedforward disturbance estimate; ESO compensates prediction errors
+  - Lipschitz bound on NN guarantees uniform ultimate boundedness via Lyapunov + small-gain analysis
+  - Validated on quadrotor landing with ground-effect disturbances across ID and OOD scenarios
+  - **Activation**: dual-pathway control, neural ESO, learning-based robust control, Lipschitz constrained neural control, 双路径鲁棒学习控制
+
+### Geometric Obstructions to Quadratic Time Scaling in Multiparameter Quantum Estimation
+- [[geometric-obstruction-multiparameter-quantum-estimation]] - Universal geometric obstruction identifying when multiparameter quantum metrology fails to achieve simultaneous t^-2 scaling (arXiv: 2607.06410)
+  - Linear dependence among commuting Hamiltonian components generates slow parameter direction with Fisher information O(t^0)
+  - Measurement incompatibility decays as 1/t, making SL bound asymptotically saturable
+  - Bottleneck circumvented by adaptive quantum control or nuisance parameter relegation
+  - **Activation**: multiparameter quantum estimation, geometric obstruction quantum metrology, Fisher information scaling, adaptive quantum control metrology
+
+### Adaptive and Neural Operator Control of Nonlinear Volterra Hyperbolic PDEs
+- [[neural-operator-adaptive-pde-control]] - Dual-learning architecture combining online adaptive control with offline neural operator approximation for backstepping control of nonlinear hyperbolic PDEs (arXiv: 2607.06425)
+  - Online identifier learns Volterra kernel truncation; neural operator approximates backstepping kernel map
+  - Single Lyapunov function absorbs truncation, identification, and approximation perturbations
+  - Miroslav Krstic — asymptotic regulation on basin recovering exact-kernel basin as NN accuracy improves
+  - **Activation**: neural operator backstepping, adaptive PDE control, Volterra series control, Krstic neural operator
+
+### Q-DASC: Safe Quantum Control for HVAC under Local Model Misspecification
+- [[q-dasc-safe-quantum-control]] - Certified classical safety layer wrapping VQC policies for physics-constrained control, reducing comfort violation from 26% to 0.02% (arXiv: 2606.28834)
+  - FDR-controlled regime discovery + shrinkage repair + projection onto comfort-feasible set
+  - Safety certificate invariant to finite-shot and depolarizing read-out noise
+  - Transfers to EnergyPlus benchmarks and real hospital air-handling-unit data
+  - **Activation**: safe quantum control, VQC safety layer, discrepancy-attributed control, model misspecification quantum, BOPTEST quantum control
+
+### Projection Operator Stochastic Equations for Non-Markovian Quantum Feedback
+- [[nonmarkovian-quantum-feedback-control]] - Extends projection operator approach to continuous measurement-based feedback for non-Markovian quantum systems (arXiv: 2606.31321)
+  - Deterministic terms become stochastic depending on measurement record
+  - Covers homodyne, photon counting, and adaptive measurements
+  - Markovian embedding + projection yields non-Markovian SDEs for feedback control
+  - **Activation**: non-Markovian quantum feedback, projection operator SDE, continuous measurement feedback, stochastic quantum equations
+

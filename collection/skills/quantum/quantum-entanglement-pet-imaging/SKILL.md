@@ -1,64 +1,109 @@
 ---
 name: quantum-entanglement-pet-imaging
-description: "Methodology for quantum entanglement degree imaging using PET scanners — extracting C_QE biomarkers from annihilation photon polarization correlations via Compton scattering. Use when researching quantum entanglement medical imaging, PET biomarker development, positronium imaging, or polarization-correlated photon diagnostics."
-metadata:
-  arxiv_id: "2606.29421"
-  published: "2026-06-28"
-  authors: "P. Moskal et al."
-  tags: [quantum, medical-imaging, PET, entanglement, biomarker, J-PET]
+description: "First-in-human quantum entanglement imaging using J-PET plastic scintillator scanner for PET + entanglement degree tomography. Exploits polarization correlations of annihilation photons for enhanced diagnostics. Use when building quantum-enhanced PET imaging systems, polarization-correlated tomography, or entanglement-based biomarker analysis. Activation: quantum entanglement imaging, J-PET, plastic scintillator PET, polarization-correlated tomography, entanglement degree biomarker, 68Ga quantum imaging, quantum PET"
+category: quantum
+created: 2026-07-08
+source: arXiv:2606.29421
 ---
 
-# Quantum Entanglement PET Imaging
+# First-in-Human Quantum Entanglement Imaging for PET
 
-First-in-vivo measurement of quantum entanglement degree (C_QE) from positron-electron annihilation photons in human subjects using J-PET plastic scintillator scanner.
+## Source
+
+arXiv:2606.29421 — "First-in-human quantum entanglement imaging" by multiple authors (2026-06-28)
+
+## Overview
+
+Presents the first in vivo imaging of the degree of quantum entanglement of photons originating from positron-electron annihilation within a human subject. Uses the **Jagiellonian Positron Emission Tomography (J-PET)** scanner, constructed from plastic scintillators.
 
 ## Core Methodology
 
-### Entanglement Degree Measurement
+### Quantum Entanglement in PET
 
-1. **Compton Scattering Plane Analysis**: Measure angle φ between scattering planes of two 511 keV annihilation photons
-2. **Visibility Calculation**: V(θ₁,θ₂) = F_max(θ₁,θ₂) - F_min(θ₁,θ₂) / F_max(θ₁,θ₂) + F_min(θ₁,θ₂)
-3. **Degree Extraction**: C_QE = R_QE / 1.56 - 0.77 where R_QE = F_max/F_min at θ₁=θ₂=82°
-4. **Calibration**: C_QE=1 for maximally entangled, C_QE=0.5 for separable photons
+- Annihilation photons from positron-electron annihilation are **quantum-entangled in polarization**
+- Plastic scintillators detect photons via **Compton scattering**, providing:
+  - Photon interaction position
+  - Interaction time
+  - Photon polarization plane
+- The **relative angle between polarization planes** of annihilation photons encodes the entanglement degree
 
-### Clinical Applications
+### Pipeline Architecture
 
-- **Positronium Lifetime Imaging**: Correlate C_QE with positronium lifetime and 3γ/2γ ratio
-- **Tissue Molecular Environment**: Non-maximal C_QE indicates pick-off annihilation with uncorrelated electron spins
-- **Hypoxia Biomarker**: C_QE varies with oxygen concentration at annihilation site
-- **Nanostructure Sensing**: Tissue porosity and molecular architecture affect entanglement degree
-
-### Scanner Requirements
-
-- **Plastic Scintillators**: Required for Compton scattering detection (vs crystal scintillators that absorb directly)
-- **Triggerless DAQ**: Continuous acquisition for simultaneous primary + secondary scattering registration
-- **TOF Resolution**: ~500ps minimum for annihilation point reconstruction along LOR
-
-### Data Processing Pipeline
-
-1. **Hit Classification**: Identify annihilation candidates via energy+position+timing
-2. **Kinematic Selection**: Δt<2.5ns, opening angle>60° between photon pairs
-3. **Scatter Assignment**: Use scatter test ST_k,j = c(t_j-t_k) - |r_j-r_k| for correct photon-scatter pairing
-4. **ROI Selection**: 3D ellipsoidal regions around annihilation density clusters
-5. **Efficiency Correction**: Monte Carlo (Geant4) with full detector geometry for ε(θ₁,θ₂,φ)
-6. **Fitting**: F(φ) = A(1 - B·cos(2φ)) to extract R_QE from efficiency-corrected φ distribution
+```
+Patient injected with 68Ga-DOTA-TATE radiopharmaceutical
+    │
+    ▼
+Positron-electron annihilation → Entangled photon pairs
+    │
+    ▼
+J-PET Plastic Scintillator Detection (Compton scattering)
+    │
+    ├──→ Standard PET image (radiopharmaceutical uptake)
+    │
+    └──→ Quantum entanglement degree image (polarization correlation)
+    │
+    ▼
+Clinical analysis of entanglement degree in organs
+    ├── Liver: entanglement < maximally entangled, > separable
+    └── Spleen: entanglement < maximally entangled, > separable
+```
 
 ## Key Results
 
-- **Liver**: C_QE ≈ 0.85 (97% purity, non-maximal but above separable threshold)
-- **Spleen**: C_QE ≈ 0.82 (94% purity)
-- **Interpretation**: Non-maximal entanglement due to pick-off process where positron annihilates with uncorrelated environmental electron spin
+- **First in vivo demonstration** of quantum entanglement degree imaging in humans
+- Patient injected with 68Ga-DOTA-TATE radiopharmaceutical
+- Entanglement degree values measured in liver and spleen:
+  - **Smaller than maximally entangled** two-photon states
+  - **Larger than separable** photons
+- Opens new biomarker channel for clinical diagnostics
+
+## Applications
+
+1. **Enhanced PET Imaging**: Combining standard uptake imaging with entanglement degree as additional diagnostic channel
+2. **Tumor Characterization**: Entanglement degree may correlate with tissue properties
+3. **Radiopharmaceutical Development**: Understanding how different isotopes affect entanglement
+4. **Quantum Biology**: Studying quantum effects in biological systems
+
+## Technical Details
+
+### J-PET Scanner Architecture
+- Built from **plastic scintillators** (not traditional crystal scintillators)
+- Plastics enable Compton scattering detection → polarization information
+- Provides 4D information: 3D position + time + polarization
+
+### Entanglement Degree Measurement
+- Determined from relative angle between polarization planes
+- Values between 0 (separable) and 1 (maximally entangled)
+- Tissue-dependent variation suggests potential diagnostic value
+
+## Pitfalls
+
+### Signal-to-Noise Challenges
+- Entanglement signal is weak compared to standard PET signal
+- Requires high-statistics measurements for reliable entanglement estimation
+- Compton scattering cross-section in plastics is lower than photoelectric absorption in crystals
+
+### Interpretation Complexity
+- Entanglement degree affected by multiple factors:
+  - Tissue scattering properties
+  - Detector geometry and efficiency
+  - Radiopharmaceutical biodistribution
+- Must disentangle physical entanglement from measurement artifacts
+
+## Future Directions
+
+1. **Correlation Studies**: Link entanglement degree to pathological states
+2. **Multi-isotope Studies**: Compare entanglement across different radiopharmaceuticals
+3. **Real-time Entanglement Imaging**: Enable dynamic entanglement monitoring
+4. **Quantum-Enhanced Reconstruction**: Use entanglement information for better image reconstruction
 
 ## Activation Keywords
 
-- `quantum entanglement imaging`
-- `entanglement degree PET`
-- `C_QE biomarker`
-- `positronium imaging`
-- `J-PET scanner`
-- `Compton polarization correlation`
-- `annihilation photon entanglement`
-- `quantum medical diagnostics`
-- `polarization PET`
-- `entanglement biomarker`
-- `positronium lifetime imaging`
+- quantum entanglement imaging
+- J-PET scanner
+- plastic scintillator PET
+- polarization-correlated tomography
+- entanglement degree biomarker
+- 68Ga quantum imaging
+- quantum PET
+- annihilation photon entanglement
