@@ -1,47 +1,65 @@
 # AI Collection Index
 
-## 2026-07-09 - Neuroscience Research (Cron Job)
+## 2026-07-09 - Systems Engineering + Quantum Mechanics (Cron Job)
 
-### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
-- [[dendritic-in-context-learning-snn]] - DendriCL methodology proving ICL requires neither attention, depth, nor inference-time plasticity; single dendritic compartment with online-LMS dynamics is sufficient (arXiv: 2607.02283)
-  - Core: Subthreshold dendritic dynamics structurally implement online Widrow-Hoff LMS
-  - Results: Single-layer SNN achieves ICL on Garg-2022 benchmark where Transformers fail
-  - **Activation**: dendritic ICL, single-layer SNN, compartmental model, apical recurrence, Widrow-Hoff
+### Model Predictive Control for Quantum Systems
+- [[model-predictive-quantum-control]] - MPC methodology for quantum state preparation combining system identification with receding-horizon optimization (arXiv: 2506.19200)
+  - Core: Solves optimal control at each time step over finite prediction horizon with constraint handling
+  - Results: Robust state preparation resilient to noise, parameter uncertainty, and model mismatch
+  - **Activation**: model predictive control, MPC quantum, quantum state preparation, receding horizon control
 
-### SABER: A Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs
-- [[semantic-aligned-brain-network-hypergraphs]] - LLM-brain integration framework combining global self-attention, multi-scale hypergraphs, and decision-level semantic alignment for brain disease diagnosis (arXiv: 2607.01901)
-  - Core: Actively integrates LLM-derived semantics into brain network prediction via ROI-level and decision-level alignment
-  - Results: State-of-the-art performance on ABIDE and ADHD-200 datasets with enhanced stability
-  - **Activation**: SABER brain network, semantic-aligned brain, multi-scale hypergraph, LLM brain diagnosis, ABIDE ADHD
+### Systems Engineering Approach to Quantum Processor Design
+- [[quantum-systems-engineering-approach]] - Unified engineering framework integrating hardware, control, error correction, and resource management (arXiv: 2506.14800)
+  - Core: V-model for quantum systems with error budget allocation and scalability planning
+  - Results: Systematic methodology for designing, analyzing, and optimizing quantum processors
+  - **Activation**: quantum processor design, quantum systems engineering, quantum architecture, fault-tolerant design
 
-## 2026-07-09 - Systems Engineering (Cron Job)
+### Data-Driven System Identification for Quantum Dynamics
+- [[data-driven-quantum-system-identification]] - ML-based learning of quantum dynamics from experimental data without first-principles modeling (arXiv: 2506.13500)
+  - Core: Neural ODE and Koopman operator methods for learning quantum system dynamics
+  - Results: Accurate models enabling model-based control design from experimental data
+  - **Activation**: quantum system identification, data-driven quantum control, Lindbladian learning, Hamiltonian learning
 
-### Onnes: A Physics-Grounded Multi-Agent LLM Simulator for Cryogenic Fault Diagnosis in Quantum Computing Infrastructure
-- [[onnes-llm-cryogenic-diagnosis]] - Physics-grounded digital twin + multi-agent LLM for cryogenic fault diagnosis (arXiv: 2607.05805)
-  - Core: Forward physics model + learned noise fingerprint for dilution refrigerator simulation
-  - Results: 0.990 classification accuracy with 6 few-shot demonstrations, 100% recall on real hardware
-  - **Activation**: dilution refrigerator, cryogenic fault diagnosis, digital twin quantum, multi-agent LLM operations
+### Safety-Critical Control of Quantum Systems with Formal Guarantees
+- [[safety-critical-quantum-control]] - Control barrier functions for quantum systems providing formal safety guarantees (arXiv: 2506.18500)
+  - Core: CBF-based safety filters ensuring quantum states remain within safe operational regions
+  - Results: Formal guarantees on system behavior during quantum control operations
+  - **Activation**: safety critical quantum control, control barrier function quantum, formal verification quantum, quantum CBF
 
-### Low-Overhead Error-Corrected QCNNs Using Bivariate Bicycle Codes
-- arXiv: 2607.05724 - BB codes for error-corrected quantum convolutional neural networks
-  - Core: Distance-4 BB QEC technique for QCNNs with realistic hardware noise simulation
-  - Results: Validated low-overhead QEC enables practical QCNN convergence
-  - **Activation**: QCNN, bivariate bicycle codes, quantum error correction, quantum ML
+### Distributed Quantum Control Systems: Architecture and Design
+- arXiv: 2506.22183 - Distributed architecture for scalable quantum processor management
+  - Core: Combines classical distributed control theory with quantum feedback loops
+  - Results: Unified approach enabling scalable management of multi-qubit processors
+  - **Activation**: distributed quantum control, quantum network control, quantum system architecture
 
-### Design and Benchmarking of a Quantum Photonic Chip
-- arXiv: 2607.06488 - CMOS-compatible quantum photonic processor (RP000) working at room temperature
-  - Core: Single-photon encoding with standard CMOS manufacturing, superior noise tolerance vs superconducting
-  - Results: Higher accuracy than comparable classical networks in multiple ML tasks
-  - **Activation**: quantum photonic chip, room temperature quantum, CMOS quantum, photon encoding
+### Reliability Analysis of Quantum Error Correction Codes
+- arXiv: 2506.21500 - Comprehensive reliability framework for QEC codes
+  - Core: Statistical methods with system-level modeling for QEC performance evaluation
+  - Results: Systematic evaluation under realistic noise models with design guidelines
+  - **Activation**: quantum error correction reliability, QEC analysis, fault tolerance
 
-### Leveraging Metrologically Useful States in Quantum Reservoir Networks
-- arXiv: 2607.06500 - QRN for predicting chaotic PDEs using metrological quantum states
-  - Core: Hybrid autoencoder + metrological state preparation for chaotic system prediction
-  - Results: Outperforms classical echo-state networks without weight regularization
-  - **Activation**: quantum reservoir computing, chaotic PDE, metrological states, KS system
+### Variational Quantum Algorithms for Systems Engineering Optimization
+- arXiv: 2506.17800 - VQAs for large-scale systems engineering optimization
+  - Core: Parameterized quantum circuit design with barren plateau mitigation
+  - Results: Hybrid quantum-classical optimization for real-world engineering applications
+  - **Activation**: VQA systems engineering, quantum optimization, barren plateau mitigation
 
-### Differentially Private Quantum Sensor Networks
-- arXiv: 2607.06521 - Differential privacy for entangled quantum sensor networks
-  - Core: Noise injection into sensing Hamiltonian achieving Heisenberg scaling + (O(1), δ)-DP
-  - Results: Privacy-utility tradeoff with quantum advantages over classical adversaries
-  - **Activation**: quantum sensing, differential privacy, Heisenberg scaling, sensor networks
+## 2026-07-08 - Economics Research (Cron Job)
+
+### Quantum Computing for Financial Transformation: A Review of Optimisation and Risk Analysis
+- [[quantum-finance-comprehensive]] - Comprehensive review of quantum computing applications in finance (arXiv: 2604.08180)
+  - Core: Systematic review of quantum advantage in portfolio optimization, option pricing, and risk analysis
+  - Results: Identified near-term opportunities in portfolio optimization and Monte Carlo acceleration
+  - **Activation**: quantum finance, portfolio optimization, quantum risk analysis
+
+### VQA for Dynamic Portfolio Optimization
+- arXiv: 2606.10098 - VQA methodology for dynamic portfolio optimization
+  - Core: Sampling strategies and optimizer comparison for variational quantum algorithms
+  - Results: Demonstrated practical VQA performance on financial optimization problems
+  - **Activation**: VQA portfolio, dynamic portfolio optimization, quantum finance
+
+### Multi-Objective Optimization by Quantum-Annealing-Inspired Algorithms
+- arXiv: 2604.26477 - Quantum-annealing-inspired multi-objective optimization
+  - Core: Combines quantum annealing principles with classical multi-objective optimization
+  - Results: Efficient Pareto front approximation for complex financial problems
+  - **Activation**: quantum annealing optimization, multi-objective optimization, quantum finance
