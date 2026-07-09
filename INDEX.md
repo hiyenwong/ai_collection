@@ -1,6 +1,11 @@
 # Skills Collection
 
 ## 2026-07-09 - Systems Engineering (Cron Job)
+### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
+- [[quctrl-bell-compiler-quantum-control]] - Compiler-driven sub-microsecond feedback control stack for scalable trapped-ion ... (arXiv: 2605.22433)
+  - Core: compiler-driven-control, sub-microsecond-feedback, dsl-transpilation
+  - **Activation**: compiler-driven-control, sub-microsecond-feedback, dsl-transpilation, trapped-ion-control, cross-board-synchronization, deterministic-timing, ssa-conversion, register-allocation
+
 
 ### Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model Misspecification
 - [[q-dasc-safe-quantum-control]] - Safe quantum control deployment methodology — wrapping variational quantum circu... (arXiv: 2606.28834)
