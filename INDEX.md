@@ -2,6 +2,15 @@
 
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
+### Intrinsic-Noise Consolidation via Doob Barrier-Conditioned Diffusion
+- [[intrinsic-noise-consolidation-doob]] - Doob h-transform converts analog device noise into continual learning resource (arXiv: 2607.06924)
+  - Doob h-transform barrier conditioning for synaptic consolidation
+  - Intrinsic noise amplified by σ²∂_w log h creates noise-powered restoring force
+  - Validated on real BrainScaleS-2 neuromorphic hardware
+  - **Activation**: Doob h-transform, barrier conditioning, analog noise, neuromorphic continual learning, BrainScaleS-2, intrinsic noise consolidation, inverted-U retention
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
 ### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
 - [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation for inferring HH parameters from extracellular MEA (arXiv: 2607.04063)
   - Differentiable HH model inference from extracellular recordings (no intracellular needed)
