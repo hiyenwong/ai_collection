@@ -1,124 +1,121 @@
 ---
 name: quantum-linear-solver-beyond-condition
-category: quantum-algorithms
-description: Quantum linear system algorithms with complexity independent of condition number κ. Introduces truncation-based and filtering-based solvers that overcome the κ-barrier for solving Ax=b. (arXiv: 2607.07691)
-activation: quantum linear system, HHL algorithm, condition number barrier, quantum linear solver, truncation solver, filtering solver, effective condition number, quantum algorithm complexity
+category: quantum
+description: Quantum linear system algorithms with complexity independent of condition number - truncation-based and filtering-based solvers beyond the HHL kappa-barrier
+trigger_words: quantum linear solver, condition number independence, HHL improvement, block encoding, filtering-based solver, truncation solver, quantum Ax=b
 ---
 
-# Quantum Linear System Solvers Beyond the Condition Number
+# Quantum Linear Solver Beyond Condition Number (Q-QLS)
 
 ## Overview
 
-This work presents two quantum algorithms that solve linear systems Ax=b with complexity **independent of the condition number κ**, breaking the traditional κ-barrier that limits quantum linear system solvers.
-
-**Paper**: "Faster quantum linear system solver beyond the condition number" (arXiv:2607.07691, 2026-07-08)
-
-## Key Results
-
-### Truncation-Based Solver
-- Query complexity: O(κ_eff · polylog(κ_eff/ε)) queries to A
-- Optimal number of queries to |b⟩
-- Effective condition number κ_eff ≤ ||(A†A)^{-t/2}|x⟩||^{1/t} / ε^{1/t} for positive even integer t
-
-### Filtering-Based Solver
-- Query complexity: 6·||A^{-1†}|x⟩||/ε · ln(1/ε) to leading order
-- Extremely simple with favorable runtime prefactor
-- Includes solution norm estimator with same asymptotic cost
+Two quantum algorithms for solving normalized linear systems Ax = |b⟩ with query complexity independent of the spectral condition number κ = ‖A⁻¹‖, overcoming the traditional κ-barrier in quantum linear system solvers. Based on Dalzell, Li, and Su (arXiv:2607.07691, 2026).
 
 ## Problem Setting
 
-Standard input model:
-- A accessed through block encoding
-- |b⟩ prepared by a unitary
-- Goal: produce normalized solution |x⟩ to accuracy ε
+Given:
+- Matrix A accessed via block encoding
+- State |b⟩ prepared by unitary
+- Goal: produce normalized solution |x⟩ = A⁻¹|b⟩ / ‖A⁻¹|b⟩‖ to accuracy ε
 
-### Affine Dilation Model (Novel)
-- Encodes A and |b⟩ jointly
-- Allows further refinements of query complexity
+**Traditional HHL**: O(κ · polylog(κ/ε)) — scales linearly with condition number
 
-## Mathematical Foundation
+**This work**: O(κ_eff · polylog(κ_eff/ε)) where κ_eff ≪ κ for typical instances
 
-### Traditional κ-Barrier
-Standard quantum linear system solvers (HHL and variants) have complexity O(κ·polylog(κ/ε)), where κ = ||A^{-1}|| is the spectral condition number. This can significantly overestimate actual runtime for typical instances.
+## Algorithm 1: Truncation-Based Solver
 
-### Effective Condition Number Bounds
-For positive even integer t:
-```
-κ_eff ≤ ||(A†A)^{-t/2}|x⟩||^{1/t} / ε^{1/t}
-```
+### Core Idea
+Truncate the matrix inversion polynomial expansion based on effective condition number rather than worst-case κ.
 
-For positive odd integer t:
-```
-κ_eff ≤ ||A^{-1†}(A†A)^{-(t-1)/2}|x⟩||^{1/t} / ε^{1/t}
-```
+### Complexity
+- Queries to |b⟩: Optimal (minimal possible)
+- Queries to A: O(κ_eff · polylog(κ_eff/ε))
+- κ_eff bounds:
+  - κ_eff ≤ ‖(A†A)^(-t/2)|x⟩‖^(1/t) / ε^(1/t) for even t
+  - κ_eff ≤ ‖A^(-1†)(A†A)^(-(t-1)/2)|x⟩‖^(1/t) / ε^(1/t) for odd t
 
-These bounds overcome the κ-barrier by depending on the actual solution structure rather than worst-case conditioning.
-
-## Algorithm Design Patterns
-
-### Truncation Approach
-1. Expand solution in eigenbasis: |x⟩ = Σᵢ αᵢ|λᵢ⟩
-2. Truncate small eigenvalue contributions
-3. Use quantum signal processing for eigenvalue filtering
-4. Complexity depends on κ_eff, not κ
-
-### Filtering Approach
-1. Apply filter function to suppress small eigenvalues
-2. Use quantum amplitude amplification
-3. Solution: 6·||A^{-1†}|x⟩||/ε · ln(1/ε) queries
-
-## Implementation Considerations
-
+### Implementation Pattern
 ```python
-# Pseudocode for truncation-based solver
-def truncation_solver(A_block_encoding, b_state, epsilon, t=2):
+def truncation_qls(block_encoding_A, state_b, epsilon, t=2):
     """
-    Truncation-based quantum linear system solver
+    Truncation-based quantum linear system solver.
     
     Args:
-        A_block_encoding: Block encoding of matrix A
-        b_state: Quantum state |b⟩
+        block_encoding_A: Block encoding of matrix A
+        state_b: Prepared state |b⟩
         epsilon: Target accuracy
-        t: Power parameter for κ_eff bound (positive even integer)
-    
-    Returns:
-        Quantum state approximating |x⟩ = A^{-1}|b⟩ / ||A^{-1}|b⟩||
+        t: Polynomial degree parameter (even integer)
     """
     # 1. Estimate effective condition number
-    kappa_eff = estimate_effective_condition(A_block_encoding, t, epsilon)
+    kappa_eff = estimate_effective_condition(block_encoding_A, state_b, t)
     
-    # 2. Truncate small eigenvalues
-    truncated_state = apply_eigenvalue_truncation(
-        A_block_encoding, b_state, kappa_eff
+    # 2. Truncate polynomial expansion at optimal degree
+    poly_degree = optimal_truncation_degree(kappa_eff, epsilon)
+    
+    # 3. Apply truncated polynomial via block encoding
+    solution_state = apply_truncated_polynomial(
+        block_encoding_A, state_b, poly_degree
     )
     
-    # 3. Quantum signal processing for filtering
-    filtered_state = apply_qsp_filter(
-        truncated_state, kappa_eff, epsilon
-    )
-    
-    return filtered_state
+    return solution_state
 ```
+
+## Algorithm 2: Filtering-Based Solver
+
+### Core Idea
+Extremely simple filtering approach with favorable runtime prefactor.
+
+### Complexity
+- Leading order: 6 · ‖A^(-1†)|x⟩‖/ε · ln(1/ε) queries to A
+- Same asymptotic cost for solution norm estimation (up to log factors)
+
+### Implementation Pattern
+```python
+def filtering_qls(block_encoding_A, state_b, epsilon, known_norm=False):
+    """
+    Filtering-based quantum linear system solver.
+    
+    Args:
+        block_encoding_A: Block encoding of matrix A
+        state_b: Prepared state |b⟩
+        epsilon: Target accuracy
+        known_norm: Whether ‖A⁻¹|b⟩‖ is known a priori
+    """
+    if known_norm:
+        # Optimal: 6 * ||A^{-1†}|x⟩||/ε * ln(1/ε)
+        return filter_with_known_norm(block_encoding_A, state_b, epsilon)
+    else:
+        # First estimate norm, then filter
+        norm_est = estimate_solution_norm(block_encoding_A, state_b, epsilon)
+        return filter_with_estimated_norm(block_encoding_A, state_b, epsilon, norm_est)
+```
+
+## When to Use
+
+### Prefer Truncation-Based:
+- When effective condition number is significantly smaller than κ
+- When higher precision is needed (polylog scaling in 1/ε)
+- When matrix structure allows tight κ_eff bounds
+
+### Prefer Filtering-Based:
+- When simplicity is preferred
+- When solution norm is known or easy to estimate
+- When favorable constant factors matter more than asymptotic scaling
+
+## Key Insights
+
+1. **κ is a worst-case measure**: Typical problem instances have κ_eff ≪ κ
+2. **Solution-dependent bounds**: κ_eff depends on |x⟩ itself, not just A
+3. **Affine dilation model**: Joint encoding of A and |b⟩ allows further refinements
+4. **Norm estimation**: Solution norm can be estimated with same asymptotic cost
 
 ## Pitfalls
 
-- **Block encoding requirement**: Algorithm assumes efficient block encoding of A exists
-- **Solution state preparation**: Requires |b⟩ to be efficiently preparable
-- **Norm estimation**: Solution norm must be estimated separately (algorithm provides estimator)
-- **t parameter selection**: Higher t gives tighter bounds but may increase computational overhead
-- **Practical advantage**: Theoretical improvement may not translate to near-term quantum hardware
+- **Block encoding overhead**: The block encoding of A may itself be expensive
+- **State preparation**: Preparing |b⟩ efficiently is non-trivial for arbitrary vectors
+- **κ_eff estimation**: Requires additional quantum queries to bound
+- **Normalization**: Output is normalized state |x⟩, not the unnormalized solution vector
 
-## Comparison with Prior Work
+## Activation
 
-| Algorithm | Complexity | κ-dependent |
-|-----------|-----------|-------------|
-| HHL (original) | O(κ²·log(1/ε)) | Yes |
-| Improved HHL | O(κ·polylog(κ/ε)) | Yes |
-| Li (recent) | O(κ_eff·polylog) | Partially |
-| This work | O(κ_eff·polylog) | No (uses κ_eff) |
-
-## References
-
-- arXiv:2607.07691 — Faster quantum linear system solver
-- HHL algorithm (Harrow, Hassidim, Lloyd, 2009)
-- Quantum signal processing (Low, Yoder, Chuang, 2016)
+Use when: quantum linear systems, HHL improvement, condition number analysis, quantum algorithms, block encoding, quantum numerical linear algebra, quantum machine learning subroutines
