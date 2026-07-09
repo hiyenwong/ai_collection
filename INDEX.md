@@ -3109,3 +3109,29 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-07-10 - Deep Learning Research (Cron Job)
+
+### SAO: Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning
+- [[sao-single-rollout-async-rl]] - Replaces GRPO's group-wise sampling with single-rollout sampling to reduce off-policy effects in async training. Deployed for GLM-5.2 (750B-A40B) (arXiv: 2607.07508)
+  - Core: One rollout per prompt instead of group sampling, with double-side token-level clipping for stability
+  - Enables stable async training for 1000+ steps, outperforms GRPO on SWE-Bench, BeyondAIME, IMOAnswerBench
+  - **Activation**: sao, single-rollout, async-rl, grpo-alternative, off-policy-reduction
+
+### EPPO: Entropy Pacing Policy Optimization for Multi-Task Agentic RL
+- [[eppo-entropy-pacing-multi-task-rl]] - Coordinates entropy across tasks using dynamic clipping to prevent exploration-exploitation pace mismatch (arXiv: 2607.07178)
+  - Core: Task-wise dynamic clipping replaces fixed GRPO threshold, tightens for over-confident tasks, relaxes for under-explored
+  - Addresses entropy crossovers and spikes when tasks have different difficulty levels
+  - **Activation**: eppo, entropy-pacing, multi-task-rl, dynamic-clipping, entropy-crossover
+
+### GeoSD: Geometric Self-Distillation for Reasoning Generalization
+- [[geosd-geometric-self-distillation]] - Prevents OOD degradation during privileged-context self-distillation using Hellinger loss and Fisher-Rao proximal term (arXiv: 2607.06855)
+  - Core: Hellinger loss scales teacher preferences by student overlap; Fisher-Rao distance constrains drift in predictive behavior space
+  - Improves OOD accuracy by 5.7-8.6 points across 1.7B-32B models while preserving in-distribution gains
+  - **Activation**: geosd, geometric-distillation, hellinger-loss, fisher-rao, ood-preservation
+
+### TurnOPD: Turn-Level Budgeting for Efficient On-Policy Distillation
+- [[turn-opd-turn-level-budgeting]] - Addresses inefficiencies in long-horizon agent OPD via adaptive rollout-depth and progressive turn-normalized loss (arXiv: 2607.05804)
+  - Core: Probe-based rollout depth selection + progressive shift from token-level to turn-balanced KL weighting
+  - Eliminates wasted compute on noisy tail turns, ensures deep decision turns are trained
+  - **Activation**: turn-opd, turn-level-budgeting, rollout-depth, progressive-loss, long-horizon-agents
