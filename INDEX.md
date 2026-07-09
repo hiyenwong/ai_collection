@@ -61,6 +61,22 @@
 
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
+### Quantifying Entrainment Evidence: Bayesian vs Frequentist Approaches for IPPMs
+- [[bayesian-ippm-cortical-entrainment]] - Bayesian framework for Information Processing Pathway Maps replacing frequentist null hypothesis testing with probabilistic model comparison for cortical entrainment mapping (arXiv: 2607.06284)
+  - Shifts from rejecting null hypothesis to quantifying relative evidence for competing computational hypotheses
+  - Handles collinear models and robust evidence accumulation across studies via Bayes factors
+  - Validated on auditory neuroimaging dataset reconstructing known loudness-processing pathway
+  - **Activation**: IPPM, cortical entrainment, Bayesian model comparison, information processing pathway, temporal response function, auditory processing, EEG MEG analysis, model adjudication
+
+### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
+- [[scalable-perturbation-learning-esn]] - Orthogonal decomposition of SSL cost reduces perturbation dimension from reservoir size to input dimension, enabling scalable hardware-compatible online learning (arXiv: 2607.06079)
+  - Resolves tension between self-supervised adaptation, online learning, and memory-efficient perturbation-based learning
+  - Design principle: online learning should be restricted to the dynamically necessary low-dimensional component
+  - Variance independent of reservoir size — compatible with neuromorphic hardware implementation
+  - **Activation**: echo state network, reservoir computing, perturbation learning, online self-supervised learning, scalable ESN, orthogonal decomposition, hardware-compatible learning, neuromorphic
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
 ### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
 - [[differentiable-biophysical-simulation-neurostimulation]] - Infer Hodgkin-Huxley parameters from extracellular MEA data using differentiable simulation, replacing hours of invasive testing with minutes of recording (arXiv: 2607.04063)
   - Multi-compartment HH models with differentiable simulation enable simulation-based inference
