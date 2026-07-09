@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation for inferring HH parameters from extracellular MEA (arXiv: 2607.04063)
+  - Differentiable HH model inference from extracellular recordings (no intracellular needed)
+  - 90.6% accuracy predicting neural responses from minutes of data
+  - **Activation**: differentiable simulation, Hodgkin-Huxley, neurostimulation, MEA, extracellular recording, biophysical inference, simulation-based inference
+
+### Microsecond-Precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[equilibrium-dynamics-sound-localization]] - Equilibrium dynamics framework for ITD coding, replacing Jeffress place-coding (arXiv: 2607.03890)
+  - ITD as stable equilibrium of E/I interactions across frequency channels
+  - Microsecond precision from slow dynamics without delay lines
+  - **Activation**: sound localization, ITD, equilibrium dynamics, Jeffress model, binaural perception, auditory neuroscience
+
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
 
 ### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
