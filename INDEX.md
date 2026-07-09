@@ -47,6 +47,20 @@
   - Explains coexistence of microsecond sensitivity and sluggish binaural tracking without explicit delay lines
   - **Activation**: equilibrium-dynamics-sound-localization, ITD-population-coding, beyond-jeffress, auditory-equilibrium, microsecond-precision-slow-dynamics, cross-frequency-integration
 
+### Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hyperbolic-learning-brain-graphs]] - Hyperbolic Learning on Brain Graphs (HLBG) models hierarchical brain network organization across ROI, community, and whole-brain levels using Lorentzian hyperbolic space (arXiv: 2607.07077)
+  - Projects multi-level brain representations into Lorentzian hyperbolic space with geometric entailment constraints
+  - Graph-aware Mamba (GaMamba) incorporates topology-derived structural prompts for long-range dependencies
+  - Outperforms SOTA on ABIDE-I (ASD) and REST-MDD datasets with interpretable biomarkers
+  - **Activation**: hyperbolic-learning, brain-graphs, hierarchical-networks, Lorentzian-space, Graph-aware-Mamba, disorder-diagnosis, geometric-entailment
+
+### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
+- [[bus-brain-inspired-self-reflection-vlm]] - Brain-inspired backward prediction framework for label-free VLM reasoning enhancement (arXiv: 2607.07361)
+  - Verifies VLMs can perform backward prediction (future state → plausible current states), mirroring human brain
+  - Unsupervised self-reflection via backward prediction provides learning signal without annotated reasoning data
+  - Compatible with SFT and RL fine-tuning; improves 8 complex visual reasoning benchmarks
+  - **Activation**: backward-prediction, self-reflection, VLM-reasoning, unsupervised-learning, brain-inspired-AI, multimodal-reasoning
+
 ## 2026-07-09 - Systems Engineering + Quantum Control (Cron Job)
 
 ### Tractable Infinite-Horizon SMPC for Quantum Filtering via Eigenstate Reduction
