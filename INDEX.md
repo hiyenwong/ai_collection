@@ -57,6 +57,12 @@
   - Connects to active inference framework for information-maximizing evidence selection
   - **Activation**: quantum confirmation bias, adaptive confirmation, square-root probability, quantum hypothesis testing, active quantum inference, optimal evidence selection, confirmation bias rationality
 
+### Towards Minimax Estimation of High-Order Functionals by Quantum Arguments
+- [[quantum-minimax-functional-estimation]] - Quantum algorithms for minimax estimation of high-order functionals (Rényi/Tsallis entropy) achieving optimal sample complexity O(α) vs prior O(α²) (arXiv: 2607.07540)
+  - Unified quantum primitive framework for both classical distribution and quantum state functionals
+  - Achieves minimax optimal L₂ rate α·n⁻¹ in range α ≲ n ≲ α^{3-o(1)}
+  - Reveals path from quantum computing to classical statistics — quantum algorithms as proof techniques
+  - **Activation**: quantum minimax estimation, Rényi entropy quantum, quantum functional estimation, quantum statistics sample complexity, high-order functional estimation, quantum primitives
 
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Hourly)
 
