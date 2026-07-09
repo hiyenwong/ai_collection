@@ -30,7 +30,36 @@
   - Central application: predict neural spiking responses to electrical stimulation for DBS optimization
   - **Activation**: Hodgkin-Huxley, differentiable simulation, neurostimulation, MEA, biophysical parameters, simulation-based inference, DBS
 
+### Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hyperbolic-learning-brain-graphs]] - First framework to explicitly model ROI→community→whole-brain hierarchical relationships in Lorentzian hyperbolic space for brain disorder diagnosis (arXiv: 2607.07077)
+  - Introduces Graph-aware Mamba (GaMamba) with topology-derived structural prompts for long-range dependency capture
+  - Hierarchical entailment constraints enforce geometric hierarchy in hyperbolic space
+  - Outperforms SOTA on ABIDE-I (78.2%) and REST-MDD (82.5%) with interpretable biomarker discovery
+  - **Activation**: hyperbolic space, brain graph, hierarchical brain network, Lorentzian space, brain disorder diagnosis, functional connectivity, Graph-aware Mamba, GaMamba
+
 ## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### QAOA Measurement Number Scaling: Statistical Analysis of Shot Budget Allocation
+- [[qaoa-shot-scaling]] - Statistical methodology for QAOA shot budget allocation revealing counterintuitive scaling where total shot budget decreases with instance size for specific graph classes (arXiv: 2607.03340)
+  - Derives sufficient conditions on shots per cost evaluation for relative error δ and confidence 1-ε
+  - Explicit SGD convergence bounds with iteration count guarantees
+  - Counterintuitive scaling: larger MaxCut instances on certain graph topologies require fewer total shots
+  - Practical adaptive shot-budget allocation rules for QAOA optimization
+  - **Activation**: qaoa shot budget, qaoa measurement statistics, quantum measurement scaling, qaoa parameter optimization, shot allocation, maxcut quantum
+
+### Faster Quantum Linear System Solver Beyond the Condition Number
+- [[quantum-linear-solver-beyond-condition]] - Two quantum algorithms for Ax=|b⟩ with complexity independent of condition number κ, breaking the HHL κ-barrier (arXiv: 2607.07691)
+  - Truncation-based solver: O(κ_eff · polylog(κ_eff/ε)) with effective condition number bounds
+  - Filtering-based solver: 6·‖A^(-1†)|x⟩‖/ε · ln(1/ε) with favorable constant prefactors
+  - Affine dilation model for joint encoding of A and |b⟩
+  - **Activation**: quantum linear solver, condition number independence, HHL improvement, block encoding, filtering-based solver, quantum Ax=b, effective condition number
+
+### Error Bounds for Truncated BCH and Zassenhaus Formulas in Unitary Problems
+- [[bch-zassenhaus-error-bounds]] - General strategy for rigorous error bounds and explicit error constants for BCH and Zassenhaus formulas with skew-adjoint operators (arXiv: 2607.07692)
+  - Critical for quantum evolution problems, Trotterization error analysis, quantum simulation accuracy
+  - Exploits skew-adjoint property for tighter bounds on unitary operators
+  - Explicit numerical constants (not just asymptotic) for practical quantum algorithm design
+  - **Activation**: BCH error bounds, Zassenhaus formula, Trotter error analysis, quantum simulation accuracy, unitary error bounds, skew-adjoint operators
 
 ### Quantum Probabilistic Local Differential Privacy: Structural Properties and Sample Complexity Bounds
 - [[quantum-probabilistic-differential-privacy]] - Relaxed quantum local differential privacy with probabilistic violation bounds, hockey-stick divergence connections, and sample complexity bounds for quantum hypothesis testing (arXiv: 2607.06307)

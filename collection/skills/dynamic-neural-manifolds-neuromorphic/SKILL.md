@@ -1,108 +1,113 @@
 ---
 name: dynamic-neural-manifolds-neuromorphic
-description: Dynamic neural manifolds methodology for neuromorphic hardware implementation. Bridges computational neuroscience with SpiNNaker 2 chip for real-time closed-loop robotic control through parameterizable manifold geometry.
-tags: [neuromorphic, neural-manifolds, spiking-neural-networks, spinnaker, closed-loop-control, robotics]
+description: Dynamic neural manifolds methodology for flexible closed-loop control on neuromorphic hardware (SpiNNaker 2). Maps circuit mechanisms to manifold geometry for explainable autonomous behavior.
+trigger_words:
+  - neural manifold
+  - dynamic manifold
+  - neuromorphic control
+  - SpiNNaker 2
+  - subspace rotation
+  - closed-loop control
+  - bump attractor
+  - ring network
+categories:
+  - neuroscience
+  - neuromorphic
+  - computational neuroscience
+  - brain-inspired control
 arxiv_id: "2607.07373v1"
-date: 2026-07-08
+date_added: "2026-07-10"
 ---
 
-# Dynamic Neural Manifolds for Neuromorphic Hardware
+# Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
 
 ## Overview
 
-This methodology implements dynamic neural manifolds on SpiNNaker 2 neuromorphic hardware for real-time, closed-loop control. The approach maps biological neural dynamics (sequential activity evolving along low-dimensional manifolds) to neuromorphic engineering, enabling explainable autonomous systems.
+This methodology implements **dynamic neural manifolds** on the SpiNNaker 2 neuromorphic chip for real-time, closed-loop control. The core insight is that biological sequential neural activity evolves along low-dimensional manifolds, and specific circuit mechanisms serve as "control knobs" for manifold geometry.
 
-## Core Concepts
+**Paper**: von Seeler, Tetzlaff & Lehr (2026). Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware. arXiv:2607.07373v1
 
-### Neural Manifolds
-- Collective neural activity represented as trajectories in N-dimensional state space
-- Biological activity constrained to low-dimensional manifolds capturing latent task variables
-- Geometric features map to behavioral execution (subspace rotations for behavior switching, trajectory speed for timing control)
+## Core Architecture
 
-### Circuit Mechanisms as Control Knobs
-Three key mechanisms enable dynamic manifold control:
+### Ring Network with Control Mechanisms
 
-1. **Heterogeneous Inhibition** → Subspace reorientation
-   - Inhibitory ensembles silence random neuron subsets
-   - Switching ensembles rotates neural subspace (angle = arccos(1-p_inh))
-   - Enables behavior state switching
+The architecture uses a **ring network** (500 neurons, 20% connectivity) with asymmetric recurrent connections that generates a stable bump of activity propagating around the ring. Three control mechanisms modulate the manifold geometry:
 
-2. **Gain Modulation** → Trajectory speed control
-   - Multiplicative gain S affects bump propagation speed
-   - Controls neural trajectory velocity in state space
+1. **Shape Control (Additive Current I)**: Controls bump width → trajectory radius
+   - Positive I → larger bump → larger trajectory radius
+   - Negative I → smaller bump → smaller trajectory radius
 
-3. **Transient Currents** → Trajectory shape/radius
-   - Additive current I changes active neuron count
-   - Controls bump size and trajectory radius
+2. **Speed Control (Multiplicative Gain S)**: Controls propagation speed → trajectory velocity
+   - Higher S → faster bump propagation → faster neural trajectory
+   - Maps directly to movement timing control
 
-### SpiNNaker 2 Implementation
-- Ring network with asymmetric recurrent connectivity
-- Activity bump propagates around ring (oscillatory sequences)
-- Spike-based communication with probabilistic rate-to-spike conversion
-- Circulant weight matrix with sparsity for memory efficiency
-- Streaming architecture: control parameters in, spikes out for closed-loop
+3. **Subspace Selection (Heterogeneous Inhibition p_inh)**: Controls manifold orientation
+   - Random silencing of neuron subsets rotates the neural subspace
+   - Angle between subspaces = arccos(1 - p_inh)
+   - Enables switching between behavioral states (e.g., steering vs. jumping)
 
-## Key Results
+### Key Mathematical Relationships
 
-### Validation
-- SpiNNaker 2 implementation matches rate-based CPU model across parameter ranges
-- Subspace rotations follow theoretical scaling (arccos(1-p_inh))
-- Speed control linear with gain parameter
-- Shape control linear with current parameter
-
-### Robotic Application
-- Two-wheeled agent navigates virtual maze
-- 500 neurons, 20% connectivity, 3 subspaces (40% neurons each)
-- Subspaces encode: forward movement, turning, jumping
-- Sensory feedback dynamically modulates control parameters
-- Readout weights trained via random exploration (200 actions × 250ms)
-
-### Efficiency
-- Runtime scales linearly with spike count
-- 500 neurons, 20% connectivity: well below 1ms real-time threshold
-- Execution time ∝ mean spike count per timestep
-
-## Methodology
-
-### Implementation Steps
-1. Design ring network with asymmetric recurrent weights
-2. Implement control neuron populations (speed, shape, selection)
-3. Map to SpiNNaker 2 with spike-based communication
-4. Optimize: circulant weights, sparsity mask, streaming I/O
-5. Train readout weights from network activity to motor commands
-6. Close loop: sensory input → control parameters → network activity → action
-
-### Control Parameter Mapping
 ```
-Sensory Input → Control Parameters → Manifold Geometry → Motor Output
-- Wall distance → Speed (S) → Trajectory velocity → Wheel speed
-- Ground type → Shape (I) → Bump size → Movement mode
-- Plan step → Selection (p_inh) → Subspace → Behavior type
+Subspace rotation angle: θ = arccos(1 - p_inh)
+Trajectory speed: v ∝ S (multiplicative gain)
+Bump size: N_active ∝ I (additive current)
+```
+
+## Implementation on SpiNNaker 2
+
+### Optimizations for Hardware
+
+- **Spike-based communication**: Probabilistic rate-to-spike conversion reduces inter-chip communication
+- **Circulant weight matrix**: Store single row + sparsity mask (50% sparsity) to save memory
+- **Streaming architecture**: Control parameters streamed in, spikes streamed out (overcomes 128kB SRAM limit)
+- **Real-time performance**: <1ms per timestep for 500 neurons, 20% connectivity
+
+### Closed-Loop Control Architecture
+
+```
+[Sensory Input] → [Control Parameter Generator] → [SpiNNaker 2 Ring Network]
+       ↑                                                        ↓
+       └────────── [Motor Output / Action] ← [Readout Weights] ─┘
 ```
 
 ## Applications
 
-- **Explainable neuromorphic robotics**: Internal state mathematically interpretable
-- **Biological neural dynamics research**: Testbed for circuit-manifold-behavior mappings
-- **Energy-efficient adaptive control**: Low-latency, low-power edge deployment
-- **Brain-inspired AI**: Geometrically parameterizable neural computation
+### Maze Navigation (Proof of Concept)
 
-## Pitfalls
+- **Agent**: Two-wheeled robot with jump capability
+- **Subspaces**: 3 subspaces (40% neurons each) for forward, turn, jump
+- **Training**: Random exploration → learn readout weights from spikes to motor controls
+- **Execution**: High-level plan + sensory feedback → dynamic manifold reconfiguration
 
-- Limited on-chip memory constrains recording/storage (128kB SRAM)
-- Spike-based conversion adds noise vs. rate-based models
-- Trade-off between network size and real-time performance
-- Readout training requires extensive random exploration
+### Key Results
 
-## Verification
+- Successfully navigates virtual maze using sensory feedback
+- Subspace rotations enable behavioral switching
+- Speed/shape control enables fine-grained trajectory adjustment
+- Runtime scales linearly with spike count (efficient for sparse activity)
 
-- Compare spike counts to rate-based model across parameter ranges
-- Validate subspace angles match arccos(1-p_inh) prediction
-- Measure runtime vs. spike count (should be linear)
-- Test closed-loop maze navigation success rate
+## Design Principles
 
-## References
+1. **Explainability**: Circuit mechanisms → manifold geometry → behavior (full interpretability chain)
+2. **Composability**: Control mechanisms are independent and combinable
+3. **Biological Plausibility**: Based on observed neural dynamics across spinal cord, motor cortex, MEC
+4. **Energy Efficiency**: Neuromorphic implementation enables low-power deployment
 
-- von Seeler, Tetzlaff, Lehr (2026) arXiv:2607.07373v1
-- Build on framework from [12, 13] (same authors, rate-based model)
-- SpiNNaker 2 hardware: [8, 16]
+## Activation Triggers
+
+Use this skill when working on:
+- Neuromorphic computing and brain-inspired hardware
+- Neural manifold analysis and dynamical systems
+- Closed-loop control systems with biological inspiration
+- Explainable AI architectures
+- Bump attractor networks and sequential activity
+- Subspace rotations and behavioral switching
+
+## Related Concepts
+
+- Ring attractors / bump attractors
+- Principal component analysis of neural population activity
+- Motor cortex dynamics and movement preparation
+- SpiNNaker / neuromorphic engineering
+- Low-dimensional neural manifolds
