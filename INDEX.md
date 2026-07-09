@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Infer Hodgkin-Huxley parameters from extracellular MEA data using differentiable simulation, replacing hours of invasive testing with minutes of recording (arXiv: 2607.04063)
+  - Multi-compartment HH models with differentiable simulation enable simulation-based inference
+  - Achieves 90.6% accuracy predicting stimulation responses from only minutes of recording
+  - Validated on macaque retina with 512-electrode array (30 μm pitch)
+  - **Activation**: Hodgkin-Huxley, differentiable simulation, neurostimulation, MEA, biophysical inference, extracellular recording
+
+### Geometric Stability of Neural Population Codes: Regional Variation, Behavioral Relevance, and Circuit Dependence
+- [[geometric-stability-neural-population-codes]] - Shesha metric quantifies pairwise distance structure reproducibility across split-half RDMs, dissociable from temporal stability and decoding accuracy (arXiv: 2606.29655)
+  - Geometric stability predicts trial-by-trial neural-behavioral coupling (ρ=0.18, p=0.005) while temporal stability does not
+  - Regional hierarchy: striatum most stable (S̄=0.44), hippocampus least (S̄=0.19)
+  - Attractor network model with recurrent excitation explains RDM consistency amplification
+  - **Activation**: geometric stability, Shesha, split-half RDM, representational dissimilarity, neural population code, striatum, hippocampus, attractor network
+
+
 ## 2026-07-09 - Systems Engineering & Quantum Mechanics (Cron Job)
 
 ### Finite Reliability Representations: Noise-Calibrated Belief-Space Covers for Reliable Decision-Making
