@@ -1,38 +1,157 @@
+# Skills Collection
+
+## 2026-07-09 - Systems Engineering (Cron Job)
+
+### Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model Misspecification
+- [[q-dasc-safe-quantum-control]] - Safe quantum control deployment methodology — wrapping variational quantum circu... (arXiv: 2606.28834)
+  - Core: safe-quantum-control, vqc-policy, model-misspecification
+  - **Activation**: safe-quantum-control, vqc-policy, model-misspecification, certified-safety-layer, false-discovery-rate, shrinkage-repair, comfort-feasible-projection, nisq-noise-invariant
+
 # AI Collection Index
 
-## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+## 2026-07-09 - Neuroscience Research (Cron Job)
 
-### Quantum Probabilistic Local Differential Privacy: Structural Properties and Sample Complexity Bounds
-- [[quantum-probabilistic-differential-privacy]] - Relaxed quantum local differential privacy with probabilistic violation bounds, hockey-stick divergence connections, and sample complexity bounds for quantum hypothesis testing (arXiv: 2607.06307)
-  - Quantum probabilistic LDP allows privacy constraint failure on low-probability spectral events
-  - Connected to quantum Neyman-Pearson test acceptance probability
-  - Tensor-product composition properties; NOT closed under arbitrary quantum channels
-  - Sample complexity bounds for privatized asymmetric/symmetric quantum hypothesis testing
-  - **Activation**: quantum differential privacy, quantum local differential privacy, probabilistic privacy, quantum hypothesis testing, privacy sample complexity, hockey-stick divergence, quantum privacy loss
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifold-snn-control]] - Sensory-modulated heterogeneous inhibition drives subspace rotations for behavior switching on SpiNNaker 2 (arXiv: 2607.07373)
+  - Low-dimensional neural manifolds parameterized via circuit mechanisms (inhibition, gain, transients)
+  - Subspace rotations enable rapid behavior switching with fine-grained trajectory control
+  - Validated on SpiNNaker 2 chip for real-time robotic maze navigation
+  - **Activation**: neural manifolds, subspace rotation, neuromorphic control, SpiNNaker2, closed-loop control, behavior switching, heterogeneous inhibition, explainable SNN, robotic navigation
 
-### Concentration of Measure Phenomena for Quantum States on a Higher Dimensional Equator
-- [[concentration-measure-quantum-states]] - Extended Levy lemma for hyper-equatorial concentration of Lipschitz observables, with applications to quantum entanglement and statistical query learning (arXiv: 2606.29487)
-  - Isolates hyper-equatorial part of spherical concentration argument
-  - Levy-type bound for Lipschitz functions on fixed hyperequator with dimension d-1
-  - Geometric localization via neighborhoods of boundary, hyperequator, and antipodal great subsphere
-  - Applications in quantum entanglement analysis and quantum statistical query learning
-  - **Activation**: concentration of measure, levys lemma, quantum state concentration, hyper-equatorial, lipschitz quantum, quantum statistical learning, quantum entanglement concentration
+## 2026-07-09 - Systems Engineering + Quantum Control (Cron Job)
 
-### Finite-Shot Sensitivity for Moment Estimation in Quantum Metrology
-- [[finite-shot-quantum-metrology]] - Finite-measurement theory for method-of-moments estimation with O(nu^{-3}) bias-corrected estimators and sensitivity thresholds (arXiv: 2606.25920)
-  - Bias-corrected estimator achieves O(nu^{-3}) bias beyond asymptotic regime
-  - Density-matrix condition for vanishing 1/nu^2 correction term
-  - Unitary examples: leading correction at O(1/nu^3), governed by calibration curvature
-  - Higher-rank observable components can reduce or cancel corrections
-  - **Activation**: finite-shot, quantum metrology, method of moments, cramér-rao, bias-corrected estimator, sensitivity correction, quantum parameter estimation, moment estimation
+### Tractable Infinite-Horizon SMPC for Quantum Filtering via Eigenstate Reduction
+- [[eigenstate-reduction-quantum-smcp]] - Collapse infinite-horizon stochastic MPC to closed-form fidelity via eigenstate reduction (arXiv: 2511.05916)
+  - Almost-sure eigenstate reduction eliminates per-horizon Monte Carlo sampling
+  - Closed-form fidelity from one-step averaged state with mean-square stability guarantees
+  - Validated on multi-level and Ising-type coupled systems
+  - **Activation**: stochastic model predictive control, quantum SMPC, quantum filtering, eigenstate reduction, quantum trajectory, continuous measurement, mean-square stability, quantum optimal control, receding horizon quantum control
 
-### The Adaptive Nature of Confirmation Bias
-- [[quantum-confirmation-bias-adaptive]] - Quantum probability framework revealing confirmation bias as optimal evidence selection with evolutionary advantages in sequential hypothesis testing (arXiv: 2606.23325)
-  - Observations modeled by matrices on square-root probability space (not classical random variables)
-  - Optimal evidence choice in binary hypothesis testing inherently produces confirmation bias
-  - Two evolutionary advantages: minimal memory capacity + exponentially reduced error probability
-  - Connects to active inference framework for information-maximizing evidence selection
-  - **Activation**: quantum confirmation bias, adaptive confirmation, square-root probability, quantum hypothesis testing, active quantum inference, optimal evidence selection, confirmation bias rationality
+### Centralizing Task-based Approach to Quantum Network Control
+- [[centralized-task-quantum-network-control]] - Resource-centric centralized controller replaces layered protocol stacks for quantum networks (arXiv: 2605.03336)
+  - Priority-based scheduler tracks global quantum memory availability across all nodes
+  - Caveman and grid topologies outperform star; star saturates fast under high load
+  - Validated on SeQUeNCe simulator with bottleneck, grid, star, caveman topologies
+  - **Activation**: quantum network control, centralized quantum controller, task-based scheduling, SeQUeNCe simulator, quantum network topology, entanglement generation, priority scheduling, resource-centric quantum network
+
+### Affiliated Operators for Classical and Quantum Control
+- [[von-neumann-algebra-quantum-controllability]] - Von Neumann algebra framework for controllability of bilinear systems on infinite-dimensional Hilbert spaces (arXiv: 2605.13774)
+  - Proves time-optimal control existence for operators affiliated with finite-type von Neumann algebras
+  - Dynamical Lie algebra well-defined even for unbounded operators
+  - Unified framework applies to classical systems via Koopman operator formalism
+  - **Activation**: von Neumann algebra controllability, bilinear quantum control, infinite-dimensional Hilbert space, time-optimal quantum control, Koopman operator control, dynamical Lie algebra unbounded, approximate controllability quantum, operator affiliation theory
+
+### Single-Entity Spiking Neuron Models: Survey
+- [[single-entity-spiking-neuron-survey]] - Comprehensive survey of single-neuron mathematical models covering LIF, EIF, AdEx, Izhikevich, HH, FHN, Morris-Lecar (arXiv: 2607.07429)
+  - Taxonomy of spiking neuron models by biological fidelity vs computational cost
+  - Covers integrate-and-fire variants, conductance-based models, and discrete/continuous analogs
+  - **Activation**: spiking neuron model, neuron model survey, LIF, EIF, Izhikevich, AdEx, Hodgkin-Huxley, FitzHugh-Nagumo, Morris-Lecar, membrane potential, biologically plausible neuron
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Intrinsic-Noise Consolidation via Doob Barrier-Conditioned Diffusion
+- [[intrinsic-noise-consolidation-doob]] - Doob h-transform converts analog device noise into continual learning resource (arXiv: 2607.06924)
+  - Doob h-transform barrier conditioning for synaptic consolidation
+  - Intrinsic noise amplified by σ²∂_w log h creates noise-powered restoring force
+  - Validated on real BrainScaleS-2 neuromorphic hardware
+  - **Activation**: Doob h-transform, barrier conditioning, analog noise, neuromorphic continual learning, BrainScaleS-2, intrinsic noise consolidation, inverted-U retention
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation for inferring HH parameters from extracellular MEA (arXiv: 2607.04063)
+  - Differentiable HH model inference from extracellular recordings (no intracellular needed)
+  - 90.6% accuracy predicting neural responses from minutes of data
+  - **Activation**: differentiable simulation, Hodgkin-Huxley, neurostimulation, MEA, extracellular recording, biophysical inference, simulation-based inference
+
+### Microsecond-Precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[equilibrium-dynamics-sound-localization]] - Equilibrium dynamics framework for ITD coding, replacing Jeffress place-coding (arXiv: 2607.03890)
+  - ITD as stable equilibrium of E/I interactions across frequency channels
+  - Microsecond precision from slow dynamics without delay lines
+  - **Activation**: sound localization, ITD, equilibrium dynamics, Jeffress model, binaural perception, auditory neuroscience
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
+- [[quantum-certification-fpga]] - Systems Engineering + Quantum (arXiv: 2607.07597)
+  - QAccCert framework for quantum certification via CHSH inequality
+  - LLM-guided optimization achieves 99.94% of theoretical max 2√2
+  - **Activation**: quantum certification, QAccCert, CHSH inequality, FPGA quantum, entanglement verification, quantum software engineering, LLM quantum optimization
+
+### Quantum Software Engineering Practice: Hardware-Aware Compilation and AI Integration
+- [[quantum-software-engineering-practice]] - FPGA-based quantum control with AI-assisted calibration (arXiv: 2607.07597, 2605.26021)
+  - Hardware-aware compilation with real-time calibration feedback
+  - Physics-informed LLMs for quantum control sequence generation
+  - Fault-tolerant quantum computing workflow patterns
+  - **Activation**: quantum software engineering, FPGA quantum control, quantum AI integration, quantum compilation, real-time quantum feedback, fault-tolerant quantum computing
+
+### Physics-Informed Large Language Models for General Quantum Control
+- [[vf-qctrl-llm-quantum-control]] - Physics-informed LLM framework for quantum pulse optimization (arXiv: 2605.26021)
+  - VF-QCTRL combines LLM generation with physics constraint validation
+  - Reduces parameter sweeps through learned control heuristics
+  - **Activation**: physics-informed LLM, quantum pulse optimization, VF-QCTRL, quantum control, NMR quantum, optimal control
+
+### Quantum Network Performance Metrics: Challenges and Opportunities
+- [[quantum-network-systems-engineering]] - Standardized performance metrics for quantum network evaluation (arXiv: 2607.05642)
+  - Entanglement rate, fidelity, latency, throughput, reliability metrics
+  - Layered architecture design patterns for quantum networks
+  - Error model validation against experimental data
+  - **Activation**: quantum network, quantum internet, distributed quantum computing, quantum repeaters, entanglement distribution, quantum network metrics
+
+### Limitations of Error Model Approximations in Quantum Networks
+- [[quantum-network-error-models]] - Analysis of simplified error models in quantum networks (arXiv: 2607.00998)
+  - Correlated errors cause 10-100x performance overestimation
+  - Memory decoherence as primary bottleneck
+  - Dynamic routing based on real-time metrics
+  - **Activation**: quantum error models, correlated errors, quantum network reliability, entanglement swapping, quantum memory
+
+### Progressive Crystallization: Turning Agent Exploration into Deterministic, Lower-Cost Workflows in Production
+- [[progressive-crystallization]] - Systems Engineering (arXiv: 2607.07052)
+  - Three-stage taxonomy: agent-orchestrated → hybrid → deterministic workflows
+  - Evidence-based promotion/demotion mechanism for workflow lifecycle management
+  - **Activation**: progressive crystallization, agent crystallization, deterministic workflow, agent cost reduction, AIOps workflow, agent lifecycle
+
+### Q-DASC: Discrepancy-Attributed Safe Quantum Control
+- [[q-dasc-safe-quantum-control]] - Safety-certified variational quantum control with FDR-based misspecification detection (arXiv: 2606.28834)
+  - Wraps VQC policy with certified classical safety layer
+  - Reduces comfort violation from 26% to 0.02% on building emulators
+  - **Activation**: safe quantum control, Q-DASC, VQC safety, FDR control, HVAC quantum control, NISQ safety, quantum policy safety
+
+### QuCtrl-BELL: Compiler-Driven Sub-Microsecond Feedback Control Stack
+- [[quctrl-bell-compiler-quantum-control]] - Compiler-driven trapped-ion quantum control with <700ns feedback latency (arXiv: 2605.22433)
+  - Six-stage transpilation: CFG → SSA → liveness → register allocation
+  - Cross-board synchronization with sub-microsecond feedback loops
+  - **Activation**: QuCtrl-BELL, trapped-ion control, quantum compiler, feedback control, DSL quantum, register allocation, quantum control stack
+
+### QMLC: Generative Quantum Circuit Synthesis from Gate Set Tomography
+- [[generative-quantum-circuit-synthesis]] - End-to-end hardware-native circuit synthesis from GST data via diffusion models (arXiv: 2605.01367)
+  - Curriculum learning + set-vision transformer for concept space learning
+  - Context-aware: captures crosstalk and drift that isolated gate metrics miss
+  - **Activation**: QMLC, quantum circuit synthesis, GST, gate set tomography, hardware-native circuit, generative quantum, diffusion quantum circuit
+
+### Coherent Feedback H∞ Control of Quantum Linear Systems
+- [[coherent-feedback-h-infinity-quantum-control]] - Simplified H∞ quantum control using Lyapunov equations instead of Riccati equations (arXiv: 2604.06574)
+  - Solves ≤4 Lyapunov equations vs 2 coupled AREs
+  - Demonstrated on optical cavity and parametric amplifier
+  - **Activation**: coherent feedback, H-infinity quantum, quantum linear system control, Lyapunov quantum control, quantum robust control, quantum optical control
+
+### Risk-Averse Ensemble Control for Control-Affine Systems
+- [[risk-averse-ensemble-quantum-control]] - Risk-averse ensemble control with rigorous regularity theory for quantum control & Neural ODEs (arXiv: 2605.02791)
+  - Weak-to-strong continuity, Fréchet differentiability of control-to-state mapping
+  - Primal/dual optimality conditions with adjoint state of bounded variation
+  - **Activation**: risk-averse ensemble control, ensemble control, control-affine systems, quantum ensemble control, Neural ODE training, robust ensemble optimization, CVaR ensemble control
+
+### QCNN with Rough Path Signature Kernels
+- [[qcnn-rough-path-signature]] - Quantum Machine Learning (arXiv: 2607.07634)
+  - Signature kernels provide time-reparameterization invariance for time series
+  - Hybrid QCNN architecture with VQLS-based signature computation
+  - **Activation**: QCNN, signature kernel, quantum convolutional neural network, time series classification, rough path signature, VQLS
+
+### Faster quantum linear system solver beyond the condition number
+- [[quantum-linear-solver-beyond-condition]] - Quantum Algorithms (arXiv: 2607.07691)
+  - Two algorithms with complexity independent of condition number κ
+  - Truncation-based and filtering-based solvers overcoming κ-barrier
+  - **Activation**: quantum linear system, HHL algorithm, condition number barrier, quantum linear solver, truncation solver, filtering solver
 
 
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Hourly)
@@ -3144,29 +3263,3 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
-
-## 2026-07-10 - Deep Learning Research (Cron Job)
-
-### SAO: Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning
-- [[sao-single-rollout-async-rl]] - Replaces GRPO's group-wise sampling with single-rollout sampling to reduce off-policy effects in async training. Deployed for GLM-5.2 (750B-A40B) (arXiv: 2607.07508)
-  - Core: One rollout per prompt instead of group sampling, with double-side token-level clipping for stability
-  - Enables stable async training for 1000+ steps, outperforms GRPO on SWE-Bench, BeyondAIME, IMOAnswerBench
-  - **Activation**: sao, single-rollout, async-rl, grpo-alternative, off-policy-reduction
-
-### EPPO: Entropy Pacing Policy Optimization for Multi-Task Agentic RL
-- [[eppo-entropy-pacing-multi-task-rl]] - Coordinates entropy across tasks using dynamic clipping to prevent exploration-exploitation pace mismatch (arXiv: 2607.07178)
-  - Core: Task-wise dynamic clipping replaces fixed GRPO threshold, tightens for over-confident tasks, relaxes for under-explored
-  - Addresses entropy crossovers and spikes when tasks have different difficulty levels
-  - **Activation**: eppo, entropy-pacing, multi-task-rl, dynamic-clipping, entropy-crossover
-
-### GeoSD: Geometric Self-Distillation for Reasoning Generalization
-- [[geosd-geometric-self-distillation]] - Prevents OOD degradation during privileged-context self-distillation using Hellinger loss and Fisher-Rao proximal term (arXiv: 2607.06855)
-  - Core: Hellinger loss scales teacher preferences by student overlap; Fisher-Rao distance constrains drift in predictive behavior space
-  - Improves OOD accuracy by 5.7-8.6 points across 1.7B-32B models while preserving in-distribution gains
-  - **Activation**: geosd, geometric-distillation, hellinger-loss, fisher-rao, ood-preservation
-
-### TurnOPD: Turn-Level Budgeting for Efficient On-Policy Distillation
-- [[turn-opd-turn-level-budgeting]] - Addresses inefficiencies in long-horizon agent OPD via adaptive rollout-depth and progressive turn-normalized loss (arXiv: 2607.05804)
-  - Core: Probe-based rollout depth selection + progressive shift from token-level to turn-balanced KL weighting
-  - Eliminates wasted compute on noisy tail turns, ensures deep decision turns are trained
-  - **Activation**: turn-opd, turn-level-budgeting, rollout-depth, progressive-loss, long-horizon-agents
