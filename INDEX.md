@@ -1,5 +1,40 @@
 # AI Collection Index
 
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Quantum Probabilistic Local Differential Privacy: Structural Properties and Sample Complexity Bounds
+- [[quantum-probabilistic-differential-privacy]] - Relaxed quantum local differential privacy with probabilistic violation bounds, hockey-stick divergence connections, and sample complexity bounds for quantum hypothesis testing (arXiv: 2607.06307)
+  - Quantum probabilistic LDP allows privacy constraint failure on low-probability spectral events
+  - Connected to quantum Neyman-Pearson test acceptance probability
+  - Tensor-product composition properties; NOT closed under arbitrary quantum channels
+  - Sample complexity bounds for privatized asymmetric/symmetric quantum hypothesis testing
+  - **Activation**: quantum differential privacy, quantum local differential privacy, probabilistic privacy, quantum hypothesis testing, privacy sample complexity, hockey-stick divergence, quantum privacy loss
+
+### Concentration of Measure Phenomena for Quantum States on a Higher Dimensional Equator
+- [[concentration-measure-quantum-states]] - Extended Levy lemma for hyper-equatorial concentration of Lipschitz observables, with applications to quantum entanglement and statistical query learning (arXiv: 2606.29487)
+  - Isolates hyper-equatorial part of spherical concentration argument
+  - Levy-type bound for Lipschitz functions on fixed hyperequator with dimension d-1
+  - Geometric localization via neighborhoods of boundary, hyperequator, and antipodal great subsphere
+  - Applications in quantum entanglement analysis and quantum statistical query learning
+  - **Activation**: concentration of measure, levys lemma, quantum state concentration, hyper-equatorial, lipschitz quantum, quantum statistical learning, quantum entanglement concentration
+
+### Finite-Shot Sensitivity for Moment Estimation in Quantum Metrology
+- [[finite-shot-quantum-metrology]] - Finite-measurement theory for method-of-moments estimation with O(nu^{-3}) bias-corrected estimators and sensitivity thresholds (arXiv: 2606.25920)
+  - Bias-corrected estimator achieves O(nu^{-3}) bias beyond asymptotic regime
+  - Density-matrix condition for vanishing 1/nu^2 correction term
+  - Unitary examples: leading correction at O(1/nu^3), governed by calibration curvature
+  - Higher-rank observable components can reduce or cancel corrections
+  - **Activation**: finite-shot, quantum metrology, method of moments, cramér-rao, bias-corrected estimator, sensitivity correction, quantum parameter estimation, moment estimation
+
+### The Adaptive Nature of Confirmation Bias
+- [[quantum-confirmation-bias-adaptive]] - Quantum probability framework revealing confirmation bias as optimal evidence selection with evolutionary advantages in sequential hypothesis testing (arXiv: 2606.23325)
+  - Observations modeled by matrices on square-root probability space (not classical random variables)
+  - Optimal evidence choice in binary hypothesis testing inherently produces confirmation bias
+  - Two evolutionary advantages: minimal memory capacity + exponentially reduced error probability
+  - Connects to active inference framework for information-maximizing evidence selection
+  - **Activation**: quantum confirmation bias, adaptive confirmation, square-root probability, quantum hypothesis testing, active quantum inference, optimal evidence selection, confirmation bias rationality
+
+
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
