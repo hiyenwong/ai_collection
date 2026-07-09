@@ -3292,3 +3292,17 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-07-09 - Systems Engineering + Quantum Computing (Cron Job - Hourly)
+
+### QuTuner: Feature- and Learning-Guided Optimization Pass Tuning for Quantum Compilers
+- [[qutuner-compiler-optimization]] - Feature- and learning-guided quantum compiler pass tuning methodology addressing static feature limitations and narrow pass space search (arXiv: 2607.04586)
+  - Core: Dynamic circuit features capture how circuits react to compiler optimizations, not just static pre-optimization features
+  - Learning-guided search explores larger optimization-pass space with beam search / RL guidance
+  - **Activation**: qutuner, quantum compiler optimization, learning-guided compilation, dynamic circuit features, 量子编译器优化
+
+### Benchmarking Quantum Software Testing with Scalable Quantum Programs (Qolumbina)
+- [[qolumbina-quantum-testing-benchmark]] - Qolumbina benchmark infrastructure for controlled QST experiments on 40 curated open-source quantum programs with QST-oriented characterization criteria (arXiv: 2607.02029)
+  - Core: Systematic program curation, refactoring, specifications, unit tests, and standardized interfaces for reproducible QST
+  - Four-axis characterization: functionality, output behavior, development complexity, quantum-specific execution complexity
+  - **Activation**: qolumbina, quantum software testing benchmark, QST benchmark, scalable quantum testing, 量子软件测试基准
