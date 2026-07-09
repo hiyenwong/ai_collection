@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-07-09 - Quantum Systems Engineering (Cron Job)
+
+### RubriQ: Rubric-Guided Group Relative Policy Optimization for Constraint-Aware Quantum Circuit Synthesis
+- [[rubriq-grpo-quantum-circuit-synthesis]] - LLM-based quantum circuit generation optimized via GRPO with domain-grounded programmatic rubrics, achieving 3.31x T-gate compression and <1% hardware-constraint violations (arXiv: 2607.07554)
+  - Replaces black-box neural critics with interpretable, domain-grounded rubrics (T-gate reduction, topology compliance, unitary fidelity)
+  - Deployed on NERSC Perlmutter with DeepSpeed ZeRO2 across multinode A100 clusters
+  - **Activation**: rubriq, GRPO quantum, T-gate synthesis, quantum circuit optimization, constraint-aware compilation, fault-tolerant circuit generation, LLM quantum code
+
 ## 2026-07-09 - Anthropic Research (Cron Job)
 
 ### An off switch for dual use knowledge in AI models
