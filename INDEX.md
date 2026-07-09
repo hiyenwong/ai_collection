@@ -26,6 +26,30 @@
   - Applies to quantum evolution operators and Trotter-Suzuki approximation
   - **Activation**: BCH formula error bounds, Zassenhaus formula, quantum unitary evolution, nested commutators, quantum operator splitting
 
+### Human-AI Co-Discovery of Sign-Embedding Quantum Algorithms
+- [[human-ai-co-discovery-quantum-algorithms]] - Human-AI co-discovery methodology for quantum algorithm design, demonstrated via sign-embedding quantum algorithms for matrix equations and functions (arXiv: 2606.24899)
+  - AI expands human intuition into route maps, compares formulations, drafts proofs
+  - Human gates: selects routes, rejects hidden conditions, refines implementations
+  - **Activation**: human-AI co-discovery, quantum algorithm design, sign-embedding, AIM system, quantum linear algebra, matrix equations
+
+### Quantum Statistical Priors for Chaotic System Forecasting
+- [[q-prior-chaos-forecasting]] - k-indexed Q-Priors for quantum-informed ML on chaotic systems with provable quantum-classical separation via two-copy Bell measurement (arXiv: 2606.13422)
+  - Provable separation: joint Bell measurements achieve copy count independent of n_q vs Omega(2^n_q) single-copy
+  - Demonstrated on IQM processors: 10-39% improvement in weather forecasting, DNS-level statistics recovery
+  - **Activation**: quantum statistical prior, Q-Prior, chaos forecasting, turbulent flow, Koopman rollout, quantum advantage
+
+### Pauli-Structured Preconditioning for Quantum Linear System Solvers
+- [[pauli-structured-preconditioning]] - Pauli-structured preconditioning that reduces normalization overhead via regrouped Pauli expansions in QLS algorithms (arXiv: 2606.01733)
+  - Regrouping Pauli products reduces coefficient weight of preconditioned operator
+  - Validated on synthetic benchmarks: reduces block-encoding diagnostics and per-sample depth
+  - **Activation**: pauli preconditioning, quantum linear system solver, QLS, block encoding, randomized pauli solver
+
+### GQSP with Hermitian Block Embedding for Financial PDEs
+- [[gqsp-hermitian-embedding-pricing]] - Hermitian block embedding method enabling GQSP for non-Hermitian 2D Black Scholes equation in option pricing (arXiv: 2606.00458)
+  - Embeds non-Hermitian discretized PDE matrix into Hermitian block structure for GQSP
+  - Two-asset European call option pricing with close agreement to classical methods
+  - **Activation**: quantum signal processing, GQSP, hermitian block embedding, Black Scholes, option pricing, non-Hermitian operator
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
