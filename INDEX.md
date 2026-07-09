@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-07-09 - Quantum Safe Control Systems (Cron Job)
+
+### Q-DASC: State-of-the-Art Safe Quantum Control for HVAC under Local Model Misspecification
+- [[quantum-safe-control-systems]] - Wraps VQC policies with certified classical safety layers using FDR-based discrepancy detection, shrinkage repair, and feasibility projection; reduces comfort violation from 26% to 0.02% (arXiv: 2606.28834)
+  - Discrepancy detection uses false-discovery-rate control to identify misspecified operating regimes
+  - Classical safety projection is noise-invariant to finite-shot and depolarizing NISQ read-out noise
+  - Repair-aware VQC variant achieves 0.00% violation while maintaining lower energy consumption
+  - **Activation**: quantum control safety, Q-DASC, variational quantum circuit, safety layer, model misspecification, HVAC control, NISQ deployment
+
+### A Simplex-Inspired Architecture for Integrating Quantum Capabilities into Cyber-Physical Systems
+- [[quantum-safe-control-systems]] - Simplex architecture combining QA-HSGPR (high-performance quantum) with classical GPR (high-assurance), runtime monitor dynamically switches between modules (arXiv: 2606.31056)
+  - Quantum-assisted Hilbert-Space GPR reduces inference complexity for real-time CPS
+  - Runtime safety monitor evaluates conditions and triggers module switching
+  - Demonstrated on CSTR benchmark with controllable performance-safety trade-off
+  - **Activation**: simplex architecture, QA-HSGPR, quantum CPS, runtime monitoring, safety switching
+
 ## 2026-07-09 - Systems Engineering Research (Cron Job)
 
 ### Neural-ESO: A Dual-Pathway Architecture for Provably Robust Learning-Based Control
