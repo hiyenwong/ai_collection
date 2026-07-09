@@ -1,6 +1,16 @@
 # Skills Collection
 
 ## 2026-07-09 - Systems Engineering (Cron Job)
+### Real-Time Quantum Error Correction System Stack: Architecture, Algorithms, and Engineering Practice
+- [[real-time-qec-system-stack]] - Real-time quantum error correction system stack — six-layer reference architectu... (arXiv: 2605.30765)
+  - Core: qec-system-stack, syndrome-acquisition, real-time-decoding
+  - **Activation**: qec-system-stack, syndrome-acquisition, real-time-decoding, tail-latency, surface-code-decoder, qldpc-decoder, latency-budget, ftqc-architecture
+
+### Toward General Quantum Control with Physics-Informed Large Language Models
+- [[vf-qctrl-llm-quantum-control]] - Physics-informed LLM framework for general quantum control combining symbolic re... (arXiv: 2605.26021)
+  - Core: physics-informed-llm, symbolic-reasoning, control-ansatze
+  - **Activation**: physics-informed-llm, symbolic-reasoning, control-ansatze, feedback-refinement, qctrl-bench, inference-time-scaling, pulse-resolution-scaling
+
 ### QuCtrl-BELL: A Compiler-Driven Sub-Microsecond Feedback Control Stack for Scalable Trapped-Ion Quantum Experiments
 - [[quctrl-bell-compiler-quantum-control]] - Compiler-driven sub-microsecond feedback control stack for scalable trapped-ion ... (arXiv: 2605.22433)
   - Core: compiler-driven-control, sub-microsecond-feedback, dsl-transpilation
@@ -22,6 +32,34 @@
   - Subspace rotations enable rapid behavior switching with fine-grained trajectory control
   - Validated on SpiNNaker 2 chip for real-time robotic maze navigation
   - **Activation**: neural manifolds, subspace rotation, neuromorphic control, SpiNNaker2, closed-loop control, behavior switching, heterogeneous inhibition, explainable SNN, robotic navigation
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation framework for inferring Hodgkin-Huxley parameters from extracellular MEA recordings (arXiv: 2607.04063, ICML 2026)
+  - Infer multi-compartment HH biophysical parameters from non-invasive extracellular MEA measurements via differentiable simulation + simulation-based inference
+  - 90.6% accuracy predicting unseen multi-electrode stimulation responses from minutes of recording (replaces hours of clinical testing)
+  - Validated on macaque retina with 512-electrode array (30 μm pitch)
+  - **Activation**: differentiable-biophysical-simulation, hodgkin-huxley-parameter-inference, neurostimulation-prediction, MEA-biophysical-modeling, extracellular-to-intracellular, computational-neurostimulation
+
+### Microsecond-precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[equilibrium-dynamics-sound-localization]] - Neural population equilibrium dynamics for ITD estimation, replacing classical Jeffress delay-line model (arXiv: 2607.03890, submitted to Science)
+  - ITD represented as stable equilibrium of neural population dynamics rather than place coding via delay lines
+  - E/I interactions across frequency channels drive system toward ITD equilibrium — achieves microsecond precision from slow dynamics
+  - Explains coexistence of microsecond sensitivity and sluggish binaural tracking without explicit delay lines
+  - **Activation**: equilibrium-dynamics-sound-localization, ITD-population-coding, beyond-jeffress, auditory-equilibrium, microsecond-precision-slow-dynamics, cross-frequency-integration
+
+### Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hyperbolic-learning-brain-graphs]] - Hyperbolic Learning on Brain Graphs (HLBG) models hierarchical brain network organization across ROI, community, and whole-brain levels using Lorentzian hyperbolic space (arXiv: 2607.07077)
+  - Projects multi-level brain representations into Lorentzian hyperbolic space with geometric entailment constraints
+  - Graph-aware Mamba (GaMamba) incorporates topology-derived structural prompts for long-range dependencies
+  - Outperforms SOTA on ABIDE-I (ASD) and REST-MDD datasets with interpretable biomarkers
+  - **Activation**: hyperbolic-learning, brain-graphs, hierarchical-networks, Lorentzian-space, Graph-aware-Mamba, disorder-diagnosis, geometric-entailment
+
+### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
+- [[bus-brain-inspired-self-reflection-vlm]] - Brain-inspired backward prediction framework for label-free VLM reasoning enhancement (arXiv: 2607.07361)
+  - Verifies VLMs can perform backward prediction (future state → plausible current states), mirroring human brain
+  - Unsupervised self-reflection via backward prediction provides learning signal without annotated reasoning data
+  - Compatible with SFT and RL fine-tuning; improves 8 complex visual reasoning benchmarks
+  - **Activation**: backward-prediction, self-reflection, VLM-reasoning, unsupervised-learning, brain-inspired-AI, multimodal-reasoning
 
 ## 2026-07-09 - Systems Engineering + Quantum Control (Cron Job)
 
@@ -3268,3 +3306,17 @@
   - 提供可证明的误差界，复杂度为多项式而非指数
   - **Activation**: tensor network linear algebra, 张量网络线性代数, exponential scale linear algebra, randomized dimension reduction
 
+
+## 2026-07-09 - Systems Engineering + Quantum Computing (Cron Job - Hourly)
+
+### QuTuner: Feature- and Learning-Guided Optimization Pass Tuning for Quantum Compilers
+- [[qutuner-compiler-optimization]] - Feature- and learning-guided quantum compiler pass tuning methodology addressing static feature limitations and narrow pass space search (arXiv: 2607.04586)
+  - Core: Dynamic circuit features capture how circuits react to compiler optimizations, not just static pre-optimization features
+  - Learning-guided search explores larger optimization-pass space with beam search / RL guidance
+  - **Activation**: qutuner, quantum compiler optimization, learning-guided compilation, dynamic circuit features, 量子编译器优化
+
+### Benchmarking Quantum Software Testing with Scalable Quantum Programs (Qolumbina)
+- [[qolumbina-quantum-testing-benchmark]] - Qolumbina benchmark infrastructure for controlled QST experiments on 40 curated open-source quantum programs with QST-oriented characterization criteria (arXiv: 2607.02029)
+  - Core: Systematic program curation, refactoring, specifications, unit tests, and standardized interfaces for reproducible QST
+  - Four-axis characterization: functionality, output behavior, development complexity, quantum-specific execution complexity
+  - **Activation**: qolumbina, quantum software testing benchmark, QST benchmark, scalable quantum testing, 量子软件测试基准
