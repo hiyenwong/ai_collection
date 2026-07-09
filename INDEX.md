@@ -1,5 +1,13 @@
 # Skills Collection
 
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### Vectorizing Quantum Control: A RISC-V Vector Extension Architecture for Scalable Qubit Systems
+- [[riscv-quantum-control-processor]] - RISC-V vector extension for quantum control processors achieving 2.52x speedup with halt-resume mid- (arXiv: 2607.07372)
+  - Core innovation in quant-ph,cs.AR
+  - **Activation**: risc-v-architecture, quantum-control, mid-circuit-measurement, halt-resume-protocol
+
+
 ## 2026-07-09 - Systems Engineering (Cron Job)
 ### Real-Time Quantum Error Correction System Stack: Architecture, Algorithms, and Engineering Practice
 - [[real-time-qec-system-stack]] - Real-time quantum error correction system stack — six-layer reference architectu... (arXiv: 2605.30765)
