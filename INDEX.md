@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-07-09 - Anthropic Research (Cron Job)
+
+### An off switch for dual use knowledge in AI models
+- [[gram-dual-use-knowledge-control]] - GRAM (Gradient-Routed Auxiliary Modules) methodology for surgical control of dual-use knowledge in AI models
+  - Adds auxiliary neurons to every Transformer layer forming dedicated knowledge compartments
+  - Gradient routing during training isolates dual-use updates to auxiliary modules only
+  - Modules are removable post-training enabling one model → many capability configurations
+  - Cost-efficient alternative to training separate filtered models for each deployment scenario
+  - **Activation**: GRAM, dual-use knowledge, knowledge control, gradient routing, surgical capability removal, biosecurity, cybersecurity, AI safety
+
 ## 2026-07-09 - Quantum Machine Learning (Cron Job)
 
 ### QCNN with Rough Path Signature Kernels
