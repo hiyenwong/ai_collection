@@ -2,6 +2,14 @@
 
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
+### Single-Entity Spiking Neuron Models: Survey
+- [[single-entity-spiking-neuron-survey]] - Comprehensive survey of single-neuron mathematical models covering LIF, EIF, AdEx, Izhikevich, HH, FHN, Morris-Lecar (arXiv: 2607.07429)
+  - Taxonomy of spiking neuron models by biological fidelity vs computational cost
+  - Covers integrate-and-fire variants, conductance-based models, and discrete/continuous analogs
+  - **Activation**: spiking neuron model, neuron model survey, LIF, EIF, Izhikevich, AdEx, Hodgkin-Huxley, FitzHugh-Nagumo, Morris-Lecar, membrane potential, biologically plausible neuron
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
 ### Intrinsic-Noise Consolidation via Doob Barrier-Conditioned Diffusion
 - [[intrinsic-noise-consolidation-doob]] - Doob h-transform converts analog device noise into continual learning resource (arXiv: 2607.06924)
   - Doob h-transform barrier conditioning for synaptic consolidation
