@@ -1,4 +1,44 @@
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
+### Single-Entity Spiking Neuron Models: Survey
+- [[single-entity-spiking-neuron-models-survey]] - Comprehensive survey of mathematical modeling approaches for biologically plausible single-neuron systems (arXiv: 2607.07429)
+  - Covers spiking models, discrete/continuous analogs, membrane potential dynamics
+  - Classification framework based on common features and special use cases
+  - Analysis of neural components affecting dynamics (synapses, dendrites, ion channels)
+  - **Activation**: spiking neuron models, neuron modeling, biological neuron models, SNN models, membrane potential
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit-assignment]] - Conductance-based models showing how E/I synapses and shunting inhibition reshape credit-signal geometry in dendritic trees (arXiv: 2607.03556)
+  - Gradient factorization: local eligibility × compartment error
+  - Shunting inhibition optimizes error field distribution under restricted feedback
+  - 5-6 percentage points below backpropagation on MNIST benchmarks
+  - **Activation**: shunting inhibition, dendritic learning, credit assignment, dendritic branching, local learning, E-I balance
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - SpiNNaker 2 implementation of dynamic neural manifolds for real-time robotic control via subspace rotations (arXiv: 2607.07373)
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents
+  - Subspace rotations enable rapid behavior switching without retraining
+  - First real-time neuromorphic implementation of dynamic manifold control
+  - **Activation**: neural manifold, SpiNNaker 2, closed-loop control, subspace rotation, robotic navigation
+
+### Intrinsic-Noise Consolidation: Doob-Barrier-Conditioned Diffusion for Continual Learning
+- [[intrinsic-noise-consolidation-doob]] - Converts analog neuromorphic device noise into consolidation resource via Doob h-transform (arXiv: 2607.06924)
+  - Doob h-transform as synaptic rule: barrier drift σ²∇log h amplified by noise variance
+  - Inverted-U retention curve: increasing noise non-monotonically improves retention (p=0.004)
+  - BrainScaleS-2 hardware validation: 15.6 point retention improvement
+  - **Activation**: Doob h-transform, BrainScaleS-2, analog noise, continual learning, barrier diffusion
+
 # Skills Collection
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### Quantum error correction of a grid-state qubit with SPAM errors below 10^-3
+- [[grid-state-qec-spam-improvement]] - Grid-state qubit QEC with SPAM errors below 10^-3 via repeat-until-success preparation. (arXiv: 2607.06718)
+  - Core innovation in quant-ph
+  - **Activation**: grid-state-qubits, superconducting-architecture, state-preparation
+
 
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
 
@@ -233,7 +273,11 @@
 - QCNN + path signature kernel hybrid for time series classification using VQLS (arXiv: 2607.07634)
 
 ### Nested-Loop Trajectory-Informed Variational Quantum Solver
-- Dual-level trainable quantum IPM for OPF reducing variational updates by 95% (arXiv: 2607.03361)
+- [[nested-loop-variational-quantum-solver]] - Dual-level trainable quantum IPM for OPF reducing variational updates by 95% via trajectory projection (arXiv: 2607.03361)
+  - VQLS parameter trajectory model projects remaining search toward lower-cost region
+  - IPM central path model predicts later states from early primal-dual iterates
+  - Feasibility restoration ensures projected states remain admissible
+  - **Activation**: nested-loop variational, trajectory-informed quantum solver, quantum interior-point method, VQLS acceleration, quantum OPF
 
 ### Multi-channel Collective Dissipation via SU(4)
 - SU(4) tetrahedral formalism for collective spontaneous emission with superlinear scaling (arXiv: 2607.07701)
@@ -3336,3 +3380,23 @@
   - Core: Systematic program curation, refactoring, specifications, unit tests, and standardized interfaces for reproducible QST
   - Four-axis characterization: functionality, output behavior, development complexity, quantum-specific execution complexity
   - **Activation**: qolumbina, quantum software testing benchmark, QST benchmark, scalable quantum testing, 量子软件测试基准
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### A Physics-Informed Neural Network for Small-Signal Stability in Multi-Inverter Power Systems
+- [[pinn-small-signal-stability-multi-inverter]] - PINN predicts poles/residues of whole-system impedance across full operating space, identifies oscillation risks in multi-inverter power systems (arXiv: 2607.07523)
+  - Core: PINN trained on EMT step-response data predicts transfer functions beyond linearization neighborhood
+  - Characterizes impedance evolution with power flow variations, reveals oscillation root causes
+  - **Activation**: PINN power system stability, small-signal stability multi-inverter, impedance model neural network, 多逆变器小信号稳定性
+
+### Feynman's clock and hierarchy-informed sampling for quantum error mitigation
+- [[feynmans-clock-quantum-error-mitigation]] - Maps quantum circuit execution to Feynman clock Hamiltonian + BBGKY hierarchy for systematic error mitigation with polynomial overhead (arXiv: 2607.06752)
+  - Core: BBGKY-ISM extended from spin chains to arbitrary quantum circuits via Feynman's clock mapping
+  - Polynomial classical and quantum overhead in circuit size and qubit count
+  - **Activation**: Feynman clock error mitigation, BBGKY quantum error mitigation, hierarchy-informed QEM
+
+### Turing mechanisms in a multimode open quantum system
+- [[turing-mechanisms-open-quantum-systems]] - Extends Turing instabilities to multimode open quantum systems via GKSL master equation with parametric driving and nonlinear damping (arXiv: 2607.07449)
+  - Core: Nonlocal dissipative couplings generate reaction-diffusion-like dynamics enabling quantum pattern formation
+  - Three regimes: stationary nonuniform, oscillatory wave-like, multi-mode competition
+  - **Activation**: Turing patterns quantum systems, open quantum system pattern formation, GKSL Turing instability, 开放量子系统图灵模式
