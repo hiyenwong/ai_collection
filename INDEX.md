@@ -1,5 +1,31 @@
 # AI Collection Index
 
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Analysis of the Sample Complexity for PAC-Learning Functions Defined over Quantum States
+- [[quantum-pac-learning-theory]] - Analyzes sample complexity in quantum PAC-learning models where concepts are functions acting on quantum states, extending VC-dimension to quantum superposition examples (arXiv: 2607.07572)
+  - Extends classical VC-dimension bounds to quantum superposition-based examples
+  - Derives labeled example requirements for quantum concept classes with target accuracy/confidence
+  - **Activation**: quantum PAC learning, quantum sample complexity, quantum VC dimension, quantum concept class, quantum function learning
+
+### Towards Minimax Estimation of High-Order Functionals by Quantum Arguments
+- [[quantum-minimax-estimation]] - Novel minimax estimation of high-order functionals (F_alpha(P) = sum p_i^alpha, tr(rho^alpha)) using quantum computing, connecting classical and quantum functionals to Renyi and Tsallis entropy (arXiv: 2607.07540)
+  - Constructs estimators for both classical and quantum functionals using quantum arguments
+  - Bridges minimax statistics with quantum computing for entropy estimation
+  - **Activation**: quantum minimax estimation, quantum functional estimation, Renyi entropy, Tsallis entropy, quantum distribution estimation
+
+### Faster Quantum Linear System Solver Beyond the Condition Number
+- [[quantum-linear-system-beyond-condition]] - Two quantum algorithms solving Ax=b with complexity independent of the spectral condition number, using block encoding input model (arXiv: 2607.07691)
+  - Breaks the traditional condition number bottleneck in quantum linear system solvers
+  - Uses standard block encoding for matrix access and state preparation
+  - **Activation**: quantum linear system solver, quantum condition number, block encoding quantum, HHL alternative, quantum linear algebra
+
+### Error Bounds for the Truncated BCH and Zassenhaus Formulas in Unitary Problems
+- [[bch-zassenhaus-error-bounds]] - Rigorous error bounds for truncated Baker-Campbell-Hausdorff and Zassenhaus formulas in unitary quantum problems, essential for quantum circuit decomposition accuracy (arXiv: 2607.07692)
+  - Provides truncation error analysis for BCH and Zassenhaus formulas
+  - Applies to quantum evolution operators and Trotter-Suzuki approximation
+  - **Activation**: BCH formula error bounds, Zassenhaus formula, quantum unitary evolution, nested commutators, quantum operator splitting
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
