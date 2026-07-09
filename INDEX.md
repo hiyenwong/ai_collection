@@ -3364,3 +3364,23 @@
   - Core: Systematic program curation, refactoring, specifications, unit tests, and standardized interfaces for reproducible QST
   - Four-axis characterization: functionality, output behavior, development complexity, quantum-specific execution complexity
   - **Activation**: qolumbina, quantum software testing benchmark, QST benchmark, scalable quantum testing, 量子软件测试基准
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
+### A Physics-Informed Neural Network for Small-Signal Stability in Multi-Inverter Power Systems
+- [[pinn-small-signal-stability-multi-inverter]] - PINN predicts poles/residues of whole-system impedance across full operating space, identifies oscillation risks in multi-inverter power systems (arXiv: 2607.07523)
+  - Core: PINN trained on EMT step-response data predicts transfer functions beyond linearization neighborhood
+  - Characterizes impedance evolution with power flow variations, reveals oscillation root causes
+  - **Activation**: PINN power system stability, small-signal stability multi-inverter, impedance model neural network, 多逆变器小信号稳定性
+
+### Feynman's clock and hierarchy-informed sampling for quantum error mitigation
+- [[feynmans-clock-quantum-error-mitigation]] - Maps quantum circuit execution to Feynman clock Hamiltonian + BBGKY hierarchy for systematic error mitigation with polynomial overhead (arXiv: 2607.06752)
+  - Core: BBGKY-ISM extended from spin chains to arbitrary quantum circuits via Feynman's clock mapping
+  - Polynomial classical and quantum overhead in circuit size and qubit count
+  - **Activation**: Feynman clock error mitigation, BBGKY quantum error mitigation, hierarchy-informed QEM
+
+### Turing mechanisms in a multimode open quantum system
+- [[turing-mechanisms-open-quantum-systems]] - Extends Turing instabilities to multimode open quantum systems via GKSL master equation with parametric driving and nonlinear damping (arXiv: 2607.07449)
+  - Core: Nonlocal dissipative couplings generate reaction-diffusion-like dynamics enabling quantum pattern formation
+  - Three regimes: stationary nonuniform, oscillatory wave-like, multi-mode competition
+  - **Activation**: Turing patterns quantum systems, open quantum system pattern formation, GKSL Turing instability, 开放量子系统图灵模式
