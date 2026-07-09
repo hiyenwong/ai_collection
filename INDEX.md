@@ -2,6 +2,14 @@
 
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
 
+### Quantum error correction of a grid-state qubit with SPAM errors below 10^-3
+- [[grid-state-qec-spam-improvement]] - Grid-state qubit QEC with SPAM errors below 10^-3 via repeat-until-success preparation. (arXiv: 2607.06718)
+  - Core innovation in quant-ph
+  - **Activation**: grid-state-qubits, superconducting-architecture, state-preparation
+
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
 ### Covariant Approximate Quantum Codes for Protected Analog Computation
 - [[covariant-quantum-codes]] - SU(d)-covariant approximate quantum codes with Theta(1/N) scaling and Petz recovery map for protecte (arXiv: 2607.07607)
   - Core innovation in quant-ph
