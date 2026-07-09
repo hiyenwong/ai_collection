@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
+### DBNN: Neural Spike Classification Using a Deep Binarized Neural Network
+- [[dbnn-spike-classification]] - Hardware-efficient neural spike classification with multiplier-free inference, achieving 98.7% accuracy with 0.014 mm² area and 122 nW power at 20 kHz (arXiv: 2607.05590)
+  - Uses sign-controlled accumulation and bit-wise logic for implantable brain-computer interfaces
+  - FPGA prototype: 828 ALMs, 1023 registers, 0 DSP blocks; ASIC: 0.014 mm², 122 nW @ 20 kHz
+  - **Activation**: DBNN, spike sorting, binarized neural network, brain-computer interface, FPGA implementation, ASIC design, neural decoding, implantable devices
+
 ## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Analysis of the Sample Complexity for PAC-Learning Functions Defined over Quantum States
