@@ -1,5 +1,19 @@
 # AI Collection Index
 
+### Intrinsic-Noise Consolidation via Doob Barrier-Conditioned Diffusion
+- [[intrinsic-noise-consolidation-doob]] - Doob h-transform barrier-conditioned diffusion for continual learning on analog neuromorphic hardware, converting intrinsic device noise from accuracy tax to consolidation dividend (arXiv: 2607.06924)
+  - Transforms analog neuromorphic device noise into memory consolidation resource
+  - Conditioned diffusion acquires restoring force amplified by noise variance
+  - Validated on BrainScaleS-2 neuromorphic silicon with hardware-in-the-loop training
+  - **Activation**: Doob h-transform, barrier conditioning, analog noise, neuromorphic continual learning, BrainScaleS-2, intrinsic noise consolidation
+
+### Single-Entity Spiking Neuron Models: Survey
+- [[single-entity-spiking-neuron-models-survey]] - Comprehensive survey of mathematical modeling approaches for biologically plausible single-neuron systems including discrete/continuous models and membrane potential dynamics (arXiv: 2607.07429)
+  - Systematic classification of spiking neuron models by mathematical properties
+  - Covers discrete and continuous analogs for biological process simulation
+  - Analyzes membrane potential dynamics and neural components affecting neuronal behavior
+  - **Activation**: spiking neuron models, neuron modeling, biological neuron models, SNN models, membrane potential, neural dynamics modeling
+
 ## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Quantum Probabilistic Local Differential Privacy: Structural Properties and Sample Complexity Bounds
