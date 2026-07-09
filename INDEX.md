@@ -257,7 +257,11 @@
 - QCNN + path signature kernel hybrid for time series classification using VQLS (arXiv: 2607.07634)
 
 ### Nested-Loop Trajectory-Informed Variational Quantum Solver
-- Dual-level trainable quantum IPM for OPF reducing variational updates by 95% (arXiv: 2607.03361)
+- [[nested-loop-variational-quantum-solver]] - Dual-level trainable quantum IPM for OPF reducing variational updates by 95% via trajectory projection (arXiv: 2607.03361)
+  - VQLS parameter trajectory model projects remaining search toward lower-cost region
+  - IPM central path model predicts later states from early primal-dual iterates
+  - Feasibility restoration ensures projected states remain admissible
+  - **Activation**: nested-loop variational, trajectory-informed quantum solver, quantum interior-point method, VQLS acceleration, quantum OPF
 
 ### Multi-channel Collective Dissipation via SU(4)
 - SU(4) tetrahedral formalism for collective spontaneous emission with superlinear scaling (arXiv: 2607.07701)
