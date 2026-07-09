@@ -31,6 +31,33 @@
   - LLM-guided optimization achieves 99.94% of theoretical max 2√2
   - **Activation**: quantum certification, QAccCert, CHSH inequality, FPGA quantum, entanglement verification, quantum software engineering, LLM quantum optimization
 
+### Quantum Software Engineering Practice: Hardware-Aware Compilation and AI Integration
+- [[quantum-software-engineering-practice]] - FPGA-based quantum control with AI-assisted calibration (arXiv: 2607.07597, 2605.26021)
+  - Hardware-aware compilation with real-time calibration feedback
+  - Physics-informed LLMs for quantum control sequence generation
+  - Fault-tolerant quantum computing workflow patterns
+  - **Activation**: quantum software engineering, FPGA quantum control, quantum AI integration, quantum compilation, real-time quantum feedback, fault-tolerant quantum computing
+
+### Physics-Informed Large Language Models for General Quantum Control
+- [[vf-qctrl-llm-quantum-control]] - Physics-informed LLM framework for quantum pulse optimization (arXiv: 2605.26021)
+  - VF-QCTRL combines LLM generation with physics constraint validation
+  - Reduces parameter sweeps through learned control heuristics
+  - **Activation**: physics-informed LLM, quantum pulse optimization, VF-QCTRL, quantum control, NMR quantum, optimal control
+
+### Quantum Network Performance Metrics: Challenges and Opportunities
+- [[quantum-network-systems-engineering]] - Standardized performance metrics for quantum network evaluation (arXiv: 2607.05642)
+  - Entanglement rate, fidelity, latency, throughput, reliability metrics
+  - Layered architecture design patterns for quantum networks
+  - Error model validation against experimental data
+  - **Activation**: quantum network, quantum internet, distributed quantum computing, quantum repeaters, entanglement distribution, quantum network metrics
+
+### Limitations of Error Model Approximations in Quantum Networks
+- [[quantum-network-error-models]] - Analysis of simplified error models in quantum networks (arXiv: 2607.00998)
+  - Correlated errors cause 10-100x performance overestimation
+  - Memory decoherence as primary bottleneck
+  - Dynamic routing based on real-time metrics
+  - **Activation**: quantum error models, correlated errors, quantum network reliability, entanglement swapping, quantum memory
+
 ### Progressive Crystallization: Turning Agent Exploration into Deterministic, Lower-Cost Workflows in Production
 - [[progressive-crystallization]] - Systems Engineering (arXiv: 2607.07052)
   - Three-stage taxonomy: agent-orchestrated → hybrid → deterministic workflows
