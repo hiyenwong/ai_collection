@@ -1,94 +1,92 @@
 ---
 name: dynamic-neural-manifolds-snn-control
-description: "Dynamic neural manifold methodology for flexible closed-loop control on neuromorphic hardware. Implements biologically-inspired sequential neural activity along low-dimensional manifolds using SpiNNaker 2 chip for real-time robotic control. Activation: neural manifold, neuromorphic control, closed-loop, spiking network, subspace rotation, SpiNNaker, robotic navigation, manifold geometry"
-metadata:
-  arxiv_id: "2607.07373"
-  published: "2026-07-08"
-  authors: "Oskar von Seeler, Christian Tetzlaff, Andrew Lehr"
-  tags: [neural manifold, neuromorphic computing, closed-loop control, spiking neural network, SpiNNaker 2, robotic control]
+description: "Dynamic neural manifolds methodology for flexible closed-loop control on neuromorphic hardware. Biological sequential activity evolves along low-dimensional manifolds; SpiNNaker 2 implementation enables real-time subspace rotations for behavior switching."
+tags: [neuroscience, spiking-neural-network, neuromorphic, neural-manifolds, closed-loop-control, spinnaker]
+source: arXiv:2607.07373v1
+date: 2026-07-08
 ---
 
 # Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
 
-## Core Concept
+## Paper Information
+- **Title**: Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware
+- **Authors**: Oskar von Seeler, Christian Tetzlaff, Andrew Lehr
+- **arXiv**: 2607.07373v1
+- **Date**: 2026-07-08
+- **Categories**: cs.NE
 
-Biological circuits generate sequential neural activity along dynamic, low-dimensional manifolds that enable flexible behavior. This methodology extends the neural manifold framework to neuromorphic engineering, implementing parameterizable dynamic manifolds on the SpiNNaker 2 chip for real-time closed-loop control.
+## Core Methodology
 
-## Key Innovations
-
-### 1. Dynamic Neural Manifold Parameterization
-- Sequential activity evolves along low-dimensional manifolds in biological circuits
-- Spiking network models link sequential activity to manifold geometry through circuit mechanisms
-- Manifolds become parameterizable, providing an explainable framework for neural computation
-
-### 2. Neuromorphic Implementation (SpiNNaker 2)
-- Real-time closed-loop control on neuromorphic hardware
-- Sensory inputs modulate:
-  - **Heterogeneous inhibition** - controls subspace rotations
-  - **Gain modulation** - adjusts trajectory speed
-  - **Transient currents** - enables fine-grained trajectory control
-
-### 3. Behavioral Switching via Subspace Rotations
-- Rapid subspace rotations switch between behavioral modes
-- Sensory feedback dynamically reconfigures manifold geometry
-- Enables flexible navigation and decision-making
-
-## Methodology
+### Key Insight
+Biological circuits generate sequential neural activity that evolves along **dynamic, low-dimensional manifolds**. This geometric structure enables flexible behavior — the network can switch between behavioral modes by rotating the manifold subspace, and fine-tune trajectories within a mode.
 
 ### Architecture Design
-1. Define low-dimensional manifold structure for target behavior
-2. Implement spiking network with heterogeneous inhibition, gain, and transient current mechanisms
-3. Map sensory inputs to manifold control parameters
-4. Deploy on SpiNNaker 2 for real-time execution
+The framework implements dynamic neural manifolds on **SpiNNaker 2** neuromorphic hardware for real-time closed-loop control:
 
-### Control Mechanisms
-- **Subspace rotation**: Switch between behavioral modes (e.g., navigate left vs. right)
-- **Trajectory control**: Fine-grained movement within a behavioral mode
-- **Sensory modulation**: Real-time adaptation based on environmental feedback
+1. **Manifold Parameterization**: Spiking network models link sequential activity to manifold geometry through specific circuit mechanisms:
+   - Heterogeneous inhibition
+   - Gain modulation
+   - Transient currents
 
-### Validation
-Robotic simulation demonstrates:
-- Agent uses sensory feedback to navigate maze
-- Dynamic reconfiguration of manifold geometry
-- Real-time closed-loop control on neuromorphic hardware
+2. **Sensory-Driven Modulation**: Sensory inputs modulate circuit parameters to drive:
+   - **Rapid subspace rotations** → switch between behavioral modes
+   - **Fine-grained trajectory control** → adjust within a behavioral mode
+
+3. **Closed-Loop Validation**: Robotic simulation where agent uses sensory feedback to dynamically reconfigure manifold geometry for maze navigation.
+
+## Technical Framework
+
+### Neural Manifold Theory
+```
+Neural Population Activity → Low-Dimensional Manifold
+                            ↓
+                    Manifold Geometry encodes:
+                    - Sequential activity patterns
+                    - Behavioral mode structure
+                    - Transition dynamics
+```
+
+### Circuit Mechanisms for Manifold Control
+| Mechanism | Effect on Manifold | Behavioral Role |
+|-----------|-------------------|-----------------|
+| Heterogeneous inhibition | Subspace rotation | Mode switching |
+| Gain modulation | Trajectory scaling | Speed/amplitude control |
+| Transient currents | Trajectory initiation | Movement onset |
+
+### Neuromorphic Implementation (SpiNNaker 2)
+- Real-time spiking computation
+- Closed-loop sensorimotor integration
+- Energy-efficient edge deployment
+- Biologically plausible dynamics
+
+## Key Results
+- Demonstrated feasible real-time dynamic manifold control on neuromorphic hardware
+- Sensory feedback enables dynamic reconfiguration of manifold geometry
+- Agent successfully navigates maze using manifold-based control
+- Establishes framework for **explainable neuromorphic control**
 
 ## Applications
+1. **Neuromorphic Robotics**: Energy-efficient autonomous agents with explainable control
+2. **Brain-Machine Interfaces**: Manifold-based decoding for flexible prosthetic control
+3. **Neural Prosthetics**: Closed-loop stimulation guided by manifold dynamics
+4. **Cognitive Neuroscience**: Testing theories of motor cortex manifold structure
 
-### Neuromorphic Robotics
-- Real-time robotic control with explainable neural dynamics
-- Energy-efficient closed-loop systems
-- Adaptive navigation in dynamic environments
+## Implementation Notes
+- Platform: SpiNNaker 2 neuromorphic chip
+- Network type: Recurrent spiking neural network
+- Control: Heterogeneous inhibition + gain + transient currents
+- Task: Maze navigation with sensory feedback
 
-### Neuroscience Research
-- Substrate for investigating biological neural dynamics
-- Test hypotheses about manifold geometry and behavior
-- Bridge between neural computation and motor control
+## Related Concepts
+- Neural population dynamics (Churchland et al.)
+- Motor cortex manifolds (Gallego et al.)
+- Neuromorphic computing (SpiNNaker architecture)
+- Closed-loop brain-machine interfaces
+- Dynamical systems approaches to neuroscience
 
-### Brain-Computer Interfaces
-- Low-latency neural decoding
-- Flexible control strategies
-- Biologically-plausible neural interfaces
-
-## Implementation Considerations
-
-### SpiNNaker 2 Specifics
-- Leverage heterogeneous inhibition for subspace control
-- Use gain modulation for trajectory scaling
-- Implement transient currents for rapid state transitions
-
-### Pitfalls
-- **Manifold dimensionality**: Too high → loss of explainability; too low → insufficient behavioral flexibility
-- **Sensory latency**: Real-time control requires low-latency sensory feedback loops
-- **Parameter tuning**: Manifold geometry parameters require careful calibration for stable dynamics
-
-## Related Work
-
-- Neural manifold analysis in motor cortex
-- Reservoir computing on neuromorphic hardware
-- Biologically-plausible learning rules for spiking networks
-
-## References
-
-- Paper: arXiv:2607.07373 (July 8, 2026)
-- SpiNNaker 2 neuromorphic platform
-- Neural manifold theory in computational neuroscience
+## Activation Triggers
+- neural manifolds, neural dynamics, low-dimensional dynamics
+- neuromorphic control, SpiNNaker, closed-loop SNN
+- motor cortex, population dynamics, subspace rotation
+- explainable neuromorphic computing
+- flexible behavior, behavior switching

@@ -23,6 +23,13 @@
   - Analyzes membrane potential dynamics and neural components affecting neuronal behavior
   - **Activation**: spiking neuron models, neuron modeling, biological neuron models, SNN models, membrane potential, neural dynamics modeling
 
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[differentiable-biophysical-simulation-neurostimulation]] - Differentiable biophysical simulation framework for inferring Hodgkin-Huxley parameters from extracellular MEA data, enabling precise neurostimulation prediction without invasive intracellular recordings (arXiv: 2607.04063)
+  - Uses differentiable HH model simulation + simulation-based inference to extract biophysical parameters from extracellular recordings
+  - Enables population-scale fitting (hundreds of neurons) instead of single-cell invasive recordings
+  - Central application: predict neural spiking responses to electrical stimulation for DBS optimization
+  - **Activation**: Hodgkin-Huxley, differentiable simulation, neurostimulation, MEA, biophysical parameters, simulation-based inference, DBS
+
 ## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
 ### Quantum Probabilistic Local Differential Privacy: Structural Properties and Sample Complexity Bounds
