@@ -1,3 +1,19 @@
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - SpiNNaker 2 implementation of dynamic neural manifolds for real-time robotic control via subspace rotations (arXiv: 2607.07373)
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents
+  - Subspace rotations enable rapid behavior switching without retraining
+  - First real-time neuromorphic implementation of dynamic manifold control
+  - **Activation**: neural manifold, SpiNNaker 2, closed-loop control, subspace rotation, robotic navigation
+
+### Intrinsic-Noise Consolidation: Doob-Barrier-Conditioned Diffusion for Continual Learning
+- [[intrinsic-noise-consolidation-doob]] - Converts analog neuromorphic device noise into consolidation resource via Doob h-transform (arXiv: 2607.06924)
+  - Doob h-transform as synaptic rule: barrier drift σ²∇log h amplified by noise variance
+  - Inverted-U retention curve: increasing noise non-monotonically improves retention (p=0.004)
+  - BrainScaleS-2 hardware validation: 15.6 point retention improvement
+  - **Activation**: Doob h-transform, BrainScaleS-2, analog noise, continual learning, barrier diffusion
+
 # Skills Collection
 
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
