@@ -1,3 +1,19 @@
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
+### Single-Entity Spiking Neuron Models: Survey
+- [[single-entity-spiking-neuron-models-survey]] - Comprehensive survey of mathematical modeling approaches for biologically plausible single-neuron systems (arXiv: 2607.07429)
+  - Covers spiking models, discrete/continuous analogs, membrane potential dynamics
+  - Classification framework based on common features and special use cases
+  - Analysis of neural components affecting dynamics (synapses, dendrites, ion channels)
+  - **Activation**: spiking neuron models, neuron modeling, biological neuron models, SNN models, membrane potential
+
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit-assignment]] - Conductance-based models showing how E/I synapses and shunting inhibition reshape credit-signal geometry in dendritic trees (arXiv: 2607.03556)
+  - Gradient factorization: local eligibility × compartment error
+  - Shunting inhibition optimizes error field distribution under restricted feedback
+  - 5-6 percentage points below backpropagation on MNIST benchmarks
+  - **Activation**: shunting inhibition, dendritic learning, credit assignment, dendritic branching, local learning, E-I balance
+
 ## 2026-07-09 - Neuroscience Research (Cron Job)
 
 ### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
