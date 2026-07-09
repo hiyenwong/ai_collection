@@ -2,6 +2,18 @@
 
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-neuromorphic]] - Implements dynamic neural manifolds on SpiNNaker 2 chip for real-time robotic control, enabling flexible behavior switching via subspace rotations (arXiv: 2607.07373)
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents to drive rapid subspace rotations
+  - Validated on robotic maze navigation with real-time sensory feedback reconfiguring manifold geometry
+  - **Activation**: neural manifolds, neuromorphic control, spiking networks, manifold geometry, SpiNNaker, closed-loop control, robotic navigation
+
+### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion Turns Analog Device Noise into a Continual-Learning Resource
+- [[doob-barrier-noise-consolidation]] - Turns intrinsic analog device noise into consolidation resource using Doob h-transform on BrainScaleS-2 neuromorphic hardware (arXiv: 2607.06924)
+  - Doob barrier-conditioning creates inverted-U retention curve (10.9 points improvement, p=0.004) vs monotonic anchored-drift methods
+  - Real hardware validation: 15.6 points better retention on BrainScaleS-2 silicon with matched average accuracy
+  - **Activation**: continual learning, noise consolidation, Doob h-transform, barrier diffusion, neuromorphic hardware, BrainScaleS, analog noise
+
 ### DBNN: Neural Spike Classification Using a Deep Binarized Neural Network
 - [[dbnn-spike-classification]] - Hardware-efficient neural spike classification with multiplier-free inference, achieving 98.7% accuracy with 0.014 mm² area and 122 nW power at 20 kHz (arXiv: 2607.05590)
   - Uses sign-controlled accumulation and bit-wise logic for implantable brain-computer interfaces
