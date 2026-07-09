@@ -3193,3 +3193,26 @@
   - Core: Probe-based rollout depth selection + progressive shift from token-level to turn-balanced KL weighting
   - Eliminates wasted compute on noisy tail turns, ensures deep decision turns are trained
   - **Activation**: turn-opd, turn-level-budgeting, rollout-depth, progressive-loss, long-horizon-agents
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Spectral Born machines: classically trainable quantum generative models for discrete data
+- [[spectral-born-machines]] - Quantum generative models using group Fourier analysis for integer-structured data, classically trainable via MMD loss with graph spectral kernels (arXiv: 2607.06675)
+  - Core point: QFT-based architecture creates spectral inductive bias reducing parameter counts
+  - Core point: Trained via MMD loss on classical hardware, scalable to 190 qubits with 1M+ params
+  - Core point: Over-parameterized models immune to overfitting even in data-scarce regimes
+  - **Activation**: spectral born machine, quantum generative model Fourier, MMD loss quantum, graph spectral analysis
+
+### XOR Games at Full Tilt: The Hardness of Binary Nonlocal Games
+- [[tilted-xor-games]] - Tilted XOR games variant where quantum value approximation is RE-complete (vs polynomial for standard XOR) (arXiv: 2607.06876)
+  - Core point: Single additional output bit dependence makes quantum value RE-complete
+  - Core point: Reduction from linear system games is quantum-sound for tilted variant
+  - Core point: Classical complexity unchanged (both NP-complete), quantum gap is dramatic
+  - **Activation**: tilted XOR games, binary nonlocal games hardness, RE-complete quantum games
+
+### Universal purification dynamics of monitored Clifford circuits
+- [[monitored-clifford-purification]] - Purification of monitored Clifford circuits reduces to exactly solvable Markovian death process, bypassing replica trick (arXiv: 2607.06683)
+  - Core point: All Renyi entropies collapse onto universal scaling curve with T_P as only fitted parameter
+  - Core point: Clifford-specific hallmarks: O(1) entropy variance and log_q x periodic modulation
+  - Core point: Exact solution for prime qudit dimensions validated at q=2,3,5
+  - **Activation**: monitored Clifford purification, quantum purification dynamics, replica trick bypass, Renyi entropy scaling
