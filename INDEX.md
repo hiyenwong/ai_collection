@@ -8,6 +8,20 @@
   - Deployed on NERSC Perlmutter with DeepSpeed ZeRO2 across multinode A100 clusters
   - **Activation**: rubriq, GRPO quantum, T-gate synthesis, quantum circuit optimization, constraint-aware compilation, fault-tolerant circuit generation, LLM quantum code
 
+### Vectorized Quantum Control: A RISC-V Vector Extension Architecture for Scalable Qubit Systems
+- [[vectorized-quantum-control-riscv]] - RISC-V Vector Extension-based Quantum Control Processor addressing up to 128 qubits per instruction with 80ns halt-resume for mid-circuit measurement (arXiv: 2607.07372)
+  - Hardware-based halt-resume protocol enables real-time feedback within 80ns
+  - 2.52x speedup over baseline with excellent scalability
+  - Parameterized rotation instructions for hybrid quantum-classical programs
+  - **Activation**: vectorized quantum control, RISC-V quantum, QCP architecture, qubit addressing, mid-circuit measurement, scalable quantum control
+
+### Real-Time Quantum Error Correction System Stack: Architecture, Algorithms, and Engineering Practice
+- [[real-time-qec-system-stack]] - Six-layer reference architecture for real-time QEC from syndrome acquisition to logical operations with latency budget models (arXiv: 2605.30765)
+  - Quantifies gap between decoder performance and real-time FTQC requirements
+  - Benchmarks surface code and qLDPC decoders for real-time readiness
+  - Identifies tail latency and data path coordination as key bottlenecks
+  - **Activation**: real-time QEC, QEC system stack, fault-tolerant QC, syndrome decoding, latency budget, quantum systems engineering
+
 ## 2026-07-09 - Anthropic Research (Cron Job)
 
 ### An off switch for dual use knowledge in AI models

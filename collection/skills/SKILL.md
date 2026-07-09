@@ -1,109 +1,170 @@
 ---
-name: qiqp-trainability-analysis
-description: "Trainability analysis for IQP Quantum Circuit Born Machines under Gaussian initialization"
+name: geometric-stability-neural-population-codes
+description: "Geometric Stability of Neural Population Codes methodology - Shesha metric quantifying pairwise distance structure reproducibility across split-half RDMs, dissociable from temporal stability and decoding accuracy. Use when analyzing representational reliability beyond centroid drift, comparing brain regions, or modeling attractor-network mechanisms for RDM consistency. Activation: geometric stability, Shesha, split-half RDM, representational dissimilarity, neural population code, striatum hippocampus, attractor network, recurrent excitation, neural-behavioral coupling."
+license: MIT
+metadata:
+  arxiv_id: "2606.29655"
+  published: "2026-06-28"
+  authors: "Prashant C. Raju"
+  categories: ["q-bio.NC", "cs.NE", "q-bio.QM"]
+  tags: [neuroscience, neural-population, geometric-stability, representational-similarity, RDM, attractor-network, striatum, hippocampus, brain-regions, behavioral-relevance]
 ---
 
-# IQP Trainability Analysis
+# Geometric Stability of Neural Population Codes
 
-## Description
-Methodology for analyzing the trainability of Instantaneous Quantum Polynomial (IQP) Quantum Circuit Born Machines (QCBM) under Gaussian parameter initialization. Studies barren plateau phenomena and gradient scaling in quantum generative models, providing theoretical and practical insights for optimizing quantum circuit training.
+## Paper
+**arXiv: 2606.29655** — "Geometric Stability of Neural Population Codes: Regional Variation, Behavioral Relevance, and Circuit Dependence" (Prashant C. Raju, 2026-06-28)
 
-## Activation Keywords
-- IQP trainability
-- quantum circuit born machine
-- barren plateau QCBM
-- Gaussian initialization quantum
-- QCBM training
-- 量子电路玻恩机训练
-- IQP 可训练性
-- quantum gradient scaling
+## Core Contribution
 
-## Tools Used
-- execute_code: Simulate quantum circuits and compute gradients
-- terminal: Run quantum simulation (Qiskit, Pennylane)
-- web_search: Search for related trainability research
+Introduces **geometric stability** as a new axis of representational analysis, formally distinct from temporal stability (centroid drift) and decoding accuracy. Quantified via **Shesha** (Spearman rank correlation between split-half representational dissimilarity matrices, RDMs), it measures whether the *pairwise distance structure among stimuli* reproduces across independent observations within a single session.
 
-## Usage Patterns
+### Why It Matters
 
-### Pattern 1: Barren Plateau Detection
-When training a quantum circuit and suspecting gradient vanishing:
-1. Compute gradient variance across random parameter initializations
-2. Compare variance scaling with qubit count n
-3. If Var[∂C] ~ O(1/2^n), barren plateau is present
-4. Diagnose cause: circuit depth, entanglement structure, cost function locality
+Existing representational reliability frameworks focus on temporal stability: do population centroids persist across sessions/days? This leaves a fundamental question unanswered: how reliably does the **pairwise geometry** (distance structure) among stimuli reproduce across independent observations within a session? Geometric stability answers this and turns out to be:
 
-### Pattern 2: Gaussian Initialization Analysis
-For QCBM training:
-1. Initialize parameters from N(0, σ²) distribution
-2. Compute expected gradient magnitude and variance
-3. Analyze how σ affects trainability
-4. Find optimal σ range that avoids barren plateaus while maintaining expressibility
+1. **Empirically dissociable** from both temporal stability and decoding accuracy
+2. **Behaviorally predictive** where temporal stability is not
+3. **Regionally heterogeneous** in a hierarchy opposite to temporal stability
+4. **Circuit-dependent** — explainable by recurrent attractor dynamics
 
-### Pattern 3: IQP Circuit Design for Trainability
-When designing IQP circuits:
-1. Structure commuting gate layers to limit entanglement depth
-2. Use shallow circuits where possible
-3. Apply local cost functions instead of global ones
-4. Initialize parameters in trainable regime (avoid over-dispersed Gaussian)
+## Methodology: Shesha Metric
 
-## Instructions for Agents
+### Definition
 
-### Step 1: Circuit Characterization
-- Identify circuit type: IQP (all commuting gates diagonal in X-basis)
-- Count parameters, layers, qubits
-- Determine entanglement connectivity pattern
-- Analyze gate structure (diagonal gates, Hadamard layers)
+For a session with N stimuli and trial-level population activity vectors:
 
-### Step 2: Gradient Analysis
-For a cost function C(θ):
-1. Compute ∂C/∂θ_i for each parameter
-2. Sample gradients over multiple random initializations
-3. Compute mean and variance of gradients
-4. Fit scaling law: Var[∂C] ~ O(b^{-n}) to determine barren plateau severity
+1. Split trials for each stimulus into two halves (odd/even, or random partition)
+2. Compute RDM₁ and RDM₂ (pairwise dissimilarity matrices, e.g., 1 − Pearson correlation of mean activity vectors)
+3. **Shesha S = ρ_spearman(vech(RDM₁), vech(RDM₂))** — Spearman rank correlation between upper triangles of the two RDMs
 
-### Step 3: Initialization Optimization
-- Test multiple σ values for Gaussian initialization
-- For each σ: compute gradient statistics over 100+ samples
-- Find σ range where gradient variance is polynomial (not exponential) in n
-- This defines the "trainable regime"
+### Interpretation
+- **S → 1**: Pairwise geometry reproduces perfectly across observations
+- **S → 0**: Distance structure is unreliable; only marginal statistics are stable
+- **S < 0**: Anti-correlated geometry (rare, indicates non-stationary coding)
 
-### Step 4: Mitigation Strategies
-If barren plateau detected:
-1. **Reduce circuit depth**: Fewer layers = less entanglement = better gradients
-2. **Local cost functions**: Measure local observables instead of global ones
-3. **Layerwise training**: Train one layer at a time, freeze others
-4. **Parameter correlation**: Initialize with correlated parameters
-5. **Adaptive initialization**: Use pre-training to find good initialization region
+### Why Not Just Decoding or Centroid Drift?
 
-## Error Handling
+| Property | Centroid Drift | Decoding Accuracy | **Shesha (Geometric Stability)** |
+|----------|---------------|-------------------|----------------------------------|
+| Captures mean activity shifts | ✓ | indirect | independent |
+| Captures pairwise distance reliability | ✗ | indirect | ✓ (direct) |
+| Predicts trial-by-trial behavior | ✗ (ρ=0.002) | partial | ✓ (ρ=0.18, p=0.005) |
+| Sensitive to recurrent circuit structure | weak | weak | strong |
 
-### Gradient Computation Overflow
-- IQP circuits can produce extreme parameter values
-- Use parameter clipping during optimization
-- Monitor parameter magnitudes, reset if they diverge
+## Key Empirical Findings
 
-### Simulation Memory Limits
-- Full state-vector simulation limited to ~25-30 qubits
-- Use tensor network simulators for larger systems
-- Alternatively, use analytical bounds from theory
+### 1. Behavioral Relevance (Steinmetz et al. 2019 dataset)
 
-### Slow Convergence
-- May indicate being near barren plateau boundary
-- Try increasing σ (more exploration) or decreasing σ (stay local)
-- Consider switching to non-Gaussian initialization
+Across **229 area-session observations spanning 68 brain regions** in a visual discrimination task:
+- **Geometric stability predicts trial-by-trial neural-behavioral coupling**: ρ = 0.18, p = 0.005
+- **Centroid drift does NOT predict behavior**: ρ = 0.002, p = 0.976
 
-## Resources
-- arXiv: 2606.10179 - "Trainability of IQP Quantum Circuit Born Machines Under Gaussian Initialization"
-- Related: Barren plateaus in QNNs, quantum generative modeling, expressibility analysis
+This dissociation is the central empirical claim: geometric stability captures a behaviorally relevant property that temporal-stability analyses miss entirely.
 
-## Examples
+### 2. Regional Hierarchy (opposite to temporal stability)
 
-### Example: Analyzing 8-Qubit IQP QCBM
-Circuit: 3-layer IQP with commuting ZZ rotations
-Cost: MMD (Maximum Mean Discrepancy) between target and generated distributions
-Analysis:
-1. Sample 200 random Gaussian initializations (σ=0.1)
-2. Compute gradient variance for each parameter
-3. Plot variance vs. qubit count scaling
-4. Determine if exponential decay present
-5. Recommend optimal σ range
+| Region | Geometric Stability (S̄) | Temporal Stability |
+|--------|--------------------------|--------------------|
+| **Striatum** | 0.44 (most stable) | lower |
+| **Hippocampus** | 0.19 (least stable) | higher |
+
+The regional hierarchy of geometric stability runs **roughly opposite** to the temporal stability hierarchy. This implies the two axes measure fundamentally different organizational properties — brain regions optimized for temporal persistence are not necessarily optimized for geometric consistency.
+
+### 3. Circuit-Level Account (Attractor Network Model)
+
+Motivated by directionally consistent olfactory data (Bolding & Franks 2018), an **attractor network model** with recurrent excitatory coupling explains geometric stability emergence:
+
+- Recurrent excitation **amplifies split-half RDM consistency** by completing stimulus patterns from sparse feedforward input
+- Model prediction: ρ = +0.64, p = 0.010
+- Mechanism: recurrent attractor dynamics denoise the representational geometry, pulling noisy observations toward stable fixed points
+
+This provides a circuit-level explanation: regions with stronger recurrent excitation (e.g., striatum) exhibit higher geometric stability because attractor dynamics regularize the geometry.
+
+## Implementation Guide
+
+### Computing Shesha in Python
+
+```python
+import numpy as np
+from scipy.stats import spearmanr
+
+def compute_shesha(activity, stim_labels, n_splits=100):
+    """
+    activity: (n_trials, n_neurons) population activity matrix
+    stim_labels: (n_trials,) stimulus identity for each trial
+    Returns mean Shesha across random split halves.
+    """
+    unique_stims = np.unique(stim_labels)
+    shesha_values = []
+    
+    for _ in range(n_splits):
+        # Split trials for each stimulus into two halves
+        mean_vectors_1, mean_vectors_2 = [], []
+        for stim in unique_stims:
+            idx = np.where(stim_labels == stim)[0]
+            if len(idx) < 4:
+                continue
+            np.random.shuffle(idx)
+            half = len(idx) // 2
+            mean_vectors_1.append(np.mean(activity[idx[:half]], axis=0))
+            mean_vectors_2.append(np.mean(activity[idx[half:]], axis=0))
+        
+        if len(mean_vectors_1) < 3:
+            continue
+        
+        M1 = np.array(mean_vectors_1)
+        M2 = np.array(mean_vectors_2)
+        
+        # Compute RDMs (1 - Pearson correlation)
+        def rdm(M):
+            # Pairwise correlation-based RDM
+            corr = np.corrcoef(M)
+            return 1 - corr
+        
+        rdm1 = rdm(M1)
+        rdm2 = rdm(M2)
+        
+        # Spearman correlation between upper triangles
+        iu = np.triu_indices(len(unique_stims), k=1)
+        rho, _ = spearmanr(rdm1[iu], rdm2[iu])
+        shesha_values.append(rho)
+    
+    return np.mean(shesha_values), np.std(shesha_values)
+```
+
+### Workflow
+
+1. **Data preparation**: Trial-level neural activity (n_trials × n_neurons) with stimulus labels
+2. **Minimum trial count**: ≥4 trials per stimulus for stable split-half estimates
+3. **Split strategy**: Random partitioning (n_splits=100 for bootstrap CI)
+4. **RDM metric**: 1 − Pearson correlation of mean population vectors (flexible — can use Euclidean, Mahalanobis, or cross-validated distances)
+5. **Interpretation**: Compare Shesha across brain regions, sessions, or task conditions; correlate with behavioral metrics
+
+## When to Use
+
+- **Representational reliability analysis** beyond centroid drift and decoding accuracy
+- **Cross-region comparison** of representational geometry stability
+- **Circuit modeling** linking recurrent dynamics to representational structure
+- **Behavioral prediction** from neural population geometry
+- **BCI/neurofeedback** applications where geometric consistency of neural codes matters
+
+## Relation to Existing Frameworks
+
+- **Complementary to RSA (Representational Similarity Analysis)**: RSA compares RDMs across regions/models/subjects; Shesha measures within-session split-half RDM consistency — an internal reliability metric
+- **Complementary to temporal stability (drift)**: Orthogonal axes — a region can have high temporal stability but low geometric stability (hippocampus) or vice versa (striatum)
+- **Attractor network theory**: Shesha provides an empirical signature to test predictions of attractor models — regions with stronger attractor dynamics should show higher Shesha
+
+## Pitfalls
+
+- **Trial count sensitivity**: Shesha is unreliable with <4 trials per stimulus. Always report trial counts.
+- **RDM metric choice**: Pearson-based RDMs are standard, but Euclidean or Mahalanobis distances may reveal different geometric properties. Pre-register or systematically compare metrics.
+- **Stimulus set size**: Small stimulus sets (<5 stimuli) produce unreliable RDMs. Aim for ≥8 stimuli for stable Shesha estimates.
+- **Confound with firing rate**: Regions with higher baseline firing may show higher Shesha due to better SNR, not necessarily stronger attractor dynamics. Control for mean firing rate in cross-region comparisons.
+
+## References
+
+- Raju, P. C. (2026). Geometric Stability of Neural Population Codes. arXiv:2606.29655
+- Steinmetz, N. A., et al. (2019). Distributed coding of choice, action and engagement across the mouse brain. Nature 576, 266–273.
+- Bolding, K. A. & Franks, K. M. (2018). Recurrent cortical circuits implement concentration-invariant odor coding. Science 361, eaat6904.
+- See also: [[representational-similarity-analysis]], [[neural-population-dynamics]], [[attractor-models-language-reasoning]]
