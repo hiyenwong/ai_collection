@@ -2,6 +2,14 @@
 
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
 
+### Covariant Approximate Quantum Codes for Protected Analog Computation
+- [[covariant-quantum-codes]] - SU(d)-covariant approximate quantum codes with Theta(1/N) scaling and Petz recovery map for protecte (arXiv: 2607.07607)
+  - Core innovation in quant-ph
+  - **Activation**: covariant-codes, petz-recovery, permutation-symmetry
+
+
+## 2026-07-09 - Systems Engineering + Quantum (Cron Job)
+
 ### Vectorizing Quantum Control: A RISC-V Vector Extension Architecture for Scalable Qubit Systems
 - [[riscv-quantum-control-processor]] - RISC-V vector extension for quantum control processors achieving 2.52x speedup with halt-resume mid- (arXiv: 2607.07372)
   - Core innovation in quant-ph,cs.AR
