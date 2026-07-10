@@ -1,37 +1,52 @@
 ---
 name: quantum-renormalization-goursat
-description: "Quantum renormalization flow analysis and quantum Goursat lemma for C*-Hopf algebras. Covers renormalization fixed points, CP map iteration, convolution powers, matrix product density operators, and finite *-quantum hypergroups. Triggers: quantum renormalization, Goursat lemma, C*-Hopf algebra, topological order, boundary states, matrix product density operator, quantum hypergroup, renormalization fixed point, coarse-graining, quantum channel noise."
-category: quantum-physics
+description: "Quantum renormalization group flow methodology for 1D mixed states using C*-Hopf algebra representations. Perturbs renormalization fixed points with on-site noise quantum channels, coarse-grains iteratively, and describes effective flows via quantum Goursat lemma. Connects renormalization, topological order, and quantum information theory. Activation: quantum renormalization flow, Goursat lemma quantum, topological boundary states, C* Hopf algebra, noise channel coarse graining, mixed state RG"
+metadata:
+  arxiv_id: "2607.08568"
+  published: "2026-07-09"
+  authors: "Multiple authors"
+  tags: [quantum, renormalization, topology, C*-algebra, Goursat, mixed-states, number-theory]
 ---
 
-# Quantum Renormalization Flows & Quantum Goursat Lemma
+# Quantum Renormalization Flows and Goursat Lemma
 
-## Core Framework
+## Methodology
 
-Relates microscopic physical models to effective descriptions at larger length scales via renormalization flows for boundary states of non-chiral 2D topologically ordered models.
+Studies renormalization fixed points built from representations of finite-dimensional C*-Hopf algebras, perturbed by uniform on-site noise quantum channels and repeatedly coarse-grained. Resulting flows admit effective description via quantum Goursat lemma.
 
-## Key Components
+### Core Concepts
 
-### Initial Data
-- Renormalization fixed points built from representations of finite-dimensional C*-Hopf algebras
-- Perturbed by uniform on-site noise quantum channels
-- Repeatedly coarse-grained
+1. **Renormalization fixed points**: Built from C*-Hopf algebra representations for non-chiral 2D topologically ordered models
+2. **Noise perturbation**: Uniform on-site noise quantum channels applied to boundary states
+3. **Coarse-graining flow**: Repeated RG coarse-graining produces effective description
+4. **Quantum Goursat lemma**: Provides effective description of resulting renormalization flows
 
-### Flow Description
-- Intrinsic algebraic description via completely positive maps on C*-Hopf algebra
-- Equivalently: positive linear functionals on enveloping C*-Hopf algebra
-- Iteration governed by convolution powers
-- Convergent trajectories yield new matrix product density operator fixed points
-- Described by finite *-quantum hypergroups
+### Workflow
 
-### Quantum Goursat Lemma
-Generalization of Goursat's lemma for finite-dimensional C*-Hopf algebras gives explicit structural description of all convergent renormalization trajectories.
+**Setup**:
+- Start with renormalization fixed point from C*-Hopf algebra representation
+- Apply uniform on-site noise quantum channel as perturbation
 
-For finite group algebras and their duals, explicit classifications via classical Goursat's lemma for groups.
+**Flow analysis**:
+- Iteratively coarse-grain the perturbed boundary state
+- Track effective description evolution
+- Apply quantum Goursat lemma to characterize flow fixed points
 
-## Applications
+### Mathematical Framework
 
-1. **Topological order analysis**: Classify boundary states of 2D topologically ordered models
-2. **Renormalization flow prediction**: Determine convergence of noisy quantum channels under coarse-graining
-3. **Quantum hypergroup construction**: Build *-quantum hypergroups from convergent trajectories
-4. **Fixed point classification**: Classify matrix product density operator fixed points
+- C*-Hopf algebra representations for boundary states
+- Noise channels as completely positive trace-preserving (CPTP) maps
+- RG flow as iterative application of channel + coarse-grain
+- Goursat lemma for effective fixed-point characterization
+
+### Pitfalls
+
+- **Non-chiral restriction**: Methodology specific to non-chiral topological order
+- **Finite-dimensional algebras**: Hopf algebra representations must be finite-dimensional
+- **Uniform noise assumption**: Non-uniform noise channels require modified approach
+
+### Related Skills
+
+- `topological-quantum-computing` (topological order)
+- `quantum-error-correction-methods` (C*-algebra structures)
+- `quantum-foundations-probability` (renormalization in quantum systems)
