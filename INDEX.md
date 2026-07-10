@@ -1,3 +1,12 @@
+## 2026-07-10 - Neuroscience Research (Cron Job) - Round 3
+
+### Learning Biophysical HH Models from Extracellular Data for Precise Neurostimulation
+- [[biophysical-hh-model-extracellular-neurostimulation]] - Differentiable biophysical simulation enables rapid HH parameter inference from extracellular MEA recordings, predicting stimulation responses with 90.6% accuracy (arXiv: 2607.04063, ICML 2026)
+  - First framework to infer multi-compartment Hodgkin-Huxley parameters from non-invasive extracellular data
+  - Replaces hours of clinical stimulus testing with minutes of recording + model prediction
+  - Validated on macaque retina with 512-electrode array at 30μm pitch
+  - **Activation**: Hodgkin-Huxley, neurostimulation, differentiable simulation, MEA, biophysical inference, retinal prosthesis
+
 ## 2026-07-10 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
 
 ### QMaxCal: Path-Space Regularization for Open Quantum Control via Girsanov's Theorem
