@@ -3377,3 +3377,40 @@
   - Core point: Clifford-specific hallmarks: O(1) entropy variance and log_q x periodic modulation
   - Core point: Exact solution for prime qudit dimensions validated at q=2,3,5
   - **Activation**: monitored Clifford purification, quantum purification dynamics, replica trick bypass, Renyi entropy scaling
+
+## 2026-07-10 - Anthropic Research (Cron Job)
+
+### A global workspace in language models
+- [[global-workspace-j-space]] - Anthropic's discovery of emergent mental workspace (J-space) in Claude using Jacobian lens technique for detecting hidden reasoning and enabling counterfactual reflection training
+  - Core point: Jacobian lens technique reveals internal reasoning not visible in outputs
+  - Core point: Enables counterfactual reflection training for AI safety
+  - Core point: Bridges global workspace theory with LLM interpretability
+  - **Activation**: global workspace, j-space, jacobian lens, interpretability, internal reasoning
+
+### Anthropic Economic Index report: Cadences
+- [[anthropic-economic-index-cadences]] - Methodology for analyzing AI usage patterns through privacy-preserving telemetry — temporal cadences, output artifact classification, and perception surveys
+  - Core point: Hourly sampling reveals when people use Claude and what they produce
+  - Core point: Privacy-preserving telemetry linked to behavioral data
+  - Core point: Temporal cadence analysis of AI adoption patterns
+  - **Activation**: economic index, cadences, usage patterns, temporal analysis, AI adoption
+
+### Project Fetch: Phase two
+- [[project-fetch-phase-two]] - Claude Opus 4.7 autonomously completes robotic quadruped tasks 20x faster than fastest human team, revealing progression from "models helpful to humans" → "humans helpful to models" → "models autonomous"
+  - Core point: Autonomous robotic capabilities benchmark showing 20x speedup over humans
+  - Core point: Progression pattern: helpful → humans-help-models → autonomous
+  - Core point: Physical AI capability frontier expanding rapidly
+  - **Activation**: project fetch, autonomous robotics, physical AI, quadruped tasks
+
+### Agentic coding and persistent returns to expertise
+- [[agentic-coding-expertise-returns]] - Analysis of ~400,000 Claude Code sessions showing domain expertise yields persistent productivity gains even with AI assistance
+  - Core point: Domain expertise provides persistent returns despite AI augmentation
+  - Core point: ~400k session analysis of Claude Code usage patterns
+  - Core point: Expertise-AI interaction effects in software development
+  - **Activation**: agentic coding, Claude Code, domain expertise, productivity returns
+
+### Measuring LLMs' impact on N-day exploits
+- [[measuring-llms-impact-n-day-exploits]] - LLMs dramatically accelerate N-day exploit development; Claude Mythos Preview built 8 working Firefox exploits autonomously and 8 Windows kernel privilege escalation chains
+  - Core point: Claude Mythos built 8 working Firefox exploits autonomously
+  - Core point: 8 Windows kernel privilege escalation chains developed
+  - Core point: Collapses historically slow patch-diffing bottleneck
+  - **Activation**: n-day exploits, LLM cybersecurity, Firefox exploits, Windows kernel, patch diffing
