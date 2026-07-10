@@ -3448,3 +3448,31 @@
   - Explicit counterexample family showing quantum p-Wasserstein distance fails triangle inequality
   - Connects optimal transport theory with quantum information geometry
   - **Activation**: quantum Wasserstein, Monge-Kantorovich quantum, quantum transport distance, quantum optimal transport
+
+### Spectral Born Machines
+- [[spectral-born-machines]] - Quantum generative models via group Fourier analysis, classically trainable at scale; 190-qubit model with 1M+ parameters for rRNA learning (arXiv: 2607.06675)
+  - Core concept: IQP Born machines generalized through group Fourier analysis lens
+  - MMD loss with graph spectral analysis enables classical trainability at scale
+  - Highly over-parameterized models may be immune to overfitting in data-scarce regimes
+  - **Activation**: spectral born machine, quantum generative model, group Fourier analysis, IQP Born machine, discrete data generation, PennyLane tcdq
+
+### Bayesian Gill-Massar Bound
+- [[bayesian-gill-massar-bound]] - Attainable lower bounds for Bayesian quantum parameter estimation in qubit models, bridging classical Bayesian inference with quantum metrology limits (arXiv: 2607.07031)
+  - Core concept: Proves Gill-Massar bound is attainable for qubit models, unlike B-SLD/B-NH bounds
+  - Bridges prior information with quantum Fisher information for optimal estimation
+  - Provides concrete achievability proofs for Bayesian quantum estimation
+  - **Activation**: bayesian gill massar, quantum parameter estimation, bayesian quantum metrology, attainable lower bounds, B-SLD bound, B-NH bound
+
+### Operator-Frame Geometry of Non-Compact Quantum Systems
+- [[operator-frame-geometry-non-compact-quantum]] - Geometric formulation for non-compact bosonic quantum systems where vacuum instability renders conventional quantum geometry ill-defined (arXiv: 2607.06994)
+  - Core concept: Reformulates quantum geometry at operator level when state-space geometry breaks down
+  - Frame-vacuum phase transitions characterize vacuum instability regimes
+  - Extends Berry connection/curvature/quantum metric to non-normalizable states
+  - **Activation**: operator frame geometry, non-compact quantum systems, vacuum instability, quantum geometry breakdown, bosonic systems
+
+### Resource-Efficient Hybrid Quantum Neighborhood Selection
+- [[hqnn-neighborhood-selection]] - Hybrid quantum-classical neighborhood selection for large-scale molecular diversity optimization, reducing QUBO memory and CPU burden (arXiv: 2607.07336)
+  - Core concept: Hybrid architectures provide practical value where near-term quantum cannot deliver unconditional advantage
+  - Reduces dense QUBO memory footprint, CPU utilization, and execution time
+  - Applicable to large-scale combinatorial optimization in molecular discovery
+  - **Activation**: hybrid quantum neighborhood selection, molecular diversity optimization, QUBO optimization, quantum combinatorial optimization
