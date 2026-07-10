@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-2532-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-6711-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -85,7 +85,38 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [Memory Retrieval](collection/skills/memory-retrieval/) | - | 两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
 | [Self-Challenge](collection/skills/self-challenge/) | - | 双代理自我挑战进化机制 | self challenge, 自我挑战 | ✅ |
 
-[查看全部 2532 个技能 →](./collection/skills/)
+[查看全部 6711 个技能 →](./collection/skills/)
+
+### 神经网络技能可视化
+
+技能集合以**前馈神经网络**形式可视化，共 5 层：分类作为神经元按垂直列排列（输入 → 隐藏 → 输出），信号粒子在层间突触中从左向右流动。
+
+![神经网络技能图谱](./docs/html/skill-neural-map-screenshot.png)
+
+**打开交互式版本:** [docs/html/skill-neural-map.html](./docs/html/skill-neural-map.html)（在浏览器中打开）
+
+层级架构：
+- **L0 输入层** — 数据与基础：data-retrieval, math-statistics, physics-math, information-science
+- **L1 隐藏层** — 核心理论：reasoning-bayesian, general-ml, quantum, neuroscience
+- **L2 隐藏层** — 应用 AI：ai-ml, nlp-llm, vision-generative, multi-agent-rl, reinforcement-learning, spiking-neuromorphic, signal-control-systems
+- **L3 隐藏层** — 工程层：systems-engineering, software-engineering, tools-frameworks, agent-tools, control-systems, deployment-optimization, knowledge-graph, memory, continual-learning
+- **L4 输出层** — 领域应用：healthcare-bio, medical, finance, ai-safety-eval, security-privacy, other
+
+功能：
+- **30 个神经元**，5 层前馈架构（节点大小 = log 技能数）
+- **信号粒子**在层间突触中从左→右流动
+- **激活辉光** — 信号通过时神经元点亮
+- **点击节点**高亮其连接并淡化无关神经元
+- **层级导航** — 点击层按钮高亮该层所有神经元
+- **侧边栏**：层级分组分类列表、技能计数、详情面板
+- **控制**：切换信号、暂停动画、重置布局
+
+技能更新后重新生成图谱：
+```bash
+python scripts/update_neural_map.py
+```
+
+此脚本扫描 `collection/skills/` 并更新 HTML 文件中的技能计数。添加、删除或重新分类技能后均需运行。
 
 ### 版本检测功能
 

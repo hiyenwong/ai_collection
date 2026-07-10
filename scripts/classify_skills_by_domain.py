@@ -8,7 +8,7 @@ from pathlib import Path
 from collections import defaultdict
 import json
 
-SKILLS_DIR = Path("/Users/hiyenwong/ai_github/ai_collection/collection/skills")
+SKILLS_DIR = Path(__file__).resolve().parent.parent / "collection" / "skills"
 
 # 领域分类规则（基于关键词）
 DOMAIN_KEYWORDS = {

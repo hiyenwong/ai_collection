@@ -1190,7 +1190,7 @@ def main():
 
             result = subprocess.run(
                 ["git", "mv", rel_src, rel_dst],
-                cwd="/Users/hiyenwong/projects/ai_projects/ai_collection",
+                cwd=str(REPO_ROOT),
                 capture_output=True,
                 text=True,
             )
