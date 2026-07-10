@@ -1,3 +1,23 @@
+## 2026-07-11 - Neuroscience Research (Cron Job)
+
+### Topological Decoding of Grid Cell Activity via Path Lifting to Covering Spaces
+- [[topological-grid-cell-decoding-codes]] - Training-free topological decoding of spatial trajectories from grid cell population activity using TDA + path lifting (arXiv: 2510.16216)
+  - Extracts toroidal coordinates from neural manifold via persistent homology
+  - Path lifting to covering space ℝ² reconstructs trajectories up to affine transform from a single module
+  - **Activation**: grid cells, topological data analysis, toroidal manifold, path lifting, spatial navigation, neural manifolds, continuous attractor network, entorhinal cortex
+
+### Mass Conservation as Inductive Bias for SOC in NCA Reservoirs
+- [[mass-conservation-nca-reservoir-criticality]] - Mass conservation promotes robust self-organized criticality in neural cellular automata reservoirs with 1.27× faster evolution (arXiv: 2606.23115)
+  - Local redistribution rule preserving total lattice mass acts as inductive bias toward SOC
+  - Comparable downstream performance on memory, classification, and temporal control tasks
+  - **Activation**: self-organized criticality, neural cellular automata, reservoir computing, mass conservation, criticality
+
+### STST-JEPA: EEG Foundation Model via Spatio-Temporal Joint Embedding Prediction
+- [[stst-jepa-eeg-foundation]] - Self-supervised EEG transformer pretrained on 47,703 sessions achieving 3.06 years MAE for brain age prediction (arXiv: 2607.06629)
+  - Combines latent-prediction (JEPA) with signal reconstruction under spatiotemporal block masks
+  - Rank-1 on NeuralBench leaderboard for sex classification, age prediction, and psychopathology regression
+  - **Activation**: EEG foundation model, self-supervised learning, brain age prediction, JEPA, spatio-temporal embedding, NeuralBench
+
 ## 2026-07-10 - Neuroscience Research (Cron Job) - Round 3
 
 ### Learning Biophysical HH Models from Extracellular Data for Precise Neurostimulation
