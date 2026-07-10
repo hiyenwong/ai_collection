@@ -3578,3 +3578,28 @@
   - Characterizes steerable vs non-steerable regions in two-qubit state space
   - Relevant for quantum communication protocols and entanglement verification
   - **Activation**: quantum steering typicality, two-qubit steering, local hidden state model, quantum communication verification
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job - Afternoon)
+
+### Grokking and epoch-wise double descent in quantum neural networks
+- [[grokking-epoch-double-descent-qnn]] - Methodology for analyzing grokking transition, epoch-wise double descent, and late-stage generalization decay in overparameterized QNNs, mitigated by weight-norm regularization (arXiv: 2607.08350)
+  - First observation of grokking and double descent in two-qubit QNN on SU(4) manifold
+  - Overparameterization via circuit depth improves generalization probability
+  - Late-stage test error decay correlates with unconstrained weight-norm growth
+  - Weight-norm regularization stabilizes post-grokking phase permanently
+  - **Activation**: quantum neural network grokking, epoch-wise double descent QNN, weight-norm regularization QML, QNN overparameterization training dynamics
+
+### Quantum-inspired methods for finite-element discretizations of the high-dimensional Poisson equation
+- [[quantum-pde-speedup-certification]] - Rigorous certification proving quantum-inspired classical algorithms cannot achieve exponential speedup for high-dimensional Poisson PDEs, confirming quantum advantage (arXiv: 2607.06533)
+  - Provides upper and lower bounds on quantum-inspired classical solver complexity
+  - Definitively shows classical methods are not competitive for high-dimensional PDEs
+  - Confirms QLSA retains exponential speedup in dimension for Poisson discretizations
+  - **Activation**: quantum PDE speedup certification, quantum-inspired classical PDE, high-dimensional Poisson quantum advantage, finite-element quantum complexity
+
+### iSTAR: an algebraic-collapse framework for variational reduction in quantum-inspired continuous Ising solvers
+- [[istar-algebraic-collapse-ising]] - iSTAR methodology exploiting algebraic collapse in continuous Ising solvers — removes 64.4% of dense interaction work via variational frozen-set identity (arXiv: 2607.05448)
+  - Detects stabilized coordinates during late-stage simulated bifurcation
+  - Eliminates saturated variables via exact variational frozen-set identity
+  - Couplings fold into induced field on unresolved subsystem
+  - Certified implementation preserves baseline on G-set benchmark
+  - **Activation**: iSTAR Ising solver reduction, algebraic collapse continuous Ising, simulated bifurcation optimization, variational frozen-set identity
