@@ -29,3 +29,27 @@
   - Pauli twirling can fall short for non-Pauli noise; XPauli matches full-state within statistical uncertainty
   - Validated on superconducting leakage, neutral atom scattering, and trapped ion heating error models
   - **Activation**: fault tolerance, FTQC, hardware-aware, XPauli sampler, leakage error, coherent error, Pauli twirling
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
+
+### Grokking and epoch-wise double descent in quantum neural networks
+- [[grokking-epoch-double-descent-qnn]] - Empirical observation of grokking and epoch-wise double descent in two-qubit QNNs under SU(4) parameterization, with weight-norm regularization to mitigate late-stage generalization decay (arXiv: 2607.08350)
+  - First observation of grokking transition in variational quantum machine learning
+  - Epoch-wise double descent: test error degrades at critical epoch before recovering
+  - Generalization decay in late training correlates with unconstrained weight-norm increase
+  - Weak weight-norm regularization stabilizes post-grokking phase
+  - **Activation**: grokking QNN, epoch-wise double descent, quantum generalization decay, weight-norm regularization, QML training dynamics, SU(4) parameterization
+
+### Quantum models of the Riemann zeta function, lattice spin models and algebraic models of entanglement
+- [[quantum-models-riemann-zeta-lattice-spin]] - Connection between Hilbert-Polya conjecture and Riemann hypothesis, with results on p-adic quantum computing and lattice spin models for quantum entanglement (arXiv: 2606.29294)
+  - Hilbert-Polya conjecture connects Riemann zeta zeros to quantum spectrum
+  - New results on p-adic quantum computing approaches
+  - Algebraic entanglement models based on lattice spin systems
+  - **Activation**: Riemann zeta, Hilbert-Polya conjecture, p-adic quantum computing, lattice spin models, algebraic entanglement
+
+### On the Spectral theory of Isogeny Graphs and Quantum Sampling of Secure Supersingular Elliptic curves
+- [[isogeny-graphs-quantum-sampling-elliptic]] - First provable quantum polynomial-time algorithms for sampling secure supersingular elliptic curves with QUE conjecture proof (arXiv: 2602.02263)
+  - Heuristic O~(log^4 p) quantum gate complexity for secure curve sampling
+  - Proves Quantum Unique Ergodicity conjecture for supersingular isogeny graphs
+  - Removes heuristic assumptions in quantum money protocols
+  - **Activation**: isogeny graphs, supersingular elliptic curves, quantum sampling, QUE conjecture, post-quantum cryptography
