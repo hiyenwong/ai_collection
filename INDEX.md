@@ -1,3 +1,11 @@
+## 2026-07-11 - Neuroscience Research (Cron Job)
+
+### Human-like Object Grouping in Self-supervised Vision Transformers
+- [[human-like-object-grouping]] - Behavioral benchmark shows DINO-trained vision transformers capture object-level organization similar to human visual cortex; Gram matrix structure drives alignment (arXiv: 2603.13994v3)
+  - Two-dot same/different judgment task (1020 trials) reveals self-supervised models predict human grouping RTs at r=0.95
+  - Object-centric AUC metric quantifies patch-level representation structure; deeper layers → stronger object encoding
+  - Gram matrix alignment distillation improves supervised models +8-18pp accuracy without retraining
+  - **Activation**: vision transformer, object segmentation, self-supervised learning, DINO, behavioral benchmark, psychophysics, Gram matrix alignment, perceptual grouping
 ## 2026-07-11 - Deep Learning Research (Cron Job)
 
 ### TACO: Tail-Aware Credit Calibration for LLM Reinforcement Learning
