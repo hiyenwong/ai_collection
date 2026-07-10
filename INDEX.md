@@ -2,6 +2,20 @@
 
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
+### EEG-Based Imagined Speech Decoding Using a Hybrid CNN-SNN Architecture
+- [[cnn-snn-eeg-imagined-speech]] - First integration of spiking neural networks into EEG-based imagined speech decoding, achieving 80.13% accuracy on BCI Competition III benchmark (arXiv: 2607.03844)
+  - Hybrid CNN-SNN pipeline: CNN extracts temporal representations, SNN performs spike-based temporal classification
+  - Exploits event-driven firing mechanisms of biological neurons for non-stationary EEG signals
+  - **Activation**: imagined speech, EEG decoding, CNN-SNN hybrid, spike-based BCI, neuromorphic BCI
+
+### Mass Conservation as an Inductive Bias for Self-Organized Criticality in NCA Reservoirs
+- [[mass-conservation-nca-reservoir-criticality]] - Mass conservation as inductive bias for self-organized criticality in neural cellular automata reservoirs, achieving 1.27× faster evolution with comparable downstream performance (arXiv: 2606.23115)
+  - Mass-conserving NCA consistently exhibit stronger criticality with perfect power-law fits across avalanche distributions
+  - Conservation does not impair downstream utility across memory, classification, and temporal control tasks
+  - **Activation**: self-organized criticality, neural cellular automata, reservoir computing, mass conservation, criticality
+
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
 ### A Non-Hermitian Potential Well Formalism for Conscious--Preconscious--Subliminal Processing
 - [[non-hermitian-conscious-preconscious-subliminal]] - Non-Hermitian quantum formalism modeling GNW consciousness hierarchy via nonlinear Schrodinger equation with complex-valued landscape (arXiv: 2607.08302)
   - Complex-valued GNW landscape bridges sensory encoding and conscious access
