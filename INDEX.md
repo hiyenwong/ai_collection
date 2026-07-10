@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-07-10 - Number Theory, Statistics & Quantum Research (Cron Job)
+
+### Towards Minimax Estimation of High-Order Functionals by Quantum Arguments
+- [[quantum-statistical-functional-estimation]] - Quantum computing approach achieves optimal sample complexity n ≍ α for Rényi/Tsallis entropy estimation, improving O(α²) prior bounds (arXiv: 2607.07540)
+  - Unified estimators for classical F_α(P) = Σ p_i^α and quantum F_α(ρ) = tr(ρ^α)
+  - Minimax optimal L₂ rate: α · n⁻¹ in range α ≲ n ≲ α³⁻ᵒ⁽¹⁾
+  - **Activation**: quantum statistics, minimax estimation, renyi entropy, functional estimation, quantum arguments, sample complexity
+
+### Quantum Density of States and Integer Partitions: A Semiclassical Approach
+- [[semiclassical-number-theory-quantum]] - Semiclassical trace formula connects quantum density of states to integer partitions in analytic number theory, with Pythagorean triples characterizing oscillations (arXiv: 2607.06146)
+  - Statistical mechanics energy distribution maps to integer partitioning problems
+  - Distinct square partitions exhibit oscillations from periodic orbit theory via Pythagorean triples
+  - **Activation**: semiclassical, integer partitions, density of states, number theory, periodic orbit, trace formula, Pythagorean triples
+
+### Quantum Probabilistic Local Differential Privacy: Structural Properties and Sample Complexity Bounds
+- [[quantum-probabilistic-differential-privacy]] - Relaxation of quantum LDP allowing spectral violation events with low probability; hockey-stick divergence bounds for sample complexity (arXiv: 2607.06307)
+  - QPLDP preserves tensor-product composition and unitary post-processing but not convexity
+  - Lower bounds on privatized contraction coefficients via hockey-stick divergence
+  - **Activation**: quantum privacy, differential privacy, hockey-stick divergence, quantum hypothesis testing, sample complexity, spectral violation
+
 ## 2026-07-10 - Systems Engineering Research (Cron Job)
 
 ### Progressive Crystallization: Turning Agent Exploration into Deterministic, Lower-Cost Workflows in Production
