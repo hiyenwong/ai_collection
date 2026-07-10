@@ -1,0 +1,164 @@
+---
+name: quantum-drug-discovery
+description: >
+  Quantum computing methodology for drug discovery pipelines. Covers quantum circuit
+  simulation of compartmental pharmacokinetics, quantum-enhanced molecular dynamics,
+  quantum machine learning for drug-target interaction prediction, and quantum
+  optimization for clinical trial design. Use when: drug discovery with quantum computing,
+  pharmacokinetic/pharmacodynamic modeling with quantum circuits, molecular simulation,
+  drug-target interaction prediction, clinical trial optimization, quantum chemistry
+  for drug design, PennyLane quantum drug simulation, variational quantum algorithms
+  for population PK/PD, quantum-accelerated drug development pipeline.
+description: "Analysis skill for quantum computing in drug discovery and molecular simulation. Use when researching quantum algorithms for molecular dynamics, quantum ML for drug screening, quantum chemistry methods (DFT, QM/MM), or quantum optimization for drug design. Triggers: quantum drug discovery, quantum molecular simulation, quantum chemistry, quantum pharmacology, quantum screening."
+---
+
+# Quantum Drug Discovery Analysis
+
+Analyzes quantum computing applications in pharmaceutical research and drug discovery.
+
+## Overview
+
+This skill provides structured analysis patterns for quantum-enhanced drug discovery, including quantum molecular simulations, quantum machine learning for drug screening, and quantum optimization for drug design.
+
+## Core Research Areas
+
+### 1. Quantum Molecular Simulation
+
+**Key Methods:**
+- Density Functional Theory (DFT) - electronic structure calculations
+- Hartree-Fock (HF) - molecular orbital theory
+- Quantum Mechanics/Molecular Mechanics (QM/MM) - hybrid simulations
+- Fragment Molecular Orbital (FMO) - large molecule computations
+
+**Quantum Advantage:**
+| Task | Classical Complexity | Quantum Potential |
+|------|---------------------|-------------------|
+| Electronic structure | O(N^3) | O(log N) |
+| Molecular dynamics | O(N^2) per step | O(N) |
+| Binding affinity | Approximate | Exact calculations |
+
+### 2. Quantum ML for Drug Screening
+
+**Algorithms:**
+- Variational Quantum Eigensolver (VQE) - molecular property prediction
+- Quantum Support Vector Machines (QSVM) - compound classification
+- Quantum Neural Networks (QNN) - drug-likeness prediction
+- Quantum Boltzmann Machines - generative drug design
+
+**Pipeline:**
+```
+Compound Library → Quantum Encoding → Quantum ML → Hit Identification → Validation
+```
+
+### 3. Quantum Optimization for Drug Design
+
+**Applications:**
+- QUBO formulation for molecular optimization
+- Quantum annealing for lead optimization
+- QAOA for multi-objective drug design
+- Grover's algorithm for structure search
+
+## Analysis Framework
+
+### Paper Extraction Template
+
+```markdown
+# Paper: [Title]
+- **Quantum Method**: [DFT/VQE/QM/MM/QAOA/etc.]
+- **Drug Stage**: [Discovery/Preclinical/Clinical]
+- **Performance**: [accuracy/speedup/novel compounds]
+- **Validation**: [Simulation/In vitro/In vivo]
+- **Key Insight**: [quantum advantage specific to drug discovery]
+```
+
+### Key Questions to Ask
+
+1. **Molecular Scale**: What molecular size is feasible?
+2. **Quantum Hardware**: What qubit requirements?
+3. **Clinical Impact**: What drug development phase?
+4. **Classical Comparison**: What's the baseline method?
+
+## Common Patterns
+
+**Pattern 1: Hybrid Quantum-Classical**
+- QM/MM combines quantum core with classical environment
+- Practical for large biomolecules
+- Most current approaches are hybrid
+
+**Pattern 2: Property Prediction Focus**
+- Quantum excels at molecular property calculation
+- Binding affinity, solubility, stability
+- Faster than classical DFT
+
+**Pattern 3: Early-Stage Applications**
+- Most quantum drug work is discovery phase
+- Clinical validation still theoretical
+- Hardware limitations constrain scale
+
+## Emerging Methods (2026)
+
+Two significant new methodologies emerged in 2026:
+
+### CovAngelo QM/QM/MM Platform (arXiv:2604.10487)
+Three-tier multiscale embedding (inner QM + outer QM + MM) with quantum-information-guided active space partitioning. Supports IQM/IonQ/IBM via CUDA-Q. Demonstrated 20x speedup on covalent docking.
+See: `references/quantum-drug-discovery-new-methods.md`
+
+### Style-based Quantum WGAN (arXiv:2603.22399)
+VAE latent encoding + per-rotation noise injection QGAN with WGAN-GP gradient penalty. Validated on 156-qubit IBM Heron. MOSES benchmark.
+See: `references/quantum-drug-discovery-new-methods.md`
+
+### Universal Programmable Gaussian Boson Sampler (arXiv:2210.14877)
+Time-bin encoded photonic quantum processor with freely adjustable squeezing parameters and programmable interferometer. GBS naturally samples dense subgraphs (cliques) with probability proportional to Hafnian — maps directly to molecular similarity, binding site identification, and drug-target interaction graphs. Achieved 2x classical success probability on 32-node graph clique-finding. Three main applications: molecular docking (protein-ligand interaction graphs), RNA folding prediction (base-pairing compatibility graphs), and drug-target interaction prediction. See: `universal-gbs-drug-discovery` skill for full methodology.
+
+### Q-BIOLAT: Protein Fitness Quantum Annealing (arXiv:2603.17247)
+Maps protein sequences to binary latent spaces via pretrained protein language models (ESM/ProtTrans), then formulates protein fitness landscape exploration as QUBO problems solvable on quantum annealers (D-Wave). The QUBO matrix captures epistatic interactions between residue positions. Key advantage: binary quantization enables direct mapping to Ising/QUBO without embedding overhead from continuous variables.
+See: `q-biolat-protein-fitness-quantum` skill for full methodology.
+
+## Quick Reference
+
+### Quantum Chemistry Methods
+
+| Method | Use Case | Qubit Count |
+|--------|----------|-------------|
+| VQE | Ground state energy | ~100-1000 qubits |
+| QAOA | Optimization | ~50-500 qubits |
+| Quantum Phase Estimation | Exact energies | ~1000+ qubits |
+| DFT-on-Quantum | Electronic structure | ~200-2000 qubits |
+| QM/QM/MM (CovAngelo) | Covalent docking, reaction barriers | ~20-40 qubits (active space) |
+| QWGAN | De novo molecular generation | ~15-156 qubits |
+
+### Drug Development Stages
+
+- **Discovery**: Target identification, hit screening (most quantum papers)
+- **Preclinical**: ADMET prediction, lead optimization (some quantum)
+- **Clinical**: Trial design, patient matching (few quantum papers)
+
+## Scripts
+
+### analyze_drug_paper.py
+
+Extracts structured insights from quantum drug discovery papers.
+
+```bash
+python scripts/analyze_drug_paper.py --paper "path/to/paper.pdf" --output analysis.json
+```
+
+## References
+
+For quantum chemistry background:
+- `references/quantum_chemistry.md` - DFT, HF, QM/MM methods
+- `references/drug_pipeline.md` - drug development stages
+- `references/qubit_requirements.md` - hardware scalability
+
+## Related Skills
+
+- **quantum-medical-imaging** - Quantum diagnostics and imaging
+- **arxiv-search** - Find quantum drug papers on arXiv
+- **neural-dynamics-universal-translator** - Related molecular dynamics
+
+## Notes
+
+- Quantum drug discovery is rapidly evolving - check 2024-2026 papers
+- Most research focuses on discovery phase, not clinical
+- Hybrid methods (QM/MM) are most practical currently
+- Hardware requirements are substantial for large molecules
