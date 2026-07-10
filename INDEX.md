@@ -3428,3 +3428,17 @@
   - Core point: 8 Windows kernel privilege escalation chains developed
   - Core point: Collapses historically slow patch-diffing bottleneck
   - **Activation**: n-day exploits, LLM cybersecurity, Firefox exploits, Windows kernel, patch diffing
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job)
+
+### Topology from Decoherence
+- [[topology-from-decoherence]] - Decoherence-induced topological phases via correlated quantum noise in open many-body systems, characterized by winding numbers and non-Hermitian skin effects (arXiv: 2607.07801)
+  - Core concept: Correlated quantum noise generates topological order instead of destroying it
+  - Interaction-induced phenomenon that disappears for free systems and upon postselection
+  - **Activation**: topology from decoherence, noise-induced topology, open-system topology, winding number decoherence, 退相干诱导拓扑
+
+### Comment on Quantum Monge-Kantorovich Problem
+- [[quantum-monge-kantorovich-distance]] - Disproof of triangle inequality conjectures for quantum Wasserstein distance based on quantum cost matrices (arXiv: 2607.07764)
+  - Explicit counterexample family showing quantum p-Wasserstein distance fails triangle inequality
+  - Connects optimal transport theory with quantum information geometry
+  - **Activation**: quantum Wasserstein, Monge-Kantorovich quantum, quantum transport distance, quantum optimal transport
