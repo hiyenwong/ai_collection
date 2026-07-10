@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-07-10 - Neuroscience Research (Cron Job - Update 2)
+
+### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
+- [[bus-brain-inspired-unsupervised-self-reflection]] - Label-free VLM self-reflection using neuroscience-inspired backward prediction, achieving improvements on 8 benchmarks without annotated data (arXiv: 2607.07361)
+  - Backward prediction: VLMs predict which current states precede a given future state (brain-inspired)
+  - Compatible with SFT and RL; eliminates reliance on annotated data for self-reflective reasoning
+  - **Activation**: BUS, backward prediction, unsupervised self-reflection, VLM reasoning, neuroscience-inspired training
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### EEG-Based Imagined Speech Decoding Using a Hybrid CNN-SNN Architecture
