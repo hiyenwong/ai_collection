@@ -41,6 +41,12 @@
   - Alignment "zippers" up network hierarchy, causing privileged axes to emerge from end-to-end optimization
   - **Activation**: contravariance, strong alignment, convergent evolution, neuroai theory, dnn-brain comparison, privileged axes
 
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - Implementation of dynamic neural manifold theory on SpiNNaker 2 chip for real-time closed-loop control with flexible behavior switching (arXiv: 2607.07373)
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents to drive rapid subspace rotations
+  - Validated via robotic simulation where agent uses sensory feedback to dynamically reconfigure manifold geometry
+  - **Activation**: dynamic neural manifolds, spiking neural networks, neuromorphic computing, spinnaker, closed-loop control, subspace rotation
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### Social-Spatial Dependencies for Learning Visual Navigation
