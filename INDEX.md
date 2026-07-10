@@ -1,5 +1,13 @@
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
+### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
+- [[contravariance-theory-strong-alignment]] - Formal proof that minimal DNN solutions to hard tasks exhibit strong alignment of privileged axes, explaining convergent evolution between artificial and biological networks (arXiv: 2607.08561)
+  - Weak alignment (affine mappings) guarantees strong alignment (privileged axes) for minimal solutions
+  - Alignment "zippers" up network hierarchy, causing privileged axes to emerge from end-to-end optimization
+  - **Activation**: contravariance, strong alignment, convergent evolution, neuroai theory, dnn-brain comparison, privileged axes
+
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
 ### Social-Spatial Dependencies for Learning Visual Navigation
 - [[social-spatial-navigation-phase-transitions]] - Neural network agents demonstrate phase transitions in navigation strategies based on social information quality (arXiv: 2607.07460)
   - Social information quality drives phase transitions from individual to following strategies
