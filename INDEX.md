@@ -1,3 +1,17 @@
+## 2026-07-10 - Neuroscience Research (Cron Job) - Round 2
+
+### Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hlbg-hyperbolic-learning-brain-graphs]] - Lorentzian hyperbolic space modeling of ROI-community-whole-brain hierarchy for brain disorder diagnosis (arXiv: 2607.07077)
+  - Graph-aware Mamba (GaMamba) captures long-range dependencies while preserving graph topology
+  - Achieves SOTA on ABIDE-I (autism) and REST-MDD (depression) datasets
+  - **Activation**: hyperbolic learning, brain graphs, functional connectivity, disorder diagnosis, Lorentzian space, graph mamba, hierarchical brain networks
+
+### Non-Hermitian Potential Well Formalism for Consciousness
+- [[non-hermitian-conscious-preconscious-subliminal]] - Complex-valued landscape model of Global Neuronal Workspace using nonlinear Schrödinger equation (arXiv: 2607.08302)
+  - Conscious access emerges as bound state when GNW depth and attention exceed thresholds
+  - Unifies subliminal, preconscious, and conscious processing in single framework
+  - **Activation**: consciousness modeling, global neuronal workspace, non-hermitian hamiltonian, Schrödinger equation, preconscious processing, subliminal perception
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
