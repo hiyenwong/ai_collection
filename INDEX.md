@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-07-10 - Quantum Computing Research (Cron Job)
+
+### Spectral Born Machines: Classically Trainable Quantum Generative Models for Discrete Data
+- [[spectral-born-machines]] - Quantum generative models using group Fourier analysis for discrete data with classical trainability at scale (arXiv: 2607.06675)
+  - Spectral Born machines generalize IQP Born machines via group Fourier analysis
+  - Trained 190-qubit model with 1M+ parameters on 93-nucleotide ribosomal RNA
+  - **Activation**: spectral Born machine, quantum generative model, group Fourier analysis, IQP Born machine, discrete data generation, PennyLane tcdq
+
+### Variational Learning with Sparse Long-range Entangling Gates
+- [[variational-long-range-entangling]] - Variational quantum algorithms with sparse long-range entangling gates for neutral atoms and trapped ions (arXiv: 2607.07547)
+  - Identifies circuit geometry and qubit reconfigurability as task-dependent resources
+  - Dynamical Lie-algebra analysis of sparse power-of-two coupling graphs
+  - **Activation**: variational quantum algorithm, long-range entangling gates, sparse coupling graph, dynamical Lie algebra, neutral atoms, trapped ions
+
+### Feynman's Clock and Hierarchy-Informed Sampling for Quantum Error Mitigation
+- [[feynman-clock-error-mitigation]] - BBGKY-ISM quantum error mitigation using Feynman's clock Hamiltonian with polynomial overhead (arXiv: 2607.06752)
+  - Maps quantum circuit execution to Feynman clock Hamiltonian dynamics
+  - Polynomial overhead in both classical and quantum resources
+  - **Activation**: Feynman clock Hamiltonian, BBGKY hierarchy, quantum error mitigation, BBGKY-ISM, polynomial overhead, Bell state preparation
+
 ## 2026-07-10 - Number Theory, Statistics & Quantum Research (Cron Job)
 
 ### Towards Minimax Estimation of High-Order Functionals by Quantum Arguments
