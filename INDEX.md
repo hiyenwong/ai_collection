@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-10 - Systems Engineering Research (Cron Job)
+
+### Progressive Crystallization: Turning Agent Exploration into Deterministic, Lower-Cost Workflows in Production
+- [[progressive-crystallization]] - Lifecycle methodology converting AI agent exploration into deterministic workflows, achieving 70%+ cost reduction in production AIOps (arXiv: 2607.07052)
+  - Three-stage execution taxonomy: agent-orchestrated → hybrid → fully deterministic
+  - Evidence-based promotion mechanism with automatic demotion on regression
+  - Production results: 0%→45% deterministic execution, >70% cost reduction over 8 months
+  - **Activation**: progressive crystallization, agent cost optimization, deterministic workflows, AIOps, workflow automation, agent lifecycle
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
