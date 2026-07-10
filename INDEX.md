@@ -45,6 +45,12 @@
   - Gram matrix structure drives perceptual alignment with human behavior
   - **Activation**: human-like object grouping, self-supervised vision transformers, DINO object segmentation, Gram matrix perceptual alignment, psychophysics benchmark
 
+### Mass Conservation as Inductive Bias for Self-Organized Criticality in NCA Reservoirs
+- [[mass-conservation-nca-reservoir-criticality]] - Mass conservation as inductive bias toward self-organized criticality in NCA reservoirs, 1.27× faster evolution (arXiv: 2606.23115)
+  - Mass conservation promotes SOC without sacrificing downstream performance
+  - Comparable performance on memory, classification, and temporal control tasks
+  - **Activation**: self-organized criticality, neural cellular automata, reservoir computing, mass conservation, criticality
+
 ## 2026-07-11 - Neuroscience Research (Cron Job) Batch 2
 
 ### Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing
