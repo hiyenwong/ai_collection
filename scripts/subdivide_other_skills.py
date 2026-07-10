@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 from collections import defaultdict
 
-BASE_DIR = Path("/Users/hiyenwong/ai_github/ai_collection")
+BASE_DIR = Path(__file__).resolve().parent.parent
 SKILLS_DIR = BASE_DIR / "collection" / "skills"
 OTHER_DIR = SKILLS_DIR / "other"
 

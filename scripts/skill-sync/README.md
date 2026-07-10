@@ -23,7 +23,7 @@ AI 编码工具 Skills 同步工具，支持多平台 skills 的收集、合并�
 ## 快速开始
 
 ```bash
-cd ~/projects/ai_projects/ai_collection/scripts/skill-sync
+cd ~/projects/ai_collection/scripts/skill-sync
 
 # 查看状态
 python3 sync.py status
@@ -47,7 +47,7 @@ python3 sync.py sync --all --merge
 
 ```json
 {
-  "source": "~/projects/ai_projects/ai_collection/collection/skills",
+  "source": "~/projects/ai_collection/collection/skills",
   "targets": [
     {
       "name": "openclaw",

@@ -8,7 +8,7 @@ import subprocess
 import json
 from pathlib import Path
 
-BASE_DIR = Path("/Users/hiyenwong/ai_github/ai_collection")
+BASE_DIR = Path(__file__).resolve().parent.parent
 SKILLS_DIR = BASE_DIR / "collection/skills"
 
 
@@ -114,4 +114,4 @@ if __name__ == "__main__":
         main()
     else:
         print("ERROR: Not in a git repository")
-        print("Run this script from /Users/hiyenwong/ai_github/ai_collection")
+        print("Run this script from the repo root")

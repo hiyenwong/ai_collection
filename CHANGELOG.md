@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added — 2026-07-10
+- Neural network skill map: 6711 skills across 32 categories, 30 neurons in 5-layer feedforward architecture
+- Neural map section added to README_CN.md (Chinese documentation)
+- Cron job "ai_collection 分支合并" updated with full workflow: merge → classify → neural map → screenshot → push
+
+### Fixed — 2026-07-10
+- Classified 556 flat skills into category subdirectories (2146 → 0 flat, 3 category-index files correctly remain)
+- Cleaned 401 duplicate flat skills + 68 stale directories
+- Fixed hardcoded paths in 11 scripts (classify_skills.py, classify_skills_by_domain.py, deploy_agents.py, subdivide_other_skills.py, migrate_skills_by_domain.py, migrate_skills_by_domain_v2.py, inject_security_skill.py, create-agent-compat.sh, skill-sync/config.json, skill-sync/README.md)
+- Fixed cron job workdir: ai_projects/ai_collection → ai_collection (both daily merge and 每日论文冥想)
+- README.md + README_CN.md skill badge updated: 2532 → 6711
+
 ### Policy
 - **All PRs with new skills MUST have every skill classified into a category subdirectory before merge.** No skill may remain in `collection/skills/` root. PRs violating this will be held until classify_skills.py is run.
 - PR merge requires review: verify skill classification, resolve conflicts, run `python scripts/classify_skills.py`, confirm 0 flat skills remain.

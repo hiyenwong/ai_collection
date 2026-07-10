@@ -3,7 +3,7 @@
 # Script to create multi-tool agent compatibility files for all agents
 # in the AI Collection
 
-BASE_DIR="/Users/hiyenwong/ai_github/ai_collection/collection/agents"
+BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)/collection/agents"
 
 # Create INSTRUCTIONS files with agent-specific content
 for agent_dir in "$BASE_DIR"/*/; do

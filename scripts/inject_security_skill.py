@@ -1,6 +1,7 @@
 import os
 
-base = "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/agents"
+import os
+base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "collection", "agents")
 agents = os.listdir(base)
 skill_line = "- **security-guardrails:** Prevent exposure of sensitive credentials, API keys, passwords, and database access information\n"
 

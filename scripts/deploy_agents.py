@@ -17,7 +17,7 @@ import yaml
 
 
 # Paths
-AI_COLLECTION_ROOT = Path("/Users/hiyenwong/projects/ai_projects/ai_collection")
+AI_COLLECTION_ROOT = Path(__file__).resolve().parent.parent
 AGENTS_DIR = AI_COLLECTION_ROOT / "collection" / "agents"
 OPENCLAW_ROOT = Path("/Users/hiyenwong/.openclaw")
 OPENCLAW_AGENTS_DIR = OPENCLAW_ROOT / "agents"
