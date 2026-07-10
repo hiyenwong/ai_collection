@@ -94,3 +94,26 @@
   - Proves Quantum Unique Ergodicity conjecture for supersingular isogeny graphs
   - Removes heuristic assumptions in quantum money protocols
   - **Activation**: isogeny graphs, supersingular elliptic curves, quantum sampling, QUE conjecture, post-quantum cryptography
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job - Late Afternoon)
+
+### Invariance Audits for Quantum Kernels and Variational Rewinding
+- [[invariance-audits-quantum-kernels]] - Real-to-Hermitian taxonomy for auditing data representation invariances in QML (arXiv: 2607.07927)
+  - Fidelity kernel = Hilbert-Schmidt inner product of rank-1 projectors
+  - Same-span block-swap witness distinguishes Grassmann vs flag failures
+  - Weighted flag kernel is PSD and block-gauge invariant
+  - **Activation**: quantum kernel audit, representation invariance, Grassmann kernel, flag projector, QVR
+
+### A Quantum Reservoir Architecture for Chaotic Forecasting
+- [[quantum-reservoir-chaotic-forecasting]] - Complete reproducible QRC recipe with stability-number diagnostic for validating high-dimensional feature benefit (arXiv: 2607.07978)
+  - Fixed quantum circuit as feature generator — no optimization needed
+  - Stability number tracks readout fit quality as sizes grow
+  - Quantum reservoir flat error vs classical degradation
+  - **Activation**: quantum reservoir computing, chaotic forecasting, reservoir stability number, dimensionality diagnostic
+
+### Adaptive Qubit Freezing for Divide-and-Conquer QAOA
+- [[frozen-lgp-qaoa]] - FrozenLGP achieves 100% graph partition coverage for D&C QAOA via max-flow min-cut and energy-preserving bias folding (arXiv: 2607.08138)
+  - Transforms partitionability from assumption to enforceable property
+  - 100% coverage vs 4.6% on high-connectivity graphs up to 10K vertices
+  - Rigorous energy preservation via linear bias folding
+  - **Activation**: FrozenLGP, divide-and-conquer QAOA, qubit freezing, graph partitioning, max-flow vertex cut
