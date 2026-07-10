@@ -1,6 +1,50 @@
 # AI Collection Index
 
 
+## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Sync Batch
+
+### Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
+- [[non-hermitian-conscious-preconscious-subliminal]] - GNW modeled as complex-valued landscape; Hermitian part enables recognition, anti-Hermitian part enables broadcasting; conscious access = bound state emergence (arXiv: 2607.08302)
+  - Nonlinear Schrödinger-type equation with Lotka–Volterra term preserves norm with spatially nonlocal interactions
+  - Two-threshold model: conscious access requires both landscape depth and top-down attention to exceed thresholds
+  - **Activation**: global neuronal workspace conscious access, non-Hermitian Hamiltonian, subliminal preconscious processing, Lotka-Volterra neural dynamics, complex Schrödinger perception
+
+### Contravariance Theory: Strong Alignment for Minimal Solutions
+- [[contravariance-theory-strong-alignment]] - Formalizes that weak alignment via affine mappings guarantees strong alignment of privileged axes in minimal DNN solutions to hard tasks (arXiv: 2607.08561)
+  - Alignment "zippers" up the network hierarchy from end-to-end task optimization
+  - Convergent evolution between artificial and brain networks probably inevitable under strong task constraints
+  - **Activation**: contravariance theory, strong alignment minimal solutions, brain-DNN convergence, privileged axes, NeuroAI alignment
+
+### Topological Decoding of Grid Cell Activity via Path Lifting
+- [[topological-grid-cell-decoding-codes]] - Decodes spatial information from grid cell population using TDA to extract toroidal coordinates and path-lifting to reconstruct trajectories (arXiv: 2510.16216)
+  - Reconstructed paths differ from original by affine transformation; validated on CANN simulations and experimental data
+  - Co-modular grid cells contain sufficient information for path integration without external position data
+  - **Activation**: topological grid cell decoding, path lifting covering spaces, toroidal manifold, grid cell population code, spatial navigation computation
+
+### Extended Predictive Coding under Exponential Family Assumption
+- [[extended-predictive-coding-exponential-family]] - Extends FEP-PC correspondence beyond Gaussian assumption to exponential family, capturing nonlinearity, heterogeneity, and biological plausibility (arXiv: 2605.30882)
+  - Maintains FEP-PC correspondence up to second cumulant; trainable by local plasticity rules
+  - Captures biological properties missing in Gaussian PC: nonlinearity, heterogeneous I/O, non-negative firing rates
+  - **Activation**: exponential family predictive coding, free energy principle variational inference, biological plasticity rules, non-Gaussian perception
+
+### STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding for EEG
+- [[stst-jepa-eeg-foundation]] - Self-supervised transformer for resting-state and task EEG pretrained on 47,703 sessions, achieving MAE 3.06 years for brain age regression (arXiv: 2607.06629)
+  - Latent-prediction objective with EMA-of-tokenizer target + auxiliary signal reconstruction under spatiotemporal block masks
+  - Rank-1 on NeuralBench for sex classification (BA 0.911), age prediction (r=0.749), psychopathology regression (r=0.215)
+  - **Activation**: STST-JEPA, EEG foundation model, brain age regression, self-supervised EEG, spatiotemporal masking, JEPA architecture
+
+### Synchronization Modes in Bipartite Oscillator Networks
+- [[synchronization-bipartite-oscillator-networks]] - Kuramoto-Sakaguchi on bipartite networks exhibits continuous/discontinuous transitions to partial synchrony with self-organized quasiperiodicity (arXiv: 2606.20345)
+  - In PS regime, global oscillations fail to entrain one population whose oscillators display quasiperiodic dynamics
+  - Models excitatory-inhibitory coexistence in neuronal systems with minimal bipartite structure
+  - **Activation**: bipartite oscillator synchronization, Kuramoto Sakaguchi partial synchrony, self-organized quasiperiodicity, excitatory inhibitory dynamics, phase transitions
+
+### Human-like Object Grouping in Self-supervised Vision Transformers
+- [[human-like-object-grouping]] - Behavioral benchmark shows DINO-trained vision transformers achieve strongest alignment with human object segmentation; Gram matrix distillation improves alignment (arXiv: 2603.13994)
+  - Novel metric quantifies object-centric component of representations via within/between-object patch similarity
+  - Gram matrix structure drives perceptual alignment with human behavior
+  - **Activation**: human-like object grouping, self-supervised vision transformers, DINO object segmentation, Gram matrix perceptual alignment, psychophysics benchmark
+
 ## 2026-07-11 - Neuroscience Research (Cron Job) Batch 2
 
 ### Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing
