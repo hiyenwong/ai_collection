@@ -1,5 +1,22 @@
 # AI Collection Index
 
+
+## 2026-07-11 - Neuroscience Research (Cron Job) Batch 2
+
+### Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing
+- [[spike-yolo-automotive-perception]] - First comprehensive evaluation of SNNs for real-world automotive multi-object detection and tracking using SpikeYOLO (arXiv: 2607.04921)
+  - Transfer learning from ANN-YOLO to SNN achieves mAP 0.937 (KITTI) and 0.771 (BDD100K MOT2020) for detection
+  - HOTA 0.701 (KITTI) and 0.445 (BDD100K) for tracking — competitive with conventional deep learning
+  - Energy-efficient edge deployment for autonomous vehicles and ADAS systems
+  - **Activation**: SpikeYOLO, neuromorphic automotive perception, SNN object detection tracking, energy-efficient edge, KITTI neuromorphic
+
+### The Pathwise Approach to Metastability and its Applications to Galves-Löcherbach Models
+- [[pathwise-metastability-galves-locherbach]] - Comprehensive review of pathwise metastability theory for stochastic spiking neural network models (arXiv: 2607.05652)
+  - Unifies metastability theory from chemistry to probability theory applied to GL model family
+  - Self-contained proofs and identification of open problems in SNN metastability
+  - Foundation for understanding metastable states in neural dynamics
+  - **Activation**: metastability spiking neural networks, Galves Locherbach model, pathwise metastability, stochastic spiking networks, rare fluctuation
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### DBNN: Neural Spike Classification Using a Deep Binarized Neural Network
