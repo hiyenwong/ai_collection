@@ -1,5 +1,19 @@
 ## 2026-07-11 - Neuroscience Research (Cron Job)
 
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - First demonstration of parameterizable dynamic neural manifolds on SpiNNaker 2 for real-time closed-loop control (arXiv: 2607.07373)
+  - Sensory inputs modulate heterogeneous inhibition, gain, and transient currents to drive subspace rotations and trajectory control
+  - Maps circuit mechanisms → manifold geometry → behavior with explainable, parameterizable SNN architecture
+  - Validated on robotic maze navigation with dynamic manifold reconfiguration
+  - **Activation**: dynamic neural manifolds, neuromorphic closed-loop control, spinnaker2, spiking sequence generation, subspace rotation, explainable neuromorphic, flexible behavior switching
+
+### Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hyperbolic-learning-brain-graphs]] - Hyperbolic geometry framework for modeling brain network hierarchy with Graph-aware Mamba (GaMamba) (arXiv: 2607.07077)
+  - Projects ROI/community/whole-brain into Lorentzian hyperbolic space with geometric entailment constraints
+  - GaMamba captures long-range dependencies while preserving graph topology
+  - Outperforms SOTA on ABIDE-I (autism) and REST-MDD (depression) with interpretable biomarkers
+  - **Activation**: hyperbolic brain graph, lorentzian hyperbolic space, geometric entailment constraints, graph-aware mamba, brain network hierarchy, roi-community modeling
+
 ### Human-like Object Grouping in Self-supervised Vision Transformers
 - [[human-like-object-grouping]] - Behavioral benchmark shows DINO-trained vision transformers capture object-level organization similar to human visual cortex; Gram matrix structure drives alignment (arXiv: 2603.13994v3)
   - Two-dot same/different judgment task (1020 trials) reveals self-supervised models predict human grouping RTs at r=0.95
