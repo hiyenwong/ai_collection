@@ -32,6 +32,30 @@
   - Core: Finite automata construction for d=2 with both finiteness and uniqueness
   - **Activation**: matrix digit systems, rational number analogue, finiteness property, finite automata
 
+### Quantum Probabilistic Local Differential Privacy
+- [[quantum-probabilistic-differential-privacy]] - QPLDP framework: quantum probabilistic privacy with sample complexity bounds via hockey-stick divergence (arXiv: 2607.06307)
+  - Core: Relaxes quantum LDP by allowing spectral violation events with low probability δ
+  - Core: Not convex, not closed under arbitrary post-processing; preserved under unitaries
+  - **Activation**: QPLDP, quantum privacy, differential privacy, quantum hypothesis testing, hockey-stick divergence, depolarizing noise
+
+### Renormalization Flows for 1D Mixed States + Quantum Goursat Lemma
+- [[quantum-renormalization-goursat]] - Quantum renormalization flow analysis via C*-Hopf algebras with quantum Goursat lemma for classifying convergent trajectories (arXiv: 2607.08568)
+  - Core: Renormalization flows for boundary states of 2D topologically ordered models
+  - Core: Quantum Goursat lemma for finite-dimensional C*-Hopf algebras classifies all convergent trajectories
+  - **Activation**: quantum renormalization, Goursat lemma, C*-Hopf algebra, topological order, matrix product density operator
+
+### Quantum Frobenius Morphism & Canonical Basis Incompatibility
+- [[quantum-frobenius-canonical-basis]] - Proves quantum Frobenius morphism incompatible with canonical basis at high rank (arXiv: 2607.06487)
+  - Core: Incompatibility at same location as Leclerc's imaginary vectors
+  - Core: Tight monomial cone elements not in canonical basis
+  - **Activation**: quantum Frobenius, canonical basis, imaginary vectors, tight monomial cone, Leclerc
+
+### Quantum Integrable Systems: DAHA and DIM Algebra
+- [[quantum-integrable-daha-dim]] - Quantum integrable systems from DAHA and DIM algebra connections covering Macdonald and Koornwinder polynomials (arXiv: 2607.06738)
+  - Core: DIM algebra connects to Ruijsenaars system; DAHA ↔ DIM correspondence
+  - Core: Type A (Macdonald) vs Type C∨C (Koornwinder) system distinctions
+  - **Activation**: DAHA, DIM algebra, Macdonald polynomials, Koornwinder polynomials, Ruijsenaars system
+
 
 ## 2026-07-10 - Neuroscience Research (Cron Job - Update 2)
 
