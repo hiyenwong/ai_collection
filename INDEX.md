@@ -1,3 +1,24 @@
+## 2026-07-10 - Number Theory, Statistics, Mathematics + Quantum (Cron Job)
+
+### QMaxCal: Path-Space Regularization for Open Quantum Control via Girsanov's Theorem
+- [[girsanov-quantum-control]] - Girsanov theorem path-space regularization for robust open quantum control, penalizing observable decoherence consequences (arXiv: 2606.19947)
+  - Uses Girsanov's theorem from stochastic calculus to construct closed-form KL divergence estimators between quantum trajectory distributions
+  - Two regularizers: Wiener KL (noise-specific) and Drift-Variance (universal), reduce infidelity by up to 50%
+  - **+17pp to +27pp robustness gains under noise model mismatch, validated on IBM Kingston processor**
+  - **Activation**: girsanov theorem, quantum control, stochastic calculus, path-space regularization, decoherence robust control, KL divergence quantum trajectories
+
+### Quantum Hoare Logic with Integer Hybrid Path-Sums for Unbounded Loops
+- [[quantum-hoare-logic]] - First semi-automated static analysis combining functional verification and resource estimation for hybrid quantum programs with unbounded loops (arXiv: 2607.08548)
+  - Introduces Integer Hybrid Path-Sums (IHPS) for representing unbounded while loop executions
+  - Generic strategy for termination and expected resource consumption via loop invariants
+  - **Activation**: quantum hoare logic, hybrid quantum program verification, path-sum quantum, static analysis, formal verification, unbounded loops
+
+### Bosonic QEC Codes with Finite Stellar Rank
+- [[bosonic-stellar-rank-qec]] - Stellar rank as resource measure for bosonic QEC design, revealing noise-adapted code structures and concrete resource thresholds (arXiv: 2607.06404)
+  - Trade-off among state approximability, energy, and logical protection under finite non-Gaussian resources
+  - Grid-like encodings optimal for photon loss, rotation-symmetric for dephasing; k=2 suffices for dephasing break-even
+  - **Activation**: bosonic quantum error correction, stellar rank, GKP code, cat code, finite resources, noise-adapted codes
+
 ## 2026-07-10 - Neuroscience Research (Cron Job) - Round 2
 
 ### Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
