@@ -117,3 +117,19 @@
   - 100% coverage vs 4.6% on high-connectivity graphs up to 10K vertices
   - Rigorous energy preservation via linear bias folding
   - **Activation**: FrozenLGP, divide-and-conquer QAOA, qubit freezing, graph partitioning, max-flow vertex cut
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job - Evening)
+
+### How Stark units enter SIC overlaps
+- [[stark-units-sic-overlaps]] - SIC-POVM overlap values characterized as products of Stark units from ray class fields, with Shintani-Faddeev cocycle cross-validation (arXiv: 2606.25457)
+  - SIC overlaps = products of integral powers of sqrt(Stark units)
+  - Non-minimal SICs involve lattice of ray class fields
+  - Every second dimension: some overlap units = ±1 from ray class field properties
+  - **Activation**: SIC-POVM overlaps, Stark units, ray class fields, Shintani-Faddeev cocycle
+
+### Krein Space Quantization and a Spectral Interpretation of the Riemann xi-Function
+- [[krein-space-riemann-xi]] - Spectral interpretation of Riemann xi-function via Krein space quantization in de Sitter QFT, connecting Legendre functions, Mehler-Fock transform, and zero spacing to mass-time scaling (arXiv: 2606.13932)
+  - de Sitter two-point → Legendre → Mehler-Fock → xi-function
+  - Krein space allows sign-indefinite spectral measures
+  - Zero spacing relates to de Sitter mass-time scaling
+  - **Activation**: Krein space quantization, Riemann xi-function spectral, de Sitter QFT, Mehler-Fock transform
