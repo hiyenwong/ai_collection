@@ -2,6 +2,13 @@
 
 ## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
 
+### Symmetry conservation with Trotterization and Quantum Phase Estimation
+- [[operator-kirigami-symmetry-conservation]] - Cut-and-fold technique for preserving non-Abelian symmetries in Trotterized quantum circuits via orthogonal projection and unitary rotation folding (arXiv: 2607.01560)
+  - Hermitian excitation operators map to commuting Pauli strings for Abelian symmetry conservation
+  - Operator kirigami: decompose non-commuting operators by cutting (orthogonal projection) and folding (unitary rotation) for non-Abelian symmetries
+  - Second-order Trotterization negates symmetry-breaking errors; errors decrease with system size
+  - **Activation**: operator kirigami, symmetry conservation quantum, Trotterization symmetry, 量子对称性保护, quantum phase estimation symmetry
+
 ### Plaquette: A hardware-aware design platform for fault-tolerant quantum computers
 - [[plaquette-ftqc-design]] - Computes logical FTQC performance from device physics using XPauli/near-Clifford samplers (arXiv: 2607.08767)
   - Core: Bridges hardware error models to logical performance via four sampler classes
