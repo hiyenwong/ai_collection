@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
+### A Non-Hermitian Potential Well Formalism for Conscious--Preconscious--Subliminal Processing
+- [[non-hermitian-conscious-preconscious-subliminal]] - Non-Hermitian quantum formalism modeling GNW consciousness hierarchy via nonlinear Schrodinger equation with complex-valued landscape (arXiv: 2607.08302)
+  - Complex-valued GNW landscape bridges sensory encoding and conscious access
+  - Conscious access = bound state emergence when landscape depth AND top-down attention exceed thresholds
+  - **Activation**: consciousness, global neuronal workspace, non-hermitian, schrodinger equation, preconscious, subliminal, attention, hilbert space
+
+### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
+- [[contravariance-theory-strong-alignment-minimal]] - Formal proof that minimal DNN solutions to hard tasks guarantee strong alignment of privileged axes, implying convergent evolution is inevitable (arXiv: 2607.08561)
+  - Weak alignment (affine mappings) implies strong alignment of privileged axes for minimal solutions
+  - Alignment zippers up network hierarchy - privileged axes emerge from end-to-end optimization
+  - **Activation**: contravariance, brain alignment, neuroai, convergent evolution, privileged axes, minimal solutions, dnn-brain comparison
+
 ## 2026-07-10 - Quantum Computing Research (Cron Job)
 
 ### Spectral Born Machines: Classically Trainable Quantum Generative Models for Discrete Data
