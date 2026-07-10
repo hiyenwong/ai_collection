@@ -1,3 +1,39 @@
+## 2026-07-11 - Deep Learning Research (Cron Job)
+
+### TACO: Tail-Aware Credit Calibration for LLM Reinforcement Learning
+- [[taco-tail-aware-credit-calibration]] - Fixes "Positive-Credit Contamination" in GRPO by calibrating credit for low-probability tail tokens (arXiv: 2607.07976v1)
+  - Computes context-aware tail-risk scores to distinguish erroneous rarity from useful exploration
+  - Calibrates (not eliminates) positive credit for risky tokens, preserving useful rare patterns
+  - Improves training stability and supports sustained long-horizon RL gains
+  - **Activation**: grpo, tail-aware, credit calibration, positive-credit contamination, token-level credit, rl stability
+
+### AdaPrefix-GRPO: Adaptive Trace Prefix Control for Hard Reasoning Problems
+- [[adaprefix-grpo-prefix-control]] - Feedback controller adjusts solution prefix length to maintain ~50% success rate during GRPO training (arXiv: 2607.07674v1)
+  - Solves GRPO stalling on hardest problems where no rollout succeeds and advantages vanish
+  - More than doubles GRPO accuracy on hard math (2.1x for 0.6B, 1.7x on AIME)
+  - Implemented as data prep + loss mask; trainer is otherwise stock GRPO
+  - **Activation**: grpo, adaptive difficulty, prefix control, hard reasoning, curriculum learning, math reasoning
+
+### Agon: Competitive Cross-Model RL with Implicit Rival Grading
+- [[agon-competitive-cross-model-rl]] - Two models compete as each other's graders for reasoning, without process labels or reward models (arXiv: 2607.07690v1)
+  - Models alternate draft/response roles; rewarded for out-solving the rival
+  - Doubles GRPO's pass@1 on hard DeepMath; 8x the gain of untrained MoA
+  - Deploys as two-stage cascade at inference
+  - **Activation**: competitive rl, cross-model, implicit grading, reasoning, multi-agent, grpo
+
+### RL Post-Training Builds Compositional Reasoning Strategies
+- [[rl-compositional-reasoning-strategies]] - RL composes primitive skills into higher-level reasoning strategies through phased sequential and parallel composition (arXiv: 2607.07646v1)
+  - Phased mechanism: strengthen primitives → discover compositions → consolidate repertoire
+  - RL differs from RFT in selectivity, not exploration volume
+  - Pretraining must organize primitives into reduction procedures for RL to compress
+  - **Activation**: rl post-training, compositional reasoning, strategy discovery, rejection fine-tuning, trace analysis
+
+### SAM-MT: Real-Time Interactive Multi-Target Video Segmentation
+- [[sam-mt-realtime-multi-target-vos]] - Decouples VOS latency from target count, achieving >36 FPS for 10 targets using SAM2 (arXiv: 2607.08688v1)
+  - Uses explicit queries for targets, shared global context, decoupled masked attention, and sparse memory
+  - Maintains SAM2's robust video segmentation while achieving real-time multi-target speed
+  - **Activation**: video segmentation, sam2, real-time, multi-target, efficiency, vos
+
 ## 2026-07-11 - Neuroscience Research (Cron Job)
 
 ### Topological Decoding of Grid Cell Activity via Path Lifting to Covering Spaces
