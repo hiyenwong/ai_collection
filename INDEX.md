@@ -1,5 +1,38 @@
 # AI Collection Index
 
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum (Cron Job)
+
+### Plaquette: A hardware-aware design platform for fault-tolerant quantum computers
+- [[plaquette-ftqc-design]] - Computes logical FTQC performance from device physics using XPauli/near-Clifford samplers (arXiv: 2607.08767)
+  - Core: Bridges hardware error models to logical performance via four sampler classes
+  - Core: XPauli sampler handles leakage; near-Clifford handles coherent errors
+  - **Activation**: plaquette, hardware-aware, FTQC design, XPauli, near-Clifford, leakage simulation
+
+### Irreducible Geometry of Higher-Order Correlator Families
+- [[irreducible-correlator-geometry]] - Geometric framework for collective analysis of quantum correlator families (arXiv: 2607.08761)
+  - Core: Correlators as inner products in operator space; conditioning separates reducible/irreducible info
+  - Core: Canonical, targeted, Krylov, and cross conditioning for systematic correlator analysis
+  - **Activation**: correlator geometry, irreducible analysis, operator space, OTOC analysis, Krylov conditioning
+
+### Robust One-Sided Device-Independent QKD via High-Dimensional Steering
+- [[hd-1sdi-qkd-steering]] - High-dimensional 1sDI-QKD protocol using transverse-spatial entanglement up to d=11 (arXiv: 2607.08709)
+  - Core: Increasing dimension enhances robustness against noise and loss; optimal key rate at d=7
+  - Core: Quantum steering certifies security; reverse reconciliation for key rate evaluation
+  - **Activation**: HD QKD, one-sided DI, quantum steering, transverse-spatial, reverse reconciliation
+
+### Absence of quantum advantage for approximate spin glass optimization
+- [[qaoa-semiclassical-sk-analysis]] - Semiclassical analysis shows QAOA on SK model converges as log(p)/p to Parisi value (arXiv: 2607.08708)
+  - Core: No quantum advantage for approximate spin glass optimization via QAOA
+  - Core: Truncated Wigner approximation reveals optimal spin S~p balance
+  - **Activation**: QAOA semiclassical, spin glass, Sherrington-Kirkpatrick, truncated Wigner, Parisi value
+
+### A Matrix Analogue of Rational Number Systems
+- (Number Theory) Matrix digit systems with finiteness and uniqueness properties using finite automata (arXiv: 2607.08732)
+  - Core: Sufficient conditions for digit set existence in P/Q-expansion systems
+  - Core: Finite automata construction for d=2 with both finiteness and uniqueness
+  - **Activation**: matrix digit systems, rational number analogue, finiteness property, finite automata
+
+
 ## 2026-07-10 - Neuroscience Research (Cron Job - Update 2)
 
 ### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
