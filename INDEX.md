@@ -3490,3 +3490,19 @@
   - Reduces dense QUBO memory footprint, CPU utilization, and execution time
   - Applicable to large-scale combinatorial optimization in molecular discovery
   - **Activation**: hybrid quantum neighborhood selection, molecular diversity optimization, QUBO optimization, quantum combinatorial optimization
+
+## 2026-07-10 - Number Theory, Statistics, Advanced Mathematics + Quantum Mechanics (Cron Job - Evening)
+
+### Quantifying randomness with measurement incompatibility
+- [[measurement-incompatibility-randomness]] - Quantum randomness certification framework using measurement incompatibility witnesses and generalised robustness to bound eavesdropper capabilities via SDP (arXiv: 2607.08697)
+  - Establishes qualitative connection between measurement incompatibility and randomness generation
+  - Uses generalised robustness (geometric measure) as computable incompatibility quantifier
+  - SDP formulation bounds Eve's guessing probability; provides explicit randomness generation protocol
+  - **Activation**: measurement incompatibility randomness, quantum randomness certification, incompatibility witness SDP, prepare-and-measure security, generalised robustness incompatibility
+
+### Typicality of Steering for Two-qubit States
+- [[quantum-steering-typicality]] - Investigates typicality of quantum steering behavior for two-qubit states and its implications for quantum communication (arXiv: 2607.08762)
+  - Studies when correlations cannot be explained by local hidden state models
+  - Characterizes steerable vs non-steerable regions in two-qubit state space
+  - Relevant for quantum communication protocols and entanglement verification
+  - **Activation**: quantum steering typicality, two-qubit steering, local hidden state model, quantum communication verification
