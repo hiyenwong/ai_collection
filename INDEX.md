@@ -14,6 +14,12 @@
   - Alignment zippers up network hierarchy - privileged axes emerge from end-to-end optimization
   - **Activation**: contravariance, brain alignment, neuroai, convergent evolution, privileged axes, minimal solutions, dnn-brain comparison
 
+### When Certificates Fail: A Unified Safety Framework for Embedded Neural Interface Models
+- [[neural-interface-safety-audit]] - Safety audit framework identifying three alignment failures in neural interfaces: verification insufficiency, proxy-fidelity divergence, latent information exfiltration (arXiv: 2607.06630)
+  - Formal robustness certificates can pass while task accuracy drops 25.7% under adversarial attack
+  - Subject identity recoverable at 48.1% from task embeddings vs 6.7% chance level
+  - **Activation**: neural interface safety, BCI security, EEG robustness, brain-computer interface audit, verification insufficiency, proxy-fidelity, latent exfiltration
+
 ## 2026-07-10 - Quantum Computing Research (Cron Job)
 
 ### Spectral Born Machines: Classically Trainable Quantum Generative Models for Discrete Data
