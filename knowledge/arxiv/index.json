@@ -1402,5 +1402,257 @@
     "skillCreated": "higher-order-geometric-updates-for-levenberg-marquardt-method-via-riemann",
     "lastAccessed": "2026-07-09",
     "category": "physics-math"
+  },
+  "2607.08745": {
+    "title": "AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding",
+    "file": "collection/skills/vision-generative/autopilot-vqa-benchmarking-vision-language-models-for-incident/SKILL.md",
+    "keywords": [
+      "benchmark",
+      "safety",
+      "reasoning",
+      "vision-language",
+      "multimodal",
+      "autonomous",
+      "video"
+    ],
+    "utility": 1.0,
+    "skillCreated": "autopilot-vqa-benchmarking-vision-language-models-for-incident",
+    "lastAccessed": "2026-07-10",
+    "category": "vision-generative"
+  },
+  "2607.08740": {
+    "title": "Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows",
+    "file": "collection/skills/nlp-llm/workflow-as-knowledge-semantic-persistence-for-llm-mediated/SKILL.md",
+    "keywords": [
+      "llm",
+      "retrieval",
+      "knowledge",
+      "control",
+      "policy",
+      "inference",
+      "workflow"
+    ],
+    "utility": 1.0,
+    "skillCreated": "workflow-as-knowledge-semantic-persistence-for-llm-mediated",
+    "lastAccessed": "2026-07-10",
+    "category": "nlp-llm"
+  },
+  "2607.08681": {
+    "title": "SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets",
+    "file": "collection/skills/ai-safety-eval/solarchain-eval-a-physics-constrained-benchmark-for-trustworthy/SKILL.md",
+    "keywords": [
+      "agent",
+      "agentic",
+      "llm",
+      "benchmark",
+      "safety",
+      "cyber-physical",
+      "policy"
+    ],
+    "utility": 1.0,
+    "skillCreated": "solarchain-eval-a-physics-constrained-benchmark-for-trustworthy",
+    "lastAccessed": "2026-07-10",
+    "category": "ai-safety-eval"
+  },
+  "2607.05822": {
+    "title": "Using hierarchical statistical learning models to model individual statistical learning",
+    "file": "collection/skills/neuroscience/using-hierarchical-statistical-learning-models-to-model-individual/SKILL.md",
+    "keywords": [
+      "cognitive",
+      "eeg",
+      "communication",
+      "bayesian",
+      "simulation",
+      "sensor",
+      "hierarchical"
+    ],
+    "utility": 1.0,
+    "skillCreated": "using-hierarchical-statistical-learning-models-to-model-individual",
+    "lastAccessed": "2026-07-10",
+    "category": "neuroscience"
+  },
+  "2607.08504": {
+    "title": "Early to Share, Late to Save: Synchronisation-Driven Communication Gating in Bandwidth-Constrained Cooperative VLN",
+    "file": "collection/skills/multi-agent-rl/early-to-share-late-to-save-synchronisation-driven/SKILL.md",
+    "keywords": [
+      "agent",
+      "alignment",
+      "communication",
+      "cooperative",
+      "vision-language",
+      "navigation",
+      "trajectory"
+    ],
+    "utility": 1.0,
+    "skillCreated": "early-to-share-late-to-save-synchronisation-driven",
+    "lastAccessed": "2026-07-10",
+    "category": "multi-agent-rl"
+  },
+  "2607.07824": {
+    "title": "From Triggers to Emotions: A CPM-Grounded Appraisal Multi-Agent for Dynamic Emotional Evolution in Persona-Based Dialogue",
+    "file": "collection/skills/multi-agent-rl/from-triggers-to-emotions-a-cpm-grounded-appraisal/SKILL.md",
+    "keywords": [
+      "agent",
+      "multi-agent",
+      "llm",
+      "simulation",
+      "framework",
+      "dialogue",
+      "emotion"
+    ],
+    "utility": 1.0,
+    "skillCreated": "from-triggers-to-emotions-a-cpm-grounded-appraisal",
+    "lastAccessed": "2026-07-10",
+    "category": "multi-agent-rl"
+  },
+  "2607.07403": {
+    "title": "Multi-Agent Robotic Control with Onboard Vision-Language Models",
+    "file": "collection/skills/multi-agent-rl/multi-agent-robotic-control-with-onboard-vision-language/SKILL.md",
+    "keywords": [
+      "agent",
+      "multi-agent",
+      "safety",
+      "control",
+      "planning",
+      "orchestration",
+      "fine-tuning"
+    ],
+    "utility": 1.0,
+    "skillCreated": "multi-agent-robotic-control-with-onboard-vision-language",
+    "lastAccessed": "2026-07-10",
+    "category": "multi-agent-rl"
+  },
+  "2607.05957": {
+    "title": "Delay-Aware Active Triangulation with Uncertainty-Driven Multi-Agent Reinforcement Learning for Counter-UAS",
+    "file": "collection/skills/multi-agent-rl/delay-aware-active-triangulation-with-uncertainty-driven-multi/SKILL.md",
+    "keywords": [
+      "agent",
+      "multi-agent",
+      "reinforcement",
+      "control",
+      "memory",
+      "communication",
+      "reward"
+    ],
+    "utility": 1.0,
+    "skillCreated": "delay-aware-active-triangulation-with-uncertainty-driven-multi",
+    "lastAccessed": "2026-07-10",
+    "category": "multi-agent-rl"
+  },
+  "2607.08751": {
+    "title": "DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation",
+    "file": "collection/skills/vision-generative/dexverse-a-modular-benchmark-for-multi-task-multi/SKILL.md",
+    "keywords": [
+      "benchmark",
+      "diffusion",
+      "control",
+      "policy",
+      "robot",
+      "robustness",
+      "sensor"
+    ],
+    "utility": 1.0,
+    "skillCreated": "dexverse-a-modular-benchmark-for-multi-task-multi",
+    "lastAccessed": "2026-07-10",
+    "category": "vision-generative"
+  },
+  "2607.08735": {
+    "title": "Learning Adaptive Solvers for Distributed Factor Graph Optimization on Matrix Lie Groups",
+    "file": "collection/skills/signal-control-systems/learning-adaptive-solvers-for-distributed-factor-graph-optimization/SKILL.md",
+    "keywords": [
+      "benchmark",
+      "alignment",
+      "optimization",
+      "communication",
+      "policy",
+      "robot",
+      "feedback"
+    ],
+    "utility": 1.0,
+    "skillCreated": "learning-adaptive-solvers-for-distributed-factor-graph-optimization",
+    "lastAccessed": "2026-07-10",
+    "category": "signal-control-systems"
+  },
+  "2607.07854": {
+    "title": "Sampling on Random Subspaces under Limited Data in the Context of Exploratory Landscape Analysis",
+    "file": "collection/skills/general-ml/sampling-on-random-subspaces-under-limited-data-in/SKILL.md",
+    "keywords": [
+      "benchmark",
+      "optimization",
+      "robustness",
+      "embedding",
+      "optimizer"
+    ],
+    "utility": 0.95,
+    "skillCreated": "sampling-on-random-subspaces-under-limited-data-in",
+    "lastAccessed": "2026-07-10",
+    "category": "general-ml"
+  },
+  "2607.06284": {
+    "title": "Quantifying Entrainment Evidence: A Comparison of Frequentist and Bayesian Approaches for Information Processing Pathway Maps",
+    "file": "collection/skills/neuroscience/quantifying-entrainment-evidence-a-comparison-of-frequentist-and/SKILL.md",
+    "keywords": [
+      "neural",
+      "neuroscience",
+      "inference",
+      "bayesian",
+      "framework",
+      "sensor",
+      "entrainment"
+    ],
+    "utility": 0.92,
+    "skillCreated": "quantifying-entrainment-evidence-a-comparison-of-frequentist-and",
+    "lastAccessed": "2026-07-10",
+    "category": "neuroscience"
+  },
+  "2607.08302": {
+    "title": "A Non-Hermitian Potential Well Formalism for Conscious--Preconscious--Subliminal Processing",
+    "file": "collection/skills/neuroscience/a-non-hermitian-potential-well-formalism-for-conscious/SKILL.md",
+    "keywords": [
+      "neural",
+      "attention",
+      "framework",
+      "image",
+      "sensor",
+      "localization"
+    ],
+    "utility": 0.9,
+    "skillCreated": "a-non-hermitian-potential-well-formalism-for-conscious",
+    "lastAccessed": "2026-07-10",
+    "category": "neuroscience"
+  },
+  "2607.08662": {
+    "title": "WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search",
+    "file": "collection/skills/multi-agent-rl/webswarm-recursive-multi-agent-orchestration-for-deep-and/SKILL.md",
+    "keywords": [
+      "agent",
+      "multi-agent",
+      "agentic",
+      "llm",
+      "orchestration",
+      "inference",
+      "framework"
+    ],
+    "utility": 1.0,
+    "skillCreated": "webswarm-recursive-multi-agent-orchestration-for-deep-and",
+    "lastAccessed": "2026-07-10",
+    "category": "multi-agent-rl"
+  },
+  "2607.08646": {
+    "title": "UltraX: Refining Pre-Training Data at Scale with Adaptive Programmatic Editing",
+    "file": "collection/skills/nlp-llm/ultrax-refining-pre-training-data-at-scale-with/SKILL.md",
+    "keywords": [
+      "llm",
+      "alignment",
+      "control",
+      "optimization",
+      "prompt",
+      "inference",
+      "framework"
+    ],
+    "utility": 1.0,
+    "skillCreated": "ultrax-refining-pre-training-data-at-scale-with",
+    "lastAccessed": "2026-07-10",
+    "category": "nlp-llm"
   }
 }

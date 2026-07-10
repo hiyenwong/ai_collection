@@ -158,6 +158,113 @@
   - Reveals path from quantum computing to classical statistics — quantum algorithms as proof techniques
   - **Activation**: quantum minimax estimation, Rényi entropy quantum, quantum functional estimation, quantum statistics sample complexity, high-order functional estimation, quantum primitives
 
+## 2026-07-10 - ArXiv Paper Skills (Cron Job - Daily)
+
+### AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding
+- [[autopilot-vqa-benchmarking-vision-language-models-for-incident]] - Recent advances in Vision-Language Models, Large Language Models, and Multimodal Large Language Models have improved autonomous driving tasks such as scene understanding, decision making, trajectory p... (arXiv: 2607.08745)
+  - Category: vision-generative
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: autopilot, vqa, benchmarking, vision, language
+
+### Workflow as Knowledge: Semantic Persistence for LLM-Mediated Workflows
+- [[workflow-as-knowledge-semantic-persistence-for-llm-mediated]] - Large language model (LLM) applications increasingly use explicit workflows for tool use, retrieval, branching, checkpointing, and human approval. Existing workflow systems already address many execut... (arXiv: 2607.08740)
+  - Category: nlp-llm
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: workflow, as, knowledge, semantic, persistence
+
+### SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets
+- [[solarchain-eval-a-physics-constrained-benchmark-for-trustworthy]] - As agentic AI systems are increasingly applied to cyber-physical environments, their evaluation requires assessment of both task performance and trustworthiness. In decentralized energy markets, auton... (arXiv: 2607.08681)
+  - Category: ai-safety-eval
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: solarchain, eval, a, physics, constrained
+
+### Using hierarchical statistical learning models to model individual statistical learning
+- [[using-hierarchical-statistical-learning-models-to-model-individual]] - Statistical learning is essential for individuals to discover structure in the sensory environment, especially during communication via speech or music. Individual differences in statistical learning ... (arXiv: 2607.05822)
+  - Category: neuroscience
+  - Published: 2026-07-07
+  - Utility: 1.0
+  - **Activation**: using, hierarchical, statistical, learning, models
+
+### Early to Share, Late to Save: Synchronisation-Driven Communication Gating in Bandwidth-Constrained Cooperative VLN
+- [[early-to-share-late-to-save-synchronisation-driven]] - Most cooperative Vision-Language Navigation (VLN) methods assume unlimited communication, not considering real-world applications where bandwidth is restricted and information efficiency is critical. ... (arXiv: 2607.08504)
+  - Category: multi-agent-rl
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: early, to, share, late, to
+
+### From Triggers to Emotions: A CPM-Grounded Appraisal Multi-Agent for Dynamic Emotional Evolution in Persona-Based Dialogue
+- [[from-triggers-to-emotions-a-cpm-grounded-appraisal]] - Large Language Models (LLMs) have substantially advanced persona-based dialogue agents for emotion-sensitive role simulation in healthcare, education, counseling, customer service, and interactive sto... (arXiv: 2607.07824)
+  - Category: multi-agent-rl
+  - Published: 2026-07-08
+  - Utility: 1.0
+  - **Activation**: from, triggers, to, emotions, a
+
+### Multi-Agent Robotic Control with Onboard Vision-Language Models
+- [[multi-agent-robotic-control-with-onboard-vision-language]] - Vision Language Models (VLMs) and Vision Language Action (VLA) models have shown promise in robotic control. Yet, they face significant challenges regarding explainability, generalization, and compute... (arXiv: 2607.07403)
+  - Category: multi-agent-rl
+  - Published: 2026-07-08
+  - Utility: 1.0
+  - **Activation**: multi, agent, robotic, control, with
+
+### Delay-Aware Active Triangulation with Uncertainty-Driven Multi-Agent Reinforcement Learning for Counter-UAS
+- [[delay-aware-active-triangulation-with-uncertainty-driven-multi]] - Multi-agent active visual triangulation enables precise 3D localization of aerial targets by coordinating mobile observers with controllable cameras. However, existing methods assume instantaneous sta... (arXiv: 2607.05957)
+  - Category: multi-agent-rl
+  - Published: 2026-07-07
+  - Utility: 1.0
+  - **Activation**: delay, aware, active, triangulation, with
+
+### DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation
+- [[dexverse-a-modular-benchmark-for-multi-task-multi]] - Building general-purpose dexterous manipulation policies requires benchmarks that go beyond isolated tasks to systematically evaluate policies across diverse interaction modes, sensory conditions, and... (arXiv: 2607.08751)
+  - Category: vision-generative
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: dexverse, a, modular, benchmark, for
+
+### Learning Adaptive Solvers for Distributed Factor Graph Optimization on Matrix Lie Groups
+- [[learning-adaptive-solvers-for-distributed-factor-graph-optimization]] - Modern robotic perception increasingly involves large-scale geometric optimization problems distributed across multiple robots or sessions. However, existing distributed solvers often depend on brittl... (arXiv: 2607.08735)
+  - Category: signal-control-systems
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: learning, adaptive, solvers, for, distributed
+
+### Sampling on Random Subspaces under Limited Data in the Context of Exploratory Landscape Analysis
+- [[sampling-on-random-subspaces-under-limited-data-in]] - Classical space-filling designs often fail to provide reliable statistical results for Exploratory Landscape Analysis (ELA) when only limited evaluation budgets are available, as commonly occurs in hi... (arXiv: 2607.07854)
+  - Category: general-ml
+  - Published: 2026-07-08
+  - Utility: 0.95
+  - **Activation**: sampling, on, random, subspaces, under
+
+### Quantifying Entrainment Evidence: A Comparison of Frequentist and Bayesian Approaches for Information Processing Pathway Maps
+- [[quantifying-entrainment-evidence-a-comparison-of-frequentist-and]] - Information Processing Pathway Maps (IPPMs) offer a scalable framework for formalizing the complex sequence of mathematical transformations applied to sensory stimuli. These maps chart the latency and... (arXiv: 2607.06284)
+  - Category: neuroscience
+  - Published: 2026-07-07
+  - Utility: 0.92
+  - **Activation**: quantifying, entrainment, evidence, a, comparison
+
+### A Non-Hermitian Potential Well Formalism for Conscious--Preconscious--Subliminal Processing
+- [[a-non-hermitian-potential-well-formalism-for-conscious]] - We propose a phenomenological model of the Global Neuronal Workspace (GNW) in which early sensory processing generates an effective complex-valued landscape governing the dynamics of high-level stimul... (arXiv: 2607.08302)
+  - Category: neuroscience
+  - Published: 2026-07-09
+  - Utility: 0.9
+  - **Activation**: a, non, hermitian, potential, well
+
+### WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search
+- [[webswarm-recursive-multi-agent-orchestration-for-deep-and]] - Large language model (LLM)-based web search agents are transforming information seeking from simple factoid question answering into complex, deep-and-wide search and research-oriented tasks. A single ... (arXiv: 2607.08662)
+  - Category: multi-agent-rl
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: webswarm, recursive, multi, agent, orchestration
+
+### UltraX: Refining Pre-Training Data at Scale with Adaptive Programmatic Editing
+- [[ultrax-refining-pre-training-data-at-scale-with]] - As available training data approaches its physical limit, gains from Scaling Laws have begun to diminish. Consequently, improving Large Language Models (LLMs) now depends less on data expansion and mo... (arXiv: 2607.08646)
+  - Category: nlp-llm
+  - Published: 2026-07-09
+  - Utility: 1.0
+  - **Activation**: ultrax, refining, pre, training, data
+
 ## 2026-07-09 - Systems Engineering + Quantum (Cron Job - Hourly)
 
 ### Quantum Software Engineering in Practice: FPGA and AI Integration for Quantum Certification
@@ -1861,7 +1968,6 @@
   - **Activation**: quantum cat states, measurement-based quantum computing, QND gate, homodyne measurement
 
 
-<<<<<<< HEAD
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Coarse-to-fine Hierarchical Architecture with Sequential Mamba for Brain Reconstruction (CHASMBrain)
@@ -2103,8 +2209,7 @@
   - Second-order covariance preserved, third-order co-skewness destroyed
   - **Activation**: brain, foundation, models,, BFM,, co-skewness,
 
-=======
->>>>>>> a56dd3ea5508b3f83494120b5f586e2831f698ab
+
 ## 2026-06-07 - Neuroscience Research (Cron Job)
 
 ### Training a Predictive Coding Network on ImageNet using Equilibrium Propagation
@@ -2949,8 +3054,8 @@
   - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
   - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
   - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
-<<<<<<< Updated upstream
-=======
+
+
 ## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job + Daily Quantum)
 
 ### Quantum Occam Learning: Sample-Supported Expressibility for Circuit-Based Quantum Learning (arXiv: 2606.12211)
@@ -3242,8 +3347,6 @@
   - **Core Innovation**: Structured research roadmap for AI safety and beneficial AI development
   - **Application**: AI safety research planning, beneficial AI development
   - **Activation**: anthropic institute, AI safety research agenda, beneficial AI roadmap
-
->>>>>>> Stashed changes
 
 ## 2026-06-16 - Computer Science & Quantum (Cron Job)
 
