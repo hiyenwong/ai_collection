@@ -1,6 +1,15 @@
 # AI Collection Index
 
 
+## 2026-07-11 - Quantum Computing Research (Cron Job)
+
+### Robust Quantum Learning through Hamiltonian Reservoir Computing
+- [[hamiltonian-quantum-reservoir-computing]] - Quantum reservoir computing via direct Hamiltonian encoding that circumvents barren plateaus, validated on both analog superconducting and digital gate-based platforms with dissipation-enhanced stability (arXiv: 2607.08037)
+  - Hamiltonian encoding maps input data directly onto fixed Hamiltonian, evolved via quantum dynamics for nonlinear feature extraction
+  - Two implementations: analog processor (hardware-efficient, bypasses gate overhead) and digital circuit (universal, higher overhead)
+  - Finite dissipation constructively suppresses quantum-scrambling instabilities → noise as regularization
+  - **Activation**: Hamiltonian reservoir computing, quantum reservoir computing, barren plateau mitigation, analog quantum processor, dissipation-enhanced quantum learning
+
 ## 2026-07-11 - Neuroscience Research (Cron Job)
 
 ### Omni-Sleep: Sleep Foundation Model via CNS-ANS Hierarchical Contrastive Learning
