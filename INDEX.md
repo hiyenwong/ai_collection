@@ -1,6 +1,38 @@
 # AI Collection Index
 
 
+## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Saturation Sync
+
+### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
+- [[non-hermitian-conscious-preconscious-subliminal]] - GNW modeled as complex-valued landscape with non-Hermitian Hamiltonian; conscious access = bound state emergence when depth + attention exceed thresholds (arXiv: 2607.08302)
+  - Nonlinear Schrödinger-type equation in imaginary time with Lotka-Volterra term for norm preservation and nonlocal interactions
+  - Hermitian part → recognition via dissipative localization; anti-Hermitian part → information broadcasting via spatial spreading
+  - **Activation**: non-Hermitian consciousness, GNW landscape, bound state emergence, complex-valued Hamiltonian, subliminal processing
+### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
+- [[contravariance-theory-strong-alignment]] - Formalizes that weak alignment via affine mappings guarantees strong alignment of privileged axes in minimal DNN solutions; alignment "zippers" up hierarchy (arXiv: 2607.08561)
+  - Proves convergent evolution between DNNs and brains is inevitable for sufficiently hard tasks; metric choice for comparison is insensitive
+  - **Activation**: contravariance theory, NeuroAI alignment, privileged axes, convergent evolution, minimal DNN solutions
+### Topological Decoding of Grid Cell Activity via Path Lifting to Covering Spaces
+- [[topological-grid-cell-decoding-codes]] - TDA extracts toroidal coordinates from grid cell populations + path-lifting reconstructs trajectories in physical space (arXiv: 2510.16216)
+  - Validated on CANN simulations and experimental grid cell recordings; single module suffices for path integration
+  - **Activation**: grid cell decoding, toroidal manifold, path lifting, topological data analysis, covering spaces, spatial navigation
+### Extended Predictive Coding Framework under Exponential-Family Assumption
+- [[extended-predictive-coding-exponential-family]] - Extends FEP-PC correspondence from Gaussian to exponential family, enabling nonlinear heterogeneous neural dynamics (arXiv: 2605.30882)
+  - Trainable by biologically plausible local plasticity rules; resolves negative firing rate problem
+  - **Activation**: extended predictive coding, exponential family, free energy principle, local plasticity rules
+### Human-like Object Grouping in Self-supervised Vision Transformers
+- [[human-like-object-grouping]] - Behavioral benchmark shows DINO-trained ViTs best match human object segmentation via Gram matrix structure (arXiv: 2603.13994)
+  - Object-centric structure in representations predicts human behavior; Gram anchoring improves alignment
+  - **Activation**: human-like object grouping, DINO vision transformer, Gram matrix alignment, object-centric representations
+### Synchronization Modes in Bipartite Oscillator Networks
+- [[synchronization-bipartite-oscillator-networks]] - Kuramoto-Sakaguchi on bipartite networks exhibits partial synchrony via self-organized quasiperiodicity (arXiv: 2606.20345)
+  - Models E/I population dynamics; global oscillations fail to entrain one population → quasiperiodic dynamics
+  - **Activation**: bipartite synchronization, Kuramoto-Sakaguchi, partial synchrony, quasiperiodicity, E/I balance
+### STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding for EEG SSL
+- [[stst-jepa-eeg-foundation]] - Self-supervised EEG transformer pretrained on 47,703 sessions; MAE 3.06 years for brain age regression (arXiv: 2607.06629)
+  - Latent-prediction + signal reconstruction objectives; 30-second windows, spatiotemporal block masks
+  - **Activation**: STST-JEPA, EEG foundation model, brain age prediction, JEPA objective, NeuralBench
+
 ## 2026-07-11 - Anthropic Research (Cron Job)
 
 ### An off switch for dual-use knowledge in AI models
