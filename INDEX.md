@@ -3,6 +3,12 @@
 
 ## 2026-07-12 - Neuroscience Research (Cron Job)
 
+### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion Turns Analog Device Noise into a Continual-Learning Resource
+- [[doob-barrier-noise-consolidation]] - Doob h-transform applied to per-synapse weight dynamics turns analog device noise into memory consolidation resource; validated on real BrainScaleS-2 silicon (arXiv: 2607.06924)
+  - Doob barrier-conditioning creates restoring force amplified by noise variance itself; diverges at barrier
+  - Falsifiable inverted-U prediction: noise level non-monotonically improves retention (10.9 pp gain on Split-MNIST)
+  - Real BrainScaleS-2: 15.6 pp better retention at matched accuracy; noise reframed from tax to consolidation dividend
+  - **Activation**: Doob barrier, noise consolidation, continual learning, catastrophic forgetting, analog neuromorphic, BrainScaleS-2, h-transform
 ### Online Data Reduction with Spiking Neural Networks for the ePIC dRICH Detector
 - [[snn-online-data-reduction-physics]] - SNN-based online data reduction for 320K SiPM channels at 100 MHz; temporal-coincidence encoder + distributed SNN achieves ≥5× data reduction while preserving Cherenkov photon signals (arXiv: 2607.03492)
   - Temporal-coincidence encoding converts SiPM hit patterns into spike trains; SNN classifies genuine Cherenkov vs. dark count noise
