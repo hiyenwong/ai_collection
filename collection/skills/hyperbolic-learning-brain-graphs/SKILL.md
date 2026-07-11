@@ -1,101 +1,157 @@
 ---
 name: hyperbolic-learning-brain-graphs
-category: ai_collection
-description: 超曲率脑图学习方法论，利用Lorentzian超曲空间建模脑网络层次结构，结合Graph-aware Mamba捕获长程依赖。arXiv:2607.07077，2026-07-08 更新。
-source: "arXiv:2607.07077"
-arxiv_id: "2607.07077"
-trigger_words:
-  - hyperbolic brain graph
-  - lorentzian hyperbolic space
-  - geometric entailment constraints
-  - graph-aware mamba
-  - bram network hierarchy
-  - roi-community modeling
-  - brain disorder diagnosis
-created: "2026-07-11"
-updated: "2026-07-11"
+description: "Hyperbolic Learning on Brain Graphs (HLBG) framework for brain disorder diagnosis. Uses Lorentzian hyperbolic space to model hierarchical relationships among ROIs, functional communities, and whole-brain network. Introduces Graph-aware Mamba (GaMamba) for capturing long-range dependencies while preserving graph topology. SOTA on ABIDE-I (autism) and REST-MDD (depression) datasets. Use when: brain network analysis for disorder diagnosis, hyperbolic graph learning, brain functional connectivity modeling, hierarchical brain network representation, Graph Mamba applications, biomarker identification from fMRI, autism/depression classification from brain graphs. Trigger words: hyperbolic brain graphs, HLBG, GaMamba, Graph-aware Mamba, brain disorder diagnosis, ABIDE, REST-MDD, hierarchical brain network, Lorentzian space, functional connectivity, brain graph classification."
 ---
 
-# Hyperbolic Learning on Brain Graphs (HLBG) for Disorder Diagnosis
+# Hyperbolic Learning on Brain Graphs (HLBG)
 
-> **Paper**: Li, Y. et al. "Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis" — arXiv:2607.07077 [cs.CV], July 8, 2026
+## Paper
 
-## Abstract Summary
+**Title**: Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+**arXiv**: 2607.07077v1 (2026-07-08)
+**Authors**: Yapeng Li, Bo Jiang, Ziyan Zhang, Dongdong Chen, Zhengzheng Tu
+**Categories**: cs.CV, cs.AI
 
-Functional brain networks exhibit hierarchical organization across ROI, community, and whole-brain levels. Existing brain graph modeling methods struggle with ROI-community interactions, failing to exploit the full hierarchy. This paper proposes HLBG — a framework using deep hyperbolic learning to model hierarchical brain structures in Lorentzian hyperbolic space, combined with a novel Graph-aware Mamba (GaMamba) for capturing long-range dependencies while preserving graph topology.
+## Problem
 
-## Key Innovations
+Functional brain networks exhibit hierarchical organization across ROI, community, and whole-brain levels. Existing methods struggle to:
+1. Model ROI→community interactions adequately
+2. Capture long-range dependencies between spatially distant ROIs
+3. Exploit the intrinsic hierarchical geometry of brain networks
 
-1. **Lorentzian Hyperbolic Projection**: Projects ROI, community, and whole-brain representations into Lorentzian hyperbolic space, exploiting its natural capacity for encoding hierarchical/tree-like structures.
+## Solution: HLBG Framework
 
-2. **Geometric Entailment Constraints**: Two constraints that enforce the multi-level hierarchy:
-   - ROI representations are geometrically entailed by community representations
-   - Community representations are geometrically entailed by whole-brain representations
-
-3. **Graph-aware Mamba (GaMamba)**: Novel Mamba variant incorporating topology-derived structural prompts to capture long-range dependencies while preserving graph topological information.
-
-4. **Multi-level Hierarchy Modeling**: First framework to jointly model ROI-community-whole-brain hierarchy with geometric constraints in hyperbolic space.
-
-## Technical Framework
-
-### Architecture Pipeline
+### Architecture Overview
 
 ```
-Input (fMRI/EEG) → ROI Features → Community Features → Whole-brain Features
-       ↓                  ↓                    ↓                    ↓
-   Hyperbolic Projection (Lorentzian Space)
-       ↓                  ↓                    ↓                    ↓
-   Geometric Entailment Constraints
-       ↓                  ↓                    ↓                    ↓
-   GaMamba Processing (topology-aware)
-       ↓
-   Classification / Biomarker Identification
+Global Brain Graph (G^g)
+         │
+         ├── Hierarchical Brain Graph Construction
+         │    ├── Global graph: N ROIs, FC matrix, k-strongest connections
+         │    └── C community-specific subgraphs (Yeo 7-network parcellation)
+         │
+         ├── Brain Graph Embedding via GaMamba
+         │    ├── Global branch: captures long-range interactions across all nodes
+         │    └── C Local branches: extract intra-community features
+         │         └── GaMamba: GAT-derived structural prompts → Mamba output matrix
+         │
+         ├── Hierarchical Brain Representation Learning (HBRL)
+         │    ├── Project ROI/community/whole-brain reps into Lorentzian hyperbolic space
+         │    └── Two entailment regularization losses constrain hierarchy
+         │
+         └── Adaptive Fusion → Classification + Biomarker Detection
+              └── Self-attention fuses local + global representations
 ```
 
-### Hyperbolic Space Advantages
+### Key Components
 
-- **Exponential volume growth**: Naturally encodes tree/hierarchical structures
-- **Lorentzian model**: Mathematically rigorous hyperbolic geometry with well-defined distance, entailment, and projection operations
-- **Preserves hierarchy**: Unlike Euclidean space, hyperbolic space can represent hierarchical relationships without distortion
+#### 1. Hierarchical Brain Graph Construction
 
-### GaMamba Architecture
+- **Global graph**: `G^g = (X, A)` where X from FC matrix rows, A retains k-strongest connections per node
+- **Local subgraphs**: Partition by Yeo 7-network functional communities, extract subgraph `(X^i, A^i)` for each community
+- **Hierarchical structure**: `H = {G^g, G^1, ..., G^C}`
 
-- Standard Mamba state-space model enhanced with:
-  - **Topology-derived structural prompts**: Graph structure encoded as additional input
-  - **Preserves graph topology**: Maintains spatial relationships during sequential processing
-  - **Long-range dependencies**: Captures cross-region interactions that standard GNNs miss
+#### 2. Graph-aware Mamba (GaMamba)
 
-## Experimental Results
+Core innovation: inject graph structure as structural prompt into Mamba's input-dependent readout matrix.
+
+```
+S_i = Norm(GAT({u_j}_{j∈N(i)}))  # Structural prompt from GAT
+C' = W_c · (C + S)                # Structure-aware output matrix
+y_i = C' x_i + D u_i              # Final output
+```
+
+- Uses GAT to derive normalized structural prompts from node neighborhoods
+- Prompts integrated into Mamba's output matrix C via linear transformation
+- Enables simultaneous modeling of sequential dynamics and graph-aware representations
+
+#### 3. Hierarchical Brain Representation Learning (HBRL)
+
+Projects representations into Lorentzian hyperbolic space and imposes two geometric entailment constraints:
+
+- **ROI → Community entailment**: ROI representations must be entailed by their community representations
+- **Community → Whole-brain entailment**: Community representations must be entailed by global representations
+
+This captures the one-to-many hierarchical relationships naturally in hyperbolic geometry.
+
+### Results
 
 | Dataset | Task | Performance |
-|---------|------|------------|
-| ABIDE-I | Autism classification | Outperforms SOTA methods |
-| REST-MDD | Depression classification | Outperforms SOTA methods |
-| Both | Biomarker identification | Identifies disorder-relevant functional biomarkers |
+|---------|------|-------------|
+| ABIDE-I | ASD classification | SOTA |
+| REST-MDD | MDD classification | SOTA |
 
-## Comparison with Existing Methods
+- Identifies disorder-relevant functional biomarkers
+- Outperforms GNN-based methods (BrainGB, IBGNN, BrainGNN)
+- Outperforms Transformer-based methods (BrainNetTF, ALTER, Com-BrainTF, CAGT)
 
-| Aspect | Standard GNN | Euclidean Methods | HLBG (This Paper) |
-|--------|-------------|-------------------|-------------------|
-| Hierarchy modeling | Limited | Distorted | Natural in hyperbolic space |
-| ROI-community interaction | Not modeled | Not modeled | Geometric entailment constraints |
-| Long-range dependencies | Local only | Limited | GaMamba captures globally |
-| Interpretability | Low | Low | High (geometric structure) |
+## Implementation Patterns
 
-## Applications
+### GaMamba Module
 
-- **Brain disorder diagnosis**: Autism (ABIDE), Depression (REST-MDD)
-- **Biomarker identification**: Disorder-relevant functional biomarkers
-- **Brain network analysis**: Hierarchical structure modeling
-- **Neurological classification**: Multi-level brain graph classification
+```python
+class GaMamba(nn.Module):
+    def __init__(self, d_model, num_layers):
+        self.gat = GATConv(d_model, d_model)  # Structural prompt generator
+        self.mamba = Mamba(d_model=d_model)    # State space model
+        
+    def forward(self, X, A):
+        # 1. Derive structural prompts from graph topology
+        S = norm(self.gat(X, A))
+        
+        # 2. Integrate prompts into Mamba's output matrix
+        # C' = W_c · (C + S)
+        
+        # 3. Forward through Mamba with structure-aware output
+        return self.mamba(X, C_prime)
+```
 
-## Connection to Other Skills
+### Hierarchical Entailment Loss
 
-- Related to `hyperbolic-gcn-brain-network` and `hyperbolic-learning-brain-graphs` existing skills
-- Complements `gnn-transformer-fusion` for brain network analysis
-- Related to `sa-hgnn-sample-adaptive-hyperbolic-eeg-depression` for hyperbolic brain analysis
-- Builds on `brain-graph-neural` for functional connectivity analysis
+```python
+def entailment_loss(x_child, x_parent):
+    """Lorentzian entailment regularization in hyperbolic space."""
+    # In Lorentz model, entailment is captured by
+    # comparing Lorentzian distances to origin
+    r_child = lorentz_norm(x_child)
+    r_parent = lorentz_norm(x_parent)
+    # Child should be "further" from origin (more specific)
+    return max(0, r_parent - r_child + margin)
+```
 
-## Activation Keywords
+### Full Pipeline
 
-hyperbolic brain graph, lorentzian hyperbolic space, geometric entailment constraints, graph-aware mamba, brain network hierarchy, roi-community modeling, brain disorder diagnosis, abide classification, rest-mdd, hierarchical brain representation, hyperbolic embedding
+```python
+def HLBG(global_graph, community_subgraphs):
+    # 1. Extract features via GaMamba
+    H_global = GaMamba(global_graph.X, global_graph.A)
+    H_locals = [GaMamba(G.X, G.A) for G in community_subgraphs]
+    
+    # 2. Project to hyperbolic space
+    h_global = exp_map(H_global)     # Lorentz exponential map
+    h_locals = [exp_map(H) for H in H_locals]
+    
+    # 3. Apply entailment constraints
+    loss_entail = sum(entailment_loss(h_roi, h_community) 
+                      for roi, community in hierarchy_pairs)
+    loss_entail += entailment_loss(h_community, h_global)
+    
+    # 4. Adaptive fusion + classification
+    fused = self_attention([h_global] + h_locals)
+    return classifier(fused)
+```
+
+## Why Hyperbolic Space?
+
+- **Natural hierarchy encoding**: Hyperbolic space has exponential volume growth, matching tree-like hierarchical structures
+- **Lorentzian model**: Mathematically convenient for optimization with gradient-based methods
+- **Entailment geometry**: Parent-child relationships in hierarchy map naturally to radial ordering in hyperbolic space
+
+## Activation
+
+Keywords: hyperbolic learning, brain graphs, HLBG, GaMamba, Graph-aware Mamba, Lorentzian space, brain disorder diagnosis, ABIDE-I, REST-MDD, autism classification, depression diagnosis, functional connectivity, hierarchical brain network, biomarker identification, Graph Mamba, entailment regularization
+
+## References
+
+- arXiv: 2607.07077v1
+- Full paper text: `/tmp/paper_2607.07077.txt`

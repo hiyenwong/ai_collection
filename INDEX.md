@@ -58,6 +58,17 @@
   - Provides testable predictions for comparing non-normal RNN models to neural population data
   - **Activation**: non-normal dynamics, stationary covariance spectrum, free probability, critical regime, Schwinger-Dyson equations, PCA analysis
 
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[hh-model-inference-from-mea]] - Rapid HH parameter inference from extracellular MEA data using differentiable simulation + SBI; 90.6% accuracy predicting unseen stimulation on macaque retina (arXiv: 2607.04063v1)
+  - Replaces hours of clinical stimulus testing with model-based prediction from minutes of recording
+  - Scales to hundreds of neurons simultaneously, capturing population heterogeneity
+  - **Activation**: HH model fitting, extracellular MEA inference, neurostimulation prediction, differentiable biophysical simulation, simulation-based inference, Hodgkin-Huxley, biophysical parameter estimation
+### Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hyperbolic-learning-brain-graphs]] - First hyperbolic framework modeling ROI→community→whole-brain hierarchy via Lorentzian space; introduces Graph-aware Mamba (GaMamba) for long-range dependency capture; SOTA on ABIDE-I and REST-MDD (arXiv: 2607.07077v1)
+  - Two geometric entailment constraints enforce hierarchical relationships in hyperbolic space
+  - GaMamba injects GAT-derived structural prompts into Mamba's output matrix for topology-aware long-range modeling
+  - **Activation**: hyperbolic brain graphs, HLBG, GaMamba, Graph-aware Mamba, brain disorder diagnosis, Lorentzian space, hierarchical brain network, biomarker identification, ABIDE, REST-MDD
+
 ## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Saturation Sync
 
 ### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
