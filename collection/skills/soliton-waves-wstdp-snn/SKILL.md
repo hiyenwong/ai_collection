@@ -1,59 +1,102 @@
 ---
 name: soliton-waves-wstdp-snn
-description: "Soliton-like wave propagation in recurrent spiking neural networks with weighted STDP. Use when studying cortical traveling waves, activity zone delimitation, spatial memory formation, or self-propagating neural activity patterns."
-tags: [spiking-neural-networks, STDP, cortical-waves, soliton, recurrent-networks]
+description: "Soliton-like wave propagation in 2D recurrent SNNs with weighted STDP - minimal biologically plausible spiking model combining multiplicative STDP, divisive normalization, homeostatic threshold adaptation, and refractory period to produce self-propagating dissipative soliton waves, wave collision encoding, and spatial memory from local plasticity alone"
+tags: [spiking-neural-network, soliton-waves, wave-propagation, spike-timing-dependent-plasticity, divisive-normalization, homeostatic-plasticity, cortical-traveling-waves, spatial-memory, local-plasticity, 2d-recurrent-network]
 ---
 
-# Soliton-like Waves in Two-Dimensional Recurrent Spiking Neural Networks with Weighted STDP
+# Soliton-like Wave Propagation in 2D Recurrent SNNs with Weighted STDP
 
-**arXiv**: 2606.21432v1 (June 19, 2026)
-**Authors**: Ch. Meessen
-**Categories**: cs.NE, q-bio.NC
+**arXiv:** 2606.21432  
+**Authors:** Ch. Meessen  
+**Published:** 2026-06-19  
+**Categories:** cs.NE, q-bio.NC  
 
 ## Core Contribution
 
-Demonstrates that recurrent spiking neural networks with weighted STDP spontaneously generate **stable, self-propagating wave packets** (dissipative solitons) that maintain spatial profiles, propagate at constant speed, and annihilate upon collision.
+This paper constructs a **minimal but biologically plausible spiking neuron model** operating in discrete time that spontaneously generates **dissipative soliton waves** in a 2D recurrent network. The key finding: cortical traveling waves, activity zone delimitation, and spatial memory can emerge from **local plasticity rules alone**, without any engineered connectivity or global coordination.
 
-## Key Methodology
+## Model Architecture
 
-### 1. Minimal Biologically Plausible Neuron Model
-Discrete-time spiking neuron combining:
-- **Multiplicative STDP (WSTDP)**: Weight-dependent spike-timing-dependent plasticity
-- **Divisive normalization**: Biologically plausible dendritic implementation using only local information
-- **Homeostatic threshold adaptation**: Maintains stability
-- **One-step refractory period**: Prevents immediate re-firing
+### Single Neuron Model Components
+The neuron model integrates four minimal mechanisms:
 
-### 2. Network Architecture
-- Excitatory-inhibitory neuron pairs in 2D recurrent network
-- Periodic localized stimulation
-- Geometric asymmetry: inhibitory radius > excitatory radius
-- Initial inhibitory synapses stronger than excitatory
+1. **Multiplicative Weighted STDP (WSTDP)**: Synaptic weights update multiplicatively based on spike timing correlations, with a geometric asymmetry requirement between excitatory and inhibitory connection radii
+2. **Divisive Normalization**: Synaptic integration is normalized by total input, admitting a biologically plausible dendritic implementation where each binary junction uses only locally available information
+3. **Homeostatic Threshold Adaptation**: Firing threshold adapts to maintain stable activity levels across the network
+4. **One-Step Refractory Period**: Simple refractory mechanism preventing immediate re-firing
 
-### 3. Emergent Phenomena
-- **Soliton formation**: Self-propagating wave packets with stable spatial profiles
-- **Constant velocity propagation**: Waves travel at fixed speed
-- **Collision annihilation**: Frontal collisions destroy waves
-- **Direction learning**: WSTDP engraves propagation direction into synaptic weights
-- **Boundary formation**: Simultaneous sources create semi-persistent boundaries encoding relative phase/frequency
+### Network Architecture
+- **2D recurrent grid** of excitatory-inhibitory neuron pairs
+- **Periodic localized stimulation** provides initial wave sources
+- **Geometric asymmetry**: excitatory and inhibitory connection radii must differ
+- **Initial condition**: inhibitory synapses stronger than excitatory ones
 
 ## Key Findings
 
-1. **Self-organizing propagation**: Network learns to sustain propagation in one direction while suppressing reverse propagation
-2. **Phase encoding**: Boundary position between competing waves encodes relative phase and frequency of sources
-3. **Local computation only**: Dendritic implementation requires only locally available information at each binary junction
+### Dissipative Soliton Waves
+The network spontaneously generates stable, self-propagating wave packets with soliton-like properties:
+- **Stable spatial profile**: wave shape persists during propagation
+- **Constant propagation speed**: waves travel at uniform velocity
+- **Annihilation upon collision**: frontal collisions result in wave annihilation
+- **Direction learning**: WSTDP engraves propagation direction into synaptic weights, so the network learns to sustain propagation in one direction while suppressing the reverse
 
-## Implications
+### Wave Collision as Spatial Encoding
+When two sources are active simultaneously:
+- Waves annihilate upon collision
+- The collision defines a **semi-persistent boundary**
+- The boundary position **encodes the relative phase and frequency** of the two sources
+- This provides a mechanism for **spatial memory** from purely local interactions
 
-Provides minimal computational framework for studying:
-- Cortical traveling waves
-- Activity zone delimitation
-- Spatial memory formation from local plasticity rules
+### Biological Plausibility
+- Divisive normalization admits dendritic implementation with local information only
+- Each binary junction operates independently
+- No global coordination or engineered connectivity required
+- Minimal model with only essential components
+
+## Applications
+
+- **Cortical traveling waves**: Understanding emergence of propagating waves in cortex
+- **Activity zone delimitation**: Self-organizing spatial partitioning of neural activity
+- **Spatial memory**: Wave collision boundaries as memory traces
+- **Pattern separation**: Collision-based encoding of multiple input sources
+- **Neuromorphic computing**: Self-organizing wave-based computation
+
+## Mathematical Framework
+
+### WSTDP Update Rule
+```
+Δw_ij = η * (pre_spike_i * post_spike_j - decay * w_ij)
+```
+Multiplicative update ensures weights remain bounded while preserving relative differences.
+
+### Divisive Normalization
+```
+output_i = f(Σ_j w_ij * input_j / (σ + Σ_j |input_j|))
+```
+Local divisive normalization ensures stable dynamics across varying input strengths.
+
+### Soliton Conditions
+1. Geometric asymmetry: r_exc ≠ r_inh
+2. Initial inhibitory dominance: w_inh(0) > w_exc(0)
+3. Periodic stimulation: maintains wave energy
+4. WSTDP learning: stabilizes propagation direction
+
+## Comparison to Related Work
+
+| Approach | Wave Generation | Plasticity | Spatial Memory | Biological Plausibility |
+|----------|----------------|------------|----------------|-------------------------|
+| Engineered CANNs | Pre-wired | None | Manual | Low |
+| Rate-based models | Approximate | Global | Engineered | Medium |
+| This work (WSTDP SNN) | Emergent | Local | Self-organized | High |
+
+## Pitfalls
+
+- **Geometric asymmetry requirement**: Must have different excitatory/inhibitory radii; symmetric networks don't produce solitons
+- **Initial condition sensitivity**: Inhibitory synapses must start stronger than excitatory
+- **Discrete time approximation**: Model operates in discrete timesteps; continuous-time behavior may differ
+- **Stimulation protocol**: Requires periodic localized stimulation; spontaneous wave generation without stimulation not demonstrated
+- **Scale limitations**: Demonstrated on 2D grids; 3D or irregular topologies may behave differently
 
 ## Activation Keywords
-soliton waves, STDP, traveling waves, cortical dynamics, recurrent SNN, self-propagating activity, collision annihilation, spatial memory, divisive normalization
 
-## Related Work
-- Dissipative solitons in physics
-- Cortical traveling waves in visual cortex
-- STDP-based learning rules
-- Recurrent neural network dynamics
+soliton waves, weighted STDP, WSTDP, divisive normalization, homeostatic threshold, cortical traveling waves, spatial memory, 2D recurrent SNN, wave propagation, wave collision, dissipative soliton, local plasticity, activity zone delimitation, pattern separation

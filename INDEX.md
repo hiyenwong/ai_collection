@@ -45,6 +45,19 @@
 
 
 
+### Soliton-like Waves in 2D Recurrent SNN with Weighted STDP
+- [[soliton-waves-wstdp-snn]] - 2D recurrent SNN with multiplicative WSTDP, divisive normalization, homeostatic threshold, and refractory period spontaneously produces dissipative soliton waves that learn propagation direction and encode spatial memory via collision boundaries (arXiv: 2606.21432)
+  - Dissipative solitons maintain stable profile, constant speed, and annihilate upon frontal collision
+  - WSTDP engraves propagation direction; network learns to sustain one direction while suppressing reverse
+  - Wave collision defines semi-persistent boundary encoding relative phase/frequency of dual sources
+  - **Activation**: soliton waves, weighted STDP, cortical traveling waves, spatial memory, divisive normalization, 2D recurrent SNN
+### Stationary Covariance Spectra of Non-Normal Random Recurrent Dynamics
+- [[non-normal-covariance-spectra-rnn]] - Free-probability derivation of closed functional equation for stationary covariance spectrum of discrete-time non-normal RNNs; continuous-time analog yields infinite Schwinger-Dyson hierarchy (arXiv: 2606.31944)
+  - Closed form enables tail eigenvalue analysis in critical regime for discrete-time dynamics
+  - Fundamental asymmetry: discrete-time has closed scalar equation, continuous-time has infinite hierarchy
+  - Provides testable predictions for comparing non-normal RNN models to neural population data
+  - **Activation**: non-normal dynamics, stationary covariance spectrum, free probability, critical regime, Schwinger-Dyson equations, PCA analysis
+
 ## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Saturation Sync
 
 ### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
