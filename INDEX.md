@@ -1,8 +1,13 @@
 # AI Collection Index
 
 
-## 2026-07-11 - Neuroscience Research (Cron Job)
+## 2026-07-12 - Neuroscience Research (Cron Job)
 
+### Online Data Reduction with Spiking Neural Networks for the ePIC dRICH Detector
+- [[snn-online-data-reduction-physics]] - SNN-based online data reduction for 320K SiPM channels at 100 MHz; temporal-coincidence encoder + distributed SNN achieves ≥5× data reduction while preserving Cherenkov photon signals (arXiv: 2607.03492)
+  - Temporal-coincidence encoding converts SiPM hit patterns into spike trains; SNN classifies genuine Cherenkov vs. dark count noise
+  - Event-driven distributed architecture eliminates idle-time computation at 100 MHz; scalable to future collider detectors
+  - **Activation**: snn online data reduction, temporal-coincidence encoder, dRICH detector, ePIC experiment, SiPM dark count filtering, neuromorphic particle physics
 ### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
 - [[shunting-inhibition-dendritic-credit]] - Exact gradient factorization in conductance-based dendritic networks: local eligibility × compartment error; shunting inhibition reshapes error geometry for restricted somatic feedback (arXiv: 2607.03556)
   - Gradient = Local Eligibility (presynaptic activity × driving force × input resistance) × Compartment Error (path-specific error transported through dendritic gains)
