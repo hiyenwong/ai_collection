@@ -1,6 +1,29 @@
 # AI Collection Index
 
 
+## 2026-07-11 - Anthropic Research (Cron Job)
+
+### An off switch for dual-use knowledge in AI models
+- [[off-switch-dual-use-gram]] - Gradient-Routed Auxiliary Modules (GRAM): train one LLM with removable knowledge compartments per dual-use category; delete modules to surgically remove capabilities without retraining
+  - Adds extra neurons per Transformer layer, grouped into modules (one per dual-use category); general weights frozen during dual-use training so knowledge stays localized
+  - 4 dual-use domains → 16 deployment configs from 1 training run; module deletion matches data filtering effectiveness; resists post-removal fine-tuning recovery
+  - Performance gap (on vs off) widens at larger model sizes; bypass becomes harder as models scale
+  - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge, removable compartments, surgical knowledge removal, capability toggling
+
+## 2026-07-12 - Neuroscience Research (Cron Job)
+
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - First SNN to achieve general-purpose in-context learning via apical compartment dynamics that structurally implement online Widrow-Hoff LMS, seed-stable where Transformers grok-collapse (arXiv: 2607.02283)
+  - Apical recurrence u_A(t+1) = α·u_A(t) + γ·e_t·W_A·x_t is structurally identical to leaky online LMS — no attention, depth, or inference-time plasticity needed
+  - Linear probe recovers reference LMS trajectory from apical membrane at R² = 0.93; Transformer exhibits 3-mode grokking distribution at d=30 while DendriCL converges smoothly (σ ≤ 0.005)
+  - **Activation**: dendritic in-context learning, compartmental SNN, online LMS dynamics, apical recurrence, Garg-2022 benchmark, seed-stable ICL, neuromorphic efficiency
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - SpiNNaker 2 implementation of dynamic neural manifold control for embodied robotics — ring network with sensory-modulated subspace rotations for maze navigation (arXiv: 2607.07373)
+  - Three control parameters (multiplicative gain, additive current, random silencing) map to trajectory speed, shape, and subspace rotation — enabling behavior switching in real-time
+  - Precise geometric scaling confirmed: subspace angle follows arccos(1-p_inh), speed controlled by gain modulation, bump size by additive current
+  - **Activation**: dynamic neural manifolds, SpiNNaker 2 neuromorphic, closed-loop control, ring attractor, subspace rotation, explainable neuromorphic, embodied robotics
+
 ## 2026-07-11 - Quantum Computing Research (Cron Job)
 
 ### Robust Quantum Learning through Hamiltonian Reservoir Computing
