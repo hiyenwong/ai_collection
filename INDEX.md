@@ -53,9 +53,16 @@
   - 核心要点 1: 将突触持续学习建模为 Doob h-变换，条件化权重扩散不跨越记忆关键屏障，产生 σ²·∂w log h 恢复力
   - 核心要点 2: 预注册 falsifier 通过 — Split-MNIST 上 retention 提升 10.9pp (σ*=0.02, p=0.004)，在真实 BrainScaleS-2 硅片上验证 15.6pp 提升
   - **Activation**: doob h-transform, noise consolidation, continual learning, catastrophic forgetting, BrainScaleS-2, neuromorphic noise, analog hardware, synaptic consolidation
-
-
-
+### Adaptive Conduction Delays and Phase Locking in Spiking Haken Lighthouse Networks
+- [[adaptive-conduction-delays-haken-lighthouse]] - Analytically tractable theory of phase-locked activity in delayed spiking networks; activity-dependent myelination plasticity modulates axonal conduction speed (arXiv: 2606.21508)
+  - Self-consistency conditions and linear stability theory for phase-locked states via spike-time perturbations; circulant symmetry enables Fourier mode decomposition
+  - Slow-fast dynamics: frozen phase-locked branches organize adaptive dynamics; plasticity selects commensurate delay-period relationships
+  - **Activation**: adaptive conduction delays, phase locking, Haken Lighthouse, myelination plasticity, spiking networks, event-driven simulation, slow-fast dynamics, delayed networks
+### Formal Verification of Probabilistic Spiking Neural Networks via Quotient Abstractions
+- [[formal-verification-probabilistic-snn-quotient]] - CogSpike framework for formal verification of probabilistic SNNs using weight-discretized quotient abstractions; ~17x state reduction per neuron with formal correctness guarantees (arXiv: 2606.20674)
+  - Weight-discretized quotient model abstraction; two-sided fidelity theorem bounds firing disagreement; Asymptotic Silence theorem guarantees permanent silence of unforced neurons
+  - Validated across seven canonical topologies via PRISM-based probabilistic model checking of DTMC encodings
+  - **Activation**: formal verification, probabilistic SNN, quotient abstraction, CogSpike, PRISM, DTMC, state space explosion, synaptic weight discretization, fidelity theorem
 ### Soliton-like Waves in 2D Recurrent SNN with Weighted STDP
 - [[soliton-waves-wstdp-snn]] - 2D recurrent SNN with multiplicative WSTDP, divisive normalization, homeostatic threshold, and refractory period spontaneously produces dissipative soliton waves that learn propagation direction and encode spatial memory via collision boundaries (arXiv: 2606.21432)
   - Dissipative solitons maintain stable profile, constant speed, and annihilate upon frontal collision
@@ -79,8 +86,18 @@
   - Two geometric entailment constraints enforce hierarchical relationships in hyperbolic space
   - GaMamba injects GAT-derived structural prompts into Mamba's output matrix for topology-aware long-range modeling
   - **Activation**: hyperbolic brain graphs, HLBG, GaMamba, Graph-aware Mamba, brain disorder diagnosis, Lorentzian space, hierarchical brain network, biomarker identification, ABIDE, REST-MDD
+### Adaptive Conduction Delays and Phase Locking in Spiking Haken Lighthouse Networks
+- [[adaptive-conduction-delays-haken-lighthouse]] - Analytically tractable theory of phase-locked activity in delayed spiking networks; introduces activity-dependent myelination plasticity that modulates axonal conduction speed (arXiv: 2606.21508)
+  - Self-consistency conditions and linear stability theory for phase-locked states via spike-time perturbations; circulant symmetry enables Fourier mode decomposition for ring networks
+  - Slow-fast dynamics: frozen phase-locked branches organize adaptive dynamics; plasticity selects commensurate delay-period relationships enabling synchrony emergence, frequency-locked states, and slow switching between patterns
+  - **Activation**: adaptive conduction delays, phase locking, Haken Lighthouse, myelination plasticity, spiking networks, event-driven simulation, slow-fast dynamics, delayed networks, circulant symmetry
+### Formal Verification of Probabilistic Spiking Neural Networks via Quotient Abstractions
+- [[formal-verification-probabilistic-snn-quotient]] - CogSpike framework for formal verification of probabilistic SNNs using weight-discretized quotient abstractions; ~17x state space reduction per neuron with formal correctness guarantees (arXiv: 2606.20674)
+  - Weight-discretized quotient model abstraction preserves relative synaptic contribution; two-sided fidelity theorem bounds firing disagreement to gray zone; Asymptotic Silence theorem guarantees permanent silence of unforced neurons
+  - Validated across seven canonical topologies via PRISM-based probabilistic model checking of DTMC encodings; enables verification of networks otherwise intractable
+  - **Activation**: formal verification, probabilistic SNN, quotient abstraction, CogSpike, PRISM, DTMC, state space explosion, synaptic weight discretization, fidelity theorem
 
-## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Saturation Sync
+## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
 - [[non-hermitian-conscious-preconscious-subliminal]] - GNW modeled as complex-valued landscape with non-Hermitian Hamiltonian; conscious access = bound state emergence when depth + attention exceed thresholds (arXiv: 2607.08302)
@@ -121,7 +138,6 @@
   - Performance gap (on vs off) widens at larger model sizes; bypass becomes harder as models scale
   - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge, removable compartments, surgical knowledge removal, capability toggling
 
-## 2026-07-12 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
 - [[dendritic-in-context-learning-snn]] - First SNN to achieve general-purpose in-context learning via apical compartment dynamics that structurally implement online Widrow-Hoff LMS, seed-stable where Transformers grok-collapse (arXiv: 2607.02283)
