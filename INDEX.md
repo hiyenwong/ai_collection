@@ -3,6 +3,16 @@
 
 ## 2026-07-11 - Neuroscience Research (Cron Job)
 
+### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
+- [[bus-brain-inspired-self-reflection-vlm]] - Brain-inspired unsupervised self-reflection enables VLMs to self-correct complex visual reasoning without labeled data (arXiv: 2607.07361)
+  - Recurrent feedback loops mimic cortical prediction error signaling for iterative reasoning improvement
+  - Cross-modal validation between visual evidence and textual reasoning steps reduces hallucination
+  - **Activation**: brain-inspired self-reflection, VLM reasoning improvement, unsupervised reasoning correction, self-correcting vision-language models, BUS methodology
+### Hardware-Aware Mixed-Signal SNN Framework for Design Space Exploration
+- [[hardware-aware-mixed-signal-snn-framework]] - Open-source framework for mixed-signal SNN hardware design space exploration capturing analog/digital non-idealities (arXiv: 2607.06456)
+  - Models device mismatch, thermal noise, finite precision, and routing latency for energy-accuracy Pareto analysis
+  - Supports architecture variants from fully analog to fully digital with modular pluggable neuron/synapse models
+  - **Activation**: mixed-signal SNN, hardware-aware simulation, design space exploration, neuromorphic edge, non-ideal hardware modeling, SNN accelerator
 ### EEG-Based Imagined Speech Decoding Using a Hybrid CNN-SNN Architecture
 - [[cnn-snn-imagined-speech-decoding]] - First integration of SNNs into EEG-based imagined speech decoding; hybrid CNN-SNN pipeline achieves 80.13% accuracy on BCI Competition III benchmark, surpassing existing methods by 10% (arXiv: 2607.03844)
   - CNN extracts spatial-temporal EEG features, SNN performs spike-based temporal classification
