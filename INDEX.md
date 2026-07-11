@@ -23,6 +23,18 @@
 - [[contravariance-theory-strong-alignment]] - Formal proof that weak affine alignment guarantees strong privileged-axis alignment in minimal DNN solutions; alignment "zippers" up hierarchy (arXiv: 2607.08561)
   - Convergent evolution between DNNs and brains is inevitable for sufficiently hard tasks; metric choice for comparison is insensitive
   - **Activation**: contravariance theory, NeuroAI alignment, privileged axes, convergent evolution, minimal DNN solutions
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - Spiking ring networks on SpiNNaker 2 use three control knobs (gain, inhibition, transient currents) to dynamically steer low-dimensional manifold geometry for explainable closed-loop robotic control (arXiv: 2607.07373)
+  - Three control knobs: additive current shapes trajectory radius, multiplicative gain controls sequence speed, heterogeneous inhibition rotates subspaces for behavior switching
+  - Spike-based communication + sparse circulant connectivity enables real-time operation (<1ms time step) with linear scaling in spike count
+  - Demonstrated on virtual maze navigation: agent dynamically reconfigures manifold geometry to steer, jump, and turn based on sensory feedback
+  - **Activation**: neural manifolds, neuromorphic control, SpiNNaker, ring network, subspace rotation, explainable SNN, closed-loop control, dynamic manifolds
+### Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
+- [[non-hermitian-gnw-consciousness]] - Nonlinear Schrödinger-type equation with non-Hermitian, non-normal Hamiltonian models conscious access as bound state emergence in the Global Neuronal Workspace (arXiv: 2607.08302)
+  - Hermitian Hamiltonian component drives recognition (localization at landscape minima); anti-Hermitian component drives broadcasting (spatial spreading)
+  - Conscious access requires both sufficient stimulus strength (U > threshold) AND top-down attention (A > A_c); reproduces subliminal/preconscious/conscious taxonomy
+  - Bound state emergence at attention threshold is a first-order phase transition with finite spatial extent
+  - **Activation**: GNW, consciousness, non-Hermitian, neural field theory, bound states, sensory processing hierarchy, cloud functions, global neuronal workspace
 ### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
 - [[bus-brain-inspired-self-reflection-vlm]] - Brain-inspired unsupervised self-reflection enables VLMs to self-correct complex visual reasoning without labeled data (arXiv: 2607.07361)
   - Recurrent feedback loops mimic cortical prediction error signaling for iterative reasoning improvement
