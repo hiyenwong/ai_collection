@@ -1,170 +1,200 @@
 ---
 name: dynamic-neural-manifolds-snn-control
-description: Dynamic neural manifold methodology for neuromorphic closed-loop control using ring attractor networks with sensory-modulated subspace rotations. Implemented on SpiNNaker 2 for real-time embodied robotics.
-tags:
-  - neuromorphic-control
-  - neural-manifolds
-  - spiking-neural-networks
-  - closed-loop-control
-  - SpiNNaker
-  - embodied-AI
+description: >
+  Dynamic neural manifolds methodology for flexible closed-loop control
+  on neuromorphic hardware. Implements low-dimensional manifold geometry
+  control via spiking ring networks with sensory-modulated circuit
+  mechanisms (heterogeneous inhibition, gain, transient currents) on
+  SpiNNaker 2 chip. Enables explainable neuromorphic architectures for
+  real-time adaptive control.
 ---
 
-## Overview
+# Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
 
-This methodology maps biological sequential neural activity onto low-dimensional manifolds and uses circuit-level "control knobs" to dynamically manipulate manifold geometry for flexible behavior. Implemented on the SpiNNaker 2 neuromorphic chip for real-time, closed-loop control of a robotic agent navigating a maze.
+## Source
 
-**Paper**: von Seeler, Tetzlaff, & Lehr (2026). "Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware." arXiv:2607.07373 [cs.NE].
+**Paper**: Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware
+**arXiv**: 2607.07373v1
+**Authors**: Oskar von Seeler, Christian Tetzlaff, Andrew B. Lehr
+**Published**: 2026-07-08
+**Categories**: cs.NE (Neural and Evolutionary Computing)
 
-## Core Concept
+## Core Concepts
 
-### Neural Manifolds as Control Substrate
+### Neural Manifold Framework
 
-Neural population activity is represented as a trajectory in N-dimensional state space (one dimension per neuron). Biological activity is constrained to low-dimensional manifolds that capture task latent variables. The geometry of these manifolds maps to behavioral execution:
-- **Subspace rotations** → switching between movements/behaviors
-- **Trajectory speed** → adapting movement timing
-- **Trajectory shape** → modulating spatial extent
+The collective activity of N neurons is represented as a trajectory in an N-dimensional state space. Brain activity is constrained to **low-dimensional manifolds** that capture latent task variables. Geometric features of manifolds map to behavioral execution:
 
-### Ring Attractor Network
+- **Subspace rotations** occur when switching between behaviors
+- **Trajectory speed** adapts with changes in movement timing
+- **Manifold geometry** directly determines behavioral output
 
-A ring of neurons with asymmetric recurrent connectivity produces a stable "bump" of activity that propagates around the ring — a canonical object in computational neuroscience observed across:
-- Rat spinal cord
-- Drosophila larvae ganglia
-- Turtle spinal cord
-- Mouse medial entorhinal cortex (MEC)
+### Oscillatory Sequences on Ring Networks
 
-## Three Control Parameters
+A canonical pattern across spinal cord and brain: oscillatory sequences of neural activity on timescales of seconds or longer. These are modeled as a **bump of activity moving along a ring of neurons** — a canonical object in computational neuroscience.
 
-The network exposes three distinct circuit mechanisms that function as "control knobs":
+Circuit mechanisms acting on the ring dynamically control sequential activity, which maps onto predictable changes in manifold geometry.
 
-### 1. Trajectory Shape (Additive Current `I`)
-- **Mechanism**: Additive excitatory/inhibitory current to the ring
-- **Effect**: Changes the spatial extent/size of the activity bump
-- **Geometric mapping**: Controls the **radius** of the neural trajectory
-- **Implementation**: Gaussian-shaped additive current `I(t)` with amplitude `A`
+### Circuit Mechanisms for Manifold Control
 
-### 2. Trajectory Speed (Multiplicative Gain `S`)
-- **Mechanism**: Multiplicative gain modulation of neural responses
-- **Effect**: Amplifies inputs → faster responses → faster sequence progression
-- **Geometric mapping**: Controls **velocity** along the manifold trajectory
-- **Implementation**: Gain factor `S` applied to recurrent connections
-- **Note**: Behavior matches rate-based model until `S > 30` (marginal deviation on SpiNNaker 2)
+Three key circuit parameters that control manifold geometry:
 
-### 3. Subspace Rotation (Random Silencing `p_inh`)
-- **Mechanism**: Inhibitory ensembles silence random subsets of neurons
-- **Effect**: Switches which neurons support the sequence while maintaining sequential dynamics
-- **Geometric mapping**: Rotates the neural subspace by angle `θ = arccos(1 - p_inh)`
-- **Implementation**: Each inhibitory ensemble silences fraction `p_inh ∈ [0,1]` of neurons
-- **Application**: Each behavioral readout = neural trajectories traversing a unique manifold orientation
+1. **Heterogeneous Inhibition**: Modulates the shape and stability of the activity bump
+2. **Gain Control**: Adjusts the speed of neural trajectories along the manifold
+3. **Transient Currents**: Enables rapid switching between behavioral states
 
-## SpiNNaker 2 Implementation
+### Sensory-Feedback Closed-Loop Architecture
 
-### Architecture Optimizations
+The key innovation: sensory inputs modulate the circuit mechanisms **in real-time**, enabling:
 
-1. **Spike-based communication**: Rate-based neurons converted to probabilistic spiking (rate = spike probability per timestep)
-2. **Circulant weight matrix**: Stores single row + sparsity mask (1 bit per synapse) → 50% connection sparsity with 2× weight compensation
-3. **Streaming I/O**: Control parameters streamed into chip during execution; spikes streamed to host for action decoding
+- **Rapid subspace rotations** to switch between behaviors (e.g., steering vs. jumping)
+- **Fine-grained trajectory control** within behavioral modes
+- **Dynamic reconfiguration** of manifold geometry based on environmental cues
 
-### Hardware Constraints
+### Implementation on SpiNNaker 2
 
-- **Memory limit**: 128 kB SRAM per core
-- **Recording limit**: 32 neurons' internal rates fill SRAM in ~1 second (1000 timesteps at 1ms)
-- **Solution**: Stream parameters in, stream spikes out — no on-chip long-term storage
+First implementation of dynamic neural manifold control on neuromorphic hardware (SpiNNaker 2 chip):
 
-### Closed-Loop Pipeline
+- Real-time, closed-loop control with low latency
+- Energy-efficient spiking computation
+- Explainable internal state (manifold geometry is mathematically interpretable)
 
-```
-Environment → Agent (maze navigation) → Sensory cues
-                    ↓                          ↑
-              Host processor ← SPIP ← SpiNNaker 2 chip
-                    ↓                          ↑
-           Control parameters → SI interface → Ring network + readout
-```
+### Validation: Robotic Maze Navigation
 
-## Validation Results
-
-### Parameter Response Validation
-
-| Parameter | Effect | SpiNNaker 2 Match | CPU Model Match |
-|---|---|---|---|
-| Additive current `A` | Bump size / trajectory radius | ✅ Matches | ✅ Reference |
-| Multiplicative gain `S` | Sequence speed | ✅ Matches (until S>30) | ✅ Reference |
-| Silencing fraction `p_inh` | Subspace rotation angle `arccos(1-p_inh)` | ✅ Matches | ✅ Reference |
-
-### Maze Navigation Demo
-
-- Two-wheeled robotic agent navigates virtual maze
-- Sensory feedback modulates inhibition, gain, transient currents in real-time
-- Agent dynamically reconfigures manifold geometry to switch behaviors (steering vs. jumping)
-- Fine-grained trajectory control within behavioral states
-
-## Design Principles for Neuromorphic Engineering
-
-1. **Explainable by construction**: Internal state is mathematically interpretable via manifold geometry
-2. **Low-level → high-level mapping**: Circuit mechanisms → geometric features → behavioral primitives
-3. **Energy efficient**: Spike-based communication on neuromorphic hardware
-4. **Low latency**: Real-time closed-loop control without cloud dependency
-5. **Biologically plausible**: Based on observed neural dynamics across species
+Validated via robotic simulation where an agent navigates a maze:
+- Agent uses local environmental cues as sensory feedback
+- Sensory inputs modulate inhibition, gain, and transient currents
+- Agent dynamically reconfigures manifold geometry to navigate obstacles and turns
 
 ## Implementation Guide
 
-### Ring Network Setup
+### Ring Network Architecture
 
 ```python
-# Network parameters
-n_neurons = 32          # Neurons in ring
-connectivity = "circulant"  # Weight matrix structure
-sparsity = 0.5          # 50% connection sparsity
+# Canonical ring of N neurons with bump activity
+# Each neuron i has: membrane potential V_i, firing rate r_i
+# Connectivity: local excitation + global inhibition
+# The bump position θ(t) defines the manifold state
 
-# Weight matrix: store single row + sparsity mask
-# Weights scaled 2× to compensate for sparsity
+class DynamicManifoldRing:
+    """Ring network implementing dynamic neural manifolds."""
+    
+    def __init__(self, N=100):
+        self.N = N
+        # Recurrent weights: local excitation profile
+        self.W_recurrent = self._gaussian_connectivity(sigma=5)
+        # Heterogeneous inhibition profile
+        self.inhibition_profile = np.ones(N)
+        # Gain control per neuron
+        self.gain_profile = np.ones(N)
+        # Transient current injection
+        self.transient_current = np.zeros(N)
+    
+    def step(self, sensory_input):
+        """Update ring dynamics with sensory-modulated circuit mechanisms."""
+        # Sensory input modulates circuit parameters
+        self._update_inhibition(sensory_input)
+        self._update_gain(sensory_input)
+        self._update_transient(sensory_input)
+        
+        # Spiking dynamics with modulated parameters
+        net_input = self.W_recurrent @ self.firing_rates
+        net_input *= self.gain_profile
+        net_input -= self.inhibition_profile * self.mean_rate
+        net_input += self.transient_current
+        
+        self.membrane_potentials = self._leaky_integrate(
+            self.membrane_potentials, net_input
+        )
+        self.spikes = self.membrane_potentials > self.threshold
+        self.membrane_potentials[self.spikes] = self.reset_potential
 ```
 
-### Control Interface
+### Sensory-Modulated Control Loop
 
 ```python
-# Three independent control channels
-shape_control = A       # Additive current amplitude
-speed_control = S       # Multiplicative gain (optimal range: S ≤ 30)
-rotation_control = p_inh  # Fraction of neurons silenced [0, 1]
-
-# Combined control for complex trajectories
-# shape + speed + rotation can vary concurrently
+def sensory_modulated_control(agent_state, manifold_network, sensory_data):
+    """
+    Closed-loop control where sensory feedback modulates manifold geometry.
+    
+    agent_state: current position, velocity, etc.
+    manifold_network: DynamicManifoldRing instance
+    sensory_data: local environmental cues (obstacles, targets)
+    """
+    # Extract sensory features
+    obstacle_direction = detect_obstacles(sensory_data)
+    target_direction = detect_target(sensory_data)
+    
+    # Map sensory features to circuit modulation
+    # Obstacles → increase inhibition in affected region → rotate manifold
+    if obstacle_direction is not None:
+        manifold_network.apply_inhibition(
+            direction=obstacle_direction,
+            strength=0.3
+        )
+        # This causes a subspace rotation → steering behavior
+    
+    # Target → increase gain toward target direction → accelerate
+    if target_direction is not None:
+        manifold_network.apply_gain(
+            direction=target_direction,
+            factor=1.5
+        )
+    
+    # Extract motor command from manifold state
+    # The bump position on the ring encodes the desired movement
+    bump_position = manifold_network.get_bump_position()
+    motor_command = manifold_network.decode_motor_output(bump_position)
+    
+    return motor_command
 ```
 
-### Subspace Rotation Calculation
+### Subspace Rotation Mechanism
 
 ```python
-import numpy as np
-
-# Angle between subspaces defined by two inhibitory ensembles
-def subspace_angle(p_inh):
-    """First principal angle between subspaces under silencing."""
-    return np.arccos(1 - p_inh)
-
-# Example: 4 inhibitory ensembles with p_inh = 0.3
-# → rotation angle ≈ arccos(0.7) ≈ 0.795 rad ≈ 45.6°
+def compute_subspace_rotation(manifold_before, manifold_after):
+    """
+    Quantify the subspace rotation between two manifold states.
+    
+    This measures how much the neural activity subspace has rotated,
+    which corresponds to behavioral switching.
+    """
+    # PCA on both states to get principal subspaces
+    U1, _, _ = np.linalg.svd(manifold_before, full_matrices=False)
+    U2, _, _ = np.linalg.svd(manifold_after, full_matrices=False)
+    
+    # Principal angles between subspaces
+    cos_angles = np.linalg.svd(U1.T @ U2).S
+    angles = np.arccos(np.clip(cos_angles, -1, 1))
+    
+    return angles  # Large angles = significant behavioral switch
 ```
 
-## Applications
+## Key Design Principles
 
-- **Embodied robotics**: Real-time adaptive control on neuromorphic hardware
-- **Brain-computer interfaces**: Interpretable neural state decoding
-- **Computational neuroscience**: Testbed for investigating biological neural dynamics
-- **Autonomous systems**: Energy-efficient, low-latency behavior switching
+1. **Explainability**: Manifold geometry is mathematically interpretable — you can see *why* the agent chose a behavior by examining the manifold state
+2. **Low-Dimensional Control**: Despite N neurons, behavior is controlled by a few parameters (inhibition profile, gain, transients)
+3. **Biological Plausibility**: Based on observed neural sequences across species (rat spinal cord, Drosophila larvae, turtle spinal cord, mouse MEC)
+4. **Energy Efficiency**: Spiking computation on neuromorphic hardware for low-power autonomous systems
+5. **Real-Time Operation**: Closed-loop control with minimal latency on SpiNNaker 2
 
-## Biological Evidence
+## Application Domains
 
-Sequential neural activity observed across diverse structures and species:
-- **Rat spinal cord**: Calcium waves during locomotion
-- **Drosophila larvae**: Ganglia oscillations (T3 to A8/9 segments)
-- **Turtle spinal cord**: Cyclical motor patterns
-- **Mouse MEC**: Theta-rhythmic sequences in entorhinal cortex
+- **Neuromorphic robotics**: Real-time adaptive control for autonomous agents
+- **Prosthetics and BCI**: Explainable neural decoding for motor control
+- **Computational neuroscience**: Testbed for studying how biological circuits translate spatiotemporal dynamics into goal-directed behavior
+- **Autonomous navigation**: Energy-efficient path planning and obstacle avoidance
 
-## Related Skills
+## Relationships to Other Skills
 
-- `spiking-neural-network-analysis` — General SNN paper analysis
-- `neuromorphic-supremacy` — Hybrid astrocytic-spiking computing
-- `spiking-free-energy-control` — SNN control via Free Energy Principle
-- `clockless-neuromorphic-snn` — Asynchronous neuromorphic computing
-- `neuromorphic-oscillator-reservoir-computing` — Parametrically-driven oscillator RC
+- Related to `spiking-neural-network-analysis` for SNN implementation details
+- Complements `neuromorphic-fw mav-snn-control` for neuromorphic control patterns
+- Builds on `brain-network-controllability` for network control theory foundations
+- Connects to `kuramoto-brain-network` for oscillatory network dynamics
+
+## Pitfalls
+
+- **Manifold dimensionality**: The low-dimensional manifold assumption may not hold for all tasks; validate with PCA/variance explained analysis
+- **Sensory mapping**: The mapping from sensory features to circuit parameters (inhibition/gain/transient) is task-specific and requires careful tuning
+- **Hardware constraints**: SpiNNaker 2 has specific constraints on connectivity and precision; verify compatibility before deployment
+- **Training vs. inference**: The circuit parameters are trained offline (via simulation); the closed-loop modulation happens at inference time

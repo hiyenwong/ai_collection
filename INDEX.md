@@ -27,6 +27,18 @@
   - CNN extracts spatial-temporal EEG features, SNN performs spike-based temporal classification
   - Biologically grounded pipeline enabling energy-efficient neuromorphic BCI applications
   - **Activation**: imagined speech decoding, EEG speech BCI, CNN-SNN hybrid architecture, spike-based speech classification, neuromorphic BCI, BCI Competition III
+### Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware
+- [[dynamic-neural-manifolds-snn-control]] - 动态神经流形在神经形态硬件上的灵活闭环控制，通过感觉输入调制异质抑制、增益和瞬态电流实现行为切换和轨迹控制 (arXiv: 2607.07373v1)
+  - 核心要点 1：将群体神经活动建模为低维流形轨迹，通过环网络上的电路机制（异质抑制、增益、瞬态电流）参数化流形几何
+  - 核心要点 2：首次在 SpiNNaker 2 芯片上实现动态流形闭环控制，机器人通过感觉反馈动态重构流形几何完成迷宫导航
+  - **Activation**: neural manifold, neuromorphic control, SpiNNaker, closed-loop, ring network, subspace rotation
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - 单层树突脉冲神经网络的上下文学习，用树突室动力实现在线LMS估计，所有突触权重推理时冻结 (arXiv: 2607.02283v1)
+  - 核心要点 1：证明单个树突室的阈下动力学本身就实现了完整的在线学习算法（leaky online Widrow-Hoff LMS），无需注意力、深度或推理时可塑性
+  - 核心要点 2：DendriCL 是唯一在超维 Garg-2022 ICL 任务（d≥30）中种子稳定的架构，线性探针从顶树突膜恢复 LMS 轨迹 R²=0.93
+  - **Activation**: in-context learning, dendritic computation, LMS, compartmental neuron, frozen weights, Garg-2022
+
+
 
 ## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Saturation Sync
 
