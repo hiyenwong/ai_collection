@@ -37,6 +37,11 @@
   - 核心要点 1：证明单个树突室的阈下动力学本身就实现了完整的在线学习算法（leaky online Widrow-Hoff LMS），无需注意力、深度或推理时可塑性
   - 核心要点 2：DendriCL 是唯一在超维 Garg-2022 ICL 任务（d≥30）中种子稳定的架构，线性探针从顶树突膜恢复 LMS 轨迹 R²=0.93
   - **Activation**: in-context learning, dendritic computation, LMS, compartmental neuron, frozen weights, Garg-2022
+### Intrinsic-Noise Consolidation via Doob-Barrier-Conditioned Diffusion
+- [[doob-barrier-noise-consolidation]] - Doob h-transform turns analog device noise into continual-learning resource; noise-amplified restoring force yields inverted-U retention curve on BrainScaleS-2 (arXiv: 2607.06924v1)
+  - 核心要点 1: 将突触持续学习建模为 Doob h-变换，条件化权重扩散不跨越记忆关键屏障，产生 σ²·∂w log h 恢复力
+  - 核心要点 2: 预注册 falsifier 通过 — Split-MNIST 上 retention 提升 10.9pp (σ*=0.02, p=0.004)，在真实 BrainScaleS-2 硅片上验证 15.6pp 提升
+  - **Activation**: doob h-transform, noise consolidation, continual learning, catastrophic forgetting, BrainScaleS-2, neuromorphic noise, analog hardware, synaptic consolidation
 
 
 
