@@ -1654,5 +1654,239 @@
     "skillCreated": "ultrax-refining-pre-training-data-at-scale-with",
     "lastAccessed": "2026-07-10",
     "category": "nlp-llm"
+  },
+  "2607.08754": {
+    "title": "SLORR: Simple and Efficient In-Training Low-Rank Regularization",
+    "file": "collection/skills/general-ml/slorr-in-training-low-rank-regularization/SKILL.md",
+    "keywords": [
+      "low-rank-regularization",
+      "model-compression",
+      "neural-network-compression",
+      "hoyer-sparsity",
+      "nuclear-norm",
+      "llm-pretraining",
+      "gpu-friendly-approximation",
+      "training-overhead"
+    ],
+    "utility": 0.98,
+    "skillCreated": "slorr-in-training-low-rank-regularization",
+    "lastAccessed": "2026-07-11",
+    "category": "general-ml"
+  },
+  "2607.08741": {
+    "title": "ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation",
+    "file": "collection/skills/vision-generative/ardy-autoregressive-diffusion-interactive-human-motion/SKILL.md",
+    "keywords": [
+      "autoregressive-diffusion",
+      "human-motion-generation",
+      "streaming-generation",
+      "real-time-motion",
+      "interactive-applications",
+      "3d-motion",
+      "kinematic-constraints",
+      "text-to-motion"
+    ],
+    "utility": 0.98,
+    "skillCreated": "ardy-autoregressive-diffusion-interactive-human-motion",
+    "lastAccessed": "2026-07-11",
+    "category": "vision-generative"
+  },
+  "2607.08725": {
+    "title": "Pose-to-Biomechanics: Bridging 3D Human Pose Estimation and Biomechanical Attribute Prediction",
+    "file": "collection/skills/vision-generative/pose-to-biomechanics-bridging-3d-pose-biomechanical/SKILL.md",
+    "keywords": [
+      "biomechanics",
+      "pose-estimation",
+      "human-motion-analysis",
+      "temporal-transformer",
+      "clinical-movement",
+      "ergonomics",
+      "rehabilitation",
+      "sports-science"
+    ],
+    "utility": 1.0,
+    "skillCreated": "pose-to-biomechanics-bridging-3d-pose-biomechanical",
+    "lastAccessed": "2026-07-11",
+    "category": "vision-generative"
+  },
+  "2607.08605": {
+    "title": "When Structured Sparse Autoencoders Learn Consistent Concepts Across Modalities",
+    "file": "collection/skills/ai-safety-eval/structured-sparse-autoencoders-cross-modal-concepts/SKILL.md",
+    "keywords": [
+      "sparse-autoencoder",
+      "mechanistic-interpretability",
+      "concept-consistency",
+      "vision-language-model",
+      "monosemanticity",
+      "structured-sparsity",
+      "cross-modal",
+      "neuronal-specialization"
+    ],
+    "utility": 0.88,
+    "skillCreated": "structured-sparse-autoencoders-cross-modal-concepts",
+    "lastAccessed": "2026-07-11",
+    "category": "ai-safety-eval"
+  },
+  "2607.08561": {
+    "title": "Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks",
+    "file": "collection/skills/neuroscience/contravariance-theory-strong-alignment-minimal-solutions/SKILL.md",
+    "keywords": [
+      "neuroai",
+      "brain-alignment",
+      "dnn-brain-comparison",
+      "representational-alignment",
+      "privileged-axes",
+      "contravariance",
+      "convergent-evolution",
+      "network-hierarchy"
+    ],
+    "utility": 0.96,
+    "skillCreated": "contravariance-theory-strong-alignment-minimal-solutions",
+    "lastAccessed": "2026-07-11",
+    "category": "neuroscience"
+  },
+  "2607.08533": {
+    "title": "AI-guided stimuli discovery and generation to optimize facial emotion perception studies in autism",
+    "file": "collection/skills/neuroscience/ai-guided-stimuli-discovery-facial-emotion-autism/SKILL.md",
+    "keywords": [
+      "autism",
+      "facial-emotion-perception",
+      "stimuli-generation",
+      "neurodivergent",
+      "perceptual-differences",
+      "generative-adversarial",
+      "behavioral-assay",
+      "population-specific"
+    ],
+    "utility": 0.88,
+    "skillCreated": "ai-guided-stimuli-discovery-facial-emotion-autism",
+    "lastAccessed": "2026-07-11",
+    "category": "neuroscience"
+  },
+  "2607.08497": {
+    "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
+    "file": "collection/skills/multi-agent-rl/cognitive-structured-multimodal-agent-understanding-generation/SKILL.md",
+    "keywords": [
+      "multimodal-agent",
+      "episodic-visual-memory",
+      "cognitive-retrieval",
+      "long-horizon-dialogue",
+      "multimodal-understanding",
+      "visual-memory",
+      "reinforcement-learning",
+      "tool-augmented-agent"
+    ],
+    "utility": 1.0,
+    "skillCreated": "cognitive-structured-multimodal-agent-understanding-generation",
+    "lastAccessed": "2026-07-11",
+    "category": "multi-agent-rl"
+  },
+  "2607.08406": {
+    "title": "Beyond Backpropagation: Monte Carlo Method Can Train Deep Neural Networks",
+    "file": "collection/skills/general-ml/beyond-backpropagation-monte-carlo-train-deep-networks/SKILL.md",
+    "keywords": [
+      "gradient-free-training",
+      "monte-carlo-method",
+      "deep-neural-network-training",
+      "random-mutation",
+      "pruning-training",
+      "discrete-weights",
+      "self-organization",
+      "alternative-backpropagation"
+    ],
+    "utility": 0.98,
+    "skillCreated": "beyond-backpropagation-monte-carlo-train-deep-networks",
+    "lastAccessed": "2026-07-11",
+    "category": "general-ml"
+  },
+  "2607.08404": {
+    "title": "DrugGen 2: A disease-aware language model for enhancing drug discovery",
+    "file": "collection/skills/healthcare-bio/druggen-2-disease-aware-language-model-drug-discovery/SKILL.md",
+    "keywords": [
+      "drug-discovery",
+      "disease-aware",
+      "language-model",
+      "molecule-generation",
+      "grpo",
+      "reinforcement-learning",
+      "gpt-2-finetuning",
+      "de-novo-design"
+    ],
+    "utility": 0.91,
+    "skillCreated": "druggen-2-disease-aware-language-model-drug-discovery",
+    "lastAccessed": "2026-07-11",
+    "category": "healthcare-bio"
+  },
+  "2607.08391": {
+    "title": "On Exploring Input Resolution Scaling For Anytime LiDAR Object Detection",
+    "file": "collection/skills/signal-control-systems/anytime-lidar-resolution-scaling-object-detection/SKILL.md",
+    "keywords": [
+      "anytime-computing",
+      "lidar-detection",
+      "input-resolution-scaling",
+      "deadline-aware-scheduler",
+      "autonomous-driving",
+      "cyber-physical-systems",
+      "point-cloud",
+      "real-time-inference"
+    ],
+    "utility": 0.9,
+    "skillCreated": "anytime-lidar-resolution-scaling-object-detection",
+    "lastAccessed": "2026-07-11",
+    "category": "signal-control-systems"
+  },
+  "2607.08375": {
+    "title": "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving",
+    "file": "collection/skills/multi-agent-rl/wcog-vla-dual-level-world-cognitive-autonomous-driving/SKILL.md",
+    "keywords": [
+      "vision-language-action",
+      "autonomous-driving",
+      "world-cognition",
+      "game-theoretic-reasoning",
+      "diffusion-transformer",
+      "multi-agent-trajectory",
+      "proactive-driving",
+      "world-model"
+    ],
+    "utility": 1.0,
+    "skillCreated": "wcog-vla-dual-level-world-cognitive-autonomous-driving",
+    "lastAccessed": "2026-07-11",
+    "category": "multi-agent-rl"
+  },
+  "2607.08374": {
+    "title": "Large-Language-Models-as-a-Judge in Theory-Agnostic Adaptive Metric-Alignment for Prototypical Networks in Personality Recognition",
+    "file": "collection/skills/nlp-llm/llm-judge-theory-agnostic-personality-recognition/SKILL.md",
+    "keywords": [
+      "llm-as-judge",
+      "personality-recognition",
+      "theory-agnostic",
+      "prototypical-network",
+      "metric-alignment",
+      "cross-theory-harmonization",
+      "psychological-structure",
+      "embedding-clustering"
+    ],
+    "utility": 1.0,
+    "skillCreated": "llm-judge-theory-agnostic-personality-recognition",
+    "lastAccessed": "2026-07-11",
+    "category": "nlp-llm"
+  },
+  "2607.08373": {
+    "title": "Self-Adaptive Anomaly Detection with Reinforcement Learning and Human Feedback in Connected Vehicles",
+    "file": "collection/skills/signal-control-systems/self-adaptive-anomaly-detection-rl-human-feedback-vehicles/SKILL.md",
+    "keywords": [
+      "anomaly-detection",
+      "reinforcement-learning",
+      "connected-vehicles",
+      "human-in-the-loop",
+      "concept-drift",
+      "cyber-physical-systems",
+      "factorized-dqn",
+      "self-attention"
+    ],
+    "utility": 0.96,
+    "skillCreated": "self-adaptive-anomaly-detection-rl-human-feedback-vehicles",
+    "lastAccessed": "2026-07-11",
+    "category": "signal-control-systems"
   }
 }

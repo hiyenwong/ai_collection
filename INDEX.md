@@ -201,6 +201,63 @@
   - Self-contained proofs and identification of open problems in SNN metastability
   - Foundation for understanding metastable states in neural dynamics
   - **Activation**: metastability spiking neural networks, Galves Locherbach model, pathwise metastability, stochastic spiking networks, rare fluctuation
+## 2026-07-11 - arXiv Paper Skills (Cron Job)
+
+### SLORR: Simple and Efficient In-Training Low-Rank Regularization
+- [[slorr-in-training-low-rank-regularization]] - Stateless, architecture-preserving low-rank regularization using Hoyer sparsity and nuclear norm for neural network compression with <8% training overhead (arXiv: 2607.08754)
+  - GPU-friendly approximations for forward/backward passes; LLM pretraining at 135M and 560M scales
+  - **Activation**: SLORR, low-rank regularization, Hoyer sparsity, nuclear norm, model compression, LLM pretraining compression
+
+### ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation
+- [[ardy-autoregressive-diffusion-interactive-human-motion]] - Streaming generation framework for real-time 3D human motion controllable via text prompts and kinematic constraints (arXiv: 2607.08741)
+  - Two-stage autoregressive transformer denoiser with variable history context; hybrid root+latent representation
+  - **Activation**: ARDY, autoregressive diffusion motion, streaming motion generation, real-time 3D motion, text-to-motion
+
+### Pose-to-Biomechanics: Bridging 3D Human Pose Estimation and Biomechanical Attribute Prediction
+- [[pose-to-biomechanics-bridging-3d-pose-biomechanical]] - BioModule: lightweight plug-in temporal transformer for biomechanical attribute prediction from 3D skeletons (arXiv: 2607.08725)
+  - Estimator-agnostic; bridges vision-based pose estimation to biomechanically meaningful motion analysis
+  - **Activation**: Pose-to-Biomechanics, BioModule, biomechanical attribute prediction, 3D pose estimation, clinical movement analysis
+
+### When Structured Sparse Autoencoders Learn Consistent Concepts Across Modalities
+- [[structured-sparse-autoencoders-cross-modal-concepts]] - S²AE: Structured Sparse AutoEncoder enforcing concept consistency in vision-language models with attention-based patch grouping (arXiv: 2607.08605)
+  - 6.06% improvement in semantic alignment on Qwen2.5-VL-7B; 60.81 l0 norm representational efficiency
+  - **Activation**: Structured Sparse Autoencoder, S²AE, concept consistency multimodal, mechanistic interpretability, monosemanticity
+
+### Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing
+- [[cognitive-structured-multimodal-agent-understanding-generation]] - CMA with Episodic Visual Memory for long-horizon multimodal dialogue; 8B agent achieves 91.4% retrieval over 20-turn sessions (arXiv: 2607.08497)
+  - Perceptual Abstraction Engine + Cognitive Retrieval Engine + Multimodal Executive Controller; CMA-Harness tool-augmented deployment
+  - **Activation**: Cognitive-structured Multimodal Agent, CMA, episodic visual memory, long-horizon multimodal dialogue, CMA-Harness
+
+### Beyond Backpropagation: Monte Carlo Method Can Train Deep Neural Networks
+- [[beyond-backpropagation-monte-carlo-train-deep-networks]] - Simple Monte Carlo random mutation can train deep networks without gradients, no batchnorm or residual connections needed (arXiv: 2607.08406)
+  - Supports pure pruning training, discrete weights, unconventional transfer functions; 20+ layer networks and Transformers
+  - **Activation**: Monte Carlo training, gradient-free deep learning, random mutation training, beyond backpropagation, discrete weight training
+
+### DrugGen 2: A disease-aware language model for enhancing drug discovery
+- [[druggen-2-disease-aware-language-model-drug-discovery]] - Disease-conditioned molecule generation via fine-tuned GPT-2 with SFT + GRPO; outperforms baselines on diabetic nephropathy targets (arXiv: 2607.08404)
+  - Disease ontology + target protein sequence conditioning; molecular docking validates strong binding potential
+  - **Activation**: DrugGen-2, disease-aware drug discovery, GPT-2 molecule generation, GRPO drug design, de novo drug design
+
+### On Exploring Input Resolution Scaling For Anytime LiDAR Object Detection
+- [[anytime-lidar-resolution-scaling-object-detection]] - Anytime computing for LiDAR 3D object detection with multi-resolution single-model inference and deadline-aware scheduler (arXiv: 2607.08391)
+  - Dynamically scales input resolution; collision-free navigation in simulated autonomous driving
+  - **Activation**: anytime LiDAR detection, input resolution scaling, multi-resolution inference, deadline-aware scheduler, cyber-physical anytime computing
+
+### WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving
+- [[wcog-vla-dual-level-world-cognitive-autonomous-driving]] - Dual-level World-Cognitive VLA bridging semantic forecasting with generative world evolution; SOTA PDMS 92.9 on NAVSIM (arXiv: 2607.08375)
+  - Game-theoretic Chain-of-Thought reasoning + Aligned Decoupled Diffusion Transformer (ADDT) for multi-agent trajectories
+  - **Activation**: WCog-VLA, World-Cognitive VLA, vision-language-action autonomous driving, Game-CoT, ADDT, proactive autonomous driving
+
+### Large-Language-Models-as-a-Judge in Theory-Agnostic Adaptive Metric-Alignment for Personality Recognition
+- [[llm-judge-theory-agnostic-personality-recognition]] - JAM: theory-agnostic personality recognition with LLM-as-a-Judge, Attention-Pooled Graph Prototypical Network, and Cross-Theory Harmonization (arXiv: 2607.08374)
+  - LLM-before-the-loop and LLM-in-the-loop configurations for ambiguous sample identification
+  - **Activation**: JAM personality recognition, LLM-as-a-Judge, theory-agnostic personality, prototypical network, cross-theory harmonization
+
+### Self-Adaptive Anomaly Detection with Reinforcement Learning and Human Feedback in Connected Vehicles
+- [[self-adaptive-anomaly-detection-rl-human-feedback-vehicles]] - Online anomaly detection for connected vehicles with factorized DQN, drift detectors, and human-in-the-loop retraining; F1 0.69 vs 0.11 (arXiv: 2607.08373)
+  - Sustained adaptation after concept drift: F1 recovers from 0.52 to 0.65 without catastrophic forgetting
+  - **Activation**: self-adaptive anomaly detection, RL anomaly detection, connected vehicles, human-in-the-loop, concept drift, factorized DQN
+ (feat: add 13 paper skills from arXiv 2026-07-11)
 
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
