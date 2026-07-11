@@ -1,6 +1,20 @@
 # AI Collection Index
 
 
+## 2026-07-11 - Neuroscience Research (Cron Job)
+
+### Omni-Sleep: Sleep Foundation Model via CNS-ANS Hierarchical Contrastive Learning
+- [[omni-sleep-foundation]] - Sleep foundation model using CNS/ANS physiological partition as topology-constrained prior for multimodal PSG representation learning, pre-trained on 100K+ hours (arXiv: 2607.07720)
+  - Three objectives: intra-system consistency, inter-system synchronization, latent-space masked temporal modeling
+  - Outperforms baselines on sleep staging and multi-disease classification across datasets and modality-ablation settings
+  - **Activation**: omni-sleep, sleep foundation model, CNS-ANS dynamics, polysomnography, multimodal biosignal, physiological hierarchy
+
+### Graph-Regularized Deep Learning for EEG Emotion Recognition
+- [[graph-regularized-eeg-emotion]] - EEG emotion recognition with psychologically-grounded label structure using graph regularization (GLS, CDGL, SWD) to penalize implausible misclassifications (arXiv: 2607.07773)
+  - Three regularization strategies ordered by complexity: Graph Label Smoothing, Commuting Distance, Sliced Wasserstein Distance
+  - Up to +5.42% accuracy, 39% reduction in psychologically implausible errors on SEED-IV/V across 3 backbones
+  - **Activation**: graph-regularized EEG emotion, affective BCI, SEED dataset, emotion topology, Sliced Wasserstein, psychological label structure
+
 ## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Sync Batch
 
 ### Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
