@@ -1,6 +1,14 @@
 # AI Collection Index
 
 
+## 2026-07-11 - Neuroscience Research (Cron Job)
+
+### EEG-Based Imagined Speech Decoding Using a Hybrid CNN-SNN Architecture
+- [[cnn-snn-imagined-speech-decoding]] - First integration of SNNs into EEG-based imagined speech decoding; hybrid CNN-SNN pipeline achieves 80.13% accuracy on BCI Competition III benchmark, surpassing existing methods by 10% (arXiv: 2607.03844)
+  - CNN extracts spatial-temporal EEG features, SNN performs spike-based temporal classification
+  - Biologically grounded pipeline enabling energy-efficient neuromorphic BCI applications
+  - **Activation**: imagined speech decoding, EEG speech BCI, CNN-SNN hybrid architecture, spike-based speech classification, neuromorphic BCI, BCI Competition III
+
 ## 2026-07-10 - Neuroscience Research (Cron Job) — q-bio.NC Saturation Sync
 
 ### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
