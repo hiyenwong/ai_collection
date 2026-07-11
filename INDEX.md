@@ -3,6 +3,15 @@
 
 ## 2026-07-11 - Neuroscience Research (Cron Job)
 
+### Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
+- [[shunting-inhibition-dendritic-credit]] - Exact gradient factorization in conductance-based dendritic networks: local eligibility × compartment error; shunting inhibition reshapes error geometry for restricted somatic feedback (arXiv: 2607.03556)
+  - Gradient = Local Eligibility (presynaptic activity × driving force × input resistance) × Compartment Error (path-specific error transported through dendritic gains)
+  - Shunting LocalCA achieves within 5-6 percentage points of backprop on MNIST with per-soma 5-factor feedback; feedback-field fidelity remains the bottleneck
+  - **Activation**: shunting inhibition, dendritic credit assignment, local learning, backpropagation biological plausibility, E/I conductance, compartment-specific error, somatic feedback
+### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
+- [[contravariance-theory-strong-alignment]] - Formal proof that weak affine alignment guarantees strong privileged-axis alignment in minimal DNN solutions; alignment "zippers" up hierarchy (arXiv: 2607.08561)
+  - Convergent evolution between DNNs and brains is inevitable for sufficiently hard tasks; metric choice for comparison is insensitive
+  - **Activation**: contravariance theory, NeuroAI alignment, privileged axes, convergent evolution, minimal DNN solutions
 ### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
 - [[bus-brain-inspired-self-reflection-vlm]] - Brain-inspired unsupervised self-reflection enables VLMs to self-correct complex visual reasoning without labeled data (arXiv: 2607.07361)
   - Recurrent feedback loops mimic cortical prediction error signaling for iterative reasoning improvement
