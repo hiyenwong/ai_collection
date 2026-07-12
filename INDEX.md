@@ -9,6 +9,12 @@
   - Metric insensitivity for NeuroAI: choice of comparison metric matters less than previously thought
   - **Activation**: contravariance, strong alignment, privileged axes, DNN-brain alignment, convergent evolution, NeuroAI theory, minimal solutions
 
+
+### Graph-Regularized Deep Learning for EEG-Based Emotion Recognition
+- [[graph-regularized-eeg-emotion-recognition]] - 基于心理学情绪拓扑的脑电情绪识别图正则化框架，减少39%不合理误分类 (arXiv: 2607.07773)
+  - 核心要点 1: 将情绪建模为图中节点而非孤立标签，边编码基于维度情绪理论的心理邻近性
+  - 核心要点 2: 三种正则化策略(图标签平滑/图拉普拉斯通勤距离/切片Wasserstein距离)跨架构通用
+  - **Activation**: graph-regularized emotion recognition, EEG emotion graph, psychological label structure
 ### A Non-Hermitian Potential Well Formalism for Conscious--Preconscious--Subliminal Processing
 - [[non-hermitian-conscious-preconscious-subliminal]] - Unified GNW dynamical model using non-Hermitian Hamiltonians and nonlinear Schrödinger equations; consciousness emerges as bound state formation when landscape depth and attention both exceed thresholds (arXiv: 2607.08302)
   - Hermitian part = recognition (dissipative localization), anti-Hermitian part = broadcasting (spatial spreading)
