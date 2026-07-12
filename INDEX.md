@@ -36,6 +36,20 @@
   - Discovers multitraveling and multialternating chimera states as novel phenomena
   - **Activation**: chimera state, magnetic field, hindmarsh-rose, neuronal synchronization, multicluster chimera, brain cells, TMS
 
+### Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware
+- [[dynamic-neural-manifolds-neuromorphic-control]] - Ring attractor network with sensory-modulated control neurons (speed, shape, selection) drives subspace rotations and trajectory control on SpiNNaker 2 for real-time closed-loop robotic navigation (arXiv: 2607.07373)
+  - Three control neuron types modulate manifold geometry: speed (gain), shape (inhibition), selection (targeted inhibition)
+  - Fully explainable neuromorphic architecture — predictable ring dynamics + geometric manifold interpretation
+  - Validated on robotic maze navigation with real-time sensory feedback on SpiNNaker 2 chip
+  - **Activation**: dynamic neural manifold, neuromorphic control, spinnaker 2, ring attractor, closed-loop spiking, subspace rotation, neural trajectory, manifold geometry, explainable neuromorphic
+
+### SA-HGNN: Sample-Adaptive Hyperbolic Graph Neural Network for EEG-Based Depression Recognition
+- [[sa-hgnn-eeg-depression-hyperbolic]] - Novel GNN combining sample-adaptive graph construction, hyperbolic graph convolution, and attention pooling to capture hierarchical brain network structure in EEG-based depression recognition (arXiv: 2607.02063)
+  - Hyperbolic geometry overcomes Euclidean bottleneck for tree-like hierarchical brain networks in depression
+  - Sample-adaptive topology captures individual connectivity patterns vs. fixed static graphs
+  - Attention pooling adaptively filters redundant noise channels in EEG signals
+  - **Activation**: sa-hgnn, hyperbolic GNN, eeg depression recognition, sample-adaptive graph, hyperbolic convolution, attention pooling, functional connectivity hierarchy
+
 ## 2026-07-12 - Quantum Neuromorphic Research (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
