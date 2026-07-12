@@ -1888,5 +1888,335 @@
     "skillCreated": "self-adaptive-anomaly-detection-rl-human-feedback-vehicles",
     "lastAccessed": "2026-07-11",
     "category": "signal-control-systems"
+  },
+  "2607.08768": {
+    "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+    "file": null,
+    "keywords": [
+      "proactive-agents",
+      "real-world-benchmark",
+      "agent-evaluation",
+      "capability-driven",
+      "multimodal-agents"
+    ],
+    "utility": 0.9,
+    "skillCreated": "uniclawbench-proactive-agents-real-world-tasks",
+    "lastAccessed": "2026-07-12",
+    "category": "ai-safety-eval"
+  },
+  "2607.08716": {
+    "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+    "file": null,
+    "keywords": [
+      "proactive-memory",
+      "long-horizon-agents",
+      "trajectory-management",
+      "context-surfacing",
+      "memory-retrieval"
+    ],
+    "utility": 0.92,
+    "skillCreated": "proactive-memory-agent-long-horizon-tasks",
+    "lastAccessed": "2026-07-12",
+    "category": "multi-agent-rl"
+  },
+  "2607.08690": {
+    "title": "A Practical Investigation of Training-free Relaxed Speculative Decoding",
+    "file": null,
+    "keywords": [
+      "speculative-decoding",
+      "llm-inference-acceleration",
+      "lossy-speculation",
+      "training-free",
+      "draft-verification"
+    ],
+    "utility": 0.86,
+    "skillCreated": "training-free-relaxed-speculative-deoding",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08647": {
+    "title": "Multi-Modal, Multi-Environment Machine Teaching for Robust Reward Learning",
+    "file": null,
+    "keywords": [
+      "machine-teaching",
+      "reward-learning",
+      "inverse-reinforcement-learning",
+      "multi-environment",
+      "robust-reward"
+    ],
+    "utility": 0.86,
+    "skillCreated": "multi-modal-multi-environment-machine-teaching-robust-reward",
+    "lastAccessed": "2026-07-12",
+    "category": "multi-agent-rl"
+  },
+  "2607.08642": {
+    "title": "DominoTree: Conditional Tree-Structured Drafting with Domino for Speculative Decoding",
+    "file": null,
+    "keywords": [
+      "speculative-decoding",
+      "tree-structured-drafting",
+      "domino-conditioning",
+      "llm-inference",
+      "block-diffusion"
+    ],
+    "utility": 0.86,
+    "skillCreated": "dominotree-conditional-tree-structured-drafting-speculative-decoding",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08565": {
+    "title": "SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling",
+    "file": null,
+    "keywords": [
+      "llm-scheduling",
+      "agent-serving",
+      "session-centric-scheduling",
+      "inference-infrastructure",
+      "tokens-per-second"
+    ],
+    "utility": 0.87,
+    "skillCreated": "smetric-llm-scheduling-serving-agents-session-centric",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08643": {
+    "title": "BiSCo-LLM: Lookup-Free Binary Spherical Coding for Extreme Low-Bit Large Language Model Compression",
+    "file": null,
+    "keywords": [
+      "binary-spherical-coding",
+      "llm-compression",
+      "low-bit-quantization",
+      "lookup-free-coding",
+      "model-deployment"
+    ],
+    "utility": 0.87,
+    "skillCreated": "bisco-llm-binary-spherical-coding-extreme-compression",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08602": {
+    "title": "Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance",
+    "file": null,
+    "keywords": [
+      "clinical-reasoning-llm",
+      "hepatocellular-carcinoma",
+      "risk-stratification",
+      "treatment-guidance",
+      "electronic-medical-records"
+    ],
+    "utility": 0.86,
+    "skillCreated": "clinical-reasoning-llm-hepatocellular-carcinoma-risk-stratification",
+    "lastAccessed": "2026-07-12",
+    "category": "healthcare-bio"
+  },
+  "2607.08651": {
+    "title": "Secure Decentralized Federated Learning via Gossip and Virtual Voting",
+    "file": null,
+    "keywords": [
+      "decentralized-federated-learning",
+      "gossip-protocol",
+      "virtual-voting",
+      "byzantine-resilience",
+      "ledger-assisted-fl"
+    ],
+    "utility": 0.85,
+    "skillCreated": "secure-decentralized-federated-learning-gossip-virtual-voting",
+    "lastAccessed": "2026-07-12",
+    "category": "security-privacy"
+  },
+  "2607.08639": {
+    "title": "Native Video-Action Pretraining for Generalizable Robot Control",
+    "file": null,
+    "keywords": [
+      "video-action-model",
+      "robot-control",
+      "pretraining",
+      "vision-language-action",
+      "generalizable-manipulation"
+    ],
+    "utility": 0.85,
+    "skillCreated": "native-video-action-pretraining-generalizable-robot-control",
+    "lastAccessed": "2026-07-12",
+    "category": "vision-generative"
+  },
+  "2607.08535": {
+    "title": "When the Judge Changes, So Does the Measurement: Auditing LLM-as-Judge Reliability",
+    "file": null,
+    "keywords": [
+      "llm-as-judge",
+      "evaluation-reliability",
+      "measurement-validity",
+      "evaluator-bias",
+      "ai-evaluation"
+    ],
+    "utility": 0.86,
+    "skillCreated": "auditing-llm-as-judge-reliability-measurement-validity",
+    "lastAccessed": "2026-07-12",
+    "category": "ai-safety-eval"
+  },
+  "2607.08499": {
+    "title": "Cross-seed explainability using Procrustes-conditioned Joint End-to-end Top-K Sparse Autoencoders",
+    "file": null,
+    "keywords": [
+      "sparse-autoencoder",
+      "cross-seed-universality",
+      "procrustes-alignment",
+      "mechanistic-interpretability",
+      "feature-universality"
+    ],
+    "utility": 0.85,
+    "skillCreated": "cross-seed-explainability-procrustes-sparse-autoencoders",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08539": {
+    "title": "DocMaster: A Hierarchical Structure-Aware System for Document Analysis",
+    "file": null,
+    "keywords": [
+      "document-analysis",
+      "hierarchical-structure",
+      "llm-system",
+      "information-extraction",
+      "document-understanding"
+    ],
+    "utility": 0.85,
+    "skillCreated": "docmaster-hierarchical-structure-aware-document-analysis",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08495": {
+    "title": "The Context Access Divide: Interaction-Level Architecture as a Complementary Dimension of Agentic Inequality",
+    "file": null,
+    "keywords": [
+      "agentic-inequality",
+      "context-access",
+      "interaction-level-architecture",
+      "agent-fairness",
+      "ai-equity"
+    ],
+    "utility": 0.86,
+    "skillCreated": "context-access-divide-agentic-inequality-architecture",
+    "lastAccessed": "2026-07-12",
+    "category": "ai-safety-eval"
+  },
+  "2607.08448": {
+    "title": "Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents",
+    "file": null,
+    "keywords": [
+      "vision-language-action",
+      "memory-guided-agents",
+      "manipulation-primitives",
+      "frozen-vla",
+      "robot-manipulation"
+    ],
+    "utility": 0.86,
+    "skillCreated": "harness-vla-steering-frozen-vlas-memory-guided-agents",
+    "lastAccessed": "2026-07-12",
+    "category": "multi-agent-rl"
+  },
+  "2607.08444": {
+    "title": "Statistical Efficiency and Inference of Quantile Distributional Reinforcement Learning",
+    "file": null,
+    "keywords": [
+      "distributional-reinforcement-learning",
+      "quantile-regression",
+      "statistical-efficiency",
+      "policy-evaluation",
+      "return-distribution"
+    ],
+    "utility": 0.85,
+    "skillCreated": "statistical-efficiency-quantile-distributional-reinforcement-learning",
+    "lastAccessed": "2026-07-12",
+    "category": "multi-agent-rl"
+  },
+  "2607.08601": {
+    "title": "It Takes a MAESTRO To Prune Bad Experts",
+    "file": null,
+    "keywords": [
+      "mixture-of-experts",
+      "expert-pruning",
+      "MoE-deployment",
+      "structured-pruning",
+      "language-model-efficiency"
+    ],
+    "utility": 0.87,
+    "skillCreated": "maestro-pruning-bad-experts-mixture-of-experts",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08734": {
+    "title": "The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs",
+    "file": null,
+    "keywords": [
+      "quantization",
+      "llm-deployment",
+      "behavioral-change",
+      "correctness-agreement",
+      "post-training-quantization"
+    ],
+    "utility": 0.88,
+    "skillCreated": "illusion-of-equivalency-quantization-effects-llms",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08733": {
+    "title": "Super Weights in LLMs and the Failure of Selective Training",
+    "file": null,
+    "keywords": [
+      "super-weights",
+      "llm-training",
+      "parameter-pruning",
+      "critical-parameters",
+      "selective-training"
+    ],
+    "utility": 0.88,
+    "skillCreated": "super-weights-llms-selective-training-failure",
+    "lastAccessed": "2026-07-12",
+    "category": "nlp-llm"
+  },
+  "2607.08724": {
+    "title": "Latent Memory Palace: Reasoning for Control as Autoregressive Variational Inference",
+    "file": null,
+    "keywords": [
+      "latent-memory",
+      "reasoning-for-control",
+      "autoregressive-variational-inference",
+      "adaptive-reasoning",
+      "continuous-control"
+    ],
+    "utility": 0.89,
+    "skillCreated": "latent-memory-palace-reasoning-control-variational-inference",
+    "lastAccessed": "2026-07-12",
+    "category": "general-ml"
+  },
+  "2607.08652": {
+    "title": "Formal Mechanisms for Market Stability in Self-Interested Agent Societies: A Marketplace Simulation Study",
+    "file": null,
+    "keywords": [
+      "market-stability",
+      "self-interested-agents",
+      "multi-agent-economics",
+      "cooperation-mechanisms",
+      "social-dilemmas"
+    ],
+    "utility": 0.87,
+    "skillCreated": "formal-mechanisms-market-stability-self-interested-agents",
+    "lastAccessed": "2026-07-12",
+    "category": "multi-agent-rl"
+  },
+  "2607.08575": {
+    "title": "FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation",
+    "file": null,
+    "keywords": [
+      "vision-language-action",
+      "lightweight-model",
+      "multi-task-manipulation",
+      "flow-matching",
+      "robot-learning"
+    ],
+    "utility": 0.85,
+    "skillCreated": "fabrivia-lightweight-vision-language-action-multi-task-manipulation",
+    "lastAccessed": "2026-07-12",
+    "category": "vision-generative"
   }
 }
