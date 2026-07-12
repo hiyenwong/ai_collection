@@ -29,6 +29,13 @@
   - Validated on synthetic data with ground truth and continuous attractor network simulations
   - **Activation**: DRIADA toolkit, cross-scale neural analysis, single-neuron selectivity, population dynamics, hippocampal calcium imaging, representational drift, CellReg
 
+
+### Chimera State in a Neuronal Network under the Action of a Magnetic Field
+- [[chimera-magnetic-field-neuronal]] - Magnetic field transforms chimera state incoherence into coherence in Hindmarsh-Rose networks, revealing multitraveling and multialternating chimera states (arXiv: 2607.07426)
+  - Three spatial configurations tested (full, half, dual-region) with magnetic field applications
+  - Discovers multitraveling and multialternating chimera states as novel phenomena
+  - **Activation**: chimera state, magnetic field, hindmarsh-rose, neuronal synchronization, multicluster chimera, brain cells, TMS
+
 ## 2026-07-12 - Quantum Neuromorphic Research (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
