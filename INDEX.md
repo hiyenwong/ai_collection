@@ -1,6 +1,15 @@
 # AI Collection Index
 
 
+## 2026-07-13 - Neuroscience Research (Cron Job - Evening)
+
+### Towards Transferable Lightweight Neuromorphic Computing Through a Model-Free Temporal-Switch Framework
+- [[temporal-switch-neuromorphic-transfer]] - Model-free temporal-switch framework enables direct transfer of trained neuromorphic models to unseen hardware devices without post-training calibration, solving device-to-device variation problem (arXiv: 2607.02608)
+  - Incorporates broader spectrum of devices during training to enable direct transfer without calibration
+  - Validated on memristor reservoir computing: Mackey-Glass + 92.4% spoken digit accuracy on unseen devices
+  - Theoretical analysis reveals general computational mechanism, suggesting applicability to other physical platforms
+  - **Activation**: temporal switch framework, neuromorphic transfer, device variation robustness, memristor reservoir, model-free transfer
+
 ## 2026-07-13 - Neuroscience Research (Cron Job)
 
 ### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion
