@@ -28,6 +28,16 @@
   - Falsifiable inverted-U prediction: noise level non-monotonically improves retention (10.9 pp gain on Split-MNIST)
   - Real BrainScaleS-2: 15.6 pp better retention at matched accuracy; noise reframed from tax to consolidation dividend
   - **Activation**: Doob barrier, noise consolidation, continual learning, catastrophic forgetting, analog neuromorphic, BrainScaleS-2, h-transform
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-control]] - Maps circuit mechanisms to low-dimensional manifold geometry on SpiNNaker 2 for real-time closed-loop robotic control; sensory inputs modulate inhibition, gain, and transient currents for behavior switching (arXiv: 2607.07373)
+  - Subspace rotations enable rapid behavior switching; trajectory speed modulation adapts movement timing
+  - Validated via robotic maze navigation where agent dynamically reconfigures manifold geometry from sensory feedback
+  - **Activation**: dynamic neural manifolds, closed-loop control, neuromorphic hardware, SpiNNaker 2, subspace rotation, manifold geometry, behavior switching, trajectory control, explainable AI
+### Scalable Perturbation Learning for Online Self-Supervised Echo State Networks
+- [[scalable-perturbation-learning-esn]] - Orthogonal decomposition of ESN self-supervised cost reduces perturbation dimension from reservoir size to input dimension, enabling scalable online self-supervised learning (arXiv: 2607.06079)
+  - Perturbing only input-dependent component avoids reservoir-size-dependent variance growth
+  - Design principle: online learning should target dynamically necessary low-dimensional component of objective
+  - **Activation**: echo state networks, perturbation learning, self-supervised learning, online learning, reservoir computing, orthogonal decomposition
 ### Online Data Reduction with Spiking Neural Networks for the ePIC dRICH Detector
 - [[snn-online-data-reduction-physics]] - SNN-based online data reduction for 320K SiPM channels at 100 MHz; temporal-coincidence encoder + distributed SNN achieves ≥5× data reduction while preserving Cherenkov photon signals (arXiv: 2607.03492)
   - Temporal-coincidence encoding converts SiPM hit patterns into spike trains; SNN classifies genuine Cherenkov vs. dark count noise
