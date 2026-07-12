@@ -16,6 +16,12 @@
 
 ## 2026-07-12 - Neuroscience Research (Cron Job)
 
+### STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding Predictive Architecture for EEG Self-Supervised Learning
+- [[stst-jepa-eeg-foundation]] - Largest EEG foundation model (47,703 sessions, ages 5-81) using JEPA-style latent prediction with EMA tokenizer + auxiliary reconstruction; rank 1 on NeuralBench across 3 tasks (arXiv: 2607.06629)
+  - Joint objective: latent prediction (MSE vs EMA tokenizer targets, λ=1.0) + auxiliary signal reconstruction (Smooth-L1, λ=0.35); maps to predictive processing theory
+  - PMA channel pooling collapses 128 channels per temporal index via Set Transformer attention, handling montage heterogeneity (115 vs 128 channels) across corpora
+  - Brain age gap negatively correlates with cognitive efficiency across 21 behavioral targets; 7 survive BH-FDR correction (q=0.05)
+  - **Activation**: STST-JEPA, EEG foundation model, brain age prediction, self-supervised EEG, JEPA, brain age gap, cognitive efficiency, PMA channel pooling, NeuralBench
 ### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion Turns Analog Device Noise into a Continual-Learning Resource
 - [[doob-barrier-noise-consolidation]] - Doob h-transform applied to per-synapse weight dynamics turns analog device noise into memory consolidation resource; validated on real BrainScaleS-2 silicon (arXiv: 2607.06924)
   - Doob barrier-conditioning creates restoring force amplified by noise variance itself; diverges at barrier
