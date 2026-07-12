@@ -113,6 +113,26 @@ When all papers already have skills, verify completeness:
 
 **Synthesis pivot pattern (NEW, 2026-06-20)**: When domain saturation is detected but a paper in the batch is a comprehensive review/survey that lacks a dedicated skill, create a **class-level umbrella skill** rather than a narrow paper-specific skill or doing nothing.
 
+## Known Duplicate Skill Groups (2026-07-11 catalog)
+
+The following groups cover identical papers and need curator consolidation:
+
+| arXiv ID | Keep (canonical) | Delete (duplicates) |
+|----------|-----------------|---------------------|
+| 2607.02283 | `dendritic-in-context-learning-snn` | `dendritic-icl-snn`, `dendricl-icl-single-layer-snn` |
+| 2607.07077 | `hyperbolic-learning-brain-graphs` (ai_collection) | `hlbg-hyperbolic-learning-brain-graphs` (neuroscience/) |
+| 2607.06456 | `hardware-aware-mixed-signal-snn-framework` | `hardware-aware-snn-design-space-exploration` |
+| 2607.03890 | `sound-localization-equilibrium-dynamics` | `equilibrium-dynamics-sound-localization` |
+| 2607.08561 | `contravariance-theory-strong-alignment-minimal` | `contravariance-theory-strong-alignment` |
+| 2606.30319 | `brainjanus-unified-brain-model` | `brainjanus-unified-brain-vision-language` |
+| 2607.07373 | `dynamic-neural-manifolds-snn-control` | `dynamic-neural-manifold-snn-control` |
+| 2607.05652 | `pathwise-metastability-galves-locherbach-models` | `pathwise-metastability-galves-locherbach` |
+
+**Ghost entries** (INDEX.md listed but no skill exists):
+- `brainjanus-unified-brain` — no local SKILL.md, no repo directory
+
+**See**: `references/cron-session-log-2026-07-11.md` for full session details
+
 ## Integration Points
 
 - See `references/automated-research-workflow.md` for complete pipeline including kg.db schema

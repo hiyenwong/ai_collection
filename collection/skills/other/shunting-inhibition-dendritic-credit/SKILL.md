@@ -1,104 +1,114 @@
 ---
 name: shunting-inhibition-dendritic-credit
-description: "Shunting inhibition and dendritic branching for local credit assignment in biological neurons. Conductance-based dendritic networks with E/I synapse banks. Activation: dendritic credit, shunting inhibition, local learning, credit assignment, 树突信用分配, 分流抑制"
-tags: [neuroscience, computational-neuroscience, synaptic-plasticity, dendritic-computation, local-learning]
+category: neuroscience
+description: "Shunting inhibition and dendritic branching reshape local credit assignment geometry. Shows how E/I conductance + dendritic tree structure enable biological neurons to approximate backprop with restricted somatic feedback. By Safaai, Richards & Sabatini (arXiv:2607.03556, July 2026)."
+trigger_words:
+  - shunting inhibition
+  - dendritic credit assignment
+  - local credit assignment
+  - dendritic branching learning
+  - E/I conductance learning
+  - backpropagation biological
+  - compartment-specific error
+  - somatic teaching signal
+  - Safaai
+  - Sabatini
+  - 5-factor learning
+  - dendritic backpropagation
+  - conductance-based dendrites
 ---
 
 # Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment
 
-**arXiv**: 2607.03556  
-**Authors**: Houman Safaai, Maceo Richards, Bernardo L. Sabatini  
-**Date**: 2026-07-03
+> Houman Safaai, Maceo Richards, Bernardo L. Sabatini (July 2026)
+> arXiv: 2607.03556
+> Categories: q-bio.NC
 
-## Core Methodology
+## Core Problem
 
-### Problem Statement
-Biological neurons assign credit across branching dendrites where synaptic drive, dendritic conductance, local voltage, and somatic teaching signals interact to shape synaptic plasticity. The challenge: when restricted somatic feedback can approximate compartment-specific backpropagated errors.
+Biological neurons must assign credit for errors across their branching dendritic trees — but they lack the global error signals that backpropagation requires. How do real neurons approximate gradient-based learning using only local signals and restricted somatic (cell body) feedback?
 
-### Key Innovation
-**Gradient Factorization**: Exact gradients factor into:
-- **Local eligibility term**: uses presynaptic activity, driving force, and input resistance
-- **Compartment error term**: fast non-local term obtained by transporting soma error through dendritic gains
+## Key Finding: Exact Gradient Factorization
+
+The paper proves that **exact gradients factor into local × non-local terms** in conductance-based dendritic networks:
+
+```
+Gradient = Local Eligibility × Compartment Error
+```
+
+- **Local Eligibility**: uses only locally available information:
+  - Presynaptic activity
+  - Driving force (reversal potential minus membrane potential)
+  - Input resistance at the synapse
+
+- **Compartment Error**: a path-specific error obtained by "transporting" the soma error through dendritic gains along the path from soma to the specific dendritic compartment
 
 This factorization turns local learning into a **credit-signal compression problem**.
 
-### Mechanism Hypothesis
-Shunting inhibition benefits learning under constraints when it **reshapes the compartment-error field** to better match:
-- Global scalar feedback
-- Per-soma feedback  
-- Low-rank feedback
-- Path-structured feedback
+## The Role of Shunting Inhibition
 
-## Mathematical Framework
+**Shunting inhibition** (divisive, conductance-based inhibition, as opposed to subtractive/hyperpolarizing inhibition) plays a critical role:
 
-### Conductance-Based Dendritic Networks
-- E/I synapse banks
-- Shunting inhibition
-- Tree-structured branch-to-soma coupling
+- It **reshapes the compartment-error field** to better match the available feedback signals
+- When feedback is restricted to global scalar, per-soma, low-rank, or path-structured signals, shunting inhibition helps align the geometry of available feedback with the true compartment-specific errors
+- This is a geometric/structural role, not just a gating role
 
-### Gradient Decomposition
-```
-∇L = (local eligibility) × (compartment error)
-```
+## Performance Results
 
-Where:
-- **Eligibility**: presynaptic activity × driving force × input resistance
-- **Compartment error**: path-specific error via dendritic gain transport
-
-### Diagnostic Tools
-1. Path-gain analysis
-2. Rank analysis
-3. Broadcast-fidelity metrics
-4. Inhibition-intervention tests
-5. Transported-error-oracle diagnostics
-
-## Experimental Results
-
-### Benchmarks
 Under nonnegative conductances and per-soma 5-factor (5F) feedback:
-- **MNIST**: shunting LocalCA 5-6 percentage points below backpropagation
-- **Fashion-MNIST**: similar gap
-- **Figure-ground MNIST**: similar gap
+- **Shunting LocalCA** stays only **5-6 percentage points below matched backpropagation**
+- Tested on: MNIST, Fashion-MNIST, and figure-ground MNIST
+- This is remarkable given the severe constraints on feedback geometry
 
-### Key Finding
-**Feedback-field fidelity remains a major bottleneck** - the 5-6 point gap indicates that matching the compartment-error field to global feedback is the limiting factor.
+### Feedback Fidelity Bottleneck
 
-## Practical Applications
+The main limitation is **feedback-field fidelity** — how well the global scalar feedback can be "decoded" into compartment-specific error signals. The 5-6 point gap indicates this remains a major bottleneck, not the local eligibility computation.
 
-### For SNN/Neuromorphic Computing
-1. **Biologically-plausible local learning rules** for multi-compartment neuron models
-2. **Credit assignment in dendritic SNN architectures**
-3. **Energy-efficient learning** using only somatic feedback signals
-4. **Hardware implementations** of dendritic computation with shunting inhibition
+## Diagnostic Tools Introduced
 
-### Design Principles
-- Use shunting inhibition to reshape error fields
-- Factor learning into local eligibility × global error transport
-- Target feedback-field fidelity as optimization objective
-- Consider path-specific error propagation through dendritic trees
+The paper introduces several novel diagnostic measures:
+1. **Path-gain analysis**: how errors propagate along dendritic paths
+2. **Rank analysis**: effective dimensionality of feedback signals
+3. **Broadcast-fidelity**: how well global feedback reconstructs local errors
+4. **Inhibition-intervention**: causal manipulation of shunting inhibition
+5. **Transported-error oracle**: upper bound on what's achievable with perfect error transport
 
-## Implementation Guidelines
+## Implications for Biological Learning
 
-### When to Use
-- Multi-compartment neuron models with dendritic branching
-- Scenarios requiring biologically-plausible local learning
-- Neuromorphic hardware with dendritic computation capabilities
-- Energy-constrained learning scenarios
+### Why Dendritic Branching Matters
 
-### Pitfalls
-- Feedback-field fidelity is the main bottleneck
-- Nonnegative conductance constraints limit expressivity
-- Per-soma feedback may not capture full compartment-specific errors
-- 5-6 point performance gap vs backpropagation remains significant
+The tree structure of dendrites isn't just anatomical — it creates a natural **hierarchy of error transport** where:
+- Proximal compartments receive more faithful error signals
+- Distal compartments require more "compression" of the error signal
+- Shunting inhibition at strategic locations can reshape this hierarchy
 
-## Related Concepts
-- Backpropagation through time (BPTT)
-- Predictive coding
-- Equilibrium propagation
-- Dendritic computation
-- E/I balance
-- Synaptic plasticity
+### 5-Factor Learning Rules
 
-## References
-- Paper: https://arxiv.org/abs/2607.03556
-- PDF: https://arxiv.org/pdf/2607.03556
+The framework naturally leads to 5-factor learning rules:
+1. Presynaptic activity
+2. Postsynaptic driving force
+3. Input resistance (local gain)
+4. Somatic teaching signal (global scalar)
+5. Dendritic path gain (structural factor)
+
+## Practical Guidelines for SNN/NeuroAI
+
+1. **Modeling Dendrites**: When building biologically plausible learning rules, model the dendritic tree structure explicitly — the path-specific gains are essential for credit assignment.
+
+2. **Shunting vs. Hyperpolarizing Inhibition**: Shunting inhibition has unique computational properties for learning that hyperpolarizing inhibition cannot replicate. Use conductance-based (not current-based) inhibition models.
+
+3. **Feedback Constraints**: If your model uses restricted feedback (scalar per-neuron, low-rank, broadcast), the shunting inhibition mechanism becomes critical for achieving good performance.
+
+4. **Diagnostic Framework**: Use the paper's diagnostic tools (path-gain, rank, broadcast-fidelity) to analyze where your local learning rule fails — is it the eligibility or the error signal?
+
+## Related Work to Load Together
+
+- **shunting-inhibition-dendritic-credit** (this skill)
+- **diffusing-blame-dale-principle-credit-assignment** — Error Diffusion for credit assignment
+- **three-factor-snn-learning** — 3-factor learning rules in SNNs
+- **equilibrium-propagation-lif-snn** — Equilibrium Propagation for SNN training
+- **self-supervised-local-learning-hierarchy** — Local self-supervised learning rules
+
+## Activation Keywords
+
+shunting inhibition, dendritic credit assignment, local learning, backpropagation biological plausibility, E/I conductance, compartment-specific error, somatic feedback, dendritic branching, 5-factor learning, Safaai, Sabatini, conductance-based dendrites, error transport

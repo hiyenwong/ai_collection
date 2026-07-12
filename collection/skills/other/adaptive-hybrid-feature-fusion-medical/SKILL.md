@@ -113,6 +113,14 @@ Fused features → Dense layers → Softmax → Diagnosis
 - Compare against purely classical baseline
 - Monitor quantum circuit expressibility and entanglement capability
 
+## Cross-References (2026-06-17)
+- arXiv:2604.16953 — HQNN with multi-head attention for quantum-aware feature encoding (breast cancer thermographic)
+- arXiv:2601.18814 — LQER: Lightweight Quantum-Enhanced ResNet for coronary angiography (quantum feature enhancement at semantic level)
+- arXiv:2605.18540 — MCTS encoding discovery: effective rank of feature maps predicts encoding performance (accelerates encoding search)
+- arXiv:2604.13560 — QMTL: quantum prediction heads scale linearly vs quadratic for classical in multi-task settings
+- arXiv:2603.27377 — Non-unitary QML via LCU: Fisher efficiency transition in medical imaging at 10-12 qubits
+- arXiv:2601.04732 — Realistic assessment: hybrid models comparable to classical in best case, often deteriorate; advocates cautious claims
+
 ## Resources
 - arXiv:2604.22903 — On the Complementarity of Quantum and Classical Features
 - BreastMNIST dataset for benchmarking

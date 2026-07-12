@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-6711-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-7046-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 

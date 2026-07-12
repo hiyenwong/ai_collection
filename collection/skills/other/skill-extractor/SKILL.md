@@ -213,7 +213,83 @@ When extracting from papers where quantum algorithms are used to prove or improv
 - **Skill naming**: Use `quantum-*-functional-estimation`, `quantum-*-via-quantum`, or `quantum-proves-classical-*` patterns
 - **Related umbrellas**: `quantum-statistical-estimation`, `quantum-probability-statistics`
 
-- **Domain saturation levels (2026-07-10 UPDATED)**: Medicine+Quantum ~93%, Neuroscience+Quantum ~95%, CS+Quantum ~93%, Economics+Quantum ~78%, Systems Engineering+Quantum ~67%, Number Theory+Quantum ~40-50% (confirmed productive — found 1 new skill today), Statistics+Quantum ~65%, Information Science+Quantum ~72%. **Priority order**: Number Theory > Info Science > Systems Engineering/Statistics > Economics > Medicine/CS/Neuroscience.
+#### Extraction Pattern for Quantum Generative Models (Born Machines / Spectral)
+When extracting from papers on quantum generative models (Born machines, spectral Born machines, quantum GANs):
+- **Model class**: Born machine, GAN, VAE, diffusion — determines the skill's taxonomy placement
+- **Inductive bias**: What structural prior the model encodes (Fourier/spectral, geometric, topological)
+- **Training mechanism**: How the model is trained — MMD, adversarial, variational — and whether it requires quantum hardware
+- **Classical trainability**: Key differentiator — can the model be trained classically at scale?
+- **Sampling complexity**: Is sampling from the trained model classically hard? (quantum advantage criterion)
+- **Scale achieved**: Number of qubits, parameters, dataset size — demonstrates practical viability
+- **Software implementation**: Framework-specific modules (e.g., PennyLane `tcdq`)
+- **Skill naming**: Use `spectral-born-machines`, `quantum-*-generative`, or `quantum-*-born` patterns
+- **Related umbrellas**: `quantum-ml-patterns`, `qml-framework-agnostic-design`
+
+#### Extraction Pattern for QML Training Dynamics (Grokking/Double Descent)
+When extracting from papers on grokking, double descent, or generalization decay in quantum neural networks:
+- **Grokking definition**: Delayed transition from memorization to generalization in gradient-based QML
+- **Double descent pattern**: Test error degrades at critical epoch before recovering into generalizing state
+- **Late-stage decay mechanism**: Unconstrained weight-norm growth causing drift from sparse, phase-aligned harmonic solutions in Hilbert space
+- **Mitigation strategy**: Explicit weight-norm regularization (weak λ * ||W||²) as structural anchor
+- **Hyperparameter dependence**: Onset linked to learning rate and weight decay settings
+- **Skill naming**: Use `grokking-*-qnn`, `qnn-*-generalization`, or `qnn-*-training-dynamics` patterns
+- **Related umbrellas**: `qml-expressivity-trainability-paradox`, `quantum-neural-barren-plateau`, `qmt-quantum-measurement-temperature`
+
+#### Extraction Pattern for Bayesian Quantum Estimation
+When extracting from papers combining Bayesian inference with quantum parameter estimation:
+- **Bound types**: B-SLD, B-NH, Gill-Massar, Cramér-Rao — compare attainability
+- **Attainability proof**: Does the paper prove the bound is actually achievable?
+- **Model class**: Qubit, continuous-variable, multi-qubit — determines scope
+- **Prior dependence**: How the prior distribution affects the bound and measurement strategy
+- **Optimal measurement**: What POVM achieves the bound?
+- **Skill naming**: Use `bayesian-*-quantum-*` or `*-lower-bound-*` patterns
+- **Related umbrellas**: `quantum-statistical-estimation`, `quantum-metrology-sensing-review`
+
+#### Extraction Pattern for QML Representation Audits
+When extracting from papers on auditing data representations in quantum machine learning:
+- **Taxonomy structure**: How representations are classified (vectors → projectors → subspaces → flags → states → density operators)
+- **Invariance theorems**: What mathematical properties are preserved under each lift (PSD, gauge invariance, block-swap witness)
+- **Failure modes**: When coarser representations discard label-bearing information
+- **Experimental validation**: Controlled experiments across representation hierarchy
+- **Skill naming**: Use `invariance-*-quantum-*` or `*-representation-audit-*` patterns
+- **Related umbrellas**: `qml-feature-encoding`, `quantum-ml-patterns`
+
+#### Extraction Pattern for QRC Dimensionality Diagnostics
+When extracting from papers on quantum reservoir computing with high-dimensional feature validation:
+- **Stability metric**: The diagnostic that separates genuine benefit from dimension-inflation illusion
+- **Growth protocol**: How problem size and reservoir size are scaled together
+- **Classical baseline**: How the matched classical reservoir is constructed for honest comparison
+- **Skill naming**: Use `quantum-reservoir-*-diagnostic` or `*-reservoir-computing-*-forecasting` patterns
+- **Related umbrellas**: `quantum-reservoir-computing`, `quantum-reservoir-finance`
+
+#### Extraction Pattern for Adaptive QAOA Decomposition
+When extracting from papers that transform graph partitionability from assumption to enforceable property:
+- **Failure detection**: When standard partitioning fails and how this is detected
+- **Obstructing element identification**: The algorithm for finding minimum obstructing vertices/edges (max-flow, min-cut, etc.)
+- **Energy preservation**: How removed elements' contributions are rigorously preserved (bias folding, penalty terms)
+- **Coverage guarantee**: What fraction of previously-unsolvable instances become solvable
+- **Skill naming**: Use `*-adaptive-*-qaoa` or `frozen-*-qaoa` patterns
+- **Related umbrellas**: `quantum-optimization-qaoa`, `quantum-annealing-xai`
+
+#### Extraction Pattern for Categorical/Topological Quantum Structures
+When extracting from papers on categorical braiding, subfactor theory, planar algebras, or mapping class group representations:
+- **Category input**: What categorical structure serves as input (unitary modular fusion category, Hopf algebra, subfactor)
+- **Representation type**: What representation is constructed (braiding, projective unitary, mapping class group)
+- **Topological encoding**: How topological data is encoded (higher-genus, multi-interval, boundary states)
+- **Proof technique**: New proofs of known results (self-duality, equivalence theorems)
+- **Skill naming**: Use `categorical-*`, `*-braiding-*`, or `*-subfactor-*` patterns
+- **Related umbrellas**: `topological-quantum-computing`, `quantum-error-correction-methods`, `tensor-cookbook-diagrams`
+
+#### Extraction Pattern for Number Theory + Quantum Bridges
+When extracting from papers connecting algebraic number theory with quantum information:
+- **Algebraic structure**: What number-theoretic objects appear (Stark units, ray class fields, SIC overlaps, zeta functions)
+- **Quantum mapping**: How number theory maps to quantum objects (POVM geometry, spectral weights, Hilbert spaces)
+- **Cross-validation**: Independent mathematical routes that confirm the same result
+- **Dimension-specific patterns**: When the connection depends on specific dimensions or congruence classes
+- **Skill naming**: Use `{number-theory-concept}-{quantum-object}` patterns (e.g., `stark-units-sic-overlaps`, `krein-space-riemann-xi`)
+- **Related umbrellas**: `quantum-number-theory-algorithms`, `quantum-foundations-probability`
+
+- **Domain saturation levels (2026-07-10 FINAL)**: Medicine+Quantum ~93%, Neuroscience+Quantum ~95%, CS+Quantum ~93%, Economics+Quantum ~78%, Systems Engineering+Quantum ~67%, Number Theory+Quantum ~52% (today gained: quantum-renormalization-goursat, categorical-braiding-subfactor, grokking-epoch-double-descent-qnn synced), Statistics+Quantum ~70%, Information Science+Quantum ~72%. **Priority order**: Number Theory > Info Science > Systems Engineering/Statistics > Economics > Medicine/CS/Neuroscience.
 
 #### Step 1: Identify Skill Candidate
 Analyze the conversation pattern to identify:
@@ -411,10 +487,18 @@ When extracting skills from arXiv papers, follow the "Research Paper to Skill Ex
 
 - **Domain saturation levels (2026-07-09 UPDATED)**: Medicine+Quantum ~93%, Neuroscience+Quantum ~95%, CS+Quantum ~93%, Economics+Quantum ~78%, Systems Engineering+Quantum ~67% (today found 2 new skills: qutuner-compiler-optimization + qolumbina-quantum-testing-benchmark), Number Theory+Quantum ~40-50%, Statistics+Quantum ~65%, Information Science+Quantum ~72%. **Priority order**: Number Theory > Info Science > Systems Engineering/Statistics > Economics > Medicine/CS/Neuroscience.
 
-- **Skill overlap alerts (2026-07-10 NEW)**:
-  - **quantum-minimax-functional-estimation** (2607.07540): Related to `quantum-statistical-estimation` (quantum statistics), `quantum-probability-statistics` (quantum probability theory), `qml-feature-encoding` (encoding classical data into quantum states). All in quantum statistics/estimation territory — candidate for cross-referencing under `quantum-statistical-estimation` umbrella.
-  - **qolumbina-quantum-testing-benchmark** (2607.02029): Related to `quantum-native-testing-framework` (both quantum software testing), `quantum-software-testing-benchmark` (both testing benchmarks — potential name collision, verify), `quantum-api-drift-benchmark` (both SDK/version testing), `quantum-program-reliability` (code reliability). All in quantum software testing/quality assurance territory.
-  - **qutuner-compiler-optimization** (2607.04586): Related to `quantum-compilation-workflow` (both quantum compilation optimization), `hardware-aware-quantum-compilation` (hardware-aware compilation), `quantum-compiler-routing` (compiler optimization), `qubit-mapping-routing-memoization` (compilation bottleneck). All in quantum compiler/optimization territory.
+- **Skill overlap alerts (2026-07-10 LATE-AFTERNOON NEW)**:
+  - **grokking-epoch-double-descent-qnn** (2607.08350): Related to `qml-expressivity-trainability-paradox` (QML trainability), `quantum-neural-barren-plateau` (QNN optimization issues), `coherence-law-noisy-equivariant-qnn` (QNN trainability), `qmt-quantum-measurement-temperature` (QNN training stability). All in QML training dynamics/optimization territory.
+  - **quantum-pde-speedup-certification** (2607.06533): Related to `quantum-linear-system-beyond-condition` (quantum linear system solving), `qml-framework-agnostic-design` (framework-agnostic QML), `quantum-ml-patterns` (QML design patterns). All in quantum algorithm complexity/advantage territory.
+  - **istar-algebraic-collapse-ising** (2607.05448): Related to `quantum-optimization-qaoa` (quantum optimization), `quantum-inspired-optimization` (quantum-inspired classical optimization), `quantum-annealing-xai` (annealing-based optimization). All in combinatorial optimization/Ising solver territory.
+
+- **Skill overlap alerts (2026-07-10 FINAL)**:
+  - **invariance-audits-quantum-kernels** (2607.07927): Related to `qml-feature-encoding` (feature encoding methodology), `quantum-ml-patterns` (QML design patterns), `qml-framework-agnostic-design` (framework-agnostic QML). All in QML representation/feature encoding territory.
+  - **quantum-reservoir-chaotic-forecasting** (2607.07978): Related to `quantum-reservoir-computing` (QRC umbrella), `quantum-reservoir-finance` (financial QRC), `quantum-reservoir-stock-forecasting` (time series QRC), `quantum-reservoir-memory` (QRC memory capacity). All in QRC territory.
+  - **frozen-lgp-qaoa** (2607.08138): Related to `quantum-optimization-qaoa` (QAOA methodology), `quantum-hypergraph-partitioning` (quantum hypergraph partitioning), `quantum-annealing-xai` (annealing-based optimization). All in QAOA/combinatorial optimization territory.
+  - **stark-units-sic-overlaps** (2606.25457): Related to `quantum-number-theory-algorithms` (quantum number theory), `quantum-foundations-probability` (quantum foundations), `sic-overlap-stark-units-number-theory` (same paper). All in number theory + quantum information territory.
+  - **krein-space-riemann-xi** (2606.13932): Related to `quantum-models-riemann-zeta-lattice-spin` (Riemann zeta quantum models), `quantum-number-theory-algorithms` (quantum number theory), `quantum-foundations-probability` (quantum foundations). All in number theory + quantum foundations territory.
+  - **grokking-epoch-double-descent-qnn** (2607.08350): Related to `qml-expressivity-trainability-paradox` (QML trainability), `quantum-neural-barren-plateau` (QNN optimization), `coherence-law-noisy-equivariant-qnn` (QNN trainability), `qmt-quantum-measurement-temperature` (QNN training stability).
 
 - **Quantum Software Engineering cluster (2026-07-07 NEW)**: The CS+Quantum domain now has a cohesive cluster:
   - `qpipe-agentic-quantum-code-gen` (2607.00939) — agentic LLM code generation for quantum apps
@@ -492,7 +576,7 @@ When extracting skills from arXiv papers, follow the "Research Paper to Skill Ex
   - **ravine-quantum-cost-landscape-ensemble** (2607.01329): Related to `ravine-quantum-cost-landscape` (same ravine analysis territory), `quantum-optimization-landscape-analysis` (QCL analysis), `qml-expressivity-trainability-paradox` (VQA optimization). All in VQA/quantum optimization landscape territory.
   - **color-code-pipe-diagrams** (2607.05501): Related to `lattice-surgery-surface-code` (both lattice surgery compilation, but different QEC code — surface vs color), `quantum-error-correction-methods` (QEC decoding), `distributed-quantum-error-correction` (distributed QEC). All in QEC compilation territory — distinct from surface code due to different lattice geometry.
   - **hermitian-inner-product-time-axis** (2607.05447): Related to `quantum-foundations-probability` (quantum foundations), `transformation-response-quantum-framework` (reformulation of QM). Both in quantum foundations/Hilbert space structure territory.
-- **Domain saturation levels (2026-07-10 UPDATED)**: Medicine+Quantum ~93%, Neuroscience+Quantum ~95%, CS+Quantum ~93%, Economics+Quantum ~78%, Systems Engineering+Quantum ~67%, Number Theory+Quantum ~40-50% (confirmed productive today — 1 new skill from 2607.07540), Statistics+Quantum ~65%, Information Science+Quantum ~72%. **Priority order**: Number Theory > Info Science > Systems Engineering/Statistics > Economics > Medicine/CS/Neuroscience.
+- **Domain saturation levels (2026-07-10 EVENING UPDATED)**: Medicine+Quantum ~93%, Neuroscience+Quantum ~95%, CS+Quantum ~93%, Economics+Quantum ~78%, Systems Engineering+Quantum ~67%, Number Theory+Quantum ~40-50% (confirmed productive — 4 skills today from RSS feeds), Statistics+Quantum ~65% (Bayesian quantum estimation productive, spectral learning methods productive), Information Science+Quantum ~72%. **Priority order**: Number Theory > Info Science > Systems Engineering/Statistics > Economics > Medicine/CS/Neuroscience. **New skill classes today**: `bayesian-gill-massar-bound` (quantum statistics + estimation theory), `operator-frame-geometry-non-compact-quantum` (quantum geometry for unstable vacua), `hqnn-neighborhood-selection` (hybrid QML for molecular optimization), `spectral-born-machines` (quantum generative models via group Fourier analysis — confirmed existing from sibling session). **RSS feeds confirmed reliable** when API returns 429 — returned 102 matching papers from quant-ph feed alone.
 
 - **arxiv API SSL EOF total session failure (2026-07-02 NEW)**: The documented recovery pattern ("retry and connection recovers") is NOT always reliable. On 2026-07-02, ALL arxiv queries via `urllib.request` with proxy failed with `SSL: UNEXPECTED_EOF_WHILE_READING` — no single query succeeded, not even retries with different query strings. `curl` also returned empty. **When SSL EOF persists across ALL retries, treat arxiv as completely unavailable for the session and use kg.db + RSS as the ONLY discovery methods.** See [references/cron-session-notes-2026-07-02.md](references/cron-session-notes-2026-07-02.md).
 - **RSS feed papers not in papers table (2026-07-04 NEW)**: Papers discovered via RSS feeds (e.g., 2607.* IDs) are NOT automatically in the `papers` table of workspace root kg.db. Running `UPDATE papers SET skill_name` on these IDs affects 0 rows because they don't exist yet. **Fix pattern**: Use `INSERT OR IGNORE INTO papers (arxiv_id, title, abstract, skill_name, created_at) VALUES ('{id}', '{title}', '{abstract}', '{skill-name}', datetime('now'))` before any UPDATE. This is idempotent — safe to run even if the paper already exists.

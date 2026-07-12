@@ -249,6 +249,10 @@ class M2HRIFramework:
 
 ---
 
+## Cross-Domain Sessions: Systems Engineering + Quantum
+
+See [references/cron-systems-engineering-quantum-2026-07-09.md](references/cron-systems-engineering-quantum-2026-07-09.md) for cross-domain patterns: confidence-gated two-stage inference (cheap→expensive routing), digital twin + multi-agent LLM fault diagnosis, symbolic-numerical hybrid control loops, and utility-anonymity trade-offs in quantum cloud.
+
 ## Cross-Cutting Themes
 
 ### 1. Hybrid Control Architectures

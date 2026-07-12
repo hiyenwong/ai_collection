@@ -1,121 +1,136 @@
 ---
 name: updated-neuron-model-ann
-description: "Updating the standard neuron model in ANNs - replacing point neuron model with realistic cortical cell model improves expressivity, robustness, learning speed, and reduces memorization without extra parameters"
-metadata:
-  arxiv_id: "2605.30370"
-  authors: "Raul Mohedano, Thomas Batard, Erik Velasco-Salido, Ramsses De Los Santos Mendoza, Jorge H. Martínez, Stacey Levine, Marcelo Bertalmío"
-  published: "2026-05-19"
-  last_updated: "2026-06-09"
-  tags: [neural-networks, neuron-model, cortical-cells, expressivity, robustness, learning-speed]
-license: Complete terms in LICENSE.txt
+description: "Updating the standard neuron model in artificial neural networks - replacing the simplistic point neuron model with more realistic cortical cell representations"
+trigger_words:
+  - neuron model
+  - point neuron
+  - ANN architecture
+  - cortical neurons
+  - neuron expressivity
+  - biological plausibility
+  - neural unit
+activation_keywords:
+  - neuron model update
+  - ANN neuron
+  - cortical cell model
+  - point neuron limitation
+  - neural expressivity
+  - training efficiency
+  - robustness ANN
+version: 1.0.0
+last_updated: 2026-06-19
+paper_source: arXiv:2605.30370
+authors: Raul Mohedano, Thomas Batard, Erik Velasco-Salido, Ramsses De Los Santos Mendoza, Jorge H. Martínez, Stacey Levine, Marcelo Bertalmío
+submitted: 2026-05-19 (v3: 2026-06-09)
 ---
 
 # Updating the Standard Neuron Model in Artificial Neural Networks
 
-## 核心创新
+## Background
 
-从1950年代沿用至今的点神经元模型过于简化，无法代表许多基本神经过程。本研究使用近期发展的皮质细胞模型替代标准神经元，在不增加参数的前提下提升ANN的表达能力、鲁棒性、学习速度，并减少记忆化和训练数据需求。
+From their inception in the 1950s, artificial neural networks (ANNs) have used the **point neuron model** prevalent in neuroscience at that time, hoping this analogy would better emulate brain function. However, neuroscience literature has shown that the point neuron model is **too simplistic** to properly represent many fundamental neural processes. Despite this, the standard neuron model in ANNs remains unchanged.
 
-## 技术要点
+## Core Innovation
 
-### 问题背景
+Substitute the simplistic point neuron model with a **more realistic cortical cell model** (based on recent neuroscience research) without augmenting the number of parameters. This substitution yields significant improvements:
 
-- **历史沿袭**: ANN自1950年代使用点神经元模型
-- **神经科学进展**: 点模型无法代表基本神经过程
-- **标准模型停滞**: ANN神经元模型未同步更新
+### Key Advantages
 
-### 新模型优势
+1. **Increased Expressivity** - More diverse and richer representations
+2. **Enhanced Robustness** - Better resistance to noise and adversarial inputs
+3. **Accelerated Learning Speed** - Faster convergence during training
+4. **Reduced Memorization** - Less tendency to overfit/memorize training data
+5. **Reduced Training Data Requirements** - Better generalization with less data
 
-#### 1. 表达能力提升
-- 更丰富的激活函数特性
-- 捕获非线性神经动力学
-- 无需增加参数数量
+## Technical Framework
 
-#### 2. 鲁棒性增强
-- 对噪声和扰动更稳定
-- 更好的泛化能力
-- 减少过拟合风险
+### Point Neuron Model Limitations
 
-#### 3. 学习速度加快
-- 更高效的梯度流动
-- 更快的收敛速度
-- 减少训练迭代次数
+- Single scalar activation value
+- No spatial structure
+- Ignores dendritic computation
+- Missing temporal dynamics at cellular level
+- Cannot represent multi-compartment processes
 
-#### 4. 记忆化减少
-- 更好的特征提取
-- 减少死记硬背
-- 提升理解能力
+### Updated Cortical Cell Model
 
-#### 5. 数据需求降低
-- 更少训练样本达到相同性能
-- 提升小样本学习能力
-- 降低数据收集成本
+- Incorporates dendritic structure
+- Multi-compartment representations
+- Spatial-temporal dynamics
+- More biologically accurate activation patterns
+- Maintains same parameter count (no additional cost)
 
-### 实现方法
+## Methodology
 
-**不增加参数的策略**:
-- 替换激活函数结构
-- 改进神经元内部动力学
-- 保持权重矩阵维度不变
+### Implementation Steps
 
-## 实验验证
+1. **Model Selection**: Choose appropriate cortical cell model (likely based on recent neuroscience findings about pyramidal cells, interneurons)
 
-### 理论分析
-- 数学推导证明表达能力增益
-- 鲁棒性理论边界估计
-- 学习速度收敛性分析
+2. **Parameter Mapping**: Ensure same number of trainable parameters as point neuron
 
-### 实验结果
-- 多任务性能对比
-- 小样本学习实验
-- 噪声鲁棒性测试
-- 记忆化程度量化
+3. **Integration**: Replace point neurons in existing architectures (CNNs, RNNs, Transformers)
 
-## 方法论意义
+4. **Training**: Standard backpropagation with updated gradient flow through new neuron dynamics
 
-首次系统性地将神经科学近年进展融入ANN基础架构。证明神经元模型的生物学精度直接影响网络性能，开辟ANN架构改进的新方向——从生物学精度而非计算复杂度入手优化。
+5. **Evaluation**: Compare on:
+   - Task accuracy
+   - Robustness tests (noise, adversarial)
+   - Learning curves
+   - Generalization gap
+   - Data efficiency
 
-## 应用场景
+## Experimental Validation
 
-### 深度学习改进
-- 替换ReLU/激活函数
-- 提升CNN/RNN性能
-- 减少训练成本
+The paper demonstrates through:
+- **Theoretical analyses**: Mathematical proofs of expressivity gains
+- **Experimental results**: Empirical validation across tasks
 
-### 小样本学习
-- 数据稀缺任务
-- 医疗影像分析
-- 科学实验数据
+## Neuroscience Connection
 
-### 鲁棒性需求
-- 噪声环境应用
-- 对抗性攻击防御
-- 安全关键系统
+This work bridges:
+- **ANN design** with modern neuroscience
+- **Computational efficiency** with biological realism
+- **Practical AI improvements** with theoretical neuroscience
 
-## 注意事项
+## Implications
 
-### 实现细节
-- 需理解皮质细胞模型数学形式
-- 激活函数计算复杂度可能略增
-- 需调整优化器超参数
+### For AI/ML
+- Better models with same complexity
+- More robust systems
+- Efficient training protocols
+- Potential for neuromorphic hardware optimization
 
-### 兼容性
-- 与现有框架集成需要自定义层
-- 预训练模型迁移需重新训练
-- 硬件加速可能需要特殊优化
+### For Neuroscience
+- Validates importance of cellular-level detail
+- Shows computational relevance of dendritic structure
+- Supports detailed neural modeling approaches
 
-## 相关资源
+## Potential Applications
 
-- arXiv: 2605.30370
-- 论文原文: https://arxiv.org/pdf/2605.30370v3.pdf
-- 皮质细胞模型参考文献
+1. **Computer Vision** - Enhanced feature extraction with cortical-like units
+2. **Language Models** - More expressive representations
+3. **Reinforcement Learning** - Better temporal credit assignment
+4. **Neuromorphic Hardware** - Natural mapping to biological architectures
+5. **Medical AI** - More biologically interpretable models
 
-## 核心概念
+## Key References
 
-- **点神经元模型**: 1950年代简化神经元模型
-- **皮质细胞模型**: 神经科学近年发展的精确模型
-- **无参数增益**: 不增加参数但提升性能的策略
+- Original paper: arXiv:2605.30370
+- Related: Recent cortical cell modeling papers (2024-2026)
+- Point neuron critique literature
 
-## Activation
+## Implementation Notes
 
-关键词: neuron-model, cortical-cells, ann-architecture, expressivity, robustness, learning-speed, small-data, memorization
+- Start with simple architectures for validation
+- Monitor gradient flow carefully (new dynamics)
+- Compare against identical point-neuron baselines
+- Track all five metrics (expressivity, robustness, speed, memorization, data needs)
+
+## Critical Insights
+
+The 70-year stagnation in ANN neuron design highlights:
+- **Assumption inertia**: Foundational design decisions persist despite evidence
+- **Cross-disciplinary gap**: Neuroscience advances not integrated into ANN fundamentals
+- **Parameter efficiency**: Biological realism doesn't require more parameters
+
+This work exemplifies how revisiting foundational assumptions can yield transformative improvements.

@@ -460,6 +460,12 @@ If arxiv API fails:
 ### execute_code BLOCKED
 In cron jobs, `execute_code` is BLOCKED. Use `terminal` with heredoc to write scripts to `/tmp/`, then run them as separate commands.
 
+### macOS grep Compatibility
+**CRITICAL: macOS grep does NOT support `-oP` (Perl regex).** When parsing arXiv XML with grep, use `sed` instead:
+```bash
+grep 'arxiv.org/abs/' file.xml | sed 's|.*arxiv.org/abs/||' | sed 's|</id>.*||' | sed 's|v[0-9].*||' | sort -u
+```
+
 ### arxiv search via proxy curl
 When `web_search` fails (Firecrawl errors), use direct proxy curl for arxiv API:
 ```bash
@@ -514,6 +520,9 @@ Actual column names at `/Users/hiyenwong/.openclaw/workspace/kg.db`:
 - **kg_entities**: `(id, title, url, content, authors, published_date, category, source)` — uses `title` not `name`, `url` not `source`
 - **kg_vectors**: `(id, entity_id, vector_data, created_at)` — `entity_id` FK to `kg_entities.id` (INTEGER)
 - **relationships**: `(source_id, target_id, relation_type, weight, created_date)` — TEXT IDs, REAL weight
+
+### web_extract Blocks arxiv.org URLs
+**CRITICAL: `web_extract` blocks all arxiv.org URLs** with error `"Blocked: URL targets a private or internal network address"`. Always use the arXiv API (`https://export.arxiv.org/api/query?id_list=...`) via `terminal()` + curl to fetch paper metadata instead.
 
 ### arXiv API Rate Limits
 Use `--noproxy "*"` flag to avoid proxy interference. After 429, wait 45-60s before retry. When both API and RSS fail (common in cron), mine existing kg.db — it has 1000+ papers covering most topics.

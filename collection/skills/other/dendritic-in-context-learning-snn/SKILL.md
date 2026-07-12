@@ -1,137 +1,113 @@
 ---
 name: dendritic-in-context-learning-snn
-description: "DendriCL methodology for dendritic in-context learning in single-layer spiking neural networks. Shows that ICL requires neither attention, depth, nor inference-time plasticity: a single compartment with online-LMS dynamics is sufficient. Use when building SNNs with in-context learning capabilities, dendritic computation models, or biologically plausible learning mechanisms."
-category: ai_collection
-trigger_words:
-  - dendritic in-context learning
-  - dendriCL
-  - SNN ICL
-  - dendritic compartment
-  - online LMS spiking
-  - compartmental spiking
-  - apical recurrence
-  - Garg-2022 benchmark
-  - Widrow-Hoff SNN
-  - seed-stable ICL
+description: DendriCL methodology for dendritic in-context learning in single-layer spiking neural networks. Demonstrates that a single dendritic compartment with online-LMS dynamics implements complete in-context learning, eliminating the need for attention, depth, or inference-time plasticity.
+created: 2026-07-12
+source: arXiv:2607.02283
+tags: [spiking neural networks, in-context learning, dendritic computation, neuromorphic computing, online learning, compartmental models]
 ---
 
-# Dendritic In-Context Learning in Single-Layer Spiking Neural Networks (DendriCL)
+# Dendritic In-Context Learning in Single-Layer Spiking Neural Networks
 
 ## Overview
 
-DendriCL demonstrates that in-context learning (ICL) in Spiking Neural Networks requires **neither attention, depth, nor inference-time plasticity** — a single compartment with online-LMS dynamics is sufficient. This collapses the architectural depth required for general-purpose ICL to a single layer.
+**Paper**: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network  
+**arXiv**: [2607.02283](https://arxiv.org/abs/2607.02283) (July 2026)  
+**Authors**: Juwei Shen, Yujie Wu, Changwen Chen
 
-**Paper**: [Dendritic In-Context Learning in a Single-Layer Spiking Neural Network](https://arxiv.org/abs/2607.02283)  
-**Authors**: Juwei Shen, Yujie Wu, Changwen Chen  
-**arXiv**: 2607.02283v1 (July 2, 2026)
+## Problem Statement
 
-## Core Insight
+In-context learning (ICL) is a hallmark capability of modern AI architectures (Transformers, Mamba, state-space models, MLPs), operating via implicit gradient descent embedded in the forward pass. Capturing ICL in biologically plausible Spiking Neural Networks (SNNs) has been an open challenge — existing SNNs fail the Garg-2022 benchmark at non-trivial task dimensions.
 
-The subthreshold dynamics of a **single dendritic compartment** already implements a complete online learning algorithm. By treating the compartment as the **computational substrate** rather than a passive conduit for error/teacher signals, DendriCL achieves ICL in a single-layer compartmental spiking architecture.
+## Key Insight
 
-## Key Technical Contributions
+Prior SNN designs route adaptation through inference-time synaptic plasticity, treating the dendritic compartment as a passive conduit for error or teacher signals. DendriCL challenges this: **the subthreshold dynamics of a single dendritic compartment already implement a complete online learning algorithm**.
 
-### 1. Structural Identity with Online LMS
+## Core Methodology
 
-The apical recurrence in DendriCL is structurally identical to **leaky online Widrow-Hoff LMS**:
+### DendriCL Architecture
 
-```
-Δw = η · (error) · (input) - λ · w
-```
+1. **Single-layer compartmental spiking architecture** with apical recurrence
+2. **Apical compartment** treated as the computational substrate (not a passive conduit)
+3. **Structural equivalence** between apical recurrence and leaky online Widrow-Hoff LMS (Least Mean Squares)
+4. **Dynamics-only update** collapses the architectural depth required for general-purpose ICL to a single layer
 
-This dynamics-only update means the learning algorithm is **structurally embedded in the dynamics** rather than implicitly discovered during training.
+### Mathematical Foundation
 
-### 2. Seed Stability at Super-Dimensional ICL
+- The apical dendritic compartment dynamics implement online LMS through subthreshold membrane potential evolution
+- Apical recurrence pattern: `V_apical(t) = α·V_apical(t-1) + W·input(t) + bias`
+- This is structurally identical to leaky online Widrow-Hoff LMS: `w(t+1) = (1-λ)w(t) + η·error·input`
+- A linear probe recovers the reference online-LMS trajectory directly from the apical membrane at **R² = 0.93**
 
-- DendriCL is **uniquely seed-stable** at super-dimensional Garg-2022 ICL benchmarks
-- Dense Transformers exhibit **grokking-style instability** and fail past moderate task dimensions
-- DendriCL maintains stability across all tested task dimensions
+### Key Results
 
-### 3. Linear Probe Recovery
+- **Uniquely seed-stable** at super-dimensional Garg-2022 ICL
+- Dense Transformers exhibit grokking-style instability and fail past moderate task dimension; DendriCL does not
+- ICL requires **neither attention, depth, nor inference-time plasticity**
+- A single compartment with online-LMS dynamics is sufficient for general-purpose ICL
 
-A linear probe recovers the reference online-LMS trajectory directly from the apical membrane at **R² = 0.93**, confirming the algorithm is structurally embedded in the dynamics.
+## Implications
 
-## Architecture
+### For Neuromorphic Computing
 
-### Single-Layer Compartmental SNN
+- Eliminates the need for multi-layer SNN architectures for ICL tasks
+- Enables energy-efficient, single-layer spiking processors capable of in-context learning
+- Reduces hardware complexity while maintaining ICL capability
 
-```
-Input → Dendritic Compartment → Somatic Spiking → Output
-```
+### For Biological Plausibility
 
-- **Dendritic compartment**: Implements online-LMS dynamics in subthreshold membrane potential
-- **Somatic layer**: Generates spikes based on dendritic integration
-- **No backpropagation required**: Learning is built into the compartment dynamics
-- **No inference-time synaptic plasticity**: Adaptation is purely dynamic
+- Aligns with biological evidence that dendritic compartments perform local computation
+- Suggests biological neurons may implement ICL-like capabilities through dendritic dynamics alone
+- Provides a bridge between theoretical ICL mechanisms and biological neural computation
 
-### Comparison with Prior SNNs
+### For SNN Design
 
-| Property | Prior SNNs | DendriCL |
-|----------|-----------|----------|
-| ICL capability | Fails Garg-2022 benchmark | Succeeds at all dimensions |
-| Architecture depth | Multi-layer required | Single layer sufficient |
-| Learning mechanism | Inference-time plasticity | Subthreshold dynamics |
-| Seed stability | Unstable at high dimensions | Seed-stable |
-| Attention required | Sometimes | No |
+- Shifts design paradigm from synaptic plasticity-based adaptation to dendritic dynamics-based computation
+- Enables simpler, more efficient SNN architectures for tasks requiring online adaptation
+- Opens new directions for compartmental spiking models
 
-## Implementation Guidelines
+## Implementation Guide
 
-### Dendritic Compartment Dynamics
+### Architecture Components
 
-```python
-# Conceptual implementation of DendriCL compartment
-class DendriticCompartment:
-    def __init__(self, n_inputs, learning_rate=0.01, leak=0.001):
-        self.w = np.random.randn(n_inputs)  # Synaptic weights
-        self.lr = learning_rate
-        self.leak = leak
-        self.membrane = 0.0
-    
-    def step(self, inputs, target=None):
-        # Forward pass: weighted sum + leak
-        self.membrane = np.dot(self.w, inputs) - self.leak * self.membrane
-        
-        # Online LMS update (embedded in dynamics)
-        if target is not None:
-            error = target - self.membrane
-            self.w += self.lr * error * inputs - self.leak * self.w
-        
-        # Spiking output
-        spike = 1.0 if self.membrane > threshold else 0.0
-        return spike, self.membrane
-```
+1. **Basal dendrite**: Receives standard sensory input
+2. **Apical dendrite**: Recurrent compartment implementing online LMS dynamics
+3. **Somatic layer**: Spike generation based on combined dendritic inputs
+4. **No inference-time synaptic weight updates**: All adaptation occurs through compartment dynamics
 
-### Garg-2022 Benchmark
+### Training Protocol
 
-When implementing ICL for SNNs:
-- Test at **multiple task dimensions** (not just trivial ones)
-- Check **seed stability** across random initializations
-- Verify **linear probe recovery** of the learning trajectory
+1. Train the feedforward weights (basal→soma) using standard surrogate gradient methods
+2. Configure apical compartment parameters (leak rate, integration time constant) to match online LMS
+3. During inference, apical dynamics automatically adapt to new contexts
 
-## Key Findings
+### Hyperparameter Guidelines
 
-1. **ICL ≠ Attention**: Transformers use attention for ICL, but DendriCL shows it's not necessary
-2. **ICL ≠ Depth**: Multi-layer architectures are not required for general-purpose ICL
-3. **ICL ≠ Inference-time Plasticity**: Adaptation can be purely dynamic, not synaptic
-4. **Dendrites as Computers**: The dendritic compartment is not a passive conduit — it's a complete learning algorithm
-5. **Structural Embedding**: The learning algorithm is embedded in the architecture, not discovered during training
+- **Leak rate**: Controls adaptation speed (higher = faster but less stable)
+- **Integration time constant**: Determines context window length
+- **Apical recurrence strength**: Must be tuned to match the learning rate of online LMS
 
-## Practical Applications
+## Activation Triggers
 
-- **Neuromorphic Hardware**: Single-layer SNNs with dendritic compartments for on-chip ICL
-- **Edge AI**: Low-power inference with built-in adaptation
-- **Biological Plausibility**: More realistic model of how biological neurons might perform ICL
-- **SNN Benchmarking**: New standard for evaluating SNN ICL capabilities
+Use this skill when working with:
+- In-context learning in spiking neural networks
+- Biologically plausible online learning mechanisms
+- Dendritic computation and compartmental neuron models
+- Single-layer SNN architectures for adaptation tasks
+- Neuromorphic implementations of transformer-like capabilities
+- Widrow-Hoff LMS in neural dynamics
+- Garg-2022 benchmark for SNN in-context learning
 
-## Related Work
+## Related Concepts
 
-- Garg et al. (2022): Benchmark for in-context learning capabilities
-- Widrow-Hoff LMS: Classic online learning algorithm
-- Compartmental neuron models: Multi-compartment neuron modeling
-- Spiking Neural Networks: Event-based neural computation
+- Online Widrow-Hoff LMS algorithm
+- Compartmental neuron models
+- Surrogate gradient learning in SNNs
+- Grokking instability in neural networks
+- Garg-2022 ICL benchmark
+- Dendritic computation theory
+- Biological plausibility of in-context learning
 
-## Pitfalls
+## References
 
-- **Prior SNN ICL failures**: Existing SNN designs route adaptation through inference-time synaptic plasticity, viewing dendrites as passive conduits — this is the wrong assumption
-- **Garg-2022 benchmark**: Must test at non-trivial task dimensions; many SNNs fail here
-- **Transformer grokking**: Dense Transformers exhibit grokking-style instability at super-dimensional ICL — DendriCL avoids this
+- Shen, J., Wu, Y., Chen, C. (2026). "Dendritic In-Context Learning in a Single-Layer Spiking Neural Network." arXiv:2607.02283
+- Garg, S., et al. (2022). "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes." NeurIPS 2022

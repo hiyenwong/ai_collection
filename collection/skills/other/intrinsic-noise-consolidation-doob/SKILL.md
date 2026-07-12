@@ -1,108 +1,107 @@
 ---
 name: intrinsic-noise-consolidation-doob
-description: "Doob h-transform barrier-conditioned diffusion for continual learning on analog neuromorphic hardware. Converts intrinsic device noise from accuracy tax to consolidation dividend. Activation: Doob h-transform, barrier conditioning, analog noise, neuromorphic continual learning, BrainScaleS-2, intrinsic noise consolidation, inverted-U retention"
+description: "Doob-Barrier-Conditioned Diffusion methodology that turns analog neuromorphic device noise into a continual-learning resource. Casts per-synapse consolidation as a Doob h-transform, creating a noise-amplified restoring force that consolidates memories — predicting an inverted-U relationship between noise level and sequential-task retention."
+version: 1.0.0
+author: Hermes Agent
+license: MIT
 metadata:
-  arxiv_id: "2607.06924"
-  published: "2026-07-08"
-  authors: "Gunner Levi Howe"
-  tags: [neuromorphic, continual-learning, doob-h-transform, analog-noise, brain-scale-s-2, synaptic-plasticity]
+  hermes:
+    tags: [neuromorphic, continual-learning, doob-h-transform, device-noise, brainscales2, memory-consolidation, analog-hardware, stability-plasticity]
+    category: ai_collection
+    arxiv_id: "2607.06924"
+    arxiv_url: "https://arxiv.org/abs/2607.06924"
+    published: "2026-07-08"
+    authors: ["Gunner Levi Howe"]
+    categories: ["cs.LG", "cs.NE"]
+    trigger_words: ["doob barrier", "h-transform", "intrinsic noise", "consolidation", "analog noise", "neuromorphic hardware", "brainscales", "continual learning", "stability-plasticity", "inverted-u", "device noise"]
+created: "2026-07-12"
+updated: "2026-07-12"
 ---
 
-# Intrinsic-Noise Consolidation via Doob Barrier-Conditioned Diffusion
+# Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion Turns Analog Device Noise into a Continual-Learning Resource
 
-## Core Innovation
+**arXiv**: 2607.06924 | **Published**: 2026-07-08 | **Author**: Gunner Levi Howe
 
-Transform analog neuromorphic device noise from an accuracy tax into a memory consolidation resource using Doob h-transform barrier conditioning. The conditioned diffusion acquires a restoring force σ²∂_w log h that is **amplified by the noise variance itself** and diverges at memory-critical barriers.
+## Core Thesis
 
-## Key Theoretical Contribution
+On analog neuromorphic hardware, intrinsic device noise is normally treated as an **accuracy tax**. This paper asks: can it instead **consolidate memories**?
 
-### Doob h-Transform as Synaptic Rule
-- Cast per-synapse consolidation as conditioning weight dynamics on never crossing memory-critical barrier at μ±b
-- Ground-state h-transform: h(w) = cos(π(w-μ)/2b)
-- Conditioned drift: σ²∂_w log h(w) — noise-powered restoring force
-- Barrier half-width: b_i = b₀/√(1 + s_i/median(s)) — high-Fisher synapses get tight barriers
+The key insight: cast per-synapse consolidation as a **Doob h-transform** — condition each weight's stochastic dynamics on never crossing a memory-critical barrier around its consolidated value.
 
-### Novelty Claims (Explicit)
-1. **Doob barrier-conditioning as synaptic rule** — first use in synaptic/plasticity/continual-learning (all prior h-transform uses are generative modeling or Schrödinger bridges)
-2. **Falsifiable prediction**: intrinsic noise non-monotonically improves sequential-task retention (inverted-U curve) — anchored-drift methods (OU, EWC, MESU) cannot produce this
+### The Math
 
-### What is NOT Novel
-- Anchored drift term -s(w-μ) is small-noise limit of OUA/MESU/EWC — explicitly surrendered as re-derivation
-
-## Methodology
-
-### Weight Dynamics (Euler-Maruyama)
+The conditioned diffusion gains an extra drift term:
 ```
-dw = [-s(w-μ) + σ²∂_w log h(w)]dt + σ dW
+σ² · d/dw log h(w)
 ```
-- First term: anchored drift (known from OUA/MESU/EWC)
-- Second term: Doob barrier conditioning (novel)
-- All methods receive identical injected noise at matched σ
+This is a **restoring force amplified by the noise variance itself** that diverges at the barrier.
 
-### Experimental Validation
-- **E0-E4 (GPU emulation)**: Split-MNIST domain-incremental, 5 binary tasks, MLP 784-100-100-2
-  - Retention inverted-U: 10.9 pts lift at σ*=0.02 (p=0.004, 8 seeds)
-  - OU/EWC/MESU anchors are monotone-decreasing in noise
-  - Ablating conditioning (κ:1→0) flattens curve — effect is from conditioning, not generic noise
-  
-- **E2 (Device-faithful)**: BSS-2 noise model (colored AR(1) + multiplicative + fixed-pattern + 6-bit quantization)
-  - Inverted-U survives on continual Yin-Yang benchmark
-  
-- **E5 (Real silicon measurement)**: BrainScaleS-2 chip hxcube7fpga3chip61_1
-  - Intrinsic noise is additive, trial-to-trial independent
-  - CV up to 12.0%, num_sends knob averages as ≈1/√N
-  - Benign noise class at reachable amplitude
-  
-- **E7 (On-chip training)**: Real BrainScaleS-2 with analog MAC in training loop
-  - Chip's own intrinsic noise + barrier conditioning retains prior task 15.6 pts better than unconditioned control
-  - Single-seed proof of concept; retention measured, energy modeled
+### Key Novelty Claims
 
-### Baselines
-- OUA (Ornstein-Uhlenbeck Adaptation)
-- EWC (Elastic Weight Consolidation)
-- MESU (Bayesian continual learning)
-- Benna-Fusi complex synapses
-- Plain replay (stores data, lacks mechanism)
+1. **Doob barrier-conditioning as a synaptic rule** — every h-transform use found in literature is for generative modeling, none for synaptic consolidation
+2. **Falsifiable prediction**: Increasing intrinsic noise **non-monotonically** improves sequential-task retention — an **inverted-U** that anchored-drift methods (OUA, MESU, EWC) cannot produce
 
-## Key Results
+## Experimental Results
 
-1. **Inverted-U retention curve**: Noise helps retention up to optimum σ*, then hurts — unique to barrier-conditioned rule
-2. **Rehearsal-free**: Strongest rehearsal-free consolidation method tested (ties MESU, beats OU/EWC)
-3. **Energy argument**: Analog substrate pays no energy to generate noise (it's intrinsic); digital accelerator must spend energy to inject it
-4. **Hardware validation**: Mechanism works on real BrainScaleS-2 silicon with device's own noise
+### Simulation (Split-MNIST, 8 seeds)
+- The rule lifts retention **10.9 points** at an interior optimum (paired Wilcoxon p=0.004)
+- Matched OU/EWC/MESU anchors are **monotone** (no inverted-U)
+- Ablating the conditioning removes the effect
+- The optimum tracks the barrier
+- The inverted-U survives a second task stream and forward-pass noise
 
-## Pitfalls
+### Hardware (BrainScaleS-2)
+- Measured intrinsic noise on real silicon (additive, trial-to-trial independent, tunable via on-chip averaging)
+- Barrier-conditioning retains prior task **15.6 points better** than matched control at matched average accuracy
+- This is a **stability-plasticity shift**, not a net-accuracy win
+- Single seed; retention measured, energy modeled
 
-### Pre-Registration as Go/No-Go Gate
-The inverted-U prediction was pre-registered as a hard go/no-go gate. If noise did not help retention beyond unconditioned anchor, the mechanism reduces to OUA/MESU and there is no paper. It passed.
+## Key Insight
 
-### Single-Seed On-Chip Result
-E7 (real silicon training) is single-seed, one operating point. Retention measured, energy modeled but not directly measured. Replication across seeds and chips needed.
+**Intrinsic analog noise becomes a consolidation dividend** — a digital accelerator must spend energy to generate what analog hardware gets for free.
 
-### Emulation vs. Silicon
-E0-E4 are GPU emulations. E2 uses device-faithful noise model but is still emulation. Only E5 (noise measurement) and E7 (on-chip training) are real-silicon results.
+## Practical Applications
 
-### Fair Comparison
-All methods receive identical injected noise at matched σ. Methods differ only in drift term. This isolates barrier conditioning effect rather than generic noise effect.
+### 1. Neuromorphic Continual Learning
 
-## Applications
+- Use device noise as a feature, not a bug
+- Tune noise levels to find the inverted-U optimum
+- Trade off stability vs. plasticity by adjusting the barrier
 
-- **Analog neuromorphic hardware**: BrainScaleS-2, other analog accelerators with intrinsic noise
-- **Continual learning**: Sequential task retention without rehearsal
-- **Energy-efficient consolidation**: Leverage intrinsic noise instead of injecting artificial noise
-- **Stability-plasticity balance**: Barrier conditioning provides tunable trade-off
+### 2. Hardware-Aware Algorithm Design
 
-## Related Work
+- When deploying on analog chips (BrainScaleS, Loihi analog mode), incorporate noise into the learning rule
+- The Doob barrier provides a principled way to protect consolidated memories
 
-- **OUA** (Garcia Fernandez et al., 2024): Mean-reverting OU diffusion — exactly the anchored drift term, but no barrier or first-passage conditioning
-- **MESU** (Bonnet et al., 2025): Bayesian continual learning with variance-scaled anchor — treats device read-noise as sampling resource, never as retention optimum
-- **EWC** (Kirkpatrick et al., 2017): Static Fisher-weighted quadratic anchor — deterministic ancestor
-- **ANV** (Xie et al., 2021): Injects artificial neural variability to reduce forgetting — but variability is injected (digital regularizer), benefit is monotone, no barrier
-- **Benna-Fusi** (2016): Multi-timescale cascade synapses — consolidates without barrier via deterministic cascade
+### 3. Continual Learning Benchmarking
+
+- Use the inverted-U prediction as a diagnostic: if a method shows monotone behavior, it's likely using anchored drift, not noise conditioning
+
+## Implementation
+
+### Doob Barrier-Conditioned Update Rule
+
+```
+dw = -∇L + σ² · d/dw log h(w) - s(w - μ)
+      ↑            ↑                  ↑
+    gradient    Doob barrier      anchored drift
+                restoring force   (surrendered — not novel)
+```
+
+The novel contribution is the middle term: the Doob barrier drift.
+
+### Finding the Optimal Noise Level
+
+1. Measure intrinsic noise σ² on your hardware
+2. Sweep noise levels (if tunable) or adjust the barrier height
+3. Find the interior optimum where retention peaks
+4. Expect an inverted-U curve, not monotone improvement
 
 ## References
 
-- arXiv:2607.06924 — Full paper with proofs, experimental details, and energy model
-- BrainScaleS-2: Pehle et al., 2022; Weis et al., 2020
-- Doob h-transform: Classical stochastic process theory
-- Continual learning benchmarks: Split-MNIST, Yin-Yang (Kriener et al., 2022)
+- Howe (2026) — Intrinsic-Noise Consolidation (this paper)
+- Pre-registered as a go/no-go gate; passes
+
+## Trigger Words
+
+doob barrier, h-transform, intrinsic noise, consolidation, analog noise, neuromorphic hardware, brainscales, continual learning, stability-plasticity, inverted-u, device noise
