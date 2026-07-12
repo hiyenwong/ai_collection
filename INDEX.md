@@ -15,6 +15,13 @@
   - Complex-valued landscape bridges sensory encoding and conscious access in single framework
   - **Activation**: non-Hermitian, conscious access, GNW, Global Neuronal Workspace, subliminal, preconscious, potential well, Schrödinger equation, Lotka-Volterra
 
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-icl-snn]] - Breakthrough showing dendritic subthreshold dynamics implement complete online LMS, enabling ICL in single-layer SNN without attention or inference-time plasticity (arXiv: 2607.02283)
+  - Single dendritic compartment structurally identical to leaky online Widrow-Hoff LMS; linear probe recovers trajectory at R²=0.93
+  - Seed-stable at super-dimensional Garg-2022 ICL where dense Transformers exhibit grokking-style instability
+  - ICL requires neither attention, depth, nor inference-time plasticity—compartmental dynamics suffice
+  - **Activation**: dendritic computation, in-context learning, ICL, compartmental SNN, online LMS, Widrow-Hoff, seed-stable, Garg-2022, single-layer SNN
+
 ### DRIADA: A Python Toolkit for Cross-Scale Analysis of Single-Neuron Selectivity and Population Dynamics
 - [[driada-cross-scale-neural-analysis]] - Open-source Python toolkit unifying neural signals and behavior in shared data model for cross-scale analysis from single neurons to population dynamics and functional networks (arXiv: 2607.00851)
   - Cross-scale pipeline: information-theoretic selectivity testing → dimensionality reduction → network analysis in unified workflow
