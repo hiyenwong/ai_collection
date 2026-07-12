@@ -59,6 +59,14 @@
   - Three processing regimes classified by bottom-up strength × top-down attention matrix
   - **Activation**: non-hermitian GNW consciousness, cloud function neural dynamics, Schrödinger consciousness model, Lotka-Volterra neural field, bound state conscious access, complex-valued GNW landscape
 
+### Adaptive Conduction Delays and Phase Locking in Spiking Haken Lighthouse Networks
+- [[adaptive-conduction-delay-lighthouse]] - Analytically tractable framework for phase-locked states in delayed spiking networks with activity-dependent white matter plasticity, showing adaptive delays self-organize toward commensurate delay-period relationships (arXiv: 2606.21508)
+  - Haken Lighthouse model bridges event-driven spiking and phase-oscillator descriptions with delays as primary dynamical ingredients
+  - Spike-time perturbation stability theory for autapse, two-node, and circulant ring networks with Fourier mode decomposition
+  - Activity-dependent myelination creates slow-fast system that selects synchrony, slow switching, and discrete delay-period classes
+  - **Activation**: adaptive conduction delays, phase locking, Haken Lighthouse model, white matter plasticity, spike-time perturbation, commensurate timing, slow-fast systems, delayed spiking networks
+
+
 
 ## 2026-07-12 - arXiv Paper Skills (Cron Job)
 ## 2026-07-12 - Neuroscience Research (Cron Job - Evening)
