@@ -109,6 +109,21 @@
   - Validated across seven canonical topologies via PRISM-based probabilistic model checking of DTMC encodings; enables verification of networks otherwise intractable
   - **Activation**: formal verification, probabilistic SNN, quotient abstraction, CogSpike, PRISM, DTMC, state space explosion, synaptic weight discretization, fidelity theorem
 
+## 2026-07-12 - Systems Engineering Research (Cron Job)
+
+### Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection in Multimodal Cyber-Physical Systems
+- [[miim-cps-anomaly-detection]] - Joint latent representation + GMM clustering for CPS anomaly detection under MIIM assumptions; drops reconstruction scoring; fair protocol with raw point-wise metrics and difficulty stratification (arXiv: 2607.06094)
+  - MIIM assumption set characterizes CPS normal behaviour as union of imbalanced curved thin-fringed operating regimes
+  - Latent-only GMM scoring outperforms deep detectors (USAD, TranAD, GDN) on difficult correlation/dynamics faults
+  - Fair evaluation protocol: raw point-wise metrics, trivial-detector splits, prevalence-matched F1
+  - **Activation**: cps anomaly detection, miim, multimodal anomaly, latent clustering, cyber-physical systems, fault detection
+### Auto-DSM Under the Lens: A Black-Box Evaluation Framework for LLM-Based DSM Generation
+- [[auto-dsm-evaluation-framework]] - Systematic benchmark methodology for evaluating LLM-generated Design Structure Matrices using structural, classification, and stability metrics synthesized into Composite Quality Score (arXiv: 2607.05985)
+  - Three-perspective evaluation: single-run (Completeness, Correctness, Density), multi-run (Selective Accuracy, Abstention Coverage), stability (Entropy, Fleiss' κ)
+  - Systematic failure modes identified: ambiguous definitions → hallucination, poor prompts → abstention failure
+  - Transparent benchmark for auditing Auto-DSM pipelines in MBSE workflows
+  - **Activation**: dsm generation, auto-dsm, mbse evaluation, llm systems engineering, design structure matrix
+
 ## 2026-07-10 - Neuroscience Research (Cron Job)
 
 ### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
