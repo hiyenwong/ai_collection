@@ -38,6 +38,20 @@
   - Hardware-realizable CMOS design suitable for low-power implantable aDBS devices
   - **Activation**: adaptive deep brain stimulation, SiLIF, silicon neuron, Parkinson's disease, aDBS, beta oscillation, neuromorphic controller, STN-LFP, low-power implantable
 
+### TRIBE fMRI Encoding Validation: Null Result for Behavioral Prediction
+- [[tribe-fmri-encoding-validation]] - Validation showing TRIBE (2025 Algonauts winner) predicted fMRI fails to predict YouTube replay behavior (r=+0.058, p=0.23, BF₀₁=3.2) despite high encoding accuracy (arXiv: 2607.01400)
+  - Proves predicted fMRI ≠ measured fMRI for neuroforecasting — regression toward group mean discards behaviorally-relevant structure
+  - Null result with strong bounds: Bayes Factor 3.2, equivalence test excludes r > 0.14, split-half reliability 0.82
+  - Supervised probe illusion (r=0.47) collapses under proper position control; only small borderline visual-stream signal
+  - **Activation**: TRIBE validation, neuroforecasting, predicted fMRI behavior, brain encoding behavioral prediction, fMRI replay heatmap, global field power, Algonauts challenge validation
+
+### Interpretable ML for Parkinson's Disease Severity: QSM + fMRI ReHo
+- [[interpretable-ml-parkinsons-qsm-fmri]] - Multimodal ML (SVR, Elastic Net, RF, XGBoost + SHAP) predicts MDS-UPDRS Part III from QSM MRI and multiband multiecho fMRI ReHo, explaining 45.4% variance (arXiv: 2607.02553)
+  - Full multimodal (fMRI + QSM + clinical) achieves best global fit; Selected QSM + clinical achieves best clinical proximity (75% within ±5 UPDRS)
+  - SHAP highlights cerebellar, thalamic, striatal, insular, and motor cortical features as key predictors
+  - Demonstrates structural (QSM) and functional (ReHo) imaging contribute differently based on clinical prediction goal
+  - **Activation**: Parkinson's prediction, QSM MRI, ReHo fMRI, MDS-UPDRS severity, interpretable ML neuroimaging, SHAP biomarker discovery, multiband multiecho fMRI
+
 ## 2026-07-12 - arXiv Paper Skills (Cron Job)
 ## 2026-07-12 - Neuroscience Research (Cron Job - Evening)
 
