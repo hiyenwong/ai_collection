@@ -1,140 +1,23 @@
 # AI Collection Index
 
 
+## 2026-07-12 - Neuroscience Research (Cron Job - Late Night)
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-neuromorphic-control]] - Implement ring-network-based dynamic neural manifolds on SpiNNaker 2 for explainable closed-loop robotic control via heterogeneous inhibition, gain modulation, and transient currents (arXiv: 2607.07373)
+  - Circuit mechanisms (heterogeneous inhibition, gain, transient currents) act as "control knobs" for neural manifold geometry — subspace rotation enables behavior switching
+  - SpiNNaker 2 implementation with rate-to-spike probabilistic conversion, circulant weight matrix (50% sparsity), and real-time closed-loop maze navigation
+  - Bridges biological neural sequence dynamics with explainable autonomous systems — single architecture handles multiple behaviors via subspace reconfiguration
+  - **Activation**: dynamic neural manifolds, neuromorphic closed-loop control, ring network, SpiNNaker 2, neural manifold geometry, subspace rotation, explainable neuromorphic, bump attractor
+
+### Neuromorphic Silicon Neuron Controller for Adaptive Deep Brain Stimulation in Parkinson's Disease
+- [[silif-dbs-neuromorphic-controller]] - CMOS-implemented SiLIF-DBS controller achieves 75% power reduction vs open-loop DBS with 5.85%/μW beta suppression efficiency using STN-LFP biomarker tracking (arXiv: 2607.05453)
+  - Silicon LIF neuron processes beta-band ARV biomarker from subthalamic nucleus LFP to generate adaptive stimulation pulses
+  - Closed-loop validation in Parkinsonian cortico-basal ganglia computational model demonstrates strong pathological beta suppression
+  - Hardware-realizable CMOS design suitable for low-power implantable aDBS devices
+  - **Activation**: adaptive deep brain stimulation, SiLIF, silicon neuron, Parkinson's disease, aDBS, beta oscillation, neuromorphic controller, STN-LFP, low-power implantable
+
 ## 2026-07-12 - arXiv Paper Skills (Cron Job)
-
-### UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks
-- [[uniclawbench-proactive-agents-real-world-tasks]] - Capability-driven benchmark for proactive agents with 400 bilingual tasks in live Docker containers; closed-loop evaluation with executor, supervisor, and user agents (arXiv: 2607.08768)
-  - Five foundational capabilities: Skill Usage, Exploration, Long-Context Reasoning, Multimodal Understanding, Cross-Platform Coordination
-  - Disentangles base model capabilities from framework-level design choices
-  - **Activation**: proactive agents, real-world benchmark, agent evaluation, capability-driven, multimodal agents, closed-loop evaluation
-
-### Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents
-- [[proactive-memory-agent-long-horizon-tasks]] - Separate memory agent prevents "behavioral state decay" by selectively injecting memory-grounded reminders; +8.3pp Terminal-Bench, +6.8pp τ²-Bench (arXiv: 2607.08716)
-  - Plug-and-play with frontier action agents and existing agent harnesses
-  - Open-weight memory policies trained via SFT and GRPO on Qwen3.5-27B
-  - **Activation**: proactive memory, long-horizon agents, behavioral state decay, trajectory management, selective intervention
-
-### The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs
-- [[illusion-of-equivalency-quantization-effects-llms]] - Shows accuracy/perplexity fail to capture quantization behavioral changes; introduces correctness agreement metric; Q/K projections more sensitive than V/O (arXiv: 2607.08734)
-  - Non-linear breakpoints at low bit-widths revealed by layer-wise distortion analysis
-  - Behavioral divergence emerges under moderate quantization even when accuracy preserved
-  - **Activation**: quantization, LLM deployment, behavioral change, correctness agreement, post-training quantization
-
-### Super Weights in LLMs and the Failure of Selective Training
-- [[super-weights-llms-selective-training-failure]] - Shows Super Weight pruning degradation is not universal; training Super Weights in isolation drops accuracy to random-guessing; LoRA with 0.16% params succeeds (arXiv: 2607.08733)
-  - Parameter importance ≠ trainability in isolation; effective fine-tuning needs structured decompositions
-  - Failure is specific to Super Weight coordinates, not from sparsity itself
-  - **Activation**: super weights, LLM training, parameter pruning, selective training, LoRA
-
-### Latent Memory Palace: Reasoning for Control as Autoregressive Variational Inference
-- [[latent-memory-palace-reasoning-control-variational-inference]] - Reasoning for continuous control policies emerges via autoregressive latent space; LMP-π with adaptive test-time compute; variable-length action tokenizer LMP-tok (arXiv: 2607.08724)
-  - Variational inference formulation with autoregressive latent distribution
-  - Interpretable adaptive allocation of test-time compute
-  - **Activation**: latent memory palace, reasoning for control, autoregressive variational inference, adaptive reasoning
-
-### Formal Mechanisms for Market Stability in Self-Interested Agent Societies
-- [[formal-mechanisms-market-stability-self-interested-agents]] - Multi-agent marketplace simulation with 18 LLM agents; Mediation identified as robust top mechanism; "bend but not break" under adversarial attack (arXiv: 2607.08652)
-  - Eight conditions tested under progressive troll injection over 200 rounds
-  - Best adversarial attack reduces honest-agent utility by 13.3% but cannot collapse market
-  - **Activation**: market stability, self-interested agents, multi-agent economics, cooperation mechanisms, Mediation
-
-### SMetric: Rethink LLM Scheduling for Serving Agents
-- [[smetric-llm-scheduling-serving-agents-session-centric]] - Balanced session-centric scheduling for agent serving; routes first request for load balance, follow-ups cache-aware; 10-16% TPS improvement (arXiv: 2607.08565)
-  - Agent traces show 80%+ KV-reuse vs 54-62% in chat
-  - Stateless design using session turn info from user inputs alone
-  - **Activation**: LLM scheduling, agent serving, session-centric scheduling, inference infrastructure, TPS
-
-### BiSCo-LLM: Lookup-Free Binary Spherical Coding for Extreme Low-Bit Compression
-- [[bisco-llm-binary-spherical-coding-extreme-compression]] - Codebook-free binary spherical coding for LLM weight compression; bit-packed sign streams; residual BSQ; category-wise recovery distillation (arXiv: 2607.08643)
-  - Eliminates VQ codebook storage and lookup overhead
-  - Transparent storage accounting including protected channels
-  - **Activation**: binary spherical coding, LLM compression, low-bit quantization, codebook-free, BSQ
-
-### DominoTree: Conditional Tree-Structured Drafting for Speculative Decoding
-- [[dominotree-conditional-tree-structured-drafting-speculative-decoding]] - Training-free best-first draft tree with Domino's conditional correction; 6.6x speedup on Qwen3-4B; GPU-native CUDA-graph builder (arXiv: 2607.08642)
-  - Highest mean accept length: 10.7 tokens per round at every temperature
-  - 9-10% throughput improvement over Domino decoder overall
-  - **Activation**: speculative decoding, tree-structured drafting, Domino conditioning, CUDA-graph builder
-
-### MAESTRO: Markov-Chain Pruning for Mixture-of-Experts
-- [[maestro-pruning-bad-experts-mixture-of-experts]] - Models expert activation as Ergodic Markov chains for globally-aware MoE pruning; 10.61% improvement at 50% compression; lower cross-task variance (arXiv: 2607.08601)
-  - Stationary distributions encode cross-layer dependencies
-  - Outperforms locally-derived heuristics across Safety, Bias, Ethics domains
-  - **Activation**: mixture-of-experts, expert pruning, MoE deployment, structured pruning, Markov chain
-
-### Training-free Relaxed Speculative Decoding
-- [[training-free-relaxed-speculative-decoding]] - Unifies relaxed speculative decoding approaches; benchmarks relaxation strategies; relaxation requires careful capability evaluation (arXiv: 2607.08690)
-  - Many relaxed approaches require drafter to be a good language model
-  - Unsuitable for lightweight dedicated multi-token-prediction drafters
-  - **Activation**: speculative decoding, relaxed speculation, LLM inference acceleration, training-free
-
-### Multi-Modal, Multi-Environment Machine Teaching for Robust Reward Learning
-- [[multi-modal-multi-environment-machine-teaching-robust-reward]] - Hierarchical teaching across multiple MDPs; comparisons impose stronger constraints than demonstrations; greedy environment selection (arXiv: 2607.08647)
-  - Substantially lower regret on held-out environments
-  - Demonstrates importance of multi-environment teaching for dynamics-robust rewards
-  - **Activation**: machine teaching, reward learning, inverse reinforcement learning, multi-environment
-
-### HCC-STAR: Clinical-Reasoning LLM for Hepatocellular Carcinoma
-- [[clinical-reasoning-llm-hepatocellular-carcinoma-risk-stratification]] - Clinically aligned LLM reading EMR narratives for HCC staging, treatment, prognosis; outperforms GPT-5 and Gemini-2.5 Pro; 51 vs 29 months median survival (arXiv: 2607.08602)
-  - 30,000 HCC cases from SEER, validated on 6,668 patients from 12 hospitals
-  - Step-verifiable composite reward for knowledge-aligned reasoning
-  - **Activation**: clinical-reasoning LLM, hepatocellular carcinoma, risk stratification, treatment guidance, EMR
-
-### Secure Decentralized Federated Learning via Gossip and Virtual Voting
-- [[secure-decentralized-federated-learning-gossip-virtual-voting]] - gspDAG-FL: gossip-derived consensus via Hashgraph-style virtual voting on DAG; Byzantine resilience with multi-layer validation (arXiv: 2607.08651)
-  - No central server or blockchain committees needed
-  - Proved safety, conditional liveness, and convergence guarantees
-  - **Activation**: decentralized federated learning, gossip protocol, virtual voting, Byzantine resilience
-
-### Native Video-Action Pretraining for Generalizable Robot Control
-- [[native-video-action-pretraining-generalizable-robot-control]] - LingBot-VA 2.0: video-action foundation model for embodiment; semantic visual-action tokenizer, causal pretraining, sparse MoE, async inference (arXiv: 2607.08639)
-  - Trained from scratch to avoid catastrophic forgetting
-  - Real-time closed-loop control via parallel latent prediction
-  - **Activation**: video-action model, robot control, causal pretraining, sparse MoE, async inference
-
-### Auditing LLM-as-Judge Reliability
-- [[auditing-llm-as-judge-reliability-measurement-validity]] - Evaluator-replacement ambiguity as measurement-validity problem; judge upgrades not interchangeable; proposes audit trails with bias probes (arXiv: 2607.08535)
-  - Stronger judges reduce but don't remove position and verbosity bias
-  - Repeated-sample juries add little when errors are correlated
-  - **Activation**: LLM-as-judge, evaluation reliability, measurement validity, evaluator bias, audit trail
-
-### Cross-seed Explainability with Procrustes-Conditioned SAEs
-- [[cross-seed-explainability-procrustes-sparse-autoencoders]] - Procrustes-conditioned Joint Top-K SAE for cross-seed universal features; Pearson r ≥ 0.70 across seeds; dead-feature revival loss (arXiv: 2607.08499)
-  - Combines Top-K sparsity, end-to-end optimization, and Procrustes rotation
-  - High-universality features encode interpretable sociolinguistic patterns
-  - **Activation**: sparse autoencoder, cross-seed universality, Procrustes alignment, mechanistic interpretability
-
-### DocMaster: Hierarchical Structure-Aware Document Analysis
-- [[docmaster-hierarchical-structure-aware-document-analysis]] - Parses documents into hierarchical trees preserving layout; structure-aware semantic indices for filtering and QA; interactive web interface (arXiv: 2607.08539)
-  - Preserves sections, tables, figures, equations lost in flat chunking
-  - Multi-view semantic indices support diverse query types
-  - **Activation**: document analysis, hierarchical structure, LLM system, semantic indexing, document filtering
-
-### The Context Access Divide: Agentic Inequality
-- [[context-access-divide-agentic-inequality-architecture]] - Formalizes CAD as interaction-level dimension of agentic inequality; manual attachment causes combinatorial collapse; dynamic retrieval structurally insulated (arXiv: 2607.08495)
-  - Probabilistic model grounded in fan effect literature from cognitive psychology
-  - Analyzes technical basis in MCP and RAG architectures
-  - **Activation**: agentic inequality, context access, interaction-level architecture, agent fairness, contextuality
-
-### Harness VLA: Steering Frozen VLAs via Memory-Guided Agents
-- [[harness-vla-steering-frozen-vlas-memory-guided-agents]] - Frozen VLA as retryable contact-rich primitive with analytic primitives; learns operating range from execution traces; +38.6pp LIBERO-Pro (arXiv: 2607.08448)
-  - Compositional architecture: VLA for contact, analytics for non-contact phases
-  - Extends frozen VLAs beyond original trajectory distribution without finetuning
-  - **Activation**: vision-language-action, memory-guided agents, manipulation primitives, frozen VLA, robot manipulation
-
-### Statistical Efficiency of Quantile Distributional RL
-- [[statistical-efficiency-quantile-distributional-reinforcement-learning]] - Non-asymptotic Õ(√(m/n)) error bound; optimal √n convergence; semiparametric efficiency bound; Berry-Esseen theorem for return distribution inference (arXiv: 2607.08444)
-  - Quantile-based estimators remain asymptotically efficient in infinite-dimensional limit
-  - Enables statistically valid inference on functionals of return distribution
-  - **Activation**: distributional RL, quantile regression, statistical efficiency, policy evaluation, return distribution
-
-### FabriVLA: Lightweight Vision-Language-Action for Multi-Task Manipulation
-- [[fabrivia-lightweight-vision-language-action-multi-task-manipulation]] - 1B-scale VLM VLA with flow-matching action head and gated self-attention; 90.0% success on Meta-World MT50; single-stage joint optimization (arXiv: 2607.08575)
-  - Compact VLA without multi-billion-parameter backbones
-  - Shallow VLM layer fusion for enriched spatial context
-  - **Activation**: vision-language-action, lightweight VLA, multi-task manipulation, flow-matching, InternVL3.5
-
 ## 2026-07-12 - Neuroscience Research (Cron Job - Evening)
 
 ### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
