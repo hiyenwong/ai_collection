@@ -52,6 +52,14 @@
   - Demonstrates structural (QSM) and functional (ReHo) imaging contribute differently based on clinical prediction goal
   - **Activation**: Parkinson's prediction, QSM MRI, ReHo fMRI, MDS-UPDRS severity, interpretable ML neuroimaging, SHAP biomarker discovery, multiband multiecho fMRI
 
+### A Non-Hermitian Potential Well Formalism for Conscious–Preconscious–Subliminal Processing
+- [[non-hermitian-gnw-consciousness]] - Non-Hermitian Schrödinger-type equation with Lotka-Volterra term reproduces subliminal→preconscious→conscious hierarchy; conscious access = bound state emergence when bottom-up + top-down attention both exceed thresholds (arXiv: 2607.08302v1)
+  - Cloud functions Ψ(x,t) in Hilbert space encode high-level representations; |Ψ|² = perceptual density
+  - Non-Hermitian Hamiltonian: Hermitian → recognition (dissipative localization), anti-Hermitian → broadcasting (spatial spreading)
+  - Three processing regimes classified by bottom-up strength × top-down attention matrix
+  - **Activation**: non-hermitian GNW consciousness, cloud function neural dynamics, Schrödinger consciousness model, Lotka-Volterra neural field, bound state conscious access, complex-valued GNW landscape
+
+
 ## 2026-07-12 - arXiv Paper Skills (Cron Job)
 ## 2026-07-12 - Neuroscience Research (Cron Job - Evening)
 
