@@ -15,6 +15,13 @@
   - Complex-valued landscape bridges sensory encoding and conscious access in single framework
   - **Activation**: non-Hermitian, conscious access, GNW, Global Neuronal Workspace, subliminal, preconscious, potential well, Schrödinger equation, Lotka-Volterra
 
+### DRIADA: A Python Toolkit for Cross-Scale Analysis of Single-Neuron Selectivity and Population Dynamics
+- [[driada-cross-scale-neural-analysis]] - Open-source Python toolkit unifying neural signals and behavior in shared data model for cross-scale analysis from single neurons to population dynamics and functional networks (arXiv: 2607.00851)
+  - Cross-scale pipeline: information-theoretic selectivity testing → dimensionality reduction → network analysis in unified workflow
+  - Hippocampal findings: 90.1% single-feature selectivity in CA1, significant representational drift across sessions, systematic feature prevalence ranking across 13 mice
+  - Validated on synthetic data with ground truth and continuous attractor network simulations
+  - **Activation**: DRIADA toolkit, cross-scale neural analysis, single-neuron selectivity, population dynamics, hippocampal calcium imaging, representational drift, CellReg
+
 ## 2026-07-12 - Quantum Neuromorphic Research (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
