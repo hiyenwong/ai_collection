@@ -1,7 +1,28 @@
 # AI Collection Index
 
 
-## 2026-07-12 - Neuroscience Research (Cron Job - Late Night)
+## 2026-07-13 - Neuroscience Research (Cron Job)
+
+### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion
+- [[intrinsic-noise-consolidation-doob]] - Turns analog device noise into a continual-learning resource via Doob h-transform, achieving noise-amplified restoration with inverted-U noise-retention curve validated on BrainScaleS-2 silicon (arXiv: 2607.06924)
+  - Doob barrier conditioning creates restoring force σ² ∂/∂w log h(w) that diverges at barrier — more noise → stronger consolidation
+  - BrainScaleS-2 hardware validation: +15.6 points retention vs matched control
+  - Flips paradigm: device noise becomes consolidation dividend instead of accuracy tax
+  - **Activation**: intrinsic noise consolidation, Doob barrier diffusion, noise as continual learning resource, neuromorphic consolidation, analog noise memory consolidation
+
+### Single-Entity Spiking Neuron Models: Survey
+- [[single-entity-spiking-neuron-models]] - Comprehensive survey classifying biologically plausible neuron models across biophysical fidelity, continuity, and component complexity axes with selection criteria for different use cases (arXiv: 2607.07429)
+  - Organizes models from Hodgkin-Huxley to map-based discrete models with clear selection guidelines
+  - Covers extended components: astrocyte coupling, synaptic plasticity, multi-compartment
+  - Provides practical implementation patterns for large-scale SNNs, biophysical accuracy, and analytical work
+  - **Activation**: single-entity spiking neuron, spiking neuron models survey, biologically plausible neuron models, membrane potential dynamics, neuron model classification
+
+### Reward Valuation in Vision Language Models: Causal Mechanisms Underlying Anhedonia
+- [[reward-valuation-vlm-anhedonia]] - Adapts clinical anhedonia tests to evaluate VLM reward processing, establishing causal links between VLM components and reward valuation analogous to NAc dysfunction in depression (arXiv: 2607.06626)
+  - First mechanistic framework linking VLM reward processing to clinical depression research
+  - Causal intervention analysis identifies reward-processing components in VLMs
+  - Bridges psychiatry and AI evaluation — "mental health" assessment for AI systems
+  - **Activation**: reward valuation VLM, anhedonia causal mechanism, nucleus accumbens VLM, VLM depression modeling, reward system dysfunction AI
 
 ### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
 - [[dynamic-neural-manifolds-neuromorphic-control]] - Implement ring-network-based dynamic neural manifolds on SpiNNaker 2 for explainable closed-loop robotic control via heterogeneous inhibition, gain modulation, and transient currents (arXiv: 2607.07373)
