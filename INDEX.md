@@ -1,6 +1,19 @@
 # AI Collection Index
 
 
+## 2026-07-12 - Quantum Neuromorphic Research (Cron Job)
+
+### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
+- [[non-markovian-kerr-feedback-qrc]] - Proves unbounded resource separation: single Kerr mode with time-delayed feedback achieves arbitrary cross-time nonlinear rank, replacing up to ~100 linear modes in CV-QRC (arXiv: 2606.06689)
+  - N-mode Gaussian reservoir has hard ceiling at 2N cross-time nonlinear rank; single Kerr+feedback depth D achieves rank D (no ceiling)
+  - Counterintuitively, loss enables distinct fingerprints per round-trip; without loss passes would be redundant
+  - **Activation**: Kerr feedback, non-Markovian QRC, continuous-variable quantum, cross-time nonlinear correlations, Gaussian limitations, time-delay feedback, optical computing
+### Temporal Processing of Quantum States with Hybrid Quantum-Classical Reservoirs
+- [[hybrid-quantum-classical-reservoirs]] - Hybrid quantum-classical reservoir computing (HRC) combining qubit QRC with classical ESN overcomes linearity barrier for nonlinear functionals like purity and entropy (arXiv: 2606.21327)
+  - Quantum reservoir alone fundamentally linear for single input state; classical ESN provides nonlinear approximation, quantum reservoir provides enhanced information retrieval
+  - Advantage persists under partial measurements (single-axis); online monitoring protocol accounts for measurement back-action and finite ensembles
+  - **Activation**: hybrid quantum-classical reservoir, echo state network, quantum state processing, nonlinear functionals, purity estimation, measurement back-action, near-term qubit
+
 ## 2026-07-12 - Neuroscience Research (Cron Job)
 
 ### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion Turns Analog Device Noise into a Continual-Learning Resource
