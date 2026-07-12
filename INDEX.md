@@ -1,6 +1,20 @@
 # AI Collection Index
 
 
+## 2026-07-12 - Neuroscience Research (Cron Job)
+
+### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
+- [[contravariance-theory-strong-alignment-minimal]] - Formal proof that weak affine alignment guarantees strong privileged-axis alignment, with alignment "zipping" up the hierarchy; convergent evolution is inevitable under hard tasks (arXiv: 2607.08561)
+  - Weak alignment → strong privileged axis alignment; hierarchical zipper effect strengthens alignment at higher layers
+  - Metric insensitivity for NeuroAI: choice of comparison metric matters less than previously thought
+  - **Activation**: contravariance, strong alignment, privileged axes, DNN-brain alignment, convergent evolution, NeuroAI theory, minimal solutions
+
+### A Non-Hermitian Potential Well Formalism for Conscious--Preconscious--Subliminal Processing
+- [[non-hermitian-conscious-preconscious-subliminal]] - Unified GNW dynamical model using non-Hermitian Hamiltonians and nonlinear Schrödinger equations; consciousness emerges as bound state formation when landscape depth and attention both exceed thresholds (arXiv: 2607.08302)
+  - Hermitian part = recognition (dissipative localization), anti-Hermitian part = broadcasting (spatial spreading)
+  - Complex-valued landscape bridges sensory encoding and conscious access in single framework
+  - **Activation**: non-Hermitian, conscious access, GNW, Global Neuronal Workspace, subliminal, preconscious, potential well, Schrödinger equation, Lotka-Volterra
+
 ## 2026-07-12 - Quantum Neuromorphic Research (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
