@@ -1,7 +1,28 @@
 # AI Collection Index
 
 
-## 2026-07-12 - Neuroscience Research (Cron Job)
+## 2026-07-12 - Neuroscience Research (Cron Job - Evening)
+
+### Learning Biophysical Models of Large-Scale Multineuronal Data to Enable Precise Neurostimulation
+- [[biophysical-hh-model-extracellular-neurostimulation]] - Differentiable HH model inference from extracellular MEA data achieves 90.6% accuracy predicting neurostimulation responses from minutes of recording vs hours of testing (arXiv: 2607.04063, ICML 2026)
+  - Differentiable biophysical simulation enables gradient-based HH parameter estimation from extracellular recordings only
+  - Simulation-based inference (SBI) amortizes fitting across neural populations — no intracellular recordings needed
+  - Validated on hundreds of hours of macaque retina data with 512-electrode array (30μm pitch)
+  - **Activation**: biophysical HH model, extracellular MEA, neurostimulation prediction, differentiable biophysical simulation, Hodgkin-Huxley inference, simulation-based inference, precise neurostimulation
+
+### Microsecond-precision Sound Localization Emerges from Slow Equilibrium Dynamics
+- [[sound-localization-equilibrium-dynamics]] - ITD represented as stable equilibrium of neural population dynamics rather than classical Jeffress place-coding; achieves microsecond precision without delay lines (arXiv: 2607.03890, submitted to Science)
+  - Excitatory-inhibitory interactions across frequency channels drive dynamical system to ITD equilibrium
+  - Explains both microsecond precision and sluggish dynamic cue tracking in single framework
+  - Reproduces frequency-dependent best-delay distributions without explicit delay lines
+  - **Activation**: sound localization, equilibrium dynamics, ITD estimation, neural population dynamics, Jeffress model alternative, binaural perception, microsecond precision
+
+### Navigating Hierarchy: Hyperbolic Learning on Brain Graphs for Disorder Diagnosis
+- [[hlbg-hyperbolic-learning-brain-graphs]] - Hyperbolic Learning on Brain Graphs (HLBG) with GaMamba models ROI-community-whole-brain hierarchy via Lorentzian space and geometric entailment constraints (arXiv: 2607.07077)
+  - Projects multi-level brain representations into Lorentzian hyperbolic space with geometric entailment constraints
+  - Graph-aware Mamba (GaMamba) captures long-range dependencies while preserving graph topology
+  - Outperforms SOTA on ABIDE-I and REST-MDD, identifies disorder-relevant biomarkers
+  - **Activation**: hyperbolic learning, brain graph hierarchy, HLBG, GaMamba, Lorentzian space, geometric entailment, disorder diagnosis
 
 ### Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks
 - [[contravariance-theory-strong-alignment-minimal]] - Formal proof that weak affine alignment guarantees strong privileged-axis alignment, with alignment "zipping" up the hierarchy; convergent evolution is inevitable under hard tasks (arXiv: 2607.08561)
