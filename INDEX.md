@@ -50,6 +50,14 @@
   - Attention pooling adaptively filters redundant noise channels in EEG signals
   - **Activation**: sa-hgnn, hyperbolic GNN, eeg depression recognition, sample-adaptive graph, hyperbolic convolution, attention pooling, functional connectivity hierarchy
 
+## 2026-07-12 - Neuroscience Research (Cron Job)
+
+### BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
+- [[bus-brain-inspired-self-reflection-vlm]] - 脑启发无监督自反思框架，利用大脑反向预测机制实现VLM无标注自我验证推理 (arXiv: 2607.07361)
+  - 核心要点 1: 证明VLM具有类似人脑的backward prediction能力（65%+一致性），可用前驱表征进行自验证
+  - 核心要点 2: 提出两阶段BUS框架，阶段I生成多推理-答案对，阶段II引导反向预测实现无标注训练
+  - **Activation**: brain-inspired self-reflection, backward prediction VLM, unsupervised self-reflection, BUS framework, 脑启发自反思
+
 ## 2026-07-12 - Quantum Neuromorphic Research (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
