@@ -1,6 +1,16 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Neuroscience Research (Cron Job)
+
+### Parallel Tempering in Spiking Neural Network CSP Solvers
+- [[parallel-tempering-snn-csp]] - First integration of replica-exchange parallel tempering into a stochastic SNN neural-sampling solver for constraint satisfaction; K replicas at different inverse temperatures swap temperatures (not states), crossing energy barriers unreachable by fixed-temperature dynamics (arXiv: 2607.08897)
+  - Stochastic SNNs encode CSP constraints in connectivity and search via spike dynamics, but fixed-temperature runs trap in near-satisfying local minima
+  - PT runs K parallel replicas, periodically exchanges temperatures with MCMC acceptance — preserves async spike-based computation
+  - On 1000 SATLIB uf20-91 instances: +332 success, −5 worse vs equal-resource parallel baseline; gains concentrated on hard instances
+  - Violation-trajectory analysis confirms barrier crossing after exchanges; drop-in augmentation over any neural-sampling SNN
+  - **Activation**: parallel tempering SNN, replica exchange spiking, stochastic spiking neuron CSP, neural sampling SAT solver, local minimum escape SNN, uf20-91, neuromorphic constraint satisfaction
+
 ## 2026-07-14 - Deep Learning Research (Cron Job)
 
 ### Foveation-Guided Dynamic Token Selection for Robust and Efficient Vision Transformers
