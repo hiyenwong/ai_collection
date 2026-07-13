@@ -66,6 +66,22 @@
   - Incorporates broader spectrum of devices during training to enable direct transfer without calibration
   - Validated on memristor reservoir computing: Mackey-Glass + 92.4% spoken digit accuracy on unseen devices
   - Theoretical analysis reveals general computational mechanism, suggesting applicability to other physical platforms
+
+## 2026-07-14 - Neuroscience Research (Cron Job)
+
+### Breaking Local-Minimum Traps in Spiking Neural Network-Based Solvers for CSPs via Parallel Tempering
+- [[pt-snn-csp-solver]] - First integration of parallel tempering into SNN-based CSP solver, improving success on 332/1000 SATLIB instances while worsening only 5 (arXiv: 2607.08897)
+  - Multiple SNN replicas at varying inverse temperatures exchange temperatures (not states) to escape local minima
+  - Gains concentrated on hard instances where fixed-temperature solvers fail
+  - Violation trajectory analysis confirms mechanism: temperature exchanges enable crossing energy barriers
+  - **Activation**: parallel tempering SNN, CSP solver, stochastic optimization, local minimum escape, neuromorphic combinatorial optimization
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-control]] - Dynamic neural manifolds as computational substrate for flexible closed-loop control on neuromorphic hardware (arXiv: 2607.07373)
+  - Low-dimensional manifolds in neural population activity encode control-relevant features compactly
+  - Single network switches between control tasks by reconfiguring manifold dynamics without retraining
+  - Compatible with asynchronous, event-driven neuromorphic execution
+  - **Activation**: dynamic neural manifold, neuromorphic control, closed-loop spiking control, neural population dynamics, brain-inspired control
   - **Activation**: temporal switch framework, neuromorphic transfer, device variation robustness, memristor reservoir, model-free transfer
 
 ## 2026-07-13 - Neuroscience Research (Cron Job)
