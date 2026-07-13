@@ -1,6 +1,23 @@
 # AI Collection Index
 
 
+## 2026-07-13 - Dream/Sleep Research (Cron Job)
+
+### PHINN-EEG: Topological Time-Series Analysis of Dream-State EEG -- Dynamic Betti Curves for Dream Content Classification and Topology-Conditioned Neural Signal Synthesis
+- [[phinn-eeg-topological-dream-analysis]] - First topological framework for dream detection using Dynamic Betti curves from Takens embeddings + Vietoris-Rips filtrations, targeting AUC 0.82-0.90 vs 0.70 SOTA (arXiv: 2607.09662)
+  - Sliding-window Takens delay embeddings + Vietoris-Rips filtrations extract topological invariants (Betti numbers) from pre-awakening EEG
+  - Topology-conditioned rectified flow model for dream-state EEG synthesis with spectral-conditioned ablation baseline
+  - Paradigm shift from spectral energy (PSD) to phase-space geometry for neural rare-event detection
+  - Candidate Betti transition archetypes link topology to phenomenological dream report categories (exploratory)
+  - **Activation**: phinn-eeg, betti curves, persistent homology, topological eeg, dream detection, takens embedding, vietoris-rips, topology-conditioned flow
+
+### Lightweight ML-Based Automatic Sleep Staging Framework with Constrained CNN and Mamba for Small-Sample EEG Datasets
+- [[gam-sleep-lightweight-staging]] (未创建) - GamSleepNet achieves 87.86% accuracy with only 30.86K parameters using Gabor+Mamba for single-channel EEG sleep staging (arXiv: 2607.04934)
+  - FEB module with improved Gabor kernels + learnable filters, Mamba temporal classifier, contrastive loss + two-stage training
+  - Significantly improves N1 and REM stage identification accuracy
+  - Experimentally validates optimal dataset size for single-channel EEG sleep staging models
+  - **Activation**: sleep staging, lightweight eeg, mamba architecture, gabor filters, contrastive loss
+
 ## 2026-07-13 - Quantum Reservoir Computing (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
