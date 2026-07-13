@@ -1,6 +1,24 @@
 # AI Collection Index
 
 
+## 2026-07-13 - Neuroscience Research (Cron Job)
+
+### A multi-ensemble mean-field reduction method for networks of globally coupled phase oscillators with arbitrary parameter distributions
+- [[multi-ensemble-mean-field-oscillators]] - Data-driven multi-ensemble extension of Ott-Antonsen to arbitrary/empirical frequency distributions, enabling low-dimensional stability/bifurcation analysis of heterogeneous oscillator populations (arXiv: 2607.09516)
+  - Decomposes empirical natural-frequency distribution into a mixture of K OA-admissible bases (e.g. Lorentzians)
+  - Applies per-ensemble Ott-Antonsen reduction, yielding a K-dimensional coupled order-parameter system
+  - Renders OA equations directly applicable to real biological/physical systems beyond the Lorentzian closure
+  - Enables cheap bifurcation, sensitivity, and stability analysis for N→∞ heterogeneous populations
+  - **Activation**: multi-ensemble mean-field, Ott-Antonsen extension, heterogeneous phase oscillators, arbitrary frequency distribution, Kuramoto reduction, coupled oscillator stability
+
+### PHINN-EEG: Topological Time-Series Analysis of Dream-State EEG -- Dynamic Betti Curves for Dream Content Classification and Topology-Conditioned Neural Signal Synthesis
+- [[phinn-eeg-topological-dream-analysis]] - First topological framework for dream detection using Dynamic Betti curves from Takens embeddings + Vietoris-Rips filtrations, targeting AUC 0.82-0.90 vs 0.70 SOTA (arXiv: 2607.09662)
+  - Sliding-window Takens delay embeddings + Vietoris-Rips filtrations extract topological invariants (Betti numbers) from pre-awakening EEG
+  - Topology-conditioned rectified flow model for dream-state EEG synthesis with spectral-conditioned ablation baseline
+  - Paradigm shift from spectral energy (PSD) to phase-space geometry for neural rare-event detection
+  - Candidate Betti transition archetypes link topology to phenomenological dream report categories (exploratory)
+  - **Activation**: phinn-eeg, betti curves, persistent homology, topological eeg, dream detection, takens embedding, vietoris-rips, topology-conditioned flow
+
 ## 2026-07-13 - Dream/Sleep Research (Cron Job)
 
 ### PHINN-EEG: Topological Time-Series Analysis of Dream-State EEG -- Dynamic Betti Curves for Dream Content Classification and Topology-Conditioned Neural Signal Synthesis

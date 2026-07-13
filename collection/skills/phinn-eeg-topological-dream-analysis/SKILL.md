@@ -38,21 +38,14 @@ PHINN-EEG (Persistent Homology Inspired Neural Network for EEG) is the first top
 2. **Takens Embedding**: Apply delay embedding to reconstruct phase space (choose embedding dimension d and delay τ)
 3. **Vietoris-Rips Filtration**: Compute persistent homology across filtration parameter ε
 4. **Betti Curve Extraction**: Track β₀(t), β₁(t), β₂(t) over sliding windows
-5. **Classification**: Feed Dynamic Betti Curves into neural network classifier
-6. **Synthesis** (optional): Use topology-conditioned rectified flow to synthesize dream-state EEG
+5. **Classification**: Feed Dynamic Betti Curves (or topology-conditioned features) to a downstream classifier; use topology-conditioned rectified flow for synthesis/ablation
 
-## Applications
+## Activation / Triggers
 
-- Wearable BCI dream monitoring
-- Dream content classification from neural signals
-- Neural rare-event detection beyond sleep research
-- Phase-space geometry as biomarker
+phinn-eeg, betti curves, persistent homology, topological eeg, dream detection, takens embedding, vietoris-rips, topology-conditioned flow
 
-## Trigger Words
+## Verification
 
-phinn-eeg, betti curves, persistent homology, topological eeg, dream detection, takens embedding, vietoris-rips, topology-conditioned flow, dream-state synthesis, phase-space geometry
-
-## arXiv Link
-
-- **PDF**: https://arxiv.org/pdf/2607.09662
-- **Abstract**: https://arxiv.org/abs/2607.09662
+- Outperforms PSD and catch22 baselines on the DREAM open-access subset (target AUC 0.82-0.90)
+- Spectral-conditioned ablation confirms added value of topological conditioning
+- Betti transition archetypes reproducible across the 20 independent laboratories subset
