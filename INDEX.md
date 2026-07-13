@@ -47,6 +47,20 @@
   - Hardware-realizable CMOS design suitable for low-power implantable aDBS devices
   - **Activation**: adaptive deep brain stimulation, SiLIF, silicon neuron, Parkinson's disease, aDBS, beta oscillation, neuromorphic controller, STN-LFP, low-power implantable
 
+### Intrinsic-Noise Consolidation: A Doob-Barrier-Conditioned Diffusion Turns Analog Device Noise into a Continual-Learning Resource
+- [[intrinsic-noise-consolidation-continual-learning]] - Doob h-transform turns analog neuromorphic device noise into consolidation resource, yielding inverted-U noise-retention curve validated on BrainScaleS-2 silicon (arXiv: 2607.06924)
+  - Barrier-conditioned diffusion gains σ²∂_w log h(w) restoring force that diverges at barrier and amplifies with noise
+  - Pre-registered falsifier passed: +10.9% retention at σ*=0.02 (p=0.004); OU/EWC/MESU are monotone-decreasing
+  - Hardware-in-the-loop on real BrainScaleS-2: +15.6 points retention over matched control
+  - **Activation**: Doob h-transform, barrier-conditioned diffusion, intrinsic noise consolidation, BrainScaleS-2, noise as resource, continual learning, catastrophic forgetting
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-snn-control]] - Circuit mechanisms as control knobs for neural manifold geometry enabling explainable closed-loop robotic control on SpiNNaker 2 (arXiv: 2607.07373)
+  - Heterogeneous inhibition enables subspace rotation for behavior switching; gain/transient currents control trajectory
+  - Ring network with circulant weight matrix (~50% sparsity) generates oscillatory sequences on low-dimensional manifolds
+  - Validated on SpiNNaker 2 chip with robotic maze navigation — biological plausibility across species
+  - **Activation**: dynamic neural manifolds, neuromorphic closed-loop control, SpiNNaker 2, ring network, subspace rotation, explainable neuromorphic
+
 ### TRIBE fMRI Encoding Validation: Null Result for Behavioral Prediction
 - [[tribe-fmri-encoding-validation]] - Validation showing TRIBE (2025 Algonauts winner) predicted fMRI fails to predict YouTube replay behavior (r=+0.058, p=0.23, BF₀₁=3.2) despite high encoding accuracy (arXiv: 2607.01400)
   - Proves predicted fMRI ≠ measured fMRI for neuroforecasting — regression toward group mean discards behaviorally-relevant structure
