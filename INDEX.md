@@ -1,6 +1,23 @@
 # AI Collection Index
 
 
+## 2026-07-13 - Systems Engineering Research (Cron Job)
+
+### Self-Adaptive Anomaly Detection with Reinforcement Learning and Human Feedback in Connected Vehicles
+- [[self-adaptive-cps-anomaly-detection]] - Self-adaptive anomaly detection for autonomous CPS using RL-based detector selection, ensemble drift detection, and human-in-the-loop retraining (arXiv: 2607.08373v1)
+  - Factorized DQN with self-attention selects optimal detector per microservice
+  - Conjunctive ensemble drift detection (3 detectors must all agree)
+  - 60/40 prioritized replay prevents catastrophic forgetting
+  - **Activation**: cps anomaly detection, concept drift, self-adaptive monitoring, RL detector selection, human-in-the-loop, microservice diagnostics
+
+### Input-Constrained Spatiotemporal Tubes for Safe Navigation of Unknown Euler-Lagrange Systems in Dynamic Environments
+- [[input-constrained-spatiotemporal-tubes]] - Input-constrained spatiotemporal tube control for safe navigation of unknown Euler-Lagrange systems with FT-RAS guarantees (arXiv: 2607.08189v1)
+  - Approximation-free control law -- no online optimization needed
+  - Offline-verifiable feasibility conditions for control authority
+  - Validated on mobile robot, quadrotor, spacecraft + hardware experiments
+  - **Activation**: spatiotemporal tube, safe navigation, euler-lagrange, input constraints, reach-avoid-stay, approximation-free control
+
+
 ## 2026-07-13 - Neuroscience Research (Cron Job - Evening)
 
 ### Towards Transferable Lightweight Neuromorphic Computing Through a Model-Free Temporal-Switch Framework
