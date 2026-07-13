@@ -2,6 +2,16 @@
 
 
 
+
+## 2026-07-14 - Neuroscience Research (Cron Job) — Dendritic ICL SNN
+
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - Single-layer compartmental SNN whose apical/dendritic subthreshold dynamics implement online Widrow-Hoff LMS, giving in-context learning without attention, depth, or inference-time plasticity (arXiv: 2607.02283)
+  - Reframes dendrites from passive error conduits to the computational substrate: the compartment's ODE IS the learning algorithm
+  - Seed-stable on super-dimensional Garg-2022 ICL where dense Transformers grokking-fail; linear probe recovers LMS trajectory at R2=0.93
+  - ICL requires neither attention, nor depth, nor inference-time synaptic plasticity
+  - **Activation**: dendritic in-context learning, DendriCL, single-layer SNN ICL, compartmental spiking neuron, apical LMS dynamics, Garg-2022 ICL benchmark, biologically plausible in-context learning
+
 ## 2026-07-14 - Neuroscience Research (Cron Job)
 
 ### A Spiking Sequence Generator for Polar Trajectories on Neuromorphic Hardware

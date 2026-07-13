@@ -1,107 +1,77 @@
 ---
 name: dendritic-in-context-learning-snn
-description: "DendriCL: dendritic in-context learning in a single-layer compartmental spiking neural network. Shows that the subthreshold dynamics of a single apical dendritic compartment is structurally identical to leaky online Widrow-Hoff LMS, collapsing general-purpose in-context learning (ICL) to a single layer with frozen synapses -- no attention, no depth, no inference-time plasticity. Solves Garg-2022 ICL at super-dimensional task sizes where dense Transformers grok and fail. Applicable to: biologically-plausible SNN, compartmental neuron models, in-context learning mechanisms, online LMS / adaptive filtering, single-layer architectures, mechanistic interpretability of ICL, grokking avoidance, neuromorphic spiking control."
-license: Complete terms in LICENSE.txt
-metadata:
-  arxiv_id: "2607.02283"
-  published: "2026-07-02"
-  authors: "Juwei Shen, Yujie Wu, Changwen Chen"
-  tags: [spiking-neural-networks, in-context-learning, compartmental-neuron, apical-dendrite, online-lms, widrow-hoff, single-layer, mechanistic-interpretability, grokking, garg-2022, neuromorphic]
+description: "Dendritic In-Context Learning (DendriCL): a single-layer compartmental spiking neural network whose apical/dendritic subthreshold dynamics implement online Widrow-Hoff LMS, giving in-context learning without attention, depth, or inference-time synaptic plasticity. Activation: dendritic in-context learning, DendriCL, single-layer SNN ICL, compartmental spiking neuron, apical LMS dynamics, Garg-2022 ICL benchmark, biologically plausible in-context learning."
 ---
 
-# DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+# Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
 
-**arXiv**: [2607.02283](https://arxiv.org/abs/2607.02283) | **Published**: 2026-07-02 | **Category**: cs.NE
+> DendriCL collapses general-purpose in-context learning (ICL) to a single compartmental spiking layer: the subthreshold dendritic/apical dynamics ARE the online learning algorithm (leaky Widrow-Hoff LMS), not a passive conduit for error signals. Beats dense Transformers on super-dimensional Garg-2022 ICL while being seed-stable and structurally interpretable.
 
-## Core Contribution
+## Metadata
+- **Source**: arXiv:2607.02283
+- **Authors**: Juwei Shen, Yujie Wu, Changwen Chen
+- **Published**: 2026-07-02
+- **Categories**: cs.NE, cs.LG
+- **Benchmark**: Garg-2022 in-context learning
 
-Demonstrates that **in-context learning (ICL) does not require attention, depth, or inference-time synaptic plasticity**. A single compartmental spiking neuron whose **apical dendritic membrane potential implements an online Widrow-Hoff LMS recurrence** is sufficient. The algorithm is *structurally embedded in the dynamics*, not implicitly discovered by training — verified by a linear probe recovering the reference online-LMS trajectory at **R² = 0.93**.
+## Core Problem
 
-Prior SNN compartmental models route adaptation through inference-time plasticity and treat the apical dendrite as a passive conduit for teacher/error signals. DendriCL inverts this: the apical compartment is an **active online estimator** whose subthreshold dynamics *are* the learning rule.
+In-context learning in modern AI (Transformers, Mamba, SSMs, MLPs) is widely believed to operate via **implicit gradient descent embedded in the forward pass**. Capturing ICL in biologically plausible Spiking Neural Networks (SNNs) was an open challenge:
 
-## Architecture (three-compartment pyramidal unit)
+1. Prior SNN-ICL attempts route adaptation through **inference-time synaptic plasticity** (STDP/Hebbian updates during test).
+2. They treat the **dendritic compartment as a passive conduit** for error/teacher signals.
+3. Result: they **fail the Garg-2022 ICL benchmark at non-trivial task dimension** — the linear regression / ridge tasks where ICL should shine.
 
-Each of `d_model = 384` parallel pyramidal-like units has:
-- **Basal dendrite**: feedforward projection of the input token `x_t`
-- **Apical dendrite**: persistent multi-dimensional subthreshold voltage `u_A` (NOT reset by spikes)
-- **LIF soma**: integrates basal + apical, spikes at threshold `θ`
+## Key Insight (the reframe)
 
-### Equations
+The failure traces to a structural assumption, not a training issue:
 
-```
-u_B(t)   = W_B x_t                                    (basal projection)
-u_A(t+1) = α u_A(t) + γ e_t W_A x_t                    (apical online-LMS)   (1)
-v_soma   = g_B u_B + g_A W_out u_A                   (soma integration)
-spike if v_soma ≥ θ; readout active only at query position
-```
+> "The subthreshold dynamics of a single dendritic compartment already implement a complete online learning algorithm."
 
-- `e_t = y_t − W_out u_A(t)` is the prediction error at the labeled context pair
-- Synapses `W_A, W_B, W_out` are **frozen at inference** — no weight update
-- `u_A` initialized to 0 and evolves continuously across the whole context
+Instead of viewing dendrites as passive wires carrying errors to synapses, treat the **compartment itself as the computational substrate**. A single-layer compartmental spiking neuron with apical recurrence has dynamics **structurally identical to leaky online Widrow-Hoff LMS**.
 
-### Core mechanism: Apical ≡ Leaky Online LMS
+## Core Methodology — DendriCL
 
-With `W_A = I` and absorbing output projection into readout, the apical update reduces to classical leaky Widrow-Hoff LMS:
+### Architecture
+- **Single-layer** compartmental spiking network (no attention, no depth stack).
+- Each neuron has a somatic spike-generating compartment + an **apical/dendritic compartment** whose subthreshold voltage integrates input.
+- **Apical recurrence**: the apical state at time t is updated by a rule mathematically equal to:
+  `w(t+1) = w(t) + η · e(t) · x(t)`  (online LMS / Widrow-Hoff)
+  where `e(t)` is the prediction error and `x(t)` the regressor — implemented purely by membrane/ionic dynamics, not by weight changes.
+- No inference-time weight plasticity: weights are fixed; **the "learning" lives in the dynamic state of the compartment**.
 
-```
-u_A(t+1) = α u_A(t) + γ e_t x_t
-```
+### Why this gives ICL
+- In-context examples `(x_i, y_i)` are streamed as the input sequence.
+- The apical compartment accumulates the online-LMS solution **as a latent dynamical state**.
+- The query `x_q` is read out by a **linear probe** on the apical membrane.
+- Because the update rule is embedded in the ODE, the network "solves" the in-context linear task during the forward pass — exactly the mechanistic definition of ICL.
 
-**Theorem** (classical LMS convergence, Widrow & Hoff 1960): for `0 < γ < 2/d` and suitable `α`, the apical state satisfies `E‖u_A(k) − w‖ → 0`, i.e. it tracks the true task parameter `w`. DendriCL's contribution is **structural** — this update is embedded in the compartmental architecture and BPTT only tunes `(α, γ, W_A, W_B)`.
+### Empirical results (from the paper)
+- **Seed-stable at super-dimensional Garg-2022 ICL** where dense Transformers exhibit grokking-style instability and fail past moderate task dimension.
+- A linear probe recovers the reference online-LMS trajectory directly from the apical membrane at **R² = 0.93** — confirming the algorithm is *structurally embedded in the dynamics*, not implicitly discovered during training.
+- Demonstrates ICL requires **neither attention, nor depth, nor inference-time plasticity**: a single compartment with online-LMS dynamics is sufficient.
 
-## Training & Hyperparameters
+## How to Apply This Pattern
 
-- BPTT end-to-end over `(α, γ, W_A, W_B, W_out)`; synapses then frozen
-- `d_model = d_apical = 384`, ~0.75M total params
-- Membrane: `τ = 4, θ = 1`; arctan spike approximation (Neftci 2019)
-- Optimizer: **AdamW, lr = 1e-3**, weight decay
-- Initialization: `α̃ = 2.2` (so `α ≈ 0.9` at start), `γ̃ = 0` (so `γ ≈ 0.1` at start); `W` drawn `N(0, 1/d_apical)`
+Use this when building or analyzing ICL-capable models, especially biologically plausible / neuromorphic ones:
 
-## Benchmark: Garg-2022 ICL
-
-- Linear regression: `w ∼ N(0, I_d)`, `x_i ∼ N(0, I_d)`, `y_i = wᵀ x_i + ε_i`, context length `k = 2d`
-- Evaluated at `d ∈ {5, 10, 15, 20, 25, 30, 40, 50}`
-- DendriCL R²: `0.807 ± 0.005` (d=5) → `0.820 ± 0.005*` (d=20) at 0.75M params
-
-### Key results
-- **Seed-stable at super-d**: Dense Transformers exhibit grokking-style bimodality and **fail past d=40**; DendriCL converges smoothly and monotonically (σ ≤ 0.005 per step) at all tested d
-- **Mechanistic verification**: linear probe of apical trajectory into reference online-LMS estimate gives **R² = 0.93** at d=20 — ICL capacity is quantitatively explained by apical encoding quality
-- **Depth ablation**: L=1 matches L=2 at d=20 (0.820 vs 0.793) — single layer sufficient
-- **Spike cost**: ~17k spikes/forward pass at d=20; apical compartment itself never spikes (subthreshold state); ~85% soma sparsity
-- **Width cliff**: `d_apical ≤ 384` all train; `d_apical ≥ 512` diverge (frozen `γ=0` recovers R²≈0.50 even at 768, isolating pathology to apical recurrence). Matches LMS stability bound `γ < 2/(d+2)`
-
-## When to Use This Skill
-
-- Designing biologically-plausible SNNs that must do few-shot / in-context learning
-- Replacing Transformer/SSM ICL with a single-layer, energy-efficient, mechanistically-transparent substrate
-- Avoiding grokking instability in super-dimensional ICL regimes
-- Building neuromorphic controllers where synapse updates at inference are undesirable
-- Mechanistic interpretability studies: probing apical membrane to read out the embedded algorithm
-
-## Implementation Checklist
-
-1. Build a 3-compartment spiking unit: basal (W_B projection), apical (persistent u_A), LIF soma
-2. Implement apical recurrence exactly as Eq (1) — this IS the learning rule
-3. Freeze all synaptic weights after BPTT training
-4. Run Garg-2022 protocol: token format `[x_i; y_i; flag_i]`; readout only at query
-5. Validate with a linear probe: ridge-regress apical trajectory → reference online-LMS estimate; expect R² ≥ 0.9
-6. Keep `d_apical ≤ ~30×d` to stay inside LMS stability region
-
-## Biological Grounding
-
-- Anatomically: apical-basal-soma layout = cortical layer-5 pyramidal neuron (Larkum 2013)
-- Apical subthreshold Ca²⁺ plateaus persist 100+ ms; apical-basal coincidence at soma
-- Hypothesis (falsifiable via in-vivo recording): cortex implements ICL via apical-LMS dynamics
-
-## Extensions (from paper)
-
-- **Kernel apical**: replace `W_A x_t` with `φ(x_t)` (e.g. ReLU(W1 x_t) or random-feature) → Bayes-optimal if φ includes true nonlinearity
-- **Multi-branch apical**: K parallel apical branches, each its own LMS → piecewise-linear estimator
-- **Nonlinear readout**: keep apical linear, add small nonlinear `g(u_A)` readout
+1. **Map the target algorithm to a dynamical system.** Ask: "What ODE, if its state is read out linearly, reproduces the algorithm?" (Here: leaky LMS ↔ apical subthreshold dynamics.)
+2. **Promote the compartment from conduit to substrate.** Don't pipe errors to synaptic updates; let the compartment's own evolution BE the update.
+3. **Keep weights frozen at inference; learn in latent state.** This decouples "learning" from "plasticity" and removes the instability of inference-time weight changes.
+4. **Validate with a linear probe on the latent state** to prove the algorithm is embedded (R² ≈ 1), not just approximated.
+5. **Benchmark on Garg-2022** (linear regression in-context) at increasing task dimension to expose where depth/attention-based ICL breaks (grokking) but the single-compartment model stays stable.
 
 ## Pitfalls
+- Treating dendrites as passive error carriers (the prior failed assumption) — the reframe is the whole contribution.
+- Expecting weight changes during inference — DendriCL explicitly avoids them; "learning" = state evolution.
+- Over-complicating the architecture: the win is *minimalism* (one layer, one compartment type). Adding depth defeats the point.
 
-- Do NOT reset apical state on spike — persistence across context is what carries the algorithm
-- LMS equivalence holds for the apical compartment only; LIF reset is a separate readout path
-- Theorem requires `γ < 2/d`; BPTT may push `γ` unstable if `d_apical ≫ d` → training divergence
-- Only validated on Garg synthetic function classes; language/vision ICL unaddressed
+## Verification
+- Reproduce: stream Garg-2022 linear-regression prompts; confirm accuracy holds as task dimension grows past the Transformer failure point.
+- Probe: fit a linear map from apical membrane voltage → online-LMS weight vector; expect R² ≳ 0.9.
+- Ablate: remove apical recurrence → ICL collapses, confirming the dynamics (not the weights) carry the algorithm.
+
+## Related directions
+- Compartmental spiking neurons (Hodgkin-Huxley multi-compartment) as differentiable learning substrates.
+- Neuromorphic / energy-constrained ICL (pair with spiking-polar-trajectory-generator, parallel-tempering-snn-csp in this collection).
+- Theory of ICL-as-dynamics vs ICL-as-implicit-gradient (connects to "contravariance theory" NeuroAI alignment work).
