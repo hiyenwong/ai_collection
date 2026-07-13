@@ -1,6 +1,57 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Deep Learning Research (Cron Job)
+
+### Foveation-Guided Dynamic Token Selection for Robust and Efficient Vision Transformers
+- [[foveated-dynamic-token-selection]] - HVS-inspired ViT with fixation (token drop) + foveation (multi-scale) modules for adaptive compute and emergent noise/adversarial robustness without robust training (arXiv: 2607.09480)
+  - Fixation module scores tokens and keeps top-k fraction (fixation budget); foveation module builds multi-scale embeddings for kept tokens
+  - At 50% budget: 81.9% vs DeiT-S 80.9% with 34.57% fewer MACs
+  - Robustness comes for free — dynamic selection breaks the static receptive-field assumption attackers rely on
+  - **Activation**: foveated vision transformer, dynamic token selection, fixation budget, multi-scale foveation, biologically-inspired efficiency, adversarial robustness without robust training
+
+### Data-Efficient Deep Learning: Empirical Guidelines for Training Set Size Estimation
+- [[learning-curve-dataset-size-estimation]] - Log-growth learning-curve fit + "stability point" metric (sample size where curve stabilizes within MAPD of asymptotic max) to plan recording campaigns from small pilots (arXiv: 2607.09402)
+  - Accuracy follows consistent logarithmic growth vs dataset size, independent of task complexity
+  - Stability point N* = min N with |f(N)-A|/A ≤ MAPD; extrapolate total data needs from pilot
+  - Models often reach practical stability with far fewer samples than heuristics suggest
+  - **Activation**: learning curve, dataset size estimation, stability point, MAPD, pilot study extrapolation, data efficiency planning
+
+### Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning
+- [[shortcut-trajectory-planning-offline-rl]] - Single-stage step-size-conditioned shortcut model as trajectory generator + feasibility-aware critic, replacing two-stage consistency distillation for fast one/few-step planning (arXiv: 2607.09336)
+  - One training stage (no teacher) with s-conditioning for adjustable 1-step/few-step inference
+  - Feasibility-aware critic correction rejects physically infeasible plans
+  - Simplifies diffusion-planner training pipeline while matching D4RL performance
+  - **Activation**: shortcut model, offline model-based RL, trajectory planning, consistency distillation alternative, feasibility-aware critic, D4RL
+
+### GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning
+- [[graph-augmented-tree-search-agent-planning]] - UCB1 tree search + 3-layer world model (exact symbolic / learned stats / LLM-for-unknown) eliminates in-loop LLM calls during planning; zero-variance deterministic plans (arXiv: 2607.08894)
+  - L1 exact symbolic match, L2 stats from execution logs, L3 LLM only for unknown actions
+  - 100% success vs LATS 92% / ReAct 64% on synthetic; zero LLM calls per task vs 37 for LATS
+  - Deterministic plans with zero run-to-run variance
+  - **Activation**: graph-augmented tree search, UCB1, layered world model, LLM-agent planning, deterministic planning, LATS alternative
+
+### COBS: Cumulant Order Block Sparse Attention
+- [[cumulant-order-block-sparse-attention]] - Block-sparse attention selector storing compressed 2nd-order (cumulant) per-block statistic instead of 1st-order attention-mass approximation; closes 86% of gap to dense at 15x less KV read (arXiv: 2607.09052)
+  - Selection reduces to ranking blocks by attention mass; first-order approx is insufficient (cumulant expansion proof)
+  - Add per-block second-moment/cumulant to the compression summary; tune α in score = μ + α·cumulant
+  - 32k RULER: NSA 0.2999 → COBS 0.8195 (dense 0.9040); 1.21x NSA read traffic, 15.15x less than dense
+  - **Activation**: block sparse attention, NSA, cumulant expansion, attention mass, KV cache read traffic, long-context retrieval
+
+### Parameter-Efficient Vision-Language Adaptation with Continuous Metadata Conditioning
+- [[continuous-metadata-conditioning-peft]] - Feed numeric metadata through a continuous projector directly into the prompt representation (not discretized text) for smooth embedding modulation; purely visual inference at test (arXiv: 2607.09443)
+  - Preserves ordered/continuous structure of numeric attributes vs "small/medium/large" text prompts
+  - Additive/gated injection into soft-prompt or text embedding; metadata branch train-only
+  - Improves closed/open/time-aware eval on 7-year longitudinal fish dataset; no metadata at inference
+  - **Activation**: continuous metadata conditioning, PEFT CLIP, vision-language adaptation, longitudinal distribution shift, Fourier feature projection, train-only conditioning
+
+### SafeExplorer: An Unbiased Policy Gradient for RL with Recovery Interventions
+- [[unbiased-recovery-policy-gradient]] - Drop-in PPO fix for mixed agent/recovery-policy rollouts: score-function estimator only at safe timesteps, never evaluates recovery density, valid where importance sampling breaks (arXiv: 2607.08925)
+  - Recovery policy deterministic → IS correction ill-defined; safe-timestep masking stays unbiased
+  - Closed-form value for recovery-triggering states + success-gated imitation loss accelerate credit assignment
+  - 233x/48x/26x fewer training falls on HalfCheetah/Ant/Unitree Go1 vs PPO; matches final reward
+  - **Activation**: unbiased policy gradient, recovery policy, safe RL, PPO modification, deterministic recovery, importance sampling failure, safe region
+
 ## 2026-07-14 - Neuroscience Research (Cron Job)
 
 ### Spiking Dynamic Neural Manifolds — Implementation Recipe (arXiv 2607.07373)
