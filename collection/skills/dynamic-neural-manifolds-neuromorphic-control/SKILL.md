@@ -1,141 +1,95 @@
 ---
 name: dynamic-neural-manifolds-neuromorphic-control
-description: >
-  Dynamic neural manifolds methodology for flexible closed-loop control on neuromorphic hardware.
-  Uses ring attractor networks with sensory-modulated control neurons (speed, shape, selection)
-  to drive subspace rotations and fine-grained trajectory control in neural state space.
-  Implemented on SpiNNaker 2 chip with robotic maze navigation validation.
-version: 1.0.0
-author: Hermes Agent (from arXiv:2607.07373v1)
-license: MIT
+description: "Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware. Implements a ring attractor spiking network on the SpiNNaker 2 chip where sensory-modulated heterogeneous inhibition, multiplicative gain, and transient currents drive rapid subspace rotations and fine-grained trajectory control within low-dimensional neural manifolds. Validated with a robotic maze-navigation simulation. Provides an explainable, neuroscience-grounded framework for mapping world-model plans onto motor control via manifold geometry. Applicable to: neuromorphic control, neural manifolds, ring attractor networks, subspace rotation, closed-loop SNN, SpiNNaker 2, low-dimensional neural dynamics, explainable neuromorphic architectures, behavioral switching."
+license: Complete terms in LICENSE.txt
 metadata:
-  hermes:
-    tags: [neuromorphic, neural-manifolds, closed-loop-control, spiking-networks, spinnaker2, ring-attractor]
-    trigger_words: [dynamic neural manifold, neuromorphic control, spinnaker 2, ring network,
-      closed-loop spiking, subspace rotation, neural trajectory, manifold geometry,
-      sequential neural activity, flexible behavior, activity bump, control neurons]
-  paper:
-    arxiv_id: "2607.07373v1"
-    title: "Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware"
-    authors: ["Oskar von Seeler", "Christian Tetzlaff", "Andrew B. Lehr"]
-    published: "2026-07-08"
-    categories: ["cs.NE"]
+  arxiv_id: "2607.07373"
+  published: "2026-07-08"
+  authors: "Oskar von Seeler, Christian Tetzlaff, Andrew Lehr"
+  tags: [neuromorphic-computing, spiking-neural-networks, neural-manifolds, ring-attractor, subspace-rotation, closed-loop-control, spinnaker2, low-dimensional-dynamics, behavioral-switching, explainable-ai]
 ---
 
-# Dynamic Neural Manifolds for Neuromorphic Closed-Loop Control
+# Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
 
-## Paper
+**arXiv**: [2607.07373](https://arxiv.org/abs/2607.07373) | **Published**: 2026-07-08 | **Category**: cs.NE
 
-- **Title**: Dynamic neural manifolds for flexible closed-loop control on neuromorphic hardware
-- **Authors**: Oskar von Seeler, Christian Tetzlaff, Andrew B. Lehr
-- **Affiliation**: University Medical Center Göttingen; Campus Institute Data Science, University of Göttingen; Circulant Labs
-- **arXiv**: 2607.07373v1 [cs.NE] (2026-07-08)
-- **License**: CC BY 4.0
+## Core Contribution
 
-## Core Concept
+Proposes an **explainable parameterization of neural activity as a low-dimensional manifold** whose geometry is directly controllable by simple circuit mechanisms, and demonstrates a **real-time closed-loop implementation on the SpiNNaker 2 neuromorphic chip**. By letting sensory input modulate heterogeneous inhibition, gain, and transient currents, the architecture drives **rapid subspace rotations** (behavior switching) and **fine-grained trajectory control** (within-behavior execution). Validated via a robotic maze simulation where an agent uses sensory feedback to reconfigure its manifold geometry.
 
-In biological circuits, sequential neural activity evolves along **dynamic, low-dimensional manifolds** to enable flexible behavior. This paper presents a framework that makes these manifolds **parameterizable through specific circuit mechanisms**, enabling explainable neuromorphic control on real hardware.
+## Why Neural Manifolds
 
-### Key Innovation
+A neural manifold is the geometric manifestation of a population's progression through a low-dimensional state space. Sequential activity in brain/spinal cord evolves along dynamic, low-dimensional manifolds. Specific circuit mechanisms map manifold geometry to behavior:
+- **Heterogeneous inhibition** → subspace reorientation (rotate sequence into new hyperplanes to switch behavioral states)
+- **Gain modulation + transient currents** → direct control of trajectory velocity and shape
 
-The architecture maps neural computation onto a **geometric manifold framework** where:
-- Neural population activity = trajectory in N-dimensional state space
-- Sequential activity = movement along low-dimensional curved manifold
-- Control = modulation of manifold geometry (position, speed, shape) via simple neural mechanisms
+## Architecture: Ring Attractor Spiking Network
 
-## Architecture
+Implemented as a **ring network with asymmetric recurrent connectivity**, forming a stable bump of activity that progresses along the ring → oscillatory sequences (Figure 2).
 
-### Ring Attractor Network
+### Three Control Neurons
 
-```
-Input → Control Neurons → Ring Network → Readout → Motor Output
-         (3 types)         (circulant)   neurons    (agent)
-```
+1. **Speed control** — multiplicative gain `S` scales how fast the bump travels
+2. **Shape control** — additive current `I` changes bump width
+3. **Selection control** — subspace inhibition `p_inh` silences subsets of neurons, steering the trajectory into a target subspace
 
-**Ring Network**: Circulant weight matrix with 50% connection sparsity (weights scaled 2x to compensate). Implements a ring attractor that produces a traveling "bump" of activity — a well-studied pattern in neuroscience (head direction cells, spatial navigation).
+### Control Mechanisms (verified on SpiNNaker 2)
 
-### Three Control Neuron Types
+| Mechanism | Effect on manifold |
+|---|---|
+| Multiplicative gain `S` ↑ | Faster bump traversal (trajectory speed) |
+| Additive current `I` | Larger bump size during subspace (trajectory shape) |
+| Subspace inhibition `p_inh` | Rotates activity into a different subspace (behavior switch), sequence dynamics preserved |
+| Combined | Multiple subspaces at increasing rotation counts per unit time |
 
-| Control Type | Function | Biological Analogy |
-|---|---|---|
-| **Speed control** | Modulates propagation speed of activity bump around ring | Neuromodulatory gain control |
-| **Shape control** | Changes width of activity bump (narrow ↔ broad) | Heterogeneous inhibition tuning |
-| **Selection control** | Selectively inhibits subsets of ring neurons | Targeted inhibitory interneurons |
+- Subspace rotation verified by **first principal angle** between subspaces (matches analytical solution)
+- Selective inhibition: 80% subspace inhibition leaves sequential dynamics + behavioral state representation intact
 
-These three simple mechanisms serve as "control knobs" that allow sensory feedback to:
-1. **Switch behavioral states** (e.g., steering ↔ jumping) via subspace rotation
-2. **Fine-tune trajectories** within a behavioral manifold via speed/shape modulation
-3. **Redirect activity** to different readout pathways via selective inhibition
+## SpiNNaker 2 Implementation Details
 
-### Geometric Interpretation
+- Original model is **rate-based**; SpiNNaker 2 is spike-optimized → added a **spike-based communication layer**: rate `r` treated as probability of spiking in current timestep (probabilistic rate→spike)
+- Introduced **50% connection sparsity** (weights scaled 2× to compensate) to cut incoming spikes per neuron
+- Used **circulant weight matrix** structure → store only one row + 1-bit sparsity mask (memory efficient)
+- Host interface streams control parameters in, receives output spikes, computes motor commands
+- Runtime scales with: number of neurons, connection sparsity, number of timesteps
 
-The neural activity lives on a **low-dimensional manifold embedded in high-dimensional neural state space**. Control inputs cause:
+## Closed-Loop Maze Validation
 
-- **Subspace rotation**: Changes which behavioral readout is active
-- **Trajectory speed**: How fast the agent moves through the behavioral sequence
-- **Bump width**: How many neurons are co-active (affects precision vs. robustness tradeoff)
-- **Selective inhibition**: Redirects the activity bump to different ring sectors
+- Environment: maze from `labmaze` library; agent moves in real-valued steps, can jump hurdles
+- Three subspaces encode three movements: forward, curved-forward, turn
+- Agent has a **pre-learned world model / plan**; the framework **translates plan → manifold control parameters** (speed, shape, selection)
+- Ring-network spikes → readout → motor speeds for two wheels
+- Result: agent navigates maze successfully via closed-loop sensory feedback reconfiguring manifold geometry
 
-## SpiNNaker 2 Implementation
+## When to Use This Skill
 
-- Ring network + readout neurons implemented **on-chip** on SpiNNaker 2
-- Host interface communicates with external environment (robotic simulation)
-- Real-time, closed-loop: sensory feedback → control neuron modulation → manifold reconfiguration → motor output
-- **Energy-efficient, low-latency** compared to conventional deep learning approaches
+- Building neuromorphic / SNN controllers for autonomous agents
+- Needing **explainable** neural computation (manifold geometry ↔ behavior mapping)
+- Closed-loop control where sensory feedback must reconfigure internal dynamics in real time
+- Mapping a high-level plan/world-model onto low-level motor primitives
+- Ring-attractor or bump-attractor based sequential generation on constrained hardware
 
-### Implementation Details
-- Circulant weight matrix structure enables efficient sparse connectivity
-- Control neuron inputs modulate heterogeneous inhibition, gain, and transient currents
-- Readout neurons decode manifold position into motor commands
-- Agent navigates maze using environmental cues as real-time sensory feedback
+## Implementation Checklist
 
-## Why This Matters
+1. Build ring network with asymmetric recurrent weights (circulant + sparse)
+2. Implement 3 control inputs: gain (speed), current (shape), inhibition mask (selection)
+3. Convert rate→spike probabilistically; keep spike-based inter-neuron communication
+4. Assign neuron groups to subspaces via bitmask (1 = in subspace)
+5. Decode bump position / spike counts → readout → motor commands
+6. Close the loop: environment feedback → update control params → re-steering
+7. Verify subspace rotations via principal-angle analysis against analytical solution
 
-1. **Explainability**: Both the predictable ring network activity and its geometric manifold interpretation make the system fully interpretable
-2. **Neuroscientific validity**: Uses mechanisms observed in biological circuits (ring attractors, gain modulation, selective inhibition)
-3. **Hardware feasibility**: Simple neural mechanisms readily implementable on neuromorphic chips
-4. **Compositional design**: Provides a "building block" that can be combined with other neuromorphic components
-5. **Bridge to biology**: Offers a computational testbed for studying how biological circuits translate spatiotemporal dynamics into behavior
+## Biological & Systems Significance
 
-## Application Patterns
+- Bridges neuroscience (neural manifolds in cortex/spinal cord) and neuromorphic engineering
+- Simple circuit mechanisms (gain, inhibition, transient input) readily implement sequence control
+- Offers a substrate for investigating biological neural dynamics and for humanoid/robotic control with many DOF
+- Framework is general: any plan can be translated into manifold representation suitable for spiking hardware
 
-### Closed-Loop Robotic Control
-```
-Sensory input → Control neurons → Ring attractor dynamics → Readout → Motor command
-                                    ↑                           ↓
-                              Manifold modulation          Agent behavior
-                                    ↑                           ↓
-                              Environmental feedback ← Environment state
-```
+## Pitfalls
 
-### Behavioral State Switching
-- Use **selection control** to inhibit different ring sectors → different behavioral readouts
-- Example: one sector → forward motion, another sector → turn, another → stop
-
-### Trajectory Modulation
-- Use **speed control** to accelerate/decelerate behavioral sequences
-- Use **shape control** to adjust precision (narrow bump = precise, broad bump = robust)
-
-## Implementation Considerations
-
-- **Circulant matrices**: Weights depend only on relative neuron position (w_ij = f(|i-j|))
-- **50% sparsity**: Random pruning with 2x weight scaling to maintain dynamics
-- **Control signal range**: Must be calibrated to avoid destabilizing the ring attractor
-- **Readout training**: Downstream readout neurons need to learn the manifold-to-action mapping
-- **SpiNNaker 2 mapping**: Each neuron → one core; spike-based communication via network-on-chip
-
-## Related Work
-
-- Ring attractor networks in neuroscience (head direction cells, spatial navigation)
-- Neural manifold analysis in motor cortex (Churchland, Shenoy labs)
-- Neuromorphic control architectures on Loihi, SpiNNaker, BrainScaleS
-- Dynamic systems approaches to neural computation
-
-## Trigger Words
-
-dynamic neural manifold, neuromorphic control, spinnaker 2, ring attractor, ring network,
-closed-loop spiking, subspace rotation, neural trajectory, manifold geometry,
-sequential neural activity, flexible behavior, activity bump, control neurons,
-circulant matrix, heterogeneous inhibition, gain modulation, transient currents,
-behavioral state switching, explainable neuromorphic, low-dimensional manifold,
-neural state space, readout neurons, motor control, embodied cognition
+- On-chip SRAM is limited: circulant+sparse storage needed; max execution time bounded by local memory
+- Higher connectivity → higher runtime per timestep on SpiNNaker 2 (benchmark before scaling)
+- Plan was manually created per maze in the paper — learning the plan from observations is future work
+- Ring network is powerful but simplified; real networks use dendrites in 3D (extension noted)
+- Rate→spike conversion introduces sampling noise; calibrate spike probability to match rate

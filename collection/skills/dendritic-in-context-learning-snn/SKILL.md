@@ -1,246 +1,107 @@
 ---
 name: dendritic-in-context-learning-snn
-description: >
-  Dendritic In-Context Learning (DendriCL) methodology for single-layer
-  compartmental spiking neural networks. Uses apical compartment dynamics
-  as an online LMS estimator with frozen synapses to achieve general-purpose
-  in-context learning. Solves the Garg-2022 benchmark where all prior SNNs
-  fail. Energy-efficient, seed-stable, requires neither attention nor depth.
+description: "DendriCL: dendritic in-context learning in a single-layer compartmental spiking neural network. Shows that the subthreshold dynamics of a single apical dendritic compartment is structurally identical to leaky online Widrow-Hoff LMS, collapsing general-purpose in-context learning (ICL) to a single layer with frozen synapses -- no attention, no depth, no inference-time plasticity. Solves Garg-2022 ICL at super-dimensional task sizes where dense Transformers grok and fail. Applicable to: biologically-plausible SNN, compartmental neuron models, in-context learning mechanisms, online LMS / adaptive filtering, single-layer architectures, mechanistic interpretability of ICL, grokking avoidance, neuromorphic spiking control."
+license: Complete terms in LICENSE.txt
+metadata:
+  arxiv_id: "2607.02283"
+  published: "2026-07-02"
+  authors: "Juwei Shen, Yujie Wu, Changwen Chen"
+  tags: [spiking-neural-networks, in-context-learning, compartmental-neuron, apical-dendrite, online-lms, widrow-hoff, single-layer, mechanistic-interpretability, grokking, garg-2022, neuromorphic]
 ---
 
-# Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+# DendriCL: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
 
-## Source
+**arXiv**: [2607.02283](https://arxiv.org/abs/2607.02283) | **Published**: 2026-07-02 | **Category**: cs.NE
 
-**Paper**: Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
-**arXiv**: 2607.02283v1
-**Authors**: Juwei Shen, Yujie Wu, Changwen Chen
-**Published**: 2026-07-02
-**Categories**: cs.NE, cs.LG (Neural and Evolutionary Computing, Machine Learning)
+## Core Contribution
 
-## Core Concepts
+Demonstrates that **in-context learning (ICL) does not require attention, depth, or inference-time synaptic plasticity**. A single compartmental spiking neuron whose **apical dendritic membrane potential implements an online Widrow-Hoff LMS recurrence** is sufficient. The algorithm is *structurally embedded in the dynamics*, not implicitly discovered by training — verified by a linear probe recovering the reference online-LMS trajectory at **R² = 0.93**.
 
-### The Problem: Why SNNs Fail at ICL
+Prior SNN compartmental models route adaptation through inference-time plasticity and treat the apical dendrite as a passive conduit for teacher/error signals. DendriCL inverts this: the apical compartment is an **active online estimator** whose subthreshold dynamics *are* the learning rule.
 
-In-context learning (ICL) — solving new tasks from a few examples without parameter updates — has been mechanistically traced to implicit gradient descent embedded in the forward pass across Transformers, Mamba, SSMs, and MLPs. **No prior SNN achieves general-purpose ICL** on the Garg-2022 benchmark:
+## Architecture (three-compartment pyramidal unit)
 
-- Spikformer: R² = 0.72 at d=20
-- Pure LIF: R² ≈ 0.09
-- LSNN: R² ≈ 0.01
-- Spiking SSMs: chance floor
+Each of `d_model = 384` parallel pyramidal-like units has:
+- **Basal dendrite**: feedforward projection of the input token `x_t`
+- **Apical dendrite**: persistent multi-dimensional subthreshold voltage `u_A` (NOT reset by spikes)
+- **LIF soma**: integrates basal + apical, spikes at threshold `θ`
 
-The failure is **structural**, not incidental: standard LIF neurons carry only a scalar membrane potential (reset after spikes) — no persistent multi-dimensional subthreshold state to serve as the substrate for implicit gradient descent.
+### Equations
 
-### Key Insight: Dendritic Compartment as Active Online Estimator
-
-Prior approaches treat the dendritic compartment as a **passive conduit** for error/teacher signals. This paper proves the subthreshold dynamics of a **single dendritic compartment** alone implement a complete online learning algorithm:
-
-$$u_A(t+1) = \alpha u_A(t) + \gamma (y_t - \hat{y}_t) W_A x_t$$
-
-This is structurally identical to **leaky online Widrow-Hoff LMS** — with all synaptic weights frozen at inference, the apical membrane is the **computational substrate** of the algorithm, not a conduit for it.
-
-### DendriCL Architecture
-
-A **single-layer compartmental spiking network** with three compartments:
-
-1. **Basal dendrite** ($u_B$): Receives bottom-up sensory input via frozen weights $W_B$
-2. **Apical dendrite** ($u_A$): Receives top-down feedback, implements leaky online LMS
-3. **Soma**: Integrates basal + apical, generates spikes
-
-**Critical property**: All synaptic weights ($W_A, W_B, W_{out}$) are **frozen at inference time**. The apical state is **not reset by spikes** and evolves across the full context.
-
-### Training
-
-- Train $(\alpha, \gamma, W_A, W_B)$ end-to-end by **BPTT**
-- After training, **all weights are frozen** — the apical membrane dynamics alone perform ICL
-- The apical membrane provably tracks the task parameter $w$
-
-### Results
-
-- **First single-layer SNN to solve general-purpose Garg-2022 ICL** across $d \in \{5, \ldots, 50\}$
-- **Uniquely seed-stable** at super-dimensional ICL ($d \geq 30$) where dense Transformers exhibit grokking-style bimodality and fail past $d=40$
-- **Linear probe R² = 0.93** recovers the reference online-LMS trajectory directly from the apical membrane — proving the algorithm is structurally embedded in the dynamics
-- **~4× spike reduction** over Pure LIF, projected **~10× Loihi-class energy advantage**
-- First ICL setting where **architectural simplicity and inference-time efficiency co-vary**
-
-## Implementation Guide
-
-### DendriCL Neuron Model
-
-```python
-class DendriCLNeuron:
-    """
-    Compartmental spiking neuron implementing dendritic ICL.
-    
-    Three compartments:
-    - Basal (u_B): Bottom-up sensory input, frozen weights
-    - Apical (u_A): Top-down feedback, online LMS dynamics (NOT reset by spikes)
-    - Soma: Integrates both, generates spikes
-    
-    All synaptic weights are FROZEN at inference time.
-    The apical membrane tracks the task parameter via leaky online LMS.
-    """
-    
-    def __init__(self, n_basal, n_apical):
-        # Frozen synaptic weights (trained by BPTT, frozen at inference)
-        self.W_B = nn.Parameter(torch.randn(n_apical, n_basal))  # basal -> soma
-        self.W_A = nn.Parameter(torch.randn(n_apical, n_basal))  # basal -> apical
-        self.W_out = nn.Parameter(torch.randn(1, n_apical))      # soma -> output
-        
-        # Apical LMS dynamics parameters
-        self.alpha = nn.Parameter(torch.tensor(0.9))  # leaky decay
-        self.gamma = nn.Parameter(torch.tensor(0.1))  # learning rate
-        
-        # Membrane potentials
-        self.u_B = None  # basal: reset by spikes
-        self.u_A = None  # apical: NOT reset by spikes (key innovation!)
-        self.u_soma = None
-        
-        # Spike threshold and reset
-        self.threshold = 1.0
-        self.reset_potential = 0.0
-    
-    def step(self, x_t, y_t, y_hat_t):
-        """
-        Single timestep of DendriCL dynamics.
-        
-        x_t: input features at time t
-        y_t: target label (provided in context)
-        y_hat_t: current prediction
-        """
-        # Basal update (resets after spikes)
-        basal_input = self.W_B @ x_t
-        self.u_B = self.alpha * self.u_B + basal_input
-        
-        # Apical update: LEAKY ONLINE LMS (NOT reset by spikes!)
-        error = y_t - y_hat_t
-        self.u_A = self.alpha * self.u_A + self.gamma * error * (self.W_A @ x_t)
-        
-        # Soma: integrate basal + apical
-        self.u_soma = self.u_B + self.u_A
-        
-        # Spike generation
-        spikes = self.u_soma > self.threshold
-        self.u_soma[spikes] = self.reset_potential  # Only soma resets, NOT apical!
-        
-        # Output prediction
-        y_hat = self.W_out @ self.u_soma
-        
-        return spikes, y_hat
+```
+u_B(t)   = W_B x_t                                    (basal projection)
+u_A(t+1) = α u_A(t) + γ e_t W_A x_t                    (apical online-LMS)   (1)
+v_soma   = g_B u_B + g_A W_out u_A                   (soma integration)
+spike if v_soma ≥ θ; readout active only at query position
 ```
 
-### Forward Pass for ICL
+- `e_t = y_t − W_out u_A(t)` is the prediction error at the labeled context pair
+- Synapses `W_A, W_B, W_out` are **frozen at inference** — no weight update
+- `u_A` initialized to 0 and evolves continuously across the whole context
 
-```python
-class DendriCL(nn.Module):
-    """
-    Single-layer compartmental SNN for in-context learning.
-    
-    Given context: [(x_1, y_1), (x_2, y_2), ..., (x_k, y_k)]
-    and query: x_q
-    Predict: y_q
-    
-    NO parameter updates at inference time.
-    The apical membrane tracks the task parameter w via LMS dynamics.
-    """
-    
-    def __init__(self, input_dim, apical_dim):
-        super().__init__()
-        self.neuron = DendriCLNeuron(input_dim, apical_dim)
-    
-    def forward(self, context, query):
-        """
-        context: list of (x_t, y_t) pairs (in-context examples)
-        query: x_q (query input, no label)
-        
-        Returns: y_hat_q (prediction for query)
-        """
-        # Initialize membrane potentials
-        self.neuron.u_B = torch.zeros(self.neuron.n_apical)
-        self.neuron.u_A = torch.zeros(self.neuron.n_apical)
-        
-        y_hat_prev = 0.0
-        
-        # Process context examples (with labels)
-        for x_t, y_t in context:
-            spikes, y_hat = self.neuron.step(x_t, y_t, y_hat_prev)
-            y_hat_prev = y_hat
-        
-        # Process query (no label → use current prediction as pseudo-target)
-        # In the frozen-weight regime, the apical membrane has already
-        # converged to the task parameter, so the query is processed
-        # with the learned mapping
-        spikes_q, y_hat_q = self.neuron.step(query, y_hat_prev, y_hat_prev)
-        
-        return y_hat_q
+### Core mechanism: Apical ≡ Leaky Online LMS
+
+With `W_A = I` and absorbing output projection into readout, the apical update reduces to classical leaky Widrow-Hoff LMS:
+
+```
+u_A(t+1) = α u_A(t) + γ e_t x_t
 ```
 
-### Linear Probe for Mechanistic Verification
+**Theorem** (classical LMS convergence, Widrow & Hoff 1960): for `0 < γ < 2/d` and suitable `α`, the apical state satisfies `E‖u_A(k) − w‖ → 0`, i.e. it tracks the true task parameter `w`. DendriCL's contribution is **structural** — this update is embedded in the compartmental architecture and BPTT only tunes `(α, γ, W_A, W_B)`.
 
-```python
-def verify_lms_equivalence(apical_states, reference_lms_trajectory):
-    """
-    Verify that the apical membrane implements leaky online LMS.
-    
-    A linear probe should recover the reference LMS trajectory
-    from the apical membrane state with R² ≈ 0.93.
-    
-    This proves the algorithm is STRUCTURALLY EMBEDDED in the dynamics,
-    not implicitly discovered during training.
-    """
-    from sklearn.linear_model import LinearRegression
-    from sklearn.metrics import r2_score
-    
-    # Fit linear probe from apical states to reference LMS trajectory
-    probe = LinearRegression()
-    probe.fit(apical_states, reference_lms_trajectory)
-    
-    # Verify
-    predicted = probe.predict(apical_states)
-    r2 = r2_score(reference_lms_trajectory, predicted)
-    
-    print(f"R² = {r2:.3f}")  # Should be ~0.93
-    assert r2 > 0.9, f"LMS equivalence failed: R² = {r2:.3f}"
-    return r2
-```
+## Training & Hyperparameters
 
-## Key Design Principles
+- BPTT end-to-end over `(α, γ, W_A, W_B, W_out)`; synapses then frozen
+- `d_model = d_apical = 384`, ~0.75M total params
+- Membrane: `τ = 4, θ = 1`; arctan spike approximation (Neftci 2019)
+- Optimizer: **AdamW, lr = 1e-3**, weight decay
+- Initialization: `α̃ = 2.2` (so `α ≈ 0.9` at start), `γ̃ = 0` (so `γ ≈ 0.1` at start); `W` drawn `N(0, 1/d_apical)`
 
-1. **Frozen Weights at Inference**: All synaptic weights are frozen — the learning happens purely through apical membrane dynamics
-2. **Apical ≠ Passive**: The dendritic compartment is the **active computational substrate** of online LMS, not a passive carrier
-3. **No Spike Reset on Apical**: The apical membrane potential is NOT reset by spikes — it persists and accumulates across the full context
-4. **Single Layer Sufficiency**: No depth, no attention, no inference-time plasticity needed — a single compartment with LMS dynamics is sufficient
-5. **Seed Stability**: Unlike Transformers that exhibit grokking-style bimodality at high task dimensions, DendriCL is uniquely seed-stable
+## Benchmark: Garg-2022 ICL
 
-## Comparison to Prior Approaches
+- Linear regression: `w ∼ N(0, I_d)`, `x_i ∼ N(0, I_d)`, `y_i = wᵀ x_i + ε_i`, context length `k = 2d`
+- Evaluated at `d ∈ {5, 10, 15, 20, 25, 30, 40, 50}`
+- DendriCL R²: `0.807 ± 0.005` (d=5) → `0.820 ± 0.005*` (d=20) at 0.75M params
 
-| Architecture | Garg-2022 d=10 | d=20 | d=30+ | Seed Stable |
-|---|---|---|---|---|
-| **DendriCL** | ✓ | ✓ | ✓ | ✓ (unique) |
-| Transformer | ✓ | ✓ | ✗ (grokking) | ✗ |
-| Spikformer | ✗ | ✗ (0.72) | ✗ | ✗ |
-| Pure LIF | ✗ | ✗ (0.09) | ✗ | ✗ |
-| LSNN | ✗ | ✗ (0.01) | ✗ | ✗ |
-| Spiking SSM | ✗ | ✗ | ✗ | ✗ |
+### Key results
+- **Seed-stable at super-d**: Dense Transformers exhibit grokking-style bimodality and **fail past d=40**; DendriCL converges smoothly and monotonically (σ ≤ 0.005 per step) at all tested d
+- **Mechanistic verification**: linear probe of apical trajectory into reference online-LMS estimate gives **R² = 0.93** at d=20 — ICL capacity is quantitatively explained by apical encoding quality
+- **Depth ablation**: L=1 matches L=2 at d=20 (0.820 vs 0.793) — single layer sufficient
+- **Spike cost**: ~17k spikes/forward pass at d=20; apical compartment itself never spikes (subthreshold state); ~85% soma sparsity
+- **Width cliff**: `d_apical ≤ 384` all train; `d_apical ≥ 512` diverge (frozen `γ=0` recovers R²≈0.50 even at 768, isolating pathology to apical recurrence). Matches LMS stability bound `γ < 2/(d+2)`
 
-## Application Domains
+## When to Use This Skill
 
-- **Neuromorphic ICL**: Deploying in-context learning on energy-efficient neuromorphic hardware (Loihi, SpiNNaker 2)
-- **Low-power adaptive systems**: Real-time task adaptation without weight updates
-- **Computational neuroscience**: Understanding how dendritic computation enables flexible behavior
-- **Edge AI**: In-context learning on resource-constrained devices
+- Designing biologically-plausible SNNs that must do few-shot / in-context learning
+- Replacing Transformer/SSM ICL with a single-layer, energy-efficient, mechanistically-transparent substrate
+- Avoiding grokking instability in super-dimensional ICL regimes
+- Building neuromorphic controllers where synapse updates at inference are undesirable
+- Mechanistic interpretability studies: probing apical membrane to read out the embedded algorithm
 
-## Relationships to Other Skills
+## Implementation Checklist
 
-- Related to `spiking-neural-network-analysis` for SNN implementation details
-- Complements `dendrocentric-snn-event-classification` for dendritic computation
-- Connects to `spiking-sequence-machines-transformers` for theoretical SNN capabilities
-- Builds on `three-factor-snn-learning` for biologically-plausible learning rules
+1. Build a 3-compartment spiking unit: basal (W_B projection), apical (persistent u_A), LIF soma
+2. Implement apical recurrence exactly as Eq (1) — this IS the learning rule
+3. Freeze all synaptic weights after BPTT training
+4. Run Garg-2022 protocol: token format `[x_i; y_i; flag_i]`; readout only at query
+5. Validate with a linear probe: ridge-regress apical trajectory → reference online-LMS estimate; expect R² ≥ 0.9
+6. Keep `d_apical ≤ ~30×d` to stay inside LMS stability region
+
+## Biological Grounding
+
+- Anatomically: apical-basal-soma layout = cortical layer-5 pyramidal neuron (Larkum 2013)
+- Apical subthreshold Ca²⁺ plateaus persist 100+ ms; apical-basal coincidence at soma
+- Hypothesis (falsifiable via in-vivo recording): cortex implements ICL via apical-LMS dynamics
+
+## Extensions (from paper)
+
+- **Kernel apical**: replace `W_A x_t` with `φ(x_t)` (e.g. ReLU(W1 x_t) or random-feature) → Bayes-optimal if φ includes true nonlinearity
+- **Multi-branch apical**: K parallel apical branches, each its own LMS → piecewise-linear estimator
+- **Nonlinear readout**: keep apical linear, add small nonlinear `g(u_A)` readout
 
 ## Pitfalls
 
-- **Apical dimension**: The apical compartment dimensionality must match the task dimension — too small and LMS cannot track the parameter, too large and training becomes unstable
-- **BPTT training**: While inference uses frozen weights, training requires BPTT through the spiking dynamics — use surrogate gradients
-- **Leaky parameters**: The learned $(\alpha, \gamma)$ must satisfy stability constraints ($\alpha < 1$ for convergence)
-- **Context length**: The apical membrane has finite capacity — very long contexts may cause drift without proper $\alpha$ tuning
-- **Not universal for nonlinear tasks**: The LMS equivalence is for linear regression; nonlinear extensions require additional mechanisms (see Appendix N in the paper)
+- Do NOT reset apical state on spike — persistence across context is what carries the algorithm
+- LMS equivalence holds for the apical compartment only; LIF reset is a separate readout path
+- Theorem requires `γ < 2/d`; BPTT may push `γ` unstable if `d_apical ≫ d` → training divergence
+- Only validated on Garg synthetic function classes; language/vision ICL unaddressed

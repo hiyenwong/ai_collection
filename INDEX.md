@@ -3,6 +3,24 @@
 
 ## 2026-07-13 - Neuroscience Research (Cron Job)
 
+### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
+- [[dendritic-in-context-learning-snn]] - Single-layer compartmental SNN whose apical dendritic subthreshold dynamics are structurally identical to leaky online Widrow-Hoff LMS; solves Garg-2022 ICL at super-dimensions where Transformers grok and fail, with frozen synapses (arXiv: 2607.02283)
+  - Apical recurrence `u_A(t+1) = α u_A(t) + γ e_t W_A x_t` IS the learning rule — no attention, depth, or inference-time plasticity needed
+  - Linear probe recovers reference online-LMS trajectory from apical membrane at R² = 0.93 (algorithm is structurally embedded, not implicitly discovered)
+  - Seed-stable at d up to 50 where dense Transformers exhibit grokking-style bimodality and fail past d=40
+  - Width cliff: d_apical ≤ 384 trains; d_apical ≥ 512 diverges (matches LMS stability γ < 2/(d+2)); ~0.75M params, AdamW lr=1e-3
+  - **Activation**: dendritic in-context learning, apical compartment, online LMS, Widrow-Hoff, single-layer SNN, Garg-2022 ICL, grokking avoidance, mechanistic interpretability, compartmental neuron
+
+### Dynamic Neural Manifolds for Flexible Closed-Loop Control on Neuromorphic Hardware
+- [[dynamic-neural-manifolds-neuromorphic-control]] - Ring-attractor spiking network on SpiNNaker 2 where gain/inhibition/transient currents drive subspace rotations and trajectory control within low-dimensional neural manifolds; validated on closed-loop maze navigation (arXiv: 2607.07373)
+  - Three control neurons: multiplicative gain (speed), additive current (shape), subspace inhibition (selection/behavior switch)
+  - Subspace rotation verified via first principal angle vs analytical solution; selective inhibition preserves sequence dynamics
+  - SpiNNaker 2 impl: probabilistic rate→spike layer, 50% sparse circulant weights, host interface streams params + reads output spikes
+  - Closed-loop maze: three subspaces encode forward/curved/turn; plan translated into manifold control params for motor output
+  - **Activation**: dynamic neural manifolds, ring attractor, subspace rotation, closed-loop SNN, SpiNNaker 2, low-dimensional dynamics, behavioral switching, explainable neuromorphic control
+
+## 2026-07-13 - Neuroscience Research (Cron Job)
+
 ### A multi-ensemble mean-field reduction method for networks of globally coupled phase oscillators with arbitrary parameter distributions
 - [[multi-ensemble-mean-field-oscillators]] - Data-driven multi-ensemble extension of Ott-Antonsen to arbitrary/empirical frequency distributions, enabling low-dimensional stability/bifurcation analysis of heterogeneous oscillator populations (arXiv: 2607.09516)
   - Decomposes empirical natural-frequency distribution into a mixture of K OA-admissible bases (e.g. Lorentzians)
