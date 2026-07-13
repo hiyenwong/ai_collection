@@ -1,6 +1,17 @@
 # AI Collection Index
 
 
+
+## 2026-07-14 - Neuroscience Research (Cron Job)
+
+### A Spiking Sequence Generator for Polar Trajectories on Neuromorphic Hardware
+- [[spiking-polar-trajectory-generator]] - WTA-core SNN with accessory populations that induce controlled transitions to generate interpretable polar (r,θ) trajectories on neuromorphic hardware for SWaP-constrained control (arXiv: 2607.02753)
+  - WTA active population *is* the dynamical state: interpretability is structural, not post-hoc
+  - Accessory populations drive explicit tuned transitions stepping the state along a trajectory
+  - Polar (r,θ) param compact + physically meaningful for motor/steering control; exploits spike-based low-power dynamics
+  - Targets size/weight/power-constrained embedded control (drones, robotics, prosthetics)
+  - **Activation**: spiking trajectory generator, polar trajectory, winner-take-all SNN, accessory population, controlled neural transition, neuromorphic control, interpretable SNN dynamics, energy-efficient controller
+
 ## 2026-07-14 - Neuroscience Research (Cron Job)
 
 ### Parallel Tempering in Spiking Neural Network CSP Solvers
