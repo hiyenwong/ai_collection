@@ -1,6 +1,22 @@
 # AI Collection Index
 
 
+## 2026-07-13 - Quantum Reservoir Computing (Cron Job)
+
+### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
+- [[non-markovian-kerr-feedback-qrc]] - Proves single Kerr nonlinear element with time-delay feedback outperforms arbitrarily many linear optical modes in CV-QRC (arXiv: 2606.06689)
+  - N-mode Gaussian reservoir capped at cross-time nonlinear rank 2N; Kerr + depth D achieves rank D with 1 mode
+  - Loss is enabler: dissipation creates distinct fingerprints per round-trip
+  - One nonlinear mode replaces ~100 linear modes on integrated photonics
+  - **Activation**: Kerr feedback QRC, non-Markovian reservoir, cross-time nonlinear rank, time-delay feedback, optical computing
+
+### Temporal Processing of Quantum States with Hybrid Quantum-Classical Reservoirs
+- [[hybrid-quantum-classical-reservoirs]] - Hybrid qubit quantum reservoir + classical ESN synergistically outperforms both standalone components for nonlinear functional approximation (arXiv: 2606.21327)
+  - QRC alone fails nonlinear tasks (purity, entropy) due to linearity barrier; hybrid overcomes this
+  - Advantage persists under single-axis measurements (no full tomography needed)
+  - Online monitoring protocol accounts for measurement back-action and finite shots
+  - **Activation**: hybrid quantum-classical reservoir, echo state network, purity estimation, quantum state processing, measurement back-action
+
 ## 2026-07-13 - Systems Engineering Research (Cron Job)
 
 ### Self-Adaptive Anomaly Detection with Reinforcement Learning and Human Feedback in Connected Vehicles
