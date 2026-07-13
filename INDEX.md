@@ -1,6 +1,17 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Neuroscience Research (Cron Job)
+
+### Spiking Dynamic Neural Manifolds — Implementation Recipe (arXiv 2607.07373)
+- [[spiking-dynamic-neural-manifolds-implementation]] - Engineering how-to for deploying the rate-based ring-attractor manifold model on SpiNNaker 2: rate→spike conversion, sparse circulant weight memory, three control knobs, and PCA validation (companion to dynamic-neural-manifolds-neuromorphic-control) (arXiv: 2607.07373)
+  - Rate→spike layer: treat rate as Bernoulli spike probability per 1ms step to cut inter-neuron communication
+  - Sparse circulant weights: store one row + 1-bit mask (128KB SRAM/core exhausts in ~1s if recording on-chip) — stream params in, spikes out
+  - Three control knobs: S=gain→speed, I=additive current→bump radius/shape, p_inh=subspace inhibition→rotation by θ=arccos(1−p_inh)
+  - PCA validation: first principal angle between inhibitory-ensemble subspaces must match arccos(1−p_inh); runtime <1ms/step at N=500, 20% conn
+  - Closed-loop maze: 3 subspaces (forward/turn/jump) + linear readout trained on 200 random actions (250ms each)
+  - **Activation**: dynamic neural manifold implementation, rate-to-spike conversion, sparse circulant weights, subspace rotation, SpiNNaker 2, closed-loop SNN, PCA manifold validation, ring attractor
+
 ## 2026-07-13 - Neuroscience Research (Cron Job)
 
 ### Dendritic In-Context Learning in a Single-Layer Spiking Neural Network
