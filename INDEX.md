@@ -26,6 +26,22 @@
   - Handles heterogeneous electrode configurations without montage-specific tuning
   - **Activation**: EEG contrastive learning, CoCoT, EEG foundation model, masked reconstruction, multiscale temporal convolution, self-supervised EEG
 
+### Dendritic In-Context Learning in Single-Layer SNNs (DendriCL)
+- [[dendri-cl-single-layer-snn]] - First single-layer compartmental SNN achieving general-purpose ICL on Garg-2022 benchmark, with apical subthreshold dynamics structurally implementing leaky online LMS (arXiv: 2607.02283)
+  - Apical membrane implements leaky Widrow-Hoff LMS with frozen inference weights: u_A(t+1) = α·u_A(t) + γ·(y_t - ŷ_t)·W_A·x_t
+  - Only architecture seed-stable at d ≥ 30 where Transformers show grokking-style bimodal failure
+  - Linear probe recovers LMS trajectory at R² = 0.93 — algorithm structurally embedded in dynamics
+  - ~4× spike reduction over Pure LIF, projected ~10× Loihi-class energy advantage
+  - **Activation**: dendritic ICL, single-layer SNN, apical LMS, compartmental spiking neuron, Garg-2022, frozen-weight learning, biological in-context learning
+
+### Dynamic Neural Manifolds for Neuromorphic Closed-Loop Control
+- [[dynamic-neural-manifolds-control]] - Ring network with three control knobs (heterogeneous inhibition, gain modulation, transient currents) for explainable closed-loop robotic control on SpiNNaker 2 (arXiv: 2607.07373)
+  - Heterogeneous inhibition enables subspace rotation (angle = arccos(1 - p_inh)) for behavioral switching
+  - Multiplicative gain controls trajectory speed, additive current controls trajectory shape
+  - Real-time closed-loop maze navigation with ~3 timestep latency at 1ms resolution
+  - Maps low-level circuit architecture to high-level geometric features for explainable AI
+  - **Activation**: neural manifold, neuromorphic control, SpiNNaker 2, ring network, subspace rotation, bump attractor, explainable robotics
+
 ## 2026-07-13 - Quantum Reservoir Computing (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
