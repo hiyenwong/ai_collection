@@ -18,6 +18,14 @@
   - Experimentally validates optimal dataset size for single-channel EEG sleep staging models
   - **Activation**: sleep staging, lightweight eeg, mamba architecture, gabor filters, contrastive loss
 
+### CoCoT-EEG: Contrastive-Pretrained Multiscale Convolutional Transformer for EEG Decoding
+- [[cocot-eeg-contrastive-foundation]] - First systematic demonstration that contrastive learning outperforms masked reconstruction (MAE) for EEG foundation models, with multiscale temporal convolution + Transformer architecture (arXiv: 2607.09543)
+  - Identifies why MAE is suboptimal for EEG: high noise amplitude, information confined to narrow frequency bands
+  - Multiscale temporal convolution input layers act as learnable filter bank replacing hand-crafted spectral features
+  - CoCoT from scratch outperforms single-task models and rivals pretrained reconstruction-based FMs
+  - Handles heterogeneous electrode configurations without montage-specific tuning
+  - **Activation**: EEG contrastive learning, CoCoT, EEG foundation model, masked reconstruction, multiscale temporal convolution, self-supervised EEG
+
 ## 2026-07-13 - Quantum Reservoir Computing (Cron Job)
 
 ### Computational Superiority of Non-Markovian Kerr Feedback in Continuous-Variable Quantum Reservoir Computing
