@@ -1,6 +1,20 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Systems Engineering Research (Cron Job)
+
+### Learning-enabled Parameter Synthesis for Nonlinear Systems from Signal Temporal Logic
+- [[stl-parameter-synthesis-nonlinear]] - Gradient-based optimization + set-based reachability gives provable worst-case STL satisfaction without target time-series data (arXiv: 2607.08899)
+  - Gradient-based optimization + set-based reachability gives provable worst-case STL satisfaction without target time-series data
+  - Scales to 18-D parameter spaces; sound (not Monte-Carlo) reachability verification
+  - **Activation**: STL parameter synthesis, signal temporal logic, reachability verification, nonlinear control, formal methods, robust satisfaction
+
+### Data-driven predictive control of nonlinear systems using weighted regularization
+- [[weighted-regularization-deepc-nonlinear]] - Weighted-norm regularization localizes DeePC predictor without dropping rank (preserves feasibility) (arXiv: 2607.09187)
+  - Weighted-norm regularization localizes DeePC predictor without dropping rank (preserves feasibility)
+  - Retains all data; convex well-posed QP; outperforms hard subset selection on nonlinear two-tank
+  - **Activation**: DeePC, data-enabled predictive control, Willems fundamental lemma, nonlinear MPC, weighted regularization, operating-point localization, data-driven control, two-tank system
+
 ## 2026-07-14 - Neuroscience Research (Cron Job) — Spatial Neighboring Scattering Transform
 
 ### Spatial Neighboring Scattering Transform: A Cross-Channel Amplitude Coupling Measure for EEG Connectivity
