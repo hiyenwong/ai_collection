@@ -1,6 +1,14 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Quantum Dynamics / Krylov Complexity (Cron Job)
+
+### Krylov Complexity from Loschmidt Amplitude
+- [[krylov-complexity-loschmidt-amplitude]] - Relate Krylov complexity to the Loschmidt amplitude to diagnose quantum chaos and operator growth (arXiv: 2607.10921)
+  - Krylov complexity expressed algebraically as a derivative of the Loschmidt amplitude (overlap of states evolved under two nearby Hamiltonians)
+  - Loschmidt amplitude decay is Lyapunov-controlled in chaotic systems, unifying operator-growth and return-amplitude diagnostics
+  - **Activation**: Krylov complexity, Loschmidt amplitude, operator growth, quantum chaos, Lyapunov exponent, Lanczos recursion, OTOC, Krylov space
+
 ## 2026-07-14 - Systems Engineering Research (Cron Job)
 
 ### Learning-enabled Parameter Synthesis for Nonlinear Systems from Signal Temporal Logic
