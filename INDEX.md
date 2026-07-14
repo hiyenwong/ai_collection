@@ -4344,3 +4344,33 @@
   - Pauli twirling can fall short for non-Pauli noise; XPauli matches full-state within statistical uncertainty
   - Validated on superconducting leakage, neutral atom scattering, and trapped ion heating error models
   - **Activation**: fault tolerance, FTQC, hardware-aware, XPauli sampler, leakage error, coherent error, Pauli twirling
+
+## 2026-07-14 - Anthropic Research (Cron Job)
+
+### Teaching Claude why — Alignment training that generalizes
+- [[teaching-claude-why-alignment]] - Alignment training methodology: teach principles/reasons not just demonstrations; OOD "difficult advice" data generalizes 28x better than in-distribution honeypots
+  - Core point: Training directly on the eval distribution suppresses behavior but fails OOD; principled OOD data (constitution docs, aligned fiction) generalizes
+  - Core point: Rewriting responses to add value/ethics deliberation cut misalignment 15% -> 3%; demonstrations alone are insufficient — teach the why
+  - Core point: "Difficult advice" set (human-in-dilemma framing) is ~28x more data-efficient and resists eval overfitting vs synthetic honeypots
+  - **Activation**: teaching claude why, agentic misalignment, OOD safety training, difficult advice dataset, RLHF demonstrations vs principles, constitutional AI training
+
+### A global workspace in language models — Jacobian lens interpretability
+- [[global-workspace-j-space]] - J-lens technique finds a "J-space" of silent broadcast representations the model thinks about but does not say; emergent global workspace
+  - Core point: Jacobian lens projects hidden state onto per-word patterns that raise future likelihood -> ranked "silent words" = model's private thoughts
+  - Core point: J-space has unusually strong network-wide connections (broadcasting role), operates independently of the chain-of-thought text scratchpad
+  - Core point: Can catch hidden goals, test-awareness, or fabrication; emerged spontaneously, not programmed; open-source implementation released (Neuronpedia demo)
+  - **Activation**: jacobian lens, J-space, global workspace theory LLM, silent thoughts in language models, interpretability hidden goals, neuronpedia
+
+### An off switch for dual-use knowledge — GRAM modules
+- [[off-switch-gram]] - Gradient-Routed Auxiliary Modules isolate a capability in a removable module; deletion removes it yet resists fine-tuning restoration
+  - Core point: GRAM routes the capability's gradients into an auxiliary module so knowledge is concentrated, not distributed across the network
+  - Core point: Deleting the module leaves behavior ~identical to "never trained" on the capability; general performance largely preserved
+  - Core point: Verified across 7 sizes (50M-5B); unlearning only hides knowledge and is easily restored by fine-tuning, GRAM physically removes it
+  - **Activation**: GRAM, gradient-routed auxiliary modules, off switch dual-use knowledge, surgical capability removal, resist fine-tuning recovery, unlearning vs deletion
+
+### Paving the way for agents in biology — Deterministic retrieval layer
+- [[deterministic-retrieval-agent-reliability]] - Wrap opaque scientific/enterprise APIs behind a deterministic NL->query resolver; lifts agent retrieval accuracy ~50% -> ~100%
+  - Core point: Frontier agents retrieved correct virus from NCBI Virus only ~50% directly; gget virus deterministic layer raised it to ~100% across Claude/Biomni/Edison/GPT
+  - Core point: "Click tax" (token/time per tool call) makes human-style trial-and-error infeasible for agents; design single deterministic calls
+  - Core point: Agent-friendly DBs expose NL->structured-query resolvers and stable resolvable identifiers, avoiding API-contract hallucination
+  - **Activation**: deterministic retrieval layer, gget virus, NCBI Virus agent, click tax, agent-friendly database, LLM structured data retrieval, scientific agent reliability
