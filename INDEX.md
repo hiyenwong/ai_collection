@@ -15,6 +15,15 @@
   - Retains all data; convex well-posed QP; outperforms hard subset selection on nonlinear two-tank
   - **Activation**: DeePC, data-enabled predictive control, Willems fundamental lemma, nonlinear MPC, weighted regularization, operating-point localization, data-driven control, two-tank system
 
+## 2026-07-14 - Neuroscience Research (Cron Job) — Emergent Generalization by Representation Learning
+
+### Emergent Generalization by Representation Learning in Artificial Neural Networks
+- [[emergent-generalization-representation-learning]] - An explicit information bottleneck forcing an RNN to learn a low-D representation is necessary for rotational and OOD generalization; information-theoretic causal emergence shows a non-monotonic memorize→generalize trajectory, with analogous CA1 hippocampal dynamics in mice (arXiv: 2607.10430)
+  - Low-D representation is causal (not incidental): bottleneck compression is required for rotational and out-of-distribution generalization
+  - Causal-emergence trajectory is non-monotonic (down→minimum→up) across training and its magnitude predicts and scales with generalization
+  - Convergence with CA1 hippocampal activity of mice learning an alternating maze links ANN representation learning to biological neural computation
+  - **Activation**: neural manifold generalization, information bottleneck RNN, causal emergence representation, out-of-distribution generalization, memorization to generalization transition, CA1 hippocampal dynamics, low-dimensional representation necessary generalization
+
 ## 2026-07-14 - Neuroscience Research (Cron Job) — Spatial Neighboring Scattering Transform
 
 ### Spatial Neighboring Scattering Transform: A Cross-Channel Amplitude Coupling Measure for EEG Connectivity
