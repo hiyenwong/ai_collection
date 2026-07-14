@@ -1,3 +1,11 @@
+## 2026-07-15 - Neuroscience Research (Cron Job)
+
+### Efficient and Robust Spiking Neural Networks for sEMG-Based Muscle Fatigue Detection
+- [[efficient-robust-snn-semg-fatigue-detection]] - A skill for implementing efficient and robust spiking neural networks for sEMG-based muscle fatigue detection (arXiv: 2607.11065)
+  - Core contribution: SNN framework with SDH training for robust fatigue detection
+  - Key innovation: Quantization-compatible training reducing energy consumption by up to 201x
+  - **Activation**: snn, semg, muscle fatigue, spiking neural network
+
 # AI Collection Index
 
 
@@ -61,6 +69,12 @@
   - **Activation**: dendritic in-context learning, DendriCL, single-layer SNN ICL, compartmental spiking neuron, apical LMS dynamics, Garg-2022 ICL benchmark, biologically plausible in-context learning
 
 ## 2026-07-14 - Neuroscience Research (Cron Job)
+
+### CogniSNN: Random Graph Architecture for Spiking Neural Networks
+- [[cognisnn-random-graph-architecture]] - Skill for understanding and applying the CogniSNN framework: a Spiking Neural Network paradigm that incorporates Random Graph Architecture to achieve Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability for brain-inspired intelligence. (arXiv: 2512.11743)
+  - Provides a comprehensive guide to the CogniSNN framework, including its key contributions, methodology, applications, and how to use the skill.
+  - Includes references to the arXiv paper and code repository.
+
 
 ### A Spiking Sequence Generator for Polar Trajectories on Neuromorphic Hardware
 - [[spiking-polar-trajectory-generator]] - WTA-core SNN with accessory populations that induce controlled transitions to generate interpretable polar (r,θ) trajectories on neuromorphic hardware for SWaP-constrained control (arXiv: 2607.02753)
