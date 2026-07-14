@@ -1,6 +1,14 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Neuroscience Research (Cron Job) — SpectralOT Functional Alignment
+
+### Fast Whole-Brain, Geometry-Aware Functional Alignment for Cross-Subject Decoding
+- [[spectral-ot-functional-alignment]] - fMRI functional alignment that embeds cortical Laplace-Beltrami eigenmodes into a regularized optimal-transport cost, balancing functional alignment vs anatomical preservation at low compute (arXiv: 2607.10931)
+  - Laplace-Beltrami (spectral) geometry basis regularizes OT alignment so cortical structure is preserved while aligning functional features
+  - Spectral formulation keeps it fast vs full vertex-wise OT / Riemannian alignment; targets population-level cross-subject decoders
+  - **Activation**: functional alignment, cross-subject decoding, fMRI alignment, Laplace-Beltrami eigenmodes, cortical geometry, optimal transport, Hyperalignment, surface-based alignment, population decoder
+
 ## 2026-07-14 - Quantum Dynamics / Krylov Complexity (Cron Job)
 
 ### Krylov Complexity from Loschmidt Amplitude
