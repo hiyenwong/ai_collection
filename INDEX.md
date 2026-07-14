@@ -1,6 +1,15 @@
 # AI Collection Index
 
 
+## 2026-07-14 - Neuroscience Research (Cron Job) — Spatial Neighboring Scattering Transform
+
+### Spatial Neighboring Scattering Transform: A Cross-Channel Amplitude Coupling Measure for EEG Connectivity
+- [[spatial-neighboring-scattering-transform]] - Wavelet-scattering-based EEG connectivity descriptor that recovers amplitude-envelope and cross-frequency coupling, robust where phase-sync (PLI/wPLI) finds negligible overlap (arXiv: 2607.08855)
+  - Extends wavelet scattering transform to the multichannel setting; first-order descriptor captures amplitude-envelope coupling, second-order reveals slow-rhythm gating (cross-frequency structure)
+  - On BCI IV-2a motor imagery: central-parietal amplitude coupling reproduced across all subjects + both imagery conditions; PLI/wPLI showed zero overlap
+  - Complements (not replaces) phase-sync; amplitude-domain inter-regional dependence is a largely distinct connectivity signal
+  - **Activation**: EEG connectivity, amplitude coupling, wavelet scattering, volume conduction, PLI wPLI comparison, cross-frequency coupling, motor imagery connectivity
+
 
 
 ## 2026-07-14 - Neuroscience Research (Cron Job) — Dendritic ICL SNN
