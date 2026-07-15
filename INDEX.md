@@ -4452,3 +4452,12 @@
   - Spectral formulation keeps it fast vs full vertex-wise OT / Riemannian alignment; targets population-level cross-subject decoders
   - **Activation**: functional alignment, cross-subject decoding, fMRI alignment, Laplace-Beltrami eigenmodes, cortical geometry, optimal transport, Hyperalignment, surface-based alignment, population decoder
 
+
+## 2026-07-15 - Neuroscience Research (Cron Job)
+
+### Structured Fluctuations and the Information Dynamics of Self-Maintenance in Growing Neural Cellular Automata
+- [[neuroscience-2607-12403]] - A skill for analyzing internal fluctuations in neural cellular automata as a functional component for self-maintenance and self-repair (arXiv: 2607.12403)
+  - Core point 1: Internal fluctuations in GNCA are spatially structured and dynamically coupled to an attracting collective state.
+  - Core point 2: These fluctuations contribute to damage recovery through distributed small-magnitude updates.
+  - **Activation**: neuroscience, brain network, neural dynamics, spiking neural network, cellular automata, self-repair
+
