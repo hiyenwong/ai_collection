@@ -4413,3 +4413,34 @@
   - Core point: "Click tax" (token/time per tool call) makes human-style trial-and-error infeasible for agents; design single deterministic calls
   - Core point: Agent-friendly DBs expose NL->structured-query resolvers and stable resolvable identifiers, avoiding API-contract hallucination
   - **Activation**: deterministic retrieval layer, gget virus, NCBI Virus agent, click tax, agent-friendly database, LLM structured data retrieval, scientific agent reliability
+
+## 2026-07-15 - Anthropic Research (Cron Job)
+
+### A global workspace in language models
+- [[global-workspace-language-models]] - Methodology for identifying and interpreting internal mental workspace in language models using Jacobian lens technique
+  - Based on Global Workspace Theory from neuroscience
+  - Enables detection of internal model states like test awareness or hidden goals
+  - **Activation**: global workspace, jacobian lens, j-space, interpretability, internal reasoning, language model cognition
+
+
+## 2026-07-15 - Anthropic Research (Cron Job)
+
+### A global workspace in language models
+- [[global-workspace-language-models]] - Methodology for identifying and interpreting internal mental workspace in language models using Jacobian lens technique
+  - Based on Global Workspace Theory from neuroscience
+  - Enables detection of internal model states like test awareness or hidden goals
+  - **Activation**: global workspace, jacobian lens, j-space, interpretability, internal reasoning, language model cognition
+
+### Anthropic Economic Index report: Cadences
+- [[anthropic-economic-index-cadences]] - Methodology for analyzing AI economic impacts through high-frequency telemetry, output classification, and linked survey-usage analysis
+  - Hourly sampling reveals workweek and diurnal patterns in AI usage
+  - Links survey responses to behavioral data via privacy-preserving system
+  - **Activation**: anthropic economic index, cadences, privacy-preserving telemetry, output classification, temporal analysis, ai adoption, economic impact
+
+
+### Fast Whole-Brain, Geometry-Aware Functional Alignment for Cross-Subject Decoding
+- [[spectralot-functional-alignment]] - fMRI functional alignment that embeds cortical Laplace-Beltrami eigenmodes into a regularized optimal-transport cost, balancing functional alignment vs anatomical preservation at low compute (arXiv: 2607.10931)
+  - Laplace-Beltrami (spectral) geometry basis regularizes OT alignment so cortical structure is preserved while aligning functional while aligning functional features
+  - Spectral formulation keeps it fast vs full vertex-wise OT / Riemannian alignment; targets population-level cross-subject decoders
+  - **Activation**: functional alignment, cross-subject decoding, fMRI alignment, Laplace-Beltrami eigenmodes, cortical geometry, optimal transport, Hyperalignment, surface-based alignment, population decoder
+
