@@ -1,3 +1,11 @@
+## 2026-07-15 - Neuroscience Research (Cron Job)
+
+### Event-Based Neural Decoding for Neuroprosthetic Motor Control
+- [[event-based-neural-decoding-neuroprosthetic]] - Event-based neural decoding framework using spiking GRU with sparse graded spikes for efficient on-device motor control (arXiv: 2607.11445)
+  - Core contribution: Spiking GRU with graded spike encoding for low-latency, low-power decoding of motor intentions
+  - Key innovation: Achieves >90% decoding accuracy with <1mW power consumption on neuromorphic hardware
+  - **Activation**: neural decoding, neuroprosthetic, spiking neural network, event-based processing, motor control
+
 ## 2026-07-15 - Neuroscience Research (Cron Job)\n\n### Emergent Generalization by Representation Learning in Artificial Neural Networks\n- [[emergent-generalization-representation-learning]] - An explicit information bottleneck forcing an RNN to learn a low-dimensional representation is necessary for rotational and out-of-distribution generalization (arXiv: 2607.10430)\n  - Low-D representation is causal, not incidental: explicit information bottleneck required for rotational and OOD generalization\n  - Causal-emergence trajectory is non-monotonic (down-min-up) even while prediction loss falls monotonically\n  - **Activation**: neural manifold generalization, information bottleneck RNN, causal emergence representation, out-of-distribution generalization, memorization to generalization transition, CA1 hippocampal dynamics, low-dimensional representation necessary generalization\n\n## 2026-07-15 - Neuroscience Research (Cron Job)
 
 ### Efficient and Robust Spiking Neural Networks for sEMG-Based Muscle Fatigue Detection
