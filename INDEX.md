@@ -19,6 +19,13 @@
   - **Activation**: grounded-world-models-in-biological-organisms-and-future-embodied-ai, neuroscience, embodied-AI, world-models, grounding, predictive-processing
 
 ### Transient Synaptic Memory Activity Regeneration
+
+### Evaluating Encoding Strategies for Biological Neural Networks
+- [[evaluating-encoding-strategies-biological-neural-networks]] - Skill for understanding and applying the research from arXiv:2607.13644 "Evaluating Encoding Strategies for Closed-Loop Classification in Biological Neural Networks"
+  - Burst-based temporal encoding achieved up to 95.6% accuracy in binary classification with cultured BNNs
+  - Performance highly dependent on spatial distribution of stimulation; joint optimization of temporal and spatial strategies is essential
+  - **Activation**: evaluating-encoding-strategies-biological-neural-networks, neuroscience, burst-encoding, temporal-encoding, biological-neural-networks, closed-loop-classification
+
 - [[activity-regeneration-from-silent-states-in-neuronal-networks-with-transient-synaptic-memory]] - Skill for understanding and applying the transient synaptic memory framework for predicting neuronal network dynamics from synaptic states alone (arXiv: 2607.14000)
   - Core contribution: Introduces Latent Excitatory Recruitment (LER) capacity as a near-perfect predictor of multi-cycle dynamics from synaptic snapshots
   - Key innovation: Demonstrates that transient synaptic memory alone can generate diverse future dynamics in homogeneous neuronal networks without persistent activity
