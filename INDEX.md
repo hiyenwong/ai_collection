@@ -43,4 +43,4 @@
   - Introduces MOJO (Masked autoEncoder-based Joint training) framework combining self-supervised and supervised learning
   - Demonstrates superior performance with limited labeled data and cross-modal generalization to human ECoG
   - Shows improved interpretability of neural representations for brain region classification
-  - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning
+  - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning- [[visual-place-recognition-rate-encoded-snn-stdp]]
