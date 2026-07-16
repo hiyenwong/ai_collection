@@ -1,9 +1,15 @@
 ## 2026-07-16 - Universal Quantum Computation with Cat Qubits (Cron Job)
 
-## 2026-07-16 - Universal Quantum Computation with Cat Qubits (Cron Job)
-
 ### Universal Quantum Computation with Multi-Mode Schrödinger Cat States Stabilized by Non-Local Dissipation Engineering
 - [[universal-quantum-computation-with-multi-mode-schrödinger-cat-states-stabilized-by-non-local-dissipation-engineering]] - Skill for understanding and implementing universal quantum computation using dissipatively stabilized multi-mode Schrödinger cat states via non-local dissipation engineering (arXiv: 2607.13975)
+## 2026-07-17 - Neuroscience Research (Cron Job)
+
+### Grounded world models in biological organisms and future embodied AI
+- [[grounded-world-models-biological-organisms-future-embodied-ai]] - A skill for understanding and applying the research from arXiv:2607.13560 "Grounded world models in biological organisms and future embodied AI". This skill outlines five key neural circuit mechanisms for grounded world modeling and how they can inform future embodied AI design.
+  - Biological agents acquire knowledge through active interaction with the environment, forming internal models that are grounded in sensorimotor experience.
+  - Five neural circuit mechanisms support grounded world modeling: navigation, affordance-based perception, active perception, allostatic control, and self/world outcome distinction.
+  - **Activation**: grounded world models, biological organisms, embodied AI, grounded cognition, neural circuits, world modeling
+
   - Uses Kerr non-linear oscillator chains with engineered non-local dissipation
   - Achieves arbitrary single-qubit control through X-axis rotations and Z-axis π/2 rotations
   - Implements entangling gates via XX(π/2) operations between coupled arrays
@@ -19,17 +25,15 @@
   - **Activation**: grounded-world-models-in-biological-organisms-and-future-embodied-ai, neuroscience, embodied-AI, world-models, grounding, predictive-processing
 
 ### Transient Synaptic Memory Activity Regeneration
-
-### Evaluating Encoding Strategies for Biological Neural Networks
-- [[evaluating-encoding-strategies-biological-neural-networks]] - Skill for understanding and applying the research from arXiv:2607.13644 "Evaluating Encoding Strategies for Closed-Loop Classification in Biological Neural Networks"
-  - Burst-based temporal encoding achieved up to 95.6% accuracy in binary classification with cultured BNNs
-  - Performance highly dependent on spatial distribution of stimulation; joint optimization of temporal and spatial strategies is essential
-  - **Activation**: evaluating-encoding-strategies-biological-neural-networks, neuroscience, burst-encoding, temporal-encoding, biological-neural-networks, closed-loop-classification
-
-- [[activity-regeneration-from-silent-states-in-neuronal-networks-with-transient-synaptic-memory]] - Skill for understanding and applying the transient synaptic memory framework for predicting neuronal network dynamics from synaptic states alone (arXiv: 2607.14000)
+- [[transient-synapse-activity-regen]] - Skill for understanding and applying the Latent Excitable Recruitment (LER) framework from arXiv:2607.14000, which predicts activity regeneration in neuronal networks based on transient synaptic memory.
   - Core contribution: Introduces Latent Excitatory Recruitment (LER) capacity as a near-perfect predictor of multi-cycle dynamics from synaptic snapshots
   - Key innovation: Demonstrates that transient synaptic memory alone can generate diverse future dynamics in homogeneous neuronal networks without persistent activity
-  - **Activation**: activity-regeneration-from-silent-states-in-neuronal-networks-with-transient-synaptic-memory, transient-synaptic-memory, latent-excitatory-recruitment, LER-capacity, synaptic-snapshot, activity-regeneration, silent-state-prediction, neuronal-network-dynamics
+  - **Activation**: transient-synapse-activity-regen, neuroscience, transient-synaptic-memory, latent-excitatory-recruitment, LER-capacity, synaptic-snapshot, activity-regeneration, silent-state-prediction, neuronal-network-dynamics
+
+- [[evaluating-encoding-strategies-biological-neural-networks]] - Skill for understanding and applying the research from arXiv:2607.13644 "Evaluating Encoding Strategies for Closed-Loop Classification in Biological Neural Networks"
+  - Burst-based temporal encoding-based temporal encoding achieved up to 95.6% accuracy in binary classification with cultured BNNs
+  - Performance highly dependent on spatial distribution of stimulation; joint optimization of temporal and spatial strategies is essential
+  - **Activation**: evaluating-encoding-strategies-biological-neural-networks, neuroscience, burst-encoding, temporal-encoding, biological-neural-networks, closed-loop-classification
 
 ### Classifying Daily Activities Needs Posture, Reconstructing Them Needs Motion
 - [[classifying-daily-activities-needs-posture-reconstructing-them-needs-motion]] - Skill for understanding the dissociation between posture-based action classification and motion-dependent movement reconstruction in human vision, based on arXiv:2607.13216.
@@ -43,4 +47,17 @@
   - Introduces MOJO (Masked autoEncoder-based Joint training) framework combining self-supervised and supervised learning
   - Demonstrates superior performance with limited labeled data and cross-modal generalization to human ECoG
   - Shows improved interpretability of neural representations for brain region classification
-  - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning- [[visual-place-recognition-rate-encoded-snn-stdp]]
+  - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning
+
+### Visual Place Recognition Rate-Encoded SNN-STDP
+- [[visual-place-recognition-rate-encoded-snn-stdp]] - Skill for understanding and implementing the discrete time visual place recognition framework using spike-timing-dependent plasticity in spiking neural networks, based on arXiv:2607.13114.
+  - Encodes visual place information in spike timing rates with STDP learning rules
+  - Achieves high accuracy in visual place recognition tasks with sparse coding
+  - Demonstrates robustness to noise and varying environmental conditions
+  - **Activation**: visual-place-recognition-rate-encoded-snn-stdp, neuroscience, visual-place-recognition, spiking-neural-networks, STDP, temporal-coding, rate-encoding
+### Fast Whole-Brain, Geometry-Aware Functional Alignment for Cross-Subject Decoding
+- [[fast-whole-brain-spectralot-alignment]] - Skill for understanding and implementing the SpectralOT method for functional alignment of fMRI data across subjects, based on arXiv:2607.10931v1.
+  - Embeds cortical geometry into Laplace-Beltrami eigenmodes along functional data to regularize the alignment
+  - Balances functional feature preservation with anatomical structure maintenance
+  - Improves generalization of decoders trained on aligned data
+  - **Activation**: fast-whole-brain-spectralot-alignment, neuroscience, fMRI, functional-alignment, spectral-optimal-transport, laplace-beltrami, cross-subject-decoding
