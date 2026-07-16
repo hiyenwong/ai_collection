@@ -19,4 +19,20 @@
 - [[adaptive-delta-pulse-frequency-encoding]] - A 32-channel event-based bio-signal analog front-end with adaptive delta and pulse frequency encoding for neuromorphic systems (arXiv: 2607.12901)
   - Core contribution: Dual-mode encoding architecture combining Pulse Frequency Modulation (PFM) and adaptive Asynchronous Delta Modulator (aADM) for efficient biomedical signal acquisition
   - Key innovation: Real-time adaptation of encoding data-rate based on input signal envelope enables very high data compression for low-power information transmission
-  - **Activation**: adaptive delta modulation, pulse frequency modulation, event-based analog front-end, bio-signal acquisition, neuromorphic interface, 32-channel AFE, aADM, PFM, adaptive encoding, low-power neural interface
+  - **Activation**: adaptive delta modulation, pulse frequency modulation, event-based analog front-end, bio-signal acquisition, neuromorphic interface, 32-channel AFE, aADM, PFM, adaptive encoding, low-power neural interface## 2026-07-16 - Neuroscience Research (Cron Job)
+
+### Grounded World Models in Biological Organisms and Future Embodied AI
+- [[grounded-world-models-ai]] - Skill for understanding grounded world models in biological organisms and their implications for future embodied AI, based on arXiv:2607.13560v1.
+  - Contrasts biological grounded world models with current embodied AI's passive training regimes
+  - Five examples of neural circuits: navigation, affordance-based perception, active perception, allostatic control, self/world distinction
+  - Implications for AI: intrinsic dynamics, action-centered learning, autonomous experience, hierarchical cognition, social grounding
+  - **Activation**: grounded-world-models-ai, neuroscience, embodied-AI, world-models, grounding, predictive-processing
+
+
+## 2026-07-16 - Neuroscience Research (Cron Job)
+
+### Transient Synaptic Memory Activity Regeneration
+- [[transient-synaptic-memory-activity-regeneration]] - Skill for understanding and applying the transient synaptic memory framework for predicting neuronal network dynamics from synaptic states alone (arXiv: 2607.14000)
+  - Core contribution: Introduces Latent Excitatory Recruitment (LER) capacity as a near-perfect predictor of multi-cycle dynamics from synaptic snapshots
+  - Key innovation: Demonstrates that transient synaptic memory alone can generate diverse future dynamics in homogeneous neuronal networks without persistent activity
+  - **Activation**: transient synaptic memory, latent excitatory recruitment, LER capacity, synaptic snapshot, activity regeneration, silent state prediction, neuronal network dynamics
