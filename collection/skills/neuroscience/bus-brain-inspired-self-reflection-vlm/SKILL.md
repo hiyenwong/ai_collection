@@ -1,141 +1,131 @@
 ---
 name: bus-brain-inspired-self-reflection-vlm
-description: BUS (Brain-Inspired Unsupervised Self-reflection) methodology for enhancing VLM reasoning via backward prediction. Label-free training framework inspired by human brain's backward prediction capability.
-activation: backward prediction, self-reflection, VLM reasoning, unsupervised learning, brain-inspired AI, visual reasoning
-tags: [neuroscience, vision-language-models, self-supervised-learning, backward-prediction, reasoning]
-version: 1.0.0
-author: agent
-source: arXiv:2607.07361
+description: Brain-Inspired Unsupervised Self-Reflection (BUS) framework for enhancing VLM reasoning without labeled data. Uses neuroscience-backed backward prediction to enable self-verification on unlabeled data.
 ---
 
-# BUS: Brain-Inspired Unsupervised Self-Reflection for VLM Reasoning
+# BUS: Brain-Inspired Unsupervised Self-Reflection for VLMs
 
-## Paper Reference
-- **Title**: BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning
-- **arXiv**: 2607.07361
-- **Published**: 2026-07-08
+## Description
+BUS (Brain-inspired Unsupervised Self-reflection) is a label-free training framework that enables Vision-Language Models (VLMs) to perform self-reflective reasoning without ground-truth annotations. Inspired by neuroscience findings on backward prediction in the human brain, BUS guides VLMs to predict which reasoning paths likely precede a given answer, providing explicit learning signals on unlabeled data.
 
-## Core Methodology
+**Paper**: [BUS: Brain-Inspired Unsupervised Self-Reflection for Advanced Multimodal Reasoning](https://arxiv.org/abs/2607.07361) (arXiv:2607.07361, July 2026)
 
-### Key Insight
-The human brain exhibits **backward prediction** capability: predicting which current states are likely to precede a given future state. This work verifies that mainstream VLMs can perform backward prediction and proposes **BUS (Brain-inspired Unsupervised Self-reflection)** to enhance reflective reasoning without labeled data.
+## Activation Keywords
+- brain-inspired self-reflection
+- backward prediction VLM
+- unsupervised self-reflection
+- BUS framework
+- label-free VLM training
+- VLM self-verification
+- 脑启发自反思
+- 无标注VLM训练
+- vision-language self-reflection
 
-### Neuroscience Foundation
+## Core Neuroscience Insight
 
-#### Backward Prediction in Human Brain
-- Forward prediction: given current state → predict future state
-- **Backward prediction**: given future state → predict which current states could lead to it
-- Backward prediction provides explicit learning signals for self-improvement
-- Critical for planning, reasoning, and error correction
+The human brain exhibits efficient **backward prediction** - predicting which current states are likely to precede a given future state. This capability uses **predecessor representations (PRs)** to reason about what events led to a particular outcome. BUS transfers this mechanism to VLMs:
 
-#### Verification in VLMs
-- Mainstream VLMs (GPT-4V, LLaVA, etc.) can perform backward prediction
-- Backward prediction capability correlates with reasoning performance
-- Provides natural self-supervision signal without annotations
+1. **Forward prediction**: VLM generates reasoning-answer pairs from input (image + question)
+2. **Backward prediction**: VLM is asked "which reasoning path(s) could lead to this answer?"
+3. **Self-verification**: Consistency between forward and backward predictions provides a learning signal
 
-### BUS Framework
+## BUS Framework
 
-#### Architecture
+### Stage I: Generate Reasoning-Answer Pairs
+Given input x(I&T) (image + text question), generate multiple reasoning-answer pairs through repeated sampling:
 ```
-Input: Unlabeled image-text pairs
-    ↓
-Forward Pass: Image → Reasoning → Answer
-    ↓
-Backward Prediction: Answer → Predict plausible reasoning paths
-    ↓
-Self-Reflection: Compare actual reasoning vs. predicted reasoning
-    ↓
-Learning Signal: Discrepancy drives model improvement
-    ↓
-Iterative Refinement
+{(y_i, a_i)} ~ pi_theta(|x(I&T))
+```
+where y_i = reasoning trace, a_i = final answer, pi_theta = model policy.
+
+### Stage II: Brain-Inspired Backward Prediction
+Group identical answers into categories {c_j}. For each answer category, construct a new prompt:
+```
+Original question: [x(I&T)]
+A model's answer to the original question is: [c_j]
+Which of the following reasoning(s) can lead to this model's answer?
+Choices: [y_1, y_2, ..., y_n]
 ```
 
-#### Training Objective
-1. **Forward reasoning**: Standard VLM reasoning (image → answer)
-2. **Backward prediction**: Given answer, predict reasoning steps that could lead to it
-3. **Self-reflection loss**: Minimize discrepancy between actual and predicted reasoning
-4. **Unsupervised**: No ground-truth reasoning labels required
+The model performs backward prediction by selecting reasoning paths consistent with the answer. This creates a self-verification loop.
 
-#### Key Components
-- **Backward predictor**: Neural module that predicts reasoning paths from answers
-- **Self-reflection module**: Compares and aligns forward/backward reasoning
-- **Compatibility**: Works with SFT, RL, and other fine-tuning methods
+### Training Signal
+- **Consistent paths**: Reasoning paths that the model selects as leading to its own answer are reinforced
+- **Inconsistent paths**: Paths not selected are penalized
+- Compatible with SFT and RL fine-tuning methods
 
-## Implementation Pipeline
+## Key Findings
 
+1. **Backward prediction verified**: At least 65% of VLM choices across models are consistent with backward prediction hypothesis
+2. **Label-free training**: BUS achieves improvements over base models using only unlabeled training data
+3. **8 benchmark improvements**: Validated across complex visual tasks including MME-RW-Lite, HR-Bench-4K/8K, V*
+4. **Architecture-agnostic**: Works with different VLM architectures and fine-tuning methods
+
+## Implementation Guide
+
+### Prerequisites
+- A pre-trained VLM (Qwen2.5-VL, Qwen3-VL, InternVL3, etc.)
+- Unlabeled image-question dataset
+- Fine-tuning infrastructure (SFT or RL)
+
+### Step 1: Forward Sampling
 ```python
-class BUSFramework(nn.Module):
-    def __init__(self, vlm_base):
-        super().__init__()
-        self.vlm = vlm_base
-        self.backward_predictor = BackwardPredictor()
-        self.reflection_module = SelfReflectionModule()
-        
-    def forward(self, image, question=None, answer=None):
-        # Forward reasoning
-        if question is not None:
-            reasoning, pred_answer = self.vlm.reason(image, question)
-        
-        # Backward prediction (unsupervised)
-        if answer is not None:
-            predicted_reasoning = self.backward_predictor(image, answer)
-            
-            # Self-reflection: align forward and backward reasoning
-            reflection_loss = self.reflection_module(
-                reasoning, predicted_reasoning
-            )
-            
-            return pred_answer, reflection_loss
-        
-    def train_step(self, batch):
-        """Unsupervised training step"""
-        images, answers = batch['images'], batch['answers']
-        
-        # Generate pseudo-reasoning via forward pass
-        with torch.no_grad():
-            pseudo_reasoning = self.vlm.generate_reasoning(images, answers)
-        
-        # Backward prediction
-        predicted_reasoning = self.backward_predictor(images, answers)
-        
-        # Self-reflection loss
-        loss = self.reflection_module(pseudo_reasoning, predicted_reasoning)
-        
-        # Update both VLM and backward predictor
-        loss.backward()
-        return loss.item()
+def forward_sample(model, input_image_text, n_samples=8):
+    pairs = []
+    for _ in range(n_samples):
+        response = model.generate(
+            input_image_text,
+            temperature=0.7,  # diversity for sampling
+            max_tokens=2048
+        )
+        reasoning, answer = parse_response(response)
+        pairs.append((reasoning, answer))
+    return pairs
 ```
 
-## Experimental Results
+### Step 2: Answer Grouping
+```python
+def group_by_answer(pairs):
+    """Group reasoning paths by their final answer."""
+    groups = defaultdict(list)
+    for reasoning, answer in pairs:
+        groups[answer].append(reasoning)
+    return dict(groups)
+```
 
-### Benchmarks (8 complex visual tasks)
-- Significant improvements over base models
-- Uses only unlabeled training data
-- Compatible with SFT and RL fine-tuning
+### Step 3: Backward Prediction Prompts
+```python
+def build_backward_prompt(original_input, answer_category, all_reasonings):
+    prompt = f"Original question: {original_input}\n"
+    prompt += f"A model's answer: {answer_category}\n"
+    prompt += "Which reasoning(s) lead to this answer?\n"
+    for i, r in enumerate(all_reasonings):
+        prompt += f"{i+1}. {r}\n"
+    return prompt
+```
 
-### Key Findings
-1. Backward prediction capability is critical for VLM reasoning
-2. Unsupervised self-reflection provides strong learning signal
-3. BUS improves reasoning without requiring annotated reasoning data
-4. Generalizes across diverse visual reasoning tasks
+### Step 4: Self-Verification Training
+1. For each (input, answer_category) pair, get backward prediction from model
+2. Check consistency: did the model select its own reasoning?
+3. Use consistency as training signal for SFT or RL
 
-## Applications
+## Pitfalls
 
-1. **VLM Reasoning Enhancement**: Improve complex visual reasoning without labels
-2. **Self-Improving AI**: Enable models to learn from their own predictions
-3. **Data-Efficient Learning**: Leverage unlabeled data for reasoning improvement
-4. **Brain-Inspired AI**: Incorporate cognitive mechanisms into AI systems
+- **Sampling diversity**: Use sufficient temperature (0.7+) and enough samples (n>=8) for meaningful answer distribution
+- **Answer parsing**: Robust answer extraction is critical - ensure consistent formatting for grouping
+- **Backward prompt format**: The exact wording of the backward prediction prompt matters; follow the paper template
+- **Compatible with**: SFT, DPO, GRPO, and other standard fine-tuning methods
+- **Not a replacement for**: High-quality annotated data when available - BUS is best when labels are scarce or expensive
 
-## Pitfalls & Considerations
+## When to Use
 
-- **Backward Predictor Quality**: Poor backward prediction leads to noisy learning signals
-- **Reasoning Complexity**: Very complex reasoning may be hard to predict backward
-- **Computational Overhead**: Additional backward prediction module increases cost
-- **Mode Collapse**: Self-reflection may converge to narrow reasoning patterns
+- Fine-tuning VLMs for complex visual reasoning tasks (counting, spatial reasoning, detailed analysis)
+- Scenarios with limited or no labeled training data
+- Improving model self-correction and reasoning consistency
+- Building self-reflective capabilities into multimodal models
 
-## Related Work
-
-- Backward prediction in neuroscience (Bar, 2009)
-- Self-reflection in LLMs (Reflexion, Shinn et al., 2023)
-- Unsupervised reasoning (STaR, Zelikman et al., 2022)
-- Brain-inspired AI (Ha & Schmidhuber, 2018)
+## Resources
+- **Paper**: https://arxiv.org/abs/2607.07361
+- **PDF**: https://arxiv.org/pdf/2607.07361v1
+- **HTML**: https://arxiv.org/html/2607.07361v1
+- **Code**: Not yet released (paper states "Code will be released")
