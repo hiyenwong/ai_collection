@@ -3,6 +3,28 @@
 
 ## 2026-07-12 - arXiv Paper Skills (Cron Job)
 
+### Evolutionary System Prompt Learning (E-SPL)
+- [[espl-evolutionary-system-prompt-learning]] - Jointly improves model context (system prompt) and model weights through parallel sampling and LLM self-reflection driven evolution. (arXiv: 2602.14697)
+  - Joint optimization of system prompt and model weights through evolutionary algorithms
+  - Parallel sampling of multiple system prompt variants during RL training
+  - LLM self-reflection drives mutation and crossover of system prompts
+  - Encourages declarative knowledge encoding in prompts and procedural knowledge in weights
+  - Demonstrated improvement: RL success rate increased from 38.8% to 45.1%
+
+### Agentic Evolution is the Path to Evolving LLMs
+- [[agentic-evolution-path-to-evolving-llms]] - Proposes that strategic agency (failure diagnosis and improvement) is needed for LLM evolution, introducing evolution as a new scaling axis. (arXiv: 2601.10007)
+  - Identifies limitations of current LLM evolution approaches (fine-tuning, memory accumulation)
+  - Proposes strategic agency as necessary for meaningful LLM evolution
+  - Introduces evolution as a new scaling axis beyond compute and data
+  - Highlights need for agents that can introspect and adapt their own learning processes
+
+### StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure
+- [[structagentharnesslong-horizondigitalagentswithuni]] - State-centered framework for structuring agent state and workflow around a unified causal representation of task progress, enabling checkpointing, evidence-driven task completion, and targeted failure recovery. (arXiv: 2607.11388)
+  - Introduces a unified state for compact, verifiable task progress and a structured workflow with verifier-backed state transitions.
+  - Enables explicit progress checkpointing, evidence-driven task completion, targeted failure recovery, and tool-supported execution.
+  - Improves Qwen3.5-9B from 27.0% to 46.9% and Qwen3.5-27B from 31.6% to 62.2% on OSWorld-Verified; achieves 78.9% with MiniMax-M3.
+  - Generalizes beyond desktop environments to Minecraft, demonstrating the generality of our design.
+
 ### UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks
 - [[uniclawbench-proactive-agents-real-world-tasks]] - Capability-driven benchmark for proactive agents with 400 bilingual tasks in live Docker containers; closed-loop evaluation with executor, supervisor, and user agents (arXiv: 2607.08768)
   - Five foundational capabilities: Skill Usage, Exploration, Long-Context Reasoning, Multimodal Understanding, Cross-Platform Coordination
@@ -4145,3 +4167,56 @@
   - Pauli twirling can fall short for non-Pauli noise; XPauli matches full-state within statistical uncertainty
   - Validated on superconducting leakage, neutral atom scattering, and trapped ion heating error models
   - **Activation**: fault tolerance, FTQC, hardware-aware, XPauli sampler, leakage error, coherent error, Pauli twirling
+## 2026-07-15\n- [[do-ai-agents-know-when-a-task-is-simple-toward-com]] - Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution (arXiv: 2607.13034)\n  - Large language model (LLM) agents increasingly automate multi-step engineering and informatics workf...\n  - **Activation**: agent, llm, reasoning\n## 2026-07-15
+- [[do-ai-agents-know-when-a-task-is-simple-toward-com]] - Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution (arXiv: 2607.13034)
+  - Large language model (LLM) agents increasingly automate multi-step engineering and informatics workf...
+  - **Activation**: agents, know, task, simple, toward
+## 2026-07-15
+- [[can-induced-emotion-bias-llm-behaviors-in-sequenti]] - Can Induced Emotion Bias LLM Behaviors in Sequential Decision Making? (arXiv: 2607.12631)
+  - As Large Language Models (LLMs) are increasingly deployed as autonomous agents in high-stakes domain...
+  - **Activation**: induced, emotion, bias, behaviors, sequential
+- [[a-learning-rate-gated-failure-of-grpo-in-a-small-l]] - A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism (arXiv: 2607.12640)
+  - Reinforcement learning with verifiable rewards, and Group Relative Policy Optimization (GRPO) in par...
+  - **Activation**: learning, rate, gated, failure, grpo
+- [[evidence-grounded-verified-agentic-reasoning-a-pat]] - Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs (arXiv: 2607.12650)
+  - Tool access alone does not make LLM empirical reasoning governable: accepted outputs need not descen...
+  - **Activation**: evidence, grounded, verified, agentic, reasoning
+- [[internet-of-agentic-things-networked-ai-agents-for]] - Internet of Agentic Things: Networked AI Agents for Closed-Loop IoT Orchestration (arXiv: 2607.12662)
+  - The paper introduces the Internet of Agentic Things (IoAT), an architectural framework that integrat...
+  - **Activation**: internet, agentic, things, networked, agents
+- [[llms-can-see-the-smoke-but-not-the-fire-evaluating]] - LLMs Can See the Smoke but not the Fire: Evaluating Abductive Reasoning with Elenchos (arXiv: 2607.12733)
+  - Large language models (LLMs) excel at pattern recognition and text generation, but their capacity fo...
+  - **Activation**: llms, smoke, fire, evaluating, abductive
+- [[tracing-agentic-failure-from-the-flow-of-success]] - Tracing Agentic Failure from the Flow of Success (arXiv: 2607.12747)
+  - Failure attribution for LLM-based agentic systems, i.e., identifying which steps in a failure trajec...
+  - **Activation**: tracing, agentic, failure, flow, success
+- [[constraint-aware-aggregation-for-federated-reinfor]] - Constraint-Aware Aggregation for Federated Reinforcement Learning in Microgrid Energy Coordination (arXiv: 2607.12763)
+  - Federated Reinforcement Learning (FedRL) enables coordination of distributed energy resources withou...
+  - **Activation**: constraint, aware, aggregation, federated, reinforcement
+- [[who-grades-the-grader-co-evolving-evaluation-metri]] - Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents (arXiv: 2607.12790)
+  - Self-evolving agent systems improve by creating, revising, and retiring their own skills, but every ...
+  - **Activation**: grades, grader, evolving, evaluation, metrics
+- [[human-ai-agent-interaction-as-a-neuroplastic-train]] - Human-AI Agent Interaction as a Neuroplastic Training Environment (arXiv: 2607.12823)
+  - Interaction with AI agents has become one of the most frequent activities of everyday digital life. ...
+  - **Activation**: human, agent, interaction, neuroplastic, training
+- [[unveiling-complex-collective-behaviors-from-simple]] - Unveiling Complex Collective Behaviors from Simple Rewards (arXiv: 2607.12861)
+  - Multi-agent Reinforcement Learning (MARL) holds great potential for robot swarms, but the black-box ...
+  - **Activation**: unveiling, complex, collective, behaviors, simple
+- [[a-multi-agent-system-for-autonomous-fine-tuning-fr]] - A Multi-Agent System for Autonomous, Fine-Tuning-Free Clinical Symptom Detection: Development and Validation Study (arXiv: 2607.12886)
+  - Clinical notes contain many of the signs and symptoms that bring patients to care, yet this informat...
+  - **Activation**: multi, agent, system, autonomous, fine
+- [[memops-benchmarking-lifecycle-memory-operations-in]] - MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations (arXiv: 2607.12893)
+  - Long-term memory has become a foundational capability for LLM-based agents that accompany users acro...
+  - **Activation**: memops, benchmarking, lifecycle, memory, operations
+- [[knowledge-and-gradient-guided-reinforcement-learni]] - Knowledge- and Gradient-Guided Reinforcement Learning for Parametrized Action Markov Decision Processes (arXiv: 2607.12924)
+  - In this paper, we study Reinforcement Learning in Parametrized Action Markov Decision Processes (PAM...
+  - **Activation**: knowledge, gradient, guided, reinforcement, learning
+- [[win-by-silence-deletion-non-monotonicity-autonomou]] - Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation (arXiv: 2607.12986)
+  - Plan evaluators can reward a strategic plan for becoming less explicit. This paper studies that fail...
+  - **Activation**: silence, deletion, monotonicity, autonomous, exploitation
+- [[palmclaw-a-native-on-device-agent-framework-for-mo]] - PalmClaw: A Native On-Device Agent Framework for Mobile Phones (arXiv: 2607.13027)
+  - Large Language Model (LLM) agents have moved beyond generating responses to executing multi-step tas...
+  - **Activation**: palmclaw, native, device, agent, framework
+- [[terrazero-procedural-driving-simulation-for-zero-d]] - TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale (arXiv: 2607.13028)
+  - Training robust autonomous driving agents requires a simulator that is fast enough for reinforcement...
+  - **Activation**: terrazero, procedural, driving, simulation, zero

@@ -11,7 +11,7 @@
       "closed-loop-control",
       "network-lifecycle"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "mcp-agentic-ipodwdm-network-automation",
     "lastAccessed": "2026-07-08",
     "category": "multi-agent-rl"
@@ -27,7 +27,7 @@
       "inter-agent-communication",
       "shared-memory-privacy"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "pisas-contextual-integrity-multi-user-agentic",
     "lastAccessed": "2026-07-08",
     "category": "multi-agent-rl"
@@ -295,7 +295,7 @@
     "lastAccessed": "2026-03-08"
   },
   "2505.22954": {
-    "title": "Darwin G\u00f6del Machine",
+    "title": "Darwin Gödel Machine",
     "file": "self-evolution-2026-03-06.md",
     "keywords": [
       "self-evolution",
@@ -363,7 +363,7 @@
       "RL"
     ],
     "utility": 0.9,
-    "skillCreated": null,
+    "skillCreated": "espl-evolutionary-system-prompt-learning",
     "lastAccessed": "2026-03-08"
   },
   "2603.03561": {
@@ -692,7 +692,7 @@
       "scaling"
     ],
     "utility": 0.85,
-    "skillCreated": null,
+    "skillCreated": "agentic-evolution-path-to-evolving-llms",
     "lastAccessed": "2026-03-10"
   },
   "2602.10008": {
@@ -1415,7 +1415,7 @@
       "autonomous",
       "video"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "autopilot-vqa-benchmarking-vision-language-models-for-incident",
     "lastAccessed": "2026-07-10",
     "category": "vision-generative"
@@ -1432,7 +1432,7 @@
       "inference",
       "workflow"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "workflow-as-knowledge-semantic-persistence-for-llm-mediated",
     "lastAccessed": "2026-07-10",
     "category": "nlp-llm"
@@ -1449,7 +1449,7 @@
       "cyber-physical",
       "policy"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "solarchain-eval-a-physics-constrained-benchmark-for-trustworthy",
     "lastAccessed": "2026-07-10",
     "category": "ai-safety-eval"
@@ -1466,7 +1466,7 @@
       "sensor",
       "hierarchical"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "using-hierarchical-statistical-learning-models-to-model-individual",
     "lastAccessed": "2026-07-10",
     "category": "neuroscience"
@@ -1483,7 +1483,7 @@
       "navigation",
       "trajectory"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "early-to-share-late-to-save-synchronisation-driven",
     "lastAccessed": "2026-07-10",
     "category": "multi-agent-rl"
@@ -1500,7 +1500,7 @@
       "dialogue",
       "emotion"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "from-triggers-to-emotions-a-cpm-grounded-appraisal",
     "lastAccessed": "2026-07-10",
     "category": "multi-agent-rl"
@@ -1517,7 +1517,7 @@
       "orchestration",
       "fine-tuning"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "multi-agent-robotic-control-with-onboard-vision-language",
     "lastAccessed": "2026-07-10",
     "category": "multi-agent-rl"
@@ -1534,7 +1534,7 @@
       "communication",
       "reward"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "delay-aware-active-triangulation-with-uncertainty-driven-multi",
     "lastAccessed": "2026-07-10",
     "category": "multi-agent-rl"
@@ -1551,7 +1551,7 @@
       "robustness",
       "sensor"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "dexverse-a-modular-benchmark-for-multi-task-multi",
     "lastAccessed": "2026-07-10",
     "category": "vision-generative"
@@ -1568,7 +1568,7 @@
       "robot",
       "feedback"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "learning-adaptive-solvers-for-distributed-factor-graph-optimization",
     "lastAccessed": "2026-07-10",
     "category": "signal-control-systems"
@@ -1633,7 +1633,7 @@
       "inference",
       "framework"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "webswarm-recursive-multi-agent-orchestration-for-deep-and",
     "lastAccessed": "2026-07-10",
     "category": "multi-agent-rl"
@@ -1650,7 +1650,7 @@
       "inference",
       "framework"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "ultrax-refining-pre-training-data-at-scale-with",
     "lastAccessed": "2026-07-10",
     "category": "nlp-llm"
@@ -1704,7 +1704,7 @@
       "rehabilitation",
       "sports-science"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "pose-to-biomechanics-bridging-3d-pose-biomechanical",
     "lastAccessed": "2026-07-11",
     "category": "vision-generative"
@@ -1776,7 +1776,7 @@
       "reinforcement-learning",
       "tool-augmented-agent"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "cognitive-structured-multimodal-agent-understanding-generation",
     "lastAccessed": "2026-07-11",
     "category": "multi-agent-rl"
@@ -1848,7 +1848,7 @@
       "proactive-driving",
       "world-model"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "wcog-vla-dual-level-world-cognitive-autonomous-driving",
     "lastAccessed": "2026-07-11",
     "category": "multi-agent-rl"
@@ -1866,7 +1866,7 @@
       "psychological-structure",
       "embedding-clustering"
     ],
-    "utility": 1.0,
+    "utility": 1,
     "skillCreated": "llm-judge-theory-agnostic-personality-recognition",
     "lastAccessed": "2026-07-11",
     "category": "nlp-llm"
@@ -2218,5 +2218,178 @@
     "skillCreated": "fabrivia-lightweight-vision-language-action-multi-task-manipulation",
     "lastAccessed": "2026-07-12",
     "category": "vision-generative"
+  },
+  "2607.11388": {
+    "title": "StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure",
+    "file": null,
+    "keywords": [
+      "structagent",
+      "long-horizon agents",
+      "causal structure",
+      "agent state",
+      "workflow",
+      "checkpointing",
+      "evidence-driven",
+      "failure recovery",
+      "osworld",
+      "minecraft"
+    ],
+    "utility": 0.85,
+    "skillCreated": "structagentharnesslong-horizondigitalagentswithuni",
+    "lastAccessed": "2026-07-14",
+    "category": "other"
+  },
+  "2607.13034": {
+    "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "do-ai-agents-know-when-a-task-is-simple-toward-com",
+    "lastAccessed": "2026-07-15",
+    "category": "nlp-llm"
+  },
+  "2607.13028": {
+    "title": "TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "terrazero-procedural-driving-simulation-for-zero-d",
+    "lastAccessed": "2026-07-15",
+    "category": "multi-agent-rl"
+  },
+  "2607.13027": {
+    "title": "PalmClaw: A Native On-Device Agent Framework for Mobile Phones",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "palmclaw-a-native-on-device-agent-framework-for-mo",
+    "lastAccessed": "2026-07-15",
+    "category": "other"
+  },
+  "2607.12986": {
+    "title": "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "win-by-silence-deletion-non-monotonicity-autonomou",
+    "lastAccessed": "2026-07-15",
+    "category": "nlp-llm"
+  },
+  "2607.12924": {
+    "title": "Knowledge- and Gradient-Guided Reinforcement Learning for Parametrized Action Markov Decision Processes",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "knowledge-and-gradient-guided-reinforcement-learni",
+    "lastAccessed": "2026-07-15",
+    "category": "neuroscience"
+  },
+  "2607.12893": {
+    "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "memops-benchmarking-lifecycle-memory-operations-in",
+    "lastAccessed": "2026-07-15",
+    "category": "nlp-llm"
+  },
+  "2607.12886": {
+    "title": "A Multi-Agent System for Autonomous, Fine-Tuning-Free Clinical Symptom Detection: Development and Validation Study",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "a-multi-agent-system-for-autonomous-fine-tuning-fr",
+    "lastAccessed": "2026-07-15",
+    "category": "multi-agent-rl"
+  },
+  "2607.12861": {
+    "title": "Unveiling Complex Collective Behaviors from Simple Rewards",
+    "file": null,
+    "keywords": [],
+    "utility": 0.93,
+    "skillCreated": "unveiling-complex-collective-behaviors-from-simple",
+    "lastAccessed": "2026-07-15",
+    "category": "multi-agent-rl"
+  },
+  "2607.12823": {
+    "title": "Human-AI Agent Interaction as a Neuroplastic Training Environment",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "human-ai-agent-interaction-as-a-neuroplastic-train",
+    "lastAccessed": "2026-07-15",
+    "category": "neuroscience"
+  },
+  "2607.12790": {
+    "title": "Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "who-grades-the-grader-co-evolving-evaluation-metri",
+    "lastAccessed": "2026-07-15",
+    "category": "nlp-llm"
+  },
+  "2607.12763": {
+    "title": "Constraint-Aware Aggregation for Federated Reinforcement Learning in Microgrid Energy Coordination",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "constraint-aware-aggregation-for-federated-reinfor",
+    "lastAccessed": "2026-07-15",
+    "category": "other"
+  },
+  "2607.12747": {
+    "title": "Tracing Agentic Failure from the Flow of Success",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "tracing-agentic-failure-from-the-flow-of-success",
+    "lastAccessed": "2026-07-15",
+    "category": "nlp-llm"
+  },
+  "2607.12733": {
+    "title": "LLMs Can See the Smoke but not the Fire: Evaluating Abductive Reasoning with Elenchos",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "llms-can-see-the-smoke-but-not-the-fire-evaluating",
+    "lastAccessed": "2026-07-15",
+    "category": "neuroscience"
+  },
+  "2607.12662": {
+    "title": "Internet of Agentic Things: Networked AI Agents for Closed-Loop IoT Orchestration",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "internet-of-agentic-things-networked-ai-agents-for",
+    "lastAccessed": "2026-07-15",
+    "category": "multi-agent-rl"
+  },
+  "2607.12650": {
+    "title": "Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "evidence-grounded-verified-agentic-reasoning-a-pat",
+    "lastAccessed": "2026-07-15",
+    "category": "multi-agent-rl"
+  },
+  "2607.12640": {
+    "title": "A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism",
+    "file": null,
+    "keywords": [],
+    "utility": 0.97,
+    "skillCreated": "a-learning-rate-gated-failure-of-grpo-in-a-small-l",
+    "lastAccessed": "2026-07-15",
+    "category": "other"
+  },
+  "2607.12631": {
+    "title": "Can Induced Emotion Bias LLM Behaviors in Sequential Decision Making?",
+    "file": null,
+    "keywords": [],
+    "utility": 1,
+    "skillCreated": "can-induced-emotion-bias-llm-behaviors-in-sequenti",
+    "lastAccessed": "2026-07-15",
+    "category": "other"
   }
 }
