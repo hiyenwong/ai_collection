@@ -1,6 +1,12 @@
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
 
+### Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory
+- [[transient-synaptic-memory-activity-regeneration]] - A skill for understanding and applying the research from arXiv:2607.14000 "Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory".
+  - Core idea: The residual synaptic configuration after a silent state determines whether network activity will terminate or spontaneously regenerate via Latent Excitatory Recruitment (LER) capacity.
+  - Key innovation: Demonstrates that transient synaptic memory alone can generate diverse future dynamics in homogeneous neuronal networks without persistent spiking.
+  - **Activation**: transient synaptic memory, activity regeneration, latent excitatory recruitment, neuronal network modeling, short-term memory, silent state prediction, arXiv:2607.14000
+
 ### A modular state-space model of human perception, cognition, and decision dynamics
 - [[modular-state-space-model-perception-cognition]] - A skill for understanding and applying the research from arXiv:2607.14078 "A modular state-space model of human perception, cognition, and decision dynamics". This skill outlines a modular state-space model for human perception, cognition, and decision dynamics that links sensory inputs to behavior through latent internal states while maintaining interpretable connections to neuro-cognitive mechanisms.
   - Core contribution: Proposes a modular state-space model where behavior is modeled as a perception-cognition-decision pipeline with coupled mathematical mappings for attentional selection, predictive inference, cognitive-state evolution, intention formation, and action selection.

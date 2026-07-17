@@ -1,124 +1,68 @@
 ---
 name: transient-synaptic-memory-activity-regeneration
-description: "Skill for understanding and applying the transient synaptic memory framework for predicting neuronal network dynamics from synaptic states alone"
-metadata:
-  arxiv_id: "2607.14000"
-  authors: ["Mozhgan Khanjanianpak", "Alireza Valiadeh"]
-  categories: ["q-bio.NC", "cond-mat.dis-nn", "cond-mat.stat-mech"]
-  published: "2026-07-15"
----
-# Transient Synaptic Memory Activity Regeneration
+description: Skill for understanding and applying the transient synaptic memory framework for activity regeneration in neuronal networks, based on arXiv:2607.14000.
+tags: [neuroscience, brain network, neural dynamics, spiking neural network, computational neuroscience, transient synaptic memory, activity regeneration]
+related_skills: []
+content: |
+  # Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory
 
-## Overview
-This skill provides a framework for understanding how transient synaptic memory can predict and control future neuronal network dynamics without ongoing neuronal activity. Based on the arXiv:2607.14000 paper, it introduces the Latent Excitatory Recruitment (LER) capacity as a predictor of multi-cycle dynamics from synaptic snapshots.
+  ## Overview
 
-## Core Concepts
+  **arXiv:2607.14000** - This skill encapsulates the methodology and insights from the paper "Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory" by Mozhgan Khanjanianpak, Alireza Valiadeh et al.
 
-### Transient Synaptic Memory
-- Synapses with finite lifetimes can store information even when neurons are silent
-- The residual synaptic configuration after activity cessation determines future network behavior
-- No persistent neuronal activity needed for short-term memory storage
+  ## Core Idea
 
-### Latent Excitatory Recruitment (LER) Capacity
-- Defined as the cumulative number of fresh excitatory neurons that can be recruited
-- Computed from the synaptic-memory snapshot at the first silent state
-- Near-perfect predictor of whether network activity terminates or regenerates
-- Enables prediction of multi-cycle dynamics without simulation
+  The paper introduces a minimal neuronal network model with finite-lifetime synapses (transient synaptic memory) and shows that the residual synaptic configuration after a period of neuronal silence can predict whether network activity will terminate or spontaneously regenerate. The key concept is the **Latent Excitatory Recruitment (LER) capacity**, quantified as the cumulative number of fresh excitatory neurons that can be recruited from the silent state. LER serves as a near-perfect predictor of multi-cycle dynamics without needing to simulate the subsequent network evolution.
 
-### Key Findings
-1. Transient synaptic memory alone generates diverse future dynamics in homogeneous networks
-2. LER capacity distinguishes between single-cycle termination and multi-cycle regeneration
-3. Short-term memory is encoded in latent synaptic configuration, not just ongoing activity
-4. Provides framework for predicting and controlling neuronal network evolution
+  ## When to Use
 
-## Application Workflow
+  Use this skill when:
+  - Modeling short-term memory or working memory phenomena where activity may lapse but later resume.
+  - Investigating whether synaptic dynamics alone can sustain information processing without persistent spiking.
+  - Developing models of neuronal networks where synaptic efficacy decays over time.
+  - Designing experiments or simulations to test predictions about activity regeneration from silent states.
 
-### When to Use This Skill
-- Analyzing neuronal network models with short-term plasticity
-- Predicting network dynamics from synaptic states alone
-- Designing experiments to test memory mechanisms in biological networks
-- Developing computational models of working memory
-- Studying activity reactivation phenomena like sharp-wave ripples
+  ## Steps
 
-### Step-by-Step Application
+  1. **Define the Network Model**
+     - Choose a neuronal network model (e.g., integrate-and-fire, spiking neural network) with synapses that have a finite lifetime or dynamic efficacy.
+     - Define synaptic dynamics: each synapse has a memory trace that decays exponentially with a time constant τ_s.
+     - Ensure the network can exhibit silent states (no spiking activity) after an initial activation.
 
-1. **Model Specification**
-   - Define neuronal network with finite-lifetime synapses
-   - Specify neuron types (excitatory/inhibitory) and connectivity
-   - Establish synaptic dynamics with degradation/recovery timescales
+  2. **Simulate an Initial Activation**
+     - Provide a brief input pulse to elicit a network activation (one or more spikes across neurons).
+     - Allow the network to evolve until activity ceases (a silent state is reached).
+     - Record the synaptic state (e.g., the strength or efficacy of each synapse) at the onset of silence.
 
-2. **Activity Induction & Silencing**
-   - Induce network activity through external stimulation or initial conditions
-   - Allow activity to propagate through the network
-   - Observe the transition to complete neuronal silence (no spikes)
+  3. **Compute Latent Excitatory Recruitment (LER) Capacity**
+     - For each synapse, determine its potential to drive postsynaptic neuron firing based on its current efficacy.
+     - Simulate (or analytically compute) how many additional excitatory neurons could be recruited if the network were to receive a minimal kick from its current synaptic state.
+     - LER = cumulative number of such recruitable excitatory neurons across the network.
 
-3. **Synaptic Snapshot Extraction**
-   - At first silent state, record the synaptic weight matrix
-   - Identify which synapses are in potentiated, depressed, or baseline states
-   - Extract the residual synaptic configuration as a "memory trace"
+  4. **Predict Future Dynamics**
+     - If LER exceeds a threshold (approximately 1), predict that activity will regenerate for at least one more cycle.
+     - If LER is below threshold, predict activity will terminate after the current silent period.
+     - Optionally, iterate the prediction: after predicting a regeneration, simulate the next active cycle and recompute LER for the subsequent silent state.
 
-4. **LER Capacity Calculation**
-   - For each neuron, count available excitatory synapses that could drive firing
-   - Sum across all neurons to get cumulative LER capacity
-   - Normalize by network size if comparing across different scales
+  5. **Validate with Simulation**
+     - Run the full network simulation for several cycles to verify that the LER-based prediction matches actual activity regeneration or termination.
+     - Compare predictions across different network sizes, synaptic time constants, and initial conditions.
 
-5. **Dynamics Prediction**
-   - Low LER capacity → Activity terminates after single cycle
-   - High LER capacity → Activity regenerates for multiple cycles
-   - Threshold value determines bifurcation point between regimes
+  6. **Apply to Experimental Data**
+     - If experimental data (e.g., calcium imaging, electrophysiology) provides estimates of synaptic states during silent periods, estimate LER and compare with observed activity patterns.
 
-6. **Experimental Validation**
-   - Compare predicted vs. actual dynamics in simulated/networks
-   - Test predictions in biological preparations with synaptic manipulations
-   - Manipulate synaptic lifetimes to shift LER capacity and observe effects
+  ## Pitfalls
 
-## Key Parameters to Track
+  - **Assuming Static Synapses**: The model relies on synapses having a finite lifetime or dynamic plasticity; static synapses will not exhibit this phenomenon.
+  - **Ignoring Inhibition**: The study focuses on excitatory recruitment; inhibitory synapses may modulate LER and should be considered in balanced networks.
+  - **Overestimating LER**: Ensure that the calculation of recruitable neurons accounts for refractory periods and threshold dynamics.
+  - **Parameter Sensitivity**: Results depend on synaptic time constants and neuron models; perform sensitivity analysis.
 
-- Synaptic lifetime distributions (τ_decay, τ_recovery)
-- Excitation/inhibition balance in the network
-- Connectivity density and structure (random, small-world, etc.)
-- Neuron excitability thresholds
-- Initial activity patterns that induce synaptic changes
+  ## References
 
-## Validation Approaches
+  - Khanjanianpak, M., Valiadeh, A., et al. (2026). Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory. arXiv:2607.14000. https://arxiv.org/abs/2607.14000
+  - Code and datasets: https://github.com/your-repo/link (if available from paper)
 
-### Computational Validation
-- Compare LER predictions against full network simulations
-- Test robustness to noise in synaptic measurements
-- Evaluate prediction horizon (how many future cycles can be forecast)
-- Analyze sensitivity to synaptic parameter variations
+  ## Activation Keywords
 
-### Experimental Validation
-- Patch-clamp or MEA measurements to assess synaptic states
-- Pharmacological manipulation of synaptic dynamics
-- Optogenetic control to reset or potentiate specific synapses
-- Calcium imaging to correlate LER with actual recruitment
-
-## Pitfalls & Limitations
-
-- Assumes synaptic states are perfectly measurable (experimental challenge)
-- May not capture longer-timescale plasticity mechanisms
-- Homogeneous network assumption may not hold in biological systems
-- Does not specify which specific neurons will be recruited, only capacity
-- Requires careful definition of "silent state" (zero spikes vs. subthreshold)
-
-## Related Concepts
-
-- Short-term plasticity and working memory
-- Synaptic clustering and memory allocation
-- Avalanche dynamics in neural networks
-- Reservoir computing with fading memory
-- Sleep sharp-wave ripple events and memory replay
-
-## References
-- arXiv:2607.14000 - Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory
-- Related skills: transient-synaptic-plasticity-framework, synaptic-memory-dynamics-prediction
-
-## Activation Keywords
-- transient synaptic memory
-- latent excitatory recruitment
-- LER capacity
-- synaptic snapshot
-- activity regeneration
-- silent state prediction
-- neuronal network dynamics
+  transient synaptic memory, activity regeneration, latent excitatory recruitment, neuronal network modeling, short-term memory, silent state prediction
