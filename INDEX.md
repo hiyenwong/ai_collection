@@ -1,5 +1,11 @@
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
+### Theory-grounded hybrid neural network for visual object tracking
+- [[hybrid-neural-network-visual-tracking]] - Skill for implementing and understanding the theory-grounded hybrid neural network (HTNN) that integrates artificial neural networks (ANNs) with continuous attractor neural networks (CANNs) for stable visual object tracking (arXiv: 2606.22604)
+  - Combines ANN's asymptotically unbiased estimates with CANN's low-variance estimation through functional bias-variance complementarity
+  - Achieves stable and accurate tracking under occlusion, motion blur, and background interference
+  - **Activation**: hybrid-neural-network-visual-tracking, neuroscience, hybrid-neural-network, visual-object-tracking, continuous-attractor-network, ann-cann-hybrid
+
 ### Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
 - [[arxiv260714672]] - Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
   - Core contribution: Introduces differentiable spike-time discretization (DSTD) for memory-efficient training of continuous-time spiking neural networks
