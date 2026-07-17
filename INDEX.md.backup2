@@ -1,12 +1,3 @@
-## 2026-07-17 - Quantum Entanglement Detection via Unitary Transformations and Ancilla Measurements (Cron Job)
-
-### Entanglement Detection for Two-Qubit and Three-Qubit Pure States via Unitary Transformations and Ancilla State Measurements
-- [[entanglement-detection-unitary-ancilla-methodology]] - Methodology for direct measurement of bipartite concurrence and tripartite 3-tangle entanglement measures using unitary transformations and ancilla state measurements (arXiv: 2607.15201)
-  - Core idea: Introduce ancilla qubits and apply controlled unitaries to map entanglement measures onto measurement probabilities.
-  - Advantages: Avoids full state tomography, requires only ancilla qubits and controlled operations.
-  - **Activation**: entanglement detection, unitary transformation, ancilla measurement, concurrence, 3-tangle, quantum circuit design
-
-
 ## 2026-07-16 - Universal Quantum Computation with Cat Qubits (Cron Job)
 
 ### Universal Quantum Computation with Multi-Mode Schrödinger Cat States Stabilized by Non-Local Dissipation Engineering
@@ -55,7 +46,6 @@
   - Achieves high accuracy in visual place recognition tasks with sparse coding
   - Demonstrates robustness to noise and varying environmental conditions
   - **Activation**: visual-place-recognition-rate-encoded-snn-stdp, neuroscience, visual-place-recognition, spiking-neural-networks, STDP, temporal-coding, rate-encoding
-
 ### Fast Whole-Brain, Geometry-Aware Functional Alignment for Cross-Subject Decoding
 - [[fast-whole-brain-spectralot-alignment]] - Skill for understanding and implementing the SpectralOT method for functional alignment of fMRI data across subjects, based on arXiv:2607.10931v1.
   - Embeds cortical geometry into Laplace-Beltrami eigenmodes along functional data to regularize the alignment
