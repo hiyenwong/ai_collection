@@ -1,5 +1,12 @@
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
+### Modular State-Space Model of Human Perception, Cognition, and Decision Dynamics
+- [[modular-state-space-model-260714078]] - Model human perception, cognition, and decision dynamics as a modular perception-cognition-decision pipeline state-space model. Provides mathematical formulation, stability conditions, and application to rehabilitation control (arXiv: 2607.14078)
+  - Decomposes behavior into five coupled subprocesses: attentional selection, predictive inference, cognitive-state evolution, intention formation, and action selection
+  - Provides sufficient conditions for boundedness, Lipschitz regularity, forward invariance, contraction of perceptual inference, and input-to-state stability
+  - **Activation**: modular-state-space-model-260714078, perception cognition decision, behavioral modeling, human-centered control, arXiv:2607.14078
+
+
 ### Theory-grounded hybrid neural network for visual object tracking
 - [[hybrid-neural-network-visual-tracking]] - Skill for implementing and understanding the theory-grounded hybrid neural network (HTNN) that integrates artificial neural networks (ANNs) with continuous attractor neural networks (CANNs) for stable visual object tracking (arXiv: 2606.22604)
   - Combines ANN's asymptotically unbiased estimates with CANN's low-variance estimation through functional bias-variance complementarity
