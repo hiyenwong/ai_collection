@@ -1,5 +1,11 @@
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
+
+### A modular state-space model of human perception, cognition, and decision dynamics
+- [[modular-state-space-model-perception-cognition]] - A skill for understanding and applying the research from arXiv:2607.14078 "A modular state-space model of human perception, cognition, and decision dynamics". This skill outlines a modular state-space model for human perception, cognition, and decision dynamics that links sensory inputs to behavior through latent internal states while maintaining interpretable connections to neuro-cognitive mechanisms.
+  - Core contribution: Proposes a modular state-space model where behavior is modeled as a perception-cognition-decision pipeline with coupled mathematical mappings for attentional selection, predictive inference, cognitive-state evolution, intention formation, and action selection.
+  - Key innovation: Provides a white-box dynamical structure for estimation, validation, and model-based control in human-centered settings, establishing sufficient conditions for boundedness, Lipschitz regularity, forward invariance, contraction of perceptual inference under constant input, and input-to-state stability of cognitive state dynamics.
+  - **Activation**: modular state-space model, perception-cognition-decision pipeline, human-centered modeling, computational neuroscience, brain network modeling, state-space modeling, 2607.14078
 ### Grounded world models in biological organisms and future embodied AI
 - [[grounded-world-models-biological-organisms-future-embodied-ai]] - A skill for understanding and applying the research from arXiv:2607.13560 "Grounded world models in biological organisms and future embodied AI". This skill outlines five key neural circuit mechanisms for grounded world modeling and how they can inform future embodied AI design.
   - Biological agents acquire knowledge through active interaction with the environment, forming internal models that are grounded in sensorimotor experience.
