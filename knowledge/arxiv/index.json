@@ -1,7 +1,7 @@
 {
   "2607.05975": {
     "title": "MCP-Enabled Agentic AI for Autonomous IPoDWDM Network Lifecycle Automation",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/mcp-agentic-ipodwdm-network-automation/SKILL.md",
     "keywords": [
       "mcp",
       "agentic-network-automation",
@@ -18,7 +18,7 @@
   },
   "2607.05318": {
     "title": "PiSAs: Benchmarking Contextual Integrity in Multi-User Agentic Systems",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/pisas-contextual-integrity-multi-user-agentic/SKILL.md",
     "keywords": [
       "contextual-integrity",
       "multi-user-agents",
@@ -34,7 +34,7 @@
   },
   "2607.06447": {
     "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/danus-mathematical-reasoning-agents-fact-graph/SKILL.md",
     "keywords": [
       "mathematical-reasoning",
       "proof-orchestration",
@@ -49,7 +49,7 @@
   },
   "2607.03228": {
     "title": "Organizational Memory for Agentic Business Process Execution",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/organizational-memory-agentic-business-process/SKILL.md",
     "keywords": [
       "organizational-memory",
       "business-process-automation",
@@ -64,7 +64,7 @@
   },
   "2607.04786": {
     "title": "Agentic Information Fusion for Test Maintenance Prediction",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/agentic-information-fusion-test-maintenance/SKILL.md",
     "keywords": [
       "test-maintenance",
       "multi-agent-testing",
@@ -79,7 +79,7 @@
   },
   "2607.04219": {
     "title": "Agentic IoT: Architectures, Applications, and Challenges Toward the Internet of Agents",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/agentic-iot-internet-of-agents/SKILL.md",
     "keywords": [
       "agentic-iot",
       "internet-of-agents",
@@ -95,7 +95,7 @@
   },
   "2607.02703": {
     "title": "LLMoxie: Exploring Agentic AI for Scientific Software Development",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/llmoxie-agentic-scientific-software/SKILL.md",
     "keywords": [
       "llmoxie",
       "scientific-software",
@@ -112,7 +112,7 @@
   },
   "2607.03473": {
     "title": "MUTE: Return-Preserving Communication Unlearning for Efficient Multi-Agent Coordination",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/mute-communication-unlearning-multi-agent/SKILL.md",
     "keywords": [
       "mute",
       "communication-unlearning",
@@ -128,7 +128,7 @@
   },
   "2607.02942": {
     "title": "A Workflow-Aware Serving Layer for Agentic Applications",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/workflow-aware-serving-layer-agentic/SKILL.md",
     "keywords": [
       "agentic-serving",
       "workflow-aware",
@@ -144,7 +144,7 @@
   },
   "2607.01936": {
     "title": "CausalSteward: An Agentic Divide-Conquer-Combine Copilot for Causal Discovery",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/causalsteward-agentic-causal-discovery/SKILL.md",
     "keywords": [
       "causalsteward",
       "causal-discovery",
@@ -160,7 +160,7 @@
   },
   "2607.06001": {
     "title": "Information Limits and Attractor Dynamics in Economies of Frontier LLM Agents",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/llm-agent-economies-information-limits/SKILL.md",
     "keywords": [
       "llm-agent-economies",
       "information-theoretic-capacity",
@@ -175,7 +175,7 @@
   },
   "2607.05844": {
     "title": "StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/statefuse-conflict-preserving-memory-multi-agent/SKILL.md",
     "keywords": [
       "statefuse",
       "conflict-aware-memory",
@@ -191,7 +191,7 @@
   },
   "2607.02507": {
     "title": "What LLM Agents Say When No One Is Watching: Social Structure and Latent Objectives",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/llm-agents-social-structure-latent-objectives/SKILL.md",
     "keywords": [
       "llm-agents",
       "social-structure",
@@ -207,7 +207,7 @@
   },
   "2607.04292": {
     "title": "Agentic SABRE",
-    "file": null,
+    "file": "collection/skills/security-privacy/agentic-sabre-ransomware-detection/SKILL.md",
     "keywords": [
       "agentic",
       "ransomware-detection",
@@ -225,7 +225,7 @@
   },
   "2606.29354": {
     "title": "When LLMs Develop Languages (CLSR)",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/llm-symbolic-communication-multi-agent/SKILL.md",
     "keywords": [
       "multi-agent",
       "symbolic-communication",
@@ -241,7 +241,7 @@
   },
   "2607.05134": {
     "title": "PDEFlow",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/pdeflow-autonomous-agentic-pde-pipelines/SKILL.md",
     "keywords": [
       "agentic",
       "neural-operator",
@@ -295,7 +295,7 @@
     "lastAccessed": "2026-03-08"
   },
   "2505.22954": {
-    "title": "Darwin Gödel Machine",
+    "title": "Darwin G\u00f6del Machine",
     "file": "self-evolution-2026-03-06.md",
     "keywords": [
       "self-evolution",
@@ -1891,7 +1891,7 @@
   },
   "2607.08768": {
     "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
-    "file": null,
+    "file": "collection/skills/ai-safety-eval/uniclawbench-proactive-agents-real-world-tasks/SKILL.md",
     "keywords": [
       "proactive-agents",
       "real-world-benchmark",
@@ -1906,7 +1906,7 @@
   },
   "2607.08716": {
     "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/proactive-memory-agent-long-horizon-tasks/SKILL.md",
     "keywords": [
       "proactive-memory",
       "long-horizon-agents",
@@ -1921,7 +1921,7 @@
   },
   "2607.08690": {
     "title": "A Practical Investigation of Training-free Relaxed Speculative Decoding",
-    "file": null,
+    "file": "collection/skills/nlp-llm/training-free-relaxed-speculative-deoding/SKILL.md",
     "keywords": [
       "speculative-decoding",
       "llm-inference-acceleration",
@@ -1936,7 +1936,7 @@
   },
   "2607.08647": {
     "title": "Multi-Modal, Multi-Environment Machine Teaching for Robust Reward Learning",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/multi-modal-multi-environment-machine-teaching-robust-reward/SKILL.md",
     "keywords": [
       "machine-teaching",
       "reward-learning",
@@ -1951,7 +1951,7 @@
   },
   "2607.08642": {
     "title": "DominoTree: Conditional Tree-Structured Drafting with Domino for Speculative Decoding",
-    "file": null,
+    "file": "collection/skills/nlp-llm/dominotree-conditional-tree-structured-drafting-speculative-decoding/SKILL.md",
     "keywords": [
       "speculative-decoding",
       "tree-structured-drafting",
@@ -1966,7 +1966,7 @@
   },
   "2607.08565": {
     "title": "SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling",
-    "file": null,
+    "file": "collection/skills/nlp-llm/smetric-llm-scheduling-serving-agents-session-centric/SKILL.md",
     "keywords": [
       "llm-scheduling",
       "agent-serving",
@@ -1981,7 +1981,7 @@
   },
   "2607.08643": {
     "title": "BiSCo-LLM: Lookup-Free Binary Spherical Coding for Extreme Low-Bit Large Language Model Compression",
-    "file": null,
+    "file": "collection/skills/nlp-llm/bisco-llm-binary-spherical-coding-extreme-compression/SKILL.md",
     "keywords": [
       "binary-spherical-coding",
       "llm-compression",
@@ -1996,7 +1996,7 @@
   },
   "2607.08602": {
     "title": "Towards Precision Therapy in Hepatocellular Carcinoma: A Clinical-Reasoning LLM for Risk Stratification and Treatment Guidance",
-    "file": null,
+    "file": "collection/skills/healthcare-bio/clinical-reasoning-llm-hepatocellular-carcinoma-risk-stratification/SKILL.md",
     "keywords": [
       "clinical-reasoning-llm",
       "hepatocellular-carcinoma",
@@ -2011,7 +2011,7 @@
   },
   "2607.08651": {
     "title": "Secure Decentralized Federated Learning via Gossip and Virtual Voting",
-    "file": null,
+    "file": "collection/skills/security-privacy/secure-decentralized-federated-learning-gossip-virtual-voting/SKILL.md",
     "keywords": [
       "decentralized-federated-learning",
       "gossip-protocol",
@@ -2026,7 +2026,7 @@
   },
   "2607.08639": {
     "title": "Native Video-Action Pretraining for Generalizable Robot Control",
-    "file": null,
+    "file": "collection/skills/vision-generative/native-video-action-pretraining-generalizable-robot-control/SKILL.md",
     "keywords": [
       "video-action-model",
       "robot-control",
@@ -2041,7 +2041,7 @@
   },
   "2607.08535": {
     "title": "When the Judge Changes, So Does the Measurement: Auditing LLM-as-Judge Reliability",
-    "file": null,
+    "file": "collection/skills/ai-safety-eval/auditing-llm-as-judge-reliability-measurement-validity/SKILL.md",
     "keywords": [
       "llm-as-judge",
       "evaluation-reliability",
@@ -2056,7 +2056,7 @@
   },
   "2607.08499": {
     "title": "Cross-seed explainability using Procrustes-conditioned Joint End-to-end Top-K Sparse Autoencoders",
-    "file": null,
+    "file": "collection/skills/nlp-llm/cross-seed-explainability-procrustes-sparse-autoencoders/SKILL.md",
     "keywords": [
       "sparse-autoencoder",
       "cross-seed-universality",
@@ -2071,7 +2071,7 @@
   },
   "2607.08539": {
     "title": "DocMaster: A Hierarchical Structure-Aware System for Document Analysis",
-    "file": null,
+    "file": "collection/skills/nlp-llm/docmaster-hierarchical-structure-aware-document-analysis/SKILL.md",
     "keywords": [
       "document-analysis",
       "hierarchical-structure",
@@ -2086,7 +2086,7 @@
   },
   "2607.08495": {
     "title": "The Context Access Divide: Interaction-Level Architecture as a Complementary Dimension of Agentic Inequality",
-    "file": null,
+    "file": "collection/skills/ai-safety-eval/context-access-divide-agentic-inequality-architecture/SKILL.md",
     "keywords": [
       "agentic-inequality",
       "context-access",
@@ -2101,7 +2101,7 @@
   },
   "2607.08448": {
     "title": "Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/harness-vla-steering-frozen-vlas-memory-guided-agents/SKILL.md",
     "keywords": [
       "vision-language-action",
       "memory-guided-agents",
@@ -2116,7 +2116,7 @@
   },
   "2607.08444": {
     "title": "Statistical Efficiency and Inference of Quantile Distributional Reinforcement Learning",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/statistical-efficiency-quantile-distributional-reinforcement-learning/SKILL.md",
     "keywords": [
       "distributional-reinforcement-learning",
       "quantile-regression",
@@ -2131,7 +2131,7 @@
   },
   "2607.08601": {
     "title": "It Takes a MAESTRO To Prune Bad Experts",
-    "file": null,
+    "file": "collection/skills/nlp-llm/maestro-pruning-bad-experts-mixture-of-experts/SKILL.md",
     "keywords": [
       "mixture-of-experts",
       "expert-pruning",
@@ -2146,7 +2146,7 @@
   },
   "2607.08734": {
     "title": "The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs",
-    "file": null,
+    "file": "collection/skills/nlp-llm/illusion-of-equivalency-quantization-effects-llms/SKILL.md",
     "keywords": [
       "quantization",
       "llm-deployment",
@@ -2161,7 +2161,7 @@
   },
   "2607.08733": {
     "title": "Super Weights in LLMs and the Failure of Selective Training",
-    "file": null,
+    "file": "collection/skills/nlp-llm/super-weights-llms-selective-training-failure/SKILL.md",
     "keywords": [
       "super-weights",
       "llm-training",
@@ -2176,7 +2176,7 @@
   },
   "2607.08724": {
     "title": "Latent Memory Palace: Reasoning for Control as Autoregressive Variational Inference",
-    "file": null,
+    "file": "collection/skills/general-ml/latent-memory-palace-reasoning-control-variational-inference/SKILL.md",
     "keywords": [
       "latent-memory",
       "reasoning-for-control",
@@ -2191,7 +2191,7 @@
   },
   "2607.08652": {
     "title": "Formal Mechanisms for Market Stability in Self-Interested Agent Societies: A Marketplace Simulation Study",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/formal-mechanisms-market-stability-self-interested-agents/SKILL.md",
     "keywords": [
       "market-stability",
       "self-interested-agents",
@@ -2206,7 +2206,7 @@
   },
   "2607.08575": {
     "title": "FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation",
-    "file": null,
+    "file": "collection/skills/vision-generative/fabrivia-lightweight-vision-language-action-multi-task-manipulation/SKILL.md",
     "keywords": [
       "vision-language-action",
       "lightweight-model",
@@ -2221,7 +2221,7 @@
   },
   "2607.11388": {
     "title": "StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure",
-    "file": null,
+    "file": "collection/skills/other/structagentharnesslong-horizondigitalagentswithuni/SKILL.md",
     "keywords": [
       "structagent",
       "long-horizon agents",
@@ -2241,7 +2241,7 @@
   },
   "2607.13034": {
     "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
-    "file": null,
+    "file": "collection/skills/nlp-llm/do-ai-agents-know-when-a-task-is-simple-toward-com/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "do-ai-agents-know-when-a-task-is-simple-toward-com",
@@ -2250,7 +2250,7 @@
   },
   "2607.13028": {
     "title": "TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/terrazero-procedural-driving-simulation-for-zero-d/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "terrazero-procedural-driving-simulation-for-zero-d",
@@ -2259,7 +2259,7 @@
   },
   "2607.13027": {
     "title": "PalmClaw: A Native On-Device Agent Framework for Mobile Phones",
-    "file": null,
+    "file": "collection/skills/other/palmclaw-a-native-on-device-agent-framework-for-mo/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "palmclaw-a-native-on-device-agent-framework-for-mo",
@@ -2268,7 +2268,7 @@
   },
   "2607.12986": {
     "title": "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation",
-    "file": null,
+    "file": "collection/skills/nlp-llm/win-by-silence-deletion-non-monotonicity-autonomou/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "win-by-silence-deletion-non-monotonicity-autonomou",
@@ -2277,7 +2277,7 @@
   },
   "2607.12924": {
     "title": "Knowledge- and Gradient-Guided Reinforcement Learning for Parametrized Action Markov Decision Processes",
-    "file": null,
+    "file": "collection/skills/neuroscience/knowledge-and-gradient-guided-reinforcement-learni/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "knowledge-and-gradient-guided-reinforcement-learni",
@@ -2286,7 +2286,7 @@
   },
   "2607.12893": {
     "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations",
-    "file": null,
+    "file": "collection/skills/nlp-llm/memops-benchmarking-lifecycle-memory-operations-in/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "memops-benchmarking-lifecycle-memory-operations-in",
@@ -2295,7 +2295,7 @@
   },
   "2607.12886": {
     "title": "A Multi-Agent System for Autonomous, Fine-Tuning-Free Clinical Symptom Detection: Development and Validation Study",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/a-multi-agent-system-for-autonomous-fine-tuning-fr/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "a-multi-agent-system-for-autonomous-fine-tuning-fr",
@@ -2304,7 +2304,7 @@
   },
   "2607.12861": {
     "title": "Unveiling Complex Collective Behaviors from Simple Rewards",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/unveiling-complex-collective-behaviors-from-simple/SKILL.md",
     "keywords": [],
     "utility": 0.93,
     "skillCreated": "unveiling-complex-collective-behaviors-from-simple",
@@ -2313,7 +2313,7 @@
   },
   "2607.12823": {
     "title": "Human-AI Agent Interaction as a Neuroplastic Training Environment",
-    "file": null,
+    "file": "collection/skills/neuroscience/human-ai-agent-interaction-as-a-neuroplastic-train/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "human-ai-agent-interaction-as-a-neuroplastic-train",
@@ -2322,7 +2322,7 @@
   },
   "2607.12790": {
     "title": "Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents",
-    "file": null,
+    "file": "collection/skills/nlp-llm/who-grades-the-grader-co-evolving-evaluation-metri/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "who-grades-the-grader-co-evolving-evaluation-metri",
@@ -2331,7 +2331,7 @@
   },
   "2607.12763": {
     "title": "Constraint-Aware Aggregation for Federated Reinforcement Learning in Microgrid Energy Coordination",
-    "file": null,
+    "file": "collection/skills/other/constraint-aware-aggregation-for-federated-reinfor/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "constraint-aware-aggregation-for-federated-reinfor",
@@ -2340,7 +2340,7 @@
   },
   "2607.12747": {
     "title": "Tracing Agentic Failure from the Flow of Success",
-    "file": null,
+    "file": "collection/skills/nlp-llm/tracing-agentic-failure-from-the-flow-of-success/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "tracing-agentic-failure-from-the-flow-of-success",
@@ -2349,7 +2349,7 @@
   },
   "2607.12733": {
     "title": "LLMs Can See the Smoke but not the Fire: Evaluating Abductive Reasoning with Elenchos",
-    "file": null,
+    "file": "collection/skills/neuroscience/llms-can-see-the-smoke-but-not-the-fire-evaluating/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "llms-can-see-the-smoke-but-not-the-fire-evaluating",
@@ -2358,7 +2358,7 @@
   },
   "2607.12662": {
     "title": "Internet of Agentic Things: Networked AI Agents for Closed-Loop IoT Orchestration",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/internet-of-agentic-things-networked-ai-agents-for/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "internet-of-agentic-things-networked-ai-agents-for",
@@ -2367,7 +2367,7 @@
   },
   "2607.12650": {
     "title": "Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs",
-    "file": null,
+    "file": "collection/skills/multi-agent-rl/evidence-grounded-verified-agentic-reasoning-a-pat/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "evidence-grounded-verified-agentic-reasoning-a-pat",
@@ -2376,7 +2376,7 @@
   },
   "2607.12640": {
     "title": "A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism",
-    "file": null,
+    "file": "collection/skills/other/a-learning-rate-gated-failure-of-grpo-in-a-small-l/SKILL.md",
     "keywords": [],
     "utility": 0.97,
     "skillCreated": "a-learning-rate-gated-failure-of-grpo-in-a-small-l",
@@ -2385,7 +2385,7 @@
   },
   "2607.12631": {
     "title": "Can Induced Emotion Bias LLM Behaviors in Sequential Decision Making?",
-    "file": null,
+    "file": "collection/skills/other/can-induced-emotion-bias-llm-behaviors-in-sequenti/SKILL.md",
     "keywords": [],
     "utility": 1,
     "skillCreated": "can-induced-emotion-bias-llm-behaviors-in-sequenti",
