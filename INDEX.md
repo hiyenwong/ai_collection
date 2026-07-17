@@ -12,6 +12,12 @@
   - Key innovation: Alternates between state estimation (using RTS smoother) and parameter estimation (using backpropagation) to learn unknown ODE components
   - **Activation**: arxiv260715180, neural differential equations, RTS smoother, physics-informed neural networks, system identification
 
+### Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation
+- [[arxiv260714833]] - Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation (arXiv: 2607.14833)
+  - Core contribution: Dual-process active inference formulation with three-layer nested Markov-blanket architecture for modeling focused-attention meditation
+  - Key innovation: Models meditation through four attractor states (breath focus, mind-wandering, meta-awareness, redirect attention) with System 1 generating thoughtseeds and System 2 implementing GNW capacity bottleneck
+  - **Activation**: arxiv260714833, thoughtseeds, dual-process, active inference, focused-attention meditation, meta-awareness, Global Neuronal Workspace, computational phenomenology
+
 ## 2026-07-17 - Quantum Entanglement Detection via Unitary Transformations and Ancilla Measurements (Cron Job)
 
 
