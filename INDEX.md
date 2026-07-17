@@ -1,4 +1,19 @@
+## 2026-07-17 - Neuroscience Research (Cron Job)
+
+### Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
+- [[arxiv260714672]] - Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
+  - Core contribution: Introduces differentiable spike-time discretization (DSTD) for memory-efficient training of continuous-time spiking neural networks
+  - Key innovation: Reduces candidate-related activation memory from O(N_out*N_in) to O(N_out*M) where M is the number of fixed time intervals
+  - **Activation**: arxiv260714672, spiking neural networks, differentiable spike-time discretization, continuous-time SNNs, neuromorphic computing
+
+### RTS Smoother-Guided Learning of Physics-Based Neural Differential Models
+- [[arxiv260715180]] - RTS Smoother-Guided Learning of Physics-Based Neural Differential Models (arXiv: 2607.15180)
+  - Core contribution: Hybrid neural-physics framework that combines Rauch-Tung-Striebel smoothing with neural network parameter estimation
+  - Key innovation: Alternates between state estimation (using RTS smoother) and parameter estimation (using backpropagation) to learn unknown ODE components
+  - **Activation**: arxiv260715180, neural differential equations, RTS smoother, physics-informed neural networks, system identification
+
 ## 2026-07-17 - Quantum Entanglement Detection via Unitary Transformations and Ancilla Measurements (Cron Job)
+
 
 ### Entanglement Detection for Two-Qubit and Three-Qubit Pure States via Unitary Transformations and Ancilla State Measurements
 - [[entanglement-detection-unitary-ancilla-methodology]] - Methodology for direct measurement of bipartite concurrence and tripartite 3-tangle entanglement measures using unitary transformations and ancilla state measurements (arXiv: 2607.15201)
@@ -9,9 +24,13 @@
 
 ## 2026-07-16 - Universal Quantum Computation with Cat Qubits (Cron Job)
 
+
 ### Universal Quantum Computation with Multi-Mode Schrödinger Cat States Stabilized by Non-Local Dissipation Engineering
 - [[universal-quantum-computation-with-multi-mode-schrödinger-cat-states-stabilized-by-non-local-dissipation-engineering]] - Skill for understanding and implementing universal quantum computation using dissipatively stabilized multi-mode Schrödinger cat states via non-local dissipation engineering (arXiv: 2607.13975)
+
+
 ## 2026-07-17 - Neuroscience Research (Cron Job)
+
 
 ### Grounded world models in biological organisms and future embodied AI
 - [[grounded-world-models-biological-organisms-future-embodied-ai]] - A skill for understanding and applying the research from arXiv:2607.13560 "Grounded world models in biological organisms and future embodied AI". This skill outlines five key neural circuit mechanisms for grounded world modeling and how they can inform future embodied AI design.
@@ -24,6 +43,7 @@
   - Implements entangling gates via XX(π/2) operations between coupled arrays
   - **Activation**: universal-quantum-computation-with-multi-mode-schrödinger-cat-states-stabilized-by-non-local-dissipation-engineering, quantum-computing, cat-qubits, dissipative-stabilization, non-local-dissipation, universal-gates
 
+
 ### Transient Synaptic Memory Activity Regeneration
 - [[transient-synapse-activity-regen]] - Skill for understanding and applying the Latent Excitable Recruitment (LER) framework from arXiv:2607.14000, which predicts activity regeneration in neuronal networks based on transient synaptic memory.
   - Core contribution: Introduces Latent Excitatory Recruitment (LER) capacity as a near-perfect predictor of multi-cycle dynamics from synaptic snapshots
@@ -35,12 +55,14 @@
   - Performance highly dependent on spatial distribution of stimulation; joint optimization of temporal and spatial strategies is essential
   - **Activation**: evaluating-encoding-strategies-biological-neural-networks, neuroscience, burst-encoding, temporal-encoding, biological-neural-networks, closed-loop-classification
 
+
 ### Classifying Daily Activities Needs Posture, Reconstructing Them Needs Motion
 - [[classifying-daily-activities-needs-posture-reconstructing-them-needs-motion]] - Skill for understanding the dissociation between posture-based action classification and motion-dependent movement reconstruction in human vision, based on arXiv:2607.13216.
   - Shows static posture suffices for action classification while temporal dynamics are essential for movement reconstruction
   - Identifies 9 critical joints most predictive for movement classification
   - Demonstrates Temporal Movement Primitives preserve temporal dynamics while Legendre coefficients preserve only posture
   - **Activation**: classifying-daily-activities-needs-posture-reconstructing-them-needs-motion, neuroscience, movement-classification, action-recognition, motion-reconstruction, posture-motion-dissociation, temporal-movement-primitives, legendre-polynomials
+
 
 ### Leveraging Unlabelled Data for Generalizable Neural Population Decoding
 - [[leveraging-unlabelled-data-for-generalizable-neural-population-decoding]] - Skill for understanding and applying the MOJO framework for leveraging unlabelled data in neural population decoding (arXiv: 2607.14086)
@@ -49,12 +71,14 @@
   - Shows improved interpretability of neural representations for brain region classification
   - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning
 
+
 ### Visual Place Recognition Rate-Encoded SNN-STDP
 - [[visual-place-recognition-rate-encoded-snn-stdp]] - Skill for understanding and implementing the discrete time visual place recognition framework using spike-timing-dependent plasticity in spiking neural networks, based on arXiv:2607.13114.
   - Encodes visual place information in spike timing rates with STDP learning rules
   - Achieves high accuracy in visual place recognition tasks with sparse coding
   - Demonstrates robustness to noise and varying environmental conditions
   - **Activation**: visual-place-recognition-rate-encoded-snn-stdp, neuroscience, visual-place-recognition, spiking-neural-networks, STDP, temporal-coding, rate-encoding
+
 
 ### Fast Whole-Brain, Geometry-Aware Functional Alignment for Cross-Subject Decoding
 - [[fast-whole-brain-spectralot-alignment]] - Skill for understanding and implementing the SpectralOT method for functional alignment of fMRI data across subjects, based on arXiv:2607.10931v1.
