@@ -1,3 +1,12 @@
+
+## 2026-07-17 - Neuroscience Research (Cron Job)
+
+### Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
+- [[scalable-training-continuous-time-spiking-neural-networks-dstd]] - Differentiable Spike-Time Discretization (DSTD) enables 100x memory reduction and 20x speedup for training deep continuous-time spiking neural networks (arXiv: 2607.14672)
+  - Core innovation: Maps irregular presynaptic spikes to differentiable weighted events at fixed time points, replacing input-dependent candidate dimension
+  - Performance: Reduced peak memory consumption by up to ~100x and training time by up to ~20x compared to exact spike-time computation
+  - **Activation**: differentiable spike-time discretization, continuous-time SNNs, neuromorphic hardware, temporal computation
+
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
 
