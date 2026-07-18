@@ -1,3 +1,12 @@
+## 2026-07-18 - Neuroscience Research (Cron Job)
+
+### Leveraging unlabelled data for generalizable neural population decoding
+- [[arxiv-2607-14086]] - A skill for understanding and applying the MOJO framework for leveraging unlabelled data in neural population decoding (arXiv: 2607.14086)
+  - Introduces MOJO (Masked autoEncoder-based Joint training) framework combining self-supervised and supervised learning
+  - Demonstrates superior performance with limited labeled data and cross-modal generalization to human ECoG
+  - Shows improved interpretability of neural representations for brain region classification
+  - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning
+
 
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
@@ -77,3 +86,6 @@
   - Core contribution: Hybrid neural-physics framework that combines Rauch-Tung-Striebel smoothing with neural network parameter estimation
   - Key innovation: Alternates between state estimation (using RTS smoother) and parameter estimation (using backpropagation) to learn unknown ODE components
   - **Activation**: rts-smoother-guided-learning-physics-based-neural-differential-models, neural differential equations, RTS smoother, physics-informed neural networks, system identification, neuroscience
+
+## CogniSNN: Random Graph Architecture for Spiking Neural Networks
+- [[cognisnn-random-graph-architecture]] - Skill for understanding and applying the CogniSNN framework: a Spiking Neural Network paradigm that incorporates Random Graph Architecture to achieve Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability for brain-inspired intelligence. Based on arXiv:2512.11743.
