@@ -1,3 +1,10 @@
+## 2026-07-18 - arXiv Paper Skills (Cron Job)
+
+Added 2 new paper skills from arXiv (utility >= 0.85).
+
+- [[e-spl-evolutionary-system-prompt-learning]] - arXiv: 2602.14697 (utility=0.9) | E-SPL (Evolutionary System Prompt Learning)
+- [[agentic-evolution-path-to-evolving-llms]] - arXiv: 2601.10007 (utility=0.85) | Agentic Evolution is the Path to Evolving LLMs
+
 ## 2026-07-09 - arXiv Paper Skills (Cron Job)
 
 Added 55 new paper skills from arXiv (utility >= 0.85).

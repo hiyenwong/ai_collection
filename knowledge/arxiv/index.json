@@ -363,8 +363,8 @@
       "RL"
     ],
     "utility": 0.9,
-    "skillCreated": null,
-    "lastAccessed": "2026-03-08"
+    "skillCreated": "e-spl-evolutionary-system-prompt-learning",
+    "lastAccessed": "2026-07-18"
   },
   "2603.03561": {
     "title": "Memex(RL)",
@@ -692,8 +692,8 @@
       "scaling"
     ],
     "utility": 0.85,
-    "skillCreated": null,
-    "lastAccessed": "2026-03-10"
+    "skillCreated": "agentic-evolution-path-to-evolving-llms",
+    "lastAccessed": "2026-07-18"
   },
   "2602.10008": {
     "title": "From Prompt-Response to Goal-Directed Systems",
@@ -2218,5 +2218,36 @@
     "skillCreated": "fabrivia-lightweight-vision-language-action-multi-task-manipulation",
     "lastAccessed": "2026-07-12",
     "category": "vision-generative"
+  },
+  "2607.13034": {
+    "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+    "file": null,
+    "keywords": [
+      "complexity-aware",
+      "reasoning",
+      "execution",
+      "acrr",
+      "e3"
+    ],
+    "utility": 1.0,
+    "skillCreated": "do-ai-agents-know-when-a-task-is-simple-toward-com",
+    "lastAccessed": "2026-07-15",
+    "category": "nlp-llm"
+  },
+  "2607.13028": {
+    "title": "TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale",
+    "file": null,
+    "keywords": [
+      "terrazeros",
+      "procedural",
+      "driving",
+      "simulation",
+      "self-play",
+      "zero-demonstration"
+    ],
+    "utility": 1.0,
+    "skillCreated": "terrazero-procedural-driving-simulation-zero-demonstration-self-play",
+    "lastAccessed": "2026-07-15",
+    "category": "ai-ml"
   }
 }
