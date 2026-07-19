@@ -1,1 +1,118 @@
----\nname: activity-regeneration-transient-synaptic-memory\ndescription: Skill for understanding and applying the transient synaptic memory mechanism for activity regeneration in neuronal networks, based on arXiv:2607.14000.\ncategory: neuroscience\n---\n\n## Context\nThe paper \"Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory\" (arXiv:2607.14000) investigates how transient synaptic memory alone can predict future dynamics of neuronal networks after complete silence. It introduces the Latent Excitatory Recruitment (LER) capacity, derived from the synaptic configuration at the first silent state, as a near-perfect predictor of multi-cycle activity regeneration without needing to simulate further.\n\nThis skill provides a methodology to model transient synaptic memory, extract the synaptic-state snapshot, compute LER, and use it to predict activity regeneration.\n\n## Core Methodology\n1. **Construct a neuronal network model with finite-lifetime synapses**: Implement synapse models where synaptic efficacy decays to zero after a characteristic time, ensuring no persistent activity without presynaptic spikes.\n2. **Induce network activity**: Apply a brief excitatory stimulus to trigger a burst of spikes across the network.\n3. **Wait for complete silence**: Simulate until no spikes occur for a predefined window (e.g., 50 ms), marking the first silent state.\n4. **Capture the synaptic-state snapshot**: Record the state of all synapses (e.g., available resources, utilization variables) at the onset of silence.\n5. **Compute Latent Excitatory Recruitment (LER)**: For each synapse, calculate the proportion of releasable resources; sum across all excitatory synapses to obtain LER, representing the cumulative number of fresh excitatory neurons that could be recruited.\n6. **Predict activity regeneration**: Compare LER to a threshold (determined empirically); if LER exceeds threshold, predict that activity will regenerate for at least one additional cycle; otherwise, predict termination after the current cycle.\n7. **Validate prediction**: Optionally, continue simulation for a longer window and count actual regeneration cycles to confirm prediction accuracy.\n\n## Implementation Steps\n- Choose a synaptic model with dynamic variables (e.g., Tsodyks-Markram short-term plasticity) that includes a utilization variable `u` and a recovery variable `x`, where the effective synaptic weight is `u * x`. Ensure `x` decays to 1 with time constant `τ_rec` and `u` decays to 0 with time constant `τ_facil` (or similar) to enforce finite lifetime.\n- Initialize synapses with `x = 1` (fully recovered) and `u = 0` (no facilitation).\n- Simulate the network using a spike-based integrator (e.g., Euler or Runge-Kutta) with typical neuronal dynamics (e.g., integrate-and-fire).\n- Apply a short pulse of external current to a subset of neurons to initiate activity.\n- Monitor spike raster; when spike count over a sliding window falls to zero for `T_silent` (e.g., 20-50 ms), record the synaptic state.\n- For each excitatory synapse, compute `x_i` (available fraction) at that moment; LER = Σ_i `x_i` over all excitatory synapses.\n- Determine LER threshold via pilot simulations: simulate a set of networks with varying initial conditions, compute LER, and observe whether activity regenerates (count cycles >1). Choose threshold that maximizes prediction accuracy.\n- For a new network state, compute LER and compare to threshold to predict regeneration.\n- (Optional) Run extended simulation to verify prediction.\n\n## Pitfalls\n- **Synaptic model must not support persistent activity**: If synapses have bistable or long-term components, the silent state may not be truly memoryless; ensure synaptic variables decay to baseline.\n- **LER assumes homogeneity**: In heterogeneous networks, the simple sum may need weighting by postsynaptic excitability.\n- **Threshold sensitivity**: The LER threshold depends on network size, connectivity, and stimulus strength; recalibrate for significant changes.\n- **Measurement noise**: In stochastic simulations, average over multiple trials to obtain reliable LER estimates.\n- **Computational cost of snapshot**: Extracting and storing the full synaptic state can be memory-intensive for large networks; consider downsampling or using summary statistics.\n\n## Verification\nTo verify that the skill correctly implements the methodology:\n1. Implement a small test network (e.g., 50 excitatory neurons with random sparse connectivity).\n2. Run the protocol with a fixed stimulus and compute LER at silence.\n3. Compare predicted regeneration (based on LER threshold) with actual regeneration observed in extended simulations across 20 random seeds.\n4. Verify that prediction accuracy exceeds 90%.\n5. Ensure that when synaptic lifetimes are set to infinite (no decay), the method fails (as predicted by the paper).\n\n## Activation Keywords\n- transient synaptic memory\n- latent excitatory recruitment\n- activity regeneration\n- silent states\n- neuronal network modeling\n- short-term plasticity\n- synaptic-state snapshot\n\n
+---
+name: activity-regeneration-transient-synaptic-memory
+description: "A minimal neuronal network model with finite-lifetime synapses to study activity regeneration from silent states via transient synaptic memory. Use when modeling neuronal network dynamics, short-term memory, or silent-state reactivation."
+metadata:
+  arxiv_id: "2607.14000"
+  authors: ["Mozhgan Khanjanianpak", "Alireza Valiadeh"]
+  subjects: ["Neurons and Cognition (q-bio.NC)", "Disordered Systems and Neural Networks (cond-mat.dis-nn)", "Statistical Mechanics (cond-mat.stat-mech)"]
+---
+
+# Activity Regeneration from Transient Synaptic Memory Skill
+
+This skill implements the model from arXiv:2607.14000 for studying activity regeneration in neuronal networks with transient synaptic memory.
+
+## Core Methodology
+
+The model introduces a minimal neuronal network with finite-lifetime synapses and investigates the mechanism underlying spontaneous activity regeneration following complete neuronal silence.
+
+Key findings:
+  - The residual synaptic configuration at the first silent state determines whether network activity terminates after a single activation cycle or spontaneously regenerates an additional cycle.
+  - The Latent Excitatory Recruitment (LER) capacity, quantified by the cumulative number of fresh excitatory neurons, is a near-perfect predictor of multi-cycle dynamics.
+  - Distinct dynamical outcomes emerge in an otherwise homogeneous neuronal network, demonstrating that transient synaptic memory alone is sufficient to generate diverse future dynamics.
+
+## Implementation Steps
+
+### 1. Define the Neuronal Network Model with Finite-Lifetime Synapses
+
+```python
+# Define neuronal and synaptic dynamics
+def neuronal_dynamics(V, I_syn, I_ext):
+    # Example: integrate-and-fire neuron
+    dVdt = (-V + R*I_syn + I_ext) / tau_m
+    return dVdt
+
+def synaptic_dynamics(s, t, tau_s):
+    # Synaptic variable with exponential decay
+    dsdt = -s / tau_s
+    return dsdt
+
+# Finite-lifetime synapses: synapses have a lifetime after which they are reset
+def update_synapses(synapses, t, lifetime):
+    # Remove synapses older than lifetime
+    active_synapses = [syn for syn in synapses if t - syn['birth_time'] < lifetime]
+    return active_synapses
+```
+
+### 2. Simulate Network Activity and Silent States
+
+```python
+def simulate_network(N, T, stimulus_duration):
+    # Initialize neurons and synapses
+    # Apply stimulus for stimulus_duration
+    # Then let network evolve in silence
+    # Record activity and synaptic states
+    pass
+```
+
+### 3. Compute Latent Excitatory Recruitment (LER) Capacity
+
+```python
+def calculate_LER(synaptic_states):
+    # LER: cumulative number of fresh excitatory neurons that can be recruited
+    # from the silent state synaptic configuration
+    return sum([syn['weight'] for syn in synaptic_states if syn['type'] == 'excitatory' and syn['is_fresh']])
+```
+
+### 4. Predict Future Dynamics from Silent State Synaptic Configuration
+
+```python
+def predict_future_activity(silent_state_synapses):
+    ler = calculate_LER(silent_state_synapses)
+    if ler > threshold:
+        return "activity_regeneration"
+    else:
+        return "activity_termination"
+```
+
+## Validation
+
+Simulations should reproduce:
+  - Activity termination after a single activation cycle for low LER
+  - Spontaneous activity regeneration for high LER
+  - The near-perfect predictive power of LER for multi-cycle dynamics
+
+## Resources
+
+### scripts/
+  - `simulate_network.py` - Simulation of the neuronal network with transient synapses
+  - `calculate_ler.py` - Calculation of Latent Excitatory Recruitment capacity
+  - `predict_dynamics.py` - Prediction of future activity from silent state
+
+### references/
+  - `ornstein_uhlenbeck_process.md` - Mathematical details of the neuronal substrate model (if needed)
+  - `finite_lifetime_synapses.md` - Model of synapses with finite lifetime
+
+### assets/
+  - `network_diagram.png` - Diagram of the neuronal network model
+  - `ler_vs_activity.png` - Plot showing LER vs. activity regeneration
+
+## Activation Keywords
+
+  - activity-regeneration-transient-synaptic-memory
+  - transient synaptic memory
+  - silent state reactivation
+  - latent excitatory recruitment
+  - neuronal network dynamics
+
+## Validation
+
+After implementing this skill, verify that:
+  1. The model shows activity termination for low LER and regeneration for high LER.
+  2. LER is a near-perfect predictor of multi-cycle dynamics.
+  3. The silent state synaptic configuration contains sufficient information to predict future evolution.
+
+## References
+
+  Khanjanianpak, M., & Valiadeh, A. (2026). Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory. arXiv preprint arXiv:2607.14000.
+
+---
