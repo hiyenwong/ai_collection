@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-07-20 - Neuroscience Research (Cron Job)
+
+### thoughtseeds-latent-causes-dual-process-computational-phenomenology-focused-attention-meditation
+- Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation (arXiv: 2607.14833)
+  - Presents a computational phenomenology of focused-attention meditation traversing four attractor states: breath focus, mind-wandering, meta-awareness, and redirect attention
+  - Implements a three-layer nested Markov-blanket architecture: (L1) physiological neuronal substrate, (L2) low-dimensional generative model encoding thoughtseeds, (L3) agentic metacognitive monitor implementing GNW capacity bottleneck
+  - **Activation**: thoughtseeds, dual-process, computational phenomenology, focused-attention meditation, attractor states, Markov-blanket architecture
+
+
 ## 2026-07-19 - Neuroscience Research (Cron Job)
 
 ### scalable-training-continuous-time-snn-dstd
