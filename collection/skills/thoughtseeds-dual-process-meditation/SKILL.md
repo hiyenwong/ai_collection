@@ -1,152 +1,129 @@
 ---
 name: thoughtseeds-dual-process-meditation
-description: "Computational phenomenology of focused-attention meditation as a dual-process active inference model with thoughtseeds as latent causes"
+description: "A computational phenomenology framework for modeling focused-attention meditation using dual-process active inference and hierarchical Markov-blanket architecture. Use when modeling meditation states, attentional dynamics, or cognitive phenomenology with latent mental content representations."
 metadata:
   arxiv_id: "2607.14833"
   authors: ["Prakash Chandra Kavi", "Daniel Ari Friedman", "Gustavo Patow"]
-  submitted: "2026-07-16"
-  comments: "29 pages including Supplementary section. 10 figures"
   subjects: ["Neurons and Cognition (q-bio.NC)"]
-license: Complete terms in LICENSE.txt
 ---
 
-# Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation
+# Thoughtseeds Dual Process Meditation Skill
 
-This skill implements the computational framework from arXiv:2607.14833 for modeling focused-attention meditation as a dual-process active inference system with three-layer nested Markov-blanket architecture.
+This skill implements the computational phenomenology framework from arXiv:2607.14833 for modeling focused-attention meditation as a dual-process active inference system with hierarchical Markov-blanket architecture.
 
 ## Core Methodology
 
 The model implements a three-layer nested Markov-blanket architecture:
 
-### Layer 1 (L1): Physiological Neuronal Substrate
-- High-dimensional physiological neuronal substrate modeled as a stochastic multivariate Ornstein--Uhlenbeck process
-- Operates over attentional Yeo networks (7-network parcellation of cerebral cortex)
-- Represents the biological substrate of attentional dynamics
+1. **L1 - Physiological Neuronal Substrate**: High-dimensional neuronal activity modeled as a stochastic multivariate Ornstein--Uhlenbeck process over attentional Yeo networks
+2. **L2 - Low-dimensional Generative Model (System 1)**: Encodes latent mental content as "thoughtseeds" and evaluates autonomic action tendencies
+3. **L3 - Agentic Metacognitive Monitor (System 2)**: Implements a Global Neuronal Workspace (GNW) capacity bottleneck to selectively gate these tendencies
 
-### Layer 2 (L2): Low-Dimensional Generative Model (System 1)
-- Encodes latent mental content as thoughtseeds
-- Evaluates autonomic action tendencies
-- Represents intuitive, automatic processing (System 1 in dual-process theory)
-- Thoughtseeds are discrete latent causes that generate patterns of neural activity
-
-### Layer 3 (L3): Agentic Metacognitive Monitor (System 2)
-- Implements a Global Neuronal Workspace (GNW) capacity bottleneck
-- Selectively gates autonomic tendencies from L2
-- Meta-awareness functions as the GNW ignition signal
-- Derived from policy-prior divergence
-- Dynamically gated by competition between orchestrator and distractor thoughtseeds
-
-## Key Mechanisms
-
-1. **Policy Selection**: Actively minimizes expected free energy
-2. **Descending Predictions**: L2 actions furnish descending predictions over network activity
-3. **Enactive Perception-Action Cycle**: Closed through L2 → network activity predictions
-4. **Training**: Uses variational Expectation-Maximization (EM) across expert and novice phenotypes
-5. **Attractor States**: Four attractor states in meditation dynamics:
-   - Breath focus
-   - Mind-wandering
-   - Meta-awareness
-   - Redirect attention
+Key mechanisms:
+- Meta-awareness functions as the GNW ignition signal, derived from policy-prior divergence
+- Direct competition between orchestrator and distractor thoughtseeds gates L3
+- Policy selection actively minimizes expected free energy
+- L2 actions furnish descending predictions over network activity to close the enactive perception--action cycle
+- Training uses variational Expectation-Maximization (EM) across expert and novice phenotypes
 
 ## Implementation Steps
 
-1. **Define Attentional Networks**: Implement Yeo 7-network parcellation (Visual, Somatomotor, Dorsal Attention, Ventral Attention, Limbic, Frontoparietal, Default Mode)
-2. **Model L1 Dynamics**: Implement multivariate Ornstein-Uhlenbeck process for neuronal substrate
-3. **Define Thoughtseed Space**: Create discrete latent variable space for mental content representations
-4. **Implement L2 Generative Model**: Map thoughtseeds to autonomic action tendencies and neural predictions
-5. **Implement L3 GNW Mechanism**: 
-   - Policy-prior divergence calculation for meta-awareness signal
-   - Competitive gating between orchestrator/distractor thoughtseeds
-   - Capacity-limited global broadcasting
-6. **Implement Active Inference Loop**:
-   - Action selection via expected free energy minimization
-   - Prediction error minimization across hierarchical levels
-   - Perception-action cycle closure
-7. **Train with EM Algorithm**: 
-   - E-step: Infer posterior over hidden states (thoughtseeds, neuronal states)
-   - M-step: Update model parameters to maximize expected free energy
-   - Train separately on expert vs. novice meditator phenotypes
+### 1. Define the Hierarchical Architecture
 
-## Validation Procedures
+```python
+# L1: Physiological substrate (Ornstein-Uhlenbeck process)
+def neuronal_substrate_dynamics(state, t, attention_networks):
+    """Models L1: high-dimensional physiological neuronal substrate"""
+    # Ornstein-Uhlenbeck process over attentional Yeo networks
+    return -theta * (state - mu) + sigma * np.random.wiener()
 
-1. **Behavioral Validation**: 
-   - Simulate reaction times to probe stimuli during different meditation states
-   - Compare with empirical data from meditation studies
-   - Validate reaction time distributions during breath focus vs. mind-wandering
+# L2: Latent mental content as thoughtseeds
+def thoughtseed_dynamics(latent_state, autonomic_tendencies):
+    """Models L2: low-dimensional generative model encoding thoughtseeds"""
+    # Generate latent mental content (thoughtseeds)
+    # Evaluate autonomic action tendencies
+    return latent_state_update, autonomic_evaluation
 
-2. **Neurophysiological Validation**:
-   - Simulate EEG/MEG power spectra across frequency bands
-   - Compare with empirical meditation neurophysiology
-   - Validate alpha power increases during focused attention
-   - Validate theta increases during meditative states
+# L3: Metacognitive monitor with GNW bottleneck
+def metacognitive_monitor(thoughtseeds, policy_prior_divergence):
+    """Models L3: agentic metacognitive monitor with GNW capacity bottleneck"""
+    # Meta-awareness as GNW ignition signal
+    meta_awareness = compute_meta_awareness(policy_prior_divergence)
+    # Gating via competition between orchestrator and distractor thoughtseeds
+    gated_output = competition_gating(thoughtseeds, meta_awareness)
+    return gated_output
 
-3. **Phenomenological Validation**:
-   - Simulate first-person report distributions
-   - Compare with phenomenological surveys of meditation experience
-   - Validate prevalence of reported mental states (focus, wandering, meta-awareness)
+# Full system dynamics
+def dual_process_active_inference(state, t):
+    """Complete dual-process active inference model"""
+    # L1 dynamics
+    l1_state = neuronal_substrate_dynamics(state, t, attention_networks)
+    # L2 processing
+    l2_state, autonomic_output = thoughtseed_dynamics(l1_state, autonomic_tendencies)
+    # L3 monitoring and control
+    l3_output = metacognitive_monitor(l2_state, policy_prior_divergence)
+    # Closed-loop perception-action
+    updated_state = update_state_with_predictions(l1_state, l2_state, l3_output)
+    return updated_state
+```
 
-4. **Individual Differences Validation**:
-   - Simulate expert vs. novice differences
-   - Validate with longitudinal meditation training studies
-   - Check for increased meta-awareness frequency with practice
+### 2. Implement Variational Expectation-Maximization Training
 
-## Pitfalls and Limitations
+```python
+def variational_em_training(expert_data, novice_data):
+    """Train using variational EM across expert and novice phenotypes"""
+    # E-step: compute posterior over latent states
+    # M-step: update model parameters
+    # Iterate until convergence
+    pass
 
-1. **Model Complexity**: The three-layer hierarchical structure requires careful parameter tuning
-2. **Thoughtseed Granularity**: Choosing appropriate resolution for latent mental state space
-3. **Yeo Network Limitations**: 7-parcellation may not capture fine-grained attentional dynamics
-4. **OU Process Assumption**: Ornstein-Uhlenbeck may not fully capture neural dynamics complexity
-5. **GNW Implementation**: Simplified global workspace may not capture full consciousness complexity
-6. **EM Convergence**: Variational EM may get stuck in local optima for complex landscapes
-7. **Parameter Identifiability**: Multiple parameter sets may produce similar behavioral outputs
-8. **Empirical Validation Data**: Requires multimodal datasets (behavioral + neurophysiological + phenomenological)
+# Training across phenotypes
+trained_model = variational_em_training(expert_meditators, novice_meditators)
+```
 
-## Execution Guidelines
+### 3. Simulate and Validate Against Empirical Data
 
-When applying this model to meditation research:
+```python
+def simulate_meditation_trajectory(initial_state, time_points):
+    """Simulate the meditation trajectory across attractor states"""
+    trajectory = []
+    state = initial_state
+    for t in time_points:
+        state = dual_process_active_inference(state, t)
+        trajectory.append(state)
+    return trajectory
 
-1. **Parameter Initialization**:
-   - L1: Set OU parameters based on empirical resting-state functional connectivity
-   - L2: Initialize thoughtseed space dimensionality based on phenomenological categories
-   - L3: Set GNW capacity based on working memory capacity estimates (~4 chunks)
+# Validate against empirical neurophysiological measures
+validation_results = compare_with_empirical(simulated_trajectory, empirical_data)
+```
 
-2. **Training Protocol**:
-   - Collect multi-session meditation data (behavioral, EEG, phenomenological reports)
-   - Use variational EM to fit individual subject parameters
-   - Validate hierarchical model comparison (1-layer vs 2-layer vs 3-layer)
+## Validation
 
-3. **Analysis Focus**:
-   - Extract latent timescales from hierarchical timescales of each layer
-   - Analyze thoughtseed transition matrices during meditation
-   - Quantify meta-awareness ignition events as policy-prior divergence peaks
-   - Measure orchestrator-distractor competition strength
+- Compare simulated attractor state transitions with empirical fMRI/EEG data
+- Verify that meta-awareness signals correlate with GNW ignition
+- Check that policy-prior divergence drives attentional switching
+- Ensure simulated thoughtseed dynamics match subjective reports
 
-## Applications
+## Resources
 
-1. **Meditation Training Optimization**: Identify optimal training parameters for developing meta-awareness
-2. **Clinical Applications**: Model attentional dysregulation in ADHD, anxiety, depression
-3. **Brain-Computer Interfaces**: Develop neurofeedback protocols based on latent state dynamics
-4. **Artificial Intelligence**: Implement artificial mindfulness in artificial agents
-5. **Theoretical Integration**: Bridge contemplative neuroscience with active inference frameworks
+### scripts/
+- `simulate_meditation.py`: Implementation of the dual-process active inference model
+- `validate_against_empirical.py": Validation scripts comparing simulation to empirical data
 
-## Verification
+### references/
+- `yeo_networks.md`: Details on attentional Yeo networks and their parcellation
+- `ornstein_uhlenbeck_process.md": Mathematical formulation of the OU process used for L1 dynamics
+- `global_neuronal_workspace.md": Overview of GNW theory and its implementation as a capacity bottleneck
 
-This skill implements the exact framework described in:
-- arXiv:2607.14833 "Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation"
-- Submitted: 2026-07-16
-- Comments: 29 pages including Supplementary section. 10 figures
-- Subjects: Neurons and Cognition (q-bio.NC)
+### assets/
+- `attractor_states_diagram.png": Visualization of the four attractor states (breath focus, mind-wandering, meta-awareness, redirect attention)
+- `hierarchical_markov_blanket.svg": Diagram of the three-layer nested Markov-blanket architecture
 
 ## Activation Keywords
 
-- thoughtseeds
-- dual-process
-- meditation
-- active inference
+- thoughtseeds-dual-process-meditation
+- computational phenomenology meditation
+- dual-process active inference
+- hierarchical Markov-blanket
 - global neuronal workspace
-- latent causes
-- attentional networks
-- ornstein-uhlenbeck
-- variational EM
-- meta-awareness
-- policy-prior divergence
+- attentional dynamics modeling
