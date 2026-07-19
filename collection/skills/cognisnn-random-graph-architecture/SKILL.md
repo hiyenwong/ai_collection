@@ -1,53 +1,68 @@
 ---
 name: cognisnn-random-graph-architecture
-description: "Skill for understanding and applying the CogniSNN framework: a Spiking Neural Network paradigm that incorporates Random Graph Architecture to achieve Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability for brain-inspired intelligence."
-license: Complete terms in LICENSE.txt
+description: "CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks"
+category: neuroscience
+tags: [spiking neural network, random graph architecture, neuron-expandability, pathway-reusability, dynamic-configurability]
+arxiv_id: 2512.11743
 ---
 
-# Cognisnn Random Graph Architecture
+# CogniSNN: Random Graph Architecture for Spiking Neural Networks
 
-## Overview
-This skill provides a comprehensive guide to the CogniSNN (Cognition-aware Spiking Neural Network) framework, which integrates Random Graph Architecture (RGA) to model biological neural networks' key characteristics: Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability. Use this skill when researching brain-inspired AI, designing spiking neural networks with structural plasticity, or exploring continual learning and robustness in neuromorphic computing.
+## Context
+This skill implements the CogniSNN framework introduced in arXiv:2512.11743, which addresses the limitations of traditional spiking neural networks (SNNs) that rigidly follow chain-like hierarchical architectures of traditional ANNs. The paper introduces Random Graph Architecture (RGA) to incorporate three key biological properties: Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability.
 
-## Key Contributions
-The CogniSNN framework introduces four main contributions:
-1. **Neuron-Expandability**: OR Gate residual mechanism and Adaptive Pooling to enable deep random graph architectures without degradation or dimensional mismatch.
-2. **Pathway-Reusability**: Key Pathway-based Learning without Forgetting (KP-LwF) algorithm that selectively reuses critical neural pathways using graph theory (Betweenness Centrality) for efficient multi-task learning.
-3. **Dynamic-Configurability**: Dynamic Growth Learning (DGL) algorithm that allows neurons and synapses to grow along the temporal dimension, enhancing robustness and mitigating fixed-timestep constraints.
-4. **Empirical Validation**: Demonstrates competitive or superior performance on neuromorphic datasets and Tiny-ImageNet, with improved anti-interference and continual learning capabilities compared to traditional chain-like SNN architectures.
+## Core Methodology
+1. **Random Graph Architecture (RGA)**: Replace rigid hierarchical connections with stochastic interconnections mimicking biological neural networks
+2. **Improved Pure Spiking Residual Mechanism**: Address network degradation and dimensional mismatch in deep pathways
+3. **Adaptive Pooling Strategy**: Complement the residual mechanism for stable feature extraction
+4. **Key Pathway-based Learning without Forgetting (KP-LwF)**: Selectively reuse critical neural pathways while retaining historical knowledge for efficient multi-task transfer
+5. **Dynamic Growth Learning (DGL) Algorithm**: Allow neurons and synapses to grow dynamically along the internal temporal dimension
 
-## Methodology
-### 4.1 Modeling of CogniSNN
-- **4.1.1 ResNode**: A pure spiking residual block using an OR Gate mechanism to address the unbounded value accumulation problem in deep residual connections.
-- **4.1.2 Adaptive Pooling Strategy**: Complements the ResNode to maintain spatial dimensions and prevent information loss.
-- **4.2 Key Pathway-based Learning without Forgetting (KP-LwF)**: 
-  - Uses Pathway Betweenness Centrality to identify critical neural pathways (Key Pathways).
-  - Selectively activates and updates these pathways for new tasks while preserving historical knowledge.
-- **4.3 Dynamic Growth Learning (DGL)**:
-  - Simulates neurodevelopmental processes by allowing synaptic growth and pruning over time.
-  - Enables structural plasticity along the internal temporal dimension, improving adaptability to noisy or changing environments.
+## Implementation Steps
+1. **Network Initialization with RGA**:
+   - Generate random connectivity patterns using Erdős–Rényi or Watts-Strogatz models
+   - Ensure biological plausibility through connection probability tuning
+   - Implement both excitatory and inhibitory connections with realistic ratios
 
-## Applications
-- **Neuromorphic Hardware Deployment**: The dynamic growth algorithm reduces sensitivity to fixed timing constraints, making CogniSNN suitable for real-world neuromorphic chips.
-- **Continual Learning Scenarios**: Pathway-Reusability enables the network to learn new tasks without catastrophic forgetting.
-- **Robust Pattern Recognition**: Enhanced noise and interference resistance due to dynamic structural adaptation.
-- **Brain-Inspired AI Research**: Provides a biologically plausible model for studying neural information processing and cognitive functions.
+2. **Spiking Neuron Model Selection**:
+   - Choose appropriate spiking neuron model (LIF, Izhikevich, etc.)
+   - Implement membrane potential dynamics and spike generation
+   - Configure refractory periods and threshold dynamics
 
-## How to Use This Skill
-1. **Understanding the Framework**: Read the Key Contributions and Methodology sections to grasp the theoretical foundations.
-2. **Implementing Components**: Refer to the pseudocode and architectural details in the referenced paper for implementing ResNode, Adaptive Pooling, KP-LwF, and DGL.
-3. **Adapting to Your Work**: 
-   - For neuroscience research: Use the framework to model stochastic neural pathways and study information flow.
-   - For AI engineering: Implement CogniSNN modules in neuromorphic computing projects requiring continual learning and robustness.
-   - For academic study: Explore the references and related works to understand the broader context of random graph architectures in neural networks.
+3. **Residual Connection Implementation**:
+   - Design identity mapping connections that bypass problematic layers
+   - Implement spike-based residual addition operations
+   - Add adaptive pooling layers to complement residual connections
 
-## References
-- **Paper**: CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks (arXiv:2512.11743)
-- **Code Repository**: https://github.com/Yongsheng124/CogniSNN
-- **Related Concepts**: Random Graph Architecture, Betweenness Centrality, Spiking Neural Networks, Continual Learning, Neuromorphic Computing
+4. **KP-LwF Learning Mechanism**:
+   - Identify critical pathways for task performance
+   - Implement selective pathway reuse during task switching
+   - Develop forgetting mitigation strategies for preserved knowledge
+
+5. **Dynamic Growth Algorithm**:
+   - Monitor network activity and performance metrics
+   - Trigger neuron/synapse addition when performance plateaus
+   - Integrate new components through structured growth protocols
+
+6. **Training Procedure**:
+   - Implement event-driven simulation for efficiency
+   - Apply spike-timing dependent plasticity (STDP) or surrogate gradients
+   - Validate on neuromorphic datasets (DVS-Gesture, CIFAR10-DVS) and Tiny-ImageNet
+
+## Configuration Parameters
+- Connection probability (p): 0.1-0.3 for sparse connectivity
+- Neuron growth rate: Adaptive based on performance metrics
+- Pathway reuse threshold: Task-specific similarity measure
+- Temporal dimension growth rate: Configurable based on task complexity
+
+## Verification
+- Performance comparison with state-of-the-art SNNs on benchmark datasets
+- Analysis of pathway reusability across sequential tasks
+- Evaluation of dynamic growth impact on network robustness
+- Verification of biological plausibility metrics
 
 ## Activation Keywords
-- cognisnn-random-graph-architecture
-- CogniSNN
-- Random Graph Architecture Spiking Neural Network
-- Neuron-Expandability Pathway-Reusability Dynamic-Configurability
+cognisnn, random graph architecture, spiking neural network, neuron-expandability, pathway-reusability, dynamic-configurability, KP-LwF, DGL
+
+## References
+- arXiv:2512.11743: CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
