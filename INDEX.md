@@ -1,4 +1,11 @@
 ## 2026-07-19 - Neuroscience Research (Cron Job)
+### NeuronSoup: Evolving Asynchronous, Shared-Neuron Temporal Graphs without Backpropagation
+- [[neuronsoup-temporal-graphs]] - 提出一种通过共享神经元中的延迟介导信号传递进行异步处理的神经计算架构，使用遗传算法优化拓扑、权重、延迟和连接，无需反向传播 (arXiv: 2607.15217v1)
+  - 通过共享神经元实现路径间的建设性或破坏性干扰，依赖信号极性和到达时间。
+  - 在MNIST上使用冻结的ResNet18特征，进化后的网络达到85.9%的测试准确率，仅占用115KB。
+  - **Activation**: 异步信号传播, 共享神经元, 遗传算法, 无反向传播, 时间图
+
+## 2026-07-19 - Neuroscience Research (Cron Job)
 ### Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory
 - [[activity-regeneration-transient-synaptic-memory]] - A minimal neuronal network model with finite-lifetime synapses to study activity regeneration from silent states via transient synaptic memory (arXiv: 2607.14000)
   - Residual synaptic configuration at first silent state determines whether activity terminates or regenerates
