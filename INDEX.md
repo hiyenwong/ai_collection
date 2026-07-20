@@ -27,6 +27,11 @@
   - **Activation**: rgflow transformer, renormalization group, scale-free dynamics, eeg spectral exponent, scarce neural data, brain criticality, multi-scale neural processing, sleep staging interpretation
 
 
+### scalable-training-continuous-time-spiking-neural-networks-dstd
+- Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
+  - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
+  - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
+
 ## 2026-07-19 - Neuroscience Research (Cron Job)
 
 ### scalable-training-continuous-time-snn-dstd
