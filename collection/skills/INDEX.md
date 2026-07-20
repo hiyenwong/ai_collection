@@ -1,8 +1,8 @@
 ## 2026-07-20 - arXiv Paper Skills (Cron Job)
 
-Added 1 new paper skills from arXiv (utility >= 0.85).
+Added 2 new paper skills from arXiv (utility >= 0.85).
 
-## 2026-07-20 - arXiv Paper Skills (Cron Job)
+### Reasoning-Bayesian (1 papers)- [[hierarchical-bayesian-statistical-learning-eeg]] - Using hierarchical statistical learning models to model individual statistical learning (arXiv: 2607.05822) (utility=1)## 2026-07-20 - arXiv Paper Skills (Cron Job)
 
 Added 158 new paper skills from arXiv (utility >= 0.85).
 
