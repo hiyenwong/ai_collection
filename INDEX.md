@@ -1,3 +1,11 @@
+## 2026-07-20 - Neuroscience Research (Cron Job)
+
+### Toward a mechanistic understanding of inference in visual cortex and diffusion models
+- [[arxiv-260715693-mechanistic-inference-visual-cortex-diffusion]] - A skill for understanding and applying the methods from the arXiv paper: Toward a mechanistic understanding of inference in visual cortex and diffusion models (arXiv: 260715693)
+  - Core contribution 1: Proposes a recurrent neural network model of V1 that is mathematically equivalent to a diffusion model, providing a mechanistic bridge between neuroscience and machine learning.
+  - Core contribution 2: Shows that the learned interaction matrix in the model corresponds to the known horizontal connectivity patterns in V1, suggesting that the brain may implement inference similar to diffusion models.
+  - **Activation**: mechanistic inference, visual cortex, diffusion models, sparse coding, recurrent neural networks, neuroscience, machine learning
+
 # AI Collection Index
 
 ## 2026-07-20 - Neuroscience Research (Cron Job)
