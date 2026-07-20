@@ -20,6 +20,13 @@
 
 
 
+### rgflow-transformer-eeg
+- The RG-Flow Transformer: Encoding Scale-Free Dynamics in Scarce EEG (arXiv: 2607.11950)
+  - Introduces a transformer architecture with renormalization-group inductive bias to capture scale-free (1/fractional renormalization-group inductive bias to capture scale-free (1/f^β) dynamics in EEG, coupling self-attention with a scale-aware stream, learnable anomalous dimension, block-spin coarse-graining, and entropy-gated synchronization bridge.
+  - Demonstrates superior interpretability: recovers spectral exponent β out-of-sample (R² = 0.416), a capability absent in standard transformers, while maintaining comparable sleep staging accuracy.
+  - **Activation**: rgflow transformer, renormalization group, scale-free dynamics, eeg spectral exponent, scarce neural data, brain criticality, multi-scale neural processing, sleep staging interpretation
+
+
 ## 2026-07-19 - Neuroscience Research (Cron Job)
 
 ### scalable-training-continuous-time-snn-dstd
