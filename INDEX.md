@@ -7,6 +7,12 @@
   - Presents a computational phenomenology of focused-attention meditation traversing four attractor states: breath focus, mind-wandering, meta-awareness, and redirect attention
   - Implements a three-layer nested Markov-blanket architecture: (L1) physiological neuronal substrate, (L2) low-dimensional generative model encoding thoughtseeds, (L3) agentic metacognitive monitor implementing GNW capacity bottleneck
   - **Activation**: thoughtseeds, dual-process, computational phenomenology, focused-attention meditation, attractor states, Markov-blanket architecture
+### visual-cortex-diffusion-model
+- Toward a mechanistic understanding of inference in visual cortex and diffusion models (arXiv: 2607.15693)
+  - Core methodology: Sparse coding with non-factorial prior over latent variables, equivalent to a minimal diffusion model; trained via denoising score-matching and implicit differentiation.
+  - Key insight: Learned interaction matrix mirrors horizontal connections in superficial layers of V1 linking similar orientation tuning; latent units disconnect from visual input forming hierarchical representation for global consistency.
+  - **Activation**: visual cortex, diffusion model, sparse coding, recurrent dynamics, denoising score-matching, horizontal connections
+
 
 
 ## 2026-07-19 - Neuroscience Research (Cron Job)
