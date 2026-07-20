@@ -3,7 +3,7 @@
 ## 2026-07-20 - Neuroscience Research (Cron Job)
 
 ### stsbench-dorsal-stream-visual-cortex
-- STSBench: A Large-Scale Dataset for Modeling Neuronal Activity in the Dorsal Stream of Primate Visual Cortex (arXiv: 2607.67)
+- STSBench: A Large-Scale Dataset for Modeling Neuronal Activity in the Dorsal Stream of Primate Visual Cortex (arXiv: 2607.15631)
   - Provides large-scale, single neuron recordings from over 2,000 neurons in the superior temporal sulcus (STS) collected while macaques viewed natural videos.
   - Enables benchmarking of encoding models for dorsal stream neuronal responses and visual input reconstruction from neural activity.
   - **Activation**: stsbench, dorsal stream, superior temporal sulcus, neuronal encoding, visual decoding, primate vision
@@ -14,13 +14,20 @@
   - Implements a three-layer nested Markov-blanket architecture: (L1) physiological neuronal substrate, (L2) low-dimensional generative model encoding thoughtseeds, (L3) agentic metacognitive monitor implementing GNW capacity bottleneck
   - **Activation**: thoughtseeds, dual-process, computational phenomenology, focused-attention meditation, attractor states, Markov-blanket architecture
 
-### visual-cortex-diffusion-model
+### visual-cortex-diffusion-inference
 - Toward a mechanistic understanding of inference in visual cortex and diffusion models (arXiv: 2607.15693)
   - Core methodology: Sparse coding with non-factorial prior over latent variables, equivalent to a minimal diffusion model; trained via denoising score-matching and implicit differentiation.
   - Key insight: Learned interaction matrix mirrors horizontal connections in superficial layers of V1 linking similar orientation tuning; latent units disconnect from visual input forming hierarchical representation for global consistency.
   - **Activation**: visual cortex, diffusion model, sparse coding, recurrent dynamics, denoising score-matching, horizontal connections
 
 ### scalable-training-continuous-time-spiking-neural-networks-dstd
+- Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
+  - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
+  - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
+
+  - Key insight: Learned interaction matrix mirrors horizontal connections in superficial layers of V1 linking similar orientation tuning; latent units disconnect from visual input forming hierarchical representation for global consistency.
+  - **Activation**: visual cortex, diffusion model, sparse coding, recurrent dynamics, denoising score-matching, horizontal connections
+
 - Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
   - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
   - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
