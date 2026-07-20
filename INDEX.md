@@ -3,29 +3,22 @@
 ## 2026-07-20 - Neuroscience Research (Cron Job)
 
 ### stsbench-dorsal-stream-visual-cortex
-- STSBench: A Large-Scale Dataset for Modeling Neuronal Activity in the Dorsal Stream of Primate Visual Cortex (arXiv: 2607.15631)
+- STSBench: A Large-Scale Dataset for Modeling Neuronal Activity in the Dorsal Stream of Primate Visual Cortex (arXiv: 2607.67)
   - Provides large-scale, single neuron recordings from over 2,000 neurons in the superior temporal sulcus (STS) collected while macaques viewed natural videos.
   - Enables benchmarking of encoding models for dorsal stream neuronal responses and visual input reconstruction from neural activity.
   - **Activation**: stsbench, dorsal stream, superior temporal sulcus, neuronal encoding, visual decoding, primate vision
+
 ### thoughtseeds-latent-causes-dual-process-computational-phenomenology-focused-attention-meditation
 - Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation (arXiv: 2607.14833)
   - Presents a computational phenomenology of focused-attention meditation traversing four attractor states: breath focus, mind-wandering, meta-awareness, and redirect attention
   - Implements a three-layer nested Markov-blanket architecture: (L1) physiological neuronal substrate, (L2) low-dimensional generative model encoding thoughtseeds, (L3) agentic metacognitive monitor implementing GNW capacity bottleneck
   - **Activation**: thoughtseeds, dual-process, computational phenomenology, focused-attention meditation, attractor states, Markov-blanket architecture
+
 ### visual-cortex-diffusion-model
 - Toward a mechanistic understanding of inference in visual cortex and diffusion models (arXiv: 2607.15693)
   - Core methodology: Sparse coding with non-factorial prior over latent variables, equivalent to a minimal diffusion model; trained via denoising score-matching and implicit differentiation.
   - Key insight: Learned interaction matrix mirrors horizontal connections in superficial layers of V1 linking similar orientation tuning; latent units disconnect from visual input forming hierarchical representation for global consistency.
   - **Activation**: visual cortex, diffusion model, sparse coding, recurrent dynamics, denoising score-matching, horizontal connections
-
-
-
-### rgflow-transformer-eeg
-- The RG-Flow Transformer: Encoding Scale-Free Dynamics in Scarce EEG (arXiv: 2607.11950)
-  - Introduces a transformer architecture with renormalization-group inductive bias to capture scale-free (1/fractional renormalization-group inductive bias to capture scale-free (1/f^β) dynamics in EEG, coupling self-attention with a scale-aware stream, learnable anomalous dimension, block-spin coarse-graining, and entropy-gated synchronization bridge.
-  - Demonstrates superior interpretability: recovers spectral exponent β out-of-sample (R² = 0.416), a capability absent in standard transformers, while maintaining comparable sleep staging accuracy.
-  - **Activation**: rgflow transformer, renormalization group, scale-free dynamics, eeg spectral exponent, scarce neural data, brain criticality, multi-scale neural processing, sleep staging interpretation
-
 
 ### scalable-training-continuous-time-spiking-neural-networks-dstd
 - Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
@@ -46,6 +39,7 @@
   - Presents five examples of neural circuits supporting grounded world modelling
   - Highlights features missing from current embodied AI: intrinsic dynamics as foundation for learning, centrality of action, autonomous experience, and predictive/control mechanisms scaffolding higher cognition
   - **Activation**: grounded world models, biological organisms, embodied AI, neural circuits, predictive learning, action-centered learning
+
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
 - [[cognisnn-random-graph-architecture]] - CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks (arXiv: 2512.11743)
   - Incorporates Random Graph Architecture to emulate biological neural stochastic connectivity
