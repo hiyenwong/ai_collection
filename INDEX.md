@@ -8,6 +8,15 @@
 
 # AI Collection Index
 
+## 2026-07-13 - Neuroscience Research (Cron Job)
+
+### Sync gap fixes from previous sessions
+- [[hierarchical-bayesian-statistical-learning-eeg]] - Hierarchical Bayesian Statistical Learning model for individual EEG learning trajectories, dyslexia research (arXiv: 2607.05822)
+  - HBSL models individual statistical learning from EEG data
+  - Group differences (dyslexia vs control) not significant, but model-data correspondence excellent
+  - **Activation**: hierarchical Bayesian, statistical learning, EEG, individual differences, dyslexia
+
+
 ## 2026-07-20 - Neuroscience Research (Cron Job)
 
 ### stsbench-dorsal-stream-visual-cortex
