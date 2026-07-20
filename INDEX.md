@@ -2,6 +2,11 @@
 
 ## 2026-07-20 - Neuroscience Research (Cron Job)
 
+### stsbench-dataset
+- STSBench: A Large-Scale Dataset for Modeling Neuronal Activity in the Dorsal Stream of Primate Visual Cortex (arXiv: 2607.15631)
+  - Provides large-scale, single neuron recordings from over 2,000 neurons in the superior temporal sulcus (STS) collected while macaques viewed natural videos.
+  - Enables benchmarking of encoding models for dorsal stream neuronal responses and visual input reconstruction from neural activity.
+  - **Activation**: STSbench, dorsal stream, superior temporal sulcus, neuronal encoding models, visual reconstruction
 ### thoughtseeds-latent-causes-dual-process-computational-phenomenology-focused-attention-meditation
 - Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation (arXiv: 2607.14833)
   - Presents a computational phenomenology of focused-attention meditation traversing four attractor states: breath focus, mind-wandering, meta-awareness, and redirect attention
