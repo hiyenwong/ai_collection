@@ -1,3 +1,404 @@
+## New High-Utility Papers (2026-07-21)
+
+### TRIM: Reducing AI-Generated CodeSlop via Agent Trajectory Minimization (arXiv:2607.18161)
+- [[trim-reducing-ai-generated-codeslop-agent-trajectory-minimization]] - Skill derived from arXiv:2607.18161 - TRIM: Reducing AI-Generated CodeSlop via Agent Trajectory Minimization
+  - Core point 1: TRIM: Reducing AI-Generated CodeSlop via Agent Trajectory Minimization
+  - Core point 2: Derived from arXiv:2607.18161
+  - **Activation**: trim-reducing-ai-generated-codeslop-agent-trajectory-minimization, 2607.18161
+
+
+### LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications (arXiv:2607.18147)
+- [[llms-agentic-ai-systems-smart-grids-tutorial-architectures-applications]] - Skill derived from arXiv:2607.18147 - LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications
+  - Core point 1: LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications
+  - Core point 2: Derived from arXiv:2607.18147
+  - **Activation**: llms-agentic-ai-systems-smart-grids-tutorial-architectures-applications, 2607.18147
+
+
+### O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning (arXiv:2607.18142)
+- [[vad-industrial-video-anomaly-detection-through-object-centric-tracking-reasoning]] - Skill derived from arXiv:2607.18142 - O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning
+  - Core point 1: O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning
+  - Core point 2: Derived from arXiv:2607.18142
+  - **Activation**: vad-industrial-video-anomaly-detection-through-object-centric-tracking-reasoning, 2607.18142
+
+
+### Can We Break LLMs Out of Self-Loops? Fine-Grained Reasoning Control with Activation Steering (arXiv:2607.18100)
+- [[we-break-llms-self-loops-fine-grained-reasoning-control-activation-steering]] - Skill derived from arXiv:2607.18100 - Can We Break LLMs Out of Self-Loops? Fine-Grained Reasoning Control with Activation Steering
+  - Core point 1: Can We Break LLMs Out of Self-Loops? Fine-Grained Reasoning Control with Activation Steering
+  - Core point 2: Derived from arXiv:2607.18100
+  - **Activation**: we-break-llms-self-loops-fine-grained-reasoning-control-activation-steering, 2607.18100
+
+
+### WorldCupArena: Fine-Grained Evaluation of Language Models and Deep-Research Agents on Football Forec (arXiv:2607.18084)
+- [[worldcuparena-fine-grained-evaluation-language-models-deep-research-agents-football-forec]] - Skill derived from arXiv:2607.18084 - WorldCupArena: Fine-Grained Evaluation of Language Models and Deep-Research Agents on Football Forec
+  - Core point 1: WorldCupArena: Fine-Grained Evaluation of Language Models and Deep-Research Agents on Football Forec
+  - Core point 2: Derived from arXiv:2607.18084
+  - **Activation**: worldcuparena-fine-grained-evaluation-language-models-deep-research-agents-football-forec, 2607.18084
+
+
+### Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misinformation Detection (arXiv:2607.18080)
+- [[sparse-evidence-suffice-agentic-evidence-seeking-multimodal-video-misinformation-detection]] - Skill derived from arXiv:2607.18080 - Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misinformation Detection
+  - Core point 1: Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misinformation Detection
+  - Core point 2: Derived from arXiv:2607.18080
+  - **Activation**: sparse-evidence-suffice-agentic-evidence-seeking-multimodal-video-misinformation-detection, 2607.18080
+
+
+### Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data (arXiv:2607.18064)
+- [[autoresearch-coding-agents-generalizers-metric-maximizers-quran-recitation-data]] - Skill derived from arXiv:2607.18064 - Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data
+  - Core point 1: Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data
+  - Core point 2: Derived from arXiv:2607.18064
+  - **Activation**: autoresearch-coding-agents-generalizers-metric-maximizers-quran-recitation-data, 2607.18064
+
+
+### Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security (arXiv:2607.18063)
+- [[adaptive-adversaries-multi-turn-multi-llm-benchmark-llm-agent-security]] - Skill derived from arXiv:2607.18063 - Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security
+  - Core point 1: Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security
+  - Core point 2: Derived from arXiv:2607.18063
+  - **Activation**: adaptive-adversaries-multi-turn-multi-llm-benchmark-llm-agent-security, 2607.18063
+
+
+### Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation (arXiv:2607.18029)
+- [[natural-language-access-domain-specific-metadata-reusable-framework-llm-query-generation]] - Skill derived from arXiv:2607.18029 - Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation
+  - Core point 1: Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation
+  - Core point 2: Derived from arXiv:2607.18029
+  - **Activation**: natural-language-access-domain-specific-metadata-reusable-framework-llm-query-generation, 2607.18029
+
+
+### MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compac (arXiv:2607.18006)
+- [[mada-rl-multi-agent-debate-aware-reinforcement-learning-parameter-efficient-reasoning-compac]] - Skill derived from arXiv:2607.18006 - MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compac
+  - Core point 1: MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compac
+  - Core point 2: Derived from arXiv:2607.18006
+  - **Activation**: mada-rl-multi-agent-debate-aware-reinforcement-learning-parameter-efficient-reasoning-compac, 2607.18006
+
+
+### RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control (arXiv:2607.17951)
+- [[rt-shcua-real-time-self-hosted-computer-use-agent-uav-control]] - Skill derived from arXiv:2607.17951 - RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control
+  - Core point 1: RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control
+  - Core point 2: Derived from arXiv:2607.17951
+  - **Activation**: rt-shcua-real-time-self-hosted-computer-use-agent-uav-control, 2607.17951
+
+
+### Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking (arXiv:2607.17948)
+- [[towards-agentic-agent-based-models-feasibility-performance-statistical-model-checking]] - Skill derived from arXiv:2607.17948 - Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking
+  - Core point 1: Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking
+  - Core point 2: Derived from arXiv:2607.17948
+  - **Activation**: towards-agentic-agent-based-models-feasibility-performance-statistical-model-checking, 2607.17948
+
+
+### The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Syste (arXiv:2607.17947)
+- [[autonomous-agency-scale-behavioral-framework-measuring-self-directed-behavior-ai-syste]] - Skill derived from arXiv:2607.17947 - The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Syste
+  - Core point 1: The Autonomous Agency Scale: A Behavioral Framework for Measuring Self-Directed Behavior in AI Syste
+  - Core point 2: Derived from arXiv:2607.17947
+  - **Activation**: autonomous-agency-scale-behavioral-framework-measuring-self-directed-behavior-ai-syste, 2607.17947
+
+
+### PEARL: Auditable Repair for Scientific Reasoning Graph Extraction (arXiv:2607.17917)
+- [[pearl-auditable-repair-scientific-reasoning-graph-extraction]] - Skill derived from arXiv:2607.17917 - PEARL: Auditable Repair for Scientific Reasoning Graph Extraction
+  - Core point 1: PEARL: Auditable Repair for Scientific Reasoning Graph Extraction
+  - Core point 2: Derived from arXiv:2607.17917
+  - **Activation**: pearl-auditable-repair-scientific-reasoning-graph-extraction, 2607.17917
+
+
+### Stress Testing Concept Erasure with Large Language Model Agents (arXiv:2607.17890)
+- [[stress-testing-concept-erasure-large-language-model-agents]] - Skill derived from arXiv:2607.17890 - Stress Testing Concept Erasure with Large Language Model Agents
+  - Core point 1: Stress Testing Concept Erasure with Large Language Model Agents
+  - Core point 2: Derived from arXiv:2607.17890
+  - **Activation**: stress-testing-concept-erasure-large-language-model-agents, 2607.17890
+
+
+### Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action (arXiv:2607.17786)
+- [[reasoning-as-double-edged-sword-architecture-cross-stage-robustness-vision-language-action]] - Skill derived from arXiv:2607.17786 - Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action
+  - Core point 1: Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action
+  - Core point 2: Derived from arXiv:2607.17786
+  - **Activation**: reasoning-as-double-edged-sword-architecture-cross-stage-robustness-vision-language-action, 2607.17786
+
+
+### FIFA World Cup 2026 as a Contamination-Free Benchmark for LLM Forecasting Agents: Four Models, a Boo (arXiv:2607.17765)
+- [[fifa-world-cup-2026-as-contamination-free-benchmark-llm-forecasting-agents-four-models-boo]] - Skill derived from arXiv:2607.17765 - FIFA World Cup 2026 as a Contamination-Free Benchmark for LLM Forecasting Agents: Four Models, a Boo
+  - Core point 1: FIFA World Cup 2026 as a Contamination-Free Benchmark for LLM Forecasting Agents: Four Models, a Boo
+  - Core point 2: Derived from arXiv:2607.17765
+  - **Activation**: fifa-world-cup-2026-as-contamination-free-benchmark-llm-forecasting-agents-four-models-boo, 2607.17765
+
+
+### Generalize and Guide: Decomposing Rewards for Few-Shot Inverse Reinforcement Learning (arXiv:2607.17760)
+- [[generalize-guide-decomposing-rewards-shot-inverse-reinforcement-learning]] - Skill derived from arXiv:2607.17760 - Generalize and Guide: Decomposing Rewards for Few-Shot Inverse Reinforcement Learning
+  - Core point 1: Generalize and Guide: Decomposing Rewards for Few-Shot Inverse Reinforcement Learning
+  - Core point 2: Derived from arXiv:2607.17760
+  - **Activation**: generalize-guide-decomposing-rewards-shot-inverse-reinforcement-learning, 2607.17760
+
+
+### SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerc (arXiv:2607.17719)
+- [[sr-agent-experience-driven-agentic-framework-post-ranking-strategies-refinement-e-commerc]] - Skill derived from arXiv:2607.17719 - SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerc
+  - Core point 1: SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerc
+  - Core point 2: Derived from arXiv:2607.17719
+  - **Activation**: sr-agent-experience-driven-agentic-framework-post-ranking-strategies-refinement-e-commerc, 2607.17719
+
+
+### ProEvent: An Event-centric Benchmark for Proactive Agents (arXiv:2607.17701)
+- [[proevent-event-centric-benchmark-proactive-agents]] - Skill derived from arXiv:2607.17701 - ProEvent: An Event-centric Benchmark for Proactive Agents
+  - Core point 1: ProEvent: An Event-centric Benchmark for Proactive Agents
+  - Core point 2: Derived from arXiv:2607.17701
+  - **Activation**: proevent-event-centric-benchmark-proactive-agents, 2607.17701
+
+
+### Mechanistic Attention Guidance for Agent Memory Refinement (arXiv:2607.17621)
+- [[mechanistic-attention-guidance-agent-memory-refinement]] - Skill derived from arXiv:2607.17621 - Mechanistic Attention Guidance for Agent Memory Refinement
+  - Core point 1: Mechanistic Attention Guidance for Agent Memory Refinement
+  - Core point 2: Derived from arXiv:2607.17621
+  - **Activation**: mechanistic-attention-guidance-agent-memory-refinement, 2607.17621
+
+
+### Is Progressive Disclosure All You Need for Long-Context Agents? (arXiv:2607.17598)
+- [[progressive-disclosure-you-need-long-context-agents]] - Skill derived from arXiv:2607.17598 - Is Progressive Disclosure All You Need for Long-Context Agents?
+  - Core point 1: Is Progressive Disclosure All You Need for Long-Context Agents?
+  - Core point 2: Derived from arXiv:2607.17598
+  - **Activation**: progressive-disclosure-you-need-long-context-agents, 2607.17598
+
+
+### A Dual-Hypothesis Reasoning Framework for LLM Guardrails (arXiv:2607.17575)
+- [[dual-hypothesis-reasoning-framework-llm-guardrails]] - Skill derived from arXiv:2607.17575 - A Dual-Hypothesis Reasoning Framework for LLM Guardrails
+  - Core point 1: A Dual-Hypothesis Reasoning Framework for LLM Guardrails
+  - Core point 2: Derived from arXiv:2607.17575
+  - **Activation**: dual-hypothesis-reasoning-framework-llm-guardrails, 2607.17575
+
+
+### Reinforcement Learning: From Algorithms To Foundation Models (arXiv:2607.17560)
+- [[reinforcement-learning-algorithms-foundation-models]] - Skill derived from arXiv:2607.17560 - Reinforcement Learning: From Algorithms To Foundation Models
+  - Core point 1: Reinforcement Learning: From Algorithms To Foundation Models
+  - Core point 2: Derived from arXiv:2607.17560
+  - **Activation**: reinforcement-learning-algorithms-foundation-models, 2607.17560
+
+
+### Why Does Feedback-Augmented Self-Distillation Fail to Improve Retrieval-Interleaved Search Agents? (arXiv:2607.17558)
+- [[feedback-augmented-self-distillation-fail-improve-retrieval-interleaved-search-agents]] - Skill derived from arXiv:2607.17558 - Why Does Feedback-Augmented Self-Distillation Fail to Improve Retrieval-Interleaved Search Agents?
+  - Core point 1: Why Does Feedback-Augmented Self-Distillation Fail to Improve Retrieval-Interleaved Search Agents?
+  - Core point 2: Derived from arXiv:2607.17558
+  - **Activation**: feedback-augmented-self-distillation-fail-improve-retrieval-interleaved-search-agents, 2607.17558
+
+
+### Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory (arXiv:2607.17545)
+- [[retain-consolidate-budget-dependent-operator-selection-language-agent-memory]] - Skill derived from arXiv:2607.17545 - Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory
+  - Core point 1: Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory
+  - Core point 2: Derived from arXiv:2607.17545
+  - **Activation**: retain-consolidate-budget-dependent-operator-selection-language-agent-memory, 2607.17545
+
+
+### Oracle Gap and Signal Fidelity: A Fixed-Pool Diagnostic for Test-Time Collaboration (arXiv:2607.17531)
+- [[oracle-gap-signal-fidelity-fixed-pool-diagnostic-test-time-collaboration]] - Skill derived from arXiv:2607.17531 - Oracle Gap and Signal Fidelity: A Fixed-Pool Diagnostic for Test-Time Collaboration
+  - Core point 1: Oracle Gap and Signal Fidelity: A Fixed-Pool Diagnostic for Test-Time Collaboration
+  - Core point 2: Derived from arXiv:2607.17531
+  - **Activation**: oracle-gap-signal-fidelity-fixed-pool-diagnostic-test-time-collaboration, 2607.17531
+
+
+### Can AI Agents Really Complete RTL-to-GDS? Lessons from Benchmarking Tool-Interactive EDA Workflows (arXiv:2607.17528)
+- [[ai-agents-really-complete-rtl-gds-lessons-benchmarking-tool-interactive-eda-workflows]] - Skill derived from arXiv:2607.17528 - Can AI Agents Really Complete RTL-to-GDS? Lessons from Benchmarking Tool-Interactive EDA Workflows
+  - Core point 1: Can AI Agents Really Complete RTL-to-GDS? Lessons from Benchmarking Tool-Interactive EDA Workflows
+  - Core point 2: Derived from arXiv:2607.17528
+  - **Activation**: ai-agents-really-complete-rtl-gds-lessons-benchmarking-tool-interactive-eda-workflows, 2607.17528
+
+
+### Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions (arXiv:2607.17437)
+- [[empirical-grounding-improves-realism-llm-agents-simulating-human-behavior-during-disruptions]] - Skill derived from arXiv:2607.17437 - Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions
+  - Core point 1: Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions
+  - Core point 2: Derived from arXiv:2607.17437
+  - **Activation**: empirical-grounding-improves-realism-llm-agents-simulating-human-behavior-during-disruptions, 2607.17437
+
+
+### Self-Modifying Lean Proof Agents with Verifier-Grounded Benchmark Coevolution (arXiv:2607.17352)
+- [[self-modifying-lean-proof-agents-verifier-grounded-benchmark-coevolution]] - Skill derived from arXiv:2607.17352 - Self-Modifying Lean Proof Agents with Verifier-Grounded Benchmark Coevolution
+  - Core point 1: Self-Modifying Lean Proof Agents with Verifier-Grounded Benchmark Coevolution
+  - Core point 2: Derived from arXiv:2607.17352
+  - **Activation**: self-modifying-lean-proof-agents-verifier-grounded-benchmark-coevolution, 2607.17352
+
+
+### Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planni (arXiv:2607.17331)
+- [[agentic-erp-multi-agent-large-language-model-architecture-autonomous-enterprise-resource-planni]] - Skill derived from arXiv:2607.17331 - Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planni
+  - Core point 1: Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planni
+  - Core point 2: Derived from arXiv:2607.17331
+  - **Activation**: agentic-erp-multi-agent-large-language-model-architecture-autonomous-enterprise-resource-planni, 2607.17331
+
+
+### The Optimization Trilemma: Efficiency, Comfort and Fairness in Decentralized Multi-agent Coordinatio (arXiv:2607.17311)
+- [[optimization-trilemma-efficiency-comfort-fairness-decentralized-multi-agent-coordinatio]] - Skill derived from arXiv:2607.17311 - The Optimization Trilemma: Efficiency, Comfort and Fairness in Decentralized Multi-agent Coordinatio
+  - Core point 1: The Optimization Trilemma: Efficiency, Comfort and Fairness in Decentralized Multi-agent Coordinatio
+  - Core point 2: Derived from arXiv:2607.17311
+  - **Activation**: optimization-trilemma-efficiency-comfort-fairness-decentralized-multi-agent-coordinatio, 2607.17311
+
+
+### WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning (arXiv:2607.17299)
+- [[war-workload-aware-rollouts-synchronous-agentic-reinforcement-learning]] - Skill derived from arXiv:2607.17299 - WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning
+  - Core point 1: WAR: Workload-Aware Rollouts for Synchronous Agentic Reinforcement Learning
+  - Core point 2: Derived from arXiv:2607.17299
+  - **Activation**: war-workload-aware-rollouts-synchronous-agentic-reinforcement-learning, 2607.17299
+
+
+### SAGA: Synthetic Agentic Graph Architecture for Temporal Benchmark Generation (arXiv:2607.17288)
+- [[saga-synthetic-agentic-graph-architecture-temporal-benchmark-generation]] - Skill derived from arXiv:2607.17288 - SAGA: Synthetic Agentic Graph Architecture for Temporal Benchmark Generation
+  - Core point 1: SAGA: Synthetic Agentic Graph Architecture for Temporal Benchmark Generation
+  - Core point 2: Derived from arXiv:2607.17288
+  - **Activation**: saga-synthetic-agentic-graph-architecture-temporal-benchmark-generation, 2607.17288
+
+
+### AIGB-R1: Self-Evolving Generative Auto-Bidding via Hierarchical Planner-Executor Optimization (arXiv:2607.17281)
+- [[aigb-r1-self-evolving-generative-auto-bidding-hierarchical-planner-executor-optimization]] - Skill derived from arXiv:2607.17281 - AIGB-R1: Self-Evolving Generative Auto-Bidding via Hierarchical Planner-Executor Optimization
+  - Core point 1: AIGB-R1: Self-Evolving Generative Auto-Bidding via Hierarchical Planner-Executor Optimization
+  - Core point 2: Derived from arXiv:2607.17281
+  - **Activation**: aigb-r1-self-evolving-generative-auto-bidding-hierarchical-planner-executor-optimization, 2607.17281
+
+
+### An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counte (arXiv:2607.17269)
+- [[explicit-world-model-based-data-first-ontology-daoql-multimodal-storage-validation-counte]] - Skill derived from arXiv:2607.17269 - An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counte
+  - Core point 1: An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counte
+  - Core point 2: Derived from arXiv:2607.17269
+  - **Activation**: explicit-world-model-based-data-first-ontology-daoql-multimodal-storage-validation-counte, 2607.17269
+
+
+### Debate-on-Graph: Reliable and Adaptive Reasoning of Large Language Model on Uncertain Knowledge Grap (arXiv:2607.17266)
+- [[debate-graph-reliable-adaptive-reasoning-large-language-model-uncertain-knowledge-grap]] - Skill derived from arXiv:2607.17266 - Debate-on-Graph: Reliable and Adaptive Reasoning of Large Language Model on Uncertain Knowledge Grap
+  - Core point 1: Debate-on-Graph: Reliable and Adaptive Reasoning of Large Language Model on Uncertain Knowledge Grap
+  - Core point 2: Derived from arXiv:2607.17266
+  - **Activation**: debate-graph-reliable-adaptive-reasoning-large-language-model-uncertain-knowledge-grap, 2607.17266
+
+
+### Distilled Reinforcement Learning for LLM Post-training (arXiv:2607.17247)
+- [[distilled-reinforcement-learning-llm-post-training]] - Skill derived from arXiv:2607.17247 - Distilled Reinforcement Learning for LLM Post-training
+  - Core point 1: Distilled Reinforcement Learning for LLM Post-training
+  - Core point 2: Derived from arXiv:2607.17247
+  - **Activation**: distilled-reinforcement-learning-llm-post-training, 2607.17247
+
+
+### Specifying the Delegated-Autonomy Boundary: Requirements Engineering for Agentic AI (arXiv:2607.17225)
+- [[specifying-delegated-autonomy-boundary-requirements-engineering-agentic-ai]] - Skill derived from arXiv:2607.17225 - Specifying the Delegated-Autonomy Boundary: Requirements Engineering for Agentic AI
+  - Core point 1: Specifying the Delegated-Autonomy Boundary: Requirements Engineering for Agentic AI
+  - Core point 2: Derived from arXiv:2607.17225
+  - **Activation**: specifying-delegated-autonomy-boundary-requirements-engineering-agentic-ai, 2607.17225
+
+
+### A Systematic Evaluation of Trajectory Data Curation for LoRA Fine-Tuning of Code Agents (arXiv:2607.17205)
+- [[systematic-evaluation-trajectory-data-curation-lora-fine-tuning-code-agents]] - Skill derived from arXiv:2607.17205 - A Systematic Evaluation of Trajectory Data Curation for LoRA Fine-Tuning of Code Agents
+  - Core point 1: A Systematic Evaluation of Trajectory Data Curation for LoRA Fine-Tuning of Code Agents
+  - Core point 2: Derived from arXiv:2607.17205
+  - **Activation**: systematic-evaluation-trajectory-data-curation-lora-fine-tuning-code-agents, 2607.17205
+
+
+### Toward Anthropomorphic Dialogue: A Closed-Loop Framework for Human-Like Chat Generation, Evaluation, (arXiv:2607.17191)
+- [[toward-anthropomorphic-dialogue-closed-loop-framework-human-like-chat-generation-evaluation]] - Skill derived from arXiv:2607.17191 - Toward Anthropomorphic Dialogue: A Closed-Loop Framework for Human-Like Chat Generation, Evaluation,
+  - Core point 1: Toward Anthropomorphic Dialogue: A Closed-Loop Framework for Human-Like Chat Generation, Evaluation,
+  - Core point 2: Derived from arXiv:2607.17191
+  - **Activation**: toward-anthropomorphic-dialogue-closed-loop-framework-human-like-chat-generation-evaluation, 2607.17191
+
+
+### A Diagnostic Framework for AI Agent Behavior (arXiv:2607.17149)
+- [[diagnostic-framework-ai-agent-behavior]] - Skill derived from arXiv:2607.17149 - A Diagnostic Framework for AI Agent Behavior
+  - Core point 1: A Diagnostic Framework for AI Agent Behavior
+  - Core point 2: Derived from arXiv:2607.17149
+  - **Activation**: diagnostic-framework-ai-agent-behavior, 2607.17149
+
+
+### Otap:Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories (arXiv:2607.17082)
+- [[otap-structure-aware-optimal-transport-evaluating-planning-execution-agent-trajectories]] - Skill derived from arXiv:2607.17082 - Otap:Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories
+  - Core point 1: Otap:Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories
+  - Core point 2: Derived from arXiv:2607.17082
+  - **Activation**: otap-structure-aware-optimal-transport-evaluating-planning-execution-agent-trajectories, 2607.17082
+
+
+### When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Lan (arXiv:2607.17063)
+- [[llms-answer-measuring-mitigating-quality-issues-llm-based-hardware-description-lan]] - Skill derived from arXiv:2607.17063 - When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Lan
+  - Core point 1: When LLMs Over-Answer: Measuring and Mitigating Quality Issues in LLM-Based Hardware Description Lan
+  - Core point 2: Derived from arXiv:2607.17063
+  - **Activation**: llms-answer-measuring-mitigating-quality-issues-llm-based-hardware-description-lan, 2607.17063
+
+
+### Where Does Agent Reliability Come From? A Cross-Benchmark Decomposition of Verification Loops, Speci (arXiv:2607.17044)
+- [[agent-reliability-come-cross-benchmark-decomposition-verification-loops-speci]] - Skill derived from arXiv:2607.17044 - Where Does Agent Reliability Come From? A Cross-Benchmark Decomposition of Verification Loops, Speci
+  - Core point 1: Where Does Agent Reliability Come From? A Cross-Benchmark Decomposition of Verification Loops, Speci
+  - Core point 2: Derived from arXiv:2607.17044
+  - **Activation**: agent-reliability-come-cross-benchmark-decomposition-verification-loops-speci, 2607.17044
+
+
+### Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Dec (arXiv:2607.17038)
+- [[reward-driven-llm-agent-workflows-synthesizing-pomdp-routing-self-correction-autonomous-dec]] - Skill derived from arXiv:2607.17038 - Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Dec
+  - Core point 1: Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Dec
+  - Core point 2: Derived from arXiv:2607.17038
+  - **Activation**: reward-driven-llm-agent-workflows-synthesizing-pomdp-routing-self-correction-autonomous-dec, 2607.17038
+
+
+### Real-World Evaluation of an AI Agent Drafting Translational Impact Summaries (arXiv:2607.16989)
+- [[real-world-evaluation-ai-agent-drafting-translational-impact-summaries]] - Skill derived from arXiv:2607.16989 - Real-World Evaluation of an AI Agent Drafting Translational Impact Summaries
+  - Core point 1: Real-World Evaluation of an AI Agent Drafting Translational Impact Summaries
+  - Core point 2: Derived from arXiv:2607.16989
+  - **Activation**: real-world-evaluation-ai-agent-drafting-translational-impact-summaries, 2607.16989
+
+
+### A Multi-Agent System for 5G Throughput Prediction in Multi-Operator Urban Environments (arXiv:2607.16930)
+- [[multi-agent-system-5g-throughput-prediction-multi-operator-urban-environments]] - Skill derived from arXiv:2607.16930 - A Multi-Agent System for 5G Throughput Prediction in Multi-Operator Urban Environments
+  - Core point 1: A Multi-Agent System for 5G Throughput Prediction in Multi-Operator Urban Environments
+  - Core point 2: Derived from arXiv:2607.16930
+  - **Activation**: multi-agent-system-5g-throughput-prediction-multi-operator-urban-environments, 2607.16930
+
+
+### Environment-free Synthetic Data Generation for API-Calling Agents (arXiv:2607.16900)
+- [[environment-free-synthetic-data-generation-api-calling-agents]] - Skill derived from arXiv:2607.16900 - Environment-free Synthetic Data Generation for API-Calling Agents
+  - Core point 1: Environment-free Synthetic Data Generation for API-Calling Agents
+  - Core point 2: Derived from arXiv:2607.16900
+  - **Activation**: environment-free-synthetic-data-generation-api-calling-agents, 2607.16900
+
+
+### SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs (arXiv:2607.18081)
+- [[selectinfer-selective-neuron-loading-computation-device-llms]] - Skill derived from arXiv:2607.18081 - SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs
+  - Core point 1: SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs
+  - Core point 2: Derived from arXiv:2607.18081
+  - **Activation**: selectinfer-selective-neuron-loading-computation-device-llms, 2607.18081
+
+
+### Harness Engineering for LLM-Driven GPU Kernel Generation (arXiv:2607.17979)
+- [[harness-engineering-llm-driven-gpu-kernel-generation]] - Skill derived from arXiv:2607.17979 - Harness Engineering for LLM-Driven GPU Kernel Generation
+  - Core point 1: Harness Engineering for LLM-Driven GPU Kernel Generation
+  - Core point 2: Derived from arXiv:2607.17979
+  - **Activation**: harness-engineering-llm-driven-gpu-kernel-generation, 2607.17979
+
+
+### ETAS: An Effect-Typed Language for Agent Systems (arXiv:2607.17780)
+- [[etas-effect-typed-language-agent-systems]] - Skill derived from arXiv:2607.17780 - ETAS: An Effect-Typed Language for Agent Systems
+  - Core point 1: ETAS: An Effect-Typed Language for Agent Systems
+  - Core point 2: Derived from arXiv:2607.17780
+  - **Activation**: etas-effect-typed-language-agent-systems, 2607.17780
+
+
+### OntoExtend: A Framework for Requirement-driven and Scalable Ontology Extension with LLMs (arXiv:2607.17963)
+- [[ontoextend-framework-requirement-driven-scalable-ontology-extension-llms]] - Skill derived from arXiv:2607.17963 - OntoExtend: A Framework for Requirement-driven and Scalable Ontology Extension with LLMs
+  - Core point 1: OntoExtend: A Framework for Requirement-driven and Scalable Ontology Extension with LLMs
+  - Core point 2: Derived from arXiv:2607.17963
+  - **Activation**: ontoextend-framework-requirement-driven-scalable-ontology-extension-llms, 2607.17963
+
+
+### Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (arXiv:2607.17641)
+- [[verify-repair-repeat-stop-robust-stopping-noisy-verify-repair-loops-llm-agents]] - Skill derived from arXiv:2607.17641 - Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents
+  - Core point 1: Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents
+  - Core point 2: Derived from arXiv:2607.17641
+  - **Activation**: verify-repair-repeat-stop-robust-stopping-noisy-verify-repair-loops-llm-agents, 2607.17641
+
+
+### Do Language Models Dream of Binding Molecules? Benchmarking LLMs under Spatial Constraints (arXiv:2607.18144)
+- [[language-models-dream-binding-molecules-benchmarking-llms-spatial-constraints]] - Skill derived from arXiv:2607.18144 - Do Language Models Dream of Binding Molecules? Benchmarking LLMs under Spatial Constraints
+  - Core point 1: Do Language Models Dream of Binding Molecules? Benchmarking LLMs under Spatial Constraints
+  - Core point 2: Derived from arXiv:2607.18144
+  - **Activation**: language-models-dream-binding-molecules-benchmarking-llms-spatial-constraints, 2607.18144
+
+
+### Alignment of a Total Automation Economy (arXiv:2607.17015)
+- [[alignment-total-automation-economy]] - Skill derived from arXiv:2607.17015 - Alignment of a Total Automation Economy
+  - Core point 1: Alignment of a Total Automation Economy
+  - Core point 2: Derived from arXiv:2607.17015
+  - **Activation**: alignment-total-automation-economy, 2607.17015
+
+
+### Training Continuous Chain of Thought Models: A Tale of Two Regimes (arXiv:2607.16972)
+- [[training-continuous-chain-thought-models-tale-two-regimes]] - Skill derived from arXiv:2607.16972 - Training Continuous Chain of Thought Models: A Tale of Two Regimes
+  - Core point 1: Training Continuous Chain of Thought Models: A Tale of Two Regimes
+  - Core point 2: Derived from arXiv:2607.16972
+  - **Activation**: training-continuous-chain-thought-models-tale-two-regimes, 2607.16972
+
+
 ## 2026-07-18 - arXiv Paper Skills (Cron Job)
 
 Added 2 new paper skills from arXiv (utility >= 0.85).
