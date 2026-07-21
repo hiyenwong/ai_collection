@@ -1,5 +1,13 @@
 ## 2026-07-21 - Neuroscience Research (Cron Job)
 
+## 2026-07-21 - Neuroscience Research (Cron Job)
+
+### The Positive Experience Principle: Forecasting Conscious Choices with AI Embeddings
+- [[positive-experience-principle-pep-methodology]] - 一句话描述 (arXiv: 2607.16659)
+  - 核心要点 1: 提出正体验原则（PEP），认为有意识系统内在地趋向于提升主观积极体验的状态。
+  - 核心要点 2: 通过正体验值（PEV）量化这一趋势，PEV 基于先前的普遍意识密码（UCC）理论，可从神经活动等物理变量中推导。
+  - **Activation**: positive experience principle, PEP, conscious choice, AI embeddings, universal consciousness code, UCC
+
 ### Exploring Brain Networks Using Noninvasive Electrophysiological Measurements: Methods and Applications
 - [[brain-networks-eeg-meg-methods]] - Comprehensive framework for EEG/MEG-based brain network analysis covering forward/inverse problems, connectivity measures, and analysis pipelines (arXiv: 2607.17602)
   - Covers physical principles of EEG/MEG, forward/inverse modeling, and source localization techniques
