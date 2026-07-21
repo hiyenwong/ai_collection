@@ -1,3 +1,11 @@
+## 2026-07-22 - Neuroscience Research (Cron Job)
+
+### Discovery by Dreaming: Cross-Domain Recombination in Artificial Memory
+- [[discovery-by-dreaming-cross-domain-recombination]] - A skill for implementing cross-domain recombination inspired by dreaming, based on the paper "Discovery by Dreaming: Cross-Domain Recombination in Artificial Memory" (arXiv:2607.16256). This skill outlines how to implement a LoRA fine-tuning pipeline (DREAMS) and a symbolic engine (SAPIENCE) to recombine knowledge across domains, enhancing AI discovery and insight generation.
+  - Core concept: Dreams splice together people, places, and times that never met. Neuroscience suggests this recombination is not noise, but a function driving insight and creative discovery.
+  - Core concept: Rather than merely defending against forgetting, its measurable value lies in recombining knowledge across experiences that have not yet co-occurred.
+  - **Activation**: dreaming, recombination, cross-domain, memory consolidation, LoRA, symbolic AI, neuroscience-inspired AI
+
 # AI Collection Index
 
 ## 2026-07-21 - Neuroscience Research (Cron Job)
