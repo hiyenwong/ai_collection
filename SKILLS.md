@@ -40,6 +40,7 @@ collection/skills/
 ├── knowledge-graph/          # KG construction, graph neural networks, ontology
 ├── multi-agent-rl/           # Multi-agent systems, reinforcement learning, robotics
 ├── neuroscience/             # Brain networks, EEG, cognitive science, neuroimaging
+├── visual-cortex-diffusion-model/           # Mechanistic understanding of inference in visual cortex and diffusion models (arXiv:2607.15693)
 ├── nlp-llm/                  # Language models, transformers, NLP tasks
 ├── other/                    # Uncategorized skills
 ├── physics-math/             # Physics-informed ML, mathematical methods, complex systems

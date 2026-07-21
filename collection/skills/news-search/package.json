@@ -1,0 +1,14 @@
+{
+  "name": "news-search",
+  "version": "1.0.0",
+  "description": "News search and retrieval skill with multiple sources",
+  "main": "news-search",
+  "dependencies": {
+    "feedparser": ">=6.0.0",
+    "httpx": ">=0.25.0",
+    "beautifulsoup4": ">=4.12"
+  },
+  "optionalDependencies": {
+    "newspaper3k": ">=0.2.8"
+  }
+}

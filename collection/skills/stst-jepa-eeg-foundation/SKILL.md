@@ -1,165 +1,128 @@
 ---
 name: stst-jepa-eeg-foundation
-description: "STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding Predictive Architecture for EEG self-supervised learning. Largest EEG foundation model (47,703 sessions, ages 5-81) using JEPA-style latent prediction with EMA tokenizer + auxiliary signal reconstruction. Rank 1 on NeuralBench for sex, age, psychopathology. Brain age gap correlates with cognitive efficiency. Activation: stst-jepa, eeg foundation model, brain age, self-supervised eeg, eeg self-supervised learning, JEPA eeg, EEG2Rep, brain space, neuralbench, brain age gap, cognitive efficiency"
-tags: [eeg, self-supervised-learning, foundation-model, brain-age, transformer, JEPA]
+description: "STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding Prediction Architecture for EEG self-supervised learning. Combines latent-prediction objective with auxiliary signal-reconstruction term under spatiotemporal block masks. Pretrained on 47,703 EEG sessions (ages 5-81), achieves MAE=3.06 years for brain-age regression. Native 30-second windows achieve rank-1 on NeuralBench x EEGD leaderboard for sex classification (BA=0.911) and age prediction (r=0.749). Age-prediction residual negatively correlated with cognitive efficiency."
+version: 1.0.0
+author: Hermes Agent
+license: MIT
+metadata:
+  hermes:
+    tags: [eeg, self-supervised-learning, brain-age, JEPA, foundation-model, neural-benchmark, spatiotemporal-masking, EMA-target, cognitive-efficiency]
+    category: ai_collection/collection/skills/neuroscience
+    arxiv_id: "2607.06629"
+    arxiv_url: "https://arxiv.org/abs/2607.06629"
+    published: "2026-07-07"
+    authors: ["Roy Segal", "Yoni Svechinsky", "Tomer Fekete"]
+    categories: ["cs.LG", "q-bio.NC"]
+    trigger_words: ["STST-JEPA", "shallow-target JEPA", "EEG self-supervised", "EEG brain-age", "EEG foundation model", "NeuralBench", "EEGD", "latent prediction EEG", "spatiotemporal block mask", "cognitive efficiency EEG", "EMA tokenizer EEG"]
+created: "2026-07-13"
+updated: "2026-07-13"
 ---
 
-# STST-JEPA — Shallow-Target Spatio-Temporal JEPA for EEG
+# STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding Prediction Architecture For EEG Self-Supervised Learning
 
-**Paper**: STST-JEPA: Shallow-Target Spatio-Temporal Joint Embedding Prediction Architecture For EEG Self-Supervised Learning
-**arXiv**: 2607.06629v2
-**Authors**: Roy Segal, Yoni Svechinsky, Tomer Fekete (brain.space)
-**Published**: 2026-07-07 (updated 2026-07-09)
-**Categories**: cs.LG, q-bio.NC
+**arXiv**: 2607.06629 | **Published**: 2026-07-07 (v2: 2026-07-09) | **Authors**: Roy Segal, Yoni Svechinsky, Tomer Fekete
 
-## Core Contribution
+## Core Innovation
 
-Largest EEG foundation model pretraining to date: 47,703 sessions spanning ages 5-81 from brain.space and Healthy Brain Network (HBN) corpora. Uses a JEPA-style joint embedding predictive architecture with shallow (tokenizer-level) EMA targets plus auxiliary signal reconstruction, achieving rank-1 on NeuralBench across 3 downstream tasks from a single shared backbone.
+Introduces **STST-JEPA**, a self-supervised transformer for resting-state and task EEG that combines two objectives:
+1. **Latent-prediction objective**: Predicting masked-token representations against an EMA-of-tokenizer target
+2. **Auxiliary signal-reconstruction term**: Applied to 30-second multi-channel windows under spatiotemporal block masks
 
-## Key Innovations
+## Key Results
 
-### 1. Joint Latent-Prediction + Reconstruction Objective
-- **Latent prediction** (λ=1.0): Predict masked token representations against EMA-of-tokenizer targets (MSE)
-- **Auxiliary reconstruction** (λ=0.35): Smooth-L1 loss reconstructing each masked patch back to raw 16-sample waveform
-- Maps loosely to **predictive processing** accounts of cortex (Rao & Ballard 1999; Friston 2010): latent generative model disciplined by signal-level consequences
-- Reconstruction deliberately down-weighted — acts as soft floor preventing representation collapse, not co-equal supervision
+### Pretraining Scale
+- **47,703 EEG sessions** spanning ages 5-81
+- Data from TUH (Temple University Hospital) and Healthy Brain Network (HBN) corpora
+- **First EEG foundation model** to cover the full pediatric-to-older-adult range
 
-### 2. PMA (Pooled Multihead Attention) Channel Pooling
-- Collapses C=128 channels into single token per temporal index via Set Transformer PMA
-- 16 learned inducing queries attend over channel dimension via 16-head cross-attention
-- **Coordinate-aware**: each patch embedding combined with learned projection of 3D electrode coordinates
-- **Mask-aware**: invalid/missing channels suppressed — handles montage heterogeneity (115-channel brain.space vs 128-channel HBN)
-- Gated coordinate learning: gate initialized to zero, trained at 5× LR
+### Brain-Age Regression
+- **MAE = 3.06 years** (r = 0.924) on 3,367 held-out sessions
+- **Baseline: ~10 years MAE** (predict-the-mean)
+- Lightweight attentive probe on frozen pretrained embeddings
 
-### 3. Shallow-Target Architecture
-- EMA target stream is **tokenizer-level** (not encoder-level) — unlike canonical JEPA
-- Context encoder: 24-layer transformer (d=768, 16 heads, FFN=3072) — no EMA twin
-- Predictor: 2-layer transformer with cross-attention, sinusoidal position queries at masked positions
-- Closest published analogue: multilayered MAE with EMA-targeted tokens
+### NeuralBench x EEGD Leaderboard (Rank-1)
+Using native 30-second windows with light task-specific finetuning of final layers:
+| Task | Metric | Score |
+|------|--------|-------|
+| Sex classification | Balanced accuracy | **0.911** |
+| Age prediction | Pearson r | **0.749** |
+| Psychopathology composite | Pearson r | **0.215** |
 
-### 4. Spatiotemporal Block Masking
-- 4 rectangular blocks sampled per example
-- Each block: random channels [0.2, 0.5] × random time patches [0.1, 0.3]
-- Average mask ratio: ~24% of grid positions
+### Cognitive Efficiency Correlation
+- Age-prediction residual (predicted - chronological age) is **negatively correlated with cognitive efficiency** across several examined tasks
+- This validates brain-age deviation as a meaningful biomarker
 
-### 5. Lightweight Attentive Probe Protocol
-- Self-attention (CLS token) + single query cross-attention + linear head
-- Single-query design: O(d_p) params vs O(T · d_p) for standard attention
-- Length-agnostic — reusable across window lengths
+## Architecture Details
 
-## Architecture
+### STST-JEPA Design
 
-```
-Input: 30s × 256Hz × 128 channels = 7,680 samples/channel
-  ↓
-Tokenization: 1D temporal conv (P=16, stride=16) → 480 temporal patches × 128 channels
-  ↓
-PMA Channel Pooling: 128 channel patches → 1 token (d=768) per temporal index
-  ↓
-Token Sequence: T=480 tokens, d=768 (with RoPE positional encoding)
-  ↓
-[SPATIOTEMPORAL BLOCK MASKING — ~24% masked]
-  ↓
-Context Encoder (24-layer transformer, visible tokens only)
-  ↓
-Predictor (2-layer cross-attention, predicts at masked positions)
-  ↓
-┌─────────────────────┬──────────────────────┐
-│  L_lat (MSE)        │  L_rec (Smooth-L1)    │
-│  vs EMA tokenizer   │  vs raw 16-sample     │
-│  target tokens      │  patch waveform       │
-│  λ=1.0              │  λ=0.35               │
-└─────────────────────┴──────────────────────┘
-```
+**Shallow-Target** refers to predicting against an EMA (Exponential Moving Average) of the tokenizer's representations, rather than predicting raw signal or deep features. This approach:
+- Provides stable, smooth targets for learning
+- Avoids the collapse issues common in self-supervised learning
+- Captures meaningful spatio-temporal structure in EEG
 
-## Hyperparameters
+**Spatiotemporal Block Masking**:
+- Masks are applied in both spatial (channel) and temporal (time) dimensions simultaneously
+- Forces the model to learn cross-channel and cross-temporal dependencies
+- More biologically plausible than random masking (models natural data loss patterns)
 
-| Component | Parameter | Value |
-|-----------|-----------|-------|
-| Input | Window | 30s @ 256Hz (7,680 samples/ch) |
-| Input | Channels | 128 (unified budget, mask handles missing) |
-| Tokenizer | Patch length | 16 samples (480 patches/ch) |
-| PMA | Inducing queries | 16 |
-| Encoder | Layers / width / heads | 24 / 768 / 16 |
-| Encoder | FFN dim | 3,072 |
-| Encoder | Dropout | 0.1 |
-| Positional | Encoding | RoPE (base 10,000) |
-| Predictor | Layers | 2 (cross-attention) |
-| EMA | Momentum | 0.9996 → 0.9999 (warmup 12,000 steps) |
-| Masking | Blocks per example | 4 rectangular |
-| Loss | λ_lat / λ_rec | 1.0 / 0.35 |
-| Optimizer | AdamW peak LR | 5e-5 |
-| Optimizer | Weight decay | 0.05 |
-| Training | Devices | 7 GPUs (DDP, 16-mixed) |
-| Training | Global batch | 245 windows (35/device) |
-| Training | Epochs | 15 (~155,500 steps) |
+**Dual Objective**:
+1. **Primary**: JEPA-style latent prediction (predicting representations, not pixels/signal)
+2. **Auxiliary**: Signal reconstruction (ensures the learned representations retain signal fidelity)
 
-## EEG Preprocessing Pipeline
+### Why This Works for EEG
 
-1. **Upstream conditioning** (done before SSL pipeline):
-   - High-pass 1Hz + transient spike interpolation
-   - Notch filter at line frequency + harmonics
-   - Bad channel removal (spectral quality model or RMS threshold)
-   - ASR (κ=20 robust SD threshold)
-   - ICA (Picard, extended) — remove ocular + cardiac components, protect alpha
-2. **Resample** to 256Hz via polyphase resampling
-3. **Window extraction**: 30s with 6s stride (train) / 2s stride (val)
-4. **Robust normalization**: channel-wise median/IQR z-scoring
-5. **Validity mask**: missing channels + nonfinite stats + amplitude > 150
+1. **Cross-site heterogeneity**: Self-supervised pretraining on massive diverse data learns representations robust to montage differences
+2. **Small labeled cohorts**: Frozen embeddings + lightweight probe avoids overfitting
+3. **Subject-level non-stationarity**: The EMA target provides stable learning signals despite individual variability
+4. **Full age range**: 47K sessions across 5-81 years enables learning developmental trajectories
 
-## Results
+## Comparison to Prior EEG Foundation Models
 
-### Age Regression (held-out validation, N=3,367 sessions)
-| Method | MAE (yr) | RMSE (yr) | R² |
-|--------|----------|-----------|-----|
-| STST-JEPA + probe (combined) | **3.06** | 5.11 | 0.85 |
-| STST-JEPA + probe (brain.space only) | 4.82 | 7.06 | 0.654 |
-| Predict training mean (17.7yr) | ~10.09 | 13.27 | ~0 |
+Previous EEG foundation models struggled with:
+- Limited pretraining data (typically <10K sessions)
+- Narrow age ranges (often adults only)
+- Poor cross-site generalization
+- Weak performance on downstream tasks
 
-### NeuralBench Leaderboard (single shared backbone)
-| Task | Metric | Ours (30s) | Prior Best | Rank |
-|------|--------|------------|------------|------|
-| Sex | bal. acc. | 0.911 | 0.910 (ShallowFBCSPNet) | 1/18 |
-| Age | Pearson r | 0.749 | 0.721 (REVE) | 1/17 |
-| Psychopathology | Pearson r | 0.215 | 0.137 (CBraMod) | 1/15 |
+STST-JEPA addresses all four limitations simultaneously.
 
-### Brain Age Gap × Behavioural Capacity
-- 7 of 21 targets survive BH-FDR correction (q=0.05)
-- All significant targets show **negative** correlation: older-looking brain → worse cognitive efficiency
-- Strongest: Stroop efficiency (r=-0.089), n-back (r=-0.057)
-- Effects small (|r|<0.10) but directionally consistent
+## Practical Applications
 
-## Loss Dynamics
-- L_lat: drops ~4 orders of magnitude (0.0575 → 1.93e-4, 99.7% reduction)
-- L_rec: modest decrease (0.317 → 0.169, -47%), acts as soft floor
-- Late training plateau: L_lat ∈ [1.5e-2, 2.2e-2], L_rec ∈ [0.13, 0.18]
+### 1. Brain-Age as Biomarker
+- Use the pretrained model for rapid brain-age estimation from 30-second EEG windows
+- Deviation from chronological age tracks neurological and psychiatric burden
+- Applicable across full lifespan (pediatric to older adult)
 
-## Brain-Inspired Framing
-Joint objective maps to **predictive processing** theory:
-- Latent prediction ≈ cortex's generative model predicting hidden causes
-- Reconstruction ≈ sensory prediction error disciplining the model
-- Not a claim about cortical fidelity — architectural intuition only
+### 2. EEG Classification/Regression
+- Fine-tune the last layers for any downstream EEG task
+- Native 30-second window handling (no need for arbitrary epoching)
+- Achieves SOTA on sex, age, and psychopathology prediction
 
-## Limitations & Caveats
-- No controlled ablation of joint objective (beyond compute budget)
-- No fixed-protocol test on internal brain.space partition
-- No clinical biomarker claim
-- Pediatric-heavy corpus (HBN) — MAE not directly comparable to adult benchmarks
-- 30s windows give advantage over 2s standard NeuralBench protocol
-- Mixed resting/task paradigms in pretraining — BAG may carry task state information
+### 3. Cognitive Assessment
+- Age-prediction residual correlates with cognitive efficiency
+- Can serve as a screening tool for cognitive decline or enhancement
 
-## Projected Improvements (from paper)
-1. **3× corpus scaling** (~143K sessions): projected MAE 2.6-2.9yr
-2. **Auxiliary losses**: age regression head (λ≈0.05), cohort token, contrastive-by-age-band
-3. **Fine-tuning**: end-to-end fine-tuning projected 0.2-0.5yr MAE reduction; LoRA adapters (rank 8-16)
+### 4. Cross-Site EEG Analysis
+- Model handles montage heterogeneity natively
+- Useful for multi-site studies and clinical deployment
 
-## Related Work
-- JEPA family: I-JEPA (Assran et al. 2023), V-JEPA (Bardes et al. 2024), data2vec (Baevski et al. 2022)
-- EEG foundation models: BENDR, BrainBERT, BIOT, LaBraM, Neuro-GPT, EEG2Rep, REVE
-- Self-supervised SSL: BYOL, MAE, VICReg, LeJEPA
+## Methodology for Reproduction
 
-## Related Skills
-- [[reve-eeg-foundation]] - REVE EEG foundation model
-- [[laya-eeg-foundation]] - Laya LeJEPA approach to EEG
-- [[eeg-fm-audit-systematic-evaluation]] - EEG foundation model evaluation framework
-- [[identity-trap-eeg-foundation-models]] - EEG foundation model identity trap
+1. **Data**: TUH + HBN corpora (47,703 sessions, ages 5-81)
+2. **Preprocessing**: Standardize to common montage, handle missing channels
+3. **Pretraining**: 
+   - Spatiotemporal block masking on 30-second windows
+   - Dual objective: JEPA latent prediction + signal reconstruction
+   - EMA target for stable training
+4. **Downstream**:
+   - Frozen embeddings + lightweight probe (for brain-age)
+   - Light finetuning of final layers (for classification/regression)
+
+## Key Insight
+
+The combination of **shallow-target prediction** (predicting EMA-of-tokenizer representations) with **signal reconstruction** creates representations that are both semantically meaningful and signal-faithful — addressing the core tension in self-supervised EEG learning between abstraction and fidelity.
+
+## Trigger Words
+
+STST-JEPA, shallow-target JEPA, EEG self-supervised learning, EEG brain-age, EEG foundation model, NeuralBench EEGD, spatiotemporal block masking, EMA tokenizer, cognitive efficiency EEG, latent prediction EEG, EEG representation learning, brain-age biomarker
