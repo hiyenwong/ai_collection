@@ -5,6 +5,12 @@
   - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
   - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
 
+### eeg-based-lm-evaluation
+- Encoding EEG Signals to Examine Human-Like Next-Word Prediction Behaviour in Language Models (arXiv: 2607.16549)
+  - Core methodology: Uses EEG signals to evaluate language models' next-word prediction behavior by comparing surprisal and top-1 prediction correlates with ERP components.
+  - Key insight: Surprisal, not top-1 prediction, correlates with language-processing ERPs, especially for open-class words; challenges assumption that scaling LMs improves convergence with human-like linguistic processing.
+  - **Activation**: EEG, language model evaluation, surprisal, ERP, next-word prediction, neuroscience, computational linguistics
+
 ## 2026-07-20 - Neuroscience Research (Cron Job)
 
 ### Toward a mechanistic understanding of inference in visual cortex and diffusion models
@@ -12,49 +18,6 @@
   - Core contribution 1: Proposes a recurrent neural network model of V1 that is mathematically equivalent to a diffusion model, providing a mechanistic bridge between neuroscience and machine learning.
   - Core contribution 2: Shows that the learned interaction matrix in the model corresponds to the known horizontal connectivity patterns in V1, suggesting that the brain may implement inference similar to diffusion models.
   - **Activation**: mechanistic inference, visual cortex, diffusion models, sparse coding, recurrent neural networks, neuroscience, machine learning
-
-# AI Collection Index
-
-## 2026-07-13 - Neuroscience Research (Cron Job)
-
-### Sync gap fixes from previous sessions
-- [[hierarchical-bayesian-statistical-learning-eeg]] - Hierarchical Bayesian Statistical Learning model for individual EEG learning trajectories, dyslexia research (arXiv: 2607.05822)
-  - HBSL models individual statistical learning from EEG data
-  - Group differences (dyslexia vs control) not significant, but model-data correspondence excellent
-  - **Activation**: hierarchical Bayesian, statistical learning, EEG, individual differences, dyslexia
-
-
-## 2026-07-20 - Neuroscience Research (Cron Job)
-
-### stsbench-dorsal-stream-visual-cortex
-- STSBench: A Large-Scale Dataset for Modeling Neuronal Activity in the Dorsal Stream of Primate Visual Cortex (arXiv: 2607.15631)
-  - Provides large-scale, single neuron recordings from over 2,000 neurons in the superior temporal sulcus (STS) collected while macaques viewed natural videos.
-  - Enables benchmarking of encoding models for dorsal stream neuronal responses and visual input reconstruction from neural activity.
-  - **Activation**: stsbench, dorsal stream, superior temporal sulcus, neuronal encoding, visual decoding, primate vision
-
-### thoughtseeds-latent-causes-dual-process-computational-phenomenology-focused-attention-meditation
-- Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation (arXiv: 2607.14833)
-  - Presents a computational phenomenology of focused-attention meditation traversing four attractor states: breath focus, mind-wandering, meta-awareness, and redirect attention
-  - Implements a three-layer nested Markov-blanket architecture: (L1) physiological neuronal substrate, (L2) low-dimensional generative model encoding thoughtseeds, (L3) agentic metacognitive monitor implementing GNW capacity bottleneck
-  - **Activation**: thoughtseeds, dual-process, computational phenomenology, focused-attention meditation, attractor states, Markov-blanket architecture
-
-### visual-cortex-diffusion-inference
-- Toward a mechanistic understanding of inference in visual cortex and diffusion models (arXiv: 2607.15693)
-  - Core methodology: Sparse coding with non-factorial prior over latent variables, equivalent to a minimal diffusion model; trained via denoising score-matching and implicit differentiation.
-  - Key insight: Learned interaction matrix mirrors horizontal connections in superficial layers of V1 linking similar orientation tuning; latent units disconnect from visual input forming hierarchical representation for global consistency.
-  - **Activation**: visual cortex, diffusion model, sparse coding, recurrent dynamics, denoising score-matching, horizontal connections
-
-### scalable-training-continuous-time-spiking-neural-networks-dstd
-- Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
-  - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
-  - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
-
-  - Key insight: Learned interaction matrix mirrors horizontal connections in superficial layers of V1 linking similar orientation tuning; latent units disconnect from visual input forming hierarchical representation for global consistency.
-  - **Activation**: visual cortex, diffusion model, sparse coding, recurrent dynamics, denoising score-matching, horizontal connections
-
-- Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
-  - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
-  - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
 
 ## 2026-07-19 - Neuroscience Research (Cron Job)
 
@@ -71,4 +34,3 @@
   - Incorporates Random Graph Architecture to emulate biological neural stochastic connectivity
   - Implements Key Pathway-based Learning without Forgetting (KP-LwF) and Dynamic Growth Learning (DGL) algorithms
   - **Activation**: cognisnn, random graph architecture, spiking neural network, neuron-expandability, pathway-reusability, dynamic-configurability
-
