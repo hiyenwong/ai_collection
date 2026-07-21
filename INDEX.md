@@ -1,16 +1,11 @@
 ## 2026-07-21 - Neuroscience Research (Cron Job)
 
-### Exploring Brain Networks Using Noninvasive Electrophysiological Measurements
-- [[arxiv-2607-17602-exploring-brain-networks]] - Skill for analyzing brain networks using noninvasive electrophysiological measurements (EEG/MEG) based on arXiv:2607.17602 "Exploring Brain Networks Using Noninvasive Electrophysiological Measurements: Methods and Applications"
-  - Core contribution 1: Provides a comprehensive framework for EEG/MEG-based brain network analysis covering preprocessing, source reconstruction, connectivity analysis, and network methods
-  - Core contribution 2: Emphasizes practical workflows using open-source tools like MNE-Python, EEGLAB, FieldTrip, and Brainstorm for reproducible research
-  - **Activation**: arxiv-2607-17602-exploring-brain-networks, eeg, meg, brain network, connectivity analysis, source reconstruction, electrophysiology
-
-### eeg-meg-brain-network-analysis
-- [[eeg-meg-brain-network-analysis]] - Skill for analyzing brain networks using noninvasive electrophysiological measurements (EEG/MEG) based on arXiv:2607.17602v1 "Exploring Brain Networks Using Noninvasive Electrophysiological Measurements: Methods and Applications"
-  - Core contribution 1: Provides a comprehensive framework for EEG/MEG-based brain network analysis covering preprocessing, source reconstruction, connectivity analysis, and network methods
-  - Core contribution 2: Emphasizes practical workflows using open-source tools like MNE-Python, EEGLAB, FieldTrip, and Brainstorm for reproducible research
-  - **Activation**: eeg-meg-brain-network-analysis, eeg, meg, brain network, connectivity analysis, source reconstruction, electrophysiology
+### Exploring Brain Networks Using Noninvasive Electrophysiological Measurements: Methods and Applications
+- [[brain-networks-eeg-meg-methods]] - Comprehensive framework for EEG/MEG-based brain network analysis covering forward/inverse problems, connectivity measures, and analysis pipelines (arXiv: 2607.17602)
+  - Covers physical principles of EEG/MEG, forward/inverse modeling, and source localization techniques
+  - Details connectivity measures including coherence, Granger causality, and dynamic causal modeling
+  - Provides practical guidance for preprocessing, artifact removal, and pipeline implementation using Brainstorm/MNE-Python
+  - **Activation**: EEG MEG brain network connectivity, noninvasive electrophysiology source reconstruction, coherence Granger causality dynamic causal modeling
 
 ## 2026-07-20 - Neuroscience Research (Cron Job)
 
