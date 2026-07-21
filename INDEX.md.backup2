@@ -1,54 +1,79 @@
-## 2026-07-16 - Universal Quantum Computation with Cat Qubits (Cron Job)
+# AI Collection Index
 
-### Universal Quantum Computation with Multi-Mode Schrödinger Cat States Stabilized by Non-Local Dissipation Engineering
-- [[universal-quantum-computation-with-multi-mode-schrödinger-cat-states-stabilized-by-non-local-dissipation-engineering]] - Skill for understanding and implementing universal quantum computation using dissipatively stabilized multi-mode Schrödinger cat states via non-local dissipation engineering (arXiv: 2607.13975)
+## 2026-07-21 - Neuroscience Research (Cron Job)
+
+### exploring-brain-networks-noninvasive-electrophysiological-measurements
+- Exploring Brain Networks Using Noninvasive Electrophysiological Measurements (EEG/MEG) (arXiv: 2607.17602)
+  - Core methodology: Provides a practical guide for analyzing brain networks using EEG and MEG data, covering forward/inverse modeling, source reconstruction, connectivity measures, and analysis pipelines.
+  - **Activation**: eeg, meg, brain network, connectivity, source localization, brainstorm, mne, python, neuroscience, electrophysiology
+
+## 2026-07-21 - Neuroscience Research (Cron Job)
+
+### scalable-training-continuous-time-snn-dstd
+- Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization (arXiv: 2607.14672)
+  - Core methodology: Differentiable Spike-Time Discretization (DSTD) reduces memory by ~100x; synfire-chain-inspired temporal regularization reduces training time ~20x.
+  - **Activation**: continuous-time SNN, differentiable spike-time discretization, temporal regularization, spiking neural network training
+
+### eeg-based-lm-evaluation
+- Encoding EEG Signals to Examine Human-Like Next-Word Prediction Behaviour in Language Models (arXiv: 2607.16549)
+  - Core methodology: Uses EEG signals to evaluate language models' next-word prediction behavior by comparing surprisal and top-1 prediction correlates with ERP components.
+  - Key insight: Surprisal, not top-1 prediction, correlates with language-processing ERPs, especially for open-class words; challenges assumption that scaling LMs improves convergence with human-like linguistic processing.
+  - **Activation**: EEG, language model evaluation, surprisal, ERP, next-word prediction, neuroscience, computational linguistics
+
+## 2026-07-20 - Neuroscience Research (Cron Job)
+
+### Toward a mechanistic understanding of inference in visual cortex and diffusion models
+- [[arxiv-260715693-mechanistic-inference-visual-cortex-diffusion]] - A skill for understanding and applying the methods from the arXiv paper: Toward a mechanistic understanding of inference in visual cortex and diffusion models (arXiv: 260715693)
+  - Core contribution 1: Proposes a recurrent neural network model of V1 that is mathematically equivalent to a diffusion model, providing a mechanistic bridge between neuroscience and machine learning.
+  - Core contribution 2: Shows that the learned interaction matrix in the model corresponds to the known horizontal connectivity patterns in V1, suggesting that the brain may implement inference similar to diffusion models.
+  - **Activation**: mechanistic inference, visual cortex, diffusion models, sparse coding, recurrent neural networks, neuroscience, machine learning
+
+## 2026-07-19 - Neuroscience Research (Cron Job)
+
+## 2026-07-18 - Neuroscience Research (Cron Job)
+
+### grounded-world-models-biological-organisms-future-embodied-ai
+- Grounded world models in biological organisms and future embodied AI - arXiv:2607.13560 - A framework for understanding how biological intelligence builds grounded world models through interaction, with implications for embodied AI
+  - Presents five examples of neural circuits supporting grounded world modelling
+  - Highlights features missing from current embodied AI: intrinsic dynamics as foundation for learning, centrality of action, autonomous experience, and predictive/control mechanisms scaffolding higher cognition
+  - **Activation**: grounded world models, biological organisms, embodied AI, neural circuits, predictive learning, action-centered learning
+
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks - arXiv:2607.10891 - A framework for understanding how biological intelligence builds grounded world models through interaction, with implications for embodied AI
+  - Presents five examples of neural circuits supporting grounded world modelling
+  - Highlights features missing from current embodied AI: intrinsic dynamics as foundation for learning, centrality of action, autonomous experience, and predictive/control mechanisms scaffolding higher cognition
+  - **Activation**: cogni-snn, spiking neural networks, neuron-expandability, pathway-reusability, dynamic-configurability, random graph architectures, cogneural networks
+
 ## 2026-07-17 - Neuroscience Research (Cron Job)
 
-### Grounded world models in biological organisms and future embodied AI
-- [[grounded-world-models-biological-organisms-future-embodied-ai]] - A skill for understanding and applying the research from arXiv:2607.13560 "Grounded world models in biological organisms and future embodied AI". This skill outlines five key neural circuit mechanisms for grounded world modeling and how they can inform future embodied AI design.
-  - Biological agents acquire knowledge through active interaction with the environment, forming internal models that are grounded in sensorimotor experience.
-  - Five neural circuit mechanisms support grounded world modeling: navigation, affordance-based perception, active perception, allostatic control, and self/world outcome distinction.
-  - **Activation**: grounded world models, biological organisms, embodied AI, grounded cognition, neural circuits, world modeling
+## 2026-07-16 - Neuroscience Research (Cron Job)
 
-  - Uses Kerr non-linear oscillator chains with engineered non-local dissipation
-  - Achieves arbitrary single-qubit control through X-axis rotations and Z-axis π/2 rotations
-  - Implements entangling gates via XX(π/2) operations between coupled arrays
-  - **Activation**: universal-quantum-computation-with-multi-mode-schrödinger-cat-states-stabilized-by-non-local-dissipation-engineering, quantum-computing, cat-qubits, dissipative-stabilization, non-local-dissipation, universal-gates
+## 2026-07-15 - Neuroscience Research (Cron Job)
 
-### Transient Synaptic Memory Activity Regeneration
-- [[transient-synapse-activity-regen]] - Skill for understanding and applying the Latent Excitable Recruitment (LER) framework from arXiv:2607.14000, which predicts activity regeneration in neuronal networks based on transient synaptic memory.
-  - Core contribution: Introduces Latent Excitatory Recruitment (LER) capacity as a near-perfect predictor of multi-cycle dynamics from synaptic snapshots
-  - Key innovation: Demonstrates that transient synaptic memory alone can generate diverse future dynamics in homogeneous neuronal networks without persistent activity
-  - **Activation**: transient-synapse-activity-regen, neuroscience, transient-synaptic-memory, latent-excitatory-recruitment, LER-capacity, synaptic-snapshot, activity-regeneration, silent-state-prediction, neuronal-network-dynamics
+## 2026-07-14 - Neuroscience Research (Cron Job)
 
-- [[evaluating-encoding-strategies-biological-neural-networks]] - Skill for understanding and applying the research from arXiv:2607.13644 "Evaluating Encoding Strategies for Closed-Loop Classification in Biological Neural Networks"
-  - Burst-based temporal encoding-based temporal encoding achieved up to 95.6% accuracy in binary classification with cultured BNNs
-  - Performance highly dependent on spatial distribution of stimulation; joint optimization of temporal and spatial strategies is essential
-  - **Activation**: evaluating-encoding-strategies-biological-neural-networks, neuroscience, burst-encoding, temporal-encoding, biological-neural-networks, closed-loop-classification
+## 2026-07-13 - Neuroscience Research (Cron Job)
 
-### Classifying Daily Activities Needs Posture, Reconstructing Them Needs Motion
-- [[classifying-daily-activities-needs-posture-reconstructing-them-needs-motion]] - Skill for understanding the dissociation between posture-based action classification and motion-dependent movement reconstruction in human vision, based on arXiv:2607.13216.
-  - Shows static posture suffices for action classification while temporal dynamics are essential for movement reconstruction
-  - Identifies 9 critical joints most predictive for movement classification
-  - Demonstrates Temporal Movement Primitives preserve temporal dynamics while Legendre coefficients preserve only posture
-  - **Activation**: classifying-daily-activities-needs-posture-reconstructing-them-needs-motion, neuroscience, movement-classification, action-recognition, motion-reconstruction, posture-motion-dissociation, temporal-movement-primitives, legendre-polynomials
+## 2026-07-12 - Neuroscience Research (Cron Job)
 
-### Leveraging Unlabelled Data for Generalizable Neural Population Decoding
-- [[leveraging-unlabelled-data-for-generalizable-neural-population-decoding]] - Skill for understanding and applying the MOJO framework for leveraging unlabelled data in neural population decoding (arXiv: 2607.14086)
-  - Introduces MOJO (Masked autoEncoder-based Joint training) framework combining self-supervised and supervised learning
-  - Demonstrates superior performance with limited labeled data and cross-modal generalization to human ECoG
-  - Shows improved interpretability of neural representations for brain region classification
-  - **Activation**: leveraging-unlabelled-data-for-generalizable-neural-population-decoding, neural-population-decoding, MOJO, masked-autoencoding, self-supervised-learning, brain-computer-interface, neural-representation-learning
+## 2026-07-11 - Neuroscience Research (Cron Job)
 
-### Visual Place Recognition Rate-Encoded SNN-STDP
-- [[visual-place-recognition-rate-encoded-snn-stdp]] - Skill for understanding and implementing the discrete time visual place recognition framework using spike-timing-dependent plasticity in spiking neural networks, based on arXiv:2607.13114.
-  - Encodes visual place information in spike timing rates with STDP learning rules
-  - Achieves high accuracy in visual place recognition tasks with sparse coding
-  - Demonstrates robustness to noise and varying environmental conditions
-  - **Activation**: visual-place-recognition-rate-encoded-snn-stdp, neuroscience, visual-place-recognition, spiking-neural-networks, STDP, temporal-coding, rate-encoding
-### Fast Whole-Brain, Geometry-Aware Functional Alignment for Cross-Subject Decoding
-- [[fast-whole-brain-spectralot-alignment]] - Skill for understanding and implementing the SpectralOT method for functional alignment of fMRI data across subjects, based on arXiv:2607.10931v1.
-  - Embeds cortical geometry into Laplace-Beltrami eigenmodes along functional data to regularize the alignment
-  - Balances functional feature preservation with anatomical structure maintenance
-  - Improves generalization of decoders trained on aligned data
-  - **Activation**: fast-whole-brain-spectralot-alignment, neuroscience, fMRI, functional-alignment, spectral-optimal-transport, laplace-beltrami, cross-subject-decoding
+## 2026-07-10 - Neuroscience Research (Cron Job)
+
+## 2026-07-09 - Neuroscience Research (Cron Job)
+
+## 2026-07-08 - Neuroscience Research (Cron Job)
+
+## 2026-07-07 - Neuroscience Research (Cron Job)
+
+## 2026-07-06 - Neuroscience Research (Cron Job)
+
+## 2026-07-05 - Neuroscience Research (Cron Job)
+
+## 2026-07-04 - Neuroscience Research (Cron Job)
+
+## 2026-07-03 - Neuroscience Research (Cron Job)
+
+## 2026-07-02 - Neuroscience Research (Cron Job)
+
+## 2026-07-01 - Neuroscience Research (Cron Job)
