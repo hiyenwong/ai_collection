@@ -1,5 +1,12 @@
 ## 2026-07-21 - Neuroscience Research (Cron Job)
 
+### arxiv-2607-17602
+- Exploring Brain Networks Using Noninvasive Electrophysiological Measurements (EEG/MEG) (arXiv:2607.17602)
+  - Core methodology: Provides a practical guide for analyzing brain networks using EEG and MEG data, covering forward/inverse modeling, source reconstruction, connectivity measures, and analysis pipelines.
+  - **Activation**: eeg, meg, brain network, connectivity, source localization, brainstorm, mne, python, neuroscience, electrophysiology
+
+## 2026-07-21 - Neuroscience Research (Cron Job)
+
 ### exploring-brain-networks-eeg-meg
  - Exploring Brain Networks Using Noninvasive Electrophysiological Measurements (EEG/MEG) (arXiv: 2607.17602v1)
    - Core methodology: Provides a practical guide for analyzing brain networks using EEG and MEG data, covering forward/inverse modeling, source reconstruction, connectivity measures, and analysis pipelines.
