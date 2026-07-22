@@ -7,6 +7,12 @@
   - Core concept: EEG instability (trial-to-trial and session-to-session signal drift) is a major confound; COFETT uses a 128-channel high-density EEG cap with repeated inner-speech imagery across sessions to improve robustness.
   - **Activation**: EEG-to-text, EEG2Text, COFETT, teacher-forcing-free, EEG instability, cross-session EEG, inner speech decoding, non-invasive BCI, 128-channel EEG, neural decoding benchmark
 
+### How the fly holds a single goal: normalization, not selection, in Drosophila FC2
+- [[fly-goal-normalization-fc2]] - Connectome analysis reveals FC2 uses global FB5A inhibition for normalization rather than winner-take-all selection, maintaining externally set goals as clean activity bumps (arXiv: 2607.18969)
+  - Core concept: FC2 receives ~90% global inhibition from four FB5A cells rather than local recurrent excitation needed for ring-attractor winner-take-all dynamics.
+  - Core concept: The circuit normalizes externally set goals rather than actively selecting between competitors, with upstream hDelta network likely setting the goal direction.
+  - **Activation**: fly goal maintenance, Drosophila FC2, fan-shaped body, normalization circuit, global inhibition, FB5A, hDelta, ring attractor, winner-take-all, connectome analysis
+
 ### Analysis of inter-spike interval statistics in neuronal networks with depolarizing and hyperpolarizing threshold potentials
 - [[isi-adaptive-threshold-neuronal-networks]] - First-passage-time analysis of ISI statistics in EI integrate-and-fire neurons with depolarizing and hyperpolarizing adaptive thresholds (arXiv: 2607.18428)
   - Core concept: Adaptive thresholds let threshold potential rise after excitation or fall after inhibition, changing ISI mean and variability compared to fixed thresholds.
