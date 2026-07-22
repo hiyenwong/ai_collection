@@ -317,7 +317,7 @@
   - Weak alignment → strong privileged axis alignment; hierarchical zipper effect strengthens alignment at higher layers
   - Metric insensitivity for NeuroAI: choice of comparison metric matters less than previously thought
   - **Activation**: contravariance, strong alignment, privileged axes, DNN-brain alignment, convergent evolution, NeuroAI theory, minimal solutions
->>>>>>> c96ac80abd105da47d0c203cb4c22fde96ab466a
+
 
 ## 2026-07-13 - Neuroscience Research (Cron Job)
 
@@ -4379,4 +4379,23 @@
 - [[terrazero-procedural-driving-simulation-for-zero-d]] - TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale (arXiv: 2607.13028)
   - Training robust autonomous driving agents requires a simulator that is fast enough for reinforcement...
   - **Activation**: terrazero, procedural, driving, simulation, zero
->>>>>>> c96ac80abd105da47d0c203cb4c22fde96ab466a
+
+## 2026-07-23 - Deep Learning Research (Cron Job)
+
+### AdaFlash: Adaptive Speculative Decoding via On-Policy Distilled Diffusion Drafters
+- [[adaflash-adaptive-speculative-decoding]] - Adaptive speculative decoding framework combining on-policy distillation with adaptive length selection for diffusion drafters (arXiv: 2607.19223)
+  - Uses reverse-KL divergence tailored for diffusion drafters to reduce domain-level variance
+  - Implements adaptive length head to dynamically adjust candidate sequence length and handle token-level variance
+  - **Activation**: adaflash, adaptive speculative decoding, diffusion drafters, on-policy distillation
+
+### H²SD: Hybrid Hindsight Self-Distillation
+- [[h2sd-hybrid-hindsight-self-distillation]] - Hybrid self-distillation framework that handles successful and failed trajectories differently for better RLVR performance (arXiv: 2607.18955)
+  - For successful trajectories: uses teacher probabilities to modulate update magnitudes without changing direction
+  - For failed trajectories: minimizes reverse KL divergence from student to teacher conditioned on reference hints
+  - **Activation**: h2sd, hybrid hindsight self-distillation, rlvr, on-policy self-distillation
+
+### Scalable and Efficient Joint Spiking Embedding Predictive Architecture for Large-Scale Dynamic Graphs
+- [[sg-jepa-spiking-graph-embedding]] - Self-supervised spiking neural network framework for large-scale dynamic graph learning that avoids complex reconstruction objectives (arXiv: 2607.18412)
+  - Uses temporal context-target partitioning along time dimension for predictive embedding learning
+  - Encodes sequential inputs into coarse-to-fine spike count embeddings for computational adaptability
+  - **Activation**: sg-jepa, spiking graph embedding, dynamic graph learning, spiking neural networks
