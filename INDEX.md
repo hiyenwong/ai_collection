@@ -1,3 +1,10 @@
+## 2026-07-23 - Neuroscience Research (Cron Job)
+
+### Competitive and Complementary Tools
+- [[competitive-complementary-tools]] - Methodology for modeling the co-evolution of human competence and AI tool reliance as a bistable dynamical system, analyzing competence collapse thresholds and agency transfer (arXiv: 2607.18460)
+  - Core concept: Human-tool interaction is bistable with competent and dependent states separated by critical thresholds
+  - Core concept: Tool transparency (reconstructable working fraction) and initial competence determine collapse thresholds
+  - **Activation**: competitive tools, complementary tools, competence collapse, tool reliance, human-AI collaboration
 ## 2026-07-22 - Neuroscience Research (Cron Job)
 
 ### Visual Semantic Decoding of Electrocorticography from Video Stimuli using End-to-End Deep Learning
