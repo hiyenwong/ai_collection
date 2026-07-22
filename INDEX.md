@@ -1,5 +1,13 @@
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
+### Eccentricity-Constrained CNN Training Reveals Adaptive Information Coding Around the Visual Field
+- [[eccentricity-constrained-cnn-training]] - Methodology for training CNNs with eccentricity-constrained egocentric video data to reveal adaptive information coding that mirrors primate visual system organization (arXiv: 2607.19316)
+  - Fovea-only models stronger on face recognition and scene categorization, but periphery-only models show advantage in scene-selective cortex (PPA, RSC)
+  - VEDB-pretrained models matched neural predictivity of ImageNet-100 models across visual cortex
+  - **Activation**: eccentricity-constrained cnn, fovea-periphery vision coding, egocentric visual experience, adaptive information coding visual field
+
+## 2026-07-23 - Neuroscience Research (Cron Job)
+
 ### Spiking Neural Networks for fMRI-Based Visual Semantic Decoding
 - [[spiking-neural-networks-fmri-visual-decoding]] - Methodology for using SNN-derived visual features as targets for fMRI-based visual semantic decoding, showing superior alignment with brain activity compared to traditional ANN features (arXiv: 2607.19170)
   - Feature-prediction error reduced from 0.7707 (ANN) to 0.0282 (SNN)
