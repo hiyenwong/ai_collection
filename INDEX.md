@@ -1,5 +1,14 @@
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
+### Spiking Neural Networks for fMRI-Based Visual Semantic Decoding
+- [[spiking-neural-networks-fmri-visual-decoding]] - Methodology for using SNN-derived visual features as targets for fMRI-based visual semantic decoding, showing superior alignment with brain activity compared to traditional ANN features (arXiv: 2607.19170)
+  - Feature-prediction error reduced from 0.7707 (ANN) to 0.0282 (SNN)
+  - Top-1 semantic decoding accuracy improved from 0.1800 (ANN) to 0.4400 (SNN) on GoD dataset
+  - **Activation**: snn fmri decoding, spiking neural network brain decoding, fMRI visual semantic decoding
+
+
+## 2026-07-23 - Neuroscience Research (Cron Job)
+
 ### Competitive and Complementary Tools
 - [[competitive-complementary-tools]] - Methodology for modeling the co-evolution of human competence and AI tool reliance as a bistable dynamical system, analyzing competence collapse thresholds and agency transfer (arXiv: 2607.18460)
   - Core concept: Human-tool interaction is bistable with competent and dependent states separated by critical thresholds
