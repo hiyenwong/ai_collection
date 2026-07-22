@@ -1,3 +1,11 @@
+## 2026-07-22 - Quantum Computing Research (Cron Job)
+
+### QuantiSpect: A Structure-Aware Lightweight 3D CNN Pre-Decoder for Scalable Surface Code Quantum Error Correction
+- [[quantispect-structure-aware-3d-cnn-predecoder]] - Lightweight 3D CNN pre-decoder for surface codes using FastHyperBlocks; matches the Accurate baseline with ~2.71× fewer parameters and ~2.84× fewer MACs (arXiv: 2607.18204)
+  - Core concept: Factor 3D convolutions into spatial, temporal, and mixed spatio-temporal depthwise/grouped branches, then fuse with squeeze-and-excitation channel gating and residual connections.
+  - Core concept: Receptive field scales as R = 1 + 2 + 2N; default N=5 gives R=13 with only ~0.663 M parameters; expanded QuantiSpect-21 reaches R=21 and ~0.80% circuit-level threshold with 1.18 M parameters.
+  - **Activation**: QuantiSpect, surface code neural decoder, 3D CNN QEC, FastHyperBlock, quantum error correction pre-decoder, spatio-temporal syndrome decoder, lightweight neural decoder
+
 ## 2026-07-22 - Systems Engineering Research (Cron Job)
 
 ### Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications
