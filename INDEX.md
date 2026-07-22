@@ -1,6 +1,12 @@
 
 ## 2026-07-22 - Neuroscience Research (Cron Job)
 
+### Is EEG-to-Text Feasible in Real-World Scenarios? An In-Depth Analysis Using a Neuropsychology-Inspired Benchmark
+- [[eeg-to-text-real-world-feasibility]] - COFETT benchmark addresses EEG instability and teacher-forcing bias, providing evidence for practical non-invasive EEG-to-text decoding (arXiv: 2607.18749)
+  - Core concept: Existing EEG2Text benchmarks rely on teacher-forcing evaluation, masking exposure bias and inflating real-world performance; COFETT enforces teacher-forcing-free inference to measure genuine linguistic decoding.
+  - Core concept: EEG instability (trial-to-trial and session-to-session signal drift) is a major confound; COFETT uses a 128-channel high-density EEG cap with repeated inner-speech imagery across sessions to improve robustness.
+  - **Activation**: EEG-to-text, EEG2Text, COFETT, teacher-forcing-free, EEG instability, cross-session EEG, inner speech decoding, non-invasive BCI, 128-channel EEG, neural decoding benchmark
+
 ### Analysis of inter-spike interval statistics in neuronal networks with depolarizing and hyperpolarizing threshold potentials
 - [[isi-adaptive-threshold-neuronal-networks]] - First-passage-time analysis of ISI statistics in EI integrate-and-fire neurons with depolarizing and hyperpolarizing adaptive thresholds (arXiv: 2607.18428)
   - Core concept: Adaptive thresholds let threshold potential rise after excitation or fall after inhibition, changing ISI mean and variability compared to fixed thresholds.
