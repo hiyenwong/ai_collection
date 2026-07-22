@@ -1,4 +1,16 @@
+## 2026-07-22 - Neuroscience Research (Cron Job)
 
+### Visual Semantic Decoding of Electrocorticography from Video Stimuli using End-to-End Deep Learning
+- [[arxiv-2607-18923-visual-semantic-decoding-ecog]] - End-to-end deep learning methodology for decoding visual categories from ECoG using Transformer architecture with mixup augmentation and high-gamma band analysis (arXiv: 2607.18923)
+  - Core concept: High-gamma band (80-150 Hz) provides optimal decoding performance, capturing both early visual processing and higher-level semantic processing in a 900ms post-stimulus window.
+  - Core concept: Key brain regions include early visual cortex (V2-V4), ventral stream (inferior temporal cortex), MT+ complex for motion processing, and lateral temporal cortex for semantic processing.
+  - **Activation**: ECoG visual decoding, semantic decoding, video stimuli ECoG, end-to-end deep learning brain
+
+### Exploring Brain Networks Using Noninvasive Electrophysiological Measurements: Methods and Applications
+- [[arxiv-2607-17602-exploring-brain-networks]] - Comprehensive methodology for EEG/MEG-based brain network analysis covering source reconstruction, connectivity measures, and advanced analyses while addressing volume conduction and signal leakage (arXiv: 2607.17602)
+  - Core concept: Proper head modeling and source reconstruction are critical for accurate connectivity analysis; techniques like orthogonalization and imaginary coherence mitigate volume conduction artifacts.
+  - Core concept: Different connectivity measures serve different purposes: coherence and phase synchronization for functional connectivity, Granger causality and DCM for effective connectivity, each with specific assumptions and limitations.
+  - **Activation**: EEG, MEG, brain network, functional connectivity, effective connectivity, source reconstruction, volume conduction, coherence, phase synchronization, Granger causality, dynamic causal modeling, transfer entropy, Brainstorm, MNE-Python, graph theory, cross-frequency coupling
 ## 2026-07-22 - Neuroscience Research (Cron Job)
 
 ### Is EEG-to-Text Feasible in Real-World Scenarios? An In-Depth Analysis Using a Neuropsychology-Inspired Benchmark
