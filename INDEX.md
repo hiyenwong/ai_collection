@@ -1,4 +1,30 @@
+## 2026-07-22 - Systems Engineering Research (Cron Job)
+
+### Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications
+- [[vnvspec-requirements-vv-specification]] - VNVSpec framework turns V&V specifications into typed, machine-readable, executable artifacts that bridge high-level systems-engineering requirements with low-level test results (arXiv: 2607.17686)
+  - Core concept: Typed, immutable, serializable requirements model with quality gates, traceability DAG, and evidence ingestion from pytest / JUnit / analysis scripts / model adapters.
+  - Core concept: Produces audit-ready outputs (compliance matrices, CI reports, GSN assurance cases) for AI-enabled and cyber-physical systems under EU AI Act, ISO 21448, UL 4600, etc.
+  - **Activation**: V&V, requirements traceability, MBSE, model-based systems engineering, cyber-physical systems, AI safety assurance, executable specifications, EU AI Act, ISO 21448, INCOSE
+
+### Cluster-Based Distributed Small-Signal Stability Certificates for Grid-Forming Inverter Networks
+- [[cluster-based-distributed-stability-certificates]] - Selectable-resolution time-domain stability certificate for grid-forming inverter networks using cluster-based cyclic small-gain and energy arguments (arXiv: 2607.16985)
+  - Core concept: Decouples small-signal dynamics into voltage and angle-frequency subsystems; voltage subsystem certified via node-to-node gains and cyclic small-gain with arbitrary cluster partitions.
+  - Core concept: Stability indices localize limiting margins to nodes, internal cycles, and inter-cluster channels, matching certification resolution to geography/ownership/control boundaries.
+  - **Activation**: grid-forming inverter, distributed stability certification, small-signal stability, cyclic small-gain, cluster-based certification, power system stability, microgrid stability, voltage stability, angle-frequency stability
+
 ## 2026-07-22 - Neuroscience Research (Cron Job)
+
+### Emergent topological structure in spontaneous brain-organoid activity
+- [[emergent-topological-brain-organoids]] - Persistent homology framework for detecting H1 loops and H2 voids in MEA recordings of spontaneous organoid activity, with a rate- and population-preserving null model (arXiv: 2607.16517)
+  - Core concept: Brain-organoid networks carry structured loop topology that exceeds a rate- and population-preserving null, concentrated in strongly co-active "chorister" units.
+  - Core concept: H1 resolves from roughly 100 units upward; H2 voids emerge only in larger networks (N >= 119), pointing toward 3D high-resolution recordings for richer higher-order structure.
+  - **Activation**: brain organoid, persistent homology, MEA, H1 loops, H2 voids, topological data analysis, neural correlations, rate-preserving null, loop-carrying core
+
+### Organization of computation in reservoir computing
+- [[reservoir-computation-organization]] - Eigenspectral decomposition of reservoir state space linking SVD modes to degree-wise information processing capacity and representation energy (arXiv: 2607.17858)
+  - Core concept: High IPC does not imply practical accessibility; high-degree nonlinearities often reside in low-energy modes and are easily lost to noise.
+  - Core concept: Representation energy per degree distinguishes accessible computation from buried capacity, and enables noise-aware design of physical reservoir computers.
+  - **Activation**: reservoir computing, echo state network, information processing capacity, SVD mode decomposition, representation energy, noise-aware capacity, nonlinear degree accessibility
 
 ### Discovery by Dreaming: Cross-Domain Recombination in Artificial Memory
 - [[discovery-by-dreaming-cross-domain-recombination]] - A skill for implementing cross-domain recombination inspired by dreaming, based on the paper "Discovery by Dreaming: Cross-Domain Recombination in Artificial Memory" (arXiv:2607.16256). This skill outlines how to implement a LoRA fine-tuning pipeline (DREAMS) and a symbolic engine (SAPIENCE) to recombine knowledge across domains, enhancing AI discovery and insight generation.
