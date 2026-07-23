@@ -1,3 +1,12 @@
+## 2026-07-23 - Neuroscience Research (Cron Job)
+
+### State-Dependent Observation Noise Reintroduces Epistemic Value in Linear-Gaussian Active Inference
+- [[state-dependent-observation-noise-active-inference]] - State-dependent observation noise methodology that restores epistemic drive (curiosity) in linear-Gaussian active inference by making observation covariance R(x) dependent on state, enabling actions to influence future estimation quality (arXiv: 2607.20306)
+  - Core concept: Standard linear-Gaussian active inference loses epistemic value because constant observation noise makes Expected Free Energy's epistemic term constant
+  - Core concept: State-dependent observation noise R(x) reintroduces dual effect where actions influence both state evolution AND future estimation quality through posterior covariance
+  - Core concept: Under mild rank condition on observation map and non-degeneracy of R(x), epistemic value becomes non-constant, restoring information-seeking behavior
+  - **Activation**: state-dependent observation noise, active inference epistemic value, linear-gaussian curiosity, dual control bar-shalom-tse, gaussian agent curiosity
+
 ## 2026-07-23 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
