@@ -2412,5 +2412,459 @@
     "skillCreated": "can-induced-emotion-bias-llm-behaviors-in-sequenti",
     "lastAccessed": "2026-07-15",
     "category": "other"
+  },
+  "2607.20382": {
+    "title": "FMRP-LEAN: A HIPAA-Compliant AI-Augmented LIMS Architecture for End-to-End Clinical Assay Workflow Optimization",
+    "file": "collection/skills/other/fmrp-lean-a-hipaa-compliant-ai-augmented-lims-arch/SKILL.md",
+    "keywords": [
+      "cs.HC",
+      "cs.AI",
+      "cs.ET",
+      "physics.med-ph",
+      "q-bio.NC"
+    ],
+    "utility": 1.0,
+    "skillCreated": "fmrp-lean-a-hipaa-compliant-ai-augmented-lims-arch",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.20268": {
+    "title": "PoTRE: Test-Time Reasoning inspired by Cognitive Heterogeneity",
+    "file": "collection/skills/neuroscience/potre-test-time-reasoning-inspired-by-cognitive-he/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "utility": 1.0,
+    "skillCreated": "potre-test-time-reasoning-inspired-by-cognitive-he",
+    "lastAccessed": "2026-07-23",
+    "category": "neuroscience"
+  },
+  "2607.20255": {
+    "title": "The Ethics of Autonomous AI Agents for Offensive Security",
+    "file": "collection/skills/multi-agent-rl/the-ethics-of-autonomous-ai-agents-for-offensive-s/SKILL.md",
+    "keywords": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "the-ethics-of-autonomous-ai-agents-for-offensive-s",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.20216": {
+    "title": "Small, Free, and Effective: Orchestrating Open-Weight Small Language Models to Outperform Single LLM for Malware Analysis",
+    "file": "collection/skills/other/small-free-and-effective-orchestrating-open-weight/SKILL.md",
+    "keywords": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "small-free-and-effective-orchestrating-open-weight",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.20145": {
+    "title": "SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD",
+    "file": "collection/skills/other/slai-t-rex-full-parameter-post-training-of-the-dee/SKILL.md",
+    "keywords": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "slai-t-rex-full-parameter-post-training-of-the-dee",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.20064": {
+    "title": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+    "file": "collection/skills/other/pro-long-programmatic-memory-enables-long-horizon-/SKILL.md",
+    "keywords": [
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "pro-long-programmatic-memory-enables-long-horizon-",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.20019": {
+    "title": "EvoDRC: A Self-Evolving Agentic Framework for Automated DRC Violation Repair",
+    "file": "collection/skills/multi-agent-rl/evodrc-a-self-evolving-agentic-framework-for-autom/SKILL.md",
+    "keywords": [
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "evodrc-a-self-evolving-agentic-framework-for-autom",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.19985": {
+    "title": "Coordinating from Memory: Graph-Structured Experience Reuse for Multi-Agent Adaptation in Dynamic Manufacturing",
+    "file": "collection/skills/other/coordinating-from-memory-graph-structured-experien/SKILL.md",
+    "keywords": [
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "coordinating-from-memory-graph-structured-experien",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19967": {
+    "title": "When Shippers Become Algorithms: Candidate Exposure, Information Design, and the Concentration of LLM-Mediated Freight Markets",
+    "file": "collection/skills/other/when-shippers-become-algorithms-candidate-exposure/SKILL.md",
+    "keywords": [
+      "physics.soc-ph",
+      "cs.AI",
+      "cs.CY"
+    ],
+    "utility": 1.0,
+    "skillCreated": "when-shippers-become-algorithms-candidate-exposure",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19962": {
+    "title": "EvoThink: Evolving Thinking in Large Reasoning Models via Self-Pruning and Aha-Moment Preference Optimization",
+    "file": "collection/skills/other/evothink-evolving-thinking-in-large-reasoning-mode/SKILL.md",
+    "keywords": [
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "evothink-evolving-thinking-in-large-reasoning-mode",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19949": {
+    "title": "SenWorld: A Digital-Twin Simulation for Generating Context-Rich Evaluation Data",
+    "file": "collection/skills/other/senworld-a-digital-twin-simulation-for-generating-/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CY"
+    ],
+    "utility": 1.0,
+    "skillCreated": "senworld-a-digital-twin-simulation-for-generating-",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19941": {
+    "title": "A Framework of User Experience Principles for Human-AI Agent Interaction in the Workplace",
+    "file": "collection/skills/other/a-framework-of-user-experience-principles-for-huma/SKILL.md",
+    "keywords": [
+      "cs.HC",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "a-framework-of-user-experience-principles-for-huma",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19913": {
+    "title": "JANUS: Foreseeing Latent Risk for Long-Horizon Agent Safety",
+    "file": "collection/skills/other/janus-foreseeing-latent-risk-for-long-horizon-agen/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CR"
+    ],
+    "utility": 1.0,
+    "skillCreated": "janus-foreseeing-latent-risk-for-long-horizon-agen",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19894": {
+    "title": "Defense Against LLM Backdoors using Critical Neuron Isolation Pruning",
+    "file": "collection/skills/neuroscience/defense-against-llm-backdoors-using-critical-neuro/SKILL.md",
+    "keywords": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "defense-against-llm-backdoors-using-critical-neuro",
+    "lastAccessed": "2026-07-23",
+    "category": "neuroscience"
+  },
+  "2607.19865": {
+    "title": "DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations",
+    "file": "collection/skills/multi-agent-rl/docops-a-verifiable-benchmark-for-autonomous-agent/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "utility": 1.0,
+    "skillCreated": "docops-a-verifiable-benchmark-for-autonomous-agent",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.19837": {
+    "title": "Know Your Agent: Reconnaissance-Driven Pentesting of AI Agents",
+    "file": "collection/skills/multi-agent-rl/know-your-agent-reconnaissance-driven-pentesting-o/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CR",
+      "cs.LG"
+    ],
+    "utility": 1.0,
+    "skillCreated": "know-your-agent-reconnaissance-driven-pentesting-o",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.19793": {
+    "title": "Silent Failures in Multimodal Agentic Search:A Diagnostic Taxonomy and Cross-Judge Evaluation",
+    "file": "collection/skills/multi-agent-rl/silent-failures-in-multimodal-agentic-searcha-diag/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CV"
+    ],
+    "utility": 1.0,
+    "skillCreated": "silent-failures-in-multimodal-agentic-searcha-diag",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.19749": {
+    "title": "The World Model Remembers, the Actor Forgets: Dream Rehearsal for Continual Model-Based RL",
+    "file": "collection/skills/other/the-world-model-remembers-the-actor-forgets-dream-/SKILL.md",
+    "keywords": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "the-world-model-remembers-the-actor-forgets-dream-",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19739": {
+    "title": "Personalized Recommendation Tool Learning via Autonomous Language Agents",
+    "file": "collection/skills/other/personalized-recommendation-tool-learning-via-auto/SKILL.md",
+    "keywords": [
+      "cs.IR",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "personalized-recommendation-tool-learning-via-auto",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19678": {
+    "title": "Reference-Free Evaluation of Reasoning in Open-Ended Question Answering",
+    "file": "collection/skills/ai-safety-eval/reference-free-evaluation-of-reasoning-in-open-end/SKILL.md",
+    "keywords": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "utility": 1.0,
+    "skillCreated": "reference-free-evaluation-of-reasoning-in-open-end",
+    "lastAccessed": "2026-07-23",
+    "category": "ai-safety-eval"
+  },
+  "2607.19592": {
+    "title": "Knowledge-Centric Self-Improvement",
+    "file": "collection/skills/other/knowledge-centric-self-improvement/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "utility": 1.0,
+    "skillCreated": "knowledge-centric-self-improvement",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19524": {
+    "title": "SynPre-FL: Synthetic data-driven pretraining integrated Federated Learning training framework",
+    "file": "collection/skills/other/synpre-fl-synthetic-data-driven-pretraining-integr/SKILL.md",
+    "keywords": [
+      "cs.LG",
+      "cs.AI",
+      "cs.DC"
+    ],
+    "utility": 1.0,
+    "skillCreated": "synpre-fl-synthetic-data-driven-pretraining-integr",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19653": {
+    "title": "PerfAgent: Profiler-Guided Iterative Refinement for Repository-Level Code Optimization",
+    "file": "collection/skills/multi-agent-rl/perfagent-profiler-guided-iterative-refinement-for/SKILL.md",
+    "keywords": [
+      "cs.SE",
+      "cs.AI"
+    ],
+    "utility": 0.97,
+    "skillCreated": "perfagent-profiler-guided-iterative-refinement-for",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.20345": {
+    "title": "Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids",
+    "file": "collection/skills/other/closing-the-lab-to-store-gap-a-data-efficient-post/SKILL.md",
+    "keywords": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "utility": 0.93,
+    "skillCreated": "closing-the-lab-to-store-gap-a-data-efficient-post",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.19528": {
+    "title": "D3VL: Understanding Driving Scenes from 3D Time Series Data and Video with Language Models",
+    "file": "collection/skills/other/d3vl-understanding-driving-scenes-from-3d-time-ser/SKILL.md",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "utility": 0.93,
+    "skillCreated": "d3vl-understanding-driving-scenes-from-3d-time-ser",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.20174": {
+    "title": "StreamHOI: Interaction-aware Temporal Memory Adaptation for Streaming HOI Video Generation",
+    "file": "collection/skills/other/streamhoi-interaction-aware-temporal-memory-adapta/SKILL.md",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "utility": 0.9,
+    "skillCreated": "streamhoi-interaction-aware-temporal-memory-adapta",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.20002": {
+    "title": "Post-Training in Time Series Foundation Models: A Unifying Framework",
+    "file": "collection/skills/other/post-training-in-time-series-foundation-models-a-u/SKILL.md",
+    "keywords": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "utility": 0.9,
+    "skillCreated": "post-training-in-time-series-foundation-models-a-u",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.11919": {
+    "title": "Do You Remember? Toward Memory-Centric Multimodal AI",
+    "file": "collection/skills/other/do-you-remember-toward-memory-centric-multimodal-a/SKILL.md",
+    "keywords": [
+      "cs.NE",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "utility": 1.0,
+    "skillCreated": "do-you-remember-toward-memory-centric-multimodal-a",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.04562": {
+    "title": "Heaviside Continuity of Rolling Coefficients for Eliminating Epistemic Entropy in Large Language Models",
+    "file": "collection/skills/other/heaviside-continuity-of-rolling-coefficients-for-e/SKILL.md",
+    "keywords": [
+      "cs.AI",
+      "cs.NE"
+    ],
+    "utility": 1.0,
+    "skillCreated": "heaviside-continuity-of-rolling-coefficients-for-e",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.11913": {
+    "title": "Towards Self-Evolving Agents: A Human-Inspired Adaptive Exploration-Exploitation Framework for Genetic Network Programming",
+    "file": "collection/skills/multi-agent-rl/towards-self-evolving-agents-a-human-inspired-adap/SKILL.md",
+    "keywords": [
+      "cs.NE",
+      "cs.AI"
+    ],
+    "utility": 1.0,
+    "skillCreated": "towards-self-evolving-agents-a-human-inspired-adap",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2607.02967": {
+    "title": "Rank-Order N-of-M Codes for Sparse Distributed Memory: Disentangling Representation and Learning Effects in Noise Robustness Against Contemporary Neuromorphic Architectures",
+    "file": "collection/skills/other/rank-order-n-of-m-codes-for-sparse-distributed-mem/SKILL.md",
+    "keywords": [
+      "cs.LG",
+      "cs.NE"
+    ],
+    "utility": 1.0,
+    "skillCreated": "rank-order-n-of-m-codes-for-sparse-distributed-mem",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2606.31789": {
+    "title": "Distributed Hierarchical Temporal Memory with Shared Associative Memory for Cross-Entity Preemptive Warning",
+    "file": "collection/skills/other/distributed-hierarchical-temporal-memory-with-shar/SKILL.md",
+    "keywords": [
+      "cs.NE"
+    ],
+    "utility": 1.0,
+    "skillCreated": "distributed-hierarchical-temporal-memory-with-shar",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2606.31584": {
+    "title": "A Large-Scale Empirical Evaluation of MMAO Under Fair-Budget Continuous and Discrete Benchmarks",
+    "file": "collection/skills/ai-safety-eval/a-large-scale-empirical-evaluation-of-mmao-under-f/SKILL.md",
+    "keywords": [
+      "cs.NE",
+      "cs.MA"
+    ],
+    "utility": 1.0,
+    "skillCreated": "a-large-scale-empirical-evaluation-of-mmao-under-f",
+    "lastAccessed": "2026-07-23",
+    "category": "ai-safety-eval"
+  },
+  "2607.01539": {
+    "title": "MMAO-Cls: Metabolic Multi-Agent Optimization for Joint Feature Selection and Classifier Tuning",
+    "file": "collection/skills/multi-agent-rl/mmao-cls-metabolic-multi-agent-optimization-for-jo/SKILL.md",
+    "keywords": [
+      "cs.NE",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "utility": 0.97,
+    "skillCreated": "mmao-cls-metabolic-multi-agent-optimization-for-jo",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
+  },
+  "2606.29684": {
+    "title": "Evolutionary Hyperparameter Optimization to Find Lightweight CNN Models for Autonomous Steering",
+    "file": "collection/skills/other/evolutionary-hyperparameter-optimization-to-find-l/SKILL.md",
+    "keywords": [
+      "cs.NE",
+      "cs.CV",
+      "cs.RO"
+    ],
+    "utility": 0.93,
+    "skillCreated": "evolutionary-hyperparameter-optimization-to-find-l",
+    "lastAccessed": "2026-07-23",
+    "category": "other"
+  },
+  "2607.11826": {
+    "title": "Transformer-Guided Swarm Intelligence for Frugal Neural Architecture Search",
+    "file": "collection/skills/nlp-llm/transformer-guided-swarm-intelligence-for-frugal-n/SKILL.md",
+    "keywords": [
+      "cs.LG",
+      "cs.AI",
+      "cs.NE"
+    ],
+    "utility": 0.87,
+    "skillCreated": "transformer-guided-swarm-intelligence-for-frugal-n",
+    "lastAccessed": "2026-07-23",
+    "category": "nlp-llm"
+  },
+  "2607.00846": {
+    "title": "MMAO-Dyn: A Metabolic Multi-Agent Optimizer for Dynamic Optimization",
+    "file": "collection/skills/multi-agent-rl/mmao-dyn-a-metabolic-multi-agent-optimizer-for-dyn/SKILL.md",
+    "keywords": [
+      "cs.NE"
+    ],
+    "utility": 0.87,
+    "skillCreated": "mmao-dyn-a-metabolic-multi-agent-optimizer-for-dyn",
+    "lastAccessed": "2026-07-23",
+    "category": "multi-agent-rl"
   }
 }
