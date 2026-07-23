@@ -1,24 +1,31 @@
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
+### The Giant Hippocampus: From Structural Monoculture to a System of Systems
+- [[giant-hippocampus-structural-monoculture-systems]] - Bridging AI architecture design with neuroscientific understanding of brain structure diversity, proposing systems of systems over structural monoculture (arXiv: 2607.19973)
+  - Core insight: Contrasts AI's homogeneous architectures (Transformers) with neuroscience's heterogeneous cortical mosaic
+  - Core concept: Hippocampus as conceptual bridge suggesting integrated systems of specialized components
+  - Core framework: System of systems architecture with modular specialization and integration frameworks
+  - **Activation**: giant hippocampus, structural monoculture, system of systems, ai neuroscience bridge, structural diversity
+
 ### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
 - [[current-injection-spiking-neural-network-image-fusion]] - Energy-efficient SNN architecture (CIS-Fuse) performing cross-modal fusion at membrane-potential level, achieving ANN-quality fusion with ~10x lower energy consumption (arXiv: 2607.19879)
   - Core innovation: Current Injection Spiking (CIS) operator injects one modality as gated auxiliary current into driving neuron before spike firing
   - Preserves subthreshold responses that contain complementary information otherwise lost in binary spikes
   - Bidirectional Cross-Modal Fusion (BCMF) module with asymmetric dual-branch architecture for functional specialization
-  - **Activation**: CIS-Fuse, current injection spiking, infrared visible fusion, membrane potential fusion, SNN image fusion## 2026-07-23 - Neuroscience Research (Cron Job)
+  - **Activation**: CIS-Fuse, current injection spiking, infrared visible fusion, membrane potential fusion, SNN image fusion
 
 ### SpikingMOT: A Spike-Driven Multi-Object Tracker
 - [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using spiking neural networks with Activation Sparsity Preference (ASP) to achieve state-of-the-art performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
   - Core innovation: Activation Sparsity Preference (ASP) - sparse gating is theoretically no worse than dropout under same activation rate
   - Brain-inspired loop: decomposes trajectory states into pseudo-trajectory bases and uses prediction error to calibrate posterior for next-frame prediction
-  - **Activation**: SpikingMOT, spike-driven tracking, activation sparsity preference, SNN MOT## 2026-07-23 - Neuroscience Research (Cron Job)
+  - **Activation**: SpikingMOT, spike-driven tracking, activation sparsity preference, SNN MOT
 
 ### Capturing Inner Experience At Scale: An AI Interviewer Co-Developed with the Founder of a Landmark Phenomenological Method
 - [[ai-interviewer-des-phenomenology]] - AI interviewer methodology for operationalizing Descriptive Experience Sampling (DES) into an explicit, inspectable reasoning architecture (arXiv:2607.20310)
   - Core mechanism: eleven quality dimensions appraisal with conservative accounting of established facts
   - Temporal grounding always precedes experiential content in query composition
   - Co-developed with DES originator Russell T. Hurlburt from full corpus of DES transcripts
-  - **Activation**: descriptive experience sampling, phenomenological method, ai interviewer, inner experience, llm interviewing, temporal grounding, qualitative research, psychological science## 2026-07-23 - Neuroscience Research (Cron Job)
+  - **Activation**: descriptive experience sampling, phenomenological method, ai interviewer, inner experience, llm interviewing, temporal grounding, qualitative research, psychological science
 
 ### State-Dependent Observation Noise Reintroduces Epistemic Value in Linear-Gaussian Active Inference
 - [[state-dependent-observation-noise-active-inference]] - State-dependent observation noise methodology that restores epistemic drive (curiosity) in linear-Gaussian active inference by making observation covariance R(x) dependent on state, enabling actions to influence future estimation quality (arXiv: 2607.20306)
