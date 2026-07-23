@@ -1039,3 +1039,29 @@ A curated collection of research skills derived from academic papers, organized 
 - [[human-ai-co-discovery-quantum-algorithms]] - Human-AI co-discovery methodology for quantum algorithm design, demonstrated via sign-embedding quantum algorithms for matrix equations and functions (arXiv: 2606.24899)
   - AI expands human intuition into route maps, compares formulations, drafts proofs
   - Human gates: selects routes, rejects hidden conditions, refines implementations
+
+## 2026-07-24 - Deep Learning Research (Cron Job)
+
+### ELSAA: Efficient Low-Rank and Sparse Attention Approximation for Training Transformers
+- [[elsaa-efficient-low-rank-sparse-attention]] - Efficient attention mechanism combining sparse and low-rank approximations to enable longer-context training while preserving both sharp token-level interactions and broad contextual mixing (arXiv: 2607.20214v1)
+  - Dual-branch architecture: sparse branch captures high-similarity interactions, low-rank branch summarizes diffuse global interactions
+  - Denominator-aware fusion scales sparse branch according to estimated attention mass relative to low-rank branch
+  - **Activation**: ELSAA, efficient attention, low-rank attention, sparse attention, long-context transformers
+
+### HeadCast: Casting Attention Heads for Efficient Autoregressive Video Generation
+- [[headcast-attention-heads-video-generation]] - Training-free attention head classification and KV cache optimization framework that accelerates autoregressive video generation by up to 1.95x at 1080P while maintaining quality (arXiv: 2607.20125v1)
+  - Four head archetypes: Sink, Dummy, Spatial, and Global heads with head-specific pathways
+  - Retains Global heads to preserve long-range temporal consistency that aggressive eviction destroys
+  - **Activation**: HeadCast, video generation, attention heads, KV cache optimization, autoregressive diffusion
+
+### PoTRE: Test-Time Reasoning inspired by Cognitive Heterogeneity
+- [[potre-cognitive-heterogeneity-reasoning]] - Heterogeneous multi-agent reasoning framework (Poly-Topological Reasoning Ensembles) that decouples inference into four specialized agents for complex reasoning tasks (arXiv: 2607.20268v1)
+  - Four agents: Adversarial Refinement, Hierarchical Planning, Spectrum Search, and Direct Chain agents
+  - Task-Adaptive Aggregation Layer dynamically reconciles perspectives via candidate selection, semantic synthesis, or neuro-symbolic verification
+  - **Activation**: PoTRE, cognitive heterogeneity, multi-agent reasoning, poly-topological ensembles, adversarial refinement
+
+### Language-Specific versus Cross-Lingual Knowledge Graphs for Implicit Aspect Identification in Arabic
+- [[language-specific-vs-cross-lingual-knowledge-graphs]] - Comparative methodology showing native language knowledge graphs outperform cross-lingual English KGs by +0.199-0.251 micro-F1 for implicit aspect identification in Arabic (arXiv: 2607.20056v1)
+  - Native Arabic KGs consistently outperform cross-lingual English KGs across multiple benchmarks
+  - Task-specific fine-tuning raises performance from <=0.13 to 0.66-0.76 micro-F1, confirming task adaptation over model scale
+  - **Activation**: knowledge graphs, multilingual NLP, aspect-based sentiment, implicit aspects, Arabic NLP
