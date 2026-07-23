@@ -1,3 +1,16 @@
+## 2026-07-23 - Systems Engineering Research (Cron Job)
+
+### Model-Agnostic Meta Learning for Differentiable MPC
+- [[model-agnostic-meta-learning-differentiable-mpc]] - Model-Agnostic Meta Learning (MAML) framework for Differentiable Model Predictive Control (MPC) to enable adaptive control strategies across varying scenarios (arXiv: 2607.19271)
+  - Combines meta-learning with differentiable MPC for real-time adaptability without extensive retraining
+  - Uses SHRED-ROM architecture to alleviate curse of dimensionality in high-dimensional systems
+  - **Activation**: model-agnostic meta learning, differentiable MPC, adaptive control systems, SHRED-ROM
+
+### Real-time optimal control with shallow recurrent decoder networks
+- [[real-time-optimal-control-shallow-recurrent-decoder]] - Real-time optimal control framework using SHallow REcurrent Decoder networks-based Reduced Order Modeling (SHRED-ROM) for high-dimensional and parametric dynamical systems (arXiv: 2607.19302)
+  - Synthesizes closed-loop controllers from limited state sensor readings with effective distributed control actions
+  - Includes sensor forecaster to close the loop at latent level, mitigating sensor failures or delays
+  - **Activation**: SHRED-ROM, shallow recurrent decoder, real-time optimal control, reduced order modeling
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
 ### Eccentricity-Constrained CNN Training Reveals Adaptive Information Coding Around the Visual Field
