@@ -86,10 +86,11 @@
   - **Activation**: ECoG visual decoding, semantic decoding, video stimuli ECoG, end-to-end deep learning brain
 
 ### Exploring Brain Networks Using Noninvasive Electrophysiological Measurements: Methods and Applications
-- [[arxiv-2607-17602-exploring-brain-networks]] - Comprehensive methodology for EEG/MEG-based brain network analysis covering source reconstruction, connectivity measures, and advanced analyses while addressing volume conduction and signal leakage (arXiv: 2607.17602)
-  - Core concept: Proper head modeling and source reconstruction are critical for accurate connectivity analysis; techniques like orthogonalization and imaginary coherence mitigate volume conduction artifacts.
-  - Core concept: Different connectivity measures serve different purposes: coherence and phase synchronization for functional connectivity, Granger causality and DCM for effective connectivity, each with specific assumptions and limitations.
-  - **Activation**: EEG, MEG, brain network, functional connectivity, effective connectivity, source reconstruction, volume conduction, coherence, phase synchronization, Granger causality, dynamic causal modeling, transfer entropy, Brainstorm, MNE-Python, graph theory, cross-frequency coupling
+- [[exploring-brain-networks-eeg-meg]] - Comprehensive methodology for EEG/MEG-based brain network analysis covering physical principles, forward/inverse problems, connectivity measures, and end-to-end analysis pipelines (arXiv: 2607.17602)
+  - Core concept: Physical principles of EEG and MEG provide complementary information about brain activity with millisecond temporal resolution
+  - Core concept: Source-space connectivity analysis with proper volume conduction mitigation (orthogonalization, PLI, imaginary coherence) is essential for valid network inference
+  - Core concept: Functional connectivity measures (coherence, phase sync) vs effective connectivity (Granger, DCM) serve different research questions with distinct assumptions
+  - **Activation**: eeg brain network, meg brain network, electrophysiological brain network, noninvasive brain connectivity, functional connectivity eeg, effective connectivity meg, source-space connectivity
 ## 2026-07-22 - Neuroscience Research (Cron Job)
 
 ### Is EEG-to-Text Feasible in Real-World Scenarios? An In-Depth Analysis Using a Neuropsychology-Inspired Benchmark
