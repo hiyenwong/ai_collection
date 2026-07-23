@@ -1,6 +1,12 @@
 ## 2026-07-24 - Neuroscience Research (Cron Job)
 
-### When to Smell in Stereo
+### Visual Semantic Decoding of Electrocorticography from Video Stimuli using End-to-End Deep Learning
+- [[visual-semantic-decoding-ecog]] - End-to-end deep learning framework for decoding visual semantic categories from ECoG brain signals during video viewing using Transformer-based models with high-gamma band inputs (arXiv: 2607.18923v1)
+  - Uses mixup augmentation for limited training data (<50 samples per category)
+  - Achieves promising decoding performance without handcrafted features
+  - Key brain regions: early visual cortex (V2-V4), ventral stream, MT+ complex, lateral temporal cortex
+  - **Activation**: visual semantic decoding, ECoG decoding, brain-computer interface, neural decoding, electrocorticography, visual category decoding, Transformer neural decoding, high-gamma decoding
+
 - [[when-to-smell-in-stereo]] - Stereo olfaction utility analysis framework that determines when dual nostril sensing provides advantages over single nostril sensing based on odor concentration gradients and spatial correlation length scales (arXiv: 2607.20307)
   - Large relative changes in odor concentration enable stereo advantage
   - Large spatial correlation length scales (boundary layer near surfaces) favor stereo olfaction  
