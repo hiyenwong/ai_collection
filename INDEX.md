@@ -1,6 +1,19 @@
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
-### The Giant Hippocampus: From Structural Monoculture to a System of Systems
+## 2026-07-24 - Neuroscience Research (Cron Job)
+
+### SpikingMOT: A Spike-Driven Multi-Object Tracker that uses sparse activation for efficient trajectory prediction
+- [[spikingmot-spike-driven-multi-object-tracker]] - SpikingMOT uses sparse activation preference for efficient multi-object tracking with spiking neural networks (arXiv: 2607.19875v1)
+  - Activation Sparsity Preference (ASP) identifies when sparse responses are sufficient for trajectory prediction
+  - Achieves state-of-the-art performance while reducing parameters by 72% and energy by 86.7%
+  - **Activation**: spiking mot, spike-driven tracking, sparse activation tracking, neuromorphic mot
+
+### Eccentricity-Constrained CNN Training Reveals Adaptive Information Coding Around the Visual Field
+- [[eccentricity-constrained-cnn-training]] - Methodology for training CNNs with eccentricity constraints to reveal adaptive information coding that mirrors primate visual system organization (arXiv: 2607.19316v1)
+  - Demonstrates differential task-relevance between central vision (faces/words) and peripheral vision (scenes)
+  - Shows how egocentric experience shapes cortical information processing
+  - **Activation**: eccentricity-constrained cnn, fovea-periphery vision coding, egocentric visual experience, adaptive information coding visual field
+
 - [[giant-hippocampus-structural-monoculture-systems]] - Bridging AI architecture design with neuroscientific understanding of brain structure diversity, proposing systems of systems over structural monoculture (arXiv: 2607.19973)
   - Core insight: Contrasts AI's homogeneous architectures (Transformers) with neuroscience's heterogeneous cortical mosaic
   - Core concept: Hippocampus as conceptual bridge suggesting integrated systems of specialized components
