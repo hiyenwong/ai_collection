@@ -1,4 +1,10 @@
-## 2026-07-23 - Neuroscience Research (Cron Job)
+## 2026-07-24 - Neuroscience Research (Cron Job)
+
+### When to Smell in Stereo
+- [[when-to-smell-in-stereo]] - Stereo olfaction utility analysis framework that determines when dual nostril sensing provides advantages over single nostril sensing based on odor concentration gradients and spatial correlation length scales (arXiv: 2607.20307)
+  - Large relative changes in odor concentration enable stereo advantage
+  - Large spatial correlation length scales (boundary layer near surfaces) favor stereo olfaction  
+  - **Activation**: stereo olfaction, dual nostril sensing, odor trail tracking, boundary layer olfaction## 2026-07-23 - Neuroscience Research (Cron Job)
 
 ## 2026-07-24 - Neuroscience Research (Cron Job)
 
