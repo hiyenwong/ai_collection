@@ -1,18 +1,12 @@
 ---
 name: spikingmot-spike-driven-multi-object-tracker
-description: "SpikingMOT: A Spike-Driven Multi-Object Tracker that uses spiking neural networks to achieve state-of-the-art tracking performance with 72% fewer parameters and 86.7% less energy consumption through Activation Sparsity Preference (ASP)."
-arxiv_id: "2607.19875v1"
-date: "2026-07-22"
-categories: 
-  - spiking-neural-networks
-  - computer-vision
-  - multi-object-tracking
-  - computational-neuroscience
-trigger_words:
-  - "SpikingMOT"
-  - "spike-driven tracking"
-  - "activation sparsity preference"
-  - "SNN MOT"
+description: "SpikingMOT: A Spike-Driven Multi-Object Tracker that uses brain-inspired spiking neural networks for efficient trajectory prediction and target association. Achieves state-of-the-art performance while reducing parameters by 72% and energy by 86.7%. Use when working with multi-object tracking, spiking neural networks, or efficient computer vision applications."
+metadata:
+  arxiv_id: "2607.19875"
+  published: "2026-07-22"
+  authors: "Yiding Sun, Xiangyang Yang, Dongxu Zhang, Qirui Wang, Zijie Xu, Wenxuan Liu, Shuiwang Li, Jihua Zhu, Zhaofei Yu, Tiejun Huang"
+  tags: [spiking-neural-networks, multi-object-tracking, computational-neuroscience, efficient-ai, trajectory-prediction]
+license: Complete terms in LICENSE.txt
 ---
 
 # SpikingMOT: A Spike-Driven Multi-Object Tracker

@@ -187,9 +187,17 @@
   - Core concept: Rather than merely defending against forgetting, its measurable value lies in recombining knowledge across experiences that have not yet co-occurred.
   - **Activation**: dreaming, recombination, cross-domain, memory consolidation, LoRA, symbolic AI, neuroscience-inspired AI
 
-# AI Collection Index
+# AI Collection
 
-## 2026-07-21 - Neuroscience Research (Cron Job)
+A curated collection of research skills derived from academic papers, organized by domain and methodology.
+
+## 2026-07-23 - Neuroscience Research (Cron Job)
+
+### SpikingMOT: A Spike-Driven Multi-Object Tracker
+- [[spikingmot-spike-driven-multi-object-tracker]] - Brain-inspired multi-object tracking using spiking neural networks with Activation Sparsity Preference (ASP) for 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
+  - Achieves state-of-the-art HOTA scores on SportsMOT (74.9) and DanceTrack (56.5)
+  - Uses pseudo-trajectory bases and error-calibrated posterior for adaptive dynamics
+  - **Activation**: spikingmot, spike-driven tracking, activation sparsity preference, SNN MOT
 
 
 ## 2026-07-21 - Neuroscience Research (Cron Job)
