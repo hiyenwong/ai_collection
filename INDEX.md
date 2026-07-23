@@ -34,7 +34,13 @@
   - Core concept: Under mild rank condition on observation map and non-degeneracy of R(x), epistemic value becomes non-constant, restoring information-seeking behavior
   - **Activation**: state-dependent observation noise, active inference epistemic value, linear-gaussian curiosity, dual control bar-shalom-tse, gaussian agent curiosity
 
-## 2026-07-23 - Quantum Neuromorphic Computing (Cron Job)
+
+### Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
+- [[scalable-training-continuous-time-spiking-neural-networks-dstd]] - Memory-efficient training framework enabling deep continuous-time SNNs through Differentiable Spike-Time Discretization (DSTD), reducing memory by 100x and enabling 20-layer networks on single GPU (arXiv: 2607.14672)
+  - Core innovation: DSTD maps irregular presynaptic spikes to differentiable weighted events at fixed time points, reducing memory complexity from O(N_out*N_in) to O(N_out*M)
+  - Core innovation: Synfire-chain-inspired temporal regularization organizes layer-wise firing windows and prevents dead-neuron failures
+  - Enables previously impossible deep SNN architectures: 9-layer on CIFAR-10, 20-layer on Fashion-MNIST
+  - **Activation**: continuous-time SNN, DSTD, scalable SNN training, memory-efficient SNN, differentiable spike-time discretization## 2026-07-23 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
 - [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking quantum reservoir computing performance to energetic costs, establishing fundamental limits for quantum neuromorphic hardware (arXiv: 2607.02157)
