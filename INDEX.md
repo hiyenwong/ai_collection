@@ -1,5 +1,12 @@
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
+### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
+- [[current-injection-spiking-neural-network-image-fusion]] - Energy-efficient SNN architecture (CIS-Fuse) performing cross-modal fusion at membrane-potential level, achieving ANN-quality fusion with ~10x lower energy consumption (arXiv: 2607.19879)
+  - Core innovation: Current Injection Spiking (CIS) operator injects one modality as gated auxiliary current into driving neuron before spike firing
+  - Preserves subthreshold responses that contain complementary information otherwise lost in binary spikes
+  - Bidirectional Cross-Modal Fusion (BCMF) module with asymmetric dual-branch architecture for functional specialization
+  - **Activation**: CIS-Fuse, current injection spiking, infrared visible fusion, membrane potential fusion, SNN image fusion## 2026-07-23 - Neuroscience Research (Cron Job)
+
 ### SpikingMOT: A Spike-Driven Multi-Object Tracker
 - [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using spiking neural networks with Activation Sparsity Preference (ASP) to achieve state-of-the-art performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
   - Core innovation: Activation Sparsity Preference (ASP) - sparse gating is theoretically no worse than dropout under same activation rate
