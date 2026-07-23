@@ -1,5 +1,11 @@
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
+### SpikingMOT: A Spike-Driven Multi-Object Tracker
+- [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using spiking neural networks with Activation Sparsity Preference (ASP) to achieve state-of-the-art performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
+  - Core innovation: Activation Sparsity Preference (ASP) - sparse gating is theoretically no worse than dropout under same activation rate
+  - Brain-inspired loop: decomposes trajectory states into pseudo-trajectory bases and uses prediction error to calibrate posterior for next-frame prediction
+  - **Activation**: SpikingMOT, spike-driven tracking, activation sparsity preference, SNN MOT## 2026-07-23 - Neuroscience Research (Cron Job)
+
 ### Capturing Inner Experience At Scale: An AI Interviewer Co-Developed with the Founder of a Landmark Phenomenological Method
 - [[ai-interviewer-des-phenomenology]] - AI interviewer methodology for operationalizing Descriptive Experience Sampling (DES) into an explicit, inspectable reasoning architecture (arXiv:2607.20310)
   - Core mechanism: eleven quality dimensions appraisal with conservative accounting of established facts
