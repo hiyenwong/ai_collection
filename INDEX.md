@@ -1,3 +1,19 @@
+## 2026-07-23 - Quantum Neuromorphic Computing (Cron Job)
+
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking quantum reservoir computing performance to energetic costs, establishing fundamental limits for quantum neuromorphic hardware (arXiv: 2607.02157)
+  - Computational peak in quantum critical region originates from spectral resonance: closing energy gap aligns reservoir transition frequencies with chaotic drive
+  - Generalized Landauer bound reveals fundamental trade-off: critical resonance maximizes both predictive capacity AND informational dissipation
+  - Quantum coherences amplify predictive capacity without demanding additional mechanical work
+  - **Activation**: quantum reservoir computing, thermodynamics, quantum criticality, informational dissipation, Landauer bound
+
+### Stochastic Quantum Spiking Neural Networks with Quantum Memory and Local Learning
+- [[stochastic-quantum-spiking-neural-networks]] - Novel SQS neuron model with multi-qubit quantum circuits for internal quantum memory, enabling single-shot event-driven inference and backpropagation-free local learning (arXiv: 2506.21324)
+  - Multi-qubit quantum circuits realize internal quantum memory beyond single-qubit classical memory
+  - Single-shot probabilistic spike generation eliminates need for repeated measurements
+  - Hardware-friendly local learning rule removes requirement for global classical backpropagation  
+  - Outperforms previous quantum spiking models and classical counterparts with same parameter count
+  - **Activation**: stochastic quantum spiking, SQS neuron, quantum memory, local learning, neuromorphic computing
 ## 2026-07-23 - Neuroscience Research (Cron Job)
 
 ### Spiking Neural Networks for fMRI-Based Visual Semantic Decoding
