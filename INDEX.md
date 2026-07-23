@@ -1,3 +1,11 @@
+## 2026-07-23 - Neuroscience Research (Cron Job)
+
+### Spiking Neural Networks for fMRI-Based Visual Semantic Decoding
+- [[snn-fmri-visual-decoding]] - Methodology for using SNN-derived visual features as alternative targets for fMRI-based visual decoding, demonstrating stronger alignment with fMRI responses and improved visual semantic decoding performance compared to ANN-derived features (arXiv: 2607.19170)
+  - SNN-derived features reduce feature-prediction error from 0.7707 to 0.0282 on GoD dataset
+  - Top-1 semantic decoding accuracy improves from 0.1800 to 0.4400 
+  - Both spiking neural dynamics and temporal simulation steps contribute to observed advantage
+  - **Activation**: fMRI visual decoding, brain-computer interfaces, spiking neural networks, neural representation alignment, visual semantic decoding
 ## 2026-07-23 - Systems Engineering Research (Cron Job)
 
 ### Model-Agnostic Meta Learning for Differentiable MPC
