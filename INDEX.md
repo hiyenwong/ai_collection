@@ -5,31 +5,29 @@
   - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
   - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
   - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
-  - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
+  ## 2026-07-24 - Neuroscience Research (Cron Job)
 
-### Spectral theory for population density dynamics of spiking neurons with refractoriness
-- [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
-  - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
-  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
-  - Derives exact transfer function with threshold-noise contributions missed in previous work
-  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
+  ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
+  - [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
+    - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
+    - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
+    - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
+    - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
 
-## 2026-07-24 - Systems Engineering Research (Cron Job)
+  ### Spectral theory for population density dynamics of spiking neurons with refractoriness
+  - [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
+    - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
+    - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
+    - Derives exact transfer function with threshold-noise contributions missed in previous work
+    - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
 
-### Systems Engineering Research Search - July 24, 2026
-- **No new papers found** in systems engineering domain (arXiv: systems engineering, distributed systems, control systems, cyber-physical systems)
-  - Search conducted for papers published July 17-24, 2026
-  - No results due to academic publishing cycles and arXiv rate limiting
-  - **Activation**: systems engineering research, arxiv search monitoring
+  ## 2026-07-24 - Systems Engineering Research (Cron Job)
 
-## 2026-07-24 - Neuroscience Research (Cron Job)
-
-### Spectral theory for population density dynamics of spiking neurons with refractoriness
-- [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
-  - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
-  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
-  - Derives exact transfer function with threshold-noise contributions missed in previous work
-  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
+  ### Systems Engineering Research Search - July 24, 2026
+  - **No new papers found** in systems engineering domain (arXiv: systems engineering, distributed systems, control systems, cyber-physical systems)
+    - Search conducted for papers published July 17-24, 2026
+    - No results due to academic publishing cycles and arXiv rate limiting
+    - **Activation**: systems engineering research, arxiv search monitoring
 
 ### SpikingMOT: A Spike-Driven Multi-Object Tracker
 - [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using brain-inspired spiking neural networks with Activation Sparsity Preference (ASP) for efficient trajectory prediction, achieving SOTA performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
