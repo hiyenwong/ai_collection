@@ -1,3 +1,11 @@
+## 2026-07-24 - Neuroscience Research (Cron Job)
+
+### Exact ensemble controllability for neural differential equations via neural interpolation
+- [[exact-ensemble-controllability-neural-differential-equations]] - Constructive solution for steering multiple initial states to corresponding target states with a single set of control parameters in neural dynamics systems (arXiv: 2607.21112)
+  - Reduces neural interpolation problem to system of linear equations for depth-two networks
+  - Provides explicit method for computing control parameters enabling multi-task learning
+  - **Activation**: ensemble controllability, neural differential equations, neural interpolation, multi-task learning, control parameters, depth-two networks, linear equations
+
 ## 2026-07-24 - Systems Engineering Research (Cron Job)
 
 ### Systems Engineering Research Search - July 24, 2026
