@@ -1,4 +1,12 @@
 ## 2026-07-24 - Neuroscience Research (Cron Job)
+## 2026-07-24 - Neuroscience Research (Cron Job)
+
+### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
+- [[transition-related-potentials-narrative-comprehension-eeg]] - Transition-Related Potentials (TRPs) as markers of narrative comprehension in continuous EEG using deep neural networks for semi-automated analysis of naturalistic brain responses to cinematic transitions (arXiv: 2607.20720)
+  - Extracts EEG signatures aligned to cinematic cuts that exhibit canonical ERP-like temporal structure
+  - Demonstrates TRPs are systematically shaped by narrative context vs. scene-scrambled versions  
+  - Uses compact DNN to recover cut-related EEG signatures directly from continuous recordings
+  - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection
 
 ### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
 - [[causal-emergence-active-inference-perspective-latents]] - Analysis of causal emergence in active inference agents using Integrated Information Decomposition, showing how architectural separation of fast perception and slow global latents affects Φᵣ dynamics (arXiv: 2607.20708)
