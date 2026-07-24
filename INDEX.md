@@ -21,6 +21,13 @@
     - Derives exact transfer function with threshold-noise contributions missed in previous work
     - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
 
+  ### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
+  - [[perspective-latents-causal-emergence-active-inference]] - Framework for measuring causal emergence in active inference agents through Integrated Information Decomposition, identifying global latents as architectural locus of temporal organization (arXiv: 2607.20708)
+    - Separates fast perception latent (z) from slow global latent (g) with structural decoupling from policy gradients
+    - Demonstrates ΦID concentration in global latent (g) with aggregate magnitude being largely architectural
+    - Reveals substantive learning effects only at atom-compositional level with regime-invariant decoupling
+    - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, temporal organization, architectural conditions
+
   ## 2026-07-24 - Systems Engineering Research (Cron Job)
 
   ### Systems Engineering Research Search - July 24, 2026
