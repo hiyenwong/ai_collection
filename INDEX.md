@@ -8,6 +8,13 @@
 
 ## 2026-07-24 - Neuroscience Research (Cron Job)
 
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
+  - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
+  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
+  - Derives exact transfer function with threshold-noise contributions missed in previous work
+  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
+
 ### SpikingMOT: A Spike-Driven Multi-Object Tracker
 - [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using brain-inspired spiking neural networks with Activation Sparsity Preference (ASP) for efficient trajectory prediction, achieving SOTA performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
   - Introduces Activation Sparsity Preference (ASP): sparse gating is no worse than dropout under same activation rate
