@@ -13,6 +13,13 @@
   - Derives exact transfer function accounting for boundary conditions and reveals additional threshold-noise contributions
   - **Activation**: spectral theory neuronal population, refractory period population dynamics, Fokker-Planck boundary eigenvalue, neuronal oscillatory modes, population transfer function
 
+### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
+- [[current-injection-spiking-neural-network-image-fusion]] - Spiking neural network architecture that performs cross-modal fusion at membrane-potential level using current injection spiking (CIS) operator, solving subthreshold information loss in infrared-visible image fusion while maintaining energy efficiency (arXiv: 2607.19879)
+  - Introduces Current Injection Spiking (CIS) operator that injects one modality as gated auxiliary current into driving neuron of other before spike firing
+  - Preserves subthreshold responses containing complementary cues that would be lost in binary spike communication
+  - Achieves fusion quality on par with state-of-the-art ANNs while reducing inference energy by order of magnitude
+  - **Activation**: current injection spiking, CIS-Fuse, infrared visible fusion, membrane potential fusion, SNN image fusion
+
   ## 2026-07-24 - Neuroscience Research (Cron Job)
 
   ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
