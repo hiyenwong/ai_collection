@@ -8,6 +8,12 @@
 
 ## 2026-07-24 - Neuroscience Research (Cron Job)
 
+### SpikingMOT: A Spike-Driven Multi-Object Tracker
+- [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using brain-inspired spiking neural networks with Activation Sparsity Preference (ASP) for efficient trajectory prediction, achieving SOTA performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
+  - Introduces Activation Sparsity Preference (ASP): sparse gating is no worse than dropout under same activation rate
+  - Implements brain-inspired tracking loop with pseudo-trajectory bases and error-calibrated posterior
+  - **Activation**: SpikingMOT, spike-driven tracking, activation sparsity preference, SNN MOT
+
 ### Visual Semantic Decoding of Electrocorticography from Video Stimuli using End-to-End Deep Learning
 - [[visual-semantic-decoding-ecog]] - End-to-end deep learning framework for decoding visual semantic categories from ECoG brain signals during video viewing using Transformer-based models with high-gamma band inputs (arXiv: 2607.18923v1)
   - Uses mixup augmentation for limited training data (<50 samples per category)
