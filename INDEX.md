@@ -1,5 +1,13 @@
 ## 2026-07-24 - Neuroscience Research (Cron Job)
 
+### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
+- [[causal-emergence-active-inference-perspective-latents]] - Analysis of causal emergence in active inference agents using Integrated Information Decomposition, showing how architectural separation of fast perception and slow global latents affects Φᵣ dynamics (arXiv: 2607.20708)
+  - Dual latent architecture separates fast perception latent (z) from slow global latent (g) driven by prediction error
+  - Φᵣ concentrates in global latent g; aggregate magnitude is largely architectural and decreases with training
+  - Learning flips decoupling sign from negative to positive and becomes regime-invariant under environmental change
+  - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, Φᵣ, regime-switching, temporal organization
+## 2026-07-24 - Neuroscience Research (Cron Job)
+
 ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
 - [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
   - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
