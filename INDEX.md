@@ -1,20 +1,4 @@
 ## 2026-07-24 - Neuroscience Research (Cron Job)
-## 2026-07-24 - Neuroscience Research (Cron Job)
-
-### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
-- [[transition-related-potentials-narrative-comprehension-eeg]] - Transition-Related Potentials (TRPs) as markers of narrative comprehension in continuous EEG using deep neural networks for semi-automated analysis of naturalistic brain responses to cinematic transitions (arXiv: 2607.20720)
-  - Extracts EEG signatures aligned to cinematic cuts that exhibit canonical ERP-like temporal structure
-  - Demonstrates TRPs are systematically shaped by narrative context vs. scene-scrambled versions  
-  - Uses compact DNN to recover cut-related EEG signatures directly from continuous recordings
-  - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection
-
-### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
-- [[causal-emergence-active-inference-perspective-latents]] - Analysis of causal emergence in active inference agents using Integrated Information Decomposition, showing how architectural separation of fast perception and slow global latents affects Φᵣ dynamics (arXiv: 2607.20708)
-  - Dual latent architecture separates fast perception latent (z) from slow global latent (g) driven by prediction error
-  - Φᵣ concentrates in global latent g; aggregate magnitude is largely architectural and decreases with training
-  - Learning flips decoupling sign from negative to positive and becomes regime-invariant under environmental change
-  - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, Φᵣ, regime-switching, temporal organization
-## 2026-07-24 - Neuroscience Research (Cron Job)
 
 ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
 - [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
@@ -23,11 +7,12 @@
   - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
   - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
 
-### Exact ensemble controllability for neural differential equations via neural interpolation
-- [[exact-ensemble-controllability-neural-differential-equations]] - Constructive solution for steering multiple initial states to corresponding target states with a single set of control parameters in neural dynamics systems (arXiv: 2607.21112)
-  - Reduces neural interpolation problem to system of linear equations for depth-two networks
-  - Provides explicit method for computing control parameters enabling multi-task learning
-  - **Activation**: ensemble controllability, neural differential equations, neural interpolation, multi-task learning, control parameters, depth-two networks, linear equations
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
+  - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
+  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
+  - Derives exact transfer function with threshold-noise contributions missed in previous work
+  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
 
 ## 2026-07-24 - Systems Engineering Research (Cron Job)
 
@@ -58,6 +43,13 @@
   - Achieves promising decoding performance without handcrafted features
   - Key brain regions: early visual cortex (V2-V4), ventral stream, MT+ complex, lateral temporal cortex
   - **Activation**: visual semantic decoding, ECoG decoding, brain-computer interface, neural decoding, electrocorticography, visual category decoding, Transformer neural decoding, high-gamma decoding
+
+### Is EEG-to-Text Feasible in Real-World Scenarios? An In-Depth Analysis Using a Neuropsychology-Inspired Benchmark
+- [[eeg-to-text-real-world-feasibility]] - Neuropsychology-inspired COFETT benchmark enabling teacher-forcing-free EEG-to-text evaluation, addressing EEG instability issues and demonstrating practical feasibility for non-invasive communication restoration (arXiv: 2607.18749)
+  - Introduces Corpus OF Eeg-To-Text (COFETT) with 128-channel high-density EEG for robust evaluation
+  - Enables autonomous text generation without ground truth dependency, essential for real-world deployment
+  - Provides state-of-the-art ability to distinguish model performances and validate EEG linguistic decodability
+  - **Activation**: EEG-to-text feasibility, COFETT benchmark, teacher-forcing-free EEG2Text, non-invasive BCI communication, EEG instability decoding, real-world EEG2Text evaluation, high-density EEG language
 
 - [[when-to-smell-in-stereo]] - Stereo olfaction utility analysis framework that determines when dual nostril sensing provides advantages over single nostril sensing based on odor concentration gradients and spatial correlation length scales (arXiv: 2607.20307)
   - Large relative changes in odor concentration enable stereo advantage
