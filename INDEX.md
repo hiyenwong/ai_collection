@@ -1,5 +1,12 @@
 ## 2026-07-24 - Neuroscience Research (Cron Job)
 
+### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
+- [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
+  - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
+  - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
+  - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
+  - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
+
 ### Exact ensemble controllability for neural differential equations via neural interpolation
 - [[exact-ensemble-controllability-neural-differential-equations]] - Constructive solution for steering multiple initial states to corresponding target states with a single set of control parameters in neural dynamics systems (arXiv: 2607.21112)
   - Reduces neural interpolation problem to system of linear equations for depth-two networks
