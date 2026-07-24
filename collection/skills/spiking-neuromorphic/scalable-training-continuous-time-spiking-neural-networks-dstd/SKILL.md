@@ -1,62 +1,114 @@
 ---
 name: scalable-training-continuous-time-spiking-neural-networks-dstd
-description: Skill for implementing scalable training of continuous-time spiking neural networks using differentiable spike-time discretization (DSTD) as described in arXiv:2607.14672v1.
-version: 1.0.0
-date: 2026-07-20
-tags: [spiking neural network, computational neuroscience, DSTD, training framework]
+title: Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
+category: ai_collection
+trigger_words:
+  - continuous-time SNN
+  - DSTD
+  - scalable SNN training
+  - memory-efficient SNN
+  - differentiable spike-time discretization
 ---
 
 # Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
 
 ## Overview
-This skill encapsulates the methodology from arXiv:2607.14672v1, which introduces a memory-efficient training framework for continuous-time spiking neural networks (SNNs) based on differentiable spike-time discretization (DSTD). The approach enables training deep SNNs with reduced memory footprint and faster convergence, making large-scale SNN training feasible on a single GPU.
 
-## Core Concepts
-- **Continuous-time SNNs**: Event-driven neural networks where neurons communicate via spikes occurring at continuous times.
-- **Challenge**: Exact spike-time computation requires storing candidate firing times for each presynaptic-postsynaptic pair, leading to O(N_in * N_out) memory.
-- **Solution (DSTD)**: Map irregular presynaptic spikes onto a fixed set of M time intervals, converting the problem to weighted events at fixed times, reducing memory to O(N_out * M).
-- **Temporal Regularization**: Synfire-chain-inspired regularization organizes layer-wise firing windows, mitigating dead-neuron failures and enabling pipeline-like processing.
+This methodology addresses the severe memory constraints in training deep continuous-time Spiking Neural Networks (SNNs). Traditional exact spike-time computation requires evaluating and retaining candidate firing times over intervals determined by presynaptic spike ordering, leading to memory complexity of O(N_out * N_in) which becomes prohibitive for deep networks.
 
-## Implementation Steps
-1. **Model Definition**
-   - Define leaky integrate-and-fire (LIF) neurons with configurable membrane and synaptic time constants.
-   - Choose a coding scheme (e.g., time-to-first-spike (TTFS) or rate coding).
+The **Differentiable Spike-Time Discretization (DSTD)** framework provides a memory-efficient alternative that enables training of deep SNNs on standard hardware while maintaining accuracy.
 
-2. **Differentiable Spike-Time Discretization (DSTD)**
-   - Preselect M uniform time bins covering the simulation window.
-   - For each presynaptic spike, compute its contribution to postsynaptic potential via a kernel (e.g., exponential) evaluated at bin centers.
-   - Accumulate weighted contributions across bins to produce a differentiable postsynaptic current.
+## Key Innovations
 
-3. **Network Construction**
-   - Stack LIF layers (convolutional or fully-connected) as needed.
-   - Ensure each layer uses DSTD for synaptic operations.
+### 1. Differentiable Spike-Time Discretization (DSTD)
 
-4. **Training Loop**
-   - Forward pass: Compute membrane potentials via DSTD-based synaptic integration.
-   - Spike generation: Use a surrogate gradient method (e.g., fast sigmoid) to enable backpropagation through spiking non-linearity.
-   - Loss computation: Use task-appropriate loss (e.g., cross-entropy for classification).
-   - Backpropagation: Compute gradients through the differentiable DSTD operations.
-   - Optimizer step: Update parameters (e.g., with Adam).
+- Maps irregular presynaptic spikes onto differentiable weighted events at fixed time points
+- Replaces input-dependent candidate dimension with M fixed time intervals
+- Accurately approximates continuous-time membrane-potential dynamics
+- Reduces candidate-related activation memory from O(N_out * N_in) to O(N_out * M)
+- Maintains differentiability for gradient-based optimization
 
-5. **Temporal Regularization (Optional but Recommended)**
-   - Add a loss term that encourages firing activity to lie within desired windows per layer, inspired by synfire chains.
-   - This can be implemented as a penalty on the variance of spike times or via a target distribution.
+### 2. Synfire-Chain-Inspired Temporal Regularization
 
-6. **Hyperparameters**
-   - Number of time bins M: Trade-off between accuracy and memory; typical values 16-64.
-   - Learning rate, batch size, optimizer settings as per standard deep learning practice.
-   - Regularization weight for temporal term.
+- Organizes layer-wise firing windows to prevent dead-neuron failures
+- Enables pipeline-like processing through the network
+- Mitigates training instability in deep architectures
 
-## Verification
-- Train on benchmark datasets (CIFAR-10, Fashion-MNIST) using the described SNN architectures.
-- Verify that memory consumption is significantly lower than exact spike-time simulation (reported ~100x reduction).
-- Confirm training speed improvement (~20x faster).
-- Check that final accuracy matches or exceeds baseline SNN training methods.
+## Performance Benefits
+
+- **Memory reduction**: Up to ~100-fold reduction in peak memory consumption
+- **Training speed**: Up to ~20-fold faster training time compared to exact spike-time computation
+- **Scalability**: Successfully trained 9-layer convolutional SNNs on CIFAR-10 and 20-layer convolutional SNNs on Fashion-MNIST on a single GPU
+
+## Implementation Guidelines
+
+### For Leaky Integrate-and-Fire (LIF) Neurons
+
+1. **Time-to-First-Spike (TTFS) Coding Setup**:
+   - Define M fixed time intervals for discretization
+   - Ensure M is sufficient to capture temporal dynamics but small enough for memory efficiency
+
+2. **DSTD Integration**:
+   - Replace exact spike-time computation with DSTD mapping
+   - Use differentiable weighted events at fixed time points
+   - Maintain compatibility with standard backpropagation frameworks
+
+3. **Temporal Regularization**:
+   - Apply synfire-chain-inspired constraints to organize firing windows
+   - Implement layer-wise temporal coordination to prevent dead neurons
+
+### Code Structure Example
+
+```python
+# Pseudocode for DSTD integration
+class DSTDLIFLayer(nn.Module):
+    def __init__(self, num_neurons, time_intervals=M):
+        super().__init__()
+        self.num_neurons = num_neurons
+        self.time_intervals = time_intervals
+        # Initialize synaptic weights and time constants
+        
+    def forward(self, presynaptic_spikes):
+        # Map irregular spikes to fixed time intervals
+        discretized_inputs = self.discretize_spikes(presynaptic_spikes)
+        # Compute membrane potential dynamics
+        membrane_potential = self.compute_membrane_potential(discretized_inputs)
+        # Apply temporal regularization
+        regularized_output = self.temporal_regularization(membrane_potential)
+        return regularized_output
+```
+
+## When to Use This Methodology
+
+- **Deep SNN architectures**: When training networks with >5 layers
+- **Memory-constrained environments**: Single GPU training scenarios
+- **Continuous-time SNNs**: Applications requiring precise temporal dynamics
+- **Large datasets**: CIFAR-10, Fashion-MNIST, or similar scale problems
+
+## Limitations and Considerations
+
+- **Approximation trade-off**: DSTD is an approximation of exact continuous-time dynamics
+- **Time interval selection**: M must be chosen carefully to balance accuracy and efficiency
+- **Architecture compatibility**: Primarily validated on LIF neurons with TTFS coding
+
+## Validation Results
+
+- **CIFAR-10**: 9-layer convolutional SNN successfully trained
+- **Fashion-MNIST**: 20-layer convolutional SNN successfully trained  
+- **Memory efficiency**: 100x memory reduction enables previously impossible architectures
+- **Training stability**: Temporal regularization prevents dead-neuron failures
 
 ## References
-- arXiv:2607.14672v1 - Scalable Training of Continuous-Time Spiking Neural Networks with Differentiable Spike-Time Discretization
-- Supplementary material and code (if available) from the arXiv page.
 
-## Notes
-- This skill assumes familiarity with PyTorch or similar deep learning frameworks and surrogate gradient methods for SNNs.
-- The DSTD method is compatible with various neuron models beyond LIF, as long as the synaptic kernel is known.
+- **arXiv ID**: 2607.14672
+- **Authors**: Yusuke Sakemi, Tomoya Takeuchi, Takeo Hosomi, Kazuyuki Aihara
+- **Publication Date**: July 16, 2026
+
+## Activation Keywords
+
+Use this skill when working with:
+- Continuous-time spiking neural networks
+- Memory-efficient SNN training
+- Deep SNN architectures
+- Differentiable spike-time computation
+- Temporal regularization in SNNs
