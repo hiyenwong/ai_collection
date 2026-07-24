@@ -1,5 +1,11 @@
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
+### Weight-norm Criticality: A Mechanism for Loss Spikes Induced by the Normalization and Weight Decay
+- [[weight-norm-criticality-loss-spikes]] - Weight-norm Criticality framework for understanding loss spikes in deep neural network training induced by the interaction between normalization and weight decay (arXiv: 2607.21005)
+  - Identifies weight-norm criticality as additional training instability beyond learning-rate criticality
+  - Explains how normalization introduces scale-invariant components that interact with weight decay to cause loss spikes
+  - **Activation**: weight-norm criticality, loss spikes, weight decay instability, normalization weight decay interaction, scale-invariant training dynamics
+
 ### Spectral theory for neuronal population dynamics with refractory time
 - [[spectral-theory-neuronal-population-dynamics]] - Spectral theory framework for analyzing population density dynamics of spiking neurons with finite refractory time, providing rigorous operator-theoretic methods for studying neuronal population stability and oscillatory modes (arXiv: 2607.20699)
   - Augments state space to include refractory history and formulates as non-self-adjoint boundary eigenvalue problem for Fokker-Planck operator
