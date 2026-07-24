@@ -1,3 +1,65 @@
+
+## 2026-07-24 - arXiv Paper Skills (Cron Job)
+### Ai Safety Eval
+- [[arxiv-2607-21447-rumba-russian-user-memory-benchmark]] - RUMBA: Russian User Memory Benchmark (arXiv: 2607.21447) (utility=1.00)
+- [[arxiv-2607-21117-glucotune-a-unified-framework-for-blood-glucose-pr]] - GlucoTune: A Unified Framework for Blood Glucose Preprocessing, Forecasting, and Benchmarking in Dia (arXiv: 2607.21117) (utility=1.00)
+- [[arxiv-2607-21550-x-3-opd-distilling-reasoning-into-large-audio-lang]] - X$^3$-OPD: Distilling Reasoning into Large Audio-Language Models via On-Policy Alignment (arXiv: 2607.21550) (utility=0.97)
+- [[arxiv-2607-20925-representing-entity-importance-in-ai-knowledge-sys]] - Representing Entity Importance in AI Knowledge Systems: A Dual-Signal Framework of Audience Evaluati (arXiv: 2607.20925) (utility=0.93)
+
+### Multi Agent Rl
+- [[arxiv-2607-21557-openforgerl-train-harness-native-agents-in-any-env]] - OpenForgeRL: Train Harness-native Agents in Any Environment (arXiv: 2607.21557) (utility=1.00)
+- [[arxiv-2607-21522-gs-agent-creating-4d-physical-worlds-with-generati]] - GS-Agent: Creating 4D Physical Worlds With Generative Simulation (arXiv: 2607.21522) (utility=1.00)
+- [[arxiv-2607-21495-toward-continuous-assurance-for-the-democratizatio]] - Toward Continuous Assurance for the Democratization of AI Agent Creation in Industry (arXiv: 2607.21495) (utility=1.00)
+- [[arxiv-2607-21482-agentic-coding-without-the-cloud-evaluating-open-w]] - Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data (arXiv: 2607.21482) (utility=1.00)
+- [[arxiv-2607-21461-arex-towards-a-recursively-self-improving-agent-fo]] - AREX: Towards a Recursively Self-Improving Agent for Deep Research (arXiv: 2607.21461) (utility=1.00)
+- [[arxiv-2607-21419-pats-policy-aware-training-scaffolding-for-agentic]] - PATS: Policy-Aware Training Scaffolding for Agentic Reinforcement Learning (arXiv: 2607.21419) (utility=1.00)
+- [[arxiv-2607-21345-regulating-autonomous-and-agentic-ai]] - Regulating autonomous and agentic AI (arXiv: 2607.21345) (utility=1.00)
+- [[arxiv-2607-21325-toward-cryptographically-verifiable-authorization]] - Toward cryptographically verifiable authorization for autonomous AI agents: A security hypothesis, p (arXiv: 2607.21325) (utility=1.00)
+- [[arxiv-2607-21324-gradrag-cross-component-prompt-adaptation-for-coor]] - GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG (arXiv: 2607.21324) (utility=1.00)
+- [[arxiv-2607-21273-the-dark-room-in-the-reward-channel-dense-predicti]] - The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- an (arXiv: 2607.21273) (utility=1.00)
+- [[arxiv-2607-21268-pai-econ-claude-a-gated-human-in-the-loop-multi-ag]] - pAI-Econ-claude: A Gated Human-in-the-Loop Multi-Agent Architecture for AI-Assisted Economic Theory (arXiv: 2607.21268) (utility=1.00)
+- [[arxiv-2607-21217-icae-bench-evaluating-coding-agents-as-interactive]] - ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders (arXiv: 2607.21217) (utility=1.00)
+- [[arxiv-2607-21209-explainability-framework-for-policy-aware-autonomo]] - Explainability Framework for Policy-Aware Autonomous Agents (arXiv: 2607.21209) (utility=1.00)
+- [[arxiv-2607-21111-tour-a-trajectory-level-unlearning-benchmark-for-o]] - TOUR: A Trajectory-Level Unlearning Benchmark for Offline Reinforcement Learning (arXiv: 2607.21111) (utility=1.00)
+- [[arxiv-2607-21106-attrimem-attribution-guided-process-feedback-for-a]] - AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning (arXiv: 2607.21106) (utility=1.00)
+- [[arxiv-2607-21013-emoagent-r1-towards-multimodal-emotion-understandi]] - EmoAgent-R1: Towards Multimodal Emotion Understanding with Reinforcement Learning-based Dynamic Agen (arXiv: 2607.21013) (utility=1.00)
+- [[arxiv-2607-20982-guardianagentbench-where-agents-fail-and-how-to-gu]] - GuardianAgentBench: Where Agents Fail and How to Guard Them (arXiv: 2607.20982) (utility=1.00)
+- [[arxiv-2607-20972-delivery-not-storage-cue-anchored-working-memory-a]] - Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents (arXiv: 2607.20972) (utility=1.00)
+- [[arxiv-2607-20926-sciexplore-evaluating-autonomous-agents-from-scien]] - SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration (arXiv: 2607.20926) (utility=1.00)
+- [[arxiv-2607-20759-issuetrojanbench-benchmarking-ai-coding-agents-aga]] - IssueTrojanBench: Benchmarking AI Coding Agents Against Malicious Issue Requests (arXiv: 2607.20759) (utility=1.00)
+- [[arxiv-2607-21302-expert-behavior-prior-reinforcement-learning]] - Expert Behavior Prior Reinforcement Learning (arXiv: 2607.21302) (utility=0.93)
+- [[arxiv-2607-21019-hime-real-time-self-hosted-personal-agent-platform]] - HiMe: Real-Time Self-Hosted Personal Agent Platform for Health Insights with Wearable Devices (arXiv: 2607.21019) (utility=0.93)
+- [[arxiv-2607-21518-same-dangerous-objective-opposite-advice-direct-ex]] - Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation (arXiv: 2607.21518) (utility=0.87)
+
+### Nlp Llm
+- [[arxiv-2607-21327-from-static-bibliometrics-to-dynamic-knowledge-gra]] - From Static Bibliometrics to Dynamic Knowledge Graphs: An LLM-Powered Framework for Modernizing Scie (arXiv: 2607.21327) (utility=1.00)
+- [[arxiv-2607-21292-an-llm-driven-workflow-for-automated-process-contr]] - An LLM-Driven Workflow for Automated Process Control Strategy Generation and Tuning from Dynamic Pro (arXiv: 2607.21292) (utility=1.00)
+- [[arxiv-2607-21291-adaptive-depth-sparse-framework-similarity-driven]] - Adaptive Depth Sparse Framework: Similarity-Driven Resource Allocation for Pre-Trained LLMs (arXiv: 2607.21291) (utility=1.00)
+- [[arxiv-2607-21010-reexamining-zero-shot-summarization-empirical-inve]] - Reexamining zero-shot summarization: Empirical investigation of trustworthiness of LLM-summarizers (arXiv: 2607.21010) (utility=1.00)
+- [[arxiv-2607-20734-llms-get-lost-in-evolving-user-intent]] - LLMs Get Lost in Evolving User Intent (arXiv: 2607.20734) (utility=1.00)
+- [[arxiv-2607-21274-a-comparative-evaluation-of-embeddings-and-llms-in]] - A Comparative Evaluation of Embeddings and LLMs in a Greek Book Publisher Setting - The CUP Dataset (arXiv: 2607.21274) (utility=0.93)
+- [[arxiv-2607-20814-enhancing-explainable-cardiac-diagnosis-with-guide]] - Enhancing Explainable Cardiac Diagnosis with Guide-Grounded Multimodal LLMs (arXiv: 2607.20814) (utility=0.90)
+- [[arxiv-2607-21220-search-hardness-aware-llm-based-problem-formulatio]] - Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design (arXiv: 2607.21220) (utility=0.87)
+
+### Other
+- [[arxiv-2607-21552-mirror-learning-from-the-other-view-for-multi-moda]] - MIRROR: Learning from the Other View for Multi-Modal Reasoning (arXiv: 2607.21552) (utility=1.00)
+- [[arxiv-2607-21488-compact-latent-coordination-for-autonomous-vehicle]] - Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections (arXiv: 2607.21488) (utility=1.00)
+- [[arxiv-2607-21090-training-large-language-models-for-self-explanatio]] - Training Large Language Models for Self-Explanation Faithfulness (arXiv: 2607.21090) (utility=1.00)
+- [[arxiv-2607-20999-workflow-localized-mechanism-learning-attribution]] - Workflow-Localized Mechanism Learning: Attribution-Guided Repair and Knowledge Reuse for Structured (arXiv: 2607.20999) (utility=1.00)
+- [[arxiv-2607-20952-the-weight-of-silence-a-causal-case-for-weights-ov]] - The Weight of Silence: A Causal Case for Weights Over the Scratchpad in Latent Chess Reasoning (arXiv: 2607.20952) (utility=1.00)
+- [[arxiv-2607-20908-multi-turn-rl-with-structural-and-performance-awar]] - Multi-turn RL with Structural and Performance Aware Rewards for CUDA Kernel Generation (arXiv: 2607.20908) (utility=1.00)
+- [[arxiv-2607-20891-is-deep-research-reliable-misleading-knowledge-ind]] - Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions (arXiv: 2607.20891) (utility=1.00)
+- [[arxiv-2607-21094-a-polynomial-architecture-attribution-co-design-fr]] - A Polynomial Architecture-Attribution Co-Design Framework for Exact Aumann-Shapley Attribution in GN (arXiv: 2607.21094) (utility=0.93)
+
+### Spiking Neuromorphic
+- [[arxiv-2607-21503-agentic-context-management-solving-agent-memory-an]] - Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architec (arXiv: 2607.21503) (utility=1.00)
+
+### Tools Frameworks
+- [[arxiv-2607-21412-euclid-mcp-a-model-context-protocol-server-for-det]] - Euclid-MCP: A Model Context Protocol Server for Deterministic Logical Reasoning via Prolog (arXiv: 2607.21412) (utility=1.00)
+
+### Vision Generative
+- [[arxiv-2607-20988-hyworldvla-a-vision-language-action-model-with-hyb]] - HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving (arXiv: 2607.20988) (utility=1.00)
+
 ## 2026-07-23 - arXiv Paper Skills (Cron Job)
 Added 37 new paper skills from arXiv (utility >= 0.85).
 ### Other
