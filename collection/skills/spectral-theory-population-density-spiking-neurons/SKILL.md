@@ -1,93 +1,96 @@
 ---
 name: spectral-theory-population-density-spiking-neurons
-title: Spectral Theory for Population Density Dynamics of Spiking Neurons with Refractoriness
-description: Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions.
-arxiv_id: 2607.20699
-date: 2026-07-22
-authors:
-  - Luca Falorsi
-  - Gianni Valerio Vinci
-  - Maurizio Mattia
-categories:
-  - q-bio.NC
-  - math-ph
-  - math.SP
+description: Spectral theory framework for analyzing population density dynamics of spiking neurons with refractoriness. Provides rigorous mathematical foundation for spectral decomposition methods in computational neuroscience by formulating the problem as a non-self-adjoint boundary eigenvalue problem for the Fokker-Planck operator.
 trigger_words:
   - spectral theory
   - population density
   - spiking neurons
   - refractoriness
   - Fokker-Planck operator
-  - oscillatory modes
-  - transfer function
+  - neural dynamics
 ---
 
 # Spectral Theory for Population Density Dynamics of Spiking Neurons with Refractoriness
 
 ## Overview
-This paper develops a rigorous operator-theoretic framework for neuronal population dynamics with a finite refractory time by augmenting the state space to include refractory history and formulating the problem as a non-self-adjoint boundary eigenvalue problem for the Fokker-Planck operator.
+This skill provides a rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time. The methodology addresses a fundamental open problem in computational neuroscience: incorporating absolute refractory periods into population density approaches for spiking neurons.
 
 ## Key Contributions
 
-### 1. Mathematical Framework
-- **State Space Augmentation**: Incorporates refractory history into the population density approach
-- **Non-Self-Adjoint Boundary Eigenvalue Problem**: Formulates the Fokker-Planck operator as a boundary eigenvalue problem
+### Mathematical Framework
+- **State Space Augmentation**: Extends the state space to include refractory history
+- **Boundary Eigenvalue Problem**: Formulates the dynamics as a non-self-adjoint boundary eigenvalue problem for the Fokker-Planck operator
 - **Spectral Characterization**: Provides complete spectral characterization of the generator
-- **Dissipativity Proof**: Proves dissipativity and existence of a contraction semigroup
+- **Dissipativity Proof**: Proves dissipativity and existence of contraction semigroup
+- **Exceptional Points**: Identifies defective eigenvalues as exceptional points where oscillatory modes emerge from coalescing relaxational modes
 
-### 2. Exceptional Points and Oscillatory Modes
-- **Defective Eigenvalues**: Identifies defective eigenvalues as exceptional points
-- **Mode Emergence**: Shows how oscillatory modes emerge from coalescing relaxational modes at exceptional points
+### Transfer Function Analysis
+- **Exact Transfer Function**: Derives an exact transfer function accounting for boundary conditions modulated by external input
+- **Threshold-Noise Contributions**: Reveals additional threshold-noise contributions missed by previous heuristic derivations
+- **Linear Response Theory**: Framework operates within rigorous linear response theory
 
-### 3. Exact Transfer Function
-- **Boundary Conditions**: Derives exact transfer function accounting for boundary conditions modulated by external input
-- **Threshold-Noise Contributions**: Reveals additional threshold-noise contributions missed in previous heuristic derivations
-- **Correction of Previous Work**: Corrects previous heuristic derivations in the literature
-
-### 4. Network Stability Analysis
-- **Mean-Field Approximation**: Uses the transfer function under mean-field approximation
-- **Limit Cycle Onset**: Demonstrates that refractoriness can facilitate the onset of stable oscillations (limit cycles) in firing rate
+### Network Dynamics Applications
+- **Limit Cycle Onset**: Shows how refractoriness facilitates onset of limit cycles (stable oscillations in firing rate)
+- **Mean-Field Approximation**: Demonstrates applications under mean-field approximation for interacting neuron populations
 - **Network Stability**: Provides insights into how refractoriness affects network stability
 
-## Applications
-
-### Computational Neuroscience
-- **Spectral Decomposition Methods**: Provides rigorous foundation for spectral decomposition methods
-- **Population Density Modeling**: Enables accurate modeling of neuronal populations with refractoriness
-- **Network Dynamics**: Improves understanding of network stability and oscillatory behavior
-
-### Mathematical Physics
-- **Operator Theory**: Advances operator-theoretic approaches to neural dynamics
-- **Spectral Theory**: Contributes to spectral theory applications in biological systems
-- **Fokker-Planck Equations**: Extends Fokker-Planck equation analysis to include refractory periods
+## When to Use This Skill
+Use this methodology when:
+- Analyzing population density dynamics of integrate-and-fire neurons with refractory periods
+- Studying spectral decomposition methods in computational neuroscience
+- Investigating the role of refractoriness in neural network oscillations and stability
+- Developing rigorous mathematical foundations for neural population models
+- Working with Fokker-Planck operators in non-self-adjoint boundary value problems
 
 ## Implementation Guidelines
 
-### When to Use This Approach
-- Modeling neuronal populations with significant refractory periods
-- Analyzing network stability and oscillatory dynamics
-- Developing spectral decomposition methods for neural systems
-- Studying the effects of refractoriness on transfer functions
+### Core Equations
+The underlying neuron model follows integrate-and-fire dynamics under diffusion approximation:
+```
+dVt/τm = [A(Vt) + µ(t)] dt + √(2D(t)/τm) dBt, Vt ∈ (α, θ)
+```
+Where:
+- Vt: membrane potential
+- τm: membrane time constant  
+- A(Vt): membrane leakage function
+- µ(t), D(t): infinitesimal moments of input current
+- Bt: Wiener process
+- α: minimum potential (reflecting barrier)
+- θ: spike threshold
+- H: reset potential after spike
+- τ0: absolute refractory period
 
-### Key Parameters to Consider
-- **Refractory Time**: Finite refractory period duration
-- **Noise Level**: Threshold noise contributions
-- **Input Modulation**: How external inputs affect boundary conditions
-- **Network Connectivity**: Mean-field coupling strength
+### Spectral Analysis Steps
+1. **Augment State Space**: Include refractory history in the state representation
+2. **Formulate Boundary Problem**: Set up the non-self-adjoint boundary eigenvalue problem
+3. **Compute Generator Spectrum**: Analyze the complete spectral characterization
+4. **Identify Exceptional Points**: Locate defective eigenvalues where mode transitions occur
+5. **Derive Transfer Function**: Apply linear response theory with proper boundary conditions
 
-## Verification Steps
-
-1. **Spectral Analysis**: Verify the spectral decomposition of the Fokker-Planck operator
-2. **Transfer Function Validation**: Compare derived transfer function with numerical simulations
-3. **Oscillation Detection**: Check for limit cycle emergence in network simulations
-4. **Exceptional Point Identification**: Locate defective eigenvalues in parameter space
-
-## Related Skills
-- `spiking-neural-network-analysis`
-- `neural-dynamics-analysis-methodology`
-- `fokker-planck-neural-dynamics`
-- `spectral-analysis-brain-networks`
+### Network Applications
+1. **Mean-Field Setup**: Apply the transfer function under mean-field approximation
+2. **Stability Analysis**: Examine how refractoriness parameters affect network stability
+3. **Oscillation Detection**: Identify parameter regimes where limit cycles emerge
+4. **Parameter Sensitivity**: Analyze sensitivity to refractory period duration and noise levels
 
 ## References
-- arXiv:2607.20699 [q-bio.NC]
-- DOI: https://doi.org/10.48550/arXiv.2607.20699
+- Falorsi, L., Vinci, G. V., & Mattia, M. (2026). Spectral theory for population density dynamics of spiking neurons with refractoriness. arXiv:2607.20699v1 [q-bio.NC]
+- Original paper: https://arxiv.org/abs/2607.20699v1
+
+## Related Skills
+- `spiking-neural-network-differential-equation`: Differential equation analysis of SNN dynamics
+- `neural-population-dynamics`: Methods for analyzing neural population dynamics
+- `spectral-theory-spiking-neurons-refractoriness`: This is the primary skill for refractoriness analysis
+
+## Pitfalls and Limitations
+- **Computational Complexity**: Full spectral analysis can be computationally intensive for large networks
+- **Homogeneous Assumption**: Framework assumes homogeneous neuron populations; heterogeneous populations require extensions
+- **Diffusion Approximation**: Relies on diffusion approximation which may not capture all spike train statistics
+- **Linear Response**: Transfer function derivation assumes small perturbations around steady state
+
+## Verification Steps
+To verify correct implementation:
+1. Reproduce the dissipativity proof for the generator
+2. Validate the transfer function against numerical simulations
+3. Confirm exceptional point identification through eigenvalue tracking
+4. Test limit cycle predictions against direct network simulations
