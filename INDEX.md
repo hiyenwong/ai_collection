@@ -1,16 +1,12 @@
-## 2026-07-24 - Neuroscience Research (Cron Job)
+## 2026-07-25 - Neuroscience Research (Cron Job)
 
-### Spectral theory for population density dynamics of spiking neurons with refractoriness
-- [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, formulating as non-self-adjoint boundary eigenvalue problem for Fokker-Planck operator (arXiv: 2607.20699v1)
-  - Complete spectral characterization of the generator with proof of dissipativity and contraction semigroup existence
-  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge from coalescing relaxational modes
-  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator
+### Spectral theory for neuronal population dynamics with refractory time
+- [[spectral-theory-neuronal-population-dynamics]] - Spectral theory framework for analyzing population density dynamics of spiking neurons with finite refractory time, providing rigorous operator-theoretic methods for studying neuronal population stability and oscillatory modes (arXiv: 2607.20699)
+  - Augments state space to include refractory history and formulates as non-self-adjoint boundary eigenvalue problem for Fokker-Planck operator
+  - Proves dissipativity and existence of contraction semigroup, identifies defective eigenvalues as exceptional points where oscillatory modes emerge
+  - Derives exact transfer function accounting for boundary conditions and reveals additional threshold-noise contributions
+  - **Activation**: spectral theory neuronal population, refractory period population dynamics, Fokker-Planck boundary eigenvalue, neuronal oscillatory modes, population transfer function
 
-### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
-- [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
-  - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
-  - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
-  - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
   ## 2026-07-24 - Neuroscience Research (Cron Job)
 
   ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
