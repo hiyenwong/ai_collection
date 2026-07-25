@@ -1,3 +1,12 @@
+## 2026-07-26 - Neuroscience Research (Cron Job)
+
+### Beyond Sycophancy: Structured Resistance and Compliance in LLM Moral Reasoning
+- [[beyond-sycophancy-structured-resistance-compliance]] - Framework for distinguishing constructive belief revision from sycophantic compliance in LLM moral reasoning through three-dimensional resistance-compliance process based on social psychology principles (arXiv: 2607.21558)
+  - Three-dimensional framework: position distance, source attribution, and coalition structure parallel human social psychology phenomena
+  - Recasts sycophancy as one expression of broader judgment-updating process shaped by social influence
+  - Provides principled basis for distinguishing constructive belief revision from sycophantic compliance
+  - **Activation**: sycophancy, moral reasoning, LLM alignment, social influence, belief revision
+
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
