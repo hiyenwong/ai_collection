@@ -9,6 +9,13 @@
 
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
+### Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design
+- [[search-hardness-aware-llm-problem-formulation]] - Search Hardness-Aware LLM-Based Problem Formulation (SHA-PF) framework that prioritizes formulations guiding efficient search by focusing on rare samples with greater progress potential, significantly reducing evaluation requirements in expensive simulation-driven design (arXiv: 2607.21220)
+  - Moves beyond design-intent alignment to consider search process efficiency in problem formulation
+  - Defines formulation search objective guided by search hardness, scoring candidates by progress potential
+  - Demonstrates significant evaluation reduction on real-world multi-objective and antenna design benchmarks
+  - **Activation**: search hardness awareness, LLM problem formulation, expensive simulation design, SHA-PF framework, rare sample prioritization
+
 ### Weight-norm Criticality: A Mechanism for Loss Spikes Induced by the Normalization and Weight Decay
 - [[weight-norm-criticality-loss-spikes]] - Weight-norm Criticality framework for understanding loss spikes in deep neural network training induced by the interaction between normalization and weight decay (arXiv: 2607.21005)
   - Identifies weight-norm criticality as additional training instability beyond learning-rate criticality
