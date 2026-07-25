@@ -1,3 +1,12 @@
+## 2026-07-25 - Quantum Neuromorphic Computing (Cron Job)
+
+### Quantum-Driven Neuromorphic Computing for Million-Qubit Scale Systems
+- [[quantum-driven-neuromorphic-million-qubit]] - Quantum-Driven Neuromorphic Computing methodology for million-qubit scale systems. Integrates quantum computing principles with neuromorphic architectures to achieve scalable, energy-efficient computation at million-qubit scales.
+  - Quantum-enhanced spiking neurons using superposition and entanglement for information processing
+  - Hierarchical architecture enabling million-qubit scalability with error-corrected quantum memory
+  - Energy-efficiency optimization through coherent dynamics and topological protection
+  - **Activation**: quantum neuromorphic, million-qubit, quantum-driven neuromorphic
+
 ## 2026-07-25 - Systems Engineering Research (Cron Job)
 
 ### Toward Federated Cognitive Digital Twins over the Edge-to-Cloud Continuum
