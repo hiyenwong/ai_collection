@@ -14,6 +14,13 @@
   - Provides principled basis for distinguishing constructive belief revision from sycophantic compliance
   - **Activation**: sycophancy, moral reasoning, LLM alignment, social influence, belief revision
 
+### Agent-Centric Animal Pose Forecasting
+- [[agent-centric-animal-pose-forecasting]] - Framework for training agent-centric autoregressive models of animal behavior from tracked pose data using egocentric sensory observations and movements to mirror biological constraints and enable emergence of social behavior (arXiv: 2607.19548)
+  - Egocentric reference frame modeling: inputs are what the animal sees from its perspective, outputs are actions relative to its own frame
+  - Social behavior emergence: complex group dynamics arise from decentralized individual sensing and response to conspecifics
+  - Composable representation library: manages multiple views of behavioral data with systematic comparison across representations
+  - **Activation**: agent-centric animal behavior, egocentric pose forecasting, autoregressive animal models, social behavior emergence, tracked pose modeling
+
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
