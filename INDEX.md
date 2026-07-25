@@ -1,5 +1,12 @@
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- [[cognisnn-random-graph-architecture]] - CogniSNN framework for scalable spiking neural networks with random graph architectures enabling neuron-expandability, pathway-reusability, and dynamic-configurability (arXiv: 2512.11743)
+  - Introduces Random Graph Architecture (RGA) to overcome rigid hierarchical limitations of traditional ANNs
+  - Implements Key Pathway-based Learning without Forgetting (KP-LwF) using Betweenness Centrality for continual learning
+  - Features Dynamic Growth Learning (DGL) algorithm for temporal dimension structural plasticity
+  - **Activation**: cognisnn, random graph architecture, neuron expandability, pathway reusability, dynamic configurability
+
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
 - [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
   - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
