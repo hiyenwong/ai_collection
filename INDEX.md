@@ -1,5 +1,26 @@
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
+  - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
+  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge from coalescing relaxational modes
+  - Derives exact transfer function accounting for boundary conditions modulated by external input
+  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck, non-self-adjoint, boundary eigenvalue problem
+
+### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
+- [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
+  - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
+  - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
+  - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
+  - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
+
+### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
+- [[perspective-latents-causal-emergence-active-inference]] - Framework for measuring causal emergence in active inference agents through Integrated Information Decomposition, identifying global latents as architectural locus of temporal organization (arXiv: 2607.20708)
+  - Separates fast perception latent (z) from slow global latent (g) with structural decoupling from policy gradients
+  - Demonstrates ΦID concentration in global latent (g) with aggregate magnitude being largely architectural
+  - Reveals substantive learning effects only at atom-compositional level with regime-invariant decoupling
+  - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, temporal organization, architectural conditions## 2026-07-25 - Neuroscience Research (Cron Job)
+
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
 - [[cognisnn-random-graph-architecture]] - CogniSNN framework for scalable spiking neural networks with random graph architectures enabling neuron-expandability, pathway-reusability, and dynamic-configurability (arXiv: 2512.11743)
   - Introduces Random Graph Architecture (RGA) to overcome rigid hierarchical limitations of traditional ANNs
@@ -22,7 +43,6 @@
   - **Activation**: nm pruning, spikeNM, semi-structured pruning, spiking neural networks
 
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
-- [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
   - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
   - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge from coalescing relaxational modes
   - Derives exact transfer function accounting for boundary conditions modulated by external input
@@ -69,7 +89,6 @@
   - **Activation**: weight-norm criticality, loss spikes, weight decay instability, normalization weight decay interaction, scale-invariant training dynamics
 
 ### Spectral theory for neuronal population dynamics with refractory time
-- [[spectral-theory-neuronal-population-dynamics]] - Spectral theory framework for analyzing population density dynamics of spiking neurons with finite refractory time, providing rigorous operator-theoretic methods for studying neuronal population stability and oscillatory modes (arXiv: 2607.20699)
   - Augments state space to include refractory history and formulates as non-self-adjoint boundary eigenvalue problem for Fokker-Planck operator
   - Proves dissipativity and existence of contraction semigroup, identifies defective eigenvalues as exceptional points where oscillatory modes emerge
   - Derives exact transfer function accounting for boundary conditions and reveals additional threshold-noise contributions
@@ -85,21 +104,18 @@
   ## 2026-07-24 - Neuroscience Research (Cron Job)
 
   ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
-  - [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
     - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
     - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
     - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
     - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
 
   ### Spectral theory for population density dynamics of spiking neurons with refractoriness
-  - [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
     - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
     - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
     - Derives exact transfer function with threshold-noise contributions missed in previous work
     - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
 
   ### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
-  - [[perspective-latents-causal-emergence-active-inference]] - Framework for measuring causal emergence in active inference agents through Integrated Information Decomposition, identifying global latents as architectural locus of temporal organization (arXiv: 2607.20708)
     - Separates fast perception latent (z) from slow global latent (g) with structural decoupling from policy gradients
     - Demonstrates ΦID concentration in global latent (g) with aggregate magnitude being largely architectural
     - Reveals substantive learning effects only at atom-compositional level with regime-invariant decoupling
