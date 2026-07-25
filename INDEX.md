@@ -1,3 +1,12 @@
+## 2026-07-25 - Neuroscience Research (Cron Job)
+
+### Action potentials and solitons
+- [[action-potentials-solitons]] - Framework for understanding nerve pulse propagation using soliton theory, connecting nonlinear wave dynamics to action potential generation and propagation in neurons (arXiv: 2607.20496)
+  - Solitons as stable, localized wave packets maintaining shape during neural propagation
+  - Provides physical insights into pulse stability and propagation speed complementing Hodgkin-Huxley models
+  - Enables alternative modeling approaches for action potential propagation and energy efficiency analysis
+  - **Activation**: action potentials solitons, nerve pulse propagation, soliton neuroscience, nonlinear wave neurons, solitary waves action potentials
+
 ## 2026-07-25 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Quantum-Driven Neuromorphic Computing for Million-Qubit Scale Systems
