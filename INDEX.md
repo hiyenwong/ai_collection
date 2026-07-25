@@ -14,6 +14,13 @@
   - Demonstrates scalability to millions of neurons without compromising learning performance
   - **Activation**: event-driven eligibility propagation, sparse SNNs, biological realism, computational efficiency
 
+### Sparse by Rule: Probability-Based N:M Pruning for Spiking Neural Networks
+- [[nm-pruning-spiking-neural-networks]] - First SNN-oriented semi-structured N:M pruning framework (SpikeNM) that learns sparse SNNs from scratch with at most N non-zeros per M-weight block (arXiv: 2511.12097)
+  - Uses M-way basis-logit parameterization with differentiable top-k sampler for linear complexity
+  - Implements eligibility-inspired distillation (EID) to align mask probabilities with spiking dynamics
+  - Maintains or improves accuracy at 2:4 sparsity while yielding hardware-amenable patterns
+  - **Activation**: nm pruning, spikeNM, semi-structured pruning, spiking neural networks
+
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
 - [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
   - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
