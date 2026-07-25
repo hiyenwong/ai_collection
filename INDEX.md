@@ -1,5 +1,12 @@
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
+  - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
+  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge from coalescing relaxational modes
+  - Derives exact transfer function accounting for boundary conditions modulated by external input
+  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck, non-self-adjoint, boundary eigenvalue problem
+
 ### Action potentials and solitons
 - [[action-potentials-solitons]] - Framework for understanding nerve pulse propagation using soliton theory, connecting nonlinear wave dynamics to action potential generation and propagation in neurons (arXiv: 2607.20496)
   - Solitons as stable, localized wave packets maintaining shape during neural propagation
