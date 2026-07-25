@@ -1,5 +1,12 @@
 ## 2026-07-26 - Neuroscience Research (Cron Job)
 
+### Evolutionary Le Chatelier's Principle: Phenotypic Plasticity and Genetic Assimilation via Timescale Separation in the Price Equation
+- [[evolutionary-le-chateliers-principle-timescale-separation]] - Framework formalizing phenotypic plasticity and genetic assimilation through timescale separation in the Price equation, demonstrating genetic assimilation as dynamical relaxation process that mathematically realizes Le Chatelier's principle (arXiv: 2607.20915)
+  - Bridges continuous-time Price equation with physical concept of timescale separation for unified evolutionary dynamics description
+  - Shows genetic assimilation as relaxation process where genotype evolves to resolve internal genetic stress from fast phenotypic displacements
+  - Predicts weaker restoring forces (larger phenotypic fluctuations) require longer evolutionary timescales for assimilation
+  - **Activation**: evolutionary le chateliers principle, phenotypic plasticity, genetic assimilation, timescale separation, price equation
+
 ### Beyond Sycophancy: Structured Resistance and Compliance in LLM Moral Reasoning
 - [[beyond-sycophancy-structured-resistance-compliance]] - Framework for distinguishing constructive belief revision from sycophantic compliance in LLM moral reasoning through three-dimensional resistance-compliance process based on social psychology principles (arXiv: 2607.21558)
   - Three-dimensional framework: position distance, source attribution, and coalition structure parallel human social psychology phenomena
