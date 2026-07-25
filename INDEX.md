@@ -1,3 +1,12 @@
+## 2026-07-25 - Systems Engineering Research (Cron Job)
+
+### Toward Federated Cognitive Digital Twins over the Edge-to-Cloud Continuum
+- [[federated-cognitive-digital-twins-edge-cloud]] - Federated Cognitive Digital Twin (FCDT) architecture methodology combining federation and cognition within a unified approach for distributed Cyber-Physical Systems (CPSs) (arXiv: 2607.21357)
+  - Combines federated digital twins (scalability) with cognitive digital twins (semantic reasoning) in unified architecture
+  - Distributes intelligence across edge-to-cloud continuum through local twins (real-time monitoring) and global twins (system-level reasoning)
+  - Improves scalability, responsiveness, and decision-making in complex distributed CPSs like smart cities
+  - **Activation**: federated digital twins, cognitive digital twins, edge-to-cloud continuum, distributed CPS, semantic reasoning, autonomous coordination
+
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### Weight-norm Criticality: A Mechanism for Loss Spikes Induced by the Normalization and Weight Decay
