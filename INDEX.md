@@ -7,6 +7,14 @@
   - Derives exact transfer function accounting for boundary conditions modulated by external input
   - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck, non-self-adjoint, boundary eigenvalue problem
 
+### LongSpike: Fractional-Order State Space Models for Long-Sequence Spiking Neural Networks
+- [[longspike-fractional-order-snn-state-space]] - LongSpike fractional-order SSM for SNNs enables efficient long-sequence learning using fractional calculus to extend memory capacity beyond traditional integer-order models (arXiv: 2607.20750)
+  - Replaces integer-order dynamics with fractional-order counterparts providing continuous control over memory decay characteristics
+  - Uses Grünwald-Letnikov approximation for efficient implementation compatible with existing SNN frameworks
+  - Demonstrates superior long-range dependency modeling on LRA benchmarks and language modeling tasks
+  - Enhances biological plausibility by matching power-law memory characteristics observed in neural systems
+  - **Activation**: LongSpike, fractional-order SNN, long sequence spiking, memory capacity SNN, fractional calculus neuroscience
+
 ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
 - [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
   - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
@@ -19,7 +27,7 @@
   - Separates fast perception latent (z) from slow global latent (g) with structural decoupling from policy gradients
   - Demonstrates ΦID concentration in global latent (g) with aggregate magnitude being largely architectural
   - Reveals substantive learning effects only at atom-compositional level with regime-invariant decoupling
-  - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, temporal organization, architectural conditions## 2026-07-25 - Neuroscience Research (Cron Job)
+  - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, temporal organization, architectural conditions
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
 - [[cognisnn-random-graph-architecture]] - CogniSNN framework for scalable spiking neural networks with random graph architectures enabling neuron-expandability, pathway-reusability, and dynamic-configurability (arXiv: 2512.11743)
