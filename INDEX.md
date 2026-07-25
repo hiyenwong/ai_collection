@@ -7,6 +7,13 @@
   - Features Dynamic Growth Learning (DGL) algorithm for temporal dimension structural plasticity
   - **Activation**: cognisnn, random graph architecture, neuron expandability, pathway reusability, dynamic configurability
 
+### Event-driven eligibility propagation in large sparse networks: efficiency shaped by biological realism
+- [[event-driven-eligibility-propagation]] - Event-driven learning in sparse SNNs showing biological realism (sparsity, irregularity) drives 10-15x computational efficiency vs dense backpropagation (arXiv: 2511.21674)
+  - Translates time-driven eligibility propagation into event-driven for large-scale spiking networks
+  - Integrates biologically plausible features: continuous dynamics, strict locality, sparse connectivity
+  - Demonstrates scalability to millions of neurons without compromising learning performance
+  - **Activation**: event-driven eligibility propagation, sparse SNNs, biological realism, computational efficiency
+
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
 - [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
   - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
