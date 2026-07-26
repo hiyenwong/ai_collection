@@ -7,6 +7,13 @@
   - Benchmarks show accurate reconstruction of non-Gaussian cat, binomial, GKP, number, and Fock states with improved error over prior ML methods
   - **Activation**: qst-flow, quantum tomography flow, phase-space tomography, continuous-variable tomography, Wigner flow modeling
 
+### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
+- [[current-injection-spiking-neural-network]] - Current Injection Spiking Neural Network (CIS-Fuse) methodology that performs cross-modal fusion directly at the membrane-potential level, preserving subthreshold responses from both modalities before spike firing (arXiv: 2607.19879)
+  - Introduces current injection spiking (CIS) operator that injects one modality as gated auxiliary current into the driving neuron of the other
+  - Features per-channel learnable injection strength that adaptively regulates modulation magnitude
+  - Achieves fusion quality on par with state-of-the-art ANN methods while providing order-of-magnitude lower inference energy
+  - **Activation**: current injection spiking network, membrane potential image fusion, infrared visible SNN fusion, CIS-Fuse, cross-modal spiking fusion
+
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
 - [[spectral-theory-spiking-neurons-refractoriness]] - Spectral theory framework providing complete spectral characterization of Fokker-Planck operator generator, identifying defective eigenvalues as exceptional points for oscillatory modes, and deriving exact transfer function correcting prior heuristics (arXiv: 2607.20699)
   - Solves open problem of incorporating absolute refractory period into population density approaches via non-self-adjoint boundary eigenvalue problem
