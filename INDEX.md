@@ -1,5 +1,24 @@
 # AI Collection Index
 
+- [[openforgerl-train-harness-native-agents-in-any-environment]] - OpenForgeRL: Train Harness-native Agents in Any Environment (arXiv:2607.21557)
+- [[gs-agent-creating-4d-physical-worlds-with-generative]] - GS-Agent: Creating 4D Physical Worlds With Generative Simulation (arXiv:2607.21522)
+- [[same-dangerous-objective-opposite-advice-direct-exposure-versus]] - Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation (arXiv:2607.21518)
+- [[agentic-context-management-solving-agent-memory-and-cost]] - Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems (arXiv:2607.21503)
+- [[toward-continuous-assurance-for-the-democratization-of-ai]] - Toward Continuous Assurance for the Democratization of AI Agent Creation in Industry (arXiv:2607.21495)
+- [[compact-latent-coordination-for-autonomous-vehicles-at-unsignalized]] - Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections (arXiv:2607.21488)
+- [[agentic-coding-without-the-cloud-evaluating-open-weight]] - Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks (arXiv:2607.21482)
+- [[arex-towards-a-recursively-self-improving-agent-for]] - AREX: Towards a Recursively Self-Improving Agent for Deep Research (arXiv:2607.21461)
+- [[pats-policy-aware-training-scaffolding-for-agentic-reinforcement]] - PATS: Policy-Aware Training Scaffolding for Agentic Reinforcement Learning (arXiv:2607.21419)
+- [[euclid-mcp-a-model-context-protocol-server-for]] - Euclid-MCP: A Model Context Protocol Server for Deterministic Logical Reasoning via Prolog (arXiv:2607.21412)
+- [[regulating-autonomous-and-agentic-ai]] - Regulating autonomous and agentic AI (arXiv:2607.21345)
+- [[toward-cryptographically-verifiable-authorization-for-autonomous-ai-agents]] - Toward cryptographically verifiable authorization for autonomous AI agents: A security hypothesis, preliminary formal model, and proof-of-concept implementation (arXiv:2607.21325)
+- [[gradrag-cross-component-prompt-adaptation-for-coordinated-multi]] - GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG (arXiv:2607.21324)
+- [[compact-latent-coordination-for-autonomous-vehicles-at-unsignalized-1]] - Compact Latent Coordination for Autonomous Vehicles at Unsignalized Intersections (arXiv:2607.21488)
+- [[the-dark-room-in-the-reward-channel-dense]] - The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works (arXiv:2607.21273)
+- [[tour-a-trajectory-level-unlearning-benchmark-for-offline]] - TOUR: A Trajectory-Level Unlearning Benchmark for Offline Reinforcement Learning (arXiv:2607.21111)
+- [[perspective-latents-as-an-architectural-condition-for-causal]] - Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents (arXiv:2607.20708)
+
+
 
 ## 2026-07-13 - Neuroscience Research (Cron Job - Evening)
 

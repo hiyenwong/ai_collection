@@ -33,7 +33,10 @@
       "Bash([ -d \"/Users/hiyenwong/ai_github/ai_collection/collection/skills/$skill\" ])",
       "Bash(grep -E \"^\\(ai_collection|collection\\)$\")",
       "Bash(git ls-tree *)",
-      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Papers: {len\\(d.get\\(\\\\\"papers\\\\\",[]\\)\\)}'\\)\")"
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Papers: {len\\(d.get\\(\\\\\"papers\\\\\",[]\\)\\)}'\\)\")",
+      "Bash(npm list *)",
+      "Bash(/Users/hiyenwong/Library/pnpm/codex --version)",
+      "Bash(codex *)"
     ]
   }
 }
