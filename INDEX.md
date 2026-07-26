@@ -53,6 +53,14 @@
   - Includes templates for experimental replication and performance comparison
   - **Activation**: SNN analysis, spiking neural networks, neuromorphic computing, research distillation
 
+### Memoir: Should a Model Write to Its Memory While It Thinks?
+- [[memoir-memory-rewriting-neural-networks]] - Methodology comparing coupled memory rewriting vs read-only pondering architectures, showing memory rewriting causes learning-speed penalty but not capability penalty (arXiv: 2607.20792)
+  - Tests riskiest coupling where pondering iterations rewrite the fast memory tier they read from
+  - Demonstrates that coupled recall (0.5203) lags behind read-only recall (0.6557) at 240 training steps but both reach 1.0000 by 960 steps
+  - Shows memory rewriting does not corrupt energy signal - energy margin grows and holds during training
+  - Provides kernel restructuring reducing delta-rule forward time from 0.907 ms to 0.351 ms
+  - **Activation**: memory rewriting, neural network inference, coupled memory, read-only pondering, learning speed penalty
+
 ## 2026-07-26 - Anthropic Research (Cron Job)
 
 ### Project Pilot: Can AI control a drone?
