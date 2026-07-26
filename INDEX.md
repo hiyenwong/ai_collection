@@ -1,3 +1,12 @@
+## 2026-07-26 - Systems Engineering Research (Cron Job)
+
+### Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design
+- [[search-hardness-aware-llm-problem-formulation]] - SHA-PF framework that optimizes problem formulations themselves rather than just algorithms, prioritizing rare samples with greater progress potential to reduce expensive simulation requirements (arXiv: 2607.21220)
+  - Moves beyond design-intent alignment to consider search process efficiency in LLM-based problem formulation
+  - Defines formulation search objective guided by search hardness, scoring candidates by their ability to identify high-potential regions
+  - Validated on real-world multi-objective benchmarks and five expensive antenna design problems, showing significant evaluation reduction
+  - **Activation**: search hardness awareness, LLM problem formulation, expensive simulation design, SHA-PF framework, rare sample prioritization
+
 ## 2026-07-26 - Neuroscience Research (Cron Job)
 
 ### Evolutionary Le Chatelier's Principle: Phenotypic Plasticity and Genetic Assimilation via Timescale Separation in the Price Equation
