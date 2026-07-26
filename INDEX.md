@@ -7,6 +7,13 @@
   - Benchmarks show accurate reconstruction of non-Gaussian cat, binomial, GKP, number, and Fock states with improved error over prior ML methods
   - **Activation**: qst-flow, quantum tomography flow, phase-space tomography, continuous-variable tomography, Wigner flow modeling
 
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-spiking-neurons-refractoriness]] - Spectral theory framework providing complete spectral characterization of Fokker-Planck operator generator, identifying defective eigenvalues as exceptional points for oscillatory modes, and deriving exact transfer function correcting prior heuristics (arXiv: 2607.20699)
+  - Solves open problem of incorporating absolute refractory period into population density approaches via non-self-adjoint boundary eigenvalue problem
+  - Proves dissipativity and contraction semigroup existence, reveals threshold-noise contributions missed by previous heuristic derivations
+  - Demonstrates that refractoriness facilitates limit cycle onset (stable firing rate oscillations) in interacting neuron populations
+  - **Activation**: spectral theory spiking neurons, refractoriness population density, Fokker-Planck boundary eigenvalue, defective eigenvalues neural oscillations, transfer function refractory period
+
 ## 2026-07-26 - Systems Engineering Research (Cron Job)
 
 ### Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design
