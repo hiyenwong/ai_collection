@@ -9,13 +9,6 @@
 
 ## 2026-07-26 - Neuroscience Research (Cron Job)
 
-### Weight-norm Criticality: A Mechanism for Loss Spikes Induced by the Normalization and Weight Decay
-- [[weight-norm-criticality-loss-spikes]] - Framework explaining loss spikes through weight-norm criticality caused by normalization-weight decay interactions, providing mechanistic understanding beyond learning-rate criticality (arXiv: 2607.21005)
-  - Identifies critical boundary where excessive weight decay drives scale-invariant weight norms toward zero, destabilizing optimization
-  - Explains why weight penalties improve generalization but cannot be made arbitrarily strong
-  - Provides testable predictions validated empirically in networks with scale-invariant components
-  - **Activation**: weight-norm criticality, loss spikes, weight decay instability, normalization criticality, scale-invariant components
-
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
 - [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework using non-self-adjoint boundary eigenvalue problems for Fokker-Planck operators to analyze spiking neuron populations with refractory periods (arXiv: 2607.20699)
   - Solves long-standing open problem of incorporating absolute refractory periods into population density approaches
@@ -23,6 +16,13 @@
   - Derives exact transfer function correcting previous heuristic derivations with additional threshold-noise contributions
   - Shows refractoriness can facilitate limit cycle onset in interacting neuron populations under mean-field approximation
   - **Activation**: spectral theory, spiking neurons, refractoriness, population density, Fokker-Planck
+
+### Weight-norm Criticality: A Mechanism for Loss Spikes Induced by the Normalization and Weight Decay
+- [[weight-norm-criticality-loss-spikes]] - Framework explaining loss spikes through weight-norm criticality caused by normalization-weight decay interactions, providing mechanistic understanding beyond learning-rate criticality (arXiv: 2607.21005)
+  - Identifies critical boundary where excessive weight decay drives scale-invariant weight norms toward zero, destabilizing optimization
+  - Explains why weight penalties improve generalization but cannot be made arbitrarily strong
+  - Provides testable predictions validated empirically in networks with scale-invariant components
+  - **Activation**: weight-norm criticality, loss spikes, weight decay instability, normalization criticality, scale-invariant components
 
 ### Spiking Tolman-Eichenbaum Machine: Biologically Realistic Hippocampal Model for Navigation and Planning
 - [[spiking-tolman-eichenbaum-machine]] - sTEM implements cognitive maps and model-based planning using spiking neural networks with hippocampal-inspired architecture, supporting both navigation and flexible planning (arXiv: 2607.19835)
