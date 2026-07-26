@@ -31,6 +31,14 @@
   - Provides analytical tools for designing networks with specific memory properties
   - **Activation**: attractor landscape, working memory, recurrent networks, memory stability, network motifs
 
+### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
+- [[trp-narrative-comprehension-eeg]] - Methodology for extracting transition-related potentials (TRPs) from continuous EEG during film viewing, demonstrating that narrative context shapes EEG responses detectable with deep neural networks (arXiv: 2607.20720)
+  - Validates continuous EEG analysis as alternative to traditional trial-based ERP paradigms
+  - Shows TRPs are systematically shaped by narrative context vs. scene-scrambled versions with matched sensory input
+  - Provides semi-automated framework using compact DNNs that generalize across films and subject groups
+  - Enables analysis of naturalistic cognitive processing closer to real-world experience
+  - **Activation**: transition-related potentials, narrative comprehension, continuous EEG, cinematic cuts, naturalistic neuroscience
+
 ### Spiking Neural Network Analysis Framework
 - [[spiking-neural-network-analysis]] - Comprehensive methodology for analyzing Spiking Neural Network (SNN) research papers, extracting technical patterns, implementation details, and performance benchmarks for practical application
   - Systematic approach to distilling SNN research into actionable engineering knowledge
