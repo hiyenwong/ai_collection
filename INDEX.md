@@ -9,6 +9,14 @@
 
 ## 2026-07-26 - Neuroscience Research (Cron Job)
 
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework using non-self-adjoint boundary eigenvalue problems for Fokker-Planck operators to analyze spiking neuron populations with refractory periods (arXiv: 2607.20699)
+  - Solves long-standing open problem of incorporating absolute refractory periods into population density approaches
+  - Provides complete spectral characterization and identifies exceptional points where oscillatory modes emerge
+  - Derives exact transfer function correcting previous heuristic derivations with additional threshold-noise contributions
+  - Shows refractoriness can facilitate limit cycle onset in interacting neuron populations under mean-field approximation
+  - **Activation**: spectral theory, spiking neurons, refractoriness, population density, Fokker-Planck
+
 ### Spiking Tolman-Eichenbaum Machine: Biologically Realistic Hippocampal Model for Navigation and Planning
 - [[spiking-tolman-eichenbaum-machine]] - sTEM implements cognitive maps and model-based planning using spiking neural networks with hippocampal-inspired architecture, supporting both navigation and flexible planning (arXiv: 2607.19835)
   - First biologically realistic implementation of Tolman-Eichenbaum machine using spiking neurons
