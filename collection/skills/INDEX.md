@@ -880,6 +880,14 @@ Added 2 new paper skills from arXiv (utility >= 0.85).
 
 ## 2026-07-09 - arXiv Paper Skills (Cron Job)
 
+## 2026-07-17 - arXiv Paper Skills (Cron Job)
+
+Added 1 new paper skills from arXiv (utility >= 0.85).
+
+### A Practical Investigation of Training-free Relaxed Speculative Decoding
+[[training-free-relaxed-speculative-deoding]] - A Practical Investigation of Training-free Relaxed Speculative Decoding (arXiv: 2607.08690)
+
+
 Added 55 new paper skills from arXiv (utility >= 0.85).
 
 ### Multi-Agent & Agentic AI (14 papers)
