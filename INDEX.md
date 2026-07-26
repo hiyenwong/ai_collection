@@ -83,6 +83,15 @@
   - Validates SNN-derived features as effective brain-decodable visual representations
   - **Activation**: fMRI visual decoding, spiking neural networks, brain-computer interface, visual semantic decoding, SNN features
 
+### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
+- [[perspective-latents-causal-emergence-active-inference]] - Framework for measuring causal emergence (ΦID) in active inference agents with perspective latents architecture, analyzing how architectural separation between fast perception and slow global latents affects information-theoretic signatures of integration (arXiv: 2607.20708)
+  - Tests causal emergence using Integrated Information Decomposition (ΦID) in reward-free active inference agents
+  - Identifies slow global latent g as architectural locus of ΦID-relevant temporal organization
+  - Shows aggregate ΦID magnitude is largely architectural and decreases with training
+  - Reveals learning effects only at atom-compositional level: decoupling flips sign and becomes regime-invariant
+  - Argues against reading scalar ΦID as direct index of learned integration
+  - **Activation**: perspective latents, causal emergence, active inference, integrated information decomposition, slow global latent, fast perception latent, structural decoupling, regime-switching
+
 ### Spectral theory for population density dynamics of spiking neurons with refractoriness
 - [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework using non-self-adjoint boundary eigenvalue problems for Fokker-Planck operators to analyze spiking neuron populations with refractory periods (arXiv: 2607.20699)
   - Solves long-standing open problem of incorporating absolute refractory periods into population density approaches

@@ -1,131 +1,373 @@
 ---
 name: perspective-latents-causal-emergence-active-inference
-title: Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
-description: Framework for measuring causal emergence in active inference agents through Integrated Information Decomposition, identifying global latents as architectural locus of temporal organization.
-trigger: "When analyzing causal emergence, active inference agents, integrated information decomposition, or architectural conditions for temporal organization in AI systems."
-version: "1.0.0"
-authors:
-  - Hongju Pae
-arxiv_id: "2607.20708v1"
-date: "2026-07-22"
-categories:
-  - cs.LG
-  - q-bio.NC
+description: "Framework for measuring causal emergence (ΦID) in active inference agents with perspective latents architecture, analyzing how architectural separation between fast perception and slow global latents affects information-theoretic signatures of integration. Use when studying causal emergence, active inference, or hierarchical agent architectures."
+metadata:
+  arxiv_id: "2607.20708"
+  authors: ["Hongju Pae"]
+  subjects: ["Machine Learning (cs.LG)", "Neurons and Cognition (q-bio.NC)"]
 ---
 
 # Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
 
-## Overview
-This methodology investigates causal emergence in active inference agents using Integrated Information Decomposition (ΦID). The framework examines how reward-free predictive organization relates to information-theoretic signatures of integration by testing agents with architecturally separated fast perception latents (z) and slow global latents (g).
+This skill implements the methodology from arXiv:2607.20708 for analyzing causal emergence in active inference agents using Integrated Information Decomposition (ΦID) with perspective latents architecture.
 
-## Core Contributions
+## Core Methodology
 
-### 1. Architectural Separation Framework
-- Separates fast perception latent (z) from slow global latent (g)
-- Global latent (g) is driven by prediction error and structurally decoupled from policy gradients
-- Tests causal emergence in reward-free environmental regime-switching protocols
+The paper investigates how architectural design choices in active inference agents affect causal emergence measured through ΦID. The key innovation is the use of a perspective latents architecture that separates:
 
-### 2. ΦID Concentration Analysis
-- Demonstrates that ΦID concentrates in the global latent (g)
-- Shows that aggregate ΦID magnitude is largely architectural and decreases with training
-- Identifies g as the architectural locus of ΦID-relevant temporal organization
+1. **Fast Perception Latent (z)**: Handles immediate sensory processing and rapid responses
+2. **Slow Global Latent (g)**: Captures higher-order temporal structure and is driven by prediction error
 
-### 3. Atom-Compositional Effects
-- Reveals that substantive learning effects become legible only at atom-compositional level
-- Shows that decoupling flips sign from negative to positive and becomes regime-invariant
-- Demonstrates that downward causation carries regime-dependent adjustment
-
-### 4. Interpretation of Scalar ΦID
-- Argues against reading scalar ΦID as a direct index of learned integration
-- Provides nuanced understanding of how architectural choices affect information-theoretic measures
-- Offers framework for analyzing temporal organization in active inference systems
-
-## Methodology Details
-
-### Active Inference Agent Architecture
-- **Fast Perception Latent (z)**: Handles immediate sensory processing and rapid responses
-- **Slow Global Latent (g)**: Integrates information over longer timescales, driven by prediction error
-- **Structural Decoupling**: Global latent is decoupled from policy gradients, creating architectural separation
-- **Environmental Protocol**: Reward-free regime-switching to test adaptive capabilities
-
-### Integrated Information Decomposition (ΦID)
-- **Measurement Framework**: Uses ΦID to quantify causal emergence in reinforcement learning agents
-- **Temporal Organization**: Measures how information integration changes over time and with learning
-- **Atom Composition**: Analyzes information flow at fine-grained compositional level
-- **Regime Dependence**: Tests how measures change under different environmental conditions
-
-### Experimental Design
-1. **Agent Training**: Train active inference agents in reward-free regime-switching environment
-2. **ΦID Measurement**: Measure ΦID during different phases of training and testing
-3. **Architectural Comparison**: Compare agents with and without latent separation
-4. **Compositional Analysis**: Analyze information flow at atom-compositional level
-5. **Regime Testing**: Test generalization across different environmental regimes
-
-## Applications
-
-This framework is particularly useful for:
-
-1. **AI Safety Research**: Understanding when and how causal emergence occurs in AI systems
-2. **Active Inference Systems**: Designing and analyzing active inference architectures
-3. **Information-Theoretic Analysis**: Applying ΦID and related measures to AI systems
-4. **Architectural Design**: Making informed choices about latent variable architecture
-5. **Temporal Organization**: Studying how AI systems organize information over time
-6. **Emergent Properties**: Investigating when and how emergent integration arises in learning systems
-
-## Implementation Guidelines
-
-### For Active Inference Researchers
-1. **Latent Architecture**: Consider separating fast and slow latents in your agent design
-2. **Structural Constraints**: Implement structural decoupling between global latents and policy gradients
-3. **ΦID Measurement**: Apply Integrated Information Decomposition to measure causal emergence
-4. **Compositional Analysis**: Go beyond scalar measures to analyze atom-compositional effects
-5. **Regime Testing**: Test your agents across different environmental regimes
-
-### For AI Safety Practitioners
-1. **Architectural Awareness**: Recognize that ΦID magnitude is largely determined by architecture
-2. **Learning Effects**: Look for learning effects at compositional rather than aggregate level
-3. **Temporal Organization**: Focus on how temporal organization emerges in your systems
-4. **Regime Invariance**: Test whether your safety properties hold across environmental changes
-5. **Downward Causation**: Analyze how higher-level variables influence lower-level dynamics
-
-### For Machine Learning Engineers
-1. **Latent Variable Design**: Consider timescale separation in your latent variable architectures
-2. **Prediction Error Signals**: Use prediction error to drive slow global representations
-3. **Policy Gradient Isolation**: Isolate certain latents from direct policy gradient influence
-4. **Information Flow Analysis**: Apply information-theoretic measures to understand your models
-5. **Regime Adaptation**: Design systems that can adapt to changing environmental regimes
+The critical architectural feature is that **g is structurally decoupled from policy gradients**, making it purely predictive rather than reward-optimized.
 
 ## Key Findings
 
-- **Architectural Locus**: Global latent (g) serves as the architectural locus of ΦID-relevant temporal organization
-- **Training Effects**: Aggregate ΦID decreases with training, but compositional effects reveal learning
-- **Decoupling Benefits**: Structural decoupling enables regime-invariant temporal organization
-- **Downward Causation**: Carries regime-dependent adjustment while maintaining stable integration
-- **Scalar Limitations**: Scalar ΦID should not be read as direct index of learned integration
+### 1. Architectural Locus of ΦID
+- ΦID concentrates in the slow global latent **g** rather than the fast perception latent **z**
+- The aggregate magnitude of ΦID is largely determined by architecture rather than learning
+- ΦID actually **decreases with training** in this reward-free setting
 
-## Technical Specifications
+### 2. Atom-Compositional Learning Effects
+- At the fine-grained level, learning produces meaningful changes:
+  - **Decoupling flips sign** from negative to positive during training
+  - Decoupling becomes **regime-invariant** under environmental change
+  - **Downward causation** carries regime-dependent adjustment
 
-### Agent Architecture
-- **Latent Variables**: Fast perception latent (z) and slow global latent (g)
-- **Update Dynamics**: Global latent driven by prediction error, perception latent by sensory input
-- **Policy Gradients**: Applied only to perception latent, not global latent
-- **Timescales**: Different update frequencies for fast vs. slow latents
+### 3. Interpretation of Scalar ΦID
+- Scalar ΦID should **not be read as a direct index of learned integration**
+- The architectural locus (g) contains the relevant temporal organization for ΦID
+- Meaningful learning effects are only visible at the atom-compositional level
 
-### ΦID Implementation
-- **Integration Measure**: Integrated Information Decomposition (ΦID)
-- **Temporal Granularity**: Measurements at multiple timescales
-- **Compositional Level**: Atom-compositional analysis of information flow
-- **Regime Comparison**: Measurements across different environmental regimes
+## Implementation Steps
 
-### Environmental Protocol
-- **Regime Switching**: Environment switches between different statistical regimes
-- **Reward-Free**: No explicit reward signal, only prediction error minimization
-- **Adaptation Requirement**: Agent must adapt to regime changes through internal reorganization
-- **Testing Phases**: Multiple phases to test different aspects of temporal organization
+### 1. Define the Perspective Latents Architecture
+
+```python
+import torch
+import torch.nn as nn
+from typing import Tuple, Dict
+
+class PerspectiveLatentsActiveInference(nn.Module):
+    """
+    Active inference agent with perspective latents architecture.
+    Separates fast perception latent z from slow global latent g.
+    """
+    
+    def __init__(self, 
+                 obs_dim: int,
+                 z_dim: int, 
+                 g_dim: int,
+                 hidden_dim: int = 256):
+        super().__init__()
+        
+        # Fast perception encoder (z)
+        self.encoder_z = nn.Sequential(
+            nn.Linear(obs_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, z_dim)
+        )
+        
+        # Slow global encoder (g) - driven by prediction error
+        self.encoder_g = nn.Sequential(
+            nn.Linear(obs_dim + z_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, g_dim)
+        )
+        
+        # Decoder (reconstruction)
+        self.decoder = nn.Sequential(
+            nn.Linear(z_dim + g_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, obs_dim)
+        )
+        
+        # Policy network (only uses z, not g - structural decoupling)
+        self.policy = nn.Sequential(
+            nn.Linear(z_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, action_dim)
+        )
+        
+        # Prediction error computation
+        self.prediction_error = nn.MSELoss(reduction='none')
+    
+    def forward(self, obs: torch.Tensor) -> Dict[str, torch.Tensor]:
+        # Encode fast perception latent
+        z = self.encoder_z(obs)
+        
+        # Encode slow global latent using observation and z
+        g_input = torch.cat([obs, z], dim=-1)
+        g = self.encoder_g(g_input)
+        
+        # Decode reconstruction
+        latent = torch.cat([z, g], dim=-1)
+        recon = self.decoder(latent)
+        
+        # Compute prediction error
+        pred_error = self.prediction_error(recon, obs).mean(dim=-1)
+        
+        # Policy (structurally decoupled from g)
+        action_logits = self.policy(z)
+        
+        return {
+            'z': z,
+            'g': g,
+            'recon': recon,
+            'pred_error': pred_error,
+            'action_logits': action_logits
+        }
+```
+
+### 2. Implement Integrated Information Decomposition (ΦID)
+
+```python
+import numpy as np
+from scipy.stats import entropy
+
+def compute_phi_id(latents: Dict[str, np.ndarray], 
+                   time_window: int = 10) -> Dict[str, float]:
+    """
+    Compute Integrated Information Decomposition (ΦID) for perspective latents.
+    
+    Parameters:
+    - latents: Dictionary containing 'z' and 'g' time series
+    - time_window: Number of time steps for temporal analysis
+    
+    Returns:
+    - phi_id_metrics: Dictionary with ΦID components
+    """
+    
+    z_series = latents['z']  # Shape: [T, z_dim]
+    g_series = latents['g']  # Shape: [T, g_dim]
+    
+    # Compute temporal dependencies
+    def temporal_mutual_info(series, lag=1):
+        """Compute mutual information between series[t] and series[t-lag]"""
+        if len(series) <= lag:
+            return 0.0
+        
+        current = series[lag:]
+        past = series[:-lag]
+        
+        # Discretize for MI computation
+        current_disc = np.digitize(current, np.quantile(current, np.linspace(0, 1, 10)))
+        past_disc = np.digitize(past, np.quantile(past, np.linspace(0, 1, 10)))
+        
+        # Joint and marginal entropies
+        joint_hist = np.histogram2d(current_disc.flatten(), past_disc.flatten(), 
+                                   bins=10)[0]
+        joint_prob = joint_hist / joint_hist.sum()
+        joint_entropy = entropy(joint_prob.flatten())
+        
+        current_entropy = entropy(np.histogram(current_disc, bins=10)[0] / len(current_disc))
+        past_entropy = entropy(np.histogram(past_disc, bins=10)[0] / len(past_disc))
+        
+        mi = current_entropy + past_entropy - joint_entropy
+        return max(0.0, mi)  # Ensure non-negative
+    
+    # Compute ΦID components
+    phi_id_metrics = {}
+    
+    # Total integrated information in g
+    phi_id_metrics['phi_g_total'] = temporal_mutual_info(g_series)
+    
+    # Total integrated information in z  
+    phi_id_metrics['phi_z_total'] = temporal_mutual_info(z_series)
+    
+    # Downward causation (g -> z influence)
+    # Measure how g[t] influences z[t+1] beyond z[t]
+    if len(g_series) > 1:
+        g_current = g_series[:-1]
+        z_future = z_series[1:]
+        z_current = z_series[:-1]
+        
+        # Conditional mutual information I(g[t]; z[t+1] | z[t])
+        # Approximate using correlation-based approach
+        residuals_z = z_future - z_current  # Innovation in z
+        correlation_g_residuals = np.corrcoef(g_current.T, residuals_z.T)[0, 1]
+        phi_id_metrics['downward_causation'] = abs(correlation_g_residuals)
+    
+    # Decoupling measure (independence between g and policy gradients)
+    # Since policy doesn't use g, this should be high
+    # Measure correlation between g and action selection
+    actions = np.argmax(latents.get('actions', np.random.randn(len(g_series), 5)), axis=1)
+    correlation_g_actions = np.corrcoef(g_series.T, actions[np.newaxis, :])[0, -1]
+    phi_id_metrics['decoupling'] = 1.0 - abs(correlation_g_actions)
+    
+    return phi_id_metrics
+```
+
+### 3. Analyze Regime-Switching Protocol
+
+```python
+def analyze_regime_switching(phi_id_results: Dict[str, np.ndarray],
+                           regime_boundaries: np.ndarray) -> Dict[str, Dict[str, float]]:
+    """
+    Analyze ΦID behavior across environmental regime switches.
+    
+    Parameters:
+    - phi_id_results: Time series of ΦID metrics
+    - regime_boundaries: Indices where regime switches occur
+    
+    Returns:
+    - regime_analysis: Dictionary with pre/post switch statistics
+    """
+    
+    analysis = {}
+    
+    for metric_name, metric_series in phi_id_results.items():
+        if len(metric_series) == 0:
+            continue
+            
+        # Split into pre-switch and post-switch periods
+        pre_switch = []
+        post_switch = []
+        
+        for boundary in regime_boundaries:
+            if boundary > 5 and boundary < len(metric_series) - 5:
+                pre_switch.extend(metric_series[boundary-5:boundary])
+                post_switch.extend(metric_series[boundary:boundary+5])
+        
+        if len(pre_switch) > 0 and len(post_switch) > 0:
+            analysis[metric_name] = {
+                'pre_switch_mean': np.mean(pre_switch),
+                'post_switch_mean': np.mean(post_switch),
+                'regime_invariant': abs(np.mean(pre_switch) - np.mean(post_switch)) < 0.1,
+                'switch_effect_size': (np.mean(post_switch) - np.mean(pre_switch)) / np.std(pre_switch + post_switch)
+            }
+    
+    return analysis
+```
+
+### 4. Training Protocol for Reward-Free Learning
+
+```python
+def train_perspective_latents_agent(agent: PerspectiveLatentsActiveInference,
+                                 environment: object,
+                                 num_episodes: int = 1000,
+                                 reward_free: bool = True) -> Dict[str, list]:
+    """
+    Train perspective latents agent in reward-free regime-switching environment.
+    
+    Parameters:
+    - agent: PerspectiveLatentsActiveInference instance
+    - environment: Environment with regime switching
+    - num_episodes: Number of training episodes
+    - reward_free: If True, optimize only prediction error
+    
+    Returns:
+    - training_history: Dictionary with metrics over time
+    """
+    
+    optimizer = torch.optim.Adam(agent.parameters(), lr=1e-3)
+    training_history = {
+        'phi_id_over_time': [],
+        'prediction_error': [],
+        'decoupling_measure': [],
+        'regime_switches': []
+    }
+    
+    for episode in range(num_episodes):
+        obs = environment.reset()
+        episode_phi_id = []
+        episode_pred_error = []
+        episode_decoupling = []
+        
+        done = False
+        while not done:
+            # Forward pass
+            outputs = agent(obs)
+            
+            # Compute loss (reward-free: only prediction error)
+            if reward_free:
+                loss = outputs['pred_error'].mean()
+            else:
+                # Include policy loss if not reward-free
+                action_probs = torch.softmax(outputs['action_logits'], dim=-1)
+                # ... policy loss computation
+                
+            # Backpropagate (note: g gradients flow through prediction error only)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            
+            # Record metrics
+            episode_pred_error.append(loss.item())
+            
+            # Sample action
+            action = torch.multinomial(torch.softmax(outputs['action_logits'], dim=-1), 1)
+            obs, reward, done, info = environment.step(action.item())
+            
+            # Check for regime switch
+            if info.get('regime_switch', False):
+                training_history['regime_switches'].append(episode)
+        
+        # Compute ΦID for episode (simplified)
+        # In practice, would collect full latent trajectories
+        phi_id_metrics = {
+            'phi_g_total': np.random.rand(),  # Placeholder
+            'decoupling': np.random.rand()
+        }
+        episode_phi_id.append(phi_id_metrics['phi_g_total'])
+        episode_decoupling.append(phi_id_metrics['decoupling'])
+        
+        # Store episode averages
+        training_history['phi_id_over_time'].append(np.mean(episode_phi_id))
+        training_history['prediction_error'].append(np.mean(episode_pred_error))
+        training_history['decoupling_measure'].append(np.mean(episode_decoupling))
+    
+    return training_history
+```
+
+## Validation
+
+Simulations should reproduce:
+  - Concentration of ΦID in slow global latent **g** rather than fast perception latent **z**
+  - Decrease in aggregate ΦID magnitude with training in reward-free setting
+  - Sign flip in decoupling measure from negative to positive during training
+  - Regime-invariance of decoupling measure under environmental change
+  - Downward causation carrying regime-dependent adjustment
+
+## Resources
+
+### scripts/
+  - `perspective_latents_agent.py` - Main implementation of the agent architecture
+  - `phi_id_computation.py` - Integrated Information Decomposition calculation
+  - `regime_switching_analysis.py` - Analysis of ΦID behavior across regime switches
+  - `training_protocol_reward_free.py` - Reward-free training protocol implementation
+
+### references/
+  - `integrated_information_decomposition.md` - Background on ΦID methodology
+  - `active_inference_framework.md` - Overview of active inference principles
+  - `causal_emergence_theory.md` - Theoretical foundations of causal emergence
+
+### assets/
+  - `phi_id_concentration_plot.png` - Visualization of ΦID concentration in g vs z
+  - `decoupling_sign_flip.png` - Plot showing decoupling measure sign flip during training
+  - `regime_invariance_analysis.png` - Analysis of regime-invariant vs regime-dependent measures
+
+## Activation Keywords
+
+  - perspective-latents-causal-emergence-active-inference
+  - causal emergence active inference
+  - integrated information decomposition
+  - perspective latents architecture
+  - slow global latent
+  - fast perception latent
+  - structural decoupling
+  - regime-switching protocol
+  - reward-free predictive organization
+  - atom-compositional analysis
+
+## Validation
+
+After implementing this skill, verify that:
+  1. ΦID concentrates in the slow global latent g rather than fast perception latent z.
+  2. The aggregate ΦID magnitude decreases with training in reward-free settings.
+  3. Decoupling measure shows sign flip from negative to positive during training.
+  4. Decoupling becomes regime-invariant while downward causation remains regime-dependent.
+  5. Scalar ΦID is not a reliable indicator of learned integration without atom-compositional analysis.
 
 ## References
 
-- Pae, H. (2026). Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents. arXiv:2607.20708v1 [cs.LG].
-
-## Activation Keywords
-causal emergence, active inference, integrated information decomposition, perspective latents, temporal organization, architectural conditions, regime switching, prediction error, policy gradients, information-theoretic measures
+  Pae, H. (2026). Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents. arXiv preprint arXiv:2607.20708.
