@@ -9,6 +9,12 @@
 
 ## 2026-07-27 - Neuroscience Research (Cron Job)
 
+### Computer Vision Based Neurology Brain Activity Rejection Architecture and Implementation
+- [[computer-vision-eeg-artifact-rejection]] - Computer vision based automated ICA rejection for EEG artifact removal with 89.45% accuracy and 7200x speedup over manual inspection, compatible with ICLabel and EEGLab interfaces (arXiv: 2607.21654)
+  - Automates time-consuming manual inspection, selection, and interpretation of independent components (ICs) from EEG scalp electrodes
+  - Reduces processing time by 7200-fold while achieving 89.45% accuracy for large-scale EEG research and near real-time medical applications
+  - **Activation**: eeg artifact rejection, automated ica classification, computer vision eeg, brain activity rejection
+
 ### Flow-based Phase-space Tomography of Continuous-variable Quantum States
 - [[qst-flow-quantum-tomography]] - QST-Flow framework using flow-based generative modeling for continuous-variable quantum state tomography, with QST-QFlow for Husimi-Q functions and QST-WFlow for Wigner functions as difference of normalized flows (arXiv: 2607.21584)
   - Models phase-space quasiprobability distributions with normalized, samplable neural densities instead of truncated density matrices
