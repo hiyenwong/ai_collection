@@ -1,3 +1,11 @@
+## 2026-07-28 - Neuroscience Research (Cron Job)
+
+### Universal BCI Personalization: One API for Frozen EEG Trunks and Foundation Models
+- [[universal-bci-personalization-api]] - Trunk-agnostic BCI personalization API that works across heterogeneous frozen EEG trunks without per-architecture personalization stacks (arXiv: 2607.22397)
+  - Single contract encode to Bayesian head to BrainState architecture enables OEMs to integrate once and swap trunks
+  - Achieves orders of magnitude less adaptation wall time while recovering much of fine-tune accuracy gain
+  - Calibration-only-when-clean holds in 12/18 experimental cells with subject-level confidence intervals
+  - **Activation**: universal bci personalization, trunk-agnostic eeg, nimbus personalizer, frozen eeg trunks, bci foundation models
 ### NUMA balancing hampering performance of spiking network simulations
 - [[numa-balancing-snn-performance]] - NUMA balancing performance optimization that can reduce energy consumption by 30% in spiking network simulations by disabling automatic NUMA balancing on HPC systems (arXiv: 2607.22275)
   - Identifies that automatic NUMA balancing dynamically interacts with spiking network memory access patterns, causing performance fluctuations
