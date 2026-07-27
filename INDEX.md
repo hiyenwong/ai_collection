@@ -1,4 +1,10 @@
 ## 2026-07-27 - Neuroscience Research (Cron Job)
+### On a cross coupling of Rulkov neural maps
+- [[rulkov-neural-maps-cross-coupling]] - Novel coupling methodology for Rulkov neural maps preserving chaos and generating strange attractors (arXiv: 2607.22318)
+  - Analytically proves coupling preserves boundedness of motion and existence of snap-back repeller (Devaney chaos via Marotto theorem)
+  - Numerical simulations show global strange attractor with non-integer Kaplan-Yorke dimension
+  - **Activation**: rulkov neural maps, cross coupling neural maps, neural map coupling, devaney chaos neural, strange attractor neural
+
 
 ### Local Synaptic Rules Can Implement a SIGReg Gradient Without Backpropagation
 - [[local-synaptic-rules-sigreg-gradient]] - Two canonical local synaptic learning rules (STDP⁺ and homeostatic plasticity) together implement exact SIGReg-like self-supervised learning gradients without backpropagation, global error signals, or weight transport (arXiv: 2607.21622)
