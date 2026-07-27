@@ -34,6 +34,15 @@
 
 ## 2026-07-28 - Deep Learning Research (Cron Job)
 
+## 2026-07-28 - Neuroscience Research (Cron Job)
+
+### Interpretable EEG biomarkers with bag-of-waves: Spatial and temporal waveform dictionaries for low-data regimes
+- [[bag-of-waves-eeg-biomarkers]] - Interpretable EEG biomarkers using shift-invariant k-means to learn waveform atoms without labels, effective in low-data regimes (arXiv: 2607.22508)
+  - Learns small dictionary of recurring EEG waveform templates (atoms) using shift-invariant k-means
+  - Converts continuous EEG into atom token sequences with temporal n-grams and spatial cross-channel extensions
+  - Achieves competitive performance with state-of-the-art deep models while providing full interpretability
+  - **Activation**: bag-of-waves, EEG biomarkers, interpretable EEG, waveform dictionaries, low-data EEG
+
 ### LeAct: Learning to Reason from Expert Actions
 - [[leact-learning-to-reason-from-expert-actions]] - LeAct framework for recovering chain-of-thought reasoning from expert systems that only produce actions without explicit reasoning traces, treating CoT as a latent variable optimized via action probability scoring (arXiv: 2607.21856)
   - Recovers reasoning from silent expert systems like game solvers and theorem provers
