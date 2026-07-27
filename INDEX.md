@@ -1,8 +1,8 @@
 ### NUMA balancing hampering performance of spiking network simulations
-- [[numa-balancing-spiking-network-hpc]] - NUMA balancing performance optimization that can reduce energy consumption by 30% in spiking network simulations by disabling automatic NUMA balancing on HPC systems (arXiv: 2607.22275)
+- [[numa-balancing-snn-performance]] - NUMA balancing performance optimization that can reduce energy consumption by 30% in spiking network simulations by disabling automatic NUMA balancing on HPC systems (arXiv: 2607.22275)
   - Identifies that automatic NUMA balancing dynamically interacts with spiking network memory access patterns, causing performance fluctuations
   - Provides methodology for per-job NUMA balancing control to optimize performance and energy consumption
-  - **Activation**: numa balancing spiking networks, hpc performance optimization neuroscience, energy efficiency spiking simulations
+  - **Activation**: numa balancing snn, spiking neural network numa optimization, hpc snn performance tuning, energy efficient snn simulation, numa balancing disable neuroscience
 
 ### On a cross coupling of Rulkov neural maps
 - [[rulkov-neural-maps-cross-coupling]] - Novel coupling methodology for Rulkov neural maps preserving chaos and generating strange attractors (arXiv: 2607.22318)
@@ -35,6 +35,13 @@
 ## 2026-07-28 - Deep Learning Research (Cron Job)
 
 ## 2026-07-28 - Neuroscience Research (Cron Job)
+
+### Graph-Based Correlation Matrix Generation: A Convex Optimization Approach
+- [[graph-based-correlation-matrix-generation]] - Graph-based correlation matrix generation using convex optimization for controlled sparsity and mean off-diagonal values (arXiv: 2607.22436)
+  - Generates correlation matrices consistent with specified graph structures while allowing precise control over statistical properties
+  - Provides tunable control over mean off-diagonal correlation values and maintains mathematical validity
+  - Validated on real neuroscience and finance datasets for practical applicability
+  - **Activation**: graph correlation matrix generation, convex optimization correlation, structured correlation matrices, neuroscience functional connectivity simulation, finance asset correlation modeling
 
 ### Interpretable EEG biomarkers with bag-of-waves: Spatial and temporal waveform dictionaries for low-data regimes
 - [[bag-of-waves-eeg-biomarkers]] - Interpretable EEG biomarkers using shift-invariant k-means to learn waveform atoms without labels, effective in low-data regimes (arXiv: 2607.22508)
