@@ -128,6 +128,14 @@
   - Derives exact transfer function correcting previous heuristic derivations with additional threshold-noise contributions
   - Shows refractoriness can facilitate limit cycle onset in interacting neuron populations under mean-field approximation
   - **Activation**: spectral theory, spiking neurons, refractoriness, population density, Fokker-Planck
+
+### When Language Models Meet NeuroGraphs: Exploring Enhanced Agentic LLM Framework Towards Brain Network Analysis
+- [[brainagent-agentic-llm-brain-network]] - BrainAgent agentic LLM framework for knowledge-enhanced brain network analysis, reformulating connectome classification as iterative topology-aware understanding, external retrieval, reasoning, and reflection (arXiv: 2607.22082)
+  - Converts raw brain networks into compact multi-level structural descriptions through brain-specific analysis tools
+  - Retrieves relevant neuroscience knowledge and task-specific cases to ground the reasoning process
+  - Generates structured predictions with reflective verification for comprehensive, multi-level explanations
+  - **Activation**: brain network analysis, connectome classification, agentic LLM neuroscience, knowledge-enhanced brain analysis, NeuroGraphs, BrainAgent framework
+
 - [[project-pilot-ai-drone-control]] - Methodology for testing AI control of physical systems like drones through constrained interfaces and safety protocols. Based on Anthropic's July 2026 frontier red teaming research.
   - Constrained interface design with limited action space and safety boundaries
   - Safety protocol framework including pre-flight validation and emergency override
