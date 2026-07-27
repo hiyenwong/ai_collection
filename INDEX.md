@@ -1,5 +1,12 @@
 ## 2026-07-27 - Neuroscience Research (Cron Job)
 
+### Local Synaptic Rules Can Implement a SIGReg Gradient Without Backpropagation
+- [[local-synaptic-rules-sigreg-gradient]] - Two canonical local synaptic learning rules (STDP⁺ and homeostatic plasticity) together implement exact SIGReg-like self-supervised learning gradients without backpropagation, global error signals, or weight transport (arXiv: 2607.21622)
+  - Requires only pre- and post-synaptic firing rates, local firing statistics, and temporal contiguity of natural sensory streams
+  - On synthetic clustering task, ordered presentation achieves CSR ≈ 2.49 vs random ordering CSR ≈ 0.83 (≈3.5σ separation)
+  - On temporally ordered MNIST, two-layer network achieves 87.3% linear-probe accuracy
+  - **Activation**: local synaptic rules, STDP gradient learning, biologically plausible backpropagation, SIGReg without backprop, temporal ordering clustering
+
 ### Computer Vision Based Neurology Brain Activity Rejection Architecture and Implementation
 - [[computer-vision-neurology-brain-activity-rejection]] - Automated computer vision based ICA rejection labeling tool for EEG analysis that reduces processing time by 7200 fold and achieves 89.45% accuracy (arXiv: 2607.21654)
   - Addresses time-consuming manual inspection, selection, and interpretation of independent components (ICs) in EEG research
@@ -13,6 +20,7 @@
   - Works with five classical trunks (EEGNet, Shallow, Deep, Conformer, ATCNet) and foundation encoders (REVE)
   - Costs orders of magnitude less adaptation wall time while recovering much of fine-tune accuracy gain
   - **Activation**: BCI personalization, frozen EEG encoders, trunk-agnostic API, foundation model adaptation
+
 ## 2026-07-27 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Quantum Neuromorphic Computing with Superconducting Circuits
@@ -117,6 +125,7 @@
 ## 2026-07-26 - Anthropic Research (Cron Job)
 
 ### Project Pilot: Can AI control a drone?
+
 
 ## 2026-07-27 - Neuroscience Research (Cron Job)
 
