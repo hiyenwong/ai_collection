@@ -1,3 +1,18 @@
+## 2026-07-27 - Neuroscience Research (Cron Job)
+
+### Computer Vision Based Neurology Brain Activity Rejection Architecture and Implementation
+- [[computer-vision-neurology-brain-activity-rejection]] - Automated computer vision based ICA rejection labeling tool for EEG analysis that reduces processing time by 7200 fold and achieves 89.45% accuracy (arXiv: 2607.21654)
+  - Addresses time-consuming manual inspection, selection, and interpretation of independent components (ICs) in EEG research
+  - Compatible with widely used software interfaces like ICLabel and EEGLab
+  - Enables near real-time applications crucial for medical specialists
+  - **Activation**: EEG artifact rejection, ICA component classification, automated EEG preprocessing, computer vision EEG analysis
+
+### Universal BCI Personalization: One API for Frozen EEG Trunks and Foundation Models
+- [[universal-bci-personalization-api]] - Trunk-agnostic API for BCI personalization that works with heterogeneous frozen EEG encoders and foundation models without per-architecture personalization stacks (arXiv: 2607.22397)
+  - Provides single contract encode to Bayesian head to BrainState architecture
+  - Works with five classical trunks (EEGNet, Shallow, Deep, Conformer, ATCNet) and foundation encoders (REVE)
+  - Costs orders of magnitude less adaptation wall time while recovering much of fine-tune accuracy gain
+  - **Activation**: BCI personalization, frozen EEG encoders, trunk-agnostic API, foundation model adaptation
 ## 2026-07-27 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Quantum Neuromorphic Computing with Superconducting Circuits
