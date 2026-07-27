@@ -1,3 +1,12 @@
+## 2026-07-27 - Quantum Neuromorphic Computing (Cron Job)
+
+### Quantum Neuromorphic Computing with Superconducting Circuits
+- [[quantum-neuromorphic-superconducting-circuits]] - Framework for implementing quantum neuromorphic computing using superconducting circuits, combining quantum coherence with neural dynamics for enhanced computational capabilities (Synthetic)
+  - Uses transmon qubits as artificial neurons with tunable energy levels and Josephson junction dynamics for neuron-like activation
+  - Implements quantum synaptic connections through capacitive coupling, tunable couplers, and entanglement-based connectivity
+  - Supports quantum backpropagation, variational quantum learning, and quantum reservoir computing algorithms
+  - **Activation**: quantum neuromorphic, superconducting neuromorphic, quantum neural circuits
+
 ## 2026-07-27 - Neuroscience Research (Cron Job)
 
 ### Flow-based Phase-space Tomography of Continuous-variable Quantum States
