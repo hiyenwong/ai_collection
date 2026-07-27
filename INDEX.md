@@ -1,4 +1,11 @@
 ## 2026-07-27 - Neuroscience Research (Cron Job)
+
+### NUMA balancing hampering performance of spiking network simulations
+- [[numa-balancing-spiking-network-hpc]] - NUMA balancing performance optimization that can reduce energy consumption by 30% in spiking network simulations by disabling automatic NUMA balancing on HPC systems (arXiv: 2607.22275)
+  - Identifies that automatic NUMA balancing dynamically interacts with spiking network memory access patterns, causing performance fluctuations
+  - Provides methodology for per-job NUMA balancing control to optimize performance and energy consumption
+  - **Activation**: numa balancing spiking networks, hpc performance optimization neuroscience, energy efficiency spiking simulations
+
 ### On a cross coupling of Rulkov neural maps
 - [[rulkov-neural-maps-cross-coupling]] - Novel coupling methodology for Rulkov neural maps preserving chaos and generating strange attractors (arXiv: 2607.22318)
   - Analytically proves coupling preserves boundedness of motion and existence of snap-back repeller (Devaney chaos via Marotto theorem)
@@ -25,9 +32,7 @@
   - Provides single contract encode to Bayesian head to BrainState architecture
   - Works with five classical trunks (EEGNet, Shallow, Deep, Conformer, ATCNet) and foundation encoders (REVE)
   - Costs orders of magnitude less adaptation wall time while recovering much of fine-tune accuracy gain
-  - **Activation**: BCI personalization, frozen EEG encoders, trunk-agnostic API, foundation model adaptation
-
-## 2026-07-27 - Quantum Neuromorphic Computing (Cron Job)
+  - **Activation**: BCI personalization, frozen EEG encoders, trunk-agnostic API, foundation model adaptation## 2026-07-27 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Quantum Neuromorphic Computing with Superconducting Circuits
 - [[quantum-neuromorphic-superconducting-circuits]] - Framework for implementing quantum neuromorphic computing using superconducting circuits, combining quantum coherence with neural dynamics for enhanced computational capabilities (Synthetic)
