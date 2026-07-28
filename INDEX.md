@@ -1,4 +1,11 @@
-## 2026-07-28 - Neuroscience Research (Cron Job)
+## 2026-07-28 - Systems Engineering Research (Cron Job)
+
+### Allostatic Control Systems: Goal Governance in Changing Environments
+- [[allostatic-control-systems-goal-governance]] - Framework for designing control systems that govern not only goal pursuit but also goal appropriateness in changing environments, implementing two-timescale control with fast regulation loop and slow goal governance loop (arXiv: 2607.21771)
+  - Two-timescale architecture separates fast goal pursuit from slow goal governance
+  - Central principle: revise inappropriate goals faster than serviceability is lost by defending them
+  - Evidence-based goal revision with timing-critical evidence-to-effect pathways
+  - **Activation**: allostatic control, goal governance, adaptive reference, changing environments, two-timescale control, serviceability assessment## 2026-07-28 - Neuroscience Research (Cron Job)
 
 ### Universal BCI Personalization: One API for Frozen EEG Trunks and Foundation Models
 - [[universal-bci-personalization-api]] - Trunk-agnostic BCI personalization API that works across heterogeneous frozen EEG trunks without per-architecture personalization stacks (arXiv: 2607.22397)
