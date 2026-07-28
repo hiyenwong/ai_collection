@@ -1,3 +1,11 @@
+## 2026-07-28 - Neuroscience Research (Cron Job)
+
+### The SpiNNaker2 chip: a many-core platform for flexible and scalable brain-inspired computing
+- [[spinnaker2-neuromorphic-hardware-platform]] - SpiNNaker2 chip bridges deep learning and neuromorphic computing with 152 ARM M4F processing elements, achieving up to 4.5 TOPS and supporting >150,000 neurons with >1.8 billion synaptic events/s (arXiv: 2607.24396)
+  - Features extended SpiNNaker routing fabric for scalable event-based communication and external interfaces including Gbit Ethernet and LPDDR4 memory
+  - Achieves up to 2.7 TOPS/W efficiency in high efficiency mode for INT8 workloads with low baseline power of less than 250 mW
+  - Demonstrates capabilities as universal hardware platform for scalable brain-inspired computing and combinations with mainstream deep network approaches
+  - **Activation**: spinnaker2, neuromorphic hardware, brain-inspired computing, spiking neural network acceleration, many-core neuromorphic, event-based computing, ARM M4F neuromorphic, scalable brain simulation
 ## 2026-07-28 - Quantum Neuromorphic Research (Cron Job)
 
 ### Leveraging unlabelled data for generalizable neural population decoding
