@@ -1,5 +1,13 @@
 ## 2026-07-28 - Neuroscience Research (Cron Job)
 
+### Local Synaptic Rules Can Implement a SIGReg Gradient Without Backpropagation
+- [[local-synaptic-rules-sigreg-gradient]] - Two canonical local synaptic learning rules (STDP+ and homeostatic plasticity) together can implement the exact gradient of a SIGReg-like self-supervised learning objective without backpropagation, global error signals, or weight transport (arXiv: 2607.21622)
+  - Ordered presentation raises cluster separation ratio (CSR) to 2.49 while random ordering leaves it near baseline (0.83), showing temporal contiguity enables class structure recovery
+  - Two-layer network trained entirely with these rules achieves 87.3% linear-probe accuracy on temporally ordered MNIST
+  - Only requires pre- and post-synaptic firing rates, local firing statistics, and temporal contiguity of natural sensory streams
+  - **Activation**: local synaptic rules, STDP gradient learning, biologically plausible backpropagation, SIGReg without backprop, temporal ordering clustering
+## 2026-07-28 - Neuroscience Research (Cron Job)
+
 ### Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls
 - [[eeg-fm-stress-testing-clinical-decoding]] - Comprehensive benchmarking framework for stress-testing EEG foundation models with dataset identity analysis and targeted negative controls reveals that EEG foundation-model conclusions depend strongly on evaluation unit, dataset shift, comparator strength, and targeted controls (arXiv: 2607.24519)
   - Benchmarks six models (LaBraM, EEGMamba, CBraMod, REVE, BENDR, BIOT) on five clinical tasks across four datasets using frozen linear probes
