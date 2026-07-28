@@ -1,5 +1,14 @@
 ## 2026-07-28 - Neuroscience Research (Cron Job)
 
+### Synaptic clustering emerges from learning and supports covariance discrimination
+- [[synaptic-clustering-learning-covariance-discrimination]] - Dendrinet architecture with hierarchical dendritic segments demonstrates that functional synapse clusters (FSCs) are causally necessary for computation of covariance structure in neural networks (arXiv: 2607.24503)
+  - Functional synapse clusters (FSCs) emerge when both dendritic nonlinearities and synaptic structural plasticity are active during training on Permuted-Covariance Classification (PCC) tasks
+  - Shuffling learned connectivity reduces performance, demonstrating sensitivity to learned synaptic organization beyond just FSC presence
+  - Inhibitory synapse organization shows higher sensitivity than excitatory organization for optimal task performance
+  - **Activation**: synaptic clustering, dendritic computation, covariance discrimination, Dendrinet architecture, structural plasticity
+
+## 2026-07-28 - Neuroscience Research (Cron Job)
+
 ### Local Synaptic Rules Can Implement a SIGReg Gradient Without Backpropagation
 - [[local-synaptic-rules-sigreg-gradient]] - Two canonical local synaptic learning rules (STDP+ and homeostatic plasticity) together can implement the exact gradient of a SIGReg-like self-supervised learning objective without backpropagation, global error signals, or weight transport (arXiv: 2607.21622)
   - Ordered presentation raises cluster separation ratio (CSR) to 2.49 while random ordering leaves it near baseline (0.83), showing temporal contiguity enables class structure recovery
