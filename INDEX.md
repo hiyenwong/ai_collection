@@ -15,6 +15,20 @@
   - Evidence-based goal revision with timing-critical evidence-to-effect pathways
   - **Activation**: allostatic control, goal governance, adaptive reference, changing environments, two-timescale control, serviceability assessment## 2026-07-28 - Neuroscience Research (Cron Job)
 
+### Synaptic clustering emerges from learning and supports covariance discrimination
+- [[synaptic-clustering-learning-covariance-discrimination]] - Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses demonstrates that functional synapse clusters emerge from learning and support covariance discrimination computation (arXiv: 2607.24503)
+  - Functional synapse clusters (FSCs) develop during training when both dendritic nonlinearities and synaptic structural plasticity are active
+  - Shuffling learned connectivity reduces performance, demonstrating causal necessity of learned organization
+  - Inhibitory synapse organization shows higher sensitivity than excitatory organization in PCC tasks
+  - **Activation**: synaptic clustering, dendritic computation, covariance discrimination, biologically-inspired neural networks, functional synapse organization
+
+### Masked Autoencoders Learn Perception-Relevant Representations from Resting State Neural Data
+- [[masked-autoencoders-resting-state-neural-data]] - Self-supervised pretraining on spontaneous neural activity using masked autoencoders achieves 84.1% accuracy on psychometric tasks and 64.0% on threshold-level tasks for perception decoding (arXiv: 2607.22615)
+  - Leverages 14.6 hours of spontaneous multiunit activity from intracortical V1 array to overcome data bottleneck in clinical neuroprosthetics
+  - Captures interpretable brain structure without supervision: V1's spatial organization and perceptual state separation emerge in latent representations
+  - Linear probing on frozen latents demonstrates rich task-relevant structure in spontaneous cortical activity
+  - **Activation**: neural decoding enhancement, self-supervised learning for neural data, resting state activity analysis, clinical neuroprosthetics, masked autoencoder pretraining
+
 ### Universal BCI Personalization: One API for Frozen EEG Trunks and Foundation Models
 - [[universal-bci-personalization-api]] - Trunk-agnostic BCI personalization API that works across heterogeneous frozen EEG trunks without per-architecture personalization stacks (arXiv: 2607.22397)
   - Single contract encode to Bayesian head to BrainState architecture enables OEMs to integrate once and swap trunks
