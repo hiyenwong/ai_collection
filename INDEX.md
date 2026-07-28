@@ -32,11 +32,11 @@
 ## 2026-07-28 - Neuroscience Research (Cron Job)
 
 ### From read-out geometry to in-silico stimulation: a distributed functional-connectivity signature of Alzheimer's disease
-- [[from-read-out-geometry-to-in-silico-stimulation]] - Distributed functional-connectivity signature of Alzheimer's disease methodology using subject-specific reservoir-computing models to reconstruct individual lagged functional connectivity and develop personalized neuromodulation strategies (arXiv: 2607.24356)
-  - Subject-specific, cross-subject-identifiable reservoir-computing models accurately reconstruct each individual's lagged functional connectivity for AD classification
-  - Ideal correction mapping patient dynamics onto control template requires distributed changes in connectivity kernel, not focal targets
-  - Optimal stimulation sites identified by effect on disease discriminant achieve complete individualized reclassification, unlike largest deviation sites which fail even at supra-physiological amplitudes
-  - **Activation**: alzheimer-disease, functional-connectivity, reservoir-computing, neuromodulation, personalized-medicine, brain-networks
+- [[alzheimer-functional-connectivity-reservoir-computing]] - Methodology for identifying distributed functional-connectivity signatures of Alzheimer's disease using subject-specific reservoir-computing models and developing personalized neuromodulation strategies (arXiv: 2607.24356)
+  - AD FC signature is distributed rather than focal, requiring coordinated multi-site patterns rather than single targets
+  - Model-informed personalized targeting selects sites by therapeutic responsiveness rather than deviation magnitude  
+  - Real-time closed-loop controller achieves comparable efficacy at lower dose using only causally available information
+  - **Activation**: alzheimer reservoir computing, functional connectivity ad, distributed fc signature, personalized neuromodulation
 
 ### Synaptic clustering emerges from learning and supports covariance discrimination
 - [[synaptic-clustering-learning-covariance-discrimination]] - Dendrinet architecture with hierarchical dendritic segments demonstrates that functional synapse clusters (FSCs) are causally necessary for computation of covariance structure in neural networks (arXiv: 2607.24503)
