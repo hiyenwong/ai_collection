@@ -11,15 +11,28 @@ license: Complete terms in LICENSE.txt
 
 # Universal BCI Personalization API
 
-This skill provides the implementation framework for the Nimbus Personalizer system described in arXiv:2607.22397. The core innovation is a trunk-agnostic API that enables BCI applications to integrate once and support multiple frozen EEG encoder architectures without requiring separate personalization stacks for each model.
+## Overview
 
-## Core Architecture
+The Universal BCI Personalization API (Nimbus Personalizer) provides a trunk-agnostic contract that enables personalization across heterogeneous frozen EEG encoders without requiring per-model fine-tune defaults. This solves the scalability problem of proliferating frozen EEG encoders by providing one integration surface that works across both classical trunks and foundation model encoders.
 
-The Nimbus Personalizer follows a three-tier architecture:
+**Core contribution**: The trunk-agnostic API surface—not the ML novelty of LDA-on-embeddings—that allows OEMs to integrate once and swap trunks without standing up new personalization stacks per architecture.
 
-1. **Contract Encode Layer**: Standardized input encoding interface that normalizes EEG data across different trunk requirements
-2. **Bayesian Head**: Lightweight adaptive head that performs subject-specific calibration using Bayesian inference
-3. **BrainState (Optional)**: Affine mid-tier transformation layer for additional capacity when embedding space allows
+## Architecture
+
+The Nimbus Personalizer follows a three-component contract:
+
+1. **Encoder Boundary**: Any frozen mapping from trials to embedding rows Z ∈ R^(n×d)
+   - Callable functions, sklearn transformers, or torch module methods
+   - Adapters exist for BrainDecode-style trunks including foundation encoders like REVE
+   
+2. **Bayesian Head**: Default is LDA; QDA and Softmax are interchangeable alternatives
+   - Modular design keeps heads as interchangeable parameters rather than hardcoded
+   - LDA serves as safe default; head optimality is dataset- and stress-dependent
+   
+3. **App State**: Structured prediction object called BrainState containing:
+   - Primary intent hypothesis
+   - Normalized predictive uncertainty (empirically calibrated under shift)
+   - Ranked alternatives suitable for downstream decision presets
 
 ## Key Benefits
 
@@ -58,35 +71,41 @@ When the trunk embedding has sufficient capacity, the BrainState affine transfor
 - Optional component based on trunk capacity assessment
 - Provides mid-point between calibration-only and full fine-tuning
 
-## Usage Patterns
+## When to Use This Skill
 
-### For BCI Application Developers
-```python
-# Initialize personalizer once
-personalizer = NimbusPersonalizer(trunk_type="conformer")
+Use when implementing BCI personalization systems that need to support multiple frozen EEG encoder architectures without per-model personalization pipelines. This skill is particularly valuable for:
 
-# Apply to any subject/session
-calibrated_output = personalizer.calibrate(eeg_data, subject_id)
+- OEM integrators building BCI platforms supporting diverse encoder backends
+- Researchers comparing personalization approaches across encoder families  
+- Systems requiring scalable personalization without fine-tune/PEFT overhead per model
+- Applications needing calibrated uncertainty for downstream decision making
 
-# Switch trunks without changing integration
-personalizer.set_trunk("reve")  # Now uses REVE foundation model
-```
+## Empirical Validation
 
-### For EEG Trunk Developers  
-```python
-# Implement trunk interface
-class MyEEGTrunk(TrunkInterface):
-    def get_input_spec(self): return {"channels": 64, "samples": 1000}
-    def get_embedding_capacity(self): return True  # Supports BrainState
-    def forward(self, x): return self.model(x)
-```
+The same Personalizer surface runs successfully on:
+- **Five classical trunks**: {EEGNet, Shallow, Deep, Conformer, ATCNet}
+- **Four MI datasets**: 18 evaluation cells total
+- **Foundation encoder**: REVE under the same surface without redesign
 
-## Performance Considerations
+Key findings:
+- Where embedding capacity exists, head adaptation is cheap mid-point vs warm-start FT/PEFT
+- Calibration-only holds in 12/18 cells (clean already wins)
+- Strict ordinal escalation is conditional (5/18), not the product headline
+- Expected calibration error improves significantly under severe shift (BNCI 0.22→0.10, Zhou 0.27→0.09)
 
-- **Calibration-only mode**: Achieves 89-94% of fine-tune accuracy with 100x faster adaptation
-- **BrainState mode**: Recovers 95-98% of fine-tune accuracy with 10x faster adaptation  
-- **Clean data requirement**: Calibration-only holds in 12/18 experimental cells when data quality is sufficient
-- **Confidence intervals**: Subject-level bootstrap provides reliability metrics for production deployment
+## Implementation Guidelines
+
+### For Integrators
+
+1. **Supply frozen encode function**: Provide callable that maps trials to embedding rows
+2. **Choose head type**: LDA (default), QDA, or Softmax based on dataset characteristics  
+3. **Configure escalation logic**: Use companion work [Musienko, 2026] for control layer decisions on when to spend labels or escalate
+
+### For Downstream Consumers
+
+- **Use BrainState fields**: Treat intent + uncertainty as inputs to observe–allocate–adapt loops
+- **Do not specify allocation rules**: The public core exposes calibrated signals; control logic remains separate layer
+- **Leverage uncertainty**: BrainState confidence field is empirically calibrated signal for controller action
 
 ## Pitfalls and Limitations
 
