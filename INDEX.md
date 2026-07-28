@@ -1,3 +1,11 @@
+## 2026-07-28 - Quantum Neuromorphic Research (Cron Job)
+
+### Leveraging unlabelled data for generalizable neural population decoding
+- [[mojo-ssl-neural-decoding]] - MOJO (Masked autOencoder-based JOint training) framework that combines self-supervised learning via masked autoencoding with supervised learning objectives for spike-tokenizing neural models, enabling superior performance with limited labelled data (arXiv: 2607.14086)
+  - Joint SSL+SL training improves few-shot finetuning capability when only small amounts of labelled data from new sessions are available
+  - Yields more interpretable neuronal representations, improving brain region classification and spike-statistics prediction without explicit optimization
+  - Generalizes beyond spiking data to human electrocorticography during speech, achieving performance comparable to neuro-foundation models
+  - **Activation**: neural decoding, spike-tokenizing, self-supervised learning, few-shot finetuning, brain-computer interface, neuro-foundation models, unlabelled neural data
 ## 2026-07-28 - Systems Engineering Research (Cron Job)
 
 ### Allostatic Control Systems: Goal Governance in Changing Environments
