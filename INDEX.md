@@ -1,3 +1,26 @@
+## 2026-07-29 - Deep Learning Research (Cron Job)
+
+### MMOE: Modernizing Diffusion Transformers with Efficient Expert Design
+- [[mmoe-diffusion-transformer-expert-design]] - ModernMOE (MMOE) methodology for modernizing diffusion transformers with efficient expert design. Adapts routed experts, shared and lightweight experts, gate-residual routing, and attention-residual information reuse to AIGC generation (arXiv: 2607.24665)
+  - Systematically adapts proven LLM efficiency designs to AIGC foundation models in balanced way
+  - Trains on single 8×H100 node with batch 256 for 400k steps, achieving lower FID faster than baselines
+  - Demonstrates stable expert specialization with modest routing changes across denoising timesteps
+  - **Activation**: MMOE, diffusion transformer MoE, efficient expert design, AIGC foundation models
+
+### Efficiency Matters in Autonomous Research
+- [[fluid-search-autonomous-research-efficiency]] - Fluid search methodology for adaptive search efficiency in autonomous research systems. Uses portfolio bandit to dynamically allocate evaluation budget across search processes, optimizing area under Pareto frontier curve (arXiv: 2607.24647)
+  - Introduces AUC of Pareto frontier as search efficiency metric beyond final quality
+  - Implements portfolio bandit that dynamically allocates budget across hill climbing, beam, tree, and evolutionary search
+  - Closely matches per-task oracle performance without prior knowledge of optimal search structure
+  - **Activation**: fluid search, autonomous research efficiency, search efficiency AUC, portfolio bandit search
+
+### Physics Transformer: Tailoring Transformer for General PDE Prediction
+- [[physics-transformer-pde-function-projection]] - Physics Transformer methodology for PDE prediction using function-projection-based tokenization. Treats physical fields as continuous functions with adaptive local basis functions and locality-preserving spatial patches (arXiv: 2607.24513)
+  - Projects discretized physical fields onto adaptive local basis functions within spatial patches
+  - Captures diverse latent physical states while preserving fine-scale spatial structures
+  - Enables efficient global interaction through factorized attention and arbitrary query location decoding
+  - **Activation**: physics transformer, PDE function projection, physical field tokenization, adaptive basis functions
+
 ## 2026-07-28 - Neuroscience Research (Cron Job)
 
 ### From read-out geometry to in-silico stimulation: a distributed functional-connectivity signature of Alzheimer's disease
@@ -7,16 +30,12 @@
   - Optimal stimulation sites identified by effect on disease discriminant achieve complete individualized reclassification, unlike largest deviation sites which fail even at supra-physiological amplitudes
   - **Activation**: alzheimer-disease, functional-connectivity, reservoir-computing, neuromodulation, personalized-medicine, brain-networks
 
-## 2026-07-28 - Neuroscience Research (Cron Job)
-
 ### Synaptic clustering emerges from learning and supports covariance discrimination
 - [[synaptic-clustering-learning-covariance-discrimination]] - Dendrinet architecture with hierarchical dendritic segments demonstrates that functional synapse clusters (FSCs) are causally necessary for computation of covariance structure in neural networks (arXiv: 2607.24503)
   - Functional synapse clusters (FSCs) emerge when both dendritic nonlinearities and synaptic structural plasticity are active during training on Permuted-Covariance Classification (PCC) tasks
   - Shuffling learned connectivity reduces performance, demonstrating sensitivity to learned synaptic organization beyond just FSC presence
   - Inhibitory synapse organization shows higher sensitivity than excitatory organization for optimal task performance
   - **Activation**: synaptic clustering, dendritic computation, covariance discrimination, Dendrinet architecture, structural plasticity
-
-## 2026-07-28 - Neuroscience Research (Cron Job)
 
 ### Local Synaptic Rules Can Implement a SIGReg Gradient Without Backpropagation
 - [[local-synaptic-rules-sigreg-gradient]] - Two canonical local synaptic learning rules (STDP+ and homeostatic plasticity) together can implement the exact gradient of a SIGReg-like self-supervised learning objective without backpropagation, global error signals, or weight transport (arXiv: 2607.21622)
