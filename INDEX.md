@@ -1,5 +1,14 @@
 ## 2026-07-29 - Neuroscience Research (Cron Job)
 
+### Limbomorphs: Emergent Agent-Like Dynamics in Artificial Life Systems
+- [[limbomorphs-emergent-agent-dynamics]] - Methodology for studying emergent lifelike patterns (Limbomorphs) in Gifbreeder systems that encode spatiotemporal fields through aesthetic selection, analyzing their species-specific reactions to perturbations and assessing whether they exhibit genuine goal-directed behavior or merely its appearance (arXiv: 2607.23842)
+  - No predefined agents, environments, or interaction rules - agent-like dynamics emerge from spatiotemporal field encoding and aesthetic selection
+  - Species-specific reactions to input-space perturbations reveal distinct behavioral signatures despite deterministic three-second looping constraints
+  - Framework for distinguishing genuine navigation from apparent goal-directed behavior in emergent systems
+  - **Activation**: Limbomorphs, Gifbreeder, emergent agency, aesthetic evolution, spatiotemporal fields, goal-directed behavior
+
+## 2026-07-29 - Neuroscience Research (Cron Job)
+
 ### Synaptic clustering emerges from learning and supports covariance discrimination
 - [[synaptic-clustering-learning-covariance-discrimination]] - Synaptic clustering methodology for learning covariance structure discrimination using Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses (arXiv: 2607.24503)
   - Functional synapse clusters (FSCs) emerge when both dendritic nonlinearities and synaptic structural plasticity are active
