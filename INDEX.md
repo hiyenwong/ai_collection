@@ -6,6 +6,14 @@
   - Achieves up to 2.7 TOPS/W efficiency in high efficiency mode for INT8 workloads with low baseline power of less than 250 mW
   - Demonstrates capabilities as universal hardware platform for scalable brain-inspired computing and combinations with mainstream deep network approaches
   - **Activation**: spinnaker2, neuromorphic hardware, brain-inspired computing, spiking neural network acceleration, many-core neuromorphic, event-based computing, ARM M4F neuromorphic, scalable brain simulation
+
+### The Semantic Least-Energy Principle: A Hypothesis for Intelligence
+- [[semantic-least-energy-principle-intelligence]] - Semantic Least-Energy Principle (SLEP) hypothesis that intelligent systems organize latent semantic states by maximizing semantic utility while minimizing semantic, predictive, and computational energy through a variational framework on latent semantic manifolds (arXiv: 2607.24287)
+  - Proposes that semantic cognition is governed by a Semantic Action Functional whose stationary solutions define efficient trajectories on latent semantic manifolds
+  - Unifies semantic abstraction, reasoning, planning, and communication within a common mathematical framework based on energy minimization principles
+  - Generates experimentally testable predictions for both artificial and biological intelligence regarding semantic geometry and thermodynamics
+  - **Activation**: semantic least-energy principle, semantic intelligence, latent semantic manifolds, first-principles intelligence, semantic thermodynamics, variational semantic cognition
+
 ## 2026-07-28 - Quantum Neuromorphic Research (Cron Job)
 
 ### Leveraging unlabelled data for generalizable neural population decoding
@@ -14,10 +22,15 @@
   - Yields more interpretable neuronal representations, improving brain region classification and spike-statistics prediction without explicit optimization
   - Generalizes beyond spiking data to human electrocorticography during speech, achieving performance comparable to neuro-foundation models
   - **Activation**: neural decoding, spike-tokenizing, self-supervised learning, few-shot finetuning, brain-computer interface, neuro-foundation models, unlabelled neural data
+
 ## 2026-07-28 - Systems Engineering Research (Cron Job)
 
 ### Allostatic Control Systems: Goal Governance in Changing Environments
 - [[allostatic-control-systems-goal-governance]] - Framework for designing control systems that govern not only goal pursuit but also goal appropriateness in changing environments, implementing two-timescale control with fast regulation loop and slow goal governance loop (arXiv: 2607.21771)
+  - Fast regulation loop handles immediate environmental changes while slow goal governance loop evaluates and updates goals based on long-term appropriateness
+  - Implements allostatic control inspired by biological homeostasis but extended to handle goal dynamics in complex environments
+  - Provides mathematical framework for analyzing stability and performance of dual-timescale control systems
+  - **Activation**: allostatic control, goal governance, dual-timescale control, adaptive goals, changing environments, biological inspiration
   - Two-timescale architecture separates fast goal pursuit from slow goal governance
   - Central principle: revise inappropriate goals faster than serviceability is lost by defending them
   - Evidence-based goal revision with timing-critical evidence-to-effect pathways
