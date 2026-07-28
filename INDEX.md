@@ -1,5 +1,15 @@
 ## 2026-07-28 - Neuroscience Research (Cron Job)
 
+### Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls
+- [[eeg-fm-stress-testing-clinical-decoding]] - Comprehensive benchmarking framework for stress-testing EEG foundation models with dataset identity analysis and targeted negative controls reveals that EEG foundation-model conclusions depend strongly on evaluation unit, dataset shift, comparator strength, and targeted controls (arXiv: 2607.24519)
+  - Benchmarks six models (LaBraM, EEGMamba, CBraMod, REVE, BENDR, BIOT) on five clinical tasks across four datasets using frozen linear probes
+  - Dataset identity is readily decoded from frozen embeddings (AUROC 1.000 at PCA-50; 0.9998 after preprocessing), while clinical diagnosis performance is often inferior to classical features
+  - Randomly initialized encoder outperforms pretrained REVE on Korean dementia task (0.659 vs 0.570 AUROC)
+  - Clear benefit only observed in cross-subject ictal detection (REVE: 0.793 AUROC, +9.2% over random)
+  - **Activation**: eeg foundation models, stress testing, clinical decoding, dataset identity, negative controls, frozen linear probes
+
+## 2026-07-28 - Neuroscience Research (Cron Job)
+
 ### The SpiNNaker2 chip: a many-core platform for flexible and scalable brain-inspired computing
 - [[spinnaker2-neuromorphic-hardware-platform]] - SpiNNaker2 chip bridges deep learning and neuromorphic computing with 152 ARM M4F processing elements, achieving up to 4.5 TOPS and supporting >150,000 neurons with >1.8 billion synaptic events/s (arXiv: 2607.24396)
   - Features extended SpiNNaker routing fabric for scalable event-based communication and external interfaces including Gbit Ethernet and LPDDR4 memory
