@@ -21,7 +21,9 @@
   - Two-timescale architecture separates fast goal pursuit from slow goal governance
   - Central principle: revise inappropriate goals faster than serviceability is lost by defending them
   - Evidence-based goal revision with timing-critical evidence-to-effect pathways
-  - **Activation**: allostatic control, goal governance, adaptive reference, changing environments, two-timescale control, serviceability assessment## 2026-07-28 - Neuroscience Research (Cron Job)
+  - **Activation**: allostatic control, goal governance, adaptive reference, changing environments, two-timescale control, serviceability assessment
+
+## 2026-07-28 - Neuroscience Research (Cron Job)
 
 ### Synaptic clustering emerges from learning and supports covariance discrimination
 - [[synaptic-clustering-learning-covariance-discrimination]] - Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses demonstrates that functional synapse clusters emerge from learning and support covariance discrimination computation (arXiv: 2607.24503)
