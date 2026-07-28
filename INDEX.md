@@ -162,3 +162,10 @@
   - Works with classical trunks (EEGNet, Shallow, Deep, Conformer, ATCNet) and foundation models
   - Reduces adaptation wall time by orders of magnitude while maintaining accuracy
   - **Activation**: bci personalization, frozen eeg encoders, trunk-agnostic api, foundation model adaptation, nimbus personalizer
+
+### Dynamic sampling of non-stationary spontaneous activity in dissociated neuronal networks
+- [[dynamic-sampling-non-stationary-spontaneous-activity]] - Adaptive electrode-selection method using discounted Poisson-Gamma model with Thompson sampling for tracking non-stationary spontaneous activity during long-term HD-MEA recordings under fixed channel budget constraints (arXiv: 2607.24269)
+  - Bayesian method captured largest fraction of available spikes among tested strategies, exceeding static selection by 17.2 percentage points at final time point
+  - Top 100 active-electrode set changed substantially (47.8% turnover at 34 h), demonstrating need for adaptive selection
+  - Successfully captured first synchronized burst and supported center-of-activity trajectory analysis in online recording
+  - **Activation**: adaptive electrode selection, HD-MEA, Thompson sampling, non-stationary neural activity, Bayesian optimization, dynamic sampling
