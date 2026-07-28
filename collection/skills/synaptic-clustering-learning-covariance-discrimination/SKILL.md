@@ -1,21 +1,12 @@
 ---
 name: synaptic-clustering-learning-covariance-discrimination
-title: Synaptic Clustering Emerges from Learning and Supports Covariance Discrimination
-description: Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses for Permuted-Covariance Classification (PCC) tasks. Demonstrates that functional synapse clusters (FSCs) emerge from learning and support covariance discrimination computation.
-arxiv_id: 2607.24503
-date: 2026-07-27
-authors:
-  - Ilenna Simone Jones
-  - Maceo Richards
-  - Houman Safaai
-  - Elom Amematsro
-  - Bernardo Sabatini
-tags:
-  - neuroscience
-  - synaptic plasticity
-  - dendritic computation
-  - artificial neural networks
-  - covariance discrimination
+description: "Synaptic clustering emerges from learning and supports covariance discrimination - Dendrinet architecture with hierarchical dendritic segments demonstrates that functional synapse clusters (FSCs) are causally necessary for computation of covariance structure in neural networks. Use when analyzing dendritic computation, synaptic organization, or covariance-based neural classification tasks."
+metadata:
+  arxiv_id: "2607.24503"
+  published: "2026-07-27"
+  authors: "Ilenna Simone Jones, Maceo Richards, Houman Safaai, Elom Amematsro, Bernardo Sabatini"
+  tags: [synaptic-clustering, dendritic-computation, covariance-discrimination, neural-networks, computational-neuroscience]
+license: Complete terms in LICENSE.txt
 ---
 
 # Synaptic Clustering Learning Framework
