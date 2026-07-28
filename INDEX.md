@@ -1,3 +1,11 @@
+## 2026-07-29 - Neuroscience Research (Cron Job)
+
+### Synaptic clustering emerges from learning and supports covariance discrimination
+- [[synaptic-clustering-learning-covariance-discrimination]] - Synaptic clustering methodology for learning covariance structure discrimination using Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses (arXiv: 2607.24503)
+  - Functional synapse clusters (FSCs) emerge when both dendritic nonlinearities and synaptic structural plasticity are active
+  - Learned synaptic connectivity is causally necessary for computation - shuffling reduces performance even with fixed nonlinearities  
+  - Inhibitory organization shows higher sensitivity than excitatory organization to performance
+  - **Activation**: synaptic clustering, functional synapse clusters, dendritic nonlinearities, covariance discrimination
 ## 2026-07-29 - Deep Learning Research (Cron Job)
 
 ### MMOE: Modernizing Diffusion Transformers with Efficient Expert Design
