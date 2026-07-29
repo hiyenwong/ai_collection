@@ -64,6 +64,14 @@
   - Deep shunting outperforms tangent and fitted-linear controls but flexible nonlinear predictors eventually overtake it
   - Performance varies across mouse V1 running states with largest shunting advantage for narrow readouts
   - **Activation**: dendritic computation, shunting inhibition, gain-load-alignment, DendriNet, population readout
+
+### Phantom Evidence: How and Why Generative AI Manufactures False Positives in Science
+- [[phantom-evidence-generative-ai-false-positives]] - Methodology for identifying and preventing phantom evidence - false positives manufactured by generative AI that appear convincing but lack genuine evidential value due to narrow hypothesis spaces and data leakage (arXiv: 2607.25991)
+  - Defines phantom evidence as the gap between imagined vs. actually reachable hypothesis spaces in AI systems
+  - Establishes evidence ceiling principle: single results have fundamental limits on evidential value
+  - Formalizes Bacon's table of absence for modern AI-assisted scientific research
+  - Provides framework for credibility assessment through absence testing and data leakage detection
+  - **Activation**: phantom evidence, generative ai false positives, scientific integrity ai, bacon table absence, ai scientific credibility
 ## 2026-07-29 - Deep Learning Research (Cron Job)
 
 ### MMOE: Modernizing Diffusion Transformers with Efficient Expert Design
