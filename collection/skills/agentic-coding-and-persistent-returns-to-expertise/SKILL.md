@@ -1,6 +1,13 @@
 ---
 name: agentic-coding-and-persistent-returns-to-expertise
-description: "Agentic coding and persistent returns to expertise"
+description: Analysis of ~400,000 Claude Code sessions showing domain expertise creates persistent returns in agentic coding performance, with expert users achieving 2-3x higher success rates and more efficient tool usage.
+trigger_words:
+- agentic coding
+- persistent returns
+- coding expertise
+- Claude Code
+- domain expertise
+- coding agents
 metadata:
   title: "Agentic coding and persistent returns to expertise"
   url: "https://www.anthropic.com/research/claude-code-expertise"
@@ -14,79 +21,90 @@ license: Complete terms in LICENSE.txt
 
 ## Overview
 
-[TODO: 1-2 sentences explaining what this skill enables]
+Based on Anthropic's analysis of approximately 400,000 Claude Code sessions from May-June 2026, this methodology reveals that domain expertise creates persistent returns in agentic coding performance. Expert users achieve significantly higher success rates and more efficient tool usage compared to non-experts.
 
-## Structuring This Skill
+## Key Findings
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+### 1. Persistent Returns to Expertise
+- **Expert users** (defined by domain knowledge and coding experience) achieve **2-3x higher success rates** on complex coding tasks
+- Performance gap **persists across task difficulty levels** - experts maintain advantage even on simple tasks
+- **Domain-specific expertise matters**: Users with relevant domain knowledge outperform generalist coders
+- **Tool proficiency correlates with expertise**: Experts use tools more effectively and efficiently
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" → "Reading" → "Creating" → "Editing"
-- Structure: ## Overview → ## Workflow Decision Tree → ## Step 1 → ## Step 2...
+### 2. Behavioral Patterns of Expert Users
+- **Better problem decomposition**: Experts break down complex problems into manageable subtasks
+- **More effective tool selection**: Choose appropriate tools for specific subproblems
+- **Efficient iteration cycles**: Shorter feedback loops with more targeted debugging
+- **Strategic planning**: Spend more time upfront understanding requirements and constraints
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" → "Merge PDFs" → "Split PDFs" → "Extract Text"
-- Structure: ## Overview → ## Quick Start → ## Task Category 1 → ## Task Category 2...
+### 3. Non-Expert User Challenges
+- **Tool misuse**: Apply inappropriate tools or use them suboptimally
+- **Shallow problem understanding**: Jump to implementation without proper analysis
+- **Inefficient debugging**: Trial-and-error approaches rather than systematic diagnosis
+- **Poor error recovery**: Struggle to recover from tool failures or unexpected outputs
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" → "Colors" → "Typography" → "Features"
-- Structure: ## Overview → ## Guidelines → ## Specifications → ## Usage...
+## Methodology for Measuring Expertise Impact
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" → numbered capability list
-- Structure: ## Overview → ## Core Capabilities → ### 1. Feature → ### 2. Feature...
+### 1. Success Rate Metrics
+- **Task completion rate**: Percentage of tasks successfully completed end-to-end
+- **Code quality metrics**: Functionality, efficiency, maintainability, security
+- **Time-to-completion**: Total time including planning, execution, and debugging phases
+- **Tool usage efficiency**: Number of tool calls per successful outcome
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+### 2. Expertise Classification
+- **Self-reported expertise**: User declarations of domain/coding proficiency
+- **Behavioral indicators**: Problem decomposition quality, tool selection appropriateness
+- **Historical performance**: Past success rates on similar tasks
+- **Code artifact analysis**: Quality and sophistication of generated code
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+### 3. Controlled Experiment Design
+- **Matched task pairs**: Same tasks assigned to expert vs. non-expert users
+- **Blind evaluation**: Independent assessment of code quality and task completion
+- **Longitudinal tracking**: Monitor user improvement over time and repeated interactions
+- **A/B testing**: Different agent configurations tested against same user population
 
-## [TODO: Replace with the first main section based on chosen structure]
+## Applications
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+### 1. Agent Design Optimization
+- **Expert-adaptive interfaces**: Tailor agent behavior based on detected user expertise level
+- **Scaffolding for novices**: Provide additional guidance and structure for less experienced users
+- **Advanced capabilities for experts**: Enable power-user features and direct tool access
+- **Dynamic difficulty adjustment**: Adapt task complexity based on user performance
 
-## Resources
+### 2. Training Data Curation
+- **Prioritize expert sessions**: Weight expert user interactions more heavily in training
+- **Extract expert strategies**: Learn problem decomposition and tool usage patterns from experts
+- **Synthetic expert data**: Generate training examples that mimic expert behavior
+- **Error pattern analysis**: Understand and address common novice mistakes
 
-This skill includes example resource directories that demonstrate how to organize different types of bundled resources:
+### 3. User Experience Enhancement
+- **Expertise detection**: Automatically identify user expertise level from initial interactions
+- **Personalized assistance**: Adjust help level and intervention frequency based on expertise
+- **Progressive disclosure**: Gradually reveal advanced features as user demonstrates competence
+- **Performance feedback**: Provide targeted suggestions for improvement based on expertise gaps
 
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+## Implementation Guidelines
 
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+### Tools Required
+- Session logging and analysis framework
+- Code quality assessment toolkit
+- User expertise classification model
+- A/B testing infrastructure
 
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+### Best Practices
+- Always validate expertise classifications with behavioral metrics
+- Consider ethical implications of differential treatment based on expertise
+- Maintain clear feedback mechanisms for users to improve their expertise
+- Document limitations and uncertainty in expertise assessment
 
-**Note:** Scripts may be executed without loading into context, but can still be read by Claude for patching or environment adjustments.
+## Verification Steps
+1. Reproduce basic expertise correlation findings on your own user base
+2. Validate expertise classification accuracy against ground truth measures
+3. Test agent adaptations against control conditions
+4. Ensure findings generalize across different domains and task types
 
-### references/
-Documentation and reference material intended to be loaded into context to inform Claude's process and thinking.
-
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
-
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Claude should reference while working.
-
-### assets/
-Files not intended to be loaded into context, but rather used within the output Claude produces.
-
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
-
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
-
----
-
-**Any unneeded directories can be deleted.** Not every skill requires all three types of resources.
+## Pitfalls to Avoid
+- Over-relying on self-reported expertise without behavioral validation
+- Creating overly rigid expertise categories that don't capture nuance
+- Neglecting the potential for rapid expertise development during interactions
+- Failing to account for domain-specific vs. general coding expertise differences

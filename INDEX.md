@@ -249,3 +249,11 @@
   - Top 100 active-electrode set changed substantially (47.8% turnover at 34 h), demonstrating need for adaptive selection
   - Successfully captured first synchronized burst and supported center-of-activity trajectory analysis in online recording
   - **Activation**: adaptive electrode selection, HD-MEA, Thompson sampling, non-stationary neural activity, Bayesian optimization, dynamic sampling
+## 2026-07-29 - Anthropic Research (Cron Job)
+
+### Agentic coding and persistent returns to expertise
+- [[agentic-coding-and-persistent-returns-to-expertise]] - Analysis of ~400,000 Claude Code sessions showing domain expertise creates persistent returns in agentic coding performance, with expert users achieving 2-3x higher success rates and more efficient tool usage
+  - Expert users achieve 2-3x higher success rates on complex coding tasks
+  - Domain-specific expertise matters: relevant domain knowledge outperforms generalist coders
+  - Experts show better problem decomposition and more effective tool selection
+  - **Activation**: agentic coding, persistent returns, coding expertise, Claude Code, domain expertise, coding agents
