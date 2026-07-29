@@ -1,3 +1,12 @@
+## 2026-07-29 - Quantum Computing Research (Cron Job)
+
+### Scalable Variational Quantum Optimization via Pauli Correlation Encoding: Application to Large-Scale Power Demand Portfolio Optimization
+- [[pce-quantum-portfolio-optimization]] - Scalable variational quantum optimization framework using Pauli correlation encoding for large-scale combinatorial optimization, particularly power demand portfolio optimization with compact qubit representations (arXiv: 2607.24722)
+  - Binary variables represented through expectation values of Pauli correlation operators encoding multi-body correlations
+  - Two-stage hybrid formulation: time-averaged problem provides initialization for time-resolved optimization
+  - Demonstrates near-optimal performance from m=18 to 10,296 variables with normalized cost gaps ~10⁻³
+  - Performance governed by interplay between continuous relaxation and discretization resolution
+  - **Activation**: pce-quantum-optimization, pauli-correlation-encoding, quantum-portfolio-optimization, scalable-variational-quantum, power-demand-optimization
 ## 2026-07-29 - Neuroscience Research (Cron Job)
 
 ### Subject-Level Heterogeneity in EEG Motor Imagery Decoding: A Large-Scale Benchmark and Portfolio-Based Reduction of the Search Space
