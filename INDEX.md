@@ -30,6 +30,13 @@
   - Identifies cov-tgsp and CSP as top methodological families with dataset-dependent performance
   - Demonstrates portfolio-based personalization achieves 96.5% oracle retention with K=12 pipelines
   - **Activation**: eeg-motor-imagery, subject-heterogeneity, benchmark, portfolio-selection, cov-tgsp, csp
+
+### Phantom Evidence: How and Why Generative AI Manufactures False Positives in Science
+- [[phantom-evidence-generative-ai-false-positives]] - Methodology for identifying and preventing phantom evidence in scientific research caused by generative AI systems manufacturing false positives, formalizing the gap between imagined possibility space and actual system reach (arXiv: 2607.25991)
+  - Higher resolution and greater fluency add no genuine evidence to scientific claims
+  - Single results have a fundamental ceiling on evidential value that cannot be exceeded by polishing or self-grading
+  - Bacon's table of absence restated in probability: test whether convincing outputs appear when targets are absent
+  - **Activation**: phantom evidence, generative ai false positives, scientific methodology ai, bacon table absence, ai research integrity
 ## 2026-07-29 - Systems Engineering Research (Cron Job)
 
 ### SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving
