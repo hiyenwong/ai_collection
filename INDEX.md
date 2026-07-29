@@ -56,6 +56,14 @@
   - Learned synaptic connectivity is causally necessary for computation - shuffling reduces performance even with fixed nonlinearities  
   - Inhibitory organization shows higher sensitivity than excitatory organization to performance
   - **Activation**: synaptic clustering, functional synapse clusters, dendritic nonlinearities, covariance discrimination
+
+### When Branch-Local Shunting Helps: A Gain-Load-Alignment Principle for Dendritic E/I Networks
+- [[dendritic-gain-load-alignment-principle]] - Framework for understanding when branch-local shunting helps in neural population readout through gain-load-alignment principle using DendriNet architecture (arXiv: 2607.24990)
+  - Branch-local shunting helps when reliable divisor suppresses signal-aligned gain more than attenuating signal or adding denominator variability
+  - Local linearization shows shunting readouts yield decision directions within positive additive E/I cone
+  - Deep shunting outperforms tangent and fitted-linear controls but flexible nonlinear predictors eventually overtake it
+  - Performance varies across mouse V1 running states with largest shunting advantage for narrow readouts
+  - **Activation**: dendritic computation, shunting inhibition, gain-load-alignment, DendriNet, population readout
 ## 2026-07-29 - Deep Learning Research (Cron Job)
 
 ### MMOE: Modernizing Diffusion Transformers with Efficient Expert Design
