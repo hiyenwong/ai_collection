@@ -1,3 +1,11 @@
+## 2026-07-29 - Neuroscience Research (Cron Job)
+
+### Subject-Level Heterogeneity in EEG Motor Imagery Decoding: A Large-Scale Benchmark and Portfolio-Based Reduction of the Search Space
+- [[subject-level-heterogeneity-eeg-motor-imagery]] - Large-scale benchmark methodology for EEG motor imagery decoding that addresses subject-level heterogeneity through portfolio-based pipeline selection (arXiv: 2607.22778)
+  - Analyzes 216,714 evaluation rows across three datasets (Cho2017, PhysionetMI, Zhou2016) with strong subject-level heterogeneity
+  - Identifies cov-tgsp and CSP as top methodological families with dataset-dependent performance
+  - Demonstrates portfolio-based personalization achieves 96.5% oracle retention with K=12 pipelines
+  - **Activation**: eeg-motor-imagery, subject-heterogeneity, benchmark, portfolio-selection, cov-tgsp, csp
 ## 2026-07-29 - Systems Engineering Research (Cron Job)
 
 ### SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving
