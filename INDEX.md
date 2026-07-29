@@ -1,3 +1,12 @@
+## 2026-07-29 - Systems Engineering Research (Cron Job)
+
+### SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving
+- [[specbox-speculative-sandbox-scheduling]] - Runtime framework for speculative sandbox preallocation and scheduling in LLM agent serving environments to optimize resource utilization and reduce tail latency (arXiv: 2607.23933)
+  - Intent-driven sandbox prewarming using keyword matching and streaming semantic embedding
+  - Context-aware stochastic prefetching with sandbox dependency graph forecasting
+  - Semantic result cache to prune redundant sandbox invocations
+  - Out-of-band shared-memory transport for zero-copy artifact transfers
+  - **Activation**: specbox, speculative sandbox, llm agent serving, mcp sandbox, sandbox scheduling
 ## 2026-07-29 - Neuroscience Research (Cron Job)
 
 ### Limbomorphs: Emergent Agent-Like Dynamics in Artificial Life Systems
