@@ -9,6 +9,14 @@
   - **Activation**: pce-quantum-optimization, pauli-correlation-encoding, quantum-portfolio-optimization, scalable-variational-quantum, power-demand-optimization
 ## 2026-07-29 - Neuroscience Research (Cron Job)
 
+### Foundation Models for EEG Are Blind to Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility
+- [[eeg-fm-temporal-correlations-blindness]] - Methodology for analyzing and addressing the spectral-temporal dissociation in EEG foundation models that causes cross-population fragility due to blindness to long-range temporal correlations (LRTC) quantified by DFA exponent (arXiv: 2607.24834)
+  - Raw-waveform models (REVE, LaBraM, BENDR) fail to recover both DFA exponent and 1/f slope (R² ≤ 0.12)
+  - Spectral-input models (CBraMod, BIOT) recover 1/f slope strongly (R² = 0.59-0.73) but not DFA across cohorts
+  - Classical DFA feature successfully recovers DFA exponent (R² = 0.32-0.38 against 0.64 reliability ceiling)
+  - LRTC is orthogonal to aperiodic slope (r = -0.06) and shows directional cross-population transfer
+  - **Activation**: eeg foundation model temporal correlations, lrtc eeg fm, spectral-temporal dissociation eeg, cross-population eeg transfer, dfa exponent eeg
+
 ### Subject-Level Heterogeneity in EEG Motor Imagery Decoding: A Large-Scale Benchmark and Portfolio-Based Reduction of the Search Space
 - [[subject-level-heterogeneity-eeg-motor-imagery]] - Large-scale benchmark methodology for EEG motor imagery decoding that addresses subject-level heterogeneity through portfolio-based pipeline selection (arXiv: 2607.22778)
   - Analyzes 216,714 evaluation rows across three datasets (Cho2017, PhysionetMI, Zhou2016) with strong subject-level heterogeneity
