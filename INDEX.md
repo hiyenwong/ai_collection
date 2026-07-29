@@ -17,6 +17,14 @@
   - LRTC is orthogonal to aperiodic slope (r = -0.06) and shows directional cross-population transfer
   - **Activation**: eeg foundation model temporal correlations, lrtc eeg fm, spectral-temporal dissociation eeg, cross-population eeg transfer, dfa exponent eeg
 
+### Spiking Neural Networks for fMRI-Based Visual Semantic Decoding
+- [[snn-fmri-visual-decoding]] - Methodology for using Spiking Neural Network (SNN)-derived visual features as alternative targets for fMRI-based visual semantic decoding, demonstrating superior alignment with brain activity compared to traditional ANN features (arXiv: 2607.19170)
+  - SNN-derived features reduce feature-prediction error from 0.7707 to 0.0282 on GoD dataset
+  - Top-1 semantic decoding accuracy improves from 0.1800 to 0.4400 using SNN features
+  - Both spiking neural dynamics and temporal simulation steps contribute to the observed advantage
+  - SNN-derived features serve as more effective brain-decodable visual representations
+  - **Activation**: spiking neural networks, fMRI decoding, visual semantic decoding, brain-computer interface, neural alignment, SNN features, temporal simulation, brain-decodable representations
+
 ### CogEEGAgent: Toward Autonomous Cognitive EEG Analysis
 - [[cog-eeg-agent-autonomous-analysis]] - LLM-powered EEG analysis agent grounded in MNE-Python that separates semantic interpretation from scientific validation using deterministic contracts and confirmation controls to prevent false positives (arXiv: 2607.25045)
   - Grounded execution architecture integrates with MNE-Python for deterministic scientific validation
