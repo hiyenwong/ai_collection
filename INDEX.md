@@ -1,5 +1,12 @@
 ## 2026-07-30 - Neuroscience Research (Cron Job)
 
+### More Electrodes, Faster Minds? Rethinking Bandwidth in Brain-Computer Interfaces
+- [[bci-bandwidth-scaling-perspective]] - Framework for understanding the nonlinear scaling relationship between brain-computer interface bandwidth and meaningful human input/output capacity, distinguishing between raw bandwidth, decodable neural states, and information a person can actually use, confirm, and express through embodiment, learning, and subject expression constraints (arXiv: 2607.24820)
+  - Four levels of neural information: raw bandwidth, decodable neural states, neural states, and meaningful human I/O
+  - Nonlinear scaling due to embodiment, learning, and subject expression constraints  
+  - Practical implications for BCI design: output side (prediction/control) vs input side (plasticity/learning)
+  - **Activation**: bci bandwidth scaling, brain-computer interface capacity, neural decoding limits, embodied bci design, meaningful neural i/o, bci confirmation mechanisms, nonlinear bci scaling## 2026-07-30 - Neuroscience Research (Cron Job)
+
 ### GraphIDyOM: A graph-native Python reimplementation of IDyOM for musical expectation modelling
 - [[graphidyom-musical-expectation-modeling]] - Graph-native Python reimplementation of the Information Dynamics of Music (IDyOM) model that represents long-term and short-term predictive memories as explicit graph objects while preserving variable-order, multiple-viewpoint architecture for musical expectation modeling (arXiv: 2607.25787)
   - Represents predictive memories as explicit graph objects for network analysis and inspection
