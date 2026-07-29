@@ -1,4 +1,13 @@
-## 2026-07-29 - Quantum Computing Research (Cron Job)
+## 2026-07-30 - Neuroscience Research (Cron Job)
+
+### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
+- [[current-injection-spiking-neural-network]] - Framework for infrared and visible image fusion using Current Injection Spiking (CIS) operators that perform cross-modal fusion at membrane-potential level before spike firing, solving the fundamental tension between sparse spikes and fine-grained fusion (arXiv: 2607.19879)
+  - Introduces Current Injection Spiking (CIS) operator that injects one modality as gated auxiliary current into driving neuron of other modality
+  - Performs cross-modal fusion directly at membrane-potential level, preserving subthreshold responses from both modalities
+  - Constructs bidirectional cross-modal fusion (BCMF) module with dual-branch architecture and asymmetric stacking depths
+  - Achieves fusion quality on par with state-of-the-art ANN-based methods while reducing inference energy by order of magnitude
+  - **Activation**: current injection spiking neural network, CIS-Fuse, infrared visible image fusion, membrane potential fusion, spiking neural network fusion, cross-modal SNN fusion
+
 
 ### Scalable Variational Quantum Optimization via Pauli Correlation Encoding: Application to Large-Scale Power Demand Portfolio Optimization
 - [[pce-quantum-portfolio-optimization]] - Scalable variational quantum optimization framework using Pauli correlation encoding for large-scale combinatorial optimization, particularly power demand portfolio optimization with compact qubit representations (arXiv: 2607.24722)
