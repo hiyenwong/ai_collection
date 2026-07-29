@@ -9,6 +9,15 @@
   - **Activation**: pce-quantum-optimization, pauli-correlation-encoding, quantum-portfolio-optimization, scalable-variational-quantum, power-demand-optimization
 ## 2026-07-29 - Neuroscience Research (Cron Job)
 
+### When Branch-Local Shunting Helps: A Gain-Load-Alignment Principle for Dendritic E/I Networks
+- [[gain-load-alignment-principle-dendritic-networks]] - Gain-Load-Alignment Principle for dendritic E/I networks where branch-local shunting helps when reliable divisor suppresses signal-aligned gain more than it attenuates signal or adds denominator variability (arXiv: 2607.24990)
+  - Introduces DendriNet framework varying integration rule, morphology, synaptic allocation, divisor locality, and dendritic nonlinearities
+  - Every scalar shunting threshold has exact affine additive realization; local linearization yields decision direction within positive additive E/I cone
+  - Performance follows gain-load-alignment principle: branch-local shunting helps with reliable divisors that suppress signal-aligned gain effectively
+  - Deep shunting outperforms tangent/fitted-linear controls but flexible nonlinear predictors overtake with sufficient labels
+  - In mouse V1, shunting-over-additive decoder gap largest for narrow readouts, reverses under strong private noise at widest readouts
+  - **Activation**: dendritic computation, shunting inhibition, gain-load alignment, E/I integration, population codes
+
 ### Foundation Models for EEG Are Blind to Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility
 - [[eeg-fm-temporal-correlations-blindness]] - Methodology for analyzing and addressing the spectral-temporal dissociation in EEG foundation models that causes cross-population fragility due to blindness to long-range temporal correlations (LRTC) quantified by DFA exponent (arXiv: 2607.24834)
   - Raw-waveform models (REVE, LaBraM, BENDR) fail to recover both DFA exponent and 1/f slope (R² ≤ 0.12)
