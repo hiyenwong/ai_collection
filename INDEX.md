@@ -17,6 +17,13 @@
   - LRTC is orthogonal to aperiodic slope (r = -0.06) and shows directional cross-population transfer
   - **Activation**: eeg foundation model temporal correlations, lrtc eeg fm, spectral-temporal dissociation eeg, cross-population eeg transfer, dfa exponent eeg
 
+### CogEEGAgent: Toward Autonomous Cognitive EEG Analysis
+- [[cog-eeg-agent-autonomous-analysis]] - LLM-powered EEG analysis agent grounded in MNE-Python that separates semantic interpretation from scientific validation using deterministic contracts and confirmation controls to prevent false positives (arXiv: 2607.25045)
+  - Grounded execution architecture integrates with MNE-Python for deterministic scientific validation
+  - Participant-disjoint confirmation controls prevent false positives during adaptive search
+  - Policy stress testing shows held-out confirmation curbs adaptive search errors effectively
+  - **Activation**: cogeegagent, autonomous eeg analysis, llm eeg agent, grounded eeg analysis, scientific validation eeg
+
 ### Subject-Level Heterogeneity in EEG Motor Imagery Decoding: A Large-Scale Benchmark and Portfolio-Based Reduction of the Search Space
 - [[subject-level-heterogeneity-eeg-motor-imagery]] - Large-scale benchmark methodology for EEG motor imagery decoding that addresses subject-level heterogeneity through portfolio-based pipeline selection (arXiv: 2607.22778)
   - Analyzes 216,714 evaluation rows across three datasets (Cho2017, PhysionetMI, Zhou2016) with strong subject-level heterogeneity
