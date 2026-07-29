@@ -296,3 +296,29 @@
   - Domain-specific expertise matters: relevant domain knowledge outperforms generalist coders
   - Experts show better problem decomposition and more effective tool selection
   - **Activation**: agentic coding, persistent returns, coding expertise, Claude Code, domain expertise, coding agents
+## 2026-07-30 - Deep Learning Research (Cron Job)
+
+### Reinformed Dreamer: An Asymmetric World Model Efficiently Trained through Latent Guidance
+- [[reinformed-dreamer-asymmetric-world-model]] - Reinforced Dreamer methodology for asymmetric reinforcement learning using latent guidance to improve world model representations and behaviors in model-based RL (arXiv: 2607.26040)
+  - Identifies limitations in privileged information representations in existing asymmetric model-based RL approaches
+  - Proposes a novel asymmetric representation learning objective using latent guidance
+  - Demonstrates consistent improvement over standard Dreamer across multiple benchmarks
+  - Effective under both partial observability (with additional state info) and full observability (with refined state info)
+  - **Activation**: reinforced dreamer, asymmetric reinforcement learning, latent guidance, world model, model-based RL, privileged information
+
+### Physics-Aware End-to-End Deep Reinforcement Learning for Quadcopter Control with Actuator Dynamics
+- [[physics-aware-quadcopter-drl-control]] - Physics-aware end-to-end deep reinforcement learning methodology for quadcopter control with actuator dynamics modeling (arXiv: 2607.25985)
+  - Integrates 12-state rigid-body model with Action2RPM allocation using Moore-Penrose pseudo-inverse
+  - Models first-order actuator dynamics for each motor (time constant T_m = 0.076s) including rotor gyroscopic coupling
+  - Implements shaped reward balancing goal-reaching and stability using exponential position well, attitude penalties, and quadratic velocity costs
+  - Provides reproducible benchmark comparing DDPG, TD3, PPO, and SAC algorithms for quadcopter control
+  - **Activation**: physics-aware DRL, quadcopter control, actuator dynamics, UAV control, end-to-end DRL, rigid-body modeling
+
+### Pass the Baton: Trajectory-Relayed On-Policy Distillation
+- [[relay-on-policy-distillation]] - Relay On-Policy Distillation (Relay-OPD) methodology for trajectory-relayed token-level supervision to overcome prefix failure in reasoning models (arXiv: 2607.26057)
+  - Identifies teacher-student continuation asymmetry on failed prefixes (teacher redirects, student continues original direction)
+  - Converts asymmetry into label-free handoff trigger for Relay On-Policy Distillation (Relay-OPD)
+  - Constructs relay trajectories by letting teacher briefly take over at trigger points to produce teacher leg
+  - Implements limited relay budget to concentrate intervention on critical early positions while limiting departure from student policy
+  - Achieves superior results over standard OPD (+5.73%) and FastOPD (+1.49%) on mathematical reasoning benchmarks
+  - **Activation**: relay OPD, trajectory-relayed distillation, prefix failure, on-policy distillation, reasoning model distillation, handoff trigger
