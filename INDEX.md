@@ -1,5 +1,13 @@
 ## 2026-07-30 - Neuroscience Research (Cron Job)
 
+### GraphIDyOM: A graph-native Python reimplementation of IDyOM for musical expectation modelling
+- [[graphidyom-musical-expectation-modeling]] - Graph-native Python reimplementation of the Information Dynamics of Music (IDyOM) model that represents long-term and short-term predictive memories as explicit graph objects while preserving variable-order, multiple-viewpoint architecture for musical expectation modeling (arXiv: 2607.25787)
+  - Represents predictive memories as explicit graph objects for network analysis and inspection
+  - Provides Python-native integration with modern data science workflows and memory export capabilities
+  - Validated against original Lisp IDyOM across single, projected, and multiple-viewpoint configurations
+  - Supports local server access and interactive applications through HTTP API
+  - **Activation**: graphidyom, musical expectation, IDyOM, information dynamics music, graph-native music modeling, predictive memory graphs
+
 ### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
 - [[current-injection-spiking-neural-network]] - Framework for infrared and visible image fusion using Current Injection Spiking (CIS) operators that perform cross-modal fusion at membrane-potential level before spike firing, solving the fundamental tension between sparse spikes and fine-grained fusion (arXiv: 2607.19879)
   - Introduces Current Injection Spiking (CIS) operator that injects one modality as gated auxiliary current into driving neuron of other modality
