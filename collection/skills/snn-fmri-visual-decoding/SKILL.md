@@ -1,195 +1,131 @@
 ---
 name: snn-fmri-visual-decoding
-version: 1.0.0
-description: Spiking Neural Networks for fMRI-Based Visual Semantic Decoding - methodology for using SNN-derived visual features as alternative targets for fMRI-based visual decoding, demonstrating stronger alignment with fMRI responses and improved visual semantic decoding performance compared to ANN-derived features.
-author: Jiahong Zhang, Jinning Zhao, Sijun Shen, Siyuan Xu, Bo Xu, Guoqi Li
-license: arXiv.org perpetual non-exclusive license
-arxiv_id: 2607.19170
-date_added: 2026-07-23
-categories:
-  - neuroscience
-  - computational-neuroscience
-  - brain-computer-interface
-  - spiking-neural-networks
-  - fmri-decoding
+description: "Spiking Neural Networks (SNN)-derived visual features provide superior targets for fMRI-based visual semantic decoding compared to Artificial Neural Network (ANN) features, showing stronger alignment with brain activity and improved decoding performance. Use when designing fMRI-to-vision decoding pipelines or evaluating target feature representations."
+metadata:
+  arxiv_id: "2607.19170"
+  authors: "Jiahong Zhang, Jinning Zhao, Sijun Shen, Siyuan Xu, Bo Xu, Guoqi Li"
+  published: "2026-07-21"
+  categories: ["cs.NE"]
+  tags: ["spiking neural networks", "fMRI", "visual decoding", "brain-computer interface", "neural alignment"]
+license: Complete terms in LICENSE.txt
 ---
 
 # Spiking Neural Networks for fMRI-Based Visual Semantic Decoding
 
 ## Overview
-
-This skill implements the methodology from the paper "Spiking Neural Networks for fMRI-Based Visual Semantic Decoding" (arXiv:2607.19170) which demonstrates that **SNN-derived visual features provide superior targets for fMRI-based visual decoding** compared to conventional ANN-derived features. The key insight is treating the target visual representation as a scientific variable rather than just an engineering choice.
+This skill demonstrates that Spiking Neural Network (SNN)-derived visual features serve as more effective targets for fMRI-based visual semantic decoding compared to traditional Artificial Neural Network (ANN) features. The research shows that SNN features exhibit stronger alignment with fMRI responses and significantly improve visual semantic decoding performance.
 
 ## Key Findings
 
-- **Stronger fMRI alignment**: SNN representations better correspond to measured brain responses than ANN representations
-- **Improved feature prediction**: On GoD dataset, SNN-derived features reduce feature-prediction error from 0.7707 to 0.0282
-- **Enhanced semantic decoding**: Top-1 semantic decoding accuracy improves from 0.1800 to 0.4400 on GoD dataset
-- **Multiple SNN variants tested**: LIF, PSN, MPSN, and BuSNN all show advantages over ANN baseline
-- **Temporal dynamics matter**: Both spiking neural dynamics and temporal simulation steps contribute to observed advantages
+### Experimental Setup
+- **Models Compared**: One ANN baseline vs. four SNN variants from the same architectural family
+- **Decoding Architecture**: L2-regularized linear fMRI-to-feature decoder (identical across all models)
+- **Variable Isolation**: Only the feature vectors used as regression targets were varied
+- **Dataset**: GoD dataset for visual semantic decoding
+- **Metrics**: Feature-prediction error and top-1 semantic decoding accuracy
+
+### Main Results
+1. **Superior Feature Alignment**: SNN-derived features show stronger alignment with fMRI responses compared to ANN baseline
+2. **Dramatic Performance Improvement**: 
+   - Feature-prediction error reduced from 0.7707 (ANN) to 0.0282 (SNN)
+   - Top-1 semantic decoding accuracy improved from 0.1800 (ANN) to 0.4400 (SNN)
+3. **Ablation Analysis**: Both spiking neural dynamics and temporal simulation steps contribute to the observed advantage
+4. **Target Feature Importance**: Target feature design is a critical component of fMRI-based visual decoding success
 
 ## Methodology
 
-### Problem Formulation
+### SNN vs ANN Feature Extraction
+1. **Architecture Family**: Use the same base architecture for both ANN and SNN variants
+2. **Spiking Dynamics**: Implement different spiking mechanisms (e.g., LIF, IF, synaptic models)
+3. **Temporal Simulation**: Run SNNs over multiple time steps to capture temporal dynamics
+4. **Feature Aggregation**: Extract features from final time step or aggregate across time steps
 
-The framework treats fMRI-based visual semantic decoding as mapping brain activity into visual features:
+### fMRI-to-Feature Decoding
+1. **Linear Decoder**: Use L2-regularized linear regression from fMRI voxels to feature vectors
+2. **Consistent Architecture**: Keep decoder architecture identical across all target features
+3. **Cross-Validation**: Perform proper cross-validation to avoid overfitting
+4. **Evaluation Metrics**: Measure both feature prediction error and downstream semantic accuracy
 
-1. **Stimulus processing**: Same images processed by either ANN or SNN feature extractors
-   - ANN features: dense and static (ResNet-18 backbone)
-   - SNN features: spike-based and temporally dynamic (SEW-ResNet-18 variants)
-
-2. **Controlled comparison**: Same L2-regularized linear fMRI-to-feature decoder used for all models
-   - Only feature vectors used as regression targets are varied
-   - Decoder form, input preprocessing, and training protocol kept fixed
-
-3. **Evaluation protocol**: Multi-level assessment including:
-   - Voxel-level alignment (PCC analysis)
-   - Semantic-level alignment 
-   - Semantic classification
-   - Image retrieval (fMRI-to-image)
-   - Semantic-guided reconstruction
-
-### SNN Variants
-
-Four spiking neuron variants were evaluated under the same SEW-ResNet-18 backbone:
-
-- **LIF (Leaky Integrate-and-Fire)**: Classical membrane integration
-- **PSN (Parallel Spiking Neuron)**: Parallel temporal computation  
-- **MPSN (Memory-based Parallel Spiking Neuron)**: Explicit memory propagation
-- **BuSNN (Bursting Spiking Neuron)**: Burst-like spike coding
-
-### Feature Extraction
-
-For SNNs, features are obtained through temporal averaging of spike responses:
-
-```
-SNN_feature = (1/T) * Σ(t=1 to T) SNN_response(t)
-```
-
-Where T is the number of discrete time steps for temporal simulation.
-
-## Implementation Steps
-
-### 1. Setup Environment
-```python
-# Install required dependencies
-pip install torch torchvision numpy scipy scikit-learn
-# For SNN training frameworks
-pip install spikingjelly  # or other SNN libraries
-```
-
-### 2. Prepare Visual Encoders
-- Use ResNet-18 as ANN baseline (pretrained on ImageNet)
-- Use SEW-ResNet-18 variants for SNN models (same architecture family)
-- Keep encoders fixed during fMRI decoder training
-
-### 3. Extract Target Features
-```python
-# For ANN
-ann_features = resnet18_backbone(image)
-
-# For SNN  
-snn_responses = []
-for t in range(T):  # T time steps
-    spike_response = sew_resnet18(image, timestep=t)
-    snn_responses.append(spike_response)
-snn_features = torch.mean(torch.stack(snn_responses), dim=0)
-```
-
-### 4. Train fMRI-to-Feature Decoder
-```python
-from sklearn.linear_model import Ridge
-
-# Same decoder for all models
-decoder = Ridge(alpha=1.0)  # L2 regularization
-decoder.fit(fmri_responses_train, target_features_train)
-```
-
-### 5. Evaluate Performance
-- **Feature prediction error**: MSE between predicted and actual features
-- **Semantic decoding accuracy**: Top-k classification accuracy
-- **Retrieval performance**: Acc@K for fMRI-to-image retrieval
-- **Reconstruction quality**: Best-of-five semantic reconstruction score
-
-## Datasets and Benchmarks
-
-### Primary Datasets
-- **GoD (Generic Object Decoding)**: Main evaluation dataset
-- **NSD (Natural Scenes Dataset)**: Cross-dataset validation
-- **Mini-Algonauts 2021**: Voxel-level alignment analysis
-
-### Evaluation Metrics
-- **Feature prediction error**: Lower is better (MSE)
-- **Top-1 semantic accuracy**: Higher is better
-- **Acc@K retrieval**: Higher is better
-- **Reconstruction score**: Higher is better (combines feature similarity, ranking consistency, category consistency)
-
-## Results Summary
-
-| Model | Feature Prediction Error (GoD) | Top-1 Accuracy (GoD) | Acc@1 Retrieval (GoD) |
-|-------|-------------------------------|---------------------|----------------------|
-| ANN   | 0.7707                        | 0.1800              | 0.44                 |
-| LIF   | 0.0282                        | 0.4400              | 0.40                 |
-| PSN   | -                             | -                   | **0.58**             |
-| MPSN  | -                             | -                   | 0.52                 |
-| BuSNN | -                             | -                   | 0.56                 |
+### Ablation Studies
+1. **Spiking Dynamics**: Compare SNNs with and without spiking mechanisms
+2. **Temporal Steps**: Vary the number of simulation time steps
+3. **Architecture Variants**: Test different SNN architectures within the same family
+4. **Feature Layers**: Extract features from different network layers
 
 ## Applications
 
-### Brain-Computer Interfaces
-- Improved visual decoding for communication restoration
-- Better alignment between neural measurements and computational models
-- Enhanced semantic information recovery from fMRI signals
+### When to Use This Skill
+- **fMRI Decoding Pipeline Design**: Choosing optimal target features for brain-to-vision decoding
+- **SNN Implementation**: Designing spiking neural networks for brain-inspired computing
+- **Neural Alignment Studies**: Evaluating how well artificial features align with brain activity
+- **Visual BCI Development**: Building brain-computer interfaces for visual reconstruction
+- **Computational Neuroscience**: Understanding why SNN features better match brain representations
 
-### Neuroscience Research
-- Testing hypotheses about neural representation formats
-- Understanding what makes visual features "brain-decodable"
-- Bridging computational neuroscience and neuroimaging
+### Pitfalls to Avoid
+1. **Architecture Mismatch**: Ensure fair comparison by using the same architectural family for ANN and SNN
+2. **Decoder Variability**: Keep the fMRI-to-feature decoder consistent across comparisons
+3. **Temporal Dynamics Neglect**: Don't ignore the importance of temporal simulation steps in SNNs
+4. **Overfitting**: Use proper cross-validation to ensure generalizable results
+5. **Feature Layer Selection**: Consider which network layer provides optimal features for decoding
 
-### AI Model Development
-- Designing brain-inspired visual representations
-- Evaluating neural network architectures from a neuroscience perspective
-- Developing more interpretable AI systems
+## Implementation Guidelines
 
-## Limitations and Considerations
+### SNN Feature Extraction Workflow
+```python
+# Example SNN feature extraction for fMRI decoding
+import torch
+import snntorch as snn
 
-### Technical Limitations
-- Uses same decoder across all features (more expressive decoders could improve absolute performance)
-- Focuses on matched ANN/SNN backbones (broader architectural comparisons needed)
-- Reconstruction based on semantic guidance rather than direct pixel-level reconstruction
+def create_snn_variant(architecture_base, spiking_type="lif"):
+    # Create SNN from base architecture with specified spiking dynamics
+    pass
 
-### Interpretation Caveats
-- Results don't imply fMRI directly measures biological spikes
-- SNN advantage suggests sparse, temporally structured representations better match BOLD measurement characteristics
-- BOLD signals reflect synaptic and local population processing more than spiking output alone
+def extract_snn_features(snn_model, images, time_steps=10):
+    # Run SNN over multiple time steps
+    # Extract features from final or aggregated time steps
+    pass
 
-## Future Directions
+def train_fMRI_decoder(fMRI_data, target_features, regularization=0.01):
+    # Train L2-regularized linear decoder
+    pass
+```
 
-1. **Extended model comparisons**: Test against vision transformers, multimodal models
-2. **Advanced decoders**: Develop subject-specific, more expressive decoding models
-3. **Direct reconstruction**: Combine with stronger generative models for pixel-level reconstruction
-4. **Human evaluation**: Include perceptual quality assessment of reconstructed images
-5. **Cross-modal applications**: Extend to other neuroimaging modalities (EEG, MEG)
+### Evaluation Protocol
+1. **Dataset Preparation**: Use standardized datasets like GoD for fair comparison
+2. **Baseline Establishment**: Include ANN baseline with identical architecture
+3. **Statistical Significance**: Test significance of performance improvements
+4. **Ablation Validation**: Verify contribution of spiking dynamics and temporal steps
+5. **Cross-Dataset Generalization**: Test on multiple datasets if possible
 
-## Activation Keywords
+## Theoretical Implications
 
-Use this skill when working with:
-- fMRI visual decoding
-- brain-computer interfaces
-- spiking neural networks
-- neural representation alignment
-- visual semantic decoding
-- brain-inspired AI
-- computational neuroscience
-- neuroimaging analysis
+### Why SNN Features Align Better with Brain Activity
+1. **Biological Plausibility**: SNNs more closely mimic biological neural processing
+2. **Temporal Coding**: SNNs naturally encode information in spike timing
+3. **Sparse Activation**: Spiking leads to sparse, energy-efficient representations
+4. **Dynamic Processing**: Temporal dynamics capture neural response properties
+5. **Noise Robustness**: Spiking mechanisms may provide inherent noise tolerance
+
+### Target Feature Design Principles
+1. **Brain-Inspired Features**: Design target features that reflect neural processing principles
+2. **Temporal Structure**: Preserve temporal dynamics in feature representations
+3. **Sparse Coding**: Encourage sparse, efficient representations
+4. **Hierarchical Processing**: Maintain hierarchical feature organization
+5. **Energy Efficiency**: Consider metabolic constraints in feature design
 
 ## References
+- **Original Paper**: Zhang et al. (2026). Spiking Neural Networks for fMRI-Based Visual Semantic Decoding. arXiv:2607.19170
+- **SNN Frameworks**: snnTorch, SpikingJelly, Lava-DL
+- **fMRI Decoding**: Various works on brain-to-image reconstruction
+- **Neural Alignment**: Representational Similarity Analysis (RSA) methodology
 
-- Zhang, J., Zhao, J., Shen, S., Xu, S., Xu, B., & Li, G. (2026). Spiking Neural Networks for fMRI-Based Visual Semantic Decoding. arXiv:2607.19170 [cs.NE].
-- Related work on fMRI decoding: [13, 18, 1]
-- SNN training frameworks: [11, 12, 51, 50]
-- Neuroimaging fundamentals: [25, 24, 33]
-
-## Code Availability
-
-The original authors state: "The code will be released upon publication." Check the arXiv page for updates on code availability.
+## Activation Keywords
+- spiking neural networks
+- fMRI decoding
+- visual semantic decoding
+- brain-computer interface
+- neural alignment
+- target feature design
+- temporal dynamics
+- GoD dataset
+- L2-regularized decoder

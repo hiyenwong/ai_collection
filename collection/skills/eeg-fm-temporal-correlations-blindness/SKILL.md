@@ -1,93 +1,113 @@
 ---
 name: eeg-fm-temporal-correlations-blindness
-title: EEG Foundation Models Blind to Long-Range Temporal Correlations
-version: 1.0.0
-description: Methodology for analyzing and addressing the spectral-temporal dissociation in EEG foundation models that causes cross-population fragility due to blindness to long-range temporal correlations (LRTC).
-trigger_words:
-  - eeg foundation model temporal correlations
-  - lrtc eeg fm
-  - spectral-temporal dissociation eeg
-  - cross-population eeg transfer
-  - dfa exponent eeg
+description: "EEG foundation models lose long-range temporal correlations (LRTC) quantified by DFA exponent, showing spectral-temporal dissociation that causes cross-population fragility. Use when analyzing EEG foundation model limitations, temporal correlation preservation, or cross-population transfer issues."
+metadata:
+  arxiv_id: "2607.24834"
+  authors: "Marzieh Zare"
+  published: "2026-07-23"
+  categories: ["q-bio.NC", "cs.AI", "cs.LG"]
+  tags: ["EEG", "foundation models", "temporal correlations", "DFA exponent", "cross-population", "spectral-temporal dissociation"]
+license: Complete terms in LICENSE.txt
 ---
 
 # EEG Foundation Models Blind to Long-Range Temporal Correlations
 
 ## Overview
-This skill addresses a critical limitation discovered in EEG foundation models (FMs): their inability to capture long-range temporal correlations (LRTC) quantified by the detrended fluctuation analysis (DFA) exponent of the alpha-band envelope. This spectral-temporal dissociation leads to cross-population fragility and poor generalization across different cohorts.
+This skill addresses the critical finding that EEG foundation models (FMs) are blind to long-range temporal correlations (LRTC) in neural signals, which are quantified by the detrended fluctuation analysis (DFA) exponent of the alpha-band envelope. This spectral-temporal dissociation underlies their fragility in cross-population transfer scenarios.
 
-## Key Findings from arXiv:2607.24834
+## Key Findings
 
-### Problem Statement
-EEG foundation models are typically trained to reconstruct or contrastively align short patches, then pooled into fixed embeddings. However, this approach fails to preserve the LRTC that are crucial for robust cross-population transfer.
+### Experimental Setup
+- **Models Tested**: Five EEG FMs spanning raw-waveform (REVE, LaBraM, BENDR) and spectral-input architectures (CBraMod, BIOT)
+- **Cohorts**: Two out-of-distribution cohorts plus a Western reference cohort
+- **Metrics**: DFA exponent recovery vs. 1/f aperiodic slope recovery
+- **Controls**: Order-preserving and residualization controls for pooling effects
 
-### Experimental Results
-- **Raw-waveform models** (REVE, LaBraM, BENDR): Failed to recover both DFA exponent and 1/f slope (R² ≤ 0.12)
-- **Spectral-input models** (CBraMod, BIOT): Recovered 1/f slope strongly (R² = 0.59-0.73) but not DFA across cohorts
-- **Classical DFA feature**: Successfully recovered DFA exponent (R² = 0.32-0.38 against 0.64 reliability ceiling)
-- **Orthogonality**: LRTC was orthogonal to aperiodic slope (r = -0.06)
-- **Cross-population transfer**: Frozen REVE embedding performed at chance level (0.45), while DFA exponent showed directional transfer
-- **Site robustness**: DFA exponent is site-robust (0.71) vs. FMs dominated by recording-site axis (0.98-1.00)
+### Main Results
+1. **LRTC Representation Failure**: None of the five FMs represented long-range temporal correlations in temporal order
+2. **Architecture-Specific Dissociation**: 
+   - Raw-waveform models recovered neither DFA exponent nor 1/f slope (R² ≤ 0.12)
+   - Spectral-input models recovered 1/f strongly (R² = 0.59-0.73) but not DFA across cohorts
+3. **Classical Feature Superiority**: A classical DFA feature recovered the exponent (R² = 0.32-0.38 against 0.64 reliability ceiling)
+4. **Orthogonality**: LRTC was orthogonal to aperiodic slope (r = -0.06)
+5. **Cross-Population Transfer Failure**: 
+   - Frozen REVE embedding did not beat chance (0.45 accuracy)
+   - DFA exponent transferred directionally but not at family-wise significance
+   - All five models dominated by recording-site axis (decodable at 0.98-1.00 vs 0.500 chance)
+   - DFA exponent is site-robust (0.71)
 
 ## Methodology
 
-### 1. DFA Exponent Analysis
-```python
-# Pseudocode for DFA exponent calculation
-def calculate_dfa_exponent(eeg_data, alpha_band=(8, 12)):
-    # Extract alpha band envelope
-    alpha_envelope = extract_alpha_envelope(eeg_data, alpha_band)
-    # Calculate DFA exponent
-    dfa_exp = detrended_fluctuation_analysis(alpha_envelope)
-    return dfa_exp
-```
+### DFA Exponent Calculation
+The DFA exponent quantifies long-range temporal correlations through:
+1. Compute alpha-band envelope from EEG signal
+2. Apply detrended fluctuation analysis to envelope time series
+3. Extract scaling exponent α where α > 0.5 indicates persistent long-range correlations
 
-### 2. Spectral-Temporal Dissociation Testing
-- Probe EEG FMs for recovery of both DFA exponent and 1/f aperiodic slope
-- Use order-preserving and residualization controls to test for pooling or aperiodic shadowing effects
-- Compare performance across multiple out-of-distribution cohorts
+### Cross-Population Transfer Protocol
+1. Train decoder on source population using frozen FM embeddings
+2. Test on target population without fine-tuning
+3. Compare performance against classical DFA features
+4. Control for recording-site effects through montage harmonization
 
-### 3. Cross-Population Transfer Evaluation
-- Implement montage-harmonized, zero-shot transfer tasks
-- Compare frozen FM embeddings with classical DFA features across cohorts
-- Evaluate site robustness vs. population robustness
+### Spectral-Temporal Analysis
+1. Separate spectral (1/f slope) and temporal (DFA exponent) components
+2. Probe FM embeddings for both components independently
+3. Test orthogonality between components
+4. Evaluate site-robustness of each component
 
 ## Applications
 
-### For EEG Foundation Model Development
-- **Architecture Design**: Incorporate explicit LRTC modeling in FM architectures
-- **Training Objectives**: Include DFA exponent preservation as auxiliary loss
-- **Evaluation Metrics**: Add LRTC recovery as standard evaluation criterion
+### When to Use This Skill
+- **EEG FM Evaluation**: Assessing whether your EEG foundation model preserves temporal structure
+- **Cross-Population Studies**: Understanding limitations in transferring models across demographics
+- **Feature Engineering**: Deciding between FM embeddings vs. classical temporal features
+- **Model Architecture Selection**: Choosing between raw-waveform vs. spectral-input architectures
+- **Robustness Testing**: Evaluating site-robustness of neural representations
 
-### For Cross-Population EEG Analysis
-- **Feature Engineering**: Use classical DFA features alongside FM embeddings
-- **Transfer Learning**: Develop hybrid approaches combining FMs with temporal correlation features
-- **Robustness Testing**: Systematically evaluate cross-population fragility
+### Pitfalls to Avoid
+1. **Assuming FM Embeddings Capture Temporal Structure**: FMs may appear to work well on within-population tasks while failing on temporal correlation preservation
+2. **Ignoring Spectral-Temporal Dissociation**: Spectral features (1/f) may be preserved while temporal features (DFA) are lost
+3. **Overlooking Site Effects**: Recording-site artifacts can dominate FM embeddings, masking true neural signals
+4. **Using Only Within-Population Validation**: Cross-population validation is essential for assessing true generalization
 
 ## Implementation Guidelines
 
-### Data Preprocessing
-1. Ensure consistent montage harmonization across cohorts
-2. Extract alpha-band envelopes using appropriate filtering
-3. Calculate DFA exponents with standardized parameters
+### Temporal Correlation Assessment
+```python
+# Example workflow for assessing LRTC preservation
+from scipy.signal import welch
+import numpy as np
 
-### Model Evaluation
-1. Test both raw-waveform and spectral-input architectures
-2. Evaluate on multiple out-of-distribution cohorts
-3. Measure both site robustness and population robustness separately
+def compute_dfa_exponent(signal, alpha_band=(8, 12)):
+    # Extract alpha band envelope
+    # Apply DFA analysis
+    # Return scaling exponent
+    pass
 
-### Mitigation Strategies
-1. **Hybrid Embeddings**: Combine FM embeddings with classical DFA features
-2. **Temporal-aware Training**: Modify training objectives to preserve LRTC
-3. **Multi-scale Modeling**: Incorporate both short-term and long-term temporal dependencies
+def evaluate_fm_temporal_preservation(fm_embeddings, original_signals):
+    # Compare DFA exponents before/after FM processing
+    # Calculate correlation coefficients
+    pass
+```
+
+### Cross-Population Transfer Testing
+1. **Data Preparation**: Ensure montage harmonization across populations
+2. **Baseline Comparison**: Include classical DFA features as baseline
+3. **Statistical Testing**: Use family-wise error correction for multiple comparisons
+4. **Site Robustness**: Test decoding accuracy for recording site vs. neural content
 
 ## References
-- Zare, M. et al. (2026). Foundation Models for EEG Are Blind to Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility. arXiv:2607.24834 [q-bio.NC]
-- Link: https://arxiv.org/abs/2607.24834
+- **Original Paper**: Zare, M. (2026). Foundation Models for EEG Are Blind to Long-Range Temporal Correlations. arXiv:2607.24834
+- **DFA Methodology**: Peng et al. (1994). Mosaic organization of DNA nucleotides.
+- **EEG Foundation Models**: Various recent works on REVE, LaBraM, BENDR, CBraMod, BIOT architectures
 
-## Activation Conditions
-Use this skill when:
-- Developing or evaluating EEG foundation models
-- Encountering cross-population transfer issues in EEG analysis
-- Needing to assess temporal correlation preservation in neural time series models
-- Designing robust EEG-based brain-computer interfaces across diverse populations
+## Activation Keywords
+- EEG foundation models
+- temporal correlations
+- DFA exponent
+- cross-population transfer
+- spectral-temporal dissociation
+- long-range temporal correlations
+- alpha-band envelope
+- site robustness
