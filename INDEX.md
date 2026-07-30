@@ -1,3 +1,12 @@
+## 2026-07-30 - Quantum Neuroscience Research (Cron Job)
+
+### Quantum error correction and biological error correction: A structural analogy between qubits and neurons
+- [[quantum-error-correction-biological-analogy]] - Structural analogy methodology between quantum error correction (QEC) and biological error correction (BEC) in neural circuits, focusing on redundant encodings, constraint-based inference, and codespace protection (arXiv: 2607.20534)
+  - Establishes mapping between QEC components (logical qubits, stabilizer constraints, syndrome detection) and BEC equivalents (neural population codes, recurrent constraints, mismatch signals)
+  - Proposes neural codespace as constrained manifold where collective activity is protected from individual neuron errors
+  - Demonstrates bidirectional insights: QEC principles can improve neural models and biological strategies can inspire novel QEC approaches
+  - **Activation**: quantum error correction, biological error correction, neural codespace, redundant encoding, constraint-based inference, cross-disciplinary neuroscience
+
 ## 2026-07-30 - Quantum Computing Research (Cron Job)
 
 ### OmniQEC: discovering practical quantum error-correcting codes by an AI scientist
