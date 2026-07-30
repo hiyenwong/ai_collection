@@ -1,11 +1,12 @@
 ## 2026-07-30 - Neuroscience Research (Cron Job)
 
 ### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
-- [[sparsity-ceiling-spiking-networks-energy]] - Spiking neural networks' energy efficiency depends on task characteristics, with feed-forward perception achieving 5% sparsity vs recurrent models stuck at ~50% (arXiv: 2607.26648)
-  - Information-theoretic bound ρ >= H_b^{-1}(log2 M / H) predicts sparsity floors
-  - Attention escapes firing floor by trading for memory wall (full key-value cache storage)
+- [[sparsity-ceiling-snn-energy-efficiency]] - The Sparsity Ceiling framework for analyzing where Spiking Neural Networks can and cannot trade activity for energy efficiency. Provides information-theoretic bounds on firing rates based on memory load, state width, and task difficulty. (arXiv: 2607.26648)
+  - Information-theoretic bound ρ >= H_b^{-1}(log2 M / H) predicts minimum firing rates
+  - Feed-forward perception: 5% firing, no accuracy cost; Recurrent LM: ~50% minimum; Spiking Transformer: 2% firing
+  - Attention trades firing floor for memory wall (full key-value cache storage)
   - Event-driven perception isolated as primary domain where neuromorphic hardware wins
-  - **Activation**: sparsity ceiling, spiking neural networks, energy efficiency, neuromorphic computing, firing rate limits
+  - **Activation**: sparsity ceiling, SNN energy efficiency, neuromorphic hardware limits, firing rate bounds, spiking transformer efficiency, recurrent vs attention energy, event-driven perception, memory load sparsity, information-theoretic bounds
 
 ### Foundation Models for EEG Are Blind to Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility
 - [[eeg-foundation-temporal-correlations-blindness]] - EEG foundation models lose long-range temporal correlations (LRTC) in their embeddings, creating a spectral-temporal dissociation that limits cross-population transfer (arXiv: 2607.24834)
