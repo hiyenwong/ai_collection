@@ -1,3 +1,249 @@
+## New High-Utility Papers (2026-07-30)
+
+- [[can-ai-agents-conduct-open-ended-ai-research-early]] - Skill derived from arXiv:2607.27191 - Can AI agents conduct open-ended AI research? Early evidence from two case studies
+  - Core point 1: Can AI agents conduct open-ended AI research? Early evidence from two case studies
+  - Core point 2: Derived from arXiv:2607.27191
+  - **Activation**: can-ai-agents-conduct-open-ended-ai-research-early, 2607.27191
+
+- [[omegause-officeval-benchmarking-llm-agents-on-long]] - Skill derived from arXiv:2607.27155 - OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Groundi
+  - Core point 1: OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Groundi
+  - Core point 2: Derived from arXiv:2607.27155
+  - **Activation**: omegause-officeval-benchmarking-llm-agents-on-long, 2607.27155
+
+- [[agentmap-joint-equivalence-and-subsumption-discove]] - Skill derived from arXiv:2607.27130 - AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching
+  - Core point 1: AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching
+  - Core point 2: Derived from arXiv:2607.27130
+  - **Activation**: agentmap-joint-equivalence-and-subsumption-discove, 2607.27130
+
+- [[inferscale-gpu-native-kv-injection-for-personalize]] - Skill derived from arXiv:2607.27090 - InferScale: GPU-Native KV Injection for Personalized LLM Serving
+  - Core point 1: InferScale: GPU-Native KV Injection for Personalized LLM Serving
+  - Core point 2: Derived from arXiv:2607.27090
+  - **Activation**: inferscale-gpu-native-kv-injection-for-personalize, 2607.27090
+
+- [[scifigqual-bench-a-benchmark-for-scientific-figure]] - Skill derived from arXiv:2607.27084 - SciFigQual-Bench: A Benchmark for Scientific Figure Quality Assessment with Full-Manuscript Context
+  - Core point 1: SciFigQual-Bench: A Benchmark for Scientific Figure Quality Assessment with Full-Manuscript Context
+  - Core point 2: Derived from arXiv:2607.27084
+  - **Activation**: scifigqual-bench-a-benchmark-for-scientific-figure, 2607.27084
+
+- [[scores-are-not-decisions-cost-aware-stopping-for-t]] - Skill derived from arXiv:2607.27083 - Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents
+  - Core point 1: Scores Are Not Decisions: Cost-Aware Stopping for Tool Acquisition in LLM Agents
+  - Core point 2: Derived from arXiv:2607.27083
+  - **Activation**: scores-are-not-decisions-cost-aware-stopping-for-t, 2607.27083
+
+- [[memsecbench-tracking-agent-memory-poisoning-from-p]] - Skill derived from arXiv:2607.27080 - MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair
+  - Core point 1: MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair
+  - Core point 2: Derived from arXiv:2607.27080
+  - **Activation**: memsecbench-tracking-agent-memory-poisoning-from-p, 2607.27080
+
+- [[setoka-a-benchmark-for-hierarchical-user-understan]] - Skill derived from arXiv:2607.27056 - Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Da
+  - Core point 1: Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Da
+  - Core point 2: Derived from arXiv:2607.27056
+  - **Activation**: setoka-a-benchmark-for-hierarchical-user-understan, 2607.27056
+
+- [[agentsnare-learning-to-delay-divert-and-defuse-aut]] - Skill derived from arXiv:2607.26998 - AgentSnare: Learning to Delay, Divert, and Defuse Autonomous Penetration Agents
+  - Core point 1: AgentSnare: Learning to Delay, Divert, and Defuse Autonomous Penetration Agents
+  - Core point 2: Derived from arXiv:2607.26998
+  - **Activation**: agentsnare-learning-to-delay-divert-and-defuse-aut, 2607.26998
+
+- [[what-does-it-take-to-detect-an-ai-agent-minimal-fe]] - Skill derived from arXiv:2607.26935 - What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser
+  - Core point 1: What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser
+  - Core point 2: Derived from arXiv:2607.26935
+  - **Activation**: what-does-it-take-to-detect-an-ai-agent-minimal-fe, 2607.26935
+
+- [[two-calls-beat-five-agents-evaluating-multi-agent-]] - Skill derived from arXiv:2607.26922 - Two Calls Beat Five Agents: Evaluating Multi-Agent Pipelines Against Self-Refinement for Local Langu
+  - Core point 1: Two Calls Beat Five Agents: Evaluating Multi-Agent Pipelines Against Self-Refinement for Local Langu
+  - Core point 2: Derived from arXiv:2607.26922
+  - **Activation**: two-calls-beat-five-agents-evaluating-multi-agent-, 2607.26922
+
+- [[think-short-defer-smart-act-and-repeat-calibrated-]] - Skill derived from arXiv:2607.26865 - Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for E
+  - Core point 1: Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for E
+  - Core point 2: Derived from arXiv:2607.26865
+  - **Activation**: think-short-defer-smart-act-and-repeat-calibrated-, 2607.26865
+
+- [[a-first-look-at-coding-agents-compliance-with-ai-c]] - Skill derived from arXiv:2607.26819 - A First Look at Coding Agents' Compliance with AI Contribution Rules in Open-Source Communities
+  - Core point 1: A First Look at Coding Agents' Compliance with AI Contribution Rules in Open-Source Communities
+  - Core point 2: Derived from arXiv:2607.26819
+  - **Activation**: a-first-look-at-coding-agents-compliance-with-ai-c, 2607.26819
+
+- [[secrespond-benchmarking-ai-agents-for-real-world-p]] - Skill derived from arXiv:2607.26791 - SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response
+  - Core point 1: SecRespond: Benchmarking AI Agents for Real-World Post-Compromise Incident Response
+  - Core point 2: Derived from arXiv:2607.26791
+  - **Activation**: secrespond-benchmarking-ai-agents-for-real-world-p, 2607.26791
+
+- [[skillrise-agentic-reinforcement-learning-for-cross]] - Skill derived from arXiv:2607.26784 - SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution
+  - Core point 1: SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution
+  - Core point 2: Derived from arXiv:2607.26784
+  - **Activation**: skillrise-agentic-reinforcement-learning-for-cross, 2607.26784
+
+- [[do-latent-channels-actually-communicate-a-causal-a]] - Skill derived from arXiv:2607.26773 - Do Latent Channels Actually Communicate? A Causal Audit of Latent Multi-Agent LLM
+  - Core point 1: Do Latent Channels Actually Communicate? A Causal Audit of Latent Multi-Agent LLM
+  - Core point 2: Derived from arXiv:2607.26773
+  - **Activation**: do-latent-channels-actually-communicate-a-causal-a, 2607.26773
+
+- [[metis-memory-foundation-model]] - Skill derived from arXiv:2607.26760 - Metis: Memory Foundation Model
+  - Core point 1: Metis: Memory Foundation Model
+  - Core point 2: Derived from arXiv:2607.26760
+  - **Activation**: metis-memory-foundation-model, 2607.26760
+
+- [[urbands-a-graph-guided-llm-multi-agent-system-for-]] - Skill derived from arXiv:2607.26724 - UrbanDS: A Graph-Guided LLM Multi-Agent System for Data-Intensive Urban Tasks
+  - Core point 1: UrbanDS: A Graph-Guided LLM Multi-Agent System for Data-Intensive Urban Tasks
+  - Core point 2: Derived from arXiv:2607.26724
+  - **Activation**: urbands-a-graph-guided-llm-multi-agent-system-for-, 2607.26724
+
+- [[agenticcann-automated-ascend-c-operator-generation]] - Skill derived from arXiv:2607.26661 - AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution
+  - Core point 1: AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution
+  - Core point 2: Derived from arXiv:2607.26661
+  - **Activation**: agenticcann-automated-ascend-c-operator-generation, 2607.26661
+
+- [[graph-is-the-verifier-agentic-reinforcement-learni]] - Skill derived from arXiv:2607.26656 - Graph Is the Verifier: Agentic Reinforcement Learning for Interprocedural Vulnerability Detection
+  - Core point 1: Graph Is the Verifier: Agentic Reinforcement Learning for Interprocedural Vulnerability Detection
+  - Core point 2: Derived from arXiv:2607.26656
+  - **Activation**: graph-is-the-verifier-agentic-reinforcement-learni, 2607.26656
+
+- [[constitutional-midtraining-content-presence-drives]] - Skill derived from arXiv:2607.26654 - Constitutional Midtraining: Content Presence Drives Alignment Gains
+  - Core point 1: Constitutional Midtraining: Content Presence Drives Alignment Gains
+  - Core point 2: Derived from arXiv:2607.26654
+  - **Activation**: constitutional-midtraining-content-presence-drives, 2607.26654
+
+- [[rethinking-self-evolution-a-constrained-exploratio]] - Skill derived from arXiv:2607.26643 - Rethinking Self-Evolution: A Constrained Exploration-Exploitation Process for Mitigating Skill Overf
+  - Core point 1: Rethinking Self-Evolution: A Constrained Exploration-Exploitation Process for Mitigating Skill Overf
+  - Core point 2: Derived from arXiv:2607.26643
+  - **Activation**: rethinking-self-evolution-a-constrained-exploratio, 2607.26643
+
+- [[filesystem-based-memory-for-llm-agents-organizatio]] - Skill derived from arXiv:2607.26637 - Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability
+  - Core point 1: Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability
+  - Core point 2: Derived from arXiv:2607.26637
+  - **Activation**: filesystem-based-memory-for-llm-agents-organizatio, 2607.26637
+
+- [[rag-har-towards-cost-efficient-llm-based-human-act]] - Skill derived from arXiv:2607.26631 - RAG-HAR+: Towards Cost-Efficient LLM-Based Human Activity Recognition for Edge Deployment
+  - Core point 1: RAG-HAR+: Towards Cost-Efficient LLM-Based Human Activity Recognition for Edge Deployment
+  - Core point 2: Derived from arXiv:2607.26631
+  - **Activation**: rag-har-towards-cost-efficient-llm-based-human-act, 2607.26631
+
+- [[whisperrec-latent-reasoning-for-efficient-foundati]] - Skill derived from arXiv:2607.26621 - WhisperRec: Latent Reasoning for Efficient Foundation Recommendation Models
+  - Core point 1: WhisperRec: Latent Reasoning for Efficient Foundation Recommendation Models
+  - Core point 2: Derived from arXiv:2607.26621
+  - **Activation**: whisperrec-latent-reasoning-for-efficient-foundati, 2607.26621
+
+- [[living-harness-is-an-interactive-agent-evolver]] - Skill derived from arXiv:2607.26598 - Living-Harness Is an Interactive-Agent Evolver
+  - Core point 1: Living-Harness Is an Interactive-Agent Evolver
+  - Core point 2: Derived from arXiv:2607.26598
+  - **Activation**: living-harness-is-an-interactive-agent-evolver, 2607.26598
+
+- [[eco3s-complex-socio-economic-system-simulation-via]] - Skill derived from arXiv:2607.26588 - Eco3S: Complex Socio-Economic System Simulation via Agent-Based Models
+  - Core point 1: Eco3S: Complex Socio-Economic System Simulation via Agent-Based Models
+  - Core point 2: Derived from arXiv:2607.26588
+  - **Activation**: eco3s-complex-socio-economic-system-simulation-via, 2607.26588
+
+- [[serverlesst2i-efficient-text-to-image-workflow-ser]] - Skill derived from arXiv:2607.26566 - ServerlessT2I: Efficient Text-to-Image Workflow Serving on a Serverless Platform
+  - Core point 1: ServerlessT2I: Efficient Text-to-Image Workflow Serving on a Serverless Platform
+  - Core point 2: Derived from arXiv:2607.26566
+  - **Activation**: serverlesst2i-efficient-text-to-image-workflow-ser, 2607.26566
+
+- [[agentgfm-a-graph-foundation-model-with-node-agent-]] - Skill derived from arXiv:2607.26533 - AgentGFM: A Graph Foundation Model with Node-Agent Information-Flow Control
+  - Core point 1: AgentGFM: A Graph Foundation Model with Node-Agent Information-Flow Control
+  - Core point 2: Derived from arXiv:2607.26533
+  - **Activation**: agentgfm-a-graph-foundation-model-with-node-agent-, 2607.26533
+
+- [[a-graph-native-bitemporal-memory-store-for-convers]] - Skill derived from arXiv:2607.26520 - A Graph-Native Bitemporal Memory Store for Conversational AI Agents
+  - Core point 1: A Graph-Native Bitemporal Memory Store for Conversational AI Agents
+  - Core point 2: Derived from arXiv:2607.26520
+  - **Activation**: a-graph-native-bitemporal-memory-store-for-convers, 2607.26520
+
+- [[hifloat4-format-for-end-to-end-reinforcement-learn]] - Skill derived from arXiv:2607.26515 - HiFloat4 Format for End-To-End Reinforcement Learning Post-Training of Large Language Models
+  - Core point 1: HiFloat4 Format for End-To-End Reinforcement Learning Post-Training of Large Language Models
+  - Core point 2: Derived from arXiv:2607.26515
+  - **Activation**: hifloat4-format-for-end-to-end-reinforcement-learn, 2607.26515
+
+- [[llmet-enabling-cross-layer-evaluation-of-emerging-]] - Skill derived from arXiv:2607.26491 - LLMET: Enabling Cross-Layer Evaluation of Emerging M3D Memories for Energy-Efficient LLM Serving
+  - Core point 1: LLMET: Enabling Cross-Layer Evaluation of Emerging M3D Memories for Energy-Efficient LLM Serving
+  - Core point 2: Derived from arXiv:2607.26491
+  - **Activation**: llmet-enabling-cross-layer-evaluation-of-emerging-, 2607.26491
+
+- [[evopinn-agentic-discovery-of-executable-algorithms]] - Skill derived from arXiv:2607.26490 - EvoPINN: Agentic Discovery of Executable Algorithms for Physics-Informed Neural Networks
+  - Core point 1: EvoPINN: Agentic Discovery of Executable Algorithms for Physics-Informed Neural Networks
+  - Core point 2: Derived from arXiv:2607.26490
+  - **Activation**: evopinn-agentic-discovery-of-executable-algorithms, 2607.26490
+
+- [[multivationbench-a-benchmark-for-multimodal-sequen]] - Skill derived from arXiv:2607.26465 - MultivationBench: A Benchmark for Multimodal Sequential Motivation Reasoning
+  - Core point 1: MultivationBench: A Benchmark for Multimodal Sequential Motivation Reasoning
+  - Core point 2: Derived from arXiv:2607.26465
+  - **Activation**: multivationbench-a-benchmark-for-multimodal-sequen, 2607.26465
+
+- [[puda-an-ai-native-hardware-harness-for-self-drivin]] - Skill derived from arXiv:2607.26464 - PUDA: An AI-Native Hardware Harness for Self-Driving Laboratories
+  - Core point 1: PUDA: An AI-Native Hardware Harness for Self-Driving Laboratories
+  - Core point 2: Derived from arXiv:2607.26464
+  - **Activation**: puda-an-ai-native-hardware-harness-for-self-drivin, 2607.26464
+
+- [[forgetbench-benchmarking-forgetting-dynamics-of-lo]] - Skill derived from arXiv:2607.26455 - ForgetBench: Benchmarking Forgetting Dynamics of Long-Term Parametric Memory in Language Models
+  - Core point 1: ForgetBench: Benchmarking Forgetting Dynamics of Long-Term Parametric Memory in Language Models
+  - Core point 2: Derived from arXiv:2607.26455
+  - **Activation**: forgetbench-benchmarking-forgetting-dynamics-of-lo, 2607.26455
+
+- [[cg-world-a-large-scale-world-state-dataset-and-pro]] - Skill derived from arXiv:2607.26452 - CG-World: A Large-Scale World-State Dataset and Protocol for World Models
+  - Core point 1: CG-World: A Large-Scale World-State Dataset and Protocol for World Models
+  - Core point 2: Derived from arXiv:2607.26452
+  - **Activation**: cg-world-a-large-scale-world-state-dataset-and-pro, 2607.26452
+
+- [[voice-memory-for-agentic-speech-recognition]] - Skill derived from arXiv:2607.26410 - Voice Memory for Agentic Speech Recognition
+  - Core point 1: Voice Memory for Agentic Speech Recognition
+  - Core point 2: Derived from arXiv:2607.26410
+  - **Activation**: voice-memory-for-agentic-speech-recognition, 2607.26410
+
+- [[knowledge-before-reasoning-ec-reason-bench-a-train]] - Skill derived from arXiv:2607.26397 - Knowledge before Reasoning: EC-Reason-Bench, a Training-Free Diagnostic Benchmark for LLM Enzyme Cla
+  - Core point 1: Knowledge before Reasoning: EC-Reason-Bench, a Training-Free Diagnostic Benchmark for LLM Enzyme Cla
+  - Core point 2: Derived from arXiv:2607.26397
+  - **Activation**: knowledge-before-reasoning-ec-reason-bench-a-train, 2607.26397
+
+- [[cam-wolf-causal-aware-multimodal-agents-for-social]] - Skill derived from arXiv:2607.26393 - CaM-Wolf: Causal-Aware Multimodal Agents for Social Deduction Games
+  - Core point 1: CaM-Wolf: Causal-Aware Multimodal Agents for Social Deduction Games
+  - Core point 2: Derived from arXiv:2607.26393
+  - **Activation**: cam-wolf-causal-aware-multimodal-agents-for-social, 2607.26393
+
+- [[exploring-structures-in-physics-problems-can-ai-ag]] - Skill derived from arXiv:2607.26367 - Exploring Structures in Physics Problems: Can AI Agents Discover Statistical Mechanical Mappings?
+  - Core point 1: Exploring Structures in Physics Problems: Can AI Agents Discover Statistical Mechanical Mappings?
+  - Core point 2: Derived from arXiv:2607.26367
+  - **Activation**: exploring-structures-in-physics-problems-can-ai-ag, 2607.26367
+
+- [[when-synthetic-users-fail-a-cross-domain-benchmark]] - Skill derived from arXiv:2607.26348 - When Synthetic Users Fail: A Cross-Domain Benchmark of LLM-Simulated Human Survey Responses
+  - Core point 1: When Synthetic Users Fail: A Cross-Domain Benchmark of LLM-Simulated Human Survey Responses
+  - Core point 2: Derived from arXiv:2607.26348
+  - **Activation**: when-synthetic-users-fail-a-cross-domain-benchmark, 2607.26348
+
+- [[from-conceptual-hydrologic-models-to-conceptually-]] - Skill derived from arXiv:2607.26492 - From Conceptual Hydrologic Models to Conceptually Interpretable Neural Networks: A Snow-Water Mass-C
+  - Core point 1: From Conceptual Hydrologic Models to Conceptually Interpretable Neural Networks: A Snow-Water Mass-C
+  - Core point 2: Derived from arXiv:2607.26492
+  - **Activation**: from-conceptual-hydrologic-models-to-conceptually-, 2607.26492
+
+- [[post-training-at-the-edge-of-detectability-a-game-]] - Skill derived from arXiv:2607.26358 - Post-Training at the Edge of Detectability: A Game-Theoretic Approach to Fine-Tuning
+  - Core point 1: Post-Training at the Edge of Detectability: A Game-Theoretic Approach to Fine-Tuning
+  - Core point 2: Derived from arXiv:2607.26358
+  - **Activation**: post-training-at-the-edge-of-detectability-a-game-, 2607.26358
+
+- [[do-you-really-need-to-pretrain-q-functions-for-onl]] - Skill derived from arXiv:2607.27203 - Do You Really Need to Pretrain Q-Functions for Online RL Fine-Tuning?
+  - Core point 1: Do You Really Need to Pretrain Q-Functions for Online RL Fine-Tuning?
+  - Core point 2: Derived from arXiv:2607.27203
+  - **Activation**: do-you-really-need-to-pretrain-q-functions-for-onl, 2607.27203
+
+- [[partner-capability-estimation-for-task-agnostic-ad]] - Skill derived from arXiv:2607.27177 - Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork
+  - Core point 1: Partner Capability Estimation for Task-Agnostic Adaptation in Ad-Hoc Teamwork
+  - Core point 2: Derived from arXiv:2607.27177
+  - **Activation**: partner-capability-estimation-for-task-agnostic-ad, 2607.27177
+
+- [[alphaschema-exploring-the-space-of-trading-semanti]] - Skill derived from arXiv:2607.26642 - AlphaSchema: Exploring the Space of Trading Semantics for LLM-Based Alpha Mining
+  - Core point 1: AlphaSchema: Exploring the Space of Trading Semantics for LLM-Based Alpha Mining
+  - Core point 2: Derived from arXiv:2607.26642
+  - **Activation**: alphaschema-exploring-the-space-of-trading-semanti, 2607.26642
+
+- [[a-physics-informed-framework-for-pid-tuning-of-che]] - Skill derived from arXiv:2607.26594 - A Physics-Informed Framework for PID Tuning of Chemical Processes Using Large Language Model Agents
+  - Core point 1: A Physics-Informed Framework for PID Tuning of Chemical Processes Using Large Language Model Agents
+  - Core point 2: Derived from arXiv:2607.26594
+  - **Activation**: a-physics-informed-framework-for-pid-tuning-of-che, 2607.26594
+
+- [[fas-r1-a-unified-multi-task-mllm-for-reasoning-fac]] - Skill derived from arXiv:2607.26432 - FAS-R1: A Unified Multi-Task MLLM for Reasoning Face Anti-Spoofing
+  - Core point 1: FAS-R1: A Unified Multi-Task MLLM for Reasoning Face Anti-Spoofing
+  - Core point 2: Derived from arXiv:2607.26432
+  - **Activation**: fas-r1-a-unified-multi-task-mllm-for-reasoning-fac, 2607.26432
 ## New High-Utility Papers (2026-07-21)
 
 - [[trim-reducing-ai-generated-codeslop-via-agent-traj]] - Skill derived from arXiv:2607.18161 - TRIM: Reducing AI-Generated CodeSlop via Agent Trajectory Minimization
