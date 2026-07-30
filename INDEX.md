@@ -1,3 +1,18 @@
+## 2026-07-31 - Deep Learning Research (Cron Job)
+
+### TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM
+- [[turbovla-real-time-vla]] - TurboVLA architecture for real-time vision-language-action models achieving 32 Hz inference with <1 GB VRAM. Reformulates conventional V→L→A pathway as direct V+L→A mapping with lightweight bidirectional vision-language interaction. (arXiv: 2607.27205)
+  - Direct V+L→A mapping avoids LLM-centric overhead, achieving 31.2 ms latency and 0.9 GB VRAM usage
+  - 97.7% average success on LIBERO with only 0.2B parameters, matching larger VLA policies
+  - Lightweight bidirectional vision-language interaction enables task-conditioned representations
+  - **Activation**: TurboVLA, real-time VLA, vision-language-action efficiency, robotic manipulation real-time, sub-1GB VRAM robotics, V+L→A mapping, lightweight VLA, consumer GPU robotics, 32 Hz inference, compact VLA decoder
+
+### Metis: Memory Foundation Model
+- [[metis-memory-foundation-model]] - Metis Memory Foundation Model framework for native memory capabilities in foundation models. Introduces persistent dynamically evolving memory state within backbone and native memory procedures for autonomous information storage/utilization. (arXiv: 2607.26760)
+  - Native memory formalized as persistent memory state + autonomous memory procedures through computation
+  - Gradient-free online memory maintenance requiring only forward pass, with all weights frozen during inference
+  - Large-scale memory-specific training data with multiple optimization objectives acquires native memory procedures
+  - **Activation**: Metis memory foundation model, native memory capabilities, frozen-weight memory inference, gradient-free memory maintenance, memory attention mechanisms, autonomous memory transformation, internalized agent memory, memory state compression, foundation model memory, AI agent native memory
 ## 2026-07-30 - Neuroscience Research (Cron Job)
 
 ### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
