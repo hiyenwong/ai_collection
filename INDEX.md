@@ -1,5 +1,13 @@
 ## 2026-07-31 - Neuroscience Research (Cron Job)
 
+### EEG Foundation Models Lose Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility
+- [[eeg-foundation-temporal-correlations-blindness]] - EEG foundation models lose long-range temporal correlations: framework for analyzing spectral-temporal dissociation and cross-population fragility in EEG foundation models. Provides methodology for testing LRTC recovery via DFA exponent and evaluating cross-cohort transfer performance. (arXiv: 2607.24834)
+  - None of five tested EEG FMs represented LRTC; raw-waveform models failed on both DFA and 1/f slope
+  - Spectral-input models recovered 1/f slope strongly (R²=0.59-0.73) but not DFA across cohorts
+  - Classical DFA feature recovered exponent (R²=0.32-0.38); LRTC orthogonal to aperiodic slope (r=-0.06)
+  - All FMs dominated by recording-site axis (0.98-1.00 vs 0.500 chance); DFA exponent site-robust (0.71)
+  - **Activation**: eeg foundation models, long-range temporal correlations, dfa exponent, spectral-temporal dissociation, cross-population fragility, site robustness
+
 ### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
 - [[sparsity-ceiling-spiking-networks-energy]] - The Sparsity Ceiling methodology for analyzing energy-efficiency limits in spiking neural networks based on task characteristics and architectural constraints. Provides information-theoretic bounds on firing rates based on memory load, state width, and task difficulty. (arXiv: 2607.26648)
   - Information-theoretic bound ρ >= H_b^{-1}(log2 M / H) predicts minimum firing rates
