@@ -1,3 +1,12 @@
+## 2026-07-30 - Quantum Computing Research (Cron Job)
+
+### OmniQEC: discovering practical quantum error-correcting codes by an AI scientist
+- [[omniqec-ai-scientist-quantum-error-correction]] - AI scientist framework for discovering QEC codes using LLM orchestrator with slow-fast synergistic workflow (arXiv: 2607.25865)
+  - Formulates QEC design as iterative discovery process with code generation, screening, syndrome extraction, and decoder evaluation
+  - Combines fast loop (inexpensive code-level proxies) with slow loop (physically grounded circuit evaluation)
+  - Discovered codes outperform BB codes under complete-implementation budgets of 98 and 240 physical qubits
+  - **Activation**: quantum error correction, QEC, qLDPC, AI scientist, LLM-assisted discovery, code-circuit-decoder co-design
+
 ## 2026-07-30 - Systems Engineering Research (Cron Job)
 
 ### VeraGrid-Agent: Tool-Augmented LLMs for Distribution Optimal Power Flow at the Grid Edge
