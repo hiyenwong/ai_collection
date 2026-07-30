@@ -1,3 +1,11 @@
+## 2026-07-30 - Neuroscience Research (Cron Job)
+
+### Foundation Models for EEG Are Blind to Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility
+- [[eeg-foundation-temporal-correlations-blindness]] - EEG foundation models lose long-range temporal correlations (LRTC) in their embeddings, creating a spectral-temporal dissociation that limits cross-population transfer (arXiv: 2607.24834)
+  - Raw-waveform models recover neither DFA exponent nor 1/f slope (R² ≤ 0.12)
+  - Spectral-input models recover 1/f strongly (R² = 0.59-0.73) but not DFA across cohorts
+  - All five FMs dominated by recording-site axis (decodable at 0.98-1.00 vs. 0.500 chance)
+  - **Activation**: EEG foundation models, Long-range temporal correlations, DFA exponent, Cross-population transfer, Spectral-temporal dissociation
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
