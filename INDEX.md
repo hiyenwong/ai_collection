@@ -1,3 +1,21 @@
+## 2026-07-31 - Neuroscience Research (Cron Job)
+
+### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
+- [[sparsity-ceiling-spiking-networks-energy]] - The Sparsity Ceiling methodology for analyzing energy-efficiency limits in spiking neural networks based on task characteristics and architectural constraints. Provides information-theoretic bounds on firing rates based on memory load, state width, and task difficulty. (arXiv: 2607.26648)
+  - Information-theoretic bound ρ >= H_b^{-1}(log2 M / H) predicts minimum firing rates
+  - Feed-forward perception: 5% firing, no accuracy cost; Recurrent LM: ~50% minimum; Spiking Transformer: 2% firing
+  - Attention trades firing floor for memory wall (full key-value cache storage)
+  - Event-driven perception isolated as primary domain where neuromorphic hardware wins
+  - **Activation**: sparsity ceiling, spiking neural networks, energy efficiency, neuromorphic computing, firing rate limits, memory-computation tradeoff, event-driven perception, recurrent compression
+
+### Reconstructing Backpropagation from Forward Fluctuations in Noise-modulated Neural Networks
+- [[reconstructing-backpropagation-noise-modulated-networks]] - Methodology for reconstructing backpropagation-like learning without weight transport by using noise-modulated neural networks that estimate gradients from forward-pass statistics. Solves the weight transport problem through local differential estimation. (arXiv: 2607.26483)
+  - Uses weight mirror + local differential estimation to approximate gradient signals
+  - Leverages noise-modulated networks to extract gradient information from forward fluctuations
+  - Enables biologically plausible backpropagation without requiring symmetric feedback pathways
+  - Demonstrates successful learning on standard benchmarks without explicit error backpropagation
+  - **Activation**: reconstructing backpropagation, noise-modulated networks, weight transport problem, biologically plausible learning, local differential estimation, forward fluctuation gradients
+
 ## 2026-07-31 - Deep Learning Research (Cron Job)
 
 ### TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM
@@ -12,8 +30,7 @@
   - Native memory formalized as persistent memory state + autonomous memory procedures through computation
   - Gradient-free online memory maintenance requiring only forward pass, with all weights frozen during inference
   - Large-scale memory-specific training data with multiple optimization objectives acquires native memory procedures
-  - **Activation**: Metis memory foundation model, native memory capabilities, frozen-weight memory inference, gradient-free memory maintenance, memory attention mechanisms, autonomous memory transformation, internalized agent memory, memory state compression, foundation model memory, AI agent native memory
-## 2026-07-30 - Neuroscience Research (Cron Job)
+  - **Activation**: Metis memory foundation model, native memory capabilities, frozen-weight memory inference, gradient-free memory maintenance, memory attention mechanisms, autonomous memory transformation, internalized agent memory, memory state compression, foundation model memory, AI agent native memory## 2026-07-30 - Neuroscience Research (Cron Job)
 
 ### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
 - [[sparsity-ceiling-snn-energy-efficiency]] - The Sparsity Ceiling framework for analyzing where Spiking Neural Networks can and cannot trade activity for energy efficiency. Provides information-theoretic bounds on firing rates based on memory load, state width, and task difficulty. (arXiv: 2607.26648)
