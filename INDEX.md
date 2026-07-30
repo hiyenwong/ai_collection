@@ -1,3 +1,18 @@
+## 2026-07-30 - Systems Engineering Research (Cron Job)
+
+### VeraGrid-Agent: Tool-Augmented LLMs for Distribution Optimal Power Flow at the Grid Edge
+- [[veragrid-agent-tool-augmented-llm-power-flow]] - Tool-augmented LLM methodology for solving distribution optimal power flow problems by integrating with numerical solvers like VeraGrid (arXiv: 2607.25155)
+  - Integrates LLMs with numerical solvers for complex scientific questions requiring D-OPF problem solving
+  - Achieves near-perfect accuracy compared to random chance without tools
+  - Framework extensible to other domains requiring numerical computation
+  - **Activation**: veragrid-agent, tool-augmented-llm, power-flow-simulation, distribution-optimal-power-flow, numerical-solver-integration, scientific-llm-reasoning
+
+### Specula: Scaling formal specifications for autonomous model checking of system code
+- [[specula-formal-specifications-model-checking]] - Autonomous agentic system for generating formal specifications and model checking of system code using LLM-based coding agents (arXiv: 2607.25333)
+  - Fully autonomous TLA+ specification generation eliminating human expertise barriers
+  - Self-evolving loops address LLM limitations through iterative refinement
+  - Found 249 bugs across 48 open-source system projects including deep, hard-to-find bugs
+  - **Activation**: specula, formal-specifications, model-checking, tla-plus, llm-agents, autonomous-verification, system-code-analysis, bug-finding
 ## 2026-07-30 - Neuroscience Research (Cron Job)
 
 ### More Electrodes, Faster Minds? Rethinking Bandwidth in Brain-Computer Interfaces
