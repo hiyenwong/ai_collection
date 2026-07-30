@@ -14,6 +14,13 @@
   - Spectral-input models recover 1/f strongly (R² = 0.59-0.73) but not DFA across cohorts
   - All five FMs dominated by recording-site axis (decodable at 0.98-1.00 vs. 0.500 chance)
   - **Activation**: EEG foundation models, Long-range temporal correlations, DFA exponent, Cross-population transfer, Spectral-temporal dissociation
+
+### A Path Integral Model of Cognition
+- [[path-integral-cognition-model]] - Path Integral Model of Cognition methodology combining quantum physics path integrals with cognitive cost optimization using imaginary-time evolution under projector Hamiltonians and Wick rotation for unitary equivalent representation (arXiv: 2607.24807)
+  - Imaginary-time evolution coincides with double-bracket flow as Riemannian gradient flow of Hilbert-Schmidt cost
+  - Wick rotation provides equivalent unitary evolution with exact discrete path-integral representation
+  - Consciousness continuum mapped to system-environment coupling strength: weak coupling → GKSL decoherence (unconscious), strong coupling → projective fixation ("Aha" insight)
+  - **Activation**: path integral cognition, imaginary time evolution cognition, Wick rotation consciousness, projector Hamiltonian cognition, GKSL cognitive model
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
