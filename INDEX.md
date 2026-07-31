@@ -1,5 +1,13 @@
 ## 2026-07-31 - Neuroscience Research (Cron Job)
 
+### Temporal Poisoning: Clean-Label Backdoors via Event Redistribution in SNNs
+- [[temporal-poisoning-clean-label-backdoors-snn]] - First clean-label backdoor attack on Spiking Neural Networks using temporal poisoning that preserves event counts but alters spike timing, achieving ASR=1.00 (arXiv: 2607.28075)
+  - Introduces temporal poisoning that applies fixed timestamp transformation only to target-class training streams while preserving per-pixel, per-polarity event counts exactly
+  - Achieves Attack Success Rate (ASR) of 1.00 in strongest configurations across three neuromorphic datasets (NMNIST, SHD, IBM DVS Gesture)
+  - Works on both convolutional and transformer-based SNN architectures, demonstrating broad vulnerability
+  - Shows rate-collapsed defenses fail against temporal attacks, proposes model-free detector based on per-step event mass
+  - **Activation**: neuroscience, spiking neural network, SNN, backdoor attack, temporal poisoning, neuromorphic
+
 ### ZUNA1.1: A more flexible EEG foundation model for Denoising and Super-resolution
 - [[zuna1-1-flexible-eeg-foundation-model]] - A 380M-parameter diffusion autoencoder for flexible EEG signal reconstruction with arbitrary channel configurations and temporal intervals (arXiv: 2607.27308)
   - Handles variable length sequences up to 30s with arbitrary numbers of EEG channels at arbitrary scalp locations
