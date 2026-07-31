@@ -59,7 +59,7 @@
   - **Activation**: Metis memory foundation model, native memory capabilities, frozen-weight memory inference, gradient-free memory maintenance, memory attention mechanisms, autonomous memory transformation, internalized agent memory, memory state compression, foundation model memory, AI agent native memory## 2026-07-30 - Neuroscience Research (Cron Job)
 
 ### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
-- [[sparsity-ceiling-snn-energy-efficiency]] - The Sparsity Ceiling framework for analyzing where Spiking Neural Networks can and cannot trade activity for energy efficiency. Provides information-theoretic bounds on firing rates based on memory load, state width, and task difficulty. (arXiv: 2607.26648)
+- [[sparsity-ceiling-spiking-networks-energy]] - The Sparsity Ceiling framework for analyzing where Spiking Neural Networks can and cannot trade activity for energy efficiency. Provides information-theoretic bounds on firing rates based on memory load, state width, and task difficulty. (arXiv: 2607.26648)
   - Information-theoretic bound ρ >= H_b^{-1}(log2 M / H) predicts minimum firing rates
   - Feed-forward perception: 5% firing, no accuracy cost; Recurrent LM: ~50% minimum; Spiking Transformer: 2% firing
   - Attention trades firing floor for memory wall (full key-value cache storage)
