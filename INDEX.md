@@ -1,3 +1,12 @@
+## 2026-07-31 - Systems Engineering Research (Cron Job)
+
+### A Physics-Informed Framework for PID Tuning of Chemical Processes Using Large Language Model Agents
+- [[physics-informed-llm-pid-tuning]] - A physics-informed framework that uses Large Language Model agents for PID tuning of chemical processes, combining closed-loop response features, control-engineering diagnoses, and physics-informed reinforcement learning. (arXiv: 2607.26594)
+  - Hosted LLMs (DeepSeek-V4-Flash, Qwen3.7-Plus) achieve 75-89% success rate on FOPDT cases and 77-79% on SOPDT cases
+  - Local SLM (Qwen3-0.6B) with SFT achieves 86.5% first-recommendation success, improved to 94.0% with PI-GRPO
+  - Combines engineer-like workflow formalization with physics-informed constraints and iterative correction
+  - **Activation**: PID tuning, chemical process control, physics-informed LLM, control system optimization, process control
+
 ## 2026-07-31 - Neuroscience Research (Cron Job)
 
 ### EEG Foundation Models Lose Long-Range Temporal Correlations: A Spectral-Temporal Dissociation Behind Their Cross-Population Fragility
