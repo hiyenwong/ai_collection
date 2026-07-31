@@ -1,4 +1,11 @@
-## 2026-07-31 - Quantum Computing Research (Cron Job)
+## 2026-07-31 - Neuroscience Research (Cron Job)
+
+### ZUNA1.1: A more flexible EEG foundation model for Denoising and Super-resolution
+- [[zuna1-1-flexible-eeg-foundation-model]] - A 380M-parameter diffusion autoencoder for flexible EEG signal reconstruction with arbitrary channel configurations and temporal intervals (arXiv: 2607.27308)
+  - Handles variable length sequences up to 30s with arbitrary numbers of EEG channels at arbitrary scalp locations
+  - Can reconstruct arbitrary temporal intervals within channels in addition to entire channels
+  - Outperforms standard EEG denoising methods like spherical spline interpolation while maintaining flexibility
+  - **Activation**: zuna1.1 eeg foundation model, flexible eeg denoising, eeg super-resolution diffusion, arbitrary channel eeg reconstruction, variable length eeg diffusion## 2026-07-31 - Quantum Computing Research (Cron Job)
 
 ### Practical Quantum Topological Data Analysis with Applications to High-Dimensional Feature Extraction and Time Series Analysis
 - [[practical-quantum-topological-data-analysis]] - Quantum TDA as a feature-extraction method using low-order spectral information from the combinatorial Laplacian as a proxy for high-dimensional topology. (arXiv: 2607.27206)
