@@ -49,6 +49,13 @@
   - Demonstrates successful learning on standard benchmarks without explicit error backpropagation
   - **Activation**: reconstructing backpropagation, noise-modulated networks, weight transport problem, biologically plausible learning, local differential estimation, forward fluctuation gradients
 
+### Stimulus-Evoked Network Dynamics in Human Cortical Organoids: From a Graph-Computational Framework to Repeated-Stimulation Depression
+- [[stimulus-evoked-network-dynamics-organoids]] - Graph-computational framework for analyzing stimulus-evoked propagation dynamics in human cortical organoids using HD-MEA recordings. Includes stimulus-conditioned functional graphs, graph-constrained dynamical models, biological message-passing principles, and longitudinal depression analysis. (arXiv: 2607.28068)
+  - Evoked responses show fast, near-synchronous network bursts with no measurable outward propagation (peak-latency vs. distance slope = 0)
+  - Traditional propagation/integration-depth metrics may not apply due to limited trial counts and synchronous responses  
+  - Repeated daily stimulation progressively depresses and spatially contracts evoked responses (93% vs 10% array engagement)
+  - **Activation**: cortical organoids, stimulus-evoked dynamics, graph-computational framework, HD-MEA recordings, repeated-stimulation depression, functional connectivity graphs, neural propagation analysis
+
 ## 2026-07-31 - Deep Learning Research (Cron Job)
 
 ### TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM
