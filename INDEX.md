@@ -1,3 +1,12 @@
+## 2026-07-31 - Quantum Computing Research (Cron Job)
+
+### Practical Quantum Topological Data Analysis with Applications to High-Dimensional Feature Extraction and Time Series Analysis
+- [[practical-quantum-topological-data-analysis]] - Quantum TDA as a feature-extraction method using low-order spectral information from the combinatorial Laplacian as a proxy for high-dimensional topology. (arXiv: 2607.27206)
+  - Higher-order TDA features improve predictive performance in fMRI analysis for neurodegenerative disease classification and financial time-series analysis for market instability detection
+  - Low-order moments (including relative trace) strongly correlate with high-dimensional Betti information, even when relative Betti number is small
+  - Includes circuit constructions, resource estimates, quantum-classical crossover projections, and experimental results from a Barium development system
+  - **Activation**: quantum TDA, topological data analysis, quantum feature extraction, Laplacian moments, Betti numbers, time series analysis, fMRI analysis
+
 ## 2026-07-31 - Systems Engineering Research (Cron Job)
 
 ### A Physics-Informed Framework for PID Tuning of Chemical Processes Using Large Language Model Agents
