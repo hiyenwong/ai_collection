@@ -1,161 +1,111 @@
 ---
 name: computational-affordance-landscape-brain-networks
-title: Computational Affordance Landscape Framework for Brain Structure-Function Analysis
-version: 1.0.0
-description: Framework for quantifying the cost of network computations to understand structure-function relationships in neural circuits using control theory and computational affordance landscapes.
-author: Engineering Lion #5
-license: MIT
-tags:
-  - brain-networks
-  - computational-neuroscience
-  - control-theory
-  - structure-function-relationships
-  - neural-circuits
-  - arxiv-2607.29537
-trigger_words:
-  - computational affordance landscape
-  - network computation cost
-  - brain structure-function
-  - neural circuit control
-  - activity transition cost
+description: "Computational Affordance Landscape framework for quantifying the cost of network computations to unpack structure-function relationships in brain networks. Use when analyzing how neural circuit structure shapes computational capabilities, studying structure-function relationships in biological or artificial neural networks, or applying control theory to understand which computations a network readily supports."
+metadata:
+  arxiv_id: "2607.29537"
+  authors: "Suman S. Kulkarni, Jason Z. Kim, Panagiotis Fotiadis, Fabio Pasqualetti, Dani S. Bassett"
+  published: "2026-07-31"
+  tags: [computational-neuroscience, brain-networks, control-theory, structure-function, neural-circuits]
+license: Complete terms in LICENSE.txt
 ---
 
 # Computational Affordance Landscape Framework
 
-## Overview
-This skill implements the methodology from the arXiv paper "Quantifying the cost of network computations to unpack structure-function relationships in the brain" (arXiv:2607.29537) by Kulkarni et al. It provides a unifying quantitative framework to understand how network structure shapes the computations a network can readily support by framing computation as goal-directed transitions of activity and quantifying their cost using control theory.
+This skill provides the methodology for quantifying the cost of network computations to unpack structure-function relationships in the brain, as introduced in the paper "Quantifying the cost of network computations to unpack structure-function relationships in the brain" (arXiv:2607.29537).
 
-## Key Concepts
+## Core Concept
 
-### Computational Affordance Landscape
-- **Definition**: Distribution of costs across all possible activity transitions that encodes which computations a network structure readily supports
-- **Core insight**: Network structure creates "affordances" - some computations are naturally easier (lower cost) than others
-- **Measurement**: Use control theory to quantify the energy/input required to drive specific activity transitions
+The framework frames computation as a goal-directed transition of activity and quantifies its cost on a given network using control theory. The distribution of costs across all possible transitions defines a **computational affordance landscape** that encodes which computations a network structure readily supports.
 
-### Application Domains
+## Key Applications
 
-#### Insect Navigation Circuits
-- **Finding**: Updating orientation is the least costly computation
-- **Validation**: Predicted inputs consistent with known biological circuitry
-- **Implication**: Circuit structure evolved to minimize cost of essential computations
+### 1. Insect Navigation Circuits
+- Applied to circuit models for how insects maintain a sense of direction
+- Shows that updating orientation is the least costly computation
+- Predicted inputs are consistent with known biological circuitry
 
-#### Human Brain Networks
-- **Sensory networks**: Display heterogeneous landscapes reflecting specialized information processing roles
-- **Association networks**: Display homogeneous landscapes reflecting generalized information processing roles
-- **Pattern**: Functional role determines landscape characteristics
+### 2. Human Brain Networks
+- Sensory networks display more heterogeneous landscapes (specialized information processing)
+- Association networks display more homogeneous landscapes (generalized information processing)
 
-#### Recurrent Neural Networks (RNNs)
-- **Learning effect**: Training progressively increases landscape heterogeneity
-- **Mechanism**: Learning reshapes distribution of affordable computations
-- **Insight**: RNNs adapt their computational affordances to task requirements
+### 3. Recurrent Neural Networks
+- Learning progressively increases landscape heterogeneity
+- Reshapes the distribution of affordable computations during training
 
-## Methodology
+## Methodology Steps
 
-### Framework Components
-1. **Activity Transition Definition**: Specify initial and target activity patterns
-2. **Cost Quantification**: Use optimal control theory to compute minimum input energy
-3. **Landscape Construction**: Sample transitions across state space to build cost distribution
-4. **Analysis**: Identify low-cost regions (afforded computations) and high-cost regions (constrained computations)
+### Step 1: Define Network Structure
+- Represent the neural circuit as a graph with nodes (neurons/regions) and edges (connections)
+- Ensure the adjacency matrix captures the underlying connectivity structure
 
-### Mathematical Foundation
-- **Control theory**: Minimum energy control for linear systems
-- **Network dynamics**: Linear or linearized network models
-- **Cost function**: Quadratic input energy minimization
-- **Sampling strategy**: Systematic exploration of transition space
+### Step 2: Frame Computation as State Transition
+- Define the initial state vector representing current activity pattern
+- Define the target state vector representing desired activity pattern
+- The computation is the transition from initial to target state
 
-### Implementation Steps
-```python
-def compute_affordance_landscape(network_structure, dynamics_model):
-    # 1. Define state space sampling strategy
-    initial_states = sample_state_space(num_samples=1000)
-    target_states = sample_state_space(num_samples=1000)
-    
-    # 2. Compute transition costs
-    costs = []
-    for init_state in initial_states:
-        for target_state in target_states:
-            cost = compute_minimum_control_energy(
-                network_structure, dynamics_model, 
-                init_state, target_state
-            )
-            costs.append(cost)
-    
-    # 3. Construct landscape distribution
-    landscape = construct_cost_distribution(costs)
-    
-    # 4. Analyze affordances
-    low_cost_computations = identify_afforded_transitions(landscape)
-    high_cost_computations = identify_constrained_transitions(landscape)
-    
-    return landscape, low_cost_computations, high_cost_computations
-```
+### Step 3: Compute Control Cost
+- Use linear quadratic regulator (LQR) or minimum energy control theory
+- Calculate the minimum control energy required to drive the transition
+- Formula: E = (x_target - e^(At) * x_initial)^T * W^(-1) * (x_target - e^(At) * x_initial)
+  where W is the controllability Gramian
 
-## Practical Applications
+### Step 4: Generate Affordance Landscape
+- Compute costs for all possible state transitions (or a representative sample)
+- Create a distribution of computational costs
+- Analyze landscape properties: heterogeneity, modality, cost ranges
 
-### Neuroscience Research
-- **Circuit analysis**: Understand why specific neural circuits evolved particular structures
-- **Functional mapping**: Predict computational capabilities from structural connectivity
-- **Comparative analysis**: Compare affordance landscapes across species or brain regions
+### Step 5: Interpret Structure-Function Relationships
+- Low-cost regions indicate computations the network readily supports
+- High-cost regions indicate computations requiring significant external input
+- Compare landscapes across different network types or learning stages
 
-### Artificial Intelligence
-- **Architecture design**: Design neural network architectures with desired computational affordances
-- **Task alignment**: Match network structure to task requirements based on affordance analysis
-- **Learning dynamics**: Monitor how training reshapes computational affordances
+## Implementation Considerations
 
-### Network Science
-- **General framework**: Apply to other biological and physical networks beyond neural systems
-- **Structure-function prediction**: Predict functional capabilities from network topology
-- **Optimization**: Design networks optimized for specific computational tasks
+### Computational Complexity
+- Full landscape computation scales with O(N^2) for N-dimensional state space
+- For large networks, use sampling strategies or dimensionality reduction
+- Focus on biologically relevant state transitions rather than exhaustive enumeration
 
-## Analysis Guidelines
+### Network Types
+- **Microscale circuits**: Individual neurons with detailed connectivity
+- **Macroscale networks**: Brain regions with functional connectivity
+- **Artificial networks**: RNNs, transformers, or other neural architectures
 
-### Landscape Characteristics
-- **Heterogeneity**: High heterogeneity indicates specialized computational roles
-- **Homogeneity**: High homogeneity indicates generalized computational capabilities  
-- **Skewness**: Right-skewed landscapes favor easy computations over difficult ones
-- **Modality**: Multi-modal landscapes suggest distinct computational regimes
-
-### Interpretation Framework
-1. **Identify affordances**: What computations are naturally supported?
-2. **Assess constraints**: What computations are inherently difficult?
-3. **Compare networks**: How do different structures create different affordances?
-4. **Track evolution**: How do affordances change with learning or development?
+### Validation Methods
+- Compare predicted low-cost computations with empirical neural activity
+- Validate against known biological constraints and circuitry
+- Test predictions in behavioral or cognitive tasks
 
 ## Pitfalls and Limitations
 
-### Common Challenges
-- **Computational complexity**: Full landscape computation scales poorly with network size
-- **Model assumptions**: Linear dynamics may not capture all neural phenomena
-- **Sampling bias**: Incomplete sampling may miss important transition regions
-- **Energy vs. time**: Control energy may not reflect biological resource constraints
+### 1. Linear Approximation
+- The framework assumes linear dynamics around operating points
+- Nonlinear effects may be significant in some neural systems
+- Consider piecewise linear approximations for nonlinear regimes
 
-### Mitigation Strategies
-- **Approximate methods**: Use sampling and interpolation for large networks
-- **Nonlinear extensions**: Incorporate nonlinear dynamics where critical
-- **Adaptive sampling**: Focus sampling on relevant transition regions
-- **Multi-objective optimization**: Consider multiple resource constraints simultaneously
+### 2. Static Structure Assumption
+- Assumes fixed network structure during computation
+- Real neural networks exhibit plasticity and dynamic rewiring
+- Extend to time-varying networks for more realistic modeling
+
+### 3. Energy vs. Biological Cost
+- Control energy is a proxy for biological metabolic cost
+- Actual neural energy consumption involves additional factors
+- Calibrate energy measures against empirical metabolic data when available
 
 ## Activation Keywords
-Use this skill when analyzing:
-- Brain network structure-function relationships
-- Computational affordance landscapes
-- Network computation costs
-- Neural circuit control theory
-- Activity transition energy analysis
-- Comparative network analysis
-- Learning-induced landscape changes
+
+- computational affordance landscape
+- structure-function relationships brain
+- network computation cost
+- control theory neural circuits
+- brain network controllability
+- neural circuit optimization
+- affordance landscape neuroscience
 
 ## References
-- Kulkarni, S. S., Kim, J. Z., Fotiadis, P., Pasqualetti, F., & Bassett, D. S. (2026). Quantifying the cost of network computations to unpack structure-function relationships in the brain. arXiv:2607.29537 [q-bio.NC]
-- Related work: 
-  - "Brain Network Controllability" (brain-network-controllability)
-  - "Functional Whole-Brain Models" (functional-whole-brain-models-fwbm)
-  - "Network Control Theory" applications in neuroscience
 
-## Verification Steps
-To validate this framework:
-1. Implement the control theory cost computation for your target network
-2. Sample activity transitions systematically across the state space
-3. Construct the computational affordance landscape distribution
-4. Identify low-cost and high-cost computational regions
-5. Validate predictions against known functional capabilities or experimental data
+- Original paper: arXiv:2607.29537
+- Related work on network controllability in neuroscience
+- Control theory applications to neural systems
+- Structure-function relationship studies in computational neuroscience
