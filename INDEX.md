@@ -1,3 +1,12 @@
+## 2026-08-04 - Neuroscience Research (Cron Job)
+
+### Quantifying the cost of network computations to unpack structure-function relationships in the brain
+- [[computational-affordance-landscape-brain-networks]] - Framework for quantifying network computation costs using control theory to understand structure-function relationships through computational affordance landscapes (arXiv: 2607.29537)
+  - Defines computational affordance landscape as distribution of transition costs encoding which computations network structure readily supports
+  - Insect navigation circuits: updating orientation is least costly computation, predictions match known circuitry
+  - Human brain: sensory networks show heterogeneous landscapes (specialized processing), association networks show homogeneous landscapes (generalized processing)
+  - RNNs: learning progressively increases landscape heterogeneity, reshaping affordable computations
+  - **Activation**: computational affordance landscape, network computation cost, brain structure-function, neural circuit control, activity transition cost
 ## 2026-07-31 - Neuroscience Research (Cron Job)
 
 ### Temporal Poisoning: Clean-Label Backdoors via Event Redistribution in SNNs
