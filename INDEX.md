@@ -1,5 +1,13 @@
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### Multi-Source Multi-View Graph Domain Adaptation with Hyperbolic Residual Encoding for Cross-Site MDD Identification from rs-fMRI
+- [[multi-source-multi-view-graph-domain-adaptation-hyperbolic]] - Multi-Source Multi-View Graph Domain Adaptation with Hyperbolic Residual Encoding framework for cross-site Major Depressive Disorder (MDD) identification from resting-state fMRI, achieving 73.60% mean accuracy and 71.90% AUC across seven unlabeled target domains (arXiv: 2607.29531)
+  - Constructs Pearson correlation, sparse representation, and Granger causality graphs for multi-view functional connectivity
+  - Uses dual-stream adaptive fusion to integrate pairwise cross-view interactions while preserving view-specific information
+  - Applies lightweight hyperbolic residual encoding for curvature-aware representation refinement
+  - Implements class-wise Cauchy-Schwarz alignment, adversarial learning, information maximization, and confidence-aware pseudo-labeling for multi-source domain adaptation
+  - **Activation**: multi-source domain adaptation brain, hyperbolic residual encoding fmri, cross-site mdd identification, multi-view functional connectivity, graph domain adaptation neuroscience
+
 ### Parameter-Efficient Fine-Tuning for Spiking Point Cloud Models
 - [[spikepeft-parameter-efficient-snn-finetuning]] - First parameter-efficient fine-tuning framework for spiking point cloud models using Intrinsic Dynamics Tuning (IDT) and Silent-State Disambiguation Adaptation (SSDA), achieving 92.4% accuracy on ModelNet40 while updating only ~5% of parameters (arXiv: 2607.29048)
   - Intrinsic Dynamics Tuning (IDT) modulates membrane decay and firing thresholds while keeping synaptic weights frozen
