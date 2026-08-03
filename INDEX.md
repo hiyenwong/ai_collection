@@ -1,5 +1,12 @@
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### ZUNA1.1: A more flexible EEG foundation model for Denoising and Super-resolution
+- [[zuna1-1-flexible-eeg-foundation-model]] - 380M-parameter diffusion autoencoder for flexible EEG signal reconstruction with arbitrary channel configurations and temporal intervals, substantially outperforming spherical spline interpolation while maintaining ZUNA1 performance (arXiv: 2607.27308)
+  - Supports variable sequence lengths up to 30s, arbitrary channel counts at arbitrary scalp locations
+  - Can reconstruct specific temporal intervals within channels rather than entire channels
+  - Handles real-world scenarios with non-uniform corruption across channels and time
+  - **Activation**: zuna1.1 eeg foundation model, flexible eeg denoising, eeg super-resolution diffusion, arbitrary channel eeg reconstruction, variable length eeg diffusion
+
 ### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
 - [[sparsity-ceiling-spiking-networks-energy]] - Framework for analyzing energy-efficiency limits in Spiking Neural Networks through the sparsity ceiling concept, identifying minimum firing rates below which computational quality breaks down based on architecture, memory load, and task complexity (arXiv: 2607.26648)
   - Architecture-dependent ceilings: feed-forward perception (5% firing), recurrent language models (~50% firing), spiking transformers (2% firing)
