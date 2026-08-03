@@ -1,5 +1,12 @@
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### Parameter-Efficient Fine-Tuning for Spiking Point Cloud Models
+- [[spikepeft-parameter-efficient-snn-finetuning]] - First parameter-efficient fine-tuning framework for spiking point cloud models using Intrinsic Dynamics Tuning (IDT) and Silent-State Disambiguation Adaptation (SSDA), achieving 92.4% accuracy on ModelNet40 while updating only ~5% of parameters (arXiv: 2607.29048)
+  - Intrinsic Dynamics Tuning (IDT) modulates membrane decay and firing thresholds while keeping synaptic weights frozen
+  - Silent-State Disambiguation Adaptation (SSDA) recovers task-relevant information from informative silent states
+  - Preserves energy efficiency advantages of SNNs while enabling efficient downstream task adaptation
+  - **Activation**: spikepeft, parameter-efficient fine-tuning snn, spiking point cloud models, intrinsic dynamics tuning, silent state disambiguation, neuromorphic vision models
+
 ### ZUNA1.1: A more flexible EEG foundation model for Denoising and Super-resolution
 - [[zuna1-1-flexible-eeg-foundation-model]] - 380M-parameter diffusion autoencoder for flexible EEG signal reconstruction with arbitrary channel configurations and temporal intervals, substantially outperforming spherical spline interpolation while maintaining ZUNA1 performance (arXiv: 2607.27308)
   - Supports variable sequence lengths up to 30s, arbitrary channel counts at arbitrary scalp locations
