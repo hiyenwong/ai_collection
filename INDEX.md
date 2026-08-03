@@ -1,5 +1,12 @@
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### MPP-GNN: Subject-Adaptive Community Detection for fMRI-Based Alzheimer's Disease Classification
+- [[mpp-gnn-subject-adaptive-community-detection]] - Meta Probabilistic Pooling GNN framework that performs adaptive graph partitioning hierarchically to discover subject-specific functional modules and uses them as explicit priors to guide edge refinement and representation learning for Alzheimer's disease classification, achieving highest AUC on two public datasets (arXiv: 2607.28681)
+  - Frames task as coupled bilevel optimization: upper level discovers subject-specific modules, lower level uses modules as explicit priors for edge refinement
+  - Overcomes fixed module assumption in traditional GNN methods by enabling personalized community detection
+  - Shows significant alignment with Yeo brain atlas and reveals network-level dedifferentiation pattern for AD
+  - **Activation**: MPP-GNN, subject-adaptive community detection, fMRI Alzheimer's classification, bilevel optimization GNN, functional module discovery, brain network dedifferentiation
+
 ### Multi-Source Multi-View Graph Domain Adaptation with Hyperbolic Residual Encoding for Cross-Site MDD Identification from rs-fMRI
 - [[multi-source-multi-view-graph-domain-adaptation-hyperbolic]] - Multi-Source Multi-View Graph Domain Adaptation with Hyperbolic Residual Encoding framework for cross-site Major Depressive Disorder (MDD) identification from resting-state fMRI, achieving 73.60% mean accuracy and 71.90% AUC across seven unlabeled target domains (arXiv: 2607.29531)
   - Constructs Pearson correlation, sparse representation, and Granger causality graphs for multi-view functional connectivity
