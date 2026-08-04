@@ -7,6 +7,13 @@
   - Demonstrates greater robustness to long-horizon autoregressive drift
   - **Activation**: neuroworld, brain world model, latent brain dynamics, causal brain forecasting
 
+### Mechanistic bridges from receptors to whole-brain dynamics: mean-field reductions, validity domains, and computational trade-offs
+- [[mechanistic-bridges-receptors-whole-brain-dynamics]] - Framework for receptor-aware whole-brain modeling that bridges molecular/synaptic scales to whole-brain recordings through mean-field reductions with explicit validity domains and computational trade-offs. (arXiv: 2608.00306)
+  - Builds upon explicit mathematical lineage from master-equation formalism to connectome-coupled whole-brain implementation
+  - Makes transparent assumptions underlying each reduction step and provides deliberate equation derivation
+  - Introduces algorithmic simulation cost and memory traffic as hardware-independent benchmark dimensions
+  - **Activation**: mechanistic bridges, receptor-aware whole-brain, mean-field reductions, whole-brain dynamics, computational neuroscience review
+
 ### Spike-HTR: Spiking Neural Transformer for Handwritten Text Recognition
 - [[spike-htr-spiking-neural-transformer]] - Hybrid spiking recognizer that controls both spiking steps and sequence positions processed by deep sequence mixer for handwritten text recognition. (arXiv: 2608.01646)
   - Uses InkCoder to convert static images into coarse-to-fine input streams suitable for short-horizon spiking inference
