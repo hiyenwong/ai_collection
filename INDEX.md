@@ -77,7 +77,7 @@
   - **Activation**: spike-htr, spiking neural transformer, handwritten text recognition, inkcoder, ctc-guided length reducer
 
 ### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
-- [[spikerestormer-unified-event-reasoning]] - Energy-efficient SNN for all-in-one image restoration that performs event reasoning over internally generated spike cues through degradation-event perception, reliability inference, and restoration-event construction. (arXiv: 2608.02290)
+
   - Introduces Subtractive Degradation Event Attention (SDEA) for spike-based degradation events
   - Uses Hierarchical Bayesian Skip Masking (HBSM) for event-reliability inference  
   - Implements Additive Restoration Event Attention (AREA) for restoration-event construction
