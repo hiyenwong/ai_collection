@@ -1,5 +1,14 @@
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
+### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
+- [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds (arXiv: 2608.01947)
+  - Creates robust, high-fidelity slow manifolds through biophysical constraints
+  - Introduces activity-dependent local gradient scaling during BPTT
+  - Self-compresses effective rank to confine dynamics to low-dimensional subspace
+  - **Activation**: divisive normalization, working memory, continuous attractor, RDNN
+
+## 2026-08-05 - Neuroscience Research (Cron Job)
+
 ### Interpretable MEG Decoding of Perceived Speech: Cortical Sources and the Stimulus Features That Drive Retrieval
 - [[interpretable-meg-decoding-perceived-speech]] - Interpretable MEG decoding framework that combines spherical harmonics spatial attention, source-space mapping, and stimulus feature analysis to reveal what drives neural-to-audio retrieval (arXiv: 2608.01481)
   - Achieves 39.75% Top-1 accuracy among 1005 candidates with ~20x fewer decoder parameters
