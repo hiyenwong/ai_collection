@@ -10,6 +10,13 @@
 
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking quantum reservoir computing performance to energetic costs, revealing fundamental computational and energetic limits of quantum learning devices. (arXiv: 2607.02157)
+  - Maps Holevo capacities onto Bogoliubov-Kubo-Mori geometric manifold to prove computational peak in quantum critical region originates from spectral resonance
+  - Introduces quantum informational dissipation to quantify non-predictive historical data and derives generalized Landauer bound for continuous temporal processing
+  - Demonstrates quantum coherences amplify predictive capacity without demanding additional mechanical work
+  - **Activation**: quantum reservoir computing, thermodynamics, quantum neuromorphic, non-equilibrium, Landauer bound, quantum critical, spectral resonance, informational dissipation, coherence amplification
+
 ### MPP-GNN: Subject-Adaptive Community Detection for fMRI-Based Alzheimer's Disease Classification
 - [[mpp-gnn-subject-adaptive-community-detection]] - Meta Probabilistic Pooling GNN framework that performs adaptive graph partitioning hierarchically to discover subject-specific functional modules and uses them as explicit priors to guide edge refinement and representation learning for Alzheimer's disease classification, achieving highest AUC on two public datasets (arXiv: 2607.28681)
   - Frames task as coupled bilevel optimization: upper level discovers subject-specific modules, lower level uses modules as explicit priors for edge refinement
