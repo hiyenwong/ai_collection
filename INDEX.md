@@ -1,5 +1,13 @@
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
+### SMM Transformer: Leveraging Spiking Neural Networks for Multimodal Tasks
+- [[smm-transformer-spiking-multimodal]] - SMM Transformer methodology leveraging Spiking Neural Networks (SNNs) for multimodal tasks by integrating spiking mechanisms into transformer architectures to achieve energy efficiency while maintaining performance across diverse modalities (arXiv: 2608.01622)
+  - Integrates spiking attention mechanism with temporal coding for efficient cross-modal processing
+  - Uses Leaky Integrate-and-Fire (LIF) neurons to replace traditional activation functions
+  - Achieves sparse computation through event-driven processing, reducing energy consumption
+  - Maintains temporal information inherent in spiking representations for better sequence modeling
+  - **Activation**: smm transformer, spiking multimodal, snn transformer, energy efficient multimodal, spiking neural networks multimodal
+
 ### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
 - [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds (arXiv: 2608.01947)
   - Creates robust, high-fidelity slow manifolds through biophysical constraints
