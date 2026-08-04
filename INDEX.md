@@ -1,3 +1,13 @@
+## 2026-08-05 - Neuroscience Research (Cron Job)
+
+### Interpretable MEG Decoding of Perceived Speech: Cortical Sources and the Stimulus Features That Drive Retrieval
+- [[interpretable-meg-decoding-perceived-speech]] - Interpretable MEG decoding framework that combines spherical harmonics spatial attention, source-space mapping, and stimulus feature analysis to reveal what drives neural-to-audio retrieval (arXiv: 2608.01481)
+  - Achieves 39.75% Top-1 accuracy among 1005 candidates with ~20x fewer decoder parameters
+  - Maps weights to source space, recovering generators consistent with speech-perception network
+  - Reveals key stimulus drivers: silence, sound intensity, vowels, and acoustic onsets
+  - Demonstrates narrative structure carries more recoverable information than random word lists
+  - **Activation**: interpretable meg decoding, perceived speech, spherical harmonics meg, source-space mapping, speech perception network, neural retrieval, stimulus feature analysis
+
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
 ### CORTIVA: Candidate-Score Fusion of Complementary Visual Teachers for EEG- and MEG-to-Image Retrieval
