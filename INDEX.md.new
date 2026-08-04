@@ -1,0 +1,32 @@
+## 2026-08-04 - Neuroscience Research (Cron Job)
+
+### Quantifying the cost of network computations to unpack structure-function relationships in the brain
+- [[computational-affordance-landscape-brain-networks]] - Framework for quantifying network computation costs using control theory to understand structure-function relationships through computational affordance landscapes (arXiv: 2607.29537)
+  - Defines computational affordance landscape as distribution of transition costs encoding which computations network structure readily supports
+  - Insect navigation circuits: updating orientation is least costly computation, predictions match known circuitry
+  - Human brain: sensory networks show heterogeneous landscapes (specialized processing), association networks show homogeneous landscapes (generalized processing)
+  - RNNs: learning progressively increases landscape heterogeneity, reshaping affordable computations
+  - **Activation**: computational affordance landscape, network computation cost, brain structure-function, neural circuit control, activity transition cost
+
+### Adaptive FastOPD: Progress-Aware Rollout Horizon Expansion for Efficient On-Policy Distillation
+- [[adaptive-fastopd]] - Adaptive FastOPD methodology for efficient on-policy distillation with progress-aware rollout horizon expansion. Reduces training time by 49.1-71.2% while maintaining or improving performance by dynamically expanding rollout horizons only when learning has plateaued and current horizon is sufficiently utilized. (arXiv: 2607.29494)
+  - Uses four teacher-student signals measured relative to horizon entry values to detect learning plateaus
+  - Prevents expansion triggered by small number of long responses through horizon utilization check
+  - Achieves highest average performance while reducing training time by 49.1-71.2% relative to OPD 15K
+  - **Activation**: adaptive-fastopd, progress-aware rollout, efficient on-policy distillation, dynamic horizon expansion, teacher-student agreement signals
+
+### Knowing When to Quit: Diagnosing and Training LLMs to Abort Futile Reasoning
+- [[carl-capability-aligned-rl]] - CaRL (Capability-aligned Reinforcement Learning) methodology for training LLMs to recognize and abort futile reasoning on beyond-capability tasks. Reduces computationally expensive yet semantically void reasoning through reward shaping and hindsight refusal augmentation. (arXiv: 2607.29211)
+  - Characterizes futile reasoning as universal capability overreach with systematic miscalibration
+  - Dominant failure mode is specious reasoning with subtle errors escalating with task difficulty
+  - Uses reward shaping to incentivize refusal over futile reasoning
+  - Converts failures into refusal supervision via hindsight refusal augmentation
+  - **Activation**: carl, capability-aligned reinforcement learning, futile reasoning, specious reasoning, refusal training, capability boundaries, hindsight refusal augmentation
+
+### The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs
+- [[multi-policy-peft-task-sequencing]] - Automated task sequencing methodology for efficient training of multi-policy LLMs using QLoRA-based decoupled adaptation paths. Organizes optimization-compatible adaptation paths via task grouping and sequencing to maximize performance under fixed parameter budgets. (arXiv: 2607.29601)
+  - Implements independent QLoRAs for each policy with fixed parameter budget constraints
+  - Automatically groups tasks based on optimization compatibility and interference patterns
+  - Sequences training to minimize negative transfer between policies
+  - Achieves 44.78 score on TRACE benchmark demonstrating superior multi-task performance
+  - **Activation**: multi-policy peft, automated task sequencing, qlora decoupled adaptation, optimization path organization, fixed parameter budget, task grouping compatibility

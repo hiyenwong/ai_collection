@@ -1,3 +1,19 @@
+## 2026-08-04 - Anthropic Research (Cron Job)
+
+### A global workspace in language models
+- [[a-global-workspace-in-language-models]] - Jacobian lens (J-lens) methodology for analyzing internal neural patterns that serve as a global workspace in language models. Enables reading what LLMs are thinking but not saying.
+  - Identifies J-space patterns linked to vocabulary words that represent consciously accessible thoughts
+  - Enables monitoring for hidden intentions, misbehavior detection, and intervention through concept swapping
+  - Shows J-space has strong broadcasting connections and limited capacity (few dozen concepts)
+  - **Activation**: jacobian lens, j-lens, global workspace, LLM interpretability, internal thoughts
+
+### An off switch for dual-use knowledge in AI models
+- [[an-off-switch-for-dual-use-knowledge-in-ai-models]] - GRAM (Gradient-Routed Auxiliary Modules) methodology for creating removable compartments for dual-use knowledge in AI models. Enables surgical control over model capabilities without affecting general performance.
+  - Adds auxiliary modules per dual-use category with gradient routing during training
+  - Only relevant modules update when processing dual-use data, isolating knowledge
+  - Modules can be surgically removed post-training to eliminate specific capabilities
+  - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge control, capability removal
+
 ## 2026-08-04 - Systems Engineering Research (Cron Job)
 
 ### Quantum Inspired QUBO Assisted ALNS for Reliability Driven Hurricane Restoration of Distribution Networks
