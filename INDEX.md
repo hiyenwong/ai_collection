@@ -7,6 +7,13 @@
   - Demonstrates greater robustness to long-horizon autoregressive drift
   - **Activation**: neuroworld, brain world model, latent brain dynamics, causal brain forecasting
 
+### Spike-HTR: Spiking Neural Transformer for Handwritten Text Recognition
+- [[spike-htr-spiking-neural-transformer]] - Hybrid spiking recognizer that controls both spiking steps and sequence positions processed by deep sequence mixer for handwritten text recognition. (arXiv: 2608.01646)
+  - Uses InkCoder to convert static images into coarse-to-fine input streams suitable for short-horizon spiking inference
+  - Implements CTC-guided length reducer to compress blank-dominated stretches and reduce sequence computation
+  - Achieves state-of-the-art CERs of 3.5/5.4, 2.3/2.5, and 4.2/3.9 on IAM, LAM, and READ2016 datasets
+  - **Activation**: spike-htr, spiking neural transformer, handwritten text recognition, inkcoder, ctc-guided length reducer
+
 ### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
 - [[spikerestormer-unified-event-reasoning]] - Energy-efficient SNN for all-in-one image restoration that performs event reasoning over internally generated spike cues through degradation-event perception, reliability inference, and restoration-event construction. (arXiv: 2608.02290)
   - Introduces Subtractive Degradation Event Attention (SDEA) for spike-based degradation events
