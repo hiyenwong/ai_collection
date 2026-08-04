@@ -26,6 +26,13 @@
 
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
+- [[recurrent-divisive-normalization-network]] - Recurrent Divisive Normalization Network (RDNN) methodology that implements biophysical divisive normalization constraint to prevent manifold shattering in RNNs while maintaining robust continuous representations (arXiv: 2608.01947)
+  - Introduces activity-dependent local gradient scaling that dampens parameter updates in highly active regimes
+  - Empirically aligns with self-compression of network's effective rank, confining dynamics to low-dimensional subspace
+  - Mathematically essential to prevent manifold shattering under time-varying inputs (unlike subtractive inhibition)
+  - **Activation**: divisive normalization, continuous working memory, low-rank manifolds, recurrent neural networks, neural dynamics, manifold shattering, RDNN
+
 ### Quantifying the cost of network computations to unpack structure-function relationships in the brain
 - [[computational-affordance-landscape-brain-networks]] - Computational Affordance Landscape framework that uses control theory to quantify network computation costs and defines landscapes encoding which computations a network structure readily supports, applied across insect circuits, human brain networks, and RNNs (arXiv: 2607.29537)
   - Frames computation as goal-directed activity transition and quantifies cost using minimum energy control theory
