@@ -28,3 +28,10 @@
 ### Parameter-Efficient Fine-Tuning for Spiking Point Cloud Models
 - [[spikepeft-parameter-efficient-snn-finetuning]] - First parameter-efficient fine-tuning framework for spiking point cloud models using Intrinsic Dynamics Tuning (IDT) and Silent-State Disambiguation Adaptation (SSDA), achieving 92.4% accuracy on ModelNet40 while updating only ~5% of parameters (arXiv: 2607.29048)
   - Intrinsic Dynamics Tuning (IDT) modulates membrane decay and firing thresholds while keeping synaptic weights frozen
+
+### Critical Flicker Fusion Frequency As A Falsifiable Boundary Between Plastic And Non-Plastic Neural Systems
+- [[critical-flicker-fusion-plasticity-boundary]] - Framework for using Critical Flicker Fusion Frequency (CFFF) as a falsifiable boundary between plastic and non-plastic neural systems, with explicit operational criteria and hierarchical analysis (arXiv: 2607.29068)
+  - Proposes CFFF as a measurable boundary between plastic (modifiable) and non-plastic (constrained) neural systems
+  - Provides explicit falsification criteria: CFFF unresponsive to non-specific cognitive training but modifiable by perceptual-learning paradigms engaging magnocellular-dorsal stream
+  - Three principles reinforce stability: perceptual clock requires stable reference frame, metabolic constraints render faster processing energetically prohibitive, and speed-accuracy trade-offs suggest selection optimized integration windows
+  - **Activation**: critical flicker fusion frequency, CFFF plasticity boundary, neural plasticity constraints, temporal processing stability, falsifiable neuroscience framework
