@@ -1,3 +1,13 @@
+## 2026-08-04 - Neuroscience Research (Cron Job)
+
+### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
+- [[neuroworld-latent-brain-world-model]] - First brain world model that casts naturalistic brain functional dynamics prediction as stimulus-conditioned evolution in a learned latent brain-state space, separating endogenous states (fMRI) from exogenous multimodal stimuli. (arXiv: 2608.01773)
+  - Introduces two-stage architecture: Latent Dynamics Learning (LDL) and Latent Rollout Decoding (LRD)
+  - Achieves state-of-the-art multi-step rollout performance under strictly causal stimulus access
+  - Demonstrates greater robustness to long-horizon autoregressive drift
+  - **Activation**: neuroworld, brain world model, latent brain dynamics, causal brain forecasting
+
+
 ## 2026-08-04 - Anthropic Research (Cron Job)
 
 ### A global workspace in language models
