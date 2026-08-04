@@ -1,5 +1,12 @@
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### CORTIVA: Candidate-Score Fusion of Complementary Visual Teachers for EEG- and MEG-to-Image Retrieval
+- [[cortiva-candidate-score-fusion]] - Framework for decoding visual experience from non-invasive brain activity through candidate-score fusion that preserves complementary evidence by aligning three decoding routes to heterogeneous visual targets, scoring candidates independently, and combining only temperature-scaled score vectors before ranking. (arXiv: 2608.01355)
+  - Achieves 73.5% Top-1 accuracy on EEG (THINGS-EEG2) and 42.4% on MEG with modality-specific neural encoder
+  - Introduces candidate-score fusion framework preserving complementary evidence from heterogeneous visual teachers
+  - Demonstrates +10.3 percentage points improvement over strongest baseline for EEG Top-1 accuracy
+  - **Activation**: cortiva, candidate-score fusion, neural image retrieval, eeg-to-image, meg-to-image, visual teachers
+
 ### Data augmentation as a framework for modeling hippocampal contributions to generalization
 - [[hippocampal-data-augmentation-generalization]] - Data augmentation framework that conceptualizes hippocampal function through offline refactoring of training data for general representations and online refactoring of retrieved experiences for zero-shot inference, providing linking functions between experimental evidence and theoretical claims (arXiv: 2608.01297)
   - Maps offline/online computational strategies onto hippocampal functions
