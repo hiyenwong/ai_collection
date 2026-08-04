@@ -7,12 +7,19 @@
   - Self-compresses effective rank to confine dynamics to low-dimensional subspace
   - **Activation**: divisive normalization, working memory, continuous attractor, RDNN
 
-## 2026-08-05 - Neuroscience Research (Cron Job)
+### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
+- [[spikerestormer-unified-event-reasoning]] - Energy-efficient SNN for all-in-one image restoration using unified event reasoning (arXiv: 2608.02290)
+  - Formulates restoration as degradation-event perception, reliability inference, and restoration-event construction
+  - Uses Subtractive Degradation Event Attention (SDEA), Hierarchical Bayesian Skip Masking (HBSM), and Additive Restoration Event Attention (AREA)
+  - Achieves competitive performance with significantly lower energy consumption
+  - **Activation**: SpikeRestormer, unified event reasoning, SNN image restoration, energy-efficient SNN
 
-### Interpretable MEG Decoding of Perceived Speech: Cortical Sources and the Stimulus Features That Drive Retrieval
-- [[interpretable-meg-decoding-perceived-speech]] - Interpretable MEG decoding framework that combines spherical harmonics spatial attention, source-space mapping, and stimulus feature analysis to reveal what drives neural-to-audio retrieval (arXiv: 2608.01481)
-  - Achieves 39.75% Top-1 accuracy among 1005 candidates with ~20x fewer decoder parameters
-  - Maps weights to source space, recovering generators consistent with speech-perception network
+### ChaosProbe: A Neurochaotic Lens on Frozen Transformer Input-Embedding Spaces
+- [[chaosprobe-neurochaotic-transformer-analysis]] - Neurochaotic method for analyzing frozen transformer embeddings through response-based fingerprints (arXiv: 2608.01968)
+  - Applies chaotic trajectory-based transformations to embedding spaces
+  - Summarizes Firing Rate and Entropy channel responses into fixed-length signatures
+  - Successfully recovers model family structure in proof-of-concept study
+  - **Activation**: ChaosProbe, neurochaotic, transformer embeddings, frozen transformers
   - Reveals key stimulus drivers: silence, sound intensity, vowels, and acoustic onsets
   - Demonstrates narrative structure carries more recoverable information than random word lists
   - **Activation**: interpretable meg decoding, perceived speech, spherical harmonics meg, source-space mapping, speech perception network, neural retrieval, stimulus feature analysis
