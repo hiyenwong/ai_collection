@@ -1,5 +1,19 @@
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### Data augmentation as a framework for modeling hippocampal contributions to generalization
+- [[hippocampal-data-augmentation-generalization]] - Data augmentation framework that conceptualizes hippocampal function through offline refactoring of training data for general representations and online refactoring of retrieved experiences for zero-shot inference, providing linking functions between experimental evidence and theoretical claims (arXiv: 2608.01297)
+  - Maps offline/online computational strategies onto hippocampal functions
+  - Enables unified modeling approach for diverse hippocampus-dependent behaviors from high-dimensional navigation to abstract inferences
+  - Provides formal framework to evaluate theories of hippocampal function
+  - **Activation**: hippocampal function, data augmentation, generalization, offline learning, online refactoring, zero-shot inference, experience repurposing, linking functions, neural modeling, cognitive flexibility
+
+### Recursive Gaussian Processes and the Bayesian Brain
+- [[recursive-gaussian-processes-predictive-coding]] - Recursive Gaussian Processes (RGPs) methodology that bridges predictive coding with Bayesian brain theories by employing single shared GP indexed by layer and input value, preventing representational collapse while enabling learnable cross-layer dependence and mapping onto canonical cortical microcircuit (arXiv: 2608.00503)
+  - Intrinsically implements hierarchical Bayesian inference, uncertainty propagation, and precision-weighted prediction error
+  - Maps RGP components (shared GP, spike-and-slab selection, MCMC dynamics) onto cortical microcircuit elements
+  - Shows RGP inference minimizes variational free energy, linking Bayesian mechanics to neuronal dynamics
+  - **Activation**: recursive gaussian processes, predictive coding, bayesian brain, cortical microcircuit, hierarchical inference, uncertainty propagation, free energy principle, variational inference, laminar dynamics, neural computation
+
 ### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
 - [[neuroworld-latent-brain-world-model]] - First brain world model that casts naturalistic brain functional dynamics prediction as stimulus-conditioned evolution in a learned latent brain-state space, separating endogenous states (fMRI) from exogenous multimodal stimuli. (arXiv: 2608.01773)
   - Introduces two-stage architecture: Latent Dynamics Learning (LDL) and Latent Rollout Decoding (LRD)
