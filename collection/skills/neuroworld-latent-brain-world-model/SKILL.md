@@ -1,108 +1,101 @@
 ---
 name: neuroworld-latent-brain-world-model
-description: "NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics - first brain world model that casts naturalistic brain functional dynamics prediction as stimulus-conditioned evolution in a learned latent brain-state space, separating endogenous states (fMRI) from exogenous multimodal stimuli. Use when modeling causal forecasting of human brain activity during naturalistic experience with strict temporal constraints."
+description: "NeuroWorld - A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics. Framework for causal forecasting of human brain activity using stimulus-conditioned evolution in learned latent brain-state space, separating endogenous states from exogenous multimodal stimuli. Use when modeling naturalistic brain functional dynamics prediction, brain world models, or fMRI-based neural state forecasting."
 metadata:
   arxiv_id: "2608.01773"
   published: "2026-08-03"
   authors: "Zijian Dong, Jianxiong Zhou, Kwun Kei Ng, Jan Paolo Macapinlac Balagtas, Zhizhou Li, Zijiao Chen, Juan Helen Zhou"
-  tags: [brain-world-model, latent-dynamics, fMRI, neural-forecasting, computational-neuroscience]
+  tags: [brain-world-model, fMRI-dynamics, latent-dynamics, stimulus-conditioned, neural-forecasting]
 license: Complete terms in LICENSE.txt
 ---
 
-# NeuroWorld: Latent Brain World Model
+# NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
 
 ## Overview
 
-NeuroWorld introduces the first brain world model framework for causal forecasting of human brain activity during naturalistic experience. Unlike traditional brain encoding models that use stimulus-to-response regression without temporal constraints, NeuroWorld separates endogenous neural states from exogenous multimodal stimuli through a two-stage approach:
+NeuroWorld is the first brain world model that casts naturalistic brain functional dynamics prediction as stimulus-conditioned evolution in a learned latent brain-state space. It separates endogenous neural states (measured via fMRI) from exogenous multimodal stimuli across two stages:
 
-1. **Latent Dynamics Learning (LDL)**: Jointly learns a transition-sufficient representation and causal dynamics through next-latent prediction, without reconstructing observed fMRI signals
-2. **Latent Rollout Decoding (LRD)**: Freezes LDL, autoregressively rolls latent states forward from an observed fMRI prefix, and decodes them into subject-specific whole-brain responses
+1. **Latent Dynamics Learning (LDL)**: Jointly learns a transition-sufficient representation and causal dynamics through next-latent prediction, without reconstructing the observed fMRI signal.
+2. **Latent Rollout Decoding (LRD)**: Freezes LDL, autoregressively rolls latent states forward from an observed fMRI prefix, and decodes them into subject-specific whole-brain responses.
 
-## Key Innovations
+## Core Methodology
 
-- **Causal stimulus access**: Strictly prevents future stimuli from leaking into current predictions
-- **Latent-space world modeling**: Establishes a principled framework for causal forecasting of human brain activity  
-- **Superior long-horizon performance**: Greater robustness to long-horizon autoregressive drift compared to existing methods
-- **Multi-step rollout capability**: Achieves state-of-the-art performance across three naturalistic movie-fMRI benchmarks
+### Key Innovation
+- **Causal constraint**: Unlike traditional brain encoding models that use stimulus-to-response regression allowing future stimuli to leak into current predictions, NeuroWorld enforces strictly causal stimulus access.
+- **Latent separation**: Endogenous brain states are separated from exogenous stimuli in the latent space.
+- **Two-stage architecture**: LDL learns dynamics without reconstruction; LRD handles decoding separately.
 
-## Methodology
+### Architecture Components
 
-### Two-Stage Architecture
+#### Latent Dynamics Learning (LDL)
+- **Input**: Multimodal stimuli sequence + fMRI observations
+- **Objective**: Predict next latent state given current latent state and current stimulus
+- **Loss**: Next-latent prediction loss (no fMRI reconstruction loss)
+- **Output**: Transition-sufficient latent representation
 
-**Stage 1: Latent Dynamics Learning (LDL)**
-- Input: Multimodal stimuli + fMRI time series
-- Objective: Learn transition-sufficient latent representation through next-latent prediction
-- Output: Causal dynamics model in latent space
-- Key constraint: No direct fMRI signal reconstruction
+#### Latent Rollout Decoding (LRD)
+- **Input**: Observed fMRI prefix → initial latent state
+- **Process**: Autoregressive rollout using learned LDL dynamics
+- **Output**: Subject-specific whole-brain fMRI responses
 
-**Stage 2: Latent Rollout Decoding (LRD)**  
-- Input: Observed fMRI prefix + future stimuli (causally constrained)
-- Process: Autoregressive latent state rollout using frozen LDL
-- Output: Subject-specific whole-brain fMRI predictions
-- Evaluation: Multi-step forecasting under strictly causal conditions
-
-### Dataset: SG-MIND
-- 20 participants
-- 8,519 paired stimulus-response clips  
-- 140.7 person-hours of naturalistic viewing
-- Part of three benchmark datasets used for validation
-
-## When to Use This Skill
-
-Use NeuroWorld methodology when:
-- Modeling brain activity during naturalistic, continuous experiences (movies, narratives, real-world scenarios)
-- Requiring strict causal constraints where future stimuli cannot influence current predictions
-- Needing long-horizon brain state trajectory simulation
-- Working with fMRI data paired with multimodal stimuli
-- Seeking interpretable latent dynamics of brain functional organization
+### Training Workflow
+1. **Joint LDL training**: Train LDL on paired stimulus-fMRI data using next-latent prediction objective
+2. **Freeze LDL**: Keep LDL parameters fixed after training
+3. **Train LRD decoder**: Learn mapping from latent states to fMRI responses
+4. **Evaluation**: Multi-step rollout under strictly causal stimulus access
 
 ## Implementation Guidelines
 
-### Core Components
-1. **Stimulus encoder**: Processes multimodal inputs (visual, auditory, etc.)
-2. **Latent dynamics model**: Recurrent or transformer-based architecture for latent state transitions
-3. **Brain decoder**: Maps latent states to fMRI voxel/activity predictions
-4. **Causal masking**: Ensures no future stimulus information leaks into current predictions
-
-### Training Strategy
-- Pre-train LDL on next-latent prediction objective
-- Freeze LDL parameters during LRD training
-- Use multi-step loss functions to encourage stable long-horizon rollouts
-- Incorporate subject-specific adaptation for personalized decoding
+### Data Requirements
+- **Naturalistic stimuli**: Movies, audio, or other continuous sensory inputs
+- **fMRI responses**: Time-aligned with stimuli (TR-matched)
+- **Dataset size**: Large-scale datasets preferred (paper uses 140.7 person-hours)
 
 ### Evaluation Metrics
-- Multi-step prediction accuracy (1-step, 5-step, 10-step, etc.)
-- Long-horizon drift metrics
-- Subject-specific decoding performance
-- Latent space interpretability analyses
+- **Multi-step rollout accuracy**: Prediction accuracy over extended horizons
+- **Autoregressive drift robustness**: Stability during long-horizon rollouts
+- **Subject-specific performance**: Individualized brain response prediction
+
+### Applications
+- **Brain activity forecasting**: Predict neural responses to novel stimuli
+- **Extended brain-state simulation**: Generate realistic neural trajectories
+- **Interpretability analysis**: Characterize functional organization of learned dynamics
+- **Clinical applications**: Simulate brain responses in neurological conditions
+
+## Benchmarks and Results
+
+### Datasets Used
+- **SG-MIND**: Singapore Multimodal Imaging & Naturalistic Dataset (20 participants, 8,519 paired stimulus-response clips, 140.7 person-hours)
+- **Existing benchmarks**: Three naturalistic movie-fMRI benchmarks spanning 30 participants total
+
+### Performance Highlights
+- **State-of-the-art multi-step rollout**: Superior performance under strictly causal stimulus access
+- **Robustness to autoregressive drift**: Greater stability during long-horizon predictions
+- **Reliable trajectory simulation**: Supports extended brain-state trajectory generation
 
 ## Pitfalls and Considerations
 
-- **Computational complexity**: Two-stage training requires significant computational resources
-- **Data requirements**: Needs large-scale naturalistic fMRI datasets with synchronized stimuli
-- **Subject variability**: May require subject-specific fine-tuning for optimal performance
-- **Temporal resolution**: Limited by fMRI acquisition rates; may not capture fast neural dynamics
+### Technical Challenges
+- **Computational complexity**: Requires significant computational resources for training
+- **Data alignment**: Precise temporal alignment between stimuli and fMRI is critical
+- **Subject variability**: Individual differences require careful handling in decoder design
 
-## Related Work
-
-- Traditional brain encoding models (stimulus-to-response regression)
-- Neural predictive coding frameworks
-- World models in reinforcement learning
-- Latent variable models for neural data
+### Limitations
+- **Stimulus dependency**: Performance depends on similarity between training and test stimuli
+- **Temporal resolution**: Limited by fMRI temporal resolution (typically 0.5-2 Hz)
+- **Spatial coverage**: Dependent on fMRI acquisition protocol and coverage
 
 ## Activation Keywords
-
-- neuroworld
 - brain world model
 - latent brain dynamics
-- causal brain forecasting
-- stimulus-conditioned fMRI
-- naturalistic brain modeling
-- latent rollout decoding
-- fMRI trajectory simulation
+- stimulus-conditioned forecasting
+- fMRI prediction
+- neural state forecasting
+- NeuroWorld
+- latent dynamics learning
+- brain functional dynamics
 
 ## References
-
 - Original paper: https://arxiv.org/abs/2608.01773
-- SG-MIND dataset: Singapore Multimodal Imaging & Naturalistic Dataset
-- Related benchmarks: Three naturalistic movie-fMRI datasets spanning 30 participants
+- SG-MIND dataset: Newly collected Singapore Multimodal Imaging & Naturalistic Dataset
+- Related work: Brain encoding models, world models, latent dynamics models
