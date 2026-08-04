@@ -33,6 +33,20 @@
   - Learning in RNNs progressively increases landscape heterogeneity, reshaping affordable computations
   - **Activation**: computational affordance landscape, network computation cost, structure-function relationships, control theory brain, brain network controllability
 
+### The Sparsity Ceiling: Where Spiking Networks Can and Cannot Trade Activity for Energy
+- [[sparsity-ceiling-snn-energy-efficiency]] - Information-theoretic framework establishing fundamental limits on SNN energy efficiency, revealing that sparsity benefits depend on task characteristics with different architectures having different minimum firing rates (arXiv: 2607.26648)
+  - Provides bound ρ ≥ H_b^(-1)(log₂ M / H) predicting minimum firing rate based on memory load and state width
+  - Feed-forward perception can sparsify to 5% firing, recurrent LMs cannot go below ~50%, spiking Transformers achieve 2%
+  - Reveals trade-off: attention escapes firing floor by storing full key-value cache, trading for memory wall
+  - **Activation**: sparsity ceiling, SNN energy efficiency, firing rate bounds, neuromorphic computing limits, memory-energy tradeoff
+
+### ZUNA1.1: A more flexible EEG foundation model for Denoising and Super-resolution
+- [[zuna1-1-flexible-eeg-foundation-model]] - 380M-parameter diffusion autoencoder for flexible EEG signal reconstruction capable of handling variable-length sequences, arbitrary channel configurations, and partial temporal interval reconstruction (arXiv: 2607.27308)
+  - Supports sequences up to 30s with any number of EEG channels at arbitrary scalp locations
+  - Can reconstruct specific temporal intervals within channels rather than entire channels
+  - Substantially outperforms spherical spline interpolation (MNE standard) while matching ZUNA1 performance
+  - **Activation**: zuna1.1 eeg foundation model, flexible eeg denoising, eeg super-resolution diffusion, arbitrary channel eeg reconstruction, variable length eeg diffusion
+
 ### Thermodynamics of Quantum Reservoir Computing
 - [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking quantum reservoir computing performance to energetic costs, revealing fundamental computational and energetic limits of quantum learning devices. (arXiv: 2607.02157)
   - Maps Holevo capacities onto Bogoliubov-Kubo-Mori geometric manifold to prove computational peak in quantum critical region originates from spectral resonance
