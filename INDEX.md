@@ -9,11 +9,12 @@
   - **Activation**: smm transformer, spiking multimodal, snn transformer, energy efficient multimodal, spiking neural networks multimodal
 
 ### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
-- [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds (arXiv: 2608.01947)
-  - Creates robust, high-fidelity slow manifolds through biophysical constraints
-  - Introduces activity-dependent local gradient scaling during BPTT
-  - Self-compresses effective rank to confine dynamics to low-dimensional subspace
-  - **Activation**: divisive normalization, working memory, continuous attractor, RDNN
+- [[rdnn-low-rank-manifolds-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with low-rank slow manifolds. Provides implementation guidance for stable continuous manifold learning in RNNs using divisive normalization to prevent state space shattering into discretized point attractors. (arXiv: 2608.01947)
+  - Integrates divisive normalization directly into RNN architecture to enable stable learning of continuous manifolds
+  - Prevents state space fragmentation that plagues standard RNNs like GRUs and LSTMs
+  - Enables robust maintenance and updating of continuous variables over time
+  - Based on biologically observed divisive normalization mechanisms across sensory systems
+  - **Activation**: rdnn, divisive normalization, continuous working memory, neural manifolds, low-rank manifolds, recurrent neural networks, stable RNN dynamics
 
 ### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
 - [[spikerestormer-unified-event-reasoning]] - Energy-efficient SNN for all-in-one image restoration using unified event reasoning (arXiv: 2608.02290)
