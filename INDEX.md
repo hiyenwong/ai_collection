@@ -10,6 +10,13 @@
 
 ## 2026-08-04 - Neuroscience Research (Cron Job)
 
+### Quantifying the cost of network computations to unpack structure-function relationships in the brain
+- [[computational-affordance-landscape-brain-networks]] - Computational Affordance Landscape framework that uses control theory to quantify network computation costs and defines landscapes encoding which computations a network structure readily supports, applied across insect circuits, human brain networks, and RNNs (arXiv: 2607.29537)
+  - Frames computation as goal-directed activity transition and quantifies cost using minimum energy control theory
+  - Sensory networks show heterogeneous landscapes (specialized processing), association networks show homogeneous landscapes (generalized processing)
+  - Learning in RNNs progressively increases landscape heterogeneity, reshaping affordable computations
+  - **Activation**: computational affordance landscape, network computation cost, structure-function relationships, control theory brain, brain network controllability
+
 ### Thermodynamics of Quantum Reservoir Computing
 - [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking quantum reservoir computing performance to energetic costs, revealing fundamental computational and energetic limits of quantum learning devices. (arXiv: 2607.02157)
   - Maps Holevo capacities onto Bogoliubov-Kubo-Mori geometric manifold to prove computational peak in quantum critical region originates from spectral resonance
