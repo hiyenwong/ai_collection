@@ -1,5 +1,11 @@
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
+### Exact Low-Dimensional Reduction Theory for Populations of Stuart–Landau Oscillators
+- [[stuart-landau-oscillator-reduction-theory]] - Exact low-dimensional reduction theory for populations of Stuart–Landau oscillators, reducing N-oscillator systems to 3D or 7D systems while preserving amplitude-dependent collective dynamics like clustering and chaos (arXiv: 2608.04000v1)
+  - Case 1: Coupling through coefficients only reduces to 3D system with 2N-3 constants of motion
+  - Case 2: Extended coupling with second-harmonic terms reduces to 7D system capturing clustering, synchronization, and chaos
+  - **Activation**: stuart-landau, neural oscillators, dimensional reduction, brain networks, clustering, chaos
+
 ### Persistent homology broadens the controllable subspace in human structural connectomes
 - [[persistent-homology-brain-network-control]] - Methodology for applying persistent homology to brain network control theory, revealing that topological driver node selection provides geometric advantages over traditional degree-based approaches while maintaining similar control energy costs (arXiv: 2608.03181)
   - Dissociation between control cost and control geometry: topology-informed sets distribute controllability across more state space dimensions
