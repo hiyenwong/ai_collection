@@ -9,6 +9,22 @@
 
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
+### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
+- [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds. Use when implementing or analyzing neural networks that need to maintain and update continuous variables without manifold shattering, particularly in computational neuroscience, working memory modeling, or RNN architecture design. (arXiv: 2608.01947)
+  - Addresses fragility of classical continuous attractor networks and discretization problems of standard RNNs
+  - Implements dynamic division as minimal, algebraically isolated model converging to robust slow manifolds  
+  - Introduces activity-dependent local gradient scaling during BPTT leading to self-compression of effective rank
+  - Demonstrates divisive normalization is mathematically essential to prevent manifold shattering under time-varying inputs
+  - **Activation**: rdnn, divisive normalization, continuous working memory, slow manifolds, recurrent neural networks, neural dynamics, attractor networks, low-rank dynamics
+
+### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
+- [[neuroworld-latent-brain-world-model]] - NeuroWorld framework for causal forecasting of human brain activity using stimulus-conditioned evolution in learned latent brain-state space, separating endogenous states from exogenous multimodal stimuli. First brain world model enabling strictly causal multi-step fMRI prediction without future stimulus leakage. (arXiv: 2608.01773)
+  - Two-stage architecture: Latent Dynamics Learning (LDL) for transition-sufficient representation and Latent Rollout Decoding (LRD) for autoregressive prediction
+  - Enforces strict causality preventing future stimuli from leaking into current predictions
+  - Achieves state-of-the-art multi-step rollout performance with greater robustness to long-horizon autoregressive drift
+  - Validated on SG-MIND dataset (20 participants, 8,519 clips, 140.7 person-hours) and three naturalistic benchmarks
+  - **Activation**: neuroworld, brain world model, latent dynamics, stimulus-conditioned, fMRI prediction, causal forecasting, naturalistic experience, autoregressive rollout
+
 ### SMM Transformer: Leveraging Spiking Neural Networks for Multimodal Tasks
 - [[smm-transformer-spiking-multimodal]] - SMM Transformer methodology leveraging Spiking Neural Networks (SNNs) for multimodal tasks by integrating spiking mechanisms into transformer architectures to achieve energy efficiency while maintaining performance across diverse modalities (arXiv: 2608.01622)
   - Integrates spiking attention mechanism with temporal coding for efficient cross-modal processing
@@ -16,14 +32,6 @@
   - Achieves sparse computation through event-driven processing, reducing energy consumption
   - Maintains temporal information inherent in spiking representations for better sequence modeling
   - **Activation**: smm transformer, spiking multimodal, snn transformer, energy efficient multimodal, spiking neural networks multimodal
-
-### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
-- [[rdnn-low-rank-manifolds-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with low-rank slow manifolds. Provides implementation guidance for stable continuous manifold learning in RNNs using divisive normalization to prevent state space shattering into discretized point attractors. (arXiv: 2608.01947)
-  - Integrates divisive normalization directly into RNN architecture to enable stable learning of continuous manifolds
-  - Prevents state space fragmentation that plagues standard RNNs like GRUs and LSTMs
-  - Enables robust maintenance and updating of continuous variables over time
-  - Based on biologically observed divisive normalization mechanisms across sensory systems
-  - **Activation**: rdnn, divisive normalization, continuous working memory, neural manifolds, low-rank manifolds, recurrent neural networks, stable RNN dynamics
 
 ### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
 - [[spikerestormer-unified-event-reasoning]] - Energy-efficient SNN for all-in-one image restoration using unified event reasoning (arXiv: 2608.02290)
