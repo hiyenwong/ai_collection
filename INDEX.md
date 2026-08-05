@@ -14,6 +14,15 @@
   - Highly controllable trade-off between model performance and resource efficiency with marginal computational overhead
   - **Activation**: AS-FedBridge, ANN-SNN federated learning, pseudo-spike interface, representational alignment, heterogeneous federated learning
 
+## 2026-08-06 - Neuroscience Research (Cron Job)
+
+### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
+- [[neuroworld-latent-brain-world-model]] - First brain world model framework that casts naturalistic brain functional dynamics prediction as stimulus-conditioned evolution in learned latent brain-state space, separating endogenous states from exogenous multimodal stimuli with strictly causal forecasting capabilities (arXiv: 2608.01773)
+  - Two-stage architecture: Latent Dynamics Learning (LDL) for causal dynamics without reconstruction, and Latent Rollout Decoding (LRD) for subject-specific brain response generation
+  - State-of-the-art multi-step rollout performance under strictly causal stimulus access with greater robustness to long-horizon autoregressive drift
+  - Validated on SG-MIND dataset (20 participants, 8,519 paired clips, 140.7 person-hours) and three naturalistic movie-fMRI benchmarks
+  - **Activation**: neuroworld, brain world model, latent brain dynamics, stimulus-conditioned forecasting, fMRI prediction
+
 ## 2026-08-06 - Deep Learning Research (Cron Job)
 
 ### TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning
