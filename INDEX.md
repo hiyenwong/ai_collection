@@ -16,6 +16,13 @@
 
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
+### Detecting high-frequency brain disorder signals using dynamic mode decomposition from EEG
+- [[dmd-high-frequency-eeg-brain-disorder-detection]] - Methodology for extracting consistent high-frequency dynamical patterns from EEG using Dynamic Mode Decomposition (DMD) to identify neurological signatures that distinguish clinical groups like alcohol-dependent patients from controls (arXiv: 2608.02804)
+  - High-frequency DMD modes serve as robust features for brain disorder detection with ~70% consistency rate across samples
+  - Statistical validation framework using random distribution tests ensures feature reliability
+  - PCA components of validated features form consistent patterns distinguishing alcohol-dependent group from control group
+  - **Activation**: DMD EEG analysis, high-frequency brain signals, dynamic mode decomposition neuroscience, EEG brain disorder detection
+
 ### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
 - [[neuroworld-latent-brain-world-model]] - First brain world model framework that casts naturalistic brain functional dynamics prediction as stimulus-conditioned evolution in learned latent brain-state space, separating endogenous states from exogenous multimodal stimuli with strictly causal forecasting capabilities (arXiv: 2608.01773)
   - Two-stage architecture: Latent Dynamics Learning (LDL) for causal dynamics without reconstruction, and Latent Rollout Decoding (LRD) for subject-specific brain response generation
