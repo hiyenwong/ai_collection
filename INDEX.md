@@ -1,10 +1,11 @@
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
-### Exact Low-Dimensional Reduction Theory for Populations of Stuart–Landau Oscillators
-- [[stuart-landau-oscillator-reduction-theory]] - Exact low-dimensional reduction theory for populations of Stuart–Landau oscillators, reducing N-oscillator systems to 3D or 7D systems while preserving amplitude-dependent collective dynamics like clustering and chaos (arXiv: 2608.04000v1)
-  - Case 1: Coupling through coefficients only reduces to 3D system with 2N-3 constants of motion
-  - Case 2: Extended coupling with second-harmonic terms reduces to 7D system capturing clustering, synchronization, and chaos
-  - **Activation**: stuart-landau, neural oscillators, dimensional reduction, brain networks, clustering, chaos
+### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
+- [[neuroworld-latent-brain-world-model]] - Framework for causal forecasting of human brain activity using latent world modeling with strict temporal constraints, separating endogenous states from exogenous multimodal stimuli (arXiv: 2608.01773)
+  - First brain world model casting naturalistic brain dynamics prediction as stimulus-conditioned evolution in learned latent brain-state space
+  - Two-stage architecture: Latent Dynamics Learning (LDL) for transition-sufficient representation and Latent Rollout Decoding (LRD) for subject-specific responses
+  - Strictly causal stimulus access prevents future stimulus leakage, enabling true causal forecasting
+  - **Activation**: neuroworld, latent brain world model, stimulus-conditioned brain dynamics, causal brain forecasting, naturalistic fMRI prediction
 
 ### Persistent homology broadens the controllable subspace in human structural connectomes
 - [[persistent-homology-brain-network-control]] - Methodology for applying persistent homology to brain network control theory, revealing that topological driver node selection provides geometric advantages over traditional degree-based approaches while maintaining similar control energy costs (arXiv: 2608.03181)
@@ -12,7 +13,6 @@
   - Better-conditioned controllability matrices with robustness preserved even when high-degree hub nodes are removed
   - Functional signature: different cortical territories targeted, shaping which brain-state transitions are energetically favored
   - **Activation**: persistent homology, brain network control, structural connectome, controllability, topology, driver nodes
-
 ### AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning
 - [[as-fedbridge-ann-snn-federated-learning]] - Framework for mixed ANN-SNN federated learning that addresses representational misalignment through a lightweight Bridge with Pseudo-Spike Interface, enabling effective collaboration between continuous-valued ANNs and discrete spiking SNNs while preserving data privacy (arXiv: 2608.03324)
   - Lightweight Bridge with Pseudo-Spike Interface projects continuous signals into spike-compatible space
