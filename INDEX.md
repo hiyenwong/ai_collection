@@ -1,3 +1,12 @@
+## 2026-08-05 - Systems Engineering Research (Cron Job)
+
+### Bridging Artificial Intelligence and Power Systems Education Using a Hands-On Executable Framework
+- [[engineering-grounded-ai-power-systems]] - Engineering-Grounded AI (EGAI) framework for power systems education using hands-on executable modules that follow domain rules rather than acting as black boxes (arXiv: 2608.02599)
+  - Progressive difficulty ladder mapping AI concepts to power-system tasks: foundational DNN templates, domain-coupled CNN surrogates, and frontier modules (DRL, PINNs)
+  - All modules released as Jupyter notebooks for local/Colab execution with IEEE course integration
+  - Addresses 92% barrier rate reported by researchers before running AI models in power systems
+  - **Activation**: engineering-grounded ai, power systems ai education, egai framework, ai power systems modules
+
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
 ### SMM Transformer: Leveraging Spiking Neural Networks for Multimodal Tasks
