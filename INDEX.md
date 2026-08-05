@@ -9,6 +9,13 @@
 
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
+### scikit-covtest: Covariance Matrix Hypothesis Testing in Python
+- [[scikit-covtest-covariance-hypothesis-testing]] - Comprehensive Python package for covariance matrix hypothesis testing across four categories (identity, sphericity, proportionality, two-sample equality) with SciPy-style API, enabling statistical inference for brain connectivity and neural population analysis (arXiv: 2608.01510)
+  - Provides well-tested implementations previously only available in R packages
+  - Supports neuroscience applications including connectivity inference, dimensionality reduction validation, and group comparisons
+  - Includes multiple testing correction, synthetic data generation, and diagnostic evaluation tools
+  - **Activation**: scikit-covtest, covariance hypothesis testing, brain connectivity inference, neural covariance analysis, statistical testing covariance
+
 ### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
 - [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds. Use when implementing or analyzing neural networks that need to maintain and update continuous variables without manifold shattering, particularly in computational neuroscience, working memory modeling, or RNN architecture design. (arXiv: 2608.01947)
   - Addresses fragility of classical continuous attractor networks and discretization problems of standard RNNs
