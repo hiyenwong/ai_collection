@@ -8,7 +8,12 @@
   - **Activation**: engineering-grounded ai, power systems ai education, egai framework, ai power systems modules
 
 ## 2026-08-05 - Neuroscience Research (Cron Job)
-
+### Persistent homology broadens the controllable subspace in human structural connectomes
+- [[persistent-homology-brain-network-control]] - Methodology for applying persistent homology to brain network control theory, revealing how topological features broaden the controllable subspace beyond what scalar energy measures capture (arXiv: 2608.03181)
+  - Demonstrates dissociation between scalar control energy (~0.2% difference) and control geometry (substantially different controllable subspaces) when comparing degree-based vs topology-based driver selection
+  - Topology-informed driver sets yield better-conditioned controllability matrices and access different target state classes despite similar energy costs
+  - Provides framework for integrating topological data analysis with network control theory in neuroscience applications
+  - **Activation**: persistent homology brain network, topological brain control, controllable subspace topology, brain network control geometry, mesoscale integration connectome, persistent cycles brain network
 ### scikit-covtest: Covariance Matrix Hypothesis Testing in Python
 - [[scikit-covtest-covariance-hypothesis-testing]] - Comprehensive Python package for covariance matrix hypothesis testing across four categories (identity, sphericity, proportionality, two-sample equality) with SciPy-style API, enabling statistical inference for brain connectivity and neural population analysis (arXiv: 2608.01510)
   - Provides well-tested implementations previously only available in R packages
