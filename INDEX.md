@@ -37,6 +37,14 @@
   - Creates robust, high-fidelity slow manifolds that maintain continuous variables without discretization into point attractors
   - **Activation**: divisive normalization, working memory, continuous attractor, recurrent neural network, slow manifold, RDNN
 
+### SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery
+- [[seekbrain-autonomous-neuroscience-discovery]] - Autonomous multi-agent framework for accelerating neuroscience discovery through domain-grounded hierarchical planning and cross-modal data analysis, dynamically constructing analysis recipes from code-paper pairs and generating hypotheses on demand (arXiv: 2607.29347)
+  - Extracts analysis recipes from neuroscience code-paper pairs to codify domain expertise
+  - Uses hierarchical planning to decompose research questions into executable subtasks
+  - Integrates behavioral, neural, and anatomical data to reveal structured neural representations
+  - Validated on BrainArena benchmark showing substantial outperformance over agent baselines
+  - **Activation**: seekbrain, autonomous neuroscience, multi-agent neuroscience, brainarena benchmark
+
 ## 2026-08-06 - Deep Learning Research (Cron Job)
 
 ### TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning
