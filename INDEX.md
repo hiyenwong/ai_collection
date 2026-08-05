@@ -13,3 +13,21 @@
   - Positive correlation between ANN-SNN alignment degree and collaborative FL performance across four datasets
   - Highly controllable trade-off between model performance and resource efficiency with marginal computational overhead
   - **Activation**: AS-FedBridge, ANN-SNN federated learning, pseudo-spike interface, representational alignment, heterogeneous federated learning
+
+## 2026-08-06 - Deep Learning Research (Cron Job)
+
+### TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning
+- [[turnsight-turn-level-hindsight-self-distillation]] - Turn-Level Hindsight Self-Distillation framework for Tool-Integrated Reasoning (TIR) that derives supervision from execution-conditioned hindsight with multiple lookahead horizons and cross-horizon directional agreement for reliable credit assignment in long-horizon agentic tasks (arXiv: 2608.04007)
+  - Execution-conditioned hindsight derives supervision from states actually visited by the agent during execution
+  - Multi-horizon hindsight views with different lookahead horizons enable robust signal selection
+  - Cross-horizon directional agreement filters out unreliable supervision signals
+  - Normalized advantage modulation preserves original optimization direction while adapting RL advantages
+  - **Activation**: turnsight, turn-level hindsight, tool-integrated reasoning, TIR, hindsight self-distillation
+
+### Sparse Weight Decomposition for Efficient Circuit Extraction from Pretrained Transformers
+- [[sparse-weight-decomposition-circuit-extraction]] - Sparse Weight Decomposition (SWD) for efficient circuit extraction from pretrained transformers that reparameterizes linear projections by factorizing weight matrices into two sparse factors with shared intermediate coordinates as circuit units (arXiv: 2608.03913)
+  - No separate training required - works directly on pretrained models
+  - Uses less than 1% of data required by strong baselines like Transcoder
+  - Features zero-data variant enabling broader mechanistic interpretability analysis
+  - Matches held-out fidelity of strong baselines while being more data-efficient
+  - **Activation**: sparse weight decomposition, swd, circuit extraction, mechanistic interpretability, transformer interpretability
