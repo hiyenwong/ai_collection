@@ -49,8 +49,12 @@
   - Reveals key stimulus drivers: silence, sound intensity, vowels, and acoustic onsets
   - Demonstrates narrative structure carries more recoverable information than random word lists
   - **Activation**: interpretable meg decoding, perceived speech, spherical harmonics meg, source-space mapping, speech perception network, neural retrieval, stimulus feature analysis
-
-## 2026-08-04 - Neuroscience Research (Cron Job)
+### MIMIC-MJX: Neuromechanical Emulation of Animal Behavior
+- [[mimic-mjx-neuromechanical-emulation]] - MIMIC-MJX framework for learning biomechanically grounded neural control policies from kinematics by training neural controllers that actuate biomechanical animal models in physics simulation to reproduce real kinematic trajectories. Demonstrates accurate, fast, and generalizable implementation across diverse animal body models with modest motion data requirements. (arXiv: 2511.20532)
+  - Provides platform for modeling generative process of motor control through physics-based simulation
+  - Enables simulation of behavioral experiments and analysis of neural control policies  
+  - Integrates neuroscience, biomechanics, and machine learning for comprehensive behavior modeling
+  - **Activation**: mimic-mjx, neuromechanical emulation, animal behavior, motor control, biomechanics, physics simulation## 2026-08-04 - Neuroscience Research (Cron Job)
 
 ### CORTIVA: Candidate-Score Fusion of Complementary Visual Teachers for EEG- and MEG-to-Image Retrieval
 - [[cortiva-candidate-score-fusion]] - Framework for decoding visual experience from non-invasive brain activity through candidate-score fusion that preserves complementary evidence by aligning three decoding routes to heterogeneous visual targets, scoring candidates independently, and combining only temperature-scaled score vectors before ranking. (arXiv: 2608.01355)
