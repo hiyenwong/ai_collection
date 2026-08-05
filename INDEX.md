@@ -69,7 +69,24 @@
   - Uses h5wasm WebAssembly library for HDF5 parsing directly from local disk
   - Creates portable, fingerprinted "project packs" that preserve inspection decisions
   - Dedicated to inspection stage that precedes formal analysis in research workflow
-  - **Activation**: neuroinspector, dataset inspection, hdf5, nwb, webassembly, h5wasm### MIMIC-MJX: Neuromechanical Emulation of Animal Behavior
+  - **Activation**: neuroinspector, dataset inspection, hdf5, nwb, webassembly, h5wasm
+
+### AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning
+- [[as-fedbridge-ann-snn-federated-learning]] - AS-FedBridge framework for heterogeneous ANN-SNN federated learning using pseudo-spike bridge distillation to overcome representational misalignment between continuous activations and discrete spikes (arXiv: 2608.03324)
+  - Introduces lightweight Bridge with Pseudo-Spike Interface that projects continuous signals into spike-compatible space
+  - Demonstrates advanced accuracy across four datasets while mitigating extreme scale, architecture, and client heterogeneity challenges
+  - Enables highly controllable trade-off between model performance and resource efficiency with only marginal computational overhead
+  - **Activation**: fedbridge, ann-snn federated learning, pseudo-spike bridge, heterogeneous federated learning, spiking neural networks federated
+
+### Persistent Homology Broadens the Controllable Subspace in Human Structural Connectomes
+- [[persistent-homology-brain-connectome-control]] - Persistent homology methodology for brain network control that broadens controllable subspace by capturing mesoscale integration beyond local connectivity, revealing dissociation between control cost and geometry (arXiv: 2608.03181)
+  - Uses persistent topological cycles rather than structural connectivity strength for selecting driver nodes
+  - Achieves nearly identical scalar control energy (~0.2% difference) but better-conditioned controllability matrices
+  - Geometric advantage preserved even when high-degree hub nodes are removed
+  - Reveals dissociation between control cost and control geometry through functional signatures of different cortical territories
+  - **Activation**: persistent homology brain control, topological brain networks, controllable subspace geometry, mesoscale integration neuroscience, network control theory connectomes
+
+### MIMIC-MJX: Neuromechanical Emulation of Animal Behavior
 - [[mimic-mjx-neuromechanical-emulation]] - MIMIC-MJX framework for learning biomechanically grounded neural control policies from kinematics by training neural controllers that actuate biomechanical animal models in physics simulation to reproduce real kinematic trajectories. Demonstrates accurate, fast, and generalizable implementation across diverse animal body models with modest motion data requirements. (arXiv: 2511.20532)
   - Provides platform for modeling generative process of motor control through physics-based simulation
   - Enables simulation of behavioral experiments and analysis of neural control policies  
