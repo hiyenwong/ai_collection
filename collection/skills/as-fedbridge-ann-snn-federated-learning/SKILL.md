@@ -1,13 +1,12 @@
 ---
 name: as-fedbridge-ann-snn-federated-learning
-description: AS-FedBridge framework for heterogeneous ANN-SNN federated learning using pseudo-spike bridge distillation to overcome representational misalignment between continuous activations and discrete spikes.
-arxiv_id: "2608.03324"
-date: "2026-08-04"
-categories:
-  - federated-learning
-  - spiking-neural-networks
-  - neural-networks
-  - edge-computing
+description: "AS-FedBridge framework for heterogeneous ANN-SNN federated learning. Creates lightweight Bridge with Pseudo-Spike Interface to align continuous ANN activations with discrete SNN spikes. Use when implementing mixed ANN-SNN federated learning systems, addressing representational misalignment in edge AI, or optimizing resource-efficient collaborative learning across heterogeneous neural network architectures."
+metadata:
+  arxiv_id: "2608.03324"
+  published: "2026-08-04"
+  authors: "Anonymous"
+  tags: [federated-learning, spiking-neural-networks, ann-snn-alignment, edge-ai, heterogeneous-learning]
+license: Complete terms in LICENSE.txt
 ---
 
 # AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning
