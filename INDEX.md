@@ -49,7 +49,13 @@
   - Reveals key stimulus drivers: silence, sound intensity, vowels, and acoustic onsets
   - Demonstrates narrative structure carries more recoverable information than random word lists
   - **Activation**: interpretable meg decoding, perceived speech, spherical harmonics meg, source-space mapping, speech perception network, neural retrieval, stimulus feature analysis
-### MIMIC-MJX: Neuromechanical Emulation of Animal Behavior
+### NeuroInspector: A Local-First Environment for Inspecting and Annotating Hierarchical Neuroscience Datasets
+- [[neuroinspector-hierarchical-dataset-inspection]] - NeuroInspector framework for local-first inspection and annotation of hierarchical neuroscience datasets (HDF5/NWB files) using browser-based WebAssembly HDF5 parsing. Provides structural navigation, metadata inspection, sampled data previews, and path-level annotation into portable project packs without modifying original files. (arXiv: 2608.02465)
+  - Lightweight, browser-based environment running entirely client-side with no file upload endpoints
+  - Uses h5wasm WebAssembly library for HDF5 parsing directly from local disk
+  - Creates portable, fingerprinted "project packs" that preserve inspection decisions
+  - Dedicated to inspection stage that precedes formal analysis in research workflow
+  - **Activation**: neuroinspector, dataset inspection, hdf5, nwb, webassembly, h5wasm### MIMIC-MJX: Neuromechanical Emulation of Animal Behavior
 - [[mimic-mjx-neuromechanical-emulation]] - MIMIC-MJX framework for learning biomechanically grounded neural control policies from kinematics by training neural controllers that actuate biomechanical animal models in physics simulation to reproduce real kinematic trajectories. Demonstrates accurate, fast, and generalizable implementation across diverse animal body models with modest motion data requirements. (arXiv: 2511.20532)
   - Provides platform for modeling generative process of motor control through physics-based simulation
   - Enables simulation of behavioral experiments and analysis of neural control policies  
