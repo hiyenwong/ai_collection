@@ -28,32 +28,74 @@ Both approaches achieve nearly identical scalar control energy (differing by ~0.
 
 ## Implementation Workflow
 
-### 1. Data Preparation
-- Obtain human structural connectomes (70 subjects used in original study)
-- Apply parcellation at multiple scales (original used 3 scales)
-- Ensure proper graph representation with weighted edges
+### 1. Data Preparation and Preprocessing
+```python
+# Load adjacency matrix A_raw from diffusion MRI tractography
+# Symmetrize: A_sym = 0.5 * (A_raw + A_raw.T)  
+# Set diagonal to zero
+# Apply log transform: A_log = np.log(1 + A_sym) to reduce skew
+# Normalize: A_0 = A_log / np.max(A_log) to [0,1] range
+```
 
-### 2. Topological Analysis
-- Compute persistent homology on structural connectomes
-- Extract persistent topological cycles for each node
-- Calculate mesoscale integration measure based on cycle participation
+### 2. Node Ranking Methods
+**Degree Strength:**
+```python
+degree_strength = np.sum(A_0, axis=1)  # Weighted sum of incident edges
+```
 
-### 3. Driver Node Selection
-- **Degree-based**: Select nodes with highest structural connectivity strength
-- **Topology-based**: Select nodes with highest persistent topological cycle participation
+**Cycle Participation (H1 Persistent Homology):**
+```python
+# Convert to distance matrix D where strong edges = short distances
+D = np.ones_like(A_0)
+D[A_0 > 0] = 1 - A_0[A_0 > 0]  
+np.fill_diagonal(D, 0)
 
-### 4. Control Theory Analysis
-- Compute controllability Gramian for both driver sets
-- Calculate scalar control energy: `E = trace(W⁻¹)` where W is controllability Gramian
-- Analyze controllable subspace geometry:
-  - Singular value decomposition of controllability matrix
-  - Effective rank calculation
-  - Condition number assessment
+# Compute H1 persistent homology using Ripser with cocycle extraction
+# For each finite H1 feature f with birth bf, death df, persistence = df - bf
+# Get representative cocycle zf from Ripser
+# Cycle participation for node i: CP_i = sum(persistence_f for f where i in support(zf))
+# Min-max normalize CP within subject/scale before ranking
+```
 
-### 5. Functional Validation
-- Map driver nodes to cortical territories
-- Analyze target state reachability patterns
-- Compare brain-state transition efficiency between criteria
+### 3. System Stabilization and Control Setup
+```python
+# Stabilize system matrix: A = A_0 - (lambda_max(A_0) + c) * I
+# Use c = 0.1 as standard stabilization margin
+# Construct input matrix B: columns are canonical basis vectors for selected driver nodes
+```
+
+### 4. Controllability Analysis
+**Gramian Computation:**
+```python
+# Solve continuous Lyapunov equation: A*W + W*A.T + B*B.T = 0
+# Regularize: W_eps = W + epsilon*I (epsilon = 1e-5 standard)
+# Handle small eigenvalues: set lambda_i = max(lambda_i, epsilon)
+```
+
+**Control Metrics:**
+- **Scalar Energy**: `E_avg = trace(W_eps_inv)`
+- **Effective Rank**: `reff = exp(-sum(p_i * log(p_i)))` where `p_i = lambda_i / sum(lambda_j)`
+- **Participation Ratio**: `PR = (sum(lambda_i))^2 / sum(lambda_i^2)`
+- **Condition Number**: `kappa = lambda_max / lambda_min` (use log10 scale)
+
+### 5. Advanced Analyses
+**Hub Lesioning:**
+- Remove top h degree-strength nodes (h = 5, 10, 15)
+- Recompute Gramian with same driver identities (no reselection)
+- Compare degradation: intact vs lesioned metrics
+
+**Target-State Control:**
+```python
+# For target state x_star: E_target = x_star.T @ W_eps_inv @ x_star  
+# Test targets: V1, M1, PCC/precuneus, lPFC, occipital module, association module
+# Report percent differences: 100 * (E_cycle - E_degree) / E_degree
+```
+
+### 6. Validation and Robustness
+- Test across parcellation scales (68, 114, 219 regions)
+- Sweep regularization: epsilon ∈ [1e-8, 1e-5]
+- Compare finite-horizon (T = 1, 2.5, 5) vs infinite-horizon Gramians
+- Verify representative construction sensitivity (Ripser cocycles vs alternatives)
 
 ## Mathematical Framework
 
