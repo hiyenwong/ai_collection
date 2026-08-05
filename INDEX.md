@@ -30,6 +30,13 @@
   - Validated on SG-MIND dataset (20 participants, 8,519 paired clips, 140.7 person-hours) and three naturalistic movie-fMRI benchmarks
   - **Activation**: neuroworld, brain world model, latent brain dynamics, stimulus-conditioned forecasting, fMRI prediction
 
+### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
+- [[recurrent-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) methodology that uses divisive normalization to create robust low-rank slow manifolds for continuous working memory, preventing manifold shattering under time-varying inputs while enabling high-fidelity continuous representations (arXiv: 2608.01947)
+  - Divisive normalization introduces activity-dependent local gradient scaling during BPTT, leading to self-compression of effective rank
+  - Mathematically essential for preventing manifold shattering under time-varying inputs (subtractive inhibition insufficient for dynamic conditions)
+  - Creates robust, high-fidelity slow manifolds that maintain continuous variables without discretization into point attractors
+  - **Activation**: divisive normalization, working memory, continuous attractor, recurrent neural network, slow manifold, RDNN
+
 ## 2026-08-06 - Deep Learning Research (Cron Job)
 
 ### TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning
