@@ -16,6 +16,13 @@
   - Includes multiple testing correction, synthetic data generation, and diagnostic evaluation tools
   - **Activation**: scikit-covtest, covariance hypothesis testing, brain connectivity inference, neural covariance analysis, statistical testing covariance
 
+### SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery
+- [[seekbrain-autonomous-neuroscience-discovery]] - Autonomous multi-agent framework for accelerating neuroscience discovery through domain-grounded hierarchical planning and cross-modal data analysis, dynamically constructing analysis recipes from code-paper pairs to generate hypotheses and analytical pipelines on demand (arXiv: 2607.29347)
+  - Substantially outperforms state-of-the-art agent baselines on BrainArena benchmark across various analysis tasks
+  - Successfully integrated behavioral, neural, and anatomical data to reveal structured neural representations in zebrafish and shared decoding axis in mouse decision-making
+  - Provides scalable solution for heterogeneous, multi-scale, multimodal neuroscience dataset integration challenges
+  - **Activation**: seekbrain, autonomous neuroscience discovery, multi-agent neuroscience, cross-modal analysis, hypothesis generation, brainarena benchmark
+
 ### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
 - [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds. Use when implementing or analyzing neural networks that need to maintain and update continuous variables without manifold shattering, particularly in computational neuroscience, working memory modeling, or RNN architecture design. (arXiv: 2608.01947)
   - Addresses fragility of classical continuous attractor networks and discretization problems of standard RNNs
