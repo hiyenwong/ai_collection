@@ -6,8 +6,16 @@
   - All modules released as Jupyter notebooks for local/Colab execution with IEEE course integration
   - Addresses 92% barrier rate reported by researchers before running AI models in power systems
   - **Activation**: engineering-grounded ai, power systems ai education, egai framework, ai power systems modules
-
 ## 2026-08-05 - Neuroscience Research (Cron Job)
+
+### The Transformer Revolution, Part 1: Dynamic Processing through Output-Weight Interconnections
+- [[transformer-revolution-sidpp-dynamic-processing]] - Framework for interpreting Transformers as Sequence-level Interactive Dynamic Parallel Processing (SIDPP) systems that construct prompt-dependent transformations during inference, with potential neural correlates in cerebral cortex processing (arXiv: 2608.03921)
+  - Proposes SIDPP (Sequence-level Interactive Dynamic Parallel Processing) as novel interpretation challenging "stochastic parrot" view
+  - Identifies output-weight interconnections as Transformer's true architectural innovation enabling dynamic transformation construction
+  - Demonstrates strong prompt sensitivity where dynamic processing can exceed static processing contribution
+  - Argues for biological plausibility with potential cortical implementation of similar mechanisms
+  - **Activation**: transformer revolution sidpp, dynamic processing transformers, output-weight interconnections, strong prompt sensitivity, concept transformation framework, transformer cortical processing
+
 ### Persistent homology broadens the controllable subspace in human structural connectomes
 - [[persistent-homology-brain-network-control]] - Methodology for applying persistent homology to brain network control theory, revealing how topological features broaden the controllable subspace beyond what scalar energy measures capture (arXiv: 2608.03181)
   - Demonstrates dissociation between scalar control energy (~0.2% difference) and control geometry (substantially different controllable subspaces) when comparing degree-based vs topology-based driver selection
