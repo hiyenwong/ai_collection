@@ -1,4 +1,4 @@
-## New High-Utility Papers (2026-07-30)
+\n## 2026-08-05 - arXiv Paper Skills (Cron Job)\n## New High-Utility Papers (2026-07-30)
 
 - [[can-ai-agents-conduct-open-ended-ai-research-early]] - Skill derived from arXiv:2607.27191 - Can AI agents conduct open-ended AI research? Early evidence from two case studies
   - Core point 1: Can AI agents conduct open-ended AI research? Early evidence from two case studies
