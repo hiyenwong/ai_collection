@@ -7,6 +7,13 @@
   - Different cortical territories lead to different classes of efficiently reachable target states
   - **Activation**: persistent homology brain network, topological cycles controllability, brain network control geometry, structural connectome topology
 
+### Detecting high-frequency brain disorder signals using dynamic mode decomposition from EEG
+- [[dmd-high-frequency-eeg-brain-disorder]] - Methodology for extracting consistent and persistent dynamical changes in the high-frequency band from EEG signals of neurologically relevant channels, with applications in distinguishing alcohol-dependent groups from controls (arXiv: 2608.02804)
+  - Approximately 70% of samples exhibited consistent high-frequency dynamics within specific channel signals
+  - PCA components of feature table that passed random distribution test formed consistent patterns distinguishing alcohol-dependent from control groups
+  - Provides robust detection framework for brain disorder signals in high-frequency EEG ranges
+  - **Activation**: DMD EEG high-frequency, dynamic mode decomposition brain disorder, high-frequency EEG biomarkers, alcohol dependence EEG classification
+
 ## 2026-08-06 - Quantum Reservoir Computing Thermodynamics (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
