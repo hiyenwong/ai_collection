@@ -1,130 +1,114 @@
 ---
 name: time2-neural-dynamics-visual-perception
-title: Time² Framework for Neural Dynamics of Visual Perception
-version: 1.0.0
-description: Time² (Time-squared) framework methodology for analyzing neural dynamics in visual perception by distinguishing between processing time and stimulus time dimensions. Enables characterization of rhythmic perception, predictive processing, and coarse-to-fine sampling through reverse correlation analysis.
-tags:
-  - neuroscience
-  - neural dynamics
-  - visual perception
-  - time-series analysis
-  - MEG/EEG
-  - reverse correlation
-  - computational neuroscience
-authors:
-  - Laurent Caplette
-  - Frédéric Gosselin
-paper: "Time²: A framework for the neural dynamics of visual perception"
-arxiv_id: "2608.04218"
-date: "2026-08-04"
+description: "Time^2 (Time-squared) framework for analyzing neural dynamics of visual perception by simultaneously measuring processing time and stimulus time using reverse correlation methodology. Use when studying visual perception temporal dynamics, rhythmic perception, predictive processing, or coarse-to-fine sampling in neuroscience research."
+metadata:
+  arxiv_id: "2608.04218"
+  published: "2026-08-04"
+  authors: "Laurent Caplette, Frédéric Gosselin"
+  tags: [neuroscience, visual-perception, neural-dynamics, reverse-correlation, time-analysis]
+license: Complete terms in LICENSE.txt
 ---
 
-# Time² Framework for Neural Dynamics of Visual Perception
+# Time²: A Framework for the Neural Dynamics of Visual Perception
 
 ## Overview
 
-The Time² (Time-squared) framework is a novel experimental and analytical methodology that disentangles two critical temporal dimensions in visual perception:
+The Time² (Time-squared) framework addresses a fundamental limitation in visual perception research by simultaneously considering both **processing time** (how long the brain takes to process visual information) and **stimulus time** (how long visual information is received on the retina). Traditional approaches often conflate these two temporal facets or study them in isolation, leading to incomplete models of vision.
 
-1. **Processing time**: The time it takes for the brain to process visual information after it reaches the retina (typically 100-150ms)
-2. **Stimulus time**: The duration during which visual information is continuously received on the retina while viewing an object
+This framework uses **reverse correlation methodology** to precisely characterize neural phenomena including:
+- Rhythmic perception
+- Predictive processing  
+- Coarse-to-fine sampling
 
-Traditional neuroscience methods often conflate these two temporal facets or consider only one dimension at a time. Time² enables simultaneous measurement and analysis of both dimensions using reverse correlation techniques.
+## Core Methodology
 
-## Key Concepts
+### Processing Time vs Stimulus Time Distinction
 
-### Dual Temporal Dimensions
-- **Processing time** represents neural computation latency across the cortical hierarchy
-- **Stimulus time** represents the continuous sampling of visual input during fixation
-- Both dimensions must be considered together to obtain a complete portrait of visual perception
+- **Processing Time**: The hundreds of milliseconds required for the brain to process visual information reaching the retina
+- **Stimulus Time**: The duration for which an object must be viewed to be perceived (typically hundreds of milliseconds)
+- **Key Insight**: Visual information is both processed AND received through time simultaneously
 
 ### Reverse Correlation Implementation
-The Time² method uses spacetime stimuli created by:
-1. Generating 3D noise arrays (spacetime bubbles) with Gaussian apertures across pixel space and stimulus time
-2. Multiplying these noise arrays element-wise with base images replicated across stimulus time
-3. Presenting dynamic spacetime stimuli to participants while recording neural activity (MEG/EEG)
 
-### Analysis Framework
-For each brain source and processing latency, regression is performed against spacetime bubble values for each pixel and stimulus moment across trials. This produces Time² maps where:
-- **Y-axis**: Stimulus time (from bottom to top)
-- **X-axis**: Processing time (from left to right)
-- **Diagonal patterns**: Indicate constant processing delays
-- **Off-diagonal patterns**: Reveal complex temporal dynamics
+The Time² method applies reverse correlation to jointly analyze both temporal dimensions:
+1. Present visual stimuli with controlled temporal properties
+2. Record neural or behavioral responses 
+3. Use reverse correlation to reconstruct the joint processing-stimulus time kernel
+4. Analyze the resulting spatiotemporal receptive field
 
 ## Applications
 
-### Rhythmic Perception
-- Characterizes how ongoing neural oscillations interact with continuously incoming visual information
-- Distinguishes between **oscillatory sampling** (information received at successive moments processed rhythmically) vs **oscillatory processing** (single snapshot processed rhythmically across time)
+### Rhythmic Perception Analysis
+- Characterize how neural systems respond to rhythmic visual inputs
+- Identify optimal temporal frequencies for perception
+- Measure phase-locking between stimulus rhythm and neural processing
 
-### Predictive Processing
-- Analyzes how changes in early stimulus portions affect processing of later portions
-- Reveals adaptive sampling mechanisms in response to prediction errors
+### Predictive Processing Studies  
+- Quantify how the brain uses past visual information to predict future inputs
+- Measure the temporal window of prediction accuracy
+- Analyze the trade-off between prediction horizon and accuracy
 
-### Information Maintenance
-- Studies how representations of sequential scenes overlap in time
-- Examines temporal binding of asynchronously processed features
-
-### Coarse-to-Fine Sampling
-- Tracks how different spatial frequencies are processed across both temporal dimensions
-- Reveals hierarchical processing dynamics
+### Coarse-to-Fine Sampling Investigation
+- Track how visual processing evolves from coarse global features to fine details
+- Measure the temporal progression of feature extraction
+- Identify critical time windows for different levels of visual processing
 
 ## Implementation Guidelines
 
 ### Experimental Design
-1. **Stimulus Creation**: Use 3D Gaussian apertures (spacetime bubbles) spanning 200-500ms stimulus duration
-2. **Base Images**: Select appropriate visual categories (faces, objects, scenes)
-3. **Neural Recording**: MEG preferred for source localization, EEG acceptable with appropriate referencing
-4. **Task Design**: Include behavioral measures (detection, discrimination, recognition) for filter gain analysis
+1. **Stimulus Design**: Create visual stimuli with controlled temporal dynamics (e.g., noise sequences, rhythmic patterns, multi-scale features)
+2. **Timing Control**: Precisely control stimulus presentation duration and inter-stimulus intervals
+3. **Response Measurement**: Record neural activity (EEG, fMRI, single-unit) or behavioral responses with high temporal resolution
 
-### Data Analysis
-1. **Preprocessing**: Standard MEG/EEG preprocessing (filtering, artifact rejection, source localization for MEG)
-2. **Reverse Correlation**: Regress neural activity against spacetime bubble values
-3. **Time² Map Construction**: Create 2D maps for each brain source and spatial feature
-4. **Statistical Analysis**: Use clustering to identify map types, compare across conditions/regions
+### Data Analysis Workflow
+1. **Preprocessing**: Align neural/behavioral responses to stimulus onset
+2. **Reverse Correlation**: Compute the cross-correlation between stimuli and responses across both processing and stimulus time dimensions
+3. **Kernel Reconstruction**: Reconstruct the 2D spatiotemporal receptive field
+4. **Statistical Validation**: Apply permutation tests to establish significance of temporal patterns
 
 ### Interpretation Framework
-- **Slope-of-1 diagonal**: Constant processing delay regardless of stimulus moment
-- **Above diagonal**: Processing of later stimulus moments occurs earlier than expected
-- **Below diagonal**: Processing of later stimulus moments occurs later than expected
-- **Oscillatory patterns**: Reveal rhythmic sampling or processing at specific frequencies
+- **Diagonal Patterns**: Indicate matched processing-stimulus timing (real-time processing)
+- **Off-Diagonal Patterns**: Reveal predictive (ahead of stimulus) or integrative (lagging behind stimulus) processing
+- **Temporal Bandwidth**: Measure the range of processing times that contribute to perception
+- **Stimulus Integration Window**: Determine the optimal stimulus duration for maximal response
 
-## Advantages Over Traditional Methods
+## Pitfalls to Avoid
 
-1. **Simultaneous temporal measurement**: Captures both processing and stimulus time dimensions
-2. **High temporal resolution**: Millisecond-level precision in both dimensions
-3. **Spatial specificity**: Can analyze specific brain regions and visual features
-4. **Model constraint**: Provides rich data to constrain computational models of vision
-5. **Phenomenon unification**: Integrates multiple temporal phenomena under single framework
+### Common Methodological Errors
+- **Conflating temporal dimensions**: Ensure clear separation between processing time and stimulus time in experimental design
+- **Insufficient temporal resolution**: Use sampling rates high enough to capture rapid neural dynamics (≥100 Hz for EEG, ≥1 kHz for single-unit)
+- **Inadequate stimulus diversity**: Include sufficient stimulus variability to enable robust reverse correlation estimation
+- **Ignoring individual differences**: Account for inter-subject variability in temporal processing windows
 
-## Limitations and Considerations
+### Analysis Challenges
+- **Noise sensitivity**: Reverse correlation can be sensitive to noise; use regularization techniques when needed
+- **Nonlinear interactions**: The framework assumes linear systems; validate linearity assumptions or use extensions for nonlinear cases
+- **Multiple comparison correction**: Apply appropriate corrections for statistical testing across multiple time points
 
-1. **Computational complexity**: Requires substantial data collection and processing
-2. **Signal-to-noise ratio**: May require many trials for reliable estimates
-3. **Source localization**: MEG source reconstruction adds complexity; EEG has limited spatial resolution
-4. **Stimulus design constraints**: Base images must be compatible with spacetime bubble multiplication
+## Integration with Existing Methods
 
-## Use Cases
+### Complementary Approaches
+- **Frequency domain analysis**: Combine with Fourier analysis to study rhythmic components
+- **Machine learning decoding**: Use Time² kernels as features for neural decoding models
+- **Computational modeling**: Constrain neural network models with empirically measured Time² kernels
 
-- **Fundamental vision research**: Understanding temporal dynamics of visual processing
-- **Clinical applications**: Characterizing temporal processing deficits in neurological disorders
-- **Computational modeling**: Constraining and validating neural network models of vision
-- **Brain-computer interfaces**: Optimizing temporal parameters for visual BCI systems
-- **Cognitive neuroscience**: Studying attention, prediction, and consciousness mechanisms
+### Extension Opportunities
+- **Cross-modal applications**: Apply the framework to audiovisual or multisensory integration
+- **Clinical applications**: Use Time² to characterize temporal processing deficits in neurological disorders
+- **Developmental studies**: Track how Time² kernels evolve across development or learning
 
-## Trigger Conditions
+## Activation Keywords
 
-Use when: studying neural dynamics of visual perception, analyzing MEG/EEG time-series data, investigating rhythmic brain activity, or developing computational models of vision that require precise temporal characterization.
+- Time² framework
+- Processing time and stimulus time
+- Visual perception temporal dynamics
+- Reverse correlation neuroscience
+- Rhythmic perception analysis
+- Predictive processing timing
+- Coarse-to-fine visual sampling
 
 ## References
 
-- Caplette, L., & Gosselin, F. (2026). Time²: A framework for the neural dynamics of visual perception. arXiv:2608.04218 [q-bio.NC].
-- Caplette, L., et al. (2023). [Related work on oscillatory sampling patterns]
-- VanRullen, R., & MacDonald, C. (2012). [Foundational work on processing time analysis]
-
-## Verification Steps
-
-1. Successfully implement spacetime bubble stimulus generation
-2. Obtain significant reverse correlation coefficients above chance level
-3. Identify expected Time² map patterns (diagonal, oscillatory, etc.)
-4. Replicate known phenomena (e.g., alpha-band oscillatory sampling)
-5. Validate with behavioral performance correlations
+- Caplette, L., & Gosselin, F. (2026). Time²: A framework for the neural dynamics of visual perception. arXiv:2608.04218 [q-bio.NC]
+- Original paper: https://arxiv.org/abs/2608.04218
+- DOI: https://doi.org/10.48550/arXiv.2608.04218
