@@ -1,5 +1,12 @@
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
+### AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning
+- [[as-fedbridge-heterogeneous-ann-snn-federated-learning]] - Framework solving representational misalignment between continuous real-valued activations in ANNs and discrete spatio-temporal spikes in SNNs using lightweight Bridge with Pseudo-Spike Interface, enabling mixed ANN-SNN collaborative training with controllable performance-efficiency trade-offs (arXiv: 2608.03324)
+  - Positive correlation between ANN-SNN alignment degree and federated learning performance across four datasets
+  - Achieves advanced accuracy while mitigating extreme scale, architecture, and client heterogeneity challenges
+  - Introduces only marginal computational overhead for practical deployment on resource-constrained edge devices
+  - **Activation**: as-fedbridge, heterogeneous ann-snn, federated learning bridge, pseudo-spike interface, ANN-SNN alignment, mixed neural networks federated
+
 ### Persistent homology broadens the controllable subspace in human structural connectomes
 - [[persistent-homology-brain-network-control]] - Methodology using persistent topological cycles as driver node selection criterion in brain network control theory, revealing dissociation between control cost and control geometry (arXiv: 2608.03181)
   - Topology-informed driver sets achieve nearly identical scalar control energy (~0.2% difference) but distribute controllability across more state space dimensions
